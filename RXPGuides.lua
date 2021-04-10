@@ -82,6 +82,8 @@ goto = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:96:112:0:15|t",
 deathskip = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:112:127:0:15|t",
 home = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:64:79:0:15|t",
 xp = "|TInterface/PETBATTLES/BattleBar-AbilityBadge-Strong-Small:0|t",
+stable = "|TInterface/MINIMAP/TRACKING/StableMaster:0|t",
+tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t"
 }
 local icons = zcc.icons
 
@@ -346,7 +348,7 @@ function zcc.UpdateStepCompletion()
 				update = true
 				step.active = nil
 			elseif step.index >= RXPData.currentStep then
-				--print('ok',RXPData.currentStep)
+				step.completed = true
 				return SetStep(step.index+1)
 			end
 		end
@@ -360,8 +362,23 @@ end
 
 function SetStep(n)
 	local guide = zcc.currentGuide
-	if n > #guide.steps or not guide then return print('error1A',guide) end
 	local group = guide.group
+
+	
+	if n > #guide.steps then
+		local isComplete = true
+		local completedStep
+		for i,step in pairs(f.CurrentStepFrame.activeSteps) do
+			if step.sticky and not RXPData.stepSkip[i] then
+				isComplete = false
+			end
+		end
+		if isComplete then
+			return RXPG[group].next()
+		else
+			n = #guide.steps
+		end
+	end
 	RXPData.currentStep = n
 	--isUpdating = true
 
@@ -375,13 +392,15 @@ function SetStep(n)
 	end
 
 	RXPData.stepSkip[n+1] = nil
-	if guide.steps[n].sticky then
+	if guide.steps[n].sticky and n < #guide.steps then
 		return SetStep(n+1)
 	end
 	
 	for i,step in pairs(f.CurrentStepFrame.activeSteps) do
 		step.active = nil
-		step.completed = nil
+		if n < #guide.steps then
+			step.completed = nil
+		end
 	end
 	
 	f.CurrentStepFrame.activeSteps = {}
@@ -389,7 +408,7 @@ function SetStep(n)
 	
 	for i = 1,n-1 do
 		local step = guide.steps[i]
-		if step.sticky and not RXPData.stepSkip[i] then
+		if step.sticky and not RXPData.stepSkip[i] and not(step.requires and guide.labels[step.requires].active) then
 			table.insert(f.CurrentStepFrame.activeSteps,step)
 			--f.Steps.frame[i]:SetAlpha(0.66)
 			step.active = true
@@ -397,10 +416,16 @@ function SetStep(n)
 		--ClearMapPins(i)
 	end
 	
-	table.insert(f.CurrentStepFrame.activeSteps,guide.steps[n])
-	f.Steps.frame[n]:SetAlpha(1)
-	guide.steps[n].active = true
-
+	if not guide.steps[n].completed then
+		table.insert(f.CurrentStepFrame.activeSteps,guide.steps[n])
+		f.Steps.frame[n]:SetAlpha(1)
+		guide.steps[n].active = true
+	end
+	
+	if #f.CurrentStepFrame.activeSteps == 0 and n == #guide.steps then
+		return RXPG[group].next()
+	end
+	
 	local totalHeight = 0
 	local c = 0
 	local heightDiff = f:GetHeight() - f.CurrentStepFrame:GetHeight()
@@ -637,7 +662,7 @@ end
 	
 end
 
-C_Timer.After(16,function() zcc.updateBottomFrame = true end)
+
 
 C_Timer.NewTicker(0.3473,function() 
 	if zcc.updateSteps then
@@ -758,6 +783,7 @@ local currentAlpha
 function zcc:LoadGuide(guide,OnLoad)
 	startTime = GetTime()
 	CloseDropDownMenus()
+	C_Timer.After(10,function() zcc.updateBottomFrame = true end)
 	if not guide then
 		return error('Guide not found')
 	end

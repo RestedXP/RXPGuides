@@ -14,6 +14,12 @@ zcc.functions.events.home = "HEARTHSTONE_BOUND"
 zcc.functions.events.fly = "ZONE_CHANGED"
 zcc.functions.events.deathskip = "CONFIRM_XP_LOSS"
 zcc.functions.events.xp = "PLAYER_XP_UPDATE"
+zcc.functions.events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
+zcc.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
+zcc.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
+zcc.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
+
+
 
 RXPG = {}
 
@@ -40,7 +46,7 @@ end
 
 function zcc.GetQuestObjectives(id,ref)
 	local ctime = GetTime()
-	if ctime - timer > 0.5 then
+	if ctime - timer > 0.66 then
 		timer = ctime
 		nrequests = 0
 	end
@@ -105,31 +111,17 @@ function zcc.AldorScryerCheck(step)
 	return true
 end
 
+function zcc.GetNpcId(unit)
+	if not unit then
+		unit = "target"
+	end
+	local _, _, _, _, _, npcId = strsplit('-', UnitGUID(unit) or '')
+	return tonumber(npcId)
+end
+
+
 local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
-
---[[
---text = line:match(">>%s*(.*%S)")
---line:sub("%s*>>.*","")
-step
-	#sticky
-	.goto Teldrassil,45.0,50.0,30
-	.accept 457 >> Accept The Balance of Nature // Teldrassil,45.0,50.0  
-	.complete 457,1 >> asd   gfrdfgd sads e  
-]]
-
---on parse:
-
---[[
-if not zcc.guides[zcc.guidegroup] then
-	zcc.guides[zcc.guidegroup] = {}
-	--setmetatable(zcc[guidegroup],zcc.functions)
-end]]
-
-
-
---functions:
-
 
 
 function zcc.functions.accept(self,...)
@@ -351,14 +343,21 @@ function zcc.functions.complete(self,...)
 	
 end
 
+local lastZone
 function zcc.functions.goto(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		element.tag = "goto"
 		local text,zone,x,y,radius = ...
+		if zone then
+			lastZone = zone
+		else
+			zone = lastZone
+		end
 		element.x = tonumber(x)
 		element.y = tonumber(y)
 		element.radius = tonumber(radius)
+		radius = element.radius
 		element.zone = zcc.mapId[zone]
 		element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(x/100, y/100, element.zone)
 		element.arrow = true
@@ -371,7 +370,7 @@ function zcc.functions.goto(self,...)
 		if radius then
 			if radius > 0 then
 				if not text or text == "" then
-					element.text = string.format("Go to %.2f,%.2f (%s)",element.x,element.y,HBD:GetLocalizedMap(element.zone))
+					element.text = string.format("Go to %.2f,%.2f (%s)",element.x,element.y,zone)
 				end
 				element.parent = nil
 				element.textOnly = nil
@@ -567,7 +566,7 @@ function zcc.functions.xp(self,...)
 					element.text = string.format("Grind until you are %.0f% into level %s",element.xp*100,level)
 				end
 			else
-				element.text = "Grind to level "..level
+				element.text = "Grind to level "..tostring(level)
 			end
 		end
 		if not element.xp then element.xp = 0 end
@@ -586,17 +585,149 @@ function zcc.functions.xp(self,...)
 
 end
 
-function zcc.functions.checkbox(self,...)
+function zcc.functions.vendor(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
-		local text,str = ...
-		
+		local text,id = ...
+		element.id = tonumber(id)
 		if text and text ~= "" then
 			element.text = text
 		else
-			element.text = str
+			element.text = "Sell junk/resupply"
 		end
+		element.tooltipText = zcc.icons.vendor..element.text
 		return element
 	end
-	self.element.completed = self.element.skip
+	
+	local event = ...
+	local id = self.element.id
+	
+	if event == "MERCHANT_SHOW" then
+		self.element.activity = zcc.GetNpcId()
+	elseif event == "MERCHANT_CLOSED" and (self.activity == id or not id) then
+		self.element.activity = nil
+		zcc.SetElementComplete(self)
+	end
+end
+
+function zcc.functions.trainer(self,...)
+	if type(self) == "number" then --on parse
+		local element = {}
+		local text,id = ...
+		element.id = tonumber(id)
+		if text and text ~= "" then
+			element.text = text
+		else
+			element.text = "Train skills"
+		end
+		element.tooltipText = zcc.icons.trainer..element.text
+		return element
+	end
+	
+	local event = ...
+	local id = self.element.id
+	
+	if event == "TRAINER_SHOW" then
+		self.element.activity = zcc.GetNpcId()
+	elseif event == "TRAINER_CLOSED" and (self.activity == id or not id) then
+		self.element.activity = nil
+		zcc.SetElementComplete(self)
+	end
+end
+
+function zcc.functions.stable(self,...)
+	if type(self) == "number" then --on parse
+		local element = {}
+		local text,id = ...
+		element.id = tonumber(id)
+		if text and text ~= "" then
+			element.text = text
+		else
+			element.text = "Stablee your pet"
+		end
+		element.tooltipText = zcc.icons.stable..element.text
+		return element
+	end
+	
+	local event = ...
+	local id = self.element.id
+	
+	if event == "PET_STABLE_SHOW" then
+		self.element.activity = zcc.GetNpcId()
+	elseif event == "PET_STABLE_CLOSED" and (self.activity == id or not id) then
+		self.element.activity = nil
+		zcc.SetElementComplete(self)
+	end
+end
+
+function zcc.functions.tame(self,...)
+	if type(self) == "number" then --on parse
+		local element = {}
+		local text,id = ...
+		element.id = tonumber(id)
+		if text and text ~= "" then
+			element.text = text
+		else
+			element.text = "-"
+		end
+		element.tooltipText = zcc.icons.tame..element.text
+		return element
+	end
+	
+	local event,unit,guid,spellId = ...
+	local id = self.element.id
+	
+	if spellId == 1515 and unit == "player" then
+		if event == "UNIT_SPELLCAST_START" then
+			self.element.petId = id
+		elseif id and event == "UNIT_SPELLCAST_SUCCEEDED" and id == self.element.petId then
+			self.element.petId = nil
+			zcc.SetElementComplete(self)
+			return
+		end
+	end
+end
+
+
+
+function Guidelime.Zarant.TameBeast(self,args,event,target,guid,spellId)
+	if not self then 
+		return "UNIT_SPELLCAST_SUCCEEDED,UNIT_SPELLCAST_START,UNIT_SPELLCAST_FAILED"
+	end
+	if spellId == 1515 then
+		if event == "UNIT_SPELLCAST_FAILED" then
+			self.petId = nil
+			return
+		end
+		for i,v in ipairs(args) do
+			local id = tonumber(v)
+			if event == "UNIT_SPELLCAST_START" and (id == self.NpcId(target) or id == self.NpcId()) then
+				self.petId = id
+			elseif id and event == "UNIT_SPELLCAST_SUCCEEDED" and (id == self.NpcId(target) or id == self.NpcId() or id == self.petId) then
+				self.petId = nil
+				self:SkipStep()
+				return
+			end
+		end
+	end
+end
+
+
+
+function zcc.functions.next(skip)
+	if skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then 
+		return 
+	end
+	local guide = zcc.currentGuide
+	if guide.next then
+		local group = guide.group
+		local next = guide.next:gsub("^(.+)\\",function(grp)
+			group = grp
+			return ""
+		end)
+		local nextGuide = zcc.GetGuideTable(group,next)
+		if nextGuide then
+			return zcc:LoadGuide(nextGuide)
+		end
+	end
 end

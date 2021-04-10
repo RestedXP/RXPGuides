@@ -25,7 +25,7 @@ local function applies(text)
 	return true
 end
 zcc.applies = applies
-
+RXPGuides = RXPG
 function RXPG.RegisterGuide(guideGroup,text)
 	--print(27,guideGroup,text)
 
@@ -206,7 +206,7 @@ step
 	.checkbox >> Example checkbox
 ]]
 
-RXPG.RegisterGuide("Z1",z1)
+--RXPG.RegisterGuide("Z1",z1)
 
 
 RXPG.RegisterGuide("Zarant 50+ route 2",[[
