@@ -8,10 +8,9 @@ local faction = UnitFactionGroup("player")
 local function applies(text)
 	if text then
 		local isMatch
-		text = text:gsub(" ","")
 		for str in string.gmatch(text, "[^/]+") do			
 			local v = true
-			for entry in string.gmatch(str, "[^,]+") do
+			for entry in string.gmatch(str, "%w+") do
 				local state = true
 				if entry:sub(1,1) == "!" then
 					entry = entry:sub(2,-1)
@@ -83,7 +82,7 @@ function RXPG.RegisterGuide(guideGroup,text)
 			for arg in string.gmatch(args, "[^,]+") do
 				table.insert(t,arg)
 			end
-			print(tag,args,type(guide))
+			--print(tag,args,type(guide))
 			element = RXPG[guide.group][tag](linenumber,text,unpack(t))
 			element.tag = tag
 			element.step = step
@@ -115,7 +114,7 @@ function RXPG.RegisterGuide(guideGroup,text)
 		line = line:gsub("%-%-.*","")
 		line = line:gsub("^%s+","")
 		line = line:gsub("%s+$","")
-		print(line)
+		--print(line)
 		if line:sub(1,4) == "step" then
 			local classtag = line:match("<<%s*(.+)")
 			if classtag and not applies(classtag) then

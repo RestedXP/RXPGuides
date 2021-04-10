@@ -17,12 +17,39 @@ zcc.functions.events.xp = "PLAYER_XP_UPDATE"
 
 RXPG = {}
 
-function zcc.GetQuestName(id)
-	local quest = C_QuestLog.GetQuestInfo(id)
-	if not quest then
-		zcc.questQueryList[id] = true
+local timer = GetTime()
+local nrequests = 0
+function zcc.GetQuestName(id,ref)
+	local ctime = GetTime()
+	if ctime - timer > 0.66 then
+		timer = ctime
+		nrequests = 0
+	end
+	nrequests = nrequests + 1
+	local quest
+	if nrequests < 4 or HaveQuestData(id) then
+		quest = C_QuestLog.GetQuestInfo(id)
+		if not quest then
+			zcc.questQueryList[id] = true
+		end
+	elseif ref then
+		zcc.UpdateStepText(ref)
 	end
 	return quest
+end
+
+function zcc.GetQuestObjectives(id,ref)
+	local ctime = GetTime()
+	if ctime - timer > 0.5 then
+		timer = ctime
+		nrequests = 0
+	end
+	nrequests = nrequests + 1
+	if nrequests < 4 or HaveQuestData(id) then
+		return C_QuestLog.GetQuestObjectives(id)	
+	elseif ref then
+		zcc.UpdateStepText(ref)
+	end
 end
 
 function zcc.GetItemName(id)
@@ -114,16 +141,12 @@ function zcc.functions.accept(self,...)
 		if not id then return error("Error parsing guide "..zcc.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
 
 		element.questId = id
-		element.title = zcc.GetQuestName(id)
+		--element.title = zcc.GetQuestName(id)
 		if text and text ~= "" then
 			element.text = text
-		else
-			if element.title then
-				element.text = "Accept "..element.title
-			else
-				element.text = "Accept *quest*"
-				element.requestFromServer = true
-			end
+		else		
+			element.text = "Accept *quest*"
+			element.requestFromServer = true
 		end
 		--print("Q1",element.text)
 		element.tooltipText = zcc.icons.accept..element.text
@@ -132,7 +155,7 @@ function zcc.functions.accept(self,...)
 	else
 		local event,questId = ...
 		local id = self.element.questId
-		local quest = zcc.GetQuestName(id)
+		local quest = zcc.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
 			self.element.text = self.element.text:gsub("%*quest%*",quest)
@@ -168,23 +191,19 @@ function zcc.functions.turnin(self,...)
 		if not id then return error("Error parsing guide "..zcc.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
 		
 		element.questId = id
-		element.title = zcc.GetQuestName(id)
+		--element.title = zcc.GetQuestName(id)
 		if text and text ~= "" then
 			element.text = text
 		else
-			if element.title then
-				element.text = "Turn in "..element.title
-			else
-				element.text = "Turn in *quest*"
-				element.requestFromServer = true
-			end
+			element.text = "Turn in *quest*"
+			element.requestFromServer = true
 		end
 		element.tooltipText = zcc.icons.turnin..element.text
 		return element
 	else
 		local event,questId = ...
 		local id = self.element.questId
-		local quest = zcc.GetQuestName(id)
+		local quest = zcc.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
 			self.element.text = self.element.text:gsub("%*quest%*",quest)
@@ -219,13 +238,13 @@ function zcc.functions.complete(self,...)
 		
 		element.obj = tonumber(obj)
 
-		element.title = zcc.GetQuestName(id)
-		local objectives = C_QuestLog.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
+		--element.title = zcc.GetQuestName(id)
+		--local objectives = zcc.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
 		element.questId = id
 		if text and text ~= "" then
-			element.rawtext = text:gsub("%*quest%*",element.title)
+			--element.rawtext = text:gsub("%*quest%*",element.title)
 			element.text = element.rawtext
-			element.tooltipText = element.text
+			element.tooltipText = zcc.icons.complete..element.text
 		else
 			element.text = ""
 			element.requestFromServer = true
@@ -236,7 +255,7 @@ function zcc.functions.complete(self,...)
 
 		local icon = zcc.icons.complete
 		local id = self.element.questId
-		local objectives = C_QuestLog.GetQuestObjectives(id)
+		local objectives = zcc.GetQuestObjectives(id,self)
 		
 
 		--print(text)
@@ -285,20 +304,22 @@ function zcc.functions.complete(self,...)
 		else
 			self.element.text = "Error: invalid quest ID"
 			self.element.tooltipText = nil
+			zcc.UpdateStepText(self)
 			return
 		end
 		
 		
-		local quest = zcc.GetQuestName(id)
+		local quest = zcc.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
 		else
 			self.element.title = ""
 		end
-		
-		if not quest or objtext:match("^%s*:") then
+		local prefix = objtext:sub(1,1)
+		if not quest or prefix == " " or prefix == ":" then
+			--print('ding')
 			self.element.requestFromServer = true
-		else
+		elseif quest then
 			self.element.requestFromServer = nil
 		end
 		

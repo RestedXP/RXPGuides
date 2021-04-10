@@ -13,3 +13,5 @@ RXPGuides.lua
 map.lua
 functions.lua
 parser.lua
+
+Guides/GuideList.xml

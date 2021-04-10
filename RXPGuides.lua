@@ -346,7 +346,7 @@ function zcc.UpdateStepCompletion()
 				update = true
 				step.active = nil
 			elseif step.index >= RXPData.currentStep then
-				print('ok',RXPData.currentStep)
+				--print('ok',RXPData.currentStep)
 				return SetStep(step.index+1)
 			end
 		end
@@ -645,7 +645,7 @@ C_Timer.NewTicker(0.3473,function()
 	elseif zcc.updateStepText then
 		for n,element in pairs(zcc.stepUpdateList) do
 			zcc.UpdateBottomFrame(element)
-			print('ub',n)
+			--print('ub',n)
 			zcc.stepUpdateList[n] = nil
 		end
 		zcc.UpdateText()
@@ -886,7 +886,7 @@ function zcc.UpdateBottomFrame(self)
 		if factionCheck then
 			local text
 			for i,element in ipairs(frame.step.elements) do
-				if not self and element.requestFromServer then
+				if element.requestFromServer then
 					element.element = element
 					RXPG[zcc.currentGuide.group][element.tag](element)
 					zcc.updateStepText = true
