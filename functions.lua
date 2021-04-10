@@ -257,8 +257,8 @@ function zcc.functions.complete(self,...)
 
 		
 		local completed
-		if objectives then
-			if self.element.obj then
+		if objectives and #objectives > 0 then
+			if self.element.obj and self.element.obj <= #objectives then
 				local obj = objectives[self.element.obj]
 				local t = obj.text
 				if obj.type == "event" then 

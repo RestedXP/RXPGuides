@@ -162,15 +162,6 @@ end
 
 
 
-
-
-
-f:SetScript("OnShow", function(self)
-	UpdateWindow()
-end)
-
-
-
 local width,height = 250,250
 
 f:SetWidth(width)
