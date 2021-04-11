@@ -13,6 +13,7 @@ eventFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 
+
 GC_Debug = false
 
 
@@ -340,6 +341,7 @@ function zcc.UpdateStepCompletion()
 				step.active = nil
 			elseif step.index >= RXPData.currentStep then
 				step.completed = true
+				zcc.UpdateBottomFrame(nil,step.index)
 				return SetStep(step.index+1)
 			end
 		end
@@ -798,6 +800,9 @@ function zcc:LoadGuide(guide,OnLoad)
 	
 	for n,step in ipairs(guide.steps) do
 		step.index = n
+		if step.completewith then
+			step.sticky = true
+		end
 		if step.label then
 			guide.labels[step.label] = n
 		end
@@ -892,10 +897,10 @@ function zcc:LoadGuide(guide,OnLoad)
 	SetStep(RXPData.currentStep)
 end
 
-function zcc.UpdateBottomFrame(self)
+function zcc.UpdateBottomFrame(self,stepn)
 	
-	if self and self.step and zcc.stepPos[0] then
-		local stepNumber = self.step.index
+	if self and self.step and zcc.stepPos[0] or stepn then
+		local stepNumber = stepn or self.step.index
 		local frame = f.Steps.frame[stepNumber]
 		local step = frame.step
 		local fheight
@@ -903,7 +908,7 @@ function zcc.UpdateBottomFrame(self)
 		if factionCheck then
 			local text
 			for i,element in ipairs(frame.step.elements) do
-				if element.requestFromServer then
+				if element.requestFromServer and not stepn then
 					element.element = element
 					RXPG[zcc.currentGuide.group][element.tag](element)
 					zcc.updateStepText = true

@@ -3,17 +3,17 @@ zcc.functions.__index = zcc.functions
 zcc.functions.events = {}
 zcc.stepUpdateList = {}
 
-zcc.functions.events.collect = "BAG_UPDATE"
-zcc.functions.events.accept = "QUEST_ACCEPTED"
-zcc.functions.events.turnin = "QUEST_TURNED_IN"
-zcc.functions.events.complete = "QUEST_LOG_UPDATE"
-zcc.functions.events.collect = "BAG_UPDATE"
-zcc.functions.events.fp = "UI_INFO_MESSAGE"
-zcc.functions.events.hs = "UNIT_SPELLCAST_SUCCEEDED"
-zcc.functions.events.home = "HEARTHSTONE_BOUND"
-zcc.functions.events.fly = "ZONE_CHANGED"
-zcc.functions.events.deathskip = "CONFIRM_XP_LOSS"
-zcc.functions.events.xp = "PLAYER_XP_UPDATE"
+zcc.functions.events.collect = {"BAG_UPDATE"}
+zcc.functions.events.accept = {"QUEST_ACCEPTED"}
+zcc.functions.events.turnin = {"QUEST_TURNED_IN"}
+zcc.functions.events.complete = {"QUEST_LOG_UPDATE"}
+zcc.functions.events.collect = {"BAG_UPDATE"}
+zcc.functions.events.fp = {"UI_INFO_MESSAGE"}
+zcc.functions.events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
+zcc.functions.events.home = {"HEARTHSTONE_BOUND"}
+zcc.functions.events.fly = {"ZONE_CHANGED"}
+zcc.functions.events.deathskip = {"CONFIRM_XP_LOSS"}
+zcc.functions.events.xp = {"PLAYER_XP_UPDATE"}
 zcc.functions.events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
 zcc.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
 zcc.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
@@ -145,7 +145,7 @@ function zcc.functions.accept(self,...)
 		--print(element.rawtext)
 		return element
 	else
-		local event,questId = ...
+		local event,_,questId = ...
 		local id = self.element.questId
 		local quest = zcc.GetQuestName(id,self)
 		if quest then
@@ -162,8 +162,8 @@ function zcc.functions.accept(self,...)
 
 		self.element.tooltipText = zcc.icons.accept..self.element.text
 		
-		
-		if IsQuestFlaggedCompleted(id) or C_QuestLog.IsOnQuest(id) then
+
+		if IsQuestFlaggedCompleted(id) or C_QuestLog.IsOnQuest(id) or (questId == id)  then
 			zcc.SetElementComplete(self,true)
 		elseif self.element.completed then
 			zcc.SetElementIncomplete(self)
@@ -576,7 +576,7 @@ function zcc.functions.xp(self,...)
 	local currentXP = UnitXP("player")
 	local maxXP = UnitXPMax("player")
 	local level = UnitLevel("player")
-	
+	local element = self.element
 
 	if (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP - element.xp))) or			
 	   (element.xp >= 0 and ((level > element.level) or (element.level == level and element.xp >= currentXP))) then
@@ -689,28 +689,6 @@ function zcc.functions.tame(self,...)
 end
 
 
-
-function Guidelime.Zarant.TameBeast(self,args,event,target,guid,spellId)
-	if not self then 
-		return "UNIT_SPELLCAST_SUCCEEDED,UNIT_SPELLCAST_START,UNIT_SPELLCAST_FAILED"
-	end
-	if spellId == 1515 then
-		if event == "UNIT_SPELLCAST_FAILED" then
-			self.petId = nil
-			return
-		end
-		for i,v in ipairs(args) do
-			local id = tonumber(v)
-			if event == "UNIT_SPELLCAST_START" and (id == self.NpcId(target) or id == self.NpcId()) then
-				self.petId = id
-			elseif id and event == "UNIT_SPELLCAST_SUCCEEDED" and (id == self.NpcId(target) or id == self.NpcId() or id == self.petId) then
-				self.petId = nil
-				self:SkipStep()
-				return
-			end
-		end
-	end
-end
 
 
 
