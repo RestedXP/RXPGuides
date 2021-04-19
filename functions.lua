@@ -595,8 +595,8 @@ function RXP_.functions.xp(self,...)
 	local element = self.element
 
 	if (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP + element.xp))) or			
-	   (element.xp >= 1 and ((level > element.level) or (element.level == level and element.xp >= currentXP))) or
-	   (element.xp >= 0 and element.xp < 1 and ((level > element.level) or (element.level == level and maxXP*element.xp >= currentXP)))
+	   (element.xp >= 1 and ((level > element.level) or (element.level == level and currentXP >= element.xp))) or
+	   (element.xp >= 0 and element.xp < 1 and ((level > element.level) or (element.level == level and currentXP >= maxXP*element.xp)))
 	   then
 		RXP_.SetElementComplete(self,true)
 	end
