@@ -13,12 +13,12 @@ RXP_.functions.events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 RXP_.functions.events.home = {"HEARTHSTONE_BOUND"}
 RXP_.functions.events.fly = {"PLAYER_CONTROL_LOST","TAXIMAP_OPENED"}
 RXP_.functions.events.deathskip = {"CONFIRM_XP_LOSS"}
-RXP_.functions.events.xp = {"PLAYER_XP_UPDATE"}
+RXP_.functions.events.xp = {"PLAYER_XP_UPDATE","PLAYER_LEVEL_UP"}
 RXP_.functions.events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
 RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
 RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
 RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
-
+RXP_.functions.events.money = {"PLAYER_MONEY"}
 
 
 RXPG = {}
@@ -573,10 +573,9 @@ function RXP_.functions.xp(self,...)
 		if text and text ~= "" then
 			element.text = text
 		else
-			if element.xp then
-				if element.xp <= 0 then
-					element.text = string.format("Grind until you are %s xp away from level %s",xp,level)
-					element.level = element.level
+			if element.xp and element.xp ~= 0 then
+				if element.xp < 0 then
+					element.text = string.format("Grind until you are %d xp away from level %s",-1*element.xp,level)
 				elseif element.xp >= 1 then
 					element.text = string.format("Grind until you are %s xp into level %s",xp,level)
 				else
@@ -595,8 +594,10 @@ function RXP_.functions.xp(self,...)
 	local level = UnitLevel("player")
 	local element = self.element
 
-	if (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP - element.xp))) or			
-	   (element.xp >= 0 and ((level > element.level) or (element.level == level and element.xp >= currentXP))) then
+	if (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP + element.xp))) or			
+	   (element.xp >= 1 and ((level > element.level) or (element.level == level and element.xp >= currentXP))) or
+	   (element.xp >= 0 and element.xp < 1 and ((level > element.level) or (element.level == level and maxXP*element.xp >= currentXP)))
+	   then
 		RXP_.SetElementComplete(self,true)
 	end
 
@@ -705,8 +706,40 @@ function RXP_.functions.tame(self,...)
 	end
 end
 
-
-
+function RXP_.functions.money(self,...)
+	if type(self) == "number" then --on parse
+		local element = {}
+		local text,money = ...
+		local prefix = money:sub(1,1)
+		if prefix == "<" then
+			element.greaterThan = false
+		elseif prefix == ">" then
+			element.greaterThan = true
+		else
+			error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..": Invalid arguments")
+		end
+		element.money = tonumber(money:match("(%d+%.?%d*)"))
+		if element.money then
+			element.money = element.money * 1e4
+		else
+			error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..": Invalid arguments")
+		end
+		element.textOnly = true
+		if text and text ~= "" then
+			element.text = text
+		end
+		return element
+	end
+	
+	if GetMoney() >= self.element.money then
+		self.element.step.completed = self.element.greaterThan
+	else
+		self.element.step.completed = not(self.element.greaterThan)
+	end
+	if self.element.step.completed then
+		RXP_.updateSteps = true
+	end
+end
 
 
 function RXP_.functions.next(skip)
