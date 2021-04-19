@@ -11,7 +11,7 @@ RXP_.functions.events.collect = {"BAG_UPDATE"}
 RXP_.functions.events.fp = {"UI_INFO_MESSAGE"}
 RXP_.functions.events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 RXP_.functions.events.home = {"HEARTHSTONE_BOUND"}
-RXP_.functions.events.fly = {"ZONE_CHANGED"}
+RXP_.functions.events.fly = {"PLAYER_CONTROL_LOST","TAXIMAP_OPENED"}
 RXP_.functions.events.deathskip = {"CONFIRM_XP_LOSS"}
 RXP_.functions.events.xp = {"PLAYER_XP_UPDATE"}
 RXP_.functions.events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
@@ -131,7 +131,7 @@ function RXP_.functions.accept(self,...)
 		local text,id = ...
 		id = tonumber(id)
 		if not id then return error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
-
+		element.title = ""
 		element.questId = id
 		--element.title = RXP_.GetQuestName(id)
 		if text and text ~= "" then
@@ -150,6 +150,7 @@ function RXP_.functions.accept(self,...)
 		local quest = RXP_.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
+			RXP_.questAccept[quest] = true
 			self.element.text = self.element.text:gsub("%*quest%*",quest)
 			if self.element.requestFromServer then
 				self.element.requestFromServer = nil
@@ -183,6 +184,7 @@ function RXP_.functions.turnin(self,...)
 		if not id then return error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
 		
 		element.questId = id
+		element.title = ""
 		--element.title = RXP_.GetQuestName(id)
 		if text and text ~= "" then
 			element.text = text
@@ -198,6 +200,7 @@ function RXP_.functions.turnin(self,...)
 		local quest = RXP_.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
+			RXP_.questTurnIn[quest] = true
 			self.element.text = self.element.text:gsub("%*quest%*",quest)
 			if self.element.requestFromServer then
 				self.element.requestFromServer = nil
@@ -428,13 +431,14 @@ function RXP_.functions.fp(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,location = ...
-		element.tag = "home"
+		element.tag = "fp"
 		if text and text ~= "" then
 			element.text = text
 		else
 			element.textOnly = true
 			element.text = "Get the "..location.." flight path"
 		end
+		
 		element.tooltipText = RXP_.icons.fp..element.text
 		return element
 	end
@@ -444,23 +448,36 @@ function RXP_.functions.fp(self,...)
 	end
 end
 
+RXP_.taxiTime = 0
+hooksecurefunc("TakeTaxiNode", function(index)
+    RXP_.taxiTime = GetTime()
+end)
+
 function RXP_.functions.fly(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,location = ...
-		element.tag = "home"
+		element.tag = "fly"
 		if text and text ~= "" then
 			element.text = text
 		else
 			element.textOnly = true
 			element.text = "Fly to "..location
 		end
+		element.location = location
 		element.tooltipText = RXP_.icons.fly..element.text
 		return element
 	end
 	local event = ...
-	if event == "ZONE_CHANGED" and UnitOnTaxi("player") then
+	if event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1 then
 		RXP_.SetElementComplete(self)
+	elseif event == "TAXIMAP_OPENED" and not RXPData.disableAutoFP then
+		for i = 1,NumTaxiNodes() do
+			local name = TaxiNodeName(i)
+			if name and name:match(self.element.location) then
+				return TakeTaxiNode(i)
+			end
+		end
 	end
 end
 

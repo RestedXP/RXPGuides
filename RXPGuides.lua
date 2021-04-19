@@ -1,22 +1,24 @@
-﻿
+﻿RXP_ = RXP_ or {}
+
 local version = select(4, GetBuildInfo())
 
-local _CreateFrame = CreateFrame
-local CreateFrame = _CreateFrame
+RXP_.CreateFrame = CreateFrame
+local CreateFrame = RXP_.CreateFrame
 if version < 20500 then
 	CreateFrame = function(arg1,arg2,arg3,arg4,...)
 		if arg4 == "BackdropTemplate" then
 			arg4 = nil
 		end
-		return _CreateFrame(arg1,arg2,arg3,arg4,...)
+		return RXP_.CreateFrame(arg1,arg2,arg3,arg4,...)
 	end
 end
 
 
-RXP_ = RXP_ or {}
-RXP_.guidegroup = "Z1"
 RXP_.questQueryList = {}
 RXP_.itemQueryList = {}
+RXP_.questAccept = {}
+RXP_.questTurnIn = {}
+
 local eventFrame = CreateFrame("Frame");
 local f = CreateFrame("Frame", "RXPG_MAIN", UIParent, "BackdropTemplate")
 f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, "BackdropTemplate")
@@ -24,9 +26,13 @@ f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, "BackdropTemplate")
 eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
-eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
-
+eventFrame:RegisterEvent("QUEST_COMPLETE")
+eventFrame:RegisterEvent("QUEST_PROGRESS")
+eventFrame:RegisterEvent("QUEST_ACCEPT_CONFIRM")
+eventFrame:RegisterEvent("QUEST_GREETING")
+eventFrame:RegisterEvent("GOSSIP_SHOW")
+eventFrame:RegisterEvent("QUEST_DETAIL")
 
 RXPG_Debug = false
 
@@ -39,7 +45,8 @@ end
 
 
 local startTime = GetTime()
-
+local questProgressTimer = 0
+local questTimer = 0
 
 eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
@@ -55,6 +62,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			RXP_.updateStepText = true
 			--SetStep(RXPData.currentStep)
 		end
+		return
 	elseif event == "GET_ITEM_INFO_RECEIVED" and arg2 then
 		if RXP_.itemQueryList[arg1] then
 			RXP_.itemQueryList[arg1] = nil
@@ -62,14 +70,75 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		elseif GetTime() - startTime < 15 then
 			RXP_.updateStepText = true
 		end
+		return
 	elseif event == "PLAYER_LOGIN" then
 		RXPG_init()
 		RXP_.GenerateMenuTable()
 		loadtime = GetTime()
+		return
+	end
+	
+	--if IsShiftKeyDown() ~= not RXPData.automateQuests then return end
+	
+	if event == "QUEST_COMPLETE" then
+		if GetNumQuestChoices() <= 1 and GetTime() - questTimer > 0.1 then
+			GetQuestReward(GetNumQuestChoices())
+			questTimer = GetTime()
+		end
+		
+	elseif event == "QUEST_PROGRESS" and IsQuestCompletable() and GetTime() - questProgressTimer > 0.1 then
+		CompleteQuest()
+		questProgressTimer = GetTime()
+		
+	elseif event == "QUEST_DETAIL" then
+		local id = GetQuestID()
+        local title = C_QuestLog.GetQuestInfo(id)
+		if RXP_.questAccept[title] then
+			AcceptQuest()
+			HideUIPanel(QuestFrame)
+		end
+		
+	elseif event == "QUEST_ACCEPT_CONFIRM" and RXP_.questAccept[arg2] then
+		ConfirmAcceptQuest() 
+		StaticPopup_Hide("QUEST_ACCEPT")
+		
+	elseif event == "QUEST_GREETING" then
+		for i = 1, GetNumActiveQuests() do
+			local title, isComplete = GetActiveTitle(i)
+			if title and RXP_.questTurnIn[title] and isComplete then
+				return SelectActiveQuest(i)
+			end
+		end
+		
+		for i = 1, GetNumAvailableQuests() do
+			local title, isComplete = GetAvailableTitle(i)
+			if title and RXP_.questAccept[title] and not isComplete then
+				return SelectAvailableQuest(i)
+			end
+		end
+		
+	elseif event == "GOSSIP_SHOW" then
+		local nActive = GetNumGossipActiveQuests()
+		local nAvailable = GetNumGossipAvailableQuests()
+
+		for i = 1, nActive do
+			local title, level, isTrivial, isComplete = select(i * 6 - 5, GetGossipActiveQuests())
+			if title and RXP_.questTurnIn[title] and isComplete then
+				return SelectGossipActiveQuest(i)
+			end
+		end
+		
+		for i = 1, nAvailable do
+			local title = select(i * 7 - 6, GetGossipAvailableQuests())
+			if title and RXP_.questAccept[title] then
+				return SelectGossipAvailableQuest(i)
+			end
+		end
+		
 	end
 
+	
 	--debugMsg(event)
-
 end)
 
 
@@ -268,7 +337,8 @@ end
 
 f.CurrentStepFrame.frame = {}
 function f.ClearFrameData()
-	
+	RXP_.questAccept = {}
+	RXP_.questTurnIn = {}
 	for i,stepframe in ipairs(f.CurrentStepFrame.frame) do
 		--frame:SetHeight(0)
 		stepframe:Hide()
