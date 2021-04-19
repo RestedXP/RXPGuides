@@ -64,6 +64,9 @@ function RXPG.RegisterGuide(guideGroup,text)
 					step[steptag] = value
 				end
 			end
+			if steptag == "name" then
+				RXP_.currentGuideName = value
+			end
 			return
 		end
 		

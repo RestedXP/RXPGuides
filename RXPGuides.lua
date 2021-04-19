@@ -75,6 +75,8 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		RXPG_init()
 		RXP_.GenerateMenuTable()
 		loadtime = GetTime()
+		local guide = RXP_.GetGuideTable(RXPData.currentGuideGroup,RXPData.currentGuideName)
+		RXP_:LoadGuide(guide,true)
 		return
 	end
 	
@@ -143,7 +145,9 @@ end)
 
 
 function RXP_.GetGuideTable(guideGroup,guideName)
-	return RXP_.guides[RXP_.guideList[guideGroup][guideName]]
+	if guideGroup and RXP_.guideList[guideGroup] and guideName and RXP_.guideList[guideGroup][guideName] then
+		return RXP_.guides[RXP_.guideList[guideGroup][guideName]]
+	end
 end
 
 
@@ -863,12 +867,16 @@ f.SF:SetScrollChild(f.Steps)
 
 local currentAlpha
 function RXP_:LoadGuide(guide,OnLoad)
+	if not guide then
+		if OnLoad then
+			return
+		else
+			return error('Guide not found')
+		end
+	end
 	startTime = GetTime()
 	CloseDropDownMenus()
 	C_Timer.After(10,function() RXP_.updateBottomFrame = true end)
-	if not guide then
-		return error('Guide not found')
-	end
 	if not (OnLoad and RXPData.currentStep) then
 		RXPData.currentStep = 1
 	end
@@ -877,6 +885,8 @@ function RXP_:LoadGuide(guide,OnLoad)
 	local nframes = 0
 	RXP_.currentGuide = guide
 	RXP_.currentGuideName = guide.name
+	RXPData.currentGuideName = guide.name
+	RXPData.currentGuideGroup = guide.group
 	f.GuideName.text:SetText(guide.displayName)
 	local nameWidth = f.GuideName.text:GetStringWidth()+10
 	f.GuideName:SetWidth(nameWidth)
