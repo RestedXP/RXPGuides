@@ -1,23 +1,23 @@
-zcc.functions = {}
-zcc.functions.__index = zcc.functions
-zcc.functions.events = {}
-zcc.stepUpdateList = {}
+RXP_.functions = {}
+RXP_.functions.__index = RXP_.functions
+RXP_.functions.events = {}
+RXP_.stepUpdateList = {}
 
-zcc.functions.events.collect = {"BAG_UPDATE"}
-zcc.functions.events.accept = {"QUEST_ACCEPTED"}
-zcc.functions.events.turnin = {"QUEST_TURNED_IN"}
-zcc.functions.events.complete = {"QUEST_LOG_UPDATE"}
-zcc.functions.events.collect = {"BAG_UPDATE"}
-zcc.functions.events.fp = {"UI_INFO_MESSAGE"}
-zcc.functions.events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
-zcc.functions.events.home = {"HEARTHSTONE_BOUND"}
-zcc.functions.events.fly = {"ZONE_CHANGED"}
-zcc.functions.events.deathskip = {"CONFIRM_XP_LOSS"}
-zcc.functions.events.xp = {"PLAYER_XP_UPDATE"}
-zcc.functions.events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
-zcc.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
-zcc.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
-zcc.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
+RXP_.functions.events.collect = {"BAG_UPDATE"}
+RXP_.functions.events.accept = {"QUEST_ACCEPTED"}
+RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
+RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
+RXP_.functions.events.collect = {"BAG_UPDATE"}
+RXP_.functions.events.fp = {"UI_INFO_MESSAGE"}
+RXP_.functions.events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
+RXP_.functions.events.home = {"HEARTHSTONE_BOUND"}
+RXP_.functions.events.fly = {"ZONE_CHANGED"}
+RXP_.functions.events.deathskip = {"CONFIRM_XP_LOSS"}
+RXP_.functions.events.xp = {"PLAYER_XP_UPDATE"}
+RXP_.functions.events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
+RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
+RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
+RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
 
 
 
@@ -25,7 +25,7 @@ RXPG = {}
 
 local timer = GetTime()
 local nrequests = 0
-function zcc.GetQuestName(id,ref)
+function RXP_.GetQuestName(id,ref)
 	local ctime = GetTime()
 	if ctime - timer > 0.66 then
 		timer = ctime
@@ -36,15 +36,15 @@ function zcc.GetQuestName(id,ref)
 	if nrequests < 4 or HaveQuestData(id) then
 		quest = C_QuestLog.GetQuestInfo(id)
 		if not quest then
-			zcc.questQueryList[id] = true
+			RXP_.questQueryList[id] = true
 		end
 	elseif ref then
-		zcc.UpdateStepText(ref)
+		RXP_.UpdateStepText(ref)
 	end
 	return quest
 end
 
-function zcc.GetQuestObjectives(id,ref)
+function RXP_.GetQuestObjectives(id,ref)
 	local ctime = GetTime()
 	if ctime - timer > 0.66 then
 		timer = ctime
@@ -54,24 +54,24 @@ function zcc.GetQuestObjectives(id,ref)
 	if nrequests < 4 or HaveQuestData(id) then
 		return C_QuestLog.GetQuestObjectives(id)	
 	elseif ref then
-		zcc.UpdateStepText(ref)
+		RXP_.UpdateStepText(ref)
 	end
 end
 
-function zcc.GetItemName(id)
+function RXP_.GetItemName(id)
 	local name = GetItemInfo(id)
 	if not name then
-		zcc.itemQueryList[id] = true
+		RXP_.itemQueryList[id] = true
 	end
 	return name
 end
 
 
-function zcc.SetElementComplete(self,disable)
+function RXP_.SetElementComplete(self,disable)
 	if not self.element.completed then
 		self.element.completed = true
-		zcc.updateSteps = true
-		zcc.updateMap = true
+		RXP_.updateSteps = true
+		RXP_.updateMap = true
 	end
 	if self.button then
 		--print('----ok',disable)
@@ -82,10 +82,10 @@ function zcc.SetElementComplete(self,disable)
 	end
 end
 
-function zcc.SetElementIncomplete(self)
+function RXP_.SetElementIncomplete(self)
 	if self.element.completed then
 		self.element.completed = false
-		zcc.updateMap = true
+		RXP_.updateMap = true
 	end
 	if self.button then
 		self.button:Enable()
@@ -95,12 +95,12 @@ function zcc.SetElementIncomplete(self)
 	end
 end
 
-function zcc.UpdateStepText(self)
-	zcc.updateStepText = true
-	zcc.stepUpdateList[self.step.index] = self
+function RXP_.UpdateStepText(self)
+	RXP_.updateStepText = true
+	RXP_.stepUpdateList[self.step.index] = self
 end
 
-function zcc.AldorScryerCheck(step)
+function RXP_.AldorScryerCheck(step)
 	if step.aldor then
 		name, description, standingID = GetFactionInfoByID(932)
 		return (standingID and standingID >= 5),"Aldor"
@@ -111,7 +111,7 @@ function zcc.AldorScryerCheck(step)
 	return true
 end
 
-function zcc.GetNpcId(unit)
+function RXP_.GetNpcId(unit)
 	if not unit then
 		unit = "target"
 	end
@@ -124,16 +124,16 @@ local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 
 
-function zcc.functions.accept(self,...)
+function RXP_.functions.accept(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		element.tag = "accept"
 		local text,id = ...
 		id = tonumber(id)
-		if not id then return error("Error parsing guide "..zcc.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
+		if not id then return error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
 
 		element.questId = id
-		--element.title = zcc.GetQuestName(id)
+		--element.title = RXP_.GetQuestName(id)
 		if text and text ~= "" then
 			element.text = text
 		else		
@@ -141,102 +141,102 @@ function zcc.functions.accept(self,...)
 			element.requestFromServer = true
 		end
 		--print("Q1",element.text)
-		element.tooltipText = zcc.icons.accept..element.text
+		element.tooltipText = RXP_.icons.accept..element.text
 		--print(element.rawtext)
 		return element
 	else
 		local event,_,questId = ...
 		local id = self.element.questId
-		local quest = zcc.GetQuestName(id,self)
+		local quest = RXP_.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
 			self.element.text = self.element.text:gsub("%*quest%*",quest)
 			if self.element.requestFromServer then
 				self.element.requestFromServer = nil
-				zcc.UpdateStepText(self)
+				RXP_.UpdateStepText(self)
 			end
 		else
 			self.element.title = ""
 			self.element.requestFromServer = true
 		end
 
-		self.element.tooltipText = zcc.icons.accept..self.element.text
+		self.element.tooltipText = RXP_.icons.accept..self.element.text
 		
 
 		if IsQuestFlaggedCompleted(id) or C_QuestLog.IsOnQuest(id) or (questId == id)  then
-			zcc.SetElementComplete(self,true)
+			RXP_.SetElementComplete(self,true)
 		elseif self.element.completed then
-			zcc.SetElementIncomplete(self)
+			RXP_.SetElementIncomplete(self)
 		end
 		
 	end
 	
 end
 
-function zcc.functions.turnin(self,...)
+function RXP_.functions.turnin(self,...)
 	 
 	if type(self) == "number" then --on parse
 		local element = {}
 		element.tag = "turnin"
 		local text,id = ...
 		id = tonumber(id)
-		if not id then return error("Error parsing guide "..zcc.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
+		if not id then return error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
 		
 		element.questId = id
-		--element.title = zcc.GetQuestName(id)
+		--element.title = RXP_.GetQuestName(id)
 		if text and text ~= "" then
 			element.text = text
 		else
 			element.text = "Turn in *quest*"
 			element.requestFromServer = true
 		end
-		element.tooltipText = zcc.icons.turnin..element.text
+		element.tooltipText = RXP_.icons.turnin..element.text
 		return element
 	else
 		local event,questId = ...
 		local id = self.element.questId
-		local quest = zcc.GetQuestName(id,self)
+		local quest = RXP_.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
 			self.element.text = self.element.text:gsub("%*quest%*",quest)
 			if self.element.requestFromServer then
 				self.element.requestFromServer = nil
-				zcc.UpdateStepText(self)
+				RXP_.UpdateStepText(self)
 			end
 		else
 			self.element.title = ""
 			self.element.requestFromServer = true
 		end
-		self.element.tooltipText = zcc.icons.turnin..self.element.text
-		zcc.UpdateStepText(self)
+		self.element.tooltipText = RXP_.icons.turnin..self.element.text
+		RXP_.UpdateStepText(self)
 		
 		local isComplete = IsQuestFlaggedCompleted(id)
 		if isComplete then
-			zcc.SetElementComplete(self,true)
+			RXP_.SetElementComplete(self,true)
 		elseif questId == id then --repeatable quests
-			zcc.SetElementComplete(self)
+			RXP_.SetElementComplete(self)
 		end
 	end
 
 end
 
-function zcc.functions.complete(self,...)
+function RXP_.functions.complete(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		element.tag = "complete"
 		local text,id,obj = ...
 		id = tonumber(id)
-		if not id then return error("Error parsing guide "..zcc.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
+		if not id then return error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
 		
 		element.obj = tonumber(obj)
 
-		--element.title = zcc.GetQuestName(id)
-		--local objectives = zcc.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
+		--element.title = RXP_.GetQuestName(id)
+		--local objectives = RXP_.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
 		element.questId = id
 		if text and text ~= "" then
 			--element.rawtext = text:gsub("%*quest%*",element.title)
 			element.text = element.rawtext
-			element.tooltipText = zcc.icons.complete..element.text
+			element.tooltipText = RXP_.icons.complete..element.text
 		else
 			element.text = ""
 			element.requestFromServer = true
@@ -245,9 +245,9 @@ function zcc.functions.complete(self,...)
 		return element
 	else
 
-		local icon = zcc.icons.complete
+		local icon = RXP_.icons.complete
 		local id = self.element.questId
-		local objectives = zcc.GetQuestObjectives(id,self)
+		local objectives = RXP_.GetQuestObjectives(id,self)
 		
 
 		--print(text)
@@ -296,12 +296,12 @@ function zcc.functions.complete(self,...)
 		else
 			self.element.text = "Error: invalid quest ID"
 			self.element.tooltipText = nil
-			zcc.UpdateStepText(self)
+			RXP_.UpdateStepText(self)
 			return
 		end
 		
 		
-		local quest = zcc.GetQuestName(id,self)
+		local quest = RXP_.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
 		else
@@ -332,19 +332,19 @@ function zcc.functions.complete(self,...)
 		--print(text)
 		self.element.text = text
 		
-		zcc.UpdateStepText(self)
+		RXP_.UpdateStepText(self)
 
 		if completed then	
-			zcc.SetElementComplete(self,true)
+			RXP_.SetElementComplete(self,true)
 		else
-			zcc.SetElementIncomplete(self)
+			RXP_.SetElementIncomplete(self)
 		end
 	end
 	
 end
 
 local lastZone
-function zcc.functions.goto(self,...)
+function RXP_.functions.goto(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		element.tag = "goto"
@@ -358,11 +358,11 @@ function zcc.functions.goto(self,...)
 		element.y = tonumber(y)
 		element.radius = tonumber(radius)
 		radius = element.radius
-		element.zone = zcc.mapId[zone]
+		element.zone = RXP_.mapId[zone]
 		element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(x/100, y/100, element.zone)
 		element.arrow = true
 		element.parent = true
-		if not (zone and x and y) then return error("Error parsing guide "..zcc.currentGuideName.." at line "..tostring(self)..": Invalid coordinates or map name") end
+		if not (zone and x and y) then return error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..": Invalid coordinates or map name") end
 
 		element.text = text
 		element.textOnly = true
@@ -374,7 +374,7 @@ function zcc.functions.goto(self,...)
 				end
 				element.parent = nil
 				element.textOnly = nil
-				element.tooltipText = zcc.icons.goto..element.text
+				element.tooltipText = RXP_.icons.goto..element.text
 			elseif radius <= 0 then
 				element.arrow = nil
 			end
@@ -384,7 +384,7 @@ function zcc.functions.goto(self,...)
 end
 
 
-function zcc.functions.hs(self,...)
+function RXP_.functions.hs(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		element.tag = "hs"
@@ -395,16 +395,16 @@ function zcc.functions.hs(self,...)
 			element.textOnly = true
 			element.text = "Set your Hearthstone to "..location
 		end
-		element.tooltipText = zcc.icons.hs..element.text
+		element.tooltipText = RXP_.icons.hs..element.text
 		return element
 	end
 	local event,unit,_,id = ...
 	if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and id == 8690 then
-		zcc.SetElementComplete(self)
+		RXP_.SetElementComplete(self)
 	end
 end
 
-function zcc.functions.home(self,...)
+function RXP_.functions.home(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,location = ...
@@ -415,16 +415,16 @@ function zcc.functions.home(self,...)
 			element.textOnly = true
 			element.text = "Set your Hearthstone to "..location
 		end
-		element.tooltipText = zcc.icons.home..element.text
+		element.tooltipText = RXP_.icons.home..element.text
 		return element
 	end
 	local event = ...
 	if event == "HEARTHSTONE_BOUND" then
-		zcc.SetElementComplete(self)
+		RXP_.SetElementComplete(self)
 	end
 end
 
-function zcc.functions.fp(self,...)
+function RXP_.functions.fp(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,location = ...
@@ -435,16 +435,16 @@ function zcc.functions.fp(self,...)
 			element.textOnly = true
 			element.text = "Get the "..location.." flight path"
 		end
-		element.tooltipText = zcc.icons.fp..element.text
+		element.tooltipText = RXP_.icons.fp..element.text
 		return element
 	end
 	local event,arg1,arg2 = ...
 	if event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH then
-		zcc.SetElementComplete(self)
+		RXP_.SetElementComplete(self)
 	end
 end
 
-function zcc.functions.fly(self,...)
+function RXP_.functions.fly(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,location = ...
@@ -455,12 +455,12 @@ function zcc.functions.fly(self,...)
 			element.textOnly = true
 			element.text = "Fly to "..location
 		end
-		element.tooltipText = zcc.icons.fly..element.text
+		element.tooltipText = RXP_.icons.fly..element.text
 		return element
 	end
 	local event = ...
 	if event == "ZONE_CHANGED" and UnitOnTaxi("player") then
-		zcc.SetElementComplete(self)
+		RXP_.SetElementComplete(self)
 	end
 end
 
@@ -468,7 +468,7 @@ end
 --
 
 --"CONFIRM_XP_LOSS,PLAYER_UNGHOST"
-function zcc.functions.deathskip(self,...)
+function RXP_.functions.deathskip(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text = ...
@@ -478,16 +478,16 @@ function zcc.functions.deathskip(self,...)
 		else
 			element.text = "Die and respawn at the graveyard"
 		end
-		element.tooltipText = zcc.icons.deathskip..element.text
+		element.tooltipText = RXP_.icons.deathskip..element.text
 		return element
 	end
 	local event = ...
 	if event == "CONFIRM_XP_LOSS" then
-		zcc.SetElementComplete(self)
+		RXP_.SetElementComplete(self)
 	end
 end
 
-function zcc.functions.collect(self,...)
+function RXP_.functions.collect(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		element.tag = "collect"
@@ -500,11 +500,11 @@ function zcc.functions.collect(self,...)
 		element.id = id
 		qty = tonumber(qty)
 		element.qty = qty or 1
-		element.itemName = zcc.GetItemName(id)
+		element.itemName = RXP_.GetItemName(id)
 		
 		if text and text ~= "" then
 			element.rawtext = text
-			element.tooltipText = zcc.icons.collect..element.rawtext
+			element.tooltipText = RXP_.icons.collect..element.rawtext
 		else
 			element.requestFromServer = true
 			element.text = " "
@@ -512,7 +512,7 @@ function zcc.functions.collect(self,...)
 		return element
 	end
 
-	local name = zcc.GetItemName(self.element.id)
+	local name = RXP_.GetItemName(self.element.id)
 	
 	if name then
 		self.element.requestFromServer = nil
@@ -528,22 +528,22 @@ function zcc.functions.collect(self,...)
 	end
 	
 	if self.element.rawtext then
-		self.element.tooltipText = zcc.icons.collect..self.element.rawtext
+		self.element.tooltipText = RXP_.icons.collect..self.element.rawtext
 		self.element.text = string.format("%s\n%s: %d/%d",self.element.rawtext,self.element.itemName,count,self.element.qty)
 	else
 		self.element.text = string.format("%s: %d/%d",self.element.itemName,count,self.element.qty)
-		self.element.tooltipText = zcc.icons.collect..self.element.text
+		self.element.tooltipText = RXP_.icons.collect..self.element.text
 	end
-	zcc.UpdateStepText(self)
+	RXP_.UpdateStepText(self)
 	
 	if count >= self.element.qty then
-		zcc.SetElementComplete(self,true)
+		RXP_.SetElementComplete(self,true)
 	else
-		zcc.SetElementIncomplete(self)
+		RXP_.SetElementIncomplete(self)
 	end
 end
 
-function zcc.functions.xp(self,...)
+function RXP_.functions.xp(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,str = ...
@@ -570,7 +570,7 @@ function zcc.functions.xp(self,...)
 			end
 		end
 		if not element.xp then element.xp = 0 end
-		element.tooltipText = zcc.icons.xp..element.text
+		element.tooltipText = RXP_.icons.xp..element.text
 		return element
 	end
 	local currentXP = UnitXP("player")
@@ -580,12 +580,12 @@ function zcc.functions.xp(self,...)
 
 	if (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP - element.xp))) or			
 	   (element.xp >= 0 and ((level > element.level) or (element.level == level and element.xp >= currentXP))) then
-		zcc.SetElementComplete(self,true)
+		RXP_.SetElementComplete(self,true)
 	end
 
 end
 
-function zcc.functions.vendor(self,...)
+function RXP_.functions.vendor(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,id = ...
@@ -595,7 +595,7 @@ function zcc.functions.vendor(self,...)
 		else
 			element.text = "Sell junk/resupply"
 		end
-		element.tooltipText = zcc.icons.vendor..element.text
+		element.tooltipText = RXP_.icons.vendor..element.text
 		return element
 	end
 	
@@ -603,14 +603,14 @@ function zcc.functions.vendor(self,...)
 	local id = self.element.id
 	
 	if event == "MERCHANT_SHOW" then
-		self.element.activity = zcc.GetNpcId()
+		self.element.activity = RXP_.GetNpcId()
 	elseif event == "MERCHANT_CLOSED" and (self.activity == id or not id) then
 		self.element.activity = nil
-		zcc.SetElementComplete(self)
+		RXP_.SetElementComplete(self)
 	end
 end
 
-function zcc.functions.trainer(self,...)
+function RXP_.functions.trainer(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,id = ...
@@ -620,7 +620,7 @@ function zcc.functions.trainer(self,...)
 		else
 			element.text = "Train skills"
 		end
-		element.tooltipText = zcc.icons.trainer..element.text
+		element.tooltipText = RXP_.icons.trainer..element.text
 		return element
 	end
 	
@@ -628,14 +628,14 @@ function zcc.functions.trainer(self,...)
 	local id = self.element.id
 	
 	if event == "TRAINER_SHOW" then
-		self.element.activity = zcc.GetNpcId()
+		self.element.activity = RXP_.GetNpcId()
 	elseif event == "TRAINER_CLOSED" and (self.activity == id or not id) then
 		self.element.activity = nil
-		zcc.SetElementComplete(self)
+		RXP_.SetElementComplete(self)
 	end
 end
 
-function zcc.functions.stable(self,...)
+function RXP_.functions.stable(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,id = ...
@@ -645,7 +645,7 @@ function zcc.functions.stable(self,...)
 		else
 			element.text = "Stablee your pet"
 		end
-		element.tooltipText = zcc.icons.stable..element.text
+		element.tooltipText = RXP_.icons.stable..element.text
 		return element
 	end
 	
@@ -653,14 +653,14 @@ function zcc.functions.stable(self,...)
 	local id = self.element.id
 	
 	if event == "PET_STABLE_SHOW" then
-		self.element.activity = zcc.GetNpcId()
+		self.element.activity = RXP_.GetNpcId()
 	elseif event == "PET_STABLE_CLOSED" and (self.activity == id or not id) then
 		self.element.activity = nil
-		zcc.SetElementComplete(self)
+		RXP_.SetElementComplete(self)
 	end
 end
 
-function zcc.functions.tame(self,...)
+function RXP_.functions.tame(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
 		local text,id = ...
@@ -670,7 +670,7 @@ function zcc.functions.tame(self,...)
 		else
 			element.text = "-"
 		end
-		element.tooltipText = zcc.icons.tame..element.text
+		element.tooltipText = RXP_.icons.tame..element.text
 		return element
 	end
 	
@@ -682,7 +682,7 @@ function zcc.functions.tame(self,...)
 			self.element.petId = id
 		elseif id and event == "UNIT_SPELLCAST_SUCCEEDED" and id == self.element.petId then
 			self.element.petId = nil
-			zcc.SetElementComplete(self)
+			RXP_.SetElementComplete(self)
 			return
 		end
 	end
@@ -692,20 +692,20 @@ end
 
 
 
-function zcc.functions.next(skip)
+function RXP_.functions.next(skip)
 	if skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then 
 		return 
 	end
-	local guide = zcc.currentGuide
+	local guide = RXP_.currentGuide
 	if guide.next then
 		local group = guide.group
 		local next = guide.next:gsub("^(.+)\\",function(grp)
 			group = grp
 			return ""
 		end)
-		local nextGuide = zcc.GetGuideTable(group,next)
+		local nextGuide = RXP_.GetGuideTable(group,next)
 		if nextGuide then
-			return zcc:LoadGuide(nextGuide)
+			return RXP_:LoadGuide(nextGuide)
 		end
 	end
 end

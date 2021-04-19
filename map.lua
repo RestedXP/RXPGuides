@@ -1,4 +1,4 @@
-zcc.mapId = {
+RXP_.mapId = {
 ["Durotar"] = 1411,
 ["Mulgore"] = 1412,
 ["The Barrens"] = 1413,
@@ -65,11 +65,11 @@ zcc.mapId = {
 
 local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
-zcc.activeWaypoints = {}
-zcc.mapPins = {}
+RXP_.activeWaypoints = {}
+RXP_.mapPins = {}
 
-zcc.arrowFrame = CreateFrame("Frame","RXPG_ARROW",UIParent)
-local af = zcc.arrowFrame
+RXP_.arrowFrame = CreateFrame("Frame","RXPG_ARROW",UIParent)
+local af = RXP_.arrowFrame
 af:SetMovable(true)
 af:EnableMouse(1)
 af:SetClampedToScreen(true)
@@ -98,7 +98,7 @@ af:SetScript("OnMouseUp", function(self,button)
 	af:StopMovingOrSizing()
 end)
 
-function zcc.UpdateArrow(self)
+function RXP_.UpdateArrow(self)
 
 if RXPData.disableArrow or not self then
 	return
@@ -127,10 +127,10 @@ end
 end
 
 
-zcc.arrowFrame:SetScript("OnUpdate",zcc.UpdateArrow)
+RXP_.arrowFrame:SetScript("OnUpdate",RXP_.UpdateArrow)
 
-function zcc.UpdateGotoSteps()
-	for i,element in ipairs(zcc.activeWaypoints) do
+function RXP_.UpdateGotoSteps()
+	for i,element in ipairs(RXP_.activeWaypoints) do
 		if not element.step.active then
 			return
 		end
@@ -138,7 +138,7 @@ function zcc.UpdateGotoSteps()
 			local x,y,instance = HBD:GetPlayerWorldPosition()
 			local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
 			if dist <= element.radius then
-				zcc.SetElementComplete(element.frame)
+				RXP_.SetElementComplete(element.frame)
 			end
 		end
 	end
@@ -156,7 +156,7 @@ local function TooltipHandler(self)
 	else
 		text = self.element.tooltipText
 	end
-	text = text or zcc.MainFrame.Steps.frame[self.step.index].text:GetText()
+	text = text or RXP_.MainFrame.Steps.frame[self.step.index].text:GetText()
 	if text then
 		GameTooltip:SetOwner(self, "ANCHOR_RIGHT",0,0)
 		GameTooltip:ClearLines()
@@ -169,7 +169,7 @@ local function TooltipHandler(self)
 			elseif not element.hideTooltip then
 				text = element.tooltipText
 			end
-			text = text or zcc.MainFrame.Steps.frame[element.step.index].text:GetText()
+			text = text or RXP_.MainFrame.Steps.frame[element.step.index].text:GetText()
 			GameTooltip:AddLine("Step "..element.step.index,206/255,123/255,1,1)
 			GameTooltip:AddLine(text)
 		end
@@ -184,8 +184,8 @@ function CreateWPframe(id,step,element)
   
 
 	
-	zcc.mapPins[id] = zcc.mapPins[id] or CreateFrame("Button", "RXP_MAP_"..tostring(#zcc.mapPins+1))
-	local f = zcc.mapPins[id]
+	RXP_.mapPins[id] = RXP_.mapPins[id] or CreateFrame("Button", "RXP_MAP_"..tostring(#RXP_.mapPins+1))
+	local f = RXP_.mapPins[id]
 	f.element = element
 	f.step = step
 	f.connectedPins = {}
@@ -276,14 +276,14 @@ end
 
 --local W = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
 
-function zcc.UpdateMap()
+function RXP_.UpdateMap()
 	
-	zcc.updateMap = false
+	RXP_.updateMap = false
 	af.element = nil
-	zcc.activeWaypoints = {}
-	HBDPins:RemoveAllMinimapIcons(zcc)
-	HBDPins:RemoveAllWorldMapIcons(zcc)
-	local guide = zcc.currentGuide
+	RXP_.activeWaypoints = {}
+	HBDPins:RemoveAllMinimapIcons(RXP_)
+	HBDPins:RemoveAllWorldMapIcons(RXP_)
+	local guide = RXP_.currentGuide
 	local n = 0
 	
 	local function GeneratePins(step,miniMapPin)
@@ -296,10 +296,10 @@ function zcc.UpdateMap()
 				n = n +1
 				element.mapPin = CreateWPframe(n,step,element)
 				
-				table.insert(zcc.activeWaypoints,element)
+				table.insert(RXP_.activeWaypoints,element)
 				local icon
 				if element.parent then
-					icon = element.parent.icon or zcc.icons[element.parent.tag]
+					icon = element.parent.icon or RXP_.icons[element.parent.tag]
 				end
 				icon = icon or ""
 				local label
@@ -324,7 +324,7 @@ function zcc.UpdateMap()
 					element.mapPin.text:SetFont("Fonts\\FRIZQT__.TTF", 9,"OUTLINE")
 				end
 				element.mapPin.text:SetText(label..icon)
-				AddMapIcon(zcc, zcc.mapPins[n], element.instance, element.wx, element.wy, HBD_PINS_WORLDMAP_SHOW_CONTINENT, framelevel)
+				AddMapIcon(RXP_, RXP_.mapPins[n], element.instance, element.wx, element.wy, HBD_PINS_WORLDMAP_SHOW_CONTINENT, framelevel)
 				element.mapPin.text:SetPoint("LEFT",0,0)
 				element.mapPin:SetWidth(element.mapPin.text:GetStringWidth()+1)
 				element.mapPin:Show()
@@ -337,7 +337,7 @@ function zcc.UpdateMap()
 						miniMapIcon = label
 					end
 					element.miniMapPin.text:SetText(miniMapIcon)
-					AddMinimapIcon(zcc, zcc.mapPins[n], element.instance, element.wx, element.wy, true,true)
+					AddMinimapIcon(RXP_, RXP_.mapPins[n], element.instance, element.wx, element.wy, true,true)
 					element.miniMapPin.text:SetPoint("LEFT",1,0)
 					element.miniMapPin:Show()
 				end
@@ -348,7 +348,7 @@ function zcc.UpdateMap()
 		end
 	end
 	
-	for i,step in ipairs(zcc.MainFrame.CurrentStepFrame.activeSteps) do
+	for i,step in ipairs(RXP_.MainFrame.CurrentStepFrame.activeSteps) do
 		print(step.index)
 		GeneratePins(step,true)
 	end
@@ -356,17 +356,17 @@ function zcc.UpdateMap()
 	--local stepn = RXPData.currentStep
 	local npins = 0
 	for stepn = RXPData.currentStep+1, RXPData.currentStep+RXPData.numMapPins do
-		if stepn > #zcc.currentGuide.steps then
+		if stepn > #RXP_.currentGuide.steps then
 			break
 		end
-		local step = zcc.currentGuide.steps[stepn]
+		local step = RXP_.currentGuide.steps[stepn]
 		local nelements = 0
 		local ncompleted = 0
 		for i,element in ipairs(step.elements) do
 			nelements = nelements + 1
 			if element.tag then
 				element.element = element
-				zcc.functions[element.tag](element)
+				RXP_.functions[element.tag](element)
 			end
 			if element.completed or element.textOnly or not element.text or element.skip then
 				ncompleted = ncompleted + 1
@@ -381,16 +381,16 @@ function zcc.UpdateMap()
 	end
 
 	for i = RXPData.currentStep+1,RXPData.currentStep+RXPData.numMapPins do
-		if i > #zcc.currentGuide.steps then
+		if i > #RXP_.currentGuide.steps then
 			break
 		end
-		local step = zcc.currentGuide.steps[i]
+		local step = RXP_.currentGuide.steps[i]
 		GeneratePins(step)
 	end
 	
-	for i,current in ipairs(zcc.activeWaypoints) do
+	for i,current in ipairs(RXP_.activeWaypoints) do
 		for j = 1,i-1 do
-			local element = zcc.activeWaypoints[j]
+			local element = RXP_.activeWaypoints[j]
 			if i <= j then break end
 			local dist
 			if current.instance == element.instance then
@@ -405,7 +405,7 @@ function zcc.UpdateMap()
 		end
 	end
 	
-	for i,element in ipairs(zcc.activeWaypoints) do
+	for i,element in ipairs(RXP_.activeWaypoints) do
 		if element.arrow and element.step.active and 
 		not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and element.completed and not element.textOnly) then
 			af:Show()
@@ -421,7 +421,7 @@ end
 
 
 
---af:SetScript("OnUpdate",zcc.UpdateArrow)
+--af:SetScript("OnUpdate",RXP_.UpdateArrow)
 
 
 	

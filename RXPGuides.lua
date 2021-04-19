@@ -1,11 +1,25 @@
 ﻿
-zcc = zcc or {}
-zcc.guidegroup = "Z1"
-zcc.questQueryList = {}
-zcc.itemQueryList = {}
+local version = select(4, GetBuildInfo())
+
+local _CreateFrame = CreateFrame
+local CreateFrame = _CreateFrame
+if version < 20500 then
+	CreateFrame = function(arg1,arg2,arg3,arg4,...)
+		if arg4 == "BackdropTemplate" then
+			arg4 = nil
+		end
+		return _CreateFrame(arg1,arg2,arg3,arg4,...)
+	end
+end
+
+
+RXP_ = RXP_ or {}
+RXP_.guidegroup = "Z1"
+RXP_.questQueryList = {}
+RXP_.itemQueryList = {}
 local eventFrame = CreateFrame("Frame");
-local f = CreateFrame("Frame", "GC_Editor", UIParent)
-f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f)
+local f = CreateFrame("Frame", "RXPG_MAIN", UIParent, "BackdropTemplate")
+f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, "BackdropTemplate")
 
 eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
@@ -14,10 +28,10 @@ eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 
 
-GC_Debug = false
+RXPG_Debug = false
 
 
-function GC_init()
+function RXPG_init()
 	RXPData = RXPData or {}
 	RXPData.stepSkip = RXPData.stepSkip or {}
 	RXPData.numMapPins = RXPData.numMapPins or 7
@@ -31,26 +45,26 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
 	if event == "QUEST_LOG_UPDATE" then
 		local update
-		for id,v in pairs(zcc.questQueryList) do
+		for id,v in pairs(RXP_.questQueryList) do
 			if C_QuestLog.GetQuestInfo(id) then
 				update = true 
-				zcc.questQueryList[id] = nil
+				RXP_.questQueryList[id] = nil
 			end
 		end
 		if update then
-			zcc.updateStepText = true
+			RXP_.updateStepText = true
 			--SetStep(RXPData.currentStep)
 		end
 	elseif event == "GET_ITEM_INFO_RECEIVED" and arg2 then
-		if zcc.itemQueryList[arg1] then
-			zcc.itemQueryList[arg1] = nil
-			zcc.updateStepText = true
+		if RXP_.itemQueryList[arg1] then
+			RXP_.itemQueryList[arg1] = nil
+			RXP_.updateStepText = true
 		elseif GetTime() - startTime < 15 then
-			zcc.updateStepText = true
+			RXP_.updateStepText = true
 		end
 	elseif event == "PLAYER_LOGIN" then
-		GC_init()
-		zcc.GenerateMenuTable()
+		RXPG_init()
+		RXP_.GenerateMenuTable()
 		loadtime = GetTime()
 	end
 
@@ -59,12 +73,12 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 end)
 
 
-function zcc.GetGuideTable(guideGroup,guideName)
-	return zcc.guides[zcc.guideList[guideGroup][guideName]]
+function RXP_.GetGuideTable(guideGroup,guideName)
+	return RXP_.guides[RXP_.guideList[guideGroup][guideName]]
 end
 
 
-zcc.icons = {
+RXP_.icons = {
 accept = "|TInterface/GossipFrame/AvailableQuestIcon:0|t",
 turnin = "|TInterface/GossipFrame/ActiveQuestIcon:0|t",
 collect = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
@@ -86,7 +100,7 @@ xp = "|TInterface/PETBATTLES/BattleBar-AbilityBadge-Strong-Small:0|t",
 stable = "|TInterface/MINIMAP/TRACKING/StableMaster:0|t",
 tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t"
 }
-local icons = zcc.icons
+local icons = RXP_.icons
 
 
 
@@ -120,7 +134,7 @@ f.OnMouseDown = function(self, button)
 	if IsAltKeyDown() then
 		f:StartSizing("BOTTOMRIGHT")
 		isResizing = true
-		f:SetScript("OnUpdate",zcc.UpdateBottomFrame)
+		f:SetScript("OnUpdate",RXP_.UpdateBottomFrame)
 	else
 		f:StartMoving()
 	end
@@ -141,16 +155,16 @@ f:SetScript("OnMouseDown", f.OnMouseDown)
 f:SetScript("OnMouseUp", f.OnMouseUp)
 f:EnableMouse(1)
 
-zcc.stepPos = {}
+RXP_.stepPos = {}
 
 
 
 function StepScroll(n)
 	local value
-	if n == 1 or not zcc.stepPos[n] then
+	if n == 1 or not RXP_.stepPos[n] then
 		value = 0
 	else
-		value = zcc.stepPos[n]/zcc.stepPos[0]*f.Steps.f1:GetHeight()-2
+		value = RXP_.stepPos[n]/RXP_.stepPos[0]*f.Steps.f1:GetHeight()-2
 		local smax = f.Steps.f1:GetHeight()-f.BottomFrame:GetHeight()+10
 		if value > smax then
 			value = smax
@@ -192,7 +206,7 @@ f.Select:SetText("Select All")
 
 
 --[[
-f.GuideNameFrame = CreateFrame("Frame", "$parentGuideNameFrame", f)
+f.GuideNameFrame = CreateFrame("Frame", "$parentGuideNameFrame", f, "BackdropTemplate")
 f.GuideNameFrame:SetWidth(70)
 f.GuideNameFrame:SetHeight(14)
 f.GuideNameFrame:SetPoint("BOTTOMLEFT",f,"BOTTOMLEFT",0,0)
@@ -287,18 +301,18 @@ function f.ClearFrameData()
 		end
 	end
 end
-zcc.MainFrame = f
+RXP_.MainFrame = f
 local currentGuide
 f.CurrentStepFrame.activeSteps = {}
 local isUpdating
-function zcc.UpdateStepCompletion()
-	zcc.updateSteps = false
+function RXP_.UpdateStepCompletion()
+	RXP_.updateSteps = false
 	
 	local n = 0
 	local update
 	
 	for i,step in ipairs(f.CurrentStepFrame.activeSteps) do
-		local completed = zcc.AldorScryerCheck(step)
+		local completed = RXP_.AldorScryerCheck(step)
 		if not step.completed then
 			for j,element in ipairs(step.elements) do
 				if not element.completed then
@@ -310,7 +324,7 @@ function zcc.UpdateStepCompletion()
 		
 		local completewith = step.completewith
 		if completewith and not completed then
-			local guide = zcc.currentGuide
+			local guide = RXP_.currentGuide
 			if completewith == "next" then
 				completewith = step.index+1
 			else
@@ -341,7 +355,7 @@ function zcc.UpdateStepCompletion()
 				step.active = nil
 			elseif step.index >= RXPData.currentStep then
 				step.completed = true
-				zcc.UpdateBottomFrame(nil,step.index)
+				RXP_.UpdateBottomFrame(nil,nil,step.index)
 				return SetStep(step.index+1)
 			end
 		end
@@ -354,7 +368,7 @@ function zcc.UpdateStepCompletion()
 end
 
 function SetStep(n)
-	local guide = zcc.currentGuide
+	local guide = RXP_.currentGuide
 	local group = guide.group
 
 	
@@ -415,21 +429,24 @@ function SetStep(n)
 		guide.steps[n].active = true
 	end
 	
-	if #f.CurrentStepFrame.activeSteps == 0 and n == #guide.steps then
-		return RXPG[group].next()
+	if #f.CurrentStepFrame.activeSteps == 0 then 
+		if n >= #guide.steps then
+			return RXPG[group].next()
+		else
+			return SetStep(n+1)
+		end
 	end
 	
 	local totalHeight = 0
 	local c = 0
 	local heightDiff = f:GetHeight() - f.CurrentStepFrame:GetHeight()
-	
 	for i,step in pairs(f.CurrentStepFrame.activeSteps) do
 		
 		local index = step.index
 		c = c+1
 		local stepframe = f.CurrentStepFrame.frame[c]
 		if not stepframe then
-			f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame_"..c,f.CurrentStepFrame)
+			f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame_"..c,f.CurrentStepFrame, "BackdropTemplate")
 			stepframe = f.CurrentStepFrame.frame[c]
 			stepframe:SetBackdrop(f.backdropEdge)
 			stepframe:SetBackdropColor(9/255,12/255,43/255,0.75)
@@ -445,7 +462,7 @@ function SetStep(n)
 			stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame.frame[c-1],"BOTTOMRIGHT",0,-5)
 		end
 		if not stepframe.number then
-			stepframe.number = CreateFrame("Frame","$parent_number",stepframe)
+			stepframe.number = CreateFrame("Frame","$parent_number",stepframe, "BackdropTemplate")
 			stepframe.number:SetBackdrop(f.backdropEdge)
 			stepframe.number:SetBackdropColor(111/300,44/300,150/300,1)
 			stepframe.number:SetPoint("TOPLEFT",stepframe,7,5)
@@ -476,7 +493,7 @@ function SetStep(n)
 			e = j
 			local elementFrame = stepframe.elements[e]
 			if not stepframe.elements[e] then
-				stepframe.elements[e] = CreateFrame("Frame","$parent_"..e,stepframe)
+				stepframe.elements[e] = CreateFrame("Frame","$parent_"..e,stepframe, "BackdropTemplate")
 				elementFrame = stepframe.elements[e]
 				--elementFrame:SetHeight(0)
 				--elementFrame:SetWidth(300)
@@ -493,8 +510,8 @@ function SetStep(n)
 					else
 						element.skip = false
 					end
-					zcc.updateSteps = true
-					zcc.updateMap = true
+					RXP_.updateSteps = true
+					RXP_.updateMap = true
 				end)
 				elementFrame.text = getglobal(elementFrame.button:GetName() .. 'Text')
 				elementFrame.text:SetParent(elementFrame)
@@ -551,16 +568,16 @@ function SetStep(n)
 			stepframe.elements[n]:Hide()
 		end
 	end
-	zcc.UpdateText()
-	zcc.updateSteps = true
-	zcc.updateMap = true
+	RXP_.UpdateText()
+	RXP_.updateSteps = true
+	RXP_.updateMap = true
 	StepScroll(n)
 end
 
-function zcc.UpdateText()
-zcc.updateStepText = false
+function RXP_.UpdateText()
+RXP_.updateStepText = false
 
-local guide = zcc.currentGuide
+local guide = RXP_.currentGuide
 if not guide then return end
 local group = guide.group
 
@@ -638,7 +655,7 @@ for i,step in pairs(f.CurrentStepFrame.activeSteps) do
 			elementFrame:SetPoint("TOPRIGHT",stepframe.elements[e-1],"BOTTOMRIGHT",0,0+spacing)
 		end
 		if element.tag and element.text then
-			local icon = element.icon or zcc.icons[element.tag]
+			local icon = element.icon or RXP_.icons[element.tag]
 			if icon then elementFrame.icon:SetText(icon) end
 			elementFrame.icon:Show()
 		else
@@ -657,22 +674,24 @@ end
 
 
 
-C_Timer.NewTicker(0.3473,function() 
-	if zcc.updateSteps then
-		zcc.UpdateStepCompletion()
-	elseif zcc.updateStepText then
-		for n,element in pairs(zcc.stepUpdateList) do
-			zcc.UpdateBottomFrame(element)
+C_Timer.NewTicker(0.2473,function() 
+	if RXP_.updateSteps then
+		RXP_.UpdateStepCompletion()
+	elseif RXP_.updateStepText then
+		for n,element in pairs(RXP_.stepUpdateList) do
+			RXP_.UpdateBottomFrame(element)
 			--print('ub',n)
-			zcc.stepUpdateList[n] = nil
+			RXP_.stepUpdateList[n] = nil
 		end
-		zcc.UpdateText()
-	elseif zcc.updateMap then
-		zcc.UpdateMap()
-	elseif zcc.updateBottomFrame then
-		zcc.UpdateBottomFrame()
+		RXP_.UpdateText()
+	elseif RXP_.updateBottomFrame then
+		RXP_.UpdateBottomFrame()
 	else
-		zcc.UpdateGotoSteps()
+		RXP_.UpdateGotoSteps()
+	end
+	
+	if RXP_.updateMap then
+		RXP_.UpdateMap()
 	end
 end)
 
@@ -686,7 +705,7 @@ f.BottomFrame:SetPoint("BOTTOMRIGHT", f,-10, 10)
 
 
 
-f.GuideName = CreateFrame("Frame","$parent_guideName",f)
+f.GuideName = CreateFrame("Frame","$parent_guideName",f, "BackdropTemplate")
 f.GuideName:SetBackdrop(f.backdropEdge)
 f.GuideName:SetBackdropColor(111/300,44/300,150/300,1)
 f.GuideName:SetPoint("TOPLEFT",f.BottomFrame,7,7)
@@ -702,7 +721,7 @@ f.GuideName.text:SetText("Click here to pick a guide")
 f.GuideName:SetSize(f.GuideName.text:GetStringWidth()+12,21)
 f.GuideName:SetFrameLevel(6)
 
-zcc.MenuFrame = CreateFrame("Frame", "RXPG_MenuFrame", UIParent, "UIDropDownMenuTemplate")
+RXP_.MenuFrame = CreateFrame("Frame", "RXPG_MenuFrame", UIParent, "UIDropDownMenuTemplate")
 
 -- Make the menu appear at the cursor: 
 
@@ -712,7 +731,7 @@ f.GuideName:SetScript("OnEnter",function()
 	
 end)
 f.GuideName:SetScript("OnMouseDown",function()
-EasyMenu(zcc.menuList, zcc.MenuFrame, "cursor", 0 , 0, "MENU");
+EasyMenu(RXP_.menuList, RXP_.MenuFrame, "cursor", 0 , 0, "MENU");
 end)
  F2 = f.BottomFrame
 f.GuideName:SetScript("OnLeave",function()
@@ -739,7 +758,7 @@ end)
 
 
 
-f.Steps = CreateFrame("Frame", "$parent_steps", f.BottomFrame)
+f.Steps = CreateFrame("Frame", "$parent_steps", f.BottomFrame, "BackdropTemplate")
 f.Steps.frame = {}
 f.Steps:SetWidth(f:GetWidth()-35)
 --f.Steps:SetBackdrop(backdrop)
@@ -773,10 +792,10 @@ f.SF:SetScrollChild(f.Steps)
 
 
 local currentAlpha
-function zcc:LoadGuide(guide,OnLoad)
+function RXP_:LoadGuide(guide,OnLoad)
 	startTime = GetTime()
 	CloseDropDownMenus()
-	C_Timer.After(10,function() zcc.updateBottomFrame = true end)
+	C_Timer.After(10,function() RXP_.updateBottomFrame = true end)
 	if not guide then
 		return error('Guide not found')
 	end
@@ -786,8 +805,8 @@ function zcc:LoadGuide(guide,OnLoad)
 	RXPData.stepSkip = {}
 	local totalHeight = 0
 	local nframes = 0
-	zcc.currentGuide = guide
-	zcc.currentGuideName = guide.name
+	RXP_.currentGuide = guide
+	RXP_.currentGuideName = guide.name
 	f.GuideName.text:SetText(guide.displayName)
 	local nameWidth = f.GuideName.text:GetStringWidth()+10
 	f.GuideName:SetWidth(nameWidth)
@@ -809,7 +828,7 @@ function zcc:LoadGuide(guide,OnLoad)
 
 
 		nframes = nframes + 1
-		f.Steps.frame[n] = f.Steps.frame[n] or CreateFrame("Frame","$parent_frame_"..n,f.Steps)
+		f.Steps.frame[n] = f.Steps.frame[n] or CreateFrame("Frame","$parent_frame_"..n,f.Steps, "BackdropTemplate")
 		local frame = f.Steps.frame[n]
 		frame.step = step
 		frame:SetAlpha(0.66)
@@ -847,7 +866,7 @@ function zcc:LoadGuide(guide,OnLoad)
 		end
 		
 		if not frame.number then
-			frame.number = CreateFrame("Frame","$parent_number",frame)
+			frame.number = CreateFrame("Frame","$parent_number",frame, "BackdropTemplate")
 			--frame.number:SetBackdrop(backdrop)
 			--frame.number:SetBackdropColor(20/255,25/255,67/255)
 			frame.number:SetPoint("BOTTOMRIGHT",frame)
@@ -892,26 +911,26 @@ function zcc:LoadGuide(guide,OnLoad)
 	f.Steps.f1:SetPoint("TOPLEFT",f.Steps.frame[1],0,10)
 	f.Steps.f1:SetPoint("BOTTOMRIGHT",f.Steps.frame[nframes])
 	f.Steps:SetHeight(200)
-	zcc.UpdateBottomFrame()
-	--zcc.updateBottomFrame = true
+	RXP_.UpdateBottomFrame()
+	--RXP_.updateBottomFrame = true
 	SetStep(RXPData.currentStep)
 end
 
-function zcc.UpdateBottomFrame(self,stepn)
-	
-	if self and self.step and zcc.stepPos[0] or stepn then
+function RXP_.UpdateBottomFrame(self,inc,stepn)
+	--print(type(stepn),stepn)
+	if self and self.step and RXP_.stepPos[0] or stepn then
 		local stepNumber = stepn or self.step.index
 		local frame = f.Steps.frame[stepNumber]
 		local step = frame.step
 		local fheight
-		local factionCheck, faction = zcc.AldorScryerCheck(step)
+		local factionCheck, faction = RXP_.AldorScryerCheck(step)
 		if factionCheck then
 			local text
 			for i,element in ipairs(frame.step.elements) do
 				if element.requestFromServer and not stepn then
 					element.element = element
-					RXPG[zcc.currentGuide.group][element.tag](element)
-					zcc.updateStepText = true
+					RXPG[RXP_.currentGuide.group][element.tag](element)
+					RXP_.updateStepText = true
 				end
 				local rawtext = element.tooltipText or element.text
 				if rawtext and not element.hideTooltip then
@@ -933,25 +952,25 @@ function zcc.UpdateBottomFrame(self,stepn)
 		local hDiff = fheight - frame:GetHeight()
 		frame:SetHeight(fheight)
 		
-		for n = stepNumber+1, #zcc.stepPos do
-			zcc.stepPos[n] = zcc.stepPos[n]+hDiff
+		for n = stepNumber+1, #RXP_.stepPos do
+			RXP_.stepPos[n] = RXP_.stepPos[n]+hDiff
 		end
-		zcc.stepPos[0] = zcc.stepPos[0]+hDiff
+		RXP_.stepPos[0] = RXP_.stepPos[0]+hDiff
 		
 	else
-		zcc.updateBottomFrame = false
+		RXP_.updateBottomFrame = false
 		local totalHeight = 0
 		for n,frame in ipairs(f.Steps.frame) do
 			if not frame:IsShown() then break end
 			local text
 			local step = frame.step
 			local fheight
-			local factionCheck, faction = zcc.AldorScryerCheck(step)
+			local factionCheck, faction = RXP_.AldorScryerCheck(step)
 			if factionCheck then
 				for i,element in ipairs(frame.step.elements) do
 					if not self and element.requestFromServer then
 						element.element = element
-						RXPG[zcc.currentGuide.group][element.tag](element)
+						RXPG[RXP_.currentGuide.group][element.tag](element)
 					end
 					local rawtext = element.tooltipText or element.text
 					if rawtext and rawtext ~= "" then
@@ -971,12 +990,12 @@ function zcc.UpdateBottomFrame(self,stepn)
 			end
 			frame:SetHeight(fheight)
 			totalHeight = totalHeight + fheight+2
-			zcc.stepPos[n] = totalHeight-3
+			RXP_.stepPos[n] = totalHeight-3
 		end
-		zcc.stepPos[0] = totalHeight
+		RXP_.stepPos[0] = totalHeight
 		--print(f.Steps.frame[#f.Steps.frame]:GetBottom(),totalHeight)
 	end
-	if zcc.currentGuide then
+	if RXP_.currentGuide then
 		f.Steps:SetHeight(f.Steps.f1:GetHeight())
 	end
 	local w = f:GetWidth()-35
@@ -996,8 +1015,8 @@ optionPanel.name = "RXPG"
 InterfaceOptions_AddCategory(panel)
 ]]
 
-function zcc.GenerateMenuTable()
-	zcc.menuList = {
+function RXP_.GenerateMenuTable()
+	RXP_.menuList = {
 		{
 			text = "Available Guides",
 			isTitle = 1,
@@ -1006,7 +1025,7 @@ function zcc.GenerateMenuTable()
 	}
 
 	local menuIndex = 1
-	for group,t in pairs(zcc.guideList) do
+	for group,t in pairs(RXP_.guideList) do
 		menuIndex = menuIndex+1
 		
 		if not t.sorted_ then
@@ -1017,18 +1036,18 @@ function zcc.GenerateMenuTable()
 		local submenuIndex = 0
 		for j,guideName in ipairs(t.names_) do
 			submenuIndex = submenuIndex +1
-			local guide = zcc.GetGuideTable(group,guideName)
+			local guide = RXP_.GetGuideTable(group,guideName)
 			guide.menuIndex = menuIndex
 			guide.submenuIndex = submenuIndex
 			local subitem = {}
 			subitem.text = guide.displayName
-			subitem.func = zcc.LoadGuide
+			subitem.func = RXP_.LoadGuide
 			subitem.arg1 = guide
 			subitem.notCheckable = 1
 			table.insert(item.menuList,subitem)
 		end
 		
-		table.insert(zcc.menuList,item)
+		table.insert(RXP_.menuList,item)
 	end
 end
 

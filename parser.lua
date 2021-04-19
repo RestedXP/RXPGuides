@@ -1,5 +1,5 @@
-zcc.guides = {}
-zcc.guideList = {}
+RXP_.guides = {}
+RXP_.guideList = {}
 
 local _, race = UnitRace("player")
 local _,class = UnitClass("player")
@@ -24,14 +24,14 @@ local function applies(text)
 	end
 	return true
 end
-zcc.applies = applies
+RXP_.applies = applies
 RXPGuides = RXPG
 function RXPG.RegisterGuide(guideGroup,text)
 	--print(27,guideGroup,text)
 
 	if not RXPG[guideGroup] then
 		RXPG[guideGroup] = {}
-		setmetatable(RXPG[guideGroup],zcc.functions)
+		setmetatable(RXPG[guideGroup],RXP_.functions)
 	end
 
 	local guide = {}
@@ -165,15 +165,15 @@ function RXPG.RegisterGuide(guideGroup,text)
 	guide.next = guide.next:gsub("^(%d)-(%d%d?)",affix)
 	end
 	
-	if not zcc.guideList[guide.group] then
-		zcc.guideList[guide.group] = {}
-		zcc.guideList[guide.group].names_ = {}
+	if not RXP_.guideList[guide.group] then
+		RXP_.guideList[guide.group] = {}
+		RXP_.guideList[guide.group].names_ = {}
 	end
-	local list = zcc.guideList[guide.group]
+	local list = RXP_.guideList[guide.group]
 
-	table.insert(zcc.guides,guide)
+	table.insert(RXP_.guides,guide)
 	table.insert(list.names_,guide.name)
-	list[guide.name] = #zcc.guides
+	list[guide.name] = #RXP_.guides
 end
 
 --parser
