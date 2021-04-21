@@ -1,5 +1,6 @@
 ﻿RXP_ = RXP_ or {}
-
+RXPGuides = {}
+local RXPG = RXPGuides
 local version = select(4, GetBuildInfo())
 
 RXP_.CreateFrame = CreateFrame
@@ -83,14 +84,16 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	--if IsShiftKeyDown() ~= not RXPData.automateQuests then return end
 	
 	if event == "QUEST_COMPLETE" then
-		if GetNumQuestChoices() <= 1 and GetTime() - questTimer > 0.1 then
+		local id = GetQuestID()
+        local title = C_QuestLog.GetQuestInfo(id)
+		if GetNumQuestChoices() <= 1 and RXP_.questTurnIn[title] and GetTime() - questTimer > 0.1 then
 			GetQuestReward(GetNumQuestChoices())
-			questTimer = GetTime()
+			--questTimer = GetTime()
 		end
 		
 	elseif event == "QUEST_PROGRESS" and IsQuestCompletable() and GetTime() - questProgressTimer > 0.1 then
 		CompleteQuest()
-		questProgressTimer = GetTime()
+		--questProgressTimer = GetTime()
 		
 	elseif event == "QUEST_DETAIL" then
 		local id = GetQuestID()

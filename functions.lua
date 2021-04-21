@@ -19,9 +19,16 @@ RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
 RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
 RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
 RXP_.functions.events.money = {"PLAYER_MONEY"}
+local IsQuestCompleted = IsQuestFlaggedCompleted
 
-
-RXPG = {}
+if not IsQuestCompleted then
+	IsQuestCompleted = C_QuestLog.IsQuestFlaggedCompleted
+	if not IsQuestCompleted then
+		IsQuestCompleted = function(id)
+			return GetQuestsCompleted()[id]
+		end
+	end
+end
 
 local timer = GetTime()
 local nrequests = 0
@@ -164,7 +171,7 @@ function RXP_.functions.accept(self,...)
 		self.element.tooltipText = RXP_.icons.accept..self.element.text
 		
 
-		if IsQuestFlaggedCompleted(id) or C_QuestLog.IsOnQuest(id) or (questId == id)  then
+		if IsQuestCompleted(id) or C_QuestLog.IsOnQuest(id) or (questId == id)  then
 			RXP_.SetElementComplete(self,true)
 		elseif self.element.completed then
 			RXP_.SetElementIncomplete(self)
@@ -213,7 +220,7 @@ function RXP_.functions.turnin(self,...)
 		self.element.tooltipText = RXP_.icons.turnin..self.element.text
 		RXP_.UpdateStepText(self)
 		
-		local isComplete = IsQuestFlaggedCompleted(id)
+		local isComplete = IsQuestCompleted(id)
 		if isComplete then
 			RXP_.SetElementComplete(self,true)
 		elseif questId == id then --repeatable quests
@@ -255,7 +262,7 @@ function RXP_.functions.complete(self,...)
 
 		--print(text)
 		local objtext
-		local isQuestComplete = IsQuestFlaggedCompleted(id)
+		local isQuestComplete = IsQuestCompleted(id)
 		local skip
 
 		

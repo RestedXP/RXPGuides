@@ -25,7 +25,7 @@ local function applies(text)
 	return true
 end
 RXP_.applies = applies
-RXPGuides = RXPG
+local RXPG = RXPGuides
 function RXPG.RegisterGuide(guideGroup,text)
 	--print(27,guideGroup,text)
 
