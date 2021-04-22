@@ -94,7 +94,7 @@ function RXPG.RegisterGuide(guideGroup,text)
 					element.parent = lastElement
 				end
 			else
-				error("Error parsing guide "..RXP_.currentGuideName.." at line "..linenumber..": Invalid function call (."..tag..")"
+				error("Error parsing guide "..RXP_.currentGuideName.." at line "..linenumber..": Invalid function call (."..tag..")")
 			end
 		end)
 		
