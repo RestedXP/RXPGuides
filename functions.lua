@@ -379,13 +379,16 @@ function RXP_.functions.goto(self,...)
 		end
 		element.x = tonumber(x)
 		element.y = tonumber(y)
+		if not (element.x and element.y and zone) then
+			error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..": Invalid coordinates or map name")
+		end
 		element.radius = tonumber(radius)
 		radius = element.radius
 		element.zone = RXP_.mapId[zone]
-		element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(x/100, y/100, element.zone)
+		element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
 		element.arrow = true
 		element.parent = true
-		if not (zone and x and y) then return error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..": Invalid coordinates or map name") end
+		
 
 		element.text = text
 		element.textOnly = true
@@ -778,4 +781,8 @@ function RXP_.functions.next(skip)
 			return RXP_:LoadGuide(nextGuide)
 		end
 	end
+end
+
+function RXP_.functions.istrained(self,...)
+	return {textOnly = true } --todo
 end
