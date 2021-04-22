@@ -19,6 +19,9 @@ RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
 RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
 RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
 RXP_.functions.events.money = {"PLAYER_MONEY"}
+RXP_.functions.events.trainer = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
+RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
+
 local IsQuestCompleted = IsQuestFlaggedCompleted
 
 if not IsQuestCompleted then
@@ -785,4 +788,51 @@ end
 
 function RXP_.functions.istrained(self,...)
 	return {textOnly = true } --todo
+end
+
+
+function RXP_.functions.train(self,...)
+	if type(self) == "number" then --on parse
+		local element = {}
+		local text,id = ...
+		element.id = tonumber(id)
+		if not C_Spell.IsSpellDataCached(element.id) then
+			C_Spell.RequestLoadSpellData(element.id)
+		end
+		if text and text ~= "" then
+			element.text = text
+		else
+			element.text = "-"
+		end
+		element.tooltipText = RXP_.icons.trainer..element.text
+		return element
+	end
+	
+	if IsPlayerSpell(self.element.id) then
+		RXP_.SetElementComplete(self)
+	end
+end
+
+function RXP_.functions.istrained(self,...)
+	if type(self) == "number" then --on parse
+		local element = {}
+		local args = {...}
+		args[1] = nil
+		element.id = args
+		for _,id in pairs(args) do
+			if not C_Spell.IsSpellDataCached(id) then
+				C_Spell.RequestLoadSpellData(id)
+			end
+		end
+		element.textOnly = true
+		return element
+	end
+	
+	for _,id in pairs(self.element.id) do
+		if IsPlayerSpell(id) then
+			self.element.step.completed = true
+			RXP_.updateSteps = true
+			return
+		end
+	end
 end
