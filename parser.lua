@@ -45,7 +45,6 @@ function RXPG.RegisterGuide(guideGroup,text)
 	local linenumber = 0
 
 	local function parseLine(line)
-		
 		local classtag 
 		line = line:gsub("%s*<<%s*(.+)",function(t) 
 			classtag = t
@@ -63,9 +62,6 @@ function RXPG.RegisterGuide(guideGroup,text)
 				else
 					step[steptag] = value
 				end
-			end
-			if steptag == "name" then
-				RXP_.currentGuideName = value
 			end
 			return
 		end
@@ -123,6 +119,7 @@ function RXPG.RegisterGuide(guideGroup,text)
 		line = line:gsub("%s+$","")
 		--print(line)
 		if line:sub(1,4) == "step" then
+			if not RXP_.currentGuideName then error("Error parsing guide: Guide has no name") end
 			local classtag = line:match("<<%s*(.+)")
 			if classtag and not applies(classtag) then
 				skip = true
@@ -149,6 +146,9 @@ function RXPG.RegisterGuide(guideGroup,text)
 						guide[tag] = RXPG[guide.group][value]
 					else
 						guide[tag] = value
+					end
+					if tag == "name" then
+						RXP_.currentGuideName = value
 					end
 				end
 			end)
