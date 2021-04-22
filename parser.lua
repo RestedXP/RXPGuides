@@ -86,11 +86,15 @@ function RXPG.RegisterGuide(guideGroup,text)
 				table.insert(t,arg)
 			end
 			--print(tag,args,type(guide))
-			element = RXPG[guide.group][tag](linenumber,text,unpack(t))
-			element.tag = tag
-			element.step = step
-			if element.parent then
-				element.parent = lastElement
+			if RXPG[guide.group][tag] then
+				element = RXPG[guide.group][tag](linenumber,text,unpack(t))
+				element.tag = tag
+				element.step = step
+				if element.parent then
+					element.parent = lastElement
+				end
+			else
+				error("Error parsing guide "..RXP_.currentGuideName.." at line "..linenumber..": Invalid function call (."..tag..")"
 			end
 		end)
 		
