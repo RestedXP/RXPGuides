@@ -85,7 +85,7 @@ af.text:SetJustifyV("CENTER")
 af.text:SetPoint("TOP",af,"BOTTOM")
 af.orientation = 0
 af.distance = 0
-af.lowerbound = math.pi/16 --angle in radians
+af.lowerbound = math.pi/32 --angle in radians
 af.upperbound = 2*math.pi-af.lowerbound
 
 af:SetPoint("TOP")
@@ -112,7 +112,7 @@ if self.element then
 	local diff = math.abs(orientation-self.orientation)
 	dist = math.floor(dist)
 	
-	if diff > self.lowerbound and diff < self.upperbound then
+	if (diff > self.lowerbound and diff < self.upperbound then
 		self.orientation = orientation
 		self.texture:SetRotation(orientation) 
 	end

@@ -30,6 +30,19 @@ if not IsQuestCompleted then
 	end
 end
 
+local function ObjectivesComplete(id)
+	for i = 1,GetNumQuestLogEntries() do
+		local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+		if questID == id then
+			if isComplete then
+				return true
+			else
+				return false
+			end
+		end
+	end
+end
+
 local timer = GetTime()
 local nrequests = 0
 function RXP_.GetQuestName(id,ref)
@@ -262,7 +275,7 @@ function RXP_.functions.complete(self,...)
 
 		--print(text)
 		local objtext
-		local isQuestComplete = IsQuestCompleted(id)
+		local isQuestComplete = IsQuestCompleted(id) or ObjectivesComplete(id)
 		local skip
 
 		
@@ -476,9 +489,9 @@ function RXP_.functions.fly(self,...)
 		return element
 	end
 	local event = ...
-	if event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1 then
+	if event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1.5 then
 		RXP_.SetElementComplete(self)
-	elseif event == "TAXIMAP_OPENED" and not RXPData.disableAutoFP then
+	elseif event == "TAXIMAP_OPENED" and not RXPData.disableAutoFP and self.element.location then
 		for i = 1,NumTaxiNodes() do
 			local name = TaxiNodeName(i)
 			if name and name:match(self.element.location) then
