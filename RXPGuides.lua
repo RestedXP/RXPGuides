@@ -330,16 +330,6 @@ f.CurrentStepFrame:SetScript("OnMouseDown", f.OnMouseDown)
 f.CurrentStepFrame:SetScript("OnMouseUp", f.OnMouseUp)
 f.CurrentStepFrame:EnableMouse(1)
 
-local uniquealyzer = 1;
-function createCheckbutton(parent, x_loc, y_loc, displayname)
-   uniquealyzer = uniquealyzer + 1;
-   
-   local checkbutton = CreateFrame("CheckButton", "my_addon_checkbutton_0" .. uniquealyzer, parent, "ChatConfigCheckButtonTemplate");
-   checkbutton:SetPoint("TOPLEFT", x_loc, y_loc);
-   getglobal(checkbutton:GetName() .. 'Text'):SetText(displayname);
-   
-   return checkbutton;
-end
 
 
 f.CurrentStepFrame.frame = {}
@@ -500,7 +490,9 @@ function SetStep(n)
 		--ClearMapPins(i)
 	end
 	
-	if not guide.steps[n].completed then
+	if guide.steps[n].completed then
+		return SetStep(n+1)
+	else
 		table.insert(f.CurrentStepFrame.activeSteps,guide.steps[n])
 		f.Steps.frame[n]:SetAlpha(1)
 		guide.steps[n].active = true
@@ -751,7 +743,7 @@ end
 
 
 
-C_Timer.NewTicker(0.2473,function() 
+C_Timer.NewTicker(0.1473,function() 
 	if RXP_.updateSteps then
 		RXP_.UpdateStepCompletion()
 	elseif RXP_.updateStepText then
