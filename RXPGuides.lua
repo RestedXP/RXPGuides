@@ -507,7 +507,7 @@ function SetStep(n)
 	local step = guide.steps[n]
 	if step.completed and n < #guide.steps then
 		return SetStep(n+1)
-	elseif step and not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) then
+	elseif step and not step.completed and not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) then
 		table.insert(f.CurrentStepFrame.activeSteps,step)
 		f.Steps.frame[n]:SetAlpha(1)
 		step.active = true
@@ -906,6 +906,8 @@ function RXP_:LoadGuide(guide,OnLoad)
 	if not guide.labels then
 		guide.labels = {}
 	end
+	
+	guide.steps[#guide.steps].lastStep = true
 	
 	for n,step in ipairs(guide.steps) do
 		step.index = n

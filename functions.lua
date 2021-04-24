@@ -478,7 +478,7 @@ end
 
 RXP_.taxiTime = 0
 hooksecurefunc("TakeTaxiNode", function(index)
-    RXP_.taxiTime = GetTime()
+	RXP_.taxiTime = GetTime()
 end)
 
 function RXP_.functions.fly(self,...)
@@ -503,6 +503,8 @@ function RXP_.functions.fly(self,...)
 		for i = 1,NumTaxiNodes() do
 			local name = TaxiNodeName(i)
 			if name and name:match(self.element.location) then
+				local taxi = getglobal("TaxiButton"..i)
+				taxi:GetScript("OnEnter")(taxi)
 				return TakeTaxiNode(i)
 			end
 		end
