@@ -505,9 +505,9 @@ function SetStep(n)
 	end
 	
 	local step = guide.steps[n]
-	if step.completed then
+	if step.completed and n < #guide.steps then
 		return SetStep(n+1)
-	elseif not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) then
+	elseif step and not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) then
 		table.insert(f.CurrentStepFrame.activeSteps,step)
 		f.Steps.frame[n]:SetAlpha(1)
 		step.active = true
