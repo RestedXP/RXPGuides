@@ -21,6 +21,8 @@ RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
 RXP_.functions.events.money = {"PLAYER_MONEY"}
 RXP_.functions.events.trainer = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
+RXP_.functions.events.abandon = {"QUEST_LOG_UPDATE"}
+
 
 local IsQuestCompleted = IsQuestFlaggedCompleted
 
@@ -835,4 +837,51 @@ function RXP_.functions.istrained(self,...)
 			return
 		end
 	end
+end
+
+function RXP_.functions.abandon(self,...)
+	if type(self) == "number" then --on parse
+		local element = {}
+		element.tag = "accept"
+		local text,id = ...
+		id = tonumber(id)
+		if not id then return error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..":\nInvalid quest ID") end
+		element.title = ""
+		element.questId = id
+		--element.title = RXP_.GetQuestName(id)
+		if text and text ~= "" then
+			element.text = text
+		else		
+			element.text = "Abandon *quest*"
+			element.requestFromServer = true
+		end
+		--print("Q1",element.text)
+		element.tooltipText = RXP_.icons.abandon..element.text
+		--print(element.rawtext)
+		return element
+	else
+		local event,_,questId = ...
+		local id = self.element.questId
+		local quest = RXP_.GetQuestName(id,self)
+		if quest then
+			self.element.title = quest
+			self.element.text = self.element.text:gsub("%*quest%*",quest)
+			if self.element.requestFromServer then
+				self.element.requestFromServer = nil
+				RXP_.UpdateStepText(self)
+			end
+		else
+			self.element.title = ""
+			self.element.requestFromServer = true
+		end
+
+		self.element.tooltipText = RXP_.icons.accept..self.element.text
+		
+
+		if not C_QuestLog.IsOnQuest(id) then
+			RXP_.SetElementComplete(self,true)
+		end
+		
+	end
+	
 end

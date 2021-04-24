@@ -175,6 +175,7 @@ home = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:64:79:0:15|t",
 xp = "|TInterface/PETBATTLES/BattleBar-AbilityBadge-Strong-Small:0|t",
 stable = "|TInterface/MINIMAP/TRACKING/StableMaster:0|t",
 tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t"
+abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
 }
 local icons = RXP_.icons
 
@@ -894,7 +895,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	
 	for n,step in ipairs(guide.steps) do
 		step.index = n
-		if step.completewith then
+		if step.completewith or step.requires then
 			step.sticky = true
 		end
 		if step.label then
