@@ -97,7 +97,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		
 	elseif event == "QUEST_DETAIL" then
 		local id = GetQuestID()
-        local title = C_QuestLog.GetQuestInfo(id)
+        local title = RXP_.GetQuestName(id)
 		if RXP_.questAccept[title] then
 			AcceptQuest()
 			HideUIPanel(QuestFrame)
@@ -483,7 +483,7 @@ function SetStep(n)
 	
 	for i = 1,n-1 do
 		local step = guide.steps[i]
-		if step.sticky and not RXPData.stepSkip[i] and not(step.requires and guide.labels[step.requires].active) then
+		if step.sticky and not RXPData.stepSkip[i] and not(step.requires and guide.steps[guide.labels[step.requires]].active) then
 			table.insert(f.CurrentStepFrame.activeSteps,step)
 			--f.Steps.frame[i]:SetAlpha(0.66)
 			step.active = true
@@ -493,7 +493,7 @@ function SetStep(n)
 	
 	if guide.steps[n].completed then
 		return SetStep(n+1)
-	else
+	elseif not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active)
 		table.insert(f.CurrentStepFrame.activeSteps,guide.steps[n])
 		f.Steps.frame[n]:SetAlpha(1)
 		guide.steps[n].active = true
@@ -895,7 +895,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	
 	for n,step in ipairs(guide.steps) do
 		step.index = n
-		if step.completewith or step.requires then
+		if step.completewith then
 			step.sticky = true
 		end
 		if step.label then
