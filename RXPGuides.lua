@@ -174,7 +174,7 @@ deathskip = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:112:127:0:15|t",
 home = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:64:79:0:15|t",
 xp = "|TInterface/PETBATTLES/BattleBar-AbilityBadge-Strong-Small:0|t",
 stable = "|TInterface/MINIMAP/TRACKING/StableMaster:0|t",
-tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t"
+tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t",
 abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
 }
 local icons = RXP_.icons
