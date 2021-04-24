@@ -19,7 +19,7 @@ RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
 RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
 RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
 RXP_.functions.events.money = {"PLAYER_MONEY"}
-RXP_.functions.events.trainer = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
+RXP_.functions.events.train = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.abandon = {"QUEST_LOG_UPDATE"}
 
@@ -175,7 +175,7 @@ function RXP_.functions.accept(self,...)
 		local quest = RXP_.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
-			RXP_.questAccept[quest] = true
+			RXP_.questAccept[quest] = RXP_.questAccept[quest] or self.element.step
 			self.element.text = self.element.text:gsub("%*quest%*",quest)
 			if self.element.requestFromServer then
 				self.element.requestFromServer = nil
@@ -225,7 +225,7 @@ function RXP_.functions.turnin(self,...)
 		local quest = RXP_.GetQuestName(id,self)
 		if quest then
 			self.element.title = quest
-			RXP_.questTurnIn[quest] = true
+			RXP_.questTurnIn[quest] = RXP_.questTurnIn[quest] or self.element.step
 			self.element.text = self.element.text:gsub("%*quest%*",quest)
 			if self.element.requestFromServer then
 				self.element.requestFromServer = nil

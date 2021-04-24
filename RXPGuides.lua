@@ -49,6 +49,19 @@ local startTime = GetTime()
 local questProgressTimer = 0
 local questTimer = 0
 
+function RXP_.QuestAutoAccept(title)
+	if title then
+		return RXP_.questAccept[title] and RXP_.questAccept[title].active
+	end
+end
+
+function RXP_.QuestAutoTurnIn(title)
+	if title then
+		return RXP_.questTurnIn[title] and RXP_.questTurnIn[title].active
+	end
+end
+
+
 eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
 	if event == "QUEST_LOG_UPDATE" then
@@ -86,7 +99,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	if event == "QUEST_COMPLETE" then
 		local id = GetQuestID()
         local title = C_QuestLog.GetQuestInfo(id)
-		if GetNumQuestChoices() <= 1 and RXP_.questTurnIn[title] and GetTime() - questTimer > 0.1 then
+		if GetNumQuestChoices() <= 1 and RXP_.QuestAutoTurnIn(title) and GetTime() - questTimer > 0.1 then
 			GetQuestReward(GetNumQuestChoices())
 			--questTimer = GetTime()
 		end
@@ -98,26 +111,26 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	elseif event == "QUEST_DETAIL" then
 		local id = GetQuestID()
         local title = RXP_.GetQuestName(id)
-		if RXP_.questAccept[title] then
+		if RXP_.QuestAutoAccept(title) then
 			AcceptQuest()
 			HideUIPanel(QuestFrame)
 		end
 		
-	elseif event == "QUEST_ACCEPT_CONFIRM" and RXP_.questAccept[arg2] then
+	elseif event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2)then
 		ConfirmAcceptQuest() 
 		StaticPopup_Hide("QUEST_ACCEPT")
 		
 	elseif event == "QUEST_GREETING" then
 		for i = 1, GetNumActiveQuests() do
 			local title, isComplete = GetActiveTitle(i)
-			if title and RXP_.questTurnIn[title] and isComplete then
+			if RXP_.QuestAutoTurnIn(title) and isComplete then
 				return SelectActiveQuest(i)
 			end
 		end
 		
 		for i = 1, GetNumAvailableQuests() do
 			local title, isComplete = GetAvailableTitle(i)
-			if title and RXP_.questAccept[title] and not isComplete then
+			if RXP_.QuestAutoAccept(title) and not isComplete then
 				return SelectAvailableQuest(i)
 			end
 		end
@@ -128,14 +141,14 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
 		for i = 1, nActive do
 			local title, level, isTrivial, isComplete = select(i * 6 - 5, GetGossipActiveQuests())
-			if title and RXP_.questTurnIn[title] and isComplete then
+			if RXP_.QuestAutoTurnIn(title) and isComplete then
 				return SelectGossipActiveQuest(i)
 			end
 		end
 		
 		for i = 1, nAvailable do
 			local title = select(i * 7 - 6, GetGossipAvailableQuests())
-			if title and RXP_.questAccept[title] then
+			if RXP_.QuestAutoAccept(title) then
 				return SelectGossipAvailableQuest(i)
 			end
 		end
