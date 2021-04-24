@@ -491,12 +491,13 @@ function SetStep(n)
 		--ClearMapPins(i)
 	end
 	
-	if guide.steps[n].completed then
+	local step = guide.steps[n]
+	if step.completed then
 		return SetStep(n+1)
 	elseif not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) then
-		table.insert(f.CurrentStepFrame.activeSteps,guide.steps[n])
+		table.insert(f.CurrentStepFrame.activeSteps,step)
 		f.Steps.frame[n]:SetAlpha(1)
-		guide.steps[n].active = true
+		step.active = true
 	end
 	
 	if #f.CurrentStepFrame.activeSteps == 0 then 
