@@ -76,13 +76,14 @@ af:SetClampedToScreen(true)
 af:SetSize(32,32)
 af.texture = af:CreateTexture()
 af.texture:SetAllPoints()
-af.texture:SetTexture("Interface/MINIMAP/Vehicle-SilvershardMines-Arrow")
+af.texture:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_navigation_arrow-1")
+--af.texture:SetScale(0.5)
 af.text = af:CreateFontString(nil,"OVERLAY")
 af.text:SetTextColor(1,1,1,1)
 af.text:SetFont("Fonts\\FRIZQT__.TTF", 9)--,"OUTLINE")
 af.text:SetJustifyH("CENTER")
 af.text:SetJustifyV("CENTER")
-af.text:SetPoint("TOP",af,"BOTTOM")
+af.text:SetPoint("TOP",af,"BOTTOM",0,-5)
 af.orientation = 0
 af.distance = 0
 af.lowerbound = math.pi/32 --angle in radians
