@@ -384,12 +384,12 @@ function RXP_.functions.goto(self,...)
 		end
 		element.x = tonumber(x)
 		element.y = tonumber(y)
-		if not (element.x and element.y and zone) then
+		if not (element.x and element.y and zone and RXP_.mapId[zone]) then
 			error("Error parsing guide "..RXP_.currentGuideName.." at line "..tostring(self)..": Invalid coordinates or map name")
 		end
+		element.zone = RXP_.mapId[zone]
 		element.radius = tonumber(radius)
 		radius = element.radius
-		element.zone = RXP_.mapId[zone]
 		element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
 		element.arrow = true
 		element.parent = true
@@ -880,6 +880,8 @@ function RXP_.functions.abandon(self,...)
 
 		if not C_QuestLog.IsOnQuest(id) then
 			RXP_.SetElementComplete(self,true)
+		else
+			RXP_.SetElementIncomplete(self)
 		end
 		
 	end
