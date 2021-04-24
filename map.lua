@@ -107,6 +107,7 @@ end
 
 if self.element then
 	local x,y,instance = HBD:GetPlayerWorldPosition()
+	if not instance then return end
 	local angle,dist = HBD:GetWorldVector(instance, x, y, self.element.wx,self.element.wy)
 	local orientation = angle-GetPlayerFacing()
 	local diff = math.abs(orientation-self.orientation)

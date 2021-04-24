@@ -493,7 +493,7 @@ function SetStep(n)
 	
 	if guide.steps[n].completed then
 		return SetStep(n+1)
-	elseif not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active)
+	elseif not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) then
 		table.insert(f.CurrentStepFrame.activeSteps,guide.steps[n])
 		f.Steps.frame[n]:SetAlpha(1)
 		guide.steps[n].active = true
