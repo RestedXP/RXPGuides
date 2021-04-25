@@ -34,6 +34,8 @@ eventFrame:RegisterEvent("QUEST_ACCEPT_CONFIRM")
 eventFrame:RegisterEvent("QUEST_GREETING")
 eventFrame:RegisterEvent("GOSSIP_SHOW")
 eventFrame:RegisterEvent("QUEST_DETAIL")
+eventFrame:RegisterEvent("TRAINER_SHOW")
+eventFrame:RegisterEvent("TRAINER_CLOSED")
 
 RXPG_Debug = false
 
@@ -61,6 +63,49 @@ function RXP_.QuestAutoTurnIn(title)
 	end
 end
 
+RXP_.skillList = {}
+
+local trainerUpdate = 0
+function RXP_.BuySpells(id,level)
+	local name, rank, category, expanded = GetTrainerServiceInfo(id)
+	if category ~= "available" then
+		return
+	end
+	
+	rank = tonumber(rank:match("(%d+)")) or 0
+	for spellName,spellRank in pairs(RXP_.skillList) do
+		if name == spellName and (rank <= spellRank or spellRank == 0) then
+			BuyTrainerService(id)
+			return
+		end
+	end
+end
+
+local function OnTrainer()
+	local level = UnitLevel("player")
+	local n = GetNumTrainerServices()
+
+	if not n or n == 0 or GetTime() - trainerUpdate > 15 then
+		return
+	end
+
+	for id = 1,n do
+		RXP_.BuySpells(id,level)
+	end
+
+end
+
+local tTimer = 0
+local function trainerFrameUpdate(self,t)
+	tTimer = tTimer + t
+	if tTimer >= 0.4 then
+		tTimer = 0
+		if GetTime() - trainerUpdate > 15 then
+			self:SetScript("OnUpdate",nil)
+		end
+		OnTrainer()
+	end
+end
 
 eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
@@ -91,6 +136,13 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		loadtime = GetTime()
 		local guide = RXP_.GetGuideTable(RXPData.currentGuideGroup,RXPData.currentGuideName)
 		RXP_:LoadGuide(guide,true)
+		return
+	elseif event == "TRAINER_SHOW" then
+		self:SetScript("OnUpdate",trainerFrameUpdate)
+		trainerUpdate = GetTime()
+		return
+	elseif event == "TRAINER_CLOSED" then
+		self:SetScript("OnUpdate",nil)
 		return
 	end
 	
@@ -180,6 +232,7 @@ fly = "|TInterface/GossipFrame/TaxiGossipIcon:0|t",
 fp = "|TInterface/MINIMAP/TRACKING/OBJECTICONS:0:0:0:0:256:64:160:191:32:63|t",
 hs = "|TInterface/MINIMAP/TRACKING/Innkeeper:0|t",
 trainer = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
+train = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
 arrow = "|TInterface/MINIMAP/MinimapArrow:0|t",
 marker = "|TInterface/WORLDSTATEFRAME/ColumnIcon-FlagCapture2:0|t",
 goto = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:96:112:0:15|t",

@@ -19,7 +19,7 @@ RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
 RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
 RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
 RXP_.functions.events.money = {"PLAYER_MONEY"}
-RXP_.functions.events.train = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
+RXP_.functions.events.train = {"LEARNED_SPELL_IN_TAB","TRAINER_SHOW"}
 RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.abandon = {"QUEST_LOG_UPDATE"}
 
@@ -795,27 +795,102 @@ function RXP_.functions.istrained(self,...)
 end
 
 
+
+
 function RXP_.functions.train(self,...)
 	if type(self) == "number" then --on parse
 		local element = {}
-		local text,id = ...
-		element.id = tonumber(id)
-		if not C_Spell.IsSpellDataCached(element.id) then
+		local text,id,rank = ...
+		local spellId = tonumber(id)
+		
+		if spellId then
+			element.id = spellId 
+		else
+			element.id = select(7,GetSpellInfo(id))
+		end
+		
+		if rank then
+			element.rank = tonumber(rank:match("(%d+)")) or 0
+		end
+		
+		if element.id and not C_Spell.IsSpellDataCached(element.id) then
 			C_Spell.RequestLoadSpellData(element.id)
 		end
+		
 		if text and text ~= "" then
 			element.text = text
 		else
 			element.text = "-"
 		end
+		element.requestFromServer = true
 		element.tooltipText = RXP_.icons.trainer..element.text
 		return element
+	end
+	
+	local event = ...
+
+	if not self.element.rank then
+		local r = GetSpellSubtext(self.element.id)
+		self.element.rank = tonumber(r:match("(%d+)")) or 0
+	end
+	if not self.element.title then
+		self.element.title = GetSpellInfo(self.element.id)
 	end
 	
 	if IsPlayerSpell(self.element.id) then
 		RXP_.SetElementComplete(self)
 	end
+	
+	if self.element.title then
+		if self.element.completed or self.element.step.completed or not self.element.step.active then
+			RXP_.skillList[self.element.title] = nil
+		else
+			RXP_.skillList[self.element.title] = self.element.rank
+		end
+	else
+		self.element.requestFromServer = true
+	end
 end
+
+
+
+function Guidelime.Zarant.Train(self,args,event,spellId)
+	if not self then 
+		return "LEARNED_SPELL_IN_TAB,TRAINER_CLOSED,OnStepActivation,OnStepCompletion"
+	end
+	
+	if event == "LEARNED_SPELL_IN_TAB" then
+		local name = GetSpellInfo(spellId)
+		local rank = self.skillList[name]
+		
+		if rank and (rank == GetSpellSubtext(spellId) or rank == "" or rank == 0) then
+			self.spellsTrained = self.spellsTrained+1
+		end
+		
+	elseif event == "OnStepActivation" then
+		if not self.skillList then
+			self.skillList = {}
+			self.spellsTrained = 0
+		end
+		for _,v in pairs(args) do
+			local spell, rank = string.match(v,"%s*(%w.*%w)%s*%([^%d]*(%d*).*%)")
+			if not spell then 
+				spell = v
+				rank = 0
+			end
+			rank = tonumber(rank) or 0
+			self.skillList[spell] = rank
+			Guidelime.Zarant.skillList[spell] = rank
+		end
+	elseif event == "TRAINER_CLOSED" and self.spellsTrained >= #self.skillList then
+		self:SkipStep()
+	elseif event == "OnStepCompletion" then
+		for spell,rank in pairs(self.skillList) do
+			Guidelime.Zarant.skillList[spell] = nil
+		end
+	end
+end
+
 
 function RXP_.functions.istrained(self,...)
 	if type(self) == "number" then --on parse
