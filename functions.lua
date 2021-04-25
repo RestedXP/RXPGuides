@@ -854,43 +854,6 @@ end
 
 
 
-function Guidelime.Zarant.Train(self,args,event,spellId)
-	if not self then 
-		return "LEARNED_SPELL_IN_TAB,TRAINER_CLOSED,OnStepActivation,OnStepCompletion"
-	end
-	
-	if event == "LEARNED_SPELL_IN_TAB" then
-		local name = GetSpellInfo(spellId)
-		local rank = self.skillList[name]
-		
-		if rank and (rank == GetSpellSubtext(spellId) or rank == "" or rank == 0) then
-			self.spellsTrained = self.spellsTrained+1
-		end
-		
-	elseif event == "OnStepActivation" then
-		if not self.skillList then
-			self.skillList = {}
-			self.spellsTrained = 0
-		end
-		for _,v in pairs(args) do
-			local spell, rank = string.match(v,"%s*(%w.*%w)%s*%([^%d]*(%d*).*%)")
-			if not spell then 
-				spell = v
-				rank = 0
-			end
-			rank = tonumber(rank) or 0
-			self.skillList[spell] = rank
-			Guidelime.Zarant.skillList[spell] = rank
-		end
-	elseif event == "TRAINER_CLOSED" and self.spellsTrained >= #self.skillList then
-		self:SkipStep()
-	elseif event == "OnStepCompletion" then
-		for spell,rank in pairs(self.skillList) do
-			Guidelime.Zarant.skillList[spell] = nil
-		end
-	end
-end
-
 
 function RXP_.functions.istrained(self,...)
 	if type(self) == "number" then --on parse
