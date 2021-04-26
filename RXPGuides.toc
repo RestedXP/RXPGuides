@@ -3,6 +3,7 @@
 ## Notes: In-game leveling guides
 ## Author: Zarant
 ## SavedVariables: RXPData
+## SavedVariablesPerCharacter: RXPCData
 
 HereBeDragons\LibStub\LibStub.lua
 HereBeDragons\CallbackHandler-1.0\CallbackHandler-1.0.lua

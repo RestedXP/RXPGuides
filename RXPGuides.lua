@@ -36,14 +36,16 @@ eventFrame:RegisterEvent("GOSSIP_SHOW")
 eventFrame:RegisterEvent("QUEST_DETAIL")
 eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
+eventFrame:RegisterEvent("QUEST_TURNED_IN")
 
 RXPG_Debug = false
 
 
 function RXPG_init()
-	RXPData = RXPData or {}
-	RXPData.stepSkip = RXPData.stepSkip or {}
-	RXPData.numMapPins = RXPData.numMapPins or 7
+	RXPData = RXPCData or {}
+	RXPCData = RXPCData or {}
+	RXPCData.stepSkip = RXPCData.stepSkip or {}
+	RXPCData.numMapPins = RXPCData.numMapPins or 7
 end
 
 
@@ -72,7 +74,7 @@ function RXP_.BuySpells(id,level)
 		return
 	end
 	
-	rank = tonumber(rank:match("(%d+)")) or 0
+	rank = rank and tonumber(rank:match("(%d+)")) or 0
 	for spellName,spellRank in pairs(RXP_.skillList) do
 		if name == spellName and (rank <= spellRank or spellRank == 0) then
 			BuyTrainerService(id)
@@ -119,7 +121,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		end
 		if update then
 			RXP_.updateStepText = true
-			--SetStep(RXPData.currentStep)
+			--SetStep(RXPCData.currentStep)
 		end
 		return
 	elseif event == "GET_ITEM_INFO_RECEIVED" and arg2 then
@@ -130,13 +132,8 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			RXP_.updateStepText = true
 		end
 		return
-	elseif event == "PLAYER_LOGIN" then
-		RXPG_init()
-		RXP_.GenerateMenuTable()
-		loadtime = GetTime()
-		local guide = RXP_.GetGuideTable(RXPData.currentGuideGroup,RXPData.currentGuideName)
-		RXP_:LoadGuide(guide,true)
-		return
+	elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
+		C_Timer.After(1.5, function() RXP_:LoadGuide(RXP_.currentGuide,true) end)
 	elseif event == "TRAINER_SHOW" then
 		self:SetScript("OnUpdate",trainerFrameUpdate)
 		trainerUpdate = GetTime()
@@ -144,9 +141,16 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	elseif event == "TRAINER_CLOSED" then
 		self:SetScript("OnUpdate",nil)
 		return
+	elseif event == "PLAYER_LOGIN" then
+		RXPG_init()
+		RXP_.GenerateMenuTable()
+		loadtime = GetTime()
+		local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
+		RXP_:LoadGuide(guide,true)
+		return
 	end
 	
-	--if IsShiftKeyDown() ~= not RXPData.automateQuests then return end
+	--if IsShiftKeyDown() ~= not RXPCData.automateQuests then return end
 	
 	if event == "QUEST_COMPLETE" then
 		local id = GetQuestID()
@@ -446,7 +450,7 @@ function RXP_.UpdateStepCompletion()
 	local update
 	
 	for i,step in ipairs(f.CurrentStepFrame.activeSteps) do
-		local completed
+		local completed = true
 		if not step.completed then
 			for j,element in ipairs(step.elements) do
 				if not element.completed then
@@ -466,11 +470,11 @@ function RXP_.UpdateStepCompletion()
 			end
 			if completewith then
 				if guide.steps[completewith].sticky then
-					if RXPData.stepSkip[completewith] then
+					if RXPCData.stepSkip[completewith] then
 						completed = true
 					end
 				else
-					if RXPData.currentStep > completewith then
+					if RXPCData.currentStep > completewith then
 						completed = true
 					end
 				end
@@ -484,10 +488,10 @@ function RXP_.UpdateStepCompletion()
 				end
 			end
 			if step.sticky then
-				RXPData.stepSkip[step.index] = true
+				RXPCData.stepSkip[step.index] = true
 				update = true
 				step.active = nil
-			elseif step.index >= RXPData.currentStep then
+			elseif step.index >= RXPCData.currentStep then
 				step.completed = true
 				RXP_.UpdateBottomFrame(nil,nil,step.index)
 				return SetStep(step.index+1)
@@ -496,8 +500,8 @@ function RXP_.UpdateStepCompletion()
 	end
 	
 	if update then
-		--print('opt',RXPData.currentStep)
-		return SetStep(RXPData.currentStep)
+		--print('opt',RXPCData.currentStep)
+		return SetStep(RXPCData.currentStep)
 	end
 end
 
@@ -510,7 +514,7 @@ function SetStep(n)
 		local isComplete = true
 		local completedStep
 		for i,step in pairs(f.CurrentStepFrame.activeSteps) do
-			if step.sticky and not RXPData.stepSkip[i] then
+			if step.sticky and not RXPCData.stepSkip[i] then
 				isComplete = false
 			end
 		end
@@ -520,7 +524,7 @@ function SetStep(n)
 			n = #guide.steps
 		end
 	end
-	RXPData.currentStep = n
+	RXPCData.currentStep = n
 	--isUpdating = true
 
 
@@ -532,7 +536,7 @@ function SetStep(n)
 		end
 	end
 
-	RXPData.stepSkip[n+1] = nil
+	RXPCData.stepSkip[n+1] = nil
 	if guide.steps[n].sticky and n < #guide.steps then
 		return SetStep(n+1)
 	end
@@ -552,12 +556,12 @@ function SetStep(n)
 		local req
 		if step.requires then
 			req = guide.steps[guide.labels[step.requires]]
-			while req.requires and not RXPData.stepSkip[guide.steps[guide.labels[req.requires]].index] do
+			while req.requires and not RXPCData.stepSkip[guide.steps[guide.labels[req.requires]].index] do
 				req = guide.steps[guide.labels[req.requires]]
 			end
 		end
 		
-		if step.sticky and not RXPData.stepSkip[i] and not(req and req.active) then
+		if step.sticky and not RXPCData.stepSkip[i] and not(req and req.active) then
 			table.insert(f.CurrentStepFrame.activeSteps,step)
 			--f.Steps.frame[i]:SetAlpha(0.66)
 			step.active = true
@@ -948,10 +952,10 @@ function RXP_:LoadGuide(guide,OnLoad)
 	startTime = GetTime()
 	CloseDropDownMenus()
 	C_Timer.After(10,function() RXP_.updateBottomFrame = true end)
-	if not (OnLoad and RXPData.currentStep) then
-		RXPData.currentStep = 1
+	if not (OnLoad and RXPCData.currentStep) then
+		RXPCData.currentStep = 1
 	end
-	RXPData.stepSkip = {}
+	RXPCData.stepSkip = {}
 	local totalHeight = 0
 	local nframes = 0
 	
@@ -968,8 +972,8 @@ function RXP_:LoadGuide(guide,OnLoad)
 	guide = RXP_.currentGuide
 	
 	RXP_.currentGuideName = guide.name
-	RXPData.currentGuideName = guide.name
-	RXPData.currentGuideGroup = guide.group
+	RXPCData.currentGuideName = guide.name
+	RXPCData.currentGuideGroup = guide.group
 	f.GuideName.text:SetText(guide.displayName)
 	local nameWidth = f.GuideName.text:GetStringWidth()+10
 	f.GuideName:SetWidth(nameWidth)
@@ -1078,7 +1082,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	f.Steps:SetHeight(200)
 	RXP_.UpdateBottomFrame()
 	--RXP_.updateBottomFrame = true
-	SetStep(RXPData.currentStep)
+	SetStep(RXPCData.currentStep)
 end
 
 function RXP_.UpdateBottomFrame(self,inc,stepn)
@@ -1144,7 +1148,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn)
 				fheight = math.ceil(frame.text:GetStringHeight() + 8)
 			frame:SetHeight(fheight)
 			totalHeight = totalHeight + fheight+2
-			RXP_.stepPos[n] = totalHeight-3
+			RXP_.stepPos[n] = totalHeight-5
 		end
 		RXP_.stepPos[0] = totalHeight
 		--print(f.Steps.frame[#f.Steps.frame]:GetBottom(),totalHeight)
