@@ -446,7 +446,7 @@ function RXP_.UpdateStepCompletion()
 	local update
 	
 	for i,step in ipairs(f.CurrentStepFrame.activeSteps) do
-		local completed = RXP_.AldorScryerCheck(step)
+		local completed
 		if not step.completed then
 			for j,element in ipairs(step.elements) do
 				if not element.completed then
@@ -954,7 +954,19 @@ function RXP_:LoadGuide(guide,OnLoad)
 	RXPData.stepSkip = {}
 	local totalHeight = 0
 	local nframes = 0
-	RXP_.currentGuide = guide
+	
+	RXP_.currentGuide = {}
+	for k,v in pairs(guide) do
+		RXP_.currentGuide[k] = v
+	end
+	RXP_.currentGuide.steps = {}
+	for n,step in ipairs(guide.steps) do
+		if RXP_.AldorScryerCheck(step) then
+			table.insert(RXP_.currentGuide.steps,step)
+		end
+	end
+	guide = RXP_.currentGuide
+	
 	RXP_.currentGuideName = guide.name
 	RXPData.currentGuideName = guide.name
 	RXPData.currentGuideGroup = guide.group
@@ -1076,31 +1088,26 @@ function RXP_.UpdateBottomFrame(self,inc,stepn)
 		local frame = f.Steps.frame[stepNumber]
 		local step = frame.step
 		local fheight
-		local factionCheck, faction = RXP_.AldorScryerCheck(step)
-		if factionCheck then
-			local text
-			for i,element in ipairs(frame.step.elements) do
-				if element.requestFromServer and not stepn then
-					element.element = element
-					RXPG[RXP_.currentGuide.group][element.tag](element)
-					RXP_.updateStepText = true
-				end
-				local rawtext = element.tooltipText or element.text
-				if rawtext and not element.hideTooltip then
-					if not text then
-						text = "  "..rawtext
-					else
-						text = text.."\n  "..rawtext
-					end
+		
+		local text
+		for i,element in ipairs(frame.step.elements) do
+			if element.requestFromServer and not stepn then
+				element.element = element
+				RXPG[RXP_.currentGuide.group][element.tag](element)
+				RXP_.updateStepText = true
+			end
+			local rawtext = element.tooltipText or element.text
+			if rawtext and not element.hideTooltip then
+				if not text then
+					text = "  "..rawtext
+				else
+					text = text.."\n  "..rawtext
 				end
 			end
-			frame.text:SetText(text)
-			fheight = math.ceil(frame.text:GetStringHeight() + 8)
-			frame:SetAlpha(1)
-		else
-			fheight = 1
-			frame:SetAlpha(0)
 		end
+		frame.text:SetText(text)
+		fheight = math.ceil(frame.text:GetStringHeight() + 8)
+		frame:SetAlpha(1)
 		
 		local hDiff = fheight - frame:GetHeight()
 		frame:SetHeight(fheight)
@@ -1118,29 +1125,23 @@ function RXP_.UpdateBottomFrame(self,inc,stepn)
 			local text
 			local step = frame.step
 			local fheight
-			local factionCheck, faction = RXP_.AldorScryerCheck(step)
-			if factionCheck then
-				for i,element in ipairs(frame.step.elements) do
-					if not self and element.requestFromServer then
-						element.element = element
-						RXPG[RXP_.currentGuide.group][element.tag](element)
-					end
-					local rawtext = element.tooltipText or element.text
-					if rawtext and rawtext ~= "" then
-						if not text then
-							text = "   "..rawtext
-						else
-							text = text.."\n   "..rawtext
-						end
+			for i,element in ipairs(frame.step.elements) do
+				if not self and element.requestFromServer then
+					element.element = element
+					RXPG[RXP_.currentGuide.group][element.tag](element)
+				end
+				local rawtext = element.tooltipText or element.text
+				if rawtext and rawtext ~= "" then
+					if not text then
+						text = "   "..rawtext
+					else
+						text = text.."\n   "..rawtext
 					end
 				end
+			end
 				frame:SetAlpha(1)
 				frame.text:SetText(text)
 				fheight = math.ceil(frame.text:GetStringHeight() + 8)
-			else
-				fheight = 1
-				frame:SetAlpha(0)
-			end
 			frame:SetHeight(fheight)
 			totalHeight = totalHeight + fheight+2
 			RXP_.stepPos[n] = totalHeight-3
