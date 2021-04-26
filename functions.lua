@@ -19,7 +19,7 @@ RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
 RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
 RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
 RXP_.functions.events.money = {"PLAYER_MONEY"}
-RXP_.functions.events.train = {"LEARNED_SPELL_IN_TAB","TRAINER_SHOW"}
+RXP_.functions.events.train = {"TRAINER_SHOW","CHAT_MSG_SYSTEM"}
 RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.abandon = {"QUEST_LOG_UPDATE"}
 
@@ -828,10 +828,11 @@ function RXP_.functions.train(self,...)
 	end
 	
 	local event = ...
-
-	if not self.element.rank then
-		local r = GetSpellSubtext(self.element.id)
-		self.element.rank = tonumber(r:match("(%d+)")) or 0
+	local rank = self.element.rank or 0
+	if not self.element.rank and C_Spell.IsSpellDataCached(self.element.id) then
+		rank = GetSpellSubtext(self.element.id)
+		rank = tonumber(rank:match("(%d+)")) or 0
+		self.element.rank = rank
 	end
 	if not self.element.title then
 		self.element.title = GetSpellInfo(self.element.id)

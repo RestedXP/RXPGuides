@@ -549,7 +549,15 @@ function SetStep(n)
 	
 	for i = 1,n-1 do
 		local step = guide.steps[i]
-		if step.sticky and not RXPData.stepSkip[i] and not(step.requires and guide.steps[guide.labels[step.requires]].active) then
+		local req
+		if step.requires then
+			req = guide.steps[guide.labels[step.requires]]
+			while req.requires and not RXPData.stepSkip[guide.steps[guide.labels[req.requires]].index] do
+				req = guide.steps[guide.labels[req.requires]]
+			end
+		end
+		
+		if step.sticky and not RXPData.stepSkip[i] and not(req and req.active) then
 			table.insert(f.CurrentStepFrame.activeSteps,step)
 			--f.Steps.frame[i]:SetAlpha(0.66)
 			step.active = true

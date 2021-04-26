@@ -10,7 +10,7 @@ local function applies(text)
 		local isMatch
 		for str in string.gmatch(text, "[^/]+") do			
 			local v = true
-			for entry in string.gmatch(str, "%w+") do
+			for entry in string.gmatch(str, "!?%w+") do
 				local state = true
 				if entry:sub(1,1) == "!" then
 					entry = entry:sub(2,-1)
