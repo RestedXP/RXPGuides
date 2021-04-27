@@ -44,7 +44,8 @@ function RXPG.RegisterGuide(guideGroup,text)
 	local skip
 	local linenumber = 0
 
-	local function parseLine(line)
+	local function parseLine(linetext)
+		local line = linetext
 		local classtag 
 		line = line:gsub("%s*<<%s*(.+)",function(t) 
 			classtag = t
@@ -83,14 +84,14 @@ function RXPG.RegisterGuide(guideGroup,text)
 			end
 			--print(tag,args,type(guide))
 			if RXPG[guide.group][tag] then
-				element = RXPG[guide.group][tag](linenumber,text,unpack(t))
+				element = RXPG[guide.group][tag](linetext,text,unpack(t))
 				element.tag = tag
 				element.step = step
 				if element.parent then
 					element.parent = lastElement
 				end
 			else
-				error("Error parsing guide "..RXP_.currentGuideName.." at line "..linenumber..": Invalid function call (."..tag..")")
+				error("Error parsing guide "..RXP_.currentGuideName..": Invalid function call (."..tag..")\n"..linetext)
 			end
 		end)
 		
