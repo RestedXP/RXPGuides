@@ -22,22 +22,22 @@ RXP_.functions.events.money = {"PLAYER_MONEY"}
 RXP_.functions.events.train = {"TRAINER_SHOW","CHAT_MSG_SYSTEM","SKILL_LINES_CHANGED"}
 RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.abandon = RXP_.functions.events.complete
-RXP_.functions.events.skipIfIncomplete = RXP_.functions.events.complete
+RXP_.functions.events.isQuestComplete = RXP_.functions.events.complete
 RXP_.functions.events.isOnQuest = RXP_.functions.events.complete
+RXP_.functions.events.isQuestTurnedIn = RXP_.functions.events.complete
 
+local IsQuestTurnedIn = IsQuestFlaggedCompleted
 
-local IsQuestCompleted = IsQuestFlaggedCompleted
-
-if not IsQuestCompleted then
-	IsQuestCompleted = C_QuestLog.IsQuestFlaggedCompleted
-	if not IsQuestCompleted then
-		IsQuestCompleted = function(id)
+if not IsQuestTurnedIn then
+	IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
+	if not IsQuestTurnedIn then
+		IsQuestTurnedIn = function(id)
 			return GetQuestsCompleted()[id]
 		end
 	end
 end
 
-local function ObjectivesComplete(id)
+local function IsQuestComplete(id)
 	for i = 1,GetNumQuestLogEntries() do
 		local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
 		if questID == id then
@@ -191,7 +191,7 @@ function RXP_.functions.accept(self,...)
 		self.element.tooltipText = RXP_.icons.accept..self.element.text
 		
 
-		if IsQuestCompleted(id) or C_QuestLog.IsOnQuest(id) or (questId == id)  then
+		if IsQuestTurnedIn(id) or C_QuestLog.IsOnQuest(id) or (questId == id)  then
 			RXP_.SetElementComplete(self,true)
 		elseif self.element.completed then
 			RXP_.SetElementIncomplete(self)
@@ -240,7 +240,7 @@ function RXP_.functions.turnin(self,...)
 		self.element.tooltipText = RXP_.icons.turnin..self.element.text
 		RXP_.UpdateStepText(self)
 		
-		local isComplete = IsQuestCompleted(id)
+		local isComplete = IsQuestTurnedIn(id)
 		if isComplete then
 			RXP_.SetElementComplete(self,true)
 		elseif questId == id then --repeatable quests
@@ -282,7 +282,7 @@ function RXP_.functions.complete(self,...)
 
 		--print(text)
 		local objtext
-		local isQuestComplete = IsQuestCompleted(id) or ObjectivesComplete(id)
+		local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
 		local skip
 
 		
@@ -781,7 +781,6 @@ end
 
 
 function RXP_.functions.next(skip)
-	print('next')
 	if skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then 
 		return 
 	end
@@ -939,7 +938,7 @@ function RXP_.functions.abandon(self,...)
 end
 
 
-function RXP_.functions.skipIfIncomplete(self,...)
+function RXP_.functions.isQuestComplete(self,...)
 	if type(self) == "string" then
 		local element = {}
 		local text,id = ...
@@ -953,7 +952,7 @@ function RXP_.functions.skipIfIncomplete(self,...)
 		return element
 	end
 	local id = self.element.questId
-	if not (C_QuestLog.IsOnQuest(id) and ObjectivesComplete(id)) then
+	if not (C_QuestLog.IsOnQuest(id) and IsQuestComplete(id)) then
 		step.completed = true
 		RXP_.updateSteps = true
 	end
@@ -974,6 +973,26 @@ function RXP_.functions.isOnQuest(self,...)
 	end
 	local id = self.element.questId
 	if not C_QuestLog.IsOnQuest(id) then
+		step.completed = true
+		RXP_.updateSteps = true
+	end
+end
+
+function RXP_.functions.isQuestTurnedIn(self,...)
+	if type(self) == "string" then
+		local element = {}
+		local text,id = ...
+		id = tonumber(id)
+		if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+		element.questId = id
+		if text and text ~= "" then
+			element.text = text
+		end
+		element.textOnly = true
+		return element
+	end
+	local id = self.element.questId
+	if not IsQuestTurnedIn(id) then
 		step.completed = true
 		RXP_.updateSteps = true
 	end
