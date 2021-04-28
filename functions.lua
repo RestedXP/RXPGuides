@@ -953,7 +953,7 @@ function RXP_.functions.isQuestComplete(self,...)
 	end
 	local id = self.element.questId
 	if not (C_QuestLog.IsOnQuest(id) and IsQuestComplete(id)) then
-		step.completed = true
+		self.element.step.completed = true
 		RXP_.updateSteps = true
 	end
 end
@@ -973,7 +973,7 @@ function RXP_.functions.isOnQuest(self,...)
 	end
 	local id = self.element.questId
 	if not C_QuestLog.IsOnQuest(id) then
-		step.completed = true
+		self.element.step.completed = true
 		RXP_.updateSteps = true
 	end
 end
@@ -993,7 +993,7 @@ function RXP_.functions.isQuestTurnedIn(self,...)
 	end
 	local id = self.element.questId
 	if not IsQuestTurnedIn(id) then
-		step.completed = true
+		self.element.step.completed = true
 		RXP_.updateSteps = true
 	end
 end
