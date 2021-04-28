@@ -139,7 +139,7 @@ function RXP_.UpdateGotoSteps()
 		if element.radius and element.arrow and not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and element.completed) then
 			local x,y,instance = HBD:GetPlayerWorldPosition()
 			local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
-			if dist <= element.radius then
+			if dist and dist <= element.radius then
 				RXP_.SetElementComplete(element.frame)
 			end
 		end

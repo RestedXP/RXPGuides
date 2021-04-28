@@ -494,7 +494,10 @@ function RXP_.UpdateStepCompletion()
 			elseif step.index >= RXPCData.currentStep then
 				step.completed = true
 				RXP_.UpdateBottomFrame(nil,nil,step.index)
-				return SetStep(step.index+1)
+				if step.index == RXPCData.currentStep then
+					return SetStep(step.index+1)
+				end
+				return
 			end
 		end
 	end
