@@ -42,7 +42,7 @@ RXPG_Debug = false
 
 
 function RXPG_init()
-	RXPData = RXPCData or {}
+	RXPData = RXPData or {}
 	RXPCData = RXPCData or {}
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
 	RXPCData.numMapPins = RXPCData.numMapPins or 7

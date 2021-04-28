@@ -101,7 +101,7 @@ end)
 
 function RXP_.UpdateArrow(self)
 
-if RXPData.disableArrow or not self then
+if RXPCData.disableArrow or not self then
 	return
 end
 
@@ -260,14 +260,14 @@ end
 --wp = CreateWPframe()
 
 local function AddMapIcon(...)
-	if RXPData.hideMapPins then
+	if RXPCData.hideMapPins then
 		return
 	else
 		return HBDPins:AddWorldMapIconWorld(...)
 	end
 end
 local function AddMinimapIcon(...)
-	if RXPData.hideMapPins then
+	if RXPCData.hideMapPins then
 		return
 	else
 		return HBDPins:AddMinimapIconWorld(...)
@@ -355,9 +355,9 @@ function RXP_.UpdateMap()
 		GeneratePins(step,true)
 	end
 	
-	--local stepn = RXPData.currentStep
+	--local stepn = RXPCData.currentStep
 	local npins = 0
-	for stepn = RXPData.currentStep+1, RXPData.currentStep+RXPData.numMapPins do
+	for stepn = RXPCData.currentStep+1, RXPCData.currentStep+RXPCData.numMapPins do
 		if stepn > #RXP_.currentGuide.steps then
 			break
 		end
@@ -382,7 +382,7 @@ function RXP_.UpdateMap()
 		end
 	end
 
-	for i = RXPData.currentStep+1,RXPData.currentStep+RXPData.numMapPins do
+	for i = RXPCData.currentStep+1,RXPCData.currentStep+RXPCData.numMapPins do
 		if i > #RXP_.currentGuide.steps then
 			break
 		end

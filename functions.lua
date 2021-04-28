@@ -501,7 +501,7 @@ function RXP_.functions.fly(self,...)
 	local event = ...
 	if event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1.5 then
 		RXP_.SetElementComplete(self)
-	elseif event == "TAXIMAP_OPENED" and not RXPData.disableAutoFP and self.element.location then
+	elseif event == "TAXIMAP_OPENED" and not RXPCData.disableAutoFP and self.element.location then
 		for i = 1,NumTaxiNodes() do
 			local name = TaxiNodeName(i)
 			if name and name:match(self.element.location) then
