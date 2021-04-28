@@ -138,8 +138,9 @@ function RXP_.UpdateGotoSteps()
 		end
 		if element.radius and element.arrow and not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and element.completed) then
 			local x,y,instance = HBD:GetPlayerWorldPosition()
+			if not instance then return end
 			local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
-			if dist and dist <= element.radius then
+			if dist <= element.radius then
 				RXP_.SetElementComplete(element.frame)
 			end
 		end
@@ -351,7 +352,6 @@ function RXP_.UpdateMap()
 	end
 	
 	for i,step in ipairs(RXP_.MainFrame.CurrentStepFrame.activeSteps) do
-		print(step.index)
 		GeneratePins(step,true)
 	end
 	

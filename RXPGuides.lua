@@ -121,7 +121,6 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		end
 		if update then
 			RXP_.updateStepText = true
-			--SetStep(RXPCData.currentStep)
 		end
 		return
 	elseif event == "GET_ITEM_INFO_RECEIVED" and arg2 then
@@ -495,7 +494,7 @@ function RXP_.UpdateStepCompletion()
 				step.completed = true
 				RXP_.UpdateBottomFrame(nil,nil,step.index)
 				if step.index == RXPCData.currentStep then
-					return SetStep(step.index+1)
+					RXP_.loadNextStep = true
 				end
 				return
 			end
@@ -512,7 +511,7 @@ function SetStep(n)
 	local guide = RXP_.currentGuide
 	local group = guide.group
 
-	
+	print(n)
 	if n > #guide.steps then
 		local isComplete = true
 		local completedStep
@@ -827,7 +826,10 @@ end
 
 
 C_Timer.NewTicker(0.1473,function() 
-	if RXP_.updateSteps then
+	if RXP_.loadNextStep then
+		RXP_.loadNextStep = false
+		SetStep(RXPCData.currentStep+1)
+	elseif RXP_.updateSteps then
 		RXP_.UpdateStepCompletion()
 	elseif RXP_.updateStepText then
 		for n,element in pairs(RXP_.stepUpdateList) do
