@@ -538,7 +538,9 @@ function SetStep(n)
 		end
 	end
 
+
 	RXPCData.stepSkip[n+1] = nil
+	
 	if guide.steps[n].sticky and n < #guide.steps then
 		return SetStep(n+1)
 	end
@@ -946,6 +948,7 @@ f.SF:SetScrollChild(f.Steps)
 
 
 local currentAlpha
+
 function RXP_:LoadGuide(guide,OnLoad)
 	if not guide then
 		if OnLoad then
@@ -954,13 +957,14 @@ function RXP_:LoadGuide(guide,OnLoad)
 			return error('Guide not found')
 		end
 	end
+
 	startTime = GetTime()
 	CloseDropDownMenus()
 	C_Timer.After(10,function() RXP_.updateBottomFrame = true end)
 	if not (OnLoad and RXPCData.currentStep) then
 		RXPCData.currentStep = 1
+		RXPCData.stepSkip = {}
 	end
-	RXPCData.stepSkip = {}
 	local totalHeight = 0
 	local nframes = 0
 	
