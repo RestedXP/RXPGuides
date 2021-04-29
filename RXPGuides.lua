@@ -210,8 +210,6 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		
 	end
 
-	
-	--debugMsg(event)
 end)
 
 
@@ -220,35 +218,6 @@ function RXP_.GetGuideTable(guideGroup,guideName)
 		return RXP_.guides[RXP_.guideList[guideGroup][guideName]]
 	end
 end
-
-
-RXP_.icons = {
-accept = "|TInterface/GossipFrame/AvailableQuestIcon:0|t",
-turnin = "|TInterface/GossipFrame/ActiveQuestIcon:0|t",
-collect = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
-combat = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t",
-complete = "|TInterface/GossipFrame/HealerGossipIcon:0|t",
-vendor = "|TInterface/GossipFrame/BankerGossipIcon:0|t",
-reputation = "|TInterface/GossipFrame/WorkOrderGossipIcon:0|t",
-fly = "|TInterface/GossipFrame/TaxiGossipIcon:0|t",
---home = "|TInterface/GossipFrame/PetitionGossipIcon:0|t",
-fp = "|TInterface/AddOns/RXPGuides/Textures/fp:0|t",
-hs = "|TInterface/MINIMAP/TRACKING/Innkeeper:0|t",
-trainer = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
-train = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
-arrow = "|TInterface/MINIMAP/MinimapArrow:0|t",
-marker = "|TInterface/WORLDSTATEFRAME/ColumnIcon-FlagCapture2:0|t",
-goto = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:96:112:0:15|t",
-deathskip = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:112:127:0:15|t",
-home = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:64:79:0:15|t",
-xp = "|TInterface/PETBATTLES/BattleBar-AbilityBadge-Strong-Small:0|t",
-stable = "|TInterface/MINIMAP/TRACKING/StableMaster:0|t",
-tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t",
-abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
-}
-local icons = RXP_.icons
-
-
 
 
 local backdrop = {
@@ -265,21 +234,16 @@ local backdrop = {
      },
 }
 
-
-
-
 f:Show()
 
 f:SetMovable(true)
 f:SetClampedToScreen(true)
 f:SetResizable(true)
 f:SetMinResize(200,20)
-local isResizing
 
 f.OnMouseDown = function(self, button)
 	if IsAltKeyDown() then
 		f:StartSizing("BOTTOMRIGHT")
-		isResizing = true
 		f:SetScript("OnUpdate",RXP_.UpdateBottomFrame)
 	else
 		f:StartMoving()
@@ -288,12 +252,8 @@ end
 
 f.OnMouseUp = function(self,button)
 	f:StopMovingOrSizing()
-	if isResizing then
-		isResizing = nil
-		f:SetScript("OnUpdate",nil)
-	end
+	f:SetScript("OnUpdate",nil)
 end
-
 
 
 local isResizing
@@ -492,7 +452,7 @@ function RXP_.UpdateStepCompletion()
 				step.active = nil
 			elseif step.index >= RXPCData.currentStep then
 				step.completed = true
-				RXP_.UpdateBottomFrame(nil,nil,step.index)
+				RXP_.UpdateBottomFrame(nil,step.index)
 				if step.index == RXPCData.currentStep then
 					RXP_.loadNextStep = true
 				end
@@ -503,11 +463,11 @@ function RXP_.UpdateStepCompletion()
 	
 	if update then
 		--print('opt',RXPCData.currentStep)
-		return SetStep(RXPCData.currentStep)
+		return RXP_.SetStep(RXPCData.currentStep)
 	end
 end
 
-function SetStep(n)
+function RXP_.SetStep(n)
 	local guide = RXP_.currentGuide
 	local group = guide.group
 
@@ -542,7 +502,7 @@ function SetStep(n)
 	RXPCData.stepSkip[n+1] = nil
 	
 	if guide.steps[n].sticky and n < #guide.steps then
-		return SetStep(n+1)
+		return RXP_.SetStep(n+1)
 	end
 	
 	for i,step in pairs(f.CurrentStepFrame.activeSteps) do
@@ -575,7 +535,7 @@ function SetStep(n)
 	
 	local step = guide.steps[n]
 	if step.completed and n < #guide.steps then
-		return SetStep(n+1)
+		return RXP_.SetStep(n+1)
 	elseif step and not step.completed and not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) then
 		table.insert(f.CurrentStepFrame.activeSteps,step)
 		f.Steps.frame[n]:SetAlpha(1)
@@ -586,7 +546,7 @@ function SetStep(n)
 		if n >= #guide.steps then
 			return RXPG[group].next()
 		else
-			return SetStep(n+1)
+			return RXP_.SetStep(n+1)
 		end
 	end
 	
@@ -826,22 +786,26 @@ end
 end
 
 
-
+local tickTimer = 0
 C_Timer.NewTicker(0.1473,function() 
 	if RXP_.loadNextStep then
 		RXP_.loadNextStep = false
-		SetStep(RXPCData.currentStep+1)
+		RXP_.SetStep(RXPCData.currentStep+1)
 	elseif RXP_.updateSteps then
 		RXP_.UpdateStepCompletion()
 	elseif RXP_.updateStepText then
-		for n,element in pairs(RXP_.stepUpdateList) do
-			RXP_.UpdateBottomFrame(element)
+		for n in pairs(RXP_.stepUpdateList) do
+			RXP_:UpdateBottomFrame(n)
 			--print('ub',n)
 			RXP_.stepUpdateList[n] = nil
 		end
 		RXP_.UpdateText()
 	elseif RXP_.updateBottomFrame then
 		RXP_.UpdateBottomFrame()
+	elseif GetTime() - tickTimer > 4 then
+		for n = 1,RXPCData.numMapPins do
+			RXP_:UpdateBottomFrame(RXPCData.currentStep+n,true)
+		end
 	else
 		RXP_.UpdateGotoSteps()
 	end
@@ -849,6 +813,7 @@ C_Timer.NewTicker(0.1473,function()
 	if RXP_.updateMap then
 		RXP_.UpdateMap()
 	end
+	tickTimer = GetTime()
 end)
 
 
@@ -1035,7 +1000,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 		end)
 		frame:SetScript("OnMouseDown",function()
 			step.completionState = {}
-			SetStep(n,guide)
+			RXP_.SetStep(n,guide)
 		end)
 		
 		
@@ -1091,12 +1056,12 @@ function RXP_:LoadGuide(guide,OnLoad)
 	f.Steps:SetHeight(200)
 	RXP_.UpdateBottomFrame()
 	--RXP_.updateBottomFrame = true
-	SetStep(RXPCData.currentStep)
+	RXP_.SetStep(RXPCData.currentStep)
 end
 
-function RXP_.UpdateBottomFrame(self,inc,stepn)
+function RXP_.UpdateBottomFrame(self,stepn,updateText)
 	--print(type(stepn),stepn)
-	if self and self.step and RXP_.stepPos[0] or stepn then
+	if RXP_.stepPos[0] and (stepn or (self and self.step)) then
 		local stepNumber = stepn or self.step.index
 		local frame = f.Steps.frame[stepNumber]
 		local step = frame.step
@@ -1104,10 +1069,10 @@ function RXP_.UpdateBottomFrame(self,inc,stepn)
 		
 		local text
 		for i,element in ipairs(frame.step.elements) do
-			if element.requestFromServer and not stepn then
+			if element.requestFromServer or updateText then
 				element.element = element
 				RXPG[RXP_.currentGuide.group][element.tag](element)
-				RXP_.updateStepText = true
+				RXP_.updateStepText = element.requestFromServer
 			end
 			local rawtext = element.tooltipText or element.text
 			if rawtext and not element.hideTooltip then
@@ -1220,7 +1185,7 @@ end
 
 
 
-ff1 = f
+--ff1 = f
 
 
 

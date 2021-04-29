@@ -419,22 +419,3 @@ function RXP_.UpdateMap()
 	end
 	af:Hide()
 end
-
-
-
-
---af:SetScript("OnUpdate",RXP_.UpdateArrow)
-
-
-	
---[[
-if GuidelimeData.arrowStyle == 1 then
-		addon.arrowFrame.texture:SetTexture(addon.icons.MAP_LIME_ARROW)
-		addon.arrowFrame.texture:SetVertexColor(1,1,1)
-	elseif GuidelimeData.arrowStyle == 2 then
-		addon.arrowFrame.texture:SetTexture(addon.icons.MAP_ARROW)
-		addon.arrowFrame.texture:SetVertexColor(0.5,1,0.2)
-	end
-	addon.arrowFrame:SetWidth(GuidelimeDataChar.arrowSize)
-	addon.arrowFrame:SetHeight(GuidelimeDataChar.arrowSize)
-	]]
