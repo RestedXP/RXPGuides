@@ -80,14 +80,14 @@ local nrequests = 0
 local requests = {}
 function RXP_.GetQuestName(id,ref)
 	local ctime = GetTime()
-	if ctime - timer > 1 then
+	if ctime - timer > 0.7 then
 		timer = ctime
 		nrequests = 0
 	end
 	
-	if nrequests < 4 or requests[id] then
+	if nrequests < 3 or requests[id] then
 		if HaveQuestData(id) then
-			--requests[id] = true
+			requests[id] = true
 		else
 			nrequests = nrequests + 1
 			return
@@ -99,14 +99,14 @@ end
 
 function RXP_.GetQuestObjectives(id)
 	local ctime = GetTime()
-	if ctime - timer > 1 then
+	if ctime - timer > 0.7 then
 		timer = ctime
 		nrequests = 0
 	end
 	
-	if nrequests < 4 or requests[id] then
+	if nrequests < 3 or requests[id] then
 		if HaveQuestData(id) then
-			--requests[id] = true
+			requests[id] = true
 		else
 			nrequests = nrequests + 1
 			return
@@ -198,6 +198,9 @@ function RXP_.functions.accept(self,...)
 			element.text = "Accept *quest*"
 			element.requestFromServer = true
 		end
+		if element.text:match("%*quest%*") then
+			element.retrieveText = true
+		end
 		--print("Q1",element.text)
 		element.tooltipText = RXP_.icons.accept..element.text
 		--print(element.rawtext)
@@ -206,20 +209,22 @@ function RXP_.functions.accept(self,...)
 		local element = self.element
 		local event,_,questId = ...
 		local id = element.questId
-		local quest = RXP_.GetQuestName(id,self)
-		if quest then
-			element.title = quest
-			RXP_.questAccept[quest] = RXP_.questAccept[quest] or element.step
-			element.text = element.text:gsub("%*quest%*",quest)
-			if element.requestFromServer then
-				element.requestFromServer = nil
-				RXP_.UpdateStepText(self)
+		if element.retrieveText then
+			local quest = RXP_.GetQuestName(id,self)
+			if quest then
+				element.title = quest
+				RXP_.questAccept[quest] = RXP_.questAccept[quest] or element.step
+				element.text = element.text:gsub("%*quest%*",quest)
+				if element.requestFromServer then
+					element.requestFromServer = nil
+					RXP_.UpdateStepText(self)
+				end
+			else
+				element.title = ""
+				element.requestFromServer = true
 			end
-		else
-			element.title = ""
-			element.requestFromServer = true
 		end
-
+			
 		element.tooltipText = RXP_.icons.accept..element.text
 		
 
@@ -251,24 +256,29 @@ function RXP_.functions.turnin(self,...)
 			element.text = "Turn in *quest*"
 			element.requestFromServer = true
 		end
+		if element.text:match("%*quest%*") then
+			element.retrieveText = true
+		end
 		element.tooltipText = RXP_.icons.turnin..element.text
 		return element
 	else
 		local element = self.element
 		local event,questId = ...
 		local id = element.questId
-		local quest = RXP_.GetQuestName(id,self)
-		if quest then
-			element.title = quest
-			RXP_.questTurnIn[quest] = RXP_.questTurnIn[quest] or element.step
-			element.text = element.text:gsub("%*quest%*",quest)
-			if element.requestFromServer then
-				element.requestFromServer = nil
-				RXP_.UpdateStepText(self)
+		if element.retrieveText then
+			local quest = RXP_.GetQuestName(id,self)
+			if quest then
+				element.title = quest
+				RXP_.questAccept[quest] = RXP_.questAccept[quest] or element.step
+				element.text = element.text:gsub("%*quest%*",quest)
+				if element.requestFromServer then
+					element.requestFromServer = nil
+					RXP_.UpdateStepText(self)
+				end
+			else
+				element.title = ""
+				element.requestFromServer = true
 			end
-		else
-			element.title = ""
-			element.requestFromServer = true
 		end
 		element.tooltipText = RXP_.icons.turnin..element.text
 		RXP_.UpdateStepText(self)
@@ -950,6 +960,9 @@ function RXP_.functions.abandon(self,...)
 			element.text = "Abandon *quest*"
 			element.requestFromServer = true
 		end
+		if element.text:match("%*quest%*") then
+			element.retrieveText = true
+		end
 		--print("Q1",element.text)
 		element.tooltipText = RXP_.icons.abandon..element.text
 		--print(element.rawtext)
@@ -958,20 +971,21 @@ function RXP_.functions.abandon(self,...)
 		local element = self.element
 		local event,_,questId = ...
 		local id = element.questId
-		local quest = RXP_.GetQuestName(id,self)
-		if quest then
-			element.title = quest
-			element.text = element.text:gsub("%*quest%*",quest)
-			if element.requestFromServer then
-				element.requestFromServer = nil
-				RXP_.UpdateStepText(self)
+		if element.retrieveText then
+			local quest = RXP_.GetQuestName(id,self)
+			if quest then
+				element.title = quest
+				element.text = element.text:gsub("%*quest%*",quest)
+				if element.requestFromServer then
+					element.requestFromServer = nil
+					RXP_.UpdateStepText(self)
+				end
+			else
+				element.title = ""
+				element.requestFromServer = true
 			end
-		else
-			element.title = ""
-			element.requestFromServer = true
 		end
-
-		element.tooltipText = RXP_.icons.accept..element.text
+		element.tooltipText = RXP_.icons.abandon..element.text
 		
 
 		if not C_QuestLog.IsOnQuest(id) then
