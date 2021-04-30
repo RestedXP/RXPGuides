@@ -80,7 +80,7 @@ local nrequests = 0
 local requests = {}
 function RXP_.GetQuestName(id,ref)
 	local ctime = GetTime()
-	if ctime - timer > 0.7 then
+	if ctime - timer > 0.8 then
 		timer = ctime
 		nrequests = 0
 	end
@@ -99,7 +99,7 @@ end
 
 function RXP_.GetQuestObjectives(id)
 	local ctime = GetTime()
-	if ctime - timer > 0.7 then
+	if ctime - timer > 0.8 then
 		timer = ctime
 		nrequests = 0
 	end

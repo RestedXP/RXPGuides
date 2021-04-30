@@ -111,7 +111,7 @@ end
 
 eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
-
+	
 	if event == "GET_ITEM_INFO_RECEIVED" and arg2 then
 		if RXP_.itemQueryList[arg1] then
 			RXP_.itemQueryList[arg1] = nil
@@ -788,20 +788,21 @@ C_Timer.NewTicker(0.1473,function()
 	elseif RXP_.updateStepText then
 		RXP_.updateStepText = false
 		for n in pairs(RXP_.stepUpdateList) do
-			RXP_.stepUpdateList[n] = nil
-			RXP_.UpdateBottomFrame(nil,nil,n)
 			if RXP_.currentGuide.steps[n].active then
 				RXP_.updateStepText = true
 			end
+			RXP_.stepUpdateList[n] = nil
+			RXP_.UpdateBottomFrame(nil,nil,n)
 		end
-		RXP_.UpdateText()
-	elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 5 then
+		if RXP_.updateStepText then
+			RXP_.UpdateText()
+		end
+	elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 10 then
 		RXP_.UpdateBottomFrame()
 		tickTimer = GetTime()
-	else
-		RXP_.UpdateGotoSteps()
 	end
 	
+	RXP_.UpdateGotoSteps()
 	if RXP_.updateMap then
 		RXP_.UpdateMap()
 	end
@@ -924,7 +925,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	end
 	local totalHeight = 0
 	local nframes = 0
-	
+	RXP_.stepUpdateList = {}
 	RXP_.currentGuide = {}
 	for k,v in pairs(guide) do
 		RXP_.currentGuide[k] = v
