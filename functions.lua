@@ -4,7 +4,7 @@ RXP_.functions.events = {}
 RXP_.stepUpdateList = {}
 
 RXP_.functions.events.collect = {"BAG_UPDATE"}
-RXP_.functions.events.accept = {"QUEST_ACCEPTED"}
+RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN"}
 RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
 RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
 RXP_.functions.events.collect = {"BAG_UPDATE"}
@@ -77,36 +77,42 @@ end
 
 local timer = GetTime()
 local nrequests = 0
+local requests = {}
 function RXP_.GetQuestName(id,ref)
 	local ctime = GetTime()
-	if ctime - timer > 0.66 then
+	if ctime - timer > 1 then
 		timer = ctime
 		nrequests = 0
 	end
-	nrequests = nrequests + 1
-	local quest
-	if nrequests < 4 or HaveQuestData(id) then
-		quest = C_QuestLog.GetQuestInfo(id)
-		if not quest then
-			RXP_.questQueryList[id] = true
+	
+	if nrequests < 4 or requests[id] then
+		if HaveQuestData(id) then
+			--requests[id] = true
+		else
+			nrequests = nrequests + 1
+			return
 		end
-	elseif ref then
-		RXP_.UpdateStepText(ref)
+	
+		return C_QuestLog.GetQuestInfo(id)
 	end
-	return quest
 end
 
-function RXP_.GetQuestObjectives(id,ref)
+function RXP_.GetQuestObjectives(id)
 	local ctime = GetTime()
-	if ctime - timer > 0.66 then
+	if ctime - timer > 1 then
 		timer = ctime
 		nrequests = 0
 	end
-	nrequests = nrequests + 1
-	if nrequests < 4 or HaveQuestData(id) then
-		return C_QuestLog.GetQuestObjectives(id)	
-	elseif ref then
-		RXP_.UpdateStepText(ref)
+	
+	if nrequests < 4 or requests[id] then
+		if HaveQuestData(id) then
+			--requests[id] = true
+		else
+			nrequests = nrequests + 1
+			return
+		end
+	
+		return C_QuestLog.GetQuestObjectives(id)
 	end
 end
 
@@ -217,7 +223,7 @@ function RXP_.functions.accept(self,...)
 		element.tooltipText = RXP_.icons.accept..element.text
 		
 
-		if IsQuestTurnedIn(id) or C_QuestLog.IsOnQuest(id) or (questId == id)  then
+		if IsQuestTurnedIn(id) or C_QuestLog.IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)  then
 			RXP_.SetElementComplete(self,true)
 		elseif element.completed then
 			RXP_.SetElementIncomplete(self)
@@ -358,14 +364,19 @@ function RXP_.functions.complete(self,...)
 				end
 			end
 		else
-			element.text = "Error: invalid quest ID"
+			element.text = "Retrieving quest data..."
 			element.tooltipText = nil
 			RXP_.UpdateStepText(self)
 			return
 		end
 		
 		
-		local quest = RXP_.GetQuestName(id,self)
+		local quest 
+		
+		if objectives then
+			quest = RXP_.GetQuestName(id,self)
+		end
+	
 		if quest then
 			element.title = quest
 		else
@@ -373,7 +384,6 @@ function RXP_.functions.complete(self,...)
 		end
 		local prefix = objtext:sub(1,1)
 		if not quest or prefix == " " or prefix == ":" then
-			--print('ding')
 			element.requestFromServer = true
 		elseif quest then
 			element.requestFromServer = nil
@@ -876,6 +886,7 @@ function RXP_.functions.train(self,...)
 		rank = GetSpellSubtext(element.id)
 		rank = tonumber(rank:match("(%d+)")) or 0
 		element.rank = rank
+		element.requestFromServer = nil
 	end
 	if not element.title then
 		element.title = GetSpellInfo(element.id)
@@ -1032,4 +1043,24 @@ function RXP_.functions.isQuestTurnedIn(self,...)
 		self.element.step.completed = true
 		RXP_.updateSteps = true
 	end
+end
+
+function RXP_.functions.spellMissing(self,...)
+	if type(self) == "string" then --on parse
+		local element = {}
+		local text,id,rank = ...
+		local spellId = tonumber(id)
+
+		element.id = spellId
+		element.textOnly = true
+
+		return element
+	end
+	
+	if IsPlayerSpell(self.element.id) then
+		RXP_.SetElementComplete(self)
+		self.element.step.completed = true
+		RXP_.updateSteps = true
+	end
+	
 end

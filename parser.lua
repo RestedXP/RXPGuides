@@ -16,6 +16,7 @@ local function applies(text)
 					entry = entry:sub(2,-1)
 					state = false
 				end
+				if entry == "Undead" then entry = "Scourge" end
 				v = v and ((strupper(entry) == class or entry == race or entry == faction) == state)
 			end
 			isMatch = isMatch or v
@@ -95,11 +96,8 @@ function RXPG.RegisterGuide(guideGroup,text)
 			end
 		end)
 		
-		if text then 
-			if not element then
+		if text and not element then
 				element = {text = text, textOnly = true, step = step}
-			end
-			lastElement = element
 		elseif line:sub(1,1) == "+" then
 			element = {text = line:sub(2,-1),step = step}
 			lastElement = element
@@ -108,6 +106,10 @@ function RXPG.RegisterGuide(guideGroup,text)
 		--else
 			--error('Error parsing guide at line '..linenumber..'/ '..guide.name)
 		end
+		if element and (text and not element.textOnly or element.tag == "complete") then
+			lastElement = element
+		end
+		
 		
 		table.insert(step.elements,element)
 	end

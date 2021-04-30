@@ -111,19 +111,8 @@ end
 
 eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
-	if event == "QUEST_LOG_UPDATE" then
-		local update
-		for id,v in pairs(RXP_.questQueryList) do
-			if C_QuestLog.GetQuestInfo(id) then
-				update = true 
-				RXP_.questQueryList[id] = nil
-			end
-		end
-		if update then
-			RXP_.updateStepText = true
-		end
-		return
-	elseif event == "GET_ITEM_INFO_RECEIVED" and arg2 then
+
+	if event == "GET_ITEM_INFO_RECEIVED" and arg2 then
 		if RXP_.itemQueryList[arg1] then
 			RXP_.itemQueryList[arg1] = nil
 			RXP_.updateStepText = true
@@ -132,7 +121,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		end
 		return
 	elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
-		C_Timer.After(1.5, function() RXP_:LoadGuide(RXP_.currentGuide,true) end)
+		C_Timer.After(1, function() RXP_:LoadGuide(RXP_.currentGuide,true) end)
 	elseif event == "TRAINER_SHOW" then
 		self:SetScript("OnUpdate",trainerFrameUpdate)
 		trainerUpdate = GetTime()
@@ -245,6 +234,7 @@ f.OnMouseDown = function(self, button)
 	if IsAltKeyDown() then
 		f:StartSizing("BOTTOMRIGHT")
 		f:SetScript("OnUpdate",RXP_.UpdateBottomFrame)
+		isResizing = true
 	else
 		f:StartMoving()
 	end
@@ -252,7 +242,10 @@ end
 
 f.OnMouseUp = function(self,button)
 	f:StopMovingOrSizing()
-	f:SetScript("OnUpdate",nil)
+	if isResizing then
+		f:SetScript("OnUpdate",nil)
+	end
+	isResizing = false
 end
 
 
@@ -452,7 +445,7 @@ function RXP_.UpdateStepCompletion()
 				step.active = nil
 			elseif step.index >= RXPCData.currentStep then
 				step.completed = true
-				RXP_.UpdateBottomFrame(nil,step.index)
+				RXP_.UpdateBottomFrame(nil,nil,step.index)
 				if step.index == RXPCData.currentStep then
 					RXP_.loadNextStep = true
 				end
@@ -689,7 +682,6 @@ end
 
 function RXP_.UpdateText()
 RXP_.updateStepText = false
-
 local guide = RXP_.currentGuide
 if not guide then return end
 local group = guide.group
@@ -786,7 +778,7 @@ end
 end
 
 
-local tickTimer = 0
+tickTimer = 0
 C_Timer.NewTicker(0.1473,function() 
 	if RXP_.loadNextStep then
 		RXP_.loadNextStep = false
@@ -794,18 +786,18 @@ C_Timer.NewTicker(0.1473,function()
 	elseif RXP_.updateSteps then
 		RXP_.UpdateStepCompletion()
 	elseif RXP_.updateStepText then
+		RXP_.updateStepText = false
 		for n in pairs(RXP_.stepUpdateList) do
-			RXP_:UpdateBottomFrame(n)
-			--print('ub',n)
 			RXP_.stepUpdateList[n] = nil
+			RXP_.UpdateBottomFrame(nil,nil,n)
+			if RXP_.currentGuide.steps[n].active then
+				RXP_.updateStepText = true
+			end
 		end
 		RXP_.UpdateText()
-	elseif RXP_.updateBottomFrame then
+	elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 5 then
 		RXP_.UpdateBottomFrame()
-	elseif GetTime() - tickTimer > 4 then
-		for n = 1,RXPCData.numMapPins do
-			RXP_:UpdateBottomFrame(RXPCData.currentStep+n,true)
-		end
+		tickTimer = GetTime()
 	else
 		RXP_.UpdateGotoSteps()
 	end
@@ -813,7 +805,7 @@ C_Timer.NewTicker(0.1473,function()
 	if RXP_.updateMap then
 		RXP_.UpdateMap()
 	end
-	tickTimer = GetTime()
+	
 end)
 
 
@@ -925,7 +917,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 
 	startTime = GetTime()
 	CloseDropDownMenus()
-	C_Timer.After(10,function() RXP_.updateBottomFrame = true end)
+	tickTimer = GetTime()
 	if not (OnLoad and RXPCData.currentStep) then
 		RXPCData.currentStep = 1
 		RXPCData.stepSkip = {}
@@ -973,6 +965,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 		nframes = nframes + 1
 		f.Steps.frame[n] = f.Steps.frame[n] or CreateFrame("Frame","$parent_frame_"..n,f.Steps, "BackdropTemplate")
 		local frame = f.Steps.frame[n]
+		frame:Show()
 		frame.step = step
 		frame:SetAlpha(0.66)
 		frame:ClearAllPoints()
@@ -1059,20 +1052,25 @@ function RXP_:LoadGuide(guide,OnLoad)
 	RXP_.SetStep(RXPCData.currentStep)
 end
 
-function RXP_.UpdateBottomFrame(self,stepn,updateText)
+function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 	--print(type(stepn),stepn)
-	if RXP_.stepPos[0] and (stepn or (self and self.step)) then
+	if RXP_.stepPos[0] and ((not self and stepn) or (self and self.step)) then
 		local stepNumber = stepn or self.step.index
 		local frame = f.Steps.frame[stepNumber]
+		if not frame then return end
 		local step = frame.step
 		local fheight
 		
 		local text
 		for i,element in ipairs(frame.step.elements) do
-			if element.requestFromServer or updateText then
+			if element.requestFromServer then
 				element.element = element
 				RXPG[RXP_.currentGuide.group][element.tag](element)
-				RXP_.updateStepText = element.requestFromServer
+				if element.requestFromServer then
+					RXP_.updateStepText = true
+					RXP_.stepUpdateList[element.step.index] = true
+				end
+				
 			end
 			local rawtext = element.tooltipText or element.text
 			if rawtext and not element.hideTooltip then
@@ -1107,6 +1105,7 @@ function RXP_.UpdateBottomFrame(self,stepn,updateText)
 				if not self and element.requestFromServer then
 					element.element = element
 					RXPG[RXP_.currentGuide.group][element.tag](element)
+					RXP_.updateStepText = not element.requestFromServer
 				end
 				local rawtext = element.tooltipText or element.text
 				if rawtext and rawtext ~= "" then
