@@ -55,13 +55,15 @@ local questTimer = 0
 
 function RXP_.QuestAutoAccept(title)
 	if title then
-		return RXP_.questAccept[title] and RXP_.questAccept[title].active
+		local element = RXP_.questAccept[title]
+		return element and element.step.active
 	end
 end
 
 function RXP_.QuestAutoTurnIn(title)
 	if title then
-		return RXP_.questTurnIn[title] and RXP_.questTurnIn[title].active
+		local element = RXP_.questTurnIn[title]
+		return (element and element.step.active) and element.reward
 	end
 end
 
@@ -143,9 +145,13 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	if event == "QUEST_COMPLETE" then
 		local id = GetQuestID()
         local title = C_QuestLog.GetQuestInfo(id)
-		if GetNumQuestChoices() <= 1 and RXP_.QuestAutoTurnIn(title) and GetTime() - questTimer > 0.1 then
-			GetQuestReward(GetNumQuestChoices())
-			--questTimer = GetTime()
+		local reward = RXP_.QuestAutoTurnIn(title)
+		if reward then
+			if GetNumQuestChoices() <= 1 then
+				GetQuestReward(GetNumQuestChoices())
+			elseif reward > 0 then
+				GetQuestReward(reward)
+			end
 		end
 		
 	elseif event == "QUEST_PROGRESS" and IsQuestCompletable() and GetTime() - questProgressTimer > 0.1 then

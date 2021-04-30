@@ -78,22 +78,24 @@ end
 local timer = GetTime()
 local nrequests = 0
 local requests = {}
-function RXP_.GetQuestName(id,ref)
+function RXP_.GetQuestName(id)
 	local ctime = GetTime()
 	if ctime - timer > 0.8 then
 		timer = ctime
 		nrequests = 0
 	end
 	
-	if nrequests < 3 or requests[id] then
-		if HaveQuestData(id) then
-			requests[id] = true
-		else
-			nrequests = nrequests + 1
+	if nrequests < 3 or requests[id] == 0 then
+		if (not requests[id] or ctime-requests[id] > 1.5) and HaveQuestData(id) then
+			requests[id] = 0
+			return C_QuestLog.GetQuestInfo(id)
+		elseif not requests[id] then
+			requests[id] = GetTime()
+		elseif ctime-requests[id] <= 1.5 then
 			return
 		end
+		nrequests = nrequests + 1
 	
-		return C_QuestLog.GetQuestInfo(id)
 	end
 end
 
@@ -104,15 +106,16 @@ function RXP_.GetQuestObjectives(id)
 		nrequests = 0
 	end
 	
-	if nrequests < 3 or requests[id] then
-		if HaveQuestData(id) then
-			requests[id] = true
-		else
-			nrequests = nrequests + 1
+	if nrequests < 3 or requests[id] == 0 then
+		if (not requests[id] or ctime-requests[id] > 1.5) and HaveQuestData(id) then
+			requests[id] = 0
+			return C_QuestLog.GetQuestObjectives(id)
+		elseif not requests[id] then
+			requests[id] = GetTime()
+		elseif ctime-requests[id] <= 1.5 then
 			return
 		end
-	
-		return C_QuestLog.GetQuestObjectives(id)
+		nrequests = nrequests + 1
 	end
 end
 
@@ -209,11 +212,11 @@ function RXP_.functions.accept(self,...)
 		local element = self.element
 		local event,_,questId = ...
 		local id = element.questId
-		if element.retrieveText then
-			local quest = RXP_.GetQuestName(id,self)
+		if element.step.active or element.retrieveText then
+			local quest = RXP_.GetQuestName(id,element)
 			if quest then
 				element.title = quest
-				RXP_.questAccept[quest] = RXP_.questAccept[quest] or element.step
+				RXP_.questAccept[quest] = RXP_.questAccept[quest] or element
 				element.text = element.text:gsub("%*quest%*",quest)
 				if element.requestFromServer then
 					element.requestFromServer = nil
@@ -243,11 +246,11 @@ function RXP_.functions.turnin(self,...)
 	if type(self) == "string" then --on parse
 		local element = {}
 		element.tag = "turnin"
-		local text,id = ...
+		local text,id,reward = ...
 		id = tonumber(id)
 		if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-		
 		element.questId = id
+		element.reward = tonumber(reward) or 0
 		element.title = ""
 		--element.title = RXP_.GetQuestName(id)
 		if text and text ~= "" then
@@ -265,11 +268,12 @@ function RXP_.functions.turnin(self,...)
 		local element = self.element
 		local event,questId = ...
 		local id = element.questId
-		if element.retrieveText then
-			local quest = RXP_.GetQuestName(id,self)
+		if element.step.active or element.retrieveText then
+			local quest = RXP_.GetQuestName(id,true)
 			if quest then
 				element.title = quest
-				RXP_.questAccept[quest] = RXP_.questAccept[quest] or element.step
+				RXP_.questTurnIn[quest] = RXP_.questTurnIn[quest] or element
+				
 				element.text = element.text:gsub("%*quest%*",quest)
 				if element.requestFromServer then
 					element.requestFromServer = nil
@@ -319,7 +323,7 @@ function RXP_.functions.complete(self,...)
 		local element = self.element
 		local icon = element.icon or RXP_.icons.complete
 		local id = element.questId
-		local objectives = RXP_.GetQuestObjectives(id,self)
+		local objectives = RXP_.GetQuestObjectives(id,element)
 		
 
 		--print(text)
@@ -384,7 +388,7 @@ function RXP_.functions.complete(self,...)
 		local quest 
 		
 		if objectives then
-			quest = RXP_.GetQuestName(id,self)
+			quest = RXP_.GetQuestName(id,element)
 		end
 	
 		if quest then
@@ -972,7 +976,7 @@ function RXP_.functions.abandon(self,...)
 		local event,_,questId = ...
 		local id = element.questId
 		if element.retrieveText then
-			local quest = RXP_.GetQuestName(id,self)
+			local quest = RXP_.GetQuestName(id,element)
 			if quest then
 				element.title = quest
 				element.text = element.text:gsub("%*quest%*",quest)
