@@ -793,24 +793,30 @@ C_Timer.NewTicker(0.1473,function()
 		RXP_.UpdateStepCompletion()
 	elseif RXP_.updateStepText then
 		RXP_.updateStepText = false
+		local updateText
 		for n in pairs(RXP_.stepUpdateList) do
 			if RXP_.currentGuide.steps[n].active then
-				RXP_.updateStepText = true
+				updateText = true
 			end
-			RXP_.stepUpdateList[n] = nil
 			RXP_.UpdateBottomFrame(nil,nil,n)
+			if not RXP_.updateStepText then
+				RXP_.stepUpdateList[n] = nil
+			end
 		end
-		if RXP_.updateStepText then
+		if updateText then
 			RXP_.UpdateText()
 		end
-	elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 10 then
+		return
+	elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 5 then
 		RXP_.UpdateBottomFrame()
 		tickTimer = GetTime()
+		return
 	end
 	
-	RXP_.UpdateGotoSteps()
 	if RXP_.updateMap then
 		RXP_.UpdateMap()
+	else
+		RXP_.UpdateGotoSteps()
 	end
 	
 end)

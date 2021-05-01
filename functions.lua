@@ -51,10 +51,10 @@ tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t",
 abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
 }
 
-local IsQuestTurnedIn = IsQuestFlaggedCompleted
+local IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 
 if not IsQuestTurnedIn then
-	IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
+	IsQuestTurnedIn = IsQuestFlaggedCompleted
 	if not IsQuestTurnedIn then
 		IsQuestTurnedIn = function(id)
 			return GetQuestsCompleted()[id]
@@ -80,42 +80,78 @@ local nrequests = 0
 local requests = {}
 function RXP_.GetQuestName(id)
 	local ctime = GetTime()
-	if ctime - timer > 0.8 then
+	if ctime - timer > 1 then
 		timer = ctime
 		nrequests = 0
 	end
 	
 	if nrequests < 3 or requests[id] == 0 then
-		if (not requests[id] or ctime-requests[id] > 1.5) and HaveQuestData(id) then
+		if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
 			requests[id] = 0
 			return C_QuestLog.GetQuestInfo(id)
 		elseif not requests[id] then
 			requests[id] = GetTime()
-		elseif ctime-requests[id] <= 1.5 then
+		elseif ctime-requests[id] <= 3 then
 			return
+		else
+			requests[id] = GetTime()
 		end
 		nrequests = nrequests + 1
 	
 	end
 end
 
+local base = GetTime()
+local questCache = {}
 function RXP_.GetQuestObjectives(id)
-	local ctime = GetTime()
-	if ctime - timer > 0.8 then
-		timer = ctime
-		nrequests = 0
-	end
-	
-	if nrequests < 3 or requests[id] == 0 then
-		if (not requests[id] or ctime-requests[id] > 1.5) and HaveQuestData(id) then
-			requests[id] = 0
-			return C_QuestLog.GetQuestObjectives(id)
-		elseif not requests[id] then
-			requests[id] = GetTime()
-		elseif ctime-requests[id] <= 1.5 then
-			return
+	if C_QuestLog.IsOnQuest(id) then
+		local questInfo = {}
+		for i = 1,GetNumQuestLogEntries() do
+			local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+			if questID == id then
+				for j = 1,GetNumQuestLeaderBoards(i) do
+					local description, objectiveType, isCompleted = GetQuestLogLeaderBoard(j,i)
+					local required,fulfullied = description:match("(%d+)/(%d+)")
+					if required then
+						required = tonumber(required)
+						fulfilled = tonumber(fulfilled)
+					else
+						required = 1
+						if isCompleted then
+							fulfilled = 1
+						else
+							fulfilled = 0
+						end
+					end
+					questInfo[j] = {text = description, type = objectiveType,numRequired = required, numFulfilled = fulfilled, finished = isCompleted}
+				end
+				questCache[id] = questInfo
+				return questInfo
+			end
 		end
-		nrequests = nrequests + 1
+	else
+		local ctime = GetTime()
+		if ctime - timer > 1 then
+			timer = ctime
+			nrequests = 0
+		end
+		
+		if nrequests < 3 or requests[id] == 0 then
+			if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
+				requests[id] = 0
+				--print(id,GetTime()-base)
+				return C_QuestLog.GetQuestObjectives(id)
+			elseif not requests[id] then
+				requests[id] = GetTime()
+			elseif ctime-requests[id] <= 3 then
+				return questCache[id]
+			else
+				requests[id] = GetTime()
+			end
+			--print(id,GetTime()-base)
+			nrequests = nrequests + 1
+		end
+		return questCache[id]
 	end
 end
 
@@ -310,9 +346,9 @@ function RXP_.functions.complete(self,...)
 		--local objectives = RXP_.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
 		element.questId = id
 		if text and text ~= "" then
-			--element.rawtext = text:gsub("%*quest%*",element.title)
+			element.rawtext = text
 			element.text = element.rawtext
-			element.tooltipText = element.icon..element.text
+			element.tooltipText = RXP_.icons.complete..element.text
 		else
 			element.text = ""
 			element.requestFromServer = true
@@ -378,7 +414,14 @@ function RXP_.functions.complete(self,...)
 				end
 			end
 		else
-			element.text = "Retrieving quest data..."
+			local ct
+			if element.errot then
+				ct = ""
+			else
+				ct = element.rawtext or ""
+				element.errort = true
+			end
+			element.text = ct.."\nRetrieving quest data..."
 			element.tooltipText = nil
 			RXP_.UpdateStepText(self)
 			return

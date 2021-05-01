@@ -108,8 +108,8 @@ end
 
 if self.element then
 	local x,y,instance = HBD:GetPlayerWorldPosition()
-	if not instance then return end
 	local angle,dist = HBD:GetWorldVector(instance, x, y, self.element.wx,self.element.wy)
+	if not dist then return end
 	local orientation = angle-GetPlayerFacing()
 	local diff = math.abs(orientation-self.orientation)
 	dist = math.floor(dist)
@@ -138,8 +138,8 @@ function RXP_.UpdateGotoSteps()
 		end
 		if element.radius and element.arrow and not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and element.completed) then
 			local x,y,instance = HBD:GetPlayerWorldPosition()
-			if not instance then return end
 			local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
+			if not dist then return end
 			if dist <= element.radius then
 				RXP_.SetElementComplete(element.frame)
 			end
