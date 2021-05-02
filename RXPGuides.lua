@@ -144,24 +144,23 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	
 	if event == "QUEST_COMPLETE" then
 		local id = GetQuestID()
-        local title = C_QuestLog.GetQuestInfo(id)
-		local reward = RXP_.QuestAutoTurnIn(title)
+		local reward = RXP_.QuestAutoTurnIn(id)
+		local choices = GetNumQuestChoices()
 		if reward then
-			if GetNumQuestChoices() <= 1 then
-				GetQuestReward(GetNumQuestChoices())
+			if choices <= 1 then
+				GetQuestReward(choices)
 			elseif reward > 0 then
 				GetQuestReward(reward)
 			end
 		end
 		
-	elseif event == "QUEST_PROGRESS" and IsQuestCompletable() and GetTime() - questProgressTimer > 0.1 then
+	elseif event == "QUEST_PROGRESS" and IsQuestCompletable() then
 		CompleteQuest()
 		--questProgressTimer = GetTime()
 		
 	elseif event == "QUEST_DETAIL" then
 		local id = GetQuestID()
-        local title = RXP_.GetQuestName(id)
-		if RXP_.QuestAutoAccept(title) then
+		if QuestAutoAccept(id) then
 			AcceptQuest()
 			HideUIPanel(QuestFrame)
 		end

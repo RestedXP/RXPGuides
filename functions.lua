@@ -78,31 +78,44 @@ end
 local timer = GetTime()
 local nrequests = 0
 local requests = {}
+local questNameCache = {}
+local questObjectivesCache = {}
+
 function RXP_.GetQuestName(id)
-	local ctime = GetTime()
-	if ctime - timer > 1 then
-		timer = ctime
-		nrequests = 0
-	end
-	
-	if nrequests < 3 or requests[id] == 0 then
-		if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
-			requests[id] = 0
-			return C_QuestLog.GetQuestInfo(id)
-		elseif not requests[id] then
-			requests[id] = GetTime()
-		elseif ctime-requests[id] <= 3 then
-			return
-		else
-			requests[id] = GetTime()
+	if C_QuestLog.IsOnQuest(id) then
+		for i = 1,GetNumQuestLogEntries() do
+			local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+			if questID == id then
+				questNameCache[id] = questLogTitleText
+				return questLogTitleText
+			end
 		end
-		nrequests = nrequests + 1
-	
+	else
+		local ctime = GetTime()
+		if ctime - timer > 1 then
+			timer = ctime
+			nrequests = 0
+		end
+		
+		if nrequests < 3 or requests[id] == 0 then
+			if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
+				requests[id] = 0
+				return C_QuestLog.GetQuestInfo(id)
+			elseif not requests[id] then
+				requests[id] = GetTime()
+			elseif ctime-requests[id] <= 3 then
+				return questNameCache[id]
+			else
+				requests[id] = GetTime()
+			end
+			nrequests = nrequests + 1
+		
+		end
+		return questNameCache[id]
 	end
 end
 
-local base = GetTime()
-local questCache = {}
+
 function RXP_.GetQuestObjectives(id)
 	if C_QuestLog.IsOnQuest(id) then
 		local questInfo = {}
@@ -125,7 +138,7 @@ function RXP_.GetQuestObjectives(id)
 					end
 					questInfo[j] = {text = description, type = objectiveType,numRequired = required, numFulfilled = fulfilled, finished = isCompleted}
 				end
-				questCache[id] = questInfo
+				questObjectivesCache[id] = questInfo
 				return questInfo
 			end
 		end
@@ -144,14 +157,14 @@ function RXP_.GetQuestObjectives(id)
 			elseif not requests[id] then
 				requests[id] = GetTime()
 			elseif ctime-requests[id] <= 3 then
-				return questCache[id]
+				return questObjectivesCache[id]
 			else
 				requests[id] = GetTime()
 			end
 			--print(id,GetTime()-base)
 			nrequests = nrequests + 1
 		end
-		return questCache[id]
+		return questObjectivesCache[id]
 	end
 end
 
@@ -249,10 +262,11 @@ function RXP_.functions.accept(self,...)
 		local event,_,questId = ...
 		local id = element.questId
 		if element.step.active or element.retrieveText then
+			RXP_.questAccept[id] = element
 			local quest = RXP_.GetQuestName(id,element)
 			if quest then
 				element.title = quest
-				RXP_.questAccept[quest] = RXP_.questAccept[quest] or element
+				RXP_.questAccept[quest] = element
 				element.text = element.text:gsub("%*quest%*",quest)
 				if element.requestFromServer then
 					element.requestFromServer = nil
@@ -305,10 +319,11 @@ function RXP_.functions.turnin(self,...)
 		local event,questId = ...
 		local id = element.questId
 		if element.step.active or element.retrieveText then
+			RXP_.questTurnIn[id] = element
 			local quest = RXP_.GetQuestName(id,true)
 			if quest then
 				element.title = quest
-				RXP_.questTurnIn[quest] = RXP_.questTurnIn[quest] or element
+				RXP_.questTurnIn[quest] = element
 				
 				element.text = element.text:gsub("%*quest%*",quest)
 				if element.requestFromServer then
@@ -533,7 +548,7 @@ function RXP_.functions.hs(self,...)
 		return element
 	end
 	local event,unit,_,id = ...
-	if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and id == 8690 then
+	if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and (id == 8690 or id == 556) then
 		RXP_.SetElementComplete(self)
 	end
 end
