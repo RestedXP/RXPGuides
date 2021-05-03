@@ -160,7 +160,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		
 	elseif event == "QUEST_DETAIL" then
 		local id = GetQuestID()
-		if QuestAutoAccept(id) then
+		if RXP_.QuestAutoAccept(id) then
 			AcceptQuest()
 			HideUIPanel(QuestFrame)
 		end
