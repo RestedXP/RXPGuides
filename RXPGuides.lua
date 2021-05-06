@@ -1082,9 +1082,9 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 			local rawtext = element.tooltipText or element.text
 			if rawtext and not element.hideTooltip then
 				if not text then
-					text = "  "..rawtext
+					text = "   "..rawtext
 				else
-					text = text.."\n  "..rawtext
+					text = text.."\n   "..rawtext
 				end
 			end
 		end
@@ -1120,7 +1120,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 					end
 				end
 				local rawtext = element.tooltipText or element.text
-				if rawtext and rawtext ~= "" then
+				if rawtext and not element.hideTooltip and rawtext ~= "" then
 					if not text then
 						text = "   "..rawtext
 					else

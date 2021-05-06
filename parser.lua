@@ -11,13 +11,15 @@ local function applies(text)
 		for str in string.gmatch(text, "[^/]+") do			
 			local v = true
 			for entry in string.gmatch(str, "!?%w+") do
+				local level = tonumber(entry) or 0xfff
+				local playerLevel = UnitLevel("player") or 1
 				local state = true
 				if entry:sub(1,1) == "!" then
 					entry = entry:sub(2,-1)
 					state = false
 				end
 				if entry == "Undead" then entry = "Scourge" end
-				v = v and ((strupper(entry) == class or entry == race or entry == faction) == state)
+				v = v and ((strupper(entry) == class or entry == race or entry == faction or playerLevel >= level) == state)
 			end
 			isMatch = isMatch or v
 		end
@@ -138,23 +140,32 @@ function RXPG.RegisterGuide(guideGroup,text)
 		elseif currentStep > 0 and not skip then
 			parseLine(line)
 		elseif currentStep == 0 then
-			local classtag = line:match("<<%s*(.+)")
-			if classtag and not applies(classtag) then
-				return
-			end
-			line:gsub("^#(%S+)%s*(=?)%s*(.*)",function(tag,assignment,value)
-				--print(tag,string.len(tag))
-				if tag and tag ~= "" and not guide[tag] then
-					if assignment == "=" then
-						guide[tag] = RXPG[guide.group][value]
-					else
-						guide[tag] = value
-					end
-					if tag == "name" then
-						RXP_.currentGuideName = value
-					end
-				end
+			local classtag
+			line = line:gsub("(.*)<<%s*(.+)",function(code,tag) 
+				code = code:gsub("%s+$","")
+				classtag = tag
+				return code
 			end)
+			if classtag and not applies(classtag) then
+				if line == "" then
+					return
+				end
+			else
+				line:gsub("^#(%S+)%s*(=?)%s*(.*)",function(tag,assignment,value)
+					--print(tag,string.len(tag))
+					if tag and tag ~= "" and not guide[tag] then
+						if assignment == "=" then
+							guide[tag] = RXPG[guide.group][value]
+						else
+							guide[tag] = value
+						end
+						if tag == "name" then
+							RXP_.currentGuideName = value
+						end
+					end
+				end)
+			end
+			
 		end
 	end
 	--print(guide)
