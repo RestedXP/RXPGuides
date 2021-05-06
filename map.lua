@@ -61,6 +61,9 @@ RXP_.mapId = {
 ["Silvermoon City"] = 1954,
 ["Shattrath City"] = 1955,
 ["Isle of Quel'Danas"] = 1957,
+["Kalimdor"] = 1414,
+["Eastern Kingdoms"] = 1415,
+["Outland"] = 987,
 }
 
 local HBD = LibStub("HereBeDragons-2.0")
@@ -136,7 +139,7 @@ function RXP_.UpdateGotoSteps()
 		if not element.step.active then
 			return
 		end
-		if element.radius and element.arrow and not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and element.completed) then
+		if element.radius and element.arrow and not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and (element.completed or element.skip)) then
 			local x,y,instance = HBD:GetPlayerWorldPosition()
 			local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
 			if not dist then return end
@@ -295,7 +298,7 @@ function RXP_.UpdateMap()
 			if element.text and not element.label and not element.textOnly then
 				element.label = tostring(step.index)
 			end
-			if element.zone and not((element.parent and element.parent.label and (element.parent.completed or element.parent.skip)) or (element.text and element.completed and not element.textOnly) or step.completed) then
+			if element.zone and not((element.parent and element.parent.label and (element.parent.completed or element.parent.skip)) or (element.text and (element.completed or element.skip) and not element.textOnly) or step.completed) then
 				n = n +1
 				element.mapPin = CreateWPframe(n,step,element)
 				
@@ -370,7 +373,7 @@ function RXP_.UpdateMap()
 				element.element = element
 				RXP_.functions[element.tag](element)
 			end
-			if element.completed or element.textOnly or not element.text or element.skip then
+			if (element.completed or element.skip) or element.textOnly or not element.text or element.skip then
 				ncompleted = ncompleted + 1
 			end 
 		end
@@ -394,12 +397,18 @@ function RXP_.UpdateMap()
 		for j = 1,i-1 do
 			local element = RXP_.activeWaypoints[j]
 			if i <= j then break end
-			local dist
+			local dist,dx,dy
+			local zx, zy = HBD:GetZoneSize(current.zone)
 			if current.instance == element.instance then
-				dist = HBD:GetWorldDistance(current.instance, current.wx, current.wy, element.wx, element.wy)
+				dist,dx,dy = HBD:GetWorldDistance(current.instance, current.wx, current.wy, element.wx, element.wy)
 			end
 			--print(dist)
-			if dist and dist < 45 then
+			local relativeDist
+			if dx and zx then
+				relativeDist = (dx/zx)^2 + (dy/zy)^2
+			end
+			
+			if (relativeDist and relativeDist < 0.0001) or (dist and dist < 60) then
 				current.mapPin:SetAlpha(0.33)
 				table.insert(element.mapPin.connectedPins,current)
 				table.insert(current.mapPin.connectedPins,element)
@@ -409,7 +418,7 @@ function RXP_.UpdateMap()
 	
 	for i,element in ipairs(RXP_.activeWaypoints) do
 		if element.arrow and element.step.active and 
-		not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and element.completed and not element.textOnly) then
+		not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and (element.completed or element.skip) and not element.textOnly) then
 			af:Show()
 			af.dist = 0
 			af.orientation = 0

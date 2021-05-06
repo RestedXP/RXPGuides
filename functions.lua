@@ -3,11 +3,10 @@ RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
 RXP_.stepUpdateList = {}
 
-RXP_.functions.events.collect = {"BAG_UPDATE"}
+RXP_.functions.events.collect = {"BAG_UPDATE","QUEST_ACCEPTED"}
 RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN"}
 RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
 RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
-RXP_.functions.events.collect = {"BAG_UPDATE"}
 RXP_.functions.events.fp = {"UI_INFO_MESSAGE"}
 RXP_.functions.events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 RXP_.functions.events.home = {"HEARTHSTONE_BOUND"}
@@ -21,6 +20,8 @@ RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
 RXP_.functions.events.money = {"PLAYER_MONEY"}
 RXP_.functions.events.train = {"TRAINER_SHOW","CHAT_MSG_SYSTEM","SKILL_LINES_CHANGED"}
 RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
+RXP_.functions.events.zone = {"ZONE_CHANGED_NEW_AREA"}
+
 RXP_.functions.events.abandon = RXP_.functions.events.complete
 RXP_.functions.events.isQuestComplete = RXP_.functions.events.complete
 RXP_.functions.events.isOnQuest = RXP_.functions.events.complete
@@ -436,7 +437,7 @@ function RXP_.functions.complete(self,...)
 				ct = element.rawtext or ""
 				element.errort = true
 			end
-			element.text = ct.."\nRetrieving quest data..."
+			element.text = ct.."Retrieving quest data..."
 			element.tooltipText = nil
 			RXP_.UpdateStepText(self)
 			return
@@ -656,12 +657,12 @@ function RXP_.functions.collect(self,...)
 	if type(self) == "string" then --on parse
 		local element = {}
 		element.tag = "collect"
-		local text,id,qty = ...
+		local text,id,qty,questId = ...
 		id = tonumber(id)
 		if not id then
 			error('Error parsing guide '..RXP_.currentGuideName..': No item ID provided\n'..self)
 		end
-		
+		element.questId = tonumber(questId)
 		element.id = id
 		qty = tonumber(qty)
 		element.qty = qty or 1
@@ -678,6 +679,7 @@ function RXP_.functions.collect(self,...)
 	end
 	
 	local element = self.element
+	local questId = element.questId
 	local name = RXP_.GetItemName(element.id)
 	
 	if name then
@@ -708,7 +710,8 @@ function RXP_.functions.collect(self,...)
 	end
 	RXP_.UpdateStepText(self)
 	
-	if count >= element.qty then
+	
+	if count >= element.qty or (questId and (C_QuestLog.IsOnQuest(questId) or IsQuestTurnedIn(questId))) then
 		RXP_.SetElementComplete(self,true)
 	else
 		RXP_.SetElementIncomplete(self)
@@ -1139,4 +1142,30 @@ function RXP_.functions.spellMissing(self,...)
 		RXP_.updateSteps = true
 	end
 	
+end
+
+function RXP_.functions.zone(self,...)
+	if type(self) == "string" then --on parse
+		local element = {}
+		local text,zone = ...
+		local mapID = RXP_.mapId[zone]
+		if not mapID then
+			return error("Error parsing guide "..RXP_.currentGuideName..": Invalid map name\n"..self)
+		end
+		element.zone = mapID
+		element.icon = RXP_.icons.goto
+		if text and text ~= "" then
+			element.text = text
+		else
+			element.text = "Go to "..zone
+		end
+		element.tooltipText = element.icon..text
+		return element
+	end
+	local zone = self.element.zone
+	if zone == C_Map.GetBestMapForUnit("player") then
+		RXP_.SetElementComplete(self)
+		self.element.step.completed = true
+		RXP_.updateSteps = true
+	end
 end

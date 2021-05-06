@@ -384,6 +384,7 @@ function f.ClearFrameData()
 					frame.element.completed = nil
 				end
 				frame.element.frame = nil
+				frame.element.skip = nil
 				frame.step = nil
 				frame.element = nil
 				frame.index = nil
@@ -410,7 +411,7 @@ function RXP_.UpdateStepCompletion()
 		local completed = true
 		if not step.completed then
 			for j,element in ipairs(step.elements) do
-				if not element.completed then
+				if not (element.completed or element.skip) then
 					completed = false
 					break
 				end
@@ -523,7 +524,7 @@ function RXP_.SetStep(n)
 			end
 		end
 		
-		if step.sticky and not RXPCData.stepSkip[i] and not(req and req.active) then
+		if step.sticky and not RXPCData.stepSkip[i] and	not(req and (req.active or (req.sticky and not RXPCData.stepSkip[req.index]))) then
 			table.insert(f.CurrentStepFrame.activeSteps,step)
 			--f.Steps.frame[i]:SetAlpha(0.66)
 			step.active = true
@@ -614,12 +615,7 @@ function RXP_.SetStep(n)
 					local parent = self:GetParent()
 					local element = parent.element 
 					if element then
-						element.completed = self:GetChecked()
-					end
-					if element.completed then
-						element.skip = true
-					else
-						element.skip = false
+						element.skip = self:GetChecked()
 					end
 					RXP_.updateSteps = true
 					RXP_.updateMap = true
@@ -1004,7 +1000,6 @@ function RXP_:LoadGuide(guide,OnLoad)
 			frame:SetAlpha(currentAlpha)
 		end)
 		frame:SetScript("OnMouseDown",function()
-			step.completionState = {}
 			RXP_.SetStep(n,guide)
 		end)
 		
@@ -1114,10 +1109,15 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 			local step = frame.step
 			local fheight
 			for i,element in ipairs(frame.step.elements) do
-				if not self and element.requestFromServer then
+				if not self then
+					local stepDiff = element.step.index-RXPCData.currentStep
 					element.element = element
-					RXPG[RXP_.currentGuide.group][element.tag](element)
-					RXP_.updateStepText = not element.requestFromServer
+					if element.requestFromServer then
+						RXPG[RXP_.currentGuide.group][element.tag](element)
+						RXP_.updateStepText = RXP_.updateStepText or not element.requestFromServer
+					elseif element.tag and (stepDiff <= RXPCData.numMapPins and stepDiff >= 0) then
+						RXPG[RXP_.currentGuide.group][element.tag](element)
+					end
 				end
 				local rawtext = element.tooltipText or element.text
 				if rawtext and rawtext ~= "" then
