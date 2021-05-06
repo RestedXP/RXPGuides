@@ -55,25 +55,25 @@ abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
 local IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 
 if not IsQuestTurnedIn then
-	IsQuestTurnedIn = IsQuestFlaggedCompleted
-	if not IsQuestTurnedIn then
-		IsQuestTurnedIn = function(id)
-			return GetQuestsCompleted()[id]
-		end
-	end
+    IsQuestTurnedIn = IsQuestFlaggedCompleted
+    if not IsQuestTurnedIn then
+        IsQuestTurnedIn = function(id)
+            return GetQuestsCompleted()[id]
+        end
+    end
 end
 
 local function IsQuestComplete(id)
-	for i = 1,GetNumQuestLogEntries() do
-		local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
-		if questID == id then
-			if isComplete then
-				return true
-			else
-				return false
-			end
-		end
-	end
+    for i = 1,GetNumQuestLogEntries() do
+        local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+        if questID == id then
+            if isComplete then
+                return true
+            else
+                return false
+            end
+        end
+    end
 end
 
 local timer = GetTime()
@@ -83,151 +83,151 @@ local questNameCache = {}
 local questObjectivesCache = {}
 
 function RXP_.GetQuestName(id)
-	if C_QuestLog.IsOnQuest(id) then
-		for i = 1,GetNumQuestLogEntries() do
-			local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
-			if questID == id then
-				questNameCache[id] = questLogTitleText
-				return questLogTitleText
-			end
-		end
-	else
-		local ctime = GetTime()
-		if ctime - timer > 1 then
-			timer = ctime
-			nrequests = 0
-		end
-		
-		if nrequests < 3 or requests[id] == 0 then
-			if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
-				requests[id] = 0
-				return C_QuestLog.GetQuestInfo(id)
-			elseif not requests[id] then
-				requests[id] = GetTime()
-			elseif ctime-requests[id] <= 3 then
-				return questNameCache[id]
-			else
-				requests[id] = GetTime()
-			end
-			nrequests = nrequests + 1
-		
-		end
-		return questNameCache[id]
-	end
+    if C_QuestLog.IsOnQuest(id) then
+        for i = 1,GetNumQuestLogEntries() do
+            local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+            if questID == id then
+                questNameCache[id] = questLogTitleText
+                return questLogTitleText
+            end
+        end
+    else
+        local ctime = GetTime()
+        if ctime - timer > 1 then
+            timer = ctime
+            nrequests = 0
+        end
+
+        if nrequests < 3 or requests[id] == 0 then
+            if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
+                requests[id] = 0
+                return C_QuestLog.GetQuestInfo(id)
+            elseif not requests[id] then
+                requests[id] = GetTime()
+            elseif ctime-requests[id] <= 3 then
+                return questNameCache[id]
+            else
+                requests[id] = GetTime()
+            end
+            nrequests = nrequests + 1
+
+        end
+        return questNameCache[id]
+    end
 end
 
 
 function RXP_.GetQuestObjectives(id)
-	if C_QuestLog.IsOnQuest(id) then
-		local questInfo = {}
-		for i = 1,GetNumQuestLogEntries() do
-			local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
-			if questID == id then
-				for j = 1,GetNumQuestLeaderBoards(i) do
-					local description, objectiveType, isCompleted = GetQuestLogLeaderBoard(j,i)
-					local required,fulfullied = description:match("(%d+)/(%d+)")
-					if required then
-						required = tonumber(required)
-						fulfilled = tonumber(fulfilled)
-					else
-						required = 1
-						if isCompleted then
-							fulfilled = 1
-						else
-							fulfilled = 0
-						end
-					end
-					questInfo[j] = {text = description, type = objectiveType,numRequired = required, numFulfilled = fulfilled, finished = isCompleted}
-				end
-				questObjectivesCache[id] = questInfo
-				return questInfo
-			end
-		end
-	else
-		local ctime = GetTime()
-		if ctime - timer > 1 then
-			timer = ctime
-			nrequests = 0
-		end
-		
-		if nrequests < 3 or requests[id] == 0 then
-			if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
-				requests[id] = 0
-				--print(id,GetTime()-base)
-				return C_QuestLog.GetQuestObjectives(id)
-			elseif not requests[id] then
-				requests[id] = GetTime()
-			elseif ctime-requests[id] <= 3 then
-				return questObjectivesCache[id]
-			else
-				requests[id] = GetTime()
-			end
-			--print(id,GetTime()-base)
-			nrequests = nrequests + 1
-		end
-		return questObjectivesCache[id]
-	end
+    if C_QuestLog.IsOnQuest(id) then
+        local questInfo = {}
+        for i = 1,GetNumQuestLogEntries() do
+            local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+            if questID == id then
+                for j = 1,GetNumQuestLeaderBoards(i) do
+                    local description, objectiveType, isCompleted = GetQuestLogLeaderBoard(j,i)
+                    local required,fulfullied = description:match("(%d+)/(%d+)")
+                    if required then
+                        required = tonumber(required)
+                        fulfilled = tonumber(fulfilled)
+                    else
+                        required = 1
+                        if isCompleted then
+                            fulfilled = 1
+                        else
+                            fulfilled = 0
+                        end
+                    end
+                    questInfo[j] = {text = description, type = objectiveType,numRequired = required, numFulfilled = fulfilled, finished = isCompleted}
+                end
+                questObjectivesCache[id] = questInfo
+                return questInfo
+            end
+        end
+    else
+        local ctime = GetTime()
+        if ctime - timer > 1 then
+            timer = ctime
+            nrequests = 0
+        end
+
+        if nrequests < 3 or requests[id] == 0 then
+            if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
+                requests[id] = 0
+                --print(id,GetTime()-base)
+                return C_QuestLog.GetQuestObjectives(id)
+            elseif not requests[id] then
+                requests[id] = GetTime()
+            elseif ctime-requests[id] <= 3 then
+                return questObjectivesCache[id]
+            else
+                requests[id] = GetTime()
+            end
+            --print(id,GetTime()-base)
+            nrequests = nrequests + 1
+        end
+        return questObjectivesCache[id]
+    end
 end
 
 function RXP_.GetItemName(id)
-	local name = GetItemInfo(id)
-	if not name then
-		RXP_.itemQueryList[id] = true
-	end
-	return name
+    local name = GetItemInfo(id)
+    if not name then
+        RXP_.itemQueryList[id] = true
+    end
+    return name
 end
 
 
 function RXP_.SetElementComplete(self,disable)
-	if not self.element.completed then
-		self.element.completed = true
-		RXP_.updateSteps = true
-		RXP_.updateMap = true
-	end
-	if self.button then
-		--print('----ok',disable)
-		self.button:SetChecked(true)
-		if disable then
-			self.button:Disable()
-		end
-	end
+    if not self.element.completed then
+        self.element.completed = true
+        RXP_.updateSteps = true
+        RXP_.updateMap = true
+    end
+    if self.button then
+        --print('----ok',disable)
+        self.button:SetChecked(true)
+        if disable then
+            self.button:Disable()
+        end
+    end
 end
 
 function RXP_.SetElementIncomplete(self)
-	if self.element.completed then
-		self.element.completed = false
-		RXP_.updateMap = true
-	end
-	if self.button then
-		self.button:Enable()
-		if not self.element.skip then
-			self.button:SetChecked(false)
-		end
-	end
+    if self.element.completed then
+        self.element.completed = false
+        RXP_.updateMap = true
+    end
+    if self.button then
+        self.button:Enable()
+        if not self.element.skip then
+            self.button:SetChecked(false)
+        end
+    end
 end
 
 function RXP_.UpdateStepText(self)
-	RXP_.updateStepText = true
-	RXP_.stepUpdateList[self.step.index] = true
+    RXP_.updateStepText = true
+    RXP_.stepUpdateList[self.step.index] = true
 end
 
 function RXP_.AldorScryerCheck(step)
-	if step.aldor then
-		name, description, standingID = GetFactionInfoByID(932)
-		return (standingID and standingID >= 5),"Aldor"
-	elseif step.scryer then
-		name, description, standingID = GetFactionInfoByID(934)
-		return standingID and standingID >= 5,"Scryers"
-	end
-	return true
+    if step.aldor then
+        name, description, standingID = GetFactionInfoByID(932)
+        return (standingID and standingID >= 5),"Aldor"
+    elseif step.scryer then
+        name, description, standingID = GetFactionInfoByID(934)
+        return standingID and standingID >= 5,"Scryers"
+    end
+    return true
 end
 
 function RXP_.GetNpcId(unit)
-	if not unit then
-		unit = "target"
-	end
-	local _, _, _, _, _, npcId = strsplit('-', UnitGUID(unit) or '')
-	return tonumber(npcId)
+    if not unit then
+        unit = "target"
+    end
+    local _, _, _, _, _, npcId = strsplit('-', UnitGUID(unit) or '')
+    return tonumber(npcId)
 end
 
 
@@ -236,398 +236,396 @@ local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 
 
 function RXP_.functions.accept(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		element.tag = "accept"
-		local text,id = ...
-		id = tonumber(id)
-		if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-		element.title = ""
-		element.questId = id
-		--element.title = RXP_.GetQuestName(id)
-		if text and text ~= "" then
-			element.text = text
-		else		
-			element.text = "Accept *quest*"
-			element.requestFromServer = true
-		end
-		if element.text:match("%*quest%*") then
-			element.retrieveText = true
-		end
-		--print("Q1",element.text)
-		element.tooltipText = RXP_.icons.accept..element.text
-		--print(element.rawtext)
-		return element
-	else
-		local element = self.element
-		local event,_,questId = ...
-		local id = element.questId
-		if element.step.active or element.retrieveText then
-			RXP_.questAccept[id] = element
-			local quest = RXP_.GetQuestName(id,element)
-			if quest then
-				element.title = quest
-				RXP_.questAccept[quest] = element
-				element.text = element.text:gsub("%*quest%*",quest)
-				if element.requestFromServer then
-					element.requestFromServer = nil
-					RXP_.UpdateStepText(self)
-				end
-			else
-				element.title = ""
-				element.requestFromServer = true
-			end
-		end
-			
-		element.tooltipText = RXP_.icons.accept..element.text
-		
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.tag = "accept"
+        local text,id = ...
+        id = tonumber(id)
+        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        element.title = ""
+        element.questId = id
+        --element.title = RXP_.GetQuestName(id)
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Accept *quest*"
+            element.requestFromServer = true
+        end
+        if element.text:match("%*quest%*") then
+            element.retrieveText = true
+        end
+        --print("Q1",element.text)
+        element.tooltipText = RXP_.icons.accept..element.text
+        --print(element.rawtext)
+        return element
+    else
+        local element = self.element
+        local event,_,questId = ...
+        local id = element.questId
+        if element.step.active or element.retrieveText then
+            RXP_.questAccept[id] = element
+            local quest = RXP_.GetQuestName(id,element)
+            if quest then
+                element.title = quest
+                RXP_.questAccept[quest] = element
+                element.text = element.text:gsub("%*quest%*",quest)
+                if element.requestFromServer then
+                    element.requestFromServer = nil
+                    RXP_.UpdateStepText(self)
+                end
+            else
+                element.title = ""
+                element.requestFromServer = true
+            end
+        end
 
-		if IsQuestTurnedIn(id) or C_QuestLog.IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)  then
-			RXP_.SetElementComplete(self,true)
-		elseif element.completed then
-			RXP_.SetElementIncomplete(self)
-		end
-		
-	end
-	
+        element.tooltipText = RXP_.icons.accept..element.text
+
+
+        if IsQuestTurnedIn(id) or C_QuestLog.IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)  then
+            RXP_.SetElementComplete(self,true)
+        elseif element.completed then
+            RXP_.SetElementIncomplete(self)
+        end
+
+    end
+
 end
 
 function RXP_.functions.turnin(self,...)
-	 
-	if type(self) == "string" then --on parse
-		local element = {}
-		element.tag = "turnin"
-		local text,id,reward = ...
-		id = tonumber(id)
-		if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-		element.questId = id
-		element.reward = tonumber(reward) or 0
-		element.title = ""
-		--element.title = RXP_.GetQuestName(id)
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.text = "Turn in *quest*"
-			element.requestFromServer = true
-		end
-		if element.text:match("%*quest%*") then
-			element.retrieveText = true
-		end
-		element.tooltipText = RXP_.icons.turnin..element.text
-		return element
-	else
-		local element = self.element
-		local event,questId = ...
-		local id = element.questId
-		if element.step.active or element.retrieveText then
-			RXP_.questTurnIn[id] = element
-			local quest = RXP_.GetQuestName(id,true)
-			if quest then
-				element.title = quest
-				RXP_.questTurnIn[quest] = element
-				
-				element.text = element.text:gsub("%*quest%*",quest)
-				if element.requestFromServer then
-					element.requestFromServer = nil
-					RXP_.UpdateStepText(self)
-				end
-			else
-				element.title = ""
-				element.requestFromServer = true
-			end
-		end
-		element.tooltipText = RXP_.icons.turnin..element.text
-		RXP_.UpdateStepText(self)
-		
-		local isComplete = IsQuestTurnedIn(id)
-		if isComplete then
-			RXP_.SetElementComplete(self,true)
-		elseif questId == id then --repeatable quests
-			RXP_.SetElementComplete(self)
-		end
-	end
+
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.tag = "turnin"
+        local text,id,reward = ...
+        id = tonumber(id)
+        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        element.questId = id
+        element.reward = tonumber(reward) or 0
+        element.title = ""
+        --element.title = RXP_.GetQuestName(id)
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Turn in *quest*"
+            element.requestFromServer = true
+        end
+        if element.text:match("%*quest%*") then
+            element.retrieveText = true
+        end
+        element.tooltipText = RXP_.icons.turnin..element.text
+        return element
+    else
+        local element = self.element
+        local event,questId = ...
+        local id = element.questId
+        if element.step.active or element.retrieveText then
+            RXP_.questTurnIn[id] = element
+            local quest = RXP_.GetQuestName(id,true)
+            if quest then
+                element.title = quest
+                RXP_.questTurnIn[quest] = element
+
+                element.text = element.text:gsub("%*quest%*",quest)
+                if element.requestFromServer then
+                    element.requestFromServer = nil
+                    RXP_.UpdateStepText(self)
+                end
+            else
+                element.title = ""
+                element.requestFromServer = true
+            end
+        end
+        element.tooltipText = RXP_.icons.turnin..element.text
+        RXP_.UpdateStepText(self)
+
+        local isComplete = IsQuestTurnedIn(id)
+        if isComplete then
+            RXP_.SetElementComplete(self,true)
+        elseif questId == id then --repeatable quests
+            RXP_.SetElementComplete(self)
+        end
+    end
 
 end
 
 local questMonster = string.gsub(QUEST_MONSTERS_KILLED,"%%s","%.%*"):gsub("%%d","%%d%+")
 function RXP_.functions.complete(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,id,obj = ...
-		id = tonumber(id)
-		if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-		element.obj = tonumber(obj)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,id,obj = ...
+        id = tonumber(id)
+        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        element.obj = tonumber(obj)
 
-		--element.title = RXP_.GetQuestName(id)
-		--local objectives = RXP_.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
-		element.questId = id
-		if text and text ~= "" then
-			element.rawtext = text
-			element.text = element.rawtext
-			element.tooltipText = RXP_.icons.complete..element.text
-		else
-			element.text = ""
-			element.requestFromServer = true
-		end
-		
-		return element
-	else
-		local element = self.element
-		local icon = element.icon or RXP_.icons.complete
-		local id = element.questId
-		local objectives = RXP_.GetQuestObjectives(id,element)
-		
+        --element.title = RXP_.GetQuestName(id)
+        --local objectives = RXP_.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
+        element.questId = id
+        if text and text ~= "" then
+            element.rawtext = text
+            element.text = element.rawtext
+            element.tooltipText = RXP_.icons.complete..element.text
+        else
+            element.text = ""
+            element.requestFromServer = true
+        end
 
-		--print(text)
-		local objtext
-		local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
-		local skip
+        return element
+    else
+        local element = self.element
+        local icon = element.icon or RXP_.icons.complete
+        local id = element.questId
+        local objectives = RXP_.GetQuestObjectives(id,element)
 
-		
-		local completed
-		if objectives and #objectives > 0 then
-			if element.obj and element.obj <= #objectives then
-				local obj = objectives[element.obj]
-				local t = obj.text
-				if not element.icon then
-					if obj.type == "item" then
-						icon = RXP_.icons.collect
-					elseif obj.type == "monster" and t:match(questMonster) then
-						icon = RXP_.icons.combat
-					end
-					element.icon = icon
-				end
-				if obj.type == "event" then 
-					if isQuestComplete then
-						t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
-					else
-						t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
-					end
-				elseif isQuestComplete then
-					t = t:gsub(": %d+/(%d+)",": %1/%1")
-				end
-				completed = obj.finished
-				objtext = t
-			else
-				completed = true
-				for i,obj in pairs(objectives) do
-					local t = obj.text
-					completed = completed and obj.finished
-					if obj.type == "event" then 
-						if isQuestComplete then
-							t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
-						else
-							t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
-						end
-					elseif isQuestComplete then
-						t = t:gsub(": %d+/(%d+)",": %1/%1")
-					end
-					if objtext then
-						objtext = objtext.."\n"..t
-					else
-						objtext = t
-					end
-				end
-			end
-		else
-			local ct
-			if element.errot then
-				ct = ""
-			else
-				ct = element.rawtext or ""
-				element.errort = true
-			end
-			element.text = ct.."Retrieving quest data..."
-			element.tooltipText = nil
-			RXP_.UpdateStepText(self)
-			return
-		end
-		
-		
-		local quest 
-		
-		if objectives then
-			quest = RXP_.GetQuestName(id,element)
-		end
-	
-		if quest then
-			element.title = quest
-		else
-			element.title = ""
-		end
-		local prefix = objtext:sub(1,1)
-		if not quest or prefix == " " or prefix == ":" then
-			element.requestFromServer = true
-		elseif quest then
-			element.requestFromServer = nil
-		end
-		
-		if element.rawtext then
-			element.rawtext = element.text:gsub("%*quest%*",element.title)
-		end
-		local text = element.rawtext
-		
-		completed = completed or isQuestComplete
 
-		if text then
-			text = text.."\n\n"..objtext
-			element.tooltipText = icon..text:gsub("\n","\n   ")
-		else
-			element.tooltipText = icon..objtext:gsub("\n","\n   "..icon)
-			text = objtext
-		end
-		--print(text)
-		element.text = text
-		
-		RXP_.UpdateStepText(self)
+        --print(text)
+        local objtext
+        local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
+        local skip
 
-		if completed then	
-			RXP_.SetElementComplete(self,true)
-		else
-			RXP_.SetElementIncomplete(self)
-		end
-	end
-	
+        local completed
+        if objectives and #objectives > 0 then
+            if element.obj and element.obj <= #objectives then
+                local obj = objectives[element.obj]
+                local t = obj.text
+                if not element.icon then
+                    if obj.type == "item" then
+                        icon = RXP_.icons.collect
+                    elseif obj.type == "monster" and t:match(questMonster) then
+                        icon = RXP_.icons.combat
+                    end
+                    element.icon = icon
+                end
+                if obj.type == "event" then 
+                    if isQuestComplete then
+                        t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
+                    else
+                        t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
+                    end
+                elseif isQuestComplete then
+                    t = t:gsub(": %d+/(%d+)",": %1/%1")
+                end
+                completed = obj.finished
+                objtext = t
+            else
+                completed = true
+                for i,obj in pairs(objectives) do
+                    local t = obj.text
+                    completed = completed and obj.finished
+                    if obj.type == "event" then 
+                        if isQuestComplete then
+                            t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
+                        else
+                            t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
+                        end
+                    elseif isQuestComplete then
+                        t = t:gsub(": %d+/(%d+)",": %1/%1")
+                    end
+                    if objtext then
+                        objtext = objtext.."\n"..t
+                    else
+                        objtext = t
+                    end
+                end
+            end
+        else
+            local ct
+            if element.errot then
+                ct = ""
+            else
+                ct = element.rawtext or ""
+                element.errort = true
+            end
+            element.text = ct.."Retrieving quest data..."
+            element.tooltipText = nil
+            RXP_.UpdateStepText(self)
+            return
+        end
+
+        local quest 
+
+        if objectives then
+            quest = RXP_.GetQuestName(id,element)
+        end
+
+        if quest then
+            element.title = quest
+        else
+            element.title = ""
+        end
+        local prefix = objtext:sub(1,1)
+        if not quest or prefix == " " or prefix == ":" then
+            element.requestFromServer = true
+        elseif quest then
+            element.requestFromServer = nil
+        end
+
+        if element.rawtext then
+            element.rawtext = element.text:gsub("%*quest%*",element.title)
+        end
+        local text = element.rawtext
+
+        completed = completed or isQuestComplete
+
+        if text then
+            text = text.."\n\n"..objtext
+            element.tooltipText = icon..text:gsub("\n","\n   ")
+        else
+            element.tooltipText = icon..objtext:gsub("\n","\n   "..icon)
+            text = objtext
+        end
+        --print(text)
+        element.text = text
+
+        RXP_.UpdateStepText(self)
+
+        if completed then
+            RXP_.SetElementComplete(self,true)
+        else
+            RXP_.SetElementIncomplete(self)
+        end
+    end
+
 end
 
 local lastZone
 function RXP_.functions.goto(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		element.tag = "goto"
-		local text,zone,x,y,radius = ...
-		if zone then
-			lastZone = zone
-		else
-			zone = lastZone
-		end
-		element.x = tonumber(x)
-		element.y = tonumber(y)
-		if not (element.x and element.y and zone and RXP_.mapId[zone]) then
-			error("Error parsing guide "..RXP_.currentGuideName..": Invalid coordinates or map name\n"..self)
-		end
-		element.zone = RXP_.mapId[zone]
-		element.radius = tonumber(radius)
-		radius = element.radius
-		element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
-		element.arrow = true
-		element.parent = true
-		
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.tag = "goto"
+        local text,zone,x,y,radius = ...
+        if zone then
+            lastZone = zone
+        else
+            zone = lastZone
+        end
+        element.x = tonumber(x)
+        element.y = tonumber(y)
+        if not (element.x and element.y and zone and RXP_.mapId[zone]) then
+            error("Error parsing guide "..RXP_.currentGuideName..": Invalid coordinates or map name\n"..self)
+        end
+        element.zone = RXP_.mapId[zone]
+        element.radius = tonumber(radius)
+        radius = element.radius
+        element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
+        element.arrow = true
+        element.parent = true
 
-		element.text = text
-		element.textOnly = true
-		
-		if radius then
-			if radius > 0 then
-				if not text or text == "" then
-					element.text = string.format("Go to %.2f,%.2f (%s)",element.x,element.y,zone)
-				end
-				element.parent = nil
-				element.textOnly = nil
-				element.tooltipText = RXP_.icons.goto..element.text
-			elseif radius <= 0 then
-				element.arrow = nil
-			end
-		end
-		return element
-	end
+
+        element.text = text
+        element.textOnly = true
+
+        if radius then
+            if radius > 0 then
+                if not text or text == "" then
+                    element.text = string.format("Go to %.2f,%.2f (%s)",element.x,element.y,zone)
+                end
+                element.parent = nil
+                element.textOnly = nil
+                element.tooltipText = RXP_.icons.goto..element.text
+            elseif radius <= 0 then
+                element.arrow = nil
+            end
+        end
+        return element
+    end
 end
 
 
 function RXP_.functions.hs(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		element.tag = "hs"
-		local text,location = ...
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.textOnly = true
-			element.text = "Set your Hearthstone to "..location
-		end
-		element.tooltipText = RXP_.icons.hs..element.text
-		return element
-	end
-	local event,unit,_,id = ...
-	if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and (id == 8690 or id == 556) then
-		RXP_.SetElementComplete(self)
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.tag = "hs"
+        local text,location = ...
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.textOnly = true
+            element.text = "Set your Hearthstone to "..location
+        end
+        element.tooltipText = RXP_.icons.hs..element.text
+        return element
+    end
+    local event,unit,_,id = ...
+    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and (id == 8690 or id == 556) then
+        RXP_.SetElementComplete(self)
+    end
 end
 
 function RXP_.functions.home(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,location = ...
-		element.tag = "home"
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.textOnly = true
-			element.text = "Set your Hearthstone to "..location
-		end
-		element.tooltipText = RXP_.icons.home..element.text
-		return element
-	end
-	local event = ...
-	if event == "HEARTHSTONE_BOUND" then
-		RXP_.SetElementComplete(self)
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,location = ...
+        element.tag = "home"
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.textOnly = true
+            element.text = "Set your Hearthstone to "..location
+        end
+        element.tooltipText = RXP_.icons.home..element.text
+        return element
+    end
+    local event = ...
+    if event == "HEARTHSTONE_BOUND" then
+        RXP_.SetElementComplete(self)
+    end
 end
 
 function RXP_.functions.fp(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,location = ...
-		element.tag = "fp"
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.textOnly = true
-			element.text = "Get the "..location.." flight path"
-		end
-		
-		element.tooltipText = RXP_.icons.fp..element.text
-		return element
-	end
-	local event,arg1,arg2 = ...
-	if event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH then
-		RXP_.SetElementComplete(self)
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,location = ...
+        element.tag = "fp"
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.textOnly = true
+            element.text = "Get the "..location.." flight path"
+        end
+
+        element.tooltipText = RXP_.icons.fp..element.text
+        return element
+    end
+    local event,arg1,arg2 = ...
+    if event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH then
+        RXP_.SetElementComplete(self)
+    end
 end
 
 RXP_.taxiTime = 0
 hooksecurefunc("TakeTaxiNode", function(index)
-	RXP_.taxiTime = GetTime()
+    RXP_.taxiTime = GetTime()
 end)
 
 function RXP_.functions.fly(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,location = ...
-		element.tag = "fly"
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.textOnly = true
-			element.text = "Fly to "..location
-		end
-		element.location = location
-		element.tooltipText = RXP_.icons.fly..element.text
-		return element
-	end
-	local event = ...
-	if event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1.5 then
-		RXP_.SetElementComplete(self)
-	elseif event == "TAXIMAP_OPENED" and not RXPCData.disableAutoFP and self.element.location then
-		for i = 1,NumTaxiNodes() do
-			local name = TaxiNodeName(i)
-			if name and name:match(self.element.location) then
-				local taxi = getglobal("TaxiButton"..i)
-				taxi:GetScript("OnEnter")(taxi)
-				return TakeTaxiNode(i)
-			end
-		end
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,location = ...
+        element.tag = "fly"
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.textOnly = true
+            element.text = "Fly to "..location
+        end
+        element.location = location
+        element.tooltipText = RXP_.icons.fly..element.text
+        return element
+    end
+    local event = ...
+    if event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1.5 then
+        RXP_.SetElementComplete(self)
+    elseif event == "TAXIMAP_OPENED" and not RXPCData.disableAutoFP and self.element.location then
+        for i = 1,NumTaxiNodes() do
+            local name = TaxiNodeName(i)
+            if name and name:match(self.element.location) then
+                local taxi = getglobal("TaxiButton"..i)
+                taxi:GetScript("OnEnter")(taxi)
+                return TakeTaxiNode(i)
+            end
+        end
+    end
 end
 
 
@@ -635,537 +633,536 @@ end
 
 --"CONFIRM_XP_LOSS,PLAYER_UNGHOST"
 function RXP_.functions.deathskip(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text = ...
-		element.tag = "deathskip"
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.text = "Die and respawn at the graveyard"
-		end
-		element.tooltipText = RXP_.icons.deathskip..element.text
-		return element
-	end
-	local event = ...
-	if event == "CONFIRM_XP_LOSS" then
-		RXP_.SetElementComplete(self)
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text = ...
+        element.tag = "deathskip"
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Die and respawn at the graveyard"
+        end
+        element.tooltipText = RXP_.icons.deathskip..element.text
+        return element
+    end
+    local event = ...
+    if event == "CONFIRM_XP_LOSS" then
+        RXP_.SetElementComplete(self)
+    end
 end
 
 function RXP_.functions.collect(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		element.tag = "collect"
-		local text,id,qty,questId = ...
-		id = tonumber(id)
-		if not id then
-			error('Error parsing guide '..RXP_.currentGuideName..': No item ID provided\n'..self)
-		end
-		element.questId = tonumber(questId)
-		element.id = id
-		qty = tonumber(qty)
-		element.qty = qty or 1
-		element.itemName = RXP_.GetItemName(id)
-		
-		if text and text ~= "" then
-			element.rawtext = text
-			element.tooltipText = RXP_.icons.collect..element.rawtext
-		else
-			element.requestFromServer = true
-			element.text = " "
-		end
-		return element
-	end
-	
-	local element = self.element
-	local questId = element.questId
-	local name = RXP_.GetItemName(element.id)
-	
-	if name then
-		element.requestFromServer = nil
-	else
-		name = ""
-		element.requestFromServer = true
-	end
-	element.itemName = name
-	
-	local count = GetItemCount(element.id)
-	for i = 1,18 do
-		if GetInventoryItemID("player",i) == element.id then
-			count = count + 1
-			break
-		end
-	end
-	if count > element.qty then
-		count = element.qty
-	end
-	
-	if element.rawtext then
-		element.tooltipText = RXP_.icons.collect..element.rawtext
-		element.text = string.format("%s\n%s: %d/%d",element.rawtext,element.itemName,count,element.qty)
-	else
-		element.text = string.format("%s: %d/%d",element.itemName,count,element.qty)
-		element.tooltipText = RXP_.icons.collect..element.text
-	end
-	RXP_.UpdateStepText(self)
-	
-	
-	if count >= element.qty or (questId and (C_QuestLog.IsOnQuest(questId) or IsQuestTurnedIn(questId))) then
-		RXP_.SetElementComplete(self,true)
-	else
-		RXP_.SetElementIncomplete(self)
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.tag = "collect"
+        local text,id,qty,questId = ...
+        id = tonumber(id)
+        if not id then
+            error('Error parsing guide '..RXP_.currentGuideName..': No item ID provided\n'..self)
+        end
+        element.questId = tonumber(questId)
+        element.id = id
+        qty = tonumber(qty)
+        element.qty = qty or 1
+        element.itemName = RXP_.GetItemName(id)
+
+        if text and text ~= "" then
+            element.rawtext = text
+            element.tooltipText = RXP_.icons.collect..element.rawtext
+        else
+            element.requestFromServer = true
+            element.text = " "
+        end
+        return element
+    end
+
+    local element = self.element
+    local questId = element.questId
+    local name = RXP_.GetItemName(element.id)
+
+    if name then
+        element.requestFromServer = nil
+    else
+        name = ""
+        element.requestFromServer = true
+    end
+    element.itemName = name
+
+    local count = GetItemCount(element.id)
+    for i = 1,18 do
+        if GetInventoryItemID("player",i) == element.id then
+            count = count + 1
+            break
+        end
+    end
+    if count > element.qty then
+        count = element.qty
+    end
+
+    if element.rawtext then
+        element.tooltipText = RXP_.icons.collect..element.rawtext
+        element.text = string.format("%s\n%s: %d/%d",element.rawtext,element.itemName,count,element.qty)
+    else
+        element.text = string.format("%s: %d/%d",element.itemName,count,element.qty)
+        element.tooltipText = RXP_.icons.collect..element.text
+    end
+    RXP_.UpdateStepText(self)
+
+    if count >= element.qty or (questId and (C_QuestLog.IsOnQuest(questId) or IsQuestTurnedIn(questId))) then
+        RXP_.SetElementComplete(self,true)
+    else
+        RXP_.SetElementIncomplete(self)
+    end
 end
 
 function RXP_.functions.xp(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,str = ...
-		
-		str = str:gsub(" ","")
-		local level,xp = str:match("(%d+)([%+%.%-]?%d*)")
-		element.xp = tonumber(xp)
-		element.level = tonumber(level)
-		
-		if text and text ~= "" then
-			element.text = text
-		else
-			if element.xp and element.xp ~= 0 then
-				if element.xp < 0 then
-					element.text = string.format("Grind until you are %d xp away from level %s",-1*element.xp,level)
-				elseif element.xp >= 1 then
-					element.text = string.format("Grind until you are %s xp into level %s",xp,level)
-				else
-					element.text = string.format("Grind until you are %.0f% into level %s",element.xp*100,level)
-				end
-			else
-				element.text = "Grind to level "..tostring(level)
-			end
-		end
-		if not element.xp then element.xp = 0 end
-		element.tooltipText = RXP_.icons.xp..element.text
-		return element
-	end
-	local currentXP = UnitXP("player")
-	local maxXP = UnitXPMax("player")
-	local level = UnitLevel("player")
-	local element = self.element
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,str = ...
 
-	if (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP + element.xp))) or			
-	   (element.xp >= 1 and ((level > element.level) or (element.level == level and currentXP >= element.xp))) or
-	   (element.xp >= 0 and element.xp < 1 and ((level > element.level) or (element.level == level and currentXP >= maxXP*element.xp)))
-	   then
-		RXP_.SetElementComplete(self,true)
-	end
+        str = str:gsub(" ","")
+        local level,xp = str:match("(%d+)([%+%.%-]?%d*)")
+        element.xp = tonumber(xp)
+        element.level = tonumber(level)
+
+        if text and text ~= "" then
+            element.text = text
+        else
+            if element.xp and element.xp ~= 0 then
+                if element.xp < 0 then
+                    element.text = string.format("Grind until you are %d xp away from level %s",-1*element.xp,level)
+                elseif element.xp >= 1 then
+                    element.text = string.format("Grind until you are %s xp into level %s",xp,level)
+                else
+                    element.text = string.format("Grind until you are %.0f% into level %s",element.xp*100,level)
+                end
+            else
+                element.text = "Grind to level "..tostring(level)
+            end
+        end
+        if not element.xp then element.xp = 0 end
+        element.tooltipText = RXP_.icons.xp..element.text
+        return element
+    end
+    local currentXP = UnitXP("player")
+    local maxXP = UnitXPMax("player")
+    local level = UnitLevel("player")
+    local element = self.element
+
+    if (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP + element.xp))) or
+       (element.xp >= 1 and ((level > element.level) or (element.level == level and currentXP >= element.xp))) or
+       (element.xp >= 0 and element.xp < 1 and ((level > element.level) or (element.level == level and currentXP >= maxXP*element.xp)))
+       then
+        RXP_.SetElementComplete(self,true)
+    end
 
 end
 
 function RXP_.functions.vendor(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,id = ...
-		element.id = tonumber(id)
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.text = "Sell junk/resupply"
-		end
-		element.tooltipText = RXP_.icons.vendor..element.text
-		return element
-	end
-	
-	local event = ...
-	local id = self.element.id
-	
-	if event == "MERCHANT_SHOW" then
-		self.element.activity = RXP_.GetNpcId()
-	elseif event == "MERCHANT_CLOSED" and (self.element.activity == id or not id) then
-		self.element.activity = nil
-		RXP_.SetElementComplete(self)
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,id = ...
+        element.id = tonumber(id)
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Sell junk/resupply"
+        end
+        element.tooltipText = RXP_.icons.vendor..element.text
+        return element
+    end
+
+    local event = ...
+    local id = self.element.id
+
+    if event == "MERCHANT_SHOW" then
+        self.element.activity = RXP_.GetNpcId()
+    elseif event == "MERCHANT_CLOSED" and (self.element.activity == id or not id) then
+        self.element.activity = nil
+        RXP_.SetElementComplete(self)
+    end
 end
 
 function RXP_.functions.trainer(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,id = ...
-		element.id = tonumber(id)
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.text = "Train skills"
-		end
-		element.tooltipText = RXP_.icons.trainer..element.text
-		return element
-	end
-	
-	local event = ...
-	local id = self.element.id
-	
-	if event == "TRAINER_SHOW" then
-		self.element.activity = RXP_.GetNpcId()
-	elseif event == "TRAINER_CLOSED" and (self.element.activity == id or not id) then
-		self.element.activity = nil
-		RXP_.SetElementComplete(self)
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,id = ...
+        element.id = tonumber(id)
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Train skills"
+        end
+        element.tooltipText = RXP_.icons.trainer..element.text
+        return element
+    end
+
+    local event = ...
+    local id = self.element.id
+
+    if event == "TRAINER_SHOW" then
+        self.element.activity = RXP_.GetNpcId()
+    elseif event == "TRAINER_CLOSED" and (self.element.activity == id or not id) then
+        self.element.activity = nil
+        RXP_.SetElementComplete(self)
+    end
 end
 
 function RXP_.functions.stable(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,id = ...
-		element.id = tonumber(id)
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.text = "Stablee your pet"
-		end
-		element.tooltipText = RXP_.icons.stable..element.text
-		return element
-	end
-	
-	local event = ...
-	local id = self.element.id
-	
-	if event == "PET_STABLE_SHOW" then
-		self.element.activity = RXP_.GetNpcId()
-	elseif event == "PET_STABLE_CLOSED" and (self.element.activity == id or not id) then
-		self.element.activity = nil
-		RXP_.SetElementComplete(self)
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,id = ...
+        element.id = tonumber(id)
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Stablee your pet"
+        end
+        element.tooltipText = RXP_.icons.stable..element.text
+        return element
+    end
+
+    local event = ...
+    local id = self.element.id
+
+    if event == "PET_STABLE_SHOW" then
+        self.element.activity = RXP_.GetNpcId()
+    elseif event == "PET_STABLE_CLOSED" and (self.element.activity == id or not id) then
+        self.element.activity = nil
+        RXP_.SetElementComplete(self)
+    end
 end
 
 function RXP_.functions.tame(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,id = ...
-		element.id = tonumber(id)
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.text = "-"
-		end
-		element.tooltipText = RXP_.icons.tame..element.text
-		return element
-	end
-	
-	local event,unit,guid,spellId = ...
-	local id = self.element.id
-	
-	if spellId == 1515 and unit == "player" then
-		if event == "UNIT_SPELLCAST_START" then
-			self.element.petId = id
-		elseif id and event == "UNIT_SPELLCAST_SUCCEEDED" and id == self.element.petId then
-			self.element.petId = nil
-			RXP_.SetElementComplete(self)
-			return
-		end
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,id = ...
+        element.id = tonumber(id)
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "-"
+        end
+        element.tooltipText = RXP_.icons.tame..element.text
+        return element
+    end
+
+    local event,unit,guid,spellId = ...
+    local id = self.element.id
+
+    if spellId == 1515 and unit == "player" then
+        if event == "UNIT_SPELLCAST_START" then
+            self.element.petId = id
+        elseif id and event == "UNIT_SPELLCAST_SUCCEEDED" and id == self.element.petId then
+            self.element.petId = nil
+            RXP_.SetElementComplete(self)
+            return
+        end
+    end
 end
 
 function RXP_.functions.money(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,money = ...
-		local prefix = money:sub(1,1)
-		if prefix == "<" then
-			element.greaterThan = false
-		elseif prefix == ">" then
-			element.greaterThan = true
-		else
-			error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
-		end
-		element.money = tonumber(money:match("(%d+%.?%d*)"))
-		if element.money then
-			element.money = element.money * 1e4
-		else
-			error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
-		end
-		element.textOnly = true
-		if text and text ~= "" then
-			element.text = text
-		end
-		return element
-	end
-	
-	if GetMoney() >= self.element.money then
-		self.element.step.completed = self.element.greaterThan
-	else
-		self.element.step.completed = not(self.element.greaterThan)
-	end
-	if self.element.step.completed then
-		RXP_.updateSteps = true
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,money = ...
+        local prefix = money:sub(1,1)
+        if prefix == "<" then
+            element.greaterThan = false
+        elseif prefix == ">" then
+            element.greaterThan = true
+        else
+            error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
+        end
+        element.money = tonumber(money:match("(%d+%.?%d*)"))
+        if element.money then
+            element.money = element.money * 1e4
+        else
+            error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
+        end
+        element.textOnly = true
+        if text and text ~= "" then
+            element.text = text
+        end
+        return element
+    end
+
+    if GetMoney() >= self.element.money then
+        self.element.step.completed = self.element.greaterThan
+    else
+        self.element.step.completed = not(self.element.greaterThan)
+    end
+    if self.element.step.completed then
+        RXP_.updateSteps = true
+    end
 end
 
 
 function RXP_.functions.next(skip)
-	if skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then 
-		return 
-	end
-	local guide = RXP_.currentGuide
-	if guide.next then
-		local group = guide.group
-		local next = guide.next:gsub("^%s*(.+)\\%s*",function(grp)
-			group = grp
-			return ""
-		end)
-		local nextGuide = RXP_.GetGuideTable(group,next)
-		if nextGuide then
-			return RXP_:LoadGuide(nextGuide)
-		end
-	end
+    if skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then 
+        return 
+    end
+    local guide = RXP_.currentGuide
+    if guide.next then
+        local group = guide.group
+        local next = guide.next:gsub("^%s*(.+)\\%s*",function(grp)
+            group = grp
+            return ""
+        end)
+        local nextGuide = RXP_.GetGuideTable(group,next)
+        if nextGuide then
+            return RXP_:LoadGuide(nextGuide)
+        end
+    end
 end
 
 function RXP_.functions.istrained(self,...)
-	return {textOnly = true } --todo
+    return {textOnly = true } --todo
 end
 
 
 
 
 function RXP_.functions.train(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,id,rank = ...
-		local spellId = tonumber(id)
-		
-		if spellId then
-			element.id = spellId 
-		else
-			element.id = select(7,GetSpellInfo(id))
-		end
-		
-		if rank then
-			element.rank = tonumber(rank:match("(%d+)")) or 0
-		end
-		
-		if element.id and not C_Spell.IsSpellDataCached(element.id) then
-			C_Spell.RequestLoadSpellData(element.id)
-		end
-		
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.text = "-"
-		end
-		element.requestFromServer = true
-		element.tooltipText = RXP_.icons.trainer..element.text
-		return element
-	end
-	local element = self.element
-	local event = ...
-	local rank = element.rank or 0
-	if not element.rank and C_Spell.IsSpellDataCached(element.id) then
-		rank = GetSpellSubtext(element.id)
-		rank = tonumber(rank:match("(%d+)")) or 0
-		element.rank = rank
-		element.requestFromServer = nil
-	end
-	if not element.title then
-		element.title = GetSpellInfo(element.id)
-	end
-	
-	if IsPlayerSpell(element.id) then
-		RXP_.SetElementComplete(self)
-	end
-	
-	if element.title then
-		if element.completed or element.step.completed or not element.step.active then
-			RXP_.skillList[element.title] = nil
-		else
-			RXP_.skillList[element.title] = element.rank
-		end
-	else
-		element.requestFromServer = true
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,id,rank = ...
+        local spellId = tonumber(id)
+
+        if spellId then
+            element.id = spellId 
+        else
+            element.id = select(7,GetSpellInfo(id))
+        end
+
+        if rank then
+            element.rank = tonumber(rank:match("(%d+)")) or 0
+        end
+
+        if element.id and not C_Spell.IsSpellDataCached(element.id) then
+            C_Spell.RequestLoadSpellData(element.id)
+        end
+
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "-"
+        end
+        element.requestFromServer = true
+        element.tooltipText = RXP_.icons.trainer..element.text
+        return element
+    end
+    local element = self.element
+    local event = ...
+    local rank = element.rank or 0
+    if not element.rank and C_Spell.IsSpellDataCached(element.id) then
+        rank = GetSpellSubtext(element.id)
+        rank = tonumber(rank:match("(%d+)")) or 0
+        element.rank = rank
+        element.requestFromServer = nil
+    end
+    if not element.title then
+        element.title = GetSpellInfo(element.id)
+    end
+
+    if IsPlayerSpell(element.id) then
+        RXP_.SetElementComplete(self)
+    end
+
+    if element.title then
+        if element.completed or element.step.completed or not element.step.active then
+            RXP_.skillList[element.title] = nil
+        else
+            RXP_.skillList[element.title] = element.rank
+        end
+    else
+        element.requestFromServer = true
+    end
 end
 
 
 
 
 function RXP_.functions.istrained(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local args = {...}
-		args[1] = nil
-		element.id = args
-		for _,id in pairs(args) do
-			if not C_Spell.IsSpellDataCached(id) then
-				C_Spell.RequestLoadSpellData(id)
-			end
-		end
-		element.textOnly = true
-		return element
-	end
-	
-	for _,id in pairs(self.element.id) do
-		if IsPlayerSpell(id) then
-			self.element.step.completed = true
-			RXP_.updateSteps = true
-			return
-		end
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local args = {...}
+        args[1] = nil
+        element.id = args
+        for _,id in pairs(args) do
+            if not C_Spell.IsSpellDataCached(id) then
+                C_Spell.RequestLoadSpellData(id)
+            end
+        end
+        element.textOnly = true
+        return element
+    end
+
+    for _,id in pairs(self.element.id) do
+        if IsPlayerSpell(id) then
+            self.element.step.completed = true
+            RXP_.updateSteps = true
+            return
+        end
+    end
 end
 
 function RXP_.functions.abandon(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		element.tag = "accept"
-		local text,id = ...
-		id = tonumber(id)
-		if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-		element.title = ""
-		element.questId = id
-		--element.title = RXP_.GetQuestName(id)
-		if text and text ~= "" then
-			element.text = text
-		else		
-			element.text = "Abandon *quest*"
-			element.requestFromServer = true
-		end
-		if element.text:match("%*quest%*") then
-			element.retrieveText = true
-		end
-		--print("Q1",element.text)
-		element.tooltipText = RXP_.icons.abandon..element.text
-		--print(element.rawtext)
-		return element
-	else
-		local element = self.element
-		local event,_,questId = ...
-		local id = element.questId
-		if element.retrieveText then
-			local quest = RXP_.GetQuestName(id,element)
-			if quest then
-				element.title = quest
-				element.text = element.text:gsub("%*quest%*",quest)
-				if element.requestFromServer then
-					element.requestFromServer = nil
-					RXP_.UpdateStepText(self)
-				end
-			else
-				element.title = ""
-				element.requestFromServer = true
-			end
-		end
-		element.tooltipText = RXP_.icons.abandon..element.text
-		
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.tag = "accept"
+        local text,id = ...
+        id = tonumber(id)
+        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        element.title = ""
+        element.questId = id
+        --element.title = RXP_.GetQuestName(id)
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Abandon *quest*"
+            element.requestFromServer = true
+        end
+        if element.text:match("%*quest%*") then
+            element.retrieveText = true
+        end
+        --print("Q1",element.text)
+        element.tooltipText = RXP_.icons.abandon..element.text
+        --print(element.rawtext)
+        return element
+    else
+        local element = self.element
+        local event,_,questId = ...
+        local id = element.questId
+        if element.retrieveText then
+            local quest = RXP_.GetQuestName(id,element)
+            if quest then
+                element.title = quest
+                element.text = element.text:gsub("%*quest%*",quest)
+                if element.requestFromServer then
+                    element.requestFromServer = nil
+                    RXP_.UpdateStepText(self)
+                end
+            else
+                element.title = ""
+                element.requestFromServer = true
+            end
+        end
+        element.tooltipText = RXP_.icons.abandon..element.text
 
-		if not C_QuestLog.IsOnQuest(id) then
-			RXP_.SetElementComplete(self,true)
-		else
-			RXP_.SetElementIncomplete(self)
-		end
-		
-	end
-	
+
+        if not C_QuestLog.IsOnQuest(id) then
+            RXP_.SetElementComplete(self,true)
+        else
+            RXP_.SetElementIncomplete(self)
+        end
+
+    end
+
 end
 
 
 function RXP_.functions.isQuestComplete(self,...)
-	if type(self) == "string" then
-		local element = {}
-		local text,id = ...
-		id = tonumber(id)
-		if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-		element.questId = id
-		if text and text ~= "" then
-			element.text = text
-		end
-		element.textOnly = true
-		return element
-	end
-	local id = self.element.questId
-	if not (C_QuestLog.IsOnQuest(id) and IsQuestComplete(id)) then
-		self.element.step.completed = true
-		RXP_.updateSteps = true
-	end
+    if type(self) == "string" then
+        local element = {}
+        local text,id = ...
+        id = tonumber(id)
+        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        element.questId = id
+        if text and text ~= "" then
+            element.text = text
+        end
+        element.textOnly = true
+        return element
+    end
+    local id = self.element.questId
+    if not (C_QuestLog.IsOnQuest(id) and IsQuestComplete(id)) then
+        self.element.step.completed = true
+        RXP_.updateSteps = true
+    end
 end
 
 function RXP_.functions.isOnQuest(self,...)
-	if type(self) == "string" then
-		local element = {}
-		local text,id = ...
-		id = tonumber(id)
-		if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-		element.questId = id
-		if text and text ~= "" then
-			element.text = text
-		end
-		element.textOnly = true
-		return element
-	end
-	local id = self.element.questId
-	if not C_QuestLog.IsOnQuest(id) then
-		self.element.step.completed = true
-		RXP_.updateSteps = true
-	end
+    if type(self) == "string" then
+        local element = {}
+        local text,id = ...
+        id = tonumber(id)
+        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        element.questId = id
+        if text and text ~= "" then
+            element.text = text
+        end
+        element.textOnly = true
+        return element
+    end
+    local id = self.element.questId
+    if not C_QuestLog.IsOnQuest(id) then
+        self.element.step.completed = true
+        RXP_.updateSteps = true
+    end
 end
 
 function RXP_.functions.isQuestTurnedIn(self,...)
-	if type(self) == "string" then
-		local element = {}
-		local text,id = ...
-		id = tonumber(id)
-		if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-		element.questId = id
-		if text and text ~= "" then
-			element.text = text
-		end
-		element.textOnly = true
-		return element
-	end
-	local id = self.element.questId
-	if not IsQuestTurnedIn(id) then
-		self.element.step.completed = true
-		RXP_.updateSteps = true
-	end
+    if type(self) == "string" then
+        local element = {}
+        local text,id = ...
+        id = tonumber(id)
+        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        element.questId = id
+        if text and text ~= "" then
+            element.text = text
+        end
+        element.textOnly = true
+        return element
+    end
+    local id = self.element.questId
+    if not IsQuestTurnedIn(id) then
+        self.element.step.completed = true
+        RXP_.updateSteps = true
+    end
 end
 
 function RXP_.functions.spellMissing(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,id,rank = ...
-		local spellId = tonumber(id)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,id,rank = ...
+        local spellId = tonumber(id)
 
-		element.id = spellId
-		element.textOnly = true
+        element.id = spellId
+        element.textOnly = true
 
-		return element
-	end
-	
-	if IsPlayerSpell(self.element.id) then
-		RXP_.SetElementComplete(self)
-		self.element.step.completed = true
-		RXP_.updateSteps = true
-	end
-	
+        return element
+    end
+
+    if IsPlayerSpell(self.element.id) then
+        RXP_.SetElementComplete(self)
+        self.element.step.completed = true
+        RXP_.updateSteps = true
+    end
+
 end
 
 function RXP_.functions.zone(self,...)
-	if type(self) == "string" then --on parse
-		local element = {}
-		local text,zone = ...
-		local mapID = RXP_.mapId[zone]
-		if not mapID then
-			return error("Error parsing guide "..RXP_.currentGuideName..": Invalid map name\n"..self)
-		end
-		element.zone = mapID
-		element.icon = RXP_.icons.goto
-		if text and text ~= "" then
-			element.text = text
-		else
-			element.text = "Go to "..zone
-		end
-		element.tooltipText = element.icon..text
-		return element
-	end
-	local zone = self.element.zone
-	if zone == C_Map.GetBestMapForUnit("player") then
-		RXP_.SetElementComplete(self)
-		self.element.step.completed = true
-		RXP_.updateSteps = true
-	end
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,zone = ...
+        local mapID = RXP_.mapId[zone]
+        if not mapID then
+            return error("Error parsing guide "..RXP_.currentGuideName..": Invalid map name\n"..self)
+        end
+        element.zone = mapID
+        element.icon = RXP_.icons.goto
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Go to "..zone
+        end
+        element.tooltipText = element.icon..text
+        return element
+    end
+    local zone = self.element.zone
+    if zone == C_Map.GetBestMapForUnit("player") then
+        RXP_.SetElementComplete(self)
+        self.element.step.completed = true
+        RXP_.updateSteps = true
+    end
 end
