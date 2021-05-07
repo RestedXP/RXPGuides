@@ -15,7 +15,7 @@ HereBeDragons.worldMapData     = HereBeDragons.worldMapData or {}
 HereBeDragons.transforms       = HereBeDragons.transforms or {}
 HereBeDragons.callbacks        = HereBeDragons.callbacks or CBH:New(HereBeDragons, nil, nil, false)
 
-local WoWClassic = select(4, GetBuildInfo()) < 20000
+local WoWClassic = select(4, GetBuildInfo()) < 30000
 
 -- Data Constants
 local COSMIC_MAP_ID = 946

@@ -45,7 +45,10 @@ function RXPG_init()
 	RXPData = RXPData or {}
 	RXPCData = RXPCData or {}
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
-	RXPCData.numMapPins = RXPCData.numMapPins or 7
+	RXPData.numMapPins = RXPData.numMapPins or 7
+    RXPData.arrowSize = RXPData.arrowSize or 1
+    RXPData.windowSize = RXPData.arrowSize or 1
+    RXP_.arrowFrame:SetShown(not RXPData.disableArrow)
 end
 
 
@@ -134,13 +137,14 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	elseif event == "PLAYER_LOGIN" then
 		RXPG_init()
 		RXP_.GenerateMenuTable()
+        RXP_.CreateOptionsPanel()
 		loadtime = GetTime()
 		local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
 		RXP_:LoadGuide(guide,true)
 		return
 	end
 	
-	--if IsShiftKeyDown() ~= not RXPCData.automateQuests then return end
+	if IsControlKeyDown() == not RXPData.disableQuestAutomation then return end
 	
 	if event == "QUEST_COMPLETE" then
 		local id = GetQuestID()
@@ -233,10 +237,12 @@ f:Show()
 f:SetMovable(true)
 f:SetClampedToScreen(true)
 f:SetResizable(true)
-f:SetMinResize(200,20)
+f:SetMinResize(220,20)
 
 f.OnMouseDown = function(self, button)
-	if IsAltKeyDown() then
+    if RXPData.lockFrames then
+        return
+	elseif IsAltKeyDown() then
 		f:StartSizing("BOTTOMRIGHT")
 		f:SetScript("OnUpdate",RXP_.UpdateBottomFrame)
 		isResizing = true
@@ -951,9 +957,8 @@ function RXP_:LoadGuide(guide,OnLoad)
 	f.GuideName.text:SetText(guide.displayName)
 	local nameWidth = f.GuideName.text:GetStringWidth()+10
 	f.GuideName:SetWidth(nameWidth)
-	nameWidth = math.max(f:GetWidth(),nameWidth+45)
-	f:SetWidth(nameWidth)
-	f:SetMinResize(nameWidth,20)
+	f:SetWidth(math.max(f:GetWidth(),nameWidth+45))
+	f:SetMinResize(math.max(nameWidth+45,220),20)
 	if not guide.labels then
 		guide.labels = {}
 	end
@@ -1115,7 +1120,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 					if element.requestFromServer then
 						RXPG[RXP_.currentGuide.group][element.tag](element)
 						RXP_.updateStepText = RXP_.updateStepText or not element.requestFromServer
-					elseif element.tag and (stepDiff <= RXPCData.numMapPins and stepDiff >= 0) then
+					elseif element.tag and (stepDiff <= 8 and stepDiff >= 0) then
 						RXPG[RXP_.currentGuide.group][element.tag](element)
 					end
 				end
@@ -1152,11 +1157,7 @@ end
 
 
 
---[[
-local panel = CreateFrame("Frame")
-optionPanel.name = "RXPG"
-InterfaceOptions_AddCategory(panel)
-]]
+
 
 function RXP_.GenerateMenuTable()
 	RXP_.menuList = {
@@ -1192,6 +1193,7 @@ function RXP_.GenerateMenuTable()
 		
 		table.insert(RXP_.menuList,item)
 	end
+    table.insert(RXP_.menuList,{text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG})
 end
 
 
@@ -1204,8 +1206,111 @@ SLASH_RXPG1 = "/rxpg"
 	
 	
 SlashCmdList["RXPG"] = function(msg)
-	--TODO: interface options panel
+	InterfaceOptionsFrame_OpenToCategory(RXPOptions)
+    InterfaceOptionsFrame_OpenToCategory(RXPOptions)
 end 
 
 
+function RXP_.CreateOptionsPanel()
+    local panel = CreateFrame("Frame","RXPOptions")
+    panel.name = "RXP Guides"
+    InterfaceOptions_AddCategory(panel)
 
+    panel.title = panel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+    panel.title:SetPoint("TOPLEFT", 16, -16)
+    panel.title:SetText("RXP Guides")
+
+    local index = 0
+    local options = {}
+    local button = CreateFrame("CheckButton", "$parentQuestTurnIn", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    index = index + 1
+    button:SetPoint("TOPLEFT",panel.title,"BOTTOMLEFT",0,-25)
+    button:SetScript("PostClick",function(self) 
+        RXPData.disableQuestAutomation = not self:GetChecked()
+    end)
+    button:SetChecked(not RXPData.disableQuestAutomation)
+    button.Text:SetText("Quest auto accept/turn in")
+    button.tooltip = "Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"
+    
+    
+    button = CreateFrame("CheckButton", "$parentTrainer", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        RXPData.disableTrainerAutomation = not self:GetChecked()
+    end)
+    button:SetChecked(not RXPData.disableTrainerAutomation)
+    button.Text:SetText("Trainer automation")
+    button.tooltip = "Allows the guide to buy spells automatically if the step tells you to"    
+    
+    button = CreateFrame("CheckButton", "$parentArrow", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self)
+        local checkbox = self:GetChecked()
+        RXP_.arrowFrame:SetShown(checkbox)
+        RXPData.disableArrow = not checkbox
+    end)
+    button:SetChecked(not RXPData.disableArrow)
+    button.Text:SetText("Enable waypoint arrow")
+    button.tooltip = "Show/Hide the waypoint arrow" 
+
+    
+    button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        RXPData.lockFrames = self:GetChecked()
+    end)
+    button:SetChecked(RXPData.lockFrames)
+    button.Text:SetText("Lock Frames")
+    button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it" 
+
+    --
+   
+
+    local SliderUpdate = function(self, value)
+        self.ref[self.key] = value
+        self.Text:SetText(format(self.defaultText,value))
+        RXPG_MAIN:SetScale(RXPData.windowSize)
+        local size = RXPData.arrowSize
+        RXP_.arrowFrame:SetSize(32*size,32*size)
+        RXPData.numMapPins = math.floor(RXPData.numMapPins)
+        RXP_.updateMap = true
+    end
+    
+    local CreateSlider = function(ref,key,smin,smax,text,tooltip,anchor,x,y)
+        local slider,dvalue
+        
+        slider = CreateFrame("Slider", "$parentArrowSlider", panel, "OptionsSliderTemplate")
+        slider:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", x, y)
+        slider:SetOrientation('HORIZONTAL')
+        --slider:SetValueStep(1)
+        slider:SetThumbTexture("Interface/Buttons/UI-SliderBar-Button-Horizontal")
+        slider.ref = ref
+        slider.key = key
+        dvalue = ref[key]
+        
+        slider.defaultText = text
+        slider.tooltipText = tooltip
+        slider:SetScript("OnValueChanged", SliderUpdate)
+        
+        slider:SetMinMaxValues(smin,smax)
+        SliderUpdate(slider,dvalue)
+        slider:SetValue(dvalue)
+        
+        slider.Low:SetText(tostring(smin));
+        slider.High:SetText(tostring(smax));
+        return slider
+    end
+    local slider
+    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,250,-25)
+    slider = CreateSlider(RXPData,"windowSize",0.2,2,"Window Scale: %.2f","Scale of the Main Window, use alt+left click on the main window to resize it",slider,0,-25)
+    slider = CreateSlider(RXPData,"numMapPins",1,20,"Number of Map Pins: %d","Number of map pins shown on the world map",slider,0,-25)
+    
+
+end

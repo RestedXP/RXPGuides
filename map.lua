@@ -96,7 +96,9 @@ af:SetPoint("TOP")
 af:Hide()
 
 af:SetScript("OnMouseDown", function(self, button)
-    af:StartMoving()
+    if not RXPData.lockFrames then
+        af:StartMoving()
+    end
 end)
 af:SetScript("OnMouseUp", function(self,button)
     af:StopMovingOrSizing()
@@ -104,7 +106,7 @@ end)
 
 function RXP_.UpdateArrow(self)
 
-if RXPCData.disableArrow or not self then
+if RXPData.disableArrow or not self then
     return
 end
 
@@ -210,7 +212,7 @@ function CreateWPframe(id,step,element)
               right = 5,
               top = 5,
               bottom = 5,
-         },]]
+         },]]}
 
         --f:SetBackdrop(backdrop)
         f.text = f.text or f:CreateFontString(nil,"OVERLAY") 
@@ -258,14 +260,14 @@ end
 --wp = CreateWPframe()
 
 local function AddMapIcon(...)
-    if RXPCData.hideMapPins then
+    if RXPData.numMapPins == 0 then
         return
     else
         return HBDPins:AddWorldMapIconWorld(...)
     end
 end
 local function AddMinimapIcon(...)
-    if RXPCData.hideMapPins then
+    if RXPData.numMapPins == 0 then
         return
     else
         return HBDPins:AddMinimapIconWorld(...)
@@ -355,7 +357,7 @@ function RXP_.UpdateMap()
 
     --local stepn = RXPCData.currentStep
     local npins = 0
-    for stepn = RXPCData.currentStep+1, RXPCData.currentStep+RXPCData.numMapPins do
+    for stepn = RXPCData.currentStep+1, RXPCData.currentStep+RXPData.numMapPins do
         if stepn > #RXP_.currentGuide.steps then
             break
         end
@@ -380,7 +382,7 @@ function RXP_.UpdateMap()
         end
     end
 
-    for i = RXPCData.currentStep+1,RXPCData.currentStep+RXPCData.numMapPins do
+    for i = RXPCData.currentStep+1,RXPCData.currentStep+RXPData.numMapPins do
         if i > #RXP_.currentGuide.steps then
             break
         end
@@ -414,7 +416,7 @@ function RXP_.UpdateMap()
     for i,element in ipairs(RXP_.activeWaypoints) do
         if element.arrow and element.step.active and 
         not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and (element.completed or element.skip) and not element.textOnly) then
-            af:Show()
+            af:SetShown(not RXPData.disableArrow)
             af.dist = 0
             af.orientation = 0
             af.element = element
