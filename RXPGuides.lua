@@ -287,12 +287,12 @@ end
 
 
 
-local width,height = 250,250
+local width,height = 235,175
 
 f:SetWidth(width)
 f:SetHeight(height) 	
 --f:SetSize(150, 150)
-f:SetPoint("LEFT",15,0)
+f:SetPoint("LEFT",0,35)
 f:SetFrameStrata("BACKGROUND")
 --f:SetBackdrop(backdrop)
 --f:SetBackdropColor(0,0,0)
