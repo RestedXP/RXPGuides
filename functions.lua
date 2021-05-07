@@ -965,7 +965,7 @@ function RXP_.functions.train(self,...)
     end
 
     if IsPlayerSpell(element.id) then
-        RXP_.SetElementComplete(self)
+        RXP_.SetElementComplete(self,true)
     end
 
     if element.title then
@@ -1149,7 +1149,7 @@ function RXP_.functions.zone(self,...)
         if not mapID then
             return error("Error parsing guide "..RXP_.currentGuideName..": Invalid map name\n"..self)
         end
-        element.zone = mapID
+        element.map = mapID
         element.icon = RXP_.icons.goto
         if text and text ~= "" then
             element.text = text
@@ -1159,7 +1159,7 @@ function RXP_.functions.zone(self,...)
         element.tooltipText = element.icon..text
         return element
     end
-    local zone = self.element.zone
+    local zone = self.element.map
     if zone == C_Map.GetBestMapForUnit("player") then
         RXP_.SetElementComplete(self)
         self.element.step.completed = true

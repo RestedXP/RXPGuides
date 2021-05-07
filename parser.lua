@@ -104,7 +104,7 @@ function RXPG.RegisterGuide(guideGroup,text)
             element = {text = line:sub(2,-1),step = step}
             lastElement = element
         elseif line:sub(1,1) == "*" then
-            element = {text = line:sub(2,-1),step = step, hideTooltip = true, textOnly = true}
+            element = {text = line:sub(2,-1):gsub("\\n","\n"),step = step, hideTooltip = true, textOnly = true}
         --else
             --error('Error parsing guide at line '..linenumber..'/ '..guide.name)
         end
