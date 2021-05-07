@@ -48,7 +48,7 @@ function RXPG_init()
 	RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.arrowSize or 1
-    RXP_.arrowFrame:SetShown(not RXPData.disableArrow)
+    --RXP_.arrowFrame:SetShown(not RXPData.disableArrow)
 end
 
 
@@ -1251,7 +1251,7 @@ function RXP_.CreateOptionsPanel()
     index = index + 1
     button:SetScript("PostClick",function(self)
         local checkbox = self:GetChecked()
-        RXP_.arrowFrame:SetShown(checkbox)
+        RXP_.arrowFrame:SetShown(RXP_.currentGuide and checkbox)
         RXPData.disableArrow = not checkbox
     end)
     button:SetChecked(not RXPData.disableArrow)

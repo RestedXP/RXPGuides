@@ -282,6 +282,7 @@ end
 function RXP_.UpdateMap()
 
     RXP_.updateMap = false
+    if not RXP_.currentGuide then return end
     af.element = nil
     RXP_.activeWaypoints = {}
     HBDPins:RemoveAllMinimapIcons(RXP_)
