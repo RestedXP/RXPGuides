@@ -118,6 +118,7 @@ end
 
 
 function RXP_.GetQuestObjectives(id)
+    local err = false
     if C_QuestLog.IsOnQuest(id) then
         local questInfo = {}
         for i = 1,GetNumQuestLogEntries() do
@@ -125,6 +126,10 @@ function RXP_.GetQuestObjectives(id)
             if questID == id then
                 for j = 1,GetNumQuestLeaderBoards(i) do
                     local description, objectiveType, isCompleted = GetQuestLogLeaderBoard(j,i)
+                    if not description then
+                        err = true
+                        break
+                    end
                     local required,fulfullied = description:match("(%d+)/(%d+)")
                     if required then
                         required = tonumber(required)
@@ -143,7 +148,9 @@ function RXP_.GetQuestObjectives(id)
                 return questInfo
             end
         end
-    else
+    end
+    
+    if not C_QuestLog.IsOnQuest(id) or err then
         local ctime = GetTime()
         if ctime - timer > 1 then
             timer = ctime
@@ -1146,8 +1153,8 @@ function RXP_.functions.zone(self,...)
         local element = {}
         local text,zone = ...
         local mapID = RXP_.mapId[zone]
-        if not mapID then
-            return error("Error parsing guide "..RXP_.currentGuideName..": Invalid map name\n"..self)
+        if not (mapID and text) then
+            return error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/map name\n"..self)
         end
         element.map = mapID
         element.icon = RXP_.icons.goto

@@ -47,7 +47,7 @@ function RXPG_init()
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
 	RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.arrowSize = RXPData.arrowSize or 1
-    RXPData.windowSize = RXPData.arrowSize or 1
+    RXPData.windowSize = RXPData.windowSize or 1
     --RXP_.arrowFrame:SetShown(not RXPData.disableArrow)
 end
 
