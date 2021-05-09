@@ -76,6 +76,11 @@ local function IsQuestComplete(id)
     end
 end
 
+local questConversion = {
+[9684] = 63866,
+
+}
+
 local timer = GetTime()
 local nrequests = 0
 local requests = {}
@@ -83,6 +88,8 @@ local questNameCache = {}
 local questObjectivesCache = {}
 
 function RXP_.GetQuestName(id)
+    id = questConversion[id] or id
+    if not id then return end
     if C_QuestLog.IsOnQuest(id) then
         for i = 1,GetNumQuestLogEntries() do
             local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
@@ -118,6 +125,8 @@ end
 
 
 function RXP_.GetQuestObjectives(id)
+    id = questConversion[id] or id
+    if not id then return end
     local err = false
     if C_QuestLog.IsOnQuest(id) then
         local questInfo = {}
@@ -250,7 +259,7 @@ function RXP_.functions.accept(self,...)
         id = tonumber(id)
         if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.title = ""
-        element.questId = id
+        element.questId = questConversion[id] or id
         --element.title = RXP_.GetQuestName(id)
         if text and text ~= "" then
             element.text = text
@@ -307,7 +316,7 @@ function RXP_.functions.turnin(self,...)
         local text,id,reward = ...
         id = tonumber(id)
         if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-        element.questId = id
+        element.questId = questConversion[id] or id
         element.reward = tonumber(reward) or 0
         element.title = ""
         --element.title = RXP_.GetQuestName(id)
@@ -367,7 +376,7 @@ function RXP_.functions.complete(self,...)
 
         --element.title = RXP_.GetQuestName(id)
         --local objectives = RXP_.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
-        element.questId = id
+        element.questId = questConversion[id] or id
         if text and text ~= "" then
             element.rawtext = text
             element.text = element.rawtext

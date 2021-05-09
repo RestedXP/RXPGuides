@@ -531,7 +531,8 @@ function RXP_.SetStep(n)
 	
 	f.CurrentStepFrame.activeSteps = {}
 	f.ClearFrameData()
-	
+	local level = UnitLevel("player")
+    
 	for i = 1,n-1 do
 		local step = guide.steps[i]
 		local req
@@ -542,7 +543,7 @@ function RXP_.SetStep(n)
 			end
 		end
 		
-		if step.sticky and not RXPCData.stepSkip[i] and	not(req and (req.active or (req.sticky and not RXPCData.stepSkip[req.index]))) then
+		if step.sticky and not RXPCData.stepSkip[i] and	not(req and (req.active or (req.sticky and not RXPCData.stepSkip[req.index]))) and level >= step.level then
 			table.insert(f.CurrentStepFrame.activeSteps,step)
 			--f.Steps.frame[i]:SetAlpha(0.66)
 			step.active = true
@@ -553,7 +554,7 @@ function RXP_.SetStep(n)
 	local step = guide.steps[n]
 	if step.completed and n < #guide.steps then
 		return RXP_.SetStep(n+1)
-	elseif step and not step.completed and not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) then
+	elseif step and not step.completed and not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) and level >= step.level then
 		table.insert(f.CurrentStepFrame.activeSteps,step)
 		f.Steps.frame[n]:SetAlpha(1)
 		step.active = true
@@ -1003,6 +1004,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 		if step.completewith then
 			step.sticky = true
 		end
+        step.level = tonumber(step.level) or 0
 		if step.label then
 			guide.labels[step.label] = n
 		end
