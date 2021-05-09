@@ -408,6 +408,9 @@ function f.ClearFrameData()
 			frame:UnregisterAllEvents()
 			frame:SetScript("OnUpdate",nil)
 			frame:SetScript("OnEvent",nil)
+            frame:SetScript("OnEnter",nil)
+            frame:SetScript("OnLeave",nil)
+            frame:SetMouseClickEnabled(false)
 			frame.button:SetChecked(false)
 		end
 	end
@@ -653,6 +656,27 @@ function RXP_.SetStep(n)
 				
 				elementFrame.icon = elementFrame:CreateFontString(nil,"OVERLAY")
 				elementFrame.icon:SetFontObject(GameFontNormalSmall)
+                
+                elementFrame:SetMouseMotionEnabled(true)
+                local ht = elementFrame:CreateTexture(nil, "HIGHLIGHT")
+                ht:SetAllPoints(elementFrame.text)
+                ht:SetTexture("Interface\\Worldmap\\UI-QuestPoi-HighlightBar")
+                ht:SetBlendMode("ADD")
+                ht:Hide()
+                elementFrame.highlight = ht
+                elementFrame:SetScript("OnEnter",function(self)
+                    if self.element and self.element.tooltip then
+                        GameTooltip:SetOwner(self, "ANCHOR_BOTTOM",0,-10)
+                        GameTooltip:ClearLines()
+                        GameTooltip:AddLine(self.element.tooltip)
+                        GameTooltip:Show()
+                    end
+                end)
+                elementFrame:SetScript("OnLeave",function(self)
+                    if self.element and self.element.tooltip then
+                        GameTooltip:Hide()
+                    end
+                end)
 --				elementFrame.icon:SetJustifyH("LEFT")
 --				elementFrame.icon:SetJustifyV("CENTER")
 			end

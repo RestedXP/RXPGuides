@@ -36,7 +36,6 @@ complete = "|TInterface/GossipFrame/HealerGossipIcon:0|t",
 vendor = "|TInterface/GossipFrame/BankerGossipIcon:0|t",
 reputation = "|TInterface/GossipFrame/WorkOrderGossipIcon:0|t",
 fly = "|TInterface/GossipFrame/TaxiGossipIcon:0|t",
---home = "|TInterface/GossipFrame/PetitionGossipIcon:0|t",
 fp = "|TInterface/AddOns/RXPGuides/Textures/fp:0|t",
 hs = "|TInterface/MINIMAP/TRACKING/Innkeeper:0|t",
 trainer = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
@@ -50,6 +49,7 @@ xp = "|TInterface/PETBATTLES/BattleBar-AbilityBadge-Strong-Small:0|t",
 stable = "|TInterface/MINIMAP/TRACKING/StableMaster:0|t",
 tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t",
 abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
+link = "|TInterface/FriendsFrame/UI-FriendsFrame-Link:0|t",
 }
 
 local IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
@@ -1174,3 +1174,51 @@ function RXP_.functions.zone(self,...)
         RXP_.updateSteps = true
     end
 end
+
+local function LinkOnClick(self)
+
+RXP_.url = self.element.url
+StaticPopup_Show("RXP_Link")
+RXP_.url = nil
+end
+
+function RXP_.functions.link(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local url,text = ...
+        if not (url and text) then
+            return error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/url\n"..self)
+        end
+        element.textOnly = true
+        element.url = url
+        element.hideTooltip = true
+        element.tooltip = "Click to view the link"
+        element.text = text
+        return element
+    end
+    if self and self.highlight then
+        self.highlight:Show()
+        self:SetScript("OnMouseDown",LinkOnClick)
+    end
+end
+
+StaticPopupDialogs["RXP_Link"] = {
+    text = "Press Ctrl+C to copy the URL to your clipboard",
+    hasEditBox = 1,
+    button1 = OKAY,
+    OnShow = function(self)
+        if RXP_.url then
+            local box = getglobal(self:GetName() .. "EditBox")        
+            box:SetText(RXP_.url)
+            box:HighlightText()
+            box:SetFocus()
+        end
+    end,
+
+    EditBoxOnEscapePressed = function(self)
+        self:GetParent():Hide()
+    end,
+    timeout = 0,
+    whileDead = 1,
+    hideOnEscape = 1
+}
