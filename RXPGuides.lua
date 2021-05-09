@@ -174,20 +174,26 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		StaticPopup_Hide("QUEST_ACCEPT")
 		
 	elseif event == "QUEST_GREETING" then
-		for i = 1, GetNumActiveQuests() do
+        local nActive = GetNumActiveQuests()
+		local nAvailable = GetNumAvailableQuests()
+        
+		for i = 1, nActive do
 			local title, isComplete = GetActiveTitle(i)
 			if RXP_.QuestAutoTurnIn(title) and isComplete then
 				return SelectActiveQuest(i)
 			end
 		end
 		
-		for i = 1, GetNumAvailableQuests() do
-			local title, isComplete = GetAvailableTitle(i)
-			if RXP_.QuestAutoAccept(title) and not isComplete then
-				return SelectAvailableQuest(i)
-			end
+        if GetNumGossipOptions() == 0 and nAvailable == 1 and nActive == 0 then
+            SelectGossipAvailableQuest(1)
+        else
+            for i = 1, nAvailable do
+                local title, isComplete = GetAvailableTitle(i)
+                if RXP_.QuestAutoAccept(title) then
+                    return SelectAvailableQuest(i)
+                end
+            end
 		end
-		
 	elseif event == "GOSSIP_SHOW" then
 		local nActive = GetNumGossipActiveQuests()
 		local nAvailable = GetNumGossipAvailableQuests()
@@ -199,13 +205,16 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			end
 		end
 		
-		for i = 1, nAvailable do
-			local title = select(i * 7 - 6, GetGossipAvailableQuests())
-			if RXP_.QuestAutoAccept(title) then
-				return SelectGossipAvailableQuest(i)
-			end
+        if GetNumGossipOptions() == 0 and nAvailable == 1 and nActive == 0 then
+            SelectGossipAvailableQuest(1)
+        else
+            for i = 1, nAvailable do
+                local title = select(i * 7 - 6, GetGossipAvailableQuests())
+                if RXP_.QuestAutoAccept(title) then
+                    return SelectGossipAvailableQuest(i)
+                end
+            end
 		end
-		
 	end
 
 end)

@@ -10,7 +10,7 @@ RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
 RXP_.functions.events.fp = {"UI_INFO_MESSAGE"}
 RXP_.functions.events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 RXP_.functions.events.home = {"HEARTHSTONE_BOUND"}
-RXP_.functions.events.fly = {"PLAYER_CONTROL_LOST","TAXIMAP_OPENED"}
+RXP_.functions.events.fly = {"PLAYER_CONTROL_LOST","TAXIMAP_OPENED","ZONE_CHANGED"}
 RXP_.functions.events.deathskip = {"CONFIRM_XP_LOSS"}
 RXP_.functions.events.xp = {"PLAYER_XP_UPDATE","PLAYER_LEVEL_UP"}
 RXP_.functions.events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
@@ -437,7 +437,7 @@ function RXP_.functions.complete(self,...)
             end
         else
             local ct
-            if element.errot then
+            if element.errort then
                 ct = ""
             else
                 ct = element.rawtext or ""
@@ -621,9 +621,8 @@ function RXP_.functions.fly(self,...)
         return element
     end
     local event = ...
-    if event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1.5 then
-        RXP_.SetElementComplete(self)
-    elseif event == "TAXIMAP_OPENED" and not RXPCData.disableAutoFP and self.element.location then
+
+    if event == "TAXIMAP_OPENED" and RXPData.enableAutoFP and self.element.location then
         for i = 1,NumTaxiNodes() do
             local name = TaxiNodeName(i)
             if name and name:match(self.element.location) then
@@ -632,6 +631,8 @@ function RXP_.functions.fly(self,...)
                 return TakeTaxiNode(i)
             end
         end
+    elseif UnitOnTaxi("player") or (event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1.5) then
+        RXP_.SetElementComplete(self)
     end
 end
 

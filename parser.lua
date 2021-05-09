@@ -10,7 +10,7 @@ local function applies(text)
         local isMatch
         for str in string.gmatch(text, "[^/]+") do
             local v = true
-            for entry in string.gmatch(str, "!?%w+") do
+            for entry in string.gmatch(str, "!?[%w%d]+") do
                 local level = tonumber(entry) or 0xfff
                 local playerLevel = UnitLevel("player") or 1
                 local state = true
