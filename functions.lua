@@ -950,7 +950,10 @@ function RXP_.functions.train(self,...)
         else
             element.id = select(7,GetSpellInfo(id))
         end
-
+        
+        if type(spellId) ~= "number" then
+            return "Error parsing guide "..RXP_.currentGuideName..": Invalid spell name/id\n"..self
+        end
         if rank then
             element.rank = tonumber(rank:match("(%d+)")) or 0
         end

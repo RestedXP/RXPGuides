@@ -538,7 +538,7 @@ function RXP_.SetStep(n)
 		local req
 		if step.requires then
 			req = guide.steps[guide.labels[step.requires]]
-			while req.requires and not RXPCData.stepSkip[guide.steps[guide.labels[req.requires]].index] do
+			while req and req.requires and not RXPCData.stepSkip[guide.steps[guide.labels[req.requires]].index] do
 				req = guide.steps[guide.labels[req.requires]]
 			end
 		end
@@ -1203,8 +1203,15 @@ function RXP_.GenerateMenuTable()
 		},
 	}
 
+    local groupList = {}
+    for group in pairs(RXP_.guideList) do
+        table.insert(groupList,group)
+    end
+    table.sort(groupList)
+
 	local menuIndex = 1
-	for group,t in pairs(RXP_.guideList) do
+	for _,group in ipairs(groupList) do
+        local t = RXP_.guideList[group]
 		menuIndex = menuIndex+1
 		
 		if not t.sorted_ then
