@@ -87,8 +87,18 @@ local requests = {}
 local questNameCache = {}
 local questObjectivesCache = {}
 
+local db
+if QuestieLoader then 
+    db = QuestieLoader:ImportModule("QuestieDB")
+end
+
 function RXP_.GetQuestName(id)
     id = questConversion[id] or id
+    
+    if db and db.QueryQuest then
+        return db:GetQuest(id).name
+    end
+    
     if not id then return end
     if C_QuestLog.IsOnQuest(id) then
         for i = 1,GetNumQuestLogEntries() do
@@ -124,8 +134,9 @@ function RXP_.GetQuestName(id)
 end
 
 
-function RXP_.GetQuestObjectives(id)
+function RXP_.GetQuestObjectives(id,step)
     id = questConversion[id] or id
+    step = step or 0
     if not id then return end
     local err = false
     if C_QuestLog.IsOnQuest(id) then
@@ -156,6 +167,27 @@ function RXP_.GetQuestObjectives(id)
                 questObjectivesCache[id] = questInfo
                 return questInfo
             end
+        end
+    elseif db and db.QueryQuest and math.abs(RXPCData.currentStep-step) > 4 then
+        local qInfo = {}
+        local objectives = db:GetQuest(id).ObjectiveData
+        for i,quest in pairs(objectives) do
+            local qType = quest.Type
+            local objId = quest.Id
+            qInfo[i] = {type = qType, finished = false, questie = true}
+            if qType == "monster" then
+                qInfo[i].text = db:GetNPC(objId).name
+            elseif qType == "item" then
+                qInfo[i].text = db:GetItem(objId).name
+            elseif quest.Text then
+                qInfo[i].text = quest.Text
+            else
+                err = true
+                break
+            end
+        end
+        if not err then
+            return qInfo
         end
     end
     
@@ -278,7 +310,7 @@ function RXP_.functions.accept(self,...)
         local element = self.element
         local event,_,questId = ...
         local id = element.questId
-        if element.step.active or element.retrieveText then
+        if element.step.active or element.retrieveText or (element.step.index > 1 and RXP_.currentGuide.steps[element.step.index-1].active) then
             RXP_.questAccept[id] = element
             local quest = RXP_.GetQuestName(id,element)
             if quest then
@@ -391,7 +423,7 @@ function RXP_.functions.complete(self,...)
         local element = self.element
         local icon = element.icon or RXP_.icons.complete
         local id = element.questId
-        local objectives = RXP_.GetQuestObjectives(id,element)
+        local objectives = RXP_.GetQuestObjectives(id,element.step.index)
 
 
         --print(text)
@@ -407,27 +439,12 @@ function RXP_.functions.complete(self,...)
                 if not element.icon then
                     if obj.type == "item" then
                         icon = RXP_.icons.collect
-                    elseif obj.type == "monster" and t:match(questMonster) then
+                    elseif obj.type == "monster" and (t:match(questMonster) or obj.questie) then
                         icon = RXP_.icons.combat
                     end
                     element.icon = icon
                 end
-                if obj.type == "event" then 
-                    if isQuestComplete then
-                        t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
-                    else
-                        t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
-                    end
-                elseif isQuestComplete then
-                    t = t:gsub(": %d+/(%d+)",": %1/%1")
-                end
-                completed = obj.finished
-                objtext = t
-            else
-                completed = true
-                for i,obj in pairs(objectives) do
-                    local t = obj.text
-                    completed = completed and obj.finished
+                if not obj.questie then
                     if obj.type == "event" then 
                         if isQuestComplete then
                             t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
@@ -437,6 +454,25 @@ function RXP_.functions.complete(self,...)
                     elseif isQuestComplete then
                         t = t:gsub(": %d+/(%d+)",": %1/%1")
                     end
+                end
+                completed = obj.finished
+                objtext = t
+            else
+                completed = true
+                for i,obj in pairs(objectives) do
+                    local t = obj.text
+                    completed = completed and obj.finished
+                    if not obj.questie then
+                        if obj.type == "event" then 
+                            if isQuestComplete then
+                                t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
+                            else
+                                t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
+                            end
+                        elseif isQuestComplete then
+                            t = t:gsub(": %d+/(%d+)",": %1/%1")
+                        end
+                    end
                     if objtext then
                         objtext = objtext.."\n"..t
                     else
@@ -445,15 +481,9 @@ function RXP_.functions.complete(self,...)
                 end
             end
         else
-            local ct
-            if element.errort then
-                ct = ""
-            else
-                ct = element.rawtext or ""
-                element.errort = true
-            end
-            element.text = ct.."Retrieving quest data..."
+            element.text = "Retrieving quest data..."
             element.tooltipText = nil
+            
             RXP_.UpdateStepText(self)
             return
         end
@@ -534,7 +564,7 @@ function RXP_.functions.goto(self,...)
         if radius then
             if radius > 0 then
                 if not text or text == "" then
-                    element.text = string.format("Go to %.2f,%.2f (%s)",element.x,element.y,zone)
+                    element.text = string.format("Go to %.1f,%.1f (%s)",element.x,element.y,zone)
                 end
                 element.parent = nil
                 element.textOnly = nil
@@ -1197,7 +1227,7 @@ end
 function RXP_.functions.link(self,...)
     if type(self) == "string" then --on parse
         local element = {}
-        local url,text = ...
+        local text,url = ...
         if not (url and text) then
             return error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/url\n"..self)
         end

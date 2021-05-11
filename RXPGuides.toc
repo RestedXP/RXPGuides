@@ -2,6 +2,7 @@
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: Zarant
+## OptionalDeps: Questie
 ## SavedVariables: RXPData
 ## SavedVariablesPerCharacter: RXPCData
 

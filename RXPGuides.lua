@@ -3,15 +3,9 @@ RXPGuides = {}
 local RXPG = RXPGuides
 local version = select(4, GetBuildInfo())
 
-RXP_.CreateFrame = CreateFrame
-local CreateFrame = RXP_.CreateFrame
+local BackdropTemplate = "BackdropTemplate"
 if version < 20500 then
-	CreateFrame = function(arg1,arg2,arg3,arg4,...)
-		if arg4 == "BackdropTemplate" then
-			arg4 = nil
-		end
-		return RXP_.CreateFrame(arg1,arg2,arg3,arg4,...)
-	end
+	BackdropTemplate = nil    
 end
 
 
@@ -21,8 +15,8 @@ RXP_.questAccept = {}
 RXP_.questTurnIn = {}
 
 local eventFrame = CreateFrame("Frame");
-local f = CreateFrame("Frame", "RXPG_MAIN", UIParent, "BackdropTemplate")
-f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, "BackdropTemplate")
+local f = CreateFrame("Frame", "RXPG_MAIN", UIParent, BackdropTemplate)
+f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, BackdropTemplate)
 
 eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
@@ -37,6 +31,9 @@ eventFrame:RegisterEvent("QUEST_DETAIL")
 eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
 eventFrame:RegisterEvent("QUEST_TURNED_IN")
+eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
+
+
 
 RXPG_Debug = false
 
@@ -142,6 +139,8 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
 		RXP_:LoadGuide(guide,true)
 		return
+    elseif event == "PLAYER_LEVEL_UP" then
+        RXP_.SetStep(RXPCData.currentStep)
 	end
 	
 	if IsControlKeyDown() == not RXPData.disableQuestAutomation then return end
@@ -296,7 +295,7 @@ end
 
 
 
-local width,height = 235,175
+local width,height = 235,140
 
 f:SetWidth(width)
 f:SetHeight(height) 	
@@ -325,7 +324,7 @@ f.Select:SetText("Select All")
 
 
 --[[
-f.GuideNameFrame = CreateFrame("Frame", "$parentGuideNameFrame", f, "BackdropTemplate")
+f.GuideNameFrame = CreateFrame("Frame", "$parentGuideNameFrame", f, BackdropTemplate)
 f.GuideNameFrame:SetWidth(70)
 f.GuideNameFrame:SetHeight(14)
 f.GuideNameFrame:SetPoint("BOTTOMLEFT",f,"BOTTOMLEFT",0,0)
@@ -577,7 +576,7 @@ function RXP_.SetStep(n)
 		c = c+1
 		local stepframe = f.CurrentStepFrame.frame[c]
 		if not stepframe then
-			f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame_"..c,f.CurrentStepFrame, "BackdropTemplate")
+			f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame_"..c,f.CurrentStepFrame, BackdropTemplate)
 			stepframe = f.CurrentStepFrame.frame[c]
 			stepframe:SetBackdrop(f.backdropEdge)
 			stepframe:SetBackdropColor(9/255,12/255,43/255,0.75)
@@ -593,7 +592,7 @@ function RXP_.SetStep(n)
 			stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame.frame[c-1],"BOTTOMRIGHT",0,-5)
 		end
 		if not stepframe.number then
-			stepframe.number = CreateFrame("Frame","$parent_number",stepframe, "BackdropTemplate")
+			stepframe.number = CreateFrame("Frame","$parent_number",stepframe, BackdropTemplate)
 			stepframe.number:SetBackdrop(f.backdropEdge)
 			stepframe.number:SetBackdropColor(111/300,44/300,150/300,1)
 			stepframe.number:SetPoint("TOPLEFT",stepframe,7,5)
@@ -624,7 +623,7 @@ function RXP_.SetStep(n)
 			e = j
 			local elementFrame = stepframe.elements[e]
 			if not stepframe.elements[e] then
-				stepframe.elements[e] = CreateFrame("Frame","$parent_"..e,stepframe, "BackdropTemplate")
+				stepframe.elements[e] = CreateFrame("Frame","$parent_"..e,stepframe, BackdropTemplate)
 				elementFrame = stepframe.elements[e]
 				--elementFrame:SetHeight(0)
 				--elementFrame:SetWidth(300)
@@ -648,11 +647,11 @@ function RXP_.SetStep(n)
 				elementFrame.text:SetTextColor(1,1,1)
 				elementFrame.text:SetFont("Fonts\\FRIZQT__.TTF", 11)
 				
-				
+				--[[
 				elementFrame.text:SetJustifyH("LEFT")
 				elementFrame.text:SetJustifyV("CENTER")
 				elementFrame.text:SetTextColor(1,1,1)
-				elementFrame.text:SetFont("Fonts\\FRIZQT__.TTF", 11)
+				elementFrame.text:SetFont("Fonts\\FRIZQT__.TTF", 10)]]
 				
 				
 				elementFrame.icon = elementFrame:CreateFontString(nil,"OVERLAY")
@@ -866,7 +865,7 @@ f.BottomFrame:SetPoint("BOTTOMRIGHT", f,-10, 10)
 
 
 
-f.GuideName = CreateFrame("Frame","$parent_guideName",f, "BackdropTemplate")
+f.GuideName = CreateFrame("Frame","$parent_guideName",f, BackdropTemplate)
 f.GuideName:SetBackdrop(f.backdropEdge)
 f.GuideName:SetBackdropColor(111/300,44/300,150/300,1)
 f.GuideName:SetPoint("TOPLEFT",f.BottomFrame,7,7)
@@ -919,7 +918,7 @@ end)
 
 
 
-f.Steps = CreateFrame("Frame", "$parent_steps", f.BottomFrame, "BackdropTemplate")
+f.Steps = CreateFrame("Frame", "$parent_steps", f.BottomFrame, BackdropTemplate)
 f.Steps.frame = {}
 f.Steps:SetWidth(f:GetWidth()-35)
 --f.Steps:SetBackdrop(backdrop)
@@ -1011,7 +1010,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 
 
 		nframes = nframes + 1
-		f.Steps.frame[n] = f.Steps.frame[n] or CreateFrame("Frame","$parent_frame_"..n,f.Steps, "BackdropTemplate")
+		f.Steps.frame[n] = f.Steps.frame[n] or CreateFrame("Frame","$parent_frame_"..n,f.Steps, BackdropTemplate)
 		local frame = f.Steps.frame[n]
 		frame:Show()
 		frame.step = step
@@ -1039,8 +1038,16 @@ function RXP_:LoadGuide(guide,OnLoad)
 			frame:SetBackdropColor(9/255,12/255,43/255)
 			frame:SetAlpha(currentAlpha)
 		end)
-		frame:SetScript("OnMouseDown",function()
-			RXP_.SetStep(n,guide)
+        frame.timer = 0
+        frame.index = n
+        frame.guide = guide
+		frame:SetScript("OnMouseDown",function(self)
+			if GetTime() - self.timer <= 0.5 then
+                RXP_.SetStep(self.index,self.guide)
+                self.timer = 0
+            else
+                self.timer = GetTime()
+            end
 		end)
 		
 		
@@ -1049,7 +1056,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 		end
 		
 		if not frame.number then
-			frame.number = CreateFrame("Frame","$parent_number",frame, "BackdropTemplate")
+			frame.number = CreateFrame("Frame","$parent_number",frame, BackdropTemplate)
 			--frame.number:SetBackdrop(backdrop)
 			--frame.number:SetBackdropColor(20/255,25/255,67/255)
 			frame.number:SetPoint("BOTTOMRIGHT",frame)
@@ -1060,7 +1067,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 			frame.number.text:SetJustifyH("CENTER")
 			frame.number.text:SetJustifyV("CENTER")
 			frame.number.text:SetTextColor(1,1,1,1)
-			frame.number.text:SetFont("Fonts\\FRIZQT__.TTF", 9)
+			frame.number.text:SetFont("Fonts\\FRIZQT__.TTF", 8)
 			local prefix = ""
 			if n < 10 then prefix = "0" end
 			frame.number.text:SetText(prefix..tostring(n))

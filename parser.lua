@@ -81,9 +81,14 @@ function RXPG.RegisterGuide(guideGroup,text)
 
         line:gsub("^%.(%S+)%s*(.*)",function(tag,args)
             local t = {}
-            args = args:gsub("%s+,",",")
-            for arg in string.gmatch(args, "[^,]+") do
-                table.insert(t,arg)
+            
+            if tag == "link" then
+                table.insert(t,args:gsub("%s+$",""))
+            else
+                args = args:gsub("%s*,%s*",",")
+                for arg in string.gmatch(args, "[^,]+") do
+                    table.insert(t,arg)
+                end
             end
             --print(tag,args,type(guide))
             if RXPG[guide.group][tag] then
