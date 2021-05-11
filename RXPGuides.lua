@@ -483,7 +483,8 @@ function RXP_.UpdateStepCompletion()
 	end
 end
 
-function RXP_.SetStep(n)
+function RXP_.SetStep(n,n2)
+    if type(n) == "table" then n = n2 end
 	local guide = RXP_.currentGuide
 	local group = guide.group
 
@@ -531,6 +532,7 @@ function RXP_.SetStep(n)
 	f.CurrentStepFrame.activeSteps = {}
 	f.ClearFrameData()
 	local level = UnitLevel("player")
+    local scrollHeight = 1
     
 	for i = 1,n-1 do
 		local step = guide.steps[i]
@@ -544,6 +546,7 @@ function RXP_.SetStep(n)
 		
 		if step.sticky and not RXPCData.stepSkip[i] and	not(req and (req.active or (req.sticky and not RXPCData.stepSkip[req.index]))) and level >= step.level then
 			table.insert(f.CurrentStepFrame.activeSteps,step)
+            if n > 1 then scrollHeight = n-1 end
 			--f.Steps.frame[i]:SetAlpha(0.66)
 			step.active = true
 		end
@@ -557,6 +560,7 @@ function RXP_.SetStep(n)
 		table.insert(f.CurrentStepFrame.activeSteps,step)
 		f.Steps.frame[n]:SetAlpha(1)
 		step.active = true
+        scrollHeight = n
 	end
 	
 	if #f.CurrentStepFrame.activeSteps == 0 then 
@@ -717,7 +721,7 @@ function RXP_.SetStep(n)
 	RXP_.UpdateText()
 	RXP_.updateSteps = true
 	RXP_.updateMap = true
-	StepScroll(n)
+	StepScroll(scrollHeight)
 end
 
 function RXP_.UpdateText()
@@ -890,8 +894,13 @@ f.GuideName:SetScript("OnEnter",function()
 	f.GuideName:SetBackdropColor(111/200,44/200,150/200,1)
 	
 end)
+
+function RXP_.DropDownMenu()
+    EasyMenu(RXP_.menuList, RXP_.MenuFrame, "cursor", 0 , 0, "MENU");
+end
+
 f.GuideName:SetScript("OnMouseDown",function()
-EasyMenu(RXP_.menuList, RXP_.MenuFrame, "cursor", 0 , 0, "MENU");
+    RXP_.DropDownMenu()
 end)
  F2 = f.BottomFrame
 f.GuideName:SetScript("OnLeave",function()
@@ -1041,12 +1050,14 @@ function RXP_:LoadGuide(guide,OnLoad)
         frame.timer = 0
         frame.index = n
         frame.guide = guide
-		frame:SetScript("OnMouseDown",function(self)
-			if GetTime() - self.timer <= 0.5 then
-                RXP_.SetStep(self.index,self.guide)
-                self.timer = 0
-            else
-                self.timer = GetTime()
+		frame:SetScript("OnMouseDown",function(self,button)
+            if button == "RightButton" then
+                local n = self.index
+                local menuList = {
+                    {notCheckable = 1, text = "Go to step "..n,func = RXP_.SetStep, arg1 = n},
+                    {notCheckable = 1, text = "Select another guide",func = RXP_.DropDownMenu},
+                }
+                EasyMenu(menuList, RXP_.MenuFrame, "cursor", 0 , 0, "MENU");
             end
 		end)
 		
@@ -1294,6 +1305,18 @@ function RXP_.CreateOptionsPanel()
     button.Text:SetText("Trainer automation")
     button.tooltip = "Allows the guide to buy spells automatically if the step tells you to"    
     
+    button = CreateFrame("CheckButton", "$parentFP", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        RXPData.disableFPAutomation = not self:GetChecked()
+    end)
+    button:SetChecked(not RXPData.disableFPAutomation)
+    button.Text:SetText("Flight Path automation")
+    button.tooltip = "Allows the guide to automatically fly you to your destination"  
+    
+    
     button = CreateFrame("CheckButton", "$parentArrow", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1318,6 +1341,7 @@ function RXP_.CreateOptionsPanel()
     button:SetChecked(RXPData.lockFrames)
     button.Text:SetText("Lock Frames")
     button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it" 
+
 
     --
    

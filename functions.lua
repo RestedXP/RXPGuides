@@ -649,22 +649,26 @@ function RXP_.functions.fly(self,...)
         local element = {}
         local text,location = ...
         element.tag = "fly"
+
         if text and text ~= "" then
             element.text = text
+        elseif not location then
+            return error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/location\n"..self)
         else
-            element.textOnly = true
             element.text = "Fly to "..location
         end
-        element.location = location
+        if element.location then
+            element.location = strupper(location)
+        end
         element.tooltipText = RXP_.icons.fly..element.text
         return element
     end
     local event = ...
 
-    if event == "TAXIMAP_OPENED" and RXPData.enableAutoFP and self.element.location then
+    if event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and self.element.location then
         for i = 1,NumTaxiNodes() do
             local name = TaxiNodeName(i)
-            if name and name:match(self.element.location) then
+            if name and strupper(name):match(self.element.location) then
                 local taxi = getglobal("TaxiButton"..i)
                 taxi:GetScript("OnEnter")(taxi)
                 return TakeTaxiNode(i)
