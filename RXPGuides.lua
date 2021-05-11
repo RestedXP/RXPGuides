@@ -1222,37 +1222,58 @@ function RXP_.GenerateMenuTable()
 	}
 
     local groupList = {}
+    local unusedGuides = {}
     for group in pairs(RXP_.guideList) do
-        table.insert(groupList,group)
+        if group:sub(1,1) ~= "*" then
+            table.insert(groupList,group)
+        else
+            table.insert(unusedGuides,group)
+        end
     end
     table.sort(groupList)
+    table.sort(unusedGuides)
+   
 
 	local menuIndex = 1
-	for _,group in ipairs(groupList) do
+    
+    local function createMenu(group)
         local t = RXP_.guideList[group]
-		menuIndex = menuIndex+1
-		
-		if not t.sorted_ then
-			t.sorted_ = true
-			table.sort(t.names_)
-		end
-		local item = { text = group, notCheckable = 1, hasArrow = true, menuList = {}}
-		local submenuIndex = 0
-		for j,guideName in ipairs(t.names_) do
-			submenuIndex = submenuIndex +1
-			local guide = RXP_.GetGuideTable(group,guideName)
-			guide.menuIndex = menuIndex
-			guide.submenuIndex = submenuIndex
-			local subitem = {}
-			subitem.text = guide.displayName
-			subitem.func = RXP_.LoadGuide
-			subitem.arg1 = guide
-			subitem.notCheckable = 1
-			table.insert(item.menuList,subitem)
-		end
-		
-		table.insert(RXP_.menuList,item)
+        menuIndex = menuIndex+1
+        
+        if not t.sorted_ then
+            t.sorted_ = true
+            table.sort(t.names_)
+        end
+        local item = { text = group, notCheckable = 1, hasArrow = true, menuList = {}}
+        local submenuIndex = 0
+        for j,guideName in ipairs(t.names_) do
+            submenuIndex = submenuIndex +1
+            local guide = RXP_.GetGuideTable(group,guideName)
+            guide.menuIndex = menuIndex
+            guide.submenuIndex = submenuIndex
+            local subitem = {}
+            subitem.text = guide.displayName
+            subitem.func = RXP_.LoadGuide
+            subitem.arg1 = guide
+            subitem.notCheckable = 1
+            table.insert(item.menuList,subitem)
+        end
+        
+        table.insert(RXP_.menuList,item)
+    end
+    
+	for _,group in ipairs(groupList) do
+        createMenu(group)
 	end
+    
+    if not RXPData.hideUnusedGuides and #unusedGuides > 0 then
+        table.insert(RXP_.menuList,{text = "Unused Guides",notCheckable = 1,isTitle = 1})
+        for _,group in ipairs(unusedGuides) do
+            createMenu(group)
+        end
+    end
+    
+    table.insert(RXP_.menuList,{text = "",notCheckable = 1,isTitle = 1})
     table.insert(RXP_.menuList,{text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG})
 end
 
@@ -1330,6 +1351,17 @@ function RXP_.CreateOptionsPanel()
     button.Text:SetText("Enable waypoint arrow")
     button.tooltip = "Show/Hide the waypoint arrow" 
 
+    button = CreateFrame("CheckButton", "$parentUnusedGuides", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self)
+        RXPData.hideUnusedGuides = not self:GetChecked()
+        RXP_.GenerateMenuTable()
+    end)
+    button:SetChecked(not RXPData.hideUnusedGuides)
+    button.Text:SetText("Show unused guides")
+    button.tooltip = "Displays guides that are not applicable for your class/race such as starting zones for other races" 
     
     button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)

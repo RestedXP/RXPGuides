@@ -29,8 +29,10 @@ local function applies(text)
 end
 RXP_.applies = applies
 local RXPG = RXPGuides
-function RXPG.RegisterGuide(guideGroup,text)
-    --print(27,guideGroup,text)
+function RXPG.RegisterGuide(guideGroup,text,defaultFor)
+    if defaultFor and not applies(defaultFor) then
+        guideGroup = "*"..guideGroup
+    end
 
     if not RXPG[guideGroup] then
         RXPG[guideGroup] = {}
@@ -198,6 +200,9 @@ function RXPG.RegisterGuide(guideGroup,text)
     table.insert(RXP_.guides,guide)
     table.insert(list.names_,guide.name)
     list[guide.name] = #RXP_.guides
+    if guideGroup:sub(1,1) ~= "*" and defaultFor and not RXP_.defaultGuide then
+        RXP_.defaultGuide = guide
+    end
 end
 
 --parser
