@@ -432,12 +432,17 @@ function RXP_.functions.turnin(self,...)
         if step.active and db and db.QueryQuest and not RXP_.questAccept[id] then
             local quest = db:GetQuest(id)
             if not C_QuestLog.IsOnQuest(id) and not quest.IsRepeatable then
-                local requiredQuests
+                local requiredQuests = {}
                 local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
+                local questList
                 if not preQuest then
-                    requiredQuests = quest.preQuestGroup or quest.preQuestSingle
+                    questList = quest.preQuestGroup or quest.preQuestSingle
                 end
-                requiredQuests = requiredQuests or {}
+                if questList then
+                    for _,qID in ipairs(questList) do
+                        table.insert(requiredQuests,qID)
+                    end
+                end
                 table.insert(requiredQuests,id)
                 local tooltip = "Missing pre-requisites:"
                 for i,qid in ipairs(requiredQuests) do
@@ -573,12 +578,17 @@ function RXP_.functions.complete(self,...)
                 validQuest = select(12,GetItemInfo(itemId)) == 12
             end
             if not C_QuestLog.IsOnQuest(id) and validQuest then
-                local requiredQuests
+                local requiredQuests = {}
                 local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
+                local questList
                 if not preQuest then
-                    requiredQuests = quest.preQuestGroup or quest.preQuestSingle
+                    questList = quest.preQuestGroup or quest.preQuestSingle
                 end
-                requiredQuests = requiredQuests or {}
+                if questList then
+                    for _,qID in ipairs(questList) do
+                        table.insert(requiredQuests,qID)
+                    end
+                end
                 table.insert(requiredQuests,id)
                 local tooltip = "Missing pre-requisites:"
                 for i,qid in ipairs(requiredQuests) do
