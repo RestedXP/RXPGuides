@@ -336,10 +336,18 @@ function RXP_.functions.accept(self,...)
         if step.active and db and db.QueryQuest and not isQuestAccepted then
             local quest = db:GetQuest(id)
             local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
+            if quest.preQuestSingle then
+                for _,qID in pairs(quest.preQuestSingle) do
+                    if RXP_.questTurnIn[qID] and (RXP_.questAccept[qID] or C_QuestLog.IsOnQuest(qID)) then
+                        preQuest = quest:IsPreQuestGroupFulfilled()
+                        break
+                    end
+                end
+            end
             if not preQuest then
                 local requiredQuests
                 requiredQuests = quest.preQuestGroup or quest.preQuestSingle or {}
-                local tooltip = "Missing the following quests:"
+                local tooltip = "Missing pre-requisites:"
                 for i,qid in ipairs(requiredQuests) do
                     tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
                 end
@@ -431,7 +439,7 @@ function RXP_.functions.turnin(self,...)
                 end
                 requiredQuests = requiredQuests or {}
                 table.insert(requiredQuests,id)
-                local tooltip = "Missing the following quests:"
+                local tooltip = "Missing pre-requisites:"
                 for i,qid in ipairs(requiredQuests) do
                     if i < #requiredQuests then
                         tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
@@ -572,7 +580,7 @@ function RXP_.functions.complete(self,...)
                 end
                 requiredQuests = requiredQuests or {}
                 table.insert(requiredQuests,id)
-                local tooltip = "Missing the following quests:"
+                local tooltip = "Missing pre-requisites:"
                 for i,qid in ipairs(requiredQuests) do
                     if i < #requiredQuests then
                         tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
