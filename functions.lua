@@ -4,7 +4,7 @@ RXP_.functions.events = {}
 RXP_.stepUpdateList = {}
 
 RXP_.functions.events.collect = {"BAG_UPDATE","QUEST_ACCEPTED"}
-RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN"}
+RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN","QUEST_REMOVED"}
 RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
 RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
 RXP_.functions.events.fp = {"UI_INFO_MESSAGE"}
@@ -50,6 +50,7 @@ stable = "|TInterface/MINIMAP/TRACKING/StableMaster:0|t",
 tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t",
 abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
 link = "|TInterface/FriendsFrame/UI-FriendsFrame-Link:0|t",
+error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
 }
 
 local IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
@@ -308,8 +309,11 @@ function RXP_.functions.accept(self,...)
         return element
     else
         local element = self.element
-        local event,_,questId = ...
+        local step = element.step
+        local event,arg1,questId = ...
         local id = element.questId
+        local isQuestAccepted = IsQuestTurnedIn(id) or C_QuestLog.IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)
+        
         if element.step.active or element.retrieveText or (element.step.index > 1 and RXP_.currentGuide.steps[element.step.index-1].active) then
             RXP_.questAccept[id] = element
             local quest = RXP_.GetQuestName(id,element)
@@ -327,12 +331,39 @@ function RXP_.functions.accept(self,...)
             end
         end
 
-        element.tooltipText = RXP_.icons.accept..element.text
+        local icon = RXP_.icons.accept
+        local skip
+        if step.active and db and db.QueryQuest and not isQuestAccepted then
+            local quest = db:GetQuest(id)
+            local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
+            if not preQuest then
+                local requiredQuests
+                requiredQuests = quest.preQuestGroup or quest.preQuestSingle or {}
+                local tooltip = "Missing the following quests:"
+                for i,qid in ipairs(requiredQuests) do
+                    tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
+                end
+                element.tooltip = tooltip
+                element.icon = RXP_.icons.error
+                skip = RXPData.skipMissingPreReqs
+            else
+                element.icon = icon
+                element.tooltip = nil
+            end
+        else
+            element.icon = icon
+            element.tooltip = nil
+        end
 
 
-        if IsQuestTurnedIn(id) or C_QuestLog.IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)  then
+        element.tooltipText = element.icon..element.text
+        
+
+        if isQuestAccepted then
             RXP_.SetElementComplete(self,true)
-        elseif element.completed then
+        elseif skip then
+            RXP_.SetElementComplete(self)
+        elseif event == "QUEST_REMOVED" and arg1 == id and not element.skip then
             RXP_.SetElementIncomplete(self)
         end
 
@@ -365,9 +396,12 @@ function RXP_.functions.turnin(self,...)
         return element
     else
         local element = self.element
+        local step = element.step
         local event,questId = ...
         local id = element.questId
-        if element.step.active or element.retrieveText then
+        
+        
+        if step.active or element.retrieveText then
             RXP_.questTurnIn[id] = element
             local quest = RXP_.GetQuestName(id,true)
             if quest then
@@ -384,13 +418,46 @@ function RXP_.functions.turnin(self,...)
                 element.requestFromServer = true
             end
         end
-        element.tooltipText = RXP_.icons.turnin..element.text
+        
+        local icon = RXP_.icons.turnin
+        local skip
+        if step.active and db and db.QueryQuest and not RXP_.questAccept[id] then
+            local quest = db:GetQuest(id)
+            if not C_QuestLog.IsOnQuest(id) and not quest.IsRepeatable then
+                local requiredQuests
+                local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
+                if not preQuest then
+                    requiredQuests = quest.preQuestGroup or quest.preQuestSingle
+                end
+                requiredQuests = requiredQuests or {}
+                table.insert(requiredQuests,id)
+                local tooltip = "Missing the following quests:"
+                for i,qid in ipairs(requiredQuests) do
+                    if i < #requiredQuests then
+                        tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
+                    else
+                        tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.accept,db:GetQuest(qid).name,qid)
+                    end
+                end
+                element.tooltip = tooltip
+                element.icon = RXP_.icons.error
+                skip = RXPData.skipMissingPreReqs
+            else
+                element.icon = icon
+                element.tooltip = nil
+            end
+        else
+            element.icon = icon
+            element.tooltip = nil
+        end
+        
+        element.tooltipText = element.icon..element.text
         RXP_.UpdateStepText(self)
 
         local isComplete = IsQuestTurnedIn(id)
         if isComplete then
             RXP_.SetElementComplete(self,true)
-        elseif questId == id then --repeatable quests
+        elseif questId == id or skip then --repeatable quests
             RXP_.SetElementComplete(self)
         end
     end
@@ -398,12 +465,15 @@ function RXP_.functions.turnin(self,...)
 end
 
 local questMonster = string.gsub(QUEST_MONSTERS_KILLED,"%%s","%.%*"):gsub("%%d","%%d%+")
+local questItem = string.gsub(QUEST_ITEMS_NEEDED,"%%s","%(%.%*%)"):gsub("%%d","%%d%+")
 function RXP_.functions.complete(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         local text,id,obj = ...
         id = tonumber(id)
-        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        if not (id and obj) then 
+            error("Error parsing guide "..RXP_.currentGuideName..": Invalid objective or quest ID\n"..self)
+        end
         element.obj = tonumber(obj)
 
         --element.title = RXP_.GetQuestName(id)
@@ -421,29 +491,27 @@ function RXP_.functions.complete(self,...)
         return element
     else
         local element = self.element
-        local icon = element.icon or RXP_.icons.complete
+        local step = element.step
+        local icon = RXP_.icons.complete
         local id = element.questId
-        local objectives = RXP_.GetQuestObjectives(id,element.step.index)
-
-
-        --print(text)
-        local objtext
-        local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
         local skip
+        local objectives = RXP_.GetQuestObjectives(id,element.step.index)
+        local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
 
+        local objtext
         local completed
+        
         if objectives and #objectives > 0 then
             if element.obj and element.obj <= #objectives then
                 local obj = objectives[element.obj]
                 local t = obj.text
-                if not element.icon then
-                    if obj.type == "item" then
-                        icon = RXP_.icons.collect
-                    elseif obj.type == "monster" and (t:match(questMonster) or obj.questie) then
-                        icon = RXP_.icons.combat
-                    end
-                    element.icon = icon
+
+                if obj.type == "item" then
+                    icon = RXP_.icons.collect
+                elseif obj.type == "monster" and (t:match(questMonster) or obj.questie) then
+                    icon = RXP_.icons.combat
                 end
+
                 if not obj.questie then
                     if obj.type == "event" then 
                         if isQuestComplete then
@@ -487,6 +555,44 @@ function RXP_.functions.complete(self,...)
             RXP_.UpdateStepText(self)
             return
         end
+        
+        if step.active and db and db.QueryQuest and element.obj and not isQuestComplete then
+            local quest = db:GetQuest(id)
+            local itemId = quest.ObjectiveData[element.obj].Id
+            local questType = quest.ObjectiveData[element.obj].Type
+            local validQuest = true
+            if questType == "item" then
+                validQuest = select(12,GetItemInfo(itemId)) == 12
+            end
+            if not C_QuestLog.IsOnQuest(id) and validQuest then
+                local requiredQuests
+                local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
+                if not preQuest then
+                    requiredQuests = quest.preQuestGroup or quest.preQuestSingle
+                end
+                requiredQuests = requiredQuests or {}
+                table.insert(requiredQuests,id)
+                local tooltip = "Missing the following quests:"
+                for i,qid in ipairs(requiredQuests) do
+                    if i < #requiredQuests then
+                        tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
+                    else
+                        tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.accept,db:GetQuest(qid).name,qid)
+                    end
+                end
+                element.tooltip = tooltip
+                element.icon = RXP_.icons.error
+                skip = RXPData.skipMissingPreReqs
+            else
+                element.icon = icon
+                element.tooltip = nil
+            end
+        else
+            element.icon = icon
+            element.tooltip = nil
+        end
+        
+        
 
         local quest 
 
@@ -520,13 +626,15 @@ function RXP_.functions.complete(self,...)
             element.tooltipText = icon..objtext:gsub("\n","\n   "..icon)
             text = objtext
         end
-        --print(text)
         element.text = text
+       
 
         RXP_.UpdateStepText(self)
 
         if completed then
             RXP_.SetElementComplete(self,true)
+        elseif skip then
+            RXP_.SetElementComplete(self)
         else
             RXP_.SetElementIncomplete(self)
         end
@@ -964,10 +1072,6 @@ function RXP_.functions.next(skip)
             return RXP_:LoadGuide(nextGuide)
         end
     end
-end
-
-function RXP_.functions.istrained(self,...)
-    return {textOnly = true } --todo
 end
 
 

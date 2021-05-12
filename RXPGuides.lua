@@ -137,6 +137,9 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         RXP_.CreateOptionsPanel()
 		loadtime = GetTime()
 		local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
+        if RXPData.autoLoadGuides then
+            guide = guide or RXP_.defaultGuide
+        end
 		RXP_:LoadGuide(guide,true)
 		return
     elseif event == "PLAYER_LEVEL_UP" then
@@ -668,19 +671,29 @@ function RXP_.SetStep(n,n2)
                 ht:SetBlendMode("ADD")
                 ht:Hide()
                 elementFrame.highlight = ht
-                elementFrame:SetScript("OnEnter",function(self)
-                    if self.element and self.element.tooltip then
+                
+                local function tpOnEnter(self)
+                    local element = self.element or self:GetParent().element
+                    if element and element.tooltip then
                         GameTooltip:SetOwner(self, "ANCHOR_BOTTOM",0,-10)
                         GameTooltip:ClearLines()
-                        GameTooltip:AddLine(self.element.tooltip)
+                        GameTooltip:AddLine(element.tooltip)
                         GameTooltip:Show()
                     end
-                end)
-                elementFrame:SetScript("OnLeave",function(self)
-                    if self.element and self.element.tooltip then
+                end
+                
+                local function tpOnLeave(self)
+                    local element = self.element or self:GetParent().element
+                    if element and element.tooltip then
                         GameTooltip:Hide()
                     end
-                end)
+                end
+                
+                elementFrame:SetScript("OnEnter",tpOnEnter)
+                elementFrame:SetScript("OnLeave",tpOnLeave)
+                
+                elementFrame.button:HookScript("OnEnter",tpOnEnter)
+                elementFrame.button:HookScript("OnLeave",tpOnLeave)
 --				elementFrame.icon:SetJustifyH("LEFT")
 --				elementFrame.icon:SetJustifyV("CENTER")
 			end
@@ -1363,6 +1376,20 @@ function RXP_.CreateOptionsPanel()
     button.Text:SetText("Show unused guides")
     button.tooltip = "Displays guides that are not applicable for your class/race such as starting zones for other races" 
     
+
+    button = CreateFrame("CheckButton", "$parentAutoLoad", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        RXPData.autoLoadGuides = self:GetChecked()
+    end)
+    button:SetChecked(RXPData.autoLoadGuides)
+    button.Text:SetText("Auto load starting zone guides")
+    button.tooltip = "Automatically picks a suitable guide whenever you log in for the first time on a character" 
+    --
+    
+    
     button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1373,9 +1400,22 @@ function RXP_.CreateOptionsPanel()
     button:SetChecked(RXPData.lockFrames)
     button.Text:SetText("Lock Frames")
     button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it" 
-
-
-    --
+   
+    button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        RXPData.skipMissingPreReqs = self:GetChecked()
+    end)
+    button:SetChecked(RXPData.skipMissingPreReqs)
+    button.Text:SetText("Skip missing pre-requisites")
+    button.tooltip = "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"
+    if not QuestieLoader then
+        button:Hide()
+    end
+   
+   
    
 
     local SliderUpdate = function(self, value)
