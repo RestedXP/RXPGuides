@@ -15,7 +15,7 @@ RXP_.questAccept = {}
 RXP_.questTurnIn = {}
 
 local eventFrame = CreateFrame("Frame");
-local f = CreateFrame("Frame", "RXPG_MAIN", UIParent, BackdropTemplate)
+local f = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, BackdropTemplate)
 
 eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
@@ -230,18 +230,20 @@ end
 
 
 local backdrop = {
-     bgFile = "Interface/Tooltips/UI-Tooltip-Background",
-     edgeFile = "Interface/GLUES/Common/Glue-Tooltip-Border",
-     tile = true,
-     edgeSize = 8,
-     tileSize = 8,
-     insets = {
-          left = 5,
-          right = 5,
-          top = 5,
-          bottom = 5,
-     },
-}
+ bgFile = "Interface/BUTTONS/WHITE8X8",
+ --edgeFile = "Interface/BUTTONS/WHITE8X8",
+ --edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
+ edgeFile = "Interface/AddOns/RXPGuides/Textures/rxp-borders",
+ tile = true,
+ edgeSize = 8,
+ tileSize = 8,
+ insets = {
+	  left = 4,
+	  right = 2,
+	  top = 2,
+	  bottom = 5,
+ },
+ }
 
 f:Show()
 
@@ -265,6 +267,7 @@ end
 f.OnMouseUp = function(self,button)
 	f:StopMovingOrSizing()
 	if isResizing then
+        RXP_.SetStep(RXPCData.currentStep)
 		f:SetScript("OnUpdate",nil)
 	end
 	isResizing = false
@@ -339,11 +342,18 @@ f.GuideNameFrame.text:SetJustifyV("TOP")
 f.GuideNameFrame.text:SetText("1234567")
 
 ]]
+
+local colors = {}
+RXP_.colors = colors
+colors.background = {12/255,12/255,27/255,1}
+colors.bottomFrameBG = {18/255,18/255,40/255,1}
+colors.bottomFrameHighlight = {54/255,62/255,109/255,1}
+
 f.backdropEdge = {
  bgFile = "Interface/BUTTONS/WHITE8X8",
  --edgeFile = "Interface/BUTTONS/WHITE8X8",
  --edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
- edgeFile = "Interface/GLUES/Common/Glue-Tooltip-Border",
+ edgeFile = "Interface/AddOns/RXPGuides/Textures/rxp-borders",
  tile = true,
  edgeSize = 8,
  tileSize = 8,
@@ -351,25 +361,25 @@ f.backdropEdge = {
 	  left = 4,
 	  right = 2,
 	  top = 2,
-	  bottom = 4,
+	  bottom = 5,
  },
  }
 
 
 
 
-local backdrop = {bgFile = "Interface/Tooltips/UI-Tooltip-Background", 
+local backdrop = {bgFile = "Interface/BUTTONS/WHITE8X8",
 	tile = true, tileSize = 16, 
 	--edgeFile = "Interface/Tooltips/UI-Tooltip-Border", 
 	--edgeSize = 16, insets = {left = 4, right = 4, top = 4, bottom = 4}
 }
 
-
+f.GuideName = CreateFrame("Frame","$parentGuideName",f, BackdropTemplate)
 f.CurrentStepFrame = CreateFrame("Frame", nil, f)
 --f.CurrentStepFrame:SetBackdrop(backdrop)
 --f.CurrentStepFrame:SetBackdropColor(0.3,0.01,0.01)
-f.CurrentStepFrame:SetPoint("BOTTOMLEFT", f,"TOPLEFT",10,0)
-f.CurrentStepFrame:SetPoint("BOTTOMRIGHT",f,"TOPRIGHT",-10,0)
+f.CurrentStepFrame:SetPoint("BOTTOMLEFT", f.GuideName,"TOPLEFT",0,2)
+f.CurrentStepFrame:SetPoint("BOTTOMRIGHT",f.GuideName,"TOPRIGHT",0,2)
 f.CurrentStepFrame:SetHeight(20)
 f.CurrentStepFrame:SetScript("OnMouseDown", f.OnMouseDown)
 f.CurrentStepFrame:SetScript("OnMouseUp", f.OnMouseUp)
@@ -586,7 +596,7 @@ function RXP_.SetStep(n,n2)
 			f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame_"..c,f.CurrentStepFrame, BackdropTemplate)
 			stepframe = f.CurrentStepFrame.frame[c]
 			stepframe:SetBackdrop(f.backdropEdge)
-			stepframe:SetBackdropColor(9/255,12/255,43/255,0.75)
+			stepframe:SetBackdropColor(unpack(colors.background))
 			--stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
 			stepframe.elements = {}
 		end	
@@ -601,7 +611,7 @@ function RXP_.SetStep(n,n2)
 		if not stepframe.number then
 			stepframe.number = CreateFrame("Frame","$parent_number",stepframe, BackdropTemplate)
 			stepframe.number:SetBackdrop(f.backdropEdge)
-			stepframe.number:SetBackdropColor(111/300,44/300,150/300,1)
+			stepframe.number:SetBackdropColor(unpack(colors.background))
 			stepframe.number:SetPoint("TOPLEFT",stepframe,7,5)
 			stepframe.number.text = stepframe.number:CreateFontString(nil,"OVERLAY")
 			stepframe.number.text:SetFontObject(GameFontNormalSmall)
@@ -634,9 +644,10 @@ function RXP_.SetStep(n,n2)
 				elementFrame = stepframe.elements[e]
 				--elementFrame:SetHeight(0)
 				--elementFrame:SetWidth(300)
-				elementFrame.button = CreateFrame("CheckButton", "$parent_check", elementFrame, "ChatConfigCheckButtonTemplate");
-				elementFrame.button:SetSize(16,16)
-				elementFrame.button:SetScript("PostClick",function(self) 
+				local button = CreateFrame("CheckButton", "$parentCheck", elementFrame, "ChatConfigCheckButtonTemplate");
+				elementFrame.button = button
+                button:SetSize(16,16)
+				button:SetScript("PostClick",function(self) 
 					local parent = self:GetParent()
 					local element = parent.element 
 					if element then
@@ -645,6 +656,14 @@ function RXP_.SetStep(n,n2)
 					RXP_.updateSteps = true
 					RXP_.updateMap = true
 				end)
+                
+                --[[
+                button:SetNormalTexture("Interface/AddOns/RXPGuides/Textures/rxp-btn-blank-32")
+                button:SetCheckedTexture("Interface/AddOns/RXPGuides/Textures/rxp-checked-32")
+                button:SetPushedTexture(nil)
+                button:SetHighlightTexture("Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
+                ]]
+                
 				elementFrame.text = getglobal(elementFrame.button:GetName() .. 'Text')
 				elementFrame.text:SetParent(elementFrame)
 				
@@ -677,7 +696,7 @@ function RXP_.SetStep(n,n2)
                     if element and element.tooltip then
                         GameTooltip:SetOwner(self, "ANCHOR_BOTTOM",0,-10)
                         GameTooltip:ClearLines()
-                        GameTooltip:AddLine(element.tooltip)
+                        GameTooltip:AddLine(element.tooltip,1,1,1)
                         GameTooltip:Show()
                     end
                 end
@@ -872,9 +891,11 @@ C_Timer.NewTicker(0.1473,function()
 	
 end)
 
-
+ff1 = f
 f.BottomFrame:SetBackdrop(f.backdropEdge)
-f.BottomFrame:SetBackdropColor(9/255,12/255,43/255,0.75)
+--f.BottomFrame:SetBackdropColor(12/255,12/255,27/255,1)
+f.BottomFrame:SetBackdropColor(unpack(colors.background))
+
 f.BottomFrame:SetPoint("TOPLEFT", f, 10, -10)
 f.BottomFrame:SetPoint("BOTTOMRIGHT", f,-10, 10)
 
@@ -882,50 +903,147 @@ f.BottomFrame:SetPoint("BOTTOMRIGHT", f,-10, 10)
 
 
 
-f.GuideName = CreateFrame("Frame","$parent_guideName",f, BackdropTemplate)
-f.GuideName:SetBackdrop(f.backdropEdge)
-f.GuideName:SetBackdropColor(111/300,44/300,150/300,1)
-f.GuideName:SetPoint("TOPLEFT",f.BottomFrame,7,7)
+
+f.GuideName:SetBackdrop({
+ bgFile = "Interface/BUTTONS/WHITE8X8",
+ edgeFile = "Interface/AddOns/RXPGuides/Textures/rxp-borders-2",
+ tile = true,
+ edgeSize = 8,
+ tileSize = 8,
+ insets = {
+	  left = 4,
+	  right = 2,
+	  top = 2,
+	  bottom = 5,
+ },
+})
+
+f.GuideName:SetBackdropColor(unpack(colors.background))
+f.GuideName:SetPoint("BOTTOMLEFT",f.BottomFrame,"TOPLEFT",0,-9)
+f.GuideName:SetPoint("BOTTOMRIGHT",f.BottomFrame,"TOPRIGHT",0,-9)
+f.GuideName:SetHeight(32)
 f.GuideName.text = f.GuideName:CreateFontString(nil,"OVERLAY")
 --f.GuideName.text:SetFontObject(GameFontNormalSmall)
 f.GuideName.text:ClearAllPoints()
-f.GuideName.text:SetPoint("CENTER",f.GuideName,2,1)
+f.GuideName.text:SetPoint("LEFT",f.GuideName,29,0)
+f.GuideName.text:SetPoint("RIGHT",f.GuideName,0,0)
 f.GuideName.text:SetJustifyH("CENTER")
 f.GuideName.text:SetJustifyV("CENTER")
 f.GuideName.text:SetTextColor(1,1,1)
-f.GuideName.text:SetFont("Fonts\\FRIZQT__.TTF", 10)
+f.GuideName.text:SetFont("Fonts\\FRIZQT__.TTF", 11)
 f.GuideName.text:SetText("Click here to pick a guide")
-f.GuideName:SetSize(f.GuideName.text:GetStringWidth()+12,21)
 f.GuideName:SetFrameLevel(6)
+
+f.GuideName.icon = f.GuideName:CreateTexture("RXPIcon","ARTWORK")
+f.GuideName.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
+f.GuideName.icon:SetPoint("CENTER",f.GuideName,"LEFT",18,0)
+f.GuideName.icon:SetSize(42,42)
+
+local _,class = UnitClass("player")
+f.GuideName.classIcon = f.GuideName:CreateTexture("RXPClassIcon","OVERLAY")
+f.GuideName.classIcon:SetTexture("Interface/AddOns/RXPGuides/Textures/"..class)
+f.GuideName.classIcon:SetPoint("CENTER",f.GuideName.icon,"BOTTOMRIGHT",-4,10)
+f.GuideName.classIcon:SetSize(24,24)
+
+--[[
+f.GuideName.x = f.GuideName:CreateTexture("RXPClose","ARTWORK")
+f.GuideName.x:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_close_btn_32")
+f.GuideName.x:SetPoint("CENTER",f.GuideName,"TOPRIGHT",-5,-3)
+f.GuideName.x:SetSize(24,24)
+
+
+f.GuideName.cog = f.GuideName:CreateTexture("RXPCogwheel","ARTWORK")
+f.GuideName.cog:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_cog-64")
+--f.GuideName.cog:SetPoint("CENTER",f.GuideName,"TOPRIGHT",-22,-3)
+f.GuideName.cog:SetPoint("CENTER",f.GuideName,"TOPRIGHT",-5,-3)
+f.GuideName.cog:SetSize(18,18)
+]]
+
+
+f.GuideName.cog = CreateFrame("Button", "$parentCogwheel", f)
+f.GuideName.cog:Hide()
+f.GuideName.cog:SetFrameLevel(f.GuideName:GetFrameLevel()+1)
+f.GuideName.cog:SetWidth(24)
+f.GuideName.cog:SetHeight(24)
+f.GuideName.cog:SetPoint("CENTER",f.GuideName,"TOPRIGHT",-8,-8)
+f.GuideName.cog:SetNormalTexture("Interface/AddOns/RXPGuides/Textures/rxp_cog-32")
+--f.GuideName.cog:SetPushedTexture("Interface/Buttons/UI-Panel-MinimizeButton-Down")
+f.GuideName.cog:SetHighlightTexture("Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
+f.GuideName.cog:SetScript("OnClick", function(self)
+    RXP_.DropDownMenu()
+end)
+local buttonToggle = 0
+f.GuideName.cog:HookScript("OnEnter", function(self)
+    buttonToggle = GetTime()
+end)
+f.GuideName.cog:HookScript("OnLeave", function(self)
+    self:Hide()
+end)
+
+
+
+
 
 RXP_.MenuFrame = CreateFrame("Frame", "RXPG_MenuFrame", UIParent, "UIDropDownMenuTemplate")
 
 -- Make the menu appear at the cursor: 
 
-
+--[[
 f.GuideName:SetScript("OnEnter",function()
 	f.GuideName:SetBackdropColor(111/200,44/200,150/200,1)
 	
 end)
+]]
 
 function RXP_.DropDownMenu()
     EasyMenu(RXP_.menuList, RXP_.MenuFrame, "cursor", 0 , 0, "MENU");
 end
 
-f.GuideName:SetScript("OnMouseDown",function()
-    RXP_.DropDownMenu()
+
+f.GuideName:SetScript("OnMouseDown",function(self,button)
+    if button == "RightButton" then
+        RXP_.DropDownMenu()
+    else
+        f.OnMouseDown(self,button)
+    end
 end)
- F2 = f.BottomFrame
+
+f.GuideName:SetScript("OnMouseUp",function(self,button)
+    if button ~= "RightButton" then
+        f.OnMouseUp(self,button)
+    end
+end)
+
+f.GuideName:SetScript("OnEnter",function()
+	f.GuideName.cog:Show()
+end)
 f.GuideName:SetScript("OnLeave",function()
-	f.GuideName:SetBackdropColor(111/300,44/300,150/300,1)
+    if GetTime() - buttonToggle > 0.1 then
+        f.GuideName.cog:Hide()
+    end
 end)
 
 
 --f.Text:SetAutoFocus(false)
-f.SF = CreateFrame("ScrollFrame", "$parent_DF", f.BottomFrame, "UIPanelScrollFrameTemplate")
+f.SF = CreateFrame("ScrollFrame", "$parentSF", f.BottomFrame, "UIPanelScrollFrameTemplate")
 f.SF:SetPoint("TOPLEFT", f.BottomFrame,5, -5)
 f.SF:SetPoint("BOTTOMRIGHT", f.BottomFrame,-20, 7)
 f.SF.ScrollBar:SetPoint("TOPLEFT",f.SF,"TOPRIGHT",0,-18)
+
+local prefix = "Interface\\MAINMENUBAR\\"
+local s = f.SF.ScrollBar.ScrollDownButton
+
+s.Normal:SetTexture(prefix.."UI-MainMenu-ScrollDownButton-Up-Old")
+s.Highlight:SetTexture(prefix.."UI-MainMenu-ScrollDownButton-Highlight-Old")
+s.Pushed:SetTexture(prefix.."UI-MainMenu-ScrollDownButton-Down-Old")
+s.Disabled:SetTexture(prefix.."UI-MainMenu-ScrollDownButton-Disabled-Old")
+s = f.SF.ScrollBar.ScrollUpButton
+s.Normal:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Up-Old")
+s.Highlight:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Highlight-Old")
+s.Pushed:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Down-Old")
+s.Disabled:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Disabled-Old")
+
+
 --f.SF.ScrollBar:SetWidth(5)
 
 
@@ -971,7 +1089,11 @@ f.Steps:SetWidth(f:GetWidth()-35)
 f.SF:SetScrollChild(f.Steps)
 --f.Steps:SetFrameLevel(f.SF:GetFrameLevel()+2)
 
-
+f.bottomBackdrop = {
+    bgFile = "Interface\\Buttons\\WHITE8x8",
+    edgeFile = "Interface\\Buttons\\WHITE8x8", edgeSize = 1,
+    insets = {left = 0, right = 0, top = -1, bottom = -1}
+}
 
 local currentAlpha
 
@@ -1010,10 +1132,10 @@ function RXP_:LoadGuide(guide,OnLoad)
 	RXPCData.currentGuideName = guide.name
 	RXPCData.currentGuideGroup = guide.group
 	f.GuideName.text:SetText(guide.displayName)
-	local nameWidth = f.GuideName.text:GetStringWidth()+10
-	f.GuideName:SetWidth(nameWidth)
-	f:SetWidth(math.max(f:GetWidth(),nameWidth+45))
-	f:SetMinResize(math.max(nameWidth+45,220),20)
+	--local nameWidth = f.GuideName.text:GetStringWidth()+10
+	--f.GuideName:SetWidth(nameWidth)
+	--f:SetWidth(math.max(f:GetWidth(),nameWidth+45))
+	--f:SetMinResize(math.max(nameWidth+45,220),20)
 	if not guide.labels then
 		guide.labels = {}
 	end
@@ -1048,16 +1170,17 @@ function RXP_:LoadGuide(guide,OnLoad)
 			frame:SetPoint("TOPLEFT",anchor,"BOTTOMLEFT",0,-3)
 			frame:SetPoint("TOPRIGHT",anchor,"BOTTOMRIGHT",0,-3)
 		end
-		frame:SetBackdrop(backdrop)
-		frame:SetBackdropColor(9/255,12/255,43/255)
+		--frame:SetBackdrop(f.bottomBackdrop)
+        frame:SetBackdrop(backdrop)
+		frame:SetBackdropColor(unpack(colors.bottomFrameBG))
 		
 		frame:SetScript("OnEnter",function()
 			currentAlpha = frame:GetAlpha()
 			frame:SetAlpha(1)
-			frame:SetBackdropColor(54/255,62/255,109/255)
+			frame:SetBackdropColor(unpack(colors.bottomFrameHighlight))
 		end)
 		frame:SetScript("OnLeave",function()
-			frame:SetBackdropColor(9/255,12/255,43/255)
+			frame:SetBackdropColor(unpack(colors.bottomFrameBG))
 			frame:SetAlpha(currentAlpha)
 		end)
         frame.timer = 0
@@ -1124,6 +1247,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	f.Steps.f1:ClearAllPoints()
 	f.Steps.f1:SetPoint("TOPLEFT",f.Steps.frame[1],0,10)
 	f.Steps.f1:SetPoint("BOTTOMRIGHT",f.Steps.frame[nframes])
+    f.Steps.f1:Hide()
 	f.Steps:SetHeight(200)
 	RXP_.UpdateBottomFrame()
 	--RXP_.updateBottomFrame = true
@@ -1288,6 +1412,7 @@ function RXP_.GenerateMenuTable()
     
     table.insert(RXP_.menuList,{text = "",notCheckable = 1,isTitle = 1})
     table.insert(RXP_.menuList,{text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG})
+    table.insert(RXP_.menuList,{text = "Close",notCheckable = 1,func = function(self) self:Hide() end})
 end
 
 
@@ -1312,8 +1437,14 @@ function RXP_.CreateOptionsPanel()
 
     panel.title = panel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
     panel.title:SetPoint("TOPLEFT", 16, -16)
-    panel.title:SetText("RXP Guides")
-
+    panel.title:SetText("RestedXP Guides")
+    
+    panel.icon = panel:CreateTexture()
+    panel.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
+    panel.icon:SetPoint("TOPRIGHT",-5,-5)
+    --panel.icon:SetSize(64,64)
+    
+    
     local index = 0
     local options = {}
     local button = CreateFrame("CheckButton", "$parentQuestTurnIn", panel, "ChatConfigCheckButtonTemplate");
@@ -1421,7 +1552,7 @@ function RXP_.CreateOptionsPanel()
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
         self.Text:SetText(format(self.defaultText,value))
-        RXPG_MAIN:SetScale(RXPData.windowSize)
+        RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
         RXP_.arrowFrame:SetSize(32*size,32*size)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
