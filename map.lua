@@ -144,7 +144,7 @@ function RXP_.UpdateGotoSteps()
     for i,element in ipairs(RXP_.activeWaypoints) do
         if element.step.active then
 
-            if element.radius and element.arrow and not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and (element.completed or element.skip)) then
+            if element.radius and element.arrow and not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and (element.completed or element.skip)) and not(element.optional and element.skip) then
                 local x,y,instance = HBD:GetPlayerWorldPosition()
                 local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
                 if not dist then return end

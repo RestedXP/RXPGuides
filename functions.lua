@@ -233,6 +233,7 @@ end
 function RXP_.SetElementComplete(self,disable)
     if not self.element.completed then
         self.element.completed = true
+        self.element.skip = true
         RXP_.updateSteps = true
         RXP_.updateMap = true
     end
@@ -672,7 +673,7 @@ function RXP_.functions.goto(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         element.tag = "goto"
-        local text,zone,x,y,radius = ...
+        local text,zone,x,y,radius,optional = ...
         if zone then
             lastZone = zone
         else
@@ -695,7 +696,9 @@ function RXP_.functions.goto(self,...)
         element.textOnly = true
 
         if radius then
-            if radius > 0 then
+            if optional then
+                element.optional = true
+            elseif radius > 0 then
                 if not text or text == "" then
                     element.text = string.format("Go to %.1f,%.1f (%s)",element.x,element.y,zone)
                 end
@@ -879,7 +882,8 @@ function RXP_.functions.collect(self,...)
             break
         end
     end
-    if count > element.qty then
+    
+    if (element.qty > 0 and count > element.qty) or (questId and (C_QuestLog.IsOnQuest(questId) or IsQuestTurnedIn(questId))) then
         count = element.qty
     end
 
@@ -892,8 +896,10 @@ function RXP_.functions.collect(self,...)
     end
     RXP_.UpdateStepText(self)
 
-    if count >= element.qty or (questId and (C_QuestLog.IsOnQuest(questId) or IsQuestTurnedIn(questId))) then
+    if element.qty > 0 and count >= element.qty then
         RXP_.SetElementComplete(self,true)
+    elseif element.qty == 0 and count == 0 then
+        RXP_.SetElementComplete(self)
     else
         RXP_.SetElementIncomplete(self)
     end
