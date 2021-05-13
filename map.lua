@@ -300,7 +300,7 @@ function RXP_.UpdateMap()
             if element.text and not element.label and not element.textOnly then
                 element.label = tostring(step.index)
             end
-            if element.zone and not((element.parent and element.parent.label and (element.parent.completed or element.parent.skip)) or (element.text and (element.completed or element.skip) and not element.textOnly) or step.completed) then
+            if element.zone and (not(element.parent and (element.parent.completed or element.parent.skip)) and not step.skip) then
                 n = n +1
                 element.mapPin = CreateWPframe(n,step,element)
 
