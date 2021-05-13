@@ -885,9 +885,8 @@ C_Timer.NewTicker(0.1473,function()
 	
 	if RXP_.updateMap then
 		RXP_.UpdateMap()
-	else
-		RXP_.UpdateGotoSteps()
 	end
+    RXP_.UpdateGotoSteps()
 	
 end)
 
