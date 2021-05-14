@@ -946,7 +946,7 @@ f.BottomFrame:SetPoint("BOTTOMRIGHT", f,-3, 3)
 
 
 f.GuideName:SetBackdrop({
- bgFile = "Interface/BUTTONS/WHITE8X8",
+-- bgFile = "Interface/BUTTONS/WHITE8X8",
  edgeFile = "Interface/AddOns/RXPGuides/Textures/rxp-borders",
  tile = true,
  edgeSize = 8,
@@ -959,7 +959,7 @@ f.GuideName:SetBackdrop({
  },
 })
 
-f.GuideName:SetBackdropColor(unpack(colors.background))
+--f.GuideName:SetBackdropColor(unpack(colors.background))
 f.GuideName:SetPoint("BOTTOMLEFT",f.BottomFrame,"TOPLEFT",0,-9)
 f.GuideName:SetPoint("BOTTOMRIGHT",f.BottomFrame,"TOPRIGHT",0,-9)
 f.GuideName:SetHeight(35)
@@ -972,8 +972,13 @@ f.GuideName.text:SetJustifyH("CENTER")
 f.GuideName.text:SetJustifyV("CENTER")
 f.GuideName.text:SetTextColor(1,1,1)
 f.GuideName.text:SetFont("Fonts\\FRIZQT__.TTF", 11)
-f.GuideName.text:SetText("Click here to pick a guide")
+f.GuideName.text:SetText("Welcome to RestedXP Guides\nClick here to pick a guide")
 f.GuideName:SetFrameLevel(6)
+
+f.GuideName.bg = f.GuideName:CreateTexture("$parentBG","BACKGROUND")
+f.GuideName.bg:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp-banner")
+f.GuideName.bg:SetPoint("TOPLEFT",4,-2)
+f.GuideName.bg:SetPoint("BOTTOMRIGHT",-2,4)
 
 f.GuideName.icon = f.GuideName:CreateTexture("RXPIcon","ARTWORK")
 f.GuideName.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
