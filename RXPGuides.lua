@@ -163,6 +163,11 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
             guide = guide or RXP_.defaultGuide
         end
 		RXP_:LoadGuide(guide,true)
+        if not RXP_.currentGuide then
+            f:SetHeight(20)
+            RXP_.UpdateBottomFrame()
+            RXP_.noGuide = true
+        end
 		return
     elseif event == "PLAYER_LEVEL_UP" then
         RXP_.SetStep(RXPCData.currentStep)
@@ -263,7 +268,7 @@ local backdrop = {
 	  left = 4,
 	  right = 2,
 	  top = 2,
-	  bottom = 5,
+	  bottom = 4,
  },
  }
 
@@ -323,10 +328,10 @@ end
 
 
 
-local width,height = 235,140
+RXP_.width,RXP_.height = 235,140
 
-f:SetWidth(width)
-f:SetHeight(height) 	
+f:SetWidth(RXP_.width)
+f:SetHeight(RXP_.height) 	
 --f:SetSize(150, 150)
 f:SetPoint("LEFT",0,35)
 f:SetFrameStrata("BACKGROUND")
@@ -372,6 +377,16 @@ colors.bottomFrameBG = {18/255,18/255,40/255,1}
 colors.bottomFrameHighlight = {54/255,62/255,109/255,1}
 colors.mapPins = {206/255,123/255,1,1}
 
+local function SetColor(ref,a,r,g,b)
+    local rr,rg,rb,ra = unpack(ref)
+    r = r or rr
+    g = g or rg
+    b = b or rb
+    a = a or ra
+    return r,g,b,a
+end
+
+
 f.backdropEdge = {
  bgFile = "Interface/BUTTONS/WHITE8X8",
  --edgeFile = "Interface/BUTTONS/WHITE8X8",
@@ -384,7 +399,7 @@ f.backdropEdge = {
 	  left = 4,
 	  right = 2,
 	  top = 2,
-	  bottom = 5,
+	  bottom = 4,
  },
  }
 
@@ -403,7 +418,7 @@ f.CurrentStepFrame = CreateFrame("Frame", nil, f)
 --f.CurrentStepFrame:SetBackdropColor(0.3,0.01,0.01)
 f.CurrentStepFrame:SetPoint("BOTTOMLEFT", f.GuideName,"TOPLEFT",0,2)
 f.CurrentStepFrame:SetPoint("BOTTOMRIGHT",f.GuideName,"TOPRIGHT",0,2)
-f.CurrentStepFrame:SetHeight(20)
+f.CurrentStepFrame:SetHeight(25)
 f.CurrentStepFrame:SetScript("OnMouseDown", f.OnMouseDown)
 f.CurrentStepFrame:SetScript("OnMouseUp", f.OnMouseUp)
 f.CurrentStepFrame:EnableMouse(1)
@@ -522,6 +537,7 @@ end
 function RXP_.SetStep(n,n2)
     if type(n) == "table" then n = n2 end
 	local guide = RXP_.currentGuide
+    if not guide then return end
 	local group = guide.group
 
 	print(n)
@@ -616,7 +632,7 @@ function RXP_.SetStep(n,n2)
 		c = c+1
 		local stepframe = f.CurrentStepFrame.frame[c]
 		if not stepframe then
-			f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame_"..c,f.CurrentStepFrame, BackdropTemplate)
+			f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame"..c,f.CurrentStepFrame, BackdropTemplate)
 			stepframe = f.CurrentStepFrame.frame[c]
 			stepframe:SetBackdrop(f.backdropEdge)
 			stepframe:SetBackdropColor(unpack(colors.background))
@@ -931,7 +947,7 @@ f.BottomFrame:SetPoint("BOTTOMRIGHT", f,-3, 3)
 
 f.GuideName:SetBackdrop({
  bgFile = "Interface/BUTTONS/WHITE8X8",
- edgeFile = "Interface/AddOns/RXPGuides/Textures/rxp-borders-2",
+ edgeFile = "Interface/AddOns/RXPGuides/Textures/rxp-borders",
  tile = true,
  edgeSize = 8,
  tileSize = 8,
@@ -939,14 +955,14 @@ f.GuideName:SetBackdrop({
 	  left = 4,
 	  right = 2,
 	  top = 2,
-	  bottom = 5,
+	  bottom = 4,
  },
 })
 
 f.GuideName:SetBackdropColor(unpack(colors.background))
 f.GuideName:SetPoint("BOTTOMLEFT",f.BottomFrame,"TOPLEFT",0,-9)
 f.GuideName:SetPoint("BOTTOMRIGHT",f.BottomFrame,"TOPRIGHT",0,-9)
-f.GuideName:SetHeight(32)
+f.GuideName:SetHeight(35)
 f.GuideName.text = f.GuideName:CreateFontString(nil,"OVERLAY")
 --f.GuideName.text:SetFontObject(GameFontNormalSmall)
 f.GuideName.text:ClearAllPoints()
@@ -961,7 +977,7 @@ f.GuideName:SetFrameLevel(6)
 
 f.GuideName.icon = f.GuideName:CreateTexture("RXPIcon","ARTWORK")
 f.GuideName.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
-f.GuideName.icon:SetPoint("CENTER",f.GuideName,"LEFT",18,0)
+f.GuideName.icon:SetPoint("CENTER",f.GuideName,"LEFT",16,0)
 f.GuideName.icon:SetSize(42,42)
 
 
@@ -986,7 +1002,6 @@ f.GuideName.cog:SetSize(18,18)
 
 
 f.GuideName.cog = CreateFrame("Button", "$parentCogwheel", f)
-f.GuideName.cog:Hide()
 f.GuideName.cog:SetFrameLevel(f.GuideName:GetFrameLevel()+1)
 f.GuideName.cog:SetWidth(24)
 f.GuideName.cog:SetHeight(24)
@@ -994,6 +1009,7 @@ f.GuideName.cog:SetPoint("CENTER",f.GuideName,"TOPRIGHT",-8,-8)
 f.GuideName.cog:SetNormalTexture("Interface/AddOns/RXPGuides/Textures/rxp_cog-32")
 --f.GuideName.cog:SetPushedTexture("Interface/Buttons/UI-Panel-MinimizeButton-Down")
 f.GuideName.cog:SetHighlightTexture("Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
+f.GuideName.cog:Hide()
 f.GuideName.cog:SetScript("OnClick", function(self)
     RXP_.DropDownMenu()
 end)
@@ -1026,7 +1042,7 @@ end
 
 
 f.GuideName:SetScript("OnMouseDown",function(self,button)
-    if button == "RightButton" then
+    if button == "RightButton" or RXP_.noGuide then
         RXP_.DropDownMenu()
     else
         f.OnMouseDown(self,button)
@@ -1130,7 +1146,13 @@ function RXP_:LoadGuide(guide,OnLoad)
 			return error('Guide not found')
 		end
 	end
-
+    
+    if RXP_.noGuide then
+        f:SetHeight(RXP_.height)
+        RXP_.UpdateBottomFrame()
+        RXP_.noGuide = nil
+    end
+    
 	startTime = GetTime()
 	CloseDropDownMenus()
 	tickTimer = GetTime()
@@ -1189,7 +1211,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 		if n == 1 then
 			anchor = f.Steps
 			frame:SetPoint("TOPLEFT",anchor,"TOPLEFT",2,-3)
-			frame:SetPoint("TOPRIGHT",anchor,"TOPRIGHT",-10,-3)
+			frame:SetPoint("TOPRIGHT",anchor,"TOPRIGHT",2,-3)
 		else
 			anchor = f.Steps.frame[n-1]
 			frame:SetPoint("TOPLEFT",anchor,"BOTTOMLEFT",0,-3)

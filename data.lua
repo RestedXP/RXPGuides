@@ -208,6 +208,7 @@ s["PALADIN"] = {
     [6] = {
          498, --Divine protections
          639, --Holy Light R2
+        3127, --parry
     },
     [8] = {
          853, --Hammer of Justice
@@ -216,9 +217,10 @@ s["PALADIN"] = {
          663, --Lay on Hands
          1022, --Blessing of Protection
          10290, --Devotion Aura R2
-         20287, --Seal of Righteousness R2
+         1152, --Purify
     },
     [12] = {
+         20287, --Seal of Righteousness R2
          19834, --Blessing of Might R2
     },
     [14] = {
@@ -278,6 +280,7 @@ s["PALADIN"] = {
     [38] = {
         10278, -- blessing of protection r3
         3472, -- holy light
+        20166, -- seal of wisdom
     },
     [40] = {
         20922, -- consecration r3
@@ -298,6 +301,7 @@ s["PALADIN"] = {
     [46] = {
         10300, -- retribution aura r4
         10328, -- holy light r7
+        20356, -- seal of wisdom r2
     },
     [50] = {
         1020, -- divine shield r2
@@ -323,6 +327,7 @@ s["PALADIN"] = {
     },
     [58] = {
         19943, -- flash of light r6
+        20357, -- seal of widom r3
     },
     [60] = {
         20954, -- consecration r5
@@ -350,6 +355,7 @@ s["PALADIN"] = {
         33776, -- spiritual attunement
         27137, -- flash of light r7
         27150, -- retribution aura
+        27166, -- seal of wisdom r4
     },
     [68] = {
         27180, -- hammer of wrath r4
@@ -557,6 +563,7 @@ s["HUNTER"] ={
         14260, -- raptor strike r2
         1130, -- hunter's mark
         13163, -- aspect of the monkey
+        3127, --parry
     },
     [10] = {
         13165, -- aspect of the hawk
@@ -707,6 +714,7 @@ s["WARRIOR"] = {
     [4] = {
         100, -- charge
         772, -- rend
+        3127, --parry
     },
     [8] = {
         1715, -- hamstring
@@ -837,6 +845,7 @@ s["ROGUE"] = {
     [6] = {
         1776, -- gouge
         1757, -- sinister strike r2
+        3127, --parry
     },
     [8] = {
         5277, -- evasion

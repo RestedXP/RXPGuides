@@ -1153,7 +1153,7 @@ function RXP_.functions.train(self,...)
         element.title = GetSpellInfo(element.id)
     end
 
-    if IsPlayerSpell(element.id) then
+    if IsSpellKnown(element.id) or IsSpellKnown(element.id,true) then
         RXP_.SetElementComplete(self,true)
     end
 
