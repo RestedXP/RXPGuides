@@ -226,6 +226,8 @@ s["PALADIN"] = {
     [14] = {
          19742, --Blessing of Wisdom
          647, --Holy Light R3
+         21082,--Seal of the crusader r1
+         20162,--Seal of the crusader r2
     },
     [16] = {
          7294, --Retribution Aura
@@ -243,6 +245,7 @@ s["PALADIN"] = {
     [22] = {
          1026, --Holy Light R4
          19835, --blessing of might r3
+         20305,--seal of teh crusader r3
     },
     [24] = {
          19850, --blessing of wisdom r2
@@ -267,6 +270,7 @@ s["PALADIN"] = {
     },
     [32] = {
         19836, -- blessing of might r4
+        20306,--seal of the crusader r4
     },
     [34] = {
         642, -- divine shield
@@ -292,6 +296,7 @@ s["PALADIN"] = {
         4987, -- cleanse
         19837, --  blessing of might r5
         19941, -- flash of light r4
+        20307,--seal of the crusader r5
     },
     [44] = {
         24275, -- hammer of wrath
@@ -316,6 +321,7 @@ s["PALADIN"] = {
         19838, -- blessing of might r6
         24274, -- hammer of wrath r2
         10313, -- exorcism r5
+        20308,--seal of the crusader r6
     },
     [54] = {
         10308, -- hammer of justice r4
@@ -339,6 +345,9 @@ s["PALADIN"] = {
         25290, -- blessing of wisdom r6
         24239, -- hammer of wrath r3
         20920, -- seal of command r5
+    },
+    [61] = {
+        27158,--seal of the crusader
     },
     [62] = {
         32223, -- crusader aura
@@ -624,6 +633,9 @@ s["HUNTER"] ={
         25076, -- cobra reflexes
         14282, -- arcane shot r3
     },
+    [32] = {
+        14283, -- arcane shot r4
+    },
     [34] = {
         13552, -- serpent sting r5
     },
@@ -633,7 +645,6 @@ s["HUNTER"] ={
         24553, -- natural armor r6
     },
     [38] = {
-        14283, -- arcane shot r4
         14320, -- aspect of the hawk r4
     },
     [40] = {

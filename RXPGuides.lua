@@ -328,7 +328,7 @@ end
 
 
 
-RXP_.width,RXP_.height = 235,140
+RXP_.width,RXP_.height = 235,125
 
 f:SetWidth(RXP_.width)
 f:SetHeight(RXP_.height) 	
@@ -921,6 +921,7 @@ C_Timer.NewTicker(0.1473,function()
 		return
 	elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 5 then
 		RXP_.UpdateBottomFrame()
+        RXP_.UpdateText()
 		tickTimer = GetTime()
 		return
 	end
@@ -1076,9 +1077,9 @@ f.SF:SetPoint("TOPLEFT", f.BottomFrame,5, -5)
 f.SF:SetPoint("BOTTOMRIGHT", f.BottomFrame,-20, 7)
 f.SF.ScrollBar:SetPoint("TOPLEFT",f.SF,"TOPRIGHT",0,-18)
 
+--[[
 local prefix = "Interface\\MAINMENUBAR\\"
 local s = f.SF.ScrollBar.ScrollDownButton
-
 s.Normal:SetTexture(prefix.."UI-MainMenu-ScrollDownButton-Up-Old")
 s.Highlight:SetTexture(prefix.."UI-MainMenu-ScrollDownButton-Highlight-Old")
 s.Pushed:SetTexture(prefix.."UI-MainMenu-ScrollDownButton-Down-Old")
@@ -1088,7 +1089,21 @@ s.Normal:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Up-Old")
 s.Highlight:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Highlight-Old")
 s.Pushed:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Down-Old")
 s.Disabled:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Disabled-Old")
+]]
 
+prefix = "Interface/AddOns/RXPGuides/Textures/Scrollbar/"
+
+local s = f.SF.ScrollBar.ScrollDownButton
+s.Normal:SetTexture(prefix.."Down-Normal")
+s.Highlight:SetTexture(prefix.."Down-Highlight")--?
+s.Pushed:SetTexture(prefix.."Down-Pushed")
+s.Disabled:SetTexture(prefix.."Down-Disabled")
+s = f.SF.ScrollBar.ScrollUpButton
+s.Normal:SetTexture(prefix.."Up-Normal")
+s.Highlight:SetTexture(prefix.."Up-Highlight")
+s.Pushed:SetTexture(prefix.."Up-Pushed")
+s.Disabled:SetTexture(prefix.."Up-Disabled")
+f.SF.ScrollBar:SetThumbTexture(prefix.."Knob")
 
 --f.SF.ScrollBar:SetWidth(5)
 
