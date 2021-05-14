@@ -2,6 +2,7 @@
 RXPGuides = {}
 local RXPG = RXPGuides
 local version = select(4, GetBuildInfo())
+local _,class = UnitClass("player")
 
 local BackdropTemplate = "BackdropTemplate"
 if version < 20500 then
@@ -45,6 +46,7 @@ function RXPG_init()
 	RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
+    RXPData.trainGenericSpells = RXPData.trainGenericSpells or true
     --RXP_.arrowFrame:SetShown(not RXPData.disableArrow)
 end
 
@@ -75,14 +77,34 @@ function RXP_.BuySpells(id,level)
 	if category ~= "available" then
 		return
 	end
-	
-	rank = rank and tonumber(rank:match("(%d+)")) or 0
+    
+    if RXPData.trainGenericSpells then
+        for spellLvl,spells in pairs(RXP_.defaultSpellList[class]) do
+            if spellLvl <= level then
+                for i,spellId in pairs(spells) do
+                    if IsSpellKnown(spellId) then
+                        spells[i] = nil
+                    elseif C_Spell.IsSpellDataCached(spellId) then
+                        local sName = GetSpellInfo(spellId)
+                        local sRank = GetSpellSubtext(spellId)
+                        if sName == name and sRank == rank then
+                            BuyTrainerService(id)
+                            return
+                        end
+                    end
+                end
+            end
+        end
+    end
+    
+    rank = rank and tonumber(rank:match("(%d+)")) or 0
 	for spellName,spellRank in pairs(RXP_.skillList) do
 		if name == spellName and (rank <= spellRank or spellRank == 0) then
 			BuyTrainerService(id)
 			return
 		end
 	end
+    
 end
 
 local function OnTrainer()
@@ -348,6 +370,7 @@ RXP_.colors = colors
 colors.background = {12/255,12/255,27/255,1}
 colors.bottomFrameBG = {18/255,18/255,40/255,1}
 colors.bottomFrameHighlight = {54/255,62/255,109/255,1}
+colors.mapPins = {206/255,123/255,1,1}
 
 f.backdropEdge = {
  bgFile = "Interface/BUTTONS/WHITE8X8",
@@ -646,7 +669,7 @@ function RXP_.SetStep(n,n2)
 				--elementFrame:SetWidth(300)
 				local button = CreateFrame("CheckButton", "$parentCheck", elementFrame, "ChatConfigCheckButtonTemplate");
 				elementFrame.button = button
-                button:SetSize(16,16)
+                button:SetSize(12,12)
 				button:SetScript("PostClick",function(self) 
 					local parent = self:GetParent()
 					local element = parent.element 
@@ -657,12 +680,12 @@ function RXP_.SetStep(n,n2)
 					RXP_.updateMap = true
 				end)
                 
-                --[[
+                --
                 button:SetNormalTexture("Interface/AddOns/RXPGuides/Textures/rxp-btn-blank-32")
                 button:SetCheckedTexture("Interface/AddOns/RXPGuides/Textures/rxp-checked-32")
                 button:SetPushedTexture(nil)
                 button:SetHighlightTexture("Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
-                ]]
+                
                 
 				elementFrame.text = getglobal(elementFrame.button:GetName() .. 'Text')
 				elementFrame.text:SetParent(elementFrame)
@@ -805,13 +828,16 @@ for i,step in pairs(f.CurrentStepFrame.activeSteps) do
 			frameHeight = frameHeight + h
 			
 			elementFrame.button:ClearAllPoints()
-			elementFrame.button:SetPoint("TOPLEFT",elementFrame, 4, -1);
+			--elementFrame.button:SetPoint("TOPLEFT",elementFrame, 4, -1);
+            elementFrame.button:SetPoint("TOPLEFT",elementFrame, 6, -1);
 			elementFrame.text:ClearAllPoints()
-			elementFrame.text:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",8,-2)
+			--elementFrame.text:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",8,-2)
+            elementFrame.text:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",11,-1)
 			elementFrame.text:SetPoint("RIGHT",stepframe,-5,0)
 			
 			elementFrame.icon:ClearAllPoints()
-			elementFrame.icon:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",-3,-2)
+			--elementFrame.icon:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",-3,-2)
+            elementFrame.icon:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",0,-1)
 			if element.textOnly then
 				elementFrame.button:SetChecked(true)
 				elementFrame.button:Hide()
@@ -895,8 +921,8 @@ f.BottomFrame:SetBackdrop(f.backdropEdge)
 --f.BottomFrame:SetBackdropColor(12/255,12/255,27/255,1)
 f.BottomFrame:SetBackdropColor(unpack(colors.background))
 
-f.BottomFrame:SetPoint("TOPLEFT", f, 10, -10)
-f.BottomFrame:SetPoint("BOTTOMRIGHT", f,-10, 10)
+f.BottomFrame:SetPoint("TOPLEFT", f, 3, -3)
+f.BottomFrame:SetPoint("BOTTOMRIGHT", f,-3, 3)
 
 
 
@@ -938,7 +964,7 @@ f.GuideName.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
 f.GuideName.icon:SetPoint("CENTER",f.GuideName,"LEFT",18,0)
 f.GuideName.icon:SetSize(42,42)
 
-local _,class = UnitClass("player")
+
 f.GuideName.classIcon = f.GuideName:CreateTexture("RXPClassIcon","OVERLAY")
 f.GuideName.classIcon:SetTexture("Interface/AddOns/RXPGuides/Textures/"..class)
 f.GuideName.classIcon:SetPoint("CENTER",f.GuideName.icon,"BOTTOMRIGHT",-4,10)
@@ -1186,13 +1212,18 @@ function RXP_:LoadGuide(guide,OnLoad)
         frame.index = n
         frame.guide = guide
 		frame:SetScript("OnMouseDown",function(self,button)
-            if button == "RightButton" then
+            if button == "RightButton" or GetTime() - self.timer <= 0.5 then
+                self.timer = 0
                 local n = self.index
                 local menuList = {
                     {notCheckable = 1, text = "Go to step "..n,func = RXP_.SetStep, arg1 = n},
                     {notCheckable = 1, text = "Select another guide",func = RXP_.DropDownMenu},
+                    {text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG},
+                    {text = "Close",notCheckable = 1,func = function(self) self:Hide() end},
                 }
                 EasyMenu(menuList, RXP_.MenuFrame, "cursor", 0 , 0, "MENU");
+            else
+                self.timer = GetTime()
             end
 		end)
 		
@@ -1467,7 +1498,20 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(not RXPData.disableTrainerAutomation)
     button.Text:SetText("Trainer automation")
-    button.tooltip = "Allows the guide to buy spells automatically if the step tells you to"    
+    button.tooltip = "Allows the guide to buy specific spells automatically if the step tells you to\n(Steps marked with "..RXP_.icons.train..")"
+    
+    button = CreateFrame("CheckButton", "$parentTrainerGeneric", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        RXPData.trainGenericSpells = self:GetChecked()
+    end)
+    button:SetChecked(RXPData.trainGenericSpells)
+    button.Text:SetText("Train useful leveling spells")
+    button.tooltip = "Allows the guide to automatically buy important spells used for leveling"
+    
+    
     
     button = CreateFrame("CheckButton", "$parentFP", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)

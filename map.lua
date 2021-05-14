@@ -70,6 +70,7 @@ local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 RXP_.activeWaypoints = {}
 RXP_.mapPins = {}
+local colors = RXP_.colors
 
 RXP_.arrowFrame = CreateFrame("Frame","RXPG_ARROW",UIParent)
 local af = RXP_.arrowFrame
@@ -158,6 +159,7 @@ end
 
 
 
+
 local function TooltipHandler(self)
     if not tooltip then
         tooltip = true
@@ -172,7 +174,7 @@ local function TooltipHandler(self)
     if text then
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT",0,0)
         GameTooltip:ClearLines()
-        GameTooltip:AddLine("Step "..self.step.index,206/255,123/255,1,1)
+        GameTooltip:AddLine("Step "..self.step.index,unpack(colors.mapPins))
         GameTooltip:AddLine(text)
         for i,element in pairs(self.connectedPins) do
             local text
@@ -182,7 +184,7 @@ local function TooltipHandler(self)
                 text = element.tooltipText
             end
             text = text or RXP_.MainFrame.Steps.frame[element.step.index].text:GetText()
-            GameTooltip:AddLine("Step "..element.step.index,206/255,123/255,1,1)
+            GameTooltip:AddLine("Step "..element.step.index,unpack(colors.mapPins))
             GameTooltip:AddLine(text)
         end
         GameTooltip:Show()
@@ -220,7 +222,7 @@ function CreateWPframe(id,step,element)
 
         --f:SetBackdrop(backdrop)
         f.text = f.text or f:CreateFontString(nil,"OVERLAY") 
-        f.text:SetTextColor(206/255,123/255,1,1)
+        f.text:SetTextColor(unpack(colors.mapPins))
         f.text:SetFont("Fonts\\FRIZQT__.TTF", 14,"OUTLINE")
         f.text:SetJustifyH("LEFT")
         f.text:SetJustifyV("CENTER")
