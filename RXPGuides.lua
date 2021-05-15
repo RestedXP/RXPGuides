@@ -689,7 +689,7 @@ function RXP_.SetStep(n,n2)
 				button:SetScript("PostClick",function(self) 
 					local parent = self:GetParent()
 					local element = parent.element 
-					if element then
+					if element and not element.optional then
 						element.skip = self:GetChecked()
 					end
 					RXP_.updateSteps = true
@@ -1625,7 +1625,7 @@ function RXP_.CreateOptionsPanel()
         RXPData.skipMissingPreReqs = self:GetChecked()
     end)
     button:SetChecked(RXPData.skipMissingPreReqs)
-    button.Text:SetText("Skip missing pre-requisites")
+    button.Text:SetText("Skip quests with missing pre-requisites")
     button.tooltip = "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"
     if not QuestieLoader then
         button:Hide()

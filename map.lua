@@ -145,11 +145,13 @@ function RXP_.UpdateGotoSteps()
     for i,element in ipairs(RXP_.activeWaypoints) do
         if element.step.active then
 
-            if element.radius and element.arrow and not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and (element.completed or element.skip)) and not(element.optional and element.skip) then
+            if element.radius and element.arrow and not(element.parent and (element.parent.completed or element.parent.skip) and not element.parent.textOnly) and not element.skip then
                 local x,y,instance = HBD:GetPlayerWorldPosition()
                 local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
                 if not dist then return end
                 if dist <= element.radius then
+                    element.skip = true
+                    RXP_.updateMap = true
                     RXP_.SetElementComplete(element.frame)
                 end
             end
@@ -302,7 +304,7 @@ function RXP_.UpdateMap()
             if element.text and not element.label and not element.textOnly then
                 element.label = tostring(step.index)
             end
-            if element.zone and (not(element.parent and (element.parent.completed or element.parent.skip)) and not step.skip) then
+            if element.zone and (not(element.parent and (element.parent.completed or element.parent.skip)) and not element.skip) then
                 n = n +1
                 element.mapPin = CreateWPframe(n,step,element)
 
@@ -377,7 +379,7 @@ function RXP_.UpdateMap()
                 element.element = element
                 RXP_.functions[element.tag](element)
             end
-            if (element.completed or element.skip) or element.textOnly or not element.text or element.skip then
+            if (element.completed or element.skip) or element.textOnly or not element.text then
                 ncompleted = ncompleted + 1
             end 
         end
@@ -422,7 +424,7 @@ function RXP_.UpdateMap()
 
     for i,element in ipairs(RXP_.activeWaypoints) do
         if element.arrow and element.step.active and 
-        not(element.parent and element.parent.completed and not element.parent.textOnly) and not(element.text and (element.completed or element.skip) and not element.textOnly) then
+        not(element.parent and (element.parent.completed or element.parent.skip)) and not(element.text and (element.completed or element.skip) and not element.skip) then
             af:SetShown(not RXPData.disableArrow)
             af.dist = 0
             af.orientation = 0
