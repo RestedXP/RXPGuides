@@ -1737,19 +1737,11 @@ step << Rogue/Mage
     .goto Dun Morogh,53.5,34.9
 step
     #completewith next
-    .goto Dun Morogh,39.2,38.7,40
+    .goto Dun Morogh,31.1,32.4,25>>The path to Wetlands start here
+    
 step
-    .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
-step
-    #completewith next
-    .goto Dun Morogh,32.4,29.1,15>>Follow it up to here
-step
-    #completewith next
-.goto Dun Morogh,33.0,27.2,15
-step
-.deathskip >>Keep running straight north, then drop down and die, then respawn at the Wetlands graveyard
-    .goto Dun Morogh,33.0,25.2
-    .goto Wetlands,11.6,43.4,45
+    .goto Dun Morogh,32.6,25.9,20 >> Climb the mountain until the general chat channel changes to Wetlands
+    .goto Wetlands,11.3,43.5,200 >> Die on Purpose and respawn at the Wetlands graveyard
 step
     .money <0.076
 .goto Wetlands,10.7,56.8

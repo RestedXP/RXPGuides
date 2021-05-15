@@ -495,11 +495,14 @@ step
     .accept 9066 >> Accept Swift Discipline
 step
     >>Kill Pillagers (Skeletons) in The Dead Scar
-.goto Eversong Woods,50.3,57.5,60
-    .goto Eversong Woods,50.2,51.8,60
-.goto Eversong Woods,50.3,57.5,60
-    .goto Eversong Woods,50.2,51.8,60
-    .goto Eversong Woods,50.4,54.5
+.goto Eversong Woods,50.3,57.5,60,0
+    .goto Eversong Woods,50.2,51.8,60,0
+.goto Eversong Woods,50.3,57.5,60,0
+    .goto Eversong Woods,50.2,51.8,60,0
+.goto Eversong Woods,50.3,57.5,60,0
+    .goto Eversong Woods,50.2,51.8,60,0
+.goto Eversong Woods,50.3,57.5,60,0
+    .goto Eversong Woods,50.2,51.8,60,0
     .complete 8475,1 --Kill Plaguebone Pillager (x8)
 step
     .goto Eversong Woods,50.3,50.8
@@ -562,13 +565,11 @@ step
 step << Warrior/Warlock/Hunter/Rogue
     .xp 7+3825 >> Grind to 3825+/4500xp
 step << Warrior/Warlock/Hunter/Rogue
-     >> Go here, then die and respawn at the Spirit Healer (make sure your subzone is Eversong Woods and NOT West Sanctum). Or, just run back
  .goto Eversong Woods,35.4,55.2
- .goto Eversong Woods,48.0,49.6,150
+ .goto Eversong Woods,48.0,49.6,150 >> Go here, then die and respawn at the Spirit Healer (make sure your subzone is Eversong Woods and NOT West Sanctum). Or, just run back to Falconwing Square
 step << Paladin/Priest/Mage
->>Die and respawn at the spirit Healer, or run to Fairbreeze Village
 .goto Eversong Woods,28.1,61.0,20,0
-.goto Eversong Woods,44.3,71.2,120
+.goto Eversong Woods,44.3,71.2,120 >>Die and respawn at the spirit Healer, or run to Fairbreeze Village
 step << Warrior/Warlock/Hunter/Rogue
     .goto Eversong Woods,48.2,46.0
     .turnin 8482 >> Turn in Incriminating Documents
@@ -789,8 +790,7 @@ step << Warrior/Warlock/Rogue !Undead/!Warlock
 step << Undead Warlock
     .xp 9+5950 >> Grind to 5950+/6500xp
 step << !Hunter !Undead/!Warlock
-    >> Hearth to Falconwing Square
-    .goto Eversong Woods,48.2,47.7,150
+    .goto Eversong Woods,48.2,47.7,150 >> Hearth to Falconwing Square
 step << Undead Warlock
 .goto Eversong Woods,55.7,54.5
     .turnin 9066 >> Turn in Swift Discipline
@@ -1178,8 +1178,8 @@ step
 .goto Eversong Woods,69.6,53.3
     .complete 8889,3 --Collect Third Power Source Deactivated (x1)
 step
-    >>Click the Orb of Translocation behind the green crystal, and go to the bottom
-    .goto Eversong Woods,68.9,52.0,15
+    .goto Eversong Woods,68.9,52.0,15 >>Click the Orb of Translocation behind the green crystal, and go to the bottom
+
 step << !BloodElf/!Warlock
     .goto Eversong Woods,68.6,47.0
     .xp 11+6375 >> Grind to 6375+/8700xp
@@ -1238,8 +1238,7 @@ step << Orc Warlock
     .train 755 >>Train Health Funnel
     .train 705 >>Train Shadow Bolt r3
 step << Hunter
-    >>Enter the building
-.goto Silvermoon City,83.4,30.1,20
+.goto Silvermoon City,83.4,30.1,20 >>Enter the building
 step << BloodElf Hunter
     .goto Silvermoon City,82.2,28.1
     .turnin 9673 >> Turn in Beast Training

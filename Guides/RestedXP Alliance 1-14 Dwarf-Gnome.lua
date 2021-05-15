@@ -472,15 +472,8 @@ step
     .goto Loch Modan,22.1,73.1
     .accept 224 >> Accept In Defense of the King's Lands
 step
-    .goto Loch Modan,22.6,75.4,20
-step
     .goto Loch Modan,23.2,73.7
     .accept 267 >> Accept The Trogg Threat
-step
-    >>Jump through the gap in the bunker and drop down
-.goto Loch Modan,23.0,72.3,20
-step
-    .goto Loch Modan,29.9,68.2,30
 step
     .goto Loch Modan,32.7,76.5
     >>Kill Stonesplinter Troggs
@@ -488,16 +481,14 @@ step
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
 step
-    .goto Loch Modan,29.9,68.2,20
-step
     .goto Loch Modan,22.2,73.3
     .turnin 224 >> Turn in In Defense of the King's Lands
 step
     .goto Loch Modan,23.2,73.7
     .turnin 267 >> Turn in The Trogg Threat
 step
-    >>Run to Thelsamar
-    .goto Loch Modan,32.0,47.2,150
+    .goto Loch Modan,32.0,47.2,150>>Run to Thelsamar
+
 step << Mage
     .goto Loch Modan,35.5,48.4
     .vendor >> Buy 40 level 5 milk
@@ -540,10 +531,6 @@ step << Mage
 >>Kill Boars in the zone for Thelsamar Blood Sausages
 .complete 418,1 --Collect Boar Intestines (x3)
 step << Mage
-    >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route.    
-.goto Loch Modan,23.3,17.9,15
-    >>Enter the bunker
-step << Mage
     .goto Loch Modan,24.1,18.2
     .vendor >> vendor trash, repair
 step << Mage
@@ -551,6 +538,7 @@ step << Mage
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 307 >> Accept Filthy Paws
 step << Mage
+    #completewith next
     >>Go to the entrance of the cave whilst killing rats
     .goto Loch Modan,35.5,18.2,30
 step << Mage
@@ -3015,8 +3003,8 @@ step
 
 step
     #completewith next
-    .goto Dun Morogh,31.1,32.4,25
-    >>The path to Wetlands start here
+    .goto Dun Morogh,31.1,32.4,25>>The path to Wetlands start here
+    
 step
     #completewith next
     .goto Dun Morogh,32.6,25.9,20 >> Climb the mountain until the general chat channel changes to Wetlands
