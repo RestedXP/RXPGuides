@@ -27,11 +27,21 @@ local function applies(text)
     end
     return true
 end
+
 RXP_.applies = applies
 local RXPG = RXPGuides
 function RXPG.RegisterGuide(guideGroup,text,defaultFor)
-    if defaultFor and not applies(defaultFor) then
-        guideGroup = "*"..guideGroup
+    local playerLevel = UnitLevel("player")
+    local boost58
+    if defaultFor then
+        if defaultFor == "58Boost" then
+            if playerLevel >= 60 or playerLevel < 58 then
+                guideGroup = "*"..guideGroup
+            end            
+            boost58 = true
+        elseif not applies(defaultFor) then
+            guideGroup = "*"..guideGroup
+        end
     end
 
     if not RXPG[guideGroup] then
@@ -40,6 +50,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     end
 
     local guide = {}
+    guide.boost58 = boost58
     guide.group = guideGroup
     local currentStep = 0
     guide.steps = {}

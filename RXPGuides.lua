@@ -159,8 +159,11 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         RXP_.CreateOptionsPanel()
 		loadtime = GetTime()
 		local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
-        if RXPData.autoLoadGuides then
-            guide = guide or RXP_.defaultGuide
+        if not guide and RXPData.autoLoadGuides then
+            guide = RXP_.defaultGuide
+            if UnitLevel("player") ~= 58 or not guide.boost58 then
+                guide = nil
+            end
         end
 		RXP_:LoadGuide(guide,true)
         if not RXP_.currentGuide then
