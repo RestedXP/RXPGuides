@@ -174,20 +174,26 @@ function RXP_.GetQuestObjectives(id,step)
         end
     elseif db and db.QueryQuest and math.abs(RXPCData.currentStep-step) > 4 then
         local qInfo = {}
-        local objectives = db:GetQuest(id).ObjectiveData
-        for i,quest in pairs(objectives) do
-            local qType = quest.Type
-            local objId = quest.Id
-            qInfo[i] = {type = qType, finished = false, questie = true}
-            if qType == "monster" then
-                qInfo[i].text = db:GetNPC(objId).name
-            elseif qType == "item" then
-                qInfo[i].text = db:GetItem(objId).name
-            elseif quest.Text then
-                qInfo[i].text = quest.Text
-            else
-                err = true
-                break
+        local q = db:GetQuest(id)
+        local objectives
+        if q then
+            objectives = q.ObjectiveData
+        end
+        if objectives then
+            for i,quest in pairs(objectives) do
+                local qType = quest.Type
+                local objId = quest.Id
+                qInfo[i] = {type = qType, finished = false, questie = true}
+                if qType == "monster" then
+                    qInfo[i].text = db:GetNPC(objId).name
+                elseif qType == "item" then
+                    qInfo[i].text = db:GetItem(objId).name
+                elseif quest.Text then
+                    qInfo[i].text = quest.Text
+                else
+                    err = true
+                    break
+                end
             end
         end
         if not err then
