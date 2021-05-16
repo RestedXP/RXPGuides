@@ -321,6 +321,8 @@ step
 step
     .goto The Barrens,44.6,59.2
     .turnin 878 >> Turn in Tribes at War
+    .accept 5052 >>Accept Blood Shards of Agamaggan
+.turnin 5052 >>Turn in Blood Shards of Agamaggan
 step
     .isOnQuest 884
     .goto The Barrens,44.9,59.1
@@ -680,7 +682,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 step
     #sticky
     #completewith next
->>Go to the Zeppelin tower. Take the zeppelin to Durotar
++Go to the Zeppelin tower. Take the zeppelin to Durotar
 .goto Durotar,50.8,13.8
 step
 .zone Tirisfal Glades >>Arrive in Tirisfal Glades
@@ -760,8 +762,7 @@ step
     .complete 498,2 --Collect Rescue Tog'thar (x1)
 step
     #requires shadowmage   
-step
-    >>Kill Spiders. Loot them until Creeper Ichor drops
+>>Kill Spiders. Loot them until Creeper Ichor drops
 .goto Hillsbrad Foothills,63.5,33.0,50,0
     .goto Hillsbrad Foothills,57.9,34.5,50,0
     .goto Hillsbrad Foothills,57.2,22.1,50,0
@@ -818,10 +819,12 @@ step
 .complete 501,1 --Collect Mountain Lion Blood (x10)
 step
     #sticky
+    #label Wilkes
     >>Kill Citizen Wilkes. He patrols every road in the town
 .complete 567,2 --Kill Citizen Wilkes (x1)
 step
     #sticky
+    #label Kalaba
     >>Kill Farmer Kalaba. She patrols the field of Peasants
 .goto Hillsbrad Foothills,35.2,46.5
     .complete 567,4 --Kill Farmer Kalaba (x1)
