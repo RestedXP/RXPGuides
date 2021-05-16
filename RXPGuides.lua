@@ -285,6 +285,25 @@ f:SetClampedToScreen(true)
 f:SetResizable(true)
 f:SetMinResize(220,20)
 
+local function SetStepFrameAnchor()
+local frame = f.CurrentStepFrame
+    local scale = f:GetScale()
+
+    frame:ClearAllPoints()
+    frame:SetPoint("BOTTOMLEFT", f.GuideName,"TOPLEFT",0,2)
+    frame:SetPoint("BOTTOMRIGHT",f.GuideName,"TOPRIGHT",0,2)
+    if (frame:GetTop()*scale > GetScreenHeight()) then
+       frame:ClearAllPoints()
+       frame:SetPoint("TOPLEFT", f,"BOTTOMLEFT",3,0)
+       frame:SetPoint("TOPRIGHT",f,"BOTTOMRIGHT",-3,0)
+    end
+    if frame:GetBottom()*scale < 0 then
+       frame:ClearAllPoints()
+       frame:SetPoint("BOTTOMLEFT", f.GuideName,"TOPLEFT",0,2)
+       frame:SetPoint("BOTTOMRIGHT",f.GuideName,"TOPRIGHT",0,2)
+    end
+end
+
 f.OnMouseDown = function(self, button)
     if RXPData.lockFrames then
         return
@@ -303,6 +322,7 @@ f.OnMouseUp = function(self,button)
         RXP_.SetStep(RXPCData.currentStep)
 		f:SetScript("OnUpdate",nil)
 	end
+    SetStepFrameAnchor()
 	isResizing = false
 end
 
@@ -424,6 +444,11 @@ f.CurrentStepFrame = CreateFrame("Frame", nil, f)
 --f.CurrentStepFrame:SetBackdropColor(0.3,0.01,0.01)
 f.CurrentStepFrame:SetPoint("BOTTOMLEFT", f.GuideName,"TOPLEFT",0,2)
 f.CurrentStepFrame:SetPoint("BOTTOMRIGHT",f.GuideName,"TOPRIGHT",0,2)
+
+
+
+
+
 f.CurrentStepFrame:SetHeight(25)
 f.CurrentStepFrame:SetScript("OnMouseDown", f.OnMouseDown)
 f.CurrentStepFrame:SetScript("OnMouseUp", f.OnMouseUp)
@@ -924,10 +949,12 @@ C_Timer.NewTicker(0.1473,function()
 		if updateText then
 			RXP_.UpdateText()
 		end
+
 		return
 	elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 5 then
 		RXP_.UpdateBottomFrame()
         RXP_.UpdateText()
+        SetStepFrameAnchor()
 		tickTimer = GetTime()
 		return
 	end
@@ -1401,7 +1428,11 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 					end
 				end
 			end
-				frame:SetAlpha(1)
+                if step.completed or (not step.sticky and RXPCData.currentStep > step.index) or RXPCData.stepSkip[step.index] then
+                    frame:SetAlpha(0.5)
+                else
+                    frame:SetAlpha(1)
+                end
 				frame.text:SetText(text)
 				fheight = math.ceil(frame.text:GetStringHeight() + 8)
 			frame:SetHeight(fheight)
@@ -1421,6 +1452,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 	else
 		f.BottomFrame:Show()
 	end
+    
 end
 
 
