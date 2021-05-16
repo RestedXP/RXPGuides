@@ -49,6 +49,7 @@ function RXPG_init()
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.trainGenericSpells = RXPData.trainGenericSpells or true
+    RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     f:SetShown(not RXPCData.hideWindow)
     --RXP_.arrowFrame:SetShown(not RXPData.disableArrow)
 end
@@ -289,19 +290,33 @@ f:SetMinResize(220,20)
 local function SetStepFrameAnchor()
 local frame = f.CurrentStepFrame
     local scale = f:GetScale()
-
-    frame:ClearAllPoints()
-    frame:SetPoint("BOTTOMLEFT", f.GuideName,"TOPLEFT",0,2)
-    frame:SetPoint("BOTTOMRIGHT",f.GuideName,"TOPRIGHT",0,2)
-    if (frame:GetTop()*scale > GetScreenHeight()) then
+    local function SetTop()
+        frame:ClearAllPoints()
+        frame:SetPoint("BOTTOMLEFT", f.GuideName,"TOPLEFT",0,2)
+        frame:SetPoint("BOTTOMRIGHT",f.GuideName,"TOPRIGHT",0,2)
+    end
+    local function SetBottom()
        frame:ClearAllPoints()
        frame:SetPoint("TOPLEFT", f,"BOTTOMLEFT",3,0)
        frame:SetPoint("TOPRIGHT",f,"BOTTOMRIGHT",-3,0)
     end
-    if frame:GetBottom()*scale < 0 then
-       frame:ClearAllPoints()
-       frame:SetPoint("BOTTOMLEFT", f.GuideName,"TOPLEFT",0,2)
-       frame:SetPoint("BOTTOMRIGHT",f.GuideName,"TOPRIGHT",0,2)
+    
+    if RXPData.anchorOrientation < 0 then
+        SetBottom()
+        if frame:GetBottom()*scale < 0 then
+           SetTop()
+        end
+        if (frame:GetTop()*scale > GetScreenHeight()) then
+           SetBottom()
+        end
+    else
+        SetTop()
+        if (frame:GetTop()*scale > GetScreenHeight()) then
+           SetBottom()
+        end
+        if frame:GetBottom()*scale < 0 then
+           SetTop()
+        end
     end
 end
 
@@ -1657,6 +1672,19 @@ function RXP_.CreateOptionsPanel()
     button.Text:SetText("Hide Window")
     button.tooltip = "Hides the main window" 
     
+    button = CreateFrame("CheckButton", "$parentReverseAnchor", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        local hide = self:GetChecked()
+        RXPData.reverseAnchor = hide
+        f:SetShown(not hide)
+    end)
+    button:SetChecked(RXPCData.reverseAnchor)
+    button.Text:SetText("Grow downwards")
+    button.tooltip = "Hides the main window" 
+    
     button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1693,15 +1721,20 @@ function RXP_.CreateOptionsPanel()
         RXP_.arrowFrame:SetSize(32*size,32*size)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
         RXP_.updateMap = true
+        SetStepFrameAnchor()
     end
     
-    local CreateSlider = function(ref,key,smin,smax,text,tooltip,anchor,x,y)
+    local CreateSlider = function(ref,key,smin,smax,text,tooltip,anchor,x,y,minText,maxText,steps)
         local slider,dvalue
         
         slider = CreateFrame("Slider", "$parentArrowSlider", panel, "OptionsSliderTemplate")
         slider:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", x, y)
         slider:SetOrientation('HORIZONTAL')
-        --slider:SetValueStep(1)
+        if steps then
+            slider:SetValueStep(steps)
+            slider:SetStepsPerPage(steps)
+            slider:SetObeyStepOnDrag(true)
+        end
         slider:SetThumbTexture("Interface/Buttons/UI-SliderBar-Button-Horizontal")
         slider.ref = ref
         slider.key = key
@@ -1715,14 +1748,14 @@ function RXP_.CreateOptionsPanel()
         SliderUpdate(slider,dvalue)
         slider:SetValue(dvalue)
         
-        slider.Low:SetText(tostring(smin));
-        slider.High:SetText(tostring(smax));
+        slider.Low:SetText(minText or tostring(smin));
+        slider.High:SetText(maxText or tostring(smax));
         return slider
     end
     local slider
-    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,250,-25)
+    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,280,-25)
     slider = CreateSlider(RXPData,"windowSize",0.2,2,"Window Scale: %.2f","Scale of the Main Window, use alt+left click on the main window to resize it",slider,0,-25)
     slider = CreateSlider(RXPData,"numMapPins",1,20,"Number of Map Pins: %d","Number of map pins shown on the world map",slider,0,-25)
-    
+    slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,"Bottom","Top",2)
 
 end
