@@ -1499,8 +1499,9 @@ end
 
 
 
-SLASH_RXPG1 = "/rxpg"
-	
+SLASH_RXPG1 = "/rxp"
+SLASH_RXPG2 = "/rxpg"
+SLASH_RXPG3 = "/rxpguides"
 	
 SlashCmdList["RXPG"] = function(msg)
 	InterfaceOptionsFrame_OpenToCategory(RXPOptions)
