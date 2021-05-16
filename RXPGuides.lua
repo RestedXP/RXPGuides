@@ -546,7 +546,7 @@ function RXP_.SetStep(n,n2)
     if not guide then return end
 	local group = guide.group
 
-	print(n)
+	--print(n)
 	if n > #guide.steps then
 		local isComplete = true
 		local completedStep

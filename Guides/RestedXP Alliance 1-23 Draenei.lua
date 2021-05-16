@@ -244,7 +244,7 @@ step
 	>>Finish off Root Trappers/Stags
     .complete 9463,1 --Collect Root Trapper Vine (x8)
 	.complete 9454,1 --Collect Moongraze Stag Tenderloin (x6)
-step << Hunter/Shaman
+step
 	.xp 8-950 >> Grind until you are 950xp away from level 8 (3550/4500)
 	>>Do the crab quest southeast of Odesyus' Landing if you're not quite there yet << Hunter
 step
