@@ -145,7 +145,7 @@ step << Warlock
     >>Run up the ramp
 .goto Eversong Woods,32.6,25.5,30
 step << Warlock
->> Loot the Arcane Wraiths for Wraith Essence. Be careful as they pull together if they’re next to each other
+>> Loot the Arcane Wraiths for Wraith Essence. Be careful as they pull together if they're next to each other
 .goto Eversong Woods,32.3,28.1
 .complete 8344,1 --Wraith Essence (4)
 step << Warlock
@@ -408,7 +408,7 @@ step << Rogue
     .train 1776 >>Train Gouge
 step << Hunter
     .goto Eversong Woods,48.3,46.1
-    .train 1130 >>Train Hunter’s Mark
+    .train 1130 >>Train Hunter's Mark
     .train 3044 >>Train Arcane Shot
 step << Undead Warrior/Paladin
     .goto Eversong Woods,48.5,45.9
@@ -663,7 +663,7 @@ step
     .complete 8892,2 --Kill Wretched Hooligan (x5)
 step
     .goto Eversong Woods,32.7,69.1
-    >>Look around for boxes of Armaments. There’s a lot in the main building on all floors except top, and some in/near the docks and boats
+    >>Look around for boxes of Armaments. There's a lot in the main building on all floors except top, and some in/near the docks and boats
 .complete 8480,1 --Collect Sin'dorei Armaments (x8)
 step
     .goto Eversong Woods,36.4,66.8
@@ -718,7 +718,7 @@ step << Hunter
        #label oldwhitebark
 .goto Eversong Woods,35.0,84.2
 >>Kill and loot Old Whitebark. Loot him for his pendant to start a quest.
-        .collect 23228,1 --Collect Old Whitebark’s Pendant (x1)
+        .collect 23228,1 --Collect Old Whitebark's Pendant (x1)
 step << Hunter
       #sticky
 #label oldwhitebark
@@ -754,7 +754,7 @@ step << !Hunter
 .goto Eversong Woods,44.7,69.7
     .turnin 8491 >> Turn in Pelt Collection
 step
-    >> Be aware that Darkwrath’s Enrage at low health, and Rotlimb Marauders have an instant-cast 15 damage spell
+    >> Be aware that Darkwrath's Enrage at low health, and Rotlimb Marauders have an instant-cast 15 damage spell
 .goto Eversong Woods,50.9,80.7,60,0
     .goto Eversong Woods,51.3,75.3,60,0
     .goto Eversong Woods,52.9,71.7,60,0
@@ -982,7 +982,7 @@ step << BloodElf Hunter
     .goto Eversong Woods,61.4,65.8,40,0
     .complete 9484,1 --Tame a Crazed Dragonhawk
 step << Paladin/Rogue
-    >>Train Blacksmithing. You’ll get mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You can skip Blacksmithing if you wish
+    >>Train Blacksmithing. You'll get mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You can skip Blacksmithing if you wish
 .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
     .train 2018 >>Train Blacksmithing
@@ -1007,7 +1007,7 @@ step << BloodElf Hunter
     .turnin 9486 >> Turn in Taming the Beast
     .accept 9485 >> Accept Taming the Beast
 step << BloodElf Mage
-    >>Click the Phial in your bags when you’re under the waterfall
+    >>Click the Phial in your bags when you're under the waterfall
 .goto Eversong Woods,64.2,72.6
     .complete 9403,1 --Filled Azure Phial (1)
 step
@@ -1134,7 +1134,7 @@ step
 step
     #sticky
     #completewith next
-    >>Keep an eye out for Springpaws for Pelts en route to The Magister’s Apprentice
+    >>Keep an eye out for Springpaws for Pelts en route to The Magister's Apprentice
     .complete 8491,1 --Collect Springpaw Pelt (x6)
 step
     .goto Eversong Woods,67.8,56.5
@@ -1174,7 +1174,7 @@ step
 .goto Eversong Woods,69.2,52.1
     .accept 8891 >> Accept Abandoned Investigations
 step
-    >>Click the last green crystal. Make sure you’re clicking the crystal and not the Orb yet
+    >>Click the last green crystal. Make sure you're clicking the crystal and not the Orb yet
 .goto Eversong Woods,69.6,53.3
     .complete 8889,3 --Collect Third Power Source Deactivated (x1)
 step
@@ -1289,7 +1289,7 @@ step << Hunter
     .goto Ghostlands,47.3,29.1
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
 step << Paladin/Rogue
->>If you trained Blacksmithing, then train Mining. You’re now able to mine nodes for Rough Stones which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour).
+>>If you trained Blacksmithing, then train Mining. You're now able to mine nodes for Rough Stones which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour).
 .goto Silvermoon City,78.9,43.3
     .train 2580 >>Train Mining, cast Find Minerals
 step << Paladin/Rogue
@@ -1338,7 +1338,7 @@ step << !BloodElf/!Hunter
        #label oldwhitebark
 .goto Eversong Woods,35.0,84.2
 >>Kill and loot Old Whitebark. Loot him for his pendant to start a quest.
-        .collect 23228,1 --Collect Old Whitebark’s Pendant (x1)
+        .collect 23228,1 --Collect Old Whitebark's Pendant (x1)
 step << !BloodElf/!Hunter
       #sticky
 #label oldwhitebark
@@ -1477,7 +1477,7 @@ step
     .accept 9215 >>Accept Bring Me Kel'gash's Head!
 step
 .goto Ghostlands,72.3,32.3
-    .vendor >> Buy Food/drink if needed. Be sure to buy the level 5 fish as it’s VERY cheap
+    .vendor >> Buy Food/drink if needed. Be sure to buy the level 5 fish as it's VERY cheap
 step
     >>Kill any Ghostclaw Lynxes you see
 .goto Ghostlands,68.5,33.1,40,0
@@ -1525,7 +1525,7 @@ step
     .turnin 9157 >> Turn in Forgotten Rituals
     .accept 9174 >> Accept Vanquishing Aquantion
 step
-    >>Click the shrine, then kill Aquantion when he’s summoned. Be sure to use Arcane Torrent for when he Frostbolts
+    >>Click the shrine, then kill Aquantion when he's summoned. Be sure to use Arcane Torrent for when he Frostbolts
 .goto Ghostlands,71.3,15.0
     .complete 9174,1 --Kill Aquantion (x1)
 step
@@ -1577,8 +1577,8 @@ step << Hunter
     .collect 28164,1 --Collect Tranquillien Flamberge (1)
 step << Paladin
     .goto Ghostlands,47.7,32.3
-    .vendor >> Purchase Volunteer’s Greaves and Tranquillien Flamberge from Vredigar. Equip them
-    .collect 22993,1 --Collect Volunteer’s Greaves (1)
+    .vendor >> Purchase Volunteer's Greaves and Tranquillien Flamberge from Vredigar. Equip them
+    .collect 22993,1 --Collect Volunteer's Greaves (1)
     .collect 28164,1 --Collect Tranquillien Flamberge (1)
 step << !Warlock
     .goto Ghostlands,48.9,32.4
@@ -1664,7 +1664,7 @@ step
 step
     .goto Ghostlands,37.8,20.6,40
 step << BloodElf Rogue
-    >>DON’T kill the Sentinel Leader en route
+    >>DON'T kill the Sentinel Leader en route
 .goto Ghostlands,33.0,11.2
     .turnin 9532 >> Turn in Find Keltus Darkleaf
     .accept 9460 >> Accept Combining Forces
@@ -1718,7 +1718,7 @@ step
     .complete 9192,2 --Kill Blackpaw Scavenger (x6)
         .complete 9207,1 --Collect Underlight Ore (x6)
 step
-        >>Save any Rotting Hearts you loot. Don’t vendor them. Kill the undead mobs in the Dead Scar
+        >>Save any Rotting Hearts you loot. Don't vendor them. Kill the undead mobs in the Dead Scar
     .goto Ghostlands,37.9,47.2,60,0
     .goto Ghostlands,39.4,30.1,60,0
     .goto Ghostlands,37.9,47.2,60,0
@@ -1754,8 +1754,8 @@ step
     .turnin 9152 >> Turn in Tomber's Supplies
 step << Paladin
     .goto Ghostlands,47.7,32.3
-    .vendor >> Purchase Tranquillien Defender’s Girdle. Equip it
-    .collect 28162,1 --Collect Tranquillien Defender’s Girdle (1)
+    .vendor >> Purchase Tranquillien Defender's Girdle. Equip it
+    .collect 28162,1 --Collect Tranquillien Defender's Girdle (1)
 step << Rogue/Hunter/Druid
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Batskin Belt. Equip it
@@ -1786,9 +1786,9 @@ step
     .goto Ghostlands,46.2,56.4
     .accept 9281 >> Accept Clearing the Way
 step
-        >>Kill Fallen Rangers and Deatholme Acolytes. Keep grinding until you get The Lady’s Necklace to drop
+        >>Kill Fallen Rangers and Deatholme Acolytes. Keep grinding until you get The Lady's Necklace to drop
     .goto Ghostlands,13.2,56.8
-       .collect 22597,1 --Collect The Lady’s Necklace (x1)
+       .collect 22597,1 --Collect The Lady's Necklace (x1)
     .complete 9173,1 --Deatholme Acolyte (8)
     .complete 9173,2 --Fallen Ranger (10)
 step
@@ -1857,7 +1857,7 @@ step << Priest/Rogue/Paladin
     .goto Ghostlands,45.4,30.5
     .fly >> Fly to Silvermoon City
 step << Priest
-    >>You can also check for a Greater Magic Wand from the AH after training if you wish (if you didn’t get one earlier)
+    >>You can also check for a Greater Magic Wand from the AH after training if you wish (if you didn't get one earlier)
 .goto Silvermoon City,55.4,26.8
     .train 2054 >>Train Heal
     .train 8102 >>Train Mind Blast
@@ -1924,7 +1924,7 @@ step << Rogue
     .goto Ghostlands,47.2,34.3
     .turnin 10372 >>Turn in A Discreet Inquiry
     .accept 9491 >>Accept Greed
-    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they’re up
+    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up
 step
     .goto Ghostlands,55.0,48.5
     .accept 9282 >> Accept The Farstrider Enclave
@@ -1941,7 +1941,7 @@ step
 step << Hunter
     #sticky
     #completewith next
->>Buy a Reinforced Bow here if you haven’t yet
+>>Buy a Reinforced Bow here if you haven't yet
 .goto Ghostlands,72.1,32.0
     .collect 3026,1 --Collect Reinforced Bow
 step << Hunter
@@ -1975,7 +1975,7 @@ step
 step << Rogue
     #sticky
     #completewith Lilatha
-+Loot the chests around the crypt. Make sure you have 20 lockpicking skill, and have looted the Gold Band. Otherwise, don’t start the escort
++Loot the chests around the crypt. Make sure you have 20 lockpicking skill, and have looted the Gold Band. Otherwise, don't start the escort
     .complete 9491,1 --Pitted Gold Band (1)
 step
     >>Run into the campfire room
@@ -2007,7 +2007,7 @@ step << Rogue
 .goto Ghostlands,47.2,34.3
     .turnin 9491 >>Turn in Greed
     .accept 10548 >>Accept The Sad Truth
-    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they’re up if you didn’t get them earlier
+    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
 step
 .goto Ghostlands,78.8,19.8,30 >>Enter the building
 step
@@ -2066,26 +2066,26 @@ step
 step << Priest/Mage/Druid/Paladin
     #sticky
     #completewith next
-    >>Kill Kel’gash the Wicked. You should be able to solo him on every class by abusing line of sight (LoS) at the cylinder behind where he stands when he starts casting spells. Just be sure to have cooldowns available (and potions if you can). If you can’t do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest
+    >>Kill Kel'gash the Wicked. You should be able to solo him on every class by abusing line of sight (LoS) at the cylinder behind where he stands when he starts casting spells. Just be sure to have cooldowns available (and potions if you can). If you can't do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest
 .goto Ghostlands,65.1,79.2
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
 step << Rogue
     #sticky
     #requires ShrunkenHead
     #completewith next
-    >>Kill Kel’gash the Wicked. Be sure to have potions, bandages and Evasion available. Kite him around the cylinder just behind where he stands to line of sight (LoS) his spells when he starts casting them. If you can’t do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest.
+    >>Kill Kel'gash the Wicked. Be sure to have potions, bandages and Evasion available. Kite him around the cylinder just behind where he stands to line of sight (LoS) his spells when he starts casting them. If you can't do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest.
 .goto Ghostlands,65.1,79.2
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
 step << Warlock
     #sticky
     #completewith next
-    >>Kill Kel’gash the Wicked. You should be able to solo him by keeping Fear and dots up on him, as well as line of sight (LoS)ing his spells when he tries to cast on you. Be careful as he has a 100 damage instant-cast lightning shock he uses rarely. If you can’t do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest
+    >>Kill Kel'gash the Wicked. You should be able to solo him by keeping Fear and dots up on him, as well as line of sight (LoS)ing his spells when he tries to cast on you. Be careful as he has a 100 damage instant-cast lightning shock he uses rarely. If you can't do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest
 .goto Ghostlands,65.1,79.2
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
 step << Hunter
     #sticky
     #completewith next
-    >>Kill Kel’gash the Wicked. You should be able to solo him by line of sight (LoS)ing his spells when he tries to cast on you. Be careful as he has a 100 damage instant-cast lightning shock he uses rarely. If you can’t do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest.
+    >>Kill Kel'gash the Wicked. You should be able to solo him by line of sight (LoS)ing his spells when he tries to cast on you. Be careful as he has a 100 damage instant-cast lightning shock he uses rarely. If you can't do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest.
 .goto Ghostlands,65.1,79.2
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
 step
@@ -2115,10 +2115,10 @@ step
     .goto Ghostlands,60.3,35.8
     .turnin 9169 >> Turn in Deactivate An'owyn
 step << Rogue
-    >>Run back to Tranquillien. Choose the Dagger on turnin. Save this dagger (or any dagger), as you’ll need one for later
+    >>Run back to Tranquillien. Choose the Dagger on turnin. Save this dagger (or any dagger), as you'll need one for later
 .goto Ghostlands,47.2,34.3
     .turnin 10548 >>Turn in The Sad Truth
-    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they’re up if you didn’t get them earlier
+    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
 step
     .goto Ghostlands,45.9,32.1
     .accept 9151 >> Accept The Sanctum of the Sun
@@ -2138,8 +2138,8 @@ step << Mage/Warlock/Priest
     .collect 22986,1 --Collect Apothecary's Robe (1)
 step << Rogue/Hunter/Druid
     .goto Ghostlands,47.7,32.3
-    .vendor >> Purchase Deathstalker’s Vest. Equip it
-    .collect 22987,1 --Collect Deathstalker’s Vest (1)
+    .vendor >> Purchase Deathstalker's Vest. Equip it
+    .collect 22987,1 --Collect Deathstalker's Vest (1)
 step << Druid
     >>Teleport to Moonglade
 .goto Moonglade,52.5,40.6
@@ -2294,7 +2294,7 @@ step
 step
     #sticky
     #completewith Borgoth
-    +Kill Borgoth. He’s a big abomination inside of one of the two Ziggurats
+    +Kill Borgoth. He's a big abomination inside of one of the two Ziggurats
 .goto Ghostlands,41.3,83.0,20,0
     .goto Ghostlands,32.7,90.3,20,0
 .goto Ghostlands,41.3,83.0,20,0
@@ -2313,7 +2313,7 @@ step
 #sticky
     #requires Varnis
     #completewith next
-+Kill Masophet. He’s inside one of the ziggurats - do /tar Masophet outside of the ziggurats to check if he’s there
++Kill Masophet. He's inside one of the ziggurats - do /tar Masophet outside of the ziggurats to check if he's there
 .goto Ghostlands,35.8,89.1,30,0
     .goto Ghostlands,29.3,88.9,30,0
 .goto Ghostlands,35.8,89.1,30,0
@@ -2325,14 +2325,14 @@ step
 step
 #sticky
 #completewith next
->>Kill Dar’Khan. You will need a group for this quest. You can skip it, but i HIGHLY recommend doing this quest due to how big the weapon upgrades are, how much money and experience you get, etc
+>>Kill Dar'Khan. You will need a group for this quest. You can skip it, but i HIGHLY recommend doing this quest due to how big the weapon upgrades are, how much money and experience you get, etc
     .goto Ghostlands,33.0,81.3
     .complete 9167,1 --Collect Dar'Khan's Head (x1)
 step
     .goto Ghostlands,54.9,48.5
     .turnin 9170 >> Turn in Dar'Khan's Lieutenants
 step << BloodElf Hunter
-    >>Choose the 2h sword as it’s incredible for melee damage/melee weaving (and the bow is too fast)
+    >>Choose the 2h sword as it's incredible for melee damage/melee weaving (and the bow is too fast)
 .isQuestComplete 9167
     .goto Ghostlands,55.2,48.8
     .turnin 9167 >> Turn in The Traitor's Destruction
@@ -2355,7 +2355,7 @@ step << !BloodElf
 step
     #sticky
 #completewith next
-    >>Hearth to Tranquillien if it’s up. Otherwise, just run back
+    >>Hearth to Tranquillien if it's up. Otherwise, just run back
 .hs >> Hearth to Tranquillien
 step
     .goto Ghostlands,47.6,34.9
@@ -2379,7 +2379,7 @@ step << Druid
     #sticky
     #completewith Hero
     .goto Silvermoon City,71.5,55.8
-    >>Train Rebirth if you’re going to be playing with other players, otherwise, skip it (especially nice to skip due to lack of money at this level)
+    >>Train Rebirth if you're going to be playing with other players, otherwise, skip it (especially nice to skip due to lack of money at this level)
     .trainer >>Train Rebirth
 step << Druid
     .goto Silvermoon City,71.5,55.8
@@ -2417,7 +2417,7 @@ step << Warlock
     #sticky
     #completewith Hero
 .goto Silvermoon City,73.1,46.9
->>If you’re going to be playing with other players, Train Ritual of Summoning
+>>If you're going to be playing with other players, Train Ritual of Summoning
 .trainer >>Train Ritual of Summoning
 step << Warlock
     .goto Silvermoon City,73.1,46.9

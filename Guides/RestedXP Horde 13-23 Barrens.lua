@@ -49,7 +49,7 @@ step << Warrior
 step
     #sticky
     #completewith next
-    >>If the Flawed Power Stone in your bags has less than 10 minutes left, drop it, then go back and loot the Purple Stone next to Ak’Zeloth again
+    >>If the Flawed Power Stone in your bags has less than 10 minutes left, drop it, then go back and loot the Purple Stone next to Ak'Zeloth again
     .turnin 926 >>Turn in Flawed Power Stone
 step
     #sticky
@@ -71,7 +71,7 @@ step
 step
     #sticky
     #completewith next
-    >>Kill Raptors that you see. Loot them for some Raptor Heads - you’ll get more later
+    >>Kill Raptors that you see. Loot them for some Raptor Heads - you'll get more later
     .complete 869,1 --Raptor Head (12)
 step
     >>Kill Plainstriders. Loot them for Beaks
@@ -246,7 +246,7 @@ step
 step
     #sticky
     #completewith next
->> Walk via the road to Crossroads, look out for Lizzarik to buy a Heavy Spiked Mace. If he doesn’t have it, fly/run to Crossroads instead and Turn in Supplies for the Crossroads
+>> Walk via the road to Crossroads, look out for Lizzarik to buy a Heavy Spiked Mace. If he doesn't have it, fly/run to Crossroads instead and Turn in Supplies for the Crossroads
 .goto The Barrens,61.6,37.9,30
     .goto The Barrens,52.5,30.7,150
 step
@@ -280,7 +280,7 @@ step
 step
     #sticky
     #completewith Claws
-    >>Kill Raptors that you see. Loot them for some Raptor Heads - you’ll get more later
+    >>Kill Raptors that you see. Loot them for some Raptor Heads - you'll get more later
     .complete 869,1 --Raptor Head (12)
 step
     #sticky
@@ -538,7 +538,7 @@ step
 >>Kill Plainstriders in the area. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
-    >>Talk to Mankrik’s Wife
+    >>Talk to Mankrik's Wife
 .goto The Barrens,49.3,50.4
     .complete 4921,1 --Find Mankrik's Wife (1)
 step
@@ -803,7 +803,7 @@ step
 #sticky
 #label Owatanka2
 #completewith next
->>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can’t find him, skip this quest
+>>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
 .collect 5102,1,884 --Collect Owatanka's Tailspike
 .accept 884 >>Accept Owatanka
 step
@@ -1089,7 +1089,7 @@ step
 .goto The Barrens,65.6,47.1,40
         .goto The Barrens,63.3,54.2,40
 step
-    >>Look in the water for a Isha Awak (Red Threshadon). Kill and loot it for its heart. You can skip this quest if you don’t think you can kill it
+    >>Look in the water for a Isha Awak (Red Threshadon). Kill and loot it for its heart. You can skip this quest if you don't think you can kill it
     .complete 873,1 --Heart of Isha Awak (1)
 step
     .goto The Barrens,65.8,43.8

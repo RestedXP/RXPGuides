@@ -6,7 +6,7 @@ step
     #sticky
     #completewith next
 >>Drop your Hearthstone
-    >> Kill 2 Wolves for 10c+ of vendor trash before vendoring. Sell armor if you didn’t get enough
+    >> Kill 2 Wolves for 10c+ of vendor trash before vendoring. Sell armor if you didn't get enough
 .goto Elwynn Forest,49.5,45.4
 step
 .goto Elwynn Forest,50.1,42.7
@@ -705,7 +705,7 @@ step << Warrior
     #sticky
     #completewith next
     .money >0.0009
-    +Kill 2 Wolves for 10c+ of vendor trash before vendoring. Sell armor if you didn’t get enough
+    +Kill 2 Wolves for 10c+ of vendor trash before vendoring. Sell armor if you didn't get enough
     .goto Elwynn Forest,46.4,40.3
 step << Warrior
     .goto Elwynn Forest,47.5,41.6
@@ -845,7 +845,7 @@ step << Rogue
 step << Priest/Mage
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
-.complete 3904,1 --Collect Milly’s Harvest (x8)
+.complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
     >>Grind a bit en route. Kill Garrick and loot his head
@@ -885,7 +885,7 @@ step
 step << Warrior/Paladin/Rogue
     #sticky
     .goto Elwynn Forest,41.7,65.5
-    >>Train Blacksmithing. You’ll get mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour), or there’s a good chance you get it as a lucky drop from the Kobolds. You can skip Blacksmithing if you wish
+    >>Train Blacksmithing. You'll get mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour), or there's a good chance you get it as a lucky drop from the Kobolds. You can skip Blacksmithing if you wish
     .train 2018 >>Train Blacksmithing 
 step << Warrior
     .goto Elwynn Forest,41.5,65.9
@@ -897,7 +897,7 @@ step << Warrior
     .collect 2488,1 --Collect Gladius
 step << Rogue
     .goto Elwynn Forest,41.5,65.9
-    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c). You’ll come back later if you don’t have enough yet
+    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c). You'll come back later if you don't have enough yet
 step << Rogue
     .goto Elwynn Forest,41.5,65.9
     .money <0.0382
@@ -946,7 +946,7 @@ step << Rogue
 step << Rogue/Warrior
 .money <0.0095
     .goto Elwynn Forest,43.4,65.5
-    .train 3273 >> Train First Aid - Don’t make all your bandages at once, better time to make them later
+    .train 3273 >> Train First Aid - Don't make all your bandages at once, better time to make them later
 step << Warrior
 .money <0.0119
 .goto Elwynn Forest,43.8,65.8
@@ -1082,7 +1082,7 @@ step
 step
     .xp 7 >> Grind to 7
 step << Warrior
->>Exit through the lower entrance. Try to save a single healing potion from now on as you will need it for Rolf’s Corpse later
+>>Exit through the lower entrance. Try to save a single healing potion from now on as you will need it for Rolf's Corpse later
 .goto Elwynn Forest,38.1,81.6,15
 step << Warrior/Rogue
 >>Remember to make Sharpening Stones if you picked up a Rough Stone
@@ -1120,7 +1120,7 @@ step
     .accept 76 >> Accept The Jasperlode Mine
 step << Warrior
     .goto Elwynn Forest,41.5,65.9
-    .vendor >> vendor trash. Buy Gladius here if you didn’t buy it earlier
+    .vendor >> vendor trash. Buy Gladius here if you didn't buy it earlier
 step << Warrior
 .goto Elwynn Forest,41.5,65.9
     .money <0.0509
@@ -1128,7 +1128,7 @@ step << Warrior
     .collect 2488,1 --Collect Gladius
 step << Rogue
     .goto Elwynn Forest,41.5,65.9
-    .vendor >> vendor trash. Buy Stiletto here if you didn’t buy it earlier
+    .vendor >> vendor trash. Buy Stiletto here if you didn't buy it earlier
 step << Rogue
     .goto Elwynn Forest,41.5,65.9
     .money <0.0382
@@ -1136,7 +1136,7 @@ step << Rogue
     .collect 2494,1 --Collect Stiletto
 step << Paladin
 .goto Elwynn Forest,41.5,65.9
-.vendor >> vendor trash. Buy Wooden Mallet here if you didn’t buy it earlier
+.vendor >> vendor trash. Buy Wooden Mallet here if you didn't buy it earlier
 step << Paladin
     .goto Elwynn Forest,41.5,65.9
     .money <0.0666
@@ -1229,7 +1229,7 @@ step << Mage
     .accept 71 >> Accept Report to Thomas
 step << Warrior
     .goto Elwynn Forest,79.8,55.5
->> Pool Rage, then kill the 2 mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and keep one hamstrung whilst killing the other. Run away when you kill one (use marbles on it), then kill the other. Don’t be afraid to die to kill 1 mob. Loot the carcass on the ground
+>> Pool Rage, then kill the 2 mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and keep one hamstrung whilst killing the other. Run away when you kill one (use marbles on it), then kill the other. Don't be afraid to die to kill 1 mob. Loot the carcass on the ground
 .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step << Rogue
@@ -1358,12 +1358,12 @@ step
 step << Rogue/Warrior
 .money <0.0095
     .goto Elwynn Forest,43.4,65.5
-    .train 3273 >> Train First Aid - Don’t make all your bandages at once, better time to make them later
+    .train 3273 >> Train First Aid - Don't make all your bandages at once, better time to make them later
 step << Priest
     #sticky
 #completewith next
 .goto Elwynn Forest,43.3,65.7
-    .train 2006 >>If you’re going to be playing with other players, Train Resurrection
+    .train 2006 >>If you're going to be playing with other players, Train Resurrection
 step << Priest
     .goto Elwynn Forest,43.3,65.7
     .accept 5636 >> Accept Desperate Prayer
@@ -1387,7 +1387,7 @@ step << Rogue
 step << Rogue
     .goto Elwynn Forest,41.7,65.9
     .money >0.3990
-    .vendor >>You don’t have enough money, so buy Stiletto for OH
+    .vendor >>You don't have enough money, so buy Stiletto for OH
 step
     >>Run out of the inn and go south
 .goto Elwynn Forest,43.2,89.6

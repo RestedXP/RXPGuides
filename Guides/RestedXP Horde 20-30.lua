@@ -57,7 +57,7 @@ step
     .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
 step << Rogue
-    +Run to the boat, then go down to the 2nd floor. Start picking lockboxes until you’re at 80 skill, then check this step
+    +Run to the boat, then go down to the 2nd floor. Start picking lockboxes until you're at 80 skill, then check this step
 .goto The Barrens,65.0,45.4
 step
     >>Run to Crossroads
@@ -254,7 +254,7 @@ step
 #completewith weapons
 .goto The Barrens,49.2,62.6,0
 .goto The Barrens,49.6,60.0,0
->>Search for Owatanka (Blue Thunder Lizard) around the area. If you find him, loot his Tailspike and start the quest. You’ll check more spots later if you don’t get it
+>>Search for Owatanka (Blue Thunder Lizard) around the area. If you find him, loot his Tailspike and start the quest. You'll check more spots later if you don't get it
 .collect 5102,1,884 --Collect Owatanka's Tailspike
 .accept 884 >>Accept Owatanka
 step
@@ -617,9 +617,9 @@ step << Rogue
 step << Rogue
     #sticky
     #completewith next
-    +Make sure you have a dagger in your inventory. If you don’t, buy the cheapest one you can find
+    +Make sure you have a dagger in your inventory. If you don't, buy the cheapest one you can find
 step << Rogue
-    >>Use the Flare gun when you’re about 50 yards from Taskmaster Fizzule. Then, /salute him. When he turns friendly, talk to him
+    >>Use the Flare gun when you're about 50 yards from Taskmaster Fizzule. Then, /salute him. When he turns friendly, talk to him
 .goto The Barrens,55.4,5.6
     .turnin 2458 >>Turn in Deep Cover
     .accept 2478 >>Mission: Possible But Not Probable
@@ -653,7 +653,7 @@ step << Rogue
 >>Run back to Orgrimmar through the West Entrance
     .goto Orgrimmar,11.6,66.9,30
 step << Rogue
->>You’re now going to get a week-long debuff making you unable to stealth. Relax and follow the route
+>>You're now going to get a week-long debuff making you unable to stealth. Relax and follow the route
 .goto Orgrimmar,43.1,53.7
     .turnin 2478 >>Turn in Mission: Possible But Not Probable
     .accept 2479 >>Accept Hinott's Assistance
@@ -868,7 +868,7 @@ step
 step
     #sticky
        #completewith next
-        +Buy food behind you if you need to. You’re now going to do a lot of running
+        +Buy food behind you if you need to. You're now going to do a lot of running
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
@@ -1162,7 +1162,7 @@ step
 .goto The Barrens,44.2,62.1,0
 .goto The Barrens,49.2,62.6,0
 .goto The Barrens,49.6,60.0,0
->>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can’t find him, skip this quest
+>>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
 .collect 5102,1,884 --Collect Owatanka's Tailspike
 .accept 884 >>Accept Owatanka
 step << Warrior
@@ -1181,7 +1181,7 @@ step
 .goto The Barrens,44.7,74.7,0
 .goto The Barrens,44.7,77.8,0
 .goto The Barrens,47.6,79.8,0
->>Search for Washte Pawne (Red Thunder Lizard) around the area. He's a red Wind Serpent that drops a quest. Accept Gann’s Reclamation if you see him en route
+>>Search for Washte Pawne (Red Thunder Lizard) around the area. He's a red Wind Serpent that drops a quest. Accept Gann's Reclamation if you see him en route
 .collect 5103,1 --Collect Washte Pawne's Feather
 .accept 885 >>Accept Washte Pawne
 step
@@ -1195,7 +1195,7 @@ step
 #label Washte
 #completewith next
 .goto The Barrens,44.7,74.7,0
->>Search for Washte Pawne. He's a red Wind Serpent that drops a quest. If you can’t find him in this last spot, skip the quest
+>>Search for Washte Pawne. He's a red Wind Serpent that drops a quest. If you can't find him in this last spot, skip the quest
 .collect 5103,1 --Collect Washte Pawne's Feather
 .accept 885 >>Accept Washte Pawne
 step
@@ -1216,7 +1216,7 @@ step
     #requires Weapons
     #sticky
     #label Baeldun
->>Kill Dwarves in the area for Gann’s Reclamation
+>>Kill Dwarves in the area for Gann's Reclamation
     .complete 843,1 --Kill Bael'dun Excavator (x15)
     .complete 843,2 --Kill Bael'dun Foreman (x5)
 step
@@ -1241,7 +1241,7 @@ step
     .complete 846,2 --Collect Wood Pulp (x6)
     .complete 846,3 --Collect Sodium Nitrate (x6)
 step << Hunter/Warlock
-    >>Go downstairs into the main room of the building. You can either try fighting the mobs by letting your pet tank. (Pull the closest mobs to you, don’t directly pull Twinbraid). Alternatively, you can send your pet in, loot the chest, then die and run back.
+    >>Go downstairs into the main room of the building. You can either try fighting the mobs by letting your pet tank. (Pull the closest mobs to you, don't directly pull Twinbraid). Alternatively, you can send your pet in, loot the chest, then die and run back.
 .goto The Barrens,49.1,84.3
     .complete 857,1 --Collect Tear of the Moons (x1)
 step
@@ -1325,7 +1325,7 @@ step
 .goto Thousand Needles,53.9,41.5
     .accept 1149 >> Accept Test of Faith
 step
-    >>Jump off the end of the wooden platform, you don’t die
+    >>Jump off the end of the wooden platform, you don't die
 .goto Thousand Needles,26.4,32.6,15
 step
     .goto Thousand Needles,53.9,41.7
@@ -1334,7 +1334,7 @@ step
 step
     #sticky
     #label Egg5
->>Look for the Alien Egg. It’s a lootable object in one of the camps
+>>Look for the Alien Egg. It's a lootable object in one of the camps
     .goto Thousand Needles,56.3,50.4,20,0
 .goto Thousand Needles,52.4,55.2,20,0
 .goto Thousand Needles,37.7,56.1,20,0
