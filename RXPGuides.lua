@@ -5,8 +5,9 @@ local version = select(4, GetBuildInfo())
 local _,class = UnitClass("player")
 
 local BackdropTemplate = "BackdropTemplate"
-if version < 20500 then
-	BackdropTemplate = nil    
+if version < 20500 or version >= 30000 then
+	BackdropTemplate = nil
+    error("Unsupported version")
 end
 
 
