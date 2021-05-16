@@ -1398,7 +1398,8 @@ StaticPopupDialogs["RXP_Link"] = {
     button1 = OKAY,
     OnShow = function(self)
         if RXP_.url then
-            local box = getglobal(self:GetName() .. "EditBox")        
+            local box = getglobal(self:GetName() .. "EditBox")
+            box:SetWidth(275)
             box:SetText(RXP_.url)
             box:HighlightText()
             box:SetFocus()

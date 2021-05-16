@@ -96,7 +96,8 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
             local t = {}
             
             if tag == "link" then
-                table.insert(t,args:gsub("%s+$",""))
+                local link = args:gsub("%s+$","")
+                table.insert(t,link)
             else
                 args = args:gsub("%s*,%s*",",")
                 for arg in string.gmatch(args, "[^,]+") do
