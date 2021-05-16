@@ -34,7 +34,7 @@ step << Paladin/Warrior
     #sticky
     .goto Dun Morogh,30.0,71.5
     .vendor >>Vendor trash
-step <<Warrior
+step
     .goto Dun Morogh,29.9,71.2
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery

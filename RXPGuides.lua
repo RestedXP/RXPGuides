@@ -179,7 +179,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         RXP_.SetStep(RXPCData.currentStep)
 	end
 	
-	if IsControlKeyDown() == not RXPData.disableQuestAutomation then return end
+	if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then return end
 	
 	if event == "QUEST_COMPLETE" then
 		local id = GetQuestID()

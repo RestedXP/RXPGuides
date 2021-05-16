@@ -217,7 +217,7 @@ step
     .goto The Exodar,68.3,63.5
     .fp >> Get the The Exodar flight path
 step << Hunter/Warrior/Paladin
-	>>Go into The Exodar
+	>>Go into The Exodar and talk to the weapon master at the top floor of the Trader's Tier
     .goto The Exodar,53.3,85.7
     .train 202 >>Train 2h swords
 	.train 5011 >>Train Crossbows << Hunter

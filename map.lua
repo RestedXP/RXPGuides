@@ -115,8 +115,9 @@ end
 if self.element then
     local x,y,instance = HBD:GetPlayerWorldPosition()
     local angle,dist = HBD:GetWorldVector(instance, x, y, self.element.wx,self.element.wy)
-    if not dist then return end
-    local orientation = angle-GetPlayerFacing()
+    local facing = GetPlayerFacing()
+    if not (dist and facing) then return end
+    local orientation = angle-facing
     local diff = math.abs(orientation-self.orientation)
     dist = math.floor(dist)
 
@@ -340,7 +341,7 @@ function RXP_.UpdateMap()
                 element.mapPin.text:SetPoint("LEFT",0,0)
                 element.mapPin:SetWidth(element.mapPin.text:GetStringWidth()+1)
                 element.mapPin:Show()
-                if miniMapPin then
+                if miniMapPin and step.active then
                     n = n +1
                     element.miniMapPin = CreateWPframe(n,step,element)
                     element.miniMapPin:SetAlpha(0.8)

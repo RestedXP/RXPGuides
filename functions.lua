@@ -423,11 +423,12 @@ function RXP_.functions.turnin(self,...)
         
         if step.active or element.retrieveText then
             RXP_.questTurnIn[id] = element
+            RXP_.questAccept[id] = RXP_.questAccept[id] or element
             local quest = RXP_.GetQuestName(id,true)
             if quest then
                 element.title = quest
                 RXP_.questTurnIn[quest] = element
-
+                RXP_.questAccept[quest] = RXP_.questAccept[quest] or element
                 element.text = element.text:gsub("%*quest%*",quest)
                 if element.requestFromServer then
                     element.requestFromServer = nil
@@ -695,6 +696,7 @@ function RXP_.functions.goto(self,...)
         element.radius = tonumber(radius)
         radius = element.radius
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
+        
         element.arrow = true
         element.parent = true
 

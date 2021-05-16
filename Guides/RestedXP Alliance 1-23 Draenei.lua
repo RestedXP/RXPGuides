@@ -329,6 +329,11 @@ step
     .complete 9513,2 --Kill Wrathscale Naga (x5)
     .complete 9513,3 --Kill Wrathscale Siren (x5)
     .complete 9523,1 --Collect Ancient Relic (x8)
+    .collect 23759,1,9514 --rune covered tablet
+step
+    #sticky
+    >>Click on the Rune Covered Tablet in your bags
+    .accept 9514>> Rune Covered Tablet
 step
     .goto Azuremyst Isle,18.4,84.1
 	>>Use the tree disguise at the naga flag
@@ -352,6 +357,7 @@ step
 step
     .goto Azuremyst Isle,47.0,70.3
     .turnin 9513 >> Turn in Reclaiming the Ruins
+    .turnin 9514 >> Turn in Rune Covered Tablet
     .turnin 9523 >> Turn in Precious and Fragile Things Need Special Handling
     .turnin 9531 >> Turn in Tree's Company
     .accept 9537 >> Accept Show Gnomercy
@@ -436,11 +442,16 @@ step << Hunter
     .turnin 9593 >> Turn in Taming the Beast
     .accept 9675 >> Accept Beast Training
 step << Hunter
+    #completewith next
+    .goto Azuremyst Isle,24.6,49.0,35
+    >>Enter The Exodar through the backdoor
+step << Hunter
     .goto The Exodar,44.1,86.6
     .turnin 9675 >> Turn in Beast Training
 step << Hunter
 	#sticky
 	#completewith next
+    >>Speak with the weapon master upstairs
     .goto The Exodar,53.3,85.7
     .train 202 >>Train 2h swords
 step
@@ -789,12 +800,12 @@ step
 	>>Kill elves around this area
     .complete 9779,1 --Collect Sunhawk Missive (x1)
 step
-	.xp 15-2300
+	.xp 15-1200
 step
 	#sticky
 	#label mailbox
 	>>Speak to Messenger Hermesius, he patrols around Blood Watch
-	.accept 9671
+    .accept 9671
 	.turnin 9671
 step
     .goto Bloodmyst Isle,52.7,53.2
@@ -878,6 +889,7 @@ step
 step << Warrior
     .turnin 10350 >> Turn in Behomat
     .goto The Exodar,55.6,82.1
+    >>Talk to the weapon master upstairs
     .train 199 >>Train 2h Maces
     .goto The Exodar,53.3,85.7
 step
@@ -887,9 +899,11 @@ step
     >>Buy a Bronze Tube from Feera (limited supply), skip this step if she doesn't have it or if you already have one
     .collect 4371,1,175
 step << Shaman
+    >>Talk to the weapon master upstairs
     .goto The Exodar,53.3,85.7
     .train 199 >>Train 2h Maces
 step << Paladin
+    >>Talk to the weapon master upstairs
     .goto The Exodar,53.3,85.7
     .train 202 >>Train 2h swords
 step << Shaman
