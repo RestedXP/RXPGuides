@@ -489,7 +489,8 @@ function RXP_.functions.turnin(self,...)
 
 end
 
-local questMonster = string.gsub(QUEST_MONSTERS_KILLED,"%%s","%.%*"):gsub("%%d","%%d%+")
+local questMonster = string.gsub(QUEST_MONSTERS_KILLED,"%d+%$","")
+questMonster = questMonster:gsub("%%s","%.%*"):gsub("%%d","%%d%+")
 local questItem = string.gsub(QUEST_ITEMS_NEEDED,"%%s","%(%.%*%)"):gsub("%%d","%%d%+")
 function RXP_.functions.complete(self,...)
     if type(self) == "string" then --on parse
