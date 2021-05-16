@@ -163,7 +163,7 @@ step << Warlock
 step << Warlock
 .xp 3+200 >> Grind until Level 3+200xp
 step << Warlock
->>Left click the Sliver in your bag
+>>Click the Sliver in your bag
 .accept 8338 >> Accept Tainted Arcane Sliver
  >> Die and respawn at the Spirit Healer, or run back
 .goto Eversong Woods,38.2,17.6,100
@@ -345,10 +345,9 @@ step
     .turnin 9705 >> Turn in Package Recovery
     .accept 8350 >> Accept Completing the Delivery
 step
-#sticky
-    >>Kill mobs you see on the way to Falconwing Square
-    .goto Eversong Woods,45.4,40.8
-    .xp 5+2690 >> Grind to (at least) 2690+/2800xp
+>>Kill mobs you see on the way to Falconwing Square
+.goto Eversong Woods,45.4,40.8
+.xp 5+2690 >> Grind to (at least) 2690+/2800xp
 step
     .goto Eversong Woods,47.3,46.3,30 >> Run to Falconwing Square
 ]],"BloodElf")
@@ -366,8 +365,7 @@ step
     .goto Eversong Woods,48.2,47.7
     .turnin 8350 >> Turn in Completing the Delivery
 step << Priest/Mage/Warlock/Warrior/Rogue/Paladin
-    >>Go upstairs
-    .goto Eversong Woods,48.3,47.0,8
+    .goto Eversong Woods,48.3,47.0,8 >>Go upstairs
 step << Priest
     .goto Eversong Woods,47.9,48.0
     .accept 9489 >> Cleansing the Scar
@@ -386,11 +384,11 @@ step << Warrior/Rogue/Paladin
     .train 3273 >>Train First Aid
 step << Mage/Warlock/Priest
     .goto Eversong Woods,48.2,47.7
-    .home >> Set your Hearthstone to Falconwing Square
+    .home >> Go back downstairs. Set your Hearthstone to Falconwing Square
     .vendor >> Buy as much level 5 drink as you can afford
 step << Warrior/Rogue/Paladin
     .goto Eversong Woods,48.2,47.7
-    .home >> Set your Hearthstone to Falconwing Square
+    .home >> Go back downstairs. Set your Hearthstone to Falconwing Square
 step
 .goto Eversong Woods,47.7,47.2,10     >>Go outside
 step
@@ -754,7 +752,7 @@ step << !Hunter
 .goto Eversong Woods,44.7,69.7
     .turnin 8491 >> Turn in Pelt Collection
 step
-    >> Be aware that Darkwrath's Enrage at low health, and Rotlimb Marauders have an instant-cast 15 damage spell
+    >> Be aware that Darkwraiths Enrage at low health, and Rotlimb Marauders have an instant-cast 15 damage spell
 .goto Eversong Woods,50.9,80.7,60,0
     .goto Eversong Woods,51.3,75.3,60,0
     .goto Eversong Woods,52.9,71.7,60,0
@@ -789,7 +787,7 @@ step << Warrior/Warlock/Rogue !Undead/!Warlock
     .xp 9+5700 >> Grind to 5700+/6500xp
 step << Undead Warlock
     .xp 9+5950 >> Grind to 5950+/6500xp
-step << !Hunter !Undead/!Warlock
+step << !Hunter !Warlock/!Scourge !Hunter
     .goto Eversong Woods,48.2,47.7,150 >> Hearth to Falconwing Square
 step << Undead Warlock
 .goto Eversong Woods,55.7,54.5
@@ -836,6 +834,7 @@ step << Paladin/Priest/Mage
     .accept 8483 >> Accept The Dwarven Spy
 step << Paladin/Priest/Mage
     .goto Eversong Woods,44.8,53.1
+>>Talk to Prospector Anvilward, wait out the RP event, then kill him
     .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
 step << !Hunter
     .goto Eversong Woods,48.2,46.0
@@ -880,7 +879,6 @@ step << Priest
     .train 2053 >>Train Lesser Heal r3
     .train 8092 >>Train Mind Blast
 .train 594 >>Train Shadow Word: Pain r2
-    .train 13908 >>Train Desperate Prayer
     .train 2652 >>Train Touch of Weakness
 step << Rogue
     .goto Eversong Woods,48.5,45.9
@@ -1104,6 +1102,7 @@ step << BloodElf Hunter
     .train 13549 >>Train Serpent Sting r2
 step << BloodElf Hunter  
     .goto Eversong Woods,44.8,53.1
+>>Talk to Prospector Anvilward, wait out the RP event, then kill him
     .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
 step << BloodElf Hunter  
     .goto Eversong Woods,48.2,46.0
@@ -1125,7 +1124,7 @@ step << BloodElf Hunter
     .turnin 9485 >> Turn in Taming the Beast
     .accept 9673 >> Accept Beast Training
 step
-    >>Run back to town
+    >>Run back to town. Remember to NOT sell your food quest items
 .goto Eversong Woods,59.5,62.6
     .turnin 8477 >> Turn in The Spearcrafter's Hammer
 step
@@ -1159,16 +1158,16 @@ step
     .goto Eversong Woods,68.7,47.0
     .turnin 8894 >> Turn in Cleaning up the Grounds
 step
-.goto Eversong Woods,68.9,52.0,15,0
-    .goto Eversong Woods,68.3,51.4,15 >>Click the Orb of Translocation to teleport to the platform.
+.goto Eversong Woods,68.9,52.0,20,0
+    .goto Eversong Woods,68.3,51.4,20 >>Click the Orb of Translocation to teleport to the platform.
 step
     >>Click the big green crystal
     .goto Eversong Woods,68.9,52.0
-    .complete 8889,1 --Collect First Power Source Deactivated (x1)
+    .complete 8889,1 --First Power Source Deactivated (x1)
 step
     >>Go Upstairs
     .goto Eversong Woods,68.9,52.0
-    .complete 8889,2 --Collect Second Power Source Deactivated (x1)
+    .complete 8889,2 --Second Power Source Deactivated (x1)
 step
     >>Click the blue journal on the table on the second floor.
 .goto Eversong Woods,69.2,52.1
@@ -1176,10 +1175,9 @@ step
 step
     >>Click the last green crystal. Make sure you're clicking the crystal and not the Orb yet
 .goto Eversong Woods,69.6,53.3
-    .complete 8889,3 --Collect Third Power Source Deactivated (x1)
+    .complete 8889,3 --Third Power Source Deactivated (x1)
 step
-    .goto Eversong Woods,68.9,52.0,15 >>Click the Orb of Translocation behind the green crystal, and go to the bottom
-
+    .goto Eversong Woods,68.9,52.0,20 >>Click the Orb of Translocation behind the green crystal, and go to the bottom
 step << !BloodElf/!Warlock
     .goto Eversong Woods,68.6,47.0
     .xp 11+6375 >> Grind to 6375+/8700xp
@@ -1188,7 +1186,8 @@ step
     .turnin 8889 >> Turn in Deactivating the Spire
     .accept 8890 >> Accept Word from the Spire
 step
-    .goto Eversong Woods,60.3,61.4
+    >>Run back to Farstrider Retreat and go upstairs. Remember to NOT sell your food quest items
+.goto Eversong Woods,60.3,61.4
     .turnin 8890 >> Turn in Word from the Spire
     .turnin 8891 >> Turn in Abandoned Investigations
 step
@@ -1325,7 +1324,6 @@ step << !BloodElf/!Hunter
 step << !BloodElf/!Hunter
     .goto Eversong Woods,43.3,70.8
     .turnin 9363 >>Turn in Warning Fairbreeze Village
-add to !BloodElf Hunter later
 step << !BloodElf/!Hunter
     .goto Eversong Woods,38.1,73.6
     .turnin 9067 >> Turn in The Party Never Ends
@@ -1536,16 +1534,16 @@ step
     .goto Ghostlands,69.4,15.1
     .turnin 9143 >> Turn in Dealing with Zeb'Sora
     .accept 9146 >> Accept Report to Captain Helios
-step << Priest/Mage/Druid/Warlock/Rogue
+step
     .isQuestComplete 9315
 >>Grind Nerubians
 .goto Ghostlands,61.2,12.0
     .xp 13+10150 >>Grind to 10150+/11000xp
-step << Priest/Mage/Druid/Warlock/Rogue
+step
     >>Grind Nerubians
 .goto Ghostlands,61.2,12.0
     .xp 13+9275 >>Grind to 9275+/11000xp
-step << Priest/Mage/Druid/Warlock/Rogue
+step
     >> Die and respawn at the Spirit Healer, or run back
     .goto Ghostlands,43.9,25.7,200
 step
@@ -1730,15 +1728,15 @@ step
 .complete 9155,2 --Kill Gangled Cannibal (x10)
     .complete 9155,1 --Kill Risen Hungerer (x10)
 step
+    .goto Ghostlands,46.1,33.6
+    .turnin 9155 >> Turn in Down the Dead Scar
+step
     .goto Ghostlands,44.8,32.5
     .turnin 9160 >> Turn in Investigate An'daroth
     .accept 9163 >> Accept Into Occupied Territory
     .turnin 9192 >> Turn in Trouble at the Underlight Mines
     .accept 9199 >> Accept Troll Juju
     .accept 9173 >> Accept Retaking Windrunner Spire
-step
-    .goto Ghostlands,46.1,33.6
-    .turnin 9155 >> Turn in Down the Dead Scar
 step
     .goto Ghostlands,47.6,34.7
     .turnin 9149 >> Turn in The Plagued Coast
@@ -1805,6 +1803,10 @@ step
     .goto Ghostlands,44.1,57.6,30,0
     .goto Ghostlands,16.5,62.5,30,0
     .goto Ghostlands,44.1,57.6,30,0
+    .goto Ghostlands,16.5,62.5,30,0
+    .goto Ghostlands,44.1,57.6,30,0
+    .goto Ghostlands,16.5,62.5,30,0
+    .goto Ghostlands,44.1,57.6,30,0
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step
@@ -1833,6 +1835,7 @@ step
 step
     .goto Ghostlands,43.9,25.7,200 >> Die and respawn at the Spirit Healer, or run back
 step
+.isQuestComplete 9171
 .goto Ghostlands,48.5,30.7
     .turnin 9171 >> Turn in Culinary Crunch
 step
@@ -1890,7 +1893,7 @@ step << Rogue
 step << Paladin
 .goto Silvermoon City,89.3,35.2
 .turnin 9678 >>Turn in The First Trial
-    .accept 9681 >>Accept A Study in Power
+    .accept 64319 >>Accept A Study in Power
 step << Paladin
     .goto Silvermoon City,92.2,37.5
     .train 647 >>Train Holy Light r3
@@ -1899,10 +1902,10 @@ step << Paladin
 step << Paladin
     >>Jump down the hole behind the trainer
     .goto Silvermoon City,92.1,36.2
-    .turnin 9681 >>Turn in A Study in Power
+    .turnin 64319 >>Turn in A Study in Power
     .accept 63866 >>Accept Claiming the Light
 step << Paladin
-    >>Use the Shimmering Vessel on a Blood Elf Magister
+    >>Use the Shimmering Vessel on M'uru
 .goto Silvermoon City,92.6,36.8
 .complete 63866,1 --Collect Filled Shimmering Vessel
 step << Paladin
@@ -2402,7 +2405,7 @@ step << Mage
     .train 1463 >>Train Mana Shield
     .train 7301 >>Train Frost Armor r3
     .train 5506 >>Train Conjure Water r3
-step
+step << Mage
     .goto Silvermoon City,58.1,20.9
     .trainer >>Train Teleport Silvermoon
 step << Rogue
@@ -2471,6 +2474,9 @@ step
 step 
     .goto Undercity,63.3,48.6
 .fp >> Get the Undercity flight path
+step << Mage
+    .goto Undercity,84.2,15.6
+    .trainer >>Train Teleport Undercity
 step
 .goto Undercity,52.0,64.6,35 >>Enter the Royal Quarter
 step << BloodElf
@@ -2516,6 +2522,5 @@ step
 step
 .zone Durotar >>Arrive in Durotar
 ]],"!Warrior !Shaman")
-
 
 
