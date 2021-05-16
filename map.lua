@@ -84,7 +84,7 @@ af.texture:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_navigation_arrow-
 --af.texture:SetScale(0.5)
 af.text = af:CreateFontString(nil,"OVERLAY")
 af.text:SetTextColor(1,1,1,1)
-af.text:SetFont("Fonts\\FRIZQT__.TTF", 9)--,"OUTLINE")
+af.text:SetFont(RXP_.font, 9)--,"OUTLINE")
 af.text:SetJustifyH("CENTER")
 af.text:SetJustifyV("CENTER")
 af.text:SetPoint("TOP",af,"BOTTOM",0,-5)
@@ -225,7 +225,7 @@ function CreateWPframe(id,step,element)
         --f:SetBackdrop(backdrop)
         f.text = f.text or f:CreateFontString(nil,"OVERLAY") 
         f.text:SetTextColor(unpack(colors.mapPins))
-        f.text:SetFont("Fonts\\FRIZQT__.TTF", 14,"OUTLINE")
+        f.text:SetFont(RXP_.font, 14,"OUTLINE")
         f.text:SetJustifyH("LEFT")
         f.text:SetJustifyV("CENTER")
 
@@ -330,10 +330,10 @@ function RXP_.UpdateMap()
                     framelevel = "PIN_FRAME_LEVEL_ACTIVE_QUEST"
                     --element.mapPin:SetAlpha(0.8)
                 end
-                if icon == "" then
-                    element.mapPin.text:SetFont("Fonts\\FRIZQT__.TTF", 14,"OUTLINE")
+                if step.active and icon == "" then
+                    element.mapPin.text:SetFont(RXP_.font, 14,"OUTLINE")
                 else
-                    element.mapPin.text:SetFont("Fonts\\FRIZQT__.TTF", 9,"OUTLINE")
+                    element.mapPin.text:SetFont(RXP_.font, 9,"OUTLINE")
                 end
                 element.mapPin.text:SetText(label..icon)
                 AddMapIcon(RXP_, RXP_.mapPins[n], element.instance, element.wx, element.wy, HBD_PINS_WORLDMAP_SHOW_CONTINENT, framelevel)

@@ -15,6 +15,7 @@ RXP_.itemQueryList = {}
 RXP_.questAccept = {}
 RXP_.questTurnIn = {}
 
+RXP_.font = GameFontNormal:GetFont()
 local eventFrame = CreateFrame("Frame");
 local f = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, BackdropTemplate)
@@ -47,6 +48,7 @@ function RXPG_init()
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.trainGenericSpells = RXPData.trainGenericSpells or true
+    f:SetShown(not RXPCData.hideWindow)
     --RXP_.arrowFrame:SetShown(not RXPData.disableArrow)
 end
 
@@ -662,7 +664,7 @@ function RXP_.SetStep(n,n2)
 			stepframe.number.text:SetJustifyH("CENTER")
 			stepframe.number.text:SetJustifyV("CENTER")
 			stepframe.number.text:SetTextColor(1,1,1)
-			stepframe.number.text:SetFont("Fonts\\FRIZQT__.TTF", 9)
+			stepframe.number.text:SetFont(RXP_.font, 9)
 		end
 		stepframe.number.text:SetText("Step "..tostring(index))
 		stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
@@ -713,7 +715,7 @@ function RXP_.SetStep(n,n2)
 				elementFrame.text:SetJustifyH("LEFT")
 				elementFrame.text:SetJustifyV("CENTER")
 				elementFrame.text:SetTextColor(1,1,1)
-				elementFrame.text:SetFont("Fonts\\FRIZQT__.TTF", 11)
+				elementFrame.text:SetFont(RXP_.font, 11)
 				
 				--[[
 				elementFrame.text:SetJustifyH("LEFT")
@@ -975,7 +977,7 @@ f.GuideName.text:SetPoint("RIGHT",f.GuideName,0,0)
 f.GuideName.text:SetJustifyH("CENTER")
 f.GuideName.text:SetJustifyV("CENTER")
 f.GuideName.text:SetTextColor(1,1,1)
-f.GuideName.text:SetFont("Fonts\\FRIZQT__.TTF", 11)
+f.GuideName.text:SetFont(RXP_.font, 11)
 f.GuideName.text:SetText("Welcome to RestedXP Guides\nClick here to pick a guide")
 f.GuideName:SetFrameLevel(6)
 
@@ -1289,7 +1291,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 			frame.number.text:SetJustifyH("CENTER")
 			frame.number.text:SetJustifyV("CENTER")
 			frame.number.text:SetTextColor(1,1,1,1)
-			frame.number.text:SetFont("Fonts\\FRIZQT__.TTF", 8)
+			frame.number.text:SetFont(RXP_.font, 8)
 			local prefix = ""
 			if n < 10 then prefix = "0" end
 			frame.number.text:SetText(prefix..tostring(n))
@@ -1303,7 +1305,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 		frame.text:SetJustifyH("LEFT")
 		frame.text:SetJustifyV("TOP")
 		frame.text:SetTextColor(1,1,1,1)
-		frame.text:SetFont("Fonts\\FRIZQT__.TTF", 9)
+		frame.text:SetFont(RXP_.font, 9)
 		
 		--frame.text:SetHeight(1000)
 		
@@ -1607,7 +1609,18 @@ function RXP_.CreateOptionsPanel()
     button.Text:SetText("Auto load starting zone guides")
     button.tooltip = "Automatically picks a suitable guide whenever you log in for the first time on a character" 
     --
-    
+    button = CreateFrame("CheckButton", "$parentHideWindow", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        local hide = self:GetChecked()
+        RXPCData.hideWindow = hide
+        f:SetShown(not hide)
+    end)
+    button:SetChecked(RXPCData.hideWindow)
+    button.Text:SetText("Hide Window")
+    button.tooltip = "Hides the main window" 
     
     button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)

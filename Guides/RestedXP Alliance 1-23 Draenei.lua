@@ -65,6 +65,12 @@ step
     #label survivors
 	>>Use your Gift of the Naaru spell on one of the injured survivors scattered all around the starting zone
     .complete 9283,1 --Draenei Survivors Saved
+step
+    #sticky
+    #label survivors2
+    #requires survivors
+    .goto Azuremyst Isle,80.1,49.0,0
+    .turnin 9283 >> Turn in Rescue the Survivors!
 step << Shaman
     .goto Azuremyst Isle,70.1,36.6
     .complete 9450,1 --Kill Restless Spirit of Earth (x4)
@@ -102,7 +108,7 @@ step
     .accept 9309 >> Accept The Missing Scout
 step
     .goto Azuremyst Isle,77.3,58.7
-	>>Click on the big crystal next to the lake
+	>>Click on the big crystal inside  the lake
     .complete 9294,1 --Collect Disperse the Neutralizing Agent (x1)
 step
     .goto Azuremyst Isle,72.0,60.8
@@ -137,11 +143,7 @@ step
     .turnin 9312 >> Turn in The Emitter
     .accept 9313 >> Accept Travel to Azure Watch
 step
-    #sticky
-    #requires survivors
-    .goto Azuremyst Isle,80.1,49.0
-    .turnin 9283 >> Turn in Rescue the Survivors!
-step
+    #requires survivors2
     .goto Azuremyst Isle,64.6,54.2
     .accept 9314 >> Accept Word from Azure Watch
 step
@@ -154,7 +156,7 @@ step
 	.collect 23614,10
 step
     .goto Azuremyst Isle,53.9,34.4
-    >>Loot a glowing crystal from a Moonstalker
+    >>Loot a glowing crystal from an Infected Nightstalker
     .accept 9455 >> Accept Strange Findings
 step
 	#sticky
