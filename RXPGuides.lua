@@ -99,14 +99,15 @@ function RXP_.BuySpells(id,level)
         end
     end
     
-    rank = rank and tonumber(rank:match("(%d+)")) or 0
-	for spellName,spellRank in pairs(RXP_.skillList) do
-		if name == spellName and (rank <= spellRank or spellRank == 0) then
-			BuyTrainerService(id)
-			return
-		end
-	end
-    
+    if not RXPData.disableTrainerAutomation then
+        rank = rank and tonumber(rank:match("(%d+)")) or 0
+        for spellName,spellRank in pairs(RXP_.skillList) do
+            if name == spellName and (rank <= spellRank or spellRank == 0) then
+                BuyTrainerService(id)
+                return
+            end
+        end
+    end
 end
 
 local function OnTrainer()
