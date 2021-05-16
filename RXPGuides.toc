@@ -1,4 +1,4 @@
-## Interface: 20500
+## Interface: 20501
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: Zarant
