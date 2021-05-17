@@ -161,7 +161,8 @@ function RXP_.UpdateGotoSteps()
     end
 end
 
-MapPinPool = {}
+local MapPinPool = {}
+RXP_.MapPinPool = MapPinPool
 
 MapPinPool.create = function()
     local framePool = CreateFramePool()
