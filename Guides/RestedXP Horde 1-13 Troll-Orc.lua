@@ -339,9 +339,11 @@ step << !Shaman
     .xp 5+1680 >> Grind to 1680+/2800xp
 step << Shaman
     .xp 5+690 >> Grind to 690+/2800xp
-step
+step << !Paladin
     .hs >>Hearth to Valley of Trials
     .goto Durotar,43.3,69.0,100,0
+step << Paladin
+    .goto Durotar,43.3,69.0,140 >>Die near the start of the cave and respawn at the spirit healer, or run back to town
 step
     .goto Durotar,44.6,68.6
     .turnin 6394 >>Turn in Thazz'ril's Pick
@@ -590,6 +592,13 @@ step << Paladin
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
+step << Paladin
+    .goto Orgrimmar,49.1,94.7,20 >> Run into Orgrimmar
+step << Paladin
+    .goto Orgrimmar,32.3,35.7
+    .trainer >> Go and train your class spells
+step << Paladin
+    .hs >>Hearth to Razor Hill
 step << Priest
     .goto Durotar,54.3,42.9
     .turnin 5649 >> In Favor of Spirituality
@@ -868,7 +877,7 @@ step << Rogue
     .goto Durotar,56.5,73.1
     .money <0.0382
     .vendor >> Buy another Stiletto and equip it
-step << Warrior/Rogue
+step << Warrior/Rogue/Paladin
 .goto Durotar,54.2,41.9
     .money <0.0095
     .train 3273 >>Train First Aid
@@ -1041,6 +1050,9 @@ step << !Shaman !Warrior
 .goto Undercity,54.9,11.3,18 >>Use the Orb of Translocation
 step << !Shaman !Warrior
 .goto Silvermoon City,62.0,30.1,20 >>Arrive in Silvermoon
+step << Paladin
+    .goto Silvermoon City,91.2,36.9
+    .trainer >> Go and train your class spells
 ]],"Orc/Troll")
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde Warrior/Shaman
