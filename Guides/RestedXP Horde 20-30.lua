@@ -1676,6 +1676,7 @@ step << Hunter
 .trainer >> Go and train your pet spells
 step << Warrior
     .goto Orgrimmar,79.7,31.4
+    .accept 1718 >>Accept The Islander
 .trainer >> Go and train your class spells
 step << Rogue
     .goto Orgrimmar,44.0,54.6
