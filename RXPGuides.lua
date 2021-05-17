@@ -419,9 +419,9 @@ RXP_.colors = colors
 colors.background = {12/255,12/255,27/255,1}
 colors.bottomFrameBG = {18/255,18/255,40/255,1}
 colors.bottomFrameHighlight = {54/255,62/255,109/255,1}
-colors.mapPins = {206/255,123/255,1,1}
-colors.mapPinsBackground = {0.1, 0.1, 0.1, 1}
-colors.mapPinsActiveBackground = {0, 0, 0, 1}
+colors.mapPins = {206/210,123/210,1,1}
+colors.mapPinsBackground = {0.1, 0.1, 0.1, 0.5}
+colors.mapPinsActiveBackground = {0, 0, 0, 0.5}
 
 local function SetColor(ref,a,r,g,b)
     local rr,rg,rb,ra = unpack(ref)
