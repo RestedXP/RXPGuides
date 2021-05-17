@@ -48,7 +48,7 @@ function RXPG_init()
 	RXPData.numMapPins = RXPData.numMapPins or 7
 	RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
 	RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
-	RXPData.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity 1
+	RXPData.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity or 0.5
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.trainGenericSpells = RXPData.trainGenericSpells or true
@@ -1153,9 +1153,10 @@ f.SF.ScrollBar:SetThumbTexture(prefix.."Knob")
 hooksecurefunc(f.SF.ScrollBar,"SetValue",function(self,value)
 	local h = math.floor(f.Steps:GetHeight()+10)
 	local scroll = h-f.BottomFrame:GetHeight()
-	if scroll < 0 then scroll = 0 end
+    local zero = RXPData.hideCompletedSteps and RXPCData.currentStep and RXPCData.currentStep > 1 and RXP_.stepPos[RXPCData.currentStep-1]+RXPCData.currentStep or 0
+	if scroll < zero then scroll = zero end
 	if scroll <= value then f.SF.ScrollBar.ScrollDownButton:Disable() end
-	f.SF.ScrollBar:SetMinMaxValues(0,scroll)
+	f.SF.ScrollBar:SetMinMaxValues(zero,scroll)
 end)
 
 
@@ -1302,6 +1303,7 @@ function RXP_:LoadGuide(guide,OnLoad)
                 local menuList = {
                     {notCheckable = 1, text = "Go to step "..n,func = RXP_.SetStep, arg1 = n},
                     {notCheckable = 1, text = "Select another guide",func = RXP_.DropDownMenu},
+                    {text = "Reload Guide", notCheckable = 1, func = RXP_.LoadGuide, arg1 = RXP_.currentGuide},
                     {text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG},
                     {text = "Close",notCheckable = 1,func = function(self) self:Hide() end},
                 }
@@ -1665,18 +1667,6 @@ function RXP_.CreateOptionsPanel()
     button.Text:SetText("Hide Window")
     button.tooltip = "Hides the main window" 
     
-    button = CreateFrame("CheckButton", "$parentReverseAnchor", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
-    index = index + 1
-    button:SetScript("PostClick",function(self) 
-        local hide = self:GetChecked()
-        RXPData.reverseAnchor = hide
-        f:SetShown(not hide)
-    end)
-    button:SetChecked(RXPCData.reverseAnchor)
-    button.Text:SetText("Grow downwards")
-    button.tooltip = "Hides the main window" 
     
     button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
@@ -1688,6 +1678,20 @@ function RXP_.CreateOptionsPanel()
     button:SetChecked(RXPData.lockFrames)
     button.Text:SetText("Lock Frames")
     button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it" 
+   
+    button = CreateFrame("CheckButton", "$parentHideCompleted", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self)
+        RXPData.hideCompletedSteps = self:GetChecked()
+        f.SF.ScrollBar:SetValue(0)
+    end)
+    button:SetChecked(RXPData.hideCompletedSteps)
+    button.Text:SetText("Hide Completed Steps")
+    button.tooltip = "Only shows current and future steps on the guide window" 
+   
+   
    
     button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
@@ -1746,7 +1750,7 @@ function RXP_.CreateOptionsPanel()
         return slider
     end
     local slider
-    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,280,-25)
+    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,315,-25)
     slider = CreateSlider(RXPData,"windowSize",0.2,2,"Window Scale: %.2f","Scale of the Main Window, use alt+left click on the main window to resize it",slider,0,-25)
     slider = CreateSlider(RXPData,"numMapPins",1,20,"Number of Map Pins: %d","Number of map pins shown on the world map",slider,0,-25)
     slider = CreateSlider(RXPData,"worldMapPinScale",0.05,1,"Map Pin Scale: %.2f","Adjusts the size of the world map pins",slider,0,-25, "0.05", "1", 0.05)
