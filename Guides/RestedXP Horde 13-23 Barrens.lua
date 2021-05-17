@@ -3,8 +3,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 #name 13-23 The Barrens
 #next 23-27 Hillsbrad - Ashenvale
 step << Warrior
-    >>Run up the mountain here
-.goto The Barrens,57.9,25.5,20
+.goto The Barrens,57.9,25.5,20 >>Run up the mountain here
 step << Warrior
     >>Go to the top of the mountain
 .goto The Barrens,57.2,30.3
@@ -40,8 +39,7 @@ step << Warrior
     #sticky
     #completewith next
 #requires Steel
->>You can run up the mountain here
-    .goto The Barrens,54.7,28.0
+    .goto The Barrens,54.7,28.0 >>You can run up the mountain here
 step << Warrior
     #requires Steel
 .goto The Barrens,57.2,30.3
@@ -57,12 +55,10 @@ step
 >>Kill some Plainstriders en route if you have time on Flawed Power Stone. Loot them for Beaks
     .complete 844,1 --Plainstrider Beak (7)
 step
-    >>Run up the mountain here
-.goto The Barrens,50.4,22.0,20
+.goto The Barrens,50.4,22.0,20 >>Run up the mountain here
 step
     #label BeakCave
->>Go to the cave surrounded by Burning Blade orcs
-.goto The Barrens,47.6,19.2,20
+.goto The Barrens,47.6,19.2,20 >>Go to the cave surrounded by Burning Blade orcs
 step
     >>Right click the Altar
 .goto The Barrens,48.0,19.1
@@ -94,13 +90,11 @@ step
      #sticky
     #completewith next
 >> Check if Lizzarik (Goblin) is in Crossroads, if he is, and you have enough money, buy pots and Heavy Spiked Mace.
-    .goto The Barrens,52.5,30.7,10
+    .goto The Barrens,52.5,30.7,10,0
 step
     #sticky
     #completewith next
 .collect 4778,1 --Collect Heavy Spiked Mace
-step
-    .goto The Barrens,57.9,24.6,400
 step
     #sticky
     #completewith Crates
@@ -121,10 +115,10 @@ step
     #sticky
     #completewith next
 >>Find the Crates
-.goto The Barrens,58.5,27.3,40
-    .goto The Barrens,58.4,27.0,40
-    .goto The Barrens,58.5,25.8,40
-    .goto The Barrens,59.4,24.8,40
+.goto The Barrens,58.5,27.3,40,0
+    .goto The Barrens,58.4,27.0,40,0
+    .goto The Barrens,58.5,25.8,40,0
+    .goto The Barrens,59.4,24.8,40,0
 step
 #label Crates
 >>Loot the crates found in the area
@@ -204,25 +198,33 @@ step
     .home >>Set your Hearthstone to Ratchet
 step
     #sticky
-    #completewith Longshore
+    #completewith next
     >>Kill Southsea mobs in the area
     .complete 887,1 --Southsea Brigand (12)
     .complete 887,2 --Southsea Cannoneer (6)
 step
-    #sticky
-    #completewith next
-    >>Search for Baron Longshore
-.goto The Barrens,64.2,47.1,30
-    .goto The Barrens,63.6,49.1,30
-    .goto The Barrens,62.6,49.7,30
-step
-    #label Longshore
-.goto The Barrens,63.9,47.1
+.goto The Barrens,64.2,47.1,40,0
+    .goto The Barrens,63.6,49.1,40,0
+    .goto The Barrens,62.6,49.7,40,0
+.goto The Barrens,64.2,47.1,40,0
+    .goto The Barrens,63.6,49.1,40,0
+    .goto The Barrens,62.6,49.7,40,0
+.goto The Barrens,64.2,47.1,40,0
+    .goto The Barrens,63.6,49.1,40,0
+    .goto The Barrens,62.6,49.7,40,0
     >>Kill Baron Longshore. Loot him for his Head
     .complete 895,1 --Baron Longshore's Head (1)
 step
     >>Finish killing the Southsea mobs
-.goto The Barrens,62.7,49.7
+.goto The Barrens,64.2,47.1,40,0
+    .goto The Barrens,63.6,49.1,40,0
+    .goto The Barrens,62.6,49.7,40,0
+.goto The Barrens,64.2,47.1,40,0
+    .goto The Barrens,63.6,49.1,40,0
+    .goto The Barrens,62.6,49.7,40,0
+.goto The Barrens,64.2,47.1,40,0
+    .goto The Barrens,63.6,49.1,40,0
+    .goto The Barrens,62.6,49.7,40,0
     .complete 887,1 --Southsea Brigand (12)
     .complete 887,2 --Southsea Cannoneer (6)
 step
@@ -246,9 +248,8 @@ step
 step
     #sticky
     #completewith next
->> Walk via the road to Crossroads, look out for Lizzarik to buy a Heavy Spiked Mace. If he doesn't have it, fly/run to Crossroads instead and Turn in Supplies for the Crossroads
-.goto The Barrens,61.6,37.9,30
-    .goto The Barrens,52.5,30.7,150
+.goto The Barrens,61.6,37.9,30,0
+    .goto The Barrens,52.5,30.7,150 >> Walk via the road to Crossroads, look out for Lizzarik to buy a Heavy Spiked Mace. If he doesn't have it, fly/run to Crossroads instead and Turn in Supplies for the Crossroads
 step
     #sticky
     #completewith next
@@ -285,11 +286,10 @@ step
 step
     #sticky
     #completewith Claws
-.goto The Barrens,41.4,24.5,40
-    .goto The Barrens,40.4,20.0,40
-step
-    #sticky
-    #completewith Claws
+.goto The Barrens,41.4,24.5,40,0
+    .goto The Barrens,40.4,20.0,40,0
+.goto The Barrens,41.4,24.5,40,0
+    .goto The Barrens,40.4,20.0,40,0
     .complete 821,1 --Savannah Lion Tusk (5)
 step
     #label Claws
@@ -297,29 +297,27 @@ step
 .goto The Barrens,41.4,24.5
     .complete 903,1 --Prowler Claws (7)
 step
-    #sticky
-    #completewith next
-.goto The Barrens,40.2,18.9,40
-    .goto The Barrens,40.7,14.6,40
-    .goto The Barrens,42.6,15.1,40
-step
+.goto The Barrens,40.2,18.9,40,0
+    .goto The Barrens,40.7,14.6,40,0
+    .goto The Barrens,42.6,15.1,40,0
+.goto The Barrens,40.2,18.9,40,0
+    .goto The Barrens,40.7,14.6,40,0
+    .goto The Barrens,42.6,15.1,40,0
     >>Kill Harpies. Loot them for their Talons
-.goto The Barrens,40.2,18.9
     .complete 867,1 --Witchwing Talon (8)
 step
     #sticky
-    #completewith Heads
+    #completewith next
 >>Kill Plainstriders. Loot them for their Kidneys 
     .complete 821,2 --Plainstrider Kidney (5)
 step
-    #sticky
-    #completewith next
-.goto The Barrens,54.3,12.3,40
-    .goto The Barrens,54.6,16.7,40
-step
-    #label Heads
+.goto The Barrens,54.3,12.3,40,0
+    .goto The Barrens,54.6,16.7,40,0
+.goto The Barrens,42.6,15.1,40,0
+.goto The Barrens,54.3,12.3,40,0
+    .goto The Barrens,54.6,16.7,40,0
+.goto The Barrens,42.6,15.1,40,0
 >>Kill Raptors. Loot them for their heads
-.goto The Barrens,42.6,15.1
     .complete 869,1 --Raptor Head (12)
 step
     >>Click on the Control Console
@@ -380,14 +378,16 @@ step
 >>Kill Plainstriders. Loot them for their Kidneys 
     .complete 821,2 --Plainstrider Kidney (5)
 step
-    #sticky
-    #completewith next
-.goto The Barrens,39.8,17.3,40
-    .goto The Barrens,37.4,15.8,40
-    .goto The Barrens,40.3,15.2,40
-step
+.goto The Barrens,39.8,17.3,40,0
+    .goto The Barrens,37.4,15.8,40,0
+    .goto The Barrens,40.3,15.2,40,0
+.goto The Barrens,39.8,17.3,40,0
+    .goto The Barrens,37.4,15.8,40,0
+    .goto The Barrens,40.3,15.2,40,0
+.goto The Barrens,39.8,17.3,40,0
+    .goto The Barrens,37.4,15.8,40,0
+    .goto The Barrens,40.3,15.2,40,0
     >>Kill Witchwing Slayers. Loot them for Harpy Lieutenant Rings
-.goto The Barrens,39.8,17.3
     .complete 875,1 --Harpy Lieutenant Ring (6)
 step
     .goto The Barrens,49.0,11.2
@@ -426,23 +426,22 @@ step
 .goto The Barrens,55.3,7.8
     .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site (1)
 step
-    #sticky
-    #completewith next
-.goto The Barrens,56.2,9.5,40
-    .goto The Barrens,57.4,8.6,40
-    .goto The Barrens,57.2,7.3,40
-    .goto The Barrens,55.7,7.3,40
-step
+.goto The Barrens,56.2,9.5,40,0
+    .goto The Barrens,57.4,8.6,40,0
+    .goto The Barrens,57.2,7.3,40,0
+    .goto The Barrens,55.7,7.3,40,0
+.goto The Barrens,56.2,9.5,40,0
+    .goto The Barrens,57.4,8.6,40,0
+    .goto The Barrens,57.2,7.3,40,0
+    .goto The Barrens,55.7,7.3,40,0
 >>Finish looting the buckets on the ground in the area
-.goto The Barrens,56.2,9.5
     .complete 3922,1 --Nugget Slug (15)
 step
     >>Grind mobs in the area. Loot them until Cats Eye Emerald drops
 .goto The Barrens,61.5,4.3
     .complete 896,1 -- Cats Eye Emerald (1)
 step
-    >>Run to the west entrance of Orgrimmar
-.goto Orgrimmar,11.5,67.0,30
+.goto Orgrimmar,11.5,67.0,30    >>Run to the west entrance of Orgrimmar
 step
     >>Hug the left side. Run to Grommash Hold
 .goto Orgrimmar,39.1,38.1
@@ -495,15 +494,13 @@ step
 .goto The Barrens,62.6,49.6
     .complete 888,1 --Shipment of Boots (1)
 step
-    >>Run to the Raptor Grounds
-.goto The Barrens,57.4,52.4,30
+.goto The Barrens,57.4,52.4,30 >>Run to the Raptor Grounds
 step
     #sticky
     #completewith Nest
 >>Kill any raptors you see. Loot them for their Horns and Feathers. Be careful as they thrash
     .complete 865,1 --Intact Raptor Horn (5)
 step
-    #label Silver
 >>Loot the chest for Stolen Silver
 .goto The Barrens,58.0,53.9
     .complete 3281,1 --Stolen Silver (1)
@@ -525,13 +522,15 @@ step
 .goto The Barrens,52.0,46.5
     .complete 905,2 --Visit Yellow Raptor Nest (1)
 step
-#sticky
-#completewith next
-.goto The Barrens,57.3,53.7,40
-.goto The Barrens,52.0,46.5,40
-step
+.goto The Barrens,57.3,53.7,40,0
+.goto The Barrens,52.0,46.5,40,0
+.goto The Barrens,57.3,53.7,40,0
+.goto The Barrens,52.0,46.5,40,0
+.goto The Barrens,57.3,53.7,40,0
+.goto The Barrens,52.0,46.5,40,0
+.goto The Barrens,57.3,53.7,40,0
+.goto The Barrens,52.0,46.5,40,0
 >>Finish killing Raptors. Loot them for their Horns
-.goto The Barrens,57.3,53.7
     .complete 865,1 --Intact Raptor Horn (5)
 step
     .goto The Barrens,49.3,48.5
@@ -555,7 +554,6 @@ step
     .turnin 3281 >>Turn in Stolen Silver
 step
     .goto The Barrens,52.2,31.0
-    >>Speak to Gazrog
     .turnin 905 >>Turn in The Angry Scytheclaws
     .accept 3261 >>Accept Jorn Skyseer
 step
@@ -579,15 +577,15 @@ step
     .accept 1062 >> Accept Goblin Invaders
     .accept 6548 >> Accept Avenge My Village
 step
-    #sticky
-    #completewith next
-    >>Kill Grimtotems in the area
-.goto Stonetalon Mountains,80.7,89.2,50
-    .goto Stonetalon Mountains,82.0,86.0,50
-    .goto Stonetalon Mountains,84.7,84.3,50
-    .goto Stonetalon Mountains,82.3,90.0,50
-step
-    .goto Stonetalon Mountains,81.6,90.8
+.goto Stonetalon Mountains,80.7,89.2,50,0
+    .goto Stonetalon Mountains,82.0,86.0,50,0
+    .goto Stonetalon Mountains,84.7,84.3,50,0
+    .goto Stonetalon Mountains,82.3,90.0,50,0
+.goto Stonetalon Mountains,80.7,89.2,50,0
+    .goto Stonetalon Mountains,82.0,86.0,50,0
+    .goto Stonetalon Mountains,84.7,84.3,50,0
+    .goto Stonetalon Mountains,82.3,90.0,50,0
+>>Kill Grimtotems in the area
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
 step
@@ -595,16 +593,14 @@ step
     .turnin 6548 >> Turn in Avenge My Village
     .accept 6629 >> Accept Kill Grundig Darkcloud
 step
-    >>Run up to the mountain here
-.goto Stonetalon Mountains,82.3,98.5,40
+.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
 step
     .goto Stonetalon Mountains,71.4,95.1
     .accept 6461 >> Accept Blood Feeders
 step
     #sticky
     #completewith next
->>Run to the path here
-.goto Stonetalon Mountains,71.7,86.7,40
+.goto Stonetalon Mountains,71.7,86.7,40 >>Run to the path here
 step
     >>Make sure you kill all 6 brutes before starting the quest inside. Kill Grundig in front of the main tent
 .goto Stonetalon Mountains,74.0,86.2
@@ -623,22 +619,22 @@ step
 .goto Stonetalon Mountains,59.0,75.7
     .accept 6284 >> Accept Arachnophobia
 step
-    >>Run up the path here to Sishir Canyon
-.goto Stonetalon Mountains,57.5,76.2,30
+.goto Stonetalon Mountains,57.5,76.2,30 >>Run up the path here to Sishir Canyon
 step
 #sticky
 #label deepmossegg
 >>Click the spider eggs near the trees
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
-    #sticky
-    #completewith next
 >>Kill the Deepmoss Spiders and Besseleth in the area
-.goto Stonetalon Mountains,54.7,71.9,40
-    .goto Stonetalon Mountains,52.6,71.8,40
-    .goto Stonetalon Mountains,52.2,75.6,40
-step
-    .goto Stonetalon Mountains,53.9,74.2
+.goto Stonetalon Mountains,54.7,71.9,40,0
+    .goto Stonetalon Mountains,52.6,71.8,40,0
+    .goto Stonetalon Mountains,52.2,75.6,40,0
+    .goto Stonetalon Mountains,53.9,74.2,40,0
+.goto Stonetalon Mountains,54.7,71.9,40,0
+    .goto Stonetalon Mountains,52.6,71.8,40,0
+    .goto Stonetalon Mountains,52.2,75.6,40,0
+    .goto Stonetalon Mountains,53.9,74.2,40,0
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
 .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .complete 6284,1 --Collect Besseleth's Fang (x1)
@@ -648,29 +644,28 @@ step
     .accept 1093 >> Accept Super Reaper 6000
 step
     #sticky
-    #completewith 6000blueprints
+    #completewith next
     >>Kill Loggers as you search for Operators to get the Blueprints
 .complete 1062,1 --Kill Venture Co. Logger (x15)
 step
-    #sticky
-    #completewith next
     >>Kill Venture Co. Operators until you get the Blueprints
-.goto Stonetalon Mountains,62.8,53.7,40
-    .goto Stonetalon Mountains,61.7,51.5,40
-    .goto Stonetalon Mountains,66.8,45.3,40
-    .goto Stonetalon Mountains,71.7,49.9,40
-    .goto Stonetalon Mountains,74.3,54.7,40
-step
-#label 6000blueprints
-    .goto Stonetalon Mountains,62.8,53.7
+.goto Stonetalon Mountains,62.8,53.7,40,0
+    .goto Stonetalon Mountains,61.7,51.5,40,0
+    .goto Stonetalon Mountains,66.8,45.3,40,0
+    .goto Stonetalon Mountains,71.7,49.9,40,0
+    .goto Stonetalon Mountains,74.3,54.7,40,0
+    .goto Stonetalon Mountains,62.8,53.7,40,0
     .complete 1093,1 --Collect Super Reaper 6000 Blueprints (x1)
 step
-    #sticky
-    #completewith next
     >>Finish killing Loggers
-    .goto Stonetalon Mountains,64.1,56.7,40
-.goto Stonetalon Mountains,73.4,54.3,40
-step
+    .goto Stonetalon Mountains,64.1,56.7,40,0
+.goto Stonetalon Mountains,73.4,54.3,40,0
+    .goto Stonetalon Mountains,64.1,56.7,40,0
+.goto Stonetalon Mountains,73.4,54.3,40,0
+    .goto Stonetalon Mountains,64.1,56.7,40,0
+.goto Stonetalon Mountains,73.4,54.3,40,0
+    .goto Stonetalon Mountains,64.1,56.7,40,0
+.goto Stonetalon Mountains,73.4,54.3,40,0
 .complete 1062,1 --Kill Venture Co. Logger (x15)
 step
     .goto Stonetalon Mountains,59.0,62.6
@@ -692,28 +687,27 @@ step
 #sticky
 #label Lakota1
 #completewith next
+.goto The Barrens,50.0,53.1,0
+    .goto The Barrens,46.0,49.2,0
+    .goto The Barrens,45.3,52.5,0
+    .goto The Barrens,45.0,51.8,0
 >>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
 .collect 5099,1, --Collect Hoof of Lakota'Mani
 .accept 883 >>Accept Lakota'Mani
 step
-    #completewith Lakota1
-.goto The Barrens,50.0,53.1,30
-    .goto The Barrens,46.0,49.2,30
-    .goto The Barrens,45.3,52.5,30
-    .goto The Barrens,45.0,51.8,20
-step
-    .goto The Barrens,51.4,57.9
-    .complete 878,1 --Bristleback Water Seeker (6)
-step
-    #sticky
-    #completewith next
-    >>Kill a LOT of Quillboars. Loot them for their tusks
-.goto The Barrens,44.3,52.3,50
-    .goto The Barrens,47.1,53.3,50
-    .goto The Barrens,45.2,54.3,50
-step
-    >>Save all the Blood Shards you get
-.goto The Barrens,53.0,52.1
+    >>Kill a LOT of Quillboars. Loot them for their tusks. Save the Blood Shards you get
+.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,47.1,53.3,50,0
+    .goto The Barrens,45.2,54.3,50,0
+.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,47.1,53.3,50,0
+    .goto The Barrens,45.2,54.3,50,0
+.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,47.1,53.3,50,0
+    .goto The Barrens,45.2,54.3,50,0
+.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,47.1,53.3,50,0
+    .goto The Barrens,45.2,54.3,50,0
 .complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
     .complete 878,3 --Kill Bristleback Geomancer (x12)
@@ -803,22 +797,16 @@ step
 #sticky
 #label Owatanka2
 #completewith next
+.goto The Barrens,44.2,62.1,0
+.goto The Barrens,49.2,62.6,0
+.goto The Barrens,49.6,60.0,0
 >>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
 .collect 5102,1,884 --Collect Owatanka's Tailspike
 .accept 884 >>Accept Owatanka
 step
-    #completewith Owatanka2
-.goto The Barrens,44.2,62.1,30
-.goto The Barrens,49.2,62.6,30
-.goto The Barrens,49.6,60.0,30
-.goto The Barrens,44.9,59.1,120
-step
-    #sticky
-    #completewith next
-.goto The Barrens,42.5,60.3,30
-    .goto The Barrens,47.1,63.7,30
-    .goto The Barrens,50.0,61.1,30
-step
+.goto The Barrens,42.5,60.3,30,0
+    .goto The Barrens,47.1,63.7,30,0
+    .goto The Barrens,50.0,61.1,30,0
 >>Kill Thunder Lizards. Loot them for their blood
     .complete 907,1 --Thunder Lizard Blood (3)
 step
@@ -827,13 +815,13 @@ step
     .accept 913 >>Accept Cry of the Thunderhawk
     .turnin 884 >>Turn in Owatanka
 step
-    #sticky
-    #completewith next
-.goto The Barrens,44.8,63.2,30
-.goto The Barrens,47.0,61.6,30
-step
+.goto The Barrens,44.8,63.2,30,0
+.goto The Barrens,47.0,61.6,30,0
+.goto The Barrens,44.8,63.2,30,0
+.goto The Barrens,47.0,61.6,30,0
+.goto The Barrens,44.8,63.2,30,0
+.goto The Barrens,47.0,61.6,30,0
     >>Kill a Thunderhawk. Loot it for its Wings
-.goto The Barrens,44.8,63.2
     .complete 913,1 --Thunderhawk Wings (1)
 step
     .goto The Barrens,44.8,59.1
@@ -856,8 +844,7 @@ step
     .goto Thunder Bluff,22.8,20.9
     .accept 962 >>Accept Serpentbloom
 step
-    >>Go into The Pools of Vision
-    .goto Thunder Bluff,30.1,30.0,15
+    .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
 step
     .goto Thunder Bluff,28.4,27.7
     .accept 264 >>Accept Until Death Do Us Part
@@ -881,20 +868,16 @@ step
     .goto Thunder Bluff,46.9,49.9
     .fly Crossroads >>Fly to Crossroads
 step
-    >>Go up the mountain here
-.goto The Barrens,50.4,34.4,15 
+.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
 step
-    >>Go into here
-.goto The Barrens,50.4,34.4,10
+.goto The Barrens,50.4,34.4,10 >>Go into here
 step
-    >>Jump down into the eye
-.goto The Barrens,51.9,55.5,10
+.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
 step
 .goto The Barrens,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
-    >>Leave the eye. Go to the mouth of the cave
-.goto The Barrens,46.0,36.4,15
+.goto The Barrens,46.0,36.4,15 >>Leave the eye. Go to the mouth of the cave
 step
     #sticky
     #label Deviate
@@ -906,17 +889,22 @@ step
     >>Look for green and red flowers on the ground
     .complete 962,1 --Serpentbloom (10)
 step
-    #sticky
-    #completewith next
-.goto The Barrens,52.1,55.1,20
-    .goto The Barrens,52.0,55.4,20
-    .goto The Barrens,51.8,54.9,20
-step
+.goto The Barrens,52.1,55.1,20,0
+    .goto The Barrens,52.0,55.4,20,0
+    .goto The Barrens,51.8,54.9,20,0
+.goto The Barrens,52.1,55.1,20,0
+    .goto The Barrens,52.0,55.4,20,0
+    .goto The Barrens,51.8,54.9,20,0
+.goto The Barrens,52.1,55.1,20,0
+    .goto The Barrens,52.0,55.4,20,0
+    .goto The Barrens,51.8,54.9,20,0
+.goto The Barrens,52.1,55.1,20,0
+    .goto The Barrens,52.0,55.4,20,0
+    .goto The Barrens,51.8,54.9,20,0
     >>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
     .complete 959,1 --Collect 99-Year-Old Port (1)
 step
-    >>Enter the deeper part of the cave
-.goto The Barrens,51.9,54.9,10
+.goto The Barrens,51.9,54.9,10 >>Enter the deeper part of the cave
 step
     #sticky
     #completewith next
@@ -928,20 +916,16 @@ step
     .complete 1491,1 --Wailing Essence (6)
 step
     #requires Deviate
-    .goto The Barrens,46.0,36.4,1000
+    .goto The Barrens,46.0,36.4,1000,0
 step
     #requires Serpentbloom
-    >>Leave the cave
-.goto The Barrens,46.0,36.4,15
+.goto The Barrens,46.0,36.4,15 >>Leave the cave
 step
-    >>Go up the mountain here
-.goto The Barrens,50.4,34.4,15 
+.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
 step
-    >>Go into here
-.goto The Barrens,50.4,34.4,10
+.goto The Barrens,50.4,34.4,10 >>Go into here
 step
-    >>Jump down into the eye
-.goto The Barrens,51.9,55.5,10
+.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
 step
 .goto The Barrens,51.9,55.4
 .turnin 1486 >>Turn in Deviate Hides
@@ -975,12 +959,14 @@ step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >>Turn in Further Instructions
 step
-    >>Run through the cave to Ashenvale
-.goto Stonetalon Mountains,78.2,42.8,30
-.goto Ashenvale,42.3,71.0,20
+    #sticky
+    #completewith next
+.goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
 step
->>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
-.goto Ashenvale,16.3,29.8,90
+.goto Ashenvale,42.3,71.0,20    >> Run through the cave to Ashenvale
+step
+.goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
+
 step
     .goto Ashenvale,12.3,33.8
     .fp >> Get the Zoram'gar Outpost flight path
@@ -1011,24 +997,21 @@ step
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
 step
-    >>Drop down the hole into Blackfathom Deeps
-.goto Ashenvale,14.2,14.7,40
+.goto Ashenvale,14.2,14.7,40    >>Drop down the hole into Blackfathom Deeps
 step
     #sticky
-    #completewith sapphirebfd
-    >>Complete objectives in Blackfathom Deeps
-.goto Ashenvale,13.0,13.2,30
-.goto Ashenvale,13.6,9.0,30
-step
-#sticky
-#label bfdquestdrop
-.goto Ashenvale,13.0,13.2
-        >>Swim under the water, and enter Blackfathom Deeps. Grind mobs until a Damp Note drops
+    #label Sapphires
+.goto Ashenvale,13.0,13.2,30,0
+.goto Ashenvale,13.6,9.0,30,0
+.goto Ashenvale,13.0,13.2,30,0
+.goto Ashenvale,13.6,9.0,30,0
+.goto Ashenvale,13.0,13.2,30,0
+.goto Ashenvale,13.6,9.0,30,0
+.goto Ashenvale,13.0,13.2,30,0
+.goto Ashenvale,13.6,9.0,30,0
+        >>Swim under the water, and enter Blackfathom Deeps. Grind mobs until a Damp Note drops, and loot the Sapphires from the walls in the tunnel.
 .collect 16790,1,6564 --Collect Damp Note
     .accept 6564 >> Accept Allegiance to the Old Gods
-step
-#label sapphirebfd
->>Loot the Sapphires from the walls in the tunnel.
     .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
 step
 #requires wrathtailhead
@@ -1042,8 +1025,6 @@ step
 step
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >>Turn in Naga at the Zoram Strand
-step
-     .hs >> Hearth to Thunder Bluff
 step
     .goto Thunder Bluff,70.1,30.9
     .turnin 1063 >>Turn in The Elder Crone
@@ -1084,11 +1065,14 @@ step << Warrior
     .turnin 874 >>Turn in Mahren Skyseer
     .accept 873 >>Accept Isha Awak
 step
-    #sticky
-    #completewith next
-.goto The Barrens,65.6,47.1,40
-        .goto The Barrens,63.3,54.2,40
-step
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
     >>Look in the water for a Isha Awak (Red Threshadon). Kill and loot it for its heart. You can skip this quest if you don't think you can kill it
     .complete 873,1 --Heart of Isha Awak (1)
 step
@@ -1115,11 +1099,11 @@ step
     .goto The Barrens,44.5,59.1
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Shaman
-	>> Go and train you class spells
-    .goto Orgrimmar,38.6,36.0,5
+.goto Orgrimmar,38.6,36.0
+.trainer >> Go and train your class spells
 step << Warrior
-	>> Go and train you class spells
-    .goto Orgrimmar,79.7,31.4,5
+.goto Orgrimmar,79.7,31.4
+.trainer >> Go and train your class spells
 step
     .goto Orgrimmar,76.5,24.5
     .turnin 3923 >>Turn in Rilli Greasygob
@@ -1129,6 +1113,5 @@ step
 step
     .abandon 3924 >>Abandon Samophlange Manual
 step
-    >>Exit Orgrimmar
-.goto Orgrimmar,49.1,94.5,30
-]],"Warrior/Shaman")
+.goto Orgrimmar,49.1,94.5,30    >>Exit Orgrimmar
+]])
