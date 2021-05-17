@@ -843,103 +843,101 @@ function RXP_.SetStep(n,n2)
 end
 
 function RXP_.UpdateText()
-RXP_.updateStepText = false
-local guide = RXP_.currentGuide
-if not guide then return end
-local group = guide.group
+    RXP_.updateStepText = false
+    local guide = RXP_.currentGuide
+    if not guide then return end
+    local group = guide.group
 
 
---StepScroll(n)
-local totalHeight = 0
-local c = 0
-local heightDiff = f:GetHeight() - f.CurrentStepFrame:GetHeight()
-for i,step in pairs(f.CurrentStepFrame.activeSteps) do
-	
-	local index = step.index
-	c = c+1
-	local stepframe = f.CurrentStepFrame.frame[c]
-	
-	stepframe:ClearAllPoints()
-	if c == 1 then
-		stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame,0,0)
-		stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame,0,0)
-	else
-		stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame.frame[c-1],"BOTTOMLEFT",0,-5)
-		stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame.frame[c-1],"BOTTOMRIGHT",0,-5)
-	end
+    --StepScroll(n)
+    local totalHeight = 0
+    local c = 0
+    local heightDiff = f:GetHeight() - f.CurrentStepFrame:GetHeight()
+    for i,step in pairs(f.CurrentStepFrame.activeSteps) do
+        
+        local index = step.index
+        c = c+1
+        local stepframe = f.CurrentStepFrame.frame[c]
+        
+        stepframe:ClearAllPoints()
+        if c == 1 then
+            stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame,0,0)
+            stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame,0,0)
+        else
+            stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame.frame[c-1],"BOTTOMLEFT",0,-5)
+            stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame.frame[c-1],"BOTTOMRIGHT",0,-5)
+        end
 
-	stepframe.number.text:SetText("Step "..tostring(index))
-	stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
-	
-	local e = 0
-	local frameHeight = 0
-	for j,element in ipairs(step.elements) do
-		e = j
-		local elementFrame = stepframe.elements[e]
-		
-		elementFrame:Show()
+        stepframe.number.text:SetText("Step "..tostring(index))
+        stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
+        
+        local e = 0
+        local frameHeight = 0
+        for j,element in ipairs(step.elements) do
+            e = j
+            local elementFrame = stepframe.elements[e]
+            
+            elementFrame:Show()
 
-		local spacing = 0
-		
-		if element.text then
-			elementFrame:SetAlpha(1)
-			local text = elementFrame.text
-			text:SetText(element.text)
-			local h = math.ceil(elementFrame.text:GetStringHeight()*1.1)+1
-			--print('sh:',h)
-			elementFrame:SetHeight(h)
-			frameHeight = frameHeight + h
-			
-			elementFrame.button:ClearAllPoints()
-			--elementFrame.button:SetPoint("TOPLEFT",elementFrame, 4, -1);
-            elementFrame.button:SetPoint("TOPLEFT",elementFrame, 6, -1);
-			elementFrame.text:ClearAllPoints()
-			--elementFrame.text:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",8,-2)
-            elementFrame.text:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",11,-1)
-			elementFrame.text:SetPoint("RIGHT",stepframe,-5,0)
-			
-			elementFrame.icon:ClearAllPoints()
-			--elementFrame.icon:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",-3,-2)
-            elementFrame.icon:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",0,-1)
-			if element.textOnly then
-				elementFrame.button:SetChecked(true)
-				elementFrame.button:Hide()
-				element.completed = true
-			else
-				elementFrame.button:Show()
-			end
+            local spacing = 0
+            
+            if element.text then
+                elementFrame:SetAlpha(1)
+                local text = elementFrame.text
+                text:SetText(element.text)
+                local h = math.ceil(elementFrame.text:GetStringHeight()*1.1)+1
+                --print('sh:',h)
+                elementFrame:SetHeight(h)
+                frameHeight = frameHeight + h
+                
+                elementFrame.button:ClearAllPoints()
+                --elementFrame.button:SetPoint("TOPLEFT",elementFrame, 4, -1);
+                elementFrame.button:SetPoint("TOPLEFT",elementFrame, 6, -1);
+                elementFrame.text:ClearAllPoints()
+                --elementFrame.text:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",8,-2)
+                elementFrame.text:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",11,-1)
+                elementFrame.text:SetPoint("RIGHT",stepframe,-5,0)
+                
+                elementFrame.icon:ClearAllPoints()
+                --elementFrame.icon:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",-3,-2)
+                elementFrame.icon:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",0,-1)
+                if element.textOnly then
+                    elementFrame.button:SetChecked(true)
+                    elementFrame.button:Hide()
+                    element.completed = true
+                else
+                    elementFrame.button:Show()
+                end
 
-		else
-			elementFrame:SetAlpha(0)
-			elementFrame.button:Hide()
-			elementFrame:SetHeight(1)
-			element.completed = true
-			spacing = 1
-		end
-		elementFrame:ClearAllPoints()
-		if e == 1 then
-			elementFrame:SetPoint("TOPLEFT",stepframe,0,-10+spacing)
-			elementFrame:SetPoint("TOPRIGHT",stepframe,0,-10+spacing)
-		else
-			elementFrame:SetPoint("TOPLEFT",stepframe.elements[e-1],"BOTTOMLEFT",0,0+spacing)
-			elementFrame:SetPoint("TOPRIGHT",stepframe.elements[e-1],"BOTTOMRIGHT",0,0+spacing)
-		end
-		if element.tag and element.text then
-			local icon = element.icon or RXP_.icons[element.tag]
-			if icon then elementFrame.icon:SetText(icon) end
-			elementFrame.icon:Show()
-		else
-			elementFrame.icon:Hide()
-		end
-	end
+            else
+                elementFrame:SetAlpha(0)
+                elementFrame.button:Hide()
+                elementFrame:SetHeight(1)
+                element.completed = true
+                spacing = 1
+            end
+            elementFrame:ClearAllPoints()
+            if e == 1 then
+                elementFrame:SetPoint("TOPLEFT",stepframe,0,-10+spacing)
+                elementFrame:SetPoint("TOPRIGHT",stepframe,0,-10+spacing)
+            else
+                elementFrame:SetPoint("TOPLEFT",stepframe.elements[e-1],"BOTTOMLEFT",0,0+spacing)
+                elementFrame:SetPoint("TOPRIGHT",stepframe.elements[e-1],"BOTTOMRIGHT",0,0+spacing)
+            end
+            if element.tag and element.text then
+                local icon = element.icon or RXP_.icons[element.tag]
+                if icon then elementFrame.icon:SetText(icon) end
+                elementFrame.icon:Show()
+            else
+                elementFrame.icon:Hide()
+            end
+        end
 
-	frameHeight = math.ceil(frameHeight +18)
-	stepframe:SetHeight(frameHeight)
-	totalHeight = totalHeight+frameHeight+5
-end
-	f.CurrentStepFrame:SetHeight(totalHeight-5)
-
-	
+        frameHeight = math.ceil(frameHeight +18)
+        stepframe:SetHeight(frameHeight)
+        totalHeight = totalHeight+frameHeight+5
+    end
+    f.CurrentStepFrame:SetHeight(totalHeight-5)
 end
 
 
@@ -1082,14 +1080,6 @@ end)
 
 RXP_.MenuFrame = CreateFrame("Frame", "RXPG_MenuFrame", UIParent, "UIDropDownMenuTemplate")
 
--- Make the menu appear at the cursor: 
-
---[[
-f.GuideName:SetScript("OnEnter",function()
-	f.GuideName:SetBackdropColor(111/200,44/200,150/200,1)
-	
-end)
-]]
 
 function RXP_.DropDownMenu()
     EasyMenu(RXP_.menuList, RXP_.MenuFrame, "cursor", 0 , 0, "MENU");

@@ -294,6 +294,8 @@ local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 
 
+
+
 function RXP_.functions.accept(self,...)
     if type(self) == "string" then --on parse
         local element = {}
@@ -343,7 +345,7 @@ function RXP_.functions.accept(self,...)
 
         local icon = RXP_.icons.accept
         local skip
-        if step.active and db and db.QueryQuest and not isQuestAccepted then
+        if step.active and db and db.QueryQuest and not isQuestAccepted and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if quest then
                 local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
@@ -442,7 +444,7 @@ function RXP_.functions.turnin(self,...)
         
         local icon = RXP_.icons.turnin
         local skip
-        if step.active and db and db.QueryQuest and not RXP_.questAccept[id] then
+        if step.active and db and db.QueryQuest and not RXP_.questAccept[id] and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if not C_QuestLog.IsOnQuest(id) and quest and not quest.IsRepeatable then
                 local requiredQuests = {}
@@ -583,7 +585,7 @@ function RXP_.functions.complete(self,...)
             return
         end
         
-        if step.active and db and db.QueryQuest and element.obj and not isQuestComplete then
+        if step.active and db and db.QueryQuest and element.obj and not isQuestComplete and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if quest and quest.ObjectiveData and quest.ObjectiveData[element.obj] then
                 local itemId = quest.ObjectiveData[element.obj].Id

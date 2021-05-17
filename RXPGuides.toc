@@ -1,7 +1,7 @@
 ## Interface: 20501
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
-## Author: Zarant
+## Author: RestedXP
 ## OptionalDeps: Questie
 ## SavedVariables: RXPData
 ## SavedVariablesPerCharacter: RXPCData

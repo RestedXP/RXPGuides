@@ -53,6 +53,7 @@ step
 step
     #label exit1
     .goto Wetlands,17.5,40.0
+    >>Kill Gobbler, he patrols around the southern murloc camps
     .complete 279,2 --Collect Gobbler's Head (x1)
     .complete 279,1 --Kill Bluegill Murloc (x12)
 step
@@ -232,7 +233,9 @@ step << Rogue
     .accept 2282 >> Accept Alther's Mill
 step
     #sticky
+    #label orcs1
     .goto Redridge Mountains,61.0,43.1
+    >>Kill blackrock orcs
     .complete 20,1 --Collect Battleworn Axe (x10)
 step
     .goto Redridge Mountains,57.3,52.4
@@ -244,6 +247,7 @@ step << Rogue
 step << Rogue
     +Open the chests to train lockpicking, you will need 75 skill points for a quest later
 step
+    #requires orcs1
     .goto Redridge Mountains,33.6,48.7
     .turnin 20 >> Turn in Blackrock Menace
 step
@@ -478,6 +482,7 @@ step
     .complete 226,2 --Kill Rabid Dire Wolf (x8)
 step << Hunter/Paladin
     .goto Duskwood,19.7,39.7
+    >>Kill the level 30 elite roaming the cemetery
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
 step
     .goto Duskwood,7.8,34.0
@@ -754,6 +759,7 @@ step
     .accept 286 >> Accept Return the Statuette
 step
     .goto Wetlands,13.9,30.4
+    >>To find Snellig, enter the ship by the hole on the hull close to the shore
     .complete 289,3 --Collect Snellig's Snuffbox (x1)
     .complete 289,1 --Kill Cursed Sailor (x13)
     .complete 289,2 --Kill Cursed Marine (x5)
@@ -820,6 +826,7 @@ step << !Hunter !NightElf !Rogue
 	.complete 943,1
 step
     .goto Wetlands,44.2,25.8
+    >>Kill slimes around the crypt
     .complete 470,1 --Collect Sida's Bag (x1)
 step
     .goto Wetlands,44.2,33.9
@@ -831,6 +838,7 @@ step
     .accept 275 >> Accept Blisters on The Land
 step
     .goto Wetlands,64.8,75.3
+    >>Loot the tree root at the base of the waterfall
     .complete 335,2 --Collect Musquash Root (x1)
 step
     .hs >> Hearth to Menethil Harbor
@@ -852,6 +860,7 @@ step
     .turnin 471 >> Turn in Apprentice's Duties
 step
     .goto Wetlands,15.5,23.5
+    >>Kill Captain Halyndor by entering the ship through the broken mast
     .complete 290,1 --Collect Intrepid Strongbox Key (x1)
 step
     .goto Wetlands,14.4,24.0
@@ -1174,6 +1183,7 @@ step
     .accept 75 >> Accept The Legend of Stalvan
 step
     .goto Elwynn Forest,85.6,69.6
+    >>Loot the chest upstairs
     .complete 75,1 --Collect A Faded Journal Page (x1)
 step
     .goto Elwynn Forest,84.7,69.4
@@ -1207,6 +1217,7 @@ step << Shaman
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << Shaman
     .goto Duskwood,78.4,35.9
+    >>Look for a small flower on the ground
     .complete 335,1 --Collect Tear of Tilloa (x1)
 step << Shaman
     .goto Duskwood,75.7,45.3
@@ -1238,12 +1249,15 @@ step
     .accept 134 >> Accept Ogre Thieves
 step
     .goto Duskwood,23.9,72.0
+    >>Loot the chest inside the small house
     .complete 1244,1 --Collect Defias Docket (x1)
 step
     .goto Duskwood,33.5,76.3
+    >>Loot the crate next to the cave entrance
     .complete 134,1 --Collect Abercrombie's Crate (x1)
 step
     .goto Duskwood,36.8,83.8
+    >>Kill Zzarc' Vul
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
     .goto Duskwood,31.6,45.4
@@ -1319,6 +1333,7 @@ step << !Shaman
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << !Shaman
     .goto Duskwood,78.4,35.9
+    >>Look for a small flower on the ground
     .complete 335,1 --Collect Tear of Tilloa (x1)
 step << !Shaman
     .goto Duskwood,75.7,45.3
@@ -1535,6 +1550,7 @@ step
     .turnin 1248 >> Turn in The Missing Diplomat
     .accept 1249 >> Accept The Missing Diplomat
 step
+    >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn
     .complete 1249,1 --Defeat Tapoke Jahn
 step
     .goto Wetlands,10.6,60.7

@@ -1,3 +1,8 @@
+RXP_.skipPreReq = {
+[9573] = 1,
+
+}
+
 local s = {}
 RXP_.defaultSpellList = s
 
