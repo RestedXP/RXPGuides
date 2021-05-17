@@ -694,8 +694,17 @@ step
     .goto Eversong Woods,24.5,69.9
     >>Kill murlocs or loot barrels near the huts for Cargo
     .complete 8886,1 --Collect Captain Kelisendra's Cargo (x6)
-step
+step << BloodElf
 >>Mmmrrrggglll patrols along the shore. Use Arcane Torrent when he starts to heal himself.
+.goto Eversong Woods,24.3,74.1,30,0
+.goto Eversong Woods,26.0,65.9,30,0
+.goto Eversong Woods,24.3,74.1,30,0
+.goto Eversong Woods,26.0,65.9,30,0
+.goto Eversong Woods,24.3,74.1,30,0
+.goto Eversong Woods,26.0,65.9,30,0
+.complete 8885,1 --Collect Ring of Mmmrrrggglll (x1)
+step << !BloodElf
+>>Mmmrrrggglll patrols along the shore. He heals himself and has high burst damage, so be careful
 .goto Eversong Woods,24.3,74.1,30,0
 .goto Eversong Woods,26.0,65.9,30,0
 .goto Eversong Woods,24.3,74.1,30,0
@@ -2485,7 +2494,6 @@ step << Mage
     .trainer >>Train Teleport Silvermoon
 step << Rogue
 .goto Silvermoon City,79.7,52.1
-.accept 28298 >>Accept Meet with Thega Graveblade
     .train 1785 >>Train Stealth r2
     .train 8676 >>Train Ambush, You need this for a quest later
     .train 1943 >>Train Rupture, You need this for a quest later
