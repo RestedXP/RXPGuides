@@ -2397,26 +2397,35 @@ step
     .goto Ghostlands,54.9,48.5
     .turnin 9170 >> Turn in Dar'Khan's Lieutenants
 step << BloodElf Hunter
-    >>Choose the 2h sword as it's incredible for melee damage/melee weaving (and the bow is too fast)
 .isQuestComplete 9167
+>>Choose the 2h sword as it's incredible for melee damage/melee weaving (and the bow is too fast)
     .goto Ghostlands,55.2,48.8
     .turnin 9167 >> Turn in The Traitor's Destruction
+step << BloodElf Hunter
+    .isQuestTurnedIn 9167
     .accept 9328 >> Accept Hero of the Sin'dorei
 step << Orc Hunter/Troll Hunter
     .isQuestComplete 9167
+>>Choose the 2h sword as it's incredible for melee damage/melee weaving (and the bow is too fast)
     .goto Ghostlands,55.2,48.8
     .turnin 9167 >> Turn in The Traitor's Destruction
+step << Orc Hunter/Troll Hunter
+    .isQuestTurnedIn 9167
     .accept 9811 >> Accept Friend of the Sin'dorei
-step << !BloodElf/!Hunter
+step << BloodElf !Hunter
     .isQuestComplete 9167
     .goto Ghostlands,55.2,48.8
     .turnin 9167 >> Turn in The Traitor's Destruction
-    .accept 9328 >> Accept Hero of the Sin'dorei
+step << BloodElf !Hunter
+    .isQuestTurnedIn 9167
+.accept 9328 >> Accept Hero of the Sin'dorei
 step << !BloodElf
     .isQuestComplete 9167
     .goto Ghostlands,55.2,48.8
     .turnin 9167 >> Turn in The Traitor's Destruction
-    .accept 9811 >> Accept Friend of the Sin'dorei
+step << !BloodElf
+.isQuestTurnedIn 9167
+.accept 9811 >> Accept Friend of the Sin'dorei
 step
     #sticky
 #completewith next
@@ -2431,7 +2440,7 @@ step
     .goto Ghostlands,46.1,33.5
     .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran
 step
-    .isQuestTurnedIn 9167
+.isQuestTurnedIn 9167
 .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Tranquillien Champion's Cloak. Equip it
     .collect 22990,1 --Collect Tranquillien Champion's Cloak (1)
@@ -2539,7 +2548,7 @@ step << BloodElf Paladin
     .abandon 9135 >> Abandon Return to Quartermaster Lymel
 step
 .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
-step 
+step << !Scourge
     .goto Undercity,63.3,48.6
 .fp >> Get the Undercity flight path
 step << Mage
@@ -2556,12 +2565,10 @@ step << BloodElf
     .accept 9626 >> Accept Meeting the Warchief
     .turnin 9180 >> Turn in Journey to Undercity
 step << BloodElf
-    #completewith Envoy
 .goto Undercity,57.8,91.8
     .accept 9425 >> Accept Report to Tarren Mill
     .turnin 9180 >> Turn in Journey to Undercity
 step << !BloodElf
-    #label Envoy
 .isQuestTurnedIn 9167
 .goto Undercity,57.8,91.8
     .accept 9425 >> Accept Report to Tarren Mill
@@ -2569,7 +2576,6 @@ step << !BloodElf
     .accept 9813 >> Accept Meeting the Orcs
     .turnin 9180 >> Turn in Journey to Undercity
 step << !BloodElf
-    #completewith Envoy
 .goto Undercity,57.8,91.8
     .accept 9425 >> Accept Report to Tarren Mill
     .turnin 9180 >> Turn in Journey to Undercity
