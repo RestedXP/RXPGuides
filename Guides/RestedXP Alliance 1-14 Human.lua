@@ -22,7 +22,8 @@ step
     .train 348 >>Train Immolate
 step
 .goto Elwynn Forest,52.9,44.3,60,0
-    >>Kill some wolves en route here, then do this VIDEO
+ >>Kill some Wolves en route, then watch this
+    .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
     .goto Elwynn Forest,56.7,44.0
     .complete 1598,1 --Collect Powers of the Void (x1)
 step
@@ -783,7 +784,7 @@ step << !Human
 .goto Elwynn Forest,48.2,42.9
     +You have selected a guide meant for Humans. You should choose the same starter zone that you start in
 step
->>Drop your Hearthstone
+>>Delete your Hearthstone
 .goto Elwynn Forest,48.2,42.9
     .accept 783 >> Accept A Threat Within
 step << Warrior
@@ -1131,6 +1132,11 @@ step << Paladin
     .money <0.0190
     .train 639 >>Train Holy Light r2
     .train 498 >>Train Divine Protection
+step << Shaman
+    .goto Stormwind City,71.1,88.9,40 >>Run to Stormwind
+step << Shaman
+    .goto Stormwind City,61.8,84.0
+    .trainer >> Go and train your class spells
 step
     .goto Elwynn Forest,42.1,67.3
     .accept 47 >> Accept Gold Dust Exchange
@@ -1686,7 +1692,7 @@ step
     .abandon 9 >> The Killing Fields
     .abandon 22 >> Goretusk Liver Pie
     .abandon 38 >> Westfall Stew
-step
+step << Human
     .goto Westfall,57.0,47.2
     .vendor >>vendor trash
     .accept 6181 >> Accept A Swift Message
@@ -1696,12 +1702,19 @@ step
 step << Rogue
     .money >0.3990
 >>Grind until you have 39s 90c of vendorables/money
-step
+step << Human
     .goto Westfall,56.6,52.6
     .fp >> Get the Sentinel Hill flight path
     .turnin 6181 >> Turn in A Swift Message
     .accept 6281 >> Accept Continue To Stormwind
     .fly >> Fly to Stormwind
+step << !Human
+    .goto Westfall,56.6,52.6
+    .fp >> Get the Sentinel Hill flight path
+    .fly >> Fly to Stormwind
+step << Shaman
+    .goto Stormwind City,61.8,84.0
+    .trainer >> Go and train your class spells
 step
     .goto Stormwind City,56.2,64.6
     >>Choose rockets. These have very good damage, and can be used for splitpulling
@@ -1738,7 +1751,7 @@ step << Paladin/Hunter
     .money <0.0950
 .goto Stormwind City,57.1,57.7
     .train 202 >>Train 2h Swords
-step
+step << Human
     .goto Stormwind City,74.3,47.2
     .turnin 6281 >> Turn in Continue to Stormwind
     >>Skip followup. Vendor and Repair
