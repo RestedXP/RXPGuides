@@ -687,8 +687,12 @@ step
 step
     .xp 2 >> Grind to 2
 step
---.link Watch this video, and do this >> 
+#sticky
+#completewith next
+ >>Kill some Wolves en route, then watch this
+.link https://www.youtube.com/watch?v=iUvGsRbIVp8 >> CLICK HERE
     .goto Dun Morogh,26.8,79.8,20
+    .goto Dun Morogh,30.1,82.4,30,0
 step
     .goto Dun Morogh,30.1,82.4
     .complete 1599,1 --Collect Feather Charm (x3)
