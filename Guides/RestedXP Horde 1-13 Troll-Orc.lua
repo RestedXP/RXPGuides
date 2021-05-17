@@ -271,7 +271,7 @@ step
 step
     .goto Durotar,42.7,67.2
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
-step << Warrior/Rogue/Hunter
+step << Warrior/Rogue/Hunter/Druid/Paladin/Shaman
     .goto Durotar,42.6,67.3
 .vendor >>vendor trash
 step << Mage/Priest/Warlock
@@ -453,7 +453,7 @@ step << Orc Warrior
 step << Troll Warrior
     .goto Durotar,56.5,73.1
 .vendor >> vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
-step << Troll Warrior
+step << Troll Warrior/Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
     >> Buy Gladius and equip it
@@ -513,7 +513,7 @@ step << Orc Warrior
     >>Talk to Traxexir from below the stairs outside
     >> Buy Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior
+step << Troll Warrior/Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
     >>Talk to Traxexir from below the stairs outside
@@ -564,19 +564,19 @@ step << Hunter
     .money <0.0271
     >> Buy Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
-step << Warrior/Rogue
+step << Warrior/Rogue/Paladin
     .goto Durotar,52.0,40.7
     .money <0.0020
     .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
-step << Warrior/Rogue
+step << Warrior/Rogue/Paladin
     .goto Durotar,51.8,40.9
     .money <0.0010
     .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
-step << Warrior/Rogue
+step << Warrior/Rogue/Paladin
     .goto Durotar,53.0,42.0
     .money <0.0077
 .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
-step << Priest/Mage/Warlock/Shaman
+step << Priest/Mage/Warlock/Shaman/Druid
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
@@ -586,25 +586,29 @@ step << Warrior/Rogue/Hunter
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much Haunch of Meat as you can
+step << Paladin
+    .goto Durotar,51.5,41.6
+    .turnin 2161 >>Turn in A Peon's Burden
+    .home >> Set your Hearthstone to Razor Hill
 step << Priest
     .goto Durotar,54.3,42.9
     .turnin 5649 >> In Favor of Spirituality
     .accept 5648 >> Garments of Spirituality
 step << Priest
     .goto Durotar,53.1,46.5
- .complete 5648,1 --Heal and fortify Grunt Kor'ja
+.complete 5648,1 --Heal and fortify Grunt Kor'ja
 step << Priest
     .goto Durotar,54.3,42.9
     .turnin 5649 >> In Favor of Spirituality
 step
     #sticky
-    #completewith next
+    #label KulTiras
 >>Kill Kul Tiras mobs. Loot them for Scraps
-    .complete 784,2 --Kul Tiras Marine (8)
     .complete 784,1 --Kul Tiras Sailor (10)
+    .complete 784,2 --Kul Tiras Marine (8)
     .complete 791,1 --Canvas Scraps (8)
 step
-.goto Durotar,59.3,58.3,10 >>Go inside the keep
+.goto Durotar,59.2,58.3,15 >>Go inside the keep
 step
     .goto Durotar,59.7,58.3
     >>Go to the top floor of the Keep. Kill Lieutenant Benedict and loot his key - be careful as he uses Shield Bash (Interrupt)
@@ -620,9 +624,11 @@ step
 .collect 4881,1,830 --Collect Aged Envelope (1)
 .accept 830 >>Accept The Admiral's Orders
 step
-    .xp 7+2195 >> Grind to 2195+/4500xp
+    .goto Durotar,58.4,57.2
+.xp 7+2195 >> Grind to 2195+/4500xp
 step
-    .goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer, or run back
+    #requires KulTiras
+.goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer, or run back
 step
     .goto Durotar,52.2,43.2
     .turnin 823 >>Turn in Report to Orgnil
@@ -686,7 +692,6 @@ step << Shaman
 step << Priest
     .goto Durotar,54.3,42.9
     .train 139 >>Train Renew
-
 step << Warrior
 .goto Durotar,54.2,42.5
     .train 284 >>Train Heroic Strike r2
@@ -768,7 +773,7 @@ step << Rogue
     .complete 826,3 --Zalazane's Head (1)
 step << !Rogue !Shaman
     .goto Durotar,67.4,87.8
-    >>Kill Zalazane. (You may need a pot). Loot his head
+    >>Kill Zalazane. (You may need a healing potion). Loot his head
     .complete 826,3 --Zalazane's Head (1)
 step
     #label Trolls
