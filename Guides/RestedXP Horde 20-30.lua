@@ -682,7 +682,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 step
     #sticky
     #completewith next
-+Go to the Zeppelin tower. Take the zeppelin to Durotar
++Go to the Zeppelin tower. Take the zeppelin to Tirisfal
 .goto Durotar,50.8,13.8
 step
 .zone Tirisfal Glades >>Arrive in Tirisfal Glades
@@ -829,7 +829,8 @@ step
 .goto Hillsbrad Foothills,35.2,46.5
     .complete 567,4 --Kill Farmer Kalaba (x1)
 step
-    >>Kill Peasants in and around the field
+    #label Peasants
+>>Kill Peasants in and around the field
 .goto Hillsbrad Foothills,35.2,46.5
 .complete 528,1 --Kill Hillsbrad Peasant (x15)
 step
