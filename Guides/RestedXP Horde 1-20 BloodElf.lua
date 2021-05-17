@@ -2179,7 +2179,8 @@ step << Rogue
     .turnin 10548 >>Turn in The Sad Truth
     .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
 step
-    .goto Ghostlands,45.9,32.1
+    .isOnQuest 9220
+.goto Ghostlands,45.9,32.1
     .accept 9151 >> Accept The Sanctum of the Sun
 step
     .goto Ghostlands,44.8,32.7
