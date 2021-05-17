@@ -8,7 +8,7 @@ step << !Scourge
 .goto Tirisfal Glades,30.2,71.7
     +You have selected a guide meant for Undead. It is recommended you choose the same starter zone that you start in
 step
-    >>Drop your Hearthstone
+    >>Delete your Hearthstone
 >>Run out of the crypt
 .goto Tirisfal Glades,30.2,71.7
     .accept 363 >> Accept Rude Awakening
@@ -224,6 +224,10 @@ step
 .goto Tirisfal Glades,28.2,56.0,30,0
 .goto Tirisfal Glades,28.3,58.5,30,0
 .goto Tirisfal Glades,27.1,59.3,30,0
+.goto Tirisfal Glades,29.7,57.2,30,0
+.goto Tirisfal Glades,28.2,56.0,30,0
+.goto Tirisfal Glades,28.3,58.5,30,0
+.goto Tirisfal Glades,27.1,59.3,30,0
 >>Kill Young Spiders outside the cave
 .complete 380,1 --Kill Young Night Web Spider (x10)
 step
@@ -250,6 +254,10 @@ step
     .turnin 380 >> Turn in Night Web's Hollow
     .accept 381 >> Accept The Scarlet Crusade
 step
+    .goto Tirisfal Glades,36.6,68.5,30,0
+    .goto Tirisfal Glades,37.9,69.9,30,0
+    .goto Tirisfal Glades,38.2,67.3,30,0
+    .goto Tirisfal Glades,37.2,64.6,30,0
     .goto Tirisfal Glades,36.6,68.5,30,0
     .goto Tirisfal Glades,37.9,69.9,30,0
     .goto Tirisfal Glades,38.2,67.3,30,0
@@ -281,12 +289,9 @@ step
     .goto Tirisfal Glades,32.2,66.0
     .turnin 382 >> Turn in The Red Messenger
     .accept 383 >> Accept Vital Intelligence
-step << !Warrior
+step
     .goto Tirisfal Glades,38.1,56.6
-    .xp 5+2010 >>Grind to 2200+/2800xp en route
-step << Warrior/Paladin/Shaman/Hunter
-    .goto Tirisfal Glades,38.1,56.6
-    .xp 5+2320 >>Grind to 2420+/2800xp en route
+    .xp 5+2420 >>Grind to 2420+/2800xp en route
 step
     .goto Tirisfal Glades,38.2,56.8
     .accept 8 >> Accept A Rogue's Deal

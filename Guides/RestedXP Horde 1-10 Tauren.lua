@@ -18,7 +18,7 @@ step << Warrior/Shaman
     #sticky
     #completewith next
 +Kill Plainstriders for 10c+ of vendor trash
-.goto Mulgore,45.5,74.3,40
+.goto Mulgore,45.6,74.0,30,0
 step << Warrior/Shaman
     .goto Mulgore,45.3,76.5
     .vendor >> vendor trash
@@ -201,8 +201,7 @@ step << Shaman
 .turnin 1519 >>Turn in Call of Earth
 .accept 1520 >>Accept Call of Earth
 step << Shaman
-    >>Run to the Rock
-.goto Mulgore,53.9,80.5,100
+.goto Mulgore,53.9,80.5,90 >>Run to the Rock
 step << Shaman
 >>Use the Earth Sapta in your bags
 .goto Mulgore,53.9,80.5
@@ -465,24 +464,16 @@ step
 step
     #sticky
     #completewith next
-    .goto Mulgore,47.3,56.9,30    
-    .goto Mulgore,49.4,63.9,30
-    .goto Mulgore,50.2,60.2,30
-    .goto Mulgore,46.8,59.6,30
-step
+    .goto Mulgore,47.3,56.9,30,0    
+    .goto Mulgore,49.4,63.9,30,0
+    .goto Mulgore,50.2,60.2,30,0
+    .goto Mulgore,46.8,59.6,30,0
     >>Look for Kyle the Frenzied. He patrols clockwise throughout the town (so go anti-clockwise). Go up to him and use the Tender Strider Meat
 .complete 11129,1 --Kyle Fed (1)
 step << Hunter
-    .istrained 3044,1130
-.money <0.0190
 .goto Mulgore,47.8,55.7
     .train 3044 >>Train Arcane Shot
     .train 1130 >>Train Hunter's Mark
-step << Hunter
-    .istrained 3044
-    .money <0.0095
-.goto Mulgore,47.8,55.7
-    .train 3044 >>Train Arcane Shot
 step
     .goto Mulgore,48.2,53.3
     .turnin 11129 >>Turn in Kyle's Gone Missing!
@@ -513,9 +504,9 @@ step << Tauren
     #sticky
     #completewith Stalkers
 >>Kill Stalkers, Cougars, and Swoops in the area. Loot them for their claws and quills
-.goto Mulgore,58.1,48.6,60
-    .goto Mulgore,54.5,40.1,60
-    .goto Mulgore,46.4,50.7,60
+.goto Mulgore,58.1,48.6,60,0
+    .goto Mulgore,54.5,40.1,60,0
+    .goto Mulgore,46.4,50.7,60,0
     --Choosing to do swoops now and make it painful, but in return getting 2s 50c for the handin to try to avoid money problems
 step << Tauren
 #label Stalkers
@@ -526,9 +517,9 @@ step << !Tauren
     #sticky
     #completewith Stalkers
 >>Kill Swoops in the area. Loot them for their Quills
-.goto Mulgore,58.1,48.6,60
-    .goto Mulgore,54.5,40.1,60
-    .goto Mulgore,46.4,50.7,60
+.goto Mulgore,58.1,48.6,60,0
+    .goto Mulgore,54.5,40.1,60,0
+    .goto Mulgore,46.4,50.7,60,0
 step << !Tauren
 #label Stalkers
 .complete 761,1 --Trophy Swoop Quill (8)
@@ -737,8 +728,7 @@ step << Tauren Warrior/Tauren Shaman
 step << Warrior/Shaman
     #sticky
     #completewith next
->> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
-.goto Mulgore,46.5,55.5,200
+.goto Mulgore,46.5,55.5,200 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
 step << Tauren Warrior/Tauren Shaman
     .goto Mulgore,48.5,60.4
     .turnin 759 >>Turn in Wildmane Totem
@@ -831,6 +821,10 @@ step
 .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
+.goto The Barrens,45.2,23.3,40,0
+.goto The Barrens,45.2,22.0,40,0
+    .goto The Barrens,44.6,22.5,40,0
+    .goto The Barrens,43.9,24.4,40,0
 .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,52.0,30.6,150 >> Die and respawn at the Spirit Healer, or run back
@@ -892,15 +886,14 @@ step << Druid
 step << Druid/Hunter
     #sticky
     #completewith next
->>Hearth or fly back to Crossroads
-.goto The Barrens,52.0,29.9,100
+.goto The Barrens,52.0,29.9,100 >>Hearth or fly back to Crossroads
 step << Druid/Hunter
     .goto The Barrens,51.2,29.1
     .turnin 6364 >>Turn in Return to Jahan
 step << Druid/Hunter
     #sticky
     #completewith next
->>Run all the way to the Zeppelin tower. Take the zeppelin to Undercity. Abandon all your quests
++Run all the way to the Zeppelin tower. Take the zeppelin to Undercity. Abandon all your quests
     .goto Durotar,50.8,13.8
 step << Druid/Hunter
 .goto Tirisfal Glades,60.7,58.8,1500 >>Arrive in Tirisfal

@@ -834,6 +834,7 @@ step
 .complete 528,1 --Kill Hillsbrad Peasant (x15)
 step
     #requires Wilkes
+.goto Hillsbrad Foothills,62.4,20.3,2500
 step
     #requires Kalaba
 .goto Hillsbrad Foothills,62.4,20.3

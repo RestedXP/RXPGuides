@@ -292,7 +292,8 @@ step
     .accept 312 >>Accept Tundra MacGrann's Stolen Stash
 step
     .goto Dun Morogh,38.5,54.0
-    >>Wait until the level 11 yeti leaves the cave to sneak in and loot the chest
+    >>Wait until the level 11 yeti leaves the cave, then sneak in and loot the chest. Alternatively, do this
+        .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>CLICK HERE
     .complete 312,1 --MacGrann's Dried Meats (1)
 step
     .goto Dun Morogh,34.6,51.6
@@ -687,8 +688,12 @@ step
 step
     .xp 2 >> Grind to 2
 step
---.link Watch this video, and do this >> 
+#sticky
+#completewith next
+ >>Kill some Wolves en route, then watch this
+.link https://www.youtube.com/watch?v=iUvGsRbIVp8 >> CLICK HERE
     .goto Dun Morogh,26.8,79.8,20
+    .goto Dun Morogh,30.1,82.4,30,0
 step
     .goto Dun Morogh,30.1,82.4
     .complete 1599,1 --Collect Feather Charm (x3)
@@ -2408,9 +2413,10 @@ step
 >>Drop down
 .goto Dun Morogh,40.5,46.7,20
 step
->>do this [VIDEO]
-    .goto Dun Morogh,38.5,53.9
-    .complete 312,1 --Collect MacGrann's Dried Meats (x1)
+    .goto Dun Morogh,38.5,54.0
+    >>Wait until the level 11 yeti leaves the cave, then sneak in and loot the chest. Alternatively, do this
+        .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>CLICK HERE
+    .complete 312,1 --MacGrann's Dried Meats (1)
 step
     .goto Dun Morogh,34.6,51.7
     .turnin 312 >> Turn in Tundra MacGrann's Stolen Stash

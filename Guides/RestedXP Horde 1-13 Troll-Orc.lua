@@ -2,7 +2,12 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 1-10 Durotar
 #next 10-13 Durotar << Warrior/Shaman
-#next 10-20 Eversong Woods-Ghostlands << !Warrior !Shaman
+#next 10-20 Eversong Woods - Ghostlands << !Warrior !Shaman
+step << !Orc !Troll
+    #sticky
+    #completewith next
+.goto Durotar,43.3,68.5
+    +You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in
 step
     .goto Durotar,43.3,68.5
     .accept 4641 >>Accept Your Place In The World
@@ -10,7 +15,7 @@ step << Warlock
     #sticky
     #completewith next
 +Kill Boars for 10c+ of vendor trash
-.goto Durotar,44.0,71.3,30
+.goto Durotar,44.0,71.3,30,0
 step << Warlock
     .goto Durotar,42.6,69.0
 .accept 1485 >>Accept Vile Familiars
@@ -18,7 +23,7 @@ step << Warrior/Shaman
     #sticky
 #completewith next
 +Kill Boars for 10c+ of vendor trash
-.goto Durotar,44.2,65.9,30
+.goto Durotar,44.2,65.9,30,0
 step << Warrior/Shaman
 .goto Durotar,42.6,67.3
 .vendor >> vendor trash. Vendor armor if less than 10c
@@ -33,7 +38,7 @@ step
     .turnin 4641 >>Turn in Your Place In The World
     .accept 788 >>Accept Cutting Teeth
 step << !Warlock
-    .goto Durotar,44.2,65.9,40
+    .goto Durotar,44.2,65.9,40,0
 step << Warlock
     .goto Durotar,40.6,68.4
     .vendor >>vendor trash at the demon trainer
@@ -46,11 +51,11 @@ step << !Warlock
 step << Warlock
     #sticky
     #completewith WarlockBoars
->>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don't sit and drink for these
+>>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don’t sit and drink for these
     .complete 788,1 --Mottled Boar (10)
-step << WarlockBoars
+step << Warlock
     #label WarlockBoars
-.goto Durotar,45.0,57.4,90
+.goto Durotar,45.0,57.4,90 >> Run to the Familiars
 step << Warlock
 .goto Durotar,45.3,56.9
     >>Kill Vile Familiars for their heads
@@ -67,8 +72,7 @@ step << !Warlock
 .goto Durotar,40.6,62.6
     .accept 790 >>Accept Sarkoth
 step
-    >>Go up the path here
-.goto Durotar,40.7,65.2,15
+.goto Durotar,40.7,65.2,15 >>Go up the path here
 step
     >>Kill Sarkoth. Loot his claw
 .goto Durotar,40.7,67.3
@@ -92,6 +96,11 @@ step << Warlock
 .goto Durotar,42.9,69.1
     .turnin 1499 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
+step << !Orc !Troll
+    .goto Durotar,42.1,68.3
+    .turnin 788 >>Turn in Cutting Teeth
+    .turnin 804 >>Turn in Sarkoth
+    .accept 789 >>Accept Sting of the Scorpid
 step << Orc Rogue
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
@@ -225,17 +234,17 @@ step
     #completewith Peons
 >>Wake up any sleeping peons around the trees with Foreman's Blackjack (put it on your bars)
     .complete 5441,1 --Peons Awoken (5)
-step
-    .goto Durotar,47.1,65.2,30
 step << !Warlock
 #sticky
 #completewith imps
+.goto Durotar,47.1,65.2,30,0
 >>Kill Scorpions for some tails en route to the cave
 .complete 789,1 --Scorpid Worker Tail (10)
 step << Warlock
     >>Kill Scorpions for their tails
 .complete 789,1 --Scorpid Worker Tail (10)
-.goto Durotar,46.6,58.2,30
+.goto Durotar,47.1,65.2,30,0
+.goto Durotar,46.6,58.2,30,0
 .goto Durotar,39.8,63.5
 step << !Warlock
     #label imps
@@ -248,8 +257,10 @@ step <<!Warlock
     .complete 789,1 --Scorpid Worker Tail (10)
 step
     #label Apples
+.goto Durotar,39.8,63.5,2000,0
 step
     #label Peons
+.goto Durotar,39.8,63.5,2000,0
 step
     .goto Durotar,44.0,65.3
     >>Finish looting the Cactus Apples
@@ -260,7 +271,7 @@ step
 step
     .goto Durotar,42.7,67.2
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
-step << Warrior/Rogue/Hunter
+step << Warrior/Rogue/Hunter/Druid/Paladin/Shaman
     .goto Durotar,42.6,67.3
 .vendor >>vendor trash
 step << Mage/Priest/Warlock
@@ -286,10 +297,6 @@ step << Priest
     .goto Durotar,42.4,68.8
     .train 589 >>Train Shadow Word: Pain
     .train 2052 >>Train Lesser Heal r2
-step << Priest
-    .istrained 589
-    .goto Durotar,42.4,68.8
-    .train 589 >>Train Shadow Word: Pain
 step << !Shaman !Warlock
     .goto Durotar,42.9,69.1
     .turnin 792 >>Turn in Vile Familiars
@@ -311,8 +318,7 @@ step
     .turnin 5441 >>Turn in Lazy Peons
     .accept 6394 >>Accept Thazz'ril's Pick
 step
-    .goto Durotar,45.2,56.8,30
-    >>Run to the cave
+    .goto Durotar,45.2,56.8,30 >>Run to the cave
 step << Shaman
     #sticky
 >>Kill Felstalkers for Hooves
@@ -322,11 +328,9 @@ step
 .goto Durotar,43.7,53.8
     .complete 6394,1 --Thazz'ril's Pick (1)
 step
-    .goto Durotar,44.7,54.0,8
-    >>Go back to this part of the cave
+    .goto Durotar,44.7,54.0,10 >>Go back to this part of the cave
 step
-    .goto Durotar,43.4,52.0,8
-    >>Follow it to here
+    .goto Durotar,43.4,52.0,10 >>Follow it to here
 step
     >>Kill Yarrog. Loot him for the Medallion
 .goto Durotar,42.7,53.0
@@ -335,9 +339,11 @@ step << !Shaman
     .xp 5+1680 >> Grind to 1680+/2800xp
 step << Shaman
     .xp 5+690 >> Grind to 690+/2800xp
-step
+step << !Paladin
     .hs >>Hearth to Valley of Trials
-    .goto Durotar,43.3,69.0,30
+    .goto Durotar,43.3,69.0,100,0
+step << Paladin
+    .goto Durotar,43.3,69.0,140 >>Die near the start of the cave and respawn at the spirit healer, or run back to town
 step
     .goto Durotar,44.6,68.6
     .turnin 6394 >>Turn in Thazz'ril's Pick
@@ -352,14 +358,6 @@ step
 step << !Shaman
     .xp 6 >> Grind to 6
 step << Priest
-    .istrained 2052
-.goto Durotar,42.4,68.8
-.accept 5649 >> In Favor of Spirituality
-.train 591 >>Train Smite r2
-    .train 17 >>Train Power Word: Shield
-    .train 2052 >>Train Lesser Heal r2
-step << Priest
-    .istrained 591,17
 .goto Durotar,42.4,68.8
 .accept 5649 >> In Favor of Spirituality
 .train 591 >>Train Smite r2
@@ -380,14 +378,9 @@ step << Warrior
     .goto Durotar,42.9,69.4
     .train 3127 >>Train Parry
 step << Rogue
-    .money <0.0190
 .goto Durotar,41.3,68.0
     .train 1757 >>Train Sinister Strike r2
     .train 1776 >>Train Gouge
-step << Rogue
-.istrained 1757
-.goto Durotar,41.3,68.0
-    .train 1757 >>Train Sinister Strike r2
 step << Warlock
     .goto Durotar,40.6,68.5
     .train 695 >>Train Shadow Bolt r2
@@ -397,15 +390,13 @@ step << Warlock
 .goto Durotar,40.6,68.4
     .vendor >>Buy the Blood Pact book and use it
 step << Shaman
-    .goto Durotar,43.0,71.2,20
+    .goto Durotar,43.0,71.2,20 >>Run up the Hidden Path
 step << Shaman
-    >>Run up the Hidden Path
-.goto Durotar,41.5,73.3,10
+.goto Durotar,41.5,73.3,10 >>Run up the Hidden Path
 step << Shaman
-    >>Take a left here
-.goto Durotar,40.8,74.1,8
+.goto Durotar,40.8,74.1,8 >>Take a left here
 step << Shaman
-    .goto Durotar,41.8,74.8,10
+    .goto Durotar,41.8,74.8,10 >>Run up the Hidden Path
 step << Shaman
     >>Use the Earth Sapta in your bags
 .goto Durotar,44.0,76.2
@@ -420,13 +411,10 @@ step
 .goto Durotar,52.1,68.3
     .accept 2161 >>Accept A Peon's Burden
 step
-    #sticky
-    #completewith next
+.goto Durotar,54.3,73.3,15,0
+.goto Durotar,54.5,75.0,15,0
+.goto Durotar,54.1,76.6,15,0
 >>Quest giver patrols between 3 points
-.goto Durotar,54.3,73.3,8
-.goto Durotar,54.5,75.0,8
-.goto Durotar,54.1,76.6,8
-step
     .accept 786 >>Accept Thwarting Kolkar Aggression
 step
     .goto Durotar,56.0,73.9
@@ -467,7 +455,7 @@ step << Orc Warrior
 step << Troll Warrior
     .goto Durotar,56.5,73.1
 .vendor >> vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
-step << Troll Warrior
+step << Troll Warrior/Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
     >> Buy Gladius and equip it
@@ -481,21 +469,17 @@ step << Hunter
     >> Buy Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
-    #sticky
-    #completewith next
-.goto Durotar,59.7,71.7,50
-    .goto Durotar,57.6,77.9,40
-step
-    #sticky
-        #completewith next
+#sticky
+#completewith next
+.goto Durotar,59.7,71.7,50,0
+    .goto Durotar,57.6,77.9,50,0
     >> Run down the beach, killing as many Crawlers and Makrura as possible for Mucus and Eyes
     .complete 818,2 --Crawler Mucus (8)
     .complete 818,1 --Intact Makrura Eye (4)
 step
-    .goto Durotar,52.1,83.3,100
+    .goto Durotar,52.1,83.3,75 >> Reach the end of the beach
 step
-    >>Enter the Kolkar base
-.goto Durotar,50.9,79.2,15
+.goto Durotar,50.9,79.2,15 >>Enter the Kolkar base
 step
      #sticky
     #completewith Bonfire
@@ -512,8 +496,7 @@ step
 .goto Durotar,46.3,79.0
     .complete 786,3 --Attack Plan: Orgrimmar destroyed (1)
 step
-      >> Die at the Bonfire and respawn at the Spirit Healer, or run back
-    .goto Durotar,57.5,73.3,200
+    .goto Durotar,57.5,73.3,200 >> Die at the Bonfire and respawn at the Spirit Healer, or run back
 step << Shaman
     .goto Durotar,56.6,73.1
     .money <0.0480
@@ -532,7 +515,7 @@ step << Orc Warrior
     >>Talk to Traxexir from below the stairs outside
     >> Buy Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior
+step << Troll Warrior/Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
     >>Talk to Traxexir from below the stairs outside
@@ -544,18 +527,16 @@ step << Hunter
     >> Buy Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
-    >>Grind to Razor Hill
-.goto Durotar,52.5,44.4,100
+.goto Durotar,52.5,44.4,100 >>Grind to Razor Hill
 step
 >>Inside the bunker, top floor
 .goto Durotar,51.9,43.5
 .accept 784 >>Accept Vanquish the Betrayers
 step
 .goto Durotar,51.1,42.6
->>vendor trash
+.vendor >>vendor trash
 step
-    >>Go up this path here
-.goto Durotar,50.2,43.1,10
+.goto Durotar,50.2,43.1,10 >>Go up this path here
 step
     >>Go up the tower
 .goto Durotar,49.9,40.3
@@ -585,19 +566,19 @@ step << Hunter
     .money <0.0271
     >> Buy Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
-step << Warrior/Rogue
+step << Warrior/Rogue/Paladin
     .goto Durotar,52.0,40.7
     .money <0.0020
     .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
-step << Warrior/Rogue
+step << Warrior/Rogue/Paladin
     .goto Durotar,51.8,40.9
     .money <0.0010
     .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
-step << Warrior/Rogue
+step << Warrior/Rogue/Paladin
     .goto Durotar,53.0,42.0
     .money <0.0077
 .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
-step << Priest/Mage/Warlock/Shaman
+step << Priest/Mage/Warlock/Shaman/Druid
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
@@ -607,44 +588,56 @@ step << Warrior/Rogue/Hunter
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much Haunch of Meat as you can
+step << Paladin
+    .goto Durotar,51.5,41.6
+    .turnin 2161 >>Turn in A Peon's Burden
+    .home >> Set your Hearthstone to Razor Hill
+step << Paladin
+    .goto Orgrimmar,49.1,94.7,20 >> Run into Orgrimmar
+step << Paladin
+    .goto Orgrimmar,32.3,35.7
+    .trainer >> Go and train your class spells
+step << Paladin
+    .hs >>Hearth to Razor Hill
 step << Priest
     .goto Durotar,54.3,42.9
     .turnin 5649 >> In Favor of Spirituality
     .accept 5648 >> Garments of Spirituality
 step << Priest
     .goto Durotar,53.1,46.5
- .complete 5648,1 --Heal and fortify Grunt Kor'ja
+.complete 5648,1 --Heal and fortify Grunt Kor'ja
 step << Priest
     .goto Durotar,54.3,42.9
     .turnin 5649 >> In Favor of Spirituality
 step
-    >>Kill Kul Tiras mobs. Loot them for Scraps
-    .complete 784,2 --Kul Tiras Marine (8)
+    #sticky
+    #label KulTiras
+>>Kill Kul Tiras mobs. Loot them for Scraps
     .complete 784,1 --Kul Tiras Sailor (10)
+    .complete 784,2 --Kul Tiras Marine (8)
     .complete 791,1 --Canvas Scraps (8)
 step
-    >>Go inside the keep
-.goto Durotar,59.3,58.3,10
+.goto Durotar,59.2,58.3,15 >>Go inside the keep
 step
     .goto Durotar,59.7,58.3
     >>Go to the top floor of the Keep. Kill Lieutenant Benedict and loot his key - be careful as he uses Shield Bash (Interrupt)
 .complete 784,3 --Lieutenant Benedict (1)
 .collect 4882,1 --Collect Benedict's Key (1)
 step
-    >>Go up the stairs here
-.goto Durotar,59.8,57.8,5
-.goto Durotar,59.9,57.5,5
+.goto Durotar,59.8,57.8,8 >>Go up the stairs here
 step
->>Loot the chest
+.goto Durotar,59.9,57.5,8 >>Go up the stairs here
+step
+>>Loot the chest. Accept the quest from the item
 .goto Durotar,59.3,57.6
-.collect 4881,1 --Collect Aged Envelope (1)
-step
->>Accept the quest
+.collect 4881,1,830 --Collect Aged Envelope (1)
 .accept 830 >>Accept The Admiral's Orders
-    .xp 7+2195 >> Grind to 2195+/4500xp
 step
-    >> Die and respawn at the Spirit Healer, or run back
-    .goto Durotar,53.5,44.5,120
+    .goto Durotar,58.4,57.2
+.xp 7+2195 >> Grind to 2195+/4500xp
+step
+    #requires KulTiras
+.goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer, or run back
 step
     .goto Durotar,52.2,43.2
     .turnin 823 >>Turn in Report to Orgnil
@@ -688,12 +681,10 @@ step << Hunter
     >> Buy Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Warrior/Rogue
-    .istrained 2018
 .goto Durotar,52.0,40.7
     .money <0.0020
     .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
 step << Warrior/Rogue
-    .istrained 2580
 .goto Durotar,51.8,40.9
     .money <0.0010
     .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
@@ -708,47 +699,16 @@ step << Shaman
     .train 8044 >>Train Earth Shock r2
     .train 8018 >>Train Rockbiter Weapon r2
 step << Priest
-    .istrained 2052
-    .goto Durotar,54.3,42.9
-    .train 139 >>Train Renew
-    .train 2052 >>Train Lesser Heal r2
-step << Priest
-    .istrained 139
     .goto Durotar,54.3,42.9
     .train 139 >>Train Renew
 step << Warrior
-    .istrained 3127
-.goto Durotar,54.2,42.5
-.train 3127 >>Train Parry
-step << Warrior
-    .istrained 3127
-.goto Durotar,54.2,42.5
-    .train 284 >>Train Heroic Strike r2
-    .train 1715 >>Train Hamstring
-    .train 3127 >>Train Parry
-step << Warrior
-.istrained 284
-.istrained 1715
 .goto Durotar,54.2,42.5
     .train 284 >>Train Heroic Strike r2
     .train 1715 >>Train Hamstring
 step << Hunter
-    .istrained 13163
-.goto Durotar,51.8,43.5
-.train 5116 >>Train Concussive Shot
-.train 13163 >>Train Aspect of the Monkey
-step << Hunter
-    .istrained 5116
 .goto Durotar,51.8,43.5
 .train 5116 >>Train Concussive Shot
 step << Rogue
-    .istrained 1776
-.goto Durotar,52.0,43.7
-    .train 6760 >>Train Eviscerate r2
-    .train 5277 >>Train Evasion
-.train 1776 >>Train Gouge
-step << Rogue
-    .istrained 6760,5277
 .goto Durotar,52.0,43.7
     .train 6760 >>Train Eviscerate r2
     .train 5277 >>Train Evasion
@@ -757,11 +717,6 @@ step << Warlock
     .train 980 >>Train Curse of Agony
     .train 5782 >>Train Fear
 step << Warlock
-    .istrained 6307
-.goto Durotar,54.7,41.5
-    .vendor >>Buy the Blood Pact, Firebolt r2 books and use them
-step << Warlock
-    .istrained 7832
 .goto Durotar,54.7,41.5
     .vendor >>Buy the Firebolt r2 book and use it
 step << Warrior/Rogue
@@ -778,7 +733,6 @@ step << Priest/Warlock/Mage
 step << Warrior/Rogue
     .goto Durotar,51.5,41.6
     .vendor >> Buy as much Haunch of Meat as you can
-    --I don't think shaman or hunter would need? - they have to meet money gates too
 step
     #sticky
     #completewith Tools
@@ -788,13 +742,12 @@ step
 step
     #label Tools
 >>Check the boat closest to the shore for the Toolboxes. Check other boats if you can't find these spawns
-.goto Durotar,61.9,55.5,8
-    .goto Durotar,62.3,56.3,8
-    .goto Durotar,61.4,56.1,8
+.goto Durotar,61.9,55.5,12 >> In the window underwater
+    .goto Durotar,62.3,56.3,12,0
+    .goto Durotar,61.4,56.1,12,0
     .complete 825,1 --Gnomish Tools (3)
 step
-    .goto Durotar,67.2,70.0,60
-    >>Swim to here
+    .goto Durotar,67.2,70.0,60 >>Swim to the Island
 step
     #sticky
     #completewith Fur
@@ -802,6 +755,7 @@ step
     .complete 817,1 --Durotar Tiger Fur (4)
 step
     >>Loot Taillasher eggs on the ground on this island. They're usually guarded by a Taillasher
+    .goto Durotar,68.8,71.5
     .complete 815,1 --Taillasher Egg (3)
 step
     #sticky
@@ -811,8 +765,7 @@ step
     .complete 818,2 --Crawler Mucus (8)
 step
     #label Swim
-.goto Durotar,53.1,46.5,60
-    >>Swim to the other island
+.goto Durotar,66.9,80.0,80 >>Swim to the other island
 step
     #sticky
     #completewith Trolls
@@ -827,9 +780,9 @@ step << Rogue
     .goto Durotar,67.4,87.8
     >>Kill Zalazane. Save your Gouge for when he casts Healing Wave. Loot his head
     .complete 826,3 --Zalazane's Head (1)
-step << !Rogue/!Shaman
+step << !Rogue !Shaman
     .goto Durotar,67.4,87.8
-    >>Kill Zalazane. (You may need a pot). Loot his head
+    >>Kill Zalazane. (You may need a healing potion). Loot his head
     .complete 826,3 --Zalazane's Head (1)
 step
     #label Trolls
@@ -842,22 +795,24 @@ step
     .complete 826,1 --Hexed Troll (8)
     .complete 826,2 --Voodoo Troll (8)
 step
-    #completewith Fur2
 >>Get the rest of the Tiger Fur
-.goto Durotar,64.7,88.5,30
-    .goto Durotar,65.2,80.8,30
-    .goto Durotar,59.9,83.6,30
-step
-    #label Fur2
+.goto Durotar,64.7,88.5,30,0
+    .goto Durotar,65.2,80.8,30,0
+    .goto Durotar,59.9,83.6,30,0
+.goto Durotar,64.7,88.5,30,0
+    .goto Durotar,65.2,80.8,30,0
+    .goto Durotar,59.9,83.6,30,0
     .complete 817,1 --Durotar Tiger Fur (4)
 step
-    >> Die and respawn at the Spirit Healer, or run back
-    .goto Durotar,57.5,73.3,200
+    .goto Durotar,57.5,73.3,200 >> Die and respawn at the Spirit Healer, or run back
 step
-    >> Get the rest of the items from the Crawlers and Makrura
-    .complete 818,2 --Crawler Mucus (8)
+    >> Get the rest of the items from the Makrura and Crawlers
     .complete 818,1 --Intact Makrura Eye (4)
-    .goto Durotar,52.3,83.0
+    .complete 818,2 --Crawler Mucus (8)
+.goto Durotar,59.7,71.7,50,0
+    .goto Durotar,57.6,77.9,50,0
+.goto Durotar,59.7,71.7,50,0
+    .goto Durotar,57.6,77.9,50,0
 step << Mage
     >>Go inside the tent
 .goto Durotar,56.3,75.1
@@ -878,14 +833,13 @@ step
     .goto Durotar,54.3,73.3
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
 step
-    .goto Durotar,49.9,49.5,50
     .goto Durotar,48.9,48.5
-    >>Kill Quilboars and Scouts
+    >>Kill Quilboars and Scouts in the area
     .complete 837,1 --Razormane Quilboar (4)
     .complete 837,2 --Razormane Scout (4)
 step
     .goto Durotar,43.8,39.1
-    >>Kill Dustrunners and Battleguards. Dustrunners have Rejuvenation (Heal) and Battleguards are tanky
+    >>Kill Dustrunners and Battleguards in the area. Dustrunners have Rejuvenation (Heal) and Battleguards are tanky
     .complete 837,3 --Razormane Dustrunner (4)
     .complete 837,4 --Razormane Battleguard (4)
 step
@@ -923,8 +877,7 @@ step << Rogue
     .goto Durotar,56.5,73.1
     .money <0.0382
     .vendor >> Buy another Stiletto and equip it
-step << Warrior/Rogue
-    .istrained 3273
+step << Warrior/Rogue/Paladin
 .goto Durotar,54.2,41.9
     .money <0.0095
     .train 3273 >>Train First Aid
@@ -967,8 +920,7 @@ step << Hunter
 .goto Durotar,46.4,22.9
     .accept 834 >>Accept Winds in the Desert
 step << Warlock/Hunter
-    >>Run into Orgrimmar
-.goto Orgrimmar,49.0,94.2,20
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Hunter
     .goto Orgrimmar,66.0,18.5
     .turnin 6081 >>Turn in Training the Beast
@@ -985,15 +937,13 @@ step << Warlock
 .goto Orgrimmar,31.6,37.8
 .accept 5726 >>Accept Hidden Enemies
 step << Warlock
-    >>Run out of Orgrimmar
-.goto Orgrimmar,49.0,94.2,20
+.goto Orgrimmar,49.0,94.2,20 >>Run out of Orgrimmar
 step << Warlock
     .goto Durotar,56.4,20.1
     .turnin 828 >>Turn in Margoz
     .accept 827 >>Accept Skull Rock
 step << Warlock
-    >>Enter Skull Rock
-.goto Durotar,55.0,9.7,20
+.goto Durotar,55.0,9.7,20 >>Enter Skull Rock
 step << Warlock
     #sticky
     #label Collars
@@ -1011,9 +961,9 @@ step << Warlock
 #label Shadows
     .accept 832 >>Accept Burning Shadows
 step << Warlock 
->>Go into the Right path of the cave. Continue hugging right
-.goto Durotar,53.6,8.5,10
-.goto Durotar,51.8,8.1,10
+.goto Durotar,53.6,8.5,10 >> Go into the Right path of the cave
+step << Warlock
+.goto Durotar,51.8,8.1,10 >> Continue hugging right
 step << Warlock
     >>Loot the chest
 .goto Durotar,51.6,9.8
@@ -1021,15 +971,13 @@ step << Warlock
 step << Warlock
     #requires Collars
 #label Skull
->> Die and respawn at the Spirit Healer, or run back
-.goto Durotar,47.2,17.7,225
+.goto Durotar,47.2,17.7,225 >> Die and respawn at the Spirit Healer, or run back
 step << Warlock
     .goto Durotar,56.4,20.1
     .turnin 827 >>Turn in Skull Rock
     .accept 829 >>Accept Neeru Fireblade
 step << Warlock
-    >>Run into Orgrimmar
-.goto Orgrimmar,49.0,94.2,20
+.goto Orgrimmar,49.0,94.2,20    >>Run into Orgrimmar
 step << Warlock
     .goto Orgrimmar,48.3,45.3
     .turnin 1501 >>Turn in Creature of the Void
@@ -1056,61 +1004,58 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,31.8,37.8
     .turnin 5726 >>Turn in Hidden Enemies
-step << !Shaman/!Warrior/!Warlock/!Hunter
+step << !Shaman !Warrior !Warlock !Hunter
 .goto Durotar,46.4,22.9
     .accept 834 >>Accept Winds in the Desert
-step << !Shaman/!Warrior/!Warlock
+step << !Shaman !Warrior !Warlock
     >>Loot the small sacks on the ground
 .goto Durotar,51.7,27.7
     .complete 834,1 --Sack of Supplies (5)
-step << !Shaman/!Warrior/!Warlock
+step << !Shaman !Warrior !Warlock
     .goto Durotar,46.4,22.9
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines
-step << !Shaman/!Warrior/!Warlock
-    >>Go through the cave here
-.goto Durotar,51.9,27.4,20
-step << !Shaman/!Warrior/!Warlock
-    #sticky
-    #completewith next
+step << !Shaman !Warrior !Warlock
+.goto Durotar,51.9,27.4,20 >>Go through the cave here
+step << !Shaman !Warrior !Warlock
     >>Kill Harpies in the area
-    .goto Durotar,54.0,27.7,30
-    .goto Durotar,51.3,23.5,30
-    .goto Durotar,51.5,19.1,30
-step << !Shaman/!Warrior/!Warlock
+    .goto Durotar,54.0,27.7,30,0
+    .goto Durotar,51.3,23.5,30,0
+    .goto Durotar,51.5,19.1,30,0
+    .goto Durotar,54.0,27.7,30,0
+    .goto Durotar,51.3,23.5,30,0
+    .goto Durotar,51.5,19.1,30,0
     .complete 835,1 --Dustwind Savage (12)
     .complete 835,2 --Dustwind Storm Witch (8)
-step << !Shaman/!Warrior/!Warlock
-    >> Die and respawn at the Spirit Healer, or run back
-    .goto Durotar,47.2,17.6,60
-step << !Shaman/!Warrior/!Warlock
+step << !Shaman !Warrior !Warlock
+    .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
+step << !Shaman !Warrior !Warlock
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
 step << Hunter
     .goto Durotar,57.2,12.0
     +Tame A Surf Crawler
-step << !Shaman/!Warrior
+step << !Shaman !Warrior
     #sticky
     #completewith next
->>Go to the Zeppelin tower. Take the zeppelin to Undercity
++Go to the Zeppelin tower. Take the zeppelin to Undercity
     .goto Durotar,50.8,13.8
-step << !Shaman/!Warrior
-    >>Arrive in Tirisfal
-.goto Tirisfal Glades,60.7,58.8,1500
-step << !Shaman/!Warrior
-    >>Go to Undercity
-.goto Undercity,66.2,1.1,18
-step << !Shaman/!Warrior
-    >>Go up the stairs here
-.goto Undercity,62.0,11.3,18
-step << !Shaman/!Warrior
-    >>Use the Orb of Translocation
-.goto Undercity,54.9,11.3,18
-step << !Shaman/!Warrior
-.goto Silvermoon City,62.0,30.1,20
+step << !Shaman !Warrior
+.zone Tirisfal Glades >>Arrive in Tirisfal
+step << !Shaman !Warrior
+.goto Undercity,66.2,1.1,18 >>Go to Undercity
+step << !Shaman !Warrior
+.goto Undercity,62.0,11.3,18 >>Go up the stairs here
+step << !Shaman !Warrior
+.goto Undercity,54.9,11.3,18 >>Use the Orb of Translocation
+step << !Shaman !Warrior
+.goto Silvermoon City,62.0,30.1,20 >>Arrive in Silvermoon
+step << Paladin
+    .goto Silvermoon City,91.2,36.9
+    .trainer >> Go and train your class spells
 ]],"Orc/Troll")
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
-<< Horde
+<< Horde Warrior/Shaman
 #name 10-13 Durotar
 #next 13-23 The Barrens
 step << Shaman/Warrior
@@ -1129,8 +1074,7 @@ step << Orc Shaman/Troll Shaman
     .turnin 2983 >>Turn in Call of Fire
     .accept 1524 >>Accept Call of Fire
 step << !Tauren
-    >> Die and respawn at the Spirit Healer, or run back
-    .goto The Barrens,50.8,32.6,200
+    .goto The Barrens,50.8,32.6,200 >> Die and respawn at the Spirit Healer, or run back
 step << !Tauren
     .goto The Barrens,52.2,31.8
     .accept 870 >>Accept The Forgotten Pools
@@ -1162,23 +1106,23 @@ step << !Tauren
     .accept 1492 >>Accept Wharfmaster Dizzywig
 step << !Tauren
     #sticky
-    #label Pools
->>Swim under the water toward the bubble fissure
+    #completewith next
+    >>Collect the white mushrooms around The Forgotten Pools
+.complete 848,1 --Collect Fungal Spores (x4)
+step << !Tauren
+>>Dive underwater to the bubble fissure
 .goto The Barrens,45.1,22.5
-    .complete 870,1 --Explore the waters of the Forgotten Pools (1)
+    .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Tauren
-    #label Spores
->>Loot the white mushrooms around the pool
-.goto The Barrens,45.0,24.0
-    .complete 848,1 --Fungal Spores (4)
+>>Collect the white mushrooms around The Forgotten Pools
+.goto The Barrens,45.2,23.3,40,0
+.goto The Barrens,45.2,22.0,40,0
+    .goto The Barrens,44.6,22.5,40,0
+    .goto The Barrens,43.9,24.4,40,0
+.complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
-    #requires Spores
+    .goto The Barrens,52.0,30.6,150 >> Die and respawn at the Spirit Healer, or run back
 step << !Tauren
-    #requires Pools
->> Die and respawn at the Spirit Healer, or run back
-    .goto The Barrens,50.8,32.6,200
-step << !Tauren
-    .goto The Barrens,51.5,30.2
     .turnin 848 >>Turn in Fungal Spores
     .accept 853 >>Accept Apothecary Zamah
 step << !Tauren
@@ -1211,14 +1155,11 @@ step << !Tauren
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step << !Tauren
-    #sticky
-    #completewith next
+.goto Mulgore,56.3,50.9,8,0
+    .goto Mulgore,56.1,52.6,8,0
+    .goto Mulgore,53.5,58.0,8,0
+    .goto Mulgore,52.0,61.1,8,0
     >>Collect the two "Acorns" on the ground
-.goto Mulgore,56.3,50.9,8
-    .goto Mulgore,56.1,52.6,8
-    .goto Mulgore,53.5,58.0,8
-    .goto Mulgore,52.0,61.1,8
-step << !Tauren
     .complete 771,2 --Collect Ambercorn (2)
 step << !Tauren
     .goto Mulgore,55.5,55.8
@@ -1228,9 +1169,12 @@ step << !Tauren
     .goto Mulgore,58.4,61.7
     .turnin 751 >>Turn in The Ravaged Caravan
 step << !Tauren
-      >> Find Kyle, it's a wolf that's running around inside the city.
-    .goto Mulgore,47.0,58.6
-    .complete 11129,1 --Kyle Fed (1)
+    .goto Mulgore,47.3,56.9,30,0
+    .goto Mulgore,49.4,63.9,30,0
+    .goto Mulgore,50.2,60.2,30,0
+    .goto Mulgore,46.8,59.6,30,0
+    >>"Fine" Kyle the Frenzied. He patrols clockwise throughout the town (so go anti-clockwise). Go up to him and use the Tender Strider Meat
+.complete 11129,1 --Kyle Fed (1)
 step << !Tauren
     .goto Mulgore,47.8,57.5
     .turnin 771 >>Turn in Rite of Vision
@@ -1242,21 +1186,19 @@ step << !Tauren
     .goto Mulgore,32.7,36.2
     .turnin 772 >>Turn in Rite of Vision
 step << !Tauren
-    >>Run to the lift and take it into Thunder Bluff
-.goto Thunder Bluff,32.0,66.9,20
+.goto Thunder Bluff,32.0,66.9,20 >>Run to the lift and take it into Thunder Bluff
 step << !Tauren
     .goto Thunder Bluff,40.9,62.7
+    .train 227 >>Train Staves
     .train 199 >>Train 2h Maces
 step << !Tauren
-    >>Go up the tower
-.goto Thunder Bluff,45.6,52.0,15
+.goto Thunder Bluff,45.6,52.0,15 >>Go up the tower
 step << !Tauren
     >>Go to the top floor of the tower
 .goto Thunder Bluff,46.8,49.9
     .fp >>Get the Thunder Bluff Flight Path
 step << !Tauren
-    >>Jump down into the cave
-.goto Thunder Bluff,29.6,29.7,15
+.goto Thunder Bluff,29.6,29.7,15 >>Jump down into the cave
 step << !Tauren
     .goto Thunder Bluff,23.0,21.1
     .turnin 853 >>Turn in Apothecary Zamah
@@ -1280,8 +1222,7 @@ step
     .goto Durotar,41.5,18.6
     .accept 812 >>Accept Need for a Cure
 step
-    >>Run into Orgrimmar
-.goto Orgrimmar,49.0,94.2,20
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Orc/Troll
     .goto Orgrimmar,54.2,68.6
     .turnin 6384 >>Turn in Ride to Orgrimmar
@@ -1301,51 +1242,39 @@ step
     .accept 813 >>Accept Finding the Antidote
 step
     #sticky
->>Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it 
+    #completewith next
++Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it 
 step
     .abandon 812 >>Abandon Need for a Cure
 step
-    >>Run out of Orgrimmar
-.goto Orgrimmar,49.0,94.2,20
+.goto Orgrimmar,49.0,94.2,20 >>Run out of Orgrimmar
 step
-    >>Jump into Thunder Ridge
-.goto Durotar,41.7,25.5,20
+.goto Durotar,41.7,25.5,20 >>Jump into Thunder Ridge
 step
     >>Kill Fizzle. Try to clear the mobs in the surrounding camps to make space
 .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 step << Shaman
-    >>Leave Thunder Ridge
-.goto Durotar,39.7,24.7,30
-.goto Durotar,39.2,32.3,30
+.goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
     #sticky
-    #completewith Crocodiles
->>Leave Thunder Ridge
-.goto Durotar,39.7,24.7,30
-.goto Durotar,39.2,32.3,30
+.goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
     >>Kill Lightning Hides for Singed Scales
     .complete 1498,1 --Singed Scale (5)
 step
-    #sticky
-    #label Crocodiles
-    #completewith next
 >>Start killing crocodiles for the Amulet
-    .goto Durotar,35.2,27.5,60
-    .goto Durotar,35.7,57.8,60
-step
+    .goto Durotar,35.2,27.5,60,0
+    .goto Durotar,35.7,57.8,60,0
     .complete 816,1 --Kron's Amulet (1)
 step << Troll Shaman/Orc Shaman
-    >>Run up the mountain path
-.goto Durotar,36.6,58.0,15
+.goto Durotar,36.6,58.0,15 >>Run up the mountain path
 step << Troll Shaman/Orc Shaman
     .goto Durotar,38.6,59.0
     .turnin 1524 >>Turn in Call of Fire
     .accept 1525 >>Accept Call of Fire
 step
-    >> Die and respawn at the Spirit Healer, or run back
-    .goto Durotar,53.5,44.5,60
+    .goto Durotar,53.5,44.5,60 >> Die and respawn at the Spirit Healer, or run back
 step
 .goto Durotar,52.3,43.1
     .turnin 806 >>Turn in Dark Storms
@@ -1395,28 +1324,25 @@ step << Shaman/Warrior
     .turnin 827 >>Turn in Skull Rock
     .accept 829 >>Accept Neeru Fireblade
 step << Shaman
-        >> Go into the cave here
-    .goto Durotar,52.8,28.7,20
+    .goto Durotar,52.8,28.7,20 >> Go into the cave here
 step << Shaman
     >>Kill the Burning Blade Cultists for the Pouch
 .goto Durotar,52.5,26.7
     .complete 1525,2 --Reagent Pouch (1)
 step << Shaman
-        >> Leave the cave
-    .goto Durotar,52.8,28.7,20
+    .goto Durotar,52.8,28.7,20 >> Leave the cave
 step << Shaman/Warrior
-    #sticky
-    #completewith next
+    .goto Durotar,54.0,27.7,30,0
+    .goto Durotar,51.3,23.5,30,0
+    .goto Durotar,51.5,19.1,30,0
+    .goto Durotar,54.0,27.7,30,0
+    .goto Durotar,51.3,23.5,30,0
+    .goto Durotar,51.5,19.1,30,0
     >>Kill Harpies in the area
-    .goto Durotar,54.0,27.7,30
-    .goto Durotar,51.3,23.5,30
-    .goto Durotar,51.5,19.1,30
-step << Shaman/Warrior
     .complete 835,1 --Dustwind Savage (12)
     .complete 835,2 --Dustwind Storm Witch (8)
 step << Shaman/Warrior
-    >> Die and respawn at the Spirit Healer, or run back
-    .goto Durotar,47.2,17.6,60
+    .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
 step << Shaman/Warrior
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
@@ -1449,4 +1375,4 @@ step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
-]],"Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman")
+]],"Warrior !Tauren/Shaman !Tauren")

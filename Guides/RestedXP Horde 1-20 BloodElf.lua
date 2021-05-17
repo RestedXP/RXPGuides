@@ -163,7 +163,7 @@ step << Warlock
 step << Warlock
 .xp 3+200 >> Grind until Level 3+200xp
 step << Warlock
->>Left click the Sliver in your bag
+>>Click the Sliver in your bag
 .accept 8338 >> Accept Tainted Arcane Sliver
  >> Die and respawn at the Spirit Healer, or run back
 .goto Eversong Woods,38.2,17.6,100
@@ -345,10 +345,9 @@ step
     .turnin 9705 >> Turn in Package Recovery
     .accept 8350 >> Accept Completing the Delivery
 step
-#sticky
-    >>Kill mobs you see on the way to Falconwing Square
-    .goto Eversong Woods,45.4,40.8
-    .xp 5+2690 >> Grind to (at least) 2690+/2800xp
+>>Kill mobs you see on the way to Falconwing Square
+.goto Eversong Woods,45.4,40.8
+.xp 5+2690 >> Grind to (at least) 2690+/2800xp
 step
     .goto Eversong Woods,47.3,46.3,30 >> Run to Falconwing Square
 ]],"BloodElf")
@@ -362,15 +361,18 @@ step
     .accept 8472 >> Accept Major Malfunction
 step
 .goto Eversong Woods,47.7,47.2,20     >>Go in the inn
-step
+step << BloodElf
     .goto Eversong Woods,48.2,47.7
     .turnin 8350 >> Turn in Completing the Delivery
 step << Priest/Mage/Warlock/Warrior/Rogue/Paladin
-    >>Go upstairs
-    .goto Eversong Woods,48.3,47.0,8
-step << Priest
+    .goto Eversong Woods,48.3,47.0,8 >>Go upstairs
+step << BloodElf Priest
     .goto Eversong Woods,47.9,48.0
     .accept 9489 >> Cleansing the Scar
+    .train 591 >>Train Smite r2
+    .train 17 >>Train Power Word: Shield
+step << !BloodElf Priest
+    .goto Eversong Woods,47.9,48.0
     .train 591 >>Train Smite r2
     .train 17 >>Train Power Word: Shield
 step << Mage
@@ -386,11 +388,11 @@ step << Warrior/Rogue/Paladin
     .train 3273 >>Train First Aid
 step << Mage/Warlock/Priest
     .goto Eversong Woods,48.2,47.7
-    .home >> Set your Hearthstone to Falconwing Square
+    .home >> Go back downstairs. Set your Hearthstone to Falconwing Square
     .vendor >> Buy as much level 5 drink as you can afford
 step << Warrior/Rogue/Paladin
     .goto Eversong Woods,48.2,47.7
-    .home >> Set your Hearthstone to Falconwing Square
+    .home >> Go back downstairs. Set your Hearthstone to Falconwing Square
 step
 .goto Eversong Woods,47.7,47.2,10     >>Go outside
 step
@@ -748,13 +750,13 @@ step << !Hunter
 .accept 9359 >>Accept Farstrider Retreat
 step << !Hunter
     .goto Eversong Woods,43.7,71.3
-    .vendor >> vendor trash
+    .vendor >> vendor trash downstairs
 step << !Hunter
 .isQuestComplete 8491
 .goto Eversong Woods,44.7,69.7
     .turnin 8491 >> Turn in Pelt Collection
 step
-    >> Be aware that Darkwrath's Enrage at low health, and Rotlimb Marauders have an instant-cast 15 damage spell
+    >> Be aware that Darkwraiths Enrage at low health, and Rotlimb Marauders have an instant-cast 15 damage spell
 .goto Eversong Woods,50.9,80.7,60,0
     .goto Eversong Woods,51.3,75.3,60,0
     .goto Eversong Woods,52.9,71.7,60,0
@@ -789,7 +791,7 @@ step << Warrior/Warlock/Rogue !Undead/!Warlock
     .xp 9+5700 >> Grind to 5700+/6500xp
 step << Undead Warlock
     .xp 9+5950 >> Grind to 5950+/6500xp
-step << !Hunter !Undead/!Warlock
+step << !Hunter !Warlock/!Scourge !Hunter
     .goto Eversong Woods,48.2,47.7,150 >> Hearth to Falconwing Square
 step << Undead Warlock
 .goto Eversong Woods,55.7,54.5
@@ -836,6 +838,7 @@ step << Paladin/Priest/Mage
     .accept 8483 >> Accept The Dwarven Spy
 step << Paladin/Priest/Mage
     .goto Eversong Woods,44.8,53.1
+>>Talk to Prospector Anvilward, wait out the RP event, then kill him
     .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
 step << !Hunter
     .goto Eversong Woods,48.2,46.0
@@ -880,7 +883,6 @@ step << Priest
     .train 2053 >>Train Lesser Heal r3
     .train 8092 >>Train Mind Blast
 .train 594 >>Train Shadow Word: Pain r2
-    .train 13908 >>Train Desperate Prayer
     .train 2652 >>Train Touch of Weakness
 step << Rogue
     .goto Eversong Woods,48.5,45.9
@@ -956,10 +958,14 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 10-20 Eversong Woods - Ghostlands
 #next 20-23 Stonetalon - The Barrens
+step << Orc Hunter/Troll Hunter
+    .money <0.1000
+.goto Silvermoon City,91.2,38.7
+    .train 202 >>Train 2h Swords
 step << Orc/Troll/Tauren
     .goto Eversong Woods,54.4,50.7
     .fp >> Get the Silvermoon City Flight Path
-step << BloodElf !Hunter
+step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene
     .collect 22776,1 --Collect Springpaw Appetizers
@@ -1104,6 +1110,7 @@ step << BloodElf Hunter
     .train 13549 >>Train Serpent Sting r2
 step << BloodElf Hunter  
     .goto Eversong Woods,44.8,53.1
+>>Talk to Prospector Anvilward, wait out the RP event, then kill him
     .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
 step << BloodElf Hunter  
     .goto Eversong Woods,48.2,46.0
@@ -1111,7 +1118,7 @@ step << BloodElf Hunter
 step << BloodElf Hunter  
     .goto Eversong Woods,55.7,54.5
     .turnin 9066 >> Turn in Swift Discipline
-step
+step << Undead/BloodElf !Hunter
     #sticky
     #completewith next
     >>Keep an eye out for Springpaws for Pelts en route back to town
@@ -1124,6 +1131,10 @@ step
 step << BloodElf Hunter  
     .turnin 9485 >> Turn in Taming the Beast
     .accept 9673 >> Accept Beast Training
+step << Undead/BloodElf !Hunter
+    #sticky
+    #completewith next
+    +Remember to NOT sell your food quest items
 step
     >>Run back to town
 .goto Eversong Woods,59.5,62.6
@@ -1131,7 +1142,7 @@ step
 step
     .goto Eversong Woods,60.4,61.3
     .accept 8888 >> Accept The Magister's Apprentice
-step
+step << BloodElf/Undead
     #sticky
     #completewith next
     >>Keep an eye out for Springpaws for Pelts en route to The Magister's Apprentice
@@ -1159,16 +1170,16 @@ step
     .goto Eversong Woods,68.7,47.0
     .turnin 8894 >> Turn in Cleaning up the Grounds
 step
-.goto Eversong Woods,68.9,52.0,15,0
-    .goto Eversong Woods,68.3,51.4,15 >>Click the Orb of Translocation to teleport to the platform.
+.goto Eversong Woods,68.9,52.0,20,0
+    .goto Eversong Woods,68.3,51.4,20 >>Click the Orb of Translocation to teleport to the platform.
 step
     >>Click the big green crystal
     .goto Eversong Woods,68.9,52.0
-    .complete 8889,1 --Collect First Power Source Deactivated (x1)
+    .complete 8889,1 --First Power Source Deactivated (x1)
 step
     >>Go Upstairs
     .goto Eversong Woods,68.9,52.0
-    .complete 8889,2 --Collect Second Power Source Deactivated (x1)
+    .complete 8889,2 --Second Power Source Deactivated (x1)
 step
     >>Click the blue journal on the table on the second floor.
 .goto Eversong Woods,69.2,52.1
@@ -1176,10 +1187,9 @@ step
 step
     >>Click the last green crystal. Make sure you're clicking the crystal and not the Orb yet
 .goto Eversong Woods,69.6,53.3
-    .complete 8889,3 --Collect Third Power Source Deactivated (x1)
+    .complete 8889,3 --Third Power Source Deactivated (x1)
 step
-    .goto Eversong Woods,68.9,52.0,15 >>Click the Orb of Translocation behind the green crystal, and go to the bottom
-
+    .goto Eversong Woods,68.9,52.0,20 >>Click the Orb of Translocation behind the green crystal, and go to the bottom
 step << !BloodElf/!Warlock
     .goto Eversong Woods,68.6,47.0
     .xp 11+6375 >> Grind to 6375+/8700xp
@@ -1187,8 +1197,13 @@ step
     .goto Eversong Woods,67.8,56.5
     .turnin 8889 >> Turn in Deactivating the Spire
     .accept 8890 >> Accept Word from the Spire
+step << Undead/BloodElf !Hunter
+    #sticky
+    #completewith next
+    +Remember to NOT sell your food quest items
 step
-    .goto Eversong Woods,60.3,61.4
+    >>Run back to Farstrider Retreat and go upstairs.
+.goto Eversong Woods,60.3,61.4
     .turnin 8890 >> Turn in Word from the Spire
     .turnin 8891 >> Turn in Abandoned Investigations
 step
@@ -1229,6 +1244,8 @@ step << Rogue
     .money <0.1922
 .goto Undercity,61.1,40.9
 .vendor >> Buy a Cutlass from Louis Warren. Equip it. Alternatively, find a better sword from the AH for a cheaper price and equip that, then go back to Silvermoon
+step << Rogue
+.zone Silvermoon City >>Take the Orb of Translocation back to Silvermoon
 step << Druid
     .goto Silvermoon City,71.5,55.8
     .train 8936 >>Train Regrowth
@@ -1270,7 +1287,7 @@ step << Paladin
 .goto Silvermoon City,91.2,36.9
 .train 20287 >>Train Seal of Righteousness r2
 .train 19834 >>Train Blessing of Might r2
-step << Hunter
+step << BloodElf Hunter
     .goto Silvermoon City,54.0,71.0
     .turnin 9133 >> Turn in Fly to Silvermoon City
     .accept 9134 >> Accept Skymistress Gloaming
@@ -1278,14 +1295,14 @@ step << Hunter
 .money <0.3621
 .goto Silvermoon City,85.9,35.4
 .collect 3026,1 >> Buy a Reinforced Bow from Celana
-step << Hunter
+step << BloodElf Hunter
     .goto Eversong Woods,54.4,50.8
     .turnin 9134 >> Turn in Skymistress Gloaming
     .accept 9135 >> Accept Return to Quartermaster Lymel
-step << Hunter
+step << BloodElf Hunter
     .goto Eversong Woods,54.4,50.8,0
     .fly >> Fly to Tranquillien
-step << Hunter
+step << BloodElf Hunter
     .goto Ghostlands,47.3,29.1
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
 step << Paladin/Rogue
@@ -1295,38 +1312,42 @@ step << Paladin/Rogue
 step << Paladin/Rogue
 .goto Silvermoon City,78.4,42.5
     .collect 2901,1 >> Buy a Mining Pick
-step << BloodElf/!Hunter
+step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
     >> Buy Suntouched Special Reserve from Vinemaster Suntouched
     .collect 22775,1 --Collect Suntouched Special Reserve
 step << !BloodElf/!Hunter/!BloodElf/!Warlock
     .goto Eversong Woods,56.7,49.6,30 >>Exit Silvermoon
-step << !BloodElf/!Hunter
+step << BloodElf/Undead
     #sticky
     #completewith next
     >>Finish off getting Springpaw Pelts
     .complete 8491,1 --Collect Springpaw Pelt (x6)
-step << !BloodElf/!Hunter  
+step << Undead/BloodElf !Hunter
     >>Run to Fairbreeze Village. Hearth to Falconwing and run if its up
 .goto Eversong Woods,46.9,71.8
     .turnin 9252 >> Turn in Defending Fairbreeze Village
     .accept 9253 >> Accept Runewarden Deryan
-step << !BloodElf/!Hunter   
+step << Undead/BloodElf !Hunter
 .goto Eversong Woods,44.7,69.7
     .turnin 8491 >> Turn in Pelt Collection
-step << BloodElf !Hunter
+step << Undead/BloodElf !Hunter
     .goto Eversong Woods,44.0,70.4
     .vendor >>Buy a Bundle of Fireworks from Halis
     .collect 22777,1 --Collect Bundle of Fireworks
-step << !BloodElf/!Hunter
+step << Undead/BloodElf !Hunter
     .goto Eversong Woods,44.0,70.8
     .turnin 9255 >>Turn in Research Notes
-    .accept 9144 >>Accept Missing in the Ghostlands
+step << !BloodElf/!Hunter
+    .goto Eversong Woods,44.0,70.8
+.accept 9144 >>Accept Missing in the Ghostlands
+step << !BloodElf/!Hunter
+    .goto Eversong Woods,43.6,71.2
+.accept 9258 >>Accept The Scorched Grove
 step << !BloodElf/!Hunter
     .goto Eversong Woods,43.3,70.8
     .turnin 9363 >>Turn in Warning Fairbreeze Village
-add to !BloodElf Hunter later
-step << !BloodElf/!Hunter
+step << Undead/BloodElf !Hunter
     .goto Eversong Woods,38.1,73.6
     .turnin 9067 >> Turn in The Party Never Ends
 step << !BloodElf/!Hunter
@@ -1355,7 +1376,7 @@ step << !BloodElf/!Hunter
     >>Use the pendant to summon Old Whitebark. Be sure to start max range from him. Kill him and handin on him
 .goto Eversong Woods,37.6,86.2
     .turnin 10166 >> Turn in Whitebark's Memory
-step << !BloodElf/!Hunter
+step << Undead/BloodElf !Hunter
     .goto Eversong Woods,44.2,85.5
     .turnin 9253 >> Turn in Runewarden Deryan
 step << BloodElf Mage
@@ -1408,7 +1429,7 @@ step << !BloodElf/!Hunter
     .goto Ghostlands,44.8,32.5
     .turnin 9327 >> Turn in The Forsaken
     .accept 9758 >> Accept Return to Arcanist Vandril
-step << !BloodElf/!Hunter
+step << BloodElf !Hunter
     .goto Ghostlands,47.3,28.9
     .accept 9130 >> Accept Goods from Silvermoon City
 step << !BloodElf/!Hunter 
@@ -1423,7 +1444,7 @@ step << !BloodElf/!Hunter
 step << !BloodElf/!Hunter 
     .goto Ghostlands,46.3,28.6
     .accept 9138 >> Accept Suncrown Village
-step << !BloodElf/!Hunter !Warlock
+step << BloodElf !Hunter !Warlock
     >>do NOT fly to Silvermoon City
 .goto Ghostlands,45.5,30.6
     .turnin 9130 >> Turn in Goods from Silvermoon City
@@ -1432,6 +1453,10 @@ step << BloodElf Warlock
     .turnin 9130 >> Turn in Goods from Silvermoon City
     .accept 9133 >> Accept Fly to Silvermoon City
     .fly >> Fly to Silvermoon City
+step << BloodElf Warlock
+    .goto Silvermoon City,54.0,71.0
+    .turnin 9133 >> Turn in Fly to Silvermoon City
+    .accept 9134 >> Accept Skymistress Gloaming
 step << BloodElf Warlock
 .goto Silvermoon City,75.3,44.5,20 >>Enter the building, go downstairs
 step << BloodElf Warlock
@@ -1448,7 +1473,7 @@ step
 step
  #sticky
 #completewith Nerubis
->>Anok'suten may require a group. If you can't kill him or find a group, skip this quest. He patrols clockwise around the path on the town
+>>Anok'suten may require a group. If you can't kill him or find a group, skip this quest. He patrols clockwise around the path on the town, and calls for help from nearby mobs (about 60 yards) at 50%
     .complete 9315,1 --Kill Anok'suten (x1)
 step
      .goto Ghostlands,61.3,11.9
@@ -1536,18 +1561,19 @@ step
     .goto Ghostlands,69.4,15.1
     .turnin 9143 >> Turn in Dealing with Zeb'Sora
     .accept 9146 >> Accept Report to Captain Helios
-step << Priest/Mage/Druid/Warlock/Rogue
+step
     .isQuestComplete 9315
 >>Grind Nerubians
 .goto Ghostlands,61.2,12.0
     .xp 13+10150 >>Grind to 10150+/11000xp
-step << Priest/Mage/Druid/Warlock/Rogue
+step
     >>Grind Nerubians
 .goto Ghostlands,61.2,12.0
     .xp 13+9275 >>Grind to 9275+/11000xp
-step << Priest/Mage/Druid/Warlock/Rogue
-    >> Die and respawn at the Spirit Healer, or run back
-    .goto Ghostlands,43.9,25.7,200
+step << Priest/Mage/Warlock/Rogue/Druid
+    .goto Ghostlands,43.9,25.7,200 >>Die and respawn at the Spirit Healer, or run back
+step << !Priest !Mage !Warlock !Rogue !Druid
+    .goto Ghostlands,43.9,25.7,200 >> Run back to Tranquillien
 step
 .isQuestComplete 9315
 .goto Ghostlands,46.3,28.4
@@ -1570,6 +1596,13 @@ step << Rogue
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Bogwalker Boots from Vredigar and equip them
     .collect 22992,1 --Collect Bogwalker Boots (1)
+step << Orc Hunter/Troll Hunter
+    #sticky
+    #completewith Poster3
+    .money <0.1300
+    >>If you couldn’t afford 2h sword training earlier, fly to Silvermoon and get weapon training
+.goto Silvermoon City,91.2,38.7
+    .train 202 >>Train 2h Swords
 step << Hunter
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Bogwalker Boots and Tranquillien Flamberge from Vredigar. Equip them
@@ -1584,7 +1617,8 @@ step << !Warlock
     .goto Ghostlands,48.9,32.4
 .home >> Set your Hearthstone to Tranquillien
 step
-    >>Click the wanted poster
+    #label Poster3
+>>Click the wanted poster
 .goto Ghostlands,48.2,31.6
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran
 step
@@ -1621,6 +1655,14 @@ step << BloodElf Mage
 >>Choose whichever. I prefer the staff, Tactics prefers the Orb. Up to you bossman
 .goto Eversong Woods,55.7,54.5
 .turnin 9404 >>Turn in Recently Living
+step << BloodElf Priest/BloodElf Mage/BloodElf Rogue
+    .goto Silvermoon City,54.0,71.0
+    .turnin 9133 >> Turn in Fly to Silvermoon City
+    .accept 9134 >> Accept Skymistress Gloaming
+step << BloodElf Warlock
+    .goto Eversong Woods,54.4,50.7
+    .turnin 9134 >> Turn in Skymistress Gloaming
+.accept 9135 >> Accept Return to Quartermaster Lymel
 step << Priest
     >>You can also check for a Greater Magic Wand from the AH after training if you wish
     .goto Silvermoon City,55.4,26.8
@@ -1643,6 +1685,9 @@ step << Warlock
     .train 6222 >>Train Corruption r2
 step << Priest/Mage/Warlock/Rogue/Druid
     .hs >> Hearth to Tranquillien
+step << BloodElf Warlock
+    .goto Ghostlands,47.3,29.3
+.turnin 9135 >> Turn in Return to Quartermaster Lymel
 step
 >>Kill the Arcane mobs for Mana Essence
 .goto Ghostlands,35.7,33.5,40,0
@@ -1659,10 +1704,9 @@ step
 step
     #sticky
     #completewith next
+.goto Ghostlands,37.8,20.6,40,0
 >>Kill some Spiders for Crunchy Spider Legs
     .complete 9171,1 --Collect Crunchy Spider Leg (x5)
-step
-    .goto Ghostlands,37.8,20.6,40
 step << BloodElf Rogue
     >>DON'T kill the Sentinel Leader en route
 .goto Ghostlands,33.0,11.2
@@ -1730,15 +1774,15 @@ step
 .complete 9155,2 --Kill Gangled Cannibal (x10)
     .complete 9155,1 --Kill Risen Hungerer (x10)
 step
+    .goto Ghostlands,46.1,33.6
+    .turnin 9155 >> Turn in Down the Dead Scar
+step
     .goto Ghostlands,44.8,32.5
     .turnin 9160 >> Turn in Investigate An'daroth
     .accept 9163 >> Accept Into Occupied Territory
     .turnin 9192 >> Turn in Trouble at the Underlight Mines
     .accept 9199 >> Accept Troll Juju
     .accept 9173 >> Accept Retaking Windrunner Spire
-step
-    .goto Ghostlands,46.1,33.6
-    .turnin 9155 >> Turn in Down the Dead Scar
 step
     .goto Ghostlands,47.6,34.7
     .turnin 9149 >> Turn in The Plagued Coast
@@ -1770,8 +1814,7 @@ step
 step
 #sticky
     #completewith Wanted
->>If you're able to find a group, kill Knucklerot.
-    .goto Ghostlands,45.9,33.1
+>>If you're able to find a group, kill Knucklerot. He spawns at the Howling Ziggurat, Patrols west to Windrunner Village, then across the river toward Goldenmist Village.
     .complete 9156,1 --Collect Knucklerot's Head (x1)
 step
 >>Finish killing Vampiric Mistbats
@@ -1805,6 +1848,10 @@ step
     .goto Ghostlands,44.1,57.6,30,0
     .goto Ghostlands,16.5,62.5,30,0
     .goto Ghostlands,44.1,57.6,30,0
+    .goto Ghostlands,16.5,62.5,30,0
+    .goto Ghostlands,44.1,57.6,30,0
+    .goto Ghostlands,16.5,62.5,30,0
+    .goto Ghostlands,44.1,57.6,30,0
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step
@@ -1833,6 +1880,7 @@ step
 step
     .goto Ghostlands,43.9,25.7,200 >> Die and respawn at the Spirit Healer, or run back
 step
+.isQuestComplete 9171
 .goto Ghostlands,48.5,30.7
     .turnin 9171 >> Turn in Culinary Crunch
 step
@@ -1856,6 +1904,14 @@ step << Druid
 step << Priest/Rogue/Paladin
     .goto Ghostlands,45.4,30.5
     .fly >> Fly to Silvermoon City
+step << BloodElf Priest/BloodElf Rogue
+    .goto Eversong Woods,54.4,50.7
+    .turnin 9134 >> Turn in Skymistress Gloaming
+.accept 9135 >> Accept Return to Quartermaster Lymel
+step << BloodElf Paladin
+    .goto Silvermoon City,54.0,71.0
+    .turnin 9133 >> Turn in Fly to Silvermoon City
+    .accept 9134 >> Accept Skymistress Gloaming
 step << Priest
     >>You can also check for a Greater Magic Wand from the AH after training if you wish (if you didn't get one earlier)
 .goto Silvermoon City,55.4,26.8
@@ -1890,7 +1946,7 @@ step << Rogue
 step << Paladin
 .goto Silvermoon City,89.3,35.2
 .turnin 9678 >>Turn in The First Trial
-    .accept 9681 >>Accept A Study in Power
+    .accept 64319 >>Accept A Study in Power
 step << Paladin
     .goto Silvermoon City,92.2,37.5
     .train 647 >>Train Holy Light r3
@@ -1899,10 +1955,10 @@ step << Paladin
 step << Paladin
     >>Jump down the hole behind the trainer
     .goto Silvermoon City,92.1,36.2
-    .turnin 9681 >>Turn in A Study in Power
+    .turnin 64319 >>Turn in A Study in Power
     .accept 63866 >>Accept Claiming the Light
 step << Paladin
-    >>Use the Shimmering Vessel on a Blood Elf Magister
+    >>Use the Shimmering Vessel on M'uru
 .goto Silvermoon City,92.6,36.8
 .complete 63866,1 --Collect Filled Shimmering Vessel
 step << Paladin
@@ -1920,6 +1976,9 @@ step << Paladin
 .complete 9685,1 --Resurrect Sangrias Stillblade
 step << Priest/Druid/Rogue/Paladin
     .hs >> Hearth to Tranquillien
+step << BloodElf Priest/BloodElf Rogue
+    .goto Ghostlands,47.3,29.3
+.turnin 9135 >> Turn in Return to Quartermaster Lymel
 step << Rogue
     .goto Ghostlands,47.2,34.3
     .turnin 10372 >>Turn in A Discreet Inquiry
@@ -2150,7 +2209,10 @@ step << Druid
 step << Mage/Priest/Warlock/Hunter
     .goto Ghostlands,45.4,30.5
     .fly >> Fly to Silvermoon City
-    --maybe skip priest 16?
+step << BloodElf Mage
+    .goto Eversong Woods,54.4,50.7
+    .turnin 9134 >> Turn in Skymistress Gloaming
+.accept 9135 >> Accept Return to Quartermaster Lymel
 step << Priest
     >>You can also check for a Greater Magic Wand from the AH after training if you wish
     .goto Silvermoon City,55.4,26.8
@@ -2188,6 +2250,9 @@ step << Hunter
     .train 24557 >>Train Natural Armor r3
 step << Mage/Priest/Warlock/Hunter/Druid
     .hs >> Hearth to Tranquillien
+step << BloodElf Mage
+    .goto Ghostlands,47.3,29.3
+.turnin 9135 >> Turn in Return to Quartermaster Lymel
 step
     .goto Ghostlands,55.1,48.7
     .turnin 9172 >> Turn in Report to Magister Kaendris
@@ -2265,7 +2330,7 @@ step
 step
 #sticky
     #completewith Wanted
->>Kill and loot Luzran for his Head. If you're unable to find a group or solo him, skip this quest. He patrols up The Dead Scar, then toward Windrunner Village after joining the road
+>>Kill and loot Luzran for his Head. If you're unable to find a group or solo him, skip this quest. He patrols up and down The Dead Scar
     .complete 9156,2 --Collect Luzran's Head (x1)
 step
 .goto Ghostlands,31.7,73.6,20 >>Go into the Crypt in Deatholme
@@ -2375,6 +2440,9 @@ step
 step
     .goto Ghostlands,45.5,30.5,0
     .fly >> Fly to Silvermoon City
+step << BloodElf Paladin
+    .goto Silvermoon City,54.0,71.0
+    .turnin 9134 >> Turn in Skymistress Gloaming
 step << Druid
     #sticky
     #completewith Hero
@@ -2402,7 +2470,7 @@ step << Mage
     .train 1463 >>Train Mana Shield
     .train 7301 >>Train Frost Armor r3
     .train 5506 >>Train Conjure Water r3
-step
+step << Mage
     .goto Silvermoon City,58.1,20.9
     .trainer >>Train Teleport Silvermoon
 step << Rogue
@@ -2466,11 +2534,17 @@ step << !BloodElf
 step
 .goto Silvermoon City,49.5,15.0,15,0
 .goto Undercity,58.9,11.3,200 >>Take the Orb of Translocation to Undercity
+step << BloodElf Paladin
+    .goto Silvermoon City,54.0,71.0
+    .abandon 9135 >> Abandon Return to Quartermaster Lymel
 step
 .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
 step 
     .goto Undercity,63.3,48.6
 .fp >> Get the Undercity flight path
+step << Mage
+    .goto Undercity,84.2,15.6
+    .trainer >>Train Teleport Undercity
 step
 .goto Undercity,52.0,64.6,35 >>Enter the Royal Quarter
 step << BloodElf
@@ -2512,7 +2586,7 @@ step
     #sticky
     #completewith next
 +Go to the Zeppelin tower. Take the zeppelin to Durotar
-.goto Tirisfal Glades,60.7,58.8,15
+.goto Tirisfal Glades,60.7,58.8,15,0
 step
 .zone Durotar >>Arrive in Durotar
 ]],"!Warrior !Shaman")
