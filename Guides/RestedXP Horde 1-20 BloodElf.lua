@@ -361,14 +361,18 @@ step
     .accept 8472 >> Accept Major Malfunction
 step
 .goto Eversong Woods,47.7,47.2,20     >>Go in the inn
-step
+step << BloodElf
     .goto Eversong Woods,48.2,47.7
     .turnin 8350 >> Turn in Completing the Delivery
 step << Priest/Mage/Warlock/Warrior/Rogue/Paladin
     .goto Eversong Woods,48.3,47.0,8 >>Go upstairs
-step << Priest
+step << BloodElf Priest
     .goto Eversong Woods,47.9,48.0
     .accept 9489 >> Cleansing the Scar
+    .train 591 >>Train Smite r2
+    .train 17 >>Train Power Word: Shield
+step << !BloodElf Priest
+    .goto Eversong Woods,47.9,48.0
     .train 591 >>Train Smite r2
     .train 17 >>Train Power Word: Shield
 step << Mage
