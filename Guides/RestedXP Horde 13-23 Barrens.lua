@@ -16,7 +16,13 @@ step << Warrior
 .goto The Barrens,55.0,26.7
     .complete 1503,1 --Forged Steel Bars (1)
 step << Warrior
-    .goto The Barrens,57.2,30.3
+    #sticky
+    #completewith next
+#requires Steel
+    .goto The Barrens,54.7,28.0,20 >>You can run up the mountain here
+step << Warrior
+    #requires Steel
+.goto The Barrens,57.2,30.3
     .turnin 1503 >>Turn in Forged Steel
 step << Shaman
     #sticky
@@ -35,15 +41,6 @@ step
     .complete 871,2 --Razormane Thornweaver (8)
     .complete 871,1 --Razormane Water Seeker (8)
     .complete 871,3 --Razormane Hunter (3)
-step << Warrior
-    #sticky
-    #completewith next
-#requires Steel
-    .goto The Barrens,54.7,28.0 >>You can run up the mountain here
-step << Warrior
-    #requires Steel
-.goto The Barrens,57.2,30.3
-    .turnin 1503 >>Turn in Forged Steel
 step
     #sticky
     #completewith next
