@@ -645,7 +645,7 @@ step
 step
     .goto Elwynn Forest,44.2,65.9
     .complete 70,1 --Collect An Undelivered Letter (x1)
-step
+step << !Rogue
 	#sticky
 	#completewith end
 	.trainer >> Train your class spells in Stormwind
@@ -685,6 +685,16 @@ step <<!Mage
     .goto Ironforge,69.8,50.1
     >>Cross the Deeprun Tram
     .turnin 2923 >> Turn in Tinkmaster Overspark
+step << Rogue
+    #sticky
+    #completewith end
+    .trainer >> Train your class spells in ironforge
+step << Rogue
+    .goto Ironforge 45.2,6.6
+    >>Buy the level 41 weapon upgrades (17dps)
+    .collect 2520,1
+    .collect 2526,1
+    >>Skip this step if you can find a better weapon at the Auction House
 step << Mage
     #completewith next
     .zone Ironforge >> Teleport to Ironforge

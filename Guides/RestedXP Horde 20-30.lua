@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde !Warrior !Shaman
-#name 20-23 Stonetalon - The Barrens
-#next 23-27 Hillsbrad - Ashenvale
+#name 20-23 Stonetalon / The Barrens
+#next 23-27 Hillsbrad / Ashenvale
 step 
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step
@@ -339,12 +339,13 @@ step << !Tauren
 step << Tauren
     .goto The Barrens,44.4,59.2
 .fly Thunder Bluff>>Fly to Thunder Bluff
+step << Druid
+.goto Thunder Bluff,76.5,27.2
+.accept 27 >>Accept A Lesson to Learn
+.trainer >> Go and train your class spells
 step
     .goto Thunder Bluff,36.6,51.3
     .accept 742 >> Accept The Ashenvale Hunt
-step
-.goto Thunder Bluff,22.8,20.9
-    .accept 962 >> Accept Serpentbloom
 step
     .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
 step
@@ -353,6 +354,7 @@ step
 step
 .goto Thunder Bluff,23.0,20.9
     .turnin 853 >> Turn in Apothecary Zamah
+.accept 962 >> Accept Serpentbloom
 step << Tauren
     .goto Thunder Bluff,45.8,64.7
 .home >> Set your Hearthstone to Thunder Bluff
@@ -388,7 +390,9 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
 step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
+.goto The Barrens,46.6,36.1,15,0
+.goto The Barrens,46.7,35.1,15,0
+.goto The Barrens,46.6,34.7 >>Go up the mountain here
 step
 .goto The Barrens,50.4,34.4,10 >>Go into here
 step
@@ -428,9 +432,7 @@ step
 step
     #sticky
     #completewith next
-    >>Keep an eye out for two rare mobs, as they can both drop blue BoE axes, among other gear
-    .goto Kalimdor,52.5,54.8,30 >> Trigore
-    .goto Kalimdor,52.8,55.0,30 >> Boahn
+    +Keep an eye out for two rare mobs, Trigore and Boahn, as they can both drop blue BoE axes, among other gear
 step
     >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
     .complete 1491,1 --Wailing Essence (6)
@@ -441,7 +443,9 @@ step
     #requires Serpentbloom
 .goto The Barrens,46.0,36.4,15 >>Leave the cave
 step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
+.goto The Barrens,46.6,36.1,15,0
+.goto The Barrens,46.7,35.1,15,0
+.goto The Barrens,46.6,34.7 >>Go up the mountain here
 step
 .goto The Barrens,50.4,34.4,10 >>Go into here
 step
@@ -513,7 +517,6 @@ step
 step
 .goto Ashenvale,14.2,14.7,40    >>Drop down the hole into Blackfathom Deeps
 step
-    #sticky
     #label Sapphires
 .goto Ashenvale,13.0,13.2,30,0
 .goto Ashenvale,13.6,9.0,30,0
@@ -541,9 +544,28 @@ step
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >> Turn in Naga at the Zoram Strand
 step << Druid
->> Use the spell Teleport to Moonglade
+    .zone Moonglade >> Use the spell Teleport to Moonglade
+step << Druid
+    >>Go Upstairs
+     .goto Moonglade,56.2,30.6
+    .turnin 27 >>Turn in A Lesson to Learn
+    .accept 28 >>Accept Trial of the Lake
+step << Druid
     .goto Moonglade,52.5,40.5
 .trainer >> Go and train your class spells
+step << Druid
+    >>Search for a Vase underwater. Loot it for a Shrine Bauble
+    .goto Moonglade,54.6,46.5,20,0
+    .goto Moonglade,53.0,48.4
+    .collect 15877,1
+step << Druid
+    >>Use the Shrine Bauble
+    .goto Moonglade,36.2,41.8
+    .complete 28,1 --Complete the Trial of the Lake. (1)
+step << Druid
+    .goto Moonglade,36.5,40.1
+    .turnin 28 >>Turn in Trial of the Lake
+    .accept 30 >>Accept Trial of the Sea Lion
 step
     .hs >> Hearth to Thunder Bluff
 step
@@ -566,7 +588,15 @@ step
 step
     .goto The Barrens,62.4,37.6
     .turnin 1491 >>Turn in Smart Drinks
-step
+step << Druid
+    >>Loot the gray chest underwater
+    .goto The Barrens,56.7,8.3
+    .collect 15883,1
+step << Druid
+    #sticky
+    #completewith next
+    .goto Orgrimmar,12.4,66.1,20 >>Enter Orgrimmar through the west entrance
+step << !Druid
     .goto Thunder Bluff,47.0,49.9
     .fly >> Fly to Orgrimmar
 step << Paladin
@@ -676,9 +706,11 @@ step
 
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
-#name 23-27 Hillsbrad - Ashenvale
-#next 27-30 Lower Barrens - Thousand Needles
+#name 23-27 Hillsbrad / Ashenvale
+#next 27-30 Lower Barrens / Thousand Needles
 
+step <<!Shaman
+    .home >> Set your Hearthstone to Orgrimmar
 step
     #sticky
     #completewith next
@@ -686,6 +718,11 @@ step
 .goto Durotar,50.8,13.8
 step
 .zone Tirisfal Glades >>Arrive in Tirisfal Glades
+step << Druid
+     >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
+    .goto Silverpine Forest,30.0,29.1
+    .collect 15882,1
+    --Video link in future?
 step
     >>Run to The Sepulcher
 .goto Silverpine Forest,42.9,40.9
@@ -712,6 +749,10 @@ step
     .turnin 494 >> Turn in Time To Strike
     .goto Hillsbrad Foothills,62.5,20.5
     .accept 527 >> Accept Battle of Hillsbrad
+step << Shaman
+    >>Fill the Waterskin at the well
+.goto Hillsbrad Foothills,62.2,20.8
+    .complete 1536,1 --Filled Red Waterskin (1)
 step
     >>click the Wanted poster on the wall
     .goto Hillsbrad Foothills,62.7,20.5
@@ -739,10 +780,6 @@ step << !Rogue
     >>Click the Wanted poster on the wall
 .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
-step << Rogue
-    >>Use Hinott's Oil on yourself to cure the debuff, then click the Wanted poster on the wall
-.goto Hillsbrad Foothills,62.5,19.8
-    .accept 567 >> Accept Dangerous!
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy Merciless Axe from the vendor if you have enough money. It's not always in the shop.
@@ -751,6 +788,10 @@ step << Rogue
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy Broad Bladed Knife from the vendor if you have enough money. It's not always in the shop.
     .collect 12247,1
+step << Rogue
+    >>Use Hinott's Oil on yourself to cure the debuff, then click the Wanted poster on the wall
+.goto Hillsbrad Foothills,62.5,19.8
+    .accept 567 >> Accept Dangerous!
 step
     #sticky
 #label syndicateq
@@ -879,13 +920,33 @@ step
 .complete 529,1 --Kill Blacksmith Verringtan (x1)
     .complete 529,2 --Kill Hillsbrad Apprentice Blacksmith (x4)
 step << Druid
+    >>Click the Half Pendant (blue) in your bag to craft the Pendant
+.goto Moonglade,36.2,41.8
+    .complete 30,1 --Pendant of the Sea Lion (1)
+step << Druid
+    >>Go Upstairs
+    .goto Moonglade,56.2,30.6
+    .turnin 30 >>Turn in Trial of the Sea Lion
+    .accept 31 >>Accept Aquatic Form
+step << Druid
 >> Use the spell Teleport to Moonglade
     .goto Moonglade,52.5,40.5
 .trainer >> Go and train your class spells
-step
+step << !Shaman
 #requires Crate
 >>We're not going to turn these quests in until later on.
 .hs >> Hearth to Orgrimmar
+step << Shaman
+#requires Crate
+>>We're not going to turn these quests in until later on.
+.hs >> Hearth to Camp Taurajo
+step << Shaman
+.goto The Barrens,43.4,77.4
+.turnin 1536 >>Turn in Call of Water
+.accept 1534 >>Accept Call of Water
+step << Shaman
+.goto The Barrens,44.5,59.1
+.fly Orgrimmar >>Fly to Orgrimmar
 step
     #sticky
        #completewith next
@@ -1022,6 +1083,10 @@ step
 .goto Ashenvale,35.9,36.7
     .complete 216,2 --Kill Thistlefur Shaman (x8)
 .complete 216,1 --Kill Thistlefur Avenger (x8)
+step << Shaman
+    >>Fill the Waterskin
+.goto Ashenvale,33.5,67.5
+    .complete 1534,1 --Filled Blue Waterskin (1)
 step
     >>Look for Ursangous (Bear). He patrols clockwise
 .goto Ashenvale,41.5,67.4,40,0
@@ -1129,8 +1194,8 @@ step << !Rogue !Paladin !Warlock
 ]])
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
-#name 27-30 Lower Barrens - Thousand Needles
-#next RestedXP Horde 30-45\30-34 Hillsbrad - Arathi - Shimmering Flats
+#name 27-30 Lower Barrens / Thousand Needles
+#next RestedXP Horde 30-45\30-34 Hillsbrad / Arathi / Shimmering Flats
 step
 .goto Thunder Bluff,55.2,51.5
     .turnin 1195 >> Turn in The Sacred Flame
@@ -1139,13 +1204,14 @@ step << Shaman/Paladin/Warrior
     .goto Thunder Bluff,54.0,57.3
     .vendor >> Go buy Merciless Axe if u didn't get it in Hillsbrad
     .collect 12249,1
-step <<Hunter
+step << Hunter
     .goto Thunder Bluff,46.9,45.7
     .vendor >> Go and buy Sturdy Recurve if it's in the shop.
-    .collect 11306,1 
+    .collect 11306,1
 step << Druid
     .goto Thunder Bluff,77.0,29.9
 .trainer >> Go and train your class spells
+.turnin 31 >>Turn in Aquatic Form
 step << Hunter
     .goto Thunder Bluff,59.1,86.9
 .trainer >> Go and train your class spells
@@ -1203,6 +1269,10 @@ step << Warrior
 .goto The Barrens,44.7,59.4
     .turnin 1824 >>Turn in Trial at the Field of Giants
     .accept 1825 >>Accept Speak with Thun'grim
+step << Shaman
+    .goto The Barrens,43.4,77.4
+    .turnin 1534 >>Turn in Call of Water
+    .accept 220 >>Accept Call of Water
 step
 #sticky
 #label Washte
@@ -1330,7 +1400,7 @@ step
 step
     .goto Thousand Needles,44.7,50.2
     .accept 4821 >> Accept Alien Egg
-step
+step << Hunter
     .goto Thousand Needles,44.9,50.7
     .vendor >> Go buy Dense Shortbow if it's in the shop.
     .collect 11305,1
@@ -1675,6 +1745,7 @@ step
     .accept 1145 >> Accept The Swarm Grows
 step << Warrior
     >>Skip Followup
+    .goto The Barrens,57.2,30.3
 .turnin 1825 >>Turn in Speak with Thun'grim
 step << !Warrior
     .goto The Barrens,51.5,30.3
@@ -1690,9 +1761,6 @@ step << Warrior
 step
     .goto Ashenvale,73.2,61.5
     .fly >> Fly to Orgrimmar
-step <<Hunter
-
-    
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
@@ -1729,5 +1797,48 @@ step
     .turnin 1145 >> Turn in The Swarm Grows
 step
     .goto Orgrimmar,74.7,33.9
-    .accept 1146 >> Accept The Swarm Grows    
+    .accept 1146 >> Accept The Swarm Grows
+step << Warrior/Shaman
+    .goto Orgrimmar,45.1,63.9
+    .fly Ratchet >>Fly to Ratchet
+step << Warrior/Shaman
+.turnin 874 >>Turn in Mahren Skyseer
+    .accept 873 >>Accept Isha Awak
+step << Shaman
+    .goto The Barrens,65.8,43.8
+    .turnin 220 >>Turn in Call of Water
+    .accept 63 >>Accept Call of Water
+step << Warrior/Shaman
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+    >>Look in the water for a Isha Awak (Red Threshadon). Kill and loot it for its heart
+    .complete 873,1 --Heart of Isha Awak (1)
+step << Warrior
+    >>Swim to the island
+.goto The Barrens,68.6,49.2
+    .turnin 1718 >>Turn in The Islander
+    .accept 1719 >>Accept The Affray
+step << Warrior
+    .goto The Barrens,68.6,48.7
+    .complete 1719,1 --Step on the grate to begin the Affray (1)
+    .complete 1719,2 --Big Will (1)
+step << Warrior
+    .goto The Barrens,68.6,49.2
+    .turnin 1719 >>Turn in The Affray
+    .accept 1791 >>Accept The Windwatcher
+step << Warrior/Shaman
+    .goto The Barrens,65.8,43.8
+    .turnin 873 >>Turn in Isha Awak
+step << Warrior
+    .goto The Barrens,63.1,37.1
+    .fly Orgrimmar >>Fly to Orgrimmar
+step << Shaman
+    .goto Orgrimmar,38.0,37.7
+    .accept 1531 >>Accept Call of Air
 ]])

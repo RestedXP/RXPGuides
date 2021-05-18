@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 13-23 The Barrens
-#next 23-27 Hillsbrad - Ashenvale
+#next 23-27 Hillsbrad / Ashenvale
 step << Warrior
 .goto The Barrens,57.9,25.5,20 >>Run up the mountain here
 step << Warrior
@@ -16,7 +16,13 @@ step << Warrior
 .goto The Barrens,55.0,26.7
     .complete 1503,1 --Forged Steel Bars (1)
 step << Warrior
-    .goto The Barrens,57.2,30.3
+    #sticky
+    #completewith next
+#requires Steel
+    .goto The Barrens,54.7,28.0,20 >>You can run up the mountain here
+step << Warrior
+    #requires Steel
+.goto The Barrens,57.2,30.3
     .turnin 1503 >>Turn in Forged Steel
 step << Shaman
     #sticky
@@ -35,15 +41,6 @@ step
     .complete 871,2 --Razormane Thornweaver (8)
     .complete 871,1 --Razormane Water Seeker (8)
     .complete 871,3 --Razormane Hunter (3)
-step << Warrior
-    #sticky
-    #completewith next
-#requires Steel
-    .goto The Barrens,54.7,28.0 >>You can run up the mountain here
-step << Warrior
-    #requires Steel
-.goto The Barrens,57.2,30.3
-    .turnin 1503 >>Turn in Forged Steel
 step
     #sticky
     #completewith next
@@ -833,7 +830,11 @@ step
 step
     .goto Thunder Bluff,45.9,64.7
     .home >>Set your Hearthstone to Thunder Bluff
-step <<Shaman/Warrior
+step << Shaman/Warrior
+    #sticky
+    #completewith next
+    +If it’s cheaper, buy a green 2h mace from the AH
+step << Shaman/Warrior
     .goto Thunder Bluff,53.2,58.2
     .vendor >> Go buy Maul
     .collect 924,1
@@ -872,13 +873,13 @@ step
     .goto Thunder Bluff,46.9,49.9
     .fly Crossroads >>Fly to Crossroads
 step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
+.goto Kalimdor,50.4,34.4,15 >>Go up the mountain here
 step
-.goto The Barrens,50.4,34.4,10 >>Go into here
+.goto Kalimdor,50.4,34.4,10 >>Go into here
 step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
+.goto Kalimdor,51.9,55.5,10 >>Jump down into the eye
 step
-.goto The Barrens,51.9,55.4
+.goto Kalimdor,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
 .goto The Barrens,46.0,36.4,15 >>Leave the eye. Go to the mouth of the cave
@@ -887,9 +888,6 @@ step
     #label Deviate
     >>Kill Deviate mobs. Loot them for their hides
     .complete 1486,1 --Deviate Hide (20)
-step
-    #sticky
-    #label Serpentbloom
     >>Look for green and red flowers on the ground
     .complete 962,1 --Serpentbloom (10)
 step
@@ -908,7 +906,8 @@ step
     >>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
     .complete 959,1 --Collect 99-Year-Old Port (1)
 step
-.goto The Barrens,51.9,54.9,10 >>Enter the deeper part of the cave
+#completewith next
+.goto Kalimdor,51.9,54.9,40 >>Enter the deeper part of the cave
 step
     #sticky
     #completewith next
@@ -920,18 +919,8 @@ step
     .complete 1491,1 --Wailing Essence (6)
 step
     #requires Deviate
-    .goto The Barrens,46.0,36.4,1000,0
-step
-    #requires Serpentbloom
-.goto The Barrens,46.0,36.4,15 >>Leave the cave
-step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
-step
-.goto The Barrens,50.4,34.4,10 >>Go into here
-step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
-step
-.goto The Barrens,51.9,55.4
+.goto Kalimdor,51.9,55.4
+>>Run back and talk to the druids on top of the mouth of the cave
 .turnin 1486 >>Turn in Deviate Hides
 step
     .goto The Barrens,45.4,28.4
@@ -1064,24 +1053,6 @@ step << Shaman
     .accept 1530 >>Accept Call of Water
     .turnin 874 >>Turn in Mahren Skyseer
     .accept 873 >>Accept Isha Awak
-step << Warrior
-    .goto The Barrens,65.8,43.8
-    .turnin 874 >>Turn in Mahren Skyseer
-    .accept 873 >>Accept Isha Awak
-step
-.goto The Barrens,65.6,47.1,40,0
-        .goto The Barrens,63.3,54.2,40,0
-.goto The Barrens,65.6,47.1,40,0
-        .goto The Barrens,63.3,54.2,40,0
-.goto The Barrens,65.6,47.1,40,0
-        .goto The Barrens,63.3,54.2,40,0
-.goto The Barrens,65.6,47.1,40,0
-        .goto The Barrens,63.3,54.2,40,0
-    >>Look in the water for a Isha Awak (Red Threshadon). Kill and loot it for its heart. You can skip this quest if you don't think you can kill it
-    .complete 873,1 --Heart of Isha Awak (1)
-step
-    .goto The Barrens,65.8,43.8
-    .turnin 873 >>Turn in Isha Awak
 step << Shaman
     .goto The Barrens,63.1,37.1
     .fly Camp Taurajo >>Fly to Camp Taurajo
@@ -1118,4 +1089,4 @@ step
     .abandon 3924 >>Abandon Samophlange Manual
 step
 .goto Orgrimmar,49.1,94.5,30    >>Exit Orgrimmar
-]])
+]],"Shaman/Warrior")
