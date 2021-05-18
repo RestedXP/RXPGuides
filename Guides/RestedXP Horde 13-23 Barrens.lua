@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 13-23 The Barrens
-#next 23-27 Hillsbrad - Ashenvale
+#next 23-27 Hillsbrad / Ashenvale
 step << Warrior
 .goto The Barrens,57.9,25.5,20 >>Run up the mountain here
 step << Warrior
