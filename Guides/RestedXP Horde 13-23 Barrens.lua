@@ -1089,4 +1089,4 @@ step
     .abandon 3924 >>Abandon Samophlange Manual
 step
 .goto Orgrimmar,49.1,94.5,30    >>Exit Orgrimmar
-]])
+]],"Shaman/Warrior")
