@@ -122,6 +122,7 @@ step	<<Paladin
     .goto Blasted Lands,58.1,56.0
     .accept 9407 >>Accept Through the Dark Portal
 step	<<Paladin
+	.goto Swamp of Sorrows,33.2,68.4,25
 	.zone Swamp of Sorrows >>Run to Swamp of Sorrows
 step	<<Paladin
     .goto Swamp of Sorrows,34.3,66.0
