@@ -16,10 +16,14 @@ RXP_.itemQueryList = {}
 RXP_.questAccept = {}
 RXP_.questTurnIn = {}
 
+-- The frames that will be affected by the guide opacity option.
+RXP_.opacityAffectedFrames = {}
+
 RXP_.font = GameFontNormal:GetFont()
 local eventFrame = CreateFrame("Frame");
 local f = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, BackdropTemplate)
+RXP_.opacityAffectedFrames.BottomFrame = f.BottomFrame;
 
 eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
@@ -40,7 +44,6 @@ eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
 
 RXPG_Debug = false
 
-
 function RXPG_init()
 	RXPData = RXPData or {}
 	RXPCData = RXPCData or {}
@@ -50,6 +53,8 @@ function RXPG_init()
 	RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
+	RXPData.guideOpacity = RXPData.guideOpacity or 1
+	RXPData.affectGuideNameOpacity = RXPData.affectGuideNameOpacity or false
     RXPData.trainGenericSpells = RXPData.trainGenericSpells or true
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     f:SetShown(not RXPCData.hideWindow)
@@ -140,6 +145,17 @@ local function trainerFrameUpdate(self,t)
 	end
 end
 
+-- Sets the opacity of the guide viewer. This won't change opacity of the step frame.
+local function SetGuideOpacity(newOpacity)
+	for frameName, frame in pairs(RXP_.opacityAffectedFrames) do
+		if frame ~= nil then
+			if RXPData.affectGuideNameOpacity and frameName == "GuideName" or not RXPData.affectGuideNameOpacity and frameName ~= "GuideName" or RXPData.affectGuideNameOpacity then
+				frame:SetAlpha(newOpacity)
+			end
+		end
+	end
+end
+
 eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
 	
@@ -178,6 +194,8 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
             RXP_.UpdateBottomFrame()
             RXP_.noGuide = true
         end
+
+		SetGuideOpacity(RXPData.guideOpacity)
 		return
     elseif event == "PLAYER_LEVEL_UP" then
         RXP_.SetStep(RXPCData.currentStep)
@@ -344,10 +362,20 @@ f.OnMouseUp = function(self,button)
 	isResizing = false
 end
 
+f.GuideViewerOnMouseEnter = function(self)
+	SetGuideOpacity(1)
+end
+
+f.GuideViewerOnMouseLeave = function(self)
+	SetGuideOpacity(RXPData.guideOpacity)
+end
+
 
 local isResizing
 f:SetScript("OnMouseDown", f.OnMouseDown)
 f:SetScript("OnMouseUp", f.OnMouseUp)
+f:SetScript("OnEnter", f.GuideViewerOnMouseEnter)
+f:SetScript("OnLeave", f.GuideViewerOnMouseLeave)
 f:EnableMouse(1)
 
 RXP_.stepPos = {}
@@ -459,6 +487,8 @@ local backdrop = {bgFile = "Interface/BUTTONS/WHITE8X8",
 }
 
 f.GuideName = CreateFrame("Frame","$parentGuideName",f, BackdropTemplate)
+RXP_.opacityAffectedFrames.GuideName = f.GuideName;
+
 f.CurrentStepFrame = CreateFrame("Frame", nil, f)
 --f.CurrentStepFrame:SetBackdrop(backdrop)
 --f.CurrentStepFrame:SetBackdropColor(0.3,0.01,0.01)
@@ -1072,9 +1102,11 @@ f.GuideName.cog:SetScript("OnClick", function(self)
 end)
 local buttonToggle = 0
 f.GuideName.cog:HookScript("OnEnter", function(self)
+	f.GuideViewerOnMouseEnter()
     buttonToggle = GetTime()
 end)
 f.GuideName.cog:HookScript("OnLeave", function(self)
+	f.GuideViewerOnMouseLeave()
     self:Hide()
 end)
 
@@ -1106,11 +1138,13 @@ end)
 
 f.GuideName:SetScript("OnEnter",function()
 	f.GuideName.cog:Show()
+	f.GuideViewerOnMouseEnter()
 end)
 f.GuideName:SetScript("OnLeave",function()
     if GetTime() - buttonToggle > 0.1 then
         f.GuideName.cog:Hide()
     end
+	f.GuideViewerOnMouseLeave()
 end)
 
 
@@ -1119,6 +1153,9 @@ f.SF = CreateFrame("ScrollFrame", "$parentSF", f.BottomFrame, "UIPanelScrollFram
 f.SF:SetPoint("TOPLEFT", f.BottomFrame,5, -5)
 f.SF:SetPoint("BOTTOMRIGHT", f.BottomFrame,-20, 7)
 f.SF.ScrollBar:SetPoint("TOPLEFT",f.SF,"TOPRIGHT",0,-18)
+
+f.SF.ScrollBar:HookScript("OnEnter", f.GuideViewerOnMouseEnter)
+f.SF.ScrollBar:HookScript("OnLeave", f.GuideViewerOnMouseLeave)
 
 --[[
 local prefix = "Interface\\MAINMENUBAR\\"
@@ -1141,12 +1178,16 @@ s.Normal:SetTexture(prefix.."Down-Normal")
 s.Highlight:SetTexture(prefix.."Down-Highlight")--?
 s.Pushed:SetTexture(prefix.."Down-Pushed")
 s.Disabled:SetTexture(prefix.."Down-Disabled")
+s:HookScript("OnEnter", f.GuideViewerOnMouseEnter)
+s:HookScript("OnLeave", f.GuideViewerOnMouseLeave)
 s = f.SF.ScrollBar.ScrollUpButton
 s.Normal:SetTexture(prefix.."Up-Normal")
 s.Highlight:SetTexture(prefix.."Up-Highlight")
 s.Pushed:SetTexture(prefix.."Up-Pushed")
 s.Disabled:SetTexture(prefix.."Up-Disabled")
 f.SF.ScrollBar:SetThumbTexture(prefix.."Knob")
+s:HookScript("OnEnter", f.GuideViewerOnMouseEnter)
+s:HookScript("OnLeave", f.GuideViewerOnMouseLeave)
 
 --f.SF.ScrollBar:SetWidth(5)
 
@@ -1288,10 +1329,12 @@ function RXP_:LoadGuide(guide,OnLoad)
 			currentAlpha = frame:GetAlpha()
 			frame:SetAlpha(1)
 			frame:SetBackdropColor(unpack(colors.bottomFrameHighlight))
+			f.GuideViewerOnMouseEnter()
 		end)
 		frame:SetScript("OnLeave",function()
 			frame:SetBackdropColor(unpack(colors.bottomFrameBG))
 			frame:SetAlpha(currentAlpha)
+			f.GuideViewerOnMouseLeave()
 		end)
         frame.timer = 0
         frame.index = n
@@ -1703,14 +1746,30 @@ function RXP_.CreateOptionsPanel()
     if not QuestieLoader then
         button:Hide()
     end
-   
-   
+
+	button = CreateFrame("CheckButton", "$parentAffectGuideNameOpacity", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        RXPData.affectGuideNameOpacity = self:GetChecked()
+		
+		if RXPData.affectGuideNameOpacity then
+			f.GuideName:SetAlpha(RXPData.guideOpacity)
+		else
+			f.GuideName:SetAlpha(1)
+		end
+    end)
+    button:SetChecked(RXPData.affectGuideNameOpacity)
+    button.Text:SetText("Guide name affected by guide opacity")
+    button.tooltip = "Whether or not to make the guide name affected by the guide opacity setting." 
    
 
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
         self.Text:SetText(format(self.defaultText,value))
-        RXPFrame:SetScale(RXPData.windowSize)
+		SetGuideOpacity(RXPData.guideOpacity)
+		RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
         RXP_.arrowFrame:SetSize(32*size,32*size)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
@@ -1752,5 +1811,6 @@ function RXP_.CreateOptionsPanel()
     slider = CreateSlider(RXPData,"numMapPins",1,20,"Number of Map Pins: %d","Number of map pins shown on the world map",slider,0,-25)
     slider = CreateSlider(RXPData,"worldMapPinScale",0.05,1,"Map Pin Scale: %.2f","Adjusts the size of the world map pins",slider,0,-25, "0.05", "1", 0.05)
     slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,5,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, "0.1", "5", 0.05)
+	slider = CreateSlider(RXPData,"guideOpacity",0,1,"Guide Opacity %.2f","The opacity of the guide viewer (not the step window).",slider,0,-25)
     slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,"Bottom","Top",2)
 end
