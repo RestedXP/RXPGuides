@@ -70,7 +70,7 @@ step
     >>Kill Plainstriders. Loot them for Beaks
 .goto The Barrens,50.8,32.1
     .complete 844,1 --Plainstrider Beak (7)
-step
+step << Orc/Troll
     .goto The Barrens,52.6,29.9
     .turnin 6386 >>Turn in Return to the Crossroads.
 step
@@ -443,6 +443,9 @@ step
     >>Hug the left side. Run to Grommash Hold
 .goto Orgrimmar,39.1,38.1
     .accept 1061 >>Accept The Spirits of Stonetalon
+step << Paladin
+    .goto Orgrimmar,32.3,35.7
+    .trainer >> Go and train your class spells
 step << Shaman
     .goto Orgrimmar,38.8,36.4
 .train 8045 >> Train Earth Shock r3
@@ -454,11 +457,11 @@ step << Warrior
     .goto Orgrimmar,80.4,32.4
     .train 1160 >> Train Demoralizing Shout r1
     .train 285 >> Train Heroic Strike r3
-step << !Tauren !Undead
+step << !Tauren !Undead !BloodElf
     >>Run to the Flight Master tower
 .goto Orgrimmar,45.2,63.8
     .fly Crossroads >>Fly to Crossroads
-step << Tauren/Undead
+step << Tauren/Undead/BloodElf
     >>Run to the Flight Master tower. Get the Flight Path
 .goto Orgrimmar,45.2,63.8
 .fp >>Get the Orgrimmar Flight Path
@@ -880,6 +883,7 @@ step
 .goto Kalimdor,51.9,55.5,10 >>Jump down into the eye
 step
 .goto Kalimdor,51.9,55.4
+.goto The Barrens,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
 .goto The Barrens,46.0,36.4,15 >>Leave the eye. Go to the mouth of the cave
@@ -888,6 +892,9 @@ step
     #label Deviate
     >>Kill Deviate mobs. Loot them for their hides
     .complete 1486,1 --Deviate Hide (20)
+step
+    #sticky
+    #label Serpentbloom
     >>Look for green and red flowers on the ground
     .complete 962,1 --Serpentbloom (10)
 step
@@ -906,6 +913,7 @@ step
     >>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
     .complete 959,1 --Collect 99-Year-Old Port (1)
 step
+#sticky
 #completewith next
 .goto Kalimdor,51.9,54.9,40 >>Enter the deeper part of the cave
 step
@@ -918,9 +926,16 @@ step
     >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
     .complete 1491,1 --Wailing Essence (6)
 step
-    #requires Deviate
+    #requires Serpentbloom
+.goto The Barrens,45.4,28.4,3000 >> .
+step
+    #sticky
+    #completewith next
+#requires Deviate
 .goto Kalimdor,51.9,55.4
->>Run back and talk to the druids on top of the mouth of the cave
++Run back and talk to the druids on top of the mouth of the cave
+step
+.goto The Barrens,51.9,55.4
 .turnin 1486 >>Turn in Deviate Hides
 step
     .goto The Barrens,45.4,28.4
@@ -1076,6 +1091,9 @@ step
 step << Shaman
 .goto Orgrimmar,38.6,36.0
 .trainer >> Go and train your class spells
+step << Paladin
+    .goto Orgrimmar,32.3,35.7
+    .trainer >> Go and train your class spells
 step << Warrior
 .goto Orgrimmar,79.7,31.4
 .trainer >> Go and train your class spells
