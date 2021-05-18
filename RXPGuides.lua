@@ -51,6 +51,7 @@ function RXPG_init()
 	RXPData.numMapPins = RXPData.numMapPins or 7
 	RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
 	RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
+	RXPData.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity or 0.5
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
 	RXPData.guideOpacity = RXPData.guideOpacity or 1
@@ -448,8 +449,6 @@ colors.background = {12/255,12/255,27/255,1}
 colors.bottomFrameBG = {18/255,18/255,40/255,1}
 colors.bottomFrameHighlight = {54/255,62/255,109/255,1}
 colors.mapPins = {206/210,123/210,1,1}
-colors.mapPinsBackground = {0.1, 0.1, 0.1, 0.5}
-colors.mapPinsActiveBackground = {0, 0, 0, 0.5}
 
 local function SetColor(ref,a,r,g,b)
     local rr,rg,rb,ra = unpack(ref)
@@ -1195,9 +1194,10 @@ s:HookScript("OnLeave", f.GuideViewerOnMouseLeave)
 hooksecurefunc(f.SF.ScrollBar,"SetValue",function(self,value)
 	local h = math.floor(f.Steps:GetHeight()+10)
 	local scroll = h-f.BottomFrame:GetHeight()
-	if scroll < 0 then scroll = 0 end
+    local zero = RXPData.hideCompletedSteps and RXPCData.currentStep and RXPCData.currentStep > 1 and RXP_.stepPos[RXPCData.currentStep-1]+RXPCData.currentStep or 0
+	if scroll < zero then scroll = zero end
 	if scroll <= value then f.SF.ScrollBar.ScrollDownButton:Disable() end
-	f.SF.ScrollBar:SetMinMaxValues(0,scroll)
+	f.SF.ScrollBar:SetMinMaxValues(zero,scroll)
 end)
 
 
@@ -1346,6 +1346,7 @@ function RXP_:LoadGuide(guide,OnLoad)
                 local menuList = {
                     {notCheckable = 1, text = "Go to step "..n,func = RXP_.SetStep, arg1 = n},
                     {notCheckable = 1, text = "Select another guide",func = RXP_.DropDownMenu},
+                    {text = "Reload Guide", notCheckable = 1, func = RXP_.LoadGuide, arg1 = RXP_.currentGuide},
                     {text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG},
                     {text = "Close",notCheckable = 1,func = function(self) self:Hide() end},
                 }
@@ -1709,18 +1710,6 @@ function RXP_.CreateOptionsPanel()
     button.Text:SetText("Hide Window")
     button.tooltip = "Hides the main window" 
     
-    button = CreateFrame("CheckButton", "$parentReverseAnchor", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
-    index = index + 1
-    button:SetScript("PostClick",function(self) 
-        local hide = self:GetChecked()
-        RXPData.reverseAnchor = hide
-        f:SetShown(not hide)
-    end)
-    button:SetChecked(RXPCData.reverseAnchor)
-    button.Text:SetText("Grow downwards")
-    button.tooltip = "Hides the main window" 
     
     button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
@@ -1732,6 +1721,20 @@ function RXP_.CreateOptionsPanel()
     button:SetChecked(RXPData.lockFrames)
     button.Text:SetText("Lock Frames")
     button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it" 
+   
+    button = CreateFrame("CheckButton", "$parentHideCompleted", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self)
+        RXPData.hideCompletedSteps = self:GetChecked()
+        f.SF.ScrollBar:SetValue(0)
+    end)
+    button:SetChecked(RXPData.hideCompletedSteps)
+    button.Text:SetText("Hide Completed Steps")
+    button.tooltip = "Only shows current and future steps on the guide window" 
+   
+   
    
     button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
@@ -1806,11 +1809,12 @@ function RXP_.CreateOptionsPanel()
         return slider
     end
     local slider
-    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,280,-25)
+    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,315,-25)
     slider = CreateSlider(RXPData,"windowSize",0.2,2,"Window Scale: %.2f","Scale of the Main Window, use alt+left click on the main window to resize it",slider,0,-25)
     slider = CreateSlider(RXPData,"numMapPins",1,20,"Number of Map Pins: %d","Number of map pins shown on the world map",slider,0,-25)
     slider = CreateSlider(RXPData,"worldMapPinScale",0.05,1,"Map Pin Scale: %.2f","Adjusts the size of the world map pins",slider,0,-25, "0.05", "1", 0.05)
     slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,5,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, "0.1", "5", 0.05)
-	slider = CreateSlider(RXPData,"guideOpacity",0,1,"Guide Opacity %.2f","The opacity of the guide viewer (not the step window).",slider,0,-25)
+	  slider = CreateSlider(RXPData,"guideOpacity",0,1,"Guide Opacity %.2f","The opacity of the guide viewer (not the step window).",slider,0,-25)
+    slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, "0", "1", 0.05)
     slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,"Bottom","Top",2)
 end

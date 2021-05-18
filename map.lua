@@ -161,7 +161,8 @@ function RXP_.UpdateGotoSteps()
     end
 end
 
-MapPinPool = {}
+local MapPinPool = {}
+RXP_.MapPinPool = MapPinPool
 
 MapPinPool.create = function()
     local framePool = CreateFramePool()
@@ -214,17 +215,16 @@ MapPinPool.creationFunc = function(framePool)
 
         if step.active then
             f:SetAlpha(1)
-            f:SetBackdropColor(unpack(colors.mapPinsActiveBackground))
             f:SetWidth(size + 3)
             f:SetHeight(size + 3)
-
+            f:SetBackdropColor(0.0, 0.0, 0.0, RXPData.worldMapPinBackgroundOpacity)
             f.inner:SetBackdropColor(1, 1, 1, 1)
             f.inner:SetWidth(size + 3)
             f.inner:SetHeight(size + 3)
 
             f.text:SetFont(RXP_.font, 14,"OUTLINE")
         else
-            f:SetBackdropColor(unpack(colors.mapPinsBackground))
+            f:SetBackdropColor(0.1, 0.1, 0.1, RXPData.worldMapPinBackgroundOpacity)
             f:SetWidth(size)
             f:SetHeight(size)
 

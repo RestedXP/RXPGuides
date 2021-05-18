@@ -833,6 +833,10 @@ step
 step
     .goto Thunder Bluff,45.9,64.7
     .home >>Set your Hearthstone to Thunder Bluff
+step <<Shaman/Warrior
+    .goto Thunder Bluff,53.2,58.2
+    .vendor >> Go buy Maul
+    .collect 924,1
 step
     .goto Thunder Bluff,61.4,80.9
     .turnin 1130 >>Turn in Melor Sends Word
