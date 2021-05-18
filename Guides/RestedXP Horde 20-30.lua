@@ -721,7 +721,7 @@ step
 .zone Tirisfal Glades >>Arrive in Tirisfal Glades
 step
      >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
-       .goto Azeroth,39.2,38.0
+    .goto Silverpine Forest,30.0,29.1
     .collect 15882,1
     --Video link in future?
 step
