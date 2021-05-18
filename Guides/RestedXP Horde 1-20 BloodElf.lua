@@ -2546,7 +2546,7 @@ step << Hunter
 .train 3111 >>Train Mend Pet
 .train 14282 >>Train Arcane Shot
 step << Hunter
-.money 0.6032
+.money <0.6032
 .goto Silvermoon City,86.2,35.4
 .vendor >>Buy a Heavy Recurve Bow from Celana
 .collect 3027,1 --Heavy Recurve Bow
