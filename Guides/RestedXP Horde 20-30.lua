@@ -343,9 +343,6 @@ step
     .goto Thunder Bluff,36.6,51.3
     .accept 742 >> Accept The Ashenvale Hunt
 step
-.goto Thunder Bluff,22.8,20.9
-    .accept 962 >> Accept Serpentbloom
-step
     .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
 step
 .goto Thunder Bluff,27.5,24.7
@@ -353,6 +350,7 @@ step
 step
 .goto Thunder Bluff,23.0,20.9
     .turnin 853 >> Turn in Apothecary Zamah
+.accept 962 >> Accept Serpentbloom
 step << Tauren
     .goto Thunder Bluff,45.8,64.7
 .home >> Set your Hearthstone to Thunder Bluff
@@ -739,10 +737,6 @@ step << !Rogue
     >>Click the Wanted poster on the wall
 .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
-step << Rogue
-    >>Use Hinott's Oil on yourself to cure the debuff, then click the Wanted poster on the wall
-.goto Hillsbrad Foothills,62.5,19.8
-    .accept 567 >> Accept Dangerous!
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy Merciless Axe from the vendor if you have enough money. It's not always in the shop.
@@ -751,6 +745,10 @@ step << Rogue
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy Broad Bladed Knife from the vendor if you have enough money. It's not always in the shop.
     .collect 12247,1
+step << Rogue
+    >>Use Hinott's Oil on yourself to cure the debuff, then click the Wanted poster on the wall
+.goto Hillsbrad Foothills,62.5,19.8
+    .accept 567 >> Accept Dangerous!
 step
     #sticky
 #label syndicateq
@@ -1139,10 +1137,10 @@ step << Shaman/Paladin/Warrior
     .goto Thunder Bluff,54.0,57.3
     .vendor >> Go buy Merciless Axe if u didn't get it in Hillsbrad
     .collect 12249,1
-step <<Hunter
+step << Hunter
     .goto Thunder Bluff,46.9,45.7
     .vendor >> Go and buy Sturdy Recurve if it's in the shop.
-    .collect 11306,1 
+    .collect 11306,1
 step << Druid
     .goto Thunder Bluff,77.0,29.9
 .trainer >> Go and train your class spells
@@ -1330,7 +1328,7 @@ step
 step
     .goto Thousand Needles,44.7,50.2
     .accept 4821 >> Accept Alien Egg
-step
+step << Hunter
     .goto Thousand Needles,44.9,50.7
     .vendor >> Go buy Dense Shortbow if it's in the shop.
     .collect 11305,1
@@ -1690,9 +1688,6 @@ step << Warrior
 step
     .goto Ashenvale,73.2,61.5
     .fly >> Fly to Orgrimmar
-step <<Hunter
-
-    
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
