@@ -1675,6 +1675,7 @@ step
     .accept 1145 >> Accept The Swarm Grows
 step << Warrior
     >>Skip Followup
+    .goto The Barrens,57.2,30.3
 .turnin 1825 >>Turn in Speak with Thun'grim
 step << !Warrior
     .goto The Barrens,51.5,30.3
