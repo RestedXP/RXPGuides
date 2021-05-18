@@ -47,7 +47,7 @@ function RXPG_init()
 	RXPData.numMapPins = RXPData.numMapPins or 7
 	RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
 	RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
-	RXPData.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity or 0.5
+	RXPData.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity or 0.35
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.trainGenericSpells = RXPData.trainGenericSpells or true
@@ -1753,7 +1753,7 @@ function RXP_.CreateOptionsPanel()
     slider = CreateSlider(RXPData,"windowSize",0.2,2,"Window Scale: %.2f","Scale of the Main Window, use alt+left click on the main window to resize it",slider,0,-25)
     slider = CreateSlider(RXPData,"numMapPins",1,20,"Number of Map Pins: %d","Number of map pins shown on the world map",slider,0,-25)
     slider = CreateSlider(RXPData,"worldMapPinScale",0.05,1,"Map Pin Scale: %.2f","Adjusts the size of the world map pins",slider,0,-25, "0.05", "1", 0.05)
-    slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,5,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, "0.1", "5", 0.05)
+    --slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,5,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, "0.1", "5", 0.05)
     slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, "0", "1", 0.05)
     slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,"Bottom","Top",2)
 end

@@ -869,13 +869,13 @@ step
     .goto Thunder Bluff,46.9,49.9
     .fly Crossroads >>Fly to Crossroads
 step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
+.goto Kalimdor,50.4,34.4,15 >>Go up the mountain here
 step
-.goto The Barrens,50.4,34.4,10 >>Go into here
+.goto Kalimdor,50.4,34.4,10 >>Go into here
 step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
+.goto Kalimdor,51.9,55.5,10 >>Jump down into the eye
 step
-.goto The Barrens,51.9,55.4
+.goto Kalimdor,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
 .goto The Barrens,46.0,36.4,15 >>Leave the eye. Go to the mouth of the cave
@@ -884,9 +884,6 @@ step
     #label Deviate
     >>Kill Deviate mobs. Loot them for their hides
     .complete 1486,1 --Deviate Hide (20)
-step
-    #sticky
-    #label Serpentbloom
     >>Look for green and red flowers on the ground
     .complete 962,1 --Serpentbloom (10)
 step
@@ -905,7 +902,8 @@ step
     >>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
     .complete 959,1 --Collect 99-Year-Old Port (1)
 step
-.goto The Barrens,51.9,54.9,10 >>Enter the deeper part of the cave
+#completewith next
+.goto Kalimdor,51.9,54.9,40 >>Enter the deeper part of the cave
 step
     #sticky
     #completewith next
@@ -917,18 +915,8 @@ step
     .complete 1491,1 --Wailing Essence (6)
 step
     #requires Deviate
-    .goto The Barrens,46.0,36.4,1000,0
-step
-    #requires Serpentbloom
-.goto The Barrens,46.0,36.4,15 >>Leave the cave
-step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
-step
-.goto The Barrens,50.4,34.4,10 >>Go into here
-step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
-step
-.goto The Barrens,51.9,55.4
+.goto Kalimdor,51.9,55.4
+>>Run back and talk to the druids on top of the mouth of the cave
 .turnin 1486 >>Turn in Deviate Hides
 step
     .goto The Barrens,45.4,28.4
