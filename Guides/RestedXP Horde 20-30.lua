@@ -339,6 +339,10 @@ step << !Tauren
 step << Tauren
     .goto The Barrens,44.4,59.2
 .fly Thunder Bluff>>Fly to Thunder Bluff
+step << Druid
+.goto Thunder Bluff,76.5,27.2
+.accept 27 >>Accept A Lesson to Learn
+.trainer >> Go and train your class spells
 step
     .goto Thunder Bluff,36.6,51.3
     .accept 742 >> Accept The Ashenvale Hunt
@@ -541,9 +545,28 @@ step
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >> Turn in Naga at the Zoram Strand
 step << Druid
->> Use the spell Teleport to Moonglade
+    .zone Moonglade >> Use the spell Teleport to Moonglade
+step << Druid
+    >>Go Upstairs
+     .goto Moonglade,56.2,30.6
+    .turnin 27 >>Turn in A Lesson to Learn
+    .accept 28 >>Accept Trial of the Lake
+step << Druid
     .goto Moonglade,52.5,40.5
 .trainer >> Go and train your class spells
+step << Druid
+    >>Search for a Vase underwater. Loot it for a Shrine Bauble
+    .goto Moonglade,54.6,46.5,20,0
+    .goto Moonglade,53.0,48.4
+    .collect 15877,1
+step << Druid
+    >>Use the Shrine Bauble
+    .goto Moonglade,36.2,41.8
+    .complete 28,1 --Complete the Trial of the Lake. (1)
+step << Druid
+    .goto Moonglade,36.5,40.1
+    .turnin 28 >>Turn in Trial of the Lake
+    .accept 30 >>Accept Trial of the Sea Lion
 step
     .hs >> Hearth to Thunder Bluff
 step
@@ -566,7 +589,15 @@ step
 step
     .goto The Barrens,62.4,37.6
     .turnin 1491 >>Turn in Smart Drinks
-step
+step << Druid
+    >>Loot the gray chest underwater
+    .goto The Barrens,56.7,8.3
+    .collect 15883,1
+step << Druid
+    #sticky
+    #completewith next
+    .goto Orgrimmar,12.4,66.1,20 >>Enter Orgrimmar through the west entrance
+step << !Druid
     .goto Thunder Bluff,47.0,49.9
     .fly >> Fly to Orgrimmar
 step << Paladin
@@ -670,6 +701,8 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,48.2,45.3
     .turnin 1513 >>Turn in The Binding
+step
+    .home >> Set your Hearthstone to Orgrimmar
 ]])
 
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
@@ -686,6 +719,11 @@ step
 .goto Durotar,50.8,13.8
 step
 .zone Tirisfal Glades >>Arrive in Tirisfal Glades
+step
+     >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
+       .goto Azeroth,39.2,38.0
+    .collect 15882,1
+    --Video link in future?
 step
     >>Run to The Sepulcher
 .goto Silverpine Forest,42.9,40.9
@@ -712,7 +750,8 @@ step
     .turnin 494 >> Turn in Time To Strike
     .goto Hillsbrad Foothills,62.5,20.5
     .accept 527 >> Accept Battle of Hillsbrad
-step <<Shaman
+step << Shaman
+    >>Fill the Waterskin at the well
 .goto Hillsbrad Foothills,62.2,20.8
     .complete 1536,1 --Filled Red Waterskin (1)
 step
@@ -882,23 +921,33 @@ step
 .complete 529,1 --Kill Blacksmith Verringtan (x1)
     .complete 529,2 --Kill Hillsbrad Apprentice Blacksmith (x4)
 step << Druid
+    >>Click the Half Pendant (blue) in your bag to craft the Pendant
+.goto Moonglade,36.2,41.8
+    .complete 30,1 --Pendant of the Sea Lion (1)
+step << Druid
+    >>Go Upstairs
+    .goto Moonglade,56.2,30.6
+    .turnin 30 >>Turn in Trial of the Sea Lion
+    .accept 31 >>Accept Aquatic Form
+step << Druid
 >> Use the spell Teleport to Moonglade
     .goto Moonglade,52.5,40.5
 .trainer >> Go and train your class spells
-step
+step << !Shaman
 #requires Crate
 >>We're not going to turn these quests in until later on.
-step <<!Shaman
 .hs >> Hearth to Orgrimmar
-step <<Shaman
-.hs >> Hearth to Camp T
-step <<Shaman
-    .goto The Barrens,43.4,77.4
-    .turnin 1536 >>Turn in Call of Water
-    .accept 1534 >>Accept Call of Water
-step <<Shaman
-    .goto The Barrens,44.5,59.1
-    .fly Orgrimmar >>Fly to Orgrimmar
+step << Shaman
+#requires Crate
+>>We're not going to turn these quests in until later on.
+.hs >> Hearth to Camp Taurajo
+step << Shaman
+.goto The Barrens,43.4,77.4
+.turnin 1536 >>Turn in Call of Water
+.accept 1534 >>Accept Call of Water
+step << Shaman
+.goto The Barrens,44.5,59.1
+.fly Orgrimmar >>Fly to Orgrimmar
 step
     #sticky
        #completewith next
@@ -1035,8 +1084,9 @@ step
 .goto Ashenvale,35.9,36.7
     .complete 216,2 --Kill Thistlefur Shaman (x8)
 .complete 216,1 --Kill Thistlefur Avenger (x8)
-step <<Shaman
-    .goto Ashenvale,33.5,67.5
+step << Shaman
+    >>Fill the Waterskin
+.goto Ashenvale,33.5,67.5
     .complete 1534,1 --Filled Blue Waterskin (1)
 step
     >>Look for Ursangous (Bear). He patrols clockwise
@@ -1162,6 +1212,7 @@ step << Hunter
 step << Druid
     .goto Thunder Bluff,77.0,29.9
 .trainer >> Go and train your class spells
+.turnin 31 >>Turn in Aquatic Form
 step << Hunter
     .goto Thunder Bluff,59.1,86.9
 .trainer >> Go and train your class spells
@@ -1219,7 +1270,7 @@ step << Warrior
 .goto The Barrens,44.7,59.4
     .turnin 1824 >>Turn in Trial at the Field of Giants
     .accept 1825 >>Accept Speak with Thun'grim
-step <<Shaman
+step << Shaman
     .goto The Barrens,43.4,77.4
     .turnin 1534 >>Turn in Call of Water
     .accept 220 >>Accept Call of Water
@@ -1787,7 +1838,7 @@ step << Warrior/Shaman
     .turnin 873 >>Turn in Isha Awak
 step << Warrior
     .goto The Barrens,63.1,37.1
-    .fly Orgrimmar >>Fly to Orgrimmar 
+    .fly Orgrimmar >>Fly to Orgrimmar
 step << Shaman
     .goto Orgrimmar,38.0,37.7
     .accept 1531 >>Accept Call of Air
