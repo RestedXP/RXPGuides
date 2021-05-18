@@ -1727,22 +1727,40 @@ step
 step
     .goto Orgrimmar,74.7,33.9
     .accept 1146 >> Accept The Swarm Grows
-step <<Warrior
+step << Warrior
     .goto Orgrimmar,45.1,63.9
-    .fly Ratchet >>Fly to Ratchet 
-step <<Warrior
-    .goto The Barrens,68.6,49.2
+    .fly Ratchet >>Fly to Ratchet
+step << Warrior
+.turnin 874 >>Turn in Mahren Skyseer
+    .accept 873 >>Accept Isha Awak
+step << Warrior
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+.goto The Barrens,65.6,47.1,40,0
+        .goto The Barrens,63.3,54.2,40,0
+    >>Look in the water for a Isha Awak (Red Threshadon). Kill and loot it for its heart
+    .complete 873,1 --Heart of Isha Awak (1)
+step << Warrior
+    >>Swim to the island
+.goto The Barrens,68.6,49.2
     .turnin 1718 >>Turn in The Islander
     .accept 1719 >>Accept The Affray
-step <<Warrior
+step << Warrior
     .goto The Barrens,68.6,48.7
     .complete 1719,1 --Step on the grate to begin the Affray (1)
     .complete 1719,2 --Big Will (1)
-step <<Warrior
+step << Warrior
     .goto The Barrens,68.6,49.2
     .turnin 1719 >>Turn in The Affray
     .accept 1791 >>Accept The Windwatcher
-step <<Warrior
+step << Warrior
+    .goto The Barrens,65.8,43.8
+    .turnin 873 >>Turn in Isha Awak
+step << Warrior
     .goto The Barrens,63.1,37.1
-    .fly Orgrimmar >>Fly to Orgrimmar     
+    .fly Orgrimmar >>Fly to Orgrimmar 
 ]])
