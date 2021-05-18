@@ -670,8 +670,6 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,48.2,45.3
     .turnin 1513 >>Turn in The Binding
-step
-    .home >> Set your Hearthstone to Orgrimmar
 ]])
 
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
@@ -679,6 +677,8 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 #name 23-27 Hillsbrad / Ashenvale
 #next 27-30 Lower Barrens / Thousand Needles
 
+step <<!Shaman
+    .home >> Set your Hearthstone to Orgrimmar
 step
     #sticky
     #completewith next
@@ -712,8 +712,8 @@ step
     .turnin 494 >> Turn in Time To Strike
     .goto Hillsbrad Foothills,62.5,20.5
     .accept 527 >> Accept Battle of Hillsbrad
-step << Shaman
-    .goto Hillsbrad Foothills,62.2,20.8
+step <<Shaman
+.goto Hillsbrad Foothills,62.2,20.8
     .complete 1536,1 --Filled Red Waterskin (1)
 step
     >>click the Wanted poster on the wall
@@ -756,11 +756,13 @@ step << Rogue
     .accept 567 >> Accept Dangerous!
 step
     #sticky
+#label syndicateq
 >>Kill Syndicates in the area
     .complete 549,1 --Kill Syndicate Rogue (x10)
 .complete 549,2 --Kill Syndicate Watchman (x10)
 step
     #sticky
+    #label shadowmage
     >>Kill Shadow Mages. Loot them for Vials of Innocent Blood
 .complete 1066,1 --Collect Vial of Innocent Blood (x5)
 step
@@ -769,7 +771,8 @@ step
 .complete 498,1 --Collect Rescue Drull (x1)
 .goto Hillsbrad Foothills,79.9,39.7
     .complete 498,2 --Collect Rescue Tog'thar (x1)
-step  
+step
+    #requires shadowmage   
 >>Kill Spiders. Loot them until Creeper Ichor drops
 .goto Hillsbrad Foothills,63.5,33.0,50,0
     .goto Hillsbrad Foothills,57.9,34.5,50,0
@@ -779,7 +782,7 @@ step
     .goto Hillsbrad Foothills,57.2,22.1,50,0
     .complete 496,2 --Collect Creeper Ichor (x1) 
 step
-
+        #requires syndicateq
     .goto Hillsbrad Foothills,61.5,19.1
     .turnin 1066 >> Turn in Blood of Innocents
 step
@@ -882,14 +885,20 @@ step << Druid
 >> Use the spell Teleport to Moonglade
     .goto Moonglade,52.5,40.5
 .trainer >> Go and train your class spells
-step << !Shaman
+step
 #requires Crate
 >>We're not going to turn these quests in until later on.
+step <<!Shaman
 .hs >> Hearth to Orgrimmar
-step << Shaman
-#requires Crate
->>We're not going to turn these quests in until later on.
-.hs >> Hearth to Camp Taurajo
+step <<Shaman
+.hs >> Hearth to Camp T
+step <<Shaman
+    .goto The Barrens,43.4,77.4
+    .turnin 1536 >>Turn in Call of Water
+    .accept 1534 >>Accept Call of Water
+step <<Shaman
+    .goto The Barrens,44.5,59.1
+    .fly Orgrimmar >>Fly to Orgrimmar
 step
     #sticky
        #completewith next
@@ -1026,6 +1035,9 @@ step
 .goto Ashenvale,35.9,36.7
     .complete 216,2 --Kill Thistlefur Shaman (x8)
 .complete 216,1 --Kill Thistlefur Avenger (x8)
+step <<Shaman
+    .goto Ashenvale,33.5,67.5
+    .complete 1534,1 --Filled Blue Waterskin (1)
 step
     >>Look for Ursangous (Bear). He patrols clockwise
 .goto Ashenvale,41.5,67.4,40,0
@@ -1207,6 +1219,10 @@ step << Warrior
 .goto The Barrens,44.7,59.4
     .turnin 1824 >>Turn in Trial at the Field of Giants
     .accept 1825 >>Accept Speak with Thun'grim
+step <<Shaman
+    .goto The Barrens,43.4,77.4
+    .turnin 1534 >>Turn in Call of Water
+    .accept 220 >>Accept Call of Water
 step
 #sticky
 #label Washte
@@ -1732,13 +1748,17 @@ step
 step
     .goto Orgrimmar,74.7,33.9
     .accept 1146 >> Accept The Swarm Grows
-step << Warrior
+step << Warrior/Shaman
     .goto Orgrimmar,45.1,63.9
     .fly Ratchet >>Fly to Ratchet
-step << Warrior
+step << Warrior/Shaman
 .turnin 874 >>Turn in Mahren Skyseer
     .accept 873 >>Accept Isha Awak
-step << Warrior
+step << Shaman
+    .goto The Barrens,65.8,43.8
+    .turnin 220 >>Turn in Call of Water
+    .accept 63 >>Accept Call of Water
+step << Warrior/Shaman
 .goto The Barrens,65.6,47.1,40,0
         .goto The Barrens,63.3,54.2,40,0
 .goto The Barrens,65.6,47.1,40,0
@@ -1762,7 +1782,7 @@ step << Warrior
     .goto The Barrens,68.6,49.2
     .turnin 1719 >>Turn in The Affray
     .accept 1791 >>Accept The Windwatcher
-step << Warrior
+step << Warrior/Shaman
     .goto The Barrens,65.8,43.8
     .turnin 873 >>Turn in Isha Awak
 step << Warrior
