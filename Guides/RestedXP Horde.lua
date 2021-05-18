@@ -174,6 +174,7 @@ step
     .goto Tirisfal Glades,83.2,68.6
     .turnin 5405 >>Turn in Argent Dawn Commission
 step
+	#sticky
 	#completewith next
 	>>Equip your Argent Dawn Commission trinket. We will need the Scourgestones for a later quest.
 step
