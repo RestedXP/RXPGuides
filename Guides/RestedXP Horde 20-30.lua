@@ -756,13 +756,11 @@ step << Rogue
     .accept 567 >> Accept Dangerous!
 step
     #sticky
-#label syndicateq
 >>Kill Syndicates in the area
     .complete 549,1 --Kill Syndicate Rogue (x10)
 .complete 549,2 --Kill Syndicate Watchman (x10)
 step
     #sticky
-    #label shadowmage
     >>Kill Shadow Mages. Loot them for Vials of Innocent Blood
 .complete 1066,1 --Collect Vial of Innocent Blood (x5)
 step
@@ -771,8 +769,7 @@ step
 .complete 498,1 --Collect Rescue Drull (x1)
 .goto Hillsbrad Foothills,79.9,39.7
     .complete 498,2 --Collect Rescue Tog'thar (x1)
-step
-    #requires shadowmage   
+step  
 >>Kill Spiders. Loot them until Creeper Ichor drops
 .goto Hillsbrad Foothills,63.5,33.0,50,0
     .goto Hillsbrad Foothills,57.9,34.5,50,0
@@ -782,7 +779,7 @@ step
     .goto Hillsbrad Foothills,57.2,22.1,50,0
     .complete 496,2 --Collect Creeper Ichor (x1) 
 step
-        #requires syndicateq
+
     .goto Hillsbrad Foothills,61.5,19.1
     .turnin 1066 >> Turn in Blood of Innocents
 step
