@@ -517,7 +517,6 @@ step
 step
 .goto Ashenvale,14.2,14.7,40    >>Drop down the hole into Blackfathom Deeps
 step
-    #sticky
     #label Sapphires
 .goto Ashenvale,13.0,13.2,30,0
 .goto Ashenvale,13.6,9.0,30,0
