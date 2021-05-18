@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 << Alliance
-#name 1-11 Azuremyst Isle
+#name 1-12 Azuremyst Isle
 #next 11-20 Bloodmyst (Draenei)
 step
     .goto Azuremyst Isle,82.9,44.0
@@ -165,6 +165,9 @@ step
 step
     .goto Azuremyst Isle,48.4,51.6
     .accept 9463 >> Accept Medicinal Purpose
+step
+    #sticky
+    .trainer >> Train your level 6 spells
 step << Shaman
     #sticky
     .goto Azuremyst Isle,49.6,53.1,0
@@ -247,6 +250,9 @@ step
 step
 	.xp 8-950 >> Grind until you are 950xp away from level 8 (3550/4500)
 	>>Do the crab quest southeast of Odesyus' Landing if you're not quite there yet << Hunter
+step
+    #sticky
+    .trainer >>Train your level 8 spells
 step
     .goto Azuremyst Isle,49.8,51.9
     >>Die and respawn at Azure Watch
@@ -402,6 +408,9 @@ step << Shaman
     .home >> Set your Hearthstone to Azure Watch
 step
     .xp 10
+step
+    #sticky
+    .trainer >> Train your level 10 spells
 step << Warrior
     .goto Azuremyst Isle,49.9,50.6
     .accept 9582 >> Accept Strength of One
