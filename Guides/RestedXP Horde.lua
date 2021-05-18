@@ -122,6 +122,8 @@ step	<<Paladin
     .goto Blasted Lands,58.1,56.0
     .accept 9407 >>Accept Through the Dark Portal
 step	<<Paladin
+	.zone Swamp of Sorrows >>Run to Swamp of Sorrows
+step	<<Paladin
     .goto Swamp of Sorrows,34.3,66.0
     .accept 2784 >>Accept Fall From Grace
     .complete 2784,1 --The Tale of Sorrow (1)
