@@ -386,7 +386,9 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
 step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
+.goto The Barrens,46.6,36.1,15,0
+.goto The Barrens,46.7,35.1,15,0
+.goto The Barrens,46.6,34.7 >>Go up the mountain here
 step
 .goto The Barrens,50.4,34.4,10 >>Go into here
 step
@@ -426,9 +428,7 @@ step
 step
     #sticky
     #completewith next
-    >>Keep an eye out for two rare mobs, as they can both drop blue BoE axes, among other gear
-    .goto Kalimdor,52.5,54.8,30 >> Trigore
-    .goto Kalimdor,52.8,55.0,30 >> Boahn
+    +Keep an eye out for two rare mobs, Trigore and Boahn, as they can both drop blue BoE axes, among other gear
 step
     >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
     .complete 1491,1 --Wailing Essence (6)
@@ -439,7 +439,9 @@ step
     #requires Serpentbloom
 .goto The Barrens,46.0,36.4,15 >>Leave the cave
 step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
+.goto The Barrens,46.6,36.1,15,0
+.goto The Barrens,46.7,35.1,15,0
+.goto The Barrens,46.6,34.7 >>Go up the mountain here
 step
 .goto The Barrens,50.4,34.4,10 >>Go into here
 step
