@@ -169,7 +169,7 @@ step << Priest
     .train 2052 >>Train Lesser Heal r2
 step << Warlock
     .goto Tirisfal Glades,30.9,66.3
-.train 6222 >>Train Corruption r2
+.train 6222 >>Train Corruption
 step << Mage
     .goto Tirisfal Glades,30.9,66.1
     .train 116 >>Train Frostbolt
