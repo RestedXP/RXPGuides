@@ -1055,7 +1055,7 @@ step << Paladin
     .trainer >> Go and train your class spells
 ]],"Orc/Troll")
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
-<< Horde Warrior/Shaman
+<< Horde
 #name 10-13 Durotar
 #next 13-23 The Barrens
 step << Shaman/Warrior
