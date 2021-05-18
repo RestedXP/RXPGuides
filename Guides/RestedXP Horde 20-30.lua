@@ -743,6 +743,14 @@ step << Rogue
     >>Use Hinott's Oil on yourself to cure the debuff, then click the Wanted poster on the wall
 .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
+step << Shaman/Warrior/Paladin
+    .goto Hillsbrad Foothills,60.4,26.2
+    .vendor >> Go buy Merciless Axe from the vendor if you have enough money. It's not always in the shop.
+    .collect 12249,1
+step << Rogue
+    .goto Hillsbrad Foothills,60.4,26.2
+    .vendor >> Go buy Broad Bladed Knife from the vendor if you have enough money. It's not always in the shop.
+    .collect 12247,1
 step
     #sticky
 #label syndicateq
@@ -851,6 +859,14 @@ step
     .accept 1067 >> Accept Return to Thunder Bluff
     .accept 509 >> Accept Elixir of Agony
     .turnin 502 >> Turn in Elixir of Pain
+step << Shaman/Warrior/Paladin
+    .goto Hillsbrad Foothills,60.4,26.2
+    .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
+    .collect 12249,1
+step << Rogue
+    .goto Hillsbrad Foothills,60.4,26.2
+    .vendor >> If you didn't get the Broad Bladed Knife the first time, go buy it in the shop now.
+    .collect 12247,1
 step
     #sticky
     #label Crate
@@ -1119,6 +1135,14 @@ step
 .goto Thunder Bluff,55.2,51.5
     .turnin 1195 >> Turn in The Sacred Flame
     .accept 1196 >> Accept The Sacred Flame
+step << Shaman/Paladin/Warrior
+    .goto Thunder Bluff,54.0,57.3
+    .vendor >> Go buy Merciless Axe if u didn't get it in Hillsbrad
+    .collect 12249,1
+step <<Hunter
+    .goto Thunder Bluff,46.9,45.7
+    .vendor >> Go and buy Sturdy Recurve if it's in the shop.
+    .collect 11306,1 
 step << Druid
     .goto Thunder Bluff,77.0,29.9
 .trainer >> Go and train your class spells
@@ -1306,6 +1330,10 @@ step
 step
     .goto Thousand Needles,44.7,50.2
     .accept 4821 >> Accept Alien Egg
+step
+    .goto Thousand Needles,44.9,50.7
+    .vendor >> Go buy Dense Shortbow if it's in the shop.
+    .collect 11305,1
 step
 #sticky
 #completewith next
@@ -1662,6 +1690,9 @@ step << Warrior
 step
     .goto Ashenvale,73.2,61.5
     .fly >> Fly to Orgrimmar
+step <<Hunter
+
+    
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
