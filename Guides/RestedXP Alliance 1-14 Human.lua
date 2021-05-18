@@ -139,12 +139,14 @@ step
     #completewith next
 .goto Elwynn Forest,54.7,41.9,40 >> Grind en route to here
 step
-.goto Elwynn Forest,54.7,41.9,40,0
-.goto Elwynn Forest,47.6,32.3,40,0
-.goto Elwynn Forest,54.7,41.9,40,0
-.goto Elwynn Forest,47.6,32.3,40,0
-.goto Elwynn Forest,54.7,41.9,40,0
-.goto Elwynn Forest,47.6,32.3,40,0
+.goto Elwynn Forest,47.7,31.7,40,0
+.goto Elwynn Forest,50.4,27.0,40,0
+.goto Elwynn Forest,47.7,31.7,40,0
+.goto Elwynn Forest,50.4,27.0,40,0
+.goto Elwynn Forest,47.7,31.7,40,0
+.goto Elwynn Forest,50.4,27.0,40,0
+.goto Elwynn Forest,47.7,31.7,40,0
+.goto Elwynn Forest,50.4,27.0,40,0
 >>Kill Laborers in the mine
     .complete 21,1 --Kill Kobold Laborer (x12)
 step
@@ -709,9 +711,8 @@ step
 step
     #sticky
     #completewith next
->>Run up this part of the mountain
     .goto Dun Morogh,62.3,50.3,12,0
-    .goto Dun Morogh,62.2,49.4,8,0
+    .goto Dun Morogh,62.2,49.4,8 >>Run up this part of the mountain
 step
     >>Kill Vagash. Loot him for his Fang
 .goto Dun Morogh,62.6,46.1
@@ -746,6 +747,9 @@ step
 step
     .goto Dun Morogh,69.1,56.3
     .turnin 432 >> Turn in Those Blasted Troggs!
+step
+    .goto Dun Morogh,68.9,55.9
+    .vendor >> vendor trash, repair
 step
     .goto Dun Morogh,68.7,56.0
     .turnin 433 >> Turn in The Public Servant
@@ -970,12 +974,14 @@ step
     #completewith next
 .goto Elwynn Forest,54.7,41.9,40 >> Grind en route to here
 step
-.goto Elwynn Forest,54.7,41.9,40,0
-.goto Elwynn Forest,47.6,32.3,40,0
-.goto Elwynn Forest,54.7,41.9,40,0
-.goto Elwynn Forest,47.6,32.3,40,0
-.goto Elwynn Forest,54.7,41.9,40,0
-.goto Elwynn Forest,47.6,32.3,40,0
+.goto Elwynn Forest,47.7,31.7,40,0
+.goto Elwynn Forest,50.4,27.0,40,0
+.goto Elwynn Forest,47.7,31.7,40,0
+.goto Elwynn Forest,50.4,27.0,40,0
+.goto Elwynn Forest,47.7,31.7,40,0
+.goto Elwynn Forest,50.4,27.0,40,0
+.goto Elwynn Forest,47.7,31.7,40,0
+.goto Elwynn Forest,50.4,27.0,40,0
 >>Kill Laborers in the mine
     .complete 21,1 --Kill Kobold Laborer (x12)
 step
@@ -2125,7 +2131,7 @@ step
     .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
 step
 .goto Dun Morogh,33.0,27.2,15,0
-    .goto Dun Morogh,33.0,25.2
+    .goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
 .deathskip >>Keep running straight north, drop down and die, then respawn
 step
@@ -2415,7 +2421,7 @@ step
     .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
 step
 .goto Dun Morogh,33.0,27.2,15,0
-    .goto Dun Morogh,33.0,25.2
+.goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
 .deathskip >>Keep running straight north, drop down and die, then respawn
 step
@@ -2513,8 +2519,6 @@ step
     #label Azuremyst
     .zone Azuremyst Isle >>Get onto the boat when it comes
 ]],"Human Warlock")
-
-
 
 
 

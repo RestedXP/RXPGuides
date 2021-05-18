@@ -517,7 +517,6 @@ step
 step
 .goto Ashenvale,14.2,14.7,40    >>Drop down the hole into Blackfathom Deeps
 step
-    #sticky
     #label Sapphires
 .goto Ashenvale,13.0,13.2,30,0
 .goto Ashenvale,13.6,9.0,30,0
@@ -719,9 +718,9 @@ step
 .goto Durotar,50.8,13.8
 step
 .zone Tirisfal Glades >>Arrive in Tirisfal Glades
-step
+step << Druid
      >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
-       .goto Azeroth,39.2,38.0
+    .goto Silverpine Forest,30.0,29.1
     .collect 15882,1
     --Video link in future?
 step
