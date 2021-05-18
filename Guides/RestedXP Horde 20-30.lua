@@ -1788,4 +1788,7 @@ step << Warrior/Shaman
 step << Warrior
     .goto The Barrens,63.1,37.1
     .fly Orgrimmar >>Fly to Orgrimmar 
+step << Shaman
+    .goto Orgrimmar,38.0,37.7
+    .accept 1531 >>Accept Call of Air
 ]])
