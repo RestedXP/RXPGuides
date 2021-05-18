@@ -959,6 +959,8 @@ step << Warrior
 step << Warrior
 .zone Durotar >>Arrive in Durotar
 step << Warrior
+.abandon 1818 >>Abandon Speak with Dillinger
+step << Warrior
     .goto Durotar,46.4,22.9
     .accept 834 >>Accept Winds in the Desert
 step << Warrior
