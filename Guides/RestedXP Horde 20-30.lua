@@ -1726,5 +1726,23 @@ step
     .turnin 1145 >> Turn in The Swarm Grows
 step
     .goto Orgrimmar,74.7,33.9
-    .accept 1146 >> Accept The Swarm Grows    
+    .accept 1146 >> Accept The Swarm Grows
+step <<Warrior
+    .goto Orgrimmar,45.1,63.9
+    .fly Ratchet >>Fly to Ratchet 
+step <<Warrior
+    .goto The Barrens,68.6,49.2
+    .turnin 1718 >>Turn in The Islander
+    .accept 1719 >>Accept The Affray
+step <<Warrior
+    .goto The Barrens,68.6,48.7
+    .complete 1719,1 --Step on the grate to begin the Affray (1)
+    .complete 1719,2 --Big Will (1)
+step <<Warrior
+    .goto The Barrens,68.6,49.2
+    .turnin 1719 >>Turn in The Affray
+    .accept 1791 >>Accept The Windwatcher
+step <<Warrior
+    .goto The Barrens,63.1,37.1
+    .fly Orgrimmar >>Fly to Orgrimmar     
 ]])
