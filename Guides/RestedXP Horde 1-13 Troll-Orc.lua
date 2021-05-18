@@ -1035,6 +1035,10 @@ step << !Shaman !Warrior !Warlock
 step << Hunter
     .goto Durotar,57.2,12.0
     +Tame A Surf Crawler
+step << Paladin
+    #sticky
+    #completewith next
+    +If you're playing Paladin and afraid of Eversong competition, skip these next steps, then manually select 10-13
 step << !Shaman !Warrior
     #sticky
     #completewith next
@@ -1058,13 +1062,16 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 10-13 Durotar
 #next 13-23 The Barrens
-step << Shaman/Warrior
+step
     .goto Durotar,50.8,43.6
     .accept 840 >>Accept Conscript of the Horde
-step << Shaman/Warrior
+step
     .goto The Barrens,62.2,19.4
     .turnin 840 >>Turn in Conscript of the Horde
     .accept 842 >>Accept Crossroads Conscription
+step
+    .goto The Barrens,62.2,19.4
+    .zone The Barrens >>Run to The Barrens
 step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1505 >>Turn in Veteran Uzzek
@@ -1187,9 +1194,12 @@ step << !Tauren
     .turnin 772 >>Turn in Rite of Vision
 step << !Tauren
 .goto Thunder Bluff,32.0,66.9,20 >>Run to the lift and take it into Thunder Bluff
-step << !Tauren
+step << !Tauren !Paladin
     .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
+    .train 199 >>Train 2h Maces
+step << Paladin
+    .goto Thunder Bluff,40.9,62.7
     .train 199 >>Train 2h Maces
 step << !Tauren
 .goto Thunder Bluff,45.6,52.0,15 >>Go up the tower
@@ -1237,6 +1247,9 @@ step << Orc/Troll
 step
     .goto Orgrimmar,31.9,37.7
     .accept 5726 >>Accept Hidden Enemies
+step << Paladin
+    .goto Orgrimmar,32.3,35.7
+    .trainer >> Go and train your class spells
 step
     .goto Orgrimmar,47.2,53.4
     .accept 813 >>Accept Finding the Antidote
@@ -1254,7 +1267,7 @@ step
     >>Kill Fizzle. Try to clear the mobs in the surrounding camps to make space
 .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
-step << Shaman
+step << !Warrior
 .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
     #sticky
@@ -1291,18 +1304,18 @@ step << Warrior
     .goto Durotar,54.3,42.4
     .train 5242 >>Train Battle Shout r2
     .train 7384 >>Train Overpower
-step << Shaman
+step << !Warrior
     .goto Durotar,54.4,42.2
 .vendor >>Buy 6 slot bags from Jark until you can't equip new bags
-step << Shaman/Warrior
+step
     .goto Durotar,56.4,20.1
     .turnin 828 >>Turn in Margoz
     .accept 827 >>Accept Skull Rock
-step << Shaman/Warrior
+step
     >>Kill Scorpions for Poison Sacs
 .goto Durotar,55.7,15.7
     .complete 813,1 --Venomtail Poison Sac (4)
-step << Shaman/Warrior
+step
     #sticky
     #label Collars2
 >>Kill Burning Blade mobs in Skull Rock for Searing Collars, and until Lieutenant's Insignia drops
@@ -1313,12 +1326,12 @@ step << Orc Shaman/Troll Shaman/Orc Warrior/Troll Shaman
 .goto Durotar,51.8,10.0
 .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
-step << Tauren Shaman/Tauren Warrior/Undead Warrior
+step << Tauren Shaman/Tauren Warrior/Undead Warrior/Paladin
     >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave. Use healing potions to restore health if you have them. Use LoS (line of sight) to avoid his shadowbolts. Don't be afraid to die if it means killing and looting Gazz'uz
 .goto Durotar,51.8,10.0
 .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
-step << Shaman/Warrior
+step
     #requires Collars2
 .goto Durotar,56.4,20.1
     .turnin 827 >>Turn in Skull Rock
@@ -1331,7 +1344,7 @@ step << Shaman
     .complete 1525,2 --Reagent Pouch (1)
 step << Shaman
     .goto Durotar,52.8,28.7,20 >> Leave the cave
-step << Shaman/Warrior
+step
     .goto Durotar,54.0,27.7,30,0
     .goto Durotar,51.3,23.5,30,0
     .goto Durotar,51.5,19.1,30,0
@@ -1341,33 +1354,33 @@ step << Shaman/Warrior
     >>Kill Harpies in the area
     .complete 835,1 --Dustwind Savage (12)
     .complete 835,2 --Dustwind Storm Witch (8)
-step << Shaman/Warrior
+step
     .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
-step << Shaman/Warrior
+step
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
-step << Shaman/Warrior
+step
     .goto Orgrimmar,31.8,37.8
     .turnin 5726 >>Turn in Hidden Enemies
-step << Shaman/Warrior
+step
     .goto Orgrimmar,47.0,53.4
     .turnin 813 >>Turn in Finding the Antidote
-step << Shaman/Warrior
+step
     .goto Orgrimmar,49.4,50.5
     .turnin 829 >>Turn in Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
     .turnin 832 >>Turn in Burning Shadows
-step << Shaman/Warrior
+step
     .goto Durotar,41.6,18.7
     .turnin 812 >>Turn in Need for a Cure
-step << Shaman/Warrior
+step
     .goto Durotar,43.1,30.3
     .turnin 816 >>Turn in Lost But Not Forgotten
-step << Shaman/Warrior
+step
     .goto The Barrens,62.3,20.1
     .turnin 809 >>Turn in Ak'Zeloth
     .accept 924 >>Accept The Demon Seed
-step << Shaman/Warrior
+step
     .goto The Barrens,62.3,20.0
     >>Loot the Purple Stone next to Ak'Zeloth. This item has a 30 minute timer, so be sure to be quick
     .turnin 926 >>Turn in Flawed Power Stone
