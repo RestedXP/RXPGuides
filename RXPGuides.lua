@@ -1730,10 +1730,20 @@ function RXP_.CreateOptionsPanel()
         f.SF.ScrollBar:SetValue(0)
     end)
     button:SetChecked(RXPData.hideCompletedSteps)
-    button.Text:SetText("Hide Completed Steps")
+    button.Text:SetText("Hide completed steps")
     button.tooltip = "Only shows current and future steps on the guide window" 
    
-   
+    button = CreateFrame("CheckButton", "$parentMapCircle", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self)
+        RXPData.mapCircle = self:GetChecked()
+        RXP_.updateMap = true
+    end)
+    button:SetChecked(RXPData.mapCircle)
+    button.Text:SetText("Highlight active map pins")
+    button.tooltip = "Show a targeting circle around active map pins" 
    
     button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
@@ -1815,6 +1825,7 @@ function RXP_.CreateOptionsPanel()
     slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,5,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, "0.1", "5", 0.05)
 	  slider = CreateSlider(RXPData,"guideOpacity",0,1,"Guide Opacity %.2f","The opacity of the guide viewer (not the step window).",slider,0,-25)
     --slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,5,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, "0.1", "5", 0.05)
+    slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,2,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, "0.05", "2", 0.05)
     slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, "0", "1", 0.05)
     slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,"Bottom","Top",2)
 end
