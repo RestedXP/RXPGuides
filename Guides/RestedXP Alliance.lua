@@ -182,7 +182,7 @@ step
 step
     #label DP
     #completewith EPL
-    accept 64038 >>Accept The Dark Portal
+    .accept 64038 >>Accept The Dark Portal
 step
     #requires DP
     .goto Stormwind City,66.2,62.2
