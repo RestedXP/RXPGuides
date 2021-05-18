@@ -93,6 +93,8 @@ step
     #completewith next
 .collect 4778,1 --Collect Heavy Spiked Mace
 step
+    .goto The Barrens,57.1,25.3,250 >> Run to here
+step
     #sticky
     #completewith Crates
     >>Kill Razormanes while getting the Crates and killing Kreenig
@@ -111,7 +113,7 @@ step
 step
     #sticky
     #completewith next
->>Find the Crates
++Find the Crates
 .goto The Barrens,58.5,27.3,40,0
     .goto The Barrens,58.4,27.0,40,0
     .goto The Barrens,58.5,25.8,40,0
