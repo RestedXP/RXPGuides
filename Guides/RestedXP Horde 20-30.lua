@@ -343,9 +343,6 @@ step
     .goto Thunder Bluff,36.6,51.3
     .accept 742 >> Accept The Ashenvale Hunt
 step
-.goto Thunder Bluff,22.8,20.9
-    .accept 962 >> Accept Serpentbloom
-step
     .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
 step
 .goto Thunder Bluff,27.5,24.7
@@ -353,6 +350,7 @@ step
 step
 .goto Thunder Bluff,23.0,20.9
     .turnin 853 >> Turn in Apothecary Zamah
+.accept 962 >> Accept Serpentbloom
 step << Tauren
     .goto Thunder Bluff,45.8,64.7
 .home >> Set your Hearthstone to Thunder Bluff
@@ -388,7 +386,9 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
 step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
+.goto The Barrens,46.6,36.1,15,0
+.goto The Barrens,46.7,35.1,15,0
+.goto The Barrens,46.6,34.7 >>Go up the mountain here
 step
 .goto The Barrens,50.4,34.4,10 >>Go into here
 step
@@ -428,9 +428,7 @@ step
 step
     #sticky
     #completewith next
-    >>Keep an eye out for two rare mobs, as they can both drop blue BoE axes, among other gear
-    .goto Kalimdor,52.5,54.8,30 >> Trigore
-    .goto Kalimdor,52.8,55.0,30 >> Boahn
+    +Keep an eye out for two rare mobs, Trigore and Boahn, as they can both drop blue BoE axes, among other gear
 step
     >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
     .complete 1491,1 --Wailing Essence (6)
@@ -441,7 +439,9 @@ step
     #requires Serpentbloom
 .goto The Barrens,46.0,36.4,15 >>Leave the cave
 step
-.goto The Barrens,50.4,34.4,15 >>Go up the mountain here
+.goto The Barrens,46.6,36.1,15,0
+.goto The Barrens,46.7,35.1,15,0
+.goto The Barrens,46.6,34.7 >>Go up the mountain here
 step
 .goto The Barrens,50.4,34.4,10 >>Go into here
 step
@@ -739,10 +739,6 @@ step << !Rogue
     >>Click the Wanted poster on the wall
 .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
-step << Rogue
-    >>Use Hinott's Oil on yourself to cure the debuff, then click the Wanted poster on the wall
-.goto Hillsbrad Foothills,62.5,19.8
-    .accept 567 >> Accept Dangerous!
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy Merciless Axe from the vendor if you have enough money. It's not always in the shop.
@@ -751,6 +747,10 @@ step << Rogue
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy Broad Bladed Knife from the vendor if you have enough money. It's not always in the shop.
     .collect 12247,1
+step << Rogue
+    >>Use Hinott's Oil on yourself to cure the debuff, then click the Wanted poster on the wall
+.goto Hillsbrad Foothills,62.5,19.8
+    .accept 567 >> Accept Dangerous!
 step
     #sticky
 #label syndicateq
@@ -1139,10 +1139,10 @@ step << Shaman/Paladin/Warrior
     .goto Thunder Bluff,54.0,57.3
     .vendor >> Go buy Merciless Axe if u didn't get it in Hillsbrad
     .collect 12249,1
-step <<Hunter
+step << Hunter
     .goto Thunder Bluff,46.9,45.7
     .vendor >> Go and buy Sturdy Recurve if it's in the shop.
-    .collect 11306,1 
+    .collect 11306,1
 step << Druid
     .goto Thunder Bluff,77.0,29.9
 .trainer >> Go and train your class spells
@@ -1330,7 +1330,7 @@ step
 step
     .goto Thousand Needles,44.7,50.2
     .accept 4821 >> Accept Alien Egg
-step
+step << Hunter
     .goto Thousand Needles,44.9,50.7
     .vendor >> Go buy Dense Shortbow if it's in the shop.
     .collect 11305,1
@@ -1690,9 +1690,6 @@ step << Warrior
 step
     .goto Ashenvale,73.2,61.5
     .fly >> Fly to Orgrimmar
-step <<Hunter
-
-    
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
@@ -1729,5 +1726,23 @@ step
     .turnin 1145 >> Turn in The Swarm Grows
 step
     .goto Orgrimmar,74.7,33.9
-    .accept 1146 >> Accept The Swarm Grows    
+    .accept 1146 >> Accept The Swarm Grows
+step <<Warrior
+    .goto Orgrimmar,45.1,63.9
+    .fly Ratchet >>Fly to Ratchet 
+step <<Warrior
+    .goto The Barrens,68.6,49.2
+    .turnin 1718 >>Turn in The Islander
+    .accept 1719 >>Accept The Affray
+step <<Warrior
+    .goto The Barrens,68.6,48.7
+    .complete 1719,1 --Step on the grate to begin the Affray (1)
+    .complete 1719,2 --Big Will (1)
+step <<Warrior
+    .goto The Barrens,68.6,49.2
+    .turnin 1719 >>Turn in The Affray
+    .accept 1791 >>Accept The Windwatcher
+step <<Warrior
+    .goto The Barrens,63.1,37.1
+    .fly Orgrimmar >>Fly to Orgrimmar     
 ]])

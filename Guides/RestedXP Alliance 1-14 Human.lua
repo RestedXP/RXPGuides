@@ -1741,10 +1741,10 @@ step << Mage/Shaman/Hunter
 .money <0.0950    
 .goto Stormwind City,57.1,57.7
     .train 227 >>Train Staves
-step << Rogues
+step << Rogue
     .goto Stormwind City,57.1,57.7
     .train 201 >>Train 1h Swords
-step << Rogues
+step << Rogue
     .goto Stormwind City,57.6,57.1
     .vendor >>Buy a Cutlass from Gunther and equip it, Stiletto in OH
 step << Paladin/Hunter
