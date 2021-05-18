@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde !Warrior !Shaman
-#name 20-23 Stonetalon - The Barrens
-#next 23-27 Hillsbrad - Ashenvale
+#name 20-23 Stonetalon / The Barrens
+#next 23-27 Hillsbrad / Ashenvale
 step 
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step
@@ -676,8 +676,8 @@ step
 
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
-#name 23-27 Hillsbrad - Ashenvale
-#next 27-30 Lower Barrens - Thousand Needles
+#name 23-27 Hillsbrad / Ashenvale
+#next 27-30 Lower Barrens / Thousand Needles
 
 step
     #sticky
@@ -712,6 +712,9 @@ step
     .turnin 494 >> Turn in Time To Strike
     .goto Hillsbrad Foothills,62.5,20.5
     .accept 527 >> Accept Battle of Hillsbrad
+step << Shaman
+    .goto Hillsbrad Foothills,62.2,20.8
+    .complete 1536,1 --Filled Red Waterskin (1)
 step
     >>click the Wanted poster on the wall
     .goto Hillsbrad Foothills,62.7,20.5
@@ -882,10 +885,14 @@ step << Druid
 >> Use the spell Teleport to Moonglade
     .goto Moonglade,52.5,40.5
 .trainer >> Go and train your class spells
-step
+step << !Shaman
 #requires Crate
 >>We're not going to turn these quests in until later on.
 .hs >> Hearth to Orgrimmar
+step << Shaman
+#requires Crate
+>>We're not going to turn these quests in until later on.
+.hs >> Hearth to Camp Taurajo
 step
     #sticky
        #completewith next
@@ -1129,8 +1136,8 @@ step << !Rogue !Paladin !Warlock
 ]])
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
-#name 27-30 Lower Barrens - Thousand Needles
-#next RestedXP Horde 30-45\30-34 Hillsbrad - Arathi - Shimmering Flats
+#name 27-30 Lower Barrens / Thousand Needles
+#next RestedXP Horde 30-45\30-34 Hillsbrad / Arathi / Shimmering Flats
 step
 .goto Thunder Bluff,55.2,51.5
     .turnin 1195 >> Turn in The Sacred Flame
