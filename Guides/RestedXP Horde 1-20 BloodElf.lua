@@ -487,7 +487,7 @@ step
 step
     .goto Eversong Woods,50.3,50.8
     .accept 8475 >> Accept The Dead Scar
-step << Priest
+step << BloodElf Priest
     >>Use Power Word: Fortitude (Stam buff) on the Eversong Rangers
 .goto Eversong Woods,50.3,51.0
     .complete 9489,1 --Eversong Ranger Blessed (6)
@@ -886,13 +886,19 @@ step << Mage
     .train 122 >>Train Frost Nova
     .train 5504 >>Train Conjure Water r1
     .train 5505 >>Train Conjure Water r2
-step << Priest
+step << BloodElf Priest
+    .goto Eversong Woods,47.9,48.0
+    .turnin 9489 >> Cleansing the Scar
+.train 139 >>Train Renew
+    .train 2053 >>Train Lesser Heal r3
+    .train 8092 >>Train Mind Blast
+.train 594 >>Train Shadow Word: Pain r2
+step << !BloodElf Priest
     .goto Eversong Woods,47.9,48.0
 .train 139 >>Train Renew
     .train 2053 >>Train Lesser Heal r3
     .train 8092 >>Train Mind Blast
 .train 594 >>Train Shadow Word: Pain r2
-    .train 2652 >>Train Touch of Weakness
 step << Rogue
     .goto Eversong Woods,48.5,45.9
     .train 2983 >>Train Sprint
@@ -2284,7 +2290,20 @@ step
     >>Loot the chest in the middle
 .goto Ghostlands,34.3,47.7
     .complete 9176,2 --Collect Stone of Light (x1)
-step
+step << !Rogue !Hunter
+.goto Ghostlands,37.8,51.9,60,0
+    .goto Ghostlands,36.3,70.4,60,0
+.goto Ghostlands,37.8,51.9,60,0
+.goto Ghostlands,37.8,51.9,60,0
+    .goto Ghostlands,36.3,70.4,60,0
+.goto Ghostlands,37.8,51.9,60,0
+.goto Ghostlands,37.8,51.9,60,0
+    .goto Ghostlands,36.3,70.4,60,0
+.goto Ghostlands,37.8,51.9,60,0
+    >>Grind down The Dead Scar, killing mobs and looting them for Rotting Hearts and Spinal Dust. Be aware that Dreadbone Sentinels interrupt (Shield Bash)
+    .complete 9216,1 --Collect Rotting Heart (x10)
+.complete 9218,1 --Collect Spinal Dust (x10)
+step << Rogue/Hunter
 .goto Ghostlands,37.8,51.9,60,0
     .goto Ghostlands,36.3,70.4,60,0
 .goto Ghostlands,37.8,51.9,60,0
@@ -2526,6 +2545,11 @@ step << Hunter
 .train 1499 >>Train Freezing Trap
 .train 3111 >>Train Mend Pet
 .train 14282 >>Train Arcane Shot
+step << Hunter
+.money 0.6032
+.goto Silvermoon City,86.2,35.4
+.vendor >>Buy a Heavy Recurve Bow from Celana
+.collect 3027,1 --Heavy Recurve Bow
 step << Paladin
 .goto Silvermoon City,89.3,35.2
 .turnin 9685 >>Turn in Redeeming the Dead
