@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 13-23 The Barrens
-#next 23-27 Hillsbrad - Ashenvale
+#next 23-27 Hillsbrad / Ashenvale
 step << Warrior
 .goto The Barrens,57.9,25.5,20 >>Run up the mountain here
 step << Warrior
@@ -830,7 +830,11 @@ step
 step
     .goto Thunder Bluff,45.9,64.7
     .home >>Set your Hearthstone to Thunder Bluff
-step <<Shaman/Warrior
+step << Shaman/Warrior
+    #sticky
+    #completewith next
+    +If it’s cheaper, buy a green 2h mace from the AH
+step << Shaman/Warrior
     .goto Thunder Bluff,53.2,58.2
     .vendor >> Go buy Maul
     .collect 924,1
@@ -1049,24 +1053,6 @@ step << Shaman
     .accept 1530 >>Accept Call of Water
     .turnin 874 >>Turn in Mahren Skyseer
     .accept 873 >>Accept Isha Awak
-step << Warrior
-    .goto The Barrens,65.8,43.8
-    .turnin 874 >>Turn in Mahren Skyseer
-    .accept 873 >>Accept Isha Awak
-step
-.goto The Barrens,65.6,47.1,40,0
-        .goto The Barrens,63.3,54.2,40,0
-.goto The Barrens,65.6,47.1,40,0
-        .goto The Barrens,63.3,54.2,40,0
-.goto The Barrens,65.6,47.1,40,0
-        .goto The Barrens,63.3,54.2,40,0
-.goto The Barrens,65.6,47.1,40,0
-        .goto The Barrens,63.3,54.2,40,0
-    >>Look in the water for a Isha Awak (Red Threshadon). Kill and loot it for its heart. You can skip this quest if you don't think you can kill it
-    .complete 873,1 --Heart of Isha Awak (1)
-step
-    .goto The Barrens,65.8,43.8
-    .turnin 873 >>Turn in Isha Awak
 step << Shaman
     .goto The Barrens,63.1,37.1
     .fly Camp Taurajo >>Fly to Camp Taurajo

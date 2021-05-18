@@ -354,7 +354,7 @@ step
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 6-10 Eversong Woods
-#next 10-20 Eversong Woods - Ghostlands << !Warrior
+#next 10-20 Eversong Woods / Ghostlands << !Warrior
 #next 10-13 Durotar << Warrior
 step
     .goto Eversong Woods,47.3,46.3
@@ -971,8 +971,8 @@ step << Warrior
 ]],"BloodElf/Scourge")
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
-#name 10-20 Eversong Woods - Ghostlands
-#next 20-23 Stonetalon - The Barrens
+#name 10-20 Eversong Woods / Ghostlands
+#next 20-23 Stonetalon / The Barrens
 step << Orc Hunter/Troll Hunter
     .money <0.1000
 .goto Silvermoon City,91.2,38.7
@@ -2546,7 +2546,7 @@ step << Hunter
 .train 3111 >>Train Mend Pet
 .train 14282 >>Train Arcane Shot
 step << Hunter
-.money 0.6032
+.money <0.6032
 .goto Silvermoon City,86.2,35.4
 .vendor >>Buy a Heavy Recurve Bow from Celana
 .collect 3027,1 --Heavy Recurve Bow

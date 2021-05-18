@@ -2,7 +2,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 1-10 Durotar
 #next 10-13 Durotar << Warrior/Shaman
-#next 10-20 Eversong Woods - Ghostlands << !Warrior !Shaman
+#next 10-20 Eversong Woods / Ghostlands << !Warrior !Shaman
 step << !Orc !Troll
     #sticky
     #completewith next
