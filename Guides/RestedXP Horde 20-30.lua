@@ -719,7 +719,7 @@ step
 .goto Durotar,50.8,13.8
 step
 .zone Tirisfal Glades >>Arrive in Tirisfal Glades
-step
+step << Druid
      >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
     .goto Silverpine Forest,30.0,29.1
     .collect 15882,1
