@@ -1062,6 +1062,9 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 10-13 Durotar
 #next 13-23 The Barrens
+step << Undead Warrior
+    .goto Durotar,54.2,42.5
+    .accept 1505 >>Accept Veteran Uzzek
 step
     .goto Durotar,50.8,43.6
     .accept 840 >>Accept Conscript of the Horde
