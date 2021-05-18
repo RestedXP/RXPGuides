@@ -851,6 +851,12 @@ step
     .goto Durotar,51.9,43.5
     .turnin 825 >>Turn in From The Wreckage....
     .turnin 837 >>Turn in Encroachment
+step
+    .xp 10 >>Grind to 10
+step << Paladin
+    #sticky
+    #completewith next
+    +If you're playing Paladin and afraid of Eversong competition, skip these next steps, then manually select 10-13 Durotar->13-23 Barrens
 step << Shaman
     .goto Durotar,54.4,42.5
     .accept 2983 >>Accept Call of Fire
@@ -1035,10 +1041,6 @@ step << !Shaman !Warrior !Warlock
 step << Hunter
     .goto Durotar,57.2,12.0
     +Tame A Surf Crawler
-step << Paladin
-    #sticky
-    #completewith next
-    +If you're playing Paladin and afraid of Eversong competition, skip these next steps, then manually select 10-13
 step << !Shaman !Warrior
     #sticky
     #completewith next
