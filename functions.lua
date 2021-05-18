@@ -378,7 +378,7 @@ function RXP_.functions.accept(self,...)
         end
 
 
-        element.tooltipText = element.icon..element.text
+        element.tooltipText = RXP_.icons.accept..element.text
         
 
         if isQuestAccepted then

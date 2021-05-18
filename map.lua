@@ -211,18 +211,18 @@ MapPinPool.creationFunc = function(framePool)
             f.text:SetText(stepIndex)
         end
 
-        local size = math.max(f.text:GetWidth(), f.text:GetHeight()) + 8
+        local size = math.max(f.text:GetWidth(), f.text:GetHeight()) + 5
 
         if step.active then
             f:SetAlpha(1)
             f:SetWidth(size + 3)
             f:SetHeight(size + 3)
             f:SetBackdropColor(0.0, 0.0, 0.0, RXPData.worldMapPinBackgroundOpacity)
-            f.inner:SetBackdropColor(1, 1, 1, 1)
+            f.inner:SetBackdropColor(1, 1, 1, math.min(RXPData.worldMapPinBackgroundOpacity*1.5,1))
             f.inner:SetWidth(size + 3)
             f.inner:SetHeight(size + 3)
 
-            f.text:SetFont(RXP_.font, 14,"OUTLINE")
+            f.text:SetFont(RXP_.font, 12,"OUTLINE")
         else
             f:SetBackdropColor(0.1, 0.1, 0.1, RXPData.worldMapPinBackgroundOpacity)
             f:SetWidth(size)
@@ -374,7 +374,7 @@ end
 
 function RXP_.UpdateMap()
     removeAll()
-
+    RXP_.updateMap = false
     addWorldMapPins()
     addMiniMapPins()
 
