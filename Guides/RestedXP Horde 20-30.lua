@@ -899,7 +899,6 @@ step
     .turnin 499 >> Turn in Elixir of Suffering
     .accept 1067 >> Accept Return to Thunder Bluff
     .accept 509 >> Accept Elixir of Agony
-    
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
@@ -913,7 +912,7 @@ step
     #completewith next
     +While turning in Elixir of Agony, you can kill Stanley after for a bunch of extra XP
 step
-   .goto Hillsbrad Foothills,32.6 35.6
+.goto Hillsbrad Foothills,32.6 35.6
     .turnin 509 >> Turn in Elixir of Agony
 step
     #sticky
@@ -1315,15 +1314,17 @@ step
 step
     #sticky
     #label Weapons
-    >>Kill mobs in the area for Weapons of Choice
-    .complete 893,1 --Collect Razormane Backstabber (x1) from Stalkers or Pathfinders
-    .complete 893,2 --Collect Charred Razormane Wand (x1) from Seers
-    .complete 893,3 --Collect Razormane War Shield (x1) from Warfrenzies
+    >>Kill mobs in the area for Weapons of Choice. Backstabber from Stalkers or Pathfinders, Wand from Seers, and Shield from Warfrenzies
+    .complete 893,1 --Collect Razormane Backstabber (x1)
+    .complete 893,2 --Collect Charred Razormane Wand (x1) 
+    .complete 893,3 --Collect Razormane War Shield (x1)
 step
 .goto The Barrens,43.4,78.8 >> All around the Ridge
     .complete 879,1 --Collect Kuz's Skull (x1)
+step
     .goto The Barrens,40.6,80.7 >> In the building up from the Ramp
     .complete 879,3 --Collect Lok's Skull (x1)
+step
     .goto The Barrens,43.8,83.5 >> Southern part of the Ridge
     .complete 879,2 --Collect Nak's Skull (x1)
 step
