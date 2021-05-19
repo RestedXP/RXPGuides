@@ -347,7 +347,7 @@ step
 step
 >>Kill mobs you see on the way to Falconwing Square
 .goto Eversong Woods,45.4,40.8
-.xp 5+2655 >> Grind to (at least) 2655+/2800xp
+.xp 5+2690 >> Grind to (at least) 2690+/2800xp
 step
     .goto Eversong Woods,47.3,46.3,30 >> Run to Falconwing Square
 ]],"BloodElf")
@@ -1333,7 +1333,7 @@ step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
     >> Buy Suntouched Special Reserve from Vinemaster Suntouched
     .collect 22775,1 --Collect Suntouched Special Reserve
-step << !BloodElf/!Hunter/!BloodElf/!Warlock
+step << !BloodElf/!Hunter !Warlock/!BloodElf
     .goto Eversong Woods,56.7,49.6,30 >>Exit Silvermoon
 step << BloodElf/Undead
     #sticky
