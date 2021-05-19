@@ -1579,14 +1579,9 @@ step
     .turnin 9143 >> Turn in Dealing with Zeb'Sora
     .accept 9146 >> Accept Report to Captain Helios
 step
-    .isQuestComplete 9315
 >>Grind Nerubians
 .goto Ghostlands,61.2,12.0
     .xp 13+10150 >>Grind to 10150+/11000xp
-step
-    >>Grind Nerubians
-.goto Ghostlands,61.2,12.0
-    .xp 13+9275 >>Grind to 9275+/11000xp
 step << Priest/Mage/Warlock/Rogue/Druid
     .goto Ghostlands,43.9,25.7,200 >>Die and respawn at the Spirit Healer, or run back
 step << !Priest !Mage !Warlock !Rogue !Druid
@@ -2637,4 +2632,6 @@ step
 step
 .zone Durotar >>Arrive in Durotar
 ]],"!Warrior !Shaman")
+
+
 
