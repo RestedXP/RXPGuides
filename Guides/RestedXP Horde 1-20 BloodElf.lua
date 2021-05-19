@@ -347,7 +347,7 @@ step
 step
 >>Kill mobs you see on the way to Falconwing Square
 .goto Eversong Woods,45.4,40.8
-.xp 5+2690 >> Grind to (at least) 2690+/2800xp
+.xp 5+2655 >> Grind to (at least) 2655+/2800xp
 step
     .goto Eversong Woods,47.3,46.3,30 >> Run to Falconwing Square
 ]],"BloodElf")
