@@ -1149,30 +1149,12 @@ step << !Tauren
     .goto Mulgore,58.4,61.7
     .accept 749 >>Accept The Ravaged Caravan
 step << !Tauren
-    .goto Mulgore,47.5,60.1
-    .accept 767 >>Accept Rite of Vision
-step << !Tauren
-    .goto Mulgore,47.8,57.6
-    .turnin 767 >>Turn in Rite of Vision
-    .accept 771 >>Accept Rite of Vision
-step << !Tauren
     .goto Mulgore,48.2,53.4
     .accept 11129 >>Accept Kyle's Gone Missing!
-step << !Tauren
-    >>Loot the stones on the ground
-.goto Mulgore,44.9,45.8
-    .complete 771,1 --Well Stone (2)
 step << !Tauren
     .goto Mulgore,53.7,48.1
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
-step << !Tauren
-.goto Mulgore,56.3,50.9,8,0
-    .goto Mulgore,56.1,52.6,8,0
-    .goto Mulgore,53.5,58.0,8,0
-    .goto Mulgore,52.0,61.1,8,0
-    >>Collect the two "Acorns" on the ground
-    .complete 771,2 --Collect Ambercorn (2)
 step << !Tauren
     .goto Mulgore,55.5,55.8
     >>Kill a plainstrider for Tender Strider Meat
@@ -1188,15 +1170,8 @@ step << !Tauren
     >>"Fine" Kyle the Frenzied. He patrols clockwise throughout the town (so go anti-clockwise). Go up to him and use the Tender Strider Meat
 .complete 11129,1 --Kyle Fed (1)
 step << !Tauren
-    .goto Mulgore,47.8,57.5
-    .turnin 771 >>Turn in Rite of Vision
-    .accept 772 >>Accept Rite of Vision
-step << !Tauren
     .goto Mulgore,48.3,53.3
     .turnin 11129 >>Turn in Kyle's Gone Missing!
-step << !Tauren
-    .goto Mulgore,32.7,36.2
-    .turnin 772 >>Turn in Rite of Vision
 step << !Tauren
 .goto Thunder Bluff,32.0,66.9,20 >>Run to the lift and take it into Thunder Bluff
 step << !Tauren !Paladin
