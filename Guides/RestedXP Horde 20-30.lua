@@ -1135,7 +1135,7 @@ step
     .goto Ashenvale,75.7,70.0,40,0
     .goto Ashenvale,78.2,65.5,40,0
     .goto Ashenvale,75.3,72.0,0
->>Look for Sharptalon (Big Bird). He Patrols clockwise. Kill and loot him for Sharptalon's Claw, then accept it. Kite him to the undead camp to kill him.
+>>Look for Sharptalon (Big Bird). He Patrols clockwise. Kill and loot him for Sharptalon's Claw, then accept it. Solo him down to about 60%, then kite him to the undead camp to kill him.
     .collect 16305,1,2 --Collect Sharptalon's Claw
     .accept 2 >> Accept Sharptalon's Claw
 step
@@ -1562,6 +1562,14 @@ step
     .collect 12564,1,4881 --Collect Assassination Note (x1)
     .accept 4881 >> Accept Assassination Plot
 step
+    .goto Thousand Needles,37.5,38.4,30,0
+    .goto Thousand Needles,33.5,32.4,30,0
+    .goto Thousand Needles,37.5,38.4,30,0
+    .goto Thousand Needles,33.5,32.4,30,0
+    .goto Thousand Needles,37.5,38.4,30,0
+    .goto Thousand Needles,33.5,32.4,30,0
+    .goto Thousand Needles,37.5,38.4,30,0
+    .goto Thousand Needles,33.5,32.4,30,0
     .goto Thousand Needles,37.5,38.4,30,0
     .goto Thousand Needles,33.5,32.4,30,0
     .goto Thousand Needles,37.5,38.4,30,0
