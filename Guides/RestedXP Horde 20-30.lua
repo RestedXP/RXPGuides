@@ -165,10 +165,10 @@ step
 step
 #sticky
 #label deepmossegg
->>Click the spider eggs near the trees
+>>Click the spider eggs near the trees. Be careful as mobs can spawn from the eggs
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
->>Kill the Deepmoss Spiders and Besseleth in the area
+>>Kill the Deepmoss Spiders and Besseleth in the area. Loot Besseleth for his fang
 .goto Stonetalon Mountains,54.7,71.9,40,0
     .goto Stonetalon Mountains,52.6,71.8,40,0
     .goto Stonetalon Mountains,52.2,75.6,40,0
@@ -370,7 +370,8 @@ step << !Tauren
 .goto Thunder Bluff,47.0,49.8
 .fp >>Get the Thunder Bluff Flight Path
 step
-    .fly >> Fly to Ratchet
+    .goto Thunder Bluff,47.0,49.8
+.fly >> Fly to Ratchet
 step
     .goto The Barrens,62.4,37.6
     .turnin 865 >> Turn in Raptor Horns
@@ -381,7 +382,8 @@ step
     .turnin 1094 >> Turn in Further Instructions
     .accept 1095 >> Accept Further Instructions
 step
-    .fly >> Fly to Crossroads
+    .goto The Barrens,63.1,37.2
+.fly >> Fly to Crossroads
 step
     .goto The Barrens,52.0,31.6
     .turnin 4921 >> Turn in Lost in Battle
@@ -390,66 +392,64 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
 step
-.goto The Barrens,46.6,36.1,15,0
-.goto The Barrens,46.7,35.1,15,0
-.goto The Barrens,46.6,34.7 >>Go up the mountain here
+.goto Kalimdor,50.4,34.4,15 >>Go up the mountain here
 step
-.goto The Barrens,50.4,34.4,10 >>Go into here
+.goto Kalimdor,50.4,34.4,10 >>Go into here
 step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
+.goto Kalimdor,51.9,55.5,10 >>Jump down into the eye
 step
+.goto Kalimdor,51.9,55.4
 .goto The Barrens,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
 .goto The Barrens,46.0,36.4,15 >>Leave the eye. Go to the mouth of the cave
 step
+#sticky
+#label Deviate
+>>Kill Deviate mobs. Loot them for their hides
+.complete 1486,1 --Deviate Hide (20)
+step
+#sticky
+#label Serpentbloom
+>>Look for green and red flowers on the ground
+.complete 962,1 --Serpentbloom (10)
+step
+.goto The Barrens,52.1,55.1,20,0
+.goto The Barrens,52.0,55.4,20,0
+.goto The Barrens,51.8,54.9,20,0
+.goto The Barrens,52.1,55.1,20,0
+.goto The Barrens,52.0,55.4,20,0
+.goto The Barrens,51.8,54.9,20,0
+.goto The Barrens,52.1,55.1,20,0
+.goto The Barrens,52.0,55.4,20,0
+.goto The Barrens,51.8,54.9,20,0
+.goto The Barrens,52.1,55.1,20,0
+.goto The Barrens,52.0,55.4,20,0
+.goto The Barrens,51.8,54.9,20,0
+>>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
+.complete 959,1 --Collect 99-Year-Old Port (1)
+step
+#sticky
+#completewith next
+.goto Kalimdor,51.9,54.9,40 >>Enter the deeper part of the cave
+step
     #sticky
-    #label Deviate
-    >>Kill Deviate mobs. Loot them for their hides
-    .complete 1486,1 --Deviate Hide (20)
+#completewith next
+>>Keep an eye out for two rare mobs, as they can both drop blue BoE axes, among other gear
+.goto Kalimdor,52.5,54.8,30 >> Trigore
+.goto Kalimdor,52.8,55.0,30 >> Boahn
 step
-    #sticky
-    #label Serpentbloom
-    >>Look for green and red flowers on the ground
-    .complete 962,1 --Serpentbloom (10)
+>>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
+.complete 1491,1 --Wailing Essence (6)
 step
-.goto The Barrens,52.1,55.1,20,0
-    .goto The Barrens,52.0,55.4,20,0
-    .goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-    .goto The Barrens,52.0,55.4,20,0
-    .goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-    .goto The Barrens,52.0,55.4,20,0
-    .goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-    .goto The Barrens,52.0,55.4,20,0
-    .goto The Barrens,51.8,54.9,20,0
-    >>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
-    .complete 959,1 --Collect 99-Year-Old Port (1)
+#requires Serpentbloom
+.goto The Barrens,45.4,28.4,3000 >> .
 step
-.goto The Barrens,51.9,54.9,10 >>Enter the deeper part of the cave
-step
-    #sticky
-    #completewith next
-    +Keep an eye out for two rare mobs, Trigore and Boahn, as they can both drop blue BoE axes, among other gear
-step
-    >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
-    .complete 1491,1 --Wailing Essence (6)
-step
-    #requires Deviate
-    .goto The Barrens,46.0,36.4,1000,0
-step
-    #requires Serpentbloom
-.goto The Barrens,46.0,36.4,15 >>Leave the cave
-step
-.goto The Barrens,46.6,36.1,15,0
-.goto The Barrens,46.7,35.1,15,0
-.goto The Barrens,46.6,34.7 >>Go up the mountain here
-step
-.goto The Barrens,50.4,34.4,10 >>Go into here
-step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
+#sticky
+#completewith next
+#requires Deviate
+.goto Kalimdor,51.9,55.4
++Run back and talk to the druids on top of the mouth of the cave
 step
 .goto The Barrens,51.9,55.4
 .turnin 1486 >>Turn in Deviate Hides
@@ -1001,7 +1001,8 @@ step
     .turnin 742 >> Turn in The Ashenvale Hunt
     .turnin 6383 >> Turn in The Ashenvale Hunt
 step
-    .home >> Set your Hearthstone to Splintertree Post
+    .goto Ashenvale,74.0,60.6
+.home >> Set your Hearthstone to Splintertree Post
 step
     .goto Ashenvale,73.5,60.1
     .accept 25 >> Accept Stonetalon Standstill

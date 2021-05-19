@@ -347,7 +347,7 @@ step
 step
 >>Kill mobs you see on the way to Falconwing Square
 .goto Eversong Woods,45.4,40.8
-.xp 5+2655 >> Grind to (at least) 2655+/2800xp
+.xp 5+2690 >> Grind to (at least) 2690+/2800xp
 step
     .goto Eversong Woods,47.3,46.3,30 >> Run to Falconwing Square
 ]],"BloodElf")
@@ -1333,7 +1333,7 @@ step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
     >> Buy Suntouched Special Reserve from Vinemaster Suntouched
     .collect 22775,1 --Collect Suntouched Special Reserve
-step << !BloodElf/!Hunter/!BloodElf/!Warlock
+step << !BloodElf/!Hunter !Warlock/!BloodElf
     .goto Eversong Woods,56.7,49.6,30 >>Exit Silvermoon
 step << BloodElf/Undead
     #sticky
@@ -1579,14 +1579,9 @@ step
     .turnin 9143 >> Turn in Dealing with Zeb'Sora
     .accept 9146 >> Accept Report to Captain Helios
 step
-    .isQuestComplete 9315
 >>Grind Nerubians
 .goto Ghostlands,61.2,12.0
     .xp 13+10150 >>Grind to 10150+/11000xp
-step
-    >>Grind Nerubians
-.goto Ghostlands,61.2,12.0
-    .xp 13+9275 >>Grind to 9275+/11000xp
 step << Priest/Mage/Warlock/Rogue/Druid
     .goto Ghostlands,43.9,25.7,200 >>Die and respawn at the Spirit Healer, or run back
 step << !Priest !Mage !Warlock !Rogue !Druid
@@ -2576,7 +2571,7 @@ step << !BloodElf
     .accept 9812 >> Accept Envoy to the Horde
 step
 .goto Silvermoon City,49.5,15.0,15,0
-.goto Undercity,58.9,11.3,200 >>Take the Orb of Translocation to Undercity
+.zone Undercity >>Take the Orb of Translocation to Undercity
 step << BloodElf Paladin
     .goto Silvermoon City,54.0,71.0
     .abandon 9135 >> Abandon Return to Quartermaster Lymel

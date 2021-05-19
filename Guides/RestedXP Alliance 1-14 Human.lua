@@ -616,6 +616,8 @@ step
     #completewith next
 .goto Stormwind City,29.2,74.0,15 >> Go into The Slaughtered Lamb
 step
+    .goto Stormwind City,27.2,78.1,10 >> Go Downstairs
+step
     .goto Stormwind City,25.2,78.5
     .turnin 1685 >> Turn in Gakin's Summons
     .accept 1688 >> Accept Surena Caledon
@@ -2519,6 +2521,8 @@ step
     #label Azuremyst
     .zone Azuremyst Isle >>Get onto the boat when it comes
 ]],"Human Warlock")
+
+
 
 
 
