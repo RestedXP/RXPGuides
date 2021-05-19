@@ -1102,6 +1102,12 @@ step
     .accept 23 >> Accept Ursangous's Paw
 step
     #sticky
+    #label Tideress
+    >>Kill Tideress who is located around the middle of the lake. Loot her for a Befouled Water Globe, then click it to accept the quest
+    .collect 16408,1,1918 --Collect Befouled Water Globe (x1)
+    .accept 1918 >>Accept The Befouled Element
+step
+    #sticky
     #completewith next
     >>Kill Water Elementals throughout the lake
     .complete 25,1 --Kill Befouled Water Elemental (x12)
@@ -1114,7 +1120,8 @@ step
 .goto Ashenvale,48.9,69.6
     .complete 25,1 --Kill Befouled Water Elemental (x12)
 step
-    >>Use the Etched Phial from earlier at the moonwell
+    #requires Tideress
+>>Use the Etched Phial from earlier at the moonwell
 .goto Ashenvale,60.2,72.9
     .complete 1195,1 --Collect Filled Etched Phial (x1)
 step
