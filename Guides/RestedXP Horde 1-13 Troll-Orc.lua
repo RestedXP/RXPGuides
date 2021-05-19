@@ -1167,7 +1167,7 @@ step << !Tauren
     .goto Mulgore,49.4,63.9,30,0
     .goto Mulgore,50.2,60.2,30,0
     .goto Mulgore,46.8,59.6,30,0
-    >>"Fine" Kyle the Frenzied. He patrols clockwise throughout the town (so go anti-clockwise). Go up to him and use the Tender Strider Meat
+    >>"Fine" Kyle the Frenzied. He patrols clockwise throughout the town (so go counter-clockwise). Go up to him and use the Tender Strider Meat
 .complete 11129,1 --Kyle Fed (1)
 step << !Tauren
     .goto Mulgore,48.3,53.3
