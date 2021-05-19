@@ -2528,7 +2528,6 @@ step << Warlock
 .trainer >>Train Ritual of Summoning
 step << Warlock
     .goto Silvermoon City,73.1,46.9
-    .accept 10605 >>Accept Carendin Summons
     .train 1094 >>Train Immolate r3
     .train 1088 >>Train Shadow Bolt r4
     .train 3698 >>Train Health Funnel r2
@@ -2581,6 +2580,12 @@ step
 step << BloodElf Paladin
     .goto Silvermoon City,54.0,71.0
     .abandon 9135 >> Abandon Return to Quartermaster Lymel
+step << Warlock
+    .abandon 10605 >>Abandon Carendin Summons
+step << Warlock
+    #sticky
+    #completewith Royal
+    +Do NOT take your warlock quest in Undercity. You’re going to do it in Orgrimmar as the questline is a lot better
 step
 .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
 step << !Scourge
@@ -2590,6 +2595,7 @@ step << Mage
     .goto Undercity,84.2,15.6
     .trainer >>Train Teleport Undercity
 step
+#label Royal
 .goto Undercity,52.0,64.6,35 >>Enter the Royal Quarter
 step << BloodElf
     #label Envoy
