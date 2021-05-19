@@ -392,14 +392,13 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
 step
-.goto The Barrens,46.6,36.1,15,0
-.goto The Barrens,46.7,35.1,15,0
-.goto The Barrens,46.6,34.7 >>Go up the mountain here
+.goto Kalimdor,50.4,34.4,15 >>Go up the mountain here
 step
-.goto The Barrens,50.4,34.4,10 >>Go into here
+.goto Kalimdor,50.4,34.4,10 >>Go into here
 step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
+.goto Kalimdor,51.9,55.5,10 >>Jump down into the eye
 step
+.goto Kalimdor,51.9,55.4
 .goto The Barrens,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
@@ -430,28 +429,27 @@ step
     >>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
     .complete 959,1 --Collect 99-Year-Old Port (1)
 step
-.goto The Barrens,51.9,54.9,10 >>Enter the deeper part of the cave
+#sticky
+#completewith next
+.goto Kalimdor,51.9,54.9,40 >>Enter the deeper part of the cave
 step
     #sticky
     #completewith next
-    +Keep an eye out for two rare mobs, Trigore and Boahn, as they can both drop blue BoE axes, among other gear
+    >>Keep an eye out for two rare mobs, as they can both drop blue BoE axes, among other gear
+    .goto Kalimdor,52.5,54.8,30 >> Trigore
+    .goto Kalimdor,52.8,55.0,30 >> Boahn
 step
     >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
     .complete 1491,1 --Wailing Essence (6)
 step
-    #requires Deviate
-    .goto The Barrens,46.0,36.4,1000,0
-step
     #requires Serpentbloom
-.goto The Barrens,46.0,36.4,15 >>Leave the cave
+.goto The Barrens,45.4,28.4,3000 >> .
 step
-.goto The Barrens,46.6,36.1,15,0
-.goto The Barrens,46.7,35.1,15,0
-.goto The Barrens,46.6,34.7 >>Go up the mountain here
-step
-.goto The Barrens,50.4,34.4,10 >>Go into here
-step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
+    #sticky
+    #completewith next
+#requires Deviate
+.goto Kalimdor,51.9,55.4
++Run back and talk to the druids on top of the mouth of the cave
 step
 .goto The Barrens,51.9,55.4
 .turnin 1486 >>Turn in Deviate Hides
