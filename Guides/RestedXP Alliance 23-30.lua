@@ -690,7 +690,7 @@ step << Rogue
     #completewith end
     .trainer >> Train your class spells in ironforge
 step << Rogue
-    .goto Ironforge 45.2,6.6
+    .goto Ironforge,45.2,6.6
     >>Buy the level 41 weapon upgrades (17dps)
     .collect 2520,1
     .collect 2526,1
