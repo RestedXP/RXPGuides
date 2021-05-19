@@ -165,10 +165,10 @@ step
 step
 #sticky
 #label deepmossegg
->>Click the spider eggs near the trees
+>>Click the spider eggs near the trees. Be careful as mobs can spawn from the eggs
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
->>Kill the Deepmoss Spiders and Besseleth in the area
+>>Kill the Deepmoss Spiders and Besseleth in the area. Loot Besseleth for his fang
 .goto Stonetalon Mountains,54.7,71.9,40,0
     .goto Stonetalon Mountains,52.6,71.8,40,0
     .goto Stonetalon Mountains,52.2,75.6,40,0
