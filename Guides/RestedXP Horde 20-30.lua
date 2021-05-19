@@ -899,7 +899,7 @@ step
     .turnin 499 >> Turn in Elixir of Suffering
     .accept 1067 >> Accept Return to Thunder Bluff
     .accept 509 >> Accept Elixir of Agony
-    .turnin 502 >> Turn in Elixir of Pain
+    
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
@@ -908,6 +908,13 @@ step << Rogue
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Broad Bladed Knife the first time, go buy it in the shop now.
     .collect 12247,1
+step
+    #sticky
+    #completewith next
+    +While turning in Elixir of Agony, you can kill Stanley after for a bunch of extra XP
+step
+   .goto Hillsbrad Foothills,32.6 35.6
+    .turnin 509 >> Turn in Elixir of Agony
 step
     #sticky
     #label Crate
