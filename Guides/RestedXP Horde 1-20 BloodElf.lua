@@ -2576,7 +2576,7 @@ step << !BloodElf
     .accept 9812 >> Accept Envoy to the Horde
 step
 .goto Silvermoon City,49.5,15.0,15,0
-.goto Undercity,58.9,11.3,200 >>Take the Orb of Translocation to Undercity
+.zone Undercity >>Take the Orb of Translocation to Undercity
 step << BloodElf Paladin
     .goto Silvermoon City,54.0,71.0
     .abandon 9135 >> Abandon Return to Quartermaster Lymel
@@ -2637,6 +2637,4 @@ step
 step
 .zone Durotar >>Arrive in Durotar
 ]],"!Warrior !Shaman")
-
-
 
