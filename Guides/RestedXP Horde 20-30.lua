@@ -1248,7 +1248,8 @@ step
     .goto Thunder Bluff,61.0,81.0
     .accept 1131 >> Accept Steelsnap
 step
-    .goto Thunder Bluff,23.1,21.0
+    >>In the cave
+.goto Thunder Bluff,23.1,21.0
     .turnin 1067 >> Turn in Return to Thunder Bluff
 step
 .goto Thunder Bluff,45.8,64.7
