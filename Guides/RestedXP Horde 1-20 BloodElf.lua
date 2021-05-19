@@ -1595,9 +1595,6 @@ step
     .turnin 9138 >>Turn in Suncrown Village
     .accept 9139 >>Accept Goldenmist Village
 step
-    #completewith next
-.abandon 9315 >> Abandon Anok'suten
-step
     .goto Ghostlands,48.4,30.9
     .accept 9171 >> Accept Culinary Crunch
 step << Mage/Priest/Warlock
@@ -1633,6 +1630,9 @@ step
 >>Click the wanted poster
 .goto Ghostlands,48.2,31.6
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran
+step
+    #completewith next
+.abandon 9315 >> Abandon Anok'suten
 step
     .goto Ghostlands,46.0,32.0
     .accept 9150 >>Accept Salvaging the Past
@@ -1849,6 +1849,9 @@ step
 step
     .goto Ghostlands,20.6,45.1
     .accept 9175 >> Accept The Lady's Necklace
+step
+    .goto Ghostlands,13.2,56.8
+.xp 16 >>Grind to 16
 step
     #sticky
     #label Legs
@@ -2632,6 +2635,3 @@ step
 step
 .zone Durotar >>Arrive in Durotar
 ]],"!Warrior !Shaman")
-
-
-
