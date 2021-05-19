@@ -1203,13 +1203,39 @@ step
     .turnin 9689 >> Turn in Razormaw
 	.isQuestComplete 9689
 step << Hunter/Shaman/Mage
-    #completewith next
+    #label limit1
+    #completewith L20
     .goto Bloodmyst Isle,24.8,51.3
     >>Do Limits of Physical Exhaustion if you still need XP
     .complete 9746,1 --Kill Sunhawk Pyromancer (x10)
     .complete 9746,2 --Kill Sunhawk Defender (x10)
     >>Skip this quest if you are already past the XP checkpoint
 step << Hunter/Shaman/Mage
+    #label limit2
+    #completewith L20
+    #requires limit1
+    .goto Bloodmyst Isle,55.6,55.3
+    .turnin 9746 >> Turnin Limits of Physical Exhaustion
+    .accept 9740 >> Accept The Sun Gate
+    >>Skip this quest if you are already past the XP checkpoint
+step << Hunter/Shaman/Mage
+    #label sungate
+    #completewith L20
+    #requires limit2
+    .goto Bloodmyst Isle,18.7,64.0
+    >>Click on the purple crystals around the lake and then on the big portal in the middle
+    .complete 9740,1
+    >>Skip this quest if you are already past the XP checkpoint
+step << Hunter/Shaman/Mage
+    #completewith next
+    #requires sungate
+    .goto Bloodmyst Isle,55.6,55.3
+    .turnin 9746 >> Turnin Limits of Physical Exhaustion
+    .accept 9740 >> Accept The Sun Gate
+    >>Skip this quest if you are already past the XP checkpoint
+
+step << Hunter/Shaman/Mage
+    #label L20
     .xp 20
     >>You'll need to hit level 20 before leaving Bloodmyst
 step << !Shaman
