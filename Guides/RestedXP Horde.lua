@@ -416,6 +416,7 @@ step
 	.complete 6024,1 --Hameya's Key (1)
 step
 	#sticky
+	#label dssf
 	>>Kill Ghouls and the Darrowshire spirits will emerge from the corpses. Talk to them to free their spirit.
     .goto Eastern Plaguelands,34.3,30.8
 	.goto Eastern Plaguelands,65.5,41.0,0
@@ -424,6 +425,7 @@ step
 	>>Find & destroy the termite mounds around Plaguewood.
     .complete 5901,1 --Plagueland Termites (100)
 step
+	#requires dssf
     .goto Eastern Plaguelands,14.5,33.6
     .turnin 5281 >>Turn in The Restless Souls
 step
