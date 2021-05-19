@@ -531,6 +531,7 @@ step
 step
     .goto Eastern Plaguelands,26.6,74.6
     .turnin 6022 >>Turn in To Kill With Purpose
+	.turnin 5961 >>Turn in The Champion of the Banshee Queen
 step
     .goto Western Plaguelands,48.3,31.8
     .turnin 5902 >>Turn in A Plague Upon Thee
