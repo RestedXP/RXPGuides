@@ -370,7 +370,8 @@ step << !Tauren
 .goto Thunder Bluff,47.0,49.8
 .fp >>Get the Thunder Bluff Flight Path
 step
-    .fly >> Fly to Ratchet
+    .goto Thunder Bluff,47.0,49.8
+.fly >> Fly to Ratchet
 step
     .goto The Barrens,62.4,37.6
     .turnin 865 >> Turn in Raptor Horns
@@ -381,7 +382,8 @@ step
     .turnin 1094 >> Turn in Further Instructions
     .accept 1095 >> Accept Further Instructions
 step
-    .fly >> Fly to Crossroads
+    .goto The Barrens,63.1,37.2
+.fly >> Fly to Crossroads
 step
     .goto The Barrens,52.0,31.6
     .turnin 4921 >> Turn in Lost in Battle
