@@ -856,7 +856,7 @@ step
 step << Paladin
     #sticky
     #completewith next
-    +If you're playing Paladin and afraid of Eversong competition, skip these next steps, then manually select 10-13 Durotar->13-23 Barrens
+    +If you're playing Paladin and afraid of Eversong competition, then manually select 10-13 Durotar->13-23 Barrens now
 step << Shaman
     .goto Durotar,54.4,42.5
     .accept 2983 >>Accept Call of Fire
@@ -1086,7 +1086,7 @@ step << Orc Shaman/Troll Shaman
     .turnin 2983 >>Turn in Call of Fire
     .accept 1524 >>Accept Call of Fire
 step << !Tauren
-    .goto The Barrens,50.8,32.6,200 >> Die and respawn at the Spirit Healer, or run back
+    .goto The Barrens,52.0,30.5,150 >> Run to the Crossroads
 step << !Tauren
     .goto The Barrens,52.2,31.8
     .accept 870 >>Accept The Forgotten Pools
