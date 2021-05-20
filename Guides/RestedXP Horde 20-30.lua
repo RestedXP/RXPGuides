@@ -1089,7 +1089,6 @@ step << Shaman
 .goto Ashenvale,33.5,67.5
     .complete 1534,1 --Filled Blue Waterskin (1)
 step
-    >>Look for Ursangous (Bear). He patrols clockwise
 .goto Ashenvale,41.5,67.4,40,0
     .goto Ashenvale,44.3,68.6,40,0
     .goto Ashenvale,43.8,63.6,40,0

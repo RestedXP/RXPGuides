@@ -835,6 +835,7 @@ step
 	>>Kill elves around this area
     .complete 9779,1 --Collect Sunhawk Missive (x1)
 step
+	.goto Bloodmyst Isle,48.1,47.6
 	.xp 15-1200
 step
 	#sticky
