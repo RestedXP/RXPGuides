@@ -1735,6 +1735,9 @@ step
     .complete 9160,1 --Kill Sentinel Spy (x12)
     >>Go within 10 yards of the giant light in the middle of the camps
 .complete 9160,2 --Investigate An'daroth
+step
+    .goto Ghostlands,36.9,15.7
+.xp 14+5200 >> Grind to 5200+/12300xp
 step << BloodElf Rogue
     .goto Ghostlands,33.0,11.2
 .turnin 9460 >> Turn in Combining Forces
@@ -1823,11 +1826,6 @@ step << Warlock/Mage/Priest
 step
 .goto Ghostlands,48.9,32.4
     .vendor >> Buy Food/drink if required
-step
-#sticky
-    #completewith Wanted
->>If you're able to find a group, kill Knucklerot. He spawns at the Howling Ziggurat, Patrols west to Windrunner Village, then across the river toward Goldenmist Village.
-    .complete 9156,1 --Collect Knucklerot's Head (x1)
 step
 >>Finish killing Vampiric Mistbats
 .goto Ghostlands,42.1,39.2,50,0
@@ -2357,6 +2355,11 @@ step
 step
     .goto Ghostlands,46.4,56.5
     .turnin 9281 >> Turn in Clearing the Way
+step
+#sticky
+    #completewith Wanted
+>>If you're able to find a group, kill Knucklerot. He spawns at the Howling Ziggurat, Patrols west to Windrunner Village, then across the river toward Goldenmist Village.
+    .complete 9156,1 --Collect Knucklerot's Head (x1)
 step
 #sticky
     #completewith Wanted
