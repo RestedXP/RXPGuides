@@ -744,7 +744,7 @@ step << Hunter
     .turnin 8474 >> Turn in Old Whitebark's Pendant
     .accept 10166 >> Accept Whitebark's Memory
 step << Hunter
-    >>Use the pendant to summon Old Whitebark. Be sure to start max range from him. Kill him and handin on him
+    >>Use the pendant to summon Old Whitebark. Be sure to start max range from him. Kill him and then turn in the quest to him
 .goto Eversong Woods,37.6,86.2
     .turnin 10166 >> Turn in Whitebark's Memory
 step
@@ -1390,7 +1390,7 @@ step << !BloodElf/!Hunter
     .turnin 8474 >> Turn in Old Whitebark's Pendant
     .accept 10166 >> Accept Whitebark's Memory
 step << !BloodElf/!Hunter
-    >>Use the pendant to summon Old Whitebark. Be sure to start max range from him. Kill him and handin on him
+    >>Use the pendant to summon Old Whitebark. Be sure to start max range from him. Kill him and then turn in the quest to him
 .goto Eversong Woods,37.6,86.2
     .turnin 10166 >> Turn in Whitebark's Memory
 step << Undead/BloodElf !Hunter
