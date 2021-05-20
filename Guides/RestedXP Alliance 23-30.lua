@@ -741,7 +741,8 @@ step
     .turnin 270 >> Turn in The Doomed Fleet
     .accept 321 >> Accept Lightforge Iron
 step
-    .home >> Set your Hearthstone to Deepwater Tavern
+      .goto Wetlands,10.7,60.9
+.home >> Set your Hearthstone to Deepwater Tavern
 step
     .goto Wetlands,10.9,55.9
     .accept 472 >> Accept Fall of Dun Modr
