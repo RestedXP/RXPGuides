@@ -375,7 +375,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                 element.label = tostring(step.index)
             end
 
-            if element.zone and not (isMiniMap and element.optional) and (not(element.parent and (element.parent.completed or element.parent.skip)) and not element.skip) then
+            if element.zone and not isMiniMap and (not(element.parent and (element.parent.completed or element.parent.skip)) and not element.skip) then
                 local closeToOtherPin, otherPin = elementIsCloseToOtherPins(element, pins)
 
                 if closeToOtherPin then
@@ -391,7 +391,6 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         hidePin = element.optional,
                     })
                 end
-
                 table.insert(RXP_.activeWaypoints, element)
             end
 

@@ -2,27 +2,32 @@ RXPGuides.RegisterGuide("RestedXP Horde Boosted 58-60",[[
 << Horde
 #name Boosted Character 58-60
 
-step << !Druid
+step << Paladin
+	>>Open your Survival Kit & mount up. Hellfire is too hard for us right now, it's best to go Western/Eastern Plaguelands.
+	.collect 28927,1
+	
+	
+step << !Druid !Paladin
     .turnin 64046 >>Turn in A New Beginning
 step << Druid
     .turnin 64047 >>Turn in A New Beginning
 	.accept 64049 >>Accept Tools for Survival
 
-step << !Druid
+step << !Druid !Paladin
     .accept 64048 >>Accept Tools for Survival
 
-step
+step << !Paladin
 	#sticky
 	#completewith next
 	>>Open your Azeroth Survival Kit & equip a weapon.
-step << !Druid
+step << !Druid !Paladin
     .complete 64048,1 --1/1 Open the Survival Kit (1)
     .complete 64048,2 --1/1 Equip a Weapon (1)
 step << Druid
     .complete 64049,1 --1/1 Open the Survival Kit (1)
     .complete 64049,2 --1/1 Equip a Weapon (1)
 
-step << !Druid
+step << !Druid !Paladin
     .turnin 64048 >>Turn in Tools for Survival
     .accept 64050 >>Accept Combat Training
 	
@@ -52,30 +57,30 @@ step << Druid
 step << Mage
     .train 22783 >> Learn Mage Armor
 
-step << !Druid
+step << !Druid !Paladin
 	.complete 64050,1 --1/1 Train a Spell (1)
 step << Druid
     .complete 64051,1 --1/1 Train a Spell (1)
 	
-step << !Druid
+step << !Druid !Paladin
     .turnin 64050 >>Turn in Combat Training
     .accept 64052 >>Accept Talented
 step << Druid
     .turnin 64051 >>Turn in Combat Training
 step << Druid
     .accept 64053 >>Accept Talented
-step << !Druid
+step << !Druid !Paladin
 	>>Spec into any talent build you want to play while leveling.
 	.complete 64052,1 --1/1 Spend a Talent Point (1)
 step << Druid
 	>>Spec into any talent build you want to play while leveling.
     .complete 64053,1 --1/1 Spend a Talent Point (1)	
 	
-step << !Druid
+step << !Druid !Paladin
     .turnin 64052 >>Turn in Talented
 step << Druid
     .turnin 64053 >>Turn in Talented
-step << !Druid
+step << !Druid !Paladin
 	#label nondruidboost
     .accept 64064 >>Accept Eastern Plaguelands
 step << Druid
@@ -96,12 +101,12 @@ step << Warlock
     .goto Orgrimmar,47.6,46.7,0
 	.vendor 5815 >> Talk to Kurgul to purchase your minions Grimoires	
 
-step
+step	<<!Paladin
     .goto Orgrimmar,54.5,67.6
     >>Buy at least 2 stacks of food/water from Barkeep Morag.
 	.vendor
 
-step << !Druid
+step << !Druid !Paladin
 	>>Run outside Orgrimmar to the Zeppelins and speak to Frezza(Undercity Zeppelin master)
     .goto Durotar,50.8,13.5
     .complete 64064,1 --Visit Zeppelin Master Frezza (1)
@@ -109,7 +114,50 @@ step << Druid
 	>>Run outside Orgrimmar to the Zeppelins and speak to Frezza(Undercity Zeppelin master)
     .goto Durotar,50.8,13.5
     .complete 64128,2 --Visit Zeppelin Master Frezza (1)	
+
 	
+	
+
+step	<<Paladin
+    .goto Blasted Lands,58.1,56.0
+    .accept 9407 >>Accept Through the Dark Portal
+step	<<Paladin
+	.goto Swamp of Sorrows,33.2,68.4,25
+	.zone Swamp of Sorrows >>Run to Swamp of Sorrows
+step	<<Paladin
+    .goto Swamp of Sorrows,34.3,66.0
+    .accept 2784 >>Accept Fall From Grace
+    .complete 2784,1 --The Tale of Sorrow (1)
+step	<<Paladin
+    .goto Swamp of Sorrows,34.3,66.1
+    .turnin 2784 >>Turn in Fall From Grace
+    .accept 2621 >>Accept The Disgraced One
+step	<<Paladin
+    .goto Swamp of Sorrows,47.8,54.9
+    .turnin 2621 >>Turn in The Disgraced One
+    .accept 2622 >>Accept The Missing Orders
+step	<<Paladin
+    .goto Swamp of Sorrows,44.9,57.4
+    .turnin 2622 >>Turn in The Missing Orders
+	
+step	<<Paladin
+    .goto Swamp of Sorrows,45.2,56.6
+    .home >>Set your Hearthstone to Stonard	
+step	<<Paladin
+	>>Sell 2x Symbol of Divinity to get enough money to fly.
+	.vendor
+step	<<Paladin
+.goto Swamp of Sorrows,46.1,54.8
+	.fly Grom'gol >>Fly to Grom'gol
+	
+	
+step	<<Paladin
+	#sticky
+	#completewith next
+  .goto Stranglethorn Vale,31.6,29.3
+    +Spend your talent points into any spec you want to play while flying & waiting for the Zeppelin to Tirisfal.
+	
+
 step
 	.zone Tirisfal Glades >> Take the Zeppelin to Tirisfal Glades
 
@@ -126,6 +174,7 @@ step
     .goto Tirisfal Glades,83.2,68.6
     .turnin 5405 >>Turn in Argent Dawn Commission
 step
+	#sticky
 	#completewith next
 	>>Equip your Argent Dawn Commission trinket. We will need the Scourgestones for a later quest.
 step
@@ -347,7 +396,7 @@ step
     .turnin 5241 >>Turn in Uncle Carlin
     .accept 5211 >>Accept Defenders of Darrowshire
 
-step << !Druid
+step << !Druid !Paladin
 	#requires nondruidboost
     .goto Eastern Plaguelands,81.7,57.8
     .turnin 64064 >>Turn in Eastern Plaguelands
@@ -367,6 +416,7 @@ step
 	.complete 6024,1 --Hameya's Key (1)
 step
 	#sticky
+	#label dssf
 	>>Kill Ghouls and the Darrowshire spirits will emerge from the corpses. Talk to them to free their spirit.
     .goto Eastern Plaguelands,34.3,30.8
 	.goto Eastern Plaguelands,65.5,41.0,0
@@ -375,6 +425,7 @@ step
 	>>Find & destroy the termite mounds around Plaguewood.
     .complete 5901,1 --Plagueland Termites (100)
 step
+	#requires dssf
     .goto Eastern Plaguelands,14.5,33.6
     .turnin 5281 >>Turn in The Restless Souls
 step
@@ -384,9 +435,10 @@ step
 
 
 
-step
+step <<!Paladin
     #completewith next
     .hs >>Hearth to Light's Hope Chapel
+	
 step
 	.goto Eastern Plaguelands,81.4,59.8
 	.turnin 5510 >>Turn in Minion's Scourgestones
@@ -479,6 +531,7 @@ step
 step
     .goto Eastern Plaguelands,26.6,74.6
     .turnin 6022 >>Turn in To Kill With Purpose
+	.turnin 5961 >>Turn in The Champion of the Banshee Queen
 step
     .goto Western Plaguelands,48.3,31.8
     .turnin 5902 >>Turn in A Plague Upon Thee
@@ -498,7 +551,9 @@ step
 step
     .goto Tirisfal Glades,83.1,68.9
     .turnin 5238 >>Turn in Mission Accomplished!
-
+step	<<Paladin
+    #completewith next
+    .hs >>Hearth to Stonard
 
 	
 ]],"58Boost")

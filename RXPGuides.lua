@@ -55,7 +55,9 @@ function RXPG_init()
     RXPData.windowSize = RXPData.windowSize or 1
 	RXPData.guideOpacity = RXPData.guideOpacity or 1
 	RXPData.affectGuideNameOpacity = RXPData.affectGuideNameOpacity or false
-    RXPData.trainGenericSpells = RXPData.trainGenericSpells or true
+    if RXPData.trainGenericSpells == nil then
+        RXPData.trainGenericSpells = true
+    end
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     f:SetShown(not RXPCData.hideWindow)
     --RXP_.arrowFrame:SetShown(not RXPData.disableArrow)

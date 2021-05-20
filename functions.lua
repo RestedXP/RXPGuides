@@ -1250,7 +1250,7 @@ function RXP_.functions.abandon(self,...)
         element.tooltipText = RXP_.icons.abandon..element.text
 
 
-        if not C_QuestLog.IsOnQuest(id) then
+        if self.element.step.active and not C_QuestLog.IsOnQuest(id) then
             RXP_.SetElementComplete(self,true)
         else
             RXP_.SetElementIncomplete(self)
@@ -1275,7 +1275,7 @@ function RXP_.functions.isQuestComplete(self,...)
         return element
     end
     local id = self.element.questId
-    if not (C_QuestLog.IsOnQuest(id) and IsQuestComplete(id)) then
+    if self.element.step.active and not (C_QuestLog.IsOnQuest(id) and IsQuestComplete(id)) then
         self.element.step.completed = true
         RXP_.updateSteps = true
     end
@@ -1295,7 +1295,7 @@ function RXP_.functions.isOnQuest(self,...)
         return element
     end
     local id = self.element.questId
-    if not C_QuestLog.IsOnQuest(id) then
+    if self.element.step.active and not C_QuestLog.IsOnQuest(id) then
         self.element.step.completed = true
         RXP_.updateSteps = true
     end
@@ -1315,7 +1315,7 @@ function RXP_.functions.isQuestTurnedIn(self,...)
         return element
     end
     local id = self.element.questId
-    if not IsQuestTurnedIn(id) then
+    if self.element.step.active and not IsQuestTurnedIn(id) then
         self.element.step.completed = true
         RXP_.updateSteps = true
     end

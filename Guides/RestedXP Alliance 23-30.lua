@@ -127,7 +127,7 @@ step << NightElf/Draenei
     #completewith exit2
     .zone Dun Morogh >>Head to Dun Morogh
     >>Death warp to Kharanos as soon as you get to Dun Morogh
-step << NighElf/Draenei
+step << NightElf/Draenei
     #sticky
     #completewith exit2
     .vendor 1694>>Buy a Bronze Tube from Loslor Rudge (limited supply), skip this step if he doesn't have it or if you already have one
@@ -136,6 +136,9 @@ step << NighElf/Draenei
 step << Mage
     goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
+step
+    .goto Ironforge,55.5,47.7
+    .fp >> Get the Ironforge flight path
 step
     #sticky
     #completewith exit2
@@ -162,6 +165,10 @@ step
     .goto Ironforge,55.2,7.6
     .collect 4371,1,175
     >>Try to buy a bronze tube from the Auction House if you were unable to find one from a vendor
+step
+	.goto Stormwind City,62.5,62.3,30,0
+	.goto Stormwind City,66.3,62.1
+    .fp >> Get the Stormwind flight path
 step << Warlock
     .goto Stormwind City,25.3,78.7
     .turnin 1738 >>Turn in Heartswood
@@ -434,10 +441,7 @@ step
     .goto Duskwood,73.6,46.8
     .turnin 56 >> Turn in The Night Watch
     .accept 57 >> Accept The Night Watch
-step
-    .goto Duskwood,72.6,46.9
-    .turnin 68 >> Turn in The Legend of Stalvan
-    .accept 69 >> Accept The Legend of Stalvan
+
 step
     .goto Duskwood,72.6,47.6
     .turnin 225 >> Turn in The Weathered Grave
@@ -499,6 +503,7 @@ step << !Rogue !Druid
     .goto Westfall,41.5,66.8
     .turnin 67 >> Turn in The Legend of Stalvan
     .accept 68 >> Accept The Legend of Stalvan
+    
 step << Paladin
     .goto Westfall,42.5,88.6
     .turnin 1650 >>Turn in The Tome of Valor
@@ -543,6 +548,10 @@ step << Hunter/Paladin
     .goto Duskwood,74.5,46.1
     .turnin 229 >> Turn in The Daughter Who Lived
     .accept 231 >> Accept A Daughter's Love
+step
+    .goto Duskwood,72.6,46.9
+    .turnin 68 >> Turn in The Legend of Stalvan
+    .accept 69 >> Accept The Legend of Stalvan
 step
     .goto Duskwood,75.3,47.9
     .turnin 173 >> Turn in Worgen in the Woods
@@ -690,7 +699,7 @@ step << Rogue
     #completewith end
     .trainer >> Train your class spells in ironforge
 step << Rogue
-    .goto Ironforge 45.2,6.6
+    .goto Ironforge,45.2,6.6
     >>Buy the level 41 weapon upgrades (17dps)
     .collect 2520,1
     .collect 2526,1
@@ -741,7 +750,8 @@ step
     .turnin 270 >> Turn in The Doomed Fleet
     .accept 321 >> Accept Lightforge Iron
 step
-    .home >> Set your Hearthstone to Deepwater Tavern
+      .goto Wetlands,10.7,60.9
+.home >> Set your Hearthstone to Deepwater Tavern
 step
     .goto Wetlands,10.9,55.9
     .accept 472 >> Accept Fall of Dun Modr

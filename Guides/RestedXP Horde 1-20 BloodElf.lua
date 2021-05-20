@@ -959,6 +959,8 @@ step << Warrior
 step << Warrior
 .zone Durotar >>Arrive in Durotar
 step << Warrior
+.abandon 1818 >>Abandon Speak with Dillinger
+step << Warrior
     .goto Durotar,46.4,22.9
     .accept 834 >>Accept Winds in the Desert
 step << Warrior
@@ -984,7 +986,7 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene
     .collect 22776,1 --Collect Springpaw Appetizers
-step << !BloodElf/!Hunter
+step << BloodElf/!Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9359 >>Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
@@ -1331,7 +1333,7 @@ step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
     >> Buy Suntouched Special Reserve from Vinemaster Suntouched
     .collect 22775,1 --Collect Suntouched Special Reserve
-step << !BloodElf/!Hunter/!BloodElf/!Warlock
+step << !BloodElf/!Hunter !Warlock/!BloodElf
     .goto Eversong Woods,56.7,49.6,30 >>Exit Silvermoon
 step << BloodElf/Undead
     #sticky
@@ -1397,7 +1399,7 @@ step << Undead/BloodElf !Hunter
 step << BloodElf Mage
     >>Kill Treants in the area. Loot them for the Branch
 .goto Eversong Woods,53.9,80.6
-    .collect 9404,1 --Collect Living Branch (x1)
+    .collect 23553,1 --Collect Living Branch (x1)
 step
     .goto Eversong Woods,49.0,89.0
     .turnin 9144 >> Turn in Missing in the Ghostlands
@@ -1577,14 +1579,9 @@ step
     .turnin 9143 >> Turn in Dealing with Zeb'Sora
     .accept 9146 >> Accept Report to Captain Helios
 step
-    .isQuestComplete 9315
 >>Grind Nerubians
 .goto Ghostlands,61.2,12.0
     .xp 13+10150 >>Grind to 10150+/11000xp
-step
-    >>Grind Nerubians
-.goto Ghostlands,61.2,12.0
-    .xp 13+9275 >>Grind to 9275+/11000xp
 step << Priest/Mage/Warlock/Rogue/Druid
     .goto Ghostlands,43.9,25.7,200 >>Die and respawn at the Spirit Healer, or run back
 step << !Priest !Mage !Warlock !Rogue !Druid
@@ -1597,9 +1594,6 @@ step
 .goto Ghostlands,46.3,28.4
     .turnin 9138 >>Turn in Suncrown Village
     .accept 9139 >>Accept Goldenmist Village
-step
-    #completewith next
-.abandon 9315 >> Abandon Anok'suten
 step
     .goto Ghostlands,48.4,30.9
     .accept 9171 >> Accept Culinary Crunch
@@ -1636,6 +1630,9 @@ step
 >>Click the wanted poster
 .goto Ghostlands,48.2,31.6
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran
+step
+    #completewith next
+.abandon 9315 >> Abandon Anok'suten
 step
     .goto Ghostlands,46.0,32.0
     .accept 9150 >>Accept Salvaging the Past
@@ -1892,6 +1889,9 @@ step
     >>Run onto the boat
 .goto Ghostlands,10.5,22.6
     .complete 9163,3 --Collect Night Elf Plans: Scrying on the Sin'dorei (x1)
+step
+.xp 16+4500 >>Grind to 4500+/15000xp
+.goto Ghostlands,12.5,26.4
 step
     .goto Ghostlands,43.9,25.7,200 >> Die and respawn at the Spirit Healer, or run back
 step
@@ -2526,7 +2526,6 @@ step << Warlock
 .trainer >>Train Ritual of Summoning
 step << Warlock
     .goto Silvermoon City,73.1,46.9
-    .accept 10605 >>Accept Carendin Summons
     .train 1094 >>Train Immolate r3
     .train 1088 >>Train Shadow Bolt r4
     .train 3698 >>Train Health Funnel r2
@@ -2575,10 +2574,16 @@ step << !BloodElf
     .accept 9812 >> Accept Envoy to the Horde
 step
 .goto Silvermoon City,49.5,15.0,15,0
-.goto Undercity,58.9,11.3,200 >>Take the Orb of Translocation to Undercity
+.zone Undercity >>Take the Orb of Translocation to Undercity
 step << BloodElf Paladin
     .goto Silvermoon City,54.0,71.0
     .abandon 9135 >> Abandon Return to Quartermaster Lymel
+step << Warlock
+    .abandon 10605 >>Abandon Carendin Summons
+step << Warlock
+    #sticky
+    #completewith Royal
+    +Do NOT take your warlock quest in Undercity. You’re going to do it in Orgrimmar as the questline is a lot better
 step
 .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
 step << !Scourge
@@ -2588,6 +2593,7 @@ step << Mage
     .goto Undercity,84.2,15.6
     .trainer >>Train Teleport Undercity
 step
+#label Royal
 .goto Undercity,52.0,64.6,35 >>Enter the Royal Quarter
 step << BloodElf
     #label Envoy
@@ -2629,6 +2635,3 @@ step
 step
 .zone Durotar >>Arrive in Durotar
 ]],"!Warrior !Shaman")
-
-
-

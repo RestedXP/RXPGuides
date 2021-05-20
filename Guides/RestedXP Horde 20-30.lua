@@ -165,10 +165,10 @@ step
 step
 #sticky
 #label deepmossegg
->>Click the spider eggs near the trees
+>>Click the spider eggs near the trees. Be careful as mobs can spawn from the eggs
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
->>Kill the Deepmoss Spiders and Besseleth in the area
+>>Kill the Deepmoss Spiders and Besseleth in the area. Loot Besseleth for his fang
 .goto Stonetalon Mountains,54.7,71.9,40,0
     .goto Stonetalon Mountains,52.6,71.8,40,0
     .goto Stonetalon Mountains,52.2,75.6,40,0
@@ -370,7 +370,8 @@ step << !Tauren
 .goto Thunder Bluff,47.0,49.8
 .fp >>Get the Thunder Bluff Flight Path
 step
-    .fly >> Fly to Ratchet
+    .goto Thunder Bluff,47.0,49.8
+.fly >> Fly to Ratchet
 step
     .goto The Barrens,62.4,37.6
     .turnin 865 >> Turn in Raptor Horns
@@ -381,7 +382,8 @@ step
     .turnin 1094 >> Turn in Further Instructions
     .accept 1095 >> Accept Further Instructions
 step
-    .fly >> Fly to Crossroads
+    .goto The Barrens,63.1,37.2
+.fly >> Fly to Crossroads
 step
     .goto The Barrens,52.0,31.6
     .turnin 4921 >> Turn in Lost in Battle
@@ -390,66 +392,64 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
 step
-.goto The Barrens,46.6,36.1,15,0
-.goto The Barrens,46.7,35.1,15,0
-.goto The Barrens,46.6,34.7 >>Go up the mountain here
+.goto Kalimdor,50.4,34.4,15 >>Go up the mountain here
 step
-.goto The Barrens,50.4,34.4,10 >>Go into here
+.goto Kalimdor,50.4,34.4,10 >>Go into here
 step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
+.goto Kalimdor,51.9,55.5,10 >>Jump down into the eye
 step
+.goto Kalimdor,51.9,55.4
 .goto The Barrens,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
 .goto The Barrens,46.0,36.4,15 >>Leave the eye. Go to the mouth of the cave
 step
+#sticky
+#label Deviate
+>>Kill Deviate mobs. Loot them for their hides
+.complete 1486,1 --Deviate Hide (20)
+step
+#sticky
+#label Serpentbloom
+>>Look for green and red flowers on the ground
+.complete 962,1 --Serpentbloom (10)
+step
+.goto The Barrens,52.1,55.1,20,0
+.goto The Barrens,52.0,55.4,20,0
+.goto The Barrens,51.8,54.9,20,0
+.goto The Barrens,52.1,55.1,20,0
+.goto The Barrens,52.0,55.4,20,0
+.goto The Barrens,51.8,54.9,20,0
+.goto The Barrens,52.1,55.1,20,0
+.goto The Barrens,52.0,55.4,20,0
+.goto The Barrens,51.8,54.9,20,0
+.goto The Barrens,52.1,55.1,20,0
+.goto The Barrens,52.0,55.4,20,0
+.goto The Barrens,51.8,54.9,20,0
+>>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
+.complete 959,1 --Collect 99-Year-Old Port (1)
+step
+#sticky
+#completewith next
+.goto Kalimdor,51.9,54.9,40 >>Enter the deeper part of the cave
+step
     #sticky
-    #label Deviate
-    >>Kill Deviate mobs. Loot them for their hides
-    .complete 1486,1 --Deviate Hide (20)
+#completewith next
+>>Keep an eye out for two rare mobs, as they can both drop blue BoE axes, among other gear
+.goto Kalimdor,52.5,54.8,30 >> Trigore
+.goto Kalimdor,52.8,55.0,30 >> Boahn
 step
-    #sticky
-    #label Serpentbloom
-    >>Look for green and red flowers on the ground
-    .complete 962,1 --Serpentbloom (10)
+>>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
+.complete 1491,1 --Wailing Essence (6)
 step
-.goto The Barrens,52.1,55.1,20,0
-    .goto The Barrens,52.0,55.4,20,0
-    .goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-    .goto The Barrens,52.0,55.4,20,0
-    .goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-    .goto The Barrens,52.0,55.4,20,0
-    .goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-    .goto The Barrens,52.0,55.4,20,0
-    .goto The Barrens,51.8,54.9,20,0
-    >>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
-    .complete 959,1 --Collect 99-Year-Old Port (1)
+#requires Serpentbloom
+.goto The Barrens,45.4,28.4,3000 >> .
 step
-.goto The Barrens,51.9,54.9,10 >>Enter the deeper part of the cave
-step
-    #sticky
-    #completewith next
-    +Keep an eye out for two rare mobs, Trigore and Boahn, as they can both drop blue BoE axes, among other gear
-step
-    >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
-    .complete 1491,1 --Wailing Essence (6)
-step
-    #requires Deviate
-    .goto The Barrens,46.0,36.4,1000,0
-step
-    #requires Serpentbloom
-.goto The Barrens,46.0,36.4,15 >>Leave the cave
-step
-.goto The Barrens,46.6,36.1,15,0
-.goto The Barrens,46.7,35.1,15,0
-.goto The Barrens,46.6,34.7 >>Go up the mountain here
-step
-.goto The Barrens,50.4,34.4,10 >>Go into here
-step
-.goto The Barrens,51.9,55.5,10 >>Jump down into the eye
+#sticky
+#completewith next
+#requires Deviate
+.goto Kalimdor,51.9,55.4
++Run back and talk to the druids on top of the mouth of the cave
 step
 .goto The Barrens,51.9,55.4
 .turnin 1486 >>Turn in Deviate Hides
@@ -511,7 +511,7 @@ step
     .goto Ashenvale,15.5,17.1
     .complete 6442,1 --Collect Wrathtail Head (x20)
 step
->>There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
+    >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
 step
@@ -899,7 +899,6 @@ step
     .turnin 499 >> Turn in Elixir of Suffering
     .accept 1067 >> Accept Return to Thunder Bluff
     .accept 509 >> Accept Elixir of Agony
-    .turnin 502 >> Turn in Elixir of Pain
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
@@ -908,6 +907,13 @@ step << Rogue
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Broad Bladed Knife the first time, go buy it in the shop now.
     .collect 12247,1
+step
+    #sticky
+    #completewith next
+    +While turning in Elixir of Agony, you can kill Stanley after for a bunch of extra XP
+step
+.goto Hillsbrad Foothills,32.6,35.6
+    .turnin 509 >> Turn in Elixir of Agony
 step
     #sticky
     #label Crate
@@ -1001,7 +1007,8 @@ step
     .turnin 742 >> Turn in The Ashenvale Hunt
     .turnin 6383 >> Turn in The Ashenvale Hunt
 step
-    .home >> Set your Hearthstone to Splintertree Post
+    .goto Ashenvale,74.0,60.6
+.home >> Set your Hearthstone to Splintertree Post
 step
     .goto Ashenvale,73.5,60.1
     .accept 25 >> Accept Stonetalon Standstill
@@ -1088,7 +1095,6 @@ step << Shaman
 .goto Ashenvale,33.5,67.5
     .complete 1534,1 --Filled Blue Waterskin (1)
 step
-    >>Look for Ursangous (Bear). He patrols clockwise
 .goto Ashenvale,41.5,67.4,40,0
     .goto Ashenvale,44.3,68.6,40,0
     .goto Ashenvale,43.8,63.6,40,0
@@ -1100,6 +1106,12 @@ step
 >>Look for Ursangous (Bear). He patrols clockwise. Kill and loot him for Ursangous's Paw, then accept it
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
     .accept 23 >> Accept Ursangous's Paw
+step
+    #sticky
+    #label Tideress
+    >>Kill Tideress who is located around the middle of the lake. Loot her for a Befouled Water Globe, then click it to accept the quest
+    .collect 16408,1,1918 --Collect Befouled Water Globe (x1)
+    .accept 1918 >>Accept The Befouled Element
 step
     #sticky
     #completewith next
@@ -1114,7 +1126,8 @@ step
 .goto Ashenvale,48.9,69.6
     .complete 25,1 --Kill Befouled Water Elemental (x12)
 step
-    >>Use the Etched Phial from earlier at the moonwell
+    #requires Tideress
+>>Use the Etched Phial from earlier at the moonwell
 .goto Ashenvale,60.2,72.9
     .complete 1195,1 --Collect Filled Etched Phial (x1)
 step
@@ -1128,7 +1141,7 @@ step
     .goto Ashenvale,75.7,70.0,40,0
     .goto Ashenvale,78.2,65.5,40,0
     .goto Ashenvale,75.3,72.0,0
->>Look for Sharptalon (Big Bird). He Patrols clockwise. Kill and loot him for Sharptalon's Claw, then accept it. Kite him to the undead camp to kill him.
+>>Look for Sharptalon (Big Bird). He Patrols clockwise. Kill and loot him for Sharptalon's Claw, then accept it. Solo him down to about 60%, then kite him to the undead camp to kill him.
     .collect 16305,1,2 --Collect Sharptalon's Claw
     .accept 2 >> Accept Sharptalon's Claw
 step
@@ -1234,7 +1247,8 @@ step
     .goto Thunder Bluff,61.0,81.0
     .accept 1131 >> Accept Steelsnap
 step
-    .goto Thunder Bluff,23.1,21.0
+    >>In the cave
+.goto Thunder Bluff,23.1,21.0
     .turnin 1067 >> Turn in Return to Thunder Bluff
 step
 .goto Thunder Bluff,45.8,64.7
@@ -1300,15 +1314,17 @@ step
 step
     #sticky
     #label Weapons
-    >>Kill mobs in the area for Weapons of Choice
-    .complete 893,1 --Collect Razormane Backstabber (x1) from Stalkers or Pathfinders
-    .complete 893,2 --Collect Charred Razormane Wand (x1) from Seers
-    .complete 893,3 --Collect Razormane War Shield (x1) from Warfrenzies
+    >>Kill mobs in the area for Weapons of Choice. Backstabber from Stalkers or Pathfinders, Wand from Seers, and Shield from Warfrenzies
+    .complete 893,1 --Collect Razormane Backstabber (x1)
+    .complete 893,2 --Collect Charred Razormane Wand (x1) 
+    .complete 893,3 --Collect Razormane War Shield (x1)
 step
 .goto The Barrens,43.4,78.8 >> All around the Ridge
     .complete 879,1 --Collect Kuz's Skull (x1)
+step
     .goto The Barrens,40.6,80.7 >> In the building up from the Ramp
     .complete 879,3 --Collect Lok's Skull (x1)
+step
     .goto The Barrens,43.8,83.5 >> Southern part of the Ridge
     .complete 879,2 --Collect Nak's Skull (x1)
 step
@@ -1555,6 +1571,14 @@ step
     .collect 12564,1,4881 --Collect Assassination Note (x1)
     .accept 4881 >> Accept Assassination Plot
 step
+    .goto Thousand Needles,37.5,38.4,30,0
+    .goto Thousand Needles,33.5,32.4,30,0
+    .goto Thousand Needles,37.5,38.4,30,0
+    .goto Thousand Needles,33.5,32.4,30,0
+    .goto Thousand Needles,37.5,38.4,30,0
+    .goto Thousand Needles,33.5,32.4,30,0
+    .goto Thousand Needles,37.5,38.4,30,0
+    .goto Thousand Needles,33.5,32.4,30,0
     .goto Thousand Needles,37.5,38.4,30,0
     .goto Thousand Needles,33.5,32.4,30,0
     .goto Thousand Needles,37.5,38.4,30,0

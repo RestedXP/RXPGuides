@@ -25,8 +25,7 @@ step << Dwarf Hunter
     *Thistle Bears can stun, you have to use a dummy pet to tank the stun, abandon the pet and then tame the bear
 step
 	#sticky
-	#label crawlers
-    .goto Darkshore,36.1,47.8
+	#completewith Crawlers
 	>> Kill crabs along the coast
     .complete 983,1 --Collect Crawler Leg (x6)
 step
@@ -34,14 +33,27 @@ step
 	>> Loot the Beached Sea Creature
     .complete 3524,1 --Collect Sea Creature Bones (x1)
 step
-    .goto Darkshore,38.0,52.4
-	>> Use Tharnariun's Hope in your bags to capture a Rabid Thistle Bear
+    .goto Darkshore,38.3,52.7,30,0
+    .goto Darkshore,38.9,62.0,30,0
+    .goto Darkshore,38.3,52.7,30,0
+    .goto Darkshore,38.9,62.0,30,0
+    .goto Darkshore,38.3,52.7
+    >>Keep going south until you find a Rabid Bear, use Tharnariun's Hope in your bags when you aggro one
     .complete 2118,1 --Rabid Thistle Bear Captured
 step
+   #label Crawlers
     .goto Darkshore,38.9,53.0
     .complete 984,1 --Find a corrupt furbolg camp
 step
-	#requires crawlers
+	.goto Darkshore,36.7,52.4,40,0
+	.goto Darkshore,35.6,47.6,40,0
+	.goto Darkshore,36.2,44.5,40,0
+	.goto Darkshore,36.7,52.4,40,0
+	.goto Darkshore,35.6,47.6,40,0
+	.goto Darkshore,36.2,44.5,40,0
+	>>Kill Crawlers. Loot them for their Legs
+    .complete 983,1 --Collect Crawler Leg (x6)
+step
     .goto Darkshore,36.6,46.3
 	.complete 983,1
     .turnin 983 >> Turn in Buzzbox 827
@@ -59,9 +71,6 @@ step
 step
     .goto Darkshore,36.6,45.6
     .turnin 4681 >> Turn in Washed Ashore
-step
-    .goto Darkshore,37.3,43.7
-    .accept 947 >> Accept Cave Mushrooms
 step
     .goto Darkshore,37.7,43.4
     .accept 4811 >> Accept The Red Crystal
