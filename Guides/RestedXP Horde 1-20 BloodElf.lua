@@ -1399,7 +1399,7 @@ step << Undead/BloodElf !Hunter
 step << BloodElf Mage
     >>Kill Treants in the area. Loot them for the Branch
 .goto Eversong Woods,53.9,80.6
-    .collect 9404,1 --Collect Living Branch (x1)
+    .collect 23553,1 --Collect Living Branch (x1)
 step
     .goto Eversong Woods,49.0,89.0
     .turnin 9144 >> Turn in Missing in the Ghostlands
