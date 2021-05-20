@@ -392,10 +392,10 @@ step
     .goto Azuremyst Isle,47.0,70.3
     .turnin 9514 >> Turn in Rune Covered Tablet
     .accept 9515 >> Warlord Sriss'tiz
-step << !Hunter
+step << !Hunter !Shaman
     #completewith next
     .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
-step << !Hunter
+step << !Hunter !Shaman
     >>Enter the naga cave and kill Warlord Sriss'tiz
     .goto Azuremyst Isle,24.5,74.5
     .complete 9515,1
@@ -561,6 +561,13 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,47.1,50.6
     .turnin 9622 >> Turn in Warn Your People
+step << Shaman
+    #completewith next
+    .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
+step << Shaman
+    >>Enter the naga cave and kill Warlord Sriss'tiz
+    .goto Azuremyst Isle,24.5,74.5
+    .complete 9515,1
 step << Shaman
     #sticky
 	#completewith next
