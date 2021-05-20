@@ -945,43 +945,29 @@ step << Warlock
 step << Warlock
 .goto Orgrimmar,49.0,94.2,20 >>Run out of Orgrimmar
 step << Warlock
-    .goto Durotar,56.4,20.1
-    .turnin 828 >>Turn in Margoz
-    .accept 827 >>Accept Skull Rock
-step << Warlock
 .goto Durotar,55.0,9.7,20 >>Enter Skull Rock
 step << Warlock
     #sticky
     #label Collars
->>Kill Burning Blade mobs in Skull Rock for Searing Collars, and until Lieutenant's Insignia drops
-    .complete 827,1 --Searing Collar (6)
+>>Kill Burning Blade mobs until Lieutenant's Insignia drops
     .complete 5726,1 --Lieutenant's Insignia (1)
 step << Warlock
     #sticky
     #label Eye
     #completewith Skull
     >>Optionally, you can kill Gazz'uz (level 14 warlock) for a quest item. Be sure to use your skull from earlier, any potions you have, or sticky glue on the voidwalker. You can LoS (Line of Sight) Gazz'uz to avoid his shadowbolts, and fear his pet. If you can't kill him, try to sneak past, or die and respawn past him in the water.
-    .collect 4903,1 --Collect Eye of Burning Shadow
-step << Warlock
-#requires Eye
-#label Shadows
+    .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
 step << Warlock 
 .goto Durotar,53.6,8.5,10 >> Go into the Right path of the cave
 step << Warlock
-.goto Durotar,51.8,8.1,10 >> Continue hugging right
-step << Warlock
     >>Loot the chest
+.goto Durotar,51.8,8.1,10,0
 .goto Durotar,51.6,9.8
     .complete 1501,1 --Tablet of Verga (1)
 step << Warlock
-    #requires Collars
 #label Skull
 .goto Durotar,47.2,17.7,225 >> Die and respawn at the Spirit Healer, or run back
-step << Warlock
-    .goto Durotar,56.4,20.1
-    .turnin 827 >>Turn in Skull Rock
-    .accept 829 >>Accept Neeru Fireblade
 step << Warlock
 .goto Orgrimmar,49.0,94.2,20    >>Run into Orgrimmar
 step << Warlock
@@ -989,20 +975,13 @@ step << Warlock
     .turnin 1501 >>Turn in Creature of the Void
     .accept 1504 >>Accept The Binding
 step << Warlock
-    #requires Shadows
+    .isOnQuest 832
 .goto Orgrimmar,49.5,50.6
     .turnin 832 >>Turn in Burning Shadows
-    .turnin 829 >>Turn in Neeru Fireblade
-step << Warlock
-.goto Orgrimmar,49.5,50.6
-    .turnin 829 >>Turn in Neeru Fireblade
 step << Warlock
     .goto Orgrimmar,49.5,50.0
     >>Use the Glyphs of Summoning to summon a voidwalker. Kill it
     .complete 1504,1 --Summoned Voidwalker (1)
-step << Warlock
-    .goto Orgrimmar,48.3,45.3
-.abandon 809 >> Abandon Ak'Zeloth
 step << Warlock
     >>You can now summon a Voidwalker
 .goto Orgrimmar,48.3,45.3
@@ -1149,30 +1128,12 @@ step << !Tauren
     .goto Mulgore,58.4,61.7
     .accept 749 >>Accept The Ravaged Caravan
 step << !Tauren
-    .goto Mulgore,47.5,60.1
-    .accept 767 >>Accept Rite of Vision
-step << !Tauren
-    .goto Mulgore,47.8,57.6
-    .turnin 767 >>Turn in Rite of Vision
-    .accept 771 >>Accept Rite of Vision
-step << !Tauren
     .goto Mulgore,48.2,53.4
     .accept 11129 >>Accept Kyle's Gone Missing!
-step << !Tauren
-    >>Loot the stones on the ground
-.goto Mulgore,44.9,45.8
-    .complete 771,1 --Well Stone (2)
 step << !Tauren
     .goto Mulgore,53.7,48.1
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
-step << !Tauren
-.goto Mulgore,56.3,50.9,8,0
-    .goto Mulgore,56.1,52.6,8,0
-    .goto Mulgore,53.5,58.0,8,0
-    .goto Mulgore,52.0,61.1,8,0
-    >>Collect the two "Acorns" on the ground
-    .complete 771,2 --Collect Ambercorn (2)
 step << !Tauren
     .goto Mulgore,55.5,55.8
     >>Kill a plainstrider for Tender Strider Meat
@@ -1185,18 +1146,11 @@ step << !Tauren
     .goto Mulgore,49.4,63.9,30,0
     .goto Mulgore,50.2,60.2,30,0
     .goto Mulgore,46.8,59.6,30,0
-    >>"Fine" Kyle the Frenzied. He patrols clockwise throughout the town (so go anti-clockwise). Go up to him and use the Tender Strider Meat
+    >>"Fine" Kyle the Frenzied. He patrols clockwise throughout the town (so go counter-clockwise). Go up to him and use the Tender Strider Meat
 .complete 11129,1 --Kyle Fed (1)
-step << !Tauren
-    .goto Mulgore,47.8,57.5
-    .turnin 771 >>Turn in Rite of Vision
-    .accept 772 >>Accept Rite of Vision
 step << !Tauren
     .goto Mulgore,48.3,53.3
     .turnin 11129 >>Turn in Kyle's Gone Missing!
-step << !Tauren
-    .goto Mulgore,32.7,36.2
-    .turnin 772 >>Turn in Rite of Vision
 step << !Tauren
 .goto Thunder Bluff,32.0,66.9,20 >>Run to the lift and take it into Thunder Bluff
 step << !Tauren !Paladin
@@ -1269,7 +1223,7 @@ step
 step
 .goto Durotar,41.7,25.5,20 >>Jump into Thunder Ridge
 step
-    >>Kill Fizzle. Try to clear the mobs in the surrounding camps to make space
+    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space
 .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 step << !Warrior

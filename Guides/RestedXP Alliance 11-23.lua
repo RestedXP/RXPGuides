@@ -72,9 +72,6 @@ step
     .goto Darkshore,36.6,45.6
     .turnin 4681 >> Turn in Washed Ashore
 step
-    .goto Darkshore,37.3,43.7
-    .accept 947 >> Accept Cave Mushrooms
-step
     .goto Darkshore,37.7,43.4
     .accept 4811 >> Accept The Red Crystal
 step

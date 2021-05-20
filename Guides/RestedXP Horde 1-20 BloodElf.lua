@@ -986,7 +986,7 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene
     .collect 22776,1 --Collect Springpaw Appetizers
-step << !BloodElf/!Hunter
+step << BloodElf/!Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9359 >>Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
@@ -1399,7 +1399,7 @@ step << Undead/BloodElf !Hunter
 step << BloodElf Mage
     >>Kill Treants in the area. Loot them for the Branch
 .goto Eversong Woods,53.9,80.6
-    .collect 9404,1 --Collect Living Branch (x1)
+    .collect 23553,1 --Collect Living Branch (x1)
 step
     .goto Eversong Woods,49.0,89.0
     .turnin 9144 >> Turn in Missing in the Ghostlands
@@ -1595,9 +1595,6 @@ step
     .turnin 9138 >>Turn in Suncrown Village
     .accept 9139 >>Accept Goldenmist Village
 step
-    #completewith next
-.abandon 9315 >> Abandon Anok'suten
-step
     .goto Ghostlands,48.4,30.9
     .accept 9171 >> Accept Culinary Crunch
 step << Mage/Priest/Warlock
@@ -1633,6 +1630,9 @@ step
 >>Click the wanted poster
 .goto Ghostlands,48.2,31.6
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran
+step
+    #completewith next
+.abandon 9315 >> Abandon Anok'suten
 step
     .goto Ghostlands,46.0,32.0
     .accept 9150 >>Accept Salvaging the Past
@@ -1889,6 +1889,9 @@ step
     >>Run onto the boat
 .goto Ghostlands,10.5,22.6
     .complete 9163,3 --Collect Night Elf Plans: Scrying on the Sin'dorei (x1)
+step
+.xp 16+4500 >>Grind to 4500+/15000xp
+.goto Ghostlands,12.5,26.4
 step
     .goto Ghostlands,43.9,25.7,200 >> Die and respawn at the Spirit Healer, or run back
 step
@@ -2632,6 +2635,3 @@ step
 step
 .zone Durotar >>Arrive in Durotar
 ]],"!Warrior !Shaman")
-
-
-
