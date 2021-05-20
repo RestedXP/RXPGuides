@@ -1007,19 +1007,7 @@ step << Hunter
     .turnin 562 >> Turn in Stormwind Ho!
     .accept 563 >> Accept Reassignment
 step
-    .goto Hillsbrad Foothills,50.3,58.8
-    .accept 659 >> Accept Hints of a New Plague?
-step
-    .goto Hillsbrad Foothills,49.5,58.8
-    .accept 500 >> Accept Crushridge Bounty
-step
-    .goto Hillsbrad Foothills,48.2,59.2
-    .accept 505 >> Accept Syndicate Assassins
-step
     .fp >> Get the Southshore flight path
-step
-    .goto Hillsbrad Foothills,52.4,55.9
-    .accept 564 >> Accept Costly Menace
 step
     .goto Western Plaguelands,42.9,85.0
     >>Head north farming turtle meat along the river, once you get at the end of the river, head northwest into WPL
