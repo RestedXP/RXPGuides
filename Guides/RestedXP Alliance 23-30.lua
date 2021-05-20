@@ -137,6 +137,9 @@ step << Mage
     goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
 step
+    .goto Ironforge,55.5,47.7
+    .fp >> Get the Ironforge flight path
+step
     #sticky
     #completewith exit2
     .vendor 5175>>Buy a Bronze Tube from Gearcutter Cogspinner (limited supply), skip this step if he doesn't have it or if you already have one
@@ -162,6 +165,10 @@ step
     .goto Ironforge,55.2,7.6
     .collect 4371,1,175
     >>Try to buy a bronze tube from the Auction House if you were unable to find one from a vendor
+step
+	.goto Stormwind City,62.5,62.3,30,0
+	.goto Stormwind City,66.3,62.1
+    .fp >> Get the Stormwind flight path
 step << Warlock
     .goto Stormwind City,25.3,78.7
     .turnin 1738 >>Turn in Heartswood
