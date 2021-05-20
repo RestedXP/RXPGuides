@@ -940,6 +940,8 @@ step
 step
     .goto Arathi Highlands,43.3,92.6
     .accept 647 >> Accept MacKreel's Moonshine
+    >>You can still get this quest if you don't have any kind of speed increase or slow fall
+    .link https://www.twitch.tv/videos/646111384 >>Click here for reference
 step
     .goto Arathi Highlands,44.3,93.0
 	>>Jump down and loot the letter from the corpse underwater
