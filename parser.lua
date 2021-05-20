@@ -31,6 +31,7 @@ end
 RXP_.applies = applies
 local RXPG = RXPGuides
 function RXPG.RegisterGuide(guideGroup,text,defaultFor)
+    if not guideGroup then return end
     local playerLevel = UnitLevel("player")
     local boost58
     if defaultFor then
@@ -43,7 +44,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
             guideGroup = "*"..guideGroup
         end
     end
-
+    
     if not RXPG[guideGroup] then
         RXPG[guideGroup] = {}
         setmetatable(RXPG[guideGroup],RXP_.functions)
