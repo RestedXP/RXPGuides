@@ -912,7 +912,7 @@ step
     #completewith next
     +While turning in Elixir of Agony, you can kill Stanley after for a bunch of extra XP
 step
-.goto Hillsbrad Foothills,32.6 35.6
+.goto Hillsbrad Foothills,32.6,35.6
     .turnin 509 >> Turn in Elixir of Agony
 step
     #sticky
