@@ -1864,6 +1864,7 @@ step
     .goto Ghostlands,44.1,57.6,30,0
     .goto Ghostlands,16.5,62.5,30,0
     .goto Ghostlands,44.1,57.6,30,0
+.goto Ghostlands,16.5,62.5
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step
@@ -2618,11 +2619,12 @@ step << !BloodElf
 .goto Undercity,57.8,91.8
     .accept 9425 >> Accept Report to Tarren Mill
     .turnin 9180 >> Turn in Journey to Undercity
-step << BloodElf
-    .goto Undercity,57.8,90.6
-    .accept 9189 >>Accept Delivery to the Sepulcher
 step
 .goto Undercity,52.0,64.6,35 >>Exit the Royal Quarter
+step << BloodElf
+    #sticky
+    #completewith next
+.abandon 9189 >>Abandon Delivery to the Sepulcher
 step
 .goto Undercity,66.0,44.1,40 >>Go to the bank area
 step
