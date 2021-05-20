@@ -127,7 +127,7 @@ step << NightElf/Draenei
     #completewith exit2
     .zone Dun Morogh >>Head to Dun Morogh
     >>Death warp to Kharanos as soon as you get to Dun Morogh
-step << NighElf/Draenei
+step << NightElf/Draenei
     #sticky
     #completewith exit2
     .vendor 1694>>Buy a Bronze Tube from Loslor Rudge (limited supply), skip this step if he doesn't have it or if you already have one
