@@ -986,7 +986,7 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene
     .collect 22776,1 --Collect Springpaw Appetizers
-step << !BloodElf/!Hunter
+step << BloodElf/!Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9359 >>Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
@@ -1850,9 +1850,6 @@ step
     .goto Ghostlands,20.6,45.1
     .accept 9175 >> Accept The Lady's Necklace
 step
-    .goto Ghostlands,13.2,56.8
-.xp 16 >>Grind to 16
-step
     #sticky
     #label Legs
 >>Loot Spiders for Crunchy Spider Legs
@@ -1892,6 +1889,9 @@ step
     >>Run onto the boat
 .goto Ghostlands,10.5,22.6
     .complete 9163,3 --Collect Night Elf Plans: Scrying on the Sin'dorei (x1)
+step
+.xp 16+4500 >>Grind to 4500+/15000xp
+.goto Ghostlands,12.5,26.4
 step
     .goto Ghostlands,43.9,25.7,200 >> Die and respawn at the Spirit Healer, or run back
 step
