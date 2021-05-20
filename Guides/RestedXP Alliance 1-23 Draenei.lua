@@ -1057,7 +1057,7 @@ step
     .turnin 9569 >> Turn in Containing the Threat
 step
     .goto Bloodmyst Isle,53.2,57.7
-    .accept 9578 >> Turn in Searching for Galaen
+    .accept 9578 >> Accept Searching for Galaen
 step
 	#requires flutterers
 	#sticky
