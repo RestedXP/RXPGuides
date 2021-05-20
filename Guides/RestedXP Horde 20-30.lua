@@ -511,7 +511,7 @@ step
     .goto Ashenvale,15.5,17.1
     .complete 6442,1 --Collect Wrathtail Head (x20)
 step
->>There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
+    >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
 step
