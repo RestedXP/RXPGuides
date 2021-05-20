@@ -290,6 +290,9 @@ step
     .goto Duskwood,72.6,46.9
     .turnin 66 >> Turn in The Legend of Stalvan
     .accept 67 >> Accept The Legend of Stalvan
+step << Draenei
+    .goto Duskwood,71.8,46.4
+    .turnin 9429 >> Turn in Travel to Darkshire
 step
     .goto Duskwood,75.3,48.6
     .accept 163 >> Accept Raven Hill
@@ -647,8 +650,10 @@ step
     .turnin 323 >> Turn in Proving Your Worth
     .accept 269 >> Accept Seeking Wisdom
 step
+    #completewith next
+    .deathskip >>Head to Elwynn Forest, aggro a bunch of low level mobs, die on purpose and respawn at Goldshire.
+step
     .goto Elwynn Forest,43.7,65.9
-    >>Head to Elwynn Forest, throw away your HS and unstuck to Goldshire.
     .turnin 69 >> Turn in The Legend of Stalvan
     .accept 70 >> Accept The Legend of Stalvan
 step

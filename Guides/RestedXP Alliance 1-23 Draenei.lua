@@ -689,7 +689,10 @@ step
 	#label kesselrun
     .goto Azuremyst Isle,46.9,70.3
     .complete 9663,3 --Admiral Odesyus Warned
+step
+    .goto Azuremyst Isle,46.9,70.3    
     .turnin 9515 >> Warlord Sriss'tiz
+    .isQuestComplete 9515
 step << Paladin
     #completewith next
     .goto Azuremyst Isle,24.6,49.4,30

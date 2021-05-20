@@ -55,9 +55,25 @@ function RXPG_init()
     end
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     f:SetShown(not RXPCData.hideWindow)
-    --RXP_.arrowFrame:SetShown(not RXPData.disableArrow)
+    C_Timer.After(0.5,function()
+        if RXP_.errorCount == RXP_.guideErrorCount then
+            RXP_.errorCount = -1
+            ScriptErrorsFrame:Hide()
+        end
+    end)
 end
 
+RXP_.errorCount = 0
+RXP_.guideErrorCount = 0
+
+hooksecurefunc(ScriptErrorsFrame,"DisplayMessage",function(self, msg, warnType, keepHidden, messageType)
+    if RXP_.errorCount >= 0 then
+        if warnType == 0 and keepHidden == false and messageType == 1 and type(msg) == "string" and msg:match("RXPGuides\\Guides") then
+            RXP_.guideErrorCount = RXP_.guideErrorCount + 1
+        end
+        RXP_.errorCount = RXP_.errorCount + 1
+    end
+end)
 
 local startTime = GetTime()
 local questProgressTimer = 0
