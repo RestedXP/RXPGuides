@@ -434,10 +434,7 @@ step
     .goto Duskwood,73.6,46.8
     .turnin 56 >> Turn in The Night Watch
     .accept 57 >> Accept The Night Watch
-step
-    .goto Duskwood,72.6,46.9
-    .turnin 68 >> Turn in The Legend of Stalvan
-    .accept 69 >> Accept The Legend of Stalvan
+
 step
     .goto Duskwood,72.6,47.6
     .turnin 225 >> Turn in The Weathered Grave
@@ -499,6 +496,7 @@ step << !Rogue !Druid
     .goto Westfall,41.5,66.8
     .turnin 67 >> Turn in The Legend of Stalvan
     .accept 68 >> Accept The Legend of Stalvan
+    
 step << Paladin
     .goto Westfall,42.5,88.6
     .turnin 1650 >>Turn in The Tome of Valor
@@ -543,6 +541,10 @@ step << Hunter/Paladin
     .goto Duskwood,74.5,46.1
     .turnin 229 >> Turn in The Daughter Who Lived
     .accept 231 >> Accept A Daughter's Love
+step
+    .goto Duskwood,72.6,46.9
+    .turnin 68 >> Turn in The Legend of Stalvan
+    .accept 69 >> Accept The Legend of Stalvan
 step
     .goto Duskwood,75.3,47.9
     .turnin 173 >> Turn in Worgen in the Woods

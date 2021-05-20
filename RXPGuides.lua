@@ -50,7 +50,9 @@ function RXPG_init()
 	RXPData.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity or 0.35
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
-    RXPData.trainGenericSpells = RXPData.trainGenericSpells or true
+    if RXPData.trainGenericSpells == nil then
+        RXPData.trainGenericSpells = true
+    end
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     f:SetShown(not RXPCData.hideWindow)
     --RXP_.arrowFrame:SetShown(not RXPData.disableArrow)

@@ -161,7 +161,12 @@ step
 step
 	#sticky
 	#completewith next
+    .goto Azuremyst Isle,56.1,39.3
 	.deathskip >>Die on purpose and rez at Azure Watch
+    >>Make sure to die near the pond close to the mountain side
+step
+    #completewith next
+    .goto Azuremyst Isle,49.0,51.6,150 >> Head to Azure Watch
 step
     .goto Azuremyst Isle,48.4,51.6
     .accept 9463 >> Accept Medicinal Purpose
@@ -363,10 +368,10 @@ step
 step
     .goto Azuremyst Isle,47.0,70.3
     .turnin 9513 >> Turn in Reclaiming the Ruins
-    .turnin 9514 >> Turn in Rune Covered Tablet
     .turnin 9523 >> Turn in Precious and Fragile Things Need Special Handling
     .turnin 9531 >> Turn in Tree's Company
     .accept 9537 >> Accept Show Gnomercy
+    >>Don't turn in the Rune Covered tablet yet, otherwise a long RP sequence will start
 step << Hunter
 	#sticky
     .goto Azuremyst Isle,48.8,72.7
@@ -383,6 +388,17 @@ step
     .goto Azuremyst Isle,47.0,70.2
     .turnin 9537 >> Turn in Show Gnomercy
     .accept 9602 >> Accept Deliver Them From Evil...
+step
+    .goto Azuremyst Isle,47.0,70.3
+    .turnin 9514 >> Turn in Rune Covered Tablet
+    .accept 9515 >> Warlord Sriss'tiz
+step << !Hunter
+    #completewith next
+    .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
+step << !Hunter
+    >>Enter the naga cave and kill Warlord Sriss'tiz
+    .goto Azuremyst Isle,24.5,74.5
+    .complete 9515,1
 step
     #sticky
     #completewith next
@@ -427,6 +443,13 @@ step << Hunter
 step << Hunter
     .goto Azuremyst Isle,20.7,65.1
     .complete 9591,1 --Tame a Barbed Crawler
+step << Hunter
+    #completewith next
+    .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
+step << Hunter
+    >>Enter the naga cave and kill Warlord Sriss'tiz
+    .goto Azuremyst Isle,24.5,74.5
+    .complete 9515,1
 step << Hunter
     .goto Azuremyst Isle,24.2,54.3
     .turnin 9591 >> Turn in Taming the Beast
@@ -557,8 +580,6 @@ step
     .complete 9562,1 --Collect Stillpine Grain (x5)
     >>Kill and loot the named Murloc
     .accept 9564 >> Accept Gurf's Dignity
-step
-    .xp 12
 ]],"Draenei")
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
@@ -573,8 +594,13 @@ step
     .turnin 9625 >> Turn in Elekks Are Serious Business
     .accept 9634 >> Accept Alien Predators
 step
+    >>Do Alien Predators/A Favorite Treat while you grind
+    .xp 12-2000
+step
+    #completewith next
+    .deathskip>>Die and respawn at Blood Watch
+step
     .goto Bloodmyst Isle,55.7,59.7
-    >>Die and respawn at Blood Watch
     .accept 9603 >> Accept Beds, Bandages, and Beyond
 step
     .goto Bloodmyst Isle,55.7,59.7
@@ -628,8 +654,6 @@ step
 step
     .goto Bloodmyst Isle,63.1,87.9
     .turnin 9634 >> Turn in Alien Predators
-step << Paladin
-    .xp 12-2380
 step
     .goto Bloodmyst Isle,63.1,87.6
     .accept 9663 >> Accept The Kessel Run
@@ -665,6 +689,7 @@ step
 	#label kesselrun
     .goto Azuremyst Isle,46.9,70.3
     .complete 9663,3 --Admiral Odesyus Warned
+    .turnin 9515 >> Warlord Sriss'tiz
 step << Paladin
     #completewith next
     .goto Azuremyst Isle,24.6,49.4,30
@@ -681,6 +706,7 @@ step
     .turnin 9581 >> Turn in Learning from the Crystals
     .accept 9620 >> Accept The Missing Survey Team
 step
+    .goto Bloodmyst Isle,48.4,47.9
     .xp 13
 step
     .goto Bloodmyst Isle,54.9,58.0

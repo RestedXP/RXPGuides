@@ -253,8 +253,11 @@ step
     .goto Hillsbrad Foothills,49.4,52.3
     .fly Chillwind Camp >>Fly to Chillwind Camp
 step
-    .goto Western Plaguelands,42.9,84.6
+    #completewith mark1
+    .goto Western Plaguelands,42.9,84.6,0
+    >>Speak to the Draenei NPC in Chillwind
     .accept 9474 >>Accept The Mark of the Lightbringer
+    >>The quest giver is part of a long scripted RP sequence, if you can't find him skip this step
 step
     .goto Western Plaguelands,42.8,84.0
     .accept 5092 >>Accept Clear the Way
@@ -267,6 +270,7 @@ step
     .accept 6185 >>Accept The Eastern Plagues
 
 step
+    #label mark1
     .goto Western Plaguelands,42.9,85.0
     .fly Light's Hope Chapel >>Fly to Light's Hope Chapel
 step
@@ -300,6 +304,12 @@ step
 step
     .goto Hillsbrad Foothills,49.4,52.3
     .fly Chillwind Camp >>Fly to Chillwind Camp
+step
+    #completewith tower
+    .goto Western Plaguelands,42.9,84.6,0
+    >>Speak to the Draenei NPC in Chillwind
+    .accept 9474 >>Accept The Mark of the Lightbringer
+    >>The quest giver is part of a long scripted RP sequence, if he's not at Chillwind just keep an eye for it while you quest through the zone
 step
     .goto Western Plaguelands,50.4,76.4
     .complete 5092,2 --Slavering Ghoul (10)
@@ -400,9 +410,11 @@ step
     .complete 6023,2 --Kill Cavalier Durgen (x1)
     *There is a level 63 elite mob that can spawn at the tower, if that's the case just be patient and wait for Durgen to come down
 step
+    #label tower
     .goto Western Plaguelands,55.1,23.5
     >>Loot the chest at the top of the tower, skip this step if the level 63 rare elite is blocking the way
     .complete 9474,1 --Collect Mark of the Lightbringer (x1)
+    .isOnQuest 9474
 step
     .goto Western Plaguelands,55.2,23.6
     .complete 9474,1 --Mark of the Lightbringer (1)
@@ -505,7 +517,7 @@ step
     .goto Eastern Plaguelands,36.4,90.8
     .turnin 5149 >>Turn in Pamela's Doll
     .accept 5152 >>Accept Auntie Marlene
-    .accept 5210 >> Accept Brother Carlin
+    .accept 5241 >>Accept in Uncle Carlin
 step
     #completewith next
     .hs >> Hearth to Southshore
