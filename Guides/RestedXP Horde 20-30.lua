@@ -20,6 +20,10 @@ step << !BloodElf
 .goto Orgrimmar,31.8,38.1
     .turnin 9813 >> Turn in Meeting the Warchief
 step << Warlock
+    #sticky
+    >>You must abandon Carendin’s Summons to be able to accept Devourer of Souls
+.abandon 10605 >>Abandon Carendin Summons
+step << Warlock
     .goto Orgrimmar,48.2,45.3
     .accept 1507 >>Accept Devourer of Souls
 step << Warlock
@@ -511,7 +515,7 @@ step
     .goto Ashenvale,15.5,17.1
     .complete 6442,1 --Collect Wrathtail Head (x20)
 step
-    >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
+>>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
 step
