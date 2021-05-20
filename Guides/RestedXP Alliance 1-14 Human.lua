@@ -530,7 +530,6 @@ step
 step
     #sticky
     #completewith Armbands
-    #label Collector
     >>Keep an eye out for the gold pickup schedule (lucky drop), or a 100% Drop from Gruff Swiftbite (rare). extra 210xp
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >> Accept The Collector
@@ -548,7 +547,7 @@ step
 .goto Elwynn Forest,26.1,89.9,40,0
 .goto Elwynn Forest,25.2,92.7,40,0
 .goto Elwynn Forest,27.0,93.9,40,0
-    >>Hogger can be in multiple spots in the area. Keep him fear chained, and/or kite him at <60% hp to the tower at 24,80. Grind gnolls after for armbands
+    >>Hogger can be in multiple spots in the area. Keep him fear chained, and/or kite him at <60% hp to the tower at 24,80. Loot him for his Claw
     .complete 176,1 --Collect Huge Gnoll Claw (x1)
 step
     #label Armbands
@@ -635,7 +634,7 @@ step
     .turnin 123 >> Turn in The Collector, Skip followup
 step
     >>Grind en route, try to level your staves skill for later
->>Kill the mobs inside the house, keep Morgan feared (he gouges and kills pet), nuke Surena
+>>Kill the mobs inside the house, keep Morgan feared (he gouges and kills pet), nuke Surena. Loot her for her Choker
     .goto Elwynn Forest,71.0,80.8
     .complete 1688,1 --Collect Surena's Choker (x1)
 step
@@ -1494,6 +1493,9 @@ step
 .goto Elwynn Forest,76.7,75.6,40,0
 .goto Elwynn Forest,79.7,83.7,40,0
 .goto Elwynn Forest,82.0,76.8,40,0
+.goto Elwynn Forest,76.7,75.6,40,0
+.goto Elwynn Forest,79.7,83.7,40,0
+.goto Elwynn Forest,82.0,76.8,40,0
 >>Kill the last mobs for Protect the Frontier
     .complete 52,1 --Kill Prowler (x8)
     .complete 52,2 --Kill Young Forest Bear (x5)
@@ -1574,6 +1576,9 @@ step
     .turnin 39 >> Turn in Deliver Thomas' Report
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
+step << Rogue/Mage
+.goto Elwynn Forest,41.7,65.5
+    .accept 1097 >> Accept Elmore's Task
 step
     .xp 10 >> Grind to 10
 step
