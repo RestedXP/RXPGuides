@@ -586,7 +586,7 @@ step
     .complete 19,1 --Collect Tharil'zun's Head (x1)
 step
     .goto Redridge Mountains,66.6,55.4
-	>>Kill 
+	>>Kill Blackrock Shadowcasters. Loot them for Midnight Orbs
     .complete 115,1 --Collect Midnight Orb (x3)
 step
     .goto Redridge Mountains,63.2,49.7
@@ -657,7 +657,8 @@ step
     .turnin 69 >> Turn in The Legend of Stalvan
     .accept 70 >> Accept The Legend of Stalvan
 step
-    .goto Elwynn Forest,44.2,65.9
+    >>Go upstairs in the room behind the rogue trainer. Loot the chest
+	.goto Elwynn Forest,44.2,65.9
     .complete 70,1 --Collect An Undelivered Letter (x1)
 step << !Rogue
 	#sticky
