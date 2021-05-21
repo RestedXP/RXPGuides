@@ -988,11 +988,14 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene
     .collect 22776,1 --Collect Springpaw Appetizers
-step << BloodElf Paladin/BloodElf Rogue/BloodElf Priest/BloodElf Mage/BloodElf Warlock
+step << BloodElf !Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9359 >>Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
 step << BloodElf Hunter
+    .goto Eversong Woods,60.3,62.8
+    .accept 8476 >> Accept Amani Encroachment
+step << !BloodElf
     .goto Eversong Woods,60.3,62.8
     .accept 8476 >> Accept Amani Encroachment
 step << BloodElf Hunter    
@@ -1044,12 +1047,12 @@ step
     .complete 8476,1 --Kill Amani Berserker (x5)  
 .complete 8476,2 --Kill Amani Axe Thrower (x5)
 step
->>Otembe has a very short respawn timer. Quickly run over to the cage and accept the quest.
      .goto Eversong Woods,70.1,72.3
     .complete 8477,1 --Collect Otembe's Hammer (x1) 
 step
-    .goto Eversong Woods,70.5,72.3
-    .accept 8479 >> Accept Zul'Marosh    
+    >>Otembe has a very short respawn timer. Quickly run over to the cage and accept the quest.
+.goto Eversong Woods,70.5,72.3
+    .accept 8479 >> Accept Zul'Marosh       
 step
 >>Zul'Marosh is on the top floor of the hut. Kill & loot him. He drops a quest.
     .goto Eversong Woods,62.5,79.7
