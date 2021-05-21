@@ -1052,7 +1052,7 @@ step
 step
     >>Otembe has a very short respawn timer. Quickly run over to the cage and accept the quest.
 .goto Eversong Woods,70.5,72.3
-    .accept 8479 >> Accept Zul'Marosh       
+    .accept 8479 >> Accept Zul'Marosh    
 step
 >>Zul'Marosh is on the top floor of the hut. Kill & loot him. He drops a quest.
     .goto Eversong Woods,62.5,79.7
@@ -1274,6 +1274,8 @@ step << Druid
     .goto Silvermoon City,71.5,55.8
     .train 8936 >>Train Regrowth
     .train 5229 >>Train Enrage
+step << Orc Warlock
+.goto Silvermoon City,75.3,44.5,20 >>Enter the building, go downstairs
 step << Orc Warlock
     .goto Silvermoon City,74.4,47.2
     .train 755 >>Train Health Funnel
