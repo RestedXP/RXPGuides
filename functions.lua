@@ -759,6 +759,7 @@ function RXP_.functions.home(self,...)
         element.tooltipText = RXP_.icons.home..element.text
         return element
     end
+    if not self.element.step.active then return end
     local event = ...
     if event == "HEARTHSTONE_BOUND" then
         RXP_.SetElementComplete(self)
@@ -781,6 +782,7 @@ function RXP_.functions.fp(self,...)
         return element
     end
     local event,arg1,arg2 = ...
+    if not self.element.step.active then return end
     if event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH then
         RXP_.SetElementComplete(self)
     end
@@ -810,8 +812,8 @@ function RXP_.functions.fly(self,...)
         element.tooltipText = RXP_.icons.fly..element.text
         return element
     end
+    if not self.element.step.active then return end
     local event = ...
-
     if event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and self.element.location then
         for i = 1,NumTaxiNodes() do
             local name = TaxiNodeName(i)
@@ -821,7 +823,7 @@ function RXP_.functions.fly(self,...)
                 return TakeTaxiNode(i)
             end
         end
-    elseif UnitOnTaxi("player") or (event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1.5) then
+    elseif (event and UnitOnTaxi("player")) or (event == "PLAYER_CONTROL_LOST" and GetTime() - RXP_.taxiTime < 1.5) then
         RXP_.SetElementComplete(self)
     end
 end
@@ -843,6 +845,7 @@ function RXP_.functions.deathskip(self,...)
         element.tooltipText = RXP_.icons.deathskip..element.text
         return element
     end
+    if not self.element.step.active then return end
     local event = ...
     if event == "CONFIRM_XP_LOSS" then
         RXP_.SetElementComplete(self)
