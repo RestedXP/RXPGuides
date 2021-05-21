@@ -316,7 +316,8 @@ step
     .isQuestTurnedIn 174
 step
 	#sticky
-	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	#completewith HistoryB
+	>>Keep an eye out for the book (zone-wide drop). You'll need this for later
 	.collect 2794,1,337
 	.accept 337 >> Accept An Old History Book
 step
@@ -351,8 +352,12 @@ step
 step
     >>Do the wolf quest if you're not yet level 25
     .xp 25
-step
-    .goto Duskwood,17.7,29.1
+step << Rogue/Druid
+    #label HistoryB
+	.goto Duskwood,17.7,29.1
+    .accept 225 >> Accept The Weathered Grave
+step << !Rogue !Druid
+	.goto Duskwood,17.7,29.1
     .accept 225 >> Accept The Weathered Grave
 step << Rogue/Druid
     .goto Westfall,56.6,52.6
@@ -464,10 +469,17 @@ step
     .turnin 148 >> Turn in Supplies from Darkshire
     .accept 149 >> Accept Ghost Hair Thread
 step
-    .goto Duskwood,79.8,47.8
+    #label HistoryB
+	.goto Duskwood,79.8,47.8
     .turnin 177 >> Turn in Look To The Stars
     .accept 181 >> Accept Look To The Stars
     .isQuestTurnedIn 174
+step
+	#sticky
+	#completewith HistoryB2
+	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.collect 2794,1,337
+	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,81.9,59.1
     .turnin 149 >> Turn in Ghost Hair Thread
@@ -566,7 +578,8 @@ step
     .turnin 173 >> Turn in Worgen in the Woods
     .accept 221 >> Accept Worgen in the Woods
 step
-    .fly Redrige>> Fly to Redridge
+   #label HistoryB2
+ .fly Redridge >> Fly to Redridge
 step << Draenei
     .goto Redridge Mountains,31.6,57.9
     .accept 128 >> Accept Blackrock Bounty
@@ -620,6 +633,12 @@ step << Draenei
 step
     .fly Westfall>> Fly to Westfall
 step
+	#sticky
+	#completewith HistoryB3
+	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.collect 2794,1,337
+	.accept 337 >> Accept An Old History Book
+step
     .goto Duskwood,18.4,56.5
     .turnin 240 >> Turn in Return to Jitters
     .turnin 453 >> Turn in Finding the Shadowy Figure
@@ -648,11 +667,15 @@ step
     .complete 323,1 --Kill Skeletal Raider (x15)
     .complete 323,2 --Kill Skeletal Healer (x3)
     .complete 323,3 --Kill Skeletal Warder (x3)
+step
+	 .goto Duskwood,23.8,35.0
+	.xp 27+13500 >> Grind to 13500+/32200xp
 step << !Hunter !Paladin
     .goto Duskwood,19.7,39.7
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
 step
-    .goto Duskwood,7.9,34.1
+    #label HistoryB3
+	.goto Duskwood,7.9,34.1
     .turnin 323 >> Turn in Proving Your Worth
     .accept 269 >> Accept Seeking Wisdom
 step
@@ -972,23 +995,20 @@ step
     .goto Arathi Highlands,45.8,46.1
     .fp >> Get the Arathi Highlands flight path
 step
-    .goto Hillsbrad Foothills,50.5,57.2
-    .turnin 538 >> Turn in Southshore
-	.isOnQuest 538
-step
 .isOnQuest 647  
 >>Run to Southshore and turn in before the timer is up
 .goto Hillsbrad Foothills,52.2,58.6
     .turnin 647 >> Turn in MacKreel's Moonshine
+step
+	.goto Hillsbrad Foothills,50.5,57.2
+    .turnin 538 >> Turn in Southshore
+	.isOnQuest 538
 step
     .goto Hillsbrad Foothills,51.9,58.7
     .accept 555 >> Accept Soothing Turtle Bisque
 step << Hunter
     .goto Hillsbrad Foothills,51.4,58.5
     .accept 536 >> Accept Down the Coast
-step
-    .goto Hillsbrad Foothills,50.3,59.0
-    .accept 659 >> Accept Hints of a New Plague?
 step
     .goto Hillsbrad Foothills,50.9,58.8
     .accept 9435 >> Accept Missing Crystals
@@ -1109,8 +1129,8 @@ step << Human Paladin
     .turnin 1642 >>Turn in The Tome of Divinity
     .accept 1643 >>Accept The Tome of Divinity
 step
-    .goto Stormwind City,74.1,7.6
-    >>Skip this step if you don't have the item in your bags
+   .isOnQuest 538
+	.goto Stormwind City,74.1,7.6
     .accept 337 >> Accept An Old History Book
     .turnin 337 >> Turn in An Old History Book
     .accept 538 >> Accept Southshore
@@ -1268,6 +1288,12 @@ step
     .turnin 159 >> Turn in Juice Delivery
     .accept 133 >> Accept Ghoulish Effigy
 step
+	#sticky
+	#completewith HistoryB4
+	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.collect 2794,1,337
+	.accept 337 >> Accept An Old History Book
+step
     .goto Duskwood,23.6,35.0
     .complete 133,1 --Collect Ghoul Rib (x7)
     .complete 58,1 --Kill Plague Spreader (x20)
@@ -1375,7 +1401,8 @@ step
     .turnin 221 >> Turn in Worgen in the Woods
     .accept 222 >> Accept Worgen in the Woods
 step
-    .goto Duskwood,73.0,75.0
+    #label HistoryB4
+	.goto Duskwood,73.0,75.0
     .complete 222,1 --Kill Nightbane Vile Fang (x8)
     .complete 222,2 --Kill Nightbane Tainted One (x8)
 step
