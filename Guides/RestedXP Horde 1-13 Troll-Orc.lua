@@ -82,7 +82,6 @@ step
     .turnin 790 >>Turn in Sarkoth
     .accept 804 >>Accept Sarkoth
 step << Warlock
-    #sticky
 .xp 3+685 >> Grind to 685+/1400xp on the way back to town
 step << Warlock
     .goto Durotar,42.6,67.3
