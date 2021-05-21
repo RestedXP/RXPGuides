@@ -82,7 +82,7 @@ step
     .turnin 790 >>Turn in Sarkoth
     .accept 804 >>Accept Sarkoth
 step << Warlock
-.xp 3+685 >> Grind to 685+/1400xp on the way back to town
+.xp 3+850 >> Grind to 850+/1400xp on the way back to town
 step << Warlock
     .goto Durotar,42.6,67.3
     .vendor >>vendor trash, buy 10 water
@@ -160,7 +160,7 @@ step << Troll Warrior
     .turnin 804 >>Turn in Sarkoth
     .accept 3065 >>Accept Simple Tablet
     .accept 789 >>Accept Sting of the Scorpid
-step << Troll Warlock
+step << Orc Warlock
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
