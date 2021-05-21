@@ -1298,7 +1298,7 @@ step
 .goto The Barrens,44.7,74.7,0
 .goto The Barrens,44.7,77.8,0
 .goto The Barrens,47.6,79.8,0
->>Search for Washte Pawne (Red Thunder Lizard) around the area. He's a red Wind Serpent that drops a quest. Accept Gann's Reclamation if you see him en route
+>>Search for Washte Pawne (Red Thunder Hawk) around the area. He's a red Wind Serpent that drops a quest. Accept Gann's Reclamation if you see him en route
 .collect 5103,1 --Collect Washte Pawne's Feather
 .accept 885 >>Accept Washte Pawne
 step
