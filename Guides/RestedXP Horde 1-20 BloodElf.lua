@@ -2382,7 +2382,7 @@ step
 .goto Ghostlands,37.4,79.3
     .complete 9170,1 --Kill Mirdoran the Fallen (x1)
 step
-    .goto Ghostlands,38.4,84.0,20 >>Go toward the Ziggurat
+    .goto Ghostlands,38.4,84.0,20 >>Go toward the Slaughterhouse
 step
     #sticky
     #label Varnis
@@ -2392,7 +2392,7 @@ step
 step
     #sticky
     #completewith Borgoth
-    +Kill Borgoth. He's a big abomination inside of one of the two Ziggurats
+    +Kill Borgoth. He's a big abomination inside of one of the two Slaughterhouses
 .goto Ghostlands,41.3,83.0,20,0
     .goto Ghostlands,32.7,90.3,20,0
 .goto Ghostlands,41.3,83.0,20,0
