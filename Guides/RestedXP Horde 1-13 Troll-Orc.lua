@@ -741,13 +741,13 @@ step
     .complete 818,2 --Crawler Mucus (8)
 step
     #label Tools
->>Check the boat closest to the shore for the Toolboxes. Check other boats if you can't find these spawns
-.goto Durotar,61.9,55.5,12 >> In the window underwater
-    .goto Durotar,62.3,56.3,12,0
-    .goto Durotar,61.4,56.1,12,0
+>>Check the boat closest to the shore for the Toolboxes. Check other boats if you can't find these spawns. They can be a bit hard to see
+.goto Durotar,61.9,55.5,10 >> In the window underwater
+    .goto Durotar,62.3,56.3,10 >> Underwater
+    .goto Durotar,61.4,56.1,10 >> Near the shore
     .complete 825,1 --Gnomish Tools (3)
 step
-    .goto Durotar,67.2,70.0,60 >>Swim to the Island
+    .goto Durotar,67.2,70.0,90 >>Swim to the Island
 step
     #sticky
     #completewith Fur
