@@ -242,7 +242,7 @@ step
     #sticky
     #label orcs1
     .goto Redridge Mountains,61.0,43.1
-    >>Kill blackrock orcs
+    >>Kill Blackrock orcs
     .complete 20,1 --Collect Battleworn Axe (x10)
 step
     .goto Redridge Mountains,57.3,52.4
@@ -278,7 +278,8 @@ step
     .goto Redridge Mountains,21.8,46.4
     .turnin 34 >> Turn in An Unwelcome Guest
 step
-    .goto Duskwood,75.7,45.3
+    >>Run to Duskwood
+	.goto Duskwood,75.7,45.3
     .accept 66 >> Accept The Legend of Stalvan
     .accept 101 >> Accept The Totem of Infliction
 step << !Rogue
@@ -313,6 +314,11 @@ step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
     .isQuestTurnedIn 174
+step
+	#sticky
+	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.collect 2794,1,337
+	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,82.0,59.0
     .turnin 175 >> Turn in Look To The Stars
