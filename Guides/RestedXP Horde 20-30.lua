@@ -1520,6 +1520,7 @@ step
     .accept 5062 >> Accept Sacred Fire
     .turnin 9431 >> Turn in A Different Approach
     .accept 5151 >> Accept Hypercapacitor Gizmo
+    .accept 9433 >> A Dip in the Moonwell
 step
     #sticky
     #completewith steelsnap
