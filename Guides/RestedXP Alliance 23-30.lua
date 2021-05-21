@@ -965,11 +965,22 @@ step
     .goto Arathi Highlands,45.8,46.1
     .fp >> Get the Arathi Highlands flight path
 step
+	#sticky
+	#completewith next
+	+If you're doing First Aid, buy the First Aid manuals, potions, and scrolls from Deneb. Otherwise, skip this step
+    .goto Arathi Highlands,26.8,51.0,30,0
+    .goto Arathi Highlands,23.9,60.6,30,0
+    .goto Arathi Highlands,27.0,58.8
+	.collect 16084,1 
+	.collect 16112,1
+	.collect 16113,1 
+step
     .goto Hillsbrad Foothills,50.5,57.2
     .turnin 538 >> Turn in Southshore
 	.isOnQuest 538
 step
-    .goto Hillsbrad Foothills,52.2,58.6
+.isOnQuest 647    
+.goto Hillsbrad Foothills,52.2,58.6
     .turnin 647 >> Turn in MacKreel's Moonshine
 step
     .goto Hillsbrad Foothills,51.9,58.7
@@ -977,6 +988,9 @@ step
 step << Hunter
     .goto Hillsbrad Foothills,51.4,58.5
     .accept 536 >> Accept Down the Coast
+step
+    .goto Hillsbrad Foothills,50.3,59.0
+    .accept 659 >> Accept Hints of a New Plague?
 step
     .goto Hillsbrad Foothills,50.9,58.8
     .accept 9435 >> Accept Missing Crystals
