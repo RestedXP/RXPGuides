@@ -980,6 +980,8 @@ step << Orc Hunter/Troll Hunter
 .goto Silvermoon City,91.2,38.7
     .train 202 >>Train 2h Swords
 step << Orc/Troll/Tauren
+    .goto Eversong Woods,56.7,49.6,20 >>Run out of Silvermoon
+step << Orc/Troll/Tauren
     .goto Eversong Woods,54.4,50.7
     .fp >> Get the Silvermoon City Flight Path
 step << Undead/BloodElf !Hunter
@@ -1008,10 +1010,12 @@ step << Paladin/Rogue
     >>Train Blacksmithing. You'll get mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You can skip Blacksmithing if you wish
 .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
+    .vendor >> vendor trash, repair
     .train 2018 >>Train Blacksmithing
 step << !Paladin !Rogue
     .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
+    .vendor >> vendor trash, repair
 step << BloodElf Hunter  
     .goto Eversong Woods,60.3,62.8
     .turnin 9484 >> Turn in Taming the Beast
