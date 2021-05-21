@@ -1082,11 +1082,11 @@ step
 step
     .goto Ashenvale,26.2,38.7
     .turnin 973 >> Turn in The Tower of Althalaxx
-step << NightElf
+step << NightElf/Draenei
     .goto Ashenvale,20.3,42.4
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
-step << NightElf
+step << NightElf/Draenei
     .goto Ashenvale,20.3,42.4
     .complete 1023,1 --Collect Glowing Gem (x1)
 step
@@ -1108,16 +1108,16 @@ step
 step
     .goto Ashenvale,14.8,31.3
     .turnin 1009 >> Turn in Ruuzel
-step << NightElf
+step << NightElf/Draenei
     .hs >> Hearth to Astranaar
-step << Dwarf/Gnome/Human
+step << !NightElf !Draenei
     .goto Ashenvale,20.3,42.4
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
-step << Dwarf/Gnome/Human
+step << !NightElf !Draenei
     .goto Ashenvale,20.3,42.4
     .complete 1023,1 --Collect Glowing Gem (x1)
-step << Dwarf/Gnome/Human
+step << !NightElf !Draenei
     #sticky
     #completewith next
     .deathskip >>Head to the east side of the lake, die on purpose and respawn at Astranaar
