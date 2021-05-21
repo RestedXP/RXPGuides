@@ -1657,7 +1657,6 @@ step << Druid
     .train 5178 >>Train Wrath r3
     .train 782 >>Train Thorns r2
 .train 5187 >>Train Healing Touch r3
-.train 8946 >>Train Cure Poison
     .train 5211 >>Train Bash
     --Add Poison q. Add earthroot purchase from AH
 step << Priest/Mage/Warlock/Rogue
