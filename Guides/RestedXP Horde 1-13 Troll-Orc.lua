@@ -638,10 +638,13 @@ step
 step
     #requires KulTiras
 .goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer, or run back
-step
+step << Shaman/Warrior
     .goto Durotar,52.2,43.2
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
+step << !Shaman !Warrior
+    .goto Durotar,52.2,43.2
+    .turnin 823 >>Turn in Report to Orgnil
 step
     .goto Durotar,51.9,43.5
     .turnin 784 >>Turn in Vanquish the Betrayers
@@ -655,6 +658,8 @@ step
 step
 .goto Durotar,49.9,40.3
     .turnin 791 >>Turn in Carry Your Weight
+step << !Shaman !Warrior
+    .abandon 806 >>Abandon Dark Storms
 step << Shaman
     .goto Durotar,52.0,40.5
     .money <0.0480
@@ -977,6 +982,10 @@ step << Warlock
 step << Warlock
 .goto Orgrimmar,49.0,94.2,20    >>Run into Orgrimmar
 step << Warlock
+    .goto Orgrimmar,31.8,37.8
+    .turnin 5726 >>Turn in Hidden Enemies
+    .accept 5727 >>Accept Hidden Enemies
+step << Warlock
     .goto Orgrimmar,48.3,45.3
     .turnin 1501 >>Turn in Creature of the Void
     .accept 1504 >>Accept The Binding
@@ -984,6 +993,10 @@ step << Warlock
     .isOnQuest 832
 .goto Orgrimmar,49.5,50.6
     .turnin 832 >>Turn in Burning Shadows
+step << Warlock
+    >>Talk to Neeru and finish his gossip options
+.goto Orgrimmar,49.5,50.6
+    .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade (1)
 step << Warlock
     .goto Orgrimmar,49.5,50.0
     >>Use the Glyphs of Summoning to summon a voidwalker. Kill it
@@ -994,7 +1007,7 @@ step << Warlock
     .turnin 1504 >>Turn in The Binding
 step << Warlock
     .goto Orgrimmar,31.8,37.8
-    .turnin 5726 >>Turn in Hidden Enemies
+    .turnin 5727 >>Turn in Hidden Enemies
 step << Warlock
     #sticky
     #completewith next
