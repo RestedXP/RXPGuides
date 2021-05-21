@@ -988,7 +988,7 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene
     .collect 22776,1 --Collect Springpaw Appetizers
-step << BloodElf/!Hunter
+step << BloodElf Paladin/BloodElf Rogue/BloodElf Priest/BloodElf Mage/BloodElf Warlock
     .goto Eversong Woods,60.3,62.8
     .turnin 9359 >>Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
