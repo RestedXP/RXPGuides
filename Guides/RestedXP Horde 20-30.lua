@@ -221,15 +221,21 @@ step
 #requires deepmossegg
     .hs >> Hearth to Crossroads
 step
-    .goto The Barrens,51.5,30.2
-    .turnin 848 >> Turn in Fungal Spores
-step
     .goto The Barrens,52.2,31.9
     .turnin 870 >> Turn in The Forgotten Pools
     .accept 877 >> Accept The Stagnant Oasis
 step
-    .goto The Barrens,51.5,30.2
+    .goto The Barrens,52.3,31.9
+    .vendor >> vendor trash, repair
+step
+    >>Turning this in will start a timed quest. Log out here if you’re going to be busy in the next 45+ minutes
+.goto The Barrens,51.5,30.2
+    .turnin 848 >> Turn in Fungal Spores
     .accept 853 >> Accept Apothecary Zamah
+step
+    #sticky
+    #completewith Zamah
++You have 45 minutes to complete the Apothecary quest, so keep an eye on its timer - skip the quest if you fail it
 step
 #sticky
 #completewith Horns
@@ -348,15 +354,15 @@ step << Druid
 .accept 27 >>Accept A Lesson to Learn
 .trainer >> Go and train your class spells
 step
-    .goto Thunder Bluff,36.6,51.3
-    .accept 742 >> Accept The Ashenvale Hunt
-step
     .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
 step
+#label Zamah
+>>Talk to Clarice Foster
 .goto Thunder Bluff,27.5,24.7
     .accept 264 >> Accept Until Death Do Us Part
 step
 .goto Thunder Bluff,23.0,20.9
+>> If you failed the Zamah quest, just abandon it
     .turnin 853 >> Turn in Apothecary Zamah
 .accept 962 >> Accept Serpentbloom
 step << Tauren
@@ -482,6 +488,9 @@ step
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
+step
+    .goto Stonetalon Mountains,45.1,59.8
+    .fp >>Get the Sun Rock Retreat Flight Path
 step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
@@ -908,7 +917,6 @@ step
     .accept 502 >> Accept Elixir of Pain
     .turnin 499 >> Turn in Elixir of Suffering
     .accept 1067 >> Accept Return to Thunder Bluff
-    
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
@@ -1014,7 +1022,6 @@ step
     .accept 6441 >> Accept Satyr Horns
 step
     .goto Ashenvale,73.8,61.5
-    .turnin 742 >> Turn in The Ashenvale Hunt
     .turnin 6383 >> Turn in The Ashenvale Hunt
 step
     .goto Ashenvale,74.0,60.6
@@ -1304,7 +1311,7 @@ step
 .goto The Barrens,44.7,74.7,0
 .goto The Barrens,44.7,77.8,0
 .goto The Barrens,47.6,79.8,0
->>Search for Washte Pawne (Red Thunder Hawk) around the area. He's a red Wind Serpent that drops a quest. Accept Gann's Reclamation if you see him en route
+>>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Accept Gann's Reclamation if you see him en route
 .collect 5103,1 --Collect Washte Pawne's Feather
 .accept 885 >>Accept Washte Pawne
 step
@@ -1318,7 +1325,7 @@ step
 #label Washte
 #completewith next
 .goto The Barrens,44.7,74.7,0
->>Search for Washte Pawne. He's a red Wind Serpent that drops a quest. If you can't find him in this last spot, skip the quest
+>>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. If you can't find him in this last spot, skip the quest
 .collect 5103,1 --Collect Washte Pawne's Feather
 .accept 885 >>Accept Washte Pawne
 step
