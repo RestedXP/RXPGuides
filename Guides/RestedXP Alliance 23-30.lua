@@ -1018,6 +1018,8 @@ step
     >>Head north farming turtle meat along the river, once you get at the end of the river, head northwest into WPL
     .fp >> Get the Chillwind Camp flight path
 step
+    .fly Wetlands>> Fly to Wetlands
+step
     .goto Wetlands,10.6,60.5
     .turnin 292 >> Turn in The Eye of Paleth
     .accept 293 >> Accept Cleansing the Eye
