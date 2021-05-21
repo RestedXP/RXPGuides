@@ -364,6 +364,7 @@ step
 	#sticky
 	#label wolves
     .goto Western Plaguelands,46.0,47.7,0
+	>>The wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find wolves.
     .complete 4984,1 --Kill Diseased Wolf (x8)
 step
     .goto Western Plaguelands,47.8,50.8
