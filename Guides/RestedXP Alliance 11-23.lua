@@ -978,7 +978,8 @@ step
     .turnin 948 >> Turn in Onu
     .accept 944 >> Accept The Master's Glaive
 step
-    .goto Darkshore,36.6,76.6
+   >>Clear the camp, but be careful as going next to the campfire will start an event spawning 3 waves of mobs. Be sure to run away from the campfire so you don't keep aggroing them and can eat/drink after each wave. Murkdeep nets so be careful
+	.goto Darkshore,36.6,76.6
     .complete 4740,1 --Kill Murkdeep (x1)
 step
     .goto Darkshore,35.7,83.7
