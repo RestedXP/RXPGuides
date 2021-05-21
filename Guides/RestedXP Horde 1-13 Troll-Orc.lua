@@ -327,9 +327,10 @@ step
 .goto Durotar,43.7,53.8
     .complete 6394,1 --Thazz'ril's Pick (1)
 step
-    .goto Durotar,44.7,54.0,10 >>Go back to this part of the cave
-step
-    .goto Durotar,43.4,52.0,10 >>Follow it to here
+    #sticky
+    #completewith next
+.goto Durotar,44.7,54.0,10,0
+    .goto Durotar,43.4,52.0,10 >>Go back to this part of the cave, then follow it to here
 step
     >>Kill Yarrog. Loot him for the Medallion
 .goto Durotar,42.7,53.0
