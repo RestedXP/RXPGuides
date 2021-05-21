@@ -71,7 +71,9 @@ step
 step
     .goto Darkshore,36.6,45.6
     .turnin 4681 >> Turn in Washed Ashore
-step
+step << !Dwarf/!Hunter
+    .xp 12 >> Grind to level 12
+step << !Dwarf/!Hunter
     .goto Darkshore,37.7,43.4
     .accept 4811 >> Accept The Red Crystal
 step
@@ -87,14 +89,14 @@ step << Druid
     .goto Darkshore,43.5,45.9
     >>Use the Cenarion Moondust inside the cave, defeat Lunaclaw and speak with his spirit after
     .complete 6001,1 --Defeat Lunaclaw (x1)
-step
+step << !Dwarf/!Hunter
     .goto Darkshore,47.2,48.6
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
-step
+step << !Dwarf/!Hunter
     .goto Darkshore,37.7,43.4
     .turnin 4811 >> Turn in The Red Crystal
     .accept 4812 >> Accept As Water Cascades
-step
+step << !Dwarf/!Hunter
     .goto Darkshore,37.8,44.0
 	>>Fill the water tube at the moonwell
     .complete 4812,1 --Collect Moonwell Water Tube (x1)
@@ -108,7 +110,7 @@ step
     .goto Darkshore,44.1,36.3
     .turnin 954 >> Turn in Bashal'Aran
     .accept 955 >> Accept Bashal'Aran
-step
+step << !Dwarf/!Hunter
     .goto Darkshore,47.3,48.6
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
@@ -151,10 +153,16 @@ step
     #sticky
     #completewith next
     .hs >> Hearth to Auberdine
-step
+step << !Dwarf/!Hunter
     .goto Darkshore,37.7,43.4
     .turnin 4813 >> Turn in The Fragments Within
-step
+step << Dwarf Hunter
+    .goto Darkshore,37.7,43.4
+    .accept 4811 >> Accept The Red Crystal
+step << Dwarf Hunter
+    .goto Darkshore,47.2,48.6
+    .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
+step << !Dwarf/!Hunter
     .goto Darkshore,39.9,54.9
     .complete 985,1 --Kill Blackwood Pathfinder (x8)
     .complete 985,2 --Kill Blackwood Windtalker (x5)
@@ -189,6 +197,10 @@ step
 step
     .goto Darkshore,40.3,59.7
     .turnin 953 >> Turn in The Fall of Ameth'Aran
+step << Dwarf Hunter
+    .goto Darkshore,39.9,54.9
+    .complete 985,1 --Kill Blackwood Pathfinder (x8)
+    .complete 985,2 --Kill Blackwood Windtalker (x5)
 step
     #sticky
     #completewith next
@@ -207,6 +219,9 @@ step
 step
     .goto Darkshore,39.3,43.5
     .turnin 985 >> Turn in How Big a Threat?
+step << Dwarf Hunter
+    .goto Darkshore,37.7,43.4
+    .turnin 4811 >> Turn in The Red Crystal
 step
     .goto Darkshore,36.6,45.6
     .turnin 4722 >> Turn in Beached Sea Turtle
