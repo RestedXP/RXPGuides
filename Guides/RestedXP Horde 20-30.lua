@@ -396,17 +396,18 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
 step
-.goto Kalimdor,50.4,34.4,15 >>Go up the mountain here
+.goto The Barrens,47.0,34.7,15,0
+.goto The Barrens,46.4,34.9,15,0
+.goto The Barrens,46.6,34.8,10 >>Go up the mountain here
 step
-.goto Kalimdor,50.4,34.4,10 >>Go into here
+.goto Kalimdor,51.9,55.4,30,0
+.goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
 step
-.goto Kalimdor,51.9,55.5,10 >>Jump down into the eye
-step
+>>Go into the eye of the cave
 .goto Kalimdor,51.9,55.4
-.goto The Barrens,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
-.goto The Barrens,46.0,36.4,15 >>Leave the eye. Go to the mouth of the cave
+.goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
 step
 #sticky
 #label Deviate
@@ -418,44 +419,49 @@ step
 >>Look for green and red flowers on the ground
 .complete 962,1 --Serpentbloom (10)
 step
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
->>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.2,55.2
+>>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
 .complete 959,1 --Collect 99-Year-Old Port (1)
 step
-#sticky
-#completewith next
-.goto Kalimdor,51.9,54.9,40 >>Enter the deeper part of the cave
+.goto Kalimdor,51.9,54.9,20 >>Enter the deeper part of the cave
 step
-    #sticky
-#completewith next
->>Keep an eye out for two rare mobs, as they can both drop blue BoE axes, among other gear
-.goto Kalimdor,52.5,54.8,30 >> Trigore
-.goto Kalimdor,52.8,55.0,30 >> Boahn
-step
->>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+.goto Kalimdor,52.6,54.5
+>>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
 .complete 1491,1 --Wailing Essence (6)
 step
 #requires Serpentbloom
-.goto The Barrens,45.4,28.4,3000 >> .
+.goto Kalimdor,52.8,55.0,3000 >> .
 step
-#sticky
-#completewith next
 #requires Deviate
+>>Run back to the eye of the cave
 .goto Kalimdor,51.9,55.4
-+Run back and talk to the druids on top of the mouth of the cave
-step
-.goto The Barrens,51.9,55.4
 .turnin 1486 >>Turn in Deviate Hides
 step
     .goto The Barrens,45.4,28.4
