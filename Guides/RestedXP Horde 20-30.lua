@@ -814,8 +814,8 @@ step << Rogue
 step
     #sticky
 #label syndicateq
-    .goto Hillsbrad Foothills,79.4,40.2,100
 >>Kill Syndicates in the area
+.goto Hillsbrad Foothills,77.8,44.1,0
     .complete 549,1 --Kill Syndicate Rogue (x10)
 .complete 549,2 --Kill Syndicate Watchman (x10)
 step
@@ -832,6 +832,7 @@ step << Rogue/Hunter/Shaman
 .goto Hillsbrad Foothills,80.1,38.9
     >>vendor trash, repair if needed. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
 step
+.goto Hillsbrad Foothills,79.8,39.3
 >>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
     .collect 3499,1 
 step
