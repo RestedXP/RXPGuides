@@ -1692,10 +1692,8 @@ step << Mage
 .train 1449 >>Train Arcane Explosion
     .train 837 >>Train Frostbolt r3
     --might remove frostbolt
-step << Warlock
+step << !BloodElf Warlock
     .goto Silvermoon City,74.4,47.2
-    >>Use Voidwalker from now on
-    .turnin 9619 >>Turnin The Rune of Summoning
     .train 689 >>Train Drain Life
     .train 6222 >>Train Corruption r2
 step << Priest/Mage/Warlock/Rogue/Druid
