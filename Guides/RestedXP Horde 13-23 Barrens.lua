@@ -1027,7 +1027,7 @@ step
 .goto Ashenvale,13.6,9.0,30,0
         >>Swim under the water, and enter Blackfathom Deeps. Grind mobs until a Damp Note drops, and loot the Sapphires from the walls in the tunnel.
 .collect 16790,1,6564 --Collect Damp Note
-    .accept 6564 >> Accept Allegiance to the Old Gods
+    .accept 6564 >> Accept Allegiance to the Old Gods (from Damp Note in bag)
     .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
 step
 #requires wrathtailhead
