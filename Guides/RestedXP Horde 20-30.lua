@@ -381,7 +381,7 @@ step << !Tauren
 .fp >>Get the Thunder Bluff Flight Path
 step
     .goto Thunder Bluff,47.0,49.8
-.fly >> Fly to Ratchet
+.fly Ratchet >> Fly to Ratchet
 step
     .goto The Barrens,62.4,37.6
     .turnin 865 >> Turn in Raptor Horns
@@ -393,7 +393,7 @@ step
     .accept 1095 >> Accept Further Instructions
 step
     .goto The Barrens,63.1,37.2
-.fly >> Fly to Crossroads
+.fly Crossroads >> Fly to Crossroads
 step
     .goto The Barrens,52.0,31.6
     .turnin 4921 >> Turn in Lost in Battle
@@ -600,7 +600,7 @@ step
     .accept 1065 >> Accept Journey to Tarren Mill
 step
     .goto Thunder Bluff,47.0,49.9
-    .fly >> Fly to Ratchet
+    .fly Ratchet >> Fly to Ratchet
 step
     .goto The Barrens,63.1,37.6
     .turnin 959 >>Turn in Trouble at the Docks
@@ -617,7 +617,7 @@ step << Druid
     .goto Orgrimmar,12.4,66.1,20 >>Enter Orgrimmar through the west entrance
 step << !Druid
     .goto Thunder Bluff,47.0,49.9
-    .fly >> Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
@@ -1203,7 +1203,7 @@ step
     .turnin 6482 >> Turn in Freedom to Ruul
 step
     .goto Ashenvale,73.2,61.5
-    .fly >> Fly to Zoram'gar Outpost
+    .fly Zoram'gar >> Fly to Zoram'gar Outpost
 step
     .goto Ashenvale,11.9,34.5
     .turnin 216 >> Turn in Between a Rock and a Thistlefur
@@ -1221,7 +1221,7 @@ step
     .hs >> Hearth to Splintertree Post
 step << !Warrior !Hunter !Shaman !Druid !Mage !Priest
     .goto Ashenvale,73.2,61.6
-    .fly >> Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
@@ -1236,10 +1236,10 @@ step << Rogue
 .trainer >> Go and train your class spells
 step << !Warrior !Hunter !Shaman !Druid !Mage !Priest
 .goto Orgrimmar,45.2,63.8
-    .fly >> Fly to Thunder Bluff
+    .fly Thunder Bluff >> Fly to Thunder Bluff
 step << !Rogue !Paladin !Warlock
     .goto Ashenvale,73.2,61.6
-    .fly >> Fly to Thunder Bluff
+   .fly Thunder Bluff >> Fly to Thunder Bluff
 ]])
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
@@ -1291,7 +1291,7 @@ step
 .home >> Set your Hearthstone to Thunder Bluff
 step
     .goto Thunder Bluff,46.8,50.1
-    .fly >> Fly to Camp Taurajo
+    .fly Camp Taurajo >> Fly to Camp Taurajo
 step << Warrior
     >>In the building
 .goto The Barrens,44.7,59.4
@@ -1666,7 +1666,7 @@ step
     .accept 5088 >> Accept Arikara
 step
     .goto Thunder Bluff,46.9,49.4
-    .fly >> Fly to Camp Taurajo
+    .fly Camp Taurajo >> Fly to Camp Taurajo
 step
     .goto The Barrens,44.6,59.2
     .turnin 879 >> Turn in Betrayal from Within
@@ -1677,7 +1677,7 @@ step
     .accept 1153 >> Accept A New Ore Sample
 step
     .goto The Barrens,44.4,59.1
-    .fly >> Fly to Freewind Post
+    .fly Freewind Post>> Fly to Freewind Post
 step
     .goto Thousand Needles,44.8,49.0
     .turnin 4767 >> Turn in Wind Rider
@@ -1756,7 +1756,7 @@ step
     .fp >> Get the Camp Mojache flight path
 step
     .goto Feralas,75.4,44.4
-    .fly >> Fly to Freewind Post
+    .fly Freewind Post >> Fly to Freewind Post
 step
     .goto Thousand Needles,45.7,50.8
     .turnin 5064 >> Turn in Grimtotem Spying
@@ -1781,7 +1781,7 @@ step
     .hs >> Hearth to Freewind Post
 step
     .goto Thousand Needles,45.1,49.2
-    .fly >> Fly to Camp Taurajo
+    .fly Camp Taurajo >> Fly to Camp Taurajo
 step
 .isOnQuest 885
     .goto The Barrens,44.9,59.1
@@ -1799,7 +1799,7 @@ step
     .turnin 1153 >> Turn in A New Ore Sample
 step
     .goto The Barrens,44.4,59.1
-    .fly >> Fly to Crossroads
+    .fly Crossroads>> Fly to Crossroads
 step
     .goto The Barrens,51.5,30.9
     .turnin 906 >> Turn in Betrayal from Within
@@ -1812,7 +1812,7 @@ step << Warrior
 .turnin 1825 >>Turn in Speak with Thun'grim
 step << !Warrior
     .goto The Barrens,51.5,30.3
-    .fly >> Fly to Ratchet
+    .fly Ratchet >> Fly to Ratchet
 step << Warrior
 .goto The Barrens,63.3,38.4,150 >>Run to Ratchet
 step
@@ -1823,7 +1823,7 @@ step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
     .goto Ashenvale,73.2,61.5
-    .fly >> Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
