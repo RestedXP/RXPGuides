@@ -744,7 +744,7 @@ step << !Druid
 step << Druid
     .goto The Barrens,44.5,59.1
     .fp >>Get the Camp Taurajo Flight Path
-    .fly >>Fly to Thunder Bluff
+    .fly Thunder Bluff >>Fly to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,45.8,64.4
     .home >>Set your Hearthstone to Thunder Bluff
@@ -778,7 +778,7 @@ step << Druid
 .accept 6002 >>Accept Body and Heart
 step << Druid
 .goto Thunder Bluff,47.0,49.8
-.fly >>Fly to Camp Taurajo
+.fly Camp Taurajo >>Fly to Camp Taurajo
 step << Druid
     >>Run to the Moonkin Stone, and use the Cenarion Lunardust in your inventory. Kill Lunaclaw, then talk to her
 .goto The Barrens,42.0,60.9
