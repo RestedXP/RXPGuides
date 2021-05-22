@@ -1781,7 +1781,6 @@ step
 step
     .goto The Barrens,51.5,30.9
     .turnin 906 >> Turn in Betrayal from Within
-    .accept 871 >> Accept Disrupt the Attacks
 step
     .goto The Barrens,51.1,29.7
     .accept 1145 >> Accept The Swarm Grows
