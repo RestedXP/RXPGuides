@@ -2043,7 +2043,7 @@ step
     #sticky
     #label Juju
     .goto Ghostlands,60.5,29.1,0
-    >>Kill and loot trolls for Troll Juju. Burn the mummified corpses on the ground. Try to get 8+ corpses burned before starting the escort, you may have to go into the western room
+    >>Kill and loot trolls for Troll Juju. Burn the mummified corpses on the ground near the walls. Try to get 8+ corpses burned before starting the escort, you may have to go into the western room
     .complete 9199,1 --Collect Troll Juju (x8)
     .complete 9193,1 --Collect Mummified Troll Remains Burned (x10)
 step << Rogue
