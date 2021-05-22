@@ -1109,7 +1109,7 @@ step
 step
 #sticky
 #label Charms
->>Loot the tiny chests inside the tunnel.
+>>Loot the tiny chests inside the tunnel (complete this before you start the escort)
 .complete 6462,1 --Collect Troll Charm (x8)
 step
     >>This starts an escort
