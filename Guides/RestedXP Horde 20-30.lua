@@ -814,6 +814,7 @@ step << Rogue
 step
     #sticky
 #label syndicateq
+    .goto Hillsbrad Foothills,79.4,40.2,100
 >>Kill Syndicates in the area
     .complete 549,1 --Kill Syndicate Rogue (x10)
 .complete 549,2 --Kill Syndicate Watchman (x10)
