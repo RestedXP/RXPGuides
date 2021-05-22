@@ -1227,11 +1227,11 @@ step << Gnome/Dwarf
     .fp >> Get the Thelsamar flight path
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
-    .fly >> Fly to Ironforge
+    .fly Ironforge >> Fly to Ironforge
 step << !Gnome !Dwarf
     .goto Loch Modan,33.9,51.0
     .fp >> Get the Thelsamar flight path
-    .fly >> Fly to Ironforge
+    .fly Ironforge >> Fly to Ironforge
 step << Gnome/Dwarf
     .goto Ironforge,51.5,26.3
     .turnin 6391 >> Turn in Ride to Ironforge
@@ -1280,7 +1280,7 @@ step << Gnome Rogue/Dwarf Rogue
 step << Gnome !Rogue/Dwarf !Rogue
     .goto Ironforge,55.5,47.8
     .turnin 6388 >> Turn in Gryth Thurden
-    .fly >> Fly to Menethil
+    .fly Menethil >> Fly to Menethil
 step << Rogue
 .goto Ironforge,77.0,51.0,30 >>Enter the Deeprun Tram
 step << Rogue
@@ -1310,7 +1310,7 @@ step << Gnome Rogue/Dwarf Rogue
 .turnin 6392 >> Turn in Return to Brock
 step << Rogue
     .goto Ironforge,55.5,47.8
-    .fly >> Fly to Menethil
+    .fly Menethil >> Fly to Menethil
 step << Gnome/Dwarf
     .abandon 6392 >> Abandon Return to Brock
 step
@@ -1982,7 +1982,7 @@ step
     .fp >> Get the Thelsamar flight path
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
-    .fly >> Fly to Ironforge
+    .fly Ironforge >> Fly to Ironforge
 step
     .goto Ironforge,51.5,26.3
     .turnin 6391 >> Turn in Ride to Ironforge
@@ -2295,7 +2295,7 @@ step
 step
     .goto Redridge Mountains,30.6,59.4
     .fp >> Get the Redridge Mountains flight path
-    .fly >> Fly to Stormwind
+    .fly Stormwind >> Fly to Stormwind
 step
     >>Choose rockets. These have very good damage, and can be used for splitpulling
     .goto Stormwind City,56.2,64.6
@@ -2551,7 +2551,7 @@ step
     .goto Loch Modan,32.0,47.2,150 >> Run to Thelsamar
 step
 .goto Loch Modan,33.9,51.0
-    .fly >> Fly to Ironforge
+    .fly Ironforge >> Fly to Ironforge
 step
     #sticky
     #label Wand1
@@ -2577,7 +2577,7 @@ step
     .vendor >>Buy Consume Shadows r1, then Sacrifice r1
 step
     .goto Ironforge,55.5,47.8
-    .fly >> Fly to Menethil
+    .fly Menethil >> Fly to Menethil
 step
     .money <0.076
     .goto Wetlands,10.4,56.0,15,0
@@ -3190,7 +3190,7 @@ step
 .goto Ironforge,77.0,51.0,40 >>Go back into Ironforge
 step
     .goto Ironforge,55.5,47.8
-    .fly Wetlands >> Fly to Wetlands
+    .fly Menethil >> Fly to Menethil
 step
     .goto Wetlands,4.6,57.2
     .zone Darkshore >> Take the boat to Darkshore
