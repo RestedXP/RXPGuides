@@ -728,13 +728,10 @@ step << Hunter
         #sticky
        #label oldwhitebark
 .goto Eversong Woods,35.0,84.2
->>Kill and loot Old Whitebark. Loot him for his pendant to start a quest.
-        .collect 23228,1 --Collect Old Whitebark's Pendant (x1)
+>>Kill Old Whitebark. Loot him for his pendant. Click the pendant to start the quest
+        .collect 23228,1,8474 --Collect Old Whitebark's Pendant (x1)
+.accept 8474 >> Accept Old Whitebark's Pendant
 step << Hunter
-      #sticky
-#label oldwhitebark
-    .accept 8474 >> Accept Old Whitebark's Pendant
-    .goto Eversong Woods,36.5,86.7
     >>Be careful as the Green Keepers have a double-damage Heroic Strike spell
     .complete 8473,1 --Kill Withered Green Keeper (x10)
 step << Hunter
@@ -1384,13 +1381,10 @@ step << !BloodElf/!Hunter
         #sticky
        #label oldwhitebark
 .goto Eversong Woods,35.0,84.2
->>Kill and loot Old Whitebark. Loot him for his pendant to start a quest.
-        .collect 23228,1 --Collect Old Whitebark's Pendant (x1)
+>>Kill Old Whitebark. Loot him for his pendant. Click the pendant to start the quest
+        .collect 23228,1,8474 --Collect Old Whitebark's Pendant (x1)
+.accept 8474 >> Accept Old Whitebark's Pendant
 step << !BloodElf/!Hunter
-      #sticky
-#label oldwhitebark
-.goto Eversong Woods,35.0,84.2
-    .accept 8474 >> Accept Old Whitebark's Pendant
     >>Be careful as the Green Keepers have a double-damage Heroic Strike spell
     .complete 8473,1 --Kill Withered Green Keeper (x10)
 step << !BloodElf/!Hunter
