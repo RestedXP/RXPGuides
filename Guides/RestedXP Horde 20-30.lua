@@ -1575,6 +1575,9 @@ step
 .goto Feralas,89.6,46.3
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
 step
+.goto Thousand Needles,18.7,22.2,40,0
+.xp 29 >> Grind to 500+/44300xp
+step
     #label messenger
 >>Search for Steelsnap (Hyena). He patrols counter-clockwise
 .goto Thousand Needles,10.9,23.2,40,0
