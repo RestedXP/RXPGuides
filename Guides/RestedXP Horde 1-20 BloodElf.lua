@@ -1389,6 +1389,7 @@ step << !BloodElf/!Hunter
 step << !BloodElf/!Hunter
       #sticky
 #label oldwhitebark
+.goto Eversong Woods,35.0,84.2
     .accept 8474 >> Accept Old Whitebark's Pendant
     >>Be careful as the Green Keepers have a double-damage Heroic Strike spell
     .complete 8473,1 --Kill Withered Green Keeper (x10)
