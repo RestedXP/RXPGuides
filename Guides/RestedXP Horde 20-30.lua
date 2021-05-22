@@ -872,7 +872,17 @@ step
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
 .complete 527,2 --Kill Hillsbrad Farmhand (x6)
 step
->>Kill Farmer Ray in the 2nd floor of the house
+>>Kill Farmer Ray. He can be in the 1st or 2nd floor of the house. He can also be outside under the grapevine (hut)
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
 .goto Hillsbrad Foothills,33.2,34.8
 .complete 527,3 --Kill Farmer Ray (x1)
 step
