@@ -1674,7 +1674,5 @@ step << Shaman
     .goto The Exodar,29.6,33.4
     .turnin 9554 >> Turn in Call of Air
 step << Shaman
-    #sticky
-    #completewith next
     .hs >> Hearth to Wetlands
 ]])
