@@ -728,13 +728,10 @@ step << Hunter
         #sticky
        #label oldwhitebark
 .goto Eversong Woods,35.0,84.2
->>Kill and loot Old Whitebark. Loot him for his pendant to start a quest.
-        .collect 23228,1 --Collect Old Whitebark's Pendant (x1)
+>>Kill Old Whitebark. Loot him for his pendant. Click the pendant to start the quest
+        .collect 23228,1,8474 --Collect Old Whitebark's Pendant (x1)
+.accept 8474 >> Accept Old Whitebark's Pendant
 step << Hunter
-      #sticky
-#label oldwhitebark
-    .accept 8474 >> Accept Old Whitebark's Pendant
-    .goto Eversong Woods,36.5,86.7
     >>Be careful as the Green Keepers have a double-damage Heroic Strike spell
     .complete 8473,1 --Kill Withered Green Keeper (x10)
 step << Hunter
@@ -980,17 +977,22 @@ step << Orc Hunter/Troll Hunter
 .goto Silvermoon City,91.2,38.7
     .train 202 >>Train 2h Swords
 step << Orc/Troll/Tauren
+    .goto Eversong Woods,56.7,49.6,20 >>Run out of Silvermoon
+step << Orc/Troll/Tauren
     .goto Eversong Woods,54.4,50.7
     .fp >> Get the Silvermoon City Flight Path
 step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene
     .collect 22776,1 --Collect Springpaw Appetizers
-step << BloodElf/!Hunter
+step << BloodElf !Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9359 >>Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
 step << BloodElf Hunter
+    .goto Eversong Woods,60.3,62.8
+    .accept 8476 >> Accept Amani Encroachment
+step << !BloodElf
     .goto Eversong Woods,60.3,62.8
     .accept 8476 >> Accept Amani Encroachment
 step << BloodElf Hunter    
@@ -1008,10 +1010,12 @@ step << Paladin/Rogue
     >>Train Blacksmithing. You'll get mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You can skip Blacksmithing if you wish
 .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
+    .vendor >> vendor trash, repair
     .train 2018 >>Train Blacksmithing
 step << !Paladin !Rogue
     .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
+    .vendor >> vendor trash, repair
 step << BloodElf Hunter  
     .goto Eversong Woods,60.3,62.8
     .turnin 9484 >> Turn in Taming the Beast
@@ -1040,11 +1044,11 @@ step
     .complete 8476,1 --Kill Amani Berserker (x5)  
 .complete 8476,2 --Kill Amani Axe Thrower (x5)
 step
->>Otembe has a very short respawn timer. Quickly run over to the cage and accept the quest.
      .goto Eversong Woods,70.1,72.3
     .complete 8477,1 --Collect Otembe's Hammer (x1) 
 step
-    .goto Eversong Woods,70.5,72.3
+    >>Otembe has a very short respawn timer. Quickly run over to the cage and accept the quest.
+.goto Eversong Woods,70.5,72.3
     .accept 8479 >> Accept Zul'Marosh    
 step
 >>Zul'Marosh is on the top floor of the hut. Kill & loot him. He drops a quest.
@@ -1268,6 +1272,8 @@ step << Druid
     .train 8936 >>Train Regrowth
     .train 5229 >>Train Enrage
 step << Orc Warlock
+.goto Silvermoon City,75.3,44.5,20 >>Enter the building, go downstairs
+step << Orc Warlock
     .goto Silvermoon City,74.4,47.2
     .train 755 >>Train Health Funnel
     .train 705 >>Train Shadow Bolt r3
@@ -1375,12 +1381,10 @@ step << !BloodElf/!Hunter
         #sticky
        #label oldwhitebark
 .goto Eversong Woods,35.0,84.2
->>Kill and loot Old Whitebark. Loot him for his pendant to start a quest.
-        .collect 23228,1 --Collect Old Whitebark's Pendant (x1)
+>>Kill Old Whitebark. Loot him for his pendant. Click the pendant to start the quest
+        .collect 23228,1,8474 --Collect Old Whitebark's Pendant (x1)
+.accept 8474 >> Accept Old Whitebark's Pendant
 step << !BloodElf/!Hunter
-      #sticky
-#label oldwhitebark
-    .accept 8474 >> Accept Old Whitebark's Pendant
     >>Be careful as the Green Keepers have a double-damage Heroic Strike spell
     .complete 8473,1 --Kill Withered Green Keeper (x10)
 step << !BloodElf/!Hunter
@@ -1657,7 +1661,6 @@ step << Druid
     .train 5178 >>Train Wrath r3
     .train 782 >>Train Thorns r2
 .train 5187 >>Train Healing Touch r3
-.train 8946 >>Train Cure Poison
     .train 5211 >>Train Bash
     --Add Poison q. Add earthroot purchase from AH
 step << Priest/Mage/Warlock/Rogue
@@ -1689,10 +1692,8 @@ step << Mage
 .train 1449 >>Train Arcane Explosion
     .train 837 >>Train Frostbolt r3
     --might remove frostbolt
-step << Warlock
+step << !BloodElf Warlock
     .goto Silvermoon City,74.4,47.2
-    >>Use Voidwalker from now on
-    .turnin 9619 >>Turnin The Rune of Summoning
     .train 689 >>Train Drain Life
     .train 6222 >>Train Corruption r2
 step << Priest/Mage/Warlock/Rogue/Druid
@@ -2382,7 +2383,7 @@ step
 .goto Ghostlands,37.4,79.3
     .complete 9170,1 --Kill Mirdoran the Fallen (x1)
 step
-    .goto Ghostlands,38.4,84.0,20 >>Go toward the Ziggurat
+    .goto Ghostlands,38.4,84.0,20 >>Go toward the Slaughterhouses
 step
     #sticky
     #label Varnis
@@ -2392,7 +2393,7 @@ step
 step
     #sticky
     #completewith Borgoth
-    +Kill Borgoth. He's a big abomination inside of one of the two Ziggurats
+    +Kill Borgoth. He's a big abomination inside of one of the two Slaughterhouses
 .goto Ghostlands,41.3,83.0,20,0
     .goto Ghostlands,32.7,90.3,20,0
 .goto Ghostlands,41.3,83.0,20,0

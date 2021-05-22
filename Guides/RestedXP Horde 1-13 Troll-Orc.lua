@@ -82,8 +82,7 @@ step
     .turnin 790 >>Turn in Sarkoth
     .accept 804 >>Accept Sarkoth
 step << Warlock
-    #sticky
-.xp 3+685 >> Grind to 685+/1400xp on the way back to town
+.xp 3+850 >> Grind to 850+/1400xp on the way back to town
 step << Warlock
     .goto Durotar,42.6,67.3
     .vendor >>vendor trash, buy 10 water
@@ -161,7 +160,7 @@ step << Troll Warrior
     .turnin 804 >>Turn in Sarkoth
     .accept 3065 >>Accept Simple Tablet
     .accept 789 >>Accept Sting of the Scorpid
-step << Troll Warlock
+step << Orc Warlock
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
@@ -328,9 +327,10 @@ step
 .goto Durotar,43.7,53.8
     .complete 6394,1 --Thazz'ril's Pick (1)
 step
-    .goto Durotar,44.7,54.0,10 >>Go back to this part of the cave
-step
-    .goto Durotar,43.4,52.0,10 >>Follow it to here
+    #sticky
+    #completewith next
+.goto Durotar,44.7,54.0,10,0
+    .goto Durotar,43.4,52.0,10 >>Go back to this part of the cave, then follow it to here
 step
     >>Kill Yarrog. Loot him for the Medallion
 .goto Durotar,42.7,53.0
@@ -638,10 +638,13 @@ step
 step
     #requires KulTiras
 .goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer, or run back
-step
+step << Shaman/Warrior
     .goto Durotar,52.2,43.2
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
+step << !Shaman !Warrior
+    .goto Durotar,52.2,43.2
+    .turnin 823 >>Turn in Report to Orgnil
 step
     .goto Durotar,51.9,43.5
     .turnin 784 >>Turn in Vanquish the Betrayers
@@ -655,6 +658,8 @@ step
 step
 .goto Durotar,49.9,40.3
     .turnin 791 >>Turn in Carry Your Weight
+step << !Shaman !Warrior
+    .abandon 806 >>Abandon Dark Storms
 step << Shaman
     .goto Durotar,52.0,40.5
     .money <0.0480
@@ -741,13 +746,13 @@ step
     .complete 818,2 --Crawler Mucus (8)
 step
     #label Tools
->>Check the boat closest to the shore for the Toolboxes. Check other boats if you can't find these spawns
-.goto Durotar,61.9,55.5,12 >> In the window underwater
-    .goto Durotar,62.3,56.3,12,0
-    .goto Durotar,61.4,56.1,12,0
+>>Check the boat closest to the shore for the Toolboxes. Check other boats if you can't find these spawns. They can be a bit hard to see
+.goto Durotar,61.9,55.5,10 >> In the window underwater
+    .goto Durotar,62.3,56.3,10 >> Underwater
+    .goto Durotar,61.4,56.1,10 >> Near the shore
     .complete 825,1 --Gnomish Tools (3)
 step
-    .goto Durotar,67.2,70.0,60 >>Swim to the Island
+    .goto Durotar,67.2,70.0,90 >>Swim to the Island
 step
     #sticky
     #completewith Fur
@@ -769,7 +774,7 @@ step
 step
     #sticky
     #completewith Trolls
-    >>Kill the trolls in the area
+    >>Kill the trolls in the area. Be careful as the Voodoo trolls heal
     .complete 826,1 --Hexed Troll (8)
     .complete 826,2 --Voodoo Troll (8)
 step << Shaman
@@ -782,7 +787,7 @@ step << Rogue
     .complete 826,3 --Zalazane's Head (1)
 step << !Rogue !Shaman
     .goto Durotar,67.4,87.8
-    >>Kill Zalazane. (You may need a healing potion). Loot his head
+    >>Kill Zalazane. Be careful as he can heal (you may need a healing potion). Loot his head
     .complete 826,3 --Zalazane's Head (1)
 step
     #label Trolls
@@ -791,7 +796,7 @@ step
     .complete 808,1 --Minshina's Skull (1)
 step
     #label Fur
->>Kill the rest of the trolls
+>>Kill the rest of the trolls. Be careful as the Voodoo trolls heal
     .complete 826,1 --Hexed Troll (8)
     .complete 826,2 --Voodoo Troll (8)
 step
@@ -940,12 +945,19 @@ step << Warlock
 .turnin 1506 >>Turn in Gan'rul's Summons
 .accept 1501 >>Accept Creature of the Void
 step << Warlock
+    .goto Orgrimmar,34.3,36.4
+    .turnin 831 >>Turn in The Admiral's Orders
+step << Warlock
 .goto Orgrimmar,31.6,37.8
 .accept 5726 >>Accept Hidden Enemies
 step << Warlock
-.goto Orgrimmar,49.0,94.2,20 >>Run out of Orgrimmar
+    #sticky
+    #completewith next
+.goto Orgrimmar,36.0,37.7 >> Click off your Demon Skin buff. Run on top of the brazier, and use Life Tap to die. Respawn outside of orgrimmar
 step << Warlock
-.goto Durotar,55.0,9.7,20 >>Enter Skull Rock
+.goto Orgrimmar,49.0,94.2,275 >>Run out of Orgrimmar
+step << Warlock
+.goto Durotar,55.0,9.7,25 >>Enter Skull Rock
 step << Warlock
     #sticky
     #label Collars
@@ -959,17 +971,20 @@ step << Warlock
     .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
 step << Warlock 
-.goto Durotar,53.6,8.5,10 >> Go into the Right path of the cave
-step << Warlock
-    >>Loot the chest
+.goto Durotar,53.6,8.5,10,0 
 .goto Durotar,51.8,8.1,10,0
 .goto Durotar,51.6,9.8
+>> Go into the Right path of the cave. Continue following the cave, then loot the Chest at the end of it
     .complete 1501,1 --Tablet of Verga (1)
 step << Warlock
 #label Skull
 .goto Durotar,47.2,17.7,225 >> Die and respawn at the Spirit Healer, or run back
 step << Warlock
 .goto Orgrimmar,49.0,94.2,20    >>Run into Orgrimmar
+step << Warlock
+    .goto Orgrimmar,31.8,37.8
+    .turnin 5726 >>Turn in Hidden Enemies
+    .accept 5727 >>Accept Hidden Enemies
 step << Warlock
     .goto Orgrimmar,48.3,45.3
     .turnin 1501 >>Turn in Creature of the Void
@@ -978,6 +993,10 @@ step << Warlock
     .isOnQuest 832
 .goto Orgrimmar,49.5,50.6
     .turnin 832 >>Turn in Burning Shadows
+step << Warlock
+    >>Talk to Neeru and finish his gossip options
+.goto Orgrimmar,49.5,50.6
+    .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade (1)
 step << Warlock
     .goto Orgrimmar,49.5,50.0
     >>Use the Glyphs of Summoning to summon a voidwalker. Kill it
@@ -988,7 +1007,13 @@ step << Warlock
     .turnin 1504 >>Turn in The Binding
 step << Warlock
     .goto Orgrimmar,31.8,37.8
-    .turnin 5726 >>Turn in Hidden Enemies
+    .turnin 5727 >>Turn in Hidden Enemies
+step << Warlock
+    #sticky
+    #completewith next
+.goto Orgrimmar,36.0,37.7 >> Click off your Demon Skin buff. Run on top of the brazier, and use Life Tap to die. Respawn outside of orgrimmar
+step << Warlock
+.goto Orgrimmar,49.0,94.2,275 >>Run out of Orgrimmar
 step << !Shaman !Warrior !Warlock !Hunter
 .goto Durotar,46.4,22.9
     .accept 834 >>Accept Winds in the Desert

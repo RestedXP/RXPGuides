@@ -363,6 +363,9 @@ step
     .accept 4985 >>Accept The Wildlife Suffers Too
 step
     >>Find & kill 8 Diseased Grizzly
+	.goto Eastern Plaguelands,64.6,49.0,150
+	.goto Eastern Plaguelands,58.4,51.2,0
+	.goto Eastern Plaguelands,57.6,58.6,0
     .complete 4985,1 --Diseased Grizzly (8)
 step
     .goto Eastern Plaguelands,26.6,74.8

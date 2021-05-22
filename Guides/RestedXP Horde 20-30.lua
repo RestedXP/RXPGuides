@@ -221,15 +221,21 @@ step
 #requires deepmossegg
     .hs >> Hearth to Crossroads
 step
-    .goto The Barrens,51.5,30.2
-    .turnin 848 >> Turn in Fungal Spores
-step
     .goto The Barrens,52.2,31.9
     .turnin 870 >> Turn in The Forgotten Pools
     .accept 877 >> Accept The Stagnant Oasis
 step
-    .goto The Barrens,51.5,30.2
+    .goto The Barrens,52.3,31.9
+    .vendor >> vendor trash, repair
+step
+    >>Turning this in will start a timed quest. Log out here if you’re going to be busy in the next 45+ minutes
+.goto The Barrens,51.5,30.2
+    .turnin 848 >> Turn in Fungal Spores
     .accept 853 >> Accept Apothecary Zamah
+step
+    #sticky
+    #completewith Zamah
++You have 45 minutes to complete the Apothecary quest, so keep an eye on its timer - skip the quest if you fail it
 step
 #sticky
 #completewith Horns
@@ -348,15 +354,15 @@ step << Druid
 .accept 27 >>Accept A Lesson to Learn
 .trainer >> Go and train your class spells
 step
-    .goto Thunder Bluff,36.6,51.3
-    .accept 742 >> Accept The Ashenvale Hunt
-step
     .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
 step
+#label Zamah
+>>Talk to Clarice Foster
 .goto Thunder Bluff,27.5,24.7
     .accept 264 >> Accept Until Death Do Us Part
 step
 .goto Thunder Bluff,23.0,20.9
+>> If you failed the Zamah quest, just abandon it
     .turnin 853 >> Turn in Apothecary Zamah
 .accept 962 >> Accept Serpentbloom
 step << Tauren
@@ -396,17 +402,18 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
 step
-.goto Kalimdor,50.4,34.4,15 >>Go up the mountain here
+.goto The Barrens,47.0,34.7,15,0
+.goto The Barrens,46.4,34.9,15,0
+.goto The Barrens,46.6,34.8,10 >>Go up the mountain here
 step
-.goto Kalimdor,50.4,34.4,10 >>Go into here
+.goto Kalimdor,51.9,55.4,30,0
+.goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
 step
-.goto Kalimdor,51.9,55.5,10 >>Jump down into the eye
-step
+>>Go into the eye of the cave
 .goto Kalimdor,51.9,55.4
-.goto The Barrens,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
-.goto The Barrens,46.0,36.4,15 >>Leave the eye. Go to the mouth of the cave
+.goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
 step
 #sticky
 #label Deviate
@@ -418,44 +425,49 @@ step
 >>Look for green and red flowers on the ground
 .complete 962,1 --Serpentbloom (10)
 step
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
->>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.2,55.2
+>>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
 .complete 959,1 --Collect 99-Year-Old Port (1)
 step
-#sticky
-#completewith next
-.goto Kalimdor,51.9,54.9,40 >>Enter the deeper part of the cave
+.goto Kalimdor,51.9,54.9,20 >>Enter the deeper part of the cave
 step
-    #sticky
-#completewith next
->>Keep an eye out for two rare mobs, as they can both drop blue BoE axes, among other gear
-.goto Kalimdor,52.5,54.8,30 >> Trigore
-.goto Kalimdor,52.8,55.0,30 >> Boahn
-step
->>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+.goto Kalimdor,52.6,54.5
+>>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
 .complete 1491,1 --Wailing Essence (6)
 step
 #requires Serpentbloom
-.goto The Barrens,45.4,28.4,3000 >> .
+.goto Kalimdor,52.8,55.0,3000 >> .
 step
-#sticky
-#completewith next
 #requires Deviate
+>>Run back to the eye of the cave
 .goto Kalimdor,51.9,55.4
-+Run back and talk to the druids on top of the mouth of the cave
-step
-.goto The Barrens,51.9,55.4
 .turnin 1486 >>Turn in Deviate Hides
 step
     .goto The Barrens,45.4,28.4
@@ -476,6 +488,9 @@ step
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
+step
+    .goto Stonetalon Mountains,45.1,59.8
+    .fp >>Get the Sun Rock Retreat Flight Path
 step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
@@ -807,12 +822,29 @@ step
     #label shadowmage
     >>Kill Shadow Mages. Loot them for Vials of Innocent Blood
 .complete 1066,1 --Collect Vial of Innocent Blood (x5)
+step << !Rogue !Hunter !Shaman
+    #sticky
+.goto Hillsbrad Foothills,80.1,38.9
+    >>vendor trash, repair if needed
+step << Rogue/Hunter/Shaman
+    #sticky
+.goto Hillsbrad Foothills,80.1,38.9
+    >>vendor trash, repair if needed. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
 step
->>Kill Jailor Eston & Jailor Marglen. Loot their keys, then rescue the orcs
-.goto Hillsbrad Foothills,75.2,41.5
-.complete 498,1 --Collect Rescue Drull (x1)
-.goto Hillsbrad Foothills,79.9,39.7
-    .complete 498,2 --Collect Rescue Tog'thar (x1)
+>>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
+    .collect 3499,1 
+step
+    >>Click the ball
+.goto Hillsbrad Foothills,79.8,39.6
+    .complete 498,2 --Rescue Tog'thar (1)
+step
+    >>Kill Jailor Eston. Loot him for his Dull Iron Key
+.goto Hillsbrad Foothills,79.4,41.6
+.collect 3467,1
+step
+    >>Click the ball
+.goto Hillsbrad Foothills,75.3,41.5
+    .complete 498,1 --Rescue Drull (1)
 step
     #requires shadowmage   
 >>Kill Spiders. Loot them until Creeper Ichor drops
@@ -902,7 +934,6 @@ step
     .accept 502 >> Accept Elixir of Pain
     .turnin 499 >> Turn in Elixir of Suffering
     .accept 1067 >> Accept Return to Thunder Bluff
-    .accept 509 >> Accept Elixir of Agony
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
@@ -914,10 +945,10 @@ step << Rogue
 step
     #sticky
     #completewith next
-    +While turning in Elixir of Agony, you can kill Stanley after for a bunch of extra XP
+    +While turning in Elixir of Pain, you can kill Stanley after for a bunch of extra XP
 step
 .goto Hillsbrad Foothills,32.6,35.6
-    .turnin 509 >> Turn in Elixir of Agony
+    .turnin 502 >> Turn in Elixir of Pain
 step
     #sticky
     #label Crate
@@ -1008,7 +1039,6 @@ step
     .accept 6441 >> Accept Satyr Horns
 step
     .goto Ashenvale,73.8,61.5
-    .turnin 742 >> Turn in The Ashenvale Hunt
     .turnin 6383 >> Turn in The Ashenvale Hunt
 step
     .goto Ashenvale,74.0,60.6
@@ -1298,7 +1328,7 @@ step
 .goto The Barrens,44.7,74.7,0
 .goto The Barrens,44.7,77.8,0
 .goto The Barrens,47.6,79.8,0
->>Search for Washte Pawne (Red Thunder Lizard) around the area. He's a red Wind Serpent that drops a quest. Accept Gann's Reclamation if you see him en route
+>>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Accept Gann's Reclamation if you see him en route
 .collect 5103,1 --Collect Washte Pawne's Feather
 .accept 885 >>Accept Washte Pawne
 step
@@ -1312,7 +1342,7 @@ step
 #label Washte
 #completewith next
 .goto The Barrens,44.7,74.7,0
->>Search for Washte Pawne. He's a red Wind Serpent that drops a quest. If you can't find him in this last spot, skip the quest
+>>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. If you can't find him in this last spot, skip the quest
 .collect 5103,1 --Collect Washte Pawne's Feather
 .accept 885 >>Accept Washte Pawne
 step
@@ -1520,6 +1550,7 @@ step
     .accept 5062 >> Accept Sacred Fire
     .turnin 9431 >> Turn in A Different Approach
     .accept 5151 >> Accept Hypercapacitor Gizmo
+    .accept 9433 >> A Dip in the Moonwell
 step
     #sticky
     #completewith steelsnap
@@ -1767,7 +1798,6 @@ step
 step
     .goto The Barrens,51.5,30.9
     .turnin 906 >> Turn in Betrayal from Within
-    .accept 871 >> Accept Disrupt the Attacks
 step
     .goto The Barrens,51.1,29.7
     .accept 1145 >> Accept The Swarm Grows
