@@ -782,8 +782,7 @@ function RXP_.functions.fp(self,...)
         return element
     end
     local event,arg1,arg2 = ...
-    if not self.element.step.active then return end
-    if event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH then
+    if event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH and self.element.step.active then
         RXP_.SetElementComplete(self)
     end
 end
@@ -1020,7 +1019,7 @@ function RXP_.functions.stable(self,...)
         if text and text ~= "" then
             element.text = text
         else
-            element.text = "Stablee your pet"
+            element.text = "Stable your pet"
         end
         element.tooltipText = RXP_.icons.stable..element.text
         return element
@@ -1089,7 +1088,7 @@ function RXP_.functions.money(self,...)
         end
         return element
     end
-
+    if not self.element.step.active then return end
     if GetMoney() >= self.element.money then
         self.element.step.completed = self.element.greaterThan
     else
@@ -1233,6 +1232,7 @@ function RXP_.functions.abandon(self,...)
         --print(element.rawtext)
         return element
     else
+        if not self.element.step.active then return end
         local element = self.element
         local event,_,questId = ...
         local id = element.questId
@@ -1335,8 +1335,7 @@ function RXP_.functions.spellMissing(self,...)
 
         return element
     end
-
-    if IsPlayerSpell(self.element.id) then
+    if IsPlayerSpell(self.element.id) and self.element.step.active then
         RXP_.SetElementComplete(self)
         self.element.step.completed = true
         RXP_.updateSteps = true
@@ -1362,6 +1361,7 @@ function RXP_.functions.zone(self,...)
         element.tooltipText = element.icon..text
         return element
     end
+    if not self.element.step.active then return end
     local zone = self.element.map
     if zone == C_Map.GetBestMapForUnit("player") then
         RXP_.SetElementComplete(self)

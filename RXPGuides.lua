@@ -1686,6 +1686,7 @@ function RXP_.CreateOptionsPanel()
     button.tooltip = "Hides the main window" 
     
     
+    
     button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1696,7 +1697,24 @@ function RXP_.CreateOptionsPanel()
     button:SetChecked(RXPData.lockFrames)
     button.Text:SetText("Lock Frames")
     button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it" 
-   
+   --
+    button = CreateFrame("CheckButton", "$parentShowUpcoming", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        local show = self:GetChecked()
+        if show then
+            f:SetHeight(RXP_.height)
+        else
+            f:SetHeight(10)
+        end
+        RXP_.updateBottomFrame = true
+    end)
+    button:SetChecked(f.BottomFrame:GetHeight() >= 35)
+    button.Text:SetText("Show step list")
+    button.tooltip = "Show/Hide the bottom frame listing all the steps of the current guide" 
+  --
     button = CreateFrame("CheckButton", "$parentHideCompleted", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1707,8 +1725,8 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(RXPData.hideCompletedSteps)
     button.Text:SetText("Hide completed steps")
-    button.tooltip = "Only shows current and future steps on the guide window" 
-   
+    button.tooltip = "Only shows current and future steps on the step list window" 
+  --
     button = CreateFrame("CheckButton", "$parentMapCircle", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1719,8 +1737,8 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(RXPData.mapCircle)
     button.Text:SetText("Highlight active map pins")
-    button.tooltip = "Show a targeting circle around active map pins" 
-   
+    button.tooltip = "Show a targeting circle around active map pins"   
+  --
     button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
