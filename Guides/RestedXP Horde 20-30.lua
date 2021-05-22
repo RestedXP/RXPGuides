@@ -822,12 +822,29 @@ step
     #label shadowmage
     >>Kill Shadow Mages. Loot them for Vials of Innocent Blood
 .complete 1066,1 --Collect Vial of Innocent Blood (x5)
+step << !Rogue !Hunter !Shaman
+    #sticky
+.goto Hillsbrad Foothills,80.1,38.9
+    >>vendor trash, repair if needed
+step << Rogue/Hunter/Shaman
+    #sticky
+.goto Hillsbrad Foothills,80.1,38.9
+    >>vendor trash, repair if needed. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
 step
->>Kill Jailor Eston & Jailor Marglen. Loot their keys, then rescue the orcs
-.goto Hillsbrad Foothills,75.2,41.5
-.complete 498,1 --Collect Rescue Drull (x1)
-.goto Hillsbrad Foothills,79.9,39.7
-    .complete 498,2 --Collect Rescue Tog'thar (x1)
+>>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
+    .collect 3499,1 
+step
+    >>Click the ball
+.goto Hillsbrad Foothills,79.8,39.6
+    .complete 498,2 --Rescue Tog'thar (1)
+step
+    >>Kill Jailor Eston. Loot him for his Dull Iron Key
+.goto Hillsbrad Foothills,79.4,41.6
+.collect 3467,1
+step
+    >>Click the ball
+.goto Hillsbrad Foothills,75.3,41.5
+    .complete 498,1 --Rescue Drull (1)
 step
     #requires shadowmage   
 >>Kill Spiders. Loot them until Creeper Ichor drops
