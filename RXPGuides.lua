@@ -563,7 +563,7 @@ function RXP_.UpdateStepCompletion()
 				completewith = guide.labels[completewith]
 			end
 			if completewith then
-				if guide.steps[completewith].sticky then
+				if guide.steps[completewith] and guide.steps[completewith].sticky then
 					if RXPCData.stepSkip[completewith] then
 						completed = true
 					end
@@ -1806,3 +1806,39 @@ function RXP_.CreateOptionsPanel()
     slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, 0.05, "0", "1")
     slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,2,"Bottom","Top")
 end
+
+function RXP_.UpdateQuestButton(index)
+    local button = RXP_.questLogButton
+    local anchor = QuestLogExDetailScrollChildFrame or QuestLogDetailScrollChildFrame
+    if not anchor then return end
+    if not button then
+        button = CreateFrame("Button", "$parentRXP", anchor)
+        button:SetWidth(32)
+        button:SetHeight(32)
+        button:SetPoint("TOPRIGHT",anchor,"TOPRIGHT",0,0)
+        button:SetNormalTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
+        RXP_.questLogButton = button
+        
+        local function tpOnEnter(self)
+            GameTooltip:SetOwner(self, "ANCHOR_BOTTOM",0,-10)
+            GameTooltip:ClearLines()
+            GameTooltip:AddLine(self.tooltip)
+            GameTooltip:Show()
+        end
+        local function tpOnLeave(self)
+            GameTooltip:Hide()
+        end
+        button:SetScript("OnEnter",tpOnEnter)
+        button:SetScript("OnLeave",tpOnLeave)
+        
+    end
+    local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(index);
+    if questID and RXP_.turnInList[questID] then
+        button:Show()
+        button.tooltip = "|cFFCE7BFFQuest is being turned in at:|r\n"..RXP_.turnInList[questID]
+    else
+        button:Hide()
+    end
+end
+
+hooksecurefunc("QuestLog_SetSelection",RXP_.UpdateQuestButton)

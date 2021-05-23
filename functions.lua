@@ -393,6 +393,7 @@ function RXP_.functions.accept(self,...)
 
 end
 
+RXP_.turnInList = {}
 function RXP_.functions.turnin(self,...)
 
     if type(self) == "string" then --on parse
@@ -415,6 +416,10 @@ function RXP_.functions.turnin(self,...)
             element.retrieveText = true
         end
         element.tooltipText = RXP_.icons.turnin..element.text
+        if not RXP_.turnInList[id] then
+            RXP_.turnInList[id] = ""
+        end
+        RXP_.turnInList[id] = RXP_.turnInList[id] .. "\n"..RXP_.currentGuideName
         return element
     else
         local element = self.element
