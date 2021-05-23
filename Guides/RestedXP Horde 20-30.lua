@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 #name 20-23 Stonetalon / The Barrens
 #next 23-27 Hillsbrad / Ashenvale
 step 
-.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmarg
 step
 >>Go to the top of the tower
 .goto Orgrimmar,45.1,63.9
@@ -381,7 +381,7 @@ step << !Tauren
 .fp >>Get the Thunder Bluff Flight Path
 step
     .goto Thunder Bluff,47.0,49.8
-.fly >> Fly to Ratchet
+.fly Ratchet >> Fly to Ratchet
 step
     .goto The Barrens,62.4,37.6
     .turnin 865 >> Turn in Raptor Horns
@@ -393,7 +393,7 @@ step
     .accept 1095 >> Accept Further Instructions
 step
     .goto The Barrens,63.1,37.2
-.fly >> Fly to Crossroads
+.fly Crossroads >> Fly to Crossroads
 step
     .goto The Barrens,52.0,31.6
     .turnin 4921 >> Turn in Lost in Battle
@@ -600,7 +600,7 @@ step
     .accept 1065 >> Accept Journey to Tarren Mill
 step
     .goto Thunder Bluff,47.0,49.9
-    .fly >> Fly to Ratchet
+    .fly Ratchet >> Fly to Ratchet
 step
     .goto The Barrens,63.1,37.6
     .turnin 959 >>Turn in Trouble at the Docks
@@ -617,7 +617,7 @@ step << Druid
     .goto Orgrimmar,12.4,66.1,20 >>Enter Orgrimmar through the west entrance
 step << !Druid
     .goto Thunder Bluff,47.0,49.9
-    .fly >> Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
@@ -815,6 +815,7 @@ step
     #sticky
 #label syndicateq
 >>Kill Syndicates in the area
+.goto Hillsbrad Foothills,77.8,44.1,0
     .complete 549,1 --Kill Syndicate Rogue (x10)
 .complete 549,2 --Kill Syndicate Watchman (x10)
 step
@@ -831,6 +832,7 @@ step << Rogue/Hunter/Shaman
 .goto Hillsbrad Foothills,80.1,38.9
     >>vendor trash, repair if needed. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
 step
+.goto Hillsbrad Foothills,79.8,39.3
 >>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
     .collect 3499,1 
 step
@@ -870,7 +872,17 @@ step
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
 .complete 527,2 --Kill Hillsbrad Farmhand (x6)
 step
->>Kill Farmer Ray in the 2nd floor of the house
+>>Kill Farmer Ray. He can be in the 1st or 2nd floor of the house. He can also be outside under the grapevine (hut)
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
 .goto Hillsbrad Foothills,33.2,34.8
 .complete 527,3 --Kill Farmer Ray (x1)
 step
@@ -1201,7 +1213,7 @@ step
     .turnin 6482 >> Turn in Freedom to Ruul
 step
     .goto Ashenvale,73.2,61.5
-    .fly >> Fly to Zoram'gar Outpost
+    .fly Zoram'gar >> Fly to Zoram'gar Outpost
 step
     .goto Ashenvale,11.9,34.5
     .turnin 216 >> Turn in Between a Rock and a Thistlefur
@@ -1219,7 +1231,7 @@ step
     .hs >> Hearth to Splintertree Post
 step << !Warrior !Hunter !Shaman !Druid !Mage !Priest
     .goto Ashenvale,73.2,61.6
-    .fly >> Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
@@ -1234,10 +1246,10 @@ step << Rogue
 .trainer >> Go and train your class spells
 step << !Warrior !Hunter !Shaman !Druid !Mage !Priest
 .goto Orgrimmar,45.2,63.8
-    .fly >> Fly to Thunder Bluff
+    .fly Thunder Bluff >> Fly to Thunder Bluff
 step << !Rogue !Paladin !Warlock
     .goto Ashenvale,73.2,61.6
-    .fly >> Fly to Thunder Bluff
+   .fly Thunder Bluff >> Fly to Thunder Bluff
 ]])
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
@@ -1289,7 +1301,7 @@ step
 .home >> Set your Hearthstone to Thunder Bluff
 step
     .goto Thunder Bluff,46.8,50.1
-    .fly >> Fly to Camp Taurajo
+    .fly Camp Taurajo >> Fly to Camp Taurajo
 step << Warrior
     >>In the building
 .goto The Barrens,44.7,59.4
@@ -1551,6 +1563,7 @@ step
     .turnin 9431 >> Turn in A Different Approach
     .accept 5151 >> Accept Hypercapacitor Gizmo
     .accept 9433 >> A Dip in the Moonwell
+    .turnin 4770 >> Turn in Homeward Bound
 step
     #sticky
     #completewith steelsnap
@@ -1572,6 +1585,9 @@ step
 .goto Thousand Needles,9.4,18.7,15,0
 .goto Feralas,89.6,46.3
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
+step
+.goto Thousand Needles,18.7,22.2,40,0
+.xp 29+500 >> Grind to 500+/36300 xp
 step
     #label messenger
 >>Search for Steelsnap (Hyena). He patrols counter-clockwise
@@ -1661,7 +1677,7 @@ step
     .accept 5088 >> Accept Arikara
 step
     .goto Thunder Bluff,46.9,49.4
-    .fly >> Fly to Camp Taurajo
+    .fly Camp Taurajo >> Fly to Camp Taurajo
 step
     .goto The Barrens,44.6,59.2
     .turnin 879 >> Turn in Betrayal from Within
@@ -1672,7 +1688,7 @@ step
     .accept 1153 >> Accept A New Ore Sample
 step
     .goto The Barrens,44.4,59.1
-    .fly >> Fly to Freewind Post
+    .fly Freewind Post>> Fly to Freewind Post
 step
     .goto Thousand Needles,44.8,49.0
     .turnin 4767 >> Turn in Wind Rider
@@ -1751,7 +1767,7 @@ step
     .fp >> Get the Camp Mojache flight path
 step
     .goto Feralas,75.4,44.4
-    .fly >> Fly to Freewind Post
+    .fly Freewind Post >> Fly to Freewind Post
 step
     .goto Thousand Needles,45.7,50.8
     .turnin 5064 >> Turn in Grimtotem Spying
@@ -1776,7 +1792,7 @@ step
     .hs >> Hearth to Freewind Post
 step
     .goto Thousand Needles,45.1,49.2
-    .fly >> Fly to Camp Taurajo
+    .fly Camp Taurajo >> Fly to Camp Taurajo
 step
 .isOnQuest 885
     .goto The Barrens,44.9,59.1
@@ -1794,7 +1810,7 @@ step
     .turnin 1153 >> Turn in A New Ore Sample
 step
     .goto The Barrens,44.4,59.1
-    .fly >> Fly to Crossroads
+    .fly Crossroads>> Fly to Crossroads
 step
     .goto The Barrens,51.5,30.9
     .turnin 906 >> Turn in Betrayal from Within
@@ -1807,7 +1823,7 @@ step << Warrior
 .turnin 1825 >>Turn in Speak with Thun'grim
 step << !Warrior
     .goto The Barrens,51.5,30.3
-    .fly >> Fly to Ratchet
+    .fly Ratchet >> Fly to Ratchet
 step << Warrior
 .goto The Barrens,63.3,38.4,150 >>Run to Ratchet
 step
@@ -1818,7 +1834,7 @@ step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
     .goto Ashenvale,73.2,61.5
-    .fly >> Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells

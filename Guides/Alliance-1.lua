@@ -1,4 +1,3 @@
-
 RXPGuides.RegisterGuide("RestedXP Alliance Boosted 58-60",[[
 << Alliance
 #name Boosted Character 58-60
@@ -275,7 +274,6 @@ step
     .goto Western Plaguelands,43.7,84.5
     .turnin 6184 >>Turn in Flint Shadowmore
     .accept 6185 >>Accept The Eastern Plagues
-
 step
     #label mark1
     .goto Western Plaguelands,42.9,85.0

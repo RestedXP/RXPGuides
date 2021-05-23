@@ -1324,7 +1324,7 @@ step << BloodElf Hunter
     .accept 9135 >> Accept Return to Quartermaster Lymel
 step << BloodElf Hunter
     .goto Eversong Woods,54.4,50.8,0
-    .fly >> Fly to Tranquillien
+    .fly Tranquillien >> Fly to Tranquillien
 step << BloodElf Hunter
     .goto Ghostlands,47.3,29.1
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
@@ -1473,7 +1473,7 @@ step << BloodElf !Hunter !Warlock
 step << BloodElf Warlock
     .turnin 9130 >> Turn in Goods from Silvermoon City
     .accept 9133 >> Accept Fly to Silvermoon City
-    .fly >> Fly to Silvermoon City
+    .fly Silvermoon >> Fly to Silvermoon City
 step << BloodElf Warlock
     .goto Silvermoon City,54.0,71.0
     .turnin 9133 >> Turn in Fly to Silvermoon City
@@ -1665,7 +1665,7 @@ step << Druid
     --Add Poison q. Add earthroot purchase from AH
 step << Priest/Mage/Warlock/Rogue
     .goto Ghostlands,45.4,30.5
-    .fly >> Fly to Silvermoon City
+    .fly Silvermoon >> Fly to Silvermoon City
 step << BloodElf Mage
 >>Choose whichever. I prefer the staff, Tactics prefers the Orb. Up to you bossman
 .goto Eversong Woods,55.7,54.5
@@ -1697,7 +1697,9 @@ step << !BloodElf Warlock
     .train 689 >>Train Drain Life
     .train 6222 >>Train Corruption r2
 step << Priest/Mage/Warlock/Rogue/Druid
-    .hs >> Hearth to Tranquillien
+    #sticky
+    #completewith next
+.hs >> Hearth to Tranquillien
 step << BloodElf Warlock
     .goto Ghostlands,47.3,29.3
 .turnin 9135 >> Turn in Return to Quartermaster Lymel
@@ -1918,7 +1920,7 @@ step << Druid
     --Aquatic Form q
 step << Priest/Rogue/Paladin
     .goto Ghostlands,45.4,30.5
-    .fly >> Fly to Silvermoon City
+    .fly Silvermoon >> Fly to Silvermoon City
 step << BloodElf Priest/BloodElf Rogue
     .goto Eversong Woods,54.4,50.7
     .turnin 9134 >> Turn in Skymistress Gloaming
@@ -2224,7 +2226,7 @@ step << Druid
     .train 6808 >>Train Maul r2
 step << Mage/Priest/Warlock/Hunter
     .goto Ghostlands,45.4,30.5
-    .fly >> Fly to Silvermoon City
+    .fly Silvermoon >> Fly to Silvermoon City
 step << BloodElf Mage
     .goto Eversong Woods,54.4,50.7
     .turnin 9134 >> Turn in Skymistress Gloaming
@@ -2482,7 +2484,7 @@ step
     .xp 20 >>Grind to 20
 step
     .goto Ghostlands,45.5,30.5,0
-    .fly >> Fly to Silvermoon City
+    .fly Silvermoon >> Fly to Silvermoon City
 step << BloodElf Paladin
     .goto Silvermoon City,54.0,71.0
     .turnin 9134 >> Turn in Skymistress Gloaming

@@ -527,7 +527,7 @@ step << Hunter
     >> Buy Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
-.goto Durotar,52.5,44.4,100 >>Grind to Razor Hill
+.goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill
 step
 >>Inside the bunker, top floor
 .goto Durotar,51.9,43.5
@@ -1068,12 +1068,94 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 10-13 Durotar
 #next 13-23 The Barrens
-step << Undead Warrior
-    .goto Durotar,54.2,42.5
-    .accept 1505 >>Accept Veteran Uzzek
 step
     .goto Durotar,50.8,43.6
     .accept 840 >>Accept Conscript of the Horde
+step << Undead Warrior
+    >>Go up the tower
+.goto Durotar,49.9,40.3
+    .accept 791 >>Accept Carry Your Weight
+step << Undead Warrior
+    .goto Durotar,52.0,40.7
+    .money <0.0020
+    .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
+step << Undead Warrior
+    .goto Durotar,51.8,40.9
+    .money <0.0010
+    .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
+step << Undead Warrior
+    .goto Durotar,53.0,42.0
+    .money <0.0077
+.collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
+step << Undead Warrior
+    .goto Durotar,54.2,42.5
+    .accept 1505 >>Accept Veteran Uzzek
+step << Undead Warrior
+>>Inside the bunker, top floor
+.goto Durotar,51.9,43.5
+.accept 784 >>Accept Vanquish the Betrayers
+step << Undead Warrior
+    #sticky
+    #label KulTiras
+>>Kill Kul Tiras mobs. Loot them for Scraps
+    .complete 784,1 --Kul Tiras Sailor (10)
+    .complete 784,2 --Kul Tiras Marine (8)
+    .complete 791,1 --Canvas Scraps (8)
+step << Undead Warrior
+.goto Durotar,59.2,58.3,15 >>Go inside the keep
+step << Undead Warrior
+    .goto Durotar,59.7,58.3
+    >>Go to the top floor of the Keep. Kill Lieutenant Benedict and loot his key - be careful as he uses Shield Bash (Interrupt)
+.complete 784,3 --Lieutenant Benedict (1)
+.collect 4882,1 --Collect Benedict's Key (1)
+step << Undead Warrior
+.goto Durotar,59.8,57.8,8 >>Go up the stairs here
+step << Undead Warrior
+.goto Durotar,59.9,57.5,8 >>Go up the stairs here
+step << Undead Warrior
+>>Loot the chest. Accept the quest from the item
+.goto Durotar,59.3,57.6
+.collect 4881,1,830 --Collect Aged Envelope (1)
+.accept 830 >>Accept The Admiral's Orders
+step << Undead Warrior
+    >>Run down to Sen’jin
+.goto Durotar,55.9,74.7
+    .accept 808 >>Accept Minshina's Skull
+    .accept 826 >>Accept Zalazane
+    .accept 823 >>Accept Report to Orgnil
+step << Undead Warrior
+    .goto Durotar,67.3,87.1,350 >> Swim to the Island
+step << Undead Warrior
+    #sticky
+    #completewith Trolls
+    >>Kill the trolls in the area. Be careful as the Voodoo trolls heal
+    .complete 826,1 --Hexed Troll (8)
+    .complete 826,2 --Voodoo Troll (8)
+step << Undead Warrior
+    .goto Durotar,67.4,87.8
+    >>Kill Zalazane. Be careful as he can heal (you may need a healing potion). Loot his head
+    .complete 826,3 --Zalazane's Head (1)
+step << Undead Warrior
+    #label Trolls
+.goto Durotar,67.4,87.8
+    >>Loot one of the skulls on the ground
+    .complete 808,1 --Minshina's Skull (1)
+step << Undead Warrior
+>>Kill the rest of the trolls. Be careful as the Voodoo trolls heal
+    .complete 826,1 --Hexed Troll (8)
+    .complete 826,2 --Voodoo Troll (8)
+step << Undead Warrior
+    .goto Durotar,57.5,73.3,200 >> Die and respawn at the Spirit Healer, or run back
+step << Undead Warrior
+    >>Save the Faintly Glowing Skull for later
+.goto Durotar,55.9,74.7
+    .turnin 808 >>Turn in Minshina's Skull
+    .turnin 826 >>Turn in Zalazane
+step << Undead Warrior
+    >>Run back to Razor Hill
+.goto Durotar,52.2,43.2
+    .turnin 823 >>Turn in Report to Orgnil
+    .accept 806 >>Accept Dark Storms
 step
     .goto The Barrens,62.2,19.4
     .turnin 840 >>Turn in Conscript of the Horde

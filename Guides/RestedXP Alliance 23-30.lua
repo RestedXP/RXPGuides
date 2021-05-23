@@ -669,7 +669,7 @@ step
     .complete 323,3 --Kill Skeletal Warder (x3)
 step
 	 .goto Duskwood,23.8,35.0
-	.xp 27+13500 >> Grind to 13500+/32200xp
+	.xp 27+12000 >> Grind to 12000+/32200xp
 step << !Hunter !Paladin
     .goto Duskwood,19.7,39.7
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
@@ -1258,10 +1258,6 @@ step << Shaman
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
 step << Shaman
-    .goto Duskwood,72.6,33.9
-    .turnin 1244 >> Turn in The Missing Diplomat
-    .accept 1245 >> Accept The Missing Diplomat
-step << Shaman
     .goto Duskwood,77.4,36.1
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << Shaman
@@ -1379,7 +1375,7 @@ step << !Shaman
     .goto Duskwood,73.5,46.8
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
-step << !Shaman
+step
     .goto Duskwood,72.6,33.9
     .turnin 1244 >> Turn in The Missing Diplomat
     .accept 1245 >> Accept The Missing Diplomat
@@ -1631,6 +1627,7 @@ step << Shaman
     .turnin 10491 >> Turn in Call of Air
     .accept 9552 >> Accept Call of Air
 step << Shaman
+.isQuestTurnedIn 9508
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman
     .goto Bloodmyst Isle,32.3,16.2
@@ -1646,12 +1643,17 @@ step << Shaman
     .accept 9509 >> Accept Call of Water
 step << Shaman
 	#sticky
-	#completewith next
+	#completewith ZExodar
 	.deathskip >> Drown yourself and spirit rez
 step << Shaman
+	#sticky
+	#completewith next
 	.goto Bloodmyst Isle,57.7,53.9
-	>>Run back to Blood Watch
+	>>Run back to Blood Watch, then fly to The Exodar
     .fly The Exodar>> Fly to The Exodar
+step << Shaman
+	#label ZExodar
+	.zone The Exodar >> Go to The Exodar
 step << Shaman
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
@@ -1674,7 +1676,5 @@ step << Shaman
     .goto The Exodar,29.6,33.4
     .turnin 9554 >> Turn in Call of Air
 step << Shaman
-    #sticky
-    #completewith next
     .hs >> Hearth to Wetlands
 ]])
