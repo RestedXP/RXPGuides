@@ -669,7 +669,7 @@ step
     .complete 323,3 --Kill Skeletal Warder (x3)
 step
 	 .goto Duskwood,23.8,35.0
-	.xp 27+13500 >> Grind to 13500+/32200xp
+	.xp 27+12000 >> Grind to 12000+/32200xp
 step << !Hunter !Paladin
     .goto Duskwood,19.7,39.7
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
