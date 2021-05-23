@@ -527,7 +527,7 @@ step << Hunter
     >> Buy Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
-.goto Durotar,52.5,44.4,100 >>Grind to Razor Hill
+.goto Durotar,52.5,44.4,100 >>Grind mobs on your way to Razor Hill
 step
 >>Inside the bunker, top floor
 .goto Durotar,51.9,43.5
