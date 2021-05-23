@@ -404,12 +404,31 @@ step
     .goto Western Plaguelands,51.9,28.1
     .accept 6004 >>Accept Unfinished Business
 step
-    .goto Western Plaguelands,51.80,44.25
-    .goto Western Plaguelands,40.53,51.79
+    .goto Western Plaguelands,52.0,44.3,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,40.7,52.2,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,52.0,44.3,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,40.7,52.2,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,52.0,44.3,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,40.7,52.2,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,52.0,44.3,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,40.7,52.2,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+	>>Kill Scarlet mobs. If you're unable to find medics and hunters, kill mobs at the camps to force new respawns, as they share respawns with other mob types
     .complete 6004,1 --Scarlet Medic (2)
     .complete 6004,2 --Scarlet Hunter (2)
     .complete 6004,3 --Scarlet Mage (2)
     .complete 6004,4 --Scarlet Knight (2)
+step
+    .goto Western Plaguelands,51.9,28.1
+    .turnin 6004 >>Turn in Unfinished Business
+    .accept 6023 >>Accept Unfinished Business
 step
     .goto Western Plaguelands,55.1,23.5
     >>Look for the named mob that patrols up and down the tower
