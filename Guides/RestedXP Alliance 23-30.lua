@@ -1258,10 +1258,6 @@ step << Shaman
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
 step << Shaman
-    .goto Duskwood,72.6,33.9
-    .turnin 1244 >> Turn in The Missing Diplomat
-    .accept 1245 >> Accept The Missing Diplomat
-step << Shaman
     .goto Duskwood,77.4,36.1
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << Shaman
@@ -1379,7 +1375,7 @@ step << !Shaman
     .goto Duskwood,73.5,46.8
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
-step << !Shaman
+step
     .goto Duskwood,72.6,33.9
     .turnin 1244 >> Turn in The Missing Diplomat
     .accept 1245 >> Accept The Missing Diplomat
