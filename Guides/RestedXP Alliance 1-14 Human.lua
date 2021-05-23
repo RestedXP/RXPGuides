@@ -602,7 +602,7 @@ step
     .fp >> Get the Sentinel Hill flight path
     .turnin 6181 >> Turn in A Swift Message
     .accept 6281 >> Accept Continue To Stormwind
-    .fly >> Fly to Stormwind
+    .fly Stormwind >> Fly to Stormwind
 step
     .goto Stormwind City,56.2,64.6
     >>Choose rockets. These have very good damage, and can be used for splitpulling
@@ -657,7 +657,7 @@ step
 step
     .goto Redridge Mountains,30.6,59.4
     .fp >> Get the Redridge Mountains flight path
-    .fly >> Fly to Stormwind
+    .fly Stormwind >> Fly to Stormwind
 step
     .goto Stormwind City,25.2,78.5
     .turnin 1688 >> Turn in Surena Caledon
@@ -1720,11 +1720,11 @@ step << Human
     .fp >> Get the Sentinel Hill flight path
     .turnin 6181 >> Turn in A Swift Message
     .accept 6281 >> Accept Continue To Stormwind
-    .fly >> Fly to Stormwind
+    .fly Stormwind >> Fly to Stormwind
 step << !Human
     .goto Westfall,56.6,52.6
     .fp >> Get the Sentinel Hill flight path
-    .fly >> Fly to Stormwind
+    .fly Stormwind >> Fly to Stormwind
 step << Shaman
     .goto Stormwind City,61.8,84.0
     .trainer >> Go and train your class spells
@@ -2125,7 +2125,7 @@ step << Mage
 step << Rogue/Mage
     .goto Loch Modan,33.9,51.0
     .fp >> Get the Thelsamar flight path
-    .fly >> Fly to Ironforge
+    .fly Ironforge >> Fly to Ironforge
 step << Mage
     .goto Ironforge,27.2,8.6
     .train 145 >>Train Fireball r3

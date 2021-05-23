@@ -392,10 +392,10 @@ step
     .goto Azuremyst Isle,47.0,70.3
     .turnin 9514 >> Turn in Rune Covered Tablet
     .accept 9515 >> Warlord Sriss'tiz
-step << !Hunter
+step << !Hunter !Shaman
     #completewith next
     .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
-step << !Hunter
+step << !Hunter !Shaman
     >>Enter the naga cave and kill Warlord Sriss'tiz
     .goto Azuremyst Isle,24.5,74.5
     .complete 9515,1
@@ -562,6 +562,13 @@ step << Shaman
     .goto Azuremyst Isle,47.1,50.6
     .turnin 9622 >> Turn in Warn Your People
 step << Shaman
+    #completewith next
+    .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
+step << Shaman
+    >>Enter the naga cave and kill Warlord Sriss'tiz
+    .goto Azuremyst Isle,24.5,74.5
+    .complete 9515,1
+step << Shaman
     #sticky
 	#completewith next
     >>Click on the Fireproof Satchel in your bags
@@ -689,7 +696,10 @@ step
 	#label kesselrun
     .goto Azuremyst Isle,46.9,70.3
     .complete 9663,3 --Admiral Odesyus Warned
+step
+    .goto Azuremyst Isle,46.9,70.3    
     .turnin 9515 >> Warlord Sriss'tiz
+    .isQuestComplete 9515
 step << Paladin
     #completewith next
     .goto Azuremyst Isle,24.6,49.4,30
@@ -1057,7 +1067,7 @@ step
     .turnin 9569 >> Turn in Containing the Threat
 step
     .goto Bloodmyst Isle,53.2,57.7
-    .accept 9578 >> Turn in Searching for Galaen
+    .accept 9578 >> Accept Searching for Galaen
 step
 	#requires flutterers
 	#sticky

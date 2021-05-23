@@ -55,14 +55,31 @@ function RXPG_init()
     RXPData.windowSize = RXPData.windowSize or 1
 	RXPData.guideOpacity = RXPData.guideOpacity or 1
 	RXPData.affectGuideNameOpacity = RXPData.affectGuideNameOpacity or false
+    RXPData.arrowText = RXPData.arrowText or 9
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     f:SetShown(not RXPCData.hideWindow)
-    --RXP_.arrowFrame:SetShown(not RXPData.disableArrow)
+    C_Timer.After(0.5,function()
+        if RXP_.errorCount == RXP_.guideErrorCount then
+            RXP_.errorCount = -1
+            ScriptErrorsFrame:Hide()
+        end
+    end)
 end
 
+RXP_.errorCount = 0
+RXP_.guideErrorCount = 0
+
+hooksecurefunc(ScriptErrorsFrame,"DisplayMessage",function(self, msg, warnType, keepHidden, messageType)
+    if RXP_.errorCount >= 0 then
+        if warnType == 0 and keepHidden == false and messageType == 1 and type(msg) == "string" and msg:match("RXPGuides\\Guides") then
+            RXP_.guideErrorCount = RXP_.guideErrorCount + 1
+        end
+        RXP_.errorCount = RXP_.errorCount + 1
+    end
+end)
 
 local startTime = GetTime()
 local questProgressTimer = 0
@@ -1712,6 +1729,7 @@ function RXP_.CreateOptionsPanel()
     button.tooltip = "Hides the main window" 
     
     
+    
     button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1722,7 +1740,24 @@ function RXP_.CreateOptionsPanel()
     button:SetChecked(RXPData.lockFrames)
     button.Text:SetText("Lock Frames")
     button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it" 
-   
+   --
+    button = CreateFrame("CheckButton", "$parentShowUpcoming", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self) 
+        local show = self:GetChecked()
+        if show then
+            f:SetHeight(RXP_.height)
+        else
+            f:SetHeight(10)
+        end
+        RXP_.updateBottomFrame = true
+    end)
+    button:SetChecked(f.BottomFrame:GetHeight() >= 35)
+    button.Text:SetText("Show step list")
+    button.tooltip = "Show/Hide the bottom frame listing all the steps of the current guide" 
+  --
     button = CreateFrame("CheckButton", "$parentHideCompleted", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1733,8 +1768,8 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(RXPData.hideCompletedSteps)
     button.Text:SetText("Hide completed steps")
-    button.tooltip = "Only shows current and future steps on the guide window" 
-   
+    button.tooltip = "Only shows current and future steps on the step list window" 
+  --
     button = CreateFrame("CheckButton", "$parentMapCircle", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1745,8 +1780,8 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(RXPData.mapCircle)
     button.Text:SetText("Highlight active map pins")
-    button.tooltip = "Show a targeting circle around active map pins" 
-   
+    button.tooltip = "Show a targeting circle around active map pins"   
+  --
     button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -1786,12 +1821,13 @@ function RXP_.CreateOptionsPanel()
 		RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
         RXP_.arrowFrame:SetSize(32*size,32*size)
+        RXP_.arrowFrame.text:SetFont(RXP_.font, RXPData.arrowText)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
         RXP_.updateMap = true
         SetStepFrameAnchor()
     end
     
-    local CreateSlider = function(ref,key,smin,smax,text,tooltip,anchor,x,y,minText,maxText,steps)
+    local CreateSlider = function(ref,key,smin,smax,text,tooltip,anchor,x,y,steps,minText,maxText)
         local slider,dvalue
         
         slider = CreateFrame("Slider", "$parentArrowSlider", panel, "OptionsSliderTemplate")
@@ -1820,12 +1856,14 @@ function RXP_.CreateOptionsPanel()
         return slider
     end
     local slider
-    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,315,-25)
-    slider = CreateSlider(RXPData,"windowSize",0.2,2,"Window Scale: %.2f","Scale of the Main Window, use alt+left click on the main window to resize it",slider,0,-25)
-    slider = CreateSlider(RXPData,"numMapPins",1,20,"Number of Map Pins: %d","Number of map pins shown on the world map",slider,0,-25)
-    slider = CreateSlider(RXPData,"worldMapPinScale",0.05,1,"Map Pin Scale: %.2f","Adjusts the size of the world map pins",slider,0,-25, "0.05", "1", 0.05)
-	  slider = CreateSlider(RXPData,"guideOpacity",0,1,"Guide Opacity %.2f","The opacity of the guide viewer (not the step window).",slider,0,-25)
-    slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,2,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, "0.05", "2", 0.05)
-    slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, "0", "1", 0.05)
-    slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,"Bottom","Top",2)
+  
+    slider = CreateSlider(RXPData,"guideOpacity",0,1,"Guide Opacity %.2f","The opacity of the guide viewer (not the step window).",slider,0,-25)
+    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,315,-25,0.05)
+    slider = CreateSlider(RXPData,"arrowText",5,20,"Arrow Text Size: %d","Size of the waypoint arrow text",slider,0,-25,1)
+    slider = CreateSlider(RXPData,"windowSize",0.2,2,"Window Scale: %.2f","Scale of the Main Window, use alt+left click on the main window to resize it",slider,0,-25,0.05)
+    slider = CreateSlider(RXPData,"numMapPins",1,20,"Number of Map Pins: %d","Number of map pins shown on the world map",slider,0,-25,1,"1","20")
+    slider = CreateSlider(RXPData,"worldMapPinScale",0.05,1,"Map Pin Scale: %.2f","Adjusts the size of the world map pins",slider,0,-25, 0.05, "0.05", "1")
+    slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,2,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, 0.05, "0.05", "2")
+    slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, 0.05, "0", "1")
+    slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,2,"Bottom","Top")
 end

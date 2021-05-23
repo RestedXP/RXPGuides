@@ -1,4 +1,3 @@
-
 RXPGuides.RegisterGuide("RestedXP Alliance Boosted 58-60",[[
 << Alliance
 #name Boosted Character 58-60
@@ -185,6 +184,13 @@ step
     .accept 64038 >>Accept The Dark Portal
 step
     #requires DP
+    #completewith bs1
+    .goto Stormwind City,78.0,18.2
+    .accept 6182 >>Accept The First and the Last
+    >>There is a long scripted RP sequence part of the Onyxia attunement quest that makes Bolvar not able to interact with players for a few minutes, if that's the case, skip this step and try to get this quest later after finishing Burning Steppes
+step
+    #label bs1
+    #requires DP
     .goto Stormwind City,66.2,62.2
     .fly Morgan's Vigil>>Fly to Morgan's Vigil
 step
@@ -268,7 +274,6 @@ step
     .goto Western Plaguelands,43.7,84.5
     .turnin 6184 >>Turn in Flint Shadowmore
     .accept 6185 >>Accept The Eastern Plagues
-
 step
     #label mark1
     .goto Western Plaguelands,42.9,85.0
@@ -357,6 +362,7 @@ step
 	#sticky
 	#label wolves
     .goto Western Plaguelands,46.0,47.7,0
+	>>The wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find wolves.
     .complete 4984,1 --Kill Diseased Wolf (x8)
 step
     .goto Western Plaguelands,47.8,50.8

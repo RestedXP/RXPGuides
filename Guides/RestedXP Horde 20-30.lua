@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 #name 20-23 Stonetalon / The Barrens
 #next 23-27 Hillsbrad / Ashenvale
 step 
-.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmarg
 step
 >>Go to the top of the tower
 .goto Orgrimmar,45.1,63.9
@@ -19,6 +19,10 @@ step << !BloodElf
     .isOnQuest 9813
 .goto Orgrimmar,31.8,38.1
     .turnin 9813 >> Turn in Meeting the Warchief
+step << Warlock
+    #sticky
+    >>You must abandon Carendin’s Summons to be able to accept Devourer of Souls
+.abandon 10605 >>Abandon Carendin Summons
 step << Warlock
     .goto Orgrimmar,48.2,45.3
     .accept 1507 >>Accept Devourer of Souls
@@ -217,15 +221,21 @@ step
 #requires deepmossegg
     .hs >> Hearth to Crossroads
 step
-    .goto The Barrens,51.5,30.2
-    .turnin 848 >> Turn in Fungal Spores
-step
     .goto The Barrens,52.2,31.9
     .turnin 870 >> Turn in The Forgotten Pools
     .accept 877 >> Accept The Stagnant Oasis
 step
-    .goto The Barrens,51.5,30.2
+    .goto The Barrens,52.3,31.9
+    .vendor >> vendor trash, repair
+step
+    >>Turning this in will start a timed quest. Log out here if you’re going to be busy in the next 45+ minutes
+.goto The Barrens,51.5,30.2
+    .turnin 848 >> Turn in Fungal Spores
     .accept 853 >> Accept Apothecary Zamah
+step
+    #sticky
+    #completewith Zamah
++You have 45 minutes to complete the Apothecary quest, so keep an eye on its timer - skip the quest if you fail it
 step
 #sticky
 #completewith Horns
@@ -344,15 +354,15 @@ step << Druid
 .accept 27 >>Accept A Lesson to Learn
 .trainer >> Go and train your class spells
 step
-    .goto Thunder Bluff,36.6,51.3
-    .accept 742 >> Accept The Ashenvale Hunt
-step
     .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
 step
+#label Zamah
+>>Talk to Clarice Foster
 .goto Thunder Bluff,27.5,24.7
     .accept 264 >> Accept Until Death Do Us Part
 step
 .goto Thunder Bluff,23.0,20.9
+>> If you failed the Zamah quest, just abandon it
     .turnin 853 >> Turn in Apothecary Zamah
 .accept 962 >> Accept Serpentbloom
 step << Tauren
@@ -371,7 +381,7 @@ step << !Tauren
 .fp >>Get the Thunder Bluff Flight Path
 step
     .goto Thunder Bluff,47.0,49.8
-.fly >> Fly to Ratchet
+.fly Ratchet >> Fly to Ratchet
 step
     .goto The Barrens,62.4,37.6
     .turnin 865 >> Turn in Raptor Horns
@@ -383,7 +393,7 @@ step
     .accept 1095 >> Accept Further Instructions
 step
     .goto The Barrens,63.1,37.2
-.fly >> Fly to Crossroads
+.fly Crossroads >> Fly to Crossroads
 step
     .goto The Barrens,52.0,31.6
     .turnin 4921 >> Turn in Lost in Battle
@@ -392,17 +402,18 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
 step
-.goto Kalimdor,50.4,34.4,15 >>Go up the mountain here
+.goto The Barrens,47.0,34.7,15,0
+.goto The Barrens,46.4,34.9,15,0
+.goto The Barrens,46.6,34.8,10 >>Go up the mountain here
 step
-.goto Kalimdor,50.4,34.4,10 >>Go into here
+.goto Kalimdor,51.9,55.4,30,0
+.goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
 step
-.goto Kalimdor,51.9,55.5,10 >>Jump down into the eye
-step
+>>Go into the eye of the cave
 .goto Kalimdor,51.9,55.4
-.goto The Barrens,51.9,55.4
 .accept 1486 >>Accept Deviate Hides
 step
-.goto The Barrens,46.0,36.4,15 >>Leave the eye. Go to the mouth of the cave
+.goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
 step
 #sticky
 #label Deviate
@@ -414,44 +425,49 @@ step
 >>Look for green and red flowers on the ground
 .complete 962,1 --Serpentbloom (10)
 step
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
-.goto The Barrens,52.1,55.1,20,0
-.goto The Barrens,52.0,55.4,20,0
-.goto The Barrens,51.8,54.9,20,0
->>Look for Mad Magglish (a goblin). He has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.0,55.4,20,0
+.goto Kalimdor,52.2,55.2,35,0
+.goto Kalimdor,51.8,54.8,20,0
+.goto Kalimdor,52.2,55.2
+>>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
 .complete 959,1 --Collect 99-Year-Old Port (1)
 step
-#sticky
-#completewith next
-.goto Kalimdor,51.9,54.9,40 >>Enter the deeper part of the cave
+.goto Kalimdor,51.9,54.9,20 >>Enter the deeper part of the cave
 step
-    #sticky
-#completewith next
->>Keep an eye out for two rare mobs, as they can both drop blue BoE axes, among other gear
-.goto Kalimdor,52.5,54.8,30 >> Trigore
-.goto Kalimdor,52.8,55.0,30 >> Boahn
-step
->>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave, as they can drop blue BoE items
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+.goto Kalimdor,52.6,54.5
+>>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
 .complete 1491,1 --Wailing Essence (6)
 step
 #requires Serpentbloom
-.goto The Barrens,45.4,28.4,3000 >> .
+.goto Kalimdor,52.8,55.0,3000 >> .
 step
-#sticky
-#completewith next
 #requires Deviate
+>>Run back to the eye of the cave
 .goto Kalimdor,51.9,55.4
-+Run back and talk to the druids on top of the mouth of the cave
-step
-.goto The Barrens,51.9,55.4
 .turnin 1486 >>Turn in Deviate Hides
 step
     .goto The Barrens,45.4,28.4
@@ -472,6 +488,9 @@ step
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
+step
+    .goto Stonetalon Mountains,45.1,59.8
+    .fp >>Get the Sun Rock Retreat Flight Path
 step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
@@ -511,7 +530,7 @@ step
     .goto Ashenvale,15.5,17.1
     .complete 6442,1 --Collect Wrathtail Head (x20)
 step
-    >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
+>>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
 step
@@ -581,7 +600,7 @@ step
     .accept 1065 >> Accept Journey to Tarren Mill
 step
     .goto Thunder Bluff,47.0,49.9
-    .fly >> Fly to Ratchet
+    .fly Ratchet >> Fly to Ratchet
 step
     .goto The Barrens,63.1,37.6
     .turnin 959 >>Turn in Trouble at the Docks
@@ -598,7 +617,7 @@ step << Druid
     .goto Orgrimmar,12.4,66.1,20 >>Enter Orgrimmar through the west entrance
 step << !Druid
     .goto Thunder Bluff,47.0,49.9
-    .fly >> Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
@@ -796,6 +815,7 @@ step
     #sticky
 #label syndicateq
 >>Kill Syndicates in the area
+.goto Hillsbrad Foothills,77.8,44.1,0
     .complete 549,1 --Kill Syndicate Rogue (x10)
 .complete 549,2 --Kill Syndicate Watchman (x10)
 step
@@ -803,12 +823,30 @@ step
     #label shadowmage
     >>Kill Shadow Mages. Loot them for Vials of Innocent Blood
 .complete 1066,1 --Collect Vial of Innocent Blood (x5)
+step << !Rogue !Hunter !Shaman
+    #sticky
+.goto Hillsbrad Foothills,80.1,38.9
+    >>vendor trash, repair if needed
+step << Rogue/Hunter/Shaman
+    #sticky
+.goto Hillsbrad Foothills,80.1,38.9
+    >>vendor trash, repair if needed. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
 step
->>Kill Jailor Eston & Jailor Marglen. Loot their keys, then rescue the orcs
-.goto Hillsbrad Foothills,75.2,41.5
-.complete 498,1 --Collect Rescue Drull (x1)
-.goto Hillsbrad Foothills,79.9,39.7
-    .complete 498,2 --Collect Rescue Tog'thar (x1)
+.goto Hillsbrad Foothills,79.8,39.3
+>>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
+    .collect 3499,1 
+step
+    >>Click the ball
+.goto Hillsbrad Foothills,79.8,39.6
+    .complete 498,2 --Rescue Tog'thar (1)
+step
+    >>Kill Jailor Eston. Loot him for his Dull Iron Key
+.goto Hillsbrad Foothills,79.4,41.6
+.collect 3467,1
+step
+    >>Click the ball
+.goto Hillsbrad Foothills,75.3,41.5
+    .complete 498,1 --Rescue Drull (1)
 step
     #requires shadowmage   
 >>Kill Spiders. Loot them until Creeper Ichor drops
@@ -834,7 +872,17 @@ step
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
 .complete 527,2 --Kill Hillsbrad Farmhand (x6)
 step
->>Kill Farmer Ray in the 2nd floor of the house
+>>Kill Farmer Ray. He can be in the 1st or 2nd floor of the house. He can also be outside under the grapevine (hut)
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
+.goto Hillsbrad Foothills,33.7,35.5,15,0
+.goto Hillsbrad Foothills,33.2,34.8,15,0
 .goto Hillsbrad Foothills,33.2,34.8
 .complete 527,3 --Kill Farmer Ray (x1)
 step
@@ -898,7 +946,6 @@ step
     .accept 502 >> Accept Elixir of Pain
     .turnin 499 >> Turn in Elixir of Suffering
     .accept 1067 >> Accept Return to Thunder Bluff
-    .accept 509 >> Accept Elixir of Agony
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
@@ -910,10 +957,10 @@ step << Rogue
 step
     #sticky
     #completewith next
-    +While turning in Elixir of Agony, you can kill Stanley after for a bunch of extra XP
+    +While turning in Elixir of Pain, you can kill Stanley after for a bunch of extra XP
 step
 .goto Hillsbrad Foothills,32.6,35.6
-    .turnin 509 >> Turn in Elixir of Agony
+    .turnin 502 >> Turn in Elixir of Pain
 step
     #sticky
     #label Crate
@@ -1004,7 +1051,6 @@ step
     .accept 6441 >> Accept Satyr Horns
 step
     .goto Ashenvale,73.8,61.5
-    .turnin 742 >> Turn in The Ashenvale Hunt
     .turnin 6383 >> Turn in The Ashenvale Hunt
 step
     .goto Ashenvale,74.0,60.6
@@ -1167,7 +1213,7 @@ step
     .turnin 6482 >> Turn in Freedom to Ruul
 step
     .goto Ashenvale,73.2,61.5
-    .fly >> Fly to Zoram'gar Outpost
+    .fly Zoram'gar >> Fly to Zoram'gar Outpost
 step
     .goto Ashenvale,11.9,34.5
     .turnin 216 >> Turn in Between a Rock and a Thistlefur
@@ -1185,7 +1231,7 @@ step
     .hs >> Hearth to Splintertree Post
 step << !Warrior !Hunter !Shaman !Druid !Mage !Priest
     .goto Ashenvale,73.2,61.6
-    .fly >> Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells
@@ -1200,10 +1246,10 @@ step << Rogue
 .trainer >> Go and train your class spells
 step << !Warrior !Hunter !Shaman !Druid !Mage !Priest
 .goto Orgrimmar,45.2,63.8
-    .fly >> Fly to Thunder Bluff
+    .fly Thunder Bluff >> Fly to Thunder Bluff
 step << !Rogue !Paladin !Warlock
     .goto Ashenvale,73.2,61.6
-    .fly >> Fly to Thunder Bluff
+   .fly Thunder Bluff >> Fly to Thunder Bluff
 ]])
 RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
@@ -1255,7 +1301,7 @@ step
 .home >> Set your Hearthstone to Thunder Bluff
 step
     .goto Thunder Bluff,46.8,50.1
-    .fly >> Fly to Camp Taurajo
+    .fly Camp Taurajo >> Fly to Camp Taurajo
 step << Warrior
     >>In the building
 .goto The Barrens,44.7,59.4
@@ -1294,7 +1340,7 @@ step
 .goto The Barrens,44.7,74.7,0
 .goto The Barrens,44.7,77.8,0
 .goto The Barrens,47.6,79.8,0
->>Search for Washte Pawne (Red Thunder Lizard) around the area. He's a red Wind Serpent that drops a quest. Accept Gann's Reclamation if you see him en route
+>>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Accept Gann's Reclamation if you see him en route
 .collect 5103,1 --Collect Washte Pawne's Feather
 .accept 885 >>Accept Washte Pawne
 step
@@ -1308,7 +1354,7 @@ step
 #label Washte
 #completewith next
 .goto The Barrens,44.7,74.7,0
->>Search for Washte Pawne. He's a red Wind Serpent that drops a quest. If you can't find him in this last spot, skip the quest
+>>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. If you can't find him in this last spot, skip the quest
 .collect 5103,1 --Collect Washte Pawne's Feather
 .accept 885 >>Accept Washte Pawne
 step
@@ -1516,6 +1562,8 @@ step
     .accept 5062 >> Accept Sacred Fire
     .turnin 9431 >> Turn in A Different Approach
     .accept 5151 >> Accept Hypercapacitor Gizmo
+    .accept 9433 >> A Dip in the Moonwell
+    .turnin 4770 >> Turn in Homeward Bound
 step
     #sticky
     #completewith steelsnap
@@ -1537,6 +1585,9 @@ step
 .goto Thousand Needles,9.4,18.7,15,0
 .goto Feralas,89.6,46.3
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
+step
+.goto Thousand Needles,18.7,22.2,40,0
+.xp 29+500 >> Grind to 500+/36300 xp
 step
     #label messenger
 >>Search for Steelsnap (Hyena). He patrols counter-clockwise
@@ -1626,7 +1677,7 @@ step
     .accept 5088 >> Accept Arikara
 step
     .goto Thunder Bluff,46.9,49.4
-    .fly >> Fly to Camp Taurajo
+    .fly Camp Taurajo >> Fly to Camp Taurajo
 step
     .goto The Barrens,44.6,59.2
     .turnin 879 >> Turn in Betrayal from Within
@@ -1637,7 +1688,7 @@ step
     .accept 1153 >> Accept A New Ore Sample
 step
     .goto The Barrens,44.4,59.1
-    .fly >> Fly to Freewind Post
+    .fly Freewind Post>> Fly to Freewind Post
 step
     .goto Thousand Needles,44.8,49.0
     .turnin 4767 >> Turn in Wind Rider
@@ -1716,7 +1767,7 @@ step
     .fp >> Get the Camp Mojache flight path
 step
     .goto Feralas,75.4,44.4
-    .fly >> Fly to Freewind Post
+    .fly Freewind Post >> Fly to Freewind Post
 step
     .goto Thousand Needles,45.7,50.8
     .turnin 5064 >> Turn in Grimtotem Spying
@@ -1741,7 +1792,7 @@ step
     .hs >> Hearth to Freewind Post
 step
     .goto Thousand Needles,45.1,49.2
-    .fly >> Fly to Camp Taurajo
+    .fly Camp Taurajo >> Fly to Camp Taurajo
 step
 .isOnQuest 885
     .goto The Barrens,44.9,59.1
@@ -1759,11 +1810,10 @@ step
     .turnin 1153 >> Turn in A New Ore Sample
 step
     .goto The Barrens,44.4,59.1
-    .fly >> Fly to Crossroads
+    .fly Crossroads>> Fly to Crossroads
 step
     .goto The Barrens,51.5,30.9
     .turnin 906 >> Turn in Betrayal from Within
-    .accept 871 >> Accept Disrupt the Attacks
 step
     .goto The Barrens,51.1,29.7
     .accept 1145 >> Accept The Swarm Grows
@@ -1773,7 +1823,7 @@ step << Warrior
 .turnin 1825 >>Turn in Speak with Thun'grim
 step << !Warrior
     .goto The Barrens,51.5,30.3
-    .fly >> Fly to Ratchet
+    .fly Ratchet >> Fly to Ratchet
 step << Warrior
 .goto The Barrens,63.3,38.4,150 >>Run to Ratchet
 step
@@ -1784,7 +1834,7 @@ step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
     .goto Ashenvale,73.2,61.5
-    .fly >> Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .goto Orgrimmar,32.4,35.8
 .trainer >> Go and train your class spells

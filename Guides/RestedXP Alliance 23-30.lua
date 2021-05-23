@@ -242,7 +242,7 @@ step
     #sticky
     #label orcs1
     .goto Redridge Mountains,61.0,43.1
-    >>Kill blackrock orcs
+    >>Kill Blackrock orcs
     .complete 20,1 --Collect Battleworn Axe (x10)
 step
     .goto Redridge Mountains,57.3,52.4
@@ -278,7 +278,8 @@ step
     .goto Redridge Mountains,21.8,46.4
     .turnin 34 >> Turn in An Unwelcome Guest
 step
-    .goto Duskwood,75.7,45.3
+    >>Run to Duskwood
+	.goto Duskwood,75.7,45.3
     .accept 66 >> Accept The Legend of Stalvan
     .accept 101 >> Accept The Totem of Infliction
 step << !Rogue
@@ -290,6 +291,9 @@ step
     .goto Duskwood,72.6,46.9
     .turnin 66 >> Turn in The Legend of Stalvan
     .accept 67 >> Accept The Legend of Stalvan
+step << Draenei
+    .goto Duskwood,71.8,46.4
+    .turnin 9429 >> Turn in Travel to Darkshire
 step
     .goto Duskwood,75.3,48.6
     .accept 163 >> Accept Raven Hill
@@ -310,6 +314,12 @@ step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
     .isQuestTurnedIn 174
+step
+	#sticky
+	#completewith HistoryB
+	>>Keep an eye out for the book (zone-wide drop). You'll need this for later
+	.collect 2794,1,337
+	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,82.0,59.0
     .turnin 175 >> Turn in Look To The Stars
@@ -342,8 +352,12 @@ step
 step
     >>Do the wolf quest if you're not yet level 25
     .xp 25
-step
-    .goto Duskwood,17.7,29.1
+step << Rogue/Druid
+    #label HistoryB
+	.goto Duskwood,17.7,29.1
+    .accept 225 >> Accept The Weathered Grave
+step << !Rogue !Druid
+	.goto Duskwood,17.7,29.1
     .accept 225 >> Accept The Weathered Grave
 step << Rogue/Druid
     .goto Westfall,56.6,52.6
@@ -455,10 +469,17 @@ step
     .turnin 148 >> Turn in Supplies from Darkshire
     .accept 149 >> Accept Ghost Hair Thread
 step
-    .goto Duskwood,79.8,47.8
+    #label HistoryB
+	.goto Duskwood,79.8,47.8
     .turnin 177 >> Turn in Look To The Stars
     .accept 181 >> Accept Look To The Stars
     .isQuestTurnedIn 174
+step
+	#sticky
+	#completewith HistoryB2
+	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.collect 2794,1,337
+	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,81.9,59.1
     .turnin 149 >> Turn in Ghost Hair Thread
@@ -557,7 +578,8 @@ step
     .turnin 173 >> Turn in Worgen in the Woods
     .accept 221 >> Accept Worgen in the Woods
 step
-    .fly Redrige>> Fly to Redridge
+   #label HistoryB2
+ .fly Redridge >> Fly to Redridge
 step << Draenei
     .goto Redridge Mountains,31.6,57.9
     .accept 128 >> Accept Blackrock Bounty
@@ -583,7 +605,7 @@ step
     .complete 19,1 --Collect Tharil'zun's Head (x1)
 step
     .goto Redridge Mountains,66.6,55.4
-	>>Kill 
+	>>Kill Blackrock Shadowcasters. Loot them for Midnight Orbs
     .complete 115,1 --Collect Midnight Orb (x3)
 step
     .goto Redridge Mountains,63.2,49.7
@@ -610,6 +632,12 @@ step << Draenei
     .turnin 128 >> Turn in Blackrock Bounty
 step
     .fly Westfall>> Fly to Westfall
+step
+	#sticky
+	#completewith HistoryB3
+	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.collect 2794,1,337
+	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,18.4,56.5
     .turnin 240 >> Turn in Return to Jitters
@@ -639,20 +667,27 @@ step
     .complete 323,1 --Kill Skeletal Raider (x15)
     .complete 323,2 --Kill Skeletal Healer (x3)
     .complete 323,3 --Kill Skeletal Warder (x3)
+step
+	 .goto Duskwood,23.8,35.0
+	.xp 27+12000 >> Grind to 12000+/32200xp
 step << !Hunter !Paladin
     .goto Duskwood,19.7,39.7
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
 step
-    .goto Duskwood,7.9,34.1
+    #label HistoryB3
+	.goto Duskwood,7.9,34.1
     .turnin 323 >> Turn in Proving Your Worth
     .accept 269 >> Accept Seeking Wisdom
 step
+    #completewith next
+    .deathskip >>Head to Elwynn Forest, aggro a bunch of low level mobs, die on purpose and respawn at Goldshire.
+step
     .goto Elwynn Forest,43.7,65.9
-    >>Head to Elwynn Forest, throw away your HS and unstuck to Goldshire.
     .turnin 69 >> Turn in The Legend of Stalvan
     .accept 70 >> Accept The Legend of Stalvan
 step
-    .goto Elwynn Forest,44.2,65.9
+    >>Go upstairs in the room behind the rogue trainer. Loot the chest
+	.goto Elwynn Forest,44.2,65.9
     .complete 70,1 --Collect An Undelivered Letter (x1)
 step << !Rogue
 	#sticky
@@ -940,6 +975,8 @@ step
 step
     .goto Arathi Highlands,43.3,92.6
     .accept 647 >> Accept MacKreel's Moonshine
+    >>You can still get this quest if you don't have any kind of speed increase or slow fall
+    .link https://www.twitch.tv/videos/646111384 >>Click here for reference
 step
     .goto Arathi Highlands,44.3,93.0
 	>>Jump down and loot the letter from the corpse underwater
@@ -958,12 +995,14 @@ step
     .goto Arathi Highlands,45.8,46.1
     .fp >> Get the Arathi Highlands flight path
 step
-    .goto Hillsbrad Foothills,50.5,57.2
+.isOnQuest 647  
+>>Run to Southshore and turn in before the timer is up
+.goto Hillsbrad Foothills,52.2,58.6
+    .turnin 647 >> Turn in MacKreel's Moonshine
+step
+	.goto Hillsbrad Foothills,50.5,57.2
     .turnin 538 >> Turn in Southshore
 	.isOnQuest 538
-step
-    .goto Hillsbrad Foothills,52.2,58.6
-    .turnin 647 >> Turn in MacKreel's Moonshine
 step
     .goto Hillsbrad Foothills,51.9,58.7
     .accept 555 >> Accept Soothing Turtle Bisque
@@ -1005,23 +1044,13 @@ step << Hunter
     .turnin 562 >> Turn in Stormwind Ho!
     .accept 563 >> Accept Reassignment
 step
-    .goto Hillsbrad Foothills,50.3,58.8
-    .accept 659 >> Accept Hints of a New Plague?
-step
-    .goto Hillsbrad Foothills,49.5,58.8
-    .accept 500 >> Accept Crushridge Bounty
-step
-    .goto Hillsbrad Foothills,48.2,59.2
-    .accept 505 >> Accept Syndicate Assassins
-step
     .fp >> Get the Southshore flight path
-step
-    .goto Hillsbrad Foothills,52.4,55.9
-    .accept 564 >> Accept Costly Menace
 step
     .goto Western Plaguelands,42.9,85.0
     >>Head north farming turtle meat along the river, once you get at the end of the river, head northwest into WPL
     .fp >> Get the Chillwind Camp flight path
+step
+    .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.6,60.5
     .turnin 292 >> Turn in The Eye of Paleth
@@ -1100,8 +1129,8 @@ step << Human Paladin
     .turnin 1642 >>Turn in The Tome of Divinity
     .accept 1643 >>Accept The Tome of Divinity
 step
-    .goto Stormwind City,74.1,7.6
-    >>Skip this step if you don't have the item in your bags
+   .isOnQuest 538
+	.goto Stormwind City,74.1,7.6
     .accept 337 >> Accept An Old History Book
     .turnin 337 >> Turn in An Old History Book
     .accept 538 >> Accept Southshore
@@ -1229,10 +1258,6 @@ step << Shaman
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
 step << Shaman
-    .goto Duskwood,72.6,33.9
-    .turnin 1244 >> Turn in The Missing Diplomat
-    .accept 1245 >> Accept The Missing Diplomat
-step << Shaman
     .goto Duskwood,77.4,36.1
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << Shaman
@@ -1258,6 +1283,12 @@ step
     .goto Duskwood,28.0,31.6
     .turnin 159 >> Turn in Juice Delivery
     .accept 133 >> Accept Ghoulish Effigy
+step
+	#sticky
+	#completewith HistoryB4
+	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.collect 2794,1,337
+	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,23.6,35.0
     .complete 133,1 --Collect Ghoul Rib (x7)
@@ -1344,7 +1375,7 @@ step << !Shaman
     .goto Duskwood,73.5,46.8
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
-step << !Shaman
+step
     .goto Duskwood,72.6,33.9
     .turnin 1244 >> Turn in The Missing Diplomat
     .accept 1245 >> Accept The Missing Diplomat
@@ -1366,7 +1397,8 @@ step
     .turnin 221 >> Turn in Worgen in the Woods
     .accept 222 >> Accept Worgen in the Woods
 step
-    .goto Duskwood,73.0,75.0
+    #label HistoryB4
+	.goto Duskwood,73.0,75.0
     .complete 222,1 --Kill Nightbane Vile Fang (x8)
     .complete 222,2 --Kill Nightbane Tainted One (x8)
 step
@@ -1595,6 +1627,7 @@ step << Shaman
     .turnin 10491 >> Turn in Call of Air
     .accept 9552 >> Accept Call of Air
 step << Shaman
+.isQuestTurnedIn 9508
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman
     .goto Bloodmyst Isle,32.3,16.2
@@ -1610,12 +1643,17 @@ step << Shaman
     .accept 9509 >> Accept Call of Water
 step << Shaman
 	#sticky
-	#completewith next
+	#completewith ZExodar
 	.deathskip >> Drown yourself and spirit rez
 step << Shaman
+	#sticky
+	#completewith next
 	.goto Bloodmyst Isle,57.7,53.9
-	>>Run back to Blood Watch
+	>>Run back to Blood Watch, then fly to The Exodar
     .fly The Exodar>> Fly to The Exodar
+step << Shaman
+	#label ZExodar
+	.zone The Exodar >> Go to The Exodar
 step << Shaman
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
@@ -1638,7 +1676,5 @@ step << Shaman
     .goto The Exodar,29.6,33.4
     .turnin 9554 >> Turn in Call of Air
 step << Shaman
-    #sticky
-    #completewith next
     .hs >> Hearth to Wetlands
 ]])
