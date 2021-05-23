@@ -1631,6 +1631,7 @@ step << Shaman
     .turnin 10491 >> Turn in Call of Air
     .accept 9552 >> Accept Call of Air
 step << Shaman
+.isQuestTurnedIn 9508
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman
     .goto Bloodmyst Isle,32.3,16.2
@@ -1646,12 +1647,17 @@ step << Shaman
     .accept 9509 >> Accept Call of Water
 step << Shaman
 	#sticky
-	#completewith next
+	#completewith ZExodar
 	.deathskip >> Drown yourself and spirit rez
 step << Shaman
+	#sticky
+	#completewith next
 	.goto Bloodmyst Isle,57.7,53.9
-	>>Run back to Blood Watch
+	>>Run back to Blood Watch, then fly to The Exodar
     .fly The Exodar>> Fly to The Exodar
+step << Shaman
+	#label ZExodar
+	.zone The Exodar >> Go to The Exodar
 step << Shaman
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
