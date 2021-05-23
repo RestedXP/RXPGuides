@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 #name 20-23 Stonetalon / The Barrens
 #next 23-27 Hillsbrad / Ashenvale
 step 
-.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmarg
 step
 >>Go to the top of the tower
 .goto Orgrimmar,45.1,63.9
@@ -1586,7 +1586,7 @@ step
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
 step
 .goto Thousand Needles,18.7,22.2,40,0
-.xp 29+500 >> Grind to 500+/44300xp
+.xp 29+500 >> Grind to 500+/36300 xp
 step
     #label messenger
 >>Search for Steelsnap (Hyena). He patrols counter-clockwise
