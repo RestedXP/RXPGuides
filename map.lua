@@ -350,7 +350,6 @@ end
 -- using the MapPinPool.
 local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local pins = {}
-    local step
     local numSteps = table.getn(steps)
     local activeSteps = RXP_.MainFrame.CurrentStepFrame.activeSteps
     local numActive = table.getn(activeSteps)
@@ -406,7 +405,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     end
     
     local i = 0;   
-    while table.getn(pins) < numPins and (startingIndex + i <= numSteps) do
+    while table.getn(pins) < numPins and (startingIndex + i < numSteps) do
         i = i + 1
         local step = steps[startingIndex + i]
         ProcessMapPin(step)
