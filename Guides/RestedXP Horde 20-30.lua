@@ -1563,6 +1563,7 @@ step
     .turnin 9431 >> Turn in A Different Approach
     .accept 5151 >> Accept Hypercapacitor Gizmo
     .accept 9433 >> A Dip in the Moonwell
+    .turnin 4770 >> Turn in Homeward Bound
 step
     #sticky
     #completewith steelsnap
