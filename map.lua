@@ -406,7 +406,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     end
     
     local i = 0;   
-    while table.getn(pins) < numPins-numActive and (startingIndex + i <= numSteps) do
+    while table.getn(pins) < numPins and (startingIndex + i <= numSteps) do
         i = i + 1
         local step = steps[startingIndex + i]
         ProcessMapPin(step)
