@@ -352,14 +352,16 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local pins = {}
     local step
     local numSteps = table.getn(steps)
-    local i = 0;
-
+    local activeSteps = RXP_.MainFrame.CurrentStepFrame.activeSteps
+    local numActive = table.getn(activeSteps)
+    if numPins < numActive then
+        numPins = numActive
+    end
+    
     -- Loop through the steps until we create the number of pins a user 
     -- configures or until we reach the end of the current guide.
-    while table.getn(pins) < numPins and (startingIndex + i <= numSteps) do
-        local step = steps[startingIndex + i]
-        local j = 0;
-
+    
+    local function ProcessMapPin(step)    
         -- Loop through the elements in each step. Again, we check if we
         -- already created enough pins, then we check if the element
         -- should be included on the map. 
@@ -368,6 +370,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         -- other pins. If it is, we add the element to a previous pin. 
         --
         -- If it is far enough away, we add a new pin to the map.
+        local j = 0;
         while table.getn(pins) < numPins and j < table.getn(step.elements) do
             local element = step.elements[j + 1]
 
@@ -396,8 +399,17 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
 
             j = j + 1
         end
+    end    
 
+    for _,step in pairs(activeSteps) do
+        ProcessMapPin(step)
+    end
+    
+    local i = 0;   
+    while table.getn(pins) < numPins-numActive and (startingIndex + i <= numSteps) do
         i = i + 1
+        local step = steps[startingIndex + i]
+        ProcessMapPin(step)
     end
     
     return pins
