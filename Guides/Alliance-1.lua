@@ -1,4 +1,3 @@
-
 RXPGuides.RegisterGuide("RestedXP Alliance Boosted 58-60",[[
 << Alliance
 #name Boosted Character 58-60
@@ -190,63 +189,6 @@ step
     .accept 6182 >>Accept The First and the Last
     >>There is a long scripted RP sequence part of the Onyxia attunement quest that makes Bolvar not able to interact with players for a few minutes, if that's the case, skip this step and try to get this quest later after finishing Burning Steppes
 step
-    .goto Stormwind City,67.9,30.1,30,0
-    .goto Stormwind City,64.9,36.9,30,0
-    .goto Stormwind City,73.3,46.2,30,0
-    .goto Stormwind City,69.7,49.8,30,0
-    .goto Stormwind City,67.4,46.3,30,0
-    .goto Stormwind City,57.4,54.9,30,0
-    .goto Stormwind City,59.0,57.5,30,0
-    .goto Stormwind City,53.6,63.8,30,0
-    .goto Stormwind City,52.2,60.8,30,0
-    .goto Stormwind City,43.8,70.5,30,0
-    .goto Stormwind City,41.2,80.0,30,0
-    .goto Stormwind City,32.9,70.7,30,0
-    .goto Stormwind City,31.7,59.8,30,0
-    .goto Stormwind City,36.4,51.0,30,0
-    .goto Stormwind City,40.2,41.7,30,0
-    .goto Stormwind City,47.1,41.6,30,0
-    .goto Stormwind City,52.5,31.5,30,0
-    .goto Stormwind City,54.3,25.8,30,0
-    .goto Stormwind City,67.9,30.1,30,0
-    .goto Stormwind City,64.9,36.9,30,0
-    .goto Stormwind City,73.3,46.2,30,0
-    .goto Stormwind City,69.7,49.8,30,0
-    .goto Stormwind City,67.4,46.3,30,0
-    .goto Stormwind City,57.4,54.9,30,0
-    .goto Stormwind City,59.0,57.5,30,0
-    .goto Stormwind City,53.6,63.8,30,0
-    .goto Stormwind City,52.2,60.8,30,0
-    .goto Stormwind City,43.8,70.5,30,0
-    .goto Stormwind City,41.2,80.0,30,0
-    .goto Stormwind City,32.9,70.7,30,0
-    .goto Stormwind City,31.7,59.8,30,0
-    .goto Stormwind City,36.4,51.0,30,0
-    .goto Stormwind City,40.2,41.7,30,0
-    .goto Stormwind City,47.1,41.6,30,0
-    .goto Stormwind City,52.5,31.5,30,0
-    .goto Stormwind City,54.3,25.8,30,0
-    .goto Stormwind City,67.9,30.1,30,0
-    .goto Stormwind City,64.9,36.9,30,0
-    .goto Stormwind City,73.3,46.2,30,0
-    .goto Stormwind City,69.7,49.8,30,0
-    .goto Stormwind City,67.4,46.3,30,0
-    .goto Stormwind City,57.4,54.9,30,0
-    .goto Stormwind City,59.0,57.5,30,0
-    .goto Stormwind City,53.6,63.8,30,0
-    .goto Stormwind City,52.2,60.8,30,0
-    .goto Stormwind City,43.8,70.5,30,0
-    .goto Stormwind City,41.2,80.0,30,0
-    .goto Stormwind City,32.9,70.7,30,0
-    .goto Stormwind City,31.7,59.8,30,0
-    .goto Stormwind City,36.4,51.0,30,0
-    .goto Stormwind City,40.2,41.7,30,0
-    .goto Stormwind City,47.1,41.6,30,0
-    .goto Stormwind City,52.5,31.5,30,0
-    .goto Stormwind City,54.3,25.8,30,0
-	.accept 5066 >> Accept A Call to Arms: The Plaguelands!
-	>>Ride around Stormwind looking for Crier Goodman
-step
     #label bs1
     #requires DP
     .goto Stormwind City,66.2,62.2
@@ -324,7 +266,6 @@ step
     >>The quest giver is part of a long scripted RP sequence, if you can't find him skip this step
 step
     .goto Western Plaguelands,42.8,84.0
-    .turnin 5066 >>Turn in A Call to Arms: The Plaguelands!
     .accept 5092 >>Accept Clear the Way
 step
     .goto Western Plaguelands,43.4,84.8
@@ -333,7 +274,6 @@ step
     .goto Western Plaguelands,43.7,84.5
     .turnin 6184 >>Turn in Flint Shadowmore
     .accept 6185 >>Accept The Eastern Plagues
-
 step
     #label mark1
     .goto Western Plaguelands,42.9,85.0
