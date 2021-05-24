@@ -362,7 +362,7 @@ step
 	#sticky
 	#label wolves
     .goto Western Plaguelands,46.0,47.7,0
-	>>The wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find wolves.
+	>>The Diseased Wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find Wolves.
     .complete 4984,1 --Kill Diseased Wolf (x8)
 step
     .goto Western Plaguelands,47.8,50.8
@@ -457,8 +457,28 @@ step
     .goto Western Plaguelands,52.0,28.1
     .turnin 6025 >>Turn in Unfinished Business
 step
-    .goto Western Plaguelands,48.2,39.5
-    .complete 4984,1 --Diseased Wolf (8)
+    .goto Western Plaguelands,51.2,53.3,50,0
+    .goto Western Plaguelands,46.9,47.0,50,0
+    .goto Western Plaguelands,50.4,35.0,50,0
+    .goto Western Plaguelands,45.6,37.7,50,0
+    .goto Western Plaguelands,42.8,56.7,50,0
+    .goto Western Plaguelands,51.2,53.3,50,0
+    .goto Western Plaguelands,46.9,47.0,50,0
+    .goto Western Plaguelands,50.4,35.0,50,0
+    .goto Western Plaguelands,45.6,37.7,50,0
+    .goto Western Plaguelands,42.8,56.7,50,0
+    .goto Western Plaguelands,51.2,53.3,50,0
+    .goto Western Plaguelands,46.9,47.0,50,0
+    .goto Western Plaguelands,50.4,35.0,50,0
+    .goto Western Plaguelands,45.6,37.7,50,0
+    .goto Western Plaguelands,42.8,56.7,50,0
+    .goto Western Plaguelands,51.2,53.3,50,0
+    .goto Western Plaguelands,46.9,47.0,50,0
+    .goto Western Plaguelands,50.4,35.0,50,0
+    .goto Western Plaguelands,45.6,37.7,50,0
+    .goto Western Plaguelands,42.8,56.7,50,0
+	>>The Diseased Wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find Wolves.
+    .complete 4984,1 --Kill Diseased Wolf (x8)
 step
     .goto Western Plaguelands,44.3,63.2
     .complete 5097,3 --Tower Three marked (1)
@@ -504,6 +524,7 @@ step
     .accept 4985 >>Accept The Wildlife Suffers Too
 step
     .goto Western Plaguelands,53.9,51.3
+	>>The Diseased Grizzlies share spawns with Plague Lurkers. Kill them too if you're unable to find Grizzlies.
     .complete 4985,1 --Diseased Grizzly (8)
 step
     .goto Western Plaguelands,53.7,64.7
