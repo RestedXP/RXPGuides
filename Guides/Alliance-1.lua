@@ -542,15 +542,18 @@ step
     .goto Eastern Plaguelands,27.3,85.3
     .complete 6021,1 --Zaeldarr's Head (1)
 step
-    .goto Eastern Plaguelands,28.7,79.8
-    >>Click on the skeleton on the ground
-    .complete 6185,1 --SI:7 Insignia (Rutger) (1)
+    .goto Eastern Plaguelands,28.8,79.8
+	>>Click the skeleton on the ground. Loot it for the Insignia
+    .complete 6185,2 --SI:7 Insignia (Rutger) (1)
 step
-    .goto Eastern Plaguelands,28.8,75.0
-    .complete 6185,3 --SI:7 Insignia (Turyen) (1)
+    .goto Eastern Plaguelands,28.8,74.9
+	>>Click the skeleton on the ground. Loot it for the Insignia
+    .complete 6185,4 --SI:7 Insignia (Turyen) (1)
 step
-    .goto Eastern Plaguelands,27.3,75.0
-    .complete 6185,2 --SI:7 Insignia (Fredo) (1)
+    .goto Eastern Plaguelands,27.2,75.0
+	>>Click the skeleton on the ground. Loot it for the Insignia
+    .complete 6185,3 --SI:7 Insignia (Fredo) (1)
+    .complete 6185,1 --The Blightcaller Uncovered (1)
 step
     .goto Eastern Plaguelands,36.5,90.9
     .turnin 5142 >>Turn in Little Pamela
