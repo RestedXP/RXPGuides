@@ -2617,13 +2617,11 @@ step << BloodElf
 step << !BloodElf
 .isQuestTurnedIn 9167
 .goto Undercity,57.8,91.8
-    .accept 9425 >> Accept Report to Tarren Mill
     .turnin 9812 >> Turn in Envoy to the Horde
     .accept 9813 >> Accept Meeting the Orcs
     .turnin 9180 >> Turn in Journey to Undercity
 step << !BloodElf
 .goto Undercity,57.8,91.8
-    .accept 9425 >> Accept Report to Tarren Mill
     .turnin 9180 >> Turn in Journey to Undercity
 step
 .goto Undercity,52.0,64.6,35 >>Exit the Royal Quarter
