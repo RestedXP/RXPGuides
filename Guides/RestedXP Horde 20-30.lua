@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 #name 20-23 Stonetalon / The Barrens
 #next 23-27 Hillsbrad / Ashenvale
 step 
-.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmarg
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step
 >>Go to the top of the tower
 .goto Orgrimmar,45.1,63.9
@@ -34,7 +34,7 @@ step << Warlock
     .goto Orgrimmar,37.0,59.4
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
-step
+step << BloodElf
     .goto Orgrimmar,31.9,38.2
     .accept 9428 >> Accept Report to Splintertree Post
 step
@@ -761,9 +761,10 @@ step
     >>Run to Tarren Mill
 .goto Hillsbrad Foothills,60.1,18.7
     .fp >> Get the Tarren Mill flight path
-step    
+step << BloodElf
     .goto Hillsbrad Foothills,62.5,20.7
     .turnin 9425 >> Turn in Report to Tarren Mill
+step
     .goto Hillsbrad Foothills,62.4,20.3
     .turnin 494 >> Turn in Time To Strike
     .goto Hillsbrad Foothills,62.5,20.5
@@ -1058,7 +1059,7 @@ step
 step
     .goto Ashenvale,73.5,60.1
     .accept 25 >> Accept Stonetalon Standstill
-step
+step << BloodElf
     .goto Ashenvale,71.3,67.8
     .turnin 9428 >> Turn in Report to Splintertree Post
 step
