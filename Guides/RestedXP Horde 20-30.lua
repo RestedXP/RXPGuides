@@ -1142,14 +1142,23 @@ step << Shaman
 .goto Ashenvale,33.5,67.5
     .complete 1534,1 --Filled Blue Waterskin (1)
 step
-.goto Ashenvale,41.5,67.4,40,0
+    .goto Ashenvale,41.5,67.4,40,0
     .goto Ashenvale,44.3,68.6,40,0
     .goto Ashenvale,43.8,63.6,40,0
     .goto Ashenvale,41.4,65.9,40,0
-.goto Ashenvale,41.5,67.4,40,0
+    .goto Ashenvale,41.5,67.4,40,0
     .goto Ashenvale,44.3,68.6,40,0
     .goto Ashenvale,43.8,63.6,40,0
     .goto Ashenvale,41.4,65.9,40,0
+    .goto Ashenvale,41.5,67.4,40,0
+    .goto Ashenvale,44.3,68.6,40,0
+    .goto Ashenvale,43.8,63.6,40,0
+    .goto Ashenvale,41.4,65.9,40,0
+    .goto Ashenvale,41.5,67.4,40,0
+    .goto Ashenvale,44.3,68.6,40,0
+    .goto Ashenvale,43.8,63.6,40,0
+    .goto Ashenvale,41.4,65.9,40,0
+    .goto Ashenvale,44.3,68.6
 >>Look for Ursangous (Bear). He patrols clockwise. Kill and loot him for Ursangous's Paw, then accept it
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
     .accept 23 >> Accept Ursangous's Paw
