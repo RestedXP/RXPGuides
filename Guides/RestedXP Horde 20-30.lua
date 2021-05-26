@@ -1586,12 +1586,8 @@ step
     .collect 12564,1,4881 --Collect Assassination Note (x1)
 .accept 4881 >> Accept Assassination Plot
 step
->>Open the panther cage and kill him.
-    .goto Thousand Needles,23.3,23.3
-    .complete 5151,1 --Collect Hypercapacitor Gizmo (x1)
-step
     #label steelsnap
->>Use the Robotron Control Unit hiding in the bushes. Walk over to the moonwell and collect the water
+>>Use the Robotron Control Unit hiding in the bushes. Walk over to the moonwell and collect the water (the arrow won't move when controlling the tank)
 .goto Thousand Needles,9.4,18.7,15,0
 .goto Feralas,89.6,46.3
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
@@ -1616,7 +1612,6 @@ step
     .goto Thousand Needles,21.5,32.5
     .turnin 9433 >> Turn in A Dip in the Moonwell
     .accept 9434 >> Accept Testing the Tonic
-    .turnin 5151 >> Turn in Hypercapacitor Gizmo
 step
 >>Search for the Galak Messenger. He starts at a camp, goes on the road, then goes to the other camp
     .goto Thousand Needles,18.4,22.2,40,0
@@ -1763,9 +1758,14 @@ step
     >>Follow Lakota and protect her through the whole escort.
     .complete 4904,1 --Escort Lakota Windsong from the Darkcloud Pinnacle.
 step
+>>Open the panther cage and kill it. Make sure to have your cooldowns available/potions etc
+    .goto Thousand Needles,23.3,23.3
+    .complete 5151,1 --Collect Hypercapacitor Gizmo (x1)
+step
     #label OreSample
 .goto Thousand Needles,21.5,32.3
     .turnin 5088 >> Turn in Arikara
+    .turnin 5151 >> Turn in Hypercapacitor Gizmo
 step
     >>Kill Kobolds in the area. Loot them for an Unrefined Ore Sample
 .goto Thousand Needles,9.2,21.0
