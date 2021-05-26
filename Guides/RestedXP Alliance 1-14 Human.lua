@@ -2512,6 +2512,12 @@ step
     .goto Darkshore,36.6,45.6
     .turnin 3524 >> Turn in Washed Ashore
 step
+    .goto Darkshore,38.8,43.4
+    .turnin 2118 >> Turn in Plagued Lands
+step
+    .goto Darkshore,39.3,43.4
+    .turnin 984 >> Turn in How Big a Threat?
+step
     .goto Darkshore,36.6,45.6
     .abandon 1001 >> Abandon Buzzbox 411
 step
