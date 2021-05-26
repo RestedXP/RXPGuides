@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 #name 20-23 Stonetalon / The Barrens
 #next 23-27 Hillsbrad / Ashenvale
 step 
-.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmarg
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step
 >>Go to the top of the tower
 .goto Orgrimmar,45.1,63.9
@@ -34,7 +34,7 @@ step << Warlock
     .goto Orgrimmar,37.0,59.4
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
-step
+step << BloodElf
     .goto Orgrimmar,31.9,38.2
     .accept 9428 >> Accept Report to Splintertree Post
 step
@@ -761,9 +761,10 @@ step
     >>Run to Tarren Mill
 .goto Hillsbrad Foothills,60.1,18.7
     .fp >> Get the Tarren Mill flight path
-step    
+step << BloodElf
     .goto Hillsbrad Foothills,62.5,20.7
     .turnin 9425 >> Turn in Report to Tarren Mill
+step
     .goto Hillsbrad Foothills,62.4,20.3
     .turnin 494 >> Turn in Time To Strike
     .goto Hillsbrad Foothills,62.5,20.5
@@ -1058,7 +1059,7 @@ step
 step
     .goto Ashenvale,73.5,60.1
     .accept 25 >> Accept Stonetalon Standstill
-step
+step << BloodElf
     .goto Ashenvale,71.3,67.8
     .turnin 9428 >> Turn in Report to Splintertree Post
 step
@@ -1141,14 +1142,23 @@ step << Shaman
 .goto Ashenvale,33.5,67.5
     .complete 1534,1 --Filled Blue Waterskin (1)
 step
-.goto Ashenvale,41.5,67.4,40,0
+    .goto Ashenvale,41.5,67.4,40,0
     .goto Ashenvale,44.3,68.6,40,0
     .goto Ashenvale,43.8,63.6,40,0
     .goto Ashenvale,41.4,65.9,40,0
-.goto Ashenvale,41.5,67.4,40,0
+    .goto Ashenvale,41.5,67.4,40,0
     .goto Ashenvale,44.3,68.6,40,0
     .goto Ashenvale,43.8,63.6,40,0
     .goto Ashenvale,41.4,65.9,40,0
+    .goto Ashenvale,41.5,67.4,40,0
+    .goto Ashenvale,44.3,68.6,40,0
+    .goto Ashenvale,43.8,63.6,40,0
+    .goto Ashenvale,41.4,65.9,40,0
+    .goto Ashenvale,41.5,67.4,40,0
+    .goto Ashenvale,44.3,68.6,40,0
+    .goto Ashenvale,43.8,63.6,40,0
+    .goto Ashenvale,41.4,65.9,40,0
+    .goto Ashenvale,44.3,68.6
 >>Look for Ursangous (Bear). He patrols clockwise. Kill and loot him for Ursangous's Paw, then accept it
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
     .accept 23 >> Accept Ursangous's Paw
@@ -1576,12 +1586,8 @@ step
     .collect 12564,1,4881 --Collect Assassination Note (x1)
 .accept 4881 >> Accept Assassination Plot
 step
->>Open the panther cage and kill him.
-    .goto Thousand Needles,23.3,23.3
-    .complete 5151,1 --Collect Hypercapacitor Gizmo (x1)
-step
     #label steelsnap
->>Use the Robotron Control Unit hiding in the bushes. Walk over to the moonwell and collect the water
+>>Use the Robotron Control Unit hiding in the bushes. Walk over to the moonwell and collect the water (the arrow won't move when controlling the tank)
 .goto Thousand Needles,9.4,18.7,15,0
 .goto Feralas,89.6,46.3
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
@@ -1606,7 +1612,6 @@ step
     .goto Thousand Needles,21.5,32.5
     .turnin 9433 >> Turn in A Dip in the Moonwell
     .accept 9434 >> Accept Testing the Tonic
-    .turnin 5151 >> Turn in Hypercapacitor Gizmo
 step
 >>Search for the Galak Messenger. He starts at a camp, goes on the road, then goes to the other camp
     .goto Thousand Needles,18.4,22.2,40,0
@@ -1753,9 +1758,14 @@ step
     >>Follow Lakota and protect her through the whole escort.
     .complete 4904,1 --Escort Lakota Windsong from the Darkcloud Pinnacle.
 step
+>>Open the panther cage and kill it. Make sure to have your cooldowns available/potions etc
+    .goto Thousand Needles,23.3,23.3
+    .complete 5151,1 --Collect Hypercapacitor Gizmo (x1)
+step
     #label OreSample
 .goto Thousand Needles,21.5,32.3
     .turnin 5088 >> Turn in Arikara
+    .turnin 5151 >> Turn in Hypercapacitor Gizmo
 step
     >>Kill Kobolds in the area. Loot them for an Unrefined Ore Sample
 .goto Thousand Needles,9.2,21.0

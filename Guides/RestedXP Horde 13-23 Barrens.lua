@@ -41,22 +41,22 @@ step
     .complete 871,2 --Razormane Thornweaver (8)
     .complete 871,1 --Razormane Water Seeker (8)
     .complete 871,3 --Razormane Hunter (3)
-step
+step << !Tauren
     #sticky
     #completewith next
     >>If the Flawed Power Stone in your bags has less than 10 minutes left, drop it, then go back and loot the Purple Stone next to Ak'Zeloth again
     .turnin 926 >>Turn in Flawed Power Stone
-step
+step << !Tauren
     #sticky
 #completewith BeakCave
 >>Kill some Plainstriders en route if you have time on Flawed Power Stone. Loot them for Beaks
     .complete 844,1 --Plainstrider Beak (7)
-step
+step << !Tauren
 .goto The Barrens,50.4,22.0,20 >>Run up the mountain here
-step
+step << !Tauren
     #label BeakCave
 .goto The Barrens,47.6,19.2,20 >>Go to the cave surrounded by Burning Blade orcs
-step
+step << !Tauren
     >>Right click the Altar
 .goto The Barrens,48.0,19.1
 .collect 4986,1,924 --Collect Flawed Power Stone
@@ -66,9 +66,18 @@ step
     #completewith next
     >>Kill Raptors that you see. Loot them for some Raptor Heads - you'll get more later
     .complete 869,1 --Raptor Head (12)
-step
+step << !Tauren
     >>Kill Plainstriders. Loot them for Beaks
 .goto The Barrens,50.8,32.1
+    .complete 844,1 --Plainstrider Beak (7)
+step << Tauren
+    .goto The Barrens,55.7,24.0,40,0
+    .goto The Barrens,53.8,23.1,40,0
+        .goto The Barrens,52.1,21.1,40,0
+    .goto The Barrens,51.3,22.9,40,0
+    .goto The Barrens,48.3,23.5,40,0
+    .goto The Barrens,49.8,31.2,40,0
+    >>Kill Plainstriders. Loot them for Beaks
     .complete 844,1 --Plainstrider Beak (7)
 step << Orc/Troll
     .goto The Barrens,52.6,29.9
@@ -137,7 +146,9 @@ step
     #completewith next
     >>Kill any Zhevras you see. Loot them for Hooves
     .complete 845,1 --Zhevra Hooves (4)
-step
+step << Tauren Warrior
+    .goto The Barrens,56.7,19.8,60 >> Run to here
+step << !Tauren
     .goto The Barrens,62.3,20.1
     .turnin 924 >>Turn in The Demon Seed
 step << Shaman

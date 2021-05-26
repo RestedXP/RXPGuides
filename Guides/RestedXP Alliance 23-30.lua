@@ -1407,6 +1407,7 @@ step
 step
 	#sticky
 	#completewith thorsen
+	    .goto Stranglethorn Vale,40.4,8.4,0
 	>>Look out for Private Thorsen's RP event while you quest, he patrols down the road every ~30 minutes
 	.accept 215 >> Accept Jungle Secrets
 step

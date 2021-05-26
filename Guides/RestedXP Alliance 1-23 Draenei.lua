@@ -1130,6 +1130,7 @@ step
     .goto Bloodmyst Isle,30.8,46.8
     .accept 10066 >> Accept Oh, the Tangled Webs They Weave
     .accept 10067 >> Accept Fouled Water Spirits
+     .turnin 9760 >> Turn in Vindicator's Rest
 step
     #sticky
     .goto Bloodmyst Isle,30.3,57.2,0

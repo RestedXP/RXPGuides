@@ -362,7 +362,7 @@ step
 	#sticky
 	#label wolves
     .goto Western Plaguelands,46.0,47.7,0
-	>>The wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find wolves.
+	>>The Diseased Wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find Wolves.
     .complete 4984,1 --Kill Diseased Wolf (x8)
 step
     .goto Western Plaguelands,47.8,50.8
@@ -404,12 +404,31 @@ step
     .goto Western Plaguelands,51.9,28.1
     .accept 6004 >>Accept Unfinished Business
 step
-    .goto Western Plaguelands,51.80,44.25
-    .goto Western Plaguelands,40.53,51.79
+    .goto Western Plaguelands,52.0,44.3,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,40.7,52.2,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,52.0,44.3,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,40.7,52.2,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,52.0,44.3,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,40.7,52.2,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,52.0,44.3,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,40.7,52.2,40,0
+    .goto Western Plaguelands,50.3,41.1,40,0
+	>>Kill Scarlet mobs. If you're unable to find medics and hunters, kill mobs at the camps to force new respawns, as they share respawns with other mob types
     .complete 6004,1 --Scarlet Medic (2)
     .complete 6004,2 --Scarlet Hunter (2)
     .complete 6004,3 --Scarlet Mage (2)
     .complete 6004,4 --Scarlet Knight (2)
+step
+    .goto Western Plaguelands,51.9,28.1
+    .turnin 6004 >>Turn in Unfinished Business
+    .accept 6023 >>Accept Unfinished Business
 step
     .goto Western Plaguelands,55.1,23.5
     >>Look for the named mob that patrols up and down the tower
@@ -438,8 +457,28 @@ step
     .goto Western Plaguelands,52.0,28.1
     .turnin 6025 >>Turn in Unfinished Business
 step
-    .goto Western Plaguelands,48.2,39.5
-    .complete 4984,1 --Diseased Wolf (8)
+    .goto Western Plaguelands,51.2,53.3,50,0
+    .goto Western Plaguelands,46.9,47.0,50,0
+    .goto Western Plaguelands,50.4,35.0,50,0
+    .goto Western Plaguelands,45.6,37.7,50,0
+    .goto Western Plaguelands,42.8,56.7,50,0
+    .goto Western Plaguelands,51.2,53.3,50,0
+    .goto Western Plaguelands,46.9,47.0,50,0
+    .goto Western Plaguelands,50.4,35.0,50,0
+    .goto Western Plaguelands,45.6,37.7,50,0
+    .goto Western Plaguelands,42.8,56.7,50,0
+    .goto Western Plaguelands,51.2,53.3,50,0
+    .goto Western Plaguelands,46.9,47.0,50,0
+    .goto Western Plaguelands,50.4,35.0,50,0
+    .goto Western Plaguelands,45.6,37.7,50,0
+    .goto Western Plaguelands,42.8,56.7,50,0
+    .goto Western Plaguelands,51.2,53.3,50,0
+    .goto Western Plaguelands,46.9,47.0,50,0
+    .goto Western Plaguelands,50.4,35.0,50,0
+    .goto Western Plaguelands,45.6,37.7,50,0
+    .goto Western Plaguelands,42.8,56.7,50,0
+	>>The Diseased Wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find Wolves.
+    .complete 4984,1 --Kill Diseased Wolf (x8)
 step
     .goto Western Plaguelands,44.3,63.2
     .complete 5097,3 --Tower Three marked (1)
@@ -485,6 +524,7 @@ step
     .accept 4985 >>Accept The Wildlife Suffers Too
 step
     .goto Western Plaguelands,53.9,51.3
+	>>The Diseased Grizzlies share spawns with Plague Lurkers. Kill them too if you're unable to find Grizzlies.
     .complete 4985,1 --Diseased Grizzly (8)
 step
     .goto Western Plaguelands,53.7,64.7
@@ -502,15 +542,18 @@ step
     .goto Eastern Plaguelands,27.3,85.3
     .complete 6021,1 --Zaeldarr's Head (1)
 step
-    .goto Eastern Plaguelands,28.7,79.8
-    >>Click on the skeleton on the ground
-    .complete 6185,1 --SI:7 Insignia (Rutger) (1)
+    .goto Eastern Plaguelands,28.8,79.8
+	>>Click the skeleton on the ground. Loot it for the Insignia
+    .complete 6185,2 --SI:7 Insignia (Rutger) (1)
 step
-    .goto Eastern Plaguelands,28.8,75.0
-    .complete 6185,3 --SI:7 Insignia (Turyen) (1)
+    .goto Eastern Plaguelands,28.8,74.9
+	>>Click the skeleton on the ground. Loot it for the Insignia
+    .complete 6185,4 --SI:7 Insignia (Turyen) (1)
 step
-    .goto Eastern Plaguelands,27.3,75.0
-    .complete 6185,2 --SI:7 Insignia (Fredo) (1)
+    .goto Eastern Plaguelands,27.2,75.0
+	>>Click the skeleton on the ground. Loot it for the Insignia
+    .complete 6185,3 --SI:7 Insignia (Fredo) (1)
+    .complete 6185,1 --The Blightcaller Uncovered (1)
 step
     .goto Eastern Plaguelands,36.5,90.9
     .turnin 5142 >>Turn in Little Pamela
