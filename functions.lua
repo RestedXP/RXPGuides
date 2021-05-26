@@ -26,6 +26,7 @@ RXP_.functions.events.abandon = RXP_.functions.events.complete
 RXP_.functions.events.isQuestComplete = RXP_.functions.events.complete
 RXP_.functions.events.isOnQuest = RXP_.functions.events.complete
 RXP_.functions.events.isQuestTurnedIn = RXP_.functions.events.complete
+RXP_.functions.events.cast = RXP_.functions.events.hs
 
 RXP_.icons = {
 accept = "|TInterface/GossipFrame/AvailableQuestIcon:0|t",
@@ -52,6 +53,12 @@ abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
 link = "|TInterface/FriendsFrame/UI-FriendsFrame-Link:0|t",
 error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
 }
+
+function RXP_.error(msg)
+    print(msg)
+    return
+end
+
 
 local IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 
@@ -270,13 +277,23 @@ function RXP_.UpdateStepText(self)
     RXP_.stepUpdateList[self.step.index] = true
 end
 
-function RXP_.AldorScryerCheck(step)
-    if step.aldor then
-        name, description, standingID = GetFactionInfoByID(932)
-        return (standingID and standingID >= 5),"Aldor"
-    elseif step.scryer then
-        name, description, standingID = GetFactionInfoByID(934)
-        return standingID and standingID >= 5,"Scryers"
+function RXP_.AldorScryerCheck(faction)
+    local name, description, standingID, barMin, barMax, aldorRep = GetFactionInfoByID(932)
+    local name, description, standingID, barMin, barMax, scryerRep = GetFactionInfoByID(934)
+    
+    if aldorRep and scryerRep then
+        if type(faction) == "table" then
+            if faction.aldor then
+                faction = "Aldor"
+            elseif faction.scryer then
+                faction = "Scryer"
+            end
+        end
+        if faction == "Aldor" then
+            return (aldorRep > scryerRep)
+        elseif faction == "Scryer" then
+            return (aldorRep < scryerRep)
+        end
     end
     return true
 end
@@ -302,7 +319,7 @@ function RXP_.functions.accept(self,...)
         element.tag = "accept"
         local text,id = ...
         id = tonumber(id)
-        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        if not id then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.title = ""
         element.questId = questConversion[id] or id
         --element.title = RXP_.GetQuestName(id)
@@ -401,7 +418,7 @@ function RXP_.functions.turnin(self,...)
         element.tag = "turnin"
         local text,id,reward = ...
         id = tonumber(id)
-        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        if not id then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.questId = questConversion[id] or id
         element.reward = tonumber(reward) or 0
         element.title = ""
@@ -506,7 +523,7 @@ function RXP_.functions.complete(self,...)
         local text,id,obj = ...
         id = tonumber(id)
         if not (id and obj) then 
-            error("Error parsing guide "..RXP_.currentGuideName..": Invalid objective or quest ID\n"..self)
+            RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid objective or quest ID\n"..self)
         end
         element.obj = tonumber(obj)
 
@@ -697,7 +714,7 @@ function RXP_.functions.goto(self,...)
         element.x = tonumber(x)
         element.y = tonumber(y)
         if not (element.x and element.y and zone and RXP_.mapId[zone]) then
-            error("Error parsing guide "..RXP_.currentGuideName..": Invalid coordinates or map name\n"..self)
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid coordinates or map name\n"..self)
         end
         element.zone = RXP_.mapId[zone]
         element.radius = tonumber(radius)
@@ -806,7 +823,7 @@ function RXP_.functions.fly(self,...)
         if text and text ~= "" then
             element.text = text
         elseif not location then
-            return error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/location\n"..self)
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/location\n"..self)
         else
             element.text = "Fly to "..location
         end
@@ -863,7 +880,7 @@ function RXP_.functions.collect(self,...)
         local text,id,qty,questId = ...
         id = tonumber(id)
         if not id then
-            error('Error parsing guide '..RXP_.currentGuideName..': No item ID provided\n'..self)
+            return RXP_.error('Error parsing guide '..RXP_.currentGuideName..': No item ID provided\n'..self)
         end
         element.questId = tonumber(questId)
         element.id = id
@@ -1079,13 +1096,13 @@ function RXP_.functions.money(self,...)
         elseif prefix == ">" then
             element.greaterThan = true
         else
-            error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
         end
         element.money = tonumber(money:match("(%d+%.?%d*)"))
         if element.money then
             element.money = element.money * 1e4
         else
-            error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
         end
         element.textOnly = true
         if text and text ~= "" then
@@ -1139,7 +1156,7 @@ function RXP_.functions.train(self,...)
         end
         
         if type(spellId) ~= "number" then
-            return "Error parsing guide "..RXP_.currentGuideName..": Invalid spell name/id\n"..self
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid spell name/id\n"..self)
         end
         if rank then
             element.rank = tonumber(rank:match("(%d+)")) or 0
@@ -1219,7 +1236,7 @@ function RXP_.functions.abandon(self,...)
         element.tag = "accept"
         local text,id = ...
         id = tonumber(id)
-        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        if not id then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.title = ""
         element.questId = id
         --element.title = RXP_.GetQuestName(id)
@@ -1274,7 +1291,7 @@ function RXP_.functions.isQuestComplete(self,...)
         local element = {}
         local text,id = ...
         id = tonumber(id)
-        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        if not id then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.questId = id
         if text and text ~= "" then
             element.text = text
@@ -1294,7 +1311,7 @@ function RXP_.functions.isOnQuest(self,...)
         local element = {}
         local text,id = ...
         id = tonumber(id)
-        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        if not id then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.questId = id
         if text and text ~= "" then
             element.text = text
@@ -1309,21 +1326,30 @@ function RXP_.functions.isOnQuest(self,...)
     end
 end
 
-function RXP_.functions.isQuestTurnedIn(self,...)
+function RXP_.functions.isQuestTurnedIn(self,text,...)
     if type(self) == "string" then
         local element = {}
-        local text,id = ...
-        id = tonumber(id)
-        if not id then return error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
-        element.questId = id
+        local ids = {...}
+        for k,v in pairs(ids) do
+            ids[k] = tonumber(v)
+        end
+        if not ids[1] then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
+        element.questIds = ids
         if text and text ~= "" then
-            element.text = text
+            element.text = text or ""
         end
         element.textOnly = true
         return element
     end
-    local id = self.element.questId
-    if self.element.step.active and not IsQuestTurnedIn(id) then
+    local ids = self.element.questIds
+    local questTurnedIn = false
+    for _,id in pairs(ids) do
+        if IsQuestTurnedIn(id) then
+            questTurnedIn = true
+        end
+    end
+    
+    if self.element.step.active and not questTurnedIn then
         self.element.step.completed = true
         RXP_.updateSteps = true
     end
@@ -1354,7 +1380,7 @@ function RXP_.functions.zone(self,...)
         local text,zone = ...
         local mapID = RXP_.mapId[zone]
         if not (mapID and text) then
-            return error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/map name\n"..self)
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/map name\n"..self)
         end
         element.map = mapID
         element.icon = RXP_.icons.goto
@@ -1387,7 +1413,7 @@ function RXP_.functions.link(self,...)
         local element = {}
         local text,url = ...
         if not (url and text) then
-            return error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/url\n"..self)
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/url\n"..self)
         end
         element.textOnly = true
         element.url = url
@@ -1423,3 +1449,30 @@ StaticPopupDialogs["RXP_Link"] = {
     whileDead = 1,
     hideOnEscape = 1
 }
+
+function RXP_.functions.cast(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.tag = "hs"
+        local text,id = ...
+        element.id = tonumber(id)
+        element.text = text or ""
+        local icon = GetSpellTexture(id)
+        if icon then
+            element.icon = "|T"..icon..":0|t"
+            element.tooltipText = element.icon..element.text
+        end
+        
+        return element
+    end
+    local event,unit,_,id = ...
+    local icon = GetSpellTexture(id)
+    local element = self.element
+    if icon then
+        element.icon = "|T"..icon..":0|t"
+        element.tooltipText = element.icon..element.text
+    end
+    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and id == element.id then
+        RXP_.SetElementComplete(self)
+    end
+end

@@ -108,13 +108,14 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
             --print(tag,args,type(guide))
             if RXPG[guide.group][tag] then
                 element = RXPG[guide.group][tag](linetext,text,unpack(t))
+                if not element then return end
                 element.tag = tag
                 element.step = step
                 if element.parent then
                     element.parent = lastElement
                 end
             else
-                error("Error parsing guide "..RXP_.currentGuideName..": Invalid function call (."..tag..")\n"..linetext)
+                return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid function call (."..tag..")\n"..linetext)
             end
         end)
 
