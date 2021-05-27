@@ -291,11 +291,12 @@ step
     .goto Western Plaguelands,57.5,35.7
     .complete 6023,1 --Huntsman Radley (1)
 step
-    .goto Western Plaguelands,53.8,25.0
+    >>Kill Cavalier Durgen. He can be on top of the tower, or he can patrol to the front of it
+	.goto Western Plaguelands,55.1,23.6
     .complete 6023,2 --Cavalier Durgen (1)
 step
     .goto Western Plaguelands,55.1,23.5
-	>>If the rare is up and you're unable to group and kill him, just die and res as high up as you can in the tower.
+	>>If the rare is up and you're unable to group and kill him, just die and res as high up as you can in the tower. Loot the chest at the top
     .complete 9443,1 --Mark of the Lightbringer (1)
 step
     .goto Western Plaguelands,51.9,28.1
@@ -333,14 +334,41 @@ step
     .accept 4972 >>Accept Counting Out Time
 step
 	>>Search for tiny lockboxes around the ruins. They're usually in the corners of the broken buildings.
-    .goto Western Plaguelands,40.2,66.8,0
+    .goto Western Plaguelands,56.5,51.3,40,0
+    .goto Western Plaguelands,61.8,52.3,40,0
+    .goto Western Plaguelands,68.1,46.8,40,0
+    .goto Western Plaguelands,65.3,54.5,40,0
+    .goto Western Plaguelands,54.9,63.8,40,0
+    .goto Western Plaguelands,55.1,23.6,40,0
+    .goto Western Plaguelands,40.8,68.4,40,0
+    .goto Western Plaguelands,41.3,65.8,40,0
+    .goto Western Plaguelands,44.9,65.8,40,0
+    .goto Western Plaguelands,46.5,66.5,40,0
+    .goto Western Plaguelands,45.9,70.7,40,0
+    .goto Western Plaguelands,46.1,73.6,40,0
+    .goto Western Plaguelands,44.5,73.2,40,0
+    .goto Western Plaguelands,41.6,73.2,40,0
+    .goto Western Plaguelands,56.5,51.3,40,0
+    .goto Western Plaguelands,61.8,52.3,40,0
+    .goto Western Plaguelands,68.1,46.8,40,0
+    .goto Western Plaguelands,65.3,54.5,40,0
+    .goto Western Plaguelands,54.9,63.8,40,0
+    .goto Western Plaguelands,55.1,23.6,40,0
+    .goto Western Plaguelands,40.8,68.4,40,0
+    .goto Western Plaguelands,41.3,65.8,40,0
+    .goto Western Plaguelands,44.9,65.8,40,0
+    .goto Western Plaguelands,46.5,66.5,40,0
+    .goto Western Plaguelands,45.9,70.7,40,0
+    .goto Western Plaguelands,46.1,73.6,40,0
+    .goto Western Plaguelands,44.5,73.2,40,0
+    .goto Western Plaguelands,41.6,73.2,40,0
     .complete 4972,1 --Andorhal Watch (5)
 step
     .goto Western Plaguelands,49.2,78.4
     .accept 5142 >>Accept Little Pamela
 step
     .goto Western Plaguelands,52.1,83.5
-	>>Use the Corrupted Mark of the Lightbringer.
+	>>Equip the Corrupted Mark of the Lightbringer. Use it at the Tomb - You may get pvp flagged by having to CC/Kill the mob at the tomb
     .complete 9444,1 --Uther's Tomb Defiled (1)
 step
 	>>Kill the Cauldron Lord
@@ -362,10 +390,27 @@ step
     .turnin 4984 >>Turn in The Wildlife Suffers Too
     .accept 4985 >>Accept The Wildlife Suffers Too
 step
-    >>Find & kill 8 Diseased Grizzly
-	.goto Eastern Plaguelands,64.6,49.0,150
-	.goto Eastern Plaguelands,58.4,51.2,0
-	.goto Eastern Plaguelands,57.6,58.6,0
+    .goto Western Plaguelands,56.5,51.3,40,0
+    .goto Western Plaguelands,61.8,52.3,40,0
+    .goto Western Plaguelands,68.1,46.8,40,0
+    .goto Western Plaguelands,65.3,54.5,40,0
+    .goto Western Plaguelands,54.9,63.8,40,0
+    .goto Western Plaguelands,56.5,51.3,40,0
+    .goto Western Plaguelands,61.8,52.3,40,0
+    .goto Western Plaguelands,68.1,46.8,40,0
+    .goto Western Plaguelands,65.3,54.5,40,0
+    .goto Western Plaguelands,54.9,63.8,40,0
+    .goto Western Plaguelands,56.5,51.3,40,0
+    .goto Western Plaguelands,61.8,52.3,40,0
+    .goto Western Plaguelands,68.1,46.8,40,0
+    .goto Western Plaguelands,65.3,54.5,40,0
+    .goto Western Plaguelands,54.9,63.8,40,0
+    .goto Western Plaguelands,56.5,51.3,40,0
+    .goto Western Plaguelands,61.8,52.3,40,0
+    .goto Western Plaguelands,68.1,46.8,40,0
+    .goto Western Plaguelands,65.3,54.5,40,0
+    .goto Western Plaguelands,54.9,63.8,40,0
+    >>Find & kill 8 Diseased Grizzlies
     .complete 4985,1 --Diseased Grizzly (8)
 step
     .goto Eastern Plaguelands,26.6,74.8
@@ -415,7 +460,7 @@ step
 	
 step
 	.goto Eastern Plaguelands,71.0,16.6
-	>>Find & kill Infiltrator Hameya. He roams around the area.Loot his key.
+	>>Find & kill Infiltrator Hameya. He roams around the area. Loot his key.
 	.complete 6024,1 --Hameya's Key (1)
 step
 	#sticky
