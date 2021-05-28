@@ -3059,6 +3059,9 @@ step
     #completewith next
     .deathskip >> Die on purpose and respawn at Kharanos
 step
+    .goto Dun Morogh,45.8,49.4
+    .accept 412 >> Accept Operation Recombobulation
+step
 .goto Dun Morogh,43.1,45.0,20,0
 .goto Dun Morogh,42.1,45.4,20 >> Run up the ramp to Shimmerweed
 step
