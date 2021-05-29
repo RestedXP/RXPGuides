@@ -1571,7 +1571,7 @@ step
     .turnin 9157 >> Turn in Forgotten Rituals
     .accept 9174 >> Accept Vanquishing Aquantion
 step
-    >>Click the shrine, then kill Aquantion when he's summoned. Be sure to use Arcane Torrent for when he Frostbolts
+    >>Click the shrine, then kill Aquantion when he's summoned.
 .goto Ghostlands,71.3,15.0
     .complete 9174,1 --Kill Aquantion (x1)
 step
