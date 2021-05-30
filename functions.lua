@@ -1133,6 +1133,16 @@ function RXP_.functions.next(skip)
             group = grp
             return ""
         end)
+        
+        local faction = next:match("Aldor") or next:match("Scryer")
+        if not RXP_.AldorScryerCheck(faction) then
+            if faction == "Aldor" then
+                next = next:gsub("Aldor","Scryer")
+            elseif faction == "Scryer" then
+                next = next:gsub("Scryer","Aldor")
+            end
+        end
+        
         local nextGuide = RXP_.GetGuideTable(group,next)
         if nextGuide then
             return RXP_:LoadGuide(nextGuide)
