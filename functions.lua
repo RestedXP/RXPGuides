@@ -1137,9 +1137,9 @@ function RXP_.functions.next(skip)
         local faction = next:match("Aldor") or next:match("Scryer")
         if not RXP_.AldorScryerCheck(faction) then
             if faction == "Aldor" then
-                next = next:gsub("Aldor","Scryer")
-            elseif faction == "Scryer" then
                 next = next:gsub("Scryer","Aldor")
+            elseif faction == "Scryer" then
+                next = next:gsub("Aldor","Scryer")
             end
         end
         
