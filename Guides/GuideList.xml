@@ -11,8 +11,7 @@
     <Script file="Guides/Alliance-3.lua"/>
     <Script file="Guides/Alliance-4.lua"/>
     <Script file="Guides/Alliance-5.lua"/>
-    <Script file="Guides/Alliance-6.lua"/>
-    
+
     
     
     <Script file="Guides/RestedXP Horde 1-6 Undead.lua"/>
@@ -26,5 +25,8 @@
     <Script file="Guides/Horde-3.lua"/>
     <Script file="Guides/Horde-4.lua"/>
     <Script file="Guides/Horde-5.lua"/>
-    <Script file="Guides/Horde-6.lua"/>
+	
+	 <!-- <Script file="Guides/Alliance-6.lua"/>
+        <Script file="Guides/Horde-6.lua"/> -->>
+
 </Ui>
