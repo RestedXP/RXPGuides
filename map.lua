@@ -350,6 +350,7 @@ end
 -- using the MapPinPool.
 local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local pins = {}
+    local numActivePins = 0
     local numSteps = table.getn(steps)
     local activeSteps = RXP_.MainFrame.CurrentStepFrame.activeSteps
     local numActive = table.getn(activeSteps)
@@ -370,7 +371,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         --
         -- If it is far enough away, we add a new pin to the map.
         local j = 0;
-        while table.getn(pins) < numPins and j < table.getn(step.elements) do
+        while numActivePins < numPins and j < table.getn(step.elements) do
             local element = step.elements[j + 1]
 
             if element.text and not element.label and not element.textOnly then
@@ -392,6 +393,9 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         zone = element.zone,
                         hidePin = element.optional,
                     })
+                    if not element.optional then
+                        numActivePins = numActivePins + 1
+                    end
                 end
                 table.insert(RXP_.activeWaypoints, element)
             end
@@ -405,7 +409,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     end
     
     local i = 0;   
-    while table.getn(pins) < numPins and (startingIndex + i < numSteps) do
+    while numActivePins < numPins and (startingIndex + i < numSteps) do
         i = i + 1
         local step = steps[startingIndex + i]
         ProcessMapPin(step)
