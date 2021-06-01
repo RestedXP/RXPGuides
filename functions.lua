@@ -192,7 +192,12 @@ function RXP_.GetQuestObjectives(id,step)
                 local objId = quest.Id
                 qInfo[i] = {type = qType, finished = false, questie = true}
                 if qType == "monster" then
-                    qInfo[i].text = db:GetNPC(objId).name
+                    local npc = db:GetNPC(objId)
+                    if npc and npc.name then
+                        qInfo[i].text = npc.name
+                    else
+                        qInfo[i].text = ""
+                    end
                 elseif qType == "item" then
                     qInfo[i].text = db:GetItem(objId).name
                 elseif quest.Text then
