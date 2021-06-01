@@ -13,6 +13,7 @@ RXP_.functions.events.home = {"HEARTHSTONE_BOUND"}
 RXP_.functions.events.fly = {"PLAYER_CONTROL_LOST","TAXIMAP_OPENED","ZONE_CHANGED"}
 RXP_.functions.events.deathskip = {"CONFIRM_XP_LOSS"}
 RXP_.functions.events.xp = {"PLAYER_XP_UPDATE","PLAYER_LEVEL_UP"}
+RXP_.functions.events.reputation = {"UPDATE_FACTION"}
 RXP_.functions.events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
 RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
 RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
@@ -964,7 +965,7 @@ function RXP_.functions.xp(self,...)
                 elseif element.xp >= 1 then
                     element.text = string.format("Grind until you are %s xp into level %s",xp,level)
                 else
-                    element.text = string.format("Grind until you are %.0f% into level %s",element.xp*100,level)
+                    element.text = string.format("Grind until you are %.0f%% into level %s",element.xp*100,level)
                 end
             else
                 element.text = "Grind to level "..tostring(level)
@@ -986,6 +987,54 @@ function RXP_.functions.xp(self,...)
         RXP_.SetElementComplete(self,true)
     end
 
+end
+
+function RXP_.functions.reputation(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,faction,str = ...
+
+        str = str:gsub(" ","")
+        local standing,rep = str:match("(%d+)([%+%.%-]?%d*)")
+	element.faction = faction
+        element.rep = tonumber(rep)
+        element.standing = tonumber(standing)
+
+        if text and text ~= "" then
+            element.text = text
+        else
+            local standinglabel = getglobal("FACTION_STANDING_LABEL"..element.standing)
+	    print("DEBUG AAA", element.rep, standinglabel, element.faction)
+            if element.rep and element.rep ~= 0 then
+                if element.rep < 0 then
+                    element.text = string.format("Grind until you are %d away from %s with %s",-1*element.rep,standinglabel,element.faction)
+                elseif element.rep >= 1 then
+                    element.text = string.format("Grind until you are %s into %s with %s",rep,standinglabel,element.faction)
+                else
+                    element.text = string.format("Grind until you are %.0f%% into %s with %s",element.rep*100,standinglabel,element.faction)
+                end
+            else
+                element.text = string.format("Grind to %s with %s",standinglabel,element.faction)
+            end
+        end
+        if not element.rep then element.rep = 0 end
+        element.tooltipText = RXP_.icons.reputation..element.text
+        return element
+    end
+
+    local element = self.element
+    for factionIndex = 1, GetNumFactions() do
+        local name, _, standing, bottomValue, topValue, earnedValue = GetFactionInfo(factionIndex)
+        if name == element.faction then
+            if (element.rep < 0 and (standing >= element.standing or (standing == element.standing-1 and earnedValue >= topValue + element.rep))) or
+               (element.rep >= 1 and ((standing > element.standing) or (element.standing == standing and earnedValue >= bottomValue + element.rep))) or
+               (element.rep >= 0 and element.rep < 1 and ((standing > element.standing) or (element.standing == standing and earnedValue >= (topValue - bottomValue)*element.rep)))
+               then
+                RXP_.SetElementComplete(self,true)
+            end
+            break
+        end
+    end
 end
 
 function RXP_.functions.vendor(self,...)
