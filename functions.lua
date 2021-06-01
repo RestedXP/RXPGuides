@@ -991,7 +991,7 @@ function RXP_.functions.reputation(self,...)
 
         str = str:gsub(" ","")
         local standing,rep = str:match("(%d+)([%+%.%-]?%d*)")
-	element.faction = faction
+        element.faction = faction
         element.rep = tonumber(rep)
         element.standing = tonumber(standing)
 
@@ -999,7 +999,6 @@ function RXP_.functions.reputation(self,...)
             element.text = text
         else
             local standinglabel = getglobal("FACTION_STANDING_LABEL"..element.standing)
-	    print("DEBUG AAA", element.rep, standinglabel, element.faction)
             if element.rep and element.rep ~= 0 then
                 if element.rep < 0 then
                     element.text = string.format("Grind until you are %d away from %s with %s",-1*element.rep,standinglabel,element.faction)
