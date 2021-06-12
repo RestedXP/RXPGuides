@@ -104,7 +104,7 @@ function RXP_.GetQuestName(id)
     if not id then return end
     id = questConversion[id] or id
     
-    if db and db.QueryQuest and type(db.GetQuest) == "function" then
+    if db and type(db.QueryQuest) == "function" and type(db.GetQuest) == "function" then
         local quest = db:GetQuest(id)
         if quest and quest.name then
             return quest.name
@@ -179,10 +179,10 @@ function RXP_.GetQuestObjectives(id,step)
                 return questInfo
             end
         end
-    elseif db and db.QueryQuest and math.abs(RXPCData.currentStep-step) > 4 and type(db.GetQuest) == "function" then
+    elseif db and type(db.QueryQuest) == "function" and math.abs(RXPCData.currentStep-step) > 4 and type(db.GetQuest) == "function" then
         local qInfo = {}
         local q = db:GetQuest(id)
-        print(type(q))
+        --print(type(q))
         local objectives
         if q and q.ObjectiveData then
             objectives = q.ObjectiveData
@@ -370,7 +370,7 @@ function RXP_.functions.accept(self,...)
 
         local icon = RXP_.icons.accept
         local skip
-        if step.active and db and db.QueryQuest and not isQuestAccepted and not RXP_.skipPreReq[id] then
+        if step.active and db and type(db.QueryQuest) == "function" and not isQuestAccepted and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if quest then
                 local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
@@ -474,7 +474,7 @@ function RXP_.functions.turnin(self,...)
         
         local icon = RXP_.icons.turnin
         local skip
-        if step.active and db and db.QueryQuest and not RXP_.questAccept[id] and not RXP_.skipPreReq[id] then
+        if step.active and db and type(db.QueryQuest) == "function" and not RXP_.questAccept[id] and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if not C_QuestLog.IsOnQuest(id) and quest and not quest.IsRepeatable then
                 local requiredQuests = {}
@@ -615,7 +615,7 @@ function RXP_.functions.complete(self,...)
             return
         end
         
-        if step.active and db and db.QueryQuest and element.obj and not isQuestComplete and not RXP_.skipPreReq[id] then
+        if step.active and db and type(db.QueryQuest) == "function" and element.obj and not isQuestComplete and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if quest and quest.ObjectiveData and quest.ObjectiveData[element.obj] then
                 local itemId = quest.ObjectiveData[element.obj].Id
