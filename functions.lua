@@ -967,7 +967,7 @@ function RXP_.functions.xp(self,...)
                 elseif element.xp >= 1 then
                     element.text = string.format("Grind until you are %s xp into level %s",xp,level)
                 else
-                    element.text = string.format("Grind until you are %.0f% into level %s",element.xp*100,level)
+                    element.text = string.format("Grind until you are %.0f%% into level %s",element.xp*100,level)
                 end
             else
                 element.text = "Grind to level "..tostring(level)
