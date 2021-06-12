@@ -353,7 +353,25 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local numActivePins = 0
     local numSteps = table.getn(steps)
     local activeSteps = RXP_.MainFrame.CurrentStepFrame.activeSteps
-    local numActive = table.getn(activeSteps)
+    
+    local numActive = 0
+    
+    local function GetNumPins(step)
+        for _,element in pairs(step.elements) do
+            if element.tag == "goto" and not element.optional then
+                numActive = numActive + 1
+            end
+        end
+    end
+    
+    for _,step in pairs(activeSteps) do
+        GetNumPins(step)
+    end
+    
+    for i = RXPCData.currentStep+1,RXPCData.currentStep+numPins do
+        GetNumPins(RXP_.currentGuide.steps[i])
+    end
+    
     if numPins < numActive then
         numPins = numActive
     end
@@ -381,7 +399,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
             if element.zone and not isMiniMap and (not(element.parent and (element.parent.completed or element.parent.skip)) and not element.skip) then
                 local closeToOtherPin, otherPin = elementIsCloseToOtherPins(element, pins)
 
-                if closeToOtherPin then
+                if closeToOtherPin and not element.optional then
                     table.insert(otherPin.elements, element)
                 else
                     table.insert(pins, {
@@ -393,11 +411,11 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         zone = element.zone,
                         hidePin = element.optional,
                     })
-                    if not element.optional then
-                        numActivePins = numActivePins + 1
-                    end
                 end
                 table.insert(RXP_.activeWaypoints, element)
+                if not element.optional then
+                    numActivePins = numActivePins + 1
+                end
             end
 
             j = j + 1
