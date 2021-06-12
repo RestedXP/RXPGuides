@@ -104,7 +104,7 @@ function RXP_.GetQuestName(id)
     if not id then return end
     id = questConversion[id] or id
     
-    if db and db.QueryQuest then
+    if db and db.QueryQuest and type(db.GetQuest) == "function" then
         local quest = db:GetQuest(id)
         if quest and quest.name then
             return quest.name
@@ -179,12 +179,15 @@ function RXP_.GetQuestObjectives(id,step)
                 return questInfo
             end
         end
-    elseif db and db.QueryQuest and math.abs(RXPCData.currentStep-step) > 4 then
+    elseif db and db.QueryQuest and math.abs(RXPCData.currentStep-step) > 4 and type(db.GetQuest) == "function" then
         local qInfo = {}
         local q = db:GetQuest(id)
+        print(type(q))
         local objectives
-        if q then
+        if q and q.ObjectiveData then
             objectives = q.ObjectiveData
+        else
+            err = true
         end
         if objectives then
             for i,quest in pairs(objectives) do
