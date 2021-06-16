@@ -622,7 +622,7 @@ function RXP_.functions.complete(self,...)
                 local questType = quest.ObjectiveData[element.obj].Type
                 local validQuest = true
                 if questType == "item" then
-                    validQuest = select(12,GetItemInfo(itemId)) == 12
+                    validQuest = select(12,GetItemInfo(itemId)) == 12 and select(11,GetItemInfo(itemId)) == 0
                 end
                 if not C_QuestLog.IsOnQuest(id) and validQuest then
                     local requiredQuests = {}
