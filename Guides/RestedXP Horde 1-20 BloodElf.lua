@@ -1439,16 +1439,24 @@ step
 step
     .goto Eversong Woods,49.0,89.3
     .accept 9148 >> Accept Delivery to Tranquillien
-step << !BloodElf/!Hunter 
+step << BloodElf !Hunter
     .goto Ghostlands,46.5,28.4
     .turnin 9148 >> Turn in Delivery to Tranquillien
     .accept 9327 >> Accept The Forsaken
+step << !BloodElf
+    .goto Ghostlands,46.5,28.4
+    .turnin 9148 >> Turn in Delivery to Tranquillien
+    .accept 9329 >> Accept The Forsaken
 step << !BloodElf/!Hunter 
     .goto Ghostlands,45.5,30.5
     .fp >> Get the Tranquillien flight path
-step << !BloodElf/!Hunter  
+step << BloodElf !Hunter  
     .goto Ghostlands,44.8,32.5
     .turnin 9327 >> Turn in The Forsaken
+    .accept 9758 >> Accept Return to Arcanist Vandril
+step << !BloodElf
+    .goto Ghostlands,44.8,32.5
+    .turnin 9329 >> Turn in The Forsaken
     .accept 9758 >> Accept Return to Arcanist Vandril
 step << BloodElf !Hunter
     .goto Ghostlands,47.3,28.9
