@@ -788,7 +788,7 @@ step << Tauren
 .goto The Barrens,44.9,58.6
 .accept 854 >>Accept Journey to the Crossroads
 step << Druid
-    .goto Thunder Bluff,78.1,28.6
+.goto The Barrens,52.2,31.9
     .turnin 886 >>Turn in The Barrens Oases
 .accept 870 >>Accept The Forgotten Pools
 step << !Druid
