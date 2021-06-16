@@ -1918,7 +1918,7 @@ step << Rogue/Mage
 step << Rogue/Mage
     .goto Dun Morogh,79.7,36.2
     .turnin 419 >> Turn in The Lost Pilot
-    .turnin 417 >> Turn in A Pilot's Revenge
+    .accept 417 >> Accept A Pilot's Revenge
 step << Rogue/Mage
     >>Kill Mangeclaw. Loot him for his Claw
 .goto Dun Morogh,80.0,36.4
