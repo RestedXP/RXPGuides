@@ -968,6 +968,7 @@ step
     >>Grind en route
 .goto Dun Morogh,79.7,36.2
     .turnin 419 >> Turn in The Lost Pilot
+    .accept 417 >> Accept A Pilot's Revenge
 step
     >>Kill Mangeclaw. Loot him for his Claw
 .goto Dun Morogh,80.0,36.4
@@ -1895,6 +1896,7 @@ step
     >>Grind en route
 .goto Dun Morogh,79.7,36.2
     .turnin 419 >> Turn in The Lost Pilot
+    .accept 417 >> Accept A Pilot's Revenge
 step
     >>Kill Mangeclaw. Loot him for his Claw
 .goto Dun Morogh,80.0,36.4
@@ -3047,6 +3049,7 @@ step
     >>Grind en route
 .goto Dun Morogh,79.7,36.2
     .turnin 419 >> Turn in The Lost Pilot
+    .accept 417 >> Accept A Pilot's Revenge
 step
     >>Kill Mangeclaw. Loot him for his Claw
 .goto Dun Morogh,80.0,36.4
