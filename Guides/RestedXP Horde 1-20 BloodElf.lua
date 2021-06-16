@@ -1293,23 +1293,23 @@ step << Hunter
     .train 4196 >>Train Great Stamina r2
     .train 24556 >>Train Natural Armor r2
 step << BloodElf Hunter
->>Put "Beast Training" on your bars. Remember to teach your pet skills later
-.goto Silvermoon City,82.4,26.0
-.train 136 >>Train Mend Pet
-.train 2974 >>Train Wing Clip
-.train 14281 >>Train Arcane Shot r2
+    >>Put "Beast Training" on your bars. Remember to teach your pet skills later
+    .goto Silvermoon City,82.4,26.0
+    .train 136 >>Train Mend Pet
+    .train 2974 >>Train Wing Clip
+    .train 14281 >>Train Arcane Shot r2
 step << Orc Hunter/Troll Hunter
-.goto Silvermoon City,82.4,26.0
-.train 136 >>Train Mend Pet
-.train 2974 >>Train Wing Clip
-.train 14281 >>Train Arcane Shot r2
+    .goto Silvermoon City,82.4,26.0
+    .train 136 >>Train Mend Pet
+    .train 2974 >>Train Wing Clip
+    .train 14281 >>Train Arcane Shot r2
 step << Paladin
-.goto Silvermoon City,89.3,35.2
-.accept 9678 >>Accept The First Trial
+    .goto Silvermoon City,89.3,35.2
+    .accept 9678 >>Accept The First Trial
 step << Paladin
-.goto Silvermoon City,91.2,36.9
-.train 20287 >>Train Seal of Righteousness r2
-.train 19834 >>Train Blessing of Might r2
+    .goto Silvermoon City,91.2,36.9
+    .train 20287 >>Train Seal of Righteousness r2
+    .train 19834 >>Train Blessing of Might r2
 step << BloodElf Hunter
     .goto Silvermoon City,54.0,71.0
     .turnin 9133 >> Turn in Fly to Silvermoon City
@@ -1671,14 +1671,14 @@ step << Druid
 .train 5187 >>Train Healing Touch r3
     .train 5211 >>Train Bash
     --Add Poison q. Add earthroot purchase from AH
-step << Priest/Mage/Warlock/Rogue
+step << Priest/Mage/Warlock
     .goto Ghostlands,45.4,30.5
     .fly Silvermoon >> Fly to Silvermoon City
 step << BloodElf Mage
 >>Choose whichever. I prefer the staff, Tactics prefers the Orb. Up to you bossman
 .goto Eversong Woods,55.7,54.5
 .turnin 9404 >>Turn in Recently Living
-step << BloodElf Priest/BloodElf Mage/BloodElf Rogue
+step << BloodElf Priest/BloodElf Mage
     .goto Silvermoon City,54.0,71.0
     .turnin 9133 >> Turn in Fly to Silvermoon City
     .accept 9134 >> Accept Skymistress Gloaming
@@ -1704,7 +1704,7 @@ step << !BloodElf Warlock
     .goto Silvermoon City,74.4,47.2
     .train 689 >>Train Drain Life
     .train 6222 >>Train Corruption r2
-step << Priest/Mage/Warlock/Rogue/Druid
+step << Priest/Mage/Warlock/Druid
     #sticky
     #completewith next
 .hs >> Hearth to Tranquillien
@@ -1929,14 +1929,15 @@ step << Druid
 step << Priest/Rogue/Paladin
     .goto Ghostlands,45.4,30.5
     .fly Silvermoon >> Fly to Silvermoon City
-step << BloodElf Priest/BloodElf Rogue
-    .goto Eversong Woods,54.4,50.7
-    .turnin 9134 >> Turn in Skymistress Gloaming
-.accept 9135 >> Accept Return to Quartermaster Lymel
-step << BloodElf Paladin
+step << BloodElf Paladin/BloodElf Rogue
     .goto Silvermoon City,54.0,71.0
     .turnin 9133 >> Turn in Fly to Silvermoon City
     .accept 9134 >> Accept Skymistress Gloaming
+step << BloodElf Priest/BloodElf Rogue/BloodElf Paladin
+    >>DON'T Fly anywhere from the flight master
+    .goto Eversong Woods,54.4,50.7
+    .turnin 9134 >> Turn in Skymistress Gloaming
+    .accept 9135 >> Accept Return to Quartermaster Lymel
 step << Priest
     >>You can also check for a Greater Magic Wand from the AH after training if you wish (if you didn't get one earlier)
 .goto Silvermoon City,55.4,26.8
@@ -2001,7 +2002,7 @@ step << Paladin
 .complete 9685,1 --Resurrect Sangrias Stillblade
 step << Priest/Druid/Rogue/Paladin
     .hs >> Hearth to Tranquillien
-step << BloodElf Priest/BloodElf Rogue
+step << BloodElf Priest/BloodElf Rogue/BloodElf Paladin
     .goto Ghostlands,47.3,29.3
 .turnin 9135 >> Turn in Return to Quartermaster Lymel
 step << Rogue
@@ -2590,9 +2591,6 @@ step << !BloodElf
 step
 .goto Silvermoon City,49.5,15.0,15,0
 .zone Undercity >>Take the Orb of Translocation to Undercity
-step << BloodElf Paladin
-    .goto Silvermoon City,54.0,71.0
-    .abandon 9135 >> Abandon Return to Quartermaster Lymel
 step << Warlock
     .abandon 10605 >>Abandon Carendin Summons
 step << Warlock
