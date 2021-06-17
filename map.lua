@@ -357,9 +357,11 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local numActive = 0
     
     local function GetNumPins(step)
-        for _,element in pairs(step.elements) do
-            if element.tag == "goto" and not element.optional then
-                numActive = numActive + 1
+        if step then
+            for _,element in pairs(step.elements) do
+                if element.tag == "goto" and not element.optional then
+                    numActive = numActive + 1
+                end
             end
         end
     end
