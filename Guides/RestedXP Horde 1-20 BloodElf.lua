@@ -1808,7 +1808,6 @@ step
     .accept 9163 >> Accept Into Occupied Territory
     .turnin 9192 >> Turn in Trouble at the Underlight Mines
     .accept 9199 >> Accept Troll Juju
-    .accept 9173 >> Accept Retaking Windrunner Spire
 step
     .goto Ghostlands,47.6,34.7
     .turnin 9149 >> Turn in The Plagued Coast
@@ -1837,6 +1836,9 @@ step << Warlock/Mage/Priest
 step
 .goto Ghostlands,48.9,32.4
     .vendor >> Buy Food/drink if required
+step
+    .goto Ghostlands,44.8,32.5
+    .accept 9173 >> Accept Retaking Windrunner Spire
 step
 >>Finish killing Vampiric Mistbats
 .goto Ghostlands,42.1,39.2,50,0
