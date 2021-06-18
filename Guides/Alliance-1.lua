@@ -1,6 +1,7 @@
 RXPGuides.RegisterGuide("RestedXP Alliance Boosted 58-60",[[
 << Alliance
 #name Boosted Character 58-60
+#next RestedXP Alliance 60-70\59-61 Hellfire Peninsula
 step << Warrior
 .accept 64028 >>Accept A New Beginning
     .turnin 64028 >>Turn in A New Beginning
@@ -20,7 +21,7 @@ step << Warrior
 step << Warrior
     .goto Stormwind City,78.3,47.4
     .turnin 64035 >>Turn in Talented
---    .accept 64037 >>Accept Eastern Plaguelands
+    .accept 64038 >>Accept The Dark Portal
 --
 step << Paladin
     .goto Stormwind City,37.3,33.0
@@ -44,7 +45,7 @@ step << Paladin
 step << Paladin
     .goto Stormwind City,37.2,33.2
     .turnin 64035 >>Turn in Talented
---    .accept 64037 >>Accept Eastern Plaguelands
+    .accept 64038 >>Accept The Dark Portal
 --
 step << Rogue
     .goto Stormwind City,78.3,57.3
@@ -66,7 +67,7 @@ step << Rogue
 step << Rogue
     .goto Stormwind City,78.3,57.3
     .turnin 64035 >>Turn in Talented
---    .accept 64037 >>Accept Eastern Plaguelands
+    .accept 64038 >>Accept The Dark Portal
 --
 step << Priest
     .goto Stormwind City,38.8,26.4
@@ -88,7 +89,8 @@ step << Priest
 step << Priest
     .goto Stormwind City,38.8,26.4
     .turnin 64035 >>Turn in Talented
---    .accept 64037 >>Accept Eastern Plaguelands
+    .accept 64038 >>Accept The Dark Portal
+
 --
 step << Mage
     .goto Stormwind City,38.7,79.3
@@ -110,7 +112,8 @@ step << Mage
 step << Mage
     .goto Stormwind City,38.7,79.3
     .turnin 64035 >>Turn in Talented
---    .accept 64037 >>Accept Eastern Plaguelands
+    .accept 64038 >>Accept The Dark Portal
+
 --
 step << Warlock
     .goto Stormwind City,26.0,77.4
@@ -132,7 +135,8 @@ step << Warlock
 step << Warlock
     .goto Stormwind City,26.1,77.4
     .turnin 64035 >>Turn in Talented
---    .accept 64037 >>Accept Eastern Plaguelands
+    .accept 64038 >>Accept The Dark Portal
+
 --
 step << Hunter
     .goto Stormwind City,61.7,15.2
@@ -154,7 +158,8 @@ step << Hunter
 step << Hunter
     .goto Stormwind City,61.7,15.2
     .turnin 64035 >>Turn in Talented
-----    .accept 64037 >>Accept Eastern Plaguelands
+    .accept 64038 >>Accept The Dark Portal
+
 step << Druid
     .goto Stormwind City,21.4,51.4
     .turnin 64028 >>Turn in A New Beginning
@@ -174,24 +179,16 @@ step << Druid
 step << Druid
     .goto Stormwind City,21.4,51.4
     .turnin 64035 >>Turn in Talented
-step
-    #label EPL
-    #completewith DP
-    .accept 64037 >>Accept Eastern Plaguelands
-step
-    #label DP
-    #completewith EPL
     .accept 64038 >>Accept The Dark Portal
 step
-    #requires DP
     #completewith bs1
     .goto Stormwind City,78.0,18.2
     .accept 6182 >>Accept The First and the Last
     >>There is a long scripted RP sequence part of the Onyxia attunement quest that makes Bolvar not able to interact with players for a few minutes, if that's the case, skip this step and try to get this quest later after finishing Burning Steppes
 step
     #label bs1
-    #requires DP
     .goto Stormwind City,66.2,62.2
+    .complete 64038,1 --Speak to Dungar Longdrink, the Gryphon Master (1)
     .fly Morgan's Vigil>>Fly to Morgan's Vigil
 step
     .goto Burning Steppes,85.8,69.0
@@ -278,10 +275,6 @@ step
     #label mark1
     .goto Western Plaguelands,42.9,85.0
     .fly Light's Hope Chapel >>Fly to Light's Hope Chapel
-step
-    .goto Eastern Plaguelands,81.7,57.9
-    .turnin 64037 >>Turn in Eastern Plaguelands
-    .isOnQuest 64037
 step
     .goto Eastern Plaguelands,79.5,64.0
     .accept 6021 >>Accept Zaeldarr the Outcast
