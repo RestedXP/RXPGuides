@@ -539,7 +539,7 @@ step
     #sticky
     #completewith next
 +Go to the Zeppelin tower. Take the zeppelin to Stranglethorn
-.goto Tirisfal Glades,60.7,58.8,15,0
+    .goto Tirisfal Glades,61.9,59.1
 step
 .zone Stranglethorn Vale >>Arrive in Stranglethorn Vale
 step << Druid
