@@ -1,12 +1,7 @@
 RXPGuides.RegisterGuide("RestedXP Horde Boosted 58-60",[[
 << Horde
 #name Boosted Character 58-60
-
-step << Paladin
-	>>Open your Survival Kit & mount up. Hellfire is too hard for us right now, it's best to go Western/Eastern Plaguelands.
-	.collect 28927,1
-	
-	
+#next RestedXP Horde 60-70\60-61 Hellfire Peninsula
 step << !Druid !Paladin
     .turnin 64046 >>Turn in A New Beginning
 step << Druid
@@ -82,11 +77,10 @@ step << Druid
     .turnin 64053 >>Turn in Talented
 step << !Druid !Paladin
 	#label nondruidboost
-    .accept 64064 >>Accept Eastern Plaguelands
+    .accept 64063 >> Accept The Dark Portal
 step << Druid
 	#label druidboost
-	.accept 64128 >>Accept Eastern Plaguelands
-
+	.accept 64217 >> Accept The Dark Portal
 	
 step << Druid
 	
@@ -100,69 +94,18 @@ step << Mage
 step << Warlock
     .goto Orgrimmar,47.6,46.7,0
 	.vendor 5815 >> Talk to Kurgul to purchase your minions Grimoires	
-
 step	<<!Paladin
     .goto Orgrimmar,54.5,67.6
     >>Buy at least 2 stacks of food/water from Barkeep Morag.
-	.vendor
-
-step << !Druid !Paladin
-	>>Run outside Orgrimmar to the Zeppelins and speak to Frezza(Undercity Zeppelin master)
-    .goto Durotar,50.8,13.5
-    .complete 64064,1 --Visit Zeppelin Master Frezza (1)
+	.vendor	
 step << Druid
-	>>Run outside Orgrimmar to the Zeppelins and speak to Frezza(Undercity Zeppelin master)
-    .goto Durotar,50.8,13.5
-    .complete 64128,2 --Visit Zeppelin Master Frezza (1)	
-
-	
-	
-
-step	<<Paladin
-    .goto Blasted Lands,58.1,56.0
-    .accept 9407 >>Accept Through the Dark Portal
-step	<<Paladin
-	.goto Swamp of Sorrows,33.2,68.4,25
-	.zone Swamp of Sorrows >>Run to Swamp of Sorrows
-step	<<Paladin
-    .goto Swamp of Sorrows,34.3,66.0
-    .accept 2784 >>Accept Fall From Grace
-    .complete 2784,1 --The Tale of Sorrow (1)
-step	<<Paladin
-    .goto Swamp of Sorrows,34.3,66.1
-    .turnin 2784 >>Turn in Fall From Grace
-    .accept 2621 >>Accept The Disgraced One
-step	<<Paladin
-    .goto Swamp of Sorrows,47.8,54.9
-    .turnin 2621 >>Turn in The Disgraced One
-    .accept 2622 >>Accept The Missing Orders
-step	<<Paladin
-    .goto Swamp of Sorrows,44.9,57.4
-    .turnin 2622 >>Turn in The Missing Orders
-	
-step	<<Paladin
-    .goto Swamp of Sorrows,45.2,56.6
-    .home >>Set your Hearthstone to Stonard	
-step	<<Paladin
-	>>Sell 2x Symbol of Divinity to get enough money to fly.
-	.vendor
-step	<<Paladin
-.goto Swamp of Sorrows,46.1,54.8
-	.fly Grom'gol >>Fly to Grom'gol
-	
-	
-step	<<Paladin
-	#sticky
-	#completewith next
-  .goto Stranglethorn Vale,31.6,29.3
-    +Spend your talent points into any spec you want to play while flying & waiting for the Zeppelin to Tirisfal.
-	
-
+    .goto Durotar,50.7,12.9
+    .complete 64217,1 --Visit Snurk Bucksquick, the Zeppelin Master (1)
+step << !Druid
+    .goto Durotar,50.7,12.9
+    .complete 64063,1 --Visit Snurk Bucksquick, the Zeppelin Master (1)
 step
 	.zone Tirisfal Glades >> Take the Zeppelin to Tirisfal Glades
-
-
-
 step
 	.goto Tirisfal Glades,83.1,68.9
     .accept 5096 >>Accept Scarlet Diversions
@@ -599,9 +542,29 @@ step
 step
     .goto Tirisfal Glades,83.1,68.9
     .turnin 5238 >>Turn in Mission Accomplished!
-step	<<Paladin
+step
+    #sticky
     #completewith next
-    .hs >>Hearth to Stonard
-
-	
++Go to the Zeppelin tower. Take the zeppelin to Stranglethorn
+.goto Tirisfal Glades,60.7,58.8,15,0
+step
+.zone Stranglethorn Vale >>Arrive in Stranglethorn Vale
+step << Druid
+    .goto Stranglethorn Vale,32.5,29.3
+    .complete 64217,2 --Speak to Thysta at Grom'gol Base Camp (1)
+	.fly Stonard >> Fly to Stonard
+step << !Druid
+    .goto Stranglethorn Vale,32.5,29.3
+    .complete 64063,2 --Speak to Thysta at Grom'gol Base Camp (1)
+	.fly Stonard >> Fly to Stonard
+step
+	.zone Blasted Lands >> Run to Blasted Lands
+step << !Druid
+    .goto Blasted Lands,58.1,56.1
+    .turnin 64063 >>Turn in The Dark Portal
+    .accept 9407 >>Accept Through the Dark Portal
+step << Druid
+    .goto Blasted Lands,58.1,56.1
+    .turnin 64217 >>Turn in The Dark Portal
+    .accept 9407 >>Accept Through the Dark Portal
 ]],"58Boost")
