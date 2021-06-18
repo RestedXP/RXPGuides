@@ -105,7 +105,12 @@ step << !Druid
     .goto Durotar,50.7,12.9
     .complete 64063,1 --Visit Snurk Bucksquick, the Zeppelin Master (1)
 step
-	.zone Tirisfal Glades >> Take the Zeppelin to Tirisfal Glades
+    #sticky
+    #completewith next
++Take the zeppelin to Undercity
+    .goto Durotar,50.8,13.8
+step 
+	.zone Tirisfal Glades >>Arrive in Tirisfal
 step
 	.goto Tirisfal Glades,83.1,68.9
     .accept 5096 >>Accept Scarlet Diversions
