@@ -386,21 +386,9 @@ step
     .goto Eastern Plaguelands,81.5,59.6
     .turnin 5241 >>Turn in Uncle Carlin
     .accept 5211 >>Accept Defenders of Darrowshire
-
-step << !Druid !Paladin
-	#requires nondruidboost
-    .goto Eastern Plaguelands,81.7,57.8
-    .turnin 64064 >>Turn in Eastern Plaguelands
-step << Druid
-	#requires druidboost
-	.goto Eastern Plaguelands,81.7,57.8
-	.turnin 64128 >>Turn In Eastern Plaguelands	
-
-	
 step
     .goto Eastern Plaguelands,81.6,58.1
-    .home >>Set your Hearthstone to Light's Hope Chapel
-	
+    .home >>Set your Hearthstone to Light's Hope Chapel	
 step
 	.goto Eastern Plaguelands,71.0,16.6
 	>>Find & kill Infiltrator Hameya. He roams around the area. Loot his key.
