@@ -894,6 +894,9 @@ step << Warrior/Rogue/Paladin
     .train 3273 >>Train First Aid
 step << Warlock
     .goto Durotar,54.4,41.2
+    .accept 1506 >>Accept Gan'Rul's Summons
+step << Warlock
+    .goto Durotar,54.4,41.2
     .train 1120 >>Train Drain Soul
     .train 6201 >> Train Create Healthstone
     .train 696 >>Train Demon Skin r2
