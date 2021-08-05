@@ -1133,6 +1133,7 @@ step
      .turnin 9760 >> Turn in Vindicator's Rest
 step
     #sticky
+	#completewith next
     .goto Bloodmyst Isle,30.3,57.2,0
     .complete 10066,1 --Kill Mutated Tangler (x8)
     .complete 10065,1 --Kill Enraged Ravager (x10)
@@ -1140,8 +1141,12 @@ step
     .goto Bloodmyst Isle,19.6,63.2
     .complete 9741,1 --Kill Void Critter (x12)
 step
+	>>Finish off the Tanglers and Ravagers
+    .goto Bloodmyst Isle,30.3,57.2,0
+    .complete 10066,1 --Kill Mutated Tangler (x8)
+    .complete 10065,1 --Kill Enraged Ravager (x10)
+step
 	#label bloodmyst2
-	>>Finish off Ravagers/Tanglers
     .turnin 10066 >> Turn in Oh, the Tangled Webs They Weave
     .goto Bloodmyst Isle,30.7,46.9
     .turnin 10065 >> Turn in Cutting a Path
