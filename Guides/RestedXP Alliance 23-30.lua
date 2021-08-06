@@ -465,6 +465,10 @@ step
     .turnin 227 >> Turn in Morgan Ladimore
     .accept 228 >> Accept Mor'Ladim
 step
+	#sticky
+	#completewith next
+	+You can delete "The Story of Morgan Ladimore" from your inventory, as it's not needed
+step
     .goto Duskwood,75.7,45.3
     .turnin 148 >> Turn in Supplies from Darkshire
     .accept 149 >> Accept Ghost Hair Thread
@@ -579,6 +583,7 @@ step
     .accept 221 >> Accept Worgen in the Woods
 step
    #label HistoryB2
+    .goto Duskwood,77.5,44.3
  .fly Redridge >> Fly to Redridge
 step << Draenei
     .goto Redridge Mountains,31.6,57.9
@@ -824,9 +829,10 @@ step
 step
     .goto Wetlands,38.2,50.9
     .accept 294 >> Accept Ormer's Revenge
-step << !NighElf !Hunter !Rogue
+step << !NightElf !Hunter !Rogue
 	#label fossil
 	#sticky
+	#completewith Relu1
 	>>Kill raptors in Wetlands
 	.complete 943,1
 step
@@ -873,11 +879,13 @@ step
 	.goto Wetlands,38.81,52.39
 	.turnin 299 >>Turn in Uncovering the Past
 step << !Hunter !NightElf !Rogue
+	#label Relu1
 	.goto Wetlands,38.81,52.39
 	>>Loot the fossil on the ground
 	.complete 943,2
 step << !Hunter !NightElf !Rogue
-	>>Keep killing raptors
+
+	>>Keep killing raptors until you loot the Stone of Relu
 	.complete 943,1
 step
     .goto Wetlands,44.2,25.8
@@ -1044,6 +1052,7 @@ step << Hunter
     .turnin 562 >> Turn in Stormwind Ho!
     .accept 563 >> Accept Reassignment
 step
+    .goto Hillsbrad Foothills,49.3,52.3
     .fp >> Get the Southshore flight path
 step
     .goto Western Plaguelands,42.9,85.0
