@@ -1327,6 +1327,12 @@ step
 	>>Talk to the Night Elf just outside of The Exodar back entrance
     .turnin 9632 >> Turn in Newfound Allies
     .accept 9633 >> Accept The Way to Auberdine
+step
+	#sticky
+	#completewith next
+	.goto Azuremyst Isle,21.4,54.0,20 >> Go to the docks
+step
+    .zone Darkshore >>Get onto the boat when it comes and travel to Darkshore
 ]],"Draenei")
 
 RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
@@ -1394,6 +1400,10 @@ step
 step
     .goto Darkshore,56.7,13.5
     .turnin 2078 >> Turn in Gyromast's Revenge
+step
+	#sticky
+	#completewith next
+	+Delete Gyromast's Key from your inventory (not your keyring). It's no longer needed
 step << !Druid !Shaman !Warlock
 	#sticky
 	#completewith end
@@ -1519,7 +1529,8 @@ step
     .turnin 10752 >> Turn in Onward to Ashenvale
     .accept 991 >> Accept Raene's Cleansing
 step
-    .home >> Set your Hearthstone to Astranaar
+    .goto Ashenvale,37.0,49.2
+    .home >> Go Upstairs. Set your Hearthstone to Astranaar
 step
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
@@ -1593,12 +1604,17 @@ step
     .goto Ashenvale,36.6,49.6
     .turnin 1023 >> Turn in Raene's Cleansing
 step
+	#sticky
+	#completewith next
+	+Delete Teronis' Journal from your inventory. It's no longer needed
+step
     .goto Ashenvale,37.3,51.8
     .turnin 1034 >> Turn in The Ruins of Stardust
 step
     .goto Ashenvale,34.7,48.9
     .turnin 1008 >> Turn in The Zoram Strand
 step
+	.goto Ashenvale,34.4,48.0
     .fly Auberdine>> Fly to Auberdine
 step
     .goto Darkshore,37.7,43.4
@@ -1610,12 +1626,16 @@ step
 step << !Hunter
     .goto Darkshore,33.1,39.9,30>>Take the boat to Teldrassil
 step << !Hunter
+    .goto Teldrassil,55.9,89.8,30 >> Take the purple portal to Darnassus
+step << !Hunter
 	.goto Teldrassil,23.7,64.5
 	.turnin 741 >> Turn in The Absent Minded Prospector
 	.accept 942 >> Accept The Absent Minded Prospector
 step << Mage/Warrior
 	.goto Teldrassil,29.2,56.7
     .train 227 >> Train Staves
+step << !Hunter
+	.goto Darnassus,30.7,41.3,50 >> Take the purple portal back to Rut'theran
 step << !Hunter
     .goto Teldrassil,58.4,94.0
     .fp >> Get the Rut'theran Village flight path
