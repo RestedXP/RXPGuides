@@ -165,6 +165,9 @@ step
     .goto Ironforge,55.2,7.6
     .collect 4371,1,175
     >>Try to buy a bronze tube from the Auction House if you were unable to find one from a vendor
+step << Draenei
+    .goto Stormwind City,78.4,18.3
+    .accept 9429 >> Accept Travel to Darkshire
 step
 	.goto Stormwind City,62.5,62.3,30,0
 	.goto Stormwind City,66.3,62.1
@@ -186,9 +189,6 @@ step << Paladin
     .accept 1649 >>Accept The Tome of Valor
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
-step << Draenei
-    .goto Stormwind City,78.4,18.3
-    .accept 9429 >> Accept Travel to Darkshire
 step << Mage
     .goto Stormwind City,39.6,79.6
     .train 3561>>Train Teleport: Stormwind
