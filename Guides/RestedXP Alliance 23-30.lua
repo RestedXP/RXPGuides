@@ -1093,6 +1093,7 @@ step
 step
     .goto Ironforge,38.7,87.2
     .turnin 686 >> Turn in A King's Tribute
+    .accept 689 >> Accept A King's Tribute
 ]])
 
 RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
