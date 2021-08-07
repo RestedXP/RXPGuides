@@ -1381,6 +1381,10 @@ step
     .goto Duskwood,71.9,46.6
     .turnin 252 >> Turn in Translation to Ello
     .accept 253 >> Accept Bride of the Embalmer
+step
+	#sticky
+	#completewith next
+	+You can delete "Translated Letter From The Embalmer" from your bags, as it's no longer needed
 step << !Shaman
     .goto Duskwood,73.5,46.8
     .turnin 97 >> Turn in The Legend of Stalvan
