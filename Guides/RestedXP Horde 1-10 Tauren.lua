@@ -648,7 +648,7 @@ step << Shaman
     .train 8050 >>Train Flame Shock
 step << Druid
     .goto Mulgore,48.5,59.6
-    .accept 5926 >>Accept Heeding the Call
+    .accept 5928 >>Accept Heeding the Call
     .train 5232 >>Train Mark of the Wild r2
     .train 8924 >>Train Moonfire r2
     .train 1058 >>Train Rejuvenation r2
@@ -753,7 +753,7 @@ step << Druid
     .accept 886 >>Accept The Barrens Oases
 step << Druid
     .goto Thunder Bluff,76.7,27.3
-    .turnin 5926 >>Turn in Heeding the Call
+    .turnin 5928 >>Turn in Heeding the Call
 step << Druid
     .goto Thunder Bluff,77.0,27.5
     .accept 5922 >>Accept Moonglade
