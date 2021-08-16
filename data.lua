@@ -406,14 +406,18 @@ s["SHAMAN"] = {
     [10] = {
         850, -- flame shock
         8075, -- strength of earth totem
+        529, -- Lightning Bolt r2 (10 instead of 8 to save money)
+        8024, -- Flametongue Weapon
     },
     [12] = {
         1535, -- fire nova totem
         547, -- healing wave r3
+        370, -- Purge
     },
     [14] = {
         8045, -- earth shock r3
         8154, -- stoneskin totem r2
+        548, -- Lightning Bolt r3
     },
     [16] = {
         526, -- cure poison
@@ -424,16 +428,21 @@ s["SHAMAN"] = {
         8052, -- flame shock r2
         913, -- healing wave r4
         6390, -- stoneclaw totem r2
+        8143, -- Tremor Totem
+        8027, -- Flametongue Weapon r2
     },
     [20] = {
         8056, -- frost shock
         2645, -- ghost wolf
         8004, -- lesser healing wave
         6363, -- searing totem r2
+        915, -- Lightning Bolt r4
     },
     [22] = {
+        131, -- Water Breathing
         2870, -- cure disease
         8498, -- fire nova totem r2
+        8166, -- Poison Cleansing Totem
     },
     [24] = {
         8046, -- earth shock r4
@@ -442,15 +451,21 @@ s["SHAMAN"] = {
         10399, -- rockbiter e4
         8155, -- stoneskin totem r3
         8160, -- strength of earth totem r2
+        8181, -- Frost resistance totem
     },
     [26] = {
+        943, -- Lightning Bolt r5
+        5675, -- Mana Spring Totem
         6196, -- far sight
+        8030, -- Flametongue Weapon r3
+        8190, -- Magma Totem r1
     },
     [28] = {
         8053, -- flame shock r3
         8008, -- lesser healing wave r2
         6391, -- stoneclaw totem r3
         546, -- water walking
+        8184, -- Fire resistance totem
     },
     [30] = {
         556, -- astral recall
@@ -462,21 +477,28 @@ s["SHAMAN"] = {
     },
     [32] = {
         8499, -- fire nova totem r3
+        421, -- Chain Lightning
         959, -- healing wave r6
         945, -- lightning shield r4
+        8012, -- Purge r2
+        6041, -- Lightning Bolt r6
     },
     [34] = {
         8058, -- frost shock r2
         16314, -- rockbiter weapon r5
         10406, -- stoneskin totem r4
-        10412, -- earth shock r5
     },
     [36] = {
         8010, -- lesser healing wave r3
+        10412, -- earth shock r5
+        10495, -- Mana Spring Totem r2
+        16339, -- Flametongue Weapon r4
     },
     [38] = {
         6392, -- stoneclaw totem r4
         8161, -- strength of earth totem r3
+        10391, -- Lightning Bolt r7
+        8170, -- Disease Cleansing Totem
     },
     [40] = {
         10447, -- flame shock r4
@@ -484,27 +506,34 @@ s["SHAMAN"] = {
         8134, -- lightning shield r5
         6365, -- searing totem r4
         8235, -- windfury weapon r2
+        930, -- Chain Lightning r2
     },
     [42] = {
         11314, -- fire nova totem r4
+        8835, -- Grace of Air Totem
     },
     [44] = {
         10466, -- lesser healing wave r4
-        16315, -- rockbiter weapon r6
         10407, -- stoneskin totem r5
+        10392, -- Lightning Bolt r8
     },
     [46] = {
         10472, -- frost shock r3
+        10496, -- Mana Spring Totem r3
+        10585, -- Magma Totem r2
+        10586, -- Magma Totem r3
     },
     [48] = {
         10413, -- earth shock r6
         10395, -- healing wave r8
         10431, -- lightning shield r6
         10427, -- stoneclaw totem r5
+        2860, -- Chain Lightning r3
     },
     [50] = {
         10437, -- searing totem r5
         10486, -- windfury weapon r3
+        15207, -- Lightning Bolt r9
     },
     [52] = {
         11315, -- fire nova totem r5
@@ -513,12 +542,15 @@ s["SHAMAN"] = {
         10442, -- strength of earth totem r4
     },
     [54] = {
-        16316, -- rockbiter weapon r7
         10408, -- stoneskin totem r6
     },
     [56] = {
         10396, -- healing wave r9
         10432, -- lightning shield r7
+        10497, -- Mana Spring Totem r4
+        10627, -- Grace of Air Totem r2
+        15208, -- Lightning Bolt r10
+        10605, -- Chain Lightning r4
     },
     [58] = {
         10473, -- frost shock r4
@@ -532,24 +564,27 @@ s["SHAMAN"] = {
         10438, -- searing totem r6
         25361, -- strength of earth totem r5
         16362, -- windfury weapon r4
+        25359, -- Grace of Air Totem r3
     },
     [61] = {
         25546, -- fire nova totem r6
     },
     [62] = {
-        25479, -- rockbiter weapon r8
         24398, -- water shield
+        25448, -- Lightning Bolt r11
     },
     [63] = {
         25469, -- lightning shield r8
         25391, -- healing wave r11
         25508, -- stoneskin totem r7
+        25439, -- Chain Lightning r5
     },
     [64] = {
         3738, --wrath of air totem
     },
     [65] = {
         25528, -- strength of earth totem r6
+        25570, -- Mana Spring Totem r5
     },
     [66] = {
         2062, -- earth elemental totem
@@ -558,15 +593,17 @@ s["SHAMAN"] = {
     },
     [67] = {
         25525, -- stoneclaw totem r7
+        25449, -- Lightning Bolt r12
     },
     [68] = {
         2894, -- fire elemental totem
-        25364, -- frost shcok r5
+        25364, -- frost shock r5
         25505, -- windfury weapon r5
     },
     [69] = {
         25454, -- earth shock r8
         25533, -- searing totem r7
+        33736, -- Water Shield r2
     },
 }
 
