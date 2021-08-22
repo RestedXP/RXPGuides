@@ -556,6 +556,9 @@ step
     .turnin 265 >> Turn in The Shadowy Search Continues
     .accept 266 >> Accept Inquire at the Inn
 step
+	#completewith next
+	.vendor >> Remember to buy level 25 food and water
+step
     .goto Duskwood,73.9,44.4
     .turnin 158 >> Turn in Zombie Juice
     .accept 156 >> Accept Gather Rot Blossoms
