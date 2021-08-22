@@ -557,10 +557,7 @@ step << Shaman
     .turnin 9465 >> Turn in Call of Fire
     .accept 9467 >> Accept Call of Fire
 step << Shaman
-    #sticky
-    #completewith next
-    .deathskip >> Run into the water here, pull some mobs, and death skip back to Azure Watch
-	.goto Azuremyst Isle,56.2,32.9
+	.hs >> Hearth to Azure Watch
 step << Shaman
     .goto Azuremyst Isle,47.1,50.6
     .turnin 9622 >> Turn in Warn Your People
@@ -712,8 +709,10 @@ step << Paladin
     .accept 9598 >>Accept Redemption
     .turnin 9598 >>Turn in Redemption
     .accept 9600 >>Accept Redemption
-step
+step << !Shaman
 	.hs >> Hearth to Blood Watch
+step << Shaman
+	.hs >> Hearth to Blood Watch. If your hearth is still on cooldown, ride to The Exodar and fly to Blood Watch
 step
     .goto Bloodmyst Isle,52.7,53.3
     .turnin 9581 >> Turn in Learning from the Crystals
