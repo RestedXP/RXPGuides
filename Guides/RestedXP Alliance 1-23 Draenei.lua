@@ -81,6 +81,7 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,79.3,49.1
     .turnin 9451 >> Turn in Call of Earth
+	.trainer >> Train Earth Shock 
 step << Hunter
 	.goto Azuremyst Isle,79.86,49.67
 	.train 1978>> Train Serpent Sting
@@ -130,7 +131,7 @@ step
 	#sticky
     .xp 6-1485 >>Grind elves until you are 1485xp away from level 6 (1315/2800)
 step
-	Die and talk to the spirit healer to respawn at the graveyard
+	>>Die and talk to the spirit healer to respawn at the graveyard
     .goto Azuremyst Isle,79.2,46.4
     .turnin 9294 >> Turn in Healing the Lake
 step
@@ -188,13 +189,10 @@ step
 step
     .goto Azuremyst Isle,48.4,49.3
     .turnin 9314 >> Turn in Word from Azure Watch
-step << !Shaman
-    .goto Azuremyst Isle,48.4,49.3
     .home >> Set your Hearthstone to Azure Watch
 step << Priest
     .goto Azuremyst Isle,48.6,49.3
     .accept 9586 >> Accept Help Tavara
-
 step
 	#sticky
 	#completewith azuremyst1
@@ -271,7 +269,6 @@ step
 step << Priest
     .goto Azuremyst Isle,48.6,49.4
     .turnin 9586 >> Turn in Help Tavara
-
 step
     .goto Azuremyst Isle,48.9,51.1
     .accept 10428 >> Accept The Missing Fisherman
@@ -319,7 +316,7 @@ step
     .turnin 9541 >> Turn in Totem of Yor
     .accept 9542 >> Accept Totem of Vark
 step
-	>>Follow the furbolg spirit and wait until he transform you into a ghostsaber
+	>>Follow the furbolg spirit and wait until he transforms you into a ghostsaber
     .goto Azuremyst Isle,28.1,62.5
     .turnin 9542 >> Turn in Totem of Vark
     .accept 9544 >> Accept The Prophecy of Akida
@@ -330,7 +327,7 @@ step
     .complete 9544,1 --Stillpine Captive Freed (x8)
 step
     .goto Azuremyst Isle,28.6,70.0
-	Finish off Nightstalkers/Moongraze Bucks
+	>>Finish off Nightstalkers/Moongraze Bucks
 	.complete 9456,1 --Kill Infected Nightstalker Runt (x8)
     .complete 10324,1 --Collect Moongraze Buck Hide (x6)
 step
@@ -349,7 +346,6 @@ step
     .goto Azuremyst Isle,18.4,84.1
 	>>Use the tree disguise at the naga flag
     .complete 9531,1
-
 step
     .goto Azuremyst Isle,16.5,94.4
     .turnin 10428 >> Turn in The Missing Fisherman
@@ -419,9 +415,6 @@ step
     .turnin 9456 >> Turn in Nightstalker Clean Up, Isle 2...
     .turnin 9602 >> Turn in Deliver Them From Evil...
     .accept 9623 >> Accept Coming of Age
-step << Shaman
-    .goto Azuremyst Isle,48.4,49.3
-    .home >> Set your Hearthstone to Azure Watch
 step
     .xp 10
 step
@@ -497,6 +490,12 @@ step
     .goto Azuremyst Isle,46.6,20.7
     .turnin 9559 >> Turn in Stillpine Hold
 step << Shaman
+    #sticky
+	#completewith next
+	.goto Azuremyst Isle,54.7,18.4
+	>>Kill Ravagers
+    .complete 9560,1 --Collect Ravager Hide (x8)
+step << Shaman
     .goto Azuremyst Isle,59.6,18.0
     .turnin 9464 >> Turn in Call of Fire
     .accept 9465 >> Accept Call of Fire
@@ -518,7 +517,8 @@ step
     .goto Azuremyst Isle,46.6,20.6
     .accept 9565 >> Accept Search Stillpine Hold
 step
-    .goto Azuremyst Isle,47.4,14.0
+    >>Start clearing toward the end of the cave
+	.goto Azuremyst Isle,47.4,14.0
     .complete 9573,1 --Kill Chieftain Oomooroo (x1)
     .complete 9573,2 --Kill Crazed Wildkin (x9)
 step << Shaman
@@ -557,7 +557,10 @@ step << Shaman
     .turnin 9465 >> Turn in Call of Fire
     .accept 9467 >> Accept Call of Fire
 step << Shaman
-    .hs >> Hearth to Azure Watch
+    #sticky
+    #completewith next
+    .deathskip >> Run into the water here, pull some mobs, and death skip back to Azure Watch
+	.goto Azuremyst Isle,56.2,32.9
 step << Shaman
     .goto Azuremyst Isle,47.1,50.6
     .turnin 9622 >> Turn in Warn Your People
@@ -710,7 +713,8 @@ step << Paladin
     .turnin 9598 >>Turn in Redemption
     .accept 9600 >>Accept Redemption
 step
-    .hs >> Hearth to Blood Watch
+    >>You may have to go outside Exodar and fly to Blood Watch if your hearth is on cooldown
+	.hs >> Hearth to Blood Watch
 step
     .goto Bloodmyst Isle,52.7,53.3
     .turnin 9581 >> Turn in Learning from the Crystals
@@ -871,6 +875,10 @@ step
     .goto Bloodmyst Isle,55.1,59.1
     .accept 9672 >> Accept The Bloodcurse Legacy
 step
+	#sticky
+	#completewith next
+	.vendor >> Go inside and buy level 15 food from Topher
+step
     .goto Bloodmyst Isle,55.0,57.8
     .accept 9569 >> Accept Containing the Threat
 step
@@ -966,13 +974,17 @@ step
 step << Shaman
     .goto The Exodar,30.0,33.1
     .turnin 9555 >> Turn in Call of Fire
+	.trainer >> Train your level 16 spells
 step
     .goto The Exodar,68.6,63.3
     >>Run back to the flight master
     .turnin 9605 >> Turn in Hippogryph Master Stephanos
     .accept 9606 >> Accept Return to Topher Loaal
 step
-    .fly Blodmyst Isle>> Fly to Blodmyst Isle
+    .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
+step
+    .goto Bloodmyst Isle,55.8,59.8
+    .turnin 9606 >> Turn in Return to Topher Loaal
 step
     #label exit1
     .goto Bloodmyst Isle,55.5,55.4
@@ -1287,8 +1299,13 @@ step << !Shaman
 step
     .fly the Exodar>> Fly to the Exodar
 step << Shaman
+    .goto The Exodar,32.4,24.0
+    .accept 9502 >> Accept Call of Water
+step << Shaman
     .goto The Exodar,31.3,30.7
+    .turnin 9502 >> Turn in Call of Water
     .accept 9501 >> Accept Call of Water
+	.trainer >> Train your level 20 skills
 step << Shaman
     .fly Blood Watch>> Fly to Blood Watch
 step << Shaman
