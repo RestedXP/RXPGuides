@@ -713,7 +713,6 @@ step << Paladin
     .turnin 9598 >>Turn in Redemption
     .accept 9600 >>Accept Redemption
 step
-    >>You may have to go outside Exodar and fly to Blood Watch if your hearth is on cooldown
 	.hs >> Hearth to Blood Watch
 step
     .goto Bloodmyst Isle,52.7,53.3
