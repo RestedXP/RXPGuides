@@ -416,7 +416,6 @@ s["SHAMAN"] = {
     },
     [14] = {
         8045, -- earth shock r3
-        8154, -- stoneskin totem r2
         548, -- Lightning Bolt r3
     },
     [16] = {
@@ -449,7 +448,6 @@ s["SHAMAN"] = {
         939, -- healing wave r5
         905, -- lightning shield r3
         10399, -- rockbiter e4
-        8155, -- stoneskin totem r3
         8160, -- strength of earth totem r2
         8181, -- Frost resistance totem
     },
@@ -486,7 +484,6 @@ s["SHAMAN"] = {
     [34] = {
         8058, -- frost shock r2
         16314, -- rockbiter weapon r5
-        10406, -- stoneskin totem r4
     },
     [36] = {
         8010, -- lesser healing wave r3
@@ -514,7 +511,6 @@ s["SHAMAN"] = {
     },
     [44] = {
         10466, -- lesser healing wave r4
-        10407, -- stoneskin totem r5
         10392, -- Lightning Bolt r8
     },
     [46] = {
@@ -576,7 +572,6 @@ s["SHAMAN"] = {
     [63] = {
         25469, -- lightning shield r8
         25391, -- healing wave r11
-        25508, -- stoneskin totem r7
         25439, -- Chain Lightning r5
     },
     [64] = {
