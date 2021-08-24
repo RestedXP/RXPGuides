@@ -518,7 +518,8 @@ step
     .turnin 230 >> Turn in Sven's Camp
     .accept 262 >> Accept The Shadowy Figure
 step
-    .goto Duskwood,7.7,33.3
+    #label HistoryB2
+	.goto Duskwood,7.7,33.3
     .turnin 226 >> Turn in Wolves at Our Heels
 step << !Rogue !Druid
 	#requires spiders
@@ -555,6 +556,8 @@ step
     .goto Duskwood,72.6,46.9
     .turnin 265 >> Turn in The Shadowy Search Continues
     .accept 266 >> Accept Inquire at the Inn
+    .turnin 68 >> Turn in The Legend of Stalvan
+    .accept 69 >> Accept The Legend of Stalvan
 step
 	#completewith next
 	.vendor >> Remember to buy level 25 food and water
@@ -577,15 +580,10 @@ step << Hunter/Paladin
     .turnin 229 >> Turn in The Daughter Who Lived
     .accept 231 >> Accept A Daughter's Love
 step
-    .goto Duskwood,72.6,46.9
-    .turnin 68 >> Turn in The Legend of Stalvan
-    .accept 69 >> Accept The Legend of Stalvan
-step
     .goto Duskwood,75.3,47.9
     .turnin 173 >> Turn in Worgen in the Woods
     .accept 221 >> Accept Worgen in the Woods
 step
-   #label HistoryB2
     .goto Duskwood,77.5,44.3
  .fly Redridge >> Fly to Redridge
 step << Draenei
