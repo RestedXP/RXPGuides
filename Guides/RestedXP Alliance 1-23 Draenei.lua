@@ -492,7 +492,6 @@ step
 step << Shaman
     #sticky
 	#completewith next
-	.goto Azuremyst Isle,54.7,18.4
 	>>Kill Ravagers
     .complete 9560,1 --Collect Ravager Hide (x8)
 step << Shaman
@@ -792,6 +791,10 @@ step
     .complete 9594,2 --Kill Nazzivus Felsworn (x8)
 	>>Skip this step if you can't find Tzerak around this area
 	.isOnQuest 9594
+step << Shaman
+	#sticky
+	#completewith next
+	.hs Blood Watch >> If your hearth is up, hearth to Blood Watch
 step
 	#requires greenmushroom
     .goto Bloodmyst Isle,53.3,57.6
@@ -853,7 +856,6 @@ step
 	#sticky
 	#label mailbox
 	>>Speak to Messenger Hermesius, he patrols around Blood Watch
-    .accept 9671
 	.turnin 9671
 step
     .goto Bloodmyst Isle,52.7,53.2
@@ -871,6 +873,7 @@ step
 	#requires mailbox
 	>>Open your mailbox, retrieve the note and accept the quest
     .goto Bloodmyst Isle,55.1,59.1
+	.collect 24132,1,9672 --Collect A Letter from the Admiral
     .accept 9672 >> Accept The Bloodcurse Legacy
 step
 	#sticky
@@ -892,7 +895,7 @@ step
 step
 	#sticky
 	#label yserasTear
-	>>Collect the small green mushrooms around the island
+	>>Collect the small green mushrooms around the island.
     .complete 9649,1 --Collect Ysera's Tear (x2)
 step
     .goto Bloodmyst Isle,79.1,22.6
@@ -933,6 +936,7 @@ step
     .goto Bloodmyst Isle,57.6,53.9
     .accept 9604 >> Accept On the Wings of a Hippogryph
 step
+    .goto Bloodmyst Isle,57.7,53.9
     .fly The Exodar>> Fly to The Exodar
 step
     .goto The Exodar,56.9,50.2
@@ -962,10 +966,12 @@ step << Shaman
     .goto The Exodar,32.7,54.5
     .turnin 9461 >> Turn in Call of Fire
     .accept 9555 >> Accept Call of Fire
+    .turnin 9698 >> Turn in Audience with the Prophet
+    .accept 9699 >> Accept Truth or Fiction
 step << Paladin
     .goto The Exodar,38.8,82.6
     .turnin 9600 >>Turn in Redemption
-step
+step << !Shaman
     .goto The Exodar,32.9,54.6
     .turnin 9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
@@ -974,11 +980,12 @@ step << Shaman
     .turnin 9555 >> Turn in Call of Fire
 	.trainer >> Train your level 16 spells
 step
-    .goto The Exodar,68.6,63.3
+    .goto The Exodar,68.4,63.5
     >>Run back to the flight master
     .turnin 9605 >> Turn in Hippogryph Master Stephanos
     .accept 9606 >> Accept Return to Topher Loaal
 step
+    .goto The Exodar,68.4,63.5
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step
     .goto Bloodmyst Isle,55.8,59.8
@@ -1035,7 +1042,9 @@ step
     .goto Bloodmyst Isle,42.1,21.2
     .turnin 9548 >> Turn in Pilfered Equipment
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
-    >>Click on the map in your bags
+step
+    >>Click on the Weathered Treasure Map in your bags from the Artifacts of the Blacksit quest
+	.collect 23837,1,9550 --Collect Weathered Treasure Map (x1)
     .accept 9550 >> Accept A Map to Where?
 step
     #label gnome
@@ -1091,7 +1100,7 @@ step
     .accept 9706 >> Accept Galaen's Journal - The Fate of Vindicator Saruan
 step
     .goto Bloodmyst Isle,37.8,58.9
-	>>Kill and loot blood elves around this area
+	>>Kill and loot blood elves around this area. You can LoS them around the pillars in the area to avoid damage
     .complete 9579,1 --Collect Galaen's Amulet (x1)
     .complete 9703,1 --Collect Medical Supplies (x12)
 step
@@ -1149,6 +1158,7 @@ step
     .complete 10065,1 --Kill Enraged Ravager (x10)
 step
     .goto Bloodmyst Isle,19.6,63.2
+	>>You have to kill the anomalies in the water to eventually spawn the Critters
     .complete 9741,1 --Kill Void Critter (x12)
 step
 	>>Finish off the Tanglers and Ravagers
@@ -1232,6 +1242,7 @@ step
     .accept 9688 >> Accept Into the Dream
 step
 	#sticky
+	#label Veridian
     .goto Bloodmyst Isle,71.5,27.8,0
     .complete 9688,1 --Kill Veridian Whelp (x5)
     .complete 9688,2 --Kill Veridian Broodling (x5)
@@ -1239,7 +1250,8 @@ step
     .goto Bloodmyst Isle,79.1,22.7
     .turnin 9683 >> Turn in Ending the Bloodcurse
 step
-    .goto Bloodmyst Isle,74.3,33.4
+    #requires Veridian
+	.goto Bloodmyst Isle,74.3,33.4
     .turnin 9688 >> Turn in Into the Dream
     .accept 9689 >> Accept Razormaw
 step
@@ -1295,6 +1307,7 @@ step << !Shaman
     #completewith next
     .deathskip >> Death skip back to Blood Watch
 step
+    .goto Bloodmyst Isle,57.7,53.9
     .fly the Exodar>> Fly to the Exodar
 step << Shaman
     .goto The Exodar,32.4,24.0
@@ -1305,6 +1318,7 @@ step << Shaman
     .accept 9501 >> Accept Call of Water
 	.trainer >> Train your level 20 skills
 step << Shaman
+    .goto The Exodar,68.4,63.5
     .fly Blood Watch>> Fly to Blood Watch
 step << Shaman
     .goto Bloodmyst Isle,32.3,16.2
@@ -1327,6 +1341,7 @@ step << Shaman
     .goto Bloodmyst Isle,55.5,55.4
     .turnin 9746 >> Turn in Limits of Physical Exhaustion
 step << Shaman
+    .goto Bloodmyst Isle,57.7,53.9
     .fly The Exodar>> Fly to The Exodar
 step << Hunter/Mage/Paladin
 	.trainer >> Train spells in Exodar 
@@ -1394,7 +1409,7 @@ step
     .accept 2098 >> Accept Gyromast's Retrieval
 step
 	#sticky
-    >>Kill Raging Reef Crawlers
+    >>Kill Raging Reef Crawlers. Be careful as they thrash (multiple hits at once every 10s or so)
     .complete 2098,3 --Collect Bottom of Gelkak's Key (x1)
 step
     .goto Darkshore,59.5,12.6
@@ -1402,7 +1417,7 @@ step
     .complete 2098,1 --Collect Top of Gelkak's Key (x1)
 step
     .goto Darkshore,55.4,12.6
-	>>Kill murlocs next to the sunken ship
+	>>Kill murlocs next to the sunken ship. You can LoS (line of sight) the oracles around the front of the sunken ship
     .complete 2098,2 --Collect Middle of Gelkak's Key (x1)
 step
     .goto Darkshore,56.7,13.5
@@ -1437,8 +1452,8 @@ step
 step
     .goto Darkshore,55.3,34.0
     .complete 947,1 --Collect Scaber Stalk (x5)
+	>>Take a right when entering the cave and check the top for a Death Cap. If there's none there, you have to go down below
     .complete 947,2 --Collect Death Cap (x1)
-
 step
     .xp 20-3900
 step << Hunter
@@ -1481,6 +1496,7 @@ step
     .accept 944 >> Accept The Master's Glaive
 step
     .goto Darkshore,36.6,76.6
+	>>Run into the middle of the fire to start the event (recommended to kill the mobs around it first)
     .complete 4740,1 --Kill Murkdeep (x1)
 step
     .goto Darkshore,35.7,83.7
@@ -1489,11 +1505,8 @@ step
     .goto Darkshore,35.7,83.7
     .accept 731 >> Accept The Absent Minded Prospector
 step
+	>>Remtravel will not aggro the mobs that don't hit him, or that you aggro first. Be careful as he has low health/armor
     .complete 731,1 --Escort Prospector Remtravel
-step
-    .goto Darkshore,39.0,86.4
-    .turnin 944 >> Turn in The Master's Glaive
-    .accept 949 >> Accept The Twilight Camp
 step
     .goto Darkshore,39.0,86.4
     .turnin 944 >> Turn in The Master's Glaive
@@ -1504,6 +1517,10 @@ step
 step
     .goto Darkshore,38.6,86.1
     .turnin 949 >> Turn in The Twilight Camp
+step
+	#sticky
+	#completewith next
+	+You can now delete the "Phial of Scrying" from your inventory. As it's no longer needed
 step
 	#label end
     .complete 945,1 --Escort Therylune
@@ -1562,6 +1579,7 @@ step
     .complete 1033,1 --Collect Elune's Tear (x1)
 step
     .goto Ashenvale,37.8,34.7
+	>>He's a grey Furbolg that patrols a large section of the camp
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
 step
     .goto Ashenvale,36.6,49.6
@@ -1586,10 +1604,15 @@ step
     .goto Ashenvale,26.2,38.7
     .turnin 973 >> Turn in The Tower of Althalaxx
 step
+	#sticky
+	#completewith GlowGem
+	+Be careful of the oracles here, as they have a high-damage instant Shock spell (110 damage) and can heal to full
+step
     .goto Ashenvale,20.3,42.4
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
 step
+	#label GlowGem
     .goto Ashenvale,20.3,42.4
     .complete 1023,1 --Collect Glowing Gem (x1)
 step
