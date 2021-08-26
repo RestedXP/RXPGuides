@@ -2,6 +2,10 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 << Alliance
 #name 1-11 Teldrassil
 #next 11-14 Darkshore
+step << !NightElf
+    #sticky
+    #completewith next
+    +You have selected a guide meant for Night Elves. You should choose the same starter zone that you start in
 step
     .goto Teldrassil,58.7,44.4
     .accept 456 >> Accept The Balance of Nature
@@ -13,8 +17,21 @@ step
     .goto Teldrassil,58.7,44.2
     .turnin 456 >> Turn in The Balance of Nature
     .accept 457 >> Accept The Balance of Nature
+	.accept 3116 >> Accept Simple Sigil << Warrior
+	.accept 3117 >> Accept Etched Sigil << Hunter
+--	.accept 3118 >> Accept Encrypted Sigil << Rogue
+	.accept 3119 >> Accept Hallowed Sigil << Priest
+	.accept 3120 >> Accept Verdant Sigil << Druid
+step << Warrior 
+    .goto Teldrassil,59.3,41.1
+	.vendor >> Go inside and vendor trash
+step << Warrior
+	.goto Teldrassil,59.6,38.4
+	.turnin 3116 >> Turn in Simple Sigil
+	.trainer >> Run up the stairs behind the vendors. Train Battle Shout from the trainer
 step
-    .goto Teldrassil,59.9,42.5
+    >> Run back outside << Warrior
+	.goto Teldrassil,59.9,42.5
     .accept 458 >> Accept The Woodland Protector
 step
     .goto Teldrassil,60.9,42.0
@@ -66,10 +83,35 @@ step
     .goto Teldrassil,60.9,42.0
     .turnin 3521 >> Turn in Iverron's Antidote
     .accept 3522 >> Accept Iverron's Antidote
+step << !Priest
+    .goto Teldrassil,59.3,41.1
+	.vendor >> Go inside and vendor trash << !Hunter
+	.vendor >> Go inside and vendor trash. Buy 800 arrows << Hunter
+step << Warrior
+    .goto Teldrassil,59.6,38.4
+	.trainer >> Train your level 4 spells
+step << Priest
+    .goto Teldrassil,59.5,41.1
+	.vendor >> Go inside, then upstairs and vendor trash
+step << Priest
+	.goto Teldrassil,59.2,40.4
+	.turnin 3119 >> Turn in Hallowed Sigil
+	.trainer >> Train your level 4 spells
 step
     .goto Teldrassil,57.8,41.7
     .turnin 916 >> Turn in Webwood Venom
     .accept 917 >> Accept Webwood Egg
+step << Druid
+    .goto Teldrassil,58.6,40.3
+	>>Run up the big ramp and into the small room
+	.turnin 3120 >> Turn in Verdant Sigil
+	.trainer >> Train your level 4 spells
+step << Hunter
+	.goto Teldrassil,58.7,40.4
+	>>Run up the big ramp and into the small room
+	.turnin 3117 >> Turn in Etched Sigil
+	.trainer >> Train your level 4 spells
+-- Not adding an optional (purchase bow) thing in exchange for selling a bag drop, would cause too many money problems
 step
     .goto Teldrassil,54.6,33.0
     .turnin 3522 >> Turn in Iverron's Antidote
@@ -100,6 +142,7 @@ step << Priest
     .accept 5622 >> Accept In Favor of Elune
 step
     .goto Teldrassil,59.1,39.4
+	>>Take the ramp upwards and climb the big tree
     .turnin 921 >> Turn in Crown of the Earth
     .accept 928 >> Accept Crown of the Earth
 step
@@ -129,14 +172,51 @@ step << Priest
     .goto Teldrassil,55.6,56.8
     .turnin 5622 >> Turn in In Favor of Elune
     .accept 5621 >> Accept Garments of the Moon
+	.trainer >> Train your level 6 spells
 step
     .goto Teldrassil,55.5,57.0
     >>Go to the top of the treehouse
     .accept 932 >> Accept Twisted Hatred
     .accept 2438 >> Accept The Emerald Dreamcatcher
+step << Hunter
+    .goto Teldrassil,56.7,59.5
+	.trainer >> Train your level 6 spells
+step << Hunter
+    .goto Teldrassil,56.3,59.5
+    .vendor >> vendor trash. Sell your Bow if it gives you enough money for Hornwood Recurve Bow (2s 70c)
+step << Hunter
+    .goto Teldrassil,56.3,59.5
+    .money <0.0270
+    >> Buy Hornwood Recurve Bow and equip it
+    .collect 2506,1 --Collect Hornwood Recurve Bow
+step << Warrior
+    .goto Teldrassil,56.2,59.2
+	.trainer >> Train your level 6 spells
+step << Rogue
+    .goto Teldrassil,56.4,60.1
+	.trainer >> Train your level 6 spells
+step << Warrior
+	.goto Teldrassil,56.3,59.5
+    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
+step << Warrior
+    .goto Teldrassil,56.3,59.5
+    .money <0.0509
+    >> Buy Gladius and equip it
+    .collect 2488,1 --Collect Gladius
+step << Rogue
+    .goto Teldrassil,56.3,59.5
+    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c). You’ll come back later if you don’t have enough yet
+step << Rogue
+    .goto Teldrassil,56.3,59.5
+    .money <0.0382
+    >>Buy Stiletto and equip it
+    .collect 2494,1 --Collect Stiletto
 step
     .goto Teldrassil,55.7,59.8
     .turnin 2159 >> Turn in Dolanaar Delivery
+step << Druid
+    .goto Teldrassil,55.9,61.6
+	.trainer >> Train your level 6 spells
 step
     .goto Teldrassil,56.2,61.7
     .turnin 928 >> Turn in Crown of the Earth
@@ -165,6 +245,7 @@ step
     .complete 2438,1 --Collect Emerald Dreamcatcher (x1)
 step
     .goto Teldrassil,66.3,58.6
+	>>Go upstairs in the house
     .turnin 475 >> Turn in A Troubling Breeze
     .accept 476 >> Accept Gnarlpine Corruption
 step
@@ -178,10 +259,13 @@ step
     .complete 488,2 --Collect Strigid Owl Feather (x3)
     .complete 488,3 --Collect Webwood Spider Silk (x3)
 step
+    .goto Teldrassil,60.7,54.4
+	.xp 7+3500 >> Grind to 3500+/4500xp
+step
     .goto Teldrassil,60.5,56.3
     .turnin 488 >> Turn in Zenn's Bidding
 step
-    .goto Teldrassil,56.1,57.7
+	.goto Teldrassil,56.1,57.7
     .accept 489 >> Accept Seek Redemption!
 step
     .goto Teldrassil,55.9,57.3
@@ -189,10 +273,51 @@ step
 step << Priest
     .goto Teldrassil,55.5,56.7
     .turnin 5621 >> Turn in Garments of the Moon
+	.trainer >> Train your level 8 spells
 step
     .goto Teldrassil,55.6,56.9
     .turnin 2438 >> Turn in The Emerald Dreamcatcher
     .accept 2459 >> Accept Ferocitas the Dream Eater
+step << Hunter
+    .goto Teldrassil,56.7,59.5
+	.trainer >> Train your level 8 spells
+step << Hunter
+	.goto Teldrassil,55.9,59.2
+    .vendor >> vendor trash. Sell your Bow if it gives you enough money for Hornwood Recurve Bow (2s 70c)
+step << Hunter
+    .goto Teldrassil,56.3,59.5
+    .money <0.0270
+    >> Buy Hornwood Recurve Bow and equip it
+    .collect 2506,1 --Collect Hornwood Recurve Bow
+step << Warrior
+    .goto Teldrassil,56.2,59.2
+	.trainer >> Train your level 8 spells
+step << Rogue
+    .goto Teldrassil,56.4,60.1
+	.trainer >> Train your level 8 spells
+step << Warrior
+	.goto Teldrassil,56.3,59.5
+    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c)
+step << Warrior
+    .goto Teldrassil,56.3,59.5
+    .money <0.0509
+    >> Buy Gladius and equip it
+    .collect 2488,1 --Collect Gladius
+step << Rogue
+    .goto Teldrassil,56.3,59.5
+    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c)
+step << Rogue
+    .goto Teldrassil,56.3,59.5
+    .money <0.0382
+    >>Buy Stiletto and equip it
+    .collect 2494,1 --Collect Stiletto
+step << Druid
+    .goto Teldrassil,55.9,61.6
+	.trainer >> Train your level 8 spells
+step << Druid
+    .goto Teldrassil,56.2,61.7
+    .turnin 929 >> Turn in Crown of the Earth
+    .accept 933 >> Accept Crown of the Earth
 step
     #sticky
 	#completewith next
@@ -200,7 +325,9 @@ step
     .complete 489,1 --Collect Fel Cone (x3)
 step
     .goto Teldrassil,69.2,53.3
+	>>These share spawns with the Gnarlpine Warriors. You may have to kill them to make the Mystics spawn
     .complete 2459,1 --Kill Gnarlpine Mystic (x7)
+	>>Open the Gnarlpine Necklace from Ferocitas
     .complete 2459,2 --Collect Tallonkai's Jewel (x1)
 step
     .goto Teldrassil,58.7,55.7
@@ -211,11 +338,13 @@ step
     .turnin 489 >> Turn in Seek Redemption!
 step
     .goto Teldrassil,51.2,50.6
-    >>Kill Lord Melenas
+    >>Kill Lord Melenas. He can be located in many different spawnpoints of the cave, and is quite difficult
     .complete 932,1 --Collect Melenas' Head (x1)
 step
+    #sticky
+	.goto Teldrassil,56.2,63.3,150 >>Die on purpose and respawn at the graveyard
+step
     .goto Teldrassil,56.2,61.7
-    >>Die on purpose and respawn at the graveyard
     .turnin 929 >> Turn in Crown of the Earth
     .accept 933 >> Accept Crown of the Earth
 step
@@ -297,6 +426,7 @@ step << Druid
     .goto Darnassus,35.2,8.0
     >>Head to the middle level of the tree house
     .accept 5921 >> Accept Moonglade
+	.trainer >> Train your level 10 spells
 step
     .goto Darnassus,36.5,86.0
     .accept 2518 >> Accept Tears of the Moon
@@ -322,9 +452,19 @@ step
     .goto Teldrassil,56.1,61.7
     .turnin 7383 >> Turn in Crown of the Earth
     .accept 935 >> Accept Crown of the Earth
+step << Priest
+    .goto Teldrassil,55.5,56.7
+	.trainer >> Train your level 10 spells
+step << Warrior
+    .goto Teldrassil,56.2,59.2
+	.trainer >> Train your level 10 spells
+step << Rogue
+    .goto Teldrassil,56.4,60.1
+	.trainer >> Train your level 10 spells
 step << Hunter
     .goto Teldrassil,56.7,59.6
     .accept 6063 >> Accept Taming the Beast
+	.trainer >> Train your level 10 spells
 step << Hunter
     .goto Teldrassil,59.9,58.8
     .complete 6063,1 --Tame a Webwood Lurker
