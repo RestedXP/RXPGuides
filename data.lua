@@ -498,6 +498,7 @@ s["SHAMAN"] = {
         8170, -- Disease Cleansing Totem
     },
     [40] = {
+        8737, -- Mail
         10447, -- flame shock r4
         8005, -- healing wave r7
         8134, -- lightning shield r5
