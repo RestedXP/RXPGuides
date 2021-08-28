@@ -877,7 +877,7 @@ step << Druid
     .money <0.1054
 .goto Thunder Bluff,40.9,62.7
     .train 199 >>Train 2h Maces
-step << Warrior/Shaman/Hunter
+step << Warrior/Hunter
 .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
 step << Druid
