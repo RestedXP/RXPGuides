@@ -1069,7 +1069,8 @@ step
     .turnin 9550 >> Turn in A Map to Where?
     .accept 9557 >> Accept Deciphering the Book
 step
-    .goto Bloodmyst Isle,54.7,54.1
+   	#requires constrictors
+	.goto Bloodmyst Isle,54.7,54.1
     .turnin 9557 >> Turn in Deciphering the Book
 step
     .goto Bloodmyst Isle,52.6,53.3
@@ -1083,9 +1084,6 @@ step
     .turnin 9700 >> Turn in I Shoot Magic Into the Darkness
     .accept 9703 >> Accept The Cryo-Core
 step
-	#label flutterers
-	#sticky
-	#requires constrictors
     .goto Bloodmyst Isle,55.9,56.9
     .turnin 9643 >> Turn in Constrictor Vines
     .accept 9647 >> Accept Culling the Flutterers
@@ -1096,7 +1094,6 @@ step
     .goto Bloodmyst Isle,53.2,57.7
     .accept 9578 >> Accept Searching for Galaen
 step
-	#requires flutterers
 	#sticky
 	#completewith bloodmyst2
 	>>Kill flutterers as you quest
@@ -1112,6 +1109,8 @@ step
     .complete 9579,1 --Collect Galaen's Amulet (x1)
     .complete 9703,1 --Collect Medical Supplies (x12)
 step
+	.xp 17+12800 >> Grind to 12800+/16400xp
+step
 	#requires constrictors
     .goto Bloodmyst Isle,53.3,57.7
     .turnin 9579 >> Turn in Galaen's Fate
@@ -1119,29 +1118,17 @@ step
     .goto Bloodmyst Isle,53.3,57.2
     .accept 9669 >> Accept The Missing Expedition
 step
-    #level 18
-    #label whatweknow
-    #sticky
-    .goto Bloodmyst Isle,55.6,55.1,0
-    .accept 9753 >> Accept What We Know...
-step
     .goto Bloodmyst Isle,55.6,55.1
     .turnin 9703 >> Turn in The Cryo-Core
     .turnin 9706 >> Turn in Galaen's Journal - The Fate of Vindicator Saruan
     .accept 9711 >> Accept Matis the Cruel
     .accept 9748 >> Accept Don't Drink the Water
+    .accept 9753 >> Accept What We Know...
 step
-    #level 18
-    #requires whatweknow
-    #label whatwedontknow
-    #sticky
     .goto Bloodmyst Isle,52.6,53.3
     .turnin 9753 >> Turn in What We Know...
     .accept 9756 >> Acccept What We Don't Know...
 step
-    #sticky
-    #level 18
-    #requires whatwedontknow
     >>Open the cage and speak to the prisoner
     .complete 9756,1
     .goto Bloodmyst Isle,54.36,54.30
@@ -1263,15 +1250,11 @@ step
     .turnin 9688 >> Turn in Into the Dream
     .accept 9689 >> Accept Razormaw
 step
-    #sticky
-    #label razormaw
     .goto Bloodmyst Isle,73.0,21.0
 	>>Climb to the top of the mountain and click on the bonfire to summon Razormaw
     .complete 9689,1 --Kill Razormaw (x1)
 	>>This is an elite quest, if you can't kill Razormaw, skip this step
 step
-    #sticky
-    #requires razormaw
     .goto Bloodmyst Isle,74.3,33.4
     .turnin 9689 >> Turn in Razormaw
 	.isQuestComplete 9689
@@ -1306,7 +1289,6 @@ step << Hunter/Shaman/Mage
     .turnin 9746 >> Turnin Limits of Physical Exhaustion
     .accept 9740 >> Accept The Sun Gate
     >>Skip this quest if you are already past the XP checkpoint
-
 step << Hunter/Shaman/Mage
     #label L20
     .xp 20
