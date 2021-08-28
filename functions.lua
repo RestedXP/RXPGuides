@@ -836,7 +836,7 @@ function RXP_.functions.fly(self,...)
         else
             element.text = "Fly to "..location
         end
-        if location then
+        if location and location ~= "" and location:match("%w") then
             element.location = strupper(location)
         end
         element.tooltipText = RXP_.icons.fly..element.text
