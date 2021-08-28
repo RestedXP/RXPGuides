@@ -5,6 +5,13 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 step
     .goto Azuremyst Isle,82.9,44.0
     .accept 9279 >> Accept You Survived!
+step << Shaman
+	#completewith next
+	    .goto Azuremyst Isle,80.0,47.1
+	.vendor >> Kill 2-3 mobs for vendor trash (worth 10c+), then vendor trash inside
+step << Shaman
+    .goto Azuremyst Isle,79.3,49.1
+	.trainer >> Train Rockbiter Weapon	
 step
     .goto Azuremyst Isle,80.4,45.9
     .turnin 9279 >> Turn in You Survived!
@@ -56,6 +63,8 @@ step
 step << Shaman
     .goto Azuremyst Isle,79.3,49.1
     .accept 9449 >> Accept Call of Earth
+	.turnin 9421 >> Turn in Shaman Training
+	.trainer >> Train Earth Shock 
 step << Shaman
     .goto Azuremyst Isle,71.3,39.1
     .turnin 9449 >> Turn in Call of Earth
@@ -81,7 +90,6 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,79.3,49.1
     .turnin 9451 >> Turn in Call of Earth
-	.trainer >> Train Earth Shock 
 step << Hunter
 	.goto Azuremyst Isle,79.86,49.67
 	.train 1978>> Train Serpent Sting
