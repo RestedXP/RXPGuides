@@ -120,6 +120,11 @@ step << Dwarf/Gnome/Human
 	#requires crocs
     .hs >> Hearth to Menethil Harbor
 step << NightElf/Draenei
+	#sticky
+	#completewith next
+	.goto Wetlands,63.9,78.6
+	.zone Loch Modan >> Logout on top of the mushrooms at the back of the cave. When you log back in, this will teleport you to Thelsamar
+step << NightElf/Draenei
 	#requires crocs
     .goto Loch Modan,33.9,50.9
     .fp >> Get the Thelsamar flight path
@@ -911,6 +916,7 @@ step
     .turnin 289 >> Turn in The Cursed Crew
     .accept 290 >> Accept Lifting the Curse
 step << !Hunter !NightElf !Rogue
+    .goto Wetlands,10.8,60.4
 	>>Go upstairs and talk to Archaeologist Flagongut
 	.turnin 943 >>Turn in The Absent Minded Prospector
 step
@@ -991,6 +997,8 @@ step
 	>>Jump down and loot the letter from the corpse underwater
     .accept 637 >> Accept Sully Balloo's Letter
 step
+    .goto Arathi Highlands,52.5,90.4,30 >> Swim east toward the ramp here
+step
     .goto Arathi Highlands,48.7,87.9
     .complete 633,1 --Collect Cache of Explosives Destroyed (x1)
 step
@@ -1059,7 +1067,6 @@ step
     .goto Western Plaguelands,42.9,85.0
     >>Head north farming turtle meat along the river, once you get at the end of the river, head northwest into WPL
     .fp >> Get the Chillwind Camp flight path
-step
     .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.6,60.5
@@ -1123,11 +1130,17 @@ step
     .turnin 322 >> Turn in Blessed Arm
     .accept 325 >> Accept Armed and Ready
 step
+	#sticky
+	#label MDiplomats
+    .goto Stormwind City,41.5,31.7
+	>>Talk to the patrolling kid
+    .accept 1274 >> Accept The Missing Diplomat
+step
     .goto Stormwind City,39.7,27.6
     .turnin 293 >> Turn in Cleansing the Eye
 step
-    .goto Stormwind City,41.5,31.7
-    .accept 1274 >> Accept The Missing Diplomat
+	#requires MDiplomats
+	.zone Stormwind City >> Exit the Chapel
 step << Paladin
     .goto Stormwind City,39.9,29.8
     >>Speak to Duthorian Rall
@@ -1221,7 +1234,13 @@ step
     .accept 159 >> Accept Juice Delivery
 step
     .home >> Set your Hearthstone to Darkshire
-step
+step << !Hunter !Paladin
+    .goto Duskwood,73.7,46.8
+    .turnin 57 >> Turn in The Night Watch
+    .accept 58 >> Accept The Night Watch
+    .turnin 228 >> Turn in Mor'Ladim
+    .accept 229 >> Accept The Daughter Who Lived
+step << Paladin/Hunter
     .goto Duskwood,73.7,46.8
     .turnin 57 >> Turn in The Night Watch
     .accept 58 >> Accept The Night Watch
@@ -1269,14 +1288,17 @@ step << Shaman
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
 step << Shaman
-    .goto Duskwood,77.4,36.1
-    .complete 98,1 --Collect Mistmantle Family Ring (x1)
-step << Shaman
-    .goto Duskwood,78.4,35.9
+    #sticky
+	#label TearT
+	.goto Duskwood,78.4,35.9
     >>Look for a small flower on the ground
     .complete 335,1 --Collect Tear of Tilloa (x1)
 step << Shaman
-    .goto Duskwood,75.7,45.3
+    .goto Duskwood,77.4,36.1
+    .complete 98,1 --Collect Mistmantle Family Ring (x1)
+step << Shaman
+    #requires TearT
+	.goto Duskwood,75.7,45.3
     .turnin 98 >> Turn in The Legend of Stalvan
 step << Shaman
     #completewith next
@@ -1518,6 +1540,10 @@ step
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
 step
+   	#sticky
+	#completewith next
+	.goto Stormwind City,55.4,68.3,20 >> Bank here if you need to
+step
     .goto Stormwind City,39.9,81.3
     .accept 690 >> Accept Malin's Request
 step
@@ -1691,6 +1717,7 @@ step << Shaman
 step << Shaman
     .goto The Exodar,29.6,33.4
     .turnin 9554 >> Turn in Call of Air
+	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
 step << Shaman
     .hs >> Hearth to Wetlands
 ]])
