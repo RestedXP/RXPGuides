@@ -836,7 +836,7 @@ function RXP_.functions.fly(self,...)
         else
             element.text = "Fly to "..location
         end
-        if element.location then
+        if location then
             element.location = strupper(location)
         end
         element.tooltipText = RXP_.icons.fly..element.text
@@ -847,6 +847,7 @@ function RXP_.functions.fly(self,...)
     if event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and self.element.location then
         for i = 1,NumTaxiNodes() do
             local name = TaxiNodeName(i)
+            
             if name and strupper(name):match(self.element.location) then
                 local taxi = getglobal("TaxiButton"..i)
                 taxi:GetScript("OnEnter")(taxi)
