@@ -339,20 +339,19 @@ step
 	.complete 9456,1 --Kill Infected Nightstalker Runt (x8)
     .complete 10324,1 --Collect Moongraze Buck Hide (x6)
 step
+	#sticky
+    .collect 23759,1,9514 --Collect Rune Covered Tablet (x1)
+    .accept 9514>> Rune Covered Tablet
+step
     .goto Azuremyst Isle,31.4,79.3
 	>>Kill Nagas/Loot the light bulb looking things on the ground
     .complete 9513,1 --Kill Wrathscale Myrmidon (x5)
     .complete 9513,2 --Kill Wrathscale Naga (x5)
     .complete 9513,3 --Kill Wrathscale Siren (x5)
     .complete 9523,1 --Collect Ancient Relic (x8)
-    .collect 23759,1,9514 --rune covered tablet
-step
-    #sticky
-    >>Click on the Rune Covered Tablet in your bags
-    .accept 9514>> Rune Covered Tablet
 step
     .goto Azuremyst Isle,18.4,84.1
-	>>Use the tree disguise at the naga flag
+	>>Use the tree disguise at the naga flag. Click the buff off when you get credit
     .complete 9531,1
 step
     .goto Azuremyst Isle,16.5,94.4
@@ -376,6 +375,10 @@ step
     .turnin 9531 >> Turn in Tree's Company
     .accept 9537 >> Accept Show Gnomercy
     >>Don't turn in the Rune Covered tablet yet, otherwise a long RP sequence will start
+step
+    .goto Azuremyst Isle,47.0,70.3
+    .turnin 9514 >> Turn in Rune Covered Tablet
+    .accept 9515 >> Warlord Sriss'tiz
 step << Hunter
 	#sticky
     .goto Azuremyst Isle,48.8,72.7
@@ -392,14 +395,10 @@ step
     .goto Azuremyst Isle,47.0,70.2
     .turnin 9537 >> Turn in Show Gnomercy
     .accept 9602 >> Accept Deliver Them From Evil...
-step
-    .goto Azuremyst Isle,47.0,70.3
-    .turnin 9514 >> Turn in Rune Covered Tablet
-    .accept 9515 >> Warlord Sriss'tiz
-step << !Hunter !Shaman
+step << !Hunter
     #completewith next
     .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
-step << !Hunter !Shaman
+step << !Hunter
     >>Enter the naga cave and kill Warlord Sriss'tiz
     .goto Azuremyst Isle,24.5,74.5
     .complete 9515,1
@@ -569,13 +568,6 @@ step << Shaman
     .goto Azuremyst Isle,47.1,50.6
     .turnin 9622 >> Turn in Warn Your People
 step << Shaman
-    #completewith next
-    .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
-step << Shaman
-    >>Enter the naga cave and kill Warlord Sriss'tiz
-    .goto Azuremyst Isle,24.5,74.5
-    .complete 9515,1
-step << Shaman
     #sticky
 	#completewith next
     >>Click on the Fireproof Satchel in your bags
@@ -592,7 +584,7 @@ step << Shaman
 step
     .goto Azuremyst Isle,34.1,18.0
     .complete 9562,1 --Collect Stillpine Grain (x5)
-    >>Kill and loot the named Murloc
+    >>Kill and loot the named Murloc. Be careful as he does a LOT of damage
     .accept 9564 >> Accept Gurf's Dignity
 ]],"Draenei")
 
@@ -625,8 +617,6 @@ step
 step
     .goto Bloodmyst Isle,57.6,54.0
     .fp >> Get the Blood Watch flight path
-step
-    .goto Bloodmyst Isle,57.6,54.0
     .turnin 9603 >> Turn in Beds, Bandages, and Beyond
 step
     .goto Bloodmyst Isle,52.7,53.3
@@ -638,6 +628,7 @@ step
     .accept 9694 >> Accept Blood Watch
 step
     .goto Bloodmyst Isle,48.4,47.9
+	>>Be careful as these mobs are difficult at this level
     .complete 9694,1 --Kill Sunhawk Spy (x10)
 step
     .goto Bloodmyst Isle,55.4,55.3
@@ -676,7 +667,6 @@ step
 	.accept 9622 >> Accept Warn Your People << !Shaman
     .complete 9663,1 --High Chief Stillpine Warned
 	*IMPORTANT: Do not engage any mobs, attacking or casting spells will dismount you, if you get dazed by getting hit from behind you will also dismount
-
 step
     .goto Azuremyst Isle,44.7,23.5
     .turnin 9564 >> Turn in Gurf's Dignity
@@ -766,7 +756,7 @@ step
     .accept 9668 >> Accept Report to Exarch Admetius
 step
     .goto Bloodmyst Isle,56.0,79.5
-	>>Loot a big red mushroom underwater
+	>>Loot a big red mushroom underwater, or kill one of the fishes and loot them
     .complete 9648,1 --Collect Aquatic Stinkhorn (x1)
 step
     .goto Bloodmyst Isle,45.4,94.3
@@ -787,18 +777,14 @@ step
     .complete 9567,1 --Collect Nazzivus Monument Glyph (x1)
 step
     .goto Bloodmyst Isle,38.2,81.7
-    >>Kill and loot the named Felguard that roams the area
+    >>Kill and loot the named Felguard that roams the area between the summoning sigil and the Monument Glyph (where he despawns)
 	>>Right click on Tzerak's Armor Plate
     .accept 9594 >> Accept Signs of the Legion
-	*Skip this step if you can't find the felguard
 step
-	#requires monument
     .goto Bloodmyst Isle,37.0,78.7
-	>>Finish off Signs of the Legion
+	>>Kill Satyrs and Felsworn in the area. You may have to kill Rogues to force the respawns of the required ones
     .complete 9594,1 --Kill Nazzivus Satyr (x8)
     .complete 9594,2 --Kill Nazzivus Felsworn (x8)
-	>>Skip this step if you can't find Tzerak around this area
-	.isOnQuest 9594
 step << Shaman
 	#sticky
 	#completewith next
@@ -822,7 +808,6 @@ step
 step
     .goto Bloodmyst Isle,55.0,58.1
     .turnin 9594 >> Turn in Signs of the Legion
-	.isQuestComplete 9594
 step
     .goto Bloodmyst Isle,55.0,58.1
     .turnin 9567 >> Turn in Know Thine Enemy
@@ -903,7 +888,7 @@ step
 step
 	#sticky
 	#label yserasTear
-	>>Collect the small green mushrooms around the island.
+	>>Collect the small green mushrooms around the island. Try to avoid the whelp mobs
     .complete 9649,1 --Collect Ysera's Tear (x2)
 step
     .goto Bloodmyst Isle,79.1,22.6
@@ -943,8 +928,6 @@ step
 step
     .goto Bloodmyst Isle,57.6,53.9
     .accept 9604 >> Accept On the Wings of a Hippogryph
-step
-    .goto Bloodmyst Isle,57.7,53.9
     .fly The Exodar>> Fly to The Exodar
 step
     .goto The Exodar,56.9,50.2
@@ -1188,7 +1171,7 @@ step
     .accept 9670 >> Accept They're Alive! Maybe...
 step
 	#sticky
-	>>Destroy the egg sacs around this area
+	>>Destroy the egg sacs around this area. Kill them from range if possible as to not aggro potential mobs inside
     .goto Bloodmyst Isle,18.1,37.9,0
     .complete 9670,1 --Expedition Researcher Freed
 step
@@ -1486,7 +1469,7 @@ step
     .accept 944 >> Accept The Master's Glaive
 step
     .goto Darkshore,36.6,76.6
-	>>Run into the middle of the fire to start the event (recommended to kill the mobs around it first)
+	>>Run near the fire to start the event (recommended to kill the mobs around it first)
     .complete 4740,1 --Kill Murkdeep (x1)
 step
     .goto Darkshore,35.7,83.7
@@ -1530,6 +1513,7 @@ step
     .accept 1010 >> Accept Bathran's Hair
 step
     .goto Ashenvale,31.3,23.2
+	>>Look for small bundles on the ground, they can be hidden partially-inside of the terrain
     .complete 1010,1 --Collect Bathran's Hair (x5)
 step
     .goto Ashenvale,31.4,31.0
@@ -1586,6 +1570,7 @@ step
     .complete 1034,1 --Collect Handful of Stardust (x5)
 step
     .goto Ashenvale,25.3,60.8
+	>>Try to kill him before he summons his guardians (it's stunnable, but not interruptable)
     .complete 973,1 --Collect Ilkrud Magthrull's Tome (x1)
 step
     .goto Ashenvale,22.7,51.9
