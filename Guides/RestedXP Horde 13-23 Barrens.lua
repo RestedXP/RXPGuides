@@ -998,6 +998,9 @@ step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >>Turn in Arachnophobia
 step
+    .goto Stonetalon Mountains,45.0,77.0
+    .fp >> Get the Sun Rock Retreat flight path
+step
     .goto Stonetalon Mountains,47.5,58.4
     .turnin 6401 >>Turn in Kaya's Alive
 step
