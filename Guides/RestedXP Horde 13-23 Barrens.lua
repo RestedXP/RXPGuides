@@ -2,6 +2,21 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 << Horde
 #name 13-23 The Barrens
 #next 23-27 Hillsbrad / Ashenvale
+step << Tauren Shaman
+    .goto Durotar,50.8,43.6
+    .accept 840 >>Accept Conscript of the Horde
+step << Tauren Shaman
+    .goto Durotar,52.8,28.7,20 >> Go into the cave here
+step << Tauren Shaman
+    >>Kill the Burning Blade Cultists for the Pouch
+.goto Durotar,52.5,26.7
+    .complete 1525,2 --Reagent Pouch (1)
+step << Tauren Shaman
+    .goto Durotar,52.8,28.7,20 >> Leave the cave
+step << Tauren Shaman
+    .goto The Barrens,62.2,19.4
+    .turnin 840 >>Turn in Conscript of the Horde
+    .accept 842 >>Accept Crossroads Conscription
 step << Warrior
 .goto The Barrens,57.9,25.5,20 >>Run up the mountain here
 step << Warrior
@@ -92,6 +107,9 @@ step
     .goto The Barrens,52.2,31.0
     .turnin 844 >>Turn in Plainstrider Menace
     .accept 845 >>Accept The Zhevra
+step << Tauren Shaman
+    .goto The Barrens,52.2,31.0
+    .turnin 842 >>Turn in Crossroads Conscription
 step
      #sticky
     #completewith next
