@@ -608,8 +608,6 @@ step
 step
     .goto Bloodmyst Isle,55.7,59.7
     .accept 9603 >> Accept Beds, Bandages, and Beyond
-step
-    .goto Bloodmyst Isle,55.7,59.7
     .home >> Set your Hearthstone to Blood Watch
 step
     .goto Bloodmyst Isle,56.4,56.8
@@ -835,23 +833,27 @@ step
     .accept 9584 >> Accept The Second Sample
     .turnin 9668 >> Turn in Report to Exarch Admetius
 step
+    #sticky
+	#label Missive
+	.goto Bloodmyst Isle,48.1,47.6
+	>>Kill elves around this area
+    .complete 9779,1 --Collect Sunhawk Missive (x1)
+step
     .goto Bloodmyst Isle,45.7,47.8
 	>>Use the pick in your bags to collect the small red crystal
     .complete 9584,1 --Collect Altered Crystal Sample (x1)
-step
-    .goto Bloodmyst Isle,48.1,47.6
-	>>Kill elves around this area
-    .complete 9779,1 --Collect Sunhawk Missive (x1)
 step
 	.goto Bloodmyst Isle,48.1,47.6
 	.xp 15-1200
 step
 	#sticky
+	#requires Missive
 	#label mailbox
 	>>Speak to Messenger Hermesius, he patrols around Blood Watch
 	.turnin 9671
 step
-    .goto Bloodmyst Isle,52.7,53.2
+    #requires Missive
+	.goto Bloodmyst Isle,52.7,53.2
     .turnin 9584 >> Turn in The Second Sample
     .accept 9585 >> Accept The Final Sample
 step
