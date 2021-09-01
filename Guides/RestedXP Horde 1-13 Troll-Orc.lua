@@ -925,7 +925,7 @@ step << Hunter
 step << Hunter
     >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
 .goto Durotar,59.3,27.6
-.complete 6083,1 --Tame an Armored Scorpid
+.complete 6082,1 --Tame an Armored Scorpid
 step << Hunter
     .goto Durotar,51.8,43.5
 .turnin 6082 >>Turn in Taming the Beast
