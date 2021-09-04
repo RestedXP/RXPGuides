@@ -1181,22 +1181,23 @@ s["WARLOCK"] = {
 
 s["MAGE"] = {
     [4] = {
-        5504, -- Conjure water
+        1459, -- Arcane Intellect
         116, -- frostbolt
+        5504, -- Conjure water
     },
     [6] = {
-        587, -- conjure food
         2136, -- fire blast
         143, -- fireball r2
+        587, -- conjure food
     },
     [8] = {
         205, -- frostbolt r2
         118, -- polymorph
     },
     [10] = {
-        5505, -- conjure water r2
         7300, -- frost armor r2
         122, -- frost nova
+        5505, -- conjure water r2
     },
     [12] = {
         597, -- conjure food
