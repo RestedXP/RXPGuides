@@ -5,8 +5,16 @@ local version = select(4, GetBuildInfo())
 local _,class = UnitClass("player")
 
 local BackdropTemplate = "BackdropTemplate"
-if version < 20500 or version >= 30000 then
-	BackdropTemplate = nil
+
+if version < 20000 then
+	RXP_.version = "CLASSIC"
+    BackdropTemplate = nil
+--[[
+elseif version > 20000 and version < 30000 then
+    RXP_.version = "TBC"
+else
+    RXP_.version = "WOTLK"
+]]
 end
 
 
@@ -51,6 +59,7 @@ function RXPG_init()
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.arrowText = RXPData.arrowText or 9
+    RXPData.phase = RXPData.phase or 1
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
@@ -857,10 +866,40 @@ function RXP_.SetStep(n,n2)
 			stepframe.elements[n]:Hide()
 		end
 	end
+    RXP_.UnitScanUpdate()
 	RXP_.UpdateText()
 	RXP_.updateSteps = true
 	RXP_.updateMap = true
 	StepScroll(scrollHeight)
+end
+
+function RXP_.UnitScanUpdate()
+    if unitscan_targets and RXPData.enableUnitscan then
+        for unit,elements in pairs(RXP_.currentGuide.unitscan) do
+            local enabled
+            for _,element in pairs(elements) do
+                if element.step.active then
+                    enabled = true
+                    break
+                end
+            end
+            
+            if enabled then
+                if not unitscan_targets[unit] then
+                    DEFAULT_CHAT_FRAME:AddMessage(LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> +' .. unit)
+                end
+                unitscan_targets[unit] = true
+            else
+                if unitscan_targets[unit] then
+                    DEFAULT_CHAT_FRAME:AddMessage(LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> -' .. unit)
+                end
+                unitscan_targets[unit] = nil
+            end
+            
+            
+            
+        end
+    end
 end
 
 function RXP_.UpdateText()
@@ -1250,7 +1289,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	end
 	RXP_.currentGuide.steps = {}
 	for n,step in ipairs(guide.steps) do
-		if RXP_.AldorScryerCheck(step) then
+		if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) then
 			table.insert(RXP_.currentGuide.steps,step)
 		end
 	end
@@ -1737,22 +1776,33 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(RXPData.mapCircle)
     button.Text:SetText("Highlight active map pins")
-    button.tooltip = "Show a targeting circle around active map pins"   
+    button.tooltip = "Show a targeting circle around active map pins"  
   --
-    button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
-    index = index + 1
-    button:SetScript("PostClick",function(self) 
-        RXPData.skipMissingPreReqs = self:GetChecked()
-    end)
-    button:SetChecked(RXPData.skipMissingPreReqs)
-    button.Text:SetText("Skip quests with missing pre-requisites")
-    button.tooltip = "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"
-    if not QuestieLoader then
-        button:Hide()
+    if QuestieLoader then
+        button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
+        table.insert(options,button)
+        button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+        index = index + 1
+        button:SetScript("PostClick",function(self) 
+            RXPData.skipMissingPreReqs = self:GetChecked()
+        end)
+        button:SetChecked(RXPData.skipMissingPreReqs)
+        button.Text:SetText("Skip quests with missing pre-requisites")
+        button.tooltip = "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"
     end
-   
+   --
+    if unitscan_targets then
+        button = CreateFrame("CheckButton", "$parentUnitscan", panel, "ChatConfigCheckButtonTemplate");
+        table.insert(options,button)
+        button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+        index = index + 1
+        button:SetScript("PostClick",function(self)
+            RXPData.disableUnitscan = not self:GetChecked()
+        end)
+        button:SetChecked(not RXPData.disableUnitscan)
+        button.Text:SetText("Unitscan integration")
+        button.tooltip = "Automatically adds important npcs to your unitscan list"   
+    end
    
    
 
@@ -1805,6 +1855,9 @@ function RXP_.CreateOptionsPanel()
     slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,2,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, 0.05, "0.05", "2")
     slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, 0.05, "0", "1")
     slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,2,"Bottom","Top")
+    if RXP_.version == "CLASSIC" then
+        slider = CreateSlider(RXPData,"phase",1, 6,"Content phase: %d","Adjusts the guide routes to match the content phase",slider,0,-25, 1, "1", "6")
+    end
 end
 
 function RXP_.UpdateQuestButton(index)

@@ -1,4 +1,4 @@
-## Interface: 20502
+## Interface: 11306
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
@@ -17,4 +17,4 @@ map.lua
 functions.lua
 parser.lua
 
-Guides/GuideList.xml
+#Guides/GuideList.xml

@@ -28,6 +28,7 @@ RXP_.functions.events.isQuestComplete = RXP_.functions.events.complete
 RXP_.functions.events.isOnQuest = RXP_.functions.events.complete
 RXP_.functions.events.isQuestTurnedIn = RXP_.functions.events.complete
 RXP_.functions.events.cast = RXP_.functions.events.hs
+RXP_.functions.events.blastedLands = RXP_.functions.events.collect
 
 RXP_.icons = {
 accept = "|TInterface/GossipFrame/AvailableQuestIcon:0|t",
@@ -287,6 +288,7 @@ function RXP_.UpdateStepText(self)
 end
 
 function RXP_.AldorScryerCheck(faction)
+    if RXP_.version == "CLASSIC" then return true end
     local name, description, standingID, barMin, barMax, aldorRep = GetFactionInfoByID(932)
     local name, description, standingID, barMin, barMax, scryerRep = GetFactionInfoByID(934)
     
@@ -302,6 +304,27 @@ function RXP_.AldorScryerCheck(faction)
             return (aldorRep > scryerRep)
         elseif faction == "Scryer" then
             return (aldorRep < scryerRep)
+        end
+    end
+    return true
+end
+
+function RXP_.PhaseCheck(step)
+    local phase = step.phase
+    if phase and RXPData.phase then
+        local pmin,pmax
+        pmin,pmax = phase:match("(%d+)%-(%d+)")
+        if pmax then
+            pmin = tonumber(pmin)
+            pmax = tonumber(pmax)
+        else
+            pmin = tonumber(phase)
+            pmax = 0xffff
+        end
+        if pmin and RXPData.phase >= pmin and RXPData.phase <= pmax then
+            return true
+        else
+            return false
         end
     end
     return true
@@ -1399,7 +1422,7 @@ function RXP_.functions.isQuestTurnedIn(self,text,...)
         if not ids[1] then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.questIds = ids
         if text and text ~= "" then
-            element.text = text or ""
+            element.text = text
         end
         element.textOnly = true
         return element
@@ -1459,6 +1482,29 @@ function RXP_.functions.zone(self,...)
     local zone = self.element.map
     if zone == C_Map.GetBestMapForUnit("player") then
         RXP_.SetElementComplete(self)
+        self.element.step.completed = true
+        RXP_.updateSteps = true
+    end
+end
+
+function RXP_.functions.zoneskip(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,zone = ...
+        local mapID = RXP_.mapId[zone]
+        if not (mapID and text) then
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/map name\n"..self)
+        end
+        element.map = mapID
+        if text and text ~= "" then
+            element.text = text
+        end
+        element.textOnly = true
+        return element
+    end
+    if not self.element.step.active then return end
+    local zone = self.element.map
+    if zone == C_Map.GetBestMapForUnit("player") then
         self.element.step.completed = true
         RXP_.updateSteps = true
     end
@@ -1538,4 +1584,117 @@ function RXP_.functions.cast(self,...)
     if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and id == element.id then
         RXP_.SetElementComplete(self)
     end
+end
+
+function RXP_.functions.unitscan(self,text,...)
+    if type(self) == "string" then
+        local element = {}
+        local npcs = {...}
+        for k,v in pairs(npcs) do
+            local npc = strupper(v)
+            if RXP_.guide.unitscan[npc] then
+                table.insert(RXP_.guide.unitscan[npc],element)
+            else
+                RXP_.guide.unitscan[npc] = {element}
+            end
+        end
+        
+        if text and text ~= "" then
+            element.text = text
+        end
+        element.textOnly = true
+        return element
+    end
+    
+end
+
+local BLquests = {
+    [2583] = {
+        0, --gizzard
+        1, --brain
+        3, --lung
+        2, --pincer
+        0, --jowl
+    },
+    [2601] = {2,10,0,0,0,},
+    [2585] = {2,0,1,3,0,},
+    [2581] = {0,0,2,1,3,},
+    [2603] = {10,0,0,0,2,}
+}
+
+
+function RXP_.functions.blastedLands(self)
+	
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.text = "Collect the following items:\n14 Vulture Gizzard\n11 Basilisk Brain\n6 Scorpok Pincer\n6 Blasted Boar Lung\n5 Snickerfang Jowl"
+        element.icon = RXP_.icons.collect
+        
+        return element
+    end
+    --
+
+    local element = self.element
+	local step = self.element.step
+
+	local id = {
+		8396,
+		8394,
+		8392,
+		8393,
+		8391,
+	}
+	local name = {
+		"Vulture Gizzard","Basilisk Brain","Blasted Boar Lung","Scorpok Pincer","Snickerfang Jowl"
+	}
+    
+    for n,item in pairs(id) do
+        local iName = GetItemInfo(item)
+        if iName then
+            name[n] = iName
+        end
+    end
+
+	local total = {
+		0,
+		0,
+		0,
+		0,
+		0,
+	}
+	
+	for quest,items in pairs(BLquests) do
+		if not IsQuestFlaggedCompleted(quest) then
+			for item,v in pairs(items) do
+				total[item] = total[item] + v
+			end
+		end
+	end
+	
+	local skip = true
+	--element.textInactive = ""
+	element.text = "Collect the following items:"
+	
+	for item,goal in pairs(total) do
+		local itemCount = GetItemCount(id[item])
+		if goal > 0 then
+			if itemCount > goal then 
+				itemCount = goal 
+			end
+			element.text = string.format("%s\n- %s: %d/%d",element.text,name[item],itemCount,goal)
+		end
+		if itemCount < goal then
+			skip = false
+		end
+	end
+
+	
+	if skip then
+        element.text = "Do the Blasted Lands collection quests"
+        RXP_.SetElementComplete(self)
+    else
+        RXP_.SetElementIncomplete(self)
+	end
+
+	RXP_.UpdateStepText(self)
 end

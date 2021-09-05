@@ -14,12 +14,13 @@ local function applies(text)
                 local level = tonumber(entry) or 0xfff
                 local playerLevel = UnitLevel("player") or 1
                 local state = true
+                local uppercase = strupper(entry)
                 if entry:sub(1,1) == "!" then
                     entry = entry:sub(2,-1)
                     state = false
                 end
                 if entry == "Undead" then entry = "Scourge" end
-                v = v and ((strupper(entry) == class or entry == race or entry == faction or playerLevel >= level) == state)
+                v = v and ((uppercase == class or uppercase == RXP_.version or entry == race or entry == faction or playerLevel >= level) == state)
             end
             isMatch = isMatch or v
         end
@@ -51,8 +52,10 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     end
 
     local guide = {}
+    RXP_.guide = guide
     guide.boost58 = boost58
     guide.group = guideGroup
+    guide.unitscan = {}
     local currentStep = 0
     guide.steps = {}
 
@@ -168,6 +171,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
             end)
             if classtag and not applies(classtag) then
                 if line == "" then
+                    RXP_.guide = nil
                     return
                 end
             else
@@ -217,6 +221,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     if guideGroup:sub(1,1) ~= "*" and defaultFor and not RXP_.defaultGuide then
         RXP_.defaultGuide = guide
     end
+    RXP_.guide = nil
 end
 
 --parser
