@@ -9,12 +9,10 @@ local BackdropTemplate = "BackdropTemplate"
 if version < 20000 then
 	RXP_.version = "CLASSIC"
     BackdropTemplate = nil
---[[
 elseif version > 20000 and version < 30000 then
     RXP_.version = "TBC"
 else
     RXP_.version = "WOTLK"
-]]
 end
 
 
