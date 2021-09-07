@@ -3,7 +3,7 @@ RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
 RXP_.stepUpdateList = {}
 
-RXP_.functions.events.collect = {"BAG_UPDATE","QUEST_ACCEPTED"}
+RXP_.functions.events.collect = {"BAG_UPDATE","QUEST_ACCEPTED","QUEST_TURNED_IN"}
 RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN","QUEST_REMOVED"}
 RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
 RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
@@ -22,6 +22,9 @@ RXP_.functions.events.money = {"PLAYER_MONEY"}
 RXP_.functions.events.train = {"TRAINER_SHOW","CHAT_MSG_SYSTEM","SKILL_LINES_CHANGED"}
 RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.zone = {"ZONE_CHANGED_NEW_AREA"}
+RXP_.functions.events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE"}
+RXP_.functions.events.bankwithdraw = RXP_.functions.events.bankdeposit
+
 
 RXP_.functions.events.abandon = RXP_.functions.events.complete
 RXP_.functions.events.isQuestComplete = RXP_.functions.events.complete
@@ -1697,4 +1700,285 @@ function RXP_.functions.blastedLands(self)
 	end
 
 	RXP_.UpdateStepText(self)
+end
+
+function RXP_.PutItemInBank(bagContents)
+	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+	if CursorHasItem() and isBankOpened then
+		local bank = {BANK_CONTAINER}
+		for i = NUM_BAG_SLOTS+1, NUM_BAG_SLOTS+NUM_BANKBAGSLOTS do
+			table.insert(bank,i)
+		end
+		
+		if not bagContents then bagContents = {} end
+		for _,bag in ipairs(bank) do
+			if not bagContents[bag] then bagContents[bag] = {} end
+			local slots, bagtype = GetContainerNumFreeSlots(bag)
+			if bagtype == 0 and slots > 0 then
+				for slot = 1,GetContainerNumSlots(bag) do
+					if not (GetContainerItemInfo(bag,slot) or bagContents[bag][slot]) then
+						PickupContainerItem(bag,slot)
+						bagContents[bag][slot] = true
+						return
+					end
+				end
+			end
+		end
+		ClearCursor()
+	end
+
+end
+
+function RXP_.PutItemInBags(bagContents)
+	if CursorHasItem() then
+		if not bagContents then bagContents = {} end
+		for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+			if not bagContents[bag] then bagContents[bag] = {} end
+			local slots, bagtype = GetContainerNumFreeSlots(bag)
+			if bagtype == 0 and slots > 0 then
+				for slot = 1,GetContainerNumSlots(bag) do
+					if not (GetContainerItemInfo(bag,slot) or bagContents[bag][slot]) then
+						PickupContainerItem(bag,slot)
+						bagContents[bag][slot] = true
+						return
+					end
+				end
+			end
+		end
+		ClearCursor()
+	end
+end
+
+function RXP_.PutItemInQuiver(bagContents)
+	if CursorHasItem() then
+		if not bagContents then bagContents = {} end
+		for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+			if not bagContents[bag] then bagContents[bag] = {} end
+			local slots, bagtype = GetContainerNumFreeSlots(bag)
+			if (bagtype == 1 or bagtype == 2) and slots > 0 then
+				for slot = 1,GetContainerNumSlots(bag) do
+					if not (GetContainerItemInfo(bag,slot) or bagContents[bag][slot]) then
+						PickupContainerItem(bag,slot)
+						bagContents[bag][slot] = true
+						return
+					end
+				end
+			end
+		end
+		ClearCursor()
+	end
+end
+
+function RXP_.GoThroughBags(itemList,func)
+	local bagContents = {}
+	for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+		for slot = 1,GetContainerNumSlots(bag) do
+			local id = GetContainerItemID(bag, slot)
+			if id then
+				local name = GetItemInfo(id)
+				for _,item in ipairs(itemList) do
+					if item == name or item == id then
+						func(bag,slot,bagContents)
+					end
+				end
+			end
+		end
+	end
+
+end
+
+function RXP_.DepositItems(itemList)
+	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+	if itemList and isBankOpened then
+		if type(itemList) ~= "table" then 
+			itemList = {itemList}
+		end
+	else
+		return
+	end
+	
+	local text = ""
+	for _,item in ipairs(itemList) do
+		local id = tonumber(item) or item
+		local name = GetItemInfo(id) or id
+		if name then
+			if text == "" then
+				text = "Attempting to deposit: "..name
+			else
+				text = text..", "..name
+			end
+		end
+	end
+	print(text)
+	
+	RXP_.GoThroughBags(itemList,function(bag,slot,bagContents)
+		PickupContainerItem(bag,slot)
+		RXP_.PutItemInBank(bagContents)
+	end)
+end
+
+function RXP_.IsItemInBags(itemList,reverseLogic)
+	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+	if itemList and isBankOpened then
+		if type(itemList) ~= "table" then 
+			itemList = {itemList}
+		end
+	else
+		return
+	end
+	for _,item in ipairs(itemList) do
+		local itemCount = 0
+		RXP_.GoThroughBags({item},function()
+			itemCount = itemCount + 1
+		end)
+		if reverseLogic then
+			if itemCount >= 1 then
+				return false
+			end
+		else
+			if itemCount < 1 then
+				return false
+			end
+		end
+	end
+	return true
+end
+
+function RXP_.IsItemNotInBags(itemList)
+	return RXP_.IsItemInBags(itemList,true)
+end
+
+function RXP_.GoThroughBank(itemList,func)
+	
+	local bank = {BANK_CONTAINER}
+	for i = NUM_BAG_SLOTS+1, NUM_BAG_SLOTS+NUM_BANKBAGSLOTS do
+		table.insert(bank,i)
+	end
+	
+	local bagContents = {}
+	
+	for _,bag in pairs(bank) do
+		for slot = 1,GetContainerNumSlots(bag) do
+			local id = GetContainerItemID(bag, slot)
+			if id then
+				local name = GetItemInfo(id)
+				for _,item in ipairs(itemList) do
+					if item == name or item == id then
+						func(bag,slot,bagContents)
+					end
+				end
+			end
+		end
+	end	
+	
+end
+
+function RXP_.WithdrawItems(itemList)
+	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+	if itemList and isBankOpened then
+		if type(itemList) ~= "table" then 
+			itemList = {itemList}
+		end
+	else
+		return
+	end
+	
+	local text = ""
+	for _,item in ipairs(itemList) do
+		local id = tonumber(item) or item
+		local name = GetItemInfo(id) or id
+		if name then
+			if text == "" then
+				text = "Attempting to withdraw: "..name
+			else
+				text = text..", "..name
+			end
+		end
+	end
+	print(text)
+	
+	RXP_.GoThroughBank(itemList,function(bag,slot,bagContents)
+		PickupContainerItem(bag,slot)
+		RXP_.PutItemInBags(bagContents)
+	end)
+end
+
+function RXP_.IsItemInBank(itemList,reverseLogic)
+	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+	if itemList and isBankOpened then
+		if type(itemList) ~= "table" then 
+			itemList = {itemList}
+		end
+	else
+		return
+	end
+	
+	for _,item in ipairs(itemList) do
+		local itemCount = 0
+		RXP_.GoThroughBank({item},function()
+			itemCount = itemCount + 1
+		end)
+		if reverseLogic then
+			if itemCount >= 1 then
+				return false
+			end
+		else
+			if itemCount < 1 then
+				return false
+			end
+		end
+	end
+	return true
+end
+
+function RXP_.IsItemNotInBank(itemList)
+	return RXP_.IsItemInBank(itemList,true)
+end
+
+function RXP_.functions.bankdeposit(self,text,...)
+	
+    if type(self) == "string" then
+        local element = {}
+        local items = {...}
+        for n,item in pairs(items) do
+            items[n] = tonumber(item) or item
+        end
+        
+        element.items = items
+        element.text = text
+        element.icon = RXP_.icons.vendor
+        return element
+    end
+
+    local element = self.element
+
+    if RXP_.IsItemNotInBags(element.items) then
+        RXP_.SetElementComplete(self)
+        return
+    end
+    RXP_.DepositItems(element.items)
+end
+
+function RXP_.functions.bankwithdraw(self,text,...)
+	
+    if type(self) == "string" then
+        local element = {}
+        local items = {...}
+        for n,item in pairs(items) do
+            items[n] = tonumber(item) or item
+        end
+        
+        element.items = items
+        element.text = text
+        element.icon = RXP_.icons.vendor
+        return element
+    end
+
+    local element = self.element
+
+    if RXP_.IsItemInBags(element.items) then
+        RXP_.SetElementComplete(self)
+        return
+    end
+    RXP_.WithdrawItems(element.items)
 end

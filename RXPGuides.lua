@@ -75,6 +75,7 @@ RXP_.errorCount = 0
 RXP_.guideErrorCount = 0
 
 hooksecurefunc(ScriptErrorsFrame,"DisplayMessage",function(self, msg, warnType, keepHidden, messageType)
+    if ScriptErrorsFrame:IsForbidden() then return end
     if RXP_.errorCount >= 0 then
         if warnType == 0 and keepHidden == false and messageType == 1 and type(msg) == "string" and msg:match("RXPGuides\\Guides") then
             RXP_.guideErrorCount = RXP_.guideErrorCount + 1
@@ -805,7 +806,8 @@ function RXP_.SetStep(n,n2)
                 ht:Hide()
                 elementFrame.highlight = ht
                 
-                local function tpOnEnter(self)
+                local function tpOnEnter(self)         
+                    if self:IsForbidden() or GameTooltip:IsForbidden() then return end
                     local element = self.element or self:GetParent().element
                     if element and element.tooltip then
                         GameTooltip:SetOwner(self, "ANCHOR_BOTTOM",0,-10)
@@ -815,7 +817,8 @@ function RXP_.SetStep(n,n2)
                     end
                 end
                 
-                local function tpOnLeave(self)
+                local function tpOnLeave(self)    
+                    if self:IsForbidden() or GameTooltip:IsForbidden() then return end
                     local element = self.element or self:GetParent().element
                     if element and element.tooltip then
                         GameTooltip:Hide()
@@ -1131,8 +1134,6 @@ end)
 f.GuideName.cog:HookScript("OnLeave", function(self)
     self:Hide()
 end)
-
-
 
 
 
@@ -1861,7 +1862,7 @@ end
 function RXP_.UpdateQuestButton(index)
     local button = RXP_.questLogButton
     local anchor = QuestLogExDetailScrollChildFrame or QuestLogDetailScrollChildFrame
-    if not anchor then return end
+    if not anchor or anchor:IsForbidden() then return end
     if not button then
         button = CreateFrame("Button", "$parentRXP", anchor)
         button:SetWidth(32)
@@ -1871,12 +1872,14 @@ function RXP_.UpdateQuestButton(index)
         RXP_.questLogButton = button
         
         local function tpOnEnter(self)
+            if self:IsForbidden() or GameTooltip:IsForbidden() then return end
             GameTooltip:SetOwner(self, "ANCHOR_BOTTOM",0,-10)
             GameTooltip:ClearLines()
             GameTooltip:AddLine(self.tooltip)
             GameTooltip:Show()
         end
         local function tpOnLeave(self)
+            if self:IsForbidden() or GameTooltip:IsForbidden() then return end
             GameTooltip:Hide()
         end
         button:SetScript("OnEnter",tpOnEnter)

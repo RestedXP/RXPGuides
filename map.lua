@@ -275,7 +275,8 @@ MapPinPool.creationFunc = function(framePool)
         end
 
         -- Mouse Handlers
-        f:SetScript("OnEnter",function()
+        f:SetScript("OnEnter",function(self)
+            if self:IsForbidden() or GameTooltip:IsForbidden() then return end
             GameTooltip:SetOwner(f, "ANCHOR_RIGHT",0,0)
             GameTooltip:ClearLines()
 
@@ -295,6 +296,7 @@ MapPinPool.creationFunc = function(framePool)
         end)
 
         f:SetScript("OnLeave",function(self)
+            if self:IsForbidden() or GameTooltip:IsForbidden() then return end
             GameTooltip:Hide()
         end)
 
@@ -404,9 +406,15 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                 if closeToOtherPin and not element.optional then
                     table.insert(otherPin.elements, element)
                 else
+                    local pinalpha = 0
+                    if element.step and element.step.active then
+                        pinalpha = 1
+                    else
+                        pinalpha = math.max(0.4, 1 - (table.getn(pins) * 0.05))
+                    end
                     table.insert(pins, {
                         elements = {element}, 
-                        opacity = math.max(0.4, 1 - (table.getn(pins) * 0.05)), 
+                        opacity = pinalpha, 
                         instance = element.instance,
                         wx = element.wx,
                         wy = element.wy,
