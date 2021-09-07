@@ -191,7 +191,7 @@ step << Shaman
 .collect 4851,1,781 --Collect Dirt-Stained Map
 .accept 781 >>Accept Attack on Camp Narache
 step 
-    #require Belt
+    #requires Belt
 .hs >> Hearth to Camp Narache
 step
 .goto Mulgore,44.9,77.0
