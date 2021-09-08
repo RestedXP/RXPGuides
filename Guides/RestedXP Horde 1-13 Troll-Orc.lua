@@ -884,7 +884,6 @@ step << Rogue
     .train 6770 >>Train Sap
     .train 1784 >>Train Stealth
 step << Rogue
-    step << Rogue
     .goto Durotar,56.5,73.1
     .money <0.0382
     .vendor >> Buy another Stiletto and equip it
