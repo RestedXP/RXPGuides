@@ -797,7 +797,7 @@ function RXP_.functions.hs(self,...)
         return element
     end
     local event,unit,_,id = ...
-    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and (id == 8690 or id == 556) then
+    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and (id == 8690 or id == 556 or id == 348699 or id == 184871) then
         RXP_.SetElementComplete(self)
     end
 end
