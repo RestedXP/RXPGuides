@@ -333,6 +333,14 @@ function RXP_.PhaseCheck(step)
     return true
 end
 
+function RXP_.HardcoreCheck(step)
+    local hc = RXPData.hardcore and RXP_.version == "CLASSIC"
+    if step.softcore and hc or step.hardcore and not hc then
+        return false
+    end
+    return true
+end
+
 function RXP_.GetNpcId(unit)
     if not unit then
         unit = "target"
@@ -900,6 +908,7 @@ function RXP_.functions.deathskip(self,...)
             element.text = "Die and respawn at the graveyard"
         end
         element.tooltipText = RXP_.icons.deathskip..element.text
+        RXP_.step.softcore = true
         return element
     end
     if not self.element.step.active then return end
@@ -913,11 +922,12 @@ function RXP_.functions.collect(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         element.tag = "collect"
-        local text,id,qty,questId = ...
+        local text,id,qty,questId,isQuestTurnIn = ...
         id = tonumber(id)
         if not id then
             return RXP_.error('Error parsing guide '..RXP_.currentGuideName..': No item ID provided\n'..self)
         end
+        element.isQuestTurnIn = isQuestTurnIn
         element.questId = tonumber(questId)
         element.id = id
         qty = tonumber(qty)
@@ -954,7 +964,7 @@ function RXP_.functions.collect(self,...)
         end
     end
     
-    if (element.qty > 0 and count > element.qty) or (questId and (C_QuestLog.IsOnQuest(questId) or IsQuestTurnedIn(questId))) then
+    if (element.qty > 0 and count > element.qty) or (questId and ((not element.isQuestTurnIn and C_QuestLog.IsOnQuest(questId)) or IsQuestTurnedIn(questId))) then
         count = element.qty
     end
 
@@ -970,6 +980,60 @@ function RXP_.functions.collect(self,...)
     if element.qty > 0 and count >= element.qty then
         RXP_.SetElementComplete(self,true)
     elseif element.qty == 0 and count == 0 then
+        RXP_.SetElementComplete(self)
+    else
+        RXP_.SetElementIncomplete(self)
+    end
+end
+
+function RXP_.functions.destroy(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.tag = "collect"
+        local text,id = ...
+        id = tonumber(id)
+        if not id then
+            return RXP_.error('Error parsing guide '..RXP_.currentGuideName..': No item ID provided\n'..self)
+        end
+
+        element.id = id
+        element.qty = qty or 1
+        element.itemName = RXP_.GetItemName(id)
+
+        if text and text ~= "" then
+            element.rawtext = text
+            element.tooltipText = RXP_.icons.collect..element.rawtext
+        else
+            element.requestFromServer = true
+            element.text = " "
+        end
+        return element
+    end
+
+    local element = self.element
+    local name = RXP_.GetItemName(element.id)
+
+    if name then
+        element.requestFromServer = nil
+    else
+        name = ""
+        element.requestFromServer = true
+    end
+    element.itemName = name
+
+    local count = GetItemCount(element.id)
+ 
+
+    if element.rawtext then
+        element.tooltipText = RXP_.icons.collect..element.rawtext
+        element.text = element.rawtext
+    else
+        element.text = string.format("Throw away %s%s from your bags",RXP_.icons.collect,element.itemName)
+        element.tooltipText = element.text
+    end
+    RXP_.UpdateStepText(self)
+
+    if count == 0 then
         RXP_.SetElementComplete(self)
     else
         RXP_.SetElementIncomplete(self)
@@ -1619,10 +1683,10 @@ local BLquests = {
         2, --pincer
         0, --jowl
     },
-    [2601] = {2,10,0,0,0,},
-    [2585] = {2,0,1,3,0,},
-    [2581] = {0,0,2,1,3,},
-    [2603] = {10,0,0,0,2,}
+    [2601] = {2,10,0,0,0},
+    [2585] = {2,0,1,3,0},
+    [2581] = {0,0,2,1,3},
+    [2603] = {10,0,0,0,2}
 }
 
 

@@ -12,7 +12,7 @@ HereBeDragons\HereBeDragons-2.0.lua
 HereBeDragons\HereBeDragons-Pins-2.0.lua
 
 RXPGuides.lua
-data.lua
+data-classic.lua
 map.lua
 functions.lua
 parser.lua

@@ -158,6 +158,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                 guide.steps[currentStep].elements = {}
                 step = guide.steps[currentStep]
                 step.index = currentStep
+                RXP_.step = step
                 lastElement = nil
             end
         elseif currentStep > 0 and not skip then
@@ -193,6 +194,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
         end
     end
     --print(guide)
+    RXP_.step = nil
     if not guide.name then
         print('Guide has no name')
     end

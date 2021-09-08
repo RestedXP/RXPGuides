@@ -1288,7 +1288,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	end
 	RXP_.currentGuide.steps = {}
 	for n,step in ipairs(guide.steps) do
-		if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) then
+		if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) and RXP_.HardcoreCheck(step) then
 			table.insert(RXP_.currentGuide.steps,step)
 		end
 	end
@@ -1588,13 +1588,11 @@ function RXP_.GenerateMenuTable()
     end
     
     table.insert(RXP_.menuList,{text = "",notCheckable = 1,isTitle = 1})
+--    table.insert(RXP_.menuList,{text = "Toggle Hardcore Mode",notCheckable = 1,func = RXP_.HardcoreToggle})
     table.insert(RXP_.menuList,{text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG})
     table.insert(RXP_.menuList,{text = "Close",notCheckable = 1,func = function(self) self:Hide() end})
 end
 
-
-
---ff1 = f
 
 
 
@@ -1803,7 +1801,18 @@ function RXP_.CreateOptionsPanel()
         button.tooltip = "Automatically adds important npcs to your unitscan list"   
     end
    
-   
+    if RXP_.version == "CLASSIC" then
+        button = CreateFrame("CheckButton", "$parentHC", panel, "ChatConfigCheckButtonTemplate");
+        table.insert(options,button)
+        button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+        index = index + 1
+        button:SetScript("PostClick",function(self)
+            RXPData.hardcore = self:GetChecked()
+        end)
+        button:SetChecked(RXPData.hardcore)
+        button.Text:SetText("Hardcore mode")
+        button.tooltip = "Adjust the leveling routes by removing all intentional death skips"   
+    end
 
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
