@@ -481,9 +481,9 @@ step
 step
 .goto Durotar,50.9,79.2,15 >>Enter the Kolkar base
 step
-     #sticky
+    #sticky
     #completewith Bonfire
- >> If the rare is up, kill it when you are level 7. Be sure to use the Cactus Apple Surprise for +2 stam and use the Healing Potion from earlier.
+    +If the rare is up, kill it when you are level 7. Be sure to use the Cactus Apple Surprise for +2 stam and use the Healing Potion from earlier.
 step
     >>Inside the tent, on the ground
 .goto Durotar,49.8,81.2
@@ -884,7 +884,6 @@ step << Rogue
     .train 6770 >>Train Sap
     .train 1784 >>Train Stealth
 step << Rogue
-    step << Rogue
     .goto Durotar,56.5,73.1
     .money <0.0382
     .vendor >> Buy another Stiletto and equip it

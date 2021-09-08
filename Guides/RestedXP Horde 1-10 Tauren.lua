@@ -1010,6 +1010,7 @@ step
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
 step
+    .goto The Barrens,51.6,30.9
     >>Upstairs
 .accept 867 >>Accept Harpy Raiders
 step
