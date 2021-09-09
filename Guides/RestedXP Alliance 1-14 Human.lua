@@ -1677,8 +1677,7 @@ step << Rogue
 .goto Elwynn Forest,24.2,74.5
     .turnin 11 >> Turn in Riverpaw Gnoll Bounty
 step << Rogue
-    >>Abandon The Collector
-.abandon 123 >> Accept The Collector
+.abandon 123 >>Abandon The Collector
 step
     .isOnQuest 184
 .goto Westfall,60.0,19.4
