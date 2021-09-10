@@ -1,3 +1,4 @@
+local faction = UnitFactionGroup("player")
 RXP_.functions = {}
 RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
@@ -7,7 +8,7 @@ RXP_.functions.events.collect = {"BAG_UPDATE","QUEST_ACCEPTED","QUEST_TURNED_IN"
 RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN","QUEST_REMOVED"}
 RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
 RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
-RXP_.functions.events.fp = {"UI_INFO_MESSAGE"}
+RXP_.functions.events.fp = {"UI_INFO_MESSAGE","TAXIMAP_OPENED"}
 RXP_.functions.events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 RXP_.functions.events.home = {"HEARTHSTONE_BOUND"}
 RXP_.functions.events.fly = {"PLAYER_CONTROL_LOST","TAXIMAP_OPENED","ZONE_CHANGED"}
@@ -842,12 +843,21 @@ function RXP_.functions.fp(self,...)
             element.textOnly = true
             element.text = "Get the "..location.." flight path"
         end
-
+        
+        if location then
+            for id,name in pairs(RXP_.flightPath[faction]) do
+                if name:match(location) then
+                    element.fpId = id
+                    break
+                end
+            end
+        end
+        
         element.tooltipText = RXP_.icons.fp..element.text
         return element
     end
     local event,arg1,arg2 = ...
-    if event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH and self.element.step.active then
+    if (element.fpId and RXPCData.flightPaths[element.fpId]) or (event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH and self.element.step.active) then
         RXP_.SetElementComplete(self)
     end
 end
@@ -879,9 +889,16 @@ function RXP_.functions.fly(self,...)
     if not self.element.step.active then return end
     local event = ...
     if event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and self.element.location then
+        local FPlist = C_TaxiMap.GetAllTaxiNodes(C_Map.GetBestMapForUnit("player"))
+        local fpId = {}
+        for k,v in pairs(FPlist) do
+            if v.slotIndex then
+                fpId[v.slotIndex] = v.nodeID
+            end
+        end
+        
         for i = 1,NumTaxiNodes() do
-            local name = TaxiNodeName(i)
-            
+            local name = fpId[i] and RXP_.flightPath[faction][fpId[i]]
             if name and strupper(name):match(self.element.location) then
                 local taxi = getglobal("TaxiButton"..i)
                 taxi:GetScript("OnEnter")(taxi)

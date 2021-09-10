@@ -8,6 +8,149 @@ RXP_.skipPreReq = {
     [10008] = 1,
 }
 
+RXP_.mapId = {
+["Durotar"] = 1411,
+["Mulgore"] = 1412,
+["The Barrens"] = 1413,
+["Alterac Mountains"] = 1416,
+["Arathi Highlands"] = 1417,
+["Badlands"] = 1418,
+["Blasted Lands"] = 1419,
+["Tirisfal Glades"] = 1420,
+["Silverpine Forest"] = 1421,
+["Western Plaguelands"] = 1422,
+["Eastern Plaguelands"] = 1423,
+["Hillsbrad Foothills"] = 1424,
+["The Hinterlands"] = 1425,
+["Dun Morogh"] = 1426,
+["Searing Gorge"] = 1427,
+["Burning Steppes"] = 1428,
+["Elwynn Forest"] = 1429,
+["Deadwind Pass"] = 1430,
+["Duskwood"] = 1431,
+["Loch Modan"] = 1432,
+["Redridge Mountains"] = 1433,
+["Stranglethorn Vale"] = 1434,
+["Swamp of Sorrows"] = 1435,
+["Westfall"] = 1436,
+["Wetlands"] = 1437,
+["Teldrassil"] = 1438,
+["Darkshore"] = 1439,
+["Ashenvale"] = 1440,
+["Thousand Needles"] = 1441,
+["Stonetalon Mountains"] = 1442,
+["Desolace"] = 1443,
+["Feralas"] = 1444,
+["Dustwallow Marsh"] = 1445,
+["Tanaris"] = 1446,
+["Azshara"] = 1447,
+["Felwood"] = 1448,
+["Un'Goro Crater"] = 1449,
+["Moonglade"] = 1450,
+["Silithus"] = 1451,
+["Winterspring"] = 1452,
+["Stormwind City"] = 1453,
+["Orgrimmar"] = 1454,
+["Ironforge"] = 1455,
+["Thunder Bluff"] = 1456,
+["Darnassus"] = 1457,
+["Undercity"] = 1458,
+["Alterac Valley"] = 1459,
+
+["Kalimdor"] = 1414,
+["Eastern Kingdoms"] = 1415,
+}
+
+RXP_.flightPath = {}
+
+RXP_.flightPath["Alliance"] = {
+    [43] = "Aerie Peak, The Hinterlands",
+    [12] = "Darkshire, Duskwood",
+    [8] = "Thelsamar, Loch Modan",
+    [7] = "Menethil Harbor, Wetlands",
+    [6] = "Ironforge, Dun Morogh",
+    [5] = "Lakeshire, Redridge",
+    [4] = "Sentinel Hill, Westfall",
+    [195] = "Rebel Camp, Stranglethorn Vale",
+    [45] = "Nethergarde Keep, Blasted Lands",
+    [19] = "Booty Bay, Stranglethorn",
+    [74] = "Thorium Point, Searing Gorge",
+    [14] = "Southshore, Hillsbrad",
+    [71] = "Morgan's Vigil, Burning Steppes",
+    [16] = "Refuge Pointe, Arathi",
+    [67] = "Light's Hope Chapel, Eastern Plaguelands",
+    [66] = "Chillwind Camp, Western Plaguelands",
+    [2] = "Stormwind, Elwynn", 
+    --
+    [64] = "Talrendis Point, Azshara",
+    [65] = "Talonbranch Glade, Felwood",
+    [73] = "Cenarion Hold, Silithus",
+    [79] = "Marshal's Refuge, Un'Goro Crater",
+    [80] = "Ratchet, The Barrens",
+    [166] = "Emerald Sanctuary, Felwood",
+    [167] = "Forest Song, Ashenvale",
+    [179] = "Mudsprocket, Dustwallow Marsh",
+    [26] = "Auberdine, Darkshore",
+    [27] = "Rut'theran Village, Teldrassil",
+    [28] = "Astranaar, Ashenvale",
+    [31] = "Thalanaar, Feralas",
+    [32] = "Theramore, Dustwallow Marsh",
+    [33] = "Stonetalon Peak, Stonetalon Mountains",
+    [37] = "Nijel's Point, Desolace",
+    [39] = "Gadgetzan, Tanaris",
+    [41] = "Feathermoon, Feralas",
+    [52] = "Everlook, Winterspring",
+    [62] = "Nighthaven, Moonglade",
+}
+
+RXP_.flightPath["Horde"] = {
+    [13] = "Tarren Mill, Hillsbrad",
+    [11] = "Undercity, Tirisfal",
+    [10] = "The Sepulcher, Silverpine Forest",
+    [18] = "Booty Bay, Stranglethorn",
+    [17] = "Hammerfall, Arathi",
+    [21] = "Kargath, Badlands",
+    [20] = "Grom'gol, Stranglethorn",
+    [76] = "Revantusk Village, The Hinterlands",
+    [75] = "Thorium Point, Searing Gorge",
+    [56] = "Stonard, Swamp of Sorrows",
+    [70] = "Flame Crest, Burning Steppes",
+    [68] = "Light's Hope Chapel, Eastern Plaguelands", 
+    --
+    [72] = "Cenarion Hold, Silithus",
+    [77] = "Camp Taurajo, The Barrens",
+    [79] = "Marshal's Refuge, Un'Goro Crater",
+    [80] = "Ratchet, The Barrens",
+    [166] = "Emerald Sanctuary, Felwood",
+    [179] = "Mudsprocket, Dustwallow Marsh",
+    [22] = "Thunder Bluff, Mulgore",
+    [23] = "Orgrimmar, Durotar",
+    [25] = "Crossroads, The Barrens",
+    [29] = "Sun Rock Retreat, Stonetalon Mountains",
+    [30] = "Freewind Post, Thousand Needles",
+    [38] = "Shadowprey Village, Desolace",
+    [40] = "Gadgetzan, Tanaris",
+    [42] = "Camp Mojache, Feralas",
+    [44] = "Valormok, Azshara",
+    [48] = "Bloodvenom Post, Felwood",
+    [53] = "Everlook, Winterspring",
+    [55] = "Brackenwall Village, Dustwallow Marsh",
+    [58] = "Zoram'gar Outpost, Ashenvale",
+    [61] = "Splintertree Post, Ashenvale",
+    [63] = "Nighthaven, Moonglade", 
+}
+
+--[[
+local list = C_TaxiMap.GetTaxiNodesForMap(map)
+list = ""
+for k,v in pairs(list) do
+   if v.faction ~= 2 then
+      --print(v.name,v.faction)
+      mlist = string.format('%s[%d] = "%s", ',list,v.nodeID,v.name)
+   end
+end
+StaticPopupDialogs["m1"] = {timeout=10,hasEditBox = 1,text = ""} StaticPopup_Show("m1") StaticPopup1EditBox:SetText(mlist)
+]]
 local s = {}
 RXP_.defaultSpellList = s
 
