@@ -1615,7 +1615,7 @@ step << Priest
     .train 2006 >>If you’re going to be playing with other players, Train Resurrection
 step << Priest
     .goto Elwynn Forest,43.3,65.7
-    .accept 5636 >> Accept Desperate Prayer
+    .accept 5635 >> Accept Desperate Prayer
     .train 2053 >>Train Lesser Heal r3
     .train 8092 >>Train Mind Blast
 .train 594 >>Train Shadow Word: Pain r2
@@ -1677,8 +1677,7 @@ step << Rogue
 .goto Elwynn Forest,24.2,74.5
     .turnin 11 >> Turn in Riverpaw Gnoll Bounty
 step << Rogue
-    >>Abandon The Collector
-.abandon 123 >> Accept The Collector
+.abandon 123 >>Abandon The Collector
 step
     .isOnQuest 184
 .goto Westfall,60.0,19.4

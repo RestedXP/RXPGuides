@@ -723,7 +723,7 @@ step
     .goto The Barrens,45.3,52.5,0
     .goto The Barrens,45.0,51.8,0
 >>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
-.collect 5099,1, --Collect Hoof of Lakota'Mani
+.collect 5099,1,883 --Collect Hoof of Lakota'Mani
 .accept 883 >>Accept Lakota'Mani
 step
     >>Kill a LOT of Quillboars. Loot them for their tusks. Save the Blood Shards you get
