@@ -1,10 +1,12 @@
 local faction = UnitFactionGroup("player")
+local _,class = UnitClass("player")
 RXP_.functions = {}
 RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
 RXP_.stepUpdateList = {}
 
 RXP_.functions.events.collect = {"BAG_UPDATE","QUEST_ACCEPTED","QUEST_TURNED_IN"}
+RXP_.functions.events.buy = {"BAG_UPDATE","MERCHANT_SHOW"}
 RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN","QUEST_REMOVED"}
 RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
 RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
@@ -59,6 +61,8 @@ abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
 link = "|TInterface/FriendsFrame/UI-FriendsFrame-Link:0|t",
 error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
 }
+
+RXP_.icons.buy = RXP_.icons.collect
 
 function RXP_.error(msg)
     print(msg)
@@ -844,9 +848,9 @@ function RXP_.functions.fp(self,...)
             element.text = "Get the "..location.." flight path"
         end
         
-        if location then
+        if location and location ~= "" and location:match("%w+") then
             for id,name in pairs(RXP_.flightPath[faction]) do
-                if name:match(location) then
+                if strupper(name):match(strupper(location)) then
                     element.fpId = id
                     break
                 end
@@ -2062,4 +2066,92 @@ function RXP_.functions.bankwithdraw(self,text,...)
         return
     end
     RXP_.WithdrawItems(element.items)
+end
+
+function RXP_.functions.bronzetube(self,text,rev)
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.textOnly = true
+       
+        if text and text ~= "" then
+            element.text = text
+        end
+        return element
+    end
+
+    local element = self.element
+    element.rev = rev
+    
+    local count = GetItemCount(4371)
+    local total = 0
+    
+    
+    if not(IsQuestTurnedIn(174)) then
+        total = total + 1
+    end
+    if class == "ROGUE" and not(IsQuestTurnedIn(2609)) then
+        total = total + 1
+    end
+    
+    if count >= total then
+        self.element.step.completed = true
+        RXP_.updateSteps = true
+    end
+end
+
+
+function RXP_.functions.buy(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.tag = "collect"
+        local text,id,qty = ...
+        id = tonumber(id)
+        if not id then
+            return RXP_.error('Error parsing guide '..RXP_.currentGuideName..': No item ID provided\n'..self)
+        end
+        element.id = id
+        qty = tonumber(qty)
+        element.qty = qty or 1
+
+        element.text = text
+        return element
+    end
+    
+    local element = self.element
+    local event = ...
+    local id = element.id
+    local count = GetItemCount(id)
+    local total = element.qty-count
+    if total > 0 and event == "MERCHANT_SHOW" and element.step.active then
+        for i=1,GetMerchantNumItems() do
+            local link = GetMerchantItemLink(i)
+            local itemID = link and tonumber(link:match("item:(%d+)"))
+            if itemID then
+                local name, texture, price, quantity = GetMerchantItemInfo(i)
+                
+                if itemID == id or name == id then
+                    print("Buying "..name.." x"..total)
+                    if quantity and quantity > 1 then
+                        for n=1,math.ceil(total/quantity) do
+                            BuyMerchantItem(i, quantity)
+                        end
+                    elseif quantity == 1 then
+                        local stack = select(8,GetItemInfo(id))
+                        while total > 0 do
+                            local purchase = math.min(stack,total)
+                            total = total - purchase
+                            BuyMerchantItem(i, purchase)
+                        end
+                    end
+                    return
+                end
+            end
+        end
+    end
+    
+    if count >= element.qty then
+        RXP_.SetElementComplete(self)
+        return
+    end
+    
 end
