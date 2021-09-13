@@ -861,6 +861,7 @@ function RXP_.functions.fp(self,...)
         return element
     end
     local event,arg1,arg2 = ...
+    local element = self.element
     if (element.fpId and RXPCData.flightPaths[element.fpId]) or (event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH and self.element.step.active) then
         RXP_.SetElementComplete(self)
     end
@@ -2122,7 +2123,7 @@ function RXP_.functions.buy(self,...)
     local id = element.id
     local count = GetItemCount(id)
     local total = element.qty-count
-    if total > 0 and event == "MERCHANT_SHOW" and element.step.active then
+    if total > 0 and event == "MERCHANT_SHOW" and element.step.active and not element.completed then
         for i=1,GetMerchantNumItems() do
             local link = GetMerchantItemLink(i)
             local itemID = link and tonumber(link:match("item:(%d+)"))
