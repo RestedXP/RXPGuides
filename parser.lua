@@ -164,7 +164,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                 lastElement = nil
             end
         elseif currentStep > 0 and not skip then
-            if currentStep > 1 or (version == "tbc" and not version == "classic" and not version == "wotlk") or guide[version] then
+            if currentStep > 1 or (version == "tbc" and not(guide.classic or guide.wotlk)) or guide[version] then
                 parseLine(line)
             else
                 RXP_.guide = nil
