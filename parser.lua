@@ -31,6 +31,8 @@ end
 
 RXP_.applies = applies
 local RXPG = RXPGuides
+local version = strlower(RXP_.version)
+
 function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     if not guideGroup then return end
     local playerLevel = UnitLevel("player")
@@ -162,7 +164,12 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                 lastElement = nil
             end
         elseif currentStep > 0 and not skip then
-            parseLine(line)
+            if currentStep > 1 or (version == "tbc" and not version == "classic" and not version == "wotlk") or guide[version] then
+                parseLine(line)
+            else
+                RXP_.guide = nil
+                return
+            end
         elseif currentStep == 0 then
             local classtag
             line = line:gsub("(.*)<<%s*(.+)",function(code,tag) 

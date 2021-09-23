@@ -40,8 +40,7 @@ eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
 eventFrame:RegisterEvent("QUEST_TURNED_IN")
 eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
-
-
+eventFrame:RegisterEvent("TAXIMAP_OPENED")
 
 RXPG_Debug = false
 
@@ -58,6 +57,7 @@ function RXPG_init()
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.arrowText = RXPData.arrowText or 9
     RXPData.phase = RXPData.phase or 1
+    RXPCData.flightPaths = RXPCData.flightPaths or {}
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
@@ -206,6 +206,13 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
             RXP_.noGuide = true
         end
 		return
+    elseif event == "TAXIMAP_OPENED" then
+        local FPlist = C_TaxiMap.GetAllTaxiNodes(C_Map.GetBestMapForUnit("player"))
+        for k,v in pairs(FPlist) do
+            if v.nodeID then
+                RXPCData.flightPaths[v.nodeID] = true
+            end
+        end
     elseif event == "PLAYER_LEVEL_UP" then
         RXP_.SetStep(RXPCData.currentStep)
 	end
