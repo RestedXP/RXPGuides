@@ -14,11 +14,11 @@ local function applies(text)
                 local level = tonumber(entry) or 0xfff
                 local playerLevel = UnitLevel("player") or 1
                 local state = true
-                local uppercase = strupper(entry)
                 if entry:sub(1,1) == "!" then
                     entry = entry:sub(2,-1)
                     state = false
                 end
+                local uppercase = strupper(entry)
                 if entry == "Undead" then entry = "Scourge" end
                 v = v and ((uppercase == class or uppercase == RXP_.version or entry == race or entry == faction or playerLevel >= level) == state)
             end
