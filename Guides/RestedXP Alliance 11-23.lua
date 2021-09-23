@@ -5,6 +5,8 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 step
     .goto Darkshore,36.6,45.6
     .accept 3524 >> Accept Washed Ashore
+step << !NightElf
+    .fp Auberdine >> Get the Auberdine Flight Path
 step << NightElf
     .goto Darkshore,36.8,44.3
     .turnin 6342 >> Turn in Flight to Auberdine
