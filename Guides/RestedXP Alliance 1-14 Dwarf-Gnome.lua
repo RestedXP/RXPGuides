@@ -716,7 +716,7 @@ step
 .goto Wetlands,12.7,46.7,30 >> Swim to shore
 step
 .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil >> Get the Menethil Harbor flight path
 step
 .hs >> Hearth to Kharanos
 step
@@ -1225,13 +1225,13 @@ step << Rogue
     +Grind mobs until you have at least 33 Silver worth of money and vendorables
 step << Gnome/Dwarf
     .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
     .fly Ironforge >> Fly to Ironforge
 step << !Gnome !Dwarf
     .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
     .fly Ironforge >> Fly to Ironforge
 step << Gnome/Dwarf
     .goto Ironforge,51.5,26.3
@@ -1732,7 +1732,7 @@ step
 .goto Wetlands,12.7,46.7,30 >> Swim to shore
 step
 .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil >> Get the Menethil Harbor flight path
 step
 .hs >> Hearth to Kharanos
 step
@@ -1981,7 +1981,7 @@ step
     .goto Loch Modan,32.0,47.2,150 >>Die and respawn at the Spirit Healer, or run to here
 step
     .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
     .fly Ironforge >> Fly to Ironforge
@@ -2020,7 +2020,7 @@ step
 step
     .goto Stormwind City,62.5,62.3,30,0
 .goto Stormwind City,66.3,62.1
-    .fp >> Get the Stormwind flight path
+    .fp Stormwind >> Get the Stormwind flight path
 step
     .money <0.3040
 .goto Stormwind City,57.1,57.7
@@ -2296,7 +2296,7 @@ step
     .turnin 244 >> Turn in Encroaching Gnolls
 step
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
 step
     >>Choose rockets. These have very good damage, and can be used for splitpulling
@@ -2618,7 +2618,7 @@ step
     .accept 3524 >> Accept Washed Ashore
 step
     .goto Darkshore,36.3,45.6
-    .fp >> Get the Auberdine Flight Path
+    .fp Auberdine >> Get the Auberdine flight path
 step
     #sticky
 #completewith Darkshore2
@@ -2995,7 +2995,7 @@ step
     .accept 311 >>Accept Return to Marleth
 step
     .goto Dun Morogh,47.3,52.5
-    .hs >> Set your Hearthstone to Kharanos
+    .home >> Set your Hearthstone to Kharanos
 step
     .goto Dun Morogh,46.9,52.4
     >>Speak to Ragnar Thunderbrew
@@ -3122,7 +3122,7 @@ step
 .goto Wetlands,12.7,46.7,30 >> Swim to shore
 step
 .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil >> Get the Menethil Harbor flight path
 step
     #completewith next
     .hs >> Hearth back to Kharanos

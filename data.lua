@@ -134,6 +134,10 @@ RXP_.flightPath["Alliance"] = {
     [117] = "Telredor, Zangarmarsh",
     [113] = "Quest - Nethrandamus Start",
     [101] = "Temple of Telhamat, Hellfire Peninsula", 
+    
+    [93] = "Blood Watch, Bloodmyst Isle", 
+    [94] = "The Exodar",
+    [205] = "Zul'Aman, Ghostlands", 
 }
 
 RXP_.flightPath["Horde"] = {
@@ -175,7 +179,6 @@ RXP_.flightPath["Horde"] = {
     [142] = "Hellfire Peninsula - Reaver's Fall",
     [151] = "Swamprat Post, Zangarmarsh",
     [150] = "Cosmowrench, Netherstorm",
-    [145] = "Quest - Netherstorm - Stealth Flight - Begin",
     [163] = "Mok'Nathal Village, Blade's Edge Mountains",
     [160] = "Evergrove, Blade's Edge Mountains",
     [99] = "Thrallmar, Hellfire Peninsula",
@@ -190,6 +193,10 @@ RXP_.flightPath["Horde"] = {
     [118] = "Zabra'jin, Zangarmarsh",
     [102] = "Falcon Watch, Hellfire Peninsula",
     [141] = "Spinebreaker Ridge, Hellfire Peninsula", 
+    
+    [82] = "Silvermoon City",
+    [83] = "Tranquillien, Ghostlands",
+    [205] = "Zul'Aman", 
 }
 
 --[[

@@ -980,7 +980,7 @@ step << Orc/Troll/Tauren
     .goto Eversong Woods,56.7,49.6,20 >>Run out of Silvermoon
 step << Orc/Troll/Tauren
     .goto Eversong Woods,54.4,50.7
-    .fp >> Get the Silvermoon City Flight Path
+    .fp Silvermoon >> Get the Silvermoon City flight path
 step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene
@@ -1092,7 +1092,7 @@ step << BloodElf Hunter
     .accept 9138 >> Accept Suncrown Village
 step << BloodElf Hunter  
     .goto Ghostlands,45.5,30.5
-    .fp >> Get the Tranquillien flight path
+    .fp Tranquillien >> Get the Tranquillien flight path
 step << BloodElf Hunter  
     >>do NOT fly to Silvermoon City
     .goto Ghostlands,45.5,30.6
@@ -1449,7 +1449,7 @@ step << !BloodElf
     .accept 9329 >> Accept The Forsaken
 step << !BloodElf/!Hunter 
     .goto Ghostlands,45.5,30.5
-    .fp >> Get the Tranquillien flight path
+    .fp Tranquillien >> Get the Tranquillien flight path
 step << BloodElf !Hunter  
     .goto Ghostlands,44.8,32.5
     .turnin 9327 >> Turn in The Forsaken
@@ -2603,7 +2603,7 @@ step
 .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
 step << !Scourge
     .goto Undercity,63.3,48.6
-.fp >> Get the Undercity flight path
+.fp Undercity >> Get the Undercity flight path
 step << Mage
     .goto Undercity,84.2,15.6
     .trainer >>Train Teleport Undercity

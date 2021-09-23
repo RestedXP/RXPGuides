@@ -204,7 +204,7 @@ step
     .accept 887 >>Accept Southsea Freebooters
 step
     .goto The Barrens,63.1,37.1
-    .fp >>Get the Ratchet Flight Path
+    .fp Ratchet>>Get the Ratchet Flight Path
 step
     .goto The Barrens,63.0,37.2
     .accept 894 >>Accept Samophlange
@@ -495,7 +495,7 @@ step << !Tauren !Undead !BloodElf
 step << Tauren/Undead/BloodElf
     >>Run to the Flight Master tower. Get the Flight Path
 .goto Orgrimmar,45.2,63.8
-.fp >>Get the Orgrimmar Flight Path
+.fp Orgrimmar>>Get the Orgrimmar Flight Path
     .fly Crossroads >>Fly to Crossroads
 step
     >>Top of the tower
@@ -999,7 +999,7 @@ step
     .turnin 6284 >>Turn in Arachnophobia
 step
     .goto Stonetalon Mountains,45.0,77.0
-    .fp >> Get the Sun Rock Retreat flight path
+    .fp Sun Rock>> Get the Sun Rock Retreat flight path
 step
     .goto Stonetalon Mountains,47.5,58.4
     .turnin 6401 >>Turn in Kaya's Alive
@@ -1017,7 +1017,7 @@ step
 
 step
     .goto Ashenvale,12.3,33.8
-    .fp >> Get the Zoram'gar Outpost flight path
+    .fp Zoram >> Get the Zoram'gar Outpost flight path
 step
     .goto Ashenvale,11.6,34.3
     .turnin 6562 >>Turn in Trouble in the Deeps

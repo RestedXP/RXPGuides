@@ -239,7 +239,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #next RestedXP Alliance 20-32\20-23 Darkshore/Ashenvale << Warlock
 step
     .goto The Exodar,68.3,63.5
-    .fp >> Get the The Exodar flight path
+    .fp Exodar >> Get the The Exodar flight path
 step << Hunter/Warrior/Paladin
 	>>Go into The Exodar and talk to the weapon master at the top floor of the Trader's Tier
     .goto The Exodar,53.3,85.7
@@ -969,7 +969,7 @@ step << Rogue
     .trainer >> Train your level 20 spells
 step << Dwarf Hunter/!NightElf Rogue
     .goto Teldrassil,58.4,94.0
-    .fp >> Get the Rut'theran Village flight path
+    .fp Rut'theran >> Get the Rut'theran Village flight path
 step << Dwarf Hunter/Rogue
     .goto Teldrassil,58.4,94.0
     .fly Auberdine >>Fly back to Auberdine
@@ -1159,7 +1159,7 @@ step << Mage/Warrior/Priest/Warlock
     .train 227 >> Train Staves
 step << !Hunter !NightElf !Rogue
     .goto Teldrassil,58.4,94.0
-    .fp >> Get the Rut'theran Village flight path
+    .fp Rut'theran >> Get the Rut'theran Village flight path
 step << !Hunter !NightElf !Rogue
     .fly Auberdine >>Fly back to Auberdine
 	
@@ -1347,7 +1347,7 @@ step
 step
     >>Run to Ratchet
     .goto The Barrens,63.1,37.2
-    .fp >> Get the Ratchet flight path
+    .fp Ratchet >> Get the Ratchet flight path
     .fly Astranaar>> Fly to Astranaar
 step
     .goto Ashenvale,39.0,35.9
@@ -1391,7 +1391,7 @@ step
 step
     .goto Teldrassil,58.4,94.0
     >>Exit Darnassus trhough the purple portal
-    .fp >> Get the Rut'theran Village flight path
+    .fp Rut'theran >> Get the Rut'theran Village flight path
     .fly Auberdine>> Fly to Auberdine
 step
     .zone Wetlands>>Take the boat to Wetlands

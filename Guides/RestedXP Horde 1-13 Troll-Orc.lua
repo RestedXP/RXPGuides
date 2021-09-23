@@ -1194,7 +1194,7 @@ step << !Tauren
     .accept 5041 >>Accept Supplies for the Crossroads
 step << !Tauren
     .goto The Barrens,51.5,30.4
-    .fp >>Get the The Crossroads Flight Path
+    .fp Crossroads>>Get the The Crossroads Flight Path
 step << Orc/Troll
     >>do NOT fly to Orgrimmar
 .goto The Barrens,51.5,30.3
@@ -1232,7 +1232,7 @@ step << !Tauren
 step << !Tauren
     >>Run down the road
 .goto The Barrens,44.4,59.2
-    .fp >>Get the Camp Taurajo Flight Path
+    .fp Taurajo>>Get the Camp Taurajo Flight Path
 step << !Tauren
     .goto Mulgore,58.4,61.7
     .accept 749 >>Accept The Ravaged Caravan
@@ -1274,7 +1274,7 @@ step << !Tauren
 step << !Tauren
     >>Go to the top floor of the tower
 .goto Thunder Bluff,46.8,49.9
-    .fp >>Get the Thunder Bluff Flight Path
+    .fp Thunder Bluff>>Get the Thunder Bluff Flight Path
 step << !Tauren
 .goto Thunder Bluff,29.6,29.7,15 >>Jump down into the cave
 step << !Tauren

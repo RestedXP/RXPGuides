@@ -614,7 +614,7 @@ step
     .accept 9648 >> Accept Mac'Aree Mushroom Menagerie
 step
     .goto Bloodmyst Isle,57.6,54.0
-    .fp >> Get the Blood Watch flight path
+    .fp Blood Watch>> Get the Blood Watch flight path
     .turnin 9603 >> Turn in Beds, Bandages, and Beyond
 step
     .goto Bloodmyst Isle,52.7,53.3
@@ -1349,7 +1349,7 @@ step
     .accept 1138 >> Accept Fruit of the Sea
 step
 	.goto Darkshore,36.35,45.57
-	.fp >> Get the Darkshore flight path
+	.fp Darkshore >> Get the Darkshore flight path
 step
     .goto Darkshore,37.3,44.3
     .accept 4740 >> Accept WANTED: Murkdeep!
@@ -1462,7 +1462,7 @@ step << Hunter
     .train 227 >> Train Staves
 step << Hunter
     .goto Teldrassil,58.4,94.0
-    .fp >> Get the Rut'theran Village flight path
+    .fp Rut'theran >> Get the Rut'theran Village flight path
 step << Hunter
     .fly Auberdine >>Fly back to Auberdine
 step
@@ -1653,7 +1653,7 @@ step << !Hunter
 	.goto Darnassus,30.7,41.3,50 >> Take the purple portal back to Rut'theran
 step << !Hunter
     .goto Teldrassil,58.4,94.0
-    .fp >> Get the Rut'theran Village flight path
+    .fp Rut'theran >> Get the Rut'theran Village flight path
 step << !Hunter
     .fly Auberdine >>Fly back to Auberdine
 step

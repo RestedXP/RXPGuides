@@ -319,7 +319,7 @@ step
     .goto Eversong Woods,56.7,49.6,20 >>Run out of Silvermoon
 step
     .goto Eversong Woods,54.4,50.7
-    .fp >> Get the Silvermoon City Flight Path
+    .fp Silvermoon >> Get the Silvermoon City flight path
 step
     .goto Eversong Woods,50.3,50.8
     .accept 8475 >> Accept The Dead Scar

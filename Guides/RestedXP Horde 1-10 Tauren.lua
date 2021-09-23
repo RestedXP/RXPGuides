@@ -731,10 +731,10 @@ step << Druid/Hunter
     .abandon 764 >>Abandon The Venture Co.
 step << !Druid
     .goto The Barrens,44.5,59.1
-    .fp >>Get the Camp Taurajo Flight Path
+    .fp Taurajo >>Get the Camp Taurajo Flight Path
 step << Druid
     .goto The Barrens,44.5,59.1
-    .fp >>Get the Camp Taurajo Flight Path
+    .fp Taurajo >>Get the Camp Taurajo Flight Path
     .fly Thunder Bluff >>Fly to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,45.8,64.4
@@ -793,7 +793,7 @@ step << Tauren
 .turnin 854 >>Turn in Journey to the Crossroads
 step
 .goto The Barrens,51.5,30.4
-.fp >>Get the The Crossroads Flight Path
+.fp Crossroads >>Get the The Crossroads Flight Path
 step
     .goto The Barrens,51.1,29.0
     .accept 6361 >>Accept A Bundle of Hides

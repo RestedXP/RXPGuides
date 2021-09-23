@@ -599,7 +599,7 @@ step
 .abandon 12 >> The People's Militia
 step
     .goto Westfall,56.6,52.6
-    .fp >> Get the Sentinel Hill flight path
+    .fp Sentinel >> Get the Sentinel Hill flight path
     .turnin 6181 >> Turn in A Swift Message
     .accept 6281 >> Accept Continue To Stormwind
     .fly Stormwind >> Fly to Stormwind
@@ -656,7 +656,7 @@ step
     .turnin 244 >> Turn in Encroaching Gnolls
 step
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
 step
     .goto Stormwind City,25.2,78.5
@@ -697,7 +697,7 @@ step
     .goto Ironforge,77.0,51.0,30 >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
-    .fp >> Get the Ironforge flight path
+    .fp Ironforge >> Get the Ironforge flight path
 step
     .goto Ironforge,18.1,51.4
     .home >> Set your Hearthstone to Ironforge
@@ -1564,7 +1564,7 @@ step
     .goto Redridge Mountains,20.8,56.6,100 >>Respawn at the Spirit Healer
 step
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge >> Get the Redridge Mountains flight path
 step
 .goto Elwynn Forest,43.8,65.8,100 >> Hearth to Goldshire
 step
@@ -1716,13 +1716,13 @@ step << Rogue
 >>Grind until you have 39s 90c of vendorables/money
 step << Human
     .goto Westfall,56.6,52.6
-    .fp >> Get the Sentinel Hill flight path
+    .fp Sentinel >> Get the Sentinel Hill flight path
     .turnin 6181 >> Turn in A Swift Message
     .accept 6281 >> Accept Continue To Stormwind
     .fly Stormwind >> Fly to Stormwind
 step << !Human
     .goto Westfall,56.6,52.6
-    .fp >> Get the Sentinel Hill flight path
+    .fp Sentinel >> Get the Sentinel Hill flight path
     .fly Stormwind >> Fly to Stormwind
 step << Shaman
     .goto Stormwind City,61.8,84.0
@@ -1821,7 +1821,7 @@ step
     .goto Ironforge,77.0,51.0,30 >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
-    .fp >> Get the Ironforge flight path
+    .fp Ironforge >> Get the Ironforge flight path
 step << Warrior
     .goto Ironforge,61.2,89.5
     .train 199 >>Train 2h Maces
@@ -2123,7 +2123,7 @@ step << Mage
     .xp 12 >> Grind to 12
 step << Rogue/Mage
     .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
     .fly Ironforge >> Fly to Ironforge
 step << Mage
     .goto Ironforge,27.2,8.6
@@ -2151,7 +2151,7 @@ step
     .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
 step
 .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil >> Get the Menethil Harbor flight path
 step
     .money <0.0385
 .goto Wetlands,8.1,56.3
@@ -2354,7 +2354,7 @@ step
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
     .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
 step
     .goto Loch Modan,22.1,73.1
     .accept 224 >> Accept In Defense of the King's Lands
@@ -2441,7 +2441,7 @@ step
     .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
 step
 .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil >> Get the Menethil Harbor flight path
 step
     .money <0.0385
 .goto Wetlands,8.1,56.3
@@ -2474,7 +2474,7 @@ step
     .accept 3524 >> Accept Washed Ashore
 step
     .goto Darkshore,36.3,45.6
-    .fp >> Get the Auberdine Flight Path
+    .fp Auberdine >> Get the Auberdine flight path
 step
     #sticky
 #completewith Darkshore2

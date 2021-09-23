@@ -13,7 +13,7 @@ step
     .accept 279 >> Accept Claws from the Deep
 step << Draenei/NightElf
     .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil >> Get the Menethil Harbor flight path
 step
     .goto Wetlands,10.8,59.6
     .accept 288 >> Accept The Third Fleet
@@ -127,7 +127,7 @@ step << NightElf/Draenei
 step << NightElf/Draenei
 	#requires crocs
     .goto Loch Modan,33.9,50.9
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
 step << NightElf/Draenei
     #completewith exit2
     .zone Dun Morogh >>Head to Dun Morogh
@@ -143,7 +143,7 @@ step << Mage
     .train 3562>>Train Teleport: Ironforge
 step
     .goto Ironforge,55.5,47.7
-    .fp >> Get the Ironforge flight path
+    .fp Ironforge >> Get the Ironforge flight path
 step
     #sticky
     #completewith exit2
@@ -176,7 +176,7 @@ step << Draenei
 step
 	.goto Stormwind City,62.5,62.3,30,0
 	.goto Stormwind City,66.3,62.1
-    .fp >> Get the Stormwind flight path
+    .fp Stormwind >> Get the Stormwind flight path
 step << Warlock
     .goto Stormwind City,25.3,78.7
     .turnin 1738 >>Turn in Heartswood
@@ -224,7 +224,7 @@ step
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> Accept Encroaching Gnolls
 step
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge >> Get the Redridge Mountains flight path
 step
     .goto Redridge Mountains,30.8,60.1
     .turnin 244 >> Turn in Encroaching Gnolls
@@ -366,7 +366,7 @@ step << !Rogue !Druid
     .accept 225 >> Accept The Weathered Grave
 step << Rogue/Druid
     .goto Westfall,56.6,52.6
-    .fp >> Get the Sentinel Hill flight path
+    .fp Sentinel >> Get the Sentinel Hill flight path
 step << Rogue
     .goto Westfall,68.5,70.0
     .turnin 2360 >> Turn in Mathias and the Defias
@@ -529,7 +529,7 @@ step
 step << !Rogue !Druid
 	#requires spiders
     .goto Westfall,56.6,52.6
-    .fp >> Get the Sentinel Hill flight path
+    .fp Sentinel >> Get the Sentinel Hill flight path
 step << !Rogue !Druid
     .goto Westfall,41.5,66.8
     .turnin 67 >> Turn in The Legend of Stalvan
@@ -1010,7 +1010,7 @@ step
     .turnin 634 >> Turn in Plea To The Alliance
 step
     .goto Arathi Highlands,45.8,46.1
-    .fp >> Get the Arathi Highlands flight path
+    .fp Arathi >> Get the Arathi Highlands flight path
 step
 .isOnQuest 647  
 >>Run to Southshore and turn in before the timer is up
@@ -1062,11 +1062,11 @@ step << Hunter
     .accept 563 >> Accept Reassignment
 step
     .goto Hillsbrad Foothills,49.3,52.3
-    .fp >> Get the Southshore flight path
+    .fp Southshore >> Get the Southshore flight path
 step
     .goto Western Plaguelands,42.9,85.0
     >>Head north farming turtle meat along the river, once you get at the end of the river, head northwest into WPL
-    .fp >> Get the Chillwind Camp flight path
+    .fp Chillwind >> Get the Chillwind Camp flight path
     .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.6,60.5
@@ -1440,7 +1440,7 @@ step
     .complete 222,2 --Kill Nightbane Tainted One (x8)
 step
     .goto Stranglethorn Vale,38.2,4.1
-    .fp >> Get the Rebel Camp flight path
+    .fp Rebel >> Get the Rebel Camp flight path
 step
 	#sticky
 	#completewith thorsen

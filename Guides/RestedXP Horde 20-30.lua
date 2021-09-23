@@ -7,7 +7,7 @@ step
 step
 >>Go to the top of the tower
 .goto Orgrimmar,45.1,63.9
-.fp >> Get the Orgrimmar flight path
+.fp Orgrimmar >> Get the Orgrimmar flight path
 step
 .goto Orgrimmar,39.8,37.0,20 >>Run into the Keep
 step << BloodElf
@@ -49,7 +49,7 @@ step
 step
     >>Run all the way down to Ratchet
 .goto The Barrens,63.1,37.1
-    .fp >> Get the Ratchet flight path
+    .fp Ratchet >> Get the Ratchet flight path
 step
     .goto The Barrens,63.1,37.6
     .accept 959 >>Accept Trouble at the Docks
@@ -80,7 +80,7 @@ step << Warlock
     .accept 1510 >>Accept News of Dogran
 step
     .goto The Barrens,51.5,30.3
-    .fp >> Get the The Crossroads flight path
+    .fp Crossroads >> Get the The Crossroads flight path
 step
     .goto The Barrens,51.5,30.1
     .accept 848 >> Accept Fungal Spores
@@ -293,7 +293,7 @@ step
     .accept 1130 >> Accept Melor Sends Word
 step
     .goto The Barrens,44.5,59.2
-    .fp >> Get the Camp Taurajo flight path
+    .fp Taurajo >> Get the Camp Taurajo flight path
 step << Warlock
     #sticky
 #completewith next
@@ -378,7 +378,7 @@ step
 step << !Tauren
     >>Go up the tower
 .goto Thunder Bluff,47.0,49.8
-.fp >>Get the Thunder Bluff Flight Path
+.fp Thunder Bluff>>Get the Thunder Bluff Flight Path
 step
     .goto Thunder Bluff,47.0,49.8
 .fly Ratchet >> Fly to Ratchet
@@ -490,7 +490,7 @@ step
     .turnin 6284 >> Turn in Arachnophobia
 step
     .goto Stonetalon Mountains,45.1,59.8
-    .fp >>Get the Sun Rock Retreat Flight Path
+    .fp Sun Rock>>Get the Sun Rock Retreat Flight Path
 step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
@@ -507,7 +507,7 @@ step
 .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
 step
     .goto Ashenvale,12.3,33.8
-    .fp >> Get the Zoram'gar Outpost flight path
+    .fp Zoram >> Get the Zoram'gar Outpost flight path
 step
     .goto Ashenvale,11.8,34.7
     .accept 216 >> Accept Between a Rock and a Thistlefur
@@ -752,7 +752,7 @@ step
     .turnin 264 >> Turn in Until Death Do Us Part
 step
     .goto Silverpine Forest,45.6,42.6
-    .fp >> Get the The Sepulcher flight path
+    .fp Sepulcher >> Get the The Sepulcher flight path
 step
     >>Run down to Hillsbrad
 .goto Hillsbrad Foothills,20.9,47.2
@@ -760,7 +760,7 @@ step
 step
     >>Run to Tarren Mill
 .goto Hillsbrad Foothills,60.1,18.7
-    .fp >> Get the Tarren Mill flight path
+    .fp Tarren >> Get the Tarren Mill flight path
 step << BloodElf
     .goto Hillsbrad Foothills,62.5,20.7
     .turnin 9425 >> Turn in Report to Tarren Mill
@@ -1046,7 +1046,7 @@ step
     .goto Ashenvale,81.7,62.9,40  >> Run through the camp to here
 step
     .goto Ashenvale,73.2,61.6
-    .fp >> Get the Splintertree Post flight path
+    .fp Splintertree >> Get the Splintertree Post flight path
 step
     .goto Ashenvale,73.2,61.5
     .accept 6441 >> Accept Satyr Horns
@@ -1465,7 +1465,7 @@ step
     .accept 4841 >> Accept Pacify the Centaur
 step
     .goto Thousand Needles,45.1,49.2
-    .fp >> Get the Freewind Post flight path
+    .fp Freewind >> Get the Freewind Post flight path
 step
     .goto Thousand Needles,44.8,49.1
     .accept 4767 >> Accept Wind Rider
@@ -1774,7 +1774,7 @@ step
 .goto Feralas,88.9,41.2,30 >>Run to Feralas. We're getting the Flight Path for later
 step
     .goto Feralas,75.4,44.3
-    .fp >> Get the Camp Mojache flight path
+    .fp Mojache >> Get the Camp Mojache flight path
 step
     .goto Feralas,75.4,44.4
     .fly Freewind Post >> Fly to Freewind Post
@@ -1797,7 +1797,7 @@ step
 .abandon 1152 >> Abandon Test of Lore
 step
     .goto Tanaris,51.6,25.4
-    .fp >> Get the Gadgetzan flight path
+    .fp Gadgetzan >> Get the Gadgetzan flight path
 step
     .hs >> Hearth to Freewind Post
 step
