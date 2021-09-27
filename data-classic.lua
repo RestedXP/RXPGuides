@@ -8,6 +8,29 @@ RXP_.skipPreReq = {
     [10008] = 1,
 }
 
+
+RXP_.repStandingID = {
+	["hated"] = 1,
+	["hostile"] = 2,
+	["unfriendly"] = 3,
+	["neutral"] = 4,
+	["friendly"] = 5,
+	["honored"] = 6,
+	["revered"] = 7,
+	["exalted"] = 8,
+}
+
+RXP_.repStartValue = {
+    -42000,--hated
+    -6000,--hostile
+    -3000,--unfriendly
+    0,--neutral
+    3000,--friendly
+    9000,--honored
+    21000,--revered
+    42000,--exalted
+}
+
 RXP_.mapId = {
 ["Durotar"] = 1411,
 ["Mulgore"] = 1412,
