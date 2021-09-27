@@ -1111,16 +1111,24 @@ function RXP_.functions.reputation(self,...)
         local text,faction,str = ...
 
         str = str:gsub(" ","")
-        local standing,rep = str:match("(%d+)([%+%.%-]?%d*)")
+        local standing,rep = str:match("([%d%w]+)([%+%.%-]?%d*)")
         element.faction = tonumber(faction)
-        element.rep = tonumber(rep)
-        element.standing = tonumber(standing)
-
+        element.rep = tonumber(rep) or 0
+        
+        if standing then
+            standing = RXP_.repStandingID[strlower(standing)]
+            element.standing = standing or tonumber(standing)
+        end
+        
+        if not (faction and standing) then
+            RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid faction/standing\n"..self)
+        end
+        
         if text and text ~= "" then
             element.text = text
         else
             local standinglabel = getglobal("FACTION_STANDING_LABEL"..element.standing)
-            local factionname = select(1, GetFactionInfoByID(element.faction))
+            local factionname = GetFactionInfoByID(element.faction)
             if element.rep and element.rep ~= 0 then
                 if element.rep < 0 then
                     element.text = string.format("Grind until you are %d away from %s with %s",-1*element.rep,standinglabel,factionname)
