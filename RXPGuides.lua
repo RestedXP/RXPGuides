@@ -4,11 +4,10 @@ local RXPG = RXPGuides
 local version = select(4, GetBuildInfo())
 local _,class = UnitClass("player")
 
-local BackdropTemplate = "BackdropTemplate"
+local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
 if version < 20000 then
 	RXP_.version = "CLASSIC"
-    BackdropTemplate = nil
 elseif version > 20000 and version < 30000 then
     RXP_.version = "TBC"
 else
