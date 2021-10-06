@@ -893,7 +893,6 @@ s["HUNTER"] ={
     },
     [30] = {
         5384, -- feign death
-        14288, -- multishot r2
         4191, -- great stamina r5
         24552, -- natural armor r5
         14924, -- growl r4
@@ -911,6 +910,7 @@ s["HUNTER"] ={
         3662, -- mend pet r4
         4192, -- great stamina r6
         24553, -- natural armor r6
+        3034, -- viper sting
     },
     [38] = {
         14320, -- aspect of the hawk r4
@@ -927,6 +927,7 @@ s["HUNTER"] ={
     },
     [44] = {
         13542, -- mend pet r5
+        14284, --arcane shot r5
         14285, -- arcaneshot r6
     },
     [46] = {
@@ -936,6 +937,7 @@ s["HUNTER"] ={
         14321, -- aspect of the hawk r5
         4194, -- great stamina r8
         24555, -- natural armor r8
+        14279,--viper r2
     },
     [50] = {
         13554, -- serpent sting r7
@@ -950,6 +952,7 @@ s["HUNTER"] ={
     },
     [56] = {
         14286, -- arcaneshot r7
+        14280, --viper r3
     },
     [58] = {
         14322, -- aspect of the hawk r6

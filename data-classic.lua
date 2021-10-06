@@ -8,7 +8,6 @@ RXP_.skipPreReq = {
     [10008] = 1,
 }
 
-
 RXP_.repStandingID = {
 	["hated"] = 1,
 	["hostile"] = 2,
@@ -800,6 +799,7 @@ s["HUNTER"] ={
     },
     [16] = {
         13795, -- immolation trap
+        5118, -- aspect of the cheetah
     },
     [18] = {
         14281, -- arcane shot 2
@@ -807,17 +807,22 @@ s["HUNTER"] ={
         13550, -- serpent sting r3
         4187, -- great stamina r3
         24550, -- natural armor r3
+        3111, -- mend pet r2
+        781, --disengage r1
     },
     [20] = {
-        5118, -- aspect of the cheetah
-        1499, -- freezing trap
-        3111, -- mend pet r2
         15147, -- growl r3
-        781, --disengage r1
+        24494,--nature res
+        24490,--shadow res
+        24475,--frost res
+        24440,--fire res
     },
     [22] = {
         2643, -- multishot
+        14282, -- arcane shot r3
+        1499, -- freezing trap r1
         14323, -- hunters mark r2
+        24519, --arcane res r1
     },
     [24] = {
         4190, -- great stamina r4
@@ -826,21 +831,19 @@ s["HUNTER"] ={
     [26] = {
         3045, -- rapid fire
         13551, -- serpent sting r4
+        14302, --immolation trap r2
     },
     [28] = {
         14319, -- aspect of the hawk r3
         13809, -- frost trap
         3661, -- mend pet r3
+        5384, -- feign death
+        14924, -- growl r4
     },
     [30] = {
-        5384, -- feign death
-        14288, -- multishot r2
+        14924, --Growl r4
         4191, -- great stamina r5
         24552, -- natural armor r5
-        14924, -- growl r4
-        35694, -- avoidance
-        25076, -- cobra reflexes
-        14282, -- arcane shot r3
     },
     [32] = {
         14283, -- arcane shot r4
@@ -849,9 +852,12 @@ s["HUNTER"] ={
         13552, -- serpent sting r5
     },
     [36] = {
+        3034, -- viper sting
         3662, -- mend pet r4
+        14284, --arcane shot r5
         4192, -- great stamina r6
         24553, -- natural armor r6
+        14303, -- immolation trap r3
     },
     [38] = {
         14320, -- aspect of the hawk r4
@@ -871,16 +877,22 @@ s["HUNTER"] ={
         14285, -- arcaneshot r6
     },
     [46] = {
-        14384, -- arcane shot r5
+        14304, -- immolation trap r4
     },
     [48] = {
         14321, -- aspect of the hawk r5
         4194, -- great stamina r8
         24555, -- natural armor r8
+        14279,--viper r2
     },
     [50] = {
         13554, -- serpent sting r7
         14926, -- growl r6
+        24441,--fire res r2
+        24463,--fr r3
+        24464,--fr r4
+        24514,--shadow res r2
+        24515,--sr r3
     },
     [52] = {
         13543, -- mend pet r6
@@ -891,6 +903,8 @@ s["HUNTER"] ={
     },
     [56] = {
         14286, -- arcaneshot r7
+        14280, --viper r3
+        14305, -- immolation trap r5
     },
     [58] = {
         14322, -- aspect of the hawk r6
@@ -906,27 +920,6 @@ s["HUNTER"] ={
         5042, -- great stamind r10
         24630, -- natural armor r10
         14927, -- growl r7
-        35698, -- avoidance r2
-    },
-    [62] = {
-        34120, -- steady shot
-    },
-    [64] = {
-        34074, -- aspect of the viper
-    },
-    [66] = {
-        34026, -- kill command
-    },
-    [67] = {
-        27016, -- serpentsting r10
-    },
-    [68] = {
-        27044, -- aspect of the hawk r8
-        27046, -- mend pet r8
-        34600, -- snake trap
-    },
-    [69] = {
-        27019, -- arcane shot r9
     },
 }
 
