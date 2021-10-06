@@ -26,9 +26,9 @@ RXP_.functions.events.train = {"TRAINER_SHOW","CHAT_MSG_SYSTEM","SKILL_LINES_CHA
 RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.zone = {"ZONE_CHANGED_NEW_AREA"}
 RXP_.functions.events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE"}
+RXP_.functions.events.skipgossip = {"GOSSIP_SHOW"}
+
 RXP_.functions.events.bankwithdraw = RXP_.functions.events.bankdeposit
-
-
 RXP_.functions.events.abandon = RXP_.functions.events.complete
 RXP_.functions.events.isQuestComplete = RXP_.functions.events.complete
 RXP_.functions.events.isOnQuest = RXP_.functions.events.complete
@@ -2164,3 +2164,58 @@ function RXP_.functions.buy(self,...)
     end
     
 end
+
+function RXP_.functions.skipgossip(self,text,...)
+    if type(self) == "string" then
+        local element = {}
+        element.args = {...}
+        element.gossipId = id
+        if text and text ~= "" then
+            element.text = text
+        end
+        element.textOnly = true
+        return element
+    end
+    
+    local element = self.element
+    local args = element.args
+    args = args or {}
+    
+	if event == "GOSSIP_SHOW" then
+		if #args == 0 then
+			if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
+				SelectGossipOption(1)
+			end
+			return
+		end
+        
+		local id = tonumber(args[1])
+		local npcId = RXP_.GetNpcId()	
+		if #args == 1 then
+			if id < 10 or npcId == id then
+				id = 1
+			else
+				return
+			end
+			if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
+				SelectGossipOption(id)
+			end
+		elseif id == npcId then
+			if not self.npcId then
+				element.index = 2
+				element.npcId = id
+			else
+				element.index = ((self.index -1) % (#args-1))+2
+			end
+			local option = tonumber(args[element.index])
+			if option then
+				SelectGossipOption(option)
+			end
+		end
+	else
+		element.npcId = nil
+	end
+    
+end
+
+
