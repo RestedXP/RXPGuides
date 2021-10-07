@@ -40,11 +40,33 @@ eventFrame:RegisterEvent("TRAINER_CLOSED")
 eventFrame:RegisterEvent("QUEST_TURNED_IN")
 eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
 eventFrame:RegisterEvent("TAXIMAP_OPENED")
+eventFrame:RegisterUnitEvent("UNIT_AURA","player")
 
 RXPG_Debug = false
 
+local SoMCount = 0
+local function SoMCheck()
+    if RXPCData.SoM == nil and SoMCount < 34 and version < 20000 then
+        SoMCount = SoMCount+1
+        local id = 0
+        local n = 1
+        while id do
+           id = select(10,UnitBuff("player",n))
+           n = n+1
+           if id == 362859 then
+              RXPCData.SoM = true
+              if RXP_.currentGuide then 
+                RXP_.LoadGuide(RXP_.currentGuide)
+              end
+              RXP_.GenerateMenuTable()
+              break
+           end
+        end
+    end
+end
 
 function RXPG_init()
+    SoMCheck()
 	RXPData = RXPData or {}
 	RXPCData = RXPCData or {}
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
@@ -214,6 +236,8 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         end
     elseif event == "PLAYER_LEVEL_UP" then
         RXP_.SetStep(RXPCData.currentStep)
+    elseif event == "UNIT_AURA" then
+        SoMCheck()
 	end
 	
 	if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then return end
@@ -1294,7 +1318,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	end
 	RXP_.currentGuide.steps = {}
 	for n,step in ipairs(guide.steps) do
-		if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) and RXP_.HardcoreCheck(step) then
+		if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) and RXP_.HardcoreCheck(step) and RXP_.SeasonCheck(step) then
 			table.insert(RXP_.currentGuide.steps,step)
 		end
 	end
@@ -1530,7 +1554,12 @@ end
 
 
 
-
+local function IsGuideActive(guide)
+    if guide.era and RXPCData.SoM or guide.som and not RXPCData.SoM then
+        return false
+    end
+    return true
+end
 
 function RXP_.GenerateMenuTable()
 	RXP_.menuList = {
@@ -1567,16 +1596,18 @@ function RXP_.GenerateMenuTable()
         local item = { text = group, notCheckable = 1, hasArrow = true, menuList = {}}
         local submenuIndex = 0
         for j,guideName in ipairs(t.names_) do
-            submenuIndex = submenuIndex +1
             local guide = RXP_.GetGuideTable(group,guideName)
-            guide.menuIndex = menuIndex
-            guide.submenuIndex = submenuIndex
-            local subitem = {}
-            subitem.text = guide.displayName
-            subitem.func = RXP_.LoadGuide
-            subitem.arg1 = guide
-            subitem.notCheckable = 1
-            table.insert(item.menuList,subitem)
+            if IsGuideActive(guide) then
+                submenuIndex = submenuIndex +1
+                guide.menuIndex = menuIndex
+                guide.submenuIndex = submenuIndex
+                local subitem = {}
+                subitem.text = guide.displayName
+                subitem.func = RXP_.LoadGuide
+                subitem.arg1 = guide
+                subitem.notCheckable = 1
+                table.insert(item.menuList,subitem)
+            end
         end
         
         table.insert(RXP_.menuList,item)

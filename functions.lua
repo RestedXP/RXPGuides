@@ -335,6 +335,14 @@ function RXP_.PhaseCheck(step)
             return false
         end
     end
+    
+    return true
+end
+
+function RXP_.SeasonCheck(step)
+    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM then
+        return false
+    end
     return true
 end
 
