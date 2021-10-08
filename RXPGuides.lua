@@ -3,6 +3,7 @@ RXPGuides = {}
 local RXPG = RXPGuides
 local version = select(4, GetBuildInfo())
 local _,class = UnitClass("player")
+local _,race = UnitRace("player")
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
@@ -126,24 +127,44 @@ end
 RXP_.skillList = {}
 
 local trainerUpdate = 0
-function RXP_.BuySpells(id,level)
-	local name, rank, category, expanded = GetTrainerServiceInfo(id)
-	if category ~= "available" then
+
+local function OnTrainer()
+	
+    local level = UnitLevel("player")
+	local i = GetNumTrainerServices()
+
+	if not i or i == 0 or GetTime() - trainerUpdate > 15 then
 		return
 	end
     
+    local names = {}
+    local rank = {}
+    
+    for id = 1,i do
+        local n, r, cat = GetTrainerServiceInfo(id)
+		if cat == "available" then
+            names[id] = n
+            rank[id] = r
+        end
+	end
+    
     if RXPData.trainGenericSpells then
-        for spellLvl,spells in pairs(RXP_.defaultSpellList[class]) do
-            if spellLvl <= level then
-                for i,spellId in pairs(spells) do
-                    if IsSpellKnown(spellId) then
-                        spells[i] = nil
-                    elseif C_Spell.IsSpellDataCached(spellId) then
-                        local sName = GetSpellInfo(spellId)
-                        local sRank = GetSpellSubtext(spellId)
-                        if sName == name and sRank == rank then
-                            BuyTrainerService(id)
-                            return
+        local entries = {race,class}
+        for _,entry in pairs(entries) do
+            for spellLvl,spells in pairs(RXP_.defaultSpellList[entry]) do
+                if spellLvl <= level then
+                    for i,spellId in pairs(spells) do
+                        if IsSpellKnown(spellId) then
+                            spells[i] = nil
+                        elseif C_Spell.IsSpellDataCached(spellId) then
+                            local sName = GetSpellInfo(spellId)
+                            local sRank = GetSpellSubtext(spellId)
+                            for id,name in pairs(names) do
+                                if sName == name and sRank == rank[id] then
+                                    BuyTrainerService(id)
+                                    return
+                                end
+                            end
                         end
                     end
                 end
@@ -152,27 +173,19 @@ function RXP_.BuySpells(id,level)
     end
     
     if not RXPData.disableTrainerAutomation then
-        rank = rank and tonumber(rank:match("(%d+)")) or 0
         for spellName,spellRank in pairs(RXP_.skillList) do
-            if name == spellName and (rank <= spellRank or spellRank == 0) then
-                BuyTrainerService(id)
-                return
+            for id,name in pairs(names) do
+                if name == spellName then
+                    local r = rank[id]
+                    r = r and tonumber(r:match("(%d+)")) or 0
+                    if (r <= spellRank or spellRank == 0) then
+                        BuyTrainerService(id)
+                        return
+                    end
+                end
             end
         end
     end
-end
-
-local function OnTrainer()
-	local level = UnitLevel("player")
-	local n = GetNumTrainerServices()
-
-	if not n or n == 0 or GetTime() - trainerUpdate > 15 then
-		return
-	end
-
-	for id = 1,n do
-		RXP_.BuySpells(id,level)
-	end
 
 end
 

@@ -176,6 +176,38 @@ StaticPopupDialogs["m1"] = {timeout=10,hasEditBox = 1,text = ""} StaticPopup_Sho
 local s = {}
 RXP_.defaultSpellList = s
 
+s["Dwarf"] = {
+    [8] = {2551},--cooking
+    [40] = {152,6744},--ram riding
+}
+s["Gnome"] = {
+    [8] = {2551},--cooking
+    [40] = {10907},--mechanostrider piloting
+}
+s["Human"] = {
+    [8] = {2551},--cooking
+    [40] = {6743,148}--horse riding
+}
+s["NightElf"] = {
+    [8] = {2551},--cooking
+    [40] = {6745,150},--tiger riding
+}
+s["Orc"] = {
+    [8] = {2551},--cooking
+    [40] = {6746,149}--wolf riding
+}
+s["Troll"] = {
+    [8] = {2551},--cooking
+    [40] = {533,10863},--raptor riding
+}
+s["Tauren"] = {
+    [8] = {2551},--cooking
+    [40] = {713,18996},--kodo riding
+}
+s["Scourge"] = {
+    [8] = {2551},--cooking
+    [40] = {10921,554},--skeletal horse riding
+}
 s["DRUID"] = {
     [4] = {
         8921, -- moonfire
