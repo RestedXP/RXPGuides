@@ -1303,30 +1303,46 @@ function RXP_.functions.money(self,...)
 end
 
 
-function RXP_.functions.next(skip)
+function RXP_.functions.next(skip,guide)
     if skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then 
         return 
     end
-    local guide = RXP_.currentGuide
+    guide = guide or RXP_.currentGuide
     if guide.next then
         local group = guide.group
         local next = guide.next:gsub("^%s*(.+)\\%s*",function(grp)
             group = grp
             return ""
         end)
+        local nextGuide
+        local guideSkip = RXP_.GetGuideTable(group,next)
         
-        local faction = next:match("Aldor") or next:match("Scryer")
-        if not RXP_.AldorScryerCheck(faction) then
-            if faction == "Aldor" then
-                next = next:gsub("Scryer","Aldor")
-            elseif faction == "Scryer" then
-                next = next:gsub("Aldor","Scryer")
+        if RXP_.version ~= "CLASSIC" then
+            local faction = next:match("Aldor") or next:match("Scryer")
+            if not RXP_.AldorScryerCheck(faction) then
+                if faction == "Aldor" then
+                    next = next:gsub("Scryer","Aldor")
+                elseif faction == "Scryer" then
+                    next = next:gsub("Aldor","Scryer")
+                end
+            end
+        else
+            local era = "(Era)"
+            local som = "(SoM)"
+            
+            if RXPCData.SoM then
+                next = next:gsub(era,som)
+            else
+                next = next:gsub(som,era)
             end
         end
-        
-        local nextGuide = RXP_.GetGuideTable(group,next)
+
+        nextGuide = RXP_.GetGuideTable(group,next)
+       
         if nextGuide then
             return RXP_:LoadGuide(nextGuide)
+        elseif guideSkip then
+            return RXP_.functions.next(nil,guideSkip)
         end
     end
 end

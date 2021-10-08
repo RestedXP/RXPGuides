@@ -905,7 +905,7 @@ function RXP_.SetStep(n,n2)
 end
 
 function RXP_.UnitScanUpdate()
-    if unitscan_targets and RXPData.enableUnitscan then
+    if unitscan_targets and not RXPData.disableUnitscan then
         for unit,elements in pairs(RXP_.currentGuide.unitscan) do
             local enabled
             for _,element in pairs(elements) do
@@ -1336,6 +1336,17 @@ function RXP_:LoadGuide(guide,OnLoad)
 		guide.labels = {}
 	end
 	
+    --[[
+    if unitscan_targets then
+        local unitList = {}
+        for npc,steps in pairs(guide.unitscan) do
+            if not unitscan_targets[npc] then
+                unitList[npc] = steps
+            end
+        end
+        guide.unitscan = unitList
+    end]]
+    
 	guide.steps[#guide.steps].lastStep = true
 	
 	for n,step in ipairs(guide.steps) do
