@@ -151,18 +151,20 @@ local function OnTrainer()
     if RXPData.trainGenericSpells then
         local entries = {race,class}
         for _,entry in pairs(entries) do
-            for spellLvl,spells in pairs(RXP_.defaultSpellList[entry]) do
-                if spellLvl <= level then
-                    for i,spellId in pairs(spells) do
-                        if IsSpellKnown(spellId) then
-                            spells[i] = nil
-                        elseif C_Spell.IsSpellDataCached(spellId) then
-                            local sName = GetSpellInfo(spellId)
-                            local sRank = GetSpellSubtext(spellId)
-                            for id,name in pairs(names) do
-                                if sName == name and sRank == rank[id] then
-                                    BuyTrainerService(id)
-                                    return
+            if RXP_.defaultSpellList[entry] then
+                for spellLvl,spells in pairs(RXP_.defaultSpellList[entry]) do
+                    if spellLvl <= level then
+                        for i,spellId in pairs(spells) do
+                            if IsSpellKnown(spellId) then
+                                spells[i] = nil
+                            elseif C_Spell.IsSpellDataCached(spellId) then
+                                local sName = GetSpellInfo(spellId)
+                                local sRank = GetSpellSubtext(spellId)
+                                for id,name in pairs(names) do
+                                    if sName == name and sRank == rank[id] then
+                                        BuyTrainerService(id)
+                                        return
+                                    end
                                 end
                             end
                         end
@@ -229,7 +231,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
         if not guide and RXPData.autoLoadGuides then
             guide = RXP_.defaultGuide
-            if UnitLevel("player") ~= 58 or not guide.boost58 then
+            if RXP_.version ~= "CLASSIC" and (UnitLevel("player") == 58 and not guide.boost58) then
                 guide = nil
             end
         end
