@@ -26,7 +26,7 @@ local eventFrame = CreateFrame("Frame");
 local f = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, BackdropTemplate)
 
-eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
+--eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 
@@ -56,7 +56,7 @@ local function SoMCheck()
            n = n+1
            if id == 362859 then
               RXPCData.SoM = true
-              if RXP_.currentGuide then 
+              if RXP_.currentGuide and RXP_.currentGuide.name then 
                 RXP_.LoadGuide(RXP_.currentGuide)
               end
               RXP_.GenerateMenuTable()
@@ -281,8 +281,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		end
 		
 	elseif event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2)then
-		ConfirmAcceptQuest() 
-		StaticPopup_Hide("QUEST_ACCEPT")
+		ConfirmAcceptQuest()
 		
 	elseif event == "QUEST_GREETING" then
         local nActive = GetNumActiveQuests()
@@ -448,43 +447,9 @@ RXP_.width,RXP_.height = 235,125
 
 f:SetWidth(RXP_.width)
 f:SetHeight(RXP_.height) 	
---f:SetSize(150, 150)
 f:SetPoint("LEFT",0,35)
 f:SetFrameStrata("BACKGROUND")
---f:SetBackdrop(backdrop)
---f:SetBackdropColor(0,0,0)
---[[
-f.Close = CreateFrame("Button", "$parentClose", f)
-f.Close:SetWidth(24)
-f.Close:SetHeight(24)
-f.Close:SetPoint("TOPRIGHT",0,0)
-f.Close:SetNormalTexture("Interface/Buttons/UI-Panel-MinimizeButton-Up")
-f.Close:SetPushedTexture("Interface/Buttons/UI-Panel-MinimizeButton-Down")
-f.Close:SetHighlightTexture("Interface/Buttons/UI-Panel-MinimizeButton-Highlight", "ADD")
-f.Close:SetScript("OnClick", function(self)
-     f:Hide()
-end)
-f.Select = CreateFrame("Button", "$parentSelect", f, "UIPanelButtonTemplate")
-f.Select:SetWidth(70)
-f.Select:SetHeight(14)
-f.Select:SetPoint("RIGHT", f.Close, "LEFT")
-f.Select:SetText("Select All")
-]]
 
-
---[[
-f.GuideNameFrame = CreateFrame("Frame", "$parentGuideNameFrame", f, BackdropTemplate)
-f.GuideNameFrame:SetWidth(70)
-f.GuideNameFrame:SetHeight(14)
-f.GuideNameFrame:SetPoint("BOTTOMLEFT",f,"BOTTOMLEFT",0,0)
-f.GuideNameFrame.text = f.GuideNameFrame:CreateFontString(nil,"OVERLAY") 
-f.GuideNameFrame.text:SetFontObject(GameFontNormal)
-f.GuideNameFrame.text:SetPoint("TOPLEFT",5,5)
-f.GuideNameFrame.text:SetJustifyH("RIGHT")
-f.GuideNameFrame.text:SetJustifyV("TOP")
-f.GuideNameFrame.text:SetText("1234567")
-
-]]
 
 local colors = {}
 RXP_.colors = colors
@@ -492,6 +457,7 @@ colors.background = {12/255,12/255,27/255,1}
 colors.bottomFrameBG = {18/255,18/255,40/255,1}
 colors.bottomFrameHighlight = {54/255,62/255,109/255,1}
 colors.mapPins = {206/210,123/210,1,1}
+colors.tooltip = "|cFFCE7BFF" --AARRGGBB
 
 local function SetColor(ref,a,r,g,b)
     local rr,rg,rb,ra = unpack(ref)
@@ -702,7 +668,8 @@ function RXP_.SetStep(n,n2)
 		end
 	end
 	
-	f.CurrentStepFrame.activeSteps = {}
+    local activeSteps = {}
+	f.CurrentStepFrame.activeSteps = activeSteps
 	f.ClearFrameData()
 	local level = UnitLevel("player")
     local scrollHeight = 1
@@ -710,33 +677,43 @@ function RXP_.SetStep(n,n2)
 	for i = 1,n-1 do
 		local step = guide.steps[i]
 		local req
+        local nextStep
 		if step.requires then
-			req = guide.steps[guide.labels[step.requires]]
+            if not step.sticky then
+                nextStep = step
+            end
+            req = guide.steps[guide.labels[step.requires]]
 			while req and req.requires and not RXPCData.stepSkip[guide.steps[guide.labels[req.requires]].index] do
 				req = guide.steps[guide.labels[req.requires]]
 			end
 		end
 		
 		if step.sticky and not RXPCData.stepSkip[i] and	not(req and (req.active or (req.sticky and not RXPCData.stepSkip[req.index]))) and level >= step.level then
-			table.insert(f.CurrentStepFrame.activeSteps,step)
+			table.insert(activeSteps,step)
             if n > 1 then scrollHeight = n-1 end
 			--f.Steps.frame[i]:SetAlpha(0.66)
 			step.active = true
-		end
+		end        
 		--ClearMapPins(i)
 	end
+    
+    if #activeSteps == 0 and nextStep then
+        table.insert(activeSteps,nextStep)
+        if n > 1 then scrollHeight = n-1 end
+        step.active = true
+    end
 	
 	local step = guide.steps[n]
 	if step.completed and n < #guide.steps then
 		return RXP_.SetStep(n+1)
-	elseif step and not step.completed and not(step.requires and #f.CurrentStepFrame.activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) and level >= step.level then
-		table.insert(f.CurrentStepFrame.activeSteps,step)
+	elseif step and not step.completed and not(step.requires and #activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) and level >= step.level then
+		table.insert(activeSteps,step)
 		f.Steps.frame[n]:SetAlpha(1)
 		step.active = true
         scrollHeight = n
 	end
 	
-	if #f.CurrentStepFrame.activeSteps == 0 then 
+	if #activeSteps == 0 then 
 		if n >= #guide.steps then
 			return RXPG[group].next()
 		else
@@ -747,7 +724,7 @@ function RXP_.SetStep(n,n2)
 	local totalHeight = 0
 	local c = 0
 	local heightDiff = f:GetHeight() - f.CurrentStepFrame:GetHeight()
-	for i,step in pairs(f.CurrentStepFrame.activeSteps) do
+	for i,step in pairs(activeSteps) do
 		
 		local index = step.index
 		c = c+1
@@ -787,7 +764,7 @@ function RXP_.SetStep(n,n2)
 		stepframe.step = step
 		stepframe.index = index
 		stepframe.sticky = step.sticky
-		
+        
 		if step.active then
 			stepframe:Show()
 		else
@@ -1046,41 +1023,66 @@ function RXP_.UpdateText()
     f.CurrentStepFrame:SetHeight(totalHeight-5)
 end
 
+RXP_.updateActiveQuest = {}
+RXP_.updateInactiveQuest = {}
 
-tickTimer = 0
-C_Timer.NewTicker(0.1473,function() 
-	if RXP_.loadNextStep then
+local tickTimer = 0
+
+C_Timer.NewTicker(0.1473,function()
+    local activeQuestUpdate = 0
+
+    if not RXP_.loadNextStep then
+        for ref in pairs(RXP_.updateActiveQuest) do
+            RXP_.UpdateQuestCompletionData(ref)
+            RXP_.updateActiveQuest[ref] = nil
+            activeQuestUpdate = activeQuestUpdate + 1
+        end
+    end
+    
+    if RXP_.loadNextStep then
 		RXP_.loadNextStep = false
 		RXP_.SetStep(RXPCData.currentStep+1)
 	elseif RXP_.updateSteps then
 		RXP_.UpdateStepCompletion()
 	elseif RXP_.updateStepText then
-		RXP_.updateStepText = false
-		local updateText
-		for n in pairs(RXP_.stepUpdateList) do
-			if RXP_.currentGuide.steps[n].active then
-				updateText = true
-			end
-			RXP_.UpdateBottomFrame(nil,nil,n)
-			if not RXP_.updateStepText then
-				RXP_.stepUpdateList[n] = nil
-			end
-		end
-		if updateText then
-			RXP_.UpdateText()
-		end
+        RXP_.updateStepText = false
+        local updateText
+        for n in pairs(RXP_.stepUpdateList) do
+            if RXP_.currentGuide.steps[n].active then
+                updateText = true
+            end
+            RXP_.UpdateBottomFrame(nil,nil,n)
+            if not RXP_.updateStepText then
+                RXP_.stepUpdateList[n] = nil
+            end
+        end
+        if updateText then
+            RXP_.UpdateText()
+        end
 
-		return
-	elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 5 then
-		RXP_.UpdateBottomFrame()
+        return
+    elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 5 then
+        RXP_.UpdateBottomFrame()
         RXP_.UpdateText()
         SetStepFrameAnchor()
-		tickTimer = GetTime()
-		return
+        tickTimer = GetTime()
+        return
+    elseif activeQuestUpdate == 0 then
+        inactiveQuestUpdate = true 
 	end
 	
 	if RXP_.updateMap then
 		RXP_.UpdateMap()
+    elseif activeQuestUpdate == 0 then
+        for ref in pairs(RXP_.updateInactiveQuest) do
+            activeQuestUpdate = activeQuestUpdate + 1
+            if activeQuestUpdate > 4 then
+                break
+            else
+                RXP_.UpdateQuestCompletionData(ref)
+                RXP_.updateInactiveQuest[ref] = nil
+            end
+        end
 	end
     RXP_.UpdateGotoSteps()
 	
@@ -1494,13 +1496,14 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 		local text
 		for i,element in ipairs(frame.step.elements) do
 			if element.requestFromServer then
-				element.element = element
+				if not element.element then
+                    element.element = element
+                end
 				RXPG[RXP_.currentGuide.group][element.tag](element)
 				if element.requestFromServer then
 					RXP_.updateStepText = true
 					RXP_.stepUpdateList[element.step.index] = true
 				end
-				
 			end
 			local rawtext = element.tooltipText or element.text
 			if rawtext and not element.hideTooltip then
@@ -1961,7 +1964,7 @@ function RXP_.UpdateQuestButton(index)
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(index);
     if questID and RXP_.turnInList[questID] then
         button:Show()
-        button.tooltip = "|cFFCE7BFFQuest is being turned in at:|r\n"..RXP_.turnInList[questID]
+        button.tooltip = colors.tooltip.."Quest is being turned in at:|r\n"..RXP_.turnInList[questID]
     else
         button:Hide()
     end

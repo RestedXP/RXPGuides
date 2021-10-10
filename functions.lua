@@ -1,5 +1,6 @@
 local faction = UnitFactionGroup("player")
 local _,class = UnitClass("player")
+local colors = RXP_.colors
 RXP_.functions = {}
 RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
@@ -292,7 +293,13 @@ end
 
 function RXP_.UpdateStepText(self)
     RXP_.updateStepText = true
-    RXP_.stepUpdateList[self.step.index] = true
+    local index
+    if type(self) == "number" then
+        index = self
+    else
+        index = self.step.index
+    end
+    RXP_.stepUpdateList[index] = true
 end
 
 function RXP_.AldorScryerCheck(faction)
@@ -433,7 +440,7 @@ function RXP_.functions.accept(self,...)
                 if not preQuest then
                     local requiredQuests
                     requiredQuests = quest.preQuestGroup or quest.preQuestSingle or {}
-                    local tooltip = "|cFFCE7BFFMissing pre-requisites:|r\n"
+                    local tooltip = colors.tooltip.."Missing pre-requisites:|r\n"
                     for i,qid in ipairs(requiredQuests) do
                         tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
                     end
@@ -537,7 +544,7 @@ function RXP_.functions.turnin(self,...)
                     end
                 end
                 table.insert(requiredQuests,id)
-                local tooltip = "|cFFCE7BFFMissing pre-requisites:|r\n"
+                local tooltip = colors.tooltip.."Missing pre-requisites:|r\n"
                 for i,qid in ipairs(requiredQuests) do
                     if i < #requiredQuests then
                         tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
@@ -573,6 +580,166 @@ end
 local questMonster = string.gsub(QUEST_MONSTERS_KILLED,"%d+%$","")
 questMonster = questMonster:gsub("%%s","%.%*"):gsub("%%d","%%d%+")
 local questItem = string.gsub(QUEST_ITEMS_NEEDED,"%%s","%(%.%*%)"):gsub("%%d","%%d%+")
+
+
+function RXP_.UpdateQuestCompletionData(self)
+    
+    local element = self.element
+    local step = element.step
+    local icon = RXP_.icons.complete
+    local id = element.questId
+    local skip
+    local objectives = RXP_.GetQuestObjectives(id,element.step.index)
+    local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
+    
+    local objtext
+    local completed
+    
+    if objectives and #objectives > 0 then
+        if element.obj and element.obj <= #objectives then
+            local obj = objectives[element.obj]
+            local t = obj.text
+
+            if obj.type == "item" then
+                icon = RXP_.icons.collect
+            elseif obj.type == "monster" and (t:match(questMonster) or obj.questie) then
+                icon = RXP_.icons.combat
+            end
+
+            if not obj.questie then
+                if obj.type == "event" then 
+                    if isQuestComplete then
+                        t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
+                    else
+                        t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
+                    end
+                elseif isQuestComplete then
+                    t = t:gsub(": %d+/(%d+)",": %1/%1")
+                end
+            end
+            completed = obj.finished
+            objtext = t
+        else
+            completed = true
+            for i,obj in pairs(objectives) do
+                local t = obj.text
+                completed = completed and obj.finished
+                if not obj.questie then
+                    if obj.type == "event" then 
+                        if isQuestComplete then
+                            t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
+                        else
+                            t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
+                        end
+                    elseif isQuestComplete then
+                        t = t:gsub(": %d+/(%d+)",": %1/%1")
+                    end
+                end
+                if objtext then
+                    objtext = objtext.."\n"..t
+                else
+                    objtext = t
+                end
+            end
+        end
+    else
+        element.text = "Retrieving quest data..."
+        element.tooltipText = nil
+        
+        RXP_.UpdateStepText(self)
+        return
+    end
+    
+    if step.active and db and type(db.QueryQuest) == "function" and element.obj and not isQuestComplete and not RXP_.skipPreReq[id] then
+        local quest = db:GetQuest(id)
+        if quest and quest.ObjectiveData and quest.ObjectiveData[element.obj] then
+            local itemId = quest.ObjectiveData[element.obj].Id
+            local questType = quest.ObjectiveData[element.obj].Type
+            local validQuest = true
+            if questType == "item" then
+                validQuest = select(12,GetItemInfo(itemId)) == 12 and select(11,GetItemInfo(itemId)) == 0
+            end
+            if not C_QuestLog.IsOnQuest(id) and validQuest then
+                local requiredQuests = {}
+                local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
+                local questList
+                if not preQuest then
+                    questList = quest.preQuestGroup or quest.preQuestSingle
+                end
+                if questList then
+                    for _,qID in ipairs(questList) do
+                        table.insert(requiredQuests,qID)
+                    end
+                end
+                table.insert(requiredQuests,id)
+                local tooltip = colors.tooltip.."Missing pre-requisites:|r\n"
+                for i,qid in ipairs(requiredQuests) do
+                    if i < #requiredQuests then
+                        tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
+                    else
+                        tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.accept,db:GetQuest(qid).name,qid)
+                    end
+                end
+                element.tooltip = tooltip
+                element.icon = RXP_.icons.error
+                skip = RXPData.skipMissingPreReqs
+            else
+                element.icon = icon
+                element.tooltip = nil
+            end
+        end
+    else
+        element.icon = icon
+        element.tooltip = nil
+    end
+
+    local quest 
+
+    if objectives then
+        quest = RXP_.GetQuestName(id,element)
+    end
+
+    if quest then
+        element.title = quest
+    else
+        element.title = ""
+    end
+    local prefix = objtext:sub(1,1)
+    if not quest or prefix == " " or prefix == ":" then
+        element.requestFromServer = true
+    elseif quest then
+        element.requestFromServer = nil
+    end
+
+    if element.rawtext then
+        element.rawtext = element.text:gsub("%*quest%*",element.title)
+    end
+    local text = element.rawtext
+
+    completed = completed or isQuestComplete
+
+    if text then
+        text = text.."\n\n"..objtext
+        element.tooltipText = icon..text:gsub("\n","\n   ")
+    else
+        element.tooltipText = icon..objtext:gsub("\n","\n   "..icon)
+        text = objtext
+    end
+    element.text = text
+   
+
+    RXP_.UpdateStepText(self)
+
+    if completed then
+        RXP_.SetElementComplete(self,true)
+    elseif skip then
+        RXP_.SetElementComplete(self)
+    else
+        RXP_.SetElementIncomplete(self)
+    end
+
+end
+
 function RXP_.functions.complete(self,...)
     if type(self) == "string" then --on parse
         local element = {}
@@ -596,165 +763,23 @@ function RXP_.functions.complete(self,...)
         end
 
         return element
-    else
-        local element = self.element
-        local step = element.step
-        local icon = RXP_.icons.complete
-        local id = element.questId
-        local skip
-        local objectives = RXP_.GetQuestObjectives(id,element.step.index)
-        local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
-
-        local objtext
-        local completed
-        
-        if objectives and #objectives > 0 then
-            if element.obj and element.obj <= #objectives then
-                local obj = objectives[element.obj]
-                local t = obj.text
-
-                if obj.type == "item" then
-                    icon = RXP_.icons.collect
-                elseif obj.type == "monster" and (t:match(questMonster) or obj.questie) then
-                    icon = RXP_.icons.combat
-                end
-
-                if not obj.questie then
-                    if obj.type == "event" then 
-                        if isQuestComplete then
-                            t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
-                        else
-                            t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
-                        end
-                    elseif isQuestComplete then
-                        t = t:gsub(": %d+/(%d+)",": %1/%1")
-                    end
-                end
-                completed = obj.finished
-                objtext = t
-            else
-                completed = true
-                for i,obj in pairs(objectives) do
-                    local t = obj.text
-                    completed = completed and obj.finished
-                    if not obj.questie then
-                        if obj.type == "event" then 
-                            if isQuestComplete then
-                                t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
-                            else
-                                t = string.format(t..": %d/%d",obj.numFulfilled,obj.numRequired)
-                            end
-                        elseif isQuestComplete then
-                            t = t:gsub(": %d+/(%d+)",": %1/%1")
-                        end
-                    end
-                    if objtext then
-                        objtext = objtext.."\n"..t
-                    else
-                        objtext = t
-                    end
-                end
-            end
-        else
-            element.text = "Retrieving quest data..."
-            element.tooltipText = nil
-            
-            RXP_.UpdateStepText(self)
-            return
-        end
-        
-        if step.active and db and type(db.QueryQuest) == "function" and element.obj and not isQuestComplete and not RXP_.skipPreReq[id] then
-            local quest = db:GetQuest(id)
-            if quest and quest.ObjectiveData and quest.ObjectiveData[element.obj] then
-                local itemId = quest.ObjectiveData[element.obj].Id
-                local questType = quest.ObjectiveData[element.obj].Type
-                local validQuest = true
-                if questType == "item" then
-                    validQuest = select(12,GetItemInfo(itemId)) == 12 and select(11,GetItemInfo(itemId)) == 0
-                end
-                if not C_QuestLog.IsOnQuest(id) and validQuest then
-                    local requiredQuests = {}
-                    local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
-                    local questList
-                    if not preQuest then
-                        questList = quest.preQuestGroup or quest.preQuestSingle
-                    end
-                    if questList then
-                        for _,qID in ipairs(questList) do
-                            table.insert(requiredQuests,qID)
-                        end
-                    end
-                    table.insert(requiredQuests,id)
-                    local tooltip = "|cFFCE7BFFMissing pre-requisites:|r\n"
-                    for i,qid in ipairs(requiredQuests) do
-                        if i < #requiredQuests then
-                            tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
-                        else
-                            tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.accept,db:GetQuest(qid).name,qid)
-                        end
-                    end
-                    element.tooltip = tooltip
-                    element.icon = RXP_.icons.error
-                    skip = RXPData.skipMissingPreReqs
-                else
-                    element.icon = icon
-                    element.tooltip = nil
-                end
-            end
-        else
-            element.icon = icon
-            element.tooltip = nil
-        end
-        
-        
-
-        local quest 
-
-        if objectives then
-            quest = RXP_.GetQuestName(id,element)
-        end
-
-        if quest then
-            element.title = quest
-        else
-            element.title = ""
-        end
-        local prefix = objtext:sub(1,1)
-        if not quest or prefix == " " or prefix == ":" then
-            element.requestFromServer = true
-        elseif quest then
-            element.requestFromServer = nil
-        end
-
-        if element.rawtext then
-            element.rawtext = element.text:gsub("%*quest%*",element.title)
-        end
-        local text = element.rawtext
-
-        completed = completed or isQuestComplete
-
-        if text then
-            text = text.."\n\n"..objtext
-            element.tooltipText = icon..text:gsub("\n","\n   ")
-        else
-            element.tooltipText = icon..objtext:gsub("\n","\n   "..icon)
-            text = objtext
-        end
-        element.text = text
-       
-
-        RXP_.UpdateStepText(self)
-
-        if completed then
-            RXP_.SetElementComplete(self,true)
-        elseif skip then
-            RXP_.SetElementComplete(self)
-        else
-            RXP_.SetElementIncomplete(self)
-        end
     end
-
+    local event = ...
+    local step = self.element.step
+    
+    if event then
+        if step.active then
+            RXP_.updateActiveQuest[self] = true
+        else
+            RXP_.updateInactiveQuest[self] = true
+        end
+    else
+        RXP_.UpdateQuestCompletionData(self)
+    end
 end
+
+
+
 
 local lastZone
 function RXP_.functions.goto(self,...)
@@ -1355,7 +1380,7 @@ function RXP_.functions.train(self,...)
         local element = {}
         local text,id,rank = ...
         local spellId = tonumber(id)
-
+        
         if spellId then
             element.id = spellId 
         else
