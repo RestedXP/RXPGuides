@@ -678,7 +678,7 @@ function RXP_.SetStep(n,n2)
 		local step = guide.steps[i]
 		local req
         local nextStep
-		if step.requires then
+		if step.requires and guide.labels[step.requires] then
             if not step.sticky then
                 nextStep = step
             end
@@ -706,7 +706,7 @@ function RXP_.SetStep(n,n2)
 	local step = guide.steps[n]
 	if step.completed and n < #guide.steps then
 		return RXP_.SetStep(n+1)
-	elseif step and not step.completed and not(step.requires and #activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) and level >= step.level then
+	elseif step and not step.completed and not(step.requires and guide.labels[step.requires] and #activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) and level >= step.level then
 		table.insert(activeSteps,step)
 		f.Steps.frame[n]:SetAlpha(1)
 		step.active = true
@@ -1962,9 +1962,52 @@ function RXP_.UpdateQuestButton(index)
         
     end
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(index);
-    if questID and RXP_.turnInList[questID] then
+    local showButton
+    local function GetGuideList(list)
+        if RXPData.hardcore then
+            list = list:gsub("\n#.*","")
+        else
+            list = list:gsub("\n!.*","")
+        end
+        if RXPCData.SoM then
+            list = list:gsub("\n[!#]?%-.*","")
+        else
+            list = list:gsub("\n[!#]?%+.*","")
+        end
+        
+        list = list:gsub("(\n?)([#!%-%+]*)%[?(%S*)%]? (.*)",function(newline,prefix,phase,suffix)
+            if phase ~= "" and not RXP_.PhaseCheck(phase) then
+                return ""
+            end
+            return newline..suffix
+        end)
+        list = list:gsub("\n\n","\n")
+        return list
+    end
+    
+    if questID then
+        local tooltip = ""
+        local separator = ""
+        if RXP_.pickUpList[questID] then
+            local pickUpList = GetGuideList(RXP_.pickUpList[questID])
+            if pickUpList ~= "" then
+                tooltip = format("%s%s%sQuest is being picked up at:|r%s",tooltip,RXP_.icons.accept,colors.tooltip,pickUpList)
+                showButton = true
+                separator = "\n\n"
+            end
+        end
+        if RXP_.turnInList[questID] then
+            local turnInList = GetGuideList(RXP_.turnInList[questID])
+            if turnInList ~= "" then
+                tooltip = format("%s%s%s%sQuest is being turned in at:|r%s",tooltip,separator,RXP_.icons.turnin,colors.tooltip,turnInList)
+                showButton = true
+            end
+        end
+        button.tooltip = tooltip
+    end
+    
+    if showButton then
         button:Show()
-        button.tooltip = colors.tooltip.."Quest is being turned in at:|r\n"..RXP_.turnInList[questID]
     else
         button:Hide()
     end

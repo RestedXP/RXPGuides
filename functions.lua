@@ -324,8 +324,11 @@ function RXP_.AldorScryerCheck(faction)
     return true
 end
 
-function RXP_.PhaseCheck(step)
-    local phase = step.phase
+function RXP_.PhaseCheck(phase)
+    if type(phase) == "table" then
+        phase = phase.phase
+    end
+    
     if phase and RXPData.phase then
         local pmin,pmax
         pmin,pmax = phase:match("(%d+)%-(%d+)")
@@ -375,7 +378,7 @@ local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 
 
 
-
+RXP_.pickUpList = {}
 function RXP_.functions.accept(self,...)
     if type(self) == "string" then --on parse
         local element = {}
@@ -395,9 +398,29 @@ function RXP_.functions.accept(self,...)
         if element.text:match("%*quest%*") then
             element.retrieveText = true
         end
-        --print("Q1",element.text)
         element.tooltipText = RXP_.icons.accept..element.text
-        --print(element.rawtext)
+        
+        if not RXP_.pickUpList[id] then
+            RXP_.pickUpList[id] = ""
+        end
+        local step = RXP_.step
+        local stepType = ""
+        if step.hardcore then
+            stepType = "!"
+        elseif step.softcore then
+            stepType = "#"
+        end
+        if step.som then
+            stepType = stepType .. "+"
+        elseif step.era then
+            stepType = stepType .. "-"
+        end
+        if step.phase then
+            stepType = stepType .. "["..step.phase.."]"
+        end
+        
+        RXP_.pickUpList[id] = format("%s\n%s %s",RXP_.pickUpList[id],stepType,RXP_.currentGuideName)
+        
         return element
     else
         local element = self.element
@@ -499,7 +522,23 @@ function RXP_.functions.turnin(self,...)
         if not RXP_.turnInList[id] then
             RXP_.turnInList[id] = ""
         end
-        RXP_.turnInList[id] = RXP_.turnInList[id] .. "\n"..RXP_.currentGuideName
+        local step = RXP_.step
+        local stepType = ""
+        if step.hardcore then
+            stepType = "!"
+        elseif step.softcore then
+            stepType = "#"
+        end
+        if step.som then
+            stepType = stepType .. "+"
+        elseif step.era then
+            stepType = stepType .. "-"
+        end
+        if step.phase then
+            stepType = stepType .. "["..step.phase.."]"
+        end
+        
+        RXP_.turnInList[id] = format("%s\n%s %s",RXP_.turnInList[id],stepType,RXP_.currentGuideName)
         return element
     else
         local element = self.element
