@@ -3,7 +3,7 @@ local addonName = ...
 local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 RXP_.activeWaypoints = {}
-local colors = RXP_.colors
+--local colors = RXP_.colors
 
 RXP_.arrowFrame = CreateFrame("Frame","RXPG_ARROW",UIParent)
 local af = RXP_.arrowFrame
@@ -137,14 +137,18 @@ MapPinPool.creationFunc = function(framePool)
 
     -- Text
     f.text = f.inner:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-    f.text:SetTextColor(unpack(colors.mapPins))
+    f.text:SetTextColor(unpack(RXP_.colors.mapPins))
     f.text:SetFont(RXP_.font, 14,"OUTLINE") 
 
     -- Renders the Pin with Step Information
     f.render = function(pin, isMiniMapPin)
         local step = pin.elements[1].step
         local stepIndex = pin.elements[1].step.index
-
+        
+        local r = f.text:GetTextColor()
+        if r ~= RXP_.colors.mapPins[1] then
+            f.text:SetTextColor(unpack(RXP_.colors.mapPins))
+        end
         if table.getn(pin.elements) > 1 then
             f.text:SetText(stepIndex .. "+")
         else
@@ -222,7 +226,7 @@ MapPinPool.creationFunc = function(framePool)
                     text = element.tooltipText
                 end
                 text = text or RXP_.MainFrame.Steps.frame[element.step.index].text:GetText()
-                GameTooltip:AddLine("Step "..element.step.index,unpack(colors.mapPins))
+                GameTooltip:AddLine("Step "..element.step.index,unpack(RXP_.colors.mapPins))
                 GameTooltip:AddLine(text)
             end
 

@@ -1,6 +1,5 @@
 local faction = UnitFactionGroup("player")
 local _,class = UnitClass("player")
-local colors = RXP_.colors
 RXP_.functions = {}
 RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
@@ -463,7 +462,7 @@ function RXP_.functions.accept(self,...)
                 if not preQuest then
                     local requiredQuests
                     requiredQuests = quest.preQuestGroup or quest.preQuestSingle or {}
-                    local tooltip = colors.tooltip.."Missing pre-requisites:|r\n"
+                    local tooltip = RXP_.colors.tooltip.."Missing pre-requisites:|r\n"
                     for i,qid in ipairs(requiredQuests) do
                         tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
                     end
@@ -583,7 +582,7 @@ function RXP_.functions.turnin(self,...)
                     end
                 end
                 table.insert(requiredQuests,id)
-                local tooltip = colors.tooltip.."Missing pre-requisites:|r\n"
+                local tooltip = RXP_.colors.tooltip.."Missing pre-requisites:|r\n"
                 for i,qid in ipairs(requiredQuests) do
                     if i < #requiredQuests then
                         tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
@@ -711,7 +710,7 @@ function RXP_.UpdateQuestCompletionData(self)
                     end
                 end
                 table.insert(requiredQuests,id)
-                local tooltip = colors.tooltip.."Missing pre-requisites:|r\n"
+                local tooltip = RXP_.colors.tooltip.."Missing pre-requisites:|r\n"
                 for i,qid in ipairs(requiredQuests) do
                     if i < #requiredQuests then
                         tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)

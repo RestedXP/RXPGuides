@@ -58,7 +58,7 @@ local function SoMCheck()
            if id == 362859 then
               RXPCData.SoM = true
               if RXP_.currentGuide and RXP_.currentGuide.name then 
-                RXP_.LoadGuide(RXP_.currentGuide)
+                RXP_:LoadGuide(RXP_.currentGuide)
               end
               RXP_.GenerateMenuTable()
               break
@@ -69,6 +69,8 @@ end
 
 function RXPG_init()
     SoMCheck()
+    RXPData.hardcore = RXPData.hardcore or false
+    RXP_.RenderFrame()
 	RXPData = RXPData or {}
 	RXPCData = RXPCData or {}
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
@@ -335,8 +337,10 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
                 RXPCData.flightPaths[v.nodeID] = true
             end
         end
-    elseif event == "PLAYER_LEVEL_UP" then
-        RXP_.SetStep(RXPCData.currentStep)
+    elseif event == "PLAYER_LEVEL_UP" and RXP_.currentGuide then
+        local stepn = RXPCData.currentStep
+        --RXP_:LoadGuide(RXP_.currentGuide)
+        RXP_.SetStep(stepn)
     elseif event == "UNIT_AURA" then
         SoMCheck()
 	end
@@ -351,12 +355,12 @@ function RXP_.GetGuideTable(guideGroup,guideName)
 	end
 end
 
-
+--[[
 local backdrop = {
  bgFile = "Interface/BUTTONS/WHITE8X8",
  --edgeFile = "Interface/BUTTONS/WHITE8X8",
  --edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
- edgeFile = "Interface/AddOns/RXPGuides/Textures/rxp-borders",
+ edgeFile = RXP_.GetTexture("rxp-borders"),
  tile = true,
  edgeSize = 8,
  tileSize = 8,
@@ -367,6 +371,7 @@ local backdrop = {
 	  bottom = 4,
  },
  }
+ ]]
 
 f:Show()
 
@@ -466,13 +471,67 @@ f:SetPoint("LEFT",0,35)
 f:SetFrameStrata("BACKGROUND")
 
 
-local colors = {}
-RXP_.colors = colors
-colors.background = {12/255,12/255,27/255,1}
-colors.bottomFrameBG = {18/255,18/255,40/255,1}
-colors.bottomFrameHighlight = {54/255,62/255,109/255,1}
-colors.mapPins = {206/210,123/210,1,1}
-colors.tooltip = "|cFFCE7BFF" --AARRGGBB
+
+
+local defaultColors = {}
+defaultColors.background = {12/255,12/255,27/255,1}
+defaultColors.bottomFrameBG = {18/255,18/255,40/255,1}
+defaultColors.bottomFrameHighlight = {54/255,62/255,109/255,1}
+defaultColors.mapPins = {206/210,123/210,1,1}
+defaultColors.tooltip = "|cFFCE7BFF" --AARRGGBB
+
+local hardcoreColors = {}
+hardcoreColors.background = {19/255,0/255,0/255,1}
+hardcoreColors.bottomFrameBG = {31/255,0/255,0/255,1}
+hardcoreColors.bottomFrameHighlight = {81/255,0/255,0/255,1}
+hardcoreColors.mapPins = {0.9,0.1,0.1,1}
+hardcoreColors.tooltip = "|c0000C1FF" --AARRGGBB
+
+RXP_.colors = defaultColors
+
+
+RXP_.defaultTextures = "Interface/AddOns/RXPGuides/Textures/"
+RXP_.hardcoreTextures = "Interface/AddOns/RXPGuides/Textures/Hardcore/"
+RXP_.texturePath = RXP_.defaultTextures
+
+
+function RXP_.GetTexture(name)
+    return RXP_.texturePath..name
+end
+
+function RXP_.RenderFrame()
+    local path
+    local colors
+    if RXPData.hardcore then
+        path = RXP_.hardcoreTextures
+        colors = hardcoreColors
+    else
+        path = RXP_.defaultTextures
+        colors = defaultColors
+    end
+    if path == RXP_.texturePath then return end
+    RXP_.GenerateMenuTable()
+    RXP_.colors = colors
+    RXP_.texturePath = path
+    f.backdropEdge.edgeFile = RXP_.GetTexture("rxp-borders")
+    RXP_.guideNameBackdrop.edgeFile = RXP_.GetTexture("rxp-borders")
+    f.BottomFrame:ClearBackdrop()
+    f.BottomFrame:SetBackdrop(f.backdropEdge)
+    f.BottomFrame:SetBackdropColor(unpack(RXP_.colors.background))
+
+    f.GuideName:ClearBackdrop()
+    f.GuideName:SetBackdrop(RXP_.guideNameBackdrop)
+
+    f.GuideName.bg:SetTexture(RXP_.GetTexture("rxp-banner"))
+    f.GuideName.icon:SetTexture(RXP_.GetTexture("rxp_logo-64"))
+    f.GuideName.classIcon:SetTexture(RXP_.GetTexture(class))
+    f.GuideName.cog:SetNormalTexture(RXP_.GetTexture("rxp_cog-32"))
+    RXP_.UpdateScrollBar()
+    if RXP_.currentGuide then
+        RXP_:LoadGuide(RXP_.currentGuide)
+    end
+end
+
 
 local function SetColor(ref,a,r,g,b)
     local rr,rg,rb,ra = unpack(ref)
@@ -488,7 +547,7 @@ f.backdropEdge = {
  bgFile = "Interface/BUTTONS/WHITE8X8",
  --edgeFile = "Interface/BUTTONS/WHITE8X8",
  --edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
- edgeFile = "Interface/AddOns/RXPGuides/Textures/rxp-borders",
+ edgeFile = RXP_.GetTexture("rxp-borders"),
  tile = true,
  edgeSize = 8,
  tileSize = 8,
@@ -525,12 +584,24 @@ f.CurrentStepFrame:SetScript("OnMouseDown", f.OnMouseDown)
 f.CurrentStepFrame:SetScript("OnMouseUp", f.OnMouseUp)
 f.CurrentStepFrame:EnableMouse(1)
 
+local function ClearTable(tab)
+    if #tab > 1 then
+        while #tab > 0 do
+            table.remove(tab)
+        end
+    else
+        for k in pairs(tab) do
+            tab[k] = nil
+        end
+    end
+    return tab
+end
 
 
 f.CurrentStepFrame.frame = {}
+
 function f.ClearFrameData()
-	RXP_.questAccept = {}
-	RXP_.questTurnIn = {}
+
 	for i,stepframe in ipairs(f.CurrentStepFrame.frame) do
 		--frame:SetHeight(0)
 		stepframe:Hide()
@@ -570,7 +641,7 @@ function f.ClearFrameData()
 	end
 end
 RXP_.MainFrame = f
-local currentGuide
+
 f.CurrentStepFrame.activeSteps = {}
 local isUpdating
 function RXP_.UpdateStepCompletion()
@@ -685,8 +756,10 @@ function RXP_.SetStep(n,n2)
 		end
 	end
 	
-    local activeSteps = {}
-	f.CurrentStepFrame.activeSteps = activeSteps
+    local activeSteps = f.CurrentStepFrame.activeSteps
+	ClearTable(activeSteps)
+    ClearTable(RXP_.questAccept)
+	ClearTable(RXP_.questTurnIn)
 	f.ClearFrameData()
 	local level = UnitLevel("player")
     local scrollHeight = 1
@@ -749,12 +822,10 @@ function RXP_.SetStep(n,n2)
 		if not stepframe then
 			f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame"..c,f.CurrentStepFrame, BackdropTemplate)
 			stepframe = f.CurrentStepFrame.frame[c]
-			stepframe:SetBackdrop(f.backdropEdge)
-			stepframe:SetBackdropColor(unpack(colors.background))
 			--stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
 			stepframe.elements = {}
-		end	
-		stepframe:ClearAllPoints()
+		end
+        stepframe:ClearAllPoints()
 		if c == 1 then
 			stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame,0,0)
 			stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame,0,0)
@@ -764,11 +835,9 @@ function RXP_.SetStep(n,n2)
 		end
 		if not stepframe.number then
 			stepframe.number = CreateFrame("Frame","$parent_number",stepframe, BackdropTemplate)
-			stepframe.number:SetBackdrop(f.backdropEdge)
-			stepframe.number:SetBackdropColor(unpack(colors.background))
 			stepframe.number:SetPoint("TOPLEFT",stepframe,7,5)
 			stepframe.number.text = stepframe.number:CreateFontString(nil,"OVERLAY")
-			stepframe.number.text:SetFontObject(GameFontNormalSmall)
+			--stepframe.number.text:SetFontObject(GameFontNormalSmall)
 			stepframe.number.text:ClearAllPoints()
 			stepframe.number.text:SetPoint("CENTER",stepframe.number,2,1)
 			stepframe.number.text:SetJustifyH("CENTER")
@@ -776,6 +845,14 @@ function RXP_.SetStep(n,n2)
 			stepframe.number.text:SetTextColor(1,1,1)
 			stepframe.number.text:SetFont(RXP_.font, 9)
 		end
+        if stepframe.hardcore ~= RXPData.hardcore or not stepframe.hardcore then
+            stepframe:ClearBackdrop()
+            stepframe:SetBackdrop(f.backdropEdge)
+            stepframe:SetBackdropColor(unpack(RXP_.colors.background))
+            stepframe.number:ClearBackdrop()
+            stepframe.number:SetBackdrop(f.backdropEdge)
+            stepframe.number:SetBackdropColor(unpack(RXP_.colors.background))
+        end
 		stepframe.number.text:SetText("Step "..tostring(index))
 		stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
 		stepframe.step = step
@@ -812,8 +889,7 @@ function RXP_.SetStep(n,n2)
 				end)
                 
                 --
-                button:SetNormalTexture("Interface/AddOns/RXPGuides/Textures/rxp-btn-blank-32")
-                button:SetCheckedTexture("Interface/AddOns/RXPGuides/Textures/rxp-checked-32")
+                
                 button:SetPushedTexture(nil)
                 button:SetHighlightTexture("Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
                 
@@ -870,7 +946,13 @@ function RXP_.SetStep(n,n2)
                 elementFrame.button:HookScript("OnEnter",tpOnEnter)
                 elementFrame.button:HookScript("OnLeave",tpOnLeave)
 			end
-			elementFrame.step = step
+            if elementFrame.button.hardcore ~= RXPData.hardcore or not elementFrame.hardcore then
+                elementFrame.button:SetNormalTexture(RXP_.GetTexture("rxp-btn-blank-32"))
+                elementFrame.button:SetCheckedTexture(RXP_.GetTexture("rxp-checked-32"))
+                elementFrame.button:SetDisabledCheckedTexture(RXP_.GetTexture("rxp-checked-32"))
+                elementFrame.button.hardcore = RXPData.hardcore
+			end
+            elementFrame.step = step
 			elementFrame.element = element
 			elementFrame.index = index
 			element.frame = elementFrame
@@ -1114,21 +1196,18 @@ C_Timer.NewTicker(0.1473,function()
 end)
 
 ff1 = f
-f.BottomFrame:SetBackdrop(f.backdropEdge)
 --f.BottomFrame:SetBackdropColor(12/255,12/255,27/255,1)
-f.BottomFrame:SetBackdropColor(unpack(colors.background))
+
+
+f.BottomFrame:SetBackdrop(f.backdropEdge)
+f.BottomFrame:SetBackdropColor(unpack(RXP_.colors.background))
 
 f.BottomFrame:SetPoint("TOPLEFT", f, 3, -3)
 f.BottomFrame:SetPoint("BOTTOMRIGHT", f,-3, 3)
 
-
-
-
-
-
-f.GuideName:SetBackdrop({
+RXP_.guideNameBackdrop = {
 -- bgFile = "Interface/BUTTONS/WHITE8X8",
- edgeFile = "Interface/AddOns/RXPGuides/Textures/rxp-borders",
+ edgeFile = RXP_.GetTexture("rxp-borders"),
  tile = true,
  edgeSize = 8,
  tileSize = 8,
@@ -1138,9 +1217,13 @@ f.GuideName:SetBackdrop({
 	  top = 2,
 	  bottom = 4,
  },
-})
+}
 
---f.GuideName:SetBackdropColor(unpack(colors.background))
+
+
+f.GuideName:SetBackdrop(RXP_.guideNameBackdrop)
+
+--f.GuideName:SetBackdropColor(unpack(RXP_.colors.background))
 f.GuideName:SetPoint("BOTTOMLEFT",f.BottomFrame,"TOPLEFT",0,-9)
 f.GuideName:SetPoint("BOTTOMRIGHT",f.BottomFrame,"TOPRIGHT",0,-9)
 f.GuideName:SetHeight(35)
@@ -1261,19 +1344,24 @@ s.Pushed:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Down-Old")
 s.Disabled:SetTexture(prefix.."UI-MainMenu-ScrollUpButton-Disabled-Old")
 ]]
 
-prefix = "Interface/AddOns/RXPGuides/Textures/Scrollbar/"
 
-local s = f.SF.ScrollBar.ScrollDownButton
-s.Normal:SetTexture(prefix.."Down-Normal")
-s.Highlight:SetTexture(prefix.."Down-Highlight")--?
-s.Pushed:SetTexture(prefix.."Down-Pushed")
-s.Disabled:SetTexture(prefix.."Down-Disabled")
-s = f.SF.ScrollBar.ScrollUpButton
-s.Normal:SetTexture(prefix.."Up-Normal")
-s.Highlight:SetTexture(prefix.."Up-Highlight")
-s.Pushed:SetTexture(prefix.."Up-Pushed")
-s.Disabled:SetTexture(prefix.."Up-Disabled")
-f.SF.ScrollBar:SetThumbTexture(prefix.."Knob")
+function RXP_.UpdateScrollBar()
+    prefix = RXP_.GetTexture("Scrollbar/")
+
+    local s = f.SF.ScrollBar.ScrollDownButton
+    s.Normal:SetTexture(prefix.."Down-Normal")
+    s.Highlight:SetTexture(prefix.."Down-Highlight")--?
+    s.Pushed:SetTexture(prefix.."Down-Pushed")
+    s.Disabled:SetTexture(prefix.."Down-Disabled")
+    s = f.SF.ScrollBar.ScrollUpButton
+    s.Normal:SetTexture(prefix.."Up-Normal")
+    s.Highlight:SetTexture(prefix.."Up-Highlight")
+    s.Pushed:SetTexture(prefix.."Up-Pushed")
+    s.Disabled:SetTexture(prefix.."Up-Disabled")
+    f.SF.ScrollBar:SetThumbTexture(prefix.."Knob")
+end
+
+RXP_.UpdateScrollBar()
 
 --f.SF.ScrollBar:SetWidth(5)
 
@@ -1330,7 +1418,8 @@ f.bottomBackdrop = {
 local currentAlpha
 
 function RXP_:LoadGuide(guide,OnLoad)
-	if not guide then
+	RXP_.loadNextStep = false
+    if not guide then
 		if OnLoad then
 			return
 		else
@@ -1353,9 +1442,11 @@ function RXP_:LoadGuide(guide,OnLoad)
 	end
 	local totalHeight = 0
 	local nframes = 0
-	RXP_.stepUpdateList = {}
+	
+    ClearTable(RXP_.stepUpdateList)
 	RXP_.currentGuide = {}
-	for k,v in pairs(guide) do
+	
+    for k,v in pairs(guide) do
 		RXP_.currentGuide[k] = v
 	end
 	RXP_.currentGuide.steps = {}
@@ -1376,6 +1467,8 @@ function RXP_:LoadGuide(guide,OnLoad)
 	--f:SetMinResize(math.max(nameWidth+45,220),20)
 	if not guide.labels then
 		guide.labels = {}
+    else
+        ClearTable(guide.labels)
 	end
 	
     --[[
@@ -1420,17 +1513,18 @@ function RXP_:LoadGuide(guide,OnLoad)
 			frame:SetPoint("TOPRIGHT",anchor,"BOTTOMRIGHT",0,-3)
 		end
 		--frame:SetBackdrop(f.bottomBackdrop)
+        frame:ClearBackdrop()
         frame:SetBackdrop(backdrop)
-		frame:SetBackdropColor(unpack(colors.bottomFrameBG))
+		frame:SetBackdropColor(unpack(RXP_.colors.bottomFrameBG))
 		
-		frame:SetScript("OnEnter",function()
-			currentAlpha = frame:GetAlpha()
-			frame:SetAlpha(1)
-			frame:SetBackdropColor(unpack(colors.bottomFrameHighlight))
+		frame:SetScript("OnEnter",function(self)
+			currentAlpha = self:GetAlpha()
+			self:SetAlpha(1)
+			self:SetBackdropColor(unpack(RXP_.colors.bottomFrameHighlight))
 		end)
-		frame:SetScript("OnLeave",function()
-			frame:SetBackdropColor(unpack(colors.bottomFrameBG))
-			frame:SetAlpha(currentAlpha)
+		frame:SetScript("OnLeave",function(self)
+			self:SetBackdropColor(unpack(RXP_.colors.bottomFrameBG))
+			self:SetAlpha(currentAlpha)
 		end)
         frame.timer = 0
         frame.index = n
@@ -1566,6 +1660,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 					if element.requestFromServer then
 						RXPG[RXP_.currentGuide.group][element.tag](element)
 						RXP_.updateStepText = RXP_.updateStepText or not element.requestFromServer
+                        RXP_.stepUpdateList[element.step.index] = not element.requestFromServer
 					elseif element.tag and (stepDiff <= 8 and stepDiff >= 0) then
 						RXPG[RXP_.currentGuide.group][element.tag](element)
 					end
@@ -1680,12 +1775,22 @@ function RXP_.GenerateMenuTable()
     
     table.insert(RXP_.menuList,{text = "",notCheckable = 1,isTitle = 1})
 --    table.insert(RXP_.menuList,{text = "Toggle Hardcore Mode",notCheckable = 1,func = RXP_.HardcoreToggle})
+    local hctext
+    if RXPData.hardcore then
+        hctext = "Deactivate Hardcore mode"
+    else
+        hctext = "Activate Hardcore mode"
+    end
+    table.insert(RXP_.menuList,{text = hctext,notCheckable = 1,func = RXP_.HardcoreToggle})
     table.insert(RXP_.menuList,{text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG})
     table.insert(RXP_.menuList,{text = "Close",notCheckable = 1,func = function(self) self:Hide() end})
 end
 
 
-
+function RXP_.HardcoreToggle()
+    RXPData.hardcore = not RXPData.hardcore
+    RXP_.RenderFrame()
+end
 
 SLASH_RXPG1 = "/rxp"
 SLASH_RXPG2 = "/rxpg"
@@ -1912,10 +2017,24 @@ function RXP_.CreateOptionsPanel()
         index = index + 1
         button:SetScript("PostClick",function(self)
             RXPData.hardcore = self:GetChecked()
+            RXP_.RenderFrame()
         end)
         button:SetChecked(RXPData.hardcore)
         button.Text:SetText("Hardcore mode")
-        button.tooltip = "Adjust the leveling routes by removing all intentional death skips"   
+        button.tooltip = "Adjust the leveling routes to the deathless ruleset"
+        
+        button = CreateFrame("CheckButton", "$parentSoM", panel, "ChatConfigCheckButtonTemplate");
+        table.insert(options,button)
+        button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+        index = index + 1
+        button:SetScript("PostClick",function(self)
+            RXPCData.SoM = self:GetChecked()
+            RXP_:LoadGuide(RXP_.currentGuide,true)
+        end)
+        button:SetChecked(RXPCData.SoM)
+        button.Text:SetText("Season of Mastery")
+        button.tooltip = "Adjust the leveling routes to the Season of Mastery changes (+40% quest xp)"
+        
     end
 
     local SliderUpdate = function(self, value)
@@ -2029,7 +2148,7 @@ function RXP_.UpdateQuestButton(index)
         if RXP_.pickUpList[questID] then
             local pickUpList = GetGuideList(RXP_.pickUpList[questID])
             if pickUpList ~= "" then
-                tooltip = format("%s%s%sQuest is being picked up at:|r%s",tooltip,RXP_.icons.accept,colors.tooltip,pickUpList)
+                tooltip = format("%s%s%sQuest is being picked up at:|r%s",tooltip,RXP_.icons.accept,RXP_.colors.tooltip,pickUpList)
                 showButton = true
                 separator = "\n\n"
             end
@@ -2037,7 +2156,7 @@ function RXP_.UpdateQuestButton(index)
         if RXP_.turnInList[questID] then
             local turnInList = GetGuideList(RXP_.turnInList[questID])
             if turnInList ~= "" then
-                tooltip = format("%s%s%s%sQuest is being turned in at:|r%s",tooltip,separator,RXP_.icons.turnin,colors.tooltip,turnInList)
+                tooltip = format("%s%s%s%sQuest is being turned in at:|r%s",tooltip,separator,RXP_.icons.turnin,RXP_.colors.tooltip,turnInList)
                 showButton = true
             end
         end
