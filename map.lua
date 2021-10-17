@@ -40,30 +40,31 @@ end)
 
 function RXP_.UpdateArrow(self)
 
-if RXPData.disableArrow or not self then
-    return
-end
-
-
-if self.element then
-    local x,y,instance = HBD:GetPlayerWorldPosition()
-    local angle,dist = HBD:GetWorldVector(instance, x, y, self.element.wx,self.element.wy)
-    local facing = GetPlayerFacing()
-    if not (dist and facing) then return end
-    local orientation = angle-facing
-    local diff = math.abs(orientation-self.orientation)
-    dist = math.floor(dist)
-
-    if diff > self.lowerbound and diff < self.upperbound then
-        self.orientation = orientation
-        self.texture:SetRotation(orientation) 
+    if RXPData.disableArrow or not self then
+        return
     end
 
-    if dist ~= self.distance then
-        self.distance = dist
-        self.text:SetText(string.format("Step %d\n(%dyd)",self.element.step.index,dist))
+
+    if self.element then
+        local x,y,instance = HBD:GetPlayerWorldPosition()
+        local angle,dist = HBD:GetWorldVector(instance, x, y, self.element.wx,self.element.wy)
+        local facing = GetPlayerFacing()
+        if not (dist and facing) then return end
+        local orientation = angle-facing
+        local diff = math.abs(orientation-self.orientation)
+        dist = math.floor(dist)
+
+        if diff > self.lowerbound and diff < self.upperbound or self.forceUpdate then
+            self.orientation = orientation
+            self.texture:SetRotation(orientation)
+            self.forceUpdate = false
+        end
+
+        if dist ~= self.distance then
+            self.distance = dist
+            self.text:SetText(string.format("Step %d\n(%dyd)",self.element.step.index,dist))
+        end
     end
-end
 
 
 end
@@ -151,7 +152,7 @@ MapPinPool.creationFunc = function(framePool)
         end
         
         
-        if RXPData.mapCircle then
+        if RXPData.mapCircle and not isMiniMapPin then
             local size = math.max(f.text:GetWidth(), f.text:GetHeight()) + 8
 
             if step.active then
@@ -180,7 +181,7 @@ MapPinPool.creationFunc = function(framePool)
             f:SetScale(RXPData.worldMapPinScale)
             f:SetAlpha(pin.opacity)
         else
-            if step.active then
+            if step.active and not isMiniMapPin then
                 f:SetAlpha(1)
                 f:SetBackdropColor(0.0, 0.0, 0.0, RXPData.worldMapPinBackgroundOpacity)
                 f.inner:SetBackdropColor(1, 1, 1, 1)
@@ -189,7 +190,8 @@ MapPinPool.creationFunc = function(framePool)
 
                 f.text:SetFont(RXP_.font, 14,"OUTLINE")
             else
-                f:SetBackdropColor(0.1, 0.1, 0.1, RXPData.worldMapPinBackgroundOpacity)
+                local bgAlpha = isMiniMapPin and 0 or RXPData.worldMapPinBackgroundOpacity
+                f:SetBackdropColor(0.1, 0.1, 0.1, bgAlpha)
 
                 f.inner:SetBackdropColor(0, 0, 0, 0)
 
@@ -249,27 +251,34 @@ local worldMapFramePool = MapPinPool.create()
 local miniMapFramePool = MapPinPool.create()
 
 -- Calculates if a given element is close to any other provided pins
-local function elementIsCloseToOtherPins(element, pins)
-    local overlap = RXPData.distanceBetweenPins
-    local pinDistanceMod = 5e-5*RXPData.distanceBetweenPins^2
-    local pinMaxDistance = 60*RXPData.distanceBetweenPins
+local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
+    local overlap = RXPData.distanceBetweenPins or 1
+    local pinDistanceMod,pinMaxDistance = 0,0
+    if isMiniMapPin then
+        pinMaxDistance = 25
+    else
+        pinDistanceMod = 5e-5*overlap^2
+        pinMaxDistance = 60*overlap
+    end
     for i, pin in ipairs(pins) do
         for j, pinElement in ipairs(pin.elements) do
             if not (pinElement.optional or element.optional) then
-                local dist, dx, dy, relativeDist
-                local zx, zy = HBD:GetZoneSize(pin.zone)
-
-                if pinElement.instance == pinElement.instance then
+                local relativeDist,dist,dx,dy
+                if element.instance == pinElement.instance then
                     dist,dx,dy = HBD:GetWorldDistance(pinElement.instance, pinElement.wx, pinElement.wy, element.wx, element.wy)
                 end
-
-                if dx ~= nil and zx ~= nil then
-                    relativeDist = (dx/zx)^2 + (dy/zy)^2
-                end
-
-                if (relativeDist and relativeDist < pinDistanceMod)  or (dist and dist < pinMaxDistance) then
+                if not isMiniMapPin then
+                    local zx, zy = HBD:GetZoneSize(pin.zone)
+                    if dx ~= nil and zx ~= nil then
+                        relativeDist = (dx/zx)^2 + (dy/zy)^2
+                    end
+                    if (relativeDist and relativeDist < pinDistanceMod) or (dist and dist < pinMaxDistance) then
+                        return true, pin
+                    end
+                elseif dist and dist < pinMaxDistance then
                     return true, pin
                 end
+                
             end
         end
     end
@@ -332,14 +341,16 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                 element.label = tostring(step.index)
             end
 
-            if element.zone and not isMiniMap and (not(element.parent and (element.parent.completed or element.parent.skip)) and not element.skip) then
-                local closeToOtherPin, otherPin = elementIsCloseToOtherPins(element, pins)
+            if element.zone and (not(element.parent and (element.parent.completed or element.parent.skip)) and not element.skip) then
+                local closeToOtherPin, otherPin = elementIsCloseToOtherPins(element, pins, isMiniMap)
 
                 if closeToOtherPin and not element.optional then
                     table.insert(otherPin.elements, element)
                 else
                     local pinalpha = 0
-                    if element.step and element.step.active then
+                    if isMiniMapPin then
+                        pinalpha = 0.5
+                    elseif element.step and element.step.active then
                         pinalpha = 1
                     else
                         pinalpha = math.max(0.4, 1 - (table.getn(pins) * 0.05))
@@ -354,7 +365,9 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         hidePin = element.optional,
                     })
                 end
-                table.insert(RXP_.activeWaypoints, element)
+                if not isMiniMap then
+                    table.insert(RXP_.activeWaypoints, element)
+                end
                 if not element.optional then
                     numActivePins = numActivePins + 1
                 end
@@ -368,13 +381,14 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         ProcessMapPin(step)
     end
     
-    local i = 0;   
-    while numActivePins < numPins and (startingIndex + i < numSteps) do
-        i = i + 1
-        local step = steps[startingIndex + i]
-        ProcessMapPin(step)
+    if not isMiniMap then
+        local i = 0;   
+        while numActivePins < numPins and (startingIndex + i < numSteps) do
+            i = i + 1
+            local step = steps[startingIndex + i]
+            ProcessMapPin(step)
+        end
     end
-    
     return pins
 end
 
@@ -401,11 +415,11 @@ end
 
 -- Generate pins using only the active steps, then add the pins to the Mini Map
 local function addMiniMapPins(pins)
+    if RXPData.hideMiniMapPins then return end
     -- Calculate which pins should be on the mini map
-    local pins = generatePins(
-        RXP_.MainFrame.CurrentStepFrame.activeSteps, 
-        table.getn(RXP_.MainFrame.CurrentStepFrame.activeSteps), 
-        1,
+    local pins = generatePins(RXP_.currentGuide.steps, 
+        RXPData.numMapPins, 
+        RXPCData.currentStep, 
         true
     )
 
@@ -428,6 +442,7 @@ local function updateArrow()
             af.dist = 0
             af.orientation = 0
             af.element = element
+            af.forceUpdate = true
             return
         end
     end

@@ -2155,10 +2155,11 @@ function RXP_.functions.bankwithdraw(self,text,...)
         element.icon = RXP_.icons.vendor
         return element
     end
-
+    
+    local event = ...
     local element = self.element
 
-    if RXP_.IsItemInBags(element.items) then
+    if RXP_.IsItemNotInBank(element.items) then
         RXP_.SetElementComplete(self)
         return
     end

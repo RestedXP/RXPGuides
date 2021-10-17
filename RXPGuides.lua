@@ -23,31 +23,32 @@ RXP_.questTurnIn = {}
 
 RXP_.font = GameFontNormal:GetFont()
 local eventFrame = CreateFrame("Frame");
+local questFrame = CreateFrame("Frame");
 local f = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 f.BottomFrame = CreateFrame("Frame","$parent_bottomFrame",f, BackdropTemplate)
 
 --eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
-
-eventFrame:RegisterEvent("QUEST_COMPLETE")
-eventFrame:RegisterEvent("QUEST_PROGRESS")
-eventFrame:RegisterEvent("QUEST_ACCEPT_CONFIRM")
-eventFrame:RegisterEvent("QUEST_GREETING")
-eventFrame:RegisterEvent("GOSSIP_SHOW")
-eventFrame:RegisterEvent("QUEST_DETAIL")
-eventFrame:RegisterEvent("TRAINER_SHOW")
-eventFrame:RegisterEvent("TRAINER_CLOSED")
-eventFrame:RegisterEvent("QUEST_TURNED_IN")
 eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
 eventFrame:RegisterEvent("TAXIMAP_OPENED")
 eventFrame:RegisterUnitEvent("UNIT_AURA","player")
+eventFrame:RegisterEvent("TRAINER_SHOW")
+eventFrame:RegisterEvent("TRAINER_CLOSED")
+
+questFrame:RegisterEvent("QUEST_COMPLETE")
+questFrame:RegisterEvent("QUEST_PROGRESS")
+questFrame:RegisterEvent("QUEST_ACCEPT_CONFIRM")
+questFrame:RegisterEvent("QUEST_GREETING")
+questFrame:RegisterEvent("GOSSIP_SHOW")
+questFrame:RegisterEvent("QUEST_DETAIL")
+questFrame:RegisterEvent("QUEST_TURNED_IN")
 
 RXPG_Debug = false
 
 local SoMCount = 0
 local function SoMCheck()
-    if RXPCData.SoM == nil and SoMCount < 34 and version < 20000 then
+    if RXPCData and RXPCData.SoM == nil and SoMCount < 34 and version < 20000 then
         SoMCount = SoMCount+1
         local id = 0
         local n = 1
@@ -203,6 +204,91 @@ local function trainerFrameUpdate(self,t)
 	end
 end
 
+local lastQuestEvent
+function RXP_.QuestAutomation(event,arg1,arg2)
+    if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
+        return 
+    end
+    
+    event = event or lastQuestEvent
+	
+	if event == "QUEST_COMPLETE" then
+		local id = GetQuestID()
+		local reward = RXP_.QuestAutoTurnIn(id)
+		local choices = GetNumQuestChoices()
+		if reward then
+			if choices <= 1 then
+				GetQuestReward(choices)
+			elseif reward > 0 then
+				GetQuestReward(reward)
+			end
+		end
+		
+	elseif event == "QUEST_PROGRESS" and IsQuestCompletable() then
+		CompleteQuest()
+		--questProgressTimer = GetTime()
+		
+	elseif event == "QUEST_DETAIL" then
+		local id = GetQuestID()
+		if RXP_.QuestAutoAccept(id) then
+			AcceptQuest()
+			HideUIPanel(QuestFrame)
+		end
+		
+	elseif event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
+		ConfirmAcceptQuest()
+		
+	elseif event == "QUEST_GREETING" then
+        local nActive = GetNumActiveQuests()
+		local nAvailable = GetNumAvailableQuests()
+        
+		for i = 1, nActive do
+			local title, isComplete = GetActiveTitle(i)
+			if RXP_.QuestAutoTurnIn(title) and isComplete then
+				return SelectActiveQuest(i)
+			end
+		end
+		
+        if GetNumGossipOptions() == 0 and nAvailable == 1 and nActive == 0 then
+            SelectGossipAvailableQuest(1)
+        else
+            for i = 1, nAvailable do
+                local title, isComplete = GetAvailableTitle(i)
+                if RXP_.QuestAutoAccept(title) then
+                    return SelectAvailableQuest(i)
+                end
+            end
+		end
+	elseif event == "GOSSIP_SHOW" then
+		local nActive = GetNumGossipActiveQuests()
+		local nAvailable = GetNumGossipAvailableQuests()
+
+		for i = 1, nActive do
+			local title, level, isTrivial, isComplete = select(i * 6 - 5, GetGossipActiveQuests())
+			if RXP_.QuestAutoTurnIn(title) and isComplete then
+				return SelectGossipActiveQuest(i)
+			end
+		end
+		
+        if GetNumGossipOptions() == 0 and nAvailable == 1 and nActive == 0 then
+            SelectGossipAvailableQuest(1)
+        else
+            for i = 1, nAvailable do
+                local title = select(i * 7 - 6, GetGossipAvailableQuests())
+                if RXP_.QuestAutoAccept(title) then
+                    return SelectGossipAvailableQuest(i)
+                end
+            end
+		end
+	end
+end
+
+
+questFrame:SetScript("OnEvent",function(self,...)
+    RXP_.QuestAutomation(...)
+    lastQuestEvent = event
+end)
+
 eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
 	
@@ -255,77 +341,6 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         SoMCheck()
 	end
 	
-	if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then return end
-	
-	if event == "QUEST_COMPLETE" then
-		local id = GetQuestID()
-		local reward = RXP_.QuestAutoTurnIn(id)
-		local choices = GetNumQuestChoices()
-		if reward then
-			if choices <= 1 then
-				GetQuestReward(choices)
-			elseif reward > 0 then
-				GetQuestReward(reward)
-			end
-		end
-		
-	elseif event == "QUEST_PROGRESS" and IsQuestCompletable() then
-		CompleteQuest()
-		--questProgressTimer = GetTime()
-		
-	elseif event == "QUEST_DETAIL" then
-		local id = GetQuestID()
-		if RXP_.QuestAutoAccept(id) then
-			AcceptQuest()
-			HideUIPanel(QuestFrame)
-		end
-		
-	elseif event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2)then
-		ConfirmAcceptQuest()
-		
-	elseif event == "QUEST_GREETING" then
-        local nActive = GetNumActiveQuests()
-		local nAvailable = GetNumAvailableQuests()
-        
-		for i = 1, nActive do
-			local title, isComplete = GetActiveTitle(i)
-			if RXP_.QuestAutoTurnIn(title) and isComplete then
-				return SelectActiveQuest(i)
-			end
-		end
-		
-        if GetNumGossipOptions() == 0 and nAvailable == 1 and nActive == 0 then
-            SelectGossipAvailableQuest(1)
-        else
-            for i = 1, nAvailable do
-                local title, isComplete = GetAvailableTitle(i)
-                if RXP_.QuestAutoAccept(title) then
-                    return SelectAvailableQuest(i)
-                end
-            end
-		end
-	elseif event == "GOSSIP_SHOW" then
-		local nActive = GetNumGossipActiveQuests()
-		local nAvailable = GetNumGossipAvailableQuests()
-
-		for i = 1, nActive do
-			local title, level, isTrivial, isComplete = select(i * 6 - 5, GetGossipActiveQuests())
-			if RXP_.QuestAutoTurnIn(title) and isComplete then
-				return SelectGossipActiveQuest(i)
-			end
-		end
-		
-        if GetNumGossipOptions() == 0 and nAvailable == 1 and nActive == 0 then
-            SelectGossipAvailableQuest(1)
-        else
-            for i = 1, nAvailable do
-                local title = select(i * 7 - 6, GetGossipAvailableQuests())
-                if RXP_.QuestAutoAccept(title) then
-                    return SelectGossipAvailableQuest(i)
-                end
-            end
-		end
-	end
 
 end)
 
@@ -522,6 +537,7 @@ function f.ClearFrameData()
 		stepframe:SetScript("OnUpdate",nil)
 		stepframe:SetScript("OnEvent",nil)
 		stepframe:UnregisterAllEvents()
+        stepframe.callback = nil
 		if stepframe.step then
 			stepframe.step.frame = nil
 			stepframe.step.active = nil
@@ -537,10 +553,11 @@ function f.ClearFrameData()
 				end
 				frame.element.frame = nil
 				frame.element.skip = nil
-				frame.step = nil
-				frame.element = nil
-				frame.index = nil
 			end
+            frame.step = nil
+            frame.index = nil
+            frame.element = nil
+            frame.callback = nil
 			frame:Hide()
 			frame:UnregisterAllEvents()
 			frame:SetScript("OnUpdate",nil)
@@ -852,8 +869,6 @@ function RXP_.SetStep(n,n2)
                 
                 elementFrame.button:HookScript("OnEnter",tpOnEnter)
                 elementFrame.button:HookScript("OnLeave",tpOnLeave)
---				elementFrame.icon:SetJustifyH("LEFT")
---				elementFrame.icon:SetJustifyV("CENTER")
 			end
 			elementFrame.step = step
 			elementFrame.element = element
@@ -862,21 +877,22 @@ function RXP_.SetStep(n,n2)
 			elementFrame.button:Enable()
 			if element.tag then
 				local events = element.event or RXPG[group].events[element.tag]
-				RXPG[group][element.tag](elementFrame)
+                elementFrame.callback = RXPG[group][element.tag]
+				elementFrame.callback(elementFrame)
 				if type(events) == "string" then
 					if event == "OnUpdate" then
-						elementFrame:SetScript("OnUpdate",RXPG[group][element.tag])
+						elementFrame:SetScript("OnUpdate",elementFrame.callback)
 					elseif type(events) == "table" then
 						elementFrame:RegisterEvent(event)
-						elementFrame:SetScript("OnEvent",RXPG[group][element.tag])
+						elementFrame:SetScript("OnEvent",RXP_.EventHandler)
 					end
 				elseif type(events) == "table" then
 					for _,event in ipairs(events) do
 						if event == "OnUpdate" then
-							elementFrame:SetScript("OnUpdate",RXPG[group][element.tag])
+							elementFrame:SetScript("OnUpdate",elementFrame.callback)
 						else
 							elementFrame:RegisterEvent(event)
-							elementFrame:SetScript("OnEvent",RXPG[group][element.tag])
+							elementFrame:SetScript("OnEvent",RXP_.EventHandler)
 						end
 					end
 				end
@@ -894,6 +910,16 @@ function RXP_.SetStep(n,n2)
 	RXP_.updateSteps = true
 	RXP_.updateMap = true
 	StepScroll(scrollHeight)
+end
+
+function RXP_.EventHandler(self,event,...)
+    if self.callback and self.step and self.step.active then
+        self.callback(self,event,...)
+    else
+        print('!!!')
+        self.callback = nil
+        self:UnregisterEvent(event)
+    end
 end
 
 function RXP_.UnitScanUpdate()
@@ -918,8 +944,6 @@ function RXP_.UnitScanUpdate()
                 end
                 unitscan_targets[unit] = nil
             end
-            
-            
             
         end
     end
@@ -1042,6 +1066,7 @@ C_Timer.NewTicker(0.1473,function()
     if RXP_.loadNextStep then
 		RXP_.loadNextStep = false
 		RXP_.SetStep(RXPCData.currentStep+1)
+        RXP_.QuestAutomation()
 	elseif RXP_.updateSteps then
 		RXP_.UpdateStepCompletion()
 	elseif RXP_.updateStepText then
@@ -1749,6 +1774,19 @@ function RXP_.CreateOptionsPanel()
     button:SetChecked(not RXPData.disableArrow)
     button.Text:SetText("Enable waypoint arrow")
     button.tooltip = "Show/Hide the waypoint arrow" 
+    
+    button = CreateFrame("CheckButton", "$parentMiniMapPin", panel, "ChatConfigCheckButtonTemplate");
+    table.insert(options,button)
+    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    index = index + 1
+    button:SetScript("PostClick",function(self)
+        RXPData.hideMiniMapPins = self:GetChecked()
+        RXP_.UpdateMap()
+    end)
+    button:SetChecked(RXPData.hideMiniMapPins)
+    button.Text:SetText("Hide Mini Map Pins")
+    --button.tooltip = "" 
+
 
     button = CreateFrame("CheckButton", "$parentUnusedGuides", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
@@ -1964,12 +2002,12 @@ function RXP_.UpdateQuestButton(index)
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(index);
     local showButton
     local function GetGuideList(list)
-        if RXPData.hardcore then
+        if RXPData and RXPData.hardcore then
             list = list:gsub("\n#.*","")
         else
             list = list:gsub("\n!.*","")
         end
-        if RXPCData.SoM then
+        if RXPCData and RXPCData.SoM then
             list = list:gsub("\n[!#]?%-.*","")
         else
             list = list:gsub("\n[!#]?%+.*","")
