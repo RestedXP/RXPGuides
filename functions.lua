@@ -5,8 +5,8 @@ RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
 RXP_.stepUpdateList = {}
 
-RXP_.functions.events.collect = {"BAG_UPDATE","QUEST_ACCEPTED","QUEST_TURNED_IN"}
-RXP_.functions.events.buy = {"BAG_UPDATE","MERCHANT_SHOW"}
+RXP_.functions.events.collect = {"BAG_UPDATE_DELAYED","QUEST_ACCEPTED","QUEST_TURNED_IN"}
+RXP_.functions.events.buy = {"BAG_UPDATE_DELAYED","MERCHANT_SHOW"}
 RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN","QUEST_REMOVED"}
 RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
 RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
@@ -22,10 +22,10 @@ RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
 RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
 RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
 RXP_.functions.events.money = {"PLAYER_MONEY"}
-RXP_.functions.events.train = {"TRAINER_SHOW","CHAT_MSG_SYSTEM","SKILL_LINES_CHANGED"}
+RXP_.functions.events.train = {"TRAINER_SHOW","CHAT_MSG_SYSTEM","SKILL_LINES_CHANGED","TRAINER_UPDATE"}
 RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.zone = {"ZONE_CHANGED_NEW_AREA"}
-RXP_.functions.events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE"}
+RXP_.functions.events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE_DELAYED"}
 RXP_.functions.events.skipgossip = {"GOSSIP_SHOW"}
 
 RXP_.functions.events.bankwithdraw = RXP_.functions.events.bankdeposit
@@ -171,7 +171,7 @@ function RXP_.GetQuestObjectives(id,step)
                         err = true
                         break
                     end
-                    local required,fulfullied = description:match("(%d+)/(%d+)")
+                    local required,fulfilled = description:match("(%d+)/(%d+)")
                     if required then
                         required = tonumber(required)
                         fulfilled = tonumber(fulfilled)
@@ -1040,7 +1040,8 @@ function RXP_.functions.collect(self,...)
     local element = self.element
     local questId = element.questId
     local name = RXP_.GetItemName(element.id)
-
+    
+    
     if name then
         element.requestFromServer = nil
     else
@@ -1060,7 +1061,7 @@ function RXP_.functions.collect(self,...)
     if (element.qty > 0 and count > element.qty) or (questId and ((not element.isQuestTurnIn and C_QuestLog.IsOnQuest(questId)) or IsQuestTurnedIn(questId))) then
         count = element.qty
     end
-
+    
     if element.rawtext then
         element.tooltipText = RXP_.icons.collect..element.rawtext
         element.text = string.format("%s\n%s: %d/%d",element.rawtext,element.itemName,count,element.qty)
@@ -1068,8 +1069,11 @@ function RXP_.functions.collect(self,...)
         element.text = string.format("%s: %d/%d",element.itemName,count,element.qty)
         element.tooltipText = RXP_.icons.collect..element.text
     end
-    RXP_.UpdateStepText(self)
-
+    
+    if element.lastCount ~= count then
+        RXP_.UpdateStepText(self)
+    end
+    element.lastCount = count
     if element.qty > 0 and count >= element.qty then
         RXP_.SetElementComplete(self,true)
     elseif element.qty == 0 and count == 0 then
@@ -1458,7 +1462,7 @@ function RXP_.functions.train(self,...)
         element.title = GetSpellInfo(element.id)
     end
 
-    if IsSpellKnown(element.id) or IsSpellKnown(element.id,true) then
+    if IsPlayerSpell(element.id) or IsSpellKnown(element.id,true) or IsUsableSpell(element.id) then
         RXP_.SetElementComplete(self,true)
     end
 

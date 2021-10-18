@@ -995,6 +995,7 @@ function RXP_.SetStep(n,n2)
 end
 
 function RXP_.EventHandler(self,event,...)
+    --print(event,self.index,self.element.tag)
     if self.callback and self.step and self.step.active then
         self.callback(self,event,...)
     else
@@ -1134,66 +1135,112 @@ RXP_.updateInactiveQuest = {}
 
 local tickTimer = 0
 
-C_Timer.NewTicker(0.1473,function()
-    local activeQuestUpdate = 0
 
-    if not RXP_.loadNextStep then
-        for ref in pairs(RXP_.updateActiveQuest) do
-            RXP_.UpdateQuestCompletionData(ref)
-            RXP_.updateActiveQuest[ref] = nil
-            activeQuestUpdate = activeQuestUpdate + 1
+updateFrame = CreateFrame("Frame")
+
+
+local eventType
+local updateTick = 0
+local updateStart = 0
+
+updateFrame:SetScript("OnUpdate",function(self,diff)
+    updateTick = updateTick + diff
+    if updateTick > 0.15 then
+        updateTick = 0
+        updateStart = GetTime()
+        local activeQuestUpdate = 0
+        local skip
+        local event = ""
+        
+        if not RXP_.loadNextStep then
+            for ref in pairs(RXP_.updateActiveQuest) do
+                RXP_.UpdateQuestCompletionData(ref)
+                RXP_.updateActiveQuest[ref] = nil
+                activeQuestUpdate = activeQuestUpdate + 1
+            end
+            if activeQuestUpdate > 0 then
+                event = event .. "/activeQ"
+            end
+        end
+        
+        if RXP_.loadNextStep then
+            RXP_.loadNextStep = false
+            RXP_.SetStep(RXPCData.currentStep+1)
+            RXP_.QuestAutomation()
+            skip = true
+            event = event .. "/loadNext"
+        elseif activeQuestUpdate == 0 then
+            if RXP_.updateSteps then
+                RXP_.UpdateStepCompletion()
+                event = event .. "/stepComplete"
+            elseif RXP_.updateStepText then
+                RXP_.updateStepText = false
+                local updateText
+                for n in pairs(RXP_.stepUpdateList) do
+                    if RXP_.currentGuide.steps[n].active then
+                        updateText = true
+                    end
+                    RXP_.UpdateBottomFrame(nil,nil,n)
+                    if not RXP_.updateStepText then
+                        RXP_.stepUpdateList[n] = nil
+                    end
+                end
+                if updateText then
+                    RXP_.UpdateText()
+                end
+                event = event .. "/updateText"
+                skip = true
+            elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 5 then
+                RXP_.UpdateBottomFrame()
+                RXP_.UpdateText()
+                SetStepFrameAnchor()
+                tickTimer = GetTime()
+                event = event .. "/bottomFrame"
+                skip = true
+            else
+                inactiveQuestUpdate = true
+            end
+        end
+        
+        if not skip then
+            if RXP_.updateMap then
+                RXP_.UpdateMap()
+                event = event .. "/map"
+            elseif activeQuestUpdate == 0 then
+                for ref in pairs(RXP_.updateInactiveQuest) do
+                    activeQuestUpdate = activeQuestUpdate + 1
+                    if activeQuestUpdate > 4 then
+                        break
+                    else
+                        RXP_.UpdateQuestCompletionData(ref)
+                        RXP_.updateInactiveQuest[ref] = nil
+                    end
+                end
+                if activeQuestUpdate > 0 then
+                    event = event .. "/inactiveQ"
+                end
+            end
+            RXP_.UpdateGotoSteps()
+        end
+        
+        if event ~= "" then
+            eventType = event
         end
     end
-    
-    if RXP_.loadNextStep then
-		RXP_.loadNextStep = false
-		RXP_.SetStep(RXPCData.currentStep+1)
-        RXP_.QuestAutomation()
-	elseif RXP_.updateSteps then
-		RXP_.UpdateStepCompletion()
-	elseif RXP_.updateStepText then
-        RXP_.updateStepText = false
-        local updateText
-        for n in pairs(RXP_.stepUpdateList) do
-            if RXP_.currentGuide.steps[n].active then
-                updateText = true
-            end
-            RXP_.UpdateBottomFrame(nil,nil,n)
-            if not RXP_.updateStepText then
-                RXP_.stepUpdateList[n] = nil
-            end
-        end
-        if updateText then
-            RXP_.UpdateText()
-        end
-
-        return
-    elseif RXP_.updateBottomFrame or GetTime() - tickTimer > 5 then
-        RXP_.UpdateBottomFrame()
-        RXP_.UpdateText()
-        SetStepFrameAnchor()
-        tickTimer = GetTime()
-        return
-    elseif activeQuestUpdate == 0 then
-        inactiveQuestUpdate = true 
-	end
-	
-	if RXP_.updateMap then
-		RXP_.UpdateMap()
-    elseif activeQuestUpdate == 0 then
-        for ref in pairs(RXP_.updateInactiveQuest) do
-            activeQuestUpdate = activeQuestUpdate + 1
-            if activeQuestUpdate > 4 then
-                break
-            else
-                RXP_.UpdateQuestCompletionData(ref)
-                RXP_.updateInactiveQuest[ref] = nil
-            end
-        end
-	end
-    RXP_.UpdateGotoSteps()
-	
 end)
+
+--[[
+df = CreateFrame("Frame")
+
+df:SetScript("OnUpdate",function()
+    local ct = GetTime()
+    if eventType and ct ~= updateStart then
+        local totalTime = ct - updateStart
+        print(format("%.6f",totalTime),eventType)
+        eventType = nil
+    end
+end)]]
+
 
 ff1 = f
 --f.BottomFrame:SetBackdropColor(12/255,12/255,27/255,1)
