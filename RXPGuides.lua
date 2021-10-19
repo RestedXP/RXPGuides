@@ -526,6 +526,8 @@ function RXP_.RenderFrame()
     f.GuideName.icon:SetTexture(RXP_.GetTexture("rxp_logo-64"))
     f.GuideName.classIcon:SetTexture(RXP_.GetTexture(class))
     f.GuideName.cog:SetNormalTexture(RXP_.GetTexture("rxp_cog-32"))
+    
+    RXP_.arrowFrame.texture:SetTexture(RXP_.GetTexture("rxp_navigation_arrow-1"))
     RXP_.UpdateScrollBar()
     if RXP_.currentGuide then
         RXP_:LoadGuide(RXP_.currentGuide)
@@ -766,37 +768,30 @@ function RXP_.SetStep(n,n2)
     
 	for i = 1,n-1 do
 		local step = guide.steps[i]
-		local req
-        local nextStep
-		if step.requires and guide.labels[step.requires] then
-            if not step.sticky then
-                nextStep = step
+		if step.sticky then
+            local req = guide.labels[step.requires]
+            if step.requires and req then
+                req = guide.steps[req]
+                while req and req.requires and not RXPCData.stepSkip[req.index] do
+                    req = guide.steps[guide.labels[req.requires]]
+                end
             end
-            req = guide.steps[guide.labels[step.requires]]
-			while req and req.requires and not RXPCData.stepSkip[guide.steps[guide.labels[req.requires]].index] do
-				req = guide.steps[guide.labels[req.requires]]
-			end
+            step.reqFulfilled = not(req and (req.active or (req.sticky and not RXPCData.stepSkip[req.index])))
+            if not RXPCData.stepSkip[i] and	step.reqFulfilled and level >= step.level then
+                table.insert(activeSteps,step)
+                if n > 1 then scrollHeight = n-1 end
+                --f.Steps.frame[i]:SetAlpha(0.66)
+                step.active = true
+            end        
 		end
-		
-		if step.sticky and not RXPCData.stepSkip[i] and	not(req and (req.active or (req.sticky and not RXPCData.stepSkip[req.index]))) and level >= step.level then
-			table.insert(activeSteps,step)
-            if n > 1 then scrollHeight = n-1 end
-			--f.Steps.frame[i]:SetAlpha(0.66)
-			step.active = true
-		end        
-		--ClearMapPins(i)
 	end
     
-    if #activeSteps == 0 and nextStep then
-        table.insert(activeSteps,nextStep)
-        if n > 1 then scrollHeight = n-1 end
-        step.active = true
-    end
 	
 	local step = guide.steps[n]
+    local req = step.requires and guide.labels[step.requires] and guide.steps[guide.labels[step.requires]]
 	if step.completed and n < #guide.steps then
 		return RXP_.SetStep(n+1)
-	elseif step and not step.completed and not(step.requires and guide.labels[step.requires] and #activeSteps > 0 and guide.steps[guide.labels[step.requires]].active) and level >= step.level then
+	elseif step and not step.completed and not(req and #activeSteps > 0 and (req.active or not(req.reqFulfilled))) and level >= step.level then
 		table.insert(activeSteps,step)
 		f.Steps.frame[n]:SetAlpha(1)
 		step.active = true
@@ -1058,7 +1053,7 @@ function RXP_.UpdateText()
             stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame.frame[c-1],"BOTTOMRIGHT",0,-5)
         end
 
-        stepframe.number.text:SetText("Step "..tostring(index))
+        stepframe.number.text:SetText("Step "..index)
         stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
         
         local e = 0
