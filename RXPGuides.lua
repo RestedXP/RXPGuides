@@ -1148,8 +1148,8 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
         local event = ""
         
         if not RXP_.loadNextStep then
-            for ref in pairs(RXP_.updateActiveQuest) do
-                RXP_.UpdateQuestCompletionData(ref)
+            for ref,func in pairs(RXP_.updateActiveQuest) do
+                func(ref)
                 RXP_.updateActiveQuest[ref] = nil
                 activeQuestUpdate = activeQuestUpdate + 1
             end
@@ -1172,12 +1172,14 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
                 RXP_.updateStepText = false
                 local updateText
                 for n in pairs(RXP_.stepUpdateList) do
-                    if RXP_.currentGuide.steps[n].active then
-                        updateText = true
-                    end
-                    RXP_.UpdateBottomFrame(nil,nil,n)
-                    if not RXP_.updateStepText then
-                        RXP_.stepUpdateList[n] = nil
+                    if RXP_.currentGuide.steps[n] then
+                        if RXP_.currentGuide.steps[n].active then
+                            updateText = true
+                        end
+                        RXP_.UpdateBottomFrame(nil,nil,n)
+                        if not RXP_.updateStepText then
+                            RXP_.stepUpdateList[n] = nil
+                        end
                     end
                 end
                 if updateText then
@@ -1202,12 +1204,12 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
                 RXP_.UpdateMap()
                 event = event .. "/map"
             elseif activeQuestUpdate == 0 then
-                for ref in pairs(RXP_.updateInactiveQuest) do
+                for ref,func in pairs(RXP_.updateInactiveQuest) do
                     activeQuestUpdate = activeQuestUpdate + 1
                     if activeQuestUpdate > 4 then
                         break
                     else
-                        RXP_.UpdateQuestCompletionData(ref)
+                        func(ref)
                         RXP_.updateInactiveQuest[ref] = nil
                     end
                 end
@@ -1507,11 +1509,8 @@ function RXP_:LoadGuide(guide,OnLoad)
 	--f.GuideName:SetWidth(nameWidth)
 	--f:SetWidth(math.max(f:GetWidth(),nameWidth+45))
 	--f:SetMinResize(math.max(nameWidth+45,220),20)
-	if not guide.labels then
-		guide.labels = {}
-    else
-        ClearTable(guide.labels)
-	end
+    guide.labels = {}
+
 	
     --[[
     if unitscan_targets then

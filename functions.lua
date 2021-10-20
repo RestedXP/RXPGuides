@@ -623,6 +623,7 @@ local questItem = string.gsub(QUEST_ITEMS_NEEDED,"%%s","%(%.%*%)"):gsub("%%d","%
 function RXP_.UpdateQuestCompletionData(self)
     
     local element = self.element
+    if not element then return end
     local step = element.step
     local icon = RXP_.icons.complete
     local id = element.questId
@@ -778,6 +779,19 @@ function RXP_.UpdateQuestCompletionData(self)
 
 end
 
+local function QueueUpdate(ref,func,lowPrio)
+
+    local update
+    if lowPrio then
+        update = RXP_.updateInactiveQuest
+    else
+        update = RXP_.updateActiveQuest
+    end
+
+    update[ref] = func
+
+end
+
 function RXP_.functions.complete(self,...)
     if type(self) == "string" then --on parse
         local element = {}
@@ -807,9 +821,9 @@ function RXP_.functions.complete(self,...)
     
     if event then
         if step.active then
-            RXP_.updateActiveQuest[self] = true
+            RXP_.updateActiveQuest[self] = RXP_.UpdateQuestCompletionData
         else
-            RXP_.updateInactiveQuest[self] = true
+            RXP_.updateInactiveQuest[self] = RXP_.UpdateQuestCompletionData
         end
     else
         RXP_.UpdateQuestCompletionData(self)
@@ -1383,6 +1397,8 @@ function RXP_.functions.next(skip,guide)
         end)
         local nextGuide
         local guideSkip = RXP_.GetGuideTable(group,next)
+        local som = RXPCData.SoM
+        local hc = RXPData.hardcore
         
         if RXP_.version ~= "CLASSIC" then
             local faction = next:match("Aldor") or next:match("Scryer")
@@ -1407,7 +1423,12 @@ function RXP_.functions.next(skip,guide)
         nextGuide = RXP_.GetGuideTable(group,next)
        
         if nextGuide then
-            return RXP_:LoadGuide(nextGuide)
+            if (nextGuide.era and RXPCData.SoM or nextGuide.som and not RXPCData.SoM) or 
+               (nextGuide.hardcore and not(RXPData.hardcore) or nextGuide.softcore and RXPData.hardcore) then
+               return RXP_.functions.next(nil,nextGuide)
+            else
+                return RXP_:LoadGuide(nextGuide)
+            end
         elseif guideSkip then
             return RXP_.functions.next(nil,guideSkip)
         end
