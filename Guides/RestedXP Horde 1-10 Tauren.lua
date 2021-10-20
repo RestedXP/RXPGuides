@@ -1041,6 +1041,13 @@ step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
+step << Warrior
+    >>Kill Lightning Hides for Singed Scales
+    .complete 1498,1 --Singed Scale (5)
+step << Warrior
+    .goto The Barrens,61.4,21.1
+    .turnin 1498 >>Turn in Path of Defense
+    .accept 1502 >>Accept Thun'grim Firegaze
 
 ]],"Tauren")
 
