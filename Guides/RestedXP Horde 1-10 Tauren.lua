@@ -1032,8 +1032,16 @@ step << Shaman
     .accept 1525 >>Accept Call of Fire
 step << Warrior
     .goto The Barrens,61.4,21.1
-    .turnin 1505 >>Turn in Veteran Uzzek
+    .turnin 1505 >>Turn in ' Uzzek
     .accept 1498 >>Accept Path of Defense
+step << Warrior
+    >>Kill Lightning Hides for Singed Scales
+    .complete 1498,1 --Singed Scale (5)
+step << Warrior
+    .goto The Barrens,61.4,21.1
+    .turnin 1498 >>Turn in Path of Defense
+    .accept 1502 >>Accept Thun'grim Firegaze
+
 ]],"Tauren")
 
 
