@@ -1480,7 +1480,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	startTime = GetTime()
 	CloseDropDownMenus()
 	tickTimer = GetTime()
-	if not (OnLoad and RXPCData.currentStep) then
+	if not (OnLoad and RXPCData and RXPCData.currentStep) then
 		RXPCData.currentStep = 1
 		RXPCData.stepSkip = {}
 	end
@@ -1745,7 +1745,8 @@ end
 
 
 local function IsGuideActive(guide)
-    if guide.era and RXPCData.SoM or guide.som and not RXPCData.SoM then
+    local som = RXPCData and RXPCData.SoM
+    if guide.era and som or guide.som and not som then
         return false
     end
     return true
@@ -1807,7 +1808,7 @@ function RXP_.GenerateMenuTable()
         createMenu(group)
 	end
     
-    if not RXPData.hideUnusedGuides and #unusedGuides > 0 then
+    if not (RXPData and RXPData.hideUnusedGuides) and #unusedGuides > 0 then
         table.insert(RXP_.menuList,{text = "Unused Guides",notCheckable = 1,isTitle = 1})
         for _,group in ipairs(unusedGuides) do
             createMenu(group)
@@ -1817,7 +1818,7 @@ function RXP_.GenerateMenuTable()
     table.insert(RXP_.menuList,{text = "",notCheckable = 1,isTitle = 1})
 --    table.insert(RXP_.menuList,{text = "Toggle Hardcore Mode",notCheckable = 1,func = RXP_.HardcoreToggle})
     local hctext
-    if RXPData.hardcore then
+    if RXPData and RXPData.hardcore then
         hctext = "Deactivate Hardcore mode"
     else
         hctext = "Activate Hardcore mode"
@@ -1829,8 +1830,10 @@ end
 
 
 function RXP_.HardcoreToggle()
-    RXPData.hardcore = not RXPData.hardcore
-    RXP_.RenderFrame()
+    if RXPData then
+        RXPData.hardcore = not RXPData.hardcore
+        RXP_.RenderFrame()
+    end
 end
 
 SLASH_RXPG1 = "/rxp"
