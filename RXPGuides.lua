@@ -68,11 +68,11 @@ local function SoMCheck()
 end
 
 function RXPG_init()
-    SoMCheck()
-    RXPData.hardcore = RXPData.hardcore or false
-    RXP_.RenderFrame()
 	RXPData = RXPData or {}
 	RXPCData = RXPCData or {}
+    RXPData.hardcore = RXPData.hardcore or false
+    SoMCheck()
+    RXP_.RenderFrame()
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
 	RXPData.numMapPins = RXPData.numMapPins or 7
 	RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
@@ -637,8 +637,10 @@ function f.ClearFrameData()
 			frame:SetScript("OnEvent",nil)
             frame:SetScript("OnEnter",nil)
             frame:SetScript("OnLeave",nil)
+            frame:SetScript("OnMouseDown",nil)
             frame:SetMouseClickEnabled(false)
 			frame.button:SetChecked(false)
+            frame.highlight:Hide()
 		end
 	end
 end
@@ -1747,6 +1749,7 @@ end
 local function IsGuideActive(guide)
     local som = RXPCData and RXPCData.SoM
     if guide.era and som or guide.som and not som then
+        --print('-',guide.name,not guide.som,not guide.era,som)
         return false
     end
     return true
@@ -2073,7 +2076,8 @@ function RXP_.CreateOptionsPanel()
         index = index + 1
         button:SetScript("PostClick",function(self)
             RXPCData.SoM = self:GetChecked()
-            RXP_:LoadGuide(RXP_.currentGuide,true)
+            RXP_.GenerateMenuTable()
+            RXP_:LoadGuide(RXP_.currentGuide)
         end)
         button:SetChecked(RXPCData.SoM)
         button.Text:SetText("Season of Mastery")

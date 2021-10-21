@@ -163,41 +163,44 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                 RXP_.step = step
                 lastElement = nil
             end
-        elseif currentStep > 0 and not skip then
-            if currentStep > 1 or (version == "tbc" and not(guide.classic or guide.wotlk)) or guide[version] then
-                parseLine(line)
-            else
-                RXP_.guide = nil
-                return
-            end
-        elseif currentStep == 0 then
-            local classtag
-            line = line:gsub("(.*)<<%s*(.+)",function(code,tag) 
-                code = code:gsub("%s+$","")
-                classtag = tag
-                return code
-            end)
-            if classtag and not applies(classtag) then
-                if line == "" then
+        elseif not skip then   
+            if currentStep > 0 then
+                if currentStep > 1 or (version == "tbc" and not(guide.classic or guide.wotlk)) or guide[version] then
+                    parseLine(line)
+                else
                     RXP_.guide = nil
                     return
                 end
-            else
-                line:gsub("^#(%S+)%s*(=?)%s*(.*)",function(tag,assignment,value)
-                    --print(tag,string.len(tag))
-                    if tag and tag ~= "" and not guide[tag] then
-                        if assignment == "=" then
-                            guide[tag] = RXPG[guide.group][value]
-                        else
-                            guide[tag] = value
-                        end
-                        if tag == "name" then
-                            RXP_.currentGuideName = value
-                        end
-                    end
+            elseif currentStep == 0 then
+                local classtag
+                line = line:gsub("(.*)<<%s*(.+)",function(code,tag) 
+                    code = code:gsub("%s+$","")
+                    classtag = tag
+                    return code
                 end)
+                if classtag and not applies(classtag) then
+                    if line == "" then
+                        RXP_.guide = nil
+                        return
+                    elseif line == "step" then
+                        skip = true
+                    end
+                else
+                    line:gsub("^#(%S+)%s*(=?)%s*(.*)",function(tag,assignment,value)
+                        --print(tag,string.len(tag))
+                        if tag and tag ~= "" and not guide[tag] then
+                            if assignment == "=" then
+                                guide[tag] = RXPG[guide.group][value]
+                            else
+                                guide[tag] = value
+                            end
+                            if tag == "name" then
+                                RXP_.currentGuideName = value
+                            end
+                        end
+                    end)
+                end
             end
-
         end
     end
     --print(guide)
