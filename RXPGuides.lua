@@ -129,39 +129,25 @@ function RXP_.QuestAutoTurnIn(title)
 end
 
 RXP_.skillList = {}
+local spellRequest = {}
 
 local trainerUpdate = 0
+local level = UnitLevel("player")
 
-local function OnTrainer()
-	
-    local level = UnitLevel("player")
-	local i = GetNumTrainerServices()
-
-	if not i or i == 0 or GetTime() - trainerUpdate > 15 then
-		return
-	end
+local function ProcessSpells(names,rank)
     
-    local names = {}
-    local rank = {}
-    
-    for id = 1,i do
-        local n, r, cat = GetTrainerServiceInfo(id)
-		if cat == "available" then
-            names[id] = n
-            rank[id] = r
-        end
-	end
-    
-    if RXPData.trainGenericSpells then
-        local entries = {race,class}
-        for _,entry in pairs(entries) do
-            if RXP_.defaultSpellList[entry] then
-                for spellLvl,spells in pairs(RXP_.defaultSpellList[entry]) do
-                    if spellLvl <= level then
-                        for i,spellId in pairs(spells) do
-                            if IsSpellKnown(spellId) then
-                                spells[i] = nil
-                            elseif C_Spell.IsSpellDataCached(spellId) then
+    local entries = {race,class}
+    for _,entry in pairs(entries) do
+        if RXP_.defaultSpellList[entry] then
+            for spellLvl,spells in pairs(RXP_.defaultSpellList[entry]) do
+                if spellLvl <= level then
+                    for i,spellId in pairs(spells) do
+                        --print(spellId)
+                        if IsSpellKnown(spellId) or IsPlayerSpell(spellId) then
+                            spells[i] = nil
+                        elseif C_Spell.IsSpellDataCached(spellId) then
+                            spellRequest[spellId] = nil
+                            if names and rank then
                                 local sName = GetSpellInfo(spellId)
                                 local sRank = GetSpellSubtext(spellId)
                                 for id,name in pairs(names) do
@@ -171,14 +157,40 @@ local function OnTrainer()
                                     end
                                 end
                             end
+                        elseif not spellRequest[spellId] then
+                            C_Spell.RequestLoadSpellData(spellId)
+                            spellRequest[spellId] = true
                         end
                     end
                 end
             end
         end
     end
-    
+end
+
+local function OnTrainer()
+	
     if not RXPData.disableTrainerAutomation then
+        local level = UnitLevel("player")
+        local i = GetNumTrainerServices()
+
+        if not i or i == 0 or GetTime() - trainerUpdate > 15 then
+            return
+        end
+        
+        local names = {}
+        local rank = {}
+        
+        for id = 1,i do
+            local n, r, cat = GetTrainerServiceInfo(id)
+            if cat == "available" then
+                names[id] = n
+                rank[id] = r
+            end
+        end
+        
+        ProcessSpells(names,rank)
+
         for spellName,spellRank in pairs(RXP_.skillList) do
             for id,name in pairs(names) do
                 if name == spellName then
@@ -304,7 +316,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		end
 		return
 	elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
-		C_Timer.After(1, function() RXP_:LoadGuide(RXP_.currentGuide,true) end)
+		C_Timer.After(1, function() RXP_:LoadGuide(RXP_.currentGuide) end)
 	elseif event == "TRAINER_SHOW" then
 		self:SetScript("OnUpdate",trainerFrameUpdate)
 		trainerUpdate = GetTime()
@@ -317,6 +329,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		RXP_.GenerateMenuTable()
         RXP_.CreateOptionsPanel()
 		loadtime = GetTime()
+        ProcessSpells()
 		local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
         if not guide and RXPData.autoLoadGuides then
             guide = RXP_.defaultGuide
@@ -340,7 +353,9 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         end
     elseif event == "PLAYER_LEVEL_UP" and RXP_.currentGuide then
         local stepn = RXPCData.currentStep
+        ProcessSpells()
         --RXP_:LoadGuide(RXP_.currentGuide)
+        RXP_.SetStep(1)
         RXP_.SetStep(stepn)
     elseif event == "UNIT_AURA" then
         SoMCheck()
@@ -1891,18 +1906,7 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(not RXPData.disableTrainerAutomation)
     button.Text:SetText("Trainer automation")
-    button.tooltip = "Allows the guide to buy specific spells automatically if the step tells you to\n(Steps marked with "..RXP_.icons.train..")"
-    
-    button = CreateFrame("CheckButton", "$parentTrainerGeneric", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
-    index = index + 1
-    button:SetScript("PostClick",function(self) 
-        RXPData.trainGenericSpells = self:GetChecked()
-    end)
-    button:SetChecked(RXPData.trainGenericSpells)
-    button.Text:SetText("Train useful leveling spells")
-    button.tooltip = "Allows the guide to automatically buy important spells used for leveling"
+    button.tooltip = "Allows the guide to buy useful leveling spells automatically"
     
     
     
