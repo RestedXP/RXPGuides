@@ -17,4 +17,4 @@ map.lua
 functions.lua
 parser.lua
 
-#Guides/GuideList.xml
+Guides/GuideList-classic.xml

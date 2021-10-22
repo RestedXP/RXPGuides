@@ -177,19 +177,19 @@ local s = {}
 RXP_.defaultSpellList = s
 
 s["Dwarf"] = {
-    [8] = {2551},--cooking
+    [8] = {2551,3273,3274},--cooking/FA
     [40] = {152,6744},--ram riding
 }
 s["Gnome"] = {
-    [8] = {2551},--cooking
+    [8] = {2551,3273,3274},--cooking/FA
     [40] = {10907},--mechanostrider piloting
 }
 s["Human"] = {
-    [8] = {2551},--cooking
+    [8] = {2551,3273,3274},--cooking/FA
     [40] = {6743,148}--horse riding
 }
 s["NightElf"] = {
-    [8] = {2551},--cooking
+    [8] = {2551,3273,3274},--cooking/FA
     [40] = {6745,150},--tiger riding
 }
 s["Orc"] = {
@@ -1099,6 +1099,7 @@ s["ROGUE"] = {
     [10] = {
         5171, -- slice and dice
         2983, -- sprint
+        6452, -- Anti-venom(FA)
     },
     [12] = {
         1766, -- kick
