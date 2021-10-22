@@ -33,6 +33,7 @@ eventFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
 eventFrame:RegisterEvent("TAXIMAP_OPENED")
 eventFrame:RegisterUnitEvent("UNIT_AURA","player")
+eventFrame:RegisterUnitEvent("UNIT_PET","player")
 eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
 
@@ -343,6 +344,8 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         RXP_.SetStep(stepn)
     elseif event == "UNIT_AURA" then
         SoMCheck()
+    elseif event == "UNIT_PET" then
+        RXP_.petFamily = GetPetIcon() or RXP_.petFamily
 	end
 	
 
@@ -1165,6 +1168,7 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
             RXP_.SetStep(RXPCData.currentStep+1)
             RXP_.QuestAutomation()
             skip = true
+            RXP_.updateBottomFrame = true
             event = event .. "/loadNext"
         elseif activeQuestUpdate == 0 then
             if RXP_.updateSteps then

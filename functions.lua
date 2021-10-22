@@ -1122,32 +1122,35 @@ function RXP_.functions.destroy(self,...)
     end
 
     local element = self.element
-    local name = RXP_.GetItemName(element.id)
+    local step = element and element.step
+    if step and step.active then
+        local name = RXP_.GetItemName(element.id)
 
-    if name then
-        element.requestFromServer = nil
-    else
-        name = ""
-        element.requestFromServer = true
-    end
-    element.itemName = name
+        if name then
+            element.requestFromServer = nil
+        else
+            name = ""
+            element.requestFromServer = true
+        end
+        element.itemName = name
 
-    local count = GetItemCount(element.id)
- 
+        local count = GetItemCount(element.id)
+     
 
-    if element.rawtext then
-        element.tooltipText = RXP_.icons.collect..element.rawtext
-        element.text = element.rawtext
-    else
-        element.text = string.format("Throw away %s%s from your bags",RXP_.icons.collect,element.itemName)
-        element.tooltipText = element.text
-    end
-    RXP_.UpdateStepText(self)
+        if element.rawtext then
+            element.tooltipText = RXP_.icons.collect..element.rawtext
+            element.text = element.rawtext
+        else
+            element.text = string.format("Throw away %s%s from your bags",RXP_.icons.collect,element.itemName)
+            element.tooltipText = element.text
+        end
+        RXP_.UpdateStepText(self)
 
-    if count == 0 then
-        RXP_.SetElementComplete(self)
-    else
-        RXP_.SetElementIncomplete(self)
+        if count == 0 then
+            RXP_.SetElementComplete(self)
+        else
+            RXP_.SetElementIncomplete(self)
+        end
     end
 end
 
@@ -1549,8 +1552,8 @@ function RXP_.functions.abandon(self,...)
         --print(element.rawtext)
         return element
     else
-        if not self.element.step.active then return end
         local element = self.element
+        if not element.step.active then return end
         local event,_,questId = ...
         local id = element.questId
         if element.retrieveText then
@@ -1580,6 +1583,33 @@ function RXP_.functions.abandon(self,...)
 
 end
 
+--[[
+owl: 132192
+cat: 132185
+ravager: 132194
+scorpid: 132195
+dragonhawk: 132188
+]]
+function RXP_.functions.petFamily(self,...)
+    if type(self) == "string" then
+        local element = {}
+        local text,id = ...
+        id = tonumber(id)
+        if not id then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid icon ID\n"..self) end
+        element.id = id
+        if text and text ~= "" then
+            element.text = text
+        end
+        element.textOnly = true
+        return element
+    end
+    local id = self.element.id
+    
+    if RXP_.petFamily ~= id then
+        self.element.step.completed = true
+        RXP_.updateSteps = true
+    end
+end
 
 function RXP_.functions.isQuestComplete(self,...)
     if type(self) == "string" then
