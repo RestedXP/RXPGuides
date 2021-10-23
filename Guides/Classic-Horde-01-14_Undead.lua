@@ -1144,9 +1144,6 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
 #next 12-17 The Barrens
     
 step << !Undead Rogue
-    #sticky
-    .abandon 1859 >> Abandon Therzok
-step << !Undead Rogue
     .goto Tirisfal Glades,61.87,65.02,40 >> Run to Undercity
 step << !Undead Rogue
     .goto Tirisfal Glades,61.81,74.42,30 >> Run to the Elevator room
@@ -1261,6 +1258,7 @@ step
     .accept 422 >>Accept Arugal's Folly
     .goto Silverpine Forest,52.82,28.58
 step
+    #era
     #sticky
     #completewith Nightlash
     >>Kill Bears. Loot them for their hearts
@@ -1341,10 +1339,6 @@ step << Undead
     .turnin 6321 >>Turn in Supplying the Sepulcher
     .accept 6323 >>Accept Ride to the Undercity
     .fp >> Get The Sepulcher Flight Path
-step << !Undead
-    .goto Silverpine Forest,45.62,42.60
-    >>DO NOT go Undercity yet
-    .fp >> Get The Sepulcher Flight Path
 step
     >>Click on the Boat
     .goto Silverpine Forest,58.39,34.79
@@ -1411,6 +1405,7 @@ step << Undead
     .hs >> Hearth to Undercity
 step << !Undead Rogue
    .goto Silverpine Forest,45.62,42.60
+    .fp >> Get The Sepulcher Flight Path
     .fly Undercity >> Fly to Undercity
 step << Undead
     .goto Undercity,61.48,41.81
