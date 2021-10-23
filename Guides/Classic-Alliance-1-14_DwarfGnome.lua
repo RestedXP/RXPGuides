@@ -1611,12 +1611,16 @@ step
 step
     .goto Loch Modan,23.23,73.67
     .turnin 267 >> Turn in The Trogg Threat
+step << !Warlock !Paladin/!Dwarf !Warlock
+    #som
+    .hs >> Hearth to Ironforge
 step << Warlock
     #som
     .hs >> Hearth to Thelsamar
 step << !Dwarf/!Paladin
+    #era << !Warlock
     .goto Loch Modan,33.93,50.95
-    .fly >> Fly to Ironforge
+    .fly Ironforge>> Fly to Ironforge
 step << Dwarf Paladin
     #completewith next
     .goto Dun Morogh,87.1,51.1
@@ -1630,9 +1634,12 @@ step << Dwarf Paladin
     .goto Dun Morogh,77.3,60.5
     >>Kill Dark Iron Spies
     .complete 1784,1 --Dark Iron Script (1)
-step << !Warlock
+step << Dwarf Paladin
     #som
     .hs >> Hearth to Ironforge
+step << Dwarf Paladin
+    #era
+    .hs >> Hearth to Stormwind
 step << Warrior
     .goto Ironforge,65.89,88.43
     .trainer >> Train your class spells
@@ -1704,8 +1711,6 @@ step << !Paladin
     #completewith next
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
     .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
-step << !Paladin
-    #era
 step << !Paladin
     #era
     .goto Ironforge,76.54,51.15,60,0
