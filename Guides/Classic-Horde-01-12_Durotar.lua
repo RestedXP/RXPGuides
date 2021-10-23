@@ -360,23 +360,23 @@ step << Rogue
     .vendor >> Buy the level 3 thrown from K'Waii. Equip it
 step << Shaman
     .goto Durotar,56.5,73.1
-    >>vendor trash. Sell your weapon if it gives you enough money for Walking Stick (5s 4c). You'll come back later if you don't have enough yet
+    >>Repair your weapon. If you have enough money (5s 4c) buy a Walking Stick from Traxexir. Otherwise, skip this step (you'll come back later)
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
     .goto Durotar,56.5,73.1
-     >>vendor trash. Sell your weapon if it gives you enough money for Stiletto (4s 1c). You'll come back later if you don't have enough yet
+     >>Repair your weapon. If you have enough money (4s 1c) buy a Stiletto from Traxexir. Otherwise, skip this step (you'll come back later)
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
     .goto Durotar,56.5,73.1
-    >>vendor trash. Sell your weapon if it gives you enough money for Large Axe (4s 84c). You'll come back later if you don't have enough yet
+    >>Repair your weapon. If you have enough money (4s 84c) buy a Large Axe from Traxexir. Otherwise, skip this step (you'll come back later)
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
     .goto Durotar,56.5,73.1
-    >>vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 36c). You'll come back later if you don't have enough yet
+    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Traxexir. Otherwise, skip this step (you'll come back later)
     .collect 2488,1 --Collect Gladius
 step << Hunter
     .goto Durotar,56.5,73.1
-    >>vendor trash. Sell your weapon if it gives you enough money for Hornwood Recurve Bow (2s 85c). You'll come back later if you don't have enough yet
+    >>Repair your weapon. If you have enough money (2s 85c) buy a Hornwood Recurve Bow from Traxexir. Otherwise, skip this step (you'll come back later)
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
     #sticky
@@ -416,40 +416,35 @@ step
 step
     #softcore
     .goto Durotar,57.5,73.3,200 >> Die at the Bonfire and respawn at the Spirit Healer, or run back
---P
 step << Shaman
-	#softcore
-    .goto Durotar,56.6,73.1
-    .money <0.0504
-    >> Talk to Traxexir from below the stairs outside
-    >> Buy Walking Stick and equip it
+    #softcore
+    .goto Durotar,56.5,73.1
+    >>Repair your weapon. If you have enough money (5s 4c) buy a Walking Stick from Traxexir. Otherwise, skip this step (you'll come back later)
+	>>You can talk to him from outside
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
-	#softcore
+    #softcore
     .goto Durotar,56.5,73.1
-    .money <0.401
-    >> Talk to Traxexir from below the stairs outside
-    >> Buy Stiletto and equip it
+     >>Repair your weapon. If you have enough money (4s 1c) buy a Stiletto from Traxexir. Otherwise, skip this step (you'll come back later)
+	>>You can talk to him from outside
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
-	#softcore
-    .money <0.0484
+    #softcore
     .goto Durotar,56.5,73.1
-    >> Talk to Traxexir from below the stairs outside
-    >> Buy Large Axe and equip it
+    >>Repair your weapon. If you have enough money (4s 84c) buy a Large Axe from Traxexir. Otherwise, skip this step (you'll come back later)
+	>>You can talk to him from outside
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
-	#softcore
+    #softcore
     .goto Durotar,56.5,73.1
-    .money <0.0536
-    >> Talk to Traxexir from below the stairs outside
-    >> Buy Gladius and equip it
+    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Traxexir. Otherwise, skip this step (you'll come back later)
+	>>You can talk to him from outside
     .collect 2488,1 --Collect Gladius
 step << Hunter
-	#softcore
+    #softcore
     .goto Durotar,56.5,73.1
-    .money <0.0285
-    >> Buy Hornwood Recurve Bow and equip it
+    >>Repair your weapon. If you have enough money (2s 85c) buy a Hornwood Recurve Bow from Traxexir. Otherwise, skip this step (you'll come back later)
+	>>You can talk to him from outside
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
     #softcore
@@ -481,49 +476,45 @@ step
     .accept 791 >>Accept Carry Your Weight
 step << Shaman
     .goto Durotar,52.0,40.5
-    .money <0.0504
-    >> Buy Walking Stick and equip it
+    >>Repair your weapon. If you have enough money (5s 4c) buy a Walking Stick from Uhgar. Otherwise, skip this step (you'll come back later)
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
     .goto Durotar,52.0,40.5
-    .money <0.0401
-    >> Buy Stiletto and equip it
+     >>Repair your weapon. If you have enough money (4s 1c) buy a Stiletto from Uhgar. Otherwise, skip this step (you'll come back later)
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
     .goto Durotar,52.0,40.5
-    .money <0.0484
-    >> Buy Large Axe and equip it
+    >>Repair your weapon. If you have enough money (4s 84c) buy a Large Axe from Uhgar. Otherwise, skip this step (you'll come back later)
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
     .goto Durotar,52.0,40.5
-    .money <0.0536
-    >> Buy Gladius and equip it
+    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Uhgar. Otherwise, skip this step (you'll come back later)
     .collect 2488,1 --Collect Gladius
 step << Hunter
+	#completewith next
     .goto Durotar,53.0,41.0
-    .money <0.0285
-    >> Buy Hornwood Recurve Bow and equip it
+    >>Repair your weapon. If you have enough money (2s 85c) buy a Hornwood Recurve Bow from Ghrawt. Otherwise, skip this step (you'll come back later)
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Hunter
     .goto Durotar,53.0,41.0
-    .vendor >> Buy some arrows from the vendor to fill your quiver with
+    .vendor >> Buy some arrows from Ghrawt to fill your quiver with
 step << Warrior/Rogue
     .goto Durotar,52.0,40.7
     .money <0.0020
-    .trainer >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
+    .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
 step << Warrior/Rogue
     .goto Durotar,51.8,40.9
     .money <0.0010
-    .trainer >> Train Mining. Cast “Find Minerals” in your spellbook
+    .trainer 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
 step << Warrior/Rogue
     .goto Durotar,53.0,42.0
     .money <0.0081
     .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
-step << Priest/Mage/Warlock/Shaman/Druid
+step << !Warrior !Rogue !Hunter
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
-    .vendor >> Buy some water
+    .vendor >> Buy as much level 5 drink as you can
 step << Warrior/Rogue/Hunter
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
@@ -534,6 +525,7 @@ step << Priest
     .turnin 5649 >> In Favor of Spirituality
     .accept 5648 >> Garments of Spirituality
 step << Priest
+    >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on Grunt Kor'ja
     .goto Durotar,53.1,46.5
     .complete 5648,1 --Heal and fortify Grunt Kor'ja
 step << Priest
@@ -542,6 +534,7 @@ step << Priest
 step
     #sticky
     #label KulTiras
+    .goto Durotar,58.14,57.56,0
     >>Kill Kul Tiras mobs. Loot them for Scraps
     .complete 784,1 --Kul Tiras Sailor (10)
     .complete 784,2 --Kul Tiras Marine (8)
@@ -588,32 +581,28 @@ step
     .turnin 791 >>Turn in Carry Your Weight
 step << Shaman
     .goto Durotar,52.0,40.5
-    .money <0.0504
-    >> Buy Walking Stick and equip it
+    >>Repair your weapon. If you have enough money (5s 4c) buy a Walking Stick from Uhgar. Otherwise, skip this step (you'll come back later)
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
     .goto Durotar,52.0,40.5
-    .money <0.0401
-    >> Buy Stiletto and equip it
+     >>Repair your weapon. If you have enough money (4s 1c) buy a Stiletto from Uhgar. Otherwise, skip this step (you'll come back later)
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
     .goto Durotar,52.0,40.5
-    .money <0.0484
-    >> Buy Large Axe and equip it
+    >>Repair your weapon. If you have enough money (4s 84c) buy a Large Axe from Uhgar. Otherwise, skip this step (you'll come back later)
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
     .goto Durotar,52.0,40.5
-    .money <0.0536
-    >> Buy Gladius and equip it
+    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Uhgar. Otherwise, skip this step (you'll come back later)
     .collect 2488,1 --Collect Gladius
 step << Hunter
+	#completewith next
     .goto Durotar,53.0,41.0
-    .money <0.0285
-    >> Buy Hornwood Recurve Bow and equip it
+    >>Repair your weapon. If you have enough money (2s 85c) buy a Hornwood Recurve Bow from Ghrawt. Otherwise, skip this step (you'll come back later)
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Hunter
-    .goto Durotar,42.6,67.3
-    .vendor >>vendor trash. Buy arrows until your Quiver is full (1000 arrows)
+    .goto Durotar,53.0,41.0
+    .vendor >> Buy some arrows from Ghrawt to fill your quiver with
 step << Warrior/Rogue
     .goto Durotar,52.0,40.7
     .money <0.0020
@@ -621,17 +610,17 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,51.8,40.9
     .money <0.0010
-    .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
+    .trainer 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
 step << Warrior/Rogue
     .goto Durotar,53.0,42.0
     .money <0.0081
-    .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon
+    .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << Shaman
     .goto Durotar,54.4,42.6
     .trainer >> Train your class spells
 step << Priest
     .goto Durotar,54.3,42.9
-    .train 139 >>Train Renew
+    .trainer >> Train your class spells
 step << Warrior
     .goto Durotar,54.2,42.5
     .trainer >> Train your class spells
@@ -656,7 +645,7 @@ step
     .vendor >>Buy a 6 slot bag from Jark
 step << Priest/Warlock/Mage
     .goto Durotar,51.5,41.6
-    .vendor >> Buy some water
+    .vendor >> Buy as much level 5 drink as you can
 step << Warrior/Rogue/Hunter
     .goto Durotar,51.5,41.6
     .vendor >> Buy up to 20 level 5 food
@@ -721,18 +710,20 @@ step
     .goto Durotar,64.7,88.5,90,0
     .goto Durotar,65.2,80.8,90,0
     .goto Durotar,59.9,83.6,90,0
+    .goto Durotar,64.7,88.5
     .complete 817,1 --Durotar Tiger Fur (4)
 step
     #softcore
     .goto Durotar,57.5,73.3,200 >> Die and respawn at the Spirit Healer, or run back
 step
-    >> Get the rest of the items from the Makrura and Crawlers
+    >> Loot the rest of the items from the Makrura and Crawlers
+    .goto Durotar,59.7,71.7,100,0
+    .goto Durotar,57.6,77.9,100,0
+    .goto Durotar,59.7,71.7,100,0
+    .goto Durotar,57.6,77.9,100,0
+    .goto Durotar,59.7,71.7
     .complete 818,1 --Intact Makrura Eye (4)
     .complete 818,2 --Crawler Mucus (8)
-    .goto Durotar,59.7,71.7,100,0
-    .goto Durotar,57.6,77.9,100,0
-    .goto Durotar,59.7,71.7,100,0
-    .goto Durotar,57.6,77.9,100,0
 step
     .goto Durotar,56.48,73.11
     .vendor >> vendor trash and repair at Trayexir. You can talk to him from outside the hut
@@ -830,10 +821,17 @@ step
 	>>Group up for this quest if you're struggling
     .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
---N add a link for warrior/rogue?
+--N add a link for warrior/rogue? Also needs more specific wording per class
 step
-    .goto Durotar,41.5,18.6
+    #softcore
+	.goto Durotar,41.5,18.6
     >> Fight your way out of the Thunder Ridge area or deathskip to the graveyard.
+    .accept 812 >>Accept Need for a Cure
+step
+    #hardcore
+    .goto Durotar,39.18,31.65,90,0
+	.goto Durotar,41.5,18.6
+    >> Fight your way out of the Thunder Ridge area
     .accept 812 >>Accept Need for a Cure
 step
     #completewith next
@@ -904,6 +902,8 @@ step << Warrior/Rogue
     .money <0.01
     .train 3273 >>Train First Aid
 step << Rogue
+    .goto Durotar,55.03,9.80,60,0
+    .goto Durotar,53.10,9.25
     >>Kill Burning Blade mobs in Skull Rock for Searing Collars
     .complete 827,1 --Searing Collar (6)
 step << Rogue
@@ -924,7 +924,9 @@ step << Rogue
     .turnin 835 >>Turn in Securing the Lines
 step << Rogue
     #hardcore
-    >>Run back through the cave you came from, back to the questgiver
+    >>Run back through the cave, then back to the Goblin
+    .goto Durotar,53.75,27.74,60,0
+    .goto Durotar,51.75,27.40,60,0
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
 step << Rogue
@@ -1007,11 +1009,12 @@ step << Warrior/Shaman
     .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
+    .goto The Barrens,45.2,23.3
     .complete 848,1 --Collect Fungal Spores (x4)
 step << Warrior/Shaman
     #softcore
     #completewith next
-    .goto The Barrens,52.0,30.6,150 >> Die and respawn at the Spirit Healer, or run back
+    .deathskip >> Die and respawn at the Spirit Healer
 step << Warrior/Shaman
     #softcore
     .turnin 848 >>Turn in Fungal Spores
@@ -1030,9 +1033,12 @@ step << Warrior/Shaman
     .goto The Barrens,44.4,59.2
     .fp >>Get the Camp Taurajo Flight Path
 step << Warrior/Shaman
-    >>the NPC patrols along the road
-    .goto Mulgore,58.4,61.7
+    >>Go west into Mulgore and Look for Morin Cloudstalker. He patrols along the eastern road
+    .goto Mulgore,59.7,62.5,70,0
+    .goto Mulgore,51.1,58.6,70,0
+    .goto Mulgore,51.1,58.6
     .accept 749 >>Accept The Ravaged Caravan
+	.unitscan Morin Cloudstalker
 step << Warrior/Shaman
     .goto Mulgore,48.7,59.3
     .accept 761 >>Accept Swoop Hunting
@@ -1059,20 +1065,30 @@ step << Warrior/Shaman
     .complete 766,4 --Swoop Gizzard (1)
     .complete 761,1 --Trophy Swoop Quill (8)
 step << Warrior/Shaman
+	#completewith CaravanR
+	>>Keep an eye out for Ghost Howl (rare wolf). He patrols all over northern Mulgore. Kill and loot him for the Demon Scarred Cloak. Start the quest
+	.collect 4854,1,770
+	.accept 770 >> Accept The Demon Scarred Cloak
+	.unitscan Ghost Howl
+step << Warrior/Shaman
     .goto Mulgore,52.0,61.1,10,0
     .goto Mulgore,50.0,66.4,10,0
     .goto Mulgore,50.4,66.5,10,0
+    .goto Mulgore,52.0,61.1,0
+    .goto Mulgore,50.0,66.4,0
+    .goto Mulgore,50.4,66.5,0
     >>Collect the 'Acorn' looking items on the ground, below the trees
     .complete 771,2 --Ambercorn (2)
 step << Warrior/Shaman
     .goto Mulgore,53.7,66.3
     >>Loot the stones around the Well
     .complete 771,1 --Well Stone (2)
+step << Warrior/Shaman
    .goto Mulgore,47.8,57.5
     .turnin 771 >>Turn in Rite of Vision
     .accept 772 >>Accept Rite of Vision
 step << Warrior/Shaman
-    .goto Thunder Bluff,32.0,66.9,20 >>Run to the lift and take it into Thunder Bluff
+    .goto Thunder Bluff,32.0,66.9,60 >>Run to the lift and take it into Thunder Bluff
 step << Warrior
     .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
@@ -1081,19 +1097,20 @@ step << Shaman
     .goto Thunder Bluff,40.9,62.7
     .train 199 >>Train 2h Maces
 step << Warrior/Shaman
-    #completewith next
-    .goto Thunder Bluff,45.6,52.0,15 >>Go up the tower
-step << Warrior/Shaman
     >>Go to the top floor of the tower
+    .goto Thunder Bluff,45.6,52.0,25,0
     .goto Thunder Bluff,46.8,49.9
     .fp >>Get the Thunder Bluff Flight Path
 step << Warrior/Shaman
-    #completewith next
-    .goto Thunder Bluff,29.6,29.7,15 >>Jump down into the cave
-step << Warrior/Shaman
+	>>Go into the Thunder Bluff cave
+    .goto Thunder Bluff,29.6,29.7,25,0
     .goto Thunder Bluff,23.0,21.1
     .turnin 853 >>Turn in Apothecary Zamah
 step << Warrior/Shaman
+	>>Run out of the cave, then leave Thunder Bluff by jumping down somewhere under the bridge
+	>>Run to the cave south of you
+    .goto Thunder Bluff,29.04,37.68,55,0
+    .goto Mulgore,33.48,36.68,40,0
     .goto Mulgore,32.7,36.1
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
@@ -1105,7 +1122,9 @@ step << Warrior/Shaman
     .goto Mulgore,31.3,49.9
    >>Kill Dwarf mobs for Prospector's Picks
     >>Use the Picks on the Forge until you've broken 5 of them. This is done in the Dwarf camp.
+	.collect 4702,5,746,1
     .complete 746,1 --Broken Tools (5)
+--N needs testing
 step << Warrior/Shaman
     .goto Mulgore,59.9,25.6
     .accept 833 >>Accept A Sacred Burial
@@ -1121,12 +1140,17 @@ step << Warrior/Shaman
     .turnin 833 >>Turn in A Sacred Burial
 step << Warrior/Shaman
     #requires Mulgoreall
+	#label CaravanR
     .goto Mulgore,53.7,48.1
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step << Warrior/Shaman
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
+step << Warrior/Shaman
+    .isOnQuest 770
+	.goto Mulgore,46.75,60.23
+    .turnin 770 >>Turn in The Demon Scarred Cloak
 step << Warrior/Shaman
     .goto Mulgore,47.5,60.2
     .turnin 746 >>Turn in Dwarven Digging
@@ -1138,15 +1162,17 @@ step << Warrior/Shaman
     .turnin 761 >>Turn in Swoop Hunting
 step << Warrior/Shaman
     >>Look for Morin Cloudstalker. He patrols along the eastern road
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
+    .goto Mulgore,51.1,58.6,70,0
+    .goto Mulgore,59.7,62.5,70,0
+    .goto Mulgore,51.1,58.6,70,0
+    .goto Mulgore,59.7,62.5,70,0
+    .goto Mulgore,51.1,58.6,70,0
+    .goto Mulgore,59.7,62.5,70,0
+    .goto Mulgore,59.7,62.5
     .turnin 751 >> Turn in The Ravaged Caravan
     .accept 764 >>Accept The Venture Co.
     .accept 765 >>Accept Supervisor Fizsprocket
+	.unitscan Morin Cloudstalker
 step << Warrior/Shaman
     #sticky
     #label Workers
@@ -1165,16 +1191,16 @@ step << Warrior/Shaman
     #sticky
     #completewith next
     >>Look for Morin Cloudstalker. He patrols along the eastern road
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
+    .goto Mulgore,51.1,58.6,70,0
+    .goto Mulgore,59.7,62.5,70,0
+    .goto Mulgore,51.1,58.6,70,0
+    .goto Mulgore,59.7,62.5,70,0
+    .goto Mulgore,51.1,58.6,70,0
+    .goto Mulgore,59.7,62.5,70,0
+    .goto Mulgore,59.7,62.5
     .turnin 764 >>Turn in The Venture Co.
     .turnin 765 >>Turn in Supervisor Fizsprocket
+	.unitscan Morin Cloudstalker
 step << Warrior/Shaman
     .hs >>Hearth to Razor Hill
 step << Shaman
@@ -1189,9 +1215,6 @@ step << Priest
     >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
     >>Skip this step if you already bought a wand, or can get one cheap from the AH
     .collect 2589,60 --Linen Cloth (60) 
-step << Warrior
-    >>Kill Lightning Hides for Singed Scales whilst working your way out of Thunder Ridge
-    .complete 1498,1 --Singed Scale (5)
 step << Troll Shaman/Orc Shaman
     .goto Durotar,36.6,58.0,25 >>Run up the mountain path
 step << Troll Shaman/Orc Shaman
@@ -1210,33 +1233,40 @@ step << Hunter
     .vendor >> Buy Laminated Recurve Bow if you have the money.
 step << Hunter
     #sticky
-    #completewith next
+    #completewith HuntCollar
     .goto Durotar,57.2,12.0
     +Tame A Surf Crawler
 step
     #label scorp2
     #sticky
     >>Kill Scorpions in the area for Poison Sacs
-    .goto Durotar,55.7,15.7
+    .goto Durotar,55.7,15.7,0
     .complete 813,1 --Venomtail Poison Sac (4)
+step << Hunter
+	#label HuntCollar
+    .goto Durotar,55.06,9.91,60 >> Run to Skull Rock
 step
     #sticky
     #label Collars2
+    .goto Durotar,53.08,9.19,0
     >>Kill Burning Blade mobs in Skull Rock for Searing Collars, and until Lieutenant's Insignia drops
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)
 step << Warlock 
-    .goto Durotar,53.6,8.5,15,0 
-    .goto Durotar,51.8,8.1,15,0
+    .goto Durotar,53.6,8.5,25,0 
+    .goto Durotar,51.8,8.1,25,0
     .goto Durotar,51.6,9.8
     >> Go into the Right path of the cave. Continue following the cave, then loot the Chest at the end of it
     .complete 1501,1 --Tablet of Verga (1)
 step
-    >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave. Use the Faintly Glowing Skull you saved from earlier, sticky glue on the voidwalker to reduce your damage taken, and Healing Potions to restore health. Use LoS (line of sight) to avoid his shadowbolts.
-    >>Be careful as he is VERY difficult
+    >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave.
+    >>Use sticky glue on the Voidwalker to run out of its range and reduce your damage taken, and Healing Potions to restore health. Use LoS (line of sight) to avoid Gazz'uz's Shadow Bolts
+    >>You can run to bodies of water found within the cave to evade the Voidwalker after killing Gazz'uz	
+    >>Be careful as he is VERY difficult. You can skip this quest if you need
     .goto Durotar,51.8,10.0
     .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
+	.unitscan Gazz'uz
 step
     #requires Collars2
     .goto Durotar,56.4,20.1
@@ -1250,12 +1280,13 @@ step << Shaman
     .goto Durotar,52.5,26.7
     .complete 1525,2 --Reagent Pouch (1)
 step
-    .goto Durotar,54.0,27.7,30,0
-    .goto Durotar,51.3,23.5,30,0
-    .goto Durotar,51.5,19.1,30,0
-    .goto Durotar,54.0,27.7,30,0
-    .goto Durotar,51.3,23.5,30,0
-    .goto Durotar,51.5,19.1,30,0
+    .goto Durotar,54.0,27.7,90,0
+    .goto Durotar,51.3,23.5,90,0
+    .goto Durotar,51.5,19.1,90,0
+    .goto Durotar,54.0,27.7,90,0
+    .goto Durotar,51.3,23.5,90,0
+    .goto Durotar,51.5,19.1,90,0
+    .goto Durotar,51.3,23.5
     >>Kill Harpies in the area
     .complete 835,1 --Dustwind Savage (12)
     .complete 835,2 --Dustwind Storm Witch (8)
@@ -1268,10 +1299,17 @@ step
     .turnin 835 >>Turn in Securing the Lines
 step
     #hardcore
-    >>Run back through the cave you came from, back to the questgiver
+    >>Run back through the cave, then back to the Goblin
+    .goto Durotar,53.75,27.74,60,0
+    .goto Durotar,51.75,27.40,60,0
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
+step
+    #completewith next
+	#requires scorp2
+    .goto Durotar,45.50,11.70,70 >> Run into Orgrimmar
 step << Warrior/Shaman
+    #requires scorp2
     .goto Orgrimmar,54.2,68.4
     .turnin 6384 >>Turn in Ride to Orgrimmar
     .accept 6385 >> Accept Doras the Wind Rider Master
@@ -1316,10 +1354,15 @@ step << Warlock
     .turnin 1501 >>Turn in Creature of the Void
     .accept 1504 >>Accept The Binding
 step
-    .goto Orgrimmar,49.4,50.5
+	.isOnQuest 832
+	.goto Orgrimmar,49.4,50.5
     .turnin 829 >>Turn in Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
     .turnin 832 >>Turn in Burning Shadows
+step
+	.goto Orgrimmar,49.4,50.5
+    .turnin 829 >>Turn in Neeru Fireblade
+    .accept 809 >>Accept Ak'Zeloth
 step << Warlock
     .goto Orgrimmar,49.5,50.0
     >>Use the Glyphs of Summoning to summon a voidwalker. Kill it
@@ -1332,10 +1375,15 @@ step
     .goto Durotar,41.6,18.7
     .accept 812 >>Accept Need for a Cure
     .turnin 812 >>Turn in Need for a Cure
+step << Warrior
+    .goto Durotar,42.01,24.33,90,0
+    .goto Durotar,39.18,31.65
+    >>Drop down into Thunder Ridge. Kill Lightning Hides and Thunder Lizards. Loot them for Singed Scales
+    .complete 1498,1 --Singed Scale (5)
 step
     >>Start killing crocodiles for the Amulet
     .goto Durotar,35.2,27.5,60,0
-    .goto Durotar,35.7,57.8,60,0
+    .goto Durotar,35.7,57.8
     .complete 816,1 --Kron's Amulet (1)
 step
     .goto Durotar,43.1,30.3
@@ -1356,8 +1404,6 @@ step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
-step << Mage
-    +If you're planning on leveling via AoE, choose the Barrens AoE Guide manually. Otherwise, choose the 12-17 Barrens Guide
 step << Rogue
     #label BeakCave
     .goto The Barrens,47.6,19.2,70 >>Go to the cave surrounded by Burning Blade orcs
@@ -1403,6 +1449,8 @@ step << !Shaman !Warrior
     .goto The Barrens,51.5,30.1
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
+step << Mage
+    +If you're planning on leveling via AoE, choose the Barrens AoE Guide manually. Otherwise, choose the 12-17 Barrens Guide
 step << Rogue
     .fly >> Fly to Orgrimmar
 step << Rogue
