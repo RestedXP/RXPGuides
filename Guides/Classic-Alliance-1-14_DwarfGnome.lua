@@ -50,9 +50,9 @@ step << Warlock
     .link https://www.youtube.com/watch?v=iUvGsRbIVp8 >> CLICK HERE
 step << Warlock
     >>Kill Frostmane Novices inside the cave. Loot them for Feather Charms
-    .goto Dun Morogh,29.0,82.6,30,0
-    .goto Dun Morogh,29.0,81.2,40,0
-    .goto Dun Morogh,30.1,82.4,30,0    
+    .goto Dun Morogh,29.0,82.6,50,0
+    .goto Dun Morogh,29.0,81.2,60,0
+    .goto Dun Morogh,30.1,82.4  
     .complete 1599,1 --Collect Feather Charm (x3)
 step << Warlock
     #softcore
@@ -89,10 +89,9 @@ step
     >>Kill Normal Rockjaw Troggs that you see
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step
-    .goto Dun Morogh,26.9,72.7,30,0
-    .goto Dun Morogh,25.1,72.1,30,0
-    .goto Dun Morogh,26.9,72.7,30,0
-    .goto Dun Morogh,25.1,72.1,30,0
+    .goto Dun Morogh,26.9,72.7,80,0
+    .goto Dun Morogh,25.1,72.1,80,0
+    .goto Dun Morogh,26.9,72.7
     >>Kill Burly Rockjaw Troggs
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
 step
@@ -101,14 +100,13 @@ step
     .accept 183 >> Accept The Boar Hunter
     .accept 234 >> Accept Coldridge Valley Mail Delivery
 step
-    .goto Dun Morogh,22.2,72.5,40,0
-    .goto Dun Morogh,20.5,71.4,40,0
-    .goto Dun Morogh,21.1,69.0,40,0
-    .goto Dun Morogh,22.8,69.6,40,0
-    .goto Dun Morogh,22.2,72.5,40,0
-    .goto Dun Morogh,20.5,71.4,40,0
-    .goto Dun Morogh,21.1,69.0,40,0
-    .goto Dun Morogh,22.8,69.6,40,0
+    .goto Dun Morogh,22.2,72.5,100,0
+    .goto Dun Morogh,20.5,71.4,100,0
+    .goto Dun Morogh,21.1,69.0,100,0
+    .goto Dun Morogh,22.8,69.6,100,0
+    .goto Dun Morogh,22.2,72.5,100,0
+    .goto Dun Morogh,20.5,71.4,100,0
+    .goto Dun Morogh,21.1,69.0
     >>Kill Boars in the area
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
@@ -116,12 +114,11 @@ step
     .turnin 183 >> Turn in The Boar Hunter
 step << Paladin/Mage/Warlock
     .xp 3+860 >> Grind to 860+/1400xp
-    .goto Dun Morogh,23.0,75.0,40,0
-    .goto Dun Morogh,24.2,72.5,40,0
-    .goto Dun Morogh,27.7,76.3,40,0
-    .goto Dun Morogh,23.0,75.0,40,0
-    .goto Dun Morogh,24.2,72.5,40,0
-    .goto Dun Morogh,27.7,76.3,40,0
+    .goto Dun Morogh,23.0,75.0,100,0
+    .goto Dun Morogh,24.2,72.5,100,0
+    .goto Dun Morogh,27.7,76.3,100,0
+    .goto Dun Morogh,23.0,75.0,100,0
+    .goto Dun Morogh,24.2,72.5
 step
     #label Rockjaw
     .goto Dun Morogh,25.1,75.7
@@ -175,27 +172,22 @@ step << !Paladin !Mage
     >>Kill any Rockjaw Troggs you see nearby whilst doing Trolls
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step << Paladin/Mage/Warlock
-    .goto Dun Morogh,26.3,79.2,30,0
-    .goto Dun Morogh,22.7,79.3,30,0
-    .goto Dun Morogh,20.9,75.7,30,0
-    .goto Dun Morogh,22.7,79.3,30,0
-    .goto Dun Morogh,20.9,75.7,30,0
-    .goto Dun Morogh,22.7,79.3,30,0
-    .goto Dun Morogh,20.9,75.7,30,0
+    .goto Dun Morogh,26.3,79.2,90,0
+    .goto Dun Morogh,22.7,79.3,90,0
+    .goto Dun Morogh,20.9,75.7,90,0
+    .goto Dun Morogh,22.7,79.3,90,0
+    .goto Dun Morogh,20.9,75.7
     >>Kill Frostmane Troll Whelps
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .goto Dun Morogh,25.1,75.7
 step << !Paladin !Mage !Warlock
-    .goto Dun Morogh,22.7,79.3,30,0
-    .goto Dun Morogh,20.9,75.7,30,0
-    .goto Dun Morogh,22.7,79.3,30,0
-    .goto Dun Morogh,20.9,75.7,30,0
-    .goto Dun Morogh,22.7,79.3,30,0
-    .goto Dun Morogh,20.9,75.7,30,0
-    .goto Dun Morogh,22.7,79.3,30,0
-    .goto Dun Morogh,20.9,75.7,30,0
-    .goto Dun Morogh,22.7,79.3,30,0
-    .goto Dun Morogh,20.9,75.7,30,0
+    .goto Dun Morogh,22.7,79.3,90,0
+    .goto Dun Morogh,20.9,75.7,90,0
+    .goto Dun Morogh,22.7,79.3,90,0
+    .goto Dun Morogh,20.9,75.7,90,0
+    .goto Dun Morogh,22.7,79.3,90,0
+    .goto Dun Morogh,20.9,75.7,90,0
+    .goto Dun Morogh,22.7,79.3
     >>Kill Frostmane Troll Whelps
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .goto Dun Morogh,25.1,75.7
@@ -292,6 +284,7 @@ step
     .accept 2160 >> Accept Supplies to Tannok
 step
     .goto Dun Morogh,34.1,71.6,20,0
+    .goto Dun Morogh,35.7,66.0,0
     .goto Dun Morogh,35.7,66.0,20 >>Go through the tunnel
     
 ]],"Dwarf/Gnome")
@@ -466,13 +459,13 @@ step << !Paladin !Warrior !Rogue
     .goto Dun Morogh,48.0,49.5,100,0
     .goto Dun Morogh,48.2,46.9,100,0
     .goto Dun Morogh,43.5,52.5,100,0
-    .goto Dun Morogh,52.0,50.1,100,0
-    .goto Dun Morogh,51.5,53.9,100,0
-    .goto Dun Morogh,50.1,53.9,100,0
-    .goto Dun Morogh,49.9,50.9,100,0
-    .goto Dun Morogh,48.0,49.5,100,0
-    .goto Dun Morogh,48.2,46.9,100,0
-    .goto Dun Morogh,43.5,52.5,100,0
+    .goto Dun Morogh,52.0,50.1,0
+    .goto Dun Morogh,51.5,53.9,0
+    .goto Dun Morogh,50.1,53.9,0
+    .goto Dun Morogh,49.9,50.9,0
+    .goto Dun Morogh,48.0,49.5,0
+    .goto Dun Morogh,48.2,46.9,0
+    .goto Dun Morogh,43.5,52.5
     >>Get the items for Stocking Jetsteam
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .complete 317,2 --Collect Thick Bear Fur (x2)
@@ -489,7 +482,9 @@ step << Priest/Mage/Warlock
     .goto Dun Morogh,47.4,52.5
     .vendor >> Buy as much level 5 drink as you can afford
 step
-    .goto Dun Morogh,42.4,52.2
+    .goto Dun Morogh,42.25,53.68,40,0
+    .goto Dun Morogh,41.07,49.04,50,0
+    .goto Dun Morogh,42.25,53.68
     >> Go into the cave. Kill Wendigos. Loot them for their Manes << !Warrior !Rogue !Paladin
     >> Kill Wendigos. Loot them for their Manes. Keep an eye out for Veins to get rough stones for Sharpening stones for your weapon << Warrior/Rogue
     >> Kill Wendigos. Loot them for their Manes. Keep an eye out for Veins to get rough stones for Weightstones for your weapon << Paladin
@@ -587,6 +582,7 @@ step
     .goto Dun Morogh,25.8,47.2,100,0
     .goto Dun Morogh,25.8,47.2,100,0
     .goto Dun Morogh,30.0,51.8,100,0
+    .goto Dun Morogh,28.7,43.7
     >> Kill Bears, Boars and Leopards
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -762,11 +758,12 @@ step
     .turnin 311 >> Turn in Return to Marleth
 step
     #era << Warlock
-    .goto Dun Morogh,27.2,43.0,40,0
-    .goto Dun Morogh,24.8,39.3,40,0
-    .goto Dun Morogh,25.6,43.4,40,0
-    .goto Dun Morogh,24.3,44.0,40,0
-    .goto Dun Morogh,25.4,45.4,40,0
+    .goto Dun Morogh,27.2,43.0,80,0
+    .goto Dun Morogh,24.8,39.3,80,0
+    .goto Dun Morogh,25.6,43.4,80,0
+    .goto Dun Morogh,24.3,44.0,80,0
+    .goto Dun Morogh,25.4,45.4,80,0
+    .goto Dun Morogh,25.00,43.50
     >>Kill Leper Gnomes. Loot them for Gears and Cogs
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
@@ -850,7 +847,7 @@ step
     .vendor >>vendor trash. Buy some food/water if needed << !Warrior !Rogue
 step
     .goto Dun Morogh,68.4,54.5
-    .trainer >> Train Cooking from Ghilm
+    .train 2550 >> Train Cooking from Ghilm
 step
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
@@ -1338,9 +1335,9 @@ step << Warlock
     .turnin 1688 >> Turn in Surena Caledon
     .accept 1689 >> Accept The Binding
 step << Warlock
-    .goto Stormwind City,25.2,80.7,14,0
-    .goto Stormwind City,23.2,79.5,14,0
-    .goto Stormwind City,26.3,79.5,14,0
+    .goto Stormwind City,25.2,80.7,18,0
+    .goto Stormwind City,23.2,79.5,18,0
+    .goto Stormwind City,26.3,79.5,18,0
     .goto Stormwind City,25.5,78.1
     >>Go to the bottom of the crypt. Summon the Voidwalker using the Bloodstone Choker and kill it
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
@@ -1504,8 +1501,9 @@ step
     #completewith next
     .goto Loch Modan,39.3,27.0,130 >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
 step
-    .goto Loch Modan,35.5,18.2
-    >>Collect the crates you find in the cave
+    .goto Loch Modan,35.5,18.2,40,0
+    .goto Loch Modan,35.75,22.42
+    >>Go to the Kobold Cave. Collect the crates you find inside
     .complete 307,1 --Collect Miners' Gear (x4)
 step << Paladin/Warrior
     #sticky
@@ -1526,48 +1524,48 @@ step
 step
     #sticky
     #label Meat9
-    .goto Loch Modan,26.9,10.7,40,0
-    .goto Loch Modan,30.9,10.6,40,0
-    .goto Loch Modan,28.6,15.4,40,0
-    .goto Loch Modan,30.5,26.6,40,0
-    .goto Loch Modan,33.4,30.3,40,0
-    .goto Loch Modan,39.4,33.3,40,0
-    .goto Loch Modan,26.9,10.7,40,0
-    .goto Loch Modan,30.9,10.6,40,0
-    .goto Loch Modan,28.6,15.4,40,0
-    .goto Loch Modan,30.5,26.6,40,0
-    .goto Loch Modan,33.4,30.3,40,0
-    .goto Loch Modan,39.4,33.3,40,0
+    .goto Loch Modan,26.9,10.7,90,0
+    .goto Loch Modan,30.9,10.6,90,0
+    .goto Loch Modan,28.6,15.4,90,0
+    .goto Loch Modan,30.5,26.6,90,0
+    .goto Loch Modan,33.4,30.3,90,0
+    .goto Loch Modan,39.4,33.3,90,0
+    .goto Loch Modan,26.9,10.7,90,0
+    .goto Loch Modan,30.9,10.6,90,0
+    .goto Loch Modan,28.6,15.4,90,0
+    .goto Loch Modan,30.5,26.6,90,0
+    .goto Loch Modan,33.4,30.3,90,0
+    .goto Loch Modan,39.4,33.3,90,0
     .goto Loch Modan,26.9,10.7
     >>Kill Bears. Loot them for Meat
     .complete 418,2 --Bear Meat (3)
 step
     #sticky
     #label Ichor9
-    .goto Loch Modan,31.9,16.4,40,0
-    .goto Loch Modan,28.0,20.6,40,0
-    .goto Loch Modan,33.8,40.5,40,0
-    .goto Loch Modan,36.2,30.9,40,0
-    .goto Loch Modan,39.0,32.1,40,0
-    .goto Loch Modan,31.9,16.4,40,0
-    .goto Loch Modan,28.0,20.6,40,0
-    .goto Loch Modan,33.8,40.5,40,0
-    .goto Loch Modan,36.2,30.9,40,0
-    .goto Loch Modan,39.0,32.1,40,0
+    .goto Loch Modan,31.9,16.4,90,0
+    .goto Loch Modan,28.0,20.6,90,0
+    .goto Loch Modan,33.8,40.5,90,0
+    .goto Loch Modan,36.2,30.9,90,0
+    .goto Loch Modan,39.0,32.1,90,0
+    .goto Loch Modan,31.9,16.4,90,0
+    .goto Loch Modan,28.0,20.6,90,0
+    .goto Loch Modan,33.8,40.5,90,0
+    .goto Loch Modan,36.2,30.9,90,0
+    .goto Loch Modan,39.0,32.1,90,0
     .goto Loch Modan,31.9,16.4
     >>Kill Spiders. Loot them for Ichor
     .complete 418,3 --Spider Ichor (3)
 step
-    .goto Loch Modan,38.0,34.9,40,0
-    .goto Loch Modan,37.1,39.8,40,0
-    .goto Loch Modan,29.8,35.9,40,0
-    .goto Loch Modan,27.7,25.3,40,0
-    .goto Loch Modan,28.6,22.6,40,0
-    .goto Loch Modan,38.0,34.9,40,0
-    .goto Loch Modan,37.1,39.8,40,0
-    .goto Loch Modan,29.8,35.9,40,0
-    .goto Loch Modan,27.7,25.3,40,0
-    .goto Loch Modan,28.6,22.6,40,0
+    .goto Loch Modan,38.0,34.9,90,0
+    .goto Loch Modan,37.1,39.8,90,0
+    .goto Loch Modan,29.8,35.9,90,0
+    .goto Loch Modan,27.7,25.3,90,0
+    .goto Loch Modan,28.6,22.6,90,0
+    .goto Loch Modan,38.0,34.9,90,0
+    .goto Loch Modan,37.1,39.8,90,0
+    .goto Loch Modan,29.8,35.9,90,0
+    .goto Loch Modan,27.7,25.3,90,0
+    .goto Loch Modan,28.6,22.6,90,0
     .goto Loch Modan,38.0,34.9
     >>Kill Boars. Loot them for Intestines
     .complete 418,1 --Boar Intestines (3)
@@ -1613,11 +1611,10 @@ step
 step
     .goto Loch Modan,23.23,73.67
     .turnin 267 >> Turn in The Trogg Threat
-step << !Warlock !Paladin
+step << Warlock
     #som
     .hs >> Hearth to Thelsamar
 step << !Dwarf/!Paladin
-    #era << !Warlock
     .goto Loch Modan,33.93,50.95
     .fly >> Fly to Ironforge
 step << Dwarf Paladin
@@ -1636,8 +1633,6 @@ step << Dwarf Paladin
 step << !Warlock
     #som
     .hs >> Hearth to Ironforge
-step << Paladin
-    #era
 step << Warrior
     .goto Ironforge,65.89,88.43
     .trainer >> Train your class spells
@@ -1721,7 +1716,6 @@ step
     #era
     .goto Stormwind City,66.27,62.13
     .fly Westfall >> Fly to Westfall
-    
 step
     #som
     #softcore
@@ -1781,9 +1775,8 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 step << !Gnome !Dwarf
     #sticky
     #completewith next
-.goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.9,71.2
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
-
 step
     .goto Dun Morogh,29.9,71.2
     >>Speak to Sten Stoutarm
@@ -1815,14 +1808,13 @@ step
     .accept 234 >>Accept Coldridge Valley Mail Delivery
     .accept 183 >>Accept The Boar Hunter
 step
-    .goto Dun Morogh,22.2,72.5,40,0
-    .goto Dun Morogh,20.5,71.4,40,0
-    .goto Dun Morogh,21.1,69.0,40,0
-    .goto Dun Morogh,22.8,69.6,40,0
-    .goto Dun Morogh,22.2,72.5,40,0
-    .goto Dun Morogh,20.5,71.4,40,0
-    .goto Dun Morogh,21.1,69.0,40,0
-    .goto Dun Morogh,22.8,69.6,40,0
+    .goto Dun Morogh,22.2,72.5,100,0
+    .goto Dun Morogh,20.5,71.4,100,0
+    .goto Dun Morogh,21.1,69.0,100,0
+    .goto Dun Morogh,22.8,69.6,100,0
+    .goto Dun Morogh,22.2,72.5,100,0
+    .goto Dun Morogh,20.5,71.4,100,0
+    .goto Dun Morogh,21.1,69.0
     >>Kill Boars in the area
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
@@ -1838,8 +1830,8 @@ step
     .goto Dun Morogh,22.7,79.3
     .goto Dun Morogh,20.9,75.7,0
     .goto Dun Morogh,27.3,79.7,0
->>Kill Frostmane Troll Whelps
-.complete 182,1 --Kill Frostmane Troll Whelp (x14)
+    >>Kill Frostmane Troll Whelps
+    .complete 182,1 --Kill Frostmane Troll Whelp (x14)
 step 
     .xp 4 >> Grind to 4
 step
@@ -1875,23 +1867,23 @@ step
     .goto Dun Morogh,22.7,79.3
     .goto Dun Morogh,20.9,75.7,0
     .goto Dun Morogh,27.3,79.7,0
->>Kill Frostmane Troll Whelps
-.complete 182,1 --Kill Frostmane Troll Whelp (x14)
+    >>Kill Frostmane Troll Whelps
+    .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .goto Dun Morogh,25.1,75.7
 step
     .goto Dun Morogh,25.0,75.9
     .turnin 182 >>Turn in The Troll Cave
     .accept 218 >>Accept The Stolen Journal
 step
-    .goto Dun Morogh,26.8,79.9,30,0
-    .goto Dun Morogh,29.0,79.0,15,0
-.goto Dun Morogh,30.6,80.3
+    .goto Dun Morogh,26.8,79.9,40,0
+    .goto Dun Morogh,29.0,79.0,25,0
+    .goto Dun Morogh,30.6,80.3
     >>Enter the Troll cave. Kill Grik'nir, then loot him for Grelin's journal
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
 step
-#completewith next
-.goto Dun Morogh,28.4,79.7,30,0
-.goto Dun Morogh,26.8,79.6,20 >>Run back out the cave
+    #completewith next
+    .goto Dun Morogh,28.4,79.7,35,0
+    .goto Dun Morogh,26.8,79.6,25 >>Run back out the cave
 step
     .goto Dun Morogh,25.1,75.7
     .turnin 218 >> Turn in The Stolen Journal
@@ -1907,6 +1899,7 @@ step
     .accept 2160 >>Accept Supplies to Tannok
 step
     .goto Dun Morogh,34.1,71.6,20,0
+    .goto Dun Morogh,35.7,66.0,0
     .goto Dun Morogh,35.7,66.0,20 >>Go through the tunnel
 ]],"Dwarf")
 
@@ -1926,69 +1919,62 @@ step
 step
     #label ribs1
     .goto Dun Morogh,46.8,52.4
-    >>Speak to Ragnar Thunderbrew
     .accept 384 >>Accept Beer Basted Boar Ribs
 step
     .goto Dun Morogh,47.2,52.2
-    >>Speak to Tannok Frosthammer
     .turnin 2160 >>Turn in Supplies to Tannok
 step
     .goto Dun Morogh,46.0,51.7
-    >>Speak to Tharek Blackstone
     .accept 400 >>Accept Tools for Steelgrill
 step
     .goto Dun Morogh,49.5,48.3
-    >>Speak to Pilot Bellowfiz
     .accept 317 >>Accept Stocking Jetsteam
 step
     .goto Dun Morogh,49.6,48.5
-    >>Speak to Pilot Stonegear
     .accept 313 >>Accept The Grizzled Den
 step
     .goto Dun Morogh,50.1,49.4
-    >>Speak to Loslor Rudge
     .accept 5541 >>Accept Ammo for Rumbleshot
 step
     .goto Dun Morogh,50.4,49.1
-    >>Speak to Beldin Steelgrill
     .turnin 400 >>Turn in Tools for Steelgrill
 step
     #sticky
-#completewith BoarRibs2
->> Kill boars to get Boar Ribs for later
-.collect 2886,6 --Collect Crag Boar Rib (x6)
+    #completewith BoarRibs2
+    >> Kill boars to get Boar Ribs for later
+    .collect 2886,6 --Collect Crag Boar Rib (x6)
 step
-.goto Dun Morogh,52.0,50.1,40,0
-.goto Dun Morogh,51.5,53.9,40,0
-.goto Dun Morogh,50.1,53.9,40,0
-.goto Dun Morogh,49.9,50.9,40,0
-.goto Dun Morogh,48.0,49.5,40,0
-.goto Dun Morogh,48.2,46.9,40,0
-.goto Dun Morogh,43.5,52.5,40,0
-.goto Dun Morogh,52.0,50.1,40,0
-.goto Dun Morogh,51.5,53.9,40,0
-.goto Dun Morogh,50.1,53.9,40,0
-.goto Dun Morogh,49.9,50.9,40,0
-.goto Dun Morogh,48.0,49.5,40,0
-.goto Dun Morogh,48.2,46.9,40,0
-.goto Dun Morogh,43.5,52.5,40,0
-.goto Dun Morogh,52.0,50.1,40,0
-.goto Dun Morogh,51.5,53.9,40,0
-.goto Dun Morogh,50.1,53.9,40,0
-.goto Dun Morogh,49.9,50.9,40,0
-.goto Dun Morogh,48.0,49.5,40,0
-.goto Dun Morogh,48.2,46.9,40,0
-.goto Dun Morogh,43.5,52.5,40,0
-.goto Dun Morogh,52.0,50.1,40,0
-.goto Dun Morogh,51.5,53.9,40,0
-.goto Dun Morogh,50.1,53.9,40,0
-.goto Dun Morogh,49.9,50.9,40,0
-.goto Dun Morogh,48.0,49.5,40,0
-.goto Dun Morogh,48.2,46.9,40,0
-.goto Dun Morogh,43.5,52.5,40,0
+    .goto Dun Morogh,52.0,50.1,100,0
+    .goto Dun Morogh,51.5,53.9,100,0
+    .goto Dun Morogh,50.1,53.9,100,0
+    .goto Dun Morogh,49.9,50.9,100,0
+    .goto Dun Morogh,48.0,49.5,100,0
+    .goto Dun Morogh,48.2,46.9,100,0
+    .goto Dun Morogh,43.5,52.5,100,0
+    .goto Dun Morogh,52.0,50.1,100,0
+    .goto Dun Morogh,51.5,53.9,100,0
+    .goto Dun Morogh,50.1,53.9,100,0
+    .goto Dun Morogh,49.9,50.9,100,0
+    .goto Dun Morogh,48.0,49.5,100,0
+    .goto Dun Morogh,48.2,46.9,100,0
+    .goto Dun Morogh,43.5,52.5,100,0
+    .goto Dun Morogh,52.0,50.1,100,0
+    .goto Dun Morogh,51.5,53.9,100,0
+    .goto Dun Morogh,50.1,53.9,100,0
+    .goto Dun Morogh,49.9,50.9,100,0
+    .goto Dun Morogh,48.0,49.5,100,0
+    .goto Dun Morogh,48.2,46.9,100,0
+    .goto Dun Morogh,43.5,52.5,100,0
+    .goto Dun Morogh,52.0,50.1,0
+    .goto Dun Morogh,51.5,53.9,0
+    .goto Dun Morogh,50.1,53.9,0
+    .goto Dun Morogh,49.9,50.9,0
+    .goto Dun Morogh,48.0,49.5,0
+    .goto Dun Morogh,48.2,46.9,0
+    .goto Dun Morogh,43.5,52.5
     >>Get the items for Stocking Jetsteam
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
-.complete 317,2 --Collect Thick Bear Fur (x2)
+    .complete 317,2 --Collect Thick Bear Fur (x2)
 step
     .goto Dun Morogh,49.4,48.4
     >>Speak to Pilot Bellowfiz
@@ -2012,27 +1998,17 @@ step << Hunter
     >>Buy the level 4 gun upgrade, skip this step if you don't have the money for it
     .collect 2509,1
 step
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-    .goto Dun Morogh,42.4,53.6
+    .goto Dun Morogh,42.25,53.68,40,0
+    .goto Dun Morogh,41.07,49.04,50,0
+    .goto Dun Morogh,42.25,53.68
     >> Go into the cave. Kill Wendigos. Loot them for their Manes
     .complete 313,1 --Collect Wendigo Mane (x8)
 step
     .xp 7
 step
->>Grind some mobs en route
-    .goto Dun Morogh,35.2,56.4,50,0
-    .goto Dun Morogh,36.0,52.0,50,0
+    >>Grind some mobs en route
+    .goto Dun Morogh,35.2,56.4,60,0
+    .goto Dun Morogh,36.0,52.0,60,0
     .goto Dun Morogh,34.6,51.7
     .accept 312 >> Accept Tundra MacGrann's Stolen Stash
 step
@@ -2044,8 +2020,8 @@ step
     .goto Dun Morogh,34.6,51.6
     .turnin 312 >>Turn in Tundra MacGrann's Stolen Stash
 step
-.goto Dun Morogh,30.4,45.8
-.vendor >> vendor trash
+    .goto Dun Morogh,30.4,45.8
+    .vendor >> vendor trash
 step
     .goto Dun Morogh,30.2,45.8
     >>Speak to Rejold Barleybrew
@@ -2060,7 +2036,7 @@ step
 step
     #completewith next
     >> Kill Bears, Boars and Leopards
-.complete 319,1 --Kill Ice Claw Bear (x6)
+    .complete 319,1 --Kill Ice Claw Bear (x6)
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .complete 319,3 --Kill Snow Leopard (x8)
 step << Hunter
@@ -2122,7 +2098,7 @@ step
     .goto Dun Morogh,62.3,50.3,12,0
     .goto Dun Morogh,62.2,49.4,8 >>Run up this part of the mountain
 step
-.goto Dun Morogh,62.6,46.1
+    .goto Dun Morogh,62.6,46.1
     >>Kill Vagash. Loot him for his Fang, this quest is HARD, try to kite him to the guard parked at the intersection
     .complete 314,1 --Collect Fang of Vagash (x)
     .link https://www.youtube.com/watch?v=6PfhYU-9hoA >> Click here for video reference
@@ -2134,12 +2110,12 @@ step
     .goto Dun Morogh,83.8,39.2
     .accept 419 >> Accept The Lost Pilot
 step
-.goto Dun Morogh,79.7,36.2
+    .goto Dun Morogh,79.7,36.2
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
 step
     >>Kill Mangeclaw. Loot him for his Claw, this quest can be hard, kite him to the guard parked next to the quest giver
-.goto Dun Morogh,80.0,36.4
+    .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
     .goto Dun Morogh,83.9,39.2
@@ -2148,20 +2124,22 @@ step
     #hardcore
     .hs >> Hearth to Kharanos
 step
+    #softcore
+    .goto Dun Morogh,47.11,55.01
     .deathskip >> Die on purpose and respawn at Kharanos
 step
     #era
     .goto Dun Morogh,45.8,49.4
     .accept 412 >> Accept Operation Recombobulation
 step
-#completewith next
-.goto Dun Morogh,43.1,45.0,20,0
-.goto Dun Morogh,42.1,45.4,20 >> Run up the ramp to Shimmerweed
+    #completewith next
+    .goto Dun Morogh,43.1,45.0,20,0
+    .goto Dun Morogh,42.1,45.4,20 >> Run up the ramp to Shimmerweed
 step
-    .goto Dun Morogh,40.9,45.3,30,0
-    .goto Dun Morogh,41.5,43.6,30,0
-    .goto Dun Morogh,39.7,40.0,30,0
-    .goto Dun Morogh,42.1,34.3,30,0
+    .goto Dun Morogh,40.9,45.3,50,0
+    .goto Dun Morogh,41.5,43.6,50,0
+    .goto Dun Morogh,39.7,40.0,50,0
+    .goto Dun Morogh,42.1,34.3,50,0
     .goto Dun Morogh,39.5,43.0
     .goto Dun Morogh,41.5,36.0
     >>Clear mobs in this area. Be careful if you need to clear the middle camp. You can pull the mobs in the huts and line of sight (LoS) them behind the huts if you need 2 more mobs. If you get unlucky, run to the other area
@@ -2183,27 +2161,22 @@ step
     #requires return
     >>Enter the troll cave
     >>Be very careful not to die here
-    .goto Dun Morogh,22.3,50.7,20,0
-    .goto Dun Morogh,22.5,51.5,20,0
+    .goto Dun Morogh,22.3,50.7,30,0
+    .goto Dun Morogh,22.5,51.5,30,0
     .goto Dun Morogh,22.7,52.0
     .complete 287,1 --Fully explore Frostmane Hold (1)
     .complete 287,2 --Frostmane Headhunter (5)
 step
     #era
-    .goto Dun Morogh,27.2,43.0,40,0
-    .goto Dun Morogh,24.8,39.3,40,0
-    .goto Dun Morogh,25.6,43.4,40,0
-    .goto Dun Morogh,24.3,44.0,40,0
-    .goto Dun Morogh,25.4,45.4,40,0
-.goto Dun Morogh,27.2,43.0,40,0
-    .goto Dun Morogh,24.8,39.3,40,0
-    .goto Dun Morogh,25.6,43.4,40,0
-    .goto Dun Morogh,24.3,44.0,40,0
-    .goto Dun Morogh,25.4,45.4,40,0
-    .goto Dun Morogh,27.2,43.0,0
-    >>Kill Leper Gnomes. Loot them for Gears and Cogs
-    .complete 412,2 --Collect Gyromechanic Gear (x8)
+    .goto Dun Morogh,27.2,43.0,80,0
+    .goto Dun Morogh,24.8,39.3,80,0
+    .goto Dun Morogh,25.6,43.4,80,0
+    .goto Dun Morogh,24.3,44.0,80,0
+    .goto Dun Morogh,25.4,45.4,80,0
+    .goto Dun Morogh,25.00,43.50
+    >>Kill Leper Gnomes. Loot them for Cogs and Gears
     .complete 412,1 --Collect Restabilization Cog (x8)
+    .complete 412,2 --Collect Gyromechanic Gear (x8)
 step
     #hardcore
     #completewith next
@@ -2222,16 +2195,16 @@ step
     .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
 step
     #softcore
-    .goto Dun Morogh,33.0,27.2,15,0
-    .goto Dun Morogh,33.0,25.2,15,0
+    .goto Dun Morogh,33.0,27.2,25,0
+    .goto Dun Morogh,33.0,25.2,25,0
     .goto Wetlands,11.6,43.4,60,0
-.deathskip >>Keep running straight north, Jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
+    .deathskip >>Keep running straight north, Jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
 step
     #softcore
-.goto Wetlands,12.7,46.7,30 >> Swim to shore
+    .goto Wetlands,12.7,46.7,80,0 >> Swim to shore
 step
     #softcore
-.goto Wetlands,9.5,59.7
+    .goto Wetlands,9.5,59.7
     .fp Menethil>> Get the Menethil Harbor flight path
 step
     #softcore
@@ -2239,25 +2212,21 @@ step
     .hs >> Hearth back to Kharanos
 step
     .goto Dun Morogh,46.7,53.7
-    >>Speak to Senir Whitebeard
     .turnin 287 >>Turn in Frostmane Hold
     .accept 291 >>Accept The Reports
 step
     #era
     .goto Dun Morogh,45.9,49.4
-    >>Speak to Razzle Sprysprocket
     .turnin 412 >>Turn in Operation Recombobulation
 step
     .goto Dun Morogh,49.4,48.3
-    >>Speak to Pilot Bellowfiz
     .turnin 320 >>Turn in Return to Bellowfiz
 step
     .goto Dun Morogh,45.8,53.0
-    >>Speak to Grif Wildheart
     .accept 6064 >>Accept Taming the Beast
 step
     .goto Dun Morogh,48.3,56.9
->>Click the taming rod in your bag on a Large Crag Boar. Try to do it at max range (30 yards)
+    >>Click the taming rod in your bag on a Large Crag Boar. Try to do it at max range (30 yards)
     .complete 6064,1 --Tame a Large Crag Boar (1)
 step
     .goto Dun Morogh,45.8,53.0
@@ -2265,7 +2234,7 @@ step
     .accept 6084 >>Accept Taming the Beast
 step
     .goto Dun Morogh,49.4,59.4
->>Click the taming rod in your bag on a Snow Leopard. Try to do it at max range (30 yards)
+    >>Click the taming rod in your bag on a Snow Leopard. Try to do it at max range (30 yards)
     .complete 6084,1 --Tame a Snow Leopard (1)
 step
     .goto Dun Morogh,45.8,53.0
@@ -2273,7 +2242,7 @@ step
     .accept 6085 >>Accept Taming the Beast
 step
     .goto Dun Morogh,50.4,59.7
->>Click the taming rod in your bag on an Ice Claw Bear. Try to do it at max range (30 yards)
+    >>Click the taming rod in your bag on an Ice Claw Bear. Try to do it at max range (30 yards)
     .complete 6085,1 --Tame an Ice Claw Bear (1)
 step
     .goto Dun Morogh,45.8,53.0
@@ -2286,7 +2255,7 @@ step
     .goto Dun Morogh,69.1,56.3
     .accept 432 >> Accept Those Blasted Troggs!
 step
-    .goto Dun Morogh,70.7,56.4,40,0
+    .goto Dun Morogh,70.7,56.4,50,0
     .goto Dun Morogh,70.62,52.39
     >>Kill Troggs in the cave
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
@@ -2298,10 +2267,12 @@ step
     .goto Dun Morogh,68.7,56.0
     .turnin 433 >> Turn in The Public Servant
 step
+    .goto Dun Morogh,68.4,54.5
+    .train 2550 >> Train Cooking from Ghilm
+step
     .goto Dun Morogh,86.3,48.8
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
-
 ]],"Dwarf Hunter")
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
@@ -2326,7 +2297,6 @@ step
 step
     .goto Loch Modan,34.82,49.28
     .accept 418 >> Accept Thelsamar Blood Sausages
-    
 step
     .home >> Set your HS to Loch Modan 
 step
@@ -2446,9 +2416,6 @@ step
     .goto Loch Modan,33.93,50.95
      #completewith next
     .fly Ironforge>> Fly to Ironforge
-step
-    .goto Ironforge,60.0,36.8
-    .train 2550 >> Make sure to train cooking in Ironforge
 step
     .goto Ironforge,74.64,11.74
     .turnin 301 >> Turn in Report to Ironforge
