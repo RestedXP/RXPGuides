@@ -24,7 +24,7 @@ step << Warrior/Shaman
     #sticky
     #completewith next
     +Kill Boars for 10c+ of vendor trash
-    .goto Durotar,44.2,65.9,60,0
+    .goto Durotar,44.2,65.9,40,0
 step << Warrior/Shaman
     .goto Durotar,42.6,67.3
     .vendor >> vendor trash. Vendor armor if less than 10c
@@ -377,8 +377,8 @@ step << Orc Warrior
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
     .goto Durotar,56.5,73.1
-    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Traxexir. Otherwise, skip this step (you'll come back later)
-    .collect 2488,1 --Collect Gladius
+    >>Repair your weapon. If you have enough money (5s 40c) buy a Tomahawk from Traxexir. Otherwise, skip this step (you'll come back later)
+    .collect 2490,1 --Collect Tomahawk
 step << Hunter
     .goto Durotar,56.5,73.1
     >>Repair your weapon. If you have enough money (2s 85c) buy a Hornwood Recurve Bow from Traxexir. Otherwise, skip this step (you'll come back later)
@@ -442,9 +442,9 @@ step << Orc Warrior
 step << Troll Warrior
     #softcore
     .goto Durotar,56.5,73.1
-    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Traxexir. Otherwise, skip this step (you'll come back later)
+    >>Repair your weapon. If you have enough money (5s 40c) buy a Tomahawk from Traxexir. Otherwise, skip this step (you'll come back later)
 	>>You can talk to him from outside
-    .collect 2488,1 --Collect Gladius
+    .collect 2490,1 --Collect Tomahawk
 step << Hunter
     #softcore
     .goto Durotar,56.5,73.1
@@ -493,8 +493,8 @@ step << Orc Warrior
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
     .goto Durotar,52.0,40.5
-    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Uhgar. Otherwise, skip this step (you'll come back later)
-    .collect 2488,1 --Collect Gladius
+    >>Repair your weapon. If you have enough money (5s 40c) buy a Tomahawk from Uhgar. Otherwise, skip this step (you'll come back later)
+    .collect 2490,1 --Collect Tomahawk
 step << Hunter
 	#completewith next
     .goto Durotar,53.0,41.0
@@ -598,8 +598,8 @@ step << Orc Warrior
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
     .goto Durotar,52.0,40.5
-    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Uhgar. Otherwise, skip this step (you'll come back later)
-    .collect 2488,1 --Collect Gladius
+    >>Repair your weapon. If you have enough money (5s 40c) buy a Tomahawk from Uhgar. Otherwise, skip this step (you'll come back later)
+    .collect 2490,1 --Collect Tomahawk
 step << Hunter
 	#completewith next
     .goto Durotar,53.0,41.0
