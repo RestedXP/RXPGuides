@@ -401,10 +401,17 @@ step << Priest
     >>Skip this step if you already bought a wand, or can get one cheap from the AH
     .collect 2589,60 --Linen Cloth (60)
 step
+	#era
     .unitscan Warlord Kolkanis
     #sticky
     #completewith Bonfire
     +If the rare is up, kill it when you are level 7. Be sure to use the Cactus Apple Surprise for +2 stam and use the Healing Potion from earlier.
+step
+	#som
+    .unitscan Warlord Kolkanis
+    #sticky
+    #completewith Bonfire
+    +If the rare is up, kill it when you are level 7. Be sure to use the Healing Potion from earlier.
 step
     >>Burn the scroll inside the tent, on the ground
     .goto Durotar,49.8,81.2
@@ -524,7 +531,7 @@ step << Warrior/Rogue/Hunter
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
-    .vendor >> Buy up to 10 level 5 food
+    .vendor >> Buy up to 20 level 5 food
 step << Priest
     .goto Durotar,54.3,42.9
     .turnin 5649 >> In Favor of Spirituality
