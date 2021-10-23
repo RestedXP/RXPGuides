@@ -1034,6 +1034,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #hardcore
     >>Run back to The Crossroads
+    .goto The Barrens,51.5,30.1
     .turnin 848 >>Turn in Fungal Spores
     .accept 853 >>Accept Apothecary Zamah
 step << Warrior/Shaman
@@ -1200,8 +1201,6 @@ step << Warrior/Shaman
     #requires Workers
     .xp 11+7150 >> Grind to 7150+/8700xp
 step << Warrior/Shaman
-    #sticky
-    #completewith next
     >>Look for Morin Cloudstalker. He patrols along the eastern road
     .goto Mulgore,51.1,58.6,70,0
     .goto Mulgore,59.7,62.5,70,0
@@ -1272,13 +1271,14 @@ step << Warlock
     .complete 1501,1 --Tablet of Verga (1)
 step
     >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave.
-    >>Use sticky glue on the Voidwalker to run out of its range and reduce your damage taken, and Healing Potions to restore health. Use LoS (line of sight) to avoid Gazz'uz's Shadow Bolts
+    >>Use sticky glue on the Voidwalker to avoid being hit, and Healing Potions to restore health. Use LoS (line of sight) to avoid Gazz'uz's Shadow Bolts
     >>You can run to bodies of water found within the cave to evade the Voidwalker after killing Gazz'uz	
     >>Be careful as he is VERY difficult. You can skip this quest if you need
     .goto Durotar,51.8,10.0
     .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
 	.unitscan Gazz'uz
+--N Maybe too long?
 step
     #requires Collars2
     .goto Durotar,56.4,20.1
@@ -1384,6 +1384,18 @@ step << Warlock
     .goto Orgrimmar,48.3,45.3
     .turnin 1504 >>Turn in The Binding
 step
+	#softcore
+	#completewith next
+    .goto Orgrimmar,52.76,48.95
+	.deathskip >> Go into Ragefire Chasm in the Cleft of Shadow. Die to the mobs inside, then respawn at the Spirit Healer
+step
+	#softcore
+    .goto Durotar,41.6,18.7
+    .accept 812 >>Accept Need for a Cure
+    .turnin 812 >>Turn in Need for a Cure
+step
+	#hardcore
+	>>Run out of Orgrimmar
     .goto Durotar,41.6,18.7
     .accept 812 >>Accept Need for a Cure
     .turnin 812 >>Turn in Need for a Cure
