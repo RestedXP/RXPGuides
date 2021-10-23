@@ -1339,10 +1339,6 @@ step << Undead
     .turnin 6321 >>Turn in Supplying the Sepulcher
     .accept 6323 >>Accept Ride to the Undercity
     .fp >> Get The Sepulcher Flight Path
-step << !Undead
-    .goto Silverpine Forest,45.62,42.60
-    >>DO NOT go Undercity yet
-    .fp >> Get The Sepulcher Flight Path
 step
     >>Click on the Boat
     .goto Silverpine Forest,58.39,34.79
@@ -1409,6 +1405,7 @@ step << Undead
     .hs >> Hearth to Undercity
 step << !Undead Rogue
    .goto Silverpine Forest,45.62,42.60
+    .fp >> Get The Sepulcher Flight Path
     .fly Undercity >> Fly to Undercity
 step << Undead
     .goto Undercity,61.48,41.81
