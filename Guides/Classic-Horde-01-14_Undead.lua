@@ -1144,9 +1144,6 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
 #next 12-17 The Barrens
     
 step << !Undead Rogue
-    #sticky
-    .abandon 1859 >> Abandon Therzok
-step << !Undead Rogue
     .goto Tirisfal Glades,61.87,65.02,40 >> Run to Undercity
 step << !Undead Rogue
     .goto Tirisfal Glades,61.81,74.42,30 >> Run to the Elevator room
@@ -1261,6 +1258,7 @@ step
     .accept 422 >>Accept Arugal's Folly
     .goto Silverpine Forest,52.82,28.58
 step
+    #era
     #sticky
     #completewith Nightlash
     >>Kill Bears. Loot them for their hearts
