@@ -133,7 +133,8 @@ step << Hunter
     .goto Durotar,42.6,67.3
     .vendor >>vendor trash. Buy arrows until your Quiver is full (1000 arrows)
 step
-    .goto Durotar,42.7,67.3
+    #era
+	.goto Durotar,42.7,67.3
     .accept 4402 >>Accept Galgar's Cactus Apple Surprise
 step << Orc Hunter
     .goto Durotar,42.8,69.3
@@ -168,7 +169,8 @@ step
     .goto Durotar,44.6,68.7
     .accept 5441 >>Accept Lazy Peons
 step
-    #sticky
+       #era
+	#sticky
     #completewith Apples
     >>Loot Cactuses that you see with apples on them
     .complete 4402,1 --Cactus Apple (10)
@@ -199,12 +201,14 @@ step <<!Warlock
     .goto Durotar,39.8,63.5
     .complete 789,1 --Scorpid Worker Tail (10)
 step
+    #era
     #label Apples
     .goto Durotar,39.8,63.5,2000,0
 step
     #label Peons
     .goto Durotar,39.8,63.5,2000,0
 step
+    #era
     .goto Durotar,44.0,65.3
     >>Finish looting the Cactus Apples
     .complete 4402,1 --Cactus Apple (10)
@@ -213,6 +217,7 @@ step
     >>Finish waking the peons around the trees. Backtrack if you are struggling
     .complete 5441,1 --Peons Awoken (5)
 step
+    #era
     .goto Durotar,42.7,67.2
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
 step << !Mage !Priest !Warlock
