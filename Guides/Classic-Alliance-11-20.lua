@@ -135,14 +135,14 @@ step
     .goto Darkshore,40.17,28.76,0
      >> Kill darkshore threshers in the sea
     .complete 1001,1
-step <<  !NightElf
+step << !NightElf
     .goto Felwood,20.94,1.49
-     >> Enter the 1st ship by the hole in the hull
+    >> Enter the 1st ship by the hole on the hull, loot the chest underwater at the bottom floor of the ship
     >>Be careful as this quest can be difficult
     .complete 982,1
-step <<  !NightElf
+step << !NightElf
     .goto Darkshore,39.63,27.45
-     >> Enter the 2nd ship by the hole in the hull
+    >> Enter the 2nd ship by the hole on the hull, loot the chest located in the ship at the exact place where you found the first chest
     >>Be careful as this quest can be difficult
     .complete 982,2
 step
@@ -354,13 +354,13 @@ step << !Druid !Hunter
     .turnin 957 >> Turn in Bashal'Aran
 step << NightElf
     .goto Felwood,20.94,1.49
-     >> Enter the 1st ship by the hole on the hull and loot the lockbox inside the sunken ship
-     >>Be careful as this quest can be difficult
+    >> Enter the 1st ship by the hole on the hull, loot the chest underwater at the bottom floor of the ship
+    >>Be careful as this quest can be difficult
     .complete 982,1
 step << NightElf
     .goto Darkshore,39.63,27.45
-     >> Enter the 2nd ship by the hole on the hull
-     >>Be careful as this quest can be difficult
+    >> Enter the 2nd ship by the hole on the hull, loot the chest located in the ship at the exact place where you found the first chest
+    >>Be careful as this quest can be difficult
     .complete 982,2
 step
     #sticky
@@ -1264,7 +1264,7 @@ step
     .goto Darkshore,33.59,40.36,0
     .goto Darkshore,30.94,45.79,0
     .goto Darkshore,33.03,48.13,0
-     >> Kill Darkshore Threshers. Loot them for their Eyes
+     >> Start working on Darkshore Threshers.
     .complete 1001,1
 step
     #completewith next
@@ -1315,12 +1315,12 @@ step
     .complete 1001,1
 step
     .goto Felwood,20.94,1.49
-    >> Enter the 1st ship by the hole on the hull
+    >> Enter the 1st ship by the hole on the hull, loot the chest underwater at the bottom floor of the ship
     >>Be careful as this quest can be difficult
     .complete 982,1
 step
     .goto Darkshore,39.63,27.45
-    >> Enter the 2nd ship by the hole on the hull
+    >> Enter the 2nd ship by the hole on the hull, loot the chest located in the ship at the exact place where you found the first chest
     >>Be careful as this quest can be difficult
     .complete 982,2
 step
@@ -1343,7 +1343,7 @@ step
     .complete 1002,1
 --N mushrooms
 step
-    #completewith Ameth
+    #completewith bears1
      >> Kill Rabid Thistle Bears as you quest through Darkshore
     .complete 2138,1
 --N bears
@@ -1355,6 +1355,7 @@ step
      >> Use the Empty Sampling Tube at the base of the waterfall
     .complete 4762,1
 step
+    #label bears1
     .goto Felwood,27.70,10.03
     .turnin 954 >> Turn in Bashal'Aran
     .accept 955 >> Accept Bashal'Aran
@@ -1376,18 +1377,18 @@ step
     .accept 957 >> Accept Bashal'Aran
 step
     #completewith next
-    >>Start collecting small eggs for leveling cooking later. You'll need 10 cooking skill for a quest in Auberdine
+    >>Kill Owlbeasts and collect small eggs for leveling cooking later.
     .collect 6889,9,2178
 step
     .goto Felwood,31.29,24.14
      >> Run up to The Red Crystal in the mountains
      .complete 4811,1
 step
-    #sticky
-    #completewith ezstrider
-    >> Make sure you have at least 9 small eggs to level cooking 
+    .goto Darkshore,44.4,51.2
+    >>Kill Owlbeasts and make sure you have at least 9 small eggs to level cooking 
     >>Skip this step if you already have 10 points in cooking.
     .collect 6889,9,2178
+    
 step
     #label Ameth
     .goto Darkshore,40.30,59.70
@@ -1611,7 +1612,9 @@ step
     .accept 4727 >> Accept Beached Sea Turtle
 step
     #completewith next
-     >> Kill Reef Crawlers/Encrusted Tide Crawlers. Loot them for Crab Chunks
+    .goto Darkshore,53.0,18.4,0
+    .goto Darkshore,50.4,22.6,0
+     >> Kill Reef Crawlers/Encrusted Tide Crawlers along the coast. Loot them for Crab Chunks
     .complete 1138,1
 step
     .goto Winterspring,1.42,26.89
@@ -1998,7 +2001,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #name 19-20 Redridge
 #next 20-21 Darkshore/Ashenvale
 step
-    #completewith FlyAndy
+    #completewith start
     .goto Stormwind City,55.21,7.04
     .vendor >> Buy a Bronze Tube if you haven't
     >>This is a limited supply item, skip this step if the npc doesn't have it
@@ -2006,46 +2009,65 @@ step
     .bronzetube 
 step << Warlock/Priest
     #completewith next
-     >>Go in the building. Buy a Dusk Wand if it's an upgrade
+     >>Go in the building. Buy a Burning Wand if it's an upgrade
+     >>It's important to buy a non-shadow wand, you'll have to deal with mobs resistant to shadow damage later
     .goto Stormwind City,42.65,67.16,14,0
     .goto Stormwind City,42.84,65.14
-    .collect 5211,1 --Dusk Wand (1)
-step << Human Warlock
+    .collect 5210,1
+step << Warlock
+    #era << !Human
     #completewith next
     .goto Stormwind City,29.2,74.0,20,0
     .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
-step << Human Warlock
+step << Warlock
+    #era << !Human
     .goto Stormwind City,26.11,77.20
     .trainer >> Train your class spells
-step << Human Mage
+step << Mage
+    #era << !Human
     .goto Stormwind City,37.69,82.09,10 >> Go up the tower, then through the portal
     .trainer >> Train your class spells
-step << Human Paladin
+step << Paladin
+    #era << !Human
     .goto Stormwind City,38.68,32.85
     .trainer >> Train your class spells
-step << Human Priest
+step << Priest !NightElf
+    #era << !Human
     .goto Stormwind City,38.54,26.86
     .trainer >> Train your class spells
-step << Human Rogue
+step << Rogue !NightElf
+    #era << !Human
     .goto Stormwind City,74.64,52.82
     .trainer >> Train your class spells
-step << Human Warrior
+step << Warrior !NightElf
+    #era << !Human
     >>Enter the Command Center
     .goto Stormwind City,74.91,51.55,20,0
     .goto Stormwind City,78.67,45.80
     .trainer >> Go upstairs. Train your class spells
-step << NightElf/Dwarf/Gnome
+step << !Human
     .goto Stormwind City,57.0,57.6
      .train 201 >> Train 1h swords << Mage/Rogue
      .train 1180 >> Train daggers << Mage/Druid
-     .train 202 >> Train 2h swords << Warrior
+     .train 202 >> Train 2h swords << Warrior/Paladin
+step << !Human
+     #completewith start
+     .goto Stormwind City,66.2,62.4
+    .fp Stormwind >> Get the Stormwind City flight path if you haven't
+step << !Human
+    #som << !NightElf
+    .goto Stormwind City,73.2,92.1
+    .zone Elwynn Forest >> Leave Stormwind through the main gate
 step << !Human Warrior
+    #som << !NightElf
     .goto Elwynn Forest,41.09,65.77
     .trainer >> Train your class spells
 step << !Human Paladin
+    #som
     .goto Elwynn Forest,41.10,66.04
     .trainer >> Train your class spells
 step << !Human Mage/Priest/Rogue
+    #som << !NightElf
     >>Go into the inn, then go upstairs
     .goto Elwynn Forest,43.17,65.70,20,0
     .goto Elwynn Forest,43.80,66.47,20,0
@@ -2054,28 +2076,24 @@ step << !Human Mage/Priest/Rogue
     .goto Elwynn Forest,43.87,65.94 << Rogue
     .trainer >> Train your class spells
 step << !Human Warlock
+    #som
     >>Go into the inn, then go into the basement
     .goto Elwynn Forest,43.17,65.70,20,0
     .goto Elwynn Forest,44.05,66.05,20,0
     .goto Elwynn Forest,44.39,66.24
     .trainer >> Train your class spells
 step << !Human
-    #label FlyAndy
-     #completewith next
-     .goto Stormwind City,66.2,62.4
-    .fp Stormwind >> Get the Stormwind City flight path if you haven't
-step << !Human
+    #som << !NightElf
     #completewith redridge1
     .goto Elwynn Forest,65.21,69.71
     >>Head to the Tower of Azora
     .accept 94 >> Accept A Watchful Eye
-    >>SKIP THIS STEP if you have the Redridge FP, just fly to redridge instead
-    >>If you have the Redridge FP, train your class spells in Stormwind
-step << Human
-    #label FlyAndy
+step << !NightElf
+    #era << !Human
     .goto Stormwind City,66.27,62.13
     .fly Redridge >>Fly to Redridge Mountains
 step << !Human
+    #som << !NightElf
     #label redridge1
     .goto Redridge Mountains,15.27,71.45
     .zone Redridge Mountains >> Head to Redridge Mountains

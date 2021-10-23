@@ -316,7 +316,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 		end
 		return
 	elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
-		C_Timer.After(1, function() RXP_:LoadGuide(RXP_.currentGuide) end)
+		C_Timer.After(1, function() RXP_.ReloadGuide() end)
 	elseif event == "TRAINER_SHOW" then
 		self:SetScript("OnUpdate",trainerFrameUpdate)
 		trainerUpdate = GetTime()
@@ -548,7 +548,7 @@ function RXP_.RenderFrame()
     RXP_.arrowFrame.texture:SetTexture(RXP_.GetTexture("rxp_navigation_arrow-1"))
     RXP_.UpdateScrollBar()
     if RXP_.currentGuide then
-        RXP_:LoadGuide(RXP_.currentGuide)
+        RXP_.ReloadGuide()
     end
 end
 
@@ -1665,6 +1665,10 @@ function RXP_:LoadGuide(guide,OnLoad)
 	RXP_.SetStep(RXPCData.currentStep)
 end
 
+function RXP_.ReloadGuide()
+    return RXP_:LoadGuide(RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName))
+end
+
 function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 	--print(type(stepn),stepn)
 	if RXP_.stepPos[0] and ((not self and stepn) or (self and self.step)) then
@@ -2085,7 +2089,7 @@ function RXP_.CreateOptionsPanel()
         button:SetScript("PostClick",function(self)
             RXPCData.SoM = self:GetChecked()
             RXP_.GenerateMenuTable()
-            RXP_:LoadGuide(RXP_.currentGuide)
+            RXP_.ReloadGuide()
         end)
         button:SetChecked(RXPCData.SoM)
         button.Text:SetText("Season of Mastery")

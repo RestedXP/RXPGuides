@@ -384,8 +384,12 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     for _,step in pairs(activeSteps) do
         ProcessMapPin(step)
     end
-    
+
     if not isMiniMap then
+        local currentStep = steps[RXPCData.currentStep]
+        if not (currentStep and currentStep.active) then
+            ProcessMapPin(currentStep)
+        end
         local i = 0;   
         while numActivePins < numPins and (startingIndex + i < numSteps) do
             i = i + 1

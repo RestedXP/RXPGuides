@@ -322,8 +322,10 @@ step << !Priest
     .goto Dun Morogh,43.9,55.7
     .xp 5+2415 >> Grind to 2415/+2800xp
 step
-    #softcore
+    #completewith next
     .deathskip >> Die and respawn at the Spirit Healer, or run to Kharanos. Make sure your subzone is NOT Coldridge Pass
+step
+    #softcore
     .goto Dun Morogh,46.7,53.8
     .turnin 420 >> Turn in Senir's Observations
 step
@@ -625,9 +627,11 @@ step
     .goto Dun Morogh,33.0,27.2,15,0
     .goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
-    .deathskip >>Keep running straight north, drop down and die, then respawn
+    .goto Wetlands,11.6,43.4,0
+    .deathskip >>Keep running straight north, jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
 step
     #softcore
+    #completewith next
     .goto Wetlands,12.7,46.7,30 >> Swim to shore
 step
     #softcore
@@ -639,7 +643,7 @@ step
     .goto Dun Morogh,47.4,52.5
     >> Buy a Rhapsody Malt and Thunder Ale from Belm
     .complete 384,2 --Collect Rhapsody Malt (x1)
-    .collect 2686,1 --Collect Thunder Ale (x1)
+    .collect 2686,1,311 --Collect Thunder Ale (x1)
 step
     .goto Dun Morogh,47.6,52.4,15,0
     >>Go into the room behind the Innkeeper. Go downstairs, then talk to Jarven, and give him the Thunder Ale
@@ -717,13 +721,16 @@ step
     .goto Dun Morogh,45.8,49.4
     .accept 412 >> Accept Operation Recombobulation
 step
-    .goto Dun Morogh,43.1,45.0,25,0
-    .goto Dun Morogh,42.1,45.4,25 >> Run up the ramp to Shimmerweed
+    #completewith next
+    .goto Dun Morogh,43.1,45.0,20,0
+    .goto Dun Morogh,42.1,45.4,20 >> Run up the ramp to Shimmerweed
 step
-    .goto Dun Morogh,40.9,45.3,30,0
-    .goto Dun Morogh,41.5,43.6,30,0
-    .goto Dun Morogh,39.7,40.0,30,0
-    .goto Dun Morogh,42.1,34.3,30,0
+    .goto Dun Morogh,40.9,45.3,50,0
+    .goto Dun Morogh,41.5,43.6,50,0
+    .goto Dun Morogh,39.7,40.0,50,0
+    .goto Dun Morogh,42.1,34.3,50,0
+    .goto Dun Morogh,39.5,43.0
+    .goto Dun Morogh,41.5,36.0
     >>Clear mobs in this area. Be careful if you need to clear the middle camp. You can pull the mobs in the huts and line of sight (LoS) them behind the huts if you need 2 more mobs. If you get unlucky, run to the other area
     >>Loot baskets on the ground
     >>Make Weightstones if you loot linen here << Paladin
@@ -773,6 +780,9 @@ step
     .goto Dun Morogh,24.5,50.8,40,0
     .goto Dun Morogh,22.1,50.3,40,0
     .goto Dun Morogh,21.3,52.9,40,0
+    .goto Dun Morogh,24.5,50.8,0
+    .goto Dun Morogh,22.1,50.3,0
+    .goto Dun Morogh,21.3,52.9,0
     >>Kill Headhunters inside the cave
     .complete 287,1 --Kill Frostmane Headhunter (x5)
 step
@@ -780,17 +790,17 @@ step
     .goto Dun Morogh,23.4,51.5,15 >>Go back up the cave
 step
     #softcore
-    >>Jump down, you die after
+    >>Jump down into the nook below
     .goto Dun Morogh,23.0,52.2
     .complete 287,2 --Fully explore Frostmane Hold
+step
+    #completewith next
+    .deathskip >> Die and respawn at Kharanos
 step
     #hardcore
     >>Carefully grind down into this nook in the cave
     .goto Dun Morogh,23.0,52.2
     .complete 287,2 --Fully explore Frostmane Hold
-step
-    #softcore
-    .deathskip >> Die and respawn at the Spirit Healer
 step
     #hardcore
    .goto Dun Morogh,46.7,53.8,150 >> Hearth if its up, otherwise grind back to Kharanos
@@ -860,8 +870,9 @@ step
     .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.7,56.4,40,0
-    .goto Dun Morogh,70.62,52.39
-    >>Kill Troggs in the cave
+    .goto Dun Morogh,70.62,52.39,25,0
+    .goto Dun Morogh,70.7,56.4
+    >>Kill Troggs inside the cave
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
@@ -1001,10 +1012,10 @@ step
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
     .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
 step
-    .goto Ironforge,77.0,51.0,30 >>Enter the Deeprun Tram
-step
-   >>Enter the Deeprun Tram and accept the quest from the guy on the middle platform
-   .accept 6661 >> Accept Deeprun Rat Roundup
+    .goto Ironforge,74.40,51.10,30,0
+    .goto Ironforge,74.40,51.10,0
+     >> Enter the Deeprun Tram, speak with the gnome at the middle platform
+    .accept 6661 >> Accept Deeprun Rat Roundup
 step
     >>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
@@ -1017,6 +1028,7 @@ step
     .turnin 6662 >> Turn in Me Brother, Nipsy
     >>Train first aid while wating/riding the tram, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
 step
+    #completewith next
     .goto Stormwind City,60.5,12.3
     .zone Stormwind City >>Exit the tram into Stormwind
 step
@@ -1085,7 +1097,8 @@ step << Rogue
     .vendor >> Buy the level 11 thrown from Thurman. Equip it when you're level 11
 step << !Warlock
     #som
-    .goto Stormwind City,60.5,12.3
+    .goto Stormwind City,60.5,12.3,40,0
+    .goto Stormwind City,60.5,12.3,0
     .zone Ironforge >> Take the tram back to Ironforge
     >>Train first aid while wating/riding the tram, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
 ]],"Dwarf/Gnome")
@@ -1429,7 +1442,8 @@ step << Paladin
     .goto Stormwind City,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
 step << Paladin
-    .goto Stormwind City,60.5,12.3
+    .goto Stormwind City,60.5,12.3,40,0
+    .goto Stormwind City,60.5,12.3,0
     .zone Ironforge >> Take the tram back to Ironforge
 step << !Paladin
     .hs >> Hearth to Loch Modan
@@ -1521,6 +1535,7 @@ step
 step
     .goto Loch Modan,24.76,18.39
     .turnin 307 >> Turn in Filthy Paws
+    .turnin 353 >> Turn in Stormpike's Delivery
 step
     #sticky
     #label Meat9
@@ -1603,8 +1618,13 @@ step
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
 step
-    .goto Loch Modan,32.7,76.5,0
+    #era
+    .goto Loch Modan,27.4,48.4
     .xp 13+9600 >> Grind until 9600+/11400xp
+step
+    #som
+    .goto Loch Modan,27.4,48.4
+    .xp 14-2300 >> Grind until you are 2300xp away from level 14 (9100/11400)
 step
     .goto Loch Modan,22.07,73.12
     .turnin 224 >> Turn in In Defense of the King's Lands
@@ -2016,11 +2036,11 @@ step
     .goto Dun Morogh,36.0,52.0,60,0
     .goto Dun Morogh,34.6,51.7
     .accept 312 >> Accept Tundra MacGrann's Stolen Stash
-step
+step << !Mage
     .goto Dun Morogh,38.5,54.0
     >>Wait until Old Icebeard leaves the cave so you can sneak in and loot the chest, or do this
+        .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>CLICK HERE
     .complete 312,1 --MacGrann's Dried Meats (1)
-        .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>Click here for a video example
 step
     .goto Dun Morogh,34.6,51.6
     .turnin 312 >>Turn in Tundra MacGrann's Stolen Stash
@@ -2206,6 +2226,7 @@ step
     .goto Wetlands,11.6,43.4,0
     .deathskip >>Keep running straight north, Jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
 step
+    #completewith next
     #softcore
     .goto Wetlands,12.7,46.7,80,0 >> Swim to shore
 step
@@ -2432,8 +2453,9 @@ step
     .goto Ironforge,74.64,11.74
     .turnin 301 >> Turn in Report to Ironforge
 step
-    .goto Ironforge,74.40,51.10
-     >> Head to Deeprun Tram
+    .goto Ironforge,74.40,51.10,30,0
+    .goto Ironforge,74.40,51.10,0
+     >> Enter the Deeprun Tram, speak with the gnome at the middle platform
     .accept 6661 >> Accept Deeprun Rat Roundup
 step
     >>Use the flute provided on the rats around the station
@@ -2444,6 +2466,10 @@ step
 step
      >> Ride to the other side of the tram and turn in
     .turnin 6662 >> Turn in Me Brother, Nipsy
+step
+    #completewith next
+    .goto Stormwind City,60.5,12.3
+    .zone Stormwind City >>Exit the tram into Stormwind
 step
     #softcore
     .goto Stormwind City,51.75,12.06
