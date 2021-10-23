@@ -2198,6 +2198,7 @@ step
     .goto Dun Morogh,33.0,27.2,25,0
     .goto Dun Morogh,33.0,25.2,25,0
     .goto Wetlands,11.6,43.4,60,0
+    .goto Wetlands,11.6,43.4,0
     .deathskip >>Keep running straight north, Jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
 step
     #softcore
@@ -2266,7 +2267,7 @@ step
 step
     .goto Dun Morogh,68.7,56.0
     .turnin 433 >> Turn in The Public Servant
-step
+step << skip
     .goto Dun Morogh,68.4,54.5
     .train 2550 >> Train Cooking from Ghilm
 step
@@ -2331,6 +2332,10 @@ step
     .goto Loch Modan,37.0,47.8
     >>Go inside the building, then go downstairs. Talk to Brock
     .turnin 6392 >> Turn in Return to Brock
+step
+    .goto Loch Modan,35.8,43.5
+    >>Buy a level 9 gun upgrade from Vrok Blunderblast if you have 13s to spare
+    .collect 2511,1
 step
     #completewith sausage
      >> Kill spiders/bears/boars
@@ -2414,8 +2419,10 @@ step
     .accept 301 >> Accept Report to Ironforge
 step
     .goto Loch Modan,33.93,50.95
-     #completewith next
     .fly Ironforge>> Fly to Ironforge
+step
+    .goto Ironforge,60.0,36.8
+    .train 2550 >> Make sure to train cooking in Ironforge
 step
     .goto Ironforge,74.64,11.74
     .turnin 301 >> Turn in Report to Ironforge
