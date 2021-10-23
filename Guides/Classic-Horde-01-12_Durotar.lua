@@ -913,40 +913,6 @@ step << Warrior/Rogue
     .goto Durotar,54.2,41.9
     .money <0.01
     .train 3273 >>Train First Aid
-step << Rogue
-    .goto Durotar,55.03,9.80,60,0
-    .goto Durotar,53.10,9.25
-    >>Kill Burning Blade mobs in Skull Rock for Searing Collars
-    .complete 827,1 --Searing Collar (6)
-step << Rogue
-    .goto Durotar,56.4,20.1
-    .turnin 827 >>Turn in Skull Rock
-    .accept 829 >>Accept Neeru Fireblade
-step << Rogue
-    .goto Durotar,51.5,19.1
-    >>Kill Harpies in the area
-    .complete 835,1 --Dustwind Savage (12)
-    .complete 835,2 --Dustwind Storm Witch (8)
-step << Rogue
-    #softcore
-    .deathskip >> Die and respawn at the Spirit Healer
-step << Rogue
-    #softcore
-    .goto Durotar,46.4,22.9
-    .turnin 835 >>Turn in Securing the Lines
-step << Rogue
-    #hardcore
-    >>Run back through the cave, then back to the Goblin
-    .goto Durotar,53.75,27.74,60,0
-    .goto Durotar,51.75,27.40,60,0
-    .goto Durotar,46.4,22.9
-    .turnin 835 >>Turn in Securing the Lines
-step << Rogue
-    #completewith next
-	+Go to the Zeppelin tower. Take the zeppelin to Undercity
-    .goto Durotar,50.8,13.8
-step << Rogue
-	.zone Tirisfal Glades >>Arrive in Tirisfal
 ]],"Troll/Orc")
 RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
 #classic
