@@ -1442,6 +1442,7 @@ step << !Shaman !Warrior
 step << Mage
     +If you're planning on leveling via AoE, choose the Barrens AoE Guide manually. Otherwise, choose the 12-17 Barrens Guide
 step << Rogue
+    .goto The Barrens,51.5,30.3
     .fly >> Fly to Orgrimmar
 step << Rogue
     .goto Orgrimmar,54.2,68.4
@@ -1454,8 +1455,7 @@ step << Rogue
 step << Rogue
     #sticky
     #completewith next
-    +Go to the Zeppelin tower. Take the zeppelin to Undercity
-    .goto Durotar,50.8,13.8
+    .goto Durotar,50.8,13.8,40 >> Go to the Zeppelin tower. Take the zeppelin to Undercity
 step << Rogue
     .zone Tirisfal Glades >>Arrive in Tirisfal
 ]],"Troll/Orc")
