@@ -16,7 +16,7 @@ step << Warlock
     #sticky
     #completewith next
     +Kill Boars for 10c+ of vendor trash
-    .goto Durotar,44.0,71.3,30,0
+    .goto Durotar,44.0,71.3,60,0
 step << Warlock
     .goto Durotar,42.6,69.0
     .accept 1485 >>Accept Vile Familiars
@@ -24,7 +24,7 @@ step << Warrior/Shaman
     #sticky
     #completewith next
     +Kill Boars for 10c+ of vendor trash
-    .goto Durotar,44.2,65.9,30,0
+    .goto Durotar,44.2,65.9,60,0
 step << Warrior/Shaman
     .goto Durotar,42.6,67.3
     .vendor >> vendor trash. Vendor armor if less than 10c
@@ -38,8 +38,6 @@ step
     .goto Durotar,42.1,68.4
     .turnin 4641 >>Turn in Your Place In The World
     .accept 788 >>Accept Cutting Teeth
-step << !Warlock
-    .goto Durotar,44.2,65.9,40,0
 step << Warlock
     .goto Durotar,40.6,68.4
     .vendor >>vendor trash at the demon trainer
@@ -52,7 +50,7 @@ step << !Warlock
 step << Warlock
     #sticky
     #completewith WarlockBoars
->>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don’t sit and drink for these
+	>>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don’t sit and drink for these
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     #label WarlockBoars
@@ -92,80 +90,25 @@ step << Warlock
     .accept 1499 >>Accept Vile Familiars
 step << Warlock
     >>Choose the dagger and equip it. Remember to summon your Imp
-.goto Durotar,42.9,69.1
+	.goto Durotar,42.9,69.1
     .turnin 1499 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
-step << !Orc !Troll
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 789 >>Accept Sting of the Scorpid
 step << Orc Rogue
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
-    .accept 3088 >>Accept Encrypted Parchment
     .accept 789 >>Accept Sting of the Scorpid
-step << Troll Rogue
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 3083 >>Accept Encrypted Tablet
-    .accept 789 >>Accept Sting of the Scorpid
-step << Orc Hunter
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 3087 >>Accept Etched Parchment
-    .accept 789 >>Accept Sting of the Scorpid
-step << Troll Hunter
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 3082 >>Accept Etched Tablet
-    .accept 789 >>Accept Sting of the Scorpid
-step << Troll Mage
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 3086 >>Accept Glyphic Tablet
-    .accept 789 >>Accept Sting of the Scorpid
-step << Troll Priest
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 3085 >>Accept Hallowed Tablet
-    .accept 789 >>Accept Sting of the Scorpid
-step << Troll Shaman
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 3084 >>Accept Rune-Inscribed Tablet
-    .accept 789 >>Accept Sting of the Scorpid
-step << Orc Shaman
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 3089 >>Accept Rune-Inscribed Parchment
-    .accept 789 >>Accept Sting of the Scorpid
-step << Orc Warrior
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 2383 >>Accept Simple Parchment
-    .accept 789 >>Accept Sting of the Scorpid
-step << Troll Warrior
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 3065 >>Accept Simple Tablet
-    .accept 789 >>Accept Sting of the Scorpid
-step << Orc Warlock
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 3090>>Accept Tainted Parchment
-    .accept 789 >>Accept Sting of the Scorpid
+    .accept 2383 >>Accept Simple Parchment << Orc Warrior
+    .accept 3065 >>Accept Simple Tablet << Troll Warrior
+    .accept 3082 >>Accept Etched Tablet << Troll Hunter
+    .accept 3083 >>Accept Encrypted Tablet << Troll Rogue
+    .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
+    .accept 3085 >>Accept Hallowed Tablet << Troll Priest
+    .accept 3086 >>Accept Glyphic Tablet << Troll Mage
+    .accept 3087 >>Accept Etched Parchment << Orc Hunter
+    .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
+    .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
+    .accept 3090 >>Accept Tainted Parchment << Orc Warlock
 step << Orc Rogue
       .goto Durotar,41.3,68.0
     .turnin 3088 >>Turn in Encrypted Parchment
@@ -173,7 +116,8 @@ step << Troll Rogue
       .goto Durotar,41.3,68.0
     .turnin 3083 >>Turn in Encrypted Tablet
 step << Orc Warlock
-    .goto Durotar,40.6,68.4
+    #completewith next
+	.goto Durotar,40.6,68.4
     .vendor >>vendor trash at the demon trainer
 step << Orc Warlock
      .goto Durotar,40.6,68.5
@@ -242,8 +186,8 @@ step << !Warlock
 step << Warlock
     >>Kill Scorpions for their tails
     .complete 789,1 --Scorpid Worker Tail (10)
-    .goto Durotar,47.1,65.2,30,0
-    .goto Durotar,46.6,58.2,30,0
+    .goto Durotar,47.1,65.2,80,0
+    .goto Durotar,46.6,58.2,80,0
     .goto Durotar,39.8,63.5
 step << !Warlock
     #label imps
@@ -265,12 +209,13 @@ step
     >>Finish looting the Cactus Apples
     .complete 4402,1 --Cactus Apple (10)
 step
+    .goto Durotar,47.09,57.93
     >>Finish waking the peons around the trees. Backtrack if you are struggling
     .complete 5441,1 --Peons Awoken (5)
 step
     .goto Durotar,42.7,67.2
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
-step << Warrior/Rogue/Hunter/Druid/Paladin/Shaman
+step << !Mage !Priest !Warlock
     .goto Durotar,42.6,67.3
     .vendor >>vendor trash
 step << Mage/Priest/Warlock
@@ -310,6 +255,7 @@ step
     .accept 6394 >>Accept Thazz'ril's Pick
 step << Shaman
     #sticky
+	#label Hooves
     >>Kill Felstalkers for Hooves
     .complete 1516,1 --Felstalker Hoof (2)
 step
@@ -319,7 +265,7 @@ step
     .complete 6394,1 --Thazz'ril's Pick (1)
 step
     #sticky
-    #completewith next
+	#label Yarrog
     .goto Durotar,44.7,54.0,30,0
     .goto Durotar,43.4,52.0,30,0
     >>Kill Yarrog. Loot him for the Medallion
@@ -328,9 +274,11 @@ step
 step << !Shaman
     .xp 5+1680 >> Grind to 1680+/2800xp
 step << Shaman
+	#requires Hooves
     .xp 5+690 >> Grind to 690+/2800xp
 step
-    .hs >>Hearth to Valley of Trials
+    #requires Yarrog
+	.hs >>Hearth to Valley of Trials
     .goto Durotar,43.3,69.0,100,0
 step
     .goto Durotar,44.6,68.6
@@ -372,8 +320,8 @@ step << Warlock
     .vendor >> Buy the Blood Pact book if you have money after training (otherwise buy it later)
 step << Shaman
     .goto Durotar,43.0,71.2,22,0
-    .goto Durotar,41.5,73.3,12,0
-    .goto Durotar,40.8,74.1,10,0
+    .goto Durotar,41.5,73.3,14,0
+    .goto Durotar,40.8,74.1,14,0
     .goto Durotar,41.8,74.8,14 >>Run up the Hidden Path
 step << Shaman
     >>Use the Earth Sapta in your bags
@@ -389,9 +337,10 @@ step
     .goto Durotar,52.1,68.3
     .accept 2161 >>Accept A Peon's Burden
 step
-    .goto Durotar,54.3,73.3,15,0
-    .goto Durotar,54.5,75.0,15,0
-    .goto Durotar,54.1,76.6,15,0
+    .goto Durotar,54.3,73.3,25,0
+    .goto Durotar,54.5,75.0,25,0
+    .goto Durotar,54.1,76.6,25,0
+    .goto Durotar,54.1,76.6,0
     >>The Questgiver patrols a little
     .accept 786 >>Accept Thwarting Kolkar Aggression
 step
@@ -467,31 +416,37 @@ step
 step
     #softcore
     .goto Durotar,57.5,73.3,200 >> Die at the Bonfire and respawn at the Spirit Healer, or run back
+--P
 step << Shaman
+	#softcore
     .goto Durotar,56.6,73.1
     .money <0.0504
-    >>Talk to Traxexir from below the stairs outside
+    >> Talk to Traxexir from below the stairs outside
     >> Buy Walking Stick and equip it
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
+	#softcore
     .goto Durotar,56.5,73.1
     .money <0.401
-    >>Talk to Traxexir from below the stairs outside
+    >> Talk to Traxexir from below the stairs outside
     >> Buy Stiletto and equip it
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
+	#softcore
     .money <0.0484
     .goto Durotar,56.5,73.1
-    >>Talk to Traxexir from below the stairs outside
+    >> Talk to Traxexir from below the stairs outside
     >> Buy Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
+	#softcore
     .goto Durotar,56.5,73.1
     .money <0.0536
-    >>Talk to Traxexir from below the stairs outside
+    >> Talk to Traxexir from below the stairs outside
     >> Buy Gladius and equip it
     .collect 2488,1 --Collect Gladius
 step << Hunter
+	#softcore
     .goto Durotar,56.5,73.1
     .money <0.0285
     >> Buy Hornwood Recurve Bow and equip it
