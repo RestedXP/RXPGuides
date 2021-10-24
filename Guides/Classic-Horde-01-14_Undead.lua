@@ -1165,10 +1165,10 @@ step << !Undead Rogue
     .goto Undercity,57.32,32.77
     .trainer >> Train Swords. If you didn't have enough to buy a cutlass earlier, then buy a cheap weapon from the next vendor you see or wait for one to drop whilst questing
 step << !Undead Rogue
-    .goto Undercity,46.5,44.0,90 >> Exit undercity via the sewers
+    .goto Undercity,46.5,44.0,90 >> Exit Undercity via the Sewers
 step
     .goto Tirisfal Glades,54.90,72.42,120,0
-    .zone Silverpine Forest >> Run South-west into Silverpine
+    .zone Silverpine Forest >> Run to Silverpine
 step
     #sticky
     #completewith Rane
@@ -1248,8 +1248,7 @@ step
     .unitscan Son of Arugal
     .goto Silverpine Forest,50.00,39.46,70,0
     .goto Silverpine Forest,49.19,34.42,70,0
-    .goto Silverpine Forest,50.00,39.46,70,0
-    .goto Silverpine Forest,49.19,34.42,70,0
+    .goto Silverpine Forest,50.00,39.46
     >>Kill Moonrage Whitescalps in the area. Avoid Sons of Arugal
     .complete 421,1 --Moonrage Whitescalp (5)
 step
@@ -1272,10 +1271,11 @@ step
     .goto Silverpine Forest,53.43,12.59
     .turnin 430 >>Turn in Return to Quinn
 step
+    >>Go back outside
     .goto Silverpine Forest,53.46,13.43
     .accept 425 >>Accept Ivar the Foul
 step
-    >>Kill Ivar in the barn. Loot his Head
+    >>Kill Ivar in the Barn. Loot his Head
     .goto Silverpine Forest,51.51,13.90
     .complete 425,1 --Ivar's Head (1)
 step
