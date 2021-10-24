@@ -811,7 +811,7 @@ step << Hunter
     .turnin 6082 >>Turn in Taming the Beast
     .accept 6081 >>Accept Training the Beast
 step << Hunter
-    .goto Durotar,42.6,67.3
+    .goto Durotar,53.0,41.0
     .vendor >>vendor trash. Buy level 10 arrows until your Quiver is full (1000 arrows)
 step
     .goto Durotar,43.1,30.3
