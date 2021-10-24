@@ -93,7 +93,7 @@ step << Warlock
 	.goto Durotar,42.9,69.1
     .turnin 1499 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
-step << Orc Rogue
+step
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
@@ -466,7 +466,8 @@ step
 step
     #hardcore
     #completewith next
-    .goto Durotar,52.5,44.4,120 >>Grind mobs to Razor Hill
+    .goto Durotar,50.9,79.2,50,0
+    .goto Durotar,52.5,44.4,120 >>Leave the Kol'Kar base. Grind mobs to Razor Hill
 step
     .goto Durotar,52.2,43.2
     .turnin 823 >>Turn in Report to Orgnil
@@ -711,6 +712,7 @@ step
     .complete 808,1 --Minshina's Skull (1)
 step
     #label Fur
+    .goto Durotar,68.34,83.54
     >>Kill the rest of the trolls. Be careful as the Voodoo trolls heal
     .complete 826,1 --Hexed Troll (8)
     .complete 826,2 --Voodoo Troll (8)
@@ -722,7 +724,7 @@ step
     .goto Durotar,64.7,88.5,90,0
     .goto Durotar,65.2,80.8,90,0
     .goto Durotar,59.9,83.6,90,0
-    .goto Durotar,64.7,88.5
+    .goto Durotar,59.9,83.6
     .complete 817,1 --Durotar Tiger Fur (4)
 step
     #softcore
@@ -1208,6 +1210,10 @@ step << Warrior
 step << Hunter
     .goto Durotar,53.0,41.0
     .vendor >> Buy Laminated Recurve Bow if you have the money.
+step
+    .goto Durotar,56.4,20.1
+    .turnin 828 >>Turn in Margoz
+    .accept 827 >>Accept Skull Rock
 step << Hunter
     #sticky
     #completewith HuntCollar
@@ -1218,6 +1224,7 @@ step
     #sticky
     >>Kill Scorpions in the area for Poison Sacs
     .goto Durotar,55.7,15.7,0
+    .goto Durotar,39.67,18.83,0
     .complete 813,1 --Venomtail Poison Sac (4)
 step << Hunter
 	#label HuntCollar
