@@ -61,6 +61,7 @@ step << Warlock
     .complete 1485,1 --Vile Familiar Head (6)
 step << Warlock
     #sticky
+	#label MottledBoarAndy
     >>Finish off killing the Mottled Boars
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
@@ -82,7 +83,8 @@ step
 step << Warlock
     .xp 3+850 >> Grind to 850+/1400xp on the way back to town
 step << Warlock
-    .goto Durotar,42.6,67.3
+    #requires MottledBoarAndy
+	.goto Durotar,42.6,67.3
     .vendor >>vendor trash, buy 10 water
 step << Warlock
     .goto Durotar,42.6,69.0
@@ -1200,10 +1202,6 @@ step << Troll Shaman/Orc Shaman
     .goto Durotar,38.6,59.0
     .turnin 1524 >>Turn in Call of Fire
     .accept 1525 >>Accept Call of Fire
-step << Warlock
-    #level 12
-    .goto Durotar,54.38,41.19
-    .trainer >> Train your class spells
 step << Warrior
     .goto Durotar,54.4,42.2
     .vendor >>Buy 6 slot bags from Jark until you can't equip new bags
@@ -1327,10 +1325,6 @@ step << Priest
     >>Train Lesser Magic Wand from the trainer. Craft a Lesser Magic Wand.
     .goto Orgrimmar,53.77,38.37
     .collect 11287,1 --Lesser Magic Wand (1)
-step << Warlock
-    .goto Orgrimmar,48.3,45.3
-    .turnin 1501 >>Turn in Creature of the Void
-    .accept 1504 >>Accept The Binding
 step
     .goto Orgrimmar,47.0,53.4
     .turnin 813 >>Turn in Finding the Antidote
