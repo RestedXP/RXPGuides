@@ -163,7 +163,12 @@ step << Druid/Warrior
     #completewith next
     .collect 4778,1 --Collect Heavy Spiked Mace
 step << Druid/Warrior
-    .goto The Barrens,57.1,25.3,250 >> Run to here
+	.goto The Barrens,57.1,25.3,250 >> Run to here
+step
+    >>Check this location for Chen's Empty Keg. Loot it and start the quest
+    .goto The Barrens,55.78,20.00
+    .collect 4926,1,819 --Collect Chen's Empty Keg
+    .accept 819 >> Accept Chen's Empty Keg
 step
     #sticky
     #completewith Supplycrate
@@ -679,16 +684,16 @@ step << !Undead !Rogue
     .goto The Barrens,52.95,41.77
     .complete 851,1 --Verog's Head (1)
 step
-    >>Kill the surrounding Raptors until you get a Sunscale Feather. Loot the Eggs when you have one.
+    >>Kill the surrounding Raptors until you get a Sunscale Feather. Loot the Blue Egg when you have one.
     .goto The Barrens,52.6,46.2
     .complete 905,1 --Visit Blue Raptor Nest (1)
 step
-    >>Click the egg. You need the sunscale feathers from the raptors
+    >>Kill the surrounding Raptors until you get a Sunscale Feather. Loot the Red Egg when you have one.
     .goto The Barrens,52.5,46.6
     .complete 905,3 --Visit Red Raptor Nest (1)
 step
     #label Nest
-    >>Click the egg. You need the sunscale feathers from the raptors
+    >>Kill the surrounding Raptors until you get a Sunscale Feather. Loot the Yellow Egg when you have one.
     .goto The Barrens,52.0,46.5
     .complete 905,2 --Visit Yellow Raptor Nest (1)
 step
@@ -1078,11 +1083,7 @@ step
     .accept 913 >>Accept Cry of the Thunderhawk
 step
     .goto The Barrens,44.8,63.2,100,0
-    .goto The Barrens,47.0,61.6,100,0
-    .goto The Barrens,44.8,63.2,100,0
-    .goto The Barrens,47.0,61.6,100,0
-    .goto The Barrens,44.8,63.2,100,0
-    .goto The Barrens,47.0,61.6,100,0
+    .goto The Barrens,47.0,61.6
     >>Kill a Thunderhawk. Loot it for its Wings
     .complete 913,1 --Thunderhawk Wings (1)
 step
@@ -1119,7 +1120,7 @@ step << Rogue
     .collect 923,1
 step << Hunter
     .goto Thunder Bluff,46.8,45.8
-     >> Buy a Heavy Recurve Bow from Kuna if it's an upgrade
+     >> Buy a Heavy Recurve Bow from Kuna if it's an upgrade. Also buy arrows to fill your quiver
     .collect 3027,1
 step
     .goto Thunder Bluff,61.4,80.9
@@ -1350,6 +1351,7 @@ step  << Hunter
      >> Start the escort quest
     .accept 6544 >> Accept Torek's Assault
 step  << Hunter
+     .goto Ashenvale,64.74,75.35,0
      >> Escort Torek. When you kill the mobs 4 inside, run to the end platform (as more mobs will spawn), and let the orcs take aggro
      >> Kill the mobs that have aggro on Torek, then kill the rest.
     .complete 6544,1 --Take Silverwing Outpost. (1)
@@ -1357,7 +1359,6 @@ step  << Hunter
     .goto Ashenvale,73.00,62.50
     .turnin 6544 >> Turn in Torek's Assault
 step  << Hunter
-     #completewith next
     .goto Ashenvale,73.78,61.46
     .turnin 6382 >> Turn in The Ashenvale Hunt
     .turnin 6383 >> Turn in The Ashenvale Hunt
@@ -1389,7 +1390,7 @@ step << Shaman
     .goto The Barrens,43.4,77.4
     .turnin 1535 >>Turn in Call of Water
     .accept 1536 >>Accept Call of Water
-step
+step << !Hunter
     .goto The Barrens,51.5,30.3 << !Shaman
     .goto The Barrens,44.5,59.1 << Shaman
     .fly Orgrimmar >>Fly to Orgrimmar
