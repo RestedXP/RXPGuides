@@ -245,6 +245,11 @@ step
     .goto Elwynn Forest,45.6,47.7
     .accept 2158 >> Accept Rest and Relaxation
 step
+    #hardcore
+    .goto Elwynn Forest,42.1,65.9
+    .turnin 54 >> Turn in Report to Goldshire
+    .accept 62 >> Accept The Fargodeep Mine
+step
     #softcore
     #sticky
     #completewith Goldshire
