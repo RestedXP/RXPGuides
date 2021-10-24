@@ -98,7 +98,7 @@ step << !Tauren !Undead
     .goto The Barrens,62.3,20.0,0
     >>If the Flawed Power Stone in your bags has less than 10 minutes left, drop it, then go back and loot the Purple Stone next to Ak'Zeloth again
     .turnin 926 >>Turn in Flawed Power Stone
-step << !Tauren !Undead
+step << !Tauren !Undead !Rogue
     #sticky
     #completewith BeakCave
     >>Kill some Plainstriders en route if you have time on Flawed Power Stone. Loot them for Beaks
@@ -129,6 +129,7 @@ step << Tauren
     .goto The Barrens,51.3,22.9,80,0
     .goto The Barrens,48.3,23.5,80,0
     .goto The Barrens,49.8,31.2,80,0
+    .goto The Barrens,55.7,24.0
     >>Kill Plainstriders. Loot them for Beaks
     .complete 844,1 --Plainstrider Beak (7)
 step << !Tauren Warrior/!Tauren Shaman
@@ -185,6 +186,7 @@ step
     .goto The Barrens,58.4,27.0,40,0
     .goto The Barrens,58.5,25.8,40,0
     .goto The Barrens,59.4,24.8,40,0
+    .goto The Barrens,58.4,27.0,0
     >>Loot the brown boxes found in the area
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
@@ -358,8 +360,7 @@ step << Undead/Rogue
     .goto The Barrens,45.4,28.4
     .accept 850 >>Accept Kolkar Leaders
 step << !Warrior !Shaman
-    #sticky
-    #label FungalS
+    #completewith next
     >>Collect the white mushrooms around The Forgotten Pools
     .complete 848,1 --Collect Fungal Spores (x4)
 step << !Warrior !Shaman
@@ -367,7 +368,13 @@ step << !Warrior !Shaman
     .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Warrior !Shaman
-	#requires FungalS
+    >>Collect the white mushrooms around The Forgotten Pools
+    .goto The Barrens,45.2,23.3,60,0
+    .goto The Barrens,45.2,22.0,60,0
+    .goto The Barrens,44.6,22.5,60,0
+    .goto The Barrens,43.9,24.4,60,0
+    .goto The Barrens,45.2,23.3
+    .complete 848,1 --Collect Fungal Spores (x4)
 step << !Undead !Rogue
 	#era
     #completewith Leaders
@@ -405,9 +412,9 @@ step
     .goto The Barrens,41.4,24.5
     .complete 903,1 --Prowler Claws (7)
 step
-    .goto The Barrens,40.2,18.9,90.0
-    .goto The Barrens,40.7,14.6,90.0
-    .goto The Barrens,42.6,15.1,90.0
+    .goto The Barrens,40.2,18.9,90,0
+    .goto The Barrens,40.7,14.6,90,0
+    .goto The Barrens,42.6,15.1,90,0
     .goto The Barrens,40.2,18.9
     >>Kill Harpies. Loot them for their Talons
     .complete 867,1 --Witchwing Talon (8)
@@ -418,7 +425,7 @@ step << Druid/Warrior
     .collect 4778,1 --Collect Heavy Spiked Mace << Druid/Warrior
 step
     .goto The Barrens,43.8,12.2
-	.vendor	>> Go vendor at this guy if needed
+	.vendor	>> Vendor trash, repair
 step
     >>Click on the Control Console
     .goto The Barrens,52.4,11.6
@@ -631,11 +638,12 @@ step
     .goto The Barrens,62.40,37.70
     .accept 1069 >> Accept Deepmoss Spider Eggs
 step << Rogue
+	#completewith next
     .goto The Barrens,65.04,45.44
     +Jump onto the ship, go down to the 2nd floor and level your lockpicking up to 80
 step << Rogue
     .goto The Barrens,64.95,45.44
-    >>Drag the E.C.A.C. onto your bars. Go to the bottom floor of the ship and open The Jewel of the Southsea.
+    >>Drag the E.C.A.C. onto your bars. Go to the bottom floor of the ship and open The Jewel of the Southsea when your lockpicking is at 80
     >>Use the E.C.A.C. on Polly when she spawns from the stairs
     .complete 2381,1 --Southsea Treasure (1)
 step
@@ -896,8 +904,9 @@ step
     .complete 1062,1 --Kill Venture Co. Logger (x15)
 step << Rogue
    	 .goto Stonetalon Mountains,58.2,51.6
-	>> Go buy Kris from Veenix
+	>> Go buy a Kris from Veenix
 	.collect 2209,1
+--N other weapons for other classes?
 step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1093 >> Turn in Super Reaper 6000
@@ -913,8 +922,7 @@ step
     .turnin 3261 >>Turn in Jorn Skyseer
     .accept 882 >>Accept Ishamuhale
 step
-    #sticky
-    #label Lizard
+	#completewith QuillboarAndy
     .goto The Barrens,44.84,47.69,0
     >>Kill Stormstouts. Loot them for a Horn
     .complete 821,3 --Thunder Lizard Horn (1)
@@ -930,6 +938,7 @@ step
 	.collect 5099,1,883 --Collect Hoof of Lakota'Mani
 	.accept 883 >>Accept Lakota'Mani
 step
+	#label QuillboarAndy
     >>Kill a LOT of Quillboars. Loot them for their tusks. Save the Blood Shards you get
 	.goto The Barrens,44.3,52.3,100,0
     .goto The Barrens,47.1,53.3,100,0
@@ -948,7 +957,10 @@ step
     .complete 878,3 --Kill Bristleback Geomancer (x12)
     .complete 899,1 --Collect Bristleback Quilboar Tusk (x60)
 step
-    #requires Lizard
+    .goto The Barrens,44.84,47.69
+    >>Kill Stormstouts. Loot them for a Horn
+    .complete 821,3 --Thunder Lizard Horn (1)
+step
     >>Go around the lake and kill Turtles. Loot them for their Shells
 .goto The Barrens,55.5,42.6
     .complete 880,1 --Altered Snapjaw Shell (8)
