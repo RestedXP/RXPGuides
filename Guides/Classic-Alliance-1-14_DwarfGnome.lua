@@ -365,6 +365,7 @@ step << Priest
     .goto Dun Morogh,47.3,52.2
     .accept 5625 >> Accept Garments of the Light
 step << Priest
+    >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on Mountaineer Dolf
     .goto Dun Morogh,45.8,54.6
      .complete 5625,1 --Heal and fortify Mountaineer Dolf
 step << Priest
