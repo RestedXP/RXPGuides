@@ -405,6 +405,10 @@ step
 step
     #completewith next
     .goto Winterspring,5.49,36.64,35 >> Head to the cave above the waterfall
+step << Druid
+    >>Use your Cliffspring Falls Sampler in the water at the mouth of the cave
+    .goto Darkshore,54.80,33.16
+    .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
     #label end1
     .goto Darkshore,55.66,34.89
@@ -808,12 +812,12 @@ step << Druid
     >>Gather earthroot as you quest
     .complete 6123,1
 step << Druid
-    .goto Darkshore,43.4,45.9
-    .goto Darkshore,43.3,49.1
-    .goto Darkshore,42.4,52.6
-    .goto Darkshore,45.7,50.3
+    .goto Darkshore,43.4,45.9,90,0
+    .goto Darkshore,43.3,49.1,90,0
+    .goto Darkshore,42.4,52.6,90,0
+    .goto Darkshore,45.7,50.3,90,0
     .goto Darkshore,45.3,53.3
-    >>Look for mushrooms inside the caves in central Darkshore
+    >>Look for mushrooms inside the moonkin caves in central Darkshore
     .complete 6123,2
 step
     .goto Darkshore,39.99,78.46
