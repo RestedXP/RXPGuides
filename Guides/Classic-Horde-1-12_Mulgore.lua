@@ -522,7 +522,9 @@ step << !Druid
     .hs >>Hearth to Bloodhoof Village
 step << Druid
     #softcore
-    .goto Mulgore,46.5,55.5,300 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
+    #completewith next
+    .goto Mulgore,54.76,35.10
+    .deathskip >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
 step << Druid
     #hardcore
     .goto Mulgore,46.5,55.5,300 >> Run back to Bloodhoof Village
