@@ -538,6 +538,7 @@ step << !Rogue !Undead !Tauren !Shaman !Warrior
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     .trainer >> Train your class spells
+	>> Make sure you've trained Pick Lock
     .accept 2379 >> Accept Zando'Zan
 	.turnin 1963 >> Turn in The Shattered Hand
 --	.accept 1858 >> Accept The Shattered Hand
