@@ -1097,52 +1097,65 @@ s["ROGUE"] = {
         6760, -- eviscerate r2
     },
     [10] = {
+	921, -- pick pocket
         5171, -- slice and dice
         2983, -- sprint
         6452, -- Anti-venom(FA)
+	674, -- dual wield
     },
     [12] = {
         1766, -- kick
     },
     [14] = {
+	703, -- garrote
         1758, -- sinister strike r3
     },
     [16] = {
         6761, -- eviscerate r3
+	1804, -- Pick Lock
     },
     [20] = {
         1785, -- stealth r2
+	1943, -- rupture
+	8676, -- ambush
     },
     [22] = {
         1725, -- distract
         1759, -- sinister strike r4
         1856, -- vanish
+	8631, -- garrote r2
     },
     [24] = {
         6762, -- eviscerate r4
     },
     [26] = {
+	1767, -- kick r2
         1833, -- cheap shot
     },
     [28] = {
+	8639, -- rupture r2
         8687, -- instant poison 2
     },
     [30] = {
         408, -- kidney shot
         1760, -- sinister strike
+	8632, -- garrote r3
     },
     [32] = {
-        8623, -- eviscerate
+        8623, -- eviscerate r5
     },
     [34] = {
         2094, -- blind
+	6510, -- blinding powder
         8696, -- sprint r2
     },
     [36] = {
+	8640, -- rupture r3
         8691, -- instant posion 3
     },
     [38] = {
         8621, -- sinister strike r6
+	8633, -- garrote r4
     },
     [40] = {
         8624, -- eviscerate r6
@@ -1150,13 +1163,16 @@ s["ROGUE"] = {
         1726, -- stealth r3
     },
     [42] = {
-        6774, -- slice and dice r2
+	1768, -- kick r3
         1857, -- vanish r2
+        6774, -- slice and dice r2
     },
     [44] = {
-        11341, -- instant poison 4
+	11273, -- rupture r4
+        11341, -- instant poison r4
     },
     [46] = {
+	11289, -- garrote r5
         11293, -- sinister strike r7
     },
     [48] = {
@@ -1167,35 +1183,25 @@ s["ROGUE"] = {
         8643, -- kidney shot r2
     },
     [52] = {
+	11274, -- rupture r5
         11342, -- instant poison r5
     },
     [54] = {
+	11290, -- garrote r6
         11294, -- sinister strike r8
     },
     [56] = {
         11300, -- eviscerate r8
     },
     [58] = {
+	1769, -- kick r4
         11305, -- sprint r3
     },
     [60] = {
-        31016, -- eviscerate r9
-        11343, -- instant poison r6
         1787, -- stealth r4
-    },
-    [62] = {
-        26861, -- sinister strike r9
-        26889, -- vanish r3
-    },
-    [64] = {
-        26679, -- deadly throw
-        26865, -- eviscerate r10
-    },
-    [66] = {
-        31224, -- cloak of shadows
-    },
-    [68] = {
-        26892, -- instant poison r7
+	11275, -- rupture r6
+        11343, -- instant poison r6
+        31016, -- eviscerate r9
     },
 }
 
