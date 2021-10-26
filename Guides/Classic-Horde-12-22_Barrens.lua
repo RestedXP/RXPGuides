@@ -414,7 +414,8 @@ step
 step
     #label Claws
     >>Kill Prowlers. Loot them for their Claws and Tusks
-    .goto The Barrens,41.4,24.5
+    .goto The Barrens,41.4,24.5,100,0
+    .goto The Barrens,40.48,20.36
     .complete 903,1 --Prowler Claws (7)
 step
     .goto The Barrens,40.2,18.9,90,0
