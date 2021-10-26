@@ -1039,10 +1039,14 @@ step
     .goto Stormwind City,58.1,16.5
     .turnin 1338 >> Turn in Stormpike's Order
 step << Priest
+    #completewith next
     >>Go into the Cathedral
     .goto Stormwind City,38.54,26.86
     .trainer >> Train your class spells
     .turnin 5634 >> Turn in Desperate Prayer
+step << Priest
+    .goto Stormwind City,38.62,26.10
+    .train 13908 >> Train Desperate Prayer
 step << Warrior
     #completewith next
     .goto Stormwind City,74.91,51.55,20 >> Enter the Command Center
