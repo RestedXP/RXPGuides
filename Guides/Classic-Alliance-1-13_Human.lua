@@ -1068,8 +1068,12 @@ step << Warrior
     .goto Stormwind City,74.3,37.3
     .turnin 1665 >> Turn in Bartleby's Mug
 step << Priest
+    #completewith next
     .goto Stormwind City,38.8,26.4
     .turnin 5635 >> Turn in Desperate Prayer
+step << Priest
+    .goto Stormwind City,38.62,26.10
+    .train 13908 >> Train Desperate Prayer
 step
     .goto Stormwind City,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
