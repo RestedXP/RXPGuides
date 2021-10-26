@@ -209,9 +209,12 @@ s["Scourge"] = {
     [40] = {10921,554},--skeletal horse riding
 }
 s["DRUID"] = {
+    [1] = {
+        1126, -- mark of the wild
+    },
     [4] = {
+	774, -- rejuvenation
         8921, -- moonfire
-        774, -- rejuvenation
     },
     [6] = {
         467, -- thorns
@@ -222,22 +225,25 @@ s["DRUID"] = {
         5186, -- healing touch r2
     },
     [10] = {
-        5232, -- mark of the wild
-        1058, -- rejuvenation r2
         99, -- demoralizing roar
+        1058, -- rejuvenation r2
+        5232, -- mark of the wild r2
+	8924, -- moonfire r2
     },
     [12] = {
         5229, -- enrage
         8936, -- regrowth
     },
     [14] = {
-        5211, -- bash
         782, -- thorns r2
+	5178, -- wrath r3
         5187, -- healing touch r3
+        5211, -- bash
     },
     [16] = {
-        1430, -- rejuvenation r3
         779, -- swipe
+        1430, -- rejuvenation r3
+	8925, -- moonfire r3
     },
     [18] = {
         1062, -- entangling roots r2
@@ -276,9 +282,10 @@ s["DRUID"] = {
         9492, -- rip r2
     },
     [30] = {
+	6798, -- bash r2
         17390, -- faerie fire feral r2
         778, -- faerie fire r2
-        5234, -- mark of the wild
+        5234, -- mark of the wild r4
         8940, -- regrowth r4
         783, -- travel form
     },
@@ -297,7 +304,8 @@ s["DRUID"] = {
         9005, -- pounce
         8941, -- regrowth r5
         9493, -- rip
-        6793, -- tigers fury
+        6793, -- tigers fury r2
+	22842, -- frenzied regeneration
     },
     [38] = {
         5201, -- claw r3
@@ -327,15 +335,18 @@ s["DRUID"] = {
         9756, -- thorns r5
     },
     [46] = {
+	8983, -- bash r3
         9821, -- dash r2
         9823, -- pounce r2
         9839, -- rejuvenation r8
+	22895, -- frenzied regeneration r2
     },
     [48] = {
         9849, -- claw r4
         22828, -- ferocious bite r3
         9856, -- regrowth r7
         9845, -- tigers fury r3
+	9852, -- entangling roots r5
     },
     [50] = {
         9888, -- healing touch r9
@@ -356,11 +367,13 @@ s["DRUID"] = {
         22829, -- ferocious bite r4
         9889, -- healing touch r10
         9827, -- pounce r3
+	22896, -- frenzied regeneration r3
     },
     [58] = {
         9857, -- ravage r4
         9841, -- rejuvenation r10
         33982, -- mangle r2
+	9853, -- entangling roots r6
     },
     [60] = {
         31018, -- ferocious bite r5
@@ -371,35 +384,6 @@ s["DRUID"] = {
         25299, -- rejuvenation r11
         9868, -- rip r6
         9846, -- tigers fury r4
-    },
-    [62] = {
-        26978, -- healing touch r12
-        22570, -- maim
-    },
-    [63] = {
-        24248, -- ferocious bite r6
-        26981, -- rejuvenation r12
-    },
-    [64] = {
-        33763, -- lifebloom
-        26992, -- thorns r7
-    },
-    [65] = {
-        33357, -- dash r3
-        26980, -- regrowth
-    },
-    [66] = {
-        27011, -- faerie fire feral r5
-        26993, -- faerie fire r5
-        27006, -- pounce r4
-        27005, -- ravage r5
-    },
-    [68] = {
-        33983, --mangle r3
-    },
-    [69] = {
-        26979, -- healing touch r13
-        26982, -- rejuvenation r13
     },
 }
 
@@ -413,18 +397,18 @@ s["PALADIN"] = {
          19740, --Blessing of might
     },
     [6] = {
-         498, --Divine protections
+         498, --Divine protection
          639, --Holy Light R2
         3127, --parry
     },
     [8] = {
          853, --Hammer of Justice
+         1152, --Purify
     },
     [10] = {
          663, --Lay on Hands
          1022, --Blessing of Protection
          10290, --Devotion Aura R2
-         1152, --Purify
     },
     [12] = {
          20287, --Seal of Righteousness R2
@@ -452,12 +436,13 @@ s["PALADIN"] = {
     [22] = {
          1026, --Holy Light R4
          19835, --blessing of might r3
-         20305,--seal of teh crusader r3
+         20305,--seal of the crusader r3
     },
     [24] = {
          19850, --blessing of wisdom r2
          5588, --hammer of justice r2
          5599, --blessing of pretection r2
+	 2878, -- turn undead
     },
     [26] = {
          19939, --flash of light r2
@@ -465,10 +450,9 @@ s["PALADIN"] = {
     },
     [28] = {
          5614, --exorcism r2
+	19746, --concerntration aura, may remove
     },
     [30] = {
-         34769, --summon warhorse (belf)
-         13819, --summon warhorse (alliance)
          20116, --consecration r2 
          1042, --holy light r5
          10291, --devotion aura r4
@@ -490,10 +474,11 @@ s["PALADIN"] = {
     },
     [38] = {
         10278, -- blessing of protection r3
-        3472, -- holy light
+        3472, -- holy light r6
         20166, -- seal of wisdom
     },
     [40] = {
+        13819, --summon warhorse (alliance)
         20922, -- consecration r3
         5589, -- hammer of justice r3
         1032, -- devotion aura r5
@@ -503,7 +488,7 @@ s["PALADIN"] = {
         4987, -- cleanse
         19837, --  blessing of might r5
         19941, -- flash of light r4
-        20307,--seal of the crusader r5
+        20307, -- seal of the crusader r5
     },
     [44] = {
         24275, -- hammer of wrath
@@ -528,12 +513,14 @@ s["PALADIN"] = {
         19838, -- blessing of might r6
         24274, -- hammer of wrath r2
         10313, -- exorcism r5
-        20308,--seal of the crusader r6
+        20308, -- seal of the crusader r6
+	25782, -- greater blessing of might
     },
     [54] = {
         10308, -- hammer of justice r4
         10329, -- holy light r8
         19854, -- blessing of wisdom r5
+	25894, -- greater blessing of wisdom
     },
     [56] = {
         10301, -- retribution aura r5
@@ -552,34 +539,6 @@ s["PALADIN"] = {
         25290, -- blessing of wisdom r6
         24239, -- hammer of wrath r3
         20920, -- seal of command r5
-    },
-    [61] = {
-        27158,--seal of the crusader
-    },
-    [62] = {
-        32223, -- crusader aura
-        27135, -- holy light r10
-    },
-    [64] = {
-        31892, -- seal of blood
-        31801, -- seal of vengeance
-    },
-    [65] = {
-        27142, -- blessing of wisdom
-    },
-    [66] = {
-        33776, -- spiritual attunement
-        27137, -- flash of light r7
-        27150, -- retribution aura
-        27166, -- seal of wisdom r4
-    },
-    [68] = {
-        27180, -- hammer of wrath r4
-        27138, -- exorcism r7
-        27139, -- holy wrath r3
-    },
-    [69] = {
-        27154, --  lay of hands r4
     },
 }
 
@@ -760,44 +719,6 @@ s["SHAMAN"] = {
         16362, -- windfury weapon r4
         25359, -- Grace of Air Totem r3
     },
-    [61] = {
-        25546, -- fire nova totem r6
-    },
-    [62] = {
-        24398, -- water shield
-        25448, -- Lightning Bolt r11
-    },
-    [63] = {
-        25469, -- lightning shield r8
-        25391, -- healing wave r11
-        25439, -- Chain Lightning r5
-    },
-    [64] = {
-        3738, --wrath of air totem
-    },
-    [65] = {
-        25528, -- strength of earth totem r6
-        25570, -- Mana Spring Totem r5
-    },
-    [66] = {
-        2062, -- earth elemental totem
-        25320, -- lesser healing wave r7
-        25525, -- stoneclaw totem r7
-    },
-    [67] = {
-        25525, -- stoneclaw totem r7
-        25449, -- Lightning Bolt r12
-    },
-    [68] = {
-        2894, -- fire elemental totem
-        25364, -- frost shock r5
-        25505, -- windfury weapon r5
-    },
-    [69] = {
-        25454, -- earth shock r8
-        25533, -- searing totem r7
-        33736, -- Water Shield r2
-    },
 }
 
 s["HUNTER"] ={
@@ -959,7 +880,7 @@ s["WARRIOR"] = {
     [4] = {
         100, -- charge
         772, -- rend
-        3127, --parry
+        3127, -- parry
     },
     [8] = {
         1715, -- hamstring
@@ -1060,37 +981,16 @@ s["WARRIOR"] = {
         25289, -- battle shout r7
         11585, -- overpower r4
     },
-    [62] = {
-        25202, -- demoralizing shout r6
-        34428, -- victory rush
-    },
-    [64] = {
-        23920, -- spell reflection
-    },
-    [65] = {
-        25234, -- execute r6
-    },
-    [66] = {
-        25248, -- mortal strike r5
-    },
-    [67] = {
-        25212, -- hamstring r4
-        25225, -- sunder armor r6
-    },
-    [68] = {
-        249, -- commanding shout
-    },
-    [69] = {
-        2048, -- battle shout r8
-        25275, -- intercept r5
-    },
 }
 
 s["ROGUE"] = {
+    [1] = {
+        1784, -- stealth
+    },
     [6] = {
         1776, -- gouge
         1757, -- sinister strike r2
-        3127, --parry
+        3127, -- parry
     },
     [8] = {
         5277, -- evasion
@@ -1105,6 +1005,7 @@ s["ROGUE"] = {
     },
     [12] = {
         1766, -- kick
+	6770, -- sap
     },
     [14] = {
 	703, -- garrote
@@ -1135,6 +1036,7 @@ s["ROGUE"] = {
     [28] = {
 	8639, -- rupture r2
         8687, -- instant poison 2
+	2070, -- sap r2
     },
     [30] = {
         408, -- kidney shot
@@ -1170,16 +1072,19 @@ s["ROGUE"] = {
     [44] = {
 	11273, -- rupture r4
         11341, -- instant poison r4
+	1777, -- gouge r2
+	8629, -- gouge r3
     },
     [46] = {
 	11289, -- garrote r5
         11293, -- sinister strike r7
+	11285, -- gouge r4
     },
     [48] = {
         11299, -- eviscerate r7
+	11297, -- sap r3
     },
     [50] = {
-        26669, -- evasion r2
         8643, -- kidney shot r2
     },
     [52] = {
@@ -1198,6 +1103,7 @@ s["ROGUE"] = {
         11305, -- sprint r3
     },
     [60] = {
+	11286, -- gouge r5
         1787, -- stealth r4
 	11275, -- rupture r6
         11343, -- instant poison r6
@@ -1236,8 +1142,10 @@ s["WARLOCK"] = {
     },
     [16] = {
         1455, -- life tap r2
+	5697, -- unending breath
     },
     [18] = {
+	693, -- soulstone
         1014, -- curse of agony r2
     },
     [20] = {
@@ -1245,16 +1153,21 @@ s["WARLOCK"] = {
         3698, -- health funnel r2
         1094, -- immolate r3
         1088, -- shadowbolt r4
-        5740, --rain of fire r1
+        5740, --rain of fire r1 for split pulling
     },
     [22] = {
         6202, -- create healthstone r2
         699, -- drain life r2
-        5676, -- searing pain r1
+        5676, -- searing pain r1 for Fangore/shadow res mobs
+    },
+    [24] = {
+        6223, -- corruption r3
     },
     [26] = {
         1714, -- curse of tongues
         1456, -- life tap r3
+	132, -- detect lesser invisibility
+	17919, -- searing pain r2
     },
     [28] = {
         710, -- banish
@@ -1263,18 +1176,21 @@ s["WARLOCK"] = {
         1106, -- shadow bolt r5
     },
     [30] = {
+	1949, -- hellfire, for deathskips
         20752, -- create soulstone r2
         1086, -- demon armor r2
         709, -- drain life r3
         2941, -- immolate r4
-        5784, -- summon felsteed
+	704, -- curse of recklessness
     },
     [32] = {
+	6229, -- shadow ward
         6213, -- fear r2
     },
     [34] = {
         7684, -- corruption r4
         5699, -- create healthstone r3
+	17920, -- searing pain r3
     },
     [36] = {
         2362, -- create spellstone 
@@ -1283,18 +1199,23 @@ s["WARLOCK"] = {
         7641, -- shadow bolt r6
     },
     [38] = {
+	2970, -- detect invisibility
         18879, -- siphon life r2
         11711, -- curse of agony r4
         7651, -- drain life r4
     },
     [40] = {
+	5784, -- summon felsteed
         20755, -- create soulstone r3
         11733, -- demon armor r3
         5484, -- howl of terror
         11655, -- immolate r5
     },
     [42] = {
+	11739, -- shadow ward r2
         6789, -- death coil
+	11683, -- hellfire r2
+	17921, -- searing pain r4
     },
     [44] = {
         11671, -- corruption r5
@@ -1307,27 +1228,34 @@ s["WARLOCK"] = {
         11688, -- life tap r5
     },
     [48] = {
+	6353, -- soul fire
         18880, -- siphon life r3
         18647, -- banish r2
         11712, -- curse of agony r5
     },
     [50] = {
+	11719, -- curse of tongues r2
         18937, -- dark pact r2
         20756, -- create soulstone r4
         17925, -- death coil r2
         11734, -- demon armor r4
         11667, -- immolate r6
+	11743, -- detect greater invisibility
+	17922, -- searing pain r5
     },
     [52] = {
+	11740, -- shadow ward r3
         11694, -- health funnel r6
         11660, -- shadow bolt r8
     },
     [54] = {
+	11684, -- hellfire r3
         11672, -- corruption r6
         11700, -- drain life r6
         17928, -- howl of terror r2
     },
     [56] = {
+	17924, -- soul fire r2
         6215, -- fear r3
         11689, -- life tap r6
         18881, -- siphon life r4
@@ -1336,6 +1264,7 @@ s["WARLOCK"] = {
     [58] = {
         11713, -- curse of agony r6
         17926, -- death coil r3
+	17923, -- searing pain r6
     },
     [60] = {
         30404, -- unstable affliction r2
@@ -1350,43 +1279,16 @@ s["WARLOCK"] = {
         18938, -- dark pact r3
         25311, -- corruption r7
     },
-    [62] = {
-        27219, -- drain life r7
-        28176, -- fel armor
-    },
-    [63] = {
-        27264, -- siphon life r5
-    },
-    [65] = {
-        27216, -- corruption r8
-    },
-    [67] = {
-        27218, -- curse of agony r7
-        27259, -- health funnel r8
-    },
-    [68] = {
-        27230, -- create healthstone r6
-        27223, -- death coil r4
-        27222, -- life tap r7
-    },
-    [69] = {
-        27220, -- drain life r8
-        28189, -- fel armor r2
-        27215, -- immolate r9
-        27209, -- shadow bolt r11
-    },
 }
 
 s["MAGE"] = {
     [4] = {
         1459, -- Arcane Intellect
         116, -- frostbolt
-        5504, -- Conjure water
     },
     [6] = {
         2136, -- fire blast
         143, -- fireball r2
-        587, -- conjure food
     },
     [8] = {
         205, -- frostbolt r2
@@ -1395,18 +1297,21 @@ s["MAGE"] = {
     [10] = {
         7300, -- frost armor r2
         122, -- frost nova
+        5504, -- Conjure water
         5505, -- conjure water r2
     },
     [12] = {
-        597, -- conjure food
+        587, -- conjure food
+        597, -- conjure food r2
         145, -- fireball r3
         130, -- slow fall
+	604, -- dampen magic
     },
     [14] = {
         1449, -- arcane explosion
         1460, -- arcane intellect
-        2137, -- fire blast
-        837, -- frostbolt
+        2137, -- fire blast r2
+--   837, -- frostbolt r3
     },
     [16] = {
         2120, -- flamestrike
@@ -1424,27 +1329,26 @@ s["MAGE"] = {
         7322, -- frostbolt r4
         1463, -- mana shield
         12824, -- polymorph r2
-        12271,-- exodar
         3562,-- ironforge
         3561,-- stormwind
         3567,-- orgrimmar
-        32272,-- silvermoon
         3563,-- undercity
     },
     [22] = {
         8437, -- arcane explosion r2
         990, -- conure food r3
-        2138, -- fireblast
-        2948, -- scorch
+        2138, -- fire blast r3
     },
     [24] = {
         2139, -- counterspell
         8400, -- fireball r5
-        2121, -- flamastrike r2
+        2121, -- flamestrike r2
+        2948, -- scorch
     },
     [26] = {
         120, -- cone of cold
-        8406, -- frostbolt r5
+	8450, -- dampen magic r2
+--        8406, -- frostbolt r5
     },
     [28] = {
         1461, -- arcane intellect r3
@@ -1459,12 +1363,11 @@ s["MAGE"] = {
         8412, -- fire blast r4
         8101, -- fireball r6
         7302, -- ice armor
-        45438, -- ice block
         3565,-- darnassus
         3566,-- thunder bluff
     },
     [32] = {
-        6129, -- conjure food
+        6129, -- conjure food r4
         8422, -- flamestrike r3
         8407, -- frostbolt r6
     },
@@ -1476,7 +1379,7 @@ s["MAGE"] = {
     [36] = {
         8427, -- blizzard r3
         8402, -- fireball r7
-        8495, -- mana shield
+        8495, -- mana shield r3
     },
     [38] = {
         8439, -- arcane explosion r4
@@ -1490,6 +1393,7 @@ s["MAGE"] = {
         7320, -- ice armor r2
         12825, -- polymorph r3
         8446, -- scorch r4
+	8451, -- dampen magic r3
     },
     [42] = {
         10156, -- arcane intellect r4
@@ -1513,6 +1417,7 @@ s["MAGE"] = {
         10053, -- conujre mana citrine
         10149, -- fireball r9
         10215, -- flamestrike r5
+	10173, -- dampen magic r4
     },
     [50] = {
         10160, -- cone of cold r4
@@ -1534,7 +1439,7 @@ s["MAGE"] = {
     [56] = {
         10157, -- arcane intellect r5
         10216, -- flamestrike r6
-        10181, -- frostboltr10
+        10181, -- frostbolt r10
     },
     [58] = {
         13033, -- ice barrier r4
@@ -1553,46 +1458,13 @@ s["MAGE"] = {
         10220, -- ice armor r4
         10193, -- mana shield r6
         12826, -- polymorph r4
-        33690,-- shat - alliance
-        35715,-- shat - horde
-    },
-    [61] = {
-        27078, -- fireb blast 48
-    },
-    [62] = {
-        27080, -- arcane explosion r7
-        30482, --molten armor
-    },
-    [63] = {
-        27071, -- frostbolt r12
-    },
-    [64] = {
-        27134, -- ice barrier r5
-        27086, -- flamestrike r7
-    },
-    [65] = {
-        27087, -- cone of cold r6
-        37420, -- conjure water r8
-        27073, -- scorch r8
-    },
-    [66] = {
-        27070, -- fireball r13
-        30455, -- ice lacnce
-    },
-    [68] = {
-        27085, -- blizzard r7
-        27101, -- conjure mana emerald
-        66, -- invisiability
-        27131, -- mana shield r7
-    },
-    [69] = {
-        27072, -- frostbolt r13
-        27124, -- ice armor r5
-        27125, -- mage armor r4
     },
 }
 
 s["PRIEST"] = {
+    [1] = {
+        1243, -- power word: fortitude
+    },
     [4] = {
         2052, -- lesser heal r2
         359, -- shadow word pain
@@ -1605,12 +1477,11 @@ s["PRIEST"] = {
         139, -- renew
     },
     [10] = {
-        13908, -- desperate prayer human/dwarf
+        13908, -- desperate prayer human dwarf
         2053, -- lesser heal r3
         8092, -- mind blast
         594, -- shadow word pain r2
-        10797, -- starshards night elf
-        32548, -- symbol of hope draenei
+	2652, -- touch of weakness undead
     },
     [12] = {
         588, -- inner fire
@@ -1628,28 +1499,30 @@ s["PRIEST"] = {
         8102, -- mind blast r2
     },
     [18] = {
+	527, -- dispel magic
         19236, -- desperate prayer r2 human/dwarf
         600, -- power word shield r3
         970, -- shadow word pain r3
         19296, -- starshards r2 night elf
     },
     [20] = {
-        44041, -- chastise draenei/dwarf
-        42676, -- consume magic blood elf
         2944, -- devouring plague undead
         2651, -- elunes grace night elf
-        6346, -- fear ward
-        13896, -- feedback human
+        6346, -- fear ward dwarf
+--      13896, -- feedback human, mana cost too high
         2061, -- flash heal
         14914, -- holy fire
         7128, -- inner fire r2
         6075, -- renew r3
-        18137, -- shadowguard
+        18137, -- shadowguard troll
+	19261, -- touch of weakness r2 undead
     },
     [22] = {
+	453, -- mind soothe 2lvl
         2055, -- heal r2
         8103, -- mind blast r3
         984, -- smite r4
+	9484, -- shackle undead 2lvl
     },
     [24] = {
         15262, -- holy fire r2
@@ -1661,7 +1534,7 @@ s["PRIEST"] = {
         9472, -- flash heal r2
         6076, -- renew r4
         992, -- shadow word pain r4
-        19299, -- star shards r3 night elf
+--      19299, -- star shards r3 night elf
     },
     [28] = {
         19276, -- devouring plague r2 undead
@@ -1671,12 +1544,15 @@ s["PRIEST"] = {
         19308, -- shadowguard r2 troll
     },
     [30] = {
-        44043, -- chastise r2 dwarf/draenei
-        19271, -- feedback r2 human
+	605, -- mind control
+	976, -- shadow protection
+--     19271, -- feedback r2 human
+	19289, -- elune's grace night elf
         15263, -- holy fire r3
         602, -- inner fire r3
-        6065, -- powerwordshield r5
+        6065, -- power word shield r5
         1004, -- smite r5
+	19262, -- touch of weakness r3 undead
     },
     [32] = {
         552, -- abolish disease
@@ -1684,20 +1560,22 @@ s["PRIEST"] = {
         6077, -- renew r5
     },
     [34] = {
-        19240, -- desperate prayer r4
+        19240, -- desperate prayer r4 human dwarf
         6064, -- heal r4
         1706, -- levitate 
         8105, -- mind blast r5
         2767, -- shadow word pain
-        19302, -- starshards r4 night elf
+--    19302, -- starshards r4 night elf
     },
     [36] = {
-        19277, -- devouring plague r3
+        19277, -- devouring plague r3 undead
         15264, -- holy fire r4
         2791, -- power word fortitude r4
         6066, -- power word shield r6
         19309, -- shadowguard r3 troll
         6060, -- smite r6
+	8192, -- mind soothe r2
+	988, -- dispel magic r2
     },
     [38] = {
         9474, -- flash heal r4
@@ -1705,19 +1583,21 @@ s["PRIEST"] = {
     },
     [40] = {
         8106, -- mind blast r6
-        44044, -- chastise r3 dwarf/draenei
-        19273, -- feedback r3
+--     19273, -- feedback r3
         2060, -- greater heal 
         1006, -- inner fire r4
         17311, -- mind flay r2
         17312, -- mind flay r3
+	9485, -- shackle undead r2
+	19291, -- elune's grace r3 night elf
     },
     [42] = {
         19241, -- desperate prayer r5 dwarf human
         10898, -- power word shield r7
         10888, -- psychic scream r3
         10892, -- shadow word pain r6
-        19303, -- starshards r5 night elf
+	10957, -- shadow protection r2
+--      19303, -- starshards r5 night elf
     },
     [44] = {
         17313, -- mind flay r4
@@ -1725,6 +1605,7 @@ s["PRIEST"] = {
         10915, -- flash heal r5
         10927, -- renew r7
         19310, -- shadowguard r4 troll
+	10911, -- mind control r2
     },
     [46] = {
         10963, -- greater heal r2
@@ -1733,16 +1614,17 @@ s["PRIEST"] = {
     [48] = {
         10937, -- power word fortitude r5
         10899, -- power word shield r8
+	21562, -- prayer of fortitude
     },
     [50] = {
-        44045, -- chastise r4 dwarf draenei
         19242, -- desperate prayer r6 human dwarf
         19274, -- feedback r4 human
         10916, -- flash heal r6
         10951, -- inner fire r5
         10928, -- renew r8
         10893, -- shadow word pain r7
-        19304, -- starshards r6
+--      19304, -- starshards r6 night elf
+	19292, -- elune's grace r4
     },
     [52] = {
         17314, -- mind flay r5
@@ -1750,6 +1632,7 @@ s["PRIEST"] = {
         10964, -- greater heal r3
         10946, -- mind blast r8
         19311, -- shadowguard r5 troll
+	10953, -- mind soothe r3
     },
     [54] = {
         10900, -- power word shield r9
@@ -1758,13 +1641,15 @@ s["PRIEST"] = {
         10917, -- flash heal r7
         10890, -- psychic scream r4
         10929, -- renew r9
+	10958, -- shadow protection r3
+	27683, -- prayer of shadow protection
     },
     [58] = {
         19243, -- deserpate prayer r7 dwarf human
         10965, -- greater heal r4
         10947, -- mind blast r9
         10894, -- shadow word pain r8
-        19305, -- starshards r7
+--   19305, -- starshards r7 night elf
     },
     [60] = {
         18807, -- mind flay r6
@@ -1778,38 +1663,6 @@ s["PRIEST"] = {
         10901, -- power word shield r10
         25315, -- renew r10
         19312, -- shadowguard r6 troll
-    },
-    [61] = {
-        25233, -- flash heal r8
-    },
-    [62] = {
-        32379, -- shadow word death
-    },
-    [63] = {
-        25210, -- greater heal r6
-        25372, -- mind blast r10
-    },
-    [65] = {
-        25217, -- power word shield r11
-        25221, -- renew r11
-        25367, -- shadow word pain r9
-    },
-    [66] = {
-        25437, -- desperate prayer r8 human dwarf
-        34433, -- shadowfiend
-        25446, -- starshards 48 night elf
-    },
-    [67] = {
-        25235, -- flash heal r9
-    },
-    [68] = {
-        25387, -- mind flay r7
-        25467, -- devouring plague r7 undead
-        25213, -- greater heal r7
-        25477, -- shadowguard r7 troll
-    },
-    [69] = {
-        25431, -- inner fire r7
-        25375, -- mind blast r11
+	19293, -- elune's grace r5
     },
 }
