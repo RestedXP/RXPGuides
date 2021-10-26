@@ -424,6 +424,11 @@ step
     .goto The Barrens,40.2,18.9
     >>Kill Harpies. Loot them for their Talons
     .complete 867,1 --Witchwing Talon (8)
+step
+    #sticky
+    #completewith Samophlange
+    >>Kill Plainstriders. Loot them for their Kidneys 
+    .complete 821,2 --Plainstrider Kidney (5)
 step << Druid/Warrior
 	#completewith next
     .goto The Barrens,43.8,12.2
@@ -433,6 +438,7 @@ step
     .goto The Barrens,43.8,12.2
 	.vendor	>> Vendor trash, repair
 step
+	#label Samophlange
     >>Click on the Control Console
     .goto The Barrens,52.4,11.6
     .turnin 894 >>Turn in Samophlange
@@ -496,6 +502,11 @@ step
     .goto The Barrens,55.3,7.8
     .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site (1)
 step
+    #sticky
+    #completewith next
+    >>Kill Plainstriders. Loot them for their Kidneys 
+    .complete 821,2 --Plainstrider Kidney (5)
+step
     >>Grind mobs in the area. Loot them until Cats Eye Emerald drops
     .goto The Barrens,61.5,4.3
     .complete 896,1 -- Cats Eye Emerald (1)
@@ -509,7 +520,7 @@ step << Priest
     .goto Orgrimmar,35.59,87.83
     .trainer >> Train your class spells
 step << Tauren/Undead
-    >>Run to the Flight Master tower. Get the Flight Path, then HEARTH to Crossroads
+    >>Run to the Flight Master tower. Get the Flight Path. DON'T fly anywhere
     .goto Orgrimmar,45.2,63.8
     .fp >>Get the Orgrimmar Flight Path
 step
@@ -667,7 +678,7 @@ step
 step
     #sticky
     #completewith Nest
-    >>Kill any raptors you see. Loot them for their Horns and Feathers. Be careful as they thrash
+    >>Kill any Raptors you see. Loot them for their Horns and Feathers. Be careful as they thrash
     .complete 865,1 --Intact Raptor Horn (5)
 step
     >>Loot the chest for Stolen Silver
@@ -801,13 +812,10 @@ step
     .complete 875,1 --Harpy Lieutenant Ring (6)
 step
     #label LionT
-	.goto The Barrens,54.3,14.7
+    .goto The Barrens,40.48,20.36,100,0
+    .goto The Barrens,41.4,24.5
     >>Kill Savannah Prowlers in the area. Loot them for their Tusks
     .complete 821,1 --Savannah Lion Tusk (5)
-step
-    .goto The Barrens,47.48,26.02
-    >>Finish getting Kidneys from Plainstriders
-    .complete 821,2 --Plainstrider Kidney (5)
 step
 	.goto The Barrens,35.3,27.9
     .turnin 1061 >> Turn in The Spirits of Stonetalon
@@ -966,6 +974,10 @@ step
     .goto The Barrens,44.84,47.69
     >>Kill Stormstouts. Loot them for a Horn
     .complete 821,3 --Thunder Lizard Horn (1)
+step
+    .goto The Barrens,53.48,48.23
+    >>Finish getting Kidneys from Plainstriders
+    .complete 821,2 --Plainstrider Kidney (5)
 step
     >>Go around the lake and kill Turtles. Loot them for their Shells
 .goto The Barrens,55.5,42.6
