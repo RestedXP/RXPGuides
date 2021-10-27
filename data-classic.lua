@@ -759,6 +759,7 @@ s["HUNTER"] ={
         24549, -- natural armor r2
     },
     [14] = {
+	6197, -- eagle eye
         1513, -- scare beast
     },
     [16] = {
