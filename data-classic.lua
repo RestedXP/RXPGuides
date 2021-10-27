@@ -888,6 +888,9 @@ s["HUNTER"] ={
 }
 
 s["WARRIOR"] = {
+    [1] = {
+        6673, -- battle shout r2
+    },
     [4] = {
         100, -- charge
         772, -- rend
@@ -912,7 +915,6 @@ s["WARRIOR"] = {
     },
     [20] = {
         845, -- cleave
-        6547, -- rend r3
         20230, -- retaliation
     },
     [22] = {
@@ -939,8 +941,6 @@ s["WARRIOR"] = {
         11549, -- battle shout
         18499, -- berserker rage
         20658, -- execute r2
-        7372, -- hamstring r2
-        11564, -- heroic strike r5
     },
     [34] = {
         11554, -- demoralizing shout
