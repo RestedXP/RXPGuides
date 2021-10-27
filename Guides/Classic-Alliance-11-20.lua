@@ -58,8 +58,10 @@ step
      >> Head towards the furbolg camp
      .complete 984,1
 step
-     >> Use Tharnariun's Hope in your bags to capture a rabid thistle bear near the furbolg camp
+    >> Find a Rabid Thistle Bear. Aggro one and use Tharnariun's Hope in your bags (purple orb)
+    .goto Darkshore,38.47,57.92
     .complete 2118,1
+    .unitscan Rabid Thistle Bear
 step
      .xp 12-1500 >> Grind mobs until you are 1500xp off level 12
 step
@@ -1245,6 +1247,7 @@ step
     >> Find a Rabid Thistle Bear. Aggro one and use Tharnariun's Hope in your bags (purple orb)
     .goto Darkshore,38.47,57.92
     .complete 2118,1
+    .unitscan Rabid Thistle Bear
 step
     .goto Felwood,19.13,21.39
      >> Finish killing crabs along the coast and looting them for their legs
