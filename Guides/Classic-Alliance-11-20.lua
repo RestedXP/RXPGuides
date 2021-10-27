@@ -262,11 +262,23 @@ step << Hunter
     .goto Felwood,22.39,29.45
     .complete 985,1
     .complete 985,2
-step <<  !Hunter
+step <<  !Hunter !Druid
     #label xp15
     #requires ghosts
     .goto Felwood,22.39,29.45
     .xp 15 >> Grind to level 15
+step << Druid
+    #era
+    #label xp15
+    #requires ghosts
+    .goto Felwood,22.39,29.45
+    .xp 14-3650 >> Grind until you are 3650xp away from level 14
+step << Druid
+    #som
+    #label xp15
+    #requires ghosts
+    .goto Felwood,22.39,29.45
+    .xp 15-6750 >> Grind until you are 6750xp away from level 15 (6150/12900)
 step <<  Hunter
     #label xp15
     #era
@@ -299,7 +311,7 @@ step << Druid
 step
     .goto Felwood,18.10,18.48
     .turnin 963 >> Turn in For Love Eternal
-step
+step << !Druid
     .goto Felwood,18.50,19.87
     .accept 1138 >> Accept Fruit of the Sea
 step << Druid
@@ -314,6 +326,11 @@ step << Druid
     .accept 26 >> Accept A Lesson to Learn
     .accept 6121 >> Accept Lessons Anew
     .trainer >> Train your class spells
+step << Druid
+    .goto Darnassus,66.0,60.6
+    >>Buy the level 15 staff upgrade, skip this step if you don't have enough money to buy it (56s)
+    .collect 2030,1
+    .money <0.56
 step << Druid
     .goto Moonglade,56.1,30.7
     >>Teleport to Moonglade
@@ -331,6 +348,14 @@ step << Druid
     .accept 272 >> Accept Trial of the Sea Lion
 step << Druid
     .hs >> Hearth to Darkshore
+
+step <<  Druid
+    #era
+    .goto Felwood,22.39,29.45
+    .xp 15.25 >> Grind to level 15 + 25%
+step << Druid
+    .goto Felwood,18.50,19.87
+    .accept 1138 >> Accept Fruit of the Sea
 step << NightElf
     .goto Felwood,20.80,15.58
     .accept 982 >> Accept Deep Ocean, Vast Sea
@@ -817,6 +842,10 @@ step << Druid
     .goto Darkshore,42.4,52.6,90,0
     .goto Darkshore,45.7,50.3,90,0
     .goto Darkshore,45.3,53.3
+    .goto Darkshore,43.4,45.9,0
+    .goto Darkshore,43.3,49.1,0
+    .goto Darkshore,42.4,52.6,0
+    .goto Darkshore,45.7,50.3,0
     >>Look for mushrooms inside the moonkin caves in central Darkshore
     .complete 6123,2
 step
