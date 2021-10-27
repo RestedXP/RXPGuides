@@ -173,6 +173,17 @@ for k,v in pairs(list) do
 end
 StaticPopupDialogs["m1"] = {timeout=10,hasEditBox = 1,text = ""} StaticPopup_Show("m1") StaticPopup1EditBox:SetText(mlist)
 ]]
+
+--Spells not used in hardcore:
+RXP_.HCSpellList = {
+    20752, -- create soulstone r2
+	20755, -- create soulstone r3
+	20756, -- create soulstone r4
+	20757, -- create soulstone r5
+    1949, -- hellfire r1
+    20608, -- reincarnation
+}
+
 local s = {}
 RXP_.defaultSpellList = s
 
