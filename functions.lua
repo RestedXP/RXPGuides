@@ -63,6 +63,7 @@ error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
 }
 
 RXP_.icons.buy = RXP_.icons.collect
+RXP_.icons.xpto60 = RXP_.icons.xp
 
 function RXP_.error(msg)
     print(msg)
@@ -94,6 +95,9 @@ local function IsQuestComplete(id)
     end
 end
 
+RXP_.IsQuestTurnedIn = IsQuestTurnedIn
+RXP_.IsQuestComplete = IsQuestComplete
+
 local questConversion = {
 [9684] = 63866,
 
@@ -108,6 +112,32 @@ local questObjectivesCache = {}
 local db
 if QuestieLoader then 
     db = QuestieLoader:ImportModule("QuestieDB")
+end
+
+function RXP_.FormatNumber(number,precision)
+    if not precision then
+        precision = 0
+    end
+    local integer = math.floor(number)
+    local decimal = math.floor((number-integer)*10^precision+0.5)
+    if decimal > 0 then
+        decimal = '.'..tostring(decimal)
+    else
+        decimal = ""
+    end
+    integer = tostring(integer)
+    local i = #integer % 3
+    if i == 0 then
+        i = 3
+    end
+
+    local suffix = string.sub(integer,i+1)
+    integer = string.sub(integer,1,i)
+
+    for n in string.gmatch(suffix,"%d%d%d") do
+        integer = integer..","..n
+    end
+    return integer..decimal
 end
 
 function RXP_.GetQuestName(id)
@@ -356,7 +386,7 @@ function RXP_.SeasonCheck(step)
 end
 
 function RXP_.HardcoreCheck(step)
-    local hc = RXPData.hardcore and RXP_.version == "CLASSIC"
+    local hc = RXPCData.hardcore and RXP_.version == "CLASSIC"
     if step.softcore and hc or step.hardcore and not hc then
         return false
     end
@@ -779,7 +809,7 @@ function RXP_.UpdateQuestCompletionData(self)
 
 end
 
-local function QueueUpdate(ref,func,lowPrio)
+function RXP_.QueueUpdate(ref,func,lowPrio)
 
     local update
     if lowPrio then
@@ -1100,7 +1130,6 @@ end
 function RXP_.functions.destroy(self,...)
     if type(self) == "string" then --on parse
         local element = {}
-        element.tag = "collect"
         local text,id = ...
         id = tonumber(id)
         if not id then
@@ -1244,7 +1273,7 @@ function RXP_.functions.reputation(self,...)
        (element.rep >= 1 and ((standing > element.standing) or (element.standing == standing and earnedValue >= bottomValue + element.rep))) or
        (element.rep >= 0 and element.rep < 1 and ((standing > element.standing) or (element.standing == standing and earnedValue >= (topValue - bottomValue)*element.rep)))
        then
-	RXP_.SetElementComplete(self,true)
+    RXP_.SetElementComplete(self,true)
     end
 end
 
@@ -1401,7 +1430,7 @@ function RXP_.functions.next(skip,guide)
         local nextGuide
         local guideSkip = RXP_.GetGuideTable(group,next)
         local som = RXPCData.SoM
-        local hc = RXPData.hardcore
+        local hc = RXPCData.hardcore
         
         if RXP_.version ~= "CLASSIC" then
             local faction = next:match("Aldor") or next:match("Scryer")
@@ -1427,7 +1456,7 @@ function RXP_.functions.next(skip,guide)
        
         if nextGuide then
             if (nextGuide.era and RXPCData.SoM or nextGuide.som and not RXPCData.SoM) or 
-               (nextGuide.hardcore and not(RXPData.hardcore) or nextGuide.softcore and RXPData.hardcore) then
+               (nextGuide.hardcore and not(RXPCData.hardcore) or nextGuide.softcore and RXPCData.hardcore) then
                return RXP_.functions.next(nil,nextGuide)
             else
                 return RXP_:LoadGuide(nextGuide)
@@ -1863,7 +1892,7 @@ local BLquests = {
 
 
 function RXP_.functions.blastedLands(self)
-	
+    
     if type(self) == "string" then --on parse
         local element = {}
         element.text = "Collect the following items:\n14 Vulture Gizzard\n11 Basilisk Brain\n6 Scorpok Pincer\n6 Blasted Boar Lung\n5 Snickerfang Jowl"
@@ -1874,18 +1903,18 @@ function RXP_.functions.blastedLands(self)
     --
 
     local element = self.element
-	local step = self.element.step
+    local step = self.element.step
 
-	local id = {
-		8396,
-		8394,
-		8392,
-		8393,
-		8391,
-	}
-	local name = {
-		"Vulture Gizzard","Basilisk Brain","Blasted Boar Lung","Scorpok Pincer","Snickerfang Jowl"
-	}
+    local id = {
+        8396,
+        8394,
+        8392,
+        8393,
+        8391,
+    }
+    local name = {
+        "Vulture Gizzard","Basilisk Brain","Blasted Boar Lung","Scorpok Pincer","Snickerfang Jowl"
+    }
     
     for n,item in pairs(id) do
         local iName = GetItemInfo(item)
@@ -1894,285 +1923,285 @@ function RXP_.functions.blastedLands(self)
         end
     end
 
-	local total = {
-		0,
-		0,
-		0,
-		0,
-		0,
-	}
-	
-	for quest,items in pairs(BLquests) do
-		if not IsQuestFlaggedCompleted(quest) then
-			for item,v in pairs(items) do
-				total[item] = total[item] + v
-			end
-		end
-	end
-	
-	local skip = true
-	--element.textInactive = ""
-	element.text = "Collect the following items:"
-	
-	for item,goal in pairs(total) do
-		local itemCount = GetItemCount(id[item])
-		if goal > 0 then
-			if itemCount > goal then 
-				itemCount = goal 
-			end
-			element.text = string.format("%s\n- %s: %d/%d",element.text,name[item],itemCount,goal)
-		end
-		if itemCount < goal then
-			skip = false
-		end
-	end
+    local total = {
+        0,
+        0,
+        0,
+        0,
+        0,
+    }
+    
+    for quest,items in pairs(BLquests) do
+        if not IsQuestFlaggedCompleted(quest) then
+            for item,v in pairs(items) do
+                total[item] = total[item] + v
+            end
+        end
+    end
+    
+    local skip = true
+    --element.textInactive = ""
+    element.text = "Collect the following items:"
+    
+    for item,goal in pairs(total) do
+        local itemCount = GetItemCount(id[item])
+        if goal > 0 then
+            if itemCount > goal then 
+                itemCount = goal 
+            end
+            element.text = string.format("%s\n- %s: %d/%d",element.text,name[item],itemCount,goal)
+        end
+        if itemCount < goal then
+            skip = false
+        end
+    end
 
-	
-	if skip then
+    
+    if skip then
         element.text = "Do the Blasted Lands collection quests"
         RXP_.SetElementComplete(self)
     else
         RXP_.SetElementIncomplete(self)
-	end
+    end
 
-	RXP_.UpdateStepText(self)
+    RXP_.UpdateStepText(self)
 end
 
 function RXP_.PutItemInBank(bagContents)
-	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
-	if CursorHasItem() and isBankOpened then
-		local bank = {BANK_CONTAINER}
-		for i = NUM_BAG_SLOTS+1, NUM_BAG_SLOTS+NUM_BANKBAGSLOTS do
-			table.insert(bank,i)
-		end
-		
-		if not bagContents then bagContents = {} end
-		for _,bag in ipairs(bank) do
-			if not bagContents[bag] then bagContents[bag] = {} end
-			local slots, bagtype = GetContainerNumFreeSlots(bag)
-			if bagtype == 0 and slots > 0 then
-				for slot = 1,GetContainerNumSlots(bag) do
-					if not (GetContainerItemInfo(bag,slot) or bagContents[bag][slot]) then
-						PickupContainerItem(bag,slot)
-						bagContents[bag][slot] = true
-						return
-					end
-				end
-			end
-		end
-		ClearCursor()
-	end
+    local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    if CursorHasItem() and isBankOpened then
+        local bank = {BANK_CONTAINER}
+        for i = NUM_BAG_SLOTS+1, NUM_BAG_SLOTS+NUM_BANKBAGSLOTS do
+            table.insert(bank,i)
+        end
+        
+        if not bagContents then bagContents = {} end
+        for _,bag in ipairs(bank) do
+            if not bagContents[bag] then bagContents[bag] = {} end
+            local slots, bagtype = GetContainerNumFreeSlots(bag)
+            if bagtype == 0 and slots > 0 then
+                for slot = 1,GetContainerNumSlots(bag) do
+                    if not (GetContainerItemInfo(bag,slot) or bagContents[bag][slot]) then
+                        PickupContainerItem(bag,slot)
+                        bagContents[bag][slot] = true
+                        return
+                    end
+                end
+            end
+        end
+        ClearCursor()
+    end
 
 end
 
 function RXP_.PutItemInBags(bagContents)
-	if CursorHasItem() then
-		if not bagContents then bagContents = {} end
-		for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
-			if not bagContents[bag] then bagContents[bag] = {} end
-			local slots, bagtype = GetContainerNumFreeSlots(bag)
-			if bagtype == 0 and slots > 0 then
-				for slot = 1,GetContainerNumSlots(bag) do
-					if not (GetContainerItemInfo(bag,slot) or bagContents[bag][slot]) then
-						PickupContainerItem(bag,slot)
-						bagContents[bag][slot] = true
-						return
-					end
-				end
-			end
-		end
-		ClearCursor()
-	end
+    if CursorHasItem() then
+        if not bagContents then bagContents = {} end
+        for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+            if not bagContents[bag] then bagContents[bag] = {} end
+            local slots, bagtype = GetContainerNumFreeSlots(bag)
+            if bagtype == 0 and slots > 0 then
+                for slot = 1,GetContainerNumSlots(bag) do
+                    if not (GetContainerItemInfo(bag,slot) or bagContents[bag][slot]) then
+                        PickupContainerItem(bag,slot)
+                        bagContents[bag][slot] = true
+                        return
+                    end
+                end
+            end
+        end
+        ClearCursor()
+    end
 end
 
 function RXP_.PutItemInQuiver(bagContents)
-	if CursorHasItem() then
-		if not bagContents then bagContents = {} end
-		for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
-			if not bagContents[bag] then bagContents[bag] = {} end
-			local slots, bagtype = GetContainerNumFreeSlots(bag)
-			if (bagtype == 1 or bagtype == 2) and slots > 0 then
-				for slot = 1,GetContainerNumSlots(bag) do
-					if not (GetContainerItemInfo(bag,slot) or bagContents[bag][slot]) then
-						PickupContainerItem(bag,slot)
-						bagContents[bag][slot] = true
-						return
-					end
-				end
-			end
-		end
-		ClearCursor()
-	end
+    if CursorHasItem() then
+        if not bagContents then bagContents = {} end
+        for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+            if not bagContents[bag] then bagContents[bag] = {} end
+            local slots, bagtype = GetContainerNumFreeSlots(bag)
+            if (bagtype == 1 or bagtype == 2) and slots > 0 then
+                for slot = 1,GetContainerNumSlots(bag) do
+                    if not (GetContainerItemInfo(bag,slot) or bagContents[bag][slot]) then
+                        PickupContainerItem(bag,slot)
+                        bagContents[bag][slot] = true
+                        return
+                    end
+                end
+            end
+        end
+        ClearCursor()
+    end
 end
 
 function RXP_.GoThroughBags(itemList,func)
-	local bagContents = {}
-	for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
-		for slot = 1,GetContainerNumSlots(bag) do
-			local id = GetContainerItemID(bag, slot)
-			if id then
-				local name = GetItemInfo(id)
-				for _,item in ipairs(itemList) do
-					if item == name or item == id then
-						func(bag,slot,bagContents)
-					end
-				end
-			end
-		end
-	end
+    local bagContents = {}
+    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+        for slot = 1,GetContainerNumSlots(bag) do
+            local id = GetContainerItemID(bag, slot)
+            if id then
+                local name = GetItemInfo(id)
+                for _,item in ipairs(itemList) do
+                    if item == name or item == id then
+                        func(bag,slot,bagContents)
+                    end
+                end
+            end
+        end
+    end
 
 end
 
 function RXP_.DepositItems(itemList)
-	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
-	if itemList and isBankOpened then
-		if type(itemList) ~= "table" then 
-			itemList = {itemList}
-		end
-	else
-		return
-	end
-	
-	local text = ""
-	for _,item in ipairs(itemList) do
-		local id = tonumber(item) or item
-		local name = GetItemInfo(id) or id
-		if name then
-			if text == "" then
-				text = "Attempting to deposit: "..name
-			else
-				text = text..", "..name
-			end
-		end
-	end
-	print(text)
-	
-	RXP_.GoThroughBags(itemList,function(bag,slot,bagContents)
-		PickupContainerItem(bag,slot)
-		RXP_.PutItemInBank(bagContents)
-	end)
+    local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    if itemList and isBankOpened then
+        if type(itemList) ~= "table" then 
+            itemList = {itemList}
+        end
+    else
+        return
+    end
+    
+    local text = ""
+    for _,item in ipairs(itemList) do
+        local id = tonumber(item) or item
+        local name = GetItemInfo(id) or id
+        if name then
+            if text == "" then
+                text = "Attempting to deposit: "..name
+            else
+                text = text..", "..name
+            end
+        end
+    end
+    print(text)
+    
+    RXP_.GoThroughBags(itemList,function(bag,slot,bagContents)
+        PickupContainerItem(bag,slot)
+        RXP_.PutItemInBank(bagContents)
+    end)
 end
 
 function RXP_.IsItemInBags(itemList,reverseLogic)
-	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
-	if itemList and isBankOpened then
-		if type(itemList) ~= "table" then 
-			itemList = {itemList}
-		end
-	else
-		return
-	end
-	for _,item in ipairs(itemList) do
-		local itemCount = 0
-		RXP_.GoThroughBags({item},function()
-			itemCount = itemCount + 1
-		end)
-		if reverseLogic then
-			if itemCount >= 1 then
-				return false
-			end
-		else
-			if itemCount < 1 then
-				return false
-			end
-		end
-	end
-	return true
+    local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    if itemList and isBankOpened then
+        if type(itemList) ~= "table" then 
+            itemList = {itemList}
+        end
+    else
+        return
+    end
+    for _,item in ipairs(itemList) do
+        local itemCount = 0
+        RXP_.GoThroughBags({item},function()
+            itemCount = itemCount + 1
+        end)
+        if reverseLogic then
+            if itemCount >= 1 then
+                return false
+            end
+        else
+            if itemCount < 1 then
+                return false
+            end
+        end
+    end
+    return true
 end
 
 function RXP_.IsItemNotInBags(itemList)
-	return RXP_.IsItemInBags(itemList,true)
+    return RXP_.IsItemInBags(itemList,true)
 end
 
 function RXP_.GoThroughBank(itemList,func)
-	
-	local bank = {BANK_CONTAINER}
-	for i = NUM_BAG_SLOTS+1, NUM_BAG_SLOTS+NUM_BANKBAGSLOTS do
-		table.insert(bank,i)
-	end
-	
-	local bagContents = {}
-	
-	for _,bag in pairs(bank) do
-		for slot = 1,GetContainerNumSlots(bag) do
-			local id = GetContainerItemID(bag, slot)
-			if id then
-				local name = GetItemInfo(id)
-				for _,item in ipairs(itemList) do
-					if item == name or item == id then
-						func(bag,slot,bagContents)
-					end
-				end
-			end
-		end
-	end	
-	
+    
+    local bank = {BANK_CONTAINER}
+    for i = NUM_BAG_SLOTS+1, NUM_BAG_SLOTS+NUM_BANKBAGSLOTS do
+        table.insert(bank,i)
+    end
+    
+    local bagContents = {}
+    
+    for _,bag in pairs(bank) do
+        for slot = 1,GetContainerNumSlots(bag) do
+            local id = GetContainerItemID(bag, slot)
+            if id then
+                local name = GetItemInfo(id)
+                for _,item in ipairs(itemList) do
+                    if item == name or item == id then
+                        func(bag,slot,bagContents)
+                    end
+                end
+            end
+        end
+    end    
+    
 end
 
 function RXP_.WithdrawItems(itemList)
-	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
-	if itemList and isBankOpened then
-		if type(itemList) ~= "table" then 
-			itemList = {itemList}
-		end
-	else
-		return
-	end
-	
-	local text = ""
-	for _,item in ipairs(itemList) do
-		local id = tonumber(item) or item
-		local name = GetItemInfo(id) or id
-		if name then
-			if text == "" then
-				text = "Attempting to withdraw: "..name
-			else
-				text = text..", "..name
-			end
-		end
-	end
-	print(text)
-	
-	RXP_.GoThroughBank(itemList,function(bag,slot,bagContents)
-		PickupContainerItem(bag,slot)
-		RXP_.PutItemInBags(bagContents)
-	end)
+    local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    if itemList and isBankOpened then
+        if type(itemList) ~= "table" then 
+            itemList = {itemList}
+        end
+    else
+        return
+    end
+    
+    local text = ""
+    for _,item in ipairs(itemList) do
+        local id = tonumber(item) or item
+        local name = GetItemInfo(id) or id
+        if name then
+            if text == "" then
+                text = "Attempting to withdraw: "..name
+            else
+                text = text..", "..name
+            end
+        end
+    end
+    print(text)
+    
+    RXP_.GoThroughBank(itemList,function(bag,slot,bagContents)
+        PickupContainerItem(bag,slot)
+        RXP_.PutItemInBags(bagContents)
+    end)
 end
 
 function RXP_.IsItemInBank(itemList,reverseLogic)
-	local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
-	if itemList and isBankOpened then
-		if type(itemList) ~= "table" then 
-			itemList = {itemList}
-		end
-	else
-		return
-	end
-	
-	for _,item in ipairs(itemList) do
-		local itemCount = 0
-		RXP_.GoThroughBank({item},function()
-			itemCount = itemCount + 1
-		end)
-		if reverseLogic then
-			if itemCount >= 1 then
-				return false
-			end
-		else
-			if itemCount < 1 then
-				return false
-			end
-		end
-	end
-	return true
+    local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    if itemList and isBankOpened then
+        if type(itemList) ~= "table" then 
+            itemList = {itemList}
+        end
+    else
+        return
+    end
+    
+    for _,item in ipairs(itemList) do
+        local itemCount = 0
+        RXP_.GoThroughBank({item},function()
+            itemCount = itemCount + 1
+        end)
+        if reverseLogic then
+            if itemCount >= 1 then
+                return false
+            end
+        else
+            if itemCount < 1 then
+                return false
+            end
+        end
+    end
+    return true
 end
 
 function RXP_.IsItemNotInBank(itemList)
-	return RXP_.IsItemInBank(itemList,true)
+    return RXP_.IsItemInBank(itemList,true)
 end
 
 function RXP_.functions.bankdeposit(self,text,...)
-	
+    
     if type(self) == "string" then
         local element = {}
         local items = {...}
@@ -2196,7 +2225,7 @@ function RXP_.functions.bankdeposit(self,text,...)
 end
 
 function RXP_.functions.bankwithdraw(self,text,...)
-	
+    
     if type(self) == "string" then
         local element = {}
         local items = {...}
@@ -2324,40 +2353,40 @@ function RXP_.functions.skipgossip(self,text,...)
     local args = element.args
     args = args or {}
     
-	if event == "GOSSIP_SHOW" then
-		if #args == 0 then
-			if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
-				SelectGossipOption(1)
-			end
-			return
-		end
+    if event == "GOSSIP_SHOW" then
+        if #args == 0 then
+            if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
+                SelectGossipOption(1)
+            end
+            return
+        end
         
-		local id = tonumber(args[1])
-		local npcId = RXP_.GetNpcId()	
-		if #args == 1 then
-			if id < 10 or npcId == id then
-				id = 1
-			else
-				return
-			end
-			if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
-				SelectGossipOption(id)
-			end
-		elseif id == npcId then
-			if not self.npcId then
-				element.index = 2
-				element.npcId = id
-			else
-				element.index = ((self.index -1) % (#args-1))+2
-			end
-			local option = tonumber(args[element.index])
-			if option then
-				SelectGossipOption(option)
-			end
-		end
-	else
-		element.npcId = nil
-	end
+        local id = tonumber(args[1])
+        local npcId = RXP_.GetNpcId()    
+        if #args == 1 then
+            if id < 10 or npcId == id then
+                id = 1
+            else
+                return
+            end
+            if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
+                SelectGossipOption(id)
+            end
+        elseif id == npcId then
+            if not self.npcId then
+                element.index = 2
+                element.npcId = id
+            else
+                element.index = ((self.index -1) % (#args-1))+2
+            end
+            local option = tonumber(args[element.index])
+            if option then
+                SelectGossipOption(option)
+            end
+        end
+    else
+        element.npcId = nil
+    end
     
 end
 

@@ -71,7 +71,7 @@ end
 function RXPG_init()
 	RXPData = RXPData or {}
 	RXPCData = RXPCData or {}
-    RXPData.hardcore = RXPData.hardcore or false
+    RXPCData.hardcore = RXPCData.hardcore or false
     SoMCheck()
     RXP_.RenderFrame()
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
@@ -143,7 +143,7 @@ local function ProcessSpells(names,rank)
                 if spellLvl <= level then
                     for i,spellId in pairs(spells) do
                         --print(spellId)
-                        if IsSpellKnown(spellId) or IsPlayerSpell(spellId) then
+                        if IsSpellKnown(spellId) or IsPlayerSpell(spellId) or (RXPCData.hardcore and RXP_.HCSpellList[spellId]) then
                             spells[i] = nil
                         elseif C_Spell.IsSpellDataCached(spellId) then
                             spellRequest[spellId] = nil
@@ -318,6 +318,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
 		C_Timer.After(1, function() RXP_.ReloadGuide() end)
 	elseif event == "TRAINER_SHOW" then
+        OnTrainer()
 		self:SetScript("OnUpdate",trainerFrameUpdate)
 		trainerUpdate = GetTime()
 		return
@@ -352,6 +353,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
             end
         end
     elseif event == "PLAYER_LEVEL_UP" and RXP_.currentGuide then
+        level = UnitLevel("player")
         local stepn = RXPCData.currentStep
         ProcessSpells()
         --RXP_:LoadGuide(RXP_.currentGuide)
@@ -520,7 +522,7 @@ end
 function RXP_.RenderFrame()
     local path
     local colors
-    if RXPData.hardcore then
+    if RXPCData.hardcore then
         path = RXP_.hardcoreTextures
         colors = hardcoreColors
     else
@@ -860,7 +862,7 @@ function RXP_.SetStep(n,n2)
 			stepframe.number.text:SetTextColor(1,1,1)
 			stepframe.number.text:SetFont(RXP_.font, 9)
 		end
-        if stepframe.hardcore ~= RXPData.hardcore or not stepframe.hardcore then
+        if stepframe.hardcore ~= RXPCData.hardcore or not stepframe.hardcore then
             stepframe:ClearBackdrop()
             stepframe:SetBackdrop(f.backdropEdge)
             stepframe:SetBackdropColor(unpack(RXP_.colors.background))
@@ -961,11 +963,11 @@ function RXP_.SetStep(n,n2)
                 elementFrame.button:HookScript("OnEnter",tpOnEnter)
                 elementFrame.button:HookScript("OnLeave",tpOnLeave)
 			end
-            if elementFrame.button.hardcore ~= RXPData.hardcore or not elementFrame.hardcore then
+            if elementFrame.button.hardcore ~= RXPCData.hardcore or not elementFrame.hardcore then
                 elementFrame.button:SetNormalTexture(RXP_.GetTexture("rxp-btn-blank-32"))
                 elementFrame.button:SetCheckedTexture(RXP_.GetTexture("rxp-checked-32"))
                 elementFrame.button:SetDisabledCheckedTexture(RXP_.GetTexture("rxp-checked-32"))
-                elementFrame.button.hardcore = RXPData.hardcore
+                elementFrame.button.hardcore = RXPCData.hardcore
 			end
             elementFrame.step = step
 			elementFrame.element = element
@@ -1677,7 +1679,8 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 		if not frame then return end
 		local step = frame.step
 		local fheight
-		
+        local levelReq = step.level > level
+        
 		local text
 		for i,element in ipairs(frame.step.elements) do
 			if element.requestFromServer then
@@ -1691,7 +1694,9 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 				end
 			end
 			local rawtext = element.tooltipText or element.text
-			if rawtext and not element.hideTooltip then
+			if levelReq then
+                text = ""
+            elseif rawtext and not element.hideTooltip then
 				if not text then
 					text = "   "..rawtext
 				else
@@ -1699,9 +1704,16 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 				end
 			end
 		end
-		frame.text:SetText(text)
-		fheight = math.ceil(frame.text:GetStringHeight() + 8)
-		frame:SetAlpha(1)
+		
+        frame.text:SetText(text)
+        
+        if levelReq then
+            fheight = 1
+            frame:SetAlpha(0)
+        else
+            fheight = math.ceil(frame.text:GetStringHeight() + 8)
+            frame:SetAlpha(1)
+        end
 		
 		local hDiff = fheight - frame:GetHeight()
 		frame:SetHeight(fheight)
@@ -1718,6 +1730,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 			if not frame:IsShown() then break end
 			local text
 			local step = frame.step
+            local levelReq = step.level > level
 			local fheight
 			for i,element in ipairs(frame.step.elements) do
 				if not self then
@@ -1732,7 +1745,9 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 					end
 				end
 				local rawtext = element.tooltipText or element.text
-				if rawtext and not element.hideTooltip and rawtext ~= "" then
+				if levelReq then
+                    text = ""
+                elseif rawtext and not element.hideTooltip and rawtext ~= "" then
 					if not text then
 						text = "   "..rawtext
 					else
@@ -1740,13 +1755,21 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 					end
 				end
 			end
-                if step.completed or (not step.sticky and RXPCData.currentStep > step.index) or RXPCData.stepSkip[step.index] then
-                    frame:SetAlpha(0.5)
-                else
-                    frame:SetAlpha(1)
-                end
-				frame.text:SetText(text)
-				fheight = math.ceil(frame.text:GetStringHeight() + 8)
+            
+            if step.completed or (not step.sticky and RXPCData.currentStep > step.index) or RXPCData.stepSkip[step.index] then
+                frame:SetAlpha(0.5)
+            else
+                frame:SetAlpha(1)
+            end
+            if levelReq then
+                frame.text:SetText(text)
+                fheight = 1
+                frame:SetAlpha(0)
+            else
+                frame.text:SetText(text)
+                fheight = math.ceil(frame.text:GetStringHeight() + 8)
+            end
+            
 			frame:SetHeight(fheight)
 			totalHeight = totalHeight + fheight+2
 			RXP_.stepPos[n] = totalHeight-5
@@ -1844,7 +1867,7 @@ function RXP_.GenerateMenuTable()
     table.insert(RXP_.menuList,{text = "",notCheckable = 1,isTitle = 1})
 --    table.insert(RXP_.menuList,{text = "Toggle Hardcore Mode",notCheckable = 1,func = RXP_.HardcoreToggle})
     local hctext
-    if RXPData and RXPData.hardcore then
+    if RXPData and RXPCData.hardcore then
         hctext = "Deactivate Hardcore mode"
     else
         hctext = "Activate Hardcore mode"
@@ -1857,7 +1880,7 @@ end
 
 function RXP_.HardcoreToggle()
     if RXPData then
-        RXPData.hardcore = not RXPData.hardcore
+        RXPCData.hardcore = not RXPCData.hardcore
         RXP_.RenderFrame()
     end
 end
@@ -2075,10 +2098,10 @@ function RXP_.CreateOptionsPanel()
         button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
         index = index + 1
         button:SetScript("PostClick",function(self)
-            RXPData.hardcore = self:GetChecked()
+            RXPCData.hardcore = self:GetChecked()
             RXP_.RenderFrame()
         end)
-        button:SetChecked(RXPData.hardcore)
+        button:SetChecked(RXPCData.hardcore)
         button.Text:SetText("Hardcore mode")
         button.tooltip = "Adjust the leveling routes to the deathless ruleset"
         
@@ -2181,7 +2204,7 @@ function RXP_.UpdateQuestButton(index)
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(index);
     local showButton
     local function GetGuideList(list)
-        if RXPData and RXPData.hardcore then
+        if RXPData and RXPCData.hardcore then
             list = list:gsub("\n#.*","")
         else
             list = list:gsub("\n!.*","")
