@@ -777,13 +777,6 @@ step << Warrior/Hunter
 step << Druid
     .goto Thunder Bluff,76.5,27.3
     .turnin 6002 >>Turn in Body and Heart
-step << Druid/Hunter
-    #sticky
-    #completewith next
-    .goto The Barrens,52.0,29.9,100 >>Hearth or fly back to Crossroads
-step << Druid/Hunter
-    .goto The Barrens,51.2,29.1
-    .turnin 6364 >>Turn in Return to Jahan
 step
     #sticky
     #completewith ThunderBluff
@@ -791,12 +784,9 @@ step
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Accept The Demon Scarred Cloak
 step
-    .goto Mulgore,31.7,28.2,40,0
-    .goto Mulgore,30.2,19.5,40,0
-    .goto Mulgore,31.7,28.2,40,0
-    .goto Mulgore,30.2,19.5,40,0
-    .goto Mulgore,31.7,28.2,40,0
-    .goto Mulgore,30.2,19.5,40,0
+    .goto Mulgore,31.7,28.2,90,0
+    .goto Mulgore,30.2,19.5,90,0
+    .goto Mulgore,31.7,28.2
     >>Kill Harpies. Loot them for their Feathers
     .complete 744,1 --Azure Feather (6)
     .complete 744,2 --Bronze Feather (6)
@@ -810,16 +800,17 @@ step
     >>Use the Wildmane Cleansing Totem at the Well
     .complete 760,1 --Cleanse the Wildmane Well (1)
 step
-    .goto Mulgore,52.6,12.2,40,0
-    .goto Mulgore,48.6,16.1,40,0
-    .goto Mulgore,51.8,33.8,40,0
-    .goto Mulgore,56.2,32.9,40,0
-    .goto Mulgore,52.6,12.2,40,0
-    .goto Mulgore,48.6,16.1,40,0
-    .goto Mulgore,51.8,33.8,40,0
-    .goto Mulgore,56.2,32.9,40,0
+    .goto Mulgore,52.6,12.2,90,0
+    .goto Mulgore,48.6,16.1,90,0
+    .goto Mulgore,51.8,33.8,90,0
+    .goto Mulgore,56.2,32.9,90,0
+    .goto Mulgore,52.6,12.2,90,0
+    .goto Mulgore,48.6,16.1,90,0
+    .goto Mulgore,51.8,33.8,90,0
+    .goto Mulgore,56.2,32.9
     >>Look around for Arra'Chea (Big black kodo). He walks clockwise. Kill and Loot him for his horn
     .complete 776,1 --Horn of Arra'chea (1)
+    .unitscan Arra'chea
 step
     #requires Prowlers
     #label ThunderBluff
