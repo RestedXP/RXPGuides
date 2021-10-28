@@ -55,7 +55,7 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.5,29.8
     .accept 6365 >>Accept Meats to Orgrimmar
 step << Shaman Troll/Shaman Orc/Warrior Orc/Warrior Troll/Rogue Orc/Rogue Troll
-    .goto The Barrens,52.5,29.8
+    .goto The Barrens,52.62,29.84
     .turnin 6386 >> Turn in Return to the Crossroads
 step << Undead
     .goto The Barrens,51.99,29.89
@@ -134,7 +134,7 @@ step << Tauren
     .complete 844,1 --Plainstrider Beak (7)
 step << !Tauren Warrior/!Tauren Shaman
     >>Run back to The Crossroads
-	.goto The Barrens,52.6,29.9
+    .goto The Barrens,52.62,29.84
     .turnin 6386 >>Turn in Return to the Crossroads.
 step
     >>Run back to The Crossroads << !Tauren Warrior/!Tauren Shaman
@@ -575,6 +575,9 @@ step << Hunter
 step << Hunter
     .goto Orgrimmar,66.31,14.80
     .trainer >> Train your pet spells
+step << Hunter
+    .goto Orgrimmar,81.52,19.64
+	.train 227 >> Train Staves from Hanashi
 step << Druid
     .zone Moonglade >>Teleport to Moonglade
 step << Druid
@@ -600,11 +603,11 @@ step
     .turnin 903 >>Turn in Prowlers of the Barrens
     .accept 881 >>Accept Echeyakee
 step << !Rogue !Undead !Tauren !Shaman !Warrior
-    .goto The Barrens,52.5,29.8
+    .goto The Barrens,52.62,29.84
     .turnin 6386 >> Turn in Return to the Crossroads
 step
-    >>Use the Horn of Echeyakee in your bags to summon Echeyakee. Kill him and loot him for his Hide
-    .goto The Barrens,55.5,17.3
+    >>Use the Horn of Echeyakee in your bags where the bones are to summon Echeyakee. Kill him and loot him for his Hide
+    .goto The Barrens,55.80,17.03
     .complete 881,1 --Echeyakee's Hide (1)
 step
     .goto The Barrens,52.2,31.0
@@ -655,6 +658,10 @@ step
 step
     .goto The Barrens,62.40,37.70
     .accept 1069 >> Accept Deepmoss Spider Eggs
+step << Hunter
+	#completewith next
+	.goto The Barrens,61.92,38.80
+	.vendor >> Buy arrows from Jazzik until your quiver is full
 step << Rogue
 	#completewith next
     .goto The Barrens,65.04,45.44
@@ -746,7 +753,8 @@ step
     .turnin 4921 >>Turn in Lost in Battle
 step << Hunter
     .goto The Barrens,51.11,29.07
-    .vendor >> Buy a 10 slot quiver from Uthrok and make sure to carry extra arrows for the next segment
+    .vendor >> Buy a 10 slot quiver from Uthrok.
+	>>Fill the 10 slot quiver with Arrows, and then buy 400 extra
 step
     #sticky
     #completewith LionT
@@ -847,7 +855,7 @@ step
 step
     #sticky
     #completewith next
-    .goto Stonetalon Mountains,71.7,86.7,40 >>Run to the path here
+    .goto Stonetalon Mountains,75.89,87.49,30 >>Run up the path to the bonfire here. Try to avoid mobs
 step
     >>Make sure you kill all 6 brutes before starting the quest inside. Kill Grundig in front of the main tent
     .goto Stonetalon Mountains,74.0,86.2
@@ -917,11 +925,14 @@ step
     .goto Stonetalon Mountains,64.1,56.7,100,0
     .goto Stonetalon Mountains,73.4,54.3
     .complete 1062,1 --Kill Venture Co. Logger (x15)
-step << Rogue
+step
    	 .goto Stonetalon Mountains,58.2,51.6
-	>> Go buy a Kris from Veenix
-	.collect 2209,1
+	>> Go buy a Kris from Veenix << Rogue
+	.collect 2209,1 << Rogue
 --N other weapons for other classes?
+step
+	#completewith next
+	+If you have over 15 Deepmoss Eggs, split the stack of any extras (shift click), then delete them
 step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1093 >> Turn in Super Reaper 6000
@@ -932,6 +943,7 @@ step << Druid
 	.trainer >> Go and train your class spells
 step
     .hs >> Hearth to Camp Taurajo
+	.vendor >> Buy food/water if needed
 step
     .goto The Barrens,44.9,59.1
     .turnin 3261 >>Turn in Jorn Skyseer
@@ -967,6 +979,7 @@ step
 	.goto The Barrens,44.3,52.3,100,0
     .goto The Barrens,47.1,53.3,100,0
     .goto The Barrens,45.2,54.3,100,0
+    .goto The Barrens,52.90,53.53
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
     .complete 878,3 --Kill Bristleback Geomancer (x12)
@@ -1032,10 +1045,107 @@ step
     .goto The Barrens,51.60,30.90
     .turnin 875 >> Turn in Harpy Lieutenants
     .accept 876 >> Accept Serena Bloodfeather
+step
+	#som
+    .goto The Barrens,51.50,30.34
+	.fly Orgrimmar >> Fly to Orgrimmar
+step << Shaman
+	#som
+    .goto Orgrimmar,38.6,36.0
+.trainer >> Go and train your class spells
+step << Shaman
+	#som
+    .goto Orgrimmar,37.95,37.73
+	.accept 1528 >> Accept Call of Water
+step << Hunter
+	#som
+    .goto Orgrimmar,66.1,18.5
+	.trainer >> Go and train your class spells
+step << Hunter
+	#som
+    .goto Orgrimmar,66.3,14.8
+	.trainer >> Go and train your pet spells
+step << Warrior
+	#som
+    .accept 1823 >>Accept Speak with Ruga
+    .goto Orgrimmar,79.7,31.4
+	.trainer >> Go and train your class spells
+step << Rogue
+	#som
+    .goto Orgrimmar,44.0,54.6
+	.trainer >> Go and train your class spells
+	>>Make sure you have Rupture and Ambush trained. You need a Dagger too
+step << Rogue
+	#som
+    .goto Durotar,43.89,1.01
+    .accept 2460 >>Accept The Shattered Salute
+step << Rogue
+	#som
+    >>After Shenthul does his salute, type /Salute while targeting him.
+    .complete 2460,1 --Shattered Salute Performed (1)
+step << Rogue
+	#som
+    .turnin 2460 >>Turn in The Shattered Salute
+    .accept 2458 >>Accept Deep Cover
+step << Warlock
+	#som
+    .goto Orgrimmar,48.15,45.28
+    .accept 1507 >>Accept Devourer of Souls
+	.trainer >> Train your class spells
+step << Warlock
+	#som
+    .goto Orgrimmar,47.5,46.7
+	.vendor >> Buy your pet spell upgrades if you have the money.
+step << Warlock
+	#som
+    .goto Orgrimmar,47.20,46.61
+    .turnin 1507 >>Turn in Devourer of Souls
+    .accept 1508 >>Accept Blind Cazul
+step << Warlock
+	#som
+    .goto Orgrimmar,37.26,59.63
+    .turnin 1508 >>Turn in Blind Cazul
+    .accept 1509 >>Accept News of Dogran
+step << Mage
+	#som
+    .goto Orgrimmar,38.8,85.6
+	.trainer >> Go and train your class spells
+step << Mage
+	#som
+    .goto Orgrimmar,38.69,85.39
+	.trainer >> Go upstairs. Train Portal: Orgrimmar
+step << Priest
+	#som
+    .goto Orgrimmar,35.6,87.8
+	.trainer >> Go and train your class spells
+step << Priest/Warlock/Mage
+	#som
+    .goto Orgrimmar,44.4,48.6
+    .collect 5211,1 >> Buy Dusk Wand if you have the money for it.
+step << Rogue
+	#som
+    .goto Durotar,43.89,1.01
+    .accept 2460 >>Accept The Shattered Salute
+step << Rogue
+	#som
+    >>After Shenthul does his salute, type /Salute while targeting him.
+    .complete 2460,1 --Shattered Salute Performed (1)
+step << Rogue
+	#som
+    .turnin 2460 >>Turn in The Shattered Salute
+    .accept 2458 >>Accept Deep Cover
+step
+	#som
+    .goto Orgrimmar,45.13,63.88
+	.fly Crossroads >> Fly to The Crossroads
+step << Warlock
+	#som
+    .goto The Barrens,51.9,30.3
+    .turnin 1509 >>Turn in News of Dogran
+    .accept 1510 >>Accept News of Dogran
 step << !Tauren !Shaman !Warrior
     >>This starts a timed quest
     .goto The Barrens,51.4,30.2
-    .turnin 848 >>Turn in Fungal Spores
     .accept 853 >>Accept Apothecary Zamah
 step
     .goto The Barrens,51.5,30.3
@@ -1053,6 +1163,11 @@ step << Tauren/Warrior/Shaman
     #completewith BloodShard
     +Use your Blood Shards on any buff from Mangletooth
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
+step << Warrior
+    >>In the building
+	.goto The Barrens,44.7,59.4
+	.turnin 1823 >>Turn in Speak with Ruga
+    .accept 1824 >>Accept Trial at the Field of Giants
 step
     .isOnQuest 883
     .goto The Barrens,44.8,59.1
@@ -1083,6 +1198,7 @@ step
 	.goto The Barrens,42.5,60.3,100,0
     .goto The Barrens,47.1,63.7,100,0
     .goto The Barrens,50.0,61.1,100,0
+	.goto The Barrens,42.5,60.3
     >>Kill Thunder Lizards. Loot them for their blood
     .complete 907,1 --Thunder Lizard Blood (3)
 step
@@ -1116,7 +1232,7 @@ step << Tauren/Warrior/Shaman
     .fly Thunder Bluff >>Fly to Thunder Bluff
 step << Warlock/Priest
     .goto Thunder Bluff,41.2,61.4
-.trainer >> Go do weapon training for Staves skill
+	.trainer >> Go do weapon training for Staves skill
 step
     .goto Thunder Bluff,45.9,64.7
     .home >>Set your Hearthstone to Thunder Bluff
@@ -1132,14 +1248,27 @@ step << Rogue
     .goto Thunder Bluff,53.2,56.8
      >> Buy a Longsword from Kard if it's an upgrade
     .collect 923,1
-step << Hunter
-    .goto Thunder Bluff,46.8,45.8
-     >> Buy a Heavy Recurve Bow from Kuna if it's an upgrade. Also buy arrows to fill your quiver
-    .collect 3027,1
 step
     .goto Thunder Bluff,61.4,80.9
     .turnin 1130 >>Turn in Melor Sends Word
     .accept 1131 >>Accept Steelsnap
+step << Hunter
+	#era
+    .goto Thunder Bluff,59.15,86.88
+    .trainer >> Train your class spells
+step << Hunter
+	#era
+    .goto Thunder Bluff,54.10,83.97   
+    .trainer >> Train your pet skills
+step << Warrior
+	#era
+    .goto Thunder Bluff,57.2,87.4
+    .accept 1823 >>Accept Speak with Ruga
+    .trainer >> Train your class spells
+step << Druid
+	#era
+    .goto Thunder Bluff,77.0,29.9
+	.trainer >> Go and train your class spells
 step << !Tauren !Warrior !Shaman
     #completewith next
     .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
@@ -1151,59 +1280,68 @@ step << !Tauren !Warrior !Shaman
 step << !Tauren !Warrior !Shaman
     .goto Thunder Bluff,23.00,21.00
     .turnin 853 >> Turn in Apothecary Zamah 
-step << Druid
-    .goto Thunder Bluff,77.0,29.9
-.trainer >> Go and train your class spells
 step << Priest
+	#era
     .goto Thunder Bluff,24.56,22.60
     .trainer >> Train your class spells
 step << Mage
+	#era
     .goto Thunder Bluff,25.16,20.95
     .trainer >> Train your class spells
 step << Shaman
+	#era
     .goto Thunder Bluff,25.1,20.6
     .trainer >> Train your class spells
-step << Warrior
-    .goto Thunder Bluff,57.2,87.4
---    .accept 1823 >>Accept Speak with Ruga
-    .trainer >> Train your class spells
 step << Hunter
-    .goto Thunder Bluff,59.15,86.88
-    .trainer >> Train your class spells
-step << Hunter
-    .goto Thunder Bluff,54.10,83.97   
-    .trainer >> Train your pet skills
+    .goto Thunder Bluff,46.8,45.8
+     >> Buy a Heavy Recurve Bow from Kuna if it's an upgrade. Also buy arrows to fill your quiver
+    .collect 3027,1
 step << !Tauren !Shaman !Warrior
 	#requires UntilD
     .goto Thunder Bluff,46.9,49.9
     .fp >> Get the Thunder Bluff Flight Path 
-step << !Warlock
-    .goto Thunder Bluff,46.9,49.9
-    .fly Crossroads >>Fly to Crossroads
 step << Warlock
+	#era
     .goto Thunder Bluff,46.9,49.9
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Warlock
+	#era
     .goto Orgrimmar,48.15,45.28
     .accept 1507 >>Accept Devourer of Souls
+	.trainer >> Train your class spells
 step << Warlock
+	#era
     .goto Orgrimmar,47.20,46.61
     .turnin 1507 >>Turn in Devourer of Souls
     .accept 1508 >>Accept Blind Cazul
 step << Warlock
+	#era
+    .goto Orgrimmar,47.5,46.7
+	.vendor >> Buy your pet spell upgrades if you have the money.
+step << Warlock
+	#era
     .goto Orgrimmar,37.26,59.63
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
 step << Warlock
+	#era
     .goto Orgrimmar,45.2,63.8
     .fly Crossroads >>Fly to Crossroads
 step << Warlock
+	#som
+    .goto Thunder Bluff,46.9,49.9
+    .fly Crossroads >>Fly to Crossroads
+step << !Warlock
+    .goto Thunder Bluff,46.9,49.9
+    .fly Crossroads >>Fly to Crossroads
+step << Warlock
+	#era
     .goto The Barrens,51.9,30.3
     .turnin 1509 >>Turn in News of Dogran
     .accept 1510 >>Accept News of Dogran
 step
     >>Kill Serena Bloodfeather. Loot her for her Head
-.goto The Barrens,39.2,12.2
+	.goto The Barrens,39.2,12.2
     .complete 876,1 --Serena's Head (1)
 step
     .goto The Barrens,35.3,27.9
@@ -1214,19 +1352,43 @@ step
     .accept 1063 >>Accept The Elder Crone
     .accept 1068 >> Accept Shredding Machines
 step << Warlock
+	>>Run up the path to the left
+    .goto Stonetalon Mountains,82.19,98.62,60,0
+    .goto Stonetalon Mountains,75.77,97.32,60,0
     .goto Stonetalon Mountains,73.2,95.1
     .turnin 1510 >>Turn in News of Dogran
     .accept 1511 >>Accept Ken'zigla's Draught
 step
-    .goto Stonetalon Mountains,73.2,95.1
+	>>Run up the path to the left, then go into the cave << !Warlock
+    .goto Stonetalon Mountains,82.19,98.62,60,0 << !Warlock
+    .goto Stonetalon Mountains,75.77,97.32,60,0 << !Warlock
+    .goto Stonetalon Mountains,74.21,97.10,50,0
+    .goto Stonetalon Mountains,74.53,97.94
     .accept 1058 >> Accept Jin'Zils Forest Magic
 step
     .goto Stonetalon Mountains,71.3,95.1
     .turnin 6461 >>Turn in Blood Feeders
+step << Hunter
+    >>Click the Wanted poster
+    .goto Stonetalon Mountains,59.0,75.7
+    .accept 6284 >> Accept Arachnophobia
+step << Hunter
+    .goto Stonetalon Mountains,52.61,71.85
+    >>Clear the area out around Besseleth. Be careful as he can web
+    >>This quest is optional. If you can't do it, skip this quest
+    .complete 6284,1 --Collect Besseleth's Fang (x1)
+	.unitscan Besseleth
 step
+	>>Run up the path to the left
+    .goto Stonetalon Mountains,49.08,62.44,40,0
+    .goto Stonetalon Mountains,48.61,63.22,40,0
     .goto Stonetalon Mountains,47.3,64.2
     .accept 6562 >>Accept Trouble in the Deeps
     .accept 6393 >> Accept Elemental War
+step << Hunter
+	.isQuestComplete 6284
+    .goto Stonetalon Mountains,47.20,61.16
+	.turnin 6284 >> Turn in Arachnophobia
 step
     .goto Stonetalon Mountains,45.12,59.84
     .fp Sun Rock>> Get the Sun Rock Retreat flight path
@@ -1260,26 +1422,28 @@ step
     .goto Ashenvale,12.20,33.80
     .fp >> Get the Zoram'gar Outpost Flight Path
 step
+	#sticky
+	#label VorshaL
     .goto Ashenvale,12.06,34.63
      >> Start the escort quest. Be careful as it's difficult, and be quick doing the next 2 steps
     .accept 6641 >> Accept Vorsha the Lasher
 step
-    #sticky
-    #label Deeps
+	>>Take all the quests in Zoram'gar
     .goto Ashenvale,11.60,34.30
     .turnin 6562 >> Turn in Trouble in the Deeps
-step
-    .goto Ashenvale,11.70,34.80
     .accept 6442 >> Accept Naga at the Zoram Strand
+    .accept 216 >> Accept Between a Rock and a Thistlefur
+    .accept 6462 >> Accept Troll Charm
+--N might need to be changed back to accepting later depending on no. of quests in log
 step
-    #requires Deeps 
+	#requires VorshaL
     >>Click the Brazier when you get there.
     >>There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get some aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
 step
-    .goto Ashenvale,7.00,15.20
-    >>Kill Nagas. Loot them for their heads
+    .goto Ashenvale,15.00,20.67
+    >>Kill Nagas. Loot them for their Heads
     .complete 6442,1 --Wraithtail Head (20)
 step << !Druid
     .goto Ashenvale,7.00,15.20
@@ -1295,10 +1459,6 @@ step
 step
     .goto Ashenvale,11.70,34.80
     .turnin 6442 >> Turn in Naga at the Zoram Strand
-    .accept 6462 >> Accept Troll Charm
-step
-    .goto Ashenvale,12.00,34.60
-    .accept 216 >> Accept Between a Rock and a Thistlefur
 step << Druid
 	#requires Vorsha
 	>> Use the spell Teleport to Moonglade
@@ -1321,9 +1481,8 @@ step
     .goto Thunder Bluff,75.65,31.62
     .turnin 1490 >> Turn in Nara Wildmane
 step << Tauren/Warrior/Shaman
-    #completewith next
-    .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
-step << Tauren/Warrior/Shaman
+	>>Go into The Pools of Vision
+    .goto Thunder Bluff,30.1,30.0,25,0
     .goto Thunder Bluff,28.4,27.7
     .accept 264 >>Accept Until Death Do Us Part
 step
@@ -1332,7 +1491,7 @@ step
     .accept 1065 >> Accept Journey to Tarren Mill
 step << Shaman
     .goto Thunder Bluff,25.1,20.6
-.accept 1529 >>Accept Call of Water
+	.accept 1529 >>Accept Call of Water
 step << Warlock
     .goto Thunder Bluff,46.8,50.0
     .fly Camp Taurajo >>Fly to Camp Taurajo
@@ -1341,15 +1500,15 @@ step << Warlock
     .turnin 1511 >>Turn in Ken'zigla's Draught
     .accept 1515 >>Accept Dogran's Captivity
 step << Warlock
-.goto The Barrens,43.3,47.9
+	.goto The Barrens,43.3,47.9
     .turnin 1515 >>Turn in Dogran's Captivity
     .accept 1512 >>Accept Love's Gift
 step << Warlock
-.goto The Barrens,44.4,59.0
-    .fly The Crossroads >>Fly to The Crossroads
-step  << !Warlock
+	.goto The Barrens,44.4,59.0
+    .fly Crossroads >>Fly to The Crossroads
+step << !Warlock
     .goto Thunder Bluff,46.8,50.0
-    .fly The Crossroads >>Fly to The Crossroads
+    .fly Crossroads >>Fly to The Crossroads
 step
     .goto The Barrens,51.60,30.90
     .turnin 876 >> Turn in Serena Bloodfeather
@@ -1357,26 +1516,34 @@ step
 step
     .goto The Barrens,51.10,29.60
     .accept 868 >> Accept Egg Hunt
-step  << Hunter
+step
+    .goto The Barrens,51.50,30.87
+    .accept 6541 >>Accept Report to Kadrak
+step << Hunter
     .goto The Barrens,49.00,11.20
     .turnin 3921 >> Turn in Wenikee Boltbucket
-step  << Hunter
+step
+	>>Go to the 2nd floor of the tower
+    .goto The Barrens,48.12,5.42
+    .turnin 6541 >>Turn in Report to Kadrak
+    .accept 6543 >>Accept The Warsong Reports
+step << Hunter
     .goto Ashenvale,68.30,75.30
      >> Start the escort quest
     .accept 6544 >> Accept Torek's Assault
-step  << Hunter
+step << Hunter
      .goto Ashenvale,64.74,75.35,0
      >> Escort Torek. When you kill the mobs 4 inside, run to the end platform (as more mobs will spawn), and let the orcs take aggro
      >> Kill the mobs that have aggro on Torek, then kill the rest.
     .complete 6544,1 --Take Silverwing Outpost. (1)
-step  << Hunter
+step << Hunter
     .goto Ashenvale,73.00,62.50
     .turnin 6544 >> Turn in Torek's Assault
-step  << Hunter
+step << Hunter
     .goto Ashenvale,73.78,61.46
     .turnin 6382 >> Turn in The Ashenvale Hunt
     .turnin 6383 >> Turn in The Ashenvale Hunt
-step  << Hunter
+step << Hunter
     .goto Ashenvale,73.13,61.54
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Shaman

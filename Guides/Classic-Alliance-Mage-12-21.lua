@@ -365,8 +365,14 @@ step
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
 step
+    #softcore
     #label Turtles
     >>Leave some of the nearby murlocs alive, you're gonna die to them after you accept this quest
+    .goto Darkshore,44.18,20.60
+    .accept 4725 >> Accept Beached Sea Turtle
+step
+    #hardcore
+    #label Turtles
     .goto Darkshore,44.18,20.60
     .accept 4725 >> Accept Beached Sea Turtle
 step
