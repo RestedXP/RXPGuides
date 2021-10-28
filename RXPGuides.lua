@@ -1679,7 +1679,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 		if not frame then return end
 		local step = frame.step
 		local fheight
-        local levelReq = step.level > level
+        local hideStep = step.level > level or step.hideStep
         
 		local text
 		for i,element in ipairs(frame.step.elements) do
@@ -1694,7 +1694,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 				end
 			end
 			local rawtext = element.tooltipText or element.text
-			if levelReq then
+			if hideStep then
                 text = ""
             elseif rawtext and not element.hideTooltip then
 				if not text then
@@ -1707,7 +1707,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 		
         frame.text:SetText(text)
         
-        if levelReq then
+        if hideStep then
             fheight = 1
             frame:SetAlpha(0)
         else
@@ -1730,7 +1730,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 			if not frame:IsShown() then break end
 			local text
 			local step = frame.step
-            local levelReq = step.level > level
+            local hideStep = step.level > level
 			local fheight
 			for i,element in ipairs(frame.step.elements) do
 				if not self then
@@ -1745,7 +1745,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 					end
 				end
 				local rawtext = element.tooltipText or element.text
-				if levelReq then
+				if hideStep then
                     text = ""
                 elseif rawtext and not element.hideTooltip and rawtext ~= "" then
 					if not text then
@@ -1761,7 +1761,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
             else
                 frame:SetAlpha(1)
             end
-            if levelReq then
+            if hideStep then
                 frame.text:SetText(text)
                 fheight = 1
                 frame:SetAlpha(0)
