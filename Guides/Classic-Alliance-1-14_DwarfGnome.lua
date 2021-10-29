@@ -297,7 +297,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 step << Paladin/Warrior/Rogue
     #sticky
     #completewith BearFur
-    >> Kill boars to get 4 Boar Meat for later
+    >> Kill Boars to get 4 Boar Meat for later
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step << !Paladin !Warrior !Rogue
     #sticky
@@ -520,7 +520,24 @@ step << Warrior/Paladin/Rogue
     .goto Dun Morogh,50.1,49.4
     .collect 2901,1 >> Buy a Mining Pick
 step << Warrior/Paladin/Rogue
+    #era
     .xp 7 >> Grind to 7
+step << Warrior/Rogue
+    #som
+    .xp 8 >> Grind nearby mobs to 8
+step << Rogue
+    #som
+    .goto Dun Morogh,47.6,52.6
+    .trainer >> Train your class spells
+step << Paladin
+    #som
+    #level 8
+    .goto Dun Morogh,47.60,52.07
+    .trainer >> Train your class spells
+step << Warrior
+    #som
+    .goto Dun Morogh,47.4,52.6
+    .trainer >> Train your class spells
 step << Rogue
     .goto Dun Morogh,45.3,52.2
     >>Repair your weapon. If you have enough money (4s 1c) buy a Stiletto from Grawn. Otherwise, skip this step (you'll come back later)
@@ -655,7 +672,7 @@ step
     .goto Dun Morogh,46.8,52.4
     .turnin 384 >> Turn in Beer Basted Boar Ribs
      >>Sell the recipe when you next vendor
-step
+step << !Paladin !Rogue !Warrior
     .xp 8 >> Grind to 8
 step << Warlock
     .goto Dun Morogh,47.3,53.7
@@ -1940,7 +1957,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #next 11-13 Loch Modan (Hunter)
 step
     #completewith ribs1
-    >> Kill boars to get some Boar Meat/Ribs for later
+    >> Kill Boars to get some Boar Meat/Ribs for later
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6 --Collect Crag Boar Rib (x6)
 step
@@ -2369,7 +2386,7 @@ step
     .collect 2511,1
 step
     #completewith sausage
-     >> Kill spiders/bears/boars
+     >> Kill Spiders/Bears/Boars
     .complete 418,1
     .complete 418,2
     .complete 418,3
@@ -2402,7 +2419,7 @@ step
 step
     #requires q307
     #label sausage
-    >>Finish off boars/bears/spiders on your way back to Thelsamar
+    >>Finish off Boars/Bears/Spiders on your way back to Thelsamar
     .turnin 418 >> Turn in Thelsamar Blood Sausages
     .goto Loch Modan,34.82,49.28
     .turnin 416 >> Turn in Rat Catching
