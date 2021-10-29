@@ -778,6 +778,9 @@ step
     .goto Darkshore,37.5,41.8
     .accept 729 >> Accept The Absent Minded Prospector
 step
+    .goto Darkshore,37.4,40.1
+    .accept 4763 >> Accept The Blackwood Corrupted
+step
     .goto Darkshore,38.1,41.2
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step
