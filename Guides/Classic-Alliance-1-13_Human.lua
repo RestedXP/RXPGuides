@@ -502,7 +502,7 @@ step
     .turnin 60 >> Turn in Kobold Candles
     .accept 61 >> Accept Shipment to Stormwind
     .turnin 107 >> Turn in Note to William
-    .accept 112 >> Collecting Kelp
+    .accept 112 >> Accept Collecting Kelp
 step
     .xp 8 >> Grind to 8
 step << Warlock
@@ -731,7 +731,6 @@ step << !Warlock
     .goto Redridge Mountains,11.2,78.4
 step << !Warlock
     #softcore
-    >>Respawn at the Spirit Healer
     .goto Redridge Mountains,20.8,56.6,100 >>Respawn at the Spirit Healer
 step << !Warlock
     #softcore
@@ -940,7 +939,7 @@ step << Rogue
     .vendor >> Buy the level 11 thrown from Thurman. Equip it when you're level 11
 step
     .goto Stormwind City,56.2,64.6
-    >>Choose rockets. These have very good damage, and can be used for splitpulling
+    >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling
     .turnin 61 >> Turn in Shipment to Stormwind
 step << !Warlock
     #era
