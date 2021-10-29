@@ -1119,7 +1119,7 @@ step << Dwarf Hunter
     .zoneskip Darnassus
 step <<  Dwarf Hunter
     .goto Teldrassil,58.40,94.02
-    .fp Teldrassil>>Get the Teldrassil FP
+    .fp Teldrassil >> Get the Teldrassil Flight Path
 step << Dwarf Hunter
     #completewith next
     .goto Teldrassil,55.95,89.88
@@ -1709,9 +1709,9 @@ step
 step
     #softcore
     .goto Elwynn Forest,26.29,38.50
-    .zone Stormwind City >> Take the boat to Menethil, fly to IF and take the tram to Stormwind 
+    .zone Stormwind City >> Take the boat to Menethil, fly to Ironforge and take the tram to Stormwind 
     >>OR 
-    >>Use the website unstuck self service to teleport back to SW (much faster)
+    >>Use the website unstuck self service to teleport back to Stormwind (much faster)
 step
     #hardcore
     .goto Darkshore,32.42,43.75,50,0
