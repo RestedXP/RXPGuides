@@ -1878,7 +1878,7 @@ step
     .isQuestComplete 945
 step
     #completewith end
-     +Save 6 Gooey Spider Legs for later
+     +Save up to 6 Gooey Spider Legs looted from the Spiders in the zone for later
 step <<  Hunter
     .goto Ashenvale,18.00,59.80
     >>Head to the Hunter trainer in Ashenvale
@@ -1975,7 +1975,7 @@ step
     .accept 1023 >> Accept Raene's Cleansing
 step
     .goto Ashenvale,20.41,43.82
-     >> Kill Murlocs until the Glowing Gem drops 
+    >> Kill Murlocs until the Glowing Gem drops 
     >>Save Murloc Fins for later
     >>Be careful as the Oracles can heal, and have a 90 damage instant-cast shock spell every few seconds
     .complete 1023,1
