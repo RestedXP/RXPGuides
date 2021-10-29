@@ -1076,9 +1076,6 @@ step << Warrior
     .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
     .train 199 >>Train 2h Maces
-step << Shaman
-    .goto Thunder Bluff,40.9,62.7
-    .train 199 >>Train 2h Maces
 step << Warrior/Shaman
     >>Go to the top floor of the tower
     .goto Thunder Bluff,45.6,52.0,25,0
