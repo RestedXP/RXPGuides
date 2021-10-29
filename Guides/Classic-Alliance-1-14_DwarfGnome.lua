@@ -30,7 +30,7 @@ step << Warrior
     .trainer >>Train Battle Shout
 step << Warlock
     .goto Dun Morogh,28.8,66.2
-    .vendor >> Go to the back, upstairs, then talk to the Demon Book vendor. Vendor trash
+    .vendor >> Go to the back, upstairs, then talk to the Demon Trainer. Vendor trash
 step << Warlock
     .goto Dun Morogh,28.6,66.1
     .trainer >>Train Immolate
@@ -130,7 +130,7 @@ step << Paladin/Mage/Warlock
     >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << Paladin/Mage/Warlock
     .goto Dun Morogh,28.7,77.5
-    >>Go up here and kill Troggs if you're not done with them by now
+    >>Kill Troggs here if you're not done with them by now
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step << Paladin/Mage/Warlock
     #sticky
@@ -156,8 +156,7 @@ step << Gnome Mage
     .trainer >> Train your class spells
 step << Warlock
     .goto Dun Morogh,28.6,66.1
-    >>Go upstairs
-    .trainer >> Train Corruption
+    .trainer >> Go Upstairs. Train your Corruption
     .turnin 3115 >> Turn in Tainted Memorandum
 step << Paladin/Mage/Warlock
     .goto Dun Morogh,29.7,71.2
@@ -633,7 +632,7 @@ step
     .goto Dun Morogh,30.0,51.8,100,0
 step
     #softcore
-    .goto Dun Morogh,30.3,37.5,50 >> Run to here
+    .goto Dun Morogh,30.3,37.5,60 >> Run to here
 step
     #softcore
     .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
@@ -1361,7 +1360,7 @@ step
     .fly Stormwind >> Fly to Stormwind
 step
     .goto Elwynn Forest,26.21,39.66
-    >>Choose rockets. These have very good damage, and can be used for splitpulling
+    >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling
     .turnin 61 >> Turn in Shipment to Stormwind
 step << Warlock
     >>Go back to the Warlock Trainer
