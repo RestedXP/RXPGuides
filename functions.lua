@@ -194,29 +194,43 @@ function RXP_.GetQuestObjectives(id,step)
         local questInfo = {}
         for i = 1,GetNumQuestLogEntries() do
             local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+            local nObj = 0
             if questID == id then
                 for j = 1,GetNumQuestLeaderBoards(i) do
                     local description, objectiveType, isCompleted = GetQuestLogLeaderBoard(j,i)
-                    if not description then
+                    if description then
+                        nObj = nQuests + 1
+                        local required,fulfilled = description:match("(%d+)/(%d+)")
+                        if required then
+                            required = tonumber(required)
+                            fulfilled = tonumber(fulfilled)
+                        else
+                            required = 1
+                            if isCompleted then
+                                fulfilled = 1
+                            else
+                                fulfilled = 0
+                            end
+                        end
+                        questInfo[j] = {text = description, type = objectiveType,numRequired = required, numFulfilled = fulfilled, finished = isCompleted}
+                    else
                         err = true
                         break
                     end
-                    local required,fulfilled = description:match("(%d+)/(%d+)")
-                    if required then
-                        required = tonumber(required)
-                        fulfilled = tonumber(fulfilled)
-                    else
-                        required = 1
-                        if isCompleted then
-                            fulfilled = 1
-                        else
-                            fulfilled = 0
-                        end
-                    end
-                    questInfo[j] = {text = description, type = objectiveType,numRequired = required, numFulfilled = fulfilled, finished = isCompleted}
                 end
-                questObjectivesCache[id] = questInfo
-                return questInfo
+                if err then
+                    if GetNumQuestLeaderBoards(i) == 1 then
+                        print('okok')
+                        local fulfilled = 0
+                        if isComplete then
+                            fulfilled = 1
+                        end
+                        questInfo[1] = { text = "Objective Complete", type = "event",numRequired = 1, numFulfilled = fulfilled, finished = isComplete }
+                    end
+                else
+                    questObjectivesCache[id] = questInfo
+                    return questInfo
+                end
             end
         end
     elseif db and type(db.QueryQuest) == "function" and math.abs(RXPCData.currentStep-step) > 4 and type(db.GetQuest) == "function" then
@@ -230,7 +244,9 @@ function RXP_.GetQuestObjectives(id,step)
             err = true
         end
         if objectives then
+            local nObj = 0
             for i,quest in pairs(objectives) do
+                nObj = nObj + 1
                 local qType = quest.Type
                 local objId = quest.Id
                 qInfo[i] = {type = qType, finished = false, questie = true}
@@ -252,6 +268,9 @@ function RXP_.GetQuestObjectives(id,step)
             end
         end
         if not err then
+            if nObj == 0 then
+                qInfo[1] = { text = "Objective Complete", type = "event",numRequired = 1, numFulfilled = 0, finished = false }
+            end
             return qInfo
         end
     end
@@ -267,7 +286,11 @@ function RXP_.GetQuestObjectives(id,step)
             if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
                 requests[id] = 0
                 --print(id,GetTime()-base)
-                return C_QuestLog.GetQuestObjectives(id)
+                local questInfo = C_QuestLog.GetQuestObjectives(id)
+                if #questInfo == 1 and (questInfo[1].type == "" or not questInfo[1].type) then
+                    questInfo[1] = { text = "Objective Complete", type = "event",numRequired = 1, numFulfilled = 0, finished = false }
+                end
+                return questInfo
             elseif not requests[id] then
                 requests[id] = GetTime()
             elseif ctime-requests[id] <= 3 then
