@@ -1013,8 +1013,8 @@ step
 step <<  !Hunter
     .goto Darkshore,52.6,33.6
     .xp 18 >> Grind to level 18
-step <<  Hunter
-    .goto Darkshore,50.74,74.68
+step << Hunter
+    .goto Darkshore,52.6,33.6
     .xp 18.75 >> Grind to 18 + 75% 
     >>Make sure your HS cooldown is <10 min 
     >>Skip this step if the area is too crowded
@@ -1877,8 +1877,8 @@ step
     .turnin 945 >> Turn in Therylune's Escape
     .isQuestComplete 945
 step
-    #sticky
-     +Save Gooey Spider Legs for later
+    #completewith end
+     +Save 6 Gooey Spider Legs for later
 step <<  Hunter
     .goto Ashenvale,18.00,59.80
     >>Head to the Hunter trainer in Ashenvale
