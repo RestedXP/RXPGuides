@@ -222,7 +222,6 @@ step << !Paladin !Mage !Warlock
     #hardcore
     .goto Dun Morogh,25.0,76.0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
-    >>You now have 5m to get the Journal, then turnin the Mornbrew. If you fail quest, pick it up again after dying
 step << !Paladin !Mage !Warlock
     #hardcore
     >>Grind a bit back to here
