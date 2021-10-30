@@ -1205,7 +1205,7 @@ step
 step
     .goto Silverpine Forest,43.98,40.93
     .accept 477 >>Accept Border Crossings
-step
+step << Undead
     .goto Silverpine Forest,43.43,41.67
     .accept 6321 >>Accept Supplying the Sepulcher
 step
