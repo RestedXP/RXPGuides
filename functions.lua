@@ -199,7 +199,7 @@ function RXP_.GetQuestObjectives(id,step)
                 for j = 1,GetNumQuestLeaderBoards(i) do
                     local description, objectiveType, isCompleted = GetQuestLogLeaderBoard(j,i)
                     if description then
-                        nObj = nQuests + 1
+                        nObj = nObj + 1
                         local required,fulfilled = description:match("(%d+)/(%d+)")
                         if required then
                             required = tonumber(required)
@@ -219,8 +219,7 @@ function RXP_.GetQuestObjectives(id,step)
                     end
                 end
                 if err then
-                    if GetNumQuestLeaderBoards(i) == 1 then
-                        print('okok')
+                    if GetNumQuestLeaderBoards(i) == 1 or nObj == 0 then
                         local fulfilled = 0
                         if isComplete then
                             fulfilled = 1
