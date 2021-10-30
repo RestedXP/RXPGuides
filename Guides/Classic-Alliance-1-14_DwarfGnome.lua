@@ -326,13 +326,12 @@ step
     #softcore
     .goto Dun Morogh,46.7,53.8
     .turnin 420 >> Turn in Senir's Observations
+    .vendor >>vendor trash
 step
     #hardcore
     >>Grind boars en route to Kharanos
     .goto Dun Morogh,46.7,53.8
     .turnin 420 >> Turn in Senir's Observations
-step
-    .goto Dun Morogh,46.7,53.5
     .vendor >>vendor trash
 step << Warlock
     .goto Dun Morogh,47.3,53.7
