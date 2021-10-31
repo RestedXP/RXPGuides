@@ -1,0 +1,20 @@
+## Interface: 20502
+## Title: RXP Guides
+## Notes: In-game leveling guides
+## Author: RestedXP
+## OptionalDeps: Questie, unitscan
+## SavedVariables: RXPData
+## SavedVariablesPerCharacter: RXPCData
+
+HereBeDragons\LibStub\LibStub.lua
+HereBeDragons\CallbackHandler-1.0\CallbackHandler-1.0.lua
+HereBeDragons\HereBeDragons-2.0.lua
+HereBeDragons\HereBeDragons-Pins-2.0.lua
+
+RXPGuides.lua
+data.lua
+map.lua
+functions.lua
+parser.lua
+
+Guides/GuideList.xml
