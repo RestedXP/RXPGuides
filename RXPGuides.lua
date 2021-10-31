@@ -135,7 +135,6 @@ local trainerUpdate = 0
 local level = UnitLevel("player")
 
 local function ProcessSpells(names,rank)
-    
     local entries = {race,class}
     for _,entry in pairs(entries) do
         if RXP_.defaultSpellList[entry] then
@@ -153,7 +152,7 @@ local function ProcessSpells(names,rank)
                                 for id,name in pairs(names) do
                                     if sName == name and sRank == rank[id] then
                                         BuyTrainerService(id)
-                                        return
+                                        break
                                     end
                                 end
                             end
@@ -210,7 +209,7 @@ end
 local tTimer = 0
 local function trainerFrameUpdate(self,t)
 	tTimer = tTimer + t
-	if tTimer >= 0.4 then
+	if tTimer >= 0.2 then
 		tTimer = 0
 		if GetTime() - trainerUpdate > 15 then
 			self:SetScript("OnUpdate",nil)
