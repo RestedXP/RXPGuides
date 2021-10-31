@@ -482,6 +482,7 @@ step << Tauren
     >>Use the Thunderhorn Cleansing Totem at the Well
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
 step
+    #label mazzranache2
     #sticky
     >>Finish getting the items for Mazzranache
     .complete 766,1 --Prairie Wolf Heart (1)
@@ -529,6 +530,7 @@ step << Druid
     #hardcore
     .goto Mulgore,46.5,55.5,300 >> Run back to Bloodhoof Village
 step << !Hunter
+    #requires mazzranache2
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
 step
@@ -563,6 +565,7 @@ step << Tauren Hunter
     .goto Mulgore,48.5,60.4
     .turnin 758 >>Turn in Thunderhorn Cleansing
 step << Hunter
+    #requires mazzranache2
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
 step << Hunter
