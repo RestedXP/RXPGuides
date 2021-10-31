@@ -152,7 +152,6 @@ local function ProcessSpells(names,rank)
                                 for id,name in pairs(names) do
                                     if sName == name and sRank == rank[id] then
                                         BuyTrainerService(id)
-                                        break
                                     end
                                 end
                             end
