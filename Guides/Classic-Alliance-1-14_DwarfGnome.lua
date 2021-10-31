@@ -81,14 +81,17 @@ step
     .accept 3113 >> Accept Encrypted Memorandum << Gnome Rogue
     .accept 3114 >> Accept Glyphic Memorandum << Mage
 step
+    #era
     .goto Dun Morogh,29.7,71.2
     .accept 170 >> Accept A New Threat
 step
     #sticky
     #completewith Rockjaw
+    #era
     >>Kill Normal Rockjaw Troggs that you see
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step
+    #era
     .goto Dun Morogh,26.9,72.7,80,0
     .goto Dun Morogh,25.1,72.1,80,0
     .goto Dun Morogh,26.9,72.7
@@ -129,6 +132,7 @@ step << Paladin/Mage/Warlock
     .accept 3364 >> Accept Scalding Mornbrew Delivery 
     >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << Paladin/Mage/Warlock
+    #era
     .goto Dun Morogh,28.7,77.5
     >>Kill Troggs here if you're not done with them by now
     .complete 170,1 --Kill Rockjaw Trogg (x6)
@@ -159,6 +163,7 @@ step << Warlock
     .trainer >> Go Upstairs. Train your Corruption
     .turnin 3115 >> Turn in Tainted Memorandum
 step << Paladin/Mage/Warlock
+    #era
     .goto Dun Morogh,29.7,71.2
     .turnin 170 >> Turn in A New Threat
 step << Mage/Warlock
@@ -166,6 +171,7 @@ step << Mage/Warlock
     .vendor >>Vendor, buy 10 water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Paladin !Mage
+    #era
     #sticky
     #label TrollTroggs
     >>Kill any Rockjaw Troggs you see nearby whilst doing Trolls
@@ -196,7 +202,13 @@ step << !Paladin !Mage !Warlock
 step << !Paladin !Mage !Warlock
     .xp 4 >> Grind to 4
 step << !Paladin !Mage !Warlock
+    #era
     #requires TrollTroggs
+    .goto Dun Morogh,25.1,75.7
+    .turnin 182 >> Turn in The Troll Cave
+    .accept 218 >> Accept The Stolen Journal
+step << !Paladin !Mage !Warlock
+    #som
     .goto Dun Morogh,25.1,75.7
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
@@ -259,6 +271,7 @@ step << Warrior
     .turnin 3112 >> Turn in Simple Memorandum << Gnome Warrior
     .trainer >> Train your class spells
 step << !Paladin !Mage !Warlock
+    #era
     .goto Dun Morogh,29.7,71.2
     .turnin 170 >> Turn in A New Threat
 step << Priest
