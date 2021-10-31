@@ -152,17 +152,17 @@ step
 step << Tauren Shaman
     .goto The Barrens,52.2,31.0
     .turnin 842 >>Turn in Crossroads Conscription
-step << Druid/Warrior
+step << Warrior
      #sticky
     #completewith next
     +Check if Lizzarik (Goblin) is in Crossroads, if he is, and you have enough money, buy pots and Heavy Spiked Mace.
     .goto The Barrens,52.5,30.7,0
 	.unitscan Lizzarik
-step << Druid/Warrior
+step << Warrior
     #sticky
     #completewith next
     .collect 4778,1 --Collect Heavy Spiked Mace
-step << Druid/Warrior
+step << Warrior
 	.goto The Barrens,57.1,25.3,250 >> Run to here
 step
     >>Check this location for Chen's Empty Keg. Loot it and start the quest
@@ -313,21 +313,21 @@ step
     .goto The Barrens,62.7,36.3
     .turnin 892 >>Turn in The Missing Shipment
     .accept 888 >>Accept Stolen Booty
-step << !Warrior !Druid
+step << !Warrior
     .goto The Barrens,63.08,37.16
     .fly Crossroads >> Fly to The Crossroads
-step << Druid/Warrior
+step << Warrior
     #sticky
     #completewith next
     .goto The Barrens,61.6,37.9,30,0
     .goto The Barrens,52.5,30.7,150 >> Walk via the road to Crossroads, look out for Lizzarik to buy a Heavy Spiked Mace. If he doesn't have it, fly/run to The Crossroads
-step << Druid/Warrior
+step << Warrior
     #sticky
     #completewith next
 	#label HeavySMace
     .collect 4778,1 --Collect Heavy Spiked Mace
 	.unitscan Lizzarik
-step << Druid/Warrior
+step << Warrior
 	#completewith next
 	#requires HeavySMace
 	.goto The Barrens,52.5,30.7,150 >> Fly to Crossroads if you're in Ratchet, or Run if you're halfway along the path to Crossroads
@@ -429,11 +429,11 @@ step
     #completewith Samophlange
     >>Kill Plainstriders. Loot them for their Kidneys 
     .complete 821,2 --Plainstrider Kidney (5)
-step << Druid/Warrior
+step << Warrior
 	#completewith next
     .goto The Barrens,43.8,12.2
-	>> Buy the Heavy Spiked Mace from Vrang if it's available << Druid/Warrior
-    .collect 4778,1 --Collect Heavy Spiked Mace << Druid/Warrior
+	>> Buy the Heavy Spiked Mace from Vrang if it's available << Warrior
+    .collect 4778,1 --Collect Heavy Spiked Mace << Warrior
 step
     .goto The Barrens,43.8,12.2
 	.vendor	>> Vendor trash, repair
@@ -507,7 +507,7 @@ step
     >>Kill Plainstriders. Loot them for their Kidneys 
     .complete 821,2 --Plainstrider Kidney (5)
 step
-    >>Grind mobs in the area. Loot them until Cats Eye Emerald drops
+    >>Grind mobs in the area. Kill around 25 mobs, if the Emerald didn't drop skip this quest.
     .goto The Barrens,61.5,4.3
     .complete 896,1 -- Cats Eye Emerald (1)
 step
@@ -876,20 +876,25 @@ step << Warlock
     >>Click the Wanted poster
     .goto Stonetalon Mountains,59.0,75.7
     .accept 6284 >> Accept Arachnophobia
-step
+step << Warlock
     .goto Stonetalon Mountains,57.5,76.2,30 >>Run up the path here to Sishir Canyon
-step
+step  << Warlock
     #sticky
     #completewith Ziz
     >>Click the spider eggs near the trees
     .complete 1069,1 --Collect Deepmoss Egg (x15)
-step
+step  << Warlock
     >>Kill the Deepmoss Spiders in the area
     .goto Stonetalon Mountains,54.7,71.9,40,0
     .goto Stonetalon Mountains,52.6,71.8,40,0
     .goto Stonetalon Mountains,52.2,75.6,40,0
     .goto Stonetalon Mountains,53.9,74.2,40,0
     .goto Stonetalon Mountains,54.7,71.9
+    .complete 6461,1 --Kill Deepmoss Creeper (x10)
+    .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
+step  << !Warlock
+    >>Kill the Deepmoss Spiders in the area
+    .goto Stonetalon Mountains,62.40,61.46
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
 step << Warlock
@@ -1160,7 +1165,8 @@ step
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 step << Tauren/Warrior/Shaman
-    #completewith BloodShard
+    #
+	BloodShard
     +Use your Blood Shards on any buff from Mangletooth
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step << Warrior
@@ -1365,6 +1371,7 @@ step
     .goto Stonetalon Mountains,74.21,97.10,50,0
     .goto Stonetalon Mountains,74.53,97.94
     .accept 1058 >> Accept Jin'Zils Forest Magic
+	#era
 step
     .goto Stonetalon Mountains,71.3,95.1
     .turnin 6461 >>Turn in Blood Feeders
