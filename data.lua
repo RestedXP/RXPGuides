@@ -993,6 +993,9 @@ s["HUNTER"] ={
 }
 
 s["WARRIOR"] = {
+    [1] = {
+        6673, --battle shout r1
+    },
     [4] = {
         100, -- charge
         772, -- rend
