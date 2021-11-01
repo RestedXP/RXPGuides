@@ -734,7 +734,7 @@ s["SHAMAN"] = {
 
 s["HUNTER"] ={
     [4] = {
-        1979, -- serpent sting
+        1978, -- serpent sting
     },
     [6] = {
         3044, -- arcane shot
@@ -751,6 +751,7 @@ s["HUNTER"] ={
         13549, -- serpent string r2
         4187, -- great stamina
         24545, -- natural armor
+        1494, -- track beasts
     },
     [12] = {
         136, -- mend pet
@@ -759,24 +760,24 @@ s["HUNTER"] ={
         24549, -- natural armor r2
     },
     [14] = {
-	6197, -- eagle eye
+        6197, -- eagle eye
         1513, -- scare beast
     },
     [16] = {
         13795, -- immolation trap
-        5118, -- aspect of the cheetah
+        5118, -- aspect of the cheetah - high prio, can only be trained at 20
     },
     [18] = {
         14281, -- arcane shot 2
         14318, -- aspect of the hawk r2
         13550, -- serpent sting r3
-        4187, -- great stamina r3
-        24550, -- natural armor r3
         3111, -- mend pet r2
         781, --disengage r1
     },
     [20] = {
         15147, -- growl r3
+        4187, -- great stamina r3
+        24550, -- natural armor r3
         24494,--nature res
         24490,--shadow res
         24440,--fire res
@@ -788,6 +789,7 @@ s["HUNTER"] ={
         14323, -- hunters mark r2
         24519, --arcane res r1
         24475,--frost res
+        19883,--track humanoids
         1002,--eyes of the beast
     },
     [24] = {
