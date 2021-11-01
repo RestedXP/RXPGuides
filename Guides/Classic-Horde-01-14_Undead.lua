@@ -1129,13 +1129,10 @@ step << Warlock
     .goto Undercity,86.20,15.92
     .trainer >> Train your class spells inside the building
 step << !Warrior
-    #sticky
-    #completewith next
-    .goto Undercity,46.5,44.0,40 
-    + Exit undercity via the sewers.
-step << !Warrior
-    .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
-
+    .goto Undercity,46.16,43.97,50,0
+    .goto Undercity,41.04,33.26,50,0
+    .goto Undercity,23.86,35.90,50,0
+    .goto Undercity,15.06,32.86,50 >> Exit Undercity via the Sewers
 ]],"Scourge")
 RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
 #classic
