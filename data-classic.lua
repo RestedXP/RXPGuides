@@ -779,7 +779,6 @@ s["HUNTER"] ={
         15147, -- growl r3
         24494,--nature res
         24490,--shadow res
-        24475,--frost res
         24440,--fire res
     },
     [22] = {
@@ -788,6 +787,8 @@ s["HUNTER"] ={
         1499, -- freezing trap r1
         14323, -- hunters mark r2
         24519, --arcane res r1
+        24475,--frost res
+        1002,--eyes of the beast
     },
     [24] = {
         4190, -- great stamina r4
