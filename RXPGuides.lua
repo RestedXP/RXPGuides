@@ -135,29 +135,28 @@ local trainerUpdate = 0
 local level = UnitLevel("player")
 
 local function ProcessSpells(names,rank)
+    local _,class = UnitClass("player")
+    local _,race = UnitRace("player")
+    local level = UnitLevel("player")
     local entries = {race,class}
     for _,entry in pairs(entries) do
         if RXP_.defaultSpellList[entry] then
             for spellLvl,spells in pairs(RXP_.defaultSpellList[entry]) do
                 if spellLvl <= level then
-                    for i,spellId in pairs(spells) do
-                        --print(spellId)
-                        if IsSpellKnown(spellId) or IsPlayerSpell(spellId) or (RXPCData.hardcore and RXP_.HCSpellList[spellId]) then
-                            spells[i] = nil
-                        elseif C_Spell.IsSpellDataCached(spellId) then
-                            spellRequest[spellId] = nil
-                            if names and rank then
-                                local sName = GetSpellInfo(spellId)
-                                local sRank = GetSpellSubtext(spellId)
-                                for id,name in pairs(names) do
-                                    if sName == name and sRank == rank[id] then
-                                        BuyTrainerService(id)
-                                    end
-                                end
-                            end
-                        elseif not spellRequest[spellId] then
+                    for i,spellId in ipairs(spells) do
+                        if not (spellRequest[spellId] or C_Spell.IsSpellDataCached(spellId)) then
                             C_Spell.RequestLoadSpellData(spellId)
                             spellRequest[spellId] = true
+                        end
+                        if names and rank and not(RXPCData.hardcore and RXP_.HCSpellList[spellId]) then
+                            spellRequest[spellId] = nil
+                            local sName = GetSpellInfo(spellId)
+                            local sRank = GetSpellSubtext(spellId)
+                            for id,name in pairs(names) do
+                                if sName == name and sRank == rank[id] then
+                                    BuyTrainerService(id)
+                                end
+                            end
                         end
                     end
                 end
@@ -316,9 +315,9 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
 		C_Timer.After(1, function() RXP_.ReloadGuide() end)
 	elseif event == "TRAINER_SHOW" then
+		trainerUpdate = GetTime()
         OnTrainer()
 		self:SetScript("OnUpdate",trainerFrameUpdate)
-		trainerUpdate = GetTime()
 		return
 	elseif event == "TRAINER_CLOSED" then
 		self:SetScript("OnUpdate",nil)
