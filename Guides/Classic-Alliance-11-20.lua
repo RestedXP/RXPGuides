@@ -2316,7 +2316,7 @@ step << Mage
     .trainer >> Train your class spells
 step << Mage
     .goto Stormwind City,39.83,79.46
-    .trainer >> Train SW Portal from Larimaine
+    .trainer >> Train Stormwind Portal from Larimaine
 step
     .goto Stormwind City,21.40,55.80
     .accept 3765 >> Accept The Corruption Abroad
