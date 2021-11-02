@@ -903,7 +903,6 @@ step
 step
     .goto Hillsbrad Foothills,62.5,20.3
     .accept 528 >> Accept Battle of Hillsbrad
-    .accept 566 >> Accept WANTED: Baron Vardus
     .accept 546 >> Accept Souvenirs of Death
 step
     >>Kill Bears and Mountain Lions. Loot them for Tongues and Blood
