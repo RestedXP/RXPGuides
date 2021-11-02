@@ -219,6 +219,37 @@ step <<  Hunter/Druid
 step <<  Hunter/Druid
     .goto Felwood,20.34,18.12
     .turnin 4813 >> Turn in The Fragments Within
+step << Druid
+    .goto Felwood,19.27,19.14
+    .accept 6343 >> Accept Return to Nessa
+step << Druid
+    #era
+    .goto Felwood,22.39,29.45
+    .xp 13-840 >> Grind until you are 840xp away from level 14
+step << Druid
+    #som
+    .goto Felwood,22.39,29.45
+    .xp 13-1175 >> Grind until you are 1175xp away from level 14
+step << Druid
+    .fly Teldrassil>>Fly to Teldrassil
+step << Druid
+    .goto Teldrassil,56.25,92.44
+     >> Return to Nessa
+    .turnin 6343 >> Turn in Return to Nessa
+step << Druid
+    .goto Darnassus,35.4,8.4
+    .turnin 6001 >> Turn in Body and Heart
+    .accept 6121 >> Accept Lessons Anew
+    .trainer >> Train your class spells
+step << Druid
+    .goto Moonglade,56.1,30.7
+    >>Teleport to Moonglade
+    .turnin 6121 >> Turn in Lessons Anew
+    .accept 6122 >> Accept The Principal Source
+step << Druid
+    .hs >> Hearth to Darkshore
+    
+
 step << !Hunter
      >> Kill furbolgs
     .goto Felwood,22.39,29.45
@@ -264,33 +295,22 @@ step << Hunter
     .goto Felwood,22.39,29.45
     .complete 985,1
     .complete 985,2
-step <<  !Hunter !Druid
-    #label xp15
-    #requires ghosts
-    .goto Felwood,22.39,29.45
-    .xp 15 >> Grind to level 15
-step << Druid
+step << !Hunter
     #era
     #label xp15
     #requires ghosts
     .goto Felwood,22.39,29.45
-    .xp 14-3650 >> Grind until you are 3650xp away from level 14
-step << Druid
-    #som
-    #label xp15
-    #requires ghosts
-    .goto Felwood,22.39,29.45
-    .xp 15-6750 >> Grind until you are 6750xp away from level 15 (6150/12900)
+    .xp 15 >> Grind to level 15
 step <<  Hunter
     #label xp15
     #era
     .goto Felwood,22.39,29.45
     .xp 15.75
-step <<  Hunter
+step
     #label xp15
     #som
     .goto Felwood,22.39,29.45
-    .xp 15
+    .xp 15-3245 >> Grind until you are 3245xp away from level 15
 step <<  !Hunter !Druid
     .goto Felwood,31.29,24.14
      >> Click on the red crystal
@@ -313,51 +333,14 @@ step << Druid
 step
     .goto Felwood,18.10,18.48
     .turnin 963 >> Turn in For Love Eternal
-step << !Druid
+step << !Hunter
+    .goto Felwood,19.10,20.63
+    .turnin 4722 >> Turn in Beached Sea Turtle
+step
     .goto Felwood,18.50,19.87
     .accept 1138 >> Accept Fruit of the Sea
-step << Druid
-    .fly Teldrassil>>Fly to Teldrassil
-step << Druid
-    .goto Teldrassil,56.25,92.44
-     >> Return to Nessa
-    .turnin 6343 >> Turn in Return to Nessa
-step << Druid
-    .goto Darnassus,35.4,8.4
-    .turnin 6001 >> Turn in Body and Heart
-    .accept 26 >> Accept A Lesson to Learn
-    .accept 6121 >> Accept Lessons Anew
-    .trainer >> Train your class spells
-step << Druid
-    .goto Darnassus,66.0,60.6
-    >>Buy the level 15 staff upgrade, skip this step if you don't have enough money to buy it (56s)
-    .collect 2030,1
-    .money <0.56
-step << Druid
-    .goto Moonglade,56.1,30.7
-    >>Teleport to Moonglade
-    .turnin 6121 >> Turn in Lessons Anew
-    .accept 6122 >> Accept The Principal Source
-    .turnin 26 >> Turn in A Lesson to Learn
-    .accept 29 >> Accept Trial of the Lake
-step << Druid
-    .goto Moonglade,52.6,51.6
-    >>Dive into the lake and look for a Shrine Bauble, it looks like a small red jar
-    .complete 29,1 --Complete the Trial of the Lake.
-step << Druid
-    .goto Moonglade,36.5,40.1
-    .turnin 29 >> Turn in Trial of the Lake
-    .accept 272 >> Accept Trial of the Sea Lion
-step << Druid
-    .hs >> Hearth to Darkshore
-
-step <<  Druid
-    #era
-    .goto Felwood,22.39,29.45
-    .xp 15.25 >> Grind to level 15 + 25%
-step << Druid
-    .goto Felwood,18.50,19.87
-    .accept 1138 >> Accept Fruit of the Sea
+    >>Turn in the Beached sea turtle quest next to the flight master if you're not yet level 15 << Hunter
+---?
 step << NightElf
     .goto Felwood,20.80,15.58
     .accept 982 >> Accept Deep Ocean, Vast Sea
@@ -413,15 +396,15 @@ step
      >> Skip this step if you don't have enough moonstalker fangs
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
-step << NightElf Hunter
+step << NightElf Hunter/Druid
     .goto Winterspring,4.82,27.18
     .turnin 965 >> Turn in The Tower of Althalaxx
     .accept 966 >> Accept The Tower of Althalaxx
-step << NightElf Hunter
+step << NightElf Hunter/Druid
     .goto Winterspring,6.06,28.81
      >> Kill cultists
     .complete 966,1
-step << NightElf Hunter
+step << NightElf Hunter/Druid
     .goto Winterspring,4.82,27.18
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
@@ -502,7 +485,36 @@ step
     .goto Felwood,19.10,20.63
     .turnin 4723 >> Turn in Beached Sea Creature
     .turnin 4725 >> Turn in Beached Sea Turtle
-    .turnin 4722 >> Turn in Beached Sea Turtle
+    .turnin 4722 >> Turn in Beached Sea Turtle << Hunter
+step <<  Druid
+    .goto Felwood,22.39,29.45
+    .xp 16
+step << Druid
+    .fly Teldrassil>>Fly to Teldrassil
+step << Druid
+    .goto Darnassus,35.4,8.4
+    .accept 26 >> Accept A Lesson to Learn
+    .trainer >> Train your class spells
+step << Druid
+    .goto Darnassus,66.0,60.6
+    >>Buy the level 15 staff upgrade, skip this step if you don't have enough money to buy it (56s)
+    .collect 2030,1
+    .money <0.56
+step << Druid
+    .goto Moonglade,56.1,30.7
+    >>Teleport to Moonglade
+    .turnin 26 >> Turn in A Lesson to Learn
+    .accept 29 >> Accept Trial of the Lake
+step << Druid
+    .goto Moonglade,52.6,51.6
+    >>Dive into the lake and look for a Shrine Bauble, it looks like a small red jar
+    .complete 29,1 --Complete the Trial of the Lake.
+step << Druid
+    .goto Moonglade,36.5,40.1
+    .turnin 29 >> Turn in Trial of the Lake
+    .accept 272 >> Accept Trial of the Sea Lion
+step << Druid
+    .hs >> Hearth to Darkshore
 ]])
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
