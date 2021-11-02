@@ -831,7 +831,7 @@ s["HUNTER"] ={
         14320, -- aspect of the hawk r4
     },
     [40] = {
-        14310, -- freezing trap r2
+        --14310, -- freezing trap r2
         14324, -- hunter's mark r3
         14925, -- growl r5
     },
@@ -841,20 +841,18 @@ s["HUNTER"] ={
         24561, -- natural armor r7
     },
     [44] = {
+        14304, -- immolation trap r4
         13542, -- mend pet r5
         14285, -- arcaneshot r6
-    },
-    [46] = {
-        14304, -- immolation trap r4
     },
     [48] = {
         14321, -- aspect of the hawk r5
         4194, -- great stamina r8
         24555, -- natural armor r8
-        14279,--viper r2
     },
     [50] = {
         13554, -- serpent sting r7
+        14279,--viper r2
         14926, -- growl r6
         24441,--fire res r2
         24463,--fr r3
