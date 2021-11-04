@@ -203,6 +203,7 @@ step
     .xp 5+2395 >>Grind to 2395+/2800xp
 step
     .goto Mulgore,46.5,55.5,300 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
+    #softcore
 step << !Hunter
     .goto Mulgore,47.0,57.0
     .accept 766 >>Accept Mazzranache
