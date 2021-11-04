@@ -683,6 +683,9 @@ step << Dwarf !Paladin/Gnome
 step << Human/Dwarf Paladin
     .goto Westfall,56.6,52.6
     .fly Ironforge >> Fly to Ironforge
+step << Human Warrior
+    .goto Ironforge,62.0,89.6
+    .train 176 >>Train Thrown
 step << Dwarf Paladin
     .goto Ironforge,23.12,6.14
     .trainer >> Train your class spells
@@ -792,6 +795,9 @@ step <<  NightElf !Druid
 step << NightElf Warrior
     .goto Darnassus,58.72,34.92
     .trainer >> Train your class spells
+step << NightElf Warrior
+    .goto Darnassus,57.6,46.6
+    .train 176 >> Train Thrown
 step <<  NightElf Hunter
     #completewith start
     .goto Darnassus,36.60,13.60
@@ -933,6 +939,8 @@ step <<  Hunter
 step <<  Hunter
     .goto Ashenvale,13.97,4.10
     .accept 4733 >> Accept Beached Sea Creature
+    >>This quest can be a little hard, try to pull the murlocs 1 by 1, otherwise you can end up aggroing the whole camp
+    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> Click here for video reference
 step <<  Hunter
     .goto Ashenvale,13.93,2.01
     .accept 4732 >> Accept Beached Sea Turtle
@@ -1793,6 +1801,8 @@ step
 step
     .goto Ashenvale,13.97,4.10
     .accept 4733 >> Accept Beached Sea Creature
+    >>This quest can be a little hard, try to pull the murlocs 1 by 1, otherwise you can end up aggroing the whole camp
+    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> Click here for video reference
 step
     .goto Ashenvale,13.93,2.01
     .accept 4732 >> Accept Beached Sea Turtle

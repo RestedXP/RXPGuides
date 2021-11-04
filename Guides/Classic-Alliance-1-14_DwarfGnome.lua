@@ -1695,6 +1695,9 @@ step << Dwarf Paladin
 step << Warrior
     .goto Ironforge,65.89,88.43
     .trainer >> Train your class spells
+step << Warrior
+    .goto Ironforge,62.0,89.6
+    .train 176 >>Train Thrown
 step << Mage
     .goto Ironforge,27.18,8.61
     .trainer >> Train your class spells

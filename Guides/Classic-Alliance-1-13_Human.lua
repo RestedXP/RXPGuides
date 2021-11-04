@@ -1420,6 +1420,10 @@ step
     .goto Loch Modan,33.9,51.0
     .fp >> Get the Thelsamar flight path
     .fly Ironforge >> Fly to Ironforge
+step << Warrior
+    #som
+    .goto Ironforge,62.0,89.6
+    .train 176 >>Train Thrown
 step
     #som
     .goto Ironforge,69.88,82.90 << Hunter
