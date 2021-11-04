@@ -189,7 +189,8 @@ step
 step
     .xp 13 >> Grind to level 13
 step
-     #completewith mbox
+    #completewith darn1 << Druid
+     #completewith mbox << !Druid
      + Start collecting 9 small eggs for leveling cooking later 
     >>You will need 10 points cooking to accept a quest later. If you already have 10 points, skip this step
 step
@@ -220,16 +221,17 @@ step <<  Hunter/Druid
     .goto Felwood,20.34,18.12
     .turnin 4813 >> Turn in The Fragments Within
 step << Druid
+    #label darn1
     .goto Felwood,19.27,19.14
     .accept 6343 >> Accept Return to Nessa
 step << Druid
     #era
     .goto Felwood,22.39,29.45
-    .xp 13-840 >> Grind until you are 840xp away from level 14
+    .xp 14-1890 >> Grind until you are 1890xp away from level 14
 step << Druid
     #som
     .goto Felwood,22.39,29.45
-    .xp 13-1175 >> Grind until you are 1175xp away from level 14
+    .xp 14-2645 >> Grind until you are 2645xp away from level 14
 step << Druid
     .fly Teldrassil>>Fly to Teldrassil
 step << Druid
@@ -305,7 +307,7 @@ step <<  Hunter
     #label xp15
     #era
     .goto Felwood,22.39,29.45
-    .xp 15.75
+    .xp 15.75 >> Grind to level 15 + 75%
 step
     #label xp15
     #som
@@ -500,6 +502,9 @@ step << Druid
     >>Buy the level 15 staff upgrade, skip this step if you don't have enough money to buy it (56s)
     .collect 2030,1
     .money <0.56
+step << Druid
+    .goto Teldrassil,23.70,64.51
+    .accept 730 >> Accept Trouble In Darkshore?
 step << Druid
     .goto Moonglade,56.1,30.7
     >>Teleport to Moonglade
@@ -827,7 +832,7 @@ step
     .goto Felwood,19.78,19.07
      >> Click on the wanted poster outside the inn
     .accept 4740 >> Accept WANTED: Murkdeep!
-step << NightElf !Druid
+step << NightElf
      #completewith next
     .goto Felwood,20.04,16.35
     .turnin 730 >> Turn in Trouble In Darkshore?
@@ -952,7 +957,7 @@ step <<  Hunter
     .accept 4730 >> Accept Beached Sea Creature
 step
     #completewith south2
-     >> Kill crabs along the coast for Fine Crab Chunks, skip this step if the area is too crowded
+     >> Kill level 15+ crabs along the coast for Fine Crab Chunks, skip this step if the area is too crowded
     .complete 1138,1
 step
     .goto Darkshore,36.64,76.53
@@ -2277,7 +2282,7 @@ step
     .collect 1468,8,150,1
 step
     .goto Redridge Mountains,61.37,77.10
-    >> Kill Condors. Loot them for the Crisp Condor Meat
+    >> Kill Condors. Loot them for Condor Meat
     >> If there's no Condors around, skip this step
     .collect 1080,5,92,1
 step
@@ -2434,6 +2439,7 @@ step
     .goto Redridge Mountains,21.23,36.17,60,0
     .goto Redridge Mountains,34.20,39.70,60,0
     .goto Redridge Mountains,39.61,31.46,60,0
+    .goto Redridge Mountains,22.5,35.7,0
     >>Kill Gnolls. Loot them for Pikes and Rivets
     .complete 89,1 --Iron Pike (5)
     .complete 89,2 --Iron Rivet (5)
