@@ -793,13 +793,19 @@ step << Mage
     .goto Elwynn Forest,43.2,66.2
     .trainer >> Train your class spells
 step << Rogue
+    #era
     .goto Elwynn Forest,43.9,65.9
     >>Don't worry about not having 2 weapons, we'll get another soon
     .trainer >> Train your class spells
 step << Rogue
+    #era
     .goto Elwynn Forest,41.7,65.9
     .money >0.4230
-    .vendor >>You don’t have enough money, so buy Stiletto for OH
+    .vendor >>You don’t have enough money, so buy Stiletto for your Offhand
+step << Rogue
+    #som
+    .goto Elwynn Forest,41.7,65.9
+    .vendor >>Buy another Stiletto for your off-hand (unless you looted a green sword). Equip it
 step
     >>Run out of the inn and go south
     .goto Elwynn Forest,43.2,89.6
@@ -851,11 +857,13 @@ step << Warlock
     >> Kill Gnolls. Loot them for Armbands
     .complete 11,1 --Collect Painted Gnoll Armband (8)
 step << Rogue
+    #era
     #label Armbands
     .money >0.4230
     .goto Elwynn Forest,24.2,74.5
     .accept 11 >> Accept Riverpaw Gnoll Bounty
 step << Rogue
+    #era
     .isOnQuest 11
     .goto Elwynn Forest,27.0,93.9
     >> Kill Gnolls. Loot them for Armbands
@@ -865,6 +873,7 @@ step << Warlock/Rogue
     .goto Elwynn Forest,24.2,74.5
     .turnin 11 >> Turn in Riverpaw Gnoll Bounty
 step << Rogue
+       #era
     .abandon 123 >>Abandon The Collector
 step
     #era
@@ -924,6 +933,7 @@ step << Human
     .vendor >>vendor trash
     .accept 6181 >> Accept A Swift Message
 step << Rogue
+    #era
     .money >0.4230
     >>Grind until you have 42s 30c of vendorables/money
 step
@@ -958,8 +968,9 @@ step << Rogue
     .goto Stormwind City,57.1,57.7
     .trainer >>Train 1h Swords
 step << Rogue
+    #era
     .goto Stormwind City,57.6,57.1
-    .vendor >>Buy a Cutlass from Gunther and equip it, Stiletto in OH
+    .vendor >>Buy a Cutlass from Gunther and equip it, Stiletto in Offhand
 step << Paladin
     .goto Stormwind City,57.1,57.7
     .trainer >>Train 2h Swords
@@ -1185,8 +1196,14 @@ step
     .goto Dun Morogh,78.9,37.0
     .complete 417,1 --Collect Mangy Claw (x1)
 step
+    #som
     .goto Dun Morogh,83.9,39.2
     >>Choose the dagger, use it as your offhand until you get a vendor sword << Rogue
+    .turnin 417 >> Turn in A Pilot's Revenge
+step
+    #era
+    .goto Dun Morogh,83.9,39.2
+    >>Choose the dagger, use it as your offhand << Rogue
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
@@ -1217,6 +1234,10 @@ step
     .collect 3172,3 --Collect Boar Intestines (x3)
 step
     .goto Loch Modan,35.1,47.8,130 >>Grind mobs en route for cooking quest later
+step << Rogue
+    #era
+   .goto Loch Modan,34.02,46.55
+    .vendor << Buy either a Feral Blade (better), or a Enamelled Broadsword from Morhan if you didn't buy a level 10 sword earlier
 step
     .goto Loch Modan,34.8,49.3
     .accept 418 >> Accept Thelsamar Blood Sausages
@@ -1355,6 +1376,11 @@ step
     .complete 418,1 --Collect Boar Intestines (x3)
 step
     #requires Meat9
+step << Rogue
+    #era
+    #requires Ichor9
+   .goto Loch Modan,34.02,46.55
+    .vendor << Buy either a Feral Blade (better), or a Enamelled Broadsword from Morhan if you didn't buy a level 10 sword earlier, or one of the green swords from Morhan earlier
 step
     #label RatCatching
     #requires Ichor9
