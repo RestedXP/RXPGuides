@@ -1029,7 +1029,7 @@ step
 step << !Paladin !Warlock
     #som
     .goto Ironforge,18.5,51.6
-    .home >>Set your HS to Ironforge
+    .home >>Set your Hearthstone to Ironforge
 step
     >>do NOT fly anywhere
     .goto Ironforge,55.5,47.8
@@ -1490,7 +1490,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 step << Dwarf Paladin
     #som
     .goto Ironforge,18.5,51.6
-    .home >>Set your HS to Ironforge
+    .home >>Set your Hearthstone to Ironforge
 step << Dwarf Paladin
     .goto Ironforge,23.3,6.1
     .accept 2999 >>Accept Tome of Divinity
@@ -2360,7 +2360,8 @@ step
     .goto Loch Modan,34.82,49.28
     .accept 418 >> Accept Thelsamar Blood Sausages
 step
-    .home >> Set your HS to Loch Modan 
+       .goto Loch Modan,35.5,48.4
+    .home >> Set your Hearthstone to Loch Modan 
 step
     .goto Loch Modan,37.01,47.80
     .accept 6387 >> Accept Honor Students
