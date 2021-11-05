@@ -958,7 +958,7 @@ step << Rogue
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
     .turnin 1978 >>Turn in The Deathstalkers
-    >>Go to the edge of the main platform perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
+    >>Go to the edge of the main platform and perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
     .link https://www.youtube.com/watch?v=jj85AXyF1XE >> Open this tab when running to the turn in. CLICK HERE for an example
     >>If you can't do this, just run out of Undercity normally
 step << Rogue
@@ -1110,7 +1110,7 @@ step << Rogue
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
     .turnin 1978 >>Turn in The Deathstalkers
-    >>Go to the edge of the main platform perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
+    >>Go to the edge of the main platform and perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
     .link https://www.youtube.com/watch?v=jj85AXyF1XE >> Open this tab when running to the turn in. CLICK HERE for an example
     >>If you can't do this, just run out of Undercity normally
 step << Rogue
@@ -1456,7 +1456,7 @@ step << Undead Rogue
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
     .turnin 1978 >>Turn in The Deathstalkers
-    >>Go to the edge of the main platform perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
+    >>Go to the edge of the main platform and perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
     .link https://www.youtube.com/watch?v=jj85AXyF1XE >> Open this tab when running to the turn in. CLICK HERE for an example
     >>If you can't do this, just run out of Undercity normally
 step << Undead Rogue
