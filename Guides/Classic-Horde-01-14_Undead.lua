@@ -702,7 +702,6 @@ step << Warlock
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     .trainer >> Go upstairs and train your class spells
-    .accept 5663 >> Accept Touch of Weakness
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     .trainer >> Go upstairs and train your class spells
