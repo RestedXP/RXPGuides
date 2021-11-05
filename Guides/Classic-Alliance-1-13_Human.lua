@@ -793,19 +793,20 @@ step << Mage
     .goto Elwynn Forest,43.2,66.2
     .trainer >> Train your class spells
 step << Rogue
-    #era
     .goto Elwynn Forest,43.9,65.9
     >>Don't worry about not having 2 weapons, we'll get another soon
+    >>Be VERY careful about your money when training here. Make sure you train Dual Wield and Sprint though
     .trainer >> Train your class spells
-step << Rogue
-    #era
-    .goto Elwynn Forest,41.7,65.9
-    .money >0.4230
-    .vendor >>You don’t have enough money, so buy Stiletto for your Offhand
 step << Rogue
     #som
     .goto Elwynn Forest,41.7,65.9
-    .vendor >>Buy another Stiletto for your off-hand (unless you looted a green sword). Equip it
+    .money >0.3197
+    .vendor >>You don’t have enough money, so buy Stiletto for your Offhand
+step << Rogue
+    #era
+    .goto Elwynn Forest,41.7,65.9
+    .money >0.3152
+    .vendor >>You don’t have enough money, so buy Stiletto for your Offhand
 step
     >>Run out of the inn and go south
     .goto Elwynn Forest,43.2,89.6
@@ -822,10 +823,17 @@ step
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
     .accept 11 >> Accept Riverpaw Gnoll Bounty << Warlock
 step << Warrior
-    .money >0.2584
-    >>Grind a bit until you have 25s 84c+ of vendorables/money
+    .money >0.3174
+    #som
+    >>Grind a bit until you have 31s 74c+ of vendorables/money
+    >>This is for thrown, 2h mace, and 2h sword training. It's also for level 11 thrown, and flying to Stormwind
     .goto Elwynn Forest,27.6,93.0
---N this might not be accurate
+step << Warrior
+    .money >0.3129
+    #era
+    >>Grind a bit until you have 31s 29c+ of vendorables/money
+    >>This is for thrown, 2h mace, and 2h sword training. It's also for level 3 thrown, and flying to Stormwind
+    .goto Elwynn Forest,27.6,93.0
 step << Warlock
     #sticky
     #completewith Armbands
@@ -859,11 +867,16 @@ step << Warlock
 step << Rogue
     #era
     #label Armbands
-    .money >0.4230
+    .money >0.3152
     .goto Elwynn Forest,24.2,74.5
     .accept 11 >> Accept Riverpaw Gnoll Bounty
 step << Rogue
-    #era
+    #som
+    #label Armbands
+    .money >0.3197
+    .goto Elwynn Forest,24.2,74.5
+    .accept 11 >> Accept Riverpaw Gnoll Bounty
+step << Rogue
     .isOnQuest 11
     .goto Elwynn Forest,27.0,93.9
     >> Kill Gnolls. Loot them for Armbands
@@ -873,7 +886,6 @@ step << Warlock/Rogue
     .goto Elwynn Forest,24.2,74.5
     .turnin 11 >> Turn in Riverpaw Gnoll Bounty
 step << Rogue
-       #era
     .abandon 123 >>Abandon The Collector
 step
     #era
@@ -934,8 +946,13 @@ step << Human
     .accept 6181 >> Accept A Swift Message
 step << Rogue
     #era
-    .money >0.4230
-    >>Grind until you have 42s 30c of vendorables/money
+    .money >0.3152
+    +Grind until you have 31s 52c of vendorables/money
+step << Rogue
+    #som
+    .money >0.3197
+    +Grind until you have 31s 97c of vendorables/money
+--Not taking into account Shipment q turnin money so its insurance money
 step
     .goto Westfall,56.6,52.6
     .fp >> Get the Sentinel Hill flight path
@@ -943,10 +960,17 @@ step
     .accept 6281 >> Accept Continue To Stormwind << Human
     .fly Stormwind >> Fly to Stormwind
 step << Rogue
+    #som
     >>Go inside the building
     .goto Stormwind City,57.32,62.08,20,0
     .goto Stormwind City,58.37,61.69
     .vendor >> Buy the level 11 thrown from Thurman. Equip it when you're level 11
+step << Rogue
+    #era
+    >>Go inside the building
+    .goto Stormwind City,57.32,62.08,20,0
+    .goto Stormwind City,58.37,61.69
+    .vendor >> Buy the level 3 thrown from Thurman. Equip it
 step
     .goto Stormwind City,56.2,64.6
     >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling
@@ -957,7 +981,7 @@ step << !Warlock
     .home >> Set your Hearthstone to Stormwind City
 step << Warrior
     .goto Stormwind City,57.1,57.7
-    .trainer >> Train 2h Swords and Staves if you have enough money. You must save 10s for later
+    .trainer >> Train 2h Swords if you have enough money. You must save 20s for later
 step << Priest
     .goto Stormwind City,57.1,57.7
     .trainer >>Train Staves
@@ -968,7 +992,6 @@ step << Rogue
     .goto Stormwind City,57.1,57.7
     .trainer >>Train 1h Swords
 step << Rogue
-    #era
     .goto Stormwind City,57.6,57.1
     .vendor >>Buy a Cutlass from Gunther and equip it, Stiletto in Offhand
 step << Paladin
@@ -1110,14 +1133,22 @@ step
     .goto Ironforge,77.0,51.0,30 >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
-    .fp >> Get the Ironforge flight path
+    .fp Ironforge >> Get the Ironforge Flight Path
 step << Warrior
     .goto Ironforge,61.2,89.5
-    .trainer >>Train 2h Maces
+    .trainer >>Train 2h Maces and Thrown
 step 
     #sticky
+    #som
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
+    >>Equip your level 11 thrown << Warrior
+step 
+    #sticky
+    #era
+    #completewith next
+    .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
+    >>Equip your level 3 thrown << Warrior
 step
     .goto Dun Morogh,60.1,52.6,50,0
     .goto Dun Morogh,63.1,49.8
@@ -1134,7 +1165,7 @@ step
     .goto Dun Morogh,62.6,46.1
     .goto Dun Morogh,62.78,54.60,0
     .complete 314,1 --Collect Fang of Vagash (1)
---N add video tutorial
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> CLICK HERE for a guide on how to solo Vagash
 step
     .goto Dun Morogh,63.1,49.8
     .turnin 314 >> Turn in Protecting the Herd
@@ -1234,10 +1265,6 @@ step
     .collect 3172,3 --Collect Boar Intestines (x3)
 step
     .goto Loch Modan,35.1,47.8,130 >>Grind mobs en route for cooking quest later
-step << Rogue
-    #era
-   .goto Loch Modan,34.02,46.55
-    .vendor << Buy either a Feral Blade (better), or a Enamelled Broadsword from Morhan if you didn't buy a level 10 sword earlier
 step
     .goto Loch Modan,34.8,49.3
     .accept 418 >> Accept Thelsamar Blood Sausages
@@ -1376,11 +1403,6 @@ step
     .complete 418,1 --Collect Boar Intestines (x3)
 step
     #requires Meat9
-step << Rogue
-    #era
-    #requires Ichor9
-   .goto Loch Modan,34.02,46.55
-    .vendor << Buy either a Feral Blade (better), or a Enamelled Broadsword from Morhan if you didn't buy a level 10 sword earlier, or one of the green swords from Morhan earlier
 step
     #label RatCatching
     #requires Ichor9
