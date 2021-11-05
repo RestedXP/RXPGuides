@@ -1011,7 +1011,6 @@ s["ROGUE"] = {
     },
     [10] = {
 	921, -- pick pocket
-        5171, -- slice and dice
         2983, -- sprint
         6452, -- Anti-venom(FA)
 	674, -- dual wield
@@ -1019,6 +1018,7 @@ s["ROGUE"] = {
     [12] = {
         1766, -- kick
 	6770, -- sap
+	5171, -- slice and dice
     },
     [14] = {
 	703, -- garrote
