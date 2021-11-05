@@ -2146,6 +2146,7 @@ step << !Human Warlock
     .goto Elwynn Forest,44.39,66.24
     .trainer >> Train your class spells
 step << !Human
+    #level 20
     #som << !NightElf
     #completewith redridge1
     .goto Elwynn Forest,65.21,69.71
