@@ -527,6 +527,9 @@ step
     >>Run to Grommash Hold
     .goto Orgrimmar,39.1,38.1
     .accept 1061 >>Accept The Spirits of Stonetalon
+step << Druid
+    .goto Orgrimmar,54.2,68.4
+	.fly Thunder Bluff >> Fly to Thunder Bluff
 step << !Rogue !Undead !Tauren !Shaman !Warrior
     .goto Orgrimmar,54.2,68.4
     .turnin 6384 >>Turn in Ride to Orgrimmar
@@ -579,10 +582,14 @@ step << Hunter
     .goto Orgrimmar,81.52,19.64
 	.train 227 >> Train Staves from Hanashi
 step << Druid
+	.goto Thunder Bluff,76.4,27.6
+	.accept 27 >> Accept A Lesson to Learn
+step << Druid
     .zone Moonglade >>Teleport to Moonglade
 step << Druid
     >>Upstairs
     .goto Moonglade,56.21,30.64
+	.turnin 27 >> Turn in A Lesson to Learn
     .accept 28 >> Accept Trial of the Lake
 step << Druid
     .goto Moonglade,52.53,40.56
