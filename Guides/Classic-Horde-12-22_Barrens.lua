@@ -488,6 +488,11 @@ step
     .goto The Barrens,56.5,7.5
     .accept 858 >>Accept Ignition
 step
+    #sticky
+    #completewith next
+    +The next 3 quests can be quite hard, be extra careful
+    #hardcore
+step
     >>Kill Supervisor Lugwizzle (He patrols all over the tower). Loot him for the Ignition Key
 .goto The Barrens,56.3,8.6
     .complete 858,1 --Ignition Key (1)
@@ -791,6 +796,12 @@ step << !Undead !Rogue
 	.unitscan Hezrul Bloodmark
 step << !Undead !Rogue
 	#era
+    #sticky
+    #completewith next
+    +This next quest can be quite hard, be extra careful
+    #hardcore
+step << !Undead !Rogue
+	#era
 	.isQuestComplete 852
     .goto The Barrens,45.37,28.43
     .turnin 852 >>Turn in Hezrul Bloodmark
@@ -822,6 +833,11 @@ step << !Undead !Rogue
     .isQuestComplete 4021
     .goto The Barrens,45.39,28.44
     .turnin 4021 >>Turn in Counterattack!
+step 
+    #sticky
+    #completewith next
+    +The slayers has execute, be extra careful
+    #hardcore
 step
     .goto The Barrens,40.3,15.2
     >>Kill Witchwing Slayers. Loot them for Harpy Lieutenant Rings
@@ -873,6 +889,11 @@ step
     .goto Stonetalon Mountains,73.5,85.8
     .accept 6523 >> Accept Protect Kaya
 step
+    #sticky
+    #completewith next
+    +3 mobs spawn at the end, be careful
+    #hardcore
+step
      >>Escort Kaya and stay close to her. 3 Grimtotems will spawn at the bonfire. Eat/drink before she gets to the camp
     .goto Stonetalon Mountains,75.8,91.4
     .complete 6523,1 --Kaya Escorted to Camp Aparaje
@@ -913,6 +934,11 @@ step
 	.goto Stonetalon Mountains,59.0,62.6
     .turnin 1483 >> Turn in Ziz Fizziks
     .accept 1093 >> Accept Super Reaper 6000
+step
+    #sticky
+    #completewith next
+    +This next quest can be quite hard, be extra careful. The level 14 spiders can spawn level 22 spiders.
+    #hardcore
 step
     .goto Stonetalon Mountains,62.40,61.46
     >>Click the spider eggs near the trees
@@ -1449,6 +1475,11 @@ step
     .accept 216 >> Accept Between a Rock and a Thistlefur
     .accept 6462 >> Accept Troll Charm
 --N might need to be changed back to accepting later depending on no. of quests in log
+step
+    #sticky
+    #completewith next
+    +This next quest can be quite hard, be extra careful. The boss deals a lot of damage.
+    #hardcore
 step
 	#requires VorshaL
     >>Click the Brazier when you get there.
