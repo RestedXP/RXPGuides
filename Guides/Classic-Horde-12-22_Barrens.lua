@@ -46,7 +46,7 @@ step << !Shaman !Warrior
     .goto The Barrens,52.0,30.5,150 >> Run to the Crossroads
 step << !Shaman !Warrior
     .goto The Barrens,52.2,31.0
-    .turnin 842 >>Turn in Crossroads Conscription
+    .turnin 842 >>Turn in Crossroads Conscription << !Druid
     .accept 844 >>Accept Plainstrider Menace
 step << !Shaman !Warrior
     .goto The Barrens,52.2,31.8
