@@ -838,6 +838,13 @@ step
     .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 --N add a link for warrior/rogue? Also needs more specific wording per class
+	#softcore
+step
+    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time & use your skull & healthpot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
+    .goto Durotar,41.9,26.0
+    .complete 806,1 --Fizzle's Claw (1)
+--N add a link for warrior/rogue? Also needs more specific wording per class
+	#hardcore
 step
     #softcore
 	.goto Durotar,41.5,18.6
@@ -976,6 +983,11 @@ step << Warrior/Shaman
     .goto The Barrens,51.5,30.1
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
+step << Warrior/Shaman
+    #sticky
+    #completewith next
+    +This next quest can be quite hard, be extra careful
+    #hardcore
 step << Warrior/Shaman
     #sticky
     #completewith next
