@@ -1053,7 +1053,7 @@ step
     .accept 966 >> Accept The Tower of Althalaxx
 step
     .goto Winterspring,6.06,28.81
-     >> Kill cultists
+     >> Kill cultists. Loot them for Parchments
     .complete 966,1
 step
     .goto Winterspring,4.82,27.18
@@ -1068,7 +1068,9 @@ step
     .accept 2098 >> Accept Gyromast's Retrieval
 step
     #sticky
-     >> >> Kill Raging Reef Crawlers along the coast. Be careful as they thrash and can deal up to 200 damage at once. Loot them for the bottom part of the key
+    #completewith MoonstalkerP
+    .goto Darkshore,56.10,16.88,0
+     >> Kill Raging Reef Crawlers along the coast. Be careful as they thrash and can deal up to 200 damage at once. Loot them for the bottom part of the key
     .complete 2098,3
 step
     .goto Darkshore,55.59,12.90
@@ -1081,9 +1083,14 @@ step
      >> Kill Foreststriders
     .complete 2098,1
 step
+    #label MoonstalkerP
     .goto Darkshore,61.40,9.40
-     >> Kill Moonstalker Sire/Matriarch for pelts
+     >> Kill Moonstalker Sire/Matriarchs. Loot them for pelts
     .complete 986,1
+step
+     .goto Darkshore,56.10,16.88
+     >> Kill Raging Reef Crawlers along the coast. Be careful as they thrash and can deal up to 200 damage at once. Loot them for the bottom part of the key
+    .complete 2098,3
 step
     #requires foreststriders
     .goto Winterspring,6.37,16.66
