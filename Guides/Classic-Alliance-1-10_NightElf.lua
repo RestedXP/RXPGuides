@@ -796,6 +796,11 @@ step << Warrior
 	.money <0.3022
     >> Buy a Quarter Staff from Ariyell if you have money. Equip it at level 11
 	.collect 854,1
+step << Warrior
+    .goto Darnassus,58.76,44.48
+	.money <0.2023
+    >> Buy a Cutlass from Ariyell if you have money and couldn't afford the Quarter Staff. Equip it
+	.collect 851,1
 step
     #completewith next
     .goto Darnassus,30.41,41.40
