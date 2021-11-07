@@ -679,6 +679,10 @@ function RXP_.UpdateQuestCompletionData(self)
     local step = element.step
     local icon = RXP_.icons.complete
     local id = element.questId
+    if type(id) ~= "number" then
+        print('Error: Invalid quest ID at step '..element.step)
+        return
+    end
     local skip
     local objectives = RXP_.GetQuestObjectives(id,element.step.index)
     local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
@@ -853,7 +857,7 @@ function RXP_.functions.complete(self,...)
             RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid objective or quest ID\n"..self)
         end
         element.obj = tonumber(obj)
-
+        element.dynamicText = true
         --element.title = RXP_.GetQuestName(id)
         --local objectives = RXP_.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
         element.questId = questConversion[id] or id
@@ -1080,7 +1084,7 @@ end
 function RXP_.functions.collect(self,...)
     if type(self) == "string" then --on parse
         local element = {}
-        element.tag = "collect"
+        element.dynamicText = true
         local text,id,qty,questId,isQuestTurnIn = ...
         id = tonumber(id)
         if not id then
@@ -1481,7 +1485,8 @@ function RXP_.functions.next(skip,guide)
                (nextGuide.hardcore and not(RXPCData.hardcore) or nextGuide.softcore and RXPCData.hardcore) then
                return RXP_.functions.next(nil,nextGuide)
             else
-                return RXP_:LoadGuide(nextGuide)
+                RXP_:LoadGuide(nextGuide)
+                return true
             end
         elseif guideSkip then
             return RXP_.functions.next(nil,guideSkip)
@@ -1919,7 +1924,7 @@ function RXP_.functions.blastedLands(self)
         local element = {}
         element.text = "Collect the following items:\n14 Vulture Gizzard\n11 Basilisk Brain\n6 Scorpok Pincer\n6 Blasted Boar Lung\n5 Snickerfang Jowl"
         element.icon = RXP_.icons.collect
-        
+        element.dynamicText = true
         return element
     end
     --
@@ -2292,9 +2297,9 @@ function RXP_.functions.bronzetube(self,text,rev)
     if not(IsQuestTurnedIn(174)) then
         total = total + 1
     end
-    if class == "ROGUE" and not(IsQuestTurnedIn(2609)) then
+--[[    if class == "ROGUE" and not(IsQuestTurnedIn(2609)) then
         total = total + 1
-    end
+    end]]
     
     if count >= total then
         self.element.step.completed = true
@@ -2306,7 +2311,6 @@ end
 function RXP_.functions.buy(self,...)
     if type(self) == "string" then --on parse
         local element = {}
-        element.tag = "collect"
         local text,id,qty = ...
         id = tonumber(id)
         if not id then

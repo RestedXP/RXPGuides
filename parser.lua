@@ -134,7 +134,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
         --else
             --error('Error parsing guide at line '..linenumber..'/ '..guide.name)
         end
-        if element and (text and not element.textOnly or element.tag == "complete") then
+        if element and (text and not element.textOnly or element.dynamicText) then
             lastElement = element
         end
 
