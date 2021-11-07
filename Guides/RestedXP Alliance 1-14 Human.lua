@@ -678,8 +678,11 @@ step
     .turnin 6281 >> Turn in Continue to Stormwind
     .vendor >>Skip followup. Vendor and Repair
 step
+    #completewith next
     .goto Stormwind City,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
+step
+    .goto Stormwind City,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step
     .abandon 6261 >>Abandon Dungar Longdrink
@@ -1792,8 +1795,11 @@ step << Priest
     .goto Stormwind City,38.8,26.4
     .turnin 5635 >> Turn in Desperate Prayer
 step << Rogue/Mage
+    #completewith next
     .goto Stormwind City,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
+step << Rogue/Mage
+    .goto Stormwind City,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step << Warrior
 >>Put Sunder Armor on your bars (it's better damage than Heroic Strike)

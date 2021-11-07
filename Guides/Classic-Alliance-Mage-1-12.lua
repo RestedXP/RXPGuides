@@ -528,8 +528,11 @@ step
     .turnin 6281 >> Turn in Continue to Stormwind
     >>Vendor and Repair
 step
+    #completewith next
     .goto Stormwind City,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
+step
+    .goto Stormwind City,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step
     #sticky

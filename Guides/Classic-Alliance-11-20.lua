@@ -527,11 +527,10 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 << Alliance
 #name 13-15 Westfall
 #next 14-19 Darkshore
-#era
 
 step
     #sticky
-    .zone Westfall >> Fly to Westfall
+    .zone Westfall >> Head to Westfall
 step
     .goto Westfall,59.95,19.35
     .accept 64 >> Accept The Forgotten Heirloom
