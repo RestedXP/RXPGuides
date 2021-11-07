@@ -1178,7 +1178,7 @@ step << Warlock
     .accept 176 >> Accept Wanted:   "Hogger"
 step << Warlock
     #sticky
-    #completewith Armbands
+    #completewith collector
     >>Keep an eye out for the gold pickup schedule (lucky drop), or a 100% Drop from Gruff Swiftbite (rare). extra 210xp
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >> Accept The Collector
@@ -1203,8 +1203,14 @@ step << Warlock
     .complete 176,1 --Huge Gnoll Claw (1)
 --N might want to add this to hunter too
 step
-    .goto Elwynn Forest,34.60,84.50
     .accept 88 >> Accept Princess Must Die!
+    .goto Elwynn Forest,34.60,84.50
+    .accept 85 >> Accept Lost Necklace
+    .goto Elwynn Forest,34.40,84.2
+step
+    .goto Elwynn Forest,43.0,85.8
+    .turnin 85 >> Turn in Lost Necklace
+    .accept 86 >> Accept Pie for Billy
 step
     #sticky
     #label Fargodeep
@@ -1212,8 +1218,8 @@ step
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
 step
-    >>Go into the mine
     .goto Elwynn Forest,40.5,82.3
+    >>Go into the mine
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     #softcore
@@ -1228,14 +1234,17 @@ step << !Warlock
     .accept 35 >> Accept Further Concerns
 step << Warlock
     #requires Fargodeep
-    .isOnQuest 123
     .goto Elwynn Forest,42.1,65.9
     >>Choose the Staff then equip it
     .turnin 176 >> Turn in Wanted:    "Hogger"
-    .turnin 123 >> Turn in The Collector
     .turnin 62 >> Turn in The Fargodeep Mine
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
+step << Warlock
+    #label collector
+    .goto Elwynn Forest,42.1,65.9
+    .turnin 123 >> Turn in The Collector
+    .isOnQuest 123
 step << Warlock
     .goto Elwynn Forest,42.1,65.9
     >>Choose the Staff then equip it
@@ -1253,37 +1262,47 @@ step
 step
     .goto Elwynn Forest,73.90,72.30
     .turnin 35 >> Turn in Further Concerns
+step
+    #era
+    .goto Elwynn Forest,73.90,72.30
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
 step
+    #era
     #sticky
     #completewith Prowlers
     >>Kill Prowlers as you do other quests
     .complete 52,1 --Kill Prowler (x8)
 step
+    #era
     #sticky
     #completewith Bears
     >>Kill Bears as you do other quests. Kill any you see
     .complete 52,2 --Kill Young Forest Bear (x5)
 step
+    #era
     >>Click the bones on the ground
     .goto Elwynn Forest,72.7,60.3
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
+    #era
     .goto Elwynn Forest,81.38,66.11
     .accept 5545 >> Accept A Bundle of Trouble
 step
+    #era
     #sticky
     #completewith next
     >>Keep an eye out for the bundles of logs at the base of the trees
-    .collect 13872,8 --Collect Bundle of Wood (x8)
+    .collect 13872,8,5545,1 --Collect Bundle of Wood (x8)
 step
+    #era
     .goto Elwynn Forest,79.80,55.50
      >> Click on the pile of bones. Be careful as you may have to deal with a 2 pull of murlocs in front of the huts to get to it
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step
+    #era
     .goto Elwynn Forest,76.8,62.4,40,0
     .goto Elwynn Forest,83.7,59.4,40,0
     .goto Elwynn Forest,76.8,62.4,40,0
@@ -1291,17 +1310,19 @@ step
     .goto Elwynn Forest,76.8,62.4,40,0
     .goto Elwynn Forest,83.7,59.4,40,0
     >>Start running back, finish off the bundles
-    .collect 13872,8 --Collect Bundle of Wood (x8)
+    .collect 13872,8,5545,1 --Collect Bundle of Wood (x8)
 step
+    #era
+    #label Prowlers
     .goto Elwynn Forest,81.4,66.1
     .turnin 5545 >> Turn in A Bundle of Trouble
 step
-    #label Prowlers
-step
+    #era
     #label Bears
     .goto Elwynn Forest,79.5,68.8
     .accept 83 >> Accept Red Linen Goods
 step
+    #era
     .goto Elwynn Forest,76.7,75.6,40,0
     .goto Elwynn Forest,79.7,83.7,40,0
     .goto Elwynn Forest,82.0,76.8,40,0
@@ -1312,6 +1333,7 @@ step
     .complete 52,1 --Kill Prowler (x8)
     .complete 52,2 --Kill Young Forest Bear (x5)
 step
+    #era
     .goto Elwynn Forest,74.0,72.2
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
@@ -1332,6 +1354,7 @@ step
     .collect 1972,1,184 --Collect Westfall Deed (x1)
     .accept 184 >> Accept Furlbrow's Deed
 step
+    #era
     .goto Elwynn Forest,70.5,77.6,60,0
     .goto Elwynn Forest,68.1,77.5,60,0
     .goto Elwynn Forest,68.2,81.4,60,0
@@ -1348,11 +1371,13 @@ step
     >>Start circling the farm, killing Defias and looting them for Bandanas
     .complete 83,1 --Collect Red Linen Bandana (x6)
 step
+    #era
     #softcore
     #sticky
     #completewith next
     .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
 step
+    #era
     #label Deed
     .goto Elwynn Forest,79.45,68.78
     .turnin 83 >> Turn in Red Linen Goods
@@ -1404,6 +1429,7 @@ step << Warrior
     .goto Elwynn Forest,41.09,65.77
     .trainer >> Train your class spells
 step
+    #era
     .goto Elwynn Forest,42.10,65.92
     .turnin 39 >> Turn in Deliver Thomas' Report
 step << Mage
@@ -1416,35 +1442,32 @@ step << Rogue
     .goto Elwynn Forest,43.87,65.94
     .trainer >> Go upstairs. Train your class spells
 step
-    .goto Elwynn Forest,34.66,84.48
     .turnin 88 >> Turn in Princess Must Die!
+    .goto Elwynn Forest,34.66,84.48
+    .turnin 86 >> Turn in Pie for Billy
+    .goto Elwynn Forest,34.40,84.2
 --N I feel like doing hogger here is just massive bait (apart from lock doing it earlier). Idk. Warriors get mace anyway
 step
     .goto Westfall,59.95,19.35
     .turnin 184>> Turn in Furlbrow's Deed
     .isOnQuest 184
 step
-    #era
     .goto Westfall,59.95,19.35
     .accept 64 >> Accept The Forgotten Heirloom
     .accept 36 >> Accept Westfall Stew
     .accept 151 >> Accept Poor Old Blanchy
 step
-    #som
     .goto Westfall,59.95,19.35
     .accept 36 >> Accept Westfall Stew
 step
-    #era
     .goto Westfall,56.10,31.30
     .accept 9 >> Accept The Killing Fields
 step
-    #era
     .goto Westfall,56.40,30.50
     .turnin 36 >> Turn in Westfall Stew
     .accept 38 >> Accept Westfall Stew
     .accept 22 >> Accept Goretusk Liver Pie
 step
-    #som
     .goto Westfall,56.40,30.50
     .turnin 36 >> Turn in Westfall Stew
 step
@@ -1453,15 +1476,14 @@ step
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer, or run to Sentinel Hill
 step
+    #era
     .goto Westfall,56.40,47.60
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
 step
-    #era
     .goto Westfall,56.40,47.60
     .accept 12 >> Accept The People's Militia
     .accept 102 >> Accept Patrolling Westfall
 step
-    #era
     .goto Westfall,54.00,53.00
     .accept 153 >> Accept Red Leather Bandanas
 step << !Paladin
@@ -1631,13 +1653,6 @@ step
     .goto Loch Modan,34.82,49.28
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
-    #som
-    .goto Loch Modan,34.8,48.6
-    .vendor >> Buy 1 Flint and Tinder, and 1 Simple Wood. Buy more 6 slots if needed
-    .collect 4470,1 --Simple Wood (1)
-    .collect 4471,1 --Flint and Tinder (1)
-step
-    #era
     .goto Loch Modan,34.8,48.6
     .vendor >> Buy 1 Flint and Tinder, and 2 Simple Wood. Buy more 6 slots if needed
     .collect 4470,2 --Simple Wood (2)
@@ -1663,14 +1678,7 @@ step
 step
     .goto Loch Modan,23.23,73.67
     .turnin 267 >> Turn in The Trogg Threat
-step << !Warlock !Paladin/!Dwarf !Warlock
-    #som
-    .hs >> Hearth to Ironforge
-step << Warlock
-    #som
-    .hs >> Hearth to Thelsamar
 step << !Dwarf/!Paladin
-    #era << !Warlock
     .goto Loch Modan,33.93,50.95
     .fly Ironforge>> Fly to Ironforge
 step << Dwarf Paladin
@@ -1762,69 +1770,14 @@ step << Paladin
     #era
     .trainer >> Train your class spells
 step << !Paladin
-    #era
     #completewith next
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
     .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
 step << !Paladin
-    #era
     .goto Ironforge,76.54,51.15,60,0
     .goto Ironforge,76.54,51.15,0
     .zone Stormwind City >> Take the tram to Stormwind City
     >>Train first aid while wating/riding the tram, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-step
-    #era
-    .goto Stormwind City,66.27,62.13
-    .fly Westfall >> Fly to Westfall
-step
-    #som
-    #softcore
-    #completewith next
-    .goto Loch Modan,33.93,50.95
-    .fly Wetlands>> Fly to Wetlands
-step
-    #som
-    #hardcore
-    .goto Dun Morogh,52.6,36.0
-    .zone Dun Morogh >> Head out to Dun Morogh
-step
-    #som
-    #hardcore
-    .goto Dun Morogh,59.5,42.8,40,0
-    .goto Dun Morogh,60.4,44.1,40,0
-    .goto Dun Morogh,61.1,44.1,40,0
-    .goto Dun Morogh,61.2,42.3,40,0
-    .goto Dun Morogh,60.8,40.9,40,0
-    .goto Dun Morogh,59.0,39.5,40,0
-    .goto Dun Morogh,60.3,38.6,40,0
-    .goto Dun Morogh,61.7,38.7,40,0
-    .goto Dun Morogh,65.7,21.6,40,0
-    .goto Dun Morogh,65.8,12.5,40,0
-    .goto Dun Morogh,65.6,10.8,40,0
-    .goto Dun Morogh,66.5,10.0,40,0
-    .goto Dun Morogh,66.9,8.5,40,0
-    .goto Wetlands,20.6,67.2,50,0
-    .goto Wetlands,17.7,67.7,40,0
-    .goto Wetlands,16.8,65.3,40,0
-    .goto Wetlands,15.1,64.0,40,0
-    .goto Wetlands,12.1,60.3,40,0
-    >>Open this link and follow it on another screen.
-    >>Do the Deathless Dun Morogh -> Wetlands skip
-    >>Avoid the Crocodiles when crossing the sea
-    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for reference
-    .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
-step
-    #som
-    #hardcore
-    #label fp
-    .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
-step
-    #som
-    .goto Wetlands,4.6,57.2
-    .zone Darkshore >>Head to the Menethil Harbor docks and take the boat to Darkshore
-    >>Make a campfire and level cooking while you wait
-    >>Train first aid while waiting for the boat, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
 ]],"Gnome/Dwarf")
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[

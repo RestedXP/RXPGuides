@@ -551,10 +551,17 @@ step << Human
     #label Lewis
     .goto Westfall,56.80,47.20
     .turnin 6285 >> Turn in Return to Lewis
+step << Gnome/Dwarf
+    #completewith next
+    .goto Westfall,56.40,47.60
+    .turnin 109 >> Turn in Report to Gryan Stoutmantle
+    .isOnQuest 109
 step
     .goto Westfall,56.40,47.60
-    .turnin 109 >> Turn in Report to Gryan Stoutmantle << Gnome/Dwarf
     .accept 12 >> Accept The People's Militia
+step
+    #era
+    .goto Westfall,56.40,47.60
     .accept 102 >> Accept Patrolling Westfall
 step << Human
     #requires Lewis
@@ -597,6 +604,7 @@ step
     >>You can loot the closet from outside (if you angle your camera correctly). Be careful of Benny
     .complete 64,1 --Furlbrow's Pocket Watch
 step
+    #era
      #sticky
      #label Pawbs
     .goto Westfall,56.40,13.50,80,0
@@ -616,6 +624,13 @@ step
     >>Kill Murlocs. Loot them for their eyes
     .complete 38,2 --Murloc Eye (3)
 step
+    #era
+    #requires Pawbs
+    .goto Westfall,59.91,19.41
+    .turnin 151 >> Turn in Poor Old Blanchy
+    .turnin 64 >> Turn in The Forgotten Heirloom
+step
+    #som
     #requires Pawbs
     .goto Westfall,59.91,19.41
     .turnin 151 >> Turn in Poor Old Blanchy
