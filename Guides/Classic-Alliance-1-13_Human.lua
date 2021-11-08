@@ -877,69 +877,48 @@ step << Rogue
     .goto Elwynn Forest,24.2,74.5
     .accept 11 >> Accept Riverpaw Gnoll Bounty
 step << Rogue
-    .isOnQuest 11
     .goto Elwynn Forest,27.0,93.9
     >> Kill Gnolls. Loot them for Armbands
     .complete 11,1 --Collect Painted Gnoll Armband (x8)
-step << Warlock/Rogue
     .isOnQuest 11
+step << Warlock/Rogue
     .goto Elwynn Forest,24.2,74.5
     .turnin 11 >> Turn in Riverpaw Gnoll Bounty
+    .isOnQuest 11
 step << Rogue
     .abandon 123 >>Abandon The Collector
 step
-    #era
-    .isOnQuest 184
     .goto Westfall,60.0,19.4
     .turnin 184 >> Turn in Furlbrow's Deed
-    .accept 64 >>Accept The Forgotten Heirloom
-step
-    #som
     .isOnQuest 184
-    .goto Westfall,60.0,19.4
-    .turnin 184 >> Turn in Furlbrow's Deed
 step
-    #era
     .goto Westfall,59.95,19.36
     .accept 64 >>Accept The Forgotten Heirloom
 step
-    #era
     .goto Westfall,59.9,19.4
     .accept 36 >> Accept Westfall Stew
     .accept 151 >>Accept Poor Old Blanchy
 step
-    #som
-    .goto Westfall,59.9,19.4
-    .accept 36 >> Accept Westfall Stew
-step
-    #era
     .goto Westfall,56.04,31.22
     .accept 9 >>Accept The Killing Fields
 step
-    #era
     .goto Westfall,56.4,30.5
     .turnin 36 >> Turn in Westfall Stew
     .accept 38 >> Accept Westfall Stew
     .accept 22 >>Accept Goretusk Liver Pie
-step
-    #som
-    .goto Westfall,56.4,30.5
-    .turnin 36 >> Turn in Westfall Stew
 step
     #softcore
     #sticky
     #completewith next
     .goto Westfall,51.7,49.4,150 >> Die and respawn at the Spirit Healer, or run to Sentinel Hill
 step
-    #era
     .goto Westfall,56.3,47.5
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
     .accept 12 >> Accept The People's Militia
-    .accept 102 >> Accept Patrolling Westfall
 step
-    #som
+    #era
     .goto Westfall,56.3,47.5
-    .turnin 109 >> Turn in Report to Gryan Stoutmantle
+    .accept 102 >> Accept Patrolling Westfall
 step << Human
     .goto Westfall,57.0,47.2
     .vendor >>vendor trash
@@ -976,7 +955,6 @@ step
     >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling
     .turnin 61 >> Turn in Shipment to Stormwind
 step << !Warlock
-    #era
     .goto Stormwind City,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
 step << Warrior
@@ -1073,14 +1051,9 @@ step << Warlock
     >>Don't summon your voidwalker once you learn it
     .turnin 1689 >> Turn in The Binding
 step << Human
-    #era
     .goto Stormwind City,74.3,47.2
     .turnin 6281 >> Turn in Continue to Stormwind
     .accept 6261 >> Accept Dungar Longdrink
-step << Human
-    #som
-    .goto Stormwind City,74.3,47.2
-    .turnin 6281 >> Turn in Continue to Stormwind
 step << Warrior
      >>Enter the inn
     .goto Stormwind City,71.7,39.9,20,0
@@ -1423,191 +1396,18 @@ step
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
 step
-    .xp 12 >> Grind to 12
-step
-    #era
     .goto Loch Modan,33.9,51.0
     .fp >> Get the Thelsamar flight path
 step
-    #som
     .goto Loch Modan,22.1,73.1
     .accept 224 >> Accept In Defense of the King's Lands
 step
-    #som
     .goto Loch Modan,23.2,73.7
     >>Go into the bunker from behind
     .accept 267 >> Accept The Trogg Threat
 step
-    #som
     .goto Loch Modan,29.9,68.2,45 >> Run to the Troggs Entrance
 step
-    #som
-    .goto Loch Modan,30.0,72.4,100,0
-    .goto Loch Modan,34.7,71.6,100,0
-    .goto Loch Modan,30.9,81.1,100,0
-    .goto Loch Modan,30.0,72.4,100,0
-    .goto Loch Modan,34.7,71.6,100,0
-    .goto Loch Modan,30.9,81.1,100,0
-    .goto Loch Modan,30.0,72.4
-    >>Kill Stonesplinter Troggs. Loot them for their Teeth
-    .complete 224,1 --Kill Stonesplinter Trogg (x10)
-    .complete 224,2 --Kill Stonesplinter Scout (x10)
-    .complete 267,1 --Collect Trogg Stone Tooth (x8)
-step
-    #som
-    .goto Loch Modan,32.7,76.5,0
-    .xp 13+9600 >>Grind until 9600+/11400xp
-step
-    #som
-    .goto Loch Modan,22.2,73.3
-    .turnin 224 >> Turn in In Defense of the King's Lands
-step
-    #som
-    #label TroggT
-    .goto Loch Modan,23.2,73.7
-    .turnin 267 >> Turn in The Trogg Threat
-step
-    #som
-    .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
-    .fly Ironforge >> Fly to Ironforge
-step << Warrior
-    #som
-    .goto Ironforge,62.0,89.6
-    .train 176 >>Train Thrown
-step
-    #som
-    .goto Ironforge,69.88,82.90 << Hunter
-    .goto Ironforge,65.90,88.41 << Warrior
-    .goto Ironforge,50.34,5.67 << Warlock
-    .goto Ironforge,51.50,15.34 << Rogue
-    .goto Ironforge,25.21,10.75 << Priest
-    .goto Ironforge,27.17,8.57 << Mage
-    .goto Ironforge,24.55,4.46 << Paladin
-     .trainer >> Train your class spells
-    .goto Ironforge,52.7,6.1 << Warlock
-     .vendor >> Buy Voidwalker's Consume Shadows+Sacrifice books if you have spare money<< Warlock
-step << Mage/Priest
-    #som
-    #hardcore
-    #completewith next
-    +Go toward the staircase behind the paladin trainers at the back of the room. Go about halfway up, then move yourself to the edge of the stairs until it looks like you're floating. Logout, then back in
-    .link https://www.youtube.com/watch?v=E8b90bzJMSI >> CLICK HERE for reference
-    >>Logout skip to the front of Ironforge
-step << Paladin
-    #som
-    #completewith next
-    +Go toward the staircase behind the paladin trainers at the back of the room. Go about halfway up, then move yourself to the edge of the stairs until it looks like you're floating. Logout, then back in
-    .link https://www.youtube.com/watch?v=E8b90bzJMSI >> CLICK HERE for reference
-    >>Logout skip to the front of Ironforge
-step << Rogue
-    #som
-    .money <0.3815
-    .goto Ironforge,62.4,88.7
-    .vendor >> Go to the bottom floor of the building. Buy a Scimitar from Brenwyn
-    .collect 2027,1 --Scimitar (1)
-step << Mage/Warlock/Priest
-    #som
-    #softcore
-    #completewith next
-    .goto Ironforge,25.8,75.5
-    >>Check the AH for a Greater Magic Wand. Buy it if you can afford it
-    .collect 11288,1 --Greater Magic Wand (1)
-step
-    #som
-    .goto Dun Morogh,53.5,34.9
-    .zone Dun Morogh>>Exit Ironforge
-step
-    #som
-    #hardcore
-    #completewith next
-    .goto Dun Morogh,59.43,42.85,150 >> Travel to the skip spot
-step
-    #som
-    #hardcore
-    .goto Dun Morogh,59.5,42.8,40,0
-    .goto Dun Morogh,60.4,44.1,40,0
-    .goto Dun Morogh,61.1,44.1,40,0
-    .goto Dun Morogh,61.2,42.3,40,0
-    .goto Dun Morogh,60.8,40.9,40,0
-    .goto Dun Morogh,59.0,39.5,40,0
-    .goto Dun Morogh,60.3,38.6,40,0
-    .goto Dun Morogh,61.7,38.7,40,0
-    .goto Dun Morogh,65.7,21.6,40,0
-    .goto Dun Morogh,65.8,12.5,40,0
-    .goto Dun Morogh,65.6,10.8,40,0
-    .goto Dun Morogh,66.5,10.0,40,0
-    .goto Dun Morogh,66.9,8.5,40,0
-    .goto Wetlands,20.6,67.2,50,0
-    .goto Wetlands,17.7,67.7,40,0
-    .goto Wetlands,16.8,65.3,40,0
-    .goto Wetlands,15.1,64.0,40,0
-    .goto Wetlands,12.1,60.3,40,0
-    >>Open this link and follow it on another screen.
-    >>Do the Deathless Dun Morogh -> Wetlands skip
-    >>Avoid the Crocodiles when crossing the sea
-    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for reference
-    .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
-step
-    #som
-    #softcore
-    #completewith next
-    .goto Dun Morogh,30.9,33.1,20 >>Run up the mountain north
-step
-    #som
-    #softcore
-    .goto Dun Morogh,32.4,29.1,20  >>Follow it up to here
-step
-    #som
-    #softcore
-    .goto Dun Morogh,33.0,27.2,15,0
-    .goto Dun Morogh,33.0,25.2,15,0
-    .goto Wetlands,11.6,43.4,60,0
-    .deathskip >>Keep running straight north, drop down and die, then respawn
-step
-    #som
-    #softcore
-    .goto Wetlands,12.7,46.7,80 >> Swim to shore
-step
-    #som
-    .money <0.08
-    .goto Wetlands,10.4,56.0,15,0
-    .goto Wetlands,10.1,56.9,15,0
-    .goto Wetlands,10.6,57.2,15,0
-    .goto Wetlands,10.7,56.8
-    .vendor >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there
-step
-    #som
-    .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
-step
-    #som
-    .money <0.04
-    .goto Wetlands,8.1,56.3
-    .vendor >> In the building, check Dewin for Heal Potions, buy down to 1s
-step
-    #som
-    #completewith next
-    +Wait here for the boat. Make a Campfire from your spellbook and start cooking the chunks of boar meat you saved from earlier. You ideally need 10 skill now
-    .goto Wetlands,4.7,57.3
-step
-    #som
-    .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore.
-    >>Train first aid while waiting for the boat, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-step << Warlock
-    #era
-    .goto Loch Modan,22.1,73.1
-    .accept 224 >> Accept In Defense of the King's Lands
-step << Warlock
-    #era
-    .goto Loch Modan,23.2,73.7
-    >>Go into the bunker from behind
-    .accept 267 >> Accept The Trogg Threat
-step << Warlock
-    #era
-    .goto Loch Modan,29.9,68.2,45 >> Run to the Troggs Entrance
-step << Warlock
-    #era
     .goto Loch Modan,30.0,72.4,100,0
     .goto Loch Modan,34.7,71.6,100,0
     .goto Loch Modan,30.9,81.1,100,0
@@ -1619,7 +1419,6 @@ step << Warlock
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
 step << Warlock
-    #era
     #sticky
     #completewith TroggT
     .money >0.7579
@@ -1630,24 +1429,22 @@ step << Warlock
     .goto Loch Modan,32.7,76.5,0
     .xp 13+9600 >>Grind until 9600+/11400xp
 step << Warlock
-    #era 
+    #som
+    .xp 14-2520 >> Grind until you are 8880xp into level 13
+step
     .goto Loch Modan,22.2,73.3
     .turnin 224 >> Turn in In Defense of the King's Lands
-step << Warlock
-    #era
+step
     #label TroggT
     .goto Loch Modan,23.2,73.7
     .turnin 267 >> Turn in The Trogg Threat
 step << Warlock
-    #era
     .xp 14 >> Grind to 14
 step
-    #era
     .hs >> Hearth to Stormwind City
     .vendor >> vendor trash << !Paladin
     .vendor >> vendor trash. Make sure to save 10 Linen << Paladin
 step << Warlock/Priest
-    #era
     #sticky
     #label Wand1
     #completewith Wand2
@@ -1655,7 +1452,6 @@ step << Warlock/Priest
     .goto Stormwind City,53.60,59.77
     .collect 11288,1 --Greater Magic Wand (1)
 step << Warlock/Priest
-    #era
     #label Wand2
     #completewith Wand1
      >>Go in the building. Buy a Smoldering Wand
@@ -1663,23 +1459,19 @@ step << Warlock/Priest
     .goto Stormwind City,42.84,65.14
     .collect 5208,1 --Smoldering Wand (1)
 step << Warlock
-    #era
     #sticky
     #completewith next
     .goto Stormwind City,29.2,74.0,20,0
     .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    #era
     .goto Stormwind City,26.11,77.20
     .trainer >> Train your class spells
     .goto Stormwind City,25.65,77.63
     .vendor >> Buy Consume Shadows r1 then Sacrifice r1 books (if you have money)
 step << Mage
-    #era
     .goto Stormwind City,37.69,82.09,10 >> Go up the tower, then through the portal
     .trainer >> Train your class spells
 step << Paladin
-    #era
     >>Do the quests for Duthorian Rall
     .goto Stormwind City,39.80,29.77
     .turnin 1641 >> Turn in The Tome of Divinity
@@ -1688,37 +1480,32 @@ step << Paladin
     .turnin 1642 >> Turn in The Tome of Divinity
     .accept 1643 >> Accept The Tome of Divinity
 step << Paladin
-    #era
     .goto Stormwind City,38.68,32.85
     .trainer >> Train your class spells
 step << Priest
-    #era
     .goto Stormwind City,38.54,26.86
     .trainer >> Train your class spells
 step << Rogue
-    #era
    .goto Stormwind City,74.65,52.83
     .trainer >> Train your class spells
 step << Warrior
-    #era
     #completewith next
     .goto Stormwind City,74.91,51.55,20 >> Enter the Command Center
 step << Warrior
-    #era
     .goto Stormwind City,78.67,45.80
     .trainer >> Go upstairs. Train your class spells
 step << Paladin
-    #era
     .goto Stormwind City,57.08,61.74
     .turnin 1643 >> Turn in The Tome of Divinity
     .accept 1644 >> Accept The Tome of Divinity
     .turnin 1644 >> Turn in The Tome of Divinity
     .accept 1780 >> Accept The Tome of Divinity
 step
-    #era
     .goto Stormwind City,66.28,62.13
     .turnin 6261 >> Turn in Dungar Longdrink
     .accept 6285 >> Accept Return to Lewis
+step
+    .goto Stormwind City,66.28,62.13
     .fly Westfall >> Fly to Westfall
 ]],"Human")
 
