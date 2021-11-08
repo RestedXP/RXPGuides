@@ -638,8 +638,7 @@ step << Paladin
     #softcore
     #sticky
     #completewith Bundles2
-    >>Die and respawn at the Spirit Healer, or start running back if someone cleared the corpse prior
-    .goto Elwynn Forest,83.6,69.7,120
+    .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer, or start running back if someone cleared the corpse prior
 step
     .goto Elwynn Forest,76.8,62.4,90,0
     .goto Elwynn Forest,83.7,59.4,90,0
@@ -934,9 +933,10 @@ step << Rogue
 --Not taking into account Shipment q turnin money so its insurance money
 step
     .goto Westfall,56.6,52.6
-    .fp >> Get the Sentinel Hill flight path
     .turnin 6181 >> Turn in A Swift Message << Human
     .accept 6281 >> Accept Continue To Stormwind << Human
+step
+    .goto Westfall,56.6,52.6
     .fly Stormwind >> Fly to Stormwind
 step << Rogue
     #som
