@@ -659,7 +659,11 @@ step
 step
     .goto Westfall,56.30,47.50
     .turnin 12 >> Turn in The People's Militia
+step
+    #completewith end
+    .goto Westfall,56.30,47.50
     .accept 65 >> Accept The Defias Brotherhood
+    >>Skip this step if you're not yet level 15
 step
     #era
     .goto Westfall,56.30,47.50
@@ -668,6 +672,7 @@ step
     .goto Westfall,54.00,52.90
     .turnin 153 >> Turn in Red Leather Bandanas
 step << Dwarf !Paladin/Gnome
+    #label end
      #completewith next
     .hs >> Hearth back to Thelsamar
 step << Dwarf !Paladin/Gnome
@@ -703,6 +708,7 @@ step << Dwarf !Paladin/Gnome
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for reference
     .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
 step << Human/Dwarf Paladin
+    #label end
     .goto Westfall,56.6,52.6
     .fly Ironforge >> Fly to Ironforge
 step << Human Warrior
@@ -2095,94 +2101,62 @@ step
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube 
 step << Warlock/Priest
-    #completewith next
      >>Go in the building. Buy a Burning Wand if it's an upgrade
      >>It's important to buy a non-shadow wand, you'll have to deal with mobs resistant to shadow damage later
     .goto Stormwind City,42.65,67.16,14,0
     .goto Stormwind City,42.84,65.14
     .collect 5210,1
 step << Warlock
-    #era << !Human
     #completewith next
     .goto Stormwind City,29.2,74.0,20,0
     .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    #era << !Human
     .goto Stormwind City,26.11,77.20
     .trainer >> Train your class spells
 step << Mage
-    #era << !Human
     .goto Stormwind City,37.69,82.09,10 >> Go up the tower, then through the portal
     .trainer >> Train your class spells
 step << Paladin
-    #era << !Human
     .goto Stormwind City,38.68,32.85
     .trainer >> Train your class spells
 step << Priest !NightElf
-    #era << !Human
     .goto Stormwind City,38.54,26.86
     .trainer >> Train your class spells
 step << Rogue !NightElf
-    #era << !Human
     .goto Stormwind City,74.64,52.82
     .trainer >> Train your class spells
 step << Warrior !NightElf
-    #era << !Human
     >>Enter the Command Center
     .goto Stormwind City,74.91,51.55,20,0
     .goto Stormwind City,78.67,45.80
     .trainer >> Go upstairs. Train your class spells
-step << !Human
+step
     .goto Stormwind City,57.0,57.6
-     .train 201 >> Train 1h swords << Mage/Rogue
+     .train 201 >> Train 1h swords << Mage/Rogue/Warlock
      .train 1180 >> Train daggers << Mage/Druid
      .train 202 >> Train 2h swords << Warrior/Paladin
 step << !Human
      #completewith start
      .goto Stormwind City,66.2,62.4
     .fp Stormwind >> Get the Stormwind City flight path if you haven't
-step << !Human
-    #som << !NightElf
+step << NightElf
     .goto Stormwind City,73.2,92.1
     .zone Elwynn Forest >> Leave Stormwind through the main gate
-step << !Human Warrior
-    #som << !NightElf
+step << NightElf Warrior
     .goto Elwynn Forest,41.09,65.77
     .trainer >> Train your class spells
-step << !Human Paladin
-    #som
-    .goto Elwynn Forest,41.10,66.04
-    .trainer >> Train your class spells
-step << !Human Mage/Priest/Rogue
-    #som << !NightElf
+step << NightElf Rogue/NightElf Priest
     >>Go into the inn, then go upstairs
     .goto Elwynn Forest,43.17,65.70,20,0
     .goto Elwynn Forest,43.80,66.47,20,0
-    .goto Elwynn Forest,43.24,66.19 << Mage
     .goto Elwynn Forest,43.28,65.72 << Priest
     .goto Elwynn Forest,43.87,65.94 << Rogue
     .trainer >> Train your class spells
-step << !Human Warlock
-    #som
-    >>Go into the inn, then go into the basement
-    .goto Elwynn Forest,43.17,65.70,20,0
-    .goto Elwynn Forest,44.05,66.05,20,0
-    .goto Elwynn Forest,44.39,66.24
-    .trainer >> Train your class spells
-step << !Human
-    #level 20
-    #som << !NightElf
-    #completewith redridge1
-    .goto Elwynn Forest,65.21,69.71
-    >>Head to the Tower of Azora
-    .accept 94 >> Accept A Watchful Eye
 step << !NightElf
-    #era << !Human
     .goto Stormwind City,66.27,62.13
     .fly Redridge >>Fly to Redridge Mountains
 step << !Human
-    #som << !NightElf
-    #label redridge1
+    #label start
     .goto Redridge Mountains,15.27,71.45
     .zone Redridge Mountains >> Head to Redridge Mountains
 step
@@ -2214,7 +2188,6 @@ step
     >>Go inside the Inn
     .accept 129 >> Accept A Free Lunch
 step
-    #era
     .goto Redridge Mountains,26.6,45.2
     >>Head upstairs
     .turnin 65 >> Turn in The Defias Brotherhood
@@ -2226,16 +2199,15 @@ step
 step
     .goto Redridge Mountains,21.85,46.32
     .accept 34 >> Accept An Unwelcome Guest
-step
-    #softcore
+step << Warlock
      #completewith next
     .goto Redridge Mountains,15.68,49.30
      >> Kill Bellygrub by kiting him towards the Lakeshire guards
     .complete 34,1
-step
-    #softcore
+    .link https://youtu.be/6JE967OG3CU?t=1845 >> Click here for video reference
+step << Warlock
     .goto Redridge Mountains,21.85,46.32
-     >> If you can't solo Bellygrub, skip this step, you'll have another opportunity to finish it later
+     >>This is a hard quest to solo at this level, if you can't solo Bellygrub, skip this step, you'll have another opportunity to finish it later
     .turnin 34 >> Turn in An Unwelcome Guest
 step
     .goto Redridge Mountains,29.30,53.60
