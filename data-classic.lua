@@ -1349,13 +1349,13 @@ s["MAGE"] = {
     },
     [22] = {
         8437, -- arcane explosion r2
-        990, -- conure food r3
         2138, -- fire blast r3
     },
     [24] = {
         2139, -- counterspell
         8400, -- fireball r5
         2121, -- flamestrike r2
+	990, -- conure food r3
         2948, -- scorch
     },
     [26] = {
