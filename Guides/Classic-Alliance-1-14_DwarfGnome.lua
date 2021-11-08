@@ -763,10 +763,10 @@ step
     >>Loot baskets on the ground
     >>Make Weightstones if you loot linen here << Paladin
     .complete 315,1 --Collect Shimmerweed (x6)
-step << !Mage
+step << !Mage !Warlock
     .goto Dun Morogh,38.5,54.0
     >>Wait until Old Icebeard leaves the cave so you can sneak in and loot the chest, or do this
-        .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>CLICK HERE
+        .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>Click here for video reference
     .complete 312,1 --MacGrann's Dried Meats (1)
 step << Mage/Warlock
     >> Polymorph Old Icebeard, then loot the meats << Mage
@@ -803,6 +803,7 @@ step
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
 step
+    #era
     .xp 9 >> Grind to 9
 step
     .goto Dun Morogh,24.5,50.8,40,0
@@ -914,6 +915,7 @@ step
     .goto Dun Morogh,68.7,56.0
     .turnin 433 >> Turn in The Public Servant
 step
+    #era
     .goto Dun Morogh,67.1,59.7
     .xp 10 >> Grind to 10 at the troggs
 step
@@ -964,8 +966,7 @@ step
 step
     .goto Loch Modan,34.8,48.6
     .vendor >>Buy a 6 slot bag
-step
-    #era << !Warlock
+step << !Paladin
     .goto Loch Modan,35.5,48.4
     .home >> Set your Hearthstone to Thelsamar
 step << skip
@@ -987,27 +988,6 @@ step
     .accept 307 >> Accept Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order
-step << Dwarf Paladin
-    #completewith next
-    Grind troggs/do the sausage quest or kill kobolds north for Rat Ears until you're close to level 12
-    .complete 416,1
-    .goto Loch Modan,25.8,30.5
-    .complete 267,1
-    .goto Loch Modan,27.4,48.4
-step << Dwarf Paladin
-    #era
-    .goto Loch Modan,27.4,48.4
-    .goto Loch Modan,25.8,30.5
-    >>Make sure you have 10 Linen Cloth for an upcoming Paladin quest
-    .collect 2589,10,1648,1
-    .xp 12-2000 >> Grind until you are 2000xp away from level 12
-step << Dwarf Paladin
-    #som
-    .goto Loch Modan,27.4,48.4
-    .goto Loch Modan,25.8,30.5
-    >>Make sure you have 10 Linen Cloth for an upcoming Paladin quest
-    .collect 2589,10,1648,1
-    .xp 12-2800 >> Grind until you are 2800xp away from level 12
 step
     #completewith next
     .deathskip >> Die and respawn at Thelsamar
@@ -1026,10 +1006,6 @@ step
 step
     .goto Ironforge,39.5,57.5
     .turnin 291 >> Turn in The Reports
-step << !Paladin !Warlock
-    #som
-    .goto Ironforge,18.5,51.6
-    .home >>Set your Hearthstone to Ironforge
 step
     >>do NOT fly anywhere
     .goto Ironforge,55.5,47.8
@@ -1084,7 +1060,7 @@ step << Warrior
 step << Warrior
     #sticky
     #completewith next
-    .goto Stormwind City,71.7,39.9,20 >>Enter the inn
+    .goto Stormwind City,71.7,39.9,20 >>Enter the tavern
 step << Warrior
     .goto Stormwind City,74.3,37.3
     .turnin 1638 >> Turn in A Warrior's Training
@@ -1113,12 +1089,12 @@ step << Warlock
 step << Warlock
     .goto Stormwind City,25.2,78.5
     .accept 1688 >> Accept Surena Caledon
-step << !Paladin
+step
     .goto Stormwind City,57.1,57.7
     .trainer >>Train 1h Swords << Rogue
     .trainer >>Train Staves << Priest
     .trainer >>Train 1h Swords and Staves << Warlock/Mage
-    .trainer >>Train 2h Swords and Staves << Warrior
+    .trainer >>Train 2h Swords << Warrior/Paladin
 step << Rogue
     .goto Stormwind City,57.6,57.1
     .vendor >> If you have money, buy a Cutlass from Gunther and equip it. Equip the Craftsman's Dagger from earlier in your off-hand
@@ -1127,12 +1103,6 @@ step << Rogue
     .goto Stormwind City,57.32,62.08,20,0
     .goto Stormwind City,58.37,61.69
     .vendor >> Buy the level 11 thrown from Thurman. Equip it when you're level 11
-step << !Warlock
-    #som
-    .goto Stormwind City,60.5,12.3,40,0
-    .goto Stormwind City,60.5,12.3,0
-    .zone Ironforge >> Take the tram back to Ironforge
-    >>Train first aid while wating/riding the tram, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
 ]],"Dwarf/Gnome")
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
@@ -1140,7 +1110,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 << Alliance !Hunter
 #name 10-11 Elwynn (Dwarf/Gnome)
 #next 11-14 Loch Modan (Dwarf/Gnome)
-#era << !Warlock
+--#era << !Warlock
 
 step << Warlock
      #softcore
@@ -1201,7 +1171,6 @@ step << Warlock
     >>Hogger can be in multiple spots in the area. Keep him fear chained, and/or kite him at <60% hp to the tower at 24,80. Loot him for his Claw
     >>Be careful as this can be difficult
     .complete 176,1 --Huge Gnoll Claw (1)
---N might want to add this to hunter too
 step
     .accept 88 >> Accept Princess Must Die!
     .goto Elwynn Forest,34.60,84.50
@@ -1245,13 +1214,6 @@ step << Warlock
     .goto Elwynn Forest,42.1,65.9
     .turnin 123 >> Turn in The Collector
     .isOnQuest 123
-step << Warlock
-    .goto Elwynn Forest,42.1,65.9
-    >>Choose the Staff then equip it
-    .turnin 176 >> Turn in Wanted:    "Hogger"
-    .turnin 62 >> Turn in The Fargodeep Mine
-    .turnin 40 >> Turn in A Fishy Peril
-    .accept 35 >> Accept Further Concerns
 step
     .goto Elwynn Forest,43.30,65.70
     .turnin 60 >> Turn in Kobold Candles
@@ -1349,7 +1311,7 @@ step
     .complete 88,1
 step
     #sticky
-    #completewith Deed
+    #completewith next
     >>Keep an eye out for Westfall Deed from the Defias (lucky drop)
     .collect 1972,1,184 --Collect Westfall Deed (x1)
     .accept 184 >> Accept Furlbrow's Deed
@@ -1427,26 +1389,35 @@ step << Warlock
     .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to you
 step << Warrior
     .goto Elwynn Forest,41.09,65.77
+    >>Head to Goldshire
     .trainer >> Train your class spells
 step
     #era
     .goto Elwynn Forest,42.10,65.92
+    >>Head to Goldshire
     .turnin 39 >> Turn in Deliver Thomas' Report
 step << Mage
     .goto Elwynn Forest,43.25,66.20
+    >>Head to the Goldshire Inn
     .trainer >> Go upstairs. Train your class spells
 step << Priest
     .goto Elwynn Forest,43.28,65.72
+    >>Head to the Goldshire Inn
     .trainer >> Go upstairs. Train your class spells
 step << Rogue
     .goto Elwynn Forest,43.87,65.94
+    >>Head to the Goldshire Inn
     .trainer >> Go upstairs. Train your class spells
 step
     .turnin 88 >> Turn in Princess Must Die!
     .goto Elwynn Forest,34.66,84.48
+step
     .turnin 86 >> Turn in Pie for Billy
     .goto Elwynn Forest,34.40,84.2
---N I feel like doing hogger here is just massive bait (apart from lock doing it earlier). Idk. Warriors get mace anyway
+    .isQuestComplete 86
+step
+    #sticky
+    .abandon 86 >> Abandon Pie for Billy
 step
     .goto Westfall,59.95,19.35
     .turnin 184>> Turn in Furlbrow's Deed
@@ -1489,6 +1460,10 @@ step
 step << !Paladin
     .goto Westfall,56.6,52.6
     .fp >> Get the Sentinel Hill flight path
+step << Dwarf Paladin
+    .goto Westfall,48.6,45.8
+    >>Make sure you have 10 Linen Cloth for an upcoming Paladin quest
+    .collect 2589,10,1648,1
 step << Paladin
     .goto Westfall,56.6,52.6
     .fly Stormwind >> Fly to Stormwind
@@ -1509,10 +1484,6 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #name 11-14 Loch Modan (Dwarf/Gnome)
 #next 13-15 Westfall
 
-step << Dwarf Paladin
-    #som
-    .goto Ironforge,18.5,51.6
-    .home >>Set your Hearthstone to Ironforge
 step << Dwarf Paladin
     .goto Ironforge,23.3,6.1
     .accept 2999 >>Accept Tome of Divinity
@@ -1695,10 +1666,6 @@ step << Dwarf Paladin
     >>Kill Dark Iron Spies
     .complete 1784,1 --Dark Iron Script (1)
 step << Dwarf Paladin
-    #som
-    .hs >> Hearth to Ironforge
-step << Dwarf Paladin
-    #era
     .hs >> Hearth to Stormwind
 step << Warrior
     .goto Ironforge,65.89,88.43
@@ -1753,22 +1720,7 @@ step << Priest
     .goto Ironforge,25.20,10.75
     .trainer >> Train your class spells
 step << Paladin
-    #som
-    .goto Ironforge,23.12,6.14
-    .trainer >> Train your class spells
-step << Dwarf Paladin
-    #som
-    .goto Ironforge,23.6,8.5
-    >>Speak to Muiredon upstairs
-    .turnin 1784 >>Turn in The Tome of Divinity
-    .accept 1785 >>Accept The Tome of Divinity
-step << Dwarf Paladin
-    #som
-    .goto Ironforge,27.4,11.9
-    .turnin 1785 >>Turn in The Tome of Divinity
-step << Paladin
-    #era
-    .trainer >> Train your class spells
+    .trainer >> Train your class spells at the Stormwind cathedral
 step << !Paladin
     #completewith next
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in

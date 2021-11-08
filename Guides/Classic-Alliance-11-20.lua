@@ -660,6 +660,9 @@ step
     .goto Westfall,56.30,47.50
     .turnin 12 >> Turn in The People's Militia
     .accept 65 >> Accept The Defias Brotherhood
+step
+    #era
+    .goto Westfall,56.30,47.50
     .turnin 102 >> Turn in Patrolling Westfall
 step
     .goto Westfall,54.00,52.90
