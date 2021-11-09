@@ -793,7 +793,7 @@ step << Rogue
     #sticky
     #completewith UnluckyRogue
     .unitscan Astor Hadren
-    >>If you see Astor, talk to him and kill him. Loot him for the letter
+    >>If you see Astor, talk to him and kill him. Loot him for the letter. He patrols the road between Brill and The Sepulcher
     .complete 1886,1 --Astor's Letter of Introduction (1)
 step << Warlock
     #sticky
@@ -1042,7 +1042,7 @@ step << Rogue
     #sticky
     #completewith next
     .unitscan Astor Hadren
-    >>If you see Astor, talk to him and kill him. Loot him for the letter
+    >>If you see Astor, talk to him and kill him. Loot him for the letter. He patrols the road between Brill and The Sepulcher
     .complete 1886,1 --Astor's Letter of Introduction (1)
 step
     .zone Undercity >> Run to Undercity
