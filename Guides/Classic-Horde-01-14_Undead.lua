@@ -419,6 +419,7 @@ step
     .accept 374 >>Accept Proof of Demise
 step
     .xp 7
+    .goto Tirisfal Glades,59.47,56.40
 step
     .goto Tirisfal Glades,61.72,52.29
     .accept 354 >>Accept Deaths in the Family
@@ -480,6 +481,7 @@ step
     .goto Tirisfal Glades,64.35,55.26,100,0
     .goto Tirisfal Glades,67.48,54.85,100,0
     .goto Tirisfal Glades,63.34,50.88,100,0
+       .goto Tirisfal Glades,59.47,56.40
 step
     #label NewPlague
     .goto Tirisfal Glades,59.45,52.40
@@ -490,6 +492,7 @@ step
     .goto Tirisfal Glades,58.60,57.13,100,0
     .goto Tirisfal Glades,66.16,53.62,100,0
     .goto Tirisfal Glades,62.17,35.64,100,0
+       .goto Tirisfal Glades,58.60,57.13
     .complete 375,1 --Duskbat Pelt (5)
 step << Rogue/Warrior
     .xp 7+3800 >> Grind to 3800+/4500
@@ -541,8 +544,10 @@ step
 step
     #requires IchorAndy
     >>Kill Murlocs. Loot them for their Scales - Take care around here, these mobs are semi-difficult
+       .goto Tirisfal Glades,58.68,27.35,0
     .goto Tirisfal Glades,58.68,27.35,100,0
     .goto Tirisfal Glades,64.25,29.66,100,0
+       .goto Tirisfal Glades,58.68,27.35
     .complete 368,1 --Vile Fin Scale (5)
 step
     #softcore
