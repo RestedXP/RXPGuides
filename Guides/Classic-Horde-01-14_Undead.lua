@@ -1251,7 +1251,6 @@ step
     .goto Silverpine Forest,44.19,39.78
     .turnin 421 >>Turn in Prove Your Worth
     .accept 422 >>Accept Arugal's Folly
-    .goto Silverpine Forest,52.82,28.58
 step
     #era
     #sticky
