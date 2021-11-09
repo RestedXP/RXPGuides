@@ -155,6 +155,9 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                 skip = true
             else
                 skip = false
+                if step and step.elements and #step.elements == 0 then
+                    step.hideStep = true
+                end
                 currentStep = currentStep + 1
                 guide.steps[currentStep] = {}
                 guide.steps[currentStep].elements = {}

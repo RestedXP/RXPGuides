@@ -791,7 +791,7 @@ function RXP_.SetStep(n,n2)
             local req = guide.labels[step.requires]
             if step.requires and req then
                 req = guide.steps[req]
-                while req and req.requires and not RXPCData.stepSkip[req.index] do
+                while req and req.requires and not RXPCData.stepSkip[req.index] and not req.active do
                     req = guide.steps[guide.labels[req.requires]]
                 end
             end
@@ -1481,6 +1481,20 @@ f.bottomBackdrop = {
 
 local currentAlpha
 
+function RXP_.GetGuideName(guide)
+    if not guide then
+        guide = RXP_.currentGuide
+    end
+    local som = RXPCData.SoM
+    if som and guide.somname then
+        return guide.somname
+    elseif not som and guide.eraname then
+        return guide.eraname
+    else
+        return guide.displayName
+    end
+end
+
 function RXP_:LoadGuide(guide,OnLoad)
 	RXP_.loadNextStep = false
     if not guide then
@@ -1524,7 +1538,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	RXP_.currentGuideName = guide.name
 	RXPCData.currentGuideName = guide.name
 	RXPCData.currentGuideGroup = guide.group
-	f.GuideName.text:SetText(guide.displayName)
+	f.GuideName.text:SetText(RXP_.GetGuideName(guide))
 	--local nameWidth = f.GuideName.text:GetStringWidth()+10
 	--f.GuideName:SetWidth(nameWidth)
 	--f:SetWidth(math.max(f:GetWidth(),nameWidth+45))
@@ -1839,7 +1853,7 @@ function RXP_.GenerateMenuTable()
                 guide.menuIndex = menuIndex
                 guide.submenuIndex = submenuIndex
                 local subitem = {}
-                subitem.text = guide.displayName
+                subitem.text = RXP_.GetGuideName(guide)
                 subitem.func = RXP_.LoadGuide
                 subitem.arg1 = guide
                 subitem.notCheckable = 1

@@ -1787,7 +1787,7 @@ function RXP_.functions.zoneskip(self,...)
         local element = {}
         local text,zone = ...
         local mapID = RXP_.mapId[zone]
-        if not (mapID and text) then
+        if not mapID then
             return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/map name\n"..self)
         end
         element.map = mapID
