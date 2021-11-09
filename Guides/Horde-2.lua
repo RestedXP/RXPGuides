@@ -1,1 +1,0 @@
-RXPGuides.RegisterGuide()
