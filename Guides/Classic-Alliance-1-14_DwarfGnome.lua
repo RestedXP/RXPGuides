@@ -12,7 +12,7 @@ step << Mage
     #completewith next
     +Note that you have selected the single target mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
 step
-    >>Delete your Hearthstone
+    >>Delete your Hearthstone << !Warlock
     .goto Dun Morogh,29.9,71.2
     .accept 179 >> Accept Dwarven Outfitters
 step << Warrior/Warlock
@@ -57,6 +57,9 @@ step << Warlock
 step << Warlock
     #softcore
     .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at the Spirit Healer
+step << Warlock
+    #hardcore
+    .hs >> Hearth back to Coldridge Valley
 step << Warlock
     >>Go back to the Warlock Trainer
     .goto Dun Morogh,28.6,66.1
