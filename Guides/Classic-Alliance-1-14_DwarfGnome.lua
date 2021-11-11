@@ -119,7 +119,16 @@ step
     .goto Dun Morogh,22.6,71.4
     .turnin 183 >> Turn in The Boar Hunter
 step << Paladin/Mage/Warlock
-    .xp 3+860 >> Grind to 860+/1400xp
+    #era
+    .xp 3+1130 >> Grind to 1130+/1400xp
+    .goto Dun Morogh,23.0,75.0,100,0
+    .goto Dun Morogh,24.2,72.5,100,0
+    .goto Dun Morogh,27.7,76.3,100,0
+    .goto Dun Morogh,23.0,75.0,100,0
+    .goto Dun Morogh,24.2,72.5
+step << Paladin/Mage/Warlock
+    #som
+    .xp 3+1022 >> Grind to 1022+/1400xp
     .goto Dun Morogh,23.0,75.0,100,0
     .goto Dun Morogh,24.2,72.5,100,0
     .goto Dun Morogh,27.7,76.3,100,0
