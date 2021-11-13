@@ -76,18 +76,17 @@ step << Druid/Shaman
     .goto Mulgore,44.7,77.9
     .vendor >>vendor trash. Do NOT buy water
 step
-    #sticky
-    #completewith Cougar
+    #completewith next
     >>Kill Cougars for their Pelts
-    .goto Mulgore,47.7,91.9
+    .goto Mulgore,47.7,91.9,0
     .complete 750,1 --Mountain Cougar Pelt (10)
 step
-    #label Cougar
     >>Grind mobs en route
     .goto Mulgore,42.6,92.2
     .turnin 755 >>Turn in Rites of the Earthmother
     .accept 757 >>Accept Rite of Strength
 step
+    .goto Mulgore,45.44,90.56
     >>Kill Cougars for their Pelts
     .complete 750,1 --Mountain Cougar Pelt (10)
 step << !Druid !Shaman
