@@ -1106,10 +1106,11 @@ step
 step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .goto Ironforge,77.0,51.0,30 >>Enter Ironforge
+    .goto Ironforge,77.0,51.0 
+    .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
-    .fp Ironforge >> Get the Ironforge Flight Path
+    .fp >> Get the Ironforge Flight Path
 step << Warrior
     .goto Ironforge,61.2,89.5
     .trainer >>Train 2h Maces and Thrown
