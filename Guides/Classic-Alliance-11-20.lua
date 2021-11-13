@@ -35,8 +35,9 @@ step
 step
     .accept 2118 >> Accept Plagued Lands
     .goto Felwood,21.63,18.15
-    .accept 984 >> Accept How Big a Threat?
+step
     .goto Felwood,22.24,18.22
+    .accept 984 >> Accept How Big a Threat?
 step <<  Dwarf Hunter
     #sticky
     .tame 2163 >> Tame a Thistle Bear, they can stun you, send your pet on them and when they use their stun on your pet, abandon your current pet and start taming it
