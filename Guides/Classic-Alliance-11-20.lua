@@ -2321,9 +2321,16 @@ step << Rogue
     >>Skip this step if you have something better
     .collect 923,1 --Longsword (1)
 step << Warrior/Paladin
+    #softcore
     .goto Stormwind City,57.55,57.07
     >>Buy a Dacian Falx if you have enough money. Equip it at 21
     >>Buy something from the AH if its cheaper/better
+    >>Skip this step if you have something better
+    .collect 922,1 --Dacian Falx (1)
+step << Warrior/Paladin
+    #hardcore
+    .goto Stormwind City,57.55,57.07
+    >>Buy a Dacian Falx if you have enough money. Equip it at 21
     >>Skip this step if you have something better
     .collect 922,1 --Dacian Falx (1)
 step << Warlock
