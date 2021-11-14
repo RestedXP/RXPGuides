@@ -592,17 +592,17 @@ step << Paladin
     .goto Elwynn Forest,83.7,59.4,100,0
     .goto Elwynn Forest,76.8,62.4
     >>Get bundles of wood at the base of the trees
-    .collect 13872,8 --Collect Bundle of Wood (x8)
+    .complete 5545,1 --Collect Bundle of Wood (x8)
 step << Paladin
     #hardcore
     #completewith Bundles
     >>Keep an eye out for the bundles of logs at the base of the trees
-    .collect 13872,8 --Collect Bundle of Wood (x8)
+    .complete 5545,1 --Collect Bundle of Wood (x8)
 step << !Paladin
     #sticky
     #completewith next
     >>Keep an eye out for the bundles of logs at the base of the trees
-    .collect 13872,8 --Collect Bundle of Wood (x8)
+    .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     #label Bundles
     .goto Elwynn Forest,79.8,55.5,90 >> Go toward the guard's corpse
@@ -648,7 +648,7 @@ step
     .goto Elwynn Forest,83.7,59.4,90,0
     .goto Elwynn Forest,76.8,62.4
     >>Start running back, finish off the bundles
-    .collect 13872,8 --Collect Bundle of Wood (x8)
+    .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     #label Bundles2
     .goto Elwynn Forest,81.4,66.1
