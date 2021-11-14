@@ -2133,9 +2133,14 @@ step << Warrior !NightElf
     .trainer >> Go upstairs. Train your class spells
 step
     .goto Stormwind City,57.0,57.6
-     .train 201 >> Train 1h swords << Mage/Rogue/Warlock
-     .train 1180 >> Train daggers << Mage/Druid
-     .train 202 >> Train 2h swords << Warrior/Paladin
+     .train 201 >> Talk to Woo Ping. Train 1h Swords << Mage/Rogue/Warlock
+     .train 1180 >> Talk to Woo Ping. Train Daggers << Mage/Druid
+     .train 202 >> Talk to Woo Ping. Train 2h Swords << Warrior/Paladin
+step << Rogue
+    .goto Stormwind City,57.38,56.77
+    >>Talk to Marda. Buy a Longsword for your mainhand and Kris for your offhand.
+    .collect 923,1 --Longsword
+    .collect 2209,1 --Kris
 step << !Human
      #completewith start
      .goto Stormwind City,66.2,62.4
