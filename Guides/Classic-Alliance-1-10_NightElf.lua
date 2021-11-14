@@ -555,16 +555,16 @@ step << !Hunter
     #label xp10
    .xp 10-930 << Druid
    .xp 10-3880 << !Druid
-step
+step << !Rogue
     #requires xp10
     #completewith next
     .deathskip >>Die on purpose and respawn at the Darnassus graveyard
-step
+step << !Rogue
     #requires xp10
     .goto Darnassus,38.3,21.4
     .turnin 922 >> Turn in Rellian Greenspyre
     .accept 923 >> Accept Tumors
-step << !Hunter
+step << !Hunter !Rogue
     .goto Darnassus,34.7,9.0
     >>Climb to the top of the tree house
     .turnin 940 >> Turn in Teldrassil
@@ -573,7 +573,7 @@ step << Druid
     >>Head to the middle level of the tree house
     .accept 5921 >> Accept Moonglade
 	.trainer >> Train your level 10 spells
-step
+step << !Rogue
     .goto Darnassus,36.5,86.0
     .accept 2518 >> Accept Tears of the Moon
 step << Druid
@@ -591,7 +591,8 @@ step << Druid
     .turnin 5929 >> Turn in Great Bear Spirit
     .accept 5931 >> Accept Back to Darnassus
 step
-    #completewith next
+    #requires xp10 << Rogue
+    #completewith next << !Rogue
     .hs >> Hearth to Dolanaar
 step << Hunter
     .goto Teldrassil,56.3,59.5
@@ -676,6 +677,9 @@ step << Hunter
 step << Warrior
     .goto Teldrassil,56.2,59.2
     .accept 1684 >> Accept Elanaria
+step << Rogue
+    .goto Teldrassil,56.2,60.0
+    .accept 2241 >> Accept The Apple Falls
 step << Hunter
     .goto Teldrassil,56.3,59.5
     .money <0.0504
@@ -685,11 +689,33 @@ step << Hunter
 step << !Druid
     .goto Teldrassil,51.8,56.4
     .turnin 487 >> Turn in The Road to Darnassus
+step << Rogue
+    #completewith next
+    .goto Teldrassil,44.0,54.6
+    .deathskip >>Once you get past the furbolg area, die on purpose and respawn at the Darnassus graveyard
+step << Rogue
+    .goto Darnassus,38.3,21.4
+    .turnin 922 >> Turn in Rellian Greenspyre
+    .accept 923 >> Accept Tumors
+step << Rogue
+    .goto Darnassus,34.7,9.0
+    >>Climb to the top of the tree house
+    .turnin 935 >> Turn in Crown of the Earth
+    .turnin 940 >> Turn in Teldrassil
+    .accept 952 >> Accept Grove of the Ancients
+step << Rogue
+    .goto Darnassus,36.8,21.8
+    .turnin 2241 >> Turn in The Apple Falls
+    .accept 2242 >> Accept Destiny Calls
+step << Rogue
+    .goto Darnassus,36.5,86.0
+    .accept 2518 >> Accept Tears of the Moon
 step << Hunter
     #sticky
     .train 2981 >> Tame a Strigid Hunter and learn claw rank 2
 step
     .goto Teldrassil,43.1,32.9
+    >>Exit Darnassus << Rogue
 	>>Kill timberling mobs around the river
     .complete 923,1 --Collect Mossy Tumor (x5)
 step
@@ -699,6 +725,11 @@ step
     .goto Teldrassil,40.7,25.4
     >>Kill Lady Sathrah, she has 3 possible spawn locations
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
+step << Rogue
+    .goto Teldrassil,38.0,25.2
+    >>Pick pocket Sethir the Ancient, he walks along the big tree branch
+    >>You have to be sneaky, he hits hard and summon a bunch of adds if you fight him
+    .complete 2242,1
 step << Hunter
     #sticky
 	#label harpies2
@@ -759,6 +790,9 @@ step
 step << Hunter
     .goto Darnassus,40.3,8.8
     .turnin 6103 >> Turn in Training the Beast
+step << Rogue
+    .goto Darnassus,36.8,21.8
+    .turnin 2242 >> Turn in Destiny Calls
 step
     .goto Darnassus,38.3,21.7
     .turnin 923 >> Turn in Tumors
