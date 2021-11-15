@@ -2493,6 +2493,64 @@ step << Rogue
 step
     .goto Redridge Mountains,32.10,48.70
     .turnin 89 >> Turn in The Everstill Bridge
+step << Rogue
+    --#softcore
+    .goto Westfall,68.5,70.0
+    >>This is a good time to do the poison quest in Westfall, this quest can be VERY HARD to do at level 20/21, this step is optional, you will have another chance to do it later at level 24
+    .turnin 2360 >> Turn in Mathias and the Defias
+    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
+step << Rogue
+    --#softcore
+    .goto Westfall,68.5,70.0
+    .accept 2359 >> Accept Klaven's Tower
+    .isQuestTurnedIn 2360
+step << Rogue
+    --#softcore
+    .goto Westfall,70.6,72.8
+    >>Pickpocket one of the Defias Drones and loot the tower key
+    .complete 2359,2 --Collect Defias Tower Key (x1)
+    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
+    .isOnQuest 2359
+step << Rogue
+    --#softcore
+    .goto Westfall,70.4,74.0
+    >>Climb to the top of the tower and loot the small chest on the floor
+    .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
+    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
+    .isOnQuest 2359
+step << Rogue !Dwarf
+    --#softcore
+    .goto Duskwood,10.69,59.86,90,0
+    .goto Duskwood,8.82,38.44
+    >>Kill Spiders in Duskwood
+    >>Save Gooey Spider Legs for later
+    >>You'll need 1 venom sac to craft an anti-venom and remove the Zanzil poison << Rogue !Dwarf
+    >>If you have a Paladin or Druid friend you can skip this step and ask them to remove it for you
+    .collect 1475,1,2359,1 << Rogue !Dwarf
+    .isOnQuest 2359
+step << Rogue
+    --#softcore
+    #completewith next
+    .goto Westfall,56.55,52.65
+    .fly Stormwind >> Fly to Stormwind
+step << Rogue
+    --#softcore
+    .goto Stormwind City,74.90,54.00,20,0
+    .goto Stormwind City,78.67,59.48,20,0
+     .goto Stormwind City,75.9,59.9
+    .turnin 2359 >> Turn in Klaven's Tower
+    .isQuestComplete 2359
+step << Rogue
+    --#softcore
+     .goto Stormwind City,75.9,59.9
+    .accept 2607 >> Accept The Touch of Zanzil
+    .isQuestTurnedIn 2359
+step << Rogue
+    --#softcore
+    .goto Stormwind City,78.1,59.0
+    >>Head to the basement
+    .turnin 2607 >> Turn in The Touch of Zanzil
+    .isQuestTurnedIn 2359
 step <<  NightElf
     .fp Ironforge>> Fly to Stormwind, take the tram to Ironforge and get the Ironforge flight path 
     >>Skip this step if you already have the Ironforge flight path 
