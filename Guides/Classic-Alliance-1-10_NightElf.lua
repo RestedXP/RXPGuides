@@ -50,7 +50,7 @@ step
     .accept 457 >> Accept The Balance of Nature
 	.accept 3116 >> Accept Simple Sigil << Warrior
 	.accept 3117 >> Accept Etched Sigil << Hunter
-	.accept 3118 >> Accept Encrypted Sigil << Rogue
+--	.accept 3118 >> Accept Encrypted Sigil << Rogue
 	.accept 3119 >> Accept Hallowed Sigil << Priest
 	.accept 3120 >> Accept Verdant Sigil << Druid
 step << Warrior 
