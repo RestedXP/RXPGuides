@@ -2133,9 +2133,14 @@ step << Warrior !NightElf
     .trainer >> Go upstairs. Train your class spells
 step
     .goto Stormwind City,57.0,57.6
-     .train 201 >> Train 1h swords << Mage/Rogue/Warlock
-     .train 1180 >> Train daggers << Mage/Druid
-     .train 202 >> Train 2h swords << Warrior/Paladin
+     .train 201 >> Talk to Woo Ping. Train 1h Swords << Mage/Rogue/Warlock
+     .train 1180 >> Talk to Woo Ping. Train Daggers << Mage/Druid
+     .train 202 >> Talk to Woo Ping. Train 2h Swords << Warrior/Paladin
+step << Rogue
+    .goto Stormwind City,57.38,56.77
+    >>Talk to Marda. Buy a Longsword for your mainhand and Kris for your offhand.
+    .collect 923,1 --Longsword
+    .collect 2209,1 --Kris
 step << !Human
      #completewith start
      .goto Stormwind City,66.2,62.4
@@ -2489,7 +2494,7 @@ step
     .goto Redridge Mountains,32.10,48.70
     .turnin 89 >> Turn in The Everstill Bridge
 step <<  NightElf
-    .fp Ironforge>> Fly to SW, take the tram to Ironforge and get the Ironforge flight path 
+    .fp Ironforge>> Fly to Stormwind, take the tram to Ironforge and get the Ironforge flight path 
     >>Skip this step if you already have the Ironforge flight path 
 ]])
 
@@ -2505,7 +2510,6 @@ step << Druid
     .goto Moonglade,52.53,40.56
     .trainer >> Train your class spells
 step
-    #completewith next
     .hs >> Hearth back to Auberdine
 step
     .goto Darkshore,37.44,41.83
@@ -2520,8 +2524,9 @@ step
     .goto Darkshore,39.37,43.48
     .accept 993 >> Accept A Lost Master
 step
-    #sticky
-     >> Kill Grizzled Thistle Bears
+    #completewith Murkdeep
+    .goto Darkshore,40.23,81.28,0
+     >> Kill Grizzled Thistle Bears. Loot them for their Scalps
     .complete 1003,1
     .isOnQuest 1003
 step <<  NightElf
@@ -2581,12 +2586,18 @@ step
     .goto Felwood,14.62,60.72
     .accept 4730 >> Accept Beached Sea Creature
 step
+    #label Murkdeep
     .goto Darkshore,36.64,76.53
     >> Clear the murloc camp, maintain a safe distance while doing it
     >> Move close to the Bonfire in the camp to summon 3 waves of Murlocs: Kill waves 1 and 2, then kill Murkdeep in wave 3
     >> Check the coast to the west to see if Murkdeep is already alive. If he is, kill him
     .unitscan Murkdeep
     .complete 4740,1
+step
+    .goto Darkshore,40.23,81.28
+     >> Kill Grizzled Thistle Bears. Loot them for their Scalps
+    .complete 1003,1
+    .isOnQuest 1003
 step
     .goto Felwood,24.53,60.46
     .turnin 1003 >> Turn in Buzzbox 525
@@ -2608,6 +2619,7 @@ step
 step
     .goto Felwood,27.96,55.76
     >>Speak to Kerlonian and start the escort quest
+    >>If he's not here, wait for him to respawn
     .accept 5321 >> Accept The Sleeper Has Awakened
 step
     .goto Darkshore,44.38,76.30
@@ -2634,7 +2646,7 @@ step
 step
      #completewith next
     .goto Ashenvale,31.41,30.66
-     >> Kill cultists
+     >> Kill cultists. Loot them for the Glowing Soul Gem
     .complete 970,1
 step
      #completewith next
@@ -2651,7 +2663,7 @@ step
     .complete 1010,1
 step
     .goto Ashenvale,31.41,30.66
-     >> Kill cultists
+     >> Kill cultists. Loot them for the Glowing Soul Gem
     .complete 970,1
 step
     #sticky 
