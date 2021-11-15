@@ -84,6 +84,7 @@ function RXPG_init()
     RXPData.arrowText = RXPData.arrowText or 9
     RXPData.phase = RXPData.phase or 1
     RXPCData.flightPaths = RXPCData.flightPaths or {}
+    RXPData.batchSize = RXPData.batchSize or 5
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
@@ -2180,6 +2181,9 @@ function RXP_.CreateOptionsPanel()
     slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,2,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, 0.05, "0.05", "2")
     slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, 0.05, "0", "1")
     slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,2,"Bottom","Top")
+    
+    slider = CreateSlider(RXPData,"batchSize",1,100,"Batching window size: %d ms","Adjusts the batching window tolerance, used for hearthstone batching",slider,0,-25, 1, "1", "100")
+    
     if RXP_.version == "CLASSIC" then
         slider = CreateSlider(RXPData,"phase",1, 6,"Content phase: %d","Adjusts the guide routes to match the content phase",slider,0,-25, 1, "1", "6")
     end
@@ -2265,3 +2269,40 @@ function RXP_.UpdateQuestButton(index)
 end
 
 hooksecurefunc("QuestLog_SetSelection",RXP_.UpdateQuestButton)
+
+local HSframe = CreateFrame("Frame");
+local currentFPS = GetCVar("maxfps")
+local HSstart = 0
+local batchingWindow = 0.005
+
+local function SwitchBindLocation()
+	if GetTime() - HSstart > 10 - batchingWindow then
+		ConfirmBinder()
+		HSframe:SetScript("OnUpdate",nil)
+		SetCVar("maxfps",currentFPS)
+		HSstart = 0
+	end
+end
+
+local function StartHSTimer()
+	if HSstart == 0 then
+        batchingWindow = RXPData.batchSize / 1e3
+		currentFPS = GetCVar("maxfps")
+		SetCVar("maxfps",0)
+		HSstart = GetTime()
+		HSframe:SetScript("OnUpdate",SwitchBindLocation)
+	end
+end
+
+hooksecurefunc("UseContainerItem",function(...)
+	if GetContainerItemID(...) == 6948 then
+		StartHSTimer()
+	end
+end)
+
+hooksecurefunc("UseAction",function(...)
+	local event,id = GetActionInfo(...)
+	if event == "item" and id == 6948 or event == "macro" and IsCurrentSpell(8690) then
+		StartHSTimer()
+	end
+end)
