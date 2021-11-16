@@ -71,7 +71,7 @@ end
 function RXPG_init()
 	RXPData = RXPData or {}
 	RXPCData = RXPCData or {}
-    RXPCData.hardcore = RXPCData.hardcore or false
+    RXPCData.hardcore = (RXP_.version == "CLASSIC") and RXPCData.hardcore
     SoMCheck()
     RXP_.RenderFrame()
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
@@ -149,7 +149,7 @@ local function ProcessSpells(names,rank)
                             C_Spell.RequestLoadSpellData(spellId)
                             spellRequest[spellId] = true
                         end
-                        if names and rank and not(RXPCData.hardcore and RXP_.HCSpellList[spellId]) then
+                        if names and rank and not(RXPCData.hardcore and RXP_.HCSpellList and RXP_.HCSpellList[spellId]) then
                             spellRequest[spellId] = nil
                             local sName = GetSpellInfo(spellId)
                             local sRank = GetSpellSubtext(spellId)
@@ -1878,22 +1878,27 @@ function RXP_.GenerateMenuTable()
     
     table.insert(RXP_.menuList,{text = "",notCheckable = 1,isTitle = 1})
 --    table.insert(RXP_.menuList,{text = "Toggle Hardcore Mode",notCheckable = 1,func = RXP_.HardcoreToggle})
-    local hctext
-    if RXPData and RXPCData.hardcore then
-        hctext = "Deactivate Hardcore mode"
-    else
-        hctext = "Activate Hardcore mode"
+    if RXP_.version == "CLASSIC" then
+        local hctext
+        if RXPData and RXPCData.hardcore then
+            hctext = "Deactivate Hardcore mode"
+        else
+            hctext = "Activate Hardcore mode"
+        end
+        table.insert(RXP_.menuList,{text = hctext,notCheckable = 1,func = RXP_.HardcoreToggle})
     end
-    table.insert(RXP_.menuList,{text = hctext,notCheckable = 1,func = RXP_.HardcoreToggle})
     table.insert(RXP_.menuList,{text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG})
     table.insert(RXP_.menuList,{text = "Close",notCheckable = 1,func = function(self) self:Hide() end})
 end
 
-
+local hardcoreButton
 function RXP_.HardcoreToggle()
-    if RXPData then
+    if RXPData and RXP_.version == "CLASSIC" then
         RXPCData.hardcore = not RXPCData.hardcore
         RXP_.RenderFrame()
+        if hardcoreButton then
+            hardcoreButton:SetChecked(RXPCData.hardcore)
+        end
     end
 end
 
@@ -2106,6 +2111,7 @@ function RXP_.CreateOptionsPanel()
    
     if RXP_.version == "CLASSIC" then
         button = CreateFrame("CheckButton", "$parentHC", panel, "ChatConfigCheckButtonTemplate");
+        hardcoreButton = button
         table.insert(options,button)
         button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
         index = index + 1

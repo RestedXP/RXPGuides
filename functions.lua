@@ -408,7 +408,7 @@ function RXP_.SeasonCheck(step)
 end
 
 function RXP_.HardcoreCheck(step)
-    local hc = RXPCData.hardcore and RXP_.version == "CLASSIC"
+    local hc = RXPCData.hardcore
     if step.softcore and hc or step.hardcore and not hc then
         return false
     end
@@ -680,7 +680,7 @@ function RXP_.UpdateQuestCompletionData(self)
     local icon = RXP_.icons.complete
     local id = element.questId
     if type(id) ~= "number" then
-        print('Error: Invalid quest ID at step '..element.step)
+        print('Error: Invalid quest ID at step '..element.step.index)
         return
     end
     local skip
@@ -1959,7 +1959,7 @@ function RXP_.functions.blastedLands(self)
     }
     
     for quest,items in pairs(BLquests) do
-        if not IsQuestFlaggedCompleted(quest) then
+        if not IsQuestTurnedIn(quest) then
             for item,v in pairs(items) do
                 total[item] = total[item] + v
             end
