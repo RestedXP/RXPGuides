@@ -2165,11 +2165,11 @@ step << !Human
     #label start
     .goto Redridge Mountains,15.27,71.45
     .zone Redridge Mountains >> Head to Redridge Mountains
-step
+step << NightElf
     .goto Redridge Mountains,15.27,71.45
      >> Head to the Redridge/Elwynn border
     .accept 244 >> Accept Encroaching Gnolls
-step
+step << NightElf
     .goto Redridge Mountains,30.73,59.99
     .turnin 244 >> Turn in Encroaching Gnolls
     .accept 246 >> Accept Assessing the Threat
@@ -2231,15 +2231,10 @@ step
     .goto Redridge Mountains,38.09,54.49,70,0
     .complete 3741,1 --Hilary's Necklace (1)
 step
+    #softcore
     >>Go underwater. Loot the grey box
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
-step
-    .goto Redridge Mountains,32.13,48.63
-    .turnin 125 >> Turn in The Lost Tools
-step
-    .goto Redridge Mountains,29.20,53.60
-    .turnin 3741 >> Turn in Hilary's Necklace
 step
     #era
     #sticky
@@ -2297,6 +2292,11 @@ step
     .goto Redridge Mountains,61.37,77.10
     >> Kill Condors. Loot them for the Crisp Condor Meat
     .collect 1080,5,92,1
+step
+    #hardcore
+    >>Go underwater. Loot the grey box
+    .goto Redridge Mountains,41.52,54.68
+    .complete 125,1 --Oslow's Toolbox (1)
 step
     #era
     .xp 20-6300 >> Grind until you are 6300 xp away from level 20
@@ -2402,6 +2402,7 @@ step
     .turnin 20 >> Turn in Blackrock Menace
 step
     .goto Redridge Mountains,32.00,48.80
+    .turnin 125 >> Turn in The Lost Tools
     .accept 89 >> Accept The Everstill Bridge
 step
     .goto Redridge Mountains,31.00,47.20
@@ -2414,6 +2415,9 @@ step
 step
     .goto Redridge Mountains,29.98,44.45
     .turnin 121 >> Turn in Messenger to Stormwind
+step
+    .goto Redridge Mountains,29.20,53.60
+     .turnin 3741 >> Turn in Hilary's Necklace
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
     .turnin 2281 >> Turn in Redridge Rendevous
