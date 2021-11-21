@@ -904,7 +904,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
 step
     #sticky
     #completewith ThunderBluff
-    >>Keep an eye out for Ghost Howl (white wolf rare). Loot him for Demon Scarred Cloak
+    >>Keep an eye out for Ghost Howl (white wolf rare). Loot him for Demon Scarred Cloak. If you can't find him, skip this step.
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Accept The Demon Scarred Cloak
 step
