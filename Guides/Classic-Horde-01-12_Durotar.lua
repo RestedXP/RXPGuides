@@ -27,7 +27,7 @@ step << Warrior/Shaman
     .goto Durotar,44.2,65.9,40,0
 step << Warrior/Shaman
     .goto Durotar,42.6,67.3
-    .vendor >> vendor trash. Vendor armor if less than 10c
+    .vendor >>Vendor trash. Vendor armor if less than 10c
 step << Warrior
     .goto Durotar,42.9,69.4
     .train 6673 >>Train Battle Shout
@@ -50,7 +50,7 @@ step << !Warlock
 step << Warlock
     #sticky
     #completewith WarlockBoars
-	>>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don’t sit and drink for these
+	>>Kill Mottled Boars en route to Vile Familiars. Try to get level 2 before getting to Familiars. Don’t sit and drink for these
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     #label WarlockBoars
@@ -85,7 +85,7 @@ step << Warlock
 step << Warlock
     #requires MottledBoarAndy
 	.goto Durotar,42.6,67.3
-    .vendor >>vendor trash, buy 10 water
+    .vendor >>Vendor trash & buy 10 water
 step << Warlock
     .goto Durotar,42.6,69.0
     .turnin 1485 >>Turn in Vile Familiars
@@ -120,20 +120,20 @@ step << Troll Rogue
 step << Orc Warlock
     #completewith next
 	.goto Durotar,40.6,68.4
-    .vendor >>vendor trash at the demon trainer
+    .vendor >>Vendor trash at the demon trainer
 step << Orc Warlock
      .goto Durotar,40.6,68.5
     .turnin 3090>>Turn in Tainted Parchment
     .trainer >> Train your class spells
 step << Shaman/Priest/Mage
     .goto Durotar,42.6,67.3
-    .vendor >>vendor trash, buy 10 water
+    .vendor >>Vendor trash & buy 10 water
 step << Warrior/Rogue
     .goto Durotar,42.6,67.3
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step << Hunter
     .goto Durotar,42.6,67.3
-    .vendor >>vendor trash. Buy arrows until your Quiver is full (1000 arrows)
+    .vendor >>Vendor trash. Buy arrows until your Quiver is full (1000 arrows)
 step
     #era
 	.goto Durotar,42.7,67.3
@@ -179,7 +179,7 @@ step
 step
     #sticky
     #completewith Peons
-    >>Wake up any sleeping peons around the trees with Foreman's Blackjack (put it on your bars)
+    >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step << !Warlock
     #sticky
@@ -216,7 +216,7 @@ step
     .complete 4402,1 --Cactus Apple (10)
 step
     .goto Durotar,47.09,57.93
-    >>Finish waking the peons around the trees. Backtrack if you are struggling
+    >>Finish waking the Peons around the trees. Backtrack if you are struggling to find any sleeping.
     .complete 5441,1 --Peons Awoken (5)
 step
     #era
@@ -224,10 +224,10 @@ step
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
 step << !Mage !Priest !Warlock
     .goto Durotar,42.6,67.3
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step << Mage/Priest/Warlock
     .goto Durotar,42.6,67.3
-    .vendor >>vendor trash. Buy 10 water
+    .vendor >>Vendor trash. Buy 10 water
 step
     .goto Durotar,42.1,68.3
     .turnin 789 >>Turn in Sting of the Scorpid
@@ -292,14 +292,14 @@ step
     .turnin 6394 >>Turn in Thazz'ril's Pick
 step
     .goto Durotar,42.6,67.3
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step
     >>Save the healing potion you get, you might need it later for the centaurs
     .goto Durotar,42.8,69.1
     .turnin 794 >>Turn in Burning Blade Medallion
     .accept 805 >>Accept Report to Sen'jin Village
 step << !Shaman
-    .xp 6 >> Grind to 6
+    .xp 6 >> Grind to level 6
 step << Priest
     .goto Durotar,42.4,68.8
     .accept 5649 >> In Favor of Spirituality
@@ -364,7 +364,7 @@ step
     .accept 823 >>Accept Report to Orgnil
 step << Rogue
     .goto Durotar,56.29,73.40
-    .vendor >> Buy the level 3 thrown from K'Waii. Equip it
+    .vendor >> Buy the level 3 thrown from K'Waii and Equip them
 step << Shaman
     .goto Durotar,56.5,73.1
     >>Repair your weapon. If you have enough money (5s 4c) buy a Walking Stick from Traxexir. Otherwise, skip this step (you'll come back later)
@@ -390,7 +390,7 @@ step
     #completewith next
     .goto Durotar,59.7,71.7,50,0
     .goto Durotar,57.6,77.9,50,0
-    >> Run down the beach, killing as many Crawlers and Makrura as possible for Mucus and Eyes
+    >> Run down the beach, killing as many Crawlers and Makrura as possible for Mucus and Eyes. You do not have to finish this step here.
     .complete 818,2 --Crawler Mucus (8)
     .complete 818,1 --Intact Makrura Eye (4)
 step
@@ -400,7 +400,7 @@ step
 step << Priest
     #sticky
     >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
-    >>Skip this step if you already bought a wand, or can get one cheap from the AH
+    >>Skip this step if you've already bought a wand or can get one cheap from the AH.
     .collect 2589,60 --Linen Cloth (60)
 step
 	#era
@@ -413,7 +413,7 @@ step
     .unitscan Warlord Kolkanis
     #sticky
     #completewith Bonfire
-    +If the rare is up, kill it when you are level 7. Be sure to use the Healing Potion from earlier.
+    +If the rare is up, kill it when you are level 7. Be sure to use the Healing Potion and Cactus Apple Surprise for +2 stam if you have them.
 step
     >>Burn the scroll inside the tent, on the ground
     .goto Durotar,49.8,81.2
@@ -469,7 +469,7 @@ step
     #hardcore
     #completewith next
     .goto Durotar,50.9,79.2,50,0
-    .goto Durotar,52.5,44.4,120 >>Leave the Kol'Kar base. Grind mobs to Razor Hill
+    .goto Durotar,52.5,44.4,120 >>Leave the Kol'Kar base. Grind mobs on your way to Razor Hill
 step
     .goto Durotar,52.2,43.2
     .turnin 823 >>Turn in Report to Orgnil
@@ -512,7 +512,7 @@ step << Hunter
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Hunter
     .goto Durotar,53.0,41.0
-    .vendor >> Buy some arrows from Ghrawt to fill your quiver with
+    .vendor >> Buy enough arrows from Ghrawt to fill your quiver with
 step << Warrior/Rogue
     .goto Durotar,52.0,40.7
     .money <0.0020
@@ -529,7 +529,7 @@ step << !Warrior !Rogue !Hunter
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
-    .vendor >> Buy as much level 5 drink as you can
+    .vendor >> Buy as much level 5 water as you can
 step << Warrior/Rogue/Hunter
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
@@ -574,7 +574,7 @@ step
 step
     #softcore
     #requires KulTiras
-    .goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer, or run back
+    .goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer or simply run back
 step
     #softcore
     .goto Durotar,51.9,43.5
@@ -617,7 +617,7 @@ step << Hunter
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Hunter
     .goto Durotar,53.0,41.0
-    .vendor >> Buy some arrows from Ghrawt to fill your quiver with
+    .vendor >> Buy enough arrows from Ghrawt to fill your quiver with
 step << Warrior/Rogue
     .goto Durotar,52.0,40.7
     .money <0.0020
@@ -660,7 +660,7 @@ step
     .vendor >>Buy a 6 slot bag from Jark
 step << Priest/Warlock/Mage
     .goto Durotar,51.5,41.6
-    .vendor >> Buy as much level 5 drink as you can
+    .vendor >> Buy as much level 5 water as you can
 step << Warrior/Rogue/Hunter
     .goto Durotar,51.5,41.6
     .vendor >> Buy up to 20 level 5 food
@@ -680,7 +680,7 @@ step
 step
     #sticky
     #completewith Fur
-    >>Kill all Tigers that you see for their Fur
+    >>Kill all Tigers that you see for their Fur. This does not need to be finished now.
     .complete 817,1 --Durotar Tiger Fur (4)
 step
     >>Swim to the Island. Loot Taillasher eggs on the ground on this island. They're usually guarded by a Taillasher
@@ -689,12 +689,11 @@ step
 step
     #sticky
     #completewith next
-    >>Kill some Makrura here for eyes/Crawlers for Mucus
+    >>Kill some Makrura here for Eyes & Crawlers for Mucus. This does not need to be finished now.
     .complete 818,1 --Intact Makrura Eye (4)
     .complete 818,2 --Crawler Mucus (8)
 step
-    #label Swim
-    .goto Durotar,66.9,80.0,140 >>Swim to the other island
+    .goto Durotar,66.9,80.0,175 >>Swim to the other island
 step
     #sticky
     #completewith Trolls
@@ -715,7 +714,7 @@ step
 step
     #label Fur
     .goto Durotar,68.34,83.54
-    >>Kill the rest of the trolls. Be careful as the Voodoo trolls heal
+    >>Kill the rest of the trolls. Be careful as the Voodoo Trolls heal
     .complete 826,1 --Hexed Troll (8)
     .complete 826,2 --Voodoo Troll (8)
 step
@@ -732,7 +731,7 @@ step
     #softcore
     .goto Durotar,57.5,73.3,200 >> Die and respawn at the Spirit Healer, or run back
 step
-    >> Loot the rest of the items from the Makrura and Crawlers
+    >> Loot the remaining Eyes and Mucus from the Makrura/Crawlers
     .goto Durotar,59.7,71.7,100,0
     .goto Durotar,57.6,77.9,100,0
     .goto Durotar,59.7,71.7,100,0
@@ -742,7 +741,7 @@ step
     .complete 818,2 --Crawler Mucus (8)
 step
     .goto Durotar,56.48,73.11
-    .vendor >> vendor trash and repair at Trayexir. You can talk to him from outside the hut
+    .vendor >> Vendor trash and repair at Trayexir. You can talk to him from outside the hut
 step << Mage
     >>Go inside the tent
     .goto Durotar,56.3,75.1
@@ -768,7 +767,7 @@ step
     .complete 837,2 --Razormane Scout (4)
 step
     .goto Durotar,43.8,39.1
-    >>Kill Dustrunners and Battleguards in the area. Dustrunners have Rejuvenation (Heal) and Battleguards are tanky
+    >>Kill Dustrunners and Battleguards in the area. Dustrunners cast Rejuvenation (Heal) and Battleguards are tanky.
     .complete 837,3 --Razormane Dustrunner (4)
     .complete 837,4 --Razormane Battleguard (4)
 step << Warlock/Hunter
@@ -833,14 +832,14 @@ step
     #completewith next
     .goto Durotar,41.7,25.5,120 >>Jump into Thunder Ridge
 step
-    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time & use your skull & healthpot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
+    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time. Use your Skull & health pot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
 	>>Group up for this quest if you're struggling
     .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 --N add a link for warrior/rogue? Also needs more specific wording per class
 	#softcore
 step
-    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time & use your skull & healthpot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
+    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time & use your Skull & healthpot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
     .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 --N add a link for warrior/rogue? Also needs more specific wording per class
