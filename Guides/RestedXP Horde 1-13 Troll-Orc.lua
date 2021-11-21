@@ -1223,6 +1223,7 @@ step << !Tauren
 step << !Tauren
     .goto The Barrens,52.0,30.6,150 >> Die and respawn at the Spirit Healer, or run back
 step << !Tauren
+    .goto The Barrens,51.5,30.1
     .turnin 848 >>Turn in Fungal Spores
     .accept 853 >>Accept Apothecary Zamah
 step << !Tauren
