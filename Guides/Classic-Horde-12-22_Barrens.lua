@@ -489,9 +489,10 @@ step
     .accept 858 >>Accept Ignition
 step
     #sticky
+	#hardcore
     #completewith next
     +The next 3 quests can be quite hard, be extra careful
-    #hardcore
+ 
 step
     >>Kill Supervisor Lugwizzle (He patrols all over the tower). Loot him for the Ignition Key
 .goto The Barrens,56.3,8.6
