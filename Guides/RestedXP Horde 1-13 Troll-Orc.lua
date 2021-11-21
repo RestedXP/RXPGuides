@@ -231,7 +231,7 @@ step
 step
     #sticky
     #completewith Peons
->>Wake up any sleeping peons around the trees with Foreman's Blackjack (put it on your bars)
+>>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step << !Warlock
 #sticky
@@ -295,7 +295,7 @@ step << Priest
     .money <0.0190
     .goto Durotar,42.4,68.8
     .train 589 >>Train Shadow Word: Pain
-    .train 2052 >>Train Lesser Heal r2
+    .train 2052 >>Train Lesser Heal rank 2
 step << !Shaman !Warlock
     .goto Durotar,42.9,69.1
     .turnin 792 >>Turn in Vile Familiars
@@ -330,7 +330,7 @@ step
     #sticky
     #completewith next
 .goto Durotar,44.7,54.0,10,0
-    .goto Durotar,43.4,52.0,10 >>Go back to this part of the cave, then follow it to here
+    .goto Durotar,43.4,52.0,10 >>Go back to this part of the cave then follow it to here
 step
     >>Kill Yarrog. Loot him for the Medallion
 .goto Durotar,42.7,53.0
@@ -343,7 +343,7 @@ step << !Paladin
     .hs >>Hearth to Valley of Trials
     .goto Durotar,43.3,69.0,100,0
 step << Paladin
-    .goto Durotar,43.3,69.0,140 >>Die near the start of the cave and respawn at the spirit healer, or run back to town
+    .goto Durotar,43.3,69.0,140 >>Die near the start of the cave and respawn at the spirit healer or simply run back to town.
 step
     .goto Durotar,44.6,68.6
     .turnin 6394 >>Turn in Thazz'ril's Pick
@@ -351,20 +351,20 @@ step
     .goto Durotar,42.6,67.3
 .vendor >>vendor trash
 step
-    >>Save the healing potion you get, you might need it later for the centaurs
+    >>Save the healing potion you get as you may need it later for the centaurs
 .goto Durotar,42.8,69.1
     .turnin 794 >>Turn in Burning Blade Medallion
     .accept 805 >>Accept Report to Sen'jin Village
 step << !Shaman
-    .xp 6 >> Grind to 6
+    .xp 6 >> Grind to level 6
 step << Priest
 .goto Durotar,42.4,68.8
 .accept 5649 >> In Favor of Spirituality
-.train 591 >>Train Smite r2
+.train 591 >>Train Smite rank 2
     .train 17 >>Train Power Word: Shield
 step << Mage
     .goto Durotar,42.5,69.0
-    .train 143 >>Train Fireball r2
+    .train 143 >>Train Fireball rank 2
     .train 2136 >>Train Fire Blast
 step << Shaman
     .goto Durotar,42.4,69.2
@@ -379,11 +379,11 @@ step << Warrior
     .train 3127 >>Train Parry
 step << Rogue
 .goto Durotar,41.3,68.0
-    .train 1757 >>Train Sinister Strike r2
+    .train 1757 >>Train Sinister Strike rank 2
     .train 1776 >>Train Gouge
 step << Warlock
     .goto Durotar,40.6,68.5
-    .train 695 >>Train Shadow Bolt r2
+    .train 695 >>Train Shadow Bolt rank 2
     .train 1454 >>Train Life Tap
 step << Warlock
     .money <0.0095
@@ -405,7 +405,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,42.4,69.1
     .turnin 1518 >>Turn in Call of Earth
-    .train 332 >>Train Healing Wave r2
+    .train 332 >>Train Healing Wave rank 2
 step
     >>Leave the starting area
 .goto Durotar,52.1,68.3
@@ -430,50 +430,50 @@ step
     .accept 823 >>Accept Report to Orgnil
 step << Shaman
 .goto Durotar,56.5,73.1
-.vendor >> vendor trash. Sell your weapon if it gives you enough money for Walking Stick (4s 80c). You'll come back later if you don't have enough yet
+.vendor >> Vendor trash. Sell your weapon if it gives you enough money for Walking Stick (4s 80c). You'll come back later if you don't have enough yet
 step << Shaman
     .goto Durotar,56.5,73.1
     .money <0.0480
-    >> Buy Walking Stick and equip it
+    >> Buy a Walking Stick and equip it
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
 .goto Durotar,56.5,73.1
-.vendor >> vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c). You'll come back later if you don't have enough yet
+.vendor >> Vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c). You'll come back later if you don't have enough yet
 step << Rogue
     .goto Durotar,56.5,73.1
     .money <0.0382
-    >> Buy Stiletto and equip it
+    >> Buy a Stiletto and equip it
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
     .goto Durotar,56.5,73.1
-.vendor >> vendor trash. Sell your weapon if it gives you enough money for Large Axe (4s 60c). You'll come back later if you don't have enough yet
+.vendor >> Vendor trash. Sell your weapon if it gives you enough money for Large Axe (4s 60c). You'll come back later if you don't have enough yet
 step << Orc Warrior
     .goto Durotar,56.5,73.1
     .money <0.0460
-    >> Buy Large Axe and equip it
+    >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
     .goto Durotar,56.5,73.1
-.vendor >> vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
+.vendor >> Vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
 step << Troll Warrior/Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
-    >> Buy Gladius and equip it
+    >> Buy a Gladius and equip it
     .collect 2488,1 --Collect Gladius
 step << Hunter
     .goto Durotar,56.5,73.1
-.vendor >> vendor trash. Sell your weapon if it gives you enough money for Hornwood Recurve Bow (2s 71c). You'll come back later if you don't have enough yet
+.vendor >> Vendor trash. Sell your weapon if it gives you enough money for Hornwood Recurve Bow (2s 71c). You'll come back later if you don't have enough yet
 step << Hunter
     .goto Durotar,56.5,73.1
     .money <0.0271
-    >> Buy Hornwood Recurve Bow and equip it
+    >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
 #sticky
 #completewith next
 .goto Durotar,59.7,71.7,50,0
     .goto Durotar,57.6,77.9,50,0
-    >> Run down the beach, killing as many Crawlers and Makrura as possible for Mucus and Eyes
+    >> Run down the beach killing as many Crawlers and Makrura as possible for Mucus and Eyes. This quest can be completed later on.
     .complete 818,2 --Crawler Mucus (8)
     .complete 818,1 --Intact Makrura Eye (4)
 step
@@ -485,7 +485,7 @@ step
     #completewith Bonfire
     +If the rare is up, kill it when you are level 7. Be sure to use the Cactus Apple Surprise for +2 stam and use the Healing Potion from earlier.
 step
-    >>Inside the tent, on the ground
+    >>On the ground inside the tent.
 .goto Durotar,49.8,81.2
     .complete 786,1 --Attack Plan: Valley of Trials destroyed (1)
 step
@@ -501,30 +501,30 @@ step << Shaman
     .goto Durotar,56.6,73.1
     .money <0.0480
     >>Talk to Traxexir from below the stairs outside
-    >> Buy Walking Stick and equip it
+    >> Buy a Walking Stick and equip it
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
     .goto Durotar,56.5,73.1
     .money <0.0382
     >>Talk to Traxexir from below the stairs outside
-    >> Buy Stiletto and equip it
+    >> Buy a Stiletto and equip it
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
     .money <0.0460
     .goto Durotar,56.5,73.1
     >>Talk to Traxexir from below the stairs outside
-    >> Buy Large Axe and equip it
+    >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior/Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
     >>Talk to Traxexir from below the stairs outside
-    >> Buy Gladius and equip it
+    >> Buy a Gladius and equip it
     .collect 2488,1 --Collect Gladius
 step << Hunter
     .goto Durotar,56.5,73.1
     .money <0.0271
-    >> Buy Hornwood Recurve Bow and equip it
+    >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
 .goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill
@@ -534,7 +534,7 @@ step
 .accept 784 >>Accept Vanquish the Betrayers
 step
 .goto Durotar,51.1,42.6
-.vendor >>vendor trash
+.vendor >>Vendor trash
 step
 .goto Durotar,50.2,43.1,10 >>Go up this path here
 step
@@ -544,27 +544,27 @@ step
 step << Shaman
     .goto Durotar,52.0,40.5
     .money <0.0480
-    >> Buy Walking Stick and equip it
+    >> Buy a Walking Stick and equip it
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
     .goto Durotar,52.0,40.5
     .money <0.0382
-    >> Buy Stiletto and equip it
+    >> Buy a Stiletto and equip it
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
     .goto Durotar,52.0,40.5
     .money <0.0460
-    >> Buy Large Axe and equip it
+    >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
     .goto Durotar,52.0,40.5
     .money <0.0509
-    >> Buy Gladius and equip it
+    >> Buy a Gladius and equip it
     .collect 2488,1 --Collect Gladius
 step << Hunter
     .goto Durotar,53.0,41.0
     .money <0.0271
-    >> Buy Hornwood Recurve Bow and equip it
+    >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Warrior/Rogue/Paladin
     .goto Durotar,52.0,40.7
@@ -605,7 +605,7 @@ step << Priest
     .accept 5648 >> Garments of Spirituality
 step << Priest
     .goto Durotar,53.1,46.5
-.complete 5648,1 --Heal and fortify Grunt Kor'ja
+.complete 5648,1 --Heal and cast Fortify on Grunt Kor'ja
 step << Priest
     .goto Durotar,54.3,42.9
     .turnin 5649 >> In Favor of Spirituality
@@ -663,27 +663,27 @@ step << !Shaman !Warrior
 step << Shaman
     .goto Durotar,52.0,40.5
     .money <0.0480
-    >> Buy Walking Stick and equip it
+    >> Buy a Walking Stick and equip it
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
     .goto Durotar,52.0,40.5
     .money <0.0382
-    >> Buy Stiletto and equip it
+    >> Buy a Stiletto and equip it
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
     .goto Durotar,52.0,40.5
     .money <0.0460
-    >> Buy Large Axe and equip it
+    >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
     .goto Durotar,52.0,40.5
     .money <0.0509
-    >> Buy Gladius and equip it
+    >> Buy a Gladius and equip it
     .collect 2488,1 --Collect Gladius
 step << Hunter
     .goto Durotar,53.0,41.0
     .money <0.0271
-    >> Buy Hornwood Recurve Bow and equip it
+    >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Warrior/Rogue
 .goto Durotar,52.0,40.7
