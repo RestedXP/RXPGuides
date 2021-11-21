@@ -783,7 +783,7 @@ step << Druid
 step
     #sticky
     #completewith ThunderBluff
-    >>Keep an eye out for Ghost Howl (white wolf rare). Loot him for Demon Scarred Cloak
+    >>Keep an eye out for Ghost Howl (white wolf rare). Loot him for Demon Scarred Cloak. Skip this step if you're unable to find him.
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Accept The Demon Scarred Cloak
 step
