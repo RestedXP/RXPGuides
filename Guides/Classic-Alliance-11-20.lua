@@ -1087,20 +1087,20 @@ step
     .goto Winterspring,7.52,23.26
      >> Look for small relics on the ground
     .complete 951,1
-step
+step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,6.37,16.66
     .accept 2098 >> Accept Gyromast's Retrieval
-step
+step  << !Warrior !Paladin !Rogue !Druid
     #sticky
     #completewith MoonstalkerP
     .goto Darkshore,56.10,16.88,0
      >> Kill Raging Reef Crawlers along the coast. Be careful as they thrash and can deal up to 200 damage at once. Loot them for the bottom part of the key
     .complete 2098,3
-step
+step  << !Warrior !Paladin !Rogue !Druid
     .goto Darkshore,55.59,12.90
      >> Kill Murlocs
     .complete 2098,2
-step
+step  << !Warrior !Paladin !Rogue !Druid
     #sticky
     #label foreststriders
     .goto Darkshore,61.40,9.40
@@ -1111,15 +1111,15 @@ step
     .goto Darkshore,61.40,9.40
      >> Kill Moonstalker Sire/Matriarchs. Loot them for pelts
     .complete 986,1
-step
+step  << !Warrior !Paladin !Rogue !Druid
      .goto Darkshore,56.10,16.88
      >> Kill Raging Reef Crawlers along the coast. Be careful as they thrash and can deal up to 200 damage at once. Loot them for the bottom part of the key
     .complete 2098,3
-step
+step  << !Warrior !Paladin !Rogue !Druid
     #requires foreststriders
     .goto Winterspring,6.37,16.66
     .turnin 2098 >> Turn in Gyromast's Retrieval
-    .accept 2078 >> Accept Gyromast's Revenge  << !Warrior !Paladin !Rogue
+    .accept 2078 >> Accept Gyromast's Revenge
 step << !Druid
     .goto Winterspring,3.10,20.90
     .accept 4727 >> Accept Beached Sea Turtle
@@ -1127,18 +1127,18 @@ step << !Druid
     .goto Darkshore,51.50,22.26
      >> Finish off Fruit of the Sea
     .complete 1138,1
-step  << !Warrior !Paladin !Rogue
+step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,5.59,21.09
      >> Speak with The Threshwackonator 4100 
     >>Escort it back to Gyromast and kill it
     >>Be careful as this quest is VERY difficult
     .complete 2078,1
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> Click here for video reference
-step  << !Warrior !Paladin !Rogue
+step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,6.37,16.66
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestComplete 2078
-step
+step  << !Warrior !Paladin !Rogue !Druid
     #sticky
     .destroy 7442 >> Throw away Gyromast's Key
 step << Druid
@@ -1657,19 +1657,19 @@ step
     .goto Winterspring,4.82,27.18
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
-step
+step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,6.37,16.66
     .accept 2098 >> Accept Gyromast's Retrieval
-step
+step  << !Warrior !Paladin !Rogue !Druid
     .goto Darkshore,56.33,14.97
     >> Kill Raging Reef Crawlers along the coast. Be careful as they thrash and can deal up to 200 damage at once. Loot them for the bottom part of the key
     .complete 2098,3
-step
+step  << !Warrior !Paladin !Rogue !Druid
     .goto Darkshore,55.36,12.70
      >> Kill Murlocs in the water. Be careful as the Oracles hit hard (80 damage Lightning Bolts) and can heal to full. Loot them for the middle part of the key
     >>You can LoS the oracles around the front of the boat if needed
     .complete 2098,2
-step
+step  << !Warrior !Paladin !Rogue !Druid
     #sticky
     #label ForestKey
     .goto Darkshore,60.50,12.19,0
@@ -1680,23 +1680,23 @@ step
      >> Grind Moonstalker Sires/Matriarchs for pelts and fangs
     .complete 986,1
     .complete 1002,1
-step
+step  << !Warrior !Paladin !Rogue !Druid
     #requires ForestKey
     .goto Winterspring,6.37,16.66
     .turnin 2098 >> Turn in Gyromast's Retrieval
     .accept 2078 >> Accept Gyromast's Revenge  << !Warrior !Paladin !Rogue
-step  << !Warrior !Paladin !Rogue
+step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,5.59,21.09
     >> Speak with The Threshwackonator 4100 
     >>Escort it back to Gyromast and kill it
     >>This elite quest is HARD, skip this step if you can't do it
     .complete 2078,1
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> Click here for video reference
-step  << !Warrior !Paladin !Rogue
+step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,6.37,16.66
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestComplete 2078
-step
+step   << !Warrior !Paladin !Rogue !Druid
     #sticky
     .destroy 7442>> Throw away Gyromast's Key
 step
