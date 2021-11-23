@@ -220,15 +220,14 @@ local function trainerFrameUpdate(self,t)
 	end
 end
 
-local lastQuestEvent
+
 function RXP_.QuestAutomation(event,arg1,arg2)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
         return 
     end
     
-    event = event or lastQuestEvent
 	
-	if event == "QUEST_COMPLETE" then
+	if event == "QUEST_COMPLETE" or QuestFrameCompleteQuestButton and QuestFrameCompleteQuestButton:IsShown() then
 		local id = GetQuestID()
 		local reward = RXP_.QuestAutoTurnIn(id)
 		local choices = GetNumQuestChoices()
@@ -240,11 +239,11 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 			end
 		end
 		
-	elseif event == "QUEST_PROGRESS" and IsQuestCompletable() then
+	elseif (event == "QUEST_PROGRESS" or QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown()) and IsQuestCompletable() then
 		CompleteQuest()
 		--questProgressTimer = GetTime()
 		
-	elseif event == "QUEST_DETAIL" then
+	elseif event == "QUEST_DETAIL" or QuestFrameAcceptButton and QuestFrameAcceptButton:IsShown() then
 		local id = GetQuestID()
 		if RXP_.QuestAutoAccept(id) then
 			AcceptQuest()
@@ -254,7 +253,7 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 	elseif event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
 		ConfirmAcceptQuest()
 		
-	elseif event == "QUEST_GREETING" then
+	elseif event == "QUEST_GREETING" or QuestFrameGreetingPanel and QuestFrameGreetingPanel:IsShown() then
         local nActive = GetNumActiveQuests()
 		local nAvailable = GetNumAvailableQuests()
         
@@ -275,7 +274,7 @@ function RXP_.QuestAutomation(event,arg1,arg2)
                 end
             end
 		end
-	elseif event == "GOSSIP_SHOW" then
+	elseif event == "GOSSIP_SHOW" or GossipFrame and GossipFrame:IsShown() then
 		local nActive = GetNumGossipActiveQuests()
 		local nAvailable = GetNumGossipAvailableQuests()
 
@@ -302,7 +301,6 @@ end
 
 questFrame:SetScript("OnEvent",function(self,...)
     RXP_.QuestAutomation(...)
-    lastQuestEvent = event
 end)
 
 eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
@@ -2315,3 +2313,48 @@ hooksecurefunc("UseAction",function(...)
 		StartHSTimer()
 	end
 end)
+
+RXP_.QL = {}
+function RXP_.GetQuestLog()
+    local guide = RXP_.currentGuide
+    local name = RXPCData.currentGuideName
+    local group = RXPGuides[RXPCData.currentGuideGroup]
+    local QL = RXP_.QL
+    local qError
+    RXP_.next = group.next
+
+    if (RXPCData.SoM and guide.era) then
+        return
+    end
+    for ns,step in ipairs(guide.steps) do
+        for en,element in pairs(step.elements) do
+            if element.tag == "accept" then
+                QL[element.questId] = element.text or tostring(element.questId)
+            elseif element.tag == "turnin" or element.tag == "abandon" then
+                QL[element.questId] = nil
+            end
+        end
+        local nQuests = 0
+        for n in pairs(QL) do
+            nQuests = nQuests + 1
+        end
+        if nQuests > 20 then
+            qError = true
+            break
+        end
+    end
+    local n = 0
+    print("\n\nGuide: "..name)
+    for i,v in pairs(QL) do
+        print(format("%s (%d)",v:gsub("^Accept ",""),i))
+        n = n+1
+    end
+    print("QuestLog length: "..n)   
+    
+    if qError then
+        print(format("Error at step %d: Quest log length greater than 20",step.index))
+    else
+        group.next()
+    end
+
+end
