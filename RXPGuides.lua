@@ -85,6 +85,7 @@ function RXPG_init()
     RXPData.phase = RXPData.phase or 1
     RXPCData.flightPaths = RXPCData.flightPaths or {}
     RXPData.batchSize = RXPData.batchSize or 5
+    RXPData.disableTrainerAutomation = RXPData.disableTrainerAutomation or true
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
