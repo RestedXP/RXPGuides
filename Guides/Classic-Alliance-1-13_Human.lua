@@ -1486,6 +1486,9 @@ step << Paladin
 step << Priest
     .goto Stormwind City,38.54,26.86
     .trainer >> Train your class spells
+step
+    .goto Stormwind City,58.08,16.52
+    .turnin 1338 >> Turn in Stormpike's Order
 step << Rogue
    .goto Stormwind City,74.65,52.83
     .trainer >> Train your class spells

@@ -2354,7 +2354,9 @@ function RXP_.GetQuestLog()
     if qError then
         print(format("Error at step %d: Quest log length greater than 20",step.index))
     else
-        group.next()
+        if group.next() then
+            return RXP_.GetQuestLog()
+        end
     end
 
 end
