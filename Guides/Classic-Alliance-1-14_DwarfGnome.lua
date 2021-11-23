@@ -1465,6 +1465,9 @@ step
 step
     .goto Westfall,56.40,47.60
     .accept 12 >> Accept The People's Militia
+step
+    #era
+    .goto Westfall,56.40,47.60    
     .accept 102 >> Accept Patrolling Westfall
 step
     .goto Westfall,54.00,53.00
