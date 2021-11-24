@@ -227,8 +227,10 @@ function RXP_.QuestAutomation(event,arg1,arg2)
     end
     
 	
-	if event == "QUEST_COMPLETE" or QuestFrameCompleteQuestButton and QuestFrameCompleteQuestButton:IsShown() then
-		local id = GetQuestID()
+    if event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
+		ConfirmAcceptQuest()
+    elseif event == "QUEST_COMPLETE" or QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() then
+        local id = GetQuestID()
 		local reward = RXP_.QuestAutoTurnIn(id)
 		local choices = GetNumQuestChoices()
 		if reward then
@@ -238,20 +240,17 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 				GetQuestReward(reward)
 			end
 		end
-		
-	elseif (event == "QUEST_PROGRESS" or QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown()) and IsQuestCompletable() then
-		CompleteQuest()
+	
+    elseif (event == "QUEST_PROGRESS" or QuestFrameProgressPanel and QuestFrameProgressPanel:IsShown()) and IsQuestCompletable() then
+        CompleteQuest()
 		--questProgressTimer = GetTime()
-		
-	elseif event == "QUEST_DETAIL" or QuestFrameAcceptButton and QuestFrameAcceptButton:IsShown() then
-		local id = GetQuestID()
+
+    elseif event == "QUEST_DETAIL" or QuestFrameDetailPanel and QuestFrameDetailPanel:IsShown() then
+        local id = GetQuestID()
 		if RXP_.QuestAutoAccept(id) then
 			AcceptQuest()
 			HideUIPanel(QuestFrame)
 		end
-		
-	elseif event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
-		ConfirmAcceptQuest()
 		
 	elseif event == "QUEST_GREETING" or QuestFrameGreetingPanel and QuestFrameGreetingPanel:IsShown() then
         local nActive = GetNumActiveQuests()
@@ -2323,7 +2322,7 @@ function RXP_.GetQuestLog()
     local qError
     RXP_.next = group.next
 
-    if (RXPCData.SoM and guide.era) then
+    if (RXPCData.SoM and guide.era) or not guide then
         return
     end
     for ns,step in ipairs(guide.steps) do
