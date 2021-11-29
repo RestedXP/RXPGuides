@@ -1874,8 +1874,10 @@ step
 step
     .goto Felwood,27.96,55.76
     >>Speak to Kerlonian and start the escort quest
+    >>If he's not there, you can skip this quest (can take up to 25 minutes to respawn depending on other players)
     .accept 5321 >> Accept The Sleeper Has Awakened
 step
+    .isOnQuest 5321
     .goto Darkshore,44.38,76.30
      >> Loot the chest next to the quest giver
     .complete 5321,1
@@ -2681,9 +2683,10 @@ step
 step
     .goto Felwood,27.96,55.76
     >>Speak to Kerlonian and start the escort quest
-    >>If he's not here, wait for him to respawn
+    >>If he's not there, you can skip this quest (can take up to 25 minutes to respawn depending on other players)
     .accept 5321 >> Accept The Sleeper Has Awakened
 step
+    .isOnQuest 5321
     .goto Darkshore,44.38,76.30
      >> Loot the chest next to the quest giver
     .complete 5321,1
