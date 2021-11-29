@@ -2758,6 +2758,10 @@ step
     .goto Ashenvale,36.61,49.58
     .accept 991 >> Accept Raene's Cleansing
     .accept 1054 >> Accept Culling the Threat
+step << !Warlock
+    #som
+    .goto Ashenvale,36.99,49.22
+    .home >> Set your Hearthstone to Astranaar
 step
     .goto Ashenvale,37.36,51.79
     .turnin 1020 >> Turn in Orendil's Cure
