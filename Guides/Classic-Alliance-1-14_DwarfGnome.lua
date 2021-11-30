@@ -83,6 +83,7 @@ step
     .accept 3112 >> Accept Simple Memorandum << Gnome Warrior
     .accept 3113 >> Accept Encrypted Memorandum << Gnome Rogue
     .accept 3114 >> Accept Glyphic Memorandum << Mage
+    .accept 3115 >> Accept Tainted Memorandum << Gnome Warlock
 step
     #era
     .goto Dun Morogh,29.7,71.2

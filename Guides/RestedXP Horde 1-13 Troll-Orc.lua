@@ -1364,12 +1364,15 @@ step
 step << Shaman
     #sticky
     #completewith next
+    #level 12
     .trainer >>Train Ancestral Spirit if you're going to play with others
 step << Shaman
+    #level 12
     .goto Durotar,54.3,42.4
     .train 547 >>Train Healing Wave r3
     .train 1535 >>Train Fire Nova Totem
 step << Warrior
+    #level 12
     .goto Durotar,54.3,42.4
     .train 5242 >>Train Battle Shout r2
     .train 7384 >>Train Overpower
