@@ -198,7 +198,7 @@ step << !Warlock
     .goto Durotar,45.2,56.8
     >>Kill Imps in front of the cave
     .complete 792,1 --Vile Familiar (12)
-step <<!Warlock
+step << !Warlock
     >>Finish off the Scorpion Tails
     .goto Durotar,39.8,63.5
     .complete 789,1 --Scorpid Worker Tail (10)
@@ -279,7 +279,10 @@ step
     .goto Durotar,42.7,53.0
     .complete 794,1 --Burning Blade Medallion (1)
 step << !Shaman
-    .xp 5+1680 >> Grind to 1680+/2800xp
+	#era
+    .xp 5+1200 >> Grind to 1200+/2800xp
+step << !Shaman
+    .xp 5+1680 >> Grind to 1680+/2800xp	
 step << Shaman
 	#requires Hooves
     .xp 5+690 >> Grind to 690+/2800xp
