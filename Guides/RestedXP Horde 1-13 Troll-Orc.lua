@@ -295,7 +295,6 @@ step << Priest
     .money <0.0190
     .goto Durotar,42.4,68.8
     .train 589 >>Train Shadow Word: Pain
-    .train 2052 >>Train Lesser Heal rank 2
 step << !Shaman !Warlock
     .goto Durotar,42.9,69.1
     .turnin 792 >>Turn in Vile Familiars
@@ -336,7 +335,7 @@ step
 .goto Durotar,42.7,53.0
     .complete 794,1 --Burning Blade Medallion (1)
 step << !Shaman
-    .xp 5+1680 >> Grind to 1680+/2800xp
+    .xp 5+1200 >> Grind to 1200+/2800xp
 step << Shaman
     .xp 5+690 >> Grind to 690+/2800xp
 step << !Paladin
