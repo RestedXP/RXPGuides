@@ -1121,7 +1121,7 @@ step << Rogue
 step << Rogue
     .isQuestTurnedIn 1886
     .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
-step
+step << !Warrior
     .goto Undercity,84.07,17.45
     .turnin 411 >>Turn in The Prodigal Lich Returns
 step << Mage
@@ -1221,7 +1221,6 @@ step
     .accept 3221 >>Accept Speak with Renferrel
     .accept 437 >>Accept The Dead Fields
 step
-    #era
     .goto Silverpine Forest,42.80,40.86
     .turnin 429 >> Turn in Wild Hearts
     .turnin 445 >>Turn in Delivery to Silverpine Forest
@@ -1229,15 +1228,6 @@ step
     .accept 1359 >>Accept Zinge's Delivery
     .accept 447 >>Accept A Recipe For Death
     .accept 430 >>Accept Return to Quinn
-step
-    #som
-    .goto Silverpine Forest,42.80,40.86
-    .turnin 429 >> Turn in Wild Hearts
-    .turnin 445 >>Turn in Delivery to Silverpine Forest
-    .turnin 3221 >>Turn in Speak with Renferrel
-    .accept 1359 >>Accept Zinge's Delivery
-    .accept 430 >>Accept Return to Quinn
---	.turnin 1359 >>kekw
 step
     .goto Silverpine Forest,43.98,39.89
     .vendor >> Finish filling your bag slots with 6 slots from Edwin. Buy potions if you have spare money
@@ -1258,7 +1248,6 @@ step
     .turnin 421 >>Turn in Prove Your Worth
     .accept 422 >>Accept Arugal's Folly
 step
-    #era
     #sticky
     #completewith Nightlash
     >>Kill Bears. Loot them for their hearts
@@ -1290,13 +1279,11 @@ step
     .complete 437,1 --Enter the Dead Fields (1)
     .complete 437,2 --Essence of Nightlash (1)
 step
-    #era
     .unitscan Son of Arugal
     >>Kill Bears in the area. Loot them for their hearts. Avoid Sons of Arugal
     .goto Silverpine Forest,41.73,17.83
     .complete 447,1 --Grizzled Bear Heart (6) 
 step
-    #era
     .unitscan Krethis Shadowspinner
     >>Kill Spiders in the area. Loot them for their Blood. 
     >> Be careful of the rare in the area, as it's impossibly difficult << !Mage !Warlock
@@ -1307,11 +1294,18 @@ step
     #softcore
     .deathskip >> Die and respawn at The Sepulcher
 step
+    #era
     #hardcore
     >>Run back to The Sepulcher
     .goto Silverpine Forest,44.20,39.75
     .turnin 422 >> Turn in Arugal's Folly
     .accept 423 >> Accept Arugal's Folly
+step
+    #som
+    #hardcore
+    >>Run back to The Sepulcher
+    .goto Silverpine Forest,44.20,39.75
+    .turnin 422 >> Turn in Arugal's Folly
 step << Warlock/Mage/Priest
     #completewith next
     .money <0.1400
@@ -1452,10 +1446,13 @@ step << Warlock
     .goto Undercity,86.20,15.92
     .trainer >> Train your class spells inside the building
 step
-    #era
     .goto Undercity,52.86,77.72,40,0
     .goto Undercity,48.83,69.28
     .turnin 447 >>Turn in A Recipe For Death
+step
+    .goto Undercity,50.15,67.98
+    .turnin 1359 >> Turn in Zinge's Delivery
+    .accept 1358 >> Accept Sample for Helbrim
 step << Undead Rogue
     .isQuestTurnedIn 1886
     .goto Tirisfal Glades,58.86,78.76,40,0
@@ -1482,7 +1479,6 @@ step << Undead
     .goto Tirisfal Glades,61.26,50.84
     .turnin 440 >>Turn in The Engraved Ring
     .accept 441 >>Accept Raleigh and the Undercity
---	.turnin 441 >>kekw
 step << Undead
     #sticky
     #completewith next
