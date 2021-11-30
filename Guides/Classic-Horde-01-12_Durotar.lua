@@ -403,9 +403,16 @@ step
     .goto Durotar,50.9,79.2,30 >>Enter the Kolkar base
 step << Priest
     #sticky
+	#softcore
     >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
     >>Skip this step if you've already bought a wand or can get one cheap from the AH.
     .collect 2589,60 --Linen Cloth (60)
+step << Priest
+    #sticky
+	#hardcore
+    >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
+    .collect 2589,60 --Linen Cloth (60)	
+	
 step
 	#era
     .unitscan Warlord Kolkanis
