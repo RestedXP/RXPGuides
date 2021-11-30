@@ -96,6 +96,8 @@ step << Warrior/Rogue
 step
     .goto Tirisfal Glades,30.8,66.2
     .turnin 364 >> Turn in The Mindless Ones
+step
+    .goto Tirisfal Glades,30.8,66.2    
     .accept 3095 >> Accept Simple Scroll << Warrior
     .accept 3096 >> Accept Encrypted Scroll << Rogue
     .accept 3097 >> Accept Hallowed Scroll << Priest
