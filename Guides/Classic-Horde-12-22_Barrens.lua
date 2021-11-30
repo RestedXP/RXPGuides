@@ -42,13 +42,13 @@ step << Shaman
     #sticky
     >>Kill and Loot Razormanes for Fire Tar
     .complete 1525,1 --Fire Tar (1)
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     .goto The Barrens,52.0,30.5,150 >> Run to the Crossroads
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     .goto The Barrens,52.2,31.0
     .turnin 842 >>Turn in Crossroads Conscription << !Druid
     .accept 844 >>Accept Plainstrider Menace
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     .goto The Barrens,52.2,31.8
     .accept 870 >>Accept The Forgotten Pools	
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -60,14 +60,14 @@ step << Shaman Troll/Shaman Orc/Warrior Orc/Warrior Troll/Rogue Orc/Rogue Troll
 step << Undead
     .goto The Barrens,51.99,29.89
 	.home >> Set your hearth to Crossroads
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     .goto The Barrens,51.9,30.3
     .accept 869 >>Accept Raptor Thieves
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     .goto The Barrens,51.5,30.8
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     .goto The Barrens,51.5,30.4
     .fp >>Get the The Crossroads Flight Path
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -365,15 +365,15 @@ step << !Undead !Rogue
 step << Undead/Rogue
     .goto The Barrens,45.4,28.4
     .accept 850 >>Accept Kolkar Leaders
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     #completewith next
     >>Collect the white mushrooms around The Forgotten Pools
     .complete 848,1 --Collect Fungal Spores (x4)
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     >>Dive underwater to the bubble fissure
     .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     >>Collect the white mushrooms around The Forgotten Pools
     .goto The Barrens,45.2,23.3,60,0
     .goto The Barrens,45.2,22.0,60,0
@@ -640,7 +640,7 @@ step
     .goto The Barrens,51.6,30.9
     .turnin 867 >>Turn in Harpy Raiders
     .accept 875 >>Accept Harpy Lieutenants
-step << !Shaman Undead/!Warrior
+step << !Shaman !Warrior/Undead
     .goto The Barrens,51.50,30.20
     .turnin 848 >> Turn in Fungal Spores
 step
