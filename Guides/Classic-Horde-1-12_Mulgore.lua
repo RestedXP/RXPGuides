@@ -115,7 +115,7 @@ step
 step << Druid
     .goto Mulgore,45.1,75.9
     .turnin 3094 >>Turn in Verdant Note
-    .trainer >> Train your class spells
+    .train 8921 >>Train Moonfire
 step << Shaman
     .goto Mulgore,45.0,75.9
     .turnin 3093 >>Turn in Rune-Inscribed Note
