@@ -74,7 +74,7 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
     .turnin 6365 >>Turn in Meats to Orgrimmar
-    .accept 6384 >>Accept Ride to Orgrimmar
+    .accept 6384 >>Accept Ride to Orgrimmar << !Rogue
 step << !Shaman !Warrior
     .goto The Barrens,51.5,30.1
     .accept 848 >>Accept Fungal Spores
@@ -603,7 +603,7 @@ step << Druid
 step << Druid
     .goto Moonglade,36.52,40.10
     .turnin 28 >> Turn in Trial of the Lake
-    .accept 30 >> Accept Trial of the Sea Lion
+--    .accept 30 >> Accept Trial of the Sea Lion
 step
     #completewith next
     .hs >>Hearth to Crossroads
@@ -1211,17 +1211,12 @@ step << Warrior
 step
     .isOnQuest 883
     .goto The Barrens,44.8,59.1
-    .turnin 882 >>Turn in Ishamuhale
-    .accept 907 >>Accept Enraged Thunder Lizards
     .turnin 883 >>Turn in Lakota'mani
-    .accept 1130 >>Accept Melor Sends Word
-    .accept 6382 >>Accept The Ashenvale Hunt
 step
-    
 	.goto The Barrens,44.8,59.1
     .turnin 882 >>Turn in Ishamuhale
     .accept 907 >>Accept Enraged Thunder Lizards
-    .accept 1130 >>Accept Melor Sends Word
+--    .accept 1130 >>Accept Melor Sends Word
     .accept 6382 >>Accept The Ashenvale Hunt
 step
     #sticky
@@ -1288,7 +1283,7 @@ step << Rogue
     .goto Thunder Bluff,53.2,56.8
      >> Buy a Longsword from Kard if it's an upgrade
     .collect 923,1
-step
+step << skip
     .goto Thunder Bluff,61.4,80.9
     .turnin 1130 >>Turn in Melor Sends Word
     .accept 1131 >>Accept Steelsnap
@@ -1435,7 +1430,7 @@ step
     .fp Sun Rock>> Get the Sun Rock Retreat flight path
 step
     .goto Stonetalon Mountains,47.5,58.4
-    .accept 6301 >> Accept Cycle of Rebirth
+--    .accept 6301 >> Accept Cycle of Rebirth
     .turnin 6401 >>Turn in Kaya's Alive
 step
     .goto Stonetalon Mountains,59.0,62.6
@@ -1534,7 +1529,7 @@ step << Tauren/Warrior/Shaman
 step
     .goto Thunder Bluff,23.00,21.0
    .turnin 1064 >> Turn in Forsaken Aid
-    .accept 1065 >> Accept Journey to Tarren Mill
+   .accept 1065 >> Accept Journey to Tarren Mill
 step << Shaman
     .goto Thunder Bluff,25.1,20.6
 	.accept 1529 >>Accept Call of Water
@@ -1572,7 +1567,7 @@ step
 	>>Go to the 2nd floor of the tower
     .goto The Barrens,48.12,5.42
     .turnin 6541 >>Turn in Report to Kadrak
-    .accept 6543 >>Accept The Warsong Reports
+--    .accept 6543 >>Accept The Warsong Reports
 step << Hunter
     .goto Ashenvale,68.30,75.30
      >> Start the escort quest
@@ -1596,8 +1591,16 @@ step << Shaman
     .goto The Barrens,51.5,30.4
     .fly Ratchet >>Fly to Ratchet
 step << Shaman
+	#completewith call
+    .goto The Barrens,65.8,43.8
+    .turnin 1528 >>Turn in Call of Water
+step << Shaman
+	#completewith next
     .goto The Barrens,65.8,43.8
     .turnin 1529 >>Turn in Call of Water
+step << Shaman
+	#label call
+    .goto The Barrens,65.8,43.8
     .accept 1530 >>Accept Call of Water
     .turnin 874 >>Turn in Mahren Skyseer
 step << Shaman

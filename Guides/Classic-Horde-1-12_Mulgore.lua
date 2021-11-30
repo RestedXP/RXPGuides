@@ -744,7 +744,11 @@ step
     .goto The Barrens,51.5,30.3
     .turnin 6361 >>Turn in A Bundle of Hides
     .accept 6362 >>Accept Ride to Thunder Bluff
+step
     .fly Thunder Bluff >>Fly to Thunder Bluff
+step << Hunter
+	.goto Thunder Bluff,57.4,89.4
+	.turnin 6089 >> Turn in Training the Beast
 step
     .goto Thunder Bluff,45.6,55.9
     .turnin 6362 >>Turn in Ride to Thunder Bluff

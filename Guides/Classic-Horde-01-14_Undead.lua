@@ -1237,6 +1237,7 @@ step
     .turnin 3221 >>Turn in Speak with Renferrel
     .accept 1359 >>Accept Zinge's Delivery
     .accept 430 >>Accept Return to Quinn
+--	.turnin 1359 >>kekw
 step
     .goto Silverpine Forest,43.98,39.89
     .vendor >> Finish filling your bag slots with 6 slots from Edwin. Buy potions if you have spare money
@@ -1481,6 +1482,7 @@ step << Undead
     .goto Tirisfal Glades,61.26,50.84
     .turnin 440 >>Turn in The Engraved Ring
     .accept 441 >>Accept Raleigh and the Undercity
+--	.turnin 441 >>kekw
 step << Undead
     #sticky
     #completewith next

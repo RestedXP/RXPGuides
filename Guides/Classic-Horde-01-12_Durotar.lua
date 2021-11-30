@@ -545,7 +545,7 @@ step << Priest
     .complete 5648,1 --Heal and fortify Grunt Kor'ja
 step << Priest
     .goto Durotar,54.3,42.9
-    .turnin 5649 >> In Favor of Spirituality
+    .turnin 5648 >>Turn in Garments of Spirituality
 step
     #sticky
     #label KulTiras
@@ -977,7 +977,7 @@ step << !Tauren Warrior/!Tauren Shaman
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
     .turnin 6365 >>Turn in Meats to Orgrimmar
-    .accept 6384 >>Accept Ride to Orgrimmar
+    .accept 6384 >>Accept Ride to Orgrimmar << !Rogue
 step << Warrior/Shaman
     .goto The Barrens,51.5,30.1
     .accept 848 >>Accept Fungal Spores
@@ -1060,9 +1060,8 @@ step << Warrior/Shaman
     .complete 761,1 --Trophy Swoop Quill (8)
 step << Warrior/Shaman
 	#completewith CaravanR
-	>>Keep an eye out for Ghost Howl (rare wolf). He patrols all over northern Mulgore. Kill and loot him for the Demon Scarred Cloak. Start the quest
+	>>Keep an eye out for Ghost Howl (rare wolf). He patrols all over northern Mulgore. Kill and loot him for the Demon Scarred Cloak. If you find him, don't accept the quest from the item yet
 	.collect 4854,1,770
-	.accept 770 >> Accept The Demon Scarred Cloak
 	.unitscan Ghost Howl
 step << Warrior/Shaman
     .goto Mulgore,52.0,61.1,10,0
@@ -1139,8 +1138,8 @@ step << Warrior/Shaman
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
 step << Warrior/Shaman
-    .isOnQuest 770
 	.goto Mulgore,46.75,60.23
+	>>If you managed to find Ghost Howl, right click the cloak and accept the quest and turn it in, otherwise, skip this step
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step << Warrior/Shaman
     .goto Mulgore,47.5,60.2
@@ -1443,7 +1442,7 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
     .turnin 6365 >>Turn in Meats to Orgrimmar
-    .accept 6384 >>Accept Ride to Orgrimmar
+    .accept 6384 >>Accept Ride to Orgrimmar << !Rogue
 step << !Shaman !Warrior
     .goto The Barrens,51.5,30.1
     .accept 848 >>Accept Fungal Spores
