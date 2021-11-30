@@ -279,9 +279,10 @@ step
     .goto Durotar,42.7,53.0
     .complete 794,1 --Burning Blade Medallion (1)
 step << !Shaman
-	#era
+	#som
     .xp 5+1200 >> Grind to 1200+/2800xp
 step << !Shaman
+	#era
     .xp 5+1680 >> Grind to 1680+/2800xp	
 step << Shaman
 	#requires Hooves
