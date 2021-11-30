@@ -475,7 +475,6 @@ step
     #softcore
     #completewith next
     .goto Durotar,57.46,57.69,120 >>Die inside of Tiragarde keep. Respawn in Razor Hill
-    .goto Durotar,52.5,44.4,120 >>Grind mobs to Razor Hill
 step
     #hardcore
     #completewith next
