@@ -1,7 +1,8 @@
-## Interface: 11306
+## Interface: 11400
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
+## Version: 2.1.0
 ## OptionalDeps: Questie, unitscan
 ## SavedVariables: RXPData
 ## SavedVariablesPerCharacter: RXPCData
@@ -17,4 +18,5 @@ map.lua
 functions.lua
 parser.lua
 
+hunter.lua
 Guides/GuideList-classic.xml

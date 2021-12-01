@@ -1,5 +1,6 @@
 ﻿RXP_ = RXP_ or {}
 RXPGuides = {}
+local addOnVersion = "Version 2.1.0"
 local RXPG = RXPGuides
 local version = select(4, GetBuildInfo())
 local _,class = UnitClass("player")
@@ -229,7 +230,7 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 	
     if event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
 		ConfirmAcceptQuest()
-    elseif event == "QUEST_COMPLETE" or QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() then
+    elseif event == "QUEST_COMPLETE" or not event and QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() then
         local id = GetQuestID()
 		local reward = RXP_.QuestAutoTurnIn(id)
 		local choices = GetNumQuestChoices()
@@ -241,18 +242,18 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 			end
 		end
 	
-    elseif (event == "QUEST_PROGRESS" or QuestFrameProgressPanel and QuestFrameProgressPanel:IsShown()) and IsQuestCompletable() then
+    elseif (event == "QUEST_PROGRESS" or not event and QuestFrameProgressPanel and QuestFrameProgressPanel:IsShown()) and IsQuestCompletable() then
         CompleteQuest()
 		--questProgressTimer = GetTime()
 
-    elseif event == "QUEST_DETAIL" or QuestFrameDetailPanel and QuestFrameDetailPanel:IsShown() then
+    elseif event == "QUEST_DETAIL" or not event and QuestFrameDetailPanel and QuestFrameDetailPanel:IsShown() then
         local id = GetQuestID()
 		if RXP_.QuestAutoAccept(id) then
 			AcceptQuest()
 			HideUIPanel(QuestFrame)
 		end
 		
-	elseif event == "QUEST_GREETING" or QuestFrameGreetingPanel and QuestFrameGreetingPanel:IsShown() then
+	elseif event == "QUEST_GREETING" or not event and QuestFrameGreetingPanel and QuestFrameGreetingPanel:IsShown() then
         local nActive = GetNumActiveQuests()
 		local nAvailable = GetNumAvailableQuests()
         
@@ -273,7 +274,7 @@ function RXP_.QuestAutomation(event,arg1,arg2)
                 end
             end
 		end
-	elseif event == "GOSSIP_SHOW" or GossipFrame and GossipFrame:IsShown() then
+	elseif event == "GOSSIP_SHOW" or not event and GossipFrame and GossipFrame:IsShown() then
 		local nActive = GetNumGossipActiveQuests()
 		local nAvailable = GetNumGossipAvailableQuests()
 
@@ -1301,7 +1302,7 @@ f.GuideName.text:SetJustifyH("CENTER")
 f.GuideName.text:SetJustifyV("CENTER")
 f.GuideName.text:SetTextColor(1,1,1)
 f.GuideName.text:SetFont(RXP_.font, 11)
-f.GuideName.text:SetText("Welcome to RestedXP Guides\nClick here to pick a guide")
+f.GuideName.text:SetText("Welcome to RestedXP Guides\nRight click to pick a guide")
 f.GuideName:SetFrameLevel(6)
 
 f.GuideName.bg = f.GuideName:CreateTexture("$parentBG","BACKGROUND")
@@ -1366,7 +1367,7 @@ end
 
 
 f.GuideName:SetScript("OnMouseDown",function(self,button)
-    if button == "RightButton" or RXP_.noGuide then
+    if button == "RightButton" then
         RXP_.DropDownMenu()
     else
         f.OnMouseDown(self,button)
@@ -1921,6 +1922,11 @@ function RXP_.CreateOptionsPanel()
     panel.title:SetPoint("TOPLEFT", 16, -16)
     panel.title:SetText("RestedXP Guides")
     
+	
+	panel.subtext = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+	panel.subtext:SetPoint("TOPLEFT", panel.title, "BOTTOMLEFT", 0, -8)
+	panel.subtext:SetText(addOnVersion)
+	
     panel.icon = panel:CreateTexture()
     panel.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
     panel.icon:SetPoint("TOPRIGHT",-5,-5)
@@ -2320,6 +2326,7 @@ function RXP_.GetQuestLog()
     local group = RXPGuides[RXPCData.currentGuideGroup]
     local QL = RXP_.QL
     local qError
+	local eStep
     RXP_.next = group.next
 
     if (RXPCData.SoM and guide.era) or not guide then
@@ -2339,6 +2346,7 @@ function RXP_.GetQuestLog()
         end
         if nQuests > 20 then
             qError = true
+			eStep = step
             break
         end
     end
@@ -2351,10 +2359,12 @@ function RXP_.GetQuestLog()
     print("QuestLog length: "..n)   
     
     if qError then
-        print(format("Error at step %d: Quest log length greater than 20",step.index))
+        print(format("Error at step %d: Quest log length greater than 20",eStep.index))
     else
         if group.next() then
             return RXP_.GetQuestLog()
+		else
+			print(format("Error at step %d",eStep.index))
         end
     end
 
