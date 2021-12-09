@@ -883,8 +883,8 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> Die ON THE SMALL ISLAND and respawn at Brill
     .goto Tirisfal Glades,66.60,44.95
+    .deathskip >> Die ON THE SMALLER ISLAND and respawn at Brill
 step
     #softcore
     .goto Tirisfal Glades,59.45,52.39
