@@ -273,7 +273,7 @@ step
     .goto The Barrens,62.59,43.99,0
     .complete 887,1 --Southsea Brigand (12)
     .complete 887,2 --Southsea Cannoneer (6)
-step << Rogue
+step << !Undead Rogue
 	#sticky
 	#completewith next
 	>>Kill Tazan. Loot him for his Satchel
@@ -286,7 +286,7 @@ step
     .goto The Barrens,62.70,49.79
     >>Kill Baron Longshore. He can be found in any of the camps. Loot him for his Head
     .complete 895,1 --Baron Longshore's Head (1)
-step << Rogue
+step << !Undead Rogue
 	>>Kill Tazan. Loot him for his Satchel
     .goto The Barrens,62.59,43.99,60,0
     .goto The Barrens,63.56,44.35
@@ -550,7 +550,7 @@ step << Rogue
     .trainer >> Train your class spells
 	>> Make sure you've trained Pick Lock
     .accept 2379 >> Accept Zando'Zan
-	.turnin 1963 >> Turn in The Shattered Hand
+	.turnin 1963 >> Turn in The Shattered Hand << !Undead
 --	.accept 1858 >> Accept The Shattered Hand
 --N ..Make sure you train Pick Pocket
 step << Rogue
