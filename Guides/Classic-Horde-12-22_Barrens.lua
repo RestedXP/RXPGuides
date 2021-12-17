@@ -318,12 +318,10 @@ step << !Warrior
     .goto The Barrens,63.08,37.16
     .fly Crossroads >> Fly to The Crossroads
 step << Warrior
-    #sticky
     #completewith next
     .goto The Barrens,61.6,37.9,30,0
     .goto The Barrens,52.5,30.7,150 >> Walk via the road to Crossroads, look out for Lizzarik to buy a Heavy Spiked Mace. If he doesn't have it, fly/run to The Crossroads
 step << Warrior
-    #sticky
     #completewith next
 	#label HeavySMace
     .collect 4778,1 --Collect Heavy Spiked Mace
@@ -332,7 +330,6 @@ step << Warrior
 	#completewith next
 	#requires HeavySMace
 	.goto The Barrens,52.5,30.7,150 >> Fly to Crossroads if you're in Ratchet, or Run if you're halfway along the path to Crossroads
-    .turnin 5041 >>Turn in Supplies for the Crossroads
 step
     .goto The Barrens,51.99,29.89
 	.vendor >> Buy level 15 food/water from the Innkeeper
