@@ -1140,7 +1140,7 @@ step  << !Warrior !Paladin !Rogue !Druid
     .isQuestComplete 2078
 step  << !Warrior !Paladin !Rogue !Druid
     #sticky
-    .destroy 7442 >> Throw away Gyromast's Key
+    .destroy 7442 >> Delete Gyromast's Key from your inventory
 step << Druid
     .goto Winterspring,3.10,20.90
     .accept 4727 >> Accept Beached Sea Turtle
