@@ -1171,7 +1171,7 @@ step << Rogue
 	#som
     .turnin 2460 >>Turn in The Shattered Salute
     .accept 2458 >>Accept Deep Cover
-step
+step << Warlock
 	#som
     .goto Orgrimmar,45.13,63.88
 	.fly Crossroads >> Fly to The Crossroads
@@ -1197,7 +1197,6 @@ step
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 step << Tauren/Warrior/Shaman
-    #
 	BloodShard
     +Use your Blood Shards on any buff from Mangletooth
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
