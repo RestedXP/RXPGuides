@@ -35,7 +35,7 @@ step << Warlock
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
 step << BloodElf
-    .goto Orgrimmar,31.9,38.2
+    .goto Orgrimmar,31.8,38.2
     .accept 9428 >> Accept Report to Splintertree Post
 step
     .goto Orgrimmar,39.0,38.3
