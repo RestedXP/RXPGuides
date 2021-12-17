@@ -757,7 +757,9 @@ step << Mage
     .goto Durotar,56.3,75.1
     .trainer >> Train your class spells
 step
-    >>Save the Faintly Glowing Skull for later
+	#completewith SkullX
+    +Save the Faintly Glowing Skull from the turnin for later (you'll be told when to use it)
+step
     .goto Durotar,55.9,74.7
     .turnin 808 >>Turn in Minshina's Skull
     .turnin 826 >>Turn in Zalazane
@@ -835,6 +837,7 @@ step
     .goto Durotar,51.7,27.7
     .complete 834,1 --Sack of Supplies (5)
 step
+	#label SkullX
     .goto Durotar,46.4,22.9
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines 
