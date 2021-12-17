@@ -1446,15 +1446,22 @@ step
     .vendor >> vendor trash << !Paladin
     .vendor >> vendor trash. Make sure to save 10 Linen << Paladin
 step << Warlock/Priest
-    #sticky
+    #softcore
     #label Wand1
     #completewith Wand2
      >>Alternatively, buy a Greater Magic Wand from the AH if it costs <33s 40c
     .goto Stormwind City,53.60,59.77
     .collect 11288,1 --Greater Magic Wand (1)
 step << Warlock/Priest
+    #softcore
     #label Wand2
     #completewith Wand1
+     >>Go in the building. Buy a Smoldering Wand
+    .goto Stormwind City,42.65,67.16,14,0
+    .goto Stormwind City,42.84,65.14
+    .collect 5208,1 --Smoldering Wand (1)
+step << Warlock/Priest
+    #hardcore
      >>Go in the building. Buy a Smoldering Wand
     .goto Stormwind City,42.65,67.16,14,0
     .goto Stormwind City,42.84,65.14
