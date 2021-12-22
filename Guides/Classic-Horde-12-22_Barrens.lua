@@ -1264,14 +1264,15 @@ step << Tauren/Warrior/Shaman
     .fly Thunder Bluff >>Fly to Thunder Bluff
 step << Warlock/Priest
     .goto Thunder Bluff,41.2,61.4
-	.trainer >> Go do weapon training for Staves skill
+	.trainer >> Train the Staves skill
 step
     .goto Thunder Bluff,45.9,64.7
     .home >>Set your Hearthstone to Thunder Bluff
 step << Shaman/Warrior
+	#softcore
     #sticky
     #completewith next
-    +If it’s cheaper, buy a green 2h mace from the AH
+    +If it’s cheaper, buy a green 2h mace from the Auction House
 step << Shaman/Warrior
     .goto Thunder Bluff,53.2,58.2
     >>Buy a Maul from Etu if it's an upgrade
