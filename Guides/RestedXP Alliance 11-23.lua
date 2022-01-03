@@ -268,6 +268,9 @@ step
     .goto Bloodmyst Isle,55.2,59.2
     .accept 9646 >> Accept WANTED: Deathclaw
 step
+    .goto Bloodmyst Isle,55.7,59.7
+    .home >> Set your Hearthstone to Blood Watch
+step
     .goto Bloodmyst Isle,55.0,58.0
     .accept 9567 >> Accept Know Thine Enemy
 step
