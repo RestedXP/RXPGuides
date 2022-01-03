@@ -159,6 +159,11 @@ step
     .goto Azuremyst Isle,61.1,54.2
     .accept 9452 >> Accept Red Snapper - Very Tasty!
 step
+	#completewith end
+	>>Keep an eye out for Draenei Younglings. If you find one, use Gift of the Naaru (your racial) on them when they're in combat with a mob. Then, accept the quest
+	.accept 9612 >> Accept A Hearty Thanks!
+	.unitscan Draenei Youngling
+step
 	#sticky
 	#completewith next
 	>>Run north along the river using the fishing net on the fishing pools, try to get at least 50% of this quest done, you will have another opportunity to finish it later
@@ -187,6 +192,11 @@ step << Shaman
     .goto Azuremyst Isle,49.6,53.1,0
     >>Buy a Walking stick if you have 5s to spare
     .collect 2495,1
+step
+	.isOnQuest 9612
+	.turnin 9612 >> Turn in A Hearty Thanks!
+    .turnin 9455 >> Turn in Strange Findings
+    .accept 9456 >> Accept Nightstalker Clean Up, Isle 2...
 step
     .goto Azuremyst Isle,47.2,50.6
     .turnin 9455 >> Turn in Strange Findings
@@ -418,6 +428,13 @@ step
     .goto Azuremyst Isle,48.5,51.5
     .turnin 9473 >> Turn in An Alternative Alternative
 step
+	.isOnQuest 9612
+    .goto Azuremyst Isle,47.2,50.7
+	.turnin 9612 >> Turn in A Hearty Thanks!
+    .turnin 9456 >> Turn in Nightstalker Clean Up, Isle 2...
+    .turnin 9602 >> Turn in Deliver Them From Evil...
+    .accept 9623 >> Accept Coming of Age
+step
     .goto Azuremyst Isle,47.2,50.7
     .turnin 9456 >> Turn in Nightstalker Clean Up, Isle 2...
     .turnin 9602 >> Turn in Deliver Them From Evil...
@@ -582,6 +599,8 @@ step << Shaman
     .turnin 9467 >> Turn in Call of Fire
     .accept 9468 >> Accept Call of Fire
 step
+	#label end
+step
     .goto Azuremyst Isle,34.1,18.0
     .complete 9562,1 --Collect Stillpine Grain (x5)
     >>Kill and loot the named Murloc. Be careful as he does a LOT of damage
@@ -660,6 +679,7 @@ step
 step
     .goto Bloodmyst Isle,63.1,87.6
     .accept 9663 >> Accept The Kessel Run
+	>>Be careful as this is a timed quest
 step
     .goto Azuremyst Isle,46.6,20.7
 	.accept 9622 >> Accept Warn Your People << !Shaman
@@ -678,13 +698,25 @@ step << Warrior
     .turnin 9582 >> Turn in Strength of One
     .accept 10350 >> Accept Behomat
 step << !Shaman
+	.isOnQuest 9612
+    .goto Azuremyst Isle,47.1,50.5
+	.turnin 9612 >> Turn in A Hearty Thanks!
+    .turnin 9622 >> Turn in Warn Your People
+    .complete 9663,2 --Exarch Menelaous Warned
+step << !Shaman
     .goto Azuremyst Isle,47.1,50.5
     .turnin 9622 >> Turn in Warn Your People
+    .complete 9663,2 --Exarch Menelaous Warned
 step << Shaman
     .goto Azuremyst Isle,48.1,50.5
     .turnin 9468 >> Turn in Call of Fire
     .accept 9461 >> Accept Call of Fire
-step
+step << Shaman
+	.isOnQuest 9612
+    .goto Azuremyst Isle,47.1,50.5
+	.turnin 9612 >> Turn in A Hearty Thanks!
+    .complete 9663,2 --Exarch Menelaous Warned
+step << Shaman
     .goto Azuremyst Isle,47.1,50.5
     .complete 9663,2 --Exarch Menelaous Warned
 step
