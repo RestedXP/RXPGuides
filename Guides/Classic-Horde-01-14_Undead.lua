@@ -127,13 +127,20 @@ step
     .complete 376,1 --Collect Scavenger Paw (x6)
     .complete 376,2 --Collect Duskbat Wing (x6)
 step
-    .xp 3+1230 >>Grind mobs en route back to town to 1230+/1400xp
+    .goto Tirisfal Glades,33.15,60.70
+    >> Kill Skeletons in the town
+    .complete 3901,1 --Kill Rattlecage Skeleton (12) 
+step
+    .xp 3+1230 >>Grind mobs en route back to town to 1000+/1400xp
 step << Mage/Warlock
     .goto Tirisfal Glades,32.3,65.4
     .vendor >>vendor trash, buy water down to no lower than 95c
 step << Priest
     .goto Tirisfal Glades,32.3,65.4
     .vendor >>vendor trash, buy water down to no lower than 1s 90c
+step
+    .goto Tirisfal Glades,30.9,66.2
+    .turnin 3901 >> Turn in Rattling the Rattlecages
 step
     #label BatsWolves
     .goto Tirisfal Glades,30.9,66.1
@@ -171,12 +178,7 @@ step
     #label Goods
     >>Collect bundles of brown boxes whilst killing Skeletons. You can find these on the outside walls/inside of buildings
     .goto Tirisfal Glades,33.84,64.09
-    .complete 3902,1 --Collect Scavenged Goods (x6)
-step
-    .goto Tirisfal Glades,33.15,60.70
-    >> Kill Skeletons in the town
-    .complete 3901,1 --Kill Rattlecage Skeleton (12)    
-
+    .complete 3902,1 --Collect Scavenged Goods (x6)  
 step
     #requires Goods
     .goto Tirisfal Glades,27.10,59.09
@@ -198,9 +200,6 @@ step
 step
     .goto Tirisfal Glades,31.6,65.6
     .turnin 3902 >> Turn in Scavenging Deathknell
-step
-    .goto Tirisfal Glades,30.9,66.2
-    .turnin 3901 >> Turn in Rattling the Rattlecages
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.41,65.66
     .vendor >>vendor trash. Repair your weapon
