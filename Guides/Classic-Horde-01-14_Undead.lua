@@ -730,9 +730,7 @@ step << !Warlock
     .complete 370,2 --Scarlet Zealot (3)
     .complete 370,3 --Scarlet Missionary (3)
 step
-    .goto Tirisfal Glades,61.87,65.02,40 >> Run to Undercity
-step
-    .goto Tirisfal Glades,61.81,74.42,40 >> Run to the Elevator room
+    .goto Undercity,15.06,32.86,50 >> Go into Undercity via the Sewers
 step
     >>Take one of the lifts down to the main part of Undercity
     .goto Undercity,67.72,37.88
