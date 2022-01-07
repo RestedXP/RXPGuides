@@ -1199,9 +1199,19 @@ step
     .goto Silverpine Forest,45.01,39.30
     .vendor >> vendor trash. Repair
 step
+    #sticky
+    #completewith next
+    #softcore
+    .deathskip >> Die and respawn at The Sepulcher
+step
+    .goto Silverpine Forest,44.21,39.81
+    .accept 421 >>Accept Prove Your Worth
+    #softcore
+step
     >>Run to The Sepulcher
     .goto Silverpine Forest,44.21,39.81
     .accept 421 >>Accept Prove Your Worth
+    #hardcore
 step
     .goto Silverpine Forest,43.98,40.93
     .accept 477 >>Accept Border Crossings
