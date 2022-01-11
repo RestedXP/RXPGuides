@@ -1528,6 +1528,9 @@ step
     .goto Thunder Bluff,23.00,21.0
    .turnin 1064 >> Turn in Forsaken Aid
    .accept 1065 >> Accept Journey to Tarren Mill
+step << Priest
+    .goto Thunder Bluff,25.4,15.0
+	.accept 5644 >> Accept Devouring Plague
 step << Shaman
     .goto Thunder Bluff,25.1,20.6
 	.accept 1529 >>Accept Call of Water
@@ -1561,7 +1564,7 @@ step
 step << Hunter
     .goto The Barrens,49.00,11.20
     .turnin 3921 >> Turn in Wenikee Boltbucket
-step
+step << Hunter
 	>>Go to the 2nd floor of the tower
     .goto The Barrens,48.12,5.42
     .turnin 6541 >>Turn in Report to Kadrak
