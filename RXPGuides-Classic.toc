@@ -18,5 +18,4 @@ map.lua
 functions.lua
 parser.lua
 
-hunter.lua
 Guides/GuideList-classic.xml
