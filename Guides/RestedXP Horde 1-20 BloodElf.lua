@@ -2208,7 +2208,7 @@ step << Rogue
     .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
 step
     .isOnQuest 9220
-.goto Ghostlands,45.9,32.1
+    .goto Ghostlands,45.9,32.1
     .accept 9151 >> Accept The Sanctum of the Sun
 step
     .goto Ghostlands,44.8,32.7
@@ -2287,8 +2287,8 @@ step
     .turnin 9172 >> Turn in Report to Magister Kaendris
     .accept 9176 >> Accept The Twin Ziggurats
 step
-    >>Go upstairs
-.goto Ghostlands,54.9,48.5
+    >>Go upstairs in the Sanctum
+    .goto Ghostlands,54.8,48.4
     .turnin 9151 >> Turn in The Sanctum of the Sun
     .accept 9220 >> Accept War on Deatholme
 step
