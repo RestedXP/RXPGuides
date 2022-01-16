@@ -851,7 +851,9 @@ step
     .complete 2098,1 --Collect Top of Gelkak's Key (x1)
 step
     .goto Darkshore,61.1,10.4
-	>>Kill Monstalker Sires/Matriarchs
+	>>Kill Monstalker Sires/Matriarchs. Loot them for their pelts
+	>>Sires share their spawns with Bears, and Matriarchs share their spawns with Foreststriders
+	>>If you cannot find any moonstalkers, skip this quest
     .complete 986,1 --Collect Fine Moonstalker Pelt (x5)
 step
 	#requires foreststriders
@@ -940,7 +942,7 @@ step
     .goto Darkshore,39.3,43.4
     .turnin 986 >> Turn in A Lost Master
     .accept 993 >> Accept A Lost Master
-    .isQuestTurnedIn 985
+    .isQuestComplete 986
 step
     .goto Darkshore,37.4,43.7
     .turnin 947 >> Turn in Cave Mushrooms
