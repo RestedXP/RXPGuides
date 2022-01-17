@@ -579,12 +579,17 @@ step
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>Accept The Admiral's Orders
 step
+	#era
     .goto Durotar,58.4,57.2
     .xp 7+2195 >> Grind to 2195+/4500xp
 step
+	#som
+    .goto Durotar,58.4,57.2
+    .xp 7+1890 >> Grind to 1890+/4500xp
+step
     #softcore
     #requires KulTiras
-    .goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer or simply run back
+    .goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer, or run back
 step
     #softcore
     .goto Durotar,51.9,43.5
