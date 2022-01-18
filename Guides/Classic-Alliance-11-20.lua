@@ -2160,6 +2160,11 @@ step << NightElf Rogue/NightElf Priest
     .goto Elwynn Forest,43.28,65.72 << Priest
     .goto Elwynn Forest,43.87,65.94 << Rogue
     .trainer >> Train your class spells
+step << NightElf
+    #level 20
+    >>Run to the Tower of Azora
+    .goto Elwynn Forest,65.20,69.80
+    .accept 94 >> Accept A Watchful Eye
 step << !NightElf
     .goto Stormwind City,66.27,62.13
     .fly Redridge >>Fly to Redridge Mountains
@@ -2399,9 +2404,21 @@ step
     .turnin 118 >> Turn in The Price of Shoes
     .accept 119 >> Accept Return to Verner
 step
+    >>Run to the Tower of Azora
+    .goto Elwynn Forest,65.20,69.80
+    .accept 94 >> Accept A Watchful Eye
+step
+    #completewith RunR
+    #label FlyR
     .goto Stormwind City,66.30,62.30
-    >> Run back to Stormwind
-    .fly Redridge >>Fly to Redridge
+    >> Run back to Stormwind if you're in Goldshire, then fly to Redridge
+    .fly Redridge >> Fly to Redridge
+step
+    #completewith FlyR
+    #label RunR
+    .goto Redridge Mountains,15.27,71.45
+    >> If you're at the Tower of Azora, run to Redridge
+    .zone Redridge Mountains >>Travel to Redridge
 step
     .goto Redridge Mountains,33.40,48.90
     .turnin 20 >> Turn in Blackrock Menace
