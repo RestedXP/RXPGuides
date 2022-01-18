@@ -836,6 +836,7 @@ step
     .goto Dun Morogh,23.0,52.2
     .complete 287,2 --Fully explore Frostmane Hold
 step
+    #softcore
     #completewith next
     .deathskip >> Die and respawn at Kharanos
 step
@@ -850,6 +851,10 @@ step
     .goto Dun Morogh,46.7,53.8
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
+step << Rogue
+    #level 10
+    .goto Dun Morogh,47.6,52.6
+    .accept 2218 >> Accept Road to Salvation
 step << !Paladin !Priest
     .goto Dun Morogh,47.2,52.6
     .train 3273 >> Train First Aid
@@ -1730,6 +1735,12 @@ step << Warlock
     .goto Ironforge,53.0,6.4
     .vendor >> Buy Consume Shadows r1, then Sacrifice r1 books (if you have money)
 step << Rogue
+    #sticky
+    #label Salvation
+    .isOnQuest 2218
+    .goto Ironforge,51.50,15.34
+    .turnin 2218 >> Turn in Road to Salvation
+step << Rogue
     .goto Ironforge,51.50,15.34
     .trainer >> Go upstairs. Train your class spells
 step << Priest
@@ -1737,15 +1748,25 @@ step << Priest
     .trainer >> Train your class spells
 step << Paladin
     .trainer >> Train your class spells at the Stormwind cathedral
-step << !Paladin
+step << Rogue
+    #requires Salvation
     #completewith next
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
     .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
-step << !Paladin
+step << !Paladin !Rogue
+    #completewith next
+    +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
+    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
+step << Rogue
+    #requires Salvation
     .goto Ironforge,76.54,51.15,60,0
     .goto Ironforge,76.54,51.15,0
     .zone Stormwind City >> Take the tram to Stormwind City
     >>Train first aid while wating/riding the tram, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
+step << !Paladin !Rogue
+    .goto Ironforge,76.54,51.15,60,0
+    .goto Ironforge,76.54,51.15,0
+    .zone Stormwind City >> Take the tram to Stormwind City
 ]],"Gnome/Dwarf")
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
