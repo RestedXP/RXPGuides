@@ -2359,6 +2359,9 @@ step << Mage
 step
     .goto Stormwind City,21.40,55.80
     .accept 3765 >> Accept The Corruption Abroad
+step << Druid
+    .goto Stormwind City,21.0,55.6
+    .trainer >> Train your class spells (Make sure you get Cat Form)
 step << Paladin
     .goto Stormwind City,42.66,33.75,30,0
     .goto Stormwind City,40.1,30.0
@@ -2397,7 +2400,7 @@ step
     .accept 119 >> Accept Return to Verner
 step
     .goto Stormwind City,66.30,62.30
-    >> Run back to SW 
+    >> Run back to Stormwind
     .fly Redridge >>Fly to Redridge
 step
     .goto Redridge Mountains,33.40,48.90
