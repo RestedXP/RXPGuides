@@ -624,7 +624,7 @@ step
     .goto The Barrens,52.2,31.0
     .turnin 881 >>Turn in Echeyakee
     .accept 905 >>Accept The Angry Scytheclaws
-step !Warrior !Shaman
+step << !Warrior !Shaman
     .goto The Barrens,52.20,31.90
     .turnin 870 >> Turn in The Forgotten Pools
     .accept 877 >> Accept The Stagnant Oasis
