@@ -19,11 +19,6 @@ step
 step
     .goto Azuremyst Isle,79.1,46.5
     .accept 10302 >> Accept Volatile Mutations
-step << Shaman
-    #sticky
-    .goto Azuremyst Isle,79.3,49.1
-    >>Kill a few mobs and sell trash items, you will need 10c to train
-    .train 8017 >> Train Rockbiter Weapon
 step
 	#sticky
     #label mothblood
@@ -42,15 +37,15 @@ step
     .complete 9799,1 --Collect Corrupted Flower (x3)
     .complete 9293,1 --Collect Lasher Sample (x10)
 step
-	#sticky
+    .goto Azuremyst Isle,79.1,46.5
 	.xp 4-420 >>Grind until you are 420xp away from level 4 (980/1400)
 step
+    #requires mothblood
     .goto Azuremyst Isle,79.1,46.5
     .turnin 9293 >> Turn in What Must Be Done...
     .accept 9294 >> Accept Healing the Lake
     .turnin 9799 >> Turn in Botanical Legwork
 step
-    #requires mothblood
     .goto Azuremyst Isle,80.4,45.8
     .turnin 9280 >> Turn in Replenishing the Healing Crystals
     .accept 9409 >> Accept Urgent Delivery!
@@ -1644,14 +1639,12 @@ step
     .goto Ashenvale,14.8,31.3
     .turnin 1009 >> Turn in Ruuzel
 step
-    #sticky
     #completewith next
     .hs >> Hearth to Astranaar
 step
     .goto Ashenvale,36.6,49.6
     .turnin 1023 >> Turn in Raene's Cleansing
 step
-	#sticky
 	#completewith next
 	+Delete Teronis' Journal from your inventory. It's no longer needed
 step
