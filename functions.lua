@@ -2416,7 +2416,7 @@ function RXP_.functions.skipgossip(self,text,...)
     
 end
 
-function RXP_.functions.maxLevel(self,...)
+function RXP_.functions.maxlevel(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         local text,str = ...
@@ -2426,25 +2426,27 @@ function RXP_.functions.maxLevel(self,...)
         element.xp = tonumber(xp)
         element.level = tonumber(level)
         element.event = "PLAYER_XP_UPDATE"
-        if text and text ~= "" then
-            element.text = text
+        if text then
+            element.rawtext = text
+		else
+			element.rawtext = ""
         end
         if not element.xp then element.xp = 0 end
         element.textOnly = true
         return element
     end
-    local currentXP = UnitXP("player")
-    local maxXP = UnitXPMax("player")
     local level = UnitLevel("player")
     local element = self.element
+	local step = element.step
     
-    if (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP + element.xp))) or
-       (element.xp >= 1 and ((level > element.level) or (element.level == level and currentXP >= element.xp))) or
-       (element.xp >= 0 and element.xp < 1 and ((level > element.level) or (element.level == level and currentXP >= maxXP*element.xp)))
-       then
-        element.step.completed = true
-        RXP_.updateSteps = true
-        element.step.hideStep = true
+    if level > element.level then
+        if step.active and not step.completed then
+			RXP_.updateSteps = true
+        end
+        step.completed = true
+		element.text = string.format("(Skip this step if you're above level %d)",element.level)
+	else
+		element.text = ""
     end
 
 end
