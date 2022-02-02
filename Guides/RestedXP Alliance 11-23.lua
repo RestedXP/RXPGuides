@@ -1393,6 +1393,9 @@ step
     #completewith next
     .goto Darkshore,33.2,40.2
     .zone Teldrassil>>Take the boat to Darnassus
+step << Warrior
+    .goto Darnassus,57.6,46.8
+	.train 2567 >> Train Thrown from Ilyenia
 step
     .goto Darnassus,31.2,84.5
     >>Take the purple portal into Darnassus
