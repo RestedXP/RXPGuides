@@ -1551,6 +1551,9 @@ step << Priest
 step << Shaman
     .goto Thunder Bluff,25.1,20.6
 	.accept 1529 >>Accept Call of Water
+step
+    .goto Thunder Bluff,54.70,51.30
+    .accept 1195 >> Accept The Sacred Flame
 step << Warlock
     .goto Thunder Bluff,46.8,50.0
     .fly Camp Taurajo >>Fly to Camp Taurajo
