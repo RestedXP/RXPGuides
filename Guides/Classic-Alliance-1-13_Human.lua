@@ -2832,6 +2832,7 @@ step
     .goto Wetlands,8.1,56.3
     .vendor >> In the building, check Dewin for Heal Potions, buy down to 1s
 step
+    .goto Wetlands,4.7,57.3
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore.
     >>Train first aid while waiting for the boat if you have linen, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
 step << skip
