@@ -1606,6 +1606,7 @@ step << Hunter
 step << Hunter
     .goto Ashenvale,73.13,61.54
     .fly Orgrimmar >>Fly to Orgrimmar
+	.maxlevel 24
 step << Shaman
     .goto The Barrens,51.5,30.4
     .fly Ratchet >>Fly to Ratchet
@@ -1640,10 +1641,22 @@ step << Shaman
     .turnin 1535 >>Turn in Call of Water
     .accept 1536 >>Accept Call of Water
 step << !Hunter !Mage
+	#era/som
     .goto The Barrens,51.5,30.3 << !Shaman
     .goto The Barrens,44.5,59.1 << Shaman
+    .fly Orgrimmar >>Fly to Orgrimmar
+step << !Hunter !Mage !Shaman !Rogue
+	#som
+	#phase 3-6
+    .goto The Barrens,51.5,30.3 << !Shaman
+    .goto The Barrens,44.5,59.1 << Shaman
+    .fly Orgrimmar >>Fly to Orgrimmar
+	.maxlevel 24
+step << Shaman/Rogue
+    .goto The Barrens,51.5,30.3
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Mage
 	#som
 	.zone Orgrimmar >> Teleport or Fly to Orgrimmar
+	.maxlevel 24
 ]])
