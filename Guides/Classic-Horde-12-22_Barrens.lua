@@ -1645,14 +1645,14 @@ step << !Hunter !Mage
     .goto The Barrens,51.5,30.3 << !Shaman
     .goto The Barrens,44.5,59.1 << Shaman
     .fly Orgrimmar >>Fly to Orgrimmar
-step << !Hunter !Mage !Shaman !Rogue
+step << !Hunter !Mage !Shaman !Rogue !Warlock
 	#som
 	#phase 3-6
     .goto The Barrens,51.5,30.3 << !Shaman
     .goto The Barrens,44.5,59.1 << Shaman
     .fly Orgrimmar >>Fly to Orgrimmar
 	.maxlevel 24
-step << Shaman/Rogue
+step << Shaman/Rogue/Warlock
     .goto The Barrens,51.5,30.3
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Mage
