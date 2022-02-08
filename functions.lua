@@ -401,7 +401,7 @@ function RXP_.PhaseCheck(phase)
 end
 
 function RXP_.SeasonCheck(step)
-    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM then
+    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM or RXPCData.SoM and RXPData.phase > 2 and step["era/som"] then
         return false
     end
     return true
@@ -1455,8 +1455,7 @@ function RXP_.functions.next(skip,guide)
         end)
         local nextGuide
         local guideSkip = RXP_.GetGuideTable(group,next)
-        local som = RXPCData.SoM
-        local hc = RXPCData.hardcore
+
         
         if RXP_.version ~= "CLASSIC" then
             local faction = next:match("Aldor") or next:match("Scryer")
@@ -1481,7 +1480,7 @@ function RXP_.functions.next(skip,guide)
         nextGuide = RXP_.GetGuideTable(group,next)
        
         if nextGuide then
-            if (nextGuide.era and RXPCData.SoM or nextGuide.som and not RXPCData.SoM) or 
+            if (nextGuide.era and RXPCData.SoM or nextGuide.som and not RXPCData.SoM or RXPCData.SoM and RXPData.phase > 2 and nextGuide["era/som"]) or 
                (nextGuide.hardcore and not(RXPCData.hardcore) or nextGuide.softcore and RXPCData.hardcore) then
                return RXP_.functions.next(nil,nextGuide)
             else
