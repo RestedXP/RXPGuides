@@ -143,6 +143,7 @@ step
     .turnin 871 >>Turn in Disrupt the Attacks
     .accept 872 >>Accept The Disruption Ends
 step
+#era/som
     .goto The Barrens,51.62,30.90
     >>Run up to the top of the tower
     .accept 867 >>Accept Harpy Raiders
@@ -410,12 +411,21 @@ step
     #completewith Claws
     .complete 821,1 --Savannah Lion Tusk (5)
 step
+#som
+#phase 3-6
+    #label Claws
+    >>Kill Prowlers. Loot them for their Claws and Tusks
+    .goto The Barrens,53.00,16.00
+    .complete 903,1 --Prowler Claws (7)
+step
+#era/som
     #label Claws
     >>Kill Prowlers. Loot them for their Claws and Tusks
     .goto The Barrens,41.4,24.5,100,0
     .goto The Barrens,40.48,20.36
     .complete 903,1 --Prowler Claws (7)
 step
+#era/som
     .goto The Barrens,40.2,18.9,90,0
     .goto The Barrens,40.7,14.6,90,0
     .goto The Barrens,42.6,15.1,90,0
@@ -428,11 +438,13 @@ step
     >>Kill Plainstriders. Loot them for their Kidneys 
     .complete 821,2 --Plainstrider Kidney (5)
 step << Warrior
+#era/som
 	#completewith next
     .goto The Barrens,43.8,12.2
 	>> Buy the Heavy Spiked Mace from Vrang if it's available << Warrior
     .collect 4778,1 --Collect Heavy Spiked Mace << Warrior
 step
+#era/som
     .goto The Barrens,43.8,12.2
 	.vendor	>> Vendor trash, repair
 step
@@ -633,6 +645,7 @@ step
     .accept 899 >> Accept Consumed by Hatred
     .accept 4921 >> Accept Lost in Battle
 step
+#era/som
     >>Run up to the top of the tower
     .goto The Barrens,51.6,30.9
     .turnin 867 >>Turn in Harpy Raiders
@@ -833,11 +846,13 @@ step << !Undead !Rogue
     .goto The Barrens,45.39,28.44
     .turnin 4021 >>Turn in Counterattack!
 step 
+#era/som
     #sticky
     #completewith next
     +The slayers has execute, be extra careful
     #hardcore
 step
+#era/som
     .goto The Barrens,40.3,15.2
     >>Kill Witchwing Slayers. Loot them for Harpy Lieutenant Rings
     .complete 875,1 --Harpy Lieutenant Ring (6)
@@ -1078,6 +1093,7 @@ step
     .goto The Barrens,52.0,31.6
     .turnin 899 >>Turn in Consumed by Hatred
 step
+#era/som
     >>Run up to the top of the tower
     .goto The Barrens,51.60,30.90
     .turnin 875 >> Turn in Harpy Lieutenants
@@ -1373,6 +1389,7 @@ step << Warlock
     .turnin 1509 >>Turn in News of Dogran
     .accept 1510 >>Accept News of Dogran
 step
+#era/som
     >>Kill Serena Bloodfeather. Loot her for her Head
 	.goto The Barrens,39.2,12.2
     .complete 876,1 --Serena's Head (1)
@@ -1534,6 +1551,9 @@ step << Priest
 step << Shaman
     .goto Thunder Bluff,25.1,20.6
 	.accept 1529 >>Accept Call of Water
+step
+    .goto Thunder Bluff,54.70,51.30
+    .accept 1195 >> Accept The Sacred Flame
 step << Warlock
     .goto Thunder Bluff,46.8,50.0
     .fly Camp Taurajo >>Fly to Camp Taurajo
@@ -1552,6 +1572,7 @@ step << !Warlock
     .goto Thunder Bluff,46.8,50.0
     .fly Crossroads >>Fly to The Crossroads
 step
+#era/som
     .goto The Barrens,51.60,30.90
     .turnin 876 >> Turn in Serena Bloodfeather
     .accept 1060 >> Accept Letter to Jin'Zil
@@ -1588,6 +1609,7 @@ step << Hunter
 step << Hunter
     .goto Ashenvale,73.13,61.54
     .fly Orgrimmar >>Fly to Orgrimmar
+	.maxlevel 24
 step << Shaman
     .goto The Barrens,51.5,30.4
     .fly Ratchet >>Fly to Ratchet
@@ -1622,10 +1644,22 @@ step << Shaman
     .turnin 1535 >>Turn in Call of Water
     .accept 1536 >>Accept Call of Water
 step << !Hunter !Mage
+	#era/som
     .goto The Barrens,51.5,30.3 << !Shaman
     .goto The Barrens,44.5,59.1 << Shaman
+    .fly Orgrimmar >>Fly to Orgrimmar
+step << !Hunter !Mage !Shaman !Rogue !Warlock
+	#som
+	#phase 3-6
+    .goto The Barrens,51.5,30.3 << !Shaman
+    .goto The Barrens,44.5,59.1 << Shaman
+    .fly Orgrimmar >>Fly to Orgrimmar
+	.maxlevel 24
+step << Shaman/Rogue/Warlock
+    .goto The Barrens,51.5,30.3
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Mage
 	#som
 	.zone Orgrimmar >> Teleport or Fly to Orgrimmar
+	.maxlevel 24
 ]])
