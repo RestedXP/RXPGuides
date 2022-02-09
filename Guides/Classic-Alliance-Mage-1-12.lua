@@ -122,10 +122,16 @@ step
 step
     .xp 5 >> Grind to 5
 step
+    #som/era
     .goto Elwynn Forest,50.7,39.2
     .turnin 3903 >> Turn in Milly Osworth
     .accept 3904 >> Accept Milly's Harvest
 step
+    #phase 3-6
+    .goto Elwynn Forest,50.7,39.2
+    .turnin 3903 >> Turn in Milly Osworth
+step
+    #som/era
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly’s Harvest (x8)
@@ -137,6 +143,7 @@ step
     .xp 5+1175 >> Grind on your way back to 1175+/2800xp
     .goto Elwynn Forest,50.7,39.2
 step
+    #som/era
     .goto Elwynn Forest,50.7,39.2
     .turnin 3904 >> Turn in Milly's Harvest
     .accept 3905 >>Accept Grape Manifest
@@ -148,6 +155,7 @@ step
     .turnin 21 >> Turn in Skirmish at Echo Ridge
     .accept 54 >> Accept Report to Goldshire
 step
+     #som/era
      >>Go upstairs the main staircase
     .goto Elwynn Forest,49.6,41.6,15,0
     .goto Elwynn Forest,48.9,41.3,15,0
@@ -511,6 +519,10 @@ step
     .vendor >>vendor trash
     .accept 6181 >> Accept A Swift Message
 step
+    #phase 3-6
+    .goto Westfall,56.4,30.5
+    .xp 11+3750 >> Grind to 3750+/8800xp
+step
     .goto Westfall,56.6,52.6
     .fp >> Get the Sentinel Hill flight path
     .turnin 6181 >> Turn in A Swift Message
@@ -521,6 +533,7 @@ step
     >>Choose rockets. These have very good damage, and can be used for splitpulling
     .turnin 61 >> Turn in Shipment to Stormwind
 step
+    #som/era
     .goto Stormwind City,57.1,57.7
     .trainer >> Train 1h Swords
 step
@@ -551,6 +564,10 @@ step
 step
     .goto Ironforge,55.5,47.7
     .fp >> Get the Ironforge flight path
+step
+    #phase 3-6
+    .goto Ironforge,27.17,8.57
+     .trainer >> Train your class spells
 step 
     #sticky
     #completewith next
@@ -598,6 +615,7 @@ step
     .complete 432,1 --Kill Rockjaw Skullthumper (6)
     .complete 433,1 --Kill Rockjaw Bonesnapper (10)
 step
+    #som/era
     .xp 10+6350 >>Grind until 6350+/7600
 step
     .goto Dun Morogh,69.1,56.3
@@ -610,6 +628,7 @@ step
     .goto Dun Morogh,68.7,56.0
     .turnin 433 >> Turn in The Public Servant
 step
+    #som/era
     .xp 11
 step
     .goto Dun Morogh,68.6,54.7
@@ -639,11 +658,19 @@ RXPGuides.RegisterGuide("RestedXP Alliance Mage",[[
 #name 1-10 Dun Morogh Mage AoE
 #next 10-12 Loch Modan Mage AoE
 step
+    #som/era
     #sticky
     #completewith next
     .goto Dun Morogh,29.9,71.2
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in << Human
     +Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but a LOT faster
+step
+    #phase 3-6
+    #sticky
+    #completewith next
+    .goto Dun Morogh,29.9,71.2
+    +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in << Human
+    +Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but with the recent 100% quest xp changes, is also slower
 step
     >>Delete your Hearthstone
     .goto Dun Morogh,29.9,71.2
@@ -1002,6 +1029,7 @@ step
     .goto Dun Morogh,49.4,48.4
     .turnin 320 >> Turn in Return to Bellowfiz
 step
+    #som/era
     >>Inside the building
     .goto Dun Morogh,45.8,49.4
     .accept 412 >> Accept Operation Recombobulation
@@ -1036,6 +1064,7 @@ step
     .goto Dun Morogh,30.2,45.5
     .turnin 311 >> Turn in Return to Marleth
 step
+    #som/era
     #requires Stout
     .goto Dun Morogh,27.2,43.0,40,0
     .goto Dun Morogh,24.8,39.3,40,0
@@ -1078,6 +1107,7 @@ step
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
 step
+    #som/era
     .goto Dun Morogh,45.8,49.4
     .turnin 412 >> Turn in Operation Recombobulation
 step
@@ -1174,6 +1204,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance Mage",[[
 #name 10-12 Loch Modan Mage AoE
 #next 12-18 Darkshore Mage AoE
 step
+    #som/era
     #completewith next
     +As you quest through Loch Modan, save ALL of the Chunks of Boar Meat you get and DO NOT vendor it. You'll need it for later
 step << Gnome
@@ -1391,6 +1422,7 @@ step
     .goto Loch Modan,34.8,49.3
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
+    #som/era
     .goto Loch Modan,34.76,48.62
     .vendor >> Buy 6 slots until your bag containers are full. Also buy 1 Flint and Tinder, and 2 Simple Wood
     .collect 4470,2 --Simple Wood (2)
@@ -1535,13 +1567,20 @@ step
     .goto Wetlands,9.5,59.7
     .fp >> Get the Menethil Harbor flight path
 step
+    #som/era
     #sticky
     #completewith Darkshore1
     +Wait here for the boat. Make a Campfire from your spellbook and start cooking the chunks of boar meat you saved from earlier. You need at least 10 skill now, and 50 later (so cook all of it)
     .goto Wetlands,4.7,57.3
 step
+    #som/era
     #label Darkshore1
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore. If you've finished cooking food, start conjuring as much level 5 water as possible
+step
+    #som
+    #phase 3-6
+    #label Darkshore1
+    .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore. Start conjuring as much level 5 water as possible
 ]],"Human Mage/Gnome Mage")
 
 
