@@ -683,7 +683,7 @@ step << Dwarf !Paladin/Gnome
 step << Dwarf !Paladin/Gnome
     #hardcore
     #completewith next
-    .goto Loch Modan,17.01,19.54,150 >> Travel to the skip spot
+    .goto Dun Morogh,59.5,42.8,150 >> Travel to the skip spot
 step << Dwarf !Paladin/Gnome
     #hardcore
     .goto Dun Morogh,59.5,42.8,40,0
