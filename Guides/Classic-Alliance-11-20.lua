@@ -525,6 +525,7 @@ step << Druid
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #classic
+#era/som
 << Alliance
 #name 13-15 Westfall
 #next 14-19 Darkshore
@@ -1291,7 +1292,6 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #name 14-19 Darkshore
 #next 19-20 Redridge
 
-
 step
     .goto Felwood,19.10,20.63
     >>Head to Auberdine
@@ -1425,6 +1425,7 @@ step
     .goto Felwood,25.15,4.61
     .accept 4723 >> Accept Beached Sea Creature
 step
+    #era/som
     #completewith Ameth
      >> Kill Striders. Loot them for Strider Meat
     .collect 5469,5,2178,1
@@ -1515,6 +1516,7 @@ step
     .goto Felwood,23.29,36.73
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step
+    #era/som
     #requires ghosts
     #completewith Bears
      >> Kill Striders. Loot them for Strider Meat
@@ -1539,6 +1541,13 @@ step
     .goto Felwood,19.64,39.52
     .accept 4722 >> Accept Beached Sea Turtle
 step
+    #era/som
+    .goto Darkshore,38.83,60.82
+    >>Finish killing Rabid Thistle Bears and getting Strider Meat
+    .complete 2138,1 --Rabid Thistle Bear (20)
+    .collect 5469,5,2178,1
+step
+    #phase 3-6
     .goto Darkshore,38.83,60.82
     >>Finish killing Rabid Thistle Bears and getting Strider Meat
     .complete 2138,1 --Rabid Thistle Bear (20)
@@ -2143,10 +2152,22 @@ step << Rogue
     >>Talk to Marda. Buy a Longsword for your mainhand and Kris for your offhand.
     .collect 923,1 --Longsword
     .collect 2209,1 --Kris
-step << !Human
+step << !Human !Warlock
+    #som
+    #phase 3-6
      #completewith start
      .goto Stormwind City,66.2,62.4
-    .fp Stormwind >> Get the Stormwind City flight path if you haven't
+    .fp Stormwind >> Get the Stormwind City Flight Path
+step << !Human !Warlock
+    #phase 3-6
+     #completewith start
+     .goto Stormwind City,66.2,62.4
+    .fp Stormwind >> Get the Stormwind City Flight Path
+step << !Human
+    #era/som
+     #completewith start
+     .goto Stormwind City,66.2,62.4
+    .fp Stormwind >> Get the Stormwind City Flight Path
 step << NightElf
     .goto Stormwind City,73.2,92.1
     .zone Elwynn Forest >> Leave Stormwind through the main gate
@@ -2160,23 +2181,53 @@ step << NightElf Rogue/NightElf Priest
     .goto Elwynn Forest,43.28,65.72 << Priest
     .goto Elwynn Forest,43.87,65.94 << Rogue
     .trainer >> Train your class spells
-step << NightElf
+step << !Human !Warlock
+    #phase 3-6
     #level 20
     >>Run to the Tower of Azora
     .goto Elwynn Forest,65.20,69.80
     .accept 94 >> Accept A Watchful Eye
-step << !NightElf
+step << NightElf
+    #era/som
+    #level 20
+    >>Run to the Tower of Azora
+    .goto Elwynn Forest,65.20,69.80
+    .accept 94 >> Accept A Watchful Eye
+step << Human/Warlock
+    #phase 3-6
     .goto Stormwind City,66.27,62.13
     .fly Redridge >>Fly to Redridge Mountains
+step << !NightElf
+    #era/som
+    .goto Stormwind City,66.27,62.13
+    .fly Redridge >>Fly to Redridge Mountains
+step << !Human !Warlock
+    #phase 3-6
+    #label start
+    .goto Redridge Mountains,15.27,71.45
+    .zone Redridge Mountains >> Head to Redridge Mountains
 step << !Human
+    #era/som
     #label start
     .goto Redridge Mountains,15.27,71.45
     .zone Redridge Mountains >> Head to Redridge Mountains
 step << NightElf
+    #era/som
     .goto Redridge Mountains,15.27,71.45
      >> Head to the Redridge/Elwynn border
     .accept 244 >> Accept Encroaching Gnolls
+step << !Human !Warlock
+    #phase 3-6
+    .goto Redridge Mountains,15.27,71.45
+     >> Head to the Redridge/Elwynn border
+    .accept 244 >> Accept Encroaching Gnolls
+step
+    #phase 3-6
+    .goto Redridge Mountains,30.73,59.99
+    .turnin 244 >> Turn in Encroaching Gnolls << !Human !Warlock
+    .accept 246 >> Accept Assessing the Threat
 step << NightElf
+    #era/som
     .goto Redridge Mountains,30.73,59.99
     .turnin 244 >> Turn in Encroaching Gnolls
     .accept 246 >> Accept Assessing the Threat
@@ -2206,6 +2257,7 @@ step
     .turnin 65 >> Turn in The Defias Brotherhood
     .isOnQuest 65
 step
+    #era/som
     .goto Redridge Mountains,22.70,44.00
     >>Exit the Inn. Go west then into the building
     .accept 92 >> Accept Redridge Goulash
@@ -2254,6 +2306,7 @@ step
     .collect 1081,5,92,1
 step
     #som
+    #phase 1-2
     #sticky
     #completewith orcs
     >>Kill Boars for 5 Great Goretusk Snout, Condors for 5 Tough Condor Meat, and Spiders for 5 Crisp Spider Meat
@@ -2273,6 +2326,7 @@ step
     .turnin 129 >> Turn in A Free Lunch
     .accept 130 >> Accept Visit the Herbalist
 step
+    #era/som
     .goto Redridge Mountains,9.35,78.96    
     >>Kill Spiders. Loot them for the Crisp Spider Meat
     .collect 1081,5,92,1
@@ -2286,6 +2340,7 @@ step
     .complete 127,1
     .collect 1468,8,150,1
 step
+    #era/som
     .goto Redridge Mountains,61.37,77.10
     >> Kill Condors. Loot them for Condor Meat
     >> If there's no Condors around, skip this step
@@ -2296,6 +2351,7 @@ step
     .goto Redridge Mountains,74.00,79.00
     .complete 20,1 --Battleworn Axe (10)
 step
+    #era/som
     .goto Redridge Mountains,61.37,77.10
     >> Kill Condors. Loot them for the Crisp Condor Meat
     .collect 1080,5,92,1
@@ -2450,6 +2506,7 @@ step
     .accept 150 >> Accept Murloc Poachers
     .turnin 150 >> Turn in Murloc Poachers
 step
+    #era/som
     .isQuestComplete 92
     .goto Redridge Mountains,22.67,43.83
     .turnin 92 >> Turn in Redridge Goulash
@@ -2458,6 +2515,7 @@ step
     .turnin 130 >> Turn in Visit the Herbalist
     .accept 131 >> Accept Delivering Daffodils
 step
+    #era/som
     >>Kill Boars. Loot them for Great Goretusk Snouts
     .goto Redridge Mountains,16.23,48.35,100,0
     .goto Redridge Mountains,32.25,70.20,100,0
@@ -2465,6 +2523,7 @@ step
     .goto Redridge Mountains,32.25,70.20,0
     .collect 2296,5,92,1
 step
+    #era/som
     .goto Redridge Mountains,22.67,43.83
     .turnin 92 >> Turn in Redridge Goulash
 step
