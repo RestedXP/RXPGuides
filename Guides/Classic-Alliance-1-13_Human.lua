@@ -1,5 +1,6 @@
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #classic
+#era/som
 << Alliance
 #name 1-11 Elwynn Forest
 #next 11-13 Loch Modan
@@ -1219,6 +1220,7 @@ step
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #classic
+#era/som
 << Alliance
 #name 11-13 Loch Modan
 #next 13-15 Westfall
