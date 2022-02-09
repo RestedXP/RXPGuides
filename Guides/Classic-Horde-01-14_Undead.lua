@@ -3,6 +3,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
 << Horde
 #name 1-11 Tirisfal Glades
 #next 11-14 Silverpine Forest
+#next 12-17 Barrens
 
 step << !Scourge
     #sticky
@@ -762,7 +763,7 @@ step
 step
     >>Take one of the lifts down to the main part of Undercity
     .goto Undercity,67.72,37.88
-    .home >> Set your HS to Undercity
+    .home >> Set your Hearthstone to Undercity
 step << Warlock
     .goto Undercity,85.07,25.99
     .turnin 1478 >> Turn in Halgar's Summons
@@ -912,17 +913,36 @@ step
     .deathskip >> Die ON THE SMALLER ISLAND and respawn at Brill
 step
     #softcore
+    #era/som
     .goto Tirisfal Glades,59.45,52.39
     .turnin 369 >>Turn in A New Plague
     .accept 492 >>Accept A New Plague
     .accept 445 >>Accept Delivery to Silverpine Forest
 step
     #hardcore
+    #era/som
     >>Run back to Brill
     .goto Tirisfal Glades,59.45,52.39
     .turnin 369 >>Turn in A New Plague
     .accept 492 >>Accept A New Plague
     .accept 445 >>Accept Delivery to Silverpine Forest
+step
+    #softcore
+    #som
+    #phase 3-6
+    .goto Tirisfal Glades,59.45,52.39
+    .turnin 369 >>Turn in A New Plague
+    .accept 492 >>Accept A New Plague
+--  .accept 445 >>Accept Delivery to Silverpine Forest
+step
+    #hardcore
+    #som
+    #phase 3-6
+    >>Run back to Brill
+    .goto Tirisfal Glades,59.45,52.39
+    .turnin 369 >>Turn in A New Plague
+    .accept 492 >>Accept A New Plague
+--   .accept 445 >>Accept Delivery to Silverpine Forest
 step
     .goto Tirisfal Glades,60.58,51.77
     .turnin 371 >>Turn in At War With The Scarlet Crusade
@@ -1077,6 +1097,7 @@ step << Rogue
     >>If you see Astor, talk to him and kill him. Loot him for the letter. He patrols the road between Brill and The Sepulcher
     .complete 1886,1 --Astor's Letter of Introduction (1)
 step
+    .goto Undercity,66.36,0.36
     .zone Undercity >> Run to Undercity
 step << Rogue/Warrior
     .isQuestComplete 1886 << Rogue
@@ -1160,13 +1181,66 @@ step << Warlock
     .goto Undercity,86.20,15.92
     .trainer >> Train your class spells inside the building
 step << !Warrior
+    #era/som
     .goto Undercity,46.16,43.97,50,0
     .goto Undercity,41.04,33.26,50,0
     .goto Undercity,23.86,35.90,50,0
     .goto Undercity,15.06,32.86,50 >> Exit Undercity via the Sewers
+step << !Warrior
+    #som
+    #phase 3-6
+    #sticky
+    #completewith next
+    .goto Undercity,82.36,15.31 
+    +Perform a Logout Skip by positioning your character until it looks like they're floating on the edge of a bridge, then logging out and back in.
+    .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> CLICK HERE for an example
+    >>If you can't do this, just run out of Undercity normally
+step << !Warrior
+    #som
+    #phase 3-6
+    .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
+step << Undead
+    #som
+    #phase 3-6
+    #sticky
+    #completewith next
+    +Go up the Zeppelin Tower. Take the Zeppelin to Orgrimmar. Make Sharpening Stones/Bandages while you wait << Warrior/Rogue
+    +Go up the Zeppelin Tower. Take the Zeppelin to Orgrimmar. Conjure Food/water while you wait << Mage
+    +Go up the Zeppelin Tower. Take the Zeppelin to Orgrimmar. << !Warrior !Rogue !Mage
+    .goto Tirisfal Glades,60.74,58.74
+step << Undead
+    #som
+    #phase 3-6
+    .goto Tirisfal Glades,60.89,59.06,30,0
+    .goto Tirisfal Glades,60.73,58.76
+    .zone Durotar >> Take the zeppelin to Durotar
+step << Undead
+    #som
+    #phase 3-6
+    >>Run to Razor Hill
+    .goto Durotar,50.85,43.59
+    .accept 840 >>Accept Conscript of the Horde
+step << Undead
+    #som
+    #phase 3-6
+    >>Run to The Barrens
+    .goto The Barrens,62.26,19.38
+    .turnin 840 >>Turn in Conscript of the Horde
+    .accept 842 >>Accept Crossroads Conscription
+step << Undead
+    #som
+    #phase 3-6
+    .goto The Barrens,52.23,31.01
+    .turnin 842 >>Turn in Crossroads Conscription
+    .accept 844 >>Accept Plainstrider Menace
+step << Mage
+    #som
+    #phase 3-6
+    +If you're planning on leveling via AoE, choose the Barrens AoE Guide manually. Otherwise, complete this step
 ]],"Scourge")
 RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
 #classic
+#era/som
 << Horde
 #name 11-14 Silverpine Forest
 #next 12-17 The Barrens
@@ -1524,7 +1598,7 @@ step << Undead
     +Go up the Zeppelin Tower. Take the Zeppelin to Orgrimmar. << !Warrior !Rogue !Mage
     .goto Tirisfal Glades,60.74,58.74
 step << Undead
-    .zone Durotar >> Travel to Durotar
+    .zone Durotar >> Take the zeppelin to Durotar
 step << Undead
     .goto Durotar,50.85,43.59
     .accept 840 >>Accept Conscript of the Horde
