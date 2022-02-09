@@ -1547,6 +1547,7 @@ step
     .complete 2138,1 --Rabid Thistle Bear (20)
     .collect 5469,5,2178,1
 step
+    #som
     #phase 3-6
     .goto Darkshore,38.83,60.82
     >>Finish killing Rabid Thistle Bears and getting Strider Meat
@@ -2159,6 +2160,7 @@ step << !Human !Warlock
      .goto Stormwind City,66.2,62.4
     .fp Stormwind >> Get the Stormwind City Flight Path
 step << !Human !Warlock
+    #som
     #phase 3-6
      #completewith start
      .goto Stormwind City,66.2,62.4
@@ -2182,6 +2184,7 @@ step << NightElf Rogue/NightElf Priest
     .goto Elwynn Forest,43.87,65.94 << Rogue
     .trainer >> Train your class spells
 step << !Human !Warlock
+    #som
     #phase 3-6
     #level 20
     >>Run to the Tower of Azora
@@ -2194,6 +2197,7 @@ step << NightElf
     .goto Elwynn Forest,65.20,69.80
     .accept 94 >> Accept A Watchful Eye
 step << Human/Warlock
+    #som
     #phase 3-6
     .goto Stormwind City,66.27,62.13
     .fly Redridge >>Fly to Redridge Mountains
@@ -2202,6 +2206,7 @@ step << !NightElf
     .goto Stormwind City,66.27,62.13
     .fly Redridge >>Fly to Redridge Mountains
 step << !Human !Warlock
+    #som
     #phase 3-6
     #label start
     .goto Redridge Mountains,15.27,71.45
@@ -2217,11 +2222,13 @@ step << NightElf
      >> Head to the Redridge/Elwynn border
     .accept 244 >> Accept Encroaching Gnolls
 step << !Human !Warlock
+    #som
     #phase 3-6
     .goto Redridge Mountains,15.27,71.45
      >> Head to the Redridge/Elwynn border
     .accept 244 >> Accept Encroaching Gnolls
 step
+    #som
     #phase 3-6
     .goto Redridge Mountains,30.73,59.99
     .turnin 244 >> Turn in Encroaching Gnolls << !Human !Warlock
