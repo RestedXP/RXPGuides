@@ -97,6 +97,7 @@ step
     .goto Tirisfal Glades,30.8,66.2
     .turnin 364 >> Turn in The Mindless Ones
 step
+    #era/som
     .goto Tirisfal Glades,30.8,66.2    
     .accept 3095 >> Accept Simple Scroll << Warrior
     .accept 3096 >> Accept Encrypted Scroll << Rogue
@@ -104,6 +105,16 @@ step
     .accept 3098 >> Accept Glyphic Scroll << Mage
     .accept 3099 >> Accept Tainted Scroll << Warlock
     .accept 3901 >> Accept Rattling the Rattlecages
+    .accept 376 >> Accept The Damned
+step
+    #som
+    #phase 3-6
+    .goto Tirisfal Glades,30.8,66.2    
+    .accept 3095 >> Accept Simple Scroll << Warrior
+    .accept 3096 >> Accept Encrypted Scroll << Rogue
+    .accept 3097 >> Accept Hallowed Scroll << Priest
+    .accept 3098 >> Accept Glyphic Scroll << Mage
+    .accept 3099 >> Accept Tainted Scroll << Warlock
     .accept 376 >> Accept The Damned
 step << Mage
     .goto Tirisfal Glades,30.9,66.1
@@ -127,6 +138,7 @@ step
     .complete 376,1 --Collect Scavenger Paw (x6)
     .complete 376,2 --Collect Duskbat Wing (x6)
 step
+    #era/som
     .goto Tirisfal Glades,33.15,60.70
     >> Kill Skeletons in the town
     .complete 3901,1 --Kill Rattlecage Skeleton (12) 
@@ -139,6 +151,7 @@ step << Priest
     .goto Tirisfal Glades,32.3,65.4
     .vendor >>vendor trash, buy water down to no lower than 1s 90c
 step
+     #era/som
     .goto Tirisfal Glades,30.9,66.2
     .turnin 3901 >> Turn in Rattling the Rattlecages
 step
@@ -257,6 +270,7 @@ step
     .goto Tirisfal Glades,40.91,54.17
     .accept 365 >>Accept Fields of Grief
 step
+    #era/som
     .unitscan Gordo
     .goto Tirisfal Glades,40.79,54.47,40,0
     .goto Tirisfal Glades,42.67,54.97,40,0
@@ -349,6 +363,7 @@ step
     .goto Tirisfal Glades,58.20,51.45
     .accept 404 >>Accept A Putrid Task
 step
+    #era/som
     #sticky
     #completewith next
     >>Loot the small purple Weeds on the ground
@@ -363,6 +378,7 @@ step
     >>Kill any Decrepit Darkhounds you see. Loot them for their Blood
     .complete 367,1 --Darkhound Blood (5)
 step
+    #era/som
     .goto Tirisfal Glades,40.06,51.10
     >>Finish looting the small purple Weeds on the ground. They can be found all the way en route west to the field
     .complete 5481,1 --Gloom Weed (3)
@@ -385,6 +401,7 @@ step
     #completewith next
      .hs >> Hearth to Brill
 step
+    #era/som
     >>Turn in at the Junior Apothecary. He patrols around the Graveyard
     .goto Tirisfal Glades,57.68,48.96
     .turnin 5481 >>Turn in Gordo's Task
@@ -433,6 +450,7 @@ step
     .goto Tirisfal Glades,61.97,51.29
     .turnin 407 >>Turn in Fields of Grief
 step
+    #era/som
     >>Go upstairs
     .goto Tirisfal Glades,61.89,52.73
     .accept 375 >>Accept The Chill of Death
@@ -471,6 +489,7 @@ step << Warrior
     >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Oliver. Otherwise, skip this step (you'll come back later)
     .collect 2488,1
 step
+    #era/som
     #sticky
     #completewith NewPlague
     >>Kill Duskbats that you see. Loot them for their Pelts
@@ -489,6 +508,7 @@ step
     .turnin 367 >>Turn in A New Plague
     .accept 368 >>Accept A New Plague
 step
+    #era/som
     >>Kill Duskbats that you see. Loot them for their Pelts
     .goto Tirisfal Glades,58.60,57.13,100,0
     .goto Tirisfal Glades,66.16,53.62,100,0
@@ -496,12 +516,15 @@ step
        .goto Tirisfal Glades,58.60,57.13
     .complete 375,1 --Duskbat Pelt (5)
 step << Rogue/Warrior
+    #era/som
     .xp 7+3800 >> Grind to 3800+/4500
 step << Rogue/Warrior
+    #era/som
     .goto Tirisfal Glades,61.03,52.38
     >>Purchase a Coarse Thread from Abigail
     .complete 375,2 --Coarse Thread (1)
 step << Rogue/Warrior
+    #era/som
     >>Go upstairs
     .goto Tirisfal Glades,61.89,52.73
     .turnin 375 >>Turn in The Chill of Death
@@ -512,6 +535,7 @@ step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     .trainer >> Train your level 8 spells
 step
+    #era/som
     #sticky
     #completewith Eye
     >>Loot the small purple Weeds on the ground. They're found near trees in the Gnoll area
@@ -539,6 +563,7 @@ step
     >>Kill any type of Gnoll. Loot them for their Ichor
     .complete 358,3 --Embalming Ichor (8)
 step
+    #era/som
    .goto Tirisfal Glades,56.81,40.19
     >>Finish looting the small purple Weeds on the ground. They're found near trees in the Gnoll area
     .complete 5482,1 --Doom Weed (10)
@@ -559,6 +584,7 @@ step
     #completewith next
     .goto Tirisfal Glades,58.40,47.76,250 >> Run back to Brill. Hearth if its up
 step
+    #era/som
     .goto Tirisfal Glades,58.40,47.76
     .turnin 5482 >>Turn in Doom Weed
 step
@@ -574,6 +600,7 @@ step
     .accept 405 >>Accept The Prodigal Lich
     .accept 359 >>Accept Forsaken Duties
 step
+    #era/som
     .goto Tirisfal Glades,61.03,52.38
     >>Purchase a Coarse Thread from Abigail
     .complete 375,2 --Coarse Thread (1)
@@ -581,6 +608,7 @@ step << Warrior
     .goto Tirisfal Glades,61.85,52.55
     .trainer >> Train your level 8 spells
 step
+    #era/som
     >>Go upstairs
     .goto Tirisfal Glades,61.89,52.73
     .turnin 375 >>Turn in The Chill of Death
