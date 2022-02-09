@@ -76,10 +76,17 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar << !Rogue
 step << !Shaman
+	#era/som
     .goto The Barrens,51.5,30.1
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
 	.turnin 1358 >> Turn in Sample for Helbrim << Undead/Rogue
+step << !Shaman
+	#som
+	#phase 3-6
+    .goto The Barrens,51.5,30.1
+    .accept 848 >>Accept Fungal Spores
+    .accept 1492 >>Accept Wharfmaster Dizzywig
 step
     #sticky
     #completewith next
