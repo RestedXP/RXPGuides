@@ -1443,7 +1443,11 @@ end
 
 
 function RXP_.functions.next(skip,guide)
-    if skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then 
+	if type(skip) == "string" then
+		local element = {}
+		element.textOnly = true
+		return element
+    elseif skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then 
         return 
     end
     guide = guide or RXP_.currentGuide
@@ -2418,8 +2422,8 @@ end
 function RXP_.functions.maxlevel(self,...)
     if type(self) == "string" then --on parse
         local element = {}
-        local text,str = ...
-
+        local text,str,ref = ...
+		element.ref = ref
         str = str:gsub(" ","")
         local level,xp = str:match("(%d+)([%+%.%-]?%d*)")
         element.xp = tonumber(xp)
@@ -2439,10 +2443,17 @@ function RXP_.functions.maxlevel(self,...)
 	local step = element.step
     
     if level > element.level then
-        if step.active and not step.completed then
+		if step.active and not step.completed then
 			RXP_.updateSteps = true
         end
         step.completed = true
+		if element.ref then
+			for n,guidestep in pairs(RXP_.currentGuide.steps) do
+				if guidestep.label == element.ref then
+					return RXP_.SetStep(n)
+				end
+			end
+		end
 		element.text = string.format("(Skip this step if you're above level %d)",element.level)
 	else
 		element.text = ""
