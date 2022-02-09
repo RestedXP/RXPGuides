@@ -1484,4 +1484,74 @@ step << Rogue
     .goto Durotar,50.8,13.8,40 >> Go to the Zeppelin tower. Take the zeppelin to Undercity
 step << Rogue
     .zone Tirisfal Glades >>Arrive in Tirisfal
+step << Rogue
+	#som
+	#phase 3-6
+    .goto Tirisfal Glades,61.87,65.02,40 >> Run to Undercity
+step << Rogue
+	#som
+	#phase 3-6
+    .goto Tirisfal Glades,61.81,74.42,30 >> Run to the Elevator room
+step << Rogue
+	#som
+	#phase 3-6
+    >>Take one of the elevators down
+    .goto Undercity,63.25,48.56
+    .fp >> Get the Undercity Flight Path
+step << Rogue
+	#som
+	#phase 3-6
+    .money <0.3023
+    .goto Tirisfal Glades,64.16,75.54
+    >>Talk to Charles. Buy a Cutlass from him (20s 23c). You'll train Swords soon. Skip this if your weapon is better, or there's something better on the AH
+    .collect 851,1 --Collect Cutlass (1)
+step << Rogue
+	#som
+	#phase 3-6
+    #softcore
+    .goto Undercity,57.32,32.77
+    .trainer >> Train Swords. If you didn't have enough to buy a cutlass earlier, check the AH for a weapon after
+step << Rogue
+	#som
+	#phase 3-6
+    #hardcore
+    .goto Undercity,57.32,32.77
+    .trainer >> Train Swords. If you didn't have enough to buy a cutlass earlier, then buy a cheap weapon from the next vendor you see or wait for one to drop whilst questing
+step << Rogue
+	#completewith Barrens
+    #som
+    #phase 3-6
+	.hs >> Hearth back to Crossroads if your hearth is up
+step << Rogue
+	#completewith next
+    #som
+    #phase 3-6
+    .goto Tirisfal Glades,60.89,59.06,30,0
+    .goto Tirisfal Glades,60.73,58.76
+    .zone Durotar >> Take the zeppelin to Durotar
+step << Rogue
+    #som
+    #phase 3-6
+    >>Run to Razor Hill
+    .goto Durotar,50.85,43.59
+    .accept 840 >>Accept Conscript of the Horde
+step << Rogue
+	#label Barrens
+    #som
+    #phase 3-6
+    .goto The Barrens,62.26,19.38
+	.zone The Barrens >> Travel to The Barrens
+step << Rogue
+    #som
+    #phase 3-6
+    >>Run to The Barrens
+    .goto The Barrens,62.26,19.38
+    .turnin 840 >>Turn in Conscript of the Horde
+    .accept 842 >>Accept Crossroads Conscription
+step << Rogue
+    #som
+    #phase 3-6
+    .goto The Barrens,52.23,31.01
+    .turnin 842 >>Turn in Crossroads Conscription
+    .accept 844 >>Accept Plainstrider Menace	
 ]],"Troll/Orc")
