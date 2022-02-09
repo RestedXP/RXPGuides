@@ -952,6 +952,7 @@ step
     .goto Redridge Mountains,40.46,40.52,50,0
     .complete 20,1 --Blackrock Axe (10)
 step
+    #som/era
     #completewith next
     .goto Redridge Mountains,49.25,39.66,150 >> Run toward the spiders
 step
