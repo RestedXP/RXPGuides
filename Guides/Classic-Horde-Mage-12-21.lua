@@ -5,8 +5,14 @@ RXPGuides.RegisterGuide("RestedXP Horde Mage AoE",[[
 #next 17-21 Stonetalon/Barrens AoE
 
 step << Mage
+	#som/era
     #completewith next
 	+Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but a LOT faster
+step << Mage
+	#som
+	#phase 3-6
+    #completewith next
+	+Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, and is also slower due to the recent 100% Quest xp changes in SoM
 step
     .goto The Barrens,52.2,31.8
     .accept 870 >>Accept The Forgotten Pools
