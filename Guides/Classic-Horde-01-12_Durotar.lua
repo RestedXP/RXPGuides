@@ -45,11 +45,18 @@ step << Warlock
      .goto Durotar,40.6,68.5
     .train 348 >>Train Immolate
 step << !Warlock
+	#som
+	#phase 3-6
+	#completewith BoarsX
+    .goto Durotar,41.9,63.7,0
+	>>Kill Boars whilst doing other quests
+    .complete 788,1 --Mottled Boar (10)
+step << !Warlock
+	#era/som
     .goto Durotar,41.9,63.7
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
-    #sticky
-    #completewith WarlockBoars
+    #completewith next
 	>>Kill Mottled Boars en route to Vile Familiars. Try to get level 2 before getting to Familiars. Don’t sit and drink for these
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
@@ -60,12 +67,12 @@ step << Warlock
     >>Kill Vile Familiars for their heads
     .complete 1485,1 --Vile Familiar Head (6)
 step << Warlock
-    #sticky
-	#label MottledBoarAndy
+	#completewith BoarAndyW
+    .goto Durotar,40.6,62.6,0
     >>Finish off killing the Mottled Boars
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
-    >>Grind Boars en route
+	>>Grind boars en route
     .goto Durotar,40.6,62.6
     .accept 790 >>Accept Sarkoth
 step << !Warlock
@@ -77,13 +84,28 @@ step
     .goto Durotar,40.7,67.3
     .complete 790,1 --Sarkoth's Mangled Claw (1)
 step
+    #label BoarAndyW
     .goto Durotar,40.6,62.6
     .turnin 790 >>Turn in Sarkoth
     .accept 804 >>Accept Sarkoth
 step << Warlock
+    .goto Durotar,40.6,62.6
+    >>Finish off killing the Mottled Boars
+    .complete 788,1 --Mottled Boar (10)
+step << Warlock
+	#era/som
     .xp 3+850 >> Grind to 850+/1400xp on the way back to town
 step << Warlock
-    #requires MottledBoarAndy
+	#som
+	#phase 3-6
+    .xp 3 >> Grind to level 3 on the way back to town
+step << Warlock
+	#era/som
+	.goto Durotar,42.6,67.3
+    .vendor >>Vendor trash & buy 10 water
+step << Warlock
+	#som
+	#phase 3-6
 	.goto Durotar,42.6,67.3
     .vendor >>Vendor trash & buy 10 water
 step << Warlock
@@ -96,10 +118,45 @@ step << Warlock
     .turnin 1499 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
 step
+	#era/som
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 789 >>Accept Sting of the Scorpid
+    .accept 2383 >>Accept Simple Parchment << Orc Warrior
+    .accept 3065 >>Accept Simple Tablet << Troll Warrior
+    .accept 3082 >>Accept Etched Tablet << Troll Hunter
+    .accept 3083 >>Accept Encrypted Tablet << Troll Rogue
+    .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
+    .accept 3085 >>Accept Hallowed Tablet << Troll Priest
+    .accept 3086 >>Accept Glyphic Tablet << Troll Mage
+    .accept 3087 >>Accept Etched Parchment << Orc Hunter
+    .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
+    .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
+    .accept 3090 >>Accept Tainted Parchment << Orc Warlock
+step
+	#som
+	#phase 3-6
+    .goto Durotar,42.1,68.3
+    .turnin 804 >>Turn in Sarkoth
+    .turnin 788 >>Turn in Cutting Teeth
+    .accept 2383 >>Accept Simple Parchment << Orc Warrior
+    .accept 3065 >>Accept Simple Tablet << Troll Warrior
+    .accept 3082 >>Accept Etched Tablet << Troll Hunter
+    .accept 3083 >>Accept Encrypted Tablet << Troll Rogue
+    .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
+    .accept 3085 >>Accept Hallowed Tablet << Troll Priest
+    .accept 3086 >>Accept Glyphic Tablet << Troll Mage
+    .accept 3087 >>Accept Etched Parchment << Orc Hunter
+    .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
+    .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
+    .accept 3090 >>Accept Tainted Parchment << Orc Warlock
+	.isQuestComplete 788
+step
+	#som
+	#phase 3-6
+    .goto Durotar,42.1,68.3
+    .turnin 804 >>Turn in Sarkoth
     .accept 2383 >>Accept Simple Parchment << Orc Warrior
     .accept 3065 >>Accept Simple Tablet << Troll Warrior
     .accept 3082 >>Accept Etched Tablet << Troll Hunter
@@ -182,12 +239,14 @@ step
     >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step << !Warlock
+	#era/som
     #sticky
     #completewith imps
     .goto Durotar,47.1,65.2,30,0
     >>Kill Scorpions for some tails en route to the cave
     .complete 789,1 --Scorpid Worker Tail (10)
 step << Warlock
+	#era/som
     >>Kill Scorpions for their tails
     .complete 789,1 --Scorpid Worker Tail (10)
     .goto Durotar,47.1,65.2,80,0
@@ -199,6 +258,7 @@ step << !Warlock
     >>Kill Imps in front of the cave
     .complete 792,1 --Vile Familiar (12)
 step << !Warlock
+	#era/som
     >>Finish off the Scorpion Tails
     .goto Durotar,39.8,63.5
     .complete 789,1 --Scorpid Worker Tail (10)
@@ -215,9 +275,16 @@ step
     >>Finish looting the Cactus Apples
     .complete 4402,1 --Cactus Apple (10)
 step
+	#label BoarsX
     .goto Durotar,47.09,57.93
     >>Finish waking the Peons around the trees. Backtrack if you are struggling to find any sleeping.
     .complete 5441,1 --Peons Awoken (5)
+step << !Warlock
+	#som
+	#phase 3-6
+    .goto Durotar,41.9,63.7
+	>>Finish killing Boars
+    .complete 788,1 --Mottled Boar (10)
 step
     #era
     .goto Durotar,42.7,67.2
@@ -229,8 +296,14 @@ step << Mage/Priest/Warlock
     .goto Durotar,42.6,67.3
     .vendor >>Vendor trash. Buy 10 water
 step
+	#era/som
     .goto Durotar,42.1,68.3
     .turnin 789 >>Turn in Sting of the Scorpid
+step << !Warlock
+	#som
+	#phase 3-6
+    .goto Durotar,42.1,68.3
+    .turnin 788 >>Turn in Cutting Teeth
 step << Shaman
     .goto Durotar,42.4,69.1
     .accept 1516 >>Accept Call of Earth
@@ -348,6 +421,7 @@ step
     .goto Durotar,52.1,68.3
     .accept 2161 >>Accept A Peon's Burden
 step
+	#era/som
     .goto Durotar,54.3,73.3,25,0
     .goto Durotar,54.5,75.0,25,0
     .goto Durotar,54.1,76.6,25,0
@@ -390,6 +464,7 @@ step << Hunter
     >>Repair your weapon. If you have enough money (2s 85c) buy a Hornwood Recurve Bow from Traxexir. Otherwise, skip this step (you'll come back later)
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
+	#era/som
     #sticky
     #completewith next
     .goto Durotar,59.7,71.7,50,0
@@ -398,74 +473,80 @@ step
     .complete 818,2 --Crawler Mucus (8)
     .complete 818,1 --Intact Makrura Eye (4)
 step
+	#era/som
     .goto Durotar,52.1,83.3,75 >> Reach the end of the beach
 step
+	#era/som
     .goto Durotar,50.9,79.2,30 >>Enter the Kolkar base
 step << Priest
+	#era/som
     #sticky
 	#softcore
     >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
     >>Skip this step if you've already bought a wand or can get one cheap from the AH.
     .collect 2589,60 --Linen Cloth (60)
 step << Priest
+	#era/som
     #sticky
 	#hardcore
     >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
     .collect 2589,60 --Linen Cloth (60)	
-	
 step
-	#era
+	#era/som
     .unitscan Warlord Kolkanis
     #sticky
     #completewith Bonfire
-    +If the rare is up, kill it when you are level 7. Be sure to use the Cactus Apple Surprise for +2 stam and use the Healing Potion from earlier.
+    +If the rare is up, kill it when you are level 7. Be sure to use the Healing Potion from earlier.
 step
-	#som
-    .unitscan Warlord Kolkanis
-    #sticky
-    #completewith Bonfire
-    +If the rare is up, kill it when you are level 7. Be sure to use the Healing Potion and Cactus Apple Surprise for +2 stam if you have them.
-step
+	#era/som
     >>Burn the scroll inside the tent, on the ground
     .goto Durotar,49.8,81.2
     .complete 786,1 --Attack Plan: Valley of Trials destroyed (1)
 step
+	#era/som
     >>Burn the scroll on the ground
     .goto Durotar,47.7,77.4
     .complete 786,2 --Attack Plan: Sen'jin Village destroyed (1)
 step
+	#era/som
     #label Bonfire
     >>Burn the scroll on the ground
     .goto Durotar,46.3,79.0
     .complete 786,3 --Attack Plan: Orgrimmar destroyed (1)
 step
+	#era/som
     #softcore
     .goto Durotar,57.5,73.3,200 >> Die at the Bonfire and respawn at the Spirit Healer, or run back
 step << Shaman
+	#era/som
     #softcore
     .goto Durotar,56.5,73.1
     >>Repair your weapon. If you have enough money (5s 4c) buy a Walking Stick from Traxexir. Otherwise, skip this step (you'll come back later)
 	>>You can talk to him from outside
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
+	#era/som
     #softcore
     .goto Durotar,56.5,73.1
      >>Repair your weapon. If you have enough money (4s 1c) buy a Stiletto from Traxexir. Otherwise, skip this step (you'll come back later)
 	>>You can talk to him from outside
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
+	#era/som
     #softcore
     .goto Durotar,56.5,73.1
     >>Repair your weapon. If you have enough money (4s 84c) buy a Large Axe from Traxexir. Otherwise, skip this step (you'll come back later)
 	>>You can talk to him from outside
     .collect 2491,1 --Collect Large Axe
 step << Troll Warrior
+	#era/som
     #softcore
     .goto Durotar,56.5,73.1
     >>Repair your weapon. If you have enough money (5s 40c) buy a Tomahawk from Traxexir. Otherwise, skip this step (you'll come back later)
 	>>You can talk to him from outside
     .collect 2490,1 --Collect Tomahawk
 step << Hunter
+	#era/som
     #softcore
     .goto Durotar,56.5,73.1
     >>Repair your weapon. If you have enough money (2s 85c) buy a Hornwood Recurve Bow from Traxexir. Otherwise, skip this step (you'll come back later)
@@ -476,10 +557,17 @@ step
     #completewith next
     .goto Durotar,57.46,57.69,120 >>Die inside of Tiragarde keep. Respawn in Razor Hill
 step
+	#era/som
     #hardcore
     #completewith next
     .goto Durotar,50.9,79.2,50,0
     .goto Durotar,52.5,44.4,120 >>Leave the Kol'Kar base. Grind mobs on your way to Razor Hill
+step
+	#som
+	#phase 3-6
+    #hardcore
+    #completewith next
+    .goto Durotar,52.2,43.2,120 >>Travel to Razor Hill
 step
     .goto Durotar,52.2,43.2
     .turnin 823 >>Turn in Report to Orgnil
@@ -584,6 +672,7 @@ step
     .xp 7+2195 >> Grind to 2195+/4500xp
 step
 	#som
+	#phase 1-2
     .goto Durotar,58.4,57.2
     .xp 7+1890 >> Grind to 1890+/4500xp
 step
