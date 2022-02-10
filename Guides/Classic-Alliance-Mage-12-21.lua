@@ -831,6 +831,7 @@ step
     .goto Redridge Mountains,29.24,53.63
     .turnin 3741 >>Turn in Hilary's Necklace
 step
+    #som/era
     #completewith Murlocs
     >>Grind the first 3 items for Redridge Goulash as you do other quests. Also get enough Chunks of Boar Meat to get you to 50 cooking
     >>Try to focus heavily on the Goretusks, don't really worry about spider meat yet
@@ -861,9 +862,16 @@ step
     .complete 127,1 --Spotted Sunfish (10)
     .complete 150,1 --Murloc Fin (8)
 step
+    #som/era
     >>Get the Condor Meat and Whelp scales from around this area. If you're waiting on respawns, then go east to get some Axes then come back here
     .goto Redridge Mountains,61.04,77.55
     .complete 92,2 --Tough Condor Meat (5)
+    .complete 122,1 --Underbelly Whelp Scale (6)
+step
+    #som
+    #phase 3-6
+    >>Get the Whelp scales from around this area. If you're waiting on respawns, then go east to get some Axes then come back here
+    .goto Redridge Mountains,61.04,77.55
     .complete 122,1 --Underbelly Whelp Scale (6)
 step
     >>AoE orcs in the area. Loot them for their axes. Be careful as the Outrunners Net and the Renegades shield bash.
@@ -879,6 +887,7 @@ step
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
 step
+    #som/era
     >>Finish off the Goretusk snouts here
     .goto Redridge Mountains,32.07,70.54
     .complete 92,1 --Great Goretusk Snout (5)
@@ -943,9 +952,11 @@ step
     .goto Redridge Mountains,40.46,40.52,50,0
     .complete 20,1 --Blackrock Axe (10)
 step
+    #som/era
     #completewith next
     .goto Redridge Mountains,49.25,39.66,150 >> Run toward the spiders
 step
+    #som/era
     >>Kill Spiders. Loot them for the meat
     >>Be careful as their poison can do some damage
     >>Be careful of Chatter (rare), as he has an 8 second-long stun
@@ -972,6 +983,13 @@ step
     .goto Redridge Mountains,27.01,44.81
     .vendor >> Buy level 15 drink
 step
+    #era/som
+    .goto Redridge Mountains,22.70,44.00
+    >>Exit the Inn. Go west then into the building
+    .accept 92 >> Accept Redridge Goulash
+    .turnin 92 >> Turn in Redridge Goulash
+step
+    #era/som
     #completewith next
     .goto Redridge Mountains,26.54,44.90
     +Cook all of the boar meat up until 50 cooking skill

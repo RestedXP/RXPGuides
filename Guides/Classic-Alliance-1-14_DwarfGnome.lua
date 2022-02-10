@@ -3146,23 +3146,6 @@ step
     .turnin 319 >> Turn in A Favor for Evershine
     .accept 320 >> Accept Return to Bellowfiz
 step
-    .isQuestTurnedIn 384
-    .xp 7+4360 >>Grind until 4360+/4500xp
-step
-    .xp 7+3735 >>Grind until 3735+/4500xp
-    .goto Dun Morogh,31.5,38.9,100,0
-    .goto Dun Morogh,28.3,39.9,100,0
-    .goto Dun Morogh,28.7,43.7,100,0
-    .goto Dun Morogh,25.8,47.2,100,0
-    .goto Dun Morogh,25.8,47.2,100,0
-    .goto Dun Morogh,30.0,51.8,100,0
-    .goto Dun Morogh,31.5,38.9,100,0
-    .goto Dun Morogh,28.3,39.9,100,0
-    .goto Dun Morogh,28.7,43.7,100,0
-    .goto Dun Morogh,25.8,47.2,100,0
-    .goto Dun Morogh,25.8,47.2,100,0
-    .goto Dun Morogh,30.0,51.8
-step
     #softcore
     .goto Dun Morogh,30.3,37.5,60 >> Run to here
 step
@@ -3348,9 +3331,26 @@ step
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
 step << Rogue
-    #level 10
     .goto Dun Morogh,47.6,52.6
     .accept 2218 >> Accept Road to Salvation
+    .trainer >> Train your class spells
+    >>Equip your Camping Knife from earlier
+step << Warlock
+    .goto Dun Morogh,47.3,53.7
+    >>Talk to Gimrizz
+    .trainer >> Train your class spells
+step << Mage
+    .goto Dun Morogh,47.5,52.1
+    .trainer >> Train your class spells
+step << Priest
+    .goto Dun Morogh,47.3,52.2
+    .trainer >> Train your class spells
+step << Paladin
+    .goto Dun Morogh,47.60,52.07
+    .trainer >> Train your class spells
+step << Warrior
+    .goto Dun Morogh,47.4,52.6
+    .trainer >> Train your class spells
 step << !Paladin !Priest
     .goto Dun Morogh,47.2,52.6
     .train 3273 >> Train First Aid
@@ -3779,7 +3779,7 @@ step
 step << !Warlock
     .goto Loch Modan,34.8,48.6
     .vendor >>Buy a 6 slot bag
-step << !Warlock
+step << Mage
     .goto Loch Modan,35.5,48.4
     .home >> Set your Hearthstone to Thelsamar
 step << Mage/Paladin
@@ -3874,7 +3874,8 @@ step
     .goto Loch Modan,24.8,18.4
     .accept 307 >> Accept Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
-    .accept 1338 >> Accept Stormpike's Order
+    .accept 1338 >> Accept Stormpike's Order << !Warlock !Mage
+    .turnin 353 >> Accept Stormpike's Delivery << Warlock
 step
     #label Tunnel
     #completewith next
@@ -3974,15 +3975,16 @@ step << !Mage !Paladin
 step << Mage/Paladin
     .goto Loch Modan,27.4,48.4
     .xp 13+7800 >> Grind until 7800+/11400xp
+step << Rogue
+    .goto Loch Modan,27.4,48.4
+    .money >0.4315
+    >>Grind until you have 43s 15c+ worth of money/vendorables. This is for Sinister Strike rank 3, 1h weapon skill training, Cutlass (weapon), and flying to Ironforge
 step
     .goto Loch Modan,22.07,73.12
     .turnin 224 >> Turn in In Defense of the King's Lands
 step
     .goto Loch Modan,23.23,73.67
     .turnin 267 >> Turn in The Trogg Threat
-step << !Dwarf/!Paladin
-    .goto Loch Modan,33.93,50.95
-    .fly Ironforge>> Fly to Ironforge
 step << Dwarf Paladin
     #completewith next
     .goto Dun Morogh,87.1,51.1
@@ -3997,7 +3999,32 @@ step << Dwarf Paladin
     >>Kill Dark Iron Spies
     .complete 1784,1 --Dark Iron Script (1)
 step << Dwarf Paladin
-    .hs >> Hearth to Ironforge
+    .goto Dun Morogh,70.66,56.70,40,0
+    .goto Dun Morogh,70.60,54.87
+    >>Perform a logout skip in the trogg cave to teleport back to Ironforge
+    .link https://www.youtube.com/watch?v=kbUSo62CfAM >> CLICK HERE for reference
+step << Mage
+    .hs >> Hearth to Thelsamar
+step << !Dwarf/!Paladin
+    .goto Loch Modan,33.9,51.0
+    .turnin 6387 >> Turn in Honor Students << !Mage
+    .accept 6391 >> Accept Ride to Ironforge << !Mage
+    .fp Thelsamar >> Get the Thelsamar Flight Path << !Mage
+    .fly Ironforge >> Fly to Ironforge
+step << !Mage !Paladin
+    .goto Ironforge,51.5,26.3
+    .turnin 6391 >> Turn in Ride to Ironforge
+    .accept 6388 >> Accept Gryth Thurden
+step << !Mage !Paladin !Warlock
+    .goto Ironforge,18.15,51.45
+    .home >> Set your Hearthstone to Ironforge
+step << !Mage !Paladin
+    .goto Ironforge,39.5,57.5
+    .turnin 291 >> Turn in The Reports
+step << !Mage !Paladin
+    .goto Ironforge,55.5,47.8
+    .turnin 6388 >> Turn in Gryth Thurden
+-- .accept 6392 >> Accept Return to Brock
 step << Warrior
     .goto Ironforge,62.0,89.6
     .train 176 >>Train Thrown
@@ -4045,77 +4072,41 @@ step << Rogue
     .goto Ironforge,51.50,15.34
     .turnin 2218 >> Turn in Road to Salvation
 step << !Druid !Warlock
-    .goto Ironforge,69.88,82.90 << Hunter
     .goto Ironforge,65.90,88.41 << Warrior
     .goto Ironforge,51.50,15.34 << Rogue
     .goto Ironforge,25.21,10.75 << Priest
     .goto Ironforge,27.17,8.57 << Mage
     .goto Ironforge,24.55,4.46 << Paladin
      .trainer >> Train your class spells
---X WIP
-step << Rogue
+step << !Warlock
     #completewith next
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
     .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
-step << !Paladin !Rogue
-    #completewith next
-    +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
-    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
-step << Rogue
-    .goto Ironforge,76.54,51.15,60,0
-    .goto Ironforge,76.54,51.15,0
-    .zone Stormwind City >> Take the tram to Stormwind City
-    >>Train first aid while wating/riding the tram, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-step << !Paladin !Rogue
-    .goto Ironforge,76.54,51.15,60,0
-    .goto Ironforge,76.54,51.15,0
-    .zone Stormwind City >> Take the tram to Stormwind City
-step
-    #label Thelsamar1
-    .goto Loch Modan,33.9,51.0
-    .turnin 6387 >> Turn in Honor Students
-    .accept 6391 >> Accept Ride to Ironforge
-    .fly Ironforge >> Fly to Ironforge
-step
-    .goto Ironforge,51.5,26.3
-    .turnin 6391 >> Turn in Ride to Ironforge
-    .accept 6388 >> Accept Gryth Thurden
-step
-    .goto Ironforge,39.5,57.5
-    .turnin 291 >> Turn in The Reports
-step
-    >>do NOT fly anywhere
-    .goto Ironforge,55.5,47.8
-    .turnin 6388 >> Turn in Gryth Thurden
-    .accept 6392 >> Accept Return to Brock
-step
-    #completewith next
-    +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
-    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
-step
+step << !Warlock
     .goto Ironforge,74.40,51.10,30,0
     .goto Ironforge,74.40,51.10,0
      >> Enter the Deeprun Tram, speak with the gnome at the middle platform
     .accept 6661 >> Accept Deeprun Rat Roundup
-step
+step << !Warlock
     >>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
-step
+step << !Warlock
     .turnin 6661 >> Turn in Deeprun Rat Roundup
-    .accept 6662 >> Accept Me Brother, Nipsy
-step
+    .accept 6662 >> Accept Me Brother, Nipsy << !Mage
+    >>You can skip Nipsy if you don't need money (5s 60c) and the tram has arrived << !Mage
+step << !Warlock !Mage
      .isOnQuest 6662
     >> Take the tram to Stormwind, turn in when you arrive on the other side of the tram
     .turnin 6662 >> Turn in Me Brother, Nipsy
     >>Train first aid while wating/riding the tram, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-step
+step << !Warlock !Mage
     #completewith next
     .goto Stormwind City,60.5,12.3
     .zone Stormwind City >>Exit the tram into Stormwind
-step
+step << skip
     .goto Stormwind City,51.6,12.2
     .accept 353 >> Accept Stormpike's Delivery
-step
+step << !Warlock !Mage
     .goto Stormwind City,58.1,16.5
     .turnin 1338 >> Turn in Stormpike's Order
 step << Priest
@@ -4155,293 +4146,64 @@ step << Warrior
     >>You'll now learn Defensive Stance and Sunder Armor
     .goto Stormwind City,74.3,37.3
     .turnin 1665 >> Turn in Bartleby's Mug
-step
+step << !Warlock !Mage
     .goto Stormwind City,57.1,57.7
     .trainer >>Train 1h Swords << Rogue
     .trainer >>Train Staves << Priest
-    .trainer >>Train 1h Swords and Staves << Warlock/Mage
+    .trainer >>Train Staves. Train 1h swords if you have spare money << Warlock/Mage
     .trainer >>Train 2h Swords << Warrior/Paladin
 step << Rogue
     .goto Stormwind City,57.6,57.1
-    .vendor >> If you have money, buy a Cutlass from Gunther and equip it. Equip the Craftsman's Dagger from earlier in your off-hand
-step << Rogue
+    .vendor >> If you have money, buy a Scimitar from Gunther and equip it. Equip the Craftsman's Dagger from earlier in your off-hand
+step << Rogue/Warrior
     >>Go inside the building
     .goto Stormwind City,57.32,62.08,20,0
     .goto Stormwind City,58.37,61.69
     .vendor >> Buy the level 11 thrown from Thurman. Equip it
-]],"Dwarf/Gnome")
-
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
-#classic
-#som
-#phase 3-6
-<< Alliance !Hunter
-#name 11-14 Loch Modan (Dwarf/Gnome)
-#next 13-15 Westfall
-
-step << Dwarf Paladin
-    .goto Ironforge,23.3,6.1
-    .accept 2999 >>Accept Tome of Divinity
-step << Dwarf Paladin
-    .goto Ironforge,27.4,12.1
-    >>Go upstairs and speak to Tiza Battleforge
-    .turnin 2999 >>Turn in Tome of Divinity
-    .accept 1645 >>Accept The Tome of Divinity
-    .turnin 1645 >>Turn in The Tome of Divinity
-    .accept 1646 >>Accept The Tome of Divinity
-    .turnin 1646 >>Turn in The Tome of Divinity
-    .accept 1647 >>Accept The Tome of Divinity
-step << Dwarf Paladin
-    >>Speak to John Turner, he walks around the outer ring of the city
-    .turnin 1647 >>Turn in The Tome of Divinity
-    .accept 1648 >>Accept The Tome of Divinity
-    .turnin 1648 >>Turn in The Tome of Divinity
-    .accept 1778 >>Accept The Tome of Divinity
-step << Dwarf Paladin
-    .goto Ironforge,27.7,12.3
-    >>Return to Tiza Battleforge
-    .turnin 1778 >>Turn in The Tome of Divinity
-    .accept 1779 >>Accept The Tome of Divinity
-step << Dwarf Paladin
-    .goto Ironforge,23.6,8.6
-    >>Speak to Muiredon Battleforge
-    .turnin 1779 >>Turn in The Tome of Divinity
-    .accept 1783 >>Accept The Tome of Divinity
-step << !Warlock
-    #som << !Paladin
+step << !Warlock !Mage
+    .hs >> Hearth to Ironforge
+step
+    #softcore
+    #completewith next
     .goto Ironforge,55.5,47.8
-    .fly Loch >> Fly to Loch Modan
+    .fly Wetlands>> Fly to Wetlands
 step
-    .goto Loch Modan,34.76,48.62
-    .vendor >> Buy 6 slot bags if you need them.
-step 
-    #completewith next
-    .goto Loch Modan,35.54,48.40
-    .vendor >> Buy some food if needed << Warrior/Rogue
-    .vendor >> Buy some food/water if needed << !Warrior !Rogue
-step
-    >>Go inside the building, then go downstairs. Talk to Brock
-    .goto Loch Modan,37.2,46.9,15,0
-    .goto Loch Modan,37.0,47.8
-    .turnin 6392 >> Turn in Return to Brock
-step
-    #sticky
-    #completewith next
-    >>Kill Bears/Boars/Spiders in the zone for Thelsamar Blood Sausages
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
-step
-    #completewith next
-    .goto Loch Modan,35.46,18.78,50 >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
-step
-    .goto Loch Modan,35.5,18.2,40,0
-    .goto Loch Modan,35.75,22.42
-    >>Go to the Kobold Cave. Collect the crates you find inside
-    .complete 307,1 --Collect Miners' Gear (x4)
-step << Paladin/Warrior
-    #sticky
-    #completewith Kobolds
-    .goto Loch Modan,42.9,9.9
-    .vendor >> Check the vendor for the green 2h mace he can sell. If it's up and you have enough money, buy it. Otherwise, grind money from kobolds here until you have enough
-step
-    #label Kobolds
-    >> Kill Kobolds. Loot them for their Ears
-    .complete 416,1 --Collect Tunnel Rat Ear (x12)
-step
-    #completewith next
-    .goto Loch Modan,24.1,18.2
-    .vendor >>Run back to the bunker. Vendor and repair
-step
-    .goto Loch Modan,24.76,18.39
-    .turnin 307 >> Turn in Filthy Paws
-    .turnin 353 >> Turn in Stormpike's Delivery
-step
-    #sticky
-    #label Meat9
-    .goto Loch Modan,26.9,10.7,90,0
-    .goto Loch Modan,30.9,10.6,90,0
-    .goto Loch Modan,28.6,15.4,90,0
-    .goto Loch Modan,30.5,26.6,90,0
-    .goto Loch Modan,33.4,30.3,90,0
-    .goto Loch Modan,39.4,33.3,90,0
-    .goto Loch Modan,26.9,10.7,90,0
-    .goto Loch Modan,30.9,10.6,90,0
-    .goto Loch Modan,28.6,15.4,90,0
-    .goto Loch Modan,30.5,26.6,90,0
-    .goto Loch Modan,33.4,30.3,90,0
-    .goto Loch Modan,39.4,33.3,90,0
-    .goto Loch Modan,26.9,10.7
-    >>Kill Bears. Loot them for Meat
-    .complete 418,2 --Bear Meat (3)
-step
-    #sticky
-    #label Ichor9
-    .goto Loch Modan,31.9,16.4,90,0
-    .goto Loch Modan,28.0,20.6,90,0
-    .goto Loch Modan,33.8,40.5,90,0
-    .goto Loch Modan,36.2,30.9,90,0
-    .goto Loch Modan,39.0,32.1,90,0
-    .goto Loch Modan,31.9,16.4,90,0
-    .goto Loch Modan,28.0,20.6,90,0
-    .goto Loch Modan,33.8,40.5,90,0
-    .goto Loch Modan,36.2,30.9,90,0
-    .goto Loch Modan,39.0,32.1,90,0
-    .goto Loch Modan,31.9,16.4
-    >>Kill Spiders. Loot them for Ichor
-    .complete 418,3 --Spider Ichor (3)
-step
-    .goto Loch Modan,38.0,34.9,90,0
-    .goto Loch Modan,37.1,39.8,90,0
-    .goto Loch Modan,29.8,35.9,90,0
-    .goto Loch Modan,27.7,25.3,90,0
-    .goto Loch Modan,28.6,22.6,90,0
-    .goto Loch Modan,38.0,34.9,90,0
-    .goto Loch Modan,37.1,39.8,90,0
-    .goto Loch Modan,29.8,35.9,90,0
-    .goto Loch Modan,27.7,25.3,90,0
-    .goto Loch Modan,28.6,22.6,90,0
-    .goto Loch Modan,38.0,34.9
-    >>Kill Boars. Loot them for Intestines
-    .complete 418,1 --Boar Intestines (3)
-step
-    #requires Meat9
-step
-    #sticky
-    #label RatCatching
-    #requires Ichor9
-    .goto Loch Modan,32.6,49.9,80.0,0
-    .goto Loch Modan,37.2,46.1,80.0,0
-    .goto Loch Modan,36.7,41.6
-    >>Find Kadrell. He patrols along the Thelsamar road
-    .turnin 416 >> Turn in Rat Catching
-step
-    .goto Loch Modan,34.82,49.28
-    .turnin 418 >> Turn in Thelsamar Blood Sausages
-step
-    .goto Loch Modan,34.8,48.6
-    .vendor >> Buy 1 Flint and Tinder, and 2 Simple Wood. Buy more 6 slots if needed
-    .collect 4470,2 --Simple Wood (2)
-    .collect 4471,1 --Flint and Tinder (1)
-step
-    #requires RatCatching
-    .goto Loch Modan,27.4,48.4
-    >>Kill Stonesplinter Troggs. Loot them for their Teeth
-    .complete 224,1 --Kill Stonesplinter Trogg (x10)
-    .complete 224,2 --Kill Stonesplinter Scout (x10)
-    .complete 267,1 --Collect Trogg Stone Tooth (x8)
-step
-    #era
-    .goto Loch Modan,27.4,48.4
-    .xp 13+9600 >> Grind until 9600+/11400xp
-step
-    #som
-    .goto Loch Modan,27.4,48.4
-    .xp 14-2300 >> Grind until you are 2300xp away from level 14 (9100/11400)
-step
-    .goto Loch Modan,22.07,73.12
-    .turnin 224 >> Turn in In Defense of the King's Lands
-step
-    .goto Loch Modan,23.23,73.67
-    .turnin 267 >> Turn in The Trogg Threat
-step << !Dwarf/!Paladin
-    .goto Loch Modan,33.93,50.95
-    .fly Ironforge>> Fly to Ironforge
-step << Dwarf Paladin
-    #completewith next
-    .goto Dun Morogh,87.1,51.1
-    .zone Dun Morogh >> Head to Dun Morogh
-step << Dwarf Paladin
-    .goto Dun Morogh,78.3,58.1
-    >>Use the Symbol of Life on Narm Faulk
-    .turnin 1783 >>Turn in The Tome of Divinity
-    .accept 1784 >>Accept The Tome of Divinity
-step << Dwarf Paladin
-    .goto Dun Morogh,77.3,60.5
-    >>Kill Dark Iron Spies
-    .complete 1784,1 --Dark Iron Script (1)
-step << Dwarf Paladin
-    .hs >> Hearth to Stormwind
-step << Warrior
-    .goto Ironforge,65.89,88.43
-    .trainer >> Train your class spells
-step << Warrior
-    .goto Ironforge,62.0,89.6
-    .train 176 >>Train Thrown
-step << Mage
-    .goto Ironforge,27.18,8.61
-    .trainer >> Train your class spells
-step << Mage/Priest/Warlock
-    #softcore
-    #sticky
-    #label Wand1
-    #completewith Wand2
-     >>Try to buy a Greater Magic Wand from the AH if it costs <33s 40c
-    .goto Ironforge,25.74,75.43
-    .collect 11288,1 --Greater Magic Wand (1)
-step << Mage/Priest/Warlock
-    #softcore
-    #label Wand2
-    #completewith Wand1
-     >>If you can't find a Greater Magic Wand for a good price, buy a Smoldering Wand from the wand vendor
-    .goto Ironforge,24.09,16.63,14,0
-    .goto Ironforge,23.13,15.96
-    .collect 5208,1 --Smoldering Wand (1)
-step << Mage/Priest/Warlock
     #hardcore
-     >>Go in the building. Buy a Smoldering Wand
-    .goto Ironforge,24.09,16.63,14,0
-    .goto Ironforge,23.13,15.96
-    .collect 5208,1 --Smoldering Wand (1)
-step << Warlock
-    #softcore
-    #requires Wand2
-    .goto Ironforge,51.1,8.7,15,0 >> Enter the building
-    .goto Ironforge,50.4,6.3 
-    .trainer >> Train your class spells
-step << Warlock
+    .goto Dun Morogh,52.6,36.0
+    .zone Dun Morogh >> Leave Ironforge and head out to Dun Morogh
+step
     #hardcore
-    .goto Ironforge,51.1,8.7,15,0 >> Enter the building
-    .goto Ironforge,50.4,6.3 
-    .trainer >> Train your class spells
-step << Warlock
-    .goto Ironforge,53.2,7.8,15,0 >> Enter the building
-    .goto Ironforge,53.0,6.4
-    .vendor >> Buy Consume Shadows r1, then Sacrifice r1 books (if you have money)
-step << Rogue
-    #sticky
-    #label Salvation
-    .isOnQuest 2218
-    .goto Ironforge,51.50,15.34
-    .turnin 2218 >> Turn in Road to Salvation
-step << Rogue
-    .goto Ironforge,51.50,15.34
-    .trainer >> Go upstairs. Train your class spells
-step << Priest
-    .goto Ironforge,25.20,10.75
-    .trainer >> Train your class spells
-step << Paladin
-    .trainer >> Train your class spells at the Stormwind cathedral
-step << Rogue
-    #requires Salvation
-    #completewith next
-    +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
-    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
-step << !Paladin !Rogue
-    #completewith next
-    +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
-    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
-step << Rogue
-    #requires Salvation
-    .goto Ironforge,76.54,51.15,60,0
-    .goto Ironforge,76.54,51.15,0
-    .zone Stormwind City >> Take the tram to Stormwind City
-    >>Train first aid while wating/riding the tram, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-step << !Paladin !Rogue
-    .goto Ironforge,76.54,51.15,60,0
-    .goto Ironforge,76.54,51.15,0
-    .zone Stormwind City >> Take the tram to Stormwind City
-]],"Gnome/Dwarf")
+    .goto Dun Morogh,59.5,42.8,40,0
+    .goto Dun Morogh,60.4,44.1,40,0
+    .goto Dun Morogh,61.1,44.1,40,0
+    .goto Dun Morogh,61.2,42.3,40,0
+    .goto Dun Morogh,60.8,40.9,40,0
+    .goto Dun Morogh,59.0,39.5,40,0
+    .goto Dun Morogh,60.3,38.6,40,0
+    .goto Dun Morogh,61.7,38.7,40,0
+    .goto Dun Morogh,65.7,21.6,40,0
+    .goto Dun Morogh,65.8,12.5,40,0
+    .goto Dun Morogh,65.6,10.8,40,0
+    .goto Dun Morogh,66.5,10.0,40,0
+    .goto Dun Morogh,66.9,8.5,40,0
+    .goto Wetlands,20.6,67.2,50,0
+    .goto Wetlands,17.7,67.7,40,0
+    .goto Wetlands,16.8,65.3,40,0
+    .goto Wetlands,15.1,64.0,40,0
+    .goto Wetlands,12.1,60.3,40,0
+    +Open this link and follow it on another screen.
+    >>Do the Deathless Dun Morogh -> Wetlands skip
+    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for reference
+    .goto Wetlands,9.5,59.7,80 >> Travel to Menethil Harbor
+step
+    #hardcore
+    .goto Wetlands,9.5,59.7
+    .fp >> Get the Menethil Harbor flight path
+step
+    .goto Wetlands,4.6,57.2
+    .zone Darkshore >>Head to the Menethil Harbor docks and take the boat to Darkshore
+    >>Train first aid while waiting for the boat, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
+]],"Dwarf/Gnome")
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #classic

@@ -90,9 +90,11 @@ step
     >>Kill Cougars for their Pelts
     .complete 750,1 --Mountain Cougar Pelt (10)
 step << !Druid !Shaman
+	#era/som
     .goto Mulgore,44.9,77.0
     .xp 3+1150 >> Grind to 1150+/1400xp
 step << Druid/Shaman
+	#era/som
     .goto Mulgore,44.9,77.0
     .xp 3+1110 >> Grind to 1110+/1400xp
 step << Warrior/Hunter
@@ -167,8 +169,36 @@ step << Shaman
     .goto Mulgore,63.2,82.7
     .collect 4851,1,781 --Collect Dirt-Stained Map
     .accept 781 >>Accept Attack on Camp Narache
-step 
+step
+	#som
+	#phase 3-6
     #requires Belt
+	.zone The Barrens >>Jump onto the mushroom at the end of the cave. Logout on top of it to Camp Taurajo (The Barrens)
+    .goto Mulgore,63.10,83.03
+	.link https://www.youtube.com/watch?v=NfLrBPzt56s >> CLICK HERE for reference
+step
+	#som
+	#phase 3-6
+    .goto The Barrens,44.5,59.1
+    .fp >>Get the Camp Taurajo Flight Path
+step
+	#som
+	#phase 3-6
+	#completewith next
+	#softcore
+    .goto The Barrens,50.43,44.01
+	.deathskip >> Die and respawn in The Crossroads
+step
+	#som
+	#phase 3-6
+    .goto The Barrens,51.49,31.00,8 >> Check for the weapon or armor crate next to the other uninteractable crate
+step
+	#som
+	#phase 3-6
+    .goto The Barrens,51.5,30.4
+    .fp >>Get the The Crossroads Flight Path
+--X
+step 
     .hs >> Hearth to Camp Narache
 step
     .goto Mulgore,44.9,77.0
@@ -313,9 +343,15 @@ step << Tauren
     .complete 748,1 --Prairie Wolf Paw (6)
     .complete 748,2 --Plainstrider Talon (4)
 step << Tauren
+	#som/era
     .goto Mulgore,48.5,60.4
     .turnin 748 >>Turn in Poison Water
     .accept 754 >>Accept Winterhoof Cleansing
+step << Tauren
+	#som
+	#phase 3-6
+    .goto Mulgore,48.5,60.4
+    .turnin 748 >>Turn in Poison Water
 step
     #sticky
     #label Stones
@@ -323,10 +359,15 @@ step
     >>Loot the stones around the Well
     .complete 771,1 --Well Stone (2)
 step << Tauren
+	#som/era
     #label Well
     .goto Mulgore,53.7,66.3
     >>Use the Winterhoof Cleansing Totem at the Well
     .complete 754,1 --Cleanse the Winterhoof Water Well (1)
+step << Tauren
+	#som
+	#phase 3-6
+	#label Well
 step
     #label Gnolls
     #requires Stones
@@ -345,6 +386,7 @@ step
     .goto Mulgore,47.6,61.5
     .vendor >>vendor trash
 step << Tauren
+	#som/era
     .goto Mulgore,48.5,60.4
     .turnin 754 >>Turn in Winterhoof Cleansing
     .accept 756 >>Accept Thunderhorn Totem
@@ -417,6 +459,7 @@ step
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step
+	#som/era
     >>Kill Stalkers, Cougars, and Swoops in the area. Loot them for their claws and quills
     .goto Mulgore,58.1,48.6,60,0
     .goto Mulgore,54.5,40.1,60,0
@@ -424,6 +467,14 @@ step
     .complete 761,1 --Trophy Swoop Quill (8)
     .complete 756,1 --Stalker Claws (6)
     .complete 756,2 --Cougar Claws (6)
+step
+	#som
+	#phase 3-6
+    >>Kill Swoops in the area. Loot them for their quills
+    .goto Mulgore,58.1,48.6,60,0
+    .goto Mulgore,54.5,40.1,60,0
+    .goto Mulgore,46.4,50.7,60,0
+    .complete 761,1 --Trophy Swoop Quill (8)
 step
     #softcore
     #completewith next
@@ -441,6 +492,7 @@ step
     .goto Mulgore,46.2,58.2
     .vendor >>vendor trash
 step
+	#som/era
     .goto Mulgore,48.5,60.4
     .turnin 756 >>Turn in Thunderhorn Totem
     .accept 758 >>Accept Thunderhorn Cleansing
@@ -478,6 +530,7 @@ step << Druid/Shaman
     .goto Mulgore,46.7,60.7
     .vendor >> vendor trash. Buy as much Ice Cold Milk as you can afford
 step << Tauren
+	#som/era
     .goto Mulgore,44.5,45.3
     >>Use the Thunderhorn Cleansing Totem at the Well
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
@@ -514,10 +567,100 @@ step
     .turnin 773 >>Turn in Rite of Wisdom
     .accept 775 >>Accept Journey into Thunder Bluff
 step
+	#som
+	#phase 3-6
+    .goto Mulgore,61.5,21.1
+    .xp 9+5240 >> Grind to 5240+/6500xp
+step
     .goto Mulgore,59.8,25.6
     .turnin 833 >>Turn in A Sacred Burial
 step
+	#som/era
     .xp 9+4400 >> Grind to 4400+/6500xp
+step
+	#som
+	#phase 6
+	#softcore
+    .goto Mulgore,59.8,25.6
+	.deathskip >> Die and respawn at Thunder Bluff
+step
+	#som
+	#phase 6
+	#completewith next
+    .goto Mulgore,41.00,22.22,30 >> Take the lift up to Thunder Bluff
+step << !Hunter
+	#som
+	#phase 6
+    .goto Thunder Bluff,45.82,64.73
+	.home >> Set your Hearthstone to Thunder Bluff
+step << Druid
+	#som
+	#phase 6
+    .goto Thunder Bluff,76.7,27.3
+    .turnin 5928 >>Turn in Heeding the Call
+step << Druid
+	#som
+	#phase 6
+    .goto Thunder Bluff,77.0,27.5
+    .accept 5922 >>Accept Moonglade
+step << Druid 
+	#som
+	#phase 6
+    >>Use your new spell to teleport to Moonglade
+    .goto Moonglade,56.2,30.7
+    .turnin 5922 >>Turn in Moonglade
+    .accept 5930 >>Accept Great Bear Spirit
+step << Druid 
+	#som
+	#phase 6
+    .goto Moonglade,39.2,27.5
+    .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
+step << Druid 
+	#som
+	#phase 6
+    >> Teleport back to Moonglade
+    .goto Moonglade,56.2,30.7
+    .turnin 5930 >>Turn in Great Bear Spirit
+    .accept 5932 >>Accept Back to Thunder Bluff
+step << Druid
+	#som
+	#phase 6
+	.hs >> Hearth to Thunder Bluff
+step << Druid
+	#som
+	#phase 6
+    .goto Thunder Bluff,76.5,27.3
+    .turnin 5932 >>Turn in Back to Thunder Bluff
+    .accept 6002 >>Accept Body and Heart
+step
+	#som
+	#phase 6
+    .goto Thunder Bluff,45.83,51.59,30,0
+    .goto Thunder Bluff,47.00,49.83
+	.fp Thunder Bluff >> Get the Thunder Bluff Flight Path
+	.fly Crossroads >> Fly to Crossroads << !Druid
+	.fly Camp T >> Fly to Camp Taurajo << Druid
+step << Druid
+	#som
+	#phase 6
+    >>Run to the Moonkin Stone, and use the Cenarion Lunardust in your inventory. Kill Lunaclaw, then talk to her
+    .goto The Barrens,42.0,60.9
+    .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses. (1)
+step << Druid
+	#som
+	#phase 6
+    .goto The Barrens,44.9,58.6
+    .accept 854 >>Accept Journey to the Crossroads
+step << Druid
+	#som
+	#phase 6
+    .goto The Barrens,44.5,59.1
+	.fly Crossroads >> Fly to Crossroads
+--X
+step << Druid
+    .goto The Barrens,52.2,31.9
+    .turnin 886 >>Turn in The Barrens Oases
+    .accept 870 >>Accept The Forgotten Pools
 step << !Druid
     #completewith next
     .hs >>Hearth to Bloodhoof Village
@@ -537,9 +680,10 @@ step
     .goto Mulgore,46.9,60.2
     .accept 861 >>Accept The Hunter's Way
 step
+	#som/era
     .goto Mulgore,48.5,60.4
     .turnin 758 >>Turn in Thunderhorn Cleansing
-    .accept 759 >>Accept Wildmane Totem
+    .accept 759 >>Accept Wildmane Totem << !Hunter
 step << !Hunter
     .goto Mulgore,47.5,60.2
     .turnin 746 >>Turn in Dwarven Digging
@@ -571,8 +715,6 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.7,55.7
      .trainer >> Train your pet spells
-step << Tauren Hunter
-    .abandon 759 >>Abandon Wildmane Totem
 step << Hunter
     .goto Mulgore,47.8,55.7
     .accept 6061 >>Accept Taming the Beast
@@ -612,7 +754,8 @@ step
     .turnin 751 >> Turn in The Ravaged Caravan
     .accept 764 >>Accept The Venture Co.
     .accept 765 >>Accept Supervisor Fizsprocket
-steo
+step
+	#som/era
     >>Kill Wolves in the area. Loot them for teeth
     .goto Mulgore,66.9,67.2
     .complete 759,1 --Prairie Alpha Tooth (8)
@@ -625,6 +768,7 @@ step
     #completewith next
     .goto Mulgore,46.5,55.5,200 >> Run back to Bloodhoof Village
 step
+	#som/era
     .goto Mulgore,48.5,60.4
     .turnin 759 >>Turn in Wildmane Totem
     .accept 760 >>Accept Wildmane Cleansing
@@ -803,6 +947,8 @@ step
     >>Kill Flatland Prowlers. Loot them for their Claws
     .complete 861,1 --Flatland Prowler Claw (4)
 step
+
+	#som/era
     .goto Mulgore,42.5,13.8
     >>Use the Wildmane Cleansing Totem at the Well
     .complete 760,1 --Cleanse the Wildmane Well (1)
@@ -839,6 +985,7 @@ step
     .goto Mulgore,46.8,60.2
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step
+	#som/era
     .goto Mulgore,48.6,60.4
     .turnin 760 >>Turn in Wildmane Cleansing
 step
