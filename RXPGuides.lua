@@ -93,7 +93,7 @@ function RXPG_init()
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
-	if RXP_.version = "CLASSIC" and (not RXPData.addonVersion or RXPData.addonVersion < addonVersion) then
+	if RXP_.version == "CLASSIC" and (not RXPData.addonVersion or RXPData.addonVersion < addonVersion) then
 		RXPData.phase = 3
 		RXPData.addonVersion = addonVersion
 	end
@@ -1136,8 +1136,8 @@ function RXP_.UpdateText()
                 elementFrame:SetPoint("TOPRIGHT",stepframe.elements[e-1],"BOTTOMRIGHT",0,0+spacing)
             end
             if element.tag and element.text then
-                local icon = element.icon or RXP_.icons[element.tag]
-                if icon then elementFrame.icon:SetText(icon) end
+                local icon = element.icon or RXP_.icons[element.tag] or ""
+                elementFrame.icon:SetText(icon)
                 elementFrame.icon:Show()
             else
                 elementFrame.icon:Hide()

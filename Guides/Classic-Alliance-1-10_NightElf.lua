@@ -1,8 +1,8 @@
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #classic
 << Alliance
-#name 1-11 Teldrassil
-#next 11-16 Darkshore
+#name 1-6 Shadowglen
+#next 6-11 Teldrassil
 step << !NightElf
     #sticky
     #completewith next
@@ -203,6 +203,13 @@ step
 step
     .goto Teldrassil,61.2,47.6
     .accept 2159 >> Accept Dolanaar Delivery
+]])
+	
+RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+#classic
+<< Alliance
+#name 6-11 Teldrassil
+#next 11-16 Darkshore
 step
     .goto Teldrassil,60.5,56.3
     .accept 488 >> Accept Zenn's Bidding
@@ -390,12 +397,6 @@ step << Druid
     .goto Teldrassil,55.9,61.6
 	.trainer >> Train your level 8 spells
 step
-    .isQuestComplete 4161
-	.goto Teldrassil,57.1,61.3
-    .train 2550 >>Train Cooking
-    .accept 4161 >> Accept Recipe of the Kaldorei
-    .turnin 4161 >> Turn in Recipe of the Kaldorei
-step
     #sticky
 	#completewith jewel
     >>Look for Fel Cones, usually located next to tree trunks
@@ -437,29 +438,38 @@ step
 step << !Druid
     .goto Teldrassil,56.2,61.7
     .turnin 929 >> Turn in Crown of the Earth
+step
+	#era/som
+    .goto Teldrassil,56.2,61.7
     .accept 933 >> Accept Crown of the Earth
 step
+	#era/som
 	.goto Teldrassil,42.54,76.08
 	>>Click on the big purple plant
 	.accept 930 >> Accept The Glowing Fruit
 step
+	#era/som
 	#label spiderLegs
 	.goto Teldrassil,42.36,67.26
 	>>Fill the empty vial at the moonwell
 	.complete 933,1
 step
+	#era/som
     >>Finish off collecting 7 Small Spider Legs
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
 step
+	#era/som
     #softcore
 	#completewith next
     .goto Teldrassil,43.50,68.42
     .deathskip >>Die on purpose and respawn at the Dolanaar graveyard, make sure to die east of the moonwell, otherwise you might end up in Darnassus
 step
+	#era/som
     .goto Teldrassil,56.2,61.7
     .turnin 933 >> Turn in Crown of the Earth
     .accept 7383 >> Accept Crown of the Earth
 step
+	#era/som
     .goto Teldrassil,57.1,61.3
     .train 2550 >>Train Cooking
     .accept 4161 >> Accept Recipe of the Kaldorei
@@ -492,21 +502,26 @@ step << Druid
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
     .turnin 487 >> Turn in The Road to Darnassus
 step
+	#era/som
     .goto Teldrassil,38.3,34.3
     .accept 937 >> Accept The Enchanted Glade
 step
+	#era/som
     .goto Teldrassil,38.4,34.1
 	>>Fill the empty phial at the moonwell
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 step
+	#era/som
     #completewith xp10
 	#label harpies
     >>Kill Harpies. Be careful of the Matriarchs as they heal and do a lot of damage. Try to burst them
     .complete 937,1 --Collect Bloodfeather Belt (x6)
 step
+	#era/som
     .goto Teldrassil,34.6,28.9
     .accept 931 >> Accept The Shimmering Frond
 step << Hunter
+	#era/som
     #completewith xp10
     #label mist1
     .goto Teldrassil,31.6,31.7
@@ -519,28 +534,32 @@ step << Hunter
     .xp 10-2670 >> Grind until you are 2670 xp off level 10 (3830/6500)
     >>Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus, you will have another opportunity to finish those quests later
 step << Hunter
-    #som
+    #era/som
     #sticky
     #label xp10
     .xp 10-3330 >> Grind until you are 3330 xp off level 10 (3170/6500)
     >>Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus, you will have another opportunity to finish those quests later
 step << Hunter
+	#era/som
     #completewith xp10
     #requires mist1
     .goto Teldrassil,38.3,34.4
     .turnin 938 >> Turn in Mist
 step << Hunter
+	#era/som
     #completewith xp10
 	#requires harpies
     .goto Teldrassil,38.3,34.4
     .turnin 937 >> Turn in The Enchanted Glade
     .accept 940 >> Accept Teldrassil
 step << !Hunter
+	#era/som
     #label mist1
     .goto Teldrassil,31.6,31.7
     >>Start the escort quest
     .accept 938 >> Accept Mist
 step << !Hunter
+	#era/som
     .goto Teldrassil,38.3,34.4
     .turnin 937 >> Turn in The Enchanted Glade
     .accept 940 >> Accept Teldrassil
@@ -551,23 +570,46 @@ step << !Hunter
     .xp 10-750 << Druid
     .xp 10-3110 << !Druid
 step << !Hunter
-    #som
-    #label xp10
+	#som
+    #phase 1-2
+	#label xp10
    .xp 10-930 << Druid
    .xp 10-3880 << !Druid
+step
+	#som
+    #phase 3-6
+	.goto Teldrassil,38.6,58.0
+	>>Finish off collecting 7 Small Spider Legs
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+step << Druid
+	#som
+	#phase 3-6
+	#label xp10
+	.xp 10-640
+    .goto Teldrassil,38.3,34.4
+	>>If you're still behind on xp do the harpy quest north
+step << !Druid
+	#som
+	#phase 3-6
+	#label xp10
+	.xp 10-3300
 step << !Rogue
+	#era/som
     #requires xp10
     #completewith next
     .deathskip >>Die on purpose and respawn at the Darnassus graveyard
 step << !Rogue
     #requires xp10
+	>>Run to Darnassus
     .goto Darnassus,38.3,21.4
     .turnin 922 >> Turn in Rellian Greenspyre
     .accept 923 >> Accept Tumors
 step << !Hunter !Rogue
+	#era/som
     .goto Darnassus,34.7,9.0
     >>Climb to the top of the tree house
     .turnin 940 >> Turn in Teldrassil
+	.isOnQuest 940
 step << Druid
     .goto Darnassus,35.2,8.0
     >>Head to the middle level of the tree house
@@ -596,7 +638,21 @@ step
     .hs >> Hearth to Dolanaar
 step << Hunter
     .goto Teldrassil,56.3,59.5
-	.vendor >> Delete the level 1 arrows from your quiver. Buy level 10 arrows until your Quiver is full. Equip them
+	.vendor >> Buy 4 stacks of level 10 arrows. Equip them as soon as you get to level 10
+step
+	#som
+	#phase 3-6
+    .goto Teldrassil,57.1,61.3
+    .train 2550 >>Train Cooking
+    .accept 4161 >> Accept Recipe of the Kaldorei
+    .turnin 4161 >> Turn in Recipe of the Kaldorei
+step
+	#som
+	#phase 3-6
+    .goto Teldrassil,51.9,56.4
+    >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
+    .turnin 487 >> Turn in The Road to Darnassus
+	.maxlevel 9
 step << Hunter
     #completewith L10
     #level 10
@@ -619,23 +675,36 @@ step << Hunter
     .turnin 6063 >> Turn in Taming the Beast
     .accept 6101 >> Accept Taming the Beast
 step
+	#era/som
     .goto Teldrassil,56.1,61.7
     .turnin 7383 >> Turn in Crown of the Earth
     .accept 935 >> Accept Crown of the Earth
 step
-    .isOnQuest 927
+	#era/som
 	.goto Teldrassil,60.9,68.4
     .turnin 931 >> Turn in The Shimmering Frond
     .turnin 930 >> Turn in The Glowing Fruit
-	.turnin 927 >> Turn in The Moss-twined Heart
 step
+	#era/som
 	.goto Teldrassil,60.9,68.4
-    .turnin 931 >> Turn in The Shimmering Frond
-    .turnin 930 >> Turn in The Glowing Fruit
+	.turnin 927 >> Turn in The Moss-twined Heart
+    .isOnQuest 927
+step
+	#era/som
+	.goto Teldrassil,60.9,68.4
+	>>Click on the plant vase right next to the quest giver
+	.turnin 941 >> Turn in Planting the Heart
+	.isQuestTurnedIn 927
+step << Hunter
+	#era/som
+    .goto Teldrassil,62.6,72.2
+    .complete 6101,1 --Tame a Nightsaber Stalker
+	.isOnQuest 6101
 step
     #label L10
     .xp 10
 step
+	#era/som
     #softcore
 	#sticky
     #completewith next
@@ -712,6 +781,10 @@ step << Rogue
     .accept 2518 >> Accept Tears of the Moon
 step << Hunter
     #sticky
+	.goto Teldrassil,41.2,44.4,0
+	.goto Teldrassil,44.2,39.8,0
+	.goto Teldrassil,45.6,31.4,0
+	.goto Teldrassil,37.6,28.8,0
     .train 2981 >> Tame a Strigid Hunter and learn claw rank 2
 step
     .goto Teldrassil,43.1,32.9
@@ -730,19 +803,32 @@ step << Rogue
     >>Pick pocket Sethir the Ancient, he walks along the big tree branch
     >>You have to be sneaky, he hits hard and summon a bunch of adds if you fight him
     .complete 2242,1
-step << Hunter
+step
+	#som << !Hunter
+	#phase 3-6 << !Hunter
+    .goto Teldrassil,38.3,34.3
+    .accept 937 >> Accept The Enchanted Glade
+step
+	#som << !Hunter
+	#phase 3-6 << !Hunter
     #sticky
 	#label harpies2
     >>Kill Harpies
     .complete 937,1 --Collect Bloodfeather Belt (x6)
-step << Hunter
+step
+	#som << !Hunter
+	#phase 3-6 << !Hunter
     .goto Teldrassil,31.6,31.7
     >>Start the escort quest
     .accept 938 >> Accept Mist
-step << Hunter
+step
+	#som << !Hunter
+	#phase 3-6 << !Hunter
     .goto Teldrassil,38.3,34.4
     .turnin 938 >> Turn in Mist
-step << Hunter
+step
+	#som << !Hunter
+	#phase 3-6 << !Hunter
     #requires harpies2
     .goto Teldrassil,38.3,34.4
     .turnin 937 >> Turn in The Enchanted Glade
