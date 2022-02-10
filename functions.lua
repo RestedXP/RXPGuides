@@ -2441,20 +2441,20 @@ function RXP_.functions.maxlevel(self,...)
     local level = UnitLevel("player")
     local element = self.element
 	local step = element.step
-    
+    local ref = element.ref
+	
     if level > element.level then
 		if step.active and not step.completed then
 			RXP_.updateSteps = true
         end
         step.completed = true
-		if element.ref then
-			for n,guidestep in pairs(RXP_.currentGuide.steps) do
-				if guidestep.label == element.ref then
-					return RXP_.SetStep(n)
-				end
-			end
+		local guide = RXP_.currentGuide
+		if ref and guide.labels[ref] then
+			local n = guide.labels[ref]
+			element.text = string.format("Skip to step %d if you are level %d or above",n,element.level+1)
+			return RXP_.SetStep(guide.labels[ref])
 		end
-		element.text = string.format("(Skip this step if you're above level %d)",element.level)
+		element.text = string.format("(Skip this step if you are level %d or above)",element.level+1)
 	else
 		element.text = ""
     end
