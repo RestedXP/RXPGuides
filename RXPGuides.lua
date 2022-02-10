@@ -93,7 +93,7 @@ function RXPG_init()
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
-	if RXP_.version = "CLASSIC" and (not RXPData.addonVersion or RXPData.addonVersion < addonVersion) then
+	if RXP_.version == "CLASSIC" and (not RXPData.addonVersion or RXPData.addonVersion < addonVersion) then
 		RXPData.phase = 3
 		RXPData.addonVersion = addonVersion
 	end
