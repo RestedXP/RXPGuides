@@ -1183,8 +1183,13 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
                 event = event .. "/activeQ"
             end
         end
-        
-        if RXP_.loadNextStep then
+       	if RXP_.nextStep then 
+			skip = true
+			RXP_.SetStep(RXP_.nextStep)
+            RXP_.QuestAutomation()
+			RXP_.updateBottomFrame = true
+			RXP_.nextStep = nil
+        elseif RXP_.loadNextStep then
             RXP_.loadNextStep = false
             RXP_.SetStep(RXPCData.currentStep+1)
             RXP_.QuestAutomation()

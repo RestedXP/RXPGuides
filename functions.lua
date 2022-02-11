@@ -2446,13 +2446,16 @@ function RXP_.functions.maxlevel(self,...)
     if level > element.level then
 		if step.active and not step.completed then
 			RXP_.updateSteps = true
+			step.completed = true
         end
-        step.completed = true
 		local guide = RXP_.currentGuide
 		if ref and guide.labels[ref] then
 			local n = guide.labels[ref]
 			element.text = string.format("Skip to step %d if you are level %d or above",n,element.level+1)
-			return RXP_.SetStep(guide.labels[ref])
+			if step.active then
+				RXP_.nextStep = guide.labels[ref]
+				return
+			end
 		end
 		element.text = string.format("(Skip this step if you are level %d or above)",element.level+1)
 	else
