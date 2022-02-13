@@ -864,7 +864,7 @@ step
     .goto Durotar,56.0,73.9
     .turnin 817 >>Turn in Practical Prey
 step
-	#som/era
+	#era/som
     .goto Durotar,54.3,73.3
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
 step

@@ -203,7 +203,7 @@ step
 step
     .goto Teldrassil,61.2,47.6
     .accept 2159 >> Accept Dolanaar Delivery
-]])
+]],"NightElf")
 	
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #classic

@@ -441,7 +441,7 @@ step
     .goto Mulgore,46.2,58.2
     .vendor >>vendor trash
 step
-	#som/era
+	#era/som
     .goto Mulgore,48.5,60.4
     .turnin 756 >>Turn in Thunderhorn Totem
     .accept 758 >>Accept Thunderhorn Cleansing
@@ -479,7 +479,7 @@ step << Druid/Shaman
     .goto Mulgore,46.7,60.7
     .vendor >> vendor trash. Buy as much Ice Cold Milk as you can afford
 step << Tauren
-	#som/era
+	#era/som
     .goto Mulgore,44.5,45.3
     >>Use the Thunderhorn Cleansing Totem at the Well
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
@@ -804,7 +804,7 @@ step
     .complete 861,1 --Flatland Prowler Claw (4)
 step
 
-	#som/era
+	#era/som
     .goto Mulgore,42.5,13.8
     >>Use the Wildmane Cleansing Totem at the Well
     .complete 760,1 --Cleanse the Wildmane Well (1)
@@ -841,7 +841,7 @@ step
     .goto Mulgore,46.8,60.2
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step
-	#som/era
+	#era/som
     .goto Mulgore,48.6,60.4
     .turnin 760 >>Turn in Wildmane Cleansing
 step
@@ -1353,7 +1353,7 @@ step
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step
-	#som/era
+	#era/som
     >>Kill Stalkers, Cougars, and Swoops in the area. Loot them for their claws and quills
     .goto Mulgore,58.1,48.6,60,0
     .goto Mulgore,54.5,40.1,60,0
@@ -1386,7 +1386,7 @@ step
     .goto Mulgore,46.2,58.2
     .vendor >>vendor trash
 step
-	#som/era
+	#era/som
     .goto Mulgore,48.5,60.4
     .turnin 756 >>Turn in Thunderhorn Totem
     .accept 758 >>Accept Thunderhorn Cleansing
@@ -1424,7 +1424,7 @@ step << Druid/Shaman
     .goto Mulgore,46.7,60.7
     .vendor >> vendor trash. Buy as much Ice Cold Milk as you can afford
 step << Tauren
-	#som/era
+	#era/som
     .goto Mulgore,44.5,45.3
     >>Use the Thunderhorn Cleansing Totem at the Well
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
@@ -1469,7 +1469,7 @@ step
     .goto Mulgore,59.8,25.6
     .turnin 833 >>Turn in A Sacred Burial
 step
-	#som/era
+	#era/som
     .xp 9+4400 >> Grind to 4400+/6500xp
 step << Druid
 	#som
@@ -1628,7 +1628,7 @@ step
     .goto Mulgore,46.9,60.2
     .accept 861 >>Accept The Hunter's Way
 step
-	#som/era
+	#era/som
     .goto Mulgore,48.5,60.4
     .turnin 758 >>Turn in Thunderhorn Cleansing
     .accept 759 >>Accept Wildmane Totem << !Hunter
@@ -1703,7 +1703,7 @@ step
     .accept 764 >>Accept The Venture Co.
     .accept 765 >>Accept Supervisor Fizsprocket
 step
-	#som/era
+	#era/som
     >>Kill Wolves in the area. Loot them for teeth
     .goto Mulgore,66.9,67.2
     .complete 759,1 --Prairie Alpha Tooth (8)
@@ -1716,7 +1716,7 @@ step
     #completewith next
     .goto Mulgore,46.5,55.5,200 >> Run back to Bloodhoof Village
 step
-	#som/era
+	#era/som
     .goto Mulgore,48.5,60.4
     .turnin 759 >>Turn in Wildmane Totem
     .accept 760 >>Accept Wildmane Cleansing
@@ -1896,7 +1896,7 @@ step
     .complete 861,1 --Flatland Prowler Claw (4)
 step
 
-	#som/era
+	#era/som
     .goto Mulgore,42.5,13.8
     >>Use the Wildmane Cleansing Totem at the Well
     .complete 760,1 --Cleanse the Wildmane Well (1)
@@ -1933,7 +1933,7 @@ step
     .goto Mulgore,46.8,60.2
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step
-	#som/era
+	#era/som
     .goto Mulgore,48.6,60.4
     .turnin 760 >>Turn in Wildmane Cleansing
 step

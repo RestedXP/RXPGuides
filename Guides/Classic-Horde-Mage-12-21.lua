@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide("RestedXP Horde Mage AoE",[[
 #next 17-21 Stonetalon/Barrens AoE
 
 step << Mage
-	#som/era
+	#era/som
     #completewith next
 	+Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but a LOT faster
 step << Mage
