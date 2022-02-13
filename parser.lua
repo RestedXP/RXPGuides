@@ -231,6 +231,9 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     end
     local list = RXP_.guideList[guide.group]
     table.insert(RXP_.guides,guide)
+	if list[guide.name] then
+		guide.name = guide.name .. "_2"
+	end
     table.insert(list.names_,guide.name)
     list[guide.name] = #RXP_.guides
     if guideGroup:sub(1,1) ~= "*" and defaultFor and not RXP_.defaultGuide then

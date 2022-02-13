@@ -1817,7 +1817,7 @@ end
 
 local function IsGuideActive(guide)
     local som = RXPCData and RXPCData.SoM
-    if guide.era and som or guide.som and not som or RXPData.phase > 2 and som and guide["era/som"] then
+    if guide.era and som or guide.som and not som or (RXPData.phase > 2 and som and guide["era/som"]) then
         --print('-',guide.name,not guide.som,not guide.era,som)
         return false
     end
@@ -2163,7 +2163,7 @@ function RXP_.CreateOptionsPanel()
         RXP_.arrowFrame.text:SetFont(RXP_.font, RXPData.arrowText)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
         RXP_.updateMap = true
-		if self.key == "phase" then
+		if self.key == "phase" and RXP_.currentGuide then
             RXP_.ReloadGuide()
 		end
         SetStepFrameAnchor()
@@ -2183,7 +2183,7 @@ function RXP_.CreateOptionsPanel()
         slider:SetThumbTexture("Interface/Buttons/UI-SliderBar-Button-Horizontal")
         slider.ref = ref
         slider.key = key
-        dvalue = ref[key]
+        dvalue = ref[key] or smin
         
         slider.defaultText = text
         slider.tooltipText = tooltip
