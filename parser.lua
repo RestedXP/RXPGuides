@@ -32,6 +32,7 @@ end
 RXP_.applies = applies
 local RXPG = RXPGuides
 local version = strlower(RXP_.version)
+local suffix = 1
 
 function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     if not guideGroup then return end
@@ -232,7 +233,8 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     local list = RXP_.guideList[guide.group]
     table.insert(RXP_.guides,guide)
 	if list[guide.name] then
-		guide.name = guide.name .. "_2"
+		suffix = suffix + 1
+		guide.name = guide.name .. tostring(suffix)
 	end
     table.insert(list.names_,guide.name)
     list[guide.name] = #RXP_.guides

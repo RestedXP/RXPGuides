@@ -4210,8 +4210,8 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #som
 #phase 3-6
 << Alliance Hunter
-#name 1-6 Coldridge Valley (Hunter)
-#next 6-11 Dun Morogh (Hunter)
+#name 1-7 Coldridge Valley (Hunter)
+#next 6-12 Dun Morogh (Hunter)
 step << !Gnome !Dwarf
     #sticky
     #completewith next
@@ -4348,7 +4348,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #som
 #phase 3-6
 << Alliance Hunter
-#name 6-11 Dun Morogh (Hunter)
+#name 6-12 Dun Morogh (Hunter)
 #next 11-13 Loch Modan (Hunter)
 step
     #completewith ribs1
@@ -4724,7 +4724,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #som
 #phase 3-6
 << Alliance Hunter
-#name 11-13 Loch Modan (Hunter)
+#name 11-14 Loch Modan (Hunter)
 #next 11-16 Darkshore
 
 step
