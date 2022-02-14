@@ -4265,23 +4265,13 @@ step
     >>Speak to Grelin Whitebeard
     .turnin 234 >>Turn in Coldridge Valley Mail Delivery
     .accept 182 >>Accept The Troll Cave
-step
-    #completewith next
-    .goto Dun Morogh,22.7,79.3
-    .goto Dun Morogh,20.9,75.7,0
-    .goto Dun Morogh,27.3,79.7,0
-    >>Kill Frostmane Troll Whelps
-    .complete 182,1 --Kill Frostmane Troll Whelp (x14)
 step 
     .xp 4 >> Grind to 4
 step
-    #requires Rockjaw
     .goto Dun Morogh,25.0,75.9
     .accept 3364 >>Accept Scalding Mornbrew Delivery
 step
-    #completewith next
-    .hs >> Hearth back to the starting area
-step
+    #requires Rockjaw
     .goto Dun Morogh,29.7,71.3
     >>Speak to Balir Frosthammer
     .turnin 170 >>Turn in A New Threat
@@ -4349,7 +4339,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #phase 3-6
 << Alliance Hunter
 #name 6-12 Dun Morogh (Hunter)
-#next 11-13 Loch Modan (Hunter)
+#next 11-14 Loch Modan (Hunter)
 step
     #completewith ribs1
     >> Kill Boars to get some Boar Meat/Ribs for later
@@ -4371,7 +4361,7 @@ step
 step
     .goto Dun Morogh,49.5,48.3
     .accept 317 >>Accept Stocking Jetsteam
-step
+step << skip
     .goto Dun Morogh,49.6,48.5
     .accept 313 >>Accept The Grizzled Den
 step
@@ -4439,7 +4429,7 @@ step << Hunter
     .goto Dun Morogh,40.7,65.1
     >>Buy the level 4 gun upgrade, skip this step if you don't have the money for it
     .collect 2509,1
-step
+step << skip
     .goto Dun Morogh,42.25,53.68,40,0
     .goto Dun Morogh,41.07,49.04,50,0
     .goto Dun Morogh,42.25,53.68
@@ -4482,19 +4472,41 @@ step
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .complete 319,3 --Kill Snow Leopard (x8)
 step << Hunter
-    #era
+	#hardcore
     .goto Dun Morogh,46.7,53.8
     .complete 384,1
-    .xp 8-1400 >>Grind until you are 1400 xp away from level 8.
+    .xp 8-1540 >>Grind until you are 1540 xp away from level 8.
 step << Hunter
-    #som
-    .goto Dun Morogh,46.7,53.8
+	#softcore
+    .goto Dun Morogh,30.9,35.1
     .complete 384,1
-    .xp 8-1950 >>Grind until you are 1950 xp away from level 8.
+    .xp 8-1540 >>Grind until you are 1540 xp away from level 8.
+step
+    #softcore
+    .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
+step
+    #softcore
+    .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
+step
+    #softcore
+    .goto Dun Morogh,33.0,27.2,25,0
+    .goto Dun Morogh,33.0,25.2,25,0
+    .goto Wetlands,11.6,43.4,60,0
+    .goto Wetlands,11.6,43.4,0
+    .deathskip >>Keep running straight north, Jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
 step
     #completewith next
-    .deathskip >> Die on purpose and respawn at Kharanos
-step << Hunter
+    #softcore
+    .goto Wetlands,12.7,46.7,80,0 >> Swim to shore
+step
+    #softcore
+    .goto Wetlands,9.5,59.7
+    .fp Menethil>> Get the Menethil Harbor flight path
+step
+    #softcore
+    #completewith next
+    .hs >> Hearth back to Kharanos
+step << skip
     .goto Dun Morogh,49.6,48.5
     .turnin 313 >>Turn in The Grizzled Den
 step
@@ -4517,7 +4529,7 @@ step
 step
     .goto Dun Morogh,46.7,53.9
     .accept 287 >>Accept Frostmane Hold
-step << !Hunter
+step  << skip
     .goto Dun Morogh,49.6,48.5
     .turnin 313 >>Turn in The Grizzled Den
 step << Hunter
@@ -4530,45 +4542,6 @@ step
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .complete 319,3 --Kill Snow Leopard (x8)
-step
-    .goto Dun Morogh,63.1,49.8
-    >>Speak to Rudra Amberstill
-    .accept 314 >>Accept Protecting the Herd
-step
-    #sticky
-    #completewith next
-    .goto Dun Morogh,62.3,50.3,12,0
-    .goto Dun Morogh,62.2,49.4,8 >>Run up this part of the mountain
-step
-    .goto Dun Morogh,62.6,46.1
-    >>Kill Vagash. Loot him for his Fang, this quest is HARD, try to kite him to the guard parked at the intersection
-    .complete 314,1 --Collect Fang of Vagash (x)
-    .link https://www.youtube.com/watch?v=6PfhYU-9hoA >> Click here for video reference
-step
-    .goto Dun Morogh,63.1,49.8
-    .turnin 314 >> Turn in Protecting the Herd
-    .isQuestComplete 314
-step
-    .goto Dun Morogh,83.8,39.2
-    .accept 419 >> Accept The Lost Pilot
-step
-    .goto Dun Morogh,79.7,36.2
-    .turnin 419 >> Turn in The Lost Pilot
-    .accept 417 >> Accept A Pilot's Revenge
-step
-    >>Kill Mangeclaw. Loot him for his Claw, this quest can be hard, kite him to the guard parked next to the quest giver
-    .goto Dun Morogh,80.0,36.4
-    .complete 417,1 --Collect Mangy Claw (x1)
-step
-    .goto Dun Morogh,83.9,39.2
-    .turnin 417 >> Turn in A Pilot's Revenge
-step
-    #hardcore
-    .hs >> Hearth to Kharanos
-step
-    #softcore
-    .goto Dun Morogh,47.11,55.01
-    .deathskip >> Die on purpose and respawn at Kharanos
 step
     #era
     .goto Dun Morogh,45.8,49.4
@@ -4628,40 +4601,24 @@ step
     .xp 10-1470 >> Grind until you are 1450xp away from level 10
 step
     #som
+	#phase 1-2
     .xp 10-2050 >> Grind until you are 2050xp away from level 10
 step
-    #softcore
-    .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
+	#som
+	#phase 3-6
+	.xp 10-2950 >> Grind until you are 2950xp away from level 10
 step
-    #softcore
-    .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
+	#completewith next
+	#hardcore
+	.hs >> Hearth to Kharanos
 step
-    #softcore
-    .goto Dun Morogh,33.0,27.2,25,0
-    .goto Dun Morogh,33.0,25.2,25,0
-    .goto Wetlands,11.6,43.4,60,0
-    .goto Wetlands,11.6,43.4,0
-    .deathskip >>Keep running straight north, Jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
-step
-    #completewith next
-    #softcore
-    .goto Wetlands,12.7,46.7,80,0 >> Swim to shore
-step
-    #softcore
-    .goto Wetlands,9.5,59.7
-    .fp Menethil>> Get the Menethil Harbor flight path
-step
-    #softcore
-    #completewith next
-    .hs >> Hearth back to Kharanos
+	#completewith next
+	#softcore
+	.deathskip >> Die and respawn at Kharanos
 step
     .goto Dun Morogh,46.7,53.7
     .turnin 287 >>Turn in Frostmane Hold
     .accept 291 >>Accept The Reports
-step
-    #era
-    .goto Dun Morogh,45.9,49.4
-    .turnin 412 >>Turn in Operation Recombobulation
 step
     .goto Dun Morogh,49.4,48.3
     .turnin 320 >>Turn in Return to Bellowfiz
@@ -4693,6 +4650,24 @@ step
     .turnin 6085 >>Turn in Taming the Beast
     .accept 6086 >>Accept Training the Beast
 step
+    .goto Dun Morogh,63.1,49.8
+    >>Speak to Rudra Amberstill
+    .accept 314 >>Accept Protecting the Herd
+step
+    #sticky
+    #completewith next
+    .goto Dun Morogh,62.3,50.3,12,0
+    .goto Dun Morogh,62.2,49.4,8 >>Run up this part of the mountain
+step
+    .goto Dun Morogh,62.6,46.1
+    >>Kill Vagash. Loot him for his Fang, this quest is HARD, try to kite him to the guard parked at the intersection
+    .complete 314,1 --Collect Fang of Vagash (x)
+    .link https://www.youtube.com/watch?v=6PfhYU-9hoA >> Click here for video reference
+step
+    .goto Dun Morogh,63.1,49.8
+    .turnin 314 >> Turn in Protecting the Herd
+    .isQuestComplete 314
+step
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
 step
@@ -4713,6 +4688,21 @@ step
 step << skip
     .goto Dun Morogh,68.4,54.5
     .train 2550 >> Train Cooking from Ghilm
+step
+    .goto Dun Morogh,83.8,39.2
+    .accept 419 >> Accept The Lost Pilot
+step
+    .goto Dun Morogh,79.7,36.2
+    .turnin 419 >> Turn in The Lost Pilot
+    .accept 417 >> Accept A Pilot's Revenge
+step
+    >>Kill Mangeclaw. Loot him for his Claw, this quest can be hard, kite him to the guard parked next to the quest giver
+    .goto Dun Morogh,80.0,36.4
+    .complete 417,1 --Collect Mangy Claw (x1)
+step
+    .goto Dun Morogh,83.9,39.2
+    .turnin 417 >> Turn in A Pilot's Revenge
+
 step
     .goto Dun Morogh,86.3,48.8
     .turnin 413 >> Turn in Shimmer Stout
