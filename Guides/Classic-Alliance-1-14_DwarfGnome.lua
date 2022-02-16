@@ -2537,8 +2537,8 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #som
 #phase 3-6
 << Alliance !Hunter
-#name 1-6 Coldridge Valley
-#next 6-11 Dun Morogh
+#name 1-6 Coldridge
+#next 6-12 Dun Morogh
 step << !Gnome !Dwarf
     #completewith next
     .goto Dun Morogh,29.9,71.2
@@ -2832,7 +2832,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #som
 #phase 3-6
 << Alliance !Hunter
-#name 6-11 Dun Morogh
+#name 6-12 Dun Morogh
 #next 11-12 Elwynn Warlock << Warlock
 #next 11-14 Loch Modan << !Warlock
 step << Paladin/Warrior/Rogue
@@ -3451,7 +3451,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #phase 3-6
 << Alliance Warlock
 #name 11-12 Elwynn Warlock
-#next 11-14 Loch Modan
+#next 12-14 Loch Modan
 
 step
     >>Run through the tunnel into Loch
@@ -3740,7 +3740,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #som
 #phase 3-6
 << Alliance !Hunter
-#name 11-14 Loch Modan
+#name 12-14 Loch Modan
 #next 14-19 Darkshore
     
 step << Paladin
