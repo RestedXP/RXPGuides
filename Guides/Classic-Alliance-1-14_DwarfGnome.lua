@@ -4543,10 +4543,6 @@ step
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .complete 319,3 --Kill Snow Leopard (x8)
 step
-    #era
-    .goto Dun Morogh,45.8,49.4
-    .accept 412 >> Accept Operation Recombobulation
-step
     #completewith next
     .goto Dun Morogh,43.1,45.0,20,0
     .goto Dun Morogh,42.1,45.4,20 >> Run up the ramp to Shimmerweed
@@ -4581,17 +4577,6 @@ step
     .goto Dun Morogh,22.7,52.0
     .complete 287,1 --Fully explore Frostmane Hold (1)
     .complete 287,2 --Frostmane Headhunter (5)
-step
-    #era
-    .goto Dun Morogh,27.2,43.0,80,0
-    .goto Dun Morogh,24.8,39.3,80,0
-    .goto Dun Morogh,25.6,43.4,80,0
-    .goto Dun Morogh,24.3,44.0,80,0
-    .goto Dun Morogh,25.4,45.4,80,0
-    .goto Dun Morogh,25.00,43.50
-    >>Kill Leper Gnomes. Loot them for Cogs and Gears
-    .complete 412,1 --Collect Restabilization Cog (x8)
-    .complete 412,2 --Collect Gyromechanic Gear (x8)
 step
     #hardcore
     #completewith next
@@ -4668,23 +4653,17 @@ step
     .turnin 314 >> Turn in Protecting the Herd
     .isQuestComplete 314
 step
-    .goto Dun Morogh,68.7,56.0
-    .accept 433 >> Accept The Public Servant
-step
     .goto Dun Morogh,69.1,56.3
     .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.7,56.4,50,0
     .goto Dun Morogh,70.62,52.39
-    >>Kill Troggs in the cave
+    >>Kill Troggs in the cave and around the quarry
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
-    .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
+    --.complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
     .goto Dun Morogh,69.1,56.3
     .turnin 432 >> Turn in Those Blasted Troggs!
-step
-    .goto Dun Morogh,68.7,56.0
-    .turnin 433 >> Turn in The Public Servant
 step << skip
     .goto Dun Morogh,68.4,54.5
     .train 2550 >> Train Cooking from Ghilm
@@ -4728,11 +4707,8 @@ step
     #sticky
     #label ratcatching
      >> Talk to the guard patrolling Thelsamar
-    .accept 416 >> Accept Rat Catching
+    --.accept 416 >> Accept Rat Catching
     .accept 1339 >> Accept Mountaineer Stormpike's Task
-step
-    .goto Loch Modan,34.82,49.28
-    .accept 418 >> Accept Thelsamar Blood Sausages
 step
        .goto Loch Modan,35.5,48.4
     .home >> Set your Hearthstone to Loch Modan 
@@ -4746,7 +4722,7 @@ step
     .accept 6391 >> Accept Ride to Ironforge
 step
      #completewith next
-    .fly Ironforge>> Fly to  Ironforge
+    .fly Ironforge>> Fly to Ironforge
 step
     .goto Ironforge,51.52,26.31
     .turnin 6391 >> Turn in Ride to Ironforge
@@ -4768,50 +4744,10 @@ step
     .goto Loch Modan,37.0,47.8
     >>Go inside the building, then go downstairs. Talk to Brock
     .turnin 6392 >> Turn in Return to Brock
-step
+step << Hunter
     .goto Loch Modan,35.8,43.5
-    >>Buy a level 9 gun upgrade from Vrok Blunderblast if you have 13s to spare
+    >>Buy a level 9 gun upgrade from Vrok Blunderblast if you have 13s to spare, skip this step otherwise
     .collect 2511,1
-step
-    #completewith sausage
-     >> Kill Spiders/Bears/Boars
-    .complete 418,1
-    .complete 418,2
-    .complete 418,3
-step
-    .goto Loch Modan,24.76,18.39
-    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
-step
-    .goto Loch Modan,24.76,18.39
-    .accept 307 >> Accept Filthy Paws
-step
-    .goto Loch Modan,24.76,18.39
-    .accept 1338 >> Accept Stormpike's Order
-step
-    #sticky
-    #label crates
-    .goto Loch Modan,35.48,24.36
-     >> Loot the crates inside the mine
-    .complete 307,1
-step
-    #sticky
-    #requires crates
-    #label q307
-    .goto Loch Modan,24.76,18.39
-    .turnin 307 >> Turn in Filthy Paws
-step
-    .goto Loch Modan,24.3,30.3
-    .goto Loch Modan,36.42,24.56
-     >> Kill kobolds
-    .complete 416,1
-step
-    #requires q307
-    #label sausage
-    >>Finish off Boars/Bears/Spiders on your way back to Thelsamar
-    .turnin 418 >> Turn in Thelsamar Blood Sausages
-    .goto Loch Modan,34.82,49.28
-    .turnin 416 >> Turn in Rat Catching
-    .goto Loch Modan,34.26,47.70
 step
     .goto Loch Modan,32.55,74.61
     >>Kill Troggs
@@ -4825,34 +4761,15 @@ step
     .goto Loch Modan,23.23,73.67
     .turnin 267 >> Turn in The Trogg Threat
 step
-    .goto Loch Modan,65.93,65.62
-    .accept 298 >> Accept Excavation Progress Report
+    .goto Loch Modan,24.76,18.39
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
 step
-    .goto Loch Modan,83.46,65.45
-    .accept 257 >> Accept A Hunter's Boast
+    .goto Loch Modan,24.76,18.39
+    .accept 1338 >> Accept Stormpike's Order
 step
-    .goto Loch Modan,77.30,61.45
-    >>Kill birds around the hunting lodge, this is a difficult quest but it gives you a good weapon upgrade
-    .complete 257,1
-step
-    .goto Loch Modan,83.46,65.45
-    .turnin 257 >> Turn in A Hunter's Boast
-step
-    #sticky
-    .goto Loch Modan,82.60,63.40
-     >> Buy materials to make a campfire
-    .collect 4470,1
-    .collect 4471,1
-step
-    #hardcore
-    .hs >> Hearth to Thelsamar
-step
-     #completewith next
+	#softcore
+    #completewith next
     .deathskip >> Pull mobs and die on purpose, respawn at Thelsamar
-step
-    .goto Loch Modan,37.23,47.38
-    .turnin 298 >> Turn in Excavation Progress Report
-    .accept 301 >> Accept Report to Ironforge
 step
     .goto Loch Modan,33.93,50.95
     .fly Ironforge>> Fly to Ironforge
@@ -4891,13 +4808,13 @@ step
     .goto Stormwind City,57.23,57.29
     .trainer >> Train Staves
 step
-    #softcore
-    .hs >> Hearth back
+	#completewith next
+    .hs >> Hearth back to Thelsamar, take the tram to Ironforge and fly to Loch Modan if your hearthstone is still on cooldown
 step
-    #softcore
     .goto Loch Modan,24.76,18.39
     .turnin 353 >> Turn in Stormpike's Delivery
 step
+	#softcore
      #completewith next
      .deathskip >> Die and respawn at the graveyard
 step
@@ -4913,42 +4830,17 @@ step
     #hardcore
     #label skip1
     #completewith fp
-    .goto Dun Morogh,60.6,44.1,25,0
-    .goto Dun Morogh,62.1,41.5,20,0
-    .goto Dun Morogh,61.3,32.5,20,0
-    .goto Dun Morogh,61.8,17.0,20,0
-    .goto Dun Morogh,61.1,13.6,15,0
-    .goto Dun Morogh,60.7,9.8,15,0
-    .goto Wetlands,18.9,71.8,40,0
-    .zone >>Do the Wetlands mountain skip
-    .goto Dun Morogh,60.6,44.1,0
-    .goto Dun Morogh,62.1,41.5,0
-    .goto Dun Morogh,61.3,32.5,0
-    .goto Dun Morogh,61.8,17.0,0
-    .goto Dun Morogh,61.1,13.6,0
-    .goto Dun Morogh,60.7,9.8,0
-    .goto Wetlands,18.9,71.8,0
-    .link https://www.twitch.tv/videos/729674651 >> This skip is hard, click here for video reference
-step
-    #hardcore
-    #label skip2
-    #requires skip1
-    #completewith fp
-    .goto Wetlands,17.9,67.9,30,0
-    .goto Wetlands,16.0,67.2,20,0
-    .goto Wetlands,17.0,64.1,20,0
-    .goto Wetlands,14.9,63.7,20,0
-    +Head to Menethil Harbor, make sure to avoid aggroing the Crocolisks while crossing the sea.
-    .goto Wetlands,17.9,67.9,0
-    .goto Wetlands,16.0,67.2,0
-    .goto Wetlands,17.0,64.1,0
-    .goto Wetlands,14.9,63.7,0
-    .link https://www.twitch.tv/videos/729674651 >> This skip is hard, click here for video reference
+	+Do the Loch Modan - Wetlands run, you can save a lot of time by doing a series of mountain jumps, see the video below
+    .link https://www.youtube.com/watch?v=q-yHviS7baQ >> This skip is hard, click here for video reference
 step
     #hardcore
     #label fp
     .goto Wetlands,9.5,59.7
     .fp >> Get the Menethil Harbor flight path
+step << Hunter
+	.goto Wetlands,11.4,59.6
+	>>Buy the level 16 weapon upgrade from Murndan Deth inside the blacksmith, skip this step if you don't have enough money
+	.collect 3023,1
 step
     .goto Wetlands,4.6,57.2
     .zone Darkshore >>Head to the Menethil Harbor docks and take the boat to Darkshore
