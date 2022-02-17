@@ -84,7 +84,6 @@ function RXPG_init()
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.arrowText = RXPData.arrowText or 9
-    RXPData.phase = RXPData.phase or 1
     RXPCData.flightPaths = RXPCData.flightPaths or {}
     RXPData.batchSize = RXPData.batchSize or 5
     if RXPData.disableTrainerAutomation == nil then
@@ -93,10 +92,12 @@ function RXPG_init()
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
-	if RXP_.version == "CLASSIC" and (not RXPData.addonVersion or RXPData.addonVersion < addonVersion) then
-		RXPData.phase = 3
+	if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
 		RXPData.addonVersion = addonVersion
 	end
+	RXPCData.phase = RXPCData.phase or 3
+	RXPCData.SoM = RXPCData.SoM or true
+	
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     f:SetShown(not RXPCData.hideWindow)
     C_Timer.After(0.5,function()
@@ -1817,7 +1818,7 @@ end
 
 local function IsGuideActive(guide)
     local som = RXPCData and RXPCData.SoM
-    if guide.era and som or guide.som and not som or (RXPData.phase > 2 and som and guide["era/som"]) then
+    if guide.era and som or guide.som and not som or (RXPCData.phase > 2 and som and guide["era/som"]) then
         --print('-',guide.name,not guide.som,not guide.era,som)
         return false
     end
@@ -2210,7 +2211,7 @@ function RXP_.CreateOptionsPanel()
     slider = CreateSlider(RXPData,"batchSize",1,100,"Batching window size: %d ms","Adjusts the batching window tolerance, used for hearthstone batching",slider,0,-25, 1, "1", "100")
     
     if RXP_.version == "CLASSIC" then
-        slider = CreateSlider(RXPData,"phase",1, 6,"Content phase: %d","Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: Thorium Brotherhood quests (BWL)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",slider,0,-25, 1, "1", "6")
+        slider = CreateSlider(RXPCData,"phase",1, 6,"Content phase: %d","Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: Thorium Brotherhood quests (BWL)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",slider,0,-25, 1, "1", "6")
     end
 end
 
@@ -2342,7 +2343,7 @@ function RXP_.GetQuestLog()
 	local eStep
     RXP_.next = group.next
 
-    if (RXPCData.SoM and guide.era or not RXPCData.SoM and guide.som or RXPCData.SoM and RXPData.phase > 2 and guide["era/som"]) or not guide then
+    if (RXPCData.SoM and guide.era or not RXPCData.SoM and guide.som or RXPCData.SoM and RXPCData.phase > 2 and guide["era/som"]) or not guide then
         return
     end
     for ns,step in ipairs(guide.steps) do

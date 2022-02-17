@@ -380,7 +380,7 @@ function RXP_.PhaseCheck(phase)
         phase = phase.phase
     end
     
-    if phase and RXPData.phase then
+    if phase and RXPCData.phase then
         local pmin,pmax
         pmin,pmax = phase:match("(%d+)%-(%d+)")
         if pmax then
@@ -390,7 +390,7 @@ function RXP_.PhaseCheck(phase)
             pmin = tonumber(phase)
             pmax = 0xffff
         end
-        if pmin and RXPData.phase >= pmin and RXPData.phase <= pmax then
+        if pmin and RXPCData.phase >= pmin and RXPCData.phase <= pmax then
             return true
         else
             return false
@@ -401,7 +401,7 @@ function RXP_.PhaseCheck(phase)
 end
 
 function RXP_.SeasonCheck(step)
-    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM or RXPCData.SoM and RXPData.phase > 2 and step["era/som"] then
+    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM or RXPCData.SoM and RXPCData.phase > 2 and step["era/som"] then
         return false
     end
     return true
@@ -1484,7 +1484,7 @@ function RXP_.functions.next(skip,guide)
         nextGuide = RXP_.GetGuideTable(group,next)
        
         if nextGuide then
-            if (nextGuide.era and RXPCData.SoM or nextGuide.som and not RXPCData.SoM or RXPCData.SoM and RXPData.phase > 2 and nextGuide["era/som"]) or 
+            if (nextGuide.era and RXPCData.SoM or nextGuide.som and not RXPCData.SoM or RXPCData.SoM and RXPCData.phase > 2 and nextGuide["era/som"]) or 
                (nextGuide.hardcore and not(RXPCData.hardcore) or nextGuide.softcore and RXPCData.hardcore) then
                return RXP_.functions.next(nil,nextGuide)
             else
