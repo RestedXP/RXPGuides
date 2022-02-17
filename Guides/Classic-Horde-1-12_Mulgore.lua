@@ -1521,7 +1521,6 @@ step
 step
     .goto Thunder Bluff,60.0,51.7
     .turnin 775 >>Turn in Journey into Thunder Bluff
-    .accept 776 >>Accept Rites of the Earthmother
 step << Druid
     .money <0.1154
     .goto Thunder Bluff,40.9,62.7
