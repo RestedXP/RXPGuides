@@ -936,7 +936,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
 #som
 #phase 3-6
 << Horde 
-#name 1-11 Mulgore
+#name 1-13 Mulgore
 #next 12-17 The Barrens
 step << !Tauren
     #sticky
@@ -1185,9 +1185,6 @@ step << Druid
     .money <0.01
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells
-step << Tauren/!Hunter
-    .goto Mulgore,48.6,60.4
-    .accept 748 >>Accept Poison Water
 step << Warrior
     .money <0.01
     .goto Mulgore,49.5,60.6
@@ -1205,9 +1202,6 @@ step << Hunter
     .goto Mulgore,46.6,61.1
     .turnin 1656 >>Turn in A Task Unfinished
     .home >>Set your Hearthstone to Bloodhoof Village
-step << Tauren Hunter
-    .goto Mulgore,48.6,60.4
-    .accept 748 >>Accept Poison Water
 step << Hunter
     .goto Mulgore,48.7,59.3
     .accept 761 >>Accept Swoop Hunting
@@ -1248,28 +1242,12 @@ step
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
-step << Tauren
-    .goto Mulgore,55.9,63.1,60,0
-    .goto Mulgore,51.1,66.5,60,0
-    .goto Mulgore,40.7,73.0,60,0
-    .goto Mulgore,55.9,63.1,60,0
-    .goto Mulgore,51.1,66.5,60,0
-    .goto Mulgore,40.7,73.0,60,0
-    >>Kill Wolves for Paws and Plainstriders for Talons. Kill a Plainstrider for Tender Strider Meat
-    .complete 748,1 --Prairie Wolf Paw (6)
-    .complete 748,2 --Plainstrider Talon (4)
-step << Tauren
-    .goto Mulgore,48.5,60.4
-    .turnin 748 >>Turn in Poison Water
 step
-    #sticky
-    #label Stones
     .goto Mulgore,53.7,66.3
     >>Loot the stones around the Well
     .complete 771,1 --Well Stone (2)
 step
     #label Gnolls
-    #requires Stones
     .unitscan Snagglespear
     .goto Mulgore,53.5,73.0,60,0
     .goto Mulgore,48.3,72.0,60,0
@@ -1344,101 +1322,21 @@ step
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step
-    #sticky
-    #label Mazzranache
-    #completewith next
-    >>Get the items for Mazzranache as you quest throughout the zone
+	#completewith Burial
+    >>Get the items for Mazzranache as you quest throughout the zone. Wolves for Hearts, Cougars for Femurs, Plainstriders for Scales, and Swoops for Gizzards
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step
-	#era/som
-    >>Kill Stalkers, Cougars, and Swoops in the area. Loot them for their claws and quills
-    .goto Mulgore,58.1,48.6,60,0
-    .goto Mulgore,54.5,40.1,60,0
-    .goto Mulgore,46.4,50.7,60,0
+	#completewith Burial
+    >>Kill Swoops. Loot them for their quills
+    .goto Mulgore,58.1,48.6,0
     .complete 761,1 --Trophy Swoop Quill (8)
-    .complete 756,1 --Stalker Claws (6)
-    .complete 756,2 --Cougar Claws (6)
-step
-	#som
-	#phase 3-6
-    >>Kill Swoops in the area. Loot them for their quills
-    .goto Mulgore,58.1,48.6,60,0
-    .goto Mulgore,54.5,40.1,60,0
-    .goto Mulgore,46.4,50.7,60,0
-    .complete 761,1 --Trophy Swoop Quill (8)
-step
-    #softcore
-    #completewith next
-    .goto Mulgore,46.5,55.5,200 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
-step
-    #hardcore
-    #completewith next
-    .goto Mulgore,46.5,55.5,200 >> Run back to Bloodhoof Village
-step
-    .isQuestComplete 766
-    .goto Mulgore,47.0,57.2
-    .turnin 766 >>Turn in Mazzranache
-step
-    #completewith next
-    .goto Mulgore,46.2,58.2
-    .vendor >>vendor trash
-step
-	#era/som
-    .goto Mulgore,48.5,60.4
-    .turnin 756 >>Turn in Thunderhorn Totem
-    .accept 758 >>Accept Thunderhorn Cleansing
-step
-    .goto Mulgore,48.7,59.4
-    .turnin 761 >>Turn in Swoop Hunting
-step << Shaman
-    .goto Mulgore,48.4,59.2
-    .trainer >> Train your class spells
-step << Druid
-    .goto Mulgore,48.5,59.6
-    .trainer >> Train your class spells
-step << Warrior
-    .goto Mulgore,49.5,60.6
-    .trainer >> Train your class spells
-step << Shaman/Druid
-    .goto Mulgore,45.7,58.6
-    .money <0.0504
-    >> Buy Walking Stick and equip it
-    .collect 2495,1 --Collect Walking Stick
-step << Warrior
-    .goto Mulgore,45.7,58.6
-    .money <0.0701
-    >> Buy Wooden Mallet and equip it
-    .collect 2493,1 --Collect Wooden Mallet
-step << Hunter
-    .goto Mulgore,45.5,58.5
-    .money <0.0414
-    >> Buy Ornate Blunderbuss and equip it
-    .collect 2509,1 --Collect Ornate Blunderbuss
-step << Warrior
-    .goto Mulgore,46.7,60.7
-    .vendor >> vendor trash. Buy as much Freshly Baked Bread as you can afford
-step << Druid/Shaman
-    .goto Mulgore,46.7,60.7
-    .vendor >> vendor trash. Buy as much Ice Cold Milk as you can afford
-step << Tauren
-	#era/som
-    .goto Mulgore,44.5,45.3
-    >>Use the Thunderhorn Cleansing Totem at the Well
-    .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
-step
-    #label mazzranache2
-    #sticky
-    >>Finish getting the items for Mazzranache
-    .complete 766,1 --Prairie Wolf Heart (1)
-    .complete 766,2 --Flatland Cougar Femur (1)
-    .complete 766,3 --Plainstrider Scale (1)
-    .complete 766,4 --Swoop Gizzard (1)
+	.unitscan Swoop
 step
     .goto Mulgore,31.3,49.9
-   >>Kill Dwarf mobs for Prospector's Picks
+    >>Kill Dwarf mobs for Prospector's Picks
     >>Use the Picks on the Forge until you've broken 5 of them
     .complete 746,1 --Broken Tools (5)
 step
@@ -1450,6 +1348,27 @@ step
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
 step
+	#completewith next
+    >>Kill Swoops in the area. Loot them for their quills
+    .goto Mulgore,58.1,48.6,0
+    .complete 761,1 --Trophy Swoop Quill (8)
+	.unitscan Swoop
+step
+    >>Get the items for Mazzranache as you quest throughout the zone. Wolves for Hearts, Cougars for Femurs, Plainstriders for Scales, and Swoops for Gizzards
+	>>They can be found all over central Mulgore
+    .goto Mulgore,49.7,32.2
+    .complete 766,1 --Prairie Wolf Heart (1)
+    .complete 766,2 --Flatland Cougar Femur (1)
+    .complete 766,3 --Plainstrider Scale (1)
+    .complete 766,4 --Swoop Gizzard (1)
+step
+    >>Kill Swoops in the area. Loot them for their quills
+	>>They're found all over the lower-central half of Mulgore
+    .goto Mulgore,42.6,52.4
+    .complete 761,1 --Trophy Swoop Quill (8)
+	.unitscan Swoop
+step
+	#label Burial
     .goto Mulgore,59.9,25.6
     .accept 833 >>Accept A Sacred Burial
 step
@@ -1461,332 +1380,69 @@ step
     .turnin 773 >>Turn in Rite of Wisdom
     .accept 775 >>Accept Journey into Thunder Bluff
 step << !Druid
-	#som
-	#phase 3-6
     .goto Mulgore,61.5,21.1
     .xp 9+5240 >> Grind to 5240+/6500xp
 step
     .goto Mulgore,59.8,25.6
     .turnin 833 >>Turn in A Sacred Burial
 step
-	#era/som
-    .xp 9+4400 >> Grind to 4400+/6500xp
-step << Druid
-	#som
-	#phase 3-6
-    #softcore
-    #completewith next
-    .goto Mulgore,54.76,35.10
-    .deathskip >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
-step << Druid
-	#som
-	#phase 3-6
-    #hardcore
-    .goto Mulgore,46.5,55.5,300 >> Run back to Bloodhoof Village
-step << Druid
-	#som
-	#phase 3-6
-    #requires mazzranache2
-    .goto Mulgore,47.0,57.2
-    .turnin 766 >>Turn in Mazzranache
-step << Druid
-	#som
-	#phase 3-6
-    .goto Mulgore,46.9,60.2
-    .accept 861 >>Accept The Hunter's Way
-step << Druid
-	#som
-	#phase 3-6
-    .goto Mulgore,48.5,60.4
-    .turnin 758 >>Turn in Thunderhorn Cleansing
-    .accept 759 >>Accept Wildmane Totem
-step << Druid
-	#som
-	#phase 3-6
-    .goto Mulgore,47.5,60.2
-    .turnin 746 >>Turn in Dwarven Digging
-step << Druid
-	#som
-	#phase 3-6
-    .goto Mulgore,47.4,62.0
-    .turnin 743 >>Turn in Dangers of the Windfury
---Add shaman
-step << ShamanSKIP
-	#som
-	#phase 6
-    .goto Mulgore,48.4,59.2
-    .accept 2984 >>Accept Call of Fire
-     .trainer >> Train your class spells
-step << Druid
-	#som
-	#phase 6
-    .goto Mulgore,48.5,59.6
-    .accept 5928 >>Accept Heeding the Call
-     .trainer >> Train your class spells
-step
-	#som
-	#phase 6
 	#softcore
     .goto Mulgore,59.8,25.6
 	.deathskip >> Die and respawn at Thunder Bluff
 step
-	#som
-	#phase 6
 	#completewith next
     .goto Mulgore,41.00,22.22,30 >> Take the lift up to Thunder Bluff
 step << !Hunter
-	#som
-	#phase 6
     .goto Thunder Bluff,45.82,64.73
 	.home >> Set your Hearthstone to Thunder Bluff
 step << Druid
-	#som
-	#phase 6
-    .goto Thunder Bluff,76.7,27.3
-    .turnin 5928 >>Turn in Heeding the Call
-step << Druid
-	#som
-	#phase 6
     .goto Thunder Bluff,77.0,27.5
     .accept 5922 >>Accept Moonglade
+	.trainer >> Train your class spells
 step << Druid 
-	#som
-	#phase 6
     >>Use your new spell to teleport to Moonglade
     .goto Moonglade,56.2,30.7
     .turnin 5922 >>Turn in Moonglade
     .accept 5930 >>Accept Great Bear Spirit
 step << Druid 
-	#som
-	#phase 6
     .goto Moonglade,39.2,27.5
     .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
 step << Druid 
-	#som
-	#phase 6
     >> Teleport back to Moonglade
     .goto Moonglade,56.2,30.7
     .turnin 5930 >>Turn in Great Bear Spirit
     .accept 5932 >>Accept Back to Thunder Bluff
 step << Druid
-	#som
-	#phase 6
 	.hs >> Hearth to Thunder Bluff
 step << Druid
-	#som
-	#phase 6
     .goto Thunder Bluff,76.5,27.3
     .turnin 5932 >>Turn in Back to Thunder Bluff
     .accept 6002 >>Accept Body and Heart
 step
-	#som
-	#phase 6
     .goto Thunder Bluff,45.83,51.59,30,0
     .goto Thunder Bluff,47.00,49.83
-	.fp Thunder Bluff >> Get the Thunder Bluff Flight Path
 	.fly Crossroads >> Fly to Crossroads << !Druid
 	.fly Camp T >> Fly to Camp Taurajo << Druid
 step << Druid
-	#som
-	#phase 6
     >>Run to the Moonkin Stone, and use the Cenarion Lunardust in your inventory. Kill Lunaclaw, then talk to her
     .goto The Barrens,42.0,60.9
     .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses. (1)
 step << Druid
-	#som
-	#phase 6
     .goto The Barrens,44.9,58.6
     .accept 854 >>Accept Journey to the Crossroads
 step << Druid
-	#som
-	#phase 6
     .goto The Barrens,44.5,59.1
 	.fly Crossroads >> Fly to Crossroads
---X
-step << Druid
-	#som
-	#phase 6
+step
     .goto The Barrens,52.2,31.9
-    .turnin 886 >>Turn in The Barrens Oases
-    .accept 870 >>Accept The Forgotten Pools
-step << !Druid
-    #completewith next
-    .hs >>Hearth to Bloodhoof Village
-step << Druid
-    #softcore
-    #completewith next
-    .goto Mulgore,54.76,35.10
-    .deathskip >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
-step << Druid
-    #hardcore
-    .goto Mulgore,46.5,55.5,300 >> Run back to Bloodhoof Village
-step << !Hunter
-    #requires mazzranache2
-    .goto Mulgore,47.0,57.2
-    .turnin 766 >>Turn in Mazzranache
-step
-    .goto Mulgore,46.9,60.2
-    .accept 861 >>Accept The Hunter's Way
-step
-	#era/som
-    .goto Mulgore,48.5,60.4
-    .turnin 758 >>Turn in Thunderhorn Cleansing
-    .accept 759 >>Accept Wildmane Totem << !Hunter
-step << !Hunter
-    .goto Mulgore,47.5,60.2
-    .turnin 746 >>Turn in Dwarven Digging
-step 
-    .goto Mulgore,47.4,62.0
-    .turnin 743 >>Turn in Dangers of the Windfury
-step << Shaman
-    .goto Mulgore,48.4,59.2
-    .accept 2984 >>Accept Call of Fire
-     .trainer >> Train your class spells
-step << Druid
-    .goto Mulgore,48.5,59.6
-    .accept 5928 >>Accept Heeding the Call
-     .trainer >> Train your class spells
-step << Warrior
-    .goto Mulgore,49.5,60.6
-    .accept 1505 >>Accept Veteran Uzzek
-     .trainer >> Train your class spells
-step << Hunter
-    .goto Mulgore,47.5,60.2
-    .turnin 746 >>Turn in Dwarven Digging
-step << Tauren Hunter
-    .goto Mulgore,48.5,60.4
-    .turnin 758 >>Turn in Thunderhorn Cleansing
-step << Hunter
-    #requires mazzranache2
-    .goto Mulgore,47.0,57.2
-    .turnin 766 >>Turn in Mazzranache
-step << Hunter
-    .goto Mulgore,47.7,55.7
-     .trainer >> Train your pet spells
-step << Hunter
-    .goto Mulgore,47.8,55.7
-    .accept 6061 >>Accept Taming the Beast
-     .trainer >> Train your class spells
-step << Hunter
-    >>Click the Taming Rod in your bag on a Plainstrider. Try to do it at max range (30 yards)
-    .goto Mulgore,53.7,62.2
-    .complete 6061,1 --Tame an Adult Plainstrider (1)
-step << Hunter
-    .goto Mulgore,47.8,55.7
-    .turnin 6061 >>Turn in Taming the Beast
-    .accept 6087 >>Accept Taming the Beast
-step << Hunter
-    >>Click the Taming Rod in your bag on a Stalker. Try to do it at max range (30 yards)
-    .goto Mulgore,47.1,48.3
-    .complete 6087,1 --Tame a Prairie Stalker (1)
-step << Hunter
-    .goto Mulgore,47.8,55.7
-    .turnin 6087 >>Turn in Taming the Beast
-    .accept 6088 >>Accept Taming the Beast
-step << Hunter
-    >>Click the Taming Rod in your bag on a Swoop. Do it at max range, and re-cast it immediately if they knock you down. If you fail and run out of Taming Rod Charges, abandon the quest, then pick it up again and come back
-    .goto Mulgore,43.3,51.4
-    .complete 6088,1 --Tame a Swoop (1)
-step << Hunter
-    .goto Mulgore,47.8,55.7
-    .turnin 6088 >>Turn in Taming the Beast
-    .accept 6089 >>Accept Training the Beast
-step
-    >>Look for Morin Cloudstalker. He patrols along the eastern road
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .turnin 751 >> Turn in The Ravaged Caravan
-    .accept 764 >>Accept The Venture Co.
-    .accept 765 >>Accept Supervisor Fizsprocket
-step
-	#era/som
-    >>Kill Wolves in the area. Loot them for teeth
-    .goto Mulgore,66.9,67.2
-    .complete 759,1 --Prairie Alpha Tooth (8)
-step
-    #softcore
-    #completewith next
-    .goto Mulgore,46.5,55.5,200 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
-step
-    #hardcore
-    #completewith next
-    .goto Mulgore,46.5,55.5,200 >> Run back to Bloodhoof Village
-step
-	#era/som
-    .goto Mulgore,48.5,60.4
-    .turnin 759 >>Turn in Wildmane Totem
-    .accept 760 >>Accept Wildmane Cleansing
-step
-    .goto Mulgore,69.6,60.4,100,0
-    .zone The Barrens >> Run into The Barrens
-step << !Druid
-    .goto The Barrens,44.5,59.1
-    .fp >>Get the Camp Taurajo Flight Path
-step << Druid
-    .goto The Barrens,44.5,59.1
-    .fp >>Get the Camp Taurajo Flight Path
-    .fly Thunder Bluff >>Fly to Thunder Bluff
-step << Druid
-    .goto Thunder Bluff,45.8,64.4
-    .home >>Set your Hearthstone to Thunder Bluff
-step << Druid
-    .goto Thunder Bluff,78.1,28.6
-    .accept 886 >>Accept The Barrens Oases
-step << Druid
-    .goto Thunder Bluff,76.7,27.3
-    .turnin 5928 >>Turn in Heeding the Call
-step << Druid
-    .goto Thunder Bluff,77.0,27.5
-    .accept 5922 >>Accept Moonglade
-step << Druid 
-    >>Use your new spell to teleport to Moonglade
-    .goto Moonglade,56.2,30.7
-    .turnin 5922 >>Turn in Moonglade
-    .accept 5930 >>Accept Great Bear Spirit
-step << Druid 
-    .goto Moonglade,39.2,27.5
-    .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
-step << Druid 
-    >> Teleport back to Moonglade
-    .goto Moonglade,56.2,30.7
-    .turnin 5930 >>Turn in Great Bear Spirit
-    .accept 5932 >>Accept Back to Thunder Bluff
-step << Druid 
-    .hs >>Hearth to Thunder Bluff
-step << Druid
-    .goto Thunder Bluff,76.5,27.3
-    .turnin 5932 >>Turn in Back to Thunder Bluff
-    .accept 6002 >>Accept Body and Heart
-step << Druid
-    .goto Thunder Bluff,47.0,49.8
-    .fly Camp Taurajo >>Fly to Camp Taurajo
-step << Druid
-    >>Run to the Moonkin Stone, and use the Cenarion Lunardust in your inventory. Kill Lunaclaw, then talk to her
-    .goto The Barrens,42.0,60.9
-    .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses. (1)
-step << Tauren
-    .goto The Barrens,44.9,58.6
-    .accept 854 >>Accept Journey to the Crossroads
-step << Druid
-    .goto The Barrens,52.2,31.9
-    .turnin 886 >>Turn in The Barrens Oases
-    .accept 870 >>Accept The Forgotten Pools
-step << !Druid
-    .goto The Barrens,52.2,31.9
+    .turnin 886 >>Turn in The Barrens Oases << Druid
     .accept 870 >>Accept The Forgotten Pools
 step
     .goto The Barrens,51.5,30.1
     .accept 848 >>Accept Fungal Spores
-step << Tauren
+step << Druid
     .goto The Barrens,51.5,30.8
     .turnin 854 >>Turn in Journey to the Crossroads
-step
-    .goto The Barrens,51.5,30.4
-    .fp >>Get the The Crossroads Flight Path
 step
     .goto The Barrens,51.1,29.0
     .accept 6361 >>Accept A Bundle of Hides
@@ -1824,7 +1480,7 @@ step
     .goto The Barrens,52.3,31.9
     .turnin 870 >>Turn in The Forgotten Pools
     .accept 877 >>Accept The Stagnant Oasis
-step
+step << skip
     .goto The Barrens,52.0,29.9
     .home >>Set your Hearthstone to Crossroads
 step
@@ -1836,8 +1492,11 @@ step
     .goto The Barrens,51.5,30.3
     .turnin 6361 >>Turn in A Bundle of Hides
     .accept 6362 >>Accept Ride to Thunder Bluff
-step
+step << Hunter
+    .goto The Barrens,51.5,30.4
     .fly Thunder Bluff >>Fly to Thunder Bluff
+step << !Hunter
+	.hs >> Hearth to Thunder Bluff
 step << Hunter
 	.goto Thunder Bluff,57.4,89.4
 	.turnin 6089 >> Turn in Training the Beast
@@ -1845,9 +1504,6 @@ step
     .goto Thunder Bluff,45.6,55.9
     .turnin 6362 >>Turn in Ride to Thunder Bluff
     .accept 6363 >>Accept Tal the Wind Rider Master
-step
-    .goto Thunder Bluff,37.8,59.4
-    .accept 744 >>Accept Preparation for Ceremony
 step
     .goto Thunder Bluff,29.6,29.7,15 >>Go into the cave
 step << Druid
@@ -1876,31 +1532,16 @@ step << Warrior/Hunter
 step << Druid
     .goto Thunder Bluff,76.5,27.3
     .turnin 6002 >>Turn in Body and Heart
-step
-    #sticky
-    #completewith ThunderBluff
+step << !Hunter
+    #completewith next
     >>Keep an eye out for Ghost Howl (white wolf rare). Loot him for Demon Scarred Cloak. Skip this step if you're unable to find him.
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Accept The Demon Scarred Cloak
-step
-    .goto Mulgore,31.7,28.2,90,0
-    .goto Mulgore,30.2,19.5,90,0
-    .goto Mulgore,31.7,28.2
-    >>Kill Harpies. Loot them for their Feathers
-    .complete 744,1 --Azure Feather (6)
-    .complete 744,2 --Bronze Feather (6)
-step
-    #sticky
-    #label Prowlers
-    >>Kill Flatland Prowlers. Loot them for their Claws
-    .complete 861,1 --Flatland Prowler Claw (4)
-step
-
-	#era/som
-    .goto Mulgore,42.5,13.8
-    >>Use the Wildmane Cleansing Totem at the Well
-    .complete 760,1 --Cleanse the Wildmane Well (1)
-step
+	.unitscan Ghost Howl
+step << Hunter
+    #completewith next
+    .hs >>Hearth to Bloodhoof Village
+step << skip
     .goto Mulgore,52.6,12.2,90,0
     .goto Mulgore,48.6,16.1,90,0
     .goto Mulgore,51.8,33.8,90,0
@@ -1912,37 +1553,92 @@ step
     >>Look around for Arra'Chea (Big black kodo). He walks clockwise. Kill and Loot him for his horn
     .complete 776,1 --Horn of Arra'chea (1)
     .unitscan Arra'chea
-step
-    #requires Prowlers
-    #label ThunderBluff
-    >>Go back into Thunder Bluff
-    .goto Thunder Bluff,60.1,51.7
-    .turnin 776 >>Turn in Rites of the Earthmother
-step
-    .goto Thunder Bluff,37.9,59.6
-    .turnin 744 >>Turn in Preparation for Ceremony
-step
-    .goto Thunder Bluff,61.3,80.9
-    .turnin 861 >>Turn in The Hunter's Way
-step
-    .goto Thunder Bluff,61.2,81.2
-    .accept 860 >>Accept Sergra Darkthorn
-step
+step << !Hunter
+    .goto Mulgore,46.5,55.5,200 >> Run back to Bloodhoof Village
+step << !Hunter
+    .goto Mulgore,47.0,57.2
+    .turnin 766 >>Turn in Mazzranache
+step << !Hunter
+    .goto Mulgore,47.5,60.2
+    .turnin 746 >>Turn in Dwarven Digging
+step 
+    .goto Mulgore,47.4,62.0
+    .turnin 743 >>Turn in Dangers of the Windfury
+step << Hunter
+    .goto Mulgore,45.5,58.5
+    .money <0.0414
+    >> Buy Ornate Blunderbuss and equip it
+    .collect 2509,1 --Collect Ornate Blunderbuss
+step << Shaman
+    .goto Mulgore,48.4,59.2
+    .accept 2984 >>Accept Call of Fire
+     .trainer >> Train your class spells
+step << Druid
+    .goto Mulgore,48.5,59.6
+     .trainer >> Train your class spells
+step << Warrior
+    .goto Mulgore,49.5,60.6
+    .accept 1505 >>Accept Veteran Uzzek
+     .trainer >> Train your class spells
+step << Hunter
+    .goto Mulgore,47.5,60.2
+    .turnin 746 >>Turn in Dwarven Digging
+step << Hunter
+    .goto Mulgore,47.0,57.2
+    .turnin 766 >>Turn in Mazzranache
+step << Hunter
+    .goto Mulgore,47.7,55.7
+     .trainer >> Train your pet spells
+step << Hunter
+    .goto Mulgore,47.8,55.7
+    .accept 6061 >>Accept Taming the Beast
+     .trainer >> Train your class spells
+step << Hunter
+    >>Click the Taming Rod in your bag on a Plainstrider. Try to do it at max range (30 yards)
+    .goto Mulgore,53.7,62.2
+    .complete 6061,1 --Tame an Adult Plainstrider (1)
+step << Hunter
+    .goto Mulgore,47.8,55.7
+    .turnin 6061 >>Turn in Taming the Beast
+    .accept 6087 >>Accept Taming the Beast
+step << Hunter
+    >>Click the Taming Rod in your bag on a Stalker. Try to do it at max range (30 yards)
+    .goto Mulgore,47.1,48.3
+    .complete 6087,1 --Tame a Prairie Stalker (1)
+step << Hunter
+    .goto Mulgore,47.8,55.7
+    .turnin 6087 >>Turn in Taming the Beast
+    .accept 6088 >>Accept Taming the Beast
+step << Hunter
+    >>Click the Taming Rod in your bag on a Swoop. Do it at max range, and re-cast it immediately if they knock you down. If you fail and run out of Taming Rod Charges, abandon the quest, then pick it up again and come back
+    .goto Mulgore,43.3,51.4
+    .complete 6088,1 --Tame a Swoop (1)
+step << Hunter
+    .goto Mulgore,47.8,55.7
+    .turnin 6088 >>Turn in Taming the Beast
+    .accept 6089 >>Accept Training the Beast
+step << !Hunter
     .isOnQuest 770
-    >>Run to Bloodhoof Village
     .goto Mulgore,46.8,60.2
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step
-	#era/som
-    .goto Mulgore,48.6,60.4
-    .turnin 760 >>Turn in Wildmane Cleansing
+    >>Look for Morin Cloudstalker. He patrols along the eastern road
+    .goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,59.7,62.5,30,0
+    .goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,59.7,62.5,30,0
+    .goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,59.7,62.5,30,0
+    .goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,59.7,62.5,30,0
+    .turnin 751 >>Turn in The Ravaged Caravan
+    .accept 764 >>Accept The Venture Co.
+    .accept 765 >>Accept Supervisor Fizsprocket
 step
     .goto Mulgore,61.5,47.2,110 >>Run to the mine
 step
-    #sticky
-    #label Workers
+    #completewith next
     >>Kill the Venture Co mobs
-    .goto Mulgore,63.0,44.3
     .complete 764,1 --Venture Co. Worker (14)
     .complete 764,2 --Venture Co. Supervisor (6)
 step
@@ -1950,11 +1646,14 @@ step
     .goto Mulgore,64.9,43.3
     .complete 765,1 --Fizsprocket's Clipboard (1)
 step
-    #requires Workers
-    .xp 11+7150 >> Grind to 7150+/8700xp
+    >>Kill the Venture Co mobs
+    .goto Mulgore,63.0,44.3
+    .complete 764,1 --Venture Co. Worker (14)
+    .complete 764,2 --Venture Co. Supervisor (6)
 step
-    #sticky
-    #completewith next
+    .goto Mulgore,63.0,44.3
+    .xp 11+5620 >> Grind to 5620+/8700xp
+step
     >>Look for Morin Cloudstalker. He patrols along the eastern road
     .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5,30,0
@@ -1972,16 +1671,27 @@ step << Shaman
 step << Warrior
     .goto Mulgore,49.5,60.6
      .trainer >> Train your class spells
-step << Druid
+step << DruidSKIP
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells
-step << Hunter
+step << HunterSKIP
     .goto Mulgore,47.8,55.7
      .trainer >> Train your class spells
-step
-    #sticky
-    #completewith next
-    .goto The Barrens,52.0,29.9,150 >>Hearth or fly back to Crossroads
+step << Druid/Hunter
+    .goto The Barrens,44.5,59.1
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+step << Druid
+    .goto Thunder Bluff,76.5,27.3
+    .turnin 6002 >>Turn in Body and Heart
+	.trainer >> Train your class spells
+step << Hunter
+	.goto Thunder Bluff,57.4,89.4
+	.turnin 6089 >> Turn in Training the Beast
+	.trainer >> Train your class spells
+step << Hunter/Druid
+    .goto Thunder Bluff,45.83,51.59,30,0
+    .goto Thunder Bluff,47.00,49.83
+	.fly Crossroads >> Fly to Crossroads
 step
     .goto The Barrens,51.2,29.1
     .turnin 6364 >>Turn in Return to Jahan
@@ -1994,8 +1704,10 @@ step
     >>Go upstairs
     .accept 867 >>Accept Harpy Raiders
 step
+    .goto The Barrens,52.0,29.9
+    .home >>Set your Hearthstone to Crossroads
+step
     .goto The Barrens,52.2,31.0
-    .turnin 860 >>Turn in Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
 step
     .goto The Barrens,52.0,30.3
