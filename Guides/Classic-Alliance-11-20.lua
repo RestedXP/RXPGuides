@@ -70,6 +70,9 @@ step
     .goto Felwood,19.13,21.39
     >> Click the Buzzbox
     .turnin 983 >> Turn in Buzzbox 827
+step
+	#era/som
+	.goto Felwood,19.13,21.39
     .accept 1001 >> Accept Buzzbox 411
 step
     .goto Felwood,19.10,20.63
@@ -79,6 +82,7 @@ step
     .goto Felwood,18.10,18.48
     .accept 963 >> Accept For Love Eternal
 step
+	#era/som
     #sticky
     #completewith washed1
     .goto Darkshore,33.59,40.36,0
@@ -127,6 +131,7 @@ step
     .accept 958 >> Accept Tools of the Highborne
     .accept 954 >> Accept Bashal'Aran
 step
+	#era/som
     #sticky
     #label threshers
     .goto Darkshore,35.44,35.83,55,0
@@ -149,6 +154,7 @@ step << !NightElf
     >>Be careful as this quest can be difficult
     .complete 982,2
 step
+	#era/som
     #requires threshers
     .goto Felwood,25.19,1.29
     >>Hand in the thresher eyes
@@ -162,6 +168,7 @@ step
      >> Kill Striders. Loot them for Strider Meat
     .collect 5469,5,2178,1
 step
+	#era/som
     #sticky
     #completewith mbox
      >> Kill any type of Moonstalker
@@ -394,6 +401,7 @@ step
      >> Use the Empty Sampling Tube at the base of the waterfall
     .complete 4762,1
 step
+	#era/som
     #label mbox
     .goto Winterspring,1.42,26.89
      >> Skip this step if you don't have enough moonstalker fangs
@@ -878,6 +886,7 @@ step
     .goto Felwood,18.50,19.87
     .accept 1138 >> Accept Fruit of the Sea
 step
+	#era/som
     #sticky
      >> Finish off Buzzbox 323
     .complete 1002,1
@@ -908,6 +917,7 @@ step
     .complete 986,1
     .unitscan Moonstalker Sire
 step
+	#era/som
      #completewith south1
     .goto Darkshore,38.60,80.50,0
      >> Kill Grizzled Thistle Bears
@@ -939,6 +949,7 @@ step
     >> Finish the escort quest
     .complete 945,1
 step
+	#era/som
     .goto Felwood,24.53,60.46
     .turnin 1003 >> Turn in Buzzbox 525
     .isOnQuest 1003
@@ -1069,6 +1080,7 @@ step << Hunter
     >>Make sure your HS cooldown is <10 min 
     >>Skip this step if the area is too crowded
 step
+	#era/som
     .goto Winterspring,1.42,26.89
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
@@ -1341,6 +1353,9 @@ step
     .goto Felwood,19.13,21.39
     >>Click the Buzzbox
     .turnin 983 >> Turn in Buzzbox 827
+step
+	#era/som
+    .goto Felwood,19.13,21.39
     .accept 1001 >> Accept Buzzbox 411
 step
     .goto Felwood,19.10,20.63
@@ -1351,6 +1366,7 @@ step
     .goto Felwood,18.10,18.48
     .accept 963 >> Accept For Love Eternal
 step
+	#era/som
     #sticky
     #completewith washed1
     .goto Darkshore,33.59,40.36,0
@@ -1394,6 +1410,7 @@ step
     .accept 958 >> Accept Tools of the Highborne
     .accept 954 >> Accept Bashal'Aran
 step
+	#era/som
     #sticky
     #label threshers
     .goto Darkshore,35.44,35.83,55,0
@@ -1416,6 +1433,7 @@ step
     >>Be careful as this quest can be difficult
     .complete 982,2
 step
+	#era/som
     #requires threshers
     #label mbox1
     .goto Felwood,25.19,1.29
@@ -1431,6 +1449,7 @@ step
     .collect 5469,5,2178,1
 --N Bears
 step
+	#era/som
     #completewith Ameth
      >> Kill any type of Moonstalker
     .complete 1002,1
@@ -1523,6 +1542,7 @@ step
     .collect 5469,5,2178,1
 --N Bears
 step
+	#era/som
     #completewith Mushrooms
      >> Kill any type of Moonstalker
     .complete 1002,1
@@ -1686,10 +1706,17 @@ step  << !Warrior !Paladin !Rogue !Druid
      >> Kill Foreststriders. Loot them for the top part of the key
     .complete 2098,1
 step
+	#era/som
     .goto Darkshore,61.40,9.40
      >> Grind Moonstalker Sires/Matriarchs for pelts and fangs
     .complete 986,1
     .complete 1002,1
+step
+	#som
+	#phase 3-6
+    .goto Darkshore,61.40,9.40
+     >> Grind Moonstalker Sires/Matriarchs for pelts and fangs
+    .complete 986,1
 step  << !Warrior !Paladin !Rogue !Druid
     #requires ForestKey
     .goto Winterspring,6.37,16.66
@@ -1719,6 +1746,7 @@ step
      >> Kill Reef Crawlers/Encrusted Tide Crawlers along the coast. Loot them for Crab Chunks
     .complete 1138,1
 step
+	#era/som
     .goto Winterspring,1.42,26.89
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
@@ -1859,9 +1887,11 @@ step
     .goto Felwood,14.62,60.72
     .accept 4730 >> Accept Beached Sea Creature
 step
+	#era/som
     >>Kill Grizzled Thistle Bears
     .complete 1003,1
 step
+	#era/som
     .goto Felwood,24.53,60.46
     .turnin 1003 >> Turn in Buzzbox 525
 step
@@ -2674,6 +2704,7 @@ step
     .goto Darkshore,39.37,43.48
     .accept 993 >> Accept A Lost Master
 step
+	#era/som
     #completewith Murkdeep
     .goto Darkshore,40.23,81.28,0
      >> Kill Grizzled Thistle Bears. Loot them for their Scalps
@@ -2744,11 +2775,13 @@ step
     .unitscan Murkdeep
     .complete 4740,1
 step
+	#era/som
     .goto Darkshore,40.23,81.28
      >> Kill Grizzled Thistle Bears. Loot them for their Scalps
     .complete 1003,1
     .isOnQuest 1003
 step
+	#era/som
     .goto Felwood,24.53,60.46
     .turnin 1003 >> Turn in Buzzbox 525
     .isOnQuest 1003
