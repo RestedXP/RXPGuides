@@ -881,7 +881,7 @@ RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
 << Horde
 
 #name 17-22 Stonetalon/Barrens/Ashenvale
-#next RestedXP Horde 22-30\22-24 Hillsbrad
+#next RestedXP Horde 22-30\22-24 Hillsbrad - Era
 
 step
     .goto Stonetalon Mountains,80.7,89.2,50,0
