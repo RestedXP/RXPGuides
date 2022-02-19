@@ -210,6 +210,7 @@ step << Druid
     >>Use the Cenarion Moondust inside the cave, defeat Lunaclaw and speak with his spirit after
     .complete 6001,1 --Defeat Lunaclaw (x1)
 step << !Druid
+	#era/som
      #completewith next
     .hs >> Hearth to Auberdine
 step
@@ -977,18 +978,22 @@ step <<  Hunter
      .isOnQuest 731
      *This quest is VERY hard, you can skip this step and come back later at level 19
     .link https://www.twitch.tv/videos/1182180918 >> Click here for video reference
-step <<  Hunter
+step << Hunter
+	#era/som << Dwarf
     .goto Ashenvale,13.97,4.10
     .accept 4733 >> Accept Beached Sea Creature
     >>This quest can be a little hard, try to pull the murlocs 1 by 1, otherwise you can end up aggroing the whole camp
     .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> Click here for video reference
-step <<  Hunter
+step << Hunter
+	#era/som << Dwarf
     .goto Ashenvale,13.93,2.01
     .accept 4732 >> Accept Beached Sea Turtle
-step <<  Hunter
+step << Hunter
+	#era/som << Dwarf
     .goto Felwood,13.47,64.01
     .accept 4731 >> Accept Beached Sea Turtle
-step <<  Hunter
+step << Hunter
+	#era/som << Dwarf
     .goto Felwood,14.62,60.72
     .accept 4730 >> Accept Beached Sea Creature
 step
@@ -1019,10 +1024,13 @@ step
     .goto Darkshore,36.62,45.59
     .turnin 4722 >> Turn in Beached Sea Turtle << !Druid
     .turnin 4728 >> Turn in Beached Sea Creature
-    .turnin 4730 >> Turn in Beached Sea Creature << Hunter
-    .turnin 4731 >> Turn in Beached Sea Turtle << Hunter
-    .turnin 4732 >> Turn in Beached Sea Turtle << Hunter
-    .turnin 4733 >> Turn in Beached Sea Creature << Hunter
+step << Hunter
+	#era/som << Dwarf
+    .goto Darkshore,36.62,45.59
+    .turnin 4730 >> Turn in Beached Sea Creature
+    .turnin 4731 >> Turn in Beached Sea Turtle
+    .turnin 4732 >> Turn in Beached Sea Turtle
+    .turnin 4733 >> Turn in Beached Sea Creature
 step
     #label south2
     .goto Felwood,18.50,19.87
@@ -1873,17 +1881,21 @@ step
     >> Escort Therylune
     .complete 945,1
 step
+	#era/som
     .goto Ashenvale,13.97,4.10
     .accept 4733 >> Accept Beached Sea Creature
     >>This quest can be a little hard, try to pull the murlocs 1 by 1, otherwise you can end up aggroing the whole camp
     .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> Click here for video reference
 step
+	#era/som
     .goto Ashenvale,13.93,2.01
     .accept 4732 >> Accept Beached Sea Turtle
 step
+	#era/som
     .goto Felwood,13.47,64.01
     .accept 4731 >> Accept Beached Sea Turtle
 step
+	#era/som
     .goto Felwood,14.62,60.72
     .accept 4730 >> Accept Beached Sea Creature
 step
@@ -1901,13 +1913,27 @@ step
     .goto Ashenvale,29.58,1.67
     .turnin 993 >> Turn in A Lost Master
 step
-     >> Clear the furbolg camp before accepting this escort quest
+	#era/som
+     >> Clear the furbolgs near the cave before accepting this quest
     .accept 994 >> Accept Escape Through Force
 step
+	#som
+	#phase 3-6
+     >> Accept the quest and wait for the RP sequence to finish
+    .accept 995 >> Accept Escape Through Stealth
+step
+	#era/som
     #requires lostmaster1
     #label lostmaster2
      >> Escort Volcor
      .complete 994,1
+step
+	#som
+	#phase 3-6
+    #requires lostmaster1
+    #label lostmaster2
+     >> Wait for the RP dialogue to end
+     .complete 995,1
 step
     .goto Felwood,27.00,55.59
     .turnin 951 >> Turn in Mathystra Relics
@@ -2111,6 +2137,7 @@ step
     .turnin 994 >> Turn in Escape Through Force
     .isOnQuest 994
 step
+	#era/som
     .goto Darkshore,36.62,45.59
     .turnin 4730 >> Turn in Beached Sea Creature
     .turnin 4731 >> Turn in Beached Sea Turtle

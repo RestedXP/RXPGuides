@@ -995,59 +995,59 @@ step
     .complete 837,3 --Razormane Dustrunner (4)
     .complete 837,4 --Razormane Battleguard (4)
 step << Warlock/Hunter
-	#som/era
+	#era/som
     .xp 9+4500 >> Grind to 4500+/6500xp
 step << Warlock/Hunter
-	#som/era
+	#era/som
     .goto Durotar,51.1,42.4
     .turnin 815 >>Turn in Break a Few Eggs
 step << Warlock/Hunter
-	#som/era
+	#era/som
     .goto Durotar,51.9,43.5
     .turnin 825 >>Turn in From The Wreckage....
     .turnin 837 >>Turn in Encroachment
 step << Warlock
-	#som/era
+	#era/som
     .goto Durotar,54.4,41.2
     .trainer >> Train your class spells
     .accept 1506 >>Accept Gan'Rul's Summons
 step << Hunter
-	#som/era
+	#era/som
     .goto Durotar,51.8,43.5
     .trainer >> Train your class spells
     .accept 6062 >>Accept Taming the Beast
 step << Hunter
-	#som/era
+	#era/som
     >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
     .goto Durotar,51.5,50.0
     .complete 6062,1 --Tame a Dire Mottled Boar
 step << Hunter
-	#som/era
+	#era/som
     .goto Durotar,51.8,43.5
     .turnin 6062 >>Turn in Taming the Beast
     .accept 6083 >>Accept Taming the Beast
 step << Hunter
-	#som/era
+	#era/som
     >>Don't kill the Armored Scorpids you see. You'll need them later
     .goto Durotar,59.3,27.6
     .complete 6083,1 --Tame a Surf Crawler
 step << Hunter
-	#som/era
+	#era/som
     .goto Durotar,51.8,43.5
     .turnin 6083 >>Turn in Taming the Beast
     .accept 6082 >>Accept Taming the Beast
 step << Hunter
-	#som/era
+	#era/som
     >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
     .goto Durotar,59.3,27.6
     .complete 6082,1 --Tame an Armored Scorpid
 step << Hunter
-	#som/era
+	#era/som
     .goto Durotar,51.8,43.5
     .turnin 6082 >>Turn in Taming the Beast
     .accept 6081 >>Accept Training the Beast
 step << Hunter
-	#som/era
+	#era/som
     .goto Durotar,53.0,41.0
     .vendor >>vendor trash. Buy level 10 arrows until your Quiver is full (1000 arrows)
 step
