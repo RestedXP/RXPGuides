@@ -1521,7 +1521,6 @@ step
 step
     .goto Thunder Bluff,60.0,51.7
     .turnin 775 >>Turn in Journey into Thunder Bluff
-    .accept 776 >>Accept Rites of the Earthmother
 step << Druid
     .money <0.1154
     .goto Thunder Bluff,40.9,62.7
@@ -1677,9 +1676,10 @@ step << DruidSKIP
 step << HunterSKIP
     .goto Mulgore,47.8,55.7
      .trainer >> Train your class spells
-step << Druid/Hunter
+step
     .goto The Barrens,44.5,59.1
-    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .fly Thunder Bluff >>Fly to Thunder Bluff << Druid/Hunter
+	.fly Crossroads >> Fly to The Crossroads << !Hunter !Druid
 step << Druid
     .goto Thunder Bluff,76.5,27.3
     .turnin 6002 >>Turn in Body and Heart

@@ -644,6 +644,21 @@ step << Priest
 step << Priest
     .goto Durotar,54.3,42.9
     .turnin 5648 >>Turn in Garments of Spirituality
+step << Priest
+	#som
+	#phase 3-6
+    #sticky
+	#softcore
+    >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
+    >>Skip this step if you've already bought a wand or can get one cheap from the AH.
+    .collect 2589,60 --Linen Cloth (60)
+step << Priest
+	#som
+	#phase 3-6
+    #sticky
+	#hardcore
+    >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
+    .collect 2589,60 --Linen Cloth (60)	
 step
     #sticky
     #label KulTiras
@@ -868,6 +883,108 @@ step
     .goto Durotar,54.3,73.3
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
 step
+	#som
+	#phase 3-6
+    .goto Durotar,43.8,39.1
+    .xp 9+4500 >> Grind to 4500+/6500xp
+step
+	#som
+	#phase 3-6
+    .goto Durotar,51.1,42.4
+    .turnin 815 >>Turn in Break a Few Eggs
+step
+	#som
+	#phase 3-6
+    .goto Durotar,51.9,43.5
+    .turnin 825 >>Turn in From The Wreckage....
+step << Shaman
+	#som
+	#phase 3-6
+    .goto Durotar,54.4,42.5
+    .accept 2983 >>Accept Call of Fire
+    .trainer >> Train your class spells
+step << Priest
+	#som
+	#phase 3-6
+    .goto Durotar,54.3,42.9
+    .trainer >> Train your class spells
+step << Orc Warrior/Troll Warrior
+	#som
+	#phase 3-6
+    .goto Durotar,54.2,42.5
+    .accept 1505 >>Accept Veteran Uzzek
+    .trainer >> Train your class spells
+step << Rogue
+	#som
+	#phase 3-6
+    .goto Durotar,52.0,43.7
+    .trainer >> Train your class spells
+step << Warrior/Rogue
+	#som
+	#phase 3-6
+    .goto Durotar,54.2,41.9
+    .money <0.01
+    .train 3273 >>Train First Aid
+step << Warlock
+	#som
+	#phase 3-6
+    .goto Durotar,54.4,41.2
+    .trainer >> Train your class spells
+    .accept 1506 >>Accept Gan'Rul's Summons
+step << Hunter
+	#som
+	#phase 3-6
+    .goto Durotar,51.8,43.5
+    .trainer >> Train your class spells
+    .accept 6062 >>Accept Taming the Beast
+step << Hunter
+	#som
+	#phase 3-6
+    .goto Durotar,51.8,43.5
+    .trainer >> Train your class spells
+    .accept 6062 >>Accept Taming the Beast
+step << Hunter
+	#som
+	#phase 3-6
+    >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
+    .goto Durotar,51.5,50.0
+    .complete 6062,1 --Tame a Dire Mottled Boar
+step << Hunter
+	#som
+	#phase 3-6
+    .goto Durotar,51.8,43.5
+    .turnin 6062 >>Turn in Taming the Beast
+    .accept 6083 >>Accept Taming the Beast
+step << Hunter
+	#som
+	#phase 3-6
+    >>Don't kill the Armored Scorpids you see. You'll need them later
+    .goto Durotar,59.3,27.6
+    .complete 6083,1 --Tame a Surf Crawler
+step << Hunter
+	#som
+	#phase 3-6
+    .goto Durotar,51.8,43.5
+    .turnin 6083 >>Turn in Taming the Beast
+    .accept 6082 >>Accept Taming the Beast
+step << Hunter
+	#som
+	#phase 3-6
+    >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
+    .goto Durotar,59.3,27.6
+    .complete 6082,1 --Tame an Armored Scorpid
+step << Hunter
+	#som
+	#phase 3-6
+    .goto Durotar,51.8,43.5
+    .turnin 6082 >>Turn in Taming the Beast
+    .accept 6081 >>Accept Training the Beast
+step << Hunter
+	#som
+	#phase 3-6
+    .goto Durotar,53.0,41.0
+    .vendor >>vendor trash. Buy level 10 arrows until your Quiver is full (1000 arrows)
+step
     .goto Durotar,48.9,48.5
     >>Kill Quilboars and Scouts in the area
     .complete 837,1 --Razormane Quilboar (4)
@@ -878,47 +995,59 @@ step
     .complete 837,3 --Razormane Dustrunner (4)
     .complete 837,4 --Razormane Battleguard (4)
 step << Warlock/Hunter
+	#som/era
     .xp 9+4500 >> Grind to 4500+/6500xp
 step << Warlock/Hunter
+	#som/era
     .goto Durotar,51.1,42.4
     .turnin 815 >>Turn in Break a Few Eggs
 step << Warlock/Hunter
+	#som/era
     .goto Durotar,51.9,43.5
     .turnin 825 >>Turn in From The Wreckage....
     .turnin 837 >>Turn in Encroachment
 step << Warlock
+	#som/era
     .goto Durotar,54.4,41.2
     .trainer >> Train your class spells
     .accept 1506 >>Accept Gan'Rul's Summons
 step << Hunter
+	#som/era
     .goto Durotar,51.8,43.5
     .trainer >> Train your class spells
     .accept 6062 >>Accept Taming the Beast
 step << Hunter
+	#som/era
     >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
     .goto Durotar,51.5,50.0
     .complete 6062,1 --Tame a Dire Mottled Boar
 step << Hunter
+	#som/era
     .goto Durotar,51.8,43.5
     .turnin 6062 >>Turn in Taming the Beast
     .accept 6083 >>Accept Taming the Beast
 step << Hunter
+	#som/era
     >>Don't kill the Armored Scorpids you see. You'll need them later
     .goto Durotar,59.3,27.6
     .complete 6083,1 --Tame a Surf Crawler
 step << Hunter
+	#som/era
     .goto Durotar,51.8,43.5
     .turnin 6083 >>Turn in Taming the Beast
     .accept 6082 >>Accept Taming the Beast
 step << Hunter
+	#som/era
     >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
     .goto Durotar,59.3,27.6
     .complete 6082,1 --Tame an Armored Scorpid
 step << Hunter
+	#som/era
     .goto Durotar,51.8,43.5
     .turnin 6082 >>Turn in Taming the Beast
     .accept 6081 >>Accept Training the Beast
 step << Hunter
+	#som/era
     .goto Durotar,53.0,41.0
     .vendor >>vendor trash. Buy level 10 arrows until your Quiver is full (1000 arrows)
 step
@@ -935,99 +1064,143 @@ step
 	#label SkullX
     .goto Durotar,46.4,22.9
     .turnin 834 >>Turn in Winds in the Desert
-    .accept 835 >>Accept Securing the Lines 
+    .accept 835 >>Accept Securing the Lines
+step << Warlock
+	#som
+	#phase 3-6
+	>>Run into Orgrimmar
+    .goto Orgrimmar,48.3,45.3
+    .turnin 1506 >>Turn in Gan'rul's Summons
+    .accept 1501 >>Accept Creature of the Void
+step << Warlock
+	#softcore
+	#som
+	#phase 3-6
+	#completewith next
+	+Run onto a nearby Brazier. Spam Life Tap so you lose health, then die to the fire
+	>>Alternatively, run into Ragefire Chasm and die to the mobs inside
+step << Warlock
+	#som
+	#phase 3-6
+    .goto Durotar,47.3,17.9,200 >> Exit Orgrimmar
 step
     #completewith next
     .goto Durotar,41.7,25.5,120 >>Jump into Thunder Ridge
 step
+	#softcore
     >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time. Use your Skull & health pot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
 	>>Group up for this quest if you're struggling
     .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
---N add a link for warrior/rogue? Also needs more specific wording per class
-	#softcore
 step
+	#hardcore
     >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time & use your Skull & healthpot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
     .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 --N add a link for warrior/rogue? Also needs more specific wording per class
-	#hardcore
 step
     #softcore
+	#era/som
 	.goto Durotar,41.5,18.6
     >> Fight your way out of the Thunder Ridge area or deathskip to the graveyard.
     .accept 812 >>Accept Need for a Cure
+step << !Warrior !Shaman
+	#som
+	#phase 3-6
+	.hs >> Hearth to Razor Hill
 step
     #hardcore
+	#era/som
     .goto Durotar,39.18,31.65,90,0
 	.goto Durotar,41.5,18.6
     >> Fight your way out of the Thunder Ridge area
     .accept 812 >>Accept Need for a Cure
 step
+	#era/som
     #completewith next
     .goto Orgrimmar,49.0,94.2,80 >>Run into Orgrimmar
 step << Rogue
+	#era/som
     .goto Orgrimmar,48.13,80.55
     .vendor >> Buy your level 11 thrown from Trak'gen. Equip it when you're level 11
 step << Hunter
+	#era/som
     #completewith next
     .goto Orgrimmar,37.40,52.32
     .vendor >> Buy some apples from Shan'ti to feed to your pet
     .collect 4536,20 --Shiny Red Apple (20)
 step
+	#era/som
     .goto Orgrimmar,34.3,36.4
     .turnin 831 >>Turn in The Admiral's Orders
 step
+	#era/som
     .goto Orgrimmar,31.9,37.7
     .accept 5726 >>Accept Hidden Enemies
 step << Hunter
+	#era/som
     .goto Orgrimmar,66.0,18.5
     .turnin 6081 >>Turn in Training the Beast
 step << Warlock
+	#era/som
     .goto Orgrimmar,48.3,45.3
     .turnin 1506 >>Turn in Gan'rul's Summons
     .accept 1501 >>Accept Creature of the Void
 step << Rogue
+	#era/som
     .goto Orgrimmar,42.72,53.56
 	.accept 1963 >> Accept The Shattered Hand
 	.trainer >> Train your class spells
 step
+	#era/som
     .goto Orgrimmar,47.2,53.4
     .accept 813 >>Accept Finding the Antidote 
     >>Put "Beast Training" on your bars. Remember to teach your pet skills later << Hunter
 step
+	#era/som
     >>Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it 
     .abandon 812 >>Abandon Need for a Cure
 step
+	#era/som
     .hs >> Hearth to Razor Hill
 step << !Warlock !Hunter
+	#era/som
     .goto Durotar,51.1,42.4
     .turnin 815 >>Turn in Break a Few Eggs
 step << !Warlock !Hunter
+	#era/som
     .goto Durotar,51.9,43.5
     .turnin 825 >>Turn in From The Wreckage....
+    .turnin 837 >>Turn in Encroachment
+step
+	#som
+	#phase 3-6
+    .goto Durotar,51.9,43.5
     .turnin 837 >>Turn in Encroachment
 step
     .goto Durotar,52.3,43.1
     .turnin 806 >>Turn in Dark Storms
     .accept 828 >>Accept Margoz
-step
-    .xp 10 >>Grind to 10
 step << Shaman
+	#era/som
     .goto Durotar,54.4,42.5
     .accept 2983 >>Accept Call of Fire
     .trainer >> Train your class spells
 step << Priest
+	#era/som
     .goto Durotar,54.3,42.9
     .trainer >> Train your class spells
 step << Orc Warrior/Troll Warrior
+	#era/som
     .goto Durotar,54.2,42.5
     .accept 1505 >>Accept Veteran Uzzek
     .trainer >> Train your class spells
 step << Rogue
+	#era/som
     .goto Durotar,52.0,43.7
     .trainer >> Train your class spells
 step << Warrior/Rogue
+	#era/som
     .goto Durotar,54.2,41.9
     .money <0.01
     .train 3273 >>Train First Aid
@@ -1142,23 +1315,34 @@ step << Warrior/Shaman
     .accept 749 >>Accept The Ravaged Caravan
 	.unitscan Morin Cloudstalker
 step << Warrior/Shaman
+	#som
+	#phase 3-6
+    .goto Mulgore,53.7,48.1
+    .turnin 749 >>Turn in The Ravaged Caravan
+step << Warrior/Shaman
+	#era/som
     .goto Mulgore,48.7,59.3
     .accept 761 >>Accept Swoop Hunting
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,47.5,60.2
     .accept 767 >>Accept Rite of Vision
     .accept 746 >>Accept Dwarven Digging
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,47.3,62.0
     .accept 743 >>Accept Dangers of the Windfury
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,47.8,57.6
     .turnin 767 >>Turn in Rite of Vision
     .accept 771 >>Accept Rite of Vision
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,47.0,57.0
     .accept 766 >>Accept Mazzranache
 step << Warrior/Shaman
+	#era/som
     #sticky
     #label Mulgoreall
     .complete 766,1 --Prairie Wolf Heart (1)
@@ -1167,11 +1351,13 @@ step << Warrior/Shaman
     .complete 766,4 --Swoop Gizzard (1)
     .complete 761,1 --Trophy Swoop Quill (8)
 step << Warrior/Shaman
+	#era/som
 	#completewith CaravanR
-	>>Keep an eye out for Ghost Howl (rare wolf). He patrols all over northern Mulgore. Kill and loot him for the Demon Scarred Cloak. If you find him, don't accept the quest from the item yet
+	>>Keep an eye out for Ghost Howl (rare wolf). He patrols all over northern Mulgore. Kill and loot him for the Demon Scarred Cloak. Accept the quest from the item
 	.collect 4854,1,770
 	.unitscan Ghost Howl
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,52.0,61.1,10,0
     .goto Mulgore,50.0,66.4,10,0
     .goto Mulgore,50.4,66.5,10,0
@@ -1181,10 +1367,12 @@ step << Warrior/Shaman
     >>Collect the 'Acorn' looking items on the ground, below the trees
     .complete 771,2 --Ambercorn (2)
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,53.7,66.3
     >>Loot the stones around the Well
     .complete 771,1 --Well Stone (2)
 step << Warrior/Shaman
+	#era/som
    .goto Mulgore,47.8,57.5
     .turnin 771 >>Turn in Rite of Vision
     .accept 772 >>Accept Rite of Vision
@@ -1205,6 +1393,7 @@ step << Warrior/Shaman
     .goto Thunder Bluff,23.0,21.1
     .turnin 853 >>Turn in Apothecary Zamah
 step << Warrior/Shaman
+	#era/som
 	>>Run out of the cave, then leave Thunder Bluff by jumping down somewhere under the bridge
 	>>Run to the cave south of you
     .goto Thunder Bluff,29.04,37.68,55,0
@@ -1213,10 +1402,12 @@ step << Warrior/Shaman
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
 step << Warrior/Shaman
+	#era/som
     >>Kill Harpies. Loot them for their Talons
     .goto Mulgore,31.9,41.7
     .complete 743,1 --Windfury Talon (8)
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,31.3,49.9
    >>Kill Dwarf mobs for Prospector's Picks
     >>Use the Picks on the Forge until you've broken 5 of them. This is done in the Dwarf camp.
@@ -1224,41 +1415,53 @@ step << Warrior/Shaman
     .complete 746,1 --Broken Tools (5)
 --N needs testing
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,59.9,25.6
     .accept 833 >>Accept A Sacred Burial
 step << Warrior/Shaman
+	#era/som
     >>Kill Bristleback Interlopers in the area
     .goto Mulgore,61.5,21.9
     .complete 833,1 --Bristleback Interloper (8)
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,61.5,21.1
     .turnin 773 >>Turn in Rite of Wisdom
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,59.8,25.6
     .turnin 833 >>Turn in A Sacred Burial
 step << Warrior/Shaman
+	#era/som
     #requires Mulgoreall
 	#label CaravanR
     .goto Mulgore,53.7,48.1
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
 step << Warrior/Shaman
+	#era/som
+	.isOnQuest 770
 	.goto Mulgore,46.75,60.23
-	>>If you managed to find Ghost Howl, right click the cloak and accept the quest and turn it in, otherwise, skip this step
+	>>Turn in the cloak. Be careful as this removes it from your character/inventory
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,47.5,60.2
     .turnin 746 >>Turn in Dwarven Digging
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,47.4,62.0
     .turnin 743 >>Turn in Dangers of the Windfury
 step << Warrior/Shaman
+	#era/som
     .goto Mulgore,48.7,59.4
     .turnin 761 >>Turn in Swoop Hunting
 step << Warrior/Shaman
+	#era/som
     >>Look for Morin Cloudstalker. He patrols along the eastern road
     .goto Mulgore,51.1,58.6,70,0
     .goto Mulgore,59.7,62.5,70,0
@@ -1272,6 +1475,7 @@ step << Warrior/Shaman
     .accept 765 >>Accept Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
 step << Warrior/Shaman
+	#era/som
     #sticky
     #label Workers
     >>Kill the Venture Co mobs
@@ -1279,13 +1483,16 @@ step << Warrior/Shaman
     .complete 764,1 --Venture Co. Worker (14)
     .complete 764,2 --Venture Co. Supervisor (6)
 step << Warrior/Shaman
+	#era/som
     >>Run into the mine, then hug the right/east side. Kill Supervisor Fizsprocket. Loot him for his Clipboard
     .goto Mulgore,64.9,43.3
     .complete 765,1 --Fizsprocket's Clipboard (1)
 step << Warrior/Shaman
+	#era/som
     #requires Workers
     .xp 11+7150 >> Grind to 7150+/8700xp
 step << Warrior/Shaman
+	#era/som
     >>Look for Morin Cloudstalker. He patrols along the eastern road
     .goto Mulgore,51.1,58.6,70,0
     .goto Mulgore,59.7,62.5,70,0
@@ -1300,9 +1507,11 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     .hs >>Hearth to Razor Hill
 step << Shaman
+	#level 12
     .goto Durotar,54.4,42.5  
   .trainer >> Train your class spells
 step << Orc Warrior/Troll Warrior
+	#level 12
     .goto Durotar,54.2,42.5
     .trainer >> Train your class spells
 step << Priest
@@ -1333,6 +1542,7 @@ step << Hunter
     .goto Durotar,57.2,12.0
     +Tame A Surf Crawler
 step
+	#era/som
     #label scorp2
     #sticky
     >>Kill Scorpions in the area for Poison Sacs
@@ -1343,12 +1553,21 @@ step << Hunter
 	#label HuntCollar
     .goto Durotar,55.06,9.91,60 >> Run to Skull Rock
 step
+	#era/som
     #sticky
     #label Collars2
     .goto Durotar,53.08,9.19,0
     >>Kill Burning Blade mobs in Skull Rock for Searing Collars, and until Lieutenant's Insignia drops
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)
+step
+	#som
+	#phase 3-6
+    #sticky
+    #label Collars2
+    .goto Durotar,53.08,9.19,0
+    >>Kill Burning Blade mobs in Skull Rock for Searing Collars
+    .complete 827,1 --Searing Collar (6)
 step << Warlock 
     .goto Durotar,53.6,8.5,25,0 
     .goto Durotar,51.8,8.1,25,0
@@ -1364,7 +1583,6 @@ step
     .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
 	.unitscan Gazz'uz
---N Maybe too long?
 step
     #requires Collars2
     .goto Durotar,56.4,20.1
@@ -1406,6 +1624,28 @@ step
     #completewith next
 	#requires scorp2
     .goto Durotar,45.50,11.70,70 >> Run into Orgrimmar
+step << Rogue
+	#som
+	#phase 3-6
+    .goto Orgrimmar,48.13,80.55
+    .vendor >> Buy your level 11 thrown from Trak'gen. Equip it when you're level 11
+step << Hunter
+	#som
+	#phase 3-6
+    #completewith next
+    .goto Orgrimmar,37.40,52.32
+    .vendor >> Buy some apples from Shan'ti to feed to your pet
+    .collect 4536,20 --Shiny Red Apple (20)
+step
+	#som
+	#phase 3-6
+    .goto Orgrimmar,34.3,36.4
+    .turnin 831 >>Turn in The Admiral's Orders
+step << Hunter
+	#som
+	#phase 3-6
+    .goto Orgrimmar,66.0,18.5
+    .turnin 6081 >>Turn in Training the Beast
 step << Warrior/Shaman
     #requires scorp2
     .goto Orgrimmar,54.2,68.4
@@ -1416,9 +1656,15 @@ step << Warrior/Shaman
     .turnin 6385 >> Turn in Doras the Wind Rider Master
     .accept 6386 >> Accept Return to the Crossroads
 step
+	#era/som
     #requires scorp2
     .goto Orgrimmar,31.8,37.8
     .turnin 5726 >>Turn in Hidden Enemies
+step << Rogue
+	#level 12
+    .goto Orgrimmar,42.8,53.4
+    .accept 1963 >> Accept The Shattered Hand
+	.trainer >> Train your class spells
 step << Rogue
     .goto Orgrimmar,42.8,53.4
     .accept 1963 >> Accept The Shattered Hand
@@ -1441,6 +1687,7 @@ step << Priest
     .goto Orgrimmar,53.77,38.37
     .collect 11287,1 --Lesser Magic Wand (1)
 step
+	#era/som
     .goto Orgrimmar,47.0,53.4
     .turnin 813 >>Turn in Finding the Antidote
 step << Warlock
@@ -1471,11 +1718,13 @@ step
     .goto Orgrimmar,52.76,48.95
 	.deathskip >> Go into Ragefire Chasm in the Cleft of Shadow. Die to the mobs inside, then respawn at the Spirit Healer
 step
+	#era/som
 	#softcore
     .goto Durotar,41.6,18.7
     .accept 812 >>Accept Need for a Cure
     .turnin 812 >>Turn in Need for a Cure
 step
+	#era/som
 	#hardcore
 	>>Run out of Orgrimmar
     .goto Durotar,41.6,18.7
@@ -1556,7 +1805,12 @@ step << !Shaman !Warrior
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
 step << Mage
+	#era/som
     +If you're planning on leveling via AoE, choose the Barrens AoE Guide manually. Otherwise, choose the 12-17 Barrens Guide
+step << Mage
+	#som
+	#phase 3-6
+    +If you're planning on leveling via AoE, choose the Barrens AoE Guide manually. Otherwise, choose the 12-17 Barrens Guide. Do note with recent 100% quest xp SoM changes, Mage AoE grinding is worse than the quest route
 step << Rogue
     .goto The Barrens,51.5,30.3
     .fly >> Fly to Orgrimmar
