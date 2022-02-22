@@ -1818,7 +1818,7 @@ end
 
 local function IsGuideActive(guide)
     local som = RXPCData and RXPCData.SoM
-    if guide.era and som or guide.som and not som or (RXPCData.phase > 2 and som and guide["era/som"]) then
+    if guide.era and som or guide.som and not som or (som and RXPCData.phase > 2 and guide["era/som"]) then
         --print('-',guide.name,not guide.som,not guide.era,som)
         return false
     end
