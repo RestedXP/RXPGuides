@@ -74,6 +74,12 @@ function RXPG_init()
 	RXPData = RXPData or {}
 	RXPCData = RXPCData or {}
     RXPCData.hardcore = (RXP_.version == "CLASSIC") and RXPCData.hardcore
+	if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
+		RXPData.addonVersion = addonVersion
+		RXPCData.phase = 3
+	end
+	RXPCData.phase = RXPCData.phase or 3
+	RXPCData.SoM = RXPCData.SoM or true
     SoMCheck()
     RXP_.RenderFrame()
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
@@ -84,7 +90,15 @@ function RXPG_init()
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.arrowText = RXPData.arrowText or 9
-    RXPCData.flightPaths = RXPCData.flightPaths or {}
+	if RXPCData.flightPaths then
+		if UnitLevel("player") <= 6 then
+			for i in pairs(RXPCData.flightPaths) do
+				RXPCData.flightPaths[i] = nil
+			end
+		end
+	else
+		RXPCData.flightPaths = {}
+	end
     RXPData.batchSize = RXPData.batchSize or 5
     if RXPData.disableTrainerAutomation == nil then
         RXPData.disableTrainerAutomation = true
@@ -92,11 +106,7 @@ function RXPG_init()
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
-	if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
-		RXPData.addonVersion = addonVersion
-	end
-	RXPCData.phase = RXPCData.phase or 3
-	RXPCData.SoM = RXPCData.SoM or true
+
 	
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     f:SetShown(not RXPCData.hideWindow)
@@ -1818,7 +1828,7 @@ end
 
 local function IsGuideActive(guide)
     local som = RXPCData and RXPCData.SoM
-    if guide.era and som or guide.som and not som or (som and RXPCData.phase > 2 and guide["era/som"]) then
+    if guide.era and som or guide.som and not som or (som and and RXPCData.phase and RXPCData.phase > 2 and guide["era/som"]) then
         --print('-',guide.name,not guide.som,not guide.era,som)
         return false
     end
@@ -2151,7 +2161,7 @@ function RXP_.CreateOptionsPanel()
         end)
         button:SetChecked(RXPCData.SoM)
         button.Text:SetText("Season of Mastery")
-        button.tooltip = "Adjust the leveling routes to the Season of Mastery changes (+40% quest xp)"
+        button.tooltip = "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"
         
     end
 
@@ -2211,7 +2221,7 @@ function RXP_.CreateOptionsPanel()
     slider = CreateSlider(RXPData,"batchSize",1,100,"Batching window size: %d ms","Adjusts the batching window tolerance, used for hearthstone batching",slider,0,-25, 1, "1", "100")
     
     if RXP_.version == "CLASSIC" then
-        slider = CreateSlider(RXPCData,"phase",1, 6,"Content phase: %d","Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: Thorium Brotherhood quests (BWL)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",slider,0,-25, 1, "1", "6")
+        slider = CreateSlider(RXPCData,"phase",1, 6,"Content phase: %d","Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",slider,0,-25, 1, "1", "6")
     end
 end
 
