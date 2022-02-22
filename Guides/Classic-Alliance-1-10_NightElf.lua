@@ -144,7 +144,7 @@ step << Druid
     .goto Teldrassil,58.6,40.3
 	>>Run up the big ramp and into the small room
 	.turnin 3120 >> Turn in Verdant Sigil
-	.trainer >> Train your level 4 spells
+	.train 8921 >>Train Moonfire
 step
     .goto Teldrassil,54.6,33.0
     .turnin 3522 >> Turn in Iverron's Antidote
