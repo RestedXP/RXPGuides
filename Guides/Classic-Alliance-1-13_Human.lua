@@ -1525,6 +1525,7 @@ step
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #som
 #phase 3-6
+#classic
 << Alliance
 #name 1-13 Elwynn Forest
 #next 13-14 Loch Modan
@@ -2647,6 +2648,7 @@ step
 ]],"Human")	
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+#classic
 #som
 #phase 3-6
 << Alliance

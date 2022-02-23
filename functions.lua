@@ -376,11 +376,13 @@ function RXP_.AldorScryerCheck(faction)
 end
 
 function RXP_.PhaseCheck(phase)
+	local guide
     if type(phase) == "table" then
+		guide = phase
         phase = phase.phase
     end
     
-    if phase and RXPCData.phase then
+    if phase and RXPCData and RXPCData.phase then
         local pmin,pmax
         pmin,pmax = phase:match("(%d+)%-(%d+)")
         if pmax then
@@ -391,7 +393,7 @@ function RXP_.PhaseCheck(phase)
             pmax = 0xffff
         end
         if pmin and RXPCData.phase >= pmin and RXPCData.phase <= pmax then
-            return true
+			return true
         else
             return false
         end
