@@ -1145,6 +1145,8 @@ step
     .goto Ashenvale,34.7,48.9
     .turnin 1008 >> Turn in The Zoram Strand
 step
+    .goto Ashenvale,34.40,48.00
+    .fp Astranaar>> Get the Astranaar Flight Path
     .fly Auberdine>> Fly to Auberdine
 step
     .goto Darkshore,37.7,43.4
@@ -1249,6 +1251,9 @@ step
     .goto Ashenvale,26.4,38.6
     .turnin 1010 >> Turn in Bathran's Hair
     .accept 1020 >> Accept Orendil's Cure
+step
+    .goto Ashenvale,34.40,48.00
+    .fp Astranaar>> Get the Astranaar Flight Path
 step
     .goto Ashenvale,34.7,48.8
     .accept 1008 >> Accept The Zoram Strand
@@ -1381,6 +1386,7 @@ step
     .turnin 1054 >> Turn in Culling the Threat
     .turnin 1025 >> Turn in An Aggressive Defense
 step
+    .goto Ashenvale,34.40,48.00
     .fly Auberdine>> Fly to Auberdine
 step
     .goto Darkshore,37.7,43.4
