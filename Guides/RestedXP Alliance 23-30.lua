@@ -238,7 +238,6 @@ step
     .goto Redridge Mountains,27.7,47.3
     .accept 127 >> Accept Selling Fish
     .accept 150 >> Accept Murloc Poachers
-
 step << Rogue
     .goto Redridge Mountains,28.1,52.1
     .turnin 2281 >> Turn in Redridge Rendezvous
@@ -254,10 +253,11 @@ step
     .complete 127,1 --Collect Spotted Sunfish (x10)
     .complete 150,1 --Collect Murloc Fin (x8)
 step << Rogue
+	#completewith next
+    +Open the chests to train lockpicking, you will need 75 skill points for a quest later. Do NOT open the brown chest until you've done this
+step << Rogue
     .goto Redridge Mountains,52.0,44.8
     .complete 2282,1 --Collect Token of Thievery (x1)
-step << Rogue
-    +Open the chests to train lockpicking, you will need 75 skill points for a quest later
 step
     #requires orcs1
     .goto Redridge Mountains,33.6,48.7
