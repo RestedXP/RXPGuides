@@ -1451,11 +1451,9 @@ step
     .goto Felwood,25.15,4.61
     .accept 4723 >> Accept Beached Sea Creature
 step
-    #era/som
     #completewith Ameth
      >> Kill Striders. Loot them for Strider Meat
     .collect 5469,5,2178,1
---N Bears
 step
 	#era/som
     #completewith Ameth
@@ -1508,7 +1506,6 @@ step
     >>Kill Owlbeasts and make sure you have at least 9 small eggs to level cooking 
     >>Skip this step if you already have 10 points in cooking.
     .collect 6889,9,2178
-    
 step
     #label Ameth
     .goto Darkshore,40.30,59.70
@@ -1543,7 +1540,6 @@ step
     .goto Felwood,23.29,36.73
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step
-    #era/som
     #requires ghosts
     #completewith Bears
      >> Kill Striders. Loot them for Strider Meat
@@ -1569,14 +1565,6 @@ step
     .goto Felwood,19.64,39.52
     .accept 4722 >> Accept Beached Sea Turtle
 step
-    #era/som
-    .goto Darkshore,38.83,60.82
-    >>Finish killing Rabid Thistle Bears and getting Strider Meat
-    .complete 2138,1 --Rabid Thistle Bear (20)
-    .collect 5469,5,2178,1
-step
-    #som
-    #phase 3-6
     .goto Darkshore,38.83,60.82
     >>Finish killing Rabid Thistle Bears and getting Strider Meat
     .complete 2138,1 --Rabid Thistle Bear (20)
