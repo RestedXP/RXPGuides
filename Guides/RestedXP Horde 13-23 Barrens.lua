@@ -650,11 +650,11 @@ step
 .goto Stonetalon Mountains,59.0,75.7
     .accept 6284 >> Accept Arachnophobia
 step
-.goto Stonetalon Mountains,57.5,76.2,30 >>Run up the path here to Sishir Canyon
+    .goto Stonetalon Mountains,57.5,76.2,30 >>Run up the path here to Sishir Canyon
 step
 #sticky
 #label deepmossegg
->>Click the spider eggs near the trees
+    >>Click the spider eggs near the trees. Make sure you're at full health each time you open the eggs as they may spawn difficult/multiple mobs
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
 >>Kill the Deepmoss Spiders and Besseleth in the area
