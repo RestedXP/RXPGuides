@@ -1381,11 +1381,11 @@ step << !Shaman
     .goto Duskwood,73.9,44.5
     .turnin 78 >> Turn in The Legend of Stalvan
     .accept 79 >> Accept The Legend of Stalvan
-step << !Shaman
+step
     .goto Duskwood,73.6,46.7
     .turnin 58 >> Turn in The Night Watch
-    .turnin 79 >> Turn in The Legend of Stalvan
-    .accept 80 >> Accept The Legend of Stalvan
+    .turnin 79 >> Turn in The Legend of Stalvan << !Shaman
+    .accept 80 >> Accept The Legend of Stalvan << !Shaman
 step << !Shaman
     .goto Duskwood,72.6,46.9
     .turnin 80 >> Turn in The Legend of Stalvan
