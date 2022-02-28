@@ -3330,6 +3330,10 @@ step
     .goto Dun Morogh,46.7,53.8
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
+step
+    #completewith EndDM
+    >>Kill boars en route to other quests for 8 Boar Meat for a quest later. Don't focus hard on this now
+    .collect 769,8 --Collect Chunk of Boar Meat (x8)
 step << Rogue
     .goto Dun Morogh,47.6,52.6
     .accept 2218 >> Accept Road to Salvation
@@ -3396,6 +3400,9 @@ step
     .goto Dun Morogh,68.6,54.7
     .vendor >>vendor trash. Buy some food if needed << Warrior/Rogue
     .vendor >>vendor trash. Buy some food/water if needed << !Warrior !Rogue
+step
+    .goto Dun Morogh,68.4,54.5
+    .train 2550 >> Train Cooking from Ghilm
 step
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
@@ -3748,6 +3755,10 @@ step << Paladin
     >>Keep 10 Linen Cloth in your bags for your paladin quest later
     .collect 2589,10 --Linen Cloth (10)
 step
+    #completewith EndLoch
+    >>Grind boars for 8 Boar Meat for a quest later
+    .collect 769,8 --Collect Chunk of Boar Meat (x8)
+step
     >>Run through the tunnel into Loch
     .goto Loch Modan,22.1,73.1
     .accept 224 >> Accept In Defense of the King's Lands
@@ -3776,9 +3787,11 @@ step
 step
     .goto Loch Modan,34.82,49.28
     .accept 418 >> Accept Thelsamar Blood Sausages
-step << !Warlock
+step
     .goto Loch Modan,34.8,48.6
-    .vendor >>Buy a 6 slot bag
+    .vendor >> Buy 1 Flint and Tinder, and 1 Simple Wood. Buy a 6 slot bag if needed
+    .collect 4470,1 --Simple Wood (1)
+    .collect 4471,1 --Flint and Tinder (1)
 step << Mage
     .goto Loch Modan,35.5,48.4
     .home >> Set your Hearthstone to Thelsamar
@@ -4196,11 +4209,13 @@ step
     .goto Wetlands,9.5,59.7,80 >> Travel to Menethil Harbor
 step
     #hardcore
+	#label EndLoch
     .goto Wetlands,9.5,59.7
     .fp >> Get the Menethil Harbor flight path
 step
     .goto Wetlands,4.6,57.2
     .zone Darkshore >>Head to the Menethil Harbor docks and take the boat to Darkshore
+	>>Make a campfire with the items from earlier and start cooking your Boar Meat until you have 10+ skill
     >>Train first aid while waiting for the boat, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
 ]],"Dwarf/Gnome")
 
