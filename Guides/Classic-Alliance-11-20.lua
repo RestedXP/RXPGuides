@@ -2216,12 +2216,6 @@ step << !Human !Warlock
      #completewith start
      .goto Stormwind City,66.2,62.4
     .fp Stormwind >> Get the Stormwind City Flight Path
-step << !Human !Warlock
-    #som
-    #phase 3-6
-     #completewith start
-     .goto Stormwind City,66.2,62.4
-    .fp Stormwind >> Get the Stormwind City Flight Path
 step << !Human
     #era/som
      #completewith start
@@ -2445,6 +2439,7 @@ step
     .xp 20 >> If you are not yet level 20, turn in all your Redridge quests, you should have enough from turn ins
 step
     .goto Redridge Mountains,30.59,59.42
+    .fp >> Get the Redridge Mountains flight path << !Human !Warlock
     .fly Stormwind >> Fly to Stormwind City
 step << Rogue
     .goto Stormwind City,57.55,57.07
