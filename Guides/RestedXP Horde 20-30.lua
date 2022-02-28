@@ -346,6 +346,9 @@ step << !Tauren
 step << !Tauren
     .goto Thunder Bluff,45.8,64.7
 .home >> Set your Hearthstone to Thunder Bluff
+step << Orc Warlock
+    .goto Thunder Bluff,40.9,62.7
+    .train 227 >>Train Staves
 step << Tauren
     .goto The Barrens,44.4,59.2
 .fly Thunder Bluff>>Fly to Thunder Bluff
@@ -642,6 +645,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,47.5,46.7
         .vendor >> Buy Soothing Kiss
+    >>You can buy the Voidwalker books too, but its recommended not to and to save your money for later
 step << Mage
     .goto Orgrimmar,38.8,85.6
 .trainer >> Go and train your class spells
@@ -719,6 +723,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,48.2,45.3
     .turnin 1513 >>Turn in The Binding
+    >>Use the Succubus from now on
 step
     .home >> Set your Hearthstone to Orgrimmar
 ]])
