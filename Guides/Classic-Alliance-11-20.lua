@@ -2289,7 +2289,7 @@ step
     #phase 3-6
     .goto Redridge Mountains,30.73,59.99
     .turnin 244 >> Turn in Encroaching Gnolls << !Human !Warlock
-    .accept 246 >> Accept Assessing the Threat
+    .accept 246 >> Accept Assessing the Threat << !Human !Warlock
 step << NightElf
     #era/som
     .goto Redridge Mountains,30.73,59.99
