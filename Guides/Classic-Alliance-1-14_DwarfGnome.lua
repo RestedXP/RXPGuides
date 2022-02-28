@@ -3875,7 +3875,7 @@ step
     .accept 307 >> Accept Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order << !Warlock !Mage
-    .turnin 353 >> Accept Stormpike's Delivery << Warlock
+    .turnin 353 >> Turn in Stormpike's Delivery << Warlock
 step
     #label Tunnel
     #completewith next
@@ -3896,7 +3896,6 @@ step
 step
     .goto Loch Modan,24.76,18.39
     .turnin 307 >> Turn in Filthy Paws
-    .turnin 353 >> Turn in Stormpike's Delivery
 step
     #sticky
     #label Meat9
