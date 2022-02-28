@@ -1174,7 +1174,6 @@ step << Druid
     .goto Darkshore,48.9,11.3
     >>Loot the small lockbox underwater, located in between 2 big stones
     .collect 15883,1,5061,1 --Collect Half Pendant of Aquatic Agility (x1)
-    
 step <<  Dwarf Hunter
      #softcore
     #completewith next
@@ -1736,6 +1735,7 @@ step
     .goto Winterspring,3.10,20.90
     .accept 4727 >> Accept Beached Sea Turtle
 step
+	#era/som
     #completewith next
     .goto Darkshore,53.0,18.4,0
     .goto Darkshore,50.4,22.6,0
@@ -1756,11 +1756,11 @@ step
 step <<  NightElf
      #softcore
     #completewith next
-    .deathskip >> Grind until your HS cooldown is <6 minutes then death warp to Auberdine
+    .deathskip >> Grind until your Hearthstone cooldown is <6 minutes then death warp to Auberdine
 step <<  NightElf
      #hardcore
     #completewith next
-    +Grind until your HS cooldown is <9 minutes then run back to Auberdine
+    +Grind until your Hearthstone cooldown is <9 minutes then run back to Auberdine
 step
      #completewith next
     .hs >> Hearth back to Auberdine
