@@ -1902,9 +1902,6 @@ step
 .goto Ghostlands,10.5,22.6
     .complete 9163,3 --Collect Night Elf Plans: Scrying on the Sin'dorei (x1)
 step
-.xp 16+4500 >>Grind to 4500+/15000xp
-.goto Ghostlands,12.5,26.4
-step
     .goto Ghostlands,43.9,25.7,200 >> Die and respawn at the Spirit Healer, or run back
 step
 .isQuestComplete 9171
