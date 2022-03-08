@@ -2157,7 +2157,10 @@ step
     .vendor >> Buy a Bronze Tube if you haven't
     >>This is a limited supply item, skip this step if the npc doesn't have it
 --    >>You will need 2 bronze tubes for a quest later << Rogue
-    .bronzetube 
+    .bronzetube
+step
+    .goto Stormwind City,58.08,16.52
+    .turnin 1338 >> Turn in Stormpike's Order
 step << Warlock/Priest
      >>Go in the building. Buy a Burning Wand if it's an upgrade
      >>It's important to buy a non-shadow wand, you'll have to deal with mobs resistant to shadow damage later
