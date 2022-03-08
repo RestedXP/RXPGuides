@@ -2158,7 +2158,7 @@ step
     >>This is a limited supply item, skip this step if the npc doesn't have it
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
-step
+step << !NightElf
     .goto Stormwind City,58.08,16.52
     .turnin 1338 >> Turn in Stormpike's Order
 step << Warlock/Priest
