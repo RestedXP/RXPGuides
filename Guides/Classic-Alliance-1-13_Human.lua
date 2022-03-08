@@ -2413,9 +2413,6 @@ step << Paladin
     .goto Stormwind City,57.1,57.7
     .trainer >>Train 2h Swords
 step << Warlock
-    .goto Stormwind City,52.61,65.71
-    .home >> Set your Hearthstone to Stormwind City
-step << Warlock
     #sticky
     #completewith next
     .goto Stormwind City,29.2,74.0,20,0
@@ -2664,12 +2661,12 @@ step
     .turnin 353 >> Turn in Stormpike's Delivery
     .accept 307 >> Accept Filthy Paws
 step
+    .goto Loch Modan,33.9,51.0
+    .fp >> Get the Thelsamar flight path
+step
     #sticky
     #label StormpikeO
     .abandon 1338 >> Abandon Stormpike's Order. This is to unlock Mountaineer Stormpike's Task
-step
-    .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
 step
     .goto Loch Modan,34.8,48.6
     >>Run to the Inn inside Thelsamar
@@ -2839,9 +2836,6 @@ step
     .goto Wetlands,4.7,57.3
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore.
     >>Train first aid while waiting for the boat if you have linen, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-step << skip
-    .goto Stormwind City,58.08,16.52
-    .turnin 1338 >> Turn in Stormpike's Order
 ]],"Human")
 
 
