@@ -902,12 +902,13 @@ function RXP_.functions.goto(self,...)
         else
             zone = lastZone
         end
+		local mapID = RXP_.mapId[zone] or tonumber(zone)
         element.x = tonumber(x)
         element.y = tonumber(y)
-        if not (element.x and element.y and zone and RXP_.mapId[zone]) then
+        if not (element.x and element.y and zone and mapID) then
             return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid coordinates or map name\n"..self)
         end
-        element.zone = RXP_.mapId[zone]
+        element.zone = mapID
         element.radius = tonumber(radius)
         radius = element.radius
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
@@ -1764,7 +1765,7 @@ function RXP_.functions.zone(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         local text,zone = ...
-        local mapID = RXP_.mapId[zone]
+        local mapID = RXP_.mapId[zone] or tonumber(zone)
         if not (mapID and text) then
             return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/map name\n"..self)
         end
@@ -1791,7 +1792,7 @@ function RXP_.functions.zoneskip(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         local text,zone = ...
-        local mapID = RXP_.mapId[zone]
+        local mapID = RXP_.mapId[zone] or tonumber(mapID)
         if not mapID then
             return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/map name\n"..self)
         end
