@@ -49,16 +49,22 @@ questFrame:RegisterEvent("QUEST_TURNED_IN")
 
 RXPG_Debug = false
 
-local SoMCount = 0
+local SoMtimer
 local function SoMCheck()
-    if RXPCData and RXPCData.SoM == nil and SoMCount < 34 and version < 20000 then
-        SoMCount = SoMCount+1
+	if version > 20000 then 
+		return 
+	elseif not SoMtimer then
+		SoMtimer = GetTime()
+	end
+
+	local buffId = 362859
+    if RXPCData and type(RXPCData.SoM) ~= "boolean" and GetTime() - SoMtimer < 300 then
         local id = 0
         local n = 1
         while id do
            id = select(10,UnitBuff("player",n))
            n = n+1
-           if id == 362859 then
+           if id == buffId then
               RXPCData.SoM = true
               if RXP_.currentGuide and RXP_.currentGuide.name then 
                 RXP_:LoadGuide(RXP_.currentGuide)
@@ -67,6 +73,14 @@ local function SoMCheck()
               break
            end
         end
+		if id ~= buffId and RXPCData.SoM then
+			RXPCData.SoM = nil
+			if RXP_.currentGuide and RXP_.currentGuide.name then 
+                RXP_:LoadGuide(RXP_.currentGuide)
+			end
+			RXP_.GenerateMenuTable()
+		end
+		if RXPOptionsSoM then RXPOptionsSoM:SetChecked(RXPCData.SoM) end
     end
 end
 
@@ -79,7 +93,7 @@ function RXPG_init()
 		RXPCData.phase = 3
 	end
 	RXPCData.phase = RXPCData.phase or 3
-	RXPCData.SoM = RXPCData.SoM or true
+	RXPCData.SoM = RXPCData.SoM or 1
     SoMCheck()
     RXP_.RenderFrame()
 	RXPCData.stepSkip = RXPCData.stepSkip or {}
