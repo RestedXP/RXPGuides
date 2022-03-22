@@ -218,14 +218,15 @@ function RXP_.GetQuestObjectives(id,step)
                         break
                     end
                 end
-                if err then
-                    if GetNumQuestLeaderBoards(i) == 1 or nObj == 0 then
-                        local fulfilled = 0
-                        if isComplete then
-                            fulfilled = 1
-                        end
-                        questInfo[1] = { text = "Objective Complete", type = "event",numRequired = 1, numFulfilled = fulfilled, finished = isComplete }
-                    end
+                if (err or nObj == 0) and GetNumQuestLeaderBoards(i) <= 1 then
+					print('qq',id)
+					local fulfilled = 0
+					if isComplete then
+						fulfilled = 1
+					end
+					questInfo[1] = { text = "Objective Complete", type = "event",numRequired = 1, numFulfilled = fulfilled, finished = isComplete }
+					questObjectivesCache[id] = questInfo
+					return questInfo
                 else
                     questObjectivesCache[id] = questInfo
                     return questInfo
@@ -286,7 +287,7 @@ function RXP_.GetQuestObjectives(id,step)
                 requests[id] = 0
                 --print(id,GetTime()-base)
                 local questInfo = C_QuestLog.GetQuestObjectives(id)
-                if #questInfo == 1 and (questInfo[1].type == "" or not questInfo[1].type) then
+                if (#questInfo == 1 and (questInfo[1].type == "" or not questInfo[1].type)) or #questInfo == 0 then
                     questInfo[1] = { text = "Objective Complete", type = "event",numRequired = 1, numFulfilled = 0, finished = false }
                 end
                 return questInfo
