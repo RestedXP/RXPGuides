@@ -1105,104 +1105,6 @@ step
     .goto The Barrens,51.60,30.90
     .turnin 875 >> Turn in Harpy Lieutenants
     .accept 876 >> Accept Serena Bloodfeather
-step
-	#som
-    .goto The Barrens,51.50,30.34
-	.fly Orgrimmar >> Fly to Orgrimmar
-step << Shaman
-	#som
-    .goto Orgrimmar,38.6,36.0
-.trainer >> Go and train your class spells
-step << Shaman
-	#som
-    .goto Orgrimmar,37.95,37.73
-	.accept 1528 >> Accept Call of Water
-step << Hunter
-	#som
-    .goto Orgrimmar,66.1,18.5
-	.trainer >> Go and train your class spells
-step << Hunter
-	#som
-    .goto Orgrimmar,66.3,14.8
-	.trainer >> Go and train your pet spells
-step << Warrior
-	#som
-    .accept 1823 >>Accept Speak with Ruga
-    .goto Orgrimmar,79.7,31.4
-	.trainer >> Go and train your class spells
-step << Rogue
-	#som
-    .goto Orgrimmar,44.0,54.6
-	.trainer >> Go and train your class spells
-	>>Make sure you have Rupture and Ambush trained. You need a Dagger too
-step << Rogue
-	#som
-    .goto Durotar,43.89,1.01
-    .accept 2460 >>Accept The Shattered Salute
-step << Rogue
-	#som
-    >>After Shenthul does his salute, type /Salute while targeting him.
-    .complete 2460,1 --Shattered Salute Performed (1)
-step << Rogue
-	#som
-    .turnin 2460 >>Turn in The Shattered Salute
-    .accept 2458 >>Accept Deep Cover
-step << Warlock
-	#som
-    .goto Orgrimmar,48.15,45.28
-    .accept 1507 >>Accept Devourer of Souls
-	.trainer >> Train your class spells
-step << Warlock
-	#som
-    .goto Orgrimmar,47.5,46.7
-	.vendor >> Buy your pet spell upgrades if you have the money.
-step << Warlock
-	#som
-    .goto Orgrimmar,47.20,46.61
-    .turnin 1507 >>Turn in Devourer of Souls
-    .accept 1508 >>Accept Blind Cazul
-step << Warlock
-	#som
-    .goto Orgrimmar,37.26,59.63
-    .turnin 1508 >>Turn in Blind Cazul
-    .accept 1509 >>Accept News of Dogran
-step << Mage
-	#som
-    .goto Orgrimmar,38.8,85.6
-	.trainer >> Go and train your class spells
-step << Mage
-	#som
-    .goto Orgrimmar,38.69,85.39
-	.trainer >> Go upstairs. Train Portal: Orgrimmar
-step << Priest
-	#som
-    .goto Orgrimmar,35.6,87.8
-	.trainer >> Go and train your class spells
-step << Priest/Warlock/Mage
-	#som
-    .goto Orgrimmar,44.4,48.6
-    .collect 5211,1 >> Buy Dusk Wand if you have the money for it.
-step << Rogue
-	#som
-    .goto Durotar,43.89,1.01
-    .accept 2460 >>Accept The Shattered Salute
-step << Rogue
-	#som
-    >>After Shenthul does his salute, type /Salute while targeting him.
-    .complete 2460,1 --Shattered Salute Performed (1)
-step << Rogue
-	#som
-    .turnin 2460 >>Turn in The Shattered Salute
-    .accept 2458 >>Accept Deep Cover
-step << Warlock
-	#som
-    .goto Orgrimmar,45.13,63.88
-	.fly Crossroads >> Fly to The Crossroads
-step << Warlock
-	#som
-    .goto The Barrens,51.9,30.3
-    .turnin 1509 >>Turn in News of Dogran
-    .accept 1510 >>Accept News of Dogran
 step << !Tauren !Shaman !Warrior
     >>This starts a timed quest
     .goto The Barrens,51.4,30.2
@@ -1223,11 +1125,6 @@ step << Tauren/Warrior/Shaman
 	BloodShard
     +Use your Blood Shards on any buff from Mangletooth
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
-step << Warrior
-    >>In the building
-	.goto The Barrens,44.7,59.4
-	.turnin 1823 >>Turn in Speak with Ruga
-    .accept 1824 >>Accept Trial at the Field of Giants
 step
     .isOnQuest 883
     .goto The Barrens,44.8,59.1
@@ -1288,6 +1185,9 @@ step << Tauren/Warrior/Shaman
 step << Warlock/Priest
     .goto Thunder Bluff,41.2,61.4
 	.trainer >> Train the Staves skill
+step << Rogue
+    .goto Thunder Bluff,41.2,61.4
+	.trainer >> Train the Mace skill
 step
     .goto Thunder Bluff,45.9,64.7
     .home >>Set your Hearthstone to Thunder Bluff
@@ -1356,46 +1256,54 @@ step << !Tauren !Shaman !Warrior
 	#requires UntilD
     .goto Thunder Bluff,46.9,49.9
     .fp >> Get the Thunder Bluff Flight Path 
+step << !Warlock/!Shaman
+	#som
+    .goto The Barrens,51.50,30.34
+	.fly Orgrimmar >> Fly to Crossroads
+step << Warlock/Shaman
+	#som
+    .goto The Barrens,51.50,30.34
+	.fly Orgrimmar >> Fly to Orgrimmar
+step << Shaman
+	#som
+    .goto Orgrimmar,38.6,36.0
+.trainer >> Go and train your class spells
+step << Shaman
+	#som
+    .goto Orgrimmar,37.95,37.73
+	.accept 1528 >> Accept Call of Water
 step << Warlock
-	#era
-    .goto Thunder Bluff,46.9,49.9
-    .fly Orgrimmar >>Fly to Orgrimmar
-step << Warlock
-	#era
+	#som
     .goto Orgrimmar,48.15,45.28
     .accept 1507 >>Accept Devourer of Souls
 	.trainer >> Train your class spells
 step << Warlock
-	#era
+	#som
+    .goto Orgrimmar,47.5,46.7
+	.vendor >> Buy your pet spell upgrades if you have the money.
+step << Warlock
+	#som
     .goto Orgrimmar,47.20,46.61
     .turnin 1507 >>Turn in Devourer of Souls
     .accept 1508 >>Accept Blind Cazul
 step << Warlock
-	#era
-    .goto Orgrimmar,47.5,46.7
-	.vendor >> Buy your pet spell upgrades if you have the money.
-step << Warlock
-	#era
+	#som
     .goto Orgrimmar,37.26,59.63
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
 step << Warlock
-	#era
-    .goto Orgrimmar,45.2,63.8
-    .fly Crossroads >>Fly to Crossroads
+	#som
+    .goto Orgrimmar,44.4,48.6
+    .collect 5211,1 >> Buy Dusk Wand if you have the money for it.
+step << Warlock/Shaman
+	#som
+    .goto Orgrimmar,45.13,63.88
+	.fly Crossroads >> Fly to The Crossroads
 step << Warlock
 	#som
-    .goto Thunder Bluff,46.9,49.9
-    .fly Crossroads >>Fly to Crossroads
-step << !Warlock
-    .goto Thunder Bluff,46.9,49.9
-    .fly Crossroads >>Fly to Crossroads
-step << Warlock
-	#era
     .goto The Barrens,51.9,30.3
     .turnin 1509 >>Turn in News of Dogran
     .accept 1510 >>Accept News of Dogran
-step
 #era/som
     >>Kill Serena Bloodfeather. Loot her for her Head
 	.goto The Barrens,39.2,12.2
@@ -1458,12 +1366,14 @@ step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >>Turn in Further Instructions
 step
+	#era
     .unitscan XT:9
     >>Kill XT:9. It patrols the southern side of the river
     .goto Stonetalon Mountains,60.23,53.04,90,0
     .goto Stonetalon Mountains,71.04,57.76
     .complete 1068,2 --XT:9 (1)
 step
+	#era
     .unitscan XT:4
     >>Kill XT:4. It patrols the northern side of the river
     .goto Stonetalon Mountains,71.30,44.12,90,0
@@ -1532,7 +1442,10 @@ step
     #completewith next
     .hs >> Hearth Thunder Bluff
 step
+    .goto Thunder Bluff,54.60,51.40
 	#requires Vorsha
+	.accept 1195 >> Accept The Sacred Flame
+step
     .goto Thunder Bluff,70.00,30.90
     .turnin 1063 >> Turn in The Elder Crone
     .accept 1064 >> Accept Forsaken Aid
