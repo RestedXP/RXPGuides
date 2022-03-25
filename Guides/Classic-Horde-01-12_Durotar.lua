@@ -353,13 +353,13 @@ step
     .complete 794,1 --Burning Blade Medallion (1)
 step << !Shaman
 	#som
-    .xp 5+1225 >> Grind to 1225+/2800xp
+    .xp 5+1225 >> Grind to 650+/2800xp
 step << !Shaman
 	#era
     .xp 5+1680 >> Grind to 1680+/2800xp	
 step << Shaman
 	#requires Hooves
-    .xp 5+690 >> Grind to 690+/2800xp
+    .xp 5+690 >> Grind to 200+/2800xp
 step
     #requires Yarrog
 	.hs >>Hearth to Valley of Trials
@@ -555,7 +555,7 @@ step << Hunter
 step
     #softcore
     #completewith next
-    .goto Durotar,57.46,57.69,120 >>Die inside of Tiragarde keep. Respawn in Razor Hill
+    .goto Durotar,57.3,53.5,120 >>Die at nortern tower outside the Tiragarde Keep. Respawn in Razor Hill
 step
 	#era/som
     #hardcore
@@ -690,6 +690,11 @@ step
 	#phase 1-2
     .goto Durotar,58.4,57.2
     .xp 7+1890 >> Grind to 1890+/4500xp
+step
+	#som
+	#phase 3-6
+    .goto Durotar,58.4,57.2
+    .xp 7+1890 >> Grind to 750+/4500xp
 step
     #softcore
     #requires KulTiras
@@ -1847,20 +1852,14 @@ step << Rogue
 	#phase 3-6
     .money <0.3023
     .goto Tirisfal Glades,64.16,75.54
-    >>Talk to Charles. Buy a Cutlass from him (20s 23c). You'll train Swords soon. Skip this if your weapon is better, or there's something better on the AH
-    .collect 851,1 --Collect Cutlass (1)
+    >>Talk to Charles. Buy a Cutlass or Scimitar. You'll train Swords soon (Save 10 silver). Skip this if your weapon is better, or there's something better on the AH
+    .vendor >> Buy a Cutlass or Scimitar & Ensure you still have 10 silver left.
 step << Rogue
 	#som
 	#phase 3-6
     #softcore
     .goto Undercity,57.32,32.77
     .trainer >> Train Swords. If you didn't have enough to buy a cutlass earlier, check the AH for a weapon after
-step << Rogue
-	#som
-	#phase 3-6
-    #hardcore
-    .goto Undercity,57.32,32.77
-    .trainer >> Train Swords. If you didn't have enough to buy a cutlass earlier, then buy a cheap weapon from the next vendor you see or wait for one to drop whilst questing
 step << Rogue
 	#completewith Barrens
     #som
