@@ -180,7 +180,7 @@ step << Druid
     .goto Stormwind City,21.4,51.4
     .turnin 64035 >>Turn in Talented
     .accept 64038 >>Accept The Dark Portal
-step
+step << skip
     #completewith bs1
     .goto Stormwind City,78.0,18.2
     .accept 6182 >>Accept The First and the Last
@@ -214,20 +214,22 @@ step
     .turnin 4183 >>Turn in The True Masters
     .accept 4184 >>Accept The True Masters
 step
+    .goto Redridge Mountains,30.58,59.41
     .fly Stormwind>>Fly to Stormwind
 step
     .goto Stormwind City,78.0,18.2
     .turnin 4184 >>Turn in The True Masters
     .accept 4185 >>Accept The True Masters
-    .accept 6182 >>Accept The First and the Last
+-- .accept 6182 >>Accept The First and the Last
 step
+    .goto Stormwind City,78.11,17.75
     >>Talk to Lady Prestor
     .complete 4185,1 --Advice from Lady Prestor (1)
 step
     .goto Stormwind City,78.0,18.2
     .turnin 4185 >>Turn in The True Masters
     .accept 4186 >>Accept The True Masters
-step
+step << skip
     .goto Stormwind City,75.9,59.8
     .turnin 6182 >>Turn in The First and the Last
     .accept 6183 >>Accept Honor the Dead
@@ -267,7 +269,7 @@ step
 step
     .goto Western Plaguelands,43.4,84.8
     .accept 5903 >>Accept A Plague Upon Thee
-step
+step << skip
     .goto Western Plaguelands,43.7,84.5
     .turnin 6184 >>Turn in Flint Shadowmore
     .accept 6185 >>Accept The Eastern Plagues
@@ -331,7 +333,7 @@ step
     .accept 5904 >>Accept A Plague Upon Thee
 step
     .goto Western Plaguelands,40.0,71.8
-	>>Use the beacon torch in your bags
+	>>Use the beacon torch in your bags at the side of the doorway of the tower
     .complete 5097,1 --Tower One marked (1)
 step
     .goto Western Plaguelands,37.1,56.9
@@ -340,6 +342,7 @@ step
     .accept 5217 >>Accept Return to Chillwind Camp
 step
     .goto Western Plaguelands,42.3,66.2
+	>>Use the beacon torch in your bags at the side of the doorway of the tower
     .complete 5097,2 --Tower Two marked (1)
 step
     .goto Western Plaguelands,43.0,84.4
@@ -347,43 +350,48 @@ step
     .accept 5219 >>Accept Target: Dalson's Tears
 step
     .goto Western Plaguelands,46.7,71.0
+	>>Use the beacon torch in your bags at the side of the doorway of the tower
     .complete 5097,4 --Tower Four marked (1)
 step
     .goto Western Plaguelands,53.7,64.7
     .accept 4984 >>Accept The Wildlife Suffers Too
 step
-	#sticky
-	#label wolves
+	#completewith Businessman
     .goto Western Plaguelands,46.0,47.7,0
 	>>The Diseased Wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find Wolves.
     .complete 4984,1 --Kill Diseased Wolf (x8)
+	.unitscan Diseased Wolf
 step
     .goto Western Plaguelands,47.8,50.8
 	>>Click on the diary inside the barn
     .turnin 5058 >> Turn in Mrs. Dalson Diary
 step
-	#sticky
-	#label outhousekey
+	#completewith DalsonsT
     .goto Western Plaguelands,46.9,51.5,0
 	>>Look for the Wandering Skeleton that patrols the area around the farmhouse
     .collect 12738,1 --Collect Dalson Outhouse Key (x1)
+	.unitscan Wandering Skeleton
 step
     .goto Western Plaguelands,46.0,52.4
     .complete 5219,1 --Collect Dalson's Tears Cauldron Key (x1)
 step
+	#label DalsonsT
     .goto Western Plaguelands,46.2,52.1
     .turnin 5219 >> Turn in Target: Dalson's Tears
     .accept 5220 >> Accept Return to Chillwind Camp
 step
-	#requires outhousekey
-	#sticky
+    .goto Western Plaguelands,46.9,51.5
+	>>Look for the Wandering Skeleton that patrols the area around the farmhouse
+    .collect 12738,1 --Collect Dalson Outhouse Key (x1)
+	.unitscan Wandering Skeleton
+step
 	#completewith next
     .goto Western Plaguelands,48.2,49.7
+	>>Make sure you're full health before turning in
     .turnin 5059 >> Turn in Locked Away
 step
-	#requires outhousekey
     .goto Western Plaguelands,48.2,49.7
-	>>Kill Farmer Dalson
+	>>Kill Farmer Dalson. Loot him for the key
     .collect 12739,1 --Collect Dalson Cabinet Key (x1)
 step
     .goto Western Plaguelands,47.4,49.7
@@ -397,23 +405,13 @@ step
     .goto Western Plaguelands,51.9,28.1
     .accept 6004 >>Accept Unfinished Business
 step
-    .goto Western Plaguelands,52.0,44.3,40,0
-    .goto Western Plaguelands,50.3,41.1,40,0
-    .goto Western Plaguelands,40.7,52.2,40,0
-    .goto Western Plaguelands,50.3,41.1,40,0
-    .goto Western Plaguelands,52.0,44.3,40,0
-    .goto Western Plaguelands,50.3,41.1,40,0
-    .goto Western Plaguelands,40.7,52.2,40,0
-    .goto Western Plaguelands,50.3,41.1,40,0
-    .goto Western Plaguelands,52.0,44.3,40,0
-    .goto Western Plaguelands,50.3,41.1,40,0
-    .goto Western Plaguelands,40.7,52.2,40,0
-    .goto Western Plaguelands,50.3,41.1,40,0
-    .goto Western Plaguelands,52.0,44.3,40,0
-    .goto Western Plaguelands,50.3,41.1,40,0
-    .goto Western Plaguelands,40.7,52.2,40,0
-    .goto Western Plaguelands,50.3,41.1,40,0
+    .goto Western Plaguelands,52.0,44.3,70,0
+    .goto Western Plaguelands,50.3,41.1,70,0
+    .goto Western Plaguelands,40.7,52.2,70,0
+    .goto Western Plaguelands,50.3,41.1,70,0
+    .goto Western Plaguelands,52.0,44.3
 	>>Kill Scarlet mobs. If you're unable to find medics and hunters, kill mobs at the camps to force new respawns, as they share respawns with other mob types
+	>>If you're unable to find Mages, kill Knights (as they share spawns)
     .complete 6004,1 --Scarlet Medic (2)
     .complete 6004,2 --Scarlet Hunter (2)
     .complete 6004,3 --Scarlet Mage (2)
@@ -423,19 +421,18 @@ step
     .turnin 6004 >>Turn in Unfinished Business
     .accept 6023 >>Accept Unfinished Business
 step
+	#label Businessman
     .goto Western Plaguelands,55.1,23.5
     >>Look for the named mob that patrols up and down the tower
     .complete 6023,2 --Kill Cavalier Durgen (x1)
     *There is a level 63 elite mob that can spawn at the tower, if that's the case just be patient and wait for Durgen to come down
+	.unitscan Cavalier Durgen
 step
     #label tower
     .goto Western Plaguelands,55.1,23.5
     >>Loot the chest at the top of the tower, skip this step if the level 63 rare elite is blocking the way
     .complete 9474,1 --Collect Mark of the Lightbringer (x1)
     .isOnQuest 9474
-step
-    .goto Western Plaguelands,55.2,23.6
-    .complete 9474,1 --Mark of the Lightbringer (1)
 step
     .goto Western Plaguelands,57.5,35.2
     .complete 6023,1 --Huntsman Radley (1)
@@ -444,36 +441,25 @@ step
     .turnin 6023 >>Turn in Unfinished Business
     .accept 6025 >>Accept Unfinished Business
 step
+	>>Run to the top of the tower in Hearthglen
     .goto Western Plaguelands,45.6,18.6
     .complete 6025,1 --Overlook Hearthglen from a high vantage point (1)
 step
     .goto Western Plaguelands,52.0,28.1
     .turnin 6025 >>Turn in Unfinished Business
 step
-    .goto Western Plaguelands,51.2,53.3,50,0
-    .goto Western Plaguelands,46.9,47.0,50,0
-    .goto Western Plaguelands,50.4,35.0,50,0
-    .goto Western Plaguelands,45.6,37.7,50,0
-    .goto Western Plaguelands,42.8,56.7,50,0
-    .goto Western Plaguelands,51.2,53.3,50,0
-    .goto Western Plaguelands,46.9,47.0,50,0
-    .goto Western Plaguelands,50.4,35.0,50,0
-    .goto Western Plaguelands,45.6,37.7,50,0
-    .goto Western Plaguelands,42.8,56.7,50,0
-    .goto Western Plaguelands,51.2,53.3,50,0
-    .goto Western Plaguelands,46.9,47.0,50,0
-    .goto Western Plaguelands,50.4,35.0,50,0
-    .goto Western Plaguelands,45.6,37.7,50,0
-    .goto Western Plaguelands,42.8,56.7,50,0
-    .goto Western Plaguelands,51.2,53.3,50,0
-    .goto Western Plaguelands,46.9,47.0,50,0
-    .goto Western Plaguelands,50.4,35.0,50,0
-    .goto Western Plaguelands,45.6,37.7,50,0
-    .goto Western Plaguelands,42.8,56.7,50,0
+    .goto Western Plaguelands,51.2,53.3,70,0
+    .goto Western Plaguelands,46.9,47.0,70,0
+    .goto Western Plaguelands,50.4,35.0,70,0
+    .goto Western Plaguelands,45.6,37.7,70,0
+    .goto Western Plaguelands,42.8,56.7,70,0
+    .goto Western Plaguelands,51.2,53.3
 	>>The Diseased Wolves share spawns with Carrion Lurkers. Kill them too if you're unable to find Wolves.
     .complete 4984,1 --Kill Diseased Wolf (x8)
+	.unitscan Diseased Wolf
 step
     .goto Western Plaguelands,44.3,63.2
+	>>Use the beacon torch in your bags at the side of the doorway of the tower
     .complete 5097,3 --Tower Three marked (1)
 step
     .goto Western Plaguelands,42.7,84.1
@@ -498,16 +484,19 @@ step
     .goto Western Plaguelands,39.4,66.9
     .accept 4971 >>Accept A Matter of Time
 step
-    #sticky
-    #label skeletons
-    >>Kill skeletons in Andorhal
+    #completewith next
+    >>Kill Skeletons in Andorhal. Loot them for their Fragments
     .goto Western Plaguelands,42.10,69.98,0
     .complete 5537,1 --Skeletal Fragments (15)
 step
+	>>Use the Temporal Displacer next to the glowing Silos in Andorhal. Kill the Temporal Parasites that spawn
     .goto Western Plaguelands,48.2,66.5
     .complete 4971,1 --Temporal Parasite (10)
 step
-    #requires skeletons
+    >>Kill Skeletons in Andorhal. Loot them for their Fragments
+    .goto Western Plaguelands,42.10,69.98
+    .complete 5537,1 --Skeletal Fragments (15)
+step
     .goto Western Plaguelands,53.0,65.8
     .turnin 5222 >>Turn in Target: Writhing Haunt
     .accept 5223 >>Accept Return to Chillwind Camp
@@ -519,6 +508,7 @@ step
     .goto Western Plaguelands,53.9,51.3
 	>>The Diseased Grizzlies share spawns with Plague Lurkers. Kill them too if you're unable to find Grizzlies.
     .complete 4985,1 --Diseased Grizzly (8)
+	.unitscan Diseased Grizzly
 step
     .goto Western Plaguelands,53.7,64.7
     .turnin 4985 >>Turn in The Wildlife Suffers Too
@@ -532,17 +522,18 @@ step
     .turnin 5225 >>Turn in Target: Gahrron's Withering
     .accept 5226 >>Accept Return to Chillwind Camp
 step
+	>>Go to the bottom of the crypt
     .goto Eastern Plaguelands,27.3,85.3
     .complete 6021,1 --Zaeldarr's Head (1)
-step
+step << skip
     .goto Eastern Plaguelands,28.8,79.8
 	>>Click the skeleton on the ground. Loot it for the Insignia
     .complete 6185,2 --SI:7 Insignia (Rutger) (1)
-step
+step << skip
     .goto Eastern Plaguelands,28.8,74.9
 	>>Click the skeleton on the ground. Loot it for the Insignia
     .complete 6185,4 --SI:7 Insignia (Turyen) (1)
-step
+step << skip
     .goto Eastern Plaguelands,27.2,75.0
 	>>Click the skeleton on the ground. Loot it for the Insignia
     .complete 6185,3 --SI:7 Insignia (Fredo) (1)
@@ -552,8 +543,17 @@ step
     .turnin 5142 >>Turn in Little Pamela
     .accept 5149 >>Accept Pamela's Doll
 step
-    .goto Eastern Plaguelands,39.0,91.3
-    >>Loot the 3 doll parts around Darrowshire and then combine them together
+	#completewith next
+    .goto Eastern Plaguelands,38.14,92.43,20,0
+    .goto Eastern Plaguelands,39.61,92.60,20,0
+    .goto Eastern Plaguelands,39.60,90.00
+    >>Loot the 3 doll parts around the buildings of Darrowshire. A ghost spawns each time you try looting one
+	.collect 12886,1
+	.collect 12887,1
+	.collect 12888,1
+step
+    .goto Eastern Plaguelands,36.4,90.8
+    >>Combine the doll parts together by clicking on any of them
     .complete 5149,1 --Pamela's Doll (1)
 step
     .goto Eastern Plaguelands,36.4,90.8
@@ -575,7 +575,7 @@ step
 step
     .goto Western Plaguelands,42.7,83.8
     .turnin 5537 >>Turn in Skeletal Fragments
-step
+step << skip
     .goto Western Plaguelands,43.6,84.4
     .turnin 6185 >>Turn in The Eastern Plagues
     .accept 6186 >>Accept The Blightcaller Cometh
@@ -594,10 +594,9 @@ step
     .turnin 5153 >>Turn in A Strange Historian
     .accept 5154 >>Accept The Annals of Darrowshire
 step
-    #sticky
-    #label watches
+    #completewith next
     .goto Western Plaguelands,40.4,66.5,0
-    >>Look for small lockboxes inside the burned houses
+    >>Look for small lockboxes inside the burned houses. There should be one per house
     .complete 4972,1 --Andorhal Watch (5)
 step
     .goto Western Plaguelands,43.4,69.6
@@ -605,6 +604,10 @@ step
     .complete 5154,1 --Collect Annals of Darrowshire (x1)
 	*The correct book's pages has a lighter shade of grey and sometimes the correct book won't spawn
 	*If you're unlucky, you have to keep looting bad tomes until a good one spawns
+step
+    .goto Western Plaguelands,40.4,66.5
+    >>Look for small lockboxes inside the burned houses. There should be one per house
+    .complete 4972,1 --Andorhal Watch (5)
 step
     .goto Western Plaguelands,39.45,66.88
     .turnin 4972 >>Turn in Counting Out Time
@@ -623,11 +626,10 @@ step
     .goto Eastern Plaguelands,79.7,63.7
     .turnin 6021 >> Turn in Zaeldarr the Outcast
 step
-    #sticky
-    #label lvl60
-    .xp 60-9500
+    #completewith next
+    .goto Eastern Plaguelands,51.41,49.70
+    .xp 60-8750 >> Grind xp until you're 8750xp away from level 60
 step
-    #completewith lvl60
     >>Do Villains of Darrowshire if you still need xp
     .complete 5181,1 --Skull of Horgus (1)
     .goto Eastern Plaguelands,51.41,49.70
@@ -636,9 +638,9 @@ step
     .turnin 5181 >>Turn in Villains of Darrowshire
     .goto Eastern Plaguelands,81.52,59.87
 step
-    #requires lvl60
+    .goto Eastern Plaguelands,81.64,59.28
     .fly Stormwind >>Fly to Stormwind
-step
+step << skip
     .goto Stormwind City,77.9,18.2
     .turnin 6186 >>Turn in The Blightcaller Cometh
 ]],"58Boost")
