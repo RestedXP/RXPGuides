@@ -353,13 +353,13 @@ step
     .complete 794,1 --Burning Blade Medallion (1)
 step << !Shaman
 	#som
-    .xp 5+1225 >> Grind to 650+/2800xp
+    .xp 5+650 >> Grind to 650+/2800xp
 step << !Shaman
 	#era
     .xp 5+1680 >> Grind to 1680+/2800xp	
 step << Shaman
 	#requires Hooves
-    .xp 5+690 >> Grind to 200+/2800xp
+    .xp 5+200 >> Grind to 200+/2800xp
 step
     #requires Yarrog
 	.hs >>Hearth to Valley of Trials
@@ -694,7 +694,7 @@ step
 	#som
 	#phase 3-6
     .goto Durotar,58.4,57.2
-    .xp 7+1890 >> Grind to 750+/4500xp
+    .xp 7+750 >> Grind to 750+/4500xp
 step
     #softcore
     #requires KulTiras
