@@ -353,11 +353,22 @@ step
     .complete 794,1 --Burning Blade Medallion (1)
 step << !Shaman
 	#som
+	#phase 3-6
     .xp 5+650 >> Grind to 650+/2800xp
+step << !Shaman
+	#som
+	#phase 1-2
+    .xp 5+1225 >> Grind to 1225+/2800xp
 step << !Shaman
 	#era
     .xp 5+1680 >> Grind to 1680+/2800xp	
 step << Shaman
+	#era/som
+	#requires Hooves
+    .xp 5+690 >> Grind to 690+/2800xp
+step << Shaman
+	#som
+	#phase 3-6
 	#requires Hooves
     .xp 5+200 >> Grind to 200+/2800xp
 step
