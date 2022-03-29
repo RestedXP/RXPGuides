@@ -1304,6 +1304,7 @@ step << Warlock
     .goto The Barrens,51.9,30.3
     .turnin 1509 >>Turn in News of Dogran
     .accept 1510 >>Accept News of Dogran
+step
 #era/som
     >>Kill Serena Bloodfeather. Loot her for her Head
 	.goto The Barrens,39.2,12.2
