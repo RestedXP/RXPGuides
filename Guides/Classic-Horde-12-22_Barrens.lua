@@ -68,8 +68,9 @@ step << !Shaman !Warrior/Undead
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
 step << !Shaman !Warrior/Undead
+	#completewith next
     .goto The Barrens,51.5,30.4
-    .fp >>Get the The Crossroads Flight Path
+    .fp >>Get the Crossroads Flight Path
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
