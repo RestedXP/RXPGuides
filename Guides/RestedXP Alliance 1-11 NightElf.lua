@@ -470,11 +470,10 @@ step
 	>>Fill the empty phial at the moonwell
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 step
-    #completewith xp10
-	#label harpies
+    #completewith harpies
+    .goto Teldrassil,34.6,28.9,0
     >>Kill Harpies. Be careful of the Matriarchs as they heal and do a lot of damage. Try to burst them
     .complete 937,1 --Collect Bloodfeather Belt (x6)
---X, no changes beyond this point (xp10 stuff/harpies label has nothing tied)
 step
     .goto Teldrassil,34.6,28.9
     .accept 931 >> Accept The Shimmering Frond
@@ -483,11 +482,17 @@ step
     >>Start the escort quest
     .accept 938 >> Accept Mist
 step
-	#requires harpies
+	#label harpies
     .goto Teldrassil,38.3,34.4
     .turnin 938 >> Turn in Mist
-    .turnin 937 >> Turn in The Enchanted Glade
     .accept 940 >> Accept Teldrassil
+step
+    .goto Teldrassil,34.6,28.9
+    >>Kill Harpies. Be careful of the Matriarchs as they heal and do a lot of damage. Try to burst them
+    .complete 937,1 --Collect Bloodfeather Belt (x6)
+step
+    .goto Teldrassil,38.3,34.4
+    .turnin 937 >> Turn in The Enchanted Glade
 step << Druid
     .xp 10-750
 step
