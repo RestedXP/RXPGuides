@@ -1140,7 +1140,7 @@ RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 #name 11-12 Loch Modan << !Warlock
 #name 12-14 Loch Modan << Warlock
 #next 14-14 Darkshore << Warlock
-#next 14-20 Bloodmyst << !Warlock
+#next 11-14 Darkshore << !Warlock
 step
     #completewith next
     .goto Loch Modan,24.1,18.2
