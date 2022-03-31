@@ -806,9 +806,9 @@ step
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
     .accept 11 >> Accept Riverpaw Gnoll Bounty << Warlock
 step << Warrior
-    .money >0.3129
-    >>Grind a bit until you have 31s 29c+ of vendorables/money
-    >>This is for thrown, 2h mace, and 2h sword training. It's also for level 3 thrown, and flying to Stormwind
+    .money >0.2099
+    >>Grind a bit until you have 20s 99c+ of vendorables/money
+    >>This is for thrown, 2h mace, 2h sword training, and flying to Stormwind
     .goto Elwynn Forest,27.6,93.0
 step << Warlock
     #completewith Armbands
@@ -897,7 +897,7 @@ step
     .turnin 61 >> Turn in Shipment to Stormwind
 step << Warrior
     .goto Stormwind City,57.1,57.7
-    .trainer >> Train 2h Swords if you have enough money. You must save 20s for later
+    .trainer >> Train 2h Swords
 step << Priest
     .goto Stormwind City,57.1,57.7
     .trainer >>Train Staves
@@ -1050,11 +1050,10 @@ step << Warlock
     .home >> Set your Hearthstone to Ironforge
 step << Warrior
     .goto Ironforge,61.2,89.5
-    .trainer >>Train 2h Maces and Thrown
+    .trainer >>Train 2h Maces
 step 
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
-    >>Equip your level 3 thrown << Warrior
 step
     .goto Dun Morogh,60.1,52.6,50,0
     .goto Dun Morogh,63.1,49.8
@@ -1367,6 +1366,7 @@ step << Warlock
     .goto Ironforge,53.0,6.4
     .vendor >>Buy Consume Shadows r1, then Sacrifice r1
 step << !Warlock
+    #level 12
     .goto Ironforge,65.90,88.41 << Warrior
     .goto Ironforge,51.50,15.34 << Rogue
     .goto Ironforge,25.21,10.75 << Priest
