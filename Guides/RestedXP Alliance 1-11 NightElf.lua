@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 << Alliance
-#name 1-11 Teldrassil
-#next 11-14 Darkshore
+#name 1-6 Shadowglen
+#next 6-11 Teldrassil
 step << !NightElf
     #sticky
     #completewith next
@@ -10,11 +10,36 @@ step
     .goto Teldrassil,58.7,44.4
     .accept 456 >> Accept The Balance of Nature
 step
+    #sticky
+    #label balance1
     .goto Teldrassil,62.0,42.6
     .complete 456,1 --Kill Young Nightsaber (x7)
     .complete 456,2 --Kill Young Thistle Boar (x4)
 step
-    .goto Teldrassil,58.7,44.2
+    .xp 2
+step
+    .accept 458 >> Accept The Woodland Protector
+	.goto Teldrassil,59.9,42.5
+    .accept 4495 >> Accept A Good Friend
+    .goto Teldrassil,60.9,42.0
+step << Hunter
+    .goto Teldrassil,59.8,34.1
+    .xp 4-610 >> Grind until you are 610xp away from level 4 (790/1400)
+step << Hunter
+    .goto Teldrassil,54.6,33.0
+    .turnin 4495 >> Turn in A Good Friend
+    .accept 3519 >> Accept A Friend in Need
+step << Hunter
+    #sticky
+    #completewith next
+    .hs >> Hearth back to the starting zone
+step << Hunter
+    .goto Teldrassil,57.9,45.1
+    .turnin 458 >> Turn in The Woodland Protector
+    .accept 459 >> Accept The Woodland Protector
+step
+    #requires balance1
+	.goto Teldrassil,58.7,44.2
     .turnin 456 >> Turn in The Balance of Nature
     .accept 457 >> Accept The Balance of Nature
 	.accept 3116 >> Accept Simple Sigil << Warrior
@@ -29,51 +54,55 @@ step << Warrior
 	.goto Teldrassil,59.6,38.4
 	.turnin 3116 >> Turn in Simple Sigil
 	.trainer >> Run up the stairs behind the vendors. Train Battle Shout from the trainer
-step
-    >> Run back outside << Warrior
-	.goto Teldrassil,59.9,42.5
-    .accept 458 >> Accept The Woodland Protector
-step
-    .goto Teldrassil,60.9,42.0
-    .accept 4495 >> Accept A Good Friend
-step
+step << !Hunter
     .goto Teldrassil,59.8,34.1
     .complete 457,1 --Kill Mangy Nightsaber (x7)
     .complete 457,2 --Kill Thistle Boar (x7)
-step
+step << !Hunter
     .goto Teldrassil,54.6,33.0
     .turnin 4495 >> Turn in A Good Friend
     .accept 3519 >> Accept A Friend in Need
-step
+step << !Hunter
     #sticky
     #completewith next
     .hs >> Hearth back to the starting zone
-step
+step << !Hunter
     .goto Teldrassil,57.9,45.1
     .turnin 458 >> Turn in The Woodland Protector
     .accept 459 >> Accept The Woodland Protector
-step
+step << !Hunter
     .goto Teldrassil,58.6,44.3
     .turnin 457 >> Turn in The Balance of Nature
 step
     .goto Teldrassil,60.9,42.0
     .turnin 3519 >> Turn in A Friend in Need
     .accept 3521 >> Accept Iverron's Antidote
+step << Hunter
+    #completewith htraining
+    .goto Teldrassil,59.3,41.1
+	.vendor >> Go inside, vendor trash and buy 3 stacks of arrows
 step
     .goto Teldrassil,57.8,41.7
     .accept 916 >> Accept Webwood Venom
+step << Hunter
+    .xp 4-40
+step << Hunter
+    .goto Teldrassil,58.6,40.4
+    >>Climb the big tree and talk to the Hunter trainer
+    .train 1978 >>Train Serpent Sting
+    .turnin 3117 >> Turn in Etched Sigil
 step
     .goto Teldrassil,58.1,36.7
 	>> Loot the yellow flowers around the lake
     .complete 3521,2 --Collect Moonpetal Lily (x4)
 step
     .goto Teldrassil,56.8,31.7
-	>>Kill spiders
+	>>Kill Spiders. Loot them for Ichor and Sacs
     .complete 3521,3 --Collect Webwood Ichor (x1)
     .complete 916,1 --Collect Webwood Venom Sac (x10)
 step
     .goto Teldrassil,55.0,43.7
-	>> Kill Grellkins
+	>> Kill Grellkins. Loot them for Mushrooms and Moss
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
     .complete 459,1 --Collect Fel Moss (x8)
 step
@@ -86,7 +115,7 @@ step
 step << !Priest
     .goto Teldrassil,59.3,41.1
 	.vendor >> Go inside and vendor trash << !Hunter
-	.vendor >> Go inside and vendor trash. Buy 800 arrows << Hunter
+	.vendor >> Go inside and vendor trash. Make sure you have at least 3 or 4 stacks of arrows for the next segment << Hunter
 step << Warrior
     .goto Teldrassil,59.6,38.4
 	.trainer >> Train your level 4 spells
@@ -105,13 +134,7 @@ step << Druid
     .goto Teldrassil,58.6,40.3
 	>>Run up the big ramp and into the small room
 	.turnin 3120 >> Turn in Verdant Sigil
-	.trainer >> Train your level 4 spells
-step << Hunter
-	.goto Teldrassil,58.7,40.4
-	>>Run up the big ramp and into the small room
-	.turnin 3117 >> Turn in Etched Sigil
-	.trainer >> Train your level 4 spells
--- Not adding an optional (purchase bow) thing in exchange for selling a bag drop, would cause too many money problems
+	.trainer >> Train your class spells
 step
     .goto Teldrassil,54.6,33.0
     .turnin 3522 >> Turn in Iverron's Antidote
@@ -120,8 +143,17 @@ step
 	>>Loot a spider egg at the back of the spider cave
     .complete 917,1 --Collect Webwood Egg (x1)
 step
-    .goto Teldrassil,57.8,41.7
-    >>Die on purpose and respawn at the graveyard
+	#softcore
+	#completewith next
+	.goto Teldrassil,57.8,41.7,150    >>Die on purpose and respawn at the graveyard
+step
+	#hardcore
+	#completewith next
+	+Logout skip on the ledge behind the eggs. Move your character until it looks like they're floating, then log out, and back in.
+	>>If you fall down, just run out the cave normally to the quest turn in
+	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference
+step
+	.goto Teldrassil,57.8,41.7
     .turnin 917 >> Turn in Webwood Egg
     .accept 920 >> Accept Tenaron's Summons
 step
@@ -130,17 +162,31 @@ step
     .turnin 920 >> Turn in Tenaron's Summons
     .accept 921 >> Accept Crown of the Earth
 step
+    #sticky
+    #label vial1
     .goto Teldrassil,59.9,33.0
 	>>Fill the empty vial at the moonwell
     .complete 921,1 --Collect Filled Crystal Phial (x1)
+step << Hunter
+    .goto Teldrassil,59.8,34.1
+    .complete 457,1 --Kill Mangy Nightsaber (x7)
+    .complete 457,2 --Kill Thistle Boar (x7)
 step
+    #requires vial1
     #sticky
+	#softcore
     #completewith next
     .deathskip >> Die and respawn at the graveyard
+step << Hunter
+    #requires vial1
+    .goto Teldrassil,58.6,44.3
+    .turnin 457 >> Turn in The Balance of Nature
 step << Priest
+    #requires vial1
     .goto Teldrassil,59.2,40.5
     .accept 5622 >> Accept In Favor of Elune
 step
+    #requires vial1
     .goto Teldrassil,59.1,39.4
 	>>Take the ramp upwards and climb the big tree
     .turnin 921 >> Turn in Crown of the Earth
@@ -148,11 +194,19 @@ step
 step
     .goto Teldrassil,61.2,47.6
     .accept 2159 >> Accept Dolanaar Delivery
+]],"NightElf")
+	
+RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+#classic
+<< Alliance
+#name 6-11 Teldrassil
+#next 11-14 Darkshore
 step
     .goto Teldrassil,60.5,56.3
     .accept 488 >> Accept Zenn's Bidding
 step
     #sticky
+    #completewith zenn
     >>Kill spiders/cats/owls as you quest
     .complete 488,1 --Collect Nightsaber Fang (x3)
     .complete 488,2 --Collect Strigid Owl Feather (x3)
@@ -161,7 +215,7 @@ step
     #sticky
 	#completewith spiderLegs
     >>Collect 7 Small Spider Legs for a quest later
-    .collect 5465,7 --Collect Small Spider Leg (x7)
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
 step
     .goto Teldrassil,56.1,57.8
     .accept 997 >> Accept Denalan's Earth
@@ -173,21 +227,19 @@ step << Priest
     .turnin 5622 >> Turn in In Favor of Elune
     .accept 5621 >> Accept Garments of the Moon
 	.trainer >> Train your level 6 spells
+step << Rogue
+    .goto Teldrassil,55.51,57.14
+	>>Go to the second floor of the treehouse
+    .vendor >> Buy the level 3 thrown from Aldia. Equip it
 step
     .goto Teldrassil,55.5,57.0
     >>Go to the top of the treehouse
-    .accept 932 >> Accept Twisted Hatred
+   .accept 932 >> Accept Twisted Hatred
     .accept 2438 >> Accept The Emerald Dreamcatcher
 step << Hunter
-    .goto Teldrassil,56.7,59.5
-	.trainer >> Train your level 6 spells
-step << Hunter
     .goto Teldrassil,56.3,59.5
-    .vendor >> vendor trash. Sell your Bow if it gives you enough money for Hornwood Recurve Bow (2s 70c)
-step << Hunter
-    .goto Teldrassil,56.3,59.5
-    .money <0.0270
-    >> Buy Hornwood Recurve Bow and equip it
+    >>Repair your weapon. If you have enough money (2s 70c) buy a Hornwood Recurve Bow from Jeena. Otherwise, skip this step (you'll come back later)
+    >>Buy arrows until your Quiver is full (1000 arrows)
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Warrior
     .goto Teldrassil,56.2,59.2
@@ -196,24 +248,23 @@ step << Rogue
     .goto Teldrassil,56.4,60.1
 	.trainer >> Train your level 6 spells
 step << Warrior
-	.goto Teldrassil,56.3,59.5
-    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
-step << Warrior
     .goto Teldrassil,56.3,59.5
-    .money <0.0509
-    >> Buy Gladius and equip it
+    >>Repair your weapon. If you have enough money (5s 9c) buy a Gladius from Shalomon. Otherwise, skip this step (you'll come back later)
     .collect 2488,1 --Collect Gladius
 step << Rogue
-    .goto Teldrassil,56.3,59.5
-    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c). You’ll come back later if you don’t have enough yet
-step << Rogue
-    .goto Teldrassil,56.3,59.5
-    .money <0.0382
-    >>Buy Stiletto and equip it
-    .collect 2494,1 --Collect Stiletto
+    .goto Teldrassil,56.31,59.49
+    >>Repair your weapon. If you have enough money (3s 82c) buy a Stiletto from Shalomon. Otherwise, skip this step (you'll come back later)
+    .collect 2494,1 --Stiletto (1)
+step << Druid
+    .goto Teldrassil,56.31,59.49
+    >>Repair your weapon. If you have enough money (4s 80c) buy a Walking Stick from Shalomon. Otherwise, skip this step (you'll come back later)
+    .collect 2495,1 --Walking Stick (1)
 step
     .goto Teldrassil,55.7,59.8
     .turnin 2159 >> Turn in Dolanaar Delivery
+step << Hunter
+    .goto Teldrassil,56.7,59.5
+	.trainer >> Train your class spells
 step << Druid
     .goto Teldrassil,55.9,61.6
 	.trainer >> Train your level 6 spells
@@ -221,7 +272,16 @@ step
     .goto Teldrassil,56.2,61.7
     .turnin 928 >> Turn in Crown of the Earth
     .accept 929 >> Accept Crown of the Earth
+step << Druid
+    .goto Teldrassil,57.6,60.6
+    .train 2366 >> Train Herbalism
+    >>You'll need 5 Earthroot for a quest later. You can ditch Herbalism once you get 5 Earthroot
+step << Druid
+    #completewith end
+    >>Level Herbalism to 15 and try to find 5 Earthroot for a level 15 quest later
+    .collect 2449,5
 step << Priest
+    >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on Sentinel Shaya
     .goto Teldrassil,57.2,63.5
     .complete 5621,1 --Heal and fortify Sentinel Shaya
 step
@@ -231,7 +291,7 @@ step
     .accept 919 >> Accept Timberling Sprouts
 step
     .goto Teldrassil,56.1,66.6
-    >>Run around the lake killing timberling mobs/looting sprouts on the ground
+    >>Run around the lake killing timberling mobs, and looting sprouts on the ground
     .complete 918,1 --Collect Timberling Seed (x8)
     .complete 919,1 --Collect Timberling Sprout (x12)
 step
@@ -249,6 +309,7 @@ step
     .turnin 475 >> Turn in A Troubling Breeze
     .accept 476 >> Accept Gnarlpine Corruption
 step
+    #label zenn
     .goto Teldrassil,63.4,58.1
 	>>Fill the empty vial at the moonwell
     .complete 929,1 --Collect Filled Jade Phial (x1)
@@ -260,7 +321,7 @@ step
     .complete 488,3 --Collect Webwood Spider Silk (x3)
 step
     .goto Teldrassil,60.7,54.4
-	.xp 7+3500 >> Grind to 3500+/4500xp
+	.xp 7+3500 >> Grind to level 7 +3500xp
 step
     .goto Teldrassil,60.5,56.3
     .turnin 488 >> Turn in Zenn's Bidding
@@ -279,16 +340,16 @@ step
     .turnin 2438 >> Turn in The Emerald Dreamcatcher
     .accept 2459 >> Accept Ferocitas the Dream Eater
 step << Hunter
-    .goto Teldrassil,56.7,59.5
-	.trainer >> Train your level 8 spells
-step << Hunter
-	.goto Teldrassil,55.9,59.2
-    .vendor >> vendor trash. Sell your Bow if it gives you enough money for Hornwood Recurve Bow (2s 70c)
+	#completewith next
+    .goto Teldrassil,56.3,59.5
+    >>Repair your weapon. If you have enough money (2s 70c) buy a Hornwood Recurve Bow from Jeena. Otherwise, skip this step (you'll come back later)
+    .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Hunter
     .goto Teldrassil,56.3,59.5
-    .money <0.0270
-    >> Buy Hornwood Recurve Bow and equip it
-    .collect 2506,1 --Collect Hornwood Recurve Bow
+	.vendor >>Buy arrows up to 800 total
+step << Hunter
+    .goto Teldrassil,56.7,59.5
+	.trainer >> Train your level 8 spells
 step << Warrior
     .goto Teldrassil,56.2,59.2
 	.trainer >> Train your level 8 spells
@@ -296,40 +357,44 @@ step << Rogue
     .goto Teldrassil,56.4,60.1
 	.trainer >> Train your level 8 spells
 step << Warrior
-	.goto Teldrassil,56.3,59.5
-    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c)
-step << Warrior
     .goto Teldrassil,56.3,59.5
-    .money <0.0509
-    >> Buy Gladius and equip it
+    >>Repair your weapon. If you have enough money (5s 9c) buy a Gladius from Shalomon. Otherwise, skip this step (you'll come back later)
     .collect 2488,1 --Collect Gladius
 step << Rogue
-    .goto Teldrassil,56.3,59.5
-    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c)
-step << Rogue
-    .goto Teldrassil,56.3,59.5
-    .money <0.0382
-    >>Buy Stiletto and equip it
-    .collect 2494,1 --Collect Stiletto
+    .goto Teldrassil,56.31,59.49
+    >>Repair your weapon. If you have enough money (3s 82c) buy a Stiletto from Shalomon. Otherwise, skip this step (you'll come back later)
+    .collect 2494,1 --Stiletto (1)
 step << Druid
-    .goto Teldrassil,55.9,61.6
-	.trainer >> Train your level 8 spells
+    .goto Teldrassil,56.31,59.49
+    >>Repair your weapon. If you have enough money (4s 80c) buy a Walking Stick from Shalomon. Otherwise, skip this step (you'll come back later)
+    .collect 2495,1 --Walking Stick (1)
 step << Druid
     .goto Teldrassil,56.2,61.7
     .turnin 929 >> Turn in Crown of the Earth
     .accept 933 >> Accept Crown of the Earth
+step << Druid
+    .goto Teldrassil,55.9,61.6
+	.trainer >> Train your level 8 spells
 step
     #sticky
-	#completewith next
+	#completewith jewel
     >>Look for Fel Cones, usually located next to tree trunks
     .complete 489,1 --Collect Fel Cone (x3)
 step
+    #label mystics
+    #sticky
     .goto Teldrassil,69.2,53.3
-	>>These share spawns with the Gnarlpine Warriors. You may have to kill them to make the Mystics spawn
     .complete 2459,1 --Kill Gnarlpine Mystic (x7)
-	>>Open the Gnarlpine Necklace from Ferocitas
+	>>Mystics share spawns with Gnarlpine Warriors. You may have to kill them to make the Mystics spawn
+step
+    #label jewel
+	.goto Teldrassil,69.2,53.3
+	>>Kill Ferocitas. Loot the Necklace
+    .collect 8049,1,2459,2 --Gnarlpine Necklace (1)
+    >>Right Click the Necklace to loot the Jewel
     .complete 2459,2 --Collect Tallonkai's Jewel (x1)
 step
+    #requires mystics
     .goto Teldrassil,58.7,55.7
     >>Finish off Seek Redemption!
     .complete 489,1 --Collect Fel Cone (x3)
@@ -341,37 +406,47 @@ step
     >>Kill Lord Melenas. He can be located in many different spawnpoints of the cave, and is quite difficult
     .complete 932,1 --Collect Melenas' Head (x1)
 step
-    #sticky
-	.goto Teldrassil,56.2,63.3,150 >>Die on purpose and respawn at the graveyard
-step
+    #softcore
+	#completewith next
+	.deathskip >>Die on purpose and respawn at the graveyard
+step << !Druid
     .goto Teldrassil,56.2,61.7
     .turnin 929 >> Turn in Crown of the Earth
+step
+    .goto Teldrassil,56.2,61.7
     .accept 933 >> Accept Crown of the Earth
 step
-	.goto Teldrassil,42.36,67.26
-	>>Fill the empty vial at the moonwell
-	.complete 933,1
-step
-	#label spiderLegs
 	.goto Teldrassil,42.54,76.08
 	>>Click on the big purple plant
 	.accept 930 >> Accept The Glowing Fruit
 step
+	#label spiderLegs
+	.goto Teldrassil,42.36,67.26
+	>>Fill the empty vial at the moonwell
+	.complete 933,1
+step
     >>Finish off collecting 7 Small Spider Legs
-    .complete 4161,1 --Collect Small Spider Leg (x7)
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+step
+    #softcore
+	#completewith next
+    .goto Teldrassil,43.50,68.42
+    .deathskip >>Die on purpose and respawn at the Dolanaar graveyard, make sure to die east of the moonwell, otherwise you might end up in Darnassus
 step
     .goto Teldrassil,56.2,61.7
-    >>Die on purpose and respawn at the Dolanaar graveyard
     .turnin 933 >> Turn in Crown of the Earth
     .accept 7383 >> Accept Crown of the Earth
 step
     .goto Teldrassil,57.1,61.3
-    >>You need to train cooking to accept the following quest
+    .train 2550 >>Train Cooking
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
 step
     .goto Teldrassil,55.7,59.8
     .home >> Set your Hearthstone to Dolanaar
+step << Warrior/Rogue
+    .goto Teldrassil,55.2,56.8
+    .train 3273 >> Train First Aid
 step
     .goto Teldrassil,55.5,56.9
     .turnin 932 >> Turn in Twisted Hatred
@@ -395,10 +470,11 @@ step
 	>>Fill the empty phial at the moonwell
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 step
-    #sticky
+    #completewith xp10
 	#label harpies
-    >>Kill Harpies
+    >>Kill Harpies. Be careful of the Matriarchs as they heal and do a lot of damage. Try to burst them
     .complete 937,1 --Collect Bloodfeather Belt (x6)
+--X, no changes beyond this point (xp10 stuff/harpies label has nothing tied)
 step
     .goto Teldrassil,34.6,28.9
     .accept 931 >> Accept The Shimmering Frond
