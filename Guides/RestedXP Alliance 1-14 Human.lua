@@ -1,8 +1,8 @@
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
 << Alliance
-#name 1-12 Elwynn Forest
-#next 12-14 Loch Modan Human << Warlock
-#next 11-14 Darkshore << !Warlock
+#name 1-11 Elwynn Forest
+#next 12-14 Loch Modan << Warlock
+#next 11-12 Loch Modan << !Warlock
 step << !Human
     #sticky
     #completewith next
