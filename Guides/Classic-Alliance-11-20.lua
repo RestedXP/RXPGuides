@@ -1952,13 +1952,18 @@ step
     #label tower
     .goto Ashenvale,26.19,38.69
     .turnin 967 >> Turn in The Tower of Althalaxx
+step
+	#era/som
+    .goto Ashenvale,26.19,38.69
     .accept 970 >> Accept The Tower of Althalaxx
 step
+	#era/som
      #completewith next
     .goto Ashenvale,31.41,30.66
      >> Kill cultists
     .complete 970,1
 step
+	#era/som
      #completewith next
     .goto Ashenvale,26.19,38.69
     .turnin 970 >> Turn in The Tower of Althalaxx
@@ -1972,6 +1977,7 @@ step
      >> Look out for the herb sacks on the ground
     .complete 1010,1
 step
+	#era/som
     .goto Ashenvale,31.41,30.66
      >> Kill cultists
     .complete 970,1
@@ -1982,6 +1988,7 @@ step
     .turnin 1010 >> Turn in Bathran's Hair
     .accept 1020 >> Accept Orendil's Cure
 step
+	#era/som
     .goto Ashenvale,26.43,38.59
     .turnin 970 >> Turn in The Tower of Althalaxx
     .accept 973 >> Accept The Tower of Althalaxx
@@ -2046,12 +2053,15 @@ step
     .goto Ashenvale,27.50,60.76,8 >> Climb the hill next to the big tree to the right of the Fire Scar Shrine entrance 
     >>Jump over the tree root and hug the right to avoid aggroing mobs
 step
+	#era/som
     .goto Ashenvale,25.27,60.68
     >>Kill Ilkrud Magthrull
     >>This quest is HARD, you can skip this right now and do it later at level 23
     .complete 973,1
     .link https://www.twitch.tv/videos/1182187763 >> Click here for video reference
+	.isOnQuest 973
 step
+	#era/som
     .isQuestComplete 973
     .goto Ashenvale,26.19,38.69
     .turnin 973 >> Turn in The Tower of Althalaxx
@@ -2840,13 +2850,18 @@ step
     #label tower
     .goto Ashenvale,26.19,38.69
     .turnin 967 >> Turn in The Tower of Althalaxx
+step
+	#era/som
+    .goto Ashenvale,26.19,38.69
     .accept 970 >> Accept The Tower of Althalaxx
 step
+	#era/som
      #completewith next
     .goto Ashenvale,31.41,30.66
      >> Kill cultists. Loot them for the Glowing Soul Gem
     .complete 970,1
 step
+	#era/som
      #completewith next
     .goto Ashenvale,26.19,38.69
     .turnin 970 >> Turn in The Tower of Althalaxx
@@ -2860,6 +2875,7 @@ step
      >> Look out for the herb sacks on the ground
     .complete 1010,1
 step
+	#era/som
     .goto Ashenvale,31.41,30.66
      >> Kill cultists. Loot them for the Glowing Soul Gem
     .complete 970,1
@@ -2870,6 +2886,7 @@ step
     .turnin 1010 >> Turn in Bathran's Hair
     .accept 1020 >> Accept Orendil's Cure
 step
+	#era/som
     .goto Ashenvale,26.43,38.59
     .turnin 970 >> Turn in The Tower of Althalaxx
     .accept 973 >> Accept The Tower of Althalaxx
