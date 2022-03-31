@@ -412,12 +412,17 @@ step
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
 step
-    .isQuestComplete 367
     .goto Tirisfal Glades,59.45,52.40
     .turnin 365 >> Turn in Fields of Grief
     .accept 407 >> Accept Fields of Grief
+step
+    .goto Tirisfal Glades,59.45,52.40
+    .isQuestComplete 367
     .turnin 367 >>Turn in A New Plague
+step
+    .goto Tirisfal Glades,59.45,52.40
     .accept 368 >>Accept A New Plague
+	.isQuestTurnedIn 367
 step
     .goto Tirisfal Glades,59.45,52.40
     .turnin 365 >> Turn in Fields of Grief
@@ -986,10 +991,13 @@ step << Warrior
     >>Talk to Charles. Buy a Claymore from him (26s 76c). Skip this if your weapon is better, or there's something better on the AH
     .collect 1198,1 --Collect Claymore (1)
 step << Rogue
-    .isQuestComplete 1886
     .goto Undercity,83.52,69.10
     .turnin 1886 >> Turn in The Deathstalkers
+    .isQuestComplete 1886
+step
+    .goto Undercity,83.52,69.10
     .accept 1898 >>Accept The Deathstalkers
+    .isQuestTurnedIn 1886
 step << Rogue
     .isQuestTurnedIn 1886
     .goto Undercity,54.84,76.31
@@ -1127,10 +1135,13 @@ step << Warrior
 step << Warrior
     .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
 step << Rogue
-    .isQuestComplete 1886
     .goto Undercity,83.52,69.10
     .turnin 1886 >> Turn in The Deathstalkers
+    .isQuestComplete 1886
+step << Rogue
+    .goto Undercity,83.52,69.10
     .accept 1898 >>Accept The Deathstalkers
+    .isQuestTurnedIn 1886
 step << Rogue
     #level 12
     .goto Undercity,83.87,72.08
@@ -1528,7 +1539,10 @@ step << Undead Rogue
     .isQuestComplete 1886
     .goto Undercity,83.52,69.10
     .turnin 1886 >> Turn in The Deathstalkers
+step << Undead Rogue
+    .goto Undercity,83.52,69.10
     .accept 1898 >>Accept The Deathstalkers
+    .isQuestTurnedIn 1886
 step << Rogue
     .goto Undercity,83.87,72.08
     .trainer >> Train your class spells

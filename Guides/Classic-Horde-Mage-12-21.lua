@@ -490,11 +490,13 @@ step
     >>Kill Plainstriders. Loot them for their Kidneys 
     .complete 821,2 --Plainstrider Kidney (5)
 step
-    .isQuestComplete 855
     .goto The Barrens,45.39,28.43
     .turnin 851 >>Turn in Verog the Dervish
-    .turnin 855 >> Turn in Centaur Bracers
     .accept 852 >>Accept Hezrul Bloodmark
+step
+    .goto The Barrens,45.39,28.43
+    .turnin 855 >> Turn in Centaur Bracers
+    .isQuestComplete 855
 step
     .goto The Barrens,45.39,28.43
     .turnin 851 >>Turn in Verog the Dervish
@@ -756,12 +758,14 @@ step
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step
-    .isOnQuest 883
     .goto The Barrens,44.8,59.1
     .turnin 882 >>Turn in Ishamuhale
     .accept 907 >>Accept Enraged Thunder Lizards
-    .turnin 883 >>Turn in Lakota'mani
     .accept 1130 >>Accept Melor Sends Word
+step
+    .goto The Barrens,44.8,59.1
+    .isOnQuest 883
+    .turnin 883 >>Turn in Lakota'mani
 step
     .goto The Barrens,44.8,59.1
     .turnin 882 >>Turn in Ishamuhale
@@ -784,11 +788,13 @@ step
     >>Kill Thunder Lizards. Loot them for their blood
     .complete 907,1 --Thunder Lizard Blood (3)
 step
-    .isOnQuest 884
     .goto The Barrens,44.9,59.1
     .turnin 907 >>Turn in Enraged Thunder Lizards
     .accept 913 >>Accept Cry of the Thunderhawk
+step
+    .goto The Barrens,44.9,59.1
     .turnin 884 >>Turn in Owatanka
+    .isOnQuest 884
 step
     .goto The Barrens,44.9,59.1
     .turnin 907 >>Turn in Enraged Thunder Lizards

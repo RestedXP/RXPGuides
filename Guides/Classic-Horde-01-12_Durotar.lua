@@ -1713,9 +1713,11 @@ step << Warlock
 step
 	.isOnQuest 832
 	.goto Orgrimmar,49.4,50.5
+    .turnin 832 >>Turn in Burning Shadows
+step
+	.goto Orgrimmar,49.4,50.5
     .turnin 829 >>Turn in Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
-    .turnin 832 >>Turn in Burning Shadows
 step
 	.goto Orgrimmar,49.4,50.5
     .turnin 829 >>Turn in Neeru Fireblade
