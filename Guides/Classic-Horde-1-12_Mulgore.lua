@@ -201,8 +201,14 @@ step
 step
     .xp 5+2395 >>Grind to 2395+/2800xp
 step
+	#completewith next
+	#softcore
     .goto Mulgore,46.5,55.5,300 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
-    #softcore
+step
+	#hardcore
+	#completewith next
+    .goto Mulgore,48.3,53.3,100 >> Run to Bloodhoof Village << !Hunter
+    .goto Mulgore,47.3,62.0,100 >> Run to Bloodhoof Village << Hunter
 step << !Hunter
     .goto Mulgore,47.0,57.0
     .accept 766 >>Accept Mazzranache
@@ -229,21 +235,18 @@ step << !Hunter
     .turnin 767 >>Turn in Rite of Vision
     .accept 771 >>Accept Rite of Vision
 step << Shaman
-    .money <0.01
     .goto Mulgore,48.4,59.2
     .trainer >> Train your class spells
 step << !Hunter
     .goto Mulgore,48.7,59.3
     .accept 761 >>Accept Swoop Hunting
 step << Druid
-    .money <0.01
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells
 step << Tauren/!Hunter
     .goto Mulgore,48.6,60.4
     .accept 748 >>Accept Poison Water
 step << Warrior
-    .money <0.01
     .goto Mulgore,49.5,60.6
     .trainer >> Train your class spells
 step
@@ -278,7 +281,6 @@ step << Hunter
     .accept 766 >>Accept Mazzranache
 step << Hunter
     #completewith next
-    .money <0.01
     .goto Mulgore,47.8,55.7
     .trainer >> Train your class spells if you still have to train some
 step << Hunter
@@ -303,12 +305,10 @@ step
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
-    .goto Mulgore,55.9,63.1,60,0
-    .goto Mulgore,51.1,66.5,60,0
-    .goto Mulgore,40.7,73.0,60,0
-    .goto Mulgore,55.9,63.1,60,0
-    .goto Mulgore,51.1,66.5,60,0
-    .goto Mulgore,40.7,73.0,60,0
+    .goto Mulgore,55.9,63.1,90,0
+    .goto Mulgore,51.1,66.5,90,0
+    .goto Mulgore,40.7,73.0,90,0
+    .goto Mulgore,55.9,63.1
     >>Kill Wolves for Paws and Plainstriders for Talons. Kill a Plainstrider for Tender Strider Meat
     .complete 748,1 --Prairie Wolf Paw (6)
     .complete 748,2 --Plainstrider Talon (4)
@@ -330,17 +330,17 @@ step << Tauren
 step
     #label Gnolls
     #requires Stones
-    .unitscan Snagglespear
-    .goto Mulgore,53.5,73.0,60,0
-    .goto Mulgore,48.3,72.0,60,0
-    .goto Mulgore,53.5,73.0,60,0
-    .goto Mulgore,48.3,72.0,60,0
-    .goto Mulgore,53.5,73.0,60,0
-    .goto Mulgore,48.3,72.0,60,0
+    .goto Mulgore,53.5,73.0,90,0
+    .goto Mulgore,48.3,72.0,90,0
+    .goto Mulgore,53.5,73.0,90,0
+    .goto Mulgore,48.3,72.0,90,0
+    .goto Mulgore,53.5,73.0,90,0
+    .goto Mulgore,48.3,72.0
     >>Go back and forth between the two camps, killing Gnolls. Be aware of Snagglespear (Level 9 rare). He's too difficult to kill.
     .complete 745,1 --Palemane Tanner (10)
     .complete 745,2 --Palemane Skinner (8)
     .complete 745,3 --Palemane Poacher (5)
+    .unitscan Snagglespear
 step
     .goto Mulgore,47.6,61.5
     .vendor >>vendor trash
@@ -350,17 +350,14 @@ step << Tauren
     .accept 756 >>Accept Thunderhorn Totem
 step << Warrior
     #completewith next
-    .money <0.01
     .goto Mulgore,49.5,60.6
     .trainer >> Train your class spells if you still have to train some
 step << Shaman
     #completewith next
-    .money <0.01
     .goto Mulgore,48.4,59.2
     .trainer >> Train your class spells if you still have to train some
 step << Druid
     #completewith next
-    .money <0.01
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells if you still have to train some
 step
@@ -396,32 +393,34 @@ step << Hunter
     .trainer >> Train your class spells if you still have to train some
 step
     >>Look for Morin Cloudstalker. He patrols along the eastern road
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
+    .goto Mulgore,51.1,58.6,50,0
+    .goto Mulgore,59.7,62.5,50,0
+    .goto Mulgore,51.1,58.6
     .accept 749 >>Accept The Ravaged Caravan
+	.unitscan Morin Cloudstalker
 step
     .goto Mulgore,53.8,48.3
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step
-    #sticky
-    #label Mazzranache
-    #completewith next
+    #completewith Clawsx
     >>Get the items for Mazzranache as you quest throughout the zone
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step
+	#completewith Burial
+    .goto Mulgore,54.15,27.81,0
+	>>Kill Swoops throughout Mulgore. Loot them for their Quills
+    .complete 761,1 --Trophy Swoop Quill (8)
+step
+	#label Clawsx
     >>Kill Stalkers, Cougars, and Swoops in the area. Loot them for their claws and quills
     .goto Mulgore,58.1,48.6,60,0
     .goto Mulgore,54.5,40.1,60,0
     .goto Mulgore,46.4,50.7,60,0
-    .complete 761,1 --Trophy Swoop Quill (8)
+    .goto Mulgore,58.1,48.6
     .complete 756,1 --Stalker Claws (6)
     .complete 756,2 --Cougar Claws (6)
 step
@@ -446,6 +445,7 @@ step
     .turnin 756 >>Turn in Thunderhorn Totem
     .accept 758 >>Accept Thunderhorn Cleansing
 step
+	.isQuestComplete 761
     .goto Mulgore,48.7,59.4
     .turnin 761 >>Turn in Swoop Hunting
 step << Shaman
@@ -484,8 +484,7 @@ step << Tauren
     >>Use the Thunderhorn Cleansing Totem at the Well
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
 step
-    #label mazzranache2
-    #sticky
+    #completewith Burial
     >>Finish getting the items for Mazzranache
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
@@ -501,9 +500,27 @@ step
     .goto Mulgore,31.9,41.7
     .complete 743,1 --Windfury Talon (8)
 step
+	#label Burial
     .goto Mulgore,32.7,36.1
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
+step
+	#completewith next
+    .goto Mulgore,54.15,27.81
+	>>Kill Swoops throughout Mulgore. Loot them for their Quills
+    .complete 761,1 --Trophy Swoop Quill (8)
+step
+    .goto Mulgore,54.15,27.81
+    >>Finish getting the items for Mazzranache
+    .complete 766,1 --Prairie Wolf Heart (1)
+    .complete 766,2 --Flatland Cougar Femur (1)
+    .complete 766,3 --Plainstrider Scale (1)
+    .complete 766,4 --Swoop Gizzard (1)
+--X waypoints for each item
+step
+    .goto Mulgore,54.15,27.81
+	>>Kill Swoops throughout Mulgore. Loot them for their Quills
+    .complete 761,1 --Trophy Swoop Quill (8)
 step
     .goto Mulgore,59.9,25.6
     .accept 833 >>Accept A Sacred Burial
@@ -519,6 +536,7 @@ step
     .goto Mulgore,59.8,25.6
     .turnin 833 >>Turn in A Sacred Burial
 step
+   .goto Mulgore,61.5,21.9
     .xp 9+4400 >> Grind to 4400+/6500xp
 step << !Druid
     #completewith next
@@ -532,9 +550,11 @@ step << Druid
     #hardcore
     .goto Mulgore,46.5,55.5,300 >> Run back to Bloodhoof Village
 step << !Hunter
-    #requires mazzranache2
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
+step
+    .goto Mulgore,48.7,59.4
+    .turnin 761 >>Turn in Swoop Hunting
 step
     .goto Mulgore,46.9,60.2
     .accept 861 >>Accept The Hunter's Way
@@ -567,7 +587,6 @@ step << Tauren Hunter
     .goto Mulgore,48.5,60.4
     .turnin 758 >>Turn in Thunderhorn Cleansing
 step << Hunter
-    #requires mazzranache2
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
 step << Hunter
@@ -1222,16 +1241,16 @@ step << Hunter
     .goto Mulgore,47.8,55.7
     .trainer >> Train your class spells if you still have to train some
 step << Hunter
-    .goto Mulgore,49.3,56.2,10,0
-    .goto Mulgore,52.0,61.1,10,0
-    .goto Mulgore,50.0,66.4,10,0
-    .goto Mulgore,50.4,66.5,10,0
+    .goto Mulgore,49.3,56.2,15,0
+    .goto Mulgore,52.0,61.1,15,0
+    .goto Mulgore,50.0,66.4,15,0
+    .goto Mulgore,50.4,66.5,15,0
     >>Collect the 'Acorn' looking items on the ground, below the trees
     .complete 771,2 --Ambercorn (2)
 step << !Hunter
-    .goto Mulgore,52.0,61.1,10,0
-    .goto Mulgore,50.0,66.4,10,0
-    .goto Mulgore,50.4,66.5,10,0
+    .goto Mulgore,52.0,61.1,15,0
+    .goto Mulgore,50.0,66.4,15,0
+    .goto Mulgore,50.4,66.5,15,0
     >>Collect the 'Acorn' looking items on the ground, below the trees
     .complete 771,2 --Ambercorn (2)
 step
