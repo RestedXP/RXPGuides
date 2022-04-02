@@ -516,7 +516,6 @@ step
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
---X waypoints for each item
 step
     .goto Mulgore,54.15,27.81
 	>>Kill Swoops throughout Mulgore. Loot them for their Quills
