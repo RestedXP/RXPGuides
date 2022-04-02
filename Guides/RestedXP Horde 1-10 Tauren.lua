@@ -426,13 +426,19 @@ step
     .accept 751 >>Accept The Ravaged Caravan
 step
     #label Mazzranache
-    #completewith next
+    #completewith Clawsx
     >>Get the items for Mazzranache as you quest throughout the zone
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step
+	#completewith Burial
+    .goto Mulgore,54.15,27.81,0
+	>>Kill Swoops throughout Mulgore. Loot them for their Quills
+    .complete 761,1 --Trophy Swoop Quill (8)
+step
+	#label Clawsx
     >>Kill Stalkers and Cougars in the area. Loot them for their claws
     .goto Mulgore,58.1,48.6,60,0
     .goto Mulgore,54.5,40.1,60,0
@@ -440,11 +446,6 @@ step
     .goto Mulgore,58.1,48.6
     .complete 756,1 --Stalker Claws (6)
     .complete 756,2 --Cougar Claws (6)
-step
-	#completewith Burial
-    .goto Mulgore,54.15,27.81,0
-	>>Kill Swoops throughout Mulgore. Loot them for their Quills
-    .complete 761,1 --Trophy Swoop Quill (8)
 step
     #softcore
     #completewith next
