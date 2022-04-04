@@ -1,7 +1,7 @@
 ﻿RXP_ = RXP_ or {}
 RXPGuides = {}
-local versionText = "Version 3.0.0"
-local addonVersion = 30000
+local versionText = "Version 3.0.4"
+local addonVersion = 30004
 local RXPG = RXPGuides
 local version = select(4, GetBuildInfo())
 local _,class = UnitClass("player")
@@ -90,9 +90,9 @@ function RXPG_init()
     RXPCData.hardcore = (RXP_.version == "CLASSIC") and RXPCData.hardcore
 	if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
 		RXPData.addonVersion = addonVersion
-		RXPCData.phase = 3
+		RXPCData.phase = 4
 	end
-	RXPCData.phase = RXPCData.phase or 3
+	RXPCData.phase = RXPCData.phase or 4
 	RXPCData.SoM = RXPCData.SoM or 1
     SoMCheck()
     RXP_.RenderFrame()
