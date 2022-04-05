@@ -216,11 +216,11 @@ step << !Hunter
     .accept 766 >>Accept Mazzranache
 step << Shaman/Druid
     .goto Mulgore,45.7,58.6
-      .vendor >> vendor trash. Sell your weapon if it gives you enough money for Walking Stick (4s 80c). Skip this step if you don't have enough
+     >> vendor trash. Sell your weapon if it gives you enough money for Walking Stick (4s 80c). Skip this step if you don't have enough
     .collect 2495,1 --Collect Walking Stick
 step << Warrior
     .goto Mulgore,45.7,58.6
-        .vendor >> vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (6s 66c). Skip this step if you don't have enough
+     >> vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (6s 66c). Skip this step if you don't have enough
     .collect 2493,1 --Collect Wooden Mallet
 step << !Hunter
     .goto Mulgore,46.6,61.1
@@ -276,7 +276,7 @@ step << Hunter
     .accept 771 >>Accept Rite of Vision
 step << Hunter
     .goto Mulgore,45.5,58.5
-    .vendor >> vendor trash. Sell your weapon if it gives you enough money for Ornate Blunderbuss (3s 93c). Skip this step if you don't have enough
+     >> vendor trash. Sell your weapon if it gives you enough money for Ornate Blunderbuss (3s 93c). Skip this step if you don't have enough
     .collect 2509,1 --Collect Ornate Blunderbuss
 step << Hunter
     .goto Mulgore,47.0,57.0
