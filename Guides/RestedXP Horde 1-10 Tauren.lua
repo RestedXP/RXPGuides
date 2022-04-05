@@ -448,11 +448,11 @@ step
     .complete 756,2 --Cougar Claws (6)
 step
     #softcore
-    #completewith next
+    #completewith TotemW
     .goto Mulgore,46.5,55.5,200 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
 step
     #hardcore
-    #completewith next
+    #completewith TotemW
     .goto Mulgore,46.5,55.5,200 >> Run back to Bloodhoof Village
 step
     .isQuestComplete 766
@@ -463,6 +463,7 @@ step
     .goto Mulgore,46.2,58.2
     .vendor >>vendor trash
 step
+	#label TotemW
     .goto Mulgore,48.5,60.4
     .turnin 756 >>Turn in Thunderhorn Totem
     .accept 758 >>Accept Thunderhorn Cleansing
