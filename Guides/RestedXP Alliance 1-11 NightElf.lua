@@ -197,7 +197,6 @@ step
 ]],"NightElf")
 	
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
-#classic
 << Alliance
 #name 6-11 Teldrassil
 #next 11-14 Darkshore
