@@ -2319,7 +2319,9 @@ function RXP_.UpdateQuestButton(index)
     end
 end
 
-hooksecurefunc("QuestLog_SetSelection",RXP_.UpdateQuestButton)
+if QuestLog_SetSelection then
+	hooksecurefunc("QuestLog_SetSelection",RXP_.UpdateQuestButton)
+end
 
 local HSframe = CreateFrame("Frame");
 local currentFPS = GetCVar("maxfps")

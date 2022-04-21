@@ -83,15 +83,19 @@ if not IsQuestTurnedIn then
 end
 
 local function IsQuestComplete(id)
-    for i = 1,GetNumQuestLogEntries() do
-        local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
-        if questID == id then
-            if isComplete then
-                return true
-            else
-                return false
+    if GetNumQuestLogEntries then
+        for i = 1,GetNumQuestLogEntries() do
+            local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+            if questID == id then
+                if isComplete then
+                    return true
+                else
+                    return false
+                end
             end
         end
+    else
+        return C_QuestLog.IsComplete(id)
     end
 end
 
@@ -110,7 +114,7 @@ local questNameCache = {}
 local questObjectivesCache = {}
 
 local db
-if QuestieLoader then 
+if QuestieLoader then
     db = QuestieLoader:ImportModule("QuestieDB")
 end
 
@@ -143,21 +147,25 @@ end
 function RXP_.GetQuestName(id)
     if not id then return end
     id = questConversion[id] or id
-    
+
     if db and type(db.QueryQuest) == "function" and type(db.GetQuest) == "function" then
         local quest = db:GetQuest(id)
         if quest and quest.name then
             return quest.name
         end
     end
-    
+
     if C_QuestLog.IsOnQuest(id) then
-        for i = 1,GetNumQuestLogEntries() do
-            local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
-            if questID == id then
-                questNameCache[id] = questLogTitleText
-                return questLogTitleText
+        if GetQuestLogTitle then
+            for i = 1,C_QuestLog.GetNumQuestLogEntries() do
+                local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+                if questID == id then
+                    questNameCache[id] = questLogTitleText
+                    return questLogTitleText
+                end
             end
+        else
+            return C_QuestLog.GetInfo(id)
         end
     else
         local ctime = GetTime()
@@ -169,7 +177,11 @@ function RXP_.GetQuestName(id)
         if nrequests < 3 or requests[id] == 0 then
             if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
                 requests[id] = 0
-                return C_QuestLog.GetQuestInfo(id)
+                if C_QuestLog.GetQuestInfo then
+                    return C_QuestLog.GetQuestInfo(id)
+                else
+                    return C_QuestLog.GetInfo(id)
+                end
             elseif not requests[id] then
                 requests[id] = GetTime()
             elseif ctime-requests[id] <= 3 then
@@ -192,8 +204,18 @@ function RXP_.GetQuestObjectives(id,step)
     local err = false
     if C_QuestLog.IsOnQuest(id) then
         local questInfo = {}
-        for i = 1,GetNumQuestLogEntries() do
-            local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+        for i = 1,C_QuestLog.GetNumQuestLogEntries() do
+            local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID
+            if GetQuestLogTitle then
+                questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+            else
+                qInfo = C_QuestLog.GetInfo(i)
+                questID = qInfo.questID
+                isHeader = qInfo.isHeader
+                if questID then
+                    isComplete = C_QuestLog.IsComplete(questID)
+                end
+            end
             local nObj = 0
             if questID == id then
                 for j = 1,GetNumQuestLeaderBoards(i) do
@@ -219,14 +241,14 @@ function RXP_.GetQuestObjectives(id,step)
                     end
                 end
                 if (err or nObj == 0) and GetNumQuestLeaderBoards(i) <= 1 then
-					print('qq',id)
-					local fulfilled = 0
-					if isComplete then
-						fulfilled = 1
-					end
-					questInfo[1] = { text = "Objective Complete", type = "event",numRequired = 1, numFulfilled = fulfilled, finished = isComplete }
-					questObjectivesCache[id] = questInfo
-					return questInfo
+                    print('qq',id)
+                    local fulfilled = 0
+                    if isComplete then
+                        fulfilled = 1
+                    end
+                    questInfo[1] = { text = "Objective Complete", type = "event",numRequired = 1, numFulfilled = fulfilled, finished = isComplete }
+                    questObjectivesCache[id] = questInfo
+                    return questInfo
                 else
                     questObjectivesCache[id] = questInfo
                     return questInfo
@@ -274,7 +296,7 @@ function RXP_.GetQuestObjectives(id,step)
             return qInfo
         end
     end
-    
+
     if not C_QuestLog.IsOnQuest(id) or err then
         local ctime = GetTime()
         if ctime - timer > 1 then
@@ -358,7 +380,7 @@ function RXP_.AldorScryerCheck(faction)
     if RXP_.version == "CLASSIC" then return true end
     local name, description, standingID, barMin, barMax, aldorRep = GetFactionInfoByID(932)
     local name, description, standingID, barMin, barMax, scryerRep = GetFactionInfoByID(934)
-    
+
     if aldorRep and scryerRep then
         if type(faction) == "table" then
             if faction.aldor then
@@ -377,12 +399,12 @@ function RXP_.AldorScryerCheck(faction)
 end
 
 function RXP_.PhaseCheck(phase)
-	local guide
+    local guide
     if type(phase) == "table" then
-		guide = phase
+        guide = phase
         phase = phase.phase
     end
-    
+
     if phase and RXPCData and RXPCData.phase then
         local pmin,pmax
         pmin,pmax = phase:match("(%d+)%-(%d+)")
@@ -394,12 +416,12 @@ function RXP_.PhaseCheck(phase)
             pmax = 0xffff
         end
         if pmin and RXPCData.phase >= pmin and RXPCData.phase <= pmax then
-			return true
+            return true
         else
             return false
         end
     end
-    
+
     return true
 end
 
@@ -453,7 +475,7 @@ function RXP_.functions.accept(self,...)
             element.retrieveText = true
         end
         element.tooltipText = RXP_.icons.accept..element.text
-        
+
         if not RXP_.pickUpList[id] then
             RXP_.pickUpList[id] = ""
         end
@@ -472,9 +494,9 @@ function RXP_.functions.accept(self,...)
         if step.phase then
             stepType = stepType .. "["..step.phase.."]"
         end
-        
+
         RXP_.pickUpList[id] = format("%s\n%s %s",RXP_.pickUpList[id],stepType,RXP_.currentGuideName)
-        
+
         return element
     else
         local element = self.element
@@ -482,7 +504,7 @@ function RXP_.functions.accept(self,...)
         local event,arg1,questId = ...
         local id = element.questId
         local isQuestAccepted = IsQuestTurnedIn(id) or C_QuestLog.IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)
-        
+
         if element.step.active or element.retrieveText or (element.step.index > 1 and RXP_.currentGuide.steps[element.step.index-1].active) then
             RXP_.questAccept[id] = element
             local quest = RXP_.GetQuestName(id,element)
@@ -536,7 +558,7 @@ function RXP_.functions.accept(self,...)
 
 
         element.tooltipText = RXP_.icons.accept..element.text
-        
+
 
         if isQuestAccepted then
             RXP_.SetElementComplete(self,true)
@@ -591,7 +613,7 @@ function RXP_.functions.turnin(self,...)
         if step.phase then
             stepType = stepType .. "["..step.phase.."]"
         end
-        
+
         RXP_.turnInList[id] = format("%s\n%s %s",RXP_.turnInList[id],stepType,RXP_.currentGuideName)
         return element
     else
@@ -599,8 +621,8 @@ function RXP_.functions.turnin(self,...)
         local step = element.step
         local event,questId = ...
         local id = element.questId
-        
-        
+
+
         if step.active or element.retrieveText then
             RXP_.questTurnIn[id] = element
             RXP_.questAccept[id] = RXP_.questAccept[id] or element
@@ -619,7 +641,7 @@ function RXP_.functions.turnin(self,...)
                 element.requestFromServer = true
             end
         end
-        
+
         local icon = RXP_.icons.turnin
         local skip
         if step.active and db and type(db.QueryQuest) == "function" and not RXP_.questAccept[id] and not RXP_.skipPreReq[id] then
@@ -656,7 +678,7 @@ function RXP_.functions.turnin(self,...)
             element.icon = icon
             element.tooltip = nil
         end
-        
+
         element.tooltipText = element.icon..element.text
         RXP_.UpdateStepText(self)
 
@@ -676,7 +698,7 @@ local questItem = string.gsub(QUEST_ITEMS_NEEDED,"%%s","%(%.%*%)"):gsub("%%d","%
 
 
 function RXP_.UpdateQuestCompletionData(self)
-    
+
     local element = self.element
     if not element then return end
     local step = element.step
@@ -689,10 +711,10 @@ function RXP_.UpdateQuestCompletionData(self)
     local skip
     local objectives = RXP_.GetQuestObjectives(id,element.step.index)
     local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
-    
+
     local objtext
     local completed
-    
+
     if objectives and #objectives > 0 then
         if element.obj and element.obj <= #objectives then
             local obj = objectives[element.obj]
@@ -705,7 +727,7 @@ function RXP_.UpdateQuestCompletionData(self)
             end
 
             if not obj.questie then
-                if obj.type == "event" then 
+                if obj.type == "event" then
                     if isQuestComplete then
                         t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
                     else
@@ -723,7 +745,7 @@ function RXP_.UpdateQuestCompletionData(self)
                 local t = obj.text
                 completed = completed and obj.finished
                 if not obj.questie then
-                    if obj.type == "event" then 
+                    if obj.type == "event" then
                         if isQuestComplete then
                             t = string.format(t..": %d/%d",obj.numRequired,obj.numRequired)
                         else
@@ -743,11 +765,11 @@ function RXP_.UpdateQuestCompletionData(self)
     else
         element.text = "Retrieving quest data..."
         element.tooltipText = nil
-        
+
         RXP_.UpdateStepText(self)
         return
     end
-    
+
     if step.active and db and type(db.QueryQuest) == "function" and element.obj and not isQuestComplete and not RXP_.skipPreReq[id] then
         local quest = db:GetQuest(id)
         if quest and quest.ObjectiveData and quest.ObjectiveData[element.obj] then
@@ -791,7 +813,7 @@ function RXP_.UpdateQuestCompletionData(self)
         element.tooltip = nil
     end
 
-    local quest 
+    local quest
 
     if objectives then
         quest = RXP_.GetQuestName(id,element)
@@ -824,7 +846,7 @@ function RXP_.UpdateQuestCompletionData(self)
         text = objtext
     end
     element.text = text
-   
+
 
     RXP_.UpdateStepText(self)
 
@@ -856,7 +878,7 @@ function RXP_.functions.complete(self,...)
         local element = {}
         local text,id,obj = ...
         id = tonumber(id)
-        if not (id and obj) then 
+        if not (id and obj) then
             RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid objective or quest ID\n"..self)
         end
         element.obj = tonumber(obj)
@@ -877,7 +899,7 @@ function RXP_.functions.complete(self,...)
     end
     local event = ...
     local step = self.element.step
-    
+
     if event then
         if step.active then
             RXP_.updateActiveQuest[self] = RXP_.UpdateQuestCompletionData
@@ -903,7 +925,7 @@ function RXP_.functions.goto(self,...)
         else
             zone = lastZone
         end
-		local mapID = RXP_.mapId[zone] or tonumber(zone)
+        local mapID = RXP_.mapId[zone] or tonumber(zone)
         element.x = tonumber(x)
         element.y = tonumber(y)
         if not (element.x and element.y and zone and mapID) then
@@ -913,7 +935,7 @@ function RXP_.functions.goto(self,...)
         element.radius = tonumber(radius)
         radius = element.radius
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
-        
+
         element.arrow = true
         element.parent = true
 
@@ -992,7 +1014,7 @@ function RXP_.functions.fp(self,...)
             element.textOnly = true
             element.text = "Get the "..location.." flight path"
         end
-        
+
         if location and location ~= "" and location:match("%w+") then
             for id,name in pairs(RXP_.flightPath[faction]) do
                 if strupper(name):match(strupper(location)) then
@@ -1001,7 +1023,7 @@ function RXP_.functions.fp(self,...)
                 end
             end
         end
-        
+
         element.tooltipText = RXP_.icons.fp..element.text
         return element
     end
@@ -1046,7 +1068,7 @@ function RXP_.functions.fly(self,...)
                 fpId[v.slotIndex] = v.nodeID
             end
         end
-        
+
         for i = 1,NumTaxiNodes() do
             local name = fpId[i] and RXP_.flightPath[faction][fpId[i]]
             if name and strupper(name):match(self.element.location) then
@@ -1114,8 +1136,8 @@ function RXP_.functions.collect(self,...)
     local element = self.element
     local questId = element.questId
     local name = RXP_.GetItemName(element.id)
-    
-    
+
+
     if name then
         element.requestFromServer = nil
     else
@@ -1131,11 +1153,11 @@ function RXP_.functions.collect(self,...)
             break
         end
     end
-    
+
     if (element.qty > 0 and count > element.qty) or (questId and ((not element.isQuestTurnIn and C_QuestLog.IsOnQuest(questId)) or IsQuestTurnedIn(questId))) then
         count = element.qty
     end
-    
+
     if element.rawtext then
         element.tooltipText = RXP_.icons.collect..element.rawtext
         element.text = string.format("%s\n%s: %d/%d",element.rawtext,element.itemName,count,element.qty)
@@ -1143,7 +1165,7 @@ function RXP_.functions.collect(self,...)
         element.text = string.format("%s: %d/%d",element.itemName,count,element.qty)
         element.tooltipText = RXP_.icons.collect..element.text
     end
-    
+
     if element.lastCount ~= count then
         RXP_.UpdateStepText(self)
     end
@@ -1194,7 +1216,7 @@ function RXP_.functions.destroy(self,...)
         element.itemName = name
 
         local count = GetItemCount(element.id)
-     
+
 
         if element.rawtext then
             element.tooltipText = RXP_.icons.collect..element.rawtext
@@ -1265,16 +1287,16 @@ function RXP_.functions.reputation(self,...)
         local standing,rep = str:match("([%d%w]+)([%+%.%-]?%d*)")
         element.faction = tonumber(faction)
         element.rep = tonumber(rep) or 0
-        
+
         if standing then
             standing = RXP_.repStandingID[strlower(standing)]
             element.standing = standing or tonumber(standing)
         end
-        
+
         if not (faction and standing) then
             RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid faction/standing\n"..self)
         end
-        
+
         if text and text ~= "" then
             element.text = text
         else
@@ -1447,12 +1469,12 @@ end
 
 
 function RXP_.functions.next(skip,guide)
-	if type(skip) == "string" then
-		local element = {}
-		element.textOnly = true
-		return element
-    elseif skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then 
-        return 
+    if type(skip) == "string" then
+        local element = {}
+        element.textOnly = true
+        return element
+    elseif skip and (type(skip) == "number" or (skip.step and not skip.step.active)) then
+        return
     end
     guide = guide or RXP_.currentGuide
     if guide.next then
@@ -1464,7 +1486,7 @@ function RXP_.functions.next(skip,guide)
         local nextGuide
         local guideSkip = RXP_.GetGuideTable(group,next)
 
-        
+
         if RXP_.version ~= "CLASSIC" then
             local faction = next:match("Aldor") or next:match("Scryer")
             if not RXP_.AldorScryerCheck(faction) then
@@ -1477,7 +1499,7 @@ function RXP_.functions.next(skip,guide)
         else
             local era = "(Era)"
             local som = "(SoM)"
-            
+
             if RXPCData.SoM then
                 next = next:gsub(era,som)
             else
@@ -1486,9 +1508,9 @@ function RXP_.functions.next(skip,guide)
         end
 
         nextGuide = RXP_.GetGuideTable(group,next)
-       
+
         if nextGuide then
-            if (nextGuide.era and RXPCData.SoM or nextGuide.som and not RXPCData.SoM or RXPCData.SoM and RXPCData.phase > 2 and nextGuide["era/som"]) or 
+            if (nextGuide.era and RXPCData.SoM or nextGuide.som and not RXPCData.SoM or RXPCData.SoM and RXPCData.phase > 2 and nextGuide["era/som"]) or
                (nextGuide.hardcore and not(RXPCData.hardcore) or nextGuide.softcore and RXPCData.hardcore) then
                return RXP_.functions.next(nil,nextGuide)
             else
@@ -1509,13 +1531,13 @@ function RXP_.functions.train(self,...)
         local element = {}
         local text,id,rank = ...
         local spellId = tonumber(id)
-        
+
         if spellId then
-            element.id = spellId 
+            element.id = spellId
         else
             element.id = select(7,GetSpellInfo(id))
         end
-        
+
         if type(spellId) ~= "number" then
             return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid spell name/id\n"..self)
         end
@@ -1667,7 +1689,7 @@ function RXP_.functions.petFamily(self,...)
         return element
     end
     local id = self.element.id
-    
+
     if RXP_.petFamily ~= id then
         self.element.step.completed = true
         RXP_.updateSteps = true
@@ -1736,7 +1758,7 @@ function RXP_.functions.isQuestTurnedIn(self,text,...)
             questTurnedIn = true
         end
     end
-    
+
     if self.element.step.active and not questTurnedIn then
         self.element.step.completed = true
         RXP_.updateSteps = true
@@ -1873,7 +1895,7 @@ function RXP_.functions.cast(self,...)
             element.icon = "|T"..icon..":0|t"
             element.tooltipText = element.icon..element.text
         end
-        
+
         return element
     end
     local event,unit,_,id = ...
@@ -1900,14 +1922,14 @@ function RXP_.functions.unitscan(self,text,...)
                 RXP_.guide.unitscan[npc] = {element}
             end
         end
-        
+
         if text and text ~= "" then
             element.text = text
         end
         element.textOnly = true
         return element
     end
-    
+
 end
 
 local BLquests = {
@@ -1926,7 +1948,7 @@ local BLquests = {
 
 
 function RXP_.functions.blastedLands(self)
-    
+
     if type(self) == "string" then --on parse
         local element = {}
         element.text = "Collect the following items:\n14 Vulture Gizzard\n11 Basilisk Brain\n6 Scorpok Pincer\n6 Blasted Boar Lung\n5 Snickerfang Jowl"
@@ -1949,7 +1971,7 @@ function RXP_.functions.blastedLands(self)
     local name = {
         "Vulture Gizzard","Basilisk Brain","Blasted Boar Lung","Scorpok Pincer","Snickerfang Jowl"
     }
-    
+
     for n,item in pairs(id) do
         local iName = GetItemInfo(item)
         if iName then
@@ -1964,7 +1986,7 @@ function RXP_.functions.blastedLands(self)
         0,
         0,
     }
-    
+
     for quest,items in pairs(BLquests) do
         if not IsQuestTurnedIn(quest) then
             for item,v in pairs(items) do
@@ -1972,16 +1994,16 @@ function RXP_.functions.blastedLands(self)
             end
         end
     end
-    
+
     local skip = true
     --element.textInactive = ""
     element.text = "Collect the following items:"
-    
+
     for item,goal in pairs(total) do
         local itemCount = GetItemCount(id[item])
         if goal > 0 then
-            if itemCount > goal then 
-                itemCount = goal 
+            if itemCount > goal then
+                itemCount = goal
             end
             element.text = string.format("%s\n- %s: %d/%d",element.text,name[item],itemCount,goal)
         end
@@ -1990,7 +2012,7 @@ function RXP_.functions.blastedLands(self)
         end
     end
 
-    
+
     if skip then
         element.text = "Do the Blasted Lands collection quests"
         RXP_.SetElementComplete(self)
@@ -2008,7 +2030,7 @@ function RXP_.PutItemInBank(bagContents)
         for i = NUM_BAG_SLOTS+1, NUM_BAG_SLOTS+NUM_BANKBAGSLOTS do
             table.insert(bank,i)
         end
-        
+
         if not bagContents then bagContents = {} end
         for _,bag in ipairs(bank) do
             if not bagContents[bag] then bagContents[bag] = {} end
@@ -2089,13 +2111,13 @@ end
 function RXP_.DepositItems(itemList)
     local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
-        if type(itemList) ~= "table" then 
+        if type(itemList) ~= "table" then
             itemList = {itemList}
         end
     else
         return
     end
-    
+
     local text = ""
     for _,item in ipairs(itemList) do
         local id = tonumber(item) or item
@@ -2109,7 +2131,7 @@ function RXP_.DepositItems(itemList)
         end
     end
     print(text)
-    
+
     RXP_.GoThroughBags(itemList,function(bag,slot,bagContents)
         PickupContainerItem(bag,slot)
         RXP_.PutItemInBank(bagContents)
@@ -2119,7 +2141,7 @@ end
 function RXP_.IsItemInBags(itemList,reverseLogic)
     local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
-        if type(itemList) ~= "table" then 
+        if type(itemList) ~= "table" then
             itemList = {itemList}
         end
     else
@@ -2148,14 +2170,14 @@ function RXP_.IsItemNotInBags(itemList)
 end
 
 function RXP_.GoThroughBank(itemList,func)
-    
+
     local bank = {BANK_CONTAINER}
     for i = NUM_BAG_SLOTS+1, NUM_BAG_SLOTS+NUM_BANKBAGSLOTS do
         table.insert(bank,i)
     end
-    
+
     local bagContents = {}
-    
+
     for _,bag in pairs(bank) do
         for slot = 1,GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
@@ -2168,20 +2190,20 @@ function RXP_.GoThroughBank(itemList,func)
                 end
             end
         end
-    end    
-    
+    end
+
 end
 
 function RXP_.WithdrawItems(itemList)
     local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
-        if type(itemList) ~= "table" then 
+        if type(itemList) ~= "table" then
             itemList = {itemList}
         end
     else
         return
     end
-    
+
     local text = ""
     for _,item in ipairs(itemList) do
         local id = tonumber(item) or item
@@ -2195,7 +2217,7 @@ function RXP_.WithdrawItems(itemList)
         end
     end
     print(text)
-    
+
     RXP_.GoThroughBank(itemList,function(bag,slot,bagContents)
         PickupContainerItem(bag,slot)
         RXP_.PutItemInBags(bagContents)
@@ -2205,13 +2227,13 @@ end
 function RXP_.IsItemInBank(itemList,reverseLogic)
     local _,isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
-        if type(itemList) ~= "table" then 
+        if type(itemList) ~= "table" then
             itemList = {itemList}
         end
     else
         return
     end
-    
+
     for _,item in ipairs(itemList) do
         local itemCount = 0
         RXP_.GoThroughBank({item},function()
@@ -2235,14 +2257,14 @@ function RXP_.IsItemNotInBank(itemList)
 end
 
 function RXP_.functions.bankdeposit(self,text,...)
-    
+
     if type(self) == "string" then
         local element = {}
         local items = {...}
         for n,item in pairs(items) do
             items[n] = tonumber(item) or item
         end
-        
+
         element.items = items
         element.text = text
         element.icon = RXP_.icons.vendor
@@ -2259,20 +2281,20 @@ function RXP_.functions.bankdeposit(self,text,...)
 end
 
 function RXP_.functions.bankwithdraw(self,text,...)
-    
+
     if type(self) == "string" then
         local element = {}
         local items = {...}
         for n,item in pairs(items) do
             items[n] = tonumber(item) or item
         end
-        
+
         element.items = items
         element.text = text
         element.icon = RXP_.icons.vendor
         return element
     end
-    
+
     local event = ...
     local element = self.element
 
@@ -2287,7 +2309,7 @@ function RXP_.functions.bronzetube(self,text,rev)
     if type(self) == "string" then --on parse
         local element = {}
         element.textOnly = true
-       
+
         if text and text ~= "" then
             element.text = text
         end
@@ -2296,18 +2318,18 @@ function RXP_.functions.bronzetube(self,text,rev)
 
     local element = self.element
     element.rev = rev
-    
+
     local count = GetItemCount(4371)
     local total = 0
-    
-    
+
+
     if not(IsQuestTurnedIn(174)) then
         total = total + 1
     end
 --[[    if class == "ROGUE" and not(IsQuestTurnedIn(2609)) then
         total = total + 1
     end]]
-    
+
     if count >= total then
         self.element.step.completed = true
         RXP_.updateSteps = true
@@ -2330,7 +2352,7 @@ function RXP_.functions.buy(self,...)
         element.text = text
         return element
     end
-    
+
     local element = self.element
     local event = ...
     local id = element.id
@@ -2342,7 +2364,7 @@ function RXP_.functions.buy(self,...)
             local itemID = link and tonumber(link:match("item:(%d+)"))
             if itemID then
                 local name, texture, price, quantity = GetMerchantItemInfo(i)
-                
+
                 if itemID == id or name == id then
                     print("Buying "..name.." x"..total)
                     if quantity and quantity > 1 then
@@ -2362,12 +2384,12 @@ function RXP_.functions.buy(self,...)
             end
         end
     end
-    
+
     if count >= element.qty then
         RXP_.SetElementComplete(self)
         return
     end
-    
+
 end
 
 function RXP_.functions.skipgossip(self,text,...)
@@ -2381,11 +2403,11 @@ function RXP_.functions.skipgossip(self,text,...)
         element.textOnly = true
         return element
     end
-    
+
     local element = self.element
     local args = element.args
     args = args or {}
-    
+
     if event == "GOSSIP_SHOW" then
         if #args == 0 then
             if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
@@ -2393,9 +2415,9 @@ function RXP_.functions.skipgossip(self,text,...)
             end
             return
         end
-        
+
         local id = tonumber(args[1])
-        local npcId = RXP_.GetNpcId()    
+        local npcId = RXP_.GetNpcId()
         if #args == 1 then
             if id < 10 or npcId == id then
                 id = 1
@@ -2420,14 +2442,14 @@ function RXP_.functions.skipgossip(self,text,...)
     else
         element.npcId = nil
     end
-    
+
 end
 
 function RXP_.functions.maxlevel(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         local text,str,ref = ...
-		element.ref = ref
+        element.ref = ref
         str = str:gsub(" ","")
         local level,xp = str:match("(%d+)([%+%.%-]?%d*)")
         element.xp = tonumber(xp)
@@ -2435,8 +2457,8 @@ function RXP_.functions.maxlevel(self,...)
         element.event = "PLAYER_XP_UPDATE"
         if text then
             element.rawtext = text
-		else
-			element.rawtext = ""
+        else
+            element.rawtext = ""
         end
         if not element.xp then element.xp = 0 end
         element.textOnly = true
@@ -2444,26 +2466,26 @@ function RXP_.functions.maxlevel(self,...)
     end
     local level = UnitLevel("player")
     local element = self.element
-	local step = element.step
+    local step = element.step
     local ref = element.ref
-	
+
     if level > element.level then
-		if step.active and not step.completed then
-			RXP_.updateSteps = true
-			step.completed = true
+        if step.active and not step.completed then
+            RXP_.updateSteps = true
+            step.completed = true
         end
-		local guide = RXP_.currentGuide
-		if ref and guide.labels[ref] then
-			local n = guide.labels[ref]
-			element.text = string.format("Skip to step %d if you are level %d or above",n,element.level+1)
-			if step.active then
-				RXP_.nextStep = guide.labels[ref]
-				return
-			end
-		end
-		element.text = string.format("(Skip this step if you are level %d or above)",element.level+1)
-	else
-		element.text = ""
+        local guide = RXP_.currentGuide
+        if ref and guide.labels[ref] then
+            local n = guide.labels[ref]
+            element.text = string.format("Skip to step %d if you are level %d or above",n,element.level+1)
+            if step.active then
+                RXP_.nextStep = guide.labels[ref]
+                return
+            end
+        end
+        element.text = string.format("(Skip this step if you are level %d or above)",element.level+1)
+    else
+        element.text = ""
     end
 
 end
