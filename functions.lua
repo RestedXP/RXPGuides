@@ -71,6 +71,9 @@ function RXP_.error(msg)
 end
 
 
+local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or GetNumQuestLogEntries
+
+
 local IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 
 if not IsQuestTurnedIn then
@@ -157,7 +160,7 @@ function RXP_.GetQuestName(id)
 
     if C_QuestLog.IsOnQuest(id) then
         if GetQuestLogTitle then
-            for i = 1,C_QuestLog.GetNumQuestLogEntries() do
+            for i = 1,GetNumQuests() do
                 local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
                 if questID == id then
                     questNameCache[id] = questLogTitleText
@@ -204,7 +207,7 @@ function RXP_.GetQuestObjectives(id,step)
     local err = false
     if C_QuestLog.IsOnQuest(id) then
         local questInfo = {}
-        for i = 1,C_QuestLog.GetNumQuestLogEntries() do
+        for i = 1,GetNumQuests() do
             local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID
             if GetQuestLogTitle then
                 questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
