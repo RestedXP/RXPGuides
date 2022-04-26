@@ -30,74 +30,98 @@ RXP_.repStartValue = {
     42000,--exalted
 }
 
-
+local version = select(4, GetBuildInfo())
+if version < 90000 then
 RXP_.mapId = {
-["Durotar"] = 1411,
-["Mulgore"] = 1412,
-["The Barrens"] = 1413,
-["Alterac Mountains"] = 1416,
-["Arathi Highlands"] = 1417,
-["Badlands"] = 1418,
-["Blasted Lands"] = 1419,
-["Tirisfal Glades"] = 1420,
-["Silverpine Forest"] = 1421,
-["Western Plaguelands"] = 1422,
-["Eastern Plaguelands"] = 1423,
-["Hillsbrad Foothills"] = 1424,
-["The Hinterlands"] = 1425,
-["Dun Morogh"] = 1426,
-["Searing Gorge"] = 1427,
-["Burning Steppes"] = 1428,
-["Elwynn Forest"] = 1429,
-["Deadwind Pass"] = 1430,
-["Duskwood"] = 1431,
-["Loch Modan"] = 1432,
-["Redridge Mountains"] = 1433,
-["Stranglethorn Vale"] = 1434,
-["Swamp of Sorrows"] = 1435,
-["Westfall"] = 1436,
-["Wetlands"] = 1437,
-["Teldrassil"] = 1438,
-["Darkshore"] = 1439,
-["Ashenvale"] = 1440,
-["Thousand Needles"] = 1441,
-["Stonetalon Mountains"] = 1442,
-["Desolace"] = 1443,
-["Feralas"] = 1444,
-["Dustwallow Marsh"] = 1445,
-["Tanaris"] = 1446,
-["Azshara"] = 1447,
-["Felwood"] = 1448,
-["Un'Goro Crater"] = 1449,
-["Moonglade"] = 1450,
-["Silithus"] = 1451,
-["Winterspring"] = 1452,
-["Stormwind City"] = 1453,
-["Orgrimmar"] = 1454,
-["Ironforge"] = 1455,
-["Thunder Bluff"] = 1456,
-["Darnassus"] = 1457,
-["Undercity"] = 1458,
-["Alterac Valley"] = 1459,
-["Eversong Woods"] = 1941,
-["Ghostlands"] = 1942,
-["Azuremyst Isle"] = 1943,
-["Hellfire Peninsula"] = 1944,
-["Zangarmarsh"] = 1946,
-["The Exodar"] = 1947,
-["Shadowmoon Valley"] = 1948,
-["Blade's Edge Mountains"] = 1949,
-["Bloodmyst Isle"] = 1950,
-["Nagrand"] = 1951,
-["Terokkar Forest"] = 1952,
-["Netherstorm"] = 1953,
-["Silvermoon City"] = 1954,
-["Shattrath City"] = 1955,
-["Isle of Quel'Danas"] = 1957,
-["Kalimdor"] = 1414,
-["Eastern Kingdoms"] = 1415,
-["Outland"] = 987,
+	["Durotar"] = 1411,
+	["Mulgore"] = 1412,
+	["The Barrens"] = 1413,
+	["Alterac Mountains"] = 1416,
+	["Arathi Highlands"] = 1417,
+	["Badlands"] = 1418,
+	["Blasted Lands"] = 1419,
+	["Tirisfal Glades"] = 1420,
+	["Silverpine Forest"] = 1421,
+	["Western Plaguelands"] = 1422,
+	["Eastern Plaguelands"] = 1423,
+	["Hillsbrad Foothills"] = 1424,
+	["The Hinterlands"] = 1425,
+	["Dun Morogh"] = 1426,
+	["Searing Gorge"] = 1427,
+	["Burning Steppes"] = 1428,
+	["Elwynn Forest"] = 1429,
+	["Deadwind Pass"] = 1430,
+	["Duskwood"] = 1431,
+	["Loch Modan"] = 1432,
+	["Redridge Mountains"] = 1433,
+	["Stranglethorn Vale"] = 1434,
+	["Swamp of Sorrows"] = 1435,
+	["Westfall"] = 1436,
+	["Wetlands"] = 1437,
+	["Teldrassil"] = 1438,
+	["Darkshore"] = 1439,
+	["Ashenvale"] = 1440,
+	["Thousand Needles"] = 1441,
+	["Stonetalon Mountains"] = 1442,
+	["Desolace"] = 1443,
+	["Feralas"] = 1444,
+	["Dustwallow Marsh"] = 1445,
+	["Tanaris"] = 1446,
+	["Azshara"] = 1447,
+	["Felwood"] = 1448,
+	["Un'Goro Crater"] = 1449,
+	["Moonglade"] = 1450,
+	["Silithus"] = 1451,
+	["Winterspring"] = 1452,
+	["Stormwind City"] = 1453,
+	["Orgrimmar"] = 1454,
+	["Ironforge"] = 1455,
+	["Thunder Bluff"] = 1456,
+	["Darnassus"] = 1457,
+	["Undercity"] = 1458,
+	["Alterac Valley"] = 1459,
+	["Eversong Woods"] = 1941,
+	["Ghostlands"] = 1942,
+	["Azuremyst Isle"] = 1943,
+	["Hellfire Peninsula"] = 1944,
+	["Zangarmarsh"] = 1946,
+	["The Exodar"] = 1947,
+	["Shadowmoon Valley"] = 1948,
+	["Blade's Edge Mountains"] = 1949,
+	["Bloodmyst Isle"] = 1950,
+	["Nagrand"] = 1951,
+	["Terokkar Forest"] = 1952,
+	["Netherstorm"] = 1953,
+	["Silvermoon City"] = 1954,
+	["Shattrath City"] = 1955,
+	["Isle of Quel'Danas"] = 1957,
+	["Kalimdor"] = 1414,
+	["Eastern Kingdoms"] = 1415,
+	["Outland"] = 987,
 }
+else
+	RXP_.mapId = {
+		["ScarletEnclave"] = 124
+	}
+	for i=1,2200 do 
+		local map = C_Map.GetMapInfo(i)
+		if map then
+			map = map.name
+			if not RXP_.mapId[map] then
+				RXP_.mapId[map] = i
+			end
+		end
+	end
+	RXP_.mapId["IcecrownGlacier"] = RXP_.mapId["Icecrown"]
+	RXP_.mapId["CrystalsongForest"] = RXP_.mapId["Crystalsong Forest"]
+	RXP_.mapId["StormPeaks"] = RXP_.mapId["The Storm Peaks"]
+	RXP_.mapId["TheStormPeaks"] = RXP_.mapId["The Storm Peaks"]
+	RXP_.mapId["ZulDrak"] = RXP_.mapId["Zul'Drak"]
+	RXP_.mapId["GrizzlyHills"] = RXP_.mapId["GrizzlyHills"]
+	RXP_.mapId["HowlingFjord"] = RXP_.mapId["Howling Fjord"]
+	RXP_.mapId["BoreanTundra"] = RXP_.mapId["Borean Tundra"]
+end
+
 
 RXP_.flightPath = {}
 

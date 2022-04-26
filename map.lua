@@ -416,7 +416,7 @@ local function addWorldMapPins()
             local element = pin.elements[1]
             local worldMapFrame = worldMapFramePool:Acquire()
             worldMapFrame.render(pin, false)
-            HBDPins:AddWorldMapIconWorld(RXP_, worldMapFrame, element.instance, element.wx, element.wy, HBD_PINS_WORLDMAP_SHOW_CONTINENT)
+            HBDPins:AddWorldMapIconMap(RXP_, worldMapFrame, element.zone, element.x/100, element.y/100, HBD_PINS_WORLDMAP_SHOW_CONTINENT)
         end
     end
 end
