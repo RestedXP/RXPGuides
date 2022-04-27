@@ -481,6 +481,7 @@ f.OnMouseUp = function(self,button)
 		f:SetScript("OnUpdate",nil)
 	end
     SetStepFrameAnchor()
+	RXP_.UpdateItemFrame()
 	isResizing = false
 end
 
@@ -870,6 +871,7 @@ function RXP_.SetStep(n,n2)
 			stepframe = f.CurrentStepFrame.frame[c]
 			--stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
 			stepframe.elements = {}
+			RXP_.CreateActiveItemFrame(stepframe)
 		end
         stepframe:ClearAllPoints()
 		if c == 1 then
@@ -1032,6 +1034,7 @@ function RXP_.SetStep(n,n2)
 		for n = e+1,#stepframe.elements do
 			stepframe.elements[n]:Hide()
 		end
+		RXP_.UpdateItemFrame(stepframe.activeItemFrame)
 	end
     RXP_.UnitScanUpdate()
 	RXP_.UpdateText()
@@ -2409,4 +2412,191 @@ function RXP_.GetQuestLog()
         end
     end
 
+end
+
+
+----local j = 0
+function GetActiveItemList(step)
+	local itemList = {}
+	for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+		for slot = 1,GetContainerNumSlots(bag) do
+			local id = GetContainerItemID(bag, slot)
+			local spell = GetItemSpell(id)
+			if id and spell then
+				--if classID == 12 then
+				if step.activeItems[id] then
+					local itemName, _, _, _, _, _, _, _,_, itemTexture, _, classID = GetItemInfo(id)
+					itemList[id] = {name = itemName, texture = itemTexture, bag = bag, slot = slot}
+				end
+			end
+		end
+	end
+	return itemList
+end
+
+
+function RXP_.CreateActiveItemFrame(stepframe)
+if stepframe.activeItemFrame then 
+	return
+end
+
+
+stepframe.activeItemFrame = CreateFrame("Frame","$parentItemFrame",stepframe)
+
+local f = stepframe.activeItemFrame
+f.buttonList = {}
+
+local x =  -5
+local y =  5
+local point = "TOPLEFT"
+local relativePoint =  "TOPRIGHT"
+f:SetPoint(point,stepframe,relativePoint, x, y)
+
+f:RegisterEvent("BAG_UPDATE_DELAYED")
+f:RegisterEvent("PLAYER_REGEN_ENABLED")
+
+f:SetScript("OnEvent",RXP_.UpdateItemFrame)
+
+f:SetHeight(50);
+
+end
+
+local fOnEnter = function(self)
+	--print(self.itemId)
+	if self.itemId then
+		GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+		GameTooltip:SetInventoryItemByID(self.itemId)
+		GameTooltip:Show()
+	end
+end
+
+local fOnLeave = function(self)
+	GameTooltip:Hide()
+	if IsMouseButtonDown() and not InCombatLockdown() then
+		PickupContainerItem(self.bag,self.slot)
+	end
+end
+
+function RXP_.UpdateItemFrame(frame)
+	
+	local function update(itemFrame)
+		local stepframe = itemFrame:GetParent()
+		local step = stepframe.step
+		if not (step and step.activeItems) then
+			return itemFrame:Hide()
+		elseif InCombatLockdown() then
+			if itemFrame.step ~= stepframe.step then
+				itemFrame:Hide()
+			end
+			return
+		end
+		
+		itemFrame.step = stepframe.step
+		local buttonList = itemFrame.buttonList
+		local itemList = GetActiveItemList(step)
+
+
+		local i = 0
+		for id,item in pairs(itemList) do
+			i = i+1
+			local btn = buttonList[i]
+
+			if not btn then
+				btn = CreateFrame("CheckButton", "Example", itemFrame, "SecureActionButtonTemplate")
+				btn:SetAttribute("type", "item")
+				btn:SetSize(25, 25)
+				table.insert(buttonList,btn)
+				local n = #buttonList
+
+				btn:ClearAllPoints()
+				if n == 1 then
+					btn:SetPoint("BOTTOMLEFT", itemFrame,"BOTTOMLEFT", 5,5)
+				else
+					btn:SetPoint("CENTER",buttonList[n-1],"CENTER",27,0)
+				end
+				btn.icon  = btn:CreateTexture(nil, "BACKGROUND");
+				local icon = btn.icon
+				icon:SetAllPoints(true);
+				icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
+
+
+
+				btn:SetScript("OnEnter",fOnEnter)
+				btn:SetScript("OnLeave",fOnLeave)
+
+				local ht = btn:CreateTexture(nil, "HIGHLIGHT")
+				ht:SetAllPoints(true)
+				ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+				ht:SetBlendMode("ADD")
+			end
+
+			--print(id,item.texture,item.name)
+			btn:SetAttribute("item", item.name)
+			btn.itemId = id
+			btn.bag = item.bag
+			btn.slot = item.slot
+			btn.icon:SetTexture(item.texture)
+			btn:Show()
+		end
+		print("s:",i)
+		if i == 0 then
+			itemFrame:Hide()
+		else
+			zx1 = itemFrame 
+			itemFrame:Show()
+		end
+
+		for n = i+1,#buttonList do
+			buttonList[n]:Hide()
+		end
+
+		local width = math.max(34,i*27+7)
+		itemFrame:SetWidth(width);
+		itemFrame:Show()
+
+		GetScreenWidth()
+
+
+		local scale = RXPFrame:GetScale()
+		local x =  -5
+		local y =  5
+		local point = "TOPLEFT"
+		local relativePoint =  "TOPRIGHT"
+		local diff = 0
+		print('d-',itemFrame:GetRight())
+		if itemFrame:GetRight() then
+		diff = itemFrame:GetRight()*scale - GetScreenWidth()
+		end
+			print('df',diff)
+		if diff > 0 then
+			point = "TOPRIGHT"
+			relativePoint = "TOPLEFT"
+			x = 5
+		end
+
+		itemFrame:ClearAllPoints()
+		itemFrame:SetPoint(point,stepframe,relativePoint, x, y)
+
+		if itemFrame:GetRight() then
+			diff = itemFrame:GetRight()*scale - GetScreenWidth()
+		end
+
+		if diff > 0 then
+			point = "TOPRIGHT"
+			relativePoint = "TOPLEFT"
+			x = 5
+			itemFrame:ClearAllPoints()
+			itemFrame:SetPoint(point,stepframe,relativePoint, x, y)
+		end
+	end
+	
+	if frame then
+		update(frame)
+	else
+		for i,stepframe in pairs(RXPFrame.CurrentStepFrame.frame) do
+			if stepframe:IsShown() and stepframe.activeItemFrame then
+				update(stepframe.activeItemFrame)
+			end
+		end
+	end
 end

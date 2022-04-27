@@ -2492,3 +2492,36 @@ function RXP_.functions.maxlevel(self,...)
     end
 
 end
+
+
+function RXP_.functions.use(self,text,...)
+    if type(self) == "string" then
+        local element = {}
+        local items = {...}
+
+        if text and text ~= "" then
+            element.text = text
+        end
+		element.activeItems = {}
+		for i,v in ipairs(items) do
+		local id = tonumber(v)
+			if id then
+				element.activeItems[id] = true
+			else
+				return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid item ID\n"..self)
+			end
+		end
+        element.textOnly = true
+        return element
+    end
+	local element = self.element
+	local step = element.step
+	--if not text and step.active then
+		if not step.activeItems then
+			step.activeItems = {}
+		end
+		for item in pairs(element.activeItems) do
+			step.activeItems[item] = true
+		end
+	--end
+end
