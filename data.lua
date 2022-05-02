@@ -363,6 +363,11 @@ RXP_.questCompleteItems = {
 	[11379] = 33852, -- Super Hot Stew // Cooking Pot
 	[11377] = 33837, -- Revenge is Tasty // Cooking Pot
 	[11381] = 33851, -- Soup for the Soul // Cooking Pot
+	[10190] = 28369, -- Recharging the Batteries // Battery Recharging Blaster
+	[10173] = 29207, -- The Archmage's Staff // Conjuring Powder 
+	[10226] = 28547, -- Elemental Power Extraction // Elemental Power Extractor
+	[10313] = 29324, -- Measuring Warp Energies // Warp-Attuned Orb 
+	[10309] = 29447, -- It's a Fel Reaver, But with Heart // Fel Zapper 
 }
 
 

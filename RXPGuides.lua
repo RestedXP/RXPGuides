@@ -22,6 +22,7 @@ RXP_.questQueryList = {}
 RXP_.itemQueryList = {}
 RXP_.questAccept = {}
 RXP_.questTurnIn = {}
+RXP_.activeItems = {}
 
 RXP_.font = GameFontNormal:GetFont()
 local eventFrame = CreateFrame("Frame");
@@ -38,6 +39,7 @@ eventFrame:RegisterUnitEvent("UNIT_AURA","player")
 eventFrame:RegisterUnitEvent("UNIT_PET","player")
 eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
+eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 
 questFrame:RegisterEvent("QUEST_COMPLETE")
 questFrame:RegisterEvent("QUEST_PROGRESS")
@@ -46,6 +48,7 @@ questFrame:RegisterEvent("QUEST_GREETING")
 questFrame:RegisterEvent("GOSSIP_SHOW")
 questFrame:RegisterEvent("QUEST_DETAIL")
 questFrame:RegisterEvent("QUEST_TURNED_IN")
+
 
 RXPG_Debug = false
 
@@ -344,6 +347,8 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			RXP_.updateStepText = true
 		end
 		return
+	elseif event == "PLAYER_REGEN_ENABLED" then
+		RXP_.UpdateItemFrame()
 	elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
 		C_Timer.After(1, function() RXP_.ReloadGuide() end)
 	elseif event == "TRAINER_SHOW" then
@@ -568,6 +573,10 @@ function RXP_.RenderFrame()
     f.BottomFrame:ClearBackdrop()
     f.BottomFrame:SetBackdrop(f.backdropEdge)
     f.BottomFrame:SetBackdropColor(unpack(RXP_.colors.background))
+
+    f.activeItemFrame:ClearBackdrop()
+    f.activeItemFrame:SetBackdrop(f.backdropEdge)
+    f.activeItemFrame:SetBackdropColor(unpack(RXP_.colors.background))
 
     f.GuideName:ClearBackdrop()
     f.GuideName:SetBackdrop(RXP_.guideNameBackdrop)
@@ -814,6 +823,7 @@ function RXP_.SetStep(n,n2)
 	ClearTable(activeSteps)
     ClearTable(RXP_.questAccept)
 	ClearTable(RXP_.questTurnIn)
+	ClearTable(RXP_.activeItems)
 	f.ClearFrameData()
 	local level = UnitLevel("player")
     local scrollHeight = 1
@@ -871,7 +881,7 @@ function RXP_.SetStep(n,n2)
 			stepframe = f.CurrentStepFrame.frame[c]
 			--stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
 			stepframe.elements = {}
-			RXP_.CreateActiveItemFrame(stepframe)
+			--RXP_.CreateActiveItemFrame(stepframe)
 		end
         stepframe:ClearAllPoints()
 		if c == 1 then
@@ -906,12 +916,6 @@ function RXP_.SetStep(n,n2)
 		stepframe.step = step
 		stepframe.index = index
 		stepframe.sticky = step.sticky
-        
-		if step.active then
-			stepframe:Show()
-		else
-			stepframe:Hide()
-		end
 		
 		local e = 0
 		local frameHeight = 0
@@ -1034,8 +1038,18 @@ function RXP_.SetStep(n,n2)
 		for n = e+1,#stepframe.elements do
 			stepframe.elements[n]:Hide()
 		end
-		RXP_.UpdateItemFrame(stepframe.activeItemFrame)
+		if step.active then
+			stepframe:Show()
+			if step.activeItems then
+				for i,v in pairs(step.activeItems) do
+					RXP_.activeItems[i] = v
+				end
+			end
+		else
+			stepframe:Hide()
+		end
 	end
+	RXP_.UpdateItemFrame()
     RXP_.UnitScanUpdate()
 	RXP_.UpdateText()
 	RXP_.updateSteps = true
@@ -1833,9 +1847,10 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
 	end
 	local w = f:GetWidth()-35
 	f.Steps:SetWidth(w)
+
 	if f.BottomFrame:GetHeight() < 35 then
 		f.BottomFrame:Hide()
-	else
+	elseif not f.BottomFrame:IsShown() then 
 		f.BottomFrame:Show()
 	end
     
@@ -2416,15 +2431,18 @@ end
 
 
 ----local j = 0
-function GetActiveItemList(step)
+local function GetActiveItemList(ref)
 	local itemList = {}
+	if not (ref and ref.activeItems) then
+		ref = RXP_
+	end
 	for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
 		for slot = 1,GetContainerNumSlots(bag) do
 			local id = GetContainerItemID(bag, slot)
 			local spell = GetItemSpell(id)
 			if id and spell then
 				--if classID == 12 then
-				if step.activeItems[id] then
+				if ref.activeItems[id] then
 					local itemName, _, _, _, _, _, _, _,_, itemTexture, _, classID = GetItemInfo(id)
 					itemList[id] = {name = itemName, texture = itemTexture, bag = bag, slot = slot}
 				end
@@ -2434,36 +2452,69 @@ function GetActiveItemList(step)
 	return itemList
 end
 
+function RXP_.CreateActiveItemFrame(self,anchor,enableText)
 
-function RXP_.CreateActiveItemFrame(stepframe)
-if stepframe.activeItemFrame then 
+if not self or self.activeItemFrame then 
 	return
 end
 
+local f
 
-stepframe.activeItemFrame = CreateFrame("Frame","$parentItemFrame",stepframe)
+if not anchor then
+	anchor = UIParent 
+	self.activeItemFrame = CreateFrame("Frame","RXPItemFrame",anchor,BackdropTemplate)
+	f = self.activeItemFrame
+	f:SetClampedToScreen(true)
+	f:EnableMouse(true)
+	f:SetMovable(true)
+else
+	self.activeItemFrame = CreateFrame("Frame","$parentItemFrame",anchor,BackdropTemplate)
+	f = self.activeItemFrame
+end
 
-local f = stepframe.activeItemFrame
+    f:ClearBackdrop()
+    f:SetBackdrop(RXPFrame.backdropEdge)
+    f:SetBackdropColor(unpack(RXP_.colors.background))
+	f:SetScript("OnMouseDown", f.StartMoving)
+	f:SetScript("OnMouseUp", f.StopMovingOrSizing)
+
+
+f.parent = self
 f.buttonList = {}
 
-local x =  -5
-local y =  5
-local point = "TOPLEFT"
-local relativePoint =  "TOPRIGHT"
-f:SetPoint(point,stepframe,relativePoint, x, y)
+
+
+f:SetPoint("CENTER",anchor,"CENTER", 0, 0)
 
 f:RegisterEvent("BAG_UPDATE_DELAYED")
-f:RegisterEvent("PLAYER_REGEN_ENABLED")
+
 
 f:SetScript("OnEvent",RXP_.UpdateItemFrame)
+
+if disableText then
+	f.TextFrame = f.TextFrame or CreateFrame("Frame", "$parentTextFrame", f)
+	f.TextFrame:SetPoint("RIGHT", f,"LEFT")
+	f.TextFrame:SetWidth(70)
+	f.TextFrame:SetHeight(14)
+	f.TextFrame.text = f.TextFrame.text or f.TextFrame:CreateFontString(nil,"OVERLAY") 
+	f.TextFrame.text:SetFontObject(GameFontNormal)
+	f.TextFrame.text:SetPoint("TOPLEFT",7,-5)
+	f.TextFrame.text:SetJustifyH("RIGHT")
+	f.TextFrame.text:SetJustifyV("TOP")
+	f.TextFrame:SetPoint("TOPLEFT",0,0)
+	f.TextFrame.text:SetText("Quest Items")
+end
+
 
 f:SetHeight(50);
 
 end
 
+RXP_:CreateActiveItemFrame()
+
 local fOnEnter = function(self)
 	--print(self.itemId)
-	if self.itemId then
+	if self.itemId and not GameTooltip:IsForbidden() then
 		GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
 		GameTooltip:SetInventoryItemByID(self.itemId)
 		GameTooltip:Show()
@@ -2471,132 +2522,174 @@ local fOnEnter = function(self)
 end
 
 local fOnLeave = function(self)
-	GameTooltip:Hide()
+	if not GameTooltip:IsForbidden() then
+		GameTooltip:Hide()
+	end
 	if IsMouseButtonDown() and not InCombatLockdown() then
 		PickupContainerItem(self.bag,self.slot)
 	end
 end
 
-function RXP_.UpdateItemFrame(frame)
-	
-	local function update(itemFrame)
-		local stepframe = itemFrame:GetParent()
-		local step = stepframe.step
-		if not (step and step.activeItems) then
-			return itemFrame:Hide()
-		elseif InCombatLockdown() then
-			if itemFrame.step ~= stepframe.step then
-				itemFrame:Hide()
-			end
+
+
+
+function RXP_.UpdateItemFrame(itemFrame)
+	if not itemFrame then 
+		if RXP_.activeItemFrame  then
+			itemFrame = RXP_.activeItemFrame
+		else
 			return
 		end
-		
-		itemFrame.step = stepframe.step
-		local buttonList = itemFrame.buttonList
-		local itemList = GetActiveItemList(step)
-
-
-		local i = 0
-		for id,item in pairs(itemList) do
-			i = i+1
-			local btn = buttonList[i]
-
-			if not btn then
-				btn = CreateFrame("CheckButton", "Example", itemFrame, "SecureActionButtonTemplate")
-				btn:SetAttribute("type", "item")
-				btn:SetSize(25, 25)
-				table.insert(buttonList,btn)
-				local n = #buttonList
-
-				btn:ClearAllPoints()
-				if n == 1 then
-					btn:SetPoint("BOTTOMLEFT", itemFrame,"BOTTOMLEFT", 5,5)
-				else
-					btn:SetPoint("CENTER",buttonList[n-1],"CENTER",27,0)
-				end
-				btn.icon  = btn:CreateTexture(nil, "BACKGROUND");
-				local icon = btn.icon
-				icon:SetAllPoints(true);
-				icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
-
-
-
-				btn:SetScript("OnEnter",fOnEnter)
-				btn:SetScript("OnLeave",fOnLeave)
-
-				local ht = btn:CreateTexture(nil, "HIGHLIGHT")
-				ht:SetAllPoints(true)
-				ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
-				ht:SetBlendMode("ADD")
-			end
-
-			--print(id,item.texture,item.name)
-			btn:SetAttribute("item", item.name)
-			btn.itemId = id
-			btn.bag = item.bag
-			btn.slot = item.slot
-			btn.icon:SetTexture(item.texture)
-			btn:Show()
-		end
-		print("s:",i)
-		if i == 0 then
-			itemFrame:Hide()
-		else
-			zx1 = itemFrame 
-			itemFrame:Show()
-		end
-
-		for n = i+1,#buttonList do
-			buttonList[n]:Hide()
-		end
-
-		local width = math.max(34,i*27+7)
-		itemFrame:SetWidth(width);
-		itemFrame:Show()
-
-		GetScreenWidth()
-
-
-		local scale = RXPFrame:GetScale()
-		local x =  -5
-		local y =  5
-		local point = "TOPLEFT"
-		local relativePoint =  "TOPRIGHT"
-		local diff = 0
-		print('d-',itemFrame:GetRight())
-		if itemFrame:GetRight() then
-		diff = itemFrame:GetRight()*scale - GetScreenWidth()
-		end
-			print('df',diff)
-		if diff > 0 then
-			point = "TOPRIGHT"
-			relativePoint = "TOPLEFT"
-			x = 5
-		end
-
-		itemFrame:ClearAllPoints()
-		itemFrame:SetPoint(point,stepframe,relativePoint, x, y)
-
-		if itemFrame:GetRight() then
-			diff = itemFrame:GetRight()*scale - GetScreenWidth()
-		end
-
-		if diff > 0 then
-			point = "TOPRIGHT"
-			relativePoint = "TOPLEFT"
-			x = 5
-			itemFrame:ClearAllPoints()
-			itemFrame:SetPoint(point,stepframe,relativePoint, x, y)
-		end
 	end
 	
-	if frame then
-		update(frame)
-	else
-		for i,stepframe in pairs(RXPFrame.CurrentStepFrame.frame) do
-			if stepframe:IsShown() and stepframe.activeItemFrame then
-				update(stepframe.activeItemFrame)
-			end
+	--[[local stepframe = itemFrame.stepframe
+	local step = stepframe.step
+	if not (step and step.activeItems) then
+		itemFrame:SetAlpha(0.01)
+		if not InCombatLockdown() then
+			return itemFrame:Hide()
 		end
+		return
+	elseif InCombatLockdown() then
+		if itemFrame.step ~= stepframe.step then
+			itemFrame:SetAlpha(0.1)
+		end
+		return
 	end
+	
+	itemFrame.step = stepframe.step
+	]]
+	if InCombatLockdown() then return end 
+	local buttonList = itemFrame.buttonList
+	local itemList = GetActiveItemList()
+
+
+	local i = 0
+	for id,item in pairs(itemList) do
+		i = i+1
+		local btn = buttonList[i]
+
+		if not btn then
+			btn = CreateFrame("CheckButton", "Example", itemFrame, "SecureActionButtonTemplate")
+			btn:SetAttribute("type", "item")
+			btn:SetSize(25, 25)
+			table.insert(buttonList,btn)
+			local n = #buttonList
+
+			btn:ClearAllPoints()
+			if n == 1 then
+				btn:SetPoint("BOTTOMLEFT", itemFrame,"BOTTOMLEFT", 5,5)
+			else
+				btn:SetPoint("CENTER",buttonList[n-1],"CENTER",27,0)
+			end
+			btn.icon  = btn:CreateTexture(nil, "BACKGROUND");
+			local icon = btn.icon
+			icon:SetAllPoints(true);
+			icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
+
+
+
+			btn:SetScript("OnEnter",fOnEnter)
+			btn:SetScript("OnLeave",fOnLeave)
+
+			local ht = btn:CreateTexture(nil, "HIGHLIGHT")
+			ht:SetAllPoints(true)
+			ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+			ht:SetBlendMode("ADD")
+		end
+
+		--print(id,item.texture,item.name)
+		btn:SetAttribute("item", item.name)
+		btn.itemId = id
+		btn.bag = item.bag
+		btn.slot = item.slot
+		btn.icon:SetTexture(item.texture)
+		btn:Show()
+	end
+	--print("s:",i)
+	if i > 0 then
+		itemFrame:SetAlpha(1)
+	end
+	
+	if i == 0 then
+		itemFrame:Hide()
+	else
+		itemFrame:Show()
+	end
+
+	for n = i+1,#buttonList do
+		buttonList[n]:Hide()
+	end
+	local width = math.max(34,i*27+7)
+	itemFrame:SetWidth(width);
+	
 end
+
+
+--[[
+function z.UpdateFrame()
+	if addon.currentGuide and addon.currentGuide.group ~= "Zarant" then
+		return zQuestItemFrame:Hide()
+	end
+
+	local itemList = GetActiveItemList()
+
+--/run Guidelime.Zarant.CreateItemFrame()
+	local i = 0
+	for id,item in pairs(itemList) do
+		i = i+1
+		local btn = buttonList[i]
+
+		if not btn then
+			btn = CreateFrame("CheckButton", "Example", zQuestItemFrame, "SecureActionButtonTemplate")
+			btn:SetAttribute("type", "item")
+			btn:SetSize(25, 25)
+			table.insert(buttonList,btn)
+			local n = #buttonList
+
+			btn:ClearAllPoints()
+			if n == 1 then
+				btn:SetPoint("BOTTOMLEFT", zQuestItemFrame,"BOTTOMLEFT", 5,5)
+			else
+				btn:SetPoint("CENTER",buttonList[n-1],"CENTER",27,0)
+			end
+			btn.icon  = btn:CreateTexture(nil, "BACKGROUND");
+			local icon = btn.icon
+			icon:SetAllPoints(true);
+			icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
+
+
+
+			btn:SetScript("OnEnter",fOnEnter)
+			btn:SetScript("OnLeave",fOnLeave)
+
+			local ht = btn:CreateTexture(nil, "HIGHLIGHT")
+			ht:SetAllPoints(true)
+			ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+			ht:SetBlendMode("ADD")
+		end
+
+		--print(id,item.texture,item.name)
+		btn:SetAttribute("item", item.name)
+		btn.itemId = id
+		btn.bag = item.bag
+		btn.slot = item.slot
+		btn.icon:SetTexture(item.texture)
+		btn:Show()
+	end
+	if i == 0 then
+		zQuestItemFrame:Hide()
+	else
+		zQuestItemFrame:Show()
+	end
+
+	for n = i+1,#buttonList do
+		buttonList[n]:Hide()
+	end
+
+local width = math.max(90,i*27+7)
+zQuestItemFrame:SetWidth(width);
+zQuestItemFrame:Show()
+
+end
+]]

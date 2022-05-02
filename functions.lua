@@ -102,6 +102,10 @@ local function IsQuestComplete(id)
     end
 end
 
+local function IsOnQuest(id)
+	return C_QuestLog.IsOnQuest(id)
+end
+
 RXP_.IsQuestTurnedIn = IsQuestTurnedIn
 RXP_.IsQuestComplete = IsQuestComplete
 
@@ -158,7 +162,7 @@ function RXP_.GetQuestName(id)
         end
     end
 
-    if C_QuestLog.IsOnQuest(id) then
+    if IsOnQuest(id) then
         if GetQuestLogTitle then
             for i = 1,GetNumQuests() do
                 local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
@@ -205,7 +209,7 @@ function RXP_.GetQuestObjectives(id,step)
     step = step or 0
     if not id then return end
     local err = false
-    if C_QuestLog.IsOnQuest(id) then
+    if IsOnQuest(id) then
         local questInfo = {}
         for i = 1,GetNumQuests() do
             local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID
@@ -244,7 +248,6 @@ function RXP_.GetQuestObjectives(id,step)
                     end
                 end
                 if (err or nObj == 0) and GetNumQuestLeaderBoards(i) <= 1 then
-                    print('qq',id)
                     local fulfilled = 0
                     if isComplete then
                         fulfilled = 1
@@ -300,7 +303,7 @@ function RXP_.GetQuestObjectives(id,step)
         end
     end
 
-    if not C_QuestLog.IsOnQuest(id) or err then
+    if not IsOnQuest(id) or err then
         local ctime = GetTime()
         if ctime - timer > 1 then
             timer = ctime
@@ -506,8 +509,8 @@ function RXP_.functions.accept(self,...)
         local step = element.step
         local event,arg1,questId = ...
         local id = element.questId
-        local isQuestAccepted = IsQuestTurnedIn(id) or C_QuestLog.IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)
-
+        local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)
+		
         if element.step.active or element.retrieveText or (element.step.index > 1 and RXP_.currentGuide.steps[element.step.index-1].active) then
             RXP_.questAccept[id] = element
             local quest = RXP_.GetQuestName(id,element)
@@ -533,7 +536,7 @@ function RXP_.functions.accept(self,...)
                 local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
                 if quest.preQuestSingle then
                     for _,qID in pairs(quest.preQuestSingle) do
-                        if RXP_.questTurnIn[qID] and (RXP_.questAccept[qID] or C_QuestLog.IsOnQuest(qID)) then
+                        if RXP_.questTurnIn[qID] and (RXP_.questAccept[qID] or IsOnQuest(qID)) then
                             preQuest = quest:IsPreQuestGroupFulfilled()
                             break
                         end
@@ -561,7 +564,7 @@ function RXP_.functions.accept(self,...)
 
 
         element.tooltipText = RXP_.icons.accept..element.text
-
+		local completed = element.completed
 
         if isQuestAccepted then
             RXP_.SetElementComplete(self,true)
@@ -570,7 +573,32 @@ function RXP_.functions.accept(self,...)
         elseif event == "QUEST_REMOVED" and arg1 == id and not element.skip then
             RXP_.SetElementIncomplete(self)
         end
-
+		
+		local function ProcessItems(value)
+			local qItem = RXP_.questAcceptItems[questId]
+			if not qItem then return end
+			if not step.activeItems then step.activeItems = {} end
+			if type(qItem) == "table" then
+				for _,item in pairs(qItem) do
+					step.activeItems[item] = value
+				end
+			else
+				step.activeItems[qItem] = value
+			end
+		end
+		
+		if step.active then
+			if event then
+				local itemFrame = self.GetParent and self:GetParent().activeItemFrame
+				if completed ~= element.completed and itemFrame then
+					ProcessItems(not element.completed)
+					RXP_.UpdateItemFrame(itemFrame)
+				end
+			else
+				ProcessItems(true)
+			end
+		end
+		
     end
 
 end
@@ -625,7 +653,6 @@ function RXP_.functions.turnin(self,...)
         local event,questId = ...
         local id = element.questId
 
-
         if step.active or element.retrieveText then
             RXP_.questTurnIn[id] = element
             RXP_.questAccept[id] = RXP_.questAccept[id] or element
@@ -649,7 +676,7 @@ function RXP_.functions.turnin(self,...)
         local skip
         if step.active and db and type(db.QueryQuest) == "function" and not RXP_.questAccept[id] and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
-            if not C_QuestLog.IsOnQuest(id) and quest and not quest.IsRepeatable then
+            if not IsOnQuest(id) and quest and not quest.IsRepeatable then
                 local requiredQuests = {}
                 local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
                 local questList
@@ -684,13 +711,40 @@ function RXP_.functions.turnin(self,...)
 
         element.tooltipText = element.icon..element.text
         RXP_.UpdateStepText(self)
-
+		local completed = element.completed
         local isComplete = IsQuestTurnedIn(id)
         if isComplete then
             RXP_.SetElementComplete(self,true)
         elseif questId == id or skip then --repeatable quests
             RXP_.SetElementComplete(self)
         end
+		
+		local function ProcessItems(value)
+			local qItem = RXP_.questTurnInItems[questId]
+			if not qItem then return end
+			if not step.activeItems then step.activeItems = {} end
+			if type(qItem) == "table" then
+				for _,item in pairs(qItem) do
+					step.activeItems[item] = value
+				end
+			else
+				step.activeItems[qItem] = value
+			end
+		end
+		
+		if step.active then
+			if event then
+				local itemFrame = self.GetParent and self:GetParent().activeItemFrame
+				if completed ~= element.completed and itemFrame then
+					ProcessItems(not element.completed)
+					RXP_.UpdateItemFrame(itemFrame)
+				end
+			else
+				ProcessItems(true)
+			end
+		end
+		
+		
     end
 
 end
@@ -782,7 +836,7 @@ function RXP_.UpdateQuestCompletionData(self)
             if questType == "item" then
                 validQuest = select(12,GetItemInfo(itemId)) == 12 and select(11,GetItemInfo(itemId)) == 0
             end
-            if not C_QuestLog.IsOnQuest(id) and validQuest then
+            if not IsOnQuest(id) and validQuest then
                 local requiredQuests = {}
                 local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
                 local questList
@@ -902,6 +956,7 @@ function RXP_.functions.complete(self,...)
     end
     local event = ...
     local step = self.element.step
+	local id = self.element.questId
 
     if event then
         if step.active then
@@ -910,6 +965,17 @@ function RXP_.functions.complete(self,...)
             RXP_.updateInactiveQuest[self] = RXP_.UpdateQuestCompletionData
         end
     else
+		if step.active and RXP_.questCompleteItems[id] then
+			local qItem = RXP_.questCompleteItems[id]
+			if not step.activeItems then step.activeItems = {} end
+			if type(qItem) == "table" then
+				for _,item in pairs(qItem) do
+					step.activeItems[item] = true
+				end
+			else
+				step.activeItems[qItem] = true
+			end
+		end
         RXP_.UpdateQuestCompletionData(self)
     end
 end
@@ -1139,7 +1205,7 @@ function RXP_.functions.collect(self,...)
     local element = self.element
     local questId = element.questId
     local name = RXP_.GetItemName(element.id)
-
+	local step = element.step
 
     if name then
         element.requestFromServer = nil
@@ -1157,7 +1223,7 @@ function RXP_.functions.collect(self,...)
         end
     end
 
-    if (element.qty > 0 and count > element.qty) or (questId and ((not element.isQuestTurnIn and C_QuestLog.IsOnQuest(questId)) or IsQuestTurnedIn(questId))) then
+    if (element.qty > 0 and count > element.qty) or (questId and ((not element.isQuestTurnIn and IsOnQuest(questId)) or IsQuestTurnedIn(questId))) then
         count = element.qty
     end
 
@@ -1173,6 +1239,7 @@ function RXP_.functions.collect(self,...)
         RXP_.UpdateStepText(self)
     end
     element.lastCount = count
+	
     if element.qty > 0 and count >= element.qty then
         RXP_.SetElementComplete(self,true)
     elseif element.qty == 0 and count == 0 then
@@ -1180,6 +1247,22 @@ function RXP_.functions.collect(self,...)
     else
         RXP_.SetElementIncomplete(self)
     end
+	
+	if step.active and questId and not element.isQuestTurnIn then
+		if not step.activeItems then step.activeItems = {} end
+		if event then 
+			if event ~= "BAG_UPDATE_DELAYED" then
+				step.activeItems[element.id] = not IsOnQuest(questId)
+				local itemFrame = self.GetParent and self:GetParent().activeItemFrame
+				if itemFrame then
+					RXP_.UpdateItemFrame(itemFrame)
+				end
+			end
+		else
+			step.activeItems[element.id] = true
+		end
+	end
+
 end
 
 function RXP_.functions.destroy(self,...)
@@ -1619,7 +1702,7 @@ end
 function RXP_.functions.abandon(self,...)
     if type(self) == "string" then --on parse
         local element = {}
-        element.tag = "accept"
+        --element.tag = "abandon"
         local text,id = ...
         id = tonumber(id)
         if not id then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
@@ -1661,7 +1744,7 @@ function RXP_.functions.abandon(self,...)
         element.tooltipText = RXP_.icons.abandon..element.text
 
 
-        if self.element.step.active and not C_QuestLog.IsOnQuest(id) then
+        if self.element.step.active and not IsOnQuest(id) then
             RXP_.SetElementComplete(self,true)
         else
             RXP_.SetElementIncomplete(self)
@@ -1713,7 +1796,7 @@ function RXP_.functions.isQuestComplete(self,...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not (C_QuestLog.IsOnQuest(id) and IsQuestComplete(id)) then
+    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) then
         self.element.step.completed = true
         RXP_.updateSteps = true
     end
@@ -1733,7 +1816,7 @@ function RXP_.functions.isOnQuest(self,...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not C_QuestLog.IsOnQuest(id) then
+    if self.element.step.active and not IsOnQuest(id) then
         self.element.step.completed = true
         RXP_.updateSteps = true
     end
