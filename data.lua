@@ -117,7 +117,7 @@ else
 	RXP_.mapId["StormPeaks"] = RXP_.mapId["The Storm Peaks"]
 	RXP_.mapId["TheStormPeaks"] = RXP_.mapId["The Storm Peaks"]
 	RXP_.mapId["ZulDrak"] = RXP_.mapId["Zul'Drak"]
-	RXP_.mapId["GrizzlyHills"] = RXP_.mapId["GrizzlyHills"]
+	RXP_.mapId["GrizzlyHills"] = RXP_.mapId["Grizzly Hills"]
 	RXP_.mapId["HowlingFjord"] = RXP_.mapId["Howling Fjord"]
 	RXP_.mapId["BoreanTundra"] = RXP_.mapId["Borean Tundra"]
 end
