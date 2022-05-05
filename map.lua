@@ -266,7 +266,7 @@ local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
     end
     for i, pin in ipairs(pins) do
         for j, pinElement in ipairs(pin.elements) do
-            if not (pinElement.optional or element.optional) then
+            if not (pinElement.hidePin or element.hidePin) then
                 local relativeDist,dist,dx,dy
                 if element.instance == pinElement.instance then
                     dist,dx,dy = HBD:GetWorldDistance(pinElement.instance, pinElement.wx, pinElement.wy, element.wx, element.wy)
@@ -306,7 +306,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local function GetNumPins(step)
         if step then
             for _,element in pairs(step.elements) do
-                if element.tag == "goto" and not element.optional then
+                if element.tag == "goto" and not element.hidePin then
                     numActive = numActive + 1
                 end
             end
@@ -348,7 +348,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
             if element.zone and (not(element.parent and (element.parent.completed or element.parent.skip)) and not element.skip) then
                 local closeToOtherPin, otherPin = elementIsCloseToOtherPins(element, pins, isMiniMap)
 
-                if closeToOtherPin and not element.optional then
+                if closeToOtherPin and not element.hidePin then
                     table.insert(otherPin.elements, element)
                 else
                     local pinalpha = 0
@@ -366,13 +366,13 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         wx = element.wx,
                         wy = element.wy,
                         zone = element.zone,
-                        hidePin = element.optional,
+                        hidePin = element.hidePin,
                     })
                 end
                 if not isMiniMap then
                     table.insert(RXP_.activeWaypoints, element)
                 end
-                if not element.optional then
+                if not element.hidePin then
                     numActivePins = numActivePins + 1
                 end
             end
@@ -443,16 +443,33 @@ end
 
 -- Updates the arrow
 local function updateArrow()
-    for i,element in ipairs(RXP_.activeWaypoints) do
-        if element.arrow and element.step.active and 
+	local lowPrioWPs = {}
+	local function ProcessWaypoint(element,lowPrio)
+		if element.lowPrio and not lowPrio then
+			table.insert(lowPrioWPs,element)
+			return
+		end
+		if element.arrow and element.step.active and 
         not(element.parent and (element.parent.completed or element.parent.skip)) and not(element.text and (element.completed or element.skip) and not element.skip) then
             af:SetShown(not RXPData.disableArrow)
             af.dist = 0
             af.orientation = 0
             af.element = element
             af.forceUpdate = true
-            return
+            return true
         end
+	end
+	
+    for i,element in ipairs(RXP_.activeWaypoints) do
+        if ProcessWaypoint(element) then
+			return
+		end
+    end
+	
+    for i,element in ipairs(lowPrioWPs) do
+        if ProcessWaypoint(element,true) then
+			return
+		end
     end
 
     af:Hide()

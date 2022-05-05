@@ -1014,7 +1014,12 @@ function RXP_.functions.goto(self,...)
 
         if radius then
             if optional then
-                element.optional = true
+				if element.radius == 0 then
+					element.lowPrio = true
+					element.radius = nil
+				else
+					element.hidePin = true
+				end
             elseif radius > 0 then
                 if not text or text == "" then
                     element.text = string.format("Go to %.1f,%.1f (%s)",element.x,element.y,zone)
@@ -1030,6 +1035,70 @@ function RXP_.functions.goto(self,...)
     end
 end
 
+function RXP_.functions.waypoint(self,...)
+	--creates an waypoint arrow without a map pin
+    if type(self) == "string" then
+        local element = {}
+        element.tag = "goto"
+        local text,zone,x,y,radius,lowPrio = ...
+        if zone then
+            lastZone = zone
+        else
+            zone = lastZone
+        end
+        local mapID = RXP_.mapId[zone] or tonumber(zone)
+        element.x = tonumber(x)
+        element.y = tonumber(y)
+        if not (element.x and element.y and zone and mapID) then
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid coordinates or map name\n"..self)
+        end
+        element.zone = mapID
+        element.radius = tonumber(radius)
+		element.lowPrio = lowPrio
+		if element.radius <= 0 then
+			element.radius = nil
+			element.lowPrio = true
+		end
+        radius = element.radius
+        element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
+		
+        element.arrow = true
+        element.parent = true
+		element.hidePin = true
+        element.text = text
+        element.textOnly = true
+
+        return element
+    end
+end
+
+function RXP_.functions.pin(self,...)
+	--creates a map pin without an waypoint arrow
+    if type(self) == "string" then
+        local element = {}
+        element.tag = "goto"
+        local text,zone,x,y = ...
+        if zone then
+            lastZone = zone
+        else
+            zone = lastZone
+        end
+        local mapID = RXP_.mapId[zone] or tonumber(zone)
+        element.x = tonumber(x)
+        element.y = tonumber(y)
+        if not (element.x and element.y and zone and mapID) then
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid coordinates or map name\n"..self)
+        end
+        element.zone = mapID
+        element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
+
+        element.parent = true
+        element.text = text
+        element.textOnly = true
+
+        return element
+    end
+end
 
 function RXP_.functions.hs(self,...)
     if type(self) == "string" then --on parse
@@ -2495,14 +2564,14 @@ function RXP_.functions.skipgossip(self,text,...)
     args = args or {}
 
     if event == "GOSSIP_SHOW" then
-        if #args == 0 then
+        local id = tonumber(args[1])
+        if #args == 0 or not id then
             if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
                 SelectGossipOption(1)
             end
             return
         end
 
-        local id = tonumber(args[1])
         local npcId = RXP_.GetNpcId()
         if #args == 1 then
             if id < 10 or npcId == id then
