@@ -254,6 +254,8 @@ local function trainerFrameUpdate(self,t)
 	end
 end
 
+local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActiveQuests
+local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or GetNumGossipAvailableQuests
 
 function RXP_.QuestAutomation(event,arg1,arg2)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
@@ -263,7 +265,7 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 	
     if event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
 		ConfirmAcceptQuest()
-    elseif event == "QUEST_COMPLETE" or not event and QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() then
+    elseif event == "QUEST_COMPLETE" or not event and (QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() or QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown()) then
         local id = GetQuestID()
 		local reward = RXP_.QuestAutoTurnIn(id)
 		local choices = GetNumQuestChoices()
@@ -308,8 +310,8 @@ function RXP_.QuestAutomation(event,arg1,arg2)
             end
 		end
 	elseif event == "GOSSIP_SHOW" or not event and GossipFrame and GossipFrame:IsShown() then
-		local nActive = GetNumGossipActiveQuests()
-		local nAvailable = GetNumGossipAvailableQuests()
+		local nActive = GetNumActiveQuests()
+		local nAvailable = GetNumAvailableQuests()
 
 		for i = 1, nActive do
 			local title, level, isTrivial, isComplete = select(i * 6 - 5, GetGossipActiveQuests())

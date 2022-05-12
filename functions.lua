@@ -1,5 +1,6 @@
 local faction = UnitFactionGroup("player")
 local _,class = UnitClass("player")
+local version = select(4, GetBuildInfo())
 RXP_.functions = {}
 RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
@@ -72,7 +73,8 @@ end
 
 
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or GetNumQuestLogEntries
-
+local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActiveQuests
+local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or GetNumGossipAvailableQuests
 
 local IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 
@@ -1055,7 +1057,7 @@ function RXP_.functions.waypoint(self,...)
         element.zone = mapID
         element.radius = tonumber(radius)
 		element.lowPrio = lowPrio
-		if element.radius <= 0 then
+		if element.radius == 0 then
 			element.radius = nil
 			element.lowPrio = true
 		end
@@ -1099,6 +1101,37 @@ function RXP_.functions.pin(self,...)
         return element
     end
 end
+
+function RXP_.functions.line(self,text,zone,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local segments = {...}
+		for i,v in ipairs(segments) do
+			segments[i] = tonumber(v)
+		end
+		element.segments = segments
+        if zone then
+            lastZone = zone
+        else
+            zone = lastZone
+        end
+        local mapID = RXP_.mapId[zone] or tonumber(zone)
+        if not (segments and #segments > 0 and zone and mapID) then
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid coordinates or map name\n"..self)
+        end
+        element.zone = mapID
+        --element.hidePin = true
+        element.parent = true
+		--element.hidePin = true
+
+        element.text = text
+        element.textOnly = true
+
+        return element
+    end
+end
+
+
 
 function RXP_.functions.hs(self,...)
     if type(self) == "string" then --on parse
@@ -1296,14 +1329,25 @@ function RXP_.functions.collect(self,...)
         count = element.qty
     end
 
-    if element.rawtext then
-        element.tooltipText = RXP_.icons.collect..element.rawtext
-        element.text = string.format("%s\n%s: %d/%d",element.rawtext,element.itemName,count,element.qty)
-    else
-        element.text = string.format("%s: %d/%d",element.itemName,count,element.qty)
-        element.tooltipText = RXP_.icons.collect..element.text
-    end
-
+	if version and version > 90000 then
+		if element.rawtext then
+			element.tooltipText = RXP_.icons.collect..element.rawtext
+			element.text = string.format("%s\n%d/%d %s",element.rawtext,count,element.qty,element.itemName)
+		else
+			element.text = string.format("%d/%d %s",count,element.qty,element.itemName)
+			element.tooltipText = RXP_.icons.collect..element.text
+		end
+	else
+		if element.rawtext then
+			element.tooltipText = RXP_.icons.collect..element.rawtext
+			element.text = string.format("%s\n%s: %d/%d",element.rawtext,element.itemName,count,element.qty)
+		else
+			element.text = string.format("%s: %d/%d",element.itemName,count,element.qty)
+			element.tooltipText = RXP_.icons.collect..element.text
+		end
+	end
+	
+	
     if element.lastCount ~= count then
         RXP_.UpdateStepText(self)
     end
@@ -2566,7 +2610,7 @@ function RXP_.functions.skipgossip(self,text,...)
     if event == "GOSSIP_SHOW" then
         local id = tonumber(args[1])
         if #args == 0 or not id then
-            if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
+            if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
                 SelectGossipOption(1)
             end
             return
@@ -2579,7 +2623,7 @@ function RXP_.functions.skipgossip(self,text,...)
             else
                 return
             end
-            if GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
+            if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
                 SelectGossipOption(id)
             end
         elseif id == npcId then
