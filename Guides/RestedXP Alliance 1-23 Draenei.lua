@@ -1063,7 +1063,9 @@ step
     .turnin 9548 >> Turn in Pilfered Equipment
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
 step
-    >>Click on the Weathered Treasure Map in your bags from the Artifacts of the Blacksit quest
+	#sticky
+	#label Mapto
+    >>Click on the Weathered Treasure Map in your bags from the Artifacts of the Blacksilt quest
 	.collect 23837,1,9550 --Collect Weathered Treasure Map (x1)
     .accept 9550 >> Accept A Map to Where?
 step
@@ -1077,6 +1079,7 @@ step
 	>>Loot the Dragon Bones on the ground
     .complete 9687,1 --Collect Dragon Bone (x8)
 step
+	#requires Mapto
     .goto Bloodmyst Isle,61.1,41.9
     .turnin 9550 >> Turn in A Map to Where?
     .accept 9557 >> Accept Deciphering the Book
