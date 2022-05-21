@@ -256,6 +256,11 @@ end
 
 local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActiveQuests
 local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or GetNumGossipAvailableQuests
+local GetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
+local SelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or SelectGossipAvailableQuest
+local GetActiveQuests = C_GossipInfo.GetActiveQuests or GetGossipActiveQuests
+local SelectActiveQuest = C_GossipInfo.SelectActiveQuest or SelectGossipActiveQuest
+local GetAvailableQuests = C_GossipInfo.GetAvailableQuests or GetGossipAvailableQuests
 
 function RXP_.QuestAutomation(event,arg1,arg2)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
@@ -299,8 +304,8 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 			end
 		end
 		
-        if GetNumGossipOptions() == 0 and nAvailable == 1 and nActive == 0 then
-            SelectGossipAvailableQuest(1)
+        if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
+            SelectAvailableQuest(1)
         else
             for i = 1, nAvailable do
                 local title, isComplete = GetAvailableTitle(i)
@@ -312,22 +317,42 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 	elseif event == "GOSSIP_SHOW" or not event and GossipFrame and GossipFrame:IsShown() then
 		local nActive = GetNumActiveQuests()
 		local nAvailable = GetNumAvailableQuests()
-
+		local quests
+		if C_GossipInfo.GetActiveQuests then
+			quests = C_GossipInfo.GetActiveQuests() 
+		end
 		for i = 1, nActive do
-			local title, level, isTrivial, isComplete = select(i * 6 - 5, GetGossipActiveQuests())
+			local title, level, isTrivial, isComplete
+			if type(quests) == "table" then
+				title = quests[i].questID
+				isComplete = quests[i].isComplete
+			else
+				title, level, isTrivial, isComplete = select(i * 6 - 5, GetActiveQuests())
+			end
+			print(title)
+			print(quests[i])
 			if RXP_.QuestAutoTurnIn(title) and isComplete then
-				return SelectGossipActiveQuest(i)
+				return SelectActiveQuest(i)
 			end
 		end
 		
-        if GetNumGossipOptions() == 0 and nAvailable == 1 and nActive == 0 then
-            SelectGossipAvailableQuest(1)
+        if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
+            SelectAvailableQuest(1)
         else
+			local availableQuests
+			if C_GossipInfo.GetAvailableQuests then
+				availableQuests = C_GossipInfo.GetAvailableQuests()
+			end
             for i = 1, nAvailable do
-                local title = select(i * 7 - 6, GetGossipAvailableQuests())
-                if RXP_.QuestAutoAccept(title) then
-                    return SelectGossipAvailableQuest(i)
-                end
+				local quest
+				if type(availableQuests) == "table" then
+					quest = availableQuests[i].questID
+				else
+					quest = select(i * 7 - 6, GetAvailableQuests())
+				end
+				if RXP_.QuestAutoAccept(quest) then					
+					return SelectAvailableQuest(i)
+				end
             end
 		end
 	end

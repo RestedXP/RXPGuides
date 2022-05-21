@@ -1,6 +1,7 @@
 local faction = UnitFactionGroup("player")
 local _,class = UnitClass("player")
 local version = select(4, GetBuildInfo())
+local RXPG = RXPGuides
 RXP_.functions = {}
 RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
@@ -28,6 +29,7 @@ RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
 RXP_.functions.events.zone = {"ZONE_CHANGED_NEW_AREA"}
 RXP_.functions.events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE_DELAYED"}
 RXP_.functions.events.skipgossip = {"GOSSIP_SHOW"}
+RXP_.functions.events.vehicle = {"UNIT_ENTERING_VEHICLE","VEHICLE_UPDATE"}
 
 RXP_.functions.events.bankwithdraw = RXP_.functions.events.bankdeposit
 RXP_.functions.events.abandon = RXP_.functions.events.complete
@@ -75,6 +77,7 @@ end
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or GetNumQuestLogEntries
 local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActiveQuests
 local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or GetNumGossipAvailableQuests
+local SelectOption = C_GossipInfo.SelectOption or SelectGossipOption
 
 local IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 
@@ -448,11 +451,21 @@ function RXP_.HardcoreCheck(step)
     return true
 end
 
-function RXP_.GetNpcId(unit)
+function RXP_.GetNpcId(unit,isGuid)
     if not unit then
-        unit = "target"
+		if isGuid then
+			return
+		else
+			unit = "target"
+		end
     end
-    local _, _, _, _, _, npcId = strsplit('-', UnitGUID(unit) or '')
+	local guid
+	if isGuid then
+		guid = unit
+	else
+		guid = UnitGUID(unit) or ''
+	end
+    local _, _, _, _, _, npcId = strsplit('-', guid)
     return tonumber(npcId)
 end
 
@@ -1037,12 +1050,11 @@ function RXP_.functions.goto(self,...)
     end
 end
 
-function RXP_.functions.waypoint(self,...)
+function RXP_.functions.waypoint(self,text,zone,x,y,radius,lowPrio,...)
 	--creates an waypoint arrow without a map pin
     if type(self) == "string" then
         local element = {}
         element.tag = "goto"
-        local text,zone,x,y,radius,lowPrio = ...
         if zone then
             lastZone = zone
         else
@@ -1057,9 +1069,15 @@ function RXP_.functions.waypoint(self,...)
         element.zone = mapID
         element.radius = tonumber(radius)
 		element.lowPrio = lowPrio
+		if lowPrio and not tonumber(lowPrio) then
+			element.event = {...}
+			element.callback = lowPrio
+		end
 		if element.radius == 0 then
 			element.radius = nil
-			element.lowPrio = true
+			if not lowPrio then
+				element.lowPrio = true
+			end
 		end
         radius = element.radius
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
@@ -1072,6 +1090,17 @@ function RXP_.functions.waypoint(self,...)
 
         return element
     end
+	
+	local element = self.element
+	local group = RXP_.currentGuide.group
+	local callback = RXPG[group][element.callback]
+	if type(callback) == "function" then
+		local lowPrio = callback(self,text,zone,x,y,radius,lowPrio,...)
+		if element.lowPrio ~= lowPrio then
+			RXP_.updateMap = true
+		end
+		element.lowPrio = lowPrio
+	end
 end
 
 function RXP_.functions.pin(self,...)
@@ -2606,12 +2635,13 @@ function RXP_.functions.skipgossip(self,text,...)
     local element = self.element
     local args = element.args
     args = args or {}
-
+	local event = text
     if event == "GOSSIP_SHOW" then
+		print('ok')
         local id = tonumber(args[1])
         if #args == 0 or not id then
             if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
-                SelectGossipOption(1)
+                SelectOption(1)
             end
             return
         end
@@ -2624,7 +2654,7 @@ function RXP_.functions.skipgossip(self,text,...)
                 return
             end
             if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
-                SelectGossipOption(id)
+                SelectOption(id)
             end
         elseif id == npcId then
             if not self.npcId then
@@ -2635,7 +2665,7 @@ function RXP_.functions.skipgossip(self,text,...)
             end
             local option = tonumber(args[element.index])
             if option then
-                SelectGossipOption(option)
+                SelectOption(option)
             end
         end
     else
@@ -2720,4 +2750,31 @@ function RXP_.functions.use(self,text,...)
 			step.activeItems[item] = true
 		end
 	--end
+end
+
+function RXP_.functions.vehicle(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,id = ...
+		element.icon = RXP_.icons.complete
+        element.id = tonumber(id)
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "-"
+        end
+        
+        return element
+    end
+
+    local event,unit,showVehicleFrame,isControlSeat,vehicleUIIndicatorID,guid = ...
+    local id = self.element.id
+
+	local vehicle = RXP_.GetNpcId("vehicle") or RXP_.GetNpcId(guid,true)
+	print('>',vehicle,vehicle == id)
+	if ((event == "UNIT_ENTERING_VEHICLE" and unit == "player") or vehicle)
+	and ((id and vehicle == id) or (not id and vehicle)) then
+		RXP_.SetElementComplete(self)
+	end
+
 end
