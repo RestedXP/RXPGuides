@@ -707,6 +707,7 @@ function RXP_.UpdateMap()
     updateArrow()
 end
 
+local closestPoint
 function RXP_.UpdateGotoSteps()
 
 	local currentMap = WorldMapFrame:GetMapID()
@@ -721,19 +722,42 @@ function RXP_.UpdateGotoSteps()
         af:Hide()
         return
     end
+	local minDist,forceArrowUpdate
+	
     for i,element in ipairs(RXP_.activeWaypoints) do
         if element.step.active then
 
-            if element.radius and element.arrow and not(element.parent and (element.parent.completed or element.parent.skip) and not element.parent.textOnly) and not element.skip then
+            if (element.radius or element.dynamic) and element.arrow and not(element.parent and (element.parent.completed or element.parent.skip) and not element.parent.textOnly) and not element.skip then
                 local x,y,instance = HBD:GetPlayerWorldPosition()
                 local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
-                if not dist then return end
-                if dist <= element.radius then
-                    element.skip = true
-                    RXP_.updateMap = true
-                    RXP_.SetElementComplete(element.frame)
-                end
+                if dist then
+				
+					if element.radius then
+						if dist <= element.radius then
+							element.skip = true
+							RXP_.updateMap = true
+							RXP_.SetElementComplete(element.frame)
+						end
+					elseif element.dynamic then
+						if minDist and dist > minDist then
+							element.lowPrio = true
+						else
+							minDist = dist
+							if closestPoint then
+								closestPoint.lowPrio = true
+							end
+							if closestPoint ~= element then
+								forceArrowUpdate = true
+							end
+							element.lowPrio = false
+							closestPoint = element
+						end
+					end
+				end
             end
         end
     end
+	if forceArrowUpdate then
+		updateArrow()
+	end
 end

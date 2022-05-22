@@ -1029,10 +1029,10 @@ function RXP_.functions.goto(self,...)
 
         if radius then
             if optional then
-				if element.radius == 0 then
+				if radius == 0 then
 					element.lowPrio = true
 					element.radius = nil
-				else
+				elseif radius > 0 then
 					element.hidePin = true
 				end
             elseif radius > 0 then
@@ -1042,9 +1042,14 @@ function RXP_.functions.goto(self,...)
                 element.parent = nil
                 element.textOnly = nil
                 element.tooltipText = RXP_.icons.goto..element.text
-            elseif radius <= 0 then
+            elseif radius == 0 then
                 element.arrow = nil
+				element.radius = nil
             end
+			if radius < 0 then
+				element.radius = nil
+				element.dynamic = true
+			end
         end
         return element
     end
