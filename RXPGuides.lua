@@ -40,6 +40,7 @@ eventFrame:RegisterUnitEvent("UNIT_PET","player")
 eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
 eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+eventFrame:RegisterEvent("BAG_UPDATE_DELAYED")
 
 questFrame:RegisterEvent("QUEST_COMPLETE")
 questFrame:RegisterEvent("QUEST_PROGRESS")
@@ -329,8 +330,8 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 			else
 				title, level, isTrivial, isComplete = select(i * 6 - 5, GetActiveQuests())
 			end
-			print(title)
-			print(quests[i])
+			--print(title)
+			--print(quests[i])
 			if RXP_.QuestAutoTurnIn(title) and isComplete then
 				return SelectActiveQuest(i)
 			end
@@ -374,7 +375,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			RXP_.updateStepText = true
 		end
 		return
-	elseif event == "PLAYER_REGEN_ENABLED" then
+	elseif (event == "BAG_UPDATE_DELAYED" or event == "PLAYER_REGEN_ENABLED") and RXP_.activeItemFrame and RXP_.activeItemFrame:IsShown() then
 		RXP_.UpdateItemFrame()
 	elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
 		C_Timer.After(1, function() RXP_.ReloadGuide() end)
@@ -2460,9 +2461,11 @@ end
 ----local j = 0
 local function GetActiveItemList(ref)
 	local itemList = {}
+	--[[
 	if not (ref and ref.activeItems) then
 		ref = RXP_
-	end
+	end]]
+	ref = RXP_
 	for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
 		for slot = 1,GetContainerNumSlots(bag) do
 			local id = GetContainerItemID(bag, slot)
@@ -2513,7 +2516,7 @@ f.buttonList = {}
 
 f:SetPoint("CENTER",anchor,"CENTER", 0, 0)
 
-f:RegisterEvent("BAG_UPDATE_DELAYED")
+
 
 
 f:SetScript("OnEvent",RXP_.UpdateItemFrame)
@@ -2556,7 +2559,6 @@ local fOnLeave = function(self)
 		PickupContainerItem(self.bag,self.slot)
 	end
 end
-
 
 
 

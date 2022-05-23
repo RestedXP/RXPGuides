@@ -1359,7 +1359,7 @@ function RXP_.functions.collect(self,...)
         end
     end
 
-    if (element.qty > 0 and count > element.qty) or (questId and ((not element.isQuestTurnIn and IsOnQuest(questId)) or IsQuestTurnedIn(questId))) then
+    if (element.qty > 0 and count > element.qty) or (questId and ((not element.isQuestTurnIn and IsOnQuest(questId)) or IsQuestTurnedIn(questId) or IsQuestComplete(questId))) then
         count = element.qty
     end
 
@@ -2642,7 +2642,7 @@ function RXP_.functions.skipgossip(self,text,...)
     args = args or {}
 	local event = text
     if event == "GOSSIP_SHOW" then
-		print('ok')
+		--print('ok')
         local id = tonumber(args[1])
         if #args == 0 or not id then
             if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
@@ -2776,7 +2776,7 @@ function RXP_.functions.vehicle(self,...)
     local id = self.element.id
 
 	local vehicle = RXP_.GetNpcId("vehicle") or RXP_.GetNpcId(guid,true)
-	print('>',vehicle,vehicle == id)
+	--print('>',vehicle,vehicle == id)
 	if ((event == "UNIT_ENTERING_VEHICLE" and unit == "player") or vehicle)
 	and ((id and vehicle == id) or (not id and vehicle)) then
 		RXP_.SetElementComplete(self)
