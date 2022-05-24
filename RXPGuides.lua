@@ -255,19 +255,33 @@ local function trainerFrameUpdate(self,t)
 	end
 end
 
-local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActiveQuests
-local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or GetNumGossipAvailableQuests
-local GetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
-local SelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or SelectGossipAvailableQuest
-local GetActiveQuests = C_GossipInfo.GetActiveQuests or GetGossipActiveQuests
-local SelectActiveQuest = C_GossipInfo.SelectActiveQuest or SelectGossipActiveQuest
-local GetAvailableQuests = C_GossipInfo.GetAvailableQuests or GetGossipAvailableQuests
+local G_GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActiveQuests
+local G_GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or GetNumGossipAvailableQuests
+local G_GetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
+local G_SelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or SelectGossipAvailableQuest
+local G_GetActiveQuests = C_GossipInfo.GetActiveQuests or GetGossipActiveQuests
+local G_SelectActiveQuest = C_GossipInfo.SelectActiveQuest or SelectGossipActiveQuest
+local G_GetAvailableQuests = C_GossipInfo.GetAvailableQuests or GetGossipAvailableQuests
 
 function RXP_.QuestAutomation(event,arg1,arg2)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
         return 
     end
     
+	
+	if not event then
+		if GossipFrame and GossipFrame:IsShown() then
+			event = "GOSSIP_SHOW"
+		elseif QuestFrameGreetingPanel and QuestFrameGreetingPanel:IsShown() then
+			event = "QUEST_GREETING"
+		elseif QuestFrameProgressPanel and QuestFrameProgressPanel:IsShown() then
+			event = "QUEST_PROGRESS"
+		elseif QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() or QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown() then
+			event = "QUEST_COMPLETE"
+		else
+			return
+		end
+	end
 	
     if event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
 		ConfirmAcceptQuest()
@@ -283,18 +297,18 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 			end
 		end
 	
-    elseif (event == "QUEST_PROGRESS" or not event and QuestFrameProgressPanel and QuestFrameProgressPanel:IsShown()) and IsQuestCompletable() then
+    elseif event == "QUEST_PROGRESS" and IsQuestCompletable() then
         CompleteQuest()
 		--questProgressTimer = GetTime()
 
-    elseif event == "QUEST_DETAIL" or not event and QuestFrameDetailPanel and QuestFrameDetailPanel:IsShown() then
+    elseif event == "QUEST_DETAIL" then
         local id = GetQuestID()
 		if RXP_.QuestAutoAccept(id) then
 			AcceptQuest()
 			HideUIPanel(QuestFrame)
 		end
 		
-	elseif event == "QUEST_GREETING" or not event and QuestFrameGreetingPanel and QuestFrameGreetingPanel:IsShown() then
+	elseif event == "QUEST_GREETING" then
         local nActive = GetNumActiveQuests()
 		local nAvailable = GetNumAvailableQuests()
         
@@ -315,9 +329,9 @@ function RXP_.QuestAutomation(event,arg1,arg2)
                 end
             end
 		end
-	elseif event == "GOSSIP_SHOW" or not event and GossipFrame and GossipFrame:IsShown() then
-		local nActive = GetNumActiveQuests()
-		local nAvailable = GetNumAvailableQuests()
+	elseif event == "GOSSIP_SHOW" then
+		local nActive = G_GetNumActiveQuests()
+		local nAvailable = G_GetNumAvailableQuests()
 		local quests
 		if C_GossipInfo.GetActiveQuests then
 			quests = C_GossipInfo.GetActiveQuests() 
@@ -328,17 +342,17 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 				title = quests[i].questID
 				isComplete = quests[i].isComplete
 			else
-				title, level, isTrivial, isComplete = select(i * 6 - 5, GetActiveQuests())
+				title, level, isTrivial, isComplete = select(i * 6 - 5, G_GetActiveQuests())
 			end
 			--print(title)
 			--print(quests[i])
 			if RXP_.QuestAutoTurnIn(title) and isComplete then
-				return SelectActiveQuest(i)
+				return G_SelectActiveQuest(i)
 			end
 		end
 		
-        if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
-            SelectAvailableQuest(1)
+        if G_GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
+            G_SelectAvailableQuest(1)
         else
 			local availableQuests
 			if C_GossipInfo.GetAvailableQuests then
@@ -349,10 +363,10 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 				if type(availableQuests) == "table" then
 					quest = availableQuests[i].questID
 				else
-					quest = select(i * 7 - 6, GetAvailableQuests())
+					quest = select(i * 7 - 6, G_GetAvailableQuests())
 				end
 				if RXP_.QuestAutoAccept(quest) then					
-					return SelectAvailableQuest(i)
+					return G_SelectAvailableQuest(i)
 				end
             end
 		end
@@ -1257,13 +1271,13 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
        	if RXP_.nextStep then 
 			skip = true
 			RXP_.SetStep(RXP_.nextStep)
-            RXP_.QuestAutomation()
+            RXP_.questAutoAccept = true
 			RXP_.updateBottomFrame = true
 			RXP_.nextStep = nil
         elseif RXP_.loadNextStep then
             RXP_.loadNextStep = false
             RXP_.SetStep(RXPCData.currentStep+1)
-            RXP_.QuestAutomation()
+            RXP_.questAutoAccept = true
             skip = true
             RXP_.updateBottomFrame = true
             event = event .. "/loadNext"
@@ -1303,6 +1317,10 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
         end
         
         if not skip then
+			if RXP_.questAutoAccept then
+				RXP_.questAutoAccept = false
+				RXP_.QuestAutomation()
+			end
             if RXP_.updateMap then
                 RXP_.UpdateMap()
                 event = event .. "/map"
