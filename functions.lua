@@ -473,6 +473,30 @@ end
 local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 
+local function GetRequiredQuests(quest)
+	local requiredQuests = {}
+	if quest.preQuestSingle then
+		local preQuestSingle = -1
+		for _,qID in pairs(quest.preQuestSingle) do
+			if (RXP_.questTurnIn[qID] and (IsOnQuest(qID) or RXP_.questAccept[qID] or not RXP_.pickUpList[qID])) or IsQuestTurnedIn(qID) then
+				preQuestSingle = 0
+			elseif preQuestSingle < 0 then
+				preQuestSingle = qID
+			end
+		end
+		if preQuestSingle > 0 then
+			table.insert(requiredQuests,preQuestSingle)
+		end
+	end
+	if quest.preQuestGroup then
+		for _,qID in pairs(quest.preQuestGroup) do
+			if not ((RXP_.questTurnIn[qID] and (IsOnQuest(qID) or RXP_.questAccept[qID] or not RXP_.pickUpList[qID])) or IsQuestTurnedIn(qID)) then
+				table.insert(requiredQuests,qID)
+			end
+		end
+	end
+	return requiredQuests
+end
 
 
 RXP_.pickUpList = {}
@@ -548,15 +572,23 @@ function RXP_.functions.accept(self,...)
         if step.active and db and type(db.QueryQuest) == "function" and not isQuestAccepted and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if quest then
-                local doable = db:IsDoable(id)
-                if not doable then
-                    local requiredQuests
-                    requiredQuests = quest.preQuestGroup or quest.preQuestSingle or {}
+                local doable = db:IsDoable(id)	
+				local requiredQuests
+				
+				if not doable then
+					requiredQuests = GetRequiredQuests(quest)
+				end
+                if requiredQuests and #requiredQuests > 0 then
                     local tooltip = RXP_.colors.tooltip.."Missing pre-requisites:|r\n"
                     for i,qid in ipairs(requiredQuests) do
                         tooltip = format("%s\n%s%s (%d)",tooltip,RXP_.icons.turnin,db:GetQuest(qid).name,qid)
                     end
                     element.tooltip = tooltip
+                    element.icon = RXP_.icons.error
+                    skip = RXPData.skipMissingPreReqs
+				elseif not doable then
+					local tooltip = RXP_.colors.tooltip.."Missing pre-requisites|r"
+					element.tooltip = tooltip
                     element.icon = RXP_.icons.error
                     skip = RXPData.skipMissingPreReqs
                 else
@@ -684,23 +716,16 @@ function RXP_.functions.turnin(self,...)
         if step.active and db and type(db.QueryQuest) == "function" and RXP_.pickUpList[id] and not RXP_.questAccept[id] and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if not IsOnQuest(id) and quest and not quest.IsRepeatable then
-                local requiredQuests = {}
+                local requiredQuests
                 local doable = db:IsDoable(id)
                 
                 if not doable then         
-					if quest.preQuestGroup then
-						for _,qID in ipairs(quest.preQuestGroup) do
-							table.insert(requiredQuests,qID)
-						end
-					end
-					if quest.preQuestSingle then
-						for _,qID in ipairs(quest.preQuestSingle) do
-							table.insert(requiredQuests,qID)
-						end
-					end
+					requiredQuests = GetRequiredQuests(quest)
+					table.insert(requiredQuests,id)
+				else
+					requiredQuests = {id}
                 end
 				
-                table.insert(requiredQuests,id)
                 local tooltip = RXP_.colors.tooltip.."Missing pre-requisites:|r\n"
                 for i,qid in ipairs(requiredQuests) do
                     if i < #requiredQuests then
@@ -849,21 +874,14 @@ function RXP_.UpdateQuestCompletionData(self)
                 validQuest = select(12,GetItemInfo(itemId)) == 12 and select(11,GetItemInfo(itemId)) == 0
             end
             if not IsOnQuest(id) and validQuest then
-                local requiredQuests = {}
+                local requiredQuests
                 local doable = db:IsDoable(id)
 				if not doable then         
-					if quest.preQuestGroup then
-						for _,qID in ipairs(quest.preQuestGroup) do
-							table.insert(requiredQuests,qID)
-						end
-					end
-					if quest.preQuestSingle then
-						for _,qID in ipairs(quest.preQuestSingle) do
-							table.insert(requiredQuests,qID)
-						end
-					end
+					requiredQuests = GetRequiredQuests(quest)
+					table.insert(requiredQuests,id)
+				else
+					requiredQuests = {id}
                 end
-                table.insert(requiredQuests,id)
                 local tooltip = RXP_.colors.tooltip.."Missing pre-requisites:|r\n"
                 for i,qid in ipairs(requiredQuests) do
                     if i < #requiredQuests then
