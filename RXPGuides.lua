@@ -932,6 +932,7 @@ function RXP_.SetStep(n,n2)
 			stepframe.number.text:SetFont(RXP_.font, 9)
 		end
         if stepframe.hardcore ~= RXPCData.hardcore or not stepframe.hardcore then
+			stepframe.hardcore = RXPCData.hardcore
             stepframe:ClearBackdrop()
             stepframe:SetBackdrop(f.backdropEdge)
             stepframe:SetBackdropColor(unpack(RXP_.colors.background))
@@ -2505,6 +2506,12 @@ end
     f:ClearBackdrop()
     f:SetBackdrop(RXPFrame.backdropEdge)
     f:SetBackdropColor(unpack(RXP_.colors.background))
+	function f.onMouseDown()
+		f:StartMoving()
+	end
+	function f.onMouseUp()
+		f:StopMovingOrSizing()
+	end
 	f:SetScript("OnMouseDown", f.StartMoving)
 	f:SetScript("OnMouseUp", f.StopMovingOrSizing)
 
@@ -2521,22 +2528,28 @@ f:SetPoint("CENTER",anchor,"CENTER", 0, 0)
 
 f:SetScript("OnEvent",RXP_.UpdateItemFrame)
 
-if disableText then
-	f.TextFrame = f.TextFrame or CreateFrame("Frame", "$parentTextFrame", f)
-	f.TextFrame:SetPoint("RIGHT", f,"LEFT")
-	f.TextFrame:SetWidth(70)
-	f.TextFrame:SetHeight(14)
-	f.TextFrame.text = f.TextFrame.text or f.TextFrame:CreateFontString(nil,"OVERLAY") 
-	f.TextFrame.text:SetFontObject(GameFontNormal)
-	f.TextFrame.text:SetPoint("TOPLEFT",7,-5)
-	f.TextFrame.text:SetJustifyH("RIGHT")
-	f.TextFrame.text:SetJustifyV("TOP")
-	f.TextFrame:SetPoint("TOPLEFT",0,0)
-	f.TextFrame.text:SetText("Quest Items")
+
+if not f.title then
+	f.title = CreateFrame("Frame","$parent_title",f, BackdropTemplate)
+	f.title:SetPoint("TOPLEFT",f,5,5)
+	f.title.text = f.title:CreateFontString(nil,"OVERLAY")
+	f.title.text:ClearAllPoints()
+	f.title.text:SetPoint("CENTER",f.title,2,1)
+	f.title.text:SetJustifyH("CENTER")
+	f.title.text:SetJustifyV("CENTER")
+	f.title.text:SetTextColor(1,1,1)
+	f.title.text:SetFont(RXP_.font, 9)
+	f.title.text:SetText("Quest Items")
+	f.title:EnableMouse(true)
+	f.title:SetScript("OnMouseDown", f.onMouseDown)
+	f.title:SetScript("OnMouseUp", f.onMouseUp)
 end
 
 
-f:SetHeight(50);
+
+
+
+f:SetHeight(40);
 
 end
 
@@ -2588,11 +2601,22 @@ function RXP_.UpdateItemFrame(itemFrame)
 	
 	itemFrame.step = stepframe.step
 	]]
+
 	if InCombatLockdown() then return end 
 	local buttonList = itemFrame.buttonList
 	local itemList = GetActiveItemList()
 
-
+	if itemFrame.hardcore ~= RXPCData.hardcore or not itemFrame.hardcore then
+		itemFrame.hardcore = RXPCData.hardcore
+		itemFrame:ClearBackdrop()
+		itemFrame:SetBackdrop(RXPFrame.backdropEdge)
+		local r,g,b = unpack(RXP_.colors.background)
+		itemFrame:SetBackdropColor(r,g,b,0.4)
+		itemFrame.title:ClearBackdrop()
+		itemFrame.title:SetBackdrop(RXPFrame.backdropEdge)
+		itemFrame.title:SetBackdropColor(unpack(RXP_.colors.background))
+	end
+	itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth()+10,17)
 	local i = 0
 	for id,item in pairs(itemList) do
 		i = i+1
@@ -2607,7 +2631,7 @@ function RXP_.UpdateItemFrame(itemFrame)
 
 			btn:ClearAllPoints()
 			if n == 1 then
-				btn:SetPoint("BOTTOMLEFT", itemFrame,"BOTTOMLEFT", 5,5)
+				btn:SetPoint("BOTTOMLEFT", itemFrame,"BOTTOMLEFT", 6,6)
 			else
 				btn:SetPoint("CENTER",buttonList[n-1],"CENTER",27,0)
 			end
@@ -2649,76 +2673,7 @@ function RXP_.UpdateItemFrame(itemFrame)
 	for n = i+1,#buttonList do
 		buttonList[n]:Hide()
 	end
-	local width = math.max(34,i*27+7)
+	local width = math.max(itemFrame.title:GetWidth()+10,i*27+8)
 	itemFrame:SetWidth(width);
 	
 end
-
-
---[[
-function z.UpdateFrame()
-	if addon.currentGuide and addon.currentGuide.group ~= "Zarant" then
-		return zQuestItemFrame:Hide()
-	end
-
-	local itemList = GetActiveItemList()
-
---/run Guidelime.Zarant.CreateItemFrame()
-	local i = 0
-	for id,item in pairs(itemList) do
-		i = i+1
-		local btn = buttonList[i]
-
-		if not btn then
-			btn = CreateFrame("CheckButton", "Example", zQuestItemFrame, "SecureActionButtonTemplate")
-			btn:SetAttribute("type", "item")
-			btn:SetSize(25, 25)
-			table.insert(buttonList,btn)
-			local n = #buttonList
-
-			btn:ClearAllPoints()
-			if n == 1 then
-				btn:SetPoint("BOTTOMLEFT", zQuestItemFrame,"BOTTOMLEFT", 5,5)
-			else
-				btn:SetPoint("CENTER",buttonList[n-1],"CENTER",27,0)
-			end
-			btn.icon  = btn:CreateTexture(nil, "BACKGROUND");
-			local icon = btn.icon
-			icon:SetAllPoints(true);
-			icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
-
-
-
-			btn:SetScript("OnEnter",fOnEnter)
-			btn:SetScript("OnLeave",fOnLeave)
-
-			local ht = btn:CreateTexture(nil, "HIGHLIGHT")
-			ht:SetAllPoints(true)
-			ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
-			ht:SetBlendMode("ADD")
-		end
-
-		--print(id,item.texture,item.name)
-		btn:SetAttribute("item", item.name)
-		btn.itemId = id
-		btn.bag = item.bag
-		btn.slot = item.slot
-		btn.icon:SetTexture(item.texture)
-		btn:Show()
-	end
-	if i == 0 then
-		zQuestItemFrame:Hide()
-	else
-		zQuestItemFrame:Show()
-	end
-
-	for n = i+1,#buttonList do
-		buttonList[n]:Hide()
-	end
-
-local width = math.max(90,i*27+7)
-zQuestItemFrame:SetWidth(width);
-zQuestItemFrame:Show()
-
-end
-]]
