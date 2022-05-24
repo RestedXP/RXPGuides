@@ -1091,7 +1091,7 @@ function RXP_.EventHandler(self,event,...)
     if self.callback and self.step and self.step.active then
         self.callback(self,event,...)
     else
-        print('!!!')
+        print('!!!')--ok
         self.callback = nil
         self:UnregisterEvent(event)
     end
@@ -2415,6 +2415,12 @@ function RXP_.GetQuestLog()
     local QL = RXP_.QL
     local qError
 	local eStep
+	local maxQuests
+	if RXP_.version == "CLASSIC" then
+		maxQuests = 20
+	else
+		maxQuests = 25
+	end
     RXP_.next = group.next
 
     if (RXPCData.SoM and guide.era or not RXPCData.SoM and guide.som or RXPCData.SoM and RXPCData.phase > 2 and guide["era/som"]) or not guide then
@@ -2432,7 +2438,7 @@ function RXP_.GetQuestLog()
         for n in pairs(QL) do
             nQuests = nQuests + 1
         end
-        if nQuests > 20 then
+        if nQuests > maxQuests then
             qError = true
 			eStep = step
             break
