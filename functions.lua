@@ -548,16 +548,8 @@ function RXP_.functions.accept(self,...)
         if step.active and db and type(db.QueryQuest) == "function" and not isQuestAccepted and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if quest then
-                local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
-                if quest.preQuestSingle then
-                    for _,qID in pairs(quest.preQuestSingle) do
-                        if RXP_.questTurnIn[qID] and (RXP_.questAccept[qID] or IsOnQuest(qID)) then
-                            preQuest = quest:IsPreQuestGroupFulfilled()
-                            break
-                        end
-                    end
-                end
-                if not preQuest then
+                local doable = db:IsDoable(id)
+                if not doable then
                     local requiredQuests
                     requiredQuests = quest.preQuestGroup or quest.preQuestSingle or {}
                     local tooltip = RXP_.colors.tooltip.."Missing pre-requisites:|r\n"
@@ -670,12 +662,12 @@ function RXP_.functions.turnin(self,...)
 
         if step.active or element.retrieveText then
             RXP_.questTurnIn[id] = element
-            RXP_.questAccept[id] = RXP_.questAccept[id] or element
+            --RXP_.questAccept[id] = RXP_.questAccept[id] or element
             local quest = RXP_.GetQuestName(id,true)
             if quest then
                 element.title = quest
                 RXP_.questTurnIn[quest] = element
-                RXP_.questAccept[quest] = RXP_.questAccept[quest] or element
+                --RXP_.questAccept[quest] = RXP_.questAccept[quest] or element
                 element.text = element.text:gsub("%*quest%*",quest)
                 if element.requestFromServer then
                     element.requestFromServer = nil
@@ -689,20 +681,25 @@ function RXP_.functions.turnin(self,...)
 
         local icon = RXP_.icons.turnin
         local skip
-        if step.active and db and type(db.QueryQuest) == "function" and not RXP_.questAccept[id] and not RXP_.skipPreReq[id] then
+        if step.active and db and type(db.QueryQuest) == "function" and RXP_.pickUpList[id] and not RXP_.questAccept[id] and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if not IsOnQuest(id) and quest and not quest.IsRepeatable then
                 local requiredQuests = {}
-                local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
-                local questList
-                if not preQuest then
-                    questList = quest.preQuestGroup or quest.preQuestSingle
+                local doable = db:IsDoable(id)
+                
+                if not doable then         
+					if quest.preQuestGroup then
+						for _,qID in ipairs(quest.preQuestGroup) do
+							table.insert(requiredQuests,qID)
+						end
+					end
+					if quest.preQuestSingle then
+						for _,qID in ipairs(quest.preQuestSingle) do
+							table.insert(requiredQuests,qID)
+						end
+					end
                 end
-                if questList then
-                    for _,qID in ipairs(questList) do
-                        table.insert(requiredQuests,qID)
-                    end
-                end
+				
                 table.insert(requiredQuests,id)
                 local tooltip = RXP_.colors.tooltip.."Missing pre-requisites:|r\n"
                 for i,qid in ipairs(requiredQuests) do
@@ -853,15 +850,18 @@ function RXP_.UpdateQuestCompletionData(self)
             end
             if not IsOnQuest(id) and validQuest then
                 local requiredQuests = {}
-                local preQuest = quest:IsPreQuestGroupFulfilled() and quest:IsPreQuestSingleFulfilled()
-                local questList
-                if not preQuest then
-                    questList = quest.preQuestGroup or quest.preQuestSingle
-                end
-                if questList then
-                    for _,qID in ipairs(questList) do
-                        table.insert(requiredQuests,qID)
-                    end
+                local doable = db:IsDoable(id)
+				if not doable then         
+					if quest.preQuestGroup then
+						for _,qID in ipairs(quest.preQuestGroup) do
+							table.insert(requiredQuests,qID)
+						end
+					end
+					if quest.preQuestSingle then
+						for _,qID in ipairs(quest.preQuestSingle) do
+							table.insert(requiredQuests,qID)
+						end
+					end
                 end
                 table.insert(requiredQuests,id)
                 local tooltip = RXP_.colors.tooltip.."Missing pre-requisites:|r\n"
@@ -2363,7 +2363,7 @@ function RXP_.DepositItems(itemList)
             end
         end
     end
-    print(text)
+    print(text)--ok
 
     RXP_.GoThroughBags(itemList,function(bag,slot,bagContents)
         PickupContainerItem(bag,slot)
@@ -2449,7 +2449,7 @@ function RXP_.WithdrawItems(itemList)
             end
         end
     end
-    print(text)
+    print(text)--ok
 
     RXP_.GoThroughBank(itemList,function(bag,slot,bagContents)
         PickupContainerItem(bag,slot)
@@ -2599,7 +2599,7 @@ function RXP_.functions.buy(self,...)
                 local name, texture, price, quantity = GetMerchantItemInfo(i)
 
                 if itemID == id or name == id then
-                    print("Buying "..name.." x"..total)
+                    print("Buying "..name.." x"..total)--ok
                     if quantity and quantity > 1 then
                         for n=1,math.ceil(total/quantity) do
                             BuyMerchantItem(i, quantity)
@@ -2642,7 +2642,6 @@ function RXP_.functions.skipgossip(self,text,...)
     args = args or {}
 	local event = text
     if event == "GOSSIP_SHOW" then
-		--print('ok')
         local id = tonumber(args[1])
         if #args == 0 or not id then
             if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
