@@ -339,7 +339,10 @@ function RXP_.GetQuestObjectives(id,step)
 end
 
 function RXP_.GetItemName(id)
-    local name = GetItemInfo(id)
+	id = id or false
+	id = tonumber(id)
+	if not id then return end
+	local name = GetItemInfo(id)
     if not name then
         RXP_.itemQueryList[id] = true
     end
@@ -871,6 +874,7 @@ function RXP_.UpdateQuestCompletionData(self)
             local questType = quest.ObjectiveData[element.obj].Type
             local validQuest = true
             if questType == "item" then
+				RXP_.GetItemName(itemId)
                 validQuest = select(12,GetItemInfo(itemId)) == 12 and select(11,GetItemInfo(itemId)) == 0
             end
             if not IsOnQuest(id) and validQuest then
