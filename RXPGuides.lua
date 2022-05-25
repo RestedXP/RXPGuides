@@ -616,9 +616,11 @@ function RXP_.RenderFrame()
     f.BottomFrame:SetBackdrop(f.backdropEdge)
     f.BottomFrame:SetBackdropColor(unpack(RXP_.colors.background))
 
-    f.activeItemFrame:ClearBackdrop()
-    f.activeItemFrame:SetBackdrop(f.backdropEdge)
-    f.activeItemFrame:SetBackdropColor(unpack(RXP_.colors.background))
+	if f.activeItemFrame then
+		f.activeItemFrame:ClearBackdrop()
+		f.activeItemFrame:SetBackdrop(f.backdropEdge)
+		f.activeItemFrame:SetBackdropColor(unpack(RXP_.colors.background))
+	end
 
     f.GuideName:ClearBackdrop()
     f.GuideName:SetBackdrop(RXP_.guideNameBackdrop)
