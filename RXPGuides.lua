@@ -10,7 +10,7 @@ local _,race = UnitRace("player")
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
 if version < 20000 then
-	RXP_.version = "CLASSIC"
+    RXP_.version = "CLASSIC"
 elseif version > 20000 and version < 30000 then
     RXP_.version = "TBC"
 else
@@ -42,7 +42,7 @@ eventFrame:RegisterEvent("TRAINER_CLOSED")
 eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 eventFrame:RegisterEvent("BAG_UPDATE_DELAYED")
 if C_QuestLog.RequestLoadQuestByID then
-	eventFrame:RegisterEvent("QUEST_DATA_LOAD_RESULT")
+    eventFrame:RegisterEvent("QUEST_DATA_LOAD_RESULT")
 end
 questFrame:RegisterEvent("QUEST_COMPLETE")
 questFrame:RegisterEvent("QUEST_PROGRESS")
@@ -57,13 +57,13 @@ RXPG_Debug = false
 
 local SoMtimer
 local function SoMCheck()
-	if version > 20000 then 
-		return 
-	elseif not SoMtimer then
-		SoMtimer = GetTime()
-	end
+    if version > 20000 then
+        return
+    elseif not SoMtimer then
+        SoMtimer = GetTime()
+    end
 
-	local buffId = 362859
+    local buffId = 362859
     if RXPCData and type(RXPCData.SoM) ~= "boolean" and GetTime() - SoMtimer < 300 then
         local id = 0
         local n = 1
@@ -72,53 +72,53 @@ local function SoMCheck()
            n = n+1
            if id == buffId then
               RXPCData.SoM = true
-              if RXP_.currentGuide and RXP_.currentGuide.name then 
+              if RXP_.currentGuide and RXP_.currentGuide.name then
                 RXP_:LoadGuide(RXP_.currentGuide)
               end
               RXP_.GenerateMenuTable()
               break
            end
         end
-		if id ~= buffId and RXPCData.SoM then
-			RXPCData.SoM = nil
-			if RXP_.currentGuide and RXP_.currentGuide.name then 
+        if id ~= buffId and RXPCData.SoM then
+            RXPCData.SoM = nil
+            if RXP_.currentGuide and RXP_.currentGuide.name then
                 RXP_:LoadGuide(RXP_.currentGuide)
-			end
-			RXP_.GenerateMenuTable()
-		end
-		if RXPOptionsSoM then RXPOptionsSoM:SetChecked(RXPCData.SoM) end
+            end
+            RXP_.GenerateMenuTable()
+        end
+        if RXPOptionsSoM then RXPOptionsSoM:SetChecked(RXPCData.SoM) end
     end
 end
 
 function RXPG_init()
-	RXPData = RXPData or {}
-	RXPCData = RXPCData or {}
+    RXPData = RXPData or {}
+    RXPCData = RXPCData or {}
     RXPCData.hardcore = (RXP_.version == "CLASSIC") and RXPCData.hardcore
-	if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
-		RXPData.addonVersion = addonVersion
-		RXPCData.phase = 4
-	end
-	RXPCData.phase = RXPCData.phase or 4
-	RXPCData.SoM = RXPCData.SoM or 1
+    if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
+        RXPData.addonVersion = addonVersion
+        RXPCData.phase = 4
+    end
+    RXPCData.phase = RXPCData.phase or 4
+    RXPCData.SoM = RXPCData.SoM or 1
     SoMCheck()
     RXP_.RenderFrame()
-	RXPCData.stepSkip = RXPCData.stepSkip or {}
-	RXPData.numMapPins = RXPData.numMapPins or 7
-	RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
-	RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
-	RXPData.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity or 0.35
+    RXPCData.stepSkip = RXPCData.stepSkip or {}
+    RXPData.numMapPins = RXPData.numMapPins or 7
+    RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
+    RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
+    RXPData.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity or 0.35
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.arrowText = RXPData.arrowText or 9
-	if RXPCData.flightPaths then
-		if UnitLevel("player") <= 6 then
-			for i in pairs(RXPCData.flightPaths) do
-				RXPCData.flightPaths[i] = nil
-			end
-		end
-	else
-		RXPCData.flightPaths = {}
-	end
+    if RXPCData.flightPaths then
+        if UnitLevel("player") <= 6 then
+            for i in pairs(RXPCData.flightPaths) do
+                RXPCData.flightPaths[i] = nil
+            end
+        end
+    else
+        RXPCData.flightPaths = {}
+    end
     RXPData.batchSize = RXPData.batchSize or 5
     if RXPData.disableTrainerAutomation == nil then
         RXPData.disableTrainerAutomation = true
@@ -127,7 +127,7 @@ function RXPG_init()
         RXPData.trainGenericSpells = true
     end
 
-	
+
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     f:SetShown(not RXPCData.hideWindow)
     C_Timer.After(0.5,function()
@@ -156,17 +156,17 @@ local questProgressTimer = 0
 local questTimer = 0
 
 function RXP_.QuestAutoAccept(title)
-	if title then
-		local element = RXP_.questAccept[title]
-		return element and element.step.active
-	end
+    if title then
+        local element = RXP_.questAccept[title]
+        return element and element.step.active
+    end
 end
 
 function RXP_.QuestAutoTurnIn(title)
-	if title then
-		local element = RXP_.questTurnIn[title]
-		return (element and element.step.active) and element.reward
-	end
+    if title then
+        local element = RXP_.questTurnIn[title]
+        return (element and element.step.active) and element.reward
+    end
 end
 
 RXP_.skillList = {}
@@ -207,7 +207,7 @@ local function ProcessSpells(names,rank)
 end
 
 local function OnTrainer()
-	
+
     if not RXPData.disableTrainerAutomation then
         local level = UnitLevel("player")
         local i = GetNumTrainerServices()
@@ -215,10 +215,10 @@ local function OnTrainer()
         if not i or i == 0 or GetTime() - trainerUpdate > 15 then
             return
         end
-        
+
         local names = {}
         local rank = {}
-        
+
         for id = 1,i do
             local n, r, cat = GetTrainerServiceInfo(id)
             if cat == "available" then
@@ -226,7 +226,7 @@ local function OnTrainer()
                 rank[id] = r
             end
         end
-        
+
         ProcessSpells(names,rank)
 
         for spellName,spellRank in pairs(RXP_.skillList) do
@@ -247,14 +247,14 @@ end
 
 local tTimer = 0
 local function trainerFrameUpdate(self,t)
-	tTimer = tTimer + t
-	if tTimer >= 0.2 then
-		tTimer = 0
-		if GetTime() - trainerUpdate > 15 then
-			self:SetScript("OnUpdate",nil)
-		end
-		OnTrainer()
-	end
+    tTimer = tTimer + t
+    if tTimer >= 0.2 then
+        tTimer = 0
+        if GetTime() - trainerUpdate > 15 then
+            self:SetScript("OnUpdate",nil)
+        end
+        OnTrainer()
+    end
 end
 
 local G_GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActiveQuests
@@ -267,60 +267,60 @@ local G_GetAvailableQuests = C_GossipInfo.GetAvailableQuests or GetGossipAvailab
 
 function RXP_.QuestAutomation(event,arg1,arg2)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
-        return 
+        return
     end
-    
-	
-	if not event then
-		if GossipFrame and GossipFrame:IsShown() then
-			event = "GOSSIP_SHOW"
-		elseif QuestFrameGreetingPanel and QuestFrameGreetingPanel:IsShown() then
-			event = "QUEST_GREETING"
-		elseif QuestFrameProgressPanel and QuestFrameProgressPanel:IsShown() then
-			event = "QUEST_PROGRESS"
-		elseif QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() or QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown() then
-			event = "QUEST_COMPLETE"
-		else
-			return
-		end
-	end
-	
+
+
+    if not event then
+        if GossipFrame and GossipFrame:IsShown() then
+            event = "GOSSIP_SHOW"
+        elseif QuestFrameGreetingPanel and QuestFrameGreetingPanel:IsShown() then
+            event = "QUEST_GREETING"
+        elseif QuestFrameProgressPanel and QuestFrameProgressPanel:IsShown() then
+            event = "QUEST_PROGRESS"
+        elseif QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() or QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown() then
+            event = "QUEST_COMPLETE"
+        else
+            return
+        end
+    end
+
     if event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
-		ConfirmAcceptQuest()
+        ConfirmAcceptQuest()
     elseif event == "QUEST_COMPLETE" or not event and (QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() or QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown()) then
         local id = GetQuestID()
-		local reward = RXP_.QuestAutoTurnIn(id)
-		local choices = GetNumQuestChoices()
-		if reward then
-			if choices <= 1 then
-				GetQuestReward(choices)
-			elseif reward > 0 then
-				GetQuestReward(reward)
-			end
-		end
-	
+        local reward = RXP_.QuestAutoTurnIn(id)
+        local choices = GetNumQuestChoices()
+        if reward then
+            if choices <= 1 then
+                GetQuestReward(choices)
+            elseif reward > 0 then
+                GetQuestReward(reward)
+            end
+        end
+
     elseif event == "QUEST_PROGRESS" and IsQuestCompletable() then
         CompleteQuest()
-		--questProgressTimer = GetTime()
+        --questProgressTimer = GetTime()
 
     elseif event == "QUEST_DETAIL" then
         local id = GetQuestID()
-		if RXP_.QuestAutoAccept(id) then
-			AcceptQuest()
-			HideUIPanel(QuestFrame)
-		end
-		
-	elseif event == "QUEST_GREETING" then
+        if RXP_.QuestAutoAccept(id) then
+            AcceptQuest()
+            HideUIPanel(QuestFrame)
+        end
+
+    elseif event == "QUEST_GREETING" then
         local nActive = GetNumActiveQuests()
-		local nAvailable = GetNumAvailableQuests()
-        
-		for i = 1, nActive do
-			local title, isComplete = GetActiveTitle(i)
-			if RXP_.QuestAutoTurnIn(title) and isComplete then
-				return SelectActiveQuest(i)
-			end
-		end
-		
+        local nAvailable = GetNumAvailableQuests()
+
+        for i = 1, nActive do
+            local title, isComplete = GetActiveTitle(i)
+            if RXP_.QuestAutoTurnIn(title) and isComplete then
+                return SelectActiveQuest(i)
+            end
+        end
+
         if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
             SelectAvailableQuest(1)
         else
@@ -330,49 +330,49 @@ function RXP_.QuestAutomation(event,arg1,arg2)
                     return SelectAvailableQuest(i)
                 end
             end
-		end
-	elseif event == "GOSSIP_SHOW" then
-		local nActive = G_GetNumActiveQuests()
-		local nAvailable = G_GetNumAvailableQuests()
-		local quests
-		if C_GossipInfo.GetActiveQuests then
-			quests = C_GossipInfo.GetActiveQuests() 
-		end
-		for i = 1, nActive do
-			local title, level, isTrivial, isComplete
-			if type(quests) == "table" then
-				title = quests[i].questID
-				isComplete = quests[i].isComplete
-			else
-				title, level, isTrivial, isComplete = select(i * 6 - 5, G_GetActiveQuests())
-			end
-			--print(title)
-			--print(quests[i])
-			if RXP_.QuestAutoTurnIn(title) and isComplete then
-				return G_SelectActiveQuest(i)
-			end
-		end
-		
+        end
+    elseif event == "GOSSIP_SHOW" then
+        local nActive = G_GetNumActiveQuests()
+        local nAvailable = G_GetNumAvailableQuests()
+        local quests
+        if C_GossipInfo.GetActiveQuests then
+            quests = C_GossipInfo.GetActiveQuests()
+        end
+        for i = 1, nActive do
+            local title, level, isTrivial, isComplete
+            if type(quests) == "table" then
+                title = quests[i].questID
+                isComplete = quests[i].isComplete
+            else
+                title, level, isTrivial, isComplete = select(i * 6 - 5, G_GetActiveQuests())
+            end
+            --print(title)
+            --print(quests[i])
+            if RXP_.QuestAutoTurnIn(title) and isComplete then
+                return G_SelectActiveQuest(i)
+            end
+        end
+
         if G_GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
             G_SelectAvailableQuest(1)
         else
-			local availableQuests
-			if C_GossipInfo.GetAvailableQuests then
-				availableQuests = C_GossipInfo.GetAvailableQuests()
-			end
-            for i = 1, nAvailable do
-				local quest
-				if type(availableQuests) == "table" then
-					quest = availableQuests[i].questID
-				else
-					quest = select(i * 7 - 6, G_GetAvailableQuests())
-				end
-				if RXP_.QuestAutoAccept(quest) then					
-					return G_SelectAvailableQuest(i)
-				end
+            local availableQuests
+            if C_GossipInfo.GetAvailableQuests then
+                availableQuests = C_GossipInfo.GetAvailableQuests()
             end
-		end
-	end
+            for i = 1, nAvailable do
+                local quest
+                if type(availableQuests) == "table" then
+                    quest = availableQuests[i].questID
+                else
+                    quest = select(i * 7 - 6, G_GetAvailableQuests())
+                end
+                if RXP_.QuestAutoAccept(quest) then
+                    return G_SelectAvailableQuest(i)
+                end
+            end
+        end
+    end
 end
 
 
@@ -382,47 +382,47 @@ end)
 
 eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
-	
-	if event == "GET_ITEM_INFO_RECEIVED" and arg2 then
-		if RXP_.itemQueryList[arg1] then
-			RXP_.itemQueryList[arg1] = nil
-			RXP_.updateStepText = true
-		elseif GetTime() - startTime < 15 then
-			RXP_.updateStepText = true
-		end
-		return
-	elseif (event == "BAG_UPDATE_DELAYED" or event == "PLAYER_REGEN_ENABLED") and RXP_.activeItemFrame and RXP_.activeItemFrame:IsShown() then
-		RXP_.UpdateItemFrame()
-	elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
-		C_Timer.After(1, function() RXP_.ReloadGuide() end)
-	elseif event == "TRAINER_SHOW" then
-		trainerUpdate = GetTime()
+
+    if event == "GET_ITEM_INFO_RECEIVED" and arg2 then
+        if RXP_.itemQueryList[arg1] then
+            RXP_.itemQueryList[arg1] = nil
+            RXP_.updateStepText = true
+        elseif GetTime() - startTime < 15 then
+            RXP_.updateStepText = true
+        end
+        return
+    elseif (event == "BAG_UPDATE_DELAYED" or event == "PLAYER_REGEN_ENABLED") and RXP_.activeItemFrame and RXP_.activeItemFrame:IsShown() then
+        RXP_.UpdateItemFrame()
+    elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
+        C_Timer.After(1, function() RXP_.ReloadGuide() end)
+    elseif event == "TRAINER_SHOW" then
+        trainerUpdate = GetTime()
         OnTrainer()
-		self:SetScript("OnUpdate",trainerFrameUpdate)
-		return
-	elseif event == "TRAINER_CLOSED" then
-		self:SetScript("OnUpdate",nil)
-		return
-	elseif event == "PLAYER_LOGIN" then
-		RXPG_init()
-		RXP_.GenerateMenuTable()
+        self:SetScript("OnUpdate",trainerFrameUpdate)
+        return
+    elseif event == "TRAINER_CLOSED" then
+        self:SetScript("OnUpdate",nil)
+        return
+    elseif event == "PLAYER_LOGIN" then
+        RXPG_init()
+        RXP_.GenerateMenuTable()
         RXP_.CreateOptionsPanel()
-		loadtime = GetTime()
+        loadtime = GetTime()
         ProcessSpells()
-		local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
+        local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
         if not guide and RXPData.autoLoadGuides then
             guide = RXP_.defaultGuide
             if RXP_.version ~= "CLASSIC" and (UnitLevel("player") == 58 and not guide.boost58) then
                 guide = nil
             end
         end
-		RXP_:LoadGuide(guide,true)
+        RXP_:LoadGuide(guide,true)
         if not RXP_.currentGuide then
             f:SetHeight(20)
             RXP_.UpdateBottomFrame()
             RXP_.noGuide = true
         end
-		return
+        return
     elseif event == "TAXIMAP_OPENED" then
         local FPlist = C_TaxiMap.GetAllTaxiNodes(C_Map.GetBestMapForUnit("player"))
         for k,v in pairs(FPlist) do
@@ -441,19 +441,19 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         SoMCheck()
     elseif event == "UNIT_PET" then
         RXP_.petFamily = GetPetIcon() or RXP_.petFamily
-	elseif event == "QUEST_DATA_LOAD_RESULT" and arg2 then
-		RXP_.requestQuestInfo[arg1] = 0
-		RXP_.updateStepText = true
-	end
-	
+    elseif event == "QUEST_DATA_LOAD_RESULT" and arg2 then
+        RXP_.requestQuestInfo[arg1] = 0
+        RXP_.updateStepText = true
+    end
+
 
 end)
 
 
 function RXP_.GetGuideTable(guideGroup,guideName)
-	if guideGroup and RXP_.guideList[guideGroup] and guideName and RXP_.guideList[guideGroup][guideName] then
-		return RXP_.guides[RXP_.guideList[guideGroup][guideName]]
-	end
+    if guideGroup and RXP_.guideList[guideGroup] and guideName and RXP_.guideList[guideGroup][guideName] then
+        return RXP_.guides[RXP_.guideList[guideGroup][guideName]]
+    end
 end
 
 --[[
@@ -466,10 +466,10 @@ local backdrop = {
  edgeSize = 8,
  tileSize = 8,
  insets = {
-	  left = 4,
-	  right = 2,
-	  top = 2,
-	  bottom = 4,
+      left = 4,
+      right = 2,
+      top = 2,
+      bottom = 4,
  },
  }
  ]]
@@ -494,7 +494,7 @@ local frame = f.CurrentStepFrame
        frame:SetPoint("TOPLEFT", f,"BOTTOMLEFT",3,0)
        frame:SetPoint("TOPRIGHT",f,"BOTTOMRIGHT",-3,0)
     end
-    
+
     if RXPData.anchorOrientation < 0 then
         SetBottom()
         if frame:GetBottom()*scale < 0 then
@@ -517,24 +517,24 @@ end
 f.OnMouseDown = function(self, button)
     if RXPData.lockFrames then
         return
-	elseif IsAltKeyDown() then
-		f:StartSizing("BOTTOMRIGHT")
-		f:SetScript("OnUpdate",RXP_.UpdateBottomFrame)
-		isResizing = true
-	else
-		f:StartMoving()
-	end
+    elseif IsAltKeyDown() then
+        f:StartSizing("BOTTOMRIGHT")
+        f:SetScript("OnUpdate",RXP_.UpdateBottomFrame)
+        isResizing = true
+    else
+        f:StartMoving()
+    end
 end
 
 f.OnMouseUp = function(self,button)
-	f:StopMovingOrSizing()
-	if isResizing then
+    f:StopMovingOrSizing()
+    if isResizing then
         RXP_.SetStep(RXPCData.currentStep)
-		f:SetScript("OnUpdate",nil)
-	end
+        f:SetScript("OnUpdate",nil)
+    end
     SetStepFrameAnchor()
-	RXP_.UpdateItemFrame()
-	isResizing = false
+    RXP_.UpdateItemFrame()
+    isResizing = false
 end
 
 
@@ -548,17 +548,17 @@ RXP_.stepPos = {}
 
 
 function StepScroll(n)
-	local value
-	if n == 1 or not RXP_.stepPos[n] then
-		value = 0
-	else
-		value = RXP_.stepPos[n]/RXP_.stepPos[0]*f.Steps.f1:GetHeight()-2
-		local smax = f.Steps.f1:GetHeight()-f.BottomFrame:GetHeight()+10
-		if value > smax then
-			value = smax
-		end
-	end	
-	f.SF.ScrollBar:SetValue(value)
+    local value
+    if n == 1 or not RXP_.stepPos[n] then
+        value = 0
+    else
+        value = RXP_.stepPos[n]/RXP_.stepPos[0]*f.Steps.f1:GetHeight()-2
+        local smax = f.Steps.f1:GetHeight()-f.BottomFrame:GetHeight()+10
+        if value > smax then
+            value = smax
+        end
+    end
+    f.SF.ScrollBar:SetValue(value)
 
 end
 
@@ -568,7 +568,7 @@ end
 RXP_.width,RXP_.height = 235,125
 
 f:SetWidth(RXP_.width)
-f:SetHeight(RXP_.height) 	
+f:SetHeight(RXP_.height)
 f:SetPoint("LEFT",0,35)
 f:SetFrameStrata("BACKGROUND")
 
@@ -621,11 +621,11 @@ function RXP_.RenderFrame()
     f.BottomFrame:SetBackdrop(f.backdropEdge)
     f.BottomFrame:SetBackdropColor(unpack(RXP_.colors.background))
 
-	if f.activeItemFrame then
-		f.activeItemFrame:ClearBackdrop()
-		f.activeItemFrame:SetBackdrop(f.backdropEdge)
-		f.activeItemFrame:SetBackdropColor(unpack(RXP_.colors.background))
-	end
+    if f.activeItemFrame then
+        f.activeItemFrame:ClearBackdrop()
+        f.activeItemFrame:SetBackdrop(f.backdropEdge)
+        f.activeItemFrame:SetBackdropColor(unpack(RXP_.colors.background))
+    end
 
     f.GuideName:ClearBackdrop()
     f.GuideName:SetBackdrop(RXP_.guideNameBackdrop)
@@ -634,7 +634,7 @@ function RXP_.RenderFrame()
     f.GuideName.icon:SetTexture(RXP_.GetTexture("rxp_logo-64"))
     f.GuideName.classIcon:SetTexture(RXP_.GetTexture(class))
     f.GuideName.cog:SetNormalTexture(RXP_.GetTexture("rxp_cog-32"))
-    
+
     RXP_.arrowFrame.texture:SetTexture(RXP_.GetTexture("rxp_navigation_arrow-1"))
     RXP_.UpdateScrollBar()
     if RXP_.currentGuide then
@@ -662,10 +662,10 @@ f.backdropEdge = {
  edgeSize = 8,
  tileSize = 8,
  insets = {
-	  left = 4,
-	  right = 2,
-	  top = 2,
-	  bottom = 4,
+      left = 4,
+      right = 2,
+      top = 2,
+      bottom = 4,
  },
  }
 
@@ -673,9 +673,9 @@ f.backdropEdge = {
 
 
 local backdrop = {bgFile = "Interface/BUTTONS/WHITE8X8",
-	tile = true, tileSize = 16, 
-	--edgeFile = "Interface/Tooltips/UI-Tooltip-Border", 
-	--edgeSize = 16, insets = {left = 4, right = 4, top = 4, bottom = 4}
+    tile = true, tileSize = 16,
+    --edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+    --edgeSize = 16, insets = {left = 4, right = 4, top = 4, bottom = 4}
 }
 
 f.GuideName = CreateFrame("Frame","$parentGuideName",f, BackdropTemplate)
@@ -712,174 +712,174 @@ f.CurrentStepFrame.frame = {}
 
 function f.ClearFrameData()
 
-	for i,stepframe in ipairs(f.CurrentStepFrame.frame) do
-		--frame:SetHeight(0)
-		stepframe:Hide()
-		stepframe:SetScript("OnUpdate",nil)
-		stepframe:SetScript("OnEvent",nil)
-		stepframe:UnregisterAllEvents()
+    for i,stepframe in ipairs(f.CurrentStepFrame.frame) do
+        --frame:SetHeight(0)
+        stepframe:Hide()
+        stepframe:SetScript("OnUpdate",nil)
+        stepframe:SetScript("OnEvent",nil)
+        stepframe:UnregisterAllEvents()
         stepframe.callback = nil
-		if stepframe.step then
-			stepframe.step.frame = nil
-			stepframe.step.active = nil
-			stepframe.step = nil
-			stepframe.sticky = nil
-			stepframe.index = nil
-		end
-		for j,frame in ipairs(stepframe.elements) do
-			--element:SetHeight(0)
-			if frame.step then
-				if not frame.step.sticky then
-					frame.element.completed = nil
-				end
-				frame.element.frame = nil
-				frame.element.skip = nil
-			end
+        if stepframe.step then
+            stepframe.step.frame = nil
+            stepframe.step.active = nil
+            stepframe.step = nil
+            stepframe.sticky = nil
+            stepframe.index = nil
+        end
+        for j,frame in ipairs(stepframe.elements) do
+            --element:SetHeight(0)
+            if frame.step then
+                if not frame.step.sticky then
+                    frame.element.completed = nil
+                end
+                frame.element.frame = nil
+                frame.element.skip = nil
+            end
             frame.step = nil
             frame.index = nil
             frame.element = nil
             frame.callback = nil
-			frame:Hide()
-			frame:UnregisterAllEvents()
-			frame:SetScript("OnUpdate",nil)
-			frame:SetScript("OnEvent",nil)
+            frame:Hide()
+            frame:UnregisterAllEvents()
+            frame:SetScript("OnUpdate",nil)
+            frame:SetScript("OnEvent",nil)
             frame:SetScript("OnEnter",nil)
             frame:SetScript("OnLeave",nil)
             frame:SetScript("OnMouseDown",nil)
             frame:SetMouseClickEnabled(false)
-			frame.button:SetChecked(false)
+            frame.button:SetChecked(false)
             frame.highlight:Hide()
-		end
-	end
+        end
+    end
 end
 RXP_.MainFrame = f
 
 f.CurrentStepFrame.activeSteps = {}
 local isUpdating
 function RXP_.UpdateStepCompletion()
-	RXP_.updateSteps = false
-	
-	local n = 0
-	local update
-	
-	for i,step in ipairs(f.CurrentStepFrame.activeSteps) do
-		local completed = true
-		if not step.completed then
-			for j,element in ipairs(step.elements) do
-				if not (element.completed or element.skip) then
-					completed = false
-					break
-				end
-			end
-		end
-		
-		local completewith = step.completewith
-		if completewith and not completed then
-			local guide = RXP_.currentGuide
-			if completewith == "next" then
-				completewith = step.index+1
-			else
-				completewith = guide.labels[completewith]
-			end
-			if completewith then
-				if guide.steps[completewith] and guide.steps[completewith].sticky then
-					if RXPCData.stepSkip[completewith] then
-						completed = true
-					end
-				else
-					if RXPCData.currentStep > completewith then
-						completed = true
-					end
-				end
-			end
-		end
-		
-		if completed then
-			for j,element in ipairs(step.elements) do
-				if element.OnStepCompletion then
-					element:OnStepCompletion()
-				end
-			end
-			if step.sticky then
-				RXPCData.stepSkip[step.index] = true
-				update = true
-				step.active = nil
-			elseif step.index >= RXPCData.currentStep then
-				step.completed = true
-				RXP_.UpdateBottomFrame(nil,nil,step.index)
-				if step.index == RXPCData.currentStep then
-					RXP_.loadNextStep = true
-				end
-				return
-			end
-		end
-	end
-	
-	if update then
-		--print('opt',RXPCData.currentStep)
-		return RXP_.SetStep(RXPCData.currentStep)
-	end
+    RXP_.updateSteps = false
+
+    local n = 0
+    local update
+
+    for i,step in ipairs(f.CurrentStepFrame.activeSteps) do
+        local completed = true
+        if not step.completed then
+            for j,element in ipairs(step.elements) do
+                if not (element.completed or element.skip) then
+                    completed = false
+                    break
+                end
+            end
+        end
+
+        local completewith = step.completewith
+        if completewith and not completed then
+            local guide = RXP_.currentGuide
+            if completewith == "next" then
+                completewith = step.index+1
+            else
+                completewith = guide.labels[completewith]
+            end
+            if completewith then
+                if guide.steps[completewith] and guide.steps[completewith].sticky then
+                    if RXPCData.stepSkip[completewith] then
+                        completed = true
+                    end
+                else
+                    if RXPCData.currentStep > completewith then
+                        completed = true
+                    end
+                end
+            end
+        end
+
+        if completed then
+            for j,element in ipairs(step.elements) do
+                if element.OnStepCompletion then
+                    element:OnStepCompletion()
+                end
+            end
+            if step.sticky then
+                RXPCData.stepSkip[step.index] = true
+                update = true
+                step.active = nil
+            elseif step.index >= RXPCData.currentStep then
+                step.completed = true
+                RXP_.UpdateBottomFrame(nil,nil,step.index)
+                if step.index == RXPCData.currentStep then
+                    RXP_.loadNextStep = true
+                end
+                return
+            end
+        end
+    end
+
+    if update then
+        --print('opt',RXPCData.currentStep)
+        return RXP_.SetStep(RXPCData.currentStep)
+    end
 end
 
 function RXP_.SetStep(n,n2)
     if type(n) == "table" then n = n2 end
-	local guide = RXP_.currentGuide
+    local guide = RXP_.currentGuide
     if not guide then return end
-	local group = guide.group
+    local group = guide.group
 
-	--print(n)
-	if n > #guide.steps then
-		local isComplete = true
-		local completedStep
-		for i,step in pairs(f.CurrentStepFrame.activeSteps) do
-			if step.sticky and not RXPCData.stepSkip[i] then
-				isComplete = false
-			end
-		end
-		if isComplete then
-			return RXPG[group].next()
-		else
-			n = #guide.steps
-		end
-	end
-	RXPCData.currentStep = n
-	--isUpdating = true
-
-
-	if not guide.steps[n].active then
-		for _,element in ipairs(guide.steps[n]) do
-			if element.OnStepActivation then
-				element:OnStepActivation()
-			end
-		end
-	end
+    --print(n)
+    if n > #guide.steps then
+        local isComplete = true
+        local completedStep
+        for i,step in pairs(f.CurrentStepFrame.activeSteps) do
+            if step.sticky and not RXPCData.stepSkip[i] then
+                isComplete = false
+            end
+        end
+        if isComplete then
+            return RXPG[group].next()
+        else
+            n = #guide.steps
+        end
+    end
+    RXPCData.currentStep = n
+    --isUpdating = true
 
 
-	RXPCData.stepSkip[n+1] = nil
-	
-	if guide.steps[n].sticky and n < #guide.steps then
-		return RXP_.SetStep(n+1)
-	end
-	
-	for i,step in pairs(f.CurrentStepFrame.activeSteps) do
-		step.active = nil
-		if n < #guide.steps then
-			step.completed = nil
-		end
-	end
-	
+    if not guide.steps[n].active then
+        for _,element in ipairs(guide.steps[n]) do
+            if element.OnStepActivation then
+                element:OnStepActivation()
+            end
+        end
+    end
+
+
+    RXPCData.stepSkip[n+1] = nil
+
+    if guide.steps[n].sticky and n < #guide.steps then
+        return RXP_.SetStep(n+1)
+    end
+
+    for i,step in pairs(f.CurrentStepFrame.activeSteps) do
+        step.active = nil
+        if n < #guide.steps then
+            step.completed = nil
+        end
+    end
+
     local activeSteps = f.CurrentStepFrame.activeSteps
-	ClearTable(activeSteps)
+    ClearTable(activeSteps)
     ClearTable(RXP_.questAccept)
-	ClearTable(RXP_.questTurnIn)
-	ClearTable(RXP_.activeItems)
-	f.ClearFrameData()
-	local level = UnitLevel("player")
+    ClearTable(RXP_.questTurnIn)
+    ClearTable(RXP_.activeItems)
+    f.ClearFrameData()
+    local level = UnitLevel("player")
     local scrollHeight = 1
-    
-	for i = 1,n-1 do
-		local step = guide.steps[i]
-		if step.sticky then
+
+    for i = 1,n-1 do
+        local step = guide.steps[i]
+        if step.sticky then
             local req = guide.labels[step.requires]
             if step.requires and req then
                 req = guide.steps[req]
@@ -888,72 +888,72 @@ function RXP_.SetStep(n,n2)
                 end
             end
             step.reqFulfilled = not(req and (req.active or (req.sticky and not RXPCData.stepSkip[req.index])))
-            if not RXPCData.stepSkip[i] and	step.reqFulfilled and level >= step.level then
+            if not RXPCData.stepSkip[i] and    step.reqFulfilled and level >= step.level then
                 table.insert(activeSteps,step)
                 if n > 1 then scrollHeight = n-1 end
                 --f.Steps.frame[i]:SetAlpha(0.66)
                 step.active = true
-            end        
-		end
-	end
-    
-	
-	local step = guide.steps[n]
+            end
+        end
+    end
+
+
+    local step = guide.steps[n]
     local req = step.requires and guide.labels[step.requires] and guide.steps[guide.labels[step.requires]]
-	if step.completed and n < #guide.steps then
-		return RXP_.SetStep(n+1)
-	elseif step and not step.completed and not(req and #activeSteps > 0 and (req.active or not(req.reqFulfilled))) and level >= step.level then
-		table.insert(activeSteps,step)
-		f.Steps.frame[n]:SetAlpha(1)
-		step.active = true
+    if step.completed and n < #guide.steps then
+        return RXP_.SetStep(n+1)
+    elseif step and not step.completed and not(req and #activeSteps > 0 and (req.active or not(req.reqFulfilled))) and level >= step.level then
+        table.insert(activeSteps,step)
+        f.Steps.frame[n]:SetAlpha(1)
+        step.active = true
         scrollHeight = n
-	end
-	
-	if #activeSteps == 0 then 
-		if n >= #guide.steps then
-			return RXPG[group].next()
-		else
-			return RXP_.SetStep(n+1)
-		end
-	end
-	
-	local totalHeight = 0
-	local c = 0
-	local heightDiff = f:GetHeight() - f.CurrentStepFrame:GetHeight()
-	for i,step in pairs(activeSteps) do
-		
-		local index = step.index
-		c = c+1
-		local stepframe = f.CurrentStepFrame.frame[c]
-		if not stepframe then
-			f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame"..c,f.CurrentStepFrame, BackdropTemplate)
-			stepframe = f.CurrentStepFrame.frame[c]
-			--stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
-			stepframe.elements = {}
-			--RXP_.CreateActiveItemFrame(stepframe)
-		end
+    end
+
+    if #activeSteps == 0 then
+        if n >= #guide.steps then
+            return RXPG[group].next()
+        else
+            return RXP_.SetStep(n+1)
+        end
+    end
+
+    local totalHeight = 0
+    local c = 0
+    local heightDiff = f:GetHeight() - f.CurrentStepFrame:GetHeight()
+    for i,step in pairs(activeSteps) do
+
+        local index = step.index
+        c = c+1
+        local stepframe = f.CurrentStepFrame.frame[c]
+        if not stepframe then
+            f.CurrentStepFrame.frame[c] = CreateFrame("Frame","$parent_frame"..c,f.CurrentStepFrame, BackdropTemplate)
+            stepframe = f.CurrentStepFrame.frame[c]
+            --stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
+            stepframe.elements = {}
+            --RXP_.CreateActiveItemFrame(stepframe)
+        end
         stepframe:ClearAllPoints()
-		if c == 1 then
-			stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame,0,0)
-			stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame,0,0)
-		else
-			stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame.frame[c-1],"BOTTOMLEFT",0,-5)
-			stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame.frame[c-1],"BOTTOMRIGHT",0,-5)
-		end
-		if not stepframe.number then
-			stepframe.number = CreateFrame("Frame","$parent_number",stepframe, BackdropTemplate)
-			stepframe.number:SetPoint("TOPLEFT",stepframe,7,5)
-			stepframe.number.text = stepframe.number:CreateFontString(nil,"OVERLAY")
-			--stepframe.number.text:SetFontObject(GameFontNormalSmall)
-			stepframe.number.text:ClearAllPoints()
-			stepframe.number.text:SetPoint("CENTER",stepframe.number,2,1)
-			stepframe.number.text:SetJustifyH("CENTER")
-			stepframe.number.text:SetJustifyV("CENTER")
-			stepframe.number.text:SetTextColor(1,1,1)
-			stepframe.number.text:SetFont(RXP_.font, 9)
-		end
+        if c == 1 then
+            stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame,0,0)
+            stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame,0,0)
+        else
+            stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame.frame[c-1],"BOTTOMLEFT",0,-5)
+            stepframe:SetPoint("TOPRIGHT",f.CurrentStepFrame.frame[c-1],"BOTTOMRIGHT",0,-5)
+        end
+        if not stepframe.number then
+            stepframe.number = CreateFrame("Frame","$parent_number",stepframe, BackdropTemplate)
+            stepframe.number:SetPoint("TOPLEFT",stepframe,7,5)
+            stepframe.number.text = stepframe.number:CreateFontString(nil,"OVERLAY")
+            --stepframe.number.text:SetFontObject(GameFontNormalSmall)
+            stepframe.number.text:ClearAllPoints()
+            stepframe.number.text:SetPoint("CENTER",stepframe.number,2,1)
+            stepframe.number.text:SetJustifyH("CENTER")
+            stepframe.number.text:SetJustifyV("CENTER")
+            stepframe.number.text:SetTextColor(1,1,1)
+            stepframe.number.text:SetFont(RXP_.font, 9)
+        end
         if stepframe.hardcore ~= RXPCData.hardcore or not stepframe.hardcore then
-			stepframe.hardcore = RXPCData.hardcore
+            stepframe.hardcore = RXPCData.hardcore
             stepframe:ClearBackdrop()
             stepframe:SetBackdrop(f.backdropEdge)
             stepframe:SetBackdropColor(unpack(RXP_.colors.background))
@@ -961,60 +961,60 @@ function RXP_.SetStep(n,n2)
             stepframe.number:SetBackdrop(f.backdropEdge)
             stepframe.number:SetBackdropColor(unpack(RXP_.colors.background))
         end
-		stepframe.number.text:SetText("Step "..tostring(index))
-		stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
-		stepframe.step = step
-		stepframe.index = index
-		stepframe.sticky = step.sticky
-		
-		local e = 0
-		local frameHeight = 0
-		for j,element in ipairs(step.elements) do
-			e = j
-			local elementFrame = stepframe.elements[e]
-			if not stepframe.elements[e] then
-				stepframe.elements[e] = CreateFrame("Frame","$parent_"..e,stepframe, BackdropTemplate)
-				elementFrame = stepframe.elements[e]
-				--elementFrame:SetHeight(0)
-				--elementFrame:SetWidth(300)
-				local button = CreateFrame("CheckButton", "$parentCheck", elementFrame, "ChatConfigCheckButtonTemplate");
-				elementFrame.button = button
+        stepframe.number.text:SetText("Step "..tostring(index))
+        stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
+        stepframe.step = step
+        stepframe.index = index
+        stepframe.sticky = step.sticky
+
+        local e = 0
+        local frameHeight = 0
+        for j,element in ipairs(step.elements) do
+            e = j
+            local elementFrame = stepframe.elements[e]
+            if not stepframe.elements[e] then
+                stepframe.elements[e] = CreateFrame("Frame","$parent_"..e,stepframe, BackdropTemplate)
+                elementFrame = stepframe.elements[e]
+                --elementFrame:SetHeight(0)
+                --elementFrame:SetWidth(300)
+                local button = CreateFrame("CheckButton", "$parentCheck", elementFrame, "ChatConfigCheckButtonTemplate");
+                elementFrame.button = button
                 button:SetSize(12,12)
-				button:SetScript("PostClick",function(self) 
-					local parent = self:GetParent()
-					local element = parent.element 
-					if element and not element.optional then
-						element.skip = self:GetChecked()
-					end
-					RXP_.updateSteps = true
-					RXP_.updateMap = true
-				end)
-                
+                button:SetScript("PostClick",function(self)
+                    local parent = self:GetParent()
+                    local element = parent.element
+                    if element and not element.optional then
+                        element.skip = self:GetChecked()
+                    end
+                    RXP_.updateSteps = true
+                    RXP_.updateMap = true
+                end)
+
                 --
-                
+
                 button:SetPushedTexture(nil)
                 button:SetHighlightTexture("Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
-                
-                
-				elementFrame.text = getglobal(elementFrame.button:GetName() .. 'Text')
-				elementFrame.text:SetParent(elementFrame)
-				
-				
-				elementFrame.text:SetJustifyH("LEFT")
-				elementFrame.text:SetJustifyV("CENTER")
-				elementFrame.text:SetTextColor(1,1,1)
-				elementFrame.text:SetFont(RXP_.font, 11)
-				
-				--[[
-				elementFrame.text:SetJustifyH("LEFT")
-				elementFrame.text:SetJustifyV("CENTER")
-				elementFrame.text:SetTextColor(1,1,1)
-				elementFrame.text:SetFont("Fonts\\FRIZQT__.TTF", 10)]]
-				
-				
-				elementFrame.icon = elementFrame:CreateFontString(nil,"OVERLAY")
-				elementFrame.icon:SetFontObject(GameFontNormalSmall)
-                
+
+
+                elementFrame.text = getglobal(elementFrame.button:GetName() .. 'Text')
+                elementFrame.text:SetParent(elementFrame)
+
+
+                elementFrame.text:SetJustifyH("LEFT")
+                elementFrame.text:SetJustifyV("CENTER")
+                elementFrame.text:SetTextColor(1,1,1)
+                elementFrame.text:SetFont(RXP_.font, 11)
+
+                --[[
+                elementFrame.text:SetJustifyH("LEFT")
+                elementFrame.text:SetJustifyV("CENTER")
+                elementFrame.text:SetTextColor(1,1,1)
+                elementFrame.text:SetFont("Fonts\\FRIZQT__.TTF", 10)]]
+
+
+                elementFrame.icon = elementFrame:CreateFontString(nil,"OVERLAY")
+                elementFrame.icon:SetFontObject(GameFontNormalSmall)
+
                 elementFrame:SetMouseMotionEnabled(true)
                 local ht = elementFrame:CreateTexture(nil, "HIGHLIGHT")
                 ht:SetAllPoints(elementFrame.text)
@@ -1022,8 +1022,8 @@ function RXP_.SetStep(n,n2)
                 ht:SetBlendMode("ADD")
                 ht:Hide()
                 elementFrame.highlight = ht
-                
-                local function tpOnEnter(self)         
+
+                local function tpOnEnter(self)
                     if self:IsForbidden() or GameTooltip:IsForbidden() then return end
                     local element = self.element or self:GetParent().element
                     if element and element.tooltip then
@@ -1033,78 +1033,78 @@ function RXP_.SetStep(n,n2)
                         GameTooltip:Show()
                     end
                 end
-                
-                local function tpOnLeave(self)    
+
+                local function tpOnLeave(self)
                     if self:IsForbidden() or GameTooltip:IsForbidden() then return end
                     local element = self.element or self:GetParent().element
                     if element and element.tooltip then
                         GameTooltip:Hide()
                     end
                 end
-                
+
                 elementFrame:SetScript("OnEnter",tpOnEnter)
                 elementFrame:SetScript("OnLeave",tpOnLeave)
-                
+
                 elementFrame.button:HookScript("OnEnter",tpOnEnter)
                 elementFrame.button:HookScript("OnLeave",tpOnLeave)
-			end
+            end
             if elementFrame.button.hardcore ~= RXPCData.hardcore or not elementFrame.hardcore then
                 elementFrame.button:SetNormalTexture(RXP_.GetTexture("rxp-btn-blank-32"))
                 elementFrame.button:SetCheckedTexture(RXP_.GetTexture("rxp-checked-32"))
                 elementFrame.button:SetDisabledCheckedTexture(RXP_.GetTexture("rxp-checked-32"))
                 elementFrame.button.hardcore = RXPCData.hardcore
-			end
+            end
             elementFrame.step = step
-			elementFrame.element = element
-			elementFrame.index = index
-			element.frame = elementFrame
-			elementFrame.button:Enable()
-			if element.tag then
-				local events = element.event or RXPG[group].events[element.tag]
+            elementFrame.element = element
+            elementFrame.index = index
+            element.frame = elementFrame
+            elementFrame.button:Enable()
+            if element.tag then
+                local events = element.event or RXPG[group].events[element.tag]
                 elementFrame.callback = RXPG[group][element.tag]
-				elementFrame.callback(elementFrame)
-				if type(events) == "string" then
-					if event == "OnUpdate" then
-						elementFrame:SetScript("OnUpdate",elementFrame.callback)
-					elseif type(events) == "table" then
-						elementFrame:RegisterEvent(event)
-						elementFrame:SetScript("OnEvent",RXP_.EventHandler)
-					end
-				elseif type(events) == "table" then
-					for _,event in ipairs(events) do
-						if event == "OnUpdate" then
-							elementFrame:SetScript("OnUpdate",elementFrame.callback)
-						else
-							elementFrame:RegisterEvent(event)
-							elementFrame:SetScript("OnEvent",RXP_.EventHandler)
-						end
-					end
-				end
-			end
-			local spacing = 0
-			
+                elementFrame.callback(elementFrame)
+                if type(events) == "string" then
+                    if event == "OnUpdate" then
+                        elementFrame:SetScript("OnUpdate",elementFrame.callback)
+                    elseif type(events) == "table" then
+                        elementFrame:RegisterEvent(event)
+                        elementFrame:SetScript("OnEvent",RXP_.EventHandler)
+                    end
+                elseif type(events) == "table" then
+                    for _,event in ipairs(events) do
+                        if event == "OnUpdate" then
+                            elementFrame:SetScript("OnUpdate",elementFrame.callback)
+                        else
+                            elementFrame:RegisterEvent(event)
+                            elementFrame:SetScript("OnEvent",RXP_.EventHandler)
+                        end
+                    end
+                end
+            end
+            local spacing = 0
 
-		end
-		for n = e+1,#stepframe.elements do
-			stepframe.elements[n]:Hide()
-		end
-		if step.active then
-			stepframe:Show()
-			if step.activeItems then
-				for i,v in pairs(step.activeItems) do
-					RXP_.activeItems[i] = v
-				end
-			end
-		else
-			stepframe:Hide()
-		end
-	end
-	RXP_.UpdateItemFrame()
+
+        end
+        for n = e+1,#stepframe.elements do
+            stepframe.elements[n]:Hide()
+        end
+        if step.active then
+            stepframe:Show()
+            if step.activeItems then
+                for i,v in pairs(step.activeItems) do
+                    RXP_.activeItems[i] = v
+                end
+            end
+        else
+            stepframe:Hide()
+        end
+    end
+    RXP_.UpdateItemFrame()
     RXP_.UnitScanUpdate()
-	RXP_.UpdateText()
-	RXP_.updateSteps = true
-	RXP_.updateMap = true
-	StepScroll(scrollHeight)
+    RXP_.UpdateText()
+    RXP_.updateSteps = true
+    RXP_.updateMap = true
+    StepScroll(scrollHeight)
 end
 
 function RXP_.EventHandler(self,event,...)
@@ -1128,7 +1128,7 @@ function RXP_.UnitScanUpdate()
                     break
                 end
             end
-            
+
             if enabled then
                 if not unitscan_targets[unit] then
                     DEFAULT_CHAT_FRAME:AddMessage(LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> +' .. unit)
@@ -1140,7 +1140,7 @@ function RXP_.UnitScanUpdate()
                 end
                 unitscan_targets[unit] = nil
             end
-            
+
         end
     end
 end
@@ -1157,11 +1157,11 @@ function RXP_.UpdateText()
     local c = 0
     local heightDiff = f:GetHeight() - f.CurrentStepFrame:GetHeight()
     for i,step in pairs(f.CurrentStepFrame.activeSteps) do
-        
+
         local index = step.index
         c = c+1
         local stepframe = f.CurrentStepFrame.frame[c]
-        
+
         stepframe:ClearAllPoints()
         if c == 1 then
             stepframe:SetPoint("TOPLEFT",f.CurrentStepFrame,0,0)
@@ -1173,17 +1173,17 @@ function RXP_.UpdateText()
 
         stepframe.number.text:SetText("Step "..index)
         stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
-        
+
         local e = 0
         local frameHeight = 0
         for j,element in ipairs(step.elements) do
             e = j
             local elementFrame = stepframe.elements[e]
-            
+
             elementFrame:Show()
 
             local spacing = 0
-            
+
             if element.text then
                 elementFrame:SetAlpha(1)
                 local text = elementFrame.text
@@ -1192,7 +1192,7 @@ function RXP_.UpdateText()
                 --print('sh:',h)
                 elementFrame:SetHeight(h)
                 frameHeight = frameHeight + h
-                
+
                 elementFrame.button:ClearAllPoints()
                 --elementFrame.button:SetPoint("TOPLEFT",elementFrame, 4, -1);
                 elementFrame.button:SetPoint("TOPLEFT",elementFrame, 6, -1);
@@ -1200,7 +1200,7 @@ function RXP_.UpdateText()
                 --elementFrame.text:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",8,-2)
                 elementFrame.text:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",11,-1)
                 elementFrame.text:SetPoint("RIGHT",stepframe,-5,0)
-                
+
                 elementFrame.icon:ClearAllPoints()
                 --elementFrame.icon:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",-3,-2)
                 elementFrame.icon:SetPoint("TOPLEFT",elementFrame.button,"TOPRIGHT",0,-1)
@@ -1264,7 +1264,7 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
         local activeQuestUpdate = 0
         local skip
         local event = ""
-        
+
         if not RXP_.loadNextStep then
             for ref,func in pairs(RXP_.updateActiveQuest) do
                 func(ref)
@@ -1275,12 +1275,12 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
                 event = event .. "/activeQ"
             end
         end
-       	if RXP_.nextStep then 
-			skip = true
-			RXP_.SetStep(RXP_.nextStep)
+           if RXP_.nextStep then
+            skip = true
+            RXP_.SetStep(RXP_.nextStep)
             RXP_.questAutoAccept = true
-			RXP_.updateBottomFrame = true
-			RXP_.nextStep = nil
+            RXP_.updateBottomFrame = true
+            RXP_.nextStep = nil
         elseif RXP_.loadNextStep then
             RXP_.loadNextStep = false
             RXP_.SetStep(RXPCData.currentStep+1)
@@ -1322,12 +1322,12 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
                 inactiveQuestUpdate = true
             end
         end
-        
+
         if not skip then
-			if RXP_.questAutoAccept then
-				RXP_.questAutoAccept = false
-				RXP_.QuestAutomation()
-			end
+            if RXP_.questAutoAccept then
+                RXP_.questAutoAccept = false
+                RXP_.QuestAutomation()
+            end
             if RXP_.updateMap then
                 RXP_.UpdateMap()
                 event = event .. "/map"
@@ -1347,7 +1347,7 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
             end
             RXP_.UpdateGotoSteps()
         end
-        
+
         if event ~= "" then
             eventType = event
         end
@@ -1384,10 +1384,10 @@ RXP_.guideNameBackdrop = {
  edgeSize = 8,
  tileSize = 8,
  insets = {
-	  left = 4,
-	  right = 2,
-	  top = 2,
-	  bottom = 4,
+      left = 4,
+      right = 2,
+      top = 2,
+      bottom = 4,
  },
 }
 
@@ -1487,7 +1487,7 @@ f.GuideName:SetScript("OnMouseUp",function(self,button)
 end)
 
 f.GuideName:SetScript("OnEnter",function()
-	f.GuideName.cog:Show()
+    f.GuideName.cog:Show()
 end)
 f.GuideName:SetScript("OnLeave",function()
     if GetTime() - buttonToggle > 0.1 then
@@ -1539,12 +1539,12 @@ RXP_.UpdateScrollBar()
 
 
 hooksecurefunc(f.SF.ScrollBar,"SetValue",function(self,value)
-	local h = math.floor(f.Steps:GetHeight()+10)
-	local scroll = h-f.BottomFrame:GetHeight()
+    local h = math.floor(f.Steps:GetHeight()+10)
+    local scroll = h-f.BottomFrame:GetHeight()
     local zero = RXPData.hideCompletedSteps and RXPCData.currentStep and RXPCData.currentStep > 1 and RXP_.stepPos[RXPCData.currentStep-1]+RXPCData.currentStep or 0
-	if scroll < zero then scroll = zero end
-	if scroll <= value then f.SF.ScrollBar.ScrollDownButton:Disable() end
-	f.SF.ScrollBar:SetMinMaxValues(zero,scroll)
+    if scroll < zero then scroll = zero end
+    if scroll <= value then f.SF.ScrollBar.ScrollDownButton:Disable() end
+    f.SF.ScrollBar:SetMinMaxValues(zero,scroll)
 end)
 
 
@@ -1604,56 +1604,56 @@ function RXP_.GetGuideName(guide)
 end
 
 function RXP_:LoadGuide(guide,OnLoad)
-	RXP_.loadNextStep = false
+    RXP_.loadNextStep = false
     if not guide then
-		if OnLoad then
-			return
-		else
-			return error('Guide not found')
-		end
-	end
-    
+        if OnLoad then
+            return
+        else
+            return error('Guide not found')
+        end
+    end
+
     if RXP_.noGuide then
         f:SetHeight(RXP_.height)
         RXP_.UpdateBottomFrame()
         RXP_.noGuide = nil
     end
-    
-	startTime = GetTime()
-	CloseDropDownMenus()
-	tickTimer = GetTime()
-	if not (OnLoad and RXPCData and RXPCData.currentStep) then
-		RXPCData.currentStep = 1
-		RXPCData.stepSkip = {}
-	end
-	local totalHeight = 0
-	local nframes = 0
-	
+
+    startTime = GetTime()
+    CloseDropDownMenus()
+    tickTimer = GetTime()
+    if not (OnLoad and RXPCData and RXPCData.currentStep) then
+        RXPCData.currentStep = 1
+        RXPCData.stepSkip = {}
+    end
+    local totalHeight = 0
+    local nframes = 0
+
     ClearTable(RXP_.stepUpdateList)
-	RXP_.currentGuide = {}
-	
+    RXP_.currentGuide = {}
+
     for k,v in pairs(guide) do
-		RXP_.currentGuide[k] = v
-	end
-	RXP_.currentGuide.steps = {}
-	for n,step in ipairs(guide.steps) do
-		if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) and RXP_.HardcoreCheck(step) and RXP_.SeasonCheck(step) and RXP_.IsStepShown(step) then
-			table.insert(RXP_.currentGuide.steps,step)
-		end
-	end
-	guide = RXP_.currentGuide
-	
-	RXP_.currentGuideName = guide.name
-	RXPCData.currentGuideName = guide.name
-	RXPCData.currentGuideGroup = guide.group
-	f.GuideName.text:SetText(RXP_.GetGuideName(guide))
-	--local nameWidth = f.GuideName.text:GetStringWidth()+10
-	--f.GuideName:SetWidth(nameWidth)
-	--f:SetWidth(math.max(f:GetWidth(),nameWidth+45))
-	--f:SetMinResize(math.max(nameWidth+45,220),20)
+        RXP_.currentGuide[k] = v
+    end
+    RXP_.currentGuide.steps = {}
+    for n,step in ipairs(guide.steps) do
+        if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) and RXP_.HardcoreCheck(step) and RXP_.SeasonCheck(step) and RXP_.IsStepShown(step) then
+            table.insert(RXP_.currentGuide.steps,step)
+        end
+    end
+    guide = RXP_.currentGuide
+
+    RXP_.currentGuideName = guide.name
+    RXPCData.currentGuideName = guide.name
+    RXPCData.currentGuideGroup = guide.group
+    f.GuideName.text:SetText(RXP_.GetGuideName(guide))
+    --local nameWidth = f.GuideName.text:GetStringWidth()+10
+    --f.GuideName:SetWidth(nameWidth)
+    --f:SetWidth(math.max(f:GetWidth(),nameWidth+45))
+    --f:SetMinResize(math.max(nameWidth+45,220),20)
     guide.labels = {}
 
-	
+
     --[[
     if unitscan_targets then
         local unitList = {}
@@ -1664,55 +1664,55 @@ function RXP_:LoadGuide(guide,OnLoad)
         end
         guide.unitscan = unitList
     end]]
-    
-	guide.steps[#guide.steps].lastStep = true
-	
-	for n,step in ipairs(guide.steps) do
-		step.index = n
-		if step.completewith then
-			step.sticky = true
-		end
+
+    guide.steps[#guide.steps].lastStep = true
+
+    for n,step in ipairs(guide.steps) do
+        step.index = n
+        if step.completewith then
+            step.sticky = true
+        end
         step.level = tonumber(step.level) or 0
-		if step.label then
-			guide.labels[step.label] = n
-		end
+        if step.label then
+            guide.labels[step.label] = n
+        end
 
 
-		nframes = nframes + 1
-		f.Steps.frame[n] = f.Steps.frame[n] or CreateFrame("Frame","$parent_frame_"..n,f.Steps, BackdropTemplate)
-		local frame = f.Steps.frame[n]
-		frame:Show()
-		frame.step = step
-		frame:SetAlpha(0.66)
-		frame:ClearAllPoints()
-		local anchor
-		if n == 1 then
-			anchor = f.Steps
-			frame:SetPoint("TOPLEFT",anchor,"TOPLEFT",2,-3)
-			frame:SetPoint("TOPRIGHT",anchor,"TOPRIGHT",2,-3)
-		else
-			anchor = f.Steps.frame[n-1]
-			frame:SetPoint("TOPLEFT",anchor,"BOTTOMLEFT",0,-3)
-			frame:SetPoint("TOPRIGHT",anchor,"BOTTOMRIGHT",0,-3)
-		end
-		--frame:SetBackdrop(f.bottomBackdrop)
+        nframes = nframes + 1
+        f.Steps.frame[n] = f.Steps.frame[n] or CreateFrame("Frame","$parent_frame_"..n,f.Steps, BackdropTemplate)
+        local frame = f.Steps.frame[n]
+        frame:Show()
+        frame.step = step
+        frame:SetAlpha(0.66)
+        frame:ClearAllPoints()
+        local anchor
+        if n == 1 then
+            anchor = f.Steps
+            frame:SetPoint("TOPLEFT",anchor,"TOPLEFT",2,-3)
+            frame:SetPoint("TOPRIGHT",anchor,"TOPRIGHT",2,-3)
+        else
+            anchor = f.Steps.frame[n-1]
+            frame:SetPoint("TOPLEFT",anchor,"BOTTOMLEFT",0,-3)
+            frame:SetPoint("TOPRIGHT",anchor,"BOTTOMRIGHT",0,-3)
+        end
+        --frame:SetBackdrop(f.bottomBackdrop)
         frame:ClearBackdrop()
         frame:SetBackdrop(backdrop)
-		frame:SetBackdropColor(unpack(RXP_.colors.bottomFrameBG))
-		
-		frame:SetScript("OnEnter",function(self)
-			currentAlpha = self:GetAlpha()
-			self:SetAlpha(1)
-			self:SetBackdropColor(unpack(RXP_.colors.bottomFrameHighlight))
-		end)
-		frame:SetScript("OnLeave",function(self)
-			self:SetBackdropColor(unpack(RXP_.colors.bottomFrameBG))
-			self:SetAlpha(currentAlpha)
-		end)
+        frame:SetBackdropColor(unpack(RXP_.colors.bottomFrameBG))
+
+        frame:SetScript("OnEnter",function(self)
+            currentAlpha = self:GetAlpha()
+            self:SetAlpha(1)
+            self:SetBackdropColor(unpack(RXP_.colors.bottomFrameHighlight))
+        end)
+        frame:SetScript("OnLeave",function(self)
+            self:SetBackdropColor(unpack(RXP_.colors.bottomFrameBG))
+            self:SetAlpha(currentAlpha)
+        end)
         frame.timer = 0
         frame.index = n
         frame.guide = guide
-		frame:SetScript("OnMouseDown",function(self,button)
+        frame:SetScript("OnMouseDown",function(self,button)
             if button == "RightButton" or GetTime() - self.timer <= 0.5 then
                 self.timer = 0
                 local n = self.index
@@ -1727,63 +1727,63 @@ function RXP_:LoadGuide(guide,OnLoad)
             else
                 self.timer = GetTime()
             end
-		end)
-		
-		
-		if not frame.text then
-			frame.text = frame:CreateFontString(nil,"OVERLAY") 
-		end
-		
-		if not frame.number then
-			frame.number = CreateFrame("Frame","$parent_number",frame, BackdropTemplate)
-			--frame.number:SetBackdrop(backdrop)
-			--frame.number:SetBackdropColor(20/255,25/255,67/255)
-			frame.number:SetPoint("BOTTOMRIGHT",frame)
-			frame.number.text = frame.number:CreateFontString(nil,"OVERLAY")
-			frame.number.text:SetFontObject(GameFontNormalSmall)
-			frame.number.text:ClearAllPoints()
-			frame.number.text:SetPoint("CENTER",frame.number,0,0)
-			frame.number.text:SetJustifyH("CENTER")
-			frame.number.text:SetJustifyV("CENTER")
-			frame.number.text:SetTextColor(1,1,1,1)
-			frame.number.text:SetFont(RXP_.font, 8)
-			local prefix = ""
-			if n < 10 then prefix = "0" end
-			frame.number.text:SetText(prefix..tostring(n))
-			frame.number:SetSize(frame.number.text:GetStringWidth()+2,10)
-		end
-		
-		frame.text:SetFontObject(GameFontNormalSmall)
-		frame.text:ClearAllPoints()
-		frame.text:SetPoint("TOPLEFT",frame,0,-5)
-		frame.text:SetPoint("BOTTOMRIGHT",frame.number,"BOTTOMLEFT",0,0)
-		frame.text:SetJustifyH("LEFT")
-		frame.text:SetJustifyV("TOP")
-		frame.text:SetTextColor(1,1,1,1)
-		frame.text:SetFont(RXP_.font, 9)
-		
-		--frame.text:SetHeight(1000)
-		
-		--frame.text:SetText(text)
-		
-	
-		frame:SetHeight(20)
-		
-	end
-	if #f.Steps.frame > nframes then
-		for i = nframes+1,#f.Steps.frame do
-			f.Steps.frame[i]:Hide()
-		end
-	end
-	f.Steps.f1 = f.Steps.f1 or CreateFrame("Frame",nil,f.Steps)
-	f.Steps.f1:ClearAllPoints()
-	f.Steps.f1:SetPoint("TOPLEFT",f.Steps.frame[1],0,10)
-	f.Steps.f1:SetPoint("BOTTOMRIGHT",f.Steps.frame[nframes])
+        end)
+
+
+        if not frame.text then
+            frame.text = frame:CreateFontString(nil,"OVERLAY")
+        end
+
+        if not frame.number then
+            frame.number = CreateFrame("Frame","$parent_number",frame, BackdropTemplate)
+            --frame.number:SetBackdrop(backdrop)
+            --frame.number:SetBackdropColor(20/255,25/255,67/255)
+            frame.number:SetPoint("BOTTOMRIGHT",frame)
+            frame.number.text = frame.number:CreateFontString(nil,"OVERLAY")
+            frame.number.text:SetFontObject(GameFontNormalSmall)
+            frame.number.text:ClearAllPoints()
+            frame.number.text:SetPoint("CENTER",frame.number,0,0)
+            frame.number.text:SetJustifyH("CENTER")
+            frame.number.text:SetJustifyV("CENTER")
+            frame.number.text:SetTextColor(1,1,1,1)
+            frame.number.text:SetFont(RXP_.font, 8)
+            local prefix = ""
+            if n < 10 then prefix = "0" end
+            frame.number.text:SetText(prefix..tostring(n))
+            frame.number:SetSize(frame.number.text:GetStringWidth()+2,10)
+        end
+
+        frame.text:SetFontObject(GameFontNormalSmall)
+        frame.text:ClearAllPoints()
+        frame.text:SetPoint("TOPLEFT",frame,0,-5)
+        frame.text:SetPoint("BOTTOMRIGHT",frame.number,"BOTTOMLEFT",0,0)
+        frame.text:SetJustifyH("LEFT")
+        frame.text:SetJustifyV("TOP")
+        frame.text:SetTextColor(1,1,1,1)
+        frame.text:SetFont(RXP_.font, 9)
+
+        --frame.text:SetHeight(1000)
+
+        --frame.text:SetText(text)
+
+
+        frame:SetHeight(20)
+
+    end
+    if #f.Steps.frame > nframes then
+        for i = nframes+1,#f.Steps.frame do
+            f.Steps.frame[i]:Hide()
+        end
+    end
+    f.Steps.f1 = f.Steps.f1 or CreateFrame("Frame",nil,f.Steps)
+    f.Steps.f1:ClearAllPoints()
+    f.Steps.f1:SetPoint("TOPLEFT",f.Steps.frame[1],0,10)
+    f.Steps.f1:SetPoint("BOTTOMRIGHT",f.Steps.frame[nframes])
     f.Steps.f1:Hide()
-	f.Steps:SetHeight(200)
-	RXP_.UpdateBottomFrame()
-	--RXP_.updateBottomFrame = true
-	RXP_.SetStep(RXPCData.currentStep)
+    f.Steps:SetHeight(200)
+    RXP_.UpdateBottomFrame()
+    --RXP_.updateBottomFrame = true
+    RXP_.SetStep(RXPCData.currentStep)
 end
 
 function RXP_.ReloadGuide()
@@ -1791,41 +1791,41 @@ function RXP_.ReloadGuide()
 end
 
 function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
-	--print(type(stepn),stepn)
-	if RXP_.stepPos[0] and ((not self and stepn) or (self and self.step)) then
-		local stepNumber = stepn or self.step.index
-		local frame = f.Steps.frame[stepNumber]
-		if not frame then return end
-		local step = frame.step
-		local fheight
+    --print(type(stepn),stepn)
+    if RXP_.stepPos[0] and ((not self and stepn) or (self and self.step)) then
+        local stepNumber = stepn or self.step.index
+        local frame = f.Steps.frame[stepNumber]
+        if not frame then return end
+        local step = frame.step
+        local fheight
         local hideStep = step.level > level or step.hideStep
-        
-		local text
-		for i,element in ipairs(frame.step.elements) do
-			if element.requestFromServer then
-				if not element.element then
+
+        local text
+        for i,element in ipairs(frame.step.elements) do
+            if element.requestFromServer then
+                if not element.element then
                     element.element = element
                 end
-				RXPG[RXP_.currentGuide.group][element.tag](element)
-				if element.requestFromServer then
-					RXP_.updateStepText = true
-					RXP_.stepUpdateList[element.step.index] = true
-				end
-			end
-			local rawtext = element.tooltipText or element.text
-			if hideStep then
+                RXPG[RXP_.currentGuide.group][element.tag](element)
+                if element.requestFromServer then
+                    RXP_.updateStepText = true
+                    RXP_.stepUpdateList[element.step.index] = true
+                end
+            end
+            local rawtext = element.tooltipText or element.text
+            if hideStep then
                 text = ""
             elseif rawtext and not element.hideTooltip then
-				if not text then
-					text = "   "..rawtext
-				else
-					text = text.."\n   "..rawtext
-				end
-			end
-		end
-		
+                if not text then
+                    text = "   "..rawtext
+                else
+                    text = text.."\n   "..rawtext
+                end
+            end
+        end
+
         frame.text:SetText(text)
-        
+
         if hideStep then
             fheight = 1
             frame:SetAlpha(0)
@@ -1833,48 +1833,48 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
             fheight = math.ceil(frame.text:GetStringHeight() + 8)
             frame:SetAlpha(1)
         end
-		
-		local hDiff = fheight - frame:GetHeight()
-		frame:SetHeight(fheight)
-		
-		for n = stepNumber+1, #RXP_.stepPos do
-			RXP_.stepPos[n] = RXP_.stepPos[n]+hDiff
-		end
-		RXP_.stepPos[0] = RXP_.stepPos[0]+hDiff
-		
-	else
-		RXP_.updateBottomFrame = false
-		local totalHeight = 0
-		for n,frame in ipairs(f.Steps.frame) do
-			if not frame:IsShown() then break end
-			local text
-			local step = frame.step
+
+        local hDiff = fheight - frame:GetHeight()
+        frame:SetHeight(fheight)
+
+        for n = stepNumber+1, #RXP_.stepPos do
+            RXP_.stepPos[n] = RXP_.stepPos[n]+hDiff
+        end
+        RXP_.stepPos[0] = RXP_.stepPos[0]+hDiff
+
+    else
+        RXP_.updateBottomFrame = false
+        local totalHeight = 0
+        for n,frame in ipairs(f.Steps.frame) do
+            if not frame:IsShown() then break end
+            local text
+            local step = frame.step
             local hideStep = step.level > level
-			local fheight
-			for i,element in ipairs(frame.step.elements) do
-				if not self then
-					local stepDiff = element.step.index-RXPCData.currentStep
-					element.element = element
-					if element.requestFromServer then
-						RXPG[RXP_.currentGuide.group][element.tag](element)
-						RXP_.updateStepText = RXP_.updateStepText or not element.requestFromServer
+            local fheight
+            for i,element in ipairs(frame.step.elements) do
+                if not self then
+                    local stepDiff = element.step.index-RXPCData.currentStep
+                    element.element = element
+                    if element.requestFromServer then
+                        RXPG[RXP_.currentGuide.group][element.tag](element)
+                        RXP_.updateStepText = RXP_.updateStepText or not element.requestFromServer
                         RXP_.stepUpdateList[element.step.index] = not element.requestFromServer
-					elseif element.tag and (stepDiff <= 8 and stepDiff >= 0) then
-						RXPG[RXP_.currentGuide.group][element.tag](element)
-					end
-				end
-				local rawtext = element.tooltipText or element.text
-				if hideStep then
+                    elseif element.tag and (stepDiff <= 8 and stepDiff >= 0) then
+                        RXPG[RXP_.currentGuide.group][element.tag](element)
+                    end
+                end
+                local rawtext = element.tooltipText or element.text
+                if hideStep then
                     text = ""
                 elseif rawtext and not element.hideTooltip and rawtext ~= "" then
-					if not text then
-						text = "   "..rawtext
-					else
-						text = text.."\n   "..rawtext
-					end
-				end
-			end
-            
+                    if not text then
+                        text = "   "..rawtext
+                    else
+                        text = text.."\n   "..rawtext
+                    end
+                end
+            end
+
             if step.completed or (not step.sticky and RXPCData.currentStep > step.index) or RXPCData.stepSkip[step.index] then
                 frame:SetAlpha(0.5)
             else
@@ -1888,26 +1888,26 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
                 frame.text:SetText(text)
                 fheight = math.ceil(frame.text:GetStringHeight() + 8)
             end
-            
-			frame:SetHeight(fheight)
-			totalHeight = totalHeight + fheight+2
-			RXP_.stepPos[n] = totalHeight-5
-		end
-		RXP_.stepPos[0] = totalHeight
-		--print(f.Steps.frame[#f.Steps.frame]:GetBottom(),totalHeight)
-	end
-	if RXP_.currentGuide then
-		f.Steps:SetHeight(f.Steps.f1:GetHeight())
-	end
-	local w = f:GetWidth()-35
-	f.Steps:SetWidth(w)
 
-	if f.BottomFrame:GetHeight() < 35 then
-		f.BottomFrame:Hide()
-	elseif not f.BottomFrame:IsShown() then 
-		f.BottomFrame:Show()
-	end
-    
+            frame:SetHeight(fheight)
+            totalHeight = totalHeight + fheight+2
+            RXP_.stepPos[n] = totalHeight-5
+        end
+        RXP_.stepPos[0] = totalHeight
+        --print(f.Steps.frame[#f.Steps.frame]:GetBottom(),totalHeight)
+    end
+    if RXP_.currentGuide then
+        f.Steps:SetHeight(f.Steps.f1:GetHeight())
+    end
+    local w = f:GetWidth()-35
+    f.Steps:SetWidth(w)
+
+    if f.BottomFrame:GetHeight() < 35 then
+        f.BottomFrame:Hide()
+    elseif not f.BottomFrame:IsShown() then
+        f.BottomFrame:Show()
+    end
+
 end
 
 
@@ -1918,18 +1918,18 @@ local function IsGuideActive(guide)
         --print('-',guide.name,not guide.som,not guide.era,som)
         return false
     end
-	
-	return true
+
+    return true
 end
 
 function RXP_.GenerateMenuTable()
-	RXP_.menuList = {
-		{
-			text = "Available Guides",
-			isTitle = 1,
-			notCheckable = 1,
-		},
-	}
+    RXP_.menuList = {
+        {
+            text = "Available Guides",
+            isTitle = 1,
+            notCheckable = 1,
+        },
+    }
 
     local groupList = {}
     local unusedGuides = {}
@@ -1942,14 +1942,14 @@ function RXP_.GenerateMenuTable()
     end
     table.sort(groupList)
     table.sort(unusedGuides)
-   
 
-	local menuIndex = 1
-    
+
+    local menuIndex = 1
+
     local function createMenu(group)
         local t = RXP_.guideList[group]
         menuIndex = menuIndex+1
-        
+
         if not t.sorted_ then
             t.sorted_ = true
             table.sort(t.names_)
@@ -1970,21 +1970,21 @@ function RXP_.GenerateMenuTable()
                 table.insert(item.menuList,subitem)
             end
         end
-        
+
         table.insert(RXP_.menuList,item)
     end
-    
-	for _,group in ipairs(groupList) do
+
+    for _,group in ipairs(groupList) do
         createMenu(group)
-	end
-    
+    end
+
     if not (RXPData and RXPData.hideUnusedGuides) and #unusedGuides > 0 then
         table.insert(RXP_.menuList,{text = "Unused Guides",notCheckable = 1,isTitle = 1})
         for _,group in ipairs(unusedGuides) do
             createMenu(group)
         end
     end
-    
+
     table.insert(RXP_.menuList,{text = "",notCheckable = 1,isTitle = 1})
 --    table.insert(RXP_.menuList,{text = "Toggle Hardcore Mode",notCheckable = 1,func = RXP_.HardcoreToggle})
     if RXP_.version == "CLASSIC" then
@@ -2014,11 +2014,11 @@ end
 SLASH_RXPG1 = "/rxp"
 SLASH_RXPG2 = "/rxpg"
 SLASH_RXPG3 = "/rxpguides"
-	
+
 SlashCmdList["RXPG"] = function(msg)
-	InterfaceOptionsFrame_OpenToCategory(RXPOptions)
     InterfaceOptionsFrame_OpenToCategory(RXPOptions)
-end 
+    InterfaceOptionsFrame_OpenToCategory(RXPOptions)
+end
 
 
 function RXP_.CreateOptionsPanel()
@@ -2029,57 +2029,57 @@ function RXP_.CreateOptionsPanel()
     panel.title = panel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
     panel.title:SetPoint("TOPLEFT", 16, -16)
     panel.title:SetText("RestedXP Guides")
-    
-	
-	panel.subtext = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-	panel.subtext:SetPoint("TOPLEFT", panel.title, "BOTTOMLEFT", 0, -8)
-	panel.subtext:SetText(versionText)
-	
+
+
+    panel.subtext = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+    panel.subtext:SetPoint("TOPLEFT", panel.title, "BOTTOMLEFT", 0, -8)
+    panel.subtext:SetText(versionText)
+
     panel.icon = panel:CreateTexture()
     panel.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
     panel.icon:SetPoint("TOPRIGHT",-5,-5)
     --panel.icon:SetSize(64,64)
-    
-    
+
+
     local index = 0
     local options = {}
     local button = CreateFrame("CheckButton", "$parentQuestTurnIn", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     index = index + 1
     button:SetPoint("TOPLEFT",panel.title,"BOTTOMLEFT",0,-25)
-    button:SetScript("PostClick",function(self) 
+    button:SetScript("PostClick",function(self)
         RXPData.disableQuestAutomation = not self:GetChecked()
     end)
     button:SetChecked(not RXPData.disableQuestAutomation)
     button.Text:SetText("Quest auto accept/turn in")
     button.tooltip = "Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"
-    
-    
+
+
     button = CreateFrame("CheckButton", "$parentTrainer", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
     index = index + 1
-    button:SetScript("PostClick",function(self) 
+    button:SetScript("PostClick",function(self)
         RXPData.disableTrainerAutomation = not self:GetChecked()
     end)
     button:SetChecked(not RXPData.disableTrainerAutomation)
     button.Text:SetText("Trainer automation")
     button.tooltip = "Allows the guide to buy useful leveling spells automatically"
-    
-    
-    
+
+
+
     button = CreateFrame("CheckButton", "$parentFP", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
     index = index + 1
-    button:SetScript("PostClick",function(self) 
+    button:SetScript("PostClick",function(self)
         RXPData.disableFPAutomation = not self:GetChecked()
     end)
     button:SetChecked(not RXPData.disableFPAutomation)
     button.Text:SetText("Flight Path automation")
-    button.tooltip = "Allows the guide to automatically fly you to your destination"  
-    
-    
+    button.tooltip = "Allows the guide to automatically fly you to your destination"
+
+
     button = CreateFrame("CheckButton", "$parentArrow", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -2091,8 +2091,8 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(not RXPData.disableArrow)
     button.Text:SetText("Enable waypoint arrow")
-    button.tooltip = "Show/Hide the waypoint arrow" 
-    
+    button.tooltip = "Show/Hide the waypoint arrow"
+
     button = CreateFrame("CheckButton", "$parentMiniMapPin", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -2103,7 +2103,7 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(RXPData.hideMiniMapPins)
     button.Text:SetText("Hide Mini Map Pins")
-    --button.tooltip = "" 
+    --button.tooltip = ""
 
 
     button = CreateFrame("CheckButton", "$parentUnusedGuides", panel, "ChatConfigCheckButtonTemplate");
@@ -2116,51 +2116,51 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(not RXPData.hideUnusedGuides)
     button.Text:SetText("Show unused guides")
-    button.tooltip = "Displays guides that are not applicable for your class/race such as starting zones for other races" 
-    
+    button.tooltip = "Displays guides that are not applicable for your class/race such as starting zones for other races"
+
 
     button = CreateFrame("CheckButton", "$parentAutoLoad", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
     index = index + 1
-    button:SetScript("PostClick",function(self) 
+    button:SetScript("PostClick",function(self)
         RXPData.autoLoadGuides = self:GetChecked()
     end)
     button:SetChecked(RXPData.autoLoadGuides)
     button.Text:SetText("Auto load starting zone guides")
-    button.tooltip = "Automatically picks a suitable guide whenever you log in for the first time on a character" 
+    button.tooltip = "Automatically picks a suitable guide whenever you log in for the first time on a character"
     --
     button = CreateFrame("CheckButton", "$parentHideWindow", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
     index = index + 1
-    button:SetScript("PostClick",function(self) 
+    button:SetScript("PostClick",function(self)
         local hide = self:GetChecked()
         RXPCData.hideWindow = hide
         f:SetShown(not hide)
     end)
     button:SetChecked(RXPCData.hideWindow)
     button.Text:SetText("Hide Window")
-    button.tooltip = "Hides the main window" 
-    
-    
-    
+    button.tooltip = "Hides the main window"
+
+
+
     button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
     index = index + 1
-    button:SetScript("PostClick",function(self) 
+    button:SetScript("PostClick",function(self)
         RXPData.lockFrames = self:GetChecked()
     end)
     button:SetChecked(RXPData.lockFrames)
     button.Text:SetText("Lock Frames")
-    button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it" 
+    button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it"
    --
     button = CreateFrame("CheckButton", "$parentShowUpcoming", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
     index = index + 1
-    button:SetScript("PostClick",function(self) 
+    button:SetScript("PostClick",function(self)
         local show = self:GetChecked()
         if show then
             f:SetHeight(RXP_.height)
@@ -2171,7 +2171,7 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(f.BottomFrame:GetHeight() >= 35)
     button.Text:SetText("Show step list")
-    button.tooltip = "Show/Hide the bottom frame listing all the steps of the current guide" 
+    button.tooltip = "Show/Hide the bottom frame listing all the steps of the current guide"
   --
     button = CreateFrame("CheckButton", "$parentHideCompleted", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
@@ -2183,7 +2183,7 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(RXPData.hideCompletedSteps)
     button.Text:SetText("Hide completed steps")
-    button.tooltip = "Only shows current and future steps on the step list window" 
+    button.tooltip = "Only shows current and future steps on the step list window"
   --
     button = CreateFrame("CheckButton", "$parentMapCircle", panel, "ChatConfigCheckButtonTemplate");
     table.insert(options,button)
@@ -2195,14 +2195,14 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(RXPData.mapCircle)
     button.Text:SetText("Highlight active map pins")
-    button.tooltip = "Show a targeting circle around active map pins"  
+    button.tooltip = "Show a targeting circle around active map pins"
   --
     if QuestieLoader then
         button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
         table.insert(options,button)
         button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
         index = index + 1
-        button:SetScript("PostClick",function(self) 
+        button:SetScript("PostClick",function(self)
             RXPData.skipMissingPreReqs = self:GetChecked()
         end)
         button:SetChecked(RXPData.skipMissingPreReqs)
@@ -2220,9 +2220,9 @@ function RXP_.CreateOptionsPanel()
         end)
         button:SetChecked(not RXPData.disableUnitscan)
         button.Text:SetText("Unitscan integration")
-        button.tooltip = "Automatically adds important npcs to your unitscan list"   
+        button.tooltip = "Automatically adds important npcs to your unitscan list"
     end
-   
+
     if RXP_.version == "CLASSIC" then
         button = CreateFrame("CheckButton", "$parentHC", panel, "ChatConfigCheckButtonTemplate");
         hardcoreButton = button
@@ -2236,7 +2236,7 @@ function RXP_.CreateOptionsPanel()
         button:SetChecked(RXPCData.hardcore)
         button.Text:SetText("Hardcore mode")
         button.tooltip = "Adjust the leveling routes to the deathless ruleset"
-        
+
         button = CreateFrame("CheckButton", "$parentSoM", panel, "ChatConfigCheckButtonTemplate");
         table.insert(options,button)
         button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
@@ -2249,7 +2249,7 @@ function RXP_.CreateOptionsPanel()
         button:SetChecked(RXPCData.SoM)
         button.Text:SetText("Season of Mastery")
         button.tooltip = "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"
-        
+
     end
 
     local SliderUpdate = function(self, value)
@@ -2261,15 +2261,15 @@ function RXP_.CreateOptionsPanel()
         RXP_.arrowFrame.text:SetFont(RXP_.font, RXPData.arrowText)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
         RXP_.updateMap = true
-		if self.key == "phase" and RXP_.currentGuide then
+        if self.key == "phase" and RXP_.currentGuide then
             RXP_.ReloadGuide()
-		end
+        end
         SetStepFrameAnchor()
     end
-    
+
     local CreateSlider = function(ref,key,smin,smax,text,tooltip,anchor,x,y,steps,minText,maxText)
         local slider,dvalue
-        
+
         slider = CreateFrame("Slider", "$parentArrowSlider", panel, "OptionsSliderTemplate")
         slider:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", x, y)
         slider:SetOrientation('HORIZONTAL')
@@ -2282,15 +2282,15 @@ function RXP_.CreateOptionsPanel()
         slider.ref = ref
         slider.key = key
         dvalue = ref[key] or smin
-        
+
         slider.defaultText = text
         slider.tooltipText = tooltip
         slider:SetScript("OnValueChanged", SliderUpdate)
-        
+
         slider:SetMinMaxValues(smin,smax)
         SliderUpdate(slider,dvalue)
         slider:SetValue(dvalue)
-        
+
         slider.Low:SetText(minText or tostring(smin));
         slider.High:SetText(maxText or tostring(smax));
         return slider
@@ -2304,9 +2304,9 @@ function RXP_.CreateOptionsPanel()
     slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,2,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, 0.05, "0.05", "2")
     slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, 0.05, "0", "1")
     slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,2,"Bottom","Top")
-    
+
     slider = CreateSlider(RXPData,"batchSize",1,100,"Batching window size: %d ms","Adjusts the batching window tolerance, used for hearthstone batching",slider,0,-25, 1, "1", "100")
-    
+
     if RXP_.version == "CLASSIC" then
         slider = CreateSlider(RXPCData,"phase",1, 6,"Content phase: %d","Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",slider,0,-25, 1, "1", "6")
     end
@@ -2323,7 +2323,7 @@ function RXP_.UpdateQuestButton(index)
         button:SetPoint("TOPRIGHT",anchor,"TOPRIGHT",0,0)
         button:SetNormalTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
         RXP_.questLogButton = button
-        
+
         local function tpOnEnter(self)
             if self:IsForbidden() or GameTooltip:IsForbidden() then return end
             GameTooltip:SetOwner(self, "ANCHOR_BOTTOM",0,-10)
@@ -2337,7 +2337,7 @@ function RXP_.UpdateQuestButton(index)
         end
         button:SetScript("OnEnter",tpOnEnter)
         button:SetScript("OnLeave",tpOnLeave)
-        
+
     end
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(index);
     local showButton
@@ -2352,7 +2352,7 @@ function RXP_.UpdateQuestButton(index)
         else
             list = list:gsub("\n[!#]?%+.*","")
         end
-        
+
         list = list:gsub("(\n?)([#!%-%+]*)%[?(%S*)%]? (.*)",function(newline,prefix,phase,suffix)
             if phase ~= "" and not RXP_.PhaseCheck(phase) then
                 return ""
@@ -2362,7 +2362,7 @@ function RXP_.UpdateQuestButton(index)
         list = list:gsub("\n\n","\n")
         return list
     end
-    
+
     if questID then
         local tooltip = ""
         local separator = ""
@@ -2383,7 +2383,7 @@ function RXP_.UpdateQuestButton(index)
         end
         button.tooltip = tooltip
     end
-    
+
     if showButton then
         button:Show()
     else
@@ -2392,7 +2392,7 @@ function RXP_.UpdateQuestButton(index)
 end
 
 if QuestLog_SetSelection then
-	hooksecurefunc("QuestLog_SetSelection",RXP_.UpdateQuestButton)
+    hooksecurefunc("QuestLog_SetSelection",RXP_.UpdateQuestButton)
 end
 
 local HSframe = CreateFrame("Frame");
@@ -2401,35 +2401,35 @@ local HSstart = 0
 local batchingWindow = 0.005
 
 local function SwitchBindLocation()
-	if GetTime() - HSstart > 10 - batchingWindow then
-		ConfirmBinder()
-		HSframe:SetScript("OnUpdate",nil)
-		SetCVar("maxfps",currentFPS)
-		HSstart = 0
-	end
+    if GetTime() - HSstart > 10 - batchingWindow then
+        ConfirmBinder()
+        HSframe:SetScript("OnUpdate",nil)
+        SetCVar("maxfps",currentFPS)
+        HSstart = 0
+    end
 end
 
 local function StartHSTimer()
-	if HSstart == 0 then
+    if HSstart == 0 then
         batchingWindow = RXPData.batchSize / 1e3
-		currentFPS = GetCVar("maxfps")
-		SetCVar("maxfps",0)
-		HSstart = GetTime()
-		HSframe:SetScript("OnUpdate",SwitchBindLocation)
-	end
+        currentFPS = GetCVar("maxfps")
+        SetCVar("maxfps",0)
+        HSstart = GetTime()
+        HSframe:SetScript("OnUpdate",SwitchBindLocation)
+    end
 end
 
 hooksecurefunc("UseContainerItem",function(...)
-	if GetContainerItemID(...) == 6948 then
-		StartHSTimer()
-	end
+    if GetContainerItemID(...) == 6948 then
+        StartHSTimer()
+    end
 end)
 
 hooksecurefunc("UseAction",function(...)
-	local event,id = GetActionInfo(...)
-	if event == "item" and id == 6948 or event == "macro" and IsCurrentSpell(8690) then
-		StartHSTimer()
-	end
+    local event,id = GetActionInfo(...)
+    if event == "item" and id == 6948 or event == "macro" and IsCurrentSpell(8690) then
+        StartHSTimer()
+    end
 end)
 
 RXP_.QL = {}
@@ -2439,13 +2439,13 @@ function RXP_.GetQuestLog()
     local group = RXPGuides[RXPCData.currentGuideGroup]
     local QL = RXP_.QL
     local qError
-	local eStep
-	local maxQuests
-	if RXP_.version == "CLASSIC" then
-		maxQuests = 20
-	else
-		maxQuests = 25
-	end
+    local eStep
+    local maxQuests
+    if RXP_.version == "CLASSIC" then
+        maxQuests = 20
+    else
+        maxQuests = 25
+    end
     RXP_.next = group.next
 
     if (RXPCData.SoM and guide.era or not RXPCData.SoM and guide.som or RXPCData.SoM and RXPCData.phase > 2 and guide["era/som"]) or not guide then
@@ -2465,7 +2465,7 @@ function RXP_.GetQuestLog()
         end
         if nQuests > maxQuests then
             qError = true
-			eStep = step
+            eStep = step
             break
         end
     end
@@ -2475,15 +2475,15 @@ function RXP_.GetQuestLog()
         print(format("%s (%d)",v:gsub("^Accept ",""),i))
         n = n+1
     end
-    print("QuestLog length: "..n)   
-    
+    print("QuestLog length: "..n)
+
     if qError then
         print(format("Error at step %d: Quest log length greater than 20",eStep.index))
     else
         if group.next() then
             return RXP_.GetQuestLog()
-		else
-			print(format("Error at step %d",eStep.index))
+        else
+            print(format("Error at step %d",eStep.index))
         end
     end
 
@@ -2492,59 +2492,59 @@ end
 
 ----local j = 0
 local function GetActiveItemList(ref)
-	local itemList = {}
-	--[[
-	if not (ref and ref.activeItems) then
-		ref = RXP_
-	end]]
-	ref = RXP_
-	for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
-		for slot = 1,GetContainerNumSlots(bag) do
-			local id = GetContainerItemID(bag, slot)
-			local spell = GetItemSpell(id)
-			if id and spell then
-				--if classID == 12 then
-				if ref.activeItems[id] then
-					local itemName, _, _, _, _, _, _, _,_, itemTexture, _, classID = GetItemInfo(id)
-					itemList[id] = {name = itemName, texture = itemTexture, bag = bag, slot = slot}
-				end
-			end
-		end
-	end
-	return itemList
+    local itemList = {}
+    --[[
+    if not (ref and ref.activeItems) then
+        ref = RXP_
+    end]]
+    ref = RXP_
+    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+        for slot = 1,GetContainerNumSlots(bag) do
+            local id = GetContainerItemID(bag, slot)
+            local spell = GetItemSpell(id)
+            if id and spell then
+                --if classID == 12 then
+                if ref.activeItems[id] then
+                    local itemName, _, _, _, _, _, _, _,_, itemTexture, _, classID = GetItemInfo(id)
+                    itemList[id] = {name = itemName, texture = itemTexture, bag = bag, slot = slot}
+                end
+            end
+        end
+    end
+    return itemList
 end
 
 function RXP_.CreateActiveItemFrame(self,anchor,enableText)
 
-if not self or self.activeItemFrame then 
-	return
+if not self or self.activeItemFrame then
+    return
 end
 
 local f
 
 if not anchor then
-	anchor = UIParent 
-	self.activeItemFrame = CreateFrame("Frame","RXPItemFrame",anchor,BackdropTemplate)
-	f = self.activeItemFrame
-	f:SetClampedToScreen(true)
-	f:EnableMouse(true)
-	f:SetMovable(true)
+    anchor = UIParent
+    self.activeItemFrame = CreateFrame("Frame","RXPItemFrame",anchor,BackdropTemplate)
+    f = self.activeItemFrame
+    f:SetClampedToScreen(true)
+    f:EnableMouse(true)
+    f:SetMovable(true)
 else
-	self.activeItemFrame = CreateFrame("Frame","$parentItemFrame",anchor,BackdropTemplate)
-	f = self.activeItemFrame
+    self.activeItemFrame = CreateFrame("Frame","$parentItemFrame",anchor,BackdropTemplate)
+    f = self.activeItemFrame
 end
 
     f:ClearBackdrop()
     f:SetBackdrop(RXPFrame.backdropEdge)
     f:SetBackdropColor(unpack(RXP_.colors.background))
-	function f.onMouseDown()
-		f:StartMoving()
-	end
-	function f.onMouseUp()
-		f:StopMovingOrSizing()
-	end
-	f:SetScript("OnMouseDown", f.StartMoving)
-	f:SetScript("OnMouseUp", f.StopMovingOrSizing)
+    function f.onMouseDown()
+        f:StartMoving()
+    end
+    function f.onMouseUp()
+        f:StopMovingOrSizing()
+    end
+    f:SetScript("OnMouseDown", f.StartMoving)
+    f:SetScript("OnMouseUp", f.StopMovingOrSizing)
 
 
 f.parent = self
@@ -2561,19 +2561,19 @@ f:SetScript("OnEvent",RXP_.UpdateItemFrame)
 
 
 if not f.title then
-	f.title = CreateFrame("Frame","$parent_title",f, BackdropTemplate)
-	f.title:SetPoint("TOPLEFT",f,5,5)
-	f.title.text = f.title:CreateFontString(nil,"OVERLAY")
-	f.title.text:ClearAllPoints()
-	f.title.text:SetPoint("CENTER",f.title,2,1)
-	f.title.text:SetJustifyH("CENTER")
-	f.title.text:SetJustifyV("CENTER")
-	f.title.text:SetTextColor(1,1,1)
-	f.title.text:SetFont(RXP_.font, 9)
-	f.title.text:SetText("Quest Items")
-	f.title:EnableMouse(true)
-	f.title:SetScript("OnMouseDown", f.onMouseDown)
-	f.title:SetScript("OnMouseUp", f.onMouseUp)
+    f.title = CreateFrame("Frame","$parent_title",f, BackdropTemplate)
+    f.title:SetPoint("TOPLEFT",f,5,5)
+    f.title.text = f.title:CreateFontString(nil,"OVERLAY")
+    f.title.text:ClearAllPoints()
+    f.title.text:SetPoint("CENTER",f.title,2,1)
+    f.title.text:SetJustifyH("CENTER")
+    f.title.text:SetJustifyV("CENTER")
+    f.title.text:SetTextColor(1,1,1)
+    f.title.text:SetFont(RXP_.font, 9)
+    f.title.text:SetText("Quest Items")
+    f.title:EnableMouse(true)
+    f.title:SetScript("OnMouseDown", f.onMouseDown)
+    f.title:SetScript("OnMouseUp", f.onMouseUp)
 end
 
 
@@ -2587,124 +2587,124 @@ end
 RXP_:CreateActiveItemFrame()
 
 local fOnEnter = function(self)
-	--print(self.itemId)
-	if self.itemId and not GameTooltip:IsForbidden() then
-		GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-		GameTooltip:SetInventoryItemByID(self.itemId)
-		GameTooltip:Show()
-	end
+    --print(self.itemId)
+    if self.itemId and not GameTooltip:IsForbidden() then
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetInventoryItemByID(self.itemId)
+        GameTooltip:Show()
+    end
 end
 
 local fOnLeave = function(self)
-	if not GameTooltip:IsForbidden() then
-		GameTooltip:Hide()
-	end
-	if IsMouseButtonDown() and not InCombatLockdown() then
-		PickupContainerItem(self.bag,self.slot)
-	end
+    if not GameTooltip:IsForbidden() then
+        GameTooltip:Hide()
+    end
+    if IsMouseButtonDown() and not InCombatLockdown() then
+        PickupContainerItem(self.bag,self.slot)
+    end
 end
 
 
 
 function RXP_.UpdateItemFrame(itemFrame)
-	if not itemFrame then 
-		if RXP_.activeItemFrame  then
-			itemFrame = RXP_.activeItemFrame
-		else
-			return
-		end
-	end
-	
-	--[[local stepframe = itemFrame.stepframe
-	local step = stepframe.step
-	if not (step and step.activeItems) then
-		itemFrame:SetAlpha(0.01)
-		if not InCombatLockdown() then
-			return itemFrame:Hide()
-		end
-		return
-	elseif InCombatLockdown() then
-		if itemFrame.step ~= stepframe.step then
-			itemFrame:SetAlpha(0.1)
-		end
-		return
-	end
-	
-	itemFrame.step = stepframe.step
-	]]
+    if not itemFrame then
+        if RXP_.activeItemFrame  then
+            itemFrame = RXP_.activeItemFrame
+        else
+            return
+        end
+    end
 
-	if InCombatLockdown() then return end 
-	local buttonList = itemFrame.buttonList
-	local itemList = GetActiveItemList()
+    --[[local stepframe = itemFrame.stepframe
+    local step = stepframe.step
+    if not (step and step.activeItems) then
+        itemFrame:SetAlpha(0.01)
+        if not InCombatLockdown() then
+            return itemFrame:Hide()
+        end
+        return
+    elseif InCombatLockdown() then
+        if itemFrame.step ~= stepframe.step then
+            itemFrame:SetAlpha(0.1)
+        end
+        return
+    end
 
-	if itemFrame.hardcore ~= RXPCData.hardcore or not itemFrame.hardcore then
-		itemFrame.hardcore = RXPCData.hardcore
-		itemFrame:ClearBackdrop()
-		itemFrame:SetBackdrop(RXPFrame.backdropEdge)
-		local r,g,b = unpack(RXP_.colors.background)
-		itemFrame:SetBackdropColor(r,g,b,0.4)
-		itemFrame.title:ClearBackdrop()
-		itemFrame.title:SetBackdrop(RXPFrame.backdropEdge)
-		itemFrame.title:SetBackdropColor(unpack(RXP_.colors.background))
-	end
-	itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth()+10,17)
-	local i = 0
-	for id,item in pairs(itemList) do
-		i = i+1
-		local btn = buttonList[i]
+    itemFrame.step = stepframe.step
+    ]]
 
-		if not btn then
-			btn = CreateFrame("CheckButton", "Example", itemFrame, "SecureActionButtonTemplate")
-			btn:SetAttribute("type", "item")
-			btn:SetSize(25, 25)
-			table.insert(buttonList,btn)
-			local n = #buttonList
+    if InCombatLockdown() then return end
+    local buttonList = itemFrame.buttonList
+    local itemList = GetActiveItemList()
 
-			btn:ClearAllPoints()
-			if n == 1 then
-				btn:SetPoint("BOTTOMLEFT", itemFrame,"BOTTOMLEFT", 6,6)
-			else
-				btn:SetPoint("CENTER",buttonList[n-1],"CENTER",27,0)
-			end
-			btn.icon  = btn:CreateTexture(nil, "BACKGROUND");
-			local icon = btn.icon
-			icon:SetAllPoints(true);
-			icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
+    if itemFrame.hardcore ~= RXPCData.hardcore or not itemFrame.hardcore then
+        itemFrame.hardcore = RXPCData.hardcore
+        itemFrame:ClearBackdrop()
+        itemFrame:SetBackdrop(RXPFrame.backdropEdge)
+        local r,g,b = unpack(RXP_.colors.background)
+        itemFrame:SetBackdropColor(r,g,b,0.4)
+        itemFrame.title:ClearBackdrop()
+        itemFrame.title:SetBackdrop(RXPFrame.backdropEdge)
+        itemFrame.title:SetBackdropColor(unpack(RXP_.colors.background))
+    end
+    itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth()+10,17)
+    local i = 0
+    for id,item in pairs(itemList) do
+        i = i+1
+        local btn = buttonList[i]
+
+        if not btn then
+            btn = CreateFrame("CheckButton", "Example", itemFrame, "SecureActionButtonTemplate")
+            btn:SetAttribute("type", "item")
+            btn:SetSize(25, 25)
+            table.insert(buttonList,btn)
+            local n = #buttonList
+
+            btn:ClearAllPoints()
+            if n == 1 then
+                btn:SetPoint("BOTTOMLEFT", itemFrame,"BOTTOMLEFT", 6,6)
+            else
+                btn:SetPoint("CENTER",buttonList[n-1],"CENTER",27,0)
+            end
+            btn.icon  = btn:CreateTexture(nil, "BACKGROUND");
+            local icon = btn.icon
+            icon:SetAllPoints(true);
+            icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
 
 
 
-			btn:SetScript("OnEnter",fOnEnter)
-			btn:SetScript("OnLeave",fOnLeave)
+            btn:SetScript("OnEnter",fOnEnter)
+            btn:SetScript("OnLeave",fOnLeave)
 
-			local ht = btn:CreateTexture(nil, "HIGHLIGHT")
-			ht:SetAllPoints(true)
-			ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
-			ht:SetBlendMode("ADD")
-		end
+            local ht = btn:CreateTexture(nil, "HIGHLIGHT")
+            ht:SetAllPoints(true)
+            ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+            ht:SetBlendMode("ADD")
+        end
 
-		--print(id,item.texture,item.name)
-		btn:SetAttribute("item", item.name)
-		btn.itemId = id
-		btn.bag = item.bag
-		btn.slot = item.slot
-		btn.icon:SetTexture(item.texture)
-		btn:Show()
-	end
-	--print("s:",i)
-	if i > 0 then
-		itemFrame:SetAlpha(1)
-	end
-	
-	if i == 0 then
-		itemFrame:Hide()
-	else
-		itemFrame:Show()
-	end
+        --print(id,item.texture,item.name)
+        btn:SetAttribute("item", item.name)
+        btn.itemId = id
+        btn.bag = item.bag
+        btn.slot = item.slot
+        btn.icon:SetTexture(item.texture)
+        btn:Show()
+    end
+    --print("s:",i)
+    if i > 0 then
+        itemFrame:SetAlpha(1)
+    end
 
-	for n = i+1,#buttonList do
-		buttonList[n]:Hide()
-	end
-	local width = math.max(itemFrame.title:GetWidth()+10,i*27+8)
-	itemFrame:SetWidth(width);
-	
+    if i == 0 then
+        itemFrame:Hide()
+    else
+        itemFrame:Show()
+    end
+
+    for n = i+1,#buttonList do
+        buttonList[n]:Hide()
+    end
+    local width = math.max(itemFrame.title:GetWidth()+10,i*27+8)
+    itemFrame:SetWidth(width);
+
 end

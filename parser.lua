@@ -42,13 +42,13 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
         if defaultFor == "58Boost" then
             if playerLevel >= 60 or playerLevel < 58 then
                 guideGroup = "*"..guideGroup
-            end            
+            end
             boost58 = true
         elseif not applies(defaultFor) then
             guideGroup = "*"..guideGroup
         end
     end
-    
+
     if not RXPG[guideGroup] then
         RXPG[guideGroup] = {}
         setmetatable(RXPG[guideGroup],RXP_.functions)
@@ -69,8 +69,8 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
 
     local function parseLine(linetext)
         local line = linetext
-        local classtag 
-        line = line:gsub("%s*<<%s*(.+)",function(t) 
+        local classtag
+        line = line:gsub("%s*<<%s*(.+)",function(t)
             classtag = t
             return ""
         end)
@@ -91,7 +91,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
         end
 
         local element
-        local text 
+        local text
         line = line:gsub("%s*>>%s*(.*)",function(t)
             if t ~= "" then
                 text = t
@@ -101,7 +101,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
 
         line:gsub("^%.(%S+)%s*(.*)",function(tag,args)
             local t = {}
-            
+
             if tag == "link" then
                 local link = args:gsub("%s+$","")
                 table.insert(t,link)
@@ -167,7 +167,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                 RXP_.step = step
                 lastElement = nil
             end
-        elseif not skip then   
+        elseif not skip then
             if currentStep > 0 then
                 if currentStep > 1 or (version == "tbc" and not(guide.classic or guide.wotlk)) or guide[version] then
                     parseLine(line)
@@ -177,7 +177,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                 end
             elseif currentStep == 0 then
                 local classtag
-                line = line:gsub("(.*)<<%s*(.+)",function(code,tag) 
+                line = line:gsub("(.*)<<%s*(.+)",function(code,tag)
                     code = code:gsub("%s+$","")
                     classtag = tag
                     return code
@@ -232,10 +232,10 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     end
     local list = RXP_.guideList[guide.group]
     table.insert(RXP_.guides,guide)
-	if list[guide.name] then
-		suffix = suffix + 1
-		guide.name = guide.name .. tostring(suffix)
-	end
+    if list[guide.name] then
+        suffix = suffix + 1
+        guide.name = guide.name .. tostring(suffix)
+    end
     table.insert(list.names_,guide.name)
     list[guide.name] = #RXP_.guides
     if guideGroup:sub(1,1) ~= "*" and defaultFor and not RXP_.defaultGuide then

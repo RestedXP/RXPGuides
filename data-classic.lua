@@ -9,14 +9,14 @@ RXP_.skipPreReq = {
 }
 
 RXP_.repStandingID = {
-	["hated"] = 1,
-	["hostile"] = 2,
-	["unfriendly"] = 3,
-	["neutral"] = 4,
-	["friendly"] = 5,
-	["honored"] = 6,
-	["revered"] = 7,
-	["exalted"] = 8,
+    ["hated"] = 1,
+    ["hostile"] = 2,
+    ["unfriendly"] = 3,
+    ["neutral"] = 4,
+    ["friendly"] = 5,
+    ["honored"] = 6,
+    ["revered"] = 7,
+    ["exalted"] = 8,
 }
 
 RXP_.repStartValue = {
@@ -84,182 +84,182 @@ RXP_.mapId = {
 }
 
 RXP_.questCompleteItems = {
-	[1517] = 6635, -- Call of Earth // Earth Sapta
-	[934] = 5623, -- Crown of the Earth // Amethyst Phial
-	[2561] = 8149, -- Druid of the Claw // Voodoo Charm
-	[933] = 5645, -- Crown of the Earth // Tourmaline Phial
-	[1520] = 6635, -- Call of Earth // Earth Sapta
-	[929] = 5639, -- Crown of the Earth // Jade Phial
-	[760] = 5416, -- Wildmane Cleansing // Wildmane Cleansing Totem
-	[758] = 5415, -- Thunderhorn Cleansing // Thunderhorn Cleansing Totem
-	[921] = 5185, -- Crown of the Earth // Crystal Phial
-	[7383] = 18151, -- Crown of the Earth // Amethyst Phial
-	[754] = 5411, -- Winterhoof Cleansing // Winterhoof Cleansing Totem
-	[2520] = 8155, -- Sathrah's Sacrifice // Sathrah's Sacrifice
-	[6543] = 16783, -- The Warsong Reports // Bundle of Reports
-	[3514] = 10622, -- Horde Presence // Kadrak's Flag
-	[6124] = 15826, -- Curing the Sick // Curative Animal Salve
-	[9491] = 5060, -- Greed // Thieves' Tools
-	[881] = 10327, -- Echeyakee // Horn of Echeyakee
-	[1030] = 5462, -- Raene's Cleansing // Dartol's Rod of Transformation
-	[6002] = 15710, -- Body and Heart // Cenarion Lunardust
-	[1045] = 5462, -- Raene's Cleansing // Dartol's Rod of Transformation
-	[1861] = 7207, -- Mirror Lake // Jennea's Flask
-	[4763] = 12346, -- The Blackwood Corrupted // Empty Cleansing Bowl
-	[1029] = 5462, -- Raene's Cleansing // Dartol's Rod of Transformation
-	[6001] = 15208, -- Body and Heart // Cenarion Moondust
-	[6127] = 15842, -- The Principal Source // Empty Dreadmist Peak Sampler
-	[849] = 5021, -- Revenge of Gann // Explosive Stick of Gann
-	[139] = 1361, -- Captain Sander's Hidden Treasure // Another Clue to Sander's Treasure
-	[4762] = 12350, -- The Cliffspring River // Empty Sampling Tube
-	[6129] = 15826, -- Curing the Sick // Curative Animal Salve
-	[1086] = 5638, -- The Flying Machine Airport // Toxic Fogger
-	[1858] = 7209, -- The Shattered Hand // Tazan's Satchel
-	[6122] = 15844, -- The Principal Source // Empty Cliffspring Falls Sampler
-	[1080] = 5738, -- Covert Ops - Beta // Covert Ops Pack
-	[1781] = 6866, -- The Tome of Divinity // Symbol of Life
-	[1079] = 5738, -- Covert Ops - Alpha // Covert Ops Pack
-	[2118] = 7586, -- Plagued Lands // Tharnariun's Hope
-	[4812] = 14338, -- As Water Cascades // Empty Water Tube
-	[172] = 18597, -- Children's Week // Orcish Orphan Whistle
-	[1468] = 18598, -- Children's Week // Human Orphan Whistle
-	[1779] = 6866, -- The Tome of Divinity // Symbol of Life
-	[9504] = 23749, -- Call of Water // Empty Bota Bag
-	[9501] = 23871, -- Call of Water // Potion of Water Breathing
-	[1197] = 5868, -- The Sacred Flame // Filled Etched Phial
-	[9526] = 23788, -- Reclaiming Felfire Hill // Tree Seedlings
-	[2458] = 8051, -- Deep Cover // Flare Gun
-	[1944] = 7269, -- Waters of Xavian // Deino's Flask
-	[2926] = 9283, -- Gnogaine // Empty Leaden Collection Phial
-	[1016] = 5456, -- Elemental Bracers // Divining Scroll
-	[1534] = 7767, -- Call of Water // Empty Blue Waterskin
-	[1536] = 7768, -- Call of Water // Empty Red Waterskin
-	[1535] = 7766, -- Call of Water // Empty Brown Waterskin
-	[1657] = 20387, -- Stinking Up Southshore // Forsaken Stink Bomb Cluster
-	[8373] = 20604, -- The Power of Pine // Stink Bomb Cleaner
-	[735] = 4649, -- The Star, the Hand and the Heart // Bonegrip's Note
-	[7067] = 17757, -- The Pariah's Instructions // Amulet of Spirits
-	[592] = 3913, -- Saving Yenniku // Soul Gem
-	[656] = 4472, -- Summoning the Princess // Scroll of Myzrael
-	[6624] = 16991, -- Triage // Triage Bandage
-	[2201] = 7668, -- Find the Gems // Bloodstained Journal
-	[6622] = 16991, -- Triage // Triage Bandage
-	[635] = 16991, -- Crystal in the Mountains // Pendant of Myzrael
-	[3642] = 10794, -- The Pledge of Secrecy // Oglethorpe's Pledge of Secrecy
-	[2339] = 7668, -- Find the Gems and Power Source // Bloodstained Journal
-	[2932] = 15002, -- Grim Message // Nimboya's Pike
-	[3638] = 10792, -- The Pledge of Secrecy // Nixx's Pledge of Secrecy
-	[3640] = 10793, -- The Pledge of Secrecy // Overspark's Pledge of Secrecy
-	[992] = 8584, -- Gadgetzan Water Survey // Untapped Dowsing Widget
-	[2318] = 7886, -- Translating the Journal // Untranslated Journal
-	[695] = 4529, -- An Apprentice's Enchantment // Enchanted Agate
-	[654] = 8523, -- Tanaris Field Sampling // Field Testing Kit
-	[1456] = 34130, -- The Karnitol Shipwreck // Recovery Diver's Potion
-	[8149] = 19850, -- Honoring a Hero // Uther's Tribute
-	[8150] = 19851, -- Honoring a Hero // Grom's Tribute
-	[3528] = 10662, -- The God Hakkar // Egg of Hakkar
-	[2937] = 9323, -- Summoning Shadra // Gadrin's Parchment
-	[4505] = 12566, -- Well of Corruption // Hardened Flasket
-	[4506] = 12565, -- Corrupted Sabers // Winna's Kitten Carrier
-	[4005] = {11617,11169}, -- Aquementas // Eridan's Supplies, Book of Aquor
-	[3463] = 10515, -- Set Them Ablaze! // Torch of Retribution
-	[7041] = 17693, -- Vyletongue Corruption // Coated Cerulean Vial
-	[3449] = 10445, -- Arcane Runes // Drawing Kit
-	[4292] = {11568,11570,11569}, -- The Bait for Lar'korwi // Torwa's Pouch
-	[2879] = 9263, -- The Stave of Equinex // Troyas' Stave
-	[4513] = {11955,11953}, -- A Little Slime Goes a Long Way // Bag of Empty Ooze Containers, Empty Pure Sample Jar
-	[3883] = 11132, -- Alien Ecology // Unused Scraping Vial
-	[3602] = 10834, -- Azsharite // Felhound Tracker Kit
-	[3912] = 11243, -- Meet at the Grave // Videre Elixir
-	[5157] = 12922, -- Collection of the Corrupt Water // Empty Canteen
-	[7029] = 17693, -- Vyletongue Corruption // Coated Cerulean Vial
-	[7843] = 19036, -- The Final Message to the Wildhammer // Final Message to the Wildhammer
-	--[3568] = {10695,10687,10688,10689,10690}, -- Seeping Corruption // Box of Empty Vials, Empty Vial Labeled #1-4??
-	[3568] = 10695, -- Seeping Corruption // Box of Empty Vials
-	[7003] = 18904, -- Zapped Giants // Zorbin's Ultra-Shrinker
-	[3785] = 11020, -- Morrowgrain Research // Evergreen Pouch
-	[3845] = 11107, -- It's a Secret to Everybody // A Small Pack
-	[3786] = 11020, -- Morrowgrain Research // Evergreen Pouch
-	[7725] = 18904, -- Again With the Zapped Giants // Zorbin's Ultra-Shrinker
-	[4642] = 12288, -- Melding of Influences // Encased Corrupt Ooze
-	[4441] = 11682, -- Felbound Ancients // Eridan's Vial
-	[4512] = {11912,11914,11948}, -- A Little Slime Goes a Long Way // Package of Empty Ooze Containers,Empty Cursed/Tainted Ooze Jar
-	[2203] = {7870,7866}, -- Badlands Reagent Run II // Thaumaturgy Vessel Lockbox, Empty Thaumaturgy Vessel
-	[3791] = 11020, -- The Mystery of Morrowgrain // Evergreen Pouch
-	[2501] = 7870, -- Badlands Reagent Run II // Thaumaturgy Vessel Lockbox
-	[8762] = 21315, -- Metzen the Reindeer // Smokywood Satchel
-	[5902] = 15044, -- A Plague Upon Thee // Barrel of Plagueland Termites
-	[5904] = 15044, -- A Plague Upon Thee // Barrel of Plagueland Termites
-	[3825] = 11079, -- Ogre Head On A Stick = Party // Gor'tesh's Lopped Off Head
-	[8746] = 21315, -- Metzen the Reindeer // Smokywood Satchel
-	[5051] = 12721, -- Two Halves Become One // Good Luck Half-Charm
-	[5096] = 12807, -- Scarlet Diversions // Scourge Banner
-	[7603] = 18626, -- Kroshius' Infernal Core // Fel Fire
-	[4507] = 11833, -- Pawn Captures Queen // Gorishi Queen Lure
-	[4024] = 11231, -- A Taste of Flame // Altered Black Dragonflight Molt
-	[5247] = 16974, -- Fragments of the Past // Empty Water Vial
-	[5098] = 12815, -- All Along the Watchtowers // Beacon Torch
-	[4201] = 11412, -- The Love Potion // Nagmara's Vial
-	[5097] = 12815, -- All Along the Watchtowers // Beacon Torch
-	[9051] = 22432, -- Toxic Test // Devilsaur Barb
-	[4122] = 11286, -- Grark Lorkrub // Thorium Shackles
-	[6041] = 15736, -- When Smokey Sings, I Get Violent // Smokey's Special Compound
-	[4491] = 11804, -- A Little Help From My Friends // Spraggle's Canteen
-	[6022] = 15454, -- To Kill With Purpose // Mortar and Pestle
-	[4743] = 12339, -- Seal of Ascension // Vaelan's Gift
-	[5801] = 14644, -- Fire Plume Forged // Skeleton Key Mold
-	[5384] = 13523, -- Kirtonos the Herald // Blood of Innocents
-	[5802] = 14644, -- Fire Plume Forged // Skeleton Key Mold
-	[5127] = 12848, -- The Demon Forge // Blood Stained Pike
-	[5721] = 15209, -- The Battle of Darrowshire // Relic Bundle
-	[8258] = 18746, -- The Darkreaver Menace // Divination Scryer
-	[9015] = 21986, -- The Challenge // Banner of Provocation
-	[5526] = 18540, -- Shards of the Felvine // Reliquary of Purity
-	[5282] = 13289, -- The Restless Souls // Egan's Blaster
-	[6570] = 16787, -- Emberstrife // Amulet of Draconic Subversion
-	[4729] = 12262, -- Kibler's Exotic Pets // Empty Worg Pup Cage
-	[4771] = 12368, -- Dawn's Gambit // Dawn's Gambit
-	[6146] = 15876, -- Nathanos' Ruse // Nathanos' Chest
-	[8970] = 21984, -- I See Alcaz Island In Your Future... // Left Piece of Lord Valthalak's Amulet
-	[8315] = 20464, -- The Calling // Glyphs of Calling
-	[5466] = 13752, -- The Lich, Ras Frostwhisper // Soulbound Keepsake
-	[8930] = 22115, -- In Search of Anthion // Extra-Dimensional Ghost Revealer
-	[8995] = 22056, -- Mea Culpa, Lord Valthalak // Brazier of Beckoning
-	[8994] = 22048, -- Final Preparations // Lord Valthalak's Amulet
-	[7668] = 18746, -- The Darkreaver Menace // Divination Scryer
-	[8929] = 22115, -- In Search of Anthion // Extra-Dimensional Ghost Revealer
-	[8201] = 19883, -- A Collection of Heads // Sacred Cord
-	[9816] = 24470, -- Have You Ever Seen One of These? // Murloc Cage
-	[7647] = 18804, -- Judgment and Redemption // Lord Grayson's Satchel
-	[7509] = 31123, -- The Forging of Quel'Serrar // Unfired Ancient Blade
-	[9781] = 25539, -- Too Many Mouths to Feed // Potion of Water Breathing
-	[8729] = 21136, -- The Wrath of Neptulon // Arcanite Buoy
-	[8620] = 21112, -- The Only Prescription // Magical Book Binding
-	[8301] = 21112, -- The Path of the Righteous // Agent of Nozdormu
-	[8507] = 21143, -- Field Duty // Unsigned Field Duty Papers
-	[8731] = 21143, -- Field Duty // Unsigned Field Duty Papers
-	[8606] = 21042, -- Decoy! // Narain's Special Kit
-	[8508] = 20810, -- Field Duty Papers // Signed Field Duty Papers
-	[8732] = 20810, -- Field Duty Papers // Signed Field Duty Papers
+    [1517] = 6635, -- Call of Earth // Earth Sapta
+    [934] = 5623, -- Crown of the Earth // Amethyst Phial
+    [2561] = 8149, -- Druid of the Claw // Voodoo Charm
+    [933] = 5645, -- Crown of the Earth // Tourmaline Phial
+    [1520] = 6635, -- Call of Earth // Earth Sapta
+    [929] = 5639, -- Crown of the Earth // Jade Phial
+    [760] = 5416, -- Wildmane Cleansing // Wildmane Cleansing Totem
+    [758] = 5415, -- Thunderhorn Cleansing // Thunderhorn Cleansing Totem
+    [921] = 5185, -- Crown of the Earth // Crystal Phial
+    [7383] = 18151, -- Crown of the Earth // Amethyst Phial
+    [754] = 5411, -- Winterhoof Cleansing // Winterhoof Cleansing Totem
+    [2520] = 8155, -- Sathrah's Sacrifice // Sathrah's Sacrifice
+    [6543] = 16783, -- The Warsong Reports // Bundle of Reports
+    [3514] = 10622, -- Horde Presence // Kadrak's Flag
+    [6124] = 15826, -- Curing the Sick // Curative Animal Salve
+    [9491] = 5060, -- Greed // Thieves' Tools
+    [881] = 10327, -- Echeyakee // Horn of Echeyakee
+    [1030] = 5462, -- Raene's Cleansing // Dartol's Rod of Transformation
+    [6002] = 15710, -- Body and Heart // Cenarion Lunardust
+    [1045] = 5462, -- Raene's Cleansing // Dartol's Rod of Transformation
+    [1861] = 7207, -- Mirror Lake // Jennea's Flask
+    [4763] = 12346, -- The Blackwood Corrupted // Empty Cleansing Bowl
+    [1029] = 5462, -- Raene's Cleansing // Dartol's Rod of Transformation
+    [6001] = 15208, -- Body and Heart // Cenarion Moondust
+    [6127] = 15842, -- The Principal Source // Empty Dreadmist Peak Sampler
+    [849] = 5021, -- Revenge of Gann // Explosive Stick of Gann
+    [139] = 1361, -- Captain Sander's Hidden Treasure // Another Clue to Sander's Treasure
+    [4762] = 12350, -- The Cliffspring River // Empty Sampling Tube
+    [6129] = 15826, -- Curing the Sick // Curative Animal Salve
+    [1086] = 5638, -- The Flying Machine Airport // Toxic Fogger
+    [1858] = 7209, -- The Shattered Hand // Tazan's Satchel
+    [6122] = 15844, -- The Principal Source // Empty Cliffspring Falls Sampler
+    [1080] = 5738, -- Covert Ops - Beta // Covert Ops Pack
+    [1781] = 6866, -- The Tome of Divinity // Symbol of Life
+    [1079] = 5738, -- Covert Ops - Alpha // Covert Ops Pack
+    [2118] = 7586, -- Plagued Lands // Tharnariun's Hope
+    [4812] = 14338, -- As Water Cascades // Empty Water Tube
+    [172] = 18597, -- Children's Week // Orcish Orphan Whistle
+    [1468] = 18598, -- Children's Week // Human Orphan Whistle
+    [1779] = 6866, -- The Tome of Divinity // Symbol of Life
+    [9504] = 23749, -- Call of Water // Empty Bota Bag
+    [9501] = 23871, -- Call of Water // Potion of Water Breathing
+    [1197] = 5868, -- The Sacred Flame // Filled Etched Phial
+    [9526] = 23788, -- Reclaiming Felfire Hill // Tree Seedlings
+    [2458] = 8051, -- Deep Cover // Flare Gun
+    [1944] = 7269, -- Waters of Xavian // Deino's Flask
+    [2926] = 9283, -- Gnogaine // Empty Leaden Collection Phial
+    [1016] = 5456, -- Elemental Bracers // Divining Scroll
+    [1534] = 7767, -- Call of Water // Empty Blue Waterskin
+    [1536] = 7768, -- Call of Water // Empty Red Waterskin
+    [1535] = 7766, -- Call of Water // Empty Brown Waterskin
+    [1657] = 20387, -- Stinking Up Southshore // Forsaken Stink Bomb Cluster
+    [8373] = 20604, -- The Power of Pine // Stink Bomb Cleaner
+    [735] = 4649, -- The Star, the Hand and the Heart // Bonegrip's Note
+    [7067] = 17757, -- The Pariah's Instructions // Amulet of Spirits
+    [592] = 3913, -- Saving Yenniku // Soul Gem
+    [656] = 4472, -- Summoning the Princess // Scroll of Myzrael
+    [6624] = 16991, -- Triage // Triage Bandage
+    [2201] = 7668, -- Find the Gems // Bloodstained Journal
+    [6622] = 16991, -- Triage // Triage Bandage
+    [635] = 16991, -- Crystal in the Mountains // Pendant of Myzrael
+    [3642] = 10794, -- The Pledge of Secrecy // Oglethorpe's Pledge of Secrecy
+    [2339] = 7668, -- Find the Gems and Power Source // Bloodstained Journal
+    [2932] = 15002, -- Grim Message // Nimboya's Pike
+    [3638] = 10792, -- The Pledge of Secrecy // Nixx's Pledge of Secrecy
+    [3640] = 10793, -- The Pledge of Secrecy // Overspark's Pledge of Secrecy
+    [992] = 8584, -- Gadgetzan Water Survey // Untapped Dowsing Widget
+    [2318] = 7886, -- Translating the Journal // Untranslated Journal
+    [695] = 4529, -- An Apprentice's Enchantment // Enchanted Agate
+    [654] = 8523, -- Tanaris Field Sampling // Field Testing Kit
+    [1456] = 34130, -- The Karnitol Shipwreck // Recovery Diver's Potion
+    [8149] = 19850, -- Honoring a Hero // Uther's Tribute
+    [8150] = 19851, -- Honoring a Hero // Grom's Tribute
+    [3528] = 10662, -- The God Hakkar // Egg of Hakkar
+    [2937] = 9323, -- Summoning Shadra // Gadrin's Parchment
+    [4505] = 12566, -- Well of Corruption // Hardened Flasket
+    [4506] = 12565, -- Corrupted Sabers // Winna's Kitten Carrier
+    [4005] = {11617,11169}, -- Aquementas // Eridan's Supplies, Book of Aquor
+    [3463] = 10515, -- Set Them Ablaze! // Torch of Retribution
+    [7041] = 17693, -- Vyletongue Corruption // Coated Cerulean Vial
+    [3449] = 10445, -- Arcane Runes // Drawing Kit
+    [4292] = {11568,11570,11569}, -- The Bait for Lar'korwi // Torwa's Pouch
+    [2879] = 9263, -- The Stave of Equinex // Troyas' Stave
+    [4513] = {11955,11953}, -- A Little Slime Goes a Long Way // Bag of Empty Ooze Containers, Empty Pure Sample Jar
+    [3883] = 11132, -- Alien Ecology // Unused Scraping Vial
+    [3602] = 10834, -- Azsharite // Felhound Tracker Kit
+    [3912] = 11243, -- Meet at the Grave // Videre Elixir
+    [5157] = 12922, -- Collection of the Corrupt Water // Empty Canteen
+    [7029] = 17693, -- Vyletongue Corruption // Coated Cerulean Vial
+    [7843] = 19036, -- The Final Message to the Wildhammer // Final Message to the Wildhammer
+    --[3568] = {10695,10687,10688,10689,10690}, -- Seeping Corruption // Box of Empty Vials, Empty Vial Labeled #1-4??
+    [3568] = 10695, -- Seeping Corruption // Box of Empty Vials
+    [7003] = 18904, -- Zapped Giants // Zorbin's Ultra-Shrinker
+    [3785] = 11020, -- Morrowgrain Research // Evergreen Pouch
+    [3845] = 11107, -- It's a Secret to Everybody // A Small Pack
+    [3786] = 11020, -- Morrowgrain Research // Evergreen Pouch
+    [7725] = 18904, -- Again With the Zapped Giants // Zorbin's Ultra-Shrinker
+    [4642] = 12288, -- Melding of Influences // Encased Corrupt Ooze
+    [4441] = 11682, -- Felbound Ancients // Eridan's Vial
+    [4512] = {11912,11914,11948}, -- A Little Slime Goes a Long Way // Package of Empty Ooze Containers,Empty Cursed/Tainted Ooze Jar
+    [2203] = {7870,7866}, -- Badlands Reagent Run II // Thaumaturgy Vessel Lockbox, Empty Thaumaturgy Vessel
+    [3791] = 11020, -- The Mystery of Morrowgrain // Evergreen Pouch
+    [2501] = 7870, -- Badlands Reagent Run II // Thaumaturgy Vessel Lockbox
+    [8762] = 21315, -- Metzen the Reindeer // Smokywood Satchel
+    [5902] = 15044, -- A Plague Upon Thee // Barrel of Plagueland Termites
+    [5904] = 15044, -- A Plague Upon Thee // Barrel of Plagueland Termites
+    [3825] = 11079, -- Ogre Head On A Stick = Party // Gor'tesh's Lopped Off Head
+    [8746] = 21315, -- Metzen the Reindeer // Smokywood Satchel
+    [5051] = 12721, -- Two Halves Become One // Good Luck Half-Charm
+    [5096] = 12807, -- Scarlet Diversions // Scourge Banner
+    [7603] = 18626, -- Kroshius' Infernal Core // Fel Fire
+    [4507] = 11833, -- Pawn Captures Queen // Gorishi Queen Lure
+    [4024] = 11231, -- A Taste of Flame // Altered Black Dragonflight Molt
+    [5247] = 16974, -- Fragments of the Past // Empty Water Vial
+    [5098] = 12815, -- All Along the Watchtowers // Beacon Torch
+    [4201] = 11412, -- The Love Potion // Nagmara's Vial
+    [5097] = 12815, -- All Along the Watchtowers // Beacon Torch
+    [9051] = 22432, -- Toxic Test // Devilsaur Barb
+    [4122] = 11286, -- Grark Lorkrub // Thorium Shackles
+    [6041] = 15736, -- When Smokey Sings, I Get Violent // Smokey's Special Compound
+    [4491] = 11804, -- A Little Help From My Friends // Spraggle's Canteen
+    [6022] = 15454, -- To Kill With Purpose // Mortar and Pestle
+    [4743] = 12339, -- Seal of Ascension // Vaelan's Gift
+    [5801] = 14644, -- Fire Plume Forged // Skeleton Key Mold
+    [5384] = 13523, -- Kirtonos the Herald // Blood of Innocents
+    [5802] = 14644, -- Fire Plume Forged // Skeleton Key Mold
+    [5127] = 12848, -- The Demon Forge // Blood Stained Pike
+    [5721] = 15209, -- The Battle of Darrowshire // Relic Bundle
+    [8258] = 18746, -- The Darkreaver Menace // Divination Scryer
+    [9015] = 21986, -- The Challenge // Banner of Provocation
+    [5526] = 18540, -- Shards of the Felvine // Reliquary of Purity
+    [5282] = 13289, -- The Restless Souls // Egan's Blaster
+    [6570] = 16787, -- Emberstrife // Amulet of Draconic Subversion
+    [4729] = 12262, -- Kibler's Exotic Pets // Empty Worg Pup Cage
+    [4771] = 12368, -- Dawn's Gambit // Dawn's Gambit
+    [6146] = 15876, -- Nathanos' Ruse // Nathanos' Chest
+    [8970] = 21984, -- I See Alcaz Island In Your Future... // Left Piece of Lord Valthalak's Amulet
+    [8315] = 20464, -- The Calling // Glyphs of Calling
+    [5466] = 13752, -- The Lich, Ras Frostwhisper // Soulbound Keepsake
+    [8930] = 22115, -- In Search of Anthion // Extra-Dimensional Ghost Revealer
+    [8995] = 22056, -- Mea Culpa, Lord Valthalak // Brazier of Beckoning
+    [8994] = 22048, -- Final Preparations // Lord Valthalak's Amulet
+    [7668] = 18746, -- The Darkreaver Menace // Divination Scryer
+    [8929] = 22115, -- In Search of Anthion // Extra-Dimensional Ghost Revealer
+    [8201] = 19883, -- A Collection of Heads // Sacred Cord
+    [9816] = 24470, -- Have You Ever Seen One of These? // Murloc Cage
+    [7647] = 18804, -- Judgment and Redemption // Lord Grayson's Satchel
+    [7509] = 31123, -- The Forging of Quel'Serrar // Unfired Ancient Blade
+    [9781] = 25539, -- Too Many Mouths to Feed // Potion of Water Breathing
+    [8729] = 21136, -- The Wrath of Neptulon // Arcanite Buoy
+    [8620] = 21112, -- The Only Prescription // Magical Book Binding
+    [8301] = 21112, -- The Path of the Righteous // Agent of Nozdormu
+    [8507] = 21143, -- Field Duty // Unsigned Field Duty Papers
+    [8731] = 21143, -- Field Duty // Unsigned Field Duty Papers
+    [8606] = 21042, -- Decoy! // Narain's Special Kit
+    [8508] = 20810, -- Field Duty Papers // Signed Field Duty Papers
+    [8732] = 20810, -- Field Duty Papers // Signed Field Duty Papers
 
 }
 
 
 --Items required to turn in the quest
 RXP_.questTurnInItems = {
-	[944] = 5251, -- The Master's Glaive // Phial of Scrying
-	[3449] = 10444, -- Arcane Runes // Standard Issue Flare Gun
-	[2201] = 7667, -- Find the Gems // Talvash's Phial of Scrying
-	[2458] = 8051, -- Deep Cover // Flare Gun
+    [944] = 5251, -- The Master's Glaive // Phial of Scrying
+    [3449] = 10444, -- Arcane Runes // Standard Issue Flare Gun
+    [2201] = 7667, -- Find the Gems // Talvash's Phial of Scrying
+    [2458] = 8051, -- Deep Cover // Flare Gun
 }
 
 
 --Items required to accept the quest
 RXP_.questAcceptItems = {
-	[3461] = 10444, -- Return to Tymor // Standard Issue Flare Gun
-	[2204] = 7667, -- Restoring the Necklace // Talvash's Phial of Scrying
-	[949] = 5251, -- The Twilight Camp // Phial of Scrying
-	[2478] = 8051, -- Mission: Possible But Not Probable // Flare Gun
+    [3461] = 10444, -- Return to Tymor // Standard Issue Flare Gun
+    [2204] = 7667, -- Restoring the Necklace // Talvash's Phial of Scrying
+    [949] = 5251, -- The Twilight Camp // Phial of Scrying
+    [2478] = 8051, -- Mission: Possible But Not Probable // Flare Gun
 }
 
 
@@ -284,7 +284,7 @@ RXP_.flightPath["Alliance"] = {
     [16] = "Refuge Pointe, Arathi",
     [67] = "Light's Hope Chapel, Eastern Plaguelands",
     [66] = "Chillwind Camp, Western Plaguelands",
-    [2] = "Stormwind, Elwynn", 
+    [2] = "Stormwind, Elwynn",
     --
     [64] = "Talrendis Point, Azshara",
     [65] = "Talonbranch Glade, Felwood",
@@ -319,7 +319,7 @@ RXP_.flightPath["Horde"] = {
     [75] = "Thorium Point, Searing Gorge",
     [56] = "Stonard, Swamp of Sorrows",
     [70] = "Flame Crest, Burning Steppes",
-    [68] = "Light's Hope Chapel, Eastern Plaguelands", 
+    [68] = "Light's Hope Chapel, Eastern Plaguelands",
     --
     [72] = "Cenarion Hold, Silithus",
     [77] = "Camp Taurajo, The Barrens",
@@ -341,7 +341,7 @@ RXP_.flightPath["Horde"] = {
     [55] = "Brackenwall Village, Dustwallow Marsh",
     [58] = "Zoram'gar Outpost, Ashenvale",
     [61] = "Splintertree Post, Ashenvale",
-    [63] = "Nighthaven, Moonglade", 
+    [63] = "Nighthaven, Moonglade",
 }
 
 --[[
@@ -359,9 +359,9 @@ StaticPopupDialogs["m1"] = {timeout=10,hasEditBox = 1,text = ""} StaticPopup_Sho
 --Spells not used in hardcore:
 RXP_.HCSpellList = {
     20752, -- create soulstone r2
-	20755, -- create soulstone r3
-	20756, -- create soulstone r4
-	20757, -- create soulstone r5
+    20755, -- create soulstone r3
+    20756, -- create soulstone r4
+    20757, -- create soulstone r5
     1949, -- hellfire r1
     20608, -- reincarnation
 }
@@ -406,7 +406,7 @@ s["DRUID"] = {
         1126, -- mark of the wild
     },
     [4] = {
-	774, -- rejuvenation
+    774, -- rejuvenation
         8921, -- moonfire
     },
     [6] = {
@@ -414,14 +414,14 @@ s["DRUID"] = {
         5177, -- wrath r2
     },
     [8] = {
-        339, -- entangling roots 
+        339, -- entangling roots
         5186, -- healing touch r2
     },
     [10] = {
         99, -- demoralizing roar
         1058, -- rejuvenation r2
         5232, -- mark of the wild r2
-	8924, -- moonfire r2
+    8924, -- moonfire r2
     },
     [12] = {
         5229, -- enrage
@@ -429,14 +429,14 @@ s["DRUID"] = {
     },
     [14] = {
         782, -- thorns r2
-	5178, -- wrath r3
+    5178, -- wrath r3
         5187, -- healing touch r3
         5211, -- bash
     },
     [16] = {
         779, -- swipe
         1430, -- rejuvenation r3
-	8925, -- moonfire r3
+    8925, -- moonfire r3
     },
     [18] = {
         1062, -- entangling roots r2
@@ -475,7 +475,7 @@ s["DRUID"] = {
         9492, -- rip r2
     },
     [30] = {
-	6798, -- bash r2
+    6798, -- bash r2
         17390, -- faerie fire feral r2
         778, -- faerie fire r2
         5234, -- mark of the wild r4
@@ -483,7 +483,7 @@ s["DRUID"] = {
         783, -- travel form
     },
     [32] = {
-        22568, -- ferocious bite 
+        22568, -- ferocious bite
         6778, -- healing touch r6
         6785, -- ravage
         1823, -- rake r2
@@ -498,7 +498,7 @@ s["DRUID"] = {
         8941, -- regrowth r5
         9493, -- rip
         6793, -- tigers fury r2
-	22842, -- frenzied regeneration
+    22842, -- frenzied regeneration
     },
     [38] = {
         5201, -- claw r3
@@ -528,18 +528,18 @@ s["DRUID"] = {
         9756, -- thorns r5
     },
     [46] = {
-	8983, -- bash r3
+    8983, -- bash r3
         9821, -- dash r2
         9823, -- pounce r2
         9839, -- rejuvenation r8
-	22895, -- frenzied regeneration r2
+    22895, -- frenzied regeneration r2
     },
     [48] = {
         9849, -- claw r4
         22828, -- ferocious bite r3
         9856, -- regrowth r7
         9845, -- tigers fury r3
-	9852, -- entangling roots r5
+    9852, -- entangling roots r5
     },
     [50] = {
         9888, -- healing touch r9
@@ -560,13 +560,13 @@ s["DRUID"] = {
         22829, -- ferocious bite r4
         9889, -- healing touch r10
         9827, -- pounce r3
-	22896, -- frenzied regeneration r3
+    22896, -- frenzied regeneration r3
     },
     [58] = {
         9857, -- ravage r4
         9841, -- rejuvenation r10
         33982, -- mangle r2
-	9853, -- entangling roots r6
+    9853, -- entangling roots r6
     },
     [60] = {
         31018, -- ferocious bite r5
@@ -635,7 +635,7 @@ s["PALADIN"] = {
          19850, --blessing of wisdom r2
          5588, --hammer of justice r2
          5599, --blessing of pretection r2
-	 2878, -- turn undead
+     2878, -- turn undead
     },
     [26] = {
          19939, --flash of light r2
@@ -643,10 +643,10 @@ s["PALADIN"] = {
     },
     [28] = {
          5614, --exorcism r2
-	19746, --concerntration aura, may remove
+    19746, --concerntration aura, may remove
     },
     [30] = {
-         20116, --consecration r2 
+         20116, --consecration r2
          1042, --holy light r5
          10291, --devotion aura r4
          2800, --lay of hands r2
@@ -707,13 +707,13 @@ s["PALADIN"] = {
         24274, -- hammer of wrath r2
         10313, -- exorcism r5
         20308, -- seal of the crusader r6
-	25782, -- greater blessing of might
+    25782, -- greater blessing of might
     },
     [54] = {
         10308, -- hammer of justice r4
         10329, -- holy light r8
         19854, -- blessing of wisdom r5
-	25894, -- greater blessing of wisdom
+    25894, -- greater blessing of wisdom
     },
     [56] = {
         10301, -- retribution aura r5
@@ -1192,67 +1192,67 @@ s["ROGUE"] = {
         6760, -- eviscerate r2
     },
     [10] = {
-	921, -- pick pocket
+    921, -- pick pocket
         2983, -- sprint
         6452, -- Anti-venom(FA)
-	674, -- dual wield
+    674, -- dual wield
     },
     [12] = {
         1766, -- kick
-	6770, -- sap
-	5171, -- slice and dice
+    6770, -- sap
+    5171, -- slice and dice
     },
     [14] = {
-	703, -- garrote
+    703, -- garrote
         1758, -- sinister strike r3
     },
     [16] = {
         6761, -- eviscerate r3
-	1804, -- Pick Lock
+    1804, -- Pick Lock
     },
     [20] = {
         1785, -- stealth r2
-	1943, -- rupture
-	8676, -- ambush
+    1943, -- rupture
+    8676, -- ambush
     },
     [22] = {
         1725, -- distract
         1759, -- sinister strike r4
         1856, -- vanish
-	8631, -- garrote r2
+    8631, -- garrote r2
     },
     [24] = {
         6762, -- eviscerate r4
     },
     [26] = {
-	1767, -- kick r2
+    1767, -- kick r2
         1833, -- cheap shot
     },
     [28] = {
-	8639, -- rupture r2
+    8639, -- rupture r2
         8687, -- instant poison 2
-	2070, -- sap r2
+    2070, -- sap r2
     },
     [30] = {
         408, -- kidney shot
         1760, -- sinister strike
-	8632, -- garrote r3
+    8632, -- garrote r3
     },
     [32] = {
         8623, -- eviscerate r5
     },
     [34] = {
         2094, -- blind
-	6510, -- blinding powder
+    6510, -- blinding powder
         8696, -- sprint r2
     },
     [36] = {
-	8640, -- rupture r3
+    8640, -- rupture r3
         8691, -- instant posion 3
     },
     [38] = {
         8621, -- sinister strike r6
-	8633, -- garrote r4
+    8633, -- garrote r4
     },
     [40] = {
         8624, -- eviscerate r6
@@ -1260,47 +1260,47 @@ s["ROGUE"] = {
         1726, -- stealth r3
     },
     [42] = {
-	1768, -- kick r3
+    1768, -- kick r3
         1857, -- vanish r2
         6774, -- slice and dice r2
     },
     [44] = {
-	11273, -- rupture r4
+    11273, -- rupture r4
         11341, -- instant poison r4
-	1777, -- gouge r2
-	8629, -- gouge r3
+    1777, -- gouge r2
+    8629, -- gouge r3
     },
     [46] = {
-	11289, -- garrote r5
+    11289, -- garrote r5
         11293, -- sinister strike r7
-	11285, -- gouge r4
+    11285, -- gouge r4
     },
     [48] = {
         11299, -- eviscerate r7
-	11297, -- sap r3
+    11297, -- sap r3
     },
     [50] = {
         8643, -- kidney shot r2
     },
     [52] = {
-	11274, -- rupture r5
+    11274, -- rupture r5
         11342, -- instant poison r5
     },
     [54] = {
-	11290, -- garrote r6
+    11290, -- garrote r6
         11294, -- sinister strike r8
     },
     [56] = {
         11300, -- eviscerate r8
     },
     [58] = {
-	1769, -- kick r4
+    1769, -- kick r4
         11305, -- sprint r3
     },
     [60] = {
-	11286, -- gouge r5
+    11286, -- gouge r5
         1787, -- stealth r4
-	11275, -- rupture r6
+    11275, -- rupture r6
         11343, -- instant poison r6
         31016, -- eviscerate r9
     },
@@ -1337,10 +1337,10 @@ s["WARLOCK"] = {
     },
     [16] = {
         1455, -- life tap r2
-	5697, -- unending breath
+    5697, -- unending breath
     },
     [18] = {
-	693, -- soulstone
+    693, -- soulstone
         1014, -- curse of agony r2
     },
     [20] = {
@@ -1361,8 +1361,8 @@ s["WARLOCK"] = {
     [26] = {
         1714, -- curse of tongues
         1456, -- life tap r3
-	132, -- detect lesser invisibility
-	17919, -- searing pain r2
+    132, -- detect lesser invisibility
+    17919, -- searing pain r2
     },
     [28] = {
         710, -- banish
@@ -1371,46 +1371,46 @@ s["WARLOCK"] = {
         1106, -- shadow bolt r5
     },
     [30] = {
-	1949, -- hellfire, for deathskips
+    1949, -- hellfire, for deathskips
         20752, -- create soulstone r2
         1086, -- demon armor r2
         709, -- drain life r3
         2941, -- immolate r4
-	704, -- curse of recklessness
+    704, -- curse of recklessness
     },
     [32] = {
-	6229, -- shadow ward
+    6229, -- shadow ward
         6213, -- fear r2
     },
     [34] = {
         7684, -- corruption r4
         5699, -- create healthstone r3
-	17920, -- searing pain r3
+    17920, -- searing pain r3
     },
     [36] = {
-        2362, -- create spellstone 
+        2362, -- create spellstone
         3700, -- health funnel
         11687, -- life tap r4
         7641, -- shadow bolt r6
     },
     [38] = {
-	2970, -- detect invisibility
+    2970, -- detect invisibility
         18879, -- siphon life r2
         11711, -- curse of agony r4
         7651, -- drain life r4
     },
     [40] = {
-	5784, -- summon felsteed
+    5784, -- summon felsteed
         20755, -- create soulstone r3
         11733, -- demon armor r3
         5484, -- howl of terror
         11655, -- immolate r5
     },
     [42] = {
-	11739, -- shadow ward r2
+    11739, -- shadow ward r2
         6789, -- death coil
-	11683, -- hellfire r2
-	17921, -- searing pain r4
+    11683, -- hellfire r2
+    17921, -- searing pain r4
     },
     [44] = {
         11671, -- corruption r5
@@ -1423,34 +1423,34 @@ s["WARLOCK"] = {
         11688, -- life tap r5
     },
     [48] = {
-	6353, -- soul fire
+    6353, -- soul fire
         18880, -- siphon life r3
         18647, -- banish r2
         11712, -- curse of agony r5
     },
     [50] = {
-	11719, -- curse of tongues r2
+    11719, -- curse of tongues r2
         18937, -- dark pact r2
         20756, -- create soulstone r4
         17925, -- death coil r2
         11734, -- demon armor r4
         11667, -- immolate r6
-	11743, -- detect greater invisibility
-	17922, -- searing pain r5
+    11743, -- detect greater invisibility
+    17922, -- searing pain r5
     },
     [52] = {
-	11740, -- shadow ward r3
+    11740, -- shadow ward r3
         11694, -- health funnel r6
         11660, -- shadow bolt r8
     },
     [54] = {
-	11684, -- hellfire r3
+    11684, -- hellfire r3
         11672, -- corruption r6
         11700, -- drain life r6
         17928, -- howl of terror r2
     },
     [56] = {
-	17924, -- soul fire r2
+    17924, -- soul fire r2
         6215, -- fear r3
         11689, -- life tap r6
         18881, -- siphon life r4
@@ -1459,7 +1459,7 @@ s["WARLOCK"] = {
     [58] = {
         11713, -- curse of agony r6
         17926, -- death coil r3
-	17923, -- searing pain r6
+    17923, -- searing pain r6
     },
     [60] = {
         30404, -- unstable affliction r2
@@ -1500,7 +1500,7 @@ s["MAGE"] = {
         597, -- conjure food r2
         145, -- fireball r3
         130, -- slow fall
-	604, -- dampen magic
+    604, -- dampen magic
     },
     [14] = {
         1449, -- arcane explosion
@@ -1537,12 +1537,12 @@ s["MAGE"] = {
         2139, -- counterspell
         8400, -- fireball r5
         2121, -- flamestrike r2
-	990, -- conure food r3
+    990, -- conure food r3
         2948, -- scorch
     },
     [26] = {
         120, -- cone of cold
-	8450, -- dampen magic r2
+    8450, -- dampen magic r2
 --        8406, -- frostbolt r5
     },
     [28] = {
@@ -1588,7 +1588,7 @@ s["MAGE"] = {
         7320, -- ice armor r2
         12825, -- polymorph r3
         8446, -- scorch r4
-	8451, -- dampen magic r3
+    8451, -- dampen magic r3
     },
     [42] = {
         10156, -- arcane intellect r4
@@ -1612,7 +1612,7 @@ s["MAGE"] = {
         10053, -- conujre mana citrine
         10149, -- fireball r9
         10215, -- flamestrike r5
-	10173, -- dampen magic r4
+    10173, -- dampen magic r4
     },
     [50] = {
         10160, -- cone of cold r4
@@ -1676,7 +1676,7 @@ s["PRIEST"] = {
         2053, -- lesser heal r3
         8092, -- mind blast
         594, -- shadow word pain r2
-	2652, -- touch of weakness undead
+    2652, -- touch of weakness undead
     },
     [12] = {
         588, -- inner fire
@@ -1694,7 +1694,7 @@ s["PRIEST"] = {
         8102, -- mind blast r2
     },
     [18] = {
-	527, -- dispel magic
+    527, -- dispel magic
         19236, -- desperate prayer r2 human/dwarf
         600, -- power word shield r3
         970, -- shadow word pain r3
@@ -1710,14 +1710,14 @@ s["PRIEST"] = {
         7128, -- inner fire r2
         6075, -- renew r3
         18137, -- shadowguard troll
-	19261, -- touch of weakness r2 undead
+    19261, -- touch of weakness r2 undead
     },
     [22] = {
-	453, -- mind soothe 2lvl
+    453, -- mind soothe 2lvl
         2055, -- heal r2
         8103, -- mind blast r3
         984, -- smite r4
-	9484, -- shackle undead 2lvl
+    9484, -- shackle undead 2lvl
     },
     [24] = {
         15262, -- holy fire r2
@@ -1739,15 +1739,15 @@ s["PRIEST"] = {
         19308, -- shadowguard r2 troll
     },
     [30] = {
-	605, -- mind control
-	976, -- shadow protection
+    605, -- mind control
+    976, -- shadow protection
 --     19271, -- feedback r2 human
-	19289, -- elune's grace night elf
+    19289, -- elune's grace night elf
         15263, -- holy fire r3
         602, -- inner fire r3
         6065, -- power word shield r5
         1004, -- smite r5
-	19262, -- touch of weakness r3 undead
+    19262, -- touch of weakness r3 undead
     },
     [32] = {
         552, -- abolish disease
@@ -1757,7 +1757,7 @@ s["PRIEST"] = {
     [34] = {
         19240, -- desperate prayer r4 human dwarf
         6064, -- heal r4
-        1706, -- levitate 
+        1706, -- levitate
         8105, -- mind blast r5
         2767, -- shadow word pain
 --    19302, -- starshards r4 night elf
@@ -1769,8 +1769,8 @@ s["PRIEST"] = {
         6066, -- power word shield r6
         19309, -- shadowguard r3 troll
         6060, -- smite r6
-	8192, -- mind soothe r2
-	988, -- dispel magic r2
+    8192, -- mind soothe r2
+    988, -- dispel magic r2
     },
     [38] = {
         9474, -- flash heal r4
@@ -1779,19 +1779,19 @@ s["PRIEST"] = {
     [40] = {
         8106, -- mind blast r6
 --     19273, -- feedback r3
-        2060, -- greater heal 
+        2060, -- greater heal
         1006, -- inner fire r4
         17311, -- mind flay r2
         17312, -- mind flay r3
-	9485, -- shackle undead r2
-	19291, -- elune's grace r3 night elf
+    9485, -- shackle undead r2
+    19291, -- elune's grace r3 night elf
     },
     [42] = {
         19241, -- desperate prayer r5 dwarf human
         10898, -- power word shield r7
         10888, -- psychic scream r3
         10892, -- shadow word pain r6
-	10957, -- shadow protection r2
+    10957, -- shadow protection r2
 --      19303, -- starshards r5 night elf
     },
     [44] = {
@@ -1800,7 +1800,7 @@ s["PRIEST"] = {
         10915, -- flash heal r5
         10927, -- renew r7
         19310, -- shadowguard r4 troll
-	10911, -- mind control r2
+    10911, -- mind control r2
     },
     [46] = {
         10963, -- greater heal r2
@@ -1809,7 +1809,7 @@ s["PRIEST"] = {
     [48] = {
         10937, -- power word fortitude r5
         10899, -- power word shield r8
-	21562, -- prayer of fortitude
+    21562, -- prayer of fortitude
     },
     [50] = {
         19242, -- desperate prayer r6 human dwarf
@@ -1819,7 +1819,7 @@ s["PRIEST"] = {
         10928, -- renew r8
         10893, -- shadow word pain r7
 --      19304, -- starshards r6 night elf
-	19292, -- elune's grace r4
+    19292, -- elune's grace r4
     },
     [52] = {
         17314, -- mind flay r5
@@ -1827,7 +1827,7 @@ s["PRIEST"] = {
         10964, -- greater heal r3
         10946, -- mind blast r8
         19311, -- shadowguard r5 troll
-	10953, -- mind soothe r3
+    10953, -- mind soothe r3
     },
     [54] = {
         10900, -- power word shield r9
@@ -1836,8 +1836,8 @@ s["PRIEST"] = {
         10917, -- flash heal r7
         10890, -- psychic scream r4
         10929, -- renew r9
-	10958, -- shadow protection r3
-	27683, -- prayer of shadow protection
+    10958, -- shadow protection r3
+    27683, -- prayer of shadow protection
     },
     [58] = {
         19243, -- deserpate prayer r7 dwarf human
@@ -1858,6 +1858,6 @@ s["PRIEST"] = {
         10901, -- power word shield r10
         25315, -- renew r10
         19312, -- shadowguard r6 troll
-	19293, -- elune's grace r5
+    19293, -- elune's grace r5
     },
 }

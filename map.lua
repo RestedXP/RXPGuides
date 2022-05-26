@@ -74,7 +74,7 @@ RXP_.arrowFrame:SetScript("OnUpdate",RXP_.UpdateArrow)
 
 -- The Frame Pool that will manage pins on the world and mini map
 -- You must use a frame pool to aquire and release pin frames,
--- otherwise the pins will not be properly removed from the map. 
+-- otherwise the pins will not be properly removed from the map.
 local MapPinPool = {}
 
 MapPinPool.create = function()
@@ -86,9 +86,9 @@ MapPinPool.create = function()
 end
 
 -- Create the Frame with the Frame Pool.
--- 
+--
 -- Because you cannot pass the pin data to the Frame Pool when acquiring a frame,
--- the frame is given a "render" function that can be used to bind the corect data 
+-- the frame is given a "render" function that can be used to bind the corect data
 -- to the frame
 MapPinPool.creationFunc = function(framePool)
     local f = CreateFrame("Button", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
@@ -116,13 +116,13 @@ MapPinPool.creationFunc = function(framePool)
     -- Text
     f.text = f.inner:CreateFontString(nil, "ARTWORK", "GameFontNormal")
     f.text:SetTextColor(unpack(RXP_.colors.mapPins))
-    f.text:SetFont(RXP_.font, 14,"OUTLINE") 
+    f.text:SetFont(RXP_.font, 14,"OUTLINE")
 
     -- Renders the Pin with Step Information
     f.render = function(pin, isMiniMapPin)
         local step = pin.elements[1].step
         local stepIndex = pin.elements[1].step.index
-        
+
         local r = f.text:GetTextColor()
         if r ~= RXP_.colors.mapPins[1] then
             f.text:SetTextColor(unpack(RXP_.colors.mapPins))
@@ -132,8 +132,8 @@ MapPinPool.creationFunc = function(framePool)
         else
             f.text:SetText(stepIndex)
         end
-        
-        
+
+
         if RXPData.mapCircle and not isMiniMapPin then
             local size = math.max(f.text:GetWidth(), f.text:GetHeight()) + 8
 
@@ -181,7 +181,7 @@ MapPinPool.creationFunc = function(framePool)
             end
             f:SetWidth(f.text:GetStringWidth() + 3)
             f:SetHeight(f.text:GetStringHeight() + 5)
-            
+
             f.inner:SetPoint("CENTER", f, 0, 0)
             f.inner:SetWidth(1)
             f.inner:SetHeight(1)
@@ -216,7 +216,7 @@ MapPinPool.creationFunc = function(framePool)
             GameTooltip:Hide()
         end)
 
-    end    
+    end
 
   return f
 end
@@ -241,82 +241,82 @@ MapLinePool.create = function()
 end
 
 -- Create the Frame with the Frame Pool.
--- 
+--
 -- Because you cannot pass the pin data to the Frame Pool when acquiring a frame,
--- the frame is given a "render" function that can be used to bind the corect data 
+-- the frame is given a "render" function that can be used to bind the corect data
 -- to the frame
 MapLinePool.creationFunc = function(framePool)
 
-	local f = CreateFrame("Button", nil, nil);
-	f.line = f.line or f:CreateLine();
-	local border = f.border or f:CreateLine();
+    local f = CreateFrame("Button", nil, nil);
+    f.line = f.line or f:CreateLine();
+    local border = f.border or f:CreateLine();
     border:SetColorTexture(0,0,0,1);
-	f.border = border
-	
-	f.render = function(self,coords,isMiniMapPin)
+    f.border = border
 
-		local thickness = 2
+    f.render = function(self,coords,isMiniMapPin)
 
-		local canvas = WorldMapFrame:GetCanvas()
-		local width = canvas:GetWidth()
-		local height = canvas:GetHeight()
-		
-		local sX,fX,sY,fY = coords.sX*width/100,coords.fX*width/100,coords.sY*height/-100,coords.fY*height/-100
+        local thickness = 2
 
-		local lineWidth = abs(sX-fX) + thickness*4
-		local lineHeight = abs(sY-fY) + thickness*4
-		self:SetWidth(lineWidth);
-		self:SetHeight(lineHeight);
+        local canvas = WorldMapFrame:GetCanvas()
+        local width = canvas:GetWidth()
+        local height = canvas:GetHeight()
 
-		local xAnchor = max(sX,fX) - thickness*2 - lineWidth/2
-		local yAnchor = min(sY,fY) + thickness*2 + lineHeight/2
+        local sX,fX,sY,fY = coords.sX*width/100,coords.fX*width/100,coords.sY*height/-100,coords.fY*height/-100
 
-		local line = self.line
-		line:SetDrawLayer("OVERLAY",-5)
-		line:SetStartPoint("TOPLEFT",sX - xAnchor,sY - yAnchor)
-		line:SetEndPoint("TOPLEFT",fX - xAnchor,fY - yAnchor)
-		line:SetColorTexture(unpack(RXP_.colors.mapPins))
-		line:SetThickness(thickness);
-		
-		local border = self.border
-		border:SetDrawLayer("OVERLAY",-6)
-		border:SetStartPoint("TOPLEFT",sX - xAnchor,sY - yAnchor)
-		border:SetEndPoint("TOPLEFT",fX - xAnchor,fY - yAnchor)
-		border:SetThickness(thickness+2);
+        local lineWidth = abs(sX-fX) + thickness*4
+        local lineHeight = abs(sY-fY) + thickness*4
+        self:SetWidth(lineWidth);
+        self:SetHeight(lineHeight);
 
-		self:SetParent(canvas)
-		self:SetFrameStrata("HIGH")
-		self:SetPoint("TOPLEFT",canvas,"TOPLEFT",xAnchor,yAnchor)
-		self:EnableMouse(true)
-		--self:Show()
+        local xAnchor = max(sX,fX) - thickness*2 - lineWidth/2
+        local yAnchor = min(sY,fY) + thickness*2 + lineHeight/2
 
-		--[[ Mouse Handlers
-		f:SetScript("OnEnter",function(self)
-			if self:IsForbidden() or GameTooltip:IsForbidden() then return end
-			GameTooltip:SetOwner(f, "ANCHOR_RIGHT",0,0)
-			GameTooltip:ClearLines()
+        local line = self.line
+        line:SetDrawLayer("OVERLAY",-5)
+        line:SetStartPoint("TOPLEFT",sX - xAnchor,sY - yAnchor)
+        line:SetEndPoint("TOPLEFT",fX - xAnchor,fY - yAnchor)
+        line:SetColorTexture(unpack(RXP_.colors.mapPins))
+        line:SetThickness(thickness);
 
-			for i,element in pairs(pin.elements) do
-				local text
-				if element.parent then
-					text =  element.parent.tooltipText
-				elseif not element.hideTooltip then
-					text = element.tooltipText
-				end
-				text = text or RXP_.MainFrame.Steps.frame[element.step.index].text:GetText()
-				GameTooltip:AddLine("Step "..element.step.index,unpack(RXP_.colors.mapPins))
-				GameTooltip:AddLine(text)
-			end
+        local border = self.border
+        border:SetDrawLayer("OVERLAY",-6)
+        border:SetStartPoint("TOPLEFT",sX - xAnchor,sY - yAnchor)
+        border:SetEndPoint("TOPLEFT",fX - xAnchor,fY - yAnchor)
+        border:SetThickness(thickness+2);
 
-			GameTooltip:Show()
-		end)
+        self:SetParent(canvas)
+        self:SetFrameStrata("HIGH")
+        self:SetPoint("TOPLEFT",canvas,"TOPLEFT",xAnchor,yAnchor)
+        self:EnableMouse(true)
+        --self:Show()
 
-		f:SetScript("OnLeave",function(self)
-			if self:IsForbidden() or GameTooltip:IsForbidden() then return end
-			GameTooltip:Hide()
-		end)]]
+        --[[ Mouse Handlers
+        f:SetScript("OnEnter",function(self)
+            if self:IsForbidden() or GameTooltip:IsForbidden() then return end
+            GameTooltip:SetOwner(f, "ANCHOR_RIGHT",0,0)
+            GameTooltip:ClearLines()
 
-	end
+            for i,element in pairs(pin.elements) do
+                local text
+                if element.parent then
+                    text =  element.parent.tooltipText
+                elseif not element.hideTooltip then
+                    text = element.tooltipText
+                end
+                text = text or RXP_.MainFrame.Steps.frame[element.step.index].text:GetText()
+                GameTooltip:AddLine("Step "..element.step.index,unpack(RXP_.colors.mapPins))
+                GameTooltip:AddLine(text)
+            end
+
+            GameTooltip:Show()
+        end)
+
+        f:SetScript("OnLeave",function(self)
+            if self:IsForbidden() or GameTooltip:IsForbidden() then return end
+            GameTooltip:Hide()
+        end)]]
+
+    end
 
   return f
 end
@@ -329,8 +329,8 @@ MapLinePool.resetterFunc = function(framePool, frame)
     frame:SetWidth(0)
     frame:Hide()
     frame:EnableMouse(0)
-	frame.step = nil
-	frame.zone = nil
+    frame.step = nil
+    frame.zone = nil
 end
 
 
@@ -366,7 +366,7 @@ local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
                 elseif dist and dist < pinMaxDistance then
                     return true, pin
                 end
-                
+
             end
         end
     end
@@ -377,16 +377,16 @@ end
 -- Creates a list of Pin data structures.
 --
 -- All of the filtering and combining of steps and elements by proximity
--- is done in this step up front. Then the pins are rendered as WoW Frames 
+-- is done in this step up front. Then the pins are rendered as WoW Frames
 -- using the MapPinPool.
 local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local pins = {}
     local numActivePins = 0
     local numSteps = table.getn(steps)
     local activeSteps = RXP_.MainFrame.CurrentStepFrame.activeSteps
-    
+
     local numActive = 0
-    
+
     local function GetNumPins(step)
         if step then
             for _,element in pairs(step.elements) do
@@ -396,29 +396,29 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
             end
         end
     end
-    
+
     for _,step in pairs(activeSteps) do
         GetNumPins(step)
     end
-    
+
     for i = RXPCData.currentStep+1,RXPCData.currentStep+numPins do
         GetNumPins(RXP_.currentGuide.steps[i])
     end
-    
+
     if numPins < numActive then
         numPins = numActive
     end
-    
-    -- Loop through the steps until we create the number of pins a user 
+
+    -- Loop through the steps until we create the number of pins a user
     -- configures or until we reach the end of the current guide.
-    
-    local function ProcessMapPin(step)    
+
+    local function ProcessMapPin(step)
         -- Loop through the elements in each step. Again, we check if we
         -- already created enough pins, then we check if the element
-        -- should be included on the map. 
+        -- should be included on the map.
         --
-        -- If it should be, we calculate whether the element is close to 
-        -- other pins. If it is, we add the element to a previous pin. 
+        -- If it should be, we calculate whether the element is close to
+        -- other pins. If it is, we add the element to a previous pin.
         --
         -- If it is far enough away, we add a new pin to the map.
         local j = 0;
@@ -444,8 +444,8 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         pinalpha = math.max(0.4, 1 - (table.getn(pins) * 0.05))
                     end
                     table.insert(pins, {
-                        elements = {element}, 
-                        opacity = pinalpha, 
+                        elements = {element},
+                        opacity = pinalpha,
                         instance = element.instance,
                         wx = element.wx,
                         wy = element.wy,
@@ -463,7 +463,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
 
             j = j + 1
         end
-    end    
+    end
 
     for _,step in pairs(activeSteps) do
         ProcessMapPin(step)
@@ -474,7 +474,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         if not (currentStep and currentStep.active) then
             ProcessMapPin(currentStep)
         end
-        local i = 0;   
+        local i = 0;
         while numActivePins < numPins and (startingIndex + i < numSteps) do
             i = i + 1
             local step = steps[startingIndex + i]
@@ -489,9 +489,9 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     local numActivePins = 0
     local numSteps = table.getn(steps)
     local activeSteps = RXP_.MainFrame.CurrentStepFrame.activeSteps
-    
+
     local numActive = 0
-    
+
     local function GetNumPins(step)
         if step then
             for _,element in pairs(step.elements) do
@@ -501,29 +501,29 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
             end
         end
     end
-    
+
     for _,step in pairs(activeSteps) do
         GetNumPins(step)
     end
-    
+
     for i = RXPCData.currentStep+1,RXPCData.currentStep+numPins do
         GetNumPins(RXP_.currentGuide.steps[i])
     end
-    
+
     if numPins < numActive then
         numPins = numActive
     end
-    
-    -- Loop through the steps until we create the number of pins a user 
+
+    -- Loop through the steps until we create the number of pins a user
     -- configures or until we reach the end of the current guide.
-    
+
     local function ProcessMapPin(step)
         -- Loop through the elements in each step. Again, we check if we
         -- already created enough pins, then we check if the element
-        -- should be included on the map. 
+        -- should be included on the map.
         --
-        -- If it should be, we calculate whether the element is close to 
-        -- other pins. If it is, we add the element to a previous pin. 
+        -- If it should be, we calculate whether the element is close to
+        -- other pins. If it is, we add the element to a previous pin.
         --
         -- If it is far enough away, we add a new pin to the map.
         local j = 0;
@@ -535,41 +535,41 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
             end
 
             local nPoints = element.segments and math.floor(table.getn(element.segments)/2)
-			
+
             if element.zone and nPoints and (not(element.parent and (element.parent.completed or element.parent.skip)) and not element.skip) then
-				local pinalpha = 0
-				if element.step and element.step.active then
-					pinalpha = 1
-				else
-					pinalpha = math.max(0.4, 1 - (table.getn(pins) * 0.05))
-				end
-				for i = 1,nPoints*2,2 do
-					local sX = (element.segments[i])
-					local sY = (element.segments[i+1])
-					local fX = (element.segments[i+2])
-					local fY = (element.segments[i+3])
-					--print("lc:",sX,sY)
-					
-					if sX and sY and fX and fY then
-						table.insert(pins, {
-							element = element,
-							opacity = pinalpha, 
-							zone = element.zone,
-							sX = sX,
-							sY = sY,
-							fX = fX,
-							fY = fY,
-							zone = element.zone,
-							hidePin = element.hidePin,
-						})
-					end
-				end
+                local pinalpha = 0
+                if element.step and element.step.active then
+                    pinalpha = 1
+                else
+                    pinalpha = math.max(0.4, 1 - (table.getn(pins) * 0.05))
+                end
+                for i = 1,nPoints*2,2 do
+                    local sX = (element.segments[i])
+                    local sY = (element.segments[i+1])
+                    local fX = (element.segments[i+2])
+                    local fY = (element.segments[i+3])
+                    --print("lc:",sX,sY)
+
+                    if sX and sY and fX and fY then
+                        table.insert(pins, {
+                            element = element,
+                            opacity = pinalpha,
+                            zone = element.zone,
+                            sX = sX,
+                            sY = sY,
+                            fX = fX,
+                            fY = fY,
+                            zone = element.zone,
+                            hidePin = element.hidePin,
+                        })
+                    end
+                end
 
             end
 
             j = j + 1
         end
-    end    
+    end
 
     for _,step in pairs(activeSteps) do
         ProcessMapPin(step)
@@ -580,7 +580,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
         if not (currentStep and currentStep.active) then
             ProcessMapPin(currentStep)
         end
-        local i = 0;   
+        local i = 0;
         while numActivePins < numPins and (startingIndex + i < numSteps) do
             i = i + 1
             local step = steps[startingIndex + i]
@@ -593,9 +593,9 @@ end
 -- Generate pins using the current guide's steps, then add the pins to the world map
 local function addWorldMapPins()
     -- Calculate which pins should be on the world map
-    local pins = generatePins(RXP_.currentGuide.steps, 
-        RXPData.numMapPins, 
-        RXPCData.currentStep, 
+    local pins = generatePins(RXP_.currentGuide.steps,
+        RXPData.numMapPins,
+        RXPCData.currentStep,
         false
     )
 
@@ -612,20 +612,20 @@ local function addWorldMapPins()
 end
 
 local function addWorldMapLines()
-    local lineData = generateLines(RXP_.currentGuide.steps, 
-        RXPData.numMapPins, 
-        RXPCData.currentStep, 
+    local lineData = generateLines(RXP_.currentGuide.steps,
+        RXPData.numMapPins,
+        RXPCData.currentStep,
         false
     )
 
     for i = table.getn(lineData), 1, -1 do
         local line = lineData[i]
-		local element = line.element
-		local step = element.step
-		local lineFrame = lineMapFramePool:Acquire()
-		lineFrame.step = step
-		lineFrame.zone = element.zone
-		lineFrame:render(line, false)
+        local element = line.element
+        local step = element.step
+        local lineFrame = lineMapFramePool:Acquire()
+        lineFrame.step = step
+        lineFrame.zone = element.zone
+        lineFrame:render(line, false)
     end
 end
 
@@ -635,9 +635,9 @@ end
 local function addMiniMapPins(pins)
     if RXPData.hideMiniMapPins then return end
     -- Calculate which pins should be on the mini map
-    local pins = generatePins(RXP_.currentGuide.steps, 
-        RXPData.numMapPins, 
-        RXPCData.currentStep, 
+    local pins = generatePins(RXP_.currentGuide.steps,
+        RXPData.numMapPins,
+        RXPCData.currentStep,
         true
     )
 
@@ -653,13 +653,13 @@ end
 
 -- Updates the arrow
 local function updateArrow()
-	local lowPrioWPs = {}
-	local function ProcessWaypoint(element,lowPrio)
-		if element.lowPrio and not lowPrio then
-			table.insert(lowPrioWPs,element)
-			return
-		end
-		if element.arrow and element.step.active and 
+    local lowPrioWPs = {}
+    local function ProcessWaypoint(element,lowPrio)
+        if element.lowPrio and not lowPrio then
+            table.insert(lowPrioWPs,element)
+            return
+        end
+        if element.arrow and element.step.active and
         not(element.parent and (element.parent.completed or element.parent.skip)) and not(element.text and (element.completed or element.skip) and not element.skip) then
             af:SetShown(not RXPData.disableArrow)
             af.dist = 0
@@ -668,18 +668,18 @@ local function updateArrow()
             af.forceUpdate = true
             return true
         end
-	end
-	
+    end
+
     for i,element in ipairs(RXP_.activeWaypoints) do
         if ProcessWaypoint(element) then
-			return
-		end
+            return
+        end
     end
-	
+
     for i,element in ipairs(lowPrioWPs) do
         if ProcessWaypoint(element,true) then
-			return
-		end
+            return
+        end
     end
 
     af:Hide()
@@ -693,37 +693,37 @@ local function resetMap()
     HBDPins:RemoveAllWorldMapIcons(RXP_)
     worldMapFramePool:ReleaseAll()
     miniMapFramePool:ReleaseAll()
-	lineMapFramePool:ReleaseAll()
+    lineMapFramePool:ReleaseAll()
 end
 
 local lastMap
 function RXP_.UpdateMap()
     if RXP_.currentGuide == nil then return end
-	lastMap = nil
+    lastMap = nil
     resetMap()
     addWorldMapPins()
     addMiniMapPins()
-	addWorldMapLines()
+    addWorldMapLines()
     updateArrow()
 end
 
 local closestPoint
 function RXP_.UpdateGotoSteps()
 
-	local currentMap = WorldMapFrame:GetMapID()
-	if lastMap ~= currentMap then
-		for line in lineMapFramePool:EnumerateActive() do
-			line:SetShown(line.step and line.step.active and line.zone == WorldMapFrame:GetMapID())
-		end
-	end
-	lastMap = currentMap
-	
+    local currentMap = WorldMapFrame:GetMapID()
+    if lastMap ~= currentMap then
+        for line in lineMapFramePool:EnumerateActive() do
+            line:SetShown(line.step and line.step.active and line.zone == WorldMapFrame:GetMapID())
+        end
+    end
+    lastMap = currentMap
+
     if #RXP_.activeWaypoints == 0 then
         af:Hide()
         return
     end
-	local minDist,forceArrowUpdate
-	
+    local minDist,forceArrowUpdate
+
     for i,element in ipairs(RXP_.activeWaypoints) do
         if element.step.active then
 
@@ -731,33 +731,33 @@ function RXP_.UpdateGotoSteps()
                 local x,y,instance = HBD:GetPlayerWorldPosition()
                 local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
                 if dist then
-				
-					if element.radius then
-						if dist <= element.radius then
-							element.skip = true
-							RXP_.updateMap = true
-							RXP_.SetElementComplete(element.frame)
-						end
-					elseif element.dynamic then
-						if minDist and dist > minDist then
-							element.lowPrio = true
-						else
-							minDist = dist
-							if closestPoint then
-								closestPoint.lowPrio = true
-							end
-							if closestPoint ~= element then
-								forceArrowUpdate = true
-							end
-							element.lowPrio = false
-							closestPoint = element
-						end
-					end
-				end
+
+                    if element.radius then
+                        if dist <= element.radius then
+                            element.skip = true
+                            RXP_.updateMap = true
+                            RXP_.SetElementComplete(element.frame)
+                        end
+                    elseif element.dynamic then
+                        if minDist and dist > minDist then
+                            element.lowPrio = true
+                        else
+                            minDist = dist
+                            if closestPoint then
+                                closestPoint.lowPrio = true
+                            end
+                            if closestPoint ~= element then
+                                forceArrowUpdate = true
+                            end
+                            element.lowPrio = false
+                            closestPoint = element
+                        end
+                    end
+                end
             end
         end
     end
-	if forceArrowUpdate then
-		updateArrow()
-	end
+    if forceArrowUpdate then
+        updateArrow()
+    end
 end
