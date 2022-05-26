@@ -122,6 +122,7 @@ local questConversion = {
 local timer = GetTime()
 local nrequests = 0
 local requests = {}
+RXP_.requestQuestInfo = requests
 local questNameCache = {}
 local questObjectivesCache = {}
 
@@ -187,7 +188,18 @@ function RXP_.GetQuestName(id)
         end
 
         if nrequests < 3 or requests[id] == 0 then
-            if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
+			local isLoaded
+			
+			if C_QuestLog.RequestLoadQuestByID and not requests[id] then
+				C_QuestLog.RequestLoadQuestByID(id)
+				requests[id] = GetTime()
+			end
+			
+			if (not requests[id] or ctime-requests[id] > 3) then
+				isLoaded = HaveQuestData(id)
+			end
+			
+            if isLoaded then
                 requests[id] = 0
                 if C_QuestLog.GetQuestInfo then
                     return C_QuestLog.GetQuestInfo(id)
@@ -316,7 +328,18 @@ function RXP_.GetQuestObjectives(id,step)
         end
 
         if nrequests < 3 or requests[id] == 0 then
-            if (not requests[id] or ctime-requests[id] > 3) and HaveQuestData(id) then
+			local isLoaded
+			
+			if C_QuestLog.RequestLoadQuestByID and not requests[id] then
+				C_QuestLog.RequestLoadQuestByID(id)
+				requests[id] = GetTime()
+			end
+			
+			if (not requests[id] or ctime-requests[id] > 3) then
+				isLoaded = HaveQuestData(id)
+			end
+			
+            if isLoaded then
                 requests[id] = 0
                 --print(id,GetTime()-base)
                 local questInfo = C_QuestLog.GetQuestObjectives(id)
@@ -436,6 +459,13 @@ function RXP_.PhaseCheck(phase)
         end
     end
 
+    return true
+end
+
+function RXP_.IsStepShown(step)
+    if (step.daily and RXPCData.skipDailies) then
+        return false
+    end
     return true
 end
 
@@ -1493,7 +1523,7 @@ end
 function RXP_.functions.xp(self,...)
     if type(self) == "string" then --on parse
         local element = {}
-        local text,str = ...
+        local text,str,skipstep = ...
 
         str = str:gsub(" ","")
         local level,xp = str:match("(%d+)([%+%.%-]?%d*)")
@@ -1502,7 +1532,7 @@ function RXP_.functions.xp(self,...)
 
         if text and text ~= "" then
             element.text = text
-        else
+        elseif not skipstep then
             if element.xp and element.xp ~= 0 then
                 if element.xp < 0 then
                     element.text = string.format("Grind until you are %d xp away from level %s",-1*element.xp,level)
@@ -1515,6 +1545,10 @@ function RXP_.functions.xp(self,...)
                 element.text = "Grind to level "..tostring(level)
             end
         end
+		element.skipstep = skipstep
+		if skipstep then
+			element.textOnly = true
+		end
         if not element.xp then element.xp = 0 end
         element.tooltipText = RXP_.icons.xp..element.text
         return element
@@ -1528,10 +1562,19 @@ function RXP_.functions.xp(self,...)
        (element.xp >= 1 and ((level > element.level) or (element.level == level and currentXP >= element.xp))) or
        (element.xp >= 0 and element.xp < 1 and ((level > element.level) or (element.level == level and currentXP >= maxXP*element.xp)))
        then
-        RXP_.SetElementComplete(self,true)
+		if element.skipstep then
+			if step.active and not step.completed then
+				RXP_.updateSteps = true
+				step.completed = true
+			end
+		else		
+			RXP_.SetElementComplete(self,true)
+		end
     end
 
 end
+
+
 
 function RXP_.functions.reputation(self,...)
     if type(self) == "string" then --on parse

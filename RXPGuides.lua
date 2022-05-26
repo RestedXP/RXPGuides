@@ -41,7 +41,9 @@ eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
 eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 eventFrame:RegisterEvent("BAG_UPDATE_DELAYED")
-
+if C_QuestLog.RequestLoadQuestByID then
+	eventFrame:RegisterEvent("QUEST_DATA_LOAD_RESULT")
+end
 questFrame:RegisterEvent("QUEST_COMPLETE")
 questFrame:RegisterEvent("QUEST_PROGRESS")
 questFrame:RegisterEvent("QUEST_ACCEPT_CONFIRM")
@@ -439,6 +441,9 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         SoMCheck()
     elseif event == "UNIT_PET" then
         RXP_.petFamily = GetPetIcon() or RXP_.petFamily
+	elseif event == "QUEST_DATA_LOAD_RESULT" and arg2 then
+		RXP_.requestQuestInfo[arg1] = 0
+		RXP_.updateStepText = true
 	end
 	
 
@@ -1632,7 +1637,7 @@ function RXP_:LoadGuide(guide,OnLoad)
 	end
 	RXP_.currentGuide.steps = {}
 	for n,step in ipairs(guide.steps) do
-		if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) and RXP_.HardcoreCheck(step) and RXP_.SeasonCheck(step) then
+		if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) and RXP_.HardcoreCheck(step) and RXP_.SeasonCheck(step) and RXP_.IsStepShown(step) then
 			table.insert(RXP_.currentGuide.steps,step)
 		end
 	end
