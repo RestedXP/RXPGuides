@@ -30,6 +30,7 @@ local function applies(text)
 end
 
 RXP_.applies = applies
+RXP_.GAguides = 0
 local RXPG = RXPGuides
 local version = strlower(RXP_.version)
 local suffix = 1
@@ -223,9 +224,13 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     guide.displayName = guide.name
     guide.name = guide.name:gsub("^(%d)-(%d%d?)",affix)
     if guide.next then
-    guide.next = guide.next:gsub("^(%d)-(%d%d?)",affix)
+        guide.next = guide.next:gsub("^(%d)-(%d%d?)",affix)
     end
-
+    
+    if guide.gold then
+        RXP_.GAguides = RXP_.GAguides + 1
+    end
+    
     if not RXP_.guideList[guide.group] then
         RXP_.guideList[guide.group] = {}
         RXP_.guideList[guide.group].names_ = {}

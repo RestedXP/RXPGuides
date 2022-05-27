@@ -3,6 +3,7 @@ local addonName = ...
 local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 RXP_.activeWaypoints = {}
+RXP_.linePoints = {}
 --local colors = RXP_.colors
 
 RXP_.arrowFrame = CreateFrame("Frame","RXPG_ARROW",UIParent)
@@ -62,7 +63,11 @@ function RXP_.UpdateArrow(self)
 
         if dist ~= self.distance then
             self.distance = dist
-            self.text:SetText(string.format("Step %d\n(%dyd)",self.element.step.index,dist))
+            if self.element.step then
+                self.text:SetText(string.format("Step %d\n(%dyd)",self.element.step.index,dist))
+            else
+                self.text:SetText(string.format("(%dyd)",dist))
+            end
         end
     end
 
@@ -495,7 +500,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     local function GetNumPins(step)
         if step then
             for _,element in pairs(step.elements) do
-                if element.tag == "goto" or element.tag == "line" then
+                if element.tag == "goto" or element.segments then
                     numActive = numActive + 1
                 end
             end
@@ -526,6 +531,8 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
         -- other pins. If it is, we add the element to a previous pin.
         --
         -- If it is far enough away, we add a new pin to the map.
+        local lastElement
+        local firstElement
         local j = 0;
         while numActivePins < numPins and j < table.getn(step.elements) do
             local element = step.elements[j + 1]
@@ -559,12 +566,17 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                             sY = sY,
                             fX = fX,
                             fY = fY,
-                            zone = element.zone,
                             hidePin = element.hidePin,
                         })
+                        if element.showArrow then
+                            local x,y = sX/100,sY/100
+                            local wx,wy,instance = HBD:GetWorldCoordinatesFromZone(x, y, element.zone)
+                            local point = {x = x, y = y, wx = wx, wy = wy, instance = instance, zone = element.zone, anchor = element, range = element.range, generated = true}
+                            table.insert(RXP_.linePoints,point)
+                            table.insert(RXP_.activeWaypoints,point)
+                        end
                     end
                 end
-
             end
 
             j = j + 1
@@ -659,8 +671,8 @@ local function updateArrow()
             table.insert(lowPrioWPs,element)
             return
         end
-        if element.arrow and element.step.active and
-        not(element.parent and (element.parent.completed or element.parent.skip)) and not(element.text and (element.completed or element.skip) and not element.skip) then
+        if element.generated or (element.arrow and element.step.active and
+        not(element.parent and (element.parent.completed or element.parent.skip)) and not(element.text and (element.completed or element.skip) and not element.skip)) then
             af:SetShown(not RXPData.disableArrow)
             af.dist = 0
             af.orientation = 0
@@ -686,8 +698,12 @@ local function updateArrow()
 end
 
 -- Removes all pins from the map and mini map and resets all data structrures
+local currentPoint
+local lastPoint
+
 local function resetMap()
     RXP_.activeWaypoints = {}
+    RXP_.linePoints = {}
     RXP_.updateMap = false
     HBDPins:RemoveAllMinimapIcons(RXP_)
     HBDPins:RemoveAllWorldMapIcons(RXP_)
@@ -708,6 +724,8 @@ function RXP_.UpdateMap()
 end
 
 local closestPoint
+local maxDist = math.huge
+
 function RXP_.UpdateGotoSteps()
 
     local currentMap = WorldMapFrame:GetMapID()
@@ -724,21 +742,15 @@ function RXP_.UpdateGotoSteps()
     end
     local minDist,forceArrowUpdate
 
+    local x,y,instance = HBD:GetPlayerWorldPosition()
     for i,element in ipairs(RXP_.activeWaypoints) do
-        if element.step.active then
+        if element.step and element.step.active then
 
             if (element.radius or element.dynamic) and element.arrow and not(element.parent and (element.parent.completed or element.parent.skip) and not element.parent.textOnly) and not element.skip then
-                local x,y,instance = HBD:GetPlayerWorldPosition()
                 local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
                 if dist then
 
-                    if element.radius then
-                        if dist <= element.radius then
-                            element.skip = true
-                            RXP_.updateMap = true
-                            RXP_.SetElementComplete(element.frame)
-                        end
-                    elseif element.dynamic then
+                    if element.dynamic then
                         if minDist and dist > minDist then
                             element.lowPrio = true
                         else
@@ -752,11 +764,103 @@ function RXP_.UpdateGotoSteps()
                             element.lowPrio = false
                             closestPoint = element
                         end
+                    elseif element.radius then
+                        if dist <= element.radius then
+                            element.skip = true
+                            RXP_.updateMap = true
+                            RXP_.SetElementComplete(element.frame)
+                        end
                     end
                 end
             end
         end
     end
+    
+    minDist = nil
+    local anchorPoint = currentPoint
+    local linePoints = RXP_.linePoints
+    
+    for i,element in ipairs(linePoints) do
+        local radius = element.anchor.range
+        local angle,dist = HBD:GetWorldVector(instance, x, y, element.wx,element.wy)
+        element.dist = dist
+        if dist then
+            if radius and dist <= radius then
+                currentPoint = i
+                if anchorPoint ~= i then
+                    lastPoint = anchorPoint
+                end
+            end
+            if not lastPoint then
+                if minDist and dist > minDist then
+                    element.lowPrio = true
+                else
+                    minDist = dist
+                    if closestPoint then
+                        closestPoint.lowPrio = true
+                    end
+                    if closestPoint ~= element then
+                        forceArrowUpdate = true
+                    end
+                    element.lowPrio = false
+                    closestPoint = element
+                end
+            end
+        end
+        if currentPoint == i then
+            element.lowPrio = true
+        end
+    end
+    local nPoints = #linePoints
+    
+    if currentPoint and nPoints > 0 then
+        local nextPoint = currentPoint % nPoints + 1
+        local prevPoint = (currentPoint-2) % nPoints + 1
+        local nextElement = linePoints[nextPoint]
+        local prevElement = linePoints[prevPoint]
+        local nextDist = nextElement.dist or 0
+        local prevDist = prevElement.dist or 0
+        local isNextCloser = nextDist <= prevDist and lastPoint ~= nextPoint or lastPoint == prevPoint
+        
+        nextElement.lowPrio = not isNextCloser
+        prevElement.lowPrio = isNextCloser
+        
+        local pointUpdate = currentPoint ~= anchorPoint
+        --print(isNextCloser,lastPoint,currentPoint)
+        if pointUpdate then
+            forceArrowUpdate = true
+        end
+        if isNextCloser then
+            if pointUpdate then
+                maxDist = math.max(nextDist*1.5,1000)
+            elseif nextDist > maxDist then
+                currentPoint = nil
+                lastPoint = nil
+                maxDist = math.huge
+                forceArrowUpdate = true
+            end
+        else
+            if pointUpdate then
+                maxDist = math.max(prevDist*1.5,1000)
+            elseif prevDist > maxDist then
+                currentPoint = nil
+                lastPoint = nil
+                maxDist = math.huge
+                forceArrowUpdate = true
+            end
+        end
+        
+        for i,element in ipairs(linePoints) do
+            if i ~= nextPoint and i ~= prevPoint then
+                element.lowPrio = true
+            end
+        end
+        
+    end
+    
+    
+    
+    
     if forceArrowUpdate then
         updateArrow()
     end

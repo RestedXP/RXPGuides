@@ -821,7 +821,7 @@ function RXP_.UpdateStepCompletion()
     end
 end
 
-function RXP_.SetStep(n,n2)
+function RXP_.SetStep(n,n2,loopback)
     if type(n) == "table" then n = n2 end
     local guide = RXP_.currentGuide
     if not guide then return end
@@ -829,6 +829,13 @@ function RXP_.SetStep(n,n2)
 
     --print(n)
     if n > #guide.steps then
+        if guide.loop then
+            if loopback then
+                return
+            else
+                return RXP_.SetStep(1,nil,true)
+            end
+        end
         local isComplete = true
         local completedStep
         for i,step in pairs(f.CurrentStepFrame.activeSteps) do
@@ -1346,6 +1353,7 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
                 end
             end
             RXP_.UpdateGotoSteps()
+            RXP_.UpdateItemCooldown()
         end
 
         if event ~= "" then
@@ -1996,18 +2004,37 @@ function RXP_.GenerateMenuTable()
         end
         table.insert(RXP_.menuList,{text = hctext,notCheckable = 1,func = RXP_.HardcoreToggle})
     end
+    
+    if RXP_.GAguides > 0 then
+        local text
+        if RXPCData and RXPCData.GA then
+            text = "Activate the Quest Guide mode"
+        else
+            text = "Activate the Gold Assistant mode"
+        end
+        table.insert(RXP_.menuList,{text = text,notCheckable = 1,func = RXP_.GAToggle})
+    end
+    
+    
     table.insert(RXP_.menuList,{text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG})
     table.insert(RXP_.menuList,{text = "Close",notCheckable = 1,func = function(self) self:Hide() end})
 end
 
 local hardcoreButton
 function RXP_.HardcoreToggle()
-    if RXPData and RXP_.version == "CLASSIC" then
+    if RXPCData and RXP_.version == "CLASSIC" then
         RXPCData.hardcore = not RXPCData.hardcore
         RXP_.RenderFrame()
         if hardcoreButton then
             hardcoreButton:SetChecked(RXPCData.hardcore)
         end
+    end
+end
+
+function RXP_.GAToggle()
+    if RXPCData and RXP_.GAguides > 0 then
+        RXPCData.GA = not RXPCData.GA
+        RXP_.RenderFrame()
     end
 end
 
@@ -2038,9 +2065,10 @@ function RXP_.CreateOptionsPanel()
     panel.icon = panel:CreateTexture()
     panel.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
     panel.icon:SetPoint("TOPRIGHT",-5,-5)
+    
+
+
     --panel.icon:SetSize(64,64)
-
-
     local index = 0
     local options = {}
     local button = CreateFrame("CheckButton", "$parentQuestTurnIn", panel, "ChatConfigCheckButtonTemplate");
@@ -2310,6 +2338,30 @@ function RXP_.CreateOptionsPanel()
     if RXP_.version == "CLASSIC" then
         slider = CreateSlider(RXPCData,"phase",1, 6,"Content phase: %d","Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",slider,0,-25, 1, "1", "6")
     end
+
+  
+    if RXP_.GAguides > 0 then
+        local GApanel = CreateFrame("Frame","RXPGAOptions")
+        GApanel.name = "Gold Assistant"
+        GApanel.parent = "RXP Guides"
+        InterfaceOptions_AddCategory(GApanel)
+
+        GApanel.title = GApanel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+        GApanel.title:SetPoint("TOPLEFT", 16, -16)
+        GApanel.title:SetText("RestedXP Gold Assistant")
+
+
+        GApanel.subtext = GApanel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+        GApanel.subtext:SetPoint("TOPLEFT", GApanel.title, "BOTTOMLEFT", 0, -8)
+        GApanel.subtext:SetText(versionText)
+
+        GApanel.icon = GApanel:CreateTexture()
+        GApanel.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
+        GApanel.icon:SetPoint("TOPRIGHT",-5,-5)
+        
+    end
+    
+    
 end
 
 function RXP_.UpdateQuestButton(index)
@@ -2604,7 +2656,41 @@ local fOnLeave = function(self)
     end
 end
 
-
+function RXP_.UpdateItemCooldown()
+    if not (RXP_.activeItemFrame and RXP_.activeItemFrame:IsShown()) then
+        return
+    end
+    local itemFrame = RXP_.activeItemFrame
+    local buttonList = itemFrame.buttonList
+    local function FormatCooldown(startTime, duration, enable)
+        local remaining
+        if startTime then
+            remaining = startTime+duration-GetTime()
+        else
+            return ""
+        end
+        if remaining < 60 and remaining > 0 then
+            return tostring(math.ceil(remaining))
+        elseif remaining <= 0 or startTime == 0 then
+            return ""
+        elseif remaining >= 60 and remaining < 3600 then
+            return tostring(math.ceil(remaining/60-0.5)).."m"
+        elseif remaining >= 3600 then
+            return tostring(math.ceil(remaining/3600-0.5)).."h"
+        end
+    end
+    for i,btn in ipairs(buttonList) do
+        local id = btn.itemId
+        if id and btn:IsShown() then
+            local cd = FormatCooldown(GetItemCooldown(id))
+            print(cd)
+            if cd ~= btn.cd then
+                btn.cd = cd
+                btn.text:SetText(cd)
+            end
+        end
+    end
+end
 
 function RXP_.UpdateItemFrame(itemFrame)
     if not itemFrame then
@@ -2671,7 +2757,14 @@ function RXP_.UpdateItemFrame(itemFrame)
             icon:SetAllPoints(true);
             icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
 
-
+            btn.text = btn:CreateFontString(nil,"OVERLAY")
+            btn.text:ClearAllPoints()
+            btn.text:SetPoint("CENTER",btn,0,0)
+            btn.text:SetJustifyH("CENTER")
+            btn.text:SetJustifyV("CENTER")
+            btn.text:SetTextColor(1,1,1)
+            btn.text:SetFont(RXP_.font, 15,"OUTLINE")
+            btn.text:SetText("")
 
             btn:SetScript("OnEnter",fOnEnter)
             btn:SetScript("OnLeave",fOnLeave)
