@@ -295,31 +295,18 @@ MapLinePool.creationFunc = function(framePool)
         self:EnableMouse(true)
         --self:Show()
 
-        --[[ Mouse Handlers
         f:SetScript("OnEnter",function(self)
-            if self:IsForbidden() or GameTooltip:IsForbidden() then return end
-            GameTooltip:SetOwner(f, "ANCHOR_RIGHT",0,0)
-            GameTooltip:ClearLines()
-
-            for i,element in pairs(pin.elements) do
-                local text
-                if element.parent then
-                    text =  element.parent.tooltipText
-                elseif not element.hideTooltip then
-                    text = element.tooltipText
-                end
-                text = text or RXP_.MainFrame.Steps.frame[element.step.index].text:GetText()
-                GameTooltip:AddLine("Step "..element.step.index,unpack(RXP_.colors.mapPins))
-                GameTooltip:AddLine(text)
+            if RXPData.debug and self.lineData then
+                local line = self.lineData
+                self:SetAlpha(0.5)
+                print("Line start point:",line.sX,",",line.sY)
+                print("Line end point:",line.fX,",",line.fY)
             end
-
-            GameTooltip:Show()
         end)
 
         f:SetScript("OnLeave",function(self)
-            if self:IsForbidden() or GameTooltip:IsForbidden() then return end
-            GameTooltip:Hide()
-        end)]]
+            self:SetAlpha(1)
+        end)
 
     end
 
@@ -336,6 +323,7 @@ MapLinePool.resetterFunc = function(framePool, frame)
     frame:EnableMouse(0)
     frame.step = nil
     frame.zone = nil
+    frame.lineData = nil
 end
 
 
@@ -635,6 +623,7 @@ local function addWorldMapLines()
         local element = line.element
         local step = element.step
         local lineFrame = lineMapFramePool:Acquire()
+        lineFrame.lineData = line
         lineFrame.step = step
         lineFrame.zone = element.zone
         lineFrame:render(line, false)

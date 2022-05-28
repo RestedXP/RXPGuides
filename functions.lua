@@ -1307,7 +1307,7 @@ function RXP_.functions.pin(self,...)
 end
 
 function RXP_.functions.line(self,text,zone,...)
-    if type(self) == "string" then --on parse
+    if type(self) == "string" then
         local element = {}
         local segments = {...}
         for i,v in ipairs(segments) do
@@ -1331,13 +1331,41 @@ function RXP_.functions.line(self,text,zone,...)
         element.text = text
         element.textOnly = true
         
-        element.range = 20
+        return element
+    end
+end
+
+function RXP_.functions.loop(self,text,range,zone,...)
+    if type(self) == "string" then
+        local element = {}
+        local segments = {...}
+        for i,v in ipairs(segments) do
+            segments[i] = tonumber(v)
+        end
+        element.segments = segments
+        if zone then
+            lastZone = zone
+        else
+            zone = lastZone
+        end
+        local mapID = RXP_.mapId[zone] or tonumber(zone)
+        if not (segments and #segments > 0 and zone and mapID) then
+            return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid coordinates or map name\n"..self)
+        end
+        element.zone = mapID
+        --element.hidePin = true
+        element.parent = true
+        --element.hidePin = true
+
+        element.text = text
+        element.textOnly = true
+        
+        element.range = tonumber(range)
         element.showArrow = true
         
         return element
     end
 end
-
 
 
 function RXP_.functions.hs(self,...)

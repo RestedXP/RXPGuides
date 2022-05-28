@@ -517,7 +517,7 @@ end
 f.OnMouseDown = function(self, button)
     if RXPData.lockFrames then
         return
-    elseif IsAltKeyDown() then
+    elseif IsAltKeyDown() and not(RXP_.currentGuide and RXP_.currentGuide.hidewindow) then
         f:StartSizing("BOTTOMRIGHT")
         f:SetScript("OnUpdate",RXP_.UpdateBottomFrame)
         isResizing = true
@@ -529,6 +529,7 @@ end
 f.OnMouseUp = function(self,button)
     f:StopMovingOrSizing()
     if isResizing then
+        RXPCData.frameHeight = f:GetHeight()
         RXP_.SetStep(RXPCData.currentStep)
         f:SetScript("OnUpdate",nil)
     end
@@ -1190,8 +1191,12 @@ function RXP_.UpdateText()
             elementFrame:Show()
 
             local spacing = 0
-
-            if element.text then
+            if step.hidewindow then
+                elementFrame:SetAlpha(0)
+                elementFrame.button:Hide()
+                elementFrame:SetHeight(1)
+                spacing = 1
+            elseif element.text then
                 elementFrame:SetAlpha(1)
                 local text = elementFrame.text
                 text:SetText(element.text)
@@ -1243,7 +1248,15 @@ function RXP_.UpdateText()
             end
         end
 
-        frameHeight = math.ceil(frameHeight +18)
+        if step.hidewindow then
+            stepframe:SetAlpha(0)
+            frameHeight = 1
+            stepframe:EnableMouse(false)
+        else
+            stepframe:EnableMouse(true)
+            stepframe:SetAlpha(1)
+            frameHeight = math.ceil(frameHeight +18)
+        end
         stepframe:SetHeight(frameHeight)
         totalHeight = totalHeight+frameHeight+5
     end
@@ -1620,7 +1633,9 @@ function RXP_:LoadGuide(guide,OnLoad)
             return error('Guide not found')
         end
     end
-
+    if RXPCData.frameHeight then 
+        RXPFrame:SetHeight(RXPCData.frameHeight)
+    end
     if RXP_.noGuide then
         f:SetHeight(RXP_.height)
         RXP_.UpdateBottomFrame()
@@ -1654,7 +1669,12 @@ function RXP_:LoadGuide(guide,OnLoad)
     RXP_.currentGuideName = guide.name
     RXPCData.currentGuideName = guide.name
     RXPCData.currentGuideGroup = guide.group
-    f.GuideName.text:SetText(RXP_.GetGuideName(guide))
+    local guidename = RXP_.GetGuideName(guide)
+    if guide.subgroup then
+        f.GuideName.text:SetText(guidename.."\n"..guide.subgroup)
+    else
+        f.GuideName.text:SetText(guidename)
+    end
     --local nameWidth = f.GuideName.text:GetStringWidth()+10
     --f.GuideName:SetWidth(nameWidth)
     --f:SetWidth(math.max(f:GetWidth(),nameWidth+45))
@@ -1806,7 +1826,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
         if not frame then return end
         local step = frame.step
         local fheight
-        local hideStep = step.level > level or step.hideStep
+        local hideStep = step.level > level or step.hidewindow
 
         local text
         for i,element in ipairs(frame.step.elements) do
@@ -1904,15 +1924,25 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
         RXP_.stepPos[0] = totalHeight
         --print(f.Steps.frame[#f.Steps.frame]:GetBottom(),totalHeight)
     end
-    if RXP_.currentGuide then
+    local guide = RXP_.currentGuide
+    if guide then
         f.Steps:SetHeight(f.Steps.f1:GetHeight())
     end
     local w = f:GetWidth()-35
     f.Steps:SetWidth(w)
-
-    if f.BottomFrame:GetHeight() < 35 then
+    local bottomFrameHeight = f.BottomFrame:GetHeight()
+    if bottomFrameHeight < 35 then
+        f.BottomFrame:Hide()
+    elseif guide and guide.hidewindow then
+        if f:GetHeight() > 10 then
+            RXPCData.frameHeight = RXPFrame:GetHeight()
+        end
+        f:SetHeight(10)
         f.BottomFrame:Hide()
     elseif not f.BottomFrame:IsShown() then
+        if RXPCData.frameHeight then
+            RXPFrame:SetHeight(RXPCData.frameHeight)
+        end
         f.BottomFrame:Show()
     end
 
@@ -1931,23 +1961,22 @@ local function IsGuideActive(guide)
 end
 
 function RXP_.GenerateMenuTable()
-    RXP_.menuList = {
-        {
-            text = "Available Guides",
-            isTitle = 1,
-            notCheckable = 1,
-        },
-    }
+    RXP_.menuList = {}
 
     local groupList = {}
+    local farmGuides = {}
     local unusedGuides = {}
     for group in pairs(RXP_.guideList) do
-        if group:sub(1,1) ~= "*" then
+        if group:sub(1,1) == "+" then
+            table.insert(farmGuides,group)
+        elseif group:sub(1,1) ~= "*" then
             table.insert(groupList,group)
         else
             table.insert(unusedGuides,group)
         end
     end
+    
+    table.sort(farmGuides)
     table.sort(groupList)
     table.sort(unusedGuides)
 
@@ -1963,27 +1992,66 @@ function RXP_.GenerateMenuTable()
             table.sort(t.names_)
         end
         local item = { text = group, notCheckable = 1, hasArrow = true, menuList = {}}
+        item.subgroups = {}
+        item.subtable = {}
         local submenuIndex = 0
         for j,guideName in ipairs(t.names_) do
             local guide = RXP_.GetGuideTable(group,guideName)
             if IsGuideActive(guide) then
-                submenuIndex = submenuIndex +1
-                guide.menuIndex = menuIndex
-                guide.submenuIndex = submenuIndex
-                local subitem = {}
-                subitem.text = RXP_.GetGuideName(guide)
-                subitem.func = RXP_.LoadGuide
-                subitem.arg1 = guide
-                subitem.notCheckable = 1
-                table.insert(item.menuList,subitem)
+                if guide.subgroup then
+                    local subgroup = guide.subgroup
+                    local subtable = item.subtable[subgroup]
+                    if not subtable then
+                        local subname = subgroup:gsub("^(%d)-(%d%d?)",RXP_.affix)
+                        subtable = { text = subgroup, notCheckable = 1, hasArrow = true, menuList = {}}
+                        item.subtable[subname] = subtable
+                        table.insert(item.subgroups,subname)
+                    end
+                    local subitem = {}
+                    subitem.text = RXP_.GetGuideName(guide)
+                    subitem.func = RXP_.LoadGuide
+                    subitem.arg1 = guide
+                    subitem.notCheckable = 1
+                    table.insert(subtable.menuList,subitem)
+                else
+                    submenuIndex = submenuIndex +1
+                    guide.menuIndex = menuIndex
+                    guide.submenuIndex = submenuIndex
+                    local subitem = {}
+                    subitem.text = RXP_.GetGuideName(guide)
+                    subitem.func = RXP_.LoadGuide
+                    subitem.arg1 = guide
+                    subitem.notCheckable = 1
+                    table.insert(item.menuList,subitem)
+                end
             end
+        end
+        
+        if #item.subgroups > 0 then
+            table.sort(item.subgroups)
+            for i,subgroup in ipairs(item.subgroups) do
+                table.insert(item.menuList,item.subtable[subgroup])
+            end
+        else
+            item.subgroups = nil
+            item.subtable = nil
         end
 
         table.insert(RXP_.menuList,item)
     end
 
-    for _,group in ipairs(groupList) do
-        createMenu(group)
+    if #groupList > 0 then
+         table.insert(RXP_.menuList,{text = "Available Guides", isTitle = 1, notCheckable = 1, } )
+        for _,group in ipairs(groupList) do
+            createMenu(group)
+        end
+    end
+
+    if #farmGuides > 0 then
+        table.insert(RXP_.menuList,{text = "Gold Farming Guides",notCheckable = 1,isTitle = 1})
+        for _,group in ipairs(farmGuides) do
+            createMenu(group)
+        end
     end
 
     if not (RXPData and RXPData.hideUnusedGuides) and #unusedGuides > 0 then
@@ -2004,8 +2072,8 @@ function RXP_.GenerateMenuTable()
         end
         table.insert(RXP_.menuList,{text = hctext,notCheckable = 1,func = RXP_.HardcoreToggle})
     end
-    
-    if RXP_.GAguides > 0 then
+    --[[
+    if RXP_.farmGuides > 0 then
         local text
         if RXPCData and RXPCData.GA then
             text = "Activate the Quest Guide mode"
@@ -2013,7 +2081,7 @@ function RXP_.GenerateMenuTable()
             text = "Activate the Gold Assistant mode"
         end
         table.insert(RXP_.menuList,{text = text,notCheckable = 1,func = RXP_.GAToggle})
-    end
+    end]]
     
     
     table.insert(RXP_.menuList,{text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG})
@@ -2032,7 +2100,7 @@ function RXP_.HardcoreToggle()
 end
 
 function RXP_.GAToggle()
-    if RXPCData and RXP_.GAguides > 0 then
+    if RXPCData and RXP_.farmGuides > 0 then
         RXPCData.GA = not RXPCData.GA
         RXP_.RenderFrame()
     end
@@ -2189,11 +2257,14 @@ function RXP_.CreateOptionsPanel()
     button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
     index = index + 1
     button:SetScript("PostClick",function(self)
+        if RXP_.currentGuide and RXP_.currentGuide.hidewindow then return end
         local show = self:GetChecked()
         if show then
             f:SetHeight(RXP_.height)
+            RXPCData.frameHeight = RXP_.height
         else
             f:SetHeight(10)
+            RXPCData.frameHeight = 10
         end
         RXP_.updateBottomFrame = true
     end)
@@ -2340,7 +2411,7 @@ function RXP_.CreateOptionsPanel()
     end
 
   
-    if RXP_.GAguides > 0 then
+    if RXP_.farmGuides > 0 then
         local GApanel = CreateFrame("Frame","RXPGAOptions")
         GApanel.name = "Gold Assistant"
         GApanel.parent = "RXP Guides"
@@ -2683,7 +2754,7 @@ function RXP_.UpdateItemCooldown()
         local id = btn.itemId
         if id and btn:IsShown() then
             local cd = FormatCooldown(GetItemCooldown(id))
-            print(cd)
+            --print(cd)
             if cd ~= btn.cd then
                 btn.cd = cd
                 btn.text:SetText(cd)

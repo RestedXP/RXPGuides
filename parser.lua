@@ -30,31 +30,58 @@ local function applies(text)
 end
 
 RXP_.applies = applies
-RXP_.GAguides = 0
+RXP_.farmGuides = 0
 local RXPG = RXPGuides
 local version = strlower(RXP_.version)
 local suffix = 1
+
+RXP_.affix = function(smin,smax)
+    if smax:len() == 1 then
+        smax = "0"..smax
+    end
+    return "0"..smin.."-"..smax
+end
 
 function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     if not guideGroup then return end
     local playerLevel = UnitLevel("player")
     local boost58
+    local parentGroup
     if defaultFor then
         if defaultFor == "58Boost" then
             if playerLevel >= 60 or playerLevel < 58 then
+                parentGroup = guideGroup
                 guideGroup = "*"..guideGroup
             end
             boost58 = true
         elseif not applies(defaultFor) then
+            parentGroup = guideGroup
             guideGroup = "*"..guideGroup
         end
     end
 
     if not RXPG[guideGroup] then
         RXPG[guideGroup] = {}
+    end
+    
+    if parentGroup then
+        if not RXPG[parentGroup] then
+            RXPG[parentGroup] = {}
+        end
+        if not getmetatable(RXPG[parentGroup]) then
+            setmetatable(RXPG[parentGroup],RXP_.functions)
+        end
+        if not getmetatable(RXPG[guideGroup])then
+            setmetatable(RXPG[guideGroup],RXPG[parentGroup])
+        end
+    elseif not getmetatable(RXPG[guideGroup]) then
         setmetatable(RXPG[guideGroup],RXP_.functions)
     end
 
+    if guideGroup:sub(1,1) == "+" then
+        RXP_.farmGuides = RXP_.farmGuides + 1
+    end
+    
     local guide = {}
     RXP_.guide = guide
     guide.boost58 = boost58
@@ -211,24 +238,13 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     --print(guide)
     RXP_.step = nil
     if not guide.name then
-        print('Guide has no name')
-    end
-
-    local affix = function(smin,smax)
-        if smax:len() == 1 then
-            smax = "0"..smax
-        end
-        return "0"..smin.."-"..smax
-    end
-
-    guide.displayName = guide.name
-    guide.name = guide.name:gsub("^(%d)-(%d%d?)",affix)
-    if guide.next then
-        guide.next = guide.next:gsub("^(%d)-(%d%d?)",affix)
+        error('Guide has no name')
     end
     
-    if guide.gold then
-        RXP_.GAguides = RXP_.GAguides + 1
+    guide.displayName = guide.name
+    guide.name = guide.name:gsub("^(%d)-(%d%d?)",RXP_.affix)
+    if guide.next then
+        guide.next = guide.next:gsub("^(%d)-(%d%d?)",RXP_.affix)
     end
     
     if not RXP_.guideList[guide.group] then
