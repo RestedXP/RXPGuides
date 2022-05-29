@@ -41,6 +41,7 @@ eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
 eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 eventFrame:RegisterEvent("BAG_UPDATE_DELAYED")
+eventFrame:RegisterEvent("SKILL_LINES_CHANGED")
 if C_QuestLog.RequestLoadQuestByID then
     eventFrame:RegisterEvent("QUEST_DATA_LOAD_RESULT")
 end
@@ -166,6 +167,54 @@ function RXP_.QuestAutoTurnIn(title)
     if title then
         local element = RXP_.questTurnIn[title]
         return (element and element.step.active) and element.reward
+    end
+end
+
+
+RXP_.skills = {}
+RXP_.professionNames = {}
+function RXP_.GetProfessionNames()
+    local names = {}
+    for profession,ids in pairs(RXP_.professionID) do
+        for i,id in ipairs(ids) do
+            if IsSpellKnown(id) then
+                if id == 2656 then
+                    names[profession] = GetSpellInfo(2575)
+                elseif id == 2383 then
+                    names[profession] = GetSpellInfo(9134)
+                else
+                    names[profession] = GetSpellInfo(id)
+                end
+                break
+            end
+        end
+    end
+    names.riding = GetSpellInfo(33388)
+    return names
+end
+
+function RXP_.GetProfessionLevel()
+    if not GetSkillLineInfo then return end
+    local names
+    if #RXP_.professionNames == 0 then
+        RXP_.professionNames = RXP_.GetProfessionNames()
+    end
+    names = RXP_.professionNames
+    --print('ok2')
+    
+    for i = 1, GetNumSkillLines() do
+        skillName, header, isExpanded, skillRank = GetSkillLineInfo(i)
+        if skillRank then
+            for profession,name in pairs(names) do
+                --print(name,skillName,name == skillName)
+                if name == skillName then
+                    RXP_.skills[profession] = skillRank
+                end
+            end
+        end
+    end
+    if not names.riding then
+        names.riding = GetSpellInfo(33388)
     end
 end
 
@@ -395,6 +444,9 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         RXP_.UpdateItemFrame()
     elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
         C_Timer.After(1, function() RXP_.ReloadGuide() end)
+    elseif event == "SKILL_LINES_CHANGED" then
+        RXP_.professionNames = RXP_.GetProfessionNames()
+        RXP_.GetProfessionLevel()
     elseif event == "TRAINER_SHOW" then
         trainerUpdate = GetTime()
         OnTrainer()
@@ -409,6 +461,7 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         RXP_.CreateOptionsPanel()
         loadtime = GetTime()
         ProcessSpells()
+        RXP_.GetProfessionLevel()
         local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
         if not guide and RXPData.autoLoadGuides then
             guide = RXP_.defaultGuide
@@ -969,8 +1022,18 @@ function RXP_.SetStep(n,n2,loopback)
             stepframe.number:SetBackdrop(f.backdropEdge)
             stepframe.number:SetBackdropColor(unpack(RXP_.colors.background))
         end
-        stepframe.number.text:SetText("Step "..tostring(index))
-        stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
+        
+        local titletext = step.title or "Step "..tostring(index)
+        
+        if titletext == "" then
+            stepframe.number:SetAlpha(0)
+            stepframe.number:SetSize(10,17)
+        else
+            stepframe.number:SetAlpha(1)
+            stepframe.number.text:SetText(titletext)
+            stepframe.number:SetSize(stepframe.number.text:GetStringWidth()+10,17)
+        end
+        
         stepframe.step = step
         stepframe.index = index
         stepframe.sticky = step.sticky
