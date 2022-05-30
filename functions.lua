@@ -949,6 +949,7 @@ function RXP_.UpdateQuestCompletionData(self)
     local step = element.step
     local icon = RXP_.icons.complete
     local id = element.questId
+    
     if type(id) ~= "number" then
         print('Error: Invalid quest ID at step '..element.step.index)
         return
@@ -956,13 +957,19 @@ function RXP_.UpdateQuestCompletionData(self)
     local skip
     local objectives = RXP_.GetQuestObjectives(id,element.step.index)
     local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
-
+    
     local objtext
     local completed
 
     if objectives and #objectives > 0 then
         if element.obj and element.obj <= #objectives then
             local obj = objectives[element.obj]
+            if element.objMax then
+                obj.numRequired = math.min(element.objMax,obj.numRequired)
+                if obj.numFulfilled > obj.numRequired then
+                    obj.numFulfilled = obj.numRequired
+                end
+            end
             local t = obj.text
 
             if obj.type == "item" then
@@ -1118,12 +1125,13 @@ end
 function RXP_.functions.complete(self,...)
     if type(self) == "string" then --on parse
         local element = {}
-        local text,id,obj = ...
+        local text,id,obj,objMax = ...
         id = tonumber(id)
         if not (id and obj) then
             RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid objective or quest ID\n"..self)
         end
         element.obj = tonumber(obj)
+        element.objMax = tonumber(objMax)
         element.dynamicText = true
         --element.title = RXP_.GetQuestName(id)
         --local objectives = RXP_.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
