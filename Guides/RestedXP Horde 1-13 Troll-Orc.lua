@@ -11,8 +11,6 @@ step << !Orc !Troll
 step
     .goto Durotar,43.3,68.5
     .accept 4641 >>Accept Your Place In The World
-step << !Warlock
-    .goto Durotar,44.2,65.9,40,0
 step << Warlock
     #sticky
     #completewith next
