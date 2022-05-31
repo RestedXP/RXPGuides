@@ -2200,11 +2200,10 @@ step
     .turnin 9169 >> Turn in Deactivate An'owyn
 step << Rogue
     >>Run back to Tranquillien. Choose the Dagger on turnin. Save this dagger (or any dagger), as you'll need one for later
-.goto Ghostlands,47.2,34.3
+    .goto Ghostlands,47.2,34.3
     .turnin 10548 >>Turn in The Sad Truth
     .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
 step
-    .isOnQuest 9220
     .goto Ghostlands,45.9,32.1
     .accept 9151 >> Accept The Sanctum of the Sun
 step
