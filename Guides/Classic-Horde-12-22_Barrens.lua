@@ -1126,7 +1126,6 @@ step
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 step << Tauren/Warrior/Shaman
-	BloodShard
     +Use your Blood Shards on any buff from Mangletooth
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step
@@ -1137,7 +1136,7 @@ step
 	.goto The Barrens,44.8,59.1
     .turnin 882 >>Turn in Ishamuhale
     .accept 907 >>Accept Enraged Thunder Lizards
---    .accept 1130 >>Accept Melor Sends Word
+    .accept 1130 >>Accept Melor Sends Word
     .accept 6382 >>Accept The Ashenvale Hunt
 step
     #sticky
@@ -1512,7 +1511,7 @@ step
 step << Hunter
     .goto The Barrens,49.00,11.20
     .turnin 3921 >> Turn in Wenikee Boltbucket
-step << Hunter
+step
 	>>Go to the 2nd floor of the tower
     .goto The Barrens,48.12,5.42
     .turnin 6541 >>Turn in Report to Kadrak

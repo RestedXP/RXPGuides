@@ -1637,6 +1637,11 @@ step
 step
     .goto Felwood,27.70,10.03
     .turnin 957 >> Turn in Bashal'Aran
+step << Paladin
+	#completewith next
+    .goto Darkshore,50.74,34.68,0
+	>>Start saving the Linen Cloth you loot in the area from the Furbolgs.
+	.collect 2589,10,1,1644 --Linen Cloth (10)
 step
     .goto Darkshore,50.74,34.68
     >>Loot the Blackwood Grain Sample from the Barrel, then run south-east toward Den Mother, looting the barrel will make 2 mobs spawn, be careful
@@ -1646,11 +1651,17 @@ step
     >>Kill Den Mother. Be careful as her cubs can knock you down for 2 seconds
     .goto Darkshore,51.48,38.26
     .complete 2139,1 --Den Mother (1)
+step << Paladin
+	#completewith Fruit
+    .goto Darkshore,50.74,34.68,0
+	>>Start saving the Linen Cloth you loot in the area from the Furbolgs.
+	.collect 2589,10,1,1644 --Linen Cloth (10)
 step
     >>Loot the Blackwood Nut Sample from the Barrel
     .goto Darkshore,51.80,33.51
     .collect 12343,1 --Blackwood Nut Sample (1)
 step
+	#label Fruit
     >>Loot the Blackwood Fruit Sample from the Barrel. A mob will spawn in front of you, and in between the huts of the west - you may have to run
     .goto Darkshore,52.85,33.42
     .collect 12341,1 --Blackwood Fruit Sample (1)
@@ -1674,10 +1685,19 @@ step
     .goto Winterspring,4.82,27.18
     .turnin 965 >> Turn in The Tower of Althalaxx
     .accept 966 >> Accept The Tower of Althalaxx
+step << Paladin
+	#completewith next
+    .goto Darkshore,55.36,26.84
+	>>Kill Dark Strand Fanatics. Loot them for 10 Linen Cloth
+	.collect 2589,10,1,1644 --Linen Cloth (10)
 step
     >>Kill Dark Strand Fanatics. Loot them for Parchments
     .goto Darkshore,55.36,26.84
     .complete 966,1 --Worn Parchment (4)
+step << Paladin
+    .goto Darkshore,55.36,26.84
+	>>Kill Dark Strand Fanatics. Loot them for 10 Linen Cloth
+	.collect 2589,10,1,1644 --Linen Cloth (10)
 step
     .goto Winterspring,4.82,27.18
     .turnin 966 >> Turn in The Tower of Althalaxx
@@ -2189,6 +2209,14 @@ step << Mage
     .goto Stormwind City,37.69,82.09,10 >> Go up the tower, then through the portal
     .trainer >> Train your class spells
 step << Paladin
+    >>Do the quests for Duthorian Rall. Make sure you have the 10 Linen Cloth from earlier
+    .goto Stormwind City,39.80,29.77
+    .turnin 1641 >> Turn in The Tome of Divinity
+    .collect 6775,1,1642 --Tome of Divinity (1)
+    .accept 1642 >> Accept The Tome of Divinity
+    .turnin 1642 >> Turn in The Tome of Divinity
+    .accept 1643 >> Accept The Tome of Divinity
+step << Paladin
     .goto Stormwind City,38.68,32.85
     .trainer >> Train your class spells
 step << Priest !NightElf
@@ -2207,6 +2235,12 @@ step
      .train 201 >> Talk to Woo Ping. Train 1h Swords << Mage/Rogue/Warlock
      .train 1180 >> Talk to Woo Ping. Train Daggers << Mage/Druid
      .train 202 >> Talk to Woo Ping. Train 2h Swords << Warrior/Paladin
+step << Paladin
+    .goto Stormwind City,57.08,61.74
+    .turnin 1643 >> Turn in The Tome of Divinity
+    .accept 1644 >> Accept The Tome of Divinity
+    .turnin 1644 >> Turn in The Tome of Divinity
+--  .accept 1780 >> Accept The Tome of Divinity
 step << Rogue
     .goto Stormwind City,57.38,56.77
     >>Talk to Marda. Buy a Longsword for your mainhand and Kris for your offhand.

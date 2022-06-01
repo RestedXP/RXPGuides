@@ -37,8 +37,6 @@ step
     .goto Durotar,42.1,68.4
     .turnin 4641 >>Turn in Your Place In The World
     .accept 788 >>Accept Cutting Teeth
-step << !Warlock
-    .goto Durotar,44.2,65.9,40,0
 step << Warlock
     .goto Durotar,40.6,68.4
     .vendor >>vendor trash at the demon trainer
@@ -46,7 +44,9 @@ step << Warlock
      .goto Durotar,40.6,68.5
     .train 348 >>Train Immolate
 step << !Warlock
-    .goto Durotar,41.9,63.7
+    #sticky
+    #label motboars
+    .goto Durotar,41.9,63.7,0,0
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     #sticky
@@ -63,6 +63,7 @@ step << Warlock
 step << Warlock
     #sticky
 >>Finish off killing the Mottled Boars
+    #label warlockboarfi
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     >>Grind Boars en route
@@ -73,7 +74,12 @@ step << !Warlock
     .accept 790 >>Accept Sarkoth
 step
 .goto Durotar,40.7,65.2,15 >>Go up the path here
-step
+step << Warlock
+    #requires warlockboarfi
+    >>Kill Sarkoth. Loot his claw
+.goto Durotar,40.7,67.3
+    .complete 790,1 --Sarkoth's Mangled Claw (1)
+step << !Warlock
     >>Kill Sarkoth. Loot his claw
 .goto Durotar,40.7,67.3
     .complete 790,1 --Sarkoth's Mangled Claw (1)
@@ -96,65 +102,76 @@ step << Warlock
     .turnin 1499 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
 step << !Orc !Troll
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Rogue
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3088 >>Accept Encrypted Parchment
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Rogue
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3083 >>Accept Encrypted Tablet
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Hunter
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3087 >>Accept Etched Parchment
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Hunter
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3082 >>Accept Etched Tablet
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Mage
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3086 >>Accept Glyphic Tablet
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Priest
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3085 >>Accept Hallowed Tablet
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Shaman
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3084 >>Accept Rune-Inscribed Tablet
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Shaman
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3089 >>Accept Rune-Inscribed Parchment
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Warrior
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 2383 >>Accept Simple Parchment
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Warrior
+    #requires motboars
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
@@ -169,9 +186,6 @@ step << Orc Warlock
 step << Orc Rogue
       .goto Durotar,41.3,68.0
     .turnin 3088 >>Turn in Encrypted Parchment
-step << Troll Rogue
-      .goto Durotar,41.3,68.0
-.turnin 3083 >>Turn in Encrypted Tablet
 step << Orc Warlock
     .goto Durotar,40.6,68.4
     .vendor >>vendor trash at the demon trainer
@@ -225,17 +239,19 @@ step
     .accept 5441 >>Accept Lazy Peons
 step
     #sticky
-    #completewith Apples
+    #completewith imps
+    .goto Durotar,44.0,65.3,0,0
     >>Loot Cactuses that you see with apples on them
     .complete 4402,1 --Cactus Apple (10)
 step
     #sticky
-    #completewith Peons
+    #completewith imps
+.goto Durotar,47.4,65.7,0,0
 >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step << !Warlock
 #sticky
-#completewith imps
+    #completewith imps
 .goto Durotar,47.1,65.2,30,0
 >>Kill Scorpions for some tails en route to the cave
 .complete 789,1 --Scorpid Worker Tail (10)
@@ -255,19 +271,17 @@ step <<!Warlock
 .goto Durotar,39.8,63.5
     .complete 789,1 --Scorpid Worker Tail (10)
 step
-    #label Apples
-.goto Durotar,39.8,63.5,2000,0
-step
-    #label Peons
-.goto Durotar,39.8,63.5,2000,0
-step
-    .goto Durotar,44.0,65.3
-    >>Finish looting the Cactus Apples
+    #sticky
+    #label cactusapples
+    .goto Durotar,44.0,65.3,0,0
+    >>Loot Cactuses that you see with apples on them
     .complete 4402,1 --Cactus Apple (10)
 step
->>Finish waking the peons around the trees. Backtrack if you are struggling
+.goto Durotar,47.4,65.7
+>>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step
+    #requires cactusapples
     .goto Durotar,42.7,67.2
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
 step << Warrior/Rogue/Hunter/Druid/Paladin/Shaman

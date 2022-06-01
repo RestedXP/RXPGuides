@@ -682,6 +682,7 @@ step
     .goto Wetlands,9.5,59.7
     .fp Wetlands>> Get the Menethil Harbor flight path
 step
+	#completewith next
     .hs >> Hearth to Kharanos
 step
     .goto Dun Morogh,47.4,52.5
@@ -1450,9 +1451,6 @@ step
     .accept 36 >> Accept Westfall Stew
     .accept 151 >> Accept Poor Old Blanchy
 step
-    .goto Westfall,59.95,19.35
-    .accept 36 >> Accept Westfall Stew
-step
     .goto Westfall,56.10,31.30
     .accept 9 >> Accept The Killing Fields
 step
@@ -1460,9 +1458,6 @@ step
     .turnin 36 >> Turn in Westfall Stew
     .accept 38 >> Accept Westfall Stew
     .accept 22 >> Accept Goretusk Liver Pie
-step
-    .goto Westfall,56.40,30.50
-    .turnin 36 >> Turn in Westfall Stew
 step
     #softcore
     #sticky
@@ -1482,19 +1477,14 @@ step
 step
     .goto Westfall,54.00,53.00
     .accept 153 >> Accept Red Leather Bandanas
-step << !Paladin
-    .goto Westfall,56.6,52.6
-    .fp >> Get the Sentinel Hill flight path
 step << Dwarf Paladin
     .goto Westfall,48.6,45.8
     >>Make sure you have 10 Linen Cloth for an upcoming Paladin quest
     .collect 2589,10,1648,1
-step << Paladin
+step
     .goto Westfall,56.6,52.6
-    .fly Stormwind >> Fly to Stormwind
-step << Paladin
-    .goto Stormwind City,52.61,65.71
-    .home >> Set your Hearthstone to Stormwind City
+    .fp >> Get the Sentinel Hill flight path
+    .fly Stormwind >> Fly to Stormwind << !Paladin
 step << Paladin
     .goto Stormwind City,60.5,12.3,40,0
     .goto Stormwind City,60.5,12.3,0
@@ -1692,6 +1682,7 @@ step << Dwarf Paladin
     >>Kill Dark Iron Spies
     .complete 1784,1 --Dark Iron Script (1)
 step << Dwarf Paladin
+	#completewith next
     .hs >> Hearth to Stormwind
 step << Warrior
     .goto Ironforge,65.89,88.43
@@ -1752,7 +1743,9 @@ step << Priest
     .goto Ironforge,25.20,10.75
     .trainer >> Train your class spells
 step << Paladin
-    .trainer >> Train your class spells at the Stormwind cathedral
+   .goto Stormwind City,42.66,33.75,30,0
+    .goto Stormwind City,38.68,32.85
+    .trainer >> Train your class spells
 step << Rogue
     #requires Salvation
     #completewith next
