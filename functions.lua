@@ -964,6 +964,7 @@ function RXP_.UpdateQuestCompletionData(self)
     if objectives and #objectives > 0 then
         if element.obj and element.obj <= #objectives then
             local obj = objectives[element.obj]
+            local numReq = obj.numRequired
             if element.objMax then
                 obj.numRequired = math.min(element.objMax,obj.numRequired)
                 --[[if obj.numFulfilled > obj.numRequired then
@@ -989,7 +990,7 @@ function RXP_.UpdateQuestCompletionData(self)
                     t = t:gsub(": %d+/(%d+)",": %1/%1")
                 end
             end
-            completed = obj.finished or obj.numRequired > 0 and obj.numRequired >= obj.numFulfilled
+            completed = obj.finished or (element.objMax and numReq > 1 and obj.numFulfilled >= obj.numRequired)
             objtext = t
         else
             completed = true
