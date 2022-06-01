@@ -94,6 +94,7 @@ end
 function RXPG_init()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
+    RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
     RXPCData.hardcore = (RXP_.version == "CLASSIC") and RXPCData.hardcore
     if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
         RXPData.addonVersion = addonVersion
@@ -111,6 +112,7 @@ function RXPG_init()
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.arrowText = RXPData.arrowText or 9
+    RXPData.skipMissingPreReqs = false
     if RXPCData.flightPaths then
         if UnitLevel("player") <= 6 then
             for i in pairs(RXPCData.flightPaths) do
@@ -2358,7 +2360,7 @@ function RXP_.CreateOptionsPanel()
     button:SetChecked(RXPData.mapCircle)
     button.Text:SetText("Highlight active map pins")
     button.tooltip = "Show a targeting circle around active map pins"
-  --
+  --[[
     if QuestieLoader then
         button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
         table.insert(options,button)
@@ -2370,7 +2372,7 @@ function RXP_.CreateOptionsPanel()
         button:SetChecked(RXPData.skipMissingPreReqs)
         button.Text:SetText("Skip quests with missing pre-requisites")
         button.tooltip = "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"
-    end
+    end]]
    --
     if unitscan_targets then
         button = CreateFrame("CheckButton", "$parentUnitscan", panel, "ChatConfigCheckButtonTemplate");

@@ -655,14 +655,14 @@ end
 -- Updates the arrow
 local function updateArrow()
     local lowPrioWPs = {}
-    local function ProcessWaypoint(element,lowPrio)
+    local function ProcessWaypoint(element,lowPrio,isComplete)
         if element.lowPrio and not lowPrio then
             table.insert(lowPrioWPs,element)
             return
         end
         if element.generated or (element.arrow and element.step.active and
-        not(element.parent and (element.parent.completed or element.parent.skip)) and not(element.text and (element.completed or element.skip) and not element.skip)) then
-            af:SetShown(not RXPData.disableArrow)
+        not(element.parent and (element.parent.completed or element.parent.skip)) and not(element.text and (element.completed or isComplete) and not isComplete)) then
+            af:SetShown(not RXPData.disableArrow and not RXP_.hideArrow)
             af.dist = 0
             af.orientation = 0
             af.element = element
@@ -672,13 +672,14 @@ local function updateArrow()
     end
 
     for i,element in ipairs(RXP_.activeWaypoints) do
-        if ProcessWaypoint(element) then
+        RXPCData.completedWaypoints[i] = RXPCData.completedWaypoints[i] or element.skip
+        if ProcessWaypoint(element,nil,RXPCData.completedWaypoints[i]) then
             return
         end
     end
 
     for i,element in ipairs(lowPrioWPs) do
-        if ProcessWaypoint(element,true) then
+        if ProcessWaypoint(element,true,RXPCData.completedWaypoints[i]) then
             return
         end
     end
@@ -716,7 +717,7 @@ local closestPoint
 local maxDist = math.huge
 
 function RXP_.UpdateGotoSteps()
-
+    local hideArrow
     local currentMap = WorldMapFrame:GetMapID()
     if lastMap ~= currentMap then
         for line in lineMapFramePool:EnumerateActive() do
@@ -755,14 +756,23 @@ function RXP_.UpdateGotoSteps()
                         end
                     elseif element.radius then
                         if dist <= element.radius then
-                            element.skip = true
-                            RXP_.updateMap = true
-                            RXP_.SetElementComplete(element.frame)
+                            if element.persistent then
+                                hideArrow = true
+                            else
+                                element.skip = true
+                                RXP_.updateMap = true
+                                RXP_.SetElementComplete(element.frame)
+                            end
                         end
                     end
                 end
             end
         end
+    end
+    
+    if RXP_.hideArrow ~= hideArrow then
+        RXP_.hideArrow = hideArrow
+        forceArrowUpdate = true
     end
     
     minDist = nil
@@ -821,7 +831,7 @@ function RXP_.UpdateGotoSteps()
         end
         if isNextCloser then
             if pointUpdate then
-                maxDist = math.max(nextDist*1.5,1000)
+                maxDist = math.max(nextDist*1.3,1000)
             elseif nextDist > maxDist then
                 currentPoint = nil
                 lastPoint = nil
@@ -830,7 +840,7 @@ function RXP_.UpdateGotoSteps()
             end
         else
             if pointUpdate then
-                maxDist = math.max(prevDist*1.5,1000)
+                maxDist = math.max(prevDist*1.3,1000)
             elseif prevDist > maxDist then
                 currentPoint = nil
                 lastPoint = nil

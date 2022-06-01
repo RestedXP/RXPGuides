@@ -966,9 +966,9 @@ function RXP_.UpdateQuestCompletionData(self)
             local obj = objectives[element.obj]
             if element.objMax then
                 obj.numRequired = math.min(element.objMax,obj.numRequired)
-                if obj.numFulfilled > obj.numRequired then
+                --[[if obj.numFulfilled > obj.numRequired then
                     obj.numFulfilled = obj.numRequired
-                end
+                end]]
             end
             local t = obj.text
 
@@ -989,7 +989,7 @@ function RXP_.UpdateQuestCompletionData(self)
                     t = t:gsub(": %d+/(%d+)",": %1/%1")
                 end
             end
-            completed = obj.finished
+            completed = obj.finished or obj.numRequired > 0 and obj.numRequired >= obj.numFulfilled
             objtext = t
         else
             completed = true
@@ -1261,6 +1261,8 @@ function RXP_.functions.waypoint(self,text,zone,x,y,radius,lowPrio,...)
             if not lowPrio then
                 element.lowPrio = true
             end
+        elseif element.radius and element.radius < 0 then
+            element.persistent = true
         end
         radius = element.radius
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
@@ -1633,7 +1635,7 @@ function RXP_.functions.destroy(self,...)
         element.id = id
         element.qty = qty or 1
         element.itemName = RXP_.GetItemName(id)
-
+        
         if text and text ~= "" then
             element.rawtext = text
             element.tooltipText = RXP_.icons.collect..element.rawtext
@@ -1681,12 +1683,15 @@ function RXP_.functions.xp(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         local text,str,skipstep = ...
-
+        skipstep = tonumber(skipstep)
         str = str:gsub(" ","")
-        local level,xp = str:match("(%d+)([%+%.%-]?%d*)")
+        local operator,level,xp = str:match("(<?)%s*(%d+)([%+%.%-]?%d*)")
         element.xp = tonumber(xp)
         element.level = tonumber(level)
-
+        if operator == "<" then
+            element.reverseLogic = true
+        end
+        
         if text and text ~= "" then
             element.text = text
         elseif not skipstep then
@@ -1714,10 +1719,14 @@ function RXP_.functions.xp(self,...)
     local maxXP = UnitXPMax("player")
     local level = UnitLevel("player")
     local element = self.element
-
-    if (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP + element.xp))) or
+    local reverseLogic = element.reverseLogic
+    if element.skipstep and element.skipstep < 0 then
+        reverseLogic = true
+    end
+    if ( (element.xp < 0 and (level >= element.level or (level == element.level-1 and currentXP >= maxXP + element.xp))) or
        (element.xp >= 1 and ((level > element.level) or (element.level == level and currentXP >= element.xp))) or
        (element.xp >= 0 and element.xp < 1 and ((level > element.level) or (element.level == level and currentXP >= maxXP*element.xp)))
+       ) == not reverseLogic
        then
         if element.skipstep then
             if step.active and not step.completed then
@@ -2270,7 +2279,7 @@ function RXP_.functions.zoneskip(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         local text,zone = ...
-        local mapID = RXP_.mapId[zone] or tonumber(mapID)
+        local mapID = RXP_.mapId[zone] or tonumber(zone)
         if not mapID then
             return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid text/map name\n"..self)
         end
