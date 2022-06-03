@@ -200,13 +200,14 @@ MapPinPool.creationFunc = function(framePool)
             if self:IsForbidden() or GameTooltip:IsForbidden() then return end
             GameTooltip:SetOwner(f, "ANCHOR_RIGHT",0,0)
             GameTooltip:ClearLines()
-
+            
             for i,element in pairs(pin.elements) do
+                local parent = element.parent
                 local text
-                if element.parent then
-                    text =  element.parent.tooltipText
+                if parent then
+                    text = parent.mapTooltip or parent.tooltipText
                 elseif not element.hideTooltip then
-                    text = element.tooltipText
+                    text = element.mapTooltip or element.tooltipText
                 end
                 text = text or RXP_.MainFrame.Steps.frame[element.step.index].text:GetText()
                 GameTooltip:AddLine("Step "..element.step.index,unpack(RXP_.colors.mapPins))

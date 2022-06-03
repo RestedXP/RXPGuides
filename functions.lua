@@ -30,6 +30,7 @@ RXP_.functions.events.zone = {"ZONE_CHANGED_NEW_AREA"}
 RXP_.functions.events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE_DELAYED"}
 RXP_.functions.events.skipgossip = {"GOSSIP_SHOW"}
 RXP_.functions.events.vehicle = {"UNIT_ENTERING_VEHICLE","VEHICLE_UPDATE"}
+RXP_.functions.events.skill = {"SKILL_LINES_CHANGED","LEARNED_SPELL_IN_TAB"}
 
 RXP_.functions.events.bankwithdraw = RXP_.functions.events.bankdeposit
 RXP_.functions.events.abandon = RXP_.functions.events.complete
@@ -247,7 +248,7 @@ function RXP_.GetQuestObjectives(id,step)
                     local description, objectiveType, isCompleted = GetQuestLogLeaderBoard(j,i)
                     if description then
                         nObj = nObj + 1
-                        local required,fulfilled = description:match("(%d+)/(%d+)")
+                        local fulfilled,required = description:match("(%d+)/(%d+)")
                         if required then
                             required = tonumber(required)
                             fulfilled = tonumber(fulfilled)
@@ -964,7 +965,6 @@ function RXP_.UpdateQuestCompletionData(self)
     if objectives and #objectives > 0 then
         if element.obj and element.obj <= #objectives then
             local obj = objectives[element.obj]
-            local numReq = obj.numRequired
             if element.objMax then
                 obj.numRequired = math.min(element.objMax,obj.numRequired)
                 --[[if obj.numFulfilled > obj.numRequired then
@@ -990,7 +990,7 @@ function RXP_.UpdateQuestCompletionData(self)
                     t = t:gsub(": %d+/(%d+)",": %1/%1")
                 end
             end
-            completed = obj.finished or (element.objMax and numReq > 1 and obj.numFulfilled >= obj.numRequired)
+            completed = obj.finished or (element.objMax and obj.numFulfilled >= obj.numRequired)
             objtext = t
         else
             completed = true
@@ -1294,7 +1294,7 @@ function RXP_.functions.pin(self,...)
     if type(self) == "string" then
         local element = {}
         element.tag = "goto"
-        local text,zone,x,y = ...
+        local text,zone,x,y,tooltip = ...
         if zone then
             lastZone = zone
         else
@@ -1308,7 +1308,8 @@ function RXP_.functions.pin(self,...)
         end
         element.zone = mapID
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
-
+        
+        element.mapTooltip = tooltip
         element.parent = true
         element.text = text
         element.textOnly = true
@@ -1528,17 +1529,24 @@ function RXP_.functions.collect(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         element.dynamicText = true
-        local text,id,qty,questId,isQuestTurnIn = ...
+        local text,id,qty,questId,isQuestTurnIn,flags = ...
         id = tonumber(id)
+        flags = tonumber(flags)
         if not id then
             return RXP_.error('Error parsing guide '..RXP_.currentGuideName..': No item ID provided\n'..self)
         end
-        element.isQuestTurnIn = isQuestTurnIn
+        element.isQuestTurnIn = tonumber(isQuestTurnIn)
         element.questId = tonumber(questId)
         element.id = id
         qty = tonumber(qty)
         element.qty = qty or 1
         element.itemName = RXP_.GetItemName(id)
+        if flags then
+            element.textOnly = true
+            if flags < 0 then
+                element.subtract = true
+            end
+        end
 
         if text and text ~= "" then
             element.rawtext = text
@@ -1554,6 +1562,7 @@ function RXP_.functions.collect(self,...)
     local questId = element.questId
     local name = RXP_.GetItemName(element.id)
     local step = element.step
+    local numRequired = element.qty
 
     if name then
         element.requestFromServer = nil
@@ -1562,33 +1571,64 @@ function RXP_.functions.collect(self,...)
         element.requestFromServer = true
     end
     element.itemName = name
+    
+    if step.active and questId then
+        if not element.isQuestTurnIn then
+            --adds the item to the active item list, in case it's an item that starts a quest
+            if not step.activeItems then step.activeItems = {} end
+            if event then
+                if event ~= "BAG_UPDATE_DELAYED" then
+                    step.activeItems[element.id] = not IsOnQuest(questId)
+                    local itemFrame = self.GetParent and self:GetParent().activeItemFrame
+                    if itemFrame then
+                        RXP_.UpdateItemFrame(itemFrame)
+                    end
+                end
+            else
+                step.activeItems[element.id] = true
+            end
+        elseif element.subtract then
+            local obj = element.isQuestTurnIn
+            local objectives = RXP_.GetQuestObjectives(questId)
+            RRR = objectives
+            --print('t',numRequired,obj,objectives[obj].numFulfilled)
+            if obj and objectives[obj] then
+                numRequired = numRequired - objectives[obj].numFulfilled
+            end
+            if numRequired < 0 then
+                numRequired = 0
+            end
+        end
+    end
 
+    
+    
     local count = GetItemCount(element.id)
-    for i = 1,18 do
+    for i = 1,INVSLOT_LAST_EQUIPPED do
         if GetInventoryItemID("player",i) == element.id then
             count = count + 1
             break
         end
     end
 
-    if (element.qty > 0 and count > element.qty) or (questId and ((not element.isQuestTurnIn and IsOnQuest(questId)) or IsQuestTurnedIn(questId) or IsQuestComplete(questId))) then
-        count = element.qty
+    if (numRequired > 0 and count > numRequired) or (questId and ((not element.isQuestTurnIn and IsOnQuest(questId)) or IsQuestTurnedIn(questId) or IsQuestComplete(questId))) then
+        count = numRequired
     end
 
     if version and version > 90000 then
         if element.rawtext then
             element.tooltipText = RXP_.icons.collect..element.rawtext
-            element.text = string.format("%s\n%d/%d %s",element.rawtext,count,element.qty,element.itemName)
+            element.text = string.format("%s\n%d/%d %s",element.rawtext,count,numRequired,element.itemName)
         else
-            element.text = string.format("%d/%d %s",count,element.qty,element.itemName)
+            element.text = string.format("%d/%d %s",count,numRequired,element.itemName)
             element.tooltipText = RXP_.icons.collect..element.text
         end
     else
         if element.rawtext then
             element.tooltipText = RXP_.icons.collect..element.rawtext
-            element.text = string.format("%s\n%s: %d/%d",element.rawtext,element.itemName,count,element.qty)
+            element.text = string.format("%s\n%s: %d/%d",element.rawtext,element.itemName,count,numRequired)
         else
-            element.text = string.format("%s: %d/%d",element.itemName,count,element.qty)
+            element.text = string.format("%s: %d/%d",element.itemName,count,numRequired)
             element.tooltipText = RXP_.icons.collect..element.text
         end
     end
@@ -1599,11 +1639,11 @@ function RXP_.functions.collect(self,...)
     end
     element.lastCount = count
 
-    if element.qty > 0 and count >= element.qty then
+    if numRequired > 0 and count >= numRequired then
         RXP_.SetElementComplete(self,true)
-    elseif element.qty == 0 and count == 0 then
+    elseif numRequired == 0 and count == 0 then
         RXP_.SetElementComplete(self)
-    else
+    elseif not element.textOnly then
         RXP_.SetElementIncomplete(self)
     end
 
@@ -1741,7 +1781,55 @@ function RXP_.functions.xp(self,...)
 
 end
 
+function RXP_.functions.skill(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,skillName,str,skipstep = ...
+        skipstep = tonumber(skipstep)
+        str = str:gsub(" ","")
+        local operator,level = str:match("(<?)%s*(%d+)")
+        element.skill = skillName
+        element.level = tonumber(level)
+        if not (level and skillName) then
+            RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid skill name or point threshold\n"..self)
+        end
+        if operator == "<" then
+            element.reverseLogic = true
+        end
+        
+        if text ~= "" then
+            element.text = text
+        end
+        element.skipstep = skipstep
+        if skipstep then
+            element.textOnly = true
+        end
+        return element
+    end
 
+
+    local element = self.element
+    local step = element.step
+    if step.active then
+        RXP_.UpdateSkillData()
+    end
+    local level = RXP_.skills[element.skill]
+    if not level then return end
+    local reverseLogic = element.reverseLogic
+    print(level,element.level,(level >= element.level) == not reverseLogic)
+
+    if (level >= element.level) == not reverseLogic then
+        if element.skipstep then
+            if step.active and not step.completed then
+                RXP_.updateSteps = true
+                step.completed = true
+            end
+        else
+            RXP_.SetElementComplete(self,true)
+        end
+    end
+
+end
 
 function RXP_.functions.reputation(self,...)
     if type(self) == "string" then --on parse

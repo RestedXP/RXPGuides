@@ -41,7 +41,7 @@ eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
 eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 eventFrame:RegisterEvent("BAG_UPDATE_DELAYED")
-eventFrame:RegisterEvent("SKILL_LINES_CHANGED")
+--eventFrame:RegisterEvent("SKILL_LINES_CHANGED")
 if C_QuestLog.RequestLoadQuestByID then
     eventFrame:RegisterEvent("QUEST_DATA_LOAD_RESULT")
 end
@@ -54,7 +54,6 @@ questFrame:RegisterEvent("QUEST_DETAIL")
 questFrame:RegisterEvent("QUEST_TURNED_IN")
 
 
-RXPG_Debug = false
 
 local SoMtimer
 local function SoMCheck()
@@ -196,14 +195,29 @@ function RXP_.GetProfessionNames()
 end
 
 function RXP_.GetProfessionLevel()
-    if not GetSkillLineInfo then return end
     local names
     if #RXP_.professionNames == 0 then
         RXP_.professionNames = RXP_.GetProfessionNames()
     end
     names = RXP_.professionNames
-    --print('ok2')
     
+    if not GetSkillLineInfo then
+        if IsPlayerSpell(33388) then
+            RXP_.skills["riding"] = 75
+        elseif IsPlayerSpell(33391) then
+            RXP_.skills["riding"] = 150
+        elseif IsPlayerSpell(34090) then
+            RXP_.skills["riding"] = 225
+        elseif IsPlayerSpell(34091) then
+            RXP_.skills["riding"] = 300
+        elseif IsPlayerSpell(90265) then
+            RXP_.skills["riding"] = 375     
+        end
+        return 
+    end
+    if not names.riding then
+        names.riding = GetSpellInfo(33388)
+    end
     for i = 1, GetNumSkillLines() do
         skillName, header, isExpanded, skillRank = GetSkillLineInfo(i)
         if skillRank then
@@ -215,9 +229,11 @@ function RXP_.GetProfessionLevel()
             end
         end
     end
-    if not names.riding then
-        names.riding = GetSpellInfo(33388)
-    end
+end
+
+function RXP_.UpdateSkillData()
+    RXP_.professionNames = RXP_.GetProfessionNames()
+    RXP_.GetProfessionLevel()
 end
 
 RXP_.skillList = {}
@@ -316,7 +332,7 @@ local G_GetActiveQuests = C_GossipInfo.GetActiveQuests or GetGossipActiveQuests
 local G_SelectActiveQuest = C_GossipInfo.SelectActiveQuest or SelectGossipActiveQuest
 local G_GetAvailableQuests = C_GossipInfo.GetAvailableQuests or GetGossipAvailableQuests
 
-function RXP_.QuestAutomation(event,arg1,arg2)
+function RXP_.QuestAutomation(event,arg1,arg2,arg3)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
         return
     end
@@ -338,7 +354,7 @@ function RXP_.QuestAutomation(event,arg1,arg2)
 
     if event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
         ConfirmAcceptQuest()
-    elseif event == "QUEST_COMPLETE" or not event and (QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() or QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown()) then
+    elseif event == "QUEST_COMPLETE" then
         local id = GetQuestID()
         local reward = RXP_.QuestAutoTurnIn(id)
         local choices = GetNumQuestChoices()
@@ -442,13 +458,12 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
             RXP_.updateStepText = true
         end
         return
-    elseif (event == "BAG_UPDATE_DELAYED" or event == "PLAYER_REGEN_ENABLED") and RXP_.activeItemFrame and RXP_.activeItemFrame:IsShown() then
+    elseif (event == "BAG_UPDATE_DELAYED" or event == "PLAYER_REGEN_ENABLED") then
         RXP_.UpdateItemFrame()
     elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
-        C_Timer.After(1, function() RXP_.ReloadGuide() end)
+        C_Timer.After(1, function() RXP_.ReloadGuide() end) --scryer/aldor quest
     elseif event == "SKILL_LINES_CHANGED" then
-        RXP_.professionNames = RXP_.GetProfessionNames()
-        RXP_.GetProfessionLevel()
+        RXP_.UpdateSkillData()
     elseif event == "TRAINER_SHOW" then
         trainerUpdate = GetTime()
         OnTrainer()
@@ -2689,13 +2704,10 @@ local function GetActiveItemList(ref)
     for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
         for slot = 1,GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
-            local spell = GetItemSpell(id)
-            if id and spell then
-                --if classID == 12 then
-                if ref.activeItems[id] then
-                    local itemName, _, _, _, _, _, _, _,_, itemTexture, _, classID = GetItemInfo(id)
-                    itemList[id] = {name = itemName, texture = itemTexture, bag = bag, slot = slot}
-                end
+            --local spell = GetItemSpell(id)
+            if id and ref.activeItems[id] then
+                local itemName, _, _, _, _, _, _, _,_, itemTexture, _, classID = GetItemInfo(id)
+                itemList[id] = {name = itemName, texture = itemTexture, bag = bag, slot = slot}
             end
         end
     end
