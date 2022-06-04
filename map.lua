@@ -204,13 +204,14 @@ MapPinPool.creationFunc = function(framePool)
             for i,element in pairs(pin.elements) do
                 local parent = element.parent
                 local text
+                local step = element.step
                 if parent then
                     text = parent.mapTooltip or parent.tooltipText
                 elseif not element.hideTooltip then
                     text = element.mapTooltip or element.tooltipText
                 end
-                text = text or RXP_.MainFrame.Steps.frame[element.step.index].text:GetText()
-                GameTooltip:AddLine("Step "..element.step.index,unpack(RXP_.colors.mapPins))
+                text = text or step.text or ""
+                GameTooltip:AddLine("Step "..step.index,unpack(RXP_.colors.mapPins))
                 GameTooltip:AddLine(text)
             end
 

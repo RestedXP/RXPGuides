@@ -42,6 +42,24 @@ RXP_.affix = function(smin,smax)
     return "0"..smin.."-"..smax
 end
 
+function RXPG.RegisterGroup(guideGroup,parentGroup)
+    if not RXPG[guideGroup] then
+        RXPG[guideGroup] = {}
+    end
+    local group = RXPG[guideGroup]
+    if parentGroup then
+        if not RXPG[parentGroup] then
+            RXPG[parentGroup] = {}
+        end
+        local parent = RXPG[parentGroup]
+        parent.__index = parent
+        setmetatable(parent,RXP_.functions)
+        setmetatable(group,parent)
+    else
+        setmetatable(group,RXP_.functions)
+    end
+end
+
 function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     if not guideGroup then return end
     local playerLevel = UnitLevel("player")
@@ -60,23 +78,7 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
         end
     end
 
-    if not RXPG[guideGroup] then
-        RXPG[guideGroup] = {}
-    end
-    
-    if parentGroup then
-        if not RXPG[parentGroup] then
-            RXPG[parentGroup] = {}
-        end
-        if not getmetatable(RXPG[parentGroup]) then
-            setmetatable(RXPG[parentGroup],RXP_.functions)
-        end
-        if not getmetatable(RXPG[guideGroup])then
-            setmetatable(RXPG[guideGroup],RXPG[parentGroup])
-        end
-    elseif not getmetatable(RXPG[guideGroup]) then
-        setmetatable(RXPG[guideGroup],RXP_.functions)
-    end
+    RXPG.RegisterGroup(guideGroup,parentGroup)
 
     if guideGroup:sub(1,1) == "+" then
         RXP_.farmGuides = RXP_.farmGuides + 1

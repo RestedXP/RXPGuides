@@ -1931,7 +1931,7 @@ function RXP_.UpdateBottomFrame(self,inc,stepn,updateText)
                 end
             end
         end
-
+        step.text = text
         frame.text:SetText(text)
 
         if hideStep then
