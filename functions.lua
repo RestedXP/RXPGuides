@@ -7,7 +7,7 @@ RXP_.functions.__index = RXP_.functions
 RXP_.functions.events = {}
 RXP_.stepUpdateList = {}
 
-RXP_.functions.events.collect = {"BAG_UPDATE_DELAYED","QUEST_ACCEPTED","QUEST_TURNED_IN"}
+RXP_.functions.events.collect = {"BAG_UPDATE_DELAYED","QUEST_LOG_UPDATE"}
 RXP_.functions.events.buy = {"BAG_UPDATE_DELAYED","MERCHANT_SHOW"}
 RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN","QUEST_REMOVED"}
 RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
@@ -1588,12 +1588,18 @@ function RXP_.functions.collect(self,...)
                 step.activeItems[element.id] = true
             end
         elseif element.subtract then
-            local obj = element.isQuestTurnIn
+            local bitMask = element.isQuestTurnIn
+            local objIndex = {}
+            for i = 0,7 do
+                if bit.band(bit.rshift(bitMask,i),0x1) == 0x1 then
+                    table.insert(objIndex,i+1)
+                end
+            end
             local objectives = RXP_.GetQuestObjectives(questId)
-            RRR = objectives
-            --print('t',numRequired,obj,objectives[obj].numFulfilled)
-            if obj and objectives[obj] then
-                numRequired = numRequired - objectives[obj].numFulfilled
+            for _,obj in ipairs(objIndex) do
+                if obj and objectives[obj] then
+                    numRequired = numRequired - objectives[obj].numFulfilled
+                end
             end
             if numRequired < 0 then
                 numRequired = 0
