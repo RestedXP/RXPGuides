@@ -1780,11 +1780,21 @@ function RXP_:LoadGuide(guide,OnLoad)
         if step.completewith then
             step.sticky = true
         end
+        if step.requires then
+            local requirement = guide.labels[step.requires]
+            if requirement then
+                local requiredStep = guide.steps[requirement]
+                if requiredStep.sticky and not requiredStep.completewith then
+                    step.label = step.label or n
+                    requiredStep.completewith = step.label
+                end
+            end
+        end
         step.level = tonumber(step.level) or 0
         if step.label then
             guide.labels[step.label] = n
         end
-
+        
 
         nframes = nframes + 1
         f.Steps.frame[n] = f.Steps.frame[n] or CreateFrame("Frame","$parent_frame_"..n,f.Steps, BackdropTemplate)
