@@ -4,41 +4,42 @@ local version = select(4, GetBuildInfo())
 local RXPG = RXPGuides
 RXP_.functions = {}
 RXP_.functions.__index = RXP_.functions
-RXP_.functions.events = {}
+local events = {}
 RXP_.stepUpdateList = {}
+RXP_.functions.events = events
+events.collect = {"BAG_UPDATE_DELAYED","QUEST_LOG_UPDATE"}
+events.buy = {"BAG_UPDATE_DELAYED","MERCHANT_SHOW"}
+events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN","QUEST_REMOVED"}
+events.turnin = {"QUEST_TURNED_IN"}
+events.complete = {"QUEST_LOG_UPDATE"}
+events.fp = {"UI_INFO_MESSAGE","TAXIMAP_OPENED"}
+events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
+events.home = {"HEARTHSTONE_BOUND"}
+events.fly = {"PLAYER_CONTROL_LOST","TAXIMAP_OPENED","ZONE_CHANGED"}
+events.deathskip = {"CONFIRM_XP_LOSS"}
+events.xp = {"PLAYER_XP_UPDATE","PLAYER_LEVEL_UP"}
+events.reputation = {"UPDATE_FACTION"}
+events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
+events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
+events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
+events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
+events.money = {"PLAYER_MONEY"}
+events.train = {"TRAINER_SHOW","CHAT_MSG_SYSTEM","SKILL_LINES_CHANGED","TRAINER_UPDATE"}
+events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
+events.zone = {"ZONE_CHANGED_NEW_AREA"}
+events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE_DELAYED"}
+events.skipgossip = {"GOSSIP_SHOW"}
+events.vehicle = {"UNIT_ENTERING_VEHICLE","VEHICLE_UPDATE"}
+events.skill = {"SKILL_LINES_CHANGED","LEARNED_SPELL_IN_TAB"}
 
-RXP_.functions.events.collect = {"BAG_UPDATE_DELAYED","QUEST_LOG_UPDATE"}
-RXP_.functions.events.buy = {"BAG_UPDATE_DELAYED","MERCHANT_SHOW"}
-RXP_.functions.events.accept = {"QUEST_ACCEPTED","QUEST_TURNED_IN","QUEST_REMOVED"}
-RXP_.functions.events.turnin = {"QUEST_TURNED_IN"}
-RXP_.functions.events.complete = {"QUEST_LOG_UPDATE"}
-RXP_.functions.events.fp = {"UI_INFO_MESSAGE","TAXIMAP_OPENED"}
-RXP_.functions.events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
-RXP_.functions.events.home = {"HEARTHSTONE_BOUND"}
-RXP_.functions.events.fly = {"PLAYER_CONTROL_LOST","TAXIMAP_OPENED","ZONE_CHANGED"}
-RXP_.functions.events.deathskip = {"CONFIRM_XP_LOSS"}
-RXP_.functions.events.xp = {"PLAYER_XP_UPDATE","PLAYER_LEVEL_UP"}
-RXP_.functions.events.reputation = {"UPDATE_FACTION"}
-RXP_.functions.events.vendor = {"MERCHANT_SHOW","MERCHANT_CLOSED"}
-RXP_.functions.events.trainer = {"TRAINER_SHOW","TRAINER_CLOSED"}
-RXP_.functions.events.stable = {"PET_STABLE_SHOW","PET_STABLE_CLOSED"}
-RXP_.functions.events.tame = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_START"}
-RXP_.functions.events.money = {"PLAYER_MONEY"}
-RXP_.functions.events.train = {"TRAINER_SHOW","CHAT_MSG_SYSTEM","SKILL_LINES_CHANGED","TRAINER_UPDATE"}
-RXP_.functions.events.istrained = {"LEARNED_SPELL_IN_TAB","TRAINER_UPDATE"}
-RXP_.functions.events.zone = {"ZONE_CHANGED_NEW_AREA"}
-RXP_.functions.events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE_DELAYED"}
-RXP_.functions.events.skipgossip = {"GOSSIP_SHOW"}
-RXP_.functions.events.vehicle = {"UNIT_ENTERING_VEHICLE","VEHICLE_UPDATE"}
-RXP_.functions.events.skill = {"SKILL_LINES_CHANGED","LEARNED_SPELL_IN_TAB"}
-
-RXP_.functions.events.bankwithdraw = RXP_.functions.events.bankdeposit
-RXP_.functions.events.abandon = RXP_.functions.events.complete
-RXP_.functions.events.isQuestComplete = RXP_.functions.events.complete
-RXP_.functions.events.isOnQuest = RXP_.functions.events.complete
-RXP_.functions.events.isQuestTurnedIn = RXP_.functions.events.complete
-RXP_.functions.events.cast = RXP_.functions.events.hs
-RXP_.functions.events.blastedLands = RXP_.functions.events.collect
+events.bankwithdraw = events.bankdeposit
+events.abandon = events.complete
+events.isQuestComplete = events.complete
+events.isOnQuest = events.complete
+events.isQuestTurnedIn = events.complete
+events.cast = events.hs
+events.blastedLands = events.collect
+events.daily = events.accept
 
 RXP_.icons = {
 accept = "|TInterface/GossipFrame/AvailableQuestIcon:0|t",
@@ -74,7 +75,6 @@ function RXP_.error(msg)
     print(msg)
     return
 end
-
 
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or GetNumQuestLogEntries
 local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActiveQuests
@@ -116,10 +116,7 @@ end
 RXP_.IsQuestTurnedIn = IsQuestTurnedIn
 RXP_.IsQuestComplete = IsQuestComplete
 
-local questConversion = {
-[9684] = 63866,
-
-}
+local questConversion = RXP_.questConversion
 
 local timer = GetTime()
 local nrequests = 0
@@ -132,6 +129,7 @@ local db
 if QuestieLoader then
     db = QuestieLoader:ImportModule("QuestieDB")
 end
+RXP_.db = db
 
 function RXP_.FormatNumber(number,precision)
     if not precision then
@@ -415,77 +413,6 @@ function RXP_.UpdateStepText(self)
     RXP_.stepUpdateList[index] = true
 end
 
-function RXP_.AldorScryerCheck(faction)
-    if RXP_.version == "CLASSIC" then return true end
-    local name, description, standingID, barMin, barMax, aldorRep = GetFactionInfoByID(932)
-    local name, description, standingID, barMin, barMax, scryerRep = GetFactionInfoByID(934)
-
-    if aldorRep and scryerRep then
-        if type(faction) == "table" then
-            if faction.aldor then
-                faction = "Aldor"
-            elseif faction.scryer then
-                faction = "Scryer"
-            end
-        end
-        if faction == "Aldor" then
-            return (aldorRep > scryerRep)
-        elseif faction == "Scryer" then
-            return (aldorRep < scryerRep)
-        end
-    end
-    return true
-end
-
-function RXP_.PhaseCheck(phase)
-    local guide
-    if type(phase) == "table" then
-        guide = phase
-        phase = phase.phase
-    end
-
-    if phase and RXPCData and RXPCData.phase then
-        local pmin,pmax
-        pmin,pmax = phase:match("(%d+)%-(%d+)")
-        if pmax then
-            pmin = tonumber(pmin)
-            pmax = tonumber(pmax)
-        else
-            pmin = tonumber(phase)
-            pmax = 0xffff
-        end
-        if pmin and RXPCData.phase >= pmin and RXPCData.phase <= pmax then
-            return true
-        else
-            return false
-        end
-    end
-
-    return true
-end
-
-function RXP_.IsStepShown(step)
-    if (step.daily and RXPCData.skipDailies) then
-        return false
-    end
-    return true
-end
-
-function RXP_.SeasonCheck(step)
-    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM or RXPCData.SoM and RXPCData.phase > 2 and step["era/som"] then
-        return false
-    end
-    return true
-end
-
-function RXP_.HardcoreCheck(step)
-    local hc = RXPCData.hardcore
-    if step.softcore and hc or step.hardcore and not hc then
-        return false
-    end
-    return true
-end
-
 function RXP_.GetNpcId(unit,isGuid)
     if not unit then
         if isGuid then
@@ -703,7 +630,7 @@ function RXP_.functions.daily(self,text,...)
         element.title = ""
         --element.title = RXP_.GetQuestName(id)
         element.text = text or ""
-        element.tooltipText = RXP_.icons.accept..element.text
+        element.tooltipText = RXP_.icons.daily..element.text
         element.ids = ids
 
         return element
@@ -740,7 +667,7 @@ function RXP_.functions.daily(self,text,...)
                 end
             end
 
-            local icon = RXP_.icons.accept
+            local icon = RXP_.icons.daily
             local skip
         
             if #ids == 1 and step.active and db and type(db.QueryQuest) == "function" and not isQuestAccepted and not RXP_.skipPreReq[id] then
@@ -776,7 +703,7 @@ function RXP_.functions.daily(self,text,...)
             end
 
 
-            element.tooltipText = RXP_.icons.accept..element.text
+            element.tooltipText = RXP_.icons.daily..element.text
             local completed = element.completed
 
             if isQuestAccepted then
@@ -1081,20 +1008,10 @@ function RXP_.UpdateQuestCompletionData(self)
         element.requestFromServer = nil
     end
 
-    if element.rawtext then
-        element.rawtext = element.text:gsub("%*quest%*",element.title)
-    end
-    local text = element.rawtext
-
     completed = completed or isQuestComplete
 
-    if text then
-        text = text.."\n\n"..objtext
-        element.tooltipText = icon..text:gsub("\n","\n   ")
-    else
-        element.tooltipText = icon..objtext:gsub("\n","\n   "..icon)
-        text = objtext
-    end
+    element.tooltipText = icon..objtext:gsub("\n","\n   "..icon)
+    local text = objtext
     element.text = text
 
 
@@ -1107,19 +1024,6 @@ function RXP_.UpdateQuestCompletionData(self)
     else
         RXP_.SetElementIncomplete(self)
     end
-
-end
-
-function RXP_.QueueUpdate(ref,func,lowPrio)
-
-    local update
-    if lowPrio then
-        update = RXP_.updateInactiveQuest
-    else
-        update = RXP_.updateActiveQuest
-    end
-
-    update[ref] = func
 
 end
 
@@ -1137,14 +1041,10 @@ function RXP_.functions.complete(self,...)
         --element.title = RXP_.GetQuestName(id)
         --local objectives = RXP_.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
         element.questId = questConversion[id] or id
-        if text and text ~= "" then
-            element.rawtext = text
-            element.text = element.rawtext
-            element.tooltipText = RXP_.icons.complete..element.text
-        else
-            element.text = ""
-            element.requestFromServer = true
-        end
+
+        element.text = ""
+        element.requestFromServer = true
+
 
         return element
     end
@@ -1596,13 +1496,15 @@ function RXP_.functions.collect(self,...)
                 end
             end
             local objectives = RXP_.GetQuestObjectives(questId)
-            for _,obj in ipairs(objIndex) do
-                if obj and objectives[obj] then
-                    numRequired = numRequired - objectives[obj].numFulfilled
+            if objectives then
+                for _,obj in ipairs(objIndex) do
+                    if objectives[obj] then
+                        numRequired = numRequired - objectives[obj].numFulfilled
+                    end
                 end
-            end
-            if numRequired < 0 then
-                numRequired = 0
+                if numRequired < 0 then
+                    numRequired = 0
+                end
             end
         end
     end

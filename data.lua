@@ -30,6 +30,10 @@ RXP_.repStartValue = {
     42000,--exalted
 }
 
+RXP_.questConversion = {
+    [9684] = 63866, --blood elf rez quest
+}
+
 local version = select(4, GetBuildInfo())
 if version < 90000 then
 RXP_.mapId = {

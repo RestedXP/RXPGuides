@@ -2,7 +2,7 @@
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
-## Version: 3.0.2
+## Version: 3.0.6
 ## OptionalDeps: Questie, unitscan
 ## SavedVariables: RXPData
 ## SavedVariablesPerCharacter: RXPCData
@@ -13,6 +13,12 @@ HereBeDragons\HereBeDragons-2.0.lua
 HereBeDragons\HereBeDragons-Pins-2.0.lua
 
 RXPGuides.lua
+GuideWindow.lua
+SettingsPanel.lua
+HSBatching.lua
+QuestLog.lua
+ActiveItemFrame.lua
+
 data.lua
 map.lua
 functions.lua

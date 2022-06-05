@@ -378,7 +378,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local pins = {}
     local numActivePins = 0
     local numSteps = table.getn(steps)
-    local activeSteps = RXP_.MainFrame.CurrentStepFrame.activeSteps
+    local activeSteps = RXPFrame.activeSteps
 
     local numActive = 0
 
@@ -483,7 +483,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     local pins = {}
     local numActivePins = 0
     local numSteps = table.getn(steps)
-    local activeSteps = RXP_.MainFrame.CurrentStepFrame.activeSteps
+    local activeSteps = RXPFrame.activeSteps
 
     local numActive = 0
 

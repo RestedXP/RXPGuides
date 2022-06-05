@@ -30,6 +30,8 @@ RXP_.repStartValue = {
     42000,--exalted
 }
 
+RXP_.questConversion = {}
+
 RXP_.mapId = {
 ["Durotar"] = 1411,
 ["Mulgore"] = 1412,
