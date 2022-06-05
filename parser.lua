@@ -80,11 +80,12 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
 
     RXPG.RegisterGroup(guideGroup,parentGroup)
 
+    local guide = {}
+    
     if guideGroup:sub(1,1) == "+" then
         RXP_.farmGuides = RXP_.farmGuides + 1
+        guide.farm = true
     end
-    
-    local guide = {}
     RXP_.guide = guide
     guide.boost58 = boost58
     guide.group = guideGroup

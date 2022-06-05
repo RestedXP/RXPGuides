@@ -516,8 +516,9 @@ function RXP_.GetGuideTable(guideGroup,guideName)
 end
 
 function RXP_.UnitScanUpdate()
-    if unitscan_targets and not RXPData.disableUnitscan then
-        for unit,elements in pairs(RXP_.currentGuide.unitscan) do
+    local unitscanList = RXP_.currentGuide.unitscan
+    if unitscan_targets and unitscanList and not RXPData.disableUnitscan then
+        for unit,elements in pairs(unitscanList) do
             local enabled
             for _,element in pairs(elements) do
                 if element.step.active then

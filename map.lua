@@ -376,6 +376,10 @@ end
 -- using the MapPinPool.
 local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local pins = {}
+    
+    if RXP_.currentGuide.empty then
+        return pins
+    end
     local numActivePins = 0
     local numSteps = table.getn(steps)
     local activeSteps = RXPFrame.activeSteps
@@ -481,6 +485,9 @@ end
 
 local function generateLines(steps, numPins, startingIndex, isMiniMap)
     local pins = {}
+    if RXP_.currentGuide.empty then
+        return pins
+    end
     local numActivePins = 0
     local numSteps = table.getn(steps)
     local activeSteps = RXPFrame.activeSteps

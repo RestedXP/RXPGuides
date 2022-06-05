@@ -21,11 +21,19 @@ hardcoreColors.bottomFrameHighlight = {81/255,0/255,0/255,1}
 hardcoreColors.mapPins = {0.9,0.1,0.1,1}
 hardcoreColors.tooltip = "|c0000C1FF" --AARRGGBB
 
+local goldAssistantColors = {}
+goldAssistantColors.background = {32/255,18/255,0/255,1}
+goldAssistantColors.bottomFrameBG = {48/255,27/255,0/255,1}
+goldAssistantColors.bottomFrameHighlight = {125/255,71/255,0/255,1}
+goldAssistantColors.mapPins = {0.9,0.1,0.1,1}
+goldAssistantColors.tooltip = "|c0000C1FF" --AARRGGBB
+
 RXP_.colors = defaultColors
 
 
 RXP_.defaultTextures = "Interface/AddOns/RXPGuides/Textures/"
 RXP_.hardcoreTextures = "Interface/AddOns/RXPGuides/Textures/Hardcore/"
+RXP_.goldAssistantTextures = "Interface/AddOns/RXPGuides/Textures/GoldAssistant/"
 RXP_.texturePath = RXP_.defaultTextures
 
 
@@ -55,6 +63,9 @@ function RXP_.RenderFrame()
     if RXPCData.hardcore then
         path = RXP_.hardcoreTextures
         colors = hardcoreColors
+    elseif RXPCData.GA then
+        path = RXP_.goldAssistantTextures
+        colors = goldAssistantColors
     else
         path = RXP_.defaultTextures
         colors = defaultColors
@@ -284,6 +295,7 @@ RXPFrame.activeSteps = activeSteps
 
 function RXP_.UpdateStepCompletion()
     RXP_.updateSteps = false
+    if RXP_.currentGuide.empty then return end
 
     local n = 0
     local update
@@ -510,7 +522,7 @@ function RXP_.SetStep(n,n2,loopback)
 
         local e = 0
         local frameHeight = 0
-        for j,element in ipairs(step.elements) do
+        for j,element in ipairs(step.elements or {}) do
             e = j
             local elementFrame = stepframe.elements[e]
             if not stepframe.elements[e] then
@@ -680,7 +692,7 @@ function CurrentStepFrame.UpdateText()
 
         local e = 0
         local frameHeight = 0
-        for j,element in ipairs(step.elements) do
+        for j,element in ipairs(step.elements or {}) do
             e = j
             local elementFrame = stepframe.elements[e]
 
@@ -834,7 +846,7 @@ end)
 
 
 function RXPFrame.DropDownMenu()
-    EasyMenu(menuList, MenuFrame, "cursor", 0 , 0, "MENU");
+    EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0 , 0, "MENU");
 end
 
 
@@ -929,16 +941,21 @@ RXPFrame.bottomMenu = {
     {text = "Close",notCheckable = 1,func = function(self) self:Hide() end},
 }
 
+local emptyGuide = {empty = true, hidewindow = true, name = "", group = "", 
+displayName = "Welcome to RestedXP Guides\nRight click to pick a guide",
+steps = {{hidewindow = true, text = ""}},
+}
 
 function RXP_:LoadGuide(guide,OnLoad)
     RXP_.loadNextStep = false
     if not guide then
-        if OnLoad then
-            return
-        else
-            return error('Guide not found')
-        end
+        return
     end
+
+    if (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) and not guide.empty then
+        return RXP_:LoadGuide(emptyGuide)
+    end
+    
     if RXPCData.frameHeight then 
         RXPFrame:SetHeight(RXPCData.frameHeight)
     end
@@ -983,8 +1000,11 @@ function RXP_:LoadGuide(guide,OnLoad)
     end
 
     guide.labels = {}
-
-    guide.steps[#guide.steps].lastStep = true
+    
+    local lastStep = guide.steps[#guide.steps]
+    if lastStep then
+        lastStep.lastStep = true
+    end
 
     for n,step in ipairs(guide.steps) do
         step.index = n
@@ -1045,10 +1065,10 @@ function RXP_:LoadGuide(guide,OnLoad)
             if button == "RightButton" or GetTime() - self.timer <= 0.5 then
                 self.timer = 0
                 local n = self.index
-                local menuList = RXPFrame.bottomMenu
-                menuList[1].text = "Go to step "..n
-                menuList[1].arg1 = n
-                EasyMenu(menuList, MenuFrame, "cursor", 0 , 0, "MENU");
+                local bottomMenu = RXPFrame.bottomMenu
+                bottomMenu[1].text = "Go to step "..n
+                bottomMenu[1].arg1 = n
+                EasyMenu(bottomMenu, MenuFrame, "cursor", 0 , 0, "MENU");
             else
                 self.timer = GetTime()
             end
@@ -1173,7 +1193,7 @@ function BottomFrame.UpdateFrame(self,inc,stepn,updateText)
             local step = frame.step
             local hideStep = step.level > level
             local fheight
-            for i,element in ipairs(frame.step.elements) do
+            for i,element in ipairs(frame.step.elements or {}) do
                 if not self then
                     local stepDiff = element.step.index-RXPCData.currentStep
                     element.element = element
@@ -1258,13 +1278,19 @@ function RXPFrame.GenerateMenuTable()
     local groupList = {}
     local farmGuides = {}
     local unusedGuides = {}
+
     for group in pairs(RXP_.guideList) do
-        if group:sub(1,1) == "+" then
-            table.insert(farmGuides,group)
-        elseif group:sub(1,1) ~= "*" then
-            table.insert(groupList,group)
-        else
-            table.insert(unusedGuides,group)
+        local firstChar = group:sub(1,1)
+        if RXPCData and RXPCData.GA then 
+            if firstChar == "+" then
+                table.insert(farmGuides,group)
+            end
+        elseif firstChar ~= "+" then
+            if firstChar ~= "*" then
+                table.insert(groupList,group)
+            else
+                table.insert(unusedGuides,group)
+            end
         end
     end
     
@@ -1364,7 +1390,7 @@ function RXPFrame.GenerateMenuTable()
         end
         table.insert(menuList,{text = hctext,notCheckable = 1,func = RXP_.HardcoreToggle})
     end
-    --[[
+    
     if RXP_.farmGuides > 0 then
         local text
         if RXPCData and RXPCData.GA then
@@ -1373,7 +1399,7 @@ function RXPFrame.GenerateMenuTable()
             text = "Activate the Gold Assistant mode"
         end
         table.insert(menuList,{text = text,notCheckable = 1,func = RXP_.GAToggle})
-    end]]
+    end
     
     
     table.insert(menuList,{text = "Options...",notCheckable = 1,func = SlashCmdList.RXPG})
