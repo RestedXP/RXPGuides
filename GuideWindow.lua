@@ -25,7 +25,7 @@ local goldAssistantColors = {}
 goldAssistantColors.background = {32/255,18/255,0/255,1}
 goldAssistantColors.bottomFrameBG = {48/255,27/255,0/255,1}
 goldAssistantColors.bottomFrameHighlight = {125/255,71/255,0/255,1}
-goldAssistantColors.mapPins = {0.9,0.1,0.1,1}
+goldAssistantColors.mapPins = {0.95,0.15,0.15,1}
 goldAssistantColors.tooltip = "|c0000C1FF" --AARRGGBB
 
 RXP_.colors = defaultColors

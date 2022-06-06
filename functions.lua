@@ -1074,9 +1074,6 @@ function RXP_.functions.complete(self,...)
     end
 end
 
-
-
-
 local lastZone
 function RXP_.functions.goto(self,...)
     if type(self) == "string" then --on parse
@@ -1724,7 +1721,7 @@ function RXP_.functions.skill(self,...)
     local level = RXP_.skills[element.skill]
     if not level then return end
     local reverseLogic = element.reverseLogic
-    print(level,element.level,(level >= element.level) == not reverseLogic)
+    --print(level,element.level,(level >= element.level) == not reverseLogic)
 
     if (level >= element.level) == not reverseLogic then
         if element.skipstep then
@@ -3007,6 +3004,58 @@ function RXP_.functions.vehicle(self,...)
     if ((event == "UNIT_ENTERING_VEHICLE" and unit == "player") or vehicle)
     and ((id and vehicle == id) or (not id and vehicle)) then
         RXP_.SetElementComplete(self)
+    end
+
+end
+
+function RXP_.functions.itemcount(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,id,str = ...
+        skipstep = tonumber(skipstep)
+        str = str:gsub(" ","")
+        local operator,eq,total = str:match("([<>]?)(=?)%s*(%d+)")
+        element.id = tonumber(id)
+        element.total = tonumber(total)
+        if not (total and id) then
+            RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid item ID/count\n"..self)
+        end
+        
+        
+        if operator == "<" then
+            element.operator = -1
+        elseif operator == ">" then
+            element.operator = 1
+        else 
+            element.operator = 0
+        end
+        if eq == "=" then
+            element.eq = true
+        end
+        
+        if text ~= "" then
+            element.text = text
+        end
+
+        element.textOnly = true
+
+        return element
+    end
+
+
+    local element = self.element
+    local step = element.step
+
+    local operator = element.operator
+    local eq = element.eq
+    local total = element.total
+    local count = GetItemCount(element.id)
+
+    if not((eq and count == total) or (count*operator > total*operator) or (not eq and operator == 0 and count >= total))  then
+        if step.active and not step.completed then
+            RXP_.updateSteps = true
+            step.completed = true
+        end
     end
 
 end

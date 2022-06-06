@@ -262,12 +262,14 @@ MapLinePool.creationFunc = function(framePool)
 
     f.render = function(self,coords,isMiniMapPin)
 
-        local thickness = 2
-
+        local thickness = 3
+        local alpha = coords.lineAlpha or 1
+        self:SetAlpha(alpha)
         local canvas = WorldMapFrame:GetCanvas()
         local width = canvas:GetWidth()
         local height = canvas:GetHeight()
 
+        --print(width,height)
         local sX,fX,sY,fY = coords.sX*width/100,coords.fX*width/100,coords.sY*height/-100,coords.fY*height/-100
 
         local lineWidth = abs(sX-fX) + thickness*4
@@ -290,9 +292,11 @@ MapLinePool.creationFunc = function(framePool)
         border:SetStartPoint("TOPLEFT",sX - xAnchor,sY - yAnchor)
         border:SetEndPoint("TOPLEFT",fX - xAnchor,fY - yAnchor)
         border:SetThickness(thickness+2);
+        border:SetAlpha(0.5)
 
         self:SetParent(canvas)
-        self:SetFrameStrata("HIGH")
+        self:SetFrameStrata("FULLSCREEN_DIALOG")
+        --self:SetFrameLevel(3000)
         self:SetPoint("TOPLEFT",canvas,"TOPLEFT",xAnchor,yAnchor)
         self:EnableMouse(true)
         --self:Show()
@@ -307,7 +311,8 @@ MapLinePool.creationFunc = function(framePool)
         end)
 
         f:SetScript("OnLeave",function(self)
-            self:SetAlpha(1)
+            local line = self.lineData
+            self:SetAlpha(line.lineAlpha or 1)
         end)
 
     end
@@ -519,7 +524,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     -- Loop through the steps until we create the number of pins a user
     -- configures or until we reach the end of the current guide.
 
-    local function ProcessMapPin(step)
+    local function ProcessLine(step)
         -- Loop through the elements in each step. Again, we check if we
         -- already created enough pins, then we check if the element
         -- should be included on the map.
@@ -531,6 +536,19 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
         local lastElement
         local firstElement
         local j = 0;
+        
+        local function InsertLine(element,sX,sY,fX,fY,lineAlpha)
+            table.insert(pins, {
+                element = element,
+                zone = element.zone,
+                sX = sX,
+                sY = sY,
+                fX = fX,
+                fY = fY,
+                lineAlpha = lineAlpha,
+            })
+        end
+        
         while numActivePins < numPins and j < table.getn(step.elements) do
             local element = step.elements[j + 1]
 
@@ -555,16 +573,31 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                     --print("lc:",sX,sY)
 
                     if sX and sY and fX and fY then
-                        table.insert(pins, {
-                            element = element,
-                            opacity = pinalpha,
-                            zone = element.zone,
-                            sX = sX,
-                            sY = sY,
-                            fX = fX,
-                            fY = fY,
-                            hidePin = element.hidePin,
-                        })
+                        if sX < 0 and sY < 0 then
+                            sX,sY,fX,fY = math.abs(sX),math.abs(sY),math.abs(fX),math.abs(fY)
+                            --local distMod = 1.75
+                            local length = math.sqrt((fX-sX)^2 + (fY-sY)^2)*1.75
+                            if length > 1 then
+                                local nSegments = math.floor(length)
+                                local xinc = (fX-sX)/length
+                                local yinc = (fY-sY)/length
+                                local xpos,ypos = sX,sY
+
+                                for n = 1,nSegments do
+                                    local endx = xpos + xinc
+                                    local endy = ypos + yinc
+                                    local alpha = bit.band(n,0x1)
+                                    if alpha > 0 then
+                                        InsertLine(element,xpos,ypos,endx,endy,alpha)
+                                    end
+                                    xpos = endx
+                                    ypos = endy
+                                end
+                            end
+                        else
+                            sX,sY,fX,fY = math.abs(sX),math.abs(sY),math.abs(fX),math.abs(fY)
+                            InsertLine(element,sX,sY,fX,fY,1)
+                        end
                         if element.showArrow then
                             local x,y = sX/100,sY/100
                             local wx,wy,instance = HBD:GetWorldCoordinatesFromZone(x, y, element.zone)
@@ -581,19 +614,19 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     end
 
     for _,step in pairs(activeSteps) do
-        ProcessMapPin(step)
+        ProcessLine(step)
     end
 
     if not isMiniMap then
         local currentStep = steps[RXPCData.currentStep]
         if not (currentStep and currentStep.active) then
-            ProcessMapPin(currentStep)
+            ProcessLine(currentStep)
         end
         local i = 0;
         while numActivePins < numPins and (startingIndex + i < numSteps) do
             i = i + 1
             local step = steps[startingIndex + i]
-            ProcessMapPin(step)
+            ProcessLine(step)
         end
     end
     return pins
