@@ -1,3 +1,5 @@
+local addonName = ...
+
 local RXPG = RXPGuides
 local _,class = UnitClass("player")
 local _,race = UnitRace("player")
@@ -31,9 +33,9 @@ goldAssistantColors.tooltip = "|c0000C1FF" --AARRGGBB
 RXP_.colors = defaultColors
 
 
-RXP_.defaultTextures = "Interface/AddOns/RXPGuides/Textures/"
-RXP_.hardcoreTextures = "Interface/AddOns/RXPGuides/Textures/Hardcore/"
-RXP_.goldAssistantTextures = "Interface/AddOns/RXPGuides/Textures/GoldAssistant/"
+RXP_.defaultTextures = "Interface/AddOns/" .. addonName .. "/Textures/"
+RXP_.hardcoreTextures = "Interface/AddOns/" .. addonName .. "/Textures/Hardcore/"
+RXP_.goldAssistantTextures = "Interface/AddOns/" .. addonName .. "/Textures/GoldAssistant/"
 RXP_.texturePath = RXP_.defaultTextures
 
 
@@ -807,18 +809,18 @@ GuideName.text:SetText("Welcome to RestedXP Guides\nRight click to pick a guide"
 GuideName:SetFrameLevel(6)
 
 GuideName.bg = GuideName:CreateTexture("$parentBG","BACKGROUND")
-GuideName.bg:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp-banner")
+GuideName.bg:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp-banner")
 GuideName.bg:SetPoint("TOPLEFT",4,-2)
 GuideName.bg:SetPoint("BOTTOMRIGHT",-2,4)
 
 GuideName.icon = GuideName:CreateTexture("RXPIcon","ARTWORK")
-GuideName.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
+GuideName.icon:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
 GuideName.icon:SetPoint("CENTER",GuideName,"LEFT",16,0)
 GuideName.icon:SetSize(42,42)
 
 
 GuideName.classIcon = GuideName:CreateTexture("RXPClassIcon","OVERLAY")
-GuideName.classIcon:SetTexture("Interface/AddOns/RXPGuides/Textures/"..class)
+GuideName.classIcon:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/"..class)
 GuideName.classIcon:SetPoint("CENTER",GuideName.icon,"BOTTOMRIGHT",-4,10)
 GuideName.classIcon:SetSize(24,24)
 
@@ -828,7 +830,7 @@ GuideName.cog:SetFrameLevel(GuideName:GetFrameLevel()+1)
 GuideName.cog:SetWidth(24)
 GuideName.cog:SetHeight(24)
 GuideName.cog:SetPoint("CENTER",GuideName,"TOPRIGHT",-8,-8)
-GuideName.cog:SetNormalTexture("Interface/AddOns/RXPGuides/Textures/rxp_cog-32")
+GuideName.cog:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_cog-32")
 --GuideName.cog:SetPushedTexture("Interface/Buttons/UI-Panel-MinimizeButton-Down")
 GuideName.cog:SetHighlightTexture("Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
 GuideName.cog:Hide()

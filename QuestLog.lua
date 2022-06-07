@@ -1,3 +1,4 @@
+local addonName = ...
 
 function RXP_.UpdateQuestButton(index)
     local button = RXP_.questLogButton
@@ -8,7 +9,7 @@ function RXP_.UpdateQuestButton(index)
         button:SetWidth(32)
         button:SetHeight(32)
         button:SetPoint("TOPRIGHT",anchor,"TOPRIGHT",0,0)
-        button:SetNormalTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
+        button:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
         RXP_.questLogButton = button
 
         local function tpOnEnter(self)

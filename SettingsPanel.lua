@@ -1,3 +1,4 @@
+local addonName = ...
 
 SLASH_RXPG1 = "/rxp"
 SLASH_RXPG2 = "/rxpg"
@@ -24,7 +25,7 @@ function RXP_.CreateOptionsPanel()
     panel.subtext:SetText(versionText)
 
     panel.icon = panel:CreateTexture()
-    panel.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
+    panel.icon:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
     panel.icon:SetPoint("TOPRIGHT",-5,-5)
     
 
@@ -320,7 +321,7 @@ function RXP_.CreateOptionsPanel()
         GApanel.subtext:SetText(versionText)
 
         GApanel.icon = GApanel:CreateTexture()
-        GApanel.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
+        GApanel.icon:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
         GApanel.icon:SetPoint("TOPRIGHT",-5,-5)
         
     end

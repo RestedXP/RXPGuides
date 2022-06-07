@@ -1,4 +1,6 @@
-﻿RXP_ = RXP_ or {}
+﻿local addonName = ...
+
+RXP_ = RXP_ or {}
 RXPGuides = {}
 RXP_.versionText = "Version 3.0.6"
 local addonVersion = 30006
@@ -139,7 +141,7 @@ RXP_.guideErrorCount = 0
 hooksecurefunc(ScriptErrorsFrame,"DisplayMessage",function(self, msg, warnType, keepHidden, messageType)
     if ScriptErrorsFrame:IsForbidden() then return end
     if RXP_.errorCount >= 0 then
-        if warnType == 0 and keepHidden == false and messageType == 1 and type(msg) == "string" and msg:match("RXPGuides\\Guides") then
+        if warnType == 0 and keepHidden == false and messageType == 1 and type(msg) == "string" and msg:match(addonName .. "\\Guides") then
             RXP_.guideErrorCount = RXP_.guideErrorCount + 1
         end
         RXP_.errorCount = RXP_.errorCount + 1
