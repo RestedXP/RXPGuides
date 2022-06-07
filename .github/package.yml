@@ -1,0 +1,29 @@
+name: Package Addon
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ "*" ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 10
+
+      - name: Package and release Classic
+        uses: BigWigsMods/packager@master
+        with:
+          args: -g classic
+
+      - name: Package and release BCC
+        uses: BigWigsMods/packager@master
+        with:
+          args: -g bcc
