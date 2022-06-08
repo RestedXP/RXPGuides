@@ -463,7 +463,7 @@ local function GetRequiredQuests(quest)
 end
 
 local function ProcessItems(value,step,questId,isTurnIn)
-    local ref 
+    local ref
     if isTurnIn then
         ref = RXP_.questTurnInItems
     else
@@ -627,7 +627,7 @@ function RXP_.functions.daily(self,text,...)
                 break
             end
         end
-        
+
         if err then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.title = ""
         --element.title = RXP_.GetQuestName(id)
@@ -646,10 +646,10 @@ function RXP_.functions.daily(self,text,...)
         local event = text
         local arg1,questId = ...
         local ids = element.ids
-        
-        
-        
-        
+
+
+
+
         for _,id in pairs(ids) do
             local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)
 
@@ -671,7 +671,7 @@ function RXP_.functions.daily(self,text,...)
 
             local icon = RXP_.icons.daily
             local skip
-        
+
             if #ids == 1 and step.active and db and type(db.QueryQuest) == "function" and not isQuestAccepted and not RXP_.skipPreReq[id] then
                 local quest = db:GetQuest(id)
                 if quest then
@@ -879,7 +879,7 @@ function RXP_.UpdateQuestCompletionData(self)
     local step = element.step
     local icon = RXP_.icons.complete
     local id = element.questId
-    
+
     if type(id) ~= "number" then
         print('Error: Invalid quest ID at step '..element.step.index)
         return
@@ -887,7 +887,7 @@ function RXP_.UpdateQuestCompletionData(self)
     local skip
     local objectives = RXP_.GetQuestObjectives(id,element.step.index)
     local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
-    
+
     local objtext
     local completed
 
@@ -1207,7 +1207,7 @@ function RXP_.functions.pin(self,...)
         end
         element.zone = mapID
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
-        
+
         element.mapTooltip = tooltip
         element.parent = true
         element.text = text
@@ -1241,7 +1241,7 @@ function RXP_.functions.line(self,text,zone,...)
 
         element.text = text
         element.textOnly = true
-        
+
         return element
     end
 end
@@ -1270,10 +1270,10 @@ function RXP_.functions.loop(self,text,range,zone,...)
 
         element.text = text
         element.textOnly = true
-        
+
         element.range = tonumber(range)
         element.showArrow = true
-        
+
         return element
     end
 end
@@ -1470,7 +1470,7 @@ function RXP_.functions.collect(self,...)
         element.requestFromServer = true
     end
     element.itemName = name
-    
+
     if step.active and questId then
         if not element.isQuestTurnIn then
             --adds the item to the active item list, in case it's an item that starts a quest
@@ -1508,8 +1508,8 @@ function RXP_.functions.collect(self,...)
         end
     end
 
-    
-    
+
+
     local count = GetItemCount(element.id)
     for i = 1,INVSLOT_LAST_EQUIPPED do
         if GetInventoryItemID("player",i) == element.id then
@@ -1583,7 +1583,7 @@ function RXP_.functions.destroy(self,...)
         element.id = id
         element.qty = qty or 1
         element.itemName = RXP_.GetItemName(id)
-        
+
         if text and text ~= "" then
             element.rawtext = text
             element.tooltipText = RXP_.icons.collect..element.rawtext
@@ -1639,7 +1639,7 @@ function RXP_.functions.xp(self,...)
         if operator == "<" then
             element.reverseLogic = true
         end
-        
+
         if text and text ~= "" then
             element.text = text
         elseif not skipstep then
@@ -1703,7 +1703,7 @@ function RXP_.functions.skill(self,...)
         if operator == "<" then
             element.reverseLogic = true
         end
-        
+
         if text ~= "" then
             element.text = text
         end
@@ -3022,19 +3022,19 @@ function RXP_.functions.itemcount(self,...)
         if not (total and id) then
             RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid item ID/count\n"..self)
         end
-        
-        
+
+
         if operator == "<" then
             element.operator = -1
         elseif operator == ">" then
             element.operator = 1
-        else 
+        else
             element.operator = 0
         end
         if eq == "=" then
             element.eq = true
         end
-        
+
         if text ~= "" then
             element.text = text
         end

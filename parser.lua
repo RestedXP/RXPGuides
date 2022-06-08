@@ -2,7 +2,7 @@ RXP_.guides = {}
 RXP_.guideList = {}
 
 local _, race = UnitRace("player")
-local _,class = UnitClass("player")
+local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
 
 local function applies(text)
@@ -14,13 +14,16 @@ local function applies(text)
                 local level = tonumber(entry) or 0xfff
                 local playerLevel = UnitLevel("player") or 1
                 local state = true
-                if entry:sub(1,1) == "!" then
-                    entry = entry:sub(2,-1)
+                if entry:sub(1, 1) == "!" then
+                    entry = entry:sub(2, -1)
                     state = false
                 end
                 local uppercase = strupper(entry)
                 if entry == "Undead" then entry = "Scourge" end
-                v = v and ((uppercase == class or uppercase == RXP_.version or entry == race or entry == faction or playerLevel >= level) == state)
+                v = v and
+                        ((uppercase == class or uppercase == RXP_.version or
+                            entry == race or entry == faction or playerLevel >=
+                            level) == state)
             end
             isMatch = isMatch or v
         end
@@ -35,32 +38,26 @@ local RXPG = RXPGuides
 local version = strlower(RXP_.version)
 local suffix = 1
 
-RXP_.affix = function(smin,smax)
-    if smax:len() == 1 then
-        smax = "0"..smax
-    end
-    return "0"..smin.."-"..smax
+RXP_.affix = function(smin, smax)
+    if smax:len() == 1 then smax = "0" .. smax end
+    return "0" .. smin .. "-" .. smax
 end
 
-function RXPG.RegisterGroup(guideGroup,parentGroup)
-    if not RXPG[guideGroup] then
-        RXPG[guideGroup] = {}
-    end
+function RXPG.RegisterGroup(guideGroup, parentGroup)
+    if not RXPG[guideGroup] then RXPG[guideGroup] = {} end
     local group = RXPG[guideGroup]
     if parentGroup then
-        if not RXPG[parentGroup] then
-            RXPG[parentGroup] = {}
-        end
+        if not RXPG[parentGroup] then RXPG[parentGroup] = {} end
         local parent = RXPG[parentGroup]
         parent.__index = parent
-        setmetatable(parent,RXP_.functions)
-        setmetatable(group,parent)
+        setmetatable(parent, RXP_.functions)
+        setmetatable(group, parent)
     else
-        setmetatable(group,RXP_.functions)
+        setmetatable(group, RXP_.functions)
     end
 end
 
-function RXPG.RegisterGuide(guideGroup,text,defaultFor)
+function RXPG.RegisterGuide(guideGroup, text, defaultFor)
     if not guideGroup then return end
     local playerLevel = UnitLevel("player")
     local boost58
@@ -69,20 +66,20 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
         if defaultFor == "58Boost" then
             if playerLevel >= 60 or playerLevel < 58 then
                 parentGroup = guideGroup
-                guideGroup = "*"..guideGroup
+                guideGroup = "*" .. guideGroup
             end
             boost58 = true
         elseif not applies(defaultFor) then
             parentGroup = guideGroup
-            guideGroup = "*"..guideGroup
+            guideGroup = "*" .. guideGroup
         end
     end
 
-    RXPG.RegisterGroup(guideGroup,parentGroup)
+    RXPG.RegisterGroup(guideGroup, parentGroup)
 
     local guide = {}
-    
-    if guideGroup:sub(1,1) == "+" then
+
+    if guideGroup:sub(1, 1) == "+" then
         RXP_.farmGuides = RXP_.farmGuides + 1
         guide.farm = true
     end
@@ -101,15 +98,13 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
     local function parseLine(linetext)
         local line = linetext
         local classtag
-        line = line:gsub("%s*<<%s*(.+)",function(t)
+        line = line:gsub("%s*<<%s*(.+)", function(t)
             classtag = t
             return ""
         end)
-        if classtag and not applies(classtag) then
-            return
-        end
+        if classtag and not applies(classtag) then return end
 
-        local steptag,assignment,value = line:match("^#(%S+)%s*(=?)%s*(.*)")
+        local steptag, assignment, value = line:match("^#(%S+)%s*(=?)%s*(.*)")
         if steptag and steptag ~= "" then
             if not step[steptag] then
                 if assignment == "=" then
@@ -123,28 +118,26 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
 
         local element
         local text
-        line = line:gsub("%s*>>%s*(.*)",function(t)
-            if t ~= "" then
-                text = t
-            end
+        line = line:gsub("%s*>>%s*(.*)", function(t)
+            if t ~= "" then text = t end
             return ""
         end)
 
-        line:gsub("^%.(%S+)%s*(.*)",function(tag,args)
+        line:gsub("^%.(%S+)%s*(.*)", function(tag, args)
             local t = {}
 
             if tag == "link" then
-                local link = args:gsub("%s+$","")
-                table.insert(t,link)
+                local link = args:gsub("%s+$", "")
+                table.insert(t, link)
             else
-                args = args:gsub("%s*,%s*",",")
+                args = args:gsub("%s*,%s*", ",")
                 for arg in string.gmatch(args, "[^,]+") do
-                    table.insert(t,arg)
+                    table.insert(t, arg)
                 end
             end
-            --print(tag,args,type(guide))
+            -- print(tag,args,type(guide))
             if RXPG[guide.group][tag] then
-                element = RXPG[guide.group][tag](linetext,text,unpack(t))
+                element = RXPG[guide.group][tag](linetext, text, unpack(t))
                 if not element then return end
                 element.tag = tag
                 element.step = step
@@ -152,36 +145,45 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                     element.parent = lastElement
                 end
             else
-                return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid function call (."..tag..")\n"..linetext)
+                return RXP_.error("Error parsing guide " ..
+                                      RXP_.currentGuideName ..
+                                      ": Invalid function call (." .. tag ..
+                                      ")\n" .. linetext)
             end
         end)
 
         if text and not element then
-                element = {text = text, textOnly = true, step = step}
-        elseif line:sub(1,1) == "+" then
-            element = {text = line:sub(2,-1),step = step}
+            element = {text = text, textOnly = true, step = step}
+        elseif line:sub(1, 1) == "+" then
+            element = {text = line:sub(2, -1), step = step}
             lastElement = element
-        elseif line:sub(1,1) == "*" then
-            element = {text = line:sub(2,-1):gsub("\\n","\n"),step = step, hideTooltip = true, textOnly = true}
-        --else
-            --error('Error parsing guide at line '..linenumber..'/ '..guide.name)
+        elseif line:sub(1, 1) == "*" then
+            element = {
+                text = line:sub(2, -1):gsub("\\n", "\n"),
+                step = step,
+                hideTooltip = true,
+                textOnly = true
+            }
+            -- else
+            -- error('Error parsing guide at line '..linenumber..'/ '..guide.name)
         end
         if element and (text and not element.textOnly or element.dynamicText) then
             lastElement = element
         end
 
-        table.insert(step.elements,element)
+        table.insert(step.elements, element)
     end
 
-
     for line in string.gmatch(text, "[^\n\r]+") do
-        linenumber = linenumber +1
-        line = line:gsub("%-%-.*","")
-        line = line:gsub("^%s+","")
-        line = line:gsub("%s+$","")
-        --print(line)
-        if line:sub(1,4) == "step" then
-            if not RXP_.currentGuideName then error("Error parsing guide: Guide has no name") end
+        linenumber = linenumber + 1
+        line = line:gsub("%-%-.*", "")
+        line = line:gsub("^%s+", "")
+        line = line:gsub("%s+$", "")
+        -- print(line)
+        if line:sub(1, 4) == "step" then
+            if not RXP_.currentGuideName then
+                error("Error parsing guide: Guide has no name")
+            end
             local classtag = line:match("<<%s*(.+)")
             if classtag and not applies(classtag) then
                 skip = true
@@ -200,7 +202,9 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
             end
         elseif not skip then
             if currentStep > 0 then
-                if currentStep > 1 or (version == "tbc" and not(guide.classic or guide.wotlk)) or guide[version] then
+                if currentStep > 1 or
+                    (version == "tbc" and not (guide.classic or guide.wotlk)) or
+                    guide[version] then
                     parseLine(line)
                 else
                     RXP_.guide = nil
@@ -208,8 +212,8 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                 end
             elseif currentStep == 0 then
                 local classtag
-                line = line:gsub("(.*)<<%s*(.+)",function(code,tag)
-                    code = code:gsub("%s+$","")
+                line = line:gsub("(.*)<<%s*(.+)", function(code, tag)
+                    code = code:gsub("%s+$", "")
                     classtag = tag
                     return code
                 end)
@@ -221,8 +225,9 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
                         skip = true
                     end
                 else
-                    line:gsub("^#(%S+)%s*(=?)%s*(.*)",function(tag,assignment,value)
-                        --print(tag,string.len(tag))
+                    line:gsub("^#(%S+)%s*(=?)%s*(.*)",
+                              function(tag, assignment, value)
+                        -- print(tag,string.len(tag))
                         if tag and tag ~= "" and not guide[tag] then
                             if assignment == "=" then
                                 guide[tag] = RXPG[guide.group][value]
@@ -238,35 +243,33 @@ function RXPG.RegisterGuide(guideGroup,text,defaultFor)
             end
         end
     end
-    --print(guide)
+    -- print(guide)
     RXP_.step = nil
-    if not guide.name then
-        error('Guide has no name')
-    end
-    
+    if not guide.name then error('Guide has no name') end
+
     guide.displayName = guide.name
-    guide.name = guide.name:gsub("^(%d)-(%d%d?)",RXP_.affix)
+    guide.name = guide.name:gsub("^(%d)-(%d%d?)", RXP_.affix)
     if guide.next then
-        guide.next = guide.next:gsub("^(%d)-(%d%d?)",RXP_.affix)
+        guide.next = guide.next:gsub("^(%d)-(%d%d?)", RXP_.affix)
     end
-    
+
     if not RXP_.guideList[guide.group] then
         RXP_.guideList[guide.group] = {}
         RXP_.guideList[guide.group].names_ = {}
     end
     local list = RXP_.guideList[guide.group]
-    table.insert(RXP_.guides,guide)
+    table.insert(RXP_.guides, guide)
     if list[guide.name] then
         suffix = suffix + 1
         guide.name = guide.name .. tostring(suffix)
     end
-    table.insert(list.names_,guide.name)
+    table.insert(list.names_, guide.name)
     list[guide.name] = #RXP_.guides
-    if guideGroup:sub(1,1) ~= "*" and defaultFor and not RXP_.defaultGuide then
+    if guideGroup:sub(1, 1) ~= "*" and defaultFor and not RXP_.defaultGuide then
         RXP_.defaultGuide = guide
     end
     RXP_.guide = nil
 end
 
---parser
+-- parser
 
