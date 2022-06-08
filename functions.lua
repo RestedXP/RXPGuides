@@ -486,7 +486,7 @@ function RXP_.functions.accept(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         element.tag = "accept"
-        local text,id = ...
+        local text,id,escort = ...
         id = tonumber(id)
         if not id then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.title = ""
@@ -522,6 +522,8 @@ function RXP_.functions.accept(self,...)
             stepType = stepType .. "["..step.phase.."]"
         end
 
+        element.escort = escort
+
         RXP_.pickUpList[id] = format("%s\n%s %s",RXP_.pickUpList[id],stepType,RXP_.currentGuideName)
 
         return element
@@ -533,11 +535,16 @@ function RXP_.functions.accept(self,...)
         local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)
 
         if element.step.active or element.retrieveText or (element.step.index > 1 and RXP_.currentGuide.steps[element.step.index-1].active) then
-            RXP_.questAccept[id] = element
+            local autoAccept = not element.escort
+            if autoAccept then
+                RXP_.questAccept[id] = element
+            end
             local quest = RXP_.GetQuestName(id,element)
             if quest then
                 element.title = quest
-                RXP_.questAccept[quest] = element
+                if autoAccept then
+                    RXP_.questAccept[id] = element
+                end
                 element.text = element.text:gsub("%*quest%*",quest)
                 if element.requestFromServer then
                     element.requestFromServer = nil
