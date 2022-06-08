@@ -1,3 +1,5 @@
+local addonName = ...
+
 local faction = UnitFactionGroup("player")
 local _,class = UnitClass("player")
 local version = select(4, GetBuildInfo())
@@ -51,7 +53,7 @@ complete = "|TInterface/GossipFrame/HealerGossipIcon:0|t",
 vendor = "|TInterface/GossipFrame/BankerGossipIcon:0|t",
 reputation = "|TInterface/GossipFrame/WorkOrderGossipIcon:0|t",
 fly = "|TInterface/GossipFrame/TaxiGossipIcon:0|t",
-fp = "|TInterface/AddOns/RXPGuides/Textures/fp:0|t",
+fp = "|TInterface/AddOns/" .. addonName .."/Textures/fp:0|t",
 hs = "|TInterface/MINIMAP/TRACKING/Innkeeper:0|t",
 trainer = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
 train = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
