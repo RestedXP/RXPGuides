@@ -177,7 +177,6 @@ RXP_.questCompleteItems = {
     [7029] = 17693, -- Vyletongue Corruption // Coated Cerulean Vial
     [7843] = 19036, -- The Final Message to the Wildhammer // Final Message to the Wildhammer
     [3568] = {10695, 10687, 10688, 10689, 10690}, -- Seeping Corruption // Box of Empty Vials, Empty Vial Labeled #1-4??
-    [3568] = 10695, -- Seeping Corruption // Box of Empty Vials
     [7003] = 18904, -- Zapped Giants // Zorbin's Ultra-Shrinker
     [3785] = 11020, -- Morrowgrain Research // Evergreen Pouch
     [3845] = 11107, -- It's a Secret to Everybody // A Small Pack

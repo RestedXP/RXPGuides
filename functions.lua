@@ -75,7 +75,6 @@ RXP_.icons.xpto60 = RXP_.icons.xp
 
 function RXP_.error(msg)
     print(msg)
-    return
 end
 
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or GetNumQuestLogEntries
