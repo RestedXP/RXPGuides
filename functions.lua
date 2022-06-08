@@ -33,6 +33,7 @@ events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW"}
 events.vehicle = {"UNIT_ENTERING_VEHICLE","VEHICLE_UPDATE"}
 events.skill = {"SKILL_LINES_CHANGED","LEARNED_SPELL_IN_TAB"}
+events.emote = "PLAYER_TARGET_CHANGED"
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
@@ -3065,6 +3066,42 @@ function RXP_.functions.itemcount(self,...)
             RXP_.updateSteps = true
             step.completed = true
         end
+    end
+
+end
+
+function RXP_.functions.emote(self,text,token,unitId,callback,...)
+    if type(self) == "string" then
+        local element = {}
+
+        local events = {...}
+        if callback then
+            element.callback = callback
+            element.event = events
+        end
+        element.text = text
+        element.textOnly = true
+
+        element.id = tonumber(unitId)
+        element.emote = token
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+
+    if not step.active then
+        return
+    end
+
+    local group = RXP_.currentGuide.group
+    local emote = element.emote
+    if element.callback then
+        if RXPG[group][element.callback](self,text,token,unitId,callback,...) then
+            DoEmote(emote)
+        end
+    elseif RXP_.GetNpcId() == element.id then
+        DoEmote(emote)
     end
 
 end
