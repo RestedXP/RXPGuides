@@ -1401,16 +1401,18 @@ function RXPFrame.GenerateMenuTable()
         })
     end
 
-    if RXP_.farmGuides > 0 then
-        local text
+
+
         if RXPCData and RXPCData.GA then
-            text = "Activate the Quest Guide mode"
-        else
-            text = "Activate the Gold Assistant mode"
+            local text = "Activate the Quest Guide mode"
+            table.insert(menuList,
+                         {text = text, notCheckable = 1, func = RXP_.GAToggle})
+        elseif RXP_.farmGuides > 0 then
+            local text = "Activate the Gold Assistant mode"
+            table.insert(menuList,
+                         {text = text, notCheckable = 1, func = RXP_.GAToggle})
         end
-        table.insert(menuList,
-                     {text = text, notCheckable = 1, func = RXP_.GAToggle})
-    end
+
 
     table.insert(menuList, {
         text = "Options...",
