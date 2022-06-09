@@ -60,22 +60,14 @@ end
 function RXPG.RegisterGuide(guideGroup, text, defaultFor)
     if not guideGroup then return end
     local playerLevel = UnitLevel("player")
-    local boost58
     local parentGroup
-    if defaultFor then
-        if defaultFor == "58Boost" then
-            if playerLevel >= 60 or playerLevel < 58 then
-                parentGroup = guideGroup
-                guideGroup = "*" .. guideGroup
-            end
-            boost58 = true
-        elseif not applies(defaultFor) then
-            parentGroup = guideGroup
-            guideGroup = "*" .. guideGroup
-        end
+
+    if not (guideGroup and text) then
+        text = guideGroup
+        guideGroup = text:match("%c%s*#group%s+(.-)%s*%c"):gsub("%s*%-%-.*$","")
     end
 
-    RXPG.RegisterGroup(guideGroup, parentGroup)
+    RXPG.RegisterGroup(guideGroup)
 
     local guide = {}
 
@@ -84,7 +76,7 @@ function RXPG.RegisterGuide(guideGroup, text, defaultFor)
         guide.farm = true
     end
     RXP_.guide = guide
-    guide.boost58 = boost58
+
     guide.group = guideGroup
     guide.unitscan = {}
     local currentStep = 0
@@ -246,6 +238,23 @@ function RXPG.RegisterGuide(guideGroup, text, defaultFor)
     -- print(guide)
     RXP_.step = nil
     if not guide.name then error('Guide has no name') end
+
+    defaultFor = guide.defaultfor or defaultFor
+    if defaultFor then
+        local boost58
+        if defaultFor == "58Boost" then
+            if playerLevel >= 60 or playerLevel < 58 then
+                parentGroup = guideGroup
+                guideGroup = "*" .. guideGroup
+            end
+            boost58 = true
+        elseif not applies(defaultFor) then
+            parentGroup = guideGroup
+            guideGroup = "*" .. guideGroup
+        end
+        RXPG.RegisterGroup(guideGroup, parentGroup)
+        guide.boost58 = boost58
+    end
 
     guide.displayName = guide.name
     guide.name = guide.name:gsub("^(%d)-(%d%d?)", RXP_.affix)
