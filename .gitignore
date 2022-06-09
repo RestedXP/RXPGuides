@@ -2,3 +2,6 @@
 RXPGuides-Dev-BCC.toc
 RXPGuides-Dev-Classic.toc
 RXPGuides-Dev.toc
+
+#Ignore building guide packages
+GuidesRelease
