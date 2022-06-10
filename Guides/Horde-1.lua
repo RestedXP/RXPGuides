@@ -1,6 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Horde Boosted 58-60",[[
+RXPGuides.RegisterGuide([[
 << Horde
-#name Boosted Character 58-60
+#name name Boosted Character 58-60
+#group RestedXP Horde Boosted 58-60
+#defaultfor 58Boost
 #next RestedXP Horde 60-70\60-61 Hellfire Peninsula
 step << !Druid !Paladin
     .turnin 64046 >>Turn in A New Beginning
@@ -25,11 +27,11 @@ step << Druid
 step << !Druid !Paladin
     .turnin 64048 >>Turn in Tools for Survival
     .accept 64050 >>Accept Combat Training
-	
+
 step << Druid
     .turnin 64049 >>Turn in Tools for Survival
-    .accept 64051 >>Accept Combat Training	
-	
+    .accept 64051 >>Accept Combat Training
+
 step << Warrior
     .train 11581 >> Learn Thunder Clap.
 step << Rogue
@@ -45,7 +47,7 @@ step << Priest
 step << BloodElf Priest
     .train 32676 >> Learn Consume Magic
 step << Troll Priest
-    .train 9035 >> Learn all the ranks of Hex of Weakness	
+    .train 9035 >> Learn all the ranks of Hex of Weakness
     .train 18137 >> Learn all the ranks of Shadowguard
 step << Druid
     .train 9853 >> Learn Entangling Roots
@@ -56,7 +58,7 @@ step << !Druid !Paladin
 	.complete 64050,1 --1/1 Train a Spell (1)
 step << Druid
     .complete 64051,1 --1/1 Train a Spell (1)
-	
+
 step << !Druid !Paladin
     .turnin 64050 >>Turn in Combat Training
     .accept 64052 >>Accept Talented
@@ -69,8 +71,8 @@ step << !Druid !Paladin
 	.complete 64052,1 --1/1 Spend a Talent Point (1)
 step << Druid
 	>>Spec into any talent build you want to play while leveling.
-    .complete 64053,1 --1/1 Spend a Talent Point (1)	
-	
+    .complete 64053,1 --1/1 Spend a Talent Point (1)
+
 step << !Druid !Paladin
     .turnin 64052 >>Turn in Talented
 step << Druid
@@ -81,11 +83,11 @@ step << !Druid !Paladin
 step << Druid
 	#label druidboost
 	.accept 64217 >> Accept The Dark Portal
-	
+
 step << Druid
-	
+
     .fly Orgrimmar >>Fly to Orgrimmar
-	
+
 step << Mage
     .goto Orgrimmar,38.7,85.5
     >>Run up to the 2nd floor to train Teleport & Portal to Orgrimmar
@@ -93,11 +95,11 @@ step << Mage
 	.train 11417 >> Portal: Orgrimmar
 step << Warlock
     .goto Orgrimmar,47.6,46.7,0
-	.vendor 5815 >> Talk to Kurgul to purchase your minions Grimoires	
+	.vendor 5815 >> Talk to Kurgul to purchase your minions Grimoires
 step	<<!Paladin
     .goto Orgrimmar,54.5,67.6
     >>Buy at least 2 stacks of food/water from Barkeep Morag.
-	.vendor	
+	.vendor
 step << Druid
     .goto Durotar,50.7,12.9
     .complete 64217,1 --Visit Snurk Bucksquick, the Zeppelin Master (1)
@@ -109,7 +111,7 @@ step
     #completewith next
 +Take the zeppelin to Undercity
     .goto Durotar,50.8,13.8
-step 
+step
 	.zone Tirisfal Glades >>Arrive in Tirisfal
 step
 	.goto Tirisfal Glades,83.1,68.9
@@ -152,7 +154,7 @@ step
 step
 	>>Kill the Cauldon Lord
     .goto Western Plaguelands,36.5,57.7
-    .complete 5229,1 --Felstone Field Cauldron Key (1)	
+    .complete 5229,1 --Felstone Field Cauldron Key (1)
 step
     .goto Western Plaguelands,37.2,56.9
     .turnin 5229 >>Turn in Target: Felstone Field
@@ -168,12 +170,12 @@ step
     .goto Tirisfal Glades,83.1,71.9
     .turnin 5230 >>Turn in Return to the Bulwark
     .accept 5231 >>Accept Target: Dalson's Tears
-	
+
 
 step
     .goto Western Plaguelands,39.5,67.0
     .accept 4971 >>Accept A Matter of Time
-	
+
 step
 	#sticky
 	#completewith wplbf
@@ -181,7 +183,7 @@ step
 step
     .goto Western Plaguelands,40.2,71.5
     .complete 5098,1 --Tower One marked (1)
-step	
+step
     .goto Western Plaguelands,42.5,66.2
     .complete 5098,2 --Tower Two marked (1)
 step
@@ -198,7 +200,7 @@ step
 step
 	>>Kill the Cauldron Lord
     .goto Western Plaguelands,46.2,52.4
-    .complete 5231,1 --Dalson's Tears Cauldron Key (1)	
+    .complete 5231,1 --Dalson's Tears Cauldron Key (1)
 step
     .goto Western Plaguelands,46.2,52.1
     .turnin 5231 >>Turn in Target: Dalson's Tears
@@ -321,7 +323,7 @@ step
 step
 	>>Kill the Cauldron Lord
     .goto Western Plaguelands,52.8,66.2
-    .complete 5233,1 --Writhing Haunt Cauldron Key (1)	
+    .complete 5233,1 --Writhing Haunt Cauldron Key (1)
 step
     .goto Western Plaguelands,52.9,65.7
     .turnin 5233 >>Turn in Target: Writhing Haunt
@@ -393,7 +395,7 @@ step
     .accept 5211 >>Accept Defenders of Darrowshire
 step
     .goto Eastern Plaguelands,81.6,58.1
-    .home >>Set your Hearthstone to Light's Hope Chapel	
+    .home >>Set your Hearthstone to Light's Hope Chapel
 step
 	.goto Eastern Plaguelands,71.0,16.6
 	>>Find & kill Infiltrator Hameya. He roams around the area. Loot his key.
@@ -422,7 +424,7 @@ step
 step <<!Paladin
     #completewith next
     .hs >>Hearth to Light's Hope Chapel
-	
+
 step
 	.goto Eastern Plaguelands,81.4,59.8
 	.turnin 5510 >>Turn in Minion's Scourgestones
@@ -504,7 +506,7 @@ step
 step
 	>>Kill the Cauldron Lord
     .goto Western Plaguelands,61.8,59.3
-    .complete 5235,1 --Gahrron's Withering Cauldron Key (1)	
+    .complete 5235,1 --Gahrron's Withering Cauldron Key (1)
 step
     .goto Western Plaguelands,62.5,58.7
     .turnin 5235 >>Turn in Target: Gahrron's Withering
@@ -560,4 +562,4 @@ step << Druid
     .goto Blasted Lands,58.1,56.1
     .turnin 64217 >>Turn in The Dark Portal
     .accept 9407 >>Accept Through the Dark Portal
-]],"58Boost")
+]])

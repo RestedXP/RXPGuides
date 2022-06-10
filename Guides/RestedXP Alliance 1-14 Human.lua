@@ -1,6 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
-#name 1-11 Elwynn Forest
+#name name 1-11 Elwynn Forest
+#group RestedXP Alliance 1-20
+#defaultfor Human
 #next 12-14 Loch Modan << Warlock
 #next 11-12 Loch Modan << !Warlock
 step << !Human
@@ -452,7 +454,7 @@ step << !Priest !Paladin !Warrior !Rogue
 step << Priest
     .xp 7+1260 >>Grind until 1260+/4500xp
 step
-    #requires KoboldCandles 
+    #requires KoboldCandles
 step
     #label Goldtooth
     #requires GoldDust
@@ -1039,7 +1041,7 @@ step
 step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .goto Ironforge,77.0,51.0 
+    .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
@@ -1051,7 +1053,7 @@ step << Warlock
 step << Warrior
     .goto Ironforge,61.2,89.5
     .trainer >>Train 2h Maces
-step 
+step
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
 step
@@ -1134,11 +1136,16 @@ step
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
-]],"Human")
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Alliance
-#name 11-12 Loch Modan << !Warlock
-#name 12-14 Loch Modan << Warlock
+#name name 11-12 Loch Modan << !Warlock
+#group RestedXP Alliance 1-20
+#defaultfor Human
+#name name 12-14 Loch Modan << Warlock
+#group
+#defaultfor
 #next 14-14 Darkshore << Warlock
 #next 11-14 Darkshore << !Warlock
 step
@@ -1359,7 +1366,7 @@ step << Warlock
 step << Warlock
     #requires Wand2
     .goto Ironforge,51.1,8.7,15,0 >> Enter the building
-    .goto Ironforge,50.4,6.3 
+    .goto Ironforge,50.4,6.3
     .trainer >> Train your class spells
 step << Warlock
     .goto Ironforge,53.2,7.8,15,0 >> Enter the building
@@ -1436,13 +1443,15 @@ step
 step
     .goto Wetlands,4.7,57.3
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore
-]],"Human")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance Warlock
-#name 14-14 Darkshore
+#name name 14-14 Darkshore
+#group RestedXP Alliance 1-20
+#defaultfor Human Warlock
 #next 14-20 Bloodmyst
-    
+
 step
     #completewith next
     .goto Darkshore,36.8,44.3,0
@@ -1515,9 +1524,4 @@ step
 step
     #label Azuremyst
     .zone Azuremyst Isle >>Get onto the boat when it comes
-]],"Human Warlock")
-
-
-
-
-
+]])

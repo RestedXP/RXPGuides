@@ -1,8 +1,10 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
+RXPGuides.RegisterGuide([[
 #classic
 #era/som
-<< Horde 
-#name 1-12 Mulgore
+<< Horde
+#name name 1-12 Mulgore
+#group RestedXP Horde 1-22
+#defaultfor Tauren
 #next 12-17 The Barrens
 step << !Tauren
     #sticky
@@ -110,7 +112,7 @@ step << Shaman
     .goto Mulgore,44.9,77.0
     .turnin 750 >>Turn in The Hunt Continues
     .accept 780 >>Accept The Battleboars
-step 
+step
     .goto Mulgore,45.3,76.5
     .vendor >> vendor trash
 step << Druid
@@ -168,7 +170,7 @@ step << Shaman
     .goto Mulgore,63.2,82.7
     .collect 4851,1,781 --Collect Dirt-Stained Map
     .accept 781 >>Accept Attack on Camp Narache
-step 
+step
     .hs >> Hearth to Camp Narache
 step
     .goto Mulgore,44.9,77.0
@@ -564,7 +566,7 @@ step
 step << !Hunter
     .goto Mulgore,47.5,60.2
     .turnin 746 >>Turn in Dwarven Digging
-step 
+step
     .goto Mulgore,47.4,62.0
     .turnin 743 >>Turn in Dangers of the Windfury
 step << Shaman
@@ -668,20 +670,20 @@ step << Druid
 step << Druid
     .goto Thunder Bluff,77.0,27.5
     .accept 5922 >>Accept Moonglade
-step << Druid 
+step << Druid
     >>Use your new spell to teleport to Moonglade
     .goto Moonglade,56.2,30.7
     .turnin 5922 >>Turn in Moonglade
     .accept 5930 >>Accept Great Bear Spirit
-step << Druid 
+step << Druid
     .goto Moonglade,39.2,27.5
     .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
-step << Druid 
+step << Druid
     >> Teleport back to Moonglade
     .goto Moonglade,56.2,30.7
     .turnin 5930 >>Turn in Great Bear Spirit
     .accept 5932 >>Accept Back to Thunder Bluff
-step << Druid 
+step << Druid
     .hs >>Hearth to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,76.5,27.3
@@ -947,14 +949,16 @@ step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
-]],"Tauren")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
+RXPGuides.RegisterGuide([[
 #classic
 #som
 #phase 3-6
-<< Horde 
-#name 1-13 Mulgore
+<< Horde
+#name name 1-13 Mulgore
+#group RestedXP Horde 1-22
+#defaultfor Tauren
 #next 12-17 The Barrens
 step << !Tauren
     #sticky
@@ -1056,7 +1060,7 @@ step << Shaman
     .goto Mulgore,44.9,77.0
     .turnin 750 >>Turn in The Hunt Continues
     .accept 780 >>Accept The Battleboars
-step 
+step
     .goto Mulgore,45.3,76.5
     .vendor >> vendor trash
 step << Druid
@@ -1132,7 +1136,7 @@ step
 step
     .goto The Barrens,51.5,30.4
     .fp >>Get the The Crossroads Flight Path
-step 
+step
     .hs >> Hearth to Camp Narache
 step
     .goto Mulgore,44.9,77.0
@@ -1417,15 +1421,15 @@ step << Druid
     .goto Thunder Bluff,77.0,27.5
     .accept 5922 >>Accept Moonglade
 	.trainer >> Train your class spells
-step << Druid 
+step << Druid
     >>Use your new spell to teleport to Moonglade
     .goto Moonglade,56.2,30.7
     .turnin 5922 >>Turn in Moonglade
     .accept 5930 >>Accept Great Bear Spirit
-step << Druid 
+step << Druid
     .goto Moonglade,39.2,27.5
     .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
-step << Druid 
+step << Druid
     >> Teleport back to Moonglade
     .goto Moonglade,56.2,30.7
     .turnin 5930 >>Turn in Great Bear Spirit
@@ -1578,7 +1582,7 @@ step << !Hunter
 step << !Hunter
     .goto Mulgore,47.5,60.2
     .turnin 746 >>Turn in Dwarven Digging
-step 
+step
     .goto Mulgore,47.4,62.0
     .turnin 743 >>Turn in Dangers of the Windfury
 step << Hunter
@@ -1751,7 +1755,5 @@ step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
-]],"Tauren")
-
-
+]])
 

@@ -1,6 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
-#name 1-6 Shadowglen
+#name name 1-6 Shadowglen
+#group RestedXP Alliance 1-20
+#defaultfor NightElf
 #next 6-11 Teldrassil
 step << !NightElf
     #sticky
@@ -47,7 +49,7 @@ step
 --	.accept 3118 >> Accept Encrypted Sigil << Rogue
 	.accept 3119 >> Accept Hallowed Sigil << Priest
 	.accept 3120 >> Accept Verdant Sigil << Druid
-step << Warrior 
+step << Warrior
     .goto Teldrassil,59.3,41.1
 	.vendor >> Go inside and vendor trash
 step << Warrior
@@ -194,11 +196,13 @@ step
 step
     .goto Teldrassil,61.2,47.6
     .accept 2159 >> Accept Dolanaar Delivery
-]],"NightElf")
-	
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Alliance
-#name 6-11 Teldrassil
+#name name 6-11 Teldrassil
+#group RestedXP Alliance 1-20
+#defaultfor NightElf
 #next 11-14 Darkshore
 step
     .goto Teldrassil,60.5,56.3
@@ -653,4 +657,4 @@ step
     .accept 6342 >> Accept Flight to Auberdine
 step
     .fly Darkshore >> Fly to Darkshore
-]],"NightElf")
+]])

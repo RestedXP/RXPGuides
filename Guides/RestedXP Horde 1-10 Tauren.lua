@@ -1,6 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
-<< Horde 
-#name 1-10 Mulgore
+RXPGuides.RegisterGuide([[
+<< Horde
+#name name 1-10 Mulgore
+#group RestedXP Horde 1-30
+#defaultfor Tauren
 #next 10-20 Eversong Woods / Ghostlands << !Warrior !Shaman
 #next 10-13 Mulgore << Warrior/Shaman
 step << !Tauren
@@ -109,7 +111,7 @@ step << Shaman
     .goto Mulgore,44.9,77.0
     .turnin 750 >>Turn in The Hunt Continues
     .accept 780 >>Accept The Battleboars
-step 
+step
     .goto Mulgore,45.3,76.5
     .vendor >> vendor trash
 step << Druid
@@ -167,7 +169,7 @@ step << Shaman
     .goto Mulgore,63.2,82.7
     .collect 4851,1,781 --Collect Dirt-Stained Map
     .accept 781 >>Accept Attack on Camp Narache
-step 
+step
     .hs >> Hearth to Camp Narache
 step
     .goto Mulgore,44.9,77.0
@@ -398,11 +400,11 @@ step
     .turnin 771 >>Turn in Rite of Vision
     .accept 772 >>Accept Rite of Vision
 step
-    .goto Mulgore,47.3,56.9,60,0    
+    .goto Mulgore,47.3,56.9,60,0
     .goto Mulgore,49.4,63.9,60,0
     .goto Mulgore,50.2,60.2,60,0
     .goto Mulgore,46.8,59.6,60,0
-    .goto Mulgore,47.3,56.9 
+    .goto Mulgore,47.3,56.9
     >>Look for Kyle the Frenzied. He patrols clockwise throughout the town (so go anti-clockwise). Go up to him and use the Tender Strider Meat
 	.complete 11129,1 --Kyle Fed (1)
 	.unitscan Kyle the Frenzied
@@ -584,7 +586,7 @@ step
 step << !Hunter
     .goto Mulgore,47.5,60.2
     .turnin 746 >>Turn in Dwarven Digging
-step 
+step
     .goto Mulgore,47.4,62.0
     .turnin 743 >>Turn in Dangers of the Windfury
 step << Druid
@@ -703,20 +705,20 @@ step << Druid
 step << Druid
     .goto Thunder Bluff,77.0,27.5
     .accept 5922 >>Accept Moonglade
-step << Druid 
+step << Druid
     >>Use your new spell to teleport to Moonglade
     .goto Moonglade,56.2,30.7
     .turnin 5922 >>Turn in Moonglade
     .accept 5930 >>Accept Great Bear Spirit
-step << Druid 
+step << Druid
     .goto Moonglade,39.2,27.5
     .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
-step << Druid 
+step << Druid
     >> Teleport back to Moonglade
 .goto Moonglade,56.2,30.7
     .turnin 5930 >>Turn in Great Bear Spirit
     .accept 5932 >>Accept Back to Thunder Bluff
-step << Druid 
+step << Druid
     .hs >>Hearth to Thunder Bluff
 step << Druid
 .goto Thunder Bluff,76.5,27.3
@@ -851,10 +853,13 @@ step << Druid/Hunter
 .goto Undercity,54.9,11.3,18 >>Use the Orb of Translocation
 step << Druid/Hunter
 .goto Silvermoon City,62.0,30.1,20 >>Go to Silvermoon
-]],"Tauren")
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
-<< Horde 
-#name 10-13 Mulgore
+]])
+
+RXPGuides.RegisterGuide([[
+<< Horde
+#name name 10-13 Mulgore
+#group RestedXP Horde 1-30
+#defaultfor Tauren
 #next 13-23 The Barrens
 step
     #sticky
@@ -952,7 +957,7 @@ step << Shaman
 step << Warrior
 .goto Mulgore,49.5,60.6
 .train 5242 >>Train Battle Shout r2
-.train 7384 >>Train Overpower 
+.train 7384 >>Train Overpower
 step
     #sticky
     #completewith next
@@ -1004,6 +1009,4 @@ step << Warrior
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
 
-]],"Tauren")
-
-
+]])

@@ -1,6 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
 << Horde
-#name 1-6 Eversong Woods
+#name name 1-6 Eversong Woods
+#group RestedXP Horde 1-30
+#defaultfor BloodElf
 #next 6-10 Eversong Woods
 step << !BloodElf
     #sticky
@@ -222,7 +224,7 @@ step
     #label Report
 .goto Eversong Woods,35.4,22.5
     .turnin 8327 >> Turn in Report to Lanthan Perilon
-    .accept 8334 >> Accept Aggression  
+    .accept 8334 >> Accept Aggression
 step
     >>Loot the Journal on the floor
 .goto Eversong Woods,37.7,24.9
@@ -232,7 +234,7 @@ step
 #completewith RedOrb
 >>Kill Tenders in the area
     .complete 8334,1 --Kill Tender (x7)
-    .complete 8334,2 --Kill Feral Tender (x7)    
+    .complete 8334,2 --Kill Feral Tender (x7)
 step
     #label RedOrb
 >>Loot the Red Orb
@@ -242,7 +244,7 @@ step
 >>Finish killing Tenders in the area
 .goto Eversong Woods,35.3,28.5
     .complete 8334,1 --Kill Tender (x7)
-    .complete 8334,2 --Kill Feral Tender (x7)    
+    .complete 8334,2 --Kill Feral Tender (x7)
 step
     .goto Eversong Woods,35.4,22.5
     .turnin 8334 >> Turn in Aggression
@@ -350,10 +352,13 @@ step
 .xp 5+2690 >> Grind to (at least) 2690+/2800xp
 step
     .goto Eversong Woods,47.3,46.3,30 >> Run to Falconwing Square
-]],"BloodElf")
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Horde
-#name 6-10 Eversong Woods
+#name name 6-10 Eversong Woods
+#group RestedXP Horde 1-30
+#defaultfor BloodElf/Scourge
 #next 10-20 Eversong Woods / Ghostlands << !Warrior
 #next 10-13 Durotar << Warrior
 step
@@ -967,10 +972,13 @@ step << Warrior
 step << Warrior
     >>Run to Razor Hill
 .goto Durotar,52.6,42.8,200
-]],"BloodElf/Scourge")
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Horde
-#name 10-20 Eversong Woods / Ghostlands
+#name name 10-20 Eversong Woods / Ghostlands
+#group RestedXP Horde 1-30
+#defaultfor !Warrior !Shaman
 #next 20-23 Stonetalon / The Barrens
 step << Orc Hunter/Troll Hunter
     .money <0.1000
@@ -995,14 +1003,14 @@ step << BloodElf Hunter
 step << !BloodElf
     .goto Eversong Woods,60.3,62.8
     .accept 8476 >> Accept Amani Encroachment
-step << BloodElf Hunter    
+step << BloodElf Hunter
     .accept 9484 >> Accept Taming the Beast
-step << BloodElf Hunter  
+step << BloodElf Hunter
     >>Click the taming rod in your bag on a Dragonhawk. Try to do it at max range (30 yards)
-.goto Eversong Woods,60.1,58.9,40,0    
+.goto Eversong Woods,60.1,58.9,40,0
     .goto Eversong Woods,62.1,59.8,40,0
     .goto Eversong Woods,61.4,65.8,40,0
-.goto Eversong Woods,60.1,58.9,40,0    
+.goto Eversong Woods,60.1,58.9,40,0
     .goto Eversong Woods,62.1,59.8,40,0
     .goto Eversong Woods,61.4,65.8,40,0
     .complete 9484,1 --Tame a Crazed Dragonhawk
@@ -1016,11 +1024,11 @@ step << !Paladin !Rogue
     .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
     .vendor >> vendor trash, repair
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9484 >> Turn in Taming the Beast
     .accept 9486 >> Accept Taming the Beast
-step << BloodElf Hunter  
+step << BloodElf Hunter
     >>Click the taming rod in your bag on a Springpaw. Try to do it at max range (30 yards)
 .goto Eversong Woods,63.2,64.7,30,0
     .goto Eversong Woods,63.2,63.5,30,0
@@ -1029,7 +1037,7 @@ step << BloodElf Hunter
     .goto Eversong Woods,65.3,59.5,30,0
     .goto Eversong Woods,66.2,57.5,30,0
     .complete 9486,1 --Tame an Elder Springpaw
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9486 >> Turn in Taming the Beast
     .accept 9485 >> Accept Taming the Beast
@@ -1041,15 +1049,15 @@ step
       #sticky
     #completewith Marosh
 >>Kill Trolls in the area whilst doing other quests. Be careful as the Berserkers enrage at low hp
-    .complete 8476,1 --Kill Amani Berserker (x5)  
+    .complete 8476,1 --Kill Amani Berserker (x5)
 .complete 8476,2 --Kill Amani Axe Thrower (x5)
 step
      .goto Eversong Woods,70.1,72.3
-    .complete 8477,1 --Collect Otembe's Hammer (x1) 
+    .complete 8477,1 --Collect Otembe's Hammer (x1)
 step
     >>Otembe has a very short respawn timer. Quickly run over to the cage and accept the quest.
 .goto Eversong Woods,70.5,72.3
-    .accept 8479 >> Accept Zul'Marosh    
+    .accept 8479 >> Accept Zul'Marosh
 step
 >>Zul'Marosh is on the top floor of the hut. Kill & loot him. He drops a quest.
     .goto Eversong Woods,62.5,79.7
@@ -1066,77 +1074,77 @@ step
 step
 >>Finish killing Trolls in the area whilst doing other quests. Be careful as the Berserkers enrage at low hp
 .goto Eversong Woods,71.1,77.3
-    .complete 8476,1 --Kill Amani Berserker (x5)  
+    .complete 8476,1 --Kill Amani Berserker (x5)
 .complete 8476,2 --Kill Amani Axe Thrower (x5)
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Ghostlands,45.6,21.1
     .complete 9485,1 --Tame a Mistbat
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Ghostlands,46.3,28.8
     .accept 9327 >> Accept The Forsaken
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Ghostlands,44.8,32.5
     .turnin 9327 >> Turn in The Forsaken
     .accept 9758 >> Accept Return to Arcanist Vandril
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Ghostlands,47.3,28.9
     .accept 9130 >> Accept Goods from Silvermoon City
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Ghostlands,47.0,28.5
     .accept 9152 >> Accept Tomber's Supplies
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Ghostlands,46.3,28.4
     .turnin 9758 >> Turn in Return to Arcanist Vandril
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Ghostlands,46.3,28.6
     .accept 9138 >> Accept Suncrown Village
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Ghostlands,45.5,30.5
     .fp Tranquillien >> Get the Tranquillien flight path
-step << BloodElf Hunter  
+step << BloodElf Hunter
     >>do NOT fly to Silvermoon City
     .goto Ghostlands,45.5,30.6
     .turnin 9130 >> Turn in Goods from Silvermoon City
     .accept 9133 >> Accept Fly to Silvermoon City
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .hs >> Hearth to Fairbreeze Village
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,44.0,70.7
     .turnin 9255 >> Turn in Research Notes
     .accept 9144 >> Accept Missing in the Ghostlands
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,44.7,69.7
     .turnin 8491 >> Turn in Pelt Collection
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,46.9,71.8
     .turnin 9252 >> Turn in Defending Fairbreeze Village
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,46.9,71.6
     .accept 9253 >> Accept Runewarden Deryan
 step << BloodElf Hunter
     >>Use the Disciplinary Rod in your bags on Meledor
 .goto Eversong Woods,44.9,61.0
     .complete 9066,1 --Apprentice Meledor Disciplined
-step << BloodElf Hunter  
+step << BloodElf Hunter
     >>Use the Disciplinary Rod in your bags on Ralen
 .goto Eversong Woods,45.2,57.0
     .complete 9066,2 --Apprentice Ralen Disciplined
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,48.2,46.0
     .turnin 8482 >> Turn in Incriminating Documents
     .accept 8483 >> Accept The Dwarven Spy
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,48.3,46.1
     .train 13165 >>Train Aspect of the Hawk
     .train 13549 >>Train Serpent Sting r2
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,44.8,53.1
 >>Talk to Prospector Anvilward, wait out the RP event, then kill him
     .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,48.2,46.0
     .turnin 8483 >> Turn in The Dwarven Spy
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .goto Eversong Woods,55.7,54.5
     .turnin 9066 >> Turn in Swift Discipline
 step << Undead/BloodElf !Hunter
@@ -1149,7 +1157,7 @@ step
     .turnin 8476 >> Turn in Amani Encroachment
     .turnin 9360 >> Turn in Amani Invasion
     .accept 9363 >> Accept Warning Fairbreeze Village
-step << BloodElf Hunter  
+step << BloodElf Hunter
     .turnin 9485 >> Turn in Taming the Beast
     .accept 9673 >> Accept Beast Training
 step << Undead/BloodElf !Hunter
@@ -1447,10 +1455,10 @@ step << !BloodElf
     .goto Ghostlands,46.5,28.4
     .turnin 9148 >> Turn in Delivery to Tranquillien
     .accept 9329 >> Accept The Forsaken
-step << !BloodElf/!Hunter 
+step << !BloodElf/!Hunter
     .goto Ghostlands,45.5,30.5
     .fp Tranquillien >> Get the Tranquillien flight path
-step << BloodElf !Hunter  
+step << BloodElf !Hunter
     .goto Ghostlands,44.8,32.5
     .turnin 9327 >> Turn in The Forsaken
     .accept 9758 >> Accept Return to Arcanist Vandril
@@ -1461,16 +1469,16 @@ step << !BloodElf
 step << BloodElf !Hunter
     .goto Ghostlands,47.3,28.9
     .accept 9130 >> Accept Goods from Silvermoon City
-step << !BloodElf/!Hunter 
+step << !BloodElf/!Hunter
     .goto Ghostlands,47.0,28.5
     .accept 9152 >> Accept Tomber's Supplies
 step << Warlock
     .goto Ghostlands,48.9,32.4
 .home >> Set your Hearthstone to Tranquillien
-step << !BloodElf/!Hunter 
+step << !BloodElf/!Hunter
     .goto Ghostlands,46.3,28.4
     .turnin 9758 >> Turn in Return to Arcanist Vandril
-step << !BloodElf/!Hunter 
+step << !BloodElf/!Hunter
     .goto Ghostlands,46.3,28.6
     .accept 9138 >> Accept Suncrown Village
 step << BloodElf !Hunter !Warlock
@@ -1755,7 +1763,7 @@ step << BloodElf Rogue
 .accept 9618 >> Accept Return the Reports
 step
     .goto Ghostlands,25.3,15.8
-    >>Kill Ghosts in the area 
+    >>Kill Ghosts in the area
     .complete 9139,2 --Kill Quel'dorei Wraith (x4)
     .complete 9139,1 --Kill Quel'dorei Ghost (x6)
 step
@@ -2043,7 +2051,7 @@ step
     .goto Ghostlands,72.6,31.2
     .accept 9275 >> Accept A Little Dash of Seasoning
 step
-    >>Upstairs 
+    >>Upstairs
 .goto Ghostlands,71.9,32.7
     .turnin 9282 >> Turn in The Farstrider Enclave
     .accept 9161 >> Accept The Traitor's Shadow
@@ -2099,7 +2107,7 @@ step
 .goto Ghostlands,79.6,17.6
     .turnin 9161 >> Turn in The Traitor's Shadow
     .accept 9162 >> Accept Hints of the Past
-step << Rogue 
+step << Rogue
     #sticky
     #completewith next
     >>Open the Primitive Chests around until you loot a Head
@@ -2120,7 +2128,7 @@ step
 .goto Ghostlands,72.0,32.7
     .turnin 9162 >> Turn in Hints of the Past
     .accept 9172 >> Accept Report to Magister Kaendris
-step << Rogue 
+step << Rogue
     #sticky
     #label ShrunkenHead
     >>Open the Primitive Chests around until you loot a Head.
@@ -2295,7 +2303,7 @@ step
     .complete 9176,1 --Collect Stone of Flame (x1)
 step
 .goto Ghostlands,34.3,49.3,15 >>Go into the Ziggurat
-step    
+step
     >>Loot the chest in the middle
 .goto Ghostlands,34.3,47.7
     .complete 9176,2 --Collect Stone of Light (x1)
@@ -2644,4 +2652,4 @@ step
 .goto Tirisfal Glades,60.7,58.8,15,0
 step
 .zone Durotar >>Arrive in Durotar
-]],"!Warrior !Shaman")
+]])

@@ -1,8 +1,10 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Alliance !Hunter
-#name 1-6 Coldridge Valley
+#name name 1-6 Coldridge Valley
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf/Gnome
 #next 6-11 Dun Morogh
 step << !Gnome !Dwarf
     #sticky
@@ -53,7 +55,7 @@ step << Warlock
     >>Kill Frostmane Novices inside the cave. Loot them for Feather Charms
     .goto Dun Morogh,29.0,82.6,50,0
     .goto Dun Morogh,29.0,81.2,60,0
-    .goto Dun Morogh,30.1,82.4  
+    .goto Dun Morogh,30.1,82.4
     .complete 1599,1 --Collect Feather Charm (x3)
 step << Warlock
     #softcore
@@ -143,7 +145,7 @@ step
     .accept 182 >> Accept The Troll Cave
 step << Paladin/Mage/Warlock
     .goto Dun Morogh,25.0,76.0
-    .accept 3364 >> Accept Scalding Mornbrew Delivery 
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
     >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << Paladin/Mage/Warlock
     #era
@@ -311,14 +313,16 @@ step
     .goto Dun Morogh,34.1,71.6,20,0
     .goto Dun Morogh,35.7,66.0,0
     .goto Dun Morogh,35.7,66.0,20 >>Go through the tunnel
-    
-]],"Dwarf/Gnome")
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+]])
+
+RXPGuides.RegisterGuide([[
 #era/som
 #classic
 << Alliance !Hunter
-#name 6-11 Dun Morogh
+#name name 6-11 Dun Morogh
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf/Gnome
 #next 10-11 Elwynn (Dwarf/Gnome)
 step << Paladin/Warrior/Rogue
     #sticky
@@ -369,7 +373,7 @@ step << Warlock
 step << !Priest
     .goto Dun Morogh,48.3,57.0
     .xp 6 >> Grind to 6
-step 
+step
     .goto Dun Morogh,46.8,52.4
     .accept 384 >> Accept Beer Basted Boar Ribs
 step
@@ -431,12 +435,12 @@ step << Paladin
     .collect 2493,1 --Collect Wooden Mallet (1)
 step << Warrior/Rogue
     .goto Dun Morogh,45.3,51.9
-    .trainer >> Train Blacksmithing. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. 
-    >> If you want to go for your own professions, skip this step  
+    .trainer >> Train Blacksmithing. This will allow you to make +2 damage sharpening stones for your weapon which are very strong.
+    >> If you want to go for your own professions, skip this step
 step << Paladin
     .goto Dun Morogh,45.3,51.9
-    .trainer >> Train Blacksmithing. This will allow you to make +2 damage weightstones for your weapon which are very strong. 
-    >> If you want to go for your own professions, skip this step 
+    .trainer >> Train Blacksmithing. This will allow you to make +2 damage weightstones for your weapon which are very strong.
+    >> If you want to go for your own professions, skip this step
 step
     .goto Dun Morogh,46.0,51.7
     .accept 400 >> Accept Tools for Steelgrill
@@ -1125,13 +1129,15 @@ step << Rogue
     .goto Stormwind City,57.32,62.08,20,0
     .goto Stormwind City,58.37,61.69
     .vendor >> Buy the level 11 thrown from Thurman. Equip it when you're level 11
-]],"Dwarf/Gnome")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #era/som
 #classic
 << Alliance !Hunter
-#name 10-11 Elwynn (Dwarf/Gnome)
+#name name 10-11 Elwynn (Dwarf/Gnome)
+#group RestedXP Alliance 1-20
+#defaultfor Gnome/Dwarf
 #next 11-14 Loch Modan (Dwarf/Gnome)
 --#era << !Warlock
 
@@ -1145,7 +1151,7 @@ step
 step << Warlock
      #softcore
     #completewith next
-     >> Jump down the ledge (NOT the water) next to the flight master and kill yourself, make sure to life tap before jumping 
+     >> Jump down the ledge (NOT the water) next to the flight master and kill yourself, make sure to life tap before jumping
     .deathskip >>Spirit rez at Goldshire
 step
     .goto Elwynn Forest,42.10,65.90
@@ -1369,7 +1375,7 @@ step
 step
     >>Head east to Redridge
     >>The guard patrols around the stumps a bit
-    .goto Elwynn Forest,91.7,72.3,150,0 
+    .goto Elwynn Forest,91.7,72.3,150,0
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> Accept Encroaching Gnolls
 step
@@ -1472,7 +1478,7 @@ step
     .accept 12 >> Accept The People's Militia
 step
     #era
-    .goto Westfall,56.40,47.60    
+    .goto Westfall,56.40,47.60
     .accept 102 >> Accept Patrolling Westfall
 step
     .goto Westfall,54.00,53.00
@@ -1491,13 +1497,15 @@ step << Paladin
     .zone Ironforge >> Take the tram back to Ironforge
 step << !Paladin
     .hs >> Hearth to Loch Modan
-]],"Gnome/Dwarf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #era/som
 #classic
 << Alliance !Hunter
-#name 11-14 Loch Modan (Dwarf/Gnome)
+#name name 11-14 Loch Modan (Dwarf/Gnome)
+#group RestedXP Alliance 1-20
+#defaultfor Gnome/Dwarf
 #next 13-15 Westfall
 
 step << Dwarf Paladin
@@ -1535,7 +1543,7 @@ step << !Warlock
 step
     .goto Loch Modan,34.76,48.62
     .vendor >> Buy 6 slot bags if you need them.
-step 
+step
     #completewith next
     .goto Loch Modan,35.54,48.40
     .vendor >> Buy some food if needed << Warrior/Rogue
@@ -1719,12 +1727,12 @@ step << Warlock
     #softcore
     #requires Wand2
     .goto Ironforge,51.1,8.7,15,0 >> Enter the building
-    .goto Ironforge,50.4,6.3 
+    .goto Ironforge,50.4,6.3
     .trainer >> Train your class spells
 step << Warlock
     #hardcore
     .goto Ironforge,51.1,8.7,15,0 >> Enter the building
-    .goto Ironforge,50.4,6.3 
+    .goto Ironforge,50.4,6.3
     .trainer >> Train your class spells
 step << Warlock
     .goto Ironforge,53.2,7.8,15,0 >> Enter the building
@@ -1765,13 +1773,15 @@ step << !Paladin !Rogue
     .goto Ironforge,76.54,51.15,60,0
     .goto Ironforge,76.54,51.15,0
     .zone Stormwind City >> Take the tram to Stormwind City
-]],"Gnome/Dwarf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Alliance Hunter
-#name 1-6 Coldridge Valley (Hunter)
+#name name 1-6 Coldridge Valley (Hunter)
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf
 #next 6-11 Dun Morogh (Hunter)
 step << !Gnome !Dwarf
     #sticky
@@ -1833,7 +1843,7 @@ step
     .goto Dun Morogh,27.3,79.7,0
     >>Kill Frostmane Troll Whelps
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
-step 
+step
     .xp 4 >> Grind to 4
 step
     #requires Rockjaw
@@ -1902,13 +1912,15 @@ step
     .goto Dun Morogh,34.1,71.6,20,0
     .goto Dun Morogh,35.7,66.0,0
     .goto Dun Morogh,35.7,66.0,20 >>Go through the tunnel
-]],"Dwarf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Alliance Hunter
-#name 6-11 Dun Morogh (Hunter)
+#name name 6-11 Dun Morogh (Hunter)
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf Hunter
 #next 11-13 Loch Modan (Hunter)
 step
     #completewith ribs1
@@ -2277,13 +2289,15 @@ step
     .goto Dun Morogh,86.3,48.8
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
-]],"Dwarf Hunter")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Alliance Hunter
-#name 11-13 Loch Modan (Hunter)
+#name name 11-13 Loch Modan (Hunter)
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf
 #next 11-16 Darkshore
 
 step
@@ -2304,7 +2318,7 @@ step
     .accept 418 >> Accept Thelsamar Blood Sausages
 step
        .goto Loch Modan,35.5,48.4
-    .home >> Set your Hearthstone to Loch Modan 
+    .home >> Set your Hearthstone to Loch Modan
 step
     .goto Loch Modan,37.01,47.80
     .accept 6387 >> Accept Honor Students
@@ -2523,14 +2537,16 @@ step
     .zone Darkshore >>Head to the Menethil Harbor docks and take the boat to Darkshore
     >>Make a campfire and level cooking while you wait
     >>Train first aid while waiting for the boat, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-]],"Dwarf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #som
 #phase 3-6
 << Alliance !Hunter
-#name 1-6 Coldridge
+#name name 1-6 Coldridge
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf/Gnome
 #next 6-12 Dun Morogh
 step << !Gnome !Dwarf
     #completewith next
@@ -2580,7 +2596,7 @@ step << Warlock
     >>Kill Frostmane Novices inside the cave. Loot them for Feather Charms
     .goto Dun Morogh,29.0,82.6,50,0
     .goto Dun Morogh,29.0,81.2,60,0
-    .goto Dun Morogh,30.1,82.4  
+    .goto Dun Morogh,30.1,82.4
     .complete 1599,1 --Collect Feather Charm (x3)
 step << Warlock
     #softcore
@@ -2644,7 +2660,7 @@ step
     .accept 182 >> Accept The Troll Cave
 step << Paladin/Mage/Warlock
     .goto Dun Morogh,25.0,76.0
-    .accept 3364 >> Accept Scalding Mornbrew Delivery 
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
     >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << Paladin/Mage/Warlock
     #sticky
@@ -2818,14 +2834,16 @@ step
     .goto Dun Morogh,34.1,71.6,20,0
     .goto Dun Morogh,35.7,66.0,0
     .goto Dun Morogh,35.7,66.0,20 >>Go through the tunnel
-]],"Dwarf/Gnome")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #som
 #phase 3-6
 << Alliance !Hunter
-#name 6-12 Dun Morogh
+#name name 6-12 Dun Morogh
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf/Gnome
 #next 11-12 Elwynn Warlock << Warlock
 #next 11-14 Loch Modan << !Warlock
 step << Paladin/Warrior/Rogue
@@ -2877,7 +2895,7 @@ step << Warlock
 step << !Priest
     .goto Dun Morogh,48.3,57.0
     .xp 6 >> Grind to 6
-step 
+step
     .goto Dun Morogh,46.8,52.4
     .accept 384 >> Accept Beer Basted Boar Ribs
 step
@@ -2939,12 +2957,12 @@ step << Paladin
     .collect 2493,1 --Collect Wooden Mallet (1)
 step << Warrior/Rogue
     .goto Dun Morogh,45.3,51.9
-    .trainer >> Train Blacksmithing. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. 
-    >> If you want to go for your own professions, skip this step  
+    .trainer >> Train Blacksmithing. This will allow you to make +2 damage sharpening stones for your weapon which are very strong.
+    >> If you want to go for your own professions, skip this step
 step << Paladin
     .goto Dun Morogh,45.3,51.9
-    .trainer >> Train Blacksmithing. This will allow you to make +2 damage weightstones for your weapon which are very strong. 
-    >> If you want to go for your own professions, skip this step 
+    .trainer >> Train Blacksmithing. This will allow you to make +2 damage weightstones for your weapon which are very strong.
+    >> If you want to go for your own professions, skip this step
 step
     .goto Dun Morogh,46.0,51.7
     .accept 400 >> Accept Tools for Steelgrill
@@ -3444,15 +3462,17 @@ step
     .goto Dun Morogh,86.3,48.8
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
-]],"Dwarf/Gnome")
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+]])
+
+RXPGuides.RegisterGuide([[
 #classic
 #som
 #phase 3-6
 << Alliance Warlock
-#name 11-12 Elwynn Warlock
+#name name 11-12 Elwynn Warlock
+#group RestedXP Alliance 1-20
+#defaultfor Gnome/Dwarf
 #next 12-14 Loch Modan
-
 step
     >>Run through the tunnel into Loch
     .goto Loch Modan,22.1,73.1
@@ -3572,7 +3592,7 @@ step
 step
      #softcore
     #completewith next
-     >> Jump down the ledge (NOT the water) next to the flight master and kill yourself, make sure to life tap before jumping 
+     >> Jump down the ledge (NOT the water) next to the flight master and kill yourself, make sure to life tap before jumping
     .deathskip >>Spirit rez at Goldshire
 step
     .goto Elwynn Forest,42.10,65.90
@@ -3683,7 +3703,7 @@ step << skip
 step
     >>Head east to Redridge
     >>The guard patrols around the stumps a bit
-    .goto Elwynn Forest,91.7,72.3,150,0 
+    .goto Elwynn Forest,91.7,72.3,150,0
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> Accept Encroaching Gnolls
 step
@@ -3733,16 +3753,18 @@ step
     .isQuestComplete 86
 step
     .hs >> Hearth to Thelsamar
-]],"Gnome/Dwarf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #som
 #phase 3-6
 << Alliance !Hunter
-#name 12-14 Loch Modan
+#name name 12-14 Loch Modan
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf/Gnome
 #next 14-19 Darkshore
-    
+
 step << Paladin
     #completewith TroggT
     >>Keep 10 Linen Cloth in your bags for your paladin quest later
@@ -4059,12 +4081,12 @@ step << Warlock
     #softcore
     #requires Wand2
     .goto Ironforge,51.1,8.7,15,0 >> Enter the building
-    .goto Ironforge,50.4,6.3 
+    .goto Ironforge,50.4,6.3
     .trainer >> Train your class spells
 step << Warlock
     #hardcore
     .goto Ironforge,51.1,8.7,15,0 >> Enter the building
-    .goto Ironforge,50.4,6.3 
+    .goto Ironforge,50.4,6.3
     .trainer >> Train your class spells
 step << Warlock
     .goto Ironforge,53.2,7.8,15,0 >> Enter the building
@@ -4210,14 +4232,16 @@ step
     .zone Darkshore >>Head to the Menethil Harbor docks and take the boat to Darkshore
 	>>Make a campfire with the items from earlier and start cooking your Boar Meat until you have 10+ skill
     >>Train first aid while waiting for the boat, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-]],"Dwarf/Gnome")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #som
 #phase 3-6
 << Alliance Hunter
-#name 1-7 Coldridge Valley (Hunter)
+#name name 1-7 Coldridge Valley (Hunter)
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf
 #next 6-12 Dun Morogh (Hunter)
 step << !Gnome !Dwarf
     #sticky
@@ -4272,7 +4296,7 @@ step
     >>Speak to Grelin Whitebeard
     .turnin 234 >>Turn in Coldridge Valley Mail Delivery
     .accept 182 >>Accept The Troll Cave
-step 
+step
     .xp 4 >> Grind to 4
 step
     .goto Dun Morogh,25.0,75.9
@@ -4338,14 +4362,16 @@ step
     .goto Dun Morogh,34.1,71.6,20,0
     .goto Dun Morogh,35.7,66.0,0
     .goto Dun Morogh,35.7,66.0,20 >>Go through the tunnel
-]],"Dwarf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #som
 #phase 3-6
 << Alliance Hunter
-#name 6-12 Dun Morogh (Hunter)
+#name name 6-12 Dun Morogh (Hunter)
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf Hunter
 #next 11-14 Loch Modan (Hunter)
 step
     #completewith ribs1
@@ -4693,14 +4719,16 @@ step
     .goto Dun Morogh,86.3,48.8
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
-]],"Dwarf Hunter")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #som
 #phase 3-6
 << Alliance Hunter
-#name 11-14 Loch Modan (Hunter)
+#name name 11-14 Loch Modan (Hunter)
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf
 #next 11-16 Darkshore
 
 step
@@ -4718,7 +4746,7 @@ step
     .accept 1339 >> Accept Mountaineer Stormpike's Task
 step
        .goto Loch Modan,35.5,48.4
-    .home >> Set your Hearthstone to Loch Modan 
+    .home >> Set your Hearthstone to Loch Modan
 step
     .goto Loch Modan,37.01,47.80
     .accept 6387 >> Accept Honor Students
@@ -4853,5 +4881,4 @@ step
     .zone Darkshore >>Head to the Menethil Harbor docks and take the boat to Darkshore
     >>Make a campfire and level cooking while you wait
     >>Train first aid while waiting for the boat, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-]],"Dwarf")
-
+]])
