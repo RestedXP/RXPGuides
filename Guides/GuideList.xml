@@ -1,5 +1,5 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
-	
+
     <Script file="Guides/RestedXP Alliance 1-11 NightElf.lua"/>
 	<Script file="Guides/RestedXP Alliance 1-14 Human.lua"/>
 	<Script file="Guides/RestedXP Alliance 1-14 Dwarf-Gnome.lua"/>
@@ -12,8 +12,8 @@
     <Script file="Guides/Alliance-4.lua"/>
     <Script file="Guides/Alliance-5.lua"/>
 
-    
-    
+
+
     <Script file="Guides/RestedXP Horde 1-6 Undead.lua"/>
 	<Script file="Guides/RestedXP Horde 1-10 Tauren.lua"/>
 	<Script file="Guides/RestedXP Horde 1-13 Troll-Orc.lua"/>
@@ -25,7 +25,9 @@
     <Script file="Guides/Horde-3.lua"/>
     <Script file="Guides/Horde-4.lua"/>
     <Script file="Guides/Horde-5.lua"/>
-	
+
+    <Script file="Guides/farmguides.lua"/>
+
 	 <!-- <Script file="Guides/Alliance-6.lua"/>
         <Script file="Guides/Horde-6.lua"/> -->>
 

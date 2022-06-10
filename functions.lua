@@ -3104,3 +3104,47 @@ function RXP_.functions.emote(self,text,token,unitId,callback,...)
     end
 
 end
+
+function RXP_.functions.openmap(self,text,map,callback,...)
+    if type(self) == "string" then
+        local element = {}
+
+        local events = {...}
+        if callback then
+            element.callback = callback
+            element.event = events
+        end
+        element.text = text
+        element.textOnly = true
+
+        element.mapId = RXP_.mapId[map] or tonumber(map)
+        element.emote = token
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+
+    if not step.active then
+        element.mapOpened = false
+        return
+    end
+
+    local group = RXP_.currentGuide.group
+    local mapId = element.mapId
+
+    if element.callback then
+        if RXPG[group][element.callback](self,text,map,callback,...) then
+            WorldMapFrame:Show()
+            WorldMapFrame:SetMapID(mapId)
+        end
+    elseif not element.mapOpened then
+        element.mapOpened = true
+        WorldMapFrame:Show()
+        WorldMapFrame:SetMapID(mapId)
+    end
+
+end
+
+
+

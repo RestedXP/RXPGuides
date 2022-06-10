@@ -770,17 +770,22 @@ end
 local closestPoint
 local maxDist = math.huge
 
-function RXP_.UpdateGotoSteps()
-    local hideArrow
+local function DisplayLines(self)
     local currentMap = WorldMapFrame:GetMapID()
-    if lastMap ~= currentMap then
+    if lastMap ~= currentMap or self then
         for line in lineMapFramePool:EnumerateActive() do
             line:SetShown(line.step and line.step.active and line.zone ==
                               WorldMapFrame:GetMapID())
         end
     end
     lastMap = currentMap
+end
 
+hooksecurefunc(WorldMapFrame, "OnMapChanged", DisplayLines);
+
+function RXP_.UpdateGotoSteps()
+    local hideArrow = false
+    DisplayLines()
     if #RXP_.activeWaypoints == 0 then
         af:Hide()
         return
