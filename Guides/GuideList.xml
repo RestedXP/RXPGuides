@@ -6,27 +6,15 @@
     <Script file="Guides/RestedXP Alliance 1-23 Draenei.lua"/>
 	<Script file="Guides/RestedXP Alliance 11-23.lua"/>
     <Script file="Guides/RestedXP Alliance 23-30.lua"/>
-	<Script file="Guides/Alliance-1.lua"/>
-    <Script file="Guides/Alliance-2.lua"/>
-    <Script file="Guides/Alliance-3.lua"/>
-    <Script file="Guides/Alliance-4.lua"/>
-    <Script file="Guides/Alliance-5.lua"/>
+	<Script file="Guides/RestedXP Alliance Boosted 58-60.lua"/>
 
-    
-    
     <Script file="Guides/RestedXP Horde 1-6 Undead.lua"/>
 	<Script file="Guides/RestedXP Horde 1-10 Tauren.lua"/>
 	<Script file="Guides/RestedXP Horde 1-13 Troll-Orc.lua"/>
 	<Script file="Guides/RestedXP Horde 1-20 BloodElf.lua"/>
 	<Script file="Guides/RestedXP Horde 13-23 Barrens.lua"/>
 	<Script file="Guides/RestedXP Horde 20-30.lua"/>
-	<Script file="Guides/Horde-1.lua"/>
-    <Script file="Guides/Horde-2.lua"/>
-    <Script file="Guides/Horde-3.lua"/>
-    <Script file="Guides/Horde-4.lua"/>
-    <Script file="Guides/Horde-5.lua"/>
-	
-	 <!-- <Script file="Guides/Alliance-6.lua"/>
-        <Script file="Guides/Horde-6.lua"/> -->>
+	<Script file="Guides/RestedXP Horde Boosted 58-60.lua"/>
 
+    <Script file="Guides/Import.lua"/>
 </Ui>
