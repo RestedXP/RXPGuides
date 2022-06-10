@@ -4,7 +4,7 @@
 ## Author: RestedXP
 ## Version: 3.0.6
 ## OptionalDeps: Questie, unitscan
-## SavedVariables: RXPData
+## SavedVariables: RXPData, RXPImportedGuides
 ## SavedVariablesPerCharacter: RXPCData
 
 libs\HereBeDragons\LibStub\LibStub.lua

@@ -1,6 +1,8 @@
 RXP_.guides = {}
 RXP_.guideList = {}
 
+RXPImportedGuides = RXP_.guides
+
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
@@ -64,7 +66,8 @@ function RXPG.RegisterGuide(guideGroup, text, defaultFor)
 
     if not (guideGroup and text) then
         text = guideGroup
-        guideGroup = text:match("%c%s*#group%s+(.-)%s*%c"):gsub("%s*%-%-.*$","")
+        guideGroup = text:match("%c%s*#group%s+(.-)%s*%c")
+                         :gsub("%s*%-%-.*$", "")
     end
 
     RXPG.RegisterGroup(guideGroup)
