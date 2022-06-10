@@ -1,7 +1,7 @@
 RXP_.guides = {}
 RXP_.guideList = {}
 
-RXPImportedGuides = RXP_.guides
+RXPImportedGuides = RXPImportedGuides or {}
 
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
@@ -59,8 +59,68 @@ function RXPG.RegisterGroup(guideGroup, parentGroup)
     end
 end
 
+-- Don't cache registered guide, aka Guide-N.lua
 function RXPG.RegisterGuide(guideGroup, text, defaultFor)
+    local guide = RXPG.ParseGuide(guideGroup, text, defaultFor)
+
+    -- Not applicable (e.g. wrong faction), rely on upstream functions to report parsing errors
+    if not guide then return end
+
+    RXPG.RegisterGroup(guide.group)
+
+    if not RXP_.guideList[guide.group] then
+        RXP_.guideList[guide.group] = {}
+        RXP_.guideList[guide.group].names_ = {}
+    end
+
+    local list = RXP_.guideList[guide.group]
+
+    table.insert(RXP_.guides, guide)
+
+    if list[guide.name] then
+        suffix = suffix + 1
+        guide.name = guide.name .. tostring(suffix)
+    end
+
+    table.insert(list.names_, guide.name)
+
+    list[guide.name] = #RXP_.guides
+
+    if guide.group:sub(1, 1) ~= "*" and guide.defaultFor and
+        not RXP_.defaultGuide then RXP_.defaultGuide = guide end
+
+    return guide
+end
+
+-- Parse and cache one-time guide, aka Import.lua or base64
+function RXPG.ImportGuide(guideGroup, text, defaultFor)
+    local importedGuide = RXPG.RegisterGuide(guideGroup, text, defaultFor)
+
+    -- Not applicable (e.g. wrong faction), rely on upstream functions to report parsing errors
+    if not importedGuide then return end
+
+    if not RXPImportedGuides[importedGuide.group] then
+        RXPImportedGuides[importedGuide.group] = {}
+    end
+
+    local list = RXPImportedGuides[importedGuide.group]
+
+    table.insert(RXPImportedGuides, importedGuide)
+
+    if RXPImportedGuides[importedGuide.name] then
+        suffix = suffix + 1
+        importedGuide.name = importedGuide.name .. tostring(suffix)
+    end
+
+    -- table.insert(list.names_, importedGuide.name)
+
+    -- list[importedGuide.name] = #RXP_.guides
+    -- TODO load RXPImportedGuides into RXP_.guideList and RXP_.guides
+end
+
+function RXPG.ParseGuide(guideGroup, text, defaultFor)
     if not guideGroup then return end
+
     local playerLevel = UnitLevel("player")
     local parentGroup
 
@@ -69,8 +129,6 @@ function RXPG.RegisterGuide(guideGroup, text, defaultFor)
         guideGroup = text:match("%c%s*#group%s+(.-)%s*%c")
                          :gsub("%s*%-%-.*$", "")
     end
-
-    RXPG.RegisterGroup(guideGroup)
 
     local guide = {}
 
@@ -81,6 +139,9 @@ function RXPG.RegisterGuide(guideGroup, text, defaultFor)
     RXP_.guide = guide
 
     guide.group = guideGroup
+
+    RXPG.RegisterGroup(guide.group)
+
     guide.unitscan = {}
     local currentStep = 0
     guide.steps = {}
@@ -264,24 +325,11 @@ function RXPG.RegisterGuide(guideGroup, text, defaultFor)
     if guide.next then
         guide.next = guide.next:gsub("^(%d)-(%d%d?)", RXP_.affix)
     end
+    if not guide.version then guide.version = '0' end
 
-    if not RXP_.guideList[guide.group] then
-        RXP_.guideList[guide.group] = {}
-        RXP_.guideList[guide.group].names_ = {}
-    end
-    local list = RXP_.guideList[guide.group]
-    table.insert(RXP_.guides, guide)
-    if list[guide.name] then
-        suffix = suffix + 1
-        guide.name = guide.name .. tostring(suffix)
-    end
-    table.insert(list.names_, guide.name)
-    list[guide.name] = #RXP_.guides
-    if guideGroup:sub(1, 1) ~= "*" and defaultFor and not RXP_.defaultGuide then
-        RXP_.defaultGuide = guide
-    end
     RXP_.guide = nil
+
+    return guide
 end
 
 -- parser
-
