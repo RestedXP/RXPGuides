@@ -5,3 +5,6 @@ RXPGuides-Dev.toc
 
 #Ignore building guide packages
 GuidesRelease
+
+#Ignore local import testing
+Import.lua
