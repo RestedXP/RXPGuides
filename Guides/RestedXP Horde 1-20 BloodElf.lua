@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 << Horde
-#name name 1-6 Eversong Woods
+#name 1-6 Eversong Woods
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor BloodElf
@@ -357,7 +357,7 @@ step
 
 RXPGuides.RegisterGuide([[
 << Horde
-#name name 6-10 Eversong Woods
+#name 6-10 Eversong Woods
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor BloodElf/Scourge
@@ -978,7 +978,7 @@ step << Warrior
 
 RXPGuides.RegisterGuide([[
 << Horde
-#name name 10-20 Eversong Woods / Ghostlands
+#name 10-20 Eversong Woods / Ghostlands
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor !Warrior !Shaman

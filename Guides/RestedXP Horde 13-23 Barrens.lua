@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 << Horde
-#name name 13-23 The Barrens
+#name 13-23 The Barrens
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor Shaman/Warrior

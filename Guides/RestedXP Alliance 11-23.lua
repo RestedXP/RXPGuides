@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 << Alliance !Warlock
-#name name 11-14 Darkshore
+#name 11-14 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor !Draenei !Warlock
@@ -239,7 +239,7 @@ step
 
 RXPGuides.RegisterGuide([[
 << Alliance
-#name name 14-20 Bloodmyst
+#name 14-20 Bloodmyst
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor !Draenei
@@ -772,7 +772,7 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 << Alliance !Warlock
-#name name 20-21 Darkshore
+#name 20-21 Darkshore
 #version 1
 #group RestedXP Alliance 20-32
 #defaultfor !Draenei
@@ -1040,7 +1040,7 @@ step
 
 RXPGuides.RegisterGuide([[
 << Alliance !Warlock
-#name name 21-23 Ashenvale
+#name 21-23 Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
 #defaultfor !Draenei
@@ -1194,7 +1194,7 @@ step
 
 RXPGuides.RegisterGuide([[
 << Alliance Warlock
-#name name 20-23 Darkshore/Ashenvale
+#name 20-23 Darkshore/Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
 #next 23-24 Wetlands

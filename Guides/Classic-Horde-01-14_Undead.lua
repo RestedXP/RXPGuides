@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Horde
-#name name 1-11 Tirisfal Glades
+#name 1-11 Tirisfal Glades
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Scourge
@@ -1257,7 +1257,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Horde
-#name name 11-14 Silverpine Forest
+#name 11-14 Silverpine Forest
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Undead/Troll Rogue/Orc Rogue

@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Mage
-#name name 12-17 The Barrens AoE
+#name 12-17 The Barrens AoE
 #version 1
 #group RestedXP Horde Mage AoE
 #defaultfor Horde Mage
@@ -558,7 +558,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Mage
-#name name 17-21 Stonetalon/Barrens AoE
+#name 17-21 Stonetalon/Barrens AoE
 #version 1
 #group RestedXP Horde Mage AoE
 #defaultfor Horde Mage

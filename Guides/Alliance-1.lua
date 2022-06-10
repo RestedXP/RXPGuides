@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 << Alliance
-#name name Boosted Character 58-60
+#name Boosted Character 58-60
 #version 1
 #group RestedXP Alliance Boosted 58-60
 #defaultfor 58Boost

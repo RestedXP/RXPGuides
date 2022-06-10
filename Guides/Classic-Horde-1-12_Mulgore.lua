@@ -2,7 +2,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Horde
-#name name 1-12 Mulgore
+#name 1-12 Mulgore
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Tauren
@@ -957,7 +957,7 @@ RXPGuides.RegisterGuide([[
 #som
 #phase 3-6
 << Horde
-#name name 1-13 Mulgore
+#name 1-13 Mulgore
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Tauren

@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 << Horde
-#name name 1-10 Mulgore
+#name 1-10 Mulgore
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor Tauren
@@ -858,7 +858,7 @@ step << Druid/Hunter
 
 RXPGuides.RegisterGuide([[
 << Horde
-#name name 10-13 Mulgore
+#name 10-13 Mulgore
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor Tauren

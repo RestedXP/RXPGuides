@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 << Alliance
-#name name 23-24 Wetlands
+#name 23-24 Wetlands
 #version 1
 #group RestedXP Alliance 20-32
 #next 24-27 Redridge/Duskwood
@@ -159,7 +159,7 @@ step
 
 RXPGuides.RegisterGuide([[
 << Alliance
-#name name 24-27 Redridge/Duskwood
+#name 24-27 Redridge/Duskwood
 #version 1
 #group RestedXP Alliance 20-32
 #next 27-30 Wetlands/Hillsbrad
@@ -781,7 +781,7 @@ step
 
 RXPGuides.RegisterGuide([[
 << Alliance
-#name name 27-30 Wetlands/Hillsbrad
+#name 27-30 Wetlands/Hillsbrad
 #version 1
 #group RestedXP Alliance 20-32
 #next 30-32 Duskwood/STV
@@ -1112,7 +1112,7 @@ step
 
 RXPGuides.RegisterGuide([[
 << Alliance
-#name name 30-32 Duskwood/STV
+#name 30-32 Duskwood/STV
 #version 1
 #group RestedXP Alliance 20-32
 #next RestedXP Alliance 32-47\32-33 Shimmering Flats

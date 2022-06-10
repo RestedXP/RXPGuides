@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Horde
-#name name 1-10 Durotar
+#name 1-10 Durotar
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Troll/Orc
@@ -1228,7 +1228,7 @@ step << Warrior/Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Horde
-#name name 10-12 Durotar
+#name 10-12 Durotar
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Troll/Orc
