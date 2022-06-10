@@ -2,6 +2,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name name 1-11 Tirisfal Glades
+#version 1
 #group RestedXP Horde 1-22
 #defaultfor Scourge
 #next 11-14 Silverpine Forest
@@ -1257,6 +1258,7 @@ RXPGuides.RegisterGuide([[
 #era/som
 << Horde
 #name name 11-14 Silverpine Forest
+#version 1
 #group RestedXP Horde 1-22
 #defaultfor Undead/Troll Rogue/Orc Rogue
 #next 12-17 The Barrens

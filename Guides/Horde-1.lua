@@ -1,6 +1,7 @@
 RXPGuides.RegisterGuide([[
 << Horde
 #name name Boosted Character 58-60
+#version 1
 #group RestedXP Horde Boosted 58-60
 #defaultfor 58Boost
 #next RestedXP Horde 60-70\60-61 Hellfire Peninsula

@@ -1,6 +1,7 @@
 RXPGuides.RegisterGuide([[
 << Horde
 #name name 1-10 Durotar
+#version 1
 #group RestedXP Horde 1-30
 #defaultfor Orc/Troll
 #next 10-13 Durotar << Warrior/Shaman
@@ -1085,6 +1086,7 @@ step << Paladin
 RXPGuides.RegisterGuide([[
 << Horde
 #name name 10-13 Durotar
+#version 1
 #group RestedXP Horde 1-30
 #defaultfor Warrior !Tauren/Shaman !Tauren
 #next 13-23 The Barrens

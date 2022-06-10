@@ -2,6 +2,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name name 1-10 Durotar
+#version 1
 #group RestedXP Horde 1-22
 #defaultfor Troll/Orc
 #next 10-12 Durotar
@@ -1228,6 +1229,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name name 10-12 Durotar
+#version 1
 #group RestedXP Horde 1-22
 #defaultfor Troll/Orc
 #next 11-14 Silverpine Forest << Troll Rogue/Orc Rogue

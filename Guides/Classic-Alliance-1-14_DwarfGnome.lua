@@ -3,6 +3,7 @@ RXPGuides.RegisterGuide([[
 #era/som
 << Alliance !Hunter
 #name name 1-6 Coldridge Valley
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf/Gnome
 #next 6-11 Dun Morogh
@@ -321,6 +322,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance !Hunter
 #name name 6-11 Dun Morogh
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf/Gnome
 #next 10-11 Elwynn (Dwarf/Gnome)
@@ -1136,6 +1138,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance !Hunter
 #name name 10-11 Elwynn (Dwarf/Gnome)
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
 #next 11-14 Loch Modan (Dwarf/Gnome)
@@ -1504,6 +1507,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance !Hunter
 #name name 11-14 Loch Modan (Dwarf/Gnome)
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
 #next 13-15 Westfall
@@ -1780,6 +1784,7 @@ RXPGuides.RegisterGuide([[
 #era/som
 << Alliance Hunter
 #name name 1-6 Coldridge Valley (Hunter)
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf
 #next 6-11 Dun Morogh (Hunter)
@@ -1919,6 +1924,7 @@ RXPGuides.RegisterGuide([[
 #era/som
 << Alliance Hunter
 #name name 6-11 Dun Morogh (Hunter)
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf Hunter
 #next 11-13 Loch Modan (Hunter)
@@ -2296,6 +2302,7 @@ RXPGuides.RegisterGuide([[
 #era/som
 << Alliance Hunter
 #name name 11-13 Loch Modan (Hunter)
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf
 #next 11-16 Darkshore
@@ -2545,6 +2552,7 @@ RXPGuides.RegisterGuide([[
 #phase 3-6
 << Alliance !Hunter
 #name name 1-6 Coldridge
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf/Gnome
 #next 6-12 Dun Morogh
@@ -2842,6 +2850,7 @@ RXPGuides.RegisterGuide([[
 #phase 3-6
 << Alliance !Hunter
 #name name 6-12 Dun Morogh
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf/Gnome
 #next 11-12 Elwynn Warlock << Warlock
@@ -3470,6 +3479,7 @@ RXPGuides.RegisterGuide([[
 #phase 3-6
 << Alliance Warlock
 #name name 11-12 Elwynn Warlock
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
 #next 12-14 Loch Modan
@@ -3761,6 +3771,7 @@ RXPGuides.RegisterGuide([[
 #phase 3-6
 << Alliance !Hunter
 #name name 12-14 Loch Modan
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf/Gnome
 #next 14-19 Darkshore
@@ -4240,6 +4251,7 @@ RXPGuides.RegisterGuide([[
 #phase 3-6
 << Alliance Hunter
 #name name 1-7 Coldridge Valley (Hunter)
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf
 #next 6-12 Dun Morogh (Hunter)
@@ -4370,6 +4382,7 @@ RXPGuides.RegisterGuide([[
 #phase 3-6
 << Alliance Hunter
 #name name 6-12 Dun Morogh (Hunter)
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf Hunter
 #next 11-14 Loch Modan (Hunter)
@@ -4727,6 +4740,7 @@ RXPGuides.RegisterGuide([[
 #phase 3-6
 << Alliance Hunter
 #name name 11-14 Loch Modan (Hunter)
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf
 #next 11-16 Darkshore

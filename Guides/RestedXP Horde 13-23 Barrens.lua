@@ -1,6 +1,7 @@
 RXPGuides.RegisterGuide([[
 << Horde
 #name name 13-23 The Barrens
+#version 1
 #group RestedXP Horde 1-30
 #defaultfor Shaman/Warrior
 #next 23-27 Hillsbrad / Ashenvale

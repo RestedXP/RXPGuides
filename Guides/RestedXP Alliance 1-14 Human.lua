@@ -1,6 +1,7 @@
 RXPGuides.RegisterGuide([[
 << Alliance
 #name name 1-11 Elwynn Forest
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #next 12-14 Loch Modan << Warlock
@@ -1141,9 +1142,11 @@ step
 RXPGuides.RegisterGuide([[
 << Alliance
 #name name 11-12 Loch Modan << !Warlock
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #name name 12-14 Loch Modan << Warlock
+#version 1
 #group
 #defaultfor
 #next 14-14 Darkshore << Warlock
@@ -1448,6 +1451,7 @@ step
 RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name name 14-14 Darkshore
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human Warlock
 #next 14-20 Bloodmyst

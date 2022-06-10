@@ -2,6 +2,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Mage
 #name name 12-18 Darkshore Mage AoE
+#version 1
 #group RestedXP Alliance Mage
 #defaultfor Alliance Mage
 #next 18-21 Redridge Mage AoE
@@ -695,6 +696,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Mage
 #name name 18-21 Redridge Mage AoE
+#version 1
 #group RestedXP Alliance Mage
 #defaultfor Alliance Mage
 #next 21-22 Duskwood Mage AoE

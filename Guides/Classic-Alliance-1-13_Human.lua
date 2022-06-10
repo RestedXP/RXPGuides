@@ -3,6 +3,7 @@ RXPGuides.RegisterGuide([[
 #era/som
 << Alliance
 #name name 1-11 Elwynn Forest
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #next 11-13 Loch Modan
@@ -1225,6 +1226,7 @@ RXPGuides.RegisterGuide([[
 #era/som
 << Alliance
 #name name 11-13 Loch Modan
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #next 13-15 Westfall
@@ -1532,6 +1534,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #name name 1-13 Elwynn Forest
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #next 13-14 Loch Modan
@@ -2656,6 +2659,7 @@ RXPGuides.RegisterGuide([[
 #phase 3-6
 << Alliance
 #name name 13-14 Loch Modan
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #next 14-19 Darkshore

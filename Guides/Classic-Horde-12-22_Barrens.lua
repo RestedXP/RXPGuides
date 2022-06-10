@@ -2,6 +2,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name name 12-17 The Barrens
+#version 1
 #group RestedXP Horde 1-22
 #next 17-22 Stonetalon/Barrens/Ashenvale
 
@@ -885,6 +886,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name name 17-22 Stonetalon/Barrens/Ashenvale
+#version 1
 #group "RestedXP Horde 1-22
 #next RestedXP Horde 22-30\22-24 Hillsbrad
 

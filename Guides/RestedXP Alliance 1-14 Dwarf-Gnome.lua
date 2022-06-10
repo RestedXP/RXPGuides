@@ -1,6 +1,7 @@
 RXPGuides.RegisterGuide([[
 << Alliance !Warlock !Hunter
 #name name 1-11 Dun Morogh
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
 #next 11-14 Darkshore
@@ -1340,6 +1341,7 @@ step
 RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name name 1-12 Dun Morogh
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome Warlock
 #next 12-14 Loch Modan Gnome
@@ -2353,6 +2355,7 @@ step
 RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name name 12-14 Loch Modan Gnome
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome Warlock
 #next 14-20 Bloodmyst
@@ -2685,6 +2688,7 @@ step
 RXPGuides.RegisterGuide([[
 << Alliance Hunter
 #name name 1-11 Dun Morogh
+#version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf Hunter
 #next 11-14 Darkshore
