@@ -85,6 +85,7 @@ end
 function RXPG_init()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
+    RXPImportedGuides = RXPImportedGuides or {}
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
     RXPCData.hardcore = (RXP_.version == "CLASSIC") and RXPCData.hardcore
     if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
@@ -552,7 +553,7 @@ RXP_.scheduledTasks = {}
 
 function RXP_.UpdateScheduledTasks()
     local cTime = GetTime()
-    for ref,time in pairs(RXP_.scheduledTasks) do
+    for ref, time in pairs(RXP_.scheduledTasks) do
         if cTime > time then
             local group = RXP_.currentGuide.group
             local element = ref.element or ref
@@ -563,7 +564,7 @@ function RXP_.UpdateScheduledTasks()
     end
 end
 
-function RXP_.ScheduleTask(ref,time)
+function RXP_.ScheduleTask(ref, time)
     if type(ref) == "table" and type(time) == "number" then
         RXP_.scheduledTasks[ref] = time
     end
