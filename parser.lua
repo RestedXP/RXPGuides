@@ -37,6 +37,7 @@ end
 RXP_.applies = applies
 RXP_.farmGuides = 0
 local RXPG = RXPGuides
+local RXPIG = RXPImportedGuides
 local version = strlower(RXP_.version)
 local suffix = 1
 
@@ -59,12 +60,12 @@ function RXPG.RegisterGroup(guideGroup, parentGroup)
     end
 end
 
--- Don't cache registered guide, aka Guide-N.lua
-function RXPG.RegisterGuide(guideGroup, text, defaultFor)
-    local guide = RXPG.ParseGuide(guideGroup, text, defaultFor)
-
+-- Load guide into addon options
+function RXPG.LoadGuide(guide)
     -- Not applicable (e.g. wrong faction), rely on upstream functions to report parsing errors
-    if not guide then return end
+    if not guide then return false end
+
+    -- TODO only import if cached.version < imported.version
 
     RXPG.RegisterGroup(guide.group)
 
@@ -89,34 +90,41 @@ function RXPG.RegisterGuide(guideGroup, text, defaultFor)
     if guide.group:sub(1, 1) ~= "*" and guide.defaultFor and
         not RXP_.defaultGuide then RXP_.defaultGuide = guide end
 
-    return guide
+    return true
+end
+
+-- Don't cache registered guide, aka Guide-N.lua
+-- They are part of the base bundle, so caching is a waste of RAM
+function RXPG.RegisterGuide(guideGroup, text, defaultFor)
+    local guide = RXPG.ParseGuide(guideGroup, text, defaultFor)
+
+    RXPG.LoadGuide(guide)
 end
 
 -- Parse and cache one-time guide, aka Import.lua or base64
 function RXPG.ImportGuide(guideGroup, text, defaultFor)
-    local importedGuide = RXPG.RegisterGuide(guideGroup, text, defaultFor)
+    local importedGuide = RXPG.ParseGuide(guideGroup, text, defaultFor)
 
-    -- Not applicable (e.g. wrong faction), rely on upstream functions to report parsing errors
-    if not importedGuide then return end
+    -- If guide successfully loads, cache
+    if RXPG.LoadGuide(importedGuide) then RXPG.CacheGuide(importedGuide) end
+end
 
-    if not RXPImportedGuides[importedGuide.group] then
-        RXPImportedGuides[importedGuide.group] = {}
+function RXPG.CacheGuide(guide)
+    -- Upgrade RXPImportedGuides and handle breaking DB changes
+    if not RXPIG.guides or not RXPIG.guideList then
+        print('Resetting RXPIG')
+        RXPIG = {guides = {}, guideList = {}}
     end
 
-    local list = RXPImportedGuides[importedGuide.group]
+    print('Caching ' .. guide.displayName)
+    RXPIG = guide
+end
 
-    table.insert(RXPImportedGuides, importedGuide)
-
-    if RXPImportedGuides[importedGuide.name] then
-        suffix = suffix + 1
-        importedGuide.name = importedGuide.name .. tostring(suffix)
+function RXPG.LoadCachedGuides()
+    for i, guide in pairs(RXPIG) do
+        print("i: " .. i)
+        print("guide: " .. guide.displayName)
     end
-
-    -- table.insert(list.names_, importedGuide.name)
-
-    -- list[importedGuide.name] = #RXP_.guides
-    -- TODO load RXPImportedGuides into RXP_.guideList and RXP_.guides
-    -- TODO only import is cached.version < imported.version
 end
 
 function RXPG.ParseGuide(guideGroup, text, defaultFor)
