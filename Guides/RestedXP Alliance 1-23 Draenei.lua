@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-12 Azuremyst Isle
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Draenei
 #next 11-20 Bloodmyst (Draenei)
 step
     .goto Azuremyst Isle,82.9,44.0
@@ -11,7 +14,7 @@ step << Shaman
 	.vendor >> Kill 2-3 mobs for vendor trash (worth 10c+), then vendor trash inside
 step << Shaman
     .goto Azuremyst Isle,79.3,49.1
-	.trainer >> Train Rockbiter Weapon	
+	.trainer >> Train Rockbiter Weapon
 step
     .goto Azuremyst Isle,80.4,45.9
     .turnin 9279 >> Turn in You Survived!
@@ -59,7 +62,7 @@ step << Shaman
     .goto Azuremyst Isle,79.3,49.1
     .accept 9449 >> Accept Call of Earth
 	.turnin 9421 >> Turn in Shaman Training
-	.trainer >> Train Earth Shock 
+	.trainer >> Train Earth Shock
 step << Shaman
     .goto Azuremyst Isle,71.3,39.1
     .turnin 9449 >> Turn in Call of Earth
@@ -600,11 +603,14 @@ step
     .complete 9562,1 --Collect Stillpine Grain (x5)
     >>Kill and loot the named Murloc. Be careful as he does a LOT of damage
     .accept 9564 >> Accept Gurf's Dignity
-]],"Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 11-20 Bloodmyst (Draenei)
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Draenei
 #next RestedXP Alliance 20-32\20-21 Darkshore (Draenei)
 step
     .goto Bloodmyst Isle,63.5,88.8
@@ -719,7 +725,7 @@ step
     .goto Azuremyst Isle,46.9,70.3
     .complete 9663,3 --Admiral Odesyus Warned
 step
-    .goto Azuremyst Isle,46.9,70.3    
+    .goto Azuremyst Isle,46.9,70.3
     .turnin 9515 >> Warlord Sriss'tiz
     .isQuestComplete 9515
 step << Paladin
@@ -819,14 +825,14 @@ step
     .goto Bloodmyst Isle,53.3,57.6
     .turnin 9576 >> Turn in Cruelfin's Necklace
     .turnin 9629 >> Turn in Catch and Release
-    .accept 9574 >> Accept Victims of Corruption 
+    .accept 9574 >> Accept Victims of Corruption
 step
     .goto Bloodmyst Isle,50.6,74.4
 	>>Kill treants around this area
     .complete 9574,1 --Collect Crystallized Bark (x6)
 step
     .goto Bloodmyst Isle,53.3,57.8
-    .turnin 9574 >> Turn in Victims of Corruption 
+    .turnin 9574 >> Turn in Victims of Corruption
 step
     .goto Bloodmyst Isle,55.1,59.2
     .accept 9646 >> Accept WANTED: Deathclaw
@@ -1349,7 +1355,7 @@ step << Shaman
     .goto Bloodmyst Isle,57.7,53.9
     .fly The Exodar>> Fly to The Exodar
 step << Hunter/Mage/Paladin
-	.trainer >> Train spells in Exodar 
+	.trainer >> Train spells in Exodar
 	.train 15147 >>Learn Growl Rank 3 from the pet trainer <<Hunter
 step << Priest
     Enter The Exodar and buy a Burning Wand from the vendor
@@ -1368,11 +1374,14 @@ step
 	.goto Azuremyst Isle,21.4,54.0,20 >> Go to the docks
 step
     .zone Darkshore >>Get onto the boat when it comes and travel to Darkshore
-]],"Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 20-21 Darkshore (Draenei)
+#version 1
+#group RestedXP Alliance 20-32
+#defaultfor Draenei
 #next 21-23 Ashenvale (Draenei)
 step
     .goto Darkshore,36.1,44.9
@@ -1530,11 +1539,14 @@ step
 	#label end
     .complete 945,1 --Escort Therylune
 
-]],"Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 21-23 Ashenvale (Draenei)
+#version 1
+#group RestedXP Alliance 20-32
+#defaultfor Draenei
 #next 23-24 Wetlands
 step
     .goto Ashenvale,26.2,38.6
@@ -1686,5 +1698,4 @@ step << !Hunter
     .fly Auberdine >>Fly back to Auberdine
 step
     .goto Darkshore,32.4,43.8,30 >> Take the boat to Wetlands
-]],"Draenei")
-
+]])

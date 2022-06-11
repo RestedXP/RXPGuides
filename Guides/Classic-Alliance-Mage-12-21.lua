@@ -1,7 +1,10 @@
-RXPGuides.RegisterGuide("RestedXP Alliance Mage",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Alliance Mage
 #name 12-18 Darkshore Mage AoE
+#version 1
+#group RestedXP Alliance Mage
+#defaultfor Alliance Mage
 #next 18-21 Redridge Mage AoE
 
 step
@@ -86,7 +89,7 @@ step
     .complete 1001,1 --Thresher Eye (3)
 step
     #completewith next
-    .goto Darkshore,33.70,42.45,60 >> Run up to the docks then jump in the water at the intersection 
+    .goto Darkshore,33.70,42.45,60 >> Run up to the docks then jump in the water at the intersection
 step
     .goto Darkshore,31.86,46.33
     >>Click on the sea turtle head underwater
@@ -461,7 +464,7 @@ step
     .turnin 729 >> Turn in The Absent Minded Prospector
 step
     .goto Darkshore,35.72,83.69
-     >>This quest is VERY hard. Do it with another player if you can. 
+     >>This quest is VERY hard. Do it with another player if you can.
      >> Start the escort quest
     .accept 731 >> Accept The Absent Minded Prospector
 step
@@ -509,7 +512,7 @@ step
      >> Click on the book on top of the pedestal. Be careful that Therylune doesnt run off if you started it already
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
-step     
+step
     #label Therylune
     #requires TheryluneE
     >> Finish the escort quest
@@ -610,7 +613,7 @@ step
     .goto Darkshore,33.17,40.17,40
 step
     .isOnQuest 741
-    .zone Teldrassil >> Take the boat to Darnassus 
+    .zone Teldrassil >> Take the boat to Darnassus
 step
     .isOnQuest 741
     .goto Teldrassil,55.95,89.86,30 >> Go through the purple portal
@@ -661,7 +664,7 @@ step
     .goto Stormwind City,55.21,7.04
     .vendor >> Buy a Bronze Tube if you haven't
     >>This is a limited supply item, skip this step if the npc doesn't have it
-    .bronzetube 
+    .bronzetube
 step << Human
     #label FlyAndy
     .goto Elwynn Forest,32.45,50.16
@@ -687,12 +690,15 @@ step
 step
     .goto Elwynn Forest,91.42,73.59,125,0
     .zone Redridge Mountains >> Run all the way east to Redridge Mountains. Sort out your keybinds en route, making sure you have your spells comfortably on your bars
-]],"Alliance Mage")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance Mage",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Alliance Mage
 #name 18-21 Redridge Mage AoE
+#version 1
+#group RestedXP Alliance Mage
+#defaultfor Alliance Mage
 #next 21-22 Duskwood Mage AoE
 
 step
@@ -997,4 +1003,4 @@ step
 step
     .goto Redridge Mountains,6.50,91.18,90,0
     .zone Duskwood >> Travel to Duskwood
-]],"Alliance Mage")
+]])
