@@ -1,8 +1,6 @@
 RXP_.guides = {}
 RXP_.guideList = {}
 
-RXPImportedGuides = RXPImportedGuides or {}
-
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
