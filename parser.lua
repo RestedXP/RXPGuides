@@ -127,8 +127,15 @@ function RXPG.ParseGuide(guideGroup, text, defaultFor)
 
     if not (guideGroup and text) then
         text = guideGroup
-        guideGroup = text:match("%c%s*#group%s+(.-)%s*%c")
-                         :gsub("%s*%-%-.*$", "")
+        guideGroup = text:match("^%s*#group%s+(.-)%s*%c") or
+                         text:match("%c%s*#group%s+(.-)%s*%c")
+        if guideGroup then
+            guideGroup = guideGroup:gsub("%s*%-%-.*$", "")
+        else
+            print("Error parsing guide: Invalid guide group",
+                  text:match("#name%s+.-%s*%c"))
+            return
+        end
     end
 
     local guide = {}
@@ -319,6 +326,7 @@ function RXPG.ParseGuide(guideGroup, text, defaultFor)
         end
         RXPG.RegisterGroup(guideGroup, parentGroup)
         guide.boost58 = boost58
+        guide.group = guideGroup
     end
 
     guide.displayName = guide.name

@@ -148,8 +148,6 @@ hooksecurefunc(ScriptErrorsFrame, "DisplayMessage",
 end)
 
 local startTime = GetTime()
-local questProgressTimer = 0
-local questTimer = 0
 
 function RXP_.QuestAutoAccept(title)
     if title then
@@ -477,12 +475,14 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
                                          RXPCData.currentGuideName)
         if not guide and RXPData.autoLoadGuides then
             guide = RXP_.defaultGuide
-            if RXP_.version ~= "CLASSIC" and
+            if RXP_.version == "TBC" and
                 (UnitLevel("player") == 58 and not guide.boost58) then
                 guide = nil
             end
         end
-        RXP_:LoadGuide(guide, true)
+        if not RXPCData.GA then
+            RXP_:LoadGuide(guide, true)
+        end
         if not RXP_.currentGuide then
             RXPFrame:SetHeight(20)
             RXPFrame.BottomFrame.UpdateFrame()
