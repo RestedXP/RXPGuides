@@ -2,7 +2,6 @@ local addonName = ...
 
 local RXPG = RXPGuides
 local _, class = UnitClass("player")
-local _, race = UnitRace("player")
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
@@ -972,6 +971,7 @@ function RXP_:LoadGuide(guide, OnLoad)
     local totalHeight = 0
     local nframes = 0
 
+    ClearTable(RXP_.scheduledTasks)
     ClearTable(RXP_.stepUpdateList)
     RXP_.currentGuide = {}
 
