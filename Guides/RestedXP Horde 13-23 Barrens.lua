@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
 << Horde
 #name 13-23 The Barrens
+#version 1
+#group RestedXP Horde 1-30
+#defaultfor Shaman/Warrior
 #next 23-27 Hillsbrad / Ashenvale
 step << Tauren Shaman
     .goto Durotar,50.8,43.6
@@ -297,7 +300,7 @@ step
 step
     #sticky
     #completewith next
->>Kill Plainstriders. Loot them for their Kidneys 
+>>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
     .goto The Barrens,45.4,28.4
@@ -336,7 +339,7 @@ step
 step
     #sticky
     #completewith next
->>Kill Plainstriders. Loot them for their Kidneys 
+>>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
 .goto The Barrens,54.3,12.3,40,0
@@ -403,7 +406,7 @@ step
 step
     #sticky
     #completewith LionTusks
->>Kill Plainstriders. Loot them for their Kidneys 
+>>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
 .goto The Barrens,39.8,17.3,40,0
@@ -902,7 +905,7 @@ step << Warrior
     .accept 1823 >>Accept Speak with Ruga
     .train 845 >>Train Cleave
     .train 6547 >>Train Rend r3
-    .train 20230 >>Train Retaliation 
+    .train 20230 >>Train Retaliation
 step
     .goto Thunder Bluff,46.9,49.9
     .fly Crossroads >>Fly to Crossroads
@@ -1147,4 +1150,4 @@ step
     .abandon 3924 >>Abandon Samophlange Manual
 step
 .goto Orgrimmar,49.1,94.5,30    >>Exit Orgrimmar
-]],"Shaman/Warrior")
+]])

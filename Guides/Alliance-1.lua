@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance Boosted 58-60",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name Boosted Character 58-60
+#version 1
+#group RestedXP Alliance Boosted 58-60
+#defaultfor 58Boost
 #next RestedXP Alliance 60-70\59-61 Hellfire Peninsula
 step << Warrior
 .accept 64028 >>Accept A New Beginning
@@ -643,4 +646,4 @@ step
 step << skip
     .goto Stormwind City,77.9,18.2
     .turnin 6186 >>Turn in The Blightcaller Cometh
-]],"58Boost")
+]])

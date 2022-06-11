@@ -1,6 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 23-24 Wetlands
+#version 1
+#group RestedXP Alliance 20-32
 #next 24-27 Redridge/Duskwood
 step << Dwarf/Gnome/Human
     .goto Wetlands,10.7,60.9
@@ -155,9 +157,11 @@ step
     .zone Stormwind City >>Head to Ironforge and take the tram to Stormwind
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 24-27 Redridge/Duskwood
+#version 1
+#group RestedXP Alliance 20-32
 #next 27-30 Wetlands/Hillsbrad
 step
 	#sticky
@@ -534,7 +538,7 @@ step << !Rogue !Druid
     .goto Westfall,41.5,66.8
     .turnin 67 >> Turn in The Legend of Stalvan
     .accept 68 >> Accept The Legend of Stalvan
-    
+
 step << Paladin
     .goto Westfall,42.5,88.6
     .turnin 1650 >>Turn in The Tome of Valor
@@ -761,7 +765,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
     .train 54 >> Train Maces << Rogue/Shaman
     .train 44 >> Train Axes << Shaman
 step << Hunter
-	#sticky 
+	#sticky
 	#completewith next
 	.goto Ironforge,61.34,89.25
 	>>Go inside the building, head downstairs and buy a level 30 quiver from Thalgus Thunderfist
@@ -775,9 +779,11 @@ step
     .fly Wetlands>> Fly to Wetlands
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 27-30 Wetlands/Hillsbrad
+#version 1
+#group RestedXP Alliance 20-32
 #next 30-32 Duskwood/STV
 step
     .goto Wetlands,8.4,58.5
@@ -1012,7 +1018,7 @@ step
     .goto Arathi Highlands,45.8,46.1
     .fp Arathi >> Get the Arathi Highlands flight path
 step
-.isOnQuest 647  
+.isOnQuest 647
 >>Run to Southshore and turn in before the timer is up
 .goto Hillsbrad Foothills,52.2,58.6
     .turnin 647 >> Turn in MacKreel's Moonshine
@@ -1104,9 +1110,11 @@ step
     .accept 689 >> Accept A King's Tribute
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 30-32 Duskwood/STV
+#version 1
+#group RestedXP Alliance 20-32
 #next RestedXP Alliance 32-47\32-33 Shimmering Flats
 step
     .zone Stormwind City>>Head to Stormwind

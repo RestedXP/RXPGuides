@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance !Warlock
 #name 11-14 Darkshore
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor !Draenei !Warlock
 #next 14-20 Bloodmyst
 step
     .goto Darkshore,36.6,45.6
@@ -232,11 +235,14 @@ step
     .turnin 963 >> Turn in For Love Eternal
 step
     .goto Darkshore,30.8,41.0,30 >>Take the Boat to Azuremyst Isle
-]],"!Draenei !Warlock")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 14-20 Bloodmyst
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor !Draenei
 #next RestedXP Alliance 20-32\20-21 Darkshore << !Warlock
 #next RestedXP Alliance 20-32\20-23 Darkshore/Ashenvale << Warlock
 step
@@ -371,7 +377,7 @@ step
     .complete 9574,1 --Collect Crystallized Bark (x6)
 step
     .goto Bloodmyst Isle,53.3,57.8
-    .turnin 9574 >> Turn in Victims of Corruption 
+    .turnin 9574 >> Turn in Victims of Corruption
     .accept 9578 >> Accept Searching for Galaen
 step
     .goto Bloodmyst Isle,55.0,58.1
@@ -723,8 +729,8 @@ step << Hunter/Warlock/Mage
 step << Hunter/Warlock/Mage
 	.xp 20-1350
     >>You'll need to hit level 20 before leaving Bloodmyst
-    
-    
+
+
 step
     #completewith next
     .deathskip >>Die and respawn at Blood Watch
@@ -761,12 +767,15 @@ step << Druid
 step << Druid
     .goto Moonglade,48.1,67.2
     .fly Auberdine>>Fly to Darkshore
-    
-]],"!Draenei")
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Alliance !Warlock
 #name 20-21 Darkshore
+#version 1
+#group RestedXP Alliance 20-32
+#defaultfor !Draenei
 #next 21-23 Ashenvale
 step
     .goto Darkshore,36.1,44.9
@@ -1027,11 +1036,14 @@ step
 	#label end
     .complete 994,1 --Escort Volcor
     .isQuestTurnedIn 986
-]],"!Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance !Warlock
 #name 21-23 Ashenvale
+#version 1
+#group RestedXP Alliance 20-32
+#defaultfor !Draenei
 #next 23-24 Wetlands
 step
     .goto Ashenvale,26.2,38.6
@@ -1174,15 +1186,17 @@ step << !Hunter !NightElf !Rogue
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << !Hunter !NightElf !Rogue
     .fly Auberdine >>Fly back to Auberdine
-	
-	
+
+
 step
     .goto Darkshore,32.4,43.8,30 >>Take the boat to Wetlands
-]],"!Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name 20-23 Darkshore/Ashenvale
+#version 1
+#group RestedXP Alliance 20-32
 #next 23-24 Wetlands
 step
     .goto Darkshore,37.0,44.1

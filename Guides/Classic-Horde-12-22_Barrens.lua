@@ -1,9 +1,11 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name 12-17 The Barrens
+#version 1
+#group RestedXP Horde 1-22
 #next 17-22 Stonetalon/Barrens/Ashenvale
-    
+
 step << Tauren Shaman
     .goto Durotar,50.8,43.6
     .accept 840 >>Accept Conscript of the Horde
@@ -50,7 +52,7 @@ step << !Shaman !Warrior/Undead
     .accept 844 >>Accept Plainstrider Menace
 step << !Shaman !Warrior/Undead
     .goto The Barrens,52.2,31.8
-    .accept 870 >>Accept The Forgotten Pools	
+    .accept 870 >>Accept The Forgotten Pools
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.5,29.8
     .accept 6365 >>Accept Meats to Orgrimmar
@@ -127,7 +129,7 @@ step
     #completewith next
     >>Kill Raptors that you see. Loot them for some Raptor Heads - you'll get more later
     .complete 869,1 --Raptor Head (12)
-step << !Tauren 
+step << !Tauren
     >>Kill Plainstriders. Loot them for Beaks
     .goto The Barrens,50.25,27.78
     .complete 844,1 --Plainstrider Beak (7)
@@ -357,7 +359,7 @@ step << Hunter
 step
     #sticky
     #completewith next
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step << !Undead !Rogue
 	#era
@@ -446,7 +448,7 @@ step
 step
     #sticky
     #completewith Samophlange
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step << Warrior
 #era/som
@@ -492,7 +494,7 @@ step
 step
     #sticky
     #completewith next
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
     .goto The Barrens,54.3,12.3,90,0
@@ -513,7 +515,7 @@ step
 	#hardcore
     #completewith next
     +The next 3 quests can be quite hard, be extra careful
- 
+
 step
     >>Kill Supervisor Lugwizzle (He patrols all over the tower). Loot him for the Ignition Key
 .goto The Barrens,56.3,8.6
@@ -531,7 +533,7 @@ step
 step
     #sticky
     #completewith next
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
     >>Grind mobs in the area. Kill around 25 mobs, if the Emerald didn't drop skip this quest.
@@ -670,7 +672,7 @@ step
 step << Rogue
     .goto The Barrens,63.07,36.31
     .turnin 2382 >>Turn in Wrenix of Ratchet
-    .accept 2381 >>Accept Plundering the Plunderers   
+    .accept 2381 >>Accept Plundering the Plunderers
 step << Rogue
     .goto The Barrens,63.12,36.32
     >>Talk to Wrenix's Gizmotronic Apparatus. Get an E.C.A.C and Thieves' Tools
@@ -794,7 +796,7 @@ step
     #sticky
     #completewith LionT
     .goto The Barrens,47.48,26.02,0
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
 	#som
@@ -813,7 +815,7 @@ step << Undead/Rogue
 step << !Undead !Rogue
 	#era
 	.isOnQuest 852
-    .goto The Barrens,45.87,40.80  
+    .goto The Barrens,45.87,40.80
     >> Locate & kill Hezrul Bloodmark. He patrols around the Wailing Caverns lake
     .complete 852,1 --Hezrul's Head (1)
 	.unitscan Hezrul Bloodmark
@@ -856,7 +858,7 @@ step << !Undead !Rogue
     .isQuestComplete 4021
     .goto The Barrens,45.39,28.44
     .turnin 4021 >>Turn in Counterattack!
-step 
+step
 #era/som
     #sticky
     #completewith next
@@ -880,11 +882,12 @@ step
     .accept 6548 >> Accept Avenge My Village
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Horde
-
 #name 17-22 Stonetalon/Barrens/Ashenvale
+#version 1
+#group "RestedXP Horde 1-22
 #next RestedXP Horde 22-30\22-24 Hillsbrad
 
 step
@@ -1219,7 +1222,7 @@ step << Hunter
     .trainer >> Train your class spells
 step << Hunter
 	#era
-    .goto Thunder Bluff,54.10,83.97   
+    .goto Thunder Bluff,54.10,83.97
     .trainer >> Train your pet skills
 step << Warrior
 	#era
@@ -1240,7 +1243,7 @@ step << !Tauren !Warrior !Shaman
     .accept 264 >>Accept Until Death Do Us Part
 step << !Tauren !Warrior !Shaman
     .goto Thunder Bluff,23.00,21.00
-    .turnin 853 >> Turn in Apothecary Zamah 
+    .turnin 853 >> Turn in Apothecary Zamah
 step << Priest
 	#era
     .goto Thunder Bluff,24.56,22.60
@@ -1260,7 +1263,7 @@ step << Hunter
 step << !Tauren !Shaman !Warrior
 	#requires UntilD
     .goto Thunder Bluff,46.9,49.9
-    .fp >> Get the Thunder Bluff Flight Path 
+    .fp >> Get the Thunder Bluff Flight Path
 step << !Warlock/!Shaman
 	#som
     .goto The Barrens,51.50,30.34

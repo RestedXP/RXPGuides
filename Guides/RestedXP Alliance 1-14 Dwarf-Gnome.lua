@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance !Warlock !Hunter
 #name 1-11 Dun Morogh
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Gnome/Dwarf
 #next 11-14 Darkshore
 step << !Gnome !Dwarf
     #sticky
@@ -125,7 +128,7 @@ step
     .accept 182 >> Accept The Troll Cave
 step << Paladin/Mage
     .goto Dun Morogh,25.0,76.0
-    .accept 3364 >> Accept Scalding Mornbrew Delivery 
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
 >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << Paladin/Mage
     .goto Dun Morogh,28.7,77.5
@@ -252,12 +255,12 @@ step << Dwarf Rogue
 step << Dwarf Priest
 .goto Dun Morogh,28.6,66.4
     .turnin 3110 >> Turn in Hallowed Rune
-    .train 1243 >>Train Power Word: Fortitude    
+    .train 1243 >>Train Power Word: Fortitude
 .train 589 >>Train Shadow Word: Pain
     .train 2052 >>Train Lesser Heal r2
 step << Human Priest/NightElf Priest/Draenei Priest
 .goto Dun Morogh,28.6,66.4
-    .train 1243 >>Train Power Word: Fortitude    
+    .train 1243 >>Train Power Word: Fortitude
 .train 589 >>Train Shadow Word: Pain
     .train 2052 >>Train Lesser Heal r2
 step << Gnome Warrior
@@ -782,7 +785,7 @@ step << !Rogue
     .turnin 320 >> Turn in Return to Bellowfiz
 step << Rogue
     .goto Dun Morogh,49.4,48.4
-    >>Choose the Camping Knife. Save it for later 
+    >>Choose the Camping Knife. Save it for later
     .turnin 320 >> Turn in Return to Bellowfiz
 step
     .goto Dun Morogh,45.8,49.4
@@ -1333,11 +1336,14 @@ step
 step
     #label Darkshore1
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore
-]],"Gnome/Dwarf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name 1-12 Dun Morogh
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Gnome Warlock
 #next 12-14 Loch Modan Gnome
 step << !Gnome !Dwarf
     #sticky
@@ -1355,7 +1361,7 @@ step
 +Kill Wolves for 10c+ of vendor trash, then enter the building
 step
     .goto Dun Morogh,28.8,69.2,20 >>Enter the building
-step 
+step
     .goto Dun Morogh,28.8,66.2
     .vendor >> Talk to the Demon Book vendor, vendor trash
 step
@@ -1378,7 +1384,7 @@ step
     >>Kill Frostmane Novices. Loot them for Feather Charms
 .goto Dun Morogh,29.0,82.6,20,0
 .goto Dun Morogh,29.0,81.2,30,0
-.goto Dun Morogh,30.1,82.4,20,0    
+.goto Dun Morogh,30.1,82.4,20,0
     .complete 1599,1 --Collect Feather Charm (x3)
 step
     .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at the Spirit Healer
@@ -1616,7 +1622,7 @@ step
     .goto Dun Morogh,49.4,48.4
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
-step 
+step
     #sticky
     #completewith supplies
     +If you weren't able to afford your skills before, go and buy them now
@@ -2006,7 +2012,7 @@ step
 .goto Ironforge,77.0,51.0,30 >>Enter the Deeprun Tram
 step
     .accept 6661 >> Accept Deeprun Rat Roundup
-step 
+step
     >>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step
@@ -2344,11 +2350,14 @@ step
 step
     .hs >> Hearth to Loch Modan
     .goto Loch Modan,35.5,48.4,90
-]],"Gnome Warlock")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name 12-14 Loch Modan Gnome
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Gnome Warlock
 #next 14-20 Bloodmyst
 step
     .goto Loch Modan,34.8,48.6
@@ -2546,7 +2555,7 @@ step
 .goto Loch Modan,23.2,73.7
     .turnin 267 >> Turn in The Trogg Threat
 step
-    .xp 14 >>Grind to 14 at the troggs 
+    .xp 14 >>Grind to 14 at the troggs
 step
     #sticky
     #completewith next
@@ -2674,10 +2683,14 @@ step
 step
     #label Azuremyst
     .zone Azuremyst Isle >>Get onto the boat when it comes
-]],"Gnome Warlock")
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Alliance Hunter
 #name 1-11 Dun Morogh
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf Hunter
 #next 11-14 Darkshore
 step << !Gnome !Dwarf
     #sticky
@@ -2751,7 +2764,7 @@ step
 >>Kill Frostmane Troll Whelps
 .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .goto Dun Morogh,25.1,75.7
-step 
+step
     .xp 4 >> Grind to 4
 step
     #requires Rockjaw
@@ -3206,11 +3219,4 @@ step
 step
     .goto Wetlands,4.6,57.2
     .zone Darkshore >> Take the boat to Darkshore
-]],"Dwarf Hunter")
-
-
-
-
-
-
-
+]])

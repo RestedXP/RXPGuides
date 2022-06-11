@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
 << Horde
 #name 1-10 Durotar
+#version 1
+#group RestedXP Horde 1-30
+#defaultfor Orc/Troll
 #next 10-13 Durotar << Warrior/Shaman
 #next 10-20 Eversong Woods / Ghostlands << !Warrior !Shaman
 step << !Orc !Troll
@@ -985,8 +988,8 @@ step << Warlock
     >>Optionally, you can kill Gazz'uz (level 14 warlock) for a quest item. Be sure to use your skull from earlier, any potions you have, or sticky glue on the voidwalker. You can LoS (Line of Sight) Gazz'uz to avoid his shadowbolts, and fear his pet. If you can't kill him, try to sneak past, or die and respawn past him in the water.
     .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
-step << Warlock 
-.goto Durotar,53.6,8.5,10,0 
+step << Warlock
+.goto Durotar,53.6,8.5,10,0
 .goto Durotar,51.8,8.1,10,0
 .goto Durotar,51.6,9.8
 >> Go into the Right path of the cave. Continue following the cave, then loot the Chest at the end of it
@@ -1078,10 +1081,14 @@ step << !Shaman !Warrior
 step << Paladin
     .goto Silvermoon City,91.2,36.9
     .trainer >> Go and train your class spells
-]],"Orc/Troll")
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Horde
 #name 10-13 Durotar
+#version 1
+#group RestedXP Horde 1-30
+#defaultfor Warrior !Tauren/Shaman !Tauren
 #next 13-23 The Barrens
 step
     .goto Durotar,50.8,43.6
@@ -1338,7 +1345,7 @@ step
 step
     #sticky
     #completewith next
-+Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it 
++Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it
 step
     .abandon 812 >>Abandon Need for a Cure
 step
@@ -1473,4 +1480,4 @@ step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
-]],"Warrior !Tauren/Shaman !Tauren")
+]])

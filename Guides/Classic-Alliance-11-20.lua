@@ -1,7 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter/NightElf
 #name 11-16 Darkshore
+#version 1
+#group RestedXP Alliance 1-20
 #next 16-19 Darkshore
 
 step <<  NightElf
@@ -92,7 +94,7 @@ step
     .complete 1001,1
 step
     #completewith next
-    .goto Darkshore,33.70,42.45,60 >> Run up to the docks then jump in the water at the intersection 
+    .goto Darkshore,33.70,42.45,60 >> Run up to the docks then jump in the water at the intersection
 step
     .goto Felwood,13.63,21.44
     >>Click on the sea turtle remains
@@ -199,7 +201,7 @@ step
 step
     #completewith darn1 << Druid
      #completewith mbox << !Druid
-     + Start collecting 9 small eggs for leveling cooking later 
+     + Start collecting 9 small eggs for leveling cooking later
     >>You will need 10 points cooking to accept a quest later. If you already have 10 points, skip this step
 step
     .goto Felwood,31.29,24.14
@@ -259,7 +261,7 @@ step << Druid
     .accept 6122 >> Accept The Principal Source
 step << Druid
     .hs >> Hearth to Darkshore
-    
+
 
 step << !Hunter
      >> Kill furbolgs
@@ -439,11 +441,11 @@ step
     .complete 947,1 --Scaber Stalk (5)
     .complete 947,2 --Death Cap (1)
 step <<  NightElf !Druid
-    #softcore 
+    #softcore
     #completewith next
      .deathskip >> Grind until your HS cooldown is <6 minutes then death warp to Auberdine
 step <<  NightElf !Druid
-    #hardcore 
+    #hardcore
     #completewith next
      +Grind until your HS cooldown is <9 minutes then run back to Auberdine
 step <<  !NightElf
@@ -532,11 +534,14 @@ step << Druid
     .hs >> Hearth to Darkshore
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Alliance
 #name 13-15 Westfall
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor !NightElf !Hunter
 #next 14-19 Darkshore
 
 step
@@ -814,12 +819,15 @@ step
 step
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore.
     >>Train first aid while waiting for the boat, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-]],"!NightElf !Hunter")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #name 16-19 Darkshore
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Hunter/NightElf
 #next 19-20 Redridge << !Hunter
 #next 19-21 Darkshore/Ashenvale << Hunter
 
@@ -844,8 +852,8 @@ step <<  NightElf Hunter
 step <<  NightElf Hunter
      #completewith start
     .goto Darnassus,63.30,66.30
-    >> Restock/Resupply 
-    >>Prioritize buying a level 20 bow 
+    >> Restock/Resupply
+    >>Prioritize buying a level 20 bow
     .collect 3027,1
     *Buy a level 16 bow if you have money to spare
 step <<  NightElf !Druid
@@ -943,10 +951,10 @@ step
     .accept 949 >> Accept The Twilight Camp
 step
     .goto Ashenvale,22.24,2.52
-     >> Click on the book on top of the pedestal 
+     >> Click on the book on top of the pedestal
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
-step     
+step
     >> Finish the escort quest
     .complete 945,1
 step
@@ -1084,8 +1092,8 @@ step <<  !Hunter
     .xp 18 >> Grind to level 18
 step << Hunter
     .goto Darkshore,52.6,33.6
-    .xp 18.75 >> Grind to 18 + 75% 
-    >>Make sure your HS cooldown is <10 min 
+    .xp 18.75 >> Grind to 18 + 75%
+    >>Make sure your HS cooldown is <10 min
     >>Skip this step if the area is too crowded
 step
 	#era/som
@@ -1150,7 +1158,7 @@ step << !Druid
     .complete 1138,1
 step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,5.59,21.09
-     >> Speak with The Threshwackonator 4100 
+     >> Speak with The Threshwackonator 4100
     >>Escort it back to Gyromast and kill it
     >>Be careful as this quest is VERY difficult
     .complete 2078,1
@@ -1191,7 +1199,7 @@ step <<  Dwarf Hunter
 step << Dwarf Hunter
      .goto Darkshore,33.17,40.17,40,0
      .goto Darkshore,33.17,40.17,0
-    .zone Teldrassil >> Take the boat to Darnassus 
+    .zone Teldrassil >> Take the boat to Darnassus
     .zoneskip Darnassus
 step <<  Dwarf Hunter
     .goto Teldrassil,58.40,94.02
@@ -1303,12 +1311,15 @@ step <<  !Hunter
     .goto Ironforge,76.03,50.98,30,0
     .zone Stormwind City >> Take the tram to Stormwind
     >>Train first aid while wating/riding the tram, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-]],"Hunter/NightElf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Alliance !Hunter !NightElf
 #name 14-19 Darkshore
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor !Hunter !NightElf
 #next 19-20 Redridge
 
 step
@@ -1383,7 +1394,7 @@ step
     .complete 1001,1
 step
     #completewith next
-    .goto Darkshore,33.70,42.45,40 >> Run up to the docks then jump in the water at the intersection 
+    .goto Darkshore,33.70,42.45,40 >> Run up to the docks then jump in the water at the intersection
 step
     .goto Felwood,13.63,21.44
     >>Click on the sea turtle remains
@@ -1502,7 +1513,7 @@ step
      .complete 4811,1
 step
     .goto Darkshore,44.4,51.2
-    >>Kill Owlbeasts and make sure you have at least 9 small eggs to level cooking 
+    >>Kill Owlbeasts and make sure you have at least 9 small eggs to level cooking
     >>Skip this step if you already have 10 points in cooking.
     .collect 6889,9,2178
 step
@@ -1739,7 +1750,7 @@ step  << !Warrior !Paladin !Rogue !Druid
     .accept 2078 >> Accept Gyromast's Revenge  << !Warrior !Paladin !Rogue
 step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,5.59,21.09
-    >> Speak with The Threshwackonator 4100 
+    >> Speak with The Threshwackonator 4100
     >>Escort it back to Gyromast and kill it
     >>This elite quest is HARD, skip this step if you can't do it
     .complete 2078,1
@@ -1819,8 +1830,8 @@ step
 step
     #softcore
     .goto Elwynn Forest,26.29,38.50
-    .zone Stormwind City >> Take the boat to Menethil, fly to Ironforge and take the tram to Stormwind 
-    >>OR 
+    .zone Stormwind City >> Take the boat to Menethil, fly to Ironforge and take the tram to Stormwind
+    >>OR
     >>Use the website unstuck self service to teleport back to Stormwind (much faster)
 step
     #hardcore
@@ -1836,7 +1847,7 @@ step
     .goto Wetlands,10.6,57.2,25,0
     .goto Wetlands,10.7,56.8
     .vendor >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there. Otherwise, skip this step
-    .bronzetube 
+    .bronzetube
 step
     #hardcore
     .goto Wetlands,9.49,59.69
@@ -1855,12 +1866,14 @@ step
     #hardcore
     .goto Elwynn Forest,26.29,38.50
     .zone Stormwind City >> Take the Tram to Stormwind City
-]],"!Hunter !NightElf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter
 #name 19-21 Darkshore/Ashenvale
+#version 1
+#group RestedXP Alliance 1-20
 #next RestedXP Alliance 20-30\21-23 Ashenvale/Stonetalon
 
 step
@@ -1884,7 +1897,7 @@ step
     .goto Ashenvale,22.36,3.98
     >>Start the escort quest
     .accept 945 >> Accept Therylune's Escape
-step 
+step
     .goto Ashenvale,22.36,3.98
     >> Escort Therylune
     .complete 945,1
@@ -2002,7 +2015,7 @@ step
      >> Kill cultists
     .complete 970,1
 step
-    #sticky 
+    #sticky
     #label hair
     .goto Ashenvale,26.43,38.59
     .turnin 1010 >> Turn in Bathran's Hair
@@ -2052,7 +2065,7 @@ step
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.37,46.38
-     >> Loot the pearl shaped objects 
+     >> Loot the pearl shaped objects
     >>Be careful with mobs sneaking underwater
     .complete 1033,1
 step
@@ -2066,11 +2079,11 @@ step
     .complete 1034,1
 step
     #completewith next
-    .goto Ashenvale,31.67,64.24,15 >> Head to the base of the mountain 
+    .goto Ashenvale,31.67,64.24,15 >> Head to the base of the mountain
     .goto Ashenvale,31.21,61.60,15 >>Run straight north while climbing the mountain
 step
     #completewith next
-    .goto Ashenvale,27.50,60.76,8 >> Climb the hill next to the big tree to the right of the Fire Scar Shrine entrance 
+    .goto Ashenvale,27.50,60.76,8 >> Climb the hill next to the big tree to the right of the Fire Scar Shrine entrance
     >>Jump over the tree root and hug the right to avoid aggroing mobs
 step
 	#era/som
@@ -2105,7 +2118,7 @@ step
     .accept 1009 >> Accept Ruuzel
 step
     .goto Ashenvale,7.40,13.40
-     >> Kill Ruuzel 
+     >> Kill Ruuzel
     >>Lady Vespia (rare) can also drop the ring
     .complete 1009,1
     .unitscan Lady Vespia
@@ -2119,7 +2132,7 @@ step
     .accept 1023 >> Accept Raene's Cleansing
 step
     .goto Ashenvale,20.41,43.82
-    >> Kill Murlocs until the Glowing Gem drops 
+    >> Kill Murlocs until the Glowing Gem drops
     >>Save Murloc Fins for later
     >>Be careful as the Oracles can heal, and have a 90 damage instant-cast shock spell every few seconds
     .complete 1023,1
@@ -2170,16 +2183,18 @@ step
     .accept 942 >> Accept The Absent Minded Prospector
 step <<  !Dwarf/!Hunter
     #label end
-    .hs >> Hearth back to Astranaar 
+    .hs >> Hearth back to Astranaar
 step <<  Dwarf Hunter
     #label end
     .fly Ashenvale >> Fly to Ashenvale
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Alliance !Hunter
 #name 19-20 Redridge
+#version 1
+#group RestedXP Alliance 1-20
 #next 20-21 Darkshore/Ashenvale
 step
     #completewith start
@@ -2421,7 +2436,7 @@ step
     .accept 130 >> Accept Visit the Herbalist
 step
     #era/som
-    .goto Redridge Mountains,9.35,78.96    
+    .goto Redridge Mountains,9.35,78.96
     >>Kill Spiders. Loot them for the Crisp Spider Meat
     .collect 1081,5,92,1
 step
@@ -2732,15 +2747,16 @@ step << Rogue
     .turnin 2607 >> Turn in The Touch of Zanzil
     .isQuestTurnedIn 2359
 step <<  NightElf
-    .fp Ironforge>> Fly to Stormwind, take the tram to Ironforge and get the Ironforge flight path 
-    >>Skip this step if you already have the Ironforge flight path 
+    .fp Ironforge>> Fly to Stormwind, take the tram to Ironforge and get the Ironforge flight path
+    >>Skip this step if you already have the Ironforge flight path
 ]])
 
-
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Alliance !Hunter
 #name 20-21 Darkshore/Ashenvale
+#version 1
+#group RestedXP Alliance 1-20
 #next RestedXP Alliance 20-30\21-23 Stonetalon/Ashenvale
 
 step << Druid
@@ -2795,7 +2811,7 @@ step
      >> Click on the book on top of the pedestal. Be careful that Therylune doesnt run off if you started it already
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
-step     
+step
     #label Therylune
     #requires TheryluneE
     >> Finish the escort quest
@@ -2914,7 +2930,7 @@ step
      >> Kill cultists. Loot them for the Glowing Soul Gem
     .complete 970,1
 step
-    #sticky 
+    #sticky
     #label hair
     .goto Ashenvale,26.43,38.59
     .turnin 1010 >> Turn in Bathran's Hair
