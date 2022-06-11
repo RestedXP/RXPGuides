@@ -116,6 +116,7 @@ function RXPG.ImportGuide(guideGroup, text, defaultFor)
 
     -- list[importedGuide.name] = #RXP_.guides
     -- TODO load RXPImportedGuides into RXP_.guideList and RXP_.guides
+    -- TODO only import is cached.version < imported.version
 end
 
 function RXPG.ParseGuide(guideGroup, text, defaultFor)
