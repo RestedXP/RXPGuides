@@ -3118,7 +3118,6 @@ function RXP_.functions.openmap(self,text,map,callback,...)
         element.textOnly = true
 
         element.mapId = RXP_.mapId[map] or tonumber(map)
-        element.emote = token
         return element
     end
 
@@ -3146,5 +3145,68 @@ function RXP_.functions.openmap(self,text,map,callback,...)
 
 end
 
+function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,...)
+    if type(self) == "string" then
+        local element = {}
+        id = tonumber(id)
+        local operator,cd,suffix = string.match(remaining,"([<>]?)%s*(%d+%p?%d*)%s*(m?)")
+        cd = tonumber(cd) or 0
+        if not (cd and id) then
+            RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
+        end
+        if operator == "<" then
+            element.operator = -1
+        else
+            element.operator = 1
+        end
+        if suffix then
+            cd = cd*60
+        end
+        element.id = id
+        element.remaining = remaining
+        element.cooldownType = cooldownType
+        element.text = text
+        element.textOnly = true
+        return element
+    end
 
+    local element = self.element or self
+    local step = element.step
+    if not step.active then
+        return
+    end
 
+    local operator = element.operator
+    local id = element.id
+    cooldownType = element.cooldownType
+    remaining = element.remaining
+
+    local start,duration = 0,0
+    if cooldownType == "spell" then
+        start, duration = GetSpellCooldown(id)
+    elseif cooldownType == "item" then
+        start, duration = GetItemCooldown(id)
+    elseif cooldownType == "inventory" then
+        start, duration = GetInventoryItemCooldown("player",id)
+    elseif cooldownType == "pet" then
+        start, duration = GetPetActionCooldown(id)
+    elseif cooldownType == "action" then
+        start, duration = GetActionCooldown(id)
+    end
+    local endTime = start + duration
+
+    --Astral recall:
+    if id == 556 and cooldownType == "spell" and GetItemCount(6948) > 0 then
+        local hsStart,hsDuration = GetItemCooldown(6948)
+        endTime = math.min(endTime,hsStart+hsDuration)
+    end
+
+    local target = endTime - remaining
+
+    if GetTime() * operator < target * operator then
+        RXP_.updateSteps = true
+        step.completed = true
+    elseif target > 0 then
+        RXP_.ScheduleTask(element,target+1)
+    end
+end

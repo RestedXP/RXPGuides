@@ -548,6 +548,27 @@ function RXP_.UnitScanUpdate()
     end
 end
 
+RXP_.scheduledTasks = {}
+
+function RXP_.UpdateScheduledTasks()
+    local cTime = GetTime()
+    for ref,time in pairs(RXP_.scheduledTasks) do
+        if cTime > time then
+            local group = RXP_.currentGuide.group
+            local element = ref.element or ref
+            RXPGuides[group][element.tag](ref)
+            RXP_.scheduledTasks[ref] = nil
+            return
+        end
+    end
+end
+
+function RXP_.ScheduleTask(ref,time)
+    if type(ref) == "table" and type(time) == "number" then
+        RXP_.scheduledTasks[ref] = time
+    end
+end
+
 RXP_.updateActiveQuest = {}
 RXP_.updateInactiveQuest = {}
 
@@ -652,6 +673,7 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
             end
             RXP_.UpdateGotoSteps()
             RXP_.UpdateItemCooldown()
+            RXP_.UpdateScheduledTasks()
         end
 
         if event ~= "" then
