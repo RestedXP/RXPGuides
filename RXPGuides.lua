@@ -480,9 +480,7 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
                 guide = nil
             end
         end
-        if not RXPCData.GA then
-            RXP_:LoadGuide(guide, true)
-        end
+        if not RXPCData.GA then RXP_:LoadGuide(guide, true) end
         if not RXP_.currentGuide then
             RXPFrame:SetHeight(20)
             RXPFrame.BottomFrame.UpdateFrame()
@@ -600,6 +598,7 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
             elseif RXP_.updateStepText then
                 RXP_.updateStepText = false
                 local updateText
+                -- TODO handle error if active guide no longer exists
                 local steps = RXP_.currentGuide.steps
                 for n in pairs(RXP_.stepUpdateList) do
                     if steps[n] then
