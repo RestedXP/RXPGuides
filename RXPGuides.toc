@@ -12,6 +12,7 @@ libs\HereBeDragons\CallbackHandler-1.0\CallbackHandler-1.0.lua
 libs\HereBeDragons\HereBeDragons-2.0.lua
 libs\HereBeDragons\HereBeDragons-Pins-2.0.lua
 
+GuideLoader.lua
 RXPGuides.lua
 GuideWindow.lua
 SettingsPanel.lua
@@ -22,6 +23,5 @@ ActiveItemFrame.lua
 data.lua
 map.lua
 functions.lua
-parser.lua
 
 Guides/GuideList.xml
