@@ -3145,7 +3145,7 @@ function RXP_.functions.openmap(self,text,map,callback,...)
 
 end
 
-function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,...)
+function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,updateOnce,...)
     if type(self) == "string" then
         local element = {}
         id = tonumber(id)
@@ -3162,6 +3162,7 @@ function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,...)
         if suffix then
             cd = cd*60
         end
+        element.updateOnce = updateOnce
         element.id = id
         element.remaining = remaining
         element.cooldownType = cooldownType
@@ -3172,12 +3173,17 @@ function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,...)
 
     local element = self.element or self
     local step = element.step
-    if not step.active then
+    if not step.active or step.completed then
+        element.isActive = false
+        return
+    elseif not element.isActive then
+        element.isActive = true
+    elseif element.updateOnce and element.isActive then
         return
     end
 
     local operator = element.operator
-    local id = element.id
+    id = element.id
     cooldownType = element.cooldownType
     remaining = element.remaining
 
@@ -3186,19 +3192,20 @@ function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,...)
         start, duration = GetSpellCooldown(id)
     elseif cooldownType == "item" then
         start, duration = GetItemCooldown(id)
-    elseif cooldownType == "inventory" then
-        start, duration = GetInventoryItemCooldown("player",id)
-    elseif cooldownType == "pet" then
-        start, duration = GetPetActionCooldown(id)
     elseif cooldownType == "action" then
         start, duration = GetActionCooldown(id)
+    elseif cooldownType == "pet" then
+        start, duration = GetPetActionCooldown(id)
+    elseif cooldownType == "inventory" then
+        start, duration = GetInventoryItemCooldown("player",id)
     end
     local endTime = start + duration
 
     --Astral recall:
-    if id == 556 and cooldownType == "spell" and GetItemCount(6948) > 0 then
-        local hsStart,hsDuration = GetItemCooldown(6948)
-        endTime = math.min(endTime,hsStart+hsDuration)
+    if class == "SHAMAN" and IsPlayerSpell(556) and
+                id == 6948 and cooldownType == "item" then
+        local arStart,arDuration = GetSpellCooldown(556)
+        endTime = math.min(endTime,arStart+arDuration)
     end
 
     local target = endTime - remaining
@@ -3206,7 +3213,8 @@ function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,...)
     if GetTime() * operator < target * operator then
         RXP_.updateSteps = true
         step.completed = true
-    elseif target > 0 then
+        element.isActive = false
+    elseif target > 0 and not element.updateOnce then
         RXP_.ScheduleTask(element,target+1)
     end
 end
