@@ -192,7 +192,7 @@ end
 
 function RXP_.GetProfessionLevel()
     local names
-    if not professionNames.riding then
+    if not (professionNames and professionNames.riding) then
         RXP_.GetProfessionNames()
     end
     names = professionNames
