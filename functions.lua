@@ -1695,10 +1695,9 @@ function RXP_.functions.xp(self,...)
 
 end
 
-function RXP_.functions.skill(self,...)
+function RXP_.functions.skill(self,text,skillName,str,skipstep,useMaxValue)
     if type(self) == "string" then --on parse
         local element = {}
-        local text,skillName,str,skipstep = ...
         skipstep = tonumber(skipstep)
         str = str:gsub(" ","")
         local operator,level = str:match("(<?)%s*(%d+)")
@@ -1715,6 +1714,7 @@ function RXP_.functions.skill(self,...)
             element.text = text
         end
         element.skipstep = skipstep
+        element.useMaxValue = useMaxValue
         if skipstep then
             element.textOnly = true
         end
@@ -1724,10 +1724,10 @@ function RXP_.functions.skill(self,...)
 
     local element = self.element
     local step = element.step
-    if step.active then
-        RXP_.UpdateSkillData()
+    if not step.active then
+        return
     end
-    local level = RXP_.skills[element.skill]
+    local level = RXP_.GetSkillLevel(element.skill,element.useMaxValue)
     if not level then return end
     local reverseLogic = element.reverseLogic
     --print(level,element.level,(level >= element.level) == not reverseLogic)
@@ -1743,6 +1743,10 @@ function RXP_.functions.skill(self,...)
         end
     end
 
+end
+
+function RXP_.functions.maxskill(self,text,skillName,str,skipstep)
+    return RXP_.functions.skill(self,text,skillName,str,skipstep,true)
 end
 
 function RXP_.functions.reputation(self,...)

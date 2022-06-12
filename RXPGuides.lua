@@ -163,57 +163,63 @@ function RXP_.QuestAutoTurnIn(title)
     end
 end
 
-RXP_.skills = {}
-RXP_.professionNames = {}
+local currrentSkillLevel = {}
+local maxSkillLevel = {}
+local professionNames
+
 function RXP_.GetProfessionNames()
-    local names = {}
+    if not professionNames then
+        professionNames = {}
+    end
+
     for profession, ids in pairs(RXP_.professionID) do
         for i, id in ipairs(ids) do
             if IsSpellKnown(id) then
                 if id == 2656 then
-                    names[profession] = GetSpellInfo(2575)
+                    professionNames[profession] = GetSpellInfo(2575)
                 elseif id == 2383 then
-                    names[profession] = GetSpellInfo(9134)
+                    professionNames[profession] = GetSpellInfo(9134)
                 else
-                    names[profession] = GetSpellInfo(id)
+                    professionNames[profession] = GetSpellInfo(id)
                 end
                 break
             end
         end
     end
-    names.riding = GetSpellInfo(33388)
-    return names
+    professionNames.riding = GetSpellInfo(33388)
+    return professionNames
 end
 
 function RXP_.GetProfessionLevel()
     local names
-    if #RXP_.professionNames == 0 then
-        RXP_.professionNames = RXP_.GetProfessionNames()
+    if not professionNames.riding then
+        RXP_.GetProfessionNames()
     end
-    names = RXP_.professionNames
+    names = professionNames
 
     if not GetSkillLineInfo then
         if IsPlayerSpell(33388) then
-            RXP_.skills["riding"] = 75
+            currrentSkillLevel["riding"] = 75
         elseif IsPlayerSpell(33391) then
-            RXP_.skills["riding"] = 150
+            currrentSkillLevel["riding"] = 150
         elseif IsPlayerSpell(34090) then
-            RXP_.skills["riding"] = 225
+            currrentSkillLevel["riding"] = 225
         elseif IsPlayerSpell(34091) then
-            RXP_.skills["riding"] = 300
+            currrentSkillLevel["riding"] = 300
         elseif IsPlayerSpell(90265) then
-            RXP_.skills["riding"] = 375
+            currrentSkillLevel["riding"] = 375
         end
         return
     end
     if not names.riding then names.riding = GetSpellInfo(33388) end
     for i = 1, GetNumSkillLines() do
-        skillName, header, isExpanded, skillRank = GetSkillLineInfo(i)
+        local skillName,_,_,skillRank,_,_,skillMaxRank = GetSkillLineInfo(i)
         if skillRank then
             for profession, name in pairs(names) do
                 -- print(name,skillName,name == skillName)
                 if name == skillName then
-                    RXP_.skills[profession] = skillRank
+                    currrentSkillLevel[profession] = skillRank
+                    maxSkillLevel[profession] = skillMaxRank
                 end
             end
         end
@@ -221,8 +227,25 @@ function RXP_.GetProfessionLevel()
 end
 
 function RXP_.UpdateSkillData()
-    RXP_.professionNames = RXP_.GetProfessionNames()
+    RXP_.GetProfessionNames()
     RXP_.GetProfessionLevel()
+end
+
+function RXP_.GetSkillLevel(skill,useMaxValue)
+    RXP_.UpdateSkillData()
+    if skill then
+        if useMaxValue then
+            return maxSkillLevel[skill]
+        else
+            return currrentSkillLevel[skill]
+        end
+    else
+        if useMaxValue then
+            return maxSkillLevel
+        else
+            return currrentSkillLevel
+        end
+    end
 end
 
 RXP_.skillList = {}
