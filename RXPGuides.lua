@@ -85,7 +85,7 @@ end
 function RXPG_init()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
-    RXPImportedGuides = RXPImportedGuides or {}
+
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
     RXPCData.hardcore = (RXP_.version == "CLASSIC") and RXPCData.hardcore
     if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
@@ -467,6 +467,12 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
         return
     elseif event == "PLAYER_LOGIN" then
         RXPG_init()
+        local importGuidesDefault = {profile = {guides = {}}}
+        -- TODO add menu option to reset cached guides
+        RXPGuides.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
+                                                'global')
+        RXPGuides.LoadFileGuides()
+        RXPGuides.LoadCachedGuides()
         RXPFrame.GenerateMenuTable()
         RXP_.CreateOptionsPanel()
         loadtime = GetTime()

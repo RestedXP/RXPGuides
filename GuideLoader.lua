@@ -4,6 +4,7 @@ RXP_.guideList = {}
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
+local _, battleTag = BNGetInfo()
 
 local function applies(text)
     if text then
@@ -35,9 +36,11 @@ end
 RXP_.applies = applies
 RXP_.farmGuides = 0
 local RXPG = RXPGuides
-local RXPIG = RXPImportedGuides
 local version = strlower(RXP_.version)
 local suffix = 1
+
+-- File guides and string-imports need different load order support
+local fileGuides = {}
 
 RXP_.affix = function(smin, smax)
     if smax:len() == 1 then smax = "0" .. smax end
@@ -74,6 +77,11 @@ function RXPG.LoadGuide(guide)
 
     local list = RXP_.guideList[guide.group]
 
+    if list[guide.name] then
+        print('Guide already loaded: ' .. guide.name)
+        return
+    end
+
     table.insert(RXP_.guides, guide)
 
     if list[guide.name] then
@@ -96,32 +104,67 @@ end
 function RXPG.RegisterGuide(guideGroup, text, defaultFor)
     local guide = RXPG.ParseGuide(guideGroup, text, defaultFor)
 
-    RXPG.LoadGuide(guide)
+    if RXPG.db then -- Shouldn't ever happen, but immediately load guide if db initialized
+        RXPG.LoadGuide(guide)
+    else
+        table.insert(fileGuides, guide)
+    end
 end
 
 -- Parse and cache one-time guide, aka Import.lua or base64
 function RXPG.ImportGuide(guideGroup, text, defaultFor)
     local importedGuide = RXPG.ParseGuide(guideGroup, text, defaultFor)
 
-    -- If guide successfully loads, cache
-    if RXPG.LoadGuide(importedGuide) then RXPG.CacheGuide(importedGuide) end
+    if RXPG.db then -- Addon loaded already, import coming from user string
+        RXPG.LoadGuide(guide)
+    else -- Addon not loaded, add to queue
+        importedGuide.cache = true
+        table.insert(fileGuides, importedGuide)
+    end
 end
 
-function RXPG.CacheGuide(guide)
-    -- Upgrade RXPImportedGuides and handle breaking DB changes
-    if not RXPIG.guides or not RXPIG.guideList then
-        print('Resetting RXPIG')
-        RXPIG = {guides = {}, guideList = {}}
+function RXPG.LoadFileGuides()
+    if not RXPG.db then
+        error('Initialization error, db not set')
+        return
     end
 
-    print('Caching ' .. guide.displayName)
-    RXPIG = guide
+    for _, guide in ipairs(fileGuides) do
+        if RXPG.LoadGuide(guide) and guide.cache then
+            -- Cache if guide successfully loads and is imported not default
+            -- TODO compare version
+            RXPG.db.profile.guides[RXPG.EncodeDisplayName(guide.displayName)] =
+                guide
+        end
+    end
+
+    fileGuides = nil
+end
+
+function RXPG.EncodeDisplayName(displayName)
+    -- TODO encode with battleTag #5
+    return battleTag .. displayName
+end
+
+function RXPG.DecodeDisplayName(displayName)
+    -- TODO decode with battleTag #5
+    return displayName:gsub(battleTag, '')
 end
 
 function RXPG.LoadCachedGuides()
-    for i, guide in pairs(RXPIG) do
-        print("i: " .. i)
-        print("guide: " .. guide.displayName)
+    if not RXPG.db then
+        error('Initialization error, db not set')
+        return
+    end
+
+    -- TODO compare version
+    for name, guide in pairs(RXPG.db.profile.guides) do
+        if name == RXPG.DecodeDisplayName(name) then
+            print('Unable to decode cached guide, removed')
+            RXPG.db.profile.guides[name] = nil
+        end
+
+        RXPG.LoadGuide(guide)
     end
 end
 
