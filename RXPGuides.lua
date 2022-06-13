@@ -471,8 +471,8 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
         -- TODO add menu option to reset cached guides
         RXPGuides.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
                                                 'global')
-        RXPGuides.LoadFileGuides()
         RXPGuides.LoadCachedGuides()
+        RXPGuides.LoadFileGuides()
         RXPFrame.GenerateMenuTable()
         RXP_.CreateOptionsPanel()
         loadtime = GetTime()
