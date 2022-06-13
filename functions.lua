@@ -1170,8 +1170,8 @@ function RXP_.functions.waypoint(self,text,zone,x,y,radius,lowPrio,...)
             end
         elseif element.radius and element.radius < 0 then
             element.persistent = true
+            element.radius = math.abs(element.radius)
         end
-        radius = element.radius
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
 
         element.arrow = true

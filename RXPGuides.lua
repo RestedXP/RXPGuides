@@ -235,9 +235,9 @@ function RXP_.GetSkillLevel(skill,useMaxValue)
     RXP_.UpdateSkillData()
     if skill then
         if useMaxValue then
-            return maxSkillLevel[skill]
+            return maxSkillLevel[skill] or -1
         else
-            return currrentSkillLevel[skill]
+            return currrentSkillLevel[skill] or -1
         end
     else
         if useMaxValue then
