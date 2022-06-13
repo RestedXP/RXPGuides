@@ -3168,7 +3168,7 @@ function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,updateOnce,
         end
         element.updateOnce = updateOnce
         element.id = id
-        element.remaining = remaining
+        element.remaining = cd
         element.cooldownType = cooldownType
         element.text = text
         element.textOnly = true
