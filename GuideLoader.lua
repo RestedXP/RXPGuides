@@ -66,7 +66,14 @@ function RXPG.LoadGuide(guide)
     -- Not applicable (e.g. wrong faction), rely on upstream functions to report parsing errors
     if not guide then return false end
 
-    -- TODO only import if cached.version < imported.version
+    local loadedGuide
+    for _, checkGuide in ipairs(RXP_.guides) do
+        if guide.name == checkGuide.name then loadedGuide = checkGuide end
+    end
+
+    if loadedGuide and tonumber(guide.version) >= tonumber(loadedGuide.version) then
+        return false
+    end
 
     RXPG.RegisterGroup(guide.group)
 
@@ -77,24 +84,27 @@ function RXPG.LoadGuide(guide)
 
     local list = RXP_.guideList[guide.group]
 
-    if list[guide.name] then
-        print('Guide already loaded: ' .. guide.name)
-        return
+    if loadedGuide then -- guide exists, but new version
+        for i, checkGuide in ipairs(RXP_.guides) do
+            if guide.name == checkGuide.name then
+                RXP_.guides[i] = checkGuide
+            end
+        end
+    else -- guide doesn't exist, so insert
+        table.insert(RXP_.guides, guide)
+
+        if list[guide.name] then
+            suffix = suffix + 1
+            guide.name = guide.name .. tostring(suffix)
+        end
+
+        table.insert(list.names_, guide.name)
+
+        list[guide.name] = #RXP_.guides
+
+        if guide.group:sub(1, 1) ~= "*" and guide.defaultFor and
+            not RXP_.defaultGuide then RXP_.defaultGuide = guide end
     end
-
-    table.insert(RXP_.guides, guide)
-
-    if list[guide.name] then
-        suffix = suffix + 1
-        guide.name = guide.name .. tostring(suffix)
-    end
-
-    table.insert(list.names_, guide.name)
-
-    list[guide.name] = #RXP_.guides
-
-    if guide.group:sub(1, 1) ~= "*" and guide.defaultFor and
-        not RXP_.defaultGuide then RXP_.defaultGuide = guide end
 
     return true
 end
@@ -116,7 +126,7 @@ function RXPG.ImportGuide(guideGroup, text, defaultFor)
     local importedGuide = RXPG.ParseGuide(guideGroup, text, defaultFor)
 
     if RXPG.db then -- Addon loaded already, import coming from user string
-        RXPG.LoadGuide(guide)
+        RXPG.LoadGuide(importedGuide)
     else -- Addon not loaded, add to queue
         importedGuide.cache = true
         table.insert(fileGuides, importedGuide)
@@ -132,7 +142,6 @@ function RXPG.LoadFileGuides()
     for _, guide in ipairs(fileGuides) do
         if RXPG.LoadGuide(guide) and guide.cache then
             -- Cache if guide successfully loads and is imported not default
-            -- TODO compare version
             RXPG.db.profile.guides[RXPG.EncodeDisplayName(guide.displayName)] =
                 guide
         end
@@ -142,12 +151,12 @@ function RXPG.LoadFileGuides()
 end
 
 function RXPG.EncodeDisplayName(displayName)
-    -- TODO encode with battleTag #5
+    -- TODO encode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
     return battleTag .. displayName
 end
 
 function RXPG.DecodeDisplayName(displayName)
-    -- TODO decode with battleTag #5
+    -- TODO decode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
     return displayName:gsub(battleTag, '')
 end
 
@@ -157,7 +166,6 @@ function RXPG.LoadCachedGuides()
         return
     end
 
-    -- TODO compare version
     for name, guide in pairs(RXPG.db.profile.guides) do
         if name == RXPG.DecodeDisplayName(name) then
             print('Unable to decode cached guide, removed')
