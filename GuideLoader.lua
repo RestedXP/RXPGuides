@@ -198,7 +198,9 @@ function RXPG.LoadCachedGuides()
     end
 
     for key, guide in pairs(RXPG.db.profile.guides) do
-        if key == RXPG.DecodeGuideKey(guide) then
+        if key ~= RXPG.DecodeGuideKey(guide) then
+            RXPG.LoadGuide(guide)
+        else
             if DEBUG then
                 print(fmt('Unable to decode cached guide (%s), removed',
                           guide.key))
