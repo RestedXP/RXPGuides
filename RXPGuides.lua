@@ -85,6 +85,7 @@ end
 function RXPG_init()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
+
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
     RXPCData.hardcore = (RXP_.version == "CLASSIC") and RXPCData.hardcore
     if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
@@ -489,6 +490,12 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
         return
     elseif event == "PLAYER_LOGIN" then
         RXPG_init()
+        local importGuidesDefault = {profile = {guides = {}}}
+        -- TODO add menu option to reset cached guides
+        RXPGuides.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
+                                                'global')
+        RXPGuides.LoadFileGuides()
+        RXPGuides.LoadCachedGuides()
         RXPFrame.GenerateMenuTable()
         RXP_.CreateOptionsPanel()
         loadtime = GetTime()
@@ -503,9 +510,7 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
                 guide = nil
             end
         end
-        if not RXPCData.GA then
-            RXP_:LoadGuide(guide, true)
-        end
+        if not RXPCData.GA then RXP_:LoadGuide(guide, true) end
         if not RXP_.currentGuide then
             RXPFrame:SetHeight(20)
             RXPFrame.BottomFrame.UpdateFrame()
@@ -577,7 +582,7 @@ RXP_.scheduledTasks = {}
 
 function RXP_.UpdateScheduledTasks()
     local cTime = GetTime()
-    for ref,time in pairs(RXP_.scheduledTasks) do
+    for ref, time in pairs(RXP_.scheduledTasks) do
         if cTime > time then
             local group = RXP_.currentGuide.group
             local element = ref.element or ref
@@ -588,7 +593,7 @@ function RXP_.UpdateScheduledTasks()
     end
 end
 
-function RXP_.ScheduleTask(ref,time)
+function RXP_.ScheduleTask(ref, time)
     if type(ref) == "table" and type(time) == "number" then
         RXP_.scheduledTasks[ref] = time
     end
@@ -644,6 +649,7 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
             elseif RXP_.updateStepText then
                 RXP_.updateStepText = false
                 local updateText
+                -- TODO handle error if active guide no longer exists
                 local steps = RXP_.currentGuide.steps
                 for n in pairs(RXP_.stepUpdateList) do
                     if steps[n] then
