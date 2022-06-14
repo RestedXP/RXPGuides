@@ -3009,16 +3009,18 @@ function RXP_.functions.vehicle(self,...)
         return element
     end
 
+    local element = self.element
+    if not element or element.tag ~= "vehicle" then
+        return UnitExists("vehicle")
+    end
     local event,unit,showVehicleFrame,isControlSeat,vehicleUIIndicatorID,guid = ...
-    local id = self.element.id
-
+    local id = element.id
     local vehicle = RXP_.GetNpcId("vehicle") or RXP_.GetNpcId(guid,true)
     --print('>',vehicle,vehicle == id)
     if ((event == "UNIT_ENTERING_VEHICLE" and unit == "player") or vehicle)
     and ((id and vehicle == id) or (not id and vehicle)) then
         RXP_.SetElementComplete(self)
     end
-
 end
 
 function RXP_.functions.itemcount(self,...)
@@ -3221,4 +3223,11 @@ function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,updateOnce,
     elseif target > 0 and not element.updateOnce then
         RXP_.ScheduleTask(element,target+1)
     end
+end
+
+function RXP_.functions.rescue()
+	local _,seat = UnitVehicleSeatInfo("vehicle",2)
+	if seat then
+		return true
+	end
 end
