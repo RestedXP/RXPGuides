@@ -1,3 +1,5 @@
+local addonName = ...
+
 local faction = UnitFactionGroup("player")
 local _,class = UnitClass("player")
 local version = select(4, GetBuildInfo())
@@ -31,6 +33,7 @@ events.bankdeposit = {"BANKFRAME_OPENED","BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW"}
 events.vehicle = {"UNIT_ENTERING_VEHICLE","VEHICLE_UPDATE"}
 events.skill = {"SKILL_LINES_CHANGED","LEARNED_SPELL_IN_TAB"}
+events.emote = "PLAYER_TARGET_CHANGED"
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
@@ -51,7 +54,7 @@ complete = "|TInterface/GossipFrame/HealerGossipIcon:0|t",
 vendor = "|TInterface/GossipFrame/BankerGossipIcon:0|t",
 reputation = "|TInterface/GossipFrame/WorkOrderGossipIcon:0|t",
 fly = "|TInterface/GossipFrame/TaxiGossipIcon:0|t",
-fp = "|TInterface/AddOns/RXPGuides/Textures/fp:0|t",
+fp = "|TInterface/AddOns/" .. addonName .."/Textures/fp:0|t",
 hs = "|TInterface/MINIMAP/TRACKING/Innkeeper:0|t",
 trainer = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
 train = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
@@ -73,7 +76,6 @@ RXP_.icons.xpto60 = RXP_.icons.xp
 
 function RXP_.error(msg)
     print(msg)
-    return
 end
 
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or GetNumQuestLogEntries
@@ -461,7 +463,7 @@ local function GetRequiredQuests(quest)
 end
 
 local function ProcessItems(value,step,questId,isTurnIn)
-    local ref 
+    local ref
     if isTurnIn then
         ref = RXP_.questTurnInItems
     else
@@ -484,7 +486,7 @@ function RXP_.functions.accept(self,...)
     if type(self) == "string" then --on parse
         local element = {}
         element.tag = "accept"
-        local text,id = ...
+        local text,id,escort = ...
         id = tonumber(id)
         if not id then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.title = ""
@@ -520,6 +522,8 @@ function RXP_.functions.accept(self,...)
             stepType = stepType .. "["..step.phase.."]"
         end
 
+        element.escort = escort
+
         RXP_.pickUpList[id] = format("%s\n%s %s",RXP_.pickUpList[id],stepType,RXP_.currentGuideName)
 
         return element
@@ -531,11 +535,16 @@ function RXP_.functions.accept(self,...)
         local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)
 
         if element.step.active or element.retrieveText or (element.step.index > 1 and RXP_.currentGuide.steps[element.step.index-1].active) then
-            RXP_.questAccept[id] = element
+            local autoAccept = not element.escort
+            if autoAccept then
+                RXP_.questAccept[id] = element
+            end
             local quest = RXP_.GetQuestName(id,element)
             if quest then
                 element.title = quest
-                RXP_.questAccept[quest] = element
+                if autoAccept then
+                    RXP_.questAccept[id] = element
+                end
                 element.text = element.text:gsub("%*quest%*",quest)
                 if element.requestFromServer then
                     element.requestFromServer = nil
@@ -625,7 +634,7 @@ function RXP_.functions.daily(self,text,...)
                 break
             end
         end
-        
+
         if err then return RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid quest ID\n"..self) end
         element.title = ""
         --element.title = RXP_.GetQuestName(id)
@@ -644,10 +653,10 @@ function RXP_.functions.daily(self,text,...)
         local event = text
         local arg1,questId = ...
         local ids = element.ids
-        
-        
-        
-        
+
+
+
+
         for _,id in pairs(ids) do
             local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id) or (event == "QUEST_ACCEPTED" and questId == id)
 
@@ -669,7 +678,7 @@ function RXP_.functions.daily(self,text,...)
 
             local icon = RXP_.icons.daily
             local skip
-        
+
             if #ids == 1 and step.active and db and type(db.QueryQuest) == "function" and not isQuestAccepted and not RXP_.skipPreReq[id] then
                 local quest = db:GetQuest(id)
                 if quest then
@@ -877,7 +886,7 @@ function RXP_.UpdateQuestCompletionData(self)
     local step = element.step
     local icon = RXP_.icons.complete
     local id = element.questId
-    
+
     if type(id) ~= "number" then
         print('Error: Invalid quest ID at step '..element.step.index)
         return
@@ -885,7 +894,7 @@ function RXP_.UpdateQuestCompletionData(self)
     local skip
     local objectives = RXP_.GetQuestObjectives(id,element.step.index)
     local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
-    
+
     local objtext
     local completed
 
@@ -1161,8 +1170,8 @@ function RXP_.functions.waypoint(self,text,zone,x,y,radius,lowPrio,...)
             end
         elseif element.radius and element.radius < 0 then
             element.persistent = true
+            element.radius = math.abs(element.radius)
         end
-        radius = element.radius
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
 
         element.arrow = true
@@ -1205,7 +1214,7 @@ function RXP_.functions.pin(self,...)
         end
         element.zone = mapID
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
-        
+
         element.mapTooltip = tooltip
         element.parent = true
         element.text = text
@@ -1239,7 +1248,7 @@ function RXP_.functions.line(self,text,zone,...)
 
         element.text = text
         element.textOnly = true
-        
+
         return element
     end
 end
@@ -1268,10 +1277,10 @@ function RXP_.functions.loop(self,text,range,zone,...)
 
         element.text = text
         element.textOnly = true
-        
+
         element.range = tonumber(range)
         element.showArrow = true
-        
+
         return element
     end
 end
@@ -1468,7 +1477,7 @@ function RXP_.functions.collect(self,...)
         element.requestFromServer = true
     end
     element.itemName = name
-    
+
     if step.active and questId then
         if not element.isQuestTurnIn then
             --adds the item to the active item list, in case it's an item that starts a quest
@@ -1506,8 +1515,8 @@ function RXP_.functions.collect(self,...)
         end
     end
 
-    
-    
+
+
     local count = GetItemCount(element.id)
     for i = 1,INVSLOT_LAST_EQUIPPED do
         if GetInventoryItemID("player",i) == element.id then
@@ -1581,7 +1590,7 @@ function RXP_.functions.destroy(self,...)
         element.id = id
         element.qty = qty or 1
         element.itemName = RXP_.GetItemName(id)
-        
+
         if text and text ~= "" then
             element.rawtext = text
             element.tooltipText = RXP_.icons.collect..element.rawtext
@@ -1637,7 +1646,7 @@ function RXP_.functions.xp(self,...)
         if operator == "<" then
             element.reverseLogic = true
         end
-        
+
         if text and text ~= "" then
             element.text = text
         elseif not skipstep then
@@ -1686,10 +1695,9 @@ function RXP_.functions.xp(self,...)
 
 end
 
-function RXP_.functions.skill(self,...)
+function RXP_.functions.skill(self,text,skillName,str,skipstep,useMaxValue)
     if type(self) == "string" then --on parse
         local element = {}
-        local text,skillName,str,skipstep = ...
         skipstep = tonumber(skipstep)
         str = str:gsub(" ","")
         local operator,level = str:match("(<?)%s*(%d+)")
@@ -1701,11 +1709,12 @@ function RXP_.functions.skill(self,...)
         if operator == "<" then
             element.reverseLogic = true
         end
-        
+
         if text ~= "" then
             element.text = text
         end
         element.skipstep = skipstep
+        element.useMaxValue = useMaxValue
         if skipstep then
             element.textOnly = true
         end
@@ -1715,10 +1724,10 @@ function RXP_.functions.skill(self,...)
 
     local element = self.element
     local step = element.step
-    if step.active then
-        RXP_.UpdateSkillData()
+    if not step.active then
+        return
     end
-    local level = RXP_.skills[element.skill]
+    local level = RXP_.GetSkillLevel(element.skill,element.useMaxValue)
     if not level then return end
     local reverseLogic = element.reverseLogic
     --print(level,element.level,(level >= element.level) == not reverseLogic)
@@ -1734,6 +1743,10 @@ function RXP_.functions.skill(self,...)
         end
     end
 
+end
+
+function RXP_.functions.maxskill(self,text,skillName,str,skipstep)
+    return RXP_.functions.skill(self,text,skillName,str,skipstep,true)
 end
 
 function RXP_.functions.reputation(self,...)
@@ -2996,16 +3009,18 @@ function RXP_.functions.vehicle(self,...)
         return element
     end
 
+    local element = self.element
+    if not element or element.tag ~= "vehicle" then
+        return UnitExists("vehicle")
+    end
     local event,unit,showVehicleFrame,isControlSeat,vehicleUIIndicatorID,guid = ...
-    local id = self.element.id
-
+    local id = element.id
     local vehicle = RXP_.GetNpcId("vehicle") or RXP_.GetNpcId(guid,true)
     --print('>',vehicle,vehicle == id)
     if ((event == "UNIT_ENTERING_VEHICLE" and unit == "player") or vehicle)
     and ((id and vehicle == id) or (not id and vehicle)) then
         RXP_.SetElementComplete(self)
     end
-
 end
 
 function RXP_.functions.itemcount(self,...)
@@ -3020,19 +3035,19 @@ function RXP_.functions.itemcount(self,...)
         if not (total and id) then
             RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid item ID/count\n"..self)
         end
-        
-        
+
+
         if operator == "<" then
             element.operator = -1
         elseif operator == ">" then
             element.operator = 1
-        else 
+        else
             element.operator = 0
         end
         if eq == "=" then
             element.eq = true
         end
-        
+
         if text ~= "" then
             element.text = text
         end
@@ -3058,4 +3073,161 @@ function RXP_.functions.itemcount(self,...)
         end
     end
 
+end
+
+function RXP_.functions.emote(self,text,token,unitId,callback,...)
+    if type(self) == "string" then
+        local element = {}
+
+        local events = {...}
+        if callback then
+            element.callback = callback
+            element.event = events
+        end
+        element.text = text
+        element.textOnly = true
+
+        element.id = tonumber(unitId)
+        element.emote = token
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+
+    if not step.active then
+        return
+    end
+
+    local group = RXP_.currentGuide.group
+    local emote = element.emote
+    if element.callback then
+        if RXPG[group][element.callback](self,text,token,unitId,callback,...) then
+            DoEmote(emote)
+        end
+    elseif RXP_.GetNpcId() == element.id then
+        DoEmote(emote)
+    end
+
+end
+
+function RXP_.functions.openmap(self,text,map,callback,...)
+    if type(self) == "string" then
+        local element = {}
+
+        local events = {...}
+        if callback then
+            element.callback = callback
+            element.event = events
+        end
+        element.text = text
+        element.textOnly = true
+
+        element.mapId = RXP_.mapId[map] or tonumber(map)
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+
+    if not step.active then
+        element.mapOpened = false
+        return
+    end
+
+    local group = RXP_.currentGuide.group
+    local mapId = element.mapId
+
+    if element.callback then
+        if RXPG[group][element.callback](self,text,map,callback,...) then
+            WorldMapFrame:Show()
+            WorldMapFrame:SetMapID(mapId)
+        end
+    elseif not element.mapOpened then
+        element.mapOpened = true
+        WorldMapFrame:Show()
+        WorldMapFrame:SetMapID(mapId)
+    end
+
+end
+
+function RXP_.functions.cooldown(self,text,cooldownType,id,remaining,updateOnce,...)
+    if type(self) == "string" then
+        local element = {}
+        id = tonumber(id)
+        local operator,cd,suffix = string.match(remaining,"([<>]?)%s*(%d+%p?%d*)%s*(m?)")
+        cd = tonumber(cd) or 0
+        if not (cd and id) then
+            RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
+        end
+        if operator == "<" then
+            element.operator = -1
+        else
+            element.operator = 1
+        end
+        if suffix then
+            cd = cd*60
+        end
+        element.updateOnce = updateOnce
+        element.id = id
+        element.remaining = cd
+        element.cooldownType = cooldownType
+        element.text = text
+        element.textOnly = true
+        return element
+    end
+
+    local element = self.element or self
+    local step = element.step
+    if not step.active or step.completed then
+        element.isActive = false
+        return
+    elseif not element.isActive then
+        element.isActive = true
+    elseif element.updateOnce and element.isActive then
+        return
+    end
+
+    local operator = element.operator
+    id = element.id
+    cooldownType = element.cooldownType
+    remaining = element.remaining
+
+    local start,duration = 0,0
+    if cooldownType == "spell" then
+        start, duration = GetSpellCooldown(id)
+    elseif cooldownType == "item" then
+        start, duration = GetItemCooldown(id)
+    elseif cooldownType == "action" then
+        start, duration = GetActionCooldown(id)
+    elseif cooldownType == "pet" then
+        start, duration = GetPetActionCooldown(id)
+    elseif cooldownType == "inventory" then
+        start, duration = GetInventoryItemCooldown("player",id)
+    end
+    local endTime = start + duration
+
+    --Astral recall:
+    if class == "SHAMAN" and IsPlayerSpell(556) and
+                id == 6948 and cooldownType == "item" then
+        local arStart,arDuration = GetSpellCooldown(556)
+        endTime = math.min(endTime,arStart+arDuration)
+    end
+
+    local target = endTime - remaining
+
+    if GetTime() * operator < target * operator then
+        RXP_.updateSteps = true
+        step.completed = true
+        element.isActive = false
+    elseif target > 0 and not element.updateOnce then
+        RXP_.ScheduleTask(element,target+1)
+    end
+end
+
+function RXP_.functions.rescue()
+	local _,seat = UnitVehicleSeatInfo("vehicle",2)
+	if seat then
+		return true
+	end
 end

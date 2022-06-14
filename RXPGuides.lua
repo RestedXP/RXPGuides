@@ -1,4 +1,6 @@
-﻿RXP_ = RXP_ or {}
+﻿local addonName = ...
+
+RXP_ = RXP_ or {}
 RXPGuides = {}
 RXP_.versionText = "Version 3.0.6"
 local addonVersion = 30006
@@ -12,7 +14,6 @@ else
     RXP_.version = "WOTLK"
 end
 
-
 RXP_.questQueryList = {}
 RXP_.itemQueryList = {}
 RXP_.questAccept = {}
@@ -22,19 +23,18 @@ RXP_.activeItems = {}
 local eventFrame = CreateFrame("Frame");
 local questFrame = CreateFrame("Frame");
 
-
---eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
+-- eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
 eventFrame:RegisterEvent("TAXIMAP_OPENED")
-eventFrame:RegisterUnitEvent("UNIT_AURA","player")
-eventFrame:RegisterUnitEvent("UNIT_PET","player")
+eventFrame:RegisterUnitEvent("UNIT_AURA", "player")
+eventFrame:RegisterUnitEvent("UNIT_PET", "player")
 eventFrame:RegisterEvent("TRAINER_SHOW")
 eventFrame:RegisterEvent("TRAINER_CLOSED")
 eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 eventFrame:RegisterEvent("BAG_UPDATE_DELAYED")
---eventFrame:RegisterEvent("SKILL_LINES_CHANGED")
+-- eventFrame:RegisterEvent("SKILL_LINES_CHANGED")
 if C_QuestLog.RequestLoadQuestByID then
     eventFrame:RegisterEvent("QUEST_DATA_LOAD_RESULT")
 end
@@ -46,8 +46,6 @@ questFrame:RegisterEvent("GOSSIP_SHOW")
 questFrame:RegisterEvent("QUEST_DETAIL")
 questFrame:RegisterEvent("QUEST_TURNED_IN")
 
-
-
 local SoMtimer
 local function SoMCheck()
     if version > 20000 then
@@ -57,20 +55,21 @@ local function SoMCheck()
     end
 
     local buffId = 362859
-    if RXPCData and type(RXPCData.SoM) ~= "boolean" and GetTime() - SoMtimer < 300 then
+    if RXPCData and type(RXPCData.SoM) ~= "boolean" and GetTime() - SoMtimer <
+        300 then
         local id = 0
         local n = 1
         while id do
-           id = select(10,UnitBuff("player",n))
-           n = n+1
-           if id == buffId then
-              RXPCData.SoM = true
-              if RXP_.currentGuide and RXP_.currentGuide.name then
-                RXP_:LoadGuide(RXP_.currentGuide)
-              end
-              RXPFrame.GenerateMenuTable()
-              break
-           end
+            id = select(10, UnitBuff("player", n))
+            n = n + 1
+            if id == buffId then
+                RXPCData.SoM = true
+                if RXP_.currentGuide and RXP_.currentGuide.name then
+                    RXP_:LoadGuide(RXP_.currentGuide)
+                end
+                RXPFrame.GenerateMenuTable()
+                break
+            end
         end
         if id ~= buffId and RXPCData.SoM then
             RXPCData.SoM = nil
@@ -100,7 +99,8 @@ function RXPG_init()
     RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
     RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
-    RXPData.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity or 0.35
+    RXPData.worldMapPinBackgroundOpacity =
+        RXPData.worldMapPinBackgroundOpacity or 0.35
     RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.arrowText = RXPData.arrowText or 9
@@ -122,10 +122,9 @@ function RXPG_init()
         RXPData.trainGenericSpells = true
     end
 
-
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     RXPFrame:SetShown(not RXPCData.hideWindow)
-    C_Timer.After(0.5,function()
+    C_Timer.After(0.5, function()
         if RXP_.errorCount == RXP_.guideErrorCount then
             RXP_.errorCount = -1
             ScriptErrorsFrame:Hide()
@@ -136,10 +135,12 @@ end
 RXP_.errorCount = 0
 RXP_.guideErrorCount = 0
 
-hooksecurefunc(ScriptErrorsFrame,"DisplayMessage",function(self, msg, warnType, keepHidden, messageType)
+hooksecurefunc(ScriptErrorsFrame, "DisplayMessage",
+               function(self, msg, warnType, keepHidden, messageType)
     if ScriptErrorsFrame:IsForbidden() then return end
     if RXP_.errorCount >= 0 then
-        if warnType == 0 and keepHidden == false and messageType == 1 and type(msg) == "string" and msg:match("RXPGuides\\Guides") then
+        if warnType == 0 and keepHidden == false and messageType == 1 and
+            type(msg) == "string" and msg:match(addonName .. "\\Guides") then
             RXP_.guideErrorCount = RXP_.guideErrorCount + 1
         end
         RXP_.errorCount = RXP_.errorCount + 1
@@ -147,8 +148,6 @@ hooksecurefunc(ScriptErrorsFrame,"DisplayMessage",function(self, msg, warnType, 
 end)
 
 local startTime = GetTime()
-local questProgressTimer = 0
-local questTimer = 0
 
 function RXP_.QuestAutoAccept(title)
     if title then
@@ -164,60 +163,63 @@ function RXP_.QuestAutoTurnIn(title)
     end
 end
 
+local currrentSkillLevel = {}
+local maxSkillLevel = {}
+local professionNames
 
-RXP_.skills = {}
-RXP_.professionNames = {}
 function RXP_.GetProfessionNames()
-    local names = {}
-    for profession,ids in pairs(RXP_.professionID) do
-        for i,id in ipairs(ids) do
+    if not professionNames then
+        professionNames = {}
+    end
+
+    for profession, ids in pairs(RXP_.professionID) do
+        for i, id in ipairs(ids) do
             if IsSpellKnown(id) then
                 if id == 2656 then
-                    names[profession] = GetSpellInfo(2575)
+                    professionNames[profession] = GetSpellInfo(2575)
                 elseif id == 2383 then
-                    names[profession] = GetSpellInfo(9134)
+                    professionNames[profession] = GetSpellInfo(9134)
                 else
-                    names[profession] = GetSpellInfo(id)
+                    professionNames[profession] = GetSpellInfo(id)
                 end
                 break
             end
         end
     end
-    names.riding = GetSpellInfo(33388)
-    return names
+    professionNames.riding = GetSpellInfo(33388)
+    return professionNames
 end
 
 function RXP_.GetProfessionLevel()
     local names
-    if #RXP_.professionNames == 0 then
-        RXP_.professionNames = RXP_.GetProfessionNames()
+    if not (professionNames and professionNames.riding) then
+        RXP_.GetProfessionNames()
     end
-    names = RXP_.professionNames
-    
+    names = professionNames
+
     if not GetSkillLineInfo then
         if IsPlayerSpell(33388) then
-            RXP_.skills["riding"] = 75
+            currrentSkillLevel["riding"] = 75
         elseif IsPlayerSpell(33391) then
-            RXP_.skills["riding"] = 150
+            currrentSkillLevel["riding"] = 150
         elseif IsPlayerSpell(34090) then
-            RXP_.skills["riding"] = 225
+            currrentSkillLevel["riding"] = 225
         elseif IsPlayerSpell(34091) then
-            RXP_.skills["riding"] = 300
+            currrentSkillLevel["riding"] = 300
         elseif IsPlayerSpell(90265) then
-            RXP_.skills["riding"] = 375     
+            currrentSkillLevel["riding"] = 375
         end
-        return 
+        return
     end
-    if not names.riding then
-        names.riding = GetSpellInfo(33388)
-    end
+    if not names.riding then names.riding = GetSpellInfo(33388) end
     for i = 1, GetNumSkillLines() do
-        skillName, header, isExpanded, skillRank = GetSkillLineInfo(i)
+        local skillName,_,_,skillRank,_,_,skillMaxRank = GetSkillLineInfo(i)
         if skillRank then
-            for profession,name in pairs(names) do
-                --print(name,skillName,name == skillName)
+            for profession, name in pairs(names) do
+                -- print(name,skillName,name == skillName)
                 if name == skillName then
-                    RXP_.skills[profession] = skillRank
+                    currrentSkillLevel[profession] = skillRank
+                    maxSkillLevel[profession] = skillMaxRank
                 end
             end
         end
@@ -225,8 +227,25 @@ function RXP_.GetProfessionLevel()
 end
 
 function RXP_.UpdateSkillData()
-    RXP_.professionNames = RXP_.GetProfessionNames()
+    RXP_.GetProfessionNames()
     RXP_.GetProfessionLevel()
+end
+
+function RXP_.GetSkillLevel(skill,useMaxValue)
+    RXP_.UpdateSkillData()
+    if skill then
+        if useMaxValue then
+            return maxSkillLevel[skill] or -1
+        else
+            return currrentSkillLevel[skill] or -1
+        end
+    else
+        if useMaxValue then
+            return maxSkillLevel
+        else
+            return currrentSkillLevel
+        end
+    end
 end
 
 RXP_.skillList = {}
@@ -235,25 +254,28 @@ local spellRequest = {}
 local trainerUpdate = 0
 local level = UnitLevel("player")
 
-local function ProcessSpells(names,rank)
-    local _,class = UnitClass("player")
-    local _,race = UnitRace("player")
+local function ProcessSpells(names, rank)
+    local _, class = UnitClass("player")
+    local _, race = UnitRace("player")
     local level = UnitLevel("player")
-    local entries = {race,class}
-    for _,entry in pairs(entries) do
+    local entries = {race, class}
+    for _, entry in pairs(entries) do
         if RXP_.defaultSpellList[entry] then
-            for spellLvl,spells in pairs(RXP_.defaultSpellList[entry]) do
+            for spellLvl, spells in pairs(RXP_.defaultSpellList[entry]) do
                 if spellLvl <= level then
-                    for i,spellId in ipairs(spells) do
-                        if not (spellRequest[spellId] or C_Spell.IsSpellDataCached(spellId)) then
+                    for i, spellId in ipairs(spells) do
+                        if not (spellRequest[spellId] or
+                            C_Spell.IsSpellDataCached(spellId)) then
                             C_Spell.RequestLoadSpellData(spellId)
                             spellRequest[spellId] = true
                         end
-                        if names and rank and not(RXPCData.hardcore and RXP_.HCSpellList and RXP_.HCSpellList[spellId]) then
+                        if names and rank and
+                            not (RXPCData.hardcore and RXP_.HCSpellList and
+                                RXP_.HCSpellList[spellId]) then
                             spellRequest[spellId] = nil
                             local sName = GetSpellInfo(spellId)
                             local sRank = GetSpellSubtext(spellId)
-                            for id,name in pairs(names) do
+                            for id, name in pairs(names) do
                                 if sName == name and sRank == rank[id] then
                                     BuyTrainerService(id)
                                 end
@@ -272,14 +294,12 @@ local function OnTrainer()
         local level = UnitLevel("player")
         local i = GetNumTrainerServices()
 
-        if not i or i == 0 or GetTime() - trainerUpdate > 15 then
-            return
-        end
+        if not i or i == 0 or GetTime() - trainerUpdate > 15 then return end
 
         local names = {}
         local rank = {}
 
-        for id = 1,i do
+        for id = 1, i do
             local n, r, cat = GetTrainerServiceInfo(id)
             if cat == "available" then
                 names[id] = n
@@ -287,10 +307,10 @@ local function OnTrainer()
             end
         end
 
-        ProcessSpells(names,rank)
+        ProcessSpells(names, rank)
 
-        for spellName,spellRank in pairs(RXP_.skillList) do
-            for id,name in pairs(names) do
+        for spellName, spellRank in pairs(RXP_.skillList) do
+            for id, name in pairs(names) do
                 if name == spellName then
                     local r = rank[id]
                     r = r and tonumber(r:match("(%d+)")) or 0
@@ -306,30 +326,34 @@ local function OnTrainer()
 end
 
 local tTimer = 0
-local function trainerFrameUpdate(self,t)
+local function trainerFrameUpdate(self, t)
     tTimer = tTimer + t
     if tTimer >= 0.2 then
         tTimer = 0
         if GetTime() - trainerUpdate > 15 then
-            self:SetScript("OnUpdate",nil)
+            self:SetScript("OnUpdate", nil)
         end
         OnTrainer()
     end
 end
 
-local G_GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActiveQuests
-local G_GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or GetNumGossipAvailableQuests
+local G_GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
+                                 GetNumGossipActiveQuests
+local G_GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
+                                    GetNumGossipAvailableQuests
 local G_GetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
-local G_SelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or SelectGossipAvailableQuest
+local G_SelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or
+                                   SelectGossipAvailableQuest
 local G_GetActiveQuests = C_GossipInfo.GetActiveQuests or GetGossipActiveQuests
-local G_SelectActiveQuest = C_GossipInfo.SelectActiveQuest or SelectGossipActiveQuest
-local G_GetAvailableQuests = C_GossipInfo.GetAvailableQuests or GetGossipAvailableQuests
+local G_SelectActiveQuest = C_GossipInfo.SelectActiveQuest or
+                                SelectGossipActiveQuest
+local G_GetAvailableQuests = C_GossipInfo.GetAvailableQuests or
+                                 GetGossipAvailableQuests
 
-function RXP_:QuestAutomation(event,arg1,arg2,arg3)
+function RXP_:QuestAutomation(event, arg1, arg2, arg3)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
         return
     end
-
 
     if not event then
         if GossipFrame and GossipFrame:IsShown() then
@@ -338,7 +362,8 @@ function RXP_:QuestAutomation(event,arg1,arg2,arg3)
             event = "QUEST_GREETING"
         elseif QuestFrameProgressPanel and QuestFrameProgressPanel:IsShown() then
             event = "QUEST_PROGRESS"
-        elseif QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() or QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown() then
+        elseif QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() or
+            QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown() then
             event = "QUEST_COMPLETE"
         else
             return
@@ -361,7 +386,7 @@ function RXP_:QuestAutomation(event,arg1,arg2,arg3)
 
     elseif event == "QUEST_PROGRESS" and IsQuestCompletable() then
         CompleteQuest()
-        --questProgressTimer = GetTime()
+        -- questProgressTimer = GetTime()
 
     elseif event == "QUEST_DETAIL" then
         local id = GetQuestID()
@@ -404,10 +429,11 @@ function RXP_:QuestAutomation(event,arg1,arg2,arg3)
                 title = quests[i].questID
                 isComplete = quests[i].isComplete
             else
-                title, level, isTrivial, isComplete = select(i * 6 - 5, G_GetActiveQuests())
+                title, level, isTrivial, isComplete = select(i * 6 - 5,
+                                                             G_GetActiveQuests())
             end
-            --print(title)
-            --print(quests[i])
+            -- print(title)
+            -- print(quests[i])
             if RXP_.QuestAutoTurnIn(title) and isComplete then
                 return G_SelectActiveQuest(i)
             end
@@ -435,10 +461,9 @@ function RXP_:QuestAutomation(event,arg1,arg2,arg3)
     end
 end
 
+questFrame:SetScript("OnEvent", RXP_.QuestAutomation)
 
-questFrame:SetScript("OnEvent",RXP_.QuestAutomation)
-
-eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
+eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
 
     if event == "GET_ITEM_INFO_RECEIVED" and arg2 then
         if RXP_.itemQueryList[arg1] then
@@ -450,17 +475,17 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         return
     elseif (event == "BAG_UPDATE_DELAYED" or event == "PLAYER_REGEN_ENABLED") then
         RXP_.UpdateItemFrame()
-    elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552)  then
-        C_Timer.After(1, function() RXP_.ReloadGuide() end) --scryer/aldor quest
+    elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552) then
+        C_Timer.After(1, function() RXP_.ReloadGuide() end) -- scryer/aldor quest
     elseif event == "SKILL_LINES_CHANGED" then
         RXP_.UpdateSkillData()
     elseif event == "TRAINER_SHOW" then
         trainerUpdate = GetTime()
         OnTrainer()
-        self:SetScript("OnUpdate",trainerFrameUpdate)
+        self:SetScript("OnUpdate", trainerFrameUpdate)
         return
     elseif event == "TRAINER_CLOSED" then
-        self:SetScript("OnUpdate",nil)
+        self:SetScript("OnUpdate", nil)
         return
     elseif event == "PLAYER_LOGIN" then
         RXPG_init()
@@ -469,14 +494,18 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         loadtime = GetTime()
         ProcessSpells()
         RXP_.GetProfessionLevel()
-        local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,RXPCData.currentGuideName)
+        local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,
+                                         RXPCData.currentGuideName)
         if not guide and RXPData.autoLoadGuides then
             guide = RXP_.defaultGuide
-            if RXP_.version ~= "CLASSIC" and (UnitLevel("player") == 58 and not guide.boost58) then
+            if RXP_.version == "TBC" and
+                (UnitLevel("player") == 58 and not guide.boost58) then
                 guide = nil
             end
         end
-        RXP_:LoadGuide(guide,true)
+        if not RXPCData.GA then
+            RXP_:LoadGuide(guide, true)
+        end
         if not RXP_.currentGuide then
             RXPFrame:SetHeight(20)
             RXPFrame.BottomFrame.UpdateFrame()
@@ -484,17 +513,16 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         end
         return
     elseif event == "TAXIMAP_OPENED" then
-        local FPlist = C_TaxiMap.GetAllTaxiNodes(C_Map.GetBestMapForUnit("player"))
-        for k,v in pairs(FPlist) do
-            if v.nodeID then
-                RXPCData.flightPaths[v.nodeID] = true
-            end
+        local FPlist = C_TaxiMap.GetAllTaxiNodes(
+                           C_Map.GetBestMapForUnit("player"))
+        for k, v in pairs(FPlist) do
+            if v.nodeID then RXPCData.flightPaths[v.nodeID] = true end
         end
     elseif event == "PLAYER_LEVEL_UP" and RXP_.currentGuide then
         level = UnitLevel("player")
         local stepn = RXPCData.currentStep
         ProcessSpells()
-        --RXP_:LoadGuide(RXP_.currentGuide)
+        -- RXP_:LoadGuide(RXP_.currentGuide)
         RXP_.SetStep(1)
         RXP_.SetStep(stepn)
     elseif event == "UNIT_AURA" then
@@ -506,11 +534,11 @@ eventFrame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
         RXP_.updateStepText = true
     end
 
-
 end)
 
-function RXP_.GetGuideTable(guideGroup,guideName)
-    if guideGroup and RXP_.guideList[guideGroup] and guideName and RXP_.guideList[guideGroup][guideName] then
+function RXP_.GetGuideTable(guideGroup, guideName)
+    if guideGroup and RXP_.guideList[guideGroup] and guideName and
+        RXP_.guideList[guideGroup][guideName] then
         return RXP_.guides[RXP_.guideList[guideGroup][guideName]]
     end
 end
@@ -518,9 +546,9 @@ end
 function RXP_.UnitScanUpdate()
     local unitscanList = RXP_.currentGuide.unitscan
     if unitscan_targets and unitscanList and not RXPData.disableUnitscan then
-        for unit,elements in pairs(unitscanList) do
+        for unit, elements in pairs(unitscanList) do
             local enabled
-            for _,element in pairs(elements) do
+            for _, element in pairs(elements) do
                 if element.step.active then
                     enabled = true
                     break
@@ -529,12 +557,14 @@ function RXP_.UnitScanUpdate()
 
             if enabled then
                 if not unitscan_targets[unit] then
-                    DEFAULT_CHAT_FRAME:AddMessage(LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> +' .. unit)
+                    DEFAULT_CHAT_FRAME:AddMessage(
+                        LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> +' .. unit)
                 end
                 unitscan_targets[unit] = true
             else
                 if unitscan_targets[unit] then
-                    DEFAULT_CHAT_FRAME:AddMessage(LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> -' .. unit)
+                    DEFAULT_CHAT_FRAME:AddMessage(
+                        LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> -' .. unit)
                 end
                 unitscan_targets[unit] = nil
             end
@@ -543,13 +573,31 @@ function RXP_.UnitScanUpdate()
     end
 end
 
+RXP_.scheduledTasks = {}
 
+function RXP_.UpdateScheduledTasks()
+    local cTime = GetTime()
+    for ref,time in pairs(RXP_.scheduledTasks) do
+        if cTime > time then
+            local group = RXP_.currentGuide.group
+            local element = ref.element or ref
+            RXPGuides[group][element.tag](ref)
+            RXP_.scheduledTasks[ref] = nil
+            return
+        end
+    end
+end
+
+function RXP_.ScheduleTask(ref,time)
+    if type(ref) == "table" and type(time) == "number" then
+        RXP_.scheduledTasks[ref] = time
+    end
+end
 
 RXP_.updateActiveQuest = {}
 RXP_.updateInactiveQuest = {}
 
 RXP_.tickTimer = 0
-
 
 local updateFrame = CreateFrame("Frame")
 
@@ -557,8 +605,8 @@ local eventType
 local updateTick = 0
 local updateStart = 0
 
-updateFrame:SetScript("OnUpdate",function(self,diff)
-    
+updateFrame:SetScript("OnUpdate", function(self, diff)
+
     updateTick = updateTick + diff
     if updateTick > 0.15 then
         local currentTime = GetTime()
@@ -569,16 +617,14 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
         local event = ""
 
         if not RXP_.loadNextStep then
-            for ref,func in pairs(RXP_.updateActiveQuest) do
+            for ref, func in pairs(RXP_.updateActiveQuest) do
                 func(ref)
                 RXP_.updateActiveQuest[ref] = nil
                 activeQuestUpdate = activeQuestUpdate + 1
             end
-            if activeQuestUpdate > 0 then
-                event = event .. "/activeQ"
-            end
+            if activeQuestUpdate > 0 then event = event .. "/activeQ" end
         end
-       if RXP_.nextStep then
+        if RXP_.nextStep then
             skip = true
             RXP_.SetStep(RXP_.nextStep)
             RXP_.questAutoAccept = true
@@ -586,7 +632,7 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
             RXP_.nextStep = false
         elseif RXP_.loadNextStep then
             RXP_.loadNextStep = false
-            RXP_.SetStep(RXPCData.currentStep+1)
+            RXP_.SetStep(RXPCData.currentStep + 1)
             RXP_.questAutoAccept = true
             skip = true
             RXP_.updateBottomFrame = true
@@ -604,7 +650,7 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
                         if not updateText and steps[n].active then
                             updateText = true
                         end
-                        RXPFrame.BottomFrame.UpdateFrame(nil,nil,n)
+                        RXPFrame.BottomFrame.UpdateFrame(nil, nil, n)
                         if not RXP_.updateStepText then
                             RXP_.stepUpdateList[n] = nil
                         end
@@ -636,7 +682,7 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
                 RXP_.UpdateMap()
                 event = event .. "/map"
             elseif activeQuestUpdate == 0 then
-                for ref,func in pairs(RXP_.updateInactiveQuest) do
+                for ref, func in pairs(RXP_.updateInactiveQuest) do
                     activeQuestUpdate = activeQuestUpdate + 1
                     if activeQuestUpdate > 4 then
                         break
@@ -651,11 +697,12 @@ updateFrame:SetScript("OnUpdate",function(self,diff)
             end
             RXP_.UpdateGotoSteps()
             RXP_.UpdateItemCooldown()
+            RXP_.UpdateScheduledTasks()
         end
 
         if event ~= "" then
             eventType = event
-            --print(event)
+            -- print(event)
         end
     end
 end)
@@ -679,8 +726,10 @@ end
 
 function RXP_.AldorScryerCheck(faction)
     if RXP_.version == "CLASSIC" then return true end
-    local name, description, standingID, barMin, barMax, aldorRep = GetFactionInfoByID(932)
-    local name, description, standingID, barMin, barMax, scryerRep = GetFactionInfoByID(934)
+    local name, description, standingID, barMin, barMax, aldorRep =
+        GetFactionInfoByID(932)
+    local name, description, standingID, barMin, barMax, scryerRep =
+        GetFactionInfoByID(934)
 
     if aldorRep and scryerRep then
         if type(faction) == "table" then
@@ -707,8 +756,8 @@ function RXP_.PhaseCheck(phase)
     end
 
     if phase and RXPCData and RXPCData.phase then
-        local pmin,pmax
-        pmin,pmax = phase:match("(%d+)%-(%d+)")
+        local pmin, pmax
+        pmin, pmax = phase:match("(%d+)%-(%d+)")
         if pmax then
             pmin = tonumber(pmin)
             pmax = tonumber(pmax)
@@ -727,14 +776,13 @@ function RXP_.PhaseCheck(phase)
 end
 
 function RXP_.IsStepShown(step)
-    if (step.daily and RXPCData.skipDailies) then
-        return false
-    end
+    if (step.daily and RXPCData.skipDailies) then return false end
     return true
 end
 
 function RXP_.SeasonCheck(step)
-    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM or RXPCData.SoM and RXPCData.phase > 2 and step["era/som"] then
+    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM or
+        RXPCData.SoM and RXPCData.phase > 2 and step["era/som"] then
         return false
     end
     return true
@@ -742,8 +790,6 @@ end
 
 function RXP_.HardcoreCheck(step)
     local hc = RXPCData.hardcore
-    if step.softcore and hc or step.hardcore and not hc then
-        return false
-    end
+    if step.softcore and hc or step.hardcore and not hc then return false end
     return true
 end

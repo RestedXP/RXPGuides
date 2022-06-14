@@ -1,3 +1,4 @@
+local addonName = ...
 
 SLASH_RXPG1 = "/rxp"
 SLASH_RXPG2 = "/rxpg"
@@ -8,9 +9,8 @@ SlashCmdList["RXPG"] = function(msg)
     InterfaceOptionsFrame_OpenToCategory(RXPOptions)
 end
 
-
 function RXP_.CreateOptionsPanel()
-    local panel = CreateFrame("Frame","RXPOptions")
+    local panel = CreateFrame("Frame", "RXPOptions")
     panel.name = "RXP Guides"
     InterfaceOptions_AddCategory(panel)
 
@@ -18,62 +18,64 @@ function RXP_.CreateOptionsPanel()
     panel.title:SetPoint("TOPLEFT", 16, -16)
     panel.title:SetText("RestedXP Guides")
 
-
-    panel.subtext = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+    panel.subtext = panel:CreateFontString(nil, "ARTWORK",
+                                           "GameFontHighlightSmall")
     panel.subtext:SetPoint("TOPLEFT", panel.title, "BOTTOMLEFT", 0, -8)
     panel.subtext:SetText(versionText)
 
     panel.icon = panel:CreateTexture()
-    panel.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
-    panel.icon:SetPoint("TOPRIGHT",-5,-5)
-    
+    panel.icon:SetTexture("Interface/AddOns/" .. addonName ..
+                              "/Textures/rxp_logo-64")
+    panel.icon:SetPoint("TOPRIGHT", -5, -5)
 
-
-    --panel.icon:SetSize(64,64)
+    -- panel.icon:SetSize(64,64)
     local index = 0
     local options = {}
-    local button = CreateFrame("CheckButton", "$parentQuestTurnIn", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
+    local button = CreateFrame("CheckButton", "$parentQuestTurnIn", panel,
+                               "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
     index = index + 1
-    button:SetPoint("TOPLEFT",panel.title,"BOTTOMLEFT",0,-25)
-    button:SetScript("PostClick",function(self)
+    button:SetPoint("TOPLEFT", panel.title, "BOTTOMLEFT", 0, -25)
+    button:SetScript("PostClick", function(self)
         RXPData.disableQuestAutomation = not self:GetChecked()
     end)
     button:SetChecked(not RXPData.disableQuestAutomation)
     button.Text:SetText("Quest auto accept/turn in")
-    button.tooltip = "Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"
+    button.tooltip =
+        "Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"
 
-
-    button = CreateFrame("CheckButton", "$parentTrainer", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button = CreateFrame("CheckButton", "$parentTrainer", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         RXPData.disableTrainerAutomation = not self:GetChecked()
     end)
     button:SetChecked(not RXPData.disableTrainerAutomation)
     button.Text:SetText("Trainer automation")
-    button.tooltip = "Allows the guide to buy useful leveling spells automatically"
+    button.tooltip =
+        "Allows the guide to buy useful leveling spells automatically"
 
-
-
-    button = CreateFrame("CheckButton", "$parentFP", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button = CreateFrame("CheckButton", "$parentFP", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         RXPData.disableFPAutomation = not self:GetChecked()
     end)
     button:SetChecked(not RXPData.disableFPAutomation)
     button.Text:SetText("Flight Path automation")
-    button.tooltip = "Allows the guide to automatically fly you to your destination"
+    button.tooltip =
+        "Allows the guide to automatically fly you to your destination"
 
-
-    button = CreateFrame("CheckButton", "$parentArrow", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button = CreateFrame("CheckButton", "$parentArrow", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         local checkbox = self:GetChecked()
         RXP_.arrowFrame:SetShown(RXP_.currentGuide and checkbox)
         RXPData.disableArrow = not checkbox
@@ -82,48 +84,52 @@ function RXP_.CreateOptionsPanel()
     button.Text:SetText("Enable waypoint arrow")
     button.tooltip = "Show/Hide the waypoint arrow"
 
-    button = CreateFrame("CheckButton", "$parentMiniMapPin", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button = CreateFrame("CheckButton", "$parentMiniMapPin", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         RXPData.hideMiniMapPins = self:GetChecked()
         RXP_.UpdateMap()
     end)
     button:SetChecked(RXPData.hideMiniMapPins)
     button.Text:SetText("Hide Mini Map Pins")
-    --button.tooltip = ""
+    -- button.tooltip = ""
 
-
-    button = CreateFrame("CheckButton", "$parentUnusedGuides", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button = CreateFrame("CheckButton", "$parentUnusedGuides", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         RXPData.hideUnusedGuides = not self:GetChecked()
         RXPFrame.GenerateMenuTable()
     end)
     button:SetChecked(not RXPData.hideUnusedGuides)
     button.Text:SetText("Show unused guides")
-    button.tooltip = "Displays guides that are not applicable for your class/race such as starting zones for other races"
+    button.tooltip =
+        "Displays guides that are not applicable for your class/race such as starting zones for other races"
 
-
-    button = CreateFrame("CheckButton", "$parentAutoLoad", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button = CreateFrame("CheckButton", "$parentAutoLoad", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         RXPData.autoLoadGuides = self:GetChecked()
     end)
     button:SetChecked(RXPData.autoLoadGuides)
     button.Text:SetText("Auto load starting zone guides")
-    button.tooltip = "Automatically picks a suitable guide whenever you log in for the first time on a character"
+    button.tooltip =
+        "Automatically picks a suitable guide whenever you log in for the first time on a character"
     --
-    button = CreateFrame("CheckButton", "$parentHideWindow", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button = CreateFrame("CheckButton", "$parentHideWindow", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         local hide = self:GetChecked()
         RXPCData.hideWindow = hide
         RXPFrame:SetShown(not hide)
@@ -132,24 +138,24 @@ function RXP_.CreateOptionsPanel()
     button.Text:SetText("Hide Window")
     button.tooltip = "Hides the main window"
 
-
-
-    button = CreateFrame("CheckButton", "$parentLock", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button = CreateFrame("CheckButton", "$parentLock", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
-        RXPData.lockFrames = self:GetChecked()
-    end)
+    button:SetScript("PostClick",
+                     function(self) RXPData.lockFrames = self:GetChecked() end)
     button:SetChecked(RXPData.lockFrames)
     button.Text:SetText("Lock Frames")
-    button.tooltip = "Disable dragging/resizing, use alt+left click on the main window to resize it"
-   --
-    button = CreateFrame("CheckButton", "$parentShowUpcoming", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button.tooltip =
+        "Disable dragging/resizing, use alt+left click on the main window to resize it"
+    --
+    button = CreateFrame("CheckButton", "$parentShowUpcoming", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         if RXP_.currentGuide and RXP_.currentGuide.hidewindow then return end
         local show = self:GetChecked()
         if show then
@@ -163,32 +169,36 @@ function RXP_.CreateOptionsPanel()
     end)
     button:SetChecked(RXPFrame.BottomFrame:GetHeight() >= 35)
     button.Text:SetText("Show step list")
-    button.tooltip = "Show/Hide the bottom frame listing all the steps of the current guide"
-  --
-    button = CreateFrame("CheckButton", "$parentHideCompleted", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button.tooltip =
+        "Show/Hide the bottom frame listing all the steps of the current guide"
+    --
+    button = CreateFrame("CheckButton", "$parentHideCompleted", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         RXPData.hideCompletedSteps = self:GetChecked()
         RXPFrame.SF.ScrollBar:SetValue(0)
     end)
     button:SetChecked(RXPData.hideCompletedSteps)
     button.Text:SetText("Hide completed steps")
-    button.tooltip = "Only shows current and future steps on the step list window"
-  --
-    button = CreateFrame("CheckButton", "$parentMapCircle", panel, "ChatConfigCheckButtonTemplate");
-    table.insert(options,button)
-    button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+    button.tooltip =
+        "Only shows current and future steps on the step list window"
+    --
+    button = CreateFrame("CheckButton", "$parentMapCircle", panel,
+                         "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
-    button:SetScript("PostClick",function(self)
+    button:SetScript("PostClick", function(self)
         RXPData.mapCircle = self:GetChecked()
         RXP_.updateMap = true
     end)
     button:SetChecked(RXPData.mapCircle)
     button.Text:SetText("Highlight active map pins")
     button.tooltip = "Show a targeting circle around active map pins"
-  --[[
+    --[[
     if QuestieLoader then
         button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
         table.insert(options,button)
@@ -201,27 +211,30 @@ function RXP_.CreateOptionsPanel()
         button.Text:SetText("Skip quests with missing pre-requisites")
         button.tooltip = "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"
     end]]
-   --
+    --
     if unitscan_targets then
-        button = CreateFrame("CheckButton", "$parentUnitscan", panel, "ChatConfigCheckButtonTemplate");
-        table.insert(options,button)
-        button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+        button = CreateFrame("CheckButton", "$parentUnitscan", panel,
+                             "ChatConfigCheckButtonTemplate");
+        table.insert(options, button)
+        button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
         index = index + 1
-        button:SetScript("PostClick",function(self)
+        button:SetScript("PostClick", function(self)
             RXPData.disableUnitscan = not self:GetChecked()
         end)
         button:SetChecked(not RXPData.disableUnitscan)
         button.Text:SetText("Unitscan integration")
-        button.tooltip = "Automatically adds important npcs to your unitscan list"
+        button.tooltip =
+            "Automatically adds important npcs to your unitscan list"
     end
 
     if RXP_.version == "CLASSIC" then
-        button = CreateFrame("CheckButton", "$parentHC", panel, "ChatConfigCheckButtonTemplate");
+        button = CreateFrame("CheckButton", "$parentHC", panel,
+                             "ChatConfigCheckButtonTemplate");
         RXP_.hardcoreButton = button
-        table.insert(options,button)
-        button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+        table.insert(options, button)
+        button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
         index = index + 1
-        button:SetScript("PostClick",function(self)
+        button:SetScript("PostClick", function(self)
             RXPCData.hardcore = self:GetChecked()
             RXP_.RenderFrame()
         end)
@@ -229,27 +242,29 @@ function RXP_.CreateOptionsPanel()
         button.Text:SetText("Hardcore mode")
         button.tooltip = "Adjust the leveling routes to the deathless ruleset"
 
-        button = CreateFrame("CheckButton", "$parentSoM", panel, "ChatConfigCheckButtonTemplate");
-        table.insert(options,button)
-        button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
+        button = CreateFrame("CheckButton", "$parentSoM", panel,
+                             "ChatConfigCheckButtonTemplate");
+        table.insert(options, button)
+        button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
         index = index + 1
-        button:SetScript("PostClick",function(self)
+        button:SetScript("PostClick", function(self)
             RXPCData.SoM = self:GetChecked()
             RXPFrame.GenerateMenuTable()
             RXP_.ReloadGuide()
         end)
         button:SetChecked(RXPCData.SoM)
         button.Text:SetText("Season of Mastery")
-        button.tooltip = "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"
+        button.tooltip =
+            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"
 
     end
 
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
-        self.Text:SetText(format(self.defaultText,value))
+        self.Text:SetText(format(self.defaultText, value))
         RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
-        RXP_.arrowFrame:SetSize(32*size,32*size)
+        RXP_.arrowFrame:SetSize(32 * size, 32 * size)
         RXP_.arrowFrame.text:SetFont(RXP_.font, RXPData.arrowText)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
         RXP_.updateMap = true
@@ -259,10 +274,12 @@ function RXP_.CreateOptionsPanel()
         RXPFrame.SetStepFrameAnchor()
     end
 
-    local CreateSlider = function(ref,key,smin,smax,text,tooltip,anchor,x,y,steps,minText,maxText)
-        local slider,dvalue
+    local CreateSlider = function(ref, key, smin, smax, text, tooltip, anchor,
+                                  x, y, steps, minText, maxText)
+        local slider, dvalue
 
-        slider = CreateFrame("Slider", "$parentArrowSlider", panel, "OptionsSliderTemplate")
+        slider = CreateFrame("Slider", "$parentArrowSlider", panel,
+                             "OptionsSliderTemplate")
         slider:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", x, y)
         slider:SetOrientation('HORIZONTAL')
         if steps then
@@ -270,7 +287,8 @@ function RXP_.CreateOptionsPanel()
             slider:SetStepsPerPage(steps)
             slider:SetObeyStepOnDrag(true)
         end
-        slider:SetThumbTexture("Interface/Buttons/UI-SliderBar-Button-Horizontal")
+        slider:SetThumbTexture(
+            "Interface/Buttons/UI-SliderBar-Button-Horizontal")
         slider.ref = ref
         slider.key = key
         dvalue = ref[key] or smin
@@ -279,8 +297,8 @@ function RXP_.CreateOptionsPanel()
         slider.tooltipText = tooltip
         slider:SetScript("OnValueChanged", SliderUpdate)
 
-        slider:SetMinMaxValues(smin,smax)
-        SliderUpdate(slider,dvalue)
+        slider:SetMinMaxValues(smin, smax)
+        SliderUpdate(slider, dvalue)
         slider:SetValue(dvalue)
 
         slider.Low:SetText(minText or tostring(smin));
@@ -288,42 +306,67 @@ function RXP_.CreateOptionsPanel()
         return slider
     end
     local slider
-    slider = CreateSlider(RXPData,"arrowSize",0.2,2,"Arrow Scale: %.2f","Scale of the Waypoint Arrow",panel.title,315,-25,0.05)
-    slider = CreateSlider(RXPData,"arrowText",5,20,"Arrow Text Size: %d","Size of the waypoint arrow text",slider,0,-25,1)
-    slider = CreateSlider(RXPData,"windowSize",0.2,2,"Window Scale: %.2f","Scale of the Main Window, use alt+left click on the main window to resize it",slider,0,-25,0.05)
-    slider = CreateSlider(RXPData,"numMapPins",1,20,"Number of Map Pins: %d","Number of map pins shown on the world map",slider,0,-25,1,"1","20")
-    slider = CreateSlider(RXPData,"worldMapPinScale",0.05,1,"Map Pin Scale: %.2f","Adjusts the size of the world map pins",slider,0,-25, 0.05, "0.05", "1")
-    slider = CreateSlider(RXPData,"distanceBetweenPins",0.05,2,"Distance Between Pins: %.2f","If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",slider,0,-25, 0.05, "0.05", "2")
-    slider = CreateSlider(RXPData,"worldMapPinBackgroundOpacity",0, 1,"Map Pin Background Opacity: %.2f","The opacity of the black circles on the map and mini map",slider,0,-25, 0.05, "0", "1")
-    slider = CreateSlider(RXPData,"anchorOrientation",-1,1,"Current step frame anchor","Sets the current step frame to grow from bottom to top or top to bottom by default",slider,0,-25,2,"Bottom","Top")
+    slider = CreateSlider(RXPData, "arrowSize", 0.2, 2, "Arrow Scale: %.2f",
+                          "Scale of the Waypoint Arrow", panel.title, 315, -25,
+                          0.05)
+    slider = CreateSlider(RXPData, "arrowText", 5, 20, "Arrow Text Size: %d",
+                          "Size of the waypoint arrow text", slider, 0, -25, 1)
+    slider = CreateSlider(RXPData, "windowSize", 0.2, 2, "Window Scale: %.2f",
+                          "Scale of the Main Window, use alt+left click on the main window to resize it",
+                          slider, 0, -25, 0.05)
+    slider = CreateSlider(RXPData, "numMapPins", 1, 20,
+                          "Number of Map Pins: %d",
+                          "Number of map pins shown on the world map", slider,
+                          0, -25, 1, "1", "20")
+    slider = CreateSlider(RXPData, "worldMapPinScale", 0.05, 1,
+                          "Map Pin Scale: %.2f",
+                          "Adjusts the size of the world map pins", slider, 0,
+                          -25, 0.05, "0.05", "1")
+    slider = CreateSlider(RXPData, "distanceBetweenPins", 0.05, 2,
+                          "Distance Between Pins: %.2f",
+                          "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",
+                          slider, 0, -25, 0.05, "0.05", "2")
+    slider = CreateSlider(RXPData, "worldMapPinBackgroundOpacity", 0, 1,
+                          "Map Pin Background Opacity: %.2f",
+                          "The opacity of the black circles on the map and mini map",
+                          slider, 0, -25, 0.05, "0", "1")
+    slider = CreateSlider(RXPData, "anchorOrientation", -1, 1,
+                          "Current step frame anchor",
+                          "Sets the current step frame to grow from bottom to top or top to bottom by default",
+                          slider, 0, -25, 2, "Bottom", "Top")
 
-    slider = CreateSlider(RXPData,"batchSize",1,100,"Batching window size: %d ms","Adjusts the batching window tolerance, used for hearthstone batching",slider,0,-25, 1, "1", "100")
+    slider = CreateSlider(RXPData, "batchSize", 1, 100,
+                          "Batching window size: %d ms",
+                          "Adjusts the batching window tolerance, used for hearthstone batching",
+                          slider, 0, -25, 1, "1", "100")
 
     if RXP_.version == "CLASSIC" then
-        slider = CreateSlider(RXPCData,"phase",1, 6,"Content phase: %d","Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",slider,0,-25, 1, "1", "6")
+        slider = CreateSlider(RXPCData, "phase", 1, 6, "Content phase: %d",
+                              "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",
+                              slider, 0, -25, 1, "1", "6")
     end
 
-  
     if RXP_.farmGuides > 0 then
-        local GApanel = CreateFrame("Frame","RXPGAOptions")
+        local GApanel = CreateFrame("Frame", "RXPGAOptions")
         GApanel.name = "Gold Assistant"
         GApanel.parent = "RXP Guides"
         InterfaceOptions_AddCategory(GApanel)
 
-        GApanel.title = GApanel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+        GApanel.title = GApanel:CreateFontString(nil, "ARTWORK",
+                                                 "GameFontNormalLarge")
         GApanel.title:SetPoint("TOPLEFT", 16, -16)
         GApanel.title:SetText("RestedXP Gold Assistant")
 
-
-        GApanel.subtext = GApanel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+        GApanel.subtext = GApanel:CreateFontString(nil, "ARTWORK",
+                                                   "GameFontHighlightSmall")
         GApanel.subtext:SetPoint("TOPLEFT", GApanel.title, "BOTTOMLEFT", 0, -8)
         GApanel.subtext:SetText(versionText)
 
         GApanel.icon = GApanel:CreateTexture()
-        GApanel.icon:SetTexture("Interface/AddOns/RXPGuides/Textures/rxp_logo-64")
-        GApanel.icon:SetPoint("TOPRIGHT",-5,-5)
-        
+        GApanel.icon:SetTexture("Interface/AddOns/" .. addonName ..
+                                    "/Textures/rxp_logo-64")
+        GApanel.icon:SetPoint("TOPRIGHT", -5, -5)
+
     end
-    
-    
+
 end
