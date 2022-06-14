@@ -473,7 +473,6 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
                                                 'global')
         RXPGuides.LoadFileGuides()
         RXPGuides.LoadCachedGuides()
-
         RXPFrame.GenerateMenuTable()
         RXP_.CreateOptionsPanel()
         loadtime = GetTime()
