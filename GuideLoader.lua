@@ -1,10 +1,13 @@
 RXP_.guides = {}
 RXP_.guideList = {}
 
+local DEBUG = false
+
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
 local _, battleTag = BNGetInfo()
+local fmt = string.format
 
 local function applies(text)
     if text then
@@ -68,11 +71,23 @@ function RXPG.LoadGuide(guide)
 
     local loadedGuide
     for _, checkGuide in ipairs(RXP_.guides) do
-        if guide.name == checkGuide.name then loadedGuide = checkGuide end
+        if guide.key == checkGuide.key then
+            loadedGuide = checkGuide
+            break
+        end
     end
 
-    if loadedGuide and tonumber(guide.version) >= tonumber(loadedGuide.version) then
-        return false
+    if loadedGuide then
+        if tonumber(guide.version) == tonumber(loadedGuide.version) then
+            return false
+        elseif tonumber(guide.version) > tonumber(loadedGuide.version) then
+            if DEBUG then
+                print(fmt(
+                          'Newer guide for (%s) already exists (%s) >= checkGuide (%s)',
+                          guide.key, guide.version, loadedGuide.version))
+            end
+            return false
+        end
     end
 
     RXPG.RegisterGroup(guide.group)
@@ -86,8 +101,9 @@ function RXPG.LoadGuide(guide)
 
     if loadedGuide then -- guide exists, but new version
         for i, checkGuide in ipairs(RXP_.guides) do
-            if guide.name == checkGuide.name then
+            if guide.key == checkGuide.key then
                 RXP_.guides[i] = checkGuide
+                break
             end
         end
     else -- guide doesn't exist, so insert
@@ -142,22 +158,37 @@ function RXPG.LoadFileGuides()
     for _, guide in ipairs(fileGuides) do
         if RXPG.LoadGuide(guide) and guide.cache then
             -- Cache if guide successfully loads and is imported not default
-            RXPG.db.profile.guides[RXPG.EncodeDisplayName(guide.displayName)] =
-                guide
+            RXPG.db.profile.guides[RXPG.EncodeGuideKey(guide)] = guide
         end
     end
 
     fileGuides = nil
 end
 
-function RXPG.EncodeDisplayName(displayName)
-    -- TODO encode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
-    return battleTag .. displayName
+-- Upgrade local, file, imported, or cached guides
+function RXPG.UpgradeGuide(guide)
+    if not guide.key then -- upgrade cached guides
+        guide.key = RXPG.BuildGuideKey(guide)
+    end
+
+    if not guide.version then guide.version = '0' end
+
+    return guide
 end
 
-function RXPG.DecodeDisplayName(displayName)
+function RXPG.BuildGuideKey(guide)
+    return string.format("%s/%s/%s", guide.group, guide.subgroup or '',
+                         guide.name)
+end
+
+function RXPG.EncodeGuideKey(guide)
+    -- TODO encode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
+    return string.format("%s:%s", battleTag, RXPG.UpgradeGuide(guide).key)
+end
+
+function RXPG.DecodeGuideKey(guide)
     -- TODO decode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
-    return displayName:gsub(battleTag, '')
+    return RXPG.UpgradeGuide(guide).key:gsub(battleTag .. ":", '')
 end
 
 function RXPG.LoadCachedGuides()
@@ -166,13 +197,14 @@ function RXPG.LoadCachedGuides()
         return
     end
 
-    for name, guide in pairs(RXPG.db.profile.guides) do
-        if name == RXPG.DecodeDisplayName(name) then
-            print('Unable to decode cached guide, removed')
-            RXPG.db.profile.guides[name] = nil
+    for key, guide in pairs(RXPG.db.profile.guides) do
+        if key == RXPG.DecodeGuideKey(guide) then
+            if DEBUG then
+                print(fmt('Unable to decode cached guide (%s), removed',
+                          guide.key))
+            end
+            RXPG.db.profile.guides[key] = nil
         end
-
-        RXPG.LoadGuide(guide)
     end
 end
 
@@ -391,8 +423,8 @@ function RXPG.ParseGuide(guideGroup, text, defaultFor)
     if guide.next then
         guide.next = guide.next:gsub("^(%d)-(%d%d?)", RXP_.affix)
     end
-    if not guide.version then guide.version = '0' end
 
+    guide.key = RXPG.BuildGuideKey(guide)
     RXP_.guide = nil
 
     return guide
