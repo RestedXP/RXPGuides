@@ -505,7 +505,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     local function GetNumPins(step)
         if step then
             for _, element in pairs(step.elements) do
-                if element.tag == "goto" or element.segments then
+                if element.zone and (element.wx or element.segments) then
                     numActive = numActive + 1
                 end
             end
@@ -518,24 +518,11 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
         GetNumPins(RXP_.currentGuide.steps[i])
     end
 
-    if numPins < numActive then numPins = numActive end
-
+    numPins = math.max(numPins,numActive)
     -- Loop through the steps until we create the number of pins a user
     -- configures or until we reach the end of the current guide.
 
     local function ProcessLine(step)
-        -- Loop through the elements in each step. Again, we check if we
-        -- already created enough pins, then we check if the element
-        -- should be included on the map.
-        --
-        -- If it should be, we calculate whether the element is close to
-        -- other pins. If it is, we add the element to a previous pin.
-        --
-        -- If it is far enough away, we add a new pin to the map.
-        local lastElement
-        local firstElement
-        local j = 0;
-
         local function InsertLine(element, sX, sY, fX, fY, lineAlpha)
             table.insert(pins, {
                 element = element,
@@ -548,12 +535,9 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
             })
         end
 
-        while numActivePins < numPins and j <   #step.elements do
-            local element = step.elements[j + 1]
-
-            if element.text and not element.label and not element.textOnly then
-                element.label = tostring(step.index)
-            end
+        local j = 1
+        while numActivePins < numPins and j <= #step.elements do
+            local element = step.elements[j]
 
             local nPoints = element.segments and
                                 math.floor(#element.segments / 2)
@@ -600,7 +584,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                                              math.abs(fX), math.abs(fY)
                             InsertLine(element, sX, sY, fX, fY, 1)
                         end
-                        if element.showArrow then
+                        if element.showArrow and step.active then
                             local x, y = sX / 100, sY / 100
                             local wx, wy, instance =
                                 HBD:GetWorldCoordinatesFromZone(x, y,
@@ -789,6 +773,9 @@ function RXP_.UpdateGotoSteps()
     local minDist, forceArrowUpdate
 
     local x, y, instance = HBD:GetPlayerWorldPosition()
+    if af.element and af.element.instance ~= instance then
+        hideArrow = true
+    end
     for i, element in ipairs(RXP_.activeWaypoints) do
         if element.step and element.step.active then
 

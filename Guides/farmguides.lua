@@ -668,7 +668,7 @@ RXPGuides.RegisterGuide([[
 step
     #hidewindow
     +test
-    --waypoint Shadowmoon Valley,63.7,44.2,-1175
+    .waypoint Shadowmoon Valley,63.7,44.2,-1175
     .line Shadowmoon Valley,58.0,59.8,61.1,59.8,61.9,61.8,63.9,61.3,65.1,61.8,66.5,57.9,64.6,56.2,64.4,53.8,62.2,64.9,59.3,65.9,61.1,68.1,59.6,71.0,57.1,73.7,54.2,67.1,53.6,63.3,55.3,60.0,58.0,59.8
     .openmap Shadowmoon Valley
     .line Shadowmoon Valley,74.5,29.5,70.9,28.8,69.3,30.1,67.6,28.8,66.8,26.8,67.8,21.9,65.4,22.5,61.0,21.5,59.7,22.3
