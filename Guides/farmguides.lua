@@ -107,7 +107,7 @@ RXPGuides.RegisterGuide([[
 #group +Mining & Herbalism
 #loop
 #hidewindow
-#subgroup Terokkar
+#subgroup Terokkar Forest
 #name Mining & Herbalism
 step
     #sticky
@@ -124,7 +124,7 @@ RXPGuides.RegisterGuide([[
 #group +Mining & Herbalism
 #loop
 #hidewindow
-#subgroup Terokkar
+#subgroup Terokkar Forest
 #name Mining
 step
     #sticky
@@ -141,7 +141,7 @@ RXPGuides.RegisterGuide([[
 #group +Mining & Herbalism
 #loop
 #hidewindow
-#subgroup Terokkar
+#subgroup Terokkar Forest
 #name Herbalism
 step
     #sticky
@@ -359,12 +359,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Netherstorm
 #name Fel Hide
 step
-    #sticky
-    .waypoint Netherstorm,50,50
-    .zone Netherstorm >> Head to Netherstorm
-step
     #hidewindow
     +test
+    .waypoint Netherstorm,61.7,59.3,-500
     .line Netherstorm,53.2,56.9,61.2,57.7,66.2,57.2,68.8,60.9,67.6,69.0,64.9,68.8,63.0,65.5,63.1,60.9,57.8,60.4,54.6,61.5,53.0,59.1,53.2,56.9
     .openmap Netherstorm
 ]])
@@ -376,12 +373,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Netherstorm
 #name Nether Dragonscale
 step
-    #sticky
-    .waypoint Netherstorm,50,50
-    .zone Netherstorm >> Head to Netherstorm
-step
     #hidewindow
     +test
+    .waypoint Netherstorm,71.9,38.4,-240
     .line Netherstorm,71.9,45.2,73.4,44.4,75.2,37.6,74.6,34.4,68.9,33.9,69.8,37.4,70.1,41.7,71.9,45.2
     .openmap Netherstorm
 ]])
@@ -391,14 +385,11 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Netherstorm
-#name Fel Arament
-step
-    #sticky
-    .waypoint Netherstorm,50,50
-    .zone Netherstorm >> Head to Netherstorm
+#name Fel Armament
 step
     #hidewindow
     +test
+    .waypoint Netherstorm,39.2,24.2,-350
     .line Netherstorm,43.7,21.7,39.6,29.1,37.3,31.5,35.1,29.0,37.3,21.3,36.0,18.1,39.8,16.9,42.1,18.3,43.7,21.7
     .openmap Netherstorm
 ]])
@@ -410,12 +401,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Blades Edge Mountains
 #name Wind Scale
 step
-    #sticky
-    .waypoint Blade's Edge Mountains,50,50
-    .zone Blade's Edge Mountains >> Head to Blade's Edge Mountains
-step
     #hidewindow
     +test
+    .waypoint Blade's Edge Mountains,67.3,61.4,-500
     .line Blade's Edge Mountains,64.9,49.8,67.8,52.6,68.0,57.6,69.2,66.4,69.1,74.9,67.1,73.3,67.2,66.1,65.6,57.0,63.4,52.1,64.9,49.8
     .openmap Blade's Edge Mountains
 ]])
@@ -427,12 +415,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Blades Edge Mountains
 #name Nether Dragonscale
 step
-    #sticky
-    .waypoint Blade's Edge Mountains,50,50
-    .zone Blade's Edge Mountains >> Head to Blade's Edge Mountains
-step
     #hidewindow
     +test
+    .waypoint Blade's Edge Mountains,62.9,77.2,-300
     .line Blade's Edge Mountains,67.9,77.4,67.0,74.9,61.6,75.4,59.8,72.5,58.2,74.2,60.1,79.7,67.9,77.4
     .openmap Blade's Edge Mountains
 ]])
@@ -444,12 +429,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Blades Edge Mountains
 #name Crystal Infused Leather
 step
-    #sticky
-    .waypoint Blade's Edge Mountains,50,50
-    .zone Blade's Edge Mountains >> Head to Blade's Edge Mountains
-step
     #hidewindow
     +test
+    .waypoint Blade's Edge Mountains,29.8,59.5,-550
     .line Blade's Edge Mountains,31.2,73.2,32.2,70.4,30.8,65.0,33.0,59.3,32.7,53.4,32.1,49.2,28.1,47.9,27.9,59.0,27.1,72.9,31.2,73.2
     .openmap Blade's Edge Mountains
 ]])
@@ -461,12 +443,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Nagrand
 #name Combined Primals
 step
-    #sticky
-    .waypoint Nagrand,50,50
-    .zone Nagrand >> Head to Nagrand
-step
     #hidewindow
     +test
+    .waypoint Nagrand,67.9,22.2,-275
     .line Nagrand,64.0,24.3,63.8,26.8,65.5,28.6,69.8,25.0,71.4,27.1,71.8,25.8,71.6,19.7,67.2,16.6,66.0,20.8,64.0,24.3
     .openmap Nagrand
 ]])
@@ -478,17 +457,13 @@ RXPGuides.RegisterGuide([[
 #subgroup Nagrand
 #name Primal Water
 step
-    #sticky
-    .waypoint Nagrand,50,50
-    .zone Nagrand >> Head to Nagrand
-step
 #hidewindow
     +loop1
+    .waypoint Nagrand,37.6,46.8,-500
     .line Nagrand,43.6,48.2,40.7,47.6,39.7,44.4,41.3,40.2,39.9,37.9,41.2,36.6,44.8,41.6,45.4,43.7,44.7,47.4,43.6,48.2
     .openmap Nagrand
-    --area2
+
     .line Nagrand,37.1,44.5,37.2,47.1,36.3,49.5,35.3,53.1,32.4,55.0,30.4,54.2,31.0,47.7,34.0,46.7,35.2,44.0,37.1,44.5
-    .openmap Nagrand
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -506,9 +481,7 @@ step
     +area1
     .line Nagrand,43.8,24.0,41.7,27.5,45.0,32.1,48.8,34.0,48.5,39.0,50.8,37.6,53.9,32.0,53.8,28.9,51.6,29.1,50.7,26.4,48.9,25.0,46.2,27.1,44.9,24.3,43.8,24.0
     .openmap Nagrand
-    --area2
     .line Nagrand,52.8,50.9,55.0,52.8,56.2,50.0,60.7,48.1,63.7,43.3,60.4,38.2,57.0,42.8,55.3,43.6,53.8,46.2,52.8,50.9
-    .openmap Nagrand
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -518,12 +491,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Nagrand
 #name Talbuk Venison
 step
-    #sticky
-    .waypoint Nagrand,50,50
-    .zone Nagrand >> Head to Nagrand
-step
     #hidewindow
     +test
+    .waypoint Nagrand,51.7,25.9,-450
     .line Nagrand,54.4,31.9,54.4,29.2,53.3,25.7,55.3,24.2,57.9,23.4,58.0,20.5,55.2,20.2,52.7,21.6,50.8,19.5,50.8,24.6,48.4,27.3,46.6,27.8,46.5,32.6,54.4,31.9
     .openmap Nagrand
 ]])
@@ -535,12 +505,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Nagrand
 #name Cobra Scales
 step
-    #sticky
-    .waypoint Nagrand,50,50
-    .zone Nagrand >> Head to Nagrand
-step
     #hidewindow
     +test
+    .waypoint Nagrand,13.2,37.1,-430
     .line Nagrand,20.4,36.9,19.8,33.4,17.6,31.6,12.1,34.8,7.2,40.2,7.5,44.5,9.9,45.6,13.6,39.4,17.5,38.9,19.6,38.3,20.4,36.9
     .openmap Nagrand
 ]])
@@ -552,12 +519,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Nagrand
 #name Primal Shadow
 step
-    #sticky
-    .waypoint Nagrand,50,50
-    .zone Nagrand >> Head to Nagrand
-step
     #hidewindow
     +test
+    .waypoint Nagrand,36.7,70.8,-400
     .line Nagrand,34.4,62.0,40.4,62.4,42.7,66.7,43.6,72.3,40.1,78.3,36.7,79.9,31.2,75.3,30.7,66.5,34.4,62.0
     .openmap Nagrand
 ]])
@@ -568,13 +532,11 @@ RXPGuides.RegisterGuide([[
 #hidewindow
 #subgroup Nagrand
 #name Primal Earth
-step
-    #sticky
-    .waypoint Nagrand,50,50
-    .zone Nagrand >> Head to Nagrand
+
 step
     #hidewindow
     +area1
+    .waypoint Nagrand,33.1,81.0,-625
     .line Nagrand,41.4,85.7,39.8,86.4,36.1,83.6,30.0,81.9,27.9,81.3,,27.0,76.9,26.3,74.2,23.6,71.9,24.6,71.1,27.0,70.9,28.4,70.3,29.1,74.4,32.8,79.3,41.0,81.4,41.9,80.5,41.4,85.7
     .openmap Nagrand
 ]])
@@ -583,35 +545,27 @@ RXPGuides.RegisterGuide([[
 #group +Outland Farming
 #loop
 #hidewindow
-#subgroup Terokkar
+#subgroup Terokkar Forest
 #name Mark of Kiljaeden
 step
-    #sticky
-    .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >> Head to Terokkar Forest
-step
     #hidewindow
-    +area1
+    +test
+    .waypoint Terokkar Forest,35.7,56.2,-350
     .line Terokkar Forest,29.8,54.9,31.1,56.3,32.7,55.0,33.1,52.5,31.6,51.4,30.0,52.8,29.8,54.9
     .openmap Terokkar Forest
-    +area2
     .line Terokkar Forest,37.3,57.8,37.9,60.4,41.0,60.3,42.4,57.6,41.4,55.7,40.0,55.5,38.0,55.2,37.2,56.8,37.3,57.8
-    .openmap Terokkar Forest
 ]])
 
 RXPGuides.RegisterGuide([[
 #group +Outland Farming
 #loop
 #hidewindow
-#subgroup Terokkar
+#subgroup Terokkar Forest
 #name Firewing Signet
-step
-    #sticky
-    .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >> Head to Terokkar Forest
 step
     #hidewindow
     +test
+    .waypoint Terokkar Forest,71.2,37.3,-200
     .line Terokkar Forest,67.9,36.1,70.3,35.3,72.2,34.4,74.3,34.9,72.7,40.0,71.5,40.9,69.5,38.5,68.0,37.2,67.9,36.1
     .openmap Terokkar Forest
 ]])
@@ -620,15 +574,12 @@ RXPGuides.RegisterGuide([[
 #group +Outland Farming
 #loop
 #hidewindow
-#subgroup Terokkar
+#subgroup Terokkar Forest
 #name Warped Flesh
-step
-    #sticky
-    .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >> Head to Terokkar Forest
 step
     #hidewindow
     +test
+    .waypoint Terokkar Forest,70.0,85.5,-425
     .line Terokkar Forest,64.0,82.2,62.4,83.2,62.1,85.4,64.4,86.2,65.3,87.8,68.3,87.9,69.6,90.8,75.9,90.8,77.3,79.2,75.7,79.1,74.6,87.5,70.9,88.4,70.4,85.9,66.4,84.2,64.0,82.2
     .openmap Terokkar Forest
 ]])
@@ -637,15 +588,12 @@ RXPGuides.RegisterGuide([[
 #group +Outland Farming
 #loop
 #hidewindow
-#subgroup Terokkar
+#subgroup Terokkar Forest
 #name Primal Water
-step
-    #sticky
-    .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >> Head to Terokkar Forest
 step
     #hidewindow
     +test
+    .waypoint Terokkar Forest,65.3,75.3,-435
     .line Terokkar Forest,67.7,84.3,69.1,82.4,68.7,75.6,65.8,72.1,66.1,64.5,64.5,63.8,64.3,65.4,65.0,66.5,64.4,72.3,63.1,73.7,63.2,77.9,64.0,80.9,64.2,82.9,65.6,84.5,67.7,84.3
     .openmap Terokkar Forest
 ]])
@@ -654,22 +602,18 @@ RXPGuides.RegisterGuide([[
 #group +Outland Farming
 #loop
 #hidewindow
-#subgroup Terokkar
+#subgroup Terokkar Forest
 #name Netherweb Spider Silk
 step
-    #sticky
-    .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >> Head to Terokkar Forest
-step
 #hidewindow
-    +area1
+    .waypoint Terokkar Forest,17.3,80,-1520
+    +test
     .line Terokkar Forest,46.3,48.8,48.9,48.9,51.4,52.8,53.4,55.2,54.9,54.1,57.2,58.1,57.5,62.6,55.4,64.8,54.4,70.0,53.6,76.2,53.6,81.3,49.3,84.7,48.9,78.9,51.4,74.3,52.9,64.5,51.3,59.2,48.4,52.2,46.2,50.7,46.3,48.8
-    .openmap Terokkar Forest
---area2
+
     .line Terokkar Forest,25.6,54.6,23.4,54.9,22.1,56.5,18.9,62.3,15.8,65.6,15.4,70.0,16.3,73.7,17.0,77.2,17.3,80.6,19.2,81.3,23.4,77.8,26.1,76.2,29.3,74.8,29.0,71.1,26.9,71.2,25.5,69.3,26.9,65.0,24.9,61.1,25.3,56.7,25.6,54.6
-    .openmap Terokkar Forest
---area3
+
     .line Terokkar Forest,51.1,36.3,44.0,35.1,42.6,36.3,37.0,33.1,37.9,28.7,43.6,16.7,43.6,12.3,45.2,11.3,47.2,12.5,49.9,20.6,55.2,25.5,58.1,30.2,57.3,36.5,54.0,36.2,51.1,36.3
+
     .openmap Terokkar Forest
 ]])
 
@@ -680,12 +624,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Shadowmoon Valley
 #name Fel Armament
 step
-    #sticky
-    .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >> Head to Shadowmoon Valley
-step
     #hidewindow
     +test
+    .waypoint Shadowmoon Valley,23.1,35.6,-225
     .line Shadowmoon Valley,20.4,34.0,22.3,29.8,23.8,30.6,26.7,33.5,26.8,36.8,25.2,40.2,24.0,42.3,21.5,41.3,20.0,38.1,20.2,35.9,20.4,34.0
     .openmap Shadowmoon Valley
 ]])
@@ -697,12 +638,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Shadowmoon Valley
 #name Primal Fire
 step
-    #sticky
-    .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >> Head to Shadowmoon Valley
-step
     #hidewindow
     +test
+    .waypoint Shadowmoon Valley,47.2,45.4,-475
     .line Shadowmoon Valley,43.8,43.5,45.7,43.0,47.1,39.8,47.6,37.1,47.9,35.0,49.3,34.1,52.6,35.6,49.9,38.3,48.5,43.3,49.8,47.9,51.7,51.1,53.4,50.9,53.7,55.0,51.7,55.6,49.0,55.1,47.6,50.1,46.2,50.0,43.6,45.8,43.8,43.5
     .openmap Shadowmoon Valley
 ]])
@@ -714,12 +652,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Shadowmoon Valley
 #name Primal Water
 step
-    #sticky
-    .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >> Head to Shadowmoon Valley
-step
     #hidewindow
     +test
+    .waypoint Shadowmoon Valley,47.6,25.5,-375
     .line Shadowmoon Valley,44.4,28.9,44.8,26.5,46.3,22.2,50.1,21.4,51.5,25.4,50.5,26.4,48.0,29.2,46.0,29.8,44.4,28.9
     .openmap Shadowmoon Valley
 ]])
@@ -731,17 +666,12 @@ RXPGuides.RegisterGuide([[
 #subgroup Shadowmoon Valley
 #name Primal Air
 step
-    #sticky
-    .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >> Head to Shadowmoon Valley
-step
     #hidewindow
-    +route1
+    +test
+    --waypoint Shadowmoon Valley,63.7,44.2,-1175
     .line Shadowmoon Valley,58.0,59.8,61.1,59.8,61.9,61.8,63.9,61.3,65.1,61.8,66.5,57.9,64.6,56.2,64.4,53.8,62.2,64.9,59.3,65.9,61.1,68.1,59.6,71.0,57.1,73.7,54.2,67.1,53.6,63.3,55.3,60.0,58.0,59.8
     .openmap Shadowmoon Valley
-    +route2
-    .line Shadowmoon Valley,74.5,29.5,70.9,28.8,69.3,30.1,67.6,28.8,66.8,26.8,67.8,21.9,65.4,22.5,61.0,21.5,59.7,22.3,
-    .openmap Shadowmoon Valley
+    .line Shadowmoon Valley,74.5,29.5,70.9,28.8,69.3,30.1,67.6,28.8,66.8,26.8,67.8,21.9,65.4,22.5,61.0,21.5,59.7,22.3
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -751,12 +681,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Shadowmoon Valley
 #name Arcane Tome
 step
-    #sticky
-    .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >> Head to Shadowmoon Valley
-step
     #hidewindow
     +test
+    .waypoint Shadowmoon Valley,69.1,50.2,-225
     .line Shadowmoon Valley,66.1,46.1,66.1,52.9,68.5,54.5,71.6,53.9,72.4,52.9,72.5,47.1,71.1,46.6,67.1,47.0,67.0,46.1,66.1,46.1
     .openmap Shadowmoon Valley
 ]])
@@ -768,12 +695,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Shadowmoon Valley
 #name Wind Scale
 step
-    #sticky
-    .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >> Head to Shadowmoon Valley
-step
     #hidewindow
     +test
+    .waypoint Shadowmoon Valley,47.1,65.7,-350
     .line Shadowmoon Valley,50.3,59.3,51.8,60.0,51.6,61.9,49.4,64.1,48.5,66.6,48.9,71.3,46.7,73.5,44.3,73.1,43.6,70.2,43.2,67.0,44.5,63.8,46.5,63.4,48.4,59.3,50.3,59.3
     .openmap Shadowmoon Valley
 ]])
@@ -785,12 +709,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Hellfire Peninsula
 #name Primal Shadow
 step
-    #sticky
-    .waypoint Hellfire Peninsula,50,50
-    .zone Hellfire Peninsula >> Head to Hellfire Peninsula
-step
     #hidewindow
     +test
+    .waypoint Hellfire Peninsula,78.3,70.3,-375
     .line Hellfire Peninsula,78.2,80.8,80.9,80.7,81.5,77.2,79.7,72.1,80.0,67.3,78.5,62.2,76.0,61.7,74.9,66.9,77.0,71.2,78.2,80.8
     .openmap Hellfire Peninsula
 ]])
@@ -802,12 +723,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Hellfire Peninsula
 #name Primal Fire
 step
-    #sticky
-    .waypoint Hellfire Peninsula,50,50
-    .zone Hellfire Peninsula >> Head to Hellfire Peninsula
-step
     #hidewindow
     +test
+    .waypoint Hellfire Peninsula,68.3,19.3,-350
     .line Hellfire Peninsula,63.6,20.9,65.8,21.2,68.2,20.5,67.4,16.9,64.4,15.5,61.1,16.2,57.4,17.2,56.9,23.4,61.2,24.5,63.0,22.7,63.6,20.9
     .openmap Hellfire Peninsula
 ]])
@@ -819,12 +737,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Netherstorm
 #name Primal Mana
 step
-    #sticky
-    .waypoint Netherstorm,50,50
-    .zone Netherstorm >> Head to Netherstorm
-step
     #hidewindow
     +test
+    .waypoint Netherstorm,58.0,87.4,-200
     .line Netherstorm,53.8,89.9,54.9,91.4,58.5,90.9,60.4,89.7,61.9,85.1,61.6,83.5,60.5,82.7,58.1,83.9,55.2,85.8,54.2,87.8,53.8,89.9
     .openmap Netherstorm
 ]])

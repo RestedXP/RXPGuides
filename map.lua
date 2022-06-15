@@ -38,11 +38,11 @@ af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
 function RXP_.UpdateArrow(self)
 
     if RXPData.disableArrow or not self then return end
-
-    if self.element then
+    local element = self.element
+    if element then
         local x, y, instance = HBD:GetPlayerWorldPosition()
-        local angle, dist = HBD:GetWorldVector(instance, x, y, self.element.wx,
-                                               self.element.wy)
+        local angle, dist = HBD:GetWorldVector(instance, x, y, element.wx,
+                                               element.wy)
         local facing = GetPlayerFacing()
         if not (dist and facing) then return end
         local orientation = angle - facing
@@ -57,9 +57,11 @@ function RXP_.UpdateArrow(self)
 
         if dist ~= self.distance then
             self.distance = dist
-            if self.element.step then
-                self.text:SetText(string.format("Step %d\n(%dyd)",
-                                                self.element.step.index, dist))
+            local step = element.step
+            if step then
+                self.text:SetText(step.title or
+                                     string.format("Step %d\n(%dyd)",
+                                     step.index, dist))
             else
                 self.text:SetText(string.format("(%dyd)", dist))
             end
@@ -129,7 +131,7 @@ MapPinPool.creationFunc = function(framePool)
         if r ~= RXP_.colors.mapPins[1] then
             f.text:SetTextColor(unpack(RXP_.colors.mapPins))
         end
-        if table.getn(pin.elements) > 1 then
+        if #pin.elements > 1 then
             f.text:SetText(stepIndex .. "+")
         else
             f.text:SetText(stepIndex)
@@ -391,7 +393,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
 
     if RXP_.currentGuide.empty then return pins end
     local numActivePins = 0
-    local numSteps = table.getn(steps)
+    local numSteps = #steps
     local activeSteps = RXPFrame.activeSteps
 
     local numActive = 0
@@ -399,7 +401,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     local function GetNumPins(step)
         if step then
             for _, element in pairs(step.elements) do
-                if element.tag == "goto" and not element.hidePin then
+                if element.zone and element.wx and not element.hidePin then
                     numActive = numActive + 1
                 end
             end
@@ -426,9 +428,9 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         -- other pins. If it is, we add the element to a previous pin.
         --
         -- If it is far enough away, we add a new pin to the map.
-        local j = 0;
-        while numActivePins < numPins and j < table.getn(step.elements) do
-            local element = step.elements[j + 1]
+        local j = 1;
+        while numActivePins < numPins and j <= #step.elements do
+            local element = step.elements[j]
 
             if element.text and not element.label and not element.textOnly then
                 element.label = tostring(step.index)
@@ -438,29 +440,29 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                 (not (element.parent and
                     (element.parent.completed or element.parent.skip)) and
                     not element.skip) then
-                local closeToOtherPin, otherPin =
+                if not element.hidePin then
+                    local closeToOtherPin, otherPin =
                     elementIsCloseToOtherPins(element, pins, isMiniMap)
-
-                if closeToOtherPin and not element.hidePin then
-                    table.insert(otherPin.elements, element)
-                else
-                    local pinalpha = 0
-                    if isMiniMapPin then
-                        pinalpha = 0.5
-                    elseif element.step and element.step.active then
-                        pinalpha = 1
+                    if closeToOtherPin and not element.hidePin then
+                        table.insert(otherPin.elements, element)
                     else
-                        pinalpha = math.max(0.4, 1 - (table.getn(pins) * 0.05))
+                        local pinalpha = 0
+                        if isMiniMapPin then
+                            pinalpha = 0.5
+                        elseif element.step and element.step.active then
+                            pinalpha = 1
+                        else
+                            pinalpha = math.max(0.4, 1 - (#pins * 0.05))
+                        end
+                        table.insert(pins, {
+                            elements = {element},
+                            opacity = pinalpha,
+                            instance = element.instance,
+                            wx = element.wx,
+                            wy = element.wy,
+                            zone = element.zone,
+                        })
                     end
-                    table.insert(pins, {
-                        elements = {element},
-                        opacity = pinalpha,
-                        instance = element.instance,
-                        wx = element.wx,
-                        wy = element.wy,
-                        zone = element.zone,
-                        hidePin = element.hidePin
-                    })
                 end
                 if not isMiniMap then
                     table.insert(RXP_.activeWaypoints, element)
@@ -495,7 +497,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     local pins = {}
     if RXP_.currentGuide.empty then return pins end
     local numActivePins = 0
-    local numSteps = table.getn(steps)
+    local numSteps = #steps
     local activeSteps = RXPFrame.activeSteps
 
     local numActive = 0
@@ -546,7 +548,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
             })
         end
 
-        while numActivePins < numPins and j < table.getn(step.elements) do
+        while numActivePins < numPins and j <   #step.elements do
             local element = step.elements[j + 1]
 
             if element.text and not element.label and not element.textOnly then
@@ -554,27 +556,21 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
             end
 
             local nPoints = element.segments and
-                                math.floor(table.getn(element.segments) / 2)
+                                math.floor(#element.segments / 2)
 
             if element.zone and nPoints and
                 (not (element.parent and
                     (element.parent.completed or element.parent.skip)) and
                     not element.skip) then
-                local pinalpha = 0
-                if element.step and element.step.active then
-                    pinalpha = 1
-                else
-                    pinalpha = math.max(0.4, 1 - (table.getn(pins) * 0.05))
-                end
                 for i = 1, nPoints * 2, 2 do
                     local sX = (element.segments[i])
                     local sY = (element.segments[i + 1])
                     local fX = (element.segments[i + 2])
                     local fY = (element.segments[i + 3])
-                    -- print("lc:",sX,sY)
 
                     if sX and sY and fX and fY then
                         if sX < 0 and sY < 0 then
+                            --Dashed line if start x/y coordinates are negative
                             sX, sY, fX, fY = math.abs(sX), math.abs(sY),
                                              math.abs(fX), math.abs(fY)
                             -- local distMod = 1.75
@@ -655,7 +651,7 @@ local function addWorldMapPins()
                               RXPCData.currentStep, false)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the world map
-    for i = table.getn(pins), 1, -1 do
+    for i = #pins, 1, -1 do
         local pin = pins[i]
         if not pin.hidePin then
             local element = pin.elements[1]
@@ -672,7 +668,7 @@ local function addWorldMapLines()
     local lineData = generateLines(RXP_.currentGuide.steps, RXPData.numMapPins,
                                    RXPCData.currentStep, false)
 
-    for i = table.getn(lineData), 1, -1 do
+    for i = #lineData, 1, -1 do
         local line = lineData[i]
         local element = line.element
         local step = element.step
@@ -692,7 +688,7 @@ local function addMiniMapPins(pins)
                               RXPCData.currentStep, true)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the mini map
-    for i = table.getn(pins), 1, -1 do
+    for i = #pins, 1, -1 do
         local pin = pins[i]
         local element = pin.elements[1]
         local miniMapFrame = miniMapFramePool:Acquire()
@@ -800,7 +796,7 @@ function RXP_.UpdateGotoSteps()
                 not (element.parent and
                     (element.parent.completed or element.parent.skip) and
                     not element.parent.textOnly) and not element.skip then
-                local angle, dist = HBD:GetWorldVector(instance, x, y,
+                local _, dist = HBD:GetWorldVector(instance, x, y,
                                                        element.wx, element.wy)
                 if dist then
 
@@ -818,7 +814,8 @@ function RXP_.UpdateGotoSteps()
                             element.lowPrio = false
                             closestPoint = element
                         end
-                    elseif element.radius then
+                    end
+                    if element.radius then
                         if dist <= element.radius then
                             if element.persistent then
                                 hideArrow = true
@@ -842,38 +839,41 @@ function RXP_.UpdateGotoSteps()
     minDist = nil
     local anchorPoint = currentPoint
     local linePoints = RXP_.linePoints
-
+    local nPoints = 0
     for i, element in ipairs(linePoints) do
         local radius = element.anchor.range
-        local angle, dist = HBD:GetWorldVector(instance, x, y, element.wx,
-                                               element.wy)
-        element.dist = dist
-        if dist then
-            if radius and dist <= radius then
-                currentPoint = i
-                if anchorPoint ~= i then lastPoint = anchorPoint end
-            end
-            if not lastPoint then
-                if minDist and dist > minDist then
-                    element.lowPrio = true
-                else
-                    minDist = dist
-                    if closestPoint then
-                        closestPoint.lowPrio = true
+        if radius then
+            nPoints = nPoints + 1
+            local _, dist = HBD:GetWorldVector(instance, x, y, element.wx,
+                                                element.wy)
+            element.dist = dist
+            if dist then
+                if radius and dist <= radius then
+                    currentPoint = i
+                    if anchorPoint ~= i then lastPoint = anchorPoint end
+                end
+                if not lastPoint then
+                    if minDist and dist > minDist then
+                        element.lowPrio = true
+                    else
+                        minDist = dist
+                        if closestPoint then
+                            closestPoint.lowPrio = true
+                        end
+                        if closestPoint ~= element then
+                            forceArrowUpdate = true
+                        end
+                        element.lowPrio = false
+                        closestPoint = element
                     end
-                    if closestPoint ~= element then
-                        forceArrowUpdate = true
-                    end
-                    element.lowPrio = false
-                    closestPoint = element
                 end
             end
+            if currentPoint == i then element.lowPrio = true end
         end
-        if currentPoint == i then element.lowPrio = true end
     end
-    local nPoints = #linePoints
 
     if currentPoint and nPoints > 0 then
+        nPoints = #linePoints
         local nextPoint = currentPoint % nPoints + 1
         local prevPoint = (currentPoint - 2) % nPoints + 1
         local nextElement = linePoints[nextPoint]

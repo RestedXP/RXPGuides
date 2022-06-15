@@ -510,12 +510,13 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
                 guide = nil
             end
         end
-        if not RXPCData.GA then RXP_:LoadGuide(guide, true) end
+        RXP_:LoadGuide(guide, true)
         if not RXP_.currentGuide then
             RXPFrame:SetHeight(20)
             RXPFrame.BottomFrame.UpdateFrame()
             RXP_.noGuide = true
         end
+        RXP_.addonLoaded = true
         return
     elseif event == "TAXIMAP_OPENED" then
         local FPlist = C_TaxiMap.GetAllTaxiNodes(
