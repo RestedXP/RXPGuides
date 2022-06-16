@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "EditorConfig.EditorConfig",
+        "sumneko.lua",
+        "Koihik.vscode-lua-format"
+    ]
+}

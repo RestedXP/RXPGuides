@@ -4,11 +4,12 @@
 ## Author: RestedXP
 ## Version: 3.0.6
 ## OptionalDeps: Questie, unitscan
-## SavedVariables: RXPData
+## SavedVariables: RXPData, RXPDB
 ## SavedVariablesPerCharacter: RXPCData
 
 libs\HereBeDragons\LibStub\LibStub.lua
 libs\HereBeDragons\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\AceDB-3.0\AceDB-3.0.lua
 libs\HereBeDragons\HereBeDragons-2.0.lua
 libs\HereBeDragons\HereBeDragons-Pins-2.0.lua
 
@@ -22,6 +23,6 @@ ActiveItemFrame.lua
 data.lua
 map.lua
 functions.lua
-parser.lua
+GuideLoader.lua
 
 Guides/GuideList.xml

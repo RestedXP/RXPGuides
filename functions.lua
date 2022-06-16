@@ -1170,6 +1170,7 @@ function RXP_.functions.waypoint(self,text,zone,x,y,radius,lowPrio,...)
             end
         elseif element.radius and element.radius < 0 then
             element.persistent = true
+            element.dynamic = true
             element.radius = math.abs(element.radius)
         end
         element.wx,element.wy,element.instance = HBD:GetWorldCoordinatesFromZone(element.x/100, element.y/100, element.zone)
@@ -1752,12 +1753,15 @@ end
 function RXP_.functions.reputation(self,...)
     if type(self) == "string" then --on parse
         local element = {}
-        local text,faction,str = ...
+        local text,faction,str,value,skipStep = ...
 
         str = str:gsub(" ","")
-        local standing,rep = str:match("([%d%w]+)([%+%.%-]?%d*)")
+        local operator,standing,rep = str:match("(<?)%s*([%d%w]+)([%+%.%-]?%d*)")
         element.faction = tonumber(faction)
-        element.rep = tonumber(rep) or 0
+        if value then
+            operator,rep = value:match("(<?)%s*(%-?%d+%.?%d*)")
+        end
+        element.rep = tonumber(value) or tonumber(rep) or 0
 
         if standing then
             standing = RXP_.repStandingID[strlower(standing)]
@@ -1768,9 +1772,20 @@ function RXP_.functions.reputation(self,...)
             RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid faction/standing\n"..self)
         end
 
+        if operator == "<" then
+            element.operator = false
+        else
+            element.operator = true
+        end
+
+        element.skipStep = skipStep
+        if skipStep then
+            element.textOnly = true
+        end
+
         if text and text ~= "" then
             element.text = text
-        else
+        elseif not skipStep then
             local standinglabel = getglobal("FACTION_STANDING_LABEL"..element.standing)
             local factionname = GetFactionInfoByID(element.faction)
             if element.rep and element.rep ~= 0 then
@@ -1786,17 +1801,24 @@ function RXP_.functions.reputation(self,...)
             end
         end
         if not element.rep then element.rep = 0 end
-        element.tooltipText = RXP_.icons.reputation..element.text
+
         return element
     end
 
     local element = self.element
-    local name, _, standing, bottomValue, topValue, earnedValue = GetFactionInfoByID(element.faction)
-    if (element.rep < 0 and (standing >= element.standing or (standing == element.standing-1 and earnedValue >= topValue + element.rep))) or
+    local step = element.step
+    local _, _, standing, bottomValue, topValue, earnedValue = GetFactionInfoByID(element.faction)
+    if (
+       (element.rep < 0 and (standing >= element.standing or (standing == element.standing-1 and earnedValue >= topValue + element.rep))) or
        (element.rep >= 1 and ((standing > element.standing) or (element.standing == standing and earnedValue >= bottomValue + element.rep))) or
        (element.rep >= 0 and element.rep < 1 and ((standing > element.standing) or (element.standing == standing and earnedValue >= (topValue - bottomValue)*element.rep)))
-       then
-    RXP_.SetElementComplete(self,true)
+    ) == element.operator then
+        if not element.skipStep then
+            RXP_.SetElementComplete(self,true)
+        elseif step.active then
+            RXP_.updateSteps = true
+            step.completed = true
+        end
     end
 end
 
@@ -3132,6 +3154,9 @@ function RXP_.functions.openmap(self,text,map,callback,...)
 
     if not step.active then
         element.mapOpened = false
+        return
+    elseif not RXP_.addonLoaded then
+        element.mapOpened = true
         return
     end
 

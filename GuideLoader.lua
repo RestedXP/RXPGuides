@@ -1,9 +1,13 @@
 RXP_.guides = {}
 RXP_.guideList = {}
 
+local DEBUG = false
+
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
+local _, battleTag = BNGetInfo()
+local fmt = string.format
 
 local function applies(text)
     if text then
@@ -38,6 +42,9 @@ local RXPG = RXPGuides
 local version = strlower(RXP_.version)
 local suffix = 1
 
+-- File guides and string-imports need different load order support
+local fileGuides = {}
+
 RXP_.affix = function(smin, smax)
     if smax:len() == 1 then smax = "0" .. smax end
     return "0" .. smin .. "-" .. smax
@@ -57,27 +64,148 @@ function RXPG.RegisterGroup(guideGroup, parentGroup)
     end
 end
 
+-- Load guide into addon options
+function RXPG.LoadGuide(guide)
+    -- Not applicable (e.g. wrong faction), rely on upstream functions to report parsing errors
+    if not guide then return false end
+
+    local loadedGuide
+    for _, checkGuide in ipairs(RXP_.guides) do
+        if guide.key == checkGuide.key then
+            loadedGuide = checkGuide
+            break
+        end
+    end
+
+    if loadedGuide then
+        if tonumber(guide.version) == tonumber(loadedGuide.version) then
+            return false
+        elseif tonumber(guide.version) > tonumber(loadedGuide.version) then
+            if DEBUG then
+                print(fmt(
+                          'Newer guide for (%s) already exists (%s) >= checkGuide (%s)',
+                          guide.key, guide.version, loadedGuide.version))
+            end
+            return false
+        end
+    end
+
+    RXPG.RegisterGroup(guide.group)
+
+    if not RXP_.guideList[guide.group] then
+        RXP_.guideList[guide.group] = {}
+        RXP_.guideList[guide.group].names_ = {}
+    end
+
+    local list = RXP_.guideList[guide.group]
+
+    if loadedGuide then -- guide exists, but new version
+        for i, checkGuide in ipairs(RXP_.guides) do
+            if guide.key == checkGuide.key then
+                RXP_.guides[i] = checkGuide
+                break
+            end
+        end
+    else -- guide doesn't exist, so insert
+        table.insert(RXP_.guides, guide)
+
+        if list[guide.name] then
+            suffix = suffix + 1
+            guide.name = guide.name .. tostring(suffix)
+        end
+
+        table.insert(list.names_, guide.name)
+
+        list[guide.name] = #RXP_.guides
+
+        if guide.group:sub(1, 1) ~= "*" and guide.defaultFor and
+            not RXP_.defaultGuide then RXP_.defaultGuide = guide end
+    end
+
+    return true
+end
+
+-- Don't cache registered guide, aka Guide-N.lua
+-- They are part of the base bundle, so caching is a waste of RAM
 function RXPG.RegisterGuide(guideGroup, text, defaultFor)
-    if not guideGroup then
+    local guide = RXPG.ParseGuide(guideGroup, text, defaultFor)
+
+    if RXPG.db then -- Shouldn't ever happen, but immediately load guide if db initialized
+        RXPG.LoadGuide(guide)
+    else
+        table.insert(fileGuides, guide)
+    end
+end
+
+-- Parse and cache one-time guide, aka Import.lua or base64
+function RXPG.ImportGuide(guideGroup, text, defaultFor)
+    local importedGuide = RXPG.ParseGuide(guideGroup, text, defaultFor)
+
+    if RXPG.db then -- Addon loaded already, import coming from user string
+        RXPG.LoadGuide(importedGuide)
+    else -- Addon not loaded, add to queue
+        importedGuide.cache = true
+        table.insert(fileGuides, importedGuide)
+    end
+end
+
+function RXPG.LoadFileGuides()
+    if not RXPG.db then
+        error('Initialization error, db not set')
         return
     end
+
+    for _, guide in ipairs(fileGuides) do
+        RXPG.LoadGuide(guide)
+        --WIP
+    end
+
+    fileGuides = nil
+end
+
+-- Upgrade local, file, imported, or cached guides
+function RXPG.UpgradeGuide(guide)
+    if not guide.key then -- upgrade cached guides
+        guide.key = RXPG.BuildGuideKey(guide)
+    end
+
+    if not guide.version then guide.version = '0' end
+
+    return guide
+end
+
+function RXPG.BuildGuideKey(guide)
+    return string.format("%s/%s/%s", guide.group, guide.subgroup or '',
+                         guide.name)
+end
+
+function RXPG.LoadCachedGuides()
+    if not RXPG.db then
+        error('Initialization error, db not set')
+        return
+    end
+
+    --WIP
+end
+
+function RXPG.ParseGuide(guideGroup, text, defaultFor)
+    if not guideGroup then return end
+
     local playerLevel = UnitLevel("player")
     local parentGroup
 
     if not (guideGroup and text) then
         text = guideGroup
-        guideGroup = text:match("^%s*#group%s+(.-)%s*%c")
-                        or text:match("%c%s*#group%s+(.-)%s*%c")
+        guideGroup = text:match("^%s*#group%s+(.-)%s*%c") or
+                         text:match("%c%s*#group%s+(.-)%s*%c")
         if guideGroup then
-            guideGroup = guideGroup:gsub("%s*%-%-.*$","")
+            guideGroup = guideGroup:gsub("%s*%-%-.*$", "")
         else
             print("Error parsing guide: Invalid guide group",
-                text:match("#name%s+.-%s*%c"))
+                  text:match("#name%s+.-%s*%c"))
             return
         end
     end
-
-    RXPG.RegisterGroup(guideGroup)
 
     local guide = {}
 
@@ -88,6 +216,9 @@ function RXPG.RegisterGuide(guideGroup, text, defaultFor)
     RXP_.guide = guide
 
     guide.group = guideGroup
+
+    RXPG.RegisterGroup(guide.group)
+
     guide.unitscan = {}
     local currentStep = 0
     guide.steps = {}
@@ -273,23 +404,10 @@ function RXPG.RegisterGuide(guideGroup, text, defaultFor)
         guide.next = guide.next:gsub("^(%d)-(%d%d?)", RXP_.affix)
     end
 
-    if not RXP_.guideList[guide.group] then
-        RXP_.guideList[guide.group] = {}
-        RXP_.guideList[guide.group].names_ = {}
-    end
-    local list = RXP_.guideList[guide.group]
-    table.insert(RXP_.guides, guide)
-    if list[guide.name] then
-        suffix = suffix + 1
-        guide.name = guide.name .. tostring(suffix)
-    end
-    table.insert(list.names_, guide.name)
-    list[guide.name] = #RXP_.guides
-    if guideGroup:sub(1, 1) ~= "*" and defaultFor and not RXP_.defaultGuide then
-        RXP_.defaultGuide = guide
-    end
+    guide.key = RXPG.BuildGuideKey(guide)
     RXP_.guide = nil
+
+    return guide
 end
 
 -- parser
-

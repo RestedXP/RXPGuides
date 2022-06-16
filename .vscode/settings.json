@@ -1,0 +1,17 @@
+{
+    "editor.wordWrapColumn": 120,
+    "Lua.telemetry.enable": false,
+    "Lua.runtime.version": "Lua 5.1",
+    "Lua.workspace.ignoreDir": [
+        ".vscode",
+        "libs",
+        "HereBeDragons"
+    ],
+    "Lua.diagnostics.severity": {
+        "undefined-global": "Hint",
+        "lowercase-global": "Hint"
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "Koihik.vscode-lua-format"
+    },
+}
