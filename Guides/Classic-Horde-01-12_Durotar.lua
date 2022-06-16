@@ -564,7 +564,7 @@ step << Hunter
 step
     #softcore
     #completewith next
-    .goto Durotar,57.3,53.5,120 >>Die at northern tower outside of Tiragarde Keep. Respawn in Razor Hill
+    .goto Durotar,57.3,53.5,120 >>Die at the northern tower outside of Tiragarde Keep. Respawn in Razor Hill
 step
 	#era/som
     #hardcore
