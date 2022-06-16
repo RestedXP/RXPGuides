@@ -82,14 +82,9 @@ step
 step
     #sticky
     #completewith Rockjaw
-    >>Kill Normal Rockjaw Troggs that you see
+    >>Kill Normal Rockjaw Troggs that you see. You may need to kill extra Burly Rockjaw Troggs to force respawns.
     .complete 170,1 --Kill Rockjaw Trogg (x6)
-step
-    .goto Dun Morogh,26.9,72.7,30,0
-    .goto Dun Morogh,25.1,72.1,30,0
-    .goto Dun Morogh,26.9,72.7,30,0
-    .goto Dun Morogh,25.1,72.1,30,0
-    >>Kill Burly Rockjaw Troggs
+        >>Kill Burly Rockjaw Troggs
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
 step
     .goto Dun Morogh,22.6,71.4
@@ -1292,6 +1287,7 @@ step << Rogue
 step << Rogue
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step << Rogue
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     .goto Stormwind City,62.4,10.1,30 >>Take the Deeprun Tram and enter Stormwind
 step << Rogue
     .goto Stormwind City,58.1,16.5
@@ -1321,6 +1317,7 @@ step
 .goto Wetlands,10.6,57.2,15,0
 .goto Wetlands,10.7,56.8
     .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
+    .bronzetube
 step
     .money <0.0385
 .goto Wetlands,8.1,56.3
@@ -2013,6 +2010,7 @@ step
 .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
     #label Tram
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     .goto Stormwind City,62.4,10.1,30 >>Take the Deeprun Tram and enter Stormwind
 step
     .goto Stormwind City,58.1,16.5
@@ -2587,6 +2585,7 @@ step
 .goto Wetlands,10.6,57.2,15,0
 .goto Wetlands,10.7,56.8
     .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
+    .bronzetube
 step
     .money <0.0385
 .goto Wetlands,8.1,56.3
@@ -3205,7 +3204,7 @@ step
     .fly Menethil >> Fly to Menethil
 step
     .goto Wetlands,4.6,57.2
-    .zone Darkshore >> Take the boat to Darkshore
+    .zone Darkshore >> Take the boat to Darkshore. Make bandages or sharpening stones while you wait.
 ]],"Dwarf Hunter")
 
 
