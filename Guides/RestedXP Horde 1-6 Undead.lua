@@ -9,35 +9,37 @@ step << !Scourge
     +You have selected a guide meant for Undead. It is recommended you choose the same starter zone that you start in
 step
     >>Drop your Hearthstone
+	.destroy 6948
      >>Run out of the crypt
     .goto Tirisfal Glades,30.2,71.7
     .accept 363 >> Accept Rude Awakening
 step << Warrior
     #sticky
     #completewith vendorWar
-    +Grind mobs until you have 10c of vendorables
-    .goto Tirisfal Glades,30.2,65.4
+    +Grind mobs toward town until you have 10c of vendorables
+    .goto Tirisfal Glades,31.5,69.8
 step << Warlock
     #sticky
     #completewith vendorLock
-    +Grind mobs until you have 10c of vendorables
-    .goto Tirisfal Glades,30.2,65.4
+    +Grind mobs toward town until you have 10c of vendorables
+    .goto Tirisfal Glades,31.5,69.8
 step << Priest/Mage
     #sticky
     #completewith vendorCaster
-    +Grind mobs until you have 35c of vendorables
-    .goto Tirisfal Glades,30.2,65.4
+    +Grind mobs toward town until you have 35c of vendorables
+    .goto Tirisfal Glades,31.5,69.8
 step << Warrior
     #label vendorWar
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >> vendor trash
+    .vendor >> Vendor trash
 step << Warrior
     .goto Tirisfal Glades,32.7,65.6
     .train 6673 >>Train Battle Shout
 step << Priest/Mage
     #label vendorCaster
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>vendor trash, buy 5 water
+    .vendor >> Vendor Trash and then purchase 10 Refreshing Spring Water
+	.collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Warlock
     #label vendorLock
     .goto Tirisfal Glades,30.8,66.4
@@ -54,16 +56,17 @@ step << Warlock
     .accept 364 >> Accept The Mindless Ones
 step << Warlock
     .goto Tirisfal Glades,32.5,61.4
-    >> Kill Skeletons in the area for Skulls
+    >> Kill Rattlecage Skeletons in the area for Skulls
     .complete 1470,1 --Rattlecage Skull (3)
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,32.3,65.4,30 >> Grind on your way back to town until 25c+ of vendorables
 step << Warlock
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >> vendor trash, buy 5 water
+    .vendor >> vendor trash, buy 5 water from Joshua
+	.collect 159,5 --Collect Refreshing Spring Water (x5)
 step << Warlock
-    >>Summon your Imp when you turnin
+    >>Summon your Imp after you turnin
     .goto Tirisfal Glades,31.0,66.4
     .turnin 1470 >>Turn in Piercing the Veil
 step << Warlock
@@ -84,13 +87,15 @@ step
     .complete 364,1 --Kill Mindless Zombie (x8)
     .complete 364,2 --Kill Wretched Zombie (x8)
 step
-    .xp 2 >> Grind to Level 2
+	.goto Tirisfal Glades,32.4,62.8
+	.xp 2 >> Grind to level 2
 step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>vendor trash, buy 10 water
+    .vendor >>Vendor trash, buy 10 more water
+	.collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Warrior/Rogue
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step
     .goto Tirisfal Glades,30.8,66.2
     .turnin 364 >> Turn in The Mindless Ones
@@ -129,13 +134,13 @@ step
     >> Kill Skeletons in the town
     .complete 3901,1 --Kill Rattlecage Skeleton (12) 
 step
-    .xp 3+1230 >>Grind mobs en route back to town to 1000+/1400xp
+    .xp 3+980 >>Grind mobs en route back to town to 980+/1400xp
 step << Mage/Warlock
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>vendor trash, buy water down to no lower than 95c
+    .vendor >>Vendor trash, buy water down to no lower than 95c
 step << Priest
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>vendor trash, buy water down to no lower than 1s 90c
+    .vendor >>Vendor trash, buy water down to no lower than 1s 90c
 step
     .goto Tirisfal Glades,30.9,66.2
     .turnin 3901 >> Turn in Rattling the Rattlecages
@@ -143,9 +148,9 @@ step
     #label BatsWolves
     .goto Tirisfal Glades,30.9,66.1
     .turnin 376 >> Turn in The Damned
-    .accept 6395 >> Accept Marla's Last Wish
 step
-    .xp 4 >> Grind to 4
+	.goto Tirissfal Glades,30.9,66.1
+    .accept 6395 >> Accept Marla's Last Wish
 step << Priest
     .goto Tirisfal Glades,31.1,66.0
     .trainer >> Train your class spells
@@ -174,19 +179,29 @@ step
 step
     #sticky
     #label Goods
-    >>Collect bundles of brown boxes whilst killing Skeletons. You can find these on the outside walls/inside of buildings
+    >>Collect bundles of brown boxes whilst grinding level 2+ mobs en route. You can find these on the outside walls/inside of buildings
     .goto Tirisfal Glades,33.84,64.09
     .complete 3902,1 --Collect Scavenged Goods (x6)  
 step
+	#hardcore
     #requires Goods
-    .goto Tirisfal Glades,27.10,59.09
-    >>Kill Young Spiders outside the cave
-    .complete 380,1 --Kill Young Night Web Spider (10)
-step
+    .goto Tirisfal Glades,27.1,59.0,80,0
     .goto Tirisfal Glades,26.8,59.4,30,0
-    .goto Tirisfal Glades,24.0,58.2,30,0
-    >>Go to the cave entrance, enter and kill the spiders inside
-    .complete 380,2 --Kill Night Web Spider (x8)
+    .goto Tirisfal Glades,24.0,58.2,60,0
+	.goto Tirisfal Glades,27.1,59.0
+    >>Kill all but 2-3 Young Spiders outside the cave and then enter the cave and kill the Night Web Spiders inside. Kill the remaining 2-3 Young Spiders as you leave.
+    .complete 380,1 --Kill Young Night Web Spider (10)
+	complete 380,2 --Kill Night Web Spider (x8)
+step
+	#softcore
+    #requires Goods
+    .goto Tirisfal Glades,27.1,59.0,80,0
+    .goto Tirisfal Glades,26.8,59.4,30,0
+    .goto Tirisfal Glades,24.0,58.2,60,0
+	.goto Tirisfal Glades,27.1,59.0
+    >>Kill Young Spiders outside the cave and then enter the cave and kill the Night Web Spiders inside. We're deathskipping in the cave, make sure you're done with Young Spiders before entering.
+    .complete 380,1 --Kill Young Night Web Spider (10)
+	complete 380,2 --Kill Night Web Spider (x8)step
 step
     #softcore
     #completewith next
@@ -197,16 +212,20 @@ step
     .goto Tirisfal Glades,31.2,64.9,120 >> Run out of the cave, back to Deathknell
 step
     .goto Tirisfal Glades,31.6,65.6
+	>> Resummon your imp << Warlock
     .turnin 3902 >> Turn in Scavenging Deathknell
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.41,65.66
-    .vendor >>vendor trash. Repair your weapon
+    .vendor >>Vendor trash. Repair your weapon
 step << Priest/Mage/Warlock
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>vendor trash, buy 20 water
+    .vendor >>Vendor trash, buy up to 15 water
+	.collect 159,15 --Collect Refreshing Spring Water (x15)
 step
     .goto Tirisfal Glades,32.2,66.0
     .turnin 380 >> Turn in Night Web's Hollow
+step
+	.goto Tirisfal Glades,32.2,66.0
     .accept 381 >> Accept The Scarlet Crusade
 step
     .goto Tirisfal Glades,37.45,67.93
@@ -218,9 +237,11 @@ step
     .collect 16333,1 --Collect Samuel's Remains
 step
     #softcore
+	.goto Tirisfal Glades,36.7,61.6
     .deathskip >> Die and respawn at the Spirit Healer
 step
     .goto Tirisfal Glades,31.2,65.1
+	>> Bury Samuel's remains by clicking on the grave in the graveyard
     .complete 6395,1 --Collect Samuel's Remains Buried (1)
 step
     .goto Tirisfal Glades,30.9,66.1
@@ -230,11 +251,13 @@ step << Priest
     .accept 5651 >> Accept In Favor of Darkness
 step
     #completewith next
-    .goto Tirisfal Glades,32.3,65.4
-    .vendor >>vendor trash
+    .goto Tirisfal Glades,32.4,65.6
+    .vendor >>Vendor trash and repair
 step
     .goto Tirisfal Glades,32.1,66.0
     .turnin 381 >> Turn in The Scarlet Crusade
+step
+	.goto Tirisfal Glades,32.1,66.0
     .accept 382 >> Accept The Red Messenger
 step
     >>Kill Meven and loot him for the documents << !Rogue !Warrior
@@ -285,4 +308,5 @@ step
 step
     .goto Eversong Woods,46.5,49.2,30 >>Run to Falconwing Square
 ]],"Scourge")
+
 
