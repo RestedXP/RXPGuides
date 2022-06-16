@@ -169,9 +169,7 @@ local maxSkillLevel = {}
 local professionNames
 
 function RXP_.GetProfessionNames()
-    if not professionNames then
-        professionNames = {}
-    end
+    if not professionNames then professionNames = {} end
 
     for profession, ids in pairs(RXP_.professionID) do
         for i, id in ipairs(ids) do
@@ -214,7 +212,8 @@ function RXP_.GetProfessionLevel()
     end
     if not names.riding then names.riding = GetSpellInfo(33388) end
     for i = 1, GetNumSkillLines() do
-        local skillName,_,_,skillRank,_,_,skillMaxRank = GetSkillLineInfo(i)
+        local skillName, _, _, skillRank, _, _, skillMaxRank = GetSkillLineInfo(
+                                                                   i)
         if skillRank then
             for profession, name in pairs(names) do
                 -- print(name,skillName,name == skillName)
@@ -232,7 +231,7 @@ function RXP_.UpdateSkillData()
     RXP_.GetProfessionLevel()
 end
 
-function RXP_.GetSkillLevel(skill,useMaxValue)
+function RXP_.GetSkillLevel(skill, useMaxValue)
     RXP_.UpdateSkillData()
     if skill then
         if useMaxValue then
@@ -494,8 +493,8 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
         -- TODO add menu option to reset cached guides
         RXPGuides.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
                                                 'global')
-        RXPGuides.LoadFileGuides()
         RXPGuides.LoadCachedGuides()
+        RXPGuides.LoadFileGuides()
         RXPFrame.GenerateMenuTable()
         RXP_.CreateOptionsPanel()
         loadtime = GetTime()
