@@ -50,9 +50,9 @@ RXP_.affix = function(smin, smax)
     return "0" .. smin .. "-" .. smax
 end
 
-function RXPG.RegisterGroup(groupOrText, parentGroup)
-    if not RXPG[groupOrText] then RXPG[groupOrText] = {} end
-    local group = RXPG[groupOrText]
+function RXPG.RegisterGroup(guideGroup, parentGroup)
+    if not RXPG[guideGroup] then RXPG[guideGroup] = {} end
+    local group = RXPG[guideGroup]
     if parentGroup then
         if not RXPG[parentGroup] then RXPG[parentGroup] = {} end
         local parent = RXPG[parentGroup]
