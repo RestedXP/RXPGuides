@@ -1016,6 +1016,7 @@ step
 step
     .goto Eversong Woods,70.5,72.4
 >>Click the Invasion Plans in your bag
+    .collect 23249,1,9360
     .accept 9360 >> Accept Amani Invasion
 step
     #label Marosh
@@ -1029,6 +1030,7 @@ step
 .complete 8476,2 --Kill Amani Axe Thrower (x5)
 step << BloodElf Hunter  
     .goto Ghostlands,45.6,21.1
+    .use 23703
     .complete 9485,1 --Tame a Mistbat
 step << BloodElf Hunter  
     .goto Ghostlands,46.3,28.8
@@ -1134,7 +1136,7 @@ step
     .accept 8889 >> Accept Deactivating the Spire
     .accept 9394 >> Accept Where's Wyllithen?
 step << Hunter
->>Tame a level 9 Elder Springpaw (Claw rank 2)
+.spell 1515 >>Tame a level 9 Elder Springpaw (They start with Claw rank 2)
     .goto Eversong Woods,68.7,46.9
     .turnin 9394 >> Turn in Where's Wyllithen?
     .accept 8894 >> Accept Cleaning up the Grounds
@@ -1397,8 +1399,8 @@ step
     .goto Ghostlands,54.9,15.3,50,0
     .goto Ghostlands,46.6,14.0,50,0
     .goto Ghostlands,47.7,19.8,50,0
-    .goto Ghostlands,54.9,15.3,50,0
-    >>Kill Mistbats and Ghostclaws. You had back across the bridge after, don't go too far.
+    .goto Ghostlands,54.9,15.3
+    >>Kill Mistbats and Ghostclaws. You head back across the bridge after, don't go too far.
 .goto Ghostlands,51.6,15.5
     .complete 9147,1 --Collect Plagued Blood Sample (x4)
 step
@@ -1506,11 +1508,11 @@ step
     .vendor >> Buy Food/drink if needed. Be sure to buy the level 5 fish as it's VERY cheap
 step
     >>Kill any Ghostclaw Lynxes you see
-.goto Ghostlands,68.5,33.1,40,0
+    .goto Ghostlands,68.5,33.1,40,0
     .goto Ghostlands,67.3,38.0,40,0
     .goto Ghostlands,68.5,46.3,40,0
     .goto Ghostlands,76.2,35.2,40,0
-.goto Ghostlands,68.5,33.1,40,0
+    .goto Ghostlands,68.5,33.1,40,0
     .goto Ghostlands,67.3,38.0,40,0
     .goto Ghostlands,68.5,46.3,40,0
     .goto Ghostlands,76.2,35.2,40,0
@@ -1525,7 +1527,6 @@ step
     .accept 9274 >>Accept Spirits of the Drowned
 step
     #sticky
-    #completewith spiritend
     #label Wavefront
 >>Collect Medallions from mud piles at the bottom of the lake as you kill Apparitions
 .goto Ghostlands,72.2,28.2,30,0
@@ -1533,7 +1534,7 @@ step
 .goto Ghostlands,73.6,18.3,30,0
 .goto Ghostlands,71.4,15.5,30,0
 .goto Ghostlands,70.1,19.0,30,0
-.goto Ghostlands,70.6,22.0,30,0
+.goto Ghostlands,70.6,22.0
     .complete 9157,1 --Collect Wavefront Medallion (x8)
 step
     #sticky
@@ -1544,17 +1545,16 @@ step
 .goto Ghostlands,73.6,18.3,30,0
 .goto Ghostlands,71.4,15.5,30,0
 .goto Ghostlands,70.1,19.0,30,0
-.goto Ghostlands,70.6,22.0,30,0
+.goto Ghostlands,70.6,22.0
     .complete 9274,2 --Kill Vengeful Apparition (x8)
     .complete 9274,1 --Kill Ravening Apparition (x8)
 step
-    #label spiritend
     #requires Wavefront
 .goto Ghostlands,72.3,19.0
     .turnin 9157 >> Turn in Forgotten Rituals
     .accept 9174 >> Accept Vanquishing Aquantion
 step
-    >>Click the shrine, then kill Aquantion when he's summoned. He is immmune to CC and hits relatively hard, be careful!
+    >>Click the shrine then kill Aquantion when he's summoned. He is immmune to CC and hits relatively hard, be careful!
 .goto Ghostlands,71.3,15.0
     .complete 9174,1 --Kill Aquantion (x1)
 step
@@ -1652,7 +1652,6 @@ step << Priest/Mage/Warlock
     .goto Ghostlands,45.4,30.5
     .fly Silvermoon >> Fly to Silvermoon City
 step << BloodElf Mage
->>Choose whichever. I prefer the staff, Tactics prefers the Orb. Up to you bossman
 .goto Eversong Woods,55.7,54.5
 .turnin 9404 >>Turn in Recently Living
 step << BloodElf Priest/BloodElf Mage
@@ -1682,18 +1681,17 @@ step << !BloodElf Warlock
     .train 689 >>Train Drain Life
     .train 6222 >>Train Corruption r2
 step << Priest/Mage/Warlock/Druid
-    #sticky
     #completewith next
-.hs >> Hearth to Tranquillien
+    .hs >> Hearth to Tranquillien
 step << BloodElf Warlock
     .goto Ghostlands,47.3,29.3
 .turnin 9135 >> Turn in Return to Quartermaster Lymel
 step
 >>Kill the Arcane mobs for Mana Essence
-.goto Ghostlands,35.7,33.5,40,0
+    .goto Ghostlands,35.7,33.5,40,0
     .goto Ghostlands,31.4,35.9,40,0
     .goto Ghostlands,32.4,29.0,40,0
-.goto Ghostlands,35.7,33.5,40,0
+    .goto Ghostlands,35.7,33.5,40,0
     .goto Ghostlands,31.4,35.9,40,0
     .goto Ghostlands,32.4,29.0,40,0
     .complete 9150,1 --Collect Crystallized Mana Essence (x8)
@@ -1720,9 +1718,9 @@ step << BloodElf Rogue
 .collect 23686 --Collect Lacy Handkerchief (x1)
 step
     .goto Ghostlands,36.9,15.7
+    >>Go within 10 yards of the giant light in the middle of the camps    
     .complete 9160,1 --Kill Sentinel Spy (x12)
-    >>Go within 10 yards of the giant light in the middle of the camps
-.complete 9160,2 --Investigate An'daroth
+    .complete 9160,2 --Investigate An'daroth
 step
     .goto Ghostlands,36.9,15.7
 .xp 14+5200 >> Grind to 5200+/12300xp
@@ -1824,7 +1822,7 @@ step
     .goto Ghostlands,43.8,49.6,50,0
 .goto Ghostlands,42.1,39.2,50,0
     .goto Ghostlands,50.8,50.3,50,0
-    .goto Ghostlands,43.8,49.6,50,0
+    .goto Ghostlands,43.8,49.6
     .complete 9159,1 --Kill Vampiric Mistbat (x10)
 step
     .goto Ghostlands,46.2,56.4
@@ -1854,7 +1852,7 @@ step
     .goto Ghostlands,44.1,57.6,30,0
     .goto Ghostlands,16.5,62.5,30,0
     .goto Ghostlands,44.1,57.6,30,0
-.goto Ghostlands,16.5,62.5
+    .goto Ghostlands,16.5,62.5
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step
@@ -1885,7 +1883,8 @@ step << Paladin
 .goto Ghostlands,10.5,22.6
     .complete 9163,3 --Collect Night Elf Plans: Scrying on the Sin'dorei (x1)
 step
-    .goto Ghostlands,43.9,25.7,200 >> Die and respawn at the Spirit Healer, or run back
+    #completewith next
+    .goto Ghostlands,43.9,25.7,200 >> Die and respawn at the Spirit Healer or run back
 step
     .goto Ghostlands,46.3,28.5
     .turnin 9140 >> Turn in Windrunner Village
@@ -1944,7 +1943,7 @@ step << Orc Rogue/Troll Rogue/Undead Rogue
 step << Rogue
 .money <0.3625
 .goto Silvermoon City,49.5,15.0,15,0
-.goto Undercity,58.9,11.3,200 >>Take the Orb of Translocation to Undercity
+.zone Undercity >>Take the Orb of Translocation to Undercity
 step << Rogue
     .money <0.3625
 .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
