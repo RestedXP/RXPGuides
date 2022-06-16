@@ -1335,6 +1335,11 @@ step
     .turnin 9548 >> Turn in Pilfered Equipment
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
 step
+    .goto Bloodmyst Isle,42.1,21.2
+	>> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
+	.collect 4371,1,175
+	.bronzetube
+step
     .goto Bloodmyst Isle,53.1,20.3
     .use 23837 >>Click on the Weathered Treasure Map in your bags from the Artifacts of the Blacksilt quest
 	.collect 23837,1,9550 --Collect Weathered Treasure Map (x1)
