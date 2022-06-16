@@ -50,9 +50,9 @@ RXP_.affix = function(smin, smax)
     return "0" .. smin .. "-" .. smax
 end
 
-function RXPG.RegisterGroup(guideGroup, parentGroup)
-    if not RXPG[guideGroup] then RXPG[guideGroup] = {} end
-    local group = RXPG[guideGroup]
+function RXPG.RegisterGroup(groupOrText, parentGroup)
+    if not RXPG[groupOrText] then RXPG[groupOrText] = {} end
+    local group = RXPG[groupOrText]
     if parentGroup then
         if not RXPG[parentGroup] then RXPG[parentGroup] = {} end
         local parent = RXPG[parentGroup]
@@ -127,25 +127,31 @@ end
 
 -- Don't cache registered guide, aka Guide-N.lua
 -- They are part of the base bundle, so caching is a waste of RAM
-function RXPG.RegisterGuide(guideGroup, text, defaultFor)
-    local guide = RXPG.ParseGuide(guideGroup, text, defaultFor)
-
+function RXPG.RegisterGuide(groupOrText, text, defaultFor)
     if RXPG.db then -- Shouldn't ever happen, but immediately load guide if db initialized
+        local guide = RXPG.ParseGuide(groupOrText, text, defaultFor)
         RXPG.LoadGuide(guide)
     else
-        table.insert(fileGuides, guide)
+        table.insert(fileGuides, {
+            groupOrText = groupOrText,
+            text = text,
+            defaultFor = defaultFor
+        })
     end
 end
 
 -- Parse and cache one-time guide, aka Import.lua or base64
-function RXPG.ImportGuide(guideGroup, text, defaultFor)
-    local importedGuide = RXPG.ParseGuide(guideGroup, text, defaultFor)
-
+function RXPG.ImportGuide(groupOrText, text, defaultFor)
     if RXPG.db then -- Addon loaded already, import coming from user string
+        local importedGuide = RXPG.ParseGuide(groupOrText, text, defaultFor)
         RXPG.LoadGuide(importedGuide)
     else -- Addon not loaded, add to queue
-        importedGuide.cache = true
-        table.insert(fileGuides, importedGuide)
+        table.insert(fileGuides, {
+            groupOrText = groupOrText,
+            text = text,
+            defaultFor = defaultFor,
+            cache = true
+        })
     end
 end
 
@@ -155,25 +161,17 @@ function RXPG.LoadFileGuides()
         return
     end
 
-    for _, guide in ipairs(fileGuides) do
-        if RXPG.LoadGuide(guide) and guide.cache then
+    for _, guideData in pairs(fileGuides) do
+        local guide = RXPG.ParseGuide(guideData.groupOrText, guideData.text,
+                                      guideData.defaultFor)
+
+        if RXPG.LoadGuide(guide) and guideData.cache then
             -- Cache if guide successfully loads and is imported not default
-            RXPG.db.profile.guides[RXPG.EncodeGuideKey(guide)] = guide
+            RXPG.db.profile.guides[RXPG.EncodeGuideKey(guide)] = guideData
         end
     end
 
     fileGuides = nil
-end
-
--- Upgrade local, file, imported, or cached guides
-function RXPG.UpgradeGuide(guide)
-    if not guide.key then -- upgrade cached guides
-        guide.key = RXPG.BuildGuideKey(guide)
-    end
-
-    if not guide.version then guide.version = '0' end
-
-    return guide
 end
 
 function RXPG.BuildGuideKey(guide)
@@ -183,12 +181,12 @@ end
 
 function RXPG.EncodeGuideKey(guide)
     -- TODO encode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
-    return string.format("%s:%s", battleTag, RXPG.UpgradeGuide(guide).key)
+    return string.format("%s:%s", battleTag, guide.key)
 end
 
 function RXPG.DecodeGuideKey(guide)
     -- TODO decode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
-    return RXPG.UpgradeGuide(guide).key:gsub(battleTag .. ":", '')
+    return guide.key:gsub(battleTag .. ":", '')
 end
 
 function RXPG.LoadCachedGuides()
@@ -197,31 +195,33 @@ function RXPG.LoadCachedGuides()
         return
     end
 
-    for key, guide in pairs(RXPG.db.profile.guides) do
-        if key ~= RXPG.DecodeGuideKey(guide) then
+    local guide
+    for key, guideData in pairs(RXPG.db.profile.guides) do
+        guide = RXPG.ParseGuide(guideData.groupOrText, guideData.text,
+                                guideData.defaultFor)
+        if guide and key ~= RXPG.DecodeGuideKey(guide) then
             RXPG.LoadGuide(guide)
         else
             if DEBUG then
-                print(fmt('Unable to decode cached guide (%s), removed',
-                          guide.key))
+                print(fmt('Unable to decode cached guide (%s), removed', key))
             end
             RXPG.db.profile.guides[key] = nil
         end
     end
 end
 
-function RXPG.ParseGuide(guideGroup, text, defaultFor)
-    if not guideGroup then return end
+function RXPG.ParseGuide(groupOrText, text, defaultFor)
+    if not groupOrText then return end
 
     local playerLevel = UnitLevel("player")
     local parentGroup
 
-    if not (guideGroup and text) then
-        text = guideGroup
-        guideGroup = text:match("^%s*#group%s+(.-)%s*%c") or
-                         text:match("%c%s*#group%s+(.-)%s*%c")
-        if guideGroup then
-            guideGroup = guideGroup:gsub("%s*%-%-.*$", "")
+    if not (groupOrText and text) then
+        text = groupOrText
+        groupOrText = text:match("^%s*#group%s+(.-)%s*%c") or
+                          text:match("%c%s*#group%s+(.-)%s*%c")
+        if groupOrText then
+            groupOrText = groupOrText:gsub("%s*%-%-.*$", "")
         else
             print("Error parsing guide: Invalid guide group",
                   text:match("#name%s+.-%s*%c"))
@@ -231,13 +231,13 @@ function RXPG.ParseGuide(guideGroup, text, defaultFor)
 
     local guide = {}
 
-    if guideGroup:sub(1, 1) == "+" then
+    if groupOrText:sub(1, 1) == "+" then
         RXP_.farmGuides = RXP_.farmGuides + 1
         guide.farm = true
     end
     RXP_.guide = guide
 
-    guide.group = guideGroup
+    guide.group = groupOrText
 
     RXPG.RegisterGroup(guide.group)
 
@@ -407,17 +407,17 @@ function RXPG.ParseGuide(guideGroup, text, defaultFor)
         local boost58
         if defaultFor == "58Boost" then
             if playerLevel >= 60 or playerLevel < 58 then
-                parentGroup = guideGroup
-                guideGroup = "*" .. guideGroup
+                parentGroup = groupOrText
+                groupOrText = "*" .. groupOrText
             end
             boost58 = true
         elseif not applies(defaultFor) then
-            parentGroup = guideGroup
-            guideGroup = "*" .. guideGroup
+            parentGroup = groupOrText
+            groupOrText = "*" .. groupOrText
         end
-        RXPG.RegisterGroup(guideGroup, parentGroup)
+        RXPG.RegisterGroup(groupOrText, parentGroup)
         guide.boost58 = boost58
-        guide.group = guideGroup
+        guide.group = groupOrText
     end
 
     guide.displayName = guide.name
