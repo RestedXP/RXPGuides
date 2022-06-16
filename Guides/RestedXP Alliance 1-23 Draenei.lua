@@ -1012,10 +1012,23 @@ step
 	>>Loot a big red mushroom underwater, or kill one of the fishes and loot them
     .complete 9648,1 --Collect Aquatic Stinkhorn (x1)
 step
-    .goto Bloodmyst Isle,45.4,94.3 >> Grind en route.
-	>>Kill and loot Cruelfin. He patrols the around the murloc camps.
-	.unitscan Cruelfin
+	#completewith next
+    .goto Bloodmyst Isle,35.6,94.2,0
+    .goto Bloodmyst Isle,51.3,93.9,0
+	.use 23995 >>Use the Blacksilt tagger in your bags to tag scouts. This will make them non-hostile towards you.
+    .complete 9629,1 --Blacksilt Scouts Tagged (x6)
+step
+    .goto Bloodmyst Isle,51.1,93.1,70,0
+    .goto Bloodmyst Isle,43.0,94.4,70,0
+    .goto Bloodmyst Isle,35.1,93.7
+	.line Bloodmyst Isle,51.1,93.1,43.0,94.4,35.1,93.7
+	.use 23870 >>Kill the named murloc, Cruelfin, that patrols the around the murloc camps. Loot him for the Pendant. Click it in your bags
+	.collect 23870,1,9576 --Red Crystal Pendant (1)
     .accept 9576 >> Accept Cruelfin's Necklace
+	.unitscan Cruelfin
+step
+    .goto Bloodmyst Isle,35.6,94.2,70,0
+    .goto Bloodmyst Isle,51.3,93.9
 	.use 23995 >>Use the Blacksilt tagger in your bags to tag scouts. This will make them non-hostile towards you.
     .complete 9629,1 --Blacksilt Scouts Tagged (x6)
 step
