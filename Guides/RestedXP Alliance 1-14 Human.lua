@@ -11,7 +11,7 @@ step << !Human
 step << Warlock
     #sticky
     #completewith next
-    +Kill Wolves for 10c+ of vendor trash
+    +Kill Wolves for 10c+ of vendor trash. It's worth training Immolate early
     .goto Elwynn Forest,49.4,45.6,60,0
 step << Warlock
     .goto Elwynn Forest,50.1,42.7
@@ -54,7 +54,7 @@ step
 step << Warrior
     #sticky
     #completewith next
-    +Kill Wolves for 10c+ of vendor trash
+    +Kill Wolves for 10c+ of vendor trash. It's worth training Battle Shout early
     .goto Elwynn Forest,46.4,40.3,60,0
 step << Warrior
     .goto Elwynn Forest,47.5,41.6
@@ -94,6 +94,7 @@ step
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.6,41.5
     .vendor >>vendor trash, then buy x10 more water from Brother Danil
+    .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Priest !Mage !Warlock
     .goto Elwynn Forest,47.6,41.5
     .vendor >>vendor trash
@@ -115,9 +116,11 @@ step
     .complete 15,1 --Kill Kobold Worker (x10)
 step
     #sticky
+    #completewith thievesaccept
     #label xp3
     .xp 3+1110 >>Grind to 1110+/1400xp on your way back
 step
+    #completewith next
     .goto Elwynn Forest,47.7,41.4
     .vendor >>vendor trash
 step
@@ -156,8 +159,10 @@ step << Warrior
 step << Paladin
     .goto Elwynn Forest,50.4,42.1
     .turnin 3101 >> Turn in Consecrated Letter
+    .xp 4 >> Grind to 4
     .trainer >> Train your class spells
 step
+    #label thievesaccept
     .goto Elwynn Forest,48.2,42.9
     .accept 18 >> Accept Brotherhood of Thieves
 step << Warlock
@@ -412,14 +417,11 @@ step
     .accept 107 >> Accept Note to William
 step
     #sticky
-    #label KoboldCandles
-    >> Get some Candles from nearby Kobolds
-    .complete 60,1 --Collect Kobold Candle (x8)
-step
-    #sticky
-    #label GoldDust
-    >> Get some Gold Dust from nearby Kobolds
+    #label KoboldTurnins
+    .goto Elwynn Forest,40.5,82.3
+    >> Kill Kobolds for Gold Dust and Candles
     .complete 47,1 --Collect Gold Dust (x10)
+    .complete 60,1 --Collect Kobold Candle (x8)  
 step
     >>Grind mobs east through the outside of the mine
     .goto Elwynn Forest,43.1,85.7
@@ -452,10 +454,8 @@ step << !Priest !Paladin !Warrior !Rogue
 step << Priest
     .xp 7+1260 >>Grind until 1260+/4500xp
 step
-    #requires KoboldCandles 
-step
     #label Goldtooth
-    #requires GoldDust
+    #requires KoboldTurnins
     .goto Elwynn Forest,34.5,84.3
     .turnin 87 >> Turn in Goldtooth
 step
@@ -556,6 +556,11 @@ step
     .turnin 35 >> Turn in Further Concerns
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
+step << Paladin
+    #softcore
+    #sticky
+    #completewith Bundles
+    +Complete all quests before heading to the murlocs, we are going to do a deathskip.
 step
     #sticky
     #completewith Prowlers
@@ -670,6 +675,7 @@ step
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
 step
+    #sticky
     #completewith Deed
     >>Keep an eye out for Westfall Deed from the Defias (lucky drop)
     .collect 1972,1,184 --Collect Westfall Deed (x1)
@@ -692,7 +698,9 @@ step << !Rogue !Warrior
     >>If you're struggling, you can use the Fence to abuse pathing and buy time
     .complete 88,1 --Collect Brass Collar (x1)
     .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> Click here if struggling
-step
+step << !Warlock
+    .xp 9+3695 >> Grind to 3695+/6500xp
+step << Warlock
     .xp 9+3400 >> Grind to 3400+/6500xp
 step
     #softcore
@@ -784,7 +792,7 @@ step << Mage
 step << Rogue
     .goto Elwynn Forest,43.9,65.9
     >>Don't worry about not having 2 weapons, we'll get another soon
-    >>Be VERY careful about your money when training here. Make sure you train Dual Wield and Sprint though
+    >>Be VERY careful about your money when training here. You will need 31s 52c by next level. Make sure you train Dual Wield and Sprint though.
     .trainer >> Train your class spells
 step << Rogue
     .goto Elwynn Forest,41.7,65.9
@@ -812,7 +820,7 @@ step << Warrior
     .goto Elwynn Forest,27.6,93.0
 step << Warlock
     #completewith Armbands
-    >>Keep an eye out for the gold pickup schedule (lucky drop), or a 100% Drop from Gruff Swiftbite (rare). extra 210xp
+    >>Keep an eye out for the gold pickup schedule (lucky drop), or a 100% Drop from Gruff Swiftbite (rare). Extra 210xp
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >> Accept The Collector
 step << Warlock
@@ -1014,17 +1022,20 @@ step << Priest
 step << Priest
     .goto Stormwind City,38.62,26.10
     .train 13908 >> Train Desperate Prayer
+step << Warrior/Paladin/Rogue
+    #sticky
+    #completewith StormpikeDelivery
+    >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior
+    .goto Stormwind City,56.3,17.0
+    .vendor >>Buy a Mining Pick. You'll train Mining later
 step
     #completewith next
     .goto Stormwind City,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
 step
+    #label StormpikeDelivery
     .goto Stormwind City,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
-step << Warrior/Paladin/Rogue
-    >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior
-    .goto Stormwind City,56.3,17.0
-    .vendor >>Buy a Mining Pick. You'll train Mining later
 step
     #completewith next
     .goto Stormwind City,63.9,8.3,20 >>Enter the Deeprun Tram
@@ -1039,6 +1050,7 @@ step
 step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     .goto Ironforge,77.0,51.0 
     .zone Ironforge >>Enter Ironforge
 step
@@ -1063,25 +1075,17 @@ step
     .goto Dun Morogh,62.3,50.3,14,0
     .goto Dun Morogh,62.2,49.4,12 >>Run up this part of the mountain
 step
-    >>Kill Vagash. Loot him for his Fang
-    >>Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him
-    >>Be careful as this quest can be difficult
+    >>Kill Vagash. Loot him for his Fang.
     .goto Dun Morogh,62.6,46.1
-    .goto Dun Morogh,62.78,54.60,0
     .complete 314,1 --Collect Fang of Vagash (1)
 step
     .goto Dun Morogh,63.1,49.8
     .turnin 314 >> Turn in Protecting the Herd
 step
-    #label Cooking
-    .goto Dun Morogh,68.4,54.5
-    .trainer >> Train Cooking from Ghilm
-step
     .goto Dun Morogh,68.6,54.7
     .vendor >>Vendor, buy food+water << !Rogue !Warrior
     .vendor >>Vendor, buy food << Rogue/Warrior
 step
-    #requires Cooking
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
 step
@@ -1116,6 +1120,7 @@ step
     .goto Dun Morogh,68.6,54.7
     .vendor >>Vendor, buy x30 level 5 drink << Mage/Warlock/Priest
 step
+    .goto Dun Morogh,78.1,49.5,30,0
     .goto Dun Morogh,81.2,42.7,45,0
     .goto Dun Morogh,83.9,39.2
     .accept 419 >> Accept The Lost Pilot
@@ -1129,6 +1134,7 @@ step
     .goto Dun Morogh,78.9,37.0
     .complete 417,1 --Collect Mangy Claw (x1)
 step
+    #label LochEntrance
     .goto Dun Morogh,83.9,39.2
     >>Choose the dagger, use it as your offhand << Rogue
     .turnin 417 >> Turn in A Pilot's Revenge
@@ -1160,12 +1166,11 @@ step << Warlock/Mage/Rogue
     .collect 3174,3 --Collect Spider Ichor (x3)
     >>Kill Bears in the zone for Bear Meat
     .collect 3173,3 --Collect Bear Meat (x3)
-    >>Kill Boars in the zone for Boar Intestines. Save all of the Chunks of Boar Meat you get too
+    >>Kill Boars in the zone for Boar Intestines.
     .collect 3172,3 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
     .goto Loch Modan,34.8,49.3
     .accept 418 >> Accept Thelsamar Blood Sausages
-    >>Kill Boars en route if you don't have 9 chunks of boar meat yet
 step << Warlock/Mage/Rogue
     #sticky
     #label StormpikeO
@@ -1195,7 +1200,7 @@ step << Warlock/Mage/Rogue
     .complete 418,2 --Collect Bear Meat (x3)
 step << Warlock/Mage/Rogue
     #completewith Thelsamar1
-    >>Kill Boars in the zone for Thelsamar Blood Sausages
+    >>Kill Boars in the zone for Thelsamar Blood Sausages.
     .complete 418,1 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
     #label Thelsamar1
@@ -1295,11 +1300,6 @@ step << Warlock/Mage/Rogue
 step << Warlock/Mage/Rogue
     .goto Loch Modan,34.8,49.3
     .turnin 418 >> Turn in Thelsamar Blood Sausages
-step
-    .goto Loch Modan,34.8,48.6
-    .vendor >> Buy 1 Flint and Tinder, and 1 Simple Wood. Buy more 6 slots if needed
-    .collect 4470,1 --Simple Wood (1)
-    .collect 4471,1 --Flint and Tinder (1)
 step
     .goto Loch Modan,33.9,51.0
     .fp >> Get the Thelsamar flight path
@@ -1426,6 +1426,7 @@ step
     .goto Wetlands,10.6,57.2,15,0
     .goto Wetlands,10.7,56.8
     .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
+    .bronzetube
 step
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
@@ -1435,7 +1436,8 @@ step
     .vendor >> Check Dewin for Heal Potions, buy down to 1s
 step
     .goto Wetlands,4.7,57.3
-    .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore
+    .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore. 
+    >> Use this time to level your first aid or make weapon stones. << Warrior/Rogue/Paladin
 ]],"Human")
 
 RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
@@ -1514,10 +1516,6 @@ step
     .abandon 4681 >> Abandon Washed Ashore
 step
     #label Azuremyst
-    .zone Azuremyst Isle >>Get onto the boat when it comes
+    .zone Azuremyst Isle >>Get onto the boat when it comes. 
+    >> Level first aid or make weapon stones while waiting. << Warrior/Rogue/Paladin
 ]],"Human Warlock")
-
-
-
-
-
