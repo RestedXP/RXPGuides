@@ -51,14 +51,26 @@ step
 step
 	#sticky
 	#label crocs
-	>> Kill Young Wetlands Crocolisks between quests
+	>> Kill Young Wetlands Crocolisks between quests. Loot them for their Skin
     .complete 484,1 --Collect Young Crocolisk Skin (x4)
 step
+	#completewith next
+    .goto Wetlands,13.6,40.1,0
+    .goto Wetlands,20.6,40.7,0
+	>>Kill Bluegill Murlocs in the area
+    .complete 279,1 --Kill Bluegill Murloc (x12)
+step
     #label exit1
-    .goto Wetlands,17.5,40.0
+    .goto Wetlands,14.1,41.5,70,0
+    .goto Wetlands,16.7,39.7,70,0
+    .goto Wetlands,18.8,40.0
     >>Kill Gobbler, he patrols around the southern murloc camps
     .complete 279,2 --Collect Gobbler's Head (x1)
 	.unitscan Gobbler
+step
+    .goto Wetlands,13.6,40.1,70,0
+    .goto Wetlands,20.6,40.7
+	>>Kill Bluegill Murlocs in the area
     .complete 279,1 --Kill Bluegill Murloc (x12)
 step
     #sticky
@@ -96,8 +108,9 @@ step << Hunter/Warlock
     .turnin 295 >> Turn in Ormer's Revenge
     .accept 296 >> Accept Ormer's Revenge
 step << Hunter/Warlock
-    .goto Wetlands,33.2,51.5
-	>> He spawns ontop of the hill but can have a long respawn window
+    .goto Wetlands,31.5,48.9,50,0
+    .goto Wetlands,33.3,51.5
+	>>Kill Sarltooth atop the hill. Loot him for his Talon. Be careful as he Thrashes and has a 6 minute respawn
     .complete 296,1 --Collect Sarltooth's Talon (x1)
 step << Hunter/Warlock
     .goto Wetlands,38.2,50.9
@@ -121,8 +134,11 @@ step
     .turnin 463 >> Turn in The Greenwarden
     .accept 276 >> Accept Tramping Paws
 step
-    .goto Wetlands,62.9,69.4
-	>> Gnolls tend to spawn on the southern end.
+    .goto Wetlands,63.9,62.7,70,0
+    .goto Wetlands,62.4,69.5,70,0
+    .goto Wetlands,61.5,72.2,70,0
+    .goto Wetlands,55.7,75.1
+	>>Kill Mosshide Gnolls and Mongrels in the area. The gnolls are more commonly found outside the camps
     .complete 276,1 --Kill Mosshide Gnoll (x15)
     .complete 276,2 --Kill Mosshide Mongrel (x10)
 step
@@ -172,8 +188,7 @@ step
 step
     #label exit2
 	.goto Ironforge,56.2,46.8
-	.goto Ironforge,76.4,51.2,50
-	>> Hop ontop of the gryphon's head then logout and back in to logout skip to the tram.
+	.goto Ironforge,76.4,51.2,50 >> Hop ontop of the gryphon's head then logout and back in to logout skip to the tram.
     .zone Stormwind City >>Take the tram to Stormwind
 ]])
 
@@ -261,14 +276,18 @@ step
     .accept 94 >> Accept A Watchful Eye
 step
     .goto Redridge Mountains,17.4,69.6
-    .accept 244 >> Accept Encroaching Gnolls from Guard Parker
+	>>Talk to Guard Parker
+    .accept 244 >> Accept Encroaching Gnolls
 step
-    .goto Redridge Mountains,30.8,60.1
-    .turnin 244 >> Turn in Encroaching Gnolls
-step
-	.goto Redridge Mountains,30.5,59.4
+	#sticky
+	#label LakeshireFP
+	.goto Redridge Mountains,30.5,59.4,-1
     .fp Redridge >> Get the Redridge Mountains flight path
 step
+    .goto Redridge Mountains,30.8,60.1,-1
+    .turnin 244 >> Turn in Encroaching Gnolls
+step
+	#requires LakeshireFP
     .goto Redridge Mountains,33.4,49.1
     .accept 20 >> Accept Blackrock Menace
 step
@@ -293,7 +312,7 @@ step
     .complete 20,1 --Collect Battleworn Axe (x10)
 step
     .goto Redridge Mountains,57.3,52.4
-	>> Kill murlocs and loot them for sunfish and fins
+	>> Kill murlocs. Loot them for their Sunfish and Fins
     .complete 127,1 --Collect Spotted Sunfish (x10)
     .complete 150,1 --Collect Murloc Fin (x8)
 step << Rogue
@@ -648,7 +667,7 @@ step
     .accept 115 >> Accept Shadow Magic
 step
     .goto Redridge Mountains,80.3,37.2
-	>> Kill Fangore, be careful as lots of gnolls patrol around him and can social aggro.
+	>> Kill Fangore, and loot him for his Paw. be careful as lots of gnolls patrol around him, he is shadow immune, and can social aggro all gnolls at any time within 40 yards.
     .complete 180,1 --Collect Fangore's Paw (x1)
 step
     .goto Redridge Mountains,84.3,46.9
@@ -940,8 +959,9 @@ step
     .turnin 295 >> Turn in Ormer's Revenge
     .accept 296 >> Accept Ormer's Revenge
 step
-    .goto Wetlands,33.2,51.5
-	>> He spawns ontop of the hill but has a long respawn window, grind raptors nearby if he isn't there
+    .goto Wetlands,31.5,48.9,50,0
+    .goto Wetlands,33.3,51.5
+	>>Kill Sarltooth atop the hill. Loot him for his Talon. Be careful as he Thrashes and has a 6 minute respawn
     .complete 296,1 --Collect Sarltooth's Talon (x1)
 step
 	#requires relics
