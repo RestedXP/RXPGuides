@@ -50,7 +50,7 @@ step << !Warlock
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     #sticky
-    #completewith WarlockBoars
+    #label mboars
 >>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don’t sit and drink for these
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
@@ -87,6 +87,8 @@ step
     .goto Durotar,40.6,62.6
     .turnin 790 >>Turn in Sarkoth
     .accept 804 >>Accept Sarkoth
+step << !Warlock
+    #requires mboars    
 step << Warlock
 .xp 3+850 >> Grind to 850+/1400xp on the way back to town
 step << Warlock
@@ -239,15 +241,15 @@ step
     .accept 5441 >>Accept Lazy Peons
 step
     #sticky
-    #completewith imps
+#label Apples
     .goto Durotar,44.0,65.3,0,0
-    >>Loot Cactuses that you see with apples on them
+    >>Loot the Cactci around the area that have apples on them
     .complete 4402,1 --Cactus Apple (10)
 step
     #sticky
     #completewith imps
 .goto Durotar,47.4,65.7,0,0
->>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
+.use 16114 >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step << !Warlock
 #sticky
@@ -266,22 +268,16 @@ step << !Warlock
 .goto Durotar,45.2,56.8
     >>Kill Imps in front of the cave
     .complete 792,1 --Vile Familiar (12)
-step <<!Warlock
+step << !Warlock
 >>Finish off the Scorpion Tails
 .goto Durotar,39.8,63.5
     .complete 789,1 --Scorpid Worker Tail (10)
 step
-    #sticky
-    #label cactusapples
-    .goto Durotar,44.0,65.3,0,0
-    >>Loot Cactuses that you see with apples on them
-    .complete 4402,1 --Cactus Apple (10)
-step
 .goto Durotar,47.4,65.7
->>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
+.use 16114 >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step
-    #requires cactusapples
+    #requires apples
     .goto Durotar,42.7,67.2
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
 step << Warrior/Rogue/Hunter/Druid/Paladin/Shaman
@@ -353,16 +349,13 @@ step << !Shaman
 step << Shaman
     .xp 5+690 >> Grind to 690+/2800xp
 step << !Paladin
+    #completewith next
     .hs >>Hearth to Valley of Trials
-    .goto Durotar,43.3,69.0,100,0
 step << Paladin
     .goto Durotar,43.3,69.0,140 >>Die near the start of the cave and respawn at the spirit healer or simply run back to town.
 step
     .goto Durotar,44.6,68.6
     .turnin 6394 >>Turn in Thazz'ril's Pick
-step
-    .goto Durotar,42.6,67.3
-.vendor >>vendor trash
 step
     >>Save the healing potion you get as you may need it later for the centaurs
 .goto Durotar,42.8,69.1
@@ -919,7 +912,7 @@ step << Hunter
     .train 13165 >>Train Aspect of the Hawk
     .train 13549 >>Train Serpent Sting r2
 step << Hunter
-    >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
+   .use 15917 >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
 .goto Durotar,51.5,50.0
 .complete 6062,1 --Tame a Dire Mottled Boar
 step << Hunter
@@ -927,7 +920,7 @@ step << Hunter
 .turnin 6062 >>Turn in Taming the Beast
 .accept 6083 >>Accept Taming the Beast
 step << Hunter
-    >>Don't kill the Armored Scorpids you see
+   .use 15919 >>Don't kill the Armored Scorpids you see
 .goto Durotar,59.3,27.6
 .complete 6083,1 --Tame a Surf Crawler
 step << Hunter
@@ -935,7 +928,7 @@ step << Hunter
 .turnin 6083 >>Turn in Taming the Beast
 .accept 6082 >>Accept Taming the Beast
 step << Hunter
-    >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
+   .use 15920 >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
 .goto Durotar,59.3,27.6
 .complete 6082,1 --Tame an Armored Scorpid
 step << Hunter
@@ -982,20 +975,20 @@ step << Warlock
     #sticky
     #label Eye
     #completewith Skull
-    >>Optionally, you can kill Gazz'uz (level 14 warlock) for a quest item. Be sure to use your skull from earlier, any potions you have, or sticky glue on the voidwalker. You can LoS (Line of Sight) Gazz'uz to avoid his shadowbolts, and fear his pet. If you can't kill him, try to sneak past, or die and respawn past him in the water.
+    .use 4945 >>Optionally, you can kill Gazz'uz (level 14 warlock) for a quest item. Be sure to use your skull from earlier, any potions you have, or sticky glue on the voidwalker. You can LoS (Line of Sight) Gazz'uz to avoid his shadowbolts, and fear his pet. If you can't kill him, try to sneak past, or die and respawn past him in the water.
     .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
 step << Warlock 
 .goto Durotar,53.6,8.5,10,0 
 .goto Durotar,51.8,8.1,10,0
 .goto Durotar,51.6,9.8
->> Go into the Right path of the cave. Continue following the cave, then loot the Chest at the end of it
+    >> Take the right path of the cave. Continue following the cave to loot the chest at the end of it.
     .complete 1501,1 --Tablet of Verga (1)
 step << Warlock
 #label Skull
 .goto Durotar,47.2,17.7,225 >> Die and respawn at the Spirit Healer, or run back
 step << Warlock
-.goto Orgrimmar,49.0,94.2,20    >>Run into Orgrimmar
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Warlock
     .goto Orgrimmar,31.8,37.8
     .turnin 5726 >>Turn in Hidden Enemies
@@ -1059,7 +1052,7 @@ step << !Shaman !Warrior !Warlock
     .turnin 835 >>Turn in Securing the Lines
 step << Hunter
     .goto Durotar,57.2,12.0
-    +Tame A Surf Crawler
+    .spell 1515 >>Tame A Surf Crawler
 step << !Shaman !Warrior
     #sticky
     #completewith next
@@ -1232,6 +1225,10 @@ step << !Tauren
 .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
+.goto The Barrens,45.2,23.3,40,0
+.goto The Barrens,45.2,22.0,40,0
+    .goto The Barrens,44.6,22.5,40,0
+    .goto The Barrens,43.9,24.4
 .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
     .goto The Barrens,52.0,30.6,150 >> Die and respawn at the Spirit Healer, or run back
@@ -1268,9 +1265,10 @@ step << !Tauren
     .goto Mulgore,47.3,56.9,30,0
     .goto Mulgore,49.4,63.9,30,0
     .goto Mulgore,50.2,60.2,30,0
-    .goto Mulgore,46.8,59.6,30,0
-    >>"Fine" Kyle the Frenzied. He patrols clockwise throughout the town (so go counter-clockwise). Go up to him and use the Tender Strider Meat
+    .goto Mulgore,46.8,59.6
+    .use 33009 >>Find Kyle the Frenzied. He patrols clockwise throughout the town (so go counter-clockwise). Go up to him and use the Tender Strider Meat
 .complete 11129,1 --Kyle Fed (1)
+    .unitscan Kyle the Frenzied
 step << !Tauren
     .goto Mulgore,48.3,53.3
     .turnin 11129 >>Turn in Kyle's Gone Missing!
@@ -1295,6 +1293,7 @@ step << !Tauren
     .goto Thunder Bluff,23.0,21.1
     .turnin 853 >>Turn in Apothecary Zamah
 step << !Tauren
+    #completewith next
     .hs >>Hearth to Razor Hill
 step
     .goto Durotar,43.1,30.3
@@ -1361,6 +1360,8 @@ step
 >>Start killing crocodiles for the Amulet
     .goto Durotar,35.2,27.5,60,0
     .goto Durotar,35.7,57.8,60,0
+    .goto Durotar,35.2,27.5,60,0
+    .goto Durotar,35.7,57.8    
     .complete 816,1 --Kron's Amulet (1)
 step << Troll Shaman/Orc Shaman
 .goto Durotar,36.6,58.0,15 >>Run up the mountain path
@@ -1435,12 +1436,12 @@ step
     .goto Durotar,51.5,19.1,30,0
     .goto Durotar,54.0,27.7,30,0
     .goto Durotar,51.3,23.5,30,0
-    .goto Durotar,51.5,19.1,30,0
+    .goto Durotar,51.5,19.1
     >>Kill Harpies in the area
     .complete 835,1 --Dustwind Savage (12)
     .complete 835,2 --Dustwind Storm Witch (8)
 step
-    .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
+    .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer or run back
 step
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
