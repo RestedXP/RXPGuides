@@ -427,6 +427,8 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
     end
 
     guide.key = RXPG.BuildGuideKey(guide)
+    if not guide.version then guide.version = '0' end
+
     RXP_.guide = nil
 
     return guide
