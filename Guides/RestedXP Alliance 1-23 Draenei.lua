@@ -1501,7 +1501,10 @@ step
     .complete 9647,1 --Kill Royal Blue Flutterer (10)
 	.complete 9580,1 --Elder Brown Bear Flank (8)
 step
+	.goto Bloodmyst Isle,43.7,26.6,80,0
+	.goto Bloodmyst Isle,46.3,32.0,80,0
     .goto Bloodmyst Isle,29.6,39.5
+	>>Kill the Fouled Water Spirits in the area
     .complete 10067,1 --Kill Fouled Water Spirit (x6)
 step
     .goto Bloodmyst Isle,30.7,46.8
@@ -1511,16 +1514,20 @@ step
     .accept 9670 >> Accept They're Alive! Maybe...
 step
 	#sticky
-	#completewith bearend
+	#label Researchers
 	>>Destroy the egg sacs around this area. Kill them from range if possible as to not aggro potential mobs inside
-    .goto Bloodmyst Isle,18.1,37.9,0
-    .complete 9670,1 --Expedition Researcher Freed
+    .goto Bloodmyst Isle,18.2,38.0,0,0
+    .complete 9670,1 --Expedition Researcher Freed (5)
 step
-    .goto Bloodmyst Isle,18.1,37.9
+    .goto Bloodmyst Isle,21.4,36.0,70,0
+    .goto Bloodmyst Isle,17.2,28.4,40,0
+    .goto Bloodmyst Isle,18.2,38.0
+	>>Kill the Myst Leechers and Spinners in the area, then kill Zarakh atop the mountain
     .complete 9669,1 --Kill Myst Leecher (x8)
     .complete 9669,2 --Kill Myst Spinner (x8)
     .complete 9669,3 --Kill Zarakh (x1)
 step
+	#requires Researchers
 	#label AliveM
     .goto Bloodmyst Isle,24.9,34.4
     .turnin 9670 >> Turn in They're Alive! Maybe...
