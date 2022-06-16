@@ -12,12 +12,13 @@ step
     .goto Mulgore,44.9,77.1
     .accept 747 >>Accept The Hunt Begins
 step
+	>> Head into the hut
     .goto Mulgore,44.2,76.1
     .accept 752 >>Accept A Humble Task
 step << Warrior/Shaman
     #sticky
     #completewith next
-    +Kill Plainstriders for 10c+ of vendor trash
+    +Kill Plainstriders for 10c+ of vendor trash to train your level 1 spells
     .goto Mulgore,45.6,74.0,30,0
 step << Warrior/Shaman
     .goto Mulgore,45.3,76.5
@@ -31,7 +32,7 @@ step << Shaman
 step
     #sticky
     #completewith Plainstrider
-    >>Kill Plainstriders en route to next quests
+    >>Kill Plainstriders en route
     .complete 747,1 --Plainstrider Meat (7)
     .complete 747,2 --Plainstrider Feather (7)
 step
@@ -90,9 +91,11 @@ step
     >>Kill Cougars for their Pelts
     .complete 750,1 --Mountain Cougar Pelt (10)
 step << !Druid !Shaman
+	>> Grind en route to the quest turn in
     .goto Mulgore,44.9,77.0
     .xp 3+1150 >> Grind to 1150+/1400xp
 step << Druid/Shaman
+	>> Grind en route to the quest turn in
     .goto Mulgore,44.9,77.0
     .xp 3+1110 >> Grind to 1110+/1400xp
 step << Warrior/Hunter
@@ -141,6 +144,7 @@ step
     .goto Mulgore,59.7,83.2,40 >>Go through the cave
 step
     #sticky
+	#completewith nomoreboar
     #label Belt
     >>Kill Bristlebacks for their Belts
     .complete 757,1 --Bristleback Belt (12)
@@ -168,6 +172,8 @@ step << Shaman
     .collect 4851,1,781 --Collect Dirt-Stained Map
     .accept 781 >>Accept Attack on Camp Narache
 step 
+	#label nomoreboar
+	#completewith next
     .hs >> Hearth to Camp Narache
 step
     .goto Mulgore,44.9,77.0
@@ -198,7 +204,8 @@ step
     .goto Mulgore,38.5,81.6
     .accept 1656 >>Accept A Task Unfinished
 step
-    .xp 5+2395 >>Grind to 2395+/2800xp
+	.goto Mulgore,46.5,55.5
+    .xp 5+2395 >>Grind to 2395+/2800xp en route to town
 step
     #softcore
 	#completewith next
@@ -225,6 +232,8 @@ step << Warrior
 step << !Hunter
     .goto Mulgore,46.6,61.1
     .turnin 1656 >>Turn in A Task Unfinished
+step << !Hunter
+	.goto Mulgore,46.6,61.1
     .home >>Set your Hearthstone to Bloodhoof Village
 step << !Hunter
     .goto Mulgore,47.5,60.2
@@ -263,6 +272,8 @@ step << Hunter
 step << Hunter
     .goto Mulgore,46.6,61.1
     .turnin 1656 >>Turn in A Task Unfinished
+step << Hunter
+	.goto Mulgore,46.6,61.1
     .home >>Set your Hearthstone to Bloodhoof Village
 step << Hunter
     .goto Mulgore,48.6,60.4
@@ -282,12 +293,13 @@ step << Hunter
     .goto Mulgore,47.0,57.0
     .accept 766 >>Accept Mazzranache
 step << Hunter
-    .goto Mulgore,48.3,53.3
-    .accept 11129 >>Accept Kyle's Gone Missing!
-step << Hunter
     #completewith next
     .goto Mulgore,47.8,55.7
-    .trainer >> Train your class spells if you still have to train some
+    .trainer >> Train your class spells
+	.money <0.01
+step << Hunter
+    .goto Mulgore,48.3,53.3
+    .accept 11129 >>Accept Kyle's Gone Missing!
 step << Hunter
     .goto Mulgore,49.3,56.2,15,0
     .goto Mulgore,52.0,61.1,15,0
@@ -304,6 +316,10 @@ step << !Hunter
 step
     #sticky
     #completewith Well
+	.goto Mulgore,55.9,63.1,90,0
+    .goto Mulgore,51.1,66.5,90,0
+    .goto Mulgore,40.7,73.0,90,0
+    .goto Mulgore,55.9,63.1
     >>Get the items for Mazzranache as you quest throughout the zone
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
@@ -320,7 +336,7 @@ step
    .collect 33009,1 --Collect Tender Strider Meat (1)
 step
     #completewith Well
-    >>If you see Kyle the Frenzied. Go up to him and use the Tender Strider Meat
+    .use 33009 >>If you see Kyle the Frenzied. Go up to him and use the Tender Strider Meat
     .complete 11129,1 --Kyle Fed (1)
 	.unitscan Kyle the Frenzied
 step << Tauren
@@ -330,13 +346,14 @@ step << Tauren
 step
     #sticky
     #label Stones
+	#completewith gnolls
     .goto Mulgore,53.7,66.3
     >>Loot the stones around the Well
     .complete 771,1 --Well Stone (2)
 step << Tauren
     #label Well
     .goto Mulgore,53.7,66.3
-    >>Use the Winterhoof Cleansing Totem at the Well
+    .use 5411 >>Use the Winterhoof Cleansing Totem at the Well
     .complete 754,1 --Cleanse the Winterhoof Water Well (1)
 step
     #label Gnolls
@@ -389,7 +406,7 @@ step << Warrior
 step << Hunter
     .goto Mulgore,45.5,58.5
     .money <0.0380
-     >> vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (3s 80c). Skip this step if you don't have enough
+     >> vendor trash. Sell your weapon if it gives you enough money for Ornate Blunderbuss (3s 80c). Skip this step if you don't have enough
     .collect 2509,1 --Collect Ornate Blunderbuss
 step
     #label Vision
@@ -422,6 +439,7 @@ step
 	.unitscan Morin Cloudstalker
 step
     .goto Mulgore,53.8,48.3
+	>> Grind cougars and wolves en route, then click on the crate in the middle of the caravan.
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step
@@ -500,7 +518,7 @@ step << Druid/Shaman
     .vendor >> vendor trash. Buy as much Ice Cold Milk as you can afford
 step
     .goto Mulgore,44.5,45.3
-    >>Use the Thunderhorn Cleansing Totem at the Well
+    .use 5415 >>Use the Thunderhorn Cleansing Totem at the Well
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
 step
     #completewith Burial
@@ -512,7 +530,10 @@ step
 step
     .goto Mulgore,31.3,49.9
    >>Kill Dwarf mobs for Prospector's Picks
-    >>Use the Picks on the Forge until you've broken 5 of them
+	.collect 4702,5 -- Collect Prospector's Pick (5)
+step
+	.goto Mulgore,31.3,49.9
+	.use 4702 >>Use the Picks on the Forge until you've broken all 5 of them
     .complete 746,1 --Broken Tools (5)
 step
     >>Kill Harpies. Loot them for their Talons
@@ -523,6 +544,10 @@ step
     .goto Mulgore,32.7,36.1
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
+step
+	#completewith next
+	.goto Mulgore,54.15,27.81
+	.destroy 4823 >> You can destroy the Water of the Seers now
 step
 	#completewith next
     .goto Mulgore,54.15,27.81
@@ -623,7 +648,7 @@ step << Hunter
     .accept 6061 >>Accept Taming the Beast
      .trainer >> Train your class spells
 step << Hunter
-    >>Click the Taming Rod in your bag on a Plainstrider. Try to do it at max range (30 yards)
+    .use 15914 >>Click the Taming Rod in your bag on a Plainstrider. Try to do it at max range (30 yards)
     .goto Mulgore,53.7,62.2
     .complete 6061,1 --Tame an Adult Plainstrider (1)
 step << Hunter
@@ -631,7 +656,7 @@ step << Hunter
     .turnin 6061 >>Turn in Taming the Beast
     .accept 6087 >>Accept Taming the Beast
 step << Hunter
-    >>Click the Taming Rod in your bag on a Stalker. Try to do it at max range (30 yards)
+    .use 15915 >>Click the Taming Rod in your bag on a Stalker. Try to do it at max range (30 yards)
     .goto Mulgore,47.1,48.3
     .complete 6087,1 --Tame a Prairie Stalker (1)
 step << Hunter
@@ -639,7 +664,7 @@ step << Hunter
     .turnin 6087 >>Turn in Taming the Beast
     .accept 6088 >>Accept Taming the Beast
 step << Hunter
-    >>Click the Taming Rod in your bag on a Swoop. Do it at max range, and re-cast it immediately if they knock you down. If you fail and run out of Taming Rod Charges, abandon the quest, then pick it up again and come back
+    .use 15916 >>Click the Taming Rod in your bag on a Swoop. Do it at max range, and re-cast it immediately if they knock you down. If you fail and run out of Taming Rod Charges, abandon the quest, then pick it up again and come back
     .goto Mulgore,43.3,51.4
     .complete 6088,1 --Tame a Swoop (1)
 step << Hunter
@@ -667,6 +692,7 @@ step << Druid/Hunter
 .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5,30,0
 .turnin 751 >> Turn in The Ravaged Caravan
+	.unitscan Morin Cloudstalker
 step << Tauren Warrior/Tauren Shaman
     >>Kill Wolves in the area. Loot them for teeth
 .goto Mulgore,66.9,67.2
@@ -688,6 +714,7 @@ step << !Druid
     .goto The Barrens,44.5,59.1
     .fp Taurajo >>Get the Camp Taurajo Flight Path
 step << Druid
+	#completewith next
     .goto The Barrens,44.5,59.1
     .fp Taurajo >>Get the Camp Taurajo Flight Path
     .fly Thunder Bluff >>Fly to Thunder Bluff
@@ -717,6 +744,7 @@ step << Druid
     .turnin 5930 >>Turn in Great Bear Spirit
     .accept 5932 >>Accept Back to Thunder Bluff
 step << Druid 
+	#completewith next
     .hs >>Hearth to Thunder Bluff
 step << Druid
 .goto Thunder Bluff,76.5,27.3
