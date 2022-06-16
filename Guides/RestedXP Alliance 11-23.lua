@@ -9,11 +9,13 @@ step
     .goto Darkshore,36.6,45.6
     .accept 3524 >> Accept Washed Ashore
 step << !NightElf
+	.goto Darkshore,36.3,45.6
     .fp Auberdine >> Get the Auberdine Flight Path
 step << NightElf
     .goto Darkshore,36.8,44.3
     .turnin 6342 >> Turn in Flight to Auberdine
 step
+	.goto Darkshore,37.0,44.1
     .home >> Set your Hearthstone to Auberdine
 step
     .goto Darkshore,37.0,44.1
@@ -31,7 +33,7 @@ step << Dwarf Hunter
 step
 	#sticky
 	#completewith Crawlers
-	>> Kill crabs along the coast
+	>> Kill crabs along the coast and loot them for their legs
     .complete 983,1 --Collect Crawler Leg (x6)
 step
     .goto Darkshore,36.4,50.8
@@ -92,7 +94,7 @@ step
     .accept 4761 >> Accept Thundris Windweaver
 step << Druid
     .goto Darkshore,43.5,45.9
-    >>Use the Cenarion Moondust inside the cave, defeat Lunaclaw and speak with his spirit after
+    .use 15208 >>Use the Cenarion Moondust inside the cave, defeat Lunaclaw and speak with his spirit after
     .complete 6001,1 --Defeat Lunaclaw (x1)
 step << !Dwarf/!Hunter
     .goto Darkshore,47.2,48.6
@@ -143,7 +145,7 @@ step
     .complete 2138,1 --Kill Rabid Thistle Bear (x20)
 step
     .goto Darkshore,50.8,25.6
-	>>Use the empty sampling tube at the base of the waterfall
+	.use 15844 >>Use the empty sampling tube at the base of the waterfall
     .complete 4762,1 --Collect Cliffspring River Sample (x1)
 step << Druid
     #sticky
@@ -180,25 +182,27 @@ step
 step
     #requires bears
 	#sticky
-	>>Kill Anaya Dawnrunner, she patrols around Ameth Aran
+	#completewith DarkshoreEnd
+	>>Kill Anaya Dawnrunner, she patrols around Ameth'Aran
     .goto Darkshore,43.3,58.8,0
     .complete 963,1 --Collect Anaya's Pendant (x1)
 step
     #requires bears
 	#sticky
+	#completewith DarkshoreEnd
     .goto Darkshore,42.0,59.3,0
-	>>Kill Ghosts for Hiborne Relics
+	>>Kill Ghosts. Loot them for their Relics
     .complete 958,1 --Collect Highborne Relic (x7)
 step
     #requires bears
-    .goto Darkshore,42.7,63.1
+	>> Click on the tablets in the area to read them (you don't have to scroll through their pages)
     .complete 953,2 --Collect Read the Fall of Ameth'Aran (x1)
-step
-    .goto Darkshore,42.4,61.8
-    .complete 957,1 --Collect Destroy the seal at the ancient flame (x1)
-step
-    .goto Darkshore,43.3,58.8
+    .goto Darkshore,42.7,63.1,-1
     .complete 953,1 --Collect Read the Lay of Ameth'Aran (x1)
+    .goto Darkshore,43.3,58.8,-1
+	>>Click on the green flame under the gazebo
+    .complete 957,1 --Destroy the seal at the ancient flame (x1)
+    .goto Darkshore,42.4,61.8,-1
 step
     .goto Darkshore,40.3,59.7
     .turnin 953 >> Turn in The Fall of Ameth'Aran
@@ -233,7 +237,16 @@ step
 step
     .goto Darkshore,35.7,43.7
     .turnin 963 >> Turn in For Love Eternal
+step << Druid
+    #completewith next
+    >>Teleport to Moonglade
+    .goto Moonglade,52.4,40.6
+    .trainer 12042 >> Train spells
+step << Druid
+    .goto Moonglade,48.1,67.2
+    .fly Auberdine>>Fly to Darkshore
 step
+	#label DarkshoreEnd
     .goto Darkshore,30.8,41.0,30 >>Take the Boat to Azuremyst Isle
 ]])
 
@@ -248,6 +261,24 @@ RXPGuides.RegisterGuide([[
 step
     .goto The Exodar,68.3,63.5
     .fp Exodar >> Get the The Exodar flight path
+step << Shaman
+	.goto The Exodar,49.5,36.9,70,0
+	.goto The Exodar,33.2,24.6
+	.trainer >> Train spells in The Exodar
+step << Mage
+	.goto The Exodar,51.0,46.8,80,0
+	.goto The Exodar,47.2,62.3
+    .trainer >> Train spells in The Exodar
+step << Hunter
+	.goto The Exodar,42,71.4,60,0
+	.goto The Exodar,54.5,85.6,60,0
+	.goto The Exodar,47.6,88.3
+	.trainer >> Train spells in The Exodar
+step << Warrior
+	.goto The Exodar,42,71.4,60,0
+	.goto The Exodar,54.5,85.6,60,0
+	.goto The Exodar,55.6,82.3
+	.trainer >> Train spells in The Exodar
 step << Hunter/Warrior/Paladin
 	>>Go into The Exodar and talk to the weapon master at the top floor of the Trader's Tier
     .goto The Exodar,53.3,85.7
@@ -256,10 +287,11 @@ step << Hunter/Warrior/Paladin
 step
 	>>Head north to Bloodmyst Isle
     .goto Bloodmyst Isle,63.4,88.7
-    .accept 9624 >> Accept A Favorite Treat
 step
-    .goto Bloodmyst Isle,63.1,87.9
-    .accept 9634 >> Accept Alien Predators
+	#sticky
+	#completewith monunment
+	>> Collect Irradiated Crystal Shards from any mobs on Bloodmyst Isle. Don't throw these away.
+	.collect 23984,10 -- Collect Irradiated Crystal Shard (x10)
 step
     .goto Bloodmyst Isle,63.0,87.5
     .accept 9663 >> Accept The Kessel Run
@@ -268,6 +300,9 @@ step
     >>Use the mount buff to run to Blood Watch, if you go around the bridge you won't get dismounted
     .abandon 9663 >> Abandon The Kessel Run once you lose the mount buff
 step
+	.goto Bloodmyst Isle,58.5,75.0,40,0
+	.goto Bloodmyst Isle,57.1,73.5,40,0
+	.goto Bloodmyst Isle,54.2,60.3
     .goto Bloodmyst Isle,53.3,57.7
     .accept 9629 >> Accept Catch and Release
 step
@@ -286,9 +321,16 @@ step
 step
     .goto Bloodmyst Isle,56.4,56.8
     .accept 9648 >> Accept Mac'Aree Mushroom Menagerie
+step << Paladin
+	.goto Bloodmyst Isle,55.6,55.4
+	.trainer >>Train class spells at Vindicator Aesom
 step
     .goto Bloodmyst Isle,55.4,55.4
     .accept 9641 >> Accept Irradiated Crystal Shards
+step
+	.goto Bloodmyst Isle,55.4,55.4
+	.itemcount 23984,10
+	.turnin 9641 >> Turn in Irradiated Crystal Shards
 step
     .goto Bloodmyst Isle,52.7,53.3
     .accept 9693 >> Accept What Argus Means to Me
@@ -316,64 +358,59 @@ step
 	>>Click on the small sign at the monument
     .complete 9567,1 --Collect Nazzivus Monument Glyph (x1)
 step
-    .goto Bloodmyst Isle,38.2,81.7
-    >>Kill and loot the named Felguard that roams the area
-	>>Right click on Tzerak's Armor Plate
+    .goto Bloodmyst Isle,38.2,81.7,60,0
+	.goto Bloodmyst Isle,36.5,71.5,60,0
+	.goto Bloodmyst Isle,38.2,81.7
+    .use 23900 >>Kill the named Felguard, Tzerak, that roams the area between the summoning sigil and the Monument Glyph (where he despawns before reappearing at the sigil). Loot him for his Armor Plate, then click it in your bags
+	.collect 23900,1,9594 --Tzerak's Armor Plate
     .accept 9594 >> Accept Signs of the Legion
-	*Skip this step if you can't find the felguard
+	.unitscan Tzerak
 step
 	#requires monument
     .goto Bloodmyst Isle,37.0,78.7
-	>>Finish off Signs of the Legion
+	>>Finish killing Satyr
     .complete 9594,1 --Kill Nazzivus Satyr (x8)
     .complete 9594,2 --Kill Nazzivus Felsworn (x8)
-	>>Skip this step if you can't find Tzerak around this area
-	.isOnQuest 9594
 step
 	>>Look for small green mushrooms close to the satyr area
     .complete 9648,4 --Collect Fel Cone Fungus (x1)
 step
-    .goto Bloodmyst Isle,45.4,94.3
-	>>Kill and loot the named murloc that patrols the around the murloc camps
-	.collect 23870,1,9576
+	#completewith next
+    .goto Bloodmyst Isle,35.6,94.2,0
+    .goto Bloodmyst Isle,51.3,93.9,0
+	.use 23995 >>Use the Blacksilt tagger in your bags to tag scouts. This will make them non-hostile towards you.
+    .complete 9629,1 --Blacksilt Scouts Tagged (x6)
+step
+    .goto Bloodmyst Isle,51.1,93.1,70,0
+    .goto Bloodmyst Isle,43.0,94.4,70,0
+    .goto Bloodmyst Isle,35.1,93.7
+	.line Bloodmyst Isle,51.1,93.1,43.0,94.4,35.1,93.7
+	.use 23870 >>Kill the named murloc, Cruelfin, that patrols the around the murloc camps. Loot him for the Pendant. Click it in your bags
+	.collect 23870,1,9576 --Red Crystal Pendant (1)
     .accept 9576 >> Accept Cruelfin's Necklace
-	>>Use the Blacksilt tagger in your bags to tag scouts
+	.unitscan Cruelfin
+step
+    .goto Bloodmyst Isle,35.6,94.2,70,0
+    .goto Bloodmyst Isle,51.3,93.9
+	.use 23995 >>Use the Blacksilt tagger in your bags to tag scouts. This will make them non-hostile towards you.
     .complete 9629,1 --Blacksilt Scouts Tagged (x6)
 step
     .goto Bloodmyst Isle,58.2,83.4
-	>>Use the pick in your bags to collect the small red crystal
+	.use 23875 >>Use the pick in your bags to collect the small red crystal
     .complete 9581,1 --Collect Impact Site Crystal Sample (x1)
 step
     .goto Bloodmyst Isle,57.8,73.4
 	>>Loot a big red mushroom underwater
     .complete 9648,1 --Collect Aquatic Stinkhorn (x1)
 step
-    .goto Bloodmyst Isle,59.3,89.1
-    .complete 9634,1 --Kill Bloodmyst Hatchling (x10)
-	>>Collect the small fruits on the ground
-    .complete 9624,1 --Collect Sand Pear (x10)
-step
-    .goto Bloodmyst Isle,63.4,88.7
-    .turnin 9624 >> Turn in A Favorite Treat
-step
-    .goto Bloodmyst Isle,63.1,88.0
-    .turnin 9634 >> Turn in Alien Predators
-step
-    .goto Bloodmyst Isle,63.0,87.5
-    .accept 9663 >> Accept The Kessel Run
-step
     .goto Bloodmyst Isle,53.3,57.9
-	>>Use the mount buff to run back faster to Blood Watch
+	>>Grind mobs en route
     .turnin 9576 >> Turn in Cruelfin's Necklace
     .turnin 9629 >> Turn in Catch and Release
     .accept 9574 >> Accept Victims of Corruption
 step
-	#sticky
-	>>Once you lose the mount buff, abandon the quest
-	.abandon 9663 >> Abandon The Kessel Run
-step
     .goto Bloodmyst Isle,51.3,75.7
-	>>Kill treants around this area
+	>>Kill treants around this area and loot them for their bark. Grind mobs en route.
     .complete 9574,1 --Collect Crystallized Bark (x6)
 step
     .goto Bloodmyst Isle,53.3,57.8
@@ -390,6 +427,10 @@ step << !Dwarf/!Hunter
     .goto Bloodmyst Isle,55.4,55.4
     .turnin 9693 >> Turn in What Argus Means to Me
     .accept 9694 >> Accept Blood Watch
+step
+	.goto Bloodmyst Isle,55.4,55.4
+	.itemcount 23984,10
+	.turnin 9641 >> Turn in Irradiated Crystal Shards
 step
     .goto Bloodmyst Isle,52.6,53.3
     .turnin 9581 >> Turn in Learning from the Crystals
@@ -447,13 +488,20 @@ step
     .goto Bloodmyst Isle,56.3,54.3
     .accept 10063 >> Accept Explorers' League, Is That Something for Gnomes?
 step
+	.goto Bloodmyst Isle,57.9,53.5
     .fly Exodar>> Fly to The Exodar
 step
+	.goto The Exodar,77.3,57.5,60,0
+	.goto The Exodar,74.4,54.2,60,0
+	.goto The Exodar,49.9,50.7,60,0
     .goto The Exodar,32.8,54.4
     .turnin 9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
+step << Druid
+    >>Teleport to Moonglade
+    .goto Moonglade,52.4,40.6
+    .trainer 12042 >> Train spells
 step
-    #sticky
     #completewith next
     .hs >> Hearth back to Blood Watch
 step
@@ -465,31 +513,44 @@ step
     .accept 9700 >> Accept I Shoot Magic Into the Darkness
 step
     .goto Bloodmyst Isle,45.7,47.9
-	>>Use the pick in your bags to collect the crystal sample
+	.use 23875 >>Use the pick in your bags to collect the crystal sample
     .complete 9584,1 --Collect Altered Crystal Sample (x1)
 step
 	#sticky
+	#completewith BloodmystBearsnLashers
 	#label constrictors
-    >>Kill Mutated Constrictors
+    >>Kill Mutated Constrictors. Loot them for their Vines
     .complete 9643,1 --Collect Thorny Constrictor Vine (x6)
 step
 	#sticky
-	#completewith bloodmyst2
-	>>Kill bears as you quest
-	.complete 9580,1
+	#completewith bearend
+	>>Kill Bears. Loot them for their Bear Flanks
+	.complete 9580,1 --Elder Brown Bear Flank (8)
 step
     .goto Bloodmyst Isle,42.0,21.2
     .turnin 10063 >> Turn in Explorers' League, Is That Something for Gnomes?
     .accept 9548 >> Accept Pilfered Equipment
     .accept 9549 >> Accept Artifacts of the Blacksilt
 step
+	.goto Bloodmyst Isle,42.0,21.2
+	.vendorr >> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it
+	.collect 4371,1,175
+	.bronzetube
+step
     #sticky
     #label crate
-    .goto Bloodmyst Isle,40.4,20.4,0
+        .goto Bloodmyst Isle,40.4,20.4,60,0
+	.goto Bloodmyst Isle,38.5,22.5,30,0
+	.goto Bloodmyst Isle,36.0,25.8,30,0
+	.goto Bloodmyst Isle,40.4,20.4,30,0
+	.goto Bloodmyst Isle,43.8,22.4,30,0
+	.goto Bloodmyst Isle,46.4,20.5,30,0
+	.goto Bloodmyst Isle,40.4,20.4
     >>Loot the crate that can spawn in any of the murloc camps
     .complete 9548,1 --Collect Clopper's Equipment (x1)
 step
     .goto Bloodmyst Isle,39.5,20.7
+	>> Kill and loot murlocs
     .complete 9549,1 --Collect Crude Murloc Idol (x3)
     .complete 9549,2 --Collect Crude Murloc Knife (x6)
 step
@@ -498,16 +559,45 @@ step
     .goto Bloodmyst Isle,42.1,21.2
     .turnin 9548 >> Turn in Pilfered Equipment
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
-    >>Click on the map in your bags
+step
+    .goto Bloodmyst Isle,42.1,21.2
+	>> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
+	.collect 4371,1,175
+	.bronzetube
+step
+    .goto Bloodmyst Isle,53.1,20.3
+    .use 23837 >>Click on the Weathered Treasure Map in your bags from the Artifacts of the Blacksilt quest
+	.collect 23837,1,9550 --Collect Weathered Treasure Map (x1)
     .accept 9550 >> Accept A Map to Where?
 step
-    .goto Bloodmyst Isle,52.3,22.9
-    .complete 9700,2 --Kill Void Anomaly (x5)
-	>>Get close to the spaceship like bulding
-	.complete 9700,1
+	#sticky
+	#label Sun Portal Site
+    .goto Bloodmyst Isle,53.1,20.3
+	>>Get close to the spaceship like building
+	.complete 9700,1 --Sun Portal Site Confirmed (1)
 step
-    .goto Bloodmyst Isle,57.0,34.3
-	>>Loot the Dragon Bones on the ground
+    #label gnome
+    .goto Bloodmyst Isle,52.5,25.2
+	>>Kill the Void Anomalies in the area
+    .complete 9700,2 --Kill Void Anomaly (x5)
+step
+	.goto Bloodmyst Isle,47.6,24.9,60,0
+	.goto Bloodmyst Isle,44.9,26.4,100,0
+	.goto Bloodmyst Isle,48.3,33.4,100,0
+	.goto Bloodmyst Isle,45.1,37.4,100,0
+	.goto Bloodmyst Isle,40.8,41.9,100,0
+	.goto Bloodmyst Isle,34.0,44.3,100,0
+	.goto Bloodmyst Isle,39.0,48.1,120,0
+	.goto Bloodmyst Isle,42.5,49.3,100,0
+	.goto Bloodmyst Isle,47.6,24.9
+    >>Finish killing Mutated Constrictors and looting them for their Vines
+	.complete 9643,1 --Collect Thorny Constrictor Vine (x6)
+step
+    .goto Bloodmyst Isle,54.0,30.9,60,0
+    .goto Bloodmyst Isle,53.9,35.4,60,0
+    .goto Bloodmyst Isle,57.0,34.3,60,0
+    .goto Bloodmyst Isle,56.1,40.2
+	>>Loot the Dragon Bones on the ground in the tree camps
     .complete 9687,1 --Collect Dragon Bone (x8)
 step
     .goto Bloodmyst Isle,61.1,41.9
@@ -530,11 +620,13 @@ step
     .accept 9703 >> Accept The Cryo-Core
 step
 	#label flutterers
-	#sticky
-	#requires constrictors
     .goto Bloodmyst Isle,55.9,56.9
     .turnin 9643 >> Turn in Constrictor Vines
     .accept 9647 >> Accept Culling the Flutterers
+step
+	.goto Bloodmyst Isle,55.9,56.9
+	.isQuestComplete 9580
+	.turnin 9580 >> Turn in The Bear Neccessities
 step
 	#requires flutterers
 	#sticky
@@ -542,7 +634,7 @@ step
 	>>Kill flutterers as you quest
     .complete 9647,1 --Kill Royal Blue Flutterer (x10)
 step
-    .goto Bloodmyst Isle,37.5,61.3
+    .goto Bloodmyst Isle,37.5,61.3 >> Prioritize turning in the quest, don't grind elves yet.
     .turnin 9578 >> Turn in Searching for Galaen
     .accept 9579 >> Accept Galaen's Fate
     .accept 9706 >> Accept Galaen's Journal - The Fate of Vindicator Saruan
@@ -565,21 +657,26 @@ step
     .accept 9748 >> Accept Don't Drink the Water
 step
     .goto Bloodmyst Isle,41.3,30.6
-	>>Use the pick in your bags to collect the crystal sample
+	.use 23875 >>Use the pick in your bags to collect the crystal sample
     .complete 9585,1 --Collect Axxarien Crystal Sample (x1)
 step
     .goto Bloodmyst Isle,41.9,29.6
-	>>Kill Satyrs
+	>>Kill Satyrs and collect crystals around the camps
     .complete 9569,1 --Kill Zevrax (x1)
     .complete 9569,2 --Kill Axxarien Shadowstalker (x5)
     .complete 9569,3 --Kill Axxarien Hellcaller (x5)
     .complete 9569,4 --Collect Corrupted Crystal (x5)
 step
-	#sticky
-    >>Look for Matis the Cruel, he patrols the main road next to Vindicator's Rest
+	#completewith AliveM
+    .goto Bloodmyst Isle,43.9,43.7,0
+    .goto Bloodmyst Isle,30.1,51.7,0
+    .goto Bloodmyst Isle,22.4,54.3,0
+	.line Bloodmyst Isle,43.1,43.7,36.5,47.2,33.5,47.1,29.9,51.8,27.7,51.8,25.1,54.1,22.0,54.3
+    .use 24278 >>Look for Matis the Cruel, he patrols the main road next to Vindicator's Rest
     .complete 9711,1 --Capture Matis the Cruel
 	*Once you find him, use the flare in your bags to summon a Draenei NPC to assist you
 	*The flare gun only have 1 charge, if you fail this quest, you will have to abandon it
+	.unitscan Matis the Cruel
 step
     .goto Bloodmyst Isle,30.3,45.8
     .turnin 10064 >> Turn in Talk to the Hand
@@ -595,7 +692,7 @@ step
     .complete 10066,1 --Kill Mutated Tangler (x8)
     .complete 10065,1 --Kill Enraged Ravager (x10)
 step
-    .goto Bloodmyst Isle,19.6,63.2
+    .goto Bloodmyst Isle,19.6,63.2 >> You have to kill the anomalies in the water to eventually spawn the Critters
     .complete 9741,1 --Kill Void Critter (x12)
 step
 	#label bloodmyst2
@@ -606,11 +703,15 @@ step
     .goto Bloodmyst Isle,30.3,46.0
 step
     .goto Bloodmyst Isle,33.4,43.8
-	>>Finish off flutterers and bears
-    .complete 9647,1 --Kill Royal Blue Flutterer (x10)
-	.complete 9580,1
+	>>Kill Bears and Flutterers. Loot the bears for their Flanks
+	>>Finish killing and looting Bears and Flutterers
+    .complete 9647,1 --Kill Royal Blue Flutterer (10)
+	.complete 9580,1 --Elder Brown Bear Flank (8)
 step
+	.goto Bloodmyst Isle,43.7,26.6,80,0
+	.goto Bloodmyst Isle,46.3,32.0,80,0
     .goto Bloodmyst Isle,29.6,39.5
+	>>Kill the Fouled Water Spirits in the area
     .complete 10067,1 --Kill Fouled Water Spirit (x6)
 step
     .goto Bloodmyst Isle,30.7,46.8
@@ -620,25 +721,44 @@ step
     .accept 9670 >> Accept They're Alive! Maybe...
 step
 	#sticky
-	>>Destroy the egg sacs around this area
-    .goto Bloodmyst Isle,18.1,37.9,0
-    .complete 9670,1 --Expedition Researcher Freed
+	#label Researchers
+	>>Destroy the egg sacs around this area. Kill them from range if possible as to not aggro potential mobs inside
+    .goto Bloodmyst Isle,18.2,38.0,0,0
+    .complete 9670,1 --Expedition Researcher Freed (5)
 step
-    .goto Bloodmyst Isle,18.1,37.9
-	>>Climb to the top of the hill and kill the named spider
+    .goto Bloodmyst Isle,21.4,36.0,70,0
+    .goto Bloodmyst Isle,17.2,28.4,40,0
+    .goto Bloodmyst Isle,18.2,38.0
+	>>Kill the Myst Leechers and Spinners in the area, then kill Zarakh atop the mountain
     .complete 9669,1 --Kill Myst Leecher (x8)
     .complete 9669,2 --Kill Myst Spinner (x8)
     .complete 9669,3 --Kill Zarakh (x1)
 step
+	#requires Researchers
+	#label AliveM
     .goto Bloodmyst Isle,24.9,34.4
     .turnin 9670 >> Turn in They're Alive! Maybe...
 step
+    .goto Bloodmyst Isle,43.9,43.7,70,0
+    .goto Bloodmyst Isle,30.1,51.7,70,0
+    .goto Bloodmyst Isle,22.4,54.3,70,0
+    .goto Bloodmyst Isle,30.1,51.7,70,0
+    .goto Bloodmyst Isle,43.9,43.7,70,0
+    .goto Bloodmyst Isle,22.4,54.3,70,0
+    .goto Bloodmyst Isle,30.1,51.7
+	.line Bloodmyst Isle,43.1,43.7,36.5,47.2,33.5,47.1,29.9,51.8,27.7,51.8,25.1,54.1,22.0,54.3
+    .use 24278 >>Look for Matis the Cruel, he patrols the main road next to Vindicator's Rest
+    .complete 9711,1 --Capture Matis the Cruel
+	*Once you find him, use the flare in your bags to summon a Draenei NPC to assist you
+	*The flare gun only have 1 charge, if you fail this quest, you will have to abandon it
+	.unitscan Matis the Cruel
+step
     .goto Bloodmyst Isle,34.3,33.6
-	>>Use the sampling vial at the base of the waterfall
+	.use 24318 >>Use the Sampling Vial in your bags at the base of the waterfall
     .complete 9748,1 --Collect Bloodmyst Water Sample (x1)
 step
     .goto Bloodmyst Isle,37.4,30.1
-	>>Kill the named bear
+	>>Kill the named bear. Loot him for his claw
     .complete 9646,1 --Collect Deathclaw's Paw (x1)
 step << Druid
     #sticky
@@ -666,6 +786,7 @@ step << Druid
     .turnin 29 >> Turn in Trial of the Lake
     .accept 272 >> Accept Trial of the Sea Lion
 step
+	#completewith next
     .hs >> Hearth to Blood Watch
 step
     .goto Bloodmyst Isle,55.0,58.1
@@ -681,12 +802,14 @@ step
     .goto Bloodmyst Isle,54.7,54.1
     .accept 9632 >> Accept Newfound Allies
 step
+	#completewith next
     .goto Bloodmyst Isle,55.6,55.3
     .turnin 9741 >> Turn in Critters of the Void
     .turnin 9748 >> Turn in Don't Drink the Water
     .turnin 9711 >> Turn in Matis the Cruel
-    .accept 9746 >> Accept Limits of Physical Exhaustion
+	.trainer >>Train class spells at Vindicator Aesom << Paladin
 step
+	#label bearend
     .goto Bloodmyst Isle,55.9,56.9
     .turnin 9647 >> Turn in Culling the Flutterers
     .turnin 9580 >> Turn in The Bear Necessities
@@ -713,7 +836,7 @@ step
     .accept 9689 >> Accept Razormaw
 step
     .goto Bloodmyst Isle,73.0,21.0
-	>>Climb to the top of the mountain and click on the bonfire to summon Razormaw (elite)
+	>>Climb to the top of the mountain and click on the bonfire to summon Razormaw (elite). He can take some time to spawn in.
     .complete 9689,1 --Kill Razormaw (x1)
     *This quest can be tough, skip this step if you can't find a group or solo this quest
 step
@@ -729,41 +852,65 @@ step << Hunter/Warlock/Mage
 step << Hunter/Warlock/Mage
 	.xp 20-1350
     >>You'll need to hit level 20 before leaving Bloodmyst
-
-
 step
     #completewith next
     .deathskip >>Die and respawn at Blood Watch
 step
     .goto Bloodmyst Isle,56.4,56.7
     .turnin 9649 >> Turn in Ysera's Tears
+step << Paladin
+	#completewith next
+	#level20
+	.goto Bloodmyst Isle,55.6,55.3
+	>>Train at Vindicator Aesom
 step
 	#sticky
 	#completewith next
+	.goto Bloodmyst Isle,57.5,54.2
     >>Make sure you are level 20 before leaving Bloodmyst << Hunter/Warlock/Mage
     .fly Exodar>> Fly to the Exodar
-step << !Rogue !Warlock !Druid !Mage
+step << Shaman
+	.goto The Exodar,49.5,36.9,70,0
+	.goto The Exodar,33.2,24.6
 	.trainer >> Train spells in The Exodar
 step << Mage
-    >>Train your level 20 spells in Exodar
-    .train 32271>>Train Teleport: Exodar
-    .goto The Exodar,46.0,62.7
+	.goto The Exodar,51.0,46.8,80,0
+	.goto The Exodar,47.2,62.3,20,0
+	    .goto The Exodar,46.0,62.7
+    .trainer >> Train spells and teleportation in The Exodar
+step << Mage
     >>Buy 1 Rune of Teleportation
     .collect 17031,1
     .goto The Exodar,44.8,63.2
+step << Hunter
+	.goto The Exodar,42,71.4,60,0
+	.goto The Exodar,54.5,85.6,60,0
+	.goto The Exodar,47.6,88.3
+	.trainer >> Train spells in The Exodar
+step << Warrior
+	.goto The Exodar,42,71.4,60,0
+	.goto The Exodar,54.5,85.6,60,0
+	.goto The Exodar,55.6,82.3
+	.trainer >> Train spells in The Exodar
+step << Priest
+    >> Enter The Exodar and buy a Burning Wand from the vendor
+    .collect 5210,1
+    .goto The Exodar,46.4,61.4
+    .trainer >> Train your class spells
+    .goto The Exodar,39.2,51.3
 step
     .goto Azuremyst Isle,24.2,54.3
 	>>Talk to the Night Elf just outside of The Exodar back entrance
     .turnin 9632 >> Turn in Newfound Allies
     .accept 9633 >> Accept The Way to Auberdine
 step << !Druid
-    >>Head to the docks right next to the Night Elf you just spoke with
+    >>Head to the docks right next to the Night Elf you just spoke with. Level first aid while waiting.
     .zone Darkshore >> Take the boat to Darkshore
 step << Druid
     #completewith next
     >>Teleport to Moonglade
     .goto Moonglade,52.4,40.6
-    .trainer 12042>> Train spells
+    .trainer 12042 >> Train spells
 step << Druid
     .goto Moonglade,48.1,67.2
     .fly Auberdine>>Fly to Darkshore
@@ -799,7 +946,7 @@ step
     #sticky
     #completewith blackwood
     .goto Darkshore,37.8,44.0
-    >>Fill the empty bowl at the moonwell
+    .use 12346 >>Fill the empty bowl at the moonwell
     .collect 12347,1 --Collect Filled Cleansing Bowl (x1)
     .isOnQuest 4763
 step
@@ -894,6 +1041,7 @@ step
     .accept 966 >> Accept The Tower of Althalaxx
 step
     .goto Darkshore,55.3,26.7
+	>> Kill cultists and loot them for parchment
     .complete 966,1 --Collect Worn Parchment (x4)
 step
     .goto Darkshore,55.0,24.9
@@ -901,10 +1049,11 @@ step
     .accept 967 >> Accept The Tower of Althalaxx
 step << Druid
     .goto Darkshore,55.0,33.4
-    >>Use the Empty Sampler at the mouth of the cave
+    .use 15844 >>Use the Empty Sampler at the mouth of the cave
     .complete 6122,1 --Collect Filled Cliffspring Falls Sampler (x1)
 step
     .goto Darkshore,55.3,34.0
+	>> Loot mushrooms around the cave, hug right and check the upper level for a Death cap. If you don't see one you'll need to go down below.
     .complete 947,1 --Collect Scaber Stalk (x5)
     .complete 947,2 --Collect Death Cap (x1)
 
@@ -918,7 +1067,7 @@ step
 	.collect 12343,1
 step
     #label blackwood
-	>>Use the cleansing bowl at the bonfire and kill the named satyr once he spawns, then loot the small basket next to his corpse
+	.use 12347 >>Use the cleansing bowl at the bonfire and kill the named satyr once he spawns, then loot the small basket next to his corpse
     .goto Darkshore,52.4,33.5
     .complete 4763,1 --Collect Talisman of Corruption (x1)
     .isOnQuest 4763
@@ -1018,6 +1167,7 @@ step
     .accept 949 >> Accept The Twilight Camp
 step
     .goto Darkshore,38.7,87.3
+	>> If she's not here someone else may be escorting here, grind mobs in the area in the meantime.
     .accept 945 >> Accept Therylune's Escape
 step
     .goto Darkshore,38.6,86.1
@@ -1054,9 +1204,11 @@ step
     .accept 1010 >> Accept Bathran's Hair
 step
     .goto Ashenvale,31.3,23.2
+	>> Loot the brown sacks in the area, they can be hard to spot.
     .complete 1010,1 --Collect Bathran's Hair (x5)
 step
     .goto Ashenvale,31.4,31.0
+	>> The drop rate is very very low, just keep killing mobs.
     .complete 970,1 --Collect Glowing Soul Gem (x1)
 step
     .goto Ashenvale,26.4,38.6
@@ -1082,9 +1234,12 @@ step
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
+	>> CLick on the small blue seed on the ground.
     .complete 1033,1 --Collect Elune's Tear (x1)
 step
     .goto Ashenvale,37.8,34.7
+	>> Kill Dal Bloodclaw and loot him for his skull.
+	.unitscan Dal Bloodclaw
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
 step
     .goto Ashenvale,36.6,49.6
@@ -1095,9 +1250,11 @@ step
     .accept 1034 >> Accept The Ruins of Stardust
 step
     .goto Ashenvale,33.3,67.4
+	>> Loot the stardust in the area
     .complete 1034,1 --Collect Handful of Stardust (x5)
 step
     .goto Ashenvale,25.3,60.8
+	>> Kill Ilkrud and loot him for his tome, you can stun him to stop him from summoning help.
     .complete 973,1 --Collect Ilkrud Magthrull's Tome (x1)
 step
     .goto Ashenvale,22.7,51.9
@@ -1111,26 +1268,37 @@ step << NightElf/Draenei
     .accept 1023 >> Accept Raene's Cleansing
 step << NightElf/Draenei
     .goto Ashenvale,20.3,42.4
+	>> Kill murlocs for the gem, the drop rate can be very low.
     .complete 1023,1 --Collect Glowing Gem (x1)
 step
     .goto Ashenvale,14.7,31.3
     .accept 1007 >> Accept The Ancient Statuette
 step
     .goto Ashenvale,14.2,20.6
+	>> Kill naga en route but don't go out of your way for them.
     .complete 1007,1 --Collect Ancient Statuette (x1)
 step
     .goto Ashenvale,14.8,31.3
+	>> Kill naga en route but don't go out of your way for them.
     .turnin 1007 >> Turn in The Ancient Statuette
     .accept 1009 >> Accept Ruuzel
 step
     .goto Ashenvale,7.0,13.4
+	>>Check for Lady Vespia on the islands en route, she is a rare spawn that has a chance to drop the ring and is much easier.
+	.unitscan Lady Vespia
+	>> This fight can be hard, focus down one or two of her adds then reset if needed.
     .complete 1009,1 --Collect Ring of Zoram (x1)
 step
     .goto Ashenvale,13.8,29.1
+	>>Finish grinding naga en route back to the turnin
     .complete 1008,1 --Collect Wrathtail Head (x20)
 step
     .goto Ashenvale,14.8,31.3
     .turnin 1009 >> Turn in Ruuzel
+step << Druid
+    >>Teleport to Moonglade
+    .goto Moonglade,52.4,40.6
+    .trainer >> Train your spells
 step << NightElf/Draenei
     .hs >> Hearth to Astranaar
 step << !NightElf !Draenei
@@ -1139,6 +1307,7 @@ step << !NightElf !Draenei
     .accept 1023 >> Accept Raene's Cleansing
 step << !NightElf !Draenei
     .goto Ashenvale,20.3,42.4
+	>> Kill murlocs for the gem, the drop rate is very low.
     .complete 1023,1 --Collect Glowing Gem (x1)
 step << !NightElf !Draenei
     #sticky
@@ -1207,20 +1376,39 @@ step
 step
     .goto Wetlands,9.5,59.7
     .fly Stormwind>> Fly to Stormwind
-step
+step << Priest
     #sticky
     #completewith exit
     .goto Stormwind City,42.8,65.2
     .collect 5210,1 >>Buy a Burning Wand, equip it
-step
-    #sticky
-    #completewith exit
-    .goto Stormwind City,25.2,78.5
-    .trainer >> Train your level 20 spells
-    >>If you're going to be playing with other players, train Ritual of Summoning
-step
+step << Hunter
+	.goto Stormwind City,61.7,15.4
+	.trainer >> Train your class spells
+step << Rogue
+	.goto Stormwind City,74.6,52.8
+	.trainer >> Train your class spells
+step << Warrior
+	.goto Stormwind City,78.6,45.8
+	.trainer >> Go upstairs. Train your class spells
+step << Paladin
+	.goto Stormwind City,38.6,32.8
+	.trainer >> Train your class spells
+step << Priest
+	.goto Stormwind City,38.5,26.8
+	.trainer >> Train your class spells
+step << Warlock
+    .goto Stormwind City,25.3,78.7
+	.trainer >> Train your class spells
+step << Warlock
     .goto Stormwind City,25.2,78.5
     .accept 1716 >> Accept Devourer of Souls
+step << Mage
+    .goto Stormwind City,39.6,79.6
+    .train 3561>>Train Teleport: Stormwind
+	.trainer >> Train your class spells
+step << Shaman
+	.goto Stormwind City,61.9,84.0
+	.trainer >> Train your class spells
 step
     #label exit
     .goto Stormwind City,39.9,54.4
@@ -1247,10 +1435,11 @@ step
     .goto Darkshore,35.7,83.7
     .accept 731 >> Accept The Absent Minded Prospector
 step
-    >>Be careful as golems can respawn on top of you, and be sure to fear the geomancer at the final wave at the end
+    >>Be careful as golems can respawn on top of you, and be sure to prioritize the geomancer at the final wave at the end
 .complete 731,1 --Escort Prospector Remtravel
 step
     .goto Darkshore,38.7,87.3
+	>> If she's not there just grind mobs in the area in the meantime.
     .accept 945 >> Accept Therylune's Escape
 step
     .complete 945,1 --Escort Therylune
@@ -1284,6 +1473,7 @@ step
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
+	>> Loot the tiny blue seed on the ground
     .complete 1033,1 --Collect Elune's Tear (x1)
 step
     .goto Ashenvale,37.3,51.8
@@ -1321,7 +1511,9 @@ step
     .turnin 1007 >> Turn in The Ancient Statuette
     .accept 1009 >> Accept Ruuzel
 step
-    >>Clear the immediate area (as well as some of the water east-side of the island). Kill Ruuzel as fast as possible whilst keeping the Sea Witch feared. Loot, and then run if the fight looks awkward
+   	>>Check for Lady Vespia on the islands en route, she is a rare spawn that has a chance to drop the ring and is much easier.
+	.unitscan Lady Vespia
+	>> This fight can be hard, focus down one or two of her adds then reset if needed.
 .goto Ashenvale,7.0,13.4
     .complete 1009,1 --Collect Ring of Zoram (x1)
 step
@@ -1340,6 +1532,14 @@ step
 step
     .goto Ashenvale,34.7,48.9
     .turnin 1008 >> Turn in The Zoram Strand
+step <<  Hunter
+    .goto Ashenvale,38.6,64.7
+     >> Stable your pet
+    .train 2982>>Tame an Ashenvale Bear and learn Claw 3
+    .train 17263 >> Tame a Ghostpaw Runner and learn Bite 3
+step <<  Hunter
+    #completewith start
+    .stable  >> Run back to Astranaar and withdraw your main pet from stables
 step
     >>Kill the mobs for An Aggressive Defense
     .goto Ashenvale,49.9,60.8
@@ -1351,17 +1551,17 @@ step
 step
     .goto Ashenvale,49.8,67.2
     .accept 1016 >> Accept Elemental Bracers
-step
+step << Warlock
     >>Kill all water elementals on the island/in the water for Intact Elemental Bracers. When you have 5, right click the Divining Scroll
     .goto Ashenvale,48.0,69.9
     .complete 1016,1 --Collect Divined Scroll (x1)
-step
+step << Warlock
     .goto Ashenvale,49.8,67.2
     .turnin 1016 >> Turn in Elemental Bracers
     .accept 1017 >> Accept Mage Summoner
-step
+step << Warlock
     .goto The Barrens,49.0,5.3,80 >>Enter The Barrens through the broken wall. Be careful of the guards near the wall at the main road
-step
+step << Warlock
     .goto The Barrens,48.2,19.1
     >>Climb the mountain and Kill Sarilus Foulborne
     .complete 1017,1 --Collect Sarilus Foulborne's Head (x1)
@@ -1369,11 +1569,11 @@ step
     #completewith next
     .goto The Barrens,50.8,32.6,0
     .deathskip >>Die and respawn at the Spirit Healer
-step
+step << Warlock
     .goto The Barrens,49.3,57.1
     .turnin 1716 >> Turn in Devourer of Souls
     .accept 1738 >> Accept Heartswood
-step
+step << Warlock
     >>Run to Ratchet
     .goto The Barrens,63.1,37.2
     .fp Ratchet >> Get the Ratchet flight path
@@ -1382,15 +1582,16 @@ step
     .goto Ashenvale,39.0,35.9
     .goto Ashenvale,35.9,32.0
     >>Start looking for Dal Bloodclaw, he walks around the furbolg camp
+	.unitscan Dal Bloodclaw
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
-step
+step << Warlock
     >>Loot the big tree
 .goto Ashenvale,31.6,31.6
     .complete 1738,1 --Collect Heartswood (x1)
 step
     .goto Ashenvale,40.1,53.1,0
     .deathskip >>Head towards the murloc lake and die at the next to the base of the mountain, east side of the lake then respawn at the Spirit Healer
-step
+step << Warlock
     .goto Ashenvale,49.8,67.2
     .turnin 1017 >> Turn in Mage Summoner
 step

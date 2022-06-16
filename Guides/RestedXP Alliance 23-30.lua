@@ -32,14 +32,17 @@ step
     .goto Wetlands,10.8,59.7
     .turnin 288 >> Turn in The Third Fleet
 step
+    .goto Wetlands,11.7,58.0
+    .accept 470 >> Accept Digging Through the Ooze
+step << Hunter
+	.goto Wetlands,11.1,58.3
+	.vendor >> Repair and restock on arrows
+step
     #sticky
     #completewith exit1
     .vendor 1448>>Head to the keep and buy a Bronze Tube from Neal Allen (limited supply), skip this step if he doesn't have it or if you already have one
     .goto Wetlands,10.6,56.8
     .collect 4371,1,175
-step
-    .goto Wetlands,11.7,58.0
-    .accept 470 >> Accept Digging Through the Ooze
 step
     .goto Wetlands,9.9,57.4
 	>>Go upstairs inside the keep
@@ -50,13 +53,26 @@ step
 step
 	#sticky
 	#label crocs
-	Kill Young Wetlands Crocolisks
+	>> Kill Young Wetlands Crocolisks between quests. Loot them for their Skin
     .complete 484,1 --Collect Young Crocolisk Skin (x4)
 step
+	#completewith next
+    .goto Wetlands,13.6,40.1,0
+    .goto Wetlands,20.6,40.7,0
+	>>Kill Bluegill Murlocs in the area
+    .complete 279,1 --Kill Bluegill Murloc (x12)
+step
     #label exit1
-    .goto Wetlands,17.5,40.0
+    .goto Wetlands,14.1,41.5,70,0
+    .goto Wetlands,16.7,39.7,70,0
+    .goto Wetlands,18.8,40.0
     >>Kill Gobbler, he patrols around the southern murloc camps
     .complete 279,2 --Collect Gobbler's Head (x1)
+	.unitscan Gobbler
+step
+    .goto Wetlands,13.6,40.1,70,0
+    .goto Wetlands,20.6,40.7
+	>>Kill Bluegill Murlocs in the area
     .complete 279,1 --Kill Bluegill Murloc (x12)
 step
     #sticky
@@ -64,7 +80,9 @@ step
     .vendor 2682>>Buy a Bronze Tube from Fradd Swiftgear (limited supply), skip this step if he doesn't have it or if you already have one
     .goto Wetlands,26.4,25.8
     .collect 4371,1,175
+	.bronzetube
 step
+	.goto Wetlands,34.3,41.2,60,0
     .goto Wetlands,38.2,50.9
     .accept 294 >> Accept Ormer's Revenge
 step
@@ -73,14 +91,18 @@ step
     .accept 306 >> Accept In Search of The Excavation Team
 step << Hunter/Warlock
     .goto Wetlands,24.7,48.6
+	>> Kill raptors in the area
     .complete 294,1 --Kill Mottled Raptor (x10)
     .complete 294,2 --Kill Mottled Screecher (x10)
 step << Hunter/Warlock
+	.goto Wetlands,34.3,41.4,80,0
     .goto Wetlands,38.2,50.9
     .turnin 294 >> Turn in Ormer's Revenge
     .accept 295 >> Accept Ormer's Revenge
 step << Hunter/Warlock
+	.goto Wetlands,34.3,41.4,80,0
     .goto Wetlands,34.6,48.0
+	>> Kill raptors in the area
     .complete 295,1 --Kill Mottled Scytheclaw (x10)
     .complete 295,2 --Kill Mottled Razormaw (x10)
 step << Hunter/Warlock
@@ -88,12 +110,15 @@ step << Hunter/Warlock
     .turnin 295 >> Turn in Ormer's Revenge
     .accept 296 >> Accept Ormer's Revenge
 step << Hunter/Warlock
-    .goto Wetlands,33.2,51.5
+    .goto Wetlands,31.5,48.9,50,0
+    .goto Wetlands,33.3,51.5
+	>>Kill Sarltooth atop the hill. Loot him for his Talon. Be careful as he Thrashes and has a 6 minute respawn
     .complete 296,1 --Collect Sarltooth's Talon (x1)
 step << Hunter/Warlock
     .goto Wetlands,38.2,50.9
     .turnin 296 >> Turn in Ormer's Revenge
 step
+	.goto Wetlands,34.3,41.2,60,0
     .goto Wetlands,44.8,43.9
 	>>Kill Dragonmaw Orcs
     .complete 464,1 --Collect Dragonmaw War Banner (x8)
@@ -111,7 +136,11 @@ step
     .turnin 463 >> Turn in The Greenwarden
     .accept 276 >> Accept Tramping Paws
 step
-    .goto Wetlands,62.9,69.4
+    .goto Wetlands,63.9,62.7,70,0
+    .goto Wetlands,62.4,69.5,70,0
+    .goto Wetlands,61.5,72.2,70,0
+    .goto Wetlands,55.7,75.1
+	>>Kill Mosshide Gnolls and Mongrels in the area. The gnolls are more commonly found outside the camps
     .complete 276,1 --Kill Mosshide Gnoll (x15)
     .complete 276,2 --Kill Mosshide Mongrel (x10)
 step
@@ -132,7 +161,9 @@ step << NightElf/Draenei
     .fp Thelsamar >> Get the Thelsamar flight path
 step << NightElf/Draenei
     #completewith exit2
-    .zone Dun Morogh >>Head to Dun Morogh
+	.goto Loch Modan,22.6,70.2,80,0
+	.goto Dun Morogh,86.2,47.0
+	>>Head to Dun Morogh
     >>Death warp to Kharanos as soon as you get to Dun Morogh
 step << NightElf/Draenei
     #sticky
@@ -140,10 +171,13 @@ step << NightElf/Draenei
     .vendor 1694>>Buy a Bronze Tube from Loslor Rudge (limited supply), skip this step if he doesn't have it or if you already have one
     .goto Dun Morogh,50.4,49.4
     .collect 4371,1,175
+	.bronzetube
 step << Mage
+	.goto Dun Morogh,47.3,41.9,80,0
     goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
 step
+	.goto Dun Morogh,47.3,41.9,80,0
     .goto Ironforge,55.5,47.7
     .fp Ironforge >> Get the Ironforge flight path
 step
@@ -152,9 +186,12 @@ step
     .vendor 5175>>Buy a Bronze Tube from Gearcutter Cogspinner (limited supply), skip this step if he doesn't have it or if you already have one
     .goto Ironforge,67.86,42.87
     .collect 4371,1,175
+	.bronzetube
 step
     #label exit2
-    .zone Stormwind City >>Head to Ironforge and take the tram to Stormwind
+	.goto Ironforge,56.2,46.8
+	.goto Ironforge,76.4,51.2,50 >> Hop ontop of the gryphon's head then logout and back in to logout skip to the tram.
+    .zone Stormwind City >>Take the tram to Stormwind
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -163,26 +200,35 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next 27-30 Wetlands/Hillsbrad
-step
-	#sticky
-	#completewith exit
-	.trainer >> Train your class spells in Stormwind
+step << Hunter
+	.goto Stormwind City,61.7,15.4
+	.trainer >> Train your class spells
 step
     #sticky
     #completewith exit
-    .vendor 5519>>Buy a Bronze Tube from Billibub Cogspinner (limited supply)
+    .vendor 5519>>Buy a Bronze Tube from Gearcutter Cogspinner (limited supply)
     .goto Ironforge,55.2,7.6
     .collect 4371,1,175
     >>Try to buy a bronze tube from the Auction House if you were unable to find one from a vendor
+	.bronzetube
 step << Draenei
     .goto Stormwind City,78.4,18.3
     .accept 9429 >> Accept Travel to Darkshire
-step
-	.goto Stormwind City,62.5,62.3,30,0
-	.goto Stormwind City,66.3,62.1
-    .fp Stormwind >> Get the Stormwind flight path
+step << Rogue
+	.goto Stormwind City,74.6,52.8
+	.trainer >> Train your class spells
+step << Warrior
+	.goto Stormwind City,78.6,45.8
+	.trainer >> Go upstairs. Train your class spells
+step << Paladin
+	.goto Stormwind City,38.6,32.8
+	.trainer >> Train your class spells
+step << Priest
+	.goto Stormwind City,38.5,26.8
+	.trainer >> Train your class spells
 step << Warlock
     .goto Stormwind City,25.3,78.7
+	.trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock
@@ -201,6 +247,7 @@ step << Paladin
 step << Mage
     .goto Stormwind City,39.6,79.6
     .train 3561>>Train Teleport: Stormwind
+	.trainer >> Train your class spells
 step << Rogue
     #sticky
     .goto Stormwind City,75.8,60.1
@@ -220,24 +267,39 @@ step << Warrior
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
 step
+	.goto Stormwind City,62.5,62.3,30,0
+	.goto Stormwind City,66.3,62.1
+    .fp Stormwind >> Get the Stormwind flight path
+step << Shaman
+	.goto Stormwind City,61.9,84.0
+	.trainer >> Train your class spells
+step
 	#label exit
     .goto Elwynn Forest,65.2,69.8
 	>>Head to the top of the Tower of Azora
     .accept 94 >> Accept A Watchful Eye
 step
     .goto Redridge Mountains,17.4,69.6
+	>>Talk to Guard Parker
     .accept 244 >> Accept Encroaching Gnolls
 step
+	#sticky
+	#label LakeshireFP
+	.goto Redridge Mountains,30.5,59.4,-1
     .fp Redridge >> Get the Redridge Mountains flight path
 step
-    .goto Redridge Mountains,30.8,60.1
+    .goto Redridge Mountains,30.8,60.1,-1
     .turnin 244 >> Turn in Encroaching Gnolls
 step
+	#requires LakeshireFP
     .goto Redridge Mountains,33.4,49.1
     .accept 20 >> Accept Blackrock Menace
 step
     .goto Redridge Mountains,29.6,44.3
     .accept 91 >> Accept Solomon's Law
+step << Hunter
+	.goto Redridge Mountains,28.8,47.3
+	.vendor >> Restock on arrows, note you will get level 25 arrows soon.
 step
     .goto Redridge Mountains,27.7,47.3
     .accept 127 >> Accept Selling Fish
@@ -254,6 +316,7 @@ step
     .complete 20,1 --Collect Battleworn Axe (x10)
 step
     .goto Redridge Mountains,57.3,52.4
+	>> Kill murlocs. Loot them for their Sunfish and Fins
     .complete 127,1 --Collect Spotted Sunfish (x10)
     .complete 150,1 --Collect Murloc Fin (x8)
 step << Rogue
@@ -282,6 +345,7 @@ step
     .accept 34 >> Accept An Unwelcome Guest
 step
     .goto Redridge Mountains,15.7,49.4
+	>> Kill Bellygrub and loot her for her tusk
     .complete 34,1 --Collect Bellygrub's Tusk (x1)
 step
     .goto Redridge Mountains,21.8,46.4
@@ -318,7 +382,7 @@ step
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
     .goto Duskwood,79.8,47.9
-    >>Skip this step if you don't have a bronze tube
+    .bronzetube
 step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
@@ -336,9 +400,10 @@ step
     .isQuestTurnedIn 174
 step
     .goto Duskwood,80.9,71.8
-    >>Kill the Insane Ghoul at the chapel
+    >>Kill the Insane Ghoul at the chapel. He can patrol outside as well.
     .complete 177,1 --Collect Mary's Looking Glass (x1)
     .isQuestTurnedIn 174
+	.unitscan Insane Ghoul
 step
     .goto Duskwood,79.3,70.3
     .complete 56,1 --Kill Skeletal Warrior (x8)
@@ -476,7 +541,7 @@ step
 step
 	#sticky
 	#completewith next
-	+You can delete "The Story of Morgan Ladimore" from your inventory, as it's not needed
+	.destroy 2154 >> You can delete "The Story of Morgan Ladimore" from your inventory, as it's not needed
 step
     .goto Duskwood,75.7,45.3
     .turnin 148 >> Turn in Supplies from Darkshire
@@ -508,8 +573,10 @@ step
 step
 	#label spiders
 	#sticky
+	#completewith #spiderend12
 	>>Kill spiders in duskwood
     .complete 93,1 --Collect Gooey Spider Leg (x6)
+	.maxlevel 27
 step
     .goto Duskwood,28.0,31.5
     .turnin 157 >> Turn in Deliver the Thread
@@ -538,7 +605,6 @@ step << !Rogue !Druid
     .goto Westfall,41.5,66.8
     .turnin 67 >> Turn in The Legend of Stalvan
     .accept 68 >> Accept The Legend of Stalvan
-
 step << Paladin
     .goto Westfall,42.5,88.6
     .turnin 1650 >>Turn in The Tome of Valor
@@ -589,6 +655,7 @@ step << Hunter/Paladin
     .turnin 229 >> Turn in The Daughter Who Lived
     .accept 231 >> Accept A Daughter's Love
 step
+	#spiderend12
     .goto Duskwood,75.3,47.9
     .turnin 173 >> Turn in Worgen in the Woods
     .accept 221 >> Accept Worgen in the Woods
@@ -604,6 +671,7 @@ step
     .accept 115 >> Accept Shadow Magic
 step
     .goto Redridge Mountains,80.3,37.2
+	>> Kill Fangore, and loot him for his Paw. be careful as lots of gnolls patrol around him, he is shadow immune, and can social aggro all gnolls at any time within 40 yards.
     .complete 180,1 --Collect Fangore's Paw (x1)
 step
     .goto Redridge Mountains,84.3,46.9
@@ -611,12 +679,13 @@ step
     .accept 248 >> Accept Looking Further
 step
     .goto Redridge Mountains,74.2,42.1
+	>> Kill gnolls in the area
     .complete 91,1 --Collect Shadowhide Pendant (x10)
 step
 	#sticky
 	#label tharilzun
     .goto Redridge Mountains,69.2,59.8
-	Kill Tharil'zun (elite), skip this quest if you can't kill it
+	Kill Tharil'zun and loot his head
     .complete 19,1 --Collect Tharil'zun's Head (x1)
 step
     .goto Redridge Mountains,66.6,55.4
@@ -646,6 +715,7 @@ step << Draenei
     .goto Redridge Mountains,31.6,58.0
     .turnin 128 >> Turn in Blackrock Bounty
 step
+	.goto Redridge Mountains,30.5,59.3
     .fly Westfall>> Fly to Westfall
 step
 	#sticky
@@ -660,6 +730,7 @@ step
     .accept 268 >> Accept Return to Sven
 step << !Hunter !Paladin
     .goto Duskwood,21.6,45.1
+	>> Kill undead in the area and loot them
     .complete 57,1 --Kill Skeletal Fiend (x15)
     .complete 57,2 --Kill Skeletal Horror (x15)
     .complete 156,1 --Collect Rot Blossom (x8)
@@ -673,6 +744,7 @@ step << Hunter/Paladin
     .turnin 231 >> Turn in A Daughter's Love
 step << Hunter/Paladin
     .goto Duskwood,21.6,45.1
+	>> Kill undead in the area and loot them
     .complete 57,1 --Kill Skeletal Fiend (x15)
     .complete 57,2 --Kill Skeletal Horror (x15)
     .complete 156,1 --Collect Rot Blossom (x8)
@@ -704,20 +776,19 @@ step
     >>Go upstairs in the room behind the rogue trainer. Loot the chest
 	.goto Elwynn Forest,44.2,65.9
     .complete 70,1 --Collect An Undelivered Letter (x1)
-step << !Rogue
-	#sticky
-	#completewith end
-	.trainer >> Train your class spells in Stormwind
-step << Mage
-    #completewith end
-    .zone Stormwind City >> Teleport to Stormwind
+step << Shaman
+	.goto Stormwind City,61.9,84.0
+	.trainer >> Train your class spells
 step << Warrior
-    #sticky
-    #completewith next
-    .goto Stormwind City,64.1,61.2
-    .goto Stormwind City,46.7,79.0
-    >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
-    .collect 3357,8 --Collect Liferoot (x8)
+	.goto Stormwind City,78.6,45.8
+	.trainer >> Go upstairs. Train your class spells
+step << Warlock
+    .goto Stormwind City,25.3,78.7
+	.trainer >> Train your class spells
+step << Mage
+    .goto Stormwind City,39.6,79.6
+	>> Teleport to stormwind
+	.trainer >> Train your class spells
 step
     .goto Stormwind City,26.4,78.4
     .accept 335 >> Accept A Noble Brew
@@ -740,9 +811,19 @@ step
     .goto Stormwind City,39.3,28.0
     .turnin 269 >> Turn in Seeking Wisdom
     .accept 270 >> Accept The Doomed Fleet
+step << Paladin
+	.goto Stormwind City,38.6,32.8
+	.trainer >> Train your class spells
+step << Priest
+	.goto Stormwind City,38.5,26.8
+	.trainer >> Train your class spells
+step << Hunter
+	.goto Stormwind City,61.7,15.4
+	.trainer >> Train your class spells
 step <<!Mage
+	.goto Stormwind City,63.2,8.6,20,0
     .goto Ironforge,69.8,50.1
-    >>Cross the Deeprun Tram
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >>Enter the Deeprun Tram and go to Ironforge. Click here for a logout skip in the tram.
     .turnin 2923 >> Turn in Tinkmaster Overspark
 step << Rogue
     #sticky
@@ -776,6 +857,7 @@ step << Paladin
     .turnin 1653 >>Turn in The Test of Righteousness
 step
 	#label end
+	.goto Ironforge,56.2,46.8
     .fly Wetlands>> Fly to Wetlands
 ]])
 
@@ -803,6 +885,7 @@ step
     .accept 321 >> Accept Lightforge Iron
 step
       .goto Wetlands,10.7,60.9
+	>> Restock on food/water if needed.
 .home >> Set your Hearthstone to Deepwater Tavern
 step
     .goto Wetlands,10.9,55.9
@@ -832,11 +915,13 @@ step
 step
     .goto Wetlands,13.9,30.4
     >>To find Snellig, enter the ship by the hole on the hull close to the shore
+	>> The ship to the north usually has more Marines if you're having trouble finding some.
     .complete 289,3 --Collect Snellig's Snuffbox (x1)
     .complete 289,1 --Kill Cursed Sailor (x13)
     .complete 289,2 --Kill Cursed Marine (x5)
 step
     .goto Wetlands,17.8,26.3
+	>> Kill Giant Crocolisks along the coast and loot them for skins
     .complete 471,1 --Collect Giant Crocolisk Skin (x6)
 step
     .goto Wetlands,38.2,50.9
@@ -880,7 +965,9 @@ step
     .turnin 295 >> Turn in Ormer's Revenge
     .accept 296 >> Accept Ormer's Revenge
 step
-    .goto Wetlands,33.2,51.5
+    .goto Wetlands,31.5,48.9,50,0
+    .goto Wetlands,33.3,51.5
+	>>Kill Sarltooth atop the hill. Loot him for his Talon. Be careful as he Thrashes and has a 6 minute respawn
     .complete 296,1 --Collect Sarltooth's Talon (x1)
 step
 	#requires relics
@@ -896,7 +983,7 @@ step << !Hunter !NightElf !Rogue
 	>>Loot the fossil on the ground
 	.complete 943,2
 step << !Hunter !NightElf !Rogue
-
+	.goto Wetlands,34.6,48.0
 	>>Keep killing raptors until you loot the Stone of Relu
 	.complete 943,1
 step
@@ -915,6 +1002,10 @@ step
     .goto Wetlands,64.8,75.3
     >>Loot the tree root at the base of the waterfall
     .complete 335,2 --Collect Musquash Root (x1)
+step << Druid
+    >>Teleport to Moonglade
+    .goto Moonglade,52.4,40.6
+    .trainer 12042 >> Train spells
 step
     .hs >> Hearth to Menethil Harbor
 step
@@ -940,6 +1031,7 @@ step
     .complete 290,1 --Collect Intrepid Strongbox Key (x1)
 step
     .goto Wetlands,14.4,24.0
+	>> Dive underwater. Theres a hole in the hull of the north side of the ship.
     .turnin 290 >> Turn in Lifting the Curse
     .accept 292 >> Accept The Eye of Paleth
 step
@@ -952,6 +1044,7 @@ step
     .accept 474 >> Accept Defeat Nek'rosh
 step
     .goto Wetlands,53.5,54.6
+	>> Kill Nek'rosh and loot him for his head
     .complete 474,1 --Collect Nek'rosh's Head (x1)
 step << Warrior
     #sticky
@@ -961,7 +1054,7 @@ step << Warrior
     .collect 3357,8 --Collect Liferoot (x8)
 step
     .goto Wetlands,56.4,40.5
-	>>Finish off Fen Creepers if you haven't
+	>>Finish off Fen Creepers in the rivers
     .turnin 275 >> Turn in Blisters on The Land
 step
     .goto Wetlands,49.9,18.3
@@ -970,13 +1063,17 @@ step
     .accept 304 >> Accept A Grim Task
     .accept 303 >> Accept The Dark Iron War
 step
-    >>Kill Balgaras the Foul, he can spawn in the camp far to the east or inside one of the houses in Dun Modr
+	#sticky
+	#completewith dwarfquests
+    >>Kill Balgaras the Foul, he can spawn in the camp far to the east or inside one of the houses in Dun Modr. Head east after checking Dun Modir. Loot him for his ear.
     .complete 304,1 --Collect Ear of Balgaras (x1)
-    .goto Wetlands,47.4,15.4
-    .goto Wetlands,61.8,31.0
+	.unitscan Balgaras the Foul
+    .goto Wetlands,47.4,15.4,40,0
+    .goto Wetlands,61.8,31.0,80,0
     .goto Wetlands,46.8,16.0
 step--?
     .goto Wetlands,47.3,16.6
+	>> Kill Dark Iron dwarves in the area
     .complete 303,1 --Kill Dark Iron Dwarf (x10)
     .complete 303,2 --Kill Dark Iron Tunneler (x5)
     .complete 303,3 --Kill Dark Iron Saboteur (x5)
@@ -986,7 +1083,9 @@ step
     .turnin 303 >> Turn in The Dark Iron War
     .turnin 304 >> Turn in A Grim Task
 step
+	#label dwarfquests
     .goto Wetlands,51.2,8.0
+	>> Go downstairs and click on the dwarf corpse. Ignore all the mobs.
     .turnin 631 >> Turn in The Thandol Span
     .accept 632 >> Accept The Thandol Span
 step
@@ -1019,7 +1118,8 @@ step
     .fp Arathi >> Get the Arathi Highlands flight path
 step
 .isOnQuest 647
->>Run to Southshore and turn in before the timer is up
+>>Run to Southshore and go downstairs in the inn. Turn in before the timer is up. Watch out for the courier on the road.
+	.unitscan Forsaken Bodyguard
 .goto Hillsbrad Foothills,52.2,58.6
     .turnin 647 >> Turn in MacKreel's Moonshine
 step
@@ -1035,8 +1135,17 @@ step << Hunter
 step
     .goto Hillsbrad Foothills,50.9,58.8
     .accept 9435 >> Accept Missing Crystals
+step <<  Hunter
+     #completewith next
+    .goto Hillsbrad Foothills,50.2,58.8
+     .stable >> Stable your pet and head east
+step << Hunter
+    .goto Hillsbrad Foothills,56.6,53.8
+    .train 17264 >> Tame an Elder Moss Creeper, attack mobs with it to learn bite rank 4
+	.unitscan Elder Moss Creeper
 step << Hunter
     .goto Hillsbrad Foothills,44.0,67.6
+	>> Kill murlocs in the area
     .complete 536,1 --Kill Torn Fin Tidehunter (x10)
     .complete 536,2 --Kill Torn Fin Oracle (x10)
 step << Hunter
@@ -1045,6 +1154,7 @@ step << Hunter
     .accept 559 >> Accept Farren's Proof
 step << Hunter
     .goto Hillsbrad Foothills,42.3,68.3
+	>> Kill murlocs and loot them for their head
     .complete 559,1 --Collect Murloc Head (x10)
 step << Hunter
     .goto Hillsbrad Foothills,51.4,58.5
@@ -1060,6 +1170,7 @@ step << Hunter
     .accept 562 >> Accept Stormwind Ho!
 step << Hunter
     .goto Hillsbrad Foothills,57.1,67.4
+	>> Kill naga in the area, you may need to go in the water if you get unlucky spawns
     .complete 562,1 --Kill Daggerspine Shorehunter (x10)
     .complete 562,2 --Kill Daggerspine Siren (x10)
 step << Hunter
@@ -1071,7 +1182,7 @@ step
     .fp Southshore >> Get the Southshore flight path
 step
     .goto Western Plaguelands,42.9,85.0
-    >>Head north farming turtle meat along the river, once you get at the end of the river, head northwest into WPL
+    >>Head north farming turtle meat along the river, once you get at the end of the river, head northwest into WPL. You don't need all 10 meat yet.
     .fp Chillwind >> Get the Chillwind Camp flight path
     .fly Wetlands>> Fly to Wetlands
 step
@@ -1084,6 +1195,7 @@ step
     .accept 324 >> Accept The Lost Ingots
 step
     .goto Wetlands,10.1,69.5
+	>> Kill murlocs and loot them for ingots. The droprate can be very low.
     .complete 324,1 --Collect Lightforge Ingot (x5)
 step
     .goto Wetlands,10.6,60.4
@@ -1093,6 +1205,7 @@ step
     .goto Wetlands,9.9,57.4
     .turnin 474 >> Turn in Defeat Nek'rosh
 step << !Mage
+	.goto Wetlands,9.3,59.4
     .fly Ironforge>> Fly to Ironforge
 step << Mage
     .zone Ironforge >> Teleport to Ironforge
@@ -1116,23 +1229,43 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next RestedXP Alliance 32-47\32-33 Shimmering Flats
-step
-    .zone Stormwind City>>Head to Stormwind
+step << !Mage
+	.goto Ironforge,74.5,50.5,20,0
+	.goto Stormwind City,51.7,12.3
+    .zone Stormwind City>> Take the tram and head to Stormwind
+step << Mage
+	>> Teleport to stormwind
+    .goto Stormwind City,39.6,79.6
+	.trainer >> Train your class spells
+step << Hunter
+	.goto Stormwind City,61.7,15.4
+	.trainer >> Train your class spells
+	.train 14924>> Train Growl 4 at the pet trainer
 step
     #sticky
     #completewith exit
     >>Buy a Bronze Tube from the Auction House
     .complete 174,1
+	.bronzetube
 step << Human Paladin
     #sticky
+	#completewith next
     >>Buy 10 linen cloth at the Auction House if you don't have it already
     .collect 2589,10,1644
+step << Paladin
+    .goto Stormwind City,40.0,29.9
+    .turnin 1652 >>Turn in The Tome of Valor
+    .accept 1653 >>Accept The Test of Righteousness
+step << Paladin
+	.goto Stormwind City,38.6,32.8
+	.trainer >> Train your class spells
+step << Priest
+	.goto Stormwind City,38.5,26.8
+	.trainer >> Train your class spells
 step
-	#sticky
-	#completewith exit
-	.trainer >> Train your level 30 spells
-step << Hunter
-	.train 14924>> Train Growl 4 at the pet trainer
+    .goto Stormwind City,39.3,28.0
+    .turnin 269 >> Turn in Seeking Wisdom
+    .accept 270 >> Accept The Doomed Fleet
 step
     .goto Stormwind City,51.7,12.3
     .turnin 322 >> Turn in Blessed Arm
@@ -1140,6 +1273,7 @@ step
 step
 	#sticky
 	#label MDiplomats
+	#completewith nomorekid
     .goto Stormwind City,41.5,31.7
 	>>Talk to the patrolling kid
     .accept 1274 >> Accept The Missing Diplomat
@@ -1147,6 +1281,7 @@ step
     .goto Stormwind City,39.7,27.6
     .turnin 293 >> Turn in Cleansing the Eye
 step
+	#label nomorekid
 	#requires MDiplomats
 	.zone Stormwind City >> Exit the Chapel
 step << Paladin
@@ -1160,8 +1295,11 @@ step << Human Paladin
     .accept 1642 >>Accept The Tome of Divinity
     .turnin 1642 >>Turn in The Tome of Divinity
     .accept 1643 >>Accept The Tome of Divinity
+step << Warlock
+    .goto Stormwind City,25.3,78.7
+	.trainer >> Train your class spells
 step
-   .isOnQuest 538
+   .isOnQuest 337
 	.goto Stormwind City,74.1,7.6
     .accept 337 >> Accept An Old History Book
     .turnin 337 >> Turn in An Old History Book
@@ -1174,13 +1312,6 @@ step << Hunter
     .goto Stormwind City,72.8,16.1
     .turnin 563 >> Turn in Reassignment
     .isOnQuest 563
-step << Warrior
-    #sticky
-    #completewith next
-    .goto Stormwind City,64.1,61.2
-    .goto Stormwind City,46.7,79.0
-    >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
-    .collect 3357,8 --Collect Liferoot (x8)
 step << Human Paladin
     .goto Stormwind City,56.9,61.9
     .turnin 1643 >>Turn in The Tome of Divinity
@@ -1193,6 +1324,13 @@ step << Human Paladin
 step << Shaman
     .goto Stormwind City,61.9,83.9
     .accept 10491 >> Accept Call of Air
+	.trainer >> Train your class spells
+step << Warrior
+	.goto Stormwind City,78.6,45.8
+	.trainer >> Go upstairs. Train your class spells
+step << Rogue
+	.goto Stormwind City,74.6,52.8
+	.trainer >> Train your class spells
 step
     .goto Stormwind City,73.1,78.3
     .turnin 1241 >> Turn in The Missing Diplomat
@@ -1211,8 +1349,10 @@ step << Human Paladin
     .accept 1786 >>Accept The Tome of Divinity
 step
 	#label exit
+	.goto Stormwind City,66.2,62.1
     .fly Duskwood>> Fly to Duskwood
 step
+	#completewith notubeandy
     .goto Duskwood,79.8,47.9
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
@@ -1231,12 +1371,14 @@ step
     >>Kill the Insane Ghoul at the chapel
     .complete 177,1 --Collect Mary's Looking Glass (x1)
     .isQuestTurnedIn 174
+	.unitscan Insane Ghoul
 step
     .goto Duskwood,79.8,47.8
     .turnin 177 >> Turn in Look To The Stars
     .accept 181 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
+	#label notubeandy
     .goto Duskwood,73.8,44.5
     .turnin 156 >> Turn in Gather Rot Blossoms
     .accept 159 >> Accept Juice Delivery
@@ -1266,6 +1408,7 @@ step
     .accept 1244 >> Accept The Missing Diplomat
 step
     .goto Elwynn Forest,84.6,69.5
+	>> Run north to Eastvale Logging Camp in Elwynn Forest
     .turnin 74 >> Turn in The Legend of Stalvan
     .accept 75 >> Accept The Legend of Stalvan
 step
@@ -1276,6 +1419,11 @@ step
     .goto Elwynn Forest,84.7,69.4
     .turnin 75 >> Turn in The Legend of Stalvan
     .accept 78 >> Accept The Legend of Stalvan
+step << Human
+	#level 30
+	.goto Elwynn Forest,84.2,65.2
+	.train 148 >> Train riding and purchase your mount.
+	.money <35.00
 step << Shaman
     #completewith next
     .hs >> Hearth to Darkshire
@@ -1303,6 +1451,7 @@ step << Shaman
     .complete 335,1 --Collect Tear of Tilloa (x1)
 step << Shaman
     .goto Duskwood,77.4,36.1
+	>> Kill the undead in the house and loot him for his ring
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << Shaman
     #requires TearT
@@ -1310,6 +1459,7 @@ step << Shaman
     .turnin 98 >> Turn in The Legend of Stalvan
 step << Shaman
     #completewith next
+	.goto Duskwood,77.6,44.6
     .fly Westfall>> Fly to Westfall
 step << Human Paladin
     .goto Elwynn Forest,72.7,51.5
@@ -1322,6 +1472,7 @@ step << Human Paladin
     .complete 1787,1 --Defias Script (1)
 step
     .goto Duskwood,28.0,31.6
+	>> Head back to Duskwood
     .turnin 159 >> Turn in Juice Delivery
     .accept 133 >> Accept Ghoulish Effigy
 step
@@ -1332,6 +1483,7 @@ step
 	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,23.6,35.0
+	>> Kill Plague Spreaders in the crypt and loot them
     .complete 133,1 --Collect Ghoul Rib (x7)
     .complete 58,1 --Kill Plague Spreader (x20)
     .complete 101,1 --Collect Ghoul Fang (x10)
@@ -1349,10 +1501,12 @@ step
     .complete 134,1 --Collect Abercrombie's Crate (x1)
 step
     .goto Duskwood,36.8,83.8
-    >>Kill Zzarc' Vul
+    >>Kill Zzarc' Vul and loot him for his monocle
+	.unitscan Zzarc'Vul
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
     .goto Duskwood,31.6,45.4
+	>> Kill spiders and loot them for their venom
     .complete 101,2 --Collect Vial of Spider Venom (x5)
 step
     .goto Duskwood,28.1,31.5
@@ -1377,7 +1531,7 @@ step << Shaman/Dwarf Paladin
     #completewith next
     .hs >> Hearth to Darkshire
 step << Druid/Hunter/Mage/!Dwarf Paladin/Priest/Rogue/Warlock/Warrior
-    .goto Westfall,56.5,52.6,12
+    .goto Westfall,56.5,52.6
     .fly Darkshire>> Fly to Darkshire
 step
     .goto Duskwood,79.8,47.9
@@ -1415,7 +1569,7 @@ step
 step
 	#sticky
 	#completewith next
-	+You can delete "Translated Letter From The Embalmer" from your bags, as it's no longer needed
+	.destroy 3248 >> You can delete "Translated Letter From The Embalmer" from your bags, as it's no longer needed
 step << !Shaman
     .goto Duskwood,73.5,46.8
     .turnin 97 >> Turn in The Legend of Stalvan
@@ -1465,6 +1619,7 @@ step
     .accept 190 >> Accept Panther Mastery
 step
 	#sticky
+	#completewith thorsen
 	#label tigers
     .complete 185,1 --Kill Young Stranglethorn Tiger (x10)
 step
@@ -1482,6 +1637,10 @@ step
     .goto Duskwood,28.8,30.9
     >>Run back to Duskwood, click on the dirt mound to summon Eliza
     .complete 253,1 --Collect The Embalmer's Heart (x1)
+step << Druid
+    >>Teleport to Moonglade
+    .goto Moonglade,52.4,40.6
+    .trainer 12042 >> Train spells
 step << !Dwarf/!Paladin
     #sticky
     #completewith next
@@ -1511,21 +1670,27 @@ step
     .goto Duskwood,75.3,48.9
     .turnin 223 >> Turn in Worgen in the Woods
 step << !Mage
+	.goto Duskwood,77.5,44.2
     .fly Stormwind>> Fly to Stormwind
 step << Mage
-    .zone Stormwind City >>Teleport to Stormwind
-step
-    #sticky
-    #completewith exit1
-    .trainer >> Train your class spells in Stormwind
+	>> Teleport to stormwind
+    .goto Stormwind City,39.6,79.6
+	.trainer >> Train your class spells
 step << Dwarf Paladin
     #sticky
+	#completewith next
     >>Buy 10 Linen Cloth from the Auction House
     .complete 1648,1
 step
     .goto Stormwind City,60.1,64.4
     .turnin 1245 >> Turn in The Missing Diplomat
     .accept 1246 >> Accept The Missing Diplomat
+step << Paladin
+	.goto Stormwind City,38.6,32.8
+	.trainer >> Train your class spells
+step << Priest
+	.goto Stormwind City,38.5,26.8
+	.trainer >> Train your class spells
 step << Warrior
     #sticky
     #completewith next
@@ -1536,6 +1701,13 @@ step << Warrior
 step << Warrior
     .goto Stormwind City,78.8,45.3
     .accept 1718 >> Accept The Islander
+	.trainer >> Train class spells
+step << Shaman
+    .goto Stormwind City,61.9,83.9
+	.trainer >> Train your class spells
+step << Rogue
+	.goto Stormwind City,74.6,52.8
+	.trainer >> Train your class spells
 step
     .goto Stormwind City,70.3,44.8
     >>Beat Dashel Stonefist
@@ -1565,6 +1737,7 @@ step << Warlock
     .goto Stormwind City,25.3,78.5
     .accept 4738 >>Accept In Search of Menara Voidrender
     .accept 1798 >>Accept Seeking Strahad
+	.trainer >> Train your class spells
 step << Human Paladin
     .goto Stormwind City,38.6,26.7
     .turnin 1787 >>Turn in The Tome of Divinity
@@ -1585,6 +1758,7 @@ step
     .accept 538 >> Accept Southshore
 step << Dwarf Paladin/Mage
     #sticky
+	#completewith next
     .zone Ironforge >> Head to Ironforge
 step << Dwarf Paladin
     .goto Ironforge,18.5,51.6
@@ -1641,9 +1815,38 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     .goto Ironforge,27.4,11.9
     .turnin 1785 >>Turn in The Tome of Divinity
-step
-    #label exit1
-    .fly Wetlands>> Fly to Wetlands
+step << Dwarf !Paladin
+	.skill riding,75,1
+	.money <35.0
+	.goto Stormwind City,66.2,62.2
+	.fly Ironforge >> Fly to Ironforge, we're going to train our mount.
+step << Dwarf !Paladin
+	.money <35.0
+	.goto Dun Morogh,63.5,50.6
+	.train 152 >> Train riding and buy your mount
+step << Gnome !Warlock
+	.skill riding,75,1
+	.money <35.0
+	.goto Stormwind City,66.2,62.2
+	.fly Ironforge >> Fly to Ironforge, we're going to train our mount.
+step << Gnome !Warlock
+	.money <35.0
+	.goto Dun Morogh,49.2,48.1
+	.train 553 >> Train riding and buy your mount
+step << Gnome !Warlock/Dwarf
+	.zoneskip Wetlands
+	.skill riding,75,1
+	.goto Ironforge,55.5,47.2
+	.fly Wetlands>> Fly to Wetlands
+step << !Gnome Warlock/!Dwarf
+	.skill riding,<75,1
+	.zoneskip Wetlands
+	.goto Stormwind City,66.2,62.2
+	.fly Wetlands>> Fly to Wetlands
+step << Gnome !Warlock/Dwarf !Paladin
+	.zoneskip Wetlands
+	.goto Stormwind City,66.2,62.2
+	.fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.6,60.7
     .home >> Set your Hearthstone to Wetlands
@@ -1668,10 +1871,27 @@ step
     .goto Wetlands,8.4,61.6
     .turnin 1301 >> Turn in James Hyal
     .accept 1302 >> Accept James Hyal
+step << Draenei !Shaman
+	.goto Wetlands,4.8,57.3,50,0
+	.goto Darkshore,31.0,41.1,30.0
+	.goto The Exodar,81.5,52.5,40,0
+	.goto Wetlands,5.2,63.3,50,0
+	.money <35.00
+	>> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Otherwise skip this step
+	.hs >>Then hearth to Menethil Harbor and take the boat to Theramore.
+step << NightElf
+	.goto Wetlands,4.8,57.3,50,0
+	.goto Darkshore,33.1,40.3,30,0
+	.goto Darnassus,38.1,15.3,30,0
+	.goto Wetlands,5.2,63.3,50,0
+	.money <35.00
+	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount.
+	.hs >> Then hearth back to Menethil Harbor and take the boat to Theramore.
 step << Shaman
     #sticky
     #completewith next
-    .zone The Exodar>>Take the boat to Darkshore and then to The Exodar
+    .zone The Exodar >> Take the boat to Darkshore and then to The Exodar. If you have 35g purchase your mount and training otherwise skip this step.
+	.goto The Exodar,81.5,52.5,40,0
 step << Shaman
     .goto The Exodar,29.9,33.0
     .turnin 10491 >> Turn in Call of Air
@@ -1685,7 +1905,7 @@ step << Shaman
     .accept 9508 >> Accept Call of Water
 step << Shaman
     .goto Bloodmyst Isle,26.0,40.9
-	>>Kill Tel'athion
+	>>Kill Tel'athion and loot him for his head
     .complete 9508,1 --Collect Head of Tel'athion (x1)
 step << Shaman
     .goto Bloodmyst Isle,32.2,16.1

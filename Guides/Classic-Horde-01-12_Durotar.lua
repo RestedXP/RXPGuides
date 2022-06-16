@@ -55,6 +55,8 @@ step << !Warlock
 	>>Kill Boars whilst doing other quests
     .complete 788,1 --Mottled Boar (10)
 step << !Warlock
+    #sticky
+    #label mboars
 	#era/som
     .goto Durotar,41.9,63.7
     .complete 788,1 --Mottled Boar (10)
@@ -91,6 +93,8 @@ step
     .goto Durotar,40.6,62.6
     .turnin 790 >>Turn in Sarkoth
     .accept 804 >>Accept Sarkoth
+step << !Warlock
+    #requires mboars
 step << Warlock
     .goto Durotar,40.6,62.6
     >>Finish off killing the Mottled Boars
@@ -233,13 +237,13 @@ step
 step
        #era
 	#sticky
-    #completewith Apples
-    >>Loot Cactuses that you see with apples on them
+    #label Apples
+    >>Loot the Cacti that you see with apples on them
     .complete 4402,1 --Cactus Apple (10)
 step
     #sticky
-    #completewith Peons
-    >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
+    #label Peons
+   .use 16114 >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step << !Warlock
 	#era/som
@@ -267,11 +271,9 @@ step << !Warlock
     .complete 789,1 --Scorpid Worker Tail (10)
 step
     #era
-    #label Apples
-    .goto Durotar,39.8,63.5,2000,0
+    #requires Apples
 step
-    #label Peons
-    .goto Durotar,39.8,63.5,2000,0
+    #requires Peons
 step
     #era
     .goto Durotar,44.0,65.3
@@ -280,7 +282,7 @@ step
 step
 	#label BoarsX
     .goto Durotar,47.09,57.93
-    >>Finish waking the Peons around the trees. Backtrack if you are struggling to find any sleeping.
+   .use 16114 >>Finish waking the Peons around the trees. Backtrack if you are struggling to find any sleeping.
     .complete 5441,1 --Peons Awoken (5)
 step << !Warlock
 	#som
@@ -377,13 +379,9 @@ step << Shaman
 step
     #requires Yarrog
 	.hs >>Hearth to Valley of Trials
-    .goto Durotar,43.3,69.0,100,0
 step
     .goto Durotar,44.6,68.6
     .turnin 6394 >>Turn in Thazz'ril's Pick
-step
-    .goto Durotar,42.6,67.3
-    .vendor >>Vendor trash
 step
     >>Save the healing potion you get, you might need it later for the centaurs
     .goto Durotar,42.8,69.1
@@ -569,7 +567,7 @@ step << Hunter
 step
     #softcore
     #completewith next
-    .goto Durotar,57.3,53.5,120 >>Die at nortern tower outside the Tiragarde Keep. Respawn in Razor Hill
+    .goto Durotar,57.3,53.5,120 >>Die at the northern tower outside of Tiragarde Keep. Respawn in Razor Hill
 step
 	#era/som
     #hardcore
@@ -989,7 +987,7 @@ step << Hunter
 step << Hunter
 	#som
 	#phase 3-6
-    >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
+    .use 15920 >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
     .goto Durotar,59.3,27.6
     .complete 6082,1 --Tame an Armored Scorpid
 step << Hunter
@@ -1037,7 +1035,7 @@ step << Hunter
     .accept 6062 >>Accept Taming the Beast
 step << Hunter
 	#era/som
-    >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
+    .use 15917 >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
     .goto Durotar,51.5,50.0
     .complete 6062,1 --Tame a Dire Mottled Boar
 step << Hunter
@@ -1047,7 +1045,7 @@ step << Hunter
     .accept 6083 >>Accept Taming the Beast
 step << Hunter
 	#era/som
-    >>Don't kill the Armored Scorpids you see. You'll need them later
+   .use 15919 >>Don't kill the Armored Scorpids you see. You'll need them later
     .goto Durotar,59.3,27.6
     .complete 6083,1 --Tame a Surf Crawler
 step << Hunter
@@ -1057,7 +1055,7 @@ step << Hunter
     .accept 6082 >>Accept Taming the Beast
 step << Hunter
 	#era/som
-    >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
+    .use 15920 >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
     .goto Durotar,59.3,27.6
     .complete 6082,1 --Tame an Armored Scorpid
 step << Hunter
@@ -1107,13 +1105,13 @@ step
     .goto Durotar,41.7,25.5,120 >>Jump into Thunder Ridge
 step
 	#softcore
-    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time. Use your Skull & health pot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
+    .use 4945 >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time. Use your Skull & health pot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
 	>>Group up for this quest if you're struggling
     .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 step
 	#hardcore
-    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time & use your Skull & healthpot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
+    .use 4945 >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. Killing his pet first makes sense a lot of the time & use your Skull & healthpot if needed. A good opener is to Sticky Glue him and walk back out of Shadow bolt range to kill his pet without getting hit by him.
     .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 --N add a link for warrior/rogue? Also needs more specific wording per class
@@ -1147,7 +1145,7 @@ step << Hunter
     #completewith next
     .goto Orgrimmar,37.40,52.32
     .vendor >> Buy some apples from Shan'ti to feed to your pet
-    .collect 4536,20 --Shiny Red Apple (20)
+    .collect 4536,10 --Shiny Red Apple (10)
 step
 	#era/som
     .goto Orgrimmar,34.3,36.4
@@ -1181,6 +1179,7 @@ step
     .abandon 812 >>Abandon Need for a Cure
 step
 	#era/som
+    #completewith next
     .hs >> Hearth to Razor Hill
 step << !Warlock !Hunter
 	#era/som
@@ -1287,10 +1286,10 @@ step << Warrior/Shaman
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
 step << Warrior/Shaman
+    #hardcore
     #sticky
     #completewith next
     +This next quest can be quite hard, be extra careful
-    #hardcore
 step << Warrior/Shaman
     #sticky
     #completewith next
@@ -1376,7 +1375,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
 	#era/som
 	#completewith CaravanR
-	>>Keep an eye out for Ghost Howl (rare wolf). He patrols all over northern Mulgore. Kill and loot him for the Demon Scarred Cloak. Accept the quest from the item
+	.use 4854 >>Keep an eye out for Ghost Howl (rare wolf). He patrols all over northern Mulgore. Kill and loot him for the Demon Scarred Cloak. Accept the quest from the item
 	.collect 4854,1,770
 	.unitscan Ghost Howl
 step << Warrior/Shaman
@@ -1384,8 +1383,8 @@ step << Warrior/Shaman
     .goto Mulgore,52.0,61.1,10,0
     .goto Mulgore,50.0,66.4,10,0
     .goto Mulgore,50.4,66.5,10,0
-    .goto Mulgore,52.0,61.1,0
-    .goto Mulgore,50.0,66.4,0
+    .goto Mulgore,52.0,61.1,10,0
+    .goto Mulgore,50.0,66.4,10,0
     .goto Mulgore,50.4,66.5,0
     >>Collect the 'Acorn' looking items on the ground, below the trees
     .complete 771,2 --Ambercorn (2)
@@ -1433,7 +1432,7 @@ step << Warrior/Shaman
 	#era/som
     .goto Mulgore,31.3,49.9
    >>Kill Dwarf mobs for Prospector's Picks
-    >>Use the Picks on the Forge until you've broken 5 of them. This is done in the Dwarf camp.
+   .use 4702 >>Use the Picks on the Forge until you've broken 5 of them. This is done in the Dwarf camp.
 	.collect 4702,5,746,1
     .complete 746,1 --Broken Tools (5)
 --N needs testing
@@ -1528,6 +1527,7 @@ step << Warrior/Shaman
     .turnin 765 >>Turn in Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
 step << Warrior/Shaman
+    #completewith next
     .hs >>Hearth to Razor Hill
 step << Shaman
 	#level 12
@@ -1560,10 +1560,8 @@ step
     .turnin 828 >>Turn in Margoz
     .accept 827 >>Accept Skull Rock
 step << Hunter
-    #sticky
-    #completewith HuntCollar
     .goto Durotar,57.2,12.0
-    +Tame A Surf Crawler
+    .spell 1515 >>Tame A Surf Crawler
 step
 	#era/som
     #label scorp2
@@ -1573,7 +1571,6 @@ step
     .goto Durotar,39.67,18.83,0
     .complete 813,1 --Venomtail Poison Sac (4)
 step << Hunter
-	#label HuntCollar
     .goto Durotar,55.06,9.91,60 >> Run to Skull Rock
 step
 	#era/som
@@ -1595,7 +1592,7 @@ step << Warlock
     .goto Durotar,53.6,8.5,25,0
     .goto Durotar,51.8,8.1,25,0
     .goto Durotar,51.6,9.8
-    >> Go into the Right path of the cave. Continue following the cave, then loot the Chest at the end of it
+    >> Take the right path of the cave. Continue following the cave to loot the chest at the end of it.
     .complete 1501,1 --Tablet of Verga (1)
 step
     >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave.
@@ -1613,7 +1610,7 @@ step
     .accept 829 >>Accept Neeru Fireblade
 step << Shaman
     #completewith next
-    .goto Durotar,52.8,28.7,40>> Go into the cave here
+    .goto Durotar,52.8,28.7,40 >> Go into the cave here
 step << Shaman
     >>Kill the Burning Blade Cultists for the Pouch
     .goto Durotar,52.5,26.7
@@ -1658,7 +1655,7 @@ step << Hunter
     #completewith next
     .goto Orgrimmar,37.40,52.32
     .vendor >> Buy some apples from Shan'ti to feed to your pet
-    .collect 4536,20 --Shiny Red Apple (20)
+    .collect 4536,10 --Shiny Red Apple (10)
 step
 	#som
 	#phase 3-6
@@ -1697,14 +1694,14 @@ step << Priest
     #requires Linen
     >>Skip this step if you already bought a wand, or can get one cheap from the AH
     >>Go to the Tailoring trainer and learn Tailoring.
-    >>Turn all of your linen into bolts, learn Brown Linen Robe from the trainer, buy as many coarse thread as you need to make all the robes you can
+    >>Turn all of your linen into bolts. Learn Brown Linen Robe from the trainer & buy as many coarse thread as you need to make all the robes you can
     .goto Orgrimmar,63.28,50.68
     .collect 6238,9 --Brown Linen Robe (9)
 step << Priest
     #sticky
     #requires Robes
-    >>Skip this step if you already bought a wand, or can get one cheap from the AH
-    >>Train Enchanting. Start disenchanting all of the Brown Linen Robes you made earlier. If you got no Lesser Magic Essence, check the vendor for one and buy it, or come back later
+    >>Skip this step if you already bought a wand or can get one cheap from the AH
+    >>Train Enchanting. Start disenchanting all of the Brown Linen Robes you made earlier. If you didn't get any Lesser Magic Essence, check the vendor for one and buy it, or come back later
     >>Buy a Copper Rod, then make a Runed Copper Rod.
     >>Train Lesser Magic Wand from the trainer. Craft a Lesser Magic Wand.
     .goto Orgrimmar,53.77,38.37
@@ -1741,7 +1738,7 @@ step
 	#softcore
 	#completewith next
     .goto Orgrimmar,52.76,48.95
-	.deathskip >> Go into Ragefire Chasm in the Cleft of Shadow. Die to the mobs inside, then respawn at the Spirit Healer
+	.deathskip >> Go into Ragefire Chasm in the Cleft of Shadow. Die to the mobs inside & respawn at the Spirit Healer.
 step
 	#era/som
 	#softcore

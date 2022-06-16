@@ -19,7 +19,7 @@ step
     .complete 456,1 --Kill Young Nightsaber (x7)
     .complete 456,2 --Kill Young Thistle Boar (x4)
 step
-    .xp 2
+    .xp 2 >> Grind to level 2
 step
     .accept 458 >> Accept The Woodland Protector
 	.goto Teldrassil,59.9,42.5
@@ -27,7 +27,7 @@ step
     .goto Teldrassil,60.9,42.0
 step << Hunter
     .goto Teldrassil,59.8,34.1
-    .xp 4-610 >> Grind until you are 610xp away from level 4 (790/1400)
+    .xp 4-610 >> Grind en route until you are 610xp away from level 4 (790/1400)
 step << Hunter
     .goto Teldrassil,54.6,33.0
     .turnin 4495 >> Turn in A Good Friend
@@ -40,6 +40,10 @@ step << Hunter
     .goto Teldrassil,57.9,45.1
     .turnin 458 >> Turn in The Woodland Protector
     .accept 459 >> Accept The Woodland Protector
+step << Priest/Druid
+    .goto Teldrassil,59.6,40.7
+	.vendor >> Vendor trash and purchase 15x Refreshing Spring Water x15 from Dellylah. Vendor armor if you need to.
+	.collect 159,15 --Collect Refreshing Spring Water (x15)
 step
     #requires balance1
 	.goto Teldrassil,58.7,44.2
@@ -52,12 +56,13 @@ step
 	.accept 3120 >> Accept Verdant Sigil << Druid
 step << Warrior
     .goto Teldrassil,59.3,41.1
-	.vendor >> Go inside and vendor trash
+	.vendor >> Go inside and vendor trash.
 step << Warrior
 	.goto Teldrassil,59.6,38.4
 	.turnin 3116 >> Turn in Simple Sigil
 	.trainer >> Run up the stairs behind the vendors. Train Battle Shout from the trainer
 step << !Hunter
+	.goto Teldrassil,57.6,40.2,100,0 >> Head north, around the big tree
     .goto Teldrassil,59.8,34.1
     .complete 457,1 --Kill Mangy Nightsaber (x7)
     .complete 457,2 --Kill Thistle Boar (x7)
@@ -80,10 +85,11 @@ step
     .goto Teldrassil,60.9,42.0
     .turnin 3519 >> Turn in A Friend in Need
     .accept 3521 >> Accept Iverron's Antidote
-step << Hunter
+step
     #completewith htraining
     .goto Teldrassil,59.3,41.1
-	.vendor >> Go inside, vendor trash and buy 3 stacks of arrows
+	.vendor >> Go inside, vendor trash and buy 3 stacks of arrows << Hunter
+	.vendor >> Go inside, vendor trash << !Hunter
 step
     .goto Teldrassil,57.8,41.7
     .accept 916 >> Accept Webwood Venom
@@ -109,6 +115,7 @@ step
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
     .complete 459,1 --Collect Fel Moss (x8)
 step
+	.goto Teldrassil,56.1,43.6,80,0
     .goto Teldrassil,57.8,45.1
     .turnin 459 >> Turn in The Woodland Protector
 step
@@ -117,14 +124,22 @@ step
     .accept 3522 >> Accept Iverron's Antidote
 step << !Priest
     .goto Teldrassil,59.3,41.1
-	.vendor >> Go inside and vendor trash << !Hunter
-	.vendor >> Go inside and vendor trash. Make sure you have at least 3 or 4 stacks of arrows for the next segment << Hunter
+	.vendor >> Go inside and vendor trash. Unequip and sell your weapon. << !Hunter
+	.vendor >> Go inside and vendor trash. Unequip and sell your weapon. Make sure you have at least 3 or 4 stacks of arrows for the next segment << Hunter
+step << Druid
+    .goto Teldrassil,59.6,40.7
+	.vendor >> Purchase Refreshing Spring Water (x10) from Dellylah.
+	.collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Warrior
     .goto Teldrassil,59.6,38.4
 	.trainer >> Train your level 4 spells
 step << Priest
     .goto Teldrassil,59.5,41.1
-	.vendor >> Go inside, then upstairs and vendor trash
+	.vendor >> Go inside, then upstairs and vendor trash. Unequip and sell your weapon.
+step << Priest
+	.goto Teldrassil,59.5,41.1
+	.vendor >> Buy 10 more water from Lyrai.
+	.collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Priest
 	.goto Teldrassil,59.2,40.4
 	.turnin 3119 >> Turn in Hallowed Sigil
@@ -168,7 +183,7 @@ step
     #sticky
     #label vial1
     .goto Teldrassil,59.9,33.0
-	>>Fill the empty vial at the moonwell
+	.use 5185 >>Fill the Crystal Phial in your bags at the moonwell
     .complete 921,1 --Collect Filled Crystal Phial (x1)
 step << Hunter
     .goto Teldrassil,59.8,34.1
@@ -176,7 +191,6 @@ step << Hunter
     .complete 457,2 --Kill Thistle Boar (x7)
 step
     #requires vial1
-    #sticky
 	#softcore
     #completewith next
     .deathskip >> Die and respawn at the graveyard
@@ -186,10 +200,12 @@ step << Hunter
     .turnin 457 >> Turn in The Balance of Nature
 step << Priest
     #requires vial1
+	.goto Teldrassil,60.0,42.2,80,0 >> Go inside and back to the priest trainer
     .goto Teldrassil,59.2,40.5
     .accept 5622 >> Accept In Favor of Elune
 step
     #requires vial1
+	.goto Teldrassil,57.6,41.6,60,0
     .goto Teldrassil,59.1,39.4
 	>>Take the ramp upwards and climb the big tree
     .turnin 921 >> Turn in Crown of the Earth
@@ -222,7 +238,7 @@ step
     >>Collect 7 Small Spider Legs for a quest later
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
 step
-    .goto Teldrassil,56.1,57.8
+    .goto Teldrassil,56.1,57.8 >> Head to town killing any mobs near the road en route
     .accept 997 >> Accept Denalan's Earth
 step
     .goto Teldrassil,55.9,57.3
@@ -305,6 +321,11 @@ step
     .accept 922 >> Accept Rellian Greenspyre
     .turnin 919 >> Turn in Timberling Sprouts
 step
+	#sticky
+	#completewith grindtime
+	>>Grind heavily en route between quests. There is a large xp grind step coming up.
+	.xp 7+3500 >> Grind to level 7 +3500xp
+step
     .goto Teldrassil,68.0,59.6
 	>>Loot the dresser inside the house
     .complete 2438,1 --Collect Emerald Dreamcatcher (x1)
@@ -316,7 +337,7 @@ step
 step
     #label zenn
     .goto Teldrassil,63.4,58.1
-	>>Fill the empty vial at the moonwell
+	.use 5619 >>Fill the empty vial at the moonwell
     .complete 929,1 --Collect Filled Jade Phial (x1)
 step
     .goto Teldrassil,63.1,61.0
@@ -325,6 +346,7 @@ step
     .complete 488,2 --Collect Strigid Owl Feather (x3)
     .complete 488,3 --Collect Webwood Spider Silk (x3)
 step
+	#grindtime
     .goto Teldrassil,60.7,54.4
 	.xp 7+3500 >> Grind to level 7 +3500xp
 step
@@ -364,7 +386,7 @@ step << Rogue
 step << Warrior
     .goto Teldrassil,56.3,59.5
     >>Repair your weapon. If you have enough money (5s 9c) buy a Gladius from Shalomon. Otherwise, skip this step (you'll come back later)
-    .collect 2488,1 --Collect Gladius
+    .collect 2488,1 --Gladius (1)
 step << Rogue
     .goto Teldrassil,56.31,59.49
     >>Repair your weapon. If you have enough money (3s 82c) buy a Stiletto from Shalomon. Otherwise, skip this step (you'll come back later)
@@ -388,15 +410,18 @@ step
 step
     #label mystics
     #sticky
+	#completewith endmystics
     .goto Teldrassil,69.2,53.3
     .complete 2459,1 --Kill Gnarlpine Mystic (x7)
 	>>Mystics share spawns with Gnarlpine Warriors. You may have to kill them to make the Mystics spawn
 step
     #label jewel
 	.goto Teldrassil,69.2,53.3
-	>>Kill Ferocitas. Loot the Necklace
+	>>Kill Ferocitas. Loot him for the Necklace
     .collect 8049,1,2459,2 --Gnarlpine Necklace (1)
-    >>Right Click the Necklace to loot the Jewel
+step
+    .goto Teldrassil,58.7,55.7
+    .use 8049 >>Right Click the Necklace in your bags to loot the Jewel
     .complete 2459,2 --Collect Tallonkai's Jewel (x1)
 step
     #requires mystics
@@ -404,16 +429,23 @@ step
     >>Finish off Seek Redemption!
     .complete 489,1 --Collect Fel Cone (x3)
 step
+	#requires mystics
+	#label endmystics
     .goto Teldrassil,60.4,56.4
     .turnin 489 >> Turn in Seek Redemption!
 step
+	.goto Teldrassil,57.0,54.7,80,0
+	.goto Teldrassil,54.7,52.9,80,0
+	.goto Teldrassil,53.3,49.0,80,0
+	.goto Teldrassil,52.6,49.4,60,0
+	.goto Teldrassil,51.5,50.2,60,0
     .goto Teldrassil,51.2,50.6
-    >>Kill Lord Melenas. He can be located in many different spawnpoints of the cave, and is quite difficult
+    >>Kill Lord Melenas. He can be located in many different spawnpoints of the cave, and is quite difficult. Loot him for his head
     .complete 932,1 --Collect Melenas' Head (x1)
 step
     #softcore
 	#completewith next
-	.deathskip >>Die on purpose and respawn at the graveyard
+	.deathskip >> Die on purpose and respawn at the graveyard
 step << !Druid
     .goto Teldrassil,56.2,61.7
     .turnin 929 >> Turn in Crown of the Earth
@@ -427,11 +459,14 @@ step
 step
 	#label spiderLegs
 	.goto Teldrassil,42.36,67.26
-	>>Fill the empty vial at the moonwell
+	.use 5621 >>Fill the empty vial at the moonwell
 	.complete 933,1
 step
-    >>Finish off collecting 7 Small Spider Legs
+    .goto Teldrassil,44.5,74.5,70,0
+    .goto Teldrassil,48.9,70.4
+    >>Finish off collecting 7 Small Spider Legs from the spiders in the area
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+--X
 step
     #softcore
 	#completewith next
@@ -457,52 +492,69 @@ step
     .turnin 932 >> Turn in Twisted Hatred
     .turnin 2459 >> Turn in Ferocitas the Dream Eater
 step
-    .goto Teldrassil,51.9,56.4
+    .goto Teldrassil,52.9,57.4,50,0
+    .goto Teldrassil,50.6,56.2,50,0
+    .goto Teldrassil,50.0,53.3,50,0
+    .goto Teldrassil,46.9,49.4,50,0
+    .goto Teldrassil,45.9,49.6
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
     .accept 487 >> Accept The Road to Darnassus
+	.unitscan Moon Priestess Amara
 step
     .goto Teldrassil,46.6,53.0
+	>>Kill Gnarlpine Ambushers in the area
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
 step << Druid
-    .goto Teldrassil,51.9,56.4
+    .goto Teldrassil,52.9,57.4,50,0
+    .goto Teldrassil,50.6,56.2,50,0
+    .goto Teldrassil,50.0,53.3,50,0
+    .goto Teldrassil,46.9,49.4,50,0
+    .goto Teldrassil,45.9,49.6
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
     .turnin 487 >> Turn in The Road to Darnassus
+	.unitscan Moon Priestess Amara
 step
     .goto Teldrassil,38.3,34.3
     .accept 937 >> Accept The Enchanted Glade
 step
     .goto Teldrassil,38.4,34.1
-	>>Fill the empty phial at the moonwell
+	.use 18152 >>Fill the empty phial at the moonwell
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 step
     #completewith harpies
     .goto Teldrassil,34.6,28.9,0
-    >>Kill Harpies. Be careful of the Matriarchs as they heal and do a lot of damage. Try to burst them
+    >>Kill Harpies and loot them for their Belts. Be careful of the Matriarchs as they heal and do a lot of damage. Try to burst them
     .complete 937,1 --Collect Bloodfeather Belt (x6)
 step
     .goto Teldrassil,34.6,28.9
     .accept 931 >> Accept The Shimmering Frond
 step
     .goto Teldrassil,31.6,31.7
-    >>Start the escort quest
+    >>Talk to the panther to start the escort quest
     .accept 938 >> Accept Mist
 step
 	#label harpies
     .goto Teldrassil,38.3,34.4
+	>>Run to Arynia. Be careful as the quest fails if you don't go back after 8 minutes (It only takes about 2 minutes to get back)
     .turnin 938 >> Turn in Mist
     .accept 940 >> Accept Teldrassil
 step
     .goto Teldrassil,34.6,28.9
-    >>Kill Harpies. Be careful of the Matriarchs as they heal and do a lot of damage. Try to burst them
+    >>Kill Harpies and loot them for their Belts. Be careful of the Matriarchs as they heal and do a lot of damage. Try to burst them
     .complete 937,1 --Collect Bloodfeather Belt (x6)
 step
     .goto Teldrassil,38.3,34.4
     .turnin 937 >> Turn in The Enchanted Glade
 step << Druid
-    .xp 10-750
+    .xp 10-750 >> Grind to Level 9 + 5850xp
+step
+	#completewith next
+	#softcore
+    .goto Teldrassil,39.6,35.5
+    .deathwarp >>Die on purpose and respawn at the Darnassus graveyard
 step
     .goto Darnassus,38.3,21.4
-    >>Die on purpose and respawn at the Darnassus graveyard
+	>>Travel to Darnassus
     .turnin 922 >> Turn in Rellian Greenspyre
     .accept 923 >> Accept Tumors
 step
@@ -517,17 +569,24 @@ step
     .goto Darnassus,36.5,86.0
     .accept 2518 >> Accept Tears of the Moon
 step << Druid
+	#completewith next
+	.cast 18960 >> Open your spellbook. Cast Teleport: Moonglade
+	.zoneskip Moonglade
+step << Druid
     .goto Moonglade,56.2,30.8
-    >>Open your spellbook and teleport to Moonglade
     .turnin 5921 >> Turn in Moonglade
     .accept 5929 >> Accept Great Bear Spirit
 step << Druid
     .goto Moonglade,39.1,27.5
     >>Talk to the bear spirit just outside Nighthaven
     .complete 5929,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear.
+	.skipgossip
+step << Druid
+	#completewith next
+	.cast 18960 >> Open your spellbook. Cast Teleport: Moonglade
 step << Druid
     .goto Moonglade,56.2,30.5
-    >>Use your teleport spell to get back to the quest giver
+	>>Return to the questgiver
     .turnin 5929 >> Turn in Great Bear Spirit
     .accept 5931 >> Accept Back to Darnassus
 step
@@ -553,6 +612,7 @@ step << Hunter
 	.trainer >> Train your level 10 spells
 step << Hunter
     .goto Teldrassil,59.9,58.8
+	.use 15921 >> Use the Taming Rod in your bags on a Webwood Lurker
     .complete 6063,1 --Tame a Webwood Lurker
 step << Hunter
     .goto Teldrassil,56.7,59.5
@@ -562,11 +622,16 @@ step
     .goto Teldrassil,60.9,68.4
     .turnin 930 >> Turn in The Glowing Fruit
     .turnin 931 >> Turn in The Shimmering Frond
+step
+	.goto Teldrassil,60.9,68.4
+	.turnin 927 >> Turn in The Moss-twined Heart
+    .isOnQuest 927
 step << Hunter
     .goto Teldrassil,62.6,72.2
+	.use 15922 >> Use the Taming Rod in your bags on a Nightsaber Stalker
     .complete 6101,1 --Tame a Nightsaber Stalker
 step
-    #sticky
+    #softcore
     #completewith next
     .deathskip >> Die and respawn at the graveyard
 step << Hunter
@@ -575,6 +640,7 @@ step << Hunter
     .accept 6102 >> Accept Taming the Beast
 step << Hunter
     .goto Teldrassil,64.7,66.7
+	.use 15923 >> Use the Taming Rod in your bags on a Strigid Screecher
     .complete 6102,1 --Tame a Strigid Screecher
 step << Hunter
     .goto Teldrassil,56.7,59.5
@@ -594,34 +660,51 @@ step
 	>>Kill timberling mobs around the river
     .complete 923,1 --Collect Mossy Tumor (x5)
 step
-    .goto Teldrassil,47.3,26.0
-    .goto Teldrassil,37.9,25.1
+    .goto Teldrassil,47.3,26.0,0
+    .goto Teldrassil,37.9,25.1,0
+    .goto Teldrassil,47.3,26.0,50,0
+    .goto Teldrassil,37.9,25.1,50,0
     .goto Teldrassil,40.7,25.4
-    >>Kill Lady Sathrah, she has 3 possible spawn locations
+    >>Kill Lady Sathrah, she has 3 possible spawn locations. Loot her for her Spinnerets
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
+	.unitscan Lady Sathrah
+step
+	#softcore
+	#completewith next
+    .goto Teldrassil,47.3,26.0,-1
+    .goto Teldrassil,37.9,25.1,-1
+    .goto Teldrassil,40.7,25.4,-1
+	.deathskip >> Die and respawn at the Darnassus Graveyard
 step
     .goto Darnassus,70.6,45.3
-    >>Die and respawn at the Darnassus graveyard
+    >>Travel back to Darnassus
     .accept 6344 >> Accept Nessa Shadowsong
+step
+	.abandon 927 >> Abandon The Moss-twined Heart. You never have an opportunity to turn it in past here.
 step << Warrior
     .goto Darnassus,57.4,34.8
     .turnin 1684 >> Turn in Elanaria
     .accept 1683 >> Accept Vorlus Vilehoof
 step << Warrior
-    #sticky
     #completewith next
-    .goto Teldrassil,48.7,62.2,18
-    >>The path to Vorlus Vilehoof starts here
+    .goto Teldrassil,48.7,62.2,18 >>The path to Vorlus Vilehoof starts here
 step << Warrior
     .goto Teldrassil,47.2,63.7
+	>>Kill Vorlus. Loot him for his Horn
     .complete 1683,1 --Collect Horn of Vorlus (x1)
 step << Warrior
-    #sticky
+    #softcore
     #completewith next
     .goto Teldrassil,43.6,54.3
     .deathskip >>Die on purpose after you get past the furbolg area and respawn at Darnassus
 step << Warrior
+	#softcore
     .goto Darnassus,57.4,34.5
+    .turnin 1683 >> Turn in Vorlus Vilehoof
+step << Warrior
+	#hardcore
+    .goto Darnassus,57.4,34.5
+	>>Run back to Darnassus
     .turnin 1683 >> Turn in Vorlus Vilehoof
 step << Druid
     .goto Darnassus,35.1,8.6
@@ -642,6 +725,7 @@ step
     .accept 2520 >> Accept Sathrah's Sacrifice
 step
     .goto Darnassus,39.7,85.8
+	.use 8155 >> Use Sathrah's Sacrifice in your bags at the fountain
     .complete 2520,1 --Offer the sacrifice at the fountain
 step
     .goto Darnassus,36.6,85.9
@@ -650,7 +734,9 @@ step << Hunter/Warrior/Priest
     .goto Darnassus,57.8,46.6
     .train 227 >>Train staves
 step
+    .goto Darnassus,28.8,41.2,40,0
     .goto Teldrassil,56.3,92.3
+	>>Take the purple portal to Rut'theran
     .turnin 6344 >> Turn in Nessa Shadowsong
     .accept 6341 >> Accept The Bounty of Teldrassil
 step
@@ -658,5 +744,6 @@ step
     .turnin 6341 >> Turn in The Bounty of Teldrassil
     .accept 6342 >> Accept Flight to Auberdine
 step
+    .goto Teldrassil,58.4,94.0
     .fly Darkshore >> Fly to Darkshore
 ]])
