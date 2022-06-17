@@ -12,6 +12,12 @@ SlashCmdList["RXPG"] = function(msg)
 end
 
 function RXP_.CreateOptionsPanel()
+    if not RXP_.settings then
+        RXP_.settings = {gui = {}}
+    elseif not RXP_.settings.gui then
+        RXP_.settings.gui = {}
+    end
+
     local panel = CreateFrame("Frame", "RXPOptions")
     panel.name = "RXP Guides"
     InterfaceOptions_AddCategory(panel)
@@ -373,6 +379,7 @@ function RXP_.CreateOptionsPanel()
 
     local importOptionsTable = {
         type = "group",
+        name = "RestedXP Guide Import",
         -- handler = RXP_,
         -- get = "getProfileOption",
         -- set = "setProfileOption",
@@ -395,12 +402,6 @@ function RXP_.CreateOptionsPanel()
     }
 
     AceConfig:RegisterOptionsTable("RXP Guides/Import", importOptionsTable)
-
-    if not RXP_.settings then
-        RXP_.settings = {gui = {}}
-    elseif not RXP_.settings.gui then
-        RXP_.settings.gui = {}
-    end
 
     RXP_.settings.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
                                    "RXP Guides/Import", "Import", "RXP Guides")
