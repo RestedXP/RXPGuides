@@ -1794,6 +1794,9 @@ step
 .complete 9155,2 --Kill Gangled Cannibal (x10)
     .complete 9155,1 --Kill Risen Hungerer (x10)
 step
+    .goto Ghostlands,47.6,34.7
+    .turnin 9149 >> Turn in The Plagued Coast    
+step
     .goto Ghostlands,46.1,33.6
     .turnin 9155 >> Turn in Down the Dead Scar
 step
@@ -1805,9 +1808,7 @@ step
 step
     .goto Ghostlands,44.8,32.5
     .accept 9173 >> Accept Retaking Windrunner Spire
-step
-    .goto Ghostlands,47.6,34.7
-    .turnin 9149 >> Turn in The Plagued Coast
+
 step
     .goto Ghostlands,46.1,31.8
     .turnin 9150 >> Turn in Salvaging the Past
@@ -1915,6 +1916,7 @@ step
     .accept 9166 >> Accept Deliver the Plans to An'telas
     .turnin 9175 >> Turn in The Lady's Necklace
     .turnin 9173 >> Turn in Retaking Windrunner Spire
+step << BloodElf 
     .accept 9180 >> Accept Journey to Undercity
 step << Priest/Druid/Rogue/Paladin
     .xp 16 >> Grind to 16
@@ -2049,26 +2051,25 @@ step
     .turnin 9282 >> Turn in The Farstrider Enclave
     .accept 9161 >> Accept The Traitor's Shadow
 step
-.goto Ghostlands,66.4,28.6,40 >>Enter the cave here
-step
     #sticky
     #label Juju
-    .goto Ghostlands,60.5,29.1,0
+    .goto Ghostlands,66.4,28.6,40,0
+    .goto Ghostlands,60.5,29.1
     >>Kill and loot trolls for Troll Juju.
     >> Burn the mummified corpses on the ground, usually in the cubbies along the wall. Try to get 8+ corpses burned before starting the escort, you may have to go into the western room
     .complete 9199,1 --Collect Troll Juju (x8)
     .complete 9193,1 --Collect Mummified Troll Remains Burned (x10)
 step << Rogue
     #sticky
-    #completewith Lilatha
-+Loot the chests around the crypt. Make sure you have 20 lockpicking skill, and have looted the Gold Band. Otherwise, don't start the escort
+    #label Lilatha
+>>Loot the chests around the crypt. Make sure you have 20 lockpicking skill, and have looted the Gold Band. Otherwise, don't start the escort
     .complete 9491,1 --Pitted Gold Band (1)
 step
     >>Run into the campfire room
 .goto Ghostlands,62.9,31.8
     .complete 9193,2 --Investigate the Amani Catacombs
 step
-    #label Lilatha
+    #requires Lilatha
 >>ESCORT: Make sure you have at least 8 corpses burned before starting the quest
 .goto Ghostlands,62.9,32.8
     .accept 9212 >> Accept Escape from the Catacombs
