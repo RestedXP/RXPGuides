@@ -134,7 +134,7 @@ step << Warlock
 step << Warlock
     >>Click the Sliver in your bag
     .accept 8338 >> Accept Tainted Arcane Sliver
-    >> Die and respawn at the Spirit Healer, or run back
+    >> Die and respawn at the Spirit Healer or run back
     .goto Eversong Woods,38.2,17.6,100
 step << BloodElf Warlock
     .goto Eversong Woods,37.2,18.9
@@ -362,7 +362,7 @@ step
     .home >> Go back downstairs. Set your Hearthstone to Falconwing Square
     .vendor >> Buy as much level 5 drink as you can afford << Mage/Warlock/Priest
 step
-.goto Eversong Woods,47.7,47.2,10     >>Go outside
+.goto Eversong Woods,47.7,47.2,10 >>Go outside
 step
     .goto Eversong Woods,48.1,46.2
     .accept 8468 >> Accept Wanted: Thaelis the Hungerer
@@ -382,7 +382,7 @@ step << Hunter
     .train 3044 >>Train Arcane Shot
 step << Undead Warrior/Paladin
     .goto Eversong Woods,48.5,45.9
-.vendor >> vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
+.vendor >> Vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
 step << Undead Warrior/Paladin
     .goto Eversong Woods,48.5,45.9
     .money <0.0509
@@ -390,7 +390,7 @@ step << Undead Warrior/Paladin
     .collect 2488,1 --Collect Gladius
 step << Rogue
     .goto Eversong Woods,48.5,45.9
-.vendor >> vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c). You'll come back later if you don't have enough yet
+.vendor >> Vendor trash. Sell your weapon if it gives you enough money for Stiletto (3s 82c). You'll come back later if you don't have enough yet
 step << Rogue
 .money <0.0382
     .goto Eversong Woods,48.5,45.9
@@ -456,7 +456,7 @@ step
     .goto Eversong Woods,50.3,50.8
     .accept 8475 >> Accept The Dead Scar
 step << BloodElf Priest
-    >>Use Power Word: Fortitude (Stam buff) on the Eversong Rangers
+    .spell 1243 >>Use Power Word: Fortitude (Stam buff) on the Eversong Rangers
 .goto Eversong Woods,50.3,51.0
     .complete 9489,1 --Eversong Ranger Blessed (6)
 step
@@ -472,7 +472,7 @@ step
 .goto Eversong Woods,50.3,57.5,60,0
     .goto Eversong Woods,50.2,51.8,60,0
 .goto Eversong Woods,50.3,57.5,60,0
-    .goto Eversong Woods,50.2,51.8,60,0
+    .goto Eversong Woods,50.2,51.8
     .complete 8475,1 --Kill Plaguebone Pillager (x8)
 step
     .goto Eversong Woods,50.3,50.8
@@ -492,7 +492,7 @@ step
 step
     #sticky
     #label stealthNE
-    >>The Night Elf intruders are scattered around the area. Find one, kill it, and loot for a quest drop.
+    >>The Night Elf intruders are scattered around the area. Find one, kill it, and loot for Incriminating Documents.
 .goto Eversong Woods,36.8,60.8,20,0
 .goto Eversong Woods,34.6,62.0,20,0
 .goto Eversong Woods,34.0,60.8,20,0
@@ -509,6 +509,7 @@ step
 #requires stealthNE
         >>Click the Incriminating Documents you received from the Darnassian Scouts.
     .goto Eversong Woods,36.7,57.4
+           .collect 20765,1,8482
 .accept 8482 >> Accept Incriminating Documents
 step
     .goto Eversong Woods,36.7,57.4
@@ -542,6 +543,7 @@ step << Paladin/Priest/Mage
 .goto Eversong Woods,28.1,61.0,20,0
 .goto Eversong Woods,44.3,71.2,120 >>Die and respawn at the spirit Healer, or run to Fairbreeze Village
 step << Warrior/Warlock/Hunter/Rogue
+    #isOnQuest 8482
     .goto Eversong Woods,48.2,46.0
     .turnin 8482 >> Turn in Incriminating Documents
     .accept 8483 >> Accept The Dwarven Spy
@@ -609,8 +611,8 @@ step
 step
     #sticky
 #completewith next
-.goto Eversong Woods,44.0,70.4
-    .vendor >> You can buy some 6 slot bags from Halis if you want. Money is plentiful in the blood elf zones.
+.goto Eversong Woods,44.0,70.4,0,0
+    .vendor >> You can buy some 6 slot bags from Halis if you want. Money is plentiful in the Blood Elf zones.
 step
     #sticky
     #completewith Sunsail
@@ -634,7 +636,7 @@ step
     .complete 8892,2 --Kill Wretched Hooligan (x5)
 step
     .goto Eversong Woods,32.7,69.1
-    >>Look around for boxes of Armaments. There's a lot in the main building on all floors except top, and some in/near the docks and boats
+    >>Look around for boxes of Armaments. There's a lot in the main building on the first 2 floors and some in/near the docks and boats
 .complete 8480,1 --Collect Sin'dorei Armaments (x8)
 step
     .goto Eversong Woods,36.4,66.8
@@ -655,10 +657,9 @@ step
     >>Keep an eye out for Springpaws for some of the Pelts en route to murlocs
     .complete 8491,1 --Collect Springpaw Pelt (x6)
 step
-    .goto Eversong Woods,25.2,73.1,100 >> Run to the Murlocs
-step
     #sticky
     #label Cargo
+    .goto Eversong Woods,25.2,73.1,150 >> Run to the Murlocs    
     .goto Eversong Woods,24.5,69.9
     >>Kill murlocs or loot barrels near the huts for Cargo
     >>Use your Arcane Torrent to interrupt heals << BloodElf
@@ -671,7 +672,7 @@ step
 .goto Eversong Woods,24.3,74.1,30,0
 .goto Eversong Woods,26.0,65.9,30,0
 .goto Eversong Woods,24.3,74.1,30,0
-.goto Eversong Woods,26.0,65.9,30,0
+.goto Eversong Woods,26.0,65.9
 .complete 8885,1 --Collect Ring of Mmmrrrggglll (x1)
     .unitscan Mmmrrrggglll
 step
@@ -704,7 +705,7 @@ step << Hunter
     .turnin 8474 >> Turn in Old Whitebark's Pendant
     .accept 10166 >> Accept Whitebark's Memory
 step << Hunter
-    >>Use the pendant to summon Old Whitebark. Be sure to start max range from him. Kill him and then turn in the quest to him
+    >>Use the pendant to summon Old Whitebark. Be sure to start max range from him. Kill him and then turn in the quest
 .goto Eversong Woods,37.6,86.2
     .turnin 10166 >> Turn in Whitebark's Memory
 step
@@ -725,13 +726,13 @@ step << !Hunter
 .goto Eversong Woods,44.7,69.7
     .turnin 8491 >> Turn in Pelt Collection
 step
-    >> Be aware that Darkwraiths Enrage at low health, and Rotlimb Marauders have an instant-cast 15 damage spell
+    >> Be aware that Darkwraiths Enrage at low health. Rotlimb Marauders also have an instant-cast 15 damage spell
 .goto Eversong Woods,50.9,80.7,60,0
     .goto Eversong Woods,51.3,75.3,60,0
     .goto Eversong Woods,52.9,71.7,60,0
 .goto Eversong Woods,50.9,80.7,60,0
     .goto Eversong Woods,51.3,75.3,60,0
-    .goto Eversong Woods,52.9,71.7,60,0
+    .goto Eversong Woods,52.9,71.7
     .complete 9252,2 --Kill Darkwraith (x4)
     .complete 9252,1 --Kill Rotlimb Marauder (x4)
 step
@@ -748,7 +749,8 @@ step
     >>Wait for the RP event
     .accept 8488 >> Accept Unexpected Results
 step
->>3 mobs will spawn. Let them attack Mirveda first so they aggro onto her, then simply kill them to protect Mirveda.
+        .goto Eversong Woods,54.3,71.0
+>>3 mobs will spawn. Let them attack Mirveda first so they aggro onto her then simply kill them to protect Mirveda.
     .complete 8488,1 --Protect Apprentice Mirveda
 step
 .goto Eversong Woods,54.3,71.0
@@ -771,7 +773,7 @@ step << Undead Warlock
 step << Undead Warlock
 .goto Silvermoon City,63.4,31.9,20,0
 .goto Silvermoon City,49.5,15.0,15,0
-.goto Tirisfal Glades,59.4,67.4,100 >>Take the Orb of Translocation back to Undercity
+.zone Undercity >>Take the Orb of Translocation back to Undercity
 step << Undead Warlock
 .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
 step << Undead Warlock
@@ -780,7 +782,7 @@ step << Undead Warlock
 step << Undead Warlock
 .goto Undercity,66.0,44.1,40 >>Go to the bank area
 step << Undead Warlock
-.goto Undercity,66.2,1.1,18 >>Go up the lift. Exit Undercity
+.goto Undercity,66.2,1.1,20 >>Go up the lift. Exit Undercity
 step << Undead Warlock
     >>Kill the mobs in the tower, then loot the chest
 .goto Tirisfal Glades,51.1,67.6
@@ -791,14 +793,15 @@ step << Undead Warlock
 .turnin 1473 >>Turn in Creature of the Void
 .accept 1471 >>Accept The Binding
 step << Undead Warlock
-    >>Use the Runes of Summoning at the Summoning Circle. Kill the Voidwalker that spawns
+    .use 6284 >>Use the Runes of Summoning at the Summoning Circle. Kill the Voidwalker that spawns
 .goto Undercity,86.6,27.1
 .complete 1471,1 --Kill Summoned Voidwalker (1)
 step << Undead Warlock
 .goto Undercity,85.1,26.0
 .turnin 1471 >>Turn in The Binding
 step << Undead Warlock
-    .goto Eversong Woods,48.2,47.7,150 >> Hearth to Falconwing Square
+    #completewith next
+    .hs >>Hearth to Falconwing Square
 step << !Hunter
 .goto Eversong Woods,47.7,47.2,20 >>Go outside
 step << Paladin/Priest/Mage
@@ -837,8 +840,8 @@ step << Warlock
     >> Buy Suntouched Special Reserve from Vinemaster Suntouched
     .collect 22775,1 --Collect Suntouched Special Reserve
 step << Warlock
-    >>Exit Silvermoon
-    .goto Eversong Woods,56.7,49.6,20
+    .goto Eversong Woods,56.7,49.6
+    .zone Eversong Woods >>Exit Silvermoon City
 step << Mage
 .goto Eversong Woods,48.0,48.1
 .train 205 >>Train Frostbolt r2
@@ -890,7 +893,7 @@ step << Mage
     .turnin 9066 >> Turn in Swift Discipline
 .accept 9402 >> Accept Fetch!
 step << Mage
->> Dive into the water, look for a blue bottle at the bottom
+>> Dive into the water and look for a blue bottle at the bottom
 .goto Eversong Woods,54.9,56.4
 .complete 9402,1 --Azure Phial (1)
 step << Mage
@@ -898,13 +901,13 @@ step << Mage
 .turnin 9402 >>Turn in Fetch!
 .accept 9403 >>Accept The Purest Water
 step << Hunter
-.goto Eversong Woods,55.5,70.5,15 >>Run up the mountain here
+.goto Eversong Woods,55.5,70.5,25 >>Run up the mountain here
 step << Warrior
     .goto Eversong Woods,56.7,49.6,20 >>Enter Silvermoon
 step << Warrior
 .goto Silvermoon City,63.4,31.9,20,0
 .goto Silvermoon City,49.5,15.0,10,0
-.goto Tirisfal Glades,59.4,67.4,100 >>Take the Orb of Translocation back to Undercity
+.zone Undercity >>Take the Orb of Translocation back to Undercity
 step << Warrior
     >>Go to the Brill inn
 .goto Tirisfal Glades,61.9,52.5
@@ -970,13 +973,13 @@ step << BloodElf Hunter
     .goto Eversong Woods,61.4,65.8,40,0
 .goto Eversong Woods,60.1,58.9,40,0
     .goto Eversong Woods,62.1,59.8,40,0
-    .goto Eversong Woods,61.4,65.8,40,0
+    .goto Eversong Woods,61.4,65.8
     .complete 9484,1 --Tame a Crazed Dragonhawk
 step << Paladin/Rogue
-    >>Train Blacksmithing. You'll get mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You can skip Blacksmithing if you wish
+    >>Train Blacksmithing. You'll get Mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You can skip Blacksmithing if you wish
 .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
-    .vendor >> vendor trash, repair
+    .vendor >> Vendor trash & repair
     .train 2018 >>Train Blacksmithing
 step << !Paladin !Rogue
     .goto Eversong Woods,59.5,62.6
@@ -987,7 +990,7 @@ step << BloodElf Hunter
     .turnin 9484 >> Turn in Taming the Beast
     .accept 9486 >> Accept Taming the Beast
 step << BloodElf Hunter
-    .use 23702 >>Click the taming rod in your bag on a Springpaw. Try to do it at max range (30 yards)
+    .use 23702 >>Click the Taming Rod in your bag on a Springpaw. Try to do it at max range (30 yards)
 .goto Eversong Woods,63.2,64.7,30,0
     .goto Eversong Woods,63.2,63.5,30,0
     .goto Eversong Woods,64.0,63.8,30,0
@@ -1019,14 +1022,15 @@ step
 .goto Eversong Woods,70.5,72.3
     .accept 8479 >> Accept Zul'Marosh
 step
->>Zul'Marosh is on the top floor of the hut. Kill & loot him. He drops a quest.
+>>Zul'Marosh is on the top floor of the hut. Kill & loot him for his head and a quest drop.
     >>Zul'Marosh also has a guaranteed chance to drop a white or green weapon but a longer respawn << Paladin/Rogue/Hunter/Warrior
     .goto Eversong Woods,62.5,79.7
     .complete 8479,1 --Collect Chieftain Zul'Marosh's Head (x1)
     .collect 23249,1 --Collect Amani Invasion Plans (x1)
 step
     .goto Eversong Woods,70.5,72.4
->>Click the Invasion Plans in your bag
+>>Click the Amani Invasion Plans in your bag
+    .collect 23249,1,9360
     .accept 9360 >> Accept Amani Invasion
 step
     #label Marosh
@@ -1039,6 +1043,7 @@ step
     .complete 8476,1 --Kill Amani Berserker (x5)
 .complete 8476,2 --Kill Amani Axe Thrower (x5)
 step << BloodElf Hunter
+    .use 30105
     .goto Ghostlands,45.6,21.1
     .complete 9485,1 --Tame a Mistbat
 step << BloodElf Hunter
@@ -1069,6 +1074,7 @@ step << BloodElf Hunter
     .turnin 9130 >> Turn in Goods from Silvermoon City
     .accept 9133 >> Accept Fly to Silvermoon City
 step << BloodElf Hunter
+    #completewith next
     .hs >> Hearth to Fairbreeze Village
 step << BloodElf Hunter
     .goto Eversong Woods,44.0,70.7
@@ -1145,7 +1151,7 @@ step
     .accept 8889 >> Accept Deactivating the Spire
     .accept 9394 >> Accept Where's Wyllithen?
 step << Hunter
->>Tame a level 9 Elder Springpaw (Claw rank 2)
+.tame 15652 >>Tame a level 9 Elder Springpaw (level 9 comes with Claw rank 2)
     .goto Eversong Woods,68.7,46.9
     .turnin 9394 >> Turn in Where's Wyllithen?
     .accept 8894 >> Accept Cleaning up the Grounds
@@ -1296,7 +1302,7 @@ step << BloodElf Hunter
     .accept 9135 >> Accept Return to Quartermaster Lymel
 step << BloodElf Hunter
     #completewith next
-    .goto Eversong Woods,54.4,50.8,0
+    .goto Eversong Woods,54.4,50.8
     .fly Tranquillien >> Fly to Tranquillien
 step << BloodElf Hunter
     .goto Ghostlands,47.3,29.1
@@ -1304,7 +1310,8 @@ step << BloodElf Hunter
 step << Paladin/Rogue
     .skill blacksmithing >>Train Mining. You're now able to mine nodes for Rough Stones which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour).
 .goto Silvermoon City,78.9,43.3
-    .train 2580 >>Train Mining, cast Find Minerals
+    .train 2580 >>Train Mining
+    .cast 2580 >>Cast Find Minerals
 step << Paladin/Rogue
 .goto Silvermoon City,78.4,42.5
     .collect 2901,1 >> Buy a Mining Pick
@@ -1323,7 +1330,7 @@ step << BloodElf/Undead
     >>Finish off getting Springpaw Pelts
     .complete 8491,1 --Collect Springpaw Pelt (x6)
 step << Undead/BloodElf !Hunter
-   >>Run to Fairbreeze Village. Hearth to Falconwing and run if its up
+   .cooldown item,6948,>0 >>Run to Fairbreeze Village. Hearth to Falconwing and run if its up
 .goto Eversong Woods,46.9,71.8
     .turnin 9252 >> Turn in Defending Fairbreeze Village
     .accept 9253 >> Accept Runewarden Deryan
@@ -1364,7 +1371,7 @@ step << !BloodElf/!Hunter
 step << !BloodElf/!Hunter
     >> Grind back towards the quest giver for the last 1-2 treants.
     .complete 8473,1 --Kill Withered Green Keeper (x10)
-    *Be careful as the Green Keepers have a double-damage Heroic Strike spell
+    *Be careful as the Green Keepers have a double-damage Heroic Strike ability
 step << !BloodElf/!Hunter
     #requires oldwhitebark
     .goto Eversong Woods,34.1,80.0
@@ -1372,7 +1379,7 @@ step << !BloodElf/!Hunter
     .turnin 8474 >> Turn in Old Whitebark's Pendant
     .accept 10166 >> Accept Whitebark's Memory
 step << !BloodElf/!Hunter
-    >>Use the pendant to summon Old Whitebark. Kill him and then turn in the quest to him.
+   .use 28209 >>Use the pendant to summon Old Whitebark. Kill him and then turn in the quest to him.
     >> Be sure to start max range from him. << Hunter
 .goto Eversong Woods,37.6,86.2
     .turnin 10166 >> Turn in Whitebark's Memory
@@ -1408,8 +1415,8 @@ step
     .goto Ghostlands,54.9,15.3,50,0
     .goto Ghostlands,46.6,14.0,50,0
     .goto Ghostlands,47.7,19.8,50,0
-    .goto Ghostlands,54.9,15.3,50,0
-    >>Kill Mistbats and Ghostclaws. You had back across the bridge after, don't go too far.
+    .goto Ghostlands,54.9,15.3
+    >>Kill Mistbats and Ghostclaws. You head back across the bridge after so don't go too far.
 .goto Ghostlands,51.6,15.5
     .complete 9147,1 --Collect Plagued Blood Sample (x4)
 step
@@ -1470,14 +1477,15 @@ step << BloodElf Warlock
     .turnin 9133 >> Turn in Fly to Silvermoon City
     .accept 9134 >> Accept Skymistress Gloaming
 step << BloodElf Warlock
-.goto Silvermoon City,75.3,44.5,20 >>Enter the building, go downstairs
+.goto Silvermoon City,75.3,44.5,20 >>Enter the building & go downstairs
 step << BloodElf Warlock
     .goto Silvermoon City,74.4,47.2
-    >>Use Voidwalker from now on
+    >>Use your Voidwalker from now on
     .turnin 9619 >>Turnin The Rune of Summoning
     .train 755 >>Train Health Funnel
     .train 705 >>Train Shadow Bolt r3
 step << BloodElf Warlock
+    #completewith next
     .hs >> Hearth to Tranquillien
 step
     .goto Ghostlands,57.6,14.9
@@ -1516,12 +1524,12 @@ step
 .goto Ghostlands,72.3,32.3
     .vendor >> Buy Food/drink if needed. Be sure to buy the level 5 fish as it's VERY cheap
 step
-    >>Kill any Ghostclaw Lynxes you see
-.goto Ghostlands,68.5,33.1,40,0
+    >>Kill any Ghostclaw Lynx you see
+    .goto Ghostlands,68.5,33.1,40,0
     .goto Ghostlands,67.3,38.0,40,0
     .goto Ghostlands,68.5,46.3,40,0
     .goto Ghostlands,76.2,35.2,40,0
-.goto Ghostlands,68.5,33.1,40,0
+    .goto Ghostlands,68.5,33.1,40,0
     .goto Ghostlands,67.3,38.0,40,0
     .goto Ghostlands,68.5,46.3,40,0
     .goto Ghostlands,76.2,35.2,40,0
@@ -1536,7 +1544,6 @@ step
     .accept 9274 >>Accept Spirits of the Drowned
 step
     #sticky
-    #completewith spiritend
     #label Wavefront
 >>Collect Medallions from mud piles at the bottom of the lake as you kill Apparitions
 .goto Ghostlands,72.2,28.2,30,0
@@ -1544,7 +1551,7 @@ step
 .goto Ghostlands,73.6,18.3,30,0
 .goto Ghostlands,71.4,15.5,30,0
 .goto Ghostlands,70.1,19.0,30,0
-.goto Ghostlands,70.6,22.0,30,0
+.goto Ghostlands,70.6,22.0
     .complete 9157,1 --Collect Wavefront Medallion (x8)
 step
     #sticky
@@ -1555,11 +1562,10 @@ step
 .goto Ghostlands,73.6,18.3,30,0
 .goto Ghostlands,71.4,15.5,30,0
 .goto Ghostlands,70.1,19.0,30,0
-.goto Ghostlands,70.6,22.0,30,0
+.goto Ghostlands,70.6,22.0
     .complete 9274,2 --Kill Vengeful Apparition (x8)
     .complete 9274,1 --Kill Ravening Apparition (x8)
 step
-    #label spiritend
     #requires Wavefront
 .goto Ghostlands,72.3,19.0
     .turnin 9157 >> Turn in Forgotten Rituals
@@ -1581,7 +1587,7 @@ step
 .goto Ghostlands,61.2,12.0
     .xp 13+10150 >>Grind to 10150+/11000xp
 step << Priest/Mage/Warlock/Rogue/Druid
-    .goto Ghostlands,43.9,25.7,200 >>Die and respawn at the Spirit Healer, or run back
+    .goto Ghostlands,43.9,25.7,200 >>Die and respawn at the Spirit Healer or run back
 step << !Priest !Mage !Warlock !Rogue !Druid
     .goto Ghostlands,43.9,25.7,200 >> Run back to Tranquillien
 step
@@ -1597,7 +1603,7 @@ step
     .accept 9171 >> Accept Culinary Crunch
 step
     #label Poster3
->>Click the wanted poster
+>>Click the Wanted Poster
 .goto Ghostlands,48.2,31.6
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran
 step << !Warlock
@@ -1663,7 +1669,6 @@ step << Priest/Mage/Warlock
     .goto Ghostlands,45.4,30.5
     .fly Silvermoon >> Fly to Silvermoon City
 step << BloodElf Mage
->>Choose whichever. I prefer the staff, Tactics prefers the Orb. Up to you bossman
 .goto Eversong Woods,55.7,54.5
 .turnin 9404 >>Turn in Recently Living
 step << BloodElf Priest/BloodElf Mage
@@ -1706,7 +1711,7 @@ step
     .goto Ghostlands,32.4,29.0,40,0
 .goto Ghostlands,35.7,33.5,40,0
     .goto Ghostlands,31.4,35.9,40,0
-    .goto Ghostlands,32.4,29.0,40,0
+    .goto Ghostlands,32.4,29.0
     .complete 9150,1 --Collect Crystallized Mana Essence (x8)
 step
     >>Loot the box in the caravan surrounded by Ghouls
@@ -1726,7 +1731,7 @@ step << BloodElf Rogue
 step << BloodElf Rogue
     #sticky
     #label Handkerchief
->>Stealth, then pickpocket the Sentinel Leader for Lacy Handkerchief. She patrols around the camp - If you pull her, just run and reset her
+.cast 921 >>Stealth, then pickpocket the Sentinel Leader for Lacy Handkerchief. She patrols around the camp - If you pull her, run away and reset her
 .goto Ghostlands,33.0,11.2
 .collect 23686 --Collect Lacy Handkerchief (x1)
 step
@@ -1759,7 +1764,7 @@ step
 step
     #sticky
     #completewith next
->>Also kill any Vampiric Mistbats you see, but you can get more later
+>>Also kill any Vampiric Mistbats you see. This doesn't need to be finished now as you can kill more later
 .complete 9159,1 --Kill Vampiric Mistbat (x10)
 step
     >>Kill Spiders in the area, be careful as they poison
@@ -1785,7 +1790,7 @@ step
     .goto Ghostlands,37.9,47.2,60,0
     .goto Ghostlands,39.4,30.1,60,0
     .goto Ghostlands,37.9,47.2,60,0
-    .goto Ghostlands,39.4,30.1,60,0
+    .goto Ghostlands,39.4,30.1
 .complete 9155,2 --Kill Gangled Cannibal (x10)
     .complete 9155,1 --Kill Risen Hungerer (x10)
 step
@@ -1835,7 +1840,7 @@ step
     .goto Ghostlands,43.8,49.6,50,0
 .goto Ghostlands,42.1,39.2,50,0
     .goto Ghostlands,50.8,50.3,50,0
-    .goto Ghostlands,43.8,49.6,50,0
+    .goto Ghostlands,43.8,49.6
     .complete 9159,1 --Kill Vampiric Mistbat (x10)
 step
     .goto Ghostlands,46.2,56.4
@@ -1865,7 +1870,7 @@ step
     .goto Ghostlands,44.1,57.6,30,0
     .goto Ghostlands,16.5,62.5,30,0
     .goto Ghostlands,44.1,57.6,30,0
-.goto Ghostlands,16.5,62.5
+    .goto Ghostlands,16.5,62.5
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step
@@ -1878,7 +1883,7 @@ step
 .goto Ghostlands,20.4,48.7,30,0
 .goto Ghostlands,19.6,45.2,30,0
 .goto Ghostlands,20.3,42.3,30,0
-.goto Ghostlands,17.3,43.4,30,0
+.goto Ghostlands,17.3,43.4
     .complete 9140,1 --Collect Phantasmal Substance (x6)
     .complete 9140,2 --Collect Gargoyle Fragment (x4)
 step
@@ -1892,7 +1897,7 @@ step << !Paladin
 .goto Ghostlands,10.5,22.6
     .complete 9163,3 --Collect Night Elf Plans: Scrying on the Sin'dorei (x1)
 step << Paladin
-     >> Run on top of the plans, then use Divine Protection and IMMEDIATELY loot the scroll. You'll die after and respawn at the spirit healer.
+     >> Run on top of the plans then use Divine Protection and IMMEDIATELY loot the scroll. You'll die after and respawn at the spirit healer.
 .goto Ghostlands,10.5,22.6
     .complete 9163,3 --Collect Night Elf Plans: Scrying on the Sin'dorei (x1)
 step
@@ -2172,12 +2177,12 @@ step << Hunter
 .goto Ghostlands,65.1,79.2
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
 step
-#requires Catlords
-.goto Ghostlands,58.2,65.1
->>Kill the Night Elves around the camp for a Crystal Controlling Orb.
-.collect 23191,1 --Collect Crystal Controlling Orb (x1)
+    #requires Catlords
+    .goto Ghostlands,58.2,65.1
+    >>Kill the Night Elves around the camp for a Crystal Controlling Orb.
+    .collect 23191,1 --Collect Crystal Controlling Orb (x1)
 step
->>Use the Crystal Controlling Orb on the Moon Crystal.
+    .use 23191 >>Use the Crystal Controlling Orb on the Moon Crystal.
     .goto Ghostlands,58.2,65.1
     .complete 9169,1 --Collect Night Elf Moon Crystal Deactivated (x1)
 step
@@ -2199,10 +2204,10 @@ step
     .goto Ghostlands,60.3,35.8
     .turnin 9169 >> Turn in Deactivate An'owyn
 step << Rogue
-    >>Run back to Tranquillien. Choose the Dagger on turnin. Save this dagger (or any dagger), as you'll need one for later
+    >>Run back to Tranquillien. Choose the Dagger on turnin. Save this dagger (or any dagger) as you'll need one for later
 .goto Ghostlands,47.2,34.3
     .turnin 10548 >>Turn in The Sad Truth
-    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
+    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers again. Buy either if they're up if you didn't get them earlier
 step
     .goto Ghostlands,45.9,32.1
     .accept 9151 >> Accept The Sanctum of the Sun
@@ -2221,7 +2226,7 @@ step << Rogue/Hunter/Druid
     .vendor >> Purchase Deathstalker's Vest. Equip it
     .collect 22987,1 --Collect Deathstalker's Vest (1)
 step << Druid
-    >>Teleport to Moonglade
+    .cast 18960 >>Teleport to Moonglade
 .goto Moonglade,52.5,40.6
     .train 770 >>Train Faerie Fire
     .train 1062 >>Train Entangling Roots r2
@@ -2309,7 +2314,7 @@ step << !Rogue !Hunter
 .goto Ghostlands,37.8,51.9,60,0
 .goto Ghostlands,37.8,51.9,60,0
     .goto Ghostlands,36.3,70.4,60,0
-.goto Ghostlands,37.8,51.9,60,0
+.goto Ghostlands,37.8,51.9
     >>Grind down The Dead Scar, killing mobs and looting them for Rotting Hearts and Spinal Dust. Be aware that Dreadbone Sentinels interrupt (Shield Bash)
     *Deathcage Sorcerer and Dreadbone Sentinels drop the Spinal Dust. Risen Stalkers and Ghouls drop the Hearts.
     .complete 9216,1 --Collect Rotting Heart (x10)
@@ -2323,12 +2328,13 @@ step
 .goto Ghostlands,31.7,74.3,40,0
 .goto Ghostlands,31.7,74.3,40,0
 .goto Ghostlands,38.4,77.5,40,0
-.goto Ghostlands,31.7,74.3,40,0
+.goto Ghostlands,31.7,74.3
 >>Kill mobs for War on Deatholme
 .complete 9220,1 --Kill Eye of Dar'Khan (x5)
     .complete 9220,2 --Kill Nerubis Centurion (x6)
 .complete 9220,3 --Kill Wailer (x6)
 step
+    #completewith next
     .hs >> Hearth to Tranquillien
 step
     >>Go upstairs
@@ -2390,16 +2396,16 @@ step
     #label Varnis
     >>Talk to Apprentice Varnis (the corpse on the table) and rescue him
     .skipgossip
-.goto Ghostlands,41.0,83.2
+    .goto Ghostlands,41.0,83.2
     .complete 9164,2 --Apprentice Varnis Rescued
 step
     #sticky
     #completewith Borgoth
     >> Kill Borgoth. He's a big abomination that can spawn inside of one of the two Slaughterhouses
-.goto Ghostlands,41.3,83.0,20,0
+    .goto Ghostlands,41.3,83.0,20,0
     .goto Ghostlands,32.7,90.3,20,0
-.goto Ghostlands,41.3,83.0,20,0
-    .goto Ghostlands,32.7,90.3,20,0
+    .goto Ghostlands,41.3,83.0,20,0
+    .goto Ghostlands,32.7,90.3
     .complete 9170,2 --Kill Borgoth the Bloodletter (x1)
     .unitscan Borgoth the Bloodletter
 step
@@ -2415,19 +2421,19 @@ step
     #label Borgoth
     #requires Varnis
     #completewith next
-+Kill Masophet. He's inside one of the ziggurats
++Kill Masophet the Black. He's inside one of the ziggurats
 .goto Ghostlands,35.8,89.1,30,0
     .goto Ghostlands,29.3,88.9,30,0
 .goto Ghostlands,35.8,89.1,30,0
     .goto Ghostlands,29.3,88.9,30,0
 .goto Ghostlands,35.8,89.1,30,0
-    .goto Ghostlands,29.3,88.9,30,0
+    .goto Ghostlands,29.3,88.9
     .complete 9170,4 --Kill Masophet the Black (x1)
     .unitscan Masophet the Black
 step
 #sticky
 #completewith next
->>Kill Dar'Khan. You will need a group for this quest. You can skip it, but i HIGHLY recommend doing this quest due to how big the weapon upgrades are, how much money and experience you get, etc
+>>Kill Dar'Khan. You may need a group for this quest. You can skip it, but we HIGHLY recommend doing this quest due to how much of an upgrade the weapons are, how much money and experience you get, etc
     *You can use mana tap to ranged pull mobs out of the room << BloodElf
     *Be sure to use the weapon you got from an earlier quest then swap to your normal weapon
     .goto Ghostlands,33.0,81.3
@@ -2440,7 +2446,7 @@ step
     .turnin 9170 >> Turn in Dar'Khan's Lieutenants
 step << BloodElf Hunter
 .isQuestComplete 9167
->>Choose the 2h sword as it's incredible for melee damage/melee weaving (and the bow is too fast)
+>>Choose the 2h sword as it's incredible for melee damage/melee weaving (the bow is too fast)
     .goto Ghostlands,55.2,48.8
     .turnin 9167 >> Turn in The Traitor's Destruction
 step << BloodElf Hunter
@@ -2469,9 +2475,8 @@ step << !BloodElf
 .isQuestTurnedIn 9167
 .accept 9811 >> Accept Friend of the Sin'dorei
 step
-    #sticky
 #completewith next
-    >>Hearth to Tranquillien if it's up. Otherwise, just run back
+    .cooldown item,6948,>0 >>Hearth to Tranquillien if it's up. Otherwise, just run back 
 .hs >> Hearth to Tranquillien
 step
     .goto Ghostlands,47.6,34.9
@@ -2500,7 +2505,7 @@ step << Druid
     #sticky
     #completewith Hero
     .goto Silvermoon City,71.5,55.8
-    >>Train Rebirth if you're going to be playing with other players, otherwise, skip it (especially nice to skip due to lack of money at this level)
+    >>Train Rebirth if you're going to be playing with other players. Otherwise, skip it (especially nice to skip due to lack of money at this level)
     .trainer >>Train Rebirth
 step << Druid
     .goto Silvermoon City,71.5,55.8
@@ -2637,7 +2642,8 @@ step << BloodElf
 step
 .goto Undercity,66.0,44.1,40 >>Go to the bank area
 step
-.goto Undercity,66.2,1.1,18 >>Go up the lift. Exit Undercity
+.goto Undercity,66.2,1.1,25 >>Go up the lift.
+    .zone Tirisfal Glades >>Exit Undercity
 step
     #sticky
     #completewith next
