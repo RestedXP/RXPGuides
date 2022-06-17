@@ -1668,7 +1668,6 @@ function RXP_.functions.xp(self,...)
             element.textOnly = true
         end
         if not element.xp then element.xp = 0 end
-        element.tooltipText = RXP_.icons.xp..element.text
         return element
     end
     local currentXP = UnitXP("player")
