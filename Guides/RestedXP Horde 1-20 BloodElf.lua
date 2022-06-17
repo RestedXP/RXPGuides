@@ -1136,7 +1136,7 @@ step
     .accept 8889 >> Accept Deactivating the Spire
     .accept 9394 >> Accept Where's Wyllithen?
 step << Hunter
-.spell 1515 >>Tame a level 9 Elder Springpaw (They start with Claw rank 2)
+.tame 15652 >>Tame a level 9 Elder Springpaw (They start with Claw rank 2)
     .goto Eversong Woods,68.7,46.9
     .turnin 9394 >> Turn in Where's Wyllithen?
     .accept 8894 >> Accept Cleaning up the Grounds
