@@ -1,5 +1,7 @@
 local addonName = ...
 
+local AceConfig = LibStub("AceConfig-3.0")
+
 SLASH_RXPG1 = "/rxp"
 SLASH_RXPG2 = "/rxpg"
 SLASH_RXPG3 = "/rxpguides"
@@ -369,4 +371,44 @@ function RXP_.CreateOptionsPanel()
 
     end
 
+    local importOptionsTable = {
+        type = "group",
+        -- handler = RXP_,
+        -- get = "getProfileOption",
+        -- set = "setProfileOption",
+        args = {
+            importBox = {
+                type = 'input',
+                name = 'Guides to import',
+                width = "full",
+                multiline = 10,
+                usage = "Usage string",
+                set = function() print("test") end,
+                validate = function(...) print("test validation") end
+            },
+            import = {
+                type = 'execute',
+                name = "Import",
+                func = function(...) print("Test import") end
+            }
+        }
+    }
+
+    AceConfig:RegisterOptionsTable("RXP Guides/Import", importOptionsTable)
+
+    if not RXP_.settings then
+        RXP_.settings = {gui = {}}
+    elseif not RXP_.settings.gui then
+        RXP_.settings.gui = {}
+    end
+
+    RXP_.settings.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                                   "RXP Guides/Import", "Import", "RXP Guides")
+end
+
+function RXP_:getProfileOption(info) return RXP_.db.profile[info[#info]] end
+
+function RXP_:setProfileOption(info, value)
+    local key = info[#info]
+    RXP_.db.profile[key] = value
 end

@@ -1416,6 +1416,16 @@ function RXPFrame.GenerateMenuTable()
         notCheckable = 1,
         func = SlashCmdList.RXPG
     })
+
+    table.insert(menuList, {
+        text = "Import guide",
+        notCheckable = 1,
+        func = function()
+            InterfaceOptionsFrame_OpenToCategory(RXP_.settings.gui.import)
+            InterfaceOptionsFrame_OpenToCategory(RXP_.settings.gui.import)
+        end
+    })
+
     table.insert(menuList, {
         text = "Close",
         notCheckable = 1,
