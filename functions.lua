@@ -3267,3 +3267,75 @@ function RXP_.functions.rescue()
 		return true
 	end
 end
+
+function RXP_.GetCurrentStageId()
+    local criteriaId = select(9,C_Scenario.GetCriteriaInfo(1))
+    for i = 1,1e6 do
+        local criteria = select(9,C_Scenario.GetCriteriaInfoByStep(i,1))
+        if criteria == criteriaId then print("Current Scenario Stage ID: "..i) end
+    end
+end
+
+events.scenario = "CRITERIA_UPDATE"
+RXP_.icons.scenario = RXP_.icons.complete
+
+function RXP_.functions.scenario(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,stage,criteriaIndex,objMax = ...
+        stage = tonumber(stage)
+        criteriaIndex = tonumber(criteriaIndex)
+        if not (stage and criteriaIndex) then
+            RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
+            return
+        end
+
+        element.objMax = tonumber(objMax)
+        element.dynamicText = true
+
+        element.stage = stage
+        element.criteriaIndex = criteriaIndex
+        element.rawtext = text or ""
+        element.text = text or ""
+        element.requestFromServer = true
+        element.criteria = ""
+        return element
+    end
+    local event = ...
+
+    local element = self.element
+    local step = element.step
+    local criteriaIndex = element.criteriaIndex
+    local criteriaString, criteriaType, completed, quantity, totalQuantity, flags, assetID, quantityString,
+          criteriaID, duration, elapsed, _, isWeightedProgress = C_Scenario.GetCriteriaInfoByStep(element.stage,criteriaIndex)
+    local required = element.objMax or totalQuantity
+    local scenario = C_ScenarioInfo.GetScenarioInfo()
+    local currentStage = scenario.currentStage
+    local currentObj = select(9,C_Scenario.GetCriteriaInfo(criteriaIndex))
+    if criteriaID == currentObj then
+        element.stagePos = currentStage
+    end
+
+    --print(required,quantity)
+    if not (required and quantity) then
+        if completed then
+            required = 1
+            quantity = 1
+        else
+            required = 1
+            quantity = 0
+        end
+    end
+    if not criteriaString then return end
+    local fulfilled = math.min(required,quantity)
+    element.criteria = string.format("%s: %d/%d",criteriaString,fulfilled,required)
+    if element.rawtext ~= "" then
+        element.criteria = "\n"..element.criteria
+    end
+
+    if completed or (element.stagePos and currentStage > element.stagePos) then
+        RXP_.SetElementComplete(self)
+    end
+
+    element.text = element.rawtext .. element.criteria
+end
