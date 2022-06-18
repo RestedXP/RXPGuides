@@ -83,15 +83,25 @@ local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or GetNumGossipActive
 local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or GetNumGossipAvailableQuests
 local SelectOption = C_GossipInfo.SelectOption or SelectGossipOption
 
-local IsQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
+RXP_.recentTurnIn = {}
 
-if not IsQuestTurnedIn then
-    IsQuestTurnedIn = IsQuestFlaggedCompleted
-    if not IsQuestTurnedIn then
-        IsQuestTurnedIn = function(id)
+local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
+if not IsTurnedIn then
+    IsTurnedIn = IsQuestFlaggedCompleted
+    if not IsTurnedIn then
+        IsTurnedIn = function(id)
             return GetQuestsCompleted()[id]
         end
     end
+end
+
+local IsQuestTurnedIn = function(id)
+    local recentTurnIn = RXP_.recentTurnIn[id]
+    local isQuestTurnedIn = IsTurnedIn(id)
+    if isQuestTurnedIn then
+        RXP_.recentTurnIn[id] = nil
+    end
+    return isQuestTurnedIn or (recentTurnIn and GetTime() - recentTurnIn < 2)
 end
 
 local function IsQuestComplete(id)
@@ -557,7 +567,7 @@ function RXP_.functions.accept(self,...)
         end
 
         local icon = RXP_.icons.accept
-        local skip
+        --local skip
         if step.active and db and type(db.QueryQuest) == "function" and not isQuestAccepted and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if quest then
@@ -574,12 +584,12 @@ function RXP_.functions.accept(self,...)
                     end
                     element.tooltip = tooltip
                     element.icon = RXP_.icons.error
-                    skip = RXPData.skipMissingPreReqs
+                    --skip = RXPData.skipMissingPreReqs
                 elseif not doable then
                     local tooltip = RXP_.colors.tooltip.."Missing pre-requisites|r"
                     element.tooltip = tooltip
                     element.icon = RXP_.icons.error
-                    skip = RXPData.skipMissingPreReqs
+                    --skip = RXPData.skipMissingPreReqs
                 else
                     element.icon = icon
                     element.tooltip = nil
@@ -596,8 +606,8 @@ function RXP_.functions.accept(self,...)
 
         if isQuestAccepted then
             RXP_.SetElementComplete(self,true)
-        elseif skip then
-            RXP_.SetElementComplete(self)
+        --elseif skip then
+        --    RXP_.SetElementComplete(self)
         elseif event == "QUEST_REMOVED" and arg1 == id and not element.skip then
             RXP_.SetElementIncomplete(self)
         end
@@ -677,7 +687,7 @@ function RXP_.functions.daily(self,text,...)
             end
 
             local icon = RXP_.icons.daily
-            local skip
+            --local skip
 
             if #ids == 1 and step.active and db and type(db.QueryQuest) == "function" and not isQuestAccepted and not RXP_.skipPreReq[id] then
                 local quest = db:GetQuest(id)
@@ -695,12 +705,12 @@ function RXP_.functions.daily(self,text,...)
                         end
                         element.tooltip = tooltip
                         element.icon = RXP_.icons.error
-                        skip = RXPData.skipMissingPreReqs
+                        --skip = RXPData.skipMissingPreReqs
                     elseif not doable then
                         local tooltip = RXP_.colors.tooltip.."Missing pre-requisites|r"
                         element.tooltip = tooltip
                         element.icon = RXP_.icons.error
-                        skip = RXPData.skipMissingPreReqs
+                        --skip = RXPData.skipMissingPreReqs
                     else
                         element.icon = icon
                         element.tooltip = nil
@@ -717,8 +727,8 @@ function RXP_.functions.daily(self,text,...)
 
             if isQuestAccepted then
                 RXP_.SetElementComplete(self,true)
-            elseif skip then
-                RXP_.SetElementComplete(self)
+            --elseif skip then
+            --    RXP_.SetElementComplete(self)
             elseif event == "QUEST_REMOVED" and arg1 == id and not element.skip then
                 RXP_.SetElementIncomplete(self)
             end
@@ -813,7 +823,7 @@ function RXP_.functions.turnin(self,...)
         end
 
         local icon = RXP_.icons.turnin
-        local skip
+        --local skip
         if step.active and db and type(db.QueryQuest) == "function" and RXP_.pickUpList[id] and not RXP_.questAccept[id] and not RXP_.skipPreReq[id] then
             local quest = db:GetQuest(id)
             if not IsOnQuest(id) and quest and not quest.IsRepeatable then
@@ -837,7 +847,7 @@ function RXP_.functions.turnin(self,...)
                 end
                 element.tooltip = tooltip
                 element.icon = RXP_.icons.error
-                skip = RXPData.skipMissingPreReqs
+                --skip = RXPData.skipMissingPreReqs
             else
                 element.icon = icon
                 element.tooltip = nil
@@ -853,8 +863,10 @@ function RXP_.functions.turnin(self,...)
         local isComplete = IsQuestTurnedIn(id)
         if isComplete then
             RXP_.SetElementComplete(self,true)
-        elseif questId == id or skip then --repeatable quests
+            RXP_.recentTurnIn[id] = GetTime()
+        elseif questId == id then --repeatable quests
             RXP_.SetElementComplete(self)
+            RXP_.recentTurnIn[id] = GetTime()
         end
 
         if step.active then
@@ -891,7 +903,7 @@ function RXP_.UpdateQuestCompletionData(self)
         print('Error: Invalid quest ID at step '..element.step.index)
         return
     end
-    local skip
+    --local skip
     local objectives = RXP_.GetQuestObjectives(id,element.step.index)
     local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
 
@@ -988,7 +1000,7 @@ function RXP_.UpdateQuestCompletionData(self)
                 end
                 element.tooltip = tooltip
                 element.icon = RXP_.icons.error
-                skip = RXPData.skipMissingPreReqs
+                --skip = RXPData.skipMissingPreReqs
             else
                 element.icon = icon
                 element.tooltip = nil
@@ -1028,8 +1040,8 @@ function RXP_.UpdateQuestCompletionData(self)
 
     if completed then
         RXP_.SetElementComplete(self,true)
-    elseif skip then
-        RXP_.SetElementComplete(self)
+    --elseif skip then
+    --    RXP_.SetElementComplete(self)
     else
         RXP_.SetElementIncomplete(self)
     end
@@ -1668,7 +1680,6 @@ function RXP_.functions.xp(self,...)
             element.textOnly = true
         end
         if not element.xp then element.xp = 0 end
-        element.tooltipText = RXP_.icons.xp..element.text
         return element
     end
     local currentXP = UnitXP("player")
