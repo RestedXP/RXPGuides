@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance !Warlock !Hunter
 #name 1-11 Dun Morogh
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Gnome/Dwarf
 #next 11-14 Darkshore
 step << !Gnome !Dwarf
     #sticky
@@ -32,7 +35,7 @@ step
     .xp 2 >> Grind to 2
 step << Priest/Mage
     .goto Dun Morogh,30.0,71.5
-    .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don’t have enough money
+    .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step << Paladin/Warrior
     .goto Dun Morogh,30.0,71.5
@@ -120,7 +123,7 @@ step
     .accept 182 >> Accept The Troll Cave
 step << Paladin/Mage
     .goto Dun Morogh,25.0,76.0
-    .accept 3364 >> Accept Scalding Mornbrew Delivery 
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
 >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << Paladin/Mage
     .goto Dun Morogh,28.7,77.5
@@ -247,12 +250,12 @@ step << Dwarf Rogue
 step << Dwarf Priest
 .goto Dun Morogh,28.6,66.4
     .turnin 3110 >> Turn in Hallowed Rune
-    .train 1243 >>Train Power Word: Fortitude    
+    .train 1243 >>Train Power Word: Fortitude
 .train 589 >>Train Shadow Word: Pain
     .train 2052 >>Train Lesser Heal r2
 step << Human Priest/NightElf Priest/Draenei Priest
 .goto Dun Morogh,28.6,66.4
-    .train 1243 >>Train Power Word: Fortitude    
+    .train 1243 >>Train Power Word: Fortitude
 .train 589 >>Train Shadow Word: Pain
     .train 2052 >>Train Lesser Heal r2
 step << Gnome Warrior
@@ -777,7 +780,7 @@ step << !Rogue
     .turnin 320 >> Turn in Return to Bellowfiz
 step << Rogue
     .goto Dun Morogh,49.4,48.4
-    >>Choose the Camping Knife. Save it for later 
+    >>Choose the Camping Knife. Save it for later
     .turnin 320 >> Turn in Return to Bellowfiz
 step
     .goto Dun Morogh,45.8,49.4
@@ -933,7 +936,7 @@ step << Priest
     #sticky
 #completewith next
 .goto Dun Morogh,47.3,52.2
-    .train 2006 >>If you’re going to be playing with other players, Train Resurrection
+    .train 2006 >>If you're going to be playing with other players, Train Resurrection
 step << Human Priest/Dwarf Priest
     .goto Dun Morogh,47.3,52.2
     .accept 5636 >> Accept Desperate Prayer
@@ -1282,7 +1285,7 @@ step << Rogue
 step << Rogue
     .accept 6661 >> Accept Deeprun Rat Roundup
 step << Rogue
-    >>Use your flute on the rats scattered around
+    .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step << Rogue
     .turnin 6661 >> Turn in Deeprun Rat Roundup
@@ -1330,11 +1333,14 @@ step
 step
     #label Darkshore1
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore
-]],"Gnome/Dwarf")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name 1-12 Dun Morogh
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Gnome Warlock
 #next 12-14 Loch Modan Gnome
 step << !Gnome !Dwarf
     #sticky
@@ -1352,7 +1358,7 @@ step
 +Kill Wolves for 10c+ of vendor trash, then enter the building
 step
     .goto Dun Morogh,28.8,69.2,20 >>Enter the building
-step 
+step
     .goto Dun Morogh,28.8,66.2
     .vendor >> Talk to the Demon Book vendor, vendor trash
 step
@@ -1375,7 +1381,7 @@ step
     >>Kill Frostmane Novices. Loot them for Feather Charms
 .goto Dun Morogh,29.0,82.6,20,0
 .goto Dun Morogh,29.0,81.2,30,0
-.goto Dun Morogh,30.1,82.4,20,0    
+.goto Dun Morogh,30.1,82.4,20,0
     .complete 1599,1 --Collect Feather Charm (x3)
 step
     .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at the Spirit Healer
@@ -1390,7 +1396,7 @@ step
 step
 >>Summon Imp, rebuff
 .goto Dun Morogh,30.0,71.5
-    .vendor >>vendor trash, buy 15 water. Grind for more money if you don’t have enough
+    .vendor >>vendor trash, buy 15 water. Grind for more money if you don't have enough
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step
     .goto Dun Morogh,29.7,71.2
@@ -1613,7 +1619,7 @@ step
     .goto Dun Morogh,49.4,48.4
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
-step 
+step
     #sticky
     #completewith supplies
     +If you weren't able to afford your skills before, go and buy them now
@@ -2003,8 +2009,8 @@ step
 .goto Ironforge,77.0,51.0,30 >>Enter the Deeprun Tram
 step
     .accept 6661 >> Accept Deeprun Rat Roundup
-step 
-    >>Use your flute on the rats scattered around
+step
+    .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step
 .turnin 6661 >> Turn in Deeprun Rat Roundup
@@ -2287,7 +2293,7 @@ step
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> Accept Encroaching Gnolls
 step
-.abandon 184 >> Abandon Furlbrow’s Deed
+.abandon 184 >> Abandon Furlbrow's Deed
 step
     >>Be careful of the mobs en route
 .goto Redridge Mountains,30.7,60.0
@@ -2342,11 +2348,14 @@ step
 step
     .hs >> Hearth to Loch Modan
     .goto Loch Modan,35.5,48.4,90
-]],"Gnome Warlock")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name 12-14 Loch Modan Gnome
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Gnome Warlock
 #next 14-20 Bloodmyst
 step
     .goto Loch Modan,34.8,48.6
@@ -2544,7 +2553,7 @@ step
 .goto Loch Modan,23.2,73.7
     .turnin 267 >> Turn in The Trogg Threat
 step
-    .xp 14 >>Grind to 14 at the troggs 
+    .xp 14 >>Grind to 14 at the troggs
 step
     #sticky
     #completewith next
@@ -2673,10 +2682,14 @@ step
 step
     #label Azuremyst
     .zone Azuremyst Isle >>Get onto the boat when it comes
-]],"Gnome Warlock")
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Alliance Hunter
 #name 1-11 Dun Morogh
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Dwarf Hunter
 #next 11-14 Darkshore
 step << !Gnome !Dwarf
     #sticky
@@ -2750,7 +2763,7 @@ step
 >>Kill Frostmane Troll Whelps
 .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .goto Dun Morogh,25.1,75.7
-step 
+step
     .xp 4 >> Grind to 4
 step
     #requires Rockjaw
@@ -3193,7 +3206,7 @@ step
 step
     .accept 6661 >> Accept Deeprun Rat Roundup
 step
-    >>Use your flute on the rats scattered around
+    .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
@@ -3205,11 +3218,4 @@ step
 step
     .goto Wetlands,4.6,57.2
     .zone Darkshore >> Take the boat to Darkshore. Make bandages or sharpening stones while you wait.
-]],"Dwarf Hunter")
-
-
-
-
-
-
-
+]])

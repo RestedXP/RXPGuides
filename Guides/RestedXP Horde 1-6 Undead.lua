@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Tirisfal Glades
+#version 1
+#group RestedXP Horde 1-30
+#defaultfor Scourge
 #next 6-10 Eversong Woods
 step << !Scourge
     #sticky
@@ -100,7 +103,7 @@ step
     .goto Tirisfal Glades,30.8,66.2
     .turnin 364 >> Turn in The Mindless Ones
 step
-    .goto Tirisfal Glades,30.8,66.2    
+    .goto Tirisfal Glades,30.8,66.2
     .accept 3095 >> Accept Simple Scroll << Warrior
     .accept 3096 >> Accept Encrypted Scroll << Rogue
     .accept 3097 >> Accept Hallowed Scroll << Priest
@@ -132,7 +135,7 @@ step
 step
     .goto Tirisfal Glades,33.15,60.70
     >> Kill Skeletons in the town
-    .complete 3901,1 --Kill Rattlecage Skeleton (12) 
+    .complete 3901,1 --Kill Rattlecage Skeleton (12)
 step
     .xp 3+980 >>Grind mobs en route back to town to 980+/1400xp
 step << Mage/Warlock
@@ -181,7 +184,7 @@ step
     #label Goods
     >>Collect bundles of brown boxes whilst grinding level 2+ mobs en route. You can find these on the outside walls/inside of buildings
     .goto Tirisfal Glades,33.84,64.09
-    .complete 3902,1 --Collect Scavenged Goods (x6)  
+    .complete 3902,1 --Collect Scavenged Goods (x6)
 step
 	#hardcore
     #requires Goods
@@ -307,6 +310,5 @@ step
     .accept 8475 >> Accept The Dead Scar
 step
     .goto Eversong Woods,46.5,49.2,30 >>Run to Falconwing Square
-]],"Scourge")
-
+]])
 

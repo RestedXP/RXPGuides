@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-12 Azuremyst Isle
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Draenei
 #next 11-20 Bloodmyst (Draenei)
 step
     .goto Azuremyst Isle,82.9,44.0
@@ -86,7 +89,7 @@ step << Shaman
     .goto Azuremyst Isle,79.3,49.1
     .accept 9449 >> Accept Call of Earth
 	.turnin 9421 >> Turn in Shaman Training
-	.trainer >> Train Earth Shock 
+	.trainer >> Train Earth Shock
 step << Shaman
     .goto Azuremyst Isle,71.3,39.1
     .turnin 9449 >> Turn in Call of Earth
@@ -134,7 +137,7 @@ step
     .accept 9303 >> Accept Inoculation
 step
     .goto Azuremyst Isle,85.3,66.2
-	.use 22962 >>Use the Innoculating Crystal in your bags to innoculate the neutral Owlbeasts. 
+	.use 22962 >>Use the Innoculating Crystal in your bags to innoculate the neutral Owlbeasts.
 	>> Loot Emitters on the ground, they look like spinning pink crystals.
     .complete 9303,1 --Nestlewood Owlkin inoculated (x6)
     .complete 9305,1 --Collect Emitter Spare Part (x4)
@@ -289,7 +292,7 @@ step
 step
     .goto Azuremyst Isle,46.7,70.6
     .accept 9512 >> Accept Cookie's Jumbo Gumbo
-step 
+step
     .goto Azuremyst Isle,46.4,71.2
 	.vendor >> Vendor and Repair
     .trainer >> Train Blacksmithing and buy a Mining Pick from Calypso. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. << Warrior
@@ -410,7 +413,7 @@ step
 step
     .goto Azuremyst Isle,61.0,54.2
     >>Follow the furbolg spirit and wait until you get the swim speed buff before entering the water
-    >>Use the fish net on the fish pools along the river, if a murloc spawns from the pool, run away
+    .use 23654>>Use the fish net on the fish pools along the river, if a murloc spawns from the pool, run away
     .complete 9452,1 --Collect Red Snapper (x10)
 	>>Avoid fighting mobs, you'll lose the swim speed if you do any hostile action
 step
@@ -430,7 +433,7 @@ step
 step
 	#label azuremyst2
     .goto Azuremyst Isle,27.3,63.9
-	>>Click off your ghostsaber buff. 
+	>>Click off your ghostsaber buff.
 	>>Kill furbolgs around this area, they drop the cage keys you need
     .complete 9544,1 --Stillpine Captive Freed (x8)
 step
@@ -639,13 +642,13 @@ step << Hunter
 	.goto The Exodar,53.0,35.0,80,0
 	.goto The Exodar,64.0,36.5,60,0
         .goto Azuremyst Isle,44.7,23.5
-	.zone Azuremyst Isle >>Jump down and head out of The Exodar 
+	.zone Azuremyst Isle >>Jump down and head out of The Exodar
 	>> Alternatively you can do a logout skip on any brazier or by floating off of any ledge in the city
 	.link https://www.youtube.com/watch?v=WUWNGyQWJw8 >> Click here for reference
 step << !Hunter
 	#completewith next
         .goto Azuremyst Isle,44.7,23.5
-	.zone Azuremyst Isle >>Head out of The Exodar 
+	.zone Azuremyst Isle >>Head out of The Exodar
 	>> Alternatively you can do a logout skip on any brazier or by floating off of any ledge in the city
 	.link https://www.youtube.com/watch?v=WUWNGyQWJw8 >> Click here for reference
 step
@@ -750,7 +753,7 @@ step << Shaman
     .complete 9467,1 --Collect Hauteur's Ashes (x1)
 step << Shaman
     .goto Azuremyst Isle,59.5,18.0
-    >>Use the orb in your bag to teleport back to the Emberglade
+    .use 24335>>Use the orb in your bag to teleport back to the Emberglade
     .turnin 9467 >> Turn in Call of Fire
     .accept 9468 >> Accept Call of Fire
 step
@@ -772,11 +775,14 @@ step
 	#requires SGrain
     .goto Bloodmyst Isle,63.5,88.8
 	.zone Bloodmyst Isle >> Travel to Bloodmyst Isle
-]],"Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 11-20 Bloodmyst (Draenei)
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Draenei
 #next RestedXP Alliance 20-32\20-21 Darkshore (Draenei)
 step
     .goto Bloodmyst Isle,63.5,88.8
@@ -941,7 +947,7 @@ step
     .goto Azuremyst Isle,46.9,70.3
     .complete 9663,3 --Admiral Odesyus Warned
 step
-    .goto Azuremyst Isle,46.9,70.3    
+    .goto Azuremyst Isle,46.9,70.3
     .turnin 9515 >> Warlord Sriss'tiz
     .isQuestComplete 9515
 step << Paladin
@@ -1172,7 +1178,7 @@ step
     .goto Bloodmyst Isle,56.3,56.8
     .accept 9649 >> Accept Ysera's Tears
 step
-    .goto Bloodmyst Isle,74.7,33.7 
+    .goto Bloodmyst Isle,74.7,33.7
 	>> Grind en route
     .accept 9687 >> Accept Restoring Sanctity
 step
@@ -1185,7 +1191,7 @@ step
     .turnin 9672 >> Turn in The Bloodcurse Legacy
     .accept 9674 >> Accept The Bloodcursed Naga
 step
-    .goto Bloodmyst Isle,80.0,16.9 
+    .goto Bloodmyst Isle,80.0,16.9
 	>> Talk to the Captain for another waterbreathing buff if you die
     .complete 9674,1 --Kill Bloodcursed Naga (x10)
 step
@@ -1358,7 +1364,7 @@ step
 step
 	.goto Bloodmyst Isle,47.6,24.9,60,0
 	.goto Bloodmyst Isle,44.9,26.4,100,0
-	.goto Bloodmyst Isle,48.3,33.4,100,0 
+	.goto Bloodmyst Isle,48.3,33.4,100,0
 	.goto Bloodmyst Isle,45.1,37.4,100,0
 	.goto Bloodmyst Isle,40.8,41.9,100,0
 	.goto Bloodmyst Isle,34.0,44.3,100,0
@@ -1727,13 +1733,16 @@ step
 	#completewith next
 	.goto Azuremyst Isle,21.4,54.0,20 >> Go to the docks
 step
-    .zone Darkshore >>Get onto the boat when it comes and travel to Darkshore. 
+    .zone Darkshore >>Get onto the boat when it comes and travel to Darkshore.
 	>> Level firstaid or make sharpening stones while you wait. << Warrior/Paladin
-]],"Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 20-21 Darkshore (Draenei)
+#version 1
+#group RestedXP Alliance 20-32
+#defaultfor Draenei
 #next 21-23 Ashenvale (Draenei)
 step
     .goto Darkshore,36.1,44.9
@@ -1823,7 +1832,7 @@ step
     .complete 947,2 --Collect Death Cap (x1)
 step
 	.goto Darkshore,55.3,34.0
-    .xp 20-3900 
+    .xp 20-3900
 	>> Grind until you're level 19 and 16900+/20800xp
 step << Hunter
 	#sticky
@@ -1896,11 +1905,14 @@ step
 	#label darkshoreend
     .complete 945,1 --Escort Therylune
 
-]],"Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 21-23 Ashenvale (Draenei)
+#version 1
+#group RestedXP Alliance 20-32
+#defaultfor Draenei
 #next 23-24 Wetlands
 step
     .goto Ashenvale,26.2,38.6
@@ -2065,5 +2077,5 @@ step << !Hunter
     .fly Auberdine >>Fly back to Auberdine
 step
     .goto Darkshore,32.4,43.8,30 >> Take the boat to Wetlands
-]],"Draenei")
+]])
 

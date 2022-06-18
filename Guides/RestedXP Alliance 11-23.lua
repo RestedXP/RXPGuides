@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance !Warlock
 #name 11-14 Darkshore
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor !Draenei !Warlock
 #next 14-20 Bloodmyst
 step
     .goto Darkshore,36.6,45.6
@@ -245,11 +248,14 @@ step << Druid
 step
 	#label DarkshoreEnd
     .goto Darkshore,30.8,41.0,30 >>Take the Boat to Azuremyst Isle
-]],"!Draenei !Warlock")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 14-20 Bloodmyst
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor !Draenei
 #next RestedXP Alliance 20-32\20-21 Darkshore << !Warlock
 #next RestedXP Alliance 20-32\20-23 Darkshore/Ashenvale << Warlock
 step
@@ -408,7 +414,7 @@ step
     .complete 9574,1 --Collect Crystallized Bark (x6)
 step
     .goto Bloodmyst Isle,53.3,57.8
-    .turnin 9574 >> Turn in Victims of Corruption 
+    .turnin 9574 >> Turn in Victims of Corruption
     .accept 9578 >> Accept Searching for Galaen
 step
     .goto Bloodmyst Isle,55.0,58.1
@@ -577,7 +583,7 @@ step
 step
 	.goto Bloodmyst Isle,47.6,24.9,60,0
 	.goto Bloodmyst Isle,44.9,26.4,100,0
-	.goto Bloodmyst Isle,48.3,33.4,100,0 
+	.goto Bloodmyst Isle,48.3,33.4,100,0
 	.goto Bloodmyst Isle,45.1,37.4,100,0
 	.goto Bloodmyst Isle,40.8,41.9,100,0
 	.goto Bloodmyst Isle,34.0,44.3,100,0
@@ -655,7 +661,7 @@ step
     .complete 9585,1 --Collect Axxarien Crystal Sample (x1)
 step
     .goto Bloodmyst Isle,41.9,29.6
-	>>Kill Satyrs and collect crystals around the camps 
+	>>Kill Satyrs and collect crystals around the camps
     .complete 9569,1 --Kill Zevrax (x1)
     .complete 9569,2 --Kill Axxarien Shadowstalker (x5)
     .complete 9569,3 --Kill Axxarien Hellcaller (x5)
@@ -800,7 +806,7 @@ step
     .goto Bloodmyst Isle,55.6,55.3
     .turnin 9741 >> Turn in Critters of the Void
     .turnin 9748 >> Turn in Don't Drink the Water
-    .turnin 9711 >> Turn in Matis the Cruel	
+    .turnin 9711 >> Turn in Matis the Cruel
 	.trainer >>Train class spells at Vindicator Aesom << Paladin
 step
 	#label bearend
@@ -908,11 +914,15 @@ step << Druid
 step << Druid
     .goto Moonglade,48.1,67.2
     .fly Auberdine>>Fly to Darkshore
-]],"!Draenei")
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Alliance !Warlock
 #name 20-21 Darkshore
+#version 1
+#group RestedXP Alliance 20-32
+#defaultfor !Draenei
 #next 21-23 Ashenvale
 step
     .goto Darkshore,36.1,44.9
@@ -1176,11 +1186,14 @@ step
 	#label end
     .complete 994,1 --Escort Volcor
     .isQuestTurnedIn 986
-]],"!Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance !Warlock
 #name 21-23 Ashenvale
+#version 1
+#group RestedXP Alliance 20-32
+#defaultfor !Draenei
 #next 23-24 Wetlands
 step
     .goto Ashenvale,26.2,38.6
@@ -1262,11 +1275,11 @@ step
     .accept 1007 >> Accept The Ancient Statuette
 step
     .goto Ashenvale,14.2,20.6
-	>> Kill naga en route but don't go out of your way for them. 
+	>> Kill naga en route but don't go out of your way for them.
     .complete 1007,1 --Collect Ancient Statuette (x1)
 step
     .goto Ashenvale,14.8,31.3
-	>> Kill naga en route but don't go out of your way for them. 
+	>> Kill naga en route but don't go out of your way for them.
     .turnin 1007 >> Turn in The Ancient Statuette
     .accept 1009 >> Accept Ruuzel
 step
@@ -1342,15 +1355,17 @@ step << !Hunter !NightElf !Rogue
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << !Hunter !NightElf !Rogue
     .fly Auberdine >>Fly back to Auberdine
-	
-	
+
+
 step
     .goto Darkshore,32.4,43.8,30 >>Take the boat to Wetlands
-]],"!Draenei")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name 20-23 Darkshore/Ashenvale
+#version 1
+#group RestedXP Alliance 20-32
 #next 23-24 Wetlands
 step
     .goto Darkshore,37.0,44.1

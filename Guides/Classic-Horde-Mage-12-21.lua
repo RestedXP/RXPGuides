@@ -1,7 +1,10 @@
-RXPGuides.RegisterGuide("RestedXP Horde Mage AoE",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Horde Mage
 #name 12-17 The Barrens AoE
+#version 1
+#group RestedXP Horde Mage AoE
+#defaultfor Horde Mage
 #next 17-21 Stonetalon/Barrens AoE
 
 step << Mage
@@ -205,7 +208,7 @@ step
 step
     #sticky
     #completewith next
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
     .goto The Barrens,45.4,28.4
@@ -265,7 +268,7 @@ step
 step
     #sticky
     #completewith next
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
     .goto The Barrens,54.3,12.3,40,0
@@ -487,7 +490,7 @@ step
 step
     #sticky
 	#completewith next
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
     .goto The Barrens,45.39,28.43
@@ -507,7 +510,7 @@ step
     >>Kill Centaurs. Loot them for their bracers
     .complete 855,1 --Centaur Bracers (15)
 step
-    .goto The Barrens,45.87,40.80  
+    .goto The Barrens,45.87,40.80
     >> Hezrul patrols around the big WC lake
     .complete 852,1 --Hezrul's Head (1)
 step
@@ -550,12 +553,15 @@ step
     .turnin 1061 >> Turn in The Spirits of Stonetalon
     .accept 1062 >> Accept Goblin Invaders
     .accept 6548 >> Accept Avenge My Village
-]],"Horde Mage")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Horde Mage AoE",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Horde Mage
 #name 17-21 Stonetalon/Barrens AoE
+#version 1
+#group RestedXP Horde Mage AoE
+#defaultfor Horde Mage
 #next 21-30 Silverpine/Hillsbrad AoE
 
 step
@@ -688,7 +694,7 @@ step
 step
     #sticky
     #completewith Ishamuhale
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
     #requires Lizard
@@ -706,7 +712,7 @@ step
 	.goto The Barrens,59.9,30.4
     .complete 882,1 --Ishamuhale's Fang (1)
 step
-    >>Kill Plainstriders. Loot them for their Kidneys 
+    >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
 	.goto The Barrens,62.7,36.3
@@ -830,7 +836,7 @@ step
  	>>Go into The Pools of Vision
 	.goto Thunder Bluff,30.1,30.0,30,0
 	.goto Thunder Bluff,23.00,21.00
-    .turnin 853 >> Turn in Apothecary Zamah 
+    .turnin 853 >> Turn in Apothecary Zamah
 step
     .goto Thunder Bluff,25.16,20.95
     .trainer >> Train your class spells
@@ -840,7 +846,7 @@ step
     .accept 264 >>Accept Until Death Do Us Part
 step
 	.goto Thunder Bluff,46.9,49.9
-    .fp >> Get the Thunder Bluff Flight Path 
+    .fp >> Get the Thunder Bluff Flight Path
     .fly Crossroads >>Fly to Crossroads
 step
     >>Kill Serena Bloodfeather. Loot her for her Head
@@ -898,4 +904,4 @@ step
 step
     .goto The Barrens,51.50,30.34
     .fly Orgrimmar >> Fly to Orgrimmar
-]],"Horde Mage")
+]])

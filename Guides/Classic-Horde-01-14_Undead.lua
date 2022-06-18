@@ -1,7 +1,10 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name 1-11 Tirisfal Glades
+#version 1
+#group RestedXP Horde 1-22
+#defaultfor Undead
 #next 11-14 Silverpine Forest
 #next 12-17 Barrens
 
@@ -104,7 +107,7 @@ step
     .turnin 364 >> Turn in The Mindless Ones
 step
     #era/som
-    .goto Tirisfal Glades,30.8,66.2    
+    .goto Tirisfal Glades,30.8,66.2
     .accept 3095 >> Accept Simple Scroll << Warrior
     .accept 3096 >> Accept Encrypted Scroll << Rogue
     .accept 3097 >> Accept Hallowed Scroll << Priest
@@ -115,7 +118,7 @@ step
 step
     #som
     #phase 3-6
-    .goto Tirisfal Glades,30.8,66.2    
+    .goto Tirisfal Glades,30.8,66.2
     .accept 3095 >> Accept Simple Scroll << Warrior
     .accept 3096 >> Accept Encrypted Scroll << Rogue
     .accept 3097 >> Accept Hallowed Scroll << Priest
@@ -147,7 +150,7 @@ step
     #era/som
     .goto Tirisfal Glades,33.15,60.70
     >> Kill Skeletons in the town
-    .complete 3901,1 --Kill Rattlecage Skeleton (12) 
+    .complete 3901,1 --Kill Rattlecage Skeleton (12)
 step
     .xp 3+980 >>Grind mobs en route back to town to 980+/1400xp
 step << Mage/Warlock
@@ -197,7 +200,7 @@ step
     #label Goods
     >>Collect bundles of brown boxes whilst grinding level 2+ mobs en route. You can find these on the outside walls/inside of buildings
     .goto Tirisfal Glades,33.84,64.09
-    .complete 3902,1 --Collect Scavenged Goods (x6)  
+    .complete 3902,1 --Collect Scavenged Goods (x6)
 step
 	#hardcore
     #requires Goods
@@ -318,12 +321,12 @@ step
 step << Priest
     #softcore
     .goto Tirisfal Glades,52.59,55.51
-    .trainer >> Train Tailoring. Save your linen to skill up, then create greens later for disenchanting for a Wand 
+    .trainer >> Train Tailoring. Save your linen to skill up, then create greens later for disenchanting for a Wand
     >> You can skip this step if you're an alt/think it'd be easier to buy one from the AH later
 step << Priest
     #hardcore
     .goto Tirisfal Glades,52.59,55.51
-    .trainer >> Train Tailoring. Save your linen to skill up, then create greens later for disenchanting for a Wand 
+    .trainer >> Train Tailoring. Save your linen to skill up, then create greens later for disenchanting for a Wand
 step
     #softcore
     #completewith next
@@ -358,7 +361,7 @@ step << Warlock
     .vendor >> Buy the Blood Pact book if you have money after training (otherwise buy it later)
 step << Priest
     .goto Tirisfal Glades,61.77,51.56
-    .trainer >> Train Enchanting. Disenchant Greens you find (or craft through tailoring) to eventually make a Wand 
+    .trainer >> Train Enchanting. Disenchant Greens you find (or craft through tailoring) to eventually make a Wand
     >> You can skip this step if you're an alt/think it'd be easier to buy one from the AH later
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
@@ -575,11 +578,11 @@ step
     >>Kill any type of Gnoll. Loot them for their Ichor
     .complete 358,3 --Embalming Ichor (8)
 step
-    .goto Tirisfal Glades,55.15,42.26    
+    .goto Tirisfal Glades,55.15,42.26
     .complete 358,1 --Rot Hide Graverobber (8)
 step
     .goto Tirisfal Glades,58.86,31.41
-    .complete 358,2 --Rot Hide Mongrel (5)   
+    .complete 358,2 --Rot Hide Mongrel (5)
 step
     #label Eye
     >>Kill Maggot Eye. Be careful as he can be VERY difficult. Use health potions here if you got one earlier
@@ -684,13 +687,13 @@ step
 step
     #sticky
     #label RibSkull
-    >>Kill Skeleton Warriors for Ribs, kill Skeleton Casters for Skulls 
+    >>Kill Skeleton Warriors for Ribs, kill Skeleton Casters for Skulls
     .complete 426,1 --Notched Rib (5)
     .complete 426,2 --Blackened Skull (3)
 step
     >>Grind to Agamand Mills. Kill Devlin and loot him for his remains
     .complete 362,1 --Devlin's Remains (1)
-    .goto Tirisfal Glades,47.34,40.78  
+    .goto Tirisfal Glades,47.34,40.78
 step
     >>Kill Nissa. She can be inside the building
     .goto Tirisfal Glades,49.34,36.02
@@ -753,7 +756,7 @@ step << Warrior
     .goto Tirisfal Glades,58.20,51.44
     .turnin 1819 >> Turn in Ulag the Cleaver
     .accept 1820 >> Accept Speak with Coleman
-step << Mage  
+step << Mage
     .goto Tirisfal Glades,61.97,52.48
     .trainer >> Go upstairs and train your class spells
     .accept 1881 >> Accept Speak with Anatasia
@@ -815,13 +818,13 @@ step << Warrior
     .collect 1198,1 --Collect Claymore (1)
 step << Warrior/Rogue
     .goto Undercity,60.18,29.10
-    .trainer >> Train Blacksmithing. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. 
-    >> If you want to go for your own professions, skip this step  
+    .trainer >> Train Blacksmithing. This will allow you to make +2 damage sharpening stones for your weapon which are very strong.
+    >> If you want to go for your own professions, skip this step
 step << Warrior/Rogue
     .goto Undercity,61.41,30.06
      >> Buy a Mining Pick from Samuel
     .collect 2901,1 --Mining Pick (1)
-    >> If you want to go for your own professions, skip this step  
+    >> If you want to go for your own professions, skip this step
 step << Warrior
     .goto Undercity,57.32,32.77
     .trainer >> Train 2h Swords
@@ -830,7 +833,7 @@ step << Rogue
     .trainer >> Train Swords
 step << Warrior/Rogue
     .goto Undercity,56.04,37.47
-    .trainer >> Train Mining. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. 
+    .trainer >> Train Mining. This will allow you to make +2 damage sharpening stones for your weapon which are very strong.
     >> If you want to go for your own professions, skip this step
 step << Mage
     .goto Undercity,85.13,10.03
@@ -844,7 +847,7 @@ step
 step
     #sticky
     #completewith next
-    .goto Undercity,82.36,15.31 
+    .goto Undercity,82.36,15.31
     +Go to the Reagent Vendor on your right and perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in.
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> CLICK HERE for an example
     >>If you can't do this, just run out of Undercity normally
@@ -884,7 +887,7 @@ step << Warlock
 step << Warlock
     #sticky
     #completewith next
-    .goto Undercity,85.26,19.89 
+    .goto Undercity,85.26,19.89
     +Go above the Relic Vendor and perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> CLICK HERE for an example
     >>If you can't do this, just run out of Undercity normally
@@ -1054,7 +1057,7 @@ step
 step
     #sticky
     #completewith next
-    .goto Undercity,82.36,15.31 
+    .goto Undercity,82.36,15.31
     +Go to the Reagent Vendor on your right and perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in.
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> CLICK HERE for an example
     >>If you can't do this, just run out of Undercity normally
@@ -1151,7 +1154,7 @@ step << Warrior
 step << Warrior
     #sticky
     #completewith next
-    .goto Undercity,82.36,15.31 
+    .goto Undercity,82.36,15.31
     +Perform a Logout Skip by positioning your character until it looks like they're floating on the edge of a bridge, then logging out and back in.
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> CLICK HERE for an example
     >>If you can't do this, just run out of Undercity normally
@@ -1225,7 +1228,7 @@ step << !Warrior
     #phase 3-6
     #sticky
     #completewith next
-    .goto Undercity,82.36,15.31 
+    .goto Undercity,82.36,15.31
     +Perform a Logout Skip by positioning your character until it looks like they're floating on the edge of a bridge, then logging out and back in.
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> CLICK HERE for an example
     >>If you can't do this, just run out of Undercity normally
@@ -1271,14 +1274,18 @@ step << Mage
     #som
     #phase 3-6
     +If you're planning on leveling via AoE, choose the Barrens AoE Guide manually. Otherwise, complete this step
-]],"Scourge")
-RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
+]])
+
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-22
+<< Horde
+#version 1
+#defaultfor Undead/Troll Rogue/Orc Rogue
 #classic
 #era/som
-<< Horde
 #name 11-14 Silverpine Forest
 #next 12-17 The Barrens
-    
+
 step << !Undead Rogue
     .goto Tirisfal Glades,61.87,65.02,40 >> Run to Undercity
 step << !Undead Rogue
@@ -1396,7 +1403,7 @@ step
     #sticky
     #completewith Nightlash
     >>Kill Bears. Loot them for their hearts
-    .complete 447,1 --Grizzled Bear Heart (6) 
+    .complete 447,1 --Grizzled Bear Heart (6)
 step
     >>Go into the 2nd floor of the house in Valgan's Field. Loot the books on the floor
     .goto Silverpine Forest,52.82,28.58
@@ -1427,10 +1434,10 @@ step
     .unitscan Son of Arugal
     >>Kill Bears in the area. Loot them for their hearts. Avoid Sons of Arugal
     .goto Silverpine Forest,41.73,17.83
-    .complete 447,1 --Grizzled Bear Heart (6) 
+    .complete 447,1 --Grizzled Bear Heart (6)
 step
     .unitscan Krethis Shadowspinner
-    >>Kill Spiders in the area. Loot them for their Blood. 
+    >>Kill Spiders in the area. Loot them for their Blood.
     >> Be careful of the rare in the area, as it's impossibly difficult << !Mage !Warlock
     >> Be careful of the rare in the area, as it's difficult but doable. She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability << Mage/Warlock
     .goto Silverpine Forest,35.81,14.44
@@ -1615,7 +1622,7 @@ step << Undead Rogue
     .abandon 1886 >> Abandon The Deathstalkers
 step << Undead !Rogue
     #sticky
-    #completewith next    
+    #completewith next
     +Perform a Logout Skip by jumping on the Bookshelf behind you, then logging out and back in.
     .link https://www.youtube.com/watch?v=c0DFOlRQrKs >> CLICK HERE for an example
     >>If you can't do this, just run out of Undercity normally
@@ -1650,4 +1657,4 @@ step << Undead
     .accept 844 >>Accept Plainstrider Menace
 step << Mage
     +If you're planning on leveling via AoE, choose the Barrens AoE Guide manually. Otherwise, complete this step
-]],"Undead/Troll Rogue/Orc Rogue")
+]])

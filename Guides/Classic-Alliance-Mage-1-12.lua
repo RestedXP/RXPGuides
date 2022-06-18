@@ -1,7 +1,10 @@
-RXPGuides.RegisterGuide("RestedXP Alliance Mage",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Human Mage
 #name 1-10 Elwynn Forest Mage AoE
+#version 1
+#group RestedXP Alliance Mage
+#defaultfor Human
 #next 10-12 Loch Modan Mage AoE
 step
     #sticky
@@ -134,7 +137,7 @@ step
     #era/som
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
-    .complete 3904,1 --Collect Milly’s Harvest (x8)
+    .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
     >>Kill Garrick and loot his Head
@@ -568,7 +571,7 @@ step
     #phase 3-6
     .goto Ironforge,27.17,8.57
      .trainer >> Train your class spells
-step 
+step
     #sticky
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
@@ -650,12 +653,15 @@ step
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
-]],"Human")	
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance Mage",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Gnome Mage
 #name 1-10 Dun Morogh Mage AoE
+#version 1
+#group RestedXP Alliance Mage
+#defaultfor Dwarf/Gnome
 #next 10-12 Loch Modan Mage AoE
 step
     #era/som
@@ -683,7 +689,7 @@ step
     .xp 2 >> Grind to 2
 step
     .goto Dun Morogh,30.0,71.5
-    >>vendor trash. Buy 15 Water. Grind extra wolves if you don’t have enough money
+    >>vendor trash. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step
     .goto Dun Morogh,29.9,71.2
@@ -739,7 +745,7 @@ step
     .accept 182 >> Accept The Troll Cave
 step
     .goto Dun Morogh,25.0,76.0
-    .accept 3364 >> Accept Scalding Mornbrew Delivery 
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
     >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step
     .goto Dun Morogh,28.7,77.5
@@ -839,7 +845,7 @@ step
     #completewith next
     .goto Dun Morogh,46.7,53.5
     .vendor >>vendor trash
-step 
+step
     .goto Dun Morogh,46.8,52.4
     .accept 384 >> Accept Beer Basted Boar Ribs
 step
@@ -1196,12 +1202,15 @@ step
     .goto Dun Morogh,86.3,48.8
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
-]],"Dwarf/Gnome")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance Mage",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Alliance Mage
 #name 10-12 Loch Modan Mage AoE
+#version 1
+#group RestedXP Alliance Mage
+#defaultfor Human Mage/Gnome Mage
 #next 12-18 Darkshore Mage AoE
 step
     #era/som
@@ -1581,8 +1590,5 @@ step
     #phase 3-6
     #label Darkshore1
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore. Start conjuring as much level 5 water as possible
-]],"Human Mage/Gnome Mage")
-
-
-
+]])
 

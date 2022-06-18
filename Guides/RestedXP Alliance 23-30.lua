@@ -1,6 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 23-24 Wetlands
+#version 1
+#group RestedXP Alliance 20-32
 #next 24-27 Redridge/Duskwood
 step << Dwarf/Gnome/Human
     .goto Wetlands,10.7,60.9
@@ -192,9 +194,11 @@ step
     .zone Stormwind City >>Take the tram to Stormwind
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 24-27 Redridge/Duskwood
+#version 1
+#group RestedXP Alliance 20-32
 #next 27-30 Wetlands/Hillsbrad
 step << Hunter
 	.goto Stormwind City,61.7,15.4
@@ -842,7 +846,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
     .train 54 >> Train Maces << Rogue/Shaman
     .train 44 >> Train Axes << Shaman
 step << Hunter
-	#sticky 
+	#sticky
 	#completewith next
 	.goto Ironforge,61.34,89.25
 	>>Go inside the building, head downstairs and buy a level 30 quiver from Thalgus Thunderfist
@@ -857,9 +861,11 @@ step
     .fly Wetlands>> Fly to Wetlands
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 27-30 Wetlands/Hillsbrad
+#version 1
+#group RestedXP Alliance 20-32
 #next 30-32 Duskwood/STV
 step
     .goto Wetlands,8.4,58.5
@@ -1111,7 +1117,7 @@ step
     .goto Arathi Highlands,45.8,46.1
     .fp Arathi >> Get the Arathi Highlands flight path
 step
-.isOnQuest 647  
+.isOnQuest 647
 >>Run to Southshore and go downstairs in the inn. Turn in before the timer is up. Watch out for the courier on the road.
 	.unitscan Forsaken Bodyguard
 .goto Hillsbrad Foothills,52.2,58.6
@@ -1217,9 +1223,11 @@ step
     .accept 689 >> Accept A King's Tribute
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 30-32 Duskwood/STV
+#version 1
+#group RestedXP Alliance 20-32
 #next RestedXP Alliance 32-47\32-33 Shimmering Flats
 step << !Mage
 	.goto Ironforge,74.5,50.5,20,0
@@ -1257,7 +1265,7 @@ step << Priest
 step
     .goto Stormwind City,39.3,28.0
     .turnin 269 >> Turn in Seeking Wisdom
-    .accept 270 >> Accept The Doomed Fleet	
+    .accept 270 >> Accept The Doomed Fleet
 step
     .goto Stormwind City,51.7,12.3
     .turnin 322 >> Turn in Blessed Arm
@@ -1414,7 +1422,7 @@ step
 step << Human
 	#level 30
 	.goto Elwynn Forest,84.2,65.2
-	.train 148 >> Train riding and purchase your mount. 
+	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
 step << Shaman
     #completewith next
@@ -1724,7 +1732,7 @@ step
 step
     .goto Stormwind City,26.4,78.3
     .turnin 335 >> Turn in A Noble Brew
-    .accept 336 >> Accept A Noble Brew	
+    .accept 336 >> Accept A Noble Brew
 step << Warlock
     .goto Stormwind City,25.3,78.5
     .accept 4738 >>Accept In Search of Menara Voidrender
@@ -1824,11 +1832,11 @@ step << Gnome !Warlock
 step << Gnome !Warlock
 	.money <35.0
 	.goto Dun Morogh,49.2,48.1
-	.train 553 >> Train riding and buy your mount 
+	.train 553 >> Train riding and buy your mount
 step << Gnome !Warlock/Dwarf
 	.zoneskip Wetlands
 	.skill riding,75,1
-	.goto Ironforge,55.5,47.2 
+	.goto Ironforge,55.5,47.2
 	.fly Wetlands>> Fly to Wetlands
 step << !Gnome Warlock/!Dwarf
 	.skill riding,<75,1
@@ -1877,7 +1885,7 @@ step << NightElf
 	.goto Darnassus,38.1,15.3,30,0
 	.goto Wetlands,5.2,63.3,50,0
 	.money <35.00
-	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount. 
+	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount.
 	.hs >> Then hearth back to Menethil Harbor and take the boat to Theramore.
 step << Shaman
     #sticky

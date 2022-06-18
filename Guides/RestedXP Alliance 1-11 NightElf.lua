@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Shadowglen
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor NightElf
 #next 6-11 Teldrassil
 step << !NightElf
     #sticky
@@ -51,7 +54,7 @@ step
 --	.accept 3118 >> Accept Encrypted Sigil << Rogue
 	.accept 3119 >> Accept Hallowed Sigil << Priest
 	.accept 3120 >> Accept Verdant Sigil << Druid
-step << Warrior 
+step << Warrior
     .goto Teldrassil,59.3,41.1
 	.vendor >> Go inside and vendor trash.
 step << Warrior
@@ -125,7 +128,7 @@ step << !Priest
 	.vendor >> Go inside and vendor trash. Unequip and sell your weapon. Make sure you have at least 3 or 4 stacks of arrows for the next segment << Hunter
 step << Druid
     .goto Teldrassil,59.6,40.7
-	.vendor >> Purchase Refreshing Spring Water (x10) from Dellylah. 
+	.vendor >> Purchase Refreshing Spring Water (x10) from Dellylah.
 	.collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Warrior
     .goto Teldrassil,59.6,38.4
@@ -210,11 +213,14 @@ step
 step
     .goto Teldrassil,61.2,47.6
     .accept 2159 >> Accept Dolanaar Delivery
-]],"NightElf")
-	
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 6-11 Teldrassil
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor NightElf
 #next 11-14 Darkshore
 step
     .goto Teldrassil,60.5,56.3
@@ -740,4 +746,4 @@ step
 step
     .goto Teldrassil,58.4,94.0
     .fly Darkshore >> Fly to Darkshore
-]],"NightElf")
+]])

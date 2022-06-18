@@ -1,9 +1,12 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
+RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name 1-10 Durotar
+#version 1
+#group RestedXP Horde 1-22
+#defaultfor Troll/Orc
 #next 10-12 Durotar
-    
+
 step << !Orc !Troll
     #sticky
     #completewith next
@@ -59,7 +62,7 @@ step << !Warlock
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     #completewith next
-	>>Kill Mottled Boars en route to Vile Familiars. Try to get level 2 before getting to Familiars. Don’t sit and drink for these
+	>>Kill Mottled Boars en route to Vile Familiars. Try to get level 2 before getting to Familiars. Don't sit and drink for these
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     #label WarlockBoars
@@ -91,7 +94,7 @@ step
     .turnin 790 >>Turn in Sarkoth
     .accept 804 >>Accept Sarkoth
 step << !Warlock
-    #requires mboars    
+    #requires mboars
 step << Warlock
     .goto Durotar,40.6,62.6
     >>Finish off killing the Mottled Boars
@@ -363,7 +366,7 @@ step << !Shaman
     .xp 5+1225 >> Grind to 1225+/2800xp
 step << !Shaman
 	#era
-    .xp 5+1680 >> Grind to 1680+/2800xp	
+    .xp 5+1680 >> Grind to 1680+/2800xp
 step << Shaman
 	#era/som
 	#requires Hooves
@@ -499,7 +502,7 @@ step << Priest
     #sticky
 	#hardcore
     >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
-    .collect 2589,60 --Linen Cloth (60)	
+    .collect 2589,60 --Linen Cloth (60)
 step
 	#era/som
     .unitscan Warlord Kolkanis
@@ -667,7 +670,7 @@ step << Priest
     #sticky
 	#hardcore
     >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
-    .collect 2589,60 --Linen Cloth (60)	
+    .collect 2589,60 --Linen Cloth (60)
 step
     #sticky
     #label KulTiras
@@ -1168,11 +1171,11 @@ step << Rogue
 step
 	#era/som
     .goto Orgrimmar,47.2,53.4
-    .accept 813 >>Accept Finding the Antidote 
+    .accept 813 >>Accept Finding the Antidote
     >>Put "Beast Training" on your bars. Remember to teach your pet skills later << Hunter
 step
 	#era/som
-    >>Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it 
+    >>Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it
     .abandon 812 >>Abandon Need for a Cure
 step
 	#era/som
@@ -1219,14 +1222,18 @@ step << Warrior/Rogue
     .goto Durotar,54.2,41.9
     .money <0.01
     .train 3273 >>Train First Aid
-]],"Troll/Orc")
-RXPGuides.RegisterGuide("RestedXP Horde 1-22",[[
+]])
+
+RXPGuides.RegisterGuide([[
 #classic
 << Horde
 #name 10-12 Durotar
+#version 1
+#group RestedXP Horde 1-22
+#defaultfor Troll/Orc
 #next 11-14 Silverpine Forest << Troll Rogue/Orc Rogue
 #next 12-17 The Barrens << Troll !Rogue/Orc !Rogue
-    
+
 step << Hunter
     #completewith next
     .goto Durotar,52.98,41.03
@@ -1524,7 +1531,7 @@ step << Warrior/Shaman
     .hs >>Hearth to Razor Hill
 step << Shaman
 	#level 12
-    .goto Durotar,54.4,42.5  
+    .goto Durotar,54.4,42.5
   .trainer >> Train your class spells
 step << Orc Warrior/Troll Warrior
 	#level 12
@@ -1535,7 +1542,7 @@ step << Priest
     #label Linen
     >>Start collecting 3 stacks of linen cloth as you quest throughout Durotar. This will be used to make your wand later
     >>Skip this step if you already bought a wand, or can get one cheap from the AH
-    .collect 2589,60 --Linen Cloth (60) 
+    .collect 2589,60 --Linen Cloth (60)
 step << Troll Shaman/Orc Shaman
     .goto Durotar,36.6,58.0,25 >>Run up the mountain path
 step << Troll Shaman/Orc Shaman
@@ -1581,8 +1588,8 @@ step
     .goto Durotar,53.08,9.19,0
     >>Kill Burning Blade mobs in Skull Rock for Searing Collars
     .complete 827,1 --Searing Collar (6)
-step << Warlock 
-    .goto Durotar,53.6,8.5,25,0 
+step << Warlock
+    .goto Durotar,53.6,8.5,25,0
     .goto Durotar,51.8,8.1,25,0
     .goto Durotar,51.6,9.8
     >> Take the right path of the cave. Continue following the cave to loot the chest at the end of it.
@@ -1590,7 +1597,7 @@ step << Warlock
 step
     >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave.
     >>Use sticky glue on the Voidwalker to avoid being hit, and Healing Potions to restore health. Use LoS (line of sight) to avoid Gazz'uz's Shadow Bolts
-    >>You can run to bodies of water found within the cave to evade the Voidwalker after killing Gazz'uz	
+    >>You can run to bodies of water found within the cave to evade the Voidwalker after killing Gazz'uz
     >>Be careful as he is VERY difficult. You can skip this quest if you need
     .goto Durotar,51.8,10.0
     .collect 4903,1,832 --Collect Eye of Burning Shadow
@@ -1906,5 +1913,5 @@ step << Rogue
     #phase 3-6
     .goto The Barrens,52.23,31.01
     .turnin 842 >>Turn in Crossroads Conscription
-    .accept 844 >>Accept Plainstrider Menace	
-]],"Troll/Orc")
+    .accept 844 >>Accept Plainstrider Menace
+]])

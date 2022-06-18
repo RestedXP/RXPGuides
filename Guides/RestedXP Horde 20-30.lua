@@ -1,8 +1,10 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
 << Horde !Warrior !Shaman
 #name 20-23 Stonetalon / The Barrens
+#version 1
+#group RestedXP Horde 1-30
 #next 23-27 Hillsbrad / Ashenvale
-step 
+step
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step
 >>Go to the top of the tower
@@ -21,7 +23,7 @@ step << !BloodElf
     .turnin 9813 >> Turn in Meeting the Warchief
 step << Warlock
     #sticky
-    >>You must abandon Carendin’s Summons to be able to accept Devourer of Souls
+    >>You must abandon Carendin's Summons to be able to accept Devourer of Souls
 .abandon 10605 >>Abandon Carendin Summons
 step << Warlock
     .goto Orgrimmar,48.2,45.3
@@ -112,7 +114,7 @@ step
     #completewith next
     .goto The Barrens,35.3,27.9
 >>Kill & Loot Raptors as you see them en route to next step
-    .complete 865,1 --Collect Intact Raptor Horn (x5)    
+    .complete 865,1 --Collect Intact Raptor Horn (x5)
 step
     .goto The Barrens,35.3,27.9
     .turnin 1061 >> Turn in The Spirits of Stonetalon
@@ -228,7 +230,7 @@ step
     .goto The Barrens,52.3,31.9
     .vendor >> vendor trash, repair
 step
-    >>Turning this in will start a timed quest. Log out here if you’re going to be busy in the next 45+ minutes
+    >>Turning this in will start a timed quest. Log out here if you're going to be busy in the next 45+ minutes
 .goto The Barrens,51.5,30.2
     .turnin 848 >> Turn in Fungal Spores
     .accept 853 >> Accept Apothecary Zamah
@@ -240,7 +242,7 @@ step
 #sticky
 #completewith Horns
 >>Kill & Loot any Raptors you see
-    .complete 865,1 --Collect Intact Raptor Horn (x5)    
+    .complete 865,1 --Collect Intact Raptor Horn (x5)
 step
     >>Click the Bubble Fissure underwater
 .goto The Barrens,55.6,42.7
@@ -257,7 +259,7 @@ step
     .goto The Barrens,52.2,46.6,40,0
     .goto The Barrens,57.8,54.1,40,0
 >>Finish looting the rest of the Raptor Horns
-    .complete 865,1 --Collect Intact Raptor Horn (x5)    
+    .complete 865,1 --Collect Intact Raptor Horn (x5)
 step
 #sticky
 #label Owatanka1
@@ -728,9 +730,11 @@ step
     .home >> Set your Hearthstone to Orgrimmar
 ]])
 
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
 << Horde
 #name 23-27 Hillsbrad / Ashenvale
+#version 1
+#group RestedXP Horde 1-30
 #next 27-30 Lower Barrens / Thousand Needles
 
 step <<!Shaman
@@ -840,7 +844,7 @@ step << Rogue/Hunter/Shaman
 step
 .goto Hillsbrad Foothills,79.8,39.3
 >>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
-    .collect 3499,1 
+    .collect 3499,1
 step
     >>Click the ball
 .goto Hillsbrad Foothills,79.8,39.6
@@ -854,7 +858,7 @@ step
 .goto Hillsbrad Foothills,75.3,41.5
     .complete 498,1 --Rescue Drull (1)
 step
-    #requires shadowmage   
+    #requires shadowmage
 >>Kill Spiders. Loot them until Creeper Ichor drops
 .goto Hillsbrad Foothills,63.5,33.0,50,0
     .goto Hillsbrad Foothills,57.9,34.5,50,0
@@ -862,7 +866,7 @@ step
 .goto Hillsbrad Foothills,63.5,33.0,50,0
     .goto Hillsbrad Foothills,57.9,34.5,50,0
     .goto Hillsbrad Foothills,57.2,22.1,50,0
-    .complete 496,2 --Collect Creeper Ichor (x1) 
+    .complete 496,2 --Collect Creeper Ichor (x1)
 step
         #requires syndicateq
     .goto Hillsbrad Foothills,61.5,19.1
@@ -1043,7 +1047,7 @@ step
 step
     .goto Ashenvale,90.8,66.9,30  >> Run up the ramp here
 step
-    .goto Ashenvale,89.2,68.4,30  >> Go up the ramp. Be careful of the level 28/29 spider mobs 
+    .goto Ashenvale,89.2,68.4,30  >> Go up the ramp. Be careful of the level 28/29 spider mobs
 step
     .goto Ashenvale,88.5,64.9,40  >> Run to the Lumber Camp
 step
@@ -1265,9 +1269,12 @@ step << !Rogue !Paladin !Warlock
     .goto Ashenvale,73.2,61.6
    .fly Thunder Bluff >> Fly to Thunder Bluff
 ]])
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+
+RXPGuides.RegisterGuide([[
 << Horde
 #name 27-30 Lower Barrens / Thousand Needles
+#version 1
+#group RestedXP Horde 1-30
 #next RestedXP Horde 30-45\30-34 Hillsbrad / Arathi / Shimmering Flats
 step
 .goto Thunder Bluff,55.2,51.5
@@ -1376,7 +1383,7 @@ step
     #label Weapons
     >>Kill mobs in the area for Weapons of Choice. Backstabber from Stalkers or Pathfinders, Wand from Seers, and Shield from Warfrenzies
     .complete 893,1 --Collect Razormane Backstabber (x1)
-    .complete 893,2 --Collect Charred Razormane Wand (x1) 
+    .complete 893,2 --Collect Charred Razormane Wand (x1)
     .complete 893,3 --Collect Razormane War Shield (x1)
 step
 .goto The Barrens,43.4,78.8 >> All around the Ridge
@@ -1488,7 +1495,7 @@ step
 step
     >>Loot the Brazier at the end
 .goto Thousand Needles,42.0,31.5
-    .complete 1197,1 --Collect Cloven Hoof (x1)    
+    .complete 1197,1 --Collect Cloven Hoof (x1)
 step
     >>Kill Centaurs in the area
 .goto Thousand Needles,41.3,37.7
@@ -1556,7 +1563,7 @@ step
     >>Loot the eggs on the ground in the area. Loot any you see
     .complete 4767,1 --Collect Highperch Wyvern Egg (x10)
 step
-.goto Thousand Needles,13.2,39.7,20 >>Run up the path here   
+.goto Thousand Needles,13.2,39.7,20 >>Run up the path here
 step
         >>This starts an Escort
     .goto Thousand Needles,17.8,40.6

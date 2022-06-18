@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-11 Elwynn Forest
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Human
 #next 12-14 Loch Modan << Warlock
 #next 11-12 Loch Modan << !Warlock
 step << !Human
@@ -205,7 +208,7 @@ step << Rogue
 step << Priest/Mage
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
-    .complete 3904,1 --Collect Milly’s Harvest (x8)
+    .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
     >>Grind en route. Kill Garrick and loot his Head
@@ -421,7 +424,7 @@ step
     .goto Elwynn Forest,40.5,82.3
     >> Kill Kobolds for Gold Dust and Candles
     .complete 47,1 --Collect Gold Dust (x10)
-    .complete 60,1 --Collect Kobold Candle (x8)  
+    .complete 60,1 --Collect Kobold Candle (x8)
 step
     >>Grind mobs east through the outside of the mine
     .goto Elwynn Forest,43.1,85.7
@@ -797,7 +800,7 @@ step << Rogue
 step << Rogue
     .goto Elwynn Forest,41.7,65.9
     .money >0.3152
-    .vendor >>You don’t have enough money, so buy Stiletto for your Offhand
+    .vendor >>You don't have enough money, so buy Stiletto for your Offhand
 step
     >>Run out of the inn and go south
     .goto Elwynn Forest,43.2,89.6
@@ -1051,7 +1054,7 @@ step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
-    .goto Ironforge,77.0,51.0 
+    .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
@@ -1063,7 +1066,7 @@ step << Warlock
 step << Warrior
     .goto Ironforge,61.2,89.5
     .trainer >>Train 2h Maces
-step 
+step
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
 step
@@ -1140,11 +1143,15 @@ step
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
-]],"Human")
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+]])
+
+RXPGuides.RegisterGuide([[
 << Alliance
 #name 11-12 Loch Modan << !Warlock
 #name 12-14 Loch Modan << Warlock
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Human
 #next 14-14 Darkshore << Warlock
 #next 11-14 Darkshore << !Warlock
 step
@@ -1359,7 +1366,7 @@ step << Warlock
 step << Warlock
     #requires Wand2
     .goto Ironforge,51.1,8.7,15,0 >> Enter the building
-    .goto Ironforge,50.4,6.3 
+    .goto Ironforge,50.4,6.3
     .trainer >> Train your class spells
 step << Warlock
     .goto Ironforge,53.2,7.8,15,0 >> Enter the building
@@ -1436,15 +1443,18 @@ step
     .vendor >> Check Dewin for Heal Potions, buy down to 1s
 step
     .goto Wetlands,4.7,57.3
-    .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore. 
+    .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore.
     >> Use this time to level your first aid or make weapon stones. << Warrior/Rogue/Paladin
-]],"Human")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 << Alliance Warlock
 #name 14-14 Darkshore
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Human Warlock
 #next 14-20 Bloodmyst
-    
+
 step
     #completewith next
     .goto Darkshore,36.8,44.3,0
@@ -1516,6 +1526,6 @@ step
     .abandon 4681 >> Abandon Washed Ashore
 step
     #label Azuremyst
-    .zone Azuremyst Isle >>Get onto the boat when it comes. 
+    .zone Azuremyst Isle >>Get onto the boat when it comes.
     >> Level first aid or make weapon stones while waiting. << Warrior/Rogue/Paladin
-]],"Human Warlock")
+]])

@@ -1,8 +1,11 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Alliance
 #name 1-11 Elwynn Forest
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Human
 #next 11-13 Loch Modan
 step << !Human
     #sticky
@@ -205,7 +208,7 @@ step << Rogue
 step << Priest/Mage
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
-    .complete 3904,1 --Collect Milly’s Harvest (x8)
+    .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
     >>Grind en route. Kill Garrick and loot his Head
@@ -461,7 +464,7 @@ step << Priest
     .xp 7+1260 >>Grind until 1260+/4500xp
 --N SoM xp values
 step
-    #requires KoboldCandles 
+    #requires KoboldCandles
 step
     #label Goldtooth
     #requires GoldDust
@@ -801,12 +804,12 @@ step << Rogue
     #som
     .goto Elwynn Forest,41.7,65.9
     .money >0.3197
-    .vendor >>You don’t have enough money, so buy Stiletto for your Offhand
+    .vendor >>You don't have enough money, so buy Stiletto for your Offhand
 step << Rogue
     #era
     .goto Elwynn Forest,41.7,65.9
     .money >0.3152
-    .vendor >>You don’t have enough money, so buy Stiletto for your Offhand
+    .vendor >>You don't have enough money, so buy Stiletto for your Offhand
 step
     >>Run out of the inn and go south
     .goto Elwynn Forest,43.2,89.6
@@ -1107,7 +1110,7 @@ step
 step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .goto Ironforge,77.0,51.0 
+    .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
@@ -1115,13 +1118,13 @@ step
 step << Warrior
     .goto Ironforge,61.2,89.5
     .trainer >>Train 2h Maces and Thrown
-step 
+step
     #sticky
     #som
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
     >>Equip your level 11 thrown << Warrior
-step 
+step
     #sticky
     #era
     #completewith next
@@ -1216,15 +1219,18 @@ step
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
-]],"Human")	
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Alliance
 #name 11-13 Loch Modan
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Human
 #next 13-15 Westfall
-    
+
 step
     #completewith next
     .goto Loch Modan,24.1,18.2
@@ -1520,14 +1526,17 @@ step
 step
     .goto Stormwind City,66.28,62.13
     .fly Westfall >> Fly to Westfall
-]],"Human")
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #som
 #phase 3-6
 #classic
 << Alliance
 #name 1-13 Elwynn Forest
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Human
 #next 13-14 Loch Modan
 step << !Human
     #sticky
@@ -2550,7 +2559,7 @@ step
 step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .goto Ironforge,77.0,51.0 
+    .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
@@ -2564,7 +2573,7 @@ step << Warrior
 step
     .goto Ironforge,18.22,51.44
     .home >> Set your Hearthstone to Ironforge
-step 
+step
     #sticky
     #som
     #completewith next
@@ -2642,16 +2651,18 @@ step
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
-]],"Human")	
+]])
 
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
 #classic
 #som
 #phase 3-6
 << Alliance
 #name 13-14 Loch Modan
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Human
 #next 14-19 Darkshore
-    
 step
     #completewith next
     .goto Loch Modan,24.1,18.2
@@ -2836,7 +2847,5 @@ step
     .goto Wetlands,4.7,57.3
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore.
     >>Train first aid while waiting for the boat if you have linen, you'll need 80 points in first aid for a level 24 quest later down the road << Rogue
-]],"Human")
-
-
+]])
 
