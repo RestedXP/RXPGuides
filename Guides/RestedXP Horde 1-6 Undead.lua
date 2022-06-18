@@ -152,7 +152,7 @@ step
     .goto Tirisfal Glades,30.9,66.1
     .turnin 376 >> Turn in The Damned
 step
-	.goto Tirissfal Glades,30.9,66.1
+	.goto Tirisfal Glades,30.9,66.1
     .accept 6395 >> Accept Marla's Last Wish
 step << Priest
     .goto Tirisfal Glades,31.1,66.0
