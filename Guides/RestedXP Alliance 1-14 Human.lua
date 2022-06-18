@@ -208,7 +208,7 @@ step << Rogue
 step << Priest/Mage
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
-    .complete 3904,1 --Collect Milly’s Harvest (x8)
+    .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
     >>Grind en route. Kill Garrick and loot his Head
@@ -800,7 +800,7 @@ step << Rogue
 step << Rogue
     .goto Elwynn Forest,41.7,65.9
     .money >0.3152
-    .vendor >>You don’t have enough money, so buy Stiletto for your Offhand
+    .vendor >>You don't have enough money, so buy Stiletto for your Offhand
 step
     >>Run out of the inn and go south
     .goto Elwynn Forest,43.2,89.6

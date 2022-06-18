@@ -23,7 +23,7 @@ step << !BloodElf
     .turnin 9813 >> Turn in Meeting the Warchief
 step << Warlock
     #sticky
-    >>You must abandon Carendin’s Summons to be able to accept Devourer of Souls
+    >>You must abandon Carendin's Summons to be able to accept Devourer of Souls
 .abandon 10605 >>Abandon Carendin Summons
 step << Warlock
     .goto Orgrimmar,48.2,45.3
@@ -230,7 +230,7 @@ step
     .goto The Barrens,52.3,31.9
     .vendor >> vendor trash, repair
 step
-    >>Turning this in will start a timed quest. Log out here if you’re going to be busy in the next 45+ minutes
+    >>Turning this in will start a timed quest. Log out here if you're going to be busy in the next 45+ minutes
 .goto The Barrens,51.5,30.2
     .turnin 848 >> Turn in Fungal Spores
     .accept 853 >> Accept Apothecary Zamah

@@ -62,7 +62,7 @@ step << !Warlock
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     #completewith next
-	>>Kill Mottled Boars en route to Vile Familiars. Try to get level 2 before getting to Familiars. Don’t sit and drink for these
+	>>Kill Mottled Boars en route to Vile Familiars. Try to get level 2 before getting to Familiars. Don't sit and drink for these
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     #label WarlockBoars

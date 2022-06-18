@@ -71,7 +71,7 @@ step << Warlock
 step << Priest/Mage/Warlock
     .goto Dun Morogh,30.0,71.5
     >>Summon your Imp and rebuff Demon Skin en route << Warlock
-    .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don’t have enough money
+    .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step << Paladin/Warrior
     .goto Dun Morogh,30.0,71.5
@@ -2619,7 +2619,7 @@ step << Warlock
 step << Priest/Mage/Warlock
     .goto Dun Morogh,30.0,71.5
     >>Summon your Imp and rebuff Demon Skin en route << Warlock
-    .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don’t have enough money
+    .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step << Paladin/Warrior
     .goto Dun Morogh,30.0,71.5

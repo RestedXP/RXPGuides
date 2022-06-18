@@ -137,7 +137,7 @@ step
     #era/som
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
-    .complete 3904,1 --Collect Milly’s Harvest (x8)
+    .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
     >>Kill Garrick and loot his Head
@@ -689,7 +689,7 @@ step
     .xp 2 >> Grind to 2
 step
     .goto Dun Morogh,30.0,71.5
-    >>vendor trash. Buy 15 Water. Grind extra wolves if you don’t have enough money
+    >>vendor trash. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step
     .goto Dun Morogh,29.9,71.2

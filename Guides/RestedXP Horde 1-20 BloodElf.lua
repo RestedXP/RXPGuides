@@ -659,7 +659,7 @@ step
 step
     #sticky
     #label Cargo
-    .goto Eversong Woods,25.2,73.1,150 >> Run to the Murlocs    
+    .goto Eversong Woods,25.2,73.1,150 >> Run to the Murlocs
     .goto Eversong Woods,24.5,69.9
     >>Kill murlocs or loot barrels near the huts for Cargo
     >>Use your Arcane Torrent to interrupt heals << BloodElf
@@ -1621,7 +1621,7 @@ step << Orc Hunter/Troll Hunter
     #sticky
     #completewith Poster13
     .money <0.1300
-    >>If you couldn’t afford 2h sword training earlier, fly to Silvermoon and get weapon training
+    >>If you couldn't afford 2h sword training earlier, fly to Silvermoon and get weapon training
 .goto Silvermoon City,91.2,38.7
     .train 202 >>Train 2h Swords
 step << Hunter
@@ -1795,7 +1795,7 @@ step
     .complete 9155,1 --Kill Risen Hungerer (x10)
 step
     .goto Ghostlands,47.6,34.7
-    .turnin 9149 >> Turn in The Plagued Coast    
+    .turnin 9149 >> Turn in The Plagued Coast
 step
     .goto Ghostlands,46.1,33.6
     .turnin 9155 >> Turn in Down the Dead Scar
@@ -1916,7 +1916,7 @@ step
     .accept 9166 >> Accept Deliver the Plans to An'telas
     .turnin 9175 >> Turn in The Lady's Necklace
     .turnin 9173 >> Turn in Retaking Windrunner Spire
-step << BloodElf 
+step << BloodElf
     .accept 9180 >> Accept Journey to Undercity
 step << Priest/Druid/Rogue/Paladin
     .xp 16 >> Grind to 16
@@ -2477,7 +2477,7 @@ step << !BloodElf
 .accept 9811 >> Accept Friend of the Sin'dorei
 step
 #completewith next
-    .cooldown item,6948,>0 >>Hearth to Tranquillien if it's up. Otherwise, just run back 
+    .cooldown item,6948,>0 >>Hearth to Tranquillien if it's up. Otherwise, just run back
 .hs >> Hearth to Tranquillien
 step
     .goto Ghostlands,47.6,34.9
@@ -2601,7 +2601,7 @@ step << Warlock
 step << Warlock
     #sticky
     #completewith Royal
-    +Do NOT take your warlock quest in Undercity. You’re going to do it in Orgrimmar as the questline is a lot better
+    +Do NOT take your warlock quest in Undercity. You're going to do it in Orgrimmar as the questline is a lot better
 step
 .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
 step << !Scourge

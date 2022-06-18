@@ -35,7 +35,7 @@ step
     .xp 2 >> Grind to 2
 step << Priest/Mage
     .goto Dun Morogh,30.0,71.5
-    .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don’t have enough money
+    .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step << Paladin/Warrior
     .goto Dun Morogh,30.0,71.5
@@ -936,7 +936,7 @@ step << Priest
     #sticky
 #completewith next
 .goto Dun Morogh,47.3,52.2
-    .train 2006 >>If you’re going to be playing with other players, Train Resurrection
+    .train 2006 >>If you're going to be playing with other players, Train Resurrection
 step << Human Priest/Dwarf Priest
     .goto Dun Morogh,47.3,52.2
     .accept 5636 >> Accept Desperate Prayer
@@ -1396,7 +1396,7 @@ step
 step
 >>Summon Imp, rebuff
 .goto Dun Morogh,30.0,71.5
-    .vendor >>vendor trash, buy 15 water. Grind for more money if you don’t have enough
+    .vendor >>vendor trash, buy 15 water. Grind for more money if you don't have enough
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step
     .goto Dun Morogh,29.7,71.2
@@ -2293,7 +2293,7 @@ step
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> Accept Encroaching Gnolls
 step
-.abandon 184 >> Abandon Furlbrow’s Deed
+.abandon 184 >> Abandon Furlbrow's Deed
 step
     >>Be careful of the mobs en route
 .goto Redridge Mountains,30.7,60.0
