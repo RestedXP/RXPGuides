@@ -1203,7 +1203,7 @@ step << Shaman/Warrior
 	#softcore
     #sticky
     #completewith next
-    +If it’s cheaper, buy a green 2h mace from the Auction House
+    +If it's cheaper, buy a green 2h mace from the Auction House
 step << Shaman/Warrior
     .goto Thunder Bluff,53.2,58.2
     >>Buy a Maul from Etu if it's an upgrade

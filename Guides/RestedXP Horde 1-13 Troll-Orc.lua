@@ -54,7 +54,7 @@ step << !Warlock
 step << Warlock
     #sticky
     #completewith WarlockBoars
->>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don’t sit and drink for these
+>>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don't sit and drink for these
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
     #label WarlockBoars
@@ -1140,7 +1140,7 @@ step << Undead Warrior
 .collect 4881,1,830 --Collect Aged Envelope (1)
 .accept 830 >>Accept The Admiral's Orders
 step << Undead Warrior
-    >>Run down to Sen’jin
+    >>Run down to Sen'jin
 .goto Durotar,55.9,74.7
     .accept 808 >>Accept Minshina's Skull
     .accept 826 >>Accept Zalazane

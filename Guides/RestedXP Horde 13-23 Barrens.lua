@@ -870,7 +870,7 @@ step
 step << Shaman/Warrior
     #sticky
     #completewith next
-    +If it’s cheaper, buy a green 2h mace from the AH
+    +If it's cheaper, buy a green 2h mace from the AH
 step << Shaman/Warrior
     .goto Thunder Bluff,53.2,58.2
     .vendor >> Go buy Maul
