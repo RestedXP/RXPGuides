@@ -386,8 +386,15 @@ function RXP_.CreateOptionsPanel()
         -- get = "getProfileOption",
         -- set = "setProfileOption",
         args = {
-            importBox = {
+            buffer = { -- Buffer hacked in right-aligned icon
                 order = 1,
+                name = "Paste encoded strings, RegisterGuide, or ImportGuide commands below.",
+                type = "description",
+                width = "full",
+                fontSize = "medium"
+            },
+            importBox = {
+                order = 10,
                 type = 'input',
                 name = 'Guides to import',
                 width = "full",
@@ -407,7 +414,7 @@ function RXP_.CreateOptionsPanel()
                 end
             },
             currentGuides = {
-                order = 2,
+                order = 11,
                 type = 'select',
                 style = 'dropdown',
                 name = "Currently loaded imported guides",
@@ -427,10 +434,9 @@ function RXP_.CreateOptionsPanel()
                 set = function(_, value)
                     RXP_.settings.gui.selectedDeleteGuide = value
                 end
-                -- set = false
             },
             deleteSelectedGuide = {
-                order = 3,
+                order = 12,
                 type = 'execute',
                 name = "Delete imported guide",
                 confirm = function(_, key)
@@ -458,7 +464,7 @@ function RXP_.CreateOptionsPanel()
                 end
             },
             reloadGuides = {
-                order = 4,
+                order = 13,
                 name = "Reload guides and UI",
                 type = 'execute',
                 func = function() _G.ReloadUI() end,
@@ -473,6 +479,16 @@ function RXP_.CreateOptionsPanel()
 
     RXP_.settings.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
                                    "RXP Guides/Import", "Import", "RXP Guides")
+
+    -- Ace3 ConfigDialog doesn't support embedding icons in header
+    -- Directly references Ace3 built frame object
+    -- Hackery ahead
+    local importFrame = RXP_.settings.gui.import.obj.frame
+    importFrame.icon = importFrame:CreateTexture()
+    importFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
+                                    "\\Textures\\rxp_logo-64")
+    importFrame.icon:SetPoint("TOPRIGHT", -5, -5)
+
 end
 
 function RXP_.settings.functions.getProfileOption(info)
