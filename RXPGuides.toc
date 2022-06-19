@@ -2,7 +2,7 @@
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
-## Version: 3.0.6
+## Version: @project-version@
 ## OptionalDeps: Questie, unitscan
 ## SavedVariables: RXPData, RXPDB
 ## SavedVariablesPerCharacter: RXPCData

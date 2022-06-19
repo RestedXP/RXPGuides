@@ -2,7 +2,7 @@
 
 RXP_ = RXP_ or {}
 RXPGuides = {}
-RXP_.versionText = "Version 3.0.6"
+RXP_.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")
 local addonVersion = 30006
 local version = select(4, GetBuildInfo())
 
@@ -21,10 +21,14 @@ RXP_.questTurnIn = {}
 RXP_.activeItems = {}
 
 BINDING_HEADER_RXPGuides = "RXPGuides"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] = "Quest Item Button 1"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] = "Quest Item Button 2"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] = "Quest Item Button 3"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] = "Quest Item Button 4"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
+    "Quest Item Button 1"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] =
+    "Quest Item Button 2"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
+    "Quest Item Button 3"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
+    "Quest Item Button 4"
 
 local eventFrame = CreateFrame("Frame");
 local questFrame = CreateFrame("Frame");
@@ -159,7 +163,7 @@ local startTime = GetTime()
 function RXP_.QuestAutoAccept(title)
     if title then
         local element
-        for k,v in pairs(RXP_.questAccept) do
+        for k, v in pairs(RXP_.questAccept) do
             if k == title or RXP_.GetQuestName(k) == title then
                 element = v
             end
@@ -171,7 +175,7 @@ end
 function RXP_.QuestAutoTurnIn(title)
     if title then
         local element
-        for k,v in pairs(RXP_.questTurnIn) do
+        for k, v in pairs(RXP_.questTurnIn) do
             if k == title or RXP_.GetQuestName(k) == title then
                 element = v
             end
