@@ -1,4 +1,5 @@
-## Interface: 20502
+## Interface: 20504
+## Interface-Classic: 11403
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
