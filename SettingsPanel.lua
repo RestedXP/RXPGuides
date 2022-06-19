@@ -1,6 +1,7 @@
 local addonName = ...
 
 local AceConfig = LibStub("AceConfig-3.0")
+local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 
 SLASH_RXPG1 = "/rxp"
 SLASH_RXPG2 = "/rxpg"
@@ -11,13 +12,14 @@ SlashCmdList["RXPG"] = function(msg)
     InterfaceOptionsFrame_OpenToCategory(RXPOptions)
 end
 
-function RXP_.CreateOptionsPanel()
-    if not RXP_.settings then
-        RXP_.settings = {gui = {}}
-    elseif not RXP_.settings.gui then
-        RXP_.settings.gui = {}
-    end
+if not RXP_.settings then
+    RXP_.settings = {gui = {}, functions = {}}
+else
+    if not RXP_.settings.gui then RXP_.settings.gui = {} end
+    if not RXP_.settings.functions then RXP_.settings.functions = {} end
+end
 
+function RXP_.CreateOptionsPanel()
     local panel = CreateFrame("Frame", "RXPOptions")
     panel.name = "RXP Guides"
     InterfaceOptions_AddCategory(panel)
@@ -380,23 +382,89 @@ function RXP_.CreateOptionsPanel()
     local importOptionsTable = {
         type = "group",
         name = "RestedXP Guide Import",
-        -- handler = RXP_,
+        handler = RXP_.settings.functions,
         -- get = "getProfileOption",
         -- set = "setProfileOption",
         args = {
             importBox = {
+                order = 1,
                 type = 'input',
                 name = 'Guides to import',
                 width = "full",
                 multiline = 10,
-                usage = "Usage string",
-                set = function() print("test") end,
-                validate = function(...) print("test validation") end
+                -- usage = "Usage string",
+                set = function(_, val)
+                    RXP_.settings.gui.importGuideText = val
+                    RXP_.settings.functions.ImportBoxSet(val)
+                    RXP_.settings.gui.importGuideText = ""
+                    RXP_.settings.gui.selectedDeleteGuide = "mustReload"
+                end,
+                get = function()
+                    return RXP_.settings.gui.importGuideText
+                end,
+                validate = function(_, val)
+                    return RXP_.settings.functions.ImportBoxValidate(val)
+                end
             },
-            import = {
+            currentGuides = {
+                order = 2,
+                type = 'select',
+                style = 'dropdown',
+                name = "Currently loaded imported guides",
+                width = 'full',
+                values = function()
+                    return RXP_.settings.functions.GetImportedGuides()
+                end,
+                disabled = function()
+                    return
+                        RXP_.settings.gui.selectedDeleteGuide == "mustReload" or
+                            RXP_.settings.gui.selectedDeleteGuide == "none" or
+                            RXP_.settings.gui.selectedDeleteGuide == ""
+                end,
+                get = function()
+                    return RXP_.settings.gui.selectedDeleteGuide
+                end,
+                set = function(_, value)
+                    RXP_.settings.gui.selectedDeleteGuide = value
+                end
+                -- set = false
+            },
+            deleteSelectedGuide = {
+                order = 3,
                 type = 'execute',
-                name = "Import",
-                func = function(...) print("Test import") end
+                name = "Delete imported guide",
+                confirm = function(_, key)
+                    if RXP_.settings.gui.selectedDeleteGuide == "" or
+                        RXP_.settings.gui.selectedDeleteGuide == "none" then
+                        return false
+                    end
+                    return string.format("Remove %s?",
+                                         RXP_.settings.gui.selectedDeleteGuide)
+                end,
+                disabled = function()
+                    return
+                        RXP_.settings.gui.selectedDeleteGuide == "mustReload" or
+                            RXP_.settings.gui.selectedDeleteGuide == "none" or
+                            RXP_.settings.gui.selectedDeleteGuide == ""
+                end,
+                func = function(_)
+                    if RXPGuides.db.profile.guides[RXP_.settings.gui
+                        .selectedDeleteGuide] then
+                        RXPGuides.db.profile.guides[RXP_.settings.gui
+                            .selectedDeleteGuide] = nil
+                    end
+
+                    RXP_.settings.gui.selectedDeleteGuide = "mustReload"
+                end
+            },
+            reloadGuides = {
+                order = 4,
+                name = "Reload guides and UI",
+                type = 'execute',
+                func = function() _G.ReloadUI() end,
+                disabled = function()
+                    return RXP_.settings.gui.selectedDeleteGuide ~= "mustReload"
+                end
             }
         }
     }
@@ -407,9 +475,72 @@ function RXP_.CreateOptionsPanel()
                                    "RXP Guides/Import", "Import", "RXP Guides")
 end
 
-function RXP_:getProfileOption(info) return RXP_.db.profile[info[#info]] end
+function RXP_.settings.functions.getProfileOption(info)
+    return RXP_.db.profile[info[#info]]
+end
 
-function RXP_:setProfileOption(info, value)
+function RXP_.settings.functions.setProfileOption(info, value)
     local key = info[#info]
     RXP_.db.profile[key] = value
+end
+
+function RXP_.settings.functions.ImportBoxSet(text)
+    -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
+    if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
+        local loadedFunction, errorString = loadstring(
+                                                "return function() \n" .. text ..
+                                                    "\n end", "ImportGuideGUI")
+
+        if errorString then return errorString end
+
+        if loadedFunction then
+            return loadedFunction()() -- execute return then Import/Register inner multi-function
+        else
+            return "No function detected"
+        end
+    else
+        -- TODO
+        return "ImportBoxSet: TODO not a legacy guide"
+    end
+end
+
+function RXP_.settings.functions.ImportBoxValidate(text)
+    -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
+    if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
+        local loadedFunction, errorString = loadstring(
+                                                "return function() \n" .. text ..
+                                                    "\n end", "ImportGuideGUI")
+
+        return not errorString and loadedFunction
+    else
+        -- TODO
+        return "ImportBoxValidate: TODO not a legacy guide"
+    end
+end
+
+function RXP_.settings.functions.GetImportedGuides()
+    local display = {none = ""}
+    local importedGuidesFound = false
+
+    if RXP_.settings.gui.selectedDeleteGuide == "mustReload" then
+        return {mustReload = "Must reload UI"}
+    end
+
+    for _, guide in ipairs(RXP_.guides) do
+        if guide.imported or guide.cache then
+            importedGuidesFound = true
+            display[guide.key] = string.format("%s - version %s", guide.key,
+                                               guide.version)
+        end
+    end
+
+    table.sort(display)
+
+    if importedGuidesFound then
+        return display
+    else
+        RXP_.settings.gui.selectedDeleteGuide = "none"
+        return {none = "none"}
+    end
+
 end

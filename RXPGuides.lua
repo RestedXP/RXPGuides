@@ -490,11 +490,10 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
     elseif event == "PLAYER_LOGIN" then
         RXPG_init()
         local importGuidesDefault = {profile = {guides = {}}}
-        -- TODO add menu option to reset cached guides
         RXPGuides.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
                                                 'global')
         RXPGuides.LoadCachedGuides()
-        RXPGuides.LoadFileGuides()
+        RXPGuides.LoadEmbeddedGuides()
         RXPFrame.GenerateMenuTable()
         RXP_.CreateOptionsPanel()
         loadtime = GetTime()
