@@ -18,5 +18,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Package and release
+      - name: Package and release Classic
         uses: BigWigsMods/packager@v2
+        with:
+          args: -g classic
+
+      - name: Package and release BCC
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -g bcc
