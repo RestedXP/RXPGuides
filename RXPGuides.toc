@@ -24,5 +24,6 @@ data.lua
 map.lua
 functions.lua
 GuideLoader.lua
+Bindings.xml
 
 Guides/GuideList.xml
