@@ -170,7 +170,7 @@ function RXP_.FormatNumber(number,precision)
 end
 
 function RXP_.GetQuestName(id)
-    if not id then return end
+    if type(id) ~= "number" then return end
     id = questConversion[id] or id
 
     if db and type(db.QueryQuest) == "function" and type(db.GetQuest) == "function" then
@@ -183,14 +183,18 @@ function RXP_.GetQuestName(id)
     if IsOnQuest(id) then
         if GetQuestLogTitle then
             for i = 1,GetNumQuests() do
-                local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+                local questLogTitleText, _, _, _, _, _, _, questID = GetQuestLogTitle(i);
                 if questID == id then
                     questNameCache[id] = questLogTitleText
                     return questLogTitleText
                 end
             end
         else
-            return C_QuestLog.GetInfo(id)
+            local name = GetTitleForQuestID(id)
+            if name then
+                questNameCache[id] = name
+            end
+            return name
         end
     else
         local ctime = GetTime()
@@ -216,7 +220,7 @@ function RXP_.GetQuestName(id)
                 if C_QuestLog.GetQuestInfo then
                     return C_QuestLog.GetQuestInfo(id)
                 else
-                    return C_QuestLog.GetInfo(id)
+                    return C_QuestLog.GetTitleForQuestID(id)
                 end
             elseif not requests[id] then
                 requests[id] = GetTime()
@@ -675,7 +679,7 @@ function RXP_.functions.daily(self,text,...)
                 local quest = RXP_.GetQuestName(id,element)
                 if quest then
                     element.title = quest
-                    RXP_.questAccept[quest] = element
+                    --RXP_.questAccept[quest] = element
                     if element.requestFromServer then
                         element.requestFromServer = nil
                         RXP_.UpdateStepText(self)
@@ -806,7 +810,7 @@ function RXP_.functions.turnin(self,...)
         if step.active or element.retrieveText then
             RXP_.questTurnIn[id] = element
             --RXP_.questAccept[id] = RXP_.questAccept[id] or element
-            local quest = RXP_.GetQuestName(id,true)
+            local quest = RXP_.GetQuestName(id)
             if quest then
                 element.title = quest
                 RXP_.questTurnIn[quest] = element

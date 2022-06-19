@@ -1,0 +1,6 @@
+<Bindings>
+    <Binding name="CLICK RXPItemFrameButton1:LeftButton" header="RXPGuides" />
+    <Binding name="CLICK RXPItemFrameButton2:LeftButton" />
+    <Binding name="CLICK RXPItemFrameButton3:LeftButton" />
+    <Binding name="CLICK RXPItemFrameButton4:LeftButton" />
+</Bindings>

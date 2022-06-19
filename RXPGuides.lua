@@ -20,6 +20,12 @@ RXP_.questAccept = {}
 RXP_.questTurnIn = {}
 RXP_.activeItems = {}
 
+BINDING_HEADER_RXPGuides = "RXPGuides"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] = "Quest Item Button 1"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] = "Quest Item Button 2"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] = "Quest Item Button 3"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] = "Quest Item Button 4"
+
 local eventFrame = CreateFrame("Frame");
 local questFrame = CreateFrame("Frame");
 
@@ -152,14 +158,24 @@ local startTime = GetTime()
 
 function RXP_.QuestAutoAccept(title)
     if title then
-        local element = RXP_.questAccept[title]
+        local element
+        for k,v in pairs(RXP_.questAccept) do
+            if k == title or RXP_.GetQuestName(k) == title then
+                element = v
+            end
+        end
         return element and element.step.active
     end
 end
 
 function RXP_.QuestAutoTurnIn(title)
     if title then
-        local element = RXP_.questTurnIn[title]
+        local element
+        for k,v in pairs(RXP_.questTurnIn) do
+            if k == title or RXP_.GetQuestName(k) == title then
+                element = v
+            end
+        end
         return (element and element.step.active) and element.reward
     end
 end
@@ -406,7 +422,7 @@ function RXP_:QuestAutomation(event, arg1, arg2, arg3)
             end
         end
 
-        if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
+        if G_GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
             SelectAvailableQuest(1)
         else
             for i = 1, nAvailable do
