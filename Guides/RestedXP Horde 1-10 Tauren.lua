@@ -162,7 +162,7 @@ step
     .complete 3376,1 --Chief Sharptusk Thornmantle's Head (1)
 step << !Shaman
     #requires Belt
-    >>Go into the cave. Loot the map on the ground, then click it
+    >>Go into the cave. Loot the map on the ground then click it to accept the quest.
     .goto Mulgore,63.2,82.7
     .collect 4851,1,781 --Collect Dirt-Stained Map
     .accept 781 >>Accept Attack on Camp Narache
@@ -170,7 +170,7 @@ step << Shaman
     #requires Belt
 step << Shaman
     #requires Salve
-    >>Go into the cave. Loot the map on the ground, then click it
+    >>Go into the cave. Loot the map on the ground then click it to accept the quest.
     .goto Mulgore,63.2,82.7
     .collect 4851,1,781 --Collect Dirt-Stained Map
     .accept 781 >>Accept Attack on Camp Narache
@@ -212,7 +212,7 @@ step
 step
     #softcore
 	#completewith next
-    .goto Mulgore,46.5,55.5,300 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
+    .goto Mulgore,46.5,55.5,300 >> Die and respawn at the Spirit Healer or run to Bloodhoof Village
 step
 	#hardcore
 	#completewith next
@@ -226,17 +226,18 @@ step << !Hunter
     .accept 766 >>Accept Mazzranache
 step << Shaman/Druid
     .goto Mulgore,45.7,58.6
-     >> vendor trash. Sell your weapon if it gives you enough money for Walking Stick (4s 80c). Skip this step if you don't have enough
+     >> Vendor trash. Sell your weapon if it gives you enough money for a Walking Stick (4s 80c). Skip this step if you don't have enough
     .collect 2495,1 --Collect Walking Stick
 step << Warrior
     .goto Mulgore,45.7,58.6
-     >> vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (6s 66c). Skip this step if you don't have enough
+     >> Vendor trash. Sell your weapon if it gives you enough money for a Wooden Mallet (6s 66c). Skip this step if you don't have enough
     .collect 2493,1 --Collect Wooden Mallet
 step << !Hunter
     .goto Mulgore,46.6,61.1
     .turnin 1656 >>Turn in A Task Unfinished
 step << !Hunter
 	.goto Mulgore,46.6,61.1
+    #completewith next
     .home >>Set your Hearthstone to Bloodhoof Village
 step << !Hunter
     .goto Mulgore,47.5,60.2
@@ -249,18 +250,21 @@ step << !Hunter
     .turnin 767 >>Turn in Rite of Vision
     .accept 771 >>Accept Rite of Vision
 step << Shaman
+        #completewith next
     .goto Mulgore,48.4,59.2
     .trainer >> Train your class spells
 step << !Hunter
     .goto Mulgore,48.7,59.3
     .accept 761 >>Accept Swoop Hunting
 step << Druid
+        #completewith next
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells
 step << !Hunter
     .goto Mulgore,48.6,60.4
     .accept 748 >>Accept Poison Water
 step << Warrior
+        #completewith next
     .goto Mulgore,49.5,60.6
     .trainer >> Train your class spells
 step
@@ -307,13 +311,14 @@ step << Hunter
     .goto Mulgore,49.3,56.2,15,0
     .goto Mulgore,52.0,61.1,15,0
     .goto Mulgore,50.0,66.4,15,0
-    .goto Mulgore,50.4,66.5,15,0
+    .goto Mulgore,50.4,66.5
     >>Collect the 'Acorn' looking items on the ground, below the trees
     .complete 771,2 --Ambercorn (2)
 step << !Hunter
+    .goto Mulgore,49.3,56.2,15,0
     .goto Mulgore,52.0,61.1,15,0
     .goto Mulgore,50.0,66.4,15,0
-    .goto Mulgore,50.4,66.5,15,0
+    .goto Mulgore,50.4,66.5
     >>Collect the 'Acorn' looking items on the ground, below the trees
     .complete 771,2 --Ambercorn (2)
 step
@@ -367,13 +372,14 @@ step
     .goto Mulgore,48.3,72.0,90,0
     .goto Mulgore,53.5,73.0,90,0
     .goto Mulgore,48.3,72.0
-    >>Go back and forth between the two camps, killing Gnolls. Be aware of Snagglespear (Level 9 rare). He's too difficult to kill.
+    >>Go back and forth between the two camps killing Gnolls. Be aware of Snagglespear (Level 9 rare). He's too difficult to kill.
     .complete 745,1 --Palemane Tanner (10)
     .complete 745,2 --Palemane Skinner (8)
     .complete 745,3 --Palemane Poacher (5)
     .unitscan Snagglespear
 step
     .goto Mulgore,47.6,61.5
+        #completewith next
     .vendor >>vendor trash
 step << Tauren
     .goto Mulgore,48.5,60.4
@@ -395,6 +401,7 @@ step
     .goto Mulgore,47.5,60.2
     .turnin 745 >>Turn in Sharing the Land
 step << Warrior
+        #completewith next
     .goto Mulgore,46.8,60.8
 	.money <0.01
     .trainer >> Train First Aid
@@ -423,7 +430,7 @@ step
     .goto Mulgore,50.2,60.2,60,0
     .goto Mulgore,46.8,59.6,60,0
     .goto Mulgore,47.3,56.9
-    >>Look for Kyle the Frenzied. He patrols clockwise throughout the town (so go anti-clockwise). Go up to him and use the Tender Strider Meat
+    .use 33009 >>Look for Kyle the Frenzied. He patrols clockwise throughout the town (so go anti-clockwise). Go up to him and use the Tender Strider Meat
 	.complete 11129,1 --Kyle Fed (1)
 	.unitscan Kyle the Frenzied
 step << Hunter
@@ -470,7 +477,7 @@ step
 step
     #softcore
     #completewith TotemW
-    .goto Mulgore,46.5,55.5,200 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
+    .goto Mulgore,46.5,55.5,200 >> Die and respawn at the Spirit Healer or run to Bloodhoof Village
 step
     #hardcore
     #completewith TotemW
@@ -493,12 +500,15 @@ step
     .goto Mulgore,48.7,59.4
     .turnin 761 >>Turn in Swoop Hunting
 step << Shaman
+        #completewith next
     .goto Mulgore,48.4,59.2
     .trainer >> Train your class spells
 step << Druid
+        #completewith next
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells
 step << Warrior
+        #completewith next
     .goto Mulgore,49.5,60.6
     .trainer >> Train your class spells
 step << Shaman/Druid
@@ -619,14 +629,17 @@ step << Druid
     .goto Mulgore,48.5,59.6
     .abandon 759 >>Abandon Wildmane Totem
 step << Shaman
+        #completewith next
     .goto Mulgore,48.4,59.2
     .accept 2984 >>Accept Call of Fire
      .trainer >> Train your class spells
 step << Druid
+        #completewith next
     .goto Mulgore,48.5,59.6
     .accept 5928 >>Accept Heeding the Call
      .trainer >> Train your class spells
 step << Warrior
+        #completewith next
     .goto Mulgore,49.5,60.6
     .accept 1505 >>Accept Veteran Uzzek
      .trainer >> Train your class spells
@@ -644,9 +657,12 @@ step << Hunter
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
 step << Hunter
+    #sticky
+        #completewith next
     .goto Mulgore,47.7,55.7
      .trainer >> Train your pet spells
 step << Hunter
+        #completewith next
     .goto Mulgore,47.8,55.7
     .accept 6061 >>Accept Taming the Beast
      .trainer >> Train your class spells
@@ -681,47 +697,49 @@ step << Warrior/Shaman
     .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5,30,0
     .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
+    .goto Mulgore,59.7,62.5
     .turnin 751 >> Turn in The Ravaged Caravan
     .accept 764 >>Accept The Venture Co.
     .accept 765 >>Accept Supervisor Fizsprocket
+    .unitscan Morin Cloudstalker
 --X WIP
 step << Druid/Hunter
     >>Look for Morin Cloudstalker. He patrols along the eastern road. Skip followups
-.goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5,30,0
-.goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5,30,0
-.goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-.turnin 751 >> Turn in The Ravaged Caravan
+    .goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,59.7,62.5
+    .turnin 751 >> Turn in The Ravaged Caravan
 	.unitscan Morin Cloudstalker
 step << Tauren Warrior/Tauren Shaman
     >>Kill Wolves in the area. Loot them for teeth
-.goto Mulgore,66.9,67.2
+    .goto Mulgore,66.9,67.2
     .complete 759,1 --Prairie Alpha Tooth (8)
 step << Warrior/Shaman
     #sticky
     #completewith next
-.goto Mulgore,46.5,55.5,200 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
+    .goto Mulgore,46.5,55.5,200 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
 step << Tauren Warrior/Tauren Shaman
     .goto Mulgore,48.5,60.4
     .turnin 759 >>Turn in Wildmane Totem
     .accept 760 >>Accept Wildmane Cleansing
 step
-.goto Mulgore,69.6,60.4,100 >>Run into The Barrens
+    .goto Mulgore,69.6,60.4,100 >>Run into The Barrens
 step << Druid/Hunter
     .abandon 765 >>Abandon Supervisor Fizsprocket
     .abandon 764 >>Abandon The Venture Co.
 step << !Druid
     .goto The Barrens,44.5,59.1
-    .fp Taurajo >>Get the Camp Taurajo Flight Path
+    .fp Camp Taurajo >>Get the Camp Taurajo Flight Path
 step << Druid
 	#completewith next
     .goto The Barrens,44.5,59.1
-    .fp Taurajo >>Get the Camp Taurajo Flight Path
+    .fp Camp Taurajo >>Get the Camp Taurajo Flight Path
     .fly Thunder Bluff >>Fly to Thunder Bluff
 step << Druid
+        #completewith next
     .goto Thunder Bluff,45.8,64.4
     .home >>Set your Hearthstone to Thunder Bluff
 step << Druid
@@ -734,15 +752,16 @@ step << Druid
     .goto Thunder Bluff,77.0,27.5
     .accept 5922 >>Accept Moonglade
 step << Druid
-    >>Use your new spell to teleport to Moonglade
+    .cast 18960 >>Use your new spell to teleport to Moonglade
     .goto Moonglade,56.2,30.7
     .turnin 5922 >>Turn in Moonglade
     .accept 5930 >>Accept Great Bear Spirit
 step << Druid
     .goto Moonglade,39.2,27.5
     .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
+    .skipgossip
 step << Druid
-    >> Teleport back to Moonglade
+    .cast 18960 >> Teleport back to Moonglade
 .goto Moonglade,56.2,30.7
     .turnin 5930 >>Turn in Great Bear Spirit
     .accept 5932 >>Accept Back to Thunder Bluff
@@ -750,36 +769,37 @@ step << Druid
 	#completewith next
     .hs >>Hearth to Thunder Bluff
 step << Druid
-.goto Thunder Bluff,76.5,27.3
-.turnin 5932 >>Turn in Back to Thunder Bluff
-.accept 6002 >>Accept Body and Heart
+    .goto Thunder Bluff,76.5,27.3
+    .turnin 5932 >>Turn in Back to Thunder Bluff
+    .accept 6002 >>Accept Body and Heart
 step << Druid
-.goto Thunder Bluff,47.0,49.8
-.fly Camp Taurajo >>Fly to Camp Taurajo
+    .goto Thunder Bluff,47.0,49.8
+    .fly Camp Taurajo >>Fly to Camp Taurajo
 step << Druid
-    >>Run to the Moonkin Stone, and use the Cenarion Lunardust in your inventory. Kill Lunaclaw, then talk to her
-.goto The Barrens,42.0,60.9
-.complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses.
+    .use 15710 >>Run to the Moonkin Stone and use the Cenarion Lunardust. Kill Lunaclaw then talk to her.
+    .goto The Barrens,42.0,60.9
+    .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses.
+    .skipgossip
 --This complete has been added manually, might be scuffed
 step << Tauren
-.goto The Barrens,44.9,58.6
-.accept 854 >>Accept Journey to the Crossroads
+    .goto The Barrens,44.9,58.6
+    .accept 854 >>Accept Journey to the Crossroads
 step << Druid
-.goto The Barrens,52.2,31.9
+    .goto The Barrens,52.2,31.9
     .turnin 886 >>Turn in The Barrens Oases
-.accept 870 >>Accept The Forgotten Pools
+    .accept 870 >>Accept The Forgotten Pools
 step << !Druid
-.goto The Barrens,52.2,31.9
-.accept 870 >>Accept The Forgotten Pools
+    .goto The Barrens,52.2,31.9
+    .accept 870 >>Accept The Forgotten Pools
 step
-.goto The Barrens,51.5,30.1
-.accept 848 >>Accept Fungal Spores
+    .goto The Barrens,51.5,30.1
+    .accept 848 >>Accept Fungal Spores
 step << Tauren
-.goto The Barrens,51.5,30.8
-.turnin 854 >>Turn in Journey to the Crossroads
+    .goto The Barrens,51.5,30.8
+    .turnin 854 >>Turn in Journey to the Crossroads
 step
-.goto The Barrens,51.5,30.4
-.fp Crossroads >>Get the The Crossroads Flight Path
+    .goto The Barrens,51.5,30.4
+    .fp The Crossroads >>Get the The Crossroads Flight Path
 step
     .goto The Barrens,51.1,29.0
     .accept 6361 >>Accept A Bundle of Hides
@@ -789,20 +809,20 @@ step
     >>Collect the white mushrooms around The Forgotten Pools
 .complete 848,1 --Collect Fungal Spores (x4)
 step
->>Dive underwater to the bubble fissure
-.goto The Barrens,45.1,22.5
+    >>Dive underwater to the bubble fissure
+    .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
->>Collect the white mushrooms around The Forgotten Pools
-.goto The Barrens,45.2,23.3,40,0
-.goto The Barrens,45.2,22.0,40,0
+>>Finish collecting the white mushrooms around The Forgotten Pools
+    .goto The Barrens,45.2,23.3,40,0
+    .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
-.goto The Barrens,45.2,23.3,40,0
-.goto The Barrens,45.2,22.0,40,0
+    .goto The Barrens,45.2,23.3,40,0
+    .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
-    .goto The Barrens,43.9,24.4,40,0
-.complete 848,1 --Collect Fungal Spores (x4)
+    .goto The Barrens,43.9,24.4
+    .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,52.0,30.6,150 >> Die and respawn at the Spirit Healer, or run back
 step
@@ -830,14 +850,14 @@ step << Warrior/Shaman
     .goto Thunder Bluff,37.8,59.4
     .accept 744 >>Accept Preparation for Ceremony
 step
-.goto Thunder Bluff,29.6,29.7,15 >>Go into the cave
+    .goto Thunder Bluff,29.6,29.7,25 >>Go into the cave
 step << Druid
-    >>Equip the Staff
-.goto Thunder Bluff,23.0,21.0
+    >>Equip the Staff you got from the quest.
+    .goto Thunder Bluff,23.0,21.0
     .turnin 853 >>Turn in Apothecary Zamah
 step << !Druid
-    >>You'll equip the staff soon, make sure you keep it
-.goto Thunder Bluff,23.0,21.0
+    >>You'll equip the staff soon. Make sure you keep it
+    .goto Thunder Bluff,23.0,21.0
     .turnin 853 >>Turn in Apothecary Zamah
 step
     .goto Thunder Bluff,46.8,49.7
@@ -852,14 +872,14 @@ step << Warrior/Shaman
     .accept 776 >>Accept Rites of the Earthmother
 step << Druid
     .money <0.1054
-.goto Thunder Bluff,40.9,62.7
+    .goto Thunder Bluff,40.9,62.7
     .train 199 >>Train 2h Maces
 step << Warrior/Hunter
-.goto Thunder Bluff,40.9,62.7
+    .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
 step << Druid
-.goto Thunder Bluff,76.5,27.3
-.turnin 6002 >>Turn in Body and Heart
+    .goto Thunder Bluff,76.5,27.3
+    .turnin 6002 >>Turn in Body and Heart
 step << Druid/Hunter
     #sticky
     #completewith next
@@ -870,18 +890,18 @@ step << Druid/Hunter
 step << Druid/Hunter
     #sticky
     #completewith next
-+Run all the way to the Zeppelin tower. Take the zeppelin to Undercity. Abandon all your quests
+    +Run all the way to the Zeppelin tower. Take the zeppelin to Undercity. Abandon all your quests
     .goto Durotar,50.8,13.8
 step << Druid/Hunter
-.goto Tirisfal Glades,60.7,58.8,1500 >>Arrive in Tirisfal
+    .zone Tirisfal Glades >>Arrive in Tirisfal
 step << Druid/Hunter
-.goto Undercity,66.2,1.1,18 >>Go to Undercity
+    .goto Undercity,66.2,1.1,25 >>Go to Undercity
 step << Druid/Hunter
-.goto Undercity,62.0,11.3,18 >>Go up the stairs here
+    .goto Undercity,62.0,11.3,20 >>Go up the stairs here
 step << Druid/Hunter
-.goto Undercity,54.9,11.3,18 >>Use the Orb of Translocation
+    .goto Undercity,54.9,11.3,20 >>Use the Orb of Translocation
 step << Druid/Hunter
-.goto Silvermoon City,62.0,30.1,20 >>Go to Silvermoon
+    .zone Silvermoon City >>Arrive at Silvermoon City
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -898,12 +918,12 @@ step
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Accept The Demon Scarred Cloak
 step
-.goto Mulgore,31.7,28.2,40,0
+    .goto Mulgore,31.7,28.2,40,0
     .goto Mulgore,30.2,19.5,40,0
-.goto Mulgore,31.7,28.2,40,0
+    .goto Mulgore,31.7,28.2,40,0
     .goto Mulgore,30.2,19.5,40,0
-.goto Mulgore,31.7,28.2,40,0
-    .goto Mulgore,30.2,19.5,40,0
+    .goto Mulgore,31.7,28.2,40,0
+    .goto Mulgore,30.2,19.5
     >>Kill Harpies. Loot them for their Feathers
     .complete 744,1 --Azure Feather (6)
     .complete 744,2 --Bronze Feather (6)
@@ -914,7 +934,7 @@ step
     .complete 861,1 --Flatland Prowler Claw (4)
 step
     .goto Mulgore,42.5,13.8
->>Use the Wildmane Cleansing Totem at the Well
+    .use 5416 >>Use the Wildmane Cleansing Totem at the Well
     .complete 760,1 --Cleanse the Wildmane Well (1)
 step
 .goto Mulgore,52.6,12.2,40,0
@@ -924,9 +944,10 @@ step
 .goto Mulgore,52.6,12.2,40,0
     .goto Mulgore,48.6,16.1,40,0
     .goto Mulgore,51.8,33.8,40,0
-    .goto Mulgore,56.2,32.9,40,0
+    .goto Mulgore,56.2,32.9
 >>Look around for Arra'Chea (Big black kodo). He walks clockwise. Kill and Loot him for his horn
     .complete 776,1 --Horn of Arra'chea (1)
+    .unitscan Arra'Chea
 step
     #requires Prowlers
     #label ThunderBluff
@@ -944,54 +965,57 @@ step
     .accept 860 >>Accept Sergra Darkthorn
 step
     .isOnQuest 770
->>Run to Bloodhoof Village
-.goto Mulgore,46.8,60.2
+    >>Run to Bloodhoof Village
+    .goto Mulgore,46.8,60.2
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step
     .goto Mulgore,48.6,60.4
     .turnin 760 >>Turn in Wildmane Cleansing
 step
-.goto Mulgore,61.5,47.2,110 >>Run to the mine
+    .goto Mulgore,61.5,47.2,110 >>Run to the mine
 step
     #sticky
     #label Workers
-    >>Kill the Venture Co mobs
+    >>Kill the Venture Co. mobs
     .goto Mulgore,63.0,44.3
     .complete 764,1 --Venture Co. Worker (14)
     .complete 764,2 --Venture Co. Supervisor (6)
 step
-    >>Run into the mine, then hug the right/east side. Kill Supervisor Fizsprocket. Loot him for his Clipboard
-.goto Mulgore,64.9,43.3
-.complete 765,1 --Fizsprocket's Clipboard (1)
+    >>Run into the mine, then hug the right/east side. Kill Supervisor Fizsprocket for his Clipboard
+    .goto Mulgore,64.9,43.3
+    .complete 765,1 --Fizsprocket's Clipboard (1)
+    .unitscan Supervisor Fizsprocket
 step
     #requires Workers
     .xp 11+7150 >> Grind to 7150+/8700xp
 step
     #sticky
     #completewith next
->>Look for Morin Cloudstalker. He patrols along the eastern road
-.goto Mulgore,51.1,58.6,30,0
+    >>Look for Morin Cloudstalker. He patrols along the eastern road
+    .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5,30,0
-.goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5,30,0
-.goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5,30,0
-.goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-.turnin 764 >>Turn in The Venture Co.
+    .goto Mulgore,51.1,58.6,30,0
+    .goto Mulgore,59.7,62.5
+    .turnin 764 >>Turn in The Venture Co.
     .turnin 765 >>Turn in Supervisor Fizsprocket
+    .unitscan Morin Cloudstalker
 step << Shaman
-.goto Mulgore,48.4,59.2
-.train 1535 >>Train Fire Nova Totem
-.train 547 >>Train Healing Wave r3
+    .goto Mulgore,48.4,59.2
+    .train 1535 >>Train Fire Nova Totem
+    .train 547 >>Train Healing Wave r3
 step << Warrior
-.goto Mulgore,49.5,60.6
-.train 5242 >>Train Battle Shout r2
-.train 7384 >>Train Overpower
+    .goto Mulgore,49.5,60.6
+    .train 5242 >>Train Battle Shout r2
+    .train 7384 >>Train Overpower
 step
     #sticky
     #completewith next
-.goto The Barrens,52.0,29.9,100 >>Hearth or fly back to Crossroads
+    .cooldown item,6948,>0
+    .goto The Barrens,52.0,29.9,100 >>Hearth or fly back to Crossroads
 step
     .goto The Barrens,51.2,29.1
     .turnin 6364 >>Turn in Return to Jahan
@@ -1001,8 +1025,8 @@ step
     .accept 5041 >>Accept Supplies for the Crossroads
 step
     .goto The Barrens,51.6,30.9
-    >>Upstairs
-.accept 867 >>Accept Harpy Raiders
+    >>Run upstairs
+    .accept 867 >>Accept Harpy Raiders
 step
     .goto The Barrens,52.2,31.0
     .turnin 860 >>Turn in Sergra Darkthorn
@@ -1015,7 +1039,7 @@ step << Shaman
     .turnin 2984 >>Turn in Call of Fire
     .accept 1524 >>Accept Call of Fire
 step << Shaman
-.goto Durotar,36.6,58.0,15 >>Run up the mountain path
+.goto Durotar,36.6,58.0,25 >>Run up the mountain path
 step << Shaman
     .goto Durotar,38.5,58.9
     .turnin 1524 >>Turn in Call of Fire
