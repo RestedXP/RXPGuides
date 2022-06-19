@@ -19,6 +19,8 @@ else
     if not RXP_.settings.functions then RXP_.settings.functions = {} end
 end
 
+RXP_.settings.gui.selectedDeleteGuide = ""
+
 function RXP_.CreateOptionsPanel()
     local panel = CreateFrame("Frame", "RXPOptions")
     panel.name = "RXP Guides"
@@ -426,7 +428,7 @@ function RXP_.CreateOptionsPanel()
                     return
                         RXP_.settings.gui.selectedDeleteGuide == "mustReload" or
                             RXP_.settings.gui.selectedDeleteGuide == "none" or
-                            RXP_.settings.gui.selectedDeleteGuide == ""
+                            not RXP_.settings.gui.selectedDeleteGuide
                 end,
                 get = function()
                     return RXP_.settings.gui.selectedDeleteGuide
@@ -440,7 +442,7 @@ function RXP_.CreateOptionsPanel()
                 type = 'execute',
                 name = "Delete imported guide",
                 confirm = function(_, key)
-                    if RXP_.settings.gui.selectedDeleteGuide == "" or
+                    if not RXP_.settings.gui.selectedDeleteGuide or
                         RXP_.settings.gui.selectedDeleteGuide == "none" then
                         return false
                     end
@@ -451,7 +453,7 @@ function RXP_.CreateOptionsPanel()
                     return
                         RXP_.settings.gui.selectedDeleteGuide == "mustReload" or
                             RXP_.settings.gui.selectedDeleteGuide == "none" or
-                            RXP_.settings.gui.selectedDeleteGuide == ""
+                            not RXP_.settings.gui.selectedDeleteGuide
                 end,
                 func = function(_)
                     if RXPGuides.db.profile.guides[RXP_.settings.gui
@@ -535,7 +537,7 @@ function RXP_.settings.functions.ImportBoxValidate(text)
 end
 
 function RXP_.settings.functions.GetImportedGuides()
-    local display = {none = ""}
+    local display = {empty = ""}
     local importedGuidesFound = false
 
     if RXP_.settings.gui.selectedDeleteGuide == "mustReload" then
