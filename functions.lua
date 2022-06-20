@@ -1532,8 +1532,6 @@ function RXP_.functions.collect(self,...)
         end
     end
 
-
-
     local count = GetItemCount(element.id)
     for i = 1,INVSLOT_LAST_EQUIPPED do
         if GetInventoryItemID("player",i) == element.id then
@@ -1546,7 +1544,13 @@ function RXP_.functions.collect(self,...)
         count = numRequired
     end
 
-    if version and version > 90000 then
+    if numRequired <= 0 then
+        element.textOnly = true
+        if element.text then
+            RXP_.UpdateStepText(self)
+            element.text = nil
+        end
+    elseif version and version > 90000 then
         if element.rawtext then
             element.tooltipText = RXP_.icons.collect..element.rawtext
             element.text = string.format("%s\n%d/%d %s",element.rawtext,count,numRequired,element.itemName)
