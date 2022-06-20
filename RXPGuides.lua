@@ -2,7 +2,7 @@
 
 RXP_ = RXP_ or {}
 RXPGuides = {}
-RXP_.versionText = "Version 3.0.6"
+RXP_.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")
 local addonVersion = 30006
 local version = select(4, GetBuildInfo())
 
@@ -19,6 +19,16 @@ RXP_.itemQueryList = {}
 RXP_.questAccept = {}
 RXP_.questTurnIn = {}
 RXP_.activeItems = {}
+
+BINDING_HEADER_RXPGuides = "RXPGuides"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
+    "Quest Item Button 1"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] =
+    "Quest Item Button 2"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
+    "Quest Item Button 3"
+_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
+    "Quest Item Button 4"
 
 local eventFrame = CreateFrame("Frame");
 local questFrame = CreateFrame("Frame");
@@ -152,14 +162,24 @@ local startTime = GetTime()
 
 function RXP_.QuestAutoAccept(title)
     if title then
-        local element = RXP_.questAccept[title]
+        local element
+        for k, v in pairs(RXP_.questAccept) do
+            if k == title or RXP_.GetQuestName(k) == title then
+                element = v
+            end
+        end
         return element and element.step.active
     end
 end
 
 function RXP_.QuestAutoTurnIn(title)
     if title then
-        local element = RXP_.questTurnIn[title]
+        local element
+        for k, v in pairs(RXP_.questTurnIn) do
+            if k == title or RXP_.GetQuestName(k) == title then
+                element = v
+            end
+        end
         return (element and element.step.active) and element.reward
     end
 end
@@ -169,9 +189,7 @@ local maxSkillLevel = {}
 local professionNames
 
 function RXP_.GetProfessionNames()
-    if not professionNames then
-        professionNames = {}
-    end
+    if not professionNames then professionNames = {} end
 
     for profession, ids in pairs(RXP_.professionID) do
         for i, id in ipairs(ids) do
@@ -214,7 +232,8 @@ function RXP_.GetProfessionLevel()
     end
     if not names.riding then names.riding = GetSpellInfo(33388) end
     for i = 1, GetNumSkillLines() do
-        local skillName,_,_,skillRank,_,_,skillMaxRank = GetSkillLineInfo(i)
+        local skillName, _, _, skillRank, _, _, skillMaxRank = GetSkillLineInfo(
+                                                                   i)
         if skillRank then
             for profession, name in pairs(names) do
                 -- print(name,skillName,name == skillName)
@@ -232,7 +251,7 @@ function RXP_.UpdateSkillData()
     RXP_.GetProfessionLevel()
 end
 
-function RXP_.GetSkillLevel(skill,useMaxValue)
+function RXP_.GetSkillLevel(skill, useMaxValue)
     RXP_.UpdateSkillData()
     if skill then
         if useMaxValue then
@@ -407,7 +426,7 @@ function RXP_:QuestAutomation(event, arg1, arg2, arg3)
             end
         end
 
-        if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
+        if G_GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
             SelectAvailableQuest(1)
         else
             for i = 1, nAvailable do
@@ -494,8 +513,8 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
         -- TODO add menu option to reset cached guides
         RXPGuides.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
                                                 'global')
-        RXPGuides.LoadFileGuides()
         RXPGuides.LoadCachedGuides()
+        RXPGuides.LoadFileGuides()
         RXPFrame.GenerateMenuTable()
         RXP_.CreateOptionsPanel()
         loadtime = GetTime()

@@ -179,7 +179,7 @@ function RXP_.UpdateItemFrame(itemFrame)
         local btn = buttonList[i]
 
         if not btn then
-            btn = CreateFrame("CheckButton", "Example", itemFrame,
+            btn = CreateFrame("CheckButton", "$parentButton"..i, itemFrame,
                               "SecureActionButtonTemplate")
             btn:SetAttribute("type", "item")
             btn:SetSize(25, 25)

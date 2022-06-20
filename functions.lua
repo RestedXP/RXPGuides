@@ -170,7 +170,7 @@ function RXP_.FormatNumber(number,precision)
 end
 
 function RXP_.GetQuestName(id)
-    if not id then return end
+    if type(id) ~= "number" then return end
     id = questConversion[id] or id
 
     if db and type(db.QueryQuest) == "function" and type(db.GetQuest) == "function" then
@@ -183,14 +183,18 @@ function RXP_.GetQuestName(id)
     if IsOnQuest(id) then
         if GetQuestLogTitle then
             for i = 1,GetNumQuests() do
-                local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID = GetQuestLogTitle(i);
+                local questLogTitleText, _, _, _, _, _, _, questID = GetQuestLogTitle(i);
                 if questID == id then
                     questNameCache[id] = questLogTitleText
                     return questLogTitleText
                 end
             end
         else
-            return C_QuestLog.GetInfo(id)
+            local name = GetTitleForQuestID(id)
+            if name then
+                questNameCache[id] = name
+            end
+            return name
         end
     else
         local ctime = GetTime()
@@ -216,7 +220,7 @@ function RXP_.GetQuestName(id)
                 if C_QuestLog.GetQuestInfo then
                     return C_QuestLog.GetQuestInfo(id)
                 else
-                    return C_QuestLog.GetInfo(id)
+                    return C_QuestLog.GetTitleForQuestID(id)
                 end
             elseif not requests[id] then
                 requests[id] = GetTime()
@@ -675,7 +679,7 @@ function RXP_.functions.daily(self,text,...)
                 local quest = RXP_.GetQuestName(id,element)
                 if quest then
                     element.title = quest
-                    RXP_.questAccept[quest] = element
+                    --RXP_.questAccept[quest] = element
                     if element.requestFromServer then
                         element.requestFromServer = nil
                         RXP_.UpdateStepText(self)
@@ -806,7 +810,7 @@ function RXP_.functions.turnin(self,...)
         if step.active or element.retrieveText then
             RXP_.questTurnIn[id] = element
             --RXP_.questAccept[id] = RXP_.questAccept[id] or element
-            local quest = RXP_.GetQuestName(id,true)
+            local quest = RXP_.GetQuestName(id)
             if quest then
                 element.title = quest
                 RXP_.questTurnIn[quest] = element
@@ -1528,8 +1532,6 @@ function RXP_.functions.collect(self,...)
         end
     end
 
-
-
     local count = GetItemCount(element.id)
     for i = 1,INVSLOT_LAST_EQUIPPED do
         if GetInventoryItemID("player",i) == element.id then
@@ -1542,7 +1544,13 @@ function RXP_.functions.collect(self,...)
         count = numRequired
     end
 
-    if version and version > 90000 then
+    if numRequired <= 0 then
+        element.textOnly = true
+        if element.text then
+            RXP_.UpdateStepText(self)
+            element.text = nil
+        end
+    elseif version and version > 90000 then
         if element.rawtext then
             element.tooltipText = RXP_.icons.collect..element.rawtext
             element.text = string.format("%s\n%d/%d %s",element.rawtext,count,numRequired,element.itemName)
@@ -3266,4 +3274,76 @@ function RXP_.functions.rescue()
 	if seat then
 		return true
 	end
+end
+
+function RXP_.GetCurrentStageId()
+    local criteriaId = select(9,C_Scenario.GetCriteriaInfo(1))
+    for i = 1,1e6 do
+        local criteria = select(9,C_Scenario.GetCriteriaInfoByStep(i,1))
+        if criteria == criteriaId then print("Current Scenario Stage ID: "..i) end
+    end
+end
+
+events.scenario = "CRITERIA_UPDATE"
+RXP_.icons.scenario = RXP_.icons.complete
+
+function RXP_.functions.scenario(self,...)
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text,stage,criteriaIndex,objMax = ...
+        stage = tonumber(stage)
+        criteriaIndex = tonumber(criteriaIndex)
+        if not (stage and criteriaIndex) then
+            RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid arguments\n"..self)
+            return
+        end
+
+        element.objMax = tonumber(objMax)
+        element.dynamicText = true
+
+        element.stage = stage
+        element.criteriaIndex = criteriaIndex
+        element.rawtext = text or ""
+        element.text = text or ""
+        element.requestFromServer = true
+        element.criteria = ""
+        return element
+    end
+    local event = ...
+
+    local element = self.element
+    local step = element.step
+    local criteriaIndex = element.criteriaIndex
+    local criteriaString, criteriaType, completed, quantity, totalQuantity, flags, assetID, quantityString,
+          criteriaID, duration, elapsed, _, isWeightedProgress = C_Scenario.GetCriteriaInfoByStep(element.stage,criteriaIndex)
+    local required = element.objMax or totalQuantity
+    local scenario = C_ScenarioInfo.GetScenarioInfo()
+    local currentStage = scenario.currentStage
+    local currentObj = select(9,C_Scenario.GetCriteriaInfo(criteriaIndex))
+    if criteriaID == currentObj then
+        element.stagePos = currentStage
+    end
+
+    --print(required,quantity)
+    if not (required and quantity) then
+        if completed then
+            required = 1
+            quantity = 1
+        else
+            required = 1
+            quantity = 0
+        end
+    end
+    if not criteriaString then return end
+    local fulfilled = math.min(required,quantity)
+    element.criteria = string.format("%s: %d/%d",criteriaString,fulfilled,required)
+    if element.rawtext ~= "" then
+        element.criteria = "\n"..element.criteria
+    end
+
+    if completed or (element.stagePos and currentStage > element.stagePos) then
+        RXP_.SetElementComplete(self)
+    end
+
+    element.text = element.rawtext .. element.criteria
 end
