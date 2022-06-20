@@ -1308,7 +1308,8 @@ step << BloodElf Hunter
     .goto Ghostlands,47.3,29.1
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
 step << Paladin/Rogue
-    .skill blacksmithing >>Train Mining. You're now able to mine nodes for Rough Stones which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour).
+    .skill mining,1 >>Train Mining. You're now able to mine nodes for Rough Stones which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour).
+    .skill blacksmithing,1,1
 .goto Silvermoon City,78.9,43.3
     .train 2580 >>Train Mining
     .cast 2580 >>Cast Find Minerals
