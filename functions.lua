@@ -1718,14 +1718,19 @@ end
 function RXP_.functions.skill(self,text,skillName,str,skipstep,useMaxValue)
     if type(self) == "string" then --on parse
         local element = {}
+        local operator,level
         skipstep = tonumber(skipstep)
-        str = str:gsub(" ","")
-        local operator,level = str:match("(<?)%s*(%d+)")
-        element.skill = skillName
-        element.level = tonumber(level)
-        if not (level and skillName) then
+        if str then
+            str = str:gsub(" ","")
+            operator,level = str:match("(<?)%s*(%d+)")
+        end
+
+        level = tonumber(level)
+        if not (str and level and skillName) then
             RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid skill name or point threshold\n"..self)
         end
+        element.level = level
+        element.skill = skillName
         if operator == "<" then
             element.reverseLogic = true
         end
