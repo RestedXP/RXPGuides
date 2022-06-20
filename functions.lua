@@ -190,7 +190,7 @@ function RXP_.GetQuestName(id)
                 end
             end
         else
-            local name = GetTitleForQuestID(id)
+            local name = C_QuestLog.GetTitleForQuestID(id)
             if name then
                 questNameCache[id] = name
             end
