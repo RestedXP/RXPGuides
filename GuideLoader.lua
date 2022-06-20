@@ -43,7 +43,7 @@ local version = strlower(RXP_.version)
 local suffix = 1
 
 -- File guides and string-imports need different load order support
-local fileGuides = {}
+local embeddedGuides = {}
 
 RXP_.affix = function(smin, smax)
     if smax:len() == 1 then smax = "0" .. smax end
@@ -128,11 +128,16 @@ end
 -- Don't cache registered guide, aka Guide-N.lua
 -- They are part of the base bundle, so caching is a waste of RAM
 function RXPG.RegisterGuide(groupOrText, text, defaultFor)
-    if RXPG.db then -- Shouldn't ever happen, but immediately load guide if db initialized
-        local guide = RXPG.ParseGuide(groupOrText, text, defaultFor)
-        RXPG.LoadGuide(guide)
+    if RXPG.db then -- Only used when user-imported RegisterGuide string pasted
+        local importedGuide = RXPG.ParseGuide(groupOrText, text, defaultFor)
+        importedGuide.imported = true
+
+        if RXPG.LoadGuide(importedGuide) then
+            RXPG.db.profile.guides[importedGuide.key] =
+                RXPG.BuildCacheObject(groupOrText, text, defaultFor)
+        end
     else
-        table.insert(fileGuides, {
+        table.insert(embeddedGuides, {
             groupOrText = groupOrText,
             text = text,
             defaultFor = defaultFor
@@ -144,34 +149,44 @@ end
 function RXPG.ImportGuide(groupOrText, text, defaultFor)
     if RXPG.db then -- Addon loaded already, import coming from user string
         local importedGuide = RXPG.ParseGuide(groupOrText, text, defaultFor)
-        RXPG.LoadGuide(importedGuide)
+        importedGuide.imported = true
+
+        if RXPG.LoadGuide(importedGuide) then
+            RXPG.db.profile.guides[importedGuide.key] =
+                RXPG.BuildCacheObject(groupOrText, text, defaultFor)
+        end
     else -- Addon not loaded, add to queue
-        table.insert(fileGuides, {
-            groupOrText = groupOrText,
-            text = text,
-            defaultFor = defaultFor,
-            cache = true
-        })
+        table.insert(embeddedGuides,
+                     RXPG.BuildCacheObject(groupOrText, text, defaultFor))
     end
 end
 
-function RXPG.LoadFileGuides()
+function RXPG.BuildCacheObject(groupOrText, text, defaultFor)
+    return {
+        groupOrText = groupOrText,
+        text = text,
+        defaultFor = defaultFor,
+        cache = true
+    }
+end
+
+function RXPG.LoadEmbeddedGuides()
     if not RXPG.db then
         error('Initialization error, db not set')
         return
     end
 
-    for _, guideData in pairs(fileGuides) do
+    for _, guideData in pairs(embeddedGuides) do
         local guide = RXPG.ParseGuide(guideData.groupOrText, guideData.text,
                                       guideData.defaultFor)
 
         if RXPG.LoadGuide(guide) and guideData.cache then
             -- Cache if guide successfully loads and is imported not default
-            RXPG.db.profile.guides[RXPG.EncodeGuideKey(guide)] = guideData
+            RXPG.db.profile.guides[guide.key] = guideData
         end
     end
 
-    fileGuides = nil
+    embeddedGuides = nil
 end
 
 function RXPG.BuildGuideKey(guide)
@@ -179,14 +194,14 @@ function RXPG.BuildGuideKey(guide)
                          guide.name)
 end
 
-function RXPG.EncodeGuideKey(guide)
+function RXPG.EncodeGuideContents(groupOrText, text, defaultFor)
     -- TODO encode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
-    return string.format("%s:%s", battleTag, guide.key)
+    return string.format("%s:%s", battleTag, groupOrText)
 end
 
-function RXPG.DecodeGuideKey(guide)
+function RXPG.DecodeGuideContents(groupOrText, text, defaultFor)
     -- TODO decode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
-    return guide.key:gsub(battleTag .. ":", '')
+    return groupOrText.key:gsub(battleTag .. ":", '')
 end
 
 function RXPG.LoadCachedGuides()
@@ -199,7 +214,8 @@ function RXPG.LoadCachedGuides()
     for key, guideData in pairs(RXPG.db.profile.guides) do
         guide = RXPG.ParseGuide(guideData.groupOrText, guideData.text,
                                 guideData.defaultFor)
-        if guide and key ~= RXPG.DecodeGuideKey(guide) then
+        if guide then
+            guide.imported = true
             RXPG.LoadGuide(guide)
         else
             if DEBUG then
@@ -211,6 +227,7 @@ function RXPG.LoadCachedGuides()
 end
 
 function RXPG.ParseGuide(groupOrText, text, defaultFor)
+    -- TODO decode guide contents
     if not groupOrText then return end
 
     local playerLevel = UnitLevel("player")

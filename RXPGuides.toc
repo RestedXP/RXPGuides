@@ -11,6 +11,7 @@
 libs\HereBeDragons\LibStub\LibStub.lua
 libs\HereBeDragons\CallbackHandler-1.0\CallbackHandler-1.0.lua
 libs\AceDB-3.0\AceDB-3.0.lua
+libs\AceConfig-3.0\AceConfig-3.0.xml
 libs\HereBeDragons\HereBeDragons-2.0.lua
 libs\HereBeDragons\HereBeDragons-Pins-2.0.lua
 
