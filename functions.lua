@@ -1726,8 +1726,9 @@ function RXP_.functions.skill(self,text,skillName,str,skipstep,useMaxValue)
         end
 
         level = tonumber(level)
-        if not (str and level and skillName) then
+        if not (level and skillName) then
             RXP_.error("Error parsing guide "..RXP_.currentGuideName..": Invalid skill name or point threshold\n"..self)
+            return
         end
         element.level = level
         element.skill = skillName
