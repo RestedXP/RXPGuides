@@ -887,7 +887,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 17-22 Stonetalon/Barrens/Ashenvale
 #version 1
-#group "RestedXP Horde 1-22
+#group RestedXP Horde 1-22
 #next RestedXP Horde 22-30\22-24 Hillsbrad
 
 step
