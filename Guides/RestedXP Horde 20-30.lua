@@ -714,13 +714,13 @@ step << Rogue
     #completewith next
     +Make sure you have a dagger in your inventory. If you don't, buy the cheapest one you can find
 step << Rogue
-    .use 8051 >>Use the Flare Gun when you're about 50 yards from Taskmaster Fizzule. Then, /salute him. Speak to him when he turns friendly
+    .use 8051 >>Use the Flare Gun when you're about 50 yards from Taskmaster Fizzule. Then /salute him. Speak to him when he turns friendly
 	.emote SALUTE,7233
 .goto The Barrens,55.4,5.6
     .turnin 2458 >>Turn in Deep Cover
     .accept 2478 >>Mission: Possible But Not Probable
 step << Rogue
-	.cast  5967 >>Stealth and pickpocket Silixiz for his Tower Key. Make you hug the tower wall as much as possible then go behind him to pickpocket him. If he says something, back up, then approach from a different angle to try to pickpocket him again. Do NOT kill him
+	.cast 5967 >>Stealth and pickpocket Silixiz for his Tower Key. Make you hug the tower wall as much as possible then go behind him to pickpocket him. If he says something, back up, then approach from a different angle to try to pickpocket him again. Do NOT kill him
     .goto The Barrens,54.8,5.9
     .complete 2478,5 --Silixiz's Tower Key (1)
 step << Rogue
@@ -2030,7 +2030,7 @@ step << Warrior/Shaman
     .goto The Barrens,63.3,54.2,40,0
 	.goto The Barrens,65.6,47.1,40,0
     .goto The Barrens,63.3,54.2
-    >>Look in the water for a Isha Awak (Red Threshadon). Kill and loot it for its heart
+    >>Look in the water for Isha Awak (Red Threshadon). Kill and loot it for its heart
     .complete 873,1 --Heart of Isha Awak (1)
 	.unitscan Isha Awak
 step << Warrior
