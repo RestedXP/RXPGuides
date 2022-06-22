@@ -369,7 +369,7 @@ local G_SelectActiveQuest = C_GossipInfo.SelectActiveQuest or
 local G_GetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                  GetGossipAvailableQuests
 
-function addon.QuestAutomation(event, arg1, arg2, arg3)
+function addon:QuestAutomation(event, arg1, arg2, arg3)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
         return
     end

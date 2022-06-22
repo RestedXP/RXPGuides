@@ -249,7 +249,9 @@ local nImportedGuides = 0
 function RXPG.ImportString(str)
     nImportedGuides = 0
     for hash, text in string.gmatch(str, "(%-?%d+):([%w%+%/%=]+)") do
-        print('g:', hash)
+        if DEBUG then
+            print('g:', hash)
+        end
         local guide, errorMsg = ReadString(text, tonumber(hash))
         if guide then
             table.insert(importedGuides, guide)
@@ -266,7 +268,7 @@ end
 
 function RXPG.ProcessImportedGuides()
     if #importedGuides > 0 then
-        RXPG.ImportGuide(importedGuides[1])
+        RXPGuides.ImportGuide(importedGuides[1])
         table.remove(importedGuides, 1)
         return true
     else

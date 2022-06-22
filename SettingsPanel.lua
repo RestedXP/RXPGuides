@@ -508,7 +508,7 @@ end
 function addon.settings.functions.ImportBoxSet(text)
     -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
     --return RXPGuides.DecodeGuideContents(text)
-    return RXPGuides.ImportString(text)
+    return addon.RXPG.ImportString(text)
     --[[
     if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
         local loadedFunction, errorString = loadstring(
