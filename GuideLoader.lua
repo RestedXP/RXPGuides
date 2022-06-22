@@ -173,8 +173,9 @@ function addon.ImportGuide(groupOrText, text, defaultFor)
 
         if RXPG.AddGuide(importedGuide) then
             importedGuide.imported = true
+            local guide = LibDeflate:CompressDeflate(groupOrText)
             addon.db.profile.guides[importedGuide.key] =
-                RXPG.BuildCacheObject(groupOrText, text, defaultFor)
+                RXPG.BuildCacheObject(guide)
         end
 
     else -- Addon not loaded, add to queue
@@ -308,10 +309,10 @@ function RXPG.LoadCachedGuides()
 
     for key, guideData in pairs(addon.db.profile.guides) do
         local guide
-        -- print('1234025552')
+
         if key:match("^(%-?%d+)|") == ReadCacheData("string") then
-            guide = RXPG.ParseGuide(guideData.groupOrText, guideData.text,
-                                    guideData.defaultFor)
+            guide = LibDeflate:DecompressDeflate(guideData.groupOrText)
+            guide = RXPG.ParseGuide(guide)
         end
         if guide then
             guide.imported = true
