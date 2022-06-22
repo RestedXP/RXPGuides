@@ -11,7 +11,7 @@ step << !Scourge
     .goto Tirisfal Glades,30.2,71.7
     +You have selected a guide meant for Undead. It is recommended you choose the same starter zone that you start in
 step
-    >>Drop your Hearthstone
+    >>Delete your Hearthstone
 	.destroy 6948
      >>Run out of the crypt
     .goto Tirisfal Glades,30.2,71.7
@@ -46,7 +46,7 @@ step << Priest/Mage
 step << Warlock
     #label vendorLock
     .goto Tirisfal Glades,30.8,66.4
-    .vendor >>vendor trash at Demon Trainer
+    .vendor >>Vendor trash at Demon Trainer
 step << Warlock
     .goto Tirisfal Glades,30.9,66.3
     .train 348 >>Train Immolate
@@ -66,7 +66,7 @@ step << Warlock
     .goto Tirisfal Glades,32.3,65.4,30 >> Grind on your way back to town until 25c+ of vendorables
 step << Warlock
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >> vendor trash, buy 5 water from Joshua
+    .vendor >> Vendor trash & buy 5 water from Joshua
 	.collect 159,5 --Collect Refreshing Spring Water (x5)
 step << Warlock
     >>Summon your Imp after you turnin
@@ -75,9 +75,11 @@ step << Warlock
 step << Warlock
     .xp 2 >> Grind to level 2
 step << Mage
+    #completewith next
     .goto Tirisfal Glades,30.9,66.1
     .trainer >> Train your class spells
 step << Priest
+    #completewith next
     .goto Tirisfal Glades,31.1,66.0
     .trainer >> Train your class spells
 step << !Warlock
@@ -94,7 +96,7 @@ step
 	.xp 2 >> Grind to level 2
 step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>Vendor trash, buy 10 more water
+    .vendor >>Vendor trash & buy 10 more waters
 	.collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Warrior/Rogue
     .goto Tirisfal Glades,32.3,65.4
@@ -129,7 +131,7 @@ step
     .goto Tirisfal Glades,29.6,61.3,50,0
     .goto Tirisfal Glades,32.5,56.7,50,0
     .goto Tirisfal Glades,35.2,57.0,50,0
-    >>Grind Wolves and Duskbats
+    >>Kill & loot Wolves and Duskbats
     .complete 376,1 --Collect Scavenger Paw (x6)
     .complete 376,2 --Collect Duskbat Wing (x6)
 step
@@ -140,10 +142,10 @@ step
     .xp 3+980 >>Grind mobs en route back to town to 980+/1400xp
 step << Mage/Warlock
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>Vendor trash, buy water down to no lower than 95c
+    .vendor >>Vendor trash & buy water down to no less than 95c
 step << Priest
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>Vendor trash, buy water down to no lower than 1s 90c
+    .vendor >>Vendor trash & buy water down to no less than 1s 90c
 step
     .goto Tirisfal Glades,30.9,66.2
     .turnin 3901 >> Turn in Rattling the Rattlecages
@@ -155,12 +157,15 @@ step
 	.goto Tirisfal Glades,30.9,66.1
     .accept 6395 >> Accept Marla's Last Wish
 step << Priest
+    #completewith next
     .goto Tirisfal Glades,31.1,66.0
     .trainer >> Train your class spells
 step << Warlock
+    #completewith next
     .goto Tirisfal Glades,30.9,66.3
     .trainer >> Train your class spells
 step << Mage
+    #completewith next    
     .goto Tirisfal Glades,30.9,66.1
     .trainer >> Train your class spells
 step
@@ -168,13 +173,16 @@ step
     .accept 380 >> Accept Night Web's Hollow
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step << Rogue
     .goto Tirisfal Glades,32.5,65.7
     .turnin 3096 >> Turn in Encrypted Scroll
 step << Warrior
     .goto Tirisfal Glades,32.7,65.6
     .turnin 3095 >> Turn in Simple Scroll
+step << Warrior
+    .goto Tirisfal Glades,32.7,65.6    
+    #completewith next    
     .trainer >> Train your class spells
 step
     .goto Tirisfal Glades,31.6,65.6
@@ -212,17 +220,20 @@ step
 step
     #hardcore
     #completewith next
-    .goto Tirisfal Glades,31.2,64.9,120 >> Run out of the cave, back to Deathknell
-step
+    .goto Tirisfal Glades,31.2,64.9,120 >> Run out of the cave back to Deathknell
+step << Warlock
     .goto Tirisfal Glades,31.6,65.6
-	>> Resummon your imp << Warlock
+	.cast 688 >> Resummon your imp
+    .turnin 3902 >> Turn in Scavenging Deathknell
+step << !Warlock
+    .goto Tirisfal Glades,31.6,65.6
     .turnin 3902 >> Turn in Scavenging Deathknell
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.41,65.66
-    .vendor >>Vendor trash. Repair your weapon
+    .vendor >>Vendor trash & repair your weapon
 step << Priest/Mage/Warlock
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >>Vendor trash, buy up to 15 water
+    .vendor >>Vendor trash & buy 15 water
 	.collect 159,15 --Collect Refreshing Spring Water (x15)
 step
     .goto Tirisfal Glades,32.2,66.0
@@ -238,6 +249,7 @@ step
     >>Kill Samuel Fipps and loot him for his remains
     .goto Tirisfal Glades,36.7,61.6
     .collect 16333,1 --Collect Samuel's Remains
+    .unitscan Samuel Fipps
 step
     #softcore
 	.goto Tirisfal Glades,36.7,61.6
@@ -283,7 +295,7 @@ step
 step
     .goto Tirisfal Glades,61.7,52.0
     .turnin 8 >>Turn in A Rogue's Deal
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step << Warrior
     .xp 6 >> Grind to 6
 step << Warrior
@@ -291,24 +303,24 @@ step << Warrior
     .trainer >>Train Parry
 step
     #completewith next
-    .goto Undercity,66.2,1.1,18 >>Go to Undercity
+    .goto Undercity,66.2,1.1,25 >>Go to Undercity
 step
-    .goto Undercity,62.0,11.3,18 >>Go up the stairs here
+    .goto Undercity,62.0,11.3,20 >>Go up the stairs here
 step
     #completewith next
-    .goto Undercity,54.9,11.3,18 >>Use the Orb of Translocation
+    .goto Undercity,54.9,11.3,20 >>Use the Orb of Translocation
 step
-    .goto Silvermoon City,63.6,32.2,20 >>Go to Silvermoon
+    .zone Silvermoon City >>Go to Silvermoon City
 step
     #completewith next
     .goto Eversong Woods,56.7,49.6,20 >>Run out of Silvermoon
 step
     .goto Eversong Woods,54.4,50.7
-    .fp Silvermoon >> Get the Silvermoon City flight path
+    .fp Silvermoon City >> Get the Silvermoon City flight path
 step
     .goto Eversong Woods,50.3,50.8
     .accept 8475 >> Accept The Dead Scar
 step
-    .goto Eversong Woods,46.5,49.2,30 >>Run to Falconwing Square
+    .goto Eversong Woods,46.5,49.2,35 >>Run to Falconwing Square
 ]])
 
