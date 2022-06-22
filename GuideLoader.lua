@@ -28,7 +28,11 @@ local function applies(text)
                     state = false
                 end
                 local uppercase = strupper(entry)
-                if entry == "Undead" then entry = "Scourge" end
+                if entry == "Undead" then
+                    entry = "Scourge"
+                elseif uppercase == "DK" then
+                    uppercase = "DEATHKNIGHT"
+                end
                 v = v and
                         ((uppercase == class or uppercase == RXP_.version or
                             entry == race or entry == faction or playerLevel >=
