@@ -130,7 +130,7 @@ end
 
 -- Don't cache registered guide, aka Guide-N.lua
 -- They are part of the base bundle, so caching is a waste of RAM
-function RXPG.RegisterGuide(groupOrText, text, defaultFor)
+function addon.RegisterGuide(groupOrText, text, defaultFor)
     if addon.db then -- Only used when user-imported RegisterGuide string pasted
         local importedGuide = RXPG.ParseGuide(groupOrText, text, defaultFor)
         importedGuide.imported = true
@@ -149,7 +149,7 @@ function RXPG.RegisterGuide(groupOrText, text, defaultFor)
 end
 
 -- Parse and cache one-time guide, aka Import.lua or base64
-function RXPG.ImportGuide(groupOrText, text, defaultFor)
+function addon.ImportGuide(groupOrText, text, defaultFor)
     if addon.db then -- Addon loaded already, import coming from user string
         local importedGuide = RXPG.ParseGuide(groupOrText, text, defaultFor)
         importedGuide.imported = true
@@ -459,9 +459,9 @@ end
 if not _G["RXPGuides"] then _G["RXPGuides"] = {} end
 
 if not _G["RXPGuides"].RegisterGuide then
-    _G["RXPGuides"].RegisterGuide = _G[addonName].RegisterGuide
+    _G["RXPGuides"].RegisterGuide = addon.RegisterGuide
 end
 
 if not _G["RXPGuides"].ImportGuide then
-    _G["RXPGuides"].ImportGuide = _G[addonName].ImportGuide
+    _G["RXPGuides"].ImportGuide = addon.ImportGuide
 end
