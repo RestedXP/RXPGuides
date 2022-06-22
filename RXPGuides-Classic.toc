@@ -1,4 +1,4 @@
-## Interface: 11402
+## Interface: 11403
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
@@ -13,6 +13,8 @@ libs\AceDB-3.0\AceDB-3.0.lua
 libs\AceConfig-3.0\AceConfig-3.0.xml
 libs\HereBeDragons\HereBeDragons-2.0.lua
 libs\HereBeDragons\HereBeDragons-Pins-2.0.lua
+libs\LibBase64-1.0\LibBase64-1.0.xml
+libs\LibDeflate\lib.xml
 
 RXPGuides.lua
 GuideWindow.lua
@@ -21,10 +23,10 @@ HSBatching.lua
 QuestLog.lua
 ActiveItemFrame.lua
 
-data-classic.lua
+data.lua
 map.lua
 functions.lua
 GuideLoader.lua
 Bindings.xml
 
-Guides/GuideList-classic.xml
+Guides/GuideList.xml

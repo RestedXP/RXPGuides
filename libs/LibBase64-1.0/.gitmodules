@@ -1,0 +1,3 @@
+[submodule "tests/wowmock"]
+	path = tests/wowmock
+	url = https://github.com/Adirelle/wowmock.git
