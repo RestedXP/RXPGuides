@@ -74,7 +74,7 @@ local function SoMCheck()
             if id == buffId then
                 RXPCData.SoM = true
                 if addon.currentGuide and addon.currentGuide.name then
-                    addon.LoadGuide(addon.currentGuide)
+                    addon:LoadGuide(addon.currentGuide)
                 end
                 RXPFrame.GenerateMenuTable()
                 break
@@ -83,7 +83,7 @@ local function SoMCheck()
         if id ~= buffId and RXPCData.SoM then
             RXPCData.SoM = nil
             if addon.currentGuide and addon.currentGuide.name then
-                addon.LoadGuide(addon.currentGuide)
+                addon:LoadGuide(addon.currentGuide)
             end
             RXPFrame.GenerateMenuTable()
         end
@@ -527,7 +527,7 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
                 guide = nil
             end
         end
-        addon.LoadGuide(guide, true)
+        addon:LoadGuide(guide, true)
         if not addon.currentGuide then
             RXPFrame:SetHeight(20)
             RXPFrame.BottomFrame.UpdateFrame()
@@ -545,7 +545,7 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
         level = UnitLevel("player")
         local stepn = RXPCData.currentStep
         ProcessSpells()
-        -- addon.LoadGuide(addon.currentGuide)
+        -- addon:LoadGuide(addon.currentGuide)
         addon.SetStep(1)
         addon.SetStep(stepn)
     elseif event == "UNIT_AURA" then

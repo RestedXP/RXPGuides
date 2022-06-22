@@ -949,12 +949,12 @@ local emptyGuide = {
     steps = {{hidewindow = true, text = ""}}
 }
 
-function addon.LoadGuide(guide, OnLoad)
+function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
     if not guide then return end
 
     if (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) and
-        not guide.empty then return addon.LoadGuide(emptyGuide) end
+        not guide.empty then return addon:LoadGuide(emptyGuide) end
 
     if RXPCData.frameHeight then RXPFrame:SetHeight(RXPCData.frameHeight) end
     if addon.noGuide then
@@ -1124,7 +1124,7 @@ function addon.LoadGuide(guide, OnLoad)
 end
 
 function addon.ReloadGuide()
-    return addon.LoadGuide(addon.GetGuideTable(RXPCData.currentGuideGroup,
+    return addon:LoadGuide(addon.GetGuideTable(RXPCData.currentGuideGroup,
                                                RXPCData.currentGuideName))
 end
 

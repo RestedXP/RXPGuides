@@ -2104,7 +2104,7 @@ function addon.functions.next(skip, guide)
                     nextGuide.softcore and RXPCData.hardcore) then
                 return addon.functions.next(nil, nextGuide)
             else
-                addon.LoadGuide(nextGuide)
+                addon:LoadGuide(nextGuide)
                 return true
             end
         elseif guideSkip then
