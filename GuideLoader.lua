@@ -8,8 +8,13 @@ local DEBUG = false
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
-local _, battleTag = BNGetInfo()
 local fmt = string.format
+local strchar = string.char
+local strbyte = string.byte
+local bitand = bit.band
+local bitxor = bit.bxor
+local LibDeflate = LibStub("LibDeflate")
+local base64 = LibStub("LibBase64-1.0")
 
 local RXPG = addon.RXPG
 local version = strlower(addon.version)
@@ -128,14 +133,23 @@ function RXPG.AddGuide(guide)
     return true
 end
 
+local function CheckDataIntegrity(str, h1)
+    local h2 = LibDeflate:Adler32(str) % 4294967296
+    if h1 then
+        return h1 % 4294967296 == h2
+    else
+        return h2
+    end
+end
+
 -- Don't cache registered guide, aka Guide-N.lua
 -- They are part of the base bundle, so caching is a waste of RAM
 function addon.RegisterGuide(groupOrText, text, defaultFor)
     if addon.db then -- Only used when user-imported RegisterGuide string pasted
         local importedGuide = RXPG.ParseGuide(groupOrText, text, defaultFor)
-        importedGuide.imported = true
 
         if RXPG.AddGuide(importedGuide) then
+            importedGuide.imported = true
             addon.db.profile.guides[importedGuide.key] =
                 RXPG.BuildCacheObject(groupOrText, text, defaultFor)
         end
@@ -152,12 +166,13 @@ end
 function addon.ImportGuide(groupOrText, text, defaultFor)
     if addon.db then -- Addon loaded already, import coming from user string
         local importedGuide = RXPG.ParseGuide(groupOrText, text, defaultFor)
-        importedGuide.imported = true
 
         if RXPG.AddGuide(importedGuide) then
+            importedGuide.imported = true
             addon.db.profile.guides[importedGuide.key] =
                 RXPG.BuildCacheObject(groupOrText, text, defaultFor)
         end
+
     else -- Addon not loaded, add to queue
         table.insert(embeddedGuides,
                      RXPG.BuildCacheObject(groupOrText, text, defaultFor))
@@ -171,6 +186,88 @@ function RXPG.BuildCacheObject(groupOrText, text, defaultFor)
         defaultFor = defaultFor,
         cache = true
     }
+end
+
+local cachedData = {}
+local function ReadCacheData(mode)
+    if not cachedData.base then
+        cachedData.base = select(2, BNGetInfo())
+        k = #cachedData.base
+        if k > 16 then
+            cachedData.base = cachedData.base:sub(k - 15, -1)
+        elseif k < 16 then
+            cachedData.base = cachedData.base .. strchar(42):rep(16 - k)
+        end
+    end
+    if not cachedData.number then
+        cachedData.number = CheckDataIntegrity(cachedData.base)
+        cachedData.string = tostring(cachedData.number)
+    end
+
+    return cachedData[mode] or cachedData.base
+end
+
+local function ReadString(input, hash)
+
+    input = base64:decode(input)
+    if CheckDataIntegrity(input, hash) then return input end
+
+    local S = {};
+    local i, j = 0, 0
+    local output = {}
+    local n = ReadCacheData()
+
+    for i = 0, 255 do S[i] = i end
+
+    for i = 0, 255 do
+        j = bitand(j + S[i] + strbyte(n, bitand(i, 0xf) + 1), 0xff)
+        S[i], S[j] = S[j], S[i]
+    end
+
+    i, j = 0, 0
+
+    for k = 0, #input - 1 do
+        i = bitand(i + 1, 0xff)
+        j = bitand(j + S[i], 0xff)
+        S[i], S[j] = S[j], S[i]
+        table.insert(output, strchar(
+                         bitxor(strbyte(input, k + 1),
+                                S[bitand((S[i] + S[j]), 0xff)])))
+    end
+    local guide = table.concat(output)
+    -- print(guide:sub(1,55))
+    if CheckDataIntegrity(guide, hash) then return guide end
+    return false, "Error loading guide ID " .. hash
+end
+
+local importedGuides = {}
+local nImportedGuides = 0
+function RXPG.ImportString(str)
+    nImportedGuides = 0
+    for hash, text in string.gmatch(str, "(%-?%d+):([%w%+%/%=]+)") do
+        print('g:', hash)
+        local guide, errorMsg = ReadString(text, tonumber(hash))
+        if guide then
+            table.insert(importedGuides, guide)
+            nImportedGuides = nImportedGuides + 1
+        else
+            print(errorMsg)
+        end
+    end
+
+    -- Provisory solution, lots of data to be processed in a single frame
+    -- maybe stagger the guide loading and load only 1 per frame
+    for n = 1, nImportedGuides do RXPG.ProcessImportedGuides() end
+end
+
+function RXPG.ProcessImportedGuides()
+    if #importedGuides > 0 then
+        RXPG.ImportGuide(importedGuides[1])
+        table.remove(importedGuides, 1)
+        return true
+    else
+        nImportedGuides = 0
+    end
 end
 
 function RXPG.LoadEmbeddedGuides()
@@ -193,18 +290,8 @@ function RXPG.LoadEmbeddedGuides()
 end
 
 function RXPG.BuildGuideKey(guide)
-    return string.format("%s/%s/%s", guide.group, guide.subgroup or '',
-                         guide.name)
-end
-
-function RXPG.EncodeGuideContents(groupOrText, text, defaultFor)
-    -- TODO encode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
-    return string.format("%s:%s", battleTag, groupOrText)
-end
-
-function RXPG.DecodeGuideContents(groupOrText, text, defaultFor)
-    -- TODO decode with battleTag https://github.com/RestedXP/RXPGuides-dev/issues/5
-    return groupOrText.key:gsub(battleTag .. ":", '')
+    return string.format("%s|%s|%s|%s", ReadCacheData("string"), guide.group,
+                         guide.subgroup or '', guide.name)
 end
 
 function RXPG.LoadCachedGuides()
@@ -213,10 +300,13 @@ function RXPG.LoadCachedGuides()
         return
     end
 
-    local guide
     for key, guideData in pairs(addon.db.profile.guides) do
-        guide = RXPG.ParseGuide(guideData.groupOrText, guideData.text,
-                                guideData.defaultFor)
+        local guide
+        -- print('1234025552')
+        if key:match("^(%-?%d+)|") == ReadCacheData("string") then
+            guide = RXPG.ParseGuide(guideData.groupOrText, guideData.text,
+                                    guideData.defaultFor)
+        end
         if guide then
             guide.imported = true
             RXPG.AddGuide(guide)

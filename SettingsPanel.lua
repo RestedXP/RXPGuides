@@ -507,6 +507,9 @@ end
 
 function addon.settings.functions.ImportBoxSet(text)
     -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
+    --return RXPGuides.DecodeGuideContents(text)
+    return RXPGuides.ImportString(text)
+    --[[
     if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
         local loadedFunction, errorString = loadstring(
                                                 "return function() \n" .. text ..
@@ -522,11 +525,12 @@ function addon.settings.functions.ImportBoxSet(text)
     else
         -- TODO
         return "ImportBoxSet: TODO not a legacy guide"
-    end
+    end]]
 end
 
 function addon.settings.functions.ImportBoxValidate(text)
     -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
+    return true --[[
     if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
         local loadedFunction, errorString = loadstring(
                                                 "return function() \n" .. text ..
@@ -536,7 +540,7 @@ function addon.settings.functions.ImportBoxValidate(text)
     else
         -- TODO
         return "ImportBoxValidate: TODO not a legacy guide"
-    end
+    end]]
 end
 
 function addon.settings.functions.GetImportedGuides()
@@ -550,7 +554,11 @@ function addon.settings.functions.GetImportedGuides()
     for _, guide in ipairs(addon.guides) do
         if guide.imported or guide.cache then
             importedGuidesFound = true
-            display[guide.key] = string.format("%s - version %s", guide.key,
+            local group,subgroup,name = guide.key:match("^.*|(.*)|(.*)|(.*)")
+            if subgroup ~= "" then
+                group = group .. "/" .. subgroup
+            end
+            display[guide.key] = string.format("%s/%s - version %s",group, name,
                                                guide.version)
         end
     end

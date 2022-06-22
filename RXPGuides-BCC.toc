@@ -1,5 +1,6 @@
 ## Interface: 20504
-## Title: RXPGuides
+## Interface-Classic: 11403
+## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
 ## Version: @project-version@
@@ -15,6 +16,8 @@ libs\AceAddon-3.0\AceAddon-3.0.xml
 libs\AceConfig-3.0\AceConfig-3.0.xml
 libs\HereBeDragons\HereBeDragons-2.0.lua
 libs\HereBeDragons\HereBeDragons-Pins-2.0.lua
+libs\LibBase64-1.0\LibBase64-1.0.lua
+libs\LibDeflate\lib.xml
 
 RXPGuides.lua
 GuideWindow.lua

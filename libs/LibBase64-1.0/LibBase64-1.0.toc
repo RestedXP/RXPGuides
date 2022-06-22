@@ -1,0 +1,12 @@
+## Interface: 50400
+## Title: Lib: Base64-1.0
+## Notes: Base64 encoder/decoder.
+## Author: Adirelle
+## Version: @project-version@
+## LoadOnDemand: 1
+## X-Date: @project-date-iso@
+## X-Category: Library
+## X-License: GPL v3
+## X-eMail: adirelle@gmail.com
+
+LibBase64-1.0.xml
