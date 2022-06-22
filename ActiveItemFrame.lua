@@ -79,7 +79,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
     f:SetHeight(40);
 end
 
-addon.CreateActiveItemFrame()
+addon:CreateActiveItemFrame()
 
 local fOnEnter = function(self)
     -- print(self.itemId)
