@@ -1714,10 +1714,18 @@ function addon.functions.xp(self, ...)
         local element = {}
         local text, str, skipstep = ...
         skipstep = tonumber(skipstep)
-        str = str:gsub(" ", "")
-        local operator, level, xp = str:match("(<?)%s*(%d+)([%+%.%-]?%d*)")
+        local operator, level, xp
+        if str then
+            str = str:gsub(" ", "")
+            operator, level, xp = str:match("(<?)%s*(%d+)([%+%.%-]?%d*)")
+        end
         element.xp = tonumber(xp)
         element.level = tonumber(level)
+        if not level then
+            return addon.error(
+                       'Error parsing guide ' .. addon.currentGuideName ..
+                           ': Invalid syntax\n' .. self)
+        end
         if operator == "<" then element.reverseLogic = true end
 
         if text and text ~= "" then
@@ -1828,11 +1836,15 @@ function addon.functions.reputation(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         local text, faction, str, value, skipStep = ...
+        local operator, standing, rep
+        if str then
+            str = str:gsub(" ", "")
+            operator, standing, rep = str:match(
+                                                "(<?)%s*([%d%w]+)([%+%.%-]?%d*)")
+        end
 
-        str = str:gsub(" ", "")
-        local operator, standing, rep = str:match(
-                                            "(<?)%s*([%d%w]+)([%+%.%-]?%d*)")
-        element.faction = tonumber(faction)
+        faction = tonumber(faction)
+
         if value then
             operator, rep = value:match("(<?)%s*(%-?%d+%.?%d*)")
         end
@@ -1840,13 +1852,16 @@ function addon.functions.reputation(self, ...)
 
         if standing then
             standing = addon.repStandingID[strlower(standing)]
-            element.standing = standing or tonumber(standing)
+            standing = standing or tonumber(standing)
         end
 
         if not (faction and standing) then
             addon.error("Error parsing guide " .. addon.currentGuideName ..
                             ": Invalid faction/standing\n" .. self)
         end
+
+        element.faction = faction
+        element.standing = standing
 
         if operator == "<" then
             element.operator = false
@@ -2993,8 +3008,19 @@ function addon.functions.maxlevel(self, ...)
         local element = {}
         local text, str, ref = ...
         element.ref = ref
-        str = str:gsub(" ", "")
-        local level, xp = str:match("(%d+)([%+%.%-]?%d*)")
+        local level, xp
+
+        if str then
+            str = str:gsub(" ", "")
+            level, xp = str:match("(%d+)([%+%.%-]?%d*)")
+        end
+
+        if not level then
+            return addon.error("Error parsing guide " ..
+            addon.currentGuideName ..
+            ": Invalid syntax\n" .. self)
+        end
+
         element.xp = tonumber(xp)
         element.level = tonumber(level)
         element.event = "PLAYER_XP_UPDATE"
@@ -3099,9 +3125,12 @@ function addon.functions.itemcount(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         local text, id, str = ...
-        skipstep = tonumber(skipstep)
-        str = str:gsub(" ", "")
-        local operator, eq, total = str:match("([<>]?)(=?)%s*(%d+)")
+        local operator, eq, total
+
+        if str then
+            str = str:gsub(" ", "")
+            operator, eq, total = str:match("([<>]?)(=?)%s*(%d+)")
+        end
         element.id = tonumber(id)
         element.total = tonumber(total)
         if not (total and id) then
