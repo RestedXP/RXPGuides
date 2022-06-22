@@ -1,12 +1,12 @@
-local addonName = ...
+local addonName, addon = ...
 
-local RXPG = RXPGuides
+local RXPG = addon.RXPG
 local _, class = UnitClass("player")
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
-RXP_.width, RXP_.height = 235, 125 -- Default width/height
-RXP_.font = GameFontNormal:GetFont()
+addon.width, addon.height = 235, 125 -- Default width/height
+addon.font = GameFontNormal:GetFont()
 
 local defaultColors = {}
 defaultColors.background = {12 / 255, 12 / 255, 27 / 255, 1}
@@ -29,14 +29,14 @@ goldAssistantColors.bottomFrameHighlight = {125 / 255, 71 / 255, 0 / 255, 1}
 goldAssistantColors.mapPins = {0.95, 0.15, 0.15, 1}
 goldAssistantColors.tooltip = "|c0000C1FF" -- AARRGGBB
 
-RXP_.colors = defaultColors
+addon.colors = defaultColors
 
-RXP_.defaultTextures = "Interface/AddOns/" .. addonName .. "/Textures/"
-RXP_.hardcoreTextures = "Interface/AddOns/" .. addonName ..
-                            "/Textures/Hardcore/"
-RXP_.goldAssistantTextures = "Interface/AddOns/" .. addonName ..
-                                 "/Textures/GoldAssistant/"
-RXP_.texturePath = RXP_.defaultTextures
+addon.defaultTextures = "Interface/AddOns/" .. addonName .. "/Textures/"
+addon.hardcoreTextures = "Interface/AddOns/" .. addonName ..
+                             "/Textures/Hardcore/"
+addon.goldAssistantTextures = "Interface/AddOns/" .. addonName ..
+                                  "/Textures/GoldAssistant/"
+addon.texturePath = addon.defaultTextures
 
 local f = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 
@@ -58,48 +58,50 @@ RXPFrame.ScrollFrame = ScrollFrame
 RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
 
-function RXP_.GetTexture(name) return RXP_.texturePath .. name end
+function addon.GetTexture(name) return addon.texturePath .. name end
 
-function RXP_.RenderFrame()
+function addon.RenderFrame()
     local path
     local colors
     if RXPCData.hardcore then
-        path = RXP_.hardcoreTextures
+        path = addon.hardcoreTextures
         colors = hardcoreColors
     elseif RXPCData.GA then
-        path = RXP_.goldAssistantTextures
+        path = addon.goldAssistantTextures
         colors = goldAssistantColors
     else
-        path = RXP_.defaultTextures
+        path = addon.defaultTextures
         colors = defaultColors
     end
-    if path == RXP_.texturePath then return end
+    if path == addon.texturePath then return end
     RXPFrame.GenerateMenuTable()
-    RXP_.colors = colors
-    RXP_.texturePath = path
-    RXPFrame.backdropEdge.edgeFile = RXP_.GetTexture("rxp-borders")
-    RXPFrame.guideNameBackdrop.edgeFile = RXP_.GetTexture("rxp-borders")
+    addon.colors = colors
+    addon.texturePath = path
+    RXPFrame.backdropEdge.edgeFile = addon.GetTexture("rxp-borders")
+    RXPFrame.guideNameBackdrop.edgeFile = addon.GetTexture("rxp-borders")
     BottomFrame:ClearBackdrop()
     BottomFrame:SetBackdrop(RXPFrame.backdropEdge)
-    BottomFrame:SetBackdropColor(unpack(RXP_.colors.background))
+    BottomFrame:SetBackdropColor(unpack(addon.colors.background))
 
     if RXPFrame.activeItemFrame then
         RXPFrame.activeItemFrame:ClearBackdrop()
         RXPFrame.activeItemFrame:SetBackdrop(RXPFrame.backdropEdge)
-        RXPFrame.activeItemFrame:SetBackdropColor(unpack(RXP_.colors.background))
+        RXPFrame.activeItemFrame:SetBackdropColor(
+            unpack(addon.colors.background))
     end
 
     GuideName:ClearBackdrop()
     GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
 
-    GuideName.bg:SetTexture(RXP_.GetTexture("rxp-banner"))
-    GuideName.icon:SetTexture(RXP_.GetTexture("rxp_logo-64"))
-    GuideName.classIcon:SetTexture(RXP_.GetTexture(class))
-    GuideName.cog:SetNormalTexture(RXP_.GetTexture("rxp_cog-32"))
+    GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
+    GuideName.icon:SetTexture(addon.GetTexture("rxp_logo-64"))
+    GuideName.classIcon:SetTexture(addon.GetTexture(class))
+    GuideName.cog:SetNormalTexture(addon.GetTexture("rxp_cog-32"))
 
-    RXP_.arrowFrame.texture:SetTexture(RXP_.GetTexture("rxp_navigation_arrow-1"))
-    RXP_.UpdateScrollBar()
-    if RXP_.currentGuide then RXP_.ReloadGuide() end
+    addon.arrowFrame.texture:SetTexture(addon.GetTexture(
+                                            "rxp_navigation_arrow-1"))
+    addon.UpdateScrollBar()
+    if addon.currentGuide then addon.ReloadGuide() end
 end
 
 RXPFrame:Show()
@@ -140,7 +142,7 @@ RXPFrame.OnMouseDown = function(self, button)
     if RXPData.lockFrames then
         return
     elseif IsAltKeyDown() and
-        not (RXP_.currentGuide and RXP_.currentGuide.hidewindow) then
+        not (addon.currentGuide and addon.currentGuide.hidewindow) then
         RXPFrame:StartSizing("BOTTOMRIGHT")
         RXPFrame:SetScript("OnUpdate", RXPFrame.BottomFrame.UpdateFrame)
         isResizing = true
@@ -153,11 +155,11 @@ RXPFrame.OnMouseUp = function(self, button)
     RXPFrame:StopMovingOrSizing()
     if isResizing then
         RXPCData.frameHeight = RXPFrame:GetHeight()
-        RXP_.SetStep(RXPCData.currentStep)
+        addon.SetStep(RXPCData.currentStep)
         RXPFrame:SetScript("OnUpdate", nil)
     end
     SetStepFrameAnchor()
-    RXP_.UpdateItemFrame()
+    addon.UpdateItemFrame()
     isResizing = false
 end
 
@@ -181,8 +183,8 @@ function StepScroll(n)
 
 end
 
-RXPFrame:SetWidth(RXP_.width)
-RXPFrame:SetHeight(RXP_.height)
+RXPFrame:SetWidth(addon.width)
+RXPFrame:SetHeight(addon.height)
 RXPFrame:SetPoint("LEFT", 0, 35)
 RXPFrame:SetFrameStrata("BACKGROUND")
 
@@ -190,7 +192,7 @@ RXPFrame.backdropEdge = {
     bgFile = "Interface/BUTTONS/WHITE8X8",
     -- edgeFile = "Interface/BUTTONS/WHITE8X8",
     -- edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
-    edgeFile = RXP_.GetTexture("rxp-borders"),
+    edgeFile = addon.GetTexture("rxp-borders"),
     tile = true,
     edgeSize = 8,
     tileSize = 8,
@@ -272,9 +274,9 @@ end
 local activeSteps = {}
 RXPFrame.activeSteps = activeSteps
 
-function RXP_.UpdateStepCompletion()
-    RXP_.updateSteps = false
-    if RXP_.currentGuide.empty then return end
+function addon.UpdateStepCompletion()
+    addon.updateSteps = false
+    if addon.currentGuide.empty then return end
 
     local n = 0
     local update
@@ -292,7 +294,7 @@ function RXP_.UpdateStepCompletion()
 
         local completewith = step.completewith
         if completewith and not completed then
-            local guide = RXP_.currentGuide
+            local guide = addon.currentGuide
             if completewith == "next" then
                 completewith = step.index + 1
             else
@@ -326,19 +328,19 @@ function RXP_.UpdateStepCompletion()
                 step.completed = true
                 RXPFrame.BottomFrame.UpdateFrame(nil, nil, step.index)
                 if step.index == RXPCData.currentStep then
-                    RXP_.loadNextStep = true
+                    addon.loadNextStep = true
                 end
                 return
             end
         end
     end
 
-    if update then return RXP_.SetStep(RXPCData.currentStep) end
+    if update then return addon.SetStep(RXPCData.currentStep) end
 end
 
-function RXP_.SetStep(n, n2, loopback)
+function addon.SetStep(n, n2, loopback)
     if type(n) == "table" then n = n2 end
-    local guide = RXP_.currentGuide
+    local guide = addon.currentGuide
     if not guide then return end
     local group = guide.group
 
@@ -348,7 +350,7 @@ function RXP_.SetStep(n, n2, loopback)
             if loopback then
                 return
             else
-                return RXP_.SetStep(1, nil, true)
+                return addon.SetStep(1, nil, true)
             end
         end
         local isComplete = true
@@ -378,7 +380,7 @@ function RXP_.SetStep(n, n2, loopback)
     RXPCData.stepSkip[n + 1] = nil
 
     if guide.steps[n].sticky and n < #guide.steps then
-        return RXP_.SetStep(n + 1)
+        return addon.SetStep(n + 1)
     end
 
     for i, step in pairs(activeSteps) do
@@ -387,9 +389,9 @@ function RXP_.SetStep(n, n2, loopback)
     end
 
     ClearTable(activeSteps)
-    ClearTable(RXP_.questAccept)
-    ClearTable(RXP_.questTurnIn)
-    ClearTable(RXP_.activeItems)
+    ClearTable(addon.questAccept)
+    ClearTable(addon.questTurnIn)
+    ClearTable(addon.activeItems)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1
@@ -423,7 +425,7 @@ function RXP_.SetStep(n, n2, loopback)
     local req = step.requires and guide.labels[step.requires] and
                     guide.steps[guide.labels[step.requires]]
     if step.completed and n < #guide.steps then
-        return RXP_.SetStep(n + 1)
+        return addon.SetStep(n + 1)
     elseif step and not step.completed and
         not (req and #activeSteps > 0 and (req.active or not (req.reqFulfilled))) and
         level >= step.level then
@@ -437,7 +439,7 @@ function RXP_.SetStep(n, n2, loopback)
         if n >= #guide.steps then
             return RXPG[group].next()
         else
-            return RXP_.SetStep(n + 1)
+            return addon.SetStep(n + 1)
         end
     end
 
@@ -456,7 +458,7 @@ function RXP_.SetStep(n, n2, loopback)
             stepframe = CurrentStepFrame.framePool[c]
             -- stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
             stepframe.elements = {}
-            -- RXP_.CreateActiveItemFrame(stepframe)
+            -- addon.CreateActiveItemFrame(stepframe)
         end
         stepframe:ClearAllPoints()
         if c == 1 then
@@ -480,16 +482,16 @@ function RXP_.SetStep(n, n2, loopback)
             stepframe.number.text:SetJustifyH("CENTER")
             stepframe.number.text:SetJustifyV("CENTER")
             stepframe.number.text:SetTextColor(1, 1, 1)
-            stepframe.number.text:SetFont(RXP_.font, 9)
+            stepframe.number.text:SetFont(addon.font, 9)
         end
         if stepframe.hardcore ~= RXPCData.hardcore or not stepframe.hardcore then
             stepframe.hardcore = RXPCData.hardcore
             stepframe:ClearBackdrop()
             stepframe:SetBackdrop(RXPFrame.backdropEdge)
-            stepframe:SetBackdropColor(unpack(RXP_.colors.background))
+            stepframe:SetBackdropColor(unpack(addon.colors.background))
             stepframe.number:ClearBackdrop()
             stepframe.number:SetBackdrop(RXPFrame.backdropEdge)
-            stepframe.number:SetBackdropColor(unpack(RXP_.colors.background))
+            stepframe.number:SetBackdropColor(unpack(addon.colors.background))
         end
 
         local titletext = step.title or "Step " .. tostring(index)
@@ -530,8 +532,8 @@ function RXP_.SetStep(n, n2, loopback)
                     if element and not element.optional then
                         element.skip = self:GetChecked()
                     end
-                    RXP_.updateSteps = true
-                    RXP_.updateMap = true
+                    addon.updateSteps = true
+                    addon.updateMap = true
                 end)
 
                 --
@@ -546,7 +548,7 @@ function RXP_.SetStep(n, n2, loopback)
                 elementFrame.text:SetJustifyH("LEFT")
                 elementFrame.text:SetJustifyV("CENTER")
                 elementFrame.text:SetTextColor(1, 1, 1)
-                elementFrame.text:SetFont(RXP_.font, 11)
+                elementFrame.text:SetFont(addon.font, 11)
 
                 elementFrame.icon =
                     elementFrame:CreateFontString(nil, "OVERLAY")
@@ -591,11 +593,11 @@ function RXP_.SetStep(n, n2, loopback)
             end
             if elementFrame.button.hardcore ~= RXPCData.hardcore or
                 not elementFrame.hardcore then
-                elementFrame.button:SetNormalTexture(RXP_.GetTexture(
+                elementFrame.button:SetNormalTexture(addon.GetTexture(
                                                          "rxp-btn-blank-32"))
-                elementFrame.button:SetCheckedTexture(RXP_.GetTexture(
+                elementFrame.button:SetCheckedTexture(addon.GetTexture(
                                                           "rxp-checked-32"))
-                elementFrame.button:SetDisabledCheckedTexture(RXP_.GetTexture(
+                elementFrame.button:SetDisabledCheckedTexture(addon.GetTexture(
                                                                   "rxp-checked-32"))
                 elementFrame.button.hardcore = RXPCData.hardcore
             end
@@ -639,18 +641,18 @@ function RXP_.SetStep(n, n2, loopback)
             stepframe:Show()
             if step.activeItems then
                 for i, v in pairs(step.activeItems) do
-                    RXP_.activeItems[i] = v
+                    addon.activeItems[i] = v
                 end
             end
         else
             stepframe:Hide()
         end
     end
-    RXP_.UpdateItemFrame()
-    RXP_.UnitScanUpdate()
+    addon.UpdateItemFrame()
+    addon.UnitScanUpdate()
     CurrentStepFrame.UpdateText()
-    RXP_.updateSteps = true
-    RXP_.updateMap = true
+    addon.updateSteps = true
+    addon.updateMap = true
     StepScroll(scrollHeight)
 end
 
@@ -666,8 +668,8 @@ function CurrentStepFrame.EventHandler(self, event, ...)
 end
 
 function CurrentStepFrame.UpdateText()
-    RXP_.updateStepText = false
-    local guide = RXP_.currentGuide
+    addon.updateStepText = false
+    local guide = addon.currentGuide
     if not guide then return end
     local group = guide.group
 
@@ -754,7 +756,7 @@ function CurrentStepFrame.UpdateText()
                                       "BOTTOMRIGHT", 0, 0 + spacing)
             end
             if element.tag and element.text then
-                local icon = element.icon or RXP_.icons[element.tag] or ""
+                local icon = element.icon or addon.icons[element.tag] or ""
                 elementFrame.icon:SetText(icon)
                 elementFrame.icon:Show()
             else
@@ -778,14 +780,14 @@ function CurrentStepFrame.UpdateText()
 end
 
 BottomFrame:SetBackdrop(RXPFrame.backdropEdge)
-BottomFrame:SetBackdropColor(unpack(RXP_.colors.background))
+BottomFrame:SetBackdropColor(unpack(addon.colors.background))
 
 BottomFrame:SetPoint("TOPLEFT", RXPFrame, 3, -3)
 BottomFrame:SetPoint("BOTTOMRIGHT", RXPFrame, -3, 3)
 
 RXPFrame.guideNameBackdrop = {
     -- bgFile = "Interface/BUTTONS/WHITE8X8",
-    edgeFile = RXP_.GetTexture("rxp-borders"),
+    edgeFile = addon.GetTexture("rxp-borders"),
     tile = true,
     edgeSize = 8,
     tileSize = 8,
@@ -794,7 +796,7 @@ RXPFrame.guideNameBackdrop = {
 
 GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
 
--- GuideName:SetBackdropColor(unpack(RXP_.colors.background))
+-- GuideName:SetBackdropColor(unpack(addon.colors.background))
 GuideName:SetPoint("BOTTOMLEFT", BottomFrame, "TOPLEFT", 0, -9)
 GuideName:SetPoint("BOTTOMRIGHT", BottomFrame, "TOPRIGHT", 0, -9)
 GuideName:SetHeight(35)
@@ -806,7 +808,7 @@ GuideName.text:SetPoint("RIGHT", GuideName, 0, 0)
 GuideName.text:SetJustifyH("CENTER")
 GuideName.text:SetJustifyV("CENTER")
 GuideName.text:SetTextColor(1, 1, 1)
-GuideName.text:SetFont(RXP_.font, 11)
+GuideName.text:SetFont(addon.font, 11)
 GuideName.text:SetText("Welcome to RestedXP Guides\nRight click to pick a guide")
 GuideName:SetFrameLevel(6)
 
@@ -869,8 +871,8 @@ ScrollFrame:SetPoint("TOPLEFT", BottomFrame, 5, -5)
 ScrollFrame:SetPoint("BOTTOMRIGHT", BottomFrame, -20, 7)
 ScrollFrame.ScrollBar:SetPoint("TOPLEFT", ScrollFrame, "TOPRIGHT", 0, -18)
 
-function RXP_.UpdateScrollBar()
-    prefix = RXP_.GetTexture("Scrollbar/")
+function addon.UpdateScrollBar()
+    prefix = addon.GetTexture("Scrollbar/")
 
     local s = ScrollFrame.ScrollBar.ScrollDownButton
     s.Normal:SetTexture(prefix .. "Down-Normal")
@@ -885,7 +887,7 @@ function RXP_.UpdateScrollBar()
     ScrollFrame.ScrollBar:SetThumbTexture(prefix .. "Knob")
 end
 
-RXP_.UpdateScrollBar()
+addon.UpdateScrollBar()
 
 hooksecurefunc(ScrollFrame.ScrollBar, "SetValue", function(self, value)
     local h = math.floor(ScrollChild:GetHeight() + 10)
@@ -911,8 +913,8 @@ RXPFrame.bottomBackdrop = {
     insets = {left = 0, right = 0, top = -1, bottom = -1}
 }
 
-function RXP_.GetGuideName(guide)
-    if not guide then guide = RXP_.currentGuide end
+function addon.GetGuideName(guide)
+    if not guide then guide = addon.currentGuide end
     local som = RXPCData.SoM
     if som and guide.somname then
         return guide.somname
@@ -924,7 +926,7 @@ function RXP_.GetGuideName(guide)
 end
 
 RXPFrame.bottomMenu = {
-    {notCheckable = 1, text = "Go to step 1", func = RXP_.SetStep, arg1 = 1},
+    {notCheckable = 1, text = "Go to step 1", func = addon.SetStep, arg1 = 1},
     {
         notCheckable = 1,
         text = "Select another guide",
@@ -932,8 +934,8 @@ RXPFrame.bottomMenu = {
     }, {
         text = "Reload Guide",
         notCheckable = 1,
-        func = RXP_.LoadGuide,
-        arg1 = RXP_.currentGuide
+        func = addon.LoadGuide,
+        arg1 = addon.currentGuide
     }, {text = "Options...", notCheckable = 1, func = SlashCmdList.RXPG},
     {text = "Close", notCheckable = 1, func = function(self) self:Hide() end}
 }
@@ -947,23 +949,23 @@ local emptyGuide = {
     steps = {{hidewindow = true, text = ""}}
 }
 
-function RXP_:LoadGuide(guide, OnLoad)
-    RXP_.loadNextStep = false
+function addon.LoadGuide(guide, OnLoad)
+    addon.loadNextStep = false
     if not guide then return end
 
     if (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) and
-        not guide.empty then return RXP_:LoadGuide(emptyGuide) end
+        not guide.empty then return addon.LoadGuide(emptyGuide) end
 
     if RXPCData.frameHeight then RXPFrame:SetHeight(RXPCData.frameHeight) end
-    if RXP_.noGuide then
-        RXPFrame:SetHeight(RXP_.height)
+    if addon.noGuide then
+        RXPFrame:SetHeight(addon.height)
         RXPFrame.BottomFrame.UpdateFrame()
-        RXP_.noGuide = nil
+        addon.noGuide = nil
     end
 
     startTime = GetTime()
     CloseDropDownMenus()
-    RXP_.tickTimer = GetTime()
+    addon.tickTimer = GetTime()
     if not (OnLoad and RXPCData and RXPCData.currentStep) then
         RXPCData.currentStep = 1
         RXPCData.stepSkip = {}
@@ -971,25 +973,25 @@ function RXP_:LoadGuide(guide, OnLoad)
     local totalHeight = 0
     local nframes = 0
 
-    ClearTable(RXP_.scheduledTasks)
-    ClearTable(RXP_.stepUpdateList)
-    RXP_.currentGuide = {}
+    ClearTable(addon.scheduledTasks)
+    ClearTable(addon.stepUpdateList)
+    addon.currentGuide = {}
 
-    for k, v in pairs(guide) do RXP_.currentGuide[k] = v end
-    RXP_.currentGuide.steps = {}
+    for k, v in pairs(guide) do addon.currentGuide[k] = v end
+    addon.currentGuide.steps = {}
     for n, step in ipairs(guide.steps) do
-        if RXP_.AldorScryerCheck(step) and RXP_.PhaseCheck(step) and
-            RXP_.HardcoreCheck(step) and RXP_.SeasonCheck(step) and
-            RXP_.IsStepShown(step) then
-            table.insert(RXP_.currentGuide.steps, step)
+        if addon.AldorScryerCheck(step) and addon.PhaseCheck(step) and
+            addon.HardcoreCheck(step) and addon.SeasonCheck(step) and
+            addon.IsStepShown(step) then
+            table.insert(addon.currentGuide.steps, step)
         end
     end
-    guide = RXP_.currentGuide
+    guide = addon.currentGuide
 
-    RXP_.currentGuideName = guide.name
+    addon.currentGuideName = guide.name
     RXPCData.currentGuideName = guide.name
     RXPCData.currentGuideGroup = guide.group
-    local guidename = RXP_.GetGuideName(guide)
+    local guidename = addon.GetGuideName(guide)
     if guide.subgroup then
         GuideName.text:SetText(guidename .. "\n" .. guide.subgroup)
     else
@@ -1041,15 +1043,15 @@ function RXP_:LoadGuide(guide, OnLoad)
         -- frame:SetBackdrop(RXPFrame.bottomBackdrop)
         frame:ClearBackdrop()
         frame:SetBackdrop(backdrop)
-        frame:SetBackdropColor(unpack(RXP_.colors.bottomFrameBG))
+        frame:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
 
         frame:SetScript("OnEnter", function(self)
             self.currentAlpha = self:GetAlpha()
             self:SetAlpha(1)
-            self:SetBackdropColor(unpack(RXP_.colors.bottomFrameHighlight))
+            self:SetBackdropColor(unpack(addon.colors.bottomFrameHighlight))
         end)
         frame:SetScript("OnLeave", function(self)
-            self:SetBackdropColor(unpack(RXP_.colors.bottomFrameBG))
+            self:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
             self:SetAlpha(self.currentAlpha)
         end)
         frame.timer = 0
@@ -1083,7 +1085,7 @@ function RXP_:LoadGuide(guide, OnLoad)
             frame.number.text:SetJustifyH("CENTER")
             frame.number.text:SetJustifyV("CENTER")
             frame.number.text:SetTextColor(1, 1, 1, 1)
-            frame.number.text:SetFont(RXP_.font, 8)
+            frame.number.text:SetFont(addon.font, 8)
             local prefix = ""
             if n < 10 then prefix = "0" end
             frame.number.text:SetText(prefix .. tostring(n))
@@ -1097,7 +1099,7 @@ function RXP_:LoadGuide(guide, OnLoad)
         frame.text:SetJustifyH("LEFT")
         frame.text:SetJustifyV("TOP")
         frame.text:SetTextColor(1, 1, 1, 1)
-        frame.text:SetFont(RXP_.font, 9)
+        frame.text:SetFont(addon.font, 9)
 
         -- frame.text:SetHeight(1000)
 
@@ -1118,12 +1120,12 @@ function RXP_:LoadGuide(guide, OnLoad)
     ScrollChild.f1:Hide()
     ScrollChild:SetHeight(200)
     RXPFrame.BottomFrame.UpdateFrame()
-    RXP_.SetStep(RXPCData.currentStep)
+    addon.SetStep(RXPCData.currentStep)
 end
 
-function RXP_.ReloadGuide()
-    return RXP_:LoadGuide(RXP_.GetGuideTable(RXPCData.currentGuideGroup,
-                                             RXPCData.currentGuideName))
+function addon.ReloadGuide()
+    return addon.LoadGuide(addon.GetGuideTable(RXPCData.currentGuideGroup,
+                                               RXPCData.currentGuideName))
 end
 
 function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
@@ -1142,10 +1144,10 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                 if not element.element then
                     element.element = element
                 end
-                RXPG[RXP_.currentGuide.group][element.tag](element)
+                RXPG[addon.currentGuide.group][element.tag](element)
                 if element.requestFromServer then
-                    RXP_.updateStepText = true
-                    RXP_.stepUpdateList[element.step.index] = true
+                    addon.updateStepText = true
+                    addon.stepUpdateList[element.step.index] = true
                 end
             end
             local rawtext = element.tooltipText or element.text
@@ -1179,7 +1181,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
         stepPos[0] = stepPos[0] + hDiff
 
     else
-        RXP_.updateBottomFrame = false
+        addon.updateBottomFrame = false
         local totalHeight = 0
         for n, frame in ipairs(ScrollChild.framePool) do
             if not frame:IsShown() then break end
@@ -1192,13 +1194,14 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                     local stepDiff = element.step.index - RXPCData.currentStep
                     element.element = element
                     if element.requestFromServer then
-                        RXPG[RXP_.currentGuide.group][element.tag](element)
-                        RXP_.updateStepText =
-                            RXP_.updateStepText or not element.requestFromServer
-                        RXP_.stepUpdateList[element.step.index] =
+                        RXPG[addon.currentGuide.group][element.tag](element)
+                        addon.updateStepText =
+                            addon.updateStepText or
+                                not element.requestFromServer
+                        addon.stepUpdateList[element.step.index] =
                             not element.requestFromServer
                     elseif element.tag and (stepDiff <= 8 and stepDiff >= 0) then
-                        RXPG[RXP_.currentGuide.group][element.tag](element)
+                        RXPG[addon.currentGuide.group][element.tag](element)
                     end
                 end
                 local rawtext = element.tooltipText or element.text
@@ -1236,7 +1239,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
         stepPos[0] = totalHeight
         -- print(ScrollChild.framePool[#ScrollChild.framePool]:GetBottom(),totalHeight)
     end
-    local guide = RXP_.currentGuide
+    local guide = addon.currentGuide
     if guide then ScrollChild:SetHeight(ScrollChild.f1:GetHeight()) end
     local w = RXPFrame:GetWidth() - 35
     ScrollChild:SetWidth(w)
@@ -1262,7 +1265,7 @@ local function IsGuideActive(guide)
     local som = RXPCData and RXPCData.SoM
     if (guide.era and som or guide.som and not som) or
         (som and RXPCData.phase and RXPCData.phase > 2 and guide["era/som"]) or
-        (not RXP_.PhaseCheck(guide)) then
+        (not addon.PhaseCheck(guide)) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return false
     end
@@ -1277,7 +1280,7 @@ function RXPFrame.GenerateMenuTable()
     local farmGuides = {}
     local unusedGuides = {}
 
-    for group in pairs(RXP_.guideList) do
+    for group in pairs(addon.guideList) do
         local firstChar = group:sub(1, 1)
         if RXPCData and RXPCData.GA then
             if firstChar == "+" then table.insert(farmGuides, group) end
@@ -1297,7 +1300,7 @@ function RXPFrame.GenerateMenuTable()
     local menuIndex = 1
 
     local function createMenu(group)
-        local t = RXP_.guideList[group]
+        local t = addon.guideList[group]
         menuIndex = menuIndex + 1
 
         if not t.sorted_ then
@@ -1314,14 +1317,14 @@ function RXPFrame.GenerateMenuTable()
         item.subtable = {}
         local submenuIndex = 0
         for j, guideName in ipairs(t.names_) do
-            local guide = RXP_.GetGuideTable(group, guideName)
+            local guide = addon.GetGuideTable(group, guideName)
             if IsGuideActive(guide) then
                 if guide.subgroup then
                     local subgroup = guide.subgroup
                     local subtable = item.subtable[subgroup]
                     if not subtable then
                         local subname = subgroup:gsub("^(%d)-(%d%d?)",
-                                                      RXP_.affix)
+                                                      addon.affix)
                         subtable = {
                             text = subgroup,
                             notCheckable = 1,
@@ -1332,8 +1335,8 @@ function RXPFrame.GenerateMenuTable()
                         table.insert(item.subgroups, subname)
                     end
                     local subitem = {}
-                    subitem.text = RXP_.GetGuideName(guide)
-                    subitem.func = RXP_.LoadGuide
+                    subitem.text = addon.GetGuideName(guide)
+                    subitem.func = addon.LoadGuide
                     subitem.arg1 = guide
                     subitem.notCheckable = 1
                     table.insert(subtable.menuList, subitem)
@@ -1342,8 +1345,8 @@ function RXPFrame.GenerateMenuTable()
                     guide.menuIndex = menuIndex
                     guide.submenuIndex = submenuIndex
                     local subitem = {}
-                    subitem.text = RXP_.GetGuideName(guide)
-                    subitem.func = RXP_.LoadGuide
+                    subitem.text = addon.GetGuideName(guide)
+                    subitem.func = addon.LoadGuide
                     subitem.arg1 = guide
                     subitem.notCheckable = 1
                     table.insert(item.menuList, subitem)
@@ -1387,7 +1390,7 @@ function RXPFrame.GenerateMenuTable()
 
     table.insert(menuList, {text = "", notCheckable = 1, isTitle = 1})
 
-    if RXP_.version == "CLASSIC" then
+    if addon.version == "CLASSIC" then
         local hctext
         if RXPData and RXPCData.hardcore then
             hctext = "Deactivate Hardcore mode"
@@ -1397,18 +1400,18 @@ function RXPFrame.GenerateMenuTable()
         table.insert(menuList, {
             text = hctext,
             notCheckable = 1,
-            func = RXP_.HardcoreToggle
+            func = addon.HardcoreToggle
         })
     end
 
     if RXPCData and RXPCData.GA then
         local text = "Activate the Quest Guide mode"
         table.insert(menuList,
-                     {text = text, notCheckable = 1, func = RXP_.GAToggle})
-    elseif RXP_.farmGuides > 0 then
+                     {text = text, notCheckable = 1, func = addon.GAToggle})
+    elseif addon.farmGuides > 0 then
         local text = "Activate the Gold Assistant mode"
         table.insert(menuList,
-                     {text = text, notCheckable = 1, func = RXP_.GAToggle})
+                     {text = text, notCheckable = 1, func = addon.GAToggle})
     end
 
     table.insert(menuList, {
@@ -1421,8 +1424,8 @@ function RXPFrame.GenerateMenuTable()
         text = "Import guide",
         notCheckable = 1,
         func = function()
-            InterfaceOptionsFrame_OpenToCategory(RXP_.settings.gui.import)
-            InterfaceOptionsFrame_OpenToCategory(RXP_.settings.gui.import)
+            InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+            InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
         end
     })
 

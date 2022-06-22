@@ -1,4 +1,6 @@
-RXP_.skipPreReq = {
+local _, addon = ...
+
+addon.skipPreReq = {
     [9573] = 1,
     [533] = 1,
     [5096] = 1,
@@ -8,7 +10,7 @@ RXP_.skipPreReq = {
     [10008] = 1
 }
 
-RXP_.repStandingID = {
+addon.repStandingID = {
     ["hated"] = 1,
     ["hostile"] = 2,
     ["unfriendly"] = 3,
@@ -19,7 +21,7 @@ RXP_.repStandingID = {
     ["exalted"] = 8
 }
 
-RXP_.repStartValue = {
+addon.repStartValue = {
     -42000, -- hated
     -6000, -- hostile
     -3000, -- unfriendly
@@ -30,13 +32,13 @@ RXP_.repStartValue = {
     42000 -- exalted
 }
 
-RXP_.questConversion = {
+addon.questConversion = {
     [9684] = 63866 -- blood elf rez quest
 }
 
 local version = select(4, GetBuildInfo())
 if version < 90000 then
-    RXP_.mapId = {
+    addon.mapId = {
         ["Durotar"] = 1411,
         ["Mulgore"] = 1412,
         ["The Barrens"] = 1413,
@@ -104,27 +106,27 @@ if version < 90000 then
         ["Outland"] = 987
     }
 else
-    RXP_.mapId = {["ScarletEnclave"] = 124}
+    addon.mapId = {["ScarletEnclave"] = 124}
     for i = 1, 2200 do
         local map = C_Map.GetMapInfo(i)
         if map then
             map = map.name
-            if not RXP_.mapId[map] then RXP_.mapId[map] = i end
+            if not addon.mapId[map] then addon.mapId[map] = i end
         end
     end
-    RXP_.mapId["IcecrownGlacier"] = RXP_.mapId["Icecrown"]
-    RXP_.mapId["CrystalsongForest"] = RXP_.mapId["Crystalsong Forest"]
-    RXP_.mapId["StormPeaks"] = RXP_.mapId["The Storm Peaks"]
-    RXP_.mapId["TheStormPeaks"] = RXP_.mapId["The Storm Peaks"]
-    RXP_.mapId["SholazarBasin"] = RXP_.mapId["Sholazar Basin"]
-    RXP_.mapId["ZulDrak"] = RXP_.mapId["Zul'Drak"]
-    RXP_.mapId["GrizzlyHills"] = RXP_.mapId["Grizzly Hills"]
-    RXP_.mapId["HowlingFjord"] = RXP_.mapId["Howling Fjord"]
-    RXP_.mapId["BoreanTundra"] = RXP_.mapId["Borean Tundra"]
+    addon.mapId["IcecrownGlacier"] = addon.mapId["Icecrown"]
+    addon.mapId["CrystalsongForest"] = addon.mapId["Crystalsong Forest"]
+    addon.mapId["StormPeaks"] = addon.mapId["The Storm Peaks"]
+    addon.mapId["TheStormPeaks"] = addon.mapId["The Storm Peaks"]
+    addon.mapId["SholazarBasin"] = addon.mapId["Sholazar Basin"]
+    addon.mapId["ZulDrak"] = addon.mapId["Zul'Drak"]
+    addon.mapId["GrizzlyHills"] = addon.mapId["Grizzly Hills"]
+    addon.mapId["HowlingFjord"] = addon.mapId["Howling Fjord"]
+    addon.mapId["BoreanTundra"] = addon.mapId["Borean Tundra"]
 end
 
 -- Items required to complete the quest
-RXP_.questCompleteItems = {
+addon.questCompleteItems = {
     [1517] = 6635, -- Call of Earth // Earth Sapta
     [8330] = 20474, -- Solanian's Belongings // Sunstrider Book Satchel
     [934] = 5623, -- Crown of the Earth // Amethyst Phial
@@ -521,7 +523,7 @@ RXP_.questCompleteItems = {
 }
 
 -- Items required to turn in the quest
-RXP_.questTurnInItems = {
+addon.questTurnInItems = {
     [944] = 5251, -- The Master's Glaive // Phial of Scrying
     [3449] = 10444, -- Arcane Runes // Standard Issue Flare Gun
     [10188] = 28455, -- The Sigil of Krasus // Archmage Vargoth's Staff
@@ -547,7 +549,7 @@ RXP_.questTurnInItems = {
 }
 
 -- Items required to accept the quest
-RXP_.questAcceptItems = {
+addon.questAcceptItems = {
     [10820] = 31366, -- Deceive thy Enemy // Felsworn Gas Mask
     [10821] = 31366, -- You're Fired! // Felsworn Gas Mask
     [10773] = 31310, -- Breaching the Path // Wildhammer Flare Gun
@@ -570,9 +572,9 @@ RXP_.questAcceptItems = {
     [2478] = 8051 -- Mission: Possible But Not Probable // Flare Gun
 }
 
-RXP_.flightPath = {}
+addon.flightPath = {}
 
-RXP_.flightPath["Alliance"] = {
+addon.flightPath["Alliance"] = {
     [43] = "Aerie Peak, The Hinterlands",
     [12] = "Darkshire, Duskwood",
     [8] = "Thelsamar, Loch Modan",
@@ -634,7 +636,7 @@ RXP_.flightPath["Alliance"] = {
     [205] = "Zul'Aman, Ghostlands"
 }
 
-RXP_.flightPath["Horde"] = {
+addon.flightPath["Horde"] = {
     [13] = "Tarren Mill, Hillsbrad",
     [11] = "Undercity, Tirisfal",
     [10] = "The Sepulcher, Silverpine Forest",
@@ -705,7 +707,7 @@ end
 StaticPopupDialogs["m1"] = {timeout=10,hasEditBox = 1,text = ""} StaticPopup_Show("m1") StaticPopup1EditBox:SetText(mlist)
 ]]
 
-RXP_.professionID = {
+addon.professionID = {
     alchemy = {2259, 3101, 3464, 11611, 28596, 51304},
     blacksmithing = {2018, 3100, 3538, 9785, 29844, 51300},
     enchanting = {13920, 7411, 7412, 7413, 28029, 51313},
@@ -727,7 +729,7 @@ C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
 
 local s = {}
-RXP_.defaultSpellList = s
+addon.defaultSpellList = s
 
 s["DRUID"] = {
     [4] = {

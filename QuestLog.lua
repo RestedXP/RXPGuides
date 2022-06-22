@@ -1,7 +1,7 @@
-local addonName = ...
+local addonName, addon = ...
 
-function RXP_.UpdateQuestButton(index)
-    local button = RXP_.questLogButton
+function addon.UpdateQuestButton(index)
+    local button = addon.questLogButton
     local anchor = QuestLogExDetailScrollChildFrame or
                        QuestLogDetailScrollChildFrame
     if not anchor or anchor:IsForbidden() then return end
@@ -12,7 +12,7 @@ function RXP_.UpdateQuestButton(index)
         button:SetPoint("TOPRIGHT", anchor, "TOPRIGHT", 0, 0)
         button:SetNormalTexture("Interface/AddOns/" .. addonName ..
                                     "/Textures/rxp_logo-64")
-        RXP_.questLogButton = button
+        addon.questLogButton = button
 
         local function tpOnEnter(self)
             if self:IsForbidden() or GameTooltip:IsForbidden() then
@@ -50,7 +50,7 @@ function RXP_.UpdateQuestButton(index)
 
         list = list:gsub("(\n?)([#!%-%+]*)%[?(%S*)%]? (.*)",
                          function(newline, prefix, phase, suffix)
-            if phase ~= "" and not RXP_.PhaseCheck(phase) then
+            if phase ~= "" and not addon.PhaseCheck(phase) then
                 return ""
             end
             return newline .. suffix
@@ -62,22 +62,22 @@ function RXP_.UpdateQuestButton(index)
     if questID then
         local tooltip = ""
         local separator = ""
-        if RXP_.pickUpList[questID] then
-            local pickUpList = GetGuideList(RXP_.pickUpList[questID])
+        if addon.pickUpList[questID] then
+            local pickUpList = GetGuideList(addon.pickUpList[questID])
             if pickUpList ~= "" then
                 tooltip = format("%s%s%sQuest is being picked up at:|r%s",
-                                 tooltip, RXP_.icons.accept,
-                                 RXP_.colors.tooltip, pickUpList)
+                                 tooltip, addon.icons.accept,
+                                 addon.colors.tooltip, pickUpList)
                 showButton = true
                 separator = "\n\n"
             end
         end
-        if RXP_.turnInList[questID] then
-            local turnInList = GetGuideList(RXP_.turnInList[questID])
+        if addon.turnInList[questID] then
+            local turnInList = GetGuideList(addon.turnInList[questID])
             if turnInList ~= "" then
                 tooltip = format("%s%s%s%sQuest is being turned in at:|r%s",
-                                 tooltip, separator, RXP_.icons.turnin,
-                                 RXP_.colors.tooltip, turnInList)
+                                 tooltip, separator, addon.icons.turnin,
+                                 addon.colors.tooltip, turnInList)
                 showButton = true
             end
         end
@@ -92,25 +92,25 @@ function RXP_.UpdateQuestButton(index)
 end
 
 if QuestLog_SetSelection then
-    hooksecurefunc("QuestLog_SetSelection", RXP_.UpdateQuestButton)
+    hooksecurefunc("QuestLog_SetSelection", addon.UpdateQuestButton)
 end
 
 -- Debug function, helps finding out quest log problems on a given guide
-function RXP_.GetQuestLog(QL)
+function addon.GetQuestLog(QL)
 
-    local guide = RXP_.currentGuide
+    local guide = addon.currentGuide
     local name = RXPCData.currentGuideName
-    local group = RXPGuides[RXPCData.currentGuideGroup]
+    local group = addon.RXPG[RXPCData.currentGuideGroup]
     QL = QL or {}
     local qError
     local eStep
     local maxQuests
-    if RXP_.version == "CLASSIC" then
+    if addon.version == "CLASSIC" then
         maxQuests = 20
     else
         maxQuests = 25
     end
-    RXP_.next = group.next
+    addon.next = group.next
 
     if (RXPCData.SoM and guide.era or not RXPCData.SoM and guide.som or
         RXPCData.SoM and RXPCData.phase > 2 and guide["era/som"]) or not guide then
@@ -145,7 +145,7 @@ function RXP_.GetQuestLog(QL)
                      eStep.index))
     else
         if group.next() then
-            return RXP_.GetQuestLog(QL)
+            return addon.GetQuestLog(QL)
         else
             print(format("Error at step %d", eStep.index))
         end
