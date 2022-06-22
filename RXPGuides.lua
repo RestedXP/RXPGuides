@@ -1,24 +1,23 @@
-﻿local addonName = ...
+﻿local addonName, addon = ...
 
-RXP_ = RXP_ or {}
-RXPGuides = {}
-RXP_.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")
+addon.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")
 local addonVersion = 30006
 local version = select(4, GetBuildInfo())
 
 if version < 20000 then
-    RXP_.version = "CLASSIC"
+    addon.version = "CLASSIC"
 elseif version > 20000 and version < 30000 then
-    RXP_.version = "TBC"
+    addon.version = "TBC"
 else
-    RXP_.version = "WOTLK"
+    addon.version = "WOTLK"
 end
 
-RXP_.questQueryList = {}
-RXP_.itemQueryList = {}
-RXP_.questAccept = {}
-RXP_.questTurnIn = {}
-RXP_.activeItems = {}
+addon.questQueryList = {}
+addon.itemQueryList = {}
+addon.questAccept = {}
+addon.questTurnIn = {}
+addon.activeItems = {}
+addon.RXPG = {}
 
 BINDING_HEADER_RXPGuides = "RXPGuides"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
@@ -74,8 +73,8 @@ local function SoMCheck()
             n = n + 1
             if id == buffId then
                 RXPCData.SoM = true
-                if RXP_.currentGuide and RXP_.currentGuide.name then
-                    RXP_:LoadGuide(RXP_.currentGuide)
+                if addon.currentGuide and addon.currentGuide.name then
+                    addon:LoadGuide(addon.currentGuide)
                 end
                 RXPFrame.GenerateMenuTable()
                 break
@@ -83,8 +82,8 @@ local function SoMCheck()
         end
         if id ~= buffId and RXPCData.SoM then
             RXPCData.SoM = nil
-            if RXP_.currentGuide and RXP_.currentGuide.name then
-                RXP_:LoadGuide(RXP_.currentGuide)
+            if addon.currentGuide and addon.currentGuide.name then
+                addon:LoadGuide(addon.currentGuide)
             end
             RXPFrame.GenerateMenuTable()
         end
@@ -97,7 +96,7 @@ function RXPG_init()
     RXPCData = RXPCData or {}
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
-    RXPCData.hardcore = (RXP_.version == "CLASSIC") and RXPCData.hardcore
+    RXPCData.hardcore = (addon.version == "CLASSIC") and RXPCData.hardcore
     if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
         RXPData.addonVersion = addonVersion
         RXPCData.phase = 4
@@ -105,7 +104,7 @@ function RXPG_init()
     RXPCData.phase = RXPCData.phase or 4
     RXPCData.SoM = RXPCData.SoM or 1
     SoMCheck()
-    RXP_.RenderFrame()
+    addon.RenderFrame()
     RXPCData.stepSkip = RXPCData.stepSkip or {}
     RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
@@ -136,35 +135,35 @@ function RXPG_init()
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     RXPFrame:SetShown(not RXPCData.hideWindow)
     C_Timer.After(0.5, function()
-        if RXP_.errorCount == RXP_.guideErrorCount then
-            RXP_.errorCount = -1
+        if addon.errorCount == addon.guideErrorCount then
+            addon.errorCount = -1
             ScriptErrorsFrame:Hide()
         end
     end)
 end
 
-RXP_.errorCount = 0
-RXP_.guideErrorCount = 0
+addon.errorCount = 0
+addon.guideErrorCount = 0
 
 hooksecurefunc(ScriptErrorsFrame, "DisplayMessage",
                function(self, msg, warnType, keepHidden, messageType)
     if ScriptErrorsFrame:IsForbidden() then return end
-    if RXP_.errorCount >= 0 then
+    if addon.errorCount >= 0 then
         if warnType == 0 and keepHidden == false and messageType == 1 and
             type(msg) == "string" and msg:match(addonName .. "\\Guides") then
-            RXP_.guideErrorCount = RXP_.guideErrorCount + 1
+            addon.guideErrorCount = addon.guideErrorCount + 1
         end
-        RXP_.errorCount = RXP_.errorCount + 1
+        addon.errorCount = addon.errorCount + 1
     end
 end)
 
 local startTime = GetTime()
 
-function RXP_.QuestAutoAccept(title)
+function addon.QuestAutoAccept(title)
     if title then
         local element
-        for k, v in pairs(RXP_.questAccept) do
-            if k == title or RXP_.GetQuestName(k) == title then
+        for k, v in pairs(addon.questAccept) do
+            if k == title or addon.GetQuestName(k) == title then
                 element = v
             end
         end
@@ -172,11 +171,11 @@ function RXP_.QuestAutoAccept(title)
     end
 end
 
-function RXP_.QuestAutoTurnIn(title)
+function addon.QuestAutoTurnIn(title)
     if title then
         local element
-        for k, v in pairs(RXP_.questTurnIn) do
-            if k == title or RXP_.GetQuestName(k) == title then
+        for k, v in pairs(addon.questTurnIn) do
+            if k == title or addon.GetQuestName(k) == title then
                 element = v
             end
         end
@@ -188,10 +187,10 @@ local currrentSkillLevel = {}
 local maxSkillLevel = {}
 local professionNames
 
-function RXP_.GetProfessionNames()
+function addon.GetProfessionNames()
     if not professionNames then professionNames = {} end
 
-    for profession, ids in pairs(RXP_.professionID) do
+    for profession, ids in pairs(addon.professionID) do
         for i, id in ipairs(ids) do
             if IsSpellKnown(id) then
                 if id == 2656 then
@@ -209,10 +208,10 @@ function RXP_.GetProfessionNames()
     return professionNames
 end
 
-function RXP_.GetProfessionLevel()
+function addon.GetProfessionLevel()
     local names
     if not (professionNames and professionNames.riding) then
-        RXP_.GetProfessionNames()
+        addon.GetProfessionNames()
     end
     names = professionNames
 
@@ -246,13 +245,13 @@ function RXP_.GetProfessionLevel()
     end
 end
 
-function RXP_.UpdateSkillData()
-    RXP_.GetProfessionNames()
-    RXP_.GetProfessionLevel()
+function addon.UpdateSkillData()
+    addon.GetProfessionNames()
+    addon.GetProfessionLevel()
 end
 
-function RXP_.GetSkillLevel(skill, useMaxValue)
-    RXP_.UpdateSkillData()
+function addon.GetSkillLevel(skill, useMaxValue)
+    addon.UpdateSkillData()
     if skill then
         if useMaxValue then
             return maxSkillLevel[skill] or -1
@@ -268,7 +267,7 @@ function RXP_.GetSkillLevel(skill, useMaxValue)
     end
 end
 
-RXP_.skillList = {}
+addon.skillList = {}
 local spellRequest = {}
 
 local trainerUpdate = 0
@@ -280,8 +279,8 @@ local function ProcessSpells(names, rank)
     local level = UnitLevel("player")
     local entries = {race, class}
     for _, entry in pairs(entries) do
-        if RXP_.defaultSpellList[entry] then
-            for spellLvl, spells in pairs(RXP_.defaultSpellList[entry]) do
+        if addon.defaultSpellList[entry] then
+            for spellLvl, spells in pairs(addon.defaultSpellList[entry]) do
                 if spellLvl <= level then
                     for i, spellId in ipairs(spells) do
                         if not (spellRequest[spellId] or
@@ -290,8 +289,8 @@ local function ProcessSpells(names, rank)
                             spellRequest[spellId] = true
                         end
                         if names and rank and
-                            not (RXPCData.hardcore and RXP_.HCSpellList and
-                                RXP_.HCSpellList[spellId]) then
+                            not (RXPCData.hardcore and addon.HCSpellList and
+                                addon.HCSpellList[spellId]) then
                             spellRequest[spellId] = nil
                             local sName = GetSpellInfo(spellId)
                             local sRank = GetSpellSubtext(spellId)
@@ -329,7 +328,7 @@ local function OnTrainer()
 
         ProcessSpells(names, rank)
 
-        for spellName, spellRank in pairs(RXP_.skillList) do
+        for spellName, spellRank in pairs(addon.skillList) do
             for id, name in pairs(names) do
                 if name == spellName then
                     local r = rank[id]
@@ -370,7 +369,7 @@ local G_SelectActiveQuest = C_GossipInfo.SelectActiveQuest or
 local G_GetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                  GetGossipAvailableQuests
 
-function RXP_:QuestAutomation(event, arg1, arg2, arg3)
+function addon.QuestAutomation(event, arg1, arg2, arg3)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
         return
     end
@@ -390,11 +389,11 @@ function RXP_:QuestAutomation(event, arg1, arg2, arg3)
         end
     end
 
-    if event == "QUEST_ACCEPT_CONFIRM" and RXP_.QuestAutoAccept(arg2) then
+    if event == "QUEST_ACCEPT_CONFIRM" and addon.QuestAutoAccept(arg2) then
         ConfirmAcceptQuest()
     elseif event == "QUEST_COMPLETE" then
         local id = GetQuestID()
-        local reward = RXP_.QuestAutoTurnIn(id)
+        local reward = addon.QuestAutoTurnIn(id)
         local choices = GetNumQuestChoices()
         if reward then
             if choices <= 1 then
@@ -410,7 +409,7 @@ function RXP_:QuestAutomation(event, arg1, arg2, arg3)
 
     elseif event == "QUEST_DETAIL" then
         local id = GetQuestID()
-        if RXP_.QuestAutoAccept(id) then
+        if addon.QuestAutoAccept(id) then
             AcceptQuest()
             HideUIPanel(QuestFrame)
         end
@@ -421,7 +420,7 @@ function RXP_:QuestAutomation(event, arg1, arg2, arg3)
 
         for i = 1, nActive do
             local title, isComplete = GetActiveTitle(i)
-            if RXP_.QuestAutoTurnIn(title) and isComplete then
+            if addon.QuestAutoTurnIn(title) and isComplete then
                 return SelectActiveQuest(i)
             end
         end
@@ -431,7 +430,7 @@ function RXP_:QuestAutomation(event, arg1, arg2, arg3)
         else
             for i = 1, nAvailable do
                 local title, isComplete = GetAvailableTitle(i)
-                if RXP_.QuestAutoAccept(title) then
+                if addon.QuestAutoAccept(title) then
                     return SelectAvailableQuest(i)
                 end
             end
@@ -454,7 +453,7 @@ function RXP_:QuestAutomation(event, arg1, arg2, arg3)
             end
             -- print(title)
             -- print(quests[i])
-            if RXP_.QuestAutoTurnIn(title) and isComplete then
+            if addon.QuestAutoTurnIn(title) and isComplete then
                 return G_SelectActiveQuest(i)
             end
         end
@@ -473,7 +472,7 @@ function RXP_:QuestAutomation(event, arg1, arg2, arg3)
                 else
                     quest = select(i * 7 - 6, G_GetAvailableQuests())
                 end
-                if RXP_.QuestAutoAccept(quest) then
+                if addon.QuestAutoAccept(quest) then
                     return G_SelectAvailableQuest(i)
                 end
             end
@@ -481,24 +480,24 @@ function RXP_:QuestAutomation(event, arg1, arg2, arg3)
     end
 end
 
-questFrame:SetScript("OnEvent", RXP_.QuestAutomation)
+questFrame:SetScript("OnEvent", addon.QuestAutomation)
 
 eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
 
     if event == "GET_ITEM_INFO_RECEIVED" and arg2 then
-        if RXP_.itemQueryList[arg1] then
-            RXP_.itemQueryList[arg1] = nil
-            RXP_.updateStepText = true
+        if addon.itemQueryList[arg1] then
+            addon.itemQueryList[arg1] = nil
+            addon.updateStepText = true
         elseif GetTime() - startTime < 15 then
-            RXP_.updateStepText = true
+            addon.updateStepText = true
         end
         return
     elseif (event == "BAG_UPDATE_DELAYED" or event == "PLAYER_REGEN_ENABLED") then
-        RXP_.UpdateItemFrame()
+        addon.UpdateItemFrame()
     elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552) then
-        C_Timer.After(1, function() RXP_.ReloadGuide() end) -- scryer/aldor quest
+        C_Timer.After(1, function() addon.ReloadGuide() end) -- scryer/aldor quest
     elseif event == "SKILL_LINES_CHANGED" then
-        RXP_.UpdateSkillData()
+        addon.UpdateSkillData()
     elseif event == "TRAINER_SHOW" then
         trainerUpdate = GetTime()
         OnTrainer()
@@ -510,31 +509,31 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
     elseif event == "PLAYER_LOGIN" then
         RXPG_init()
         local importGuidesDefault = {profile = {guides = {}}}
-        RXPGuides.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
-                                                'global')
-        RXPGuides.LoadCachedGuides()
-        RXPGuides.LoadEmbeddedGuides()
+        addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
+                                            'global')
+        addon.RXPG.LoadCachedGuides()
+        addon.RXPG.LoadEmbeddedGuides()
         RXPFrame.GenerateMenuTable()
-        RXP_.CreateOptionsPanel()
+        addon.CreateOptionsPanel()
         loadtime = GetTime()
         ProcessSpells()
-        RXP_.GetProfessionLevel()
-        local guide = RXP_.GetGuideTable(RXPCData.currentGuideGroup,
-                                         RXPCData.currentGuideName)
+        addon.GetProfessionLevel()
+        local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
+                                          RXPCData.currentGuideName)
         if not guide and RXPData.autoLoadGuides then
-            guide = RXP_.defaultGuide
-            if RXP_.version == "TBC" and
+            guide = addon.defaultGuide
+            if addon.version == "TBC" and
                 (UnitLevel("player") == 58 and not guide.boost58) then
                 guide = nil
             end
         end
-        RXP_:LoadGuide(guide, true)
-        if not RXP_.currentGuide then
+        addon:LoadGuide(guide, true)
+        if not addon.currentGuide then
             RXPFrame:SetHeight(20)
             RXPFrame.BottomFrame.UpdateFrame()
-            RXP_.noGuide = true
+            addon.noGuide = true
         end
-        RXP_.addonLoaded = true
+        addon.addonLoaded = true
         return
     elseif event == "TAXIMAP_OPENED" then
         local FPlist = C_TaxiMap.GetAllTaxiNodes(
@@ -542,33 +541,33 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
         for k, v in pairs(FPlist) do
             if v.nodeID then RXPCData.flightPaths[v.nodeID] = true end
         end
-    elseif event == "PLAYER_LEVEL_UP" and RXP_.currentGuide then
+    elseif event == "PLAYER_LEVEL_UP" and addon.currentGuide then
         level = UnitLevel("player")
         local stepn = RXPCData.currentStep
         ProcessSpells()
-        -- RXP_:LoadGuide(RXP_.currentGuide)
-        RXP_.SetStep(1)
-        RXP_.SetStep(stepn)
+        -- addon:LoadGuide(addon.currentGuide)
+        addon.SetStep(1)
+        addon.SetStep(stepn)
     elseif event == "UNIT_AURA" then
         SoMCheck()
     elseif event == "UNIT_PET" then
-        RXP_.petFamily = GetPetIcon() or RXP_.petFamily
+        addon.petFamily = GetPetIcon() or addon.petFamily
     elseif event == "QUEST_DATA_LOAD_RESULT" and arg2 then
-        RXP_.requestQuestInfo[arg1] = 0
-        RXP_.updateStepText = true
+        addon.requestQuestInfo[arg1] = 0
+        addon.updateStepText = true
     end
 
 end)
 
-function RXP_.GetGuideTable(guideGroup, guideName)
-    if guideGroup and RXP_.guideList[guideGroup] and guideName and
-        RXP_.guideList[guideGroup][guideName] then
-        return RXP_.guides[RXP_.guideList[guideGroup][guideName]]
+function addon.GetGuideTable(guideGroup, guideName)
+    if guideGroup and addon.guideList[guideGroup] and guideName and
+        addon.guideList[guideGroup][guideName] then
+        return addon.guides[addon.guideList[guideGroup][guideName]]
     end
 end
 
-function RXP_.UnitScanUpdate()
-    local unitscanList = RXP_.currentGuide.unitscan
+function addon.UnitScanUpdate()
+    local unitscanList = addon.currentGuide.unitscan
     if unitscan_targets and unitscanList and not RXPData.disableUnitscan then
         for unit, elements in pairs(unitscanList) do
             local enabled
@@ -597,31 +596,31 @@ function RXP_.UnitScanUpdate()
     end
 end
 
-RXP_.scheduledTasks = {}
+addon.scheduledTasks = {}
 
-function RXP_.UpdateScheduledTasks()
+function addon.UpdateScheduledTasks()
     local cTime = GetTime()
-    for ref, time in pairs(RXP_.scheduledTasks) do
+    for ref, time in pairs(addon.scheduledTasks) do
         if cTime > time then
-            local group = RXP_.currentGuide.group
+            local group = addon.currentGuide.group
             local element = ref.element or ref
             RXPGuides[group][element.tag](ref)
-            RXP_.scheduledTasks[ref] = nil
+            addon.scheduledTasks[ref] = nil
             return
         end
     end
 end
 
-function RXP_.ScheduleTask(ref, time)
+function addon.ScheduleTask(ref, time)
     if type(ref) == "table" and type(time) == "number" then
-        RXP_.scheduledTasks[ref] = time
+        addon.scheduledTasks[ref] = time
     end
 end
 
-RXP_.updateActiveQuest = {}
-RXP_.updateInactiveQuest = {}
+addon.updateActiveQuest = {}
+addon.updateInactiveQuest = {}
 
-RXP_.tickTimer = 0
+addon.tickTimer = 0
 
 local updateFrame = CreateFrame("Frame")
 
@@ -640,44 +639,44 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
         local skip
         local event = ""
 
-        if not RXP_.loadNextStep then
-            for ref, func in pairs(RXP_.updateActiveQuest) do
+        if not addon.loadNextStep then
+            for ref, func in pairs(addon.updateActiveQuest) do
                 func(ref)
-                RXP_.updateActiveQuest[ref] = nil
+                addon.updateActiveQuest[ref] = nil
                 activeQuestUpdate = activeQuestUpdate + 1
             end
             if activeQuestUpdate > 0 then event = event .. "/activeQ" end
         end
-        if RXP_.nextStep then
+        if addon.nextStep then
             skip = true
-            RXP_.SetStep(RXP_.nextStep)
-            RXP_.questAutoAccept = true
-            RXP_.updateBottomFrame = true
-            RXP_.nextStep = false
-        elseif RXP_.loadNextStep then
-            RXP_.loadNextStep = false
-            RXP_.SetStep(RXPCData.currentStep + 1)
-            RXP_.questAutoAccept = true
+            addon.SetStep(addon.nextStep)
+            addon.questAutoAccept = true
+            addon.updateBottomFrame = true
+            addon.nextStep = false
+        elseif addon.loadNextStep then
+            addon.loadNextStep = false
+            addon.SetStep(RXPCData.currentStep + 1)
+            addon.questAutoAccept = true
             skip = true
-            RXP_.updateBottomFrame = true
+            addon.updateBottomFrame = true
             event = event .. "/loadNext"
         elseif activeQuestUpdate == 0 then
-            if RXP_.updateSteps then
-                RXP_.UpdateStepCompletion()
+            if addon.updateSteps then
+                addon.UpdateStepCompletion()
                 event = event .. "/stepComplete"
-            elseif RXP_.updateStepText then
-                RXP_.updateStepText = false
+            elseif addon.updateStepText then
+                addon.updateStepText = false
                 local updateText
                 -- TODO handle error if active guide no longer exists
-                local steps = RXP_.currentGuide.steps
-                for n in pairs(RXP_.stepUpdateList) do
+                local steps = addon.currentGuide.steps
+                for n in pairs(addon.stepUpdateList) do
                     if steps[n] then
                         if not updateText and steps[n].active then
                             updateText = true
                         end
                         RXPFrame.BottomFrame.UpdateFrame(nil, nil, n)
-                        if not RXP_.updateStepText then
-                            RXP_.stepUpdateList[n] = nil
+                        if not addon.updateStepText then
+                            addon.stepUpdateList[n] = nil
                         end
                     end
                 end
@@ -686,11 +685,11 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                 end
                 event = event .. "/updateText"
                 skip = true
-            elseif RXP_.updateBottomFrame or currentTime - RXP_.tickTimer > 5 then
+            elseif addon.updateBottomFrame or currentTime - addon.tickTimer > 5 then
                 RXPFrame.BottomFrame.UpdateFrame()
                 RXPFrame.CurrentStepFrame.UpdateText()
                 RXPFrame.SetStepFrameAnchor()
-                RXP_.tickTimer = currentTime
+                addon.tickTimer = currentTime
                 event = event .. "/bottomFrame"
                 skip = true
             else
@@ -699,30 +698,30 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
         end
 
         if not skip then
-            if RXP_.questAutoAccept then
-                RXP_.questAutoAccept = false
-                RXP_.QuestAutomation()
+            if addon.questAutoAccept then
+                addon.questAutoAccept = false
+                addon.QuestAutomation()
             end
-            if RXP_.updateMap then
-                RXP_.UpdateMap()
+            if addon.updateMap then
+                addon.UpdateMap()
                 event = event .. "/map"
             elseif activeQuestUpdate == 0 then
-                for ref, func in pairs(RXP_.updateInactiveQuest) do
+                for ref, func in pairs(addon.updateInactiveQuest) do
                     activeQuestUpdate = activeQuestUpdate + 1
                     if activeQuestUpdate > 4 then
                         break
                     else
                         func(ref)
-                        RXP_.updateInactiveQuest[ref] = nil
+                        addon.updateInactiveQuest[ref] = nil
                     end
                 end
                 if activeQuestUpdate > 0 then
                     event = event .. "/inactiveQ"
                 end
             end
-            RXP_.UpdateGotoSteps()
-            RXP_.UpdateItemCooldown()
-            RXP_.UpdateScheduledTasks()
+            addon.UpdateGotoSteps()
+            addon.UpdateItemCooldown()
+            addon.UpdateScheduledTasks()
         end
 
         if event ~= "" then
@@ -732,25 +731,25 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
     end
 end)
 
-function RXP_.HardcoreToggle()
-    if RXPCData and RXP_.version == "CLASSIC" then
+function addon.HardcoreToggle()
+    if RXPCData and addon.version == "CLASSIC" then
         RXPCData.hardcore = not RXPCData.hardcore
-        RXP_.RenderFrame()
-        if RXP_.hardcoreButton then
-            RXP_.hardcoreButton:SetChecked(RXPCData.hardcore)
+        addon.RenderFrame()
+        if addon.hardcoreButton then
+            addon.hardcoreButton:SetChecked(RXPCData.hardcore)
         end
     end
 end
 
-function RXP_.GAToggle()
-    if RXPCData and RXP_.farmGuides > 0 then
+function addon.GAToggle()
+    if RXPCData and addon.farmGuides > 0 then
         RXPCData.GA = not RXPCData.GA
-        RXP_.RenderFrame()
+        addon.RenderFrame()
     end
 end
 
-function RXP_.AldorScryerCheck(faction)
-    if RXP_.version == "CLASSIC" then return true end
+function addon.AldorScryerCheck(faction)
+    if addon.version == "CLASSIC" then return true end
     local name, description, standingID, barMin, barMax, aldorRep =
         GetFactionInfoByID(932)
     local name, description, standingID, barMin, barMax, scryerRep =
@@ -773,7 +772,7 @@ function RXP_.AldorScryerCheck(faction)
     return true
 end
 
-function RXP_.PhaseCheck(phase)
+function addon.PhaseCheck(phase)
     local guide
     if type(phase) == "table" then
         guide = phase
@@ -800,12 +799,12 @@ function RXP_.PhaseCheck(phase)
     return true
 end
 
-function RXP_.IsStepShown(step)
+function addon.IsStepShown(step)
     if (step.daily and RXPCData.skipDailies) then return false end
     return true
 end
 
-function RXP_.SeasonCheck(step)
+function addon.SeasonCheck(step)
     if RXPCData.SoM and step.era or step.som and not RXPCData.SoM or
         RXPCData.SoM and RXPCData.phase > 2 and step["era/som"] then
         return false
@@ -813,7 +812,7 @@ function RXP_.SeasonCheck(step)
     return true
 end
 
-function RXP_.HardcoreCheck(step)
+function addon.HardcoreCheck(step)
     local hc = RXPCData.hardcore
     if step.softcore and hc or step.hardcore and not hc then return false end
     return true

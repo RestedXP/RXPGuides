@@ -1,4 +1,4 @@
-local addonName = ...
+local addonName, addon = ...
 
 local AceConfig = LibStub("AceConfig-3.0")
 local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
@@ -12,16 +12,16 @@ SlashCmdList["RXPG"] = function(msg)
     InterfaceOptionsFrame_OpenToCategory(RXPOptions)
 end
 
-if not RXP_.settings then
-    RXP_.settings = {gui = {}, functions = {}}
+if not addon.settings then
+    addon.settings = {gui = {}, functions = {}}
 else
-    if not RXP_.settings.gui then RXP_.settings.gui = {} end
-    if not RXP_.settings.functions then RXP_.settings.functions = {} end
+    if not addon.settings.gui then addon.settings.gui = {} end
+    if not addon.settings.functions then addon.settings.functions = {} end
 end
 
-RXP_.settings.gui.selectedDeleteGuide = ""
+addon.settings.gui.selectedDeleteGuide = ""
 
-function RXP_.CreateOptionsPanel()
+function addon.CreateOptionsPanel()
     local panel = CreateFrame("Frame", "RXPOptions")
     panel.name = "RXP Guides"
     InterfaceOptions_AddCategory(panel)
@@ -89,7 +89,7 @@ function RXP_.CreateOptionsPanel()
     index = index + 1
     button:SetScript("PostClick", function(self)
         local checkbox = self:GetChecked()
-        RXP_.arrowFrame:SetShown(RXP_.currentGuide and checkbox)
+        addon.arrowFrame:SetShown(addon.currentGuide and checkbox)
         RXPData.disableArrow = not checkbox
     end)
     button:SetChecked(not RXPData.disableArrow)
@@ -103,7 +103,7 @@ function RXP_.CreateOptionsPanel()
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideMiniMapPins = self:GetChecked()
-        RXP_.UpdateMap()
+        addon.UpdateMap()
     end)
     button:SetChecked(RXPData.hideMiniMapPins)
     button.Text:SetText("Hide Mini Map Pins")
@@ -168,16 +168,18 @@ function RXP_.CreateOptionsPanel()
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
     button:SetScript("PostClick", function(self)
-        if RXP_.currentGuide and RXP_.currentGuide.hidewindow then return end
+        if addon.currentGuide and addon.currentGuide.hidewindow then
+            return
+        end
         local show = self:GetChecked()
         if show then
-            RXPFrame:SetHeight(RXP_.height)
-            RXPCData.frameHeight = RXP_.height
+            RXPFrame:SetHeight(addon.height)
+            RXPCData.frameHeight = addon.height
         else
             RXPFrame:SetHeight(10)
             RXPCData.frameHeight = 10
         end
-        RXP_.updateBottomFrame = true
+        addon.updateBottomFrame = true
     end)
     button:SetChecked(RXPFrame.BottomFrame:GetHeight() >= 35)
     button.Text:SetText("Show step list")
@@ -205,7 +207,7 @@ function RXP_.CreateOptionsPanel()
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.mapCircle = self:GetChecked()
-        RXP_.updateMap = true
+        addon.updateMap = true
     end)
     button:SetChecked(RXPData.mapCircle)
     button.Text:SetText("Highlight active map pins")
@@ -239,16 +241,16 @@ function RXP_.CreateOptionsPanel()
             "Automatically adds important npcs to your unitscan list"
     end
 
-    if RXP_.version == "CLASSIC" then
+    if addon.version == "CLASSIC" then
         button = CreateFrame("CheckButton", "$parentHC", panel,
                              "ChatConfigCheckButtonTemplate");
-        RXP_.hardcoreButton = button
+        addon.hardcoreButton = button
         table.insert(options, button)
         button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
         index = index + 1
         button:SetScript("PostClick", function(self)
             RXPCData.hardcore = self:GetChecked()
-            RXP_.RenderFrame()
+            addon.RenderFrame()
         end)
         button:SetChecked(RXPCData.hardcore)
         button.Text:SetText("Hardcore mode")
@@ -262,7 +264,7 @@ function RXP_.CreateOptionsPanel()
         button:SetScript("PostClick", function(self)
             RXPCData.SoM = self:GetChecked()
             RXPFrame.GenerateMenuTable()
-            RXP_.ReloadGuide()
+            addon.ReloadGuide()
         end)
         button:SetChecked(RXPCData.SoM)
         button.Text:SetText("Season of Mastery")
@@ -276,12 +278,12 @@ function RXP_.CreateOptionsPanel()
         self.Text:SetText(format(self.defaultText, value))
         RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
-        RXP_.arrowFrame:SetSize(32 * size, 32 * size)
-        RXP_.arrowFrame.text:SetFont(RXP_.font, RXPData.arrowText)
+        addon.arrowFrame:SetSize(32 * size, 32 * size)
+        addon.arrowFrame.text:SetFont(addon.font, RXPData.arrowText)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
-        RXP_.updateMap = true
-        if self.key == "phase" and RXP_.currentGuide then
-            RXP_.ReloadGuide()
+        addon.updateMap = true
+        if self.key == "phase" and addon.currentGuide then
+            addon.ReloadGuide()
         end
         RXPFrame.SetStepFrameAnchor()
     end
@@ -352,13 +354,13 @@ function RXP_.CreateOptionsPanel()
                           "Adjusts the batching window tolerance, used for hearthstone batching",
                           slider, 0, -25, 1, "1", "100")
 
-    if RXP_.version == "CLASSIC" then
+    if addon.version == "CLASSIC" then
         slider = CreateSlider(RXPCData, "phase", 1, 6, "Content phase: %d",
                               "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",
                               slider, 0, -25, 1, "1", "6")
     end
 
-    if RXP_.farmGuides > 0 then
+    if addon.farmGuides > 0 then
         local GApanel = CreateFrame("Frame", "RXPGAOptions")
         GApanel.name = "Gold Assistant"
         GApanel.parent = "RXP Guides"
@@ -384,7 +386,7 @@ function RXP_.CreateOptionsPanel()
     local importOptionsTable = {
         type = "group",
         name = "RestedXP Guide Import",
-        handler = RXP_.settings.functions,
+        handler = addon.settings.functions,
         -- get = "getProfileOption",
         -- set = "setProfileOption",
         args = {
@@ -403,16 +405,16 @@ function RXP_.CreateOptionsPanel()
                 multiline = 10,
                 -- usage = "Usage string",
                 set = function(_, val)
-                    RXP_.settings.gui.importGuideText = val
-                    RXP_.settings.functions.ImportBoxSet(val)
-                    RXP_.settings.gui.importGuideText = ""
-                    RXP_.settings.gui.selectedDeleteGuide = "mustReload"
+                    addon.settings.gui.importGuideText = val
+                    addon.settings.functions.ImportBoxSet(val)
+                    addon.settings.gui.importGuideText = ""
+                    addon.settings.gui.selectedDeleteGuide = "mustReload"
                 end,
                 get = function()
-                    return RXP_.settings.gui.importGuideText
+                    return addon.settings.gui.importGuideText
                 end,
                 validate = function(_, val)
-                    return RXP_.settings.functions.ImportBoxValidate(val)
+                    return addon.settings.functions.ImportBoxValidate(val)
                 end
             },
             currentGuides = {
@@ -422,19 +424,19 @@ function RXP_.CreateOptionsPanel()
                 name = "Currently loaded imported guides",
                 width = 'full',
                 values = function()
-                    return RXP_.settings.functions.GetImportedGuides()
+                    return addon.settings.functions.GetImportedGuides()
                 end,
                 disabled = function()
-                    return
-                        RXP_.settings.gui.selectedDeleteGuide == "mustReload" or
-                            RXP_.settings.gui.selectedDeleteGuide == "none" or
-                            not RXP_.settings.gui.selectedDeleteGuide
+                    return addon.settings.gui.selectedDeleteGuide ==
+                               "mustReload" or
+                               addon.settings.gui.selectedDeleteGuide == "none" or
+                               not addon.settings.gui.selectedDeleteGuide
                 end,
                 get = function()
-                    return RXP_.settings.gui.selectedDeleteGuide
+                    return addon.settings.gui.selectedDeleteGuide
                 end,
                 set = function(_, value)
-                    RXP_.settings.gui.selectedDeleteGuide = value
+                    addon.settings.gui.selectedDeleteGuide = value
                 end
             },
             deleteSelectedGuide = {
@@ -442,27 +444,27 @@ function RXP_.CreateOptionsPanel()
                 type = 'execute',
                 name = "Delete imported guide",
                 confirm = function(_, key)
-                    if not RXP_.settings.gui.selectedDeleteGuide or
-                        RXP_.settings.gui.selectedDeleteGuide == "none" then
+                    if not addon.settings.gui.selectedDeleteGuide or
+                        addon.settings.gui.selectedDeleteGuide == "none" then
                         return false
                     end
                     return string.format("Remove %s?",
-                                         RXP_.settings.gui.selectedDeleteGuide)
+                                         addon.settings.gui.selectedDeleteGuide)
                 end,
                 disabled = function()
-                    return
-                        RXP_.settings.gui.selectedDeleteGuide == "mustReload" or
-                            RXP_.settings.gui.selectedDeleteGuide == "none" or
-                            not RXP_.settings.gui.selectedDeleteGuide
+                    return addon.settings.gui.selectedDeleteGuide ==
+                               "mustReload" or
+                               addon.settings.gui.selectedDeleteGuide == "none" or
+                               not addon.settings.gui.selectedDeleteGuide
                 end,
                 func = function(_)
-                    if RXPGuides.db.profile.guides[RXP_.settings.gui
+                    if addon.db.profile.guides[addon.settings.gui
                         .selectedDeleteGuide] then
-                        RXPGuides.db.profile.guides[RXP_.settings.gui
+                        addon.db.profile.guides[addon.settings.gui
                             .selectedDeleteGuide] = nil
                     end
 
-                    RXP_.settings.gui.selectedDeleteGuide = "mustReload"
+                    addon.settings.gui.selectedDeleteGuide = "mustReload"
                 end
             },
             reloadGuides = {
@@ -471,7 +473,8 @@ function RXP_.CreateOptionsPanel()
                 type = 'execute',
                 func = function() _G.ReloadUI() end,
                 disabled = function()
-                    return RXP_.settings.gui.selectedDeleteGuide ~= "mustReload"
+                    return addon.settings.gui.selectedDeleteGuide ~=
+                               "mustReload"
                 end
             }
         }
@@ -479,13 +482,13 @@ function RXP_.CreateOptionsPanel()
 
     AceConfig:RegisterOptionsTable("RXP Guides/Import", importOptionsTable)
 
-    RXP_.settings.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                   "RXP Guides/Import", "Import", "RXP Guides")
+    addon.settings.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                                    "RXP Guides/Import", "Import", "RXP Guides")
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
     -- Hackery ahead
-    local importFrame = RXP_.settings.gui.import.obj.frame
+    local importFrame = addon.settings.gui.import.obj.frame
     importFrame.icon = importFrame:CreateTexture()
     importFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
                                     "\\Textures\\rxp_logo-64")
@@ -493,16 +496,16 @@ function RXP_.CreateOptionsPanel()
 
 end
 
-function RXP_.settings.functions.getProfileOption(info)
-    return RXP_.db.profile[info[#info]]
+function addon.settings.functions.getProfileOption(info)
+    return addon.db.profile[info[#info]]
 end
 
-function RXP_.settings.functions.setProfileOption(info, value)
+function addon.settings.functions.setProfileOption(info, value)
     local key = info[#info]
-    RXP_.db.profile[key] = value
+    addon.db.profile[key] = value
 end
 
-function RXP_.settings.functions.ImportBoxSet(text)
+function addon.settings.functions.ImportBoxSet(text)
     -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
     --return RXPGuides.DecodeGuideContents(text)
     return RXPGuides.ImportString(text)
@@ -525,7 +528,7 @@ function RXP_.settings.functions.ImportBoxSet(text)
     end]]
 end
 
-function RXP_.settings.functions.ImportBoxValidate(text)
+function addon.settings.functions.ImportBoxValidate(text)
     -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
     return true --[[
     if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
@@ -540,15 +543,15 @@ function RXP_.settings.functions.ImportBoxValidate(text)
     end]]
 end
 
-function RXP_.settings.functions.GetImportedGuides()
+function addon.settings.functions.GetImportedGuides()
     local display = {empty = ""}
     local importedGuidesFound = false
 
-    if RXP_.settings.gui.selectedDeleteGuide == "mustReload" then
+    if addon.settings.gui.selectedDeleteGuide == "mustReload" then
         return {mustReload = "Must reload UI"}
     end
 
-    for _, guide in ipairs(RXP_.guides) do
+    for _, guide in ipairs(addon.guides) do
         if guide.imported or guide.cache then
             importedGuidesFound = true
             local group,subgroup,name = guide.key:match("^.*|(.*)|(.*)|(.*)")
@@ -565,7 +568,7 @@ function RXP_.settings.functions.GetImportedGuides()
     if importedGuidesFound then
         return display
     else
-        RXP_.settings.gui.selectedDeleteGuide = "none"
+        addon.settings.gui.selectedDeleteGuide = "none"
         return {none = "none"}
     end
 

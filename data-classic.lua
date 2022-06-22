@@ -1,4 +1,6 @@
-RXP_.skipPreReq = {
+local _, addon = ...
+
+addon.skipPreReq = {
     [9573] = 1,
     [533] = 1,
     [5096] = 1,
@@ -8,7 +10,7 @@ RXP_.skipPreReq = {
     [10008] = 1
 }
 
-RXP_.repStandingID = {
+addon.repStandingID = {
     ["hated"] = 1,
     ["hostile"] = 2,
     ["unfriendly"] = 3,
@@ -19,7 +21,7 @@ RXP_.repStandingID = {
     ["exalted"] = 8
 }
 
-RXP_.repStartValue = {
+addon.repStartValue = {
     -42000, -- hated
     -6000, -- hostile
     -3000, -- unfriendly
@@ -30,9 +32,9 @@ RXP_.repStartValue = {
     42000 -- exalted
 }
 
-RXP_.questConversion = {}
+addon.questConversion = {}
 
-RXP_.mapId = {
+addon.mapId = {
     ["Durotar"] = 1411,
     ["Mulgore"] = 1412,
     ["The Barrens"] = 1413,
@@ -85,7 +87,7 @@ RXP_.mapId = {
     ["Eastern Kingdoms"] = 1415
 }
 
-RXP_.questCompleteItems = {
+addon.questCompleteItems = {
     [1517] = 6635, -- Call of Earth // Earth Sapta
     [934] = 5623, -- Crown of the Earth // Amethyst Phial
     [2561] = 8149, -- Druid of the Claw // Voodoo Charm
@@ -283,7 +285,7 @@ RXP_.questCompleteItems = {
 }
 
 -- Items required to turn in the quest
-RXP_.questTurnInItems = {
+addon.questTurnInItems = {
     [944] = 5251, -- The Master's Glaive // Phial of Scrying
     [3449] = 10444, -- Arcane Runes // Standard Issue Flare Gun
     [2201] = 7667, -- Find the Gems // Talvash's Phial of Scrying
@@ -291,16 +293,16 @@ RXP_.questTurnInItems = {
 }
 
 -- Items required to accept the quest
-RXP_.questAcceptItems = {
+addon.questAcceptItems = {
     [3461] = 10444, -- Return to Tymor // Standard Issue Flare Gun
     [2204] = 7667, -- Restoring the Necklace // Talvash's Phial of Scrying
     [949] = 5251, -- The Twilight Camp // Phial of Scrying
     [2478] = 8051 -- Mission: Possible But Not Probable // Flare Gun
 }
 
-RXP_.flightPath = {}
+addon.flightPath = {}
 
-RXP_.flightPath["Alliance"] = {
+addon.flightPath["Alliance"] = {
     [43] = "Aerie Peak, The Hinterlands",
     [12] = "Darkshire, Duskwood",
     [8] = "Thelsamar, Loch Modan",
@@ -340,7 +342,7 @@ RXP_.flightPath["Alliance"] = {
     [62] = "Nighthaven, Moonglade"
 }
 
-RXP_.flightPath["Horde"] = {
+addon.flightPath["Horde"] = {
     [13] = "Tarren Mill, Hillsbrad",
     [11] = "Undercity, Tirisfal",
     [10] = "The Sepulcher, Silverpine Forest",
@@ -389,7 +391,7 @@ end
 StaticPopupDialogs["m1"] = {timeout=10,hasEditBox = 1,text = ""} StaticPopup_Show("m1") StaticPopup1EditBox:SetText(mlist)
 ]]
 
-RXP_.professionID = {
+addon.professionID = {
     alchemy = {2259, 3101, 3464, 11611},
     blacksmithing = {2018, 3100, 3538, 9785},
     enchanting = {13920, 7411, 7412, 7413},
@@ -408,7 +410,7 @@ C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(2368) -- herbalism
 
 -- Spells not used in hardcore:
-RXP_.HCSpellList = {
+addon.HCSpellList = {
     20752, -- create soulstone r2
     20755, -- create soulstone r3
     20756, -- create soulstone r4
@@ -418,7 +420,7 @@ RXP_.HCSpellList = {
 }
 
 local s = {}
-RXP_.defaultSpellList = s
+addon.defaultSpellList = s
 
 s["Dwarf"] = {
     [8] = {2551, 3273, 3274}, -- cooking/FA
