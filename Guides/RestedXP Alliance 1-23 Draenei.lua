@@ -1554,7 +1554,7 @@ step
 step << Hunter/Shaman/Mage
     #label limit1
     #completewith L20
-	.xp19-11,200,1
+	.xp 19-11,200,1
     .goto Bloodmyst Isle,24.8,51.3
     .complete 9746,1 --Kill Sunhawk Pyromancer (x10)
     .complete 9746,2 --Kill Sunhawk Defender (x10)
