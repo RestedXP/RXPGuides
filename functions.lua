@@ -1183,6 +1183,7 @@ addon.functions["goto"] = function(self, ...)
                     element.radius = nil
                 elseif radius > 0 then
                     element.hidePin = true
+                    element.parent = true
                 end
             elseif radius > 0 then
                 if not text or text == "" then

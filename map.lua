@@ -460,7 +460,8 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                             instance = element.instance,
                             wx = element.wx,
                             wy = element.wy,
-                            zone = element.zone
+                            zone = element.zone,
+                            parent = element.parent,
                         })
                     end
                 end
@@ -703,7 +704,7 @@ local function updateArrow()
             return true
         end
     end
-
+    af.element = false
     for i, element in ipairs(addon.activeWaypoints) do
         RXPCData.completedWaypoints[i] =
             RXPCData.completedWaypoints[i] or element.skip

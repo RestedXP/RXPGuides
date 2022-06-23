@@ -392,6 +392,7 @@ function addon.SetStep(n, n2, loopback)
     ClearTable(addon.questAccept)
     ClearTable(addon.questTurnIn)
     ClearTable(addon.activeItems)
+    ClearTable(RXPCData.completedWaypoints)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1
