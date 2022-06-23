@@ -177,7 +177,7 @@ function addon.ImportGuide(groupOrText, text, defaultFor)
             addon.db.profile.guides[importedGuide.key] =
                 RXPG.BuildCacheObject(guide)
         end
-
+        return importedGuide
     else -- Addon not loaded, add to queue
         table.insert(embeddedGuides,
                      RXPG.BuildCacheObject(groupOrText, text, defaultFor))
@@ -239,9 +239,10 @@ local function ReadString(input, hash)
                          bitxor(strbyte(input, k + 1),
                                 S[bitand((S[i] + S[j]), 0xff)])))
     end
+
     local guide = table.concat(output)
-    -- print(guide:sub(1,55))
-    if CheckDataIntegrity(guide, hash) then return guide end
+    guide = LibDeflate:DecompressZlib(guide)
+    if guide and CheckDataIntegrity(guide, hash) then return guide end
     return false, "Error loading guide ID " .. hash
 end
 
@@ -265,11 +266,15 @@ function RXPG.ImportString(str)
     -- Provisory solution, lots of data to be processed in a single frame
     -- maybe stagger the guide loading and load only 1 per frame
     for n = 1, nImportedGuides do RXPG.ProcessImportedGuides() end
+    return nImportedGuides > 0
 end
 
 function RXPG.ProcessImportedGuides()
     if #importedGuides > 0 then
-        RXPGuides.ImportGuide(importedGuides[1])
+        local guide = RXPGuides.ImportGuide(importedGuides[1])
+        if guide then
+            print("Guide Loaded Successfully: " .. guide.name)
+        end
         table.remove(importedGuides, 1)
         return true
     else

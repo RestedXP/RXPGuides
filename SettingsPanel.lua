@@ -6,6 +6,11 @@ local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 SLASH_RXPG1 = "/rxp"
 SLASH_RXPG2 = "/rxpg"
 SLASH_RXPG3 = "/rxpguides"
+local importString = ""
+local previousFrame = 0
+local buffer = {}
+local importFrame
+local ProcessBuffer
 
 SlashCmdList["RXPG"] = function(msg)
     InterfaceOptionsFrame_OpenToCategory(RXPOptions)
@@ -392,7 +397,7 @@ function addon.CreateOptionsPanel()
         args = {
             buffer = { -- Buffer hacked in right-aligned icon
                 order = 1,
-                name = "Paste encoded strings, RegisterGuide, or ImportGuide commands below.",
+                name = "Paste encoded strings",
                 type = "description",
                 width = "full",
                 fontSize = "medium"
@@ -402,17 +407,9 @@ function addon.CreateOptionsPanel()
                 type = 'input',
                 name = 'Guides to import',
                 width = "full",
-                multiline = 10,
+                multiline = 5,
                 -- usage = "Usage string",
-                set = function(_, val)
-                    addon.settings.gui.importGuideText = val
-                    addon.settings.functions.ImportBoxSet(val)
-                    addon.settings.gui.importGuideText = ""
-                    addon.settings.gui.selectedDeleteGuide = "mustReload"
-                end,
-                get = function()
-                    return addon.settings.gui.importGuideText
-                end,
+
                 validate = function(_, val)
                     return addon.settings.functions.ImportBoxValidate(val)
                 end
@@ -488,11 +485,73 @@ function addon.CreateOptionsPanel()
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
     -- Hackery ahead
-    local importFrame = addon.settings.gui.import.obj.frame
+
     importFrame.icon = importFrame:CreateTexture()
     importFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
                                     "\\Textures\\rxp_logo-64")
     importFrame.icon:SetPoint("TOPRIGHT", -5, -5)
+    importFrame = addon.settings.gui.import.obj.frame
+
+    local function EditBoxHook(self)
+        if importFrame:IsShown() then
+            self.isMaxBytesSet = true
+            self:SetMaxBytes(1)
+        elseif self.isMaxBytesSet then
+            self.isMaxBytesSet = false
+            self:SetMaxBytes(0)
+        end
+    end
+
+    function ProcessBuffer(self)
+        self:SetScript('OnUpdate', nil)
+        self = importFrame.textFrame
+        if #buffer > 16 then
+            importString = table.concat(buffer)
+            self:ClearHistory()
+            self:SetMaxBytes(0)
+            self:Insert(importString:sub(1, 500))
+            self:ClearFocus()
+            buffer = {}
+        else
+            --self:ClearHistory()
+            self:SetText(" ")
+            self:SetMaxBytes(1)
+        end
+    end
+
+    local function PasteHook(self, char)
+        if not importFrame:IsShown() then
+            return
+        end
+
+        local time = GetTime()
+        if previousFrame ~= time then
+            previousFrame = time
+            importFrame.textFrame = self
+            importFrame:SetScript('OnUpdate', ProcessBuffer)
+        end
+
+        table.insert(buffer,char)
+    end
+
+    local isHooked = {}
+
+    importFrame:HookScript("OnShow",function(self)
+        local n = 1
+        local editBox = true
+
+        while editBox do
+            --editBox = _G["AceGUI-3.0EditBox" .. n]
+            editBox = _G["MultiLineEditBox"..n.."ScrollFrame"]
+            if not isHooked[n] and editBox then
+                editBox = editBox.obj.editBox
+                isHooked[n] = true
+                editBox:HookScript("OnEditFocusGained",EditBoxHook)
+                editBox:HookScript("OnChar",PasteHook)
+            end
+            n = n + 1
+        end
+    end)
 
 end
 
@@ -505,11 +564,12 @@ function addon.settings.functions.setProfileOption(info, value)
     addon.db.profile[key] = value
 end
 
-function addon.settings.functions.ImportBoxSet(text)
+--[[
+function addon.settings.functions.ImportBoxSet()
     -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
     --return RXPGuides.DecodeGuideContents(text)
-    return addon.RXPG.ImportString(text)
-    --[[
+
+    return true
     if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
         local loadedFunction, errorString = loadstring(
                                                 "return function() \n" .. text ..
@@ -525,12 +585,24 @@ function addon.settings.functions.ImportBoxSet(text)
     else
         -- TODO
         return "ImportBoxSet: TODO not a legacy guide"
-    end]]
+    end
 end
+]]
 
 function addon.settings.functions.ImportBoxValidate(text)
+    --print(text)
     -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
-    return true --[[
+
+    local guidesLoaded = addon.RXPG.ImportString(importString)
+    if guidesLoaded then
+        addon.settings.gui.selectedDeleteGuide = "mustReload"
+        return true
+    else
+        importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
+        return "Failed to Import Guides: Invalid Import String"
+    end
+     --[[
+
     if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
         local loadedFunction, errorString = loadstring(
                                                 "return function() \n" .. text ..
