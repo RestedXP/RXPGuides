@@ -1802,8 +1802,9 @@ step
     .turnin 893 >> Turn in Weapons of Choice
     .accept 1153 >> Accept A New Ore Sample
 step
+    #completewith next
     .goto The Barrens,44.4,59.1
-    .fly Freewind Post>> Fly to Freewind Post
+    .fly Freewind Post >> Fly to Freewind Post
 step
     .goto Thousand Needles,44.8,49.0
     .turnin 4767 >> Turn in Wind Rider
@@ -1915,6 +1916,7 @@ step
 	#completewith next
     .hs >> Hearth to Freewind Post
 step
+    #completewith next
     .goto Thousand Needles,45.1,49.2
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step
