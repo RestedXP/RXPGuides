@@ -486,11 +486,11 @@ function addon.CreateOptionsPanel()
     -- Directly references Ace3 built frame object
     -- Hackery ahead
 
+    importFrame = addon.settings.gui.import.obj.frame
     importFrame.icon = importFrame:CreateTexture()
     importFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
                                     "\\Textures\\rxp_logo-64")
     importFrame.icon:SetPoint("TOPRIGHT", -5, -5)
-    importFrame = addon.settings.gui.import.obj.frame
 
     local function EditBoxHook(self)
         if importFrame:IsShown() then
