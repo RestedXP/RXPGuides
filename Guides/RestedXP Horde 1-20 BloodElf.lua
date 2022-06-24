@@ -2412,38 +2412,41 @@ step
     .unitscan Borgoth the Bloodletter
 step
     #requires Varnis
-#sticky
+    #sticky
     #label Vedoran
     >>Talk to Ranger Vedoran (the corpse on the table) and rescue him
     .skipgossip
-.goto Ghostlands,32.8,89.9
+    .goto Ghostlands,32.8,89.9
     .complete 9164,3 --Ranger Vedoran Rescued
 step
-#sticky
+    #sticky
     #label Borgoth
     #requires Varnis
-    #completewith next
-+Kill Masophet the Black. He's inside one of the ziggurats
-.goto Ghostlands,35.8,89.1,30,0
+    #completewith borgothturnin
+    >> Kill Masophet the Black. He's inside one of the ziggurats
+    .goto Ghostlands,35.8,89.1,30,0
     .goto Ghostlands,29.3,88.9,30,0
-.goto Ghostlands,35.8,89.1,30,0
+    .goto Ghostlands,35.8,89.1,30,0
     .goto Ghostlands,29.3,88.9,30,0
-.goto Ghostlands,35.8,89.1,30,0
+    .goto Ghostlands,35.8,89.1,30,0
     .goto Ghostlands,29.3,88.9
     .complete 9170,4 --Kill Masophet the Black (x1)
     .unitscan Masophet the Black
 step
 #sticky
 #completewith next
->>Kill Dar'Khan. You may need a group for this quest. You can skip it, but we HIGHLY recommend doing this quest due to how much of an upgrade the weapons are, how much money and experience you get, etc
+    >>Kill Dar'Khan. You may need a group for this quest. You can skip it, but we HIGHLY recommend doing this quest due to how much of an upgrade the weapons are, how much money and experience you get, etc
     *You can use mana tap to ranged pull mobs out of the room << BloodElf
     *Be sure to use the weapon you got from an earlier quest then swap to your normal weapon
     .goto Ghostlands,33.0,81.3
     .complete 9167,1 --Collect Dar'Khan's Head (x1)
 step
+    #requires Borgoth
     .goto Ghostlands,54.9,48.5
     .deathskip >> Die and rez at the spirit healer if you aren't killing Dar'Khan or have already killed him.
 step
+    #label borgothturnin
+    #requires Borgoth
     .goto Ghostlands,54.9,48.5
     .turnin 9170 >> Turn in Dar'Khan's Lieutenants
 step << BloodElf Hunter
@@ -2473,6 +2476,9 @@ step << !BloodElf
     .isQuestComplete 9167
     .goto Ghostlands,55.2,48.8
     .turnin 9167 >> Turn in The Traitor's Destruction
+step
+    .goto Ghostlands,47.6,34.9
+.turnin 9164 >>Turn in Captives at Deatholme
 step << !BloodElf
 .isQuestTurnedIn 9167
 .accept 9811 >> Accept Friend of the Sin'dorei
@@ -2480,9 +2486,6 @@ step
 #completewith next
     .cooldown item,6948,>0 >>Hearth to Tranquillien if it's up. Otherwise, just run back
 .hs >> Hearth to Tranquillien
-step
-    .goto Ghostlands,47.6,34.9
-.turnin 9164 >>Turn in Captives at Deatholme
 step
     #label Wanted
 .isQuestComplete 9156
