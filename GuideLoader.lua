@@ -339,16 +339,30 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
     local parentGroup
 
     if not (groupOrText and text) then
-        text = groupOrText
-        groupOrText = text:match("^%s*#group%s+(.-)%s*%c") or
-                          text:match("%c%s*#group%s+(.-)%s*%c")
-        if groupOrText then
-            groupOrText = groupOrText:gsub("%s*%-%-.*$", "")
+        local currentGroup
+        text = groupOrText:gsub("%-%-.-[\r\n]", "\n")
+        text = text:gsub("(#group%s*)(.-)%s*<<%s*(.-)%s*[\r\n]", function(prefix,group,t)
+            if not applies(t) then
+                return "\n"
+            else
+                currentGroup = group
+                return prefix .. group .. "\n"
+            end
+        end)
+
+        if currentGroup then
+            groupOrText = currentGroup
         else
-            print("Error parsing guide: Invalid guide group",
-                  text:match("#name%s+.-%s*%c"))
-            return
-        end
+            groupOrText = text:match("^%s*#group%s+(.-)%s*%c") or
+                            text:match("%c%s*#group%s+(.-)%s*%c")
+            if not groupOrText then
+                print("Error parsing guide: Invalid guide group",
+                    text:match("#name%s+.-%s*%c"))
+                return
+            end
+         end
+    else
+        text = text:gsub("%-%-.-[\r\n]", "\n")
     end
 
     local guide = {}
@@ -453,7 +467,6 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
 
     for line in string.gmatch(text, "[^\n\r]+") do
         linenumber = linenumber + 1
-        line = line:gsub("%-%-.*", "")
         line = line:gsub("^%s+", "")
         line = line:gsub("%s+$", "")
         -- print(line)
