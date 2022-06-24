@@ -886,6 +886,27 @@ function addon.CalculateTotalXP(ignorePreReqs)
         ProcessQuest(quest)
     end
 
+    for id,quest in pairs(addon.QuestDB) do
+        local isTurnedIn = addon.IsQuestTurnedIn(id)
+        if not isTurnedIn then
+            local item = quest.itemId
+            if ignorePreReqs and item then
+                totalXp = totalXp + quest.xp
+            elseif type(item) == "table" then
+                local state = true
+                for n,itemId in pairs(item) do
+                    state = state and GetItemCount(itemId,true) >= quest.itemAmount[n]
+                end
+                if state then
+                    totalXp = totalXp + quest.xp
+                end
+            elseif type(item) == "number" and GetItemCount(item,true) >= quest.itemAmount then
+                totalXp = totalXp + quest.xp
+            end
+        end
+    end
+
+    return totalXp
 end
 
 txp = addon.CalculateTotalXP
