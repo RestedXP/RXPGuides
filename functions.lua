@@ -3407,3 +3407,20 @@ function addon.functions.scenario(self, ...)
 
     element.text = element.rawtext .. element.criteria
 end
+
+function addon.functions.rescue()
+	local _,seat = UnitVehicleSeatInfo("vehicle",2)
+	if seat then
+		return true
+	end
+end
+
+function addon.functions.ironchain()
+	local id
+	for i = 1,5 do
+		_,id = UnitAura("vehicle",i)
+		if id == 133273 then
+			return true
+		end
+	end
+end
