@@ -3424,3 +3424,22 @@ function addon.functions.ironchain()
 		end
 	end
 end
+
+function addon.functions.bombdispenser()
+    return GetItemCount(40686) > 0
+end
+
+function addon.functions.niffelen()
+    local seatCount = 0
+    for i = 2,UnitVehicleSeatCount("vehicle") do
+        local _,seat = UnitVehicleSeatInfo("vehicle",i)
+        if seat then
+            seatCount = seatCount + 1
+        end
+        --print(seat)
+    end
+    --print(seatCount)
+	if seatCount < 3 then
+		return true
+	end
+end
