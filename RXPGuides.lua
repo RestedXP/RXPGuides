@@ -817,3 +817,75 @@ function addon.HardcoreCheck(step)
     if step.softcore and hc or step.hardcore and not hc then return false end
     return true
 end
+
+RXP = addon
+function addon.GetBestQuests()
+    if not addon.questLogQuests then
+        addon.questLogQuests = {}
+        for id,v in pairs(addon.QuestDB) do
+            v.Id = id
+            local activeFor = v.appliesTo
+            if activeFor then
+                activeFor = addon.applies(activeFor) or addon.GetSkillLevel(activeFor) > 0
+            end
+            if activeFor and not addon.IsQuestTurnedIn(id) and not v.itemId then
+                table.insert(addon.qdb,v)
+            end
+        end
+    end
+    local qDB = addon.questLogQuests
+    table.sort(qDB,function(k1,k2)
+
+        local x1 = k1.xp or 0
+        local x2 = k2.xp or 0
+        return x1 > x2
+
+    end)
+    for i = 1,#qDB do
+        local id = qDB[i].Id
+        local xp = qDB[i].xp or 0
+        if i > 25 and xp < (qDB[25].xp or 1) then
+            break
+        end
+        print(string.format("%d:%dxp %s (%d)",i,xp,addon.GetQuestName(id) or "",id))
+    end
+end
+gq = addon.GetBestQuests
+
+function addon.CalculateTotalXP(ignorePreReqs)
+    local totalXp = 0
+    local function ProcessQuest(quest)
+        if not addon.IsQuestTurnedIn(quest.Id) then
+            if ignorePreReqs then
+                totalXp = totalXp + quest.xp
+            else
+                local preReqComplete = true
+                local previousQuest = quest.previousQuest
+                if type(previousQuest) == "table" then
+                    local state = not quest.preQuestAny
+                    for _,id in ipairs(previousQuest) do
+                        if quest.preQuestAny then
+                            state = state or addon.IsQuestTurnedIn(id)
+                        else
+                            state = state and addon.IsQuestTurnedIn(id)
+                        end
+                    end
+                    preReqComplete = state
+                elseif type(previousQuest) == "number" then
+                    preReqComplete = addon.IsQuestTurnedIn(previousQuest)
+                end
+                if preReqComplete then
+                    totalXp = totalXp + quest.xp
+                end
+            end
+        end
+    end
+
+    for i = 1,25 do
+        local quest = addon.questLogQuests[i]
+        ProcessQuest(quest)
+    end
+
+end
+
+txp = addon.CalculateTotalXP

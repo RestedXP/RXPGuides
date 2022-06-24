@@ -551,7 +551,7 @@ step
 	#completewith next
 	#softcore
     .goto Teldrassil,39.6,35.5
-    .deathwarp >>Die on purpose and respawn at the Darnassus graveyard
+    .deathskip >>Die on purpose and respawn at the Darnassus graveyard
 step
     .goto Darnassus,38.3,21.4
 	>>Travel to Darnassus

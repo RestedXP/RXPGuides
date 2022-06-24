@@ -161,7 +161,7 @@ end
 function addon.GetQuestName(id)
     if type(id) ~= "number" then return end
     id = questConversion[id] or id
-
+    local name
     if db and type(db.QueryQuest) == "function" and type(db.GetQuest) ==
         "function" then
         local quest = db:GetQuest(id)
@@ -174,8 +174,9 @@ function addon.GetQuestName(id)
                 local questLogTitleText, _, _, _, _, _, _, questID =
                     GetQuestLogTitle(i);
                 if questID == id then
-                    questNameCache[id] = questLogTitleText
-                    return questLogTitleText
+                    name = questLogTitleText
+                    if name then questNameCache[id] = name end
+                    return name
                 end
             end
         else
@@ -205,9 +206,13 @@ function addon.GetQuestName(id)
             if isLoaded then
                 requests[id] = 0
                 if C_QuestLog.GetQuestInfo then
-                    return C_QuestLog.GetQuestInfo(id)
+                    name = C_QuestLog.GetQuestInfo(id)
+                    if name then questNameCache[id] = name end
+                    return questNameCache[id]
                 else
-                    return C_QuestLog.GetTitleForQuestID(id)
+                    name = C_QuestLog.GetTitleForQuestID(id)
+                    if name then questNameCache[id] = name end
+                    return questNameCache[id]
                 end
             elseif not requests[id] then
                 requests[id] = GetTime()
