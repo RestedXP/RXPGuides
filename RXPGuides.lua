@@ -105,6 +105,7 @@ function RXPG_init()
     RXPCData.SoM = RXPCData.SoM or 1
     SoMCheck()
     addon.RenderFrame()
+    RXPData.cache = RXPData.cache or addon:write(select(2, BNGetInfo()))
     RXPCData.stepSkip = RXPCData.stepSkip or {}
     RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
