@@ -94,11 +94,11 @@ step
     >>Kill Cougars for their Pelts
     .complete 750,1 --Mountain Cougar Pelt (10)
 step << !Druid !Shaman
-	>> Grind en route to the quest turn in
+	>> Grind mobs en route to the quest turn in
     .goto Mulgore,44.9,77.0
     .xp 3+1150 >> Grind to 1150+/1400xp
 step << Druid/Shaman
-	>> Grind en route to the quest turn in
+	>> Grind mobs en route to the quest turn in
     .goto Mulgore,44.9,77.0
     .xp 3+1110 >> Grind to 1110+/1400xp
 step << Warrior/Hunter
@@ -208,7 +208,7 @@ step
     .accept 1656 >>Accept A Task Unfinished
 step
 	.goto Mulgore,46.5,55.5
-    .xp 5+2395 >>Grind to 2395+/2800xp en route to town
+    .xp 5+2395 >>Grind mobs til you're 2395+/2800xp en route to town
 step
     #softcore
 	#completewith next
