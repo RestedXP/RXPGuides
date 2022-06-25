@@ -2498,7 +2498,6 @@ StaticPopupDialogs["RXP_Link"] = {
 function addon.functions.cast(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        element.tag = "hs"
         local text, id = ...
         element.id = tonumber(id)
         element.text = text or ""
@@ -3442,4 +3441,15 @@ function addon.functions.niffelen()
 	if seatCount < 3 then
 		return true
 	end
+end
+
+function addon.functions.compulsion()
+
+	for i = 1,32 do
+		local _, _, _, _, _, _, _, _, _, id = UnitAura("player",i)
+		if id == 47098 then
+			return false
+		end
+	end
+	return true
 end
