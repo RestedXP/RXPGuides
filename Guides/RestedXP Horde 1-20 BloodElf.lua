@@ -338,7 +338,7 @@ step
 step << BloodElf
     .goto Eversong Woods,48.2,47.7
     .turnin 8350 >> Turn in Completing the Delivery
-step << Priest/Mage/Warlock/Warrior/Rogue/Paladin
+step << Priest/Mage/Warlock/Warrior/Rogue/Paladin/Shaman
     .goto Eversong Woods,48.3,47.0,8 >>Go upstairs
 step << BloodElf Priest
     .goto Eversong Woods,47.9,48.0
@@ -383,10 +383,10 @@ step << Hunter
     .goto Eversong Woods,48.3,46.1
     .train 1130 >>Train Hunter's Mark
     .train 3044 >>Train Arcane Shot
-step << Undead Warrior/Paladin
+step << Warrior/Paladin
     .goto Eversong Woods,48.5,45.9
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
-step << Undead Warrior/Paladin
+step << Warrior/Paladin
     .goto Eversong Woods,48.5,45.9
     .money <0.0509
     >> Buy Gladius and equip it
@@ -426,7 +426,7 @@ step
     .goto Eversong Woods,48.2,46.0
     .turnin 8463 >> Turn in Unstable Mana Crystals
     .accept 9352 >> Accept Darnassian Intrusions
-step << Undead Warrior/Paladin
+step << Warrior/Paladin
     .goto Eversong Woods,48.5,45.9
     .money <0.0509
     >> Buy Gladius and equip it
@@ -1231,6 +1231,9 @@ step << BloodElf Mage
     .accept 9404 >>Accept Recently Living
 step << !BloodElf/!Warlock
     .goto Eversong Woods,56.7,49.6,30 >>Go into Silvermoon
+step << Shaman
+    .goto Silvermoon City,71.8,56.6
+    .trainer >> Train your class spells
 step << Priest/Mage
     .goto Silvermoon City,63.5,32.0,20 >>Run up the ramp
 step << Priest
@@ -1645,7 +1648,7 @@ step << Mage/Priest/Warlock
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Apprentice Boots from Vredigar and equip them
     .collect 22991,1 --Collect Apprentice Boots (1)
-step << Rogue
+step << Rogue/Shaman
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Bogwalker Boots from Vredigar and equip them
     .collect 22992,1 --Collect Bogwalker Boots (1)
@@ -1860,7 +1863,7 @@ step << Paladin
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Tranquillien Defender's Girdle. Equip it
     .collect 28162,1 --Collect Tranquillien Defender's Girdle (1)
-step << Rogue/Hunter/Druid
+step << Rogue/Hunter/Druid/Shaman
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Batskin Belt. Equip it
     .collect 28158,1 --Collect Batskin Belt (1)
@@ -2270,7 +2273,7 @@ step << Mage/Warlock/Priest
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Apothecary's Robe. Equip it
     .collect 22986,1 --Collect Apothecary's Robe (1)
-step << Rogue/Hunter/Druid
+step << Rogue/Hunter/Druid/Shaman
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Deathstalker's Vest. Equip it
     .collect 22987,1 --Collect Deathstalker's Vest (1)
@@ -2281,10 +2284,13 @@ step << Druid
     .train 1062 >>Train Entangling Roots r2
     .train 8938 >>Train Regrowth r2
     .train 6808 >>Train Maul r2
-step << Mage/Priest/Warlock/Hunter
+step << Mage/Priest/Warlock/Hunter/Shaman
     #completewith next
     .goto Ghostlands,45.4,30.5
     .fly Silvermoon >> Fly to Silvermoon City
+step << Shaman
+    .goto Silvermoon City,71.8,56.6
+    .trainer >> Train your class spells
 step << BloodElf Mage
     .goto Eversong Woods,54.4,50.7
     .turnin 9134 >> Turn in Skymistress Gloaming
@@ -2324,7 +2330,7 @@ step << Hunter
     .goto Silvermoon City,82.2,28.1
     .train 4197 >>Train Great Stamina r3
     .train 24557 >>Train Natural Armor r3
-step << Mage/Priest/Warlock/Hunter/Druid
+step << Mage/Priest/Warlock/Hunter/Druid/Shaman
     #completewith next
     .goto Ghostlands,55.1,48.7 << !BloodElf Mage
     .goto Ghostlands,47.3,29.3 << BloodElf Mage
@@ -2549,6 +2555,9 @@ step
     #completewith next
     .goto Ghostlands,45.5,30.5,0
     .fly Silvermoon >> Fly to Silvermoon City
+step << Shaman
+    .goto Silvermoon City,71.8,56.6
+    .trainer >> Train your class spells
 step << BloodElf Paladin
     .goto Silvermoon City,54.0,71.0
     .turnin 9134 >> Turn in Skymistress Gloaming
