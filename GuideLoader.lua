@@ -90,12 +90,12 @@ function RXPG.AddGuide(guide)
     end
 
     if loadedGuide then
-        if tonumber(guide.version) == tonumber(loadedGuide.version) then
+        if guide.version == loadedGuide.version then
             return false
-        elseif tonumber(guide.version) > tonumber(loadedGuide.version) then
+        elseif guide.version > loadedGuide.version then
             if DEBUG then
                 print(fmt(
-                          'Newer guide for (%s) already exists (%s) >= checkGuide (%s)',
+                          'Newer guide for (%s) already exists (%s) >= checkGuide (%d)',
                           guide.key, guide.version, loadedGuide.version))
             end
             return false
@@ -190,39 +190,43 @@ end
 
 -- Don't cache registered guide, aka Guide-N.lua
 -- They are part of the base bundle, so caching is a waste of RAM
-function addon.RegisterGuide(groupOrText, text, defaultFor)
+function addon.RegisterGuide(groupOrContent, text, defaultFor)
     if addon.db then -- Only used when user-imported RegisterGuide string pasted
-        local importedGuide = RXPG.ParseGuide(groupOrText, text, defaultFor)
+        local importedGuide,errorMsg = RXPG.ParseGuide(groupOrContent, text, defaultFor)
 
-        return RXPG.AddGuide(importedGuide)
+        return not errorMsg and RXPG.AddGuide(importedGuide)
     else
         table.insert(embeddedGuides, {
-            groupOrText = groupOrText,
+            groupOrContent = groupOrContent,
             text = text,
             defaultFor = defaultFor
         })
     end
 end
 
-function addon.CacheGuide(key,guide)
+function addon.CacheGuide(key,guide,enabledFor,guideVersion)
     if type(guide) == "table" then
-        guide.groupOrText = LibDeflate:CompressDeflate(guide.groupOrText)
+        guide.groupOrContent = LibDeflate:CompressDeflate(guide.groupOrContent)
         addon.db.profile.guides[key] = guide
     else
+        guide = guide:gsub("%s-[\r\n]+%s*","\n")
+        guide = guide:gsub("[\t ]+"," ")
+        guide = guide:gsub("%-%-[^\n]*","")
         guide = LibDeflate:CompressDeflate(guide)
         addon.db.profile.guides[key] =
-            RXPG.BuildCacheObject(guide)
+            RXPG.BuildCacheObject(guide,enabledFor,guideVersion)
     end
 end
 
--- Parse and cache one-time guide, aka Import.lua or base64
+-- Parse and cache one-time guide
 function addon.ImportGuide(guide)
-    if addon.db then -- Addon loaded already, import coming from user string
-        local importedGuide = RXPG.ParseGuide(guide)
-
-        if RXPG.AddGuide(importedGuide) then
+    if addon.db then -- Addon loaded already
+        local importedGuide,errorMsg = RXPG.ParseGuide(guide)
+        if errorMsg or RXPG.AddGuide(importedGuide) then
+            --print(errorMsg,importedGuide.name)
             importedGuide.imported = true
-            addon.CacheGuide(importedGuide.key,guide)
+            addon.CacheGuide(importedGuide.key,guide,
+                              importedGuide.enabledFor,importedGuide.version)
         end
         return importedGuide
     else -- Addon not loaded, add to queue
@@ -231,12 +235,12 @@ function addon.ImportGuide(guide)
     end
 end
 
-function RXPG.BuildCacheObject(groupOrText, text, defaultFor)
+function RXPG.BuildCacheObject(groupOrContent, enabledFor, guideVersion)
     return {
-        groupOrText = groupOrText,
-        text = text,
-        defaultFor = defaultFor,
-        cache = true
+        groupOrContent = groupOrContent,
+        cache = true,
+        enabledFor = enabledFor,
+        version = guideVersion
     }
 end
 
@@ -263,11 +267,11 @@ local buffer = {}
 local bufferSize = 0
 function RXPG.ImportString(str)
     bufferSize = 0
-    for hash, text in string.gmatch(str, "(%-?%d+):([%w%+%/%=]+)") do
+    for hash, content in string.gmatch(str, "(%-?%d+):([%w%+%/%=]+)") do
         if DEBUG then
             print('g:', hash)
         end
-        local validData, data = CheckDataIntegrity(text, tonumber(hash))
+        local validData, data = CheckDataIntegrity(content, tonumber(hash))
         if validData then
             table.insert(buffer, data)
             bufferSize = bufferSize + 1
@@ -301,12 +305,12 @@ function RXPG.LoadEmbeddedGuides()
     end
 
     for _, guideData in pairs(embeddedGuides) do
-        local guide = RXPG.ParseGuide(guideData.groupOrText, guideData.text,
+        local guide,errorMsg = RXPG.ParseGuide(guideData.groupOrContent, guideData.text,
                                       guideData.defaultFor)
 
-        if RXPG.AddGuide(guide) and guideData.cache then
+        if not errorMsg and RXPG.AddGuide(guide) and guideData.cache then
             -- Cache if guide successfully loads and is imported not default
-            addon.CacheGuide(guide.key,guideData)
+            --addon.CacheGuide(guide.key,guideData,guide.enabledFor,guide.version)
         end
     end
 
@@ -325,13 +329,14 @@ function RXPG.LoadCachedGuides()
     end
 
     for key, guideData in pairs(addon.db.profile.guides) do
-        local guide
-
-        if key:match("^(%-?%d+)|") == addon.ReadCacheData("string") then
-            guide = LibDeflate:DecompressDeflate(guideData.groupOrText)
-            guide = RXPG.ParseGuide(guide)
+        local guide,errorMsg
+        local enabledFor = guideData.enabledFor
+        if (not enabledFor or applies(enabledFor)) and
+                         key:match("^(%-?%d+)|") == addon.ReadCacheData("string") then
+            guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
+            guide,errorMsg = RXPG.ParseGuide(guide)
         end
-        if guide then
+        if not errorMsg and guide then
             guide.imported = true
             RXPG.AddGuide(guide)
         else
@@ -343,17 +348,17 @@ function RXPG.LoadCachedGuides()
     end
 end
 
-function RXPG.ParseGuide(groupOrText, text, defaultFor)
+function RXPG.ParseGuide(groupOrContent, text, defaultFor)
     -- TODO decode guide contents
-    if not groupOrText then return end
+    if not groupOrContent then return end
 
     local playerLevel = UnitLevel("player")
     local parentGroup
 
-    if not (groupOrText and text) then
+    if not (groupOrContent and text) then
         local currentGroup
-        text = groupOrText:gsub("%-%-%C-[\r\n]+", "\n")
-        text = text:gsub("(#group%s*)(%C-)%s*<<%s*(%C-)%s*[\r\n]+", function(prefix,group,t)
+        text = groupOrContent:gsub("%-%-[^\r\n]*[\r\n]+", "\n")
+        text = text:gsub("(#group[ \t]*)([^\r\n]-)[ \t]*<<[ \t]*([^\r\n]-)[ \t]*[\r\n]+", function(prefix,group,t)
             if not applies(t) then
                 return "\n"
             else
@@ -363,13 +368,13 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
         end)
 
         if currentGroup then
-            groupOrText = currentGroup
+            groupOrContent = currentGroup
         else
-            groupOrText = text:match("^%s*#group%s+(.-)%s*%c") or
-                            text:match("%c%s*#group%s+(.-)%s*%c")
-            if not groupOrText then
+            groupOrContent = text:match("^%s*#group%s+(.-)%s*[\r\n]") or
+                            text:match("[\r\n]%s*#group%s+(.-)%s*[\r\n]")
+            if not groupOrContent then
                 print("\nError parsing guide: Invalid guide group",
-                    text:match("#name%s+.-%s*%c"))
+                    text:match("#name%s+.-%s*[\r\n]"))
                 return
             end
          end
@@ -378,14 +383,13 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
     end
 
     local guide = {}
-
-    if groupOrText:sub(1, 1) == "+" then
+    if groupOrContent:sub(1, 1) == "+" then
         addon.farmGuides = addon.farmGuides + 1
         guide.farm = true
     end
     addon.guide = guide
 
-    guide.group = groupOrText
+    guide.group = groupOrContent
 
     RXPG.RegisterGroup(guide.group)
 
@@ -396,6 +400,7 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
     local lastElement
     local step
     local skip
+    local skipGuide
     local linenumber = 0
 
     local function parseLine(linetext)
@@ -486,6 +491,12 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
             if not addon.currentGuideName then
                 error("Error parsing guide: Guide has no name")
             end
+            if skipGuide then
+                guide.key = RXPG.BuildGuideKey(guide)
+                guide.version = tonumber(guide.version) or 0
+                addon.guide = false
+                return guide,skipGuide
+            end
             local classtag = line:match("<<%s*(.+)")
             if classtag and not applies(classtag) then
                 skip = true
@@ -509,24 +520,23 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
                     guide[version] then
                     parseLine(line)
                 else
-                    addon.guide = nil
-                    return
+                    addon.guide = false
+                    return nil,version
                 end
             elseif currentStep == 0 then
-                local classtag
-                line = line:gsub("(.*)<<%s*(.+)", function(code, tag)
-                    code = code:gsub("%s+$", "")
-                    classtag = tag
+                --print(line)
+                line = line:gsub("(.-)%s*<<%s*(.+)", function(code, tag)
+                    local isValid = applies(tag)
+                    if #code == 0 then
+                        skipGuide = not isValid and tag
+                        guide.enabledFor = guide.enabledFor or tag
+                        --print("$"..code.."$",tag,#code)
+                    else
+                    end
                     return code
                 end)
-                if classtag and not applies(classtag) then
-                    if line == "" then
-                        addon.guide = nil
-                        return
-                    elseif line == "step" then
-                        skip = true
-                    end
-                else
+
+                if line ~= "" then
                     line:gsub("^#(%S+)%s*(=?)%s*(.*)",
                               function(tag, assignment, value)
                         -- print(tag,string.len(tag))
@@ -546,7 +556,7 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
         end
     end
     -- print(guide)
-    addon.step = nil
+    addon.step = false
     if not guide.name then error('Guide has no name') end
 
     defaultFor = guide.defaultfor or defaultFor
@@ -554,17 +564,17 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
         local boost58
         if defaultFor == "58Boost" then
             if playerLevel >= 60 or playerLevel < 58 then
-                parentGroup = groupOrText
-                groupOrText = "*" .. groupOrText
+                parentGroup = groupOrContent
+                groupOrContent = "*" .. groupOrContent
             end
             boost58 = true
         elseif not applies(defaultFor) then
-            parentGroup = groupOrText
-            groupOrText = "*" .. groupOrText
+            parentGroup = groupOrContent
+            groupOrContent = "*" .. groupOrContent
         end
-        RXPG.RegisterGroup(groupOrText, parentGroup)
+        RXPG.RegisterGroup(groupOrContent, parentGroup)
         guide.boost58 = boost58
-        guide.group = groupOrText
+        guide.group = groupOrContent
     end
 
     guide.displayName = guide.name
@@ -574,10 +584,10 @@ function RXPG.ParseGuide(groupOrText, text, defaultFor)
     end
 
     guide.key = RXPG.BuildGuideKey(guide)
-    if not guide.version then guide.version = '0' end
+    guide.version = tonumber(guide.version) or 0
 
-    addon.guide = nil
-
+    addon.guide = false
+    --print(guide.name,"\n",guide.enabledFor)
     return guide
 end
 
