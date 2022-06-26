@@ -828,30 +828,48 @@ function addon.GetBestQuests()
             local activeFor = v.appliesTo
             if activeFor then
                 activeFor = addon.applies(activeFor) or addon.GetSkillLevel(activeFor) > 0
+            else
+                activeFor = true
             end
-            if activeFor and not addon.IsQuestTurnedIn(id) and not v.itemId then
-                table.insert(addon.qdb,v)
+            if activeFor and not addon.IsQuestTurnedIn(id) and not v.itemId and v.questLog then
+                table.insert(addon.questLogQuests,v)
+                v.isActive = true
             end
         end
     end
     local qDB = addon.questLogQuests
     table.sort(qDB,function(k1,k2)
-
         local x1 = k1.xp or 0
         local x2 = k2.xp or 0
-        return x1 > x2
-
+        return not addon.IsQuestTurnedIn(k1.Id) and x1 > x2
     end)
-    for i = 1,#qDB do
-        local id = qDB[i].Id
+
+    for i = #qDB,1,-1 do
         local xp = qDB[i].xp or 0
-        if i > 25 and xp < (qDB[25].xp or 1) then
-            break
+        local id = qDB[i].Id
+        if i > 25 and xp < (qDB[25].xp or 1) or addon.IsQuestTurnedIn(id) then
+            addon.QuestDB[id].isActive = false
+            table.remove(qDB,i)
         end
-        print(string.format("%d:%dxp %s (%d)",i,xp,addon.GetQuestName(id) or "",id))
+    end
+
+    for k,v in ipairs(qDB) do
+        local id = v.Id
+        local xp = v.xp or 0
+        print(string.format("%d:%dxp %s (%d)",k,xp,addon.GetQuestName(id) or "",id))
     end
 end
 gq = addon.GetBestQuests
+
+function addon.IsGuideQuestActive(id)
+    if not addon.QuestDB then
+        addon.GetBestQuests()
+    end
+    if not addon.IsQuestTurnedIn(id) then
+        return addon.QuestDB[id].isActive
+    end
+
+end
 
 function addon.CalculateTotalXP(ignorePreReqs)
     local totalXp = 0
