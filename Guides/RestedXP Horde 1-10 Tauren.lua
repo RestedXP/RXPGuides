@@ -649,7 +649,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,48.5,60.4
     .turnin 758 >>Turn in Thunderhorn Cleansing
-step
+step << !Warrior !Shaman
     .goto Mulgore,47.0,57.2
   .abandon 759 >>Abandon Wildmane Totem
 step << Hunter
