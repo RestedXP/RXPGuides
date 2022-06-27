@@ -279,7 +279,8 @@ function addon.ReadCacheData(mode)
         else
             local k = #base
             if k > 16 then
-            base = base:sub(k - 15, -1)
+                base = base:sub(k - 15, -1)
+                k = 16
             end
             k = 16-k
 
