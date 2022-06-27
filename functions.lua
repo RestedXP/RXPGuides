@@ -10,22 +10,22 @@ local events = {}
 addon.stepUpdateList = {}
 addon.functions.events = events
 events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE"}
-events.buy = {"BAG_UPDATE_DELAYED", "MERCHANT_SHOW"}
+events.buy = "MERCHANT_SHOW"
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = {"QUEST_TURNED_IN"}
 events.complete = {"QUEST_LOG_UPDATE"}
 events.fp = {"UI_INFO_MESSAGE", "TAXIMAP_OPENED"}
 events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
-events.home = {"HEARTHSTONE_BOUND"}
+events.home = "HEARTHSTONE_BOUND"
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED"}
-events.deathskip = {"CONFIRM_XP_LOSS"}
+events.deathskip = "CONFIRM_XP_LOSS"
 events.xp = {"PLAYER_XP_UPDATE", "PLAYER_LEVEL_UP"}
 events.reputation = {"UPDATE_FACTION"}
 events.vendor = {"MERCHANT_SHOW", "MERCHANT_CLOSED"}
 events.trainer = {"TRAINER_SHOW", "TRAINER_CLOSED"}
 events.stable = {"PET_STABLE_SHOW", "PET_STABLE_CLOSED"}
 events.tame = {"UNIT_SPELLCAST_SUCCEEDED", "UNIT_SPELLCAST_START"}
-events.money = {"PLAYER_MONEY"}
+events.money = "PLAYER_MONEY"
 events.train = {
     "TRAINER_SHOW", "CHAT_MSG_SYSTEM", "SKILL_LINES_CHANGED", "TRAINER_UPDATE"
 }
@@ -73,7 +73,6 @@ addon.icons = {
     error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t"
 }
 
-addon.icons.buy = addon.icons.collect
 addon.icons.xpto60 = addon.icons.xp
 
 function addon.error(msg) print(msg) end
@@ -2904,28 +2903,45 @@ end
 function addon.functions.buy(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, id, qty = ...
+        local text, id, qty, questId, objIndex = ...
         id = tonumber(id)
         if not id then
             return addon.error(
                        'Error parsing guide ' .. addon.currentGuideName ..
                            ': No item ID provided\n' .. self)
         end
+        element.questId = tonumber(questId)
+        element.objIndex = tonumber(objIndex)
         element.id = id
         qty = tonumber(qty)
         element.qty = qty or 1
-
+        element.textOnly = true
         element.text = text
         return element
     end
 
-    local element = self.element
     local event = ...
+    local element = self.element
+    local step = element.step
+    if not (step.active and event) then return end
+
     local id = element.id
     local count = GetItemCount(id)
     local total = element.qty - count
-    if total > 0 and event == "MERCHANT_SHOW" and element.step.active and
-        not element.completed then
+    local isQuestComplete
+    local objIndex = element.objIndex
+    local questId = element.questId
+
+    if questId then
+        if addon.IsQuestComplete(questId) or addon.IsQuestTurnedIn(questId) then
+            isQuestComplete = true
+        elseif objIndex and event then
+            local quest = addon.GetQuestObjectives(element.questId, step.index)
+            isQuestComplete = quest[objIndex].finished
+        end
+    end
+
+    if total > 0 and not isQuestComplete then
         for i = 1, GetMerchantNumItems() do
             local link = GetMerchantItemLink(i)
             local itemID = link and tonumber(link:match("item:(%d+)"))
@@ -2950,11 +2966,6 @@ function addon.functions.buy(self, ...)
                 end
             end
         end
-    end
-
-    if count >= element.qty then
-        addon.SetElementComplete(self)
-        return
     end
 
 end
