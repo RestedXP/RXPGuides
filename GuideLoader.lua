@@ -147,51 +147,42 @@ addon.read = function(arg1,arg2)
     return ''
 end
 
-addon.write = function(arg1,arg2)
-    local pass, returnValue = pcall(b64.encode,arg1,arg2)
-    if pass then
-        return returnValue
-    elseif DEBUG then
-        print(returnValue)
-    end
-end
-
-local function CheckDataIntegrity(str, h1)
+local function CheckDataIntegrity(str, h1, mode)
     if h1 then
-        local S = {};
-        local i, j = 0, 0
-        local buffer = {}
-        local n = addon.ReadCacheData()
+        if mode == 58 then
+            local S = {};
+            local i, j
+            local buffer = {}
 
-        for i = 0, 255 do S[i] = i end
+            local n = addon.ReadCacheData("buffer")
+            for i = 0,255 do
+                S[i] = n[i]
+            end
 
-        for i = 0, 255 do
-            j = bitand(j + S[i] + strbyte(n, bitand(i, 0xf) + 1), 0xff)
-            S[i], S[j] = S[j], S[i]
+            i, j, str = 0, 0, addon:read(str)
+
+            for k = 0, #str - 1 do
+                i = bitand(i + 1, 0xff)
+                j = bitand(j + S[i], 0xff)
+                S[i], S[j] = S[j], S[i]
+                table.insert(buffer, strchar(
+                                bitxor(strbyte(str, k + 1),
+                                        S[bitand((S[i] + S[j]), 0xff)])))
+            end
+
+            str = LibDeflate:DecompressZlib(table.concat(buffer))
+            return str and h1 % 4294967296 == addon.A32(str),str
+        elseif mode == 59 then
+            str = LibDeflate:DecompressZlib(addon:read(str))
+            return str and h1 % 4294967296 == addon.A32(str),str
         end
-
-        i, j, str = 0, 0, addon:read(str)
-
-        for k = 0, #str - 1 do
-            i = bitand(i + 1, 0xff)
-            j = bitand(j + S[i], 0xff)
-            S[i], S[j] = S[j], S[i]
-            table.insert(buffer, strchar(
-                             bitxor(strbyte(str, k + 1),
-                                    S[bitand((S[i] + S[j]), 0xff)])))
-        end
-
-        str = LibDeflate:DecompressZlib(table.concat(buffer))
-        return str and h1 % 4294967296 == LibDeflate:Adler32(str),str
     else
-        return LibDeflate:Adler32(str)
+        return addon.A32(str)
     end
 end
 
--- Don't cache registered guide, aka Guide-N.lua
--- They are part of the base bundle, so caching is a waste of RAM
 function addon.RegisterGuide(groupOrContent, text, defaultFor)
-    if addon.db then -- Only used when user-imported RegisterGuide string pasted
+    if addon.db then
         local importedGuide,errorMsg = RXPG.ParseGuide(groupOrContent, text, defaultFor)
 
         return not errorMsg and RXPG.AddGuide(importedGuide)
@@ -210,7 +201,7 @@ function addon.CacheGuide(key,guide,enabledFor,guideVersion)
         addon.db.profile.guides[key] = guide
     else
         guide = guide:gsub("%s-[\r\n]+%s*","\n")
-        guide = guide:gsub("[\t ]+"," ")
+        guide = guide:gsub("[\t ][\t ]+"," ")
         guide = guide:gsub("%-%-[^\n]*","")
         guide = LibDeflate:CompressDeflate(guide)
         addon.db.profile.guides[key] =
@@ -244,58 +235,142 @@ function RXPG.BuildCacheObject(groupOrContent, enabledFor, guideVersion)
     }
 end
 
+function addon.A32(tbl)
+	local readfunc,offset
+    if type(tbl) == "table" then
+        readfunc = unpack
+        offset = -1
+    elseif type(tbl) == "string" then
+        readfunc = strbyte
+        offset = 0
+    else
+        return
+    end
+
+    local length = #tbl
+
+    local i = 1
+    local a = 1
+    local b = 0
+    while i <= length - 15 do
+        local x1, x2, x3, x4, x5, x6, x7, x8,
+            x9, x10, x11, x12, x13, x14, x15, x16 = readfunc(tbl, i+offset, i+15+offset)
+        b = (b+16*a+16*x1+15*x2+14*x3+13*x4+12*x5+11*x6+10*x7+9*x8+8*x9
+            +7*x10+6*x11+5*x12+4*x13+3*x14+2*x15+x16)%65521
+        a = (a+x1+x2+x3+x4+x5+x6+x7+x8+x9+x10+x11+x12+x13+x14+x15+x16)%65521
+        i =  i + 16
+    end
+    while (i <= length) do
+        local x = readfunc(tbl, i+offset, i+offset)
+        a = (a + x) % 65521
+        b = (b + a) % 65521
+        i = i + 1
+    end
+    return bitand((b*65536+a),0xffffffff)
+
+end
+
 local cachedData = {}
 function addon.ReadCacheData(mode)
     if not cachedData.base then
-        cachedData.base = select(2, BNGetInfo()) or addon:read(RXPData.cache)
-        local k = #cachedData.base
-        if k > 16 then
-            cachedData.base = cachedData.base:sub(k - 15, -1)
-        elseif k < 16 then
-            cachedData.base = cachedData.base .. strchar(42):rep(16 - k)
+        local base = select(2, BNGetInfo())
+        if not base then
+            cachedData.base = RXPData.cache
+        else
+            local k = #base
+            if k > 16 then
+            base = base:sub(k - 15, -1)
+            end
+            k = 16-k
+
+            local buffer = {}
+            for i = 0,15 do
+                local j = bitand(i-k,0xf)
+                buffer[i] = strbyte(base,j+1) or 0
+            end
+            for i = 0,15 do
+                buffer[bitand(-i,0xf)] = bitxor(bitxor(bitxor(
+                                buffer[bitand(15-i,0xf)],buffer[bitand(13-i,0xf)]),
+                                buffer[bitand(12-i,0xf)]),buffer[bitand(10-i,0xf)])
+            end
+            RXPData.cache = buffer
+            cachedData.base = buffer
         end
     end
-    if not cachedData.number then
-        cachedData.number = LibDeflate:Adler32(cachedData.base)
+
+    if not cachedData.base then
+        return
+    elseif not cachedData.number then
+        cachedData.number = addon.A32(cachedData.base)
         cachedData.string = tostring(cachedData.number)
     end
 
-    return cachedData[mode] or cachedData.base
+    if not cachedData.buffer and mode == "buffer" then
+        local buffer = {};
+        local j = 0
+        local base = cachedData.base
+
+        for i = 0, 255 do buffer[i] = i end
+
+        for i = 0, 255 do
+            j = bitand(j + buffer[i] + base[bitand(i, 0xf)], 0xff)
+            buffer[i], buffer[j] = buffer[j], buffer[i]
+        end
+        cachedData.buffer = buffer
+    end
+
+    return mode and cachedData[mode] or cachedData.base
 end
 
 local buffer = {}
-local bufferSize = 0
-function RXPG.ImportString(str)
-    bufferSize = 0
-    for hash, content in string.gmatch(str, "(%-?%d+):([%w%+%/%=]+)") do
+addon.bufferSize = 0
+function RXPG.ImportString(str,frame)
+    addon.bufferSize = 0
+    local errorMsg
+    local nGuides = str:match("^(%d+)|")
+    for hash, mode, content in string.gmatch(str, "(%-?%d+)(%D)([%w%+%/%=]+)") do
         if DEBUG then
             print('g:', hash)
         end
-        local validData, data = CheckDataIntegrity(content, tonumber(hash))
+        local validData, data = CheckDataIntegrity(content, tonumber(hash), strbyte(mode))
         if validData then
             table.insert(buffer, data)
-            bufferSize = bufferSize + 1
+            addon.bufferSize = addon.bufferSize + 1
         else
-            print("Error loading guide ID " .. hash)
+            errorMsg = "Error parsing guides\nTotal guides loaded: %d/%s"
+            break
         end
     end
-
-    for n = 1, bufferSize do RXPG.ProcessBuffer() end
-    RXPFrame.GenerateMenuTable()
-    return bufferSize > 0
+    if addon.bufferSize > 0 then
+        if frame then
+            frame:SetScript("OnUpdate",RXPG.ProcessBuffer)
+        else
+            for n = 1, addon.bufferSize do RXPG.ProcessBuffer() end
+        end
+        if errorMsg then
+            return false,errorMsg:format(addon.bufferSize,nGuides)
+        else
+            return true
+        end
+    else
+        return false,"Error: Unable to parse guides, invalid import string"
+    end
 end
 
-function RXPG.ProcessBuffer()
-    if #buffer > 0 then
-        local parseGuide = RXPGuides.ImportGuide(buffer[1])
-        table.remove(buffer, 1)
+function RXPG.ProcessBuffer(frame)
+    local size = #buffer
+    if size > 0 then
+        local parseGuide = RXPGuides.ImportGuide(buffer[size])
+        table.remove(buffer,size)
         if type(parseGuide) == "function" then
             return parseGuide()
         end
         return true
-    else
-        bufferSize = 0
+    elseif frame then
+        frame:SetScript("OnUpdate",nil)
     end
+    addon.bufferSize = 0
+    RXPFrame.GenerateMenuTable()
 end
 
 function RXPG.LoadEmbeddedGuides()
@@ -308,9 +383,8 @@ function RXPG.LoadEmbeddedGuides()
         local guide,errorMsg = RXPG.ParseGuide(guideData.groupOrContent, guideData.text,
                                       guideData.defaultFor)
 
-        if not errorMsg and RXPG.AddGuide(guide) and guideData.cache then
-            -- Cache if guide successfully loads and is imported not default
-            --addon.CacheGuide(guide.key,guideData,guide.enabledFor,guide.version)
+        if not errorMsg then
+            RXPG.AddGuide(guide)
         end
     end
 
