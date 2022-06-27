@@ -79,9 +79,9 @@ addon.icons.xpto60 = addon.icons.xp
 function addon.error(msg) print(msg) end
 
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or GetNumQuestLogEntries
-local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
+local G_GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
                                GetNumGossipActiveQuests
-local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
+local G_GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
                                   GetNumGossipAvailableQuests
 local SelectOption = C_GossipInfo.SelectOption or SelectGossipOption
 
@@ -2970,26 +2970,27 @@ function addon.functions.skipgossip(self, text, ...)
     end
 
     local element = self.element
-    local args = element.args
-    args = args or {}
+    local args = element.args or {}
+    local nArgs = #args
     local event = text
     if event == "GOSSIP_SHOW" then
         local id = tonumber(args[1])
-        if #args == 0 or not id then
-            if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
+        print(id,'GS',nArgs)
+        if nArgs == 0 or not id then
+            if G_GetNumAvailableQuests() == 0 and G_GetNumActiveQuests() == 0 then
                 SelectOption(1)
             end
             return
         end
 
         local npcId = addon.GetNpcId()
-        if #args == 1 then
-            if id < 10 or npcId == id then
+        if nArgs == 1 then
+            if npcId == id then
                 id = 1
-            else
+            elseif id > 9 then
                 return
             end
-            if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
+            if G_GetNumAvailableQuests() == 0 and G_GetNumActiveQuests() == 0 then
                 SelectOption(id)
             end
         elseif id == npcId then
@@ -2997,7 +2998,7 @@ function addon.functions.skipgossip(self, text, ...)
                 element.index = 2
                 element.npcId = id
             else
-                element.index = ((self.index - 1) % (#args - 1)) + 2
+                element.index = ((element.index - 1) % (#args - 1)) + 2
             end
             local option = tonumber(args[element.index])
             if option then SelectOption(option) end
