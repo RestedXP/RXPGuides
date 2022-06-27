@@ -614,7 +614,7 @@ function addon.SetStep(n, n2, loopback)
                 if type(events) == "string" then
                     if events == "OnUpdate" then
                         elementFrame:SetScript("OnUpdate", elementFrame.callback)
-                    elseif type(events) == "table" then
+                    else
                         elementFrame:RegisterEvent(events)
                         elementFrame:SetScript("OnEvent",
                                                CurrentStepFrame.EventHandler)
