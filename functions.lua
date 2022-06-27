@@ -2967,6 +2967,7 @@ function addon.functions.buy(self, ...)
             end
         end
     end
+    MerchantFrame:Hide()
 
 end
 
@@ -3193,8 +3194,8 @@ function addon.functions.emote(self, text, token, unitId, callback, ...)
     if type(self) == "string" then
         local element = {}
 
-        local events = {...}
         if callback then
+            local events = {...}
             element.callback = callback
             element.event = events
         end
@@ -3202,21 +3203,23 @@ function addon.functions.emote(self, text, token, unitId, callback, ...)
         element.textOnly = true
 
         element.id = tonumber(unitId)
-        element.emote = token
+        element.emote = strupper(token)
         return element
     end
 
     local element = self.element
     local step = element.step
+    local id = element.id
 
+    --print('g:',addon.GetNpcId(),addon.GetNpcId() == element.id)
     if not step.active then return end
-
     local group = addon.currentGuide.group
     local emote = element.emote
     if element.callback then
         if RXPG[group][element.callback](self, text, token, unitId, callback,
                                          ...) then DoEmote(emote) end
-    elseif addon.GetNpcId() == element.id then
+    elseif addon.GetNpcId() == element.id or not id then
+        --print('ok')
         DoEmote(emote)
     end
 
