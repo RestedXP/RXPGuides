@@ -32,7 +32,7 @@ events.train = {
 events.istrained = {"LEARNED_SPELL_IN_TAB", "TRAINER_UPDATE"}
 events.zone = {"ZONE_CHANGED_NEW_AREA"}
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
-events.skipgossip = {"GOSSIP_SHOW"}
+events.skipgossip = {"GOSSIP_SHOW","GOSSIP_CLOSED"}
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE"}
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
 events.emote = "PLAYER_TARGET_CHANGED"
@@ -2975,7 +2975,7 @@ function addon.functions.skipgossip(self, text, ...)
     local event = text
     if event == "GOSSIP_SHOW" then
         local id = tonumber(args[1])
-        print(id,'GS',nArgs)
+        --print(id,'GS',nArgs)
         if nArgs == 0 or not id then
             if G_GetNumAvailableQuests() == 0 and G_GetNumActiveQuests() == 0 then
                 SelectOption(1)
@@ -2994,16 +2994,16 @@ function addon.functions.skipgossip(self, text, ...)
                 SelectOption(id)
             end
         elseif id == npcId then
-            if not self.npcId then
+            if not element.npcId then
                 element.index = 2
                 element.npcId = id
             else
-                element.index = ((element.index - 1) % (#args - 1)) + 2
+                element.index = ((element.index - 1) % (nArgs - 1)) + 2
             end
             local option = tonumber(args[element.index])
             if option then SelectOption(option) end
         end
-    else
+    elseif event == "GOSSIP_CLOSED" then
         element.npcId = nil
     end
 
