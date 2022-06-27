@@ -649,7 +649,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,48.5,60.4
     .turnin 758 >>Turn in Thunderhorn Cleansing
-step
+step << !Warrior !Shaman
     .goto Mulgore,47.0,57.2
   .abandon 759 >>Abandon Wildmane Totem
 step << Hunter
@@ -932,7 +932,7 @@ step
     #label Prowlers
     >>Kill Flatland Prowlers. Loot them for their Claws
     .complete 861,1 --Flatland Prowler Claw (4)
-step
+step << Tauren Warrior/Tauren Shaman
     .goto Mulgore,42.5,13.8
     .use 5416 >>Use the Wildmane Cleansing Totem at the Well
     .complete 760,1 --Cleanse the Wildmane Well (1)
@@ -968,7 +968,7 @@ step
     >>Run to Bloodhoof Village
     .goto Mulgore,46.8,60.2
     .turnin 770 >>Turn in The Demon Scarred Cloak
-step
+step << Tauren Warrior/Shaman
     .goto Mulgore,48.6,60.4
     .turnin 760 >>Turn in Wildmane Cleansing
 step
