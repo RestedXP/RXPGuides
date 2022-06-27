@@ -612,10 +612,10 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.callback = RXPG[group][element.tag]
                 elementFrame.callback(elementFrame)
                 if type(events) == "string" then
-                    if event == "OnUpdate" then
+                    if events == "OnUpdate" then
                         elementFrame:SetScript("OnUpdate", elementFrame.callback)
                     elseif type(events) == "table" then
-                        elementFrame:RegisterEvent(event)
+                        elementFrame:RegisterEvent(events)
                         elementFrame:SetScript("OnEvent",
                                                CurrentStepFrame.EventHandler)
                     end
