@@ -105,7 +105,6 @@ function RXPG_init()
     RXPCData.SoM = RXPCData.SoM or 1
     SoMCheck()
     addon.RenderFrame()
-    RXPData.cache = RXPData.cache or addon:write(select(2, BNGetInfo()))
     RXPCData.stepSkip = RXPCData.stepSkip or {}
     RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
@@ -512,8 +511,8 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
         local importGuidesDefault = {profile = {guides = {}}}
         addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
                                             'global')
-        addon.RXPG.LoadCachedGuides()
         addon.RXPG.LoadEmbeddedGuides()
+        addon.RXPG.LoadCachedGuides()
         RXPFrame.GenerateMenuTable()
         addon.CreateOptionsPanel()
         loadtime = GetTime()

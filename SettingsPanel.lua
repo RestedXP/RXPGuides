@@ -593,13 +593,13 @@ function addon.settings.functions.ImportBoxValidate(text)
     --print(text)
     -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
 
-    local guidesLoaded = addon.RXPG.ImportString(importString)
+    local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,RXPFrame)
     if guidesLoaded then
         addon.settings.gui.selectedDeleteGuide = "mustReload"
         return true
     else
         importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
-        return "Failed to Import Guides: Invalid Import String"
+        return errorMsg or "Failed to Import Guides: Invalid Import String"
     end
      --[[
 

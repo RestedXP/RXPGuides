@@ -533,7 +533,7 @@ step
     .accept 9549 >> Accept Artifacts of the Blacksilt
 step
 	.goto Bloodmyst Isle,42.0,21.2
-	.vendorr >> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it
+	.vendor >> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it
 	.collect 4371,1,175
 	.bronzetube
 step
