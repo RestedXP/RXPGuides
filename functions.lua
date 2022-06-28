@@ -1506,25 +1506,51 @@ function addon.functions.collect(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         element.dynamicText = true
-        local text, id, qty, questId, isQuestTurnIn, flags = ...
+        local text, id, qty, questId, objFlags, flags = ...
         id = tonumber(id)
-        flags = tonumber(flags)
+        objFlags = tonumber(objFlags) or 0
+        flags = tonumber(flags) or 0
         if not id then
             return addon.error(
                        'Error parsing guide ' .. addon.currentGuideName ..
                            ': No item ID provided\n' .. self)
         end
-        element.isQuestTurnIn = tonumber(isQuestTurnIn)
+        element.isQuestTurnIn = objFlags > 0
+        element.objFlags = objFlags
         element.questId = tonumber(questId)
         element.id = id
         qty = tonumber(qty)
         element.qty = qty or 1
         element.itemName = addon.GetItemName(id)
-        if flags then
+--[[
+.collect itemId,quantity,questId,objFlags,flags
+flags:
+1 (0x1): disables the checkBox
+2 (0x2): subtract from the given quest objective (given by the objective bitmask from objFlags)
+4 (0x4): Completes the step if the flagged objectives are complete (see objFlags again)
+setting flags to 0 will complete the step if the quest is turned in (default value)
+negative sign: same as 3 (0x2+0x1)
+
+objFlags:
+Each power of 2 corresponds to an objective, as an example:
+Set objN to 1 if you want ot track obj1, 0 otherwise for each quest objective
+obJflag = obj1*2^0 + obj2*2^1 + obj3*2^2 + ... + objN*2^(N-1)
+if this parameter is set to 0, element will complete if you have the quest in your quest log
+]]
+        if flags < 0 then
+            flags = 3
+        end
+        if bit.band(flags,0x1) == 0x1 then
             element.textOnly = true
-            if flags < 0 then element.subtract = true end
+        end
+        if bit.band(flags,0x2) == 0x2 then
+            element.subtract = true
+        end
+        if bit.band(flags,0x4) == 0x4 then
+            element.checkObjectives = true
         end
 
+        element.flags = flags
         if text and text ~= "" then
             element.rawtext = text
             element.tooltipText = addon.icons.collect .. element.rawtext
@@ -1540,6 +1566,8 @@ function addon.functions.collect(self, ...)
     local name = addon.GetItemName(element.id)
     local step = element.step
     local numRequired = element.qty
+    local event = ...
+    local isComplete
 
     if name then
         element.requestFromServer = nil
@@ -1550,7 +1578,7 @@ function addon.functions.collect(self, ...)
     element.itemName = name
 
     if step.active and questId then
-        if not element.isQuestTurnIn then
+        if step.objFlags == 0 then
             -- adds the item to the active item list, in case it's an item that starts a quest
             if not step.activeItems then step.activeItems = {} end
             if event then
@@ -1565,8 +1593,8 @@ function addon.functions.collect(self, ...)
             else
                 step.activeItems[element.id] = true
             end
-        elseif element.subtract then
-            local bitMask = element.isQuestTurnIn
+        elseif element.subtract or element.checkObjectives then
+            local bitMask = element.objFlags
             local objIndex = {}
             for i = 0, 7 do
                 if bit.band(bit.rshift(bitMask, i), 0x1) == 0x1 then
@@ -1575,12 +1603,19 @@ function addon.functions.collect(self, ...)
             end
             local objectives = addon.GetQuestObjectives(questId)
             if objectives then
-                for _, obj in ipairs(objIndex) do
-                    if objectives[obj] then
-                        numRequired = numRequired - objectives[obj].numFulfilled
+                if element.subtract then
+                    for _, obj in ipairs(objIndex) do
+                        if objectives[obj] then
+                            numRequired = numRequired - objectives[obj].numFulfilled
+                        end
+                    end
+                    if numRequired < 0 then numRequired = 0 end
+                elseif element.checkObjectives then
+                    isComplete = #objIndex > 0
+                    for _, obj in ipairs(objIndex) do
+                        isComplete = isComplete and objectives[obj] and objectives[obj].finished
                     end
                 end
-                if numRequired < 0 then numRequired = 0 end
             end
         end
     end
@@ -1594,7 +1629,7 @@ function addon.functions.collect(self, ...)
     end
 
     if (numRequired > 0 and count > numRequired) or (questId and
-        ((not element.isQuestTurnIn and IsOnQuest(questId)) or
+        ((element.objFlags == 0 and IsOnQuest(questId)) or isComplete or
             IsQuestTurnedIn(questId) or IsQuestComplete(questId))) then
         count = numRequired
     end
@@ -1602,8 +1637,8 @@ function addon.functions.collect(self, ...)
     if numRequired <= 0 then
         element.textOnly = true
         if element.text then
-            addon.UpdateStepText(self)
             element.text = nil
+            addon.UpdateStepText(self)
         end
     elseif version and version > 90000 then
         if element.rawtext then
@@ -1636,22 +1671,6 @@ function addon.functions.collect(self, ...)
         addon.SetElementComplete(self)
     elseif not element.textOnly then
         addon.SetElementIncomplete(self)
-    end
-
-    if step.active and questId and not element.isQuestTurnIn then
-        if not step.activeItems then step.activeItems = {} end
-        if event then
-            if event ~= "BAG_UPDATE_DELAYED" then
-                step.activeItems[element.id] = not IsOnQuest(questId)
-                local itemFrame = self.GetParent and
-                                      self:GetParent().activeItemFrame
-                if itemFrame then
-                    addon.UpdateItemFrame(itemFrame)
-                end
-            end
-        else
-            step.activeItems[element.id] = true
-        end
     end
 
 end
