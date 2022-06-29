@@ -54,7 +54,7 @@ local function SoMCheck()
                 if addon.currentGuide and addon.currentGuide.name then
                     addon:LoadGuide(addon.currentGuide)
                 end
-                RXPFrame.GenerateMenuTable()
+                addon.RXPFrame.GenerateMenuTable()
                 break
             end
         end
@@ -63,7 +63,7 @@ local function SoMCheck()
             if addon.currentGuide and addon.currentGuide.name then
                 addon:LoadGuide(addon.currentGuide)
             end
-            RXPFrame.GenerateMenuTable()
+            addon.RXPFrame.GenerateMenuTable()
         end
         if RXPOptionsSoM then RXPOptionsSoM:SetChecked(RXPCData.SoM) end
     end
@@ -111,7 +111,7 @@ function RXPG_init()
     end
 
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
-    RXPFrame:SetShown(not RXPCData.hideWindow)
+    addon.RXPFrame:SetShown(not RXPCData.hideWindow)
     C_Timer.After(0.5, function()
         if addon.errorCount == addon.guideErrorCount then
             addon.errorCount = -1
@@ -467,7 +467,7 @@ function addon:OnInitialize()
     -- TODO setting
     addon.enableTracker = true
 
-    RXPFrame.GenerateMenuTable()
+    addon.RXPFrame.GenerateMenuTable()
     addon.CreateOptionsPanel()
     loadtime = GetTime()
     ProcessSpells()
@@ -483,8 +483,8 @@ function addon:OnInitialize()
     end
     addon:LoadGuide(guide, true)
     if not addon.currentGuide then
-        RXPFrame:SetHeight(20)
-        RXPFrame.BottomFrame.UpdateFrame()
+        addon.RXPFrame:SetHeight(20)
+        addon.RXPFrame.BottomFrame.UpdateFrame()
         addon.noGuide = true
     end
 
@@ -709,21 +709,21 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                         if not updateText and steps[n].active then
                             updateText = true
                         end
-                        RXPFrame.BottomFrame.UpdateFrame(nil, nil, n)
+                        addon.RXPFrame.BottomFrame.UpdateFrame(nil, nil, n)
                         if not addon.updateStepText then
                             addon.stepUpdateList[n] = nil
                         end
                     end
                 end
                 if updateText then
-                    RXPFrame.CurrentStepFrame.UpdateText()
+                    addon.RXPFrame.CurrentStepFrame.UpdateText()
                 end
                 event = event .. "/updateText"
                 skip = true
             elseif addon.updateBottomFrame or currentTime - addon.tickTimer > 5 then
-                RXPFrame.BottomFrame.UpdateFrame()
-                RXPFrame.CurrentStepFrame.UpdateText()
-                RXPFrame.SetStepFrameAnchor()
+                addon.RXPFrame.BottomFrame.UpdateFrame()
+                addon.RXPFrame.CurrentStepFrame.UpdateText()
+                addon.RXPFrame.SetStepFrameAnchor()
                 addon.tickTimer = currentTime
                 event = event .. "/bottomFrame"
                 skip = true

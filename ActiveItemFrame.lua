@@ -49,7 +49,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
     end
 
     f:ClearBackdrop()
-    f:SetBackdrop(RXPFrame.backdropEdge)
+    f:SetBackdrop(addon.RXPFrame.backdropEdge)
     f:SetBackdropColor(unpack(addon.colors.background))
     function f.onMouseDown() f:StartMoving() end
     function f.onMouseUp() f:StopMovingOrSizing() end
@@ -167,11 +167,11 @@ function addon.UpdateItemFrame(itemFrame)
     if itemFrame.hardcore ~= RXPCData.hardcore or not itemFrame.hardcore then
         itemFrame.hardcore = RXPCData.hardcore
         itemFrame:ClearBackdrop()
-        itemFrame:SetBackdrop(RXPFrame.backdropEdge)
+        itemFrame:SetBackdrop(addon.RXPFrame.backdropEdge)
         local r, g, b = unpack(addon.colors.background)
         itemFrame:SetBackdropColor(r, g, b, 0.4)
         itemFrame.title:ClearBackdrop()
-        itemFrame.title:SetBackdrop(RXPFrame.backdropEdge)
+        itemFrame.title:SetBackdrop(addon.RXPFrame.backdropEdge)
         itemFrame.title:SetBackdropColor(unpack(addon.colors.background))
     end
     itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 17)

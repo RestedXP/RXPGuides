@@ -7,10 +7,7 @@
         "libs",
         "HereBeDragons"
     ],
-    "Lua.diagnostics.severity": {
-        "undefined-global": "Hint",
-        "lowercase-global": "Hint"
-    },
+    "Lua.diagnostics.severity": {},
     "[lua]": {
         "editor.defaultFormatter": "Koihik.vscode-lua-format"
     },

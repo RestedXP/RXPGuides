@@ -373,7 +373,7 @@ function RXPG.ProcessBuffer(frame)
         frame:SetScript("OnUpdate", nil)
     end
     addon.bufferSize = 0
-    RXPFrame.GenerateMenuTable()
+    addon.RXPFrame.GenerateMenuTable()
 end
 
 function RXPG.LoadEmbeddedGuides()

@@ -165,7 +165,7 @@ function addon.tracker:AttachGUI()
     trackerUi:SetHeight(
         (attachment:GetHeight() + offset.y - offset.tabsHeight) * 0.8)
 
-    trackerUi:SetBackdrop(RXPFrame.backdropEdge)
+    trackerUi:SetBackdrop(addon.RXPFrame.backdropEdge)
     trackerUi:SetBackdropColor(unpack(addon.colors.background))
     trackerUi:SetFrameStrata("DIALOG")
     trackerUi:EnableMouse(true)

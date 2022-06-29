@@ -121,7 +121,7 @@ function addon.CreateOptionsPanel()
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideUnusedGuides = not self:GetChecked()
-        RXPFrame.GenerateMenuTable()
+        addon.RXPFrame.GenerateMenuTable()
     end)
     button:SetChecked(not RXPData.hideUnusedGuides)
     button.Text:SetText("Show unused guides")
@@ -149,7 +149,7 @@ function addon.CreateOptionsPanel()
     button:SetScript("PostClick", function(self)
         local hide = self:GetChecked()
         RXPCData.hideWindow = hide
-        RXPFrame:SetShown(not hide)
+        addon.RXPFrame:SetShown(not hide)
     end)
     button:SetChecked(RXPCData.hideWindow)
     button.Text:SetText("Hide Window")
@@ -178,15 +178,15 @@ function addon.CreateOptionsPanel()
         end
         local show = self:GetChecked()
         if show then
-            RXPFrame:SetHeight(addon.height)
+            addon.RXPFrame:SetHeight(addon.height)
             RXPCData.frameHeight = addon.height
         else
-            RXPFrame:SetHeight(10)
+            addon.RXPFrame:SetHeight(10)
             RXPCData.frameHeight = 10
         end
         addon.updateBottomFrame = true
     end)
-    button:SetChecked(RXPFrame.BottomFrame:GetHeight() >= 35)
+    button:SetChecked(addon.RXPFrame.BottomFrame:GetHeight() >= 35)
     button.Text:SetText("Show step list")
     button.tooltip =
         "Show/Hide the bottom frame listing all the steps of the current guide"
@@ -198,7 +198,7 @@ function addon.CreateOptionsPanel()
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideCompletedSteps = self:GetChecked()
-        RXPFrame.SF.ScrollBar:SetValue(0)
+        addon.RXPFrame.SF.ScrollBar:SetValue(0)
     end)
     button:SetChecked(RXPData.hideCompletedSteps)
     button.Text:SetText("Hide completed steps")
@@ -268,7 +268,7 @@ function addon.CreateOptionsPanel()
         index = index + 1
         button:SetScript("PostClick", function(self)
             RXPCData.SoM = self:GetChecked()
-            RXPFrame.GenerateMenuTable()
+            addon.RXPFrame.GenerateMenuTable()
             addon.ReloadGuide()
         end)
         button:SetChecked(RXPCData.SoM)
@@ -281,7 +281,7 @@ function addon.CreateOptionsPanel()
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
         self.Text:SetText(format(self.defaultText, value))
-        RXPFrame:SetScale(RXPData.windowSize)
+        addon.RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
         addon.arrowFrame:SetSize(32 * size, 32 * size)
         addon.arrowFrame.text:SetFont(addon.font, RXPData.arrowText)
@@ -290,7 +290,7 @@ function addon.CreateOptionsPanel()
         if self.key == "phase" and addon.currentGuide then
             addon.ReloadGuide()
         end
-        RXPFrame.SetStepFrameAnchor()
+        addon.RXPFrame.SetStepFrameAnchor()
     end
 
     local CreateSlider = function(ref, key, smin, smax, text, tooltip, anchor,
@@ -513,16 +513,14 @@ function addon.CreateOptionsPanel()
             self:ClearFocus()
             buffer = {}
         else
-            --self:ClearHistory()
+            -- self:ClearHistory()
             self:SetText(" ")
             self:SetMaxBytes(1)
         end
     end
 
     local function PasteHook(self, char)
-        if not importFrame:IsShown() then
-            return
-        end
+        if not importFrame:IsShown() then return end
 
         local time = GetTime()
         if previousFrame ~= time then
@@ -531,23 +529,23 @@ function addon.CreateOptionsPanel()
             importFrame:SetScript('OnUpdate', ProcessBuffer)
         end
 
-        table.insert(buffer,char)
+        table.insert(buffer, char)
     end
 
     local isHooked = {}
 
-    importFrame:HookScript("OnShow",function(self)
+    importFrame:HookScript("OnShow", function(self)
         local n = 1
         local editBox = true
 
         while editBox do
-            --editBox = _G["AceGUI-3.0EditBox" .. n]
-            editBox = _G["MultiLineEditBox"..n.."ScrollFrame"]
+            -- editBox = _G["AceGUI-3.0EditBox" .. n]
+            editBox = _G["MultiLineEditBox" .. n .. "ScrollFrame"]
             if not isHooked[n] and editBox then
                 editBox = editBox.obj.editBox
                 isHooked[n] = true
-                editBox:HookScript("OnEditFocusGained",EditBoxHook)
-                editBox:HookScript("OnChar",PasteHook)
+                editBox:HookScript("OnEditFocusGained", EditBoxHook)
+                editBox:HookScript("OnChar", PasteHook)
             end
             n = n + 1
         end
@@ -564,36 +562,12 @@ function addon.settings.functions.setProfileOption(info, value)
     addon.db.profile[key] = value
 end
 
---[[
-function addon.settings.functions.ImportBoxSet()
-    -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
-    --return RXPGuides.DecodeGuideContents(text)
-
-    return true
-    if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
-        local loadedFunction, errorString = loadstring(
-                                                "return function() \n" .. text ..
-                                                    "\n end", "ImportGuideGUI")
-
-        if errorString then return errorString end
-
-        if loadedFunction then
-            return loadedFunction()() -- execute return then Import/Register inner multi-function
-        else
-            return "No function detected"
-        end
-    else
-        -- TODO
-        return "ImportBoxSet: TODO not a legacy guide"
-    end
-end
-]]
-
 function addon.settings.functions.ImportBoxValidate(text)
-    --print(text)
+    -- print(text)
     -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
 
-    local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,RXPFrame)
+    local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,
+                                                           addon.RXPFrame)
     if guidesLoaded then
         addon.settings.gui.selectedDeleteGuide = "mustReload"
         return true
@@ -601,18 +575,6 @@ function addon.settings.functions.ImportBoxValidate(text)
         importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
         return errorMsg or "Failed to Import Guides: Invalid Import String"
     end
-     --[[
-
-    if 'RXPGuides' == strsub(text, 0, #'RXPGuides') then
-        local loadedFunction, errorString = loadstring(
-                                                "return function() \n" .. text ..
-                                                    "\n end", "ImportGuideGUI")
-
-        return not errorString and loadedFunction
-    else
-        -- TODO
-        return "ImportBoxValidate: TODO not a legacy guide"
-    end]]
 end
 
 function addon.settings.functions.GetImportedGuides()
@@ -626,12 +588,10 @@ function addon.settings.functions.GetImportedGuides()
     for _, guide in ipairs(addon.guides) do
         if guide.imported or guide.cache then
             importedGuidesFound = true
-            local group,subgroup,name = guide.key:match("^.*|(.*)|(.*)|(.*)")
-            if subgroup ~= "" then
-                group = group .. "/" .. subgroup
-            end
-            display[guide.key] = string.format("%s/%s - version %s",group, name,
-                                               guide.version)
+            local group, subgroup, name = guide.key:match("^.*|(.*)|(.*)|(.*)")
+            if subgroup ~= "" then group = group .. "/" .. subgroup end
+            display[guide.key] = string.format("%s/%s - version %s", group,
+                                               name, guide.version)
         end
     end
 

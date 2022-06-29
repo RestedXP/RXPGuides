@@ -394,7 +394,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     if addon.currentGuide.empty then return pins end
     local numActivePins = 0
     local numSteps = #steps
-    local activeSteps = RXPFrame.activeSteps
+    local activeSteps = addon.RXPFrame.activeSteps
 
     local numActive = 0
 
@@ -461,7 +461,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                             wx = element.wx,
                             wy = element.wy,
                             zone = element.zone,
-                            parent = element.parent,
+                            parent = element.parent
                         })
                     end
                 end
@@ -499,7 +499,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     if addon.currentGuide.empty then return pins end
     local numActivePins = 0
     local numSteps = #steps
-    local activeSteps = RXPFrame.activeSteps
+    local activeSteps = addon.RXPFrame.activeSteps
 
     local numActive = 0
 
