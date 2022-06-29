@@ -48,7 +48,7 @@ function addon.tracker:UpgradeDB()
             profile["levels"][l] = {
                 quests = {}, -- [zone] = { questId = xpReward }
                 mobs = {}, -- [zone] = xp
-                timestamp = {started = -1, finished = -1}, -- TODO /played timestamps
+                timestamp = {started = -1, finished = -1},
                 groupExperience = 0
             }
         end

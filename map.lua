@@ -449,7 +449,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         table.insert(otherPin.elements, element)
                     else
                         local pinalpha = 0
-                        if isMiniMapPin then -- TODO undefined global
+                        if isMiniMap then
                             pinalpha = 0.5
                         elseif element.step and element.step.active then
                             pinalpha = 1

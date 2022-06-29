@@ -67,7 +67,6 @@ local function SoMCheck()
             end
             addon.RXPFrame.GenerateMenuTable()
         end
-        -- then RXPOptionsSoM:SetChecked(RXPCData.SoM) end -- TODO unused?
     end
 end
 
@@ -474,7 +473,6 @@ function addon:OnInitialize()
 
     addon.RXPFrame.GenerateMenuTable()
     addon.CreateOptionsPanel()
-    -- loadtime = GetTime() --TODO unused?
     ProcessSpells()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
@@ -732,8 +730,6 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                 addon.tickTimer = currentTime
                 event = event .. "/bottomFrame"
                 skip = true
-                -- else
-                --    inactiveQuestUpdate = true -- TODO unused?
             end
         end
 
@@ -901,7 +897,6 @@ function addon.GetBestQuests()
                             addon.GetQuestName(id) or "", id))
     end
 end
--- gq = addon.GetBestQuests -- TODO, unused and pollutes global namespace
 
 function addon.IsGuideQuestActive(id)
     if not addon.QuestDB then addon.GetBestQuests() end
@@ -965,5 +960,3 @@ function addon.CalculateTotalXP(ignorePreReqs)
 
     return totalXp
 end
-
--- txp = addon.CalculateTotalXP --TODO unused? and pollutes global namespace
