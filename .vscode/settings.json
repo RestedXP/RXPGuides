@@ -14,4 +14,7 @@
     "[lua]": {
         "editor.defaultFormatter": "Koihik.vscode-lua-format"
     },
+    "Lua.diagnostics.disable": [
+        "undefined-field"
+    ],
 }

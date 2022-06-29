@@ -137,8 +137,8 @@ function RXPG.AddGuide(guide)
     return true
 end
 
-addon.read = function(arg1,arg2)
-    local pass, returnValue = pcall(b64.decode,arg1,arg2)
+addon.read = function(arg1, arg2)
+    local pass, returnValue = pcall(b64.decode, arg1, arg2)
     if pass then
         return returnValue
     elseif DEBUG then
@@ -155,9 +155,7 @@ local function CheckDataIntegrity(str, h1, mode)
             local buffer = {}
 
             local n = addon.ReadCacheData("buffer")
-            for i = 0,255 do
-                S[i] = n[i]
-            end
+            for i = 0, 255 do S[i] = n[i] end
 
             i, j, str = 0, 0, addon:read(str)
 
@@ -166,15 +164,15 @@ local function CheckDataIntegrity(str, h1, mode)
                 j = bitand(j + S[i], 0xff)
                 S[i], S[j] = S[j], S[i]
                 table.insert(buffer, strchar(
-                                bitxor(strbyte(str, k + 1),
+                                 bitxor(strbyte(str, k + 1),
                                         S[bitand((S[i] + S[j]), 0xff)])))
             end
 
             str = LibDeflate:DecompressZlib(table.concat(buffer))
-            return str and h1 % 4294967296 == addon.A32(str),str
+            return str and h1 % 4294967296 == addon.A32(str), str
         elseif mode == 59 then
             str = LibDeflate:DecompressZlib(addon:read(str))
-            return str and h1 % 4294967296 == addon.A32(str),str
+            return str and h1 % 4294967296 == addon.A32(str), str
         end
     else
         return addon.A32(str)
@@ -183,7 +181,8 @@ end
 
 function addon.RegisterGuide(groupOrContent, text, defaultFor)
     if addon.db then
-        local importedGuide,errorMsg = RXPG.ParseGuide(groupOrContent, text, defaultFor)
+        local importedGuide, errorMsg = RXPG.ParseGuide(groupOrContent, text,
+                                                        defaultFor)
 
         return not errorMsg and RXPG.AddGuide(importedGuide)
     else
@@ -195,34 +194,33 @@ function addon.RegisterGuide(groupOrContent, text, defaultFor)
     end
 end
 
-function addon.CacheGuide(key,guide,enabledFor,guideVersion)
+function addon.CacheGuide(key, guide, enabledFor, guideVersion)
     if type(guide) == "table" then
         guide.groupOrContent = LibDeflate:CompressDeflate(guide.groupOrContent)
         addon.db.profile.guides[key] = guide
     else
-        guide = guide:gsub("%s-[\r\n]+%s*","\n")
-        guide = guide:gsub("[\t ][\t ]+"," ")
-        guide = guide:gsub("%-%-[^\n]*","")
+        guide = guide:gsub("%s-[\r\n]+%s*", "\n")
+        guide = guide:gsub("[\t ][\t ]+", " ")
+        guide = guide:gsub("%-%-[^\n]*", "")
         guide = LibDeflate:CompressDeflate(guide)
-        addon.db.profile.guides[key] =
-            RXPG.BuildCacheObject(guide,enabledFor,guideVersion)
+        addon.db.profile.guides[key] = RXPG.BuildCacheObject(guide, enabledFor,
+                                                             guideVersion)
     end
 end
 
 -- Parse and cache one-time guide
 function addon.ImportGuide(guide)
     if addon.db then -- Addon loaded already
-        local importedGuide,errorMsg = RXPG.ParseGuide(guide)
+        local importedGuide, errorMsg = RXPG.ParseGuide(guide)
         if errorMsg or RXPG.AddGuide(importedGuide) then
-            --print(errorMsg,importedGuide.name)
+            -- print(errorMsg,importedGuide.name)
             importedGuide.imported = true
-            addon.CacheGuide(importedGuide.key,guide,
-                              importedGuide.enabledFor,importedGuide.version)
+            addon.CacheGuide(importedGuide.key, guide, importedGuide.enabledFor,
+                             importedGuide.version)
         end
         return importedGuide
     else -- Addon not loaded, add to queue
-        table.insert(embeddedGuides,
-                     RXPG.BuildCacheObject(guide))
+        table.insert(embeddedGuides, RXPG.BuildCacheObject(guide))
     end
 end
 
@@ -236,7 +234,7 @@ function RXPG.BuildCacheObject(groupOrContent, enabledFor, guideVersion)
 end
 
 function addon.A32(tbl)
-	local readfunc,offset
+    local readfunc, offset
     if type(tbl) == "table" then
         readfunc = unpack
         offset = -1
@@ -253,20 +251,22 @@ function addon.A32(tbl)
     local a = 1
     local b = 0
     while i <= length - 15 do
-        local x1, x2, x3, x4, x5, x6, x7, x8,
-            x9, x10, x11, x12, x13, x14, x15, x16 = readfunc(tbl, i+offset, i+15+offset)
-        b = (b+16*a+16*x1+15*x2+14*x3+13*x4+12*x5+11*x6+10*x7+9*x8+8*x9
-            +7*x10+6*x11+5*x12+4*x13+3*x14+2*x15+x16)%65521
-        a = (a+x1+x2+x3+x4+x5+x6+x7+x8+x9+x10+x11+x12+x13+x14+x15+x16)%65521
-        i =  i + 16
+        local x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+              x16 = readfunc(tbl, i + offset, i + 15 + offset)
+        b = (b + 16 * a + 16 * x1 + 15 * x2 + 14 * x3 + 13 * x4 + 12 * x5 + 11 *
+                x6 + 10 * x7 + 9 * x8 + 8 * x9 + 7 * x10 + 6 * x11 + 5 * x12 + 4 *
+                x13 + 3 * x14 + 2 * x15 + x16) % 65521
+        a = (a + x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10 + x11 + x12 +
+                x13 + x14 + x15 + x16) % 65521
+        i = i + 16
     end
     while (i <= length) do
-        local x = readfunc(tbl, i+offset, i+offset)
+        local x = readfunc(tbl, i + offset, i + offset)
         a = (a + x) % 65521
         b = (b + a) % 65521
         i = i + 1
     end
-    return bitand((b*65536+a),0xffffffff)
+    return bitand((b * 65536 + a), 0xffffffff)
 
 end
 
@@ -274,6 +274,7 @@ local cachedData = {}
 function addon.ReadCacheData(mode)
     if not cachedData.base then
         local base = select(2, BNGetInfo())
+
         if not base then
             cachedData.base = RXPData.cache
         else
@@ -282,17 +283,21 @@ function addon.ReadCacheData(mode)
                 base = base:sub(k - 15, -1)
                 k = 16
             end
-            k = 16-k
+            k = 16 - k
 
             local buffer = {}
-            for i = 0,15 do
-                local j = bitand(i-k,0xf)
-                buffer[i] = strbyte(base,j+1) or 0
+            for i = 0, 15 do
+                local j = bitand(i - k, 0xf)
+                buffer[i] = strbyte(base, j + 1) or 0
             end
-            for i = 0,15 do
-                buffer[bitand(-i,0xf)] = bitxor(bitxor(bitxor(
-                                buffer[bitand(15-i,0xf)],buffer[bitand(13-i,0xf)]),
-                                buffer[bitand(12-i,0xf)]),buffer[bitand(10-i,0xf)])
+            for i = 0, 15 do
+                buffer[bitand(-i, 0xf)] = bitxor(bitxor(
+                                                     bitxor(buffer[bitand(15 - i,
+                                                                          0xf)],
+                                                            buffer[bitand(
+                                                                13 - i, 0xf)]),
+                                                     buffer[bitand(12 - i, 0xf)]),
+                                                 buffer[bitand(10 - i, 0xf)])
             end
             RXPData.cache = buffer
             cachedData.base = buffer
@@ -325,15 +330,14 @@ end
 
 local buffer = {}
 addon.bufferSize = 0
-function RXPG.ImportString(str,frame)
+function RXPG.ImportString(str, frame)
     addon.bufferSize = 0
     local errorMsg
     local nGuides = str:match("^(%d+)|")
     for hash, mode, content in string.gmatch(str, "(%-?%d+)(%D)([%w%+%/%=]+)") do
-        if DEBUG then
-            print('g:', hash)
-        end
-        local validData, data = CheckDataIntegrity(content, tonumber(hash), strbyte(mode))
+        if DEBUG then print('g:', hash) end
+        local validData, data = CheckDataIntegrity(content, tonumber(hash),
+                                                   strbyte(mode))
         if validData then
             table.insert(buffer, data)
             addon.bufferSize = addon.bufferSize + 1
@@ -344,17 +348,17 @@ function RXPG.ImportString(str,frame)
     end
     if addon.bufferSize > 0 then
         if frame then
-            frame:SetScript("OnUpdate",RXPG.ProcessBuffer)
+            frame:SetScript("OnUpdate", RXPG.ProcessBuffer)
         else
             for n = 1, addon.bufferSize do RXPG.ProcessBuffer() end
         end
         if errorMsg then
-            return false,errorMsg:format(addon.bufferSize,nGuides)
+            return false, errorMsg:format(addon.bufferSize, nGuides)
         else
             return true
         end
     else
-        return false,"Error: Unable to parse guides, invalid import string"
+        return false, "Error: Unable to parse guides, invalid import string"
     end
 end
 
@@ -362,13 +366,11 @@ function RXPG.ProcessBuffer(frame)
     local size = #buffer
     if size > 0 then
         local parseGuide = RXPGuides.ImportGuide(buffer[size])
-        table.remove(buffer,size)
-        if type(parseGuide) == "function" then
-            return parseGuide()
-        end
+        table.remove(buffer, size)
+        if type(parseGuide) == "function" then return parseGuide() end
         return true
     elseif frame then
-        frame:SetScript("OnUpdate",nil)
+        frame:SetScript("OnUpdate", nil)
     end
     addon.bufferSize = 0
     RXPFrame.GenerateMenuTable()
@@ -381,20 +383,19 @@ function RXPG.LoadEmbeddedGuides()
     end
 
     for _, guideData in pairs(embeddedGuides) do
-        local guide,errorMsg = RXPG.ParseGuide(guideData.groupOrContent, guideData.text,
-                                      guideData.defaultFor)
+        local guide, errorMsg = RXPG.ParseGuide(guideData.groupOrContent,
+                                                guideData.text,
+                                                guideData.defaultFor)
 
-        if not errorMsg then
-            RXPG.AddGuide(guide)
-        end
+        if not errorMsg then RXPG.AddGuide(guide) end
     end
 
     embeddedGuides = nil
 end
 
 function RXPG.BuildGuideKey(guide)
-    return string.format("%s|%s|%s|%s", addon.ReadCacheData("string"), guide.group,
-                         guide.subgroup or '', guide.name)
+    return string.format("%s|%s|%s|%s", addon.ReadCacheData("string"),
+                         guide.group, guide.subgroup or '', guide.name)
 end
 
 function RXPG.LoadCachedGuides()
@@ -404,12 +405,12 @@ function RXPG.LoadCachedGuides()
     end
 
     for key, guideData in pairs(addon.db.profile.guides) do
-        local guide,errorMsg
+        local guide, errorMsg
         local enabledFor = guideData.enabledFor
-        if (not enabledFor or applies(enabledFor)) and
-                         key:match("^(%-?%d+)|") == addon.ReadCacheData("string") then
+        if (not enabledFor or applies(enabledFor)) and key:match("^(%-?%d+)|") ==
+            addon.ReadCacheData("string") then
             guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
-            guide,errorMsg = RXPG.ParseGuide(guide)
+            guide, errorMsg = RXPG.ParseGuide(guide)
         end
         if not errorMsg and guide then
             guide.imported = true
@@ -433,26 +434,28 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
     if not (groupOrContent and text) then
         local currentGroup
         text = groupOrContent:gsub("%-%-[^\r\n]*[\r\n]+", "\n")
-        text = text:gsub("(#group[ \t]*)([^\r\n]-)[ \t]*<<[ \t]*([^\r\n]-)[ \t]*[\r\n]+", function(prefix,group,t)
-            if not applies(t) then
-                return "\n"
-            else
-                currentGroup = group
-                return prefix .. group .. "\n"
-            end
-        end)
+        text = text:gsub(
+                   "(#group[ \t]*)([^\r\n]-)[ \t]*<<[ \t]*([^\r\n]-)[ \t]*[\r\n]+",
+                   function(prefix, group, t)
+                if not applies(t) then
+                    return "\n"
+                else
+                    currentGroup = group
+                    return prefix .. group .. "\n"
+                end
+            end)
 
         if currentGroup then
             groupOrContent = currentGroup
         else
             groupOrContent = text:match("^%s*#group%s+(.-)%s*[\r\n]") or
-                            text:match("[\r\n]%s*#group%s+(.-)%s*[\r\n]")
+                                 text:match("[\r\n]%s*#group%s+(.-)%s*[\r\n]")
             if not groupOrContent then
                 print("\nError parsing guide: Invalid guide group",
-                    text:match("#name%s+.-%s*[\r\n]"))
+                      text:match("#name%s+.-%s*[\r\n]"))
                 return
             end
-         end
+        end
     else
         text = text:gsub("%-%-.-[\r\n]", "\n")
     end
@@ -570,7 +573,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
                 guide.key = RXPG.BuildGuideKey(guide)
                 guide.version = tonumber(guide.version) or 0
                 addon.guide = false
-                return guide,skipGuide
+                return guide, skipGuide
             end
             local classtag = line:match("<<%s*(.+)")
             if classtag and not applies(classtag) then
@@ -596,16 +599,16 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
                     parseLine(line)
                 else
                     addon.guide = false
-                    return nil,version
+                    return nil, version
                 end
             elseif currentStep == 0 then
-                --print(line)
+                -- print(line)
                 line = line:gsub("(.-)%s*<<%s*(.+)", function(code, tag)
                     local isValid = applies(tag)
                     if #code == 0 then
                         skipGuide = not isValid and tag
                         guide.enabledFor = guide.enabledFor or tag
-                        --print("$"..code.."$",tag,#code)
+                        -- print("$"..code.."$",tag,#code)
                     else
                     end
                     return code
@@ -662,7 +665,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
     guide.version = tonumber(guide.version) or 0
 
     addon.guide = false
-    --print(guide.name,"\n",guide.enabledFor)
+    -- print(guide.name,"\n",guide.enabledFor)
     return guide
 end
 

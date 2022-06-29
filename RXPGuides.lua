@@ -1,5 +1,7 @@
 ﻿local addonName, addon = ...
 
+addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
+
 addon.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")
 local addonVersion = 30006
 local version = select(4, GetBuildInfo())
@@ -29,31 +31,7 @@ _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
     "Quest Item Button 4"
 
-local eventFrame = CreateFrame("Frame");
 local questFrame = CreateFrame("Frame");
-
--- eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
-eventFrame:RegisterEvent("PLAYER_LOGIN")
-eventFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
-eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
-eventFrame:RegisterEvent("TAXIMAP_OPENED")
-eventFrame:RegisterUnitEvent("UNIT_AURA", "player")
-eventFrame:RegisterUnitEvent("UNIT_PET", "player")
-eventFrame:RegisterEvent("TRAINER_SHOW")
-eventFrame:RegisterEvent("TRAINER_CLOSED")
-eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
-eventFrame:RegisterEvent("BAG_UPDATE_DELAYED")
--- eventFrame:RegisterEvent("SKILL_LINES_CHANGED")
-if C_QuestLog.RequestLoadQuestByID then
-    eventFrame:RegisterEvent("QUEST_DATA_LOAD_RESULT")
-end
-questFrame:RegisterEvent("QUEST_COMPLETE")
-questFrame:RegisterEvent("QUEST_PROGRESS")
-questFrame:RegisterEvent("QUEST_ACCEPT_CONFIRM")
-questFrame:RegisterEvent("QUEST_GREETING")
-questFrame:RegisterEvent("GOSSIP_SHOW")
-questFrame:RegisterEvent("QUEST_DETAIL")
-questFrame:RegisterEvent("QUEST_TURNED_IN")
 
 local SoMtimer
 local function SoMCheck()
@@ -271,7 +249,6 @@ addon.skillList = {}
 local spellRequest = {}
 
 local trainerUpdate = 0
-local level = UnitLevel("player")
 
 local function ProcessSpells(names, rank)
     local _, class = UnitClass("player")
@@ -480,84 +457,142 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     end
 end
 
-questFrame:SetScript("OnEvent", addon.QuestAutomation)
+function addon:OnInitialize()
+    RXPG_init()
+    local importGuidesDefault = {profile = {guides = {}}}
+    addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
+    addon.RXPG.LoadEmbeddedGuides()
+    addon.RXPG.LoadCachedGuides()
 
-eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, arg4)
+    -- TODO setting
+    addon.enableTracker = true
 
-    if event == "GET_ITEM_INFO_RECEIVED" and arg2 then
-        if addon.itemQueryList[arg1] then
-            addon.itemQueryList[arg1] = nil
-            addon.updateStepText = true
-        elseif GetTime() - startTime < 15 then
-            addon.updateStepText = true
+    RXPFrame.GenerateMenuTable()
+    addon.CreateOptionsPanel()
+    loadtime = GetTime()
+    ProcessSpells()
+    addon.GetProfessionLevel()
+    local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
+                                      RXPCData.currentGuideName)
+    if not guide and RXPData.autoLoadGuides then
+        guide = addon.defaultGuide
+        if addon.version == "TBC" and
+            (UnitLevel("player") == 58 and not guide.boost58) then
+            guide = nil
         end
-        return
-    elseif (event == "BAG_UPDATE_DELAYED" or event == "PLAYER_REGEN_ENABLED") then
-        addon.UpdateItemFrame()
-    elseif event == "QUEST_TURNED_IN" and (arg1 == 10551 or arg1 == 10552) then
-        C_Timer.After(1, function() addon.ReloadGuide() end) -- scryer/aldor quest
-    elseif event == "SKILL_LINES_CHANGED" then
-        addon.UpdateSkillData()
-    elseif event == "TRAINER_SHOW" then
-        trainerUpdate = GetTime()
-        OnTrainer()
-        self:SetScript("OnUpdate", trainerFrameUpdate)
-        return
-    elseif event == "TRAINER_CLOSED" then
-        self:SetScript("OnUpdate", nil)
-        return
-    elseif event == "PLAYER_LOGIN" then
-        RXPG_init()
-        local importGuidesDefault = {profile = {guides = {}}}
-        addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault,
-                                            'global')
-        addon.RXPG.LoadEmbeddedGuides()
-        addon.RXPG.LoadCachedGuides()
-        RXPFrame.GenerateMenuTable()
-        addon.CreateOptionsPanel()
-        loadtime = GetTime()
-        ProcessSpells()
-        addon.GetProfessionLevel()
-        local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
-                                          RXPCData.currentGuideName)
-        if not guide and RXPData.autoLoadGuides then
-            guide = addon.defaultGuide
-            if addon.version == "TBC" and
-                (UnitLevel("player") == 58 and not guide.boost58) then
-                guide = nil
-            end
-        end
-        addon:LoadGuide(guide, true)
-        if not addon.currentGuide then
-            RXPFrame:SetHeight(20)
-            RXPFrame.BottomFrame.UpdateFrame()
-            addon.noGuide = true
-        end
-        addon.addonLoaded = true
-        return
-    elseif event == "TAXIMAP_OPENED" then
-        local FPlist = C_TaxiMap.GetAllTaxiNodes(
-                           C_Map.GetBestMapForUnit("player"))
-        for k, v in pairs(FPlist) do
-            if v.nodeID then RXPCData.flightPaths[v.nodeID] = true end
-        end
-    elseif event == "PLAYER_LEVEL_UP" and addon.currentGuide then
-        level = UnitLevel("player")
-        local stepn = RXPCData.currentStep
-        ProcessSpells()
-        -- addon:LoadGuide(addon.currentGuide)
-        addon.SetStep(1)
-        addon.SetStep(stepn)
-    elseif event == "UNIT_AURA" then
-        SoMCheck()
-    elseif event == "UNIT_PET" then
-        addon.petFamily = GetPetIcon() or addon.petFamily
-    elseif event == "QUEST_DATA_LOAD_RESULT" and arg2 then
-        addon.requestQuestInfo[arg1] = 0
-        addon.updateStepText = true
+    end
+    addon:LoadGuide(guide, true)
+    if not addon.currentGuide then
+        RXPFrame:SetHeight(20)
+        RXPFrame.BottomFrame.UpdateFrame()
+        addon.noGuide = true
     end
 
-end)
+    if addon.enableTracker then addon.tracker.SetupTracker() end
+end
+
+function addon:OnEnable()
+    self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
+    self:RegisterEvent("BAG_UPDATE_DELAYED")
+    self:RegisterEvent("PLAYER_REGEN_ENABLED")
+    self:RegisterEvent("QUEST_TURNED_IN")
+    -- self:RegisterEvent("SKILL_LINES_CHANGED")
+    self:RegisterEvent("TRAINER_CLOSED")
+    self:RegisterEvent("TAXIMAP_OPENED")
+    self:RegisterEvent("PLAYER_LEVEL_UP")
+    self:RegisterEvent("TRAINER_SHOW")
+    self:RegisterEvent("UNIT_PET")
+    -- self:RegisterEvent("QUEST_LOG_UPDATE")
+
+    questFrame:RegisterEvent("QUEST_COMPLETE")
+    questFrame:RegisterEvent("QUEST_PROGRESS")
+    questFrame:RegisterEvent("QUEST_ACCEPT_CONFIRM")
+    questFrame:RegisterEvent("QUEST_GREETING")
+    questFrame:RegisterEvent("GOSSIP_SHOW")
+    questFrame:RegisterEvent("QUEST_DETAIL")
+    questFrame:RegisterEvent("QUEST_TURNED_IN")
+
+    if C_QuestLog.RequestLoadQuestByID then
+        self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
+    end
+
+    if _G.WOW_PROJECT_ID == _G.WOW_PROJECT_CLASSIC then
+        self:RegisterEvent("UNIT_AURA")
+    end
+end
+
+function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
+    if not success then return end
+
+    if addon.itemQueryList[itemNumber] then
+        addon.itemQueryList[itemNumber] = nil
+        addon.updateStepText = true
+    elseif GetTime() - startTime < 15 then
+        addon.updateStepText = true
+    end
+end
+
+function addon:BAG_UPDATE_DELAYED(...) addon.UpdateItemFrame() end
+
+function addon:PLAYER_REGEN_ENABLED(...) addon.UpdateItemFrame() end
+
+function addon:QUEST_TURNED_IN(_, questId, xpReward)
+    if questId == 10551 or questId == 10552 then
+        C_Timer.After(1, function() addon.ReloadGuide() end) -- scryer/aldor quest
+    end
+end
+
+function addon:SKILL_LINES_CHANGED(...) addon.UpdateSkillData() end
+
+function addon:TRAINER_SHOW(...)
+    trainerUpdate = GetTime()
+    OnTrainer()
+    if not addon.trainerFrame then
+        addon.trainerFrame = CreateFrame("Frame", "RXPGuidesTrainerFrame",
+                                         UIParent)
+    end
+
+    addon.trainerFrame:SetScript("OnUpdate", trainerFrameUpdate)
+end
+
+function addon:TRAINER_CLOSED(...) addon.trainerFrame:SetScript("OnUpdate", nil) end
+
+function addon:TAXIMAP_OPENED(...)
+    local FPlist = C_TaxiMap.GetAllTaxiNodes(C_Map.GetBestMapForUnit("player"))
+    for _, v in pairs(FPlist) do
+        if v.nodeID then RXPCData.flightPaths[v.nodeID] = true end
+    end
+end
+
+function addon:PLAYER_LEVEL_UP(_, level)
+    if not addon.currentGuide then return end
+
+    level = level
+    local stepn = RXPCData.currentStep
+    ProcessSpells()
+    -- addon:LoadGuide(addon.currentGuide)
+    addon.SetStep(1)
+    addon.SetStep(stepn)
+end
+
+function addon:UNIT_AURA(_, unit)
+    if unit ~= "player" then return end
+    SoMCheck()
+end
+
+function addon:UNIT_PET(_, unit)
+    if unit ~= "player" then return end
+    addon.petFamily = GetPetIcon() or addon.petFamily
+end
+
+function addon:QUEST_DATA_LOAD_RESULT(_, questId, success)
+    if not success then return end
+
+    addon.requestQuestInfo[questId] = 0
+    addon.updateStepText = true
+end
+
+questFrame:SetScript("OnEvent", addon.QuestAutomation)
 
 function addon.GetGuideTable(guideGroup, guideName)
     if guideGroup and addon.guideList[guideGroup] and guideName and
@@ -822,51 +857,50 @@ RXP = addon
 function addon.GetBestQuests()
     if not addon.questLogQuests then
         addon.questLogQuests = {}
-        for id,v in pairs(addon.QuestDB) do
+        for id, v in pairs(addon.QuestDB) do
             v.Id = id
             local activeFor = v.appliesTo
             if activeFor then
-                activeFor = addon.applies(activeFor) or addon.GetSkillLevel(activeFor) > 0
+                activeFor = addon.applies(activeFor) or
+                                addon.GetSkillLevel(activeFor) > 0
             else
                 activeFor = true
             end
-            if activeFor and not addon.IsQuestTurnedIn(id) and not v.itemId and v.questLog then
-                table.insert(addon.questLogQuests,v)
+            if activeFor and not addon.IsQuestTurnedIn(id) and not v.itemId and
+                v.questLog then
+                table.insert(addon.questLogQuests, v)
                 v.isActive = true
             end
         end
     end
     local qDB = addon.questLogQuests
-    table.sort(qDB,function(k1,k2)
+    table.sort(qDB, function(k1, k2)
         local x1 = k1.xp or 0
         local x2 = k2.xp or 0
         return not addon.IsQuestTurnedIn(k1.Id) and x1 > x2
     end)
 
-    for i = #qDB,1,-1 do
+    for i = #qDB, 1, -1 do
         local xp = qDB[i].xp or 0
         local id = qDB[i].Id
         if i > 25 and xp < (qDB[25].xp or 1) or addon.IsQuestTurnedIn(id) then
             addon.QuestDB[id].isActive = false
-            table.remove(qDB,i)
+            table.remove(qDB, i)
         end
     end
 
-    for k,v in ipairs(qDB) do
+    for k, v in ipairs(qDB) do
         local id = v.Id
         local xp = v.xp or 0
-        print(string.format("%d:%dxp %s (%d)",k,xp,addon.GetQuestName(id) or "",id))
+        print(string.format("%d:%dxp %s (%d)", k, xp,
+                            addon.GetQuestName(id) or "", id))
     end
 end
 gq = addon.GetBestQuests
 
 function addon.IsGuideQuestActive(id)
-    if not addon.QuestDB then
-        addon.GetBestQuests()
-    end
-    if not addon.IsQuestTurnedIn(id) then
-        return addon.QuestDB[id].isActive
-    end
+    if not addon.QuestDB then addon.GetBestQuests() end
+    if not addon.IsQuestTurnedIn(id) then return addon.QuestDB[id].isActive end
 
 end
 
@@ -881,7 +915,7 @@ function addon.CalculateTotalXP(ignorePreReqs)
                 local previousQuest = quest.previousQuest
                 if type(previousQuest) == "table" then
                     local state = not quest.preQuestAny
-                    for _,id in ipairs(previousQuest) do
+                    for _, id in ipairs(previousQuest) do
                         if quest.preQuestAny then
                             state = state or addon.IsQuestTurnedIn(id)
                         else
@@ -899,12 +933,12 @@ function addon.CalculateTotalXP(ignorePreReqs)
         end
     end
 
-    for i = 1,25 do
+    for i = 1, 25 do
         local quest = addon.questLogQuests[i]
         ProcessQuest(quest)
     end
 
-    for id,quest in pairs(addon.QuestDB) do
+    for id, quest in pairs(addon.QuestDB) do
         local isTurnedIn = addon.IsQuestTurnedIn(id)
         if not isTurnedIn then
             local item = quest.itemId
@@ -912,13 +946,13 @@ function addon.CalculateTotalXP(ignorePreReqs)
                 totalXp = totalXp + quest.xp
             elseif type(item) == "table" then
                 local state = true
-                for n,itemId in pairs(item) do
-                    state = state and GetItemCount(itemId,true) >= quest.itemAmount[n]
+                for n, itemId in pairs(item) do
+                    state = state and GetItemCount(itemId, true) >=
+                                quest.itemAmount[n]
                 end
-                if state then
-                    totalXp = totalXp + quest.xp
-                end
-            elseif type(item) == "number" and GetItemCount(item,true) >= quest.itemAmount then
+                if state then totalXp = totalXp + quest.xp end
+            elseif type(item) == "number" and GetItemCount(item, true) >=
+                quest.itemAmount then
                 totalXp = totalXp + quest.xp
             end
         end

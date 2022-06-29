@@ -6,7 +6,7 @@
 ## Version: @project-version@
 ## OptionalDeps: Questie, unitscan
 ## SavedVariables: RXPData, RXPDB
-## SavedVariablesPerCharacter: RXPCData
+## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData
 
 libs\HereBeDragons\LibStub\LibStub.lua
 libs\HereBeDragons\CallbackHandler-1.0\CallbackHandler-1.0.lua
@@ -26,6 +26,7 @@ SettingsPanel.lua
 HSBatching.lua
 QuestLog.lua
 ActiveItemFrame.lua
+LevelingTracker.lua
 
 data.lua
 map.lua

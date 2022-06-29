@@ -1430,6 +1430,15 @@ function RXPFrame.GenerateMenuTable()
         end
     })
 
+    if addon.enableTracker then
+        print("Adding leveling report to options")
+        table.insert(menuList, {
+            text = "Leveling report",
+            notCheckable = 1,
+            func = function() addon.tracker:ShowReport() end
+        })
+    end
+
     table.insert(menuList, {
         text = "Close",
         notCheckable = 1,
