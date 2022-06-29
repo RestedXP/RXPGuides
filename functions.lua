@@ -9,18 +9,18 @@ addon.functions.__index = addon.functions
 local events = {}
 addon.stepUpdateList = {}
 addon.functions.events = events
-events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE"}
-events.buy = "MERCHANT_SHOW"
+events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE","MERCHANT_SHOW"}
+events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
-events.turnin = {"QUEST_TURNED_IN"}
-events.complete = {"QUEST_LOG_UPDATE"}
+events.turnin = "QUEST_TURNED_IN"
+events.complete = "QUEST_LOG_UPDATE"
 events.fp = {"UI_INFO_MESSAGE", "TAXIMAP_OPENED"}
 events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 events.home = "HEARTHSTONE_BOUND"
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED"}
 events.deathskip = "CONFIRM_XP_LOSS"
 events.xp = {"PLAYER_XP_UPDATE", "PLAYER_LEVEL_UP"}
-events.reputation = {"UPDATE_FACTION"}
+events.reputation = "UPDATE_FACTION"
 events.vendor = {"MERCHANT_SHOW", "MERCHANT_CLOSED"}
 events.trainer = {"TRAINER_SHOW", "TRAINER_CLOSED"}
 events.stable = {"PET_STABLE_SHOW", "PET_STABLE_CLOSED"}
@@ -30,10 +30,10 @@ events.train = {
     "TRAINER_SHOW", "CHAT_MSG_SYSTEM", "SKILL_LINES_CHANGED", "TRAINER_UPDATE"
 }
 events.istrained = {"LEARNED_SPELL_IN_TAB", "TRAINER_UPDATE"}
-events.zone = {"ZONE_CHANGED_NEW_AREA"}
+events.zone = "ZONE_CHANGED_NEW_AREA"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED"}
-events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE"}
+events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
 events.emote = "PLAYER_TARGET_CHANGED"
 
@@ -2950,27 +2950,27 @@ function addon.functions.buy(self, ...)
     local objIndex = element.objIndex
     local questId = element.questId
 
-    if questId then
+    if event == "QUEST_LOG_UPDATE" then
         if addon.IsQuestComplete(questId) or addon.IsQuestTurnedIn(questId) then
-            isQuestComplete = true
+            element.isQuestComplete = true
         elseif objIndex and event then
             local quest = addon.GetQuestObjectives(element.questId, step.index)
-            isQuestComplete = quest[objIndex].finished
+            element.isQuestComplete = quest[objIndex].finished
         end
-    end
-
-    if total > 0 and not isQuestComplete then
+    elseif event == "MERCHANT_SHOW" and total > 0 and not element.isQuestComplete then
+        element.closeWindow = false
         for i = 1, GetMerchantNumItems() do
             local link = GetMerchantItemLink(i)
             local itemID = link and tonumber(link:match("item:(%d+)"))
             if itemID then
-                local name, texture, price, quantity = GetMerchantItemInfo(i)
+                local name, _, _, quantity = GetMerchantItemInfo(i)
 
                 if itemID == id or name == id then
                     print("Buying " .. name .. " x" .. total) -- ok
                     if quantity and quantity > 1 then
                         for n = 1, math.ceil(total / quantity) do
                             BuyMerchantItem(i, quantity)
+                            element.closeWindow = true
                         end
                     elseif quantity == 1 then
                         local stack = select(8, GetItemInfo(id))
@@ -2978,15 +2978,17 @@ function addon.functions.buy(self, ...)
                             local purchase = math.min(stack, total)
                             total = total - purchase
                             BuyMerchantItem(i, purchase)
+                            element.closeWindow = true
                         end
                     end
                     return
                 end
             end
         end
+    elseif event == "BAG_UPDATE_DELAYED" and element.closeWindow then
+        HideUIPanel(_G.MerchantFrame)
+        element.closeWindow = false
     end
-    _G.MerchantFrame:Hide()
-
 end
 
 local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
