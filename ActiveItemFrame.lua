@@ -1,6 +1,9 @@
 local _, addon = ...
 
+local _G = _G
+
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
+local GameTooltip = _G.GameTooltip
 
 local function GetActiveItemList(ref)
     local itemList = {}
@@ -9,7 +12,7 @@ local function GetActiveItemList(ref)
         ref = addon
     end]]
     ref = addon
-    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+    for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
             -- local spell = GetItemSpell(id)
@@ -49,7 +52,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
     end
 
     f:ClearBackdrop()
-    f:SetBackdrop(RXPFrame.backdropEdge)
+    f:SetBackdrop(addon.RXPFrame.backdropEdge)
     f:SetBackdropColor(unpack(addon.colors.background))
     function f.onMouseDown() f:StartMoving() end
     function f.onMouseUp() f:StopMovingOrSizing() end
@@ -167,11 +170,11 @@ function addon.UpdateItemFrame(itemFrame)
     if itemFrame.hardcore ~= RXPCData.hardcore or not itemFrame.hardcore then
         itemFrame.hardcore = RXPCData.hardcore
         itemFrame:ClearBackdrop()
-        itemFrame:SetBackdrop(RXPFrame.backdropEdge)
+        itemFrame:SetBackdrop(addon.RXPFrame.backdropEdge)
         local r, g, b = unpack(addon.colors.background)
         itemFrame:SetBackdropColor(r, g, b, 0.4)
         itemFrame.title:ClearBackdrop()
-        itemFrame.title:SetBackdrop(RXPFrame.backdropEdge)
+        itemFrame.title:SetBackdrop(addon.RXPFrame.backdropEdge)
         itemFrame.title:SetBackdropColor(unpack(addon.colors.background))
     end
     itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 17)

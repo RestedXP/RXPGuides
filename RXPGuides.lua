@@ -1,5 +1,7 @@
 ﻿local addonName, addon = ...
 
+local _G = _G
+
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 addon.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")
@@ -54,7 +56,7 @@ local function SoMCheck()
                 if addon.currentGuide and addon.currentGuide.name then
                     addon:LoadGuide(addon.currentGuide)
                 end
-                RXPFrame.GenerateMenuTable()
+                addon.RXPFrame.GenerateMenuTable()
                 break
             end
         end
@@ -63,9 +65,8 @@ local function SoMCheck()
             if addon.currentGuide and addon.currentGuide.name then
                 addon:LoadGuide(addon.currentGuide)
             end
-            RXPFrame.GenerateMenuTable()
+            addon.RXPFrame.GenerateMenuTable()
         end
-        if RXPOptionsSoM then RXPOptionsSoM:SetChecked(RXPCData.SoM) end
     end
 end
 
@@ -111,11 +112,11 @@ function RXPG_init()
     end
 
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
-    RXPFrame:SetShown(not RXPCData.hideWindow)
+    addon.RXPFrame:SetShown(not RXPCData.hideWindow)
     C_Timer.After(0.5, function()
         if addon.errorCount == addon.guideErrorCount then
             addon.errorCount = -1
-            ScriptErrorsFrame:Hide()
+            _G.ScriptErrorsFrame:Hide()
         end
     end)
 end
@@ -123,9 +124,9 @@ end
 addon.errorCount = 0
 addon.guideErrorCount = 0
 
-hooksecurefunc(ScriptErrorsFrame, "DisplayMessage",
+hooksecurefunc(_G.ScriptErrorsFrame, "DisplayMessage",
                function(self, msg, warnType, keepHidden, messageType)
-    if ScriptErrorsFrame:IsForbidden() then return end
+    if _G.ScriptErrorsFrame:IsForbidden() then return end
     if addon.errorCount >= 0 then
         if warnType == 0 and keepHidden == false and messageType == 1 and
             type(msg) == "string" and msg:match(addonName .. "\\Guides") then
@@ -193,7 +194,7 @@ function addon.GetProfessionLevel()
     end
     names = professionNames
 
-    if not GetSkillLineInfo then
+    if not _G.GetSkillLineInfo then
         if IsPlayerSpell(33388) then
             currrentSkillLevel["riding"] = 75
         elseif IsPlayerSpell(33391) then
@@ -208,9 +209,9 @@ function addon.GetProfessionLevel()
         return
     end
     if not names.riding then names.riding = GetSpellInfo(33388) end
-    for i = 1, GetNumSkillLines() do
-        local skillName, _, _, skillRank, _, _, skillMaxRank = GetSkillLineInfo(
-                                                                   i)
+    for i = 1, _G.GetNumSkillLines() do
+        local skillName, _, _, skillRank, _, _, skillMaxRank =
+            _G.GetSkillLineInfo(i)
         if skillRank then
             for profession, name in pairs(names) do
                 -- print(name,skillName,name == skillName)
@@ -333,18 +334,18 @@ local function trainerFrameUpdate(self, t)
     end
 end
 
-local G_GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
-                                 GetNumGossipActiveQuests
-local G_GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
-                                    GetNumGossipAvailableQuests
-local G_GetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
-local G_SelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or
-                                   SelectGossipAvailableQuest
-local G_GetActiveQuests = C_GossipInfo.GetActiveQuests or GetGossipActiveQuests
-local G_SelectActiveQuest = C_GossipInfo.SelectActiveQuest or
-                                SelectGossipActiveQuest
-local G_GetAvailableQuests = C_GossipInfo.GetAvailableQuests or
-                                 GetGossipAvailableQuests
+local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
+                               _G.GetNumGossipActiveQuests
+local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
+                                  _G.GetNumGossipAvailableQuests
+local GetNumOptions = C_GossipInfo.GetNumOptions or _G.GetNumGossipOptions
+local SelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or
+                                 _G.SelectGossipAvailableQuest
+local GetActiveQuests = C_GossipInfo.GetActiveQuests or _G.GetGossipActiveQuests
+local SelectActiveQuest = C_GossipInfo.SelectActiveQuest or
+                              _G.SelectGossipActiveQuest
+local GetAvailableQuests = C_GossipInfo.GetAvailableQuests or
+                               _G.GetGossipAvailableQuests
 
 function addon:QuestAutomation(event, arg1, arg2, arg3)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
@@ -352,14 +353,17 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     end
 
     if not event then
-        if GossipFrame and GossipFrame:IsShown() then
+        if _G.GossipFrame and _G.GossipFrame:IsShown() then
             event = "GOSSIP_SHOW"
-        elseif QuestFrameGreetingPanel and QuestFrameGreetingPanel:IsShown() then
+        elseif _G.QuestFrameGreetingPanel and
+            _G.QuestFrameGreetingPanel:IsShown() then
             event = "QUEST_GREETING"
-        elseif QuestFrameProgressPanel and QuestFrameProgressPanel:IsShown() then
+        elseif _G.QuestFrameProgressPanel and
+            _G.QuestFrameProgressPanel:IsShown() then
             event = "QUEST_PROGRESS"
-        elseif QuestFrameRewardPanel and QuestFrameRewardPanel:IsShown() or
-            QuestFrameCompleteButton and QuestFrameCompleteButton:IsShown() then
+        elseif _G.QuestFrameRewardPanel and _G.QuestFrameRewardPanel:IsShown() or
+            _G.QuestFrameCompleteButton and
+            _G.QuestFrameCompleteButton:IsShown() then
             event = "QUEST_COMPLETE"
         else
             return
@@ -388,7 +392,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         local id = GetQuestID()
         if addon.QuestAutoAccept(id) then
             AcceptQuest()
-            HideUIPanel(QuestFrame)
+            HideUIPanel(_G.QuestFrame)
         end
 
     elseif event == "QUEST_GREETING" then
@@ -402,7 +406,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             end
         end
 
-        if G_GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
+        if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
             SelectAvailableQuest(1)
         else
             for i = 1, nAvailable do
@@ -413,8 +417,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             end
         end
     elseif event == "GOSSIP_SHOW" then
-        local nActive = G_GetNumActiveQuests()
-        local nAvailable = G_GetNumAvailableQuests()
+        local nActive = GetNumActiveQuests()
+        local nAvailable = GetNumAvailableQuests()
         local quests
         if C_GossipInfo.GetActiveQuests then
             quests = C_GossipInfo.GetActiveQuests()
@@ -426,17 +430,17 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                 isComplete = quests[i].isComplete
             else
                 title, level, isTrivial, isComplete = select(i * 6 - 5,
-                                                             G_GetActiveQuests())
+                                                             GetActiveQuests())
             end
             -- print(title)
             -- print(quests[i])
             if addon.QuestAutoTurnIn(title) and isComplete then
-                return G_SelectActiveQuest(i)
+                return SelectActiveQuest(i)
             end
         end
 
-        if G_GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
-            G_SelectAvailableQuest(1)
+        if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
+            SelectAvailableQuest(1)
         else
             local availableQuests
             if C_GossipInfo.GetAvailableQuests then
@@ -447,10 +451,10 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                 if type(availableQuests) == "table" then
                     quest = availableQuests[i].questID
                 else
-                    quest = select(i * 7 - 6, G_GetAvailableQuests())
+                    quest = select(i * 7 - 6, GetAvailableQuests())
                 end
                 if addon.QuestAutoAccept(quest) then
-                    return G_SelectAvailableQuest(i)
+                    return SelectAvailableQuest(i)
                 end
             end
         end
@@ -467,9 +471,8 @@ function addon:OnInitialize()
     -- TODO setting
     addon.enableTracker = true
 
-    RXPFrame.GenerateMenuTable()
+    addon.RXPFrame.GenerateMenuTable()
     addon.CreateOptionsPanel()
-    loadtime = GetTime()
     ProcessSpells()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
@@ -483,8 +486,8 @@ function addon:OnInitialize()
     end
     addon:LoadGuide(guide, true)
     if not addon.currentGuide then
-        RXPFrame:SetHeight(20)
-        RXPFrame.BottomFrame.UpdateFrame()
+        addon.RXPFrame:SetHeight(20)
+        addon.RXPFrame.BottomFrame.UpdateFrame()
         addon.noGuide = true
     end
 
@@ -603,7 +606,7 @@ end
 
 function addon.UnitScanUpdate()
     local unitscanList = addon.currentGuide.unitscan
-    if unitscan_targets and unitscanList and not RXPData.disableUnitscan then
+    if _G.unitscan_targets and unitscanList and not RXPData.disableUnitscan then
         for unit, elements in pairs(unitscanList) do
             local enabled
             for _, element in pairs(elements) do
@@ -614,17 +617,17 @@ function addon.UnitScanUpdate()
             end
 
             if enabled then
-                if not unitscan_targets[unit] then
-                    DEFAULT_CHAT_FRAME:AddMessage(
-                        LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> +' .. unit)
+                if not _G.unitscan_targets[unit] then
+                    _G.DEFAULT_CHAT_FRAME:AddMessage(
+                        _G.LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> +' .. unit)
                 end
-                unitscan_targets[unit] = true
+                _G.unitscan_targets[unit] = true
             else
-                if unitscan_targets[unit] then
-                    DEFAULT_CHAT_FRAME:AddMessage(
-                        LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> -' .. unit)
+                if _G.unitscan_targets[unit] then
+                    _G.DEFAULT_CHAT_FRAME:AddMessage(
+                        _G.LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> -' .. unit)
                 end
-                unitscan_targets[unit] = nil
+                _G.unitscan_targets[unit] = nil
             end
 
         end
@@ -709,26 +712,24 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                         if not updateText and steps[n].active then
                             updateText = true
                         end
-                        RXPFrame.BottomFrame.UpdateFrame(nil, nil, n)
+                        addon.RXPFrame.BottomFrame.UpdateFrame(nil, nil, n)
                         if not addon.updateStepText then
                             addon.stepUpdateList[n] = nil
                         end
                     end
                 end
                 if updateText then
-                    RXPFrame.CurrentStepFrame.UpdateText()
+                    addon.RXPFrame.CurrentStepFrame.UpdateText()
                 end
                 event = event .. "/updateText"
                 skip = true
             elseif addon.updateBottomFrame or currentTime - addon.tickTimer > 5 then
-                RXPFrame.BottomFrame.UpdateFrame()
-                RXPFrame.CurrentStepFrame.UpdateText()
-                RXPFrame.SetStepFrameAnchor()
+                addon.RXPFrame.BottomFrame.UpdateFrame()
+                addon.RXPFrame.CurrentStepFrame.UpdateText()
+                addon.RXPFrame.SetStepFrameAnchor()
                 addon.tickTimer = currentTime
                 event = event .. "/bottomFrame"
                 skip = true
-            else
-                inactiveQuestUpdate = true
             end
         end
 
@@ -896,7 +897,6 @@ function addon.GetBestQuests()
                             addon.GetQuestName(id) or "", id))
     end
 end
-gq = addon.GetBestQuests
 
 function addon.IsGuideQuestActive(id)
     if not addon.QuestDB then addon.GetBestQuests() end
@@ -960,5 +960,3 @@ function addon.CalculateTotalXP(ignorePreReqs)
 
     return totalXp
 end
-
-txp = addon.CalculateTotalXP
