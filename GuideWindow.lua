@@ -1441,7 +1441,7 @@ function addon.RXPFrame.GenerateMenuTable()
         end
     })
 
-    if addon.enableTracker then
+    if addon.enableTrackerReport then
         table.insert(menuList, {
             text = "Leveling report",
             notCheckable = 1,

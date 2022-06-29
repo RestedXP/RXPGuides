@@ -24,7 +24,7 @@ function addon.tracker:SetupTracker()
 
     addon.tracker:UpgradeDB()
 
-    addon.tracker:AttachGUI()
+    if addon.enableTrackerReport then addon.tracker:AttachGUI() end
 end
 
 function addon.tracker:UpgradeDB()

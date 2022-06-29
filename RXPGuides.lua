@@ -335,17 +335,18 @@ local function trainerFrameUpdate(self, t)
 end
 
 local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
-                                 _G.GetNumGossipActiveQuests
+                                     _G.GetNumGossipActiveQuests
 local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
-                                    _G.GetNumGossipAvailableQuests
+                                        _G.GetNumGossipAvailableQuests
 local GossipGetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
 local GossipSelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or
-                                   _G.SelectGossipAvailableQuest
-local GossipGetActiveQuests = C_GossipInfo.GetActiveQuests or GetGossipActiveQuests
+                                       _G.SelectGossipAvailableQuest
+local GossipGetActiveQuests = C_GossipInfo.GetActiveQuests or
+                                  GetGossipActiveQuests
 local GossipSelectActiveQuest = C_GossipInfo.SelectActiveQuest or
-                                _G.SelectGossipActiveQuest
+                                    _G.SelectGossipActiveQuest
 local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
-                                 _G.GetGossipAvailableQuests
+                                     _G.GetGossipAvailableQuests
 
 function addon:QuestAutomation(event, arg1, arg2, arg3)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
@@ -470,6 +471,7 @@ function addon:OnInitialize()
 
     -- TODO setting
     addon.enableTracker = true
+    addon.enableTrackerReport = false
 
     addon.RXPFrame.GenerateMenuTable()
     addon.CreateOptionsPanel()
