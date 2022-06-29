@@ -405,9 +405,15 @@ function addon.SetStep(n, n2, loopback)
         if step.sticky then
             local req = guide.labels[step.requires]
             if step.requires and req then
+                local requiredSteps = {}
                 req = guide.steps[req]
                 while req and req.requires and not RXPCData.stepSkip[req.index] and
                     not req.active do
+                    if requiredSteps[req] then
+                        print('ERROR: Step requirement loop at steps %d and %d',step.index,req.index)
+                        break
+                    end
+                    requiredSteps[req] = true
                     req = guide.steps[guide.labels[req.requires]]
                 end
             end
