@@ -315,8 +315,9 @@ function addon.GetQuestObjectives(id, step)
         else
             err = true
         end
+        local nObj
         if objectives then
-            local nObj = 0
+            nObj = 0
             for i, quest in pairs(objectives) do
                 nObj = nObj + 1
                 local qType = quest.Type
@@ -340,7 +341,7 @@ function addon.GetQuestObjectives(id, step)
             end
         end
         if not err then
-            if nObj == 0 then -- TODO undefined global
+            if nObj == 0 then
                 qInfo[1] = {
                     text = "Objective Complete",
                     type = "event",
@@ -1689,7 +1690,7 @@ function addon.functions.destroy(self, ...)
         end
 
         element.id = id
-        element.qty = qty or 1 -- TODO undefined global
+
         element.itemName = addon.GetItemName(id)
 
         if text and text ~= "" then
@@ -1784,6 +1785,7 @@ function addon.functions.xp(self, ...)
     local maxXP = UnitXPMax("player")
     local level = UnitLevel("player")
     local element = self.element
+    local step = element.step
     local reverseLogic = element.reverseLogic
     if element.skipstep and element.skipstep < 0 then reverseLogic = true end
     if ((element.xp < 0 and (level >= element.level or
@@ -1795,9 +1797,9 @@ function addon.functions.xp(self, ...)
             (element.level == level and currentXP >= maxXP * element.xp)))) ==
         not reverseLogic then
         if element.skipstep then
-            if step.active and not step.completed then -- TODO undefined global
+            if step.active and not step.completed then
                 addon.updateSteps = true
-                step.completed = true -- TODO undefined global
+                step.completed = true
             end
         else
             addon.SetElementComplete(self, true)
@@ -2996,7 +2998,6 @@ function addon.functions.skipgossip(self, text, ...)
     if type(self) == "string" then
         local element = {}
         element.args = {...}
-        element.gossipId = id -- TODO undefined global
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         return element

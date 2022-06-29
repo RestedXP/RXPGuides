@@ -426,7 +426,7 @@ function RXPG.LoadCachedGuides()
 end
 
 function RXPG.ParseGuide(groupOrContent, text, defaultFor)
-    -- TODO decode guide contents
+
     if not groupOrContent then return end
 
     local playerLevel = UnitLevel("player")

@@ -334,18 +334,18 @@ local function trainerFrameUpdate(self, t)
     end
 end
 
-local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
-                               _G.GetNumGossipActiveQuests
-local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
-                                  _G.GetNumGossipAvailableQuests
-local GetNumOptions = C_GossipInfo.GetNumOptions or _G.GetNumGossipOptions
-local SelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or
-                                 _G.SelectGossipAvailableQuest
-local GetActiveQuests = C_GossipInfo.GetActiveQuests or _G.GetGossipActiveQuests
-local SelectActiveQuest = C_GossipInfo.SelectActiveQuest or
-                              _G.SelectGossipActiveQuest
-local GetAvailableQuests = C_GossipInfo.GetAvailableQuests or
-                               _G.GetGossipAvailableQuests
+local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
+                                 _G.GetNumGossipActiveQuests
+local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
+                                    _G.GetNumGossipAvailableQuests
+local GossipGetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
+local GossipSelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or
+                                   _G.SelectGossipAvailableQuest
+local GossipGetActiveQuests = C_GossipInfo.GetActiveQuests or GetGossipActiveQuests
+local GossipSelectActiveQuest = C_GossipInfo.SelectActiveQuest or
+                                _G.SelectGossipActiveQuest
+local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
+                                 _G.GetGossipAvailableQuests
 
 function addon:QuestAutomation(event, arg1, arg2, arg3)
     if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
@@ -406,7 +406,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             end
         end
 
-        if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
+        if GossipGetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
             SelectAvailableQuest(1)
         else
             for i = 1, nAvailable do
@@ -417,8 +417,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             end
         end
     elseif event == "GOSSIP_SHOW" then
-        local nActive = GetNumActiveQuests()
-        local nAvailable = GetNumAvailableQuests()
+        local nActive = GossipGetNumActiveQuests()
+        local nAvailable = GossipGetNumAvailableQuests()
         local quests
         if C_GossipInfo.GetActiveQuests then
             quests = C_GossipInfo.GetActiveQuests()
@@ -430,17 +430,17 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                 isComplete = quests[i].isComplete
             else
                 title, level, isTrivial, isComplete = select(i * 6 - 5,
-                                                             GetActiveQuests())
+                                                             GossipGetActiveQuests())
             end
             -- print(title)
             -- print(quests[i])
             if addon.QuestAutoTurnIn(title) and isComplete then
-                return SelectActiveQuest(i)
+                return GossipSelectActiveQuest(i)
             end
         end
 
-        if GetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
-            SelectAvailableQuest(1)
+        if GossipGetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
+            GossipSelectAvailableQuest(1)
         else
             local availableQuests
             if C_GossipInfo.GetAvailableQuests then
@@ -451,10 +451,10 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                 if type(availableQuests) == "table" then
                     quest = availableQuests[i].questID
                 else
-                    quest = select(i * 7 - 6, GetAvailableQuests())
+                    quest = select(i * 7 - 6, GossipGetAvailableQuests())
                 end
                 if addon.QuestAutoAccept(quest) then
-                    return SelectAvailableQuest(i)
+                    return GossipSelectAvailableQuest(i)
                 end
             end
         end
@@ -702,10 +702,9 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
             if addon.updateSteps then
                 addon.UpdateStepCompletion()
                 event = event .. "/stepComplete"
-            elseif addon.updateStepText then
+            elseif addon.updateStepText and addon.currentGuide then
                 addon.updateStepText = false
                 local updateText
-                -- TODO handle error if active guide no longer exists
                 local steps = addon.currentGuide.steps
                 for n in pairs(addon.stepUpdateList) do
                     if steps[n] then
