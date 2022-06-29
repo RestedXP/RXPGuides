@@ -37,7 +37,7 @@ addon.questConversion = {
 }
 
 local version = select(4, GetBuildInfo())
-if version < 30000 then
+if version < 90000 then
     addon.mapId = {
         ["Durotar"] = 1411,
         ["Mulgore"] = 1412,
@@ -633,44 +633,7 @@ addon.flightPath["Alliance"] = {
 
     [93] = "Blood Watch, Bloodmyst Isle",
     [94] = "The Exodar",
-    [205] = "Zul'Aman, Ghostlands",
-    --
-    [320] = "K3, The Storm Peaks",
-    [310] = "Dalaran",
-    [309] = "Nesingwary Base Camp, Sholazar Basin",
-    [308] = "River's Heart, Sholazar Basin",
-    [307] = "Zim'Torga, Zul'Drak",
-    [306] = "Light's Breach, Zul'Drak",
-    [305] = "Ebon Watch, Zul'Drak",
-    [304] = "The Argent Stand, Zul'Drak",
-    [303] = "Valiance Landing Camp, Wintergrasp",
-    [296] = "Unu'pe, Borean Tundra",
-    [295] = "Kamagua, Howling Fjord",
-    [294] = "Moa'ki, Dragonblight",
-    [289] = "Amber Ledge, Borean Tundra",
-    [321] = "Frosthold, The Storm Peaks",
-    [322] = "Dun Niffelem, The Storm Peaks",
-    [325] = "Death's Rise, Icecrown",
-    [326] = "Ulduar, The Storm Peaks",
-    [327] = "Bouldercrag's Refuge, The Storm Peaks",
-    [183] = "Valgarde Port, Howling Fjord",
-    [184] = "Fort Wildervar, Howling Fjord",
-    [185] = "Westguard Keep, Howling Fjord",
-    [226] = "Transitus Shield, Coldarra",
-    [244] = "Wintergarde Keep, Dragonblight",
-    [245] = "Valiance Keep, Borean Tundra",
-    [246] = "Fizzcrank Airstrip, Borean Tundra",
-    [247] = "Stars' Rest, Dragonblight",
-    [251] = "Fordragon Hold, Dragonblight",
-    [252] = "Wyrmrest Temple, Dragonblight",
-    [253] = "Amberpine Lodge, Grizzly Hills",
-    [255] = "Westfall Brigade, Grizzly Hills",
-    [340] = "Argent Tournament Grounds, Icecrown",
-    [336] = "Windrunner's Overlook, Crystalsong Forest",
-    [335] = "Crusaders' Pinnacle, Icecrown",
-    [334] = "The Argent Vanguard, Icecrown",
-    [333] = "The Shadow Vault, Icecrown",
-    [331] = "Gundrak, Zul'Drak",
+    [205] = "Zul'Aman, Ghostlands"
 }
 
 addon.flightPath["Horde"] = {
@@ -729,47 +692,7 @@ addon.flightPath["Horde"] = {
 
     [82] = "Silvermoon City",
     [83] = "Tranquillien, Ghostlands",
-    [205] = "Zul'Aman",
-    --
-    [320] = "K3, The Storm Peaks",
-    [260] = "Kor'kron Vanguard, Dragonblight",
-    [310] = "Dalaran",
-    [309] = "Nesingwary Base Camp, Sholazar Basin",
-    [308] = "River's Heart, Sholazar Basin",
-    [307] = "Zim'Torga, Zul'Drak",
-    [306] = "Light's Breach, Zul'Drak",
-    [305] = "Ebon Watch, Zul'Drak",
-    [304] = "The Argent Stand, Zul'Drak",
-    [296] = "Unu'pe, Borean Tundra",
-    [295] = "Kamagua, Howling Fjord",
-    [294] = "Moa'ki, Dragonblight",
-    [289] = "Amber Ledge, Borean Tundra",
-    [322] = "Dun Niffelem, The Storm Peaks",
-    [323] = "Grom'arsh Crash-Site, The Storm Peaks",
-    [324] = "Camp Tunka'lo, The Storm Peaks",
-    [325] = "Death's Rise, Icecrown",
-    [326] = "Ulduar, The Storm Peaks",
-    [327] = "Bouldercrag's Refuge, The Storm Peaks",
-    [190] = "New Agamand, Howling Fjord",
-    [191] = "Vengeance Landing, Howling Fjord",
-    [192] = "Camp Winterhoof, Howling Fjord",
-    [226] = "Transitus Shield, Coldarra",
-    [248] = "Apothecary Camp, Howling Fjord",
-    [249] = "Camp Oneqwah, Grizzly Hills",
-    [250] = "Conquest Hold, Grizzly Hills",
-    [252] = "Wyrmrest Temple, Dragonblight",
-    [254] = "Venomspite, Dragonblight",
-    [256] = "Agmar's Hammer, Dragonblight",
-    [257] = "Warsong Hold, Borean Tundra",
-    [340] = "Argent Tournament Grounds, Icecrown",
-    [258] = "Taunka'le Village, Borean Tundra",
-    [259] = "Bor'gorok Outpost, Borean Tundra",
-    [337] = "Sunreaver's Command, Crystalsong Forest",
-    [335] = "Crusaders' Pinnacle, Icecrown",
-    [334] = "The Argent Vanguard, Icecrown",
-    [333] = "The Shadow Vault, Icecrown",
-    [332] = "Warsong Camp, Wintergrasp",
-    [331] = "Gundrak, Zul'Drak",
+    [205] = "Zul'Aman"
 }
 
 --[[
@@ -2005,61 +1928,6 @@ QuestDB[10410].xp = 9500
 local s = {}
 addon.defaultSpellList = s
 
-s["DEATHKNIGHT"] = {
-
-    [68] = {
-        62902, --Death Coil
-        49893, --Death Coil
-        48707, --AMS
-    },
-    [69] = {
-        49928, --Blood Strike
-        55260, --Heart Strike
-    },
-    [70] = {
-        48265, --Unholy Presence
-        49919, --Plague strike
-        45463, --Death strike
-        51409, --howling blast
-        51418, --frost strike
-        51326, --corpse explosion
-    },
-    [72] = {
-        49940, --blood boil
-        61999, --raise ally
-    },
-    [73] = {
-        55270, --scourge strike
-        49937, --Death and Decay
-        49904, --Icy Touch
-        51424, --Obliterate
-    },
-    [74] = {
-        55261, --Heart Strike
-        49929, --Blood Strike
-    },
-    [75] = {
-        51327, --Corpse Explosion
-        51419, --Frost Strike
-        51410, --Howling Blast
-        49923, --Death Strike
-        47568, --Empower Rune Weapon
-        57623, --Horn of Winter
-        49920, --Plague Strike
-    },
-    [76] = {
-        49894, --Death Coil
-        62903, --Death Coil
-    },
-    [78] = {
-        49941, --Blood Boil
-        49909, --Icy Touch
-    },
-    [79] = {
-        55271, --Scourge Strike
-        51425, --Obliterate
-    },
-}
 s["DRUID"] = {
     [4] = {
         8921, -- moonfire
@@ -2246,79 +2114,13 @@ s["DRUID"] = {
         27006, -- pounce r4
         27005 -- ravage r5
     },
-
     [68] = {
-        33987, --Mangle (Bear)
-        27009, --Nature's Grasp
-        33983, --Mangle (Cat)
+        33983 -- mangle r3
     },
     [69] = {
-        26979, --Healing Touch
-        26982, --Rejuvenation
-        50764, --Revive
-        26994, --Rebirth
-    },
-    [70] = {
-        40120, --Swift Flight Form
-        33786, --Cyclone
-        26988, --Moonfire
-        26990, --Mark of the Wild
-        26991, --Gift of the Wild
-        27002, --Shred
-        26983, --Tranquility
-        27012, --Hurricane
-    },
-    [71] = {
-        62078, --Swipe (Cat)
-        49799, --Rip
-        50212, --Tiger's Fury
-        48442, --Regrowth
-    },
-    [72] = {
-        48450, --Lifebloom
-        48561, --Swipe (Bear)
-        48573, --Rake
-        48464, --Starfire
-        48576, --Ferocious Bite
-    },
-    [73] = {
-        48567, --Lacerate
-        48569, --Claw
-        48479, --Maul
-        48578, --Ravage
-    },
-    [74] = {
-        48459, --Wrath
-        53307, --Thorns
-        48377, --Healing Touch
-    },
-    [75] = {
-        52610, --Savage Roar
-        48440, --Rejuvenation
-        48446, --Tranquility
-        48642, --Moonfire
-        48563, --Mangle (Bear)
-        48565, --Mangle (Cat)
-        48571, --Shred
-    },
-    [77] = {
-        48562, --Swipe (Bear)
-        48443, --Regrowth
-    },
-    [78] = {
-        48574, --Rake
-        53308, --Entangling Roots
-        48465, --Starfire
-        53312, --Nature's Grasp
-    },
-    [79] = {
-        48378, --Healing Touch
-        50213, --Tiger's Fury
-        48461, --Wrath
-        48579, --Ravage
-        48477, --Rebirth
-        48480, --Maul
-    },
+        26979, -- healing touch r13
+        26982 -- rejuvenation r13
+    }
 }
 
 s["PALADIN"] = {
@@ -2490,65 +2292,14 @@ s["PALADIN"] = {
         27150, -- retribution aura
         27166 -- seal of wisdom r4
     },
-
     [68] = {
-        27138, --Exorcism (Rank 7)
-        27180, --Hammer of Wrath (Rank 4)
+        27180, -- hammer of wrath r4
+        27138, -- exorcism r7
+        27139 -- holy wrath r3
     },
     [69] = {
-        27154, --Lay on Hands (Rank 4)
-        27139, --Holy Wrath (Rank 3)
-    },
-    [70] = {
-        27173, --Consecration
-        31884, --Avenging Wrath
-        27136, --Holy Light
-        27140, --Blessing of Might
-        27141, --Greater Blessing of Might
-    },
-    [71] = {
-        48937, --Blessing of Wisdom
-        48935, --Greater Blessing of Wisdom
-        54428, --Divine Plea
-    },
-    [72] = {
-        48816, --Holy Wrath
-        48949, --Redemption
-    },
-    [73] = {
-        48931, --Blessing of Might
-        48933, --Greater Blessing of Might
-        48800, --Exorcism
-    },
-    [74] = {
-        48941, --Devotion Aura
-        48784, --Flash of Light
-        48805, --Hammer of Wrath
-    },
-    [75] = {
-        53600, --Shield of Righteousness
-        48818, --Consecration
-        48781, --Holy Light
-    },
-    [76] = {
-        54043, --Retribution Aura
-    },
-    [77] = {
-        48938, --Blessing of Wisdom
-        48938, --Greater Blessing of Wisdom
-    },
-    [78] = {
-        48817, --Holy Wrath
-        48788, --Lay on Hands
-    },
-    [79] = {
-        48801, --Exorcism
-        48932, --Blessing of Might
-        48934, --Greater Blessing of Might
-        48785, --Flash of Light
-        48950, --Redemption
-        48942, --Devotion Aura
-    },
+        27154 --  lay of hands r4
+    }
 }
 
 s["SHAMAN"] = {
@@ -2757,92 +2508,15 @@ s["SHAMAN"] = {
         25449 -- Lightning Bolt r12
     },
     [68] = {
-        25563, --Fire Resistance Totem
-        25464, --Frost Shock
-        25505, --Windfury Weapon
-        25423, --Chain Heal
-        2894, --Fire Elemental Totem
+        2894, -- fire elemental totem
+        25364, -- frost shock r5
+        25505 -- windfury weapon r5
     },
     [69] = {
-        25590, --Ancestral Spirit
-        25533, --Searing Totem
-        25574, --Nature Resistance Totem
-        33736, --Water Shield
-        25567, --Healing Stream Totem
-        25454, --Earth Shock
-    },
-    [70] = {
-        25509, --Stoneskin Totem
-        25537, --Fire Nova
-        25457, --Flame Shock
-        25442, --Chain Lightning
-        25396, --Healing Wave
-        25547, --Fire Nova
-        25472, --Lightning Shield
-        51993, --Earthliving Weapon
-        32182, --Heroism
-        2825, --Bloodlust
-    },
-    [71] = {
-        58794, --Frostbrand Weapon
-        58785, --Flametongue Weapon
-        58699, --Searing Totem
-        58649, --Flametongue Totem
-        58771, --Mana Spring Totem
-        58801, --Windfury Weapon
-        58755, --Healing Stream Totem
-        58580, --Stoneclaw Totem
-    },
-    [72] = {
-        49275, --Lesser Healing Wave
-    },
-    [73] = {
-        58731, --Magma Totem
-        49237, --Lightning Bolt
-        49235, --Frost Shock
-        58751, --Stoneskin Totem
-    },
-    [74] = {
-        49270, --Chain Lightning
-        55458, --Chain Heal
-        49230, --Earth Shock
-    },
-    [75] = {
-        61649, --Fire Nova
-        58746, --Nature Resistance Totem
-        58737, --Fire Resistance Totem
-        58652, --Flametongue Totem
-        57622, --Strength of Earth Totem
-        49272, --Healing Wave
-        49232, --Flame Shock
-        58741, --Frost Resistance Totem
-        58703, --Searing Totem
-        61650, --Fire Nova
-        58581, --Stoneclaw Totem
-        49280, --Lightning Shield
-        51505, --Lava Burst
-    },
-    [76] = {
-        58795, --Frostbrand Weapon
-        58773, --Mana Spring Totem
-        58803, --Windfury Weapon
-        58789, --Flametongue Weapon
-        58756, --Healing Stream Totem
-        57960, --Water Shield
-    },
-    [77] = {
-        49276, --Lesser Healing Wave
-    },
-    [78] = {
-        49236, --Frost Shock
-        58753, --Stoneskin Totem
-        58582, --Stoneclaw Totem
-        58734, --Magma Totem
-    },
-    [79] = {
-        49238, --Lightning Bolt
-        49231, --Earth Shock
-    },
+        25454, -- earth shock r8
+        25533, -- searing totem r7
+        33736 -- Water Shield r2
+    }
 }
 
 s["HUNTER"] = {
@@ -3000,65 +2674,13 @@ s["HUNTER"] = {
         27016 -- serpentsting r10
     },
     [68] = {
-        27044, --Aspect of the Hawk
-        27046, --Mend Pet
-        34600, --Snake Trap
+        27044, -- aspect of the hawk r8
+        27046, -- mend pet r8
+        34600 -- snake trap
     },
     [69] = {
-        63670, --Black Arrow
-        27019, --Arcane Shot
-    },
-    [70] = {
-        27065, --Aimed Shot
-        60051, --Explosive Shot
-        27068, --Wyvern Sting
-        34477, --Misdirection
-        36916, --Mongoose Bite
-    },
-    [71] = {
-        49066, --Explosive Trap
-        53351, --Kill Shot
-        48995, --Raptor Strike
-        49051, --Steady Shot
-    },
-    [72] = {
-        48998, --Counterattack
-        49055, --Immolation Trap
-    },
-    [73] = {
-        49044, --Arcane Shot
-        49000, --Serpent Sting
-    },
-    [74] = {
-        61846, --Aspect of the Dragonhawk
-        48989, --Mend Pet
-        49047, --Multi-Shot
-        58431, --Volley
-    },
-    [75] = {
-        49049, --Aimed Shot
-        63671, --Black Arrow
-        60052, --Explosive Shot
-        49011, --Wyvern Sting
-        61005, --Kill Shot
-        53271, --Master's Call
-    },
-    [76] = {
-        53338, --Hunter's Mark
-    },
-    [77] = {
-        49067, --Explosive Trap
-        48996, --Raptor Strike
-        49052, --Steady Shot
-    },
-    [78] = {
-        48999, --Counterattack
-        49056, --Immolation Trap
-    },
-    [79] = {
-        49045, --Arcane Shot
-        49001, --Serpent Sting
-    },
+        27019 -- arcane shot r9
+    }
 }
 
 s["WARRIOR"] = {
@@ -3186,59 +2808,13 @@ s["WARRIOR"] = {
         25212, -- hamstring r4
         25225 -- sunder armor r6
     },
-
     [68] = {
-        25208, --Rend
-        25231, --Cleave
-        469, --Commanding Shout
+        249 -- commanding shout
     },
     [69] = {
-        25242, --Slam
-        2048, --Battle Shout
-    },
-    [70] = {
-        3411, --Intervene
-        30356, --Shield Slam
-        30324, --Heroic Strike
-        25203, --Demoralizing Shout
-        25236, --Execute
-        30357, --Revenge
-    },
-    [71] = {
-        46845, --Rend
-        64382, --Shattering Throw
-    },
-    [72] = {
-        47519, --Cleave
-        47449, --Heroic Strike
-    },
-    [73] = {
-        47470, --Execute
-        47501, --Thunder Clap
-    },
-    [74] = {
-        47439, --Commanding Shout
-        47474, --Slam
-    },
-    [75] = {
-        47487, --Shield Slam
-        55694, --Enraged Regeneration
-    },
-    [76] = {
-        47450, --Heroic Strike
-        47465, --Rend
-    },
-    [77] = {
-        47520, --Cleave
-    },
-    [78] = {
-        47502, --Thunder Clap
-        47436, --Battle Shout
-    },
-    [79] = {
-        47437, --Demoralizing Shout
-        47475, --Slam
-    },
+        2048, -- battle shout r8
+        25275 -- intercept r5
+    }
 }
 
 s["ROGUE"] = {
@@ -3349,41 +2925,8 @@ s["ROGUE"] = {
         31224 -- cloak of shadows
     },
     [68] = {
-        26863, --Backstab
-        26867, --Rupture
-        6892, -- instant poison r7
-    },
-    [69] = {
-        32684, --Envenom
-    },
-    [70] = {
-        48689, --Ambush
-        26884, --Garrote
-        26862, --Sinister Strike
-    },
-    [71] = {
-        51724, --Sap
-    },
-    [73] = {
-        48667, --Eviscerate
-    },
-    [74] = {
-        57992, --Envenom
-        48656, --Backstab
-        48671, --Rupture
-    },
-    [75] = {
-        48690, --Ambush
-        48675, --Garrote
-        57934, --Tricks of the Trade
-    },
-    [76] = {
-        48637, --Sinister Strike
-    },
-    [79] = {
-        48672, --Rupture
-        48668, --Eviscerate
-    },
+        26892 -- instant poison r7
+    }
 }
 
 s["WARLOCK"] = {
@@ -3546,82 +3089,16 @@ s["WARLOCK"] = {
         27259 -- health funnel r8
     },
     [68] = {
-        27230, --Create Healthstone (Rank 6)
-        27222, --Lifetap (Rank 7)
-        27223, --Death Coil (Rank 4)
-        27213, --Hellfire (Rank 4)
-        29893, --Ritual of Souls
+        27230, -- create healthstone r6
+        27223, -- death coil r4
+        27222 -- life tap r7
     },
     [69] = {
-        27212, --Rain of Fire (Rank 5)
-        27209, --Shadow Bolt
-        27220, --Drain Life
-        27215, --Immolate
-        30909, --Curse of Weakness
-        27228, --Curse of Elements
-        28189, --Fel Armor
-    },
-    [70] = {
-        27260, --Demon Armor
-        27238, --Create Soulstone
-        30545, --Soul Fire
-        30459, --Searing Pain
-        30910, --Curse of Doom
-        32231, --Incinerate
-        27243, --Seed of Corruption
-        50511, --Curse of Weakness
-    },
-    [71] = {
-        47812, --Corruption
-    },
-    [72] = {
-        47890, --Shadow Ward
-        47819, --Rain of Fire
-        47886, --Create Spellstone
-    },
-    [73] = {
-        47863, --Curse of Agony
-        47859, --Death Coil (Rank 4)
-        47871, --Create Healthstone (Rank 6)
-    },
-    [74] = {
-        47814, --Searing Pain
-        47808, --Shadow Bolt
-        47892, --Fel Armor
-        60219, --Create Firestone
-        47837, --Incinerate
-    },
-    [75] = {
-        47835, --Seed of Corruption
-        47810, --Immolate
-        47824, --Soul Fire
-        47897, --Shadowflame
-    },
-    [76] = {
-        47856, --Health Funnel
-        47793, --Demon Armor
-        47884, --Create Soulstone
-    },
-    [77] = {
-        47855, --Drain Soul
-        47813, --Corruption
-    },
-    [78] = {
-        47823, --Hellfire
-        47857, --Drain Life
-        47860, --Death Coil
-        47865, --Curse of Elements
-        47888, --Create Spellstone
-        47891, --Shadow Ward
-    },
-    [79] = {
-        47878, --Create Healthstone
-        47815, --Searing Pain
-        47820, --Rain of Fire
-        47864, --Curse of Agony
-        47893, --Fel Armor
-        47809, --Shadow Bolt
-    },
+        27220, -- drain life r8
+        28189, -- fel armor r2
+        27215, -- immolate r9
+        27209 -- shadow bolt r11
+    }
 }
 
 s["MAGE"] = {
@@ -3826,90 +3303,17 @@ s["MAGE"] = {
         27070, -- fireball r13
         30455 -- ice lacnce
     },
-
     [68] = {
-        27101, --Conjure Mana Gem
-        27131, --Mana Shield
-        27085, --Blizzard
-        66, --Invisibility
+        27085, -- blizzard r7
+        27101, -- conjure mana emerald
+        66, -- invisiability
+        27131 -- mana shield r7
     },
     [69] = {
-        33946, --Amplify Magic
-        27128, --Fire Ward
-        27125, --Mage Armor
-        27072, --Frostbolt
-        27124, --Ice Armor
-        38699, --Arcane Missles
-    },
-    [70] = {
-        27127, --Arcane Brilliance
-        27090, --Conjure Water
-        27079, --Fire Blast
-        27074, --Scorch
-        33717, --Conjure Food
-        27126, --Arcane Intellect
-        27082, --Arcane Explosion
-        38697, --Frostbolt
-        38692, --Fireball
-        32796, --Frost Ward
-        30449, --Spellsteal
-        43987, --Ritual of Refreshment
-        38704, --Arcane Missles
-    },
-    [71] = {
-        42894, --Arcane Blast
-        43023, --Mage Armor
-        43045, --Molten Armor
-        53140, --Teleport: Dalaran
-    },
-    [72] = {
-        42930, --Cone of Cold
-        42925, --Flamestrike
-        42913, --Ice Lance
-    },
-    [73] = {
-        43019, --Mana Shield
-        42858, --Scorch
-    },
-    [74] = {
-        42872, --Fire Blast
-        42832, --Fireball
-        42939, --Blizzard
-        53142, --Portal: Dalaran
-    },
-    [75] = {
-        42917, --Frost Nova
-        42843, --Arcane Missles
-        42841, --Frostbolt
-        42955, --Conjure Refreshment
-        44614, --Frostfire Bolt
-    },
-    [76] = {
-        42920, --Arcane Explosion
-        42896, --Arcane Blast
-        43015, --Dampen Magic
-    },
-    [77] = {
-        43017, --Amplify Magic
-        42985, --Conjure Mana Gem
-    },
-    [78] = {
-        42859, --Scorch
-        42914, --Ice Lance
-        43010, --Fire Ward
-        42833, --Fireball
-    },
-    [79] = {
-        42931, --Cone of Cold
-        43012, --Frost Ward
-        42926, --Flamestrike
-        43020, --Mana Shield
-        43008, --Ice Armor
-        43046, --Molten Armor
-        42842, --Frostbolt
-        42846, --Arcane Missles
-        43024, --Mage Armor
-    },
+        27072, -- frostbolt r13
+        27124, -- ice armor r5
+        27125 -- mage armor r4
+    }
 }
 
 s["PRIEST"] = {
@@ -4123,71 +3527,13 @@ s["PRIEST"] = {
         25235 -- flash heal r9
     },
     [68] = {
-        25477, -- shadowguard r7 troll
-        33076, --Prayer of MendingRank 1
-        25467, --Devouring PlagueRank 7
-        25331, --Holy NovaRank 7
-        25213, --Greater HealRank 7
-        25433, --Shadow ProtectionRank 4
+        25387, -- mind flay r7
+        25467, -- devouring plague r7 undead
+        25213, -- greater heal r7
+        25477 -- shadowguard r7 troll
     },
     [69] = {
-        25364, --SmiteRank 10
-        25375, --Mind BlastRank 11
-        25431, --Inner FireRank 7
-    },
-    [70] = {
-        25389, --Power Word: FortitudeRank 7
-        25222, --RenewRank 12
-        25368, --Shadow Word: PainRank 10
-        25218, --Power Word: ShieldRank 12
-        32375, --Mass Dispel
-        32996, --Shadow Word: DeathRank 2
-        25312, --Divine SpiritRank 5
-    },
-    [71] = {
-        48040, --Inner FireRank 8
-    },
-    [72] = {
-        48134, --Holy FireRank 10
-    },
-
-    [73] = {
-        48299, --Devouring PlagueRank 8
-        48070, --Flash HealRank 10
-        48062, --Greater HealRank 8
-    },
-
-    [74] = {
-        48126, --Mind BlastRank 12
-        48112, --Prayer of MendingRank 2
-        48122, --SmiteRank 11
-    },
-    [75] = {
-        48045, --Mind SearRank 1
-        48067, --RenewRank 13
-        48065, --Power Word: ShieldRank 13
-        48077, --Holy NovaRank 8
-        48124, --Shadow Word: PainRank 11
-        48157, --Shadow Word: DeathRank 3
-    },
-
-    [76] = {
-        48169, --Shadow ProtectionRank 5
-    },
-    [77] = {
-        48168, --Inner FireRank 9
-    },
-    [78] = {
-        48135, --Holy FireRank 11
-        48063, --Greater HealRank 9
-    },
-
-    [79] = {
-        48300, --Devouring PlagueRank 9
-        48123, --SmiteRank 12
-        48071, --Flash HealRank 11
-        48113, --Prayer of MendingRank 3
-        48127, --Mind BlastRank 13
-    },
-
+        25431, -- inner fire r7
+        25375 -- mind blast r11
+    }
 }
