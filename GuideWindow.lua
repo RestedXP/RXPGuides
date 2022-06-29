@@ -2,6 +2,7 @@ local addonName, addon = ...
 
 local RXPG = addon.RXPG
 local _, class = UnitClass("player")
+local _G = _G
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 

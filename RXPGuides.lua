@@ -1,5 +1,7 @@
 ﻿local addonName, addon = ...
 
+local _G = _G
+
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 addon.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")

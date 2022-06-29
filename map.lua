@@ -1,5 +1,7 @@
 local addonName, addon = ...
 
+local _G = _G
+
 local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 addon.activeWaypoints = {}

@@ -1,5 +1,7 @@
 local addonName, addon = ...
 
+local _G = _G
+
 function addon.UpdateQuestButton(index)
     local button = addon.questLogButton
     local anchor = _G.QuestLogExDetailScrollChildFrame or

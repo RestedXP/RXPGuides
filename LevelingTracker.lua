@@ -4,6 +4,7 @@ local fmt, smatch, strsub = string.format, string.match, string.sub
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber = UnitLevel,
                                                         GetRealZoneText,
                                                         IsInGroup, tonumber
+local _G = _G
 
 addon.tracker = addon:NewModule(addonName, "AceEvent-3.0")
 

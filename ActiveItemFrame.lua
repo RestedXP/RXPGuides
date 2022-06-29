@@ -1,7 +1,9 @@
 local _, addon = ...
 
+local _G = _G
+
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
-local GameTooltip = _G["GameTooltip"]
+local GameTooltip = _G.GameTooltip
 
 local function GetActiveItemList(ref)
     local itemList = {}

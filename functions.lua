@@ -77,6 +77,8 @@ addon.icons.xpto60 = addon.icons.xp
 
 function addon.error(msg) print(msg) end
 
+local _G = _G
+
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
 local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or

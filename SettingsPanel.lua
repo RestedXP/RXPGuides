@@ -1,5 +1,7 @@
 local addonName, addon = ...
 
+local _G = _G
+
 local AceConfig = LibStub("AceConfig-3.0")
 local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 
