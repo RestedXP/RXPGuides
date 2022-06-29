@@ -148,7 +148,7 @@ function addon.tracker:AttachGUI()
     local BackdropTemplate = _G.BackdropTemplateMixin and "BackdropTemplate" or
                                  nil
 
-    local attachment = PaperDollItemsFrame
+    local attachment = _G.PaperDollItemsFrame
     addon.tracker.ui = CreateFrame("Frame", "RXPTrackerUI", attachment,
                                    BackdropTemplate)
 
@@ -157,7 +157,7 @@ function addon.tracker:AttachGUI()
     local offset = {
         x = -38,
         y = -32,
-        tabsHeight = CharacterFrameTab1:GetHeight()
+        tabsHeight = _G.CharacterFrameTab1:GetHeight()
     }
 
     trackerUi:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
@@ -309,7 +309,7 @@ end
 
 function addon.tracker:ShowReport()
     addon.tracker.ui:Show()
-    CharacterFrame:Show()
+    _G.CharacterFrame:Show()
 end
 
 function addon.tracker:CompileData()
@@ -351,7 +351,7 @@ function addon.tracker:CompileData()
 
         if data.timestamp.dateFinished then
             levelData.dateFinished = fmt("%s %d, %d at %d:%d %s Server",
-                                         CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
+                                         _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
                                              .dateFinished.month],
                                          data.timestamp.dateFinished.monthDay,
                                          data.timestamp.dateFinished.year,

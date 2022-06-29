@@ -78,7 +78,7 @@ addon.arrowFrame:SetScript("OnUpdate", addon.UpdateArrow)
 local MapPinPool = {}
 
 MapPinPool.create = function()
-    local framePool = CreateFramePool()
+    local framePool = _G.CreateFramePool()
     framePool.creationFunc = MapPinPool.creationFunc
     framePool.resetterFunc = MapPinPool.resetterFunc
 
@@ -199,11 +199,11 @@ MapPinPool.creationFunc = function(framePool)
 
         -- Mouse Handlers
         f:SetScript("OnEnter", function(self)
-            if self:IsForbidden() or GameTooltip:IsForbidden() then
+            if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
                 return
             end
-            GameTooltip:SetOwner(f, "ANCHOR_RIGHT", 0, 0)
-            GameTooltip:ClearLines()
+            _G.GameTooltip:SetOwner(f, "ANCHOR_RIGHT", 0, 0)
+            _G.GameTooltip:ClearLines()
 
             for i, element in pairs(pin.elements) do
                 local parent = element.parent
@@ -215,19 +215,19 @@ MapPinPool.creationFunc = function(framePool)
                     text = element.mapTooltip or element.tooltipText
                 end
                 text = text or step.text or ""
-                GameTooltip:AddLine("Step " .. step.index,
-                                    unpack(addon.colors.mapPins))
-                GameTooltip:AddLine(text)
+                _G.GameTooltip:AddLine("Step " .. step.index,
+                                       unpack(addon.colors.mapPins))
+                _G.GameTooltip:AddLine(text)
             end
 
-            GameTooltip:Show()
+            _G.GameTooltip:Show()
         end)
 
         f:SetScript("OnLeave", function(self)
-            if self:IsForbidden() or GameTooltip:IsForbidden() then
+            if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
                 return
             end
-            GameTooltip:Hide()
+            _G.GameTooltip:Hide()
         end)
 
     end
@@ -246,7 +246,7 @@ end
 local MapLinePool = {}
 
 MapLinePool.create = function()
-    local framePool = CreateFramePool()
+    local framePool = _G.CreateFramePool()
     framePool.creationFunc = MapLinePool.creationFunc
     framePool.resetterFunc = MapLinePool.resetterFunc
 
@@ -271,7 +271,7 @@ MapLinePool.creationFunc = function(framePool)
         local thickness = 3
         local alpha = coords.lineAlpha or 1
         self:SetAlpha(alpha)
-        local canvas = WorldMapFrame:GetCanvas()
+        local canvas = _G.WorldMapFrame:GetCanvas()
         local width = canvas:GetWidth()
         local height = canvas:GetHeight()
 
@@ -447,7 +447,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         table.insert(otherPin.elements, element)
                     else
                         local pinalpha = 0
-                        if isMiniMapPin then
+                        if isMiniMapPin then -- TODO undefined global
                             pinalpha = 0.5
                         elseif element.step and element.step.active then
                             pinalpha = 1
@@ -644,7 +644,7 @@ local function addWorldMapPins()
             worldMapFrame.render(pin, false)
             HBDPins:AddWorldMapIconMap(addon, worldMapFrame, element.zone,
                                        element.x / 100, element.y / 100,
-                                       HBD_PINS_WORLDMAP_SHOW_CONTINENT)
+                                       _G.HBD_PINS_WORLDMAP_SHOW_CONTINENT)
         end
     end
 end
@@ -752,17 +752,17 @@ local closestPoint
 local maxDist = math.huge
 
 local function DisplayLines(self)
-    local currentMap = WorldMapFrame:GetMapID()
+    local currentMap = _G.WorldMapFrame:GetMapID()
     if lastMap ~= currentMap or self then
         for line in lineMapFramePool:EnumerateActive() do
             line:SetShown(line.step and line.step.active and line.zone ==
-                              WorldMapFrame:GetMapID())
+                              _G.WorldMapFrame:GetMapID())
         end
     end
     lastMap = currentMap
 end
 
-hooksecurefunc(WorldMapFrame, "OnMapChanged", DisplayLines);
+hooksecurefunc(_G.WorldMapFrame, "OnMapChanged", DisplayLines);
 
 function addon.UpdateGotoSteps()
     local hideArrow = false

@@ -1,6 +1,7 @@
 local _, addon = ...
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
+local GameTooltip = _G["GameTooltip"]
 
 local function GetActiveItemList(ref)
     local itemList = {}
@@ -9,7 +10,7 @@ local function GetActiveItemList(ref)
         ref = addon
     end]]
     ref = addon
-    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+    for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
             -- local spell = GetItemSpell(id)

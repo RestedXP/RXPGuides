@@ -213,6 +213,7 @@ function addon.ImportGuide(guide)
     if addon.db then -- Addon loaded already
         local importedGuide, errorMsg = RXPG.ParseGuide(guide)
         if errorMsg or RXPG.AddGuide(importedGuide) then
+            if not importedGuide then return end
             -- print(errorMsg,importedGuide.name)
             importedGuide.imported = true
             addon.CacheGuide(importedGuide.key, guide, importedGuide.enabledFor,
@@ -671,12 +672,11 @@ end
 
 -- Workaround global namespace pollution and external guide files
 -- Also workaround private repo name difference
-if not _G["RXPGuides"] then _G["RXPGuides"] = {} end
+if not _G.RXPGuides then _G.RXPGuides = {} end
 
-if not _G["RXPGuides"].RegisterGuide then
-    _G["RXPGuides"].RegisterGuide = addon.RegisterGuide
+if not _G.RXPGuides.RegisterGuide then
+    _G.RXPGuides.RegisterGuide = addon.RegisterGuide
 end
 
-if not _G["RXPGuides"].ImportGuide then
-    _G["RXPGuides"].ImportGuide = addon.ImportGuide
-end
+if not _G.RXPGuides.ImportGuide then _G.RXPGuides.ImportGuide =
+    addon.ImportGuide end

@@ -2,8 +2,8 @@ local addonName, addon = ...
 
 function addon.UpdateQuestButton(index)
     local button = addon.questLogButton
-    local anchor = QuestLogExDetailScrollChildFrame or
-                       QuestLogDetailScrollChildFrame
+    local anchor = _G.QuestLogExDetailScrollChildFrame or
+                       _G.QuestLogDetailScrollChildFrame
     if not anchor or anchor:IsForbidden() then return end
     if not button then
         button = CreateFrame("Button", "$parentRXP", anchor)
@@ -15,26 +15,26 @@ function addon.UpdateQuestButton(index)
         addon.questLogButton = button
 
         local function tpOnEnter(self)
-            if self:IsForbidden() or GameTooltip:IsForbidden() then
+            if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
                 return
             end
-            GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -10)
-            GameTooltip:ClearLines()
-            GameTooltip:AddLine(self.tooltip)
-            GameTooltip:Show()
+            _G.GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -10)
+            _G.GameTooltip:ClearLines()
+            _G.GameTooltip:AddLine(self.tooltip)
+            _G.GameTooltip:Show()
         end
         local function tpOnLeave(self)
-            if self:IsForbidden() or GameTooltip:IsForbidden() then
+            if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
                 return
             end
-            GameTooltip:Hide()
+            _G.GameTooltip:Hide()
         end
         button:SetScript("OnEnter", tpOnEnter)
         button:SetScript("OnLeave", tpOnLeave)
 
     end
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete,
-          frequency, questID = GetQuestLogTitle(index);
+          frequency, questID = _G.GetQuestLogTitle(index);
     local showButton
     local function GetGuideList(list)
         if RXPData and RXPCData.hardcore then
@@ -91,7 +91,7 @@ function addon.UpdateQuestButton(index)
     end
 end
 
-if QuestLog_SetSelection then
+if _G.QuestLog_SetSelection then
     hooksecurefunc("QuestLog_SetSelection", addon.UpdateQuestButton)
 end
 

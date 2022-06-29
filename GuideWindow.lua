@@ -6,7 +6,7 @@ local _, class = UnitClass("player")
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
 addon.width, addon.height = 235, 125 -- Default width/height
-addon.font = GameFontNormal:GetFont()
+addon.font = _G.GameFontNormal:GetFont()
 
 local defaultColors = {}
 defaultColors.background = {12 / 255, 12 / 255, 27 / 255, 1}
@@ -138,6 +138,8 @@ end
 
 addon.RXPFrame.SetStepFrameAnchor = SetStepFrameAnchor
 
+local isResizing
+
 addon.RXPFrame.OnMouseDown = function(self, button)
     if RXPData.lockFrames then
         return
@@ -164,7 +166,6 @@ addon.RXPFrame.OnMouseUp = function(self, button)
     isResizing = false
 end
 
-local isResizing
 addon.RXPFrame:SetScript("OnMouseDown", addon.RXPFrame.OnMouseDown)
 addon.RXPFrame:SetScript("OnMouseUp", addon.RXPFrame.OnMouseUp)
 addon.RXPFrame:EnableMouse(1)
@@ -496,7 +497,7 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number:SetBackdropColor(unpack(addon.colors.background))
         end
 
-        local titletext = step.title or "Step " .. tostring(index)
+        local titletext = step.title or ("Step " .. tostring(index))
 
         if titletext == "" then
             stepframe.number:SetAlpha(0)
@@ -554,7 +555,7 @@ function addon.SetStep(n, n2, loopback)
 
                 elementFrame.icon =
                     elementFrame:CreateFontString(nil, "OVERLAY")
-                elementFrame.icon:SetFontObject(GameFontNormalSmall)
+                elementFrame.icon:SetFontObject(_G.GameFontNormalSmall)
 
                 elementFrame:SetMouseMotionEnabled(true)
                 local ht = elementFrame:CreateTexture(nil, "HIGHLIGHT")
@@ -565,25 +566,25 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.highlight = ht
 
                 local function tpOnEnter(self)
-                    if self:IsForbidden() or GameTooltip:IsForbidden() then
+                    if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
                         return
                     end
                     local element = self.element or self:GetParent().element
                     if element and element.tooltip then
-                        GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -10)
-                        GameTooltip:ClearLines()
-                        GameTooltip:AddLine(element.tooltip, 1, 1, 1)
-                        GameTooltip:Show()
+                        _G.GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -10)
+                        _G.GameTooltip:ClearLines()
+                        _G.GameTooltip:AddLine(element.tooltip, 1, 1, 1)
+                        _G.GameTooltip:Show()
                     end
                 end
 
                 local function tpOnLeave(self)
-                    if self:IsForbidden() or GameTooltip:IsForbidden() then
+                    if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
                         return
                     end
                     local element = self.element or self:GetParent().element
                     if element and element.tooltip then
-                        GameTooltip:Hide()
+                        _G.GameTooltip:Hide()
                     end
                 end
 
@@ -850,7 +851,7 @@ GuideName.cog:HookScript("OnEnter", function(self) buttonToggle = GetTime() end)
 GuideName.cog:HookScript("OnLeave", function(self) self:Hide() end)
 
 function addon.RXPFrame.DropDownMenu()
-    EasyMenu(addon.RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
+    _G.EasyMenu(addon.RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
 end
 
 GuideName:SetScript("OnMouseDown", function(self, button)
@@ -875,7 +876,7 @@ ScrollFrame:SetPoint("BOTTOMRIGHT", BottomFrame, -20, 7)
 ScrollFrame.ScrollBar:SetPoint("TOPLEFT", ScrollFrame, "TOPRIGHT", 0, -18)
 
 function addon.UpdateScrollBar()
-    prefix = addon.GetTexture("Scrollbar/")
+    local prefix = addon.GetTexture("Scrollbar/")
 
     local s = ScrollFrame.ScrollBar.ScrollDownButton
     s.Normal:SetTexture(prefix .. "Down-Normal")
@@ -939,7 +940,7 @@ addon.RXPFrame.bottomMenu = {
         notCheckable = 1,
         func = addon.LoadGuide,
         arg1 = addon.currentGuide
-    }, {text = "Options...", notCheckable = 1, func = SlashCmdList.RXPG},
+    }, {text = "Options...", notCheckable = 1, func = _G.SlashCmdList.RXPG},
     {text = "Close", notCheckable = 1, func = function(self) self:Hide() end}
 }
 
@@ -968,8 +969,7 @@ function addon:LoadGuide(guide, OnLoad)
         addon.noGuide = nil
     end
 
-    startTime = GetTime()
-    CloseDropDownMenus()
+    _G.CloseDropDownMenus()
     addon.tickTimer = GetTime()
     if not (OnLoad and RXPCData and RXPCData.currentStep) then
         RXPCData.currentStep = 1
@@ -1069,7 +1069,7 @@ function addon:LoadGuide(guide, OnLoad)
                 local bottomMenu = addon.RXPFrame.bottomMenu
                 bottomMenu[1].text = "Go to step " .. n
                 bottomMenu[1].arg1 = n
-                EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
+                _G.EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
             else
                 self.timer = GetTime()
             end
@@ -1084,7 +1084,7 @@ function addon:LoadGuide(guide, OnLoad)
                                        BackdropTemplate)
             frame.number:SetPoint("BOTTOMRIGHT", frame)
             frame.number.text = frame.number:CreateFontString(nil, "OVERLAY")
-            frame.number.text:SetFontObject(GameFontNormalSmall)
+            frame.number.text:SetFontObject(_G.GameFontNormalSmall)
             frame.number.text:ClearAllPoints()
             frame.number.text:SetPoint("CENTER", frame.number, 0, 0)
             frame.number.text:SetJustifyH("CENTER")
@@ -1097,7 +1097,7 @@ function addon:LoadGuide(guide, OnLoad)
             frame.number:SetSize(frame.number.text:GetStringWidth() + 2, 10)
         end
 
-        frame.text:SetFontObject(GameFontNormalSmall)
+        frame.text:SetFontObject(_G.GameFontNormalSmall)
         frame.text:ClearAllPoints()
         frame.text:SetPoint("TOPLEFT", frame, 0, -5)
         frame.text:SetPoint("BOTTOMRIGHT", frame.number, "BOTTOMLEFT", 0, 0)
@@ -1422,15 +1422,15 @@ function addon.RXPFrame.GenerateMenuTable()
     table.insert(menuList, {
         text = "Options...",
         notCheckable = 1,
-        func = SlashCmdList.RXPG
+        func = _G.SlashCmdList.RXPG
     })
 
     table.insert(menuList, {
         text = "Import guide",
         notCheckable = 1,
         func = function()
-            InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
-            InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
         end
     })
 

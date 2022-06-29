@@ -32,7 +32,7 @@ events.train = {
 events.istrained = {"LEARNED_SPELL_IN_TAB", "TRAINER_UPDATE"}
 events.zone = {"ZONE_CHANGED_NEW_AREA"}
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
-events.skipgossip = {"GOSSIP_SHOW","GOSSIP_CLOSED"}
+events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED"}
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE"}
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
 events.emote = "PLAYER_TARGET_CHANGED"
@@ -77,20 +77,22 @@ addon.icons.xpto60 = addon.icons.xp
 
 function addon.error(msg) print(msg) end
 
-local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or GetNumQuestLogEntries
-local G_GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
-                               GetNumGossipActiveQuests
-local G_GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
-                                  GetNumGossipAvailableQuests
-local SelectOption = C_GossipInfo.SelectOption or SelectGossipOption
+local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
+                         _G.GetNumQuestLogEntries
+local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
+                               _G.GetNumGossipActiveQuests
+local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
+                                  _G.GetNumGossipAvailableQuests
+local SelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
+local GetQuestLogTitle = _G.GetQuestLogTitle
 
 addon.recentTurnIn = {}
 
 local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 if not IsTurnedIn then
-    IsTurnedIn = IsQuestFlaggedCompleted
+    IsTurnedIn = _G.IsQuestFlaggedCompleted
     if not IsTurnedIn then
-        IsTurnedIn = function(id) return GetQuestsCompleted()[id] end
+        IsTurnedIn = function(id) return _G.GetQuestsCompleted()[id] end
     end
 end
 
@@ -102,8 +104,8 @@ local IsQuestTurnedIn = function(id)
 end
 
 local function IsQuestComplete(id)
-    if GetNumQuestLogEntries then
-        for i = 1, GetNumQuestLogEntries() do
+    if GetNumQuests then
+        for i = 1, GetNumQuests() do
             local questLogTitleText, level, questTag, isHeader, isCollapsed,
                   isComplete, frequency, questID = GetQuestLogTitle(i);
             if questID == id then
@@ -134,7 +136,7 @@ local questNameCache = {}
 local questObjectivesCache = {}
 
 local db
-if QuestieLoader then db = QuestieLoader:ImportModule("QuestieDB") end
+if _G.QuestieLoader then db = _G.QuestieLoader:ImportModule("QuestieDB") end
 addon.questieDB = db
 
 function addon.FormatNumber(number, precision)
@@ -234,6 +236,7 @@ function addon.GetQuestObjectives(id, step)
     local err = false
     if IsOnQuest(id) then
         local questInfo = {}
+        local qInfo = {}
         for i = 1, GetNumQuests() do
             local questLogTitleText, level, questTag, isHeader, isCollapsed,
                   isComplete, frequency, questID
@@ -335,7 +338,7 @@ function addon.GetQuestObjectives(id, step)
             end
         end
         if not err then
-            if nObj == 0 then
+            if nObj == 0 then -- TODO undefined global
                 qInfo[1] = {
                     text = "Objective Complete",
                     type = "event",
@@ -928,10 +931,10 @@ function addon.functions.turnin(self, ...)
 
 end
 
-local questMonster = string.gsub(QUEST_MONSTERS_KILLED, "%d+%$", "")
+local questMonster = string.gsub(_G.QUEST_MONSTERS_KILLED, "%d+%$", "")
 questMonster = questMonster:gsub("%%s", "%.%*"):gsub("%%d", "%%d%+")
-local questItem = string.gsub(QUEST_ITEMS_NEEDED, "%%s", "%(%.%*%)"):gsub("%%d",
-                                                                          "%%d%+")
+local questItem = string.gsub(_G.QUEST_ITEMS_NEEDED, "%%s", "%(%.%*%)"):gsub(
+                      "%%d", "%%d%+")
 
 function addon.UpdateQuestCompletionData(self)
 
@@ -1427,7 +1430,7 @@ function addon.functions.fp(self, ...)
     local event, arg1, arg2 = ...
     local element = self.element
     if (element.fpId and RXPCData.flightPaths[element.fpId]) or
-        (event == "UI_INFO_MESSAGE" and arg2 == ERR_NEWTAXIPATH and
+        (event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH and
             self.element.step.active) then addon.SetElementComplete(self) end
 end
 
@@ -1522,7 +1525,7 @@ function addon.functions.collect(self, ...)
         qty = tonumber(qty)
         element.qty = qty or 1
         element.itemName = addon.GetItemName(id)
---[[
+        --[[
 .collect itemId,quantity,questId,objFlags,flags
 flags:
 1 (0x1): disables the checkBox
@@ -1537,16 +1540,10 @@ Set objN to 1 if you want ot track obj1, 0 otherwise for each quest objective
 obJflag = obj1*2^0 + obj2*2^1 + obj3*2^2 + ... + objN*2^(N-1)
 if this parameter is set to 0, element will complete if you have the quest in your quest log
 ]]
-        if flags < 0 then
-            flags = 3
-        end
-        if bit.band(flags,0x1) == 0x1 then
-            element.textOnly = true
-        end
-        if bit.band(flags,0x2) == 0x2 then
-            element.subtract = true
-        end
-        if bit.band(flags,0x4) == 0x4 then
+        if flags < 0 then flags = 3 end
+        if bit.band(flags, 0x1) == 0x1 then element.textOnly = true end
+        if bit.band(flags, 0x2) == 0x2 then element.subtract = true end
+        if bit.band(flags, 0x4) == 0x4 then
             element.checkObjectives = true
         end
 
@@ -1606,14 +1603,16 @@ if this parameter is set to 0, element will complete if you have the quest in yo
                 if element.subtract then
                     for _, obj in ipairs(objIndex) do
                         if objectives[obj] then
-                            numRequired = numRequired - objectives[obj].numFulfilled
+                            numRequired = numRequired -
+                                              objectives[obj].numFulfilled
                         end
                     end
                     if numRequired < 0 then numRequired = 0 end
                 elseif element.checkObjectives then
                     isComplete = #objIndex > 0
                     for _, obj in ipairs(objIndex) do
-                        isComplete = isComplete and objectives[obj] and objectives[obj].finished
+                        isComplete = isComplete and objectives[obj] and
+                                         objectives[obj].finished
                     end
                 end
             end
@@ -1621,16 +1620,17 @@ if this parameter is set to 0, element will complete if you have the quest in yo
     end
 
     local count = GetItemCount(element.id)
-    for i = 1, INVSLOT_LAST_EQUIPPED do
+    for i = 1, _G.INVSLOT_LAST_EQUIPPED do
         if GetInventoryItemID("player", i) == element.id then
             count = count + 1
             break
         end
     end
 
-    if (numRequired > 0 and count > numRequired) or (questId and
-        ((element.objFlags == 0 and IsOnQuest(questId)) or isComplete or
-            IsQuestTurnedIn(questId) or IsQuestComplete(questId))) then
+    if (numRequired > 0 and count > numRequired) or
+        (questId and
+            ((element.objFlags == 0 and IsOnQuest(questId)) or isComplete or
+                IsQuestTurnedIn(questId) or IsQuestComplete(questId))) then
         count = numRequired
     end
 
@@ -1687,7 +1687,7 @@ function addon.functions.destroy(self, ...)
         end
 
         element.id = id
-        element.qty = qty or 1
+        element.qty = qty or 1 -- TODO undefined global
         element.itemName = addon.GetItemName(id)
 
         if text and text ~= "" then
@@ -1793,9 +1793,9 @@ function addon.functions.xp(self, ...)
             (element.level == level and currentXP >= maxXP * element.xp)))) ==
         not reverseLogic then
         if element.skipstep then
-            if step.active and not step.completed then
+            if step.active and not step.completed then -- TODO undefined global
                 addon.updateSteps = true
-                step.completed = true
+                step.completed = true -- TODO undefined global
             end
         else
             addon.SetElementComplete(self, true)
@@ -1863,8 +1863,8 @@ function addon.functions.reputation(self, ...)
         local operator, standing, rep
         if str then
             str = str:gsub(" ", "")
-            operator, standing, rep = str:match(
-                                                "(<?)%s*([%d%w]+)([%+%.%-]?%d*)")
+            operator, standing, rep =
+                str:match("(<?)%s*([%d%w]+)([%+%.%-]?%d*)")
         end
 
         faction = tonumber(faction)
@@ -2467,7 +2467,7 @@ end
 local function LinkOnClick(self)
 
     addon.url = self.element.url
-    StaticPopup_Show("RXP_Link")
+    _G.StaticPopup_Show("RXP_Link")
     addon.url = nil
 end
 
@@ -2493,10 +2493,10 @@ function addon.functions.link(self, ...)
     end
 end
 
-StaticPopupDialogs["RXP_Link"] = {
+_G.StaticPopupDialogs["RXP_Link"] = {
     text = "Press Ctrl+C to copy the URL to your clipboard",
     hasEditBox = 1,
-    button1 = OKAY,
+    button1 = _G.OKAY,
     OnShow = function(self)
         if addon.url then
             local box = getglobal(self:GetName() .. "EditBox")
@@ -2633,10 +2633,10 @@ function addon.functions.blastedLands(self)
 end
 
 function addon.PutItemInBank(bagContents)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
     if CursorHasItem() and isBankOpened then
-        local bank = {BANK_CONTAINER}
-        for i = NUM_BAG_SLOTS + 1, NUM_BAG_SLOTS + NUM_BANKBAGSLOTS do
+        local bank = {_G.BANK_CONTAINER}
+        for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
             table.insert(bank, i)
         end
 
@@ -2663,7 +2663,7 @@ end
 function addon.PutItemInBags(bagContents)
     if CursorHasItem() then
         if not bagContents then bagContents = {} end
-        for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+        for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
             if not bagContents[bag] then bagContents[bag] = {} end
             local slots, bagtype = GetContainerNumFreeSlots(bag)
             if bagtype == 0 and slots > 0 then
@@ -2684,7 +2684,7 @@ end
 function addon.PutItemInQuiver(bagContents)
     if CursorHasItem() then
         if not bagContents then bagContents = {} end
-        for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+        for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
             if not bagContents[bag] then bagContents[bag] = {} end
             local slots, bagtype = GetContainerNumFreeSlots(bag)
             if (bagtype == 1 or bagtype == 2) and slots > 0 then
@@ -2704,7 +2704,7 @@ end
 
 function addon.GoThroughBags(itemList, func)
     local bagContents = {}
-    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+    for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
             if id then
@@ -2721,7 +2721,7 @@ function addon.GoThroughBags(itemList, func)
 end
 
 function addon.DepositItems(itemList)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -2749,7 +2749,7 @@ function addon.DepositItems(itemList)
 end
 
 function addon.IsItemInBags(itemList, reverseLogic)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -2773,8 +2773,8 @@ end
 
 function addon.GoThroughBank(itemList, func)
 
-    local bank = {BANK_CONTAINER}
-    for i = NUM_BAG_SLOTS + 1, NUM_BAG_SLOTS + NUM_BANKBAGSLOTS do
+    local bank = {_G.BANK_CONTAINER}
+    for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
         table.insert(bank, i)
     end
 
@@ -2797,7 +2797,7 @@ function addon.GoThroughBank(itemList, func)
 end
 
 function addon.WithdrawItems(itemList)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -2825,7 +2825,7 @@ function addon.WithdrawItems(itemList)
 end
 
 function addon.IsItemInBank(itemList, reverseLogic)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -2986,7 +2986,7 @@ function addon.functions.buy(self, ...)
             end
         end
     end
-    MerchantFrame:Hide()
+    _G.MerchantFrame:Hide()
 
 end
 
@@ -2994,7 +2994,7 @@ function addon.functions.skipgossip(self, text, ...)
     if type(self) == "string" then
         local element = {}
         element.args = {...}
-        element.gossipId = id
+        element.gossipId = id -- TODO undefined global
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         return element
@@ -3006,9 +3006,9 @@ function addon.functions.skipgossip(self, text, ...)
     local event = text
     if event == "GOSSIP_SHOW" then
         local id = tonumber(args[1])
-        --print(id,'GS',nArgs)
+        -- print(id,'GS',nArgs)
         if nArgs == 0 or not id then
-            if G_GetNumAvailableQuests() == 0 and G_GetNumActiveQuests() == 0 then
+            if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
                 SelectOption(1)
             end
             return
@@ -3021,7 +3021,7 @@ function addon.functions.skipgossip(self, text, ...)
             elseif id > 9 then
                 return
             end
-            if G_GetNumAvailableQuests() == 0 and G_GetNumActiveQuests() == 0 then
+            if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
                 SelectOption(id)
             end
         elseif id == npcId then
@@ -3053,9 +3053,9 @@ function addon.functions.maxlevel(self, ...)
         end
 
         if not level then
-            return addon.error("Error parsing guide " ..
-            addon.currentGuideName ..
-            ": Invalid syntax\n" .. self)
+            return addon.error(
+                       "Error parsing guide " .. addon.currentGuideName ..
+                           ": Invalid syntax\n" .. self)
         end
 
         element.xp = tonumber(xp)
@@ -3230,7 +3230,7 @@ function addon.functions.emote(self, text, token, unitId, callback, ...)
     local step = element.step
     local id = element.id
 
-    --print('g:',addon.GetNpcId(),addon.GetNpcId() == element.id)
+    -- print('g:',addon.GetNpcId(),addon.GetNpcId() == element.id)
     if not step.active then return end
     local group = addon.currentGuide.group
     local emote = element.emote
@@ -3238,7 +3238,7 @@ function addon.functions.emote(self, text, token, unitId, callback, ...)
         if RXPG[group][element.callback](self, text, token, unitId, callback,
                                          ...) then DoEmote(emote) end
     elseif addon.GetNpcId() == element.id or not id then
-        --print('ok')
+        -- print('ok')
         DoEmote(emote)
     end
 
@@ -3276,13 +3276,13 @@ function addon.functions.openmap(self, text, map, callback, ...)
 
     if element.callback then
         if RXPG[group][element.callback](self, text, map, callback, ...) then
-            WorldMapFrame:Show()
-            WorldMapFrame:SetMapID(mapId)
+            _G.WorldMapFrame:Show()
+            _G.WorldMapFrame:SetMapID(mapId)
         end
     elseif not element.mapOpened then
         element.mapOpened = true
-        WorldMapFrame:Show()
-        WorldMapFrame:SetMapID(mapId)
+        _G.WorldMapFrame:Show()
+        _G.WorldMapFrame:SetMapID(mapId)
     end
 
 end
@@ -3442,48 +3442,36 @@ function addon.functions.scenario(self, ...)
 end
 
 function addon.functions.rescue()
-	local _,seat = UnitVehicleSeatInfo("vehicle",2)
-	if seat then
-		return true
-	end
+    local _, seat = UnitVehicleSeatInfo("vehicle", 2)
+    if seat then return true end
 end
 
 function addon.functions.ironchain()
-	local id
-	for i = 1,5 do
-		_,id = UnitAura("vehicle",i)
-		if id == 133273 then
-			return true
-		end
-	end
+    local id
+    for i = 1, 5 do
+        _, id = UnitAura("vehicle", i)
+        if id == 133273 then return true end
+    end
 end
 
-function addon.functions.bombdispenser()
-    return GetItemCount(40686) > 0
-end
+function addon.functions.bombdispenser() return GetItemCount(40686) > 0 end
 
 function addon.functions.niffelen()
     local seatCount = 0
-    for i = 2,UnitVehicleSeatCount("vehicle") do
-        local _,seat = UnitVehicleSeatInfo("vehicle",i)
-        if seat then
-            seatCount = seatCount + 1
-        end
-        --print(seat)
+    for i = 2, UnitVehicleSeatCount("vehicle") do
+        local _, seat = UnitVehicleSeatInfo("vehicle", i)
+        if seat then seatCount = seatCount + 1 end
+        -- print(seat)
     end
-    --print(seatCount)
-	if seatCount < 3 then
-		return true
-	end
+    -- print(seatCount)
+    if seatCount < 3 then return true end
 end
 
 function addon.functions.compulsion()
 
-	for i = 1,32 do
-		local _, _, _, _, _, _, _, _, _, id = UnitAura("player",i)
-		if id == 47098 then
-			return false
-		end
-	end
-	return true
+    for i = 1, 32 do
+        local _, _, _, _, _, _, _, _, _, id = UnitAura("player", i)
+        if id == 47098 then return false end
+    end
+    return true
 end
