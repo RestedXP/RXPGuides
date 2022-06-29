@@ -81,11 +81,6 @@ local _G = _G
 
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
-local GetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
-                               _G.GetNumGossipActiveQuests
-local GetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
-                                  _G.GetNumGossipAvailableQuests
-local SelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
 local GetQuestLogTitle = _G.GetQuestLogTitle
 
 addon.recentTurnIn = {}
@@ -2994,6 +2989,13 @@ function addon.functions.buy(self, ...)
 
 end
 
+local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
+                                 _G.GetNumGossipActiveQuests
+local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
+                                    _G.GetNumGossipAvailableQuests
+local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
+--local GossipGetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
+
 function addon.functions.skipgossip(self, text, ...)
     if type(self) == "string" then
         local element = {}
@@ -3011,8 +3013,8 @@ function addon.functions.skipgossip(self, text, ...)
         local id = tonumber(args[1])
         -- print(id,'GS',nArgs)
         if nArgs == 0 or not id then
-            if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
-                SelectOption(1)
+            if GossipGetNumAvailableQuests() == 0 and GossipGetNumActiveQuests() == 0 then
+                GossipSelectOption(1)
             end
             return
         end
@@ -3024,8 +3026,8 @@ function addon.functions.skipgossip(self, text, ...)
             elseif id > 9 then
                 return
             end
-            if GetNumAvailableQuests() == 0 and GetNumActiveQuests() == 0 then
-                SelectOption(id)
+            if GossipGetNumAvailableQuests() == 0 and GossipGetNumActiveQuests() == 0 then
+                GossipSelectOption(id)
             end
         elseif id == npcId then
             if not element.npcId then
@@ -3035,7 +3037,7 @@ function addon.functions.skipgossip(self, text, ...)
                 element.index = ((element.index - 1) % (nArgs - 1)) + 2
             end
             local option = tonumber(args[element.index])
-            if option then SelectOption(option) end
+            if option then GossipSelectOption(option) end
         end
     elseif event == "GOSSIP_CLOSED" then
         element.npcId = nil
