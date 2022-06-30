@@ -275,10 +275,10 @@ local cachedData = {}
 function addon.ReadCacheData(mode)
     if not cachedData.base then
         local base = select(2, BNGetInfo())
-
         if not base then
             cachedData.base = RXPData.cache
         else
+            base = base:lower()
             local k = #base
             if k > 16 then
                 base = base:sub(k - 15, -1)

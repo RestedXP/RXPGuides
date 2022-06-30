@@ -2946,18 +2946,18 @@ function addon.functions.buy(self, ...)
     local id = element.id
     local count = GetItemCount(id)
     local total = element.qty - count
-    local isQuestComplete
     local objIndex = element.objIndex
     local questId = element.questId
 
-    if event == "QUEST_LOG_UPDATE" then
+    if event ~= "BAG_UPDATE_DELAYED" then
         if addon.IsQuestComplete(questId) or addon.IsQuestTurnedIn(questId) then
             element.isQuestComplete = true
         elseif objIndex and event then
             local quest = addon.GetQuestObjectives(element.questId, step.index)
             element.isQuestComplete = quest[objIndex].finished
         end
-    elseif event == "MERCHANT_SHOW" and total > 0 and not element.isQuestComplete then
+    end
+    if event == "MERCHANT_SHOW" and total > 0 and not element.isQuestComplete then
         element.closeWindow = false
         for i = 1, GetMerchantNumItems() do
             local link = GetMerchantItemLink(i)
