@@ -107,7 +107,7 @@ function addon.GetQuestLog(QL)
     local qError
     local eStep
     local maxQuests
-    if addon.version == "CLASSIC" then
+    if addon.game == "CLASSIC" then
         maxQuests = 20
     else
         maxQuests = 25

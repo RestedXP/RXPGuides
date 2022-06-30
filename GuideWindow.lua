@@ -1402,7 +1402,7 @@ function addon.RXPFrame.GenerateMenuTable()
 
     table.insert(menuList, {text = "", notCheckable = 1, isTitle = 1})
 
-    if addon.version == "CLASSIC" then
+    if addon.game == "CLASSIC" then
         local hctext
         if RXPData and RXPCData.hardcore then
             hctext = "Deactivate Hardcore mode"

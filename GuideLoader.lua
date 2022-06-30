@@ -17,7 +17,7 @@ local LibDeflate = LibStub("LibDeflate")
 local b64 = LibStub("LibBase64-1.0")
 
 local RXPG = addon.RXPG
-local version = strlower(addon.version)
+local game = strlower(addon.game)
 local suffix = 1
 
 -- File guides and string-imports need different load order support
@@ -43,7 +43,7 @@ local function applies(text)
                     uppercase = "DEATHKNIGHT"
                 end
                 v = v and
-                        ((uppercase == class or uppercase == addon.version or
+                        ((uppercase == class or uppercase == addon.game or
                             entry == race or entry == faction or playerLevel >=
                             level) == state)
             end
@@ -309,6 +309,7 @@ function addon.ReadCacheData(mode)
         return
     elseif not cachedData.number then
         cachedData.number = addon.A32(cachedData.base)
+        cachedData.number = cachedData.number - math.floor(addon.version/1e2)
         cachedData.string = tostring(cachedData.number)
     end
 
@@ -335,6 +336,10 @@ function RXPG.ImportString(str, frame)
     addon.bufferSize = 0
     local errorMsg
     local nGuides = str:match("^(%d+)|")
+    local base = str:match("|(%d+)$")
+    if tonumber(base) < addon.version then
+        return
+    end
     for hash, mode, content in string.gmatch(str, "(%-?%d+)(%D)([%w%+%/%=]+)") do
         if DEBUG then print('g:', hash) end
         local validData, data = CheckDataIntegrity(content, tonumber(hash),
@@ -595,12 +600,12 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
         elseif not skip then
             if currentStep > 0 then
                 if currentStep > 1 or
-                    (version == "tbc" and not (guide.classic or guide.wotlk)) or
-                    guide[version] then
+                    (game == "tbc" and not (guide.classic or guide.wotlk)) or
+                    guide[game] then
                     parseLine(line)
                 else
                     addon.guide = false
-                    return nil, version
+                    return nil, game
                 end
             elseif currentStep == 0 then
                 -- print(line)

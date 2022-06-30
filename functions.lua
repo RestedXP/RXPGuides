@@ -2,7 +2,7 @@ local addonName, addon = ...
 
 local faction = UnitFactionGroup("player")
 local _, class = UnitClass("player")
-local version = select(4, GetBuildInfo())
+local gameVersion = select(4, GetBuildInfo())
 local RXPG = addon.RXPG
 addon.functions = {}
 addon.functions.__index = addon.functions
@@ -1638,7 +1638,7 @@ if this parameter is set to 0, element will complete if you have the quest in yo
             element.text = nil
             addon.UpdateStepText(self)
         end
-    elseif version and version > 90000 then
+    elseif gameVersion and gameVersion > 90000 then
         if element.rawtext then
             element.tooltipText = addon.icons.collect .. element.rawtext
             element.text = string.format("%s\n%d/%d %s", element.rawtext, count,
@@ -2112,7 +2112,7 @@ function addon.functions.next(skip, guide)
         local nextGuide
         local guideSkip = addon.GetGuideTable(group, next)
 
-        if addon.version ~= "CLASSIC" then
+        if addon.game ~= "CLASSIC" then
             local faction = next:match("Aldor") or next:match("Scryer")
             if not addon.AldorScryerCheck(faction) then
                 if faction == "Aldor" then

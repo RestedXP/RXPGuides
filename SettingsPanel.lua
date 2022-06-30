@@ -250,7 +250,7 @@ function addon.CreateOptionsPanel()
             "Automatically adds important npcs to your unitscan list"
     end
 
-    if addon.version == "CLASSIC" then
+    if addon.game == "CLASSIC" then
         button = CreateFrame("CheckButton", "$parentHC", addon.RXPOptions,
                              "ChatConfigCheckButtonTemplate");
         addon.hardcoreButton = button
@@ -363,7 +363,7 @@ function addon.CreateOptionsPanel()
                           "Adjusts the batching window tolerance, used for hearthstone batching",
                           slider, 0, -25, 1, "1", "100")
 
-    if addon.version == "CLASSIC" then
+    if addon.game == "CLASSIC" then
         slider = CreateSlider(RXPCData, "phase", 1, 6, "Content phase: %d",
                               "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",
                               slider, 0, -25, 1, "1", "6")

@@ -5,15 +5,15 @@ local _G = _G
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 addon.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")
-local addonVersion = 30006
-local version = select(4, GetBuildInfo())
+addon.version = 40000
+local gameVersion = select(4, GetBuildInfo())
 
-if version < 20000 then
-    addon.version = "CLASSIC"
-elseif version > 20000 and version < 30000 then
-    addon.version = "TBC"
+if gameVersion < 20000 then
+    addon.game = "CLASSIC"
+elseif gameVersion > 20000 and gameVersion < 30000 then
+    addon.game = "TBC"
 else
-    addon.version = "WOTLK"
+    addon.game = "WOTLK"
 end
 
 addon.questQueryList = {}
@@ -37,7 +37,7 @@ local questFrame = CreateFrame("Frame");
 
 local SoMtimer
 local function SoMCheck()
-    if version > 20000 then
+    if gameVersion > 20000 then
         return
     elseif not SoMtimer then
         SoMtimer = GetTime()
@@ -75,12 +75,12 @@ function RXPG_init()
     RXPCData = RXPCData or {}
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
-    RXPCData.hardcore = (addon.version == "CLASSIC") and RXPCData.hardcore
-    if not RXPData.addonVersion or RXPData.addonVersion < addonVersion then
-        RXPData.addonVersion = addonVersion
-        RXPCData.phase = 4
+    RXPCData.hardcore = (addon.game == "CLASSIC") and RXPCData.hardcore
+    if not RXPData.addonVersion or RXPData.addonVersion < addon.version then
+        RXPData.addonVersion = addon.version
+        RXPCData.phase = 6
     end
-    RXPCData.phase = RXPCData.phase or 4
+    RXPCData.phase = RXPCData.phase or 6
     RXPCData.SoM = RXPCData.SoM or 1
     SoMCheck()
     addon.RenderFrame()
@@ -481,7 +481,7 @@ function addon:OnInitialize()
                                       RXPCData.currentGuideName)
     if not guide and RXPData.autoLoadGuides then
         guide = addon.defaultGuide
-        if addon.version == "TBC" and
+        if addon.game == "TBC" and
             (UnitLevel("player") == 58 and not guide.boost58) then
             guide = nil
         end
@@ -769,7 +769,7 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
 end)
 
 function addon.HardcoreToggle()
-    if RXPCData and addon.version == "CLASSIC" then
+    if RXPCData and addon.game == "CLASSIC" then
         RXPCData.hardcore = not RXPCData.hardcore
         addon.RenderFrame()
         if addon.hardcoreButton then
@@ -786,7 +786,7 @@ function addon.GAToggle()
 end
 
 function addon.AldorScryerCheck(faction)
-    if addon.version == "CLASSIC" then return true end
+    if addon.game == "CLASSIC" then return true end
     local name, description, standingID, barMin, barMax, aldorRep =
         GetFactionInfoByID(932)
     local name, description, standingID, barMin, barMax, scryerRep =
