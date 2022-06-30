@@ -36,8 +36,8 @@ addon.questConversion = {
     [9684] = 63866 -- blood elf rez quest
 }
 
-local version = select(4, GetBuildInfo())
-if version < 30000 then
+local gameVersion = select(4, GetBuildInfo())
+if gameVersion < 30000 then
     addon.mapId = {
         ["Durotar"] = 1411,
         ["Mulgore"] = 1412,
@@ -3625,206 +3625,279 @@ s["WARLOCK"] = {
 }
 
 s["MAGE"] = {
+
+    [1] = {
+        1459, --Arcane Intellect [Rank 1]
+    },
     [4] = {
-        1459, -- Arcane Intellect
-        116, -- frostbolt
-        5504 -- Conjure water
+        5504, --Conjure Water [Rank 1]
+        116, --Frostbolt [Rank 1]
     },
     [6] = {
-        2136, -- fire blast
-        143, -- fireball r2
-        587 -- conjure food
+        587, --Conjure Food [Rank 1]
+        2136, --Fire Blast [Rank 1]
+        143, --Fireball [Rank 2]
     },
     [8] = {
-        205, -- frostbolt r2
-        118 -- polymorph
+        5143, --Arcane Missiles [Rank 1]
+        205, --Frostbolt [Rank 2]
+        118, --Polymorph [Rank 1]
     },
     [10] = {
-        7300, -- frost armor r2
-        122, -- frost nova
-        5505 -- conjure water r2
+        5505, --Conjure Water [Rank 2]
+        7300, --Frost Armor [Rank 2]
+        122, --Frost Nova [Rank 1]
     },
     [12] = {
-        597, -- conjure food
-        145, -- fireball r3
-        130 -- slow fall
+        597, --Conjure Food [Rank 2]
+        604, --Dampen Magic [Rank 1]
+        145, --Fireball [Rank 3]
+        130, --Slow Fall
     },
     [14] = {
-        1449, -- arcane explosion
-        1460, -- arcane intellect
-        2137, -- fire blast
-        837 -- frostbolt
+        1449, --Arcane Explosion [Rank 1]
+        1460, --Arcane Intellect [Rank 2]
+        2137, --Fire Blast [Rank 2]
+        837, --Frostbolt [Rank 3]
     },
     [16] = {
-        2120 -- flamestrike
+        5144, --Arcane Missiles [Rank 2]
+        2120, --Flamestrike [Rank 1]
     },
     [18] = {
-        475, -- remove lesser curse
-        3140 -- fireball r4
+        1008, --Amplify Magic [Rank 1]
+        3140, --Fireball [Rank 4]
+        475, --Remove Curse
     },
     [20] = {
-        1953, -- blink
-        10, -- blizzard
-        5506, -- conure water r3
-        12051, -- evocation
-        7103, -- frost armor r3
-        7322, -- frostbolt r4
-        1463, -- mana shield
-        12824, -- polymorph r2
-        12271, -- exodar
-        3562, -- ironforge
-        3561, -- stormwind
-        3567, -- orgrimmar
-        32272, -- silvermoon
-        3563 -- undercity
+        1953, --Blink
+        10, --Blizzard [Rank 1]
+        5506, --Conjure Water [Rank 3]
+        12051, --Evocation
+        543, --Fire Ward [Rank 1]
+        7301, --Frost Armor [Rank 3]
+        7322, --Frostbolt [Rank 4]
+        1463, --Mana Shield [Rank 1]
+        12824, --Polymorph [Rank 2]
+        32271, --Teleport: Exodar
+        3562, --Teleport: Ironforge
+        3567, --Teleport: Orgrimmar
+        32272, --Teleport: Silvermoon
+        3561, --Teleport: Stormwind
+        3563, --Teleport: Undercity
     },
     [22] = {
-        8437, -- arcane explosion r2
-        990, -- conure food r3
-        2138, -- fireblast
-        2948 -- scorch
+        8437, --Arcane Explosion [Rank 2]
+        990, --Conjure Food [Rank 3]
+        2138, --Fire Blast [Rank 3]
+        6143, --Frost Ward [Rank 1]
+        2948, --Scorch [Rank 1]
     },
     [24] = {
-        2139, -- counterspell
-        8400, -- fireball r5
-        2121 -- flamastrike r2
+        5145, --Arcane Missiles [Rank 3]
+        2139, --Counterspell
+        8450, --Dampen Magic [Rank 2]
+        8400, --Fireball [Rank 5]
+        2121, --Flamestrike [Rank 2]
+        12505, --Pyroblast [Rank 2]
     },
     [26] = {
-        120, -- cone of cold
-        8406 -- frostbolt r5
+        120, --Cone of Cold [Rank 1]
+        865, --Frost Nova [Rank 2]
+        8406, --Frostbolt [Rank 5]
     },
     [28] = {
-        1461, -- arcane intellect r3
-        6141, -- blizzard r2
-        759, -- conure mana agate
-        8494, -- mana shield r2
-        8444 -- scorch r2
+        1461, --Arcane Intellect [Rank 3]
+        6141, --Blizzard [Rank 1]
+        759, --Conjure Mana Gem [Rank 1]
+        8494, --Mana Shield [Rank 2]
+        8444, --Scorch [Rank 2]
     },
     [30] = {
-        8438, -- arcane explosion r3
-        6127, -- conjure water r4
-        8412, -- fire blast r4
-        8101, -- fireball r6
-        7302, -- ice armor
-        45438, -- ice block
-        3565, -- darnassus
-        3566 -- thunder bluff
+        8455, --Amplify Magic [Rank 2]
+        8438, --Arcane Explosion [Rank 3]
+        6127, --Conjure Water [Rank 4]
+        8412, --Fire Blast [Rank 4]
+        8457, --Fire Ward [Rank 2]
+        8401, --Fireball [Rank 6]
+        7302, --Ice Armor [Rank 1]
+        45438, --Ice Block
+        3565, --Teleport: Darnassus
+        3566, --Teleport: Thunder Bluff
+        12522, --Pyroblast [Rank 3]
     },
     [32] = {
-        6129, -- conjure food
-        8422, -- flamestrike r3
-        8407 -- frostbolt r6
+        8416, --Arcane Missiles [Rank 4]
+        6129, --Conjure Food [Rank 2]
+        8422, --Flamestrike [Rank 3]
+        8461, --Frost Ward [Rank 2]
+        8407, --Frostbolt [Rank 6]
     },
     [34] = {
-        8492, -- cone of cold r2
-        6117, -- mage armor
-        8445 -- scorch r3
+        8492, --Cone of Cold [Rank 2]
+        6117, --Mage Armor [Rank 1]
+        8445, --Scorch [Rank 3]
+    },
+    [35] = {
+        49361, --Portal: Stonard
+        49360, --Portal: Theramore
+        49358, --Teleport: Stonard
+        49359, --Teleport: Theramore
     },
     [36] = {
-        8427, -- blizzard r3
-        8402, -- fireball r7
-        8495 -- mana shield
+        8427, --Blizzard [Rank 3]
+        8451, --Dampen Magic [Rank 3]
+        8402, --Fireball [Rank 7]
+        8495, --Mana Shield [Rank 3]
+        13018, --Blast Wave [Rank 2]
+        12523, --Pyroblast [Rank 4]
     },
     [38] = {
-        8439, -- arcane explosion r4
-        3552, -- conjure mana jade
-        8413, -- fire blast r5
-        8409 -- frostbolt r7
+        8439, --Arcane Explosion [Rank 4]
+        3552, --Conjure Mana Gem [Rank 2]
+        8413, --Fire Blast [Rank 5]
+        8408, --Frostbolt [Rank 7]
     },
     [40] = {
-        10138, -- conjure water r5
-        8423, -- flamestrike r4
-        7320, -- ice armor r2
-        12825, -- polymorph r3
-        8446 -- scorch r4
+        8417, --Arcane Missiles [Rank 5]
+        10138, --Conjure Water [Rank 5]
+        8458, --Fire Ward [Rank 3]
+        8423, --Flamestrike [Rank 4]
+        6131, --Frost Nova [Rank 3]
+        7320, --Ice Armor [Rank 2]
+        12825, --Polymorph [Rank 3]
+        8446, --Scorch [Rank 4]
+        32266, --Portal: Exodar
+        11416, --Portal: Ironforge
+        11417, --Portal: Orgrimmar
+        32267, --Portal: Silvermoon
+        10059, --Portal: Stormwind
+        11418, --Portal: Undercity
     },
     [42] = {
-        10156, -- arcane intellect r4
-        10159, -- cone of cold r3
-        10144, -- conure food r5
-        10148 -- fireball r8
+        10169, --Amplify Magic [Rank 3]
+        10156, --Arcane Intellect [Rank 4]
+        10159, --Cone of Cold [Rank 3]
+        10144, --Conjure Food [Rank 5]
+        10148, --Fireball [Rank 8]
+        8462, --Frost Ward [Rank 3]
+        12524, --Pyroblast [Rank 5]
     },
     [44] = {
-        10185, -- blizzard r4
-        10179, -- frostbolt r8
-        10191 -- mana shield r4
+        10185, --Blizzard [Rank 4]
+        10179, --Frostbolt [Rank 8]
+        10191, --Mana Shield [Rank 4]
+        13019, --Blast Wave [Rank 3]
     },
     [46] = {
-        13031, -- ice barrier r2
-        10201, -- arcane explosion r5
-        10197, -- fire blast r6
-        22782, -- mage armor r2
-        10205 -- scorch r5
+        10201, --Arcane Explosion [Rank 5]
+        10197, --Fire Blast [Rank 6]
+        22782, --Mage Armor [Rank 2]
+        10205, --Scorch [Rank 5]
+        13031, --Ice Barrier [Rank 2]
     },
     [48] = {
-        10053, -- conujre mana citrine
-        10149, -- fireball r9
-        10215 -- flamestrike r5
+        10211, --Arcane Missiles [Rank 6]
+        10053, --Conjure Mana Gem [Rank 3]
+        10173, --Dampen Magic [Rank 4]
+        10149, --Fireball [Rank 9]
+        10215, --Flamestrike [Rank 5]
+        12525, --Pyroblast [Rank 6]
     },
     [50] = {
-        10160, -- cone of cold r4
-        10139, -- conure water r6
-        10180, -- frotbolt r9
-        10219 -- ice armor r3
+        10160, --Cone of Cold [Rank 4]
+        10139, --Conjure Water [Rank 6]
+        10223, --Fire Ward [Rank 4]
+        10180, --Frostbolt [Rank 9]
+        10219, --Ice Armor [Rank 3]
+        11419, --Portal: Darnassus
+        11420, --Portal: Thunder Bluff
     },
     [52] = {
-        13032, -- ice barrier r3
-        10186, -- blizzard r5
-        10192, -- mana shield r5
-        10206 -- scorch r6
+        10186, --Blizzard [Rank 5]
+        10145, --Conjure Food [Rank 6]
+        10177, --Frost Ward [Rank 4]
+        10192, --Mana Shield [Rank 5]
+        10206, --Scorch [Rank 6]
+        13020, --Blast Wave [Rank 4]
+        13032, --Ice Barrier [Rank 3]
     },
     [54] = {
-        10202, -- arcane explosion r6
-        10199, -- fire blast r7
-        10150 -- fireball r10
+        10170, --Amplify Magic [Rank 4]
+        10202, --Arcane Explosion [Rank 6]
+        10199, --Fire Blast [Rank 7]
+        10150, --Fireball [Rank 10]
+        10230, --Frost Nova [Rank 4]
+        12526, --Pyroblast [Rank 7]
     },
     [56] = {
-        10157, -- arcane intellect r5
-        10216, -- flamestrike r6
-        10181 -- frostboltr10
+        23028, --Arcane Brilliance [Rank 1]
+        10157, --Arcane Intellect [Rank 5]
+        10212, --Arcane Missiles [Rank 7]
+        10216, --Flamestrike [Rank 6]
+        10181, --Frostbolt [Rank 10]
+        33041, --Dragon's Breath [Rank 2]
     },
     [58] = {
-        13033, -- ice barrier r4
-        10161, -- cone of cold r5
-        10054, -- conure mana ruby
-        22783, -- mage armor r3
-        10207 -- scorch r7
+        10161, --Cone of Cold [Rank 5]
+        10054, --Conjure Mana Gem [Rank 4]
+        22783, --Mage Armor [Rank 3]
+        10207, --Scorch [Rank 7]
+        13033, --Ice Barrier [Rank 4]
     },
     [60] = {
-        10187, -- blizzard r6
-        28612, -- conjure food r7
-        10140, -- conjure water r7
-        10151, -- fireball r11
-        25306, -- fireball r12
-        25304, -- frostbolt r11
-        10220, -- ice armor r4
-        10193, -- mana shield r6
-        12826, -- polymorph r4
-        33690, -- shat - alliance
-        35715 -- shat - horde
+        25345, --Arcane Missiles [Rank 8]
+        10187, --Blizzard [Rank 6]
+        28612, --Conjure Food [Rank 7]
+        10140, --Conjure Water [Rank 7]
+        10174, --Dampen Magic [Rank 5]
+        10225, --Fire Ward [Rank 5]
+        10151, --Fireball [Rank 11]
+        25306, --Fireball [Rank 12]
+        28609, --Frost Ward [Rank 5]
+        25304, --Frostbolt [Rank 11]
+        10220, --Ice Armor [Rank 4]
+        10193, --Mana Shield [Rank 6]
+        12826, --Polymorph [Rank 4]
+        33690, --Teleport: Shattrath (Ally)
+        35715, --Teleport: Shattrath (Horde)
+        13021, --Blast Wave [Rank 5]
+        18809, --Pyroblast [Rank 8]
     },
     [61] = {
-        27078 -- fireb blast 48
+        27078, --Fire Blast [Rank 8]
     },
     [62] = {
-        27080, -- arcane explosion r7
-        30482 -- molten armor
+        27080, --Arcane Explosion [Rank 7]
+        30482, --Molten Armor [Rank 1]
     },
     [63] = {
-        27071 -- frostbolt r12
+        27130, --Amplify Magic [Rank 5]
+        27075, --Arcane Missiles [Rank 9]
+        27071, --Frostbolt [Rank 12]
     },
     [64] = {
-        27134, -- ice barrier r5
-        27086 -- flamestrike r7
+        30451, --Arcane Blast [Rank 1]
+        27086, --Flamestrike [Rank 7]
+        33042, --Dragon's Breath [Rank 3]
+        27134, --Ice Barrier [Rank 5]
     },
     [65] = {
-        27087, -- cone of cold r6
-        37420, -- conjure water r8
-        27073 -- scorch r8
+        27087, --Cone of Cold [Rank 6]
+        37420, --Conjure Water [Rank 8]
+        27073, --Scorch [Rank 8]
+        27133, --Blast Wave [Rank 6]
+        33691, --Portal: Shattrath (Ally)
+        35717, --Portal: Shattrath (Horde)
     },
     [66] = {
-        27070, -- fireball r13
-        30455 -- ice lacnce
+        27070, --Fireball [Rank 13]
+        30455, --Ice Lance [Rank 1]
+        27132, --Pyroblast [Rank 9]
+    },
+    [67] = {
+        27088, --Frost Nova [Rank 5]
+        33944, --Dampen Magic [Rank 6]
     },
 
     [68] = {

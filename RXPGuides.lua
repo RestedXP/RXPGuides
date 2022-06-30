@@ -257,7 +257,7 @@ local function ProcessSpells(names, rank)
     local level = UnitLevel("player")
     local entries = {race, class}
     for _, entry in pairs(entries) do
-        if addon.defaultSpellList[entry] then
+        if gameVersion < 90000 and addon.defaultSpellList[entry] then
             for spellLvl, spells in pairs(addon.defaultSpellList[entry]) do
                 if spellLvl <= level then
                     for i, spellId in ipairs(spells) do
@@ -338,11 +338,11 @@ local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
                                      _G.GetNumGossipActiveQuests
 local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
                                         _G.GetNumGossipAvailableQuests
-local GossipGetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
+local GossipGetNumOptions = C_GossipInfo.GetNumOptions or _G.GetNumGossipOptions
 local GossipSelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or
                                        _G.SelectGossipAvailableQuest
 local GossipGetActiveQuests = C_GossipInfo.GetActiveQuests or
-                                  GetGossipActiveQuests
+                                  _G.GetGossipActiveQuests
 local GossipSelectActiveQuest = C_GossipInfo.SelectActiveQuest or
                                     _G.SelectGossipActiveQuest
 local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
