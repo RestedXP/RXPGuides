@@ -497,7 +497,7 @@ step
     .goto Azuremyst Isle,50.2,70.6
 	>>Speak with the gnome npc patrolling the beach southeast, wait for his dialogue sequence and kill him
     .complete 9537,1 --Collect Traitor's Communication (x1)
-    --TODO: timer: https://www.twitch.tv/videos/1011718256?t=01h21m01s
+    --TODO: timer: 18s
 step << Hunter
     .goto Azuremyst Isle,46.7,70.5
     .turnin 9512 >> Turn in Cookie's Jumbo Gumbo
@@ -1210,23 +1210,35 @@ step
 step
     .goto Bloodmyst Isle,79.1,22.6
     .turnin 9674 >> Turn in The Bloodcursed Naga
+step
+    .goto Bloodmyst Isle,79.1,22.6
     .accept 9682 >> Accept The Hopeless Ones...
+    .maxlevel 15
 step
     .goto Bloodmyst Isle,87.3,16.6
     .complete 9682,1 --Collect Bloodcursed Soul (x4)
+    .isOnQuest 9682
 step
     .goto Bloodmyst Isle,79.2,22.7
     .turnin 9682 >> Turn in The Hopeless Ones...
+    .isOnQuest 9682
+step
+    .goto Bloodmyst Isle,79.2,22.7
     .accept 9683 >> Accept Ending the Bloodcurse
-step << Shaman
-	.xp 16-3000
+    .isQuestTurnedIn 9682
 step
 	#requires yserasTear
     .goto Bloodmyst Isle,86.0,54.5
     >>Swim to the island south, climb the mountain and click on the statue to summon Atoph
     .complete 9683,1 --Kill Atoph the Bloodcursed (x1)
     *Atoph is level 19, proceed with caution
-step << Shaman
+    .isOnQuest 9683
+step << Shaman/Paladin/Hunter
+    .goto Bloodmyst Isle,79.2,22.7
+    .turnin 9683 >> Turn in Ending the Bloodcurse
+    .isOnQuest 9683
+    .xp 16-2190,1
+step << Shaman/Paladin/Hunter
 	.xp 16-2190 --Making sure we get to level 16 before going into exodar for training
 step
 	#sticky
@@ -1645,6 +1657,7 @@ step
 step
     .goto Bloodmyst Isle,79.1,22.7
     .turnin 9683 >> Turn in Ending the Bloodcurse
+    .isOnQuest 9683
 step
     #requires Veridian
 	.goto Bloodmyst Isle,74.3,33.4
@@ -1760,21 +1773,28 @@ RXPGuides.RegisterGuide([[
 step
     .goto Darkshore,36.1,44.9
     .accept 1138 >> Accept Fruit of the Sea
+    .maxlevel 21
 step
 	.goto Darkshore,36.35,45.57
 	.fp Darkshore >> Get the Darkshore flight path
+step
+    .goto Darkshore,37.0,44.0
+    .home >> Set Hearthstone to Auberdine
 step
     .goto Darkshore,37.3,44.3
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
     .goto Darkshore,37.4,43.7
     .accept 947 >> Accept Cave Mushrooms
+    .maxlevel 21
 step
     .goto Darkshore,39.1,43.5
     .accept 965 >> Accept The Tower of Althalaxx
+    .maxlevel 21
 step
     .goto Darkshore,38.1,41.2
     .accept 982 >> Accept Deep Ocean, Vast Sea
+    .maxlevel 20
 step
     .goto Darkshore,37.4,40.2
 	.turnin 9633 >> Turn in The Way to Auberdine
@@ -1783,113 +1803,148 @@ step
     .goto Darkshore,38.2,28.8
 	>>Enter the sunken ship through the hole on the hull and loot the chest at the bottom floor
     .complete 982,1 --Collect Silver Dawning's Lockbox (x1)
+    .isOnQuest 982
 step
     .goto Darkshore,39.6,27.5
 	>>Enter the sunken ship through the hole on the hull and loot the chest at the bottom floor
     .complete 982,2 --Collect Mist Veil's Lockbox (x1)
+    .isOnQuest 982
 step
 	#sticky
 	>>Kill Reef Crawlers and Encrusted Tide Crawlers along the coast
     .complete 1138,1 --Collect Fine Crab Chunks (x6)
+    .isOnQuest 1138
 step
 	>>Start heading north while grinding crabs along the coast
     .goto Darkshore,56.7,13.5
     .accept 2098 >> Accept Gyromast's Retrieval
+    .isOnQuest 1138
 step
-	#sticky
+	#completewith q2098
+    #label crawlers
     >>Kill Raging Reef Crawlers. Be careful as they thrash (multiple hits at once every 10s or so)
     .complete 2098,3 --Collect Bottom of Gelkak's Key (x1)
+    .isOnQuest 2098
 step
     .goto Darkshore,59.5,12.6
 	>>Kill Giant Foreststriders
     .complete 2098,1 --Collect Top of Gelkak's Key (x1)
+    .isOnQuest 2098
 step
     .goto Darkshore,55.4,12.6
 	>>Kill murlocs next to the sunken ship. You can LoS (line of sight) the oracles around the front of the sunken ship
     .complete 2098,2 --Collect Middle of Gelkak's Key (x1)
+    .isOnQuest 2098
 step
+    #label q2098
+    #requires crawlers
     .goto Darkshore,56.7,13.5
     .turnin 2098 >> Turn in Gyromast's Retrieval
+    .isOnQuest 2098
+step
+    .goto Darkshore,56.7,13.5
+    #requires crawlers
     .accept 2078 >> Accept Gyromast's Revenge
+    .isQuestTurnedIn 2098
 step
     .goto Darkshore,55.8,18.2
 	>>Talk to the big robot and escort him back to the quest giver and then kill it once it turns hostile
     .complete 2078,1 --Gelkak's First Mate
+    .isQuestTurnedIn 2098
 step
     .goto Darkshore,56.7,13.5
     .turnin 2078 >> Turn in Gyromast's Revenge
+    .isQuestTurnedIn 2098
 step
 	#sticky
 	#completewith deletekey
 	.destroy 7442 >> Delete Gyromast's Key from your inventory (not your keyring). It's no longer needed
 step << !Druid !Shaman !Warlock
+    .isQuestTurnedIn 2098
 	#sticky
 	#completewith deletekey
 	+Make sure to save your water breathing potions, you will need them later to deal with a couple of underwater sections from 30-40
 step
     .goto Darkshore,55.0,24.9
     .turnin 965 >> Turn in The Tower of Althalaxx
+    .isOnQuest 965
+step
+    .goto Darkshore,55.0,24.9
     .accept 966 >> Accept The Tower of Althalaxx
+    .isQuestTurnedIn 965
 step
 	#label deletekey
     .goto Darkshore,55.3,26.7
     .complete 966,1 --Collect Worn Parchment (x4)
+    .isOnQuest 966
 step
     .goto Darkshore,55.0,24.9
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
+    .isQuestTurnedIn 965
 step
     .goto Darkshore,55.3,34.0
     .complete 947,1 --Collect Scaber Stalk (x5)
 	>>Take a right when entering the cave and check the top for a Death Cap. If there's none there, you have to go down below
     .complete 947,2 --Collect Death Cap (x1)
+    .isOnQuest 947
 step
 	.goto Darkshore,55.3,34.0
-    .xp 20-3900
-	>> Grind until you're level 19 and 16900+/20800xp
-step << Hunter
+    .xp 20-3900	>> Grind until you're level 19 and 16900+/20800xp
+step
 	#sticky
 	#completewith next
-	.deathskip >> Death skip to Auberdine
+	.deathskip >> Death skip to Auberdine << Hunter
+    .hs >> Hearth to Auberdine << !Hunter
 step
     .goto Darkshore,38.1,41.3
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .isQuestComplete 982
 step
     .goto Darkshore,37.5,41.9
     .accept 729 >> Accept The Absent Minded Prospector
 step
     .goto Darkshore,37.4,43.7
     .turnin 947 >> Turn in Cave Mushrooms
+    .isQuestComplete 947
+step
+    .goto Darkshore,37.4,43.7
     .accept 948 >> Accept Onu
+    .isQuestTurnedIn 947
 step
     .goto Darkshore,36.1,44.9
     .turnin 1138 >> Turn in Fruit of the Sea
+    .isQuestComplete 1138
 step << Hunter
-    .goto Darkshore,33.1,39.9,30>>Take the boat to Teldrassil
+    #completewith next
+    .goto Darkshore,33.1,39.9,30,0
+    .zone Teldrassil>>Take the boat to Teldrassil
+step << Hunter
+    .goto Teldrassil,58.4,94.0
+    .fp Rut'theran >> Get the Rut'theran Village flight path
 step << Hunter
 	#sticky
 	#completewith next
 	.goto Darnassus,63.3,66.3
-	Buy the level 20 weapon upgrade
+	>>Buy the level 20 weapon upgrade in Darnassus
 	.collect 3027,1
 step << Hunter
 	.goto Teldrassil,29.2,56.7
 	.train 264 >> Train Bows
     .train 227 >> Train Staves
 step << Hunter
-	.goto Darnassus,31.2,41.5,30,0
-    .goto Teldrassil,58.4,94.0
-    .fp Rut'theran >> Get the Rut'theran Village flight path
-step << Hunter
-    .fly Auberdine >>Fly back to Auberdine
+    #completewith next
+    .hs >> Hearth back to Auberdine
 step
     .goto Darkshore,43.5,76.2
     .turnin 948 >> Turn in Onu
     .accept 944 >> Accept The Master's Glaive
+    .isQuestTurnedIn 947
 step
     .goto Darkshore,36.6,76.6
 	>>Run near the fire to start the event (recommended to kill the mobs around it first)
     .complete 4740,1 --Kill Murkdeep (x1)
+    .isOnQuest 4740
 step
     .goto Darkshore,35.7,83.7
     .turnin 729 >> Turn in The Absent Minded Prospector
@@ -1904,9 +1959,12 @@ step
 	.use 5251 >> Use the Phial of Scrying anywhere in the area
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
+    .isQuestTurnedIn 948
 step
     .goto Darkshore,38.6,86.1
     .turnin 949 >> Turn in The Twilight Camp
+    >>Skip the follow up
+    .isQuestTurnedIn 948
 step
 	#sticky
 	#completewith darkshoreend
@@ -1914,10 +1972,11 @@ step
 step
     .goto Darkshore,38.7,87.3
     .accept 945 >> Accept Therylune's Escape. If she's not here someone else is escorting her, grind til she respawns.
+    .maxlevel 21
 step
 	#label darkshoreend
     .complete 945,1 --Escort Therylune
-
+    .isOnQuest 945
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1930,7 +1989,11 @@ RXPGuides.RegisterGuide([[
 step
     .goto Ashenvale,26.2,38.6
     .turnin 967 >> Turn in The Tower of Althalaxx
+    .isOnQuest 967
+step
+    .goto Ashenvale,26.2,38.6
     .accept 970 >> Accept The Tower of Althalaxx
+    .maxlevel 21
 step
     .goto Ashenvale,26.4,38.6
     .accept 1010 >> Accept Bathran's Hair
@@ -1941,6 +2004,7 @@ step
 step
     .goto Ashenvale,31.4,31.0
     .complete 970,1 --Collect Glowing Soul Gem (x1)
+    .isOnQuest 970
 step
     .goto Ashenvale,26.4,38.6
     .turnin 1010 >> Turn in Bathran's Hair
@@ -1948,7 +2012,12 @@ step
 step
     .goto Ashenvale,26.2,38.6
     .turnin 970 >> Turn in The Tower of Althalaxx
+    .isOnQuest 970
+step
+    .goto Ashenvale,26.2,38.6
     .accept 973 >> Accept The Tower of Althalaxx
+    .maxlevel 21
+    .isQuestTurnedIn 970
 step
     .goto Ashenvale,34.7,48.8
     .accept 1008 >> Accept The Zoram Strand
@@ -1963,6 +2032,7 @@ step
 step
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
+    --TODO: timer: 26s
 step << Warrior/Paladin
 	#sticky
 	.goto Ashenvale,35.8,52.0
@@ -1976,6 +2046,7 @@ step
 	.goto Ashenvale,40.5,52.3,80,0
 	.goto Ashenvale,43.3,45.5,80,0
     .goto Ashenvale,46.2,45.9
+    >>Look for small pearl shaped objects on the small island on the middle of the lake
     .complete 1033,1 --Collect Elune's Tear (x1)
 step
     .goto Ashenvale,37.8,34.7
@@ -1999,22 +2070,25 @@ step
     .goto Ashenvale,25.3,60.8
 	>>Try to kill him before he summons his guardians (it's stunnable, but not interruptable)
     .complete 973,1 --Collect Ilkrud Magthrull's Tome (x1)
+    .isOnQuest 973
 step
 	.goto Ashenvale,27.4,61.7,80,0
 	.goto Ashenvale,28.1,55.1,80,0
     .goto Ashenvale,22.7,51.9
     .turnin 945 >> Turn in Therylune's Escape
+    .isOnQuest 945
 step
     .goto Ashenvale,26.2,38.7
     .turnin 973 >> Turn in The Tower of Althalaxx
-step
-	#sticky
-	#completewith GlowGem
-	+Be careful of the oracles here, as they have a high-damage instant Shock spell (110 damage) and can heal to full
+    .isOnQuest 973
 step
     .goto Ashenvale,20.3,42.4
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
+step
+    #sticky
+    #completewith GlowGem
+    +Be careful of the oracles here, as they have a high-damage instant Shock spell (110 damage) and can heal to full
 step
 	#label GlowGem
     .goto Ashenvale,20.3,42.4
@@ -2024,7 +2098,9 @@ step
     .accept 1007 >> Accept The Ancient Statuette
 step
     .goto Ashenvale,14.2,20.6
-	>> Grind naga en route but don't go out of your way, we'll kill more later.
+    >>Look for a small statuette on the ground
+	>>Grind naga en route but don't go out of your way, we'll kill more later.
+    .collect 5490,20,1008,1,1
     .complete 1007,1 --Collect Ancient Statuette (x1)
 step
     .goto Ashenvale,14.8,31.3
@@ -2034,8 +2110,7 @@ step
 step
 	.goto Ashenvale,13.5,19.7,60,0
     .goto Ashenvale,7.0,13.4
-	>>Check for Lady Vespia on the islands en route, she is a rare spawn that has a chance to drop the ring and is much easier.
-	.unitscan Lady Vespia
+    >>Head to the island north and kill Ruuzel
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
     .complete 1009,1 --Collect Ring of Zoram (x1)
 step
@@ -2053,7 +2128,7 @@ step
     .turnin 1023 >> Turn in Raene's Cleansing
 step
 	#completewith next
-	+Delete Teronis' Journal from your inventory. It's no longer needed
+	.destroy 5505>>Delete Teronis' Journal from your inventory. It's no longer needed
 step
     .goto Ashenvale,37.3,51.8
     .turnin 1034 >> Turn in The Ruins of Stardust
@@ -2066,6 +2141,7 @@ step
 step
     .goto Darkshore,37.7,43.4
     .turnin 4740 >> Turn in WANTED: Murkdeep!
+    .isOnQuest 4740
 step
     .goto Darkshore,37.5,41.9
     .turnin 731 >> Turn in The Absent Minded Prospector
@@ -2088,7 +2164,16 @@ step << !Hunter
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << !Hunter
     .fly Auberdine >>Fly back to Auberdine
+step << !Paladin
+    >>Now it's time to buy your 60% mount, it costs about 4g
+    .zone Azuremyst Isle >>Take the Boat to Azuremyst Isle
+    .goto Darkshore,30.8,41.0
+    .skill riding,1 >> Train Riding skill and buy a mount in The Exodar
+    .goto The Exodar,81.6,51.8
+    .skill riding,1,1
 step
-    .goto Darkshore,32.4,43.8,30 >> Take the boat to Wetlands
+    .goto Darkshore,32.4,43.8
+    >>Go back to the Darkshore docks
+    .zone Stormwind City >> Take the boat to Stormwind
 ]])
 

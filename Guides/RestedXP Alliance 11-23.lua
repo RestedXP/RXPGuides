@@ -247,7 +247,8 @@ step << Druid
     .fly Auberdine>>Fly to Darkshore
 step
 	#label DarkshoreEnd
-    .goto Darkshore,30.8,41.0,30 >>Take the Boat to Azuremyst Isle
+    .goto Darkshore,30.8,41.0
+    .zone Azuremyst Isle >>Take the Boat to Azuremyst Isle
 ]])
 
 RXPGuides.RegisterGuide([[
