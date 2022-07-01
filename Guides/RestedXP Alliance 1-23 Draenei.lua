@@ -425,6 +425,8 @@ step
     >>Click on the totem underwater
     .turnin 9541 >> Turn in Totem of Yor
     .accept 9542 >> Accept Totem of Vark
+    --TODO: dynamic waypoint
+    --timer: 75s
 step
 	>>Follow the furbolg spirit and wait until he transforms you into a ghostsaber
     .goto Azuremyst Isle,28.1,62.5
@@ -486,12 +488,6 @@ step
 step
     .goto Azuremyst Isle,47.0,70.3
     .turnin 9514 >> Turn in Rune Covered Tablet
-step
-    .goto Azuremyst Isle,46.4,71.2
-	.goto Azuremyst Isle,47.1,70.3
-	.vendor >> Vendor and Repair while the RP completes
-	.vendor >> Purchase 400 arrows from Logan Daniel << Hunter
-    .accept 9515 >> Warlord Sriss'tiz
 step << Hunter
 	#sticky
     .goto Azuremyst Isle,48.8,72.7
@@ -501,6 +497,7 @@ step
     .goto Azuremyst Isle,50.2,70.6
 	>>Speak with the gnome npc patrolling the beach southeast, wait for his dialogue sequence and kill him
     .complete 9537,1 --Collect Traitor's Communication (x1)
+    --TODO: timer: https://www.twitch.tv/videos/1011718256?t=01h21m01s
 step << Hunter
     .goto Azuremyst Isle,46.7,70.5
     .turnin 9512 >> Turn in Cookie's Jumbo Gumbo
@@ -508,6 +505,10 @@ step
     .goto Azuremyst Isle,47.0,70.2
     .turnin 9537 >> Turn in Show Gnomercy
     .accept 9602 >> Accept Deliver Them From Evil...
+step
+    .goto Azuremyst Isle,47.1,70.3
+    .accept 9515 >> Warlord Sriss'tiz
+    .maxlevel 9
 step << !Hunter
     #completewith next
     .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
@@ -515,6 +516,7 @@ step << !Hunter
     >>Enter the naga cave and kill Warlord Sriss'tiz
     .goto Azuremyst Isle,24.5,74.5
     .complete 9515,1
+    .isOnQuest 9515
 step
     .goto Azuremyst Isle,49.9,51.9
     .xp 9+3070 >> Grind until 3070+/6500xp
@@ -534,17 +536,15 @@ step
     .goto Azuremyst Isle,48.5,51.5
     .turnin 9473 >> Turn in An Alternative Alternative
 step
-	.isOnQuest 9612
     .goto Azuremyst Isle,47.2,50.7
-	.turnin 9612 >> Turn in A Hearty Thanks!
     .turnin 9456 >> Turn in Nightstalker Clean Up, Isle 2...
     .turnin 9602 >> Turn in Deliver Them From Evil...
-    .accept 9623 >> Accept Coming of Age
+    .accept 9623 >> Accept Coming of Age << Hunter
 step
     .goto Azuremyst Isle,47.2,50.7
-    .turnin 9456 >> Turn in Nightstalker Clean Up, Isle 2...
-    .turnin 9602 >> Turn in Deliver Them From Evil...
-    .accept 9623 >> Accept Coming of Age
+    .isOnQuest 9612
+    .goto Azuremyst Isle,47.2,50.7
+    .turnin 9612 >> Turn in A Hearty Thanks!
 step << Shaman
     .goto Azuremyst Isle,47.3,50.6
     .trainer >> Train your level 10 spells
@@ -588,11 +588,12 @@ step << Hunter
 	.goto Azuremyst Isle,27.5,73.8,60,0
     .goto Azuremyst Isle,24.5,74.5
     .complete 9515,1
+    .isOnQuest 9515
 step << Hunter
     .goto Azuremyst Isle,24.2,54.3
     .turnin 9591 >> Turn in Taming the Beast
     .accept 9592 >> Accept Taming the Beast
-step
+step << Hunter
     .goto The Exodar,81.5,51.6
     .turnin 9623 >> Turn in Coming of Age
     .accept 9625 >> Accept Elekks Are Serious Business
@@ -636,7 +637,7 @@ step << Hunter
     .goto The Exodar,53.3,85.7
     .train 202 >>Train 2h swords
 step << Hunter
-	#completewith next
+	#completewith murloc1
 	>>Jump down and head out of The Exodar
 	.goto The Exodar,57.9,61.5,50,0
 	.goto The Exodar,53.0,35.0,80,0
@@ -645,13 +646,12 @@ step << Hunter
 	.zone Azuremyst Isle >>Jump down and head out of The Exodar
 	>> Alternatively you can do a logout skip on any brazier or by floating off of any ledge in the city
 	.link https://www.youtube.com/watch?v=WUWNGyQWJw8 >> Click here for reference
-step << !Hunter
-	#completewith next
-        .goto Azuremyst Isle,44.7,23.5
-	.zone Azuremyst Isle >>Head out of The Exodar
-	>> Alternatively you can do a logout skip on any brazier or by floating off of any ledge in the city
-	.link https://www.youtube.com/watch?v=WUWNGyQWJw8 >> Click here for reference
+step << Hunter wotlk
+	#sticky
+	#label pet1
+	.cast 1515 >> As you head the next quest hub, cast Tame Beast on a level 8+ cat on your way there
 step
+    #label murloc1
     .goto Azuremyst Isle,44.7,23.5
     .accept 9562 >> Accept Murlocs... Why Here? Why Now?
 step
@@ -669,9 +669,9 @@ step << Shaman
     .goto Azuremyst Isle,59.6,18.0
     .turnin 9464 >> Turn in Call of Fire
     .accept 9465 >> Accept Call of Fire
-step << Hunter
+step << Hunter tbc
 	#sticky
-	#label RavagerS
+	#label pet1
     .goto Azuremyst Isle,54.7,18.4
 	.cast 1515 >> Cast Tame Beast on a Ravager Specimen to tame it
 step
@@ -683,7 +683,7 @@ step << Warrior
     >>Click on the Ravager cage
     .complete 9582,1 --Kill Death Ravager (x1)
 step
-	#requires RavagerS
+	#requires pet1 << Hunter
     .goto Azuremyst Isle,44.8,23.8
     .turnin 9560 >> Turn in Beasts of the Apocalypse!
 step
@@ -702,9 +702,11 @@ step << Shaman
     >>Keep killing owlbeasts
     .complete 9465,1 --Collect Ritual Torch (x1)
 step
-    .goto Azuremyst Isle,50.6,11.6 >> Drop down and head to the back of the cave.
+    .goto Azuremyst Isle,50.6,11.6
+    >> Drop down and head to the back of the cave.
     .turnin 9565 >> Turn in Search Stillpine Hold
     .accept 9566 >> Accept Blood Crystals
+    >>As you approach the red crystal, you'll likely find a two headed dog named "The Kurken" nearby. DO NOT KILL IT, this mob is part of the next quest
 step
     .goto Azuremyst Isle,46.7,20.8
     .turnin 9566 >> Turn in Blood Crystals
@@ -788,8 +790,11 @@ step
     .goto Bloodmyst Isle,63.5,88.8
     .accept 9624 >> Accept A Favorite Treat
 step
+    #completewith next
     .goto Bloodmyst Isle,63.1,88.0
     .turnin 9625 >> Turn in Elekks Are Serious Business
+step
+    .goto Bloodmyst Isle,63.1,88.0
     .accept 9634 >> Accept Alien Predators
 step
 	.goto Bloodmyst Isle,59.7,86.8
@@ -808,9 +813,10 @@ step
 step
 	#completewith next
 	.goto Bloodmyst Isle,55.7,59.7
-	.vendor >> Buy 40 Ice Cold Milk << Mage/Priest/Hunter
+	.vendor >> Buy 40 Ice Cold Milk << Mage/Priest
 	.vendor >> Buy 40 Longjaw Mud Snapper << Warrior
 	.vendor >> Buy level 5 food/drink << Paladin/Shaman
+    .vendor >> Buy water/food for you and your pet << Hunter
 step
     .goto Bloodmyst Isle,56.4,56.8
     .accept 9648 >> Accept Mac'Aree Mushroom Menagerie
@@ -818,7 +824,10 @@ step
 	#completewith next
     .goto Bloodmyst Isle,57.6,54.0
     .fp Blood Watch>> Get the Blood Watch flight path
+step
+    .goto Bloodmyst Isle,57.6,54.0
     .turnin 9603 >> Turn in Beds, Bandages, and Beyond
+    >>Skip the follow up quest
 step
     .goto Bloodmyst Isle,52.7,53.3
     .accept 9693 >> Accept What Argus Means to Me
@@ -1056,6 +1065,8 @@ step
 	.collect 23900,1,9594 --Tzerak's Armor Plate
     .accept 9594 >> Accept Signs of the Legion
 	.unitscan Tzerak
+    *Each respawn/despawn cycle takes about 6-7 minutes total
+    --TODO: ??? bugged on wotlk beta
 step
     .goto Bloodmyst Isle,37.0,78.7
 	>>Kill Satyrs and Felsworn in the area. You may have to kill Rogues to force the respawns of the satyr's you need.
@@ -1081,7 +1092,7 @@ step
 step
 	#completewith next
 	.goto Bloodmyst Isle,53.3,56.7
-	.vendor >> Vendor and Repair
+	.vendor >> Vendor and Repair << !Hunter
 	.vendor >> Buy a Medium Quiver and restock on arrows << Hunter
 step
     .goto Bloodmyst Isle,55.1,59.2
@@ -1130,9 +1141,9 @@ step
 	.xp 15-1200
 step
 	#sticky
+    #level 15
 	#requires Missive
 	#label mailbox
-	#completewith next
 	.goto Bloodmyst Isle,55.0,59.3,100,0
 	.goto Bloodmyst Isle,55.3,55.3,100,0
 	.goto Bloodmyst Isle,52.7,53.2,80,0
@@ -1156,6 +1167,8 @@ step
     .goto Bloodmyst Isle,54.5,54.6
     .turnin 9696 >> Turn in Translations...
     .accept 9698 >> Accept Audience with the Prophet
+step
+    .xp 15
 step
 	#requires mailbox
 	>>Open your mailbox, retrieve the note and accept the quest
