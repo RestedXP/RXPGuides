@@ -1871,7 +1871,7 @@ function addon.functions.reputation(self, ...)
         if value then
             operator, rep = value:match("(<?)%s*(%-?%d+%.?%d*)")
         end
-        element.rep = tonumber(value) or tonumber(rep) or 0
+        element.repValue = tonumber(value) or tonumber(rep) or 0
 
         if standing then
             standing = addon.repStandingID[strlower(standing)]
@@ -1881,6 +1881,7 @@ function addon.functions.reputation(self, ...)
         if not (faction and standing) then
             addon.error("Error parsing guide " .. addon.currentGuideName ..
                             ": Invalid faction/standing\n" .. self)
+            return
         end
 
         element.faction = faction
@@ -1902,20 +1903,20 @@ function addon.functions.reputation(self, ...)
                                       "FACTION_STANDING_LABEL" ..
                                           element.standing)
             local factionname = GetFactionInfoByID(element.faction)
-            if element.rep and element.rep ~= 0 then
-                if element.rep < 0 then
+            if element.repValue and element.repValue ~= 0 then
+                if element.repValue < 0 then
                     element.text = string.format(
                                        "Grind until you are %d away from %s with %s",
-                                       -1 * element.rep, standinglabel,
+                                       -1 * element.repValue, standinglabel,
                                        factionname)
-                elseif element.rep >= 1 then
+                elseif element.repValue >= 1 then
                     element.text = string.format(
                                        "Grind until you are %s into %s with %s",
                                        rep, standinglabel, factionname)
                 else
                     element.text = string.format(
                                        "Grind until you are %.0f%% into %s with %s",
-                                       element.rep * 100, standinglabel,
+                                       element.repValue * 100, standinglabel,
                                        factionname)
                 end
             else
@@ -1923,7 +1924,6 @@ function addon.functions.reputation(self, ...)
                                              standinglabel, factionname)
             end
         end
-        if not element.rep then element.rep = 0 end
 
         return element
     end
@@ -1932,16 +1932,16 @@ function addon.functions.reputation(self, ...)
     local step = element.step
     local _, _, standing, bottomValue, topValue, earnedValue =
         GetFactionInfoByID(element.faction)
-    if ((element.rep < 0 and (standing >= element.standing or
+    if ((element.repValue < 0 and (standing >= element.standing or
         (standing == element.standing - 1 and earnedValue >= topValue +
-            element.rep))) or
-        (element.rep >= 1 and ((standing > element.standing) or
+            element.repValue))) or
+        (element.repValue >= 1 and ((standing > element.standing) or
             (element.standing == standing and earnedValue >= bottomValue +
-                element.rep))) or
-        (element.rep >= 0 and element.rep < 1 and
+                element.repValue))) or
+        (element.repValue >= 0 and element.repValue < 1 and
             ((standing > element.standing) or
                 (element.standing == standing and earnedValue >=
-                    (topValue - bottomValue) * element.rep)))) ==
+                    (topValue - bottomValue) * element.repValue)))) ==
         element.operator then
         if not element.skipStep then
             addon.SetElementComplete(self, true)
