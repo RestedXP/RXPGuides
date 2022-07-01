@@ -172,14 +172,13 @@ step << NightElf/Draenei
     .goto Dun Morogh,50.4,49.4
     .collect 4371,1,175
 	.bronzetube
+step << Dwarf/Gnome/Human
+    #completewith next
+    .goto Wetlands,9.5,59.7
+    .fly Ironforge >> Fly to Ironforge
 step << Mage
-	.goto Dun Morogh,47.3,41.9,80,0
     goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
-step
-	.goto Dun Morogh,47.3,41.9,80,0
-    .goto Ironforge,55.5,47.7
-    .fp Ironforge >> Get the Ironforge flight path
 step
     #sticky
     #completewith exit2
@@ -187,6 +186,10 @@ step
     .goto Ironforge,67.86,42.87
     .collect 4371,1,175
 	.bronzetube
+step << NightElf/Draenei
+	.goto Dun Morogh,47.3,41.9,80,0
+    .goto Ironforge,55.5,47.7
+    .fp Ironforge >> Get the Ironforge flight path
 step
     #label exit2
 	.goto Ironforge,56.2,46.8
