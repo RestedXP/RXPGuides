@@ -202,6 +202,7 @@ function addon.CacheGuide(key, guide, enabledFor, guideVersion)
         guide = guide:gsub("%s-[\r\n]+%s*", "\n")
         guide = guide:gsub("[\t ][\t ]+", " ")
         guide = guide:gsub("%-%-[^\n]*", "")
+        guide = "--" .. addon.ReadCacheData("string") .. "\n" .. guide
         guide = LibDeflate:CompressDeflate(guide)
         addon.db.profile.guides[key] = RXPG.BuildCacheObject(guide, enabledFor,
                                                              guideVersion)
@@ -400,8 +401,7 @@ function RXPG.LoadEmbeddedGuides()
 end
 
 function RXPG.BuildGuideKey(guide)
-    return string.format("%s|%s|%s|%s", addon.ReadCacheData("string"),
-                         guide.group, guide.subgroup or '', guide.name)
+    return string.format("%s|%s|%s", guide.group, guide.subgroup or '', guide.name)
 end
 
 function RXPG.LoadCachedGuides()
@@ -413,10 +413,11 @@ function RXPG.LoadCachedGuides()
     for key, guideData in pairs(addon.db.profile.guides) do
         local guide, errorMsg
         local enabledFor = guideData.enabledFor
-        if (not enabledFor or applies(enabledFor)) and key:match("^(%-?%d+)|") ==
-            addon.ReadCacheData("string") then
+        if (not enabledFor or applies(enabledFor)) then
             guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
-            guide, errorMsg = RXPG.ParseGuide(guide)
+            if guide:match("^--" .. addon.ReadCacheData("string")) then
+                guide, errorMsg = RXPG.ParseGuide(guide)
+            end
         end
         if not errorMsg and guide then
             guide.imported = true
