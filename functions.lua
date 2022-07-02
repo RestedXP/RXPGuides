@@ -564,8 +564,14 @@ function addon.functions.accept(self, ...)
         local step = element.step
         local event, arg1, questId = ...
         local id = element.questId
-        local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id) or
-                                    (event == "QUEST_ACCEPTED" and questId == id)
+        local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
+
+        if (event == "QUEST_ACCEPTED" and questId == id) then
+            if element.timer then
+                addon.StartTimer(element.timer,element.timerText)
+            end
+            isQuestAccepted = true
+        end
 
         if element.step.active or element.retrieveText or
             (element.step.index > 1 and
@@ -696,9 +702,14 @@ function addon.functions.daily(self, text, ...)
         local ids = element.ids
 
         for _, id in pairs(ids) do
-            local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id) or
-                                        (event == "QUEST_ACCEPTED" and questId ==
-                                            id)
+            local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
+
+            if (event == "QUEST_ACCEPTED" and questId == id) then
+                if element.timer then
+                    addon.StartTimer(element.timer,element.timerText)
+                end
+                isQuestAccepted = true
+            end
 
             if element.step.active or element.requestFromServer or
                 (step.index > 1 and
@@ -904,11 +915,14 @@ function addon.functions.turnin(self, ...)
         addon.UpdateStepText(self)
         local completed = element.completed
         local isComplete = IsQuestTurnedIn(id)
-        if isComplete then
-            addon.SetElementComplete(self, true)
-            addon.recentTurnIn[id] = GetTime()
-        elseif questId == id then -- repeatable quests
+        if questId == id then -- repeatable quests
+            if element.timer then
+                addon.StartTimer(element.timer,element.timerText)
+            end
             addon.SetElementComplete(self)
+            addon.recentTurnIn[id] = GetTime()
+        elseif isComplete then
+            addon.SetElementComplete(self, true)
             addon.recentTurnIn[id] = GetTime()
         end
 
@@ -3449,6 +3463,32 @@ function addon.functions.scenario(self, ...)
     end
 
     element.text = element.rawtext .. element.criteria
+end
+
+function addon.functions.timer(self,text,duration,timerText,callback,...)
+    if type(self) == "string" then
+        local eventList = callback and {...}
+        return {textOnly = true, timer = tonumber(duration), events = eventList,
+                callback = callback, timerText = timerText, parent = true, text = text}
+    end
+    local element = self.element
+    local parent = element.parent
+    if parent and not element.callback then
+        parent.timer = element.timer
+        parent.timerText = element.timerText
+        return
+    end
+
+    local f = RXPG[addon.currentGuide.group][element.callback]
+    if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
+        addon.StartTimer(element.timer,element.timerText)
+    end
+end
+
+function addon.functions:gossipTimer(event)
+    if event == "GOSSIP_CONFIRM_CANCEL" then
+        return true
+    end
 end
 
 function addon.functions.rescue()

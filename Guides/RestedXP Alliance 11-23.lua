@@ -1230,9 +1230,10 @@ step
 step
     .home >> Set your Hearthstone to Astranaar
 step
+    #timer Orendil's Cure RP
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
-    --TODO: timer: 26s
+    .timer 26,Orendil's Cure RP
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
@@ -1283,7 +1284,7 @@ step
     .goto Ashenvale,14.8,31.3
 	>> Kill naga en route but don't go out of your way for them.
     .turnin 1007 >> Turn in The Ancient Statuette
-    --TODO: timer: 25s
+    .timer 25,The Ancient Statuette RP
     .accept 1009 >> Accept Ruuzel
 step
     .goto Ashenvale,7.0,13.4
@@ -1469,9 +1470,10 @@ step
 step
     .home >> Set your Hearthstone to Astranaar
 step
+    #timer Orendil's Cure RP
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
-    --TODO: timer: 26s
+    .timer 26,Orendil's Cure RP
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
@@ -1511,7 +1513,7 @@ step
 step
     .goto Ashenvale,14.8,31.3
     .turnin 1007 >> Turn in The Ancient Statuette
-    --TODO: timer: 25s
+    .timer 25,The Ancient Statuette RP
     .accept 1009 >> Accept Ruuzel
 step
 	>>Head to the island north and kill Ruuzel

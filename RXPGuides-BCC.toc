@@ -19,6 +19,7 @@ libs\HereBeDragons\HereBeDragons-2.0.lua
 libs\HereBeDragons\HereBeDragons-Pins-2.0.lua
 libs\LibBase64-1.0\LibBase64-1.0.lua
 libs\LibDeflate\lib.xml
+libs\LibCandyBar-3.0\lib.xml
 
 RXPGuides.lua
 GuideWindow.lua

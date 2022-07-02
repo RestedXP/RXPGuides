@@ -425,8 +425,7 @@ step
     >>Click on the totem underwater
     .turnin 9541 >> Turn in Totem of Yor
     .accept 9542 >> Accept Totem of Vark
-    --TODO: dynamic waypoint
-    --timer: 75s
+    .timer 75,Totem of Vark RP
 step
 	>>Follow the furbolg spirit and wait until he transforms you into a ghostsaber
     .goto Azuremyst Isle,28.1,62.5
@@ -497,7 +496,7 @@ step
     .goto Azuremyst Isle,50.2,70.6
 	>>Speak with the gnome npc patrolling the beach southeast, wait for his dialogue sequence and kill him
     .complete 9537,1 --Collect Traitor's Communication (x1)
-    --TODO: timer: 18s
+    .timer 18,Traitor's Communication RP,gossipTimer,GOSSIP_CONFIRM_CANCEL
 step << Hunter
     .goto Azuremyst Isle,46.7,70.5
     .turnin 9512 >> Turn in Cookie's Jumbo Gumbo
@@ -2032,7 +2031,7 @@ step
 step
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
-    --TODO: timer: 26s
+    .timer 26,Orendil's Cure RP
 step << Warrior/Paladin
 	#sticky
 	.goto Ashenvale,35.8,52.0
@@ -2106,7 +2105,7 @@ step
     .goto Ashenvale,14.8,31.3
 	>> Grind naga directly in your path
     .turnin 1007 >> Turn in The Ancient Statuette
-    --TODO: timer: 25s
+    .timer 25,The Ancient Statuette RP
     .accept 1009 >> Accept Ruuzel
 step
 	.goto Ashenvale,13.5,19.7,60,0
