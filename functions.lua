@@ -1516,7 +1516,6 @@ function addon.functions.collect(self, ...)
                        'Error parsing guide ' .. addon.currentGuideName ..
                            ': No item ID provided\n' .. self)
         end
-        element.isQuestTurnIn = objFlags > 0
         element.objFlags = objFlags
         element.questId = tonumber(questId)
         element.id = id
@@ -1526,24 +1525,28 @@ function addon.functions.collect(self, ...)
         --[[
 .collect itemId,quantity,questId,objFlags,flags
 flags:
-1 (0x1): disables the checkBox
-2 (0x2): subtract from the given quest objective (given by the objective bitmask from objFlags)
-4 (0x4): Completes the step if the flagged objectives are complete (see objFlags again)
-setting flags to 0 will complete the step if the quest is turned in (default value)
+1   (0x1): Disables the checkBox
+2   (0x2): Subtract from the given quest objective (given by the objective bitmask from objFlags)
+4   (0x4): Completes the step if the flagged objectives are complete (see objFlags again)
+8   (0x8): Includes items in your bank into the item count
+16 (0x10): Don't complete the element if the quest is turned in
 negative sign: same as 3 (0x2+0x1)
+
+By default, the step will complete the step if the quest ID provided is turned in
 
 objFlags:
 Each power of 2 corresponds to an objective, as an example:
 Set objN to 1 if you want ot track obj1, 0 otherwise for each quest objective
 obJflag = obj1*2^0 + obj2*2^1 + obj3*2^2 + ... + objN*2^(N-1)
-if this parameter is set to 0, element will complete if you have the quest in your quest log
+
+if objFlags is omitted or set to 0, element will complete if you have the quest in your quest log
 ]]
         if flags < 0 then flags = 3 end
-        if bit.band(flags, 0x1) == 0x1 then element.textOnly = true end
-        if bit.band(flags, 0x2) == 0x2 then element.subtract = true end
-        if bit.band(flags, 0x4) == 0x4 then
-            element.checkObjectives = true
-        end
+        element.textOnly = bit.band(flags, 0x1) == 0x1
+        element.subtract = bit.band(flags, 0x2) == 0x2
+        element.checkObjectives = bit.band(flags, 0x4) == 0x4
+        element.includeBank = bit.band(flags, 0x8) == 0x8
+        element.ignoreTurnIn = bit.band(flags, 0x10) == 0x10
 
         element.flags = flags
         if text and text ~= "" then
@@ -1617,7 +1620,7 @@ if this parameter is set to 0, element will complete if you have the quest in yo
         end
     end
 
-    local count = GetItemCount(element.id)
+    local count = GetItemCount(element.id,element.includeBank)
     for i = 1, _G.INVSLOT_LAST_EQUIPPED do
         if GetInventoryItemID("player", i) == element.id then
             count = count + 1
@@ -1627,8 +1630,8 @@ if this parameter is set to 0, element will complete if you have the quest in yo
 
     if (numRequired > 0 and count > numRequired) or
         (questId and
-            ((element.objFlags == 0 and IsOnQuest(questId)) or isComplete or
-                IsQuestTurnedIn(questId) or IsQuestComplete(questId))) then
+            ((element.objFlags == 0 and IsOnQuest(questId)) or (not element.ignoreTurnIn and
+                (isComplete or IsQuestTurnedIn(questId) or IsQuestComplete(questId))))) then
         count = numRequired
     end
 
