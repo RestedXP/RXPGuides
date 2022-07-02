@@ -2106,6 +2106,7 @@ step
     .goto Ashenvale,14.8,31.3
 	>> Grind naga directly in your path
     .turnin 1007 >> Turn in The Ancient Statuette
+    --TODO: timer: 25s
     .accept 1009 >> Accept Ruuzel
 step
 	.goto Ashenvale,13.5,19.7,60,0

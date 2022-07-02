@@ -2059,6 +2059,7 @@ step <<  !Dwarf/!Hunter
 step
     .goto Ashenvale,37.36,51.79
     .turnin 1020 >> Turn in Orendil's Cure
+    --TODO: timer: 26s
 step
     .goto Ashenvale,37.36,51.79
      >> Wait for the RP sequence to end
@@ -2115,6 +2116,7 @@ step
     .goto Ashenvale,14.79,31.29
      >> Wait for the RP sequence
     .turnin 1007 >> Turn in The Ancient Statuette
+    --TODO: timer: 25s
     .accept 1009 >> Accept Ruuzel
 step
     .goto Ashenvale,7.40,13.40
@@ -2965,5 +2967,6 @@ step << !Warlock
 step
     .goto Ashenvale,37.36,51.79
     .turnin 1020 >> Turn in Orendil's Cure
+    --TODO: timer: 26s
     .accept 1033 >> Accept Elune's Tear
 ]])

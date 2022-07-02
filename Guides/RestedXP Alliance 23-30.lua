@@ -4,18 +4,124 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next 24-27 Redridge/Duskwood
-step << Dwarf/Gnome/Human
-    .goto Wetlands,10.7,60.9
-    .home >> Set your Hearthstone to Deepwater Tavern
+
+
+step << Paladin
+	.goto Stormwind City,38.6,32.8
+	.trainer >> Train your class spells
+step << Priest
+	.goto Stormwind City,38.5,26.8
+	.trainer >> Train your class spells
+step << Paladin
+    .goto Stormwind City,40.1,30.0
+    >>Speak to Duthorian Rall and right click on the Tome of Valor provided
+    .accept 1649 >>Accept The Tome of Valor
+    .turnin 1649 >>Turn in The Tome of Valor
+    .accept 1650 >>Accept The Tome of Valor
+step << Warlock
+    .goto Stormwind City,25.3,78.7
+    .trainer >> Train your class spells
+    .turnin 1738 >>Turn in Heartswood
+    .accept 1739 >>Accept The Binding
+step << Warlock
+    .goto Stormwind City,25.2,77.5
+    >>Go down into the crypt and use the quest item provided at the summoning circle
+    .complete 1739,1 --Summoned Succubus (1)
+step << Warlock
+    .goto Stormwind City,25.4,78.7
+    .turnin 1739 >>Turn in The Binding
+step << Mage
+    .goto Stormwind City,39.6,79.6
+    .train 3561>>Train Teleport: Stormwind
+    .trainer >> Train your class spells
 step
-    .goto Wetlands,8.6,55.8
-    .accept 484 >> Accept Young Crocolisk Skins
+    .goto Stormwind City,52.61,65.71
+    .home >> Set your Hearthstone to Stormwind City
+step << Rogue
+	.goto Stormwind City,74.6,52.8
+	.trainer >> Train your class spells
+step << Warrior
+	.goto Stormwind City,78.6,45.8
+	.trainer >> Go upstairs. Train your class spells
+step << Rogue
+    #sticky
+    .goto Stormwind City,75.8,60.1
+    .accept 2281 >> Accept Redridge Rendezvous
+    .accept 2360 >> Accept Mathias and the Defias
+step << Rogue
+	.goto Stormwind City,78.3,57.0
+    .train 1804>>Make sure to train lockpicking
+step << Rogue
+    .goto Stormwind City,52.6,65.6
+    .home >> Set your Hearthstone to Stormwind City
+step << Draenei
+    .goto Stormwind City,78.4,18.3
+    .accept 9429 >> Accept Travel to Darkshire
+step << Hunter
+	.goto Stormwind City,61.7,15.4
+	.trainer >> Train your class spells
 step
-    .goto Wetlands,8.3,58.5
-    .accept 279 >> Accept Claws from the Deep
+    .goto Stormwind City,53.62,59.76,30,0
+    .goto Stormwind City,55.25,7.08
+    .vendor 5519>> Check Billibub in the Dwarven District for a Bronze Tube. Buy one if it's available
+    .collect 4371,1,175,1,1
+    .bronzetube
+step
+    .goto Stormwind City,63.9,8.3
+    .zone Ironforge >>Enter the Deeprun Tram and cross the Tram into Ironforge
+    .zoneskip Dun Morogh
+step
+    #sticky
+    #completewith exit2
+    .vendor 5175>>Buy a Bronze Tube from Gearcutter Cogspinner (limited supply), skip this step if he doesn't have it or if you already have one
+    .goto Ironforge,67.86,42.87
+    .collect 4371,1,175,1,1
+	.bronzetube
+step << Draenei/NightElf --Not needed, including just in case someone forgets to set HS to SW
+    .goto Ironforge,55.5,47.7
+    .fp >> Get the Ironforge Flight Path
+step << Mage
+    .goto Ironforge,25.5,7.1
+    .train 3562>>Train Teleport: Ironforge
+step << Draenei/NightElf
+    #completewith next
+    .goto Dun Morogh,59.5,42.8,40,0
+    .goto Dun Morogh,60.4,44.1,40,0
+    .goto Dun Morogh,61.1,44.1,40,0
+    .goto Dun Morogh,61.2,42.3,40,0
+    .goto Dun Morogh,60.8,40.9,40,0
+    .goto Dun Morogh,59.0,39.5,40,0
+    .goto Dun Morogh,60.3,38.6,40,0
+    .goto Dun Morogh,61.7,38.7,40,0
+    .goto Dun Morogh,65.7,21.6,40,0
+    .goto Dun Morogh,65.8,12.5,40,0
+    .goto Dun Morogh,65.6,10.8,40,0
+    .goto Dun Morogh,66.5,10.0,40,0
+    .goto Dun Morogh,66.9,8.5,40,0
+    .goto Wetlands,20.6,67.2,50,0
+    .goto Wetlands,17.7,67.7,40,0
+    .goto Wetlands,16.8,65.3,40,0
+    .goto Wetlands,15.1,64.0,40,0
+    .goto Wetlands,12.1,60.3,40,0
+    >>Do the Deathless Dun Morogh -> Wetlands skip
+    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
+    .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
 step << Draenei/NightElf
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
+step << Human/Gnome/Dwarf
+    .goto Ironforge,55.5,47.7
+    .fly Wetlands >> Fly to Wetlands
+step << Mage
+    .goto Wetlands,10.7,60.9
+    .home >> Set your Hearthstone to Deepwater Tavern
+step
+    .goto Wetlands,8.3,58.5
+    .accept 279 >> Accept Claws from the Deep
+step
+    .goto Wetlands,8.6,55.8
+    .accept 484 >> Accept Young Crocolisk Skins
+    .maxlevel 23
 step
     .goto Wetlands,10.8,59.6
     .accept 288 >> Accept The Third Fleet
@@ -24,25 +130,27 @@ step
     .goto Wetlands,10.7,60.9
 	>> Buy a Flagon of Mead from the Innkeeper
     .complete 288,1 --Collect Flagon of Mead (x1)
-step << !Hunter !NightElf !Rogue
+step
 	>>Go upstairs and talk to Archaeologist Flagongut
 	.turnin 942 >>Turn in The Absent Minded Prospector
 	.accept 943 >>Accept The Absent Minded Prospector
+    .isQuestTurnedIn 741
 step
     .goto Wetlands,10.8,59.7
     .turnin 288 >> Turn in The Third Fleet
+step << Hunter
+    .goto Wetlands,11.1,58.3
+    .vendor >> Repair and restock on arrows
 step
     .goto Wetlands,11.7,58.0
     .accept 470 >> Accept Digging Through the Ooze
-step << Hunter
-	.goto Wetlands,11.1,58.3
-	.vendor >> Repair and restock on arrows
 step
     #sticky
     #completewith exit1
     .vendor 1448>>Head to the keep and buy a Bronze Tube from Neal Allen (limited supply), skip this step if he doesn't have it or if you already have one
     .goto Wetlands,10.6,56.8
-    .collect 4371,1,175
+    .collect 4371,1,175,1,1
+    .bronzetube
 step
     .goto Wetlands,9.9,57.4
 	>>Go upstairs inside the keep
@@ -55,12 +163,7 @@ step
 	#label crocs
 	>> Kill Young Wetlands Crocolisks between quests. Loot them for their Skin
     .complete 484,1 --Collect Young Crocolisk Skin (x4)
-step
-	#completewith next
-    .goto Wetlands,13.6,40.1,0
-    .goto Wetlands,20.6,40.7,0
-	>>Kill Bluegill Murlocs in the area
-    .complete 279,1 --Kill Bluegill Murloc (x12)
+
 step
     #label exit1
     .goto Wetlands,14.1,41.5,70,0
@@ -68,18 +171,14 @@ step
     .goto Wetlands,18.8,40.0
     >>Kill Gobbler, he patrols around the southern murloc camps
     .complete 279,2 --Collect Gobbler's Head (x1)
-	.unitscan Gobbler
-step
-    .goto Wetlands,13.6,40.1,70,0
-    .goto Wetlands,20.6,40.7
-	>>Kill Bluegill Murlocs in the area
     .complete 279,1 --Kill Bluegill Murloc (x12)
+	.unitscan Gobbler
 step
     #sticky
     #completewith next
     .vendor 2682>>Buy a Bronze Tube from Fradd Swiftgear (limited supply), skip this step if he doesn't have it or if you already have one
     .goto Wetlands,26.4,25.8
-    .collect 4371,1,175
+    .collect 4371,1,175,1,1
 	.bronzetube
 step
 	.goto Wetlands,34.3,41.2,60,0
@@ -129,12 +228,15 @@ step << Warrior
     #sticky
     #completewith next
     .goto Wetlands,50.2,37.8
-    >>Check the herb vendor and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
-    .collect 3357,8 --Collect Liferoot (x8)
+    .vendor 8305>>Check the herb vendor and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
+    .collect 3357,8,0,1,1 --Collect Liferoot (x8)
 step
     .goto Wetlands,56.4,40.4
     .turnin 463 >> Turn in The Greenwarden
+step
+    .goto Wetlands,56.4,40.4
     .accept 276 >> Accept Tramping Paws
+    .maxlevel 23
 step
     .goto Wetlands,63.9,62.7,70,0
     .goto Wetlands,62.4,69.5,70,0
@@ -143,58 +245,62 @@ step
 	>>Kill Mosshide Gnolls and Mongrels in the area. The gnolls are more commonly found outside the camps
     .complete 276,1 --Kill Mosshide Gnoll (x15)
     .complete 276,2 --Kill Mosshide Mongrel (x10)
+    .isOnQuest 276
 step
+    #requires crocs
     .goto Wetlands,56.4,40.3
     .turnin 276 >> Turn in Tramping Paws
+    .isQuestComplete 276
+step
+    .goto Wetlands,56.4,40.3
     .accept 277 >> Accept Fire Taboo
-step << Dwarf/Gnome/Human
-	#requires crocs
-    .hs >> Hearth to Menethil Harbor
+    .isQuestTurnedIn 276
 step << NightElf/Draenei
-	#sticky
-	#completewith next
-	.goto Wetlands,63.9,78.6
-	.zone Loch Modan >> Logout on top of the mushrooms at the back of the cave. When you log back in, this will teleport you to Thelsamar
+    #completewith next
+    .goto Wetlands,53.7,72.3,75 >> The path to Loch Modan starts here
 step << NightElf/Draenei
-	#requires crocs
+    .goto Loch Modan,25.4,10.6
+    .zone Loch Modan >> Cross the tunnel into Loch Modan
+step << NightElf/Draenei
+    .goto Loch Modan,46.0,13.3
+    .accept 250 >> Accept A Dark Threat Looms
+    .maxlevel 23
+step << NightElf/Draenei
+    .goto Loch Modan,56.1,13.3
+    >>Click on the small explosive barrel
+    .turnin 250 >> Turn in A Dark Threat Looms
+    .accept 199 >> Accept A Dark Threat Looms
+    .maxlevel 23
+step << NightElf/Draenei
+    .goto Loch Modan,46.0,13.3
+    .turnin 199 >> Turn in A Dark Threat Looms
+    .isOnQuest 199
+step << NightElf/Draenei
     .goto Loch Modan,33.9,50.9
     .fp Thelsamar >> Get the Thelsamar flight path
-step << NightElf/Draenei
-    #completewith exit2
-	.goto Loch Modan,22.6,70.2,80,0
-	.goto Dun Morogh,86.2,47.0
-	>>Head to Dun Morogh
-    >>Death warp to Kharanos as soon as you get to Dun Morogh
-step << NightElf/Draenei
-    #sticky
-    #completewith exit2
-    .vendor 1694>>Buy a Bronze Tube from Loslor Rudge (limited supply), skip this step if he doesn't have it or if you already have one
-    .goto Dun Morogh,50.4,49.4
-    .collect 4371,1,175
-	.bronzetube
-step << Dwarf/Gnome/Human
+step
     #completewith next
     .goto Wetlands,9.5,59.7
-    .fly Ironforge >> Fly to Ironforge
+    .hs >> Hearth to Stormwind << !Mage
+    .hs >> Hearth to Menethil << Mage
+step
+    .goto Wetlands,8.4,58.5
+    .turnin 279 >> Turn in Claws from the Deep
+    .accept 281 >> Accept Reclaiming Goods
 step << Mage
-    goto Ironforge,25.5,7.1
-    .train 3562>>Train Teleport: Ironforge
-step
-    #sticky
-    #completewith exit2
-    .vendor 5175>>Buy a Bronze Tube from Gearcutter Cogspinner (limited supply), skip this step if he doesn't have it or if you already have one
-    .goto Ironforge,67.86,42.87
-    .collect 4371,1,175
-	.bronzetube
-step << NightElf/Draenei
-	.goto Dun Morogh,47.3,41.9,80,0
-    .goto Ironforge,55.5,47.7
-    .fp Ironforge >> Get the Ironforge flight path
-step
-    #label exit2
-	.goto Ironforge,56.2,46.8
-	.goto Ironforge,76.4,51.2,50 >> Hop ontop of the gryphon's head then logout and back in to logout skip to the tram.
-    .zone Stormwind City >>Take the tram to Stormwind
+    .goto Wetlands,8.6,55.8
+    .turnin 469 >> Turn in Daily Delivery
+    .isOnQuest 469
+step << Mage
+    .goto Wetlands,8.6,55.8
+    .turnin 484 >> Turn in Young Crocolisk Skins
+    .isOnQuest 484
+step << Mage
+    .goto Wetlands,8.6,55.8
+    .accept 471 >> Accept Apprentice's Duties
+    .isQuestTurnedIn 484
+step << Mage
+    .zone Stormwind City >> Teleport to Stormwind
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -203,9 +309,6 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next 27-30 Wetlands/Hillsbrad
-step << Hunter
-	.goto Stormwind City,61.7,15.4
-	.trainer >> Train your class spells
 step
     #sticky
     #completewith exit
@@ -213,10 +316,9 @@ step
     .goto Ironforge,55.2,7.6
     .collect 4371,1,175
     >>Try to buy a bronze tube from the Auction House if you were unable to find one from a vendor
-	.bronzetube
-step << Draenei
-    .goto Stormwind City,78.4,18.3
-    .accept 9429 >> Accept Travel to Darkshire
+    .bronzetube
+
+--TODO: Remove classes that don't need level 24 training
 step << Rogue
 	.goto Stormwind City,74.6,52.8
 	.trainer >> Train your class spells
@@ -249,7 +351,6 @@ step << Paladin
     .accept 1650 >>Accept The Tome of Valor
 step << Mage
     .goto Stormwind City,39.6,79.6
-    .train 3561>>Train Teleport: Stormwind
 	.trainer >> Train your class spells
 step << Rogue
     #sticky
@@ -264,12 +365,12 @@ step << Rogue
     .home >> Set your Hearthstone to Stormwind City
 step << Warrior
     #sticky
-    #completewith next
-    .goto Stormwind City,64.1,61.2
-    .goto Stormwind City,46.7,79.0
+    #completewith exit
+    .goto Stormwind City,64.1,61.2,0
+    .goto Stormwind City,46.7,79.0,0
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
-step
+step << skip --Not needed, going from SW -> Duskwood later in the guide after doing the Goldshire inn quest
 	.goto Stormwind City,62.5,62.3,30,0
 	.goto Stormwind City,66.3,62.1
     .fp Stormwind >> Get the Stormwind flight path
@@ -877,8 +978,15 @@ step
 step
     .goto Wetlands,8.6,55.8
     .turnin 469 >> Turn in Daily Delivery
+    .isOnQuest 469
+step
+    .goto Wetlands,8.6,55.8
     .turnin 484 >> Turn in Young Crocolisk Skins
+    .isOnQuest 484
+step
+    .goto Wetlands,8.6,55.8
     .accept 471 >> Accept Apprentice's Duties
+    .isQuestTurnedIn 484
 step
     .goto Wetlands,10.8,59.6
     .accept 289 >> Accept The Cursed Crew
@@ -926,6 +1034,7 @@ step
     .goto Wetlands,17.8,26.3
 	>> Kill Giant Crocolisks along the coast and loot them for skins
     .complete 471,1 --Collect Giant Crocolisk Skin (x6)
+    .isQuestTurnedIn 484
 step
     .goto Wetlands,38.2,50.9
     .accept 294 >> Accept Ormer's Revenge
@@ -997,10 +1106,12 @@ step
     .goto Wetlands,44.2,33.9
 	>>Kill gnolls
     .complete 277,1 --Collect Crude Flint (x9)
+    .isQuestTurnedIn 276
 step
     .goto Wetlands,56.3,40.5
     .turnin 277 >> Turn in Fire Taboo
     .accept 275 >> Accept Blisters on The Land
+    .isQuestTurnedIn 276
 step
     .goto Wetlands,64.8,75.3
     >>Loot the tree root at the base of the waterfall
@@ -1028,6 +1139,7 @@ step
 step
     .goto Wetlands,8.6,55.8
     .turnin 471 >> Turn in Apprentice's Duties
+    .isQuestTurnedIn 484
 step
     .goto Wetlands,15.5,23.5
     >>Kill Captain Halyndor by entering the ship through the broken mast

@@ -1232,6 +1232,7 @@ step
 step
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
+    --TODO: timer: 26s
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
@@ -1282,11 +1283,11 @@ step
     .goto Ashenvale,14.8,31.3
 	>> Kill naga en route but don't go out of your way for them.
     .turnin 1007 >> Turn in The Ancient Statuette
+    --TODO: timer: 25s
     .accept 1009 >> Accept Ruuzel
 step
     .goto Ashenvale,7.0,13.4
-	>>Check for Lady Vespia on the islands en route, she is a rare spawn that has a chance to drop the ring and is much easier.
-	.unitscan Lady Vespia
+	>>Head to the island north and kill Ruuzel
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
     .complete 1009,1 --Collect Ring of Zoram (x1)
 step
@@ -1373,10 +1374,8 @@ step
     .home >> Set your Hearthstone to Auberdine
 step
     #completewith next
-    .goto Darkshore,32.4,43.8,40 >>Take the boat to Wetlands
-step
-    .goto Wetlands,9.5,59.7
-    .fly Stormwind>> Fly to Stormwind
+    .goto Darkshore,32.4,43.8
+    .zone Stormwind City >>Take the boat to Stormwind
 step << Priest
     #sticky
     #completewith exit
@@ -1414,7 +1413,8 @@ step
     #label exit
     .goto Stormwind City,39.9,54.4
     .zone Darkshore>>Enter the Stockades and ghetto hearth to Auberdine
-    *\nWhile you are inside The Stockades, do a /who, invite some random person and leave group so you can teleport back to Auberdine
+    >>While you are inside The Stockades, invite some random person and leave group so you can teleport back to Auberdine
+    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> CLICK HERE for an invite/leave macro
 step
     .goto Darkshore,37.2,44.2
     .accept 4740 >> Accept WANTED: Murkdeep!
@@ -1471,6 +1471,7 @@ step
 step
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
+    --TODO: timer: 26s
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
@@ -1510,10 +1511,10 @@ step
 step
     .goto Ashenvale,14.8,31.3
     .turnin 1007 >> Turn in The Ancient Statuette
+    --TODO: timer: 25s
     .accept 1009 >> Accept Ruuzel
 step
-   	>>Check for Lady Vespia on the islands en route, she is a rare spawn that has a chance to drop the ring and is much easier.
-	.unitscan Lady Vespia
+	>>Head to the island north and kill Ruuzel
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
 .goto Ashenvale,7.0,13.4
     .complete 1009,1 --Collect Ring of Zoram (x1)
