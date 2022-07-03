@@ -496,7 +496,7 @@ step
     .goto Azuremyst Isle,50.2,70.6
 	>>Speak with the gnome npc patrolling the beach southeast, wait for his dialogue sequence and kill him
     .complete 9537,1 --Collect Traitor's Communication (x1)
-    .skipgossip
+    .skipgossip 17243
     .timer 18,Traitor's Communication RP
 step << Hunter
     .goto Azuremyst Isle,46.7,70.5

@@ -3024,7 +3024,8 @@ local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
 function addon.functions.skipgossip(self, text, ...)
     if type(self) == "string" then
         local element = {dynamicText = true, textOnly = true, text = text}
-        element.args = {...}
+        local args =  {...}
+        element.args = #args > 0 and args
         return element
     end
 
@@ -3032,8 +3033,9 @@ function addon.functions.skipgossip(self, text, ...)
     local args = element.args or {}
     local nArgs = #args
     local event = text
+    local id = tonumber(args[1])
+
     if event == "GOSSIP_SHOW" then
-        local id = tonumber(args[1])
         -- print(id,'GS',nArgs)
         if nArgs == 0 or not id then
             if GossipGetNumAvailableQuests() == 0 and GossipGetNumActiveQuests() == 0 then
@@ -3041,30 +3043,31 @@ function addon.functions.skipgossip(self, text, ...)
             end
             return
         end
-
         local npcId = addon.GetNpcId()
+        element.npcId = npcId
         if nArgs == 1 then
             if npcId == id then
                 id = 1
             elseif id > 9 then
                 return
             end
-            if GossipGetNumAvailableQuests() == 0 and GossipGetNumActiveQuests() == 0 then
+            if GossipGetNumAvailableQuests() == 0 and
+                             GossipGetNumActiveQuests() == 0 then
                 GossipSelectOption(id)
             end
         elseif id == npcId then
-            if not element.npcId then
+            if not element.index then
                 element.index = 2
-                element.npcId = id
             else
                 element.index = ((element.index - 1) % (nArgs - 1)) + 2
             end
             local option = tonumber(args[element.index])
             if option then GossipSelectOption(option) end
         end
-    elseif event == "GOSSIP_CLOSED" then
-        element.npcId = nil
-    elseif element.timer and event == "GOSSIP_CONFIRM_CANCEL" then
+    elseif event == "GOSSIP_CLOSED" and nArgs > 1 then
+        element.index = false
+    elseif element.timer and event == "GOSSIP_CONFIRM_CANCEL" and
+                             (not id or id < 10 or element.npcId == id) then
         addon.StartTimer(element.timer,element.timerText)
     end
 

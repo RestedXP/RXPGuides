@@ -27,6 +27,7 @@ HSBatching.lua
 QuestLog.lua
 ActiveItemFrame.lua
 LevelingTracker.lua
+Timers.lua
 
 DB/classic.xml
 

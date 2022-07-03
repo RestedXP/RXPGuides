@@ -87,7 +87,7 @@ end
 
 local faction = UnitFactionGroup("player")
 local flightInfo = {}
-flightInfo = addon.flightInfo
+addon.flightInfo = flightInfo
 flightInfo.nodeHash = {}
 
 function addon:TAXIMAP_OPENED()
