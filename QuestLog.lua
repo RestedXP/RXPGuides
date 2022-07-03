@@ -39,26 +39,33 @@ function addon.UpdateQuestButton(index)
           frequency, questID = _G.GetQuestLogTitle(index);
     local showButton
     local function GetGuideList(list)
-        if RXPData and RXPCData.hardcore then
-            list = list:gsub("\n#.*", "")
-        else
-            list = list:gsub("\n!.*", "")
-        end
-        if RXPCData and RXPCData.SoM then
-            list = list:gsub("\n[!#]?%-.*", "")
-        else
-            list = list:gsub("\n[!#]?%+.*", "")
-        end
+        --local guides = {}
+        local output = ""
+        local groups = {}
+        local guides = {}
+        for _,entry in pairs(list) do
+            if addon.IsStepShown(entry.step) then
+                if not guides[entry.group] then
+                    guides[entry.group] = {}
+                    table.insert(groups,entry.group)
+                end
+                guides[entry.group][entry.name] = true
 
-        list = list:gsub("(\n?)([#!%-%+]*)%[?(%S*)%]? (.*)",
-                         function(newline, prefix, phase, suffix)
-            if phase ~= "" and not addon.PhaseCheck(phase) then
-                return ""
             end
-            return newline .. suffix
-        end)
-        list = list:gsub("\n\n", "\n")
-        return list
+        end
+        table.sort(groups)
+        for _,group in ipairs(groups) do
+            local guideList = {}
+            for guide in pairs(guides[group]) do
+                table.insert(guideList,guide)
+            end
+            table.sort(guideList)
+            output = output .. "\n   " .. group .. ":"
+            for _,guide in ipairs(guideList) do
+                output = output .. "\n     " .. guide
+            end
+        end
+        return output
     end
 
     if questID then
@@ -67,7 +74,7 @@ function addon.UpdateQuestButton(index)
         if addon.pickUpList[questID] then
             local pickUpList = GetGuideList(addon.pickUpList[questID])
             if pickUpList ~= "" then
-                tooltip = format("%s%s%sQuest is being picked up at:|r%s",
+                tooltip = format("%s%s%sQuest is being picked up at|r%s",
                                  tooltip, addon.icons.accept,
                                  addon.colors.tooltip, pickUpList)
                 showButton = true
@@ -77,7 +84,7 @@ function addon.UpdateQuestButton(index)
         if addon.turnInList[questID] then
             local turnInList = GetGuideList(addon.turnInList[questID])
             if turnInList ~= "" then
-                tooltip = format("%s%s%s%sQuest is being turned in at:|r%s",
+                tooltip = format("%s%s%s%sQuest is being turned in at|r%s",
                                  tooltip, separator, addon.icons.turnin,
                                  addon.colors.tooltip, turnInList)
                 showButton = true
@@ -143,7 +150,7 @@ function addon.GetQuestLog(QL)
     print("QuestLog length: " .. n)
 
     if qError then
-        print(format("Error at step %d: Quest log length greater than 20",
+        print(format("Error at step %d: Quest log length greater than " .. maxQuests,
                      eStep.index))
     else
         if group.next() then

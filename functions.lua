@@ -511,6 +511,17 @@ local function ProcessItems(value, step, questId, isTurnIn)
     end
 end
 
+function addon.InsertQuestGuide(id,tbl)
+    if not tbl[id] then tbl[id] = {} end
+    local entry = {}
+
+    entry.step = addon.step
+    entry.name = addon.currentGuideName
+    entry.group = addon.currentGuideGroup
+
+    table.insert(tbl[id],entry)
+end
+
 addon.pickUpList = {}
 function addon.functions.accept(self, ...)
     if type(self) == "string" then -- on parse
@@ -537,28 +548,9 @@ function addon.functions.accept(self, ...)
         end
         element.tooltipText = addon.icons.accept .. element.text
 
-        if not addon.pickUpList[id] then addon.pickUpList[id] = "" end
-        local step = addon.step
-        local stepType = ""
-        if step.hardcore then
-            stepType = "!"
-        elseif step.softcore then
-            stepType = "#"
-        end
-        if step.som then
-            stepType = stepType .. "+"
-        elseif step.era then
-            stepType = stepType .. "-"
-        end
-        if step.phase then
-            stepType = stepType .. "[" .. step.phase .. "]"
-        end
-
         element.escort = escort
 
-        addon.pickUpList[id] = format("%s\n%s %s", addon.pickUpList[id],
-                                      stepType, addon.currentGuideName)
-
+        addon.InsertQuestGuide(id,addon.pickUpList)
         return element
     else
         local element = self.element
@@ -825,25 +817,8 @@ function addon.functions.turnin(self, ...)
             element.retrieveText = true
         end
         element.tooltipText = addon.icons.turnin .. element.text
-        if not addon.turnInList[id] then addon.turnInList[id] = "" end
-        local step = addon.step
-        local stepType = ""
-        if step.hardcore then
-            stepType = "!"
-        elseif step.softcore then
-            stepType = "#"
-        end
-        if step.som then
-            stepType = stepType .. "+"
-        elseif step.era then
-            stepType = stepType .. "-"
-        end
-        if step.phase then
-            stepType = stepType .. "[" .. step.phase .. "]"
-        end
+        addon.InsertQuestGuide(id,addon.turnInList)
 
-        addon.turnInList[id] = format("%s\n%s %s", addon.turnInList[id],
-                                      stepType, addon.currentGuideName)
         return element
     else
         local element = self.element

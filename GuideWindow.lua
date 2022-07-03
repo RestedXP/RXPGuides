@@ -1004,10 +1004,8 @@ function addon:LoadGuide(guide, OnLoad)
 
     for k, v in pairs(guide) do addon.currentGuide[k] = v end
     addon.currentGuide.steps = {}
-    for n, step in ipairs(guide.steps) do
-        if addon.AldorScryerCheck(step) and addon.PhaseCheck(step) and
-            addon.HardcoreCheck(step) and addon.SeasonCheck(step) and
-            addon.IsStepShown(step) then
+    for _, step in ipairs(guide.steps) do
+        if addon.IsStepShown(step) then
             table.insert(addon.currentGuide.steps, step)
         end
     end

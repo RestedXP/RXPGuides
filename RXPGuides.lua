@@ -806,9 +806,8 @@ function addon.AldorScryerCheck(faction)
 end
 
 function addon.PhaseCheck(phase)
-    local guide
+
     if type(phase) == "table" then
-        guide = phase
         phase = phase.phase
     end
 
@@ -833,8 +832,8 @@ function addon.PhaseCheck(phase)
 end
 
 function addon.IsStepShown(step)
-    if (step.daily and RXPCData.skipDailies) then return false end
-    return true
+    return not(step.daily and RXPCData.skipDailies) and addon.AldorScryerCheck(step) and
+             addon.PhaseCheck(step) and addon.HardcoreCheck(step) and addon.SeasonCheck(step)
 end
 
 function addon.SeasonCheck(step)
