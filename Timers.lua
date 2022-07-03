@@ -182,7 +182,7 @@ _G.hooksecurefunc("TaxiNodeOnButtonEnter", function(button)  -- add time info on
             GameTooltip:Show()
         end
         --
-        print(index,format("%.02f, %.02f",TaxiGetDestX(index,1)*100,TaxiGetDestY(index,1)*100))
+        --print(index,format("%.02f, %.02f",TaxiGetDestX(index,1)*100,TaxiGetDestY(index,1)*100))
     end
 end)
 

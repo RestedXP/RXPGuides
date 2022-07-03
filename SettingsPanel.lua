@@ -567,8 +567,6 @@ function addon.settings.functions.setProfileOption(info, value)
 end
 
 function addon.settings.functions.ImportBoxValidate(text)
-    -- print(text)
-    -- Is RXPGuides.RegisterGuide or RXPGuides.ImportGuide
 
     local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,
                                                            addon.RXPFrame)
@@ -592,7 +590,7 @@ function addon.settings.functions.GetImportedGuides()
     for _, guide in ipairs(addon.guides) do
         if guide.imported or guide.cache then
             importedGuidesFound = true
-            local group, subgroup, name = guide.key:match("^.*|(.*)|(.*)|(.*)")
+            local group, subgroup, name = guide.key:match("^(.*)|(.*)|(.*)")
             if subgroup ~= "" then group = group .. "/" .. subgroup end
             display[guide.key] = string.format("%s/%s - version %s", group,
                                                name, guide.version)
