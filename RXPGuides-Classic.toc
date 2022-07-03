@@ -28,7 +28,8 @@ QuestLog.lua
 ActiveItemFrame.lua
 LevelingTracker.lua
 
-data.lua
+DB/classic.xml
+
 map.lua
 functions.lua
 GuideLoader.lua

@@ -30,7 +30,8 @@ QuestLog.lua
 ActiveItemFrame.lua
 LevelingTracker.lua
 
-data.lua
+DB/wotlk.xml
+
 map.lua
 functions.lua
 GuideLoader.lua

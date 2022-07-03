@@ -1,0 +1,9 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+
+    <Script file="DB/shared.lua"/>
+
+    <Script file="DB/tbc/flightData.lua"/>
+    <Script file="DB/tbc/quest.lua"/>
+    <Script file="DB/tbc/spells.lua"/>
+
+</Ui>

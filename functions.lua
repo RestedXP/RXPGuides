@@ -70,7 +70,8 @@ addon.icons = {
     tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t",
     abandon = "|TInterface/GossipFrame/IncompleteQuestIcon:0|t",
     link = "|TInterface/FriendsFrame/UI-FriendsFrame-Link:0|t",
-    error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t"
+    error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
+    clock = "|TInterface/ICONS/INV_Misc_PocketWatch_02:0|t",
 }
 
 addon.icons.xpto60 = addon.icons.xp
@@ -1428,8 +1429,8 @@ function addon.functions.fp(self, ...)
         end
 
         if location and location ~= "" and location:match("%w+") then
-            for id, name in pairs(addon.flightPath[faction]) do
-                if strupper(name):match(strupper(location)) then
+            for id, fp in pairs(addon.FPDB[faction]) do
+                if strupper(fp.name):match(strupper(location)) then
                     element.fpId = id
                     break
                 end
@@ -1474,15 +1475,10 @@ function addon.functions.fly(self, ...)
     local event = ...
     if event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and
         self.element.location then
-        local FPlist = C_TaxiMap.GetAllTaxiNodes(
-                           C_Map.GetBestMapForUnit("player"))
-        local fpId = {}
-        for k, v in pairs(FPlist) do
-            if v.slotIndex then fpId[v.slotIndex] = v.nodeID end
-        end
-
+        addon:TAXIMAP_OPENED()
         for i = 1, NumTaxiNodes() do
-            local name = fpId[i] and addon.flightPath[faction][fpId[i]]
+            local id = addon.flightInfo[i]
+            local name = id and addon.FPDB[faction][id].name
             if name and strupper(name):match(self.element.location) then
                 local taxi = getglobal("TaxiButton" .. i)
                 taxi:GetScript("OnEnter")(taxi)

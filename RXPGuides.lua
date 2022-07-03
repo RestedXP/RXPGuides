@@ -507,6 +507,8 @@ function addon:OnEnable()
     self:RegisterEvent("PLAYER_LEVEL_UP")
     self:RegisterEvent("TRAINER_SHOW")
     self:RegisterEvent("UNIT_PET")
+    self:RegisterEvent("PLAYER_CONTROL_LOST")
+    self:RegisterEvent("PLAYER_CONTROL_GAINED")
     -- self:RegisterEvent("QUEST_LOG_UPDATE")
 
     questFrame:RegisterEvent("QUEST_COMPLETE")
@@ -561,13 +563,6 @@ function addon:TRAINER_SHOW(...)
 end
 
 function addon:TRAINER_CLOSED(...) addon.trainerFrame:SetScript("OnUpdate", nil) end
-
-function addon:TAXIMAP_OPENED(...)
-    local FPlist = C_TaxiMap.GetAllTaxiNodes(C_Map.GetBestMapForUnit("player"))
-    for _, v in pairs(FPlist) do
-        if v.nodeID then RXPCData.flightPaths[v.nodeID] = true end
-    end
-end
 
 function addon:PLAYER_LEVEL_UP(_, level)
     if not addon.currentGuide then return end

@@ -123,8 +123,8 @@ local function SetStepFrameAnchor()
         frame:SetPoint("BOTTOMRIGHT", GuideName, "TOPRIGHT", 0, 2)
         if bars then
             bars:ClearAllPoints()
-            bars:SetPoint("TOPLEFT",RXPFrame,"BOTTOMLEFT",7,0)
-            bars:SetPoint("TOPRIGHT",RXPFrame,"BOTTOMRIGHT",-7,0)
+            bars:SetPoint("TOPLEFT",RXPFrame,"BOTTOMLEFT",7,-5)
+            bars:SetPoint("TOPRIGHT",RXPFrame,"BOTTOMRIGHT",-7,-5)
         end
     end
     local function SetBottom()
