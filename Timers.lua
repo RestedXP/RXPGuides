@@ -86,46 +86,49 @@ function addon.StartTimer(duration,label,options)
 end
 
 local faction = UnitFactionGroup("player")
-addon.nodeHash = {}
-addon.flightInfo = {}
-addon.flightTimer = 0
+local flightInfo = {}
+flightInfo = addon.flightInfo
+flightInfo.nodeHash = {}
 
 function addon:TAXIMAP_OPENED()
     local mapID = C_Map.GetBestMapForUnit("player")
-    if addon.flightInfo.MapID ~= mapID then
+    if flightInfo.MapID ~= mapID then
         local FPList = C_TaxiMap.GetAllTaxiNodes(mapID)
         for _, v in pairs(FPList) do
             local id = v.nodeID
-            print(id)
+            --print(id)
             if id then
                 if v.state == 2 then
                     RXPCData.flightPaths[id] = false
                 else
                     local hash = addon.GetFlightHash(v.slotIndex)
-                    addon.nodeHash[hash] = id
+                    flightInfo.nodeHash[hash] = id
                     RXPCData.flightPaths[id] = v.name
-                    addon.flightInfo[v.slotIndex] = v.nodeID
+                    flightInfo[v.slotIndex] = v.nodeID
                     --print(v.nodeID,v.name,hash)
-                    if v.state == 0 then addon.currentFP = id end
+                    if v.state == 0 then
+                        flightInfo.currentFP = id
+                    end
                 end
             end
         end
     end
-    addon.flightInfo.MapID = mapID
+    flightInfo.MapID = mapID
 end
 
 function addon:PLAYER_CONTROL_LOST()
-    if GetTime() - addon.startFlight < 1.5 then
-        addon.flightBar = addon.StartTimer(addon.flightInfo.timer,addon.flightInfo.dest)
+    if GetTime() - flightInfo.startFlight < 1.5 then
+        flightInfo.flightBar = addon.StartTimer(flightInfo.timer,flightInfo.dest)
     end
 end
 
 function addon:PLAYER_CONTROL_GAINED()
-    if addon.flightBar then
-        addon.flightBar:Hide()
+    if flightInfo.flightBar then
+        flightInfo.flightBar:Hide()
     end
 end
 
+--You can only retrieve x,y info from each leg
 function addon.GetFlightHash(index,level)
     local x,y
     if level then
@@ -138,22 +141,23 @@ function addon.GetFlightHash(index,level)
 end
 
 local function GetFlightTime(index)
-    local dest = addon.nodeHash[addon.GetFlightHash(index)]
-    local src = addon.currentFP
+    local dest = flightInfo.nodeHash[addon.GetFlightHash(index)]
+    local src = flightInfo.currentFP
     local FPDB = addon.FPDB[faction]
+    --uses the flight timer from destination to source if the timer is not found
     local time = FPDB[src] and FPDB[src][dest] or FPDB[dest] and FPDB[dest][src]
     if time then
-        addon.flightInfo.timer = time
-        addon.flightInfo.dest = RXPCData.flightPaths[dest]
-        addon.flightInfo.activeIndex = index
+        flightInfo.timer = time
+        flightInfo.dest = RXPCData.flightPaths[dest]
+        flightInfo.activeIndex = index
         return time
     else
         local totalTime = 0
+        --Sums the flight time for each leg if the direct timer is not found
         for i = 1,GetNumRoutes(index) do
             local hash = addon.GetFlightHash(index,i)
-            dest = addon.nodeHash[hash]
-            time = FPDB[src] and FPDB[src][dest]
-            time = time or FPDB[dest] and FPDB[dest][src]
+            dest = flightInfo.nodeHash[hash]
+            time = FPDB[src] and FPDB[src][dest] or FPDB[dest] and FPDB[dest][src]
             if time then
                 totalTime = totalTime + time
             else
@@ -163,33 +167,34 @@ local function GetFlightTime(index)
             src = dest
         end
         if totalTime > 0 then
-            addon.flightInfo.timer = totalTime
-            addon.flightInfo.activeIndex = index
-            addon.flightInfo.dest = RXPCData.flightPaths[dest]
+            flightInfo.timer = totalTime
+            flightInfo.activeIndex = index
+            flightInfo.dest = RXPCData.flightPaths[dest]
             return totalTime
         end
     end
 end
 
-
-_G.hooksecurefunc("TaxiNodeOnButtonEnter", function(button)  -- add time info on the taxi map tooltips
+ -- add flight path times to taxi map tooltips:
+_G.hooksecurefunc("TaxiNodeOnButtonEnter", function(button)
 
     local index = button:GetID()
     if TaxiNodeGetType(index) == "REACHABLE" then
         local time = GetFlightTime(index)
         if time then
-            GameTooltip:AddLine(addon.icons.clock .. string.format("%d:%02d", time / 60, time % 60), 1, 1, 1)
-            GameTooltip:Show()
+            _G.GameTooltip:AddLine(addon.icons.clock ..
+                                    string.format("%d:%02d", time / 60, time % 60), 1, 1, 1)
+            _G.GameTooltip:Show()
         end
         --
         --print(index,format("%.02f, %.02f",TaxiGetDestX(index,1)*100,TaxiGetDestY(index,1)*100))
     end
 end)
 
-addon.startFlight = 0
+flightInfo.startFlight = 0
 _G.hooksecurefunc("TakeTaxiNode", function(index)
-    if addon.flightInfo.activeIndex ~= index then
+    if flightInfo.activeIndex ~= index then
         GetFlightTime(index)
     end
-    addon.startFlight = GetTime()
+    flightInfo.startFlight = GetTime()
 end)

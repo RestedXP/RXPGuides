@@ -32,7 +32,7 @@ events.train = {
 events.istrained = {"LEARNED_SPELL_IN_TAB", "TRAINER_UPDATE"}
 events.zone = "ZONE_CHANGED_NEW_AREA"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
-events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED"}
+events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
 events.emote = "PLAYER_TARGET_CHANGED"
@@ -1447,9 +1447,6 @@ function addon.functions.fp(self, ...)
             self.element.step.active) then addon.SetElementComplete(self) end
 end
 
-addon.taxiTime = 0
-hooksecurefunc("TakeTaxiNode", function(index) addon.taxiTime = GetTime() end)
-
 function addon.functions.fly(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
@@ -1467,27 +1464,34 @@ function addon.functions.fly(self, ...)
         end
         if location and location ~= "" and location:match("%w") then
             element.location = strupper(location)
+        else
+            element.location = nil
         end
         element.tooltipText = addon.icons.fly .. element.text
         return element
     end
-    if not self.element.step.active then return end
+
+    local element = self.element
+    if not element.step.active then return end
     local event = ...
     if event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and
-        self.element.location then
+        element.location then
         addon:TAXIMAP_OPENED()
         for i = 1, NumTaxiNodes() do
             local id = addon.flightInfo[i]
-            local name = id and addon.FPDB[faction][id].name
-            if name and strupper(name):match(self.element.location) then
+            local name = id and addon.FPDB[faction][id] and addon.FPDB[faction][id].name
+            if name and strupper(name):match(element.location) then
                 local taxi = getglobal("TaxiButton" .. i)
                 taxi:GetScript("OnEnter")(taxi)
                 return TakeTaxiNode(i)
             end
         end
     elseif (event and UnitOnTaxi("player")) or
-        (event == "PLAYER_CONTROL_LOST" and GetTime() - addon.taxiTime < 1.5) then
+        (event == "PLAYER_CONTROL_LOST" and GetTime() - addon.flightInfo.startFlight < 1.5) then
         addon.SetElementComplete(self)
+        if element.timer then
+            addon.StartTimer(element.timer,element.timerText)
+        end
     end
 end
 
@@ -2547,7 +2551,13 @@ function addon.functions.cast(self, ...)
         element.tooltipText = element.icon .. element.text
     end
     if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and id ==
-        element.id then addon.SetElementComplete(self) end
+        element.id then
+
+        addon.SetElementComplete(self)
+        if element.timer then
+            addon.StartTimer(element.timer,element.timerText)
+        end
+    end
 end
 
 function addon.functions.unitscan(self, text, ...)
@@ -3013,10 +3023,8 @@ local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
 
 function addon.functions.skipgossip(self, text, ...)
     if type(self) == "string" then
-        local element = {}
+        local element = {dynamicText = true, textOnly = true, text = text}
         element.args = {...}
-        if text and text ~= "" then element.text = text end
-        element.textOnly = true
         return element
     end
 
@@ -3056,6 +3064,8 @@ function addon.functions.skipgossip(self, text, ...)
         end
     elseif event == "GOSSIP_CLOSED" then
         element.npcId = nil
+    elseif element.timer and event == "GOSSIP_CONFIRM_CANCEL" then
+        addon.StartTimer(element.timer,element.timerText)
     end
 
 end
@@ -3175,6 +3185,9 @@ function addon.functions.vehicle(self, ...)
     if ((event == "UNIT_ENTERING_VEHICLE" and unit == "player") or vehicle) and
         ((id and vehicle == id) or (not id and vehicle)) then
         addon.SetElementComplete(self)
+        if element.timer then
+            addon.StartTimer(element.timer,element.timerText)
+        end
     end
 end
 
@@ -3478,12 +3491,6 @@ function addon.functions.timer(self,text,duration,timerText,callback,...)
     local f = RXPG[addon.currentGuide.group][element.callback]
     if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
         addon.StartTimer(element.timer,element.timerText)
-    end
-end
-
-function addon.functions:gossipTimer(event)
-    if event == "GOSSIP_CONFIRM_CANCEL" then
-        return true
     end
 end
 
