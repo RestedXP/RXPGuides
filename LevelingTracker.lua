@@ -148,24 +148,28 @@ function addon.tracker:QUEST_TURNED_IN(_, questId, xpReward)
 end
 
 function addon.tracker:CreateGui()
-    local BackdropTemplate = _G.BackdropTemplateMixin and "BackdropTemplate" or
-                                 nil
+    -- local BackdropTemplate = _G.BackdropTemplateMixin and "BackdropTemplate" or nil
 
     local attachment = _G.PaperDollItemsFrame
-
-    -- if addon.tracker.ui then
-    --   addon.tracker.ui:Show()
-    --  return
-    -- end
+    local offset = {
+        x = -38,
+        y = -32,
+        tabsHeight = _G.CharacterFrameTab1:GetHeight()
+    }
 
     addon.tracker.ui = AceGUI:Create("Frame")
     local trackerUi = addon.tracker.ui
 
-    -- trackerUi:SetCallback("OnClose", function(widget) AceGUI:Release(widget) end)
     trackerUi:SetLayout("Flow")
     trackerUi:Hide()
+    trackerUi:SetCallback("OnClose", function() self:Hide() end)
+
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
     trackerUi:SetTitle("RestedXP Leveling Report")
+    trackerUi:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
+    trackerUi:SetWidth(attachment:GetWidth() * 0.6)
+    trackerUi:SetHeight(attachment:GetHeight() + offset.y - 6 -
+                            offset.tabsHeight * 2)
 
     trackerUi.frame:SetFrameStrata("HIGH")
     trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
@@ -185,9 +189,21 @@ function addon.tracker:CreateGui()
     _G["RESTEDXP_TRACKER_SUMMARY_WINDOW"] = trackerUi.frame
     tinsert(_G.UISpecialFrames, "RESTEDXP_TRACKER_SUMMARY_WINDOW")
 
-    -- trackerUi.title:GetParent():Hide() -- Hide the title bar
-    -- trackerUi:SetCallback("OnClose", function(widget) self:close() end)
-    print("Building trackerUi")
+    trackerUi.levelDropdown = AceGUI:Create("Dropdown")
+
+    local dropdownLevels = {}
+    for level, _ in pairs(addon.tracker.db.profile["levels"]) do
+        dropdownLevels[level] = level
+    end
+
+    trackerUi.levelDropdown:SetList(dropdownLevels)
+    trackerUi.levelDropdown:SetValue(dropdownLevels[addon.tracker.playerLevel])
+
+    trackerUi.levelDropdown:SetCallback("OnValueChanged", function(_, _, key)
+        addon.tracker:UpdateReport(key)
+    end)
+
+    trackerUi:AddChild(trackerUi.levelDropdown)
 
     _G.RXPTUI = trackerUi
 
@@ -196,12 +212,6 @@ function addon.tracker:CreateGui()
                                    BackdropTemplate)
 
     local trackerUi = addon.tracker.ui
-
-    local offset = {
-        x = -38,
-        y = -32,
-        tabsHeight = _G.CharacterFrameTab1:GetHeight()
-    }
 
     trackerUi:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
     trackerUi:SetWidth(attachment:GetWidth() * 0.6)
@@ -353,7 +363,7 @@ end
 
 function addon.tracker:ShowReport()
     addon.tracker.ui:Show()
-    -- _G.CharacterFrame:Show()
+    _G.CharacterFrame:Show()
 end
 
 function addon.tracker:CompileData()
@@ -411,6 +421,7 @@ end
 
 function addon.tracker:UpdateReport(selectedLevel, force)
     local trackerUi = addon.tracker.ui
+    print("UpdateReport:selectedLevel = " .. selectedLevel)
 
     --[[
 
