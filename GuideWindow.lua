@@ -1238,7 +1238,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
             local step = frame.step
             local hideStep = step.level > level or step.hidewindow
             local fheight
-            for i, element in ipairs(frame.step.elements or {}) do
+            for _, element in ipairs(frame.step.elements or {}) do
                 if not self then
                     local stepDiff = element.step.index - RXPCData.currentStep
                     element.element = element
@@ -1249,7 +1249,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                                 not element.requestFromServer
                         addon.stepUpdateList[element.step.index] =
                             not element.requestFromServer
-                    elseif element.tag and (stepDiff <= 8 and stepDiff >= 0) then
+                    elseif element.tag and (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
                         RXPG[addon.currentGuide.group][element.tag](element)
                     end
                 end

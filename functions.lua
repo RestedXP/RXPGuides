@@ -2347,6 +2347,18 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     end
 end
 
+function addon.functions.hideifcomplete(self)
+    if type(self) == "string" then
+        return {textOnly = true, keepUpdating = true}
+    end
+    local step = self.element.step
+    if step.active then
+        step.hidewindow = step.completed
+    else
+        step.hidewindow = step.hidewindow or step.completed
+    end
+end
+
 function addon.functions.spellMissing(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
