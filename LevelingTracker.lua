@@ -5,6 +5,7 @@ local UnitLevel, GetRealZoneText, IsInGroup, tonumber = UnitLevel,
                                                         GetRealZoneText,
                                                         IsInGroup, tonumber
 local _G = _G
+local AceGUI = LibStub("AceGUI-3.0")
 
 addon.tracker = addon:NewModule(addonName, "AceEvent-3.0")
 
@@ -24,7 +25,7 @@ function addon.tracker:SetupTracker()
 
     addon.tracker:UpgradeDB()
 
-    if addon.enableTrackerReport then addon.tracker:AttachGUI() end
+    if addon.enableTrackerReport then addon.tracker:CreateGui() end
 end
 
 function addon.tracker:UpgradeDB()
@@ -70,6 +71,7 @@ end
 
 function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
     -- Exclude "You gain 360 experience" from quest turnin, doubles up on mob kill
+    -- TODO use _G.COMBATLOG_XPGAIN_FIRSTPERSON or _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED
     if 'You' == strsub(text, 0, #'You') then return end
 
     local xpGained = tonumber(smatch(text, "%d+"))
@@ -145,11 +147,51 @@ function addon.tracker:QUEST_TURNED_IN(_, questId, xpReward)
     -- e.g. complete quest solo, join dungeon group, then turn in before flying or inverse
 end
 
-function addon.tracker:AttachGUI()
+function addon.tracker:CreateGui()
     local BackdropTemplate = _G.BackdropTemplateMixin and "BackdropTemplate" or
                                  nil
 
     local attachment = _G.PaperDollItemsFrame
+
+    -- if addon.tracker.ui then
+    --   addon.tracker.ui:Show()
+    --  return
+    -- end
+
+    addon.tracker.ui = AceGUI:Create("Frame")
+    local trackerUi = addon.tracker.ui
+
+    -- trackerUi:SetCallback("OnClose", function(widget) AceGUI:Release(widget) end)
+    trackerUi:SetLayout("Flow")
+    trackerUi:Hide()
+    trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
+    trackerUi:SetTitle("RestedXP Leveling Report")
+
+    trackerUi.frame:SetFrameStrata("HIGH")
+    trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    trackerUi.frame:SetBackdropColor(unpack(addon.colors.background))
+    trackerUi.frame:EnableMouse(true)
+    trackerUi.frame:SetMovable(true)
+    trackerUi.frame:RegisterForDrag("LeftButton")
+    trackerUi.frame:SetUserPlaced(true)
+
+    trackerUi:SetCallback("OnShow", function()
+        -- refresh data
+        addon.tracker:CompileData()
+        addon.tracker:UpdateReport(addon.tracker.playerLevel, true)
+    end)
+
+    -- Make sure the window can be closed by pressing the escape button
+    _G["RESTEDXP_TRACKER_SUMMARY_WINDOW"] = trackerUi.frame
+    tinsert(_G.UISpecialFrames, "RESTEDXP_TRACKER_SUMMARY_WINDOW")
+
+    -- trackerUi.title:GetParent():Hide() -- Hide the title bar
+    -- trackerUi:SetCallback("OnClose", function(widget) self:close() end)
+    print("Building trackerUi")
+
+    _G.RXPTUI = trackerUi
+
+    --[[
     addon.tracker.ui = CreateFrame("Frame", "RXPTrackerUI", attachment,
                                    BackdropTemplate)
 
@@ -305,12 +347,13 @@ function addon.tracker:AttachGUI()
 
     _G[trackerUi.sourceSlider:GetName() .. "Low"]:SetText('Quests')
     _G[trackerUi.sourceSlider:GetName() .. "High"]:SetText('Mobs')
+    --]]
 
 end
 
 function addon.tracker:ShowReport()
     addon.tracker.ui:Show()
-    _G.CharacterFrame:Show()
+    -- _G.CharacterFrame:Show()
 end
 
 function addon.tracker:CompileData()
@@ -320,13 +363,14 @@ function addon.tracker:CompileData()
     addon.tracker.reportData = {}
     local rData = addon.tracker.reportData
 
-    for level, _ in pairs(profile["levels"]) do
+    --[[
+        for level, _ in pairs(profile["levels"]) do
         trackerUi.levelSlider:SetMinMaxValues(level, addon.tracker.playerLevel)
         _G[trackerUi.levelSlider:GetName() .. "Low"]:SetText(level)
-        _G[trackerUi.levelSlider:GetName() .. "High"]:SetText(addon.tracker
-                                                                  .playerLevel)
+        _G[trackerUi.levelSlider:GetName() .. "High"]:SetText(addon.tracker.playerLevel)
         break
     end
+    ]] --
 
     local levelData
     for level, data in pairs(profile["levels"]) do
@@ -367,6 +411,8 @@ end
 
 function addon.tracker:UpdateReport(selectedLevel, force)
     local trackerUi = addon.tracker.ui
+
+    --[[
 
     if force then addon.tracker.ui.levelSlider:SetValue(selectedLevel) end
 
@@ -411,4 +457,5 @@ function addon.tracker:UpdateReport(selectedLevel, force)
         --                                             selectedLevel)
         -- trackerUi.dateFinished:SetFormattedText("In-progress")
     end
+    --]]
 end
