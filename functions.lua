@@ -2475,7 +2475,11 @@ function addon.functions.cast(self, ...)
         element.id = tonumber(id)
         element.text = text or ""
         local icon = GetSpellTexture(id)
-        if icon then
+
+        if not text or text == "" then
+            element.textOnly = true
+            element.dynamicText = true
+        elseif icon then
             element.icon = "|T" .. icon .. ":0|t"
             element.tooltipText = element.icon .. element.text
         end
@@ -2483,9 +2487,9 @@ function addon.functions.cast(self, ...)
         return element
     end
     local event, unit, _, id = ...
-    local icon = GetSpellTexture(id)
     local element = self.element
-    if icon then
+    local icon = GetSpellTexture(id)
+    if not element.icon and not element.textOnly and icon then
         element.icon = "|T" .. icon .. ":0|t"
         element.tooltipText = element.icon .. element.text
     end
