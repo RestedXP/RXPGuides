@@ -45,10 +45,12 @@ events.isQuestTurnedIn = events.complete
 events.cast = events.hs
 events.blastedLands = events.collect
 events.daily = events.accept
+events.dailyturnin = events.turnin
 
 addon.icons = {
     accept = "|TInterface/GossipFrame/AvailableQuestIcon:0|t",
     daily = "|TInterface/GossipFrame/DailyQuestIcon:0|t",
+    dailyturnin = "|TInterface/GossipFrame/DailyActiveQuestIcon:0|t",
     turnin = "|TInterface/GossipFrame/ActiveQuestIcon:0|t",
     collect = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
     combat = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t",
@@ -527,8 +529,9 @@ function addon.functions.accept(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         element.tag = "accept"
-        local text, id, escort = ...
+        local text, id, flags = ...
         id = tonumber(id)
+        flags = tonumber(flags) or 0
         if not id then
             return addon.error(
                        "Error parsing guide " .. addon.currentGuideName ..
@@ -548,7 +551,11 @@ function addon.functions.accept(self, ...)
         end
         element.tooltipText = addon.icons.accept .. element.text
 
-        element.escort = escort
+        element.flags = flags
+        --[[
+        flags:
+            1 - disable auto accept
+        ]]
 
         addon.InsertQuestGuide(id,addon.pickUpList)
         return element
@@ -569,7 +576,7 @@ function addon.functions.accept(self, ...)
         if element.step.active or element.retrieveText or
             (element.step.index > 1 and
                 addon.currentGuide.steps[element.step.index - 1].active) then
-            local autoAccept = not element.escort
+            local autoAccept = bit.band(element.flags,0x1) ~= 0x1
             if autoAccept then addon.questAccept[id] = element end
             local quest = addon.GetQuestName(id, element)
             if quest then
@@ -588,10 +595,10 @@ function addon.functions.accept(self, ...)
             end
         end
 
-        local icon = addon.icons.accept
+        local icon = addon.icons[element.tag]
         -- local skip
         if step.active and db and type(db.QueryQuest) == "function" and
-            not isQuestAccepted and not addon.skipPreReq[id] then
+            not isQuestAccepted and not addon.skipPreReq[id] and not element.multiple then
             local quest = db:GetQuest(id)
             if quest then
                 local doable = db:IsDoable(id)
@@ -622,7 +629,7 @@ function addon.functions.accept(self, ...)
                     element.tooltip = nil
                 end
             end
-        else
+        elseif element.icon then
             element.icon = icon
             element.tooltip = nil
         end
@@ -665,6 +672,7 @@ function addon.functions.daily(self, text, ...)
             local questId = tonumber(v)
             if questId then
                 ids[i] = questConversion[questId] or questId
+                addon.InsertQuestGuide(ids[i],addon.pickUpList)
             else
                 err = true
                 break
@@ -676,6 +684,8 @@ function addon.functions.daily(self, text, ...)
                        "Error parsing guide " .. addon.currentGuideName ..
                            ": Invalid quest ID\n" .. self)
         end
+        element.multiple = #ids > 1
+        element.flags = 0
         element.title = ""
         -- element.title = addon.GetQuestName(id)
         element.text = text or ""
@@ -685,106 +695,14 @@ function addon.functions.daily(self, text, ...)
         return element
     else
         local element = self.element
-        local step = element.step
         if RXPCData.skipDailies then
             addon.SetElementComplete(self, true)
             return
         end
-        local event = text
-        local arg1, questId = ...
-        local ids = element.ids
 
-        for _, id in pairs(ids) do
-            local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
-
-            if (event == "QUEST_ACCEPTED" and questId == id) then
-                if element.timer then
-                    addon.StartTimer(element.timer,element.timerText)
-                end
-                isQuestAccepted = true
-            end
-
-            if element.step.active or element.requestFromServer or
-                (step.index > 1 and
-                    addon.currentGuide.steps[step.index - 1].active) then
-                addon.questAccept[id] = element
-                local quest = addon.GetQuestName(id, element)
-                if quest then
-                    element.title = quest
-                    -- addon.questAccept[quest] = element
-                    if element.requestFromServer then
-                        element.requestFromServer = nil
-                        addon.UpdateStepText(self)
-                    end
-                else
-                    element.title = ""
-                    element.requestFromServer = true
-                end
-            end
-
-            local icon = addon.icons.daily
-            -- local skip
-
-            if #ids == 1 and step.active and db and type(db.QueryQuest) ==
-                "function" and not isQuestAccepted and not addon.skipPreReq[id] then
-                local quest = db:GetQuest(id)
-                if quest then
-                    local doable = db:IsDoable(id)
-                    local requiredQuests
-
-                    if not doable then
-                        requiredQuests = GetRequiredQuests(quest)
-                    end
-                    if requiredQuests and #requiredQuests > 0 then
-                        local tooltip = addon.colors.tooltip ..
-                                            "Missing pre-requisites:|r\n"
-                        for i, qid in ipairs(requiredQuests) do
-                            tooltip = format("%s\n%s%s (%d)", tooltip,
-                                             addon.icons.turnin,
-                                             db:GetQuest(qid).name, qid)
-                        end
-                        element.tooltip = tooltip
-                        element.icon = addon.icons.error
-                        -- skip = RXPData.skipMissingPreReqs
-                    elseif not doable then
-                        local tooltip = addon.colors.tooltip ..
-                                            "Missing pre-requisites|r"
-                        element.tooltip = tooltip
-                        element.icon = addon.icons.error
-                        -- skip = RXPData.skipMissingPreReqs
-                    else
-                        element.icon = icon
-                        element.tooltip = nil
-                    end
-                end
-            else
-                element.icon = icon
-                element.tooltip = nil
-            end
-
-            element.tooltipText = addon.icons.daily .. element.text
-            local completed = element.completed
-
-            if isQuestAccepted then
-                addon.SetElementComplete(self, true)
-                -- elseif skip then
-                --    addon.SetElementComplete(self)
-            elseif event == "QUEST_REMOVED" and arg1 == id and not element.skip then
-                addon.SetElementIncomplete(self)
-            end
-
-            if step.active then
-                if event then
-                    local itemFrame = self.GetParent and
-                                          self:GetParent().activeItemFrame
-                    if completed ~= element.completed and itemFrame then
-                        ProcessItems(not element.completed, step, id)
-                        addon.UpdateItemFrame(itemFrame)
-                    end
-                else
-                    ProcessItems(true, step, id)
-                end
-            end
+        for _, id in pairs(element.ids) do
+            element.questId = id
+            addon.functions.accept(self, text, ...)
         end
     end
 
@@ -845,11 +763,11 @@ function addon.functions.turnin(self, ...)
             end
         end
 
-        local icon = addon.icons.turnin
+        local icon = addon.icons[element.tag]
         -- local skip
         if step.active and db and type(db.QueryQuest) == "function" and
             addon.pickUpList[id] and not addon.questAccept[id] and
-            not addon.skipPreReq[id] then
+            not addon.skipPreReq[id] and not element.multiple then
             local quest = db:GetQuest(id)
             if not IsOnQuest(id) and quest and not quest.IsRepeatable then
                 local requiredQuests
@@ -878,7 +796,7 @@ function addon.functions.turnin(self, ...)
                 element.tooltip = tooltip
                 element.icon = addon.icons.error
                 -- skip = RXPData.skipMissingPreReqs
-            else
+            elseif element.icon then
                 element.icon = icon
                 element.tooltip = nil
             end
@@ -915,6 +833,52 @@ function addon.functions.turnin(self, ...)
             end
         end
 
+    end
+
+end
+
+function addon.functions.dailyturnin(self, text, ...)
+
+    if type(self) == "string" then -- on parse
+        local element = {}
+
+        local ids = {...}
+        local err = #ids == 0
+        for i, v in pairs(ids) do
+            local questId = tonumber(v)
+            if questId then
+                ids[i] = questConversion[questId] or questId
+                addon.InsertQuestGuide(ids[i],addon.pickUpList)
+            else
+                err = true
+                break
+            end
+        end
+
+        if err then
+            return addon.error(
+                       "Error parsing guide " .. addon.currentGuideName ..
+                           ": Invalid quest ID\n" .. self)
+        end
+        element.multiple = #ids > 1
+        element.title = ""
+        element.reward = 0
+        -- element.title = addon.GetQuestName(id)
+        element.text = text or ""
+        element.ids = ids
+
+        return element
+    end
+
+    local element = self.element
+    if RXPCData.skipDailies then
+        addon.SetElementComplete(self, true)
+        return
+    end
+
+    for _, id in pairs(element.ids) do
+        element.questId = id
+        addon.functions.turnin(self, text, ...)
     end
 
 end
