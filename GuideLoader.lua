@@ -417,6 +417,8 @@ function RXPG.LoadCachedGuides()
             guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
             if guide:match("^--" .. addon.ReadCacheData("string")) then
                 guide, errorMsg = RXPG.ParseGuide(guide)
+            else
+                guide = nil
             end
         end
         if not errorMsg and guide then
