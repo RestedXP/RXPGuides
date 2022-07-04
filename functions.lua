@@ -713,7 +713,6 @@ function addon.functions.turnin(self, ...)
 
     if type(self) == "string" then -- on parse
         local element = {}
-        element.tag = "turnin"
         local text, id, reward = ...
         id = tonumber(id)
         if not id then
@@ -734,7 +733,7 @@ function addon.functions.turnin(self, ...)
         if element.text:match("%*quest%*") then
             element.retrieveText = true
         end
-        element.tooltipText = addon.icons.turnin .. element.text
+        --element.tooltipText = addon.icons.turnin .. element.text
         addon.InsertQuestGuide(id,addon.turnInList)
 
         return element
@@ -805,7 +804,7 @@ function addon.functions.turnin(self, ...)
             element.tooltip = nil
         end
 
-        element.tooltipText = element.icon .. element.text
+        --element.tooltipText = element.icon .. element.text
         addon.UpdateStepText(self)
         local completed = element.completed
         local isComplete = IsQuestTurnedIn(id)

@@ -458,14 +458,12 @@ step
     .complete 9513,3 --Kill Wrathscale Siren (x5)
     .complete 9523,1 --Collect Ancient Relic (x8)
 step
-    #completewith next
     .goto Azuremyst Isle,18.4,84.1
-    .cast 30298 >>Use the tree disguise at the naga flag
-    .timer 82,Traitor Uncovered
-step
-    .goto Azuremyst Isle,18.4,84.1
-	.use 23792 >>Once you use the disguise, you'll be unable to move. You have to wait about a minute to get credit for this quest.
+    .use 23792 >>Use the tree disguise at the naga flag
+	>>Once you use the disguise, you'll be unable to move. You have to wait about a minute to get credit for this quest.
     .complete 9531,1
+    .cast 30298
+    .timer 82,Traitor Uncovered
 step
     .goto Azuremyst Isle,16.5,94.4
     .turnin 10428 >> Turn in The Missing Fisherman

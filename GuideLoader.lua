@@ -588,7 +588,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             else
                 skip = false
                 if step and step.elements and #step.elements == 0 then
-                    step.hideStep = true
+                    step.hidewindow = true
                 end
                 currentStep = currentStep + 1
                 guide.steps[currentStep] = {}

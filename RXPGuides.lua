@@ -851,8 +851,8 @@ function addon.HardcoreCheck(step)
 end
 
 RXP = addon
-function addon.GetBestQuests()
-    if not addon.questLogQuests then
+function addon.GetBestQuests(refreshQuestDB)
+    if not addon.questLogQuests or refreshQuestDB then
         addon.questLogQuests = {}
         for id, v in pairs(addon.QuestDB) do
             v.Id = id
@@ -867,6 +867,8 @@ function addon.GetBestQuests()
                 v.questLog then
                 table.insert(addon.questLogQuests, v)
                 v.isActive = true
+            elseif v.questLog then
+                v.isActive = false
             end
         end
     end
@@ -885,6 +887,7 @@ function addon.GetBestQuests()
             table.remove(qDB, i)
         end
     end
+    --TODO: Sort low priority quests at the bottom of the list
 
     for k, v in ipairs(qDB) do
         local id = v.Id
@@ -895,9 +898,10 @@ function addon.GetBestQuests()
 end
 
 function addon.IsGuideQuestActive(id)
-    if not addon.QuestDB then addon.GetBestQuests() end
+    if not addon.questLogQuests or addon.QuestDB[id].isActive and addon.IsQuestTurnedIn(id) then
+            addon.GetBestQuests(true)
+    end
     if not addon.IsQuestTurnedIn(id) then return addon.QuestDB[id].isActive end
-
 end
 
 function addon.CalculateTotalXP(ignorePreReqs)
