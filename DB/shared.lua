@@ -148,6 +148,173 @@ C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
 
+function addon.GetBestQuests(refreshQuestDB)
+    if not addon.questLogQuests or refreshQuestDB then
+        addon.questLogQuests = {}
+        for id, v in pairs(addon.QuestDB) do
+            v.Id = id
+            local activeFor = v.appliesTo
+            if activeFor then
+                activeFor = addon.applies(activeFor) or
+                                addon.GetSkillLevel(activeFor) > 0
+            else
+                activeFor = true
+            end
+            if activeFor and not addon.IsQuestTurnedIn(id) and not v.itemId and
+                v.questLog then
+                table.insert(addon.questLogQuests, v)
+                v.isActive = true
+            elseif v.questLog then
+                v.isActive = false
+            end
+        end
+    end
+    local qDB = addon.questLogQuests
+    table.sort(qDB, function(k1, k2)
+        local x1 = k1.xp or 0
+        local x2 = k2.xp or 0
+        local q1 = addon.IsQuestTurnedIn(k1.Id)
+        local q2 = addon.IsQuestTurnedIn(k2.Id)
+        local prev1 = k1.previousQuest and not addon.IsQuestTurnedIn(k1.previousQuest)
+        local prev2 = k2.previousQuest and not addon.IsQuestTurnedIn(k2.previousQuest)
+        if q1 and not q2 then
+            return false
+        elseif q2 and not q1 then
+            return true
+        elseif x1 ~= x2 then
+            return x1 > x2
+        elseif prev1 and not prev2 then
+            return false
+        elseif prev2 and not prev1 then
+            return true
+        else
+            return k1.Id < k2.Id
+        end
+    end)
+
+    for i = #qDB, 1, -1 do
+        local xp = qDB[i].xp or 0
+        local id = qDB[i].Id
+        if i > 25 and xp < (qDB[25].xp or 1) or addon.IsQuestTurnedIn(id) then
+            addon.QuestDB[id].isActive = false
+            table.remove(qDB, i)
+        end
+    end
+    --TODO: Sort low priority quests at the bottom of the list
+
+    for k, v in ipairs(qDB) do
+        local id = v.Id
+        local xp = v.xp or 0
+        print(string.format("%d:%dxp %s (%d)", k, xp,
+                            addon.GetQuestName(id) or "", id))
+    end
+end
+
+function addon.IsGuideQuestActive(id)
+    if not addon.questLogQuests or addon.QuestDB[id].isActive and addon.IsQuestTurnedIn(id) then
+        addon.GetBestQuests(true)
+    end
+    return not addon.IsQuestTurnedIn(id) and addon.QuestDB[id].isActive
+end
+
+function addon.functions.requires(self,text,mode,...)
+    if type(self) == "string" then
+        local args = {...}
+        local element = {textOnly = true,text = text, args = args, mode = mode}
+        if mode == "quest" then
+            element.event = "QUEST_LOG_UPDATE"
+        end
+        return element
+    end
+
+    local element = self.element
+    local args = element.args
+    local step = element.step
+    if element.mode == "quest" then
+        local id = tonumber(args[1])
+        if id and not addon.IsGuideQuestActive(id) then
+            step.completed = true
+            addon.updateSteps = true
+        end
+    end
+end
+
+function addon.functions.showtotalxp(self,text,preReqs)
+    if type(self) == "string" then
+        return {textOnly = true,rawtext = text or "", text = text, preReqs = preReqs, event = "QUEST_LOG_UPDATE"}
+    end
+
+    local element = self.element
+    local ignorePreReqs = not element.preReqs
+
+    local xp = addon.CalculateTotalXP(ignorePreReqs)
+    text = format("%s %s",element.rawtext,addon.FormatNumber(xp))
+    if text ~= element.text then
+        element.text = text
+        addon.UpdateStepText(element)
+    end
+
+end
+
+function addon.CalculateTotalXP(ignorePreReqs)
+    local totalXp = 0
+    local function ProcessQuest(quest,qid)
+        qid = qid or quest.Id
+        if not addon.IsQuestTurnedIn(qid) then
+            if ignorePreReqs then
+                totalXp = totalXp + quest.xp
+            else
+                local preReqComplete = true
+                local previousQuest = quest.previousQuest
+                if type(previousQuest) == "table" then
+                    local state = not quest.preQuestAny
+                    for _, id in ipairs(previousQuest) do
+                        if quest.preQuestAny then
+                            state = state or addon.IsQuestTurnedIn(id)
+                        else
+                            state = state and addon.IsQuestTurnedIn(id)
+                        end
+                    end
+                    preReqComplete = state
+                elseif type(previousQuest) == "number" then
+                    preReqComplete = addon.IsQuestTurnedIn(previousQuest)
+                end
+                if preReqComplete then
+                    totalXp = totalXp + quest.xp
+                end
+            end
+        end
+    end
+
+    for i = 1, 25 do
+        local quest = addon.questLogQuests[i]
+        ProcessQuest(quest)
+    end
+
+    for id, quest in pairs(addon.QuestDB) do
+        if not (quest.questLog or addon.IsQuestTurnedIn(id)) then
+            local item = quest.itemId
+            if ignorePreReqs and item then
+                ProcessQuest(quest,id)
+            elseif type(item) == "table" then
+                local state = true
+                for n, itemId in pairs(item) do
+                    state = state and GetItemCount(itemId, true) >=
+                                quest.itemAmount[n]
+                end
+                if state then ProcessQuest(quest,id) end
+            elseif type(item) == "number" and GetItemCount(item, true) >=
+                quest.itemAmount then
+                ProcessQuest(quest,id)
+            else
+                ProcessQuest(quest,id)
+            end
+        end
+    end
+
+    return totalXp
+end
+
 
 local QuestDB = {}
 addon.QuestDB = QuestDB
