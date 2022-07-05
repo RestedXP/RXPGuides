@@ -811,6 +811,9 @@ function addon.UpdateGotoSteps()
                                 element.skip = true
                                 addon.updateMap = true
                                 addon.SetElementComplete(element.frame)
+                                if element.timer then
+                                    addon.StartTimer(element.timer,element.timerText)
+                                end
                             end
                         end
                     end
