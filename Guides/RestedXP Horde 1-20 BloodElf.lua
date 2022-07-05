@@ -95,7 +95,11 @@ step << Warlock
 step
     .goto Eversong Woods,38.8,19.4
     >>Go upstairs
-    .turnin 10069 >> Turn in Well Watcher Solanian
+    .turnin 10073 >> Turn in Well Watcher Solanian << Warlock
+    .turnin 10072 >> Turn in Well Watcher Solanian << Priest
+    .turnin 10071 >> Turn in Well Watcher Solanian << Rogue
+    .turnin 10070 >> Turn in Well Watcher Solanian << Hunter
+    .turnin 10069 >> Turn in Well Watcher Solanian << Mage
     .accept 8330 >> Accept Solanian's Belongings
     .accept 8345 >> Accept The Shrine of Dath'Remar
 step
@@ -107,20 +111,26 @@ step
     .accept 8346 >> Accept Thirst Unending
 step << Warlock
     #sticky
-    #completewith ArcaneSliver
-    >>Grind and Mana Tap mana wryms creatures en route. Be sure to loot them for Arcane Slivers
-      .complete 8346,1 --Mana Tap creature (x6)
-    .complete 8336,1 --Collect Arcane Sliver (x6)
+    #completewith next
+    >> Grind Springpaw Lynxes and Cubs en route. Loot them for their collars. You don't have to finish this quest now.
+    .collect 20797,8
 step << Warlock
     >>Run up the ramp
     .goto Eversong Woods,32.6,25.5,30
+step << Warlock
+    #sticky
+    #completewith ArcaneSliver
+    >>Grind and Mana Tap creatures with mana as you quest. Be sure to loot them for Arcane Slivers
+      .complete 8346,1 --Mana Tap creature (x6)
+    .complete 8336,1 --Collect Arcane Sliver (x6)
 step << Warlock
     >> Loot the Arcane Wraiths for Wraith Essence. Be careful as they pull together if they're next to each other
     .goto Eversong Woods,32.3,28.1
     .complete 8344,1 --Wraith Essence (4)
 step << Warlock
-    .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for the Essence and Tainted Arcane Sliver. Click the Sliver in your bags
+    .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for the Essence and Tainted Arcane Sliver. Click the Sliver in your bags to accept the quest
     .goto Eversong Woods,31.6,29.3
+    .unitscan Tainted Arcane Wraith
     .complete 8344,2 --Tainted Wraith Essence (1)
     .collect 20483,1,8338 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
@@ -132,9 +142,7 @@ step << Warlock
 step << Warlock
     .xp 3+200 >> Grind until Level 3+200xp
 step << Warlock
-    >>Click the Sliver in your bag
-    .accept 8338 >> Accept Tainted Arcane Sliver
-    >> Die and respawn at the Spirit Healer or run back
+    .deathskip >> Die and respawn at the Spirit Healer or run back
     .goto Eversong Woods,38.2,17.6,100
 step << BloodElf Warlock
     .goto Eversong Woods,37.2,18.9
@@ -182,8 +190,6 @@ step
     #label Report
     .goto Eversong Woods,35.4,22.5
     .turnin 8327 >> Turn in Report to Lanthan Perilon
-step
-    .goto Eversong Woods,35.4,22.5
     .accept 8334 >> Accept Aggression
 step
     >>Loot the Journal on the floor
@@ -208,8 +214,6 @@ step
 step
     .goto Eversong Woods,35.4,22.5
     .turnin 8334 >> Turn in Aggression
-step
-    .goto Eversong Woods,35.4,22.5
     .accept 8335 >> Accept Felendren the Banished
 step << !Warlock
     #label arcaneend
@@ -313,6 +317,7 @@ step
     .accept 9705 >> Accept Package Recovery
 step
     .goto Eversong Woods,40.4,32.2
+    >> Head back to the previous quest giver
     .turnin 9705 >> Turn in Package Recovery
     .accept 8350 >> Accept Completing the Delivery
 step
@@ -463,6 +468,11 @@ step << BloodElf Priest
     .goto Eversong Woods,50.3,51.0
     .complete 9489,1 --Eversong Ranger Blessed (6)
 step
+    #completewith next
+    .goto Eversong Woods,55.7,54.5
+     >>Kill Pillagers (Skeletons) as you pass through The Dead Scar. You do not need to finish this step yet.
+    .complete 8475,1 --Kill Plaguebone Pillager (x8)
+step
     .goto Eversong Woods,55.7,54.5
     .turnin 9064 >> Turn in Taking the Fall
     .accept 9066 >> Accept Swift Discipline
@@ -609,9 +619,14 @@ step
     .goto Eversong Woods,43.6,71.2
     .accept 9258 >>Accept The Scorched Grove
 step
-    >> Head upstairs
+    >> Head upstairs. This quest can be accepted even if it says "Missing Pre-Requisites". 
     .goto Eversong Woods,43.3,70.8
     .accept 8892 >> Accept Situation at Sunsail Anchorage
+step
+    #sticky
+    #completewith next
+    .goto Eversong Woods,44.0,70.4,0,0
+    .vendor >> Vendor trash. You can buy some 6 slot bags from Halis if you want. Money is plentiful in the Blood Elf zones.
 step
     .goto Eversong Woods,44.7,69.6
     .accept 8491 >> Accept Pelt Collection
@@ -619,11 +634,6 @@ step
     .goto Eversong Woods,46.9,71.8
     .turnin 9358 >> Turn in Ranger Sareyn
     .accept 9252 >> Accept Defending Fairbreeze Village
-step
-    #sticky
-    #completewith next
-    .goto Eversong Woods,44.0,70.4,0,0
-    .vendor >> Vendor trash. You can buy some 6 slot bags from Halis if you want. Money is plentiful in the Blood Elf zones.
 step
     #sticky
     #completewith Sunsail
