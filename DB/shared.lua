@@ -170,7 +170,7 @@ local function IsPreReqComplete(quest)
     end
 end
 
-function addon.GetBestQuests(refreshQuestDB)
+function addon.GetBestQuests(refreshQuestDB,output)
     if not addon.questLogQuests or refreshQuestDB then
         addon.questLogQuests = {}
         for id, v in pairs(addon.QuestDB) do
@@ -224,11 +224,13 @@ function addon.GetBestQuests(refreshQuestDB)
     end
     --TODO: Sort low priority quests at the bottom of the list
 
-    for k, v in ipairs(qDB) do
-        local id = v.Id
-        local xp = v.xp or 0
-        print(string.format("%d:%dxp %s (%d)", k, xp,
-                            addon.GetQuestName(id) or "", id))
+    if output then
+        for k, v in ipairs(qDB) do
+            local id = v.Id
+            local xp = v.xp or 0
+                print(string.format("%d:%dxp %s (%d)", k, xp,
+                                addon.GetQuestName(id) or "", id))
+        end
     end
 end
 
