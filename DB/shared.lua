@@ -170,19 +170,37 @@ local function IsPreReqComplete(quest)
     end
 end
 
+local function IsQuestAvailable(quest,id)
+    id = id or quest.Id
+    if quest.reputation then
+        local _, _, standing = GetFactionInfoByID(quest.repfaction)
+        local current = addon.repStandingID[strlower(quest.reputation)]
+        if not current or standing < current then
+            return false
+        end
+    end
+    if addon.IsQuestTurnedIn(id) then
+        return false
+    end
+    local activeFor = quest.appliesTo
+    if activeFor then
+        activeFor = addon.applies(activeFor) or
+                        addon.GetSkillLevel(activeFor) > 0
+    else
+        activeFor = true
+    end
+    return activeFor
+end
+
+
+
 function addon.GetBestQuests(refreshQuestDB,output)
     if not addon.questLogQuests or refreshQuestDB then
         addon.questLogQuests = {}
         for id, v in pairs(addon.QuestDB) do
             v.Id = id
-            local activeFor = v.appliesTo
-            if activeFor then
-                activeFor = addon.applies(activeFor) or
-                                addon.GetSkillLevel(activeFor) > 0
-            else
-                activeFor = true
-            end
-            if activeFor and not addon.IsQuestTurnedIn(id) and not v.itemId and
+
+            if IsQuestAvailable(v,id) and not v.itemId and
                 v.questLog and (not v.forcePreReq or IsPreReqComplete(v)) then
                 table.insert(addon.questLogQuests, v)
                 v.isActive = true
@@ -292,17 +310,25 @@ function addon.CalculateTotalXP(flags)
     local totalXp = 0
     flags = flags or 0
     local ignorePreReqs = bit.band(flags,0x1) == 0x1
-    --local ignoreItemReqs = bit.band(flags,0x2) == 0x2
+    local output = bit.band(flags,0x2) == 0x2
+
     local function ProcessQuest(quest,qid)
         qid = qid or quest.Id
-        if not addon.IsQuestTurnedIn(qid) and (ignorePreReqs or IsPreReqComplete(quest)) then
-            totalXp = totalXp + quest.xp
+        if IsQuestAvailable(quest,qid) and (ignorePreReqs or (IsPreReqComplete(quest))) then
+            local xp = quest.xp or 0
+            totalXp = totalXp + xp
+            if output then
+                    print(string.format("%dxp %s (%d)", xp,
+                                    addon.GetQuestName(qid) or "", qid))
+            end
         end
     end
     if not addon.questLogQuests then addon.GetBestQuests(true) end
     for i = 1, 25 do
         local quest = addon.questLogQuests[i]
-        ProcessQuest(quest)
+        if ignorePreReqs or addon.IsQuestComplete(quest.Id) then
+            ProcessQuest(quest)
+        end
     end
 
     for id, quest in pairs(addon.QuestDB) do
@@ -320,7 +346,7 @@ function addon.CalculateTotalXP(flags)
             elseif type(item) == "number" and GetItemCount(item, true) >=
                 quest.itemAmount then
                 ProcessQuest(quest,id)
-            else
+            elseif not item then
                 ProcessQuest(quest,id)
             end
         end
@@ -779,10 +805,7 @@ QuestDB[10095].previousQuest = 10094
 QuestDB[10095].xp = 25300
 QuestDB[10095].questLog = true
 
---Trial of the Naaru: Strength
-QuestDB[10885] = {}
-QuestDB[10885].xp = 19000
-QuestDB[10885].questLog = true
+
 
 --Terokk's Legacy
 QuestDB[10098] = {}
@@ -928,7 +951,7 @@ QuestDB[9763].questLog = true
 QuestDB[11384] = {}
 QuestDB[11384].xp = 19000
 QuestDB[11384].questLog = true
-QuestDB[11369].daily = true
+QuestDB[11384].daily = true
 --[[
 QuestDB[11369] = {}
 QuestDB[11369].xp = 19000
@@ -978,7 +1001,7 @@ QuestDB[11380] = {}
 QuestDB[11380].xp = 12650
 QuestDB[11380].appliesTo = "cooking"
 QuestDB[11380].questLog = true
-QuestDB[11369].daily = true
+QuestDB[11380].daily = true
 --[[
 QuestDB[11377] = {}
 QuestDB[11377].xp = 12650
@@ -1050,6 +1073,7 @@ QuestDB[11020] = {}
 QuestDB[11020].xp = 12650
 QuestDB[11020].questLog = true
 
+--deadliest trap ever laid
 QuestDB[11097] = {}
 QuestDB[11097].xp = 15800
 QuestDB[11097].repfaction = 1015
