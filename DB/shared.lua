@@ -183,7 +183,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
                 activeFor = true
             end
             if activeFor and not addon.IsQuestTurnedIn(id) and not v.itemId and
-                v.questLog then
+                v.questLog and (not v.forcePreReq or IsPreReqComplete(v)) then
                 table.insert(addon.questLogQuests, v)
                 v.isActive = true
             elseif v.questLog then
@@ -876,10 +876,13 @@ QuestDB[10408].previousQuest = 10406
 QuestDB[10408].xp = 19000
 QuestDB[10408].questLog = true
 
+
 --A Fel Whip For GahkA Fel Whip For Gahk
 QuestDB[11079] = {}
 QuestDB[11079].xp = 19000
 QuestDB[11079].questLog = true
+QuestDB[11079].previousQuest = 11061
+QuestDB[11079].forcePreReq = true
 
 --Showdown
 QuestDB[10742] = {}
@@ -922,14 +925,14 @@ QuestDB[9763].xp = 25300
 QuestDB[9763].questLog = true
 
 --Daily dungeon wanted quests(Heroic)
-QuestDB[11369] = {}
-QuestDB[11369].xp = 19000
-QuestDB[11369].questLog = true
-QuestDB[11369].daily = true
---[[
 QuestDB[11384] = {}
 QuestDB[11384].xp = 19000
 QuestDB[11384].questLog = true
+QuestDB[11369].daily = true
+--[[
+QuestDB[11369] = {}
+QuestDB[11369].xp = 19000
+QuestDB[11369].questLog = true
 QuestDB[11382] = {}
 QuestDB[11382].xp = 19000
 QuestDB[11382].questLog = true
