@@ -22,6 +22,7 @@ addon.questAccept = {}
 addon.questTurnIn = {}
 addon.activeItems = {}
 addon.RXPG = {}
+addon.functions = {}
 
 BINDING_HEADER_RXPGuides = "RXPGuides"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =

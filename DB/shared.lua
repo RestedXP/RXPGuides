@@ -148,6 +148,28 @@ C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
 
+
+
+
+local function IsPreReqComplete(quest)
+    local t = type(quest.previousQuest)
+    if t == "table" then
+        local state = not quest.preQuestAny
+        for _, id in ipairs(quest.previousQuest) do
+            if quest.preQuestAny then
+                state = state or addon.IsQuestTurnedIn(id)
+            else
+                state = state and addon.IsQuestTurnedIn(id)
+            end
+        end
+        return state
+    elseif t == "number" then
+        return addon.IsQuestTurnedIn(quest.previousQuest)
+    else
+        return true
+    end
+end
+
 function addon.GetBestQuests(refreshQuestDB)
     if not addon.questLogQuests or refreshQuestDB then
         addon.questLogQuests = {}
@@ -175,8 +197,8 @@ function addon.GetBestQuests(refreshQuestDB)
         local x2 = k2.xp or 0
         local q1 = addon.IsQuestTurnedIn(k1.Id)
         local q2 = addon.IsQuestTurnedIn(k2.Id)
-        local prev1 = k1.previousQuest and not addon.IsQuestTurnedIn(k1.previousQuest)
-        local prev2 = k2.previousQuest and not addon.IsQuestTurnedIn(k2.previousQuest)
+        local prev1 = k1.previousQuest and not IsPreReqComplete(k1)
+        local prev2 = k2.previousQuest and not IsPreReqComplete(k2)
         if q1 and not q2 then
             return false
         elseif q2 and not q1 then
@@ -239,15 +261,14 @@ function addon.functions.requires(self,text,mode,...)
     end
 end
 
-function addon.functions.showtotalxp(self,text,preReqs)
+function addon.functions.showtotalxp(self,text,flags)
     if type(self) == "string" then
-        return {textOnly = true,rawtext = text or "", text = text, preReqs = preReqs, event = "QUEST_LOG_UPDATE"}
+        return {textOnly = true,rawtext = text or "", text = text, flags = tonumber(flags) or 0, event = "QUEST_LOG_UPDATE"}
     end
 
     local element = self.element
-    local ignorePreReqs = not element.preReqs
 
-    local xp = addon.CalculateTotalXP(ignorePreReqs)
+    local xp = addon.CalculateTotalXP(element.flags)
     text = format("%s %s",element.rawtext,addon.FormatNumber(xp))
     if text ~= element.text then
         element.text = text
@@ -256,36 +277,18 @@ function addon.functions.showtotalxp(self,text,preReqs)
 
 end
 
-function addon.CalculateTotalXP(ignorePreReqs)
+function addon.CalculateTotalXP(flags)
     local totalXp = 0
+    flags = flags or 0
+    local ignorePreReqs = bit.band(flags,0x1) == 0x1
+    --local ignoreItemReqs = bit.band(flags,0x2) == 0x2
     local function ProcessQuest(quest,qid)
         qid = qid or quest.Id
-        if not addon.IsQuestTurnedIn(qid) then
-            if ignorePreReqs then
-                totalXp = totalXp + quest.xp
-            else
-                local preReqComplete = true
-                local previousQuest = quest.previousQuest
-                if type(previousQuest) == "table" then
-                    local state = not quest.preQuestAny
-                    for _, id in ipairs(previousQuest) do
-                        if quest.preQuestAny then
-                            state = state or addon.IsQuestTurnedIn(id)
-                        else
-                            state = state and addon.IsQuestTurnedIn(id)
-                        end
-                    end
-                    preReqComplete = state
-                elseif type(previousQuest) == "number" then
-                    preReqComplete = addon.IsQuestTurnedIn(previousQuest)
-                end
-                if preReqComplete then
-                    totalXp = totalXp + quest.xp
-                end
-            end
+        if not addon.IsQuestTurnedIn(qid) and (ignorePreReqs or IsPreReqComplete(quest)) then
+            totalXp = totalXp + quest.xp
         end
     end
-
+    if not addon.questLogQuests then addon.GetBestQuests(true) end
     for i = 1, 25 do
         local quest = addon.questLogQuests[i]
         ProcessQuest(quest)

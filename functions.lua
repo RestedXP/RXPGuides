@@ -4,7 +4,6 @@ local faction = UnitFactionGroup("player")
 local _, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
 local RXPG = addon.RXPG
-addon.functions = {}
 addon.functions.__index = addon.functions
 local events = {}
 addon.stepUpdateList = {}
