@@ -244,7 +244,7 @@ end
 function addon.functions.requires(self,text,mode,...)
     if type(self) == "string" then
         local args = {...}
-        local element = {textOnly = true,text = text, args = args, mode = mode}
+        local element = {textOnly = true,text = text, args = args, mode = mode, requestFromServer = true}
         if mode == "quest" then
             element.event = "QUEST_LOG_UPDATE"
         end
@@ -257,10 +257,17 @@ function addon.functions.requires(self,text,mode,...)
     if element.mode == "quest" then
         local id = tonumber(args[1])
         if id and not addon.IsGuideQuestActive(id) then
-            step.completed = true
+            if not (step.hidewindow and step.completed) then
+                step.completed = true
+                step.hidewindow = true
+                addon.updateSteps = true
+            end
+        elseif step.hidewindow then
+            step.hidewindow = false
             addon.updateSteps = true
         end
     end
+    element.requestFromServer = false
 end
 
 function addon.functions.showtotalxp(self,text,flags)
