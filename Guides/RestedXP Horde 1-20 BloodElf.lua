@@ -799,17 +799,20 @@ step << Undead Warlock
     .goto Eversong Woods,56.7,49.6,20
 step << Undead Warlock
     .goto Silvermoon City,63.4,31.9,20,0
-    .goto Silvermoon City,49.5,15.0,15,0
+    .goto Silvermoon City,49.5,15.0,15
     .zone Undercity >>Take the Orb of Translocation back to Undercity
 step << Undead Warlock
-    .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
+    .goto Undercity,66.0,44.0,15 >>Take one of the lifts down to Undercity
 step << Undead Warlock
     .goto Undercity,85.1,26.0
+    >> This quest is acceptable even if it says you are missing pre-requisites 
     .accept 1473 >>Accept Creature of the Void
 step << Undead Warlock
     .goto Undercity,66.0,44.1,40 >>Go to the bank area
 step << Undead Warlock
-    .goto Undercity,66.2,1.1,20 >>Go up the lift. Exit Undercity
+    .goto Undercity,71.9,40.6,15 >> Go up the lifts. 
+step << Undead Warlock
+    .goto Undercity,66.2,1.1,20 >>Exit Undercity
 step << Undead Warlock
     >>Kill the mobs in the tower, then loot the chest
     .goto Tirisfal Glades,51.1,67.6
@@ -858,7 +861,7 @@ step << BloodElf Warlock
     .train 6201 >> Train Create Healthstone
     .train 696 >>Train Demon Skin r2
     .train 707 >> Train Immolate r2
-step << Orc Warlock
+step << Orc Warlock / Undead Warlock
     .goto Silvermoon City,74.4,47.2
     .train 1120 >>Train Drain Soul
     .train 6201 >> Train Create Healthstone
@@ -983,7 +986,7 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene. It's on the second page.
     .collect 22776,1 --Collect Springpaw Appetizers
-step << BloodElf !Hunter
+step << !Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9359 >>Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
@@ -992,6 +995,7 @@ step << BloodElf Hunter
     .accept 8476 >> Accept Amani Encroachment
 step << !BloodElf
     .goto Eversong Woods,60.3,62.8
+    .turnin 9359 >> Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
 step << BloodElf Hunter
     .accept 9484 >> Accept Taming the Beast
@@ -1042,7 +1046,8 @@ step
     .complete 8476,2 --Kill Amani Axe Thrower (x5)
 step
      .goto Eversong Woods,70.1,72.3
-    >> Otembe has a guaranteed chance to drop a white or green weapon. You can try killing him one more time for a better weapon if you want, he has a quick respawn << Paladin/Rogue/Hunter/Warrior
+    >> Kill and loot Otembe for his hammer
+    >> Otembe has a guaranteed chance to drop a white or green item. You can try killing him one more time for a better weapon if you want, he has a quick respawn << Paladin/Rogue/Hunter/Warrior
     *Note you get a green ranged weapon from turning in this quest, so only look for a good melee weapon << Hunter
     .complete 8477,1 --Collect Otembe's Hammer (x1)
 step
@@ -1051,7 +1056,7 @@ step
     .accept 8479 >> Accept Zul'Marosh
 step
     >>Zul'Marosh is on the top floor of the hut. Kill & loot him for his head and a quest drop.
-    *Zul'Marosh also has a guaranteed chance to drop a white or green weapon but a longer respawn << Paladin/Rogue/Hunter/Warrior
+    *Zul'Marosh also has a guaranteed chance to drop a white or green item but a longer respawn << Paladin/Rogue/Hunter/Warrior
     .goto Eversong Woods,62.5,79.7
     .complete 8479,1 --Collect Chieftain Zul'Marosh's Head (x1)
     .collect 23249,1 --Collect Amani Invasion Plans (x1)
@@ -1169,6 +1174,7 @@ step
     .turnin 8477 >> Turn in The Spearcrafter's Hammer
 step
     .goto Eversong Woods,60.4,61.3
+    >> Head upstairs to the right
     .accept 8888 >> Accept The Magister's Apprentice
 step << BloodElf/Undead
     #sticky
@@ -1205,7 +1211,7 @@ step
     .goto Eversong Woods,68.9,52.0
     .complete 8889,1 --First Power Source Deactivated (x1)
 step
-    >>Go Upstairs
+    >>Go Upstairs and click on the crystal
     .goto Eversong Woods,68.9,52.0
     .complete 8889,2 --Second Power Source Deactivated (x1)
 step
@@ -1239,7 +1245,7 @@ step << BloodElf Mage
     .goto Eversong Woods,55.7,54.5
     .turnin 9403 >>Turn in The Purest Water
     .accept 9404 >>Accept Recently Living
-step << !BloodElf/!Warlock
+step << !Warlock
     .goto Eversong Woods,56.7,49.6,30 >>Go into Silvermoon
 step << Shaman
     .goto Silvermoon City,71.8,56.6
@@ -1280,12 +1286,6 @@ step << Druid
     .goto Silvermoon City,71.5,55.8
     .train 8936 >>Train Regrowth
     .train 5229 >>Train Enrage
-step << Orc Warlock
-    .goto Silvermoon City,75.3,44.5,20 >>Enter the building, go downstairs
-step << Orc Warlock
-    .goto Silvermoon City,74.4,47.2
-    .train 755 >>Train Health Funnel
-    .train 705 >>Train Shadow Bolt r3
 step << Hunter
     .goto Silvermoon City,83.4,30.1,20 >>Enter the building
 step << BloodElf Hunter
@@ -1366,8 +1366,16 @@ step << BloodElf/Undead
     #completewith next
     >>Finish off getting Springpaw Pelts
     .complete 8491,1 --Collect Springpaw Pelt (x6)
+step << Orc Warlock/Undead Warlock
+    .goto Eversong Woods,48.2,47.9
+    .hs >> Hearth to Falconwing Square then run upstairs
+step << Orc Warlock/Undead Warlock
+    .goto Eversong Woods,48.2,47.9
+    .train 755 >>Train Health Funnel
+    .train 705 >>Train Shadow Bolt r3
 step << Undead/BloodElf !Hunter
-   .cooldown item,6948,>0 >>Run to Fairbreeze Village. Hearth to Falconwing and run if its up
+   .cooldown item,6948,>0 >>Run to Fairbreeze Village. 
+    .hs >> Hearth to Falconwing and run if its up << !Warlock
     .goto Eversong Woods,46.9,71.8
     .turnin 9252 >> Turn in Defending Fairbreeze Village
     .accept 9253 >> Accept Runewarden Deryan
@@ -1422,7 +1430,7 @@ step << !BloodElf/!Hunter
     >> Be sure to start max range from him. << Hunter
     .goto Eversong Woods,37.6,86.2
     .turnin 10166 >> Turn in Whitebark's Memory
-step << Undead/BloodElf !Hunter
+step << BloodElf !Hunter
     .goto Eversong Woods,44.2,85.5
     .turnin 9253 >> Turn in Runewarden Deryan
 step << BloodElf Mage
