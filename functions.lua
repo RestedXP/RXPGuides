@@ -103,7 +103,10 @@ local IsQuestTurnedIn = function(id)
 end
 
 local function IsQuestComplete(id)
-    if GetNumQuests then
+
+    if C_QuestLog.IsComplete then
+        return C_QuestLog.IsComplete(id)
+    else
         for i = 1, GetNumQuests() do
             local questLogTitleText, level, questTag, isHeader, isCollapsed,
                   isComplete, frequency, questID = GetQuestLogTitle(i);
@@ -115,8 +118,6 @@ local function IsQuestComplete(id)
                 end
             end
         end
-    else
-        return C_QuestLog.IsComplete(id)
     end
 end
 

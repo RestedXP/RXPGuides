@@ -235,7 +235,9 @@ function addon.GetBestQuests(refreshQuestDB,output)
 end
 
 function addon.IsGuideQuestActive(id)
-    if not addon.questLogQuests or addon.QuestDB[id].isActive and addon.IsQuestTurnedIn(id) then
+    if not addon.QuestDB[id] then
+        return false
+    elseif not addon.questLogQuests or addon.IsQuestTurnedIn(id) and addon.QuestDB[id].isActive then
         addon.GetBestQuests(true)
     end
     return not addon.IsQuestTurnedIn(id) and addon.QuestDB[id].isActive
