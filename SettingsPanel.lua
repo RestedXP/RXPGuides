@@ -284,21 +284,21 @@ function addon.CreateOptionsPanel()
 
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
-        self.Text:SetText(format(self.defaultText, value))
+        self.Text:SetText(self.updateFunc(self.defaultText, value))
         addon.RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
         addon.arrowFrame:SetSize(32 * size, 32 * size)
         addon.arrowFrame.text:SetFont(addon.font, RXPData.arrowText)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
         addon.updateMap = true
-        if self.key == "phase" and addon.currentGuide then
+        if (self.key == "phase" or self.key == "xprate") and addon.currentGuide then
             addon.ReloadGuide()
         end
         addon.RXPFrame.SetStepFrameAnchor()
     end
 
     local CreateSlider = function(ref, key, smin, smax, text, tooltip, anchor,
-                                  x, y, steps, minText, maxText)
+                                  x, y, steps, minText, maxText, updateFunc)
         local slider, dvalue
 
         slider = CreateFrame("Slider", "$parentArrowSlider", addon.RXPOptions,
@@ -326,6 +326,9 @@ function addon.CreateOptionsPanel()
 
         slider.Low:SetText(minText or tostring(smin));
         slider.High:SetText(maxText or tostring(smax));
+
+        slider.updateFunc = updateFunc or string.format
+
         return slider
     end
     local slider
@@ -367,6 +370,10 @@ function addon.CreateOptionsPanel()
         slider = CreateSlider(RXPCData, "phase", 1, 6, "Content phase: %d",
                               "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",
                               slider, 0, -25, 1, "1", "6")
+    else
+        slider = CreateSlider(RXPCData, "xprate", 1, 1.5, "Experience rates: %.1fx",
+        "Adjusts the guide routes to match increased xp rate bonuses",
+        slider, 0, -25, 0.5, "1x", "1.5x")
     end
 
     if addon.farmGuides > 0 then

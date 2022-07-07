@@ -1160,8 +1160,9 @@ function addon:LoadGuide(guide, OnLoad)
 end
 
 function addon.ReloadGuide()
-    return addon:LoadGuide(addon.GetGuideTable(RXPCData.currentGuideGroup,
-                                               RXPCData.currentGuideName))
+    local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
+                 RXPCData.currentGuideName)
+    return guide and addon:LoadGuide(guide)
 end
 
 function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
@@ -1348,10 +1349,7 @@ function BottomFrame.SortSteps()
 end
 
 local function IsGuideActive(guide)
-    local som = RXPCData and RXPCData.SoM
-    if (guide.era and som or guide.som and not som) or
-        (som and RXPCData.phase and RXPCData.phase > 2 and guide["era/som"]) or
-        (not addon.PhaseCheck(guide)) then
+    if not(addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide)) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return false
     end

@@ -36,39 +36,42 @@ _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
 
 local questFrame = CreateFrame("Frame");
 
-local SoMtimer
+local buffCheckTimer
 local function SoMCheck()
-    if gameVersion > 20000 then
-        return
-    elseif not SoMtimer then
-        SoMtimer = GetTime()
+    local function CheckBuff(buffId,key)
+        if GetTime() - buffCheckTimer < 300 and RXPCData and
+                            type(RXPCData[key]) ~= "boolean" then
+
+            local id = 0
+            local n = 1
+            while id do
+                id = select(10, UnitBuff("player", n))
+                n = n + 1
+                if id == buffId then
+                    RXPCData[key] = true
+                    if addon.currentGuide and addon.currentGuide.name then
+                        addon:LoadGuide(addon.currentGuide)
+                    end
+                    addon.RXPFrame.GenerateMenuTable()
+                    break
+                end
+            end
+            if id ~= buffId and RXPCData[key] then
+                RXPCData[key] = nil
+                addon.ReloadGuide()
+                addon.RXPFrame.GenerateMenuTable()
+            end
+        end
     end
 
-    local buffId = 362859
-    if RXPCData and type(RXPCData.SoM) ~= "boolean" and GetTime() - SoMtimer <
-        300 then
-        local id = 0
-        local n = 1
-        while id do
-            id = select(10, UnitBuff("player", n))
-            n = n + 1
-            if id == buffId then
-                RXPCData.SoM = true
-                if addon.currentGuide and addon.currentGuide.name then
-                    addon:LoadGuide(addon.currentGuide)
-                end
-                addon.RXPFrame.GenerateMenuTable()
-                break
-            end
-        end
-        if id ~= buffId and RXPCData.SoM then
-            RXPCData.SoM = nil
-            if addon.currentGuide and addon.currentGuide.name then
-                addon:LoadGuide(addon.currentGuide)
-            end
-            addon.RXPFrame.GenerateMenuTable()
-        end
+    if not buffCheckTimer then
+        buffCheckTimer = GetTime()
     end
+
+    if gameVersion < 20000 then
+        CheckBuff(362859,"SoM")
+    end
+
 end
 
 function RXPG_init()
@@ -86,6 +89,7 @@ function RXPG_init()
     SoMCheck()
     addon.RenderFrame()
     RXPCData.stepSkip = RXPCData.stepSkip or {}
+    RXPCData.xprate = RXPCData.xprate or 1
     RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
     RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
@@ -834,7 +838,8 @@ end
 
 function addon.IsStepShown(step)
     return not(step.daily and RXPCData.skipDailies) and addon.AldorScryerCheck(step) and
-             addon.PhaseCheck(step) and addon.HardcoreCheck(step) and addon.SeasonCheck(step)
+             addon.PhaseCheck(step) and addon.HardcoreCheck(step) and
+             addon.SeasonCheck(step) and addon.XpRateCheck(step)
 end
 
 function addon.SeasonCheck(step)
@@ -851,4 +856,26 @@ function addon.HardcoreCheck(step)
     return true
 end
 
+function addon.XpRateCheck(step)
+    if step.xprate then
+        local xpmin,xpmax = 1,0xfff
+
+        step.xprate:gsub("^([<>]?)%s*(%d+%.?%d*)%-?(%d*%.?%d*)",function(op,arg1,arg2)
+            if op == "<" then
+                xpmin = 0
+                xpmax = tonumber(arg1) - 1e-4
+            elseif op == ">" then
+                xpmin = tonumber(arg1) + 1e-4
+                xpmax = 0xfff
+            else
+                xpmin = tonumber(arg1) or xpmin
+                xpmax = tonumber(arg2) or 0xfff
+            end
+        end)
+        if addon.currentXpRate < xpmin or addon.currentXpRate > xpmax then
+            return false
+        end
+    end
+    return true
+end
 RXP = addon --debug purposes
