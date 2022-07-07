@@ -368,12 +368,14 @@ QuestDB[questId].itemAmount = amount
 QuestDB[questId].repfaction = factionID
 QuestDB[questId].reputation = "unfriendly"
 QuestDB[questId].questLog = true
+QuestDB[questId].appliesTo = "herbalism" -for profession tags
 ]]
 --skip line if not needed for that specific quest
 --start here
 
 --A Heap of Ethereals
 QuestDB[10262] = {}
+QuestDB[10262].previousQuest = 10265
 QuestDB[10262].xp = 12000
 QuestDB[10262].itemId = 29209
 QuestDB[10262].itemAmount = 10
@@ -471,12 +473,6 @@ QuestDB[9828].appliesTo = "Horde"
 QuestDB[9828].itemId = 24484
 QuestDB[9828].itemAmount = 1
 
---Drain Schematics
-QuestDB[9731] = {}
-QuestDB[9731].xp = 6240
-QuestDB[9731].itemId = 24330
-QuestDB[9731].itemAmount = 1
-
 --The Howling Wind
 QuestDB[9861] = {}
 QuestDB[9861].xp = 11650
@@ -489,6 +485,8 @@ QuestDB[9871].xp = 11650
 QuestDB[9871].appliesTo = "Alliance"
 QuestDB[9871].itemId = 24559
 QuestDB[9871].itemAmount = 1
+QuestDB[9871].repfaction = 978
+QuestDB[9871].reputation = "neutral"
 
 --Murkblood Invaders
 QuestDB[9872] = {}
@@ -496,6 +494,8 @@ QuestDB[9872].xp = 11650
 QuestDB[9872].appliesTo = "Horde"
 QuestDB[9872].itemId = 24558
 QuestDB[9872].itemAmount = 1
+QuestDB[9872].repfaction = 941
+QuestDB[9872].reputation = "neutral"
 
 --The Count of the Marshes
 QuestDB[9911] = {}
@@ -595,8 +595,8 @@ QuestDB[11007].itemAmount = 1
 --Orders from Lady Vashj
 QuestDB[9764] = {}
 QuestDB[9764].xp = 37950
-QuestDB[9764].itemId = 24367
-QuestDB[9764].itemAmount = 1
+QuestDB[9764].itemId = {24367,24368}
+QuestDB[9764].itemAmount = {1,1}
 --25300exp from followup
 
 --Blood of the Warlord + Undecrover Sister
@@ -641,18 +641,24 @@ QuestDB[10024] = {}
 QuestDB[10024].xp = 11000
 QuestDB[10024].itemId = 25744
 QuestDB[10024].itemAmount = 8
+QuestDB[10024].repfaction = 932 --aldor
+QuestDB[10024].reputation = "neutral"
 
 --A Cleansing Light
 QuestDB[10420] = {}
 QuestDB[10420].xp = 15800
 QuestDB[10420].itemId = 29740
 QuestDB[10420].itemAmount = 1
+QuestDB[10420].repfaction = 932 --aldor
+QuestDB[10420].reputation = "neutral"
 
 --Marks of Sargeras
 QuestDB[10653] = {}
 QuestDB[10653].xp = 12650
 QuestDB[10653].itemId = 30809
 QuestDB[10653].itemAmount = 10
+QuestDB[10653].repfaction = 932 --aldor
+QuestDB[10653].reputation = "neutral"
 
 --Mirren's Trust
 QuestDB[9563] = {}
@@ -668,24 +674,32 @@ QuestDB[10325] = {}
 QuestDB[10325].xp = 11000
 QuestDB[10325].itemId = 29425
 QuestDB[10325].itemAmount = 10
+QuestDB[10325].repfaction = 932 --aldor
+QuestDB[10325].reputation = "neutral"
 
 --Sunfury Signets
 QuestDB[10656] = {}
 QuestDB[10656].xp = 12650
 QuestDB[10656].itemId = 30810
 QuestDB[10656].itemAmount = 10
+QuestDB[10656].repfaction = 934 --scryers
+QuestDB[10656].reputation = "neutral"
 
 --Firewing Signets
 QuestDB[10412] = {}
 QuestDB[10412].xp = 11000
 QuestDB[10412].itemId = 29426
 QuestDB[10412].itemAmount = 10
+QuestDB[10412].repfaction = 934 --scryers
+QuestDB[10412].reputation = "neutral"
 
 --Synthesis of Power
 QuestDB[10416] = {}
 QuestDB[10416].xp = 15800
 QuestDB[10416].itemId = 29739
 QuestDB[10416].itemAmount = 1
+QuestDB[10416].repfaction = 934 --scryers
+QuestDB[10416].reputation = "neutral"
 
 --The Outcast's Plight
 QuestDB[10917] = {}
@@ -715,13 +729,6 @@ QuestDB[9882].itemAmount = 10
 QuestDB[9882].repfaction = 933
 QuestDB[9882].reputation = "neutral"
 
---Ethereum Secrets
-QuestDB[10971] = {}
-QuestDB[10971].previousQuest = 10970
-QuestDB[10971].xp = 12650
-QuestDB[10971].itemId = 31957
-QuestDB[10971].itemAmount = 1
-
 --Plants of Zangarmarsh
 QuestDB[9802] = {}
 QuestDB[9802].xp = 6240
@@ -741,6 +748,26 @@ QuestDB[11015] = {}
 QuestDB[11015].xp = 12650
 QuestDB[11015].itemId = 32427
 QuestDB[11015].itemAmount = 30
+
+--Nethercite Ore
+QuestDB[11018] = {}
+QuestDB[11018].xp = 12650
+QuestDB[11018].itemId = 32464
+QuestDB[11018].itemAmount = 40
+QuestDB[11018].appliesTo = "mining"
+--Netherdust Pollen
+QuestDB[11017] = {}
+QuestDB[11017].xp = 12650
+QuestDB[11017].itemId = 32468
+QuestDB[11017].itemAmount = 40
+QuestDB[11017].appliesTo = "herbalism"
+
+--Nethermine Flayer Hide
+QuestDB[11016] = {}
+QuestDB[11016].xp = 12650
+QuestDB[11016].itemId = 32470
+QuestDB[11016].itemAmount = 35
+QuestDB[11016].appliesTo = "skinning"
 
 --The Great Netherwing Egg Hunt
 QuestDB[11049] = {}
@@ -776,11 +803,6 @@ QuestDB[10707].previousQuest = 10706
 QuestDB[10707].xp = 19000
 QuestDB[10707].questLog = true
 
---Terokk's Downfall
-QuestDB[11073] = {}
-QuestDB[11073].xp = 19000
-QuestDB[11073].questLog = true
-
 --Entry Into Karazhan
 QuestDB[9831] = {}
 QuestDB[9831].previousQuest = 9829
@@ -795,7 +817,7 @@ QuestDB[10091].questLog = true
 
 --The Book of Fel Names
 QuestDB[10649] = {}
-QuestDB[10649].previousQuest = 10646 --check if this is right
+QuestDB[10649].previousQuest = 10646
 QuestDB[10649].xp = 25300
 QuestDB[10649].questLog = true
 
@@ -805,7 +827,19 @@ QuestDB[10095].previousQuest = 10094
 QuestDB[10095].xp = 25300
 QuestDB[10095].questLog = true
 
+--Tear of the Earthmother + 2 followups
+QuestDB[10670] = {}
+QuestDB[10670].previousQuest = {10665,10666}
+--
+QuestDB[10670].xp = 33825
+QuestDB[10670].questLog = true
 
+--Underworld Loam + 2 followups
+QuestDB[10667] = {}
+QuestDB[10667].previousQuest = {10665,10666}
+--
+QuestDB[10667].xp = 33825
+QuestDB[10667].questLog = true
 
 --Terokk's Legacy
 QuestDB[10098] = {}
@@ -866,20 +900,6 @@ QuestDB[9496] = {}
 QuestDB[9496].xp = 25300
 QuestDB[9496].appliesTo = "Horde"
 QuestDB[9496].questLog = true
-
---[[ --Remove those quests, do illidari bane shard instead
---Tear of the Earthmother
-QuestDB[10670] = {}
-QuestDB[10670].previousQuest = {10666,10665}
-QuestDB[10670].xp = 25300
-QuestDB[10670].questLog = true
-
---Underworld Loam
-QuestDB[10667] = {}
-QuestDB[10667].previousQuest = {10666,10665}
-QuestDB[10667].xp = 25300
-QuestDB[10667].questLog = true
-]]
 
 --Capturing the Keystone
 QuestDB[10257] = {}
@@ -1073,37 +1093,43 @@ QuestDB[11020] = {}
 QuestDB[11020].xp = 12650
 QuestDB[11020].questLog = true
 
---deadliest trap ever laid
+--The Deadliest Trap Ever Laid -scryer
 QuestDB[11097] = {}
 QuestDB[11097].xp = 15800
 QuestDB[11097].repfaction = 1015
 QuestDB[11097].reputation = "revered"
 QuestDB[11097].questLog = true
 
+--The Deadliest Trap Ever Laid -aldor
 QuestDB[11101] = {}
 QuestDB[11101].xp = 15800
 QuestDB[11101].repfaction = 1015
 QuestDB[11101].reputation = "revered"
 QuestDB[11101].questLog = true
 
+--Picking Up The Pieces...
 QuestDB[11076] = {}
 QuestDB[11076].previousQuest = 11075
 QuestDB[11076].xp = 12650
 QuestDB[11076].questLog = true
 
+--The Not-So-Friendly Skies...
 QuestDB[11035] = {}
 QuestDB[11035].xp = 12650
 QuestDB[11035].questLog = true
 
+--Disrupting the Twilight Portal
 QuestDB[11086] = {}
 QuestDB[11086].xp = 12650
 QuestDB[11086].questLog = true
 
+--The Booterang: A Cure For The Common Worthless Peon
 QuestDB[11055] = {}
 QuestDB[11055].previousQuest = 11054
 QuestDB[11055].xp = 12650
 QuestDB[11055].questLog = true
 
+--Dragons are the Least of Our Problems
 QuestDB[11077] = {}
 QuestDB[11077].xp = 12650
 QuestDB[11077].questLog = true
@@ -1119,31 +1145,37 @@ QuestDB[11023].preQuestAny = true
 QuestDB[11023].xp = 12650
 QuestDB[11023].questLog = true
 
+--Banish More Demons
 QuestDB[11051] = {}
 QuestDB[11051].previousQuest = 11026
 QuestDB[11051].xp = 12650
 QuestDB[11051].questLog = true
 
+--Wrangle More Aether Rays!
 QuestDB[11066] = {}
 QuestDB[11066].previousQuest = 11065
 QuestDB[11066].xp = 12650
 QuestDB[11066].questLog = true
 
 --rest
+--Blood for Blood
 QuestDB[11515] = {}
 QuestDB[11515].xp = 12650
 QuestDB[11515].questLog = true
 
+--In Defense of Halaa
 QuestDB[11502] = {}
 QuestDB[11502].xp = 12650
 QuestDB[11502].appliesTo = "Alliance"
 QuestDB[11502].questLog = true
 
+--Enemies, Old and New
 QuestDB[11503] = {}
 QuestDB[11503].xp = 12650
 QuestDB[11503].appliesTo = "Horde"
 QuestDB[11503].questLog = true
 
+--Fires Over Skettis
 QuestDB[11008] = {}
 QuestDB[11008].previousQuest = 11098
 QuestDB[11008].xp = 12650
@@ -1189,11 +1221,14 @@ QuestDB[9786].appliesTo = "Alliance"
 
 --Warning the Cenarion Circle + Return to the Marsh
 QuestDB[9724] = {}
+QuestDB[9724].previousQuest = 9731
 QuestDB[9724].xp = 10560
 
 --Blessings of the Ancients
 QuestDB[9785] = {}
 QuestDB[9785].xp = 4320
+QuestDB[9785].repfaction = 942
+QuestDB[9785].reputation = "friendly"
 
 --Watcher Leesa'oh + Observing the Sporelings
 QuestDB[9697] = {}
@@ -1204,6 +1239,8 @@ QuestDB[9697].reputation = "friendly"
 --Sporeggar
 QuestDB[9919] = {}
 QuestDB[9919].xp = 8600
+QuestDB[9919].repfaction = 970
+QuestDB[9919].reputation = "neutral"
 
 --Bring Me A Shrubbery!
 QuestDB[9715] = {}
@@ -1229,11 +1266,13 @@ QuestDB[10201].appliesTo = "Horde"
 
 --Letting Earthbinder Tavgren Know
 QuestDB[10005] = {}
+QuestDB[10005].previousQuest = 10446
 QuestDB[10005].xp = 9330
 QuestDB[10005].appliesTo = "Alliance"
 
 --Letting Earthbinder Tavgren Know
 QuestDB[10006] = {}
+QuestDB[10006].previousQuest = 10447
 QuestDB[10006].xp = 9330
 QuestDB[10006].appliesTo = "Horde"
 
@@ -1266,7 +1305,7 @@ QuestDB[10862] = {}
 QuestDB[10862].xp = 6240
 QuestDB[10862].appliesTo = "Horde"
 
---Surrender to the Horde
+--Secrets of the Arakkoa
 QuestDB[10863] = {}
 QuestDB[10863].xp = 6240
 QuestDB[10863].appliesTo = "Alliance"
@@ -1280,25 +1319,13 @@ QuestDB[10926].xp = 8250
 QuestDB[11550] = {}
 QuestDB[11550].xp = 3150
 
---Concerted Efforts
-QuestDB[8371] = {}
-QuestDB[8371].xp = 4850
-QuestDB[8371].appliesTo = "Alliance"
-QuestDB[8371].itemId = {20560,20559,20558,29024}
-QuestDB[8371].itemAmount = {1,1,1,1}
-
---Concerted Efforts
-QuestDB[8367] = {}
-QuestDB[8367].xp = 4850
-QuestDB[8367].appliesTo = "Horde"
-QuestDB[8367].itemId = {20560,20559,20558,29024}
-QuestDB[8367].itemAmount = {1,1,1,1}
-
 --Strained Supplies
 QuestDB[10017] = {}
 QuestDB[10017].xp = 8600
 QuestDB[10017].itemId = 25802
 QuestDB[10017].itemAmount = 8
+QuestDB[10416].repfaction = 934 --scryers
+QuestDB[10416].reputation = "neutral"
 
 --Nagrand
 --Message to Garadar
@@ -1330,26 +1357,6 @@ QuestDB[9933] = {}
 QuestDB[9933].previousQuest = {9931,9932}
 QuestDB[9933].xp = 14150
 QuestDB[9933].appliesTo = "Alliance"
-
---He Called Himself Altruis...
-QuestDB[9982] = {}
-QuestDB[9982].xp = 1200
-QuestDB[9982].appliesTo = "Alliance"
-
---He Called Himself Altruis...
-QuestDB[9983] = {}
-QuestDB[9983].xp = 1200
-QuestDB[9983].appliesTo = "Horde"
-
---Murkblood Invaders
-QuestDB[9871] = {}
-QuestDB[9871].xp = 11650
-QuestDB[9871].appliesTo = "Alliance"
-
---Murkblood Invaders
-QuestDB[9872] = {}
-QuestDB[9872].xp = 11650
-QuestDB[9872].appliesTo = "Horde"
 
 --Missing Mag'hari Procession
 QuestDB[9944] = {}
@@ -1412,6 +1419,8 @@ QuestDB[10744].appliesTo = "Alliance"
 QuestDB[10772] = {}
 QuestDB[10772].xp = 9500
 QuestDB[10772].appliesTo = "Alliance"
+QuestDB[10772].itemId = 31310
+QuestDB[10772].itemAmount = 1
 
 --The Hand of Gul'dan
 QuestDB[10680] = {}
@@ -1419,9 +1428,9 @@ QuestDB[10680].xp = 3150
 QuestDB[10680].appliesTo = "Alliance"
 
 --Imbuing the Headpiece
-QuestDB[10680] = {}
-QuestDB[10680].previousQuest =10780
-QuestDB[10680].xp = 12300
+QuestDB[10782] = {}
+QuestDB[10782].previousQuest =10780
+QuestDB[10782].xp = 12300
 
 --News of Victory
 QuestDB[10745] = {}
@@ -1470,20 +1479,32 @@ QuestDB[11094].reputation = "revered"
 --Rise, Overseer!
 QuestDB[11053] = {}
 QuestDB[11053].xp = 12650
+QuestDB[11084].repfaction = 1015
+QuestDB[11084].reputation = "friendly"
 
 --Stand Tall, Captain!
 QuestDB[11084] = {}
 QuestDB[11084].xp = 12650
+QuestDB[11084].repfaction = 1015
+QuestDB[11084].reputation = "honored"
 
 --Hail, Commander!
 QuestDB[11092] = {}
 QuestDB[11092].xp = 12650
+QuestDB[11092].repfaction = 1015
+QuestDB[11092].reputation = "revered"
 
 --Enter the Deceiver...
 QuestDB[11550] = {}
 QuestDB[11550].xp = 3150
 
 --Blade's Edge
+
+--Ogre Heaven
+QuestDB[11009] = {}
+QuestDB[11009].previousQuest = 11022
+QuestDB[11009].xp = 15800
+
 --The Ogre Threat
 QuestDB[9795] = {}
 QuestDB[9795].xp = 2700
@@ -1493,15 +1514,13 @@ QuestDB[9795].appliesTo = "Horde"
 QuestDB[9794] = {}
 QuestDB[9794].xp = 2700
 QuestDB[9794].appliesTo = "Alliance"
+QuestDB[9794].itemId = 26048
+QuestDB[9794].itemAmount = 1
 
 --Where Did Those Darn Gnomes Go? + Follow the Breadcrumbs
 QuestDB[10580] = {}
 QuestDB[10580].xp = 5800
 QuestDB[10580].appliesTo = "Alliance"
-
---Off To Area 52
-QuestDB[10183] = {}
-QuestDB[10183].xp = 3050
 
 --A Time for Negotiation...
 QuestDB[10682] = {}
@@ -1509,15 +1528,9 @@ QuestDB[10682].xp = 11650
 
 --Our Boy Wants To Be A Skyguard Ranger + followup quest
 QuestDB[11030] = {}
-QuestDB[11030].xp = 12650
-QuestDB[11030].itemId = 32569 --apexis shards
-QuestDB[11030].itemAmount = 5
-
---The Crystals
-QuestDB[11025] = {}
-QuestDB[11025].xp = 25300
-QuestDB[11025].itemId = 32569 --apexis shards
-QuestDB[11025].itemAmount = 20
+QuestDB[11030].xp = 25300
+QuestDB[11030].itemId = {32598,32601} -- unstable flasks
+QuestDB[11030].itemAmount = {1,1}
 
 --Netherstorm
 --Back to the Chief!
@@ -1533,6 +1546,8 @@ QuestDB[10316].xp = 12300
 --Needs More Cowbell
 QuestDB[10334] = {}
 QuestDB[10334].xp = 9250
+QuestDB[10334].itemId = 29428
+QuestDB[10334].itemAmount = 1
 
 --To the Stormspire
 QuestDB[10423] = {}
