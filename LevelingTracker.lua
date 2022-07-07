@@ -147,6 +147,27 @@ function addon.tracker:QUEST_TURNED_IN(_, questId, xpReward)
     -- e.g. complete quest solo, join dungeon group, then turn in before flying or inverse
 end
 
+local function buildDropdownLevels()
+    local dropdownLevels = {}
+    for level, _ in pairs(addon.tracker.db.profile["levels"]) do
+        if level > addon.tracker.playerLevel then break end
+
+        dropdownLevels[level] = fmt("%d to %d", level, level + 1)
+    end
+
+    return dropdownLevels
+end
+
+local function buildSpacer(height)
+    local spacer = AceGUI:Create("SimpleGroup")
+    spacer:SetLayout("Fill")
+    spacer:SetHeight(height)
+    spacer:SetWidth(30)
+    spacer:SetFullWidth(true)
+
+    return spacer
+end
+
 function addon.tracker:CreateGui()
     -- local BackdropTemplate = _G.BackdropTemplateMixin and "BackdropTemplate" or nil
 
@@ -162,7 +183,6 @@ function addon.tracker:CreateGui()
 
     trackerUi:SetLayout("Flow")
     trackerUi:Hide()
-    trackerUi:SetCallback("OnClose", function() self:Hide() end)
 
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
     trackerUi:SetTitle("RestedXP Leveling Report")
@@ -171,13 +191,8 @@ function addon.tracker:CreateGui()
     trackerUi:SetHeight(attachment:GetHeight() + offset.y - 6 -
                             offset.tabsHeight * 2)
 
-    trackerUi.frame:SetFrameStrata("HIGH")
     trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
     trackerUi.frame:SetBackdropColor(unpack(addon.colors.background))
-    trackerUi.frame:EnableMouse(true)
-    trackerUi.frame:SetMovable(true)
-    trackerUi.frame:RegisterForDrag("LeftButton")
-    trackerUi.frame:SetUserPlaced(true)
 
     trackerUi:SetCallback("OnShow", function()
         -- refresh data
@@ -191,173 +206,105 @@ function addon.tracker:CreateGui()
 
     trackerUi.levelDropdown = AceGUI:Create("Dropdown")
 
-    local dropdownLevels = {}
-    for level, _ in pairs(addon.tracker.db.profile["levels"]) do
-        dropdownLevels[level] = level
-    end
+    local dropdownLevels = buildDropdownLevels()
 
     trackerUi.levelDropdown:SetList(dropdownLevels)
-    trackerUi.levelDropdown:SetValue(dropdownLevels[addon.tracker.playerLevel])
+    trackerUi.levelDropdown:SetValue(addon.tracker.playerLevel)
+    trackerUi.levelDropdown:SetWidth(trackerUi.frame:GetWidth() * 0.45)
 
     trackerUi.levelDropdown:SetCallback("OnValueChanged", function(_, _, key)
         addon.tracker:UpdateReport(key)
     end)
 
     trackerUi:AddChild(trackerUi.levelDropdown)
+    trackerUi:AddChild(buildSpacer(10))
 
+    -- TODO debugging
     _G.RXPTUI = trackerUi
 
-    --[[
-    addon.tracker.ui = CreateFrame("Frame", "RXPTrackerUI", attachment,
-                                   BackdropTemplate)
+    -- Reached block
+    trackerUi.reachedContainer = AceGUI:Create("SimpleGroup")
+    trackerUi.reachedContainer:SetLayout("List")
+    trackerUi.reachedContainer:SetFullWidth(true)
 
-    local trackerUi = addon.tracker.ui
+    trackerUi.reachedContainer.label = AceGUI:Create("Label")
+    trackerUi.reachedContainer.label:SetText("Reached Level " ..
+                                                 addon.tracker.playerLevel)
+    trackerUi.reachedContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.label)
+    trackerUi.reachedContainer:AddChild(buildSpacer(5))
 
-    trackerUi:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
-    trackerUi:SetWidth(attachment:GetWidth() * 0.6)
-    trackerUi:SetHeight(
-        (attachment:GetHeight() + offset.y - offset.tabsHeight) * 0.8)
+    trackerUi.reachedContainer.data = AceGUI:Create("Label")
+    trackerUi.reachedContainer.data:SetText("In-progress")
+    trackerUi.reachedContainer.data:SetFont(addon.font, 12)
+    trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.data)
+    trackerUi.reachedContainer:AddChild(buildSpacer(15))
 
-    trackerUi:SetBackdrop(addon.RXPFrame.backdropEdge)
-    trackerUi:SetBackdropColor(unpack(addon.colors.background))
-    trackerUi:SetFrameStrata("DIALOG")
-    trackerUi:EnableMouse(true)
-    trackerUi:SetMovable(true)
-    trackerUi:RegisterForDrag("LeftButton")
-    trackerUi:SetUserPlaced(true)
-    trackerUi:Hide()
+    trackerUi:AddChild(trackerUi.reachedContainer)
 
-    trackerUi:SetScript("OnMouseDown", function() trackerUi:StartMoving() end)
+    -- Speed block
+    trackerUi.speedContainer = AceGUI:Create("SimpleGroup")
+    trackerUi.speedContainer:SetLayout("List")
+    trackerUi.speedContainer:SetFullWidth(true)
 
-    trackerUi:SetScript("OnMouseUp",
-                        function() trackerUi:StopMovingOrSizing() end)
+    trackerUi.speedContainer.label = AceGUI:Create("Label")
+    trackerUi.speedContainer.label:SetText("Leveling Speed")
+    trackerUi.speedContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.speedContainer:AddChild(trackerUi.speedContainer.label)
+    trackerUi.speedContainer:AddChild(buildSpacer(5))
 
-    function trackerUi.onMouseDown() end
-    function trackerUi.onMouseUp() trackerUi:StopMovingOrSizing() end
+    trackerUi.speedContainer.data = AceGUI:Create("Label")
+    trackerUi.speedContainer.data:SetText("In-progress")
+    trackerUi.speedContainer.data:SetFont(addon.font, 12)
+    trackerUi.speedContainer:AddChild(trackerUi.speedContainer.data)
+    trackerUi.speedContainer:AddChild(buildSpacer(15))
 
-    trackerUi:SetScript("OnHide", function()
-        -- Hide tracker frame when parent hides
-        -- Prevent tracker from being open next time character is
-        trackerUi:Hide()
-    end)
+    trackerUi:AddChild(trackerUi.speedContainer)
 
-    trackerUi:SetScript("OnShow", function()
-        -- refresh data
-        addon.tracker:CompileData()
-        addon.tracker:UpdateReport(addon.tracker.playerLevel, true)
-    end)
+    -- Zones block
+    trackerUi.zonesContainer = AceGUI:Create("SimpleGroup")
+    trackerUi.zonesContainer:SetLayout("List")
+    trackerUi.zonesContainer:SetFullWidth(true)
 
-    trackerUi.title = trackerUi:CreateFontString(nil, "ARTWORK",
-                                                 "GameFontNormal")
-    trackerUi.title:SetJustifyH("LEFT")
-    trackerUi.title:SetPoint("TOPLEFT", trackerUi, 10, -5)
-    trackerUi.title:SetText("RestedXP Leveling Summary")
-    trackerUi:SetWidth(attachment:GetWidth() * 0.6)
+    trackerUi.zonesContainer.label = AceGUI:Create("Label")
+    trackerUi.zonesContainer.label:SetText("Top zones")
+    trackerUi.zonesContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.label)
+    trackerUi.zonesContainer:AddChild(buildSpacer(5))
 
-    local cButton = CreateFrame("BUTTON", nil, attachment)
-    cButton:ClearAllPoints()
-    cButton:SetPoint("BOTTOMRIGHT", attachment, "BOTTOMRIGHT", -40, 80)
-    cButton:SetNormalTexture("Interface/AddOns/" .. addonName ..
-                                 "/Textures/rxp_logo-64")
-    cButton:SetHighlightTexture("Interface/Buttons/UI-Common-MouseHilight")
-    cButton:SetSize(30, 30)
+    trackerUi.zonesContainer.top = {}
+    for t = 1, 3 do
+        trackerUi.zonesContainer.top[t] = AceGUI:Create("Label")
+        trackerUi.zonesContainer.top[t]:SetText(fmt("Top %d zone", t))
+        trackerUi.zonesContainer.top[t]:SetFont(addon.font, 12)
+        trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.top[t])
+        trackerUi.zonesContainer:AddChild(buildSpacer(5))
+    end
 
-    cButton.tiptext = "Click to show leveling data"
-    cButton:SetScript("OnClick", function()
-        if (trackerUi:IsShown()) then
-            trackerUi:Hide()
-        else
-            trackerUi:Show()
-        end
-    end)
+    trackerUi:AddChild(trackerUi.zonesContainer)
 
-    trackerUi.levelSlider = CreateFrame("Slider",
-                                        trackerUi:GetName() .. "-levelSlider",
-                                        trackerUi, "OptionssliderTemplate")
+    -- Sources block
+    trackerUi.sourcesContainer = AceGUI:Create("SimpleGroup")
+    trackerUi.sourcesContainer:SetLayout("List")
+    trackerUi.sourcesContainer:SetFullWidth(true)
 
-    trackerUi.levelSliderLabel = trackerUi.levelSlider:CreateFontString(nil,
-                                                                        'BACKGROUND')
-    trackerUi.levelSliderLabel:SetPoint("TOPLEFT", trackerUi.title,
-                                        "BOTTOMLEFT", 0, -4)
-    trackerUi.levelSliderLabel:SetFontObject("GameFontHighlight")
-    trackerUi.levelSliderLabel:SetFormattedText("Level data")
+    trackerUi.sourcesContainer.label = AceGUI:Create("Label")
+    trackerUi.sourcesContainer.label:SetText("Top zones")
+    trackerUi.sourcesContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.label)
+    trackerUi.sourcesContainer:AddChild(buildSpacer(5))
 
-    trackerUi.levelSlider:SetPoint("TOPLEFT", trackerUi.levelSliderLabel,
-                                   "BOTTOMLEFT", 0, -5)
-    trackerUi.levelSlider:SetOrientation("HORIZONTAL")
-    trackerUi.levelSlider:SetMinMaxValues(1, addon.tracker.playerLevel)
-    trackerUi.levelSlider:SetValueStep(1)
-    trackerUi.levelSlider.scrollStep = 1
-    trackerUi.levelSlider:SetObeyStepOnDrag(true)
-    trackerUi.levelSlider:SetValue(addon.tracker.playerLevel)
-    trackerUi.levelSlider:SetWidth(trackerUi:GetWidth() * 0.8)
+    trackerUi.sourcesContainer.data = {}
 
-    _G[trackerUi.levelSlider:GetName() .. "Low"]:SetText(1)
-    _G[trackerUi.levelSlider:GetName() .. "High"]:SetText(addon.tracker
-                                                              .playerLevel)
+    for _, t in ipairs({'quests', 'mobs'}) do
+        trackerUi.sourcesContainer.data[t] = AceGUI:Create("Label")
+        trackerUi.sourcesContainer.data[t]:SetText(fmt("Source %s", t))
+        trackerUi.sourcesContainer.data[t]:SetFont(addon.font, 12)
+        trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.data[t])
+        trackerUi.sourcesContainer:AddChild(buildSpacer(5))
+    end
 
-    trackerUi.levelSlider:SetScript("OnValueChanged",
-                                    function(_, level, userInput)
-        if not userInput then return end
-
-        if addon.tracker.previousSelectedLevel and
-            addon.tracker.previousSelectedLevel == level then
-            return
-        else
-            addon.tracker.previousSelectedLevel = level
-        end
-
-        addon.tracker:UpdateReport(level)
-    end)
-
-    trackerUi.teamworkSlider = CreateFrame("Slider", trackerUi:GetName() ..
-                                               "-teamworkSlider", trackerUi,
-                                           "OptionssliderTemplate")
-
-    trackerUi.teamworkSliderLabel = trackerUi.teamworkSlider:CreateFontString(
-                                        nil, 'BACKGROUND')
-    trackerUi.teamworkSliderLabel:SetPoint("TOPLEFT", trackerUi.levelSlider,
-                                           "BOTTOMLEFT", 0,
-                                           -trackerUi.levelSlider:GetHeight() -
-                                               5)
-    trackerUi.teamworkSliderLabel:SetFontObject("GameFontHighlight")
-    trackerUi.teamworkSliderLabel:SetFormattedText("Teamwork %%")
-
-    trackerUi.teamworkSlider:SetPoint("TOPLEFT", trackerUi.teamworkSliderLabel,
-                                      "BOTTOMLEFT")
-    trackerUi.teamworkSlider:SetOrientation("HORIZONTAL")
-    trackerUi.teamworkSlider:SetMinMaxValues(1, 100)
-    trackerUi.teamworkSlider:SetValue(1)
-    trackerUi.teamworkSlider:SetWidth(trackerUi:GetWidth() * 0.8)
-    trackerUi.teamworkSlider:Disable()
-
-    _G[trackerUi.teamworkSlider:GetName() .. "Low"]:SetText('Solo')
-    _G[trackerUi.teamworkSlider:GetName() .. "High"]:SetText('Group')
-
-    trackerUi.sourceSlider = CreateFrame("Slider", trackerUi:GetName() ..
-                                             "-sourceSlider", trackerUi,
-                                         "OptionssliderTemplate")
-
-    trackerUi.sourceSliderLabel = trackerUi.sourceSlider:CreateFontString(nil,
-                                                                          'BACKGROUND')
-    trackerUi.sourceSliderLabel:SetPoint("TOPLEFT", trackerUi.teamworkSlider,
-                                         "BOTTOMLEFT", 0,
-                                         -trackerUi.sourceSlider:GetHeight() - 5)
-
-    trackerUi.sourceSliderLabel:SetFontObject("GameFontHighlight")
-    trackerUi.sourceSliderLabel:SetFormattedText("Source %%")
-
-    trackerUi.sourceSlider:SetPoint("TOPLEFT", trackerUi.sourceSliderLabel,
-                                    "BOTTOMLEFT")
-    trackerUi.sourceSlider:SetOrientation("HORIZONTAL")
-    trackerUi.sourceSlider:SetMinMaxValues(1, 100)
-    trackerUi.sourceSlider:SetValue(1)
-    trackerUi.sourceSlider:SetWidth(trackerUi:GetWidth() * 0.8)
-    trackerUi.sourceSlider:Disable()
-
-    _G[trackerUi.sourceSlider:GetName() .. "Low"]:SetText('Quests')
-    _G[trackerUi.sourceSlider:GetName() .. "High"]:SetText('Mobs')
-    --]]
+    trackerUi:AddChild(trackerUi.sourcesContainer)
 
 end
 
