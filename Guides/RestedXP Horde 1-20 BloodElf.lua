@@ -1863,8 +1863,6 @@ step
     .accept 9163 >> Accept Into Occupied Territory
     .turnin 9192 >> Turn in Trouble at the Underlight Mines
     .accept 9199 >> Accept Troll Juju
-step
-    .goto Ghostlands,44.8,32.5
     .accept 9173 >> Accept Retaking Windrunner Spire
 step
     .goto Ghostlands,46.1,31.8
@@ -1904,6 +1902,13 @@ step
     .goto Ghostlands,46.2,56.4
     .accept 9281 >> Accept Clearing the Way
 step
+    #sticky
+    #completewith next
+    .goto Ghostlands,13.2,56.8
+    >>Kill Ghostclaw Ravagers and Spindlewebs en route, don't worry about finishing this quest yet.
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+step
         >>Kill Fallen Rangers and Deatholme Acolytes. Keep grinding until you get The Lady's Necklace to drop. These mobs can be hard, try not to pull more than one at a time.
     .goto Ghostlands,13.2,56.8
        .collect 22597,1 --Collect The Lady's Necklace (x1)
@@ -1920,16 +1925,16 @@ step
     >>Loot Spiders for Crunchy Spider Legs
     .complete 9171,1 --Collect Crunchy Spider Leg (x5)
 step
-    >>Kill Ghostclaw Ravagers and Spindlewebs
-    .goto Ghostlands,16.5,62.5,30,0
+    >>Finish killing Ghostclaw Ravagers and Spindlewebs
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,0
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,0
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,0
+    .goto Ghostlands,16.5,62.5,0
     .goto Ghostlands,44.1,57.6,30,0
     .goto Ghostlands,16.5,62.5,30,0
-    .goto Ghostlands,44.1,57.6,30,0
-    .goto Ghostlands,16.5,62.5,30,0
-    .goto Ghostlands,44.1,57.6,30,0
-    .goto Ghostlands,16.5,62.5,30,0
-    .goto Ghostlands,44.1,57.6,30,0
-    .goto Ghostlands,16.5,62.5
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step
