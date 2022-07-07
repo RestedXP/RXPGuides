@@ -1494,18 +1494,16 @@ step << !BloodElf
 step << BloodElf !Hunter
     .goto Ghostlands,47.3,28.9
     .accept 9130 >> Accept Goods from Silvermoon City
-step << !BloodElf/!Hunter
-    .goto Ghostlands,47.0,28.5
-    .accept 9152 >> Accept Tomber's Supplies
 step << Warlock
     #completewith next
     .goto Ghostlands,48.9,32.4
     .home >> Set your Hearthstone to Tranquillien
 step << !BloodElf/!Hunter
+    .goto Ghostlands,47.0,28.5
+    .accept 9152 >> Accept Tomber's Supplies
+step << !BloodElf/!Hunter
     .goto Ghostlands,46.3,28.4
     .turnin 9758 >> Turn in Return to Arcanist Vandril
-step << !BloodElf/!Hunter
-    .goto Ghostlands,46.3,28.6
     .accept 9138 >> Accept Suncrown Village
 step << BloodElf !Hunter !Warlock
     >>do NOT fly to Silvermoon City
@@ -1617,8 +1615,7 @@ step
     .complete 9274,2 --Kill Vengeful Apparition (x8)
     .complete 9274,1 --Kill Ravening Apparition (x8)
 step
-    #label wavefrontisdumb
-    #requires Wavefront
+    #requires Apparition
     .goto Ghostlands,72.3,19.0
     .turnin 9157 >> Turn in Forgotten Rituals
     .accept 9174 >> Accept Vanquishing Aquantion
@@ -1627,7 +1624,8 @@ step
     .goto Ghostlands,71.3,15.0
     .complete 9174,1 --Kill Aquantion (x1)
 step
-    #requires Apparition
+    #label wavefrontisdumb
+    #requires Wavefront
     .goto Ghostlands,72.3,19.1
     .turnin 9174 >> Turn in Vanquishing Aquantion
 step
@@ -1748,6 +1746,7 @@ step << Mage
     --might remove frostbolt
 step << !BloodElf Warlock
     .goto Silvermoon City,74.4,47.2
+    >> Head into the building then go downstairs
     .train 689 >>Train Drain Life
     .train 6222 >>Train Corruption r2
 step << Priest/Mage/Warlock/Druid
