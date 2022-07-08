@@ -164,16 +164,16 @@ local function IsPreReqComplete(quest)
         end
         return state
     elseif t == "number" then
-        local preReqComplete = true
+        local preReqComplete
         if quest.uniqueWith then
             local prevQuest = addon.QuestDB[quest.previousQuest]
             if prevQuest and prevQuest.uniqueWith then
                 for _,uniqueId in pairs(prevQuest.uniqueWith) do
-                    preReqComplete = preReqComplete and not addon.IsQuestTurnedIn(uniqueId)
+                    preReqComplete = preReqComplete or addon.IsQuestTurnedIn(uniqueId)
                 end
             end
         end
-        return addon.IsQuestTurnedIn(quest.previousQuest) and preReqComplete
+        return preReqComplete or addon.IsQuestTurnedIn(quest.previousQuest)
     else
         return true
     end
