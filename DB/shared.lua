@@ -170,12 +170,17 @@ local function IsPreReqComplete(quest)
     end
 end
 
-local function IsQuestAvailable(quest,id)
+local function IsQuestAvailable(quest,id,skipRepCheck)
     id = id or quest.Id
     if quest.reputation then
         local _, _, standing = GetFactionInfoByID(quest.repfaction)
         local current = addon.repStandingID[strlower(quest.reputation)]
-        if not current or standing < current then
+        if skipRepCheck then
+            if (skipRepCheck == 932 and quest.repfaction == 934) or
+                 (skipRepCheck == 934 and quest.repfaction == 932) then
+                return false
+            end
+        elseif not current or standing < current then
             return false
         end
     end
@@ -309,12 +314,17 @@ end
 function addon.CalculateTotalXP(flags)
     local totalXp = 0
     flags = flags or 0
-    local ignorePreReqs = bit.band(flags,0x1) == 0x1
     local output = bit.band(flags,0x2) == 0x2
+    local ignorePreReqs
+    if bit.band(flags,0x1) == 0x1 then
+        local aldor = addon.AldorScryerCheck("Aldor") and 932
+        local scryer = addon.AldorScryerCheck("Scryer") and 934
+        ignorePreReqs = aldor or scryer or 932
+    end
 
     local function ProcessQuest(quest,qid)
         qid = qid or quest.Id
-        if IsQuestAvailable(quest,qid) and (ignorePreReqs or (IsPreReqComplete(quest))) then
+        if IsQuestAvailable(quest,qid,ignorePreReqs) and (ignorePreReqs or (IsPreReqComplete(quest))) then
             local xp = quest.xp or 0
             totalXp = totalXp + xp
             if output then

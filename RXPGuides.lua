@@ -788,10 +788,8 @@ end
 
 function addon.AldorScryerCheck(faction)
     if addon.game == "CLASSIC" then return true end
-    local name, description, standingID, barMin, barMax, aldorRep =
-        GetFactionInfoByID(932)
-    local name, description, standingID, barMin, barMax, scryerRep =
-        GetFactionInfoByID(934)
+    local _, _, _, _, _, aldorRep = GetFactionInfoByID(932)
+    local _, _, _, _, _, scryerRep = GetFactionInfoByID(934)
 
     if aldorRep and scryerRep then
         if type(faction) == "table" then
