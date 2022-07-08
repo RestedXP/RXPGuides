@@ -171,7 +171,9 @@ local function IsPreReqComplete(quest)
 end
 
 local function IsQuestAvailable(quest,id,skipRepCheck)
+    if not quest then return end
     id = id or quest.Id
+
     if quest.reputation then
         local _, _, standing = GetFactionInfoByID(quest.repfaction)
         local current = addon.repStandingID[strlower(quest.reputation)]
@@ -184,9 +186,19 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
             return false
         end
     end
+
+    if quest.uniqueWith then
+        for _,uniqueId in pairs(quest.uniqueWith) do
+            if addon.IsQuestTurnedIn(uniqueId) then
+                return false
+            end
+        end
+    end
+
     if addon.IsQuestTurnedIn(id) then
         return false
     end
+
     local activeFor = quest.appliesTo
     if activeFor then
         activeFor = addon.applies(activeFor) or
