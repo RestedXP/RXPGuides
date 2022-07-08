@@ -180,7 +180,7 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
                  (skipRepCheck == 934 and quest.repfaction == 932) then
                 return false
             end
-        elseif not current or standing < current then
+        elseif not (current and standing) or standing < current then
             return false
         end
     end
@@ -336,7 +336,7 @@ function addon.CalculateTotalXP(flags)
     if not addon.questLogQuests then addon.GetBestQuests(true) end
     for i = 1, 25 do
         local quest = addon.questLogQuests[i]
-        if ignorePreReqs or addon.IsQuestComplete(quest.Id) then
+        if quest and (ignorePreReqs or addon.IsQuestComplete(quest.Id)) then
             ProcessQuest(quest)
         end
     end
