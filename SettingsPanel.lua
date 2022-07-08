@@ -284,7 +284,8 @@ function addon.CreateOptionsPanel()
 
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
-        self.Text:SetText(self.updateFunc(self.defaultText, value))
+        local updateFunc = self.updateFunc or string.format
+        self.Text:SetText(updateFunc(self.defaultText, value))
         addon.RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
         addon.arrowFrame:SetSize(32 * size, 32 * size)
@@ -327,7 +328,7 @@ function addon.CreateOptionsPanel()
         slider.Low:SetText(minText or tostring(smin));
         slider.High:SetText(maxText or tostring(smax));
 
-        slider.updateFunc = updateFunc or string.format
+        slider.updateFunc = updateFunc
 
         return slider
     end

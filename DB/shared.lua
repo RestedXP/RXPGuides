@@ -1489,8 +1489,8 @@ QuestDB[11094].reputation = "revered"
 --Rise, Overseer!
 QuestDB[11053] = {}
 QuestDB[11053].xp = 12650
-QuestDB[11084].repfaction = 1015
-QuestDB[11084].reputation = "friendly"
+QuestDB[11053].repfaction = 1015
+QuestDB[11053].reputation = "friendly"
 
 --Stand Tall, Captain!
 QuestDB[11084] = {}
