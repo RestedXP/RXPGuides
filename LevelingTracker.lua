@@ -184,7 +184,7 @@ function addon.tracker:CreateGui()
     addon.tracker.ui = AceGUI:Create("Frame")
     local trackerUi = addon.tracker.ui
 
-    trackerUi:SetLayout("Flow")
+    trackerUi:SetLayout("Fill")
     trackerUi:Hide()
 
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
@@ -193,6 +193,10 @@ function addon.tracker:CreateGui()
     trackerUi:SetWidth(attachment:GetWidth() * 0.6)
     trackerUi:SetHeight(attachment:GetHeight() + offset.y - 8 -
                             offset.tabsHeight * 2)
+
+    local scrollContainer = AceGUI:Create("ScrollFrame")
+    scrollContainer:SetLayout("Flow")
+    trackerUi:AddChild(scrollContainer)
 
     trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
     trackerUi.frame:SetBackdropColor(unpack(addon.colors.background))
@@ -211,8 +215,8 @@ function addon.tracker:CreateGui()
     -- linksContainer:SetLayout('Flow')
     -- TODO RXP and Discord links
 
-    -- trackerUi:AddChild(linksContainer)
-    -- trackerUi:AddChild(buildSpacer(offset.spacers.element))
+    -- scrollContainer:AddChild(linksContainer)
+    -- scrollContainer:AddChild(buildSpacer(offset.spacers.element))
 
     local topContainer = AceGUI:Create("SimpleGroup")
     topContainer:SetLayout('Flow')
@@ -221,7 +225,7 @@ function addon.tracker:CreateGui()
 
     trackerUi.levelDropdown:SetList(addon.tracker.BuildDropdownLevels())
     trackerUi.levelDropdown:SetValue(addon.tracker.playerLevel)
-    trackerUi.levelDropdown:SetWidth(trackerUi.frame:GetWidth() * 0.45)
+    trackerUi.levelDropdown:SetRelativeWidth(0.45)
 
     trackerUi.levelDropdown:SetCallback("OnValueChanged", function(_, _, key)
         addon.tracker:UpdateReport(key)
@@ -229,7 +233,7 @@ function addon.tracker:CreateGui()
 
     topContainer:AddChild(trackerUi.levelDropdown)
 
-    trackerUi:AddChild(topContainer)
+    scrollContainer:AddChild(topContainer)
 
     -- Reached block
     trackerUi.reachedContainer = AceGUI:Create("SimpleGroup")
@@ -250,7 +254,7 @@ function addon.tracker:CreateGui()
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.data)
     trackerUi.reachedContainer:AddChild(buildSpacer(offset.spacers.section))
 
-    trackerUi:AddChild(trackerUi.reachedContainer)
+    scrollContainer:AddChild(trackerUi.reachedContainer)
 
     -- Speed block
     trackerUi.speedContainer = AceGUI:Create("SimpleGroup")
@@ -270,7 +274,7 @@ function addon.tracker:CreateGui()
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.data)
     trackerUi.speedContainer:AddChild(buildSpacer(offset.spacers.section))
 
-    trackerUi:AddChild(trackerUi.speedContainer)
+    scrollContainer:AddChild(trackerUi.speedContainer)
 
     -- Zones block
     trackerUi.zonesContainer = AceGUI:Create("SimpleGroup")
@@ -298,7 +302,7 @@ function addon.tracker:CreateGui()
 
     trackerUi.zonesContainer:AddChild(buildSpacer(offset.spacers.section))
 
-    trackerUi:AddChild(trackerUi.zonesContainer)
+    scrollContainer:AddChild(trackerUi.zonesContainer)
 
     -- Sources block
     trackerUi.sourcesContainer = AceGUI:Create("SimpleGroup")
@@ -328,7 +332,7 @@ function addon.tracker:CreateGui()
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.data['mobs'])
     trackerUi.sourcesContainer:AddChild(buildSpacer(offset.spacers.section))
 
-    trackerUi:AddChild(trackerUi.sourcesContainer)
+    scrollContainer:AddChild(trackerUi.sourcesContainer)
 
     -- Teamwork block
     trackerUi.teamworkContainer = AceGUI:Create("SimpleGroup")
@@ -359,7 +363,7 @@ function addon.tracker:CreateGui()
 
     trackerUi.teamworkContainer:AddChild(buildSpacer(offset.spacers.section))
 
-    trackerUi:AddChild(trackerUi.teamworkContainer)
+    scrollContainer:AddChild(trackerUi.teamworkContainer)
 
 end
 
