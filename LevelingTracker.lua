@@ -120,12 +120,16 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, _)
 end
 
 function addon.tracker:PLAYER_LEVEL_UP(_, level)
+    -- TODO create next tracking entry, don't pre-seed all 70-80 levels
+    -- TODO update dropdown
     addon.tracker.playerLevel = level
     addon.tracker.waitingForTimePlayed = {
         event = 'PLAYER_LEVEL_UP',
         level = level,
         date = C_DateAndTime.GetCurrentCalendarTime()
     }
+    addon.tracker.ui.levelDropdown:SetList(addon.tracker.BuildDropdownLevels())
+    addon.tracker.ui.levelDropdown:SetValue(addon.tracker.playerLevel)
     RequestTimePlayed()
 end
 
@@ -147,7 +151,7 @@ function addon.tracker:QUEST_TURNED_IN(_, questId, xpReward)
     -- e.g. complete quest solo, join dungeon group, then turn in before flying or inverse
 end
 
-local function buildDropdownLevels()
+function addon.tracker.BuildDropdownLevels()
     local dropdownLevels = {}
     for level, _ in pairs(addon.tracker.db.profile["levels"]) do
         if level > addon.tracker.playerLevel then break end
@@ -206,9 +210,7 @@ function addon.tracker:CreateGui()
 
     trackerUi.levelDropdown = AceGUI:Create("Dropdown")
 
-    local dropdownLevels = buildDropdownLevels()
-
-    trackerUi.levelDropdown:SetList(dropdownLevels)
+    trackerUi.levelDropdown:SetList(addon.tracker.BuildDropdownLevels())
     trackerUi.levelDropdown:SetValue(addon.tracker.playerLevel)
     trackerUi.levelDropdown:SetWidth(trackerUi.frame:GetWidth() * 0.45)
 
@@ -218,9 +220,6 @@ function addon.tracker:CreateGui()
 
     trackerUi:AddChild(trackerUi.levelDropdown)
     trackerUi:AddChild(buildSpacer(10))
-
-    -- TODO debugging
-    _G.RXPTUI = trackerUi
 
     -- Reached block
     trackerUi.reachedContainer = AceGUI:Create("SimpleGroup")
@@ -267,7 +266,7 @@ function addon.tracker:CreateGui()
     trackerUi.zonesContainer:SetFullWidth(true)
 
     trackerUi.zonesContainer.label = AceGUI:Create("Label")
-    trackerUi.zonesContainer.label:SetText("Top zones")
+    trackerUi.zonesContainer.label:SetText("Top Zones")
     trackerUi.zonesContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.label)
     trackerUi.zonesContainer:AddChild(buildSpacer(5))
@@ -289,22 +288,45 @@ function addon.tracker:CreateGui()
     trackerUi.sourcesContainer:SetFullWidth(true)
 
     trackerUi.sourcesContainer.label = AceGUI:Create("Label")
-    trackerUi.sourcesContainer.label:SetText("Top zones")
+    trackerUi.sourcesContainer.label:SetText("Top Sources")
     trackerUi.sourcesContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.label)
     trackerUi.sourcesContainer:AddChild(buildSpacer(5))
 
     trackerUi.sourcesContainer.data = {}
 
-    for _, t in ipairs({'quests', 'mobs'}) do
+    for _, t in pairs({'quests', 'mobs'}) do
         trackerUi.sourcesContainer.data[t] = AceGUI:Create("Label")
-        trackerUi.sourcesContainer.data[t]:SetText(fmt("Source %s", t))
+        trackerUi.sourcesContainer.data[t]:SetText(fmt("%s", t))
         trackerUi.sourcesContainer.data[t]:SetFont(addon.font, 12)
         trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.data[t])
         trackerUi.sourcesContainer:AddChild(buildSpacer(5))
     end
 
     trackerUi:AddChild(trackerUi.sourcesContainer)
+
+    -- Teamwork block
+    trackerUi.teamworkContainer = AceGUI:Create("SimpleGroup")
+    trackerUi.teamworkContainer:SetLayout("List")
+    trackerUi.teamworkContainer:SetFullWidth(true)
+
+    trackerUi.teamworkContainer.label = AceGUI:Create("Label")
+    trackerUi.teamworkContainer.label:SetText("Teamwork")
+    trackerUi.teamworkContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.teamworkContainer:AddChild(trackerUi.teamworkContainer.label)
+    trackerUi.teamworkContainer:AddChild(buildSpacer(5))
+
+    trackerUi.teamworkContainer.data = {}
+
+    for _, t in pairs({'solo', 'group'}) do
+        trackerUi.teamworkContainer.data[t] = AceGUI:Create("Label")
+        trackerUi.teamworkContainer.data[t]:SetText(fmt("%s", t))
+        trackerUi.teamworkContainer.data[t]:SetFont(addon.font, 12)
+        trackerUi.teamworkContainer:AddChild(trackerUi.teamworkContainer.data[t])
+        trackerUi.teamworkContainer:AddChild(buildSpacer(5))
+    end
+
+    trackerUi:AddChild(trackerUi.teamworkContainer)
 
 end
 
@@ -315,35 +337,50 @@ end
 
 function addon.tracker:CompileData()
     local profile = addon.tracker.db.profile
-    local trackerUi = addon.tracker.ui
 
     addon.tracker.reportData = {}
     local rData = addon.tracker.reportData
 
-    --[[
-        for level, _ in pairs(profile["levels"]) do
-        trackerUi.levelSlider:SetMinMaxValues(level, addon.tracker.playerLevel)
-        _G[trackerUi.levelSlider:GetName() .. "Low"]:SetText(level)
-        _G[trackerUi.levelSlider:GetName() .. "High"]:SetText(addon.tracker.playerLevel)
-        break
-    end
-    ]] --
-
     local levelData
     for level, data in pairs(profile["levels"]) do
-        rData[level] = {questXP = 0, mobXP = 0}
+        rData[level] = {questXP = 0, mobXP = 0, zoneXP = {}}
         levelData = rData[level]
 
+        local zoneXP = {}
+
         for zoneName, questData in pairs(data.quests) do
-            for _, questXp in pairs(questData) do
-                levelData.questXP = levelData.questXP + questXp
+            if not zoneXP[zoneName] then zoneXP[zoneName] = {xp = 0} end
+
+            for _, questXP in pairs(questData) do
+                levelData.questXP = levelData.questXP + questXP
+
+                zoneXP[zoneName].xp = zoneXP[zoneName].xp + questXP
             end
         end
 
         for zoneName, mobData in pairs(data.mobs) do
-            for _, mobXp in pairs(mobData) do
-                levelData.mobXP = levelData.mobXP + mobXp
+            if not zoneXP[zoneName] then zoneXP[zoneName] = {xp = 0} end
+
+            for _, mobXP in pairs(mobData) do
+                levelData.mobXP = levelData.mobXP + mobXP
+
+                zoneXP[zoneName].xp = zoneXP[zoneName].xp + mobXP
             end
+        end
+
+        -- Flip zoneXP to easier sort
+        -- Sort highest to the top
+        -- TODO indices collision/overwrite if multiple zones have identical experience
+        -- TODO sorting still not right
+        local sortedZoneXP = {}
+        for n, z in pairs(zoneXP) do
+            sortedZoneXP[z.xp] = {xp = z.xp, name = n}
+        end
+
+        table.sort(sortedZoneXP, function(l, r) return l > r end)
+
+        for _, d in pairs(sortedZoneXP) do
+            table.insert(levelData.zoneXP, {xp = d.xp, name = d.name})
         end
 
         levelData.groupExperience = data.groupExperience
@@ -351,69 +388,126 @@ function addon.tracker:CompileData()
         -- Quests aren't tracked for group vs solo
         levelData.soloExperience = levelData.mobXP - data.groupExperience
 
+        levelData.totalXP = levelData.mobXP + levelData.questXP
+
+        levelData.timestamp = {
+            started = data.timestamp.started,
+            finished = data.timestamp.finished
+        }
+
         if data.timestamp.dateFinished then
-            levelData.dateFinished = fmt("%s %d, %d at %d:%d %s Server",
-                                         _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
-                                             .dateFinished.month],
-                                         data.timestamp.dateFinished.monthDay,
-                                         data.timestamp.dateFinished.year,
-                                         data.timestamp.dateFinished.hour % 12,
-                                         data.timestamp.dateFinished.minute,
-                                         data.timestamp.dateFinished.hour >= 12 and
-                                             "PM" or "AM")
+            levelData.timestamp.dateFinished = fmt(
+                                                   "%s %d, %d at %d:%d %s Server",
+                                                   _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
+                                                       .dateFinished.month],
+                                                   data.timestamp.dateFinished
+                                                       .monthDay,
+                                                   data.timestamp.dateFinished
+                                                       .year, data.timestamp
+                                                       .dateFinished.hour % 12,
+                                                   data.timestamp.dateFinished
+                                                       .minute, data.timestamp
+                                                       .dateFinished.hour >= 12 and
+                                                       "PM" or "AM")
         end
+
     end
 
 end
 
-function addon.tracker:UpdateReport(selectedLevel, force)
+function addon.tracker:UpdateReport(selectedLevel)
     local trackerUi = addon.tracker.ui
-    print("UpdateReport:selectedLevel = " .. selectedLevel)
 
-    --[[
-
-    if force then addon.tracker.ui.levelSlider:SetValue(selectedLevel) end
-
-    trackerUi.levelSliderLabel:SetFormattedText("Level data (%d)", selectedLevel)
+    trackerUi.reachedContainer.label:SetText("Finished Level " .. selectedLevel)
 
     local report = addon.tracker.reportData[selectedLevel]
 
-    local teamworkSliderRatio = report.groupExperience /
-                                    (report.soloExperience +
-                                        report.groupExperience)
+    if selectedLevel == addon.tracker.playerLevel then
+        trackerUi.reachedContainer.data:SetText("In-progress")
+        trackerUi.speedContainer.data:SetText("In-progress")
+    else
+        trackerUi.reachedContainer.data:SetText(
+            report.dateFinished or "Missing data")
 
-    local soloPercentage = floor(100 * teamworkSliderRatio)
+        if report.timestamp and report.timestamp.started and
+            report.timestamp.finished then
+            local s = report.timestamp.finished - report.timestamp.started
 
-    trackerUi.teamworkSlider:SetValue(soloPercentage)
+            local days = floor(s / 24 / 60 / 60)
+            s = mod(s, 24 * 60 * 60)
+
+            local hours = floor(s / 60 / 60)
+            s = mod(s, 60 * 60)
+
+            local minutes = floor(s / 60)
+            s = mod(s, 60)
+
+            local formattedString
+            if days > 0 then
+                formattedString = fmt("%d days %d hours %d minutes %d seconds",
+                                      days, hours, minutes, s)
+            elseif hours > 0 then
+                formattedString = fmt("%d hours %d minutes %d seconds", hours,
+                                      minutes, s)
+            elseif minutes > 0 then
+                formattedString = fmt("%d minutes %d seconds", minutes, s)
+            else
+                formattedString = fmt("%d seconds", s) -- Big gratz for leveling in under a minute
+            end
+            trackerUi.speedContainer.data:SetText(formattedString)
+        else
+            trackerUi.speedContainer.data:SetText("Missing data")
+        end
+
+    end
+
+    local teamworkRatio = report.groupExperience /
+                              (report.soloExperience + report.groupExperience)
+
+    local soloPercentage = floor(100 * teamworkRatio)
+
+    trackerUi.teamworkContainer.data['solo']:SetText(fmt("Solo: %d%%",
+                                                         soloPercentage))
 
     if soloPercentage == 0 then -- If numerator is 0, flip 100%
-        trackerUi.teamworkSliderLabel:SetFormattedText("Teamwork (%s/%s)%%",
-                                                       100, 0)
+        trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%",
+                                                             100 -
+                                                                 soloPercentage))
+        trackerUi.teamworkContainer.data['group']:SetText(
+            fmt("* Group: %d%%", soloPercentage))
     else
-        trackerUi.teamworkSliderLabel:SetFormattedText("Teamwork (%s/%s)%%",
-                                                       soloPercentage,
-                                                       100 - soloPercentage)
+        trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%",
+                                                             soloPercentage))
+        trackerUi.teamworkContainer.data['group']:SetText(
+            fmt("* Group: %d%%", 100 - soloPercentage))
     end
 
-    local sourceSliderRatio = report.questXP / (report.questXP + report.mobXP)
+    local sourceRatio = report.questXP / (report.questXP + report.mobXP)
 
-    local questsPercentage = floor(100 * sourceSliderRatio)
+    local questsPercentage = floor(100 * sourceRatio)
 
-    trackerUi.sourceSlider:SetValue(questsPercentage)
-
-    trackerUi.sourceSliderLabel:SetFormattedText("Source (%s/%s)%%",
-                                                 questsPercentage,
-                                                 100 - questsPercentage)
-
-    if report.dateFinished then
-        print("report.dateFinished = " .. report.dateFinished)
-        -- trackerUi.dateFinishedLabel:SetFormattedText("Reached level %d",
-        --                                             selectedLevel)
-        -- trackerUi.dateFinished:SetFormattedText("%s", report.dateFinished)
-        -- else
-        -- trackerUi.dateFinishedLabel:SetFormattedText("Current level %d",
-        --                                             selectedLevel)
-        -- trackerUi.dateFinished:SetFormattedText("In-progress")
+    if questsPercentage == 0 then -- If numerator is 0, flip 100%
+        trackerUi.sourcesContainer.data['quests']:SetText(
+            fmt("* Quests: %d%%", 100 - questsPercentage))
+        trackerUi.sourcesContainer.data['mobs']:SetText(fmt("* Mobs: %d%%",
+                                                            questsPercentage))
+    else
+        trackerUi.sourcesContainer.data['quests']:SetText(
+            fmt("* Quests: %d%%", questsPercentage))
+        trackerUi.sourcesContainer.data['mobs']:SetText(fmt("* Mobs: %d%%",
+                                                            100 -
+                                                                questsPercentage))
     end
-    --]]
+
+    -- TODO sorting still not right
+    for i = 1, 3 do
+        local d = report.zoneXP[i]
+        if d then
+            trackerUi.zonesContainer.top[i]:SetText(
+                fmt("* %s - %d%%", d.name, floor(d.xp * 100 / report.totalXP)))
+        else
+            trackerUi.zonesContainer.top[i]:SetText("")
+        end
+
+    end
 end
