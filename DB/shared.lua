@@ -183,16 +183,26 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
     if not quest then return end
     id = id or quest.Id
 
-    if quest.reputation then
-        local _, _, standing = GetFactionInfoByID(quest.repfaction)
-        local current = addon.repStandingID[strlower(quest.reputation)]
+    local function ProcessRep(rep,faction)
+        local _, _, standing = GetFactionInfoByID(faction)
+        local current = addon.repStandingID[strlower(rep)]
         if skipRepCheck then
-            if (skipRepCheck == 932 and quest.repfaction == 934) or
-                 (skipRepCheck == 934 and quest.repfaction == 932) then
+            if (skipRepCheck == 932 and faction == 934) or
+                (skipRepCheck == 934 and faction == 932) then
                 return false
             end
         elseif not (current and standing) or standing < current then
             return false
+        end
+        return true
+    end
+
+    local repCheck = true
+    if type(quest.reputation) == "number" then
+        repCheck = ProcessRep(quest.reputation,quest.repfaction)
+    elseif type(quest.reputation) == "table" then
+        for i,rep in pairs(quest.reputation) do
+            repCheck = repCheck and ProcessRep(rep,quest.repfaction[i])
         end
     end
 
@@ -204,7 +214,7 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
         end
     end
 
-    if addon.IsQuestTurnedIn(id) then
+    if addon.IsQuestTurnedIn(id) or not repCheck then
         return false
     end
 
