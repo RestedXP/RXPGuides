@@ -44,7 +44,7 @@ function addon.tracker:UpgradeDB()
 
         if not levelDB[l].mobs then levelDB[l].mobs = {} end
 
-        if levelDB[l].deaths then -- Retroactively set missing data
+        if not levelDB[l].deaths then -- Retroactively set missing data
             levelDB[l].deaths = -1
         end
     end
