@@ -1733,7 +1733,7 @@ QuestDB[10474].uniqueWith = {10473,10475,10472}
 
 --Rise and Be Recognized
 QuestDB[7168] = {}
-QuestDB[7163].appliesTo = "Alliance"
+QuestDB[7168].appliesTo = "Alliance"
 QuestDB[7168].previousQuest = 7162
 QuestDB[7168].xp = 20100
 QuestDB[7168].repfaction = 730
