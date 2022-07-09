@@ -29,6 +29,7 @@ function addon.tracker:SetupTracker()
 end
 
 function addon.tracker:UpgradeDB()
+    -- TODO track deaths
     local maxLevel = 0
 
     if _G.WOW_PROJECT_ID == _G.WOW_PROJECT_CLASSIC then
@@ -109,8 +110,8 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, _)
             totalTimePlayed
 
         if data.level > 1 then
-            addon.tracker.db.profile["levels"][data.level - 1].timestamp.date =
-                data.date
+            addon.tracker.db.profile["levels"][data.level - 1].timestamp
+                .dateFinished = data.date
             addon.tracker.db.profile["levels"][data.level - 1].timestamp
                 .finished = totalTimePlayed - 1
         end
@@ -121,15 +122,12 @@ end
 
 function addon.tracker:PLAYER_LEVEL_UP(_, level)
     -- TODO create next tracking entry, don't pre-seed all 70-80 levels
-    -- TODO update dropdown
     addon.tracker.playerLevel = level
     addon.tracker.waitingForTimePlayed = {
         event = 'PLAYER_LEVEL_UP',
         level = level,
         date = C_DateAndTime.GetCurrentCalendarTime()
     }
-    addon.tracker.ui.levelDropdown:SetList(addon.tracker.BuildDropdownLevels())
-    addon.tracker.ui.levelDropdown:SetValue(addon.tracker.playerLevel)
     RequestTimePlayed()
 end
 
@@ -179,7 +177,8 @@ function addon.tracker:CreateGui()
     local offset = {
         x = -38,
         y = -32,
-        tabsHeight = _G.CharacterFrameTab1:GetHeight()
+        tabsHeight = _G.CharacterFrameTab1:GetHeight(),
+        spacers = {element = 4, section = 8}
     }
 
     addon.tracker.ui = AceGUI:Create("Frame")
@@ -192,7 +191,7 @@ function addon.tracker:CreateGui()
     trackerUi:SetTitle("RestedXP Leveling Report")
     trackerUi:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
     trackerUi:SetWidth(attachment:GetWidth() * 0.6)
-    trackerUi:SetHeight(attachment:GetHeight() + offset.y - 6 -
+    trackerUi:SetHeight(attachment:GetHeight() + offset.y - 8 -
                             offset.tabsHeight * 2)
 
     trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
@@ -208,6 +207,16 @@ function addon.tracker:CreateGui()
     _G["RESTEDXP_TRACKER_SUMMARY_WINDOW"] = trackerUi.frame
     tinsert(_G.UISpecialFrames, "RESTEDXP_TRACKER_SUMMARY_WINDOW")
 
+    -- local linksContainer = AceGUI:Create("SimpleGroup")
+    -- linksContainer:SetLayout('Flow')
+    -- TODO RXP and Discord links
+
+    -- trackerUi:AddChild(linksContainer)
+    -- trackerUi:AddChild(buildSpacer(offset.spacers.element))
+
+    local topContainer = AceGUI:Create("SimpleGroup")
+    topContainer:SetLayout('Flow')
+
     trackerUi.levelDropdown = AceGUI:Create("Dropdown")
 
     trackerUi.levelDropdown:SetList(addon.tracker.BuildDropdownLevels())
@@ -218,26 +227,28 @@ function addon.tracker:CreateGui()
         addon.tracker:UpdateReport(key)
     end)
 
-    trackerUi:AddChild(trackerUi.levelDropdown)
-    trackerUi:AddChild(buildSpacer(10))
+    topContainer:AddChild(trackerUi.levelDropdown)
+
+    trackerUi:AddChild(topContainer)
 
     -- Reached block
     trackerUi.reachedContainer = AceGUI:Create("SimpleGroup")
     trackerUi.reachedContainer:SetLayout("List")
     trackerUi.reachedContainer:SetFullWidth(true)
 
-    trackerUi.reachedContainer.label = AceGUI:Create("Label")
+    trackerUi.reachedContainer.label = AceGUI:Create("Heading")
     trackerUi.reachedContainer.label:SetText("Reached Level " ..
                                                  addon.tracker.playerLevel)
-    trackerUi.reachedContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.reachedContainer.label:SetFullWidth(true)
+    -- trackerUi.reachedContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.label)
-    trackerUi.reachedContainer:AddChild(buildSpacer(5))
+    trackerUi.reachedContainer:AddChild(buildSpacer(offset.spacers.element))
 
     trackerUi.reachedContainer.data = AceGUI:Create("Label")
     trackerUi.reachedContainer.data:SetText("In-progress")
     trackerUi.reachedContainer.data:SetFont(addon.font, 12)
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.data)
-    trackerUi.reachedContainer:AddChild(buildSpacer(15))
+    trackerUi.reachedContainer:AddChild(buildSpacer(offset.spacers.section))
 
     trackerUi:AddChild(trackerUi.reachedContainer)
 
@@ -246,17 +257,18 @@ function addon.tracker:CreateGui()
     trackerUi.speedContainer:SetLayout("List")
     trackerUi.speedContainer:SetFullWidth(true)
 
-    trackerUi.speedContainer.label = AceGUI:Create("Label")
+    trackerUi.speedContainer.label = AceGUI:Create("Heading")
     trackerUi.speedContainer.label:SetText("Leveling Speed")
-    trackerUi.speedContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.speedContainer.label:SetFullWidth(true)
+    -- trackerUi.speedContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.label)
-    trackerUi.speedContainer:AddChild(buildSpacer(5))
+    trackerUi.speedContainer:AddChild(buildSpacer(offset.spacers.element))
 
     trackerUi.speedContainer.data = AceGUI:Create("Label")
     trackerUi.speedContainer.data:SetText("In-progress")
     trackerUi.speedContainer.data:SetFont(addon.font, 12)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.data)
-    trackerUi.speedContainer:AddChild(buildSpacer(15))
+    trackerUi.speedContainer:AddChild(buildSpacer(offset.spacers.section))
 
     trackerUi:AddChild(trackerUi.speedContainer)
 
@@ -265,11 +277,12 @@ function addon.tracker:CreateGui()
     trackerUi.zonesContainer:SetLayout("List")
     trackerUi.zonesContainer:SetFullWidth(true)
 
-    trackerUi.zonesContainer.label = AceGUI:Create("Label")
+    trackerUi.zonesContainer.label = AceGUI:Create("Heading")
     trackerUi.zonesContainer.label:SetText("Top Zones")
-    trackerUi.zonesContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.zonesContainer.label:SetFullWidth(true)
+    -- trackerUi.zonesContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.label)
-    trackerUi.zonesContainer:AddChild(buildSpacer(5))
+    trackerUi.zonesContainer:AddChild(buildSpacer(offset.spacers.element))
 
     trackerUi.zonesContainer.top = {}
     for t = 1, 3 do
@@ -277,8 +290,13 @@ function addon.tracker:CreateGui()
         trackerUi.zonesContainer.top[t]:SetText(fmt("Top %d zone", t))
         trackerUi.zonesContainer.top[t]:SetFont(addon.font, 12)
         trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.top[t])
-        trackerUi.zonesContainer:AddChild(buildSpacer(5))
+        if t < 3 then
+            trackerUi.zonesContainer:AddChild(
+                buildSpacer(offset.spacers.element))
+        end
     end
+
+    trackerUi.zonesContainer:AddChild(buildSpacer(offset.spacers.section))
 
     trackerUi:AddChild(trackerUi.zonesContainer)
 
@@ -287,21 +305,28 @@ function addon.tracker:CreateGui()
     trackerUi.sourcesContainer:SetLayout("List")
     trackerUi.sourcesContainer:SetFullWidth(true)
 
-    trackerUi.sourcesContainer.label = AceGUI:Create("Label")
-    trackerUi.sourcesContainer.label:SetText("Top Sources")
-    trackerUi.sourcesContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.sourcesContainer.label = AceGUI:Create("Heading")
+    trackerUi.sourcesContainer.label:SetText("Experience")
+    trackerUi.sourcesContainer.label:SetFullWidth(true)
+    -- trackerUi.sourcesContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.label)
-    trackerUi.sourcesContainer:AddChild(buildSpacer(5))
+    trackerUi.sourcesContainer:AddChild(buildSpacer(offset.spacers.element))
 
-    trackerUi.sourcesContainer.data = {}
+    trackerUi.sourcesContainer.data = {
+        quests = AceGUI:Create("Label"),
+        mobs = AceGUI:Create("Label")
+    }
 
-    for _, t in pairs({'quests', 'mobs'}) do
-        trackerUi.sourcesContainer.data[t] = AceGUI:Create("Label")
-        trackerUi.sourcesContainer.data[t]:SetText(fmt("%s", t))
-        trackerUi.sourcesContainer.data[t]:SetFont(addon.font, 12)
-        trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.data[t])
-        trackerUi.sourcesContainer:AddChild(buildSpacer(5))
-    end
+    trackerUi.sourcesContainer.data['quests']:SetText('quests')
+    trackerUi.sourcesContainer.data['quests']:SetFont(addon.font, 12)
+    trackerUi.sourcesContainer:AddChild(
+        trackerUi.sourcesContainer.data['quests'])
+    trackerUi.sourcesContainer:AddChild(buildSpacer(offset.spacers.element))
+
+    trackerUi.sourcesContainer.data['mobs']:SetText('mobs')
+    trackerUi.sourcesContainer.data['mobs']:SetFont(addon.font, 12)
+    trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.data['mobs'])
+    trackerUi.sourcesContainer:AddChild(buildSpacer(offset.spacers.section))
 
     trackerUi:AddChild(trackerUi.sourcesContainer)
 
@@ -310,21 +335,29 @@ function addon.tracker:CreateGui()
     trackerUi.teamworkContainer:SetLayout("List")
     trackerUi.teamworkContainer:SetFullWidth(true)
 
-    trackerUi.teamworkContainer.label = AceGUI:Create("Label")
+    trackerUi.teamworkContainer.label = AceGUI:Create("Heading")
     trackerUi.teamworkContainer.label:SetText("Teamwork")
-    trackerUi.teamworkContainer.label:SetFontObject(_G.GameFontNormalLarge)
+    trackerUi.teamworkContainer.label:SetFullWidth(true)
+    -- trackerUi.teamworkContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.teamworkContainer:AddChild(trackerUi.teamworkContainer.label)
-    trackerUi.teamworkContainer:AddChild(buildSpacer(5))
+    trackerUi.teamworkContainer:AddChild(buildSpacer(offset.spacers.element))
 
     trackerUi.teamworkContainer.data = {}
 
-    for _, t in pairs({'solo', 'group'}) do
-        trackerUi.teamworkContainer.data[t] = AceGUI:Create("Label")
-        trackerUi.teamworkContainer.data[t]:SetText(fmt("%s", t))
-        trackerUi.teamworkContainer.data[t]:SetFont(addon.font, 12)
-        trackerUi.teamworkContainer:AddChild(trackerUi.teamworkContainer.data[t])
-        trackerUi.teamworkContainer:AddChild(buildSpacer(5))
-    end
+    trackerUi.teamworkContainer.data['solo'] = AceGUI:Create("Label")
+    trackerUi.teamworkContainer.data['solo']:SetText('solo')
+    trackerUi.teamworkContainer.data['solo']:SetFont(addon.font, 12)
+    trackerUi.teamworkContainer:AddChild(
+        trackerUi.teamworkContainer.data['solo'])
+    trackerUi.teamworkContainer:AddChild(buildSpacer(offset.spacers.element))
+
+    trackerUi.teamworkContainer.data['group'] = AceGUI:Create("Label")
+    trackerUi.teamworkContainer.data['group']:SetText('group')
+    trackerUi.teamworkContainer.data['group']:SetFont(addon.font, 12)
+    trackerUi.teamworkContainer:AddChild(
+        trackerUi.teamworkContainer.data['group'])
+
+    trackerUi.teamworkContainer:AddChild(buildSpacer(offset.spacers.section))
 
     trackerUi:AddChild(trackerUi.teamworkContainer)
 
@@ -341,10 +374,10 @@ function addon.tracker:CompileData()
     addon.tracker.reportData = {}
     local rData = addon.tracker.reportData
 
-    local levelData
+    local lReport
     for level, data in pairs(profile["levels"]) do
         rData[level] = {questXP = 0, mobXP = 0, zoneXP = {}}
-        levelData = rData[level]
+        lReport = rData[level]
 
         local zoneXP = {}
 
@@ -352,7 +385,7 @@ function addon.tracker:CompileData()
             if not zoneXP[zoneName] then zoneXP[zoneName] = {xp = 0} end
 
             for _, questXP in pairs(questData) do
-                levelData.questXP = levelData.questXP + questXP
+                lReport.questXP = lReport.questXP + questXP
 
                 zoneXP[zoneName].xp = zoneXP[zoneName].xp + questXP
             end
@@ -362,7 +395,7 @@ function addon.tracker:CompileData()
             if not zoneXP[zoneName] then zoneXP[zoneName] = {xp = 0} end
 
             for _, mobXP in pairs(mobData) do
-                levelData.mobXP = levelData.mobXP + mobXP
+                lReport.mobXP = lReport.mobXP + mobXP
 
                 zoneXP[zoneName].xp = zoneXP[zoneName].xp + mobXP
             end
@@ -380,35 +413,30 @@ function addon.tracker:CompileData()
         table.sort(sortedZoneXP, function(l, r) return l > r end)
 
         for _, d in pairs(sortedZoneXP) do
-            table.insert(levelData.zoneXP, {xp = d.xp, name = d.name})
+            table.insert(lReport.zoneXP, {xp = d.xp, name = d.name})
         end
 
-        levelData.groupExperience = data.groupExperience
+        lReport.groupExperience = data.groupExperience
 
         -- Quests aren't tracked for group vs solo
-        levelData.soloExperience = levelData.mobXP - data.groupExperience
+        lReport.soloExperience = lReport.mobXP - data.groupExperience
 
-        levelData.totalXP = levelData.mobXP + levelData.questXP
+        lReport.totalXP = lReport.mobXP + lReport.questXP
 
-        levelData.timestamp = {
+        lReport.timestamp = {
             started = data.timestamp.started,
             finished = data.timestamp.finished
         }
 
         if data.timestamp.dateFinished then
-            levelData.timestamp.dateFinished = fmt(
-                                                   "%s %d, %d at %d:%d %s Server",
-                                                   _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
-                                                       .dateFinished.month],
-                                                   data.timestamp.dateFinished
-                                                       .monthDay,
-                                                   data.timestamp.dateFinished
-                                                       .year, data.timestamp
-                                                       .dateFinished.hour % 12,
-                                                   data.timestamp.dateFinished
-                                                       .minute, data.timestamp
-                                                       .dateFinished.hour >= 12 and
-                                                       "PM" or "AM")
+            lReport.timestamp.dateFinished =
+                fmt("%s %d, %d at %d:%d %s Server",
+                    _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp.dateFinished
+                        .month], data.timestamp.dateFinished.monthDay,
+                    data.timestamp.dateFinished.year,
+                    data.timestamp.dateFinished.hour % 12,
+                    data.timestamp.dateFinished.minute,
+                    data.timestamp.dateFinished.hour >= 12 and "PM" or "AM")
         end
 
     end
@@ -427,7 +455,7 @@ function addon.tracker:UpdateReport(selectedLevel)
         trackerUi.speedContainer.data:SetText("In-progress")
     else
         trackerUi.reachedContainer.data:SetText(
-            report.dateFinished or "Missing data")
+            report.timestamp.dateFinished or "Missing data")
 
         if report.timestamp and report.timestamp.started and
             report.timestamp.finished then
@@ -491,13 +519,13 @@ function addon.tracker:UpdateReport(selectedLevel)
                                                               100 -
                                                                   questsPercentage))
         trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Mobs: %.1f%%", questsPercentage))
+            fmt("* Killing: %.1f%%", questsPercentage))
     else
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
                                                               "* Quests: %.1f%%",
                                                               questsPercentage))
         trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Mobs: %.1f%%", 100 - questsPercentage))
+            fmt("* Killing: %.1f%%", 100 - questsPercentage))
     end
 
     -- TODO sorting still not right
