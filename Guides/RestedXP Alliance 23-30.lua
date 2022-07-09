@@ -4,8 +4,15 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next 24-27 Redridge/Duskwood
+#xprate <1.5
 
-
+step << Warrior
+    #sticky
+    #completewith exit1
+    .goto Stormwind City,64.1,61.2,0
+    .goto Stormwind City,46.7,79.0,0
+    >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
+    .collect 3357,8 --Collect Liferoot (x8)
 step << Paladin
 	.goto Stormwind City,38.6,32.8
 	.trainer >> Train your class spells
@@ -67,6 +74,7 @@ step
     .collect 4371,1,175,1,1
     .bronzetube
 step
+    #label exit1
     .goto Stormwind City,63.9,8.3
     .zone Ironforge >>Enter the Deeprun Tram and cross the Tram into Ironforge
     .zoneskip Dun Morogh
@@ -309,31 +317,28 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next 27-30 Wetlands/Hillsbrad
-step
+step << Warrior
     #sticky
     #completewith exit
-    .vendor 5519>>Buy a Bronze Tube from Gearcutter Cogspinner (limited supply)
-    .goto Ironforge,55.2,7.6
-    .collect 4371,1,175
-    >>Try to buy a bronze tube from the Auction House if you were unable to find one from a vendor
-    .bronzetube
-
---TODO: Remove classes that don't need level 24 training
-step << Rogue
-	.goto Stormwind City,74.6,52.8
-	.trainer >> Train your class spells
-step << Warrior
-	.goto Stormwind City,78.6,45.8
-	.trainer >> Go upstairs. Train your class spells
+    .goto Stormwind City,64.1,61.2,0
+    .goto Stormwind City,46.7,79.0,0
+    >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
+    .collect 3357,8 --Collect Liferoot (x8)
 step << Paladin
 	.goto Stormwind City,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
 	.goto Stormwind City,38.5,26.8
 	.trainer >> Train your class spells
+step << Paladin
+    .goto Stormwind City,40.1,30.0
+    >>Speak to Duthorian Rall and right click on the Tome of Valor provided
+    .accept 1649 >>Accept The Tome of Valor
+    .turnin 1649 >>Turn in The Tome of Valor
+    .accept 1650 >>Accept The Tome of Valor
 step << Warlock
     .goto Stormwind City,25.3,78.7
-	.trainer >> Train your class spells
+    .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock
@@ -343,15 +348,16 @@ step << Warlock
 step << Warlock
     .goto Stormwind City,25.4,78.7
     .turnin 1739 >>Turn in The Binding
-step << Paladin
-    .goto Stormwind City,40.1,30.0
-    >>Speak to Duthorian Rall and right click on the Tome of Valor provided
-    .accept 1649 >>Accept The Tome of Valor
-    .turnin 1649 >>Turn in The Tome of Valor
-    .accept 1650 >>Accept The Tome of Valor
 step << Mage
     .goto Stormwind City,39.6,79.6
+    .train 3561>>Train Teleport: Stormwind
+    .trainer >> Train your class spells
+step << Rogue
+	.goto Stormwind City,74.6,52.8
 	.trainer >> Train your class spells
+step << Warrior
+	.goto Stormwind City,78.6,45.8
+	.trainer >> Go upstairs. Train your class spells
 step << Rogue
     #sticky
     .goto Stormwind City,75.8,60.1
@@ -363,13 +369,18 @@ step << Rogue
 step << Rogue
     .goto Stormwind City,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
-step << Warrior
-    #sticky
-    #completewith exit
-    .goto Stormwind City,64.1,61.2,0
-    .goto Stormwind City,46.7,79.0,0
-    >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
-    .collect 3357,8 --Collect Liferoot (x8)
+step << Draenei
+    .goto Stormwind City,78.4,18.3
+    .accept 9429 >> Accept Travel to Darkshire
+step << Hunter
+	.goto Stormwind City,61.7,15.4
+	.train 14323 >> Train your class spells
+step
+    .goto Stormwind City,53.62,59.76,30,0
+    .goto Stormwind City,55.25,7.08
+    .vendor 5519>> Check Billibub in the Dwarven District for a Bronze Tube. Buy one if it's available
+    .collect 4371,1,175,1,1
+    .bronzetube
 step << skip --Not needed, going from SW -> Duskwood later in the guide after doing the Goldshire inn quest
 	.goto Stormwind City,62.5,62.3,30,0
 	.goto Stormwind City,66.3,62.1
@@ -883,7 +894,7 @@ step
 	.goto Duskwood,7.9,34.1
     .turnin 323 >> Turn in Proving Your Worth
     .accept 269 >> Accept Seeking Wisdom
-step--TODO: test for wotlk
+step
     #completewith next
     .deathskip >>Head to Elwynn Forest, aggro a bunch of low level mobs, die on purpose and respawn at Goldshire.
 step
@@ -938,6 +949,21 @@ step << Priest
 step << Hunter
 	.goto Stormwind City,61.7,15.4
 	.trainer >> Train your class spells
+--????
+
+]])
+
+RXPGuides.RegisterGuide([[
+<< Alliance
+#name 27-30 Wetlands/Hillsbrad
+#version 1
+#group RestedXP Alliance 20-32
+#next 30-32 Duskwood/STV
+
+step
+    .goto Stormwind City,60.5,12.3,40,0
+    .goto Stormwind City,60.5,12.3,0
+    .zone Ironforge >> Take the tram to Ironforge
 step <<!Mage
 	.goto Stormwind City,63.2,8.6,20,0
     .goto Ironforge,69.8,50.1
@@ -977,14 +1003,6 @@ step
 	#label end
 	.goto Ironforge,56.2,46.8
     .fly Wetlands>> Fly to Wetlands
-]])
-
-RXPGuides.RegisterGuide([[
-<< Alliance
-#name 27-30 Wetlands/Hillsbrad
-#version 1
-#group RestedXP Alliance 20-32
-#next 30-32 Duskwood/STV
 step
     .goto Wetlands,8.4,58.5
     .turnin 279 >> Turn in Claws from the Deep
