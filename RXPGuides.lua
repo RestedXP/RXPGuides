@@ -672,7 +672,7 @@ local updateStart = 0
 updateFrame:SetScript("OnUpdate", function(self, diff)
 
     updateTick = updateTick + diff
-    if updateTick > 0.15 then
+    if updateTick > (0.05+math.random()/128) then
         local currentTime = GetTime()
         updateTick = 0
         updateStart = currentTime
@@ -870,7 +870,7 @@ function addon.XpRateCheck(step)
                 xpmax = tonumber(arg2) or 0xfff
             end
         end)
-        if addon.currentXpRate < xpmin or addon.currentXpRate > xpmax then
+        if RXPCData.xprate < xpmin or RXPCData.xprate > xpmax then
             return false
         end
     end
