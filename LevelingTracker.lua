@@ -22,51 +22,46 @@ function addon.tracker:SetupTracker()
     addon.tracker:RegisterEvent("TIME_PLAYED_MSG")
     addon.tracker:RegisterEvent("PLAYER_LEVEL_UP")
     addon.tracker:RegisterEvent("QUEST_TURNED_IN")
+    -- TODO track deaths
 
     addon.tracker:UpgradeDB()
+    addon.tracker:GenerateDBLevel(addon.tracker.playerLevel)
 
     if addon.enableTrackerReport then addon.tracker:CreateGui() end
 end
 
 function addon.tracker:UpgradeDB()
-    -- TODO track deaths
-    local maxLevel = 0
-
-    if _G.WOW_PROJECT_ID == _G.WOW_PROJECT_CLASSIC then
-        maxLevel = 60
-    elseif _G.WOW_PROJECT_ID == _G.WOW_PROJECT_BURNING_CRUSADE_CLASSIC then
-        maxLevel = 70
-    elseif _G.WOW_PROJECT_ID == _G.WOW_PROJECT_MAINLINE then
-        maxLevel = 60 -- Shadowlands, 70 for Dragonflight
-    else -- elseif _G.WOW_PROJECT_ID == _G.WOW_PROJECT_WRATH_OF_THE_LICH_KING then
-        maxLevel = 80
+    if not addon.tracker.db.profile["levels"] then
+        addon.tracker.db.profile["levels"] = {}
     end
 
+    local levelDB = addon.tracker.db.profile["levels"]
+
+    for l, _ in pairs(levelDB) do
+        if not levelDB[l].groupExperience then
+            levelDB[l].groupExperience = 0
+        end
+
+        if not levelDB[l].mobs then levelDB[l].mobs = {} end
+
+        if levelDB[l].deaths then -- Retroactively set missing data
+            levelDB[l].deaths = -1
+        end
+    end
+end
+
+function addon.tracker:GenerateDBLevel(level)
     local profile = addon.tracker.db.profile
     if not profile["levels"] then profile["levels"] = {} end
 
-    for l = addon.tracker.playerLevel, maxLevel do
-        if not profile["levels"][l] then
-            profile["levels"][l] = {
-                quests = {}, -- [zone] = { questId = xpReward }
-                mobs = {}, -- [zone] = xp
-                timestamp = {started = -1, finished = -1},
-                groupExperience = 0
-            }
-        end
-
-        if not profile["levels"][l].groupExperience then
-            profile["levels"][l].groupExperience = 0
-        end
-
-        if not profile["levels"][l].mobs then
-            profile["levels"][l].mobs = {}
-        end
-
-        if profile["levels"][l].mobs.count then -- Remove beta version data
-            profile["levels"][l].mobs.count = nil
-            profile["levels"][l].mobs.xp = nil
-        end
+    if not profile["levels"][level] then
+        profile["levels"][level] = {
+            quests = {}, -- [zone] = { questId = xpReward }
+            mobs = {}, -- [zone] = xp
+            timestamp = {started = -1, finished = -1},
+            groupExperience = 0,
+            deaths = -1 -- Allow missing data handling
+        }
     end
 end
 
@@ -121,7 +116,7 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, _)
 end
 
 function addon.tracker:PLAYER_LEVEL_UP(_, level)
-    -- TODO create next tracking entry, don't pre-seed all 70-80 levels
+    addon.tracker:GenerateDBLevel(level)
     addon.tracker.playerLevel = level
     addon.tracker.waitingForTimePlayed = {
         event = 'PLAYER_LEVEL_UP',
