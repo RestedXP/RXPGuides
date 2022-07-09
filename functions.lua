@@ -1186,8 +1186,11 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         element.radius = tonumber(radius)
         element.lowPrio = lowPrio
         if lowPrio and not tonumber(lowPrio) then
+            element.args = radius
             element.event = {...}
             element.callback = lowPrio
+            element.radius = nil
+            radius = nil
         end
         if element.radius == 0 then
             element.radius = nil
@@ -3451,6 +3454,13 @@ function addon.functions.timer(self,text,duration,timerText,callback,...)
     end
 end
 
+
+--Waypoint functions:
+
+--Waypoints will turn into low prio WPs whenever it returns true
+--Usage: .waypoint zone,xx.xx,yy.yy,args,callback,event1,event2,...,eventN
+--args is a string that can be referenced by self.args
+
 function addon.functions.rescue()
     local _, seat = UnitVehicleSeatInfo("vehicle", 2)
     if seat then return true end
@@ -3477,11 +3487,36 @@ function addon.functions.niffelen()
     if seatCount < 3 then return true end
 end
 
-function addon.functions.compulsion()
+function addon.functions.wptimer(self)
+    local element = self.element
+    local step = element.step
+    if not self.time then
+        self.time = tonumber(self.args) or 0
+        self.state = self.time >= 0
+        self.time = abs(self.time)
+        return not self.state
+    elseif not step.active or step.completed then
+        self.timerstart = false
+        return not self.state
+    end
 
+    if not self.timerstart then
+        self.timerstart = GetTime()
+    elseif GetTime() - self.timerstart >= self.time then
+        return self.state
+    end
+    return not self.state
+end
+
+function addon.functions.wpbuff(self)
+    if not self.buff then
+        self.buff = tonumber(self.args)
+        self.state = self.buff and self.buff > 0
+        self.buff = math.abs(self.buff)
+    end
     for i = 1, 32 do
         local _, _, _, _, _, _, _, _, _, id = UnitAura("player", i)
-        if id == 47098 then return false end
+        if id == self.buff then return self.state end
     end
-    return true
+    return not self.state
 end
