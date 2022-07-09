@@ -282,23 +282,16 @@ function addon.tracker:CreateGui()
     trackerUi.zonesContainer:SetFullWidth(true)
 
     trackerUi.zonesContainer.label = AceGUI:Create("Heading")
-    trackerUi.zonesContainer.label:SetText("Top Zones")
+    trackerUi.zonesContainer.label:SetText("Zones & Dungeons")
     trackerUi.zonesContainer.label:SetFullWidth(true)
     -- trackerUi.zonesContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.label)
     trackerUi.zonesContainer:AddChild(buildSpacer(offset.spacers.element))
 
-    trackerUi.zonesContainer.top = {}
-    for t = 1, 3 do
-        trackerUi.zonesContainer.top[t] = AceGUI:Create("Label")
-        trackerUi.zonesContainer.top[t]:SetText(fmt("Top %d zone", t))
-        trackerUi.zonesContainer.top[t]:SetFont(addon.font, 12)
-        trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.top[t])
-        if t < 3 then
-            trackerUi.zonesContainer:AddChild(
-                buildSpacer(offset.spacers.element))
-        end
-    end
+    trackerUi.zonesContainer.data = AceGUI:Create("Label")
+    trackerUi.zonesContainer.data:SetText("* Zone\n* Zone 2")
+    trackerUi.zonesContainer.data:SetFont(addon.font, 12)
+    trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.data)
 
     trackerUi.zonesContainer:AddChild(buildSpacer(offset.spacers.section))
 
@@ -310,7 +303,7 @@ function addon.tracker:CreateGui()
     trackerUi.sourcesContainer:SetFullWidth(true)
 
     trackerUi.sourcesContainer.label = AceGUI:Create("Heading")
-    trackerUi.sourcesContainer.label:SetText("Experience")
+    trackerUi.sourcesContainer.label:SetText("Experience Sources")
     trackerUi.sourcesContainer.label:SetFullWidth(true)
     -- trackerUi.sourcesContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.label)
@@ -411,13 +404,7 @@ function addon.tracker:CompileData()
         -- TODO sorting still not right
         local sortedZoneXP = {}
         for n, z in pairs(zoneXP) do
-            sortedZoneXP[z.xp] = {xp = z.xp, name = n}
-        end
-
-        table.sort(sortedZoneXP, function(l, r) return l > r end)
-
-        for _, d in pairs(sortedZoneXP) do
-            table.insert(lReport.zoneXP, {xp = d.xp, name = d.name})
+            lReport.zoneXP[z.xp] = {xp = z.xp, name = n}
         end
 
         lReport.groupExperience = data.groupExperience
@@ -532,15 +519,11 @@ function addon.tracker:UpdateReport(selectedLevel)
             fmt("* Killing: %.1f%%", 100 - questsPercentage))
     end
 
-    -- TODO sorting still not right
-    for i = 1, 3 do
-        local d = report.zoneXP[i]
-        if d then
-            trackerUi.zonesContainer.top[i]:SetText(
-                fmt("* %s - %.1f%%", d.name, d.xp * 100 / report.totalXP))
-        else
-            trackerUi.zonesContainer.top[i]:SetText("")
-        end
-
+    local zonesBlock = ""
+    for xp, data in pairs(report.zoneXP) do
+        zonesBlock = fmt("%s* %s - %.1f%%\n", zonesBlock, data.name,
+                         data.xp * 100 / report.totalXP)
     end
+
+    trackerUi.zonesContainer.data:SetText(zonesBlock)
 end
