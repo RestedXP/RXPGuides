@@ -198,7 +198,7 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
     end
 
     local repCheck = true
-    if type(quest.reputation) == "number" then
+    if type(quest.repfaction) == "number" then
         repCheck = ProcessRep(quest.reputation,quest.repfaction)
     elseif type(quest.reputation) == "table" then
         for i,rep in pairs(quest.reputation) do
