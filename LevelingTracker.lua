@@ -464,39 +464,40 @@ function addon.tracker:UpdateReport(selectedLevel)
     local teamworkRatio = report.groupExperience /
                               (report.soloExperience + report.groupExperience)
 
-    local soloPercentage = floor(100 * teamworkRatio)
+    local soloPercentage = 100 * teamworkRatio
 
-    trackerUi.teamworkContainer.data['solo']:SetText(fmt("Solo: %d%%",
+    trackerUi.teamworkContainer.data['solo']:SetText(fmt("Solo: %.1f%%",
                                                          soloPercentage))
 
     if soloPercentage == 0 then -- If numerator is 0, flip 100%
-        trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%",
-                                                             100 -
-                                                                 soloPercentage))
+        trackerUi.teamworkContainer.data['solo']:SetText(
+            fmt("* Solo: %.1f%%", 100 - soloPercentage))
         trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %d%%", soloPercentage))
+            fmt("* Group: %.1f%%", soloPercentage))
     else
-        trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%",
-                                                             soloPercentage))
+        trackerUi.teamworkContainer.data['solo']:SetText(
+            fmt("* Solo: %.1f%%", soloPercentage))
         trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %d%%", 100 - soloPercentage))
+            fmt("* Group: %.1f%%", 100 - soloPercentage))
     end
 
     local sourceRatio = report.questXP / (report.questXP + report.mobXP)
 
-    local questsPercentage = floor(100 * sourceRatio)
+    local questsPercentage = 100 * sourceRatio
 
     if questsPercentage == 0 then -- If numerator is 0, flip 100%
-        trackerUi.sourcesContainer.data['quests']:SetText(
-            fmt("* Quests: %d%%", 100 - questsPercentage))
-        trackerUi.sourcesContainer.data['mobs']:SetText(fmt("* Mobs: %d%%",
-                                                            questsPercentage))
+        trackerUi.sourcesContainer.data['quests']:SetText(fmt(
+                                                              "* Quests: %.1f%%",
+                                                              100 -
+                                                                  questsPercentage))
+        trackerUi.sourcesContainer.data['mobs']:SetText(
+            fmt("* Mobs: %.1f%%", questsPercentage))
     else
-        trackerUi.sourcesContainer.data['quests']:SetText(
-            fmt("* Quests: %d%%", questsPercentage))
-        trackerUi.sourcesContainer.data['mobs']:SetText(fmt("* Mobs: %d%%",
-                                                            100 -
-                                                                questsPercentage))
+        trackerUi.sourcesContainer.data['quests']:SetText(fmt(
+                                                              "* Quests: %.1f%%",
+                                                              questsPercentage))
+        trackerUi.sourcesContainer.data['mobs']:SetText(
+            fmt("* Mobs: %.1f%%", 100 - questsPercentage))
     end
 
     -- TODO sorting still not right
@@ -504,7 +505,7 @@ function addon.tracker:UpdateReport(selectedLevel)
         local d = report.zoneXP[i]
         if d then
             trackerUi.zonesContainer.top[i]:SetText(
-                fmt("* %s - %d%%", d.name, floor(d.xp * 100 / report.totalXP)))
+                fmt("* %s - %.1f%%", d.name, d.xp * 100 / report.totalXP))
         else
             trackerUi.zonesContainer.top[i]:SetText("")
         end
