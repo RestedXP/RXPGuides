@@ -22,7 +22,7 @@ function addon.tracker:SetupTracker()
     addon.tracker:RegisterEvent("TIME_PLAYED_MSG")
     addon.tracker:RegisterEvent("PLAYER_LEVEL_UP")
     addon.tracker:RegisterEvent("QUEST_TURNED_IN")
-    -- TODO track deaths
+    addon.tracker:RegisterEvent("PLAYER_DEAD")
 
     addon.tracker:UpgradeDB()
     addon.tracker:GenerateDBLevel(addon.tracker.playerLevel)
@@ -43,10 +43,6 @@ function addon.tracker:UpgradeDB()
         end
 
         if not levelDB[l].mobs then levelDB[l].mobs = {} end
-
-        if not levelDB[l].deaths then -- Retroactively set missing data
-            levelDB[l].deaths = -1
-        end
     end
 end
 
@@ -60,7 +56,7 @@ function addon.tracker:GenerateDBLevel(level)
             mobs = {}, -- [zone] = xp
             timestamp = {started = -1, finished = -1},
             groupExperience = 0,
-            deaths = -1 -- Allow missing data handling
+            deaths = 0
         }
     end
 end
@@ -142,6 +138,11 @@ function addon.tracker:QUEST_TURNED_IN(_, questId, xpReward)
 
     -- Quest turnins not applicable for group vs solo, easily miscategorized.
     -- e.g. complete quest solo, join dungeon group, then turn in before flying or inverse
+end
+
+function addon.tracker:PLAYER_DEAD()
+    addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths =
+        addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths + 1
 end
 
 function addon.tracker.BuildDropdownLevels()
@@ -353,6 +354,24 @@ function addon.tracker:CreateGui()
 
     scrollContainer:AddChild(trackerUi.teamworkContainer)
 
+    -- Extras block
+    trackerUi.extrasContainer = AceGUI:Create("SimpleGroup")
+    trackerUi.extrasContainer:SetLayout("List")
+    trackerUi.extrasContainer:SetFullWidth(true)
+
+    trackerUi.extrasContainer.label = AceGUI:Create("Heading")
+    trackerUi.extrasContainer.label:SetText("Extras")
+    trackerUi.extrasContainer.label:SetFullWidth(true)
+    trackerUi.extrasContainer:AddChild(trackerUi.extrasContainer.label)
+    trackerUi.extrasContainer:AddChild(buildSpacer(offset.spacers.element))
+
+    trackerUi.extrasContainer.data = AceGUI:Create("Label")
+    trackerUi.extrasContainer.data:SetText("")
+    trackerUi.extrasContainer.data:SetFont(addon.font, 12)
+    trackerUi.extrasContainer:AddChild(trackerUi.extrasContainer.data)
+    trackerUi.extrasContainer:AddChild(buildSpacer(offset.spacers.section))
+
+    scrollContainer:AddChild(trackerUi.extrasContainer)
 end
 
 function addon.tracker:ShowReport()
@@ -413,6 +432,8 @@ function addon.tracker:CompileData()
             started = data.timestamp.started,
             finished = data.timestamp.finished
         }
+
+        lReport.deaths = data.deaths
 
         if data.timestamp.dateFinished then
             lReport.timestamp.dateFinished =
@@ -521,4 +542,10 @@ function addon.tracker:UpdateReport(selectedLevel)
     end
 
     trackerUi.zonesContainer.data:SetText(zonesBlock)
+
+    local extrasBlock = ""
+    extrasBlock = fmt("%s* %s: %s\n", extrasBlock, "Deaths",
+                      report.deaths or "Missing data")
+
+    trackerUi.extrasContainer.data:SetText(extrasBlock)
 end
