@@ -1137,15 +1137,15 @@ QuestDB[11020].questLog = true
 --The Deadliest Trap Ever Laid -scryer
 QuestDB[11097] = {}
 QuestDB[11097].xp = 15800
-QuestDB[11097].repfaction = 1015
-QuestDB[11097].reputation = "revered"
+QuestDB[11097].repfaction = {1015,934}
+QuestDB[11097].reputation = {"revered","neutral"}
 QuestDB[11097].questLog = true
 
 --The Deadliest Trap Ever Laid -aldor
 QuestDB[11101] = {}
 QuestDB[11101].xp = 15800
-QuestDB[11101].repfaction = 1015
-QuestDB[11101].reputation = "revered"
+QuestDB[11101].repfaction = {1015,932}
+QuestDB[11101].reputation = {"revered","neutral"}
 QuestDB[11101].questLog = true
 
 --Picking Up The Pieces...
@@ -1199,6 +1199,62 @@ QuestDB[11066].xp = 12650
 QuestDB[11066].questLog = true
 
 --rest
+--The Battle of Alterac
+QuestDB[7141] = {}
+QuestDB[7141].previousQuest = 7221
+QuestDB[7141].xp = 31650
+QuestDB[7141].appliesTo = "Alliance"
+QuestDB[7141].questLog = true
+
+--The Battle of Alterac
+QuestDB[7142] = {}
+QuestDB[7142].previousQuest = 7222
+QuestDB[7142].xp = 31650
+QuestDB[7142].appliesTo = "Horde"
+QuestDB[7142].questLog = true
+
+--Spirits of Auchindoun
+QuestDB[11506] = {}
+QuestDB[11506].xp = 10050
+QuestDB[11506].appliesTo = "Horde"
+QuestDB[11506].questLog = true
+
+--Spirits of Auchindoun
+QuestDB[11505] = {}
+QuestDB[11505].xp = 10050
+QuestDB[11506].appliesTo = "Alliance"
+QuestDB[11505].questLog = true
+
+--Maintaining the Sunwell Portal
+QuestDB[11514] = {}
+QuestDB[11514].xp = 9500
+QuestDB[11514].questLog = true
+
+--Blast the Gateway
+QuestDB[11516] = {}
+QuestDB[11516].xp = 9500
+QuestDB[11516].questLog = true
+
+--Sunfury Attack Plans
+QuestDB[11877] = {}
+QuestDB[11877].xp = 9500
+QuestDB[11877].questLog = true
+
+--Arm the Wards!
+QuestDB[11523] = {}
+QuestDB[11523].xp = 9500
+QuestDB[11523].questLog = true
+
+--The Air Strikes Must Continue
+QuestDB[11533] = {}
+QuestDB[11533].xp = 9500
+QuestDB[11533].questLog = true
+
+--Further Conversions
+QuestDB[11525] = {}
+QuestDB[11525].xp = 9500
+QuestDB[11525].questLog = true
+
 --Blood for Blood
 QuestDB[11515] = {}
 QuestDB[11515].xp = 12650
@@ -1604,7 +1660,158 @@ QuestDB[10434].xp = 1250
 QuestDB[10317] = {}
 QuestDB[10317].xp = 12650
 
---The Dynamic Duo
+--Ishanah's Help
 QuestDB[10410] = {}
 QuestDB[10410].previousQuest = 10407
 QuestDB[10410].xp = 9500
+
+--Bound for Glory
+QuestDB[10509] = {}
+QuestDB[10509].previousQuest = 10508
+QuestDB[10509].xp = 9500
+
+--Kara rings
+QuestDB[10731] = {}
+QuestDB[10731].xp = 12650
+QuestDB[10731].repfaction = 967
+QuestDB[10731].reputation = "friendly"
+QuestDB[10731].uniqueWith = {10732,10729,10730}
+
+QuestDB[10735] = {}
+QuestDB[10735].previousQuest = 10731
+QuestDB[10735].xp = 15800
+QuestDB[10735].repfaction = 967
+QuestDB[10735].reputation = "honored"
+QuestDB[10735].uniqueWith = {10736,10733,10734}
+
+QuestDB[10740] = {}
+QuestDB[10740].previousQuest = 10735
+QuestDB[10740].xp = 15800
+QuestDB[10740].repfaction = 967
+QuestDB[10740].reputation = "revered"
+QuestDB[10740].uniqueWith = {10741,10738,10739}
+
+QuestDB[10727] = {}
+QuestDB[10727].previousQuest = 10740
+QuestDB[10727].xp = 15800
+QuestDB[10727].repfaction = 967
+QuestDB[10727].reputation = "exalted"
+QuestDB[10727].uniqueWith = {10728,10725,10726}
+
+--Scale of sands rings
+QuestDB[10462] = {}
+QuestDB[10462].xp = 12650
+QuestDB[10462].repfaction = 990
+QuestDB[10462].reputation = "friendly"
+QuestDB[10462].uniqueWith = {10461,10460,10463}
+
+QuestDB[10466] = {}
+QuestDB[10466].previousQuest = 10462
+QuestDB[10466].xp = 15800
+QuestDB[10466].repfaction = 990
+QuestDB[10466].reputation = "honored"
+QuestDB[10466].uniqueWith = {10465,10467,10464}
+
+QuestDB[10470] = {}
+QuestDB[10470].previousQuest = 10466
+QuestDB[10470].xp = 15800
+QuestDB[10470].repfaction = 990
+QuestDB[10470].reputation = "revered"
+QuestDB[10470].uniqueWith = {10469,10471,10468}
+
+QuestDB[10474] = {}
+QuestDB[10474].previousQuest = 10470
+QuestDB[10474].xp = 15800
+QuestDB[10474].repfaction = 990
+QuestDB[10474].reputation = "exalted"
+QuestDB[10474].uniqueWith = {10473,10475,10472}
+
+--Stormpike
+--Proving Grounds
+--QuestDB[7162] = {}
+--QuestDB[7162].xp = 7050
+
+--Rise and Be Recognized
+QuestDB[7168] = {}
+QuestDB[7163].appliesTo = "Alliance"
+QuestDB[7168].previousQuest = 7162
+QuestDB[7168].xp = 20100
+QuestDB[7168].repfaction = 730
+QuestDB[7168].reputation = "friendly"
+
+--Honored Amongst the Guard
+QuestDB[7169] = {}
+QuestDB[7169].appliesTo = "Alliance"
+QuestDB[7169].previousQuest = 7162
+QuestDB[7169].xp = 20100
+QuestDB[7169].repfaction = 730
+QuestDB[7169].reputation = "honored"
+
+--Earned Reverence
+QuestDB[7170] = {}
+QuestDB[7170].appliesTo = "Alliance"
+QuestDB[7170].previousQuest = 7169
+QuestDB[7170].xp = 25150
+QuestDB[7170].repfaction = 730
+QuestDB[7170].reputation = "revered"
+
+--Legendary Heroes
+QuestDB[7171] = {}
+QuestDB[7171].appliesTo = "Alliance"
+QuestDB[7171].previousQuest = 7170
+QuestDB[7171].xp = 30150
+QuestDB[7171].repfaction = 730
+QuestDB[7171].reputation = "exalted"
+
+--The Eye of Command
+QuestDB[7172] = {}
+QuestDB[7172].appliesTo = "Alliance"
+QuestDB[7172].previousQuest = 7171
+QuestDB[7172].xp = 30150
+QuestDB[7172].repfaction = 730
+QuestDB[7172].reputation = "exalted" --Full Exalted 999/999
+
+--Frostwolf
+--Proving Grounds
+--QuestDB[7161] = {}
+--QuestDB[7161].xp = 7050
+
+--Rise and Be Recognized
+QuestDB[7163] = {}
+QuestDB[7163].appliesTo = "Horde"
+QuestDB[7163].previousQuest = 7161
+QuestDB[7163].xp = 20100
+QuestDB[7163].repfaction = 729
+QuestDB[7163].reputation = "friendly"
+
+--Honored Amongst the Clan
+QuestDB[7164] = {}
+QuestDB[7164].appliesTo = "Horde"
+QuestDB[7164].previousQuest = 7163
+QuestDB[7164].xp = 20100
+QuestDB[7164].repfaction = 729
+QuestDB[7164].reputation = "honored"
+
+--Earned Reverence
+QuestDB[7165] = {}
+QuestDB[7165].appliesTo = "Horde"
+QuestDB[7165].previousQuest = 7164
+QuestDB[7165].xp = 25150
+QuestDB[7165].repfaction = 729
+QuestDB[7165].reputation = "revered"
+
+--Legendary Heroes
+QuestDB[7166] = {}
+QuestDB[7166].appliesTo = "Horde"
+QuestDB[7166].previousQuest = 7165
+QuestDB[7166].xp = 30150
+QuestDB[7166].repfaction = 729
+QuestDB[7166].reputation = "exalted"
+
+--The Eye of Command
+QuestDB[7167] = {}
+QuestDB[7167].appliesTo = "Horde"
+QuestDB[7167].previousQuest = 7166
+QuestDB[7167].xp = 30150
+QuestDB[7167].repfaction = 729
+QuestDB[7167].reputation = "exalted" --Full Exalted 999/999
