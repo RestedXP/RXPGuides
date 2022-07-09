@@ -1,6 +1,8 @@
 local addonName, addon = ...
 
-local fmt, smatch, strsub = string.format, string.match, string.sub
+local fmt, smatch, strsub, tinsert = string.format, string.match, string.sub,
+                                     tinsert
+
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber = UnitLevel,
                                                         GetRealZoneText,
                                                         IsInGroup, tonumber
@@ -147,13 +149,16 @@ end
 
 function addon.tracker.BuildDropdownLevels()
     local dropdownLevels = {}
+    local sortOrder = {}
+
     for level, _ in pairs(addon.tracker.db.profile["levels"]) do
         if level > addon.tracker.playerLevel then break end
 
         dropdownLevels[level] = fmt("%d to %d", level, level + 1)
+        tinsert(sortOrder, 1, level)
     end
 
-    return dropdownLevels
+    return dropdownLevels, sortOrder
 end
 
 local function buildSpacer(height)
@@ -404,7 +409,6 @@ function addon.tracker:CompileData()
         -- Sort highest to the top
         -- TODO indices collision/overwrite if multiple zones have identical experience
         -- TODO sorting still not right
-        local sortedZoneXP = {}
         for n, z in pairs(zoneXP) do
             lReport.zoneXP[z.xp] = {xp = z.xp, name = n}
         end
