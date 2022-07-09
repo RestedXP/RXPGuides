@@ -173,15 +173,16 @@ function addon.tracker:CreateGui()
     local offset = {
         x = -38,
         y = -32,
-        tabsHeight = _G.CharacterFrameTab1:GetHeight(),
-        spacers = {element = 4, section = 8}
+        tabsHeight = _G.CharacterFrameTab1:GetHeight()
     }
+    local spacers = {element = 4}
 
     addon.tracker.ui = AceGUI:Create("Frame")
     local trackerUi = addon.tracker.ui
 
     trackerUi:SetLayout("Fill")
     trackerUi:Hide()
+    trackerUi:EnableResize(false)
 
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
     trackerUi:SetTitle("RestedXP Leveling Report")
@@ -190,9 +191,9 @@ function addon.tracker:CreateGui()
     trackerUi:SetHeight(attachment:GetHeight() + offset.y - 8 -
                             offset.tabsHeight * 2)
 
-    local scrollContainer = AceGUI:Create("ScrollFrame")
-    scrollContainer:SetLayout("Flow")
-    trackerUi:AddChild(scrollContainer)
+    trackerUi.scrollContainer = AceGUI:Create("ScrollFrame")
+    trackerUi.scrollContainer:SetLayout("Flow")
+    trackerUi:AddChild(trackerUi.scrollContainer)
 
     trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
     trackerUi.frame:SetBackdropColor(unpack(addon.colors.background))
@@ -211,8 +212,8 @@ function addon.tracker:CreateGui()
     -- linksContainer:SetLayout('Flow')
     -- TODO RXP and Discord links
 
-    -- scrollContainer:AddChild(linksContainer)
-    -- scrollContainer:AddChild(buildSpacer(offset.spacers.element))
+    -- trackerUi.scrollContainer:AddChild(linksContainer)
+    -- trackerUi.scrollContainer:AddChild(buildSpacer(spacers.element))
 
     local topContainer = AceGUI:Create("SimpleGroup")
     topContainer:SetLayout('Flow')
@@ -229,7 +230,7 @@ function addon.tracker:CreateGui()
 
     topContainer:AddChild(trackerUi.levelDropdown)
 
-    scrollContainer:AddChild(topContainer)
+    trackerUi.scrollContainer:AddChild(topContainer)
 
     -- Reached block
     trackerUi.reachedContainer = AceGUI:Create("SimpleGroup")
@@ -240,17 +241,16 @@ function addon.tracker:CreateGui()
     trackerUi.reachedContainer.label:SetText("Reached Level " ..
                                                  addon.tracker.playerLevel)
     trackerUi.reachedContainer.label:SetFullWidth(true)
-    -- trackerUi.reachedContainer.label:SetFontObject(_G.GameFontNormalLarge)
+
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.label)
-    trackerUi.reachedContainer:AddChild(buildSpacer(offset.spacers.element))
+    trackerUi.reachedContainer:AddChild(buildSpacer(spacers.element))
 
     trackerUi.reachedContainer.data = AceGUI:Create("Label")
     trackerUi.reachedContainer.data:SetText("In-progress")
     trackerUi.reachedContainer.data:SetFont(addon.font, 12)
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.data)
-    trackerUi.reachedContainer:AddChild(buildSpacer(offset.spacers.section))
 
-    scrollContainer:AddChild(trackerUi.reachedContainer)
+    trackerUi.scrollContainer:AddChild(trackerUi.reachedContainer)
 
     -- Speed block
     trackerUi.speedContainer = AceGUI:Create("SimpleGroup")
@@ -260,38 +260,31 @@ function addon.tracker:CreateGui()
     trackerUi.speedContainer.label = AceGUI:Create("Heading")
     trackerUi.speedContainer.label:SetText("Leveling Speed")
     trackerUi.speedContainer.label:SetFullWidth(true)
-    -- trackerUi.speedContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.label)
-    trackerUi.speedContainer:AddChild(buildSpacer(offset.spacers.element))
+    trackerUi.speedContainer:AddChild(buildSpacer(spacers.element))
 
     trackerUi.speedContainer.data = AceGUI:Create("Label")
     trackerUi.speedContainer.data:SetText("In-progress")
     trackerUi.speedContainer.data:SetFont(addon.font, 12)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.data)
-    trackerUi.speedContainer:AddChild(buildSpacer(offset.spacers.section))
 
-    scrollContainer:AddChild(trackerUi.speedContainer)
+    trackerUi.scrollContainer:AddChild(trackerUi.speedContainer)
 
     -- Zones block
-    trackerUi.zonesContainer = AceGUI:Create("SimpleGroup")
-    trackerUi.zonesContainer:SetLayout("List")
-    trackerUi.zonesContainer:SetFullWidth(true)
+    -- Dynamic text needs to be in parent scrollframe, not a child SimpleGroup
+    trackerUi.zonesContainer = {}
 
     trackerUi.zonesContainer.label = AceGUI:Create("Heading")
     trackerUi.zonesContainer.label:SetText("Zones & Dungeons")
     trackerUi.zonesContainer.label:SetFullWidth(true)
-    -- trackerUi.zonesContainer.label:SetFontObject(_G.GameFontNormalLarge)
-    trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.label)
-    trackerUi.zonesContainer:AddChild(buildSpacer(offset.spacers.element))
+
+    trackerUi.scrollContainer:AddChild(trackerUi.zonesContainer.label)
 
     trackerUi.zonesContainer.data = AceGUI:Create("Label")
-    trackerUi.zonesContainer.data:SetText("* Zone\n* Zone 2")
+    trackerUi.zonesContainer.data:SetText("")
     trackerUi.zonesContainer.data:SetFont(addon.font, 12)
-    trackerUi.zonesContainer:AddChild(trackerUi.zonesContainer.data)
 
-    trackerUi.zonesContainer:AddChild(buildSpacer(offset.spacers.section))
-
-    scrollContainer:AddChild(trackerUi.zonesContainer)
+    trackerUi.scrollContainer:AddChild(trackerUi.zonesContainer.data)
 
     -- Sources block
     trackerUi.sourcesContainer = AceGUI:Create("SimpleGroup")
@@ -301,9 +294,9 @@ function addon.tracker:CreateGui()
     trackerUi.sourcesContainer.label = AceGUI:Create("Heading")
     trackerUi.sourcesContainer.label:SetText("Experience Sources")
     trackerUi.sourcesContainer.label:SetFullWidth(true)
-    -- trackerUi.sourcesContainer.label:SetFontObject(_G.GameFontNormalLarge)
+
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.label)
-    trackerUi.sourcesContainer:AddChild(buildSpacer(offset.spacers.element))
+    trackerUi.sourcesContainer:AddChild(buildSpacer(spacers.element))
 
     trackerUi.sourcesContainer.data = {
         quests = AceGUI:Create("Label"),
@@ -314,14 +307,13 @@ function addon.tracker:CreateGui()
     trackerUi.sourcesContainer.data['quests']:SetFont(addon.font, 12)
     trackerUi.sourcesContainer:AddChild(
         trackerUi.sourcesContainer.data['quests'])
-    trackerUi.sourcesContainer:AddChild(buildSpacer(offset.spacers.element))
+    trackerUi.sourcesContainer:AddChild(buildSpacer(spacers.element))
 
     trackerUi.sourcesContainer.data['mobs']:SetText('mobs')
     trackerUi.sourcesContainer.data['mobs']:SetFont(addon.font, 12)
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.data['mobs'])
-    trackerUi.sourcesContainer:AddChild(buildSpacer(offset.spacers.section))
 
-    scrollContainer:AddChild(trackerUi.sourcesContainer)
+    trackerUi.scrollContainer:AddChild(trackerUi.sourcesContainer)
 
     -- Teamwork block
     trackerUi.teamworkContainer = AceGUI:Create("SimpleGroup")
@@ -331,9 +323,8 @@ function addon.tracker:CreateGui()
     trackerUi.teamworkContainer.label = AceGUI:Create("Heading")
     trackerUi.teamworkContainer.label:SetText("Teamwork")
     trackerUi.teamworkContainer.label:SetFullWidth(true)
-    -- trackerUi.teamworkContainer.label:SetFontObject(_G.GameFontNormalLarge)
     trackerUi.teamworkContainer:AddChild(trackerUi.teamworkContainer.label)
-    trackerUi.teamworkContainer:AddChild(buildSpacer(offset.spacers.element))
+    trackerUi.teamworkContainer:AddChild(buildSpacer(spacers.element))
 
     trackerUi.teamworkContainer.data = {}
 
@@ -342,7 +333,7 @@ function addon.tracker:CreateGui()
     trackerUi.teamworkContainer.data['solo']:SetFont(addon.font, 12)
     trackerUi.teamworkContainer:AddChild(
         trackerUi.teamworkContainer.data['solo'])
-    trackerUi.teamworkContainer:AddChild(buildSpacer(offset.spacers.element))
+    trackerUi.teamworkContainer:AddChild(buildSpacer(spacers.element))
 
     trackerUi.teamworkContainer.data['group'] = AceGUI:Create("Label")
     trackerUi.teamworkContainer.data['group']:SetText('group')
@@ -350,9 +341,7 @@ function addon.tracker:CreateGui()
     trackerUi.teamworkContainer:AddChild(
         trackerUi.teamworkContainer.data['group'])
 
-    trackerUi.teamworkContainer:AddChild(buildSpacer(offset.spacers.section))
-
-    scrollContainer:AddChild(trackerUi.teamworkContainer)
+    trackerUi.scrollContainer:AddChild(trackerUi.teamworkContainer)
 
     -- Extras block
     trackerUi.extrasContainer = AceGUI:Create("SimpleGroup")
@@ -363,15 +352,14 @@ function addon.tracker:CreateGui()
     trackerUi.extrasContainer.label:SetText("Extras")
     trackerUi.extrasContainer.label:SetFullWidth(true)
     trackerUi.extrasContainer:AddChild(trackerUi.extrasContainer.label)
-    trackerUi.extrasContainer:AddChild(buildSpacer(offset.spacers.element))
+    trackerUi.extrasContainer:AddChild(buildSpacer(spacers.element))
 
     trackerUi.extrasContainer.data = AceGUI:Create("Label")
     trackerUi.extrasContainer.data:SetText("")
     trackerUi.extrasContainer.data:SetFont(addon.font, 12)
     trackerUi.extrasContainer:AddChild(trackerUi.extrasContainer.data)
-    trackerUi.extrasContainer:AddChild(buildSpacer(offset.spacers.section))
 
-    scrollContainer:AddChild(trackerUi.extrasContainer)
+    trackerUi.scrollContainer:AddChild(trackerUi.extrasContainer)
 end
 
 function addon.tracker:ShowReport()
@@ -434,6 +422,8 @@ function addon.tracker:CompileData()
         }
 
         lReport.deaths = data.deaths
+
+        -- TODO build xp/hour
 
         if data.timestamp.dateFinished then
             lReport.timestamp.dateFinished =
@@ -536,16 +526,19 @@ function addon.tracker:UpdateReport(selectedLevel)
     end
 
     local zonesBlock = ""
-    for xp, data in pairs(report.zoneXP) do
+    for _, data in pairs(report.zoneXP) do
         zonesBlock = fmt("%s* %s - %.1f%%\n", zonesBlock, data.name,
                          data.xp * 100 / report.totalXP)
     end
 
     trackerUi.zonesContainer.data:SetText(zonesBlock)
 
+    trackerUi.scrollContainer:DoLayout()
+
     local extrasBlock = ""
     extrasBlock = fmt("%s* %s: %s\n", extrasBlock, "Deaths",
                       report.deaths or "Missing data")
 
     trackerUi.extrasContainer.data:SetText(extrasBlock)
+
 end
