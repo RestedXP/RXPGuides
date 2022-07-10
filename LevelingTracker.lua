@@ -453,9 +453,6 @@ function addon.tracker:CompileData()
                     data.timestamp.dateFinished.minute,
                     data.timestamp.dateFinished.hour >= 12 and "PM" or "AM")
         end
-
-        -- TODO add current time played to Time Spent, use OnUpdate event loop
-
     end
 
 end
