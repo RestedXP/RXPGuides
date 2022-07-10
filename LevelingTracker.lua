@@ -134,6 +134,13 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
             timePlayedThisLevel = timePlayedThisLevel
         }
 
+        if addon.tracker.playerLevel == 1 and
+            not addon.tracker.db.profile["levels"][1].timestamp.dateStarted and
+            timePlayedThisLevel < 60 then
+            addon.tracker.db.profile["levels"][1].timestamp.dateStarted =
+                data.date
+        end
+
         addon.tracker.waitingForTimePlayed = false
     end
 end
@@ -174,7 +181,10 @@ function addon.tracker:PLAYER_DEAD()
 end
 
 function addon.tracker:PLAYER_ENTERING_WORLD()
-    addon.tracker.waitingForTimePlayed = {event = 'PLAYER_ENTERING_WORLD'}
+    addon.tracker.waitingForTimePlayed = {
+        event = 'PLAYER_ENTERING_WORLD',
+        date = C_DateAndTime.GetCurrentCalendarTime()
+    }
 
     RequestTimePlayed()
 end
@@ -466,7 +476,17 @@ function addon.tracker:CompileData()
 
         lReport.deaths = data.deaths
 
-        if data.timestamp.dateFinished then
+        if data.timestamp.dateStarted then -- Level 1
+
+            lReport.timestamp.dateStarted =
+                fmt("%s %d, %d at %d:%d %s Server",
+                    _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp.dateStarted
+                        .month], data.timestamp.dateStarted.monthDay,
+                    data.timestamp.dateStarted.year,
+                    data.timestamp.dateStarted.hour % 12,
+                    data.timestamp.dateStarted.minute,
+                    data.timestamp.dateStarted.hour >= 12 and "PM" or "AM")
+        elseif data.timestamp.dateFinished then
             lReport.timestamp.dateFinished =
                 fmt("%s %d, %d at %d:%d %s Server",
                     _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp.dateFinished
@@ -527,7 +547,11 @@ function addon.tracker:UpdateReport(selectedLevel)
                                                       addon.tracker.state.login
                                                           .timePlayedThisLevel))
 
-        if addon.tracker.reportData[selectedLevel - 1] then
+        if selectedLevel == 1 then
+            trackerUi.reachedContainer.data:SetText(
+                addon.tracker.reportData[selectedLevel].timestamp.dateStarted or
+                    "Missing data")
+        elseif addon.tracker.reportData[selectedLevel - 1] then
             trackerUi.reachedContainer.data:SetText(
                 addon.tracker.reportData[selectedLevel - 1].timestamp
                     .dateFinished or "Missing data")
