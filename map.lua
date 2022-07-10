@@ -483,7 +483,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
 
     if not isMiniMap then
         local currentStep = steps[RXPCData.currentStep]
-        if not (currentStep and currentStep.active) then
+        if (currentStep and not currentStep.active) then
             ProcessMapPin(currentStep)
         end
         local i = 0;
