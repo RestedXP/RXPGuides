@@ -22,6 +22,7 @@ addon.questAccept = {}
 addon.questTurnIn = {}
 addon.activeItems = {}
 addon.RXPG = {}
+addon.functions = {}
 
 BINDING_HEADER_RXPGuides = "RXPGuides"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
@@ -35,39 +36,42 @@ _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
 
 local questFrame = CreateFrame("Frame");
 
-local SoMtimer
+local buffCheckTimer
 local function SoMCheck()
-    if gameVersion > 20000 then
-        return
-    elseif not SoMtimer then
-        SoMtimer = GetTime()
+    local function CheckBuff(buffId,key)
+        if GetTime() - buffCheckTimer < 300 and RXPCData and
+                            type(RXPCData[key]) ~= "boolean" then
+
+            local id = 0
+            local n = 1
+            while id do
+                id = select(10, UnitBuff("player", n))
+                n = n + 1
+                if id == buffId then
+                    RXPCData[key] = true
+                    if addon.currentGuide and addon.currentGuide.name then
+                        addon:LoadGuide(addon.currentGuide)
+                    end
+                    addon.RXPFrame.GenerateMenuTable()
+                    break
+                end
+            end
+            if id ~= buffId and RXPCData[key] then
+                RXPCData[key] = nil
+                addon.ReloadGuide()
+                addon.RXPFrame.GenerateMenuTable()
+            end
+        end
     end
 
-    local buffId = 362859
-    if RXPCData and type(RXPCData.SoM) ~= "boolean" and GetTime() - SoMtimer <
-        300 then
-        local id = 0
-        local n = 1
-        while id do
-            id = select(10, UnitBuff("player", n))
-            n = n + 1
-            if id == buffId then
-                RXPCData.SoM = true
-                if addon.currentGuide and addon.currentGuide.name then
-                    addon:LoadGuide(addon.currentGuide)
-                end
-                addon.RXPFrame.GenerateMenuTable()
-                break
-            end
-        end
-        if id ~= buffId and RXPCData.SoM then
-            RXPCData.SoM = nil
-            if addon.currentGuide and addon.currentGuide.name then
-                addon:LoadGuide(addon.currentGuide)
-            end
-            addon.RXPFrame.GenerateMenuTable()
-        end
+    if not buffCheckTimer then
+        buffCheckTimer = GetTime()
     end
+
+    if gameVersion < 20000 then
+        CheckBuff(362859,"SoM")
+    end
+
 end
 
 function RXPG_init()
@@ -85,6 +89,7 @@ function RXPG_init()
     SoMCheck()
     addon.RenderFrame()
     RXPCData.stepSkip = RXPCData.stepSkip or {}
+    RXPCData.xprate = RXPCData.xprate or 1
     RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
     RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
@@ -667,7 +672,7 @@ local updateStart = 0
 updateFrame:SetScript("OnUpdate", function(self, diff)
 
     updateTick = updateTick + diff
-    if updateTick > 0.15 then
+    if updateTick > (0.05+math.random()/128) then
         local currentTime = GetTime()
         updateTick = 0
         updateStart = currentTime
@@ -783,10 +788,8 @@ end
 
 function addon.AldorScryerCheck(faction)
     if addon.game == "CLASSIC" then return true end
-    local name, description, standingID, barMin, barMax, aldorRep =
-        GetFactionInfoByID(932)
-    local name, description, standingID, barMin, barMax, scryerRep =
-        GetFactionInfoByID(934)
+    local _, _, _, _, _, aldorRep = GetFactionInfoByID(932)
+    local _, _, _, _, _, scryerRep = GetFactionInfoByID(934)
 
     if aldorRep and scryerRep then
         if type(faction) == "table" then
@@ -833,7 +836,8 @@ end
 
 function addon.IsStepShown(step)
     return not(step.daily and RXPCData.skipDailies) and addon.AldorScryerCheck(step) and
-             addon.PhaseCheck(step) and addon.HardcoreCheck(step) and addon.SeasonCheck(step)
+             addon.PhaseCheck(step) and addon.HardcoreCheck(step) and
+             addon.SeasonCheck(step) and addon.XpRateCheck(step)
 end
 
 function addon.SeasonCheck(step)
@@ -850,109 +854,26 @@ function addon.HardcoreCheck(step)
     return true
 end
 
-RXP = addon
-function addon.GetBestQuests()
-    if not addon.questLogQuests then
-        addon.questLogQuests = {}
-        for id, v in pairs(addon.QuestDB) do
-            v.Id = id
-            local activeFor = v.appliesTo
-            if activeFor then
-                activeFor = addon.applies(activeFor) or
-                                addon.GetSkillLevel(activeFor) > 0
+function addon.XpRateCheck(step)
+    if step.xprate then
+        local xpmin,xpmax = 1,0xfff
+
+        step.xprate:gsub("^([<>]?)%s*(%d+%.?%d*)%-?(%d*%.?%d*)",function(op,arg1,arg2)
+            if op == "<" then
+                xpmin = 0
+                xpmax = tonumber(arg1) - 1e-4
+            elseif op == ">" then
+                xpmin = tonumber(arg1) + 1e-4
+                xpmax = 0xfff
             else
-                activeFor = true
+                xpmin = tonumber(arg1) or xpmin
+                xpmax = tonumber(arg2) or 0xfff
             end
-            if activeFor and not addon.IsQuestTurnedIn(id) and not v.itemId and
-                v.questLog then
-                table.insert(addon.questLogQuests, v)
-                v.isActive = true
-            end
+        end)
+        if RXPCData.xprate < xpmin or RXPCData.xprate > xpmax then
+            return false
         end
     end
-    local qDB = addon.questLogQuests
-    table.sort(qDB, function(k1, k2)
-        local x1 = k1.xp or 0
-        local x2 = k2.xp or 0
-        return not addon.IsQuestTurnedIn(k1.Id) and x1 > x2
-    end)
-
-    for i = #qDB, 1, -1 do
-        local xp = qDB[i].xp or 0
-        local id = qDB[i].Id
-        if i > 25 and xp < (qDB[25].xp or 1) or addon.IsQuestTurnedIn(id) then
-            addon.QuestDB[id].isActive = false
-            table.remove(qDB, i)
-        end
-    end
-
-    for k, v in ipairs(qDB) do
-        local id = v.Id
-        local xp = v.xp or 0
-        print(string.format("%d:%dxp %s (%d)", k, xp,
-                            addon.GetQuestName(id) or "", id))
-    end
+    return true
 end
-
-function addon.IsGuideQuestActive(id)
-    if not addon.QuestDB then addon.GetBestQuests() end
-    if not addon.IsQuestTurnedIn(id) then return addon.QuestDB[id].isActive end
-
-end
-
-function addon.CalculateTotalXP(ignorePreReqs)
-    local totalXp = 0
-    local function ProcessQuest(quest)
-        if not addon.IsQuestTurnedIn(quest.Id) then
-            if ignorePreReqs then
-                totalXp = totalXp + quest.xp
-            else
-                local preReqComplete = true
-                local previousQuest = quest.previousQuest
-                if type(previousQuest) == "table" then
-                    local state = not quest.preQuestAny
-                    for _, id in ipairs(previousQuest) do
-                        if quest.preQuestAny then
-                            state = state or addon.IsQuestTurnedIn(id)
-                        else
-                            state = state and addon.IsQuestTurnedIn(id)
-                        end
-                    end
-                    preReqComplete = state
-                elseif type(previousQuest) == "number" then
-                    preReqComplete = addon.IsQuestTurnedIn(previousQuest)
-                end
-                if preReqComplete then
-                    totalXp = totalXp + quest.xp
-                end
-            end
-        end
-    end
-
-    for i = 1, 25 do
-        local quest = addon.questLogQuests[i]
-        ProcessQuest(quest)
-    end
-
-    for id, quest in pairs(addon.QuestDB) do
-        local isTurnedIn = addon.IsQuestTurnedIn(id)
-        if not isTurnedIn then
-            local item = quest.itemId
-            if ignorePreReqs and item then
-                totalXp = totalXp + quest.xp
-            elseif type(item) == "table" then
-                local state = true
-                for n, itemId in pairs(item) do
-                    state = state and GetItemCount(itemId, true) >=
-                                quest.itemAmount[n]
-                end
-                if state then totalXp = totalXp + quest.xp end
-            elseif type(item) == "number" and GetItemCount(item, true) >=
-                quest.itemAmount then
-                totalXp = totalXp + quest.xp
-            end
-        end
-    end
-
-    return totalXp
-end
+RXP = addon --debug purposes

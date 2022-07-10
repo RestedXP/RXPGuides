@@ -450,7 +450,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                     else
                         local pinalpha = 0
                         if isMiniMap then
-                            pinalpha = 0.5
+                            pinalpha = 0.8
                         elseif element.step and element.step.active then
                             pinalpha = 1
                         else
@@ -811,6 +811,9 @@ function addon.UpdateGotoSteps()
                                 element.skip = true
                                 addon.updateMap = true
                                 addon.SetElementComplete(element.frame)
+                                if element.timer then
+                                    addon.StartTimer(element.timer,element.timerText)
+                                end
                             end
                         end
                     end

@@ -4,7 +4,6 @@ local faction = UnitFactionGroup("player")
 local _, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
 local RXPG = addon.RXPG
-addon.functions = {}
 addon.functions.__index = addon.functions
 local events = {}
 addon.stepUpdateList = {}
@@ -104,7 +103,10 @@ local IsQuestTurnedIn = function(id)
 end
 
 local function IsQuestComplete(id)
-    if GetNumQuests then
+
+    if C_QuestLog.IsComplete then
+        return C_QuestLog.IsComplete(id)
+    else
         for i = 1, GetNumQuests() do
             local questLogTitleText, level, questTag, isHeader, isCollapsed,
                   isComplete, frequency, questID = GetQuestLogTitle(i);
@@ -116,8 +118,6 @@ local function IsQuestComplete(id)
                 end
             end
         end
-    else
-        return C_QuestLog.IsComplete(id)
     end
 end
 
@@ -713,7 +713,6 @@ function addon.functions.turnin(self, ...)
 
     if type(self) == "string" then -- on parse
         local element = {}
-        element.tag = "turnin"
         local text, id, reward = ...
         id = tonumber(id)
         if not id then
@@ -734,7 +733,7 @@ function addon.functions.turnin(self, ...)
         if element.text:match("%*quest%*") then
             element.retrieveText = true
         end
-        element.tooltipText = addon.icons.turnin .. element.text
+        --element.tooltipText = addon.icons.turnin .. element.text
         addon.InsertQuestGuide(id,addon.turnInList)
 
         return element
@@ -805,7 +804,7 @@ function addon.functions.turnin(self, ...)
             element.tooltip = nil
         end
 
-        element.tooltipText = element.icon .. element.text
+        --element.tooltipText = element.icon .. element.text
         addon.UpdateStepText(self)
         local completed = element.completed
         local isComplete = IsQuestTurnedIn(id)
@@ -1187,8 +1186,11 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         element.radius = tonumber(radius)
         element.lowPrio = lowPrio
         if lowPrio and not tonumber(lowPrio) then
+            element.args = radius
             element.event = {...}
             element.callback = lowPrio
+            element.radius = nil
+            radius = nil
         end
         if element.radius == 0 then
             element.radius = nil
@@ -2061,12 +2063,23 @@ function addon.functions.next(skip, guide)
     guide = guide or addon.currentGuide
     if guide.next then
         local group = guide.group
-        local next = guide.next:gsub("^%s*(.+)\\%s*", function(grp)
-            group = grp
-            return ""
-        end)
+        local next = guide.next
+        local guideSkip
+        --Different guides can be separated by a semicolon when using #next
+        for guideName in string.gmatch(guide.next,"%s*([^;]-)%s*") do
+            next = guideName:gsub("^%s*(.+)\\%s*", function(grp)
+                group = grp
+                return ""
+            end)
+            guideSkip = addon.GetGuideTable(group, next)
+
+            --Iterates through every guide until it finds a valid one
+            --It uses the last one listed in case none of them are valid
+            if guideSkip and addon.IsGuideActive(guideSkip) then
+                break
+            end
+        end
         local nextGuide
-        local guideSkip = addon.GetGuideTable(group, next)
 
         if addon.game ~= "CLASSIC" then
             local faction = next:match("Aldor") or next:match("Scryer")
@@ -2102,6 +2115,8 @@ function addon.functions.next(skip, guide)
                 return true
             end
         elseif guideSkip then
+            --Used in case it doesn't find a valid guide after the name substition
+            --Name substitution is deprecated, list multiple guides instead
             return addon.functions.next(nil, guideSkip)
         end
     end
@@ -2348,6 +2363,18 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     end
 end
 
+function addon.functions.hideifcomplete(self)
+    if type(self) == "string" then
+        return {textOnly = true, keepUpdating = true}
+    end
+    local step = self.element.step
+    if step.active then
+        step.hidewindow = step.completed
+    else
+        step.hidewindow = step.hidewindow or step.completed
+    end
+end
+
 function addon.functions.spellMissing(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
@@ -2475,7 +2502,11 @@ function addon.functions.cast(self, ...)
         element.id = tonumber(id)
         element.text = text or ""
         local icon = GetSpellTexture(id)
-        if icon then
+
+        if not text or text == "" then
+            element.textOnly = true
+            element.dynamicText = true
+        elseif icon then
             element.icon = "|T" .. icon .. ":0|t"
             element.tooltipText = element.icon .. element.text
         end
@@ -2483,9 +2514,9 @@ function addon.functions.cast(self, ...)
         return element
     end
     local event, unit, _, id = ...
-    local icon = GetSpellTexture(id)
     local element = self.element
-    if icon then
+    local icon = GetSpellTexture(id)
+    if not element.icon and not element.textOnly and icon then
         element.icon = "|T" .. icon .. ":0|t"
         element.tooltipText = element.icon .. element.text
     end
@@ -3436,6 +3467,13 @@ function addon.functions.timer(self,text,duration,timerText,callback,...)
     end
 end
 
+
+--Waypoint functions:
+
+--Waypoints will turn into low prio WPs whenever it returns true
+--Usage: .waypoint zone,xx.xx,yy.yy,args,callback,event1,event2,...,eventN
+--args is a string that can be referenced by self.args
+
 function addon.functions.rescue()
     local _, seat = UnitVehicleSeatInfo("vehicle", 2)
     if seat then return true end
@@ -3462,11 +3500,36 @@ function addon.functions.niffelen()
     if seatCount < 3 then return true end
 end
 
-function addon.functions.compulsion()
+function addon.functions.wptimer(self)
+    local element = self.element
+    local step = element.step
+    if not self.time then
+        self.time = tonumber(self.args) or 0
+        self.state = self.time >= 0
+        self.time = abs(self.time)
+        return not self.state
+    elseif not step.active or step.completed then
+        self.timerstart = false
+        return not self.state
+    end
 
+    if not self.timerstart then
+        self.timerstart = GetTime()
+    elseif GetTime() - self.timerstart >= self.time then
+        return self.state
+    end
+    return not self.state
+end
+
+function addon.functions.wpbuff(self)
+    if not self.buff then
+        self.buff = tonumber(self.args)
+        self.state = self.buff and self.buff > 0
+        self.buff = math.abs(self.buff)
+    end
     for i = 1, 32 do
         local _, _, _, _, _, _, _, _, _, id = UnitAura("player", i)
-        if id == 47098 then return false end
+        if id == self.buff then return self.state end
     end
-    return true
+    return not self.state
 end

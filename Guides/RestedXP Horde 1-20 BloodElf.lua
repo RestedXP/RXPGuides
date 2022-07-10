@@ -95,7 +95,11 @@ step << Warlock
 step
     .goto Eversong Woods,38.8,19.4
     >>Go upstairs
-    .turnin 10069 >> Turn in Well Watcher Solanian
+    .turnin 10073 >> Turn in Well Watcher Solanian << Warlock
+    .turnin 10072 >> Turn in Well Watcher Solanian << Priest
+    .turnin 10071 >> Turn in Well Watcher Solanian << Rogue
+    .turnin 10070 >> Turn in Well Watcher Solanian << Hunter
+    .turnin 10069 >> Turn in Well Watcher Solanian << Mage
     .accept 8330 >> Accept Solanian's Belongings
     .accept 8345 >> Accept The Shrine of Dath'Remar
 step
@@ -107,20 +111,26 @@ step
     .accept 8346 >> Accept Thirst Unending
 step << Warlock
     #sticky
-    #completewith ArcaneSliver
-    >>Grind and Mana Tap mana wryms creatures en route. Be sure to loot them for Arcane Slivers
-      .complete 8346,1 --Mana Tap creature (x6)
-    .complete 8336,1 --Collect Arcane Sliver (x6)
+    #completewith next
+    >> Grind Springpaw Lynxes and Cubs en route. Loot them for their collars. You don't have to finish this quest now.
+    .collect 20797,8
 step << Warlock
     >>Run up the ramp
     .goto Eversong Woods,32.6,25.5,30
+step << Warlock
+    #sticky
+    #completewith ArcaneSliver
+    >>Grind and Mana Tap creatures with mana as you quest. Be sure to loot them for Arcane Slivers
+      .complete 8346,1 --Mana Tap creature (x6)
+    .complete 8336,1 --Collect Arcane Sliver (x6)
 step << Warlock
     >> Loot the Arcane Wraiths for Wraith Essence. Be careful as they pull together if they're next to each other
     .goto Eversong Woods,32.3,28.1
     .complete 8344,1 --Wraith Essence (4)
 step << Warlock
-    .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for the Essence and Tainted Arcane Sliver. Click the Sliver in your bags
+    .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for the Essence and Tainted Arcane Sliver. Click the Sliver in your bags to accept the quest
     .goto Eversong Woods,31.6,29.3
+    .unitscan Tainted Arcane Wraith
     .complete 8344,2 --Tainted Wraith Essence (1)
     .collect 20483,1,8338 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
@@ -132,9 +142,7 @@ step << Warlock
 step << Warlock
     .xp 3+200 >> Grind until Level 3+200xp
 step << Warlock
-    >>Click the Sliver in your bag
-    .accept 8338 >> Accept Tainted Arcane Sliver
-    >> Die and respawn at the Spirit Healer or run back
+    .deathskip >> Die and respawn at the Spirit Healer or run back
     .goto Eversong Woods,38.2,17.6,100
 step << BloodElf Warlock
     .goto Eversong Woods,37.2,18.9
@@ -182,8 +190,6 @@ step
     #label Report
     .goto Eversong Woods,35.4,22.5
     .turnin 8327 >> Turn in Report to Lanthan Perilon
-step
-    .goto Eversong Woods,35.4,22.5
     .accept 8334 >> Accept Aggression
 step
     >>Loot the Journal on the floor
@@ -208,8 +214,6 @@ step
 step
     .goto Eversong Woods,35.4,22.5
     .turnin 8334 >> Turn in Aggression
-step
-    .goto Eversong Woods,35.4,22.5
     .accept 8335 >> Accept Felendren the Banished
 step << !Warlock
     #label arcaneend
@@ -313,6 +317,7 @@ step
     .accept 9705 >> Accept Package Recovery
 step
     .goto Eversong Woods,40.4,32.2
+    >> Head back to the previous quest giver
     .turnin 9705 >> Turn in Package Recovery
     .accept 8350 >> Accept Completing the Delivery
 step
@@ -463,6 +468,11 @@ step << BloodElf Priest
     .goto Eversong Woods,50.3,51.0
     .complete 9489,1 --Eversong Ranger Blessed (6)
 step
+    #completewith next
+    .goto Eversong Woods,55.7,54.5
+     >>Kill Pillagers (Skeletons) as you pass through The Dead Scar. You do not need to finish this step yet.
+    .complete 8475,1 --Kill Plaguebone Pillager (x8)
+step
     .goto Eversong Woods,55.7,54.5
     .turnin 9064 >> Turn in Taking the Fall
     .accept 9066 >> Accept Swift Discipline
@@ -609,9 +619,14 @@ step
     .goto Eversong Woods,43.6,71.2
     .accept 9258 >>Accept The Scorched Grove
 step
-    >> Head upstairs
+    >> Head upstairs. This quest can be accepted even if it says "Missing Pre-Requisites". 
     .goto Eversong Woods,43.3,70.8
     .accept 8892 >> Accept Situation at Sunsail Anchorage
+step
+    #sticky
+    #completewith next
+    .goto Eversong Woods,44.0,70.4,0,0
+    .vendor >> Vendor trash. You can buy some 6 slot bags from Halis if you want. Money is plentiful in the Blood Elf zones.
 step
     .goto Eversong Woods,44.7,69.6
     .accept 8491 >> Accept Pelt Collection
@@ -619,11 +634,6 @@ step
     .goto Eversong Woods,46.9,71.8
     .turnin 9358 >> Turn in Ranger Sareyn
     .accept 9252 >> Accept Defending Fairbreeze Village
-step
-    #sticky
-    #completewith next
-    .goto Eversong Woods,44.0,70.4,0,0
-    .vendor >> Vendor trash. You can buy some 6 slot bags from Halis if you want. Money is plentiful in the Blood Elf zones.
 step
     #sticky
     #completewith Sunsail
@@ -789,17 +799,20 @@ step << Undead Warlock
     .goto Eversong Woods,56.7,49.6,20
 step << Undead Warlock
     .goto Silvermoon City,63.4,31.9,20,0
-    .goto Silvermoon City,49.5,15.0,15,0
+    .goto Silvermoon City,49.5,15.0,15
     .zone Undercity >>Take the Orb of Translocation back to Undercity
 step << Undead Warlock
-    .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
+    .goto Undercity,66.0,44.0,15 >>Take one of the lifts down to Undercity
 step << Undead Warlock
     .goto Undercity,85.1,26.0
+    >> This quest is acceptable even if it says you are missing pre-requisites 
     .accept 1473 >>Accept Creature of the Void
 step << Undead Warlock
     .goto Undercity,66.0,44.1,40 >>Go to the bank area
 step << Undead Warlock
-    .goto Undercity,66.2,1.1,20 >>Go up the lift. Exit Undercity
+    .goto Undercity,71.9,40.6,15 >> Go up the lifts. 
+step << Undead Warlock
+    .goto Undercity,66.2,1.1,20 >>Exit Undercity
 step << Undead Warlock
     >>Kill the mobs in the tower, then loot the chest
     .goto Tirisfal Glades,51.1,67.6
@@ -848,7 +861,7 @@ step << BloodElf Warlock
     .train 6201 >> Train Create Healthstone
     .train 696 >>Train Demon Skin r2
     .train 707 >> Train Immolate r2
-step << Orc Warlock
+step << Orc Warlock / Undead Warlock
     .goto Silvermoon City,74.4,47.2
     .train 1120 >>Train Drain Soul
     .train 6201 >> Train Create Healthstone
@@ -973,7 +986,7 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
     .vendor >> Buy Springpaw Appetizers from Zalene. It's on the second page.
     .collect 22776,1 --Collect Springpaw Appetizers
-step << BloodElf !Hunter
+step << !Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9359 >>Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
@@ -982,6 +995,7 @@ step << BloodElf Hunter
     .accept 8476 >> Accept Amani Encroachment
 step << !BloodElf
     .goto Eversong Woods,60.3,62.8
+    .turnin 9359 >> Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
 step << BloodElf Hunter
     .accept 9484 >> Accept Taming the Beast
@@ -1032,7 +1046,8 @@ step
     .complete 8476,2 --Kill Amani Axe Thrower (x5)
 step
      .goto Eversong Woods,70.1,72.3
-    >> Otembe has a guaranteed chance to drop a white or green weapon. You can try killing him one more time for a better weapon if you want, he has a quick respawn << Paladin/Rogue/Hunter/Warrior
+    >> Kill and loot Otembe for his hammer
+    >> Otembe has a guaranteed chance to drop a white or green item. You can try killing him one more time for a better weapon if you want, he has a quick respawn << Paladin/Rogue/Hunter/Warrior
     *Note you get a green ranged weapon from turning in this quest, so only look for a good melee weapon << Hunter
     .complete 8477,1 --Collect Otembe's Hammer (x1)
 step
@@ -1041,7 +1056,7 @@ step
     .accept 8479 >> Accept Zul'Marosh
 step
     >>Zul'Marosh is on the top floor of the hut. Kill & loot him for his head and a quest drop.
-    *Zul'Marosh also has a guaranteed chance to drop a white or green weapon but a longer respawn << Paladin/Rogue/Hunter/Warrior
+    *Zul'Marosh also has a guaranteed chance to drop a white or green item but a longer respawn << Paladin/Rogue/Hunter/Warrior
     .goto Eversong Woods,62.5,79.7
     .complete 8479,1 --Collect Chieftain Zul'Marosh's Head (x1)
     .collect 23249,1 --Collect Amani Invasion Plans (x1)
@@ -1159,6 +1174,7 @@ step
     .turnin 8477 >> Turn in The Spearcrafter's Hammer
 step
     .goto Eversong Woods,60.4,61.3
+    >> Head upstairs to the right
     .accept 8888 >> Accept The Magister's Apprentice
 step << BloodElf/Undead
     #sticky
@@ -1195,7 +1211,7 @@ step
     .goto Eversong Woods,68.9,52.0
     .complete 8889,1 --First Power Source Deactivated (x1)
 step
-    >>Go Upstairs
+    >>Go Upstairs and click on the crystal
     .goto Eversong Woods,68.9,52.0
     .complete 8889,2 --Second Power Source Deactivated (x1)
 step
@@ -1229,7 +1245,7 @@ step << BloodElf Mage
     .goto Eversong Woods,55.7,54.5
     .turnin 9403 >>Turn in The Purest Water
     .accept 9404 >>Accept Recently Living
-step << !BloodElf/!Warlock
+step << !Warlock
     .goto Eversong Woods,56.7,49.6,30 >>Go into Silvermoon
 step << Shaman
     .goto Silvermoon City,71.8,56.6
@@ -1270,12 +1286,6 @@ step << Druid
     .goto Silvermoon City,71.5,55.8
     .train 8936 >>Train Regrowth
     .train 5229 >>Train Enrage
-step << Orc Warlock
-    .goto Silvermoon City,75.3,44.5,20 >>Enter the building, go downstairs
-step << Orc Warlock
-    .goto Silvermoon City,74.4,47.2
-    .train 755 >>Train Health Funnel
-    .train 705 >>Train Shadow Bolt r3
 step << Hunter
     .goto Silvermoon City,83.4,30.1,20 >>Enter the building
 step << BloodElf Hunter
@@ -1356,8 +1366,16 @@ step << BloodElf/Undead
     #completewith next
     >>Finish off getting Springpaw Pelts
     .complete 8491,1 --Collect Springpaw Pelt (x6)
+step << Orc Warlock/Undead Warlock
+    .goto Eversong Woods,48.2,47.9
+    .hs >> Hearth to Falconwing Square then run upstairs
+step << Orc Warlock/Undead Warlock
+    .goto Eversong Woods,48.2,47.9
+    .train 755 >>Train Health Funnel
+    .train 705 >>Train Shadow Bolt r3
 step << Undead/BloodElf !Hunter
-   .cooldown item,6948,>0 >>Run to Fairbreeze Village. Hearth to Falconwing and run if its up
+   .cooldown item,6948,>0 >>Run to Fairbreeze Village. 
+    .hs >> Hearth to Falconwing and run if its up << !Warlock
     .goto Eversong Woods,46.9,71.8
     .turnin 9252 >> Turn in Defending Fairbreeze Village
     .accept 9253 >> Accept Runewarden Deryan
@@ -1412,7 +1430,7 @@ step << !BloodElf/!Hunter
     >> Be sure to start max range from him. << Hunter
     .goto Eversong Woods,37.6,86.2
     .turnin 10166 >> Turn in Whitebark's Memory
-step << Undead/BloodElf !Hunter
+step << BloodElf !Hunter
     .goto Eversong Woods,44.2,85.5
     .turnin 9253 >> Turn in Runewarden Deryan
 step << BloodElf Mage
@@ -1476,18 +1494,16 @@ step << !BloodElf
 step << BloodElf !Hunter
     .goto Ghostlands,47.3,28.9
     .accept 9130 >> Accept Goods from Silvermoon City
-step << !BloodElf/!Hunter
-    .goto Ghostlands,47.0,28.5
-    .accept 9152 >> Accept Tomber's Supplies
 step << Warlock
     #completewith next
     .goto Ghostlands,48.9,32.4
     .home >> Set your Hearthstone to Tranquillien
 step << !BloodElf/!Hunter
+    .goto Ghostlands,47.0,28.5
+    .accept 9152 >> Accept Tomber's Supplies
+step << !BloodElf/!Hunter
     .goto Ghostlands,46.3,28.4
     .turnin 9758 >> Turn in Return to Arcanist Vandril
-step << !BloodElf/!Hunter
-    .goto Ghostlands,46.3,28.6
     .accept 9138 >> Accept Suncrown Village
 step << BloodElf !Hunter !Warlock
     >>do NOT fly to Silvermoon City
@@ -1599,8 +1615,7 @@ step
     .complete 9274,2 --Kill Vengeful Apparition (x8)
     .complete 9274,1 --Kill Ravening Apparition (x8)
 step
-    #label wavefrontisdumb
-    #requires Wavefront
+    #requires Apparition
     .goto Ghostlands,72.3,19.0
     .turnin 9157 >> Turn in Forgotten Rituals
     .accept 9174 >> Accept Vanquishing Aquantion
@@ -1609,7 +1624,8 @@ step
     .goto Ghostlands,71.3,15.0
     .complete 9174,1 --Kill Aquantion (x1)
 step
-    #requires Apparition
+    #label wavefrontisdumb
+    #requires Wavefront
     .goto Ghostlands,72.3,19.1
     .turnin 9174 >> Turn in Vanquishing Aquantion
 step
@@ -1730,6 +1746,7 @@ step << Mage
     --might remove frostbolt
 step << !BloodElf Warlock
     .goto Silvermoon City,74.4,47.2
+    >> Head into the building then go downstairs
     .train 689 >>Train Drain Life
     .train 6222 >>Train Corruption r2
 step << Priest/Mage/Warlock/Druid
@@ -1846,8 +1863,6 @@ step
     .accept 9163 >> Accept Into Occupied Territory
     .turnin 9192 >> Turn in Trouble at the Underlight Mines
     .accept 9199 >> Accept Troll Juju
-step
-    .goto Ghostlands,44.8,32.5
     .accept 9173 >> Accept Retaking Windrunner Spire
 step
     .goto Ghostlands,46.1,31.8
@@ -1887,6 +1902,13 @@ step
     .goto Ghostlands,46.2,56.4
     .accept 9281 >> Accept Clearing the Way
 step
+    #sticky
+    #completewith next
+    .goto Ghostlands,13.2,56.8
+    >>Kill Ghostclaw Ravagers and Spindlewebs en route, don't worry about finishing this quest yet.
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+step
         >>Kill Fallen Rangers and Deatholme Acolytes. Keep grinding until you get The Lady's Necklace to drop. These mobs can be hard, try not to pull more than one at a time.
     .goto Ghostlands,13.2,56.8
        .collect 22597,1 --Collect The Lady's Necklace (x1)
@@ -1903,16 +1925,16 @@ step
     >>Loot Spiders for Crunchy Spider Legs
     .complete 9171,1 --Collect Crunchy Spider Leg (x5)
 step
-    >>Kill Ghostclaw Ravagers and Spindlewebs
-    .goto Ghostlands,16.5,62.5,30,0
+    >>Finish killing Ghostclaw Ravagers and Spindlewebs
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,0
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,0
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,0
+    .goto Ghostlands,16.5,62.5,0
     .goto Ghostlands,44.1,57.6,30,0
     .goto Ghostlands,16.5,62.5,30,0
-    .goto Ghostlands,44.1,57.6,30,0
-    .goto Ghostlands,16.5,62.5,30,0
-    .goto Ghostlands,44.1,57.6,30,0
-    .goto Ghostlands,16.5,62.5,30,0
-    .goto Ghostlands,44.1,57.6,30,0
-    .goto Ghostlands,16.5,62.5
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step

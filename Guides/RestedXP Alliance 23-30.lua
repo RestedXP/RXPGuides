@@ -4,8 +4,15 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next 24-27 Redridge/Duskwood
+#xprate <1.5
 
-
+step << Warrior
+    #sticky
+    #completewith exit1
+    .goto Stormwind City,64.1,61.2,0
+    .goto Stormwind City,46.7,79.0,0
+    >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
+    .collect 3357,8 --Collect Liferoot (x8)
 step << Paladin
 	.goto Stormwind City,38.6,32.8
 	.trainer >> Train your class spells
@@ -67,6 +74,7 @@ step
     .collect 4371,1,175,1,1
     .bronzetube
 step
+    #label exit1
     .goto Stormwind City,63.9,8.3
     .zone Ironforge >>Enter the Deeprun Tram and cross the Tram into Ironforge
     .zoneskip Dun Morogh
@@ -309,31 +317,28 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next 27-30 Wetlands/Hillsbrad
-step
+step << Warrior
     #sticky
     #completewith exit
-    .vendor 5519>>Buy a Bronze Tube from Gearcutter Cogspinner (limited supply)
-    .goto Ironforge,55.2,7.6
-    .collect 4371,1,175
-    >>Try to buy a bronze tube from the Auction House if you were unable to find one from a vendor
-    .bronzetube
-
---TODO: Remove classes that don't need level 24 training
-step << Rogue
-	.goto Stormwind City,74.6,52.8
-	.trainer >> Train your class spells
-step << Warrior
-	.goto Stormwind City,78.6,45.8
-	.trainer >> Go upstairs. Train your class spells
+    .goto Stormwind City,64.1,61.2,0
+    .goto Stormwind City,46.7,79.0,0
+    >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
+    .collect 3357,8 --Collect Liferoot (x8)
 step << Paladin
 	.goto Stormwind City,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
 	.goto Stormwind City,38.5,26.8
 	.trainer >> Train your class spells
+step << Paladin
+    .goto Stormwind City,40.1,30.0
+    >>Speak to Duthorian Rall and right click on the Tome of Valor provided
+    .accept 1649 >>Accept The Tome of Valor
+    .turnin 1649 >>Turn in The Tome of Valor
+    .accept 1650 >>Accept The Tome of Valor
 step << Warlock
     .goto Stormwind City,25.3,78.7
-	.trainer >> Train your class spells
+    .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock
@@ -343,15 +348,16 @@ step << Warlock
 step << Warlock
     .goto Stormwind City,25.4,78.7
     .turnin 1739 >>Turn in The Binding
-step << Paladin
-    .goto Stormwind City,40.1,30.0
-    >>Speak to Duthorian Rall and right click on the Tome of Valor provided
-    .accept 1649 >>Accept The Tome of Valor
-    .turnin 1649 >>Turn in The Tome of Valor
-    .accept 1650 >>Accept The Tome of Valor
 step << Mage
     .goto Stormwind City,39.6,79.6
+    .train 3561>>Train Teleport: Stormwind
+    .trainer >> Train your class spells
+step << Rogue
+	.goto Stormwind City,74.6,52.8
 	.trainer >> Train your class spells
+step << Warrior
+	.goto Stormwind City,78.6,45.8
+	.trainer >> Go upstairs. Train your class spells
 step << Rogue
     #sticky
     .goto Stormwind City,75.8,60.1
@@ -363,13 +369,18 @@ step << Rogue
 step << Rogue
     .goto Stormwind City,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
-step << Warrior
-    #sticky
-    #completewith exit
-    .goto Stormwind City,64.1,61.2,0
-    .goto Stormwind City,46.7,79.0,0
-    >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
-    .collect 3357,8 --Collect Liferoot (x8)
+step << Draenei
+    .goto Stormwind City,78.4,18.3
+    .accept 9429 >> Accept Travel to Darkshire
+step << Hunter
+	.goto Stormwind City,61.7,15.4
+	.train 14323 >> Train your class spells
+step
+    .goto Stormwind City,53.62,59.76,30,0
+    .goto Stormwind City,55.25,7.08
+    .vendor 5519>> Check Billibub in the Dwarven District for a Bronze Tube. Buy one if it's available
+    .collect 4371,1,175,1,1
+    .bronzetube
 step << skip --Not needed, going from SW -> Duskwood later in the guide after doing the Goldshire inn quest
 	.goto Stormwind City,62.5,62.3,30,0
 	.goto Stormwind City,66.3,62.1
@@ -523,6 +534,7 @@ step
 step
     .goto Duskwood,7.7,33.3
     .accept 226 >> Accept Wolves at Our Heels
+    .maxlevel 26
 step
     .goto Duskwood,28.0,31.5
     .turnin 165 >> Turn in The Hermit
@@ -677,7 +689,7 @@ step
 step
 	#label spiders
 	#sticky
-	#completewith #spiderend12
+	#completewith spiderend12
 	>>Kill spiders in duskwood
     .complete 93,1 --Collect Gooey Spider Leg (x6)
 	.maxlevel 27
@@ -689,6 +701,7 @@ step
     .goto Duskwood,17.6,24.6
     .complete 226,1 --Kill Starving Dire Wolf (x12)
     .complete 226,2 --Kill Rabid Dire Wolf (x8)
+    .isOnQuest 226
 step << Hunter/Paladin
     .goto Duskwood,19.7,39.7
     >>Kill the level 30 elite roaming the cemetery
@@ -701,6 +714,7 @@ step
     #label HistoryB2
 	.goto Duskwood,7.7,33.3
     .turnin 226 >> Turn in Wolves at Our Heels
+    .isOnQuest 226
 step << !Rogue !Druid
 	#requires spiders
     .goto Westfall,56.6,52.6
@@ -749,7 +763,11 @@ step
 step
     .goto Duskwood,73.9,43.9
     .turnin 93 >> Turn in Dusky Crab Cakes
+    .isQuestComplete 93
+step
+    .goto Duskwood,73.9,43.9
     .accept 240 >> Accept Return to Jitters
+    .isQuestTurnedIn 93
 step << Hunter/Paladin
 	.goto Duskwood,73.7,46.8
     .turnin 228 >> Turn in Mor'Ladim
@@ -766,9 +784,10 @@ step
 step
     .goto Duskwood,77.5,44.3
  .fly Redridge >> Fly to Redridge
-step << Draenei
+step
     .goto Redridge Mountains,31.6,57.9
     .accept 128 >> Accept Blackrock Bounty
+    .maxlevel 26
 step
     .goto Redridge Mountains,33.5,49.2
     .accept 19 >> Accept Tharil'zun
@@ -799,9 +818,10 @@ step
     .goto Redridge Mountains,63.2,49.7
 	>>Climb to the top of the tower
     .turnin 248 >> Turn in Looking Further
-step << Draenei
+step
     .goto Redridge Mountains,32.8,6.8
     .complete 128,1 --Kill Blackrock Champion (x15)
+    .isOnQuest 128
 step
     .goto Redridge Mountains,33.5,48.9
     .turnin 19 >> Turn in Tharil'zun
@@ -815,9 +835,10 @@ step
 step
     .goto Redridge Mountains,29.8,44.5
     .turnin 180 >> Turn in Wanted: Lieutenant Fangore
-step << Draenei
+step
     .goto Redridge Mountains,31.6,58.0
     .turnin 128 >> Turn in Blackrock Bounty
+    .isQuestComplete 128
 step
 	.goto Redridge Mountains,30.5,59.3
     .fly Westfall>> Fly to Westfall
@@ -829,9 +850,12 @@ step
 	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,18.4,56.5
-    .turnin 240 >> Turn in Return to Jitters
     .turnin 453 >> Turn in Finding the Shadowy Figure
     .accept 268 >> Accept Return to Sven
+step
+    .goto Duskwood,18.4,56.5
+    .turnin 240 >> Turn in Return to Jitters
+    .isOnQuest 240
 step << !Hunter !Paladin
     .goto Duskwood,21.6,45.1
 	>> Kill undead in the area and loot them
@@ -855,6 +879,7 @@ step << Hunter/Paladin
     .complete 101,3 --Collect Skeleton Finger (x10)
 step
     .goto Duskwood,16.2,38.8
+    >>Kill mobs around the crypt, you might need to go inside it to kill the 3 warders you need
     .complete 323,1 --Kill Skeletal Raider (x15)
     .complete 323,2 --Kill Skeletal Healer (x3)
     .complete 323,3 --Kill Skeletal Warder (x3)
@@ -924,6 +949,21 @@ step << Priest
 step << Hunter
 	.goto Stormwind City,61.7,15.4
 	.trainer >> Train your class spells
+--????
+
+]])
+
+RXPGuides.RegisterGuide([[
+<< Alliance
+#name 27-30 Wetlands/Hillsbrad
+#version 1
+#group RestedXP Alliance 20-32
+#next 30-32 Duskwood/STV
+
+step
+    .goto Stormwind City,60.5,12.3,40,0
+    .goto Stormwind City,60.5,12.3,0
+    .zone Ironforge >> Take the tram to Ironforge
 step <<!Mage
 	.goto Stormwind City,63.2,8.6,20,0
     .goto Ironforge,69.8,50.1
@@ -935,7 +975,7 @@ step << Rogue
     .trainer >> Train your class spells in ironforge
 step << Rogue
     .goto Ironforge,45.2,6.6
-    >>Buy the level 41 weapon upgrades (17dps)
+    >>Buy the level 31 weapon upgrades (17dps)
     .collect 2520,1
     .collect 2526,1
     >>Skip this step if you can find a better weapon at the Auction House
@@ -963,14 +1003,6 @@ step
 	#label end
 	.goto Ironforge,56.2,46.8
     .fly Wetlands>> Fly to Wetlands
-]])
-
-RXPGuides.RegisterGuide([[
-<< Alliance
-#name 27-30 Wetlands/Hillsbrad
-#version 1
-#group RestedXP Alliance 20-32
-#next 30-32 Duskwood/STV
 step
     .goto Wetlands,8.4,58.5
     .turnin 279 >> Turn in Claws from the Deep
@@ -1038,12 +1070,13 @@ step
 step
     .goto Wetlands,38.2,50.9
     .accept 294 >> Accept Ormer's Revenge
-step << !NightElf !Hunter !Rogue
+step
 	#label fossil
 	#sticky
 	#completewith Relu1
 	>>Kill raptors in Wetlands
 	.complete 943,1
+    .isOnQuest 943
 step
     .goto Wetlands,24.7,48.6
     .complete 294,1 --Kill Mottled Raptor (x10)
@@ -1089,15 +1122,17 @@ step
 	#requires relics
 	.goto Wetlands,38.81,52.39
 	.turnin 299 >>Turn in Uncovering the Past
-step << !Hunter !NightElf !Rogue
+step
 	#label Relu1
 	.goto Wetlands,38.81,52.39
 	>>Loot the fossil on the ground
 	.complete 943,2
-step << !Hunter !NightElf !Rogue
+    .isOnQuest 943
+step
 	.goto Wetlands,34.6,48.0
 	>>Keep killing raptors until you loot the Stone of Relu
 	.complete 943,1
+    .isOnQuest 943
 step
     .goto Wetlands,44.2,25.8
     >>Kill slimes around the crypt
@@ -1117,6 +1152,7 @@ step
     >>Loot the tree root at the base of the waterfall
     .complete 335,2 --Collect Musquash Root (x1)
 step << Druid
+    #completewith next
     >>Teleport to Moonglade
     .goto Moonglade,52.4,40.6
     .trainer 12042 >> Train spells
@@ -1126,13 +1162,15 @@ step
     .goto Wetlands,10.8,59.6
     .turnin 289 >> Turn in The Cursed Crew
     .accept 290 >> Accept Lifting the Curse
-step << !Hunter !NightElf !Rogue
+step
     .goto Wetlands,10.8,60.4
 	>>Go upstairs and talk to Archaeologist Flagongut
 	.turnin 943 >>Turn in The Absent Minded Prospector
+    .isOnQuest 943
 step
     .goto Wetlands,11.7,58.1
     .turnin 470 >> Turn in Digging Through the Ooze
+    .isQuestComplete 470
 step
     .goto Wetlands,8.3,58.5
     .turnin 286 >> Turn in Return the Statuette
@@ -1153,6 +1191,7 @@ step
 	#sticky
     >>Kill Fen Creepers, they are stealth mobs lurking along the river stream
     .complete 275,1 --Kill Fen Creeper (x8)--O
+    .isOnQuest 275
 step
     .goto Wetlands,47.3,46.9
     .turnin 465 >> Turn in Nek'rosh's Gambit
@@ -1171,6 +1210,7 @@ step
     .goto Wetlands,56.4,40.5
 	>>Finish off Fen Creepers in the rivers
     .turnin 275 >> Turn in Blisters on The Land
+    .isOnQuest 275
 step
     .goto Wetlands,49.9,18.3
     .accept 631 >> Accept The Thandol Span
@@ -1244,7 +1284,8 @@ step
 step
     .goto Hillsbrad Foothills,51.9,58.7
     .accept 555 >> Accept Soothing Turtle Bisque
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
     .accept 536 >> Accept Down the Coast
 step
@@ -1254,41 +1295,50 @@ step <<  Hunter
      #completewith next
     .goto Hillsbrad Foothills,50.2,58.8
      .stable >> Stable your pet and head east
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,56.6,53.8
     .train 17264 >> Tame an Elder Moss Creeper, attack mobs with it to learn bite rank 4
 	.unitscan Elder Moss Creeper
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,44.0,67.6
 	>> Kill murlocs in the area
     .complete 536,1 --Kill Torn Fin Tidehunter (x10)
     .complete 536,2 --Kill Torn Fin Oracle (x10)
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
     .turnin 536 >> Turn in Down the Coast
     .accept 559 >> Accept Farren's Proof
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,42.3,68.3
 	>> Kill murlocs and loot them for their head
     .complete 559,1 --Collect Murloc Head (x10)
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
     .turnin 559 >> Turn in Farren's Proof
     .accept 560 >> Accept Farren's Proof
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,49.5,58.8
     .turnin 560 >> Turn in Farren's Proof
     .accept 561 >> Accept Farren's Proof
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.4
     .turnin 561 >> Turn in Farren's Proof
     .accept 562 >> Accept Stormwind Ho!
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,57.1,67.4
 	>> Kill naga in the area, you may need to go in the water if you get unlucky spawns
     .complete 562,1 --Kill Daggerspine Shorehunter (x10)
     .complete 562,2 --Kill Daggerspine Siren (x10)
-step << Hunter
+step
+    .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
     .turnin 562 >> Turn in Stormwind Ho!
     .accept 563 >> Accept Reassignment
@@ -1534,7 +1584,7 @@ step
     .goto Elwynn Forest,84.7,69.4
     .turnin 75 >> Turn in The Legend of Stalvan
     .accept 78 >> Accept The Legend of Stalvan
-step << Human
+step << Human tbc
 	#level 30
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.

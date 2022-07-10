@@ -186,8 +186,17 @@ RXPFrame:EnableMouse(1)
 
 local stepPos = {}
 
-function StepScroll(n)
+local function StepScroll(n)
     local value
+    if addon.currentGuide.steps[n].hidewindow then
+        return
+    end
+    for i,v in ipairs(BottomFrame.stepList) do
+        if v == n then
+            n = i
+            break
+        end
+    end
     if n == 1 or not stepPos[n] then
         value = 0
     else
@@ -699,7 +708,7 @@ function CurrentStepFrame.UpdateText()
     -- StepScroll(n)
     local totalHeight = 0
     local c = 0
-    local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
+    --local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
     for i, step in pairs(activeSteps) do
 
         local index = step.index
@@ -995,7 +1004,7 @@ function addon:LoadGuide(guide, OnLoad)
         RXPCData.currentStep = 1
         RXPCData.stepSkip = {}
     end
-    local totalHeight = 0
+    --local totalHeight = 0
     local nframes = 0
 
     ClearTable(addon.scheduledTasks)
@@ -1028,6 +1037,7 @@ function addon:LoadGuide(guide, OnLoad)
 
     for n, step in ipairs(guide.steps) do
         step.index = n
+        BottomFrame.stepList[n] = n
         if step.completewith then step.sticky = true end
         if step.requires then
             local requirement = guide.labels[step.requires]
@@ -1070,8 +1080,10 @@ function addon:LoadGuide(guide, OnLoad)
 
         frame:SetScript("OnEnter", function(self)
             self.currentAlpha = self:GetAlpha()
-            self:SetAlpha(1)
-            self:SetBackdropColor(unpack(addon.colors.bottomFrameHighlight))
+            if not (self.step and self.step.hidewindow) then
+                self:SetAlpha(1)
+                self:SetBackdropColor(unpack(addon.colors.bottomFrameHighlight))
+            end
         end)
         frame:SetScript("OnLeave", function(self)
             self:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
@@ -1081,9 +1093,9 @@ function addon:LoadGuide(guide, OnLoad)
         frame.index = n
         frame.guide = guide
         frame:SetScript("OnMouseDown", function(self, button)
-            if button == "RightButton" or GetTime() - self.timer <= 0.5 then
+            if (button == "RightButton" or GetTime() - self.timer <= 0.5) and not (self.step and self.step.hidewindow) then
                 self.timer = 0
-                local n = self.index
+                local n = self.step.index
                 local bottomMenu = RXPFrame.bottomMenu
                 bottomMenu[1].text = "Go to step " .. n
                 bottomMenu[1].arg1 = n
@@ -1142,27 +1154,36 @@ function addon:LoadGuide(guide, OnLoad)
     ScrollChild.f1:SetPoint("BOTTOMRIGHT", ScrollChild.framePool[nframes])
     ScrollChild.f1:Hide()
     ScrollChild:SetHeight(200)
-    RXPFrame.BottomFrame.UpdateFrame()
     addon.SetStep(RXPCData.currentStep)
+    BottomFrame.hiddenFrames = 0
+    BottomFrame.UpdateFrame()
 end
 
 function addon.ReloadGuide()
-    return addon:LoadGuide(addon.GetGuideTable(RXPCData.currentGuideGroup,
-                                               RXPCData.currentGuideName))
+    local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
+                 RXPCData.currentGuideName)
+    return guide and addon:LoadGuide(guide)
 end
 
 function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
     local level = UnitLevel("player")
     if stepPos[0] and ((not self and stepn) or (self and self.step)) then
         local stepNumber = stepn or self.step.index
-        local frame = ScrollChild.framePool[stepNumber]
-        if not frame then return end
-        local step = frame.step
+        local frame, step
+        for i,v in ipairs(BottomFrame.stepList) do
+            if v == stepNumber then
+                frame = ScrollChild.framePool[i]
+                step = addon.currentGuide.steps[v]
+                break
+            end
+        end
+        if not (frame and step) then return end
+
         local fheight
         local hideStep = step.level > level or step.hidewindow
 
         local text
-        for i, element in ipairs(frame.step.elements) do
+        for _, element in ipairs(frame.step.elements) do
             if element.requestFromServer then
                 if not element.element then
                     element.element = element
@@ -1173,7 +1194,11 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                     addon.stepUpdateList[element.step.index] = true
                 end
             end
-            local rawtext = element.tooltipText or element.text
+            local rawtext = element.tooltipText
+            if not rawtext and element.text then
+                local icon = element.icon or addon.icons[element.tag] or ""
+                rawtext =  icon .. element.text
+            end
             if hideStep then
                 text = ""
             elseif rawtext and not element.hideTooltip then
@@ -1206,13 +1231,15 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
     else
         addon.updateBottomFrame = false
         local totalHeight = 0
+        local hiddenFrames = 0
         for n, frame in ipairs(ScrollChild.framePool) do
             if not frame:IsShown() then break end
             local text
+            frame.step = addon.currentGuide.steps[BottomFrame.stepList[n]]
             local step = frame.step
-            local hideStep = step.level > level
+            local hideStep = step.level > level or step.hidewindow
             local fheight
-            for i, element in ipairs(frame.step.elements or {}) do
+            for _, element in ipairs(frame.step.elements or {}) do
                 if not self then
                     local stepDiff = element.step.index - RXPCData.currentStep
                     element.element = element
@@ -1223,11 +1250,15 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                                 not element.requestFromServer
                         addon.stepUpdateList[element.step.index] =
                             not element.requestFromServer
-                    elseif element.tag and (stepDiff <= 8 and stepDiff >= 0) then
+                    elseif element.tag and (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
                         RXPG[addon.currentGuide.group][element.tag](element)
                     end
                 end
-                local rawtext = element.tooltipText or element.text
+                local rawtext = element.tooltipText
+                if not rawtext and element.text then
+                    local icon = element.icon or addon.icons[element.tag] or ""
+                    rawtext =  icon .. element.text
+                end
                 if hideStep then
                     text = ""
                 elseif rawtext and not element.hideTooltip and rawtext ~= "" then
@@ -1247,6 +1278,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                 frame:SetAlpha(1)
             end
             if hideStep then
+                hiddenFrames = hiddenFrames + 1
                 frame.text:SetText(text)
                 fheight = 1
                 frame:SetAlpha(0)
@@ -1259,11 +1291,15 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
             totalHeight = totalHeight + fheight + 2
             stepPos[n] = totalHeight - 5
         end
+        if hiddenFrames ~= BottomFrame.hiddenFrames then
+            BottomFrame.SortSteps()
+        end
+        BottomFrame.hiddenFrames = hiddenFrames
         stepPos[0] = totalHeight
         -- print(ScrollChild.framePool[#ScrollChild.framePool]:GetBottom(),totalHeight)
     end
     local guide = addon.currentGuide
-    if guide then ScrollChild:SetHeight(ScrollChild.f1:GetHeight()) end
+    if guide then ScrollChild:SetHeight(ScrollChild.f1:GetHeight() - BottomFrame.hiddenFrames*4) end
     local w = RXPFrame:GetWidth() - 35
     ScrollChild:SetWidth(w)
     local bottomFrameHeight = BottomFrame:GetHeight()
@@ -1283,18 +1319,43 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
     end
 
 end
+--addon.hiddenFrames = 0
+BottomFrame.stepList = {}
+function BottomFrame.SortSteps()
+    table.sort(BottomFrame.stepList,function(k1,k2)
+        local step1 = k1 and addon.currentGuide.steps[k1]
+        local step2 = k2 and addon.currentGuide.steps[k2]
+        if not (step1 and step2) then
+            return k1 < k2
+        end
+        step1 = step1.hidewindow
+        step2 = step2.hidewindow
+        if step2 and not step1 then
+            return true
+        elseif step1 and not step2 then
+            return false
+        elseif k1 < k2 then
+            return true
+        end
+    end)
+
+    for i = 1, #BottomFrame.stepList do
+        local n = BottomFrame.stepList[i]
+        local frame = ScrollChild.framePool[i]
+        local prefix = ""
+        if n < 10 then prefix = "0" end
+        frame.number.text:SetText(prefix .. tostring(n))
+    end
+end
 
 local function IsGuideActive(guide)
-    local som = RXPCData and RXPCData.SoM
-    if (guide.era and som or guide.som and not som) or
-        (som and RXPCData.phase and RXPCData.phase > 2 and guide["era/som"]) or
-        (not addon.PhaseCheck(guide)) then
+    if addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
-        return false
+        return true
     end
-
-    return true
 end
+
+addon.IsGuideActive = IsGuideActive
 
 function RXPFrame.GenerateMenuTable()
     local menuList = {}
