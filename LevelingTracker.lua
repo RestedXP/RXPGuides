@@ -263,7 +263,7 @@ function addon.tracker:CreateGui()
     trackerUi.speedContainer:SetFullWidth(true)
 
     trackerUi.speedContainer.label = AceGUI:Create("Heading")
-    trackerUi.speedContainer.label:SetText("Leveling Speed")
+    trackerUi.speedContainer.label:SetText("Time spent")
     trackerUi.speedContainer.label:SetFullWidth(true)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.label)
     trackerUi.speedContainer:AddChild(buildSpacer(spacers.element))
@@ -438,6 +438,8 @@ function addon.tracker:CompileData()
                     data.timestamp.dateFinished.hour >= 12 and "PM" or "AM")
         end
 
+        -- TODO add current time played to Time Spent, use OnUpdate event loop
+
     end
 
 end
@@ -445,14 +447,26 @@ end
 function addon.tracker:UpdateReport(selectedLevel)
     local trackerUi = addon.tracker.ui
 
-    trackerUi.reachedContainer.label:SetText("Finished Level " .. selectedLevel)
-
     local report = addon.tracker.reportData[selectedLevel]
 
     if selectedLevel == addon.tracker.playerLevel then
         trackerUi.reachedContainer.data:SetText("In-progress")
         trackerUi.speedContainer.data:SetText("In-progress")
+
+        trackerUi.reachedContainer.label:SetText("Started level " ..
+                                                     selectedLevel)
+
+        if addon.tracker.reportData[selectedLevel - 1] then
+            trackerUi.reachedContainer.data:SetText(
+                addon.tracker.reportData[selectedLevel - 1].timestamp
+                    .dateFinished or "Missing data")
+        else
+            trackerUi.reachedContainer.data:SetText("Missing data")
+        end
     else
+        trackerUi.reachedContainer.label:SetText("Reached Level " ..
+                                                     selectedLevel + 1)
+
         trackerUi.reachedContainer.data:SetText(
             report.timestamp.dateFinished or "Missing data")
 
