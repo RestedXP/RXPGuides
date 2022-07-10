@@ -2423,25 +2423,32 @@ function addon.functions.zone(self, ...)
     end
 end
 
-function addon.functions.zoneskip(self, ...)
+function addon.functions.zoneskip(self, text, zone, flags)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, zone = ...
         local mapID = addon.mapId[zone] or tonumber(zone)
         if not mapID then
             return addon.error(
-                       "Error parsing guide " .. addon.currentGuideName ..
-                           ": Invalid text/map name\n" .. self)
+                "Error parsing guide " .. addon.currentGuideName ..
+                ": map name/ID\n" .. self)
+        end
+        flags = tonumber(flags) or 0
+        if bit.band(flags,0x1) == 0x1 then
+            element.reverse = true
         end
         element.map = mapID
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         return element
     end
-    if not self.element.step.active then return end
-    local zone = self.element.map
-    if zone == C_Map.GetBestMapForUnit("player") then
-        self.element.step.completed = true
+
+    local element = self.element
+    local step = element.step
+
+    if not step.active then return end
+    local zone = element.map
+    if (zone == C_Map.GetBestMapForUnit("player")) == not element.reverse then
+        step.completed = true
         addon.updateSteps = true
     end
 end
