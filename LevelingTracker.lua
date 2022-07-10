@@ -512,15 +512,22 @@ local function prettyPrintTime(s)
 
     local formattedString
     if days > 0 then
-        formattedString = fmt("%d days %d hours %d minutes %d seconds", days,
-                              hours, minutes, s)
+        formattedString = fmt("%d %s %d %s %d %s %d %s", days,
+                              days == 1 and 'day' or 'days', hours,
+                              hours == 1 and 'hour' or 'hours', minutes,
+                              minutes == 1 and 'minute' or 'minutes', s,
+                              s == 1 and 'second' or 'seconds')
     elseif hours > 0 then
-        formattedString = fmt("%d hours %d minutes %d seconds", hours, minutes,
-                              s)
+        formattedString = fmt("%d %s %d %s %d %s", hours,
+                              hours == 1 and 'hour' or 'hours', minutes,
+                              minutes == 1 and 'minute' or 'minutes', s,
+                              s == 1 and 'second' or 'seconds')
     elseif minutes > 0 then
-        formattedString = fmt("%d minutes %d seconds", minutes, s)
+        formattedString = fmt("%d %s %d %s", minutes,
+                              minutes == 1 and 'minute' or 'minutes', s,
+                              s == 1 and 'second' or 'seconds')
     else
-        formattedString = fmt("%d seconds", s) -- Big gratz for leveling in under a minute
+        formattedString = fmt("%d %s", s, s == 1 and 'second' or 'seconds') -- Big gratz for leveling in under a minute
     end
 
     return formattedString
