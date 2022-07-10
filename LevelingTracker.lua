@@ -402,7 +402,9 @@ function addon.tracker:CompileData()
         local zoneXP = {}
 
         for zoneName, questData in pairs(data.quests) do
-            if not zoneXP[zoneName] then zoneXP[zoneName] = {xp = 0} end
+            if not zoneXP[zoneName] then
+                zoneXP[zoneName] = {xp = 0, name = zoneName}
+            end
 
             for _, questXP in pairs(questData) do
                 lReport.questXP = lReport.questXP + questXP
@@ -412,7 +414,9 @@ function addon.tracker:CompileData()
         end
 
         for zoneName, mobData in pairs(data.mobs) do
-            if not zoneXP[zoneName] then zoneXP[zoneName] = {xp = 0} end
+            if not zoneXP[zoneName] then
+                zoneXP[zoneName] = {xp = 0, name = zoneName}
+            end
 
             for _, mobXP in pairs(mobData) do
                 lReport.mobXP = lReport.mobXP + mobXP
@@ -421,13 +425,11 @@ function addon.tracker:CompileData()
             end
         end
 
-        -- Flip zoneXP to easier sort
-        -- Sort highest to the top
-        -- TODO indices collision/overwrite if multiple zones have identical experience
-        -- TODO sorting still not right
-        for n, z in pairs(zoneXP) do
-            lReport.zoneXP[z.xp] = {xp = z.xp, name = n}
-        end
+        -- Turn dictionary into array
+        for _, z in pairs(zoneXP) do tinsert(lReport.zoneXP, z) end
+
+        -- Sort lReport.zoneXP highest to the top
+        table.sort(lReport.zoneXP, function(a, b) return a.xp > b.xp end)
 
         lReport.groupExperience = data.groupExperience
 
