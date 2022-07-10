@@ -223,7 +223,7 @@ function addon.tracker:CreateGui()
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
     trackerUi:SetTitle("RestedXP Leveling Report")
     trackerUi:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
-    trackerUi:SetWidth(attachment:GetWidth() * 0.6)
+    trackerUi:SetWidth(attachment:GetWidth() * 0.7)
     trackerUi:SetHeight(attachment:GetHeight() + offset.y - 8 -
                             offset.tabsHeight * 2)
 
