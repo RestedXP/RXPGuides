@@ -14,6 +14,22 @@ addon.tracker = addon:NewModule(addonName, "AceEvent-3.0")
 addon.tracker.playerLevel = UnitLevel("player")
 addon.tracker.state = {}
 
+-- Silence our /played yellow text
+local ReportPlayedTimeToChat = false
+local hookedChatFrame_DisplayTimePlayed = ChatFrame_DisplayTimePlayed
+
+local function RequestTimePlayed()
+    ReportPlayedTimeToChat = false
+    return _G.RequestTimePlayed()
+end
+
+ChatFrame_DisplayTimePlayed = function(...)
+    if ReportPlayedTimeToChat then
+        return hookedChatFrame_DisplayTimePlayed(...)
+    end
+    ReportPlayedTimeToChat = true
+end
+
 function addon.tracker:SetupTracker()
     local trackerDefaults = {profile = {levels = {}}}
 
