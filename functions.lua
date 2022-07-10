@@ -2367,7 +2367,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     end
 end
 
-function addon.isQuestAvailable(self, ...)
+function addon.functions.isQuestAvailable(self, ...)
     if type(self) == "table" and self.element then
         self.element.reverse = true
     end
