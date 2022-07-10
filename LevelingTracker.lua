@@ -580,9 +580,15 @@ function addon.tracker:UpdateReport(selectedLevel)
                       report.deaths or "Missing data")
 
     if report.timestamp and report.timestamp.started and
-        report.timestamp.finished and report.timestamp.finished > 0 then
-        local levelSeconds = report.timestamp.finished -
-                                 report.timestamp.started
+        report.timestamp.finished then
+        local levelSeconds
+
+        if report.timestamp.finished > 0 then
+            levelSeconds = report.timestamp.finished - report.timestamp.started
+        else
+            levelSeconds = difftime(time(), addon.tracker.state.login.time) +
+                               addon.tracker.state.login.timePlayedThisLevel
+        end
 
         local xpPerHour = report.totalXP / (levelSeconds / 60 / 60)
 
