@@ -523,7 +523,7 @@ function addon.tracker:UpdateReport(selectedLevel)
                 addon.tracker.reportData[selectedLevel - 1].timestamp
                     .dateFinished or "Missing data")
         else
-            trackerUi.reachedContainer.data:SetText("In-progress")
+            trackerUi.reachedContainer.data:SetText("Missing data")
         end
     else
         trackerUi.reachedContainer.label:SetText("Reached Level " ..
