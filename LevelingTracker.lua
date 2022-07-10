@@ -427,8 +427,6 @@ function addon.tracker:CompileData()
 
         lReport.deaths = data.deaths
 
-        -- TODO build xp/hour
-
         if data.timestamp.dateFinished then
             lReport.timestamp.dateFinished =
                 fmt("%s %d, %d at %d:%d %s Server",
@@ -537,12 +535,22 @@ function addon.tracker:UpdateReport(selectedLevel)
 
     trackerUi.zonesContainer.data:SetText(zonesBlock)
 
-    trackerUi.scrollContainer:DoLayout()
-
     local extrasBlock = ""
     extrasBlock = fmt("%s* %s: %s\n", extrasBlock, "Deaths",
                       report.deaths or "Missing data")
 
+    if report.timestamp and report.timestamp.started and
+        report.timestamp.finished and report.timestamp.finished > 0 then
+        local levelSeconds = report.timestamp.finished -
+                                 report.timestamp.started
+
+        local xpPerHour = report.totalXP / (levelSeconds / 60 / 60)
+
+        extrasBlock = fmt("%s* %s: %d\n", extrasBlock, "Experience/hour",
+                          xpPerHour or "Missing data")
+    end
+
     trackerUi.extrasContainer.data:SetText(extrasBlock)
 
+    trackerUi.scrollContainer:DoLayout()
 end
