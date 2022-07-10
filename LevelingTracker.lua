@@ -545,13 +545,14 @@ function addon.tracker:UpdateReport(selectedLevel)
 
     local teamworkRatio = report.groupExperience /
                               (report.soloExperience + report.groupExperience)
-
     local soloPercentage = 100 * teamworkRatio
 
-    trackerUi.teamworkContainer.data['solo']:SetText(fmt("Solo: %.1f%%",
-                                                         soloPercentage))
-
-    if soloPercentage == 0 then -- If numerator is 0, flip 100%
+    if smatch(tostring(teamworkRatio), "nan") then -- If division error
+        trackerUi.teamworkContainer.data['solo']:SetText(
+            fmt("* Solo: %.1f%%", 0))
+        trackerUi.teamworkContainer.data['group']:SetText(
+            fmt("* Group: %.1f%%", 0))
+    elseif soloPercentage == 0 then -- If numerator is 0, flip 100%
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %.1f%%", 100 - soloPercentage))
         trackerUi.teamworkContainer.data['group']:SetText(
@@ -567,7 +568,13 @@ function addon.tracker:UpdateReport(selectedLevel)
 
     local questsPercentage = 100 * sourceRatio
 
-    if questsPercentage == 0 then -- If numerator is 0, flip 100%
+    if smatch(tostring(sourceRatio), "nan") then -- If division error
+        trackerUi.sourcesContainer.data['quests']:SetText(fmt(
+                                                              "* Quests: %.1f%%",
+                                                              0))
+        trackerUi.sourcesContainer.data['mobs']:SetText(
+            fmt("* Killing: %.1f%%", 0))
+    elseif questsPercentage == 0 then -- If numerator is 0, flip 100%
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
                                                               "* Quests: %.1f%%",
                                                               100 -
