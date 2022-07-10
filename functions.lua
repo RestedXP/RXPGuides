@@ -41,6 +41,7 @@ events.abandon = events.complete
 events.isQuestComplete = events.complete
 events.isOnQuest = events.complete
 events.isQuestTurnedIn = events.complete
+events.isQuestAvailable = events.isQuestTurnedIn
 events.cast = events.hs
 events.blastedLands = events.collect
 events.daily = events.accept
@@ -2351,16 +2352,26 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
         element.textOnly = true
         return element
     end
-    local ids = self.element.questIds
+    local element = self.element
+    local step = element.step
+    local ids = element.questIds
     local questTurnedIn = false
+
     for _, id in pairs(ids) do
-        if IsQuestTurnedIn(id) then questTurnedIn = true end
+        questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
     end
 
-    if self.element.step.active and not questTurnedIn then
-        self.element.step.completed = true
+    if step.active and (not questTurnedIn == not element.reverse) then
+        step.completed = true
         addon.updateSteps = true
     end
+end
+
+function addon.isQuestAvailable(self, ...)
+    if type(self) == "table" and self.element then
+        self.element.reverse = true
+    end
+    return addon.functions.isQuestTurnedIn(self, ...)
 end
 
 function addon.functions.hideifcomplete(self)
