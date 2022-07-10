@@ -11,8 +11,8 @@ local AceGUI = LibStub("AceGUI-3.0")
 
 addon.tracker = addon:NewModule(addonName, "AceEvent-3.0")
 
-addon.tracker.waitingForTimePlayed = false
 addon.tracker.playerLevel = UnitLevel("player")
+addon.tracker.state = {}
 
 function addon.tracker:SetupTracker()
     local trackerDefaults = {profile = {levels = {}}}
@@ -25,6 +25,7 @@ function addon.tracker:SetupTracker()
     addon.tracker:RegisterEvent("PLAYER_LEVEL_UP")
     addon.tracker:RegisterEvent("QUEST_TURNED_IN")
     addon.tracker:RegisterEvent("PLAYER_DEAD")
+    addon.tracker:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     addon.tracker:UpgradeDB()
     addon.tracker:GenerateDBLevel(addon.tracker.playerLevel)
@@ -93,7 +94,7 @@ function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
     end
 end
 
-function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, _)
+function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
     local data = addon.tracker.waitingForTimePlayed
 
     if not data then return end
@@ -110,6 +111,13 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, _)
         end
 
         addon.tracker.waitingForTimePlayed = false
+    elseif data.event == 'PLAYER_ENTERING_WORLD' then
+        addon.tracker.state.login = {
+            time = time(),
+            timePlayedThisLevel = timePlayedThisLevel
+        }
+
+        addon.tracker.waitingForTimePlayed = false
     end
 end
 
@@ -121,6 +129,7 @@ function addon.tracker:PLAYER_LEVEL_UP(_, level)
         level = level,
         date = C_DateAndTime.GetCurrentCalendarTime()
     }
+
     RequestTimePlayed()
 end
 
@@ -145,6 +154,12 @@ end
 function addon.tracker:PLAYER_DEAD()
     addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths =
         addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths + 1
+end
+
+function addon.tracker:PLAYER_ENTERING_WORLD()
+    addon.tracker.waitingForTimePlayed = {event = 'PLAYER_ENTERING_WORLD'}
+
+    RequestTimePlayed()
 end
 
 function addon.tracker.BuildDropdownLevels()
@@ -249,6 +264,7 @@ function addon.tracker:CreateGui()
 
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.label)
     trackerUi.reachedContainer:AddChild(buildSpacer(spacers.element))
+    _G.RXPRC = trackerUi.reachedContainer.label
 
     trackerUi.reachedContainer.data = AceGUI:Create("Label")
     trackerUi.reachedContainer.data:SetText("In-progress")
@@ -444,24 +460,55 @@ function addon.tracker:CompileData()
 
 end
 
+local function prettyPrintTime(s)
+    local days = floor(s / 24 / 60 / 60)
+    s = mod(s, 24 * 60 * 60)
+
+    local hours = floor(s / 60 / 60)
+    s = mod(s, 60 * 60)
+
+    local minutes = floor(s / 60)
+    s = mod(s, 60)
+
+    local formattedString
+    if days > 0 then
+        formattedString = fmt("%d days %d hours %d minutes %d seconds", days,
+                              hours, minutes, s)
+    elseif hours > 0 then
+        formattedString = fmt("%d hours %d minutes %d seconds", hours, minutes,
+                              s)
+    elseif minutes > 0 then
+        formattedString = fmt("%d minutes %d seconds", minutes, s)
+    else
+        formattedString = fmt("%d seconds", s) -- Big gratz for leveling in under a minute
+    end
+
+    return formattedString
+end
+
 function addon.tracker:UpdateReport(selectedLevel)
     local trackerUi = addon.tracker.ui
 
     local report = addon.tracker.reportData[selectedLevel]
 
     if selectedLevel == addon.tracker.playerLevel then
-        trackerUi.reachedContainer.data:SetText("In-progress")
-        trackerUi.speedContainer.data:SetText("In-progress")
+        local secondsSinceLogin = difftime(time(),
+                                           addon.tracker.state.login.time)
 
         trackerUi.reachedContainer.label:SetText("Started level " ..
                                                      selectedLevel)
+
+        trackerUi.speedContainer.data:SetText(prettyPrintTime(
+                                                  secondsSinceLogin +
+                                                      addon.tracker.state.login
+                                                          .timePlayedThisLevel))
 
         if addon.tracker.reportData[selectedLevel - 1] then
             trackerUi.reachedContainer.data:SetText(
                 addon.tracker.reportData[selectedLevel - 1].timestamp
                     .dateFinished or "Missing data")
         else
-            trackerUi.reachedContainer.data:SetText("Missing data")
+            trackerUi.reachedContainer.data:SetText("In-progress")
         end
     else
         trackerUi.reachedContainer.label:SetText("Reached Level " ..
@@ -474,28 +521,7 @@ function addon.tracker:UpdateReport(selectedLevel)
             report.timestamp.finished then
             local s = report.timestamp.finished - report.timestamp.started
 
-            local days = floor(s / 24 / 60 / 60)
-            s = mod(s, 24 * 60 * 60)
-
-            local hours = floor(s / 60 / 60)
-            s = mod(s, 60 * 60)
-
-            local minutes = floor(s / 60)
-            s = mod(s, 60)
-
-            local formattedString
-            if days > 0 then
-                formattedString = fmt("%d days %d hours %d minutes %d seconds",
-                                      days, hours, minutes, s)
-            elseif hours > 0 then
-                formattedString = fmt("%d hours %d minutes %d seconds", hours,
-                                      minutes, s)
-            elseif minutes > 0 then
-                formattedString = fmt("%d minutes %d seconds", minutes, s)
-            else
-                formattedString = fmt("%d seconds", s) -- Big gratz for leveling in under a minute
-            end
-            trackerUi.speedContainer.data:SetText(formattedString)
+            trackerUi.speedContainer.data:SetText(prettyPrintTime(s))
         else
             trackerUi.speedContainer.data:SetText("Missing data")
         end
@@ -567,4 +593,5 @@ function addon.tracker:UpdateReport(selectedLevel)
     trackerUi.extrasContainer.data:SetText(extrasBlock)
 
     trackerUi.scrollContainer:DoLayout()
+
 end
