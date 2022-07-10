@@ -12,6 +12,7 @@ local AceGUI = LibStub("AceGUI-3.0")
 addon.tracker = addon:NewModule(addonName, "AceEvent-3.0")
 
 addon.tracker.playerLevel = UnitLevel("player")
+addon.tracker.maxLevel = GetMaxPlayerLevel()
 addon.tracker.state = {}
 
 -- Silence our /played yellow text
@@ -185,7 +186,11 @@ function addon.tracker.BuildDropdownLevels()
     for level, _ in pairs(addon.tracker.db.profile["levels"]) do
         if level > addon.tracker.playerLevel then break end
 
-        dropdownLevels[level] = fmt("%d to %d", level, level + 1)
+        if level == addon.tracker.maxLevel then
+            dropdownLevels[level] = fmt("%d (Max)", level)
+        else
+            dropdownLevels[level] = fmt("%d to %d", level, level + 1)
+        end
         tinsert(sortOrder, 1, level)
     end
 
@@ -510,8 +515,12 @@ function addon.tracker:UpdateReport(selectedLevel)
         local secondsSinceLogin = difftime(time(),
                                            addon.tracker.state.login.time)
 
-        trackerUi.reachedContainer.label:SetText("Started level " ..
-                                                     selectedLevel)
+        if selectedLevel == addon.tracker.maxLevel then
+            trackerUi.reachedContainer.label:SetText("Reached max level")
+        else
+            trackerUi.reachedContainer.label:SetText("Started level " ..
+                                                         selectedLevel)
+        end
 
         trackerUi.speedContainer.data:SetText(prettyPrintTime(
                                                   secondsSinceLogin +
@@ -547,7 +556,12 @@ function addon.tracker:UpdateReport(selectedLevel)
                               (report.soloExperience + report.groupExperience)
     local soloPercentage = 100 * teamworkRatio
 
-    if smatch(tostring(teamworkRatio), "nan") then -- If division error
+    if selectedLevel == addon.tracker.maxLevel then
+        trackerUi.teamworkContainer.data['solo']:SetText(
+            fmt("* Solo: %s", 'N/A'))
+        trackerUi.teamworkContainer.data['group']:SetText(fmt("* Group: %s",
+                                                              'N/A'))
+    elseif smatch(tostring(teamworkRatio), "nan") then -- If division error
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %.1f%%", 0))
         trackerUi.teamworkContainer.data['group']:SetText(
@@ -568,7 +582,12 @@ function addon.tracker:UpdateReport(selectedLevel)
 
     local questsPercentage = 100 * sourceRatio
 
-    if smatch(tostring(sourceRatio), "nan") then -- If division error
+    if selectedLevel == addon.tracker.maxLevel then
+        trackerUi.sourcesContainer.data['quests']:SetText(fmt("* Quests: %s",
+                                                              "N/A"))
+        trackerUi.sourcesContainer.data['mobs']:SetText(
+            fmt("* Killing: %s", "N/A"))
+    elseif smatch(tostring(sourceRatio), "nan") then -- If division error
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
                                                               "* Quests: %.1f%%",
                                                               0))
@@ -602,7 +621,7 @@ function addon.tracker:UpdateReport(selectedLevel)
                       report.deaths or "Missing data")
 
     if report.timestamp and report.timestamp.started and
-        report.timestamp.finished then
+        report.timestamp.finished and selectedLevel ~= addon.tracker.maxLevel then
         local levelSeconds
 
         if report.timestamp.finished > 0 then
