@@ -371,7 +371,7 @@ function addon.CreateOptionsPanel()
         slider = CreateSlider(RXPCData, "phase", 1, 6, "Content phase: %d",
                               "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",
                               slider, 0, -25, 1, "1", "6")
-    else
+    elseif addon.game == "WOTLK" then
         slider = CreateSlider(RXPCData, "xprate", 1, 1.5, "Experience rates: %.1fx",
         "Adjusts the guide routes to match increased xp rate bonuses",
         slider, 0, -25, 0.5, "1x", "1.5x")

@@ -477,7 +477,7 @@ function addon:OnInitialize()
 
     -- TODO setting
     addon.enableTracker = true
-    addon.enableTrackerReport = true
+    addon.enableTrackerReport = false
 
     addon.RXPFrame.GenerateMenuTable()
     addon.CreateOptionsPanel()

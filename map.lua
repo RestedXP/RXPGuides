@@ -26,7 +26,7 @@ af.text:SetJustifyV("CENTER")
 af.text:SetPoint("TOP", af, "BOTTOM", 0, -5)
 af.orientation = 0
 af.distance = 0
-af.lowerbound = math.pi / 32 -- angle in radians
+af.lowerbound = math.pi / 64 -- angle in radians
 af.upperbound = 2 * math.pi - af.lowerbound
 
 af:SetPoint("TOP")

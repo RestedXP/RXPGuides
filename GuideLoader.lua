@@ -678,8 +678,6 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
     return guide
 end
 
--- Workaround global namespace pollution and external guide files
--- Also workaround private repo name difference
 if not _G.RXPGuides then _G.RXPGuides = {} end
 
 if not _G.RXPGuides.RegisterGuide then
