@@ -1157,6 +1157,7 @@ function addon:LoadGuide(guide, OnLoad)
     addon.SetStep(RXPCData.currentStep)
     BottomFrame.hiddenFrames = 0
     BottomFrame.UpdateFrame()
+    addon.tickTimer = 0
 end
 
 function addon.ReloadGuide()

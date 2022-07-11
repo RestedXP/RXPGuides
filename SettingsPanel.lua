@@ -376,7 +376,7 @@ function addon.CreateOptionsPanel()
         "Adjusts the guide routes to match increased xp rate bonuses",
         slider, 0, -25, 0.5, "1x", "1.5x")
     end
-
+--[[
     if addon.farmGuides > 0 then
         local GApanel = CreateFrame("Frame", "RXPGAOptions")
         GApanel.name = "Gold Assistant"
@@ -398,7 +398,7 @@ function addon.CreateOptionsPanel()
                                     "/Textures/rxp_logo-64")
         GApanel.icon:SetPoint("TOPRIGHT", -5, -5)
 
-    end
+    end]]
 
     local importOptionsTable = {
         type = "group",
@@ -574,7 +574,7 @@ function addon.settings.functions.setProfileOption(info, value)
     addon.db.profile[key] = value
 end
 
-function addon.settings.functions.ImportBoxValidate(text)
+function addon.settings.functions.ImportBoxValidate()
 
     local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,
                                                            addon.RXPFrame)

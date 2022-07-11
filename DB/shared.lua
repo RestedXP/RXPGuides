@@ -1,4 +1,4 @@
-local _, addon = ...
+local addonName, addon = ...
 
 addon.skipPreReq = {
     [9573] = 1,
@@ -290,9 +290,10 @@ function addon.GetBestQuests(refreshQuestDB,output)
             local qname = addon.GetQuestName(id)
             requestFromServer = qname and requestFromServer
             local xp = v.xp or 0
-            outputString = string.format("%s\n%d:%dxp %s (%d)",output, k, xp,
+            outputString = string.format("%s\n%d: %dxp %s (%d)",outputString, k, xp,
                                              qname or "", id)
         end
+        outputString = outputString:gsub("^\n","")
         if bit.band(output,0x1) == 0x1 then
             print(outputString)
         end
@@ -300,18 +301,73 @@ function addon.GetBestQuests(refreshQuestDB,output)
     end
 end
 
+
+local CreatePanel
+local requestText = true
+local questText = ""
+local requestTimer = 0
+local SetText = function()
+    local ctime = GetTime()
+    if requestText and ctime - requestTimer > 0.2 then
+        requestTimer = ctime
+        questText,requestText = addon.GetBestQuests(false,2)
+    end
+    return questText
+end
+
+local function OnClick(self)
+    if not addon.settings.gui.quest then
+        CreatePanel()
+    end
+    _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.quest)
+    _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.quest)
+end
+
 function addon.functions.show25quests(self,text,flags)
     if type(self) == "string" then
-        return {textOnly = true,rawtext = text or "", text = text, flags = tonumber(flags) or 0, event = "QUEST_LOG_UPDATE"}
+        return { text = text, event = "OnUpdate", hideTooltip = true, tooltip = "Click to view the 25 best quests", icon = addon.icons.link, textOnly = true}
     end
-
-    local element = self.element
-    text,element.requestFromServer = addon.GetBestQuests(false,2)
-
-    if text ~= element.text then
-        element.text = text
-        addon.UpdateStepText(element)
+    if self and self.highlight and not self.highlight:IsShown() then
+        self.highlight:Show()
+        self:SetScript("OnMouseDown", OnClick)
     end
+    SetText()
+
+end
+
+
+function CreatePanel()
+
+    local questDataTable = {
+        type = "group",
+        name = "RestedXP Quest Data",
+        args = {
+            importBox = {
+                order = 10,
+                type = 'input',
+                name = 'List of 25 best quests',
+                width = "full",
+                multiline = 31,
+                confirmText = "Refresh",
+                -- usage = "Usage string",
+                get = SetText,
+                set = SetText,
+                --validate = function() return true,SetText() end,
+            },
+            refresh = {
+                order = 13,
+                name = "Refresh",
+                type = 'execute',
+                func = function() _G.InterfaceOptionsFrame_OpenToCategory(RXP.settings.gui.quest) end,
+            }
+        }
+
+    }
+
+    LibStub("AceConfig-3.0"):RegisterOptionsTable("RXP Guides/Quest Data", questDataTable)
+
+    addon.settings.gui.quest = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                                    "RXP Guides/Quest Data", "Quest Data", "RXP Guides")
 
 end
 
