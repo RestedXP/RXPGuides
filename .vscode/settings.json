@@ -5,13 +5,14 @@
     "Lua.workspace.ignoreDir": [
         ".vscode",
         "libs",
-        "HereBeDragons"
+        "Scripts"
     ],
-    "Lua.diagnostics.severity": {
-        "undefined-global": "Hint",
-        "lowercase-global": "Hint"
-    },
     "[lua]": {
         "editor.defaultFormatter": "Koihik.vscode-lua-format"
     },
+    "Lua.diagnostics.disable": [
+        "undefined-field",
+        "redundant-parameter",
+        "missing-parameter"
+    ],
 }

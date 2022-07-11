@@ -1,17 +1,25 @@
 ## Interface: 20504
+## Interface-Classic: 11403
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
 ## Version: @project-version@
 ## OptionalDeps: Questie, unitscan
 ## SavedVariables: RXPData, RXPDB
-## SavedVariablesPerCharacter: RXPCData
+## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData
 
 libs\HereBeDragons\LibStub\LibStub.lua
 libs\HereBeDragons\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\AceEvent-3.0\AceEvent-3.0.xml
 libs\AceDB-3.0\AceDB-3.0.lua
+libs\AceAddon-3.0\AceAddon-3.0.xml
+libs\AceGUI-3.0\AceGUI-3.0.xml
+libs\AceConfig-3.0\AceConfig-3.0.xml
 libs\HereBeDragons\HereBeDragons-2.0.lua
 libs\HereBeDragons\HereBeDragons-Pins-2.0.lua
+libs\plc\base64.lua
+libs\LibDeflate\lib.xml
+libs\LibCandyBar-3.0\lib.xml
 
 RXPGuides.lua
 GuideWindow.lua
@@ -19,11 +27,13 @@ SettingsPanel.lua
 HSBatching.lua
 QuestLog.lua
 ActiveItemFrame.lua
+LevelingTracker.lua
+Timers.lua
 
-data.lua
+DB/tbc.xml
+
 map.lua
 functions.lua
 GuideLoader.lua
-Bindings.xml
 
 Guides/GuideList.xml

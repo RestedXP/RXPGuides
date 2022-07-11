@@ -26,6 +26,7 @@
     <Script file="Guides/Horde-4.lua"/>
     <Script file="Guides/Horde-5.lua"/>
     
+    <Script file="Guides/Import.lua"/>  
     <Script file="Guides/farmguides.lua"/>
     <Script file="Guides/Mining.lua"/>
     <Script file="Guides/Herbalism.lua"/>

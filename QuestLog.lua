@@ -1,9 +1,11 @@
-local addonName = ...
+local addonName, addon = ...
 
-function RXP_.UpdateQuestButton(index)
-    local button = RXP_.questLogButton
-    local anchor = QuestLogExDetailScrollChildFrame or
-                       QuestLogDetailScrollChildFrame
+local _G = _G
+
+function addon.UpdateQuestButton(index)
+    local button = addon.questLogButton
+    local anchor = _G.QuestLogExDetailScrollChildFrame or
+                       _G.QuestLogDetailScrollChildFrame
     if not anchor or anchor:IsForbidden() then return end
     if not button then
         button = CreateFrame("Button", "$parentRXP", anchor)
@@ -12,72 +14,79 @@ function RXP_.UpdateQuestButton(index)
         button:SetPoint("TOPRIGHT", anchor, "TOPRIGHT", 0, 0)
         button:SetNormalTexture("Interface/AddOns/" .. addonName ..
                                     "/Textures/rxp_logo-64")
-        RXP_.questLogButton = button
+        addon.questLogButton = button
 
         local function tpOnEnter(self)
-            if self:IsForbidden() or GameTooltip:IsForbidden() then
+            if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
                 return
             end
-            GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -10)
-            GameTooltip:ClearLines()
-            GameTooltip:AddLine(self.tooltip)
-            GameTooltip:Show()
+            _G.GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -10)
+            _G.GameTooltip:ClearLines()
+            _G.GameTooltip:AddLine(self.tooltip)
+            _G.GameTooltip:Show()
         end
         local function tpOnLeave(self)
-            if self:IsForbidden() or GameTooltip:IsForbidden() then
+            if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
                 return
             end
-            GameTooltip:Hide()
+            _G.GameTooltip:Hide()
         end
         button:SetScript("OnEnter", tpOnEnter)
         button:SetScript("OnLeave", tpOnLeave)
 
     end
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete,
-          frequency, questID = GetQuestLogTitle(index);
+          frequency, questID = _G.GetQuestLogTitle(index);
     local showButton
     local function GetGuideList(list)
-        if RXPData and RXPCData.hardcore then
-            list = list:gsub("\n#.*", "")
-        else
-            list = list:gsub("\n!.*", "")
-        end
-        if RXPCData and RXPCData.SoM then
-            list = list:gsub("\n[!#]?%-.*", "")
-        else
-            list = list:gsub("\n[!#]?%+.*", "")
-        end
+        --local guides = {}
+        local output = ""
+        local groups = {}
+        local guides = {}
+        for _,entry in pairs(list) do
+            if addon.IsStepShown(entry.step) then
+                if not guides[entry.group] then
+                    guides[entry.group] = {}
+                    table.insert(groups,entry.group)
+                end
+                guides[entry.group][entry.name] = true
 
-        list = list:gsub("(\n?)([#!%-%+]*)%[?(%S*)%]? (.*)",
-                         function(newline, prefix, phase, suffix)
-            if phase ~= "" and not RXP_.PhaseCheck(phase) then
-                return ""
             end
-            return newline .. suffix
-        end)
-        list = list:gsub("\n\n", "\n")
-        return list
+        end
+        table.sort(groups)
+        for _,group in ipairs(groups) do
+            local guideList = {}
+            for guide in pairs(guides[group]) do
+                table.insert(guideList,guide)
+            end
+            table.sort(guideList)
+            output = output .. "\n   " .. group .. ":"
+            for _,guide in ipairs(guideList) do
+                output = output .. "\n     " .. guide
+            end
+        end
+        return output
     end
 
     if questID then
         local tooltip = ""
         local separator = ""
-        if RXP_.pickUpList[questID] then
-            local pickUpList = GetGuideList(RXP_.pickUpList[questID])
+        if addon.pickUpList[questID] then
+            local pickUpList = GetGuideList(addon.pickUpList[questID])
             if pickUpList ~= "" then
-                tooltip = format("%s%s%sQuest is being picked up at:|r%s",
-                                 tooltip, RXP_.icons.accept,
-                                 RXP_.colors.tooltip, pickUpList)
+                tooltip = format("%s%s%sQuest is being picked up at|r%s",
+                                 tooltip, addon.icons.accept,
+                                 addon.colors.tooltip, pickUpList)
                 showButton = true
                 separator = "\n\n"
             end
         end
-        if RXP_.turnInList[questID] then
-            local turnInList = GetGuideList(RXP_.turnInList[questID])
+        if addon.turnInList[questID] then
+            local turnInList = GetGuideList(addon.turnInList[questID])
             if turnInList ~= "" then
-                tooltip = format("%s%s%s%sQuest is being turned in at:|r%s",
-                                 tooltip, separator, RXP_.icons.turnin,
-                                 RXP_.colors.tooltip, turnInList)
+                tooltip = format("%s%s%s%sQuest is being turned in at|r%s",
+                                 tooltip, separator, addon.icons.turnin,
+                                 addon.colors.tooltip, turnInList)
                 showButton = true
             end
         end
@@ -91,26 +100,26 @@ function RXP_.UpdateQuestButton(index)
     end
 end
 
-if QuestLog_SetSelection then
-    hooksecurefunc("QuestLog_SetSelection", RXP_.UpdateQuestButton)
+if _G.QuestLog_SetSelection then
+    hooksecurefunc("QuestLog_SetSelection", addon.UpdateQuestButton)
 end
 
 -- Debug function, helps finding out quest log problems on a given guide
-function RXP_.GetQuestLog(QL)
+function addon.GetQuestLog(QL)
 
-    local guide = RXP_.currentGuide
+    local guide = addon.currentGuide
     local name = RXPCData.currentGuideName
-    local group = RXPGuides[RXPCData.currentGuideGroup]
+    local group = addon.RXPG[RXPCData.currentGuideGroup]
     QL = QL or {}
     local qError
     local eStep
     local maxQuests
-    if RXP_.version == "CLASSIC" then
+    if addon.game == "CLASSIC" then
         maxQuests = 20
     else
         maxQuests = 25
     end
-    RXP_.next = group.next
+    addon.next = group.next
 
     if (RXPCData.SoM and guide.era or not RXPCData.SoM and guide.som or
         RXPCData.SoM and RXPCData.phase > 2 and guide["era/som"]) or not guide then
@@ -141,11 +150,11 @@ function RXP_.GetQuestLog(QL)
     print("QuestLog length: " .. n)
 
     if qError then
-        print(format("Error at step %d: Quest log length greater than 20",
+        print(format("Error at step %d: Quest log length greater than " .. maxQuests,
                      eStep.index))
     else
         if group.next() then
-            return RXP_.GetQuestLog(QL)
+            return addon.GetQuestLog(QL)
         else
             print(format("Error at step %d", eStep.index))
         end

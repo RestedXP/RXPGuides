@@ -1,13 +1,18 @@
+local _, addon = ...
+
+local _G = _G
+
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
+local GameTooltip = _G.GameTooltip
 
 local function GetActiveItemList(ref)
     local itemList = {}
     --[[
     if not (ref and ref.activeItems) then
-        ref = RXP_
+        ref = addon
     end]]
-    ref = RXP_
-    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+    ref = addon
+    for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
             -- local spell = GetItemSpell(id)
@@ -26,7 +31,7 @@ local function GetActiveItemList(ref)
     return itemList
 end
 
-function RXP_.CreateActiveItemFrame(self, anchor, enableText)
+function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not self or self.activeItemFrame then return end
 
@@ -47,8 +52,8 @@ function RXP_.CreateActiveItemFrame(self, anchor, enableText)
     end
 
     f:ClearBackdrop()
-    f:SetBackdrop(RXPFrame.backdropEdge)
-    f:SetBackdropColor(unpack(RXP_.colors.background))
+    f:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f:SetBackdropColor(unpack(addon.colors.background))
     function f.onMouseDown() f:StartMoving() end
     function f.onMouseUp() f:StopMovingOrSizing() end
     f:SetScript("OnMouseDown", f.StartMoving)
@@ -56,7 +61,7 @@ function RXP_.CreateActiveItemFrame(self, anchor, enableText)
     f.parent = self
     f.buttonList = {}
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
-    f:SetScript("OnEvent", RXP_.UpdateItemFrame)
+    f:SetScript("OnEvent", addon.UpdateItemFrame)
 
     if not f.title then
         f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplate)
@@ -67,7 +72,7 @@ function RXP_.CreateActiveItemFrame(self, anchor, enableText)
         f.title.text:SetJustifyH("CENTER")
         f.title.text:SetJustifyV("CENTER")
         f.title.text:SetTextColor(1, 1, 1)
-        f.title.text:SetFont(RXP_.font, 9)
+        f.title.text:SetFont(addon.font, 9)
         f.title.text:SetText("Quest Items")
         f.title:EnableMouse(true)
         f.title:SetScript("OnMouseDown", f.onMouseDown)
@@ -77,7 +82,7 @@ function RXP_.CreateActiveItemFrame(self, anchor, enableText)
     f:SetHeight(40);
 end
 
-RXP_:CreateActiveItemFrame()
+addon:CreateActiveItemFrame()
 
 local fOnEnter = function(self)
     -- print(self.itemId)
@@ -95,11 +100,11 @@ local fOnLeave = function(self)
     end
 end
 
-function RXP_.UpdateItemCooldown()
-    if not (RXP_.activeItemFrame and RXP_.activeItemFrame:IsShown()) then
+function addon.UpdateItemCooldown()
+    if not (addon.activeItemFrame and addon.activeItemFrame:IsShown()) then
         return
     end
-    local itemFrame = RXP_.activeItemFrame
+    local itemFrame = addon.activeItemFrame
     local buttonList = itemFrame.buttonList
     local function FormatCooldown(startTime, duration, enable)
         local remaining
@@ -131,10 +136,10 @@ function RXP_.UpdateItemCooldown()
     end
 end
 
-function RXP_.UpdateItemFrame(itemFrame)
+function addon.UpdateItemFrame(itemFrame)
     if not itemFrame then
-        if RXP_.activeItemFrame then
-            itemFrame = RXP_.activeItemFrame
+        if addon.activeItemFrame then
+            itemFrame = addon.activeItemFrame
         else
             return
         end
@@ -165,12 +170,12 @@ function RXP_.UpdateItemFrame(itemFrame)
     if itemFrame.hardcore ~= RXPCData.hardcore or not itemFrame.hardcore then
         itemFrame.hardcore = RXPCData.hardcore
         itemFrame:ClearBackdrop()
-        itemFrame:SetBackdrop(RXPFrame.backdropEdge)
-        local r, g, b = unpack(RXP_.colors.background)
+        itemFrame:SetBackdrop(addon.RXPFrame.backdropEdge)
+        local r, g, b = unpack(addon.colors.background)
         itemFrame:SetBackdropColor(r, g, b, 0.4)
         itemFrame.title:ClearBackdrop()
-        itemFrame.title:SetBackdrop(RXPFrame.backdropEdge)
-        itemFrame.title:SetBackdropColor(unpack(RXP_.colors.background))
+        itemFrame.title:SetBackdrop(addon.RXPFrame.backdropEdge)
+        itemFrame.title:SetBackdropColor(unpack(addon.colors.background))
     end
     itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 17)
     local i = 0
@@ -179,7 +184,7 @@ function RXP_.UpdateItemFrame(itemFrame)
         local btn = buttonList[i]
 
         if not btn then
-            btn = CreateFrame("CheckButton", "$parentButton"..i, itemFrame,
+            btn = CreateFrame("CheckButton", "$parentButton" .. i, itemFrame,
                               "SecureActionButtonTemplate")
             btn:SetAttribute("type", "item")
             btn:SetSize(25, 25)
@@ -203,7 +208,7 @@ function RXP_.UpdateItemFrame(itemFrame)
             btn.text:SetJustifyH("CENTER")
             btn.text:SetJustifyV("CENTER")
             btn.text:SetTextColor(1, 1, 1)
-            btn.text:SetFont(RXP_.font, 15, "OUTLINE")
+            btn.text:SetFont(addon.font, 15, "OUTLINE")
             btn.text:SetText("")
 
             btn:SetScript("OnEnter", fOnEnter)

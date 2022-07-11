@@ -1,41 +1,62 @@
-local addonName = ...
+local addonName, addon = ...
+
+local _G = _G
+
+local AceConfig = LibStub("AceConfig-3.0")
+local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 
 SLASH_RXPG1 = "/rxp"
 SLASH_RXPG2 = "/rxpg"
 SLASH_RXPG3 = "/rxpguides"
+local importString = ""
+local previousFrame = 0
+local buffer = {}
+local importFrame
+local ProcessBuffer
 
-SlashCmdList["RXPG"] = function(msg)
-    InterfaceOptionsFrame_OpenToCategory(RXPOptions)
-    InterfaceOptionsFrame_OpenToCategory(RXPOptions)
+_G.SlashCmdList["RXPG"] = function(msg)
+    _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+    _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
 end
 
-function RXP_.CreateOptionsPanel()
-    local panel = CreateFrame("Frame", "RXPOptions")
-    panel.name = "RXP Guides"
-    InterfaceOptions_AddCategory(panel)
+if not addon.settings then
+    addon.settings = {gui = {}, functions = {}}
+else
+    if not addon.settings.gui then addon.settings.gui = {} end
+    if not addon.settings.functions then addon.settings.functions = {} end
+end
 
-    panel.title = panel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-    panel.title:SetPoint("TOPLEFT", 16, -16)
-    panel.title:SetText("RestedXP Guides")
+addon.settings.gui.selectedDeleteGuide = ""
 
-    panel.subtext = panel:CreateFontString(nil, "ARTWORK",
-                                           "GameFontHighlightSmall")
-    panel.subtext:SetPoint("TOPLEFT", panel.title, "BOTTOMLEFT", 0, -8)
-    panel.subtext:SetText(versionText)
+function addon.CreateOptionsPanel()
+    addon.RXPOptions = CreateFrame("Frame", "RXPOptions")
+    addon.RXPOptions.name = "RXP Guides"
+    _G.InterfaceOptions_AddCategory(addon.RXPOptions)
 
-    panel.icon = panel:CreateTexture()
-    panel.icon:SetTexture("Interface/AddOns/" .. addonName ..
-                              "/Textures/rxp_logo-64")
-    panel.icon:SetPoint("TOPRIGHT", -5, -5)
+    addon.RXPOptions.title = addon.RXPOptions:CreateFontString(nil, "ARTWORK",
+                                                               "GameFontNormalLarge")
+    addon.RXPOptions.title:SetPoint("TOPLEFT", 16, -16)
+    addon.RXPOptions.title:SetText("RestedXP Guides")
+
+    addon.RXPOptions.subtext = addon.RXPOptions:CreateFontString(nil, "ARTWORK",
+                                                                 "GameFontHighlightSmall")
+    addon.RXPOptions.subtext:SetPoint("TOPLEFT", addon.RXPOptions.title,
+                                      "BOTTOMLEFT", 0, -8)
+    addon.RXPOptions.subtext:SetText(addon.versionText)
+
+    addon.RXPOptions.icon = addon.RXPOptions:CreateTexture()
+    addon.RXPOptions.icon:SetTexture("Interface/AddOns/" .. addonName ..
+                                         "/Textures/rxp_logo-64")
+    addon.RXPOptions.icon:SetPoint("TOPRIGHT", -5, -5)
 
     -- panel.icon:SetSize(64,64)
     local index = 0
     local options = {}
-    local button = CreateFrame("CheckButton", "$parentQuestTurnIn", panel,
-                               "ChatConfigCheckButtonTemplate");
+    local button = CreateFrame("CheckButton", "$parentQuestTurnIn",
+                               addon.RXPOptions, "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     index = index + 1
-    button:SetPoint("TOPLEFT", panel.title, "BOTTOMLEFT", 0, -25)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     button:SetScript("PostClick", function(self)
         RXPData.disableQuestAutomation = not self:GetChecked()
     end)
@@ -44,7 +65,7 @@ function RXP_.CreateOptionsPanel()
     button.tooltip =
         "Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"
 
-    button = CreateFrame("CheckButton", "$parentTrainer", panel,
+    button = CreateFrame("CheckButton", "$parentTrainer", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
@@ -57,7 +78,7 @@ function RXP_.CreateOptionsPanel()
     button.tooltip =
         "Allows the guide to buy useful leveling spells automatically"
 
-    button = CreateFrame("CheckButton", "$parentFP", panel,
+    button = CreateFrame("CheckButton", "$parentFP", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
@@ -70,48 +91,48 @@ function RXP_.CreateOptionsPanel()
     button.tooltip =
         "Allows the guide to automatically fly you to your destination"
 
-    button = CreateFrame("CheckButton", "$parentArrow", panel,
+    button = CreateFrame("CheckButton", "$parentArrow", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
     button:SetScript("PostClick", function(self)
         local checkbox = self:GetChecked()
-        RXP_.arrowFrame:SetShown(RXP_.currentGuide and checkbox)
+        addon.arrowFrame:SetShown(addon.currentGuide and checkbox)
         RXPData.disableArrow = not checkbox
     end)
     button:SetChecked(not RXPData.disableArrow)
     button.Text:SetText("Enable waypoint arrow")
     button.tooltip = "Show/Hide the waypoint arrow"
 
-    button = CreateFrame("CheckButton", "$parentMiniMapPin", panel,
+    button = CreateFrame("CheckButton", "$parentMiniMapPin", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideMiniMapPins = self:GetChecked()
-        RXP_.UpdateMap()
+        addon.UpdateMap()
     end)
     button:SetChecked(RXPData.hideMiniMapPins)
     button.Text:SetText("Hide Mini Map Pins")
     -- button.tooltip = ""
 
-    button = CreateFrame("CheckButton", "$parentUnusedGuides", panel,
+    button = CreateFrame("CheckButton", "$parentUnusedGuides", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideUnusedGuides = not self:GetChecked()
-        RXPFrame.GenerateMenuTable()
+        addon.RXPFrame.GenerateMenuTable()
     end)
     button:SetChecked(not RXPData.hideUnusedGuides)
     button.Text:SetText("Show unused guides")
     button.tooltip =
         "Displays guides that are not applicable for your class/race such as starting zones for other races"
 
-    button = CreateFrame("CheckButton", "$parentAutoLoad", panel,
+    button = CreateFrame("CheckButton", "$parentAutoLoad", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
@@ -124,7 +145,7 @@ function RXP_.CreateOptionsPanel()
     button.tooltip =
         "Automatically picks a suitable guide whenever you log in for the first time on a character"
     --
-    button = CreateFrame("CheckButton", "$parentHideWindow", panel,
+    button = CreateFrame("CheckButton", "$parentHideWindow", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
@@ -132,13 +153,13 @@ function RXP_.CreateOptionsPanel()
     button:SetScript("PostClick", function(self)
         local hide = self:GetChecked()
         RXPCData.hideWindow = hide
-        RXPFrame:SetShown(not hide)
+        addon.RXPFrame:SetShown(not hide)
     end)
     button:SetChecked(RXPCData.hideWindow)
     button.Text:SetText("Hide Window")
     button.tooltip = "Hides the main window"
 
-    button = CreateFrame("CheckButton", "$parentLock", panel,
+    button = CreateFrame("CheckButton", "$parentLock", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
@@ -150,57 +171,59 @@ function RXP_.CreateOptionsPanel()
     button.tooltip =
         "Disable dragging/resizing, use alt+left click on the main window to resize it"
     --
-    button = CreateFrame("CheckButton", "$parentShowUpcoming", panel,
+    button = CreateFrame("CheckButton", "$parentShowUpcoming", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
     button:SetScript("PostClick", function(self)
-        if RXP_.currentGuide and RXP_.currentGuide.hidewindow then return end
+        if addon.currentGuide and addon.currentGuide.hidewindow then
+            return
+        end
         local show = self:GetChecked()
         if show then
-            RXPFrame:SetHeight(RXP_.height)
-            RXPCData.frameHeight = RXP_.height
+            addon.RXPFrame:SetHeight(addon.height)
+            RXPCData.frameHeight = addon.height
         else
-            RXPFrame:SetHeight(10)
+            addon.RXPFrame:SetHeight(10)
             RXPCData.frameHeight = 10
         end
-        RXP_.updateBottomFrame = true
+        addon.updateBottomFrame = true
     end)
-    button:SetChecked(RXPFrame.BottomFrame:GetHeight() >= 35)
+    button:SetChecked(addon.RXPFrame.BottomFrame:GetHeight() >= 35)
     button.Text:SetText("Show step list")
     button.tooltip =
         "Show/Hide the bottom frame listing all the steps of the current guide"
     --
-    button = CreateFrame("CheckButton", "$parentHideCompleted", panel,
-                         "ChatConfigCheckButtonTemplate");
+    button = CreateFrame("CheckButton", "$parentHideCompleted",
+                         addon.RXPOptions, "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideCompletedSteps = self:GetChecked()
-        RXPFrame.SF.ScrollBar:SetValue(0)
+        addon.RXPFrame.SF.ScrollBar:SetValue(0)
     end)
     button:SetChecked(RXPData.hideCompletedSteps)
     button.Text:SetText("Hide completed steps")
     button.tooltip =
         "Only shows current and future steps on the step list window"
     --
-    button = CreateFrame("CheckButton", "$parentMapCircle", panel,
+    button = CreateFrame("CheckButton", "$parentMapCircle", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
     button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.mapCircle = self:GetChecked()
-        RXP_.updateMap = true
+        addon.updateMap = true
     end)
     button:SetChecked(RXPData.mapCircle)
     button.Text:SetText("Highlight active map pins")
     button.tooltip = "Show a targeting circle around active map pins"
     --[[
     if QuestieLoader then
-        button = CreateFrame("CheckButton", "$parentSkipPreReqs", panel, "ChatConfigCheckButtonTemplate");
+        button = CreateFrame("CheckButton", "$parentSkipPreReqs", addon.RXPOptions, "ChatConfigCheckButtonTemplate");
         table.insert(options,button)
         button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
         index = index + 1
@@ -212,8 +235,8 @@ function RXP_.CreateOptionsPanel()
         button.tooltip = "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"
     end]]
     --
-    if unitscan_targets then
-        button = CreateFrame("CheckButton", "$parentUnitscan", panel,
+    if _G.unitscan_targets then
+        button = CreateFrame("CheckButton", "$parentUnitscan", addon.RXPOptions,
                              "ChatConfigCheckButtonTemplate");
         table.insert(options, button)
         button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
@@ -227,30 +250,30 @@ function RXP_.CreateOptionsPanel()
             "Automatically adds important npcs to your unitscan list"
     end
 
-    if RXP_.version == "CLASSIC" then
-        button = CreateFrame("CheckButton", "$parentHC", panel,
+    if addon.game == "CLASSIC" then
+        button = CreateFrame("CheckButton", "$parentHC", addon.RXPOptions,
                              "ChatConfigCheckButtonTemplate");
-        RXP_.hardcoreButton = button
+        addon.hardcoreButton = button
         table.insert(options, button)
         button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
         index = index + 1
         button:SetScript("PostClick", function(self)
             RXPCData.hardcore = self:GetChecked()
-            RXP_.RenderFrame()
+            addon.RenderFrame()
         end)
         button:SetChecked(RXPCData.hardcore)
         button.Text:SetText("Hardcore mode")
         button.tooltip = "Adjust the leveling routes to the deathless ruleset"
 
-        button = CreateFrame("CheckButton", "$parentSoM", panel,
+        button = CreateFrame("CheckButton", "$parentSoM", addon.RXPOptions,
                              "ChatConfigCheckButtonTemplate");
         table.insert(options, button)
         button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
         index = index + 1
         button:SetScript("PostClick", function(self)
             RXPCData.SoM = self:GetChecked()
-            RXPFrame.GenerateMenuTable()
-            RXP_.ReloadGuide()
+            addon.RXPFrame.GenerateMenuTable()
+            addon.ReloadGuide()
         end)
         button:SetChecked(RXPCData.SoM)
         button.Text:SetText("Season of Mastery")
@@ -261,24 +284,25 @@ function RXP_.CreateOptionsPanel()
 
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
-        self.Text:SetText(format(self.defaultText, value))
-        RXPFrame:SetScale(RXPData.windowSize)
+        local updateFunc = self.updateFunc or string.format
+        self.Text:SetText(updateFunc(self.defaultText, value))
+        addon.RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
-        RXP_.arrowFrame:SetSize(32 * size, 32 * size)
-        RXP_.arrowFrame.text:SetFont(RXP_.font, RXPData.arrowText)
+        addon.arrowFrame:SetSize(32 * size, 32 * size)
+        addon.arrowFrame.text:SetFont(addon.font, RXPData.arrowText)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
-        RXP_.updateMap = true
-        if self.key == "phase" and RXP_.currentGuide then
-            RXP_.ReloadGuide()
+        addon.updateMap = true
+        if (self.key == "phase" or self.key == "xprate") and addon.currentGuide then
+            addon.ReloadGuide()
         end
-        RXPFrame.SetStepFrameAnchor()
+        addon.RXPFrame.SetStepFrameAnchor()
     end
 
     local CreateSlider = function(ref, key, smin, smax, text, tooltip, anchor,
-                                  x, y, steps, minText, maxText)
+                                  x, y, steps, minText, maxText, updateFunc)
         local slider, dvalue
 
-        slider = CreateFrame("Slider", "$parentArrowSlider", panel,
+        slider = CreateFrame("Slider", "$parentArrowSlider", addon.RXPOptions,
                              "OptionsSliderTemplate")
         slider:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", x, y)
         slider:SetOrientation('HORIZONTAL')
@@ -303,12 +327,15 @@ function RXP_.CreateOptionsPanel()
 
         slider.Low:SetText(minText or tostring(smin));
         slider.High:SetText(maxText or tostring(smax));
+
+        slider.updateFunc = updateFunc
+
         return slider
     end
     local slider
     slider = CreateSlider(RXPData, "arrowSize", 0.2, 2, "Arrow Scale: %.2f",
-                          "Scale of the Waypoint Arrow", panel.title, 315, -25,
-                          0.05)
+                          "Scale of the Waypoint Arrow", addon.RXPOptions.title,
+                          315, -25, 0.05)
     slider = CreateSlider(RXPData, "arrowText", 5, 20, "Arrow Text Size: %d",
                           "Size of the waypoint arrow text", slider, 0, -25, 1)
     slider = CreateSlider(RXPData, "windowSize", 0.2, 2, "Window Scale: %.2f",
@@ -340,17 +367,21 @@ function RXP_.CreateOptionsPanel()
                           "Adjusts the batching window tolerance, used for hearthstone batching",
                           slider, 0, -25, 1, "1", "100")
 
-    if RXP_.version == "CLASSIC" then
+    if addon.game == "CLASSIC" then
         slider = CreateSlider(RXPCData, "phase", 1, 6, "Content phase: %d",
                               "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",
                               slider, 0, -25, 1, "1", "6")
+    elseif addon.game == "WOTLK" then
+        slider = CreateSlider(RXPCData, "xprate", 1, 1.5, "Experience rates: %.1fx",
+        "Adjusts the guide routes to match increased xp rate bonuses",
+        slider, 0, -25, 0.5, "1x", "1.5x")
     end
-
-    if RXP_.farmGuides > 0 then
+--[[
+    if addon.farmGuides > 0 then
         local GApanel = CreateFrame("Frame", "RXPGAOptions")
         GApanel.name = "Gold Assistant"
         GApanel.parent = "RXP Guides"
-        InterfaceOptions_AddCategory(GApanel)
+        _G.InterfaceOptions_AddCategory(GApanel)
 
         GApanel.title = GApanel:CreateFontString(nil, "ARTWORK",
                                                  "GameFontNormalLarge")
@@ -360,13 +391,227 @@ function RXP_.CreateOptionsPanel()
         GApanel.subtext = GApanel:CreateFontString(nil, "ARTWORK",
                                                    "GameFontHighlightSmall")
         GApanel.subtext:SetPoint("TOPLEFT", GApanel.title, "BOTTOMLEFT", 0, -8)
-        GApanel.subtext:SetText(versionText)
+        GApanel.subtext:SetText(addon.versionText)
 
         GApanel.icon = GApanel:CreateTexture()
         GApanel.icon:SetTexture("Interface/AddOns/" .. addonName ..
                                     "/Textures/rxp_logo-64")
         GApanel.icon:SetPoint("TOPRIGHT", -5, -5)
 
+    end]]
+
+    local importOptionsTable = {
+        type = "group",
+        name = "RestedXP Guide Import",
+        handler = addon.settings.functions,
+        -- get = "getProfileOption",
+        -- set = "setProfileOption",
+        args = {
+            buffer = { -- Buffer hacked in right-aligned icon
+                order = 1,
+                name = "Paste encoded strings",
+                type = "description",
+                width = "full",
+                fontSize = "medium"
+            },
+            importBox = {
+                order = 10,
+                type = 'input',
+                name = 'Guides to import',
+                width = "full",
+                multiline = 5,
+                -- usage = "Usage string",
+
+                validate = function(_, val)
+                    return addon.settings.functions.ImportBoxValidate(val)
+                end
+            },
+            currentGuides = {
+                order = 11,
+                type = 'select',
+                style = 'dropdown',
+                name = "Currently loaded imported guides",
+                width = 'full',
+                values = function()
+                    return addon.settings.functions.GetImportedGuides()
+                end,
+                disabled = function()
+                    return addon.settings.gui.selectedDeleteGuide ==
+                               "mustReload" or
+                               addon.settings.gui.selectedDeleteGuide == "none" or
+                               not addon.settings.gui.selectedDeleteGuide
+                end,
+                get = function()
+                    return addon.settings.gui.selectedDeleteGuide
+                end,
+                set = function(_, value)
+                    addon.settings.gui.selectedDeleteGuide = value
+                end
+            },
+            deleteSelectedGuide = {
+                order = 12,
+                type = 'execute',
+                name = "Delete imported guide",
+                confirm = function(_, key)
+                    if not addon.settings.gui.selectedDeleteGuide or
+                        addon.settings.gui.selectedDeleteGuide == "none" then
+                        return false
+                    end
+                    return string.format("Remove %s?",
+                                         addon.settings.gui.selectedDeleteGuide)
+                end,
+                disabled = function()
+                    return addon.settings.gui.selectedDeleteGuide ==
+                               "mustReload" or
+                               addon.settings.gui.selectedDeleteGuide == "none" or
+                               not addon.settings.gui.selectedDeleteGuide
+                end,
+                func = function(_)
+                    if addon.db.profile.guides[addon.settings.gui
+                        .selectedDeleteGuide] then
+                        addon.db.profile.guides[addon.settings.gui
+                            .selectedDeleteGuide] = nil
+                    end
+
+                    addon.settings.gui.selectedDeleteGuide = "mustReload"
+                end
+            },
+            reloadGuides = {
+                order = 13,
+                name = "Reload guides and UI",
+                type = 'execute',
+                func = function() _G.ReloadUI() end,
+                disabled = function()
+                    return addon.settings.gui.selectedDeleteGuide ~=
+                               "mustReload"
+                end
+            }
+        }
+    }
+
+    AceConfig:RegisterOptionsTable("RXP Guides/Import", importOptionsTable)
+
+    addon.settings.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                                    "RXP Guides/Import", "Import", "RXP Guides")
+
+    -- Ace3 ConfigDialog doesn't support embedding icons in header
+    -- Directly references Ace3 built frame object
+    -- Hackery ahead
+
+    importFrame = addon.settings.gui.import.obj.frame
+    importFrame.icon = importFrame:CreateTexture()
+    importFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
+                                    "\\Textures\\rxp_logo-64")
+    importFrame.icon:SetPoint("TOPRIGHT", -5, -5)
+
+    local function EditBoxHook(self)
+        if importFrame:IsShown() then
+            self.isMaxBytesSet = true
+            self:SetMaxBytes(1)
+        elseif self.isMaxBytesSet then
+            self.isMaxBytesSet = false
+            self:SetMaxBytes(0)
+        end
+    end
+
+    function ProcessBuffer(self)
+        self:SetScript('OnUpdate', nil)
+        self = importFrame.textFrame
+        if #buffer > 16 then
+            importString = table.concat(buffer)
+            self:ClearHistory()
+            self:SetMaxBytes(0)
+            self:Insert(importString:sub(1, 500))
+            self:ClearFocus()
+            buffer = {}
+        else
+            -- self:ClearHistory()
+            self:SetText(" ")
+            self:SetMaxBytes(1)
+        end
+    end
+
+    local function PasteHook(self, char)
+        if not importFrame:IsShown() then return end
+
+        local time = GetTime()
+        if previousFrame ~= time then
+            previousFrame = time
+            importFrame.textFrame = self
+            importFrame:SetScript('OnUpdate', ProcessBuffer)
+        end
+
+        table.insert(buffer, char)
+    end
+
+    local isHooked = {}
+
+    importFrame:HookScript("OnShow", function(self)
+        local n = 1
+        local editBox = true
+
+        while editBox do
+            -- editBox = _G["AceGUI-3.0EditBox" .. n]
+            editBox = _G["MultiLineEditBox" .. n .. "ScrollFrame"]
+            if not isHooked[n] and editBox then
+                editBox = editBox.obj.editBox
+                isHooked[n] = true
+                editBox:HookScript("OnEditFocusGained", EditBoxHook)
+                editBox:HookScript("OnChar", PasteHook)
+            end
+            n = n + 1
+        end
+    end)
+
+end
+
+function addon.settings.functions.getProfileOption(info)
+    return addon.db.profile[info[#info]]
+end
+
+function addon.settings.functions.setProfileOption(info, value)
+    local key = info[#info]
+    addon.db.profile[key] = value
+end
+
+function addon.settings.functions.ImportBoxValidate()
+
+    local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,
+                                                           addon.RXPFrame)
+    if guidesLoaded then
+        addon.settings.gui.selectedDeleteGuide = "mustReload"
+        return true
+    else
+        importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
+        return errorMsg or "Failed to Import Guides: Invalid Import String"
+    end
+end
+
+function addon.settings.functions.GetImportedGuides()
+    local display = {empty = ""}
+    local importedGuidesFound = false
+
+    if addon.settings.gui.selectedDeleteGuide == "mustReload" then
+        return {mustReload = "Must reload UI"}
+    end
+
+    for _, guide in ipairs(addon.guides) do
+        if guide.imported or guide.cache then
+            importedGuidesFound = true
+            local group, subgroup, name = guide.key:match("^(.*)|(.*)|(.*)")
+            if subgroup ~= "" then group = group .. "/" .. subgroup end
+            display[guide.key] = string.format("%s/%s - version %s", group,
+                                               name, guide.version)
+        end
+    end
+
+    table.sort(display)
+
+    if importedGuidesFound then
+        return display
+    else
+        addon.settings.gui.selectedDeleteGuide = "none"
+        return {none = "none"}
     end
 
 end
