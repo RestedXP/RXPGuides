@@ -14,7 +14,6 @@ local strbyte = string.byte
 local bitand = bit.band
 local bitxor = bit.bxor
 local LibDeflate = LibStub("LibDeflate")
-local b64 = LibStub("LibBase64-1.0")
 
 local RXPG = addon.RXPG
 local game = strlower(addon.game)
@@ -137,16 +136,6 @@ function RXPG.AddGuide(guide)
     return true
 end
 
-addon.read = function(arg1, arg2)
-    local pass, returnValue = pcall(b64.decode, arg1, arg2)
-    if pass then
-        return returnValue
-    elseif DEBUG then
-        print(returnValue)
-    end
-    return ''
-end
-
 local function CheckDataIntegrity(str, h1, mode)
     if h1 then
         if mode == 58 then
@@ -157,7 +146,7 @@ local function CheckDataIntegrity(str, h1, mode)
             local n = addon.ReadCacheData("buffer")
             for i = 0, 255 do S[i] = n[i] end
 
-            i, j, str = 0, 0, addon:read(str)
+            i, j, str = 0, 0, addon.read(str)
 
             for k = 0, #str - 1 do
                 i = bitand(i + 1, 0xff)
@@ -171,7 +160,7 @@ local function CheckDataIntegrity(str, h1, mode)
             str = LibDeflate:DecompressZlib(table.concat(buffer))
             return str and h1 % 4294967296 == addon.A32(str), str
         elseif mode == 59 then
-            str = LibDeflate:DecompressZlib(addon:read(str))
+            str = LibDeflate:DecompressZlib(addon.read(str))
             return str and h1 % 4294967296 == addon.A32(str), str
         end
     else

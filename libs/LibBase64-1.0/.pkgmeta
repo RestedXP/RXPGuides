@@ -1,7 +1,0 @@
-package-as: LibBase64-1.0
-
-enable-nolib-creation: no
-
-ignore:
-- tests
-- .travis.yml
