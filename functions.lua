@@ -910,7 +910,7 @@ function addon.UpdateQuestCompletionData(self)
     if objectives and #objectives > 0 then
         if element.obj and element.obj <= #objectives then
             local obj = objectives[element.obj]
-            if element.objMax then
+            if element.objMax and obj.numRequired then
                 obj.numRequired = math.min(element.objMax, obj.numRequired)
                 --[[if obj.numFulfilled > obj.numRequired then
                     obj.numFulfilled = obj.numRequired
