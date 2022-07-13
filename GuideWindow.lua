@@ -984,10 +984,10 @@ local emptyGuide = {
 
 function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
-    if not guide then return end
 
-    if (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) and
-        not guide.empty then return addon:LoadGuide(emptyGuide) end
+    if not addon.IsGuideActive(guide) or not guide.empty and
+        (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA)
+         then return addon:LoadGuide(emptyGuide) end
 
     if RXPCData.frameHeight then
         RXPFrame:SetHeight(RXPCData.frameHeight)
@@ -1350,7 +1350,7 @@ function BottomFrame.SortSteps()
 end
 
 local function IsGuideActive(guide)
-    if addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) then
+    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end

@@ -168,21 +168,6 @@ local function CheckDataIntegrity(str, h1, mode)
     end
 end
 
-function addon.RegisterGuide(groupOrContent, text, defaultFor)
-    if addon.db then
-        local importedGuide, errorMsg = RXPG.ParseGuide(groupOrContent, text,
-                                                        defaultFor)
-
-        return not errorMsg and RXPG.AddGuide(importedGuide)
-    else
-        table.insert(embeddedGuides, {
-            groupOrContent = groupOrContent,
-            text = text,
-            defaultFor = defaultFor
-        })
-    end
-end
-
 function addon.CacheGuide(key, guide, enabledFor, guideVersion)
     if type(guide) == "table" then
         guide.groupOrContent = LibDeflate:CompressDeflate(guide.groupOrContent)
@@ -202,16 +187,30 @@ end
 function addon.ImportGuide(guide)
     if addon.db then -- Addon loaded already
         local importedGuide, errorMsg = RXPG.ParseGuide(guide)
-        if errorMsg or RXPG.AddGuide(importedGuide) then
-            if not importedGuide then return end
+        if not errorMsg and importedGuide and RXPG.AddGuide(importedGuide) then
             -- print(errorMsg,importedGuide.name)
             importedGuide.imported = true
             addon.CacheGuide(importedGuide.key, guide, importedGuide.enabledFor,
-                             importedGuide.version)
+                            importedGuide.version)
+            return importedGuide
         end
-        return importedGuide
     else -- Addon not loaded, add to queue
         table.insert(embeddedGuides, RXPG.BuildCacheObject(guide))
+    end
+end
+
+function addon.RegisterGuide(groupOrContent, text, defaultFor)
+    if addon.db then
+        local importedGuide, errorMsg = RXPG.ParseGuide(groupOrContent, text,
+                                                        defaultFor)
+
+        return not errorMsg and RXPG.AddGuide(importedGuide)
+    else
+        table.insert(embeddedGuides, {
+            groupOrContent = groupOrContent,
+            text = text,
+            defaultFor = defaultFor
+        })
     end
 end
 
@@ -330,13 +329,15 @@ function RXPG.ImportString(str, frame)
     if tonumber(base) < addon.version then
         return
     end
-    for hash, mode, content in string.gmatch(str, "(%-?%d+)(%D)([%w%+%/%=]+)") do
+    for hash, mode, content in str:gmatch("(%-?%d+)(%D)([%w%+%/%=]+)") do
         if DEBUG then print('g:', hash) end
         local validData, data = CheckDataIntegrity(content, tonumber(hash),
                                                    strbyte(mode))
         if validData then
-            table.insert(buffer, data)
-            addon.bufferSize = addon.bufferSize + 1
+            for v in data:gmatch("[^%z]+") do
+                table.insert(buffer, v)
+                addon.bufferSize = addon.bufferSize + 1
+            end
         else
             errorMsg = "Error parsing guides\nTotal guides loaded: %d/%s"
             break
@@ -567,8 +568,11 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             if not addon.currentGuideName then
                 error("Error parsing guide: Guide has no name")
             end
+            guide.key = guide.key or RXPG.BuildGuideKey(guide)
+            if currentStep == 0 and not(game == "tbc" and not (guide.classic or guide.wotlk)) then
+                skipGuide = addon.game
+            end
             if skipGuide then
-                guide.key = RXPG.BuildGuideKey(guide)
                 guide.version = tonumber(guide.version) or 0
                 addon.guide = false
                 return guide, skipGuide
@@ -591,15 +595,8 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             end
         elseif not skip then
             if currentStep > 0 then
-                if currentStep > 1 or
-                    (game == "tbc" and not (guide.classic or guide.wotlk)) or
-                    guide[game] then
-                    parseLine(line)
-                else
-                    addon.guide = false
-                    return nil, game
-                end
-            elseif currentStep == 0 then
+                parseLine(line)
+            else
                 -- print(line)
                 line = line:gsub("(.-)%s*<<%s*(.+)", function(code, tag)
                     local isValid = applies(tag)
