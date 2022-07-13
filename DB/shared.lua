@@ -256,6 +256,8 @@ function addon.GetBestQuests(refreshQuestDB,output)
             local q2 = addon.IsQuestTurnedIn(k2.Id)
             local prev1 = k1.previousQuest and not IsPreReqComplete(k1)
             local prev2 = k2.previousQuest and not IsPreReqComplete(k2)
+            local prio1 = k1.priority or 1e3
+            local prio2 = k2.priority or 1e3
             if q1 and not q2 then
                 return false
             elseif q2 and not q1 then
@@ -266,6 +268,10 @@ function addon.GetBestQuests(refreshQuestDB,output)
                 return false
             elseif prev2 and not prev1 then
                 return true
+            elseif prio1 < prio2 then
+                return true
+            elseif prio2 < prio1 then
+                return false
             else
                 return k1.Id < k2.Id
             end
@@ -480,1168 +486,1374 @@ function addon.CalculateTotalXP(flags)
     return totalXp
 end
 
-addon.QuestDB = {
-	[11505] = {
-		["questLog"] = true,
-		["xp"] = 10050,
-		["appliesTo"] = "Alliance",
-	},
-	[10742] = {
-		["appliesTo"] = "Horde",
-		["questLog"] = true,
-		["xp"] = 19000,
-		["previousQuest"] = 10724,
-	},
-	[9724] = {
-		["xp"] = 10560,
-		["previousQuest"] = 9731,
-	},
-	[11003] = {
-		["itemId"] = 32386,
-		["itemAmount"] = 1,
-		["xp"] = 19000,
-		["appliesTo"] = "Horde",
-	},
-	[11515] = {
-		["questLog"] = true,
-		["xp"] = 12650,
-		["previousQuest"] = 11526,
-	},
-	[11007] = {
-		["itemAmount"] = 1,
-		["xp"] = 19000,
-		["itemId"] = 32405,
-	},
-	[10754] = {
-		["itemId"] = {
-			31239, -- [1]
-			23445, -- [2]
-			22445, -- [3]
-			22574, -- [4]
-		},
-		["itemAmount"] = {
-			1, -- [1]
-			4, -- [2]
-			2, -- [3]
-			4, -- [4]
-		},
-		["xp"] = 28450,
-		["appliesTo"] = "Alliance",
-	},
-	[11521] = {
-		["xp"] = 15800,
-		["questLog"] = true,
-	},
-	[9738] = {
-		["xp"] = 22000,
-		["questLog"] = true,
-	},
-	[11015] = {
-		["itemAmount"] = 30,
-		["xp"] = 12650,
-		["itemId"] = 32427,
-	},
-	[11017] = {
-		["appliesTo"] = "herbalism",
-		["itemAmount"] = 40,
-		["xp"] = 12650,
-		["itemId"] = 32468,
-	},
-	[10509] = {
-		["xp"] = 9500,
-		["previousQuest"] = 10508,
-	},
-	[11531] = {
-		["itemId"] = 34474,
-		["itemAmount"] = 1,
-		["xp"] = 12650,
-		["appliesTo"] = "Alliance",
-	},
-	[9493] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["appliesTo"] = "Alliance",
-	},
-	[9495] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["appliesTo"] = "Horde",
-	},
-	[10772] = {
-		["itemId"] = 31310,
-		["itemAmount"] = 1,
-		["xp"] = 9500,
-		["appliesTo"] = "Alliance",
-	},
-	[11539] = {
-		["xp"] = 12650,
-		["questLog"] = true,
-	},
-	[10013] = {
-		["itemId"] = 25765,
-		["itemAmount"] = 1,
-		["xp"] = 8600,
-		["appliesTo"] = "Horde",
-	},
-	[11035] = {
-		["xp"] = 12650,
-		["questLog"] = true,
-	},
-	[11547] = {
-		["xp"] = 12650,
-		["questLog"] = true,
-	},
-	[9764] = {
-		["itemAmount"] = {
-			1, -- [1]
-			1, -- [2]
-		},
-		["xp"] = 37950,
-		["itemId"] = {
-			24367, -- [1]
-			24368, -- [2]
-		},
-	},
-	[10280] = {
-		["xp"] = 19000,
-		["previousQuest"] = 10276,
-	},
-	[11049] = {
-		["itemAmount"] = 1,
-		["xp"] = 15800,
-		["itemId"] = 32506,
-	},
-	[11051] = {
-		["questLog"] = true,
-		["xp"] = 12650,
-		["previousQuest"] = 11026,
-	},
-	[11053] = {
-		["repfaction"] = 1015,
-		["xp"] = 12650,
-		["reputation"] = "friendly",
-	},
-	[11055] = {
-		["questLog"] = true,
-		["xp"] = 12650,
-		["previousQuest"] = 11054,
-	},
-	[10039] = {
-		["xp"] = 2120,
-		["appliesTo"] = "Horde",
-	},
-	[10806] = {
-		["appliesTo"] = "Alliance",
-		["questLog"] = true,
-		["xp"] = 19000,
-		["previousQuest"] = 10805,
-	},
-	[10810] = {
-		["itemAmount"] = 1,
-		["xp"] = 18100,
-		["itemId"] = 31384,
-	},
-	[9794] = {
-		["itemId"] = 26048,
-		["itemAmount"] = 1,
-		["xp"] = 2700,
-		["appliesTo"] = "Alliance",
-	},
-	[10306] = {
-		["itemAmount"] = 1,
-		["xp"] = 12300,
-		["itemId"] = 29235,
-	},
-	[11077] = {
-		["repfaction"] = 1015,
-		["questLog"] = true,
-		["xp"] = 12650,
-		["reputation"] = "friendly",
-	},
-	[11081] = {
-		["repfaction"] = 1015,
-		["reputation"] = "friendly",
-		["itemAmount"] = 1,
-		["xp"] = 12650,
-		["itemId"] = 32726,
-	},
-	[9808] = {
-		["itemAmount"] = 10,
-		["xp"] = 8600,
-		["itemId"] = 24245,
-	},
-	[10579] = {
-		["xp"] = 6250,
-		["previousQuest"] = 10578,
-	},
-	[9563] = {
-		["repfaction"] = 946,
-		["itemId"] = 23848,
-		["reputation"] = "friendly",
-		["itemAmount"] = 1,
-		["xp"] = 4020,
-		["appliesTo"] = "Alliance",
-	},
-	[10075] = {
-		["itemId"] = 26043,
-		["itemAmount"] = 80,
-		["xp"] = 35000,
-		["appliesTo"] = "Horde",
-	},
-	[11097] = {
-		["repfaction"] = {
-			1015, -- [1]
-			934, -- [2]
-		},
-		["questLog"] = true,
-		["xp"] = 15800,
-		["reputation"] = {
-			"revered", -- [1]
-			"neutral", -- [2]
-		},
-	},
-	[11099] = {
-		["repfaction"] = 1015,
-		["xp"] = 12650,
-		["reputation"] = "revered",
-	},
-	[11101] = {
-		["repfaction"] = {
-			1015, -- [1]
-			932, -- [2]
-		},
-		["questLog"] = true,
-		["xp"] = 15800,
-		["reputation"] = {
-			"revered", -- [1]
-			"neutral", -- [2]
-		},
-	},
-	[9828] = {
-		["itemId"] = 24484,
-		["itemAmount"] = 1,
-		["xp"] = 4020,
-		["appliesTo"] = "Horde",
-	},
-	[10091] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["previousQuest"] = 10178,
-	},
-	[10093] = {
-		["appliesTo"] = "Alliance",
-		["xp"] = 1560,
-		["previousQuest"] = 10047,
-	},
-	[10095] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["previousQuest"] = 10094,
-	},
-	[10097] = {
-		["xp"] = 24600,
-		["questLog"] = true,
-	},
-	[11380] = {
-		["daily"] = true,
-		["questLog"] = true,
-		["xp"] = 12650,
-		["appliesTo"] = "cooking",
-	},
-	[11384] = {
-		["questLog"] = true,
-		["xp"] = 19000,
-		["daily"] = true,
-	},
-	[10880] = {
-		["itemAmount"] = 1,
-		["xp"] = 4320,
-		["itemId"] = 31707,
-	},
-	[9866] = {
-		["appliesTo"] = "Horde",
-		["xp"] = 5800,
-		["previousQuest"] = 9865,
-	},
-	[10633] = {
-		["appliesTo"] = "Horde",
-		["xp"] = 6250,
-		["previousQuest"] = 10625,
-	},
-	[9870] = {
-		["xp"] = 2850,
-		["appliesTo"] = "Horde",
-	},
-	[9872] = {
-		["repfaction"] = 941,
-		["itemId"] = 24558,
-		["reputation"] = "neutral",
-		["itemAmount"] = 1,
-		["xp"] = 11650,
-		["appliesTo"] = "Horde",
-	},
-	[9882] = {
-		["repfaction"] = 933,
-		["reputation"] = "neutral",
-		["itemAmount"] = 10,
-		["xp"] = 11300,
-		["itemId"] = 25416,
-	},
-	[10649] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["previousQuest"] = 10646,
-	},
-	[10653] = {
-		["repfaction"] = 932,
-		["reputation"] = "neutral",
-		["itemAmount"] = 10,
-		["xp"] = 12650,
-		["itemId"] = 30809,
-	},
-	[10408] = {
-		["questLog"] = true,
-		["xp"] = 19000,
-		["previousQuest"] = 10406,
-	},
-	[10410] = {
-		["xp"] = 9500,
-		["previousQuest"] = 10407,
-	},
-	[10412] = {
-		["repfaction"] = 934,
-		["reputation"] = "neutral",
-		["itemAmount"] = 10,
-		["xp"] = 11000,
-		["itemId"] = 29426,
-	},
-	[10416] = {
-		["repfaction"] = 934,
-		["reputation"] = "neutral",
-		["itemAmount"] = 1,
-		["xp"] = 15800,
-		["itemId"] = 29739,
-	},
-	[10165] = {
-		["xp"] = 22600,
-		["questLog"] = true,
-	},
-	[9914] = {
-		["repfaction"] = 933,
-		["reputation"] = "neutral",
-		["itemAmount"] = 27,
-		["xp"] = 11300,
-		["itemId"] = 25463,
-	},
-	[10434] = {
-		["xp"] = 1250,
-		["previousQuest"] = 10433,
-	},
-	[9418] = {
-		["itemAmount"] = 1,
-		["xp"] = 6240,
-		["itemId"] = 23580,
-	},
-	[9934] = {
-		["appliesTo"] = "Horde",
-		["xp"] = 14150,
-		["previousQuest"] = {
-			9931, -- [1]
-			9932, -- [2]
-		},
-	},
-	[10707] = {
-		["questLog"] = true,
-		["xp"] = 19000,
-		["previousQuest"] = 10706,
-	},
-	[9944] = {
-		["xp"] = 1150,
-		["appliesTo"] = "Horde",
-	},
-	[10201] = {
-		["appliesTo"] = "Horde",
-		["xp"] = 8250,
-		["previousQuest"] = 9993,
-	},
-	[9697] = {
-		["repfaction"] = 942,
-		["xp"] = 9390,
-		["reputation"] = "friendly",
-	},
-	[10719] = {
-		["itemAmount"] = 1,
-		["xp"] = 1150,
-		["itemId"] = 31120,
-	},
-	[10466] = {
-		["repfaction"] = 990,
-		["previousQuest"] = 10462,
-		["reputation"] = "honored",
-		["xp"] = 15800,
-		["uniqueWith"] = {
-			10465, -- [1]
-			10467, -- [2]
-			10464, -- [3]
-		},
-	},
-	[10470] = {
-		["repfaction"] = 990,
-		["previousQuest"] = 10466,
-		["reputation"] = "revered",
-		["xp"] = 15800,
-		["uniqueWith"] = {
-			10469, -- [1]
-			10471, -- [2]
-			10468, -- [3]
-		},
-	},
-	[11492] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["previousQuest"] = 11490,
-	},
-	[10474] = {
-		["repfaction"] = 990,
-		["previousQuest"] = 10470,
-		["reputation"] = "exalted",
-		["xp"] = 15800,
-		["uniqueWith"] = {
-			10473, -- [1]
-			10475, -- [2]
-			10472, -- [3]
-		},
-	},
-	[10476] = {
-		["itemId"] = 25433,
-		["itemAmount"] = 10,
-		["xp"] = 11650,
-		["appliesTo"] = "Alliance",
-	},
-	[10420] = {
-		["repfaction"] = 932,
-		["reputation"] = "neutral",
-		["itemAmount"] = 1,
-		["xp"] = 15800,
-		["itemId"] = 29740,
-	},
-	[9715] = {
-		["itemAmount"] = 5,
-		["xp"] = 22000,
-		["itemId"] = 24246,
-	},
-	[11502] = {
-		["questLog"] = true,
-		["xp"] = 12650,
-		["appliesTo"] = "Alliance",
-	},
-	[9401] = {
-		["appliesTo"] = "Horde",
-		["xp"] = 6020,
-		["previousQuest"] = 9400,
-	},
-	[11506] = {
-		["questLog"] = true,
-		["xp"] = 10050,
-		["appliesTo"] = "Horde",
-	},
-	[7165] = {
-		["repfaction"] = 729,
-		["previousQuest"] = 7164,
-		["reputation"] = "revered",
-		["xp"] = 25150,
-		["appliesTo"] = "Horde",
-	},
-	[11000] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["previousQuest"] = 10998,
-	},
-	[11002] = {
-		["itemId"] = 32385,
-		["itemAmount"] = 1,
-		["xp"] = 19000,
-		["appliesTo"] = "Alliance",
-	},
-	[11004] = {
-		["itemAmount"] = 6,
-		["xp"] = 12650,
-		["itemId"] = 32388,
-	},
-	[11516] = {
-		["questLog"] = true,
-		["xp"] = 9500,
-		["previousQuest"] = 11526,
-	},
-	[11008] = {
-		["questLog"] = true,
-		["xp"] = 12650,
-		["previousQuest"] = 11098,
-	},
-	[10755] = {
-		["itemId"] = {
-			31241, -- [1]
-			23445, -- [2]
-			22445, -- [3]
-			22574, -- [4]
-		},
-		["itemAmount"] = {
-			1, -- [1]
-			4, -- [2]
-			2, -- [3]
-			4, -- [4]
-		},
-		["xp"] = 28450,
-		["appliesTo"] = "Horde",
-	},
-	[7164] = {
-		["repfaction"] = 729,
-		["previousQuest"] = 7163,
-		["reputation"] = "honored",
-		["xp"] = 20100,
-		["appliesTo"] = "Horde",
-	},
-	[9739] = {
-		["itemAmount"] = 10,
-		["xp"] = 6240,
-		["itemId"] = 24290,
-	},
-	[11016] = {
-		["appliesTo"] = "skinning",
-		["itemAmount"] = 35,
-		["xp"] = 12650,
-		["itemId"] = 32470,
-	},
-	[11018] = {
-		["appliesTo"] = "mining",
-		["itemAmount"] = 40,
-		["xp"] = 12650,
-		["itemId"] = 32464,
-	},
-	[11020] = {
-		["xp"] = 12650,
-		["questLog"] = true,
-	},
-	[9492] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["appliesTo"] = "Alliance",
-	},
-	[9494] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["appliesTo"] = "Alliance",
-	},
-	[9496] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["appliesTo"] = "Horde",
-	},
-	[9373] = {
-		["itemAmount"] = 1,
-		["xp"] = 1960,
-		["itemId"] = 23338,
-	},
-	[10010] = {
-		["xp"] = 6000,
-		["previousQuest"] = 10009,
-	},
-	[11542] = {
-		["xp"] = 12650,
-		["questLog"] = true,
-	},
-	[11544] = {
-		["xp"] = 15800,
-		["questLog"] = true,
-	},
-	[7172] = {
-		["repfaction"] = 730,
-		["previousQuest"] = 7171,
-		["reputation"] = "exalted",
-		["xp"] = 30150,
-		["appliesTo"] = "Alliance",
-	},
-	[9763] = {
-		["xp"] = 25300,
-		["questLog"] = true,
-	},
-	[11550] = {
-		["xp"] = 3150,
-	},
-	[7171] = {
-		["repfaction"] = 730,
-		["previousQuest"] = 7170,
-		["reputation"] = "exalted",
-		["xp"] = 30150,
-		["appliesTo"] = "Alliance",
-	},
-	[10024] = {
-		["repfaction"] = 932,
-		["reputation"] = "neutral",
-		["itemAmount"] = 8,
-		["xp"] = 11000,
-		["itemId"] = 25744,
-	},
-	[9771] = {
-		["appliesTo"] = "Horde",
-		["xp"] = 4020,
-		["previousQuest"] = 9774,
-	},
-	[10793] = {
-		["itemAmount"] = 1,
-		["xp"] = 9500,
-		["itemId"] = 31345,
-	},
-	[9775] = {
-		["xp"] = 1020,
-		["appliesTo"] = "Horde",
-	},
-	[7170] = {
-		["repfaction"] = 730,
-		["previousQuest"] = 7169,
-		["reputation"] = "revered",
-		["xp"] = 25150,
-		["appliesTo"] = "Alliance",
-	},
-	[9802] = {
-		["itemAmount"] = 10,
-		["xp"] = 6240,
-		["itemId"] = 24401,
-	},
-	[7168] = {
-		["repfaction"] = 730,
-		["previousQuest"] = 7162,
-		["reputation"] = "friendly",
-		["xp"] = 20100,
-		["appliesTo"] = "Alliance",
-	},
-	[10038] = {
-		["xp"] = 2120,
-		["appliesTo"] = "Alliance",
-	},
-	[9785] = {
-		["repfaction"] = 942,
-		["xp"] = 4320,
-		["reputation"] = "friendly",
-	},
-	[10297] = {
-		["xp"] = 25300,
-		["previousQuest"] = 10296,
-	},
-	[10462] = {
-		["repfaction"] = 990,
-		["uniqueWith"] = {
-			10461, -- [1]
-			10460, -- [2]
-			10463, -- [3]
-		},
-		["xp"] = 12650,
-		["reputation"] = "friendly",
-	},
-	[10727] = {
-		["repfaction"] = 967,
-		["previousQuest"] = 10740,
-		["reputation"] = "exalted",
-		["xp"] = 15800,
-		["uniqueWith"] = {
-			10728, -- [1]
-			10725, -- [2]
-			10726, -- [3]
-		},
-	},
-	[10740] = {
-		["repfaction"] = 967,
-		["previousQuest"] = 10735,
-		["reputation"] = "revered",
-		["xp"] = 15800,
-		["uniqueWith"] = {
-			10741, -- [1]
-			10738, -- [2]
-			10739, -- [3]
-		},
-	},
-	[10305] = {
-		["itemAmount"] = 1,
-		["xp"] = 12300,
-		["itemId"] = 29234,
-	},
-	[10307] = {
-		["itemAmount"] = 1,
-		["xp"] = 12300,
-		["itemId"] = 29236,
-	},
-	[10735] = {
-		["repfaction"] = 967,
-		["previousQuest"] = 10731,
-		["reputation"] = "honored",
-		["xp"] = 15800,
-		["uniqueWith"] = {
-			10736, -- [1]
-			10733, -- [2]
-			10734, -- [3]
-		},
-	},
-	[11076] = {
-		["questLog"] = true,
-		["xp"] = 12650,
-		["previousQuest"] = 11075,
-	},
-	[10731] = {
-		["repfaction"] = 967,
-		["uniqueWith"] = {
-			10732, -- [1]
-			10729, -- [2]
-			10730, -- [3]
-		},
-		["xp"] = 12650,
-		["reputation"] = "friendly",
-	},
-	[10825] = {
-		["itemAmount"] = 1,
-		["xp"] = 1200,
-		["itemId"] = 31489,
-	},
-	[10317] = {
-		["xp"] = 12650,
-	},
-	[11084] = {
-		["repfaction"] = 1015,
-		["xp"] = 12650,
-		["reputation"] = "honored",
-	},
-	[11086] = {
-		["xp"] = 12650,
-		["questLog"] = true,
-	},
-	[10423] = {
-		["xp"] = 1250,
-		["previousQuest"] = 10418,
-	},
-	[10325] = {
-		["repfaction"] = 932,
-		["reputation"] = "neutral",
-		["itemAmount"] = 10,
-		["xp"] = 11000,
-		["itemId"] = 29425,
-	},
-	[11092] = {
-		["repfaction"] = 1015,
-		["xp"] = 12650,
-		["reputation"] = "revered",
-	},
-	[10074] = {
-		["itemId"] = 26043,
-		["itemAmount"] = 20,
-		["xp"] = 11650,
-		["appliesTo"] = "Horde",
-	},
-	[10076] = {
-		["itemId"] = 26043,
-		["itemAmount"] = 20,
-		["xp"] = 11650,
-		["appliesTo"] = "Alliance",
-	},
-	[10334] = {
-		["itemAmount"] = 1,
-		["xp"] = 9250,
-		["itemId"] = 29428,
-	},
-	[10316] = {
-		["xp"] = 12300,
-		["previousQuest"] = 10312,
-	},
-	[9827] = {
-		["itemId"] = 24483,
-		["itemAmount"] = 1,
-		["xp"] = 4020,
-		["appliesTo"] = "Alliance",
-	},
-	[10249] = {
-		["xp"] = 18450,
-		["previousQuest"] = 10248,
-	},
-	[9831] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["previousQuest"] = 9829,
-	},
-	[11108] = {
-		["questLog"] = true,
-		["xp"] = 19000,
-		["previousQuest"] = 11107,
-	},
-	[11030] = {
-		["itemAmount"] = {
-			1, -- [1]
-			1, -- [2]
-		},
-		["xp"] = 25300,
-		["itemId"] = {
-			32598, -- [1]
-			32601, -- [2]
-		},
-	},
-	[11877] = {
-		["xp"] = 9500,
-		["questLog"] = true,
-	},
-	[10682] = {
-		["xp"] = 11650,
-	},
-	[10580] = {
-		["appliesTo"] = "Alliance",
-		["xp"] = 5800,
-		["previousQuest"] = 10518,
-	},
-	[10098] = {
-		["xp"] = 24600,
-		["questLog"] = true,
-	},
-	[9795] = {
-		["xp"] = 2700,
-		["appliesTo"] = "Horde",
-	},
-	[11009] = {
-		["xp"] = 15800,
-		["previousQuest"] = 11022,
-	},
-	[11094] = {
-		["repfaction"] = 1015,
-		["xp"] = 12650,
-		["reputation"] = "revered",
-	},
-	[10541] = {
-		["xp"] = 6250,
-		["previousQuest"] = 10540,
-	},
-	[10523] = {
-		["xp"] = 3150,
-		["previousQuest"] = 10522,
-	},
-	[10750] = {
-		["xp"] = 9500,
-		["appliesTo"] = "Horde",
-	},
-	[10745] = {
-		["appliesTo"] = "Horde",
-		["xp"] = 15800,
-		["previousQuest"] = 10613,
-	},
-	[11389] = {
-		["xp"] = 12650,
-		["questLog"] = true,
-	},
-	[9861] = {
-		["itemAmount"] = 1,
-		["xp"] = 11650,
-		["itemId"] = 24504,
-	},
-	[10782] = {
-		["xp"] = 12300,
-		["previousQuest"] = 10780,
-	},
-	[10885] = {
-		["xp"] = 19000,
-		["questLog"] = true,
-	},
-	[10680] = {
-		["xp"] = 3150,
-		["appliesTo"] = "Alliance",
-	},
-	[10634] = {
-		["questLog"] = true,
-		["xp"] = 19000,
-		["previousQuest"] = 10633,
-	},
-	[9871] = {
-		["repfaction"] = 978,
-		["itemId"] = 24559,
-		["reputation"] = "neutral",
-		["itemAmount"] = 1,
-		["xp"] = 11650,
-		["appliesTo"] = "Alliance",
-	},
-	[10744] = {
-		["appliesTo"] = "Alliance",
-		["xp"] = 15800,
-		["previousQuest"] = 10612,
-	},
-	[10251] = {
-		["xp"] = 5800,
-		["previousQuest"] = 10231,
-	},
-	[10077] = {
-		["itemId"] = 26043,
-		["itemAmount"] = 80,
-		["xp"] = 35000,
-		["appliesTo"] = "Alliance",
-	},
-	[10134] = {
-		["itemAmount"] = 1,
-		["xp"] = 3150,
-		["itemId"] = 29476,
-	},
-	[9933] = {
-		["appliesTo"] = "Alliance",
-		["xp"] = 14150,
-		["previousQuest"] = {
-			9931, -- [1]
-			9932, -- [2]
-		},
-	},
-	[10393] = {
-		["itemId"] = 29590,
-		["itemAmount"] = 1,
-		["xp"] = 970,
-		["appliesTo"] = "Horde",
-	},
-	[10395] = {
-		["itemId"] = 29588,
-		["itemAmount"] = 1,
-		["xp"] = 970,
-		["appliesTo"] = "Alliance",
-	},
-	[10257] = {
-		["questLog"] = true,
-		["xp"] = 25300,
-		["previousQuest"] = 10256,
-	},
-	[10012] = {
-		["itemId"] = 25765,
-		["itemAmount"] = 1,
-		["xp"] = 8600,
-		["appliesTo"] = "Alliance",
-	},
-	[10656] = {
-		["repfaction"] = 934,
-		["reputation"] = "neutral",
-		["itemAmount"] = 10,
-		["xp"] = 12650,
-		["itemId"] = 30810,
-	},
-	[9893] = {
-		["repfaction"] = 933,
-		["reputation"] = "neutral",
-		["itemAmount"] = 20,
-		["xp"] = 11650,
-		["itemId"] = 25433,
-	},
-	[10017] = {
-		["itemAmount"] = 8,
-		["xp"] = 8600,
-		["itemId"] = 25802,
-	},
-	[10917] = {
-		["itemAmount"] = 30,
-		["xp"] = 11000,
-		["itemId"] = 25719,
-	},
-	[10926] = {
-		["xp"] = 8250,
-		["previousQuest"] = 10921,
-	},
-	[10863] = {
-		["xp"] = 6240,
-		["appliesTo"] = "Alliance",
-	},
-	[11178] = {
-		["itemAmount"] = 1,
-		["xp"] = 19000,
-		["itemId"] = 33102,
-	},
-	[10670] = {
-		["questLog"] = true,
-		["xp"] = 33825,
-		["previousQuest"] = {
-			10665, -- [1]
-			10666, -- [2]
-		},
-	},
-	[10862] = {
-		["xp"] = 6240,
-		["appliesTo"] = "Horde",
-	},
-	[10164] = {
-		["xp"] = 23300,
-		["questLog"] = true,
-	},
-	[9911] = {
-		["itemAmount"] = 1,
-		["xp"] = 8600,
-		["itemId"] = 25459,
-	},
-	[9913] = {
-		["xp"] = 1150,
-	},
-	[7141] = {
-		["appliesTo"] = "Alliance",
-		["questLog"] = true,
-		["xp"] = 31650,
-		["previousQuest"] = 7221,
-	},
-	[7142] = {
-		["appliesTo"] = "Horde",
-		["questLog"] = true,
-		["xp"] = 31650,
-		["previousQuest"] = 7222,
-	},
-	[9919] = {
-		["repfaction"] = 970,
-		["xp"] = 8600,
-		["reputation"] = "neutral",
-	},
-	[10006] = {
-		["appliesTo"] = "Horde",
-		["xp"] = 9330,
-		["previousQuest"] = 10447,
-	},
-	[10005] = {
-		["appliesTo"] = "Alliance",
-		["xp"] = 9330,
-		["previousQuest"] = 10446,
-	},
-	[10413] = {
-		["itemAmount"] = 1,
-		["xp"] = 15800,
-		["itemId"] = 29738,
-	},
-	[10182] = {
-		["itemAmount"] = 1,
-		["xp"] = 12000,
-		["itemId"] = 29233,
-	},
-	[10439] = {
-		["questLog"] = true,
-		["xp"] = 19000,
-		["previousQuest"] = 10438,
-	},
-	[9837] = {
-		["xp"] = 19000,
-		["previousQuest"] = 9836,
-	},
-	[9423] = {
-		["appliesTo"] = "Alliance",
-		["xp"] = 1020,
-		["previousQuest"] = 9390,
-	},
-	[10445] = {
-		["xp"] = 19000,
-		["questLog"] = true,
-	},
-	[9587] = {
-		["itemId"] = 23890,
-		["itemAmount"] = 1,
-		["xp"] = 8040,
-		["appliesTo"] = "Alliance",
-	},
-	[9588] = {
-		["itemId"] = 23892,
-		["itemAmount"] = 1,
-		["xp"] = 8040,
-		["appliesTo"] = "Horde",
-	},
-	[10860] = {
-		["itemId"] = {
-			31670, -- [1]
-			31671, -- [2]
-		},
-		["itemAmount"] = {
-			3, -- [1]
-			3, -- [2]
-		},
-		["xp"] = 11650,
-		["appliesTo"] = "Horde",
-	},
-	[11523] = {
-		["xp"] = 9500,
-		["questLog"] = true,
-	},
-	[11533] = {
-		["xp"] = 9500,
-		["questLog"] = true,
-	},
-	[11525] = {
-		["xp"] = 9500,
-		["questLog"] = true,
-	},
-	[9806] = {
-		["itemAmount"] = 6,
-		["xp"] = 8600,
-		["itemId"] = 24449,
-	},
-	[11514] = {
-		["xp"] = 9500,
-		["questLog"] = true,
-	},
-	[9743] = {
-		["itemAmount"] = 6,
-		["xp"] = 8600,
-		["itemId"] = 24291,
-	},
-	[10511] = {
-		["itemId"] = 29443,
-		["itemAmount"] = 11,
-		["xp"] = 11300,
-		["appliesTo"] = "Alliance",
-	},
-	[11021] = {
-		["itemAmount"] = 1,
-		["xp"] = 13000,
-		["itemId"] = 32523,
-	},
-	[7163] = {
-		["repfaction"] = 729,
-		["previousQuest"] = 7161,
-		["reputation"] = "friendly",
-		["xp"] = 20100,
-		["appliesTo"] = "Horde",
-	},
-	[10216] = {
-		["xp"] = 22600,
-		["questLog"] = true,
-	},
-	[10218] = {
-		["xp"] = 22600,
-		["questLog"] = true,
-	},
-	[7166] = {
-		["repfaction"] = 729,
-		["previousQuest"] = 7165,
-		["reputation"] = "exalted",
-		["xp"] = 30150,
-		["appliesTo"] = "Horde",
-	},
-	[7167] = {
-		["repfaction"] = 729,
-		["previousQuest"] = 7166,
-		["reputation"] = "exalted",
-		["xp"] = 30150,
-		["appliesTo"] = "Horde",
-	},
-	[10479] = {
-		["itemId"] = 25433,
-		["itemAmount"] = 10,
-		["xp"] = 11650,
-		["appliesTo"] = "Horde",
-	},
-	[7169] = {
-		["repfaction"] = 730,
-		["previousQuest"] = 7162,
-		["reputation"] = "honored",
-		["xp"] = 20100,
-		["appliesTo"] = "Alliance",
-	},
-	[11503] = {
-		["questLog"] = true,
-		["xp"] = 12650,
-		["appliesTo"] = "Horde",
-	},
-	[10667] = {
-		["questLog"] = true,
-		["xp"] = 33825,
-		["previousQuest"] = {
-			10665, -- [1]
-			10666, -- [2]
-		},
-	},
-}
+local QuestDB = {}
+addon.QuestDB = QuestDB
+--[[
+QuestDB[questId] = {} --initialise the structure
+QuestDB[questId].previousQuest = previousquestID
+QuestDB[questId].xp = questXP --add the followup exp
+QuestDB[questId].appliesTo = "Alliance/Horde"
+QuestDB[questId].itemId = itemID
+QuestDB[questId].itemAmount = amount
+QuestDB[questId].repfaction = factionID
+QuestDB[questId].reputation = "unfriendly"
+QuestDB[questId].questLog = true
+QuestDB[questId].appliesTo = "herbalism" -for profession tags
+]]
+--skip line if not needed for that specific quest
+
+--start here
+--Strange Brew
+QuestDB[10511] = {}
+QuestDB[10511].xp = 11300
+QuestDB[10511].appliesTo = "Alliance"
+QuestDB[10511].itemId = 29443
+QuestDB[10511].itemAmount = 11
+
+--The Journal of Val'zareq: Portends of War
+QuestDB[10793] = {}
+QuestDB[10793].xp = 9500
+QuestDB[10793].itemId = 31345
+QuestDB[10793].itemAmount = 1
+
+--Entry Into the Citadel + 2 followup quests
+QuestDB[10754] = {}
+QuestDB[10754].xp = 28450
+QuestDB[10754].appliesTo = "Alliance"
+QuestDB[10754].itemId = {31239,23445,22445,22574}
+QuestDB[10754].itemAmount = {1,4,2,4}
+
+--Entry Into the Citadel + 2 followup quests
+QuestDB[10755] = {}
+QuestDB[10755].xp = 28450
+QuestDB[10755].appliesTo = "Horde"
+QuestDB[10755].itemId = {31241,23445,22445,22574}
+QuestDB[10755].itemAmount = {1,4,2,4}
+
+--Ishaal's Almanac + An Ally in Lower City
+QuestDB[11021] = {}
+QuestDB[11021].xp = 13000
+QuestDB[11021].itemId = 32523
+QuestDB[11021].itemAmount = 1
+
+--Cabal Orders
+QuestDB[10880] = {}
+QuestDB[10880].xp = 4320
+QuestDB[10880].itemId = 31707
+QuestDB[10880].itemAmount = 1
+
+--Avruu's Orb
+QuestDB[9418] = {}
+QuestDB[9418].xp = 6240
+QuestDB[9418].itemId = 23580
+QuestDB[9418].itemAmount = 1
+
+--Vile Plans
+QuestDB[10393] = {}
+QuestDB[10393].xp = 970
+QuestDB[10393].appliesTo = "Horde"
+QuestDB[10393].itemId = 29590
+QuestDB[10393].itemAmount = 1
+
+--The Dark Missive
+QuestDB[10395] = {}
+QuestDB[10395].xp = 970
+QuestDB[10395].appliesTo = "Alliance"
+QuestDB[10395].itemId = 29588
+QuestDB[10395].itemAmount = 1
+
+--Missing Missive
+QuestDB[9373] = {}
+QuestDB[9373].xp = 1960
+QuestDB[9373].itemId = 23338
+QuestDB[9373].itemAmount = 1
+
+--Crimson Crystal Clue
+QuestDB[10134] = {}
+QuestDB[10134].xp = 3150
+QuestDB[10134].itemId = 29476
+QuestDB[10134].itemAmount = 1
+
+--Withered Basidium
+QuestDB[9827] = {}
+QuestDB[9827].xp = 4020
+QuestDB[9827].appliesTo = "Alliance"
+QuestDB[9827].itemId = 24483
+QuestDB[9827].itemAmount = 1
+
+--Withered Basidium
+QuestDB[9828] = {}
+QuestDB[9828].xp = 4020
+QuestDB[9828].appliesTo = "Horde"
+QuestDB[9828].itemId = 24484
+QuestDB[9828].itemAmount = 1
+
+--The Howling Wind
+QuestDB[9861] = {}
+QuestDB[9861].xp = 11650
+QuestDB[9861].itemId = 24504
+QuestDB[9861].itemAmount = 1
+
+--Murkblood Invaders
+QuestDB[9871] = {}
+QuestDB[9871].xp = 11650
+QuestDB[9871].appliesTo = "Alliance"
+QuestDB[9871].itemId = 24559
+QuestDB[9871].itemAmount = 1
+QuestDB[9871].repfaction = 978
+QuestDB[9871].reputation = "neutral"
+
+--Murkblood Invaders
+QuestDB[9872] = {}
+QuestDB[9872].xp = 11650
+QuestDB[9872].appliesTo = "Horde"
+QuestDB[9872].itemId = 24558
+QuestDB[9872].itemAmount = 1
+QuestDB[9872].repfaction = 941
+QuestDB[9872].reputation = "neutral"
+
+--The Count of the Marshes
+QuestDB[9911] = {}
+QuestDB[9911].xp = 8600
+QuestDB[9911].itemId = 25459
+QuestDB[9911].itemAmount = 1
+
+--Damaged Mask + 2 followup quests
+QuestDB[10810] = {}
+QuestDB[10810].xp = 18100
+QuestDB[10810].itemId = 31384
+QuestDB[10810].itemAmount = 1
+
+--The Truth Unorbed
+QuestDB[10825] = {}
+QuestDB[10825].xp = 1200
+QuestDB[10825].itemId = 31489
+QuestDB[10825].itemAmount = 1
+
+--Cohlien Frostweaver
+QuestDB[10307] = {}
+QuestDB[10307].xp = 12300
+QuestDB[10307].itemId = 29236
+QuestDB[10307].itemAmount = 1
+
+--Battle-Mage Dathric
+QuestDB[10182] = {}
+QuestDB[10182].xp = 12000
+QuestDB[10182].itemId = 29233
+QuestDB[10182].itemAmount = 1
+
+--Abjurist Belmara
+QuestDB[10305] = {}
+QuestDB[10305].xp = 12300
+QuestDB[10305].itemId = 29234
+QuestDB[10305].itemAmount = 1
+
+--Conjurer Luminrath
+QuestDB[10306] = {}
+QuestDB[10306].xp = 12300
+QuestDB[10306].itemId = 29235
+QuestDB[10306].itemAmount = 1
+
+--The Horrors of Pollution
+QuestDB[10413] = {}
+QuestDB[10413].xp = 15800
+QuestDB[10413].itemId = 29738
+QuestDB[10413].itemAmount = 1
+
+--Strange Engine Part
+QuestDB[11531] = {}
+QuestDB[11531].xp = 12650
+QuestDB[11531].appliesTo = "Alliance"
+QuestDB[11531].itemId = 34474
+QuestDB[11531].itemAmount = 1
+
+--Dark Tidings
+QuestDB[9587] = {}
+QuestDB[9587].xp = 8040
+QuestDB[9587].appliesTo = "Alliance"
+QuestDB[9587].itemId = 23890
+QuestDB[9587].itemAmount = 1
+
+--Dark Tidings
+QuestDB[9588] = {}
+QuestDB[9588].xp = 8040
+QuestDB[9588].appliesTo = "Horde"
+QuestDB[9588].itemId = 23892
+QuestDB[9588].itemAmount = 1
+
+--The Fall of Magtheridon
+QuestDB[11002] = {}
+QuestDB[11002].xp = 19000
+QuestDB[11002].appliesTo = "Alliance"
+QuestDB[11002].itemId = 32385
+QuestDB[11002].itemAmount = 1
+
+--The Fall of Magtheridon
+QuestDB[11003] = {}
+QuestDB[11003].xp = 19000
+QuestDB[11003].appliesTo = "Horde"
+QuestDB[11003].itemId = 32386
+QuestDB[11003].itemAmount = 1
+
+--Kael'thas and the Verdant Sphere
+QuestDB[11007] = {}
+QuestDB[11007].xp = 19000
+QuestDB[11007].itemId = 32405
+QuestDB[11007].itemAmount = 1
+
+--Orders from Lady Vashj
+QuestDB[9764] = {}
+QuestDB[9764].xp = 37950
+QuestDB[9764].itemId = {24367,24368}
+QuestDB[9764].itemAmount = {1,1}
+--25300exp from followup
+
+--Blood of the Warlord + Undecrover Sister
+QuestDB[11178] = {}
+QuestDB[11178].xp = 19000
+QuestDB[11178].itemId = 33102
+QuestDB[11178].itemAmount = 1
+
+--Mok'Nathal Treats
+QuestDB[10860] = {}
+QuestDB[10860].xp = 11650
+QuestDB[10860].appliesTo = "Horde"
+QuestDB[10860].itemId = {31670,31671}
+QuestDB[10860].itemAmount = {3,3}
+
+--The Sporelings' Plight
+QuestDB[9739] = {}
+QuestDB[9739].xp = 6240
+QuestDB[9739].itemId = 24290
+QuestDB[9739].itemAmount = 10
+
+--Natural Enemies
+QuestDB[9743] = {}
+QuestDB[9743].xp = 8600
+QuestDB[9743].itemId = 24291
+QuestDB[9743].itemAmount = 6
+
+--Fertile Spores
+QuestDB[9806] = {}
+QuestDB[9806].xp = 8600
+QuestDB[9806].itemId = 24449
+QuestDB[9806].itemAmount = 6
+
+--Glowcap Mushrooms
+QuestDB[9808] = {}
+QuestDB[9808].xp = 8600
+QuestDB[9808].itemId = 24245
+QuestDB[9808].itemAmount = 10
+
+--Voren'thal's Visions
+QuestDB[10024] = {}
+QuestDB[10024].xp = 11000
+QuestDB[10024].itemId = 25744
+QuestDB[10024].itemAmount = 8
+QuestDB[10024].repfaction = 932 --aldor
+QuestDB[10024].reputation = "neutral"
+
+--A Cleansing Light
+QuestDB[10420] = {}
+QuestDB[10420].xp = 15800
+QuestDB[10420].itemId = 29740
+QuestDB[10420].itemAmount = 1
+QuestDB[10420].repfaction = 932 --aldor
+QuestDB[10420].reputation = "neutral"
+
+--Marks of Sargeras
+QuestDB[10653] = {}
+QuestDB[10653].xp = 12650
+QuestDB[10653].itemId = 30809
+QuestDB[10653].itemAmount = 10
+QuestDB[10653].repfaction = 932 --aldor
+QuestDB[10653].reputation = "neutral"
+
+--Mirren's Trust
+QuestDB[9563] = {}
+QuestDB[9563].xp = 4020
+QuestDB[9563].appliesTo = "Alliance"
+QuestDB[9563].itemId = 23848
+QuestDB[9563].itemAmount = 1
+QuestDB[9563].repfaction = 946
+QuestDB[9563].reputation = "friendly"
+
+--Marks of Kil'jaeden
+QuestDB[10325] = {}
+QuestDB[10325].xp = 11000
+QuestDB[10325].itemId = 29425
+QuestDB[10325].itemAmount = 10
+QuestDB[10325].repfaction = 932 --aldor
+QuestDB[10325].reputation = "neutral"
+
+--Sunfury Signets
+QuestDB[10656] = {}
+QuestDB[10656].xp = 12650
+QuestDB[10656].itemId = 30810
+QuestDB[10656].itemAmount = 10
+QuestDB[10656].repfaction = 934 --scryers
+QuestDB[10656].reputation = "neutral"
+
+--Firewing Signets
+QuestDB[10412] = {}
+QuestDB[10412].xp = 11000
+QuestDB[10412].itemId = 29426
+QuestDB[10412].itemAmount = 10
+QuestDB[10412].repfaction = 934 --scryers
+QuestDB[10412].reputation = "neutral"
+
+--Synthesis of Power
+QuestDB[10416] = {}
+QuestDB[10416].xp = 15800
+QuestDB[10416].itemId = 29739
+QuestDB[10416].itemAmount = 1
+QuestDB[10416].repfaction = 934 --scryers
+QuestDB[10416].reputation = "neutral"
+
+--The Outcast's Plight
+QuestDB[10917] = {}
+QuestDB[10917].xp = 11000
+QuestDB[10917].itemId = 25719
+QuestDB[10917].itemAmount = 30
+
+--World of Shadows
+QuestDB[11004] = {}
+QuestDB[11004].xp = 12650
+QuestDB[11004].itemId = 32388
+QuestDB[11004].itemAmount = 6
+
+--A Head Full of Ivory
+QuestDB[9914] = {}
+QuestDB[9914].xp = 11300
+QuestDB[9914].itemId = 25463
+QuestDB[9914].itemAmount = 27
+QuestDB[9914].repfaction = 933
+QuestDB[9914].reputation = "neutral"
+
+--Stealing from Thieves
+QuestDB[9882] = {}
+QuestDB[9882].xp = 11300
+QuestDB[9882].itemId = 25416
+QuestDB[9882].itemAmount = 10
+QuestDB[9882].repfaction = 933
+QuestDB[9882].reputation = "neutral"
+
+--Plants of Zangarmarsh
+QuestDB[9802] = {}
+QuestDB[9802].xp = 6240
+QuestDB[9802].itemId = 24401
+QuestDB[9802].itemAmount = 10
+
+--Obsidian Warbeads
+QuestDB[9893] = {}
+QuestDB[9893].xp = 11650
+QuestDB[9893].itemId = 25433
+QuestDB[9893].itemAmount = 20
+QuestDB[9893].repfaction = 933
+QuestDB[9893].reputation = "neutral"
+
+--Netherwing Crystals
+QuestDB[11015] = {}
+QuestDB[11015].xp = 12650
+QuestDB[11015].itemId = 32427
+QuestDB[11015].itemAmount = 30
+
+--Nethercite Ore
+QuestDB[11018] = {}
+QuestDB[11018].xp = 12650
+QuestDB[11018].itemId = 32464
+QuestDB[11018].itemAmount = 40
+QuestDB[11018].appliesTo = "mining"
+
+--Netherdust Pollen
+QuestDB[11017] = {}
+QuestDB[11017].xp = 12650
+QuestDB[11017].itemId = 32468
+QuestDB[11017].itemAmount = 40
+QuestDB[11017].appliesTo = "herbalism"
+
+--Nethermine Flayer Hide
+QuestDB[11016] = {}
+QuestDB[11016].xp = 12650
+QuestDB[11016].itemId = 32470
+QuestDB[11016].itemAmount = 35
+QuestDB[11016].appliesTo = "skinning"
+
+--The Great Netherwing Egg Hunt
+QuestDB[11049] = {}
+QuestDB[11049].xp = 15800
+QuestDB[11049].itemId = 32506
+QuestDB[11049].itemAmount = 1
+
+--The Opening of the Dark Portal
+QuestDB[10297] = {}
+QuestDB[10297].previousQuest = 10296
+QuestDB[10297].xp = 25300
+
+--Return to Khadgar
+QuestDB[9837] = {}
+QuestDB[9837].previousQuest = 9836
+QuestDB[9837].xp = 19000
+
+--Special Delivery to Shattrath City
+QuestDB[10280] = {}
+QuestDB[10280].previousQuest = 10276
+QuestDB[10280].xp = 19000
+
+--Questlog starts here
+--Wanted: Durn the Hungerer
+QuestDB[9937] = {}
+QuestDB[9937].appliesTo = "Horde"
+QuestDB[9937].xp = 17450
+QuestDB[9937].questLog = true
+QuestDB[9937].priority = 1
+
+--Wanted: Durn the Hungerer
+QuestDB[9938] = {}
+QuestDB[9938].appliesTo = "Alliance"
+QuestDB[9938].xp = 17450
+QuestDB[9938].questLog = true
+QuestDB[9938].priority = 1
+
+--Gurok the Usurper
+QuestDB[9853] = {}
+QuestDB[9853].previousQuest = 9849
+QuestDB[9853].xp = 17450
+QuestDB[9853].questLog = true
+QuestDB[9853].priority = 3
+
+--The Ring of Blood: The Final Challenge
+QuestDB[9977] = {}
+QuestDB[9977].previousQuest = 9973
+QuestDB[9977].xp = 17450
+QuestDB[9977].questLog = true
+QuestDB[9977].priority = 2
+
+--Lord Illidan Stormrage
+QuestDB[11108] = {}
+QuestDB[11108].previousQuest = 11107
+QuestDB[11108].xp = 19000
+QuestDB[11108].questLog = true
+QuestDB[11108].priority = 8
+
+--Trial of the Naaru: Strength
+QuestDB[10885] = {}
+QuestDB[10885].xp = 19000
+QuestDB[10885].questLog = true
+QuestDB[10885].priority = 5
+
+--The Vials of Eternity
+QuestDB[10445] = {}
+QuestDB[10445].xp = 19000
+QuestDB[10445].questLog = true
+QuestDB[10445].priority = 7
+
+--The Ata'mal Terrace
+QuestDB[10707] = {}
+QuestDB[10707].previousQuest = 10706
+QuestDB[10707].xp = 19000
+QuestDB[10707].questLog = true
+QuestDB[10707].priority = 6
+
+--Entry Into Karazhan
+QuestDB[9831] = {}
+QuestDB[9831].previousQuest = 9829
+QuestDB[9831].xp = 25300
+QuestDB[9831].questLog = true
+
+--The Soul Devices
+QuestDB[10091] = {}
+QuestDB[10091].previousQuest = 10178
+QuestDB[10091].xp = 25300
+QuestDB[10091].questLog = true
+
+--The Book of Fel Names
+QuestDB[10649] = {}
+QuestDB[10649].previousQuest = 10646
+QuestDB[10649].xp = 25300
+QuestDB[10649].questLog = true
+
+--Into the Heart of the Labyrinth
+QuestDB[10095] = {}
+QuestDB[10095].previousQuest = 10094
+QuestDB[10095].xp = 25300
+QuestDB[10095].questLog = true
+
+--Tear of the Earthmother + 2 followups
+QuestDB[10670] = {}
+QuestDB[10670].previousQuest = {10665,10666}
+--
+QuestDB[10670].xp = 33825
+QuestDB[10670].questLog = true
+
+--Underworld Loam + 2 followups
+QuestDB[10667] = {}
+QuestDB[10667].previousQuest = {10665,10666}
+--
+QuestDB[10667].xp = 33825
+QuestDB[10667].questLog = true
+
+--Terokk's Legacy
+QuestDB[10098] = {}
+QuestDB[10098].xp = 24600
+QuestDB[10098].questLog = true
+
+--Brother Against Brother
+QuestDB[10097] = {}
+QuestDB[10097].xp = 24600
+QuestDB[10097].questLog = true
+
+--Someone Else's Hard Work Pays Off
+QuestDB[10218] = {}
+QuestDB[10218].xp = 22600
+QuestDB[10218].questLog = true
+
+--Undercutting the Competition
+QuestDB[10165] = {}
+QuestDB[10165].xp = 22600
+QuestDB[10165].questLog = true
+
+--Everything Will Be Alright
+QuestDB[10164] = {}
+QuestDB[10164].xp = 23300
+QuestDB[10164].questLog = true
+
+--Fel Embers
+QuestDB[9494] = {}
+QuestDB[9494].xp = 25300
+QuestDB[9494].appliesTo = "Alliance"
+QuestDB[9494].questLog = true
+
+--Turning the Tide
+QuestDB[9492] = {}
+QuestDB[9492].xp = 25300
+QuestDB[9492].appliesTo = "Alliance"
+QuestDB[9492].questLog = true
+
+--The Will of the Warchief
+QuestDB[9495] = {}
+QuestDB[9495].xp = 25300
+QuestDB[9495].appliesTo = "Horde"
+QuestDB[9495].questLog = true
+
+--Pride of the Fel Horde
+QuestDB[9493] = {}
+QuestDB[9493].xp = 25300
+QuestDB[9493].appliesTo = "Alliance"
+QuestDB[9493].questLog = true
+
+--Pride of the Fel Horde
+QuestDB[9496] = {}
+QuestDB[9496].xp = 25300
+QuestDB[9496].appliesTo = "Horde"
+QuestDB[9496].questLog = true
+
+--Capturing the Keystone
+QuestDB[10257] = {}
+QuestDB[10257].previousQuest = 10256
+QuestDB[10257].xp = 25300
+QuestDB[10257].questLog = true
+
+--Dimensius the All-Devouring
+QuestDB[10439] = {}
+QuestDB[10439].previousQuest = 10438
+QuestDB[10439].xp = 19000
+QuestDB[10439].questLog = true
+QuestDB[10439].priority = 2
+
+--Nexus-King Salhadaar
+QuestDB[10408] = {}
+QuestDB[10408].previousQuest = 10406
+QuestDB[10408].xp = 19000
+QuestDB[10408].questLog = true
+QuestDB[10408].priority = 3
+
+--Showdown
+QuestDB[10742] = {}
+QuestDB[10742].previousQuest = 10724
+QuestDB[10742].appliesTo = "Horde"
+QuestDB[10742].xp = 19000
+QuestDB[10742].questLog = true
+QuestDB[10742].priority = 4
+
+
+--Showdown
+QuestDB[10806] = {}
+QuestDB[10806].previousQuest = 10805
+QuestDB[10806].appliesTo = "Alliance"
+QuestDB[10806].xp = 19000
+QuestDB[10806].questLog = true
+QuestDB[10806].priority = 4
+
+--Into the Soulgrinder
+QuestDB[11000] = {}
+QuestDB[11000].previousQuest = 10998
+QuestDB[11000].xp = 25300
+QuestDB[11000].questLog = true
+
+--Lost in Action
+QuestDB[9738] = {}
+QuestDB[9738].xp = 22000
+QuestDB[9738].questLog = true
+
+--The Warlord's Hideout
+QuestDB[9763] = {}
+QuestDB[9763].xp = 25300
+QuestDB[9763].questLog = true
+
+--Daily dungeon wanted quests(Heroic)
+QuestDB[11384] = {}
+QuestDB[11384].xp = 19000
+QuestDB[11384].questLog = true
+QuestDB[11384].daily = true
+QuestDB[11384].priority = 1
+--[[
+QuestDB[11369] = {}
+QuestDB[11369].xp = 19000
+QuestDB[11369].questLog = true
+QuestDB[11382] = {}
+QuestDB[11382].xp = 19000
+QuestDB[11382].questLog = true
+QuestDB[11363] = {}
+QuestDB[11363].xp = 19000
+QuestDB[11363].questLog = true
+QuestDB[11362] = {}
+QuestDB[11362].xp = 19000
+QuestDB[11362].questLog = true
+QuestDB[11375] = {}
+QuestDB[11375].xp = 19000
+QuestDB[11375].questLog = true
+QuestDB[11354] = {}
+QuestDB[11354].xp = 19000
+QuestDB[11354].questLog = true
+QuestDB[11386] = {}
+QuestDB[11386].xp = 19000
+QuestDB[11386].questLog = true
+QuestDB[11373] = {}
+QuestDB[11373].xp = 19000
+QuestDB[11373].questLog = true
+QuestDB[11378] = {}
+QuestDB[11378].xp = 19000
+QuestDB[11378].questLog = true
+QuestDB[11374] = {}
+QuestDB[11374].xp = 19000
+QuestDB[11374].questLog = true
+QuestDB[11372] = {}
+QuestDB[11372].xp = 19000
+QuestDB[11372].questLog = true
+QuestDB[11368] = {}
+QuestDB[11368].xp = 19000
+QuestDB[11368].questLog = true
+QuestDB[11388] = {}
+QuestDB[11388].xp = 19000
+QuestDB[11388].questLog = true
+QuestDB[11370] = {}
+QuestDB[11370].xp = 19000
+QuestDB[11370].questLog = true
+]]
+--Cooking daily quests
+QuestDB[11380] = {}
+QuestDB[11380].xp = 12650
+QuestDB[11380].appliesTo = "cooking"
+QuestDB[11380].questLog = true
+QuestDB[11380].daily = true
+QuestDB[11380].priority = 12
+--[[
+QuestDB[11377] = {}
+QuestDB[11377].xp = 12650
+QuestDB[11377].questLog = true
+QuestDB[11381] = {}
+QuestDB[11381].xp = 12650
+QuestDB[11381].questLog = true
+QuestDB[11379] = {}
+QuestDB[11379].xp = 12650
+QuestDB[11379].questLog = true
+]]
+--Daily dungeon wanted quests(Normal)
+QuestDB[11389] = {}
+QuestDB[11389].xp = 12650
+QuestDB[11389].questLog = true
+QuestDB[11389].priority = 1
+--[[
+QuestDB[11371] = {}
+QuestDB[11371].xp = 12650
+QuestDB[11371].questLog = true
+QuestDB[11376] = {}
+QuestDB[11376].xp = 12650
+QuestDB[11376].questLog = true
+QuestDB[11383] = {}
+QuestDB[11383].xp = 12650
+QuestDB[11383].questLog = true
+QuestDB[11364] = {}
+QuestDB[11364].xp = 12650
+QuestDB[11364].questLog = true
+QuestDB[11385] = {}
+QuestDB[11385].xp = 12650
+QuestDB[11385].questLog = true
+QuestDB[11387] = {}
+QuestDB[11387].xp = 12650
+QuestDB[11387].questLog = true
+]]
+--Isle of QD daily
+QuestDB[11536] = {}
+QuestDB[11536].xp = 12650
+QuestDB[11536].questLog = true
+QuestDB[11536].priority = 4
+
+QuestDB[11546] = {}
+QuestDB[11546].xp = 12650
+QuestDB[11546].questLog = true
+QuestDB[11546].priority = 5
+
+QuestDB[11541] = {}
+QuestDB[11541].xp = 12650
+QuestDB[11541].questLog = true
+QuestDB[11541].priority = 6
+
+QuestDB[11547] = {}
+QuestDB[11547].xp = 12650
+QuestDB[11547].questLog = true
+QuestDB[11547].priority = 7
+
+QuestDB[11542] = {}
+QuestDB[11542].xp = 12650
+QuestDB[11542].questLog = true
+QuestDB[11542].priority = 8
+
+QuestDB[11539] = {}
+QuestDB[11539].xp = 12650
+QuestDB[11539].questLog = true
+QuestDB[11539].priority = 9
+
+QuestDB[11544] = {}
+QuestDB[11544].xp = 15800
+QuestDB[11544].questLog = true
+QuestDB[11544].priority = 2
+
+QuestDB[11521] = {}
+QuestDB[11521].xp = 15800
+QuestDB[11521].questLog = true
+QuestDB[11521].priority = 1
+
+--Hard to Kill
+QuestDB[11492] = {}
+QuestDB[11492].previousQuest = 11490
+QuestDB[11492].xp = 25300
+QuestDB[11492].questLog = true
+
+--Netherwing daily
+--A Slow Death
+QuestDB[11020] = {}
+QuestDB[11020].xp = 12650
+QuestDB[11020].questLog = true
+QuestDB[11020].priority = 2
+
+--The Not-So-Friendly Skies...
+QuestDB[11035] = {}
+QuestDB[11035].xp = 12650
+QuestDB[11035].questLog = true
+QuestDB[11035].priority = 3
+
+--rest
+--The Battle of Alterac
+QuestDB[7141] = {}
+QuestDB[7141].previousQuest = 7221
+QuestDB[7141].xp = 31650
+QuestDB[7141].appliesTo = "Alliance"
+QuestDB[7141].questLog = true
+
+--The Battle of Alterac
+QuestDB[7142] = {}
+QuestDB[7142].previousQuest = 7222
+QuestDB[7142].xp = 31650
+QuestDB[7142].appliesTo = "Horde"
+QuestDB[7142].questLog = true
+
+--Spirits of Auchindoun
+QuestDB[11506] = {}
+QuestDB[11506].xp = 10050
+QuestDB[11506].appliesTo = "Horde"
+QuestDB[11506].questLog = true
+
+--Spirits of Auchindoun
+QuestDB[11505] = {}
+QuestDB[11505].xp = 10050
+QuestDB[11505].appliesTo = "Alliance"
+QuestDB[11505].questLog = true
+
+--Maintaining the Sunwell Portal
+QuestDB[11514] = {}
+QuestDB[11514].xp = 9500
+QuestDB[11514].questLog = true
+QuestDB[11514].priority = 6
+
+--Blast the Gateway
+QuestDB[11516] = {}
+QuestDB[11516].previousQuest = 11526
+QuestDB[11516].xp = 9500
+QuestDB[11516].questLog = true
+QuestDB[11516].priority = 5
+
+--Sunfury Attack Plans
+QuestDB[11877] = {}
+QuestDB[11877].xp = 9500
+QuestDB[11877].questLog = true
+QuestDB[11877].priority = 4
+
+--Arm the Wards!
+QuestDB[11523] = {}
+QuestDB[11523].xp = 9500
+QuestDB[11523].questLog = true
+QuestDB[11523].priority = 1
+
+--The Air Strikes Must Continue
+QuestDB[11533] = {}
+QuestDB[11533].xp = 9500
+QuestDB[11533].questLog = true
+QuestDB[11533].priority = 2
+
+--Further Conversions
+QuestDB[11525] = {}
+QuestDB[11525].xp = 9500
+QuestDB[11525].questLog = true
+QuestDB[11525].priority = 3
+
+--Blood for Blood
+QuestDB[11515] = {}
+QuestDB[11515].previousQuest = 11526
+QuestDB[11515].xp = 12650
+QuestDB[11515].questLog = true
+QuestDB[11515].priority = 11
+
+--In Defense of Halaa
+QuestDB[11502] = {}
+QuestDB[11502].xp = 12650
+QuestDB[11502].appliesTo = "Alliance"
+QuestDB[11502].questLog = true
+QuestDB[11502].priority = 13
+
+
+--Enemies, Old and New
+QuestDB[11503] = {}
+QuestDB[11503].xp = 12650
+QuestDB[11503].appliesTo = "Horde"
+QuestDB[11503].questLog = true
+QuestDB[11503].priority = 13
+
+--Fires Over Skettis
+QuestDB[11008] = {}
+QuestDB[11008].previousQuest = 11098
+QuestDB[11008].xp = 12650
+QuestDB[11008].questLog = true
+QuestDB[11008].priority = 10
+
+--Prepared instand turnin quests
+--Hellfire
+
+--A Strange Weapon + The Warchief's Mandate
+QuestDB[9401] = {}
+QuestDB[9401].previousQuest = 9400
+QuestDB[9401].xp = 6020
+QuestDB[9401].appliesTo = "Horde"
+
+--Return to Obadei
+QuestDB[9423] = {}
+QuestDB[9423].previousQuest = 9390
+QuestDB[9423].xp = 1020
+QuestDB[9423].appliesTo = "Alliance"
+
+--The Temple of Telhamat
+QuestDB[10093] = {}
+QuestDB[10093].previousQuest = 10047
+QuestDB[10093].xp = 1560
+QuestDB[10093].appliesTo = "Alliance"
+
+--Zangarmarsh
+--Searching for Scout Jyoba
+QuestDB[9771] = {}
+QuestDB[9771].previousQuest = 9774
+QuestDB[9771].xp = 4020
+QuestDB[9771].appliesTo = "Horde"
+
+--Report to Shadow Hunter Denjai
+QuestDB[9775] = {}
+QuestDB[9775].xp = 1020
+QuestDB[9775].appliesTo = "Horde"
+
+--Warning the Cenarion Circle + Return to the Marsh
+QuestDB[9724] = {}
+QuestDB[9724].previousQuest = 9731
+QuestDB[9724].xp = 10560
+
+--Blessings of the Ancients
+QuestDB[9785] = {}
+QuestDB[9785].xp = 4320
+QuestDB[9785].repfaction = 942
+QuestDB[9785].reputation = "friendly"
+
+--Watcher Leesa'oh + Observing the Sporelings
+QuestDB[9697] = {}
+QuestDB[9697].xp = 9390
+QuestDB[9697].repfaction = 942
+QuestDB[9697].reputation = "friendly"
+
+--Sporeggar
+QuestDB[9919] = {}
+QuestDB[9919].xp = 8600
+QuestDB[9919].repfaction = 970
+QuestDB[9919].reputation = "neutral"
+
+--Bring Me A Shrubbery!
+QuestDB[9715] = {}
+QuestDB[9715].xp = 22000
+QuestDB[9715].itemId = 24246
+QuestDB[9715].itemAmount = 5
+
+--Terokkar Forest
+--And Now, the Moment of Truth
+QuestDB[10201] = {}
+QuestDB[10201].previousQuest = 9993
+QuestDB[10201].xp = 8250
+QuestDB[10201].appliesTo = "Horde"
+
+--Letting Earthbinder Tavgren Know
+QuestDB[10005] = {}
+QuestDB[10005].previousQuest = 10446
+QuestDB[10005].xp = 9330
+QuestDB[10005].appliesTo = "Alliance"
+
+--Letting Earthbinder Tavgren Know
+QuestDB[10006] = {}
+QuestDB[10006].previousQuest = 10447
+QuestDB[10006].xp = 9330
+QuestDB[10006].appliesTo = "Horde"
+
+--Fel Orc Plans
+QuestDB[10012] = {}
+QuestDB[10012].xp = 8600
+QuestDB[10012].appliesTo = "Alliance"
+QuestDB[10012].itemId = 25765
+QuestDB[10012].itemAmount = 1
+
+--Fel Orc Plans
+QuestDB[10013] = {}
+QuestDB[10013].xp = 8600
+QuestDB[10013].appliesTo = "Horde"
+QuestDB[10013].itemId = 25765
+QuestDB[10013].itemAmount = 1
+
+--Speak with Scout Neftis
+QuestDB[10039] = {}
+QuestDB[10039].xp = 2120
+QuestDB[10039].appliesTo = "Horde"
+
+--Speak with Private Weeks
+QuestDB[10038] = {}
+QuestDB[10038].xp = 2120
+QuestDB[10038].appliesTo = "Alliance"
+
+--Surrender to the Horde
+QuestDB[10862] = {}
+QuestDB[10862].xp = 6240
+QuestDB[10862].appliesTo = "Horde"
+
+--Secrets of the Arakkoa
+QuestDB[10863] = {}
+QuestDB[10863].xp = 6240
+QuestDB[10863].appliesTo = "Alliance"
+
+--Return to Sha'tari Base Camp
+QuestDB[10926] = {}
+QuestDB[10926].previousQuest = 10921
+QuestDB[10926].xp = 8250
+
+--Enter, the Deceiver...
+QuestDB[11550] = {}
+QuestDB[11550].xp = 3150
+
+--Strained Supplies
+QuestDB[10017] = {}
+QuestDB[10017].xp = 8600
+QuestDB[10017].itemId = 25802
+QuestDB[10017].itemAmount = 8
+QuestDB[10416].repfaction = 934 --scryers
+QuestDB[10416].reputation = "neutral"
+
+--Nagrand
+--The Consortium Needs You!
+QuestDB[9913] = {}
+QuestDB[9913].xp = 1150
+
+--Message to Garadar
+QuestDB[9934] = {}
+QuestDB[9934].previousQuest = {9931,9932}
+QuestDB[9934].xp = 14150
+QuestDB[9934].appliesTo = "Horde"
+
+--He Will Walk The Earth...
+QuestDB[9866] = {}
+QuestDB[9866].previousQuest = 9865
+QuestDB[9866].xp = 5800
+QuestDB[9866].appliesTo = "Horde"
+
+--The Throne of the Elements
+QuestDB[9870] = {}
+QuestDB[9870].xp = 2850
+QuestDB[9870].appliesTo = "Horde"
+
+--Proving Your Strength
+QuestDB[10479] = {}
+QuestDB[10479].xp = 11650
+QuestDB[10479].appliesTo = "Horde"
+QuestDB[10479].itemId = 25433
+QuestDB[10479].itemAmount = 10
+
+--Message to Telaar
+QuestDB[9933] = {}
+QuestDB[9933].previousQuest = {9931,9932}
+QuestDB[9933].xp = 14150
+QuestDB[9933].appliesTo = "Alliance"
+
+--Missing Mag'hari Procession
+QuestDB[9944] = {}
+QuestDB[9944].xp = 1150
+QuestDB[9944].appliesTo = "Horde"
+
+--Oshu'gun Crystal Powder
+QuestDB[10076] = {}
+QuestDB[10076].xp = 11650
+QuestDB[10076].appliesTo = "Alliance"
+QuestDB[10076].itemId = 26043
+QuestDB[10076].itemAmount = 20
+
+--Oshu'gun Crystal Powder
+QuestDB[10074] = {}
+QuestDB[10074].xp = 11650
+QuestDB[10074].appliesTo = "Horde"
+QuestDB[10074].itemId = 26043
+QuestDB[10074].itemAmount = 20
+
+--It's Just That Easy?
+QuestDB[10010] = {}
+QuestDB[10010].previousQuest = 10009
+QuestDB[10010].xp = 6000
+
+--Fierce Enemies
+QuestDB[10476] = {}
+QuestDB[10476].xp = 11650
+QuestDB[10476].appliesTo = "Alliance"
+QuestDB[10476].itemId = 25433
+QuestDB[10476].itemAmount = 10
+
+--The Master's Grand Design?
+QuestDB[10251] = {}
+QuestDB[10251].previousQuest = 10231
+QuestDB[10251].xp = 5800
+
+--Shadowmoon Valley
+--The Netherwing Mines
+QuestDB[11055] = {}
+QuestDB[11055].xp = 6250
+
+--News of Victory
+QuestDB[10744] = {}
+QuestDB[10744].previousQuest = 10612
+QuestDB[10744].xp = 15800
+QuestDB[10744].appliesTo = "Alliance"
+
+--The Path of Conquest
+QuestDB[10772] = {}
+QuestDB[10772].xp = 9500
+QuestDB[10772].appliesTo = "Alliance"
+QuestDB[10772].itemId = 31310
+QuestDB[10772].itemAmount = 1
+
+--The Hand of Gul'dan
+QuestDB[10680] = {}
+QuestDB[10680].xp = 3150
+QuestDB[10680].appliesTo = "Alliance"
+
+--Imbuing the Headpiece
+QuestDB[10782] = {}
+QuestDB[10782].previousQuest =10780
+QuestDB[10782].xp = 12300
+
+--News of Victory
+QuestDB[10745] = {}
+QuestDB[10745].previousQuest = 10613
+QuestDB[10745].xp = 15800
+QuestDB[10745].appliesTo = "Horde"
+
+--The Path of Conquest
+QuestDB[10750] = {}
+QuestDB[10750].xp = 9500
+QuestDB[10750].appliesTo = "Horde"
+
+--Teron Gorefiend - Lore and Legend
+QuestDB[10633] = {}
+QuestDB[10633].previousQuest = 10625
+QuestDB[10633].xp = 6250
+QuestDB[10633].appliesTo = "Horde"
+
+--The Cipher of Damnation - The First Fragment Recovered
+QuestDB[10523] = {}
+QuestDB[10523].previousQuest = 10522
+QuestDB[10523].xp = 3150
+
+--The Cipher of Damnation - The Second Fragment Recovered
+QuestDB[10541] = {}
+QuestDB[10541].previousQuest = 10540
+QuestDB[10541].xp = 6250
+
+--The Cipher of Damnation - The Second Fragment Recovered
+QuestDB[10579] = {}
+QuestDB[10579].previousQuest = 10578
+QuestDB[10579].xp = 6250
+
+--Kill Them All!
+QuestDB[11099] = {}
+QuestDB[11099].xp = 12650
+QuestDB[11099].repfaction = 1015
+QuestDB[11099].reputation = "revered"
+
+--Kill Them All!
+QuestDB[11094] = {}
+QuestDB[11094].xp = 12650
+QuestDB[11094].repfaction = 1015
+QuestDB[11094].reputation = "revered"
+
+--Rise, Overseer!
+QuestDB[11053] = {}
+QuestDB[11053].xp = 12650
+QuestDB[11053].repfaction = 1015
+QuestDB[11053].reputation = "friendly"
+
+--Stand Tall, Captain!
+QuestDB[11084] = {}
+QuestDB[11084].xp = 12650
+QuestDB[11084].repfaction = 1015
+QuestDB[11084].reputation = "honored"
+
+--Hail, Commander!
+QuestDB[11092] = {}
+QuestDB[11092].xp = 12650
+QuestDB[11092].repfaction = 1015
+QuestDB[11092].reputation = "revered"
+
+--Enter the Deceiver...
+QuestDB[11550] = {}
+QuestDB[11550].xp = 3150
+
+--Blade's Edge
+
+--Ogre Heaven
+QuestDB[11009] = {}
+QuestDB[11009].previousQuest = 11022
+QuestDB[11009].xp = 15800
+
+--The Ogre Threat
+QuestDB[9795] = {}
+QuestDB[9795].xp = 2700
+QuestDB[9795].appliesTo = "Horde"
+
+--No Time for Curiosity
+QuestDB[9794] = {}
+QuestDB[9794].xp = 2700
+QuestDB[9794].appliesTo = "Alliance"
+QuestDB[9794].itemId = 26048
+QuestDB[9794].itemAmount = 1
+
+--Where Did Those Darn Gnomes Go? + Follow the Breadcrumbs
+QuestDB[10580] = {}
+QuestDB[10580].previousQuest = 10518
+QuestDB[10580].xp = 5800
+QuestDB[10580].appliesTo = "Alliance"
+
+--A Time for Negotiation...
+QuestDB[10682] = {}
+QuestDB[10682].xp = 11650
+
+--Our Boy Wants To Be A Skyguard Ranger + followup quest
+QuestDB[11030] = {}
+QuestDB[11030].xp = 25300
+QuestDB[11030].itemId = {32598,32601} -- unstable flasks
+QuestDB[11030].itemAmount = {1,1}
+
+--Netherstorm
+--Back to the Chief!
+QuestDB[10249] = {}
+QuestDB[10249].previousQuest = 10248
+QuestDB[10249].xp = 18450
+
+--Searching for Evidence
+QuestDB[10316] = {}
+QuestDB[10316].previousQuest = 10312
+QuestDB[10316].xp = 12300
+
+--Needs More Cowbell
+QuestDB[10334] = {}
+QuestDB[10334].xp = 9250
+QuestDB[10334].itemId = 29428
+QuestDB[10334].itemAmount = 1
+
+--To the Stormspire
+QuestDB[10423] = {}
+QuestDB[10423].previousQuest = 10418
+QuestDB[10423].xp = 1250
+
+--The Dynamic Duo
+QuestDB[10434] = {}
+QuestDB[10434].previousQuest = 10433
+QuestDB[10434].xp = 1250
+
+--Dealing with the Foreman
+QuestDB[10317] = {}
+QuestDB[10317].xp = 12650
+
+--Ishanah's Help
+QuestDB[10410] = {}
+QuestDB[10410].previousQuest = 10407
+QuestDB[10410].xp = 9500
+
+--Bound for Glory
+QuestDB[10509] = {}
+QuestDB[10509].previousQuest = 10508
+QuestDB[10509].xp = 9500
+
+--Kara rings
+QuestDB[10731] = {}
+QuestDB[10731].xp = 12650
+QuestDB[10731].repfaction = 967
+QuestDB[10731].reputation = "friendly"
+QuestDB[10731].uniqueWith = {10732,10729,10730}
+
+QuestDB[10735] = {}
+QuestDB[10735].previousQuest = 10731
+QuestDB[10735].xp = 15800
+QuestDB[10735].repfaction = 967
+QuestDB[10735].reputation = "honored"
+QuestDB[10735].uniqueWith = {10736,10733,10734}
+
+QuestDB[10740] = {}
+QuestDB[10740].previousQuest = 10735
+QuestDB[10740].xp = 15800
+QuestDB[10740].repfaction = 967
+QuestDB[10740].reputation = "revered"
+QuestDB[10740].uniqueWith = {10741,10738,10739}
+
+QuestDB[10727] = {}
+QuestDB[10727].previousQuest = 10740
+QuestDB[10727].xp = 15800
+QuestDB[10727].repfaction = 967
+QuestDB[10727].reputation = "exalted"
+QuestDB[10727].uniqueWith = {10728,10725,10726}
+
+--Scale of sands rings
+QuestDB[10462] = {}
+QuestDB[10462].xp = 12650
+QuestDB[10462].repfaction = 990
+QuestDB[10462].reputation = "friendly"
+QuestDB[10462].uniqueWith = {10461,10460,10463}
+
+QuestDB[10466] = {}
+QuestDB[10466].previousQuest = 10462
+QuestDB[10466].xp = 15800
+QuestDB[10466].repfaction = 990
+QuestDB[10466].reputation = "honored"
+QuestDB[10466].uniqueWith = {10465,10467,10464}
+
+QuestDB[10470] = {}
+QuestDB[10470].previousQuest = 10466
+QuestDB[10470].xp = 15800
+QuestDB[10470].repfaction = 990
+QuestDB[10470].reputation = "revered"
+QuestDB[10470].uniqueWith = {10469,10471,10468}
+
+QuestDB[10474] = {}
+QuestDB[10474].previousQuest = 10470
+QuestDB[10474].xp = 15800
+QuestDB[10474].repfaction = 990
+QuestDB[10474].reputation = "exalted"
+QuestDB[10474].uniqueWith = {10473,10475,10472}
+
+--Stormpike
+--Rise and Be Recognized
+QuestDB[7168] = {}
+QuestDB[7168].appliesTo = "Alliance"
+QuestDB[7168].previousQuest = 7162
+QuestDB[7168].xp = 20100
+QuestDB[7168].repfaction = 730
+QuestDB[7168].reputation = "friendly"
+
+--Honored Amongst the Guard
+QuestDB[7169] = {}
+QuestDB[7169].appliesTo = "Alliance"
+QuestDB[7169].previousQuest = 7162
+QuestDB[7169].xp = 20100
+QuestDB[7169].repfaction = 730
+QuestDB[7169].reputation = "honored"
+
+--Earned Reverence
+QuestDB[7170] = {}
+QuestDB[7170].appliesTo = "Alliance"
+QuestDB[7170].previousQuest = 7169
+QuestDB[7170].xp = 25150
+QuestDB[7170].repfaction = 730
+QuestDB[7170].reputation = "revered"
+
+--Legendary Heroes
+QuestDB[7171] = {}
+QuestDB[7171].appliesTo = "Alliance"
+QuestDB[7171].previousQuest = 7170
+QuestDB[7171].xp = 30150
+QuestDB[7171].repfaction = 730
+QuestDB[7171].reputation = "exalted"
+
+--The Eye of Command
+QuestDB[7172] = {}
+QuestDB[7172].appliesTo = "Alliance"
+QuestDB[7172].previousQuest = 7171
+QuestDB[7172].xp = 30150
+QuestDB[7172].repfaction = 730
+QuestDB[7172].reputation = "exalted" --Full Exalted 999/999
+
+--Frostwolf
+--Rise and Be Recognized
+QuestDB[7163] = {}
+QuestDB[7163].appliesTo = "Horde"
+QuestDB[7163].previousQuest = 7161
+QuestDB[7163].xp = 20100
+QuestDB[7163].repfaction = 729
+QuestDB[7163].reputation = "friendly"
+
+--Honored Amongst the Clan
+QuestDB[7164] = {}
+QuestDB[7164].appliesTo = "Horde"
+QuestDB[7164].previousQuest = 7163
+QuestDB[7164].xp = 20100
+QuestDB[7164].repfaction = 729
+QuestDB[7164].reputation = "honored"
+
+--Earned Reverence
+QuestDB[7165] = {}
+QuestDB[7165].appliesTo = "Horde"
+QuestDB[7165].previousQuest = 7164
+QuestDB[7165].xp = 25150
+QuestDB[7165].repfaction = 729
+QuestDB[7165].reputation = "revered"
+
+--Legendary Heroes
+QuestDB[7166] = {}
+QuestDB[7166].appliesTo = "Horde"
+QuestDB[7166].previousQuest = 7165
+QuestDB[7166].xp = 30150
+QuestDB[7166].repfaction = 729
+QuestDB[7166].reputation = "exalted"
+
+--The Eye of Command
+QuestDB[7167] = {}
+QuestDB[7167].appliesTo = "Horde"
+QuestDB[7167].previousQuest = 7166
+QuestDB[7167].xp = 30150
+QuestDB[7167].repfaction = 729
+QuestDB[7167].reputation = "exalted" --Full Exalted 999/999
