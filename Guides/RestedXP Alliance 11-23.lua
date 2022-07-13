@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance !Warlock
 #name 11-14 Darkshore
 #version 1
@@ -252,6 +254,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 14-20 Bloodmyst
 #version 1
@@ -919,6 +923,8 @@ step << Druid
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance !Warlock
 #name 20-21 Darkshore
 #version 1
@@ -1190,12 +1196,14 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance !Warlock
 #name 21-23 Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
 #defaultfor !Draenei
-#next 23-24 Wetlands
+#next 23-24 Wetlands;24-27 Redridge/Duskwood
 step
     .goto Ashenvale,26.2,38.6
     .turnin 967 >> Turn in The Tower of Althalaxx
@@ -1365,11 +1373,13 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance Warlock
 #name 20-23 Darkshore/Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
-#next 23-24 Wetlands
+#next 23-24 Wetlands;24-27 Redridge/Duskwood
 step
     .goto Darkshore,37.0,44.1
     .home >> Set your Hearthstone to Auberdine

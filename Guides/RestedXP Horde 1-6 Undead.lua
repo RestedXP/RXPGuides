@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 1-6 Tirisfal Glades
 #version 1

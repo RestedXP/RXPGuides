@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 1-6 Eversong Woods
 #version 1
@@ -329,6 +331,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 6-10 Eversong Woods
 #version 1
@@ -967,6 +971,8 @@ step << Warrior
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 10-20 Eversong Woods / Ghostlands
 #version 1

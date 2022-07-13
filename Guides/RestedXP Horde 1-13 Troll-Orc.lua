@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 1-10 Durotar
 #version 1
@@ -1110,6 +1112,8 @@ step << Paladin
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 10-13 Durotar
 #version 1

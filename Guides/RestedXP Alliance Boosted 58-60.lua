@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name Boosted Character 58-60
 #version 1

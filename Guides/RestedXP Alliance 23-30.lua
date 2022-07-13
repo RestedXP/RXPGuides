@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 23-24 Wetlands
 #version 1
@@ -312,11 +314,13 @@ step << Mage
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 24-27 Redridge/Duskwood
 #version 1
 #group RestedXP Alliance 20-32
-#next 27-30 Wetlands/Hillsbrad
+#next 27-30 Wetlands/Hillsbrad;28-30 Duskwood
 step << Warrior
     #sticky
     #completewith exit
@@ -787,7 +791,7 @@ step
 step
     .goto Redridge Mountains,31.6,57.9
     .accept 128 >> Accept Blackrock Bounty
-    .maxlevel 26
+    .maxlevel 26 << Paladin/Hunter
 step
     .goto Redridge Mountains,33.5,49.2
     .accept 19 >> Accept Tharil'zun
@@ -940,6 +944,11 @@ step
     .goto Stormwind City,39.3,28.0
     .turnin 269 >> Turn in Seeking Wisdom
     .accept 270 >> Accept The Doomed Fleet
+step
+    #xprate >1.3
+    .goto Stormwind City,41.5,31.7
+	>>Talk to the patrolling kid
+    .accept 1274 >> Accept The Missing Diplomat
 step << Paladin
 	.goto Stormwind City,38.6,32.8
 	.trainer >> Train your class spells
@@ -954,6 +963,8 @@ step << Hunter
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 27-30 Wetlands/Hillsbrad
 #version 1
@@ -1389,6 +1400,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 30-32 Duskwood/STV
 #version 1
@@ -1449,7 +1462,7 @@ step
 	#label nomorekid
 	#requires MDiplomats
 	.zone Stormwind City >> Exit the Chapel
-step << Paladin
+step << Paladin tbc
     .goto Stormwind City,39.9,29.8
     >>Speak to Duthorian Rall
     .accept 4486 >>Accept The Tome of Nobility

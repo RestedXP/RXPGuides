@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 13-23 The Barrens
 #version 1

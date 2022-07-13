@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 1-10 Mulgore
 #version 1
@@ -905,6 +907,8 @@ step << Druid/Hunter
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 10-13 Mulgore
 #version 1

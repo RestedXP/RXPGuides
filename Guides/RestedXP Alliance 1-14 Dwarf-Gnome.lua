@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance !Warlock !Hunter
 #name 1-11 Dun Morogh
 #version 1
@@ -1336,6 +1338,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance Warlock
 #name 1-12 Dun Morogh
 #version 1
@@ -2351,6 +2355,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance Warlock
 #name 12-14 Loch Modan Gnome
 #version 1
@@ -2685,6 +2691,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance Hunter
 #name 1-11 Dun Morogh
 #version 1

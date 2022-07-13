@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 1-12 Azuremyst Isle
 #version 1
@@ -789,6 +791,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 11-20 Bloodmyst (Draenei)
 #version 1
@@ -1773,6 +1777,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 20-21 Darkshore (Draenei)
 #version 1
@@ -2026,12 +2032,14 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 21-23 Ashenvale (Draenei)
 #version 1
 #group RestedXP Alliance 20-32
 #defaultfor Draenei
-#next 23-24 Wetlands
+#next 23-24 Wetlands;24-27 Redridge/Duskwood
 step
 #xprate <1.5
     .goto Ashenvale,26.2,38.6

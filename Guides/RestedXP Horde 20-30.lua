@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde !Warrior !Shaman
 #name 20-23 Stonetalon / The Barrens
 #version 1
@@ -771,6 +773,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 23-27 Hillsbrad / Ashenvale
 #version 1
@@ -1340,6 +1344,8 @@ step << !Rogue !Paladin !Warlock
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name 27-30 Lower Barrens / Thousand Needles
 #version 1

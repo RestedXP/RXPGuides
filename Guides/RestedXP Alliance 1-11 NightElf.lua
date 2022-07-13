@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 1-6 Shadowglen
 #version 1
@@ -216,6 +218,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 6-11 Teldrassil
 #version 1

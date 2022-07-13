@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 1-11 Elwynn Forest
 #version 1
@@ -1146,6 +1148,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance
 #name 11-12 Loch Modan << !Warlock
 #name 12-14 Loch Modan << Warlock
@@ -1448,6 +1452,8 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Alliance Warlock
 #name 14-14 Darkshore
 #version 1
