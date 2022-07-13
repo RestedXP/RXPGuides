@@ -570,7 +570,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             end
             guide.key = guide.key or RXPG.BuildGuideKey(guide)
             if currentStep == 0 and (not guide[game] and not(game == "tbc" and not (guide.classic or guide.wotlk))) then
-                print(game,guide[game],guide.name)
+                --print(game,guide[game],guide.name)
                 skipGuide = addon.game
             end
             if skipGuide then
