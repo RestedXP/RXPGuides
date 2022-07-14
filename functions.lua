@@ -1423,8 +1423,7 @@ function addon.functions.fly(self, ...)
             local id = addon.flightInfo[i]
             local name = id and addon.FPDB[faction][id] and addon.FPDB[faction][id].name
             if name and strupper(name):match(element.location) then
-                local taxi = getglobal("TaxiButton" .. i)
-                taxi:GetScript("OnEnter")(taxi)
+                _G.TaxiNodeOnButtonEnter(getglobal("TaxiButton" .. i))
                 return TakeTaxiNode(i)
             end
         end
@@ -3173,10 +3172,11 @@ function addon.functions.vehicle(self, ...)
     local id = element.id
     local vehicle = addon.GetNpcId("vehicle") or addon.GetNpcId(guid, true)
     -- print('>',vehicle,vehicle == id)
-    if ((event == "UNIT_ENTERING_VEHICLE" and unit == "player") or vehicle) and
+    local entering = (event == "UNIT_ENTERING_VEHICLE" and unit == "player")
+    if (entering or vehicle) and
         ((id and vehicle == id) or (not id and vehicle)) then
         addon.SetElementComplete(self)
-        if element.timer then
+        if element.timer and entering then
             addon.StartTimer(element.timer,element.timerText)
         end
     end
