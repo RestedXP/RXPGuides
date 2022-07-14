@@ -7,6 +7,7 @@ addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 addon.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")
 addon.version = 40000
 local gameVersion = select(4, GetBuildInfo())
+addon.gameVersion = gameVersion
 
 if gameVersion < 20000 then
     addon.game = "CLASSIC"
@@ -835,7 +836,9 @@ function addon.PhaseCheck(phase)
 end
 
 function addon.IsStepShown(step)
-    return not(step.daily and RXPCData.skipDailies) and addon.AldorScryerCheck(step) and
+    return not(step.daily and RXPCData.skipDailies) and
+            (RXPCData.northrendLM or not step.questguide) and
+             addon.AldorScryerCheck(step) and
              addon.PhaseCheck(step) and addon.HardcoreCheck(step) and
              addon.SeasonCheck(step) and addon.XpRateCheck(step)
 end

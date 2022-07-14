@@ -279,7 +279,20 @@ function addon.CreateOptionsPanel()
         button.Text:SetText("Season of Mastery")
         button.tooltip =
             "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"
-
+    elseif addon.gameVersion > 30000 then
+        button = CreateFrame("CheckButton", "$parentNorthrendLM", addon.RXPOptions,
+                             "ChatConfigCheckButtonTemplate");
+        table.insert(options, button)
+        button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+        index = index + 1
+        button:SetScript("PostClick", function(self)
+            RXPCData.northrendLM = self:GetChecked()
+            addon.ReloadGuide()
+        end)
+        button:SetChecked(RXPCData.northrendLM)
+        button.Text:SetText("Northrend Loremaster")
+        button.tooltip =
+            "Adjust the routes to include almost every quest in the Northrend zones"
     end
 
     local SliderUpdate = function(self, value)
