@@ -47,6 +47,11 @@ events.blastedLands = events.collect
 events.daily = events.accept
 events.dailyturnin = events.turnin
 
+local function GetIcon(path,index,size)
+local x1, x2, y1, y2 = GetPOITextureCoords(index)
+    return format("|T%s:0:0:0:0:%d:%d:%d:%d:%d:%d|t", path, size, size, x1*size, x2*size, y1*size, y2*size)
+end
+
 addon.icons = {
     accept = "|TInterface/GossipFrame/AvailableQuestIcon:0|t",
     daily = "|TInterface/GossipFrame/DailyQuestIcon:0|t",
@@ -64,9 +69,6 @@ addon.icons = {
     train = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
     arrow = "|TInterface/MINIMAP/MinimapArrow:0|t",
     marker = "|TInterface/WORLDSTATEFRAME/ColumnIcon-FlagCapture2:0|t",
-    ["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:96:112:0:15|t",
-    deathskip = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:112:127:0:15|t",
-    home = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:64:79:0:15|t",
     xp = "|TInterface/PETBATTLES/BattleBar-AbilityBadge-Strong-Small:0|t",
     stable = "|TInterface/MINIMAP/TRACKING/StableMaster:0|t",
     tame = "|TInterface/ICONS/Ability_Hunter_BeastTaming:0|t",
@@ -75,6 +77,16 @@ addon.icons = {
     error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
     clock = "|TInterface/ICONS/INV_Misc_PocketWatch_02:0|t",
 }
+
+if addon.gameVersion > 30000 then
+    addon.icons["goto"] = GetIcon("Interface/MINIMAP/POIICONS",7,128)
+    addon.icons.deathskip = GetIcon("Interface/MINIMAP/POIICONS",8,128)
+    addon.icons.home = GetIcon("Interface/MINIMAP/POIICONS",5,128)
+else
+    addon.icons["goto"] = GetIcon("Interface/MINIMAP/POIICONS",6,128)
+    addon.icons.deathskip = GetIcon("Interface/MINIMAP/POIICONS",7,128)
+    addon.icons.home = GetIcon("Interface/MINIMAP/POIICONS",4,128)
+end
 
 addon.icons.xpto60 = addon.icons.xp
 
@@ -547,7 +559,7 @@ function addon.functions.accept(self, ...)
             element.text = "Accept *quest*"
             element.requestFromServer = true
         end
-        if element.text:match("%*quest%*") then
+        if element.text:find("%*quest%*") then
             element.retrieveText = true
         end
         element.tooltipText = addon.icons.accept .. element.text
@@ -731,7 +743,7 @@ function addon.functions.turnin(self, ...)
             element.text = "Turn in *quest*"
             element.requestFromServer = true
         end
-        if element.text:match("%*quest%*") then
+        if element.text:find("%*quest%*") then
             element.retrieveText = true
         end
         --element.tooltipText = addon.icons.turnin .. element.text
@@ -921,7 +933,7 @@ function addon.UpdateQuestCompletionData(self)
             if obj.type == "item" then
                 icon = addon.icons.collect
             elseif obj.type == "monster" and
-                (t:match(questMonster) or obj.questie) then
+                (t:find(questMonster) or obj.questie) then
                 icon = addon.icons.combat
             end
 
@@ -1370,9 +1382,9 @@ function addon.functions.fp(self, ...)
             element.text = "Get the " .. location .. " flight path"
         end
 
-        if location and location ~= "" and location:match("%w+") then
+        if location and location ~= "" and location:find("%w+") then
             for id, fp in pairs(addon.FPDB[faction]) do
-                if strupper(fp.name):match(strupper(location)) then
+                if strupper(fp.name):find(strupper(location)) then
                     element.fpId = id
                     break
                 end
@@ -1404,7 +1416,7 @@ function addon.functions.fly(self, ...)
         else
             element.text = "Fly to " .. location
         end
-        if location and location ~= "" and location:match("%w") then
+        if location and location ~= "" and location:find("%w") then
             element.location = strupper(location)
         else
             element.location = nil
@@ -1422,7 +1434,7 @@ function addon.functions.fly(self, ...)
         for i = 1, NumTaxiNodes() do
             local id = addon.flightInfo[i]
             local name = id and addon.FPDB[faction][id] and addon.FPDB[faction][id].name
-            if name and strupper(name):match(element.location) then
+            if name and strupper(name):find(element.location) then
                 _G.TaxiNodeOnButtonEnter(getglobal("TaxiButton" .. i))
                 return TakeTaxiNode(i)
             end
@@ -3164,13 +3176,16 @@ function addon.functions.vehicle(self, ...)
     end
 
     local element = self.element
+
     if not element or element.tag ~= "vehicle" then
-        return UnitExists("vehicle")
+        return UnitInVehicle("player")
+    elseif not (element.step and element.step.active) then
+        return
     end
     local event, unit, showVehicleFrame, isControlSeat, vehicleUIIndicatorID,
           guid = ...
     local id = element.id
-    local vehicle = addon.GetNpcId("vehicle") or addon.GetNpcId(guid, true)
+    local vehicle = addon.GetNpcId("vehicle") or addon.GetNpcId(guid, true) or UnitInVehicle("player")
     -- print('>',vehicle,vehicle == id)
     local entering = (event == "UNIT_ENTERING_VEHICLE" and unit == "player")
     if (entering or vehicle) and
@@ -3198,7 +3213,6 @@ function addon.functions.itemcount(self, ...)
             addon.error("Error parsing guide " .. addon.currentGuideName ..
                             ": Invalid item ID/count\n" .. self)
         end
-
         if operator == "<" then
             element.operator = -1
         elseif operator == ">" then
@@ -3217,7 +3231,7 @@ function addon.functions.itemcount(self, ...)
 
     local element = self.element
     local step = element.step
-
+    if not step.active then return end
     local operator = element.operator
     local eq = element.eq
     local total = element.total
@@ -3386,10 +3400,6 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
     end
 end
 
-function addon.functions.rescue()
-    local _, seat = UnitVehicleSeatInfo("vehicle", 2)
-    if seat then return true end
-end
 
 function addon.GetCurrentStageId()
     local criteriaId = select(9, C_Scenario.GetCriteriaInfo(1))
@@ -3492,10 +3502,6 @@ end
 --Usage: .waypoint zone,xx.xx,yy.yy,args,callback,event1,event2,...,eventN
 --args is a string that can be referenced by self.args
 
-function addon.functions.rescue()
-    local _, seat = UnitVehicleSeatInfo("vehicle", 2)
-    if seat then return true end
-end
 
 function addon.functions.ironchain()
     local id
@@ -3507,14 +3513,24 @@ end
 
 function addon.functions.bombdispenser() return GetItemCount(40686) > 0 end
 
+function addon.functions.rescue()
+    local _,seat
+    if UnitVehicleSeatInfo then
+        _, seat = UnitVehicleSeatInfo("vehicle", 2)
+    end
+    return seat
+end
+
 function addon.functions.niffelen()
     local seatCount = 0
-    for i = 2, UnitVehicleSeatCount("vehicle") do
-        local _, seat = UnitVehicleSeatInfo("vehicle", i)
-        if seat then seatCount = seatCount + 1 end
-        -- print(seat)
+    if UnitVehicleSeatInfo then
+        for i = 2, UnitVehicleSeatCount("vehicle") do
+            local _, seat = UnitVehicleSeatInfo("vehicle", i)
+            if seat then seatCount = seatCount + 1 end
+            -- print(seat)
+        end
+        -- print(seatCount)
     end
-    -- print(seatCount)
     if seatCount < 3 then return true end
 end
 
