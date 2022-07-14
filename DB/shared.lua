@@ -1322,11 +1322,6 @@ addon.QuestDB = {
         ["xp"] = 9500,
         ["appliesTo"] = "Horde",
     },
-    [10885] = {
-        ["questLog"] = true,
-        ["xp"] = 19000,
-        ["priority"] = 5,
-    },
     [10745] = {
         ["appliesTo"] = "Horde",
         ["xp"] = 15800,
