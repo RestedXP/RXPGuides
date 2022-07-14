@@ -417,7 +417,6 @@ function addon.SetStep(n, n2, loopback)
     ClearTable(addon.questAccept)
     ClearTable(addon.questTurnIn)
     ClearTable(addon.activeItems)
-    ClearTable(RXPCData.completedWaypoints)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1
@@ -678,6 +677,14 @@ function addon.SetStep(n, n2, loopback)
             end
         else
             stepframe:Hide()
+        end
+    end
+
+    for index in pairs(RXPCData.completedWaypoints) do
+        local wstep = guide.steps[index]
+        if not(wstep and wstep.active) then
+            --print('kk',index)
+            RXPCData.completedWaypoints[index] = nil
         end
     end
     addon.UpdateItemFrame()
@@ -999,10 +1006,11 @@ function addon:LoadGuide(guide, OnLoad)
     end
 
     _G.CloseDropDownMenus()
-    addon.tickTimer = GetTime()
+
     if not (OnLoad and RXPCData and RXPCData.currentStep) then
         RXPCData.currentStep = 1
         RXPCData.stepSkip = {}
+        RXPCData.completedWaypoints = {}
     end
     --local totalHeight = 0
     local nframes = 0
