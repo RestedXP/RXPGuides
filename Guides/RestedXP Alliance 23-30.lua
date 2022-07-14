@@ -89,7 +89,7 @@ step
 	.bronzetube
 step << Draenei/NightElf --Not needed, including just in case someone forgets to set HS to SW
     .goto Ironforge,55.5,47.7
-    .fp >> Get the Ironforge Flight Path
+    .fp Ironforge>> Get the Ironforge Flight Path
 step << Mage
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
@@ -923,6 +923,7 @@ step << Mage
 	>> Teleport to stormwind
 	.trainer >> Train your class spells
 step
+    #xprate <1.5
     .goto Stormwind City,26.4,78.4
     .accept 335 >> Accept A Noble Brew
 step
@@ -950,12 +951,15 @@ step
 	>>Talk to the patrolling kid
     .accept 1274 >> Accept The Missing Diplomat
 step << Paladin
+#xprate <1.5
 	.goto Stormwind City,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
+#xprate <1.5
 	.goto Stormwind City,38.5,26.8
 	.trainer >> Train your class spells
 step << Hunter
+#xprate <1.5
 	.goto Stormwind City,61.7,15.4
 	.trainer >> Train your class spells
 --????
@@ -976,7 +980,6 @@ step
     .goto Stormwind City,60.5,12.3,0
     .zone Ironforge >> Take the tram to Ironforge
 step <<!Mage
-	.goto Stormwind City,63.2,8.6,20,0
     .goto Ironforge,69.8,50.1
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >>Enter the Deeprun Tram and go to Ironforge. Click here for a logout skip in the tram.
     .turnin 2923 >> Turn in Tinkmaster Overspark
@@ -998,8 +1001,8 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
 	.train 197 >> Train 2H Axes << !Rogue
 	.train 266 >> Train Guns << Hunter/Warrior/Rogue
     .train 199 >> Train 2H Maces << Warrior/Shaman
-    .train 54 >> Train Maces << Rogue/Shaman
-    .train 44 >> Train Axes << Shaman
+    .train 54 >> Train Maces << Rogue/Shaman/wotlk Warrior
+    .train 44 >> Train Axes << Shaman/wotlk Warrior
 step << Hunter
 	#sticky
 	#completewith next
@@ -1162,6 +1165,7 @@ step
     .goto Wetlands,64.8,75.3
     >>Loot the tree root at the base of the waterfall
     .complete 335,2 --Collect Musquash Root (x1)
+    .isOnQuest 335
 step << Druid
     #completewith next
     >>Teleport to Moonglade
@@ -1627,6 +1631,7 @@ step << Shaman
 	.goto Duskwood,78.4,35.9
     >>Look for a small flower on the ground
     .complete 335,1 --Collect Tear of Tilloa (x1)
+    .isOnQuest 335
 step << Shaman
     .goto Duskwood,77.4,36.1
 	>> Kill the undead in the house and loot him for his ring
@@ -1763,6 +1768,7 @@ step << !Shaman
     .goto Duskwood,78.4,35.9
     >>Look for a small flower on the ground
     .complete 335,1 --Collect Tear of Tilloa (x1)
+    .isOnQuest 335
 step << !Shaman
     .goto Duskwood,75.7,45.3
     .turnin 98 >> Turn in The Legend of Stalvan
@@ -1910,7 +1916,11 @@ step
 step
     .goto Stormwind City,26.4,78.3
     .turnin 335 >> Turn in A Noble Brew
+    .isQuestComplete 335
+step
+    .goto Stormwind City,26.4,78.3
     .accept 336 >> Accept A Noble Brew
+    .isQuestTurnedIn 335
 step << Warlock
     .goto Stormwind City,25.3,78.5
     .accept 4738 >>Accept In Search of Menara Voidrender
@@ -1929,6 +1939,7 @@ step
 step
     .goto Stormwind City,75.1,31.4
     .turnin 336 >> Turn in A Noble Brew
+    .isOnQuest 336
 step
     .goto Stormwind City,74.1,7.6
     .accept 337 >> Accept An Old History Book
