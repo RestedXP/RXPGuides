@@ -385,6 +385,11 @@ local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
     return false
 end
 
+local function GetPinHash(x,y,instance,element)
+    local c1,c2,c3,c4 = 569,619,89,571
+    return math.floor(x*128)*c1+math.floor(y*128)*c2+instance*c3+element*c4
+
+end
 -- Creates a list of Pin data structures.
 --
 -- All of the filtering and combining of steps and elements by proximity
@@ -434,11 +439,22 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         while numActivePins < numPins and j <= #step.elements do
             local element = step.elements[j]
 
+            local skipWp = not(element.zone and element.x)
+            if not element.wpHash and not skipWp then
+                element.wpHash = GetPinHash(element.x,element.y,element.zone,j)
+            end
+            if not isMiniMap and step.active and not skipWp then
+                local wpList = RXPCData.completedWaypoints[step.index] or {}
+                skipWp = wpList[element.wpHash] or element.skip
+                wpList[element.wpHash] = skipWp
+                RXPCData.completedWaypoints[element.step.index] = wpList
+            end
+
             if element.text and not element.label and not element.textOnly then
                 element.label = tostring(step.index)
             end
 
-            if element.zone and element.x and
+            if not skipWp and
                 (not (element.parent and
                     (element.parent.completed or element.parent.skip)) and
                     not element.skip) then
@@ -463,7 +479,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                             wx = element.wx,
                             wy = element.wy,
                             zone = element.zone,
-                            parent = element.parent
+                            parent = element.parent,
                         })
                     end
                 end

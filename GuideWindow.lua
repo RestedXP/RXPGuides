@@ -417,7 +417,6 @@ function addon.SetStep(n, n2, loopback)
     ClearTable(addon.questAccept)
     ClearTable(addon.questTurnIn)
     ClearTable(addon.activeItems)
-    ClearTable(RXPCData.completedWaypoints)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1
@@ -678,6 +677,14 @@ function addon.SetStep(n, n2, loopback)
             end
         else
             stepframe:Hide()
+        end
+    end
+
+    for index in pairs(RXPCData.completedWaypoints) do
+        local wstep = guide.steps[index]
+        if not(wstep and wstep.active) then
+            --print('kk',index)
+            RXPCData.completedWaypoints[index] = nil
         end
     end
     addon.UpdateItemFrame()
@@ -984,10 +991,10 @@ local emptyGuide = {
 
 function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
-    if not guide then return end
 
-    if (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) and
-        not guide.empty then return addon:LoadGuide(emptyGuide) end
+    if not addon.IsGuideActive(guide) or not guide.empty and
+        (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA)
+         then return addon:LoadGuide(emptyGuide) end
 
     if RXPCData.frameHeight then
         RXPFrame:SetHeight(RXPCData.frameHeight)
@@ -999,10 +1006,11 @@ function addon:LoadGuide(guide, OnLoad)
     end
 
     _G.CloseDropDownMenus()
-    addon.tickTimer = GetTime()
+
     if not (OnLoad and RXPCData and RXPCData.currentStep) then
         RXPCData.currentStep = 1
         RXPCData.stepSkip = {}
+        RXPCData.completedWaypoints = {}
     end
     --local totalHeight = 0
     local nframes = 0
@@ -1350,7 +1358,7 @@ function BottomFrame.SortSteps()
 end
 
 local function IsGuideActive(guide)
-    if addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) then
+    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end
