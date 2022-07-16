@@ -1488,6 +1488,7 @@ function addon.functions.collect(self, ...)
         element.id = id
         qty = tonumber(qty)
         element.qty = qty or 1
+        element.multipler = 1
         element.itemName = addon.GetItemName(id)
         --[[
 .collect itemId,quantity,questId,objFlags,flags
@@ -1497,7 +1498,7 @@ flags:
 4   (0x4): Completes the step if the flagged objectives are complete (see objFlags again)
 8   (0x8): Includes items in your bank into the item count
 16 (0x10): Don't complete the element if the quest is turned in
-negative sign: same as 3 (0x2+0x1)
+negative sign: same as 3 (0x2+0x1), -5 subtracts 5 units for each quest item
 
 By default, the step will complete the step if the quest ID provided is turned in
 
@@ -1508,7 +1509,7 @@ obJflag = obj1*2^0 + obj2*2^1 + obj3*2^2 + ... + objN*2^(N-1)
 
 if objFlags is omitted or set to 0, element will complete if you have the quest in your quest log
 ]]
-        if flags < 0 then flags = 3 end
+        if flags < 0 then element.multipler = -flags; flags = 3 end
         element.textOnly = bit.band(flags, 0x1) == 0x1
         element.subtract = bit.band(flags, 0x2) == 0x2
         element.checkObjectives = bit.band(flags, 0x4) == 0x4
@@ -1572,7 +1573,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
                     for _, obj in ipairs(objIndex) do
                         if objectives[obj] then
                             numRequired = numRequired -
-                                              objectives[obj].numFulfilled
+                                              objectives[obj].numFulfilled*element.multiplier
                         end
                     end
                     if numRequired < 0 then numRequired = 0 end
