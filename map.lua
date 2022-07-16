@@ -427,6 +427,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     -- configures or until we reach the end of the current guide.
 
     local function ProcessMapPin(step)
+        if not step then return end
         -- Loop through the elements in each step. Again, we check if we
         -- already created enough pins, then we check if the element
         -- should be included on the map.
@@ -542,6 +543,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     -- configures or until we reach the end of the current guide.
 
     local function ProcessLine(step)
+        if not step then return end
         local function InsertLine(element, sX, sY, fX, fY, lineAlpha)
             table.insert(pins, {
                 element = element,

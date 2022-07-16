@@ -202,7 +202,7 @@ function addon.CreateOptionsPanel()
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideCompletedSteps = self:GetChecked()
-        addon.RXPFrame.SF.ScrollBar:SetValue(0)
+        addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
     end)
     button:SetChecked(RXPData.hideCompletedSteps)
     button.Text:SetText("Hide completed steps")

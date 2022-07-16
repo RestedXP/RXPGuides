@@ -46,7 +46,7 @@ local BottomFrame = CreateFrame("Frame", "$parent_bottomFrame", RXPFrame,
                                 BackdropTemplate)
 local GuideName = CreateFrame("Frame", "$parentGuideName", RXPFrame,
                               BackdropTemplate)
-local ScrollFrame = CreateFrame("ScrollFrame", "$parentSF", BottomFrame,
+local ScrollFrame = CreateFrame("ScrollFrame", "$parentScrollFrame", BottomFrame,
                                 "UIPanelScrollFrameTemplate")
 local CurrentStepFrame = CreateFrame("Frame", nil, RXPFrame)
 local ScrollChild = CreateFrame("Frame", "$parent_steps", BottomFrame,
