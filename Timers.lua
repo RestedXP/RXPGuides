@@ -12,20 +12,37 @@ BarContainer.barIcon = "Interface\\ICONS\\INV_Misc_PocketWatch_02"
 BarContainer.barPool = {}
 BarContainer.labels = {}
 
-function BarContainer.SetAnchor(self)
 
-    --local lastActive
-    local nBars = 0
+BarContainer:ClearAllPoints()
+BarContainer:SetPoint("TOPLEFT",RXPFrame.Footer,"TOPLEFT",4,0)
+BarContainer:SetPoint("BOTTOMRIGHT",RXPFrame.Footer,"BOTTOMRIGHT",0,1)
+
+function BarContainer.SetAnchor()
+    local anchor = RXPFrame.CurrentStepFrame.anchor
+    --print(anchor)
+    local lastActive
+    local nBars = -1
     local spacing = 0
     for i,bar in ipairs(BarContainer.barPool) do
         if bar:IsShown() then
+            if lastActive and anchor == "BOTTOM" then
+                bar:SetAlpha(0)
+            else
+                bar:SetAlpha(1)
+            end
             spacing = -(BarContainer.height+2)*nBars
             bar:ClearAllPoints()
             bar:SetPoint("TOPLEFT",BarContainer,"BOTTOMLEFT",0,spacing)
             bar:SetPoint("TOPRIGHT",BarContainer,"BOTTOMRIGHT",0,spacing)
             nBars = nBars + 1
+            lastActive = bar
             --print(i,spacing)
         end
+    end
+    if not lastActive then
+        RXPFrame.Footer.icon:SetAlpha(1)
+        RXPFrame.Footer.text:SetAlpha(1)
+        RXPFrame.Footer.cog:SetAlpha(1)
     end
     BarContainer:SetHeight(spacing+BarContainer.height)
 end
@@ -82,6 +99,9 @@ function addon.StartTimer(duration,label,options)
     end
     bar:Start()
     BarContainer.SetAnchor()
+    RXPFrame.Footer.icon:SetAlpha(0)
+    RXPFrame.Footer.text:SetAlpha(0)
+    RXPFrame.Footer.cog:SetAlpha(0)
     return bar
 end
 
