@@ -3,7 +3,7 @@ local RXPFrame = addon.RXPFrame
 local candy = LibStub("LibCandyBar-3.0")
 
 local BarContainer = CreateFrame("Frame","$parentBarContainer",RXPFrame)
-BarContainer:SetHeight(16)
+BarContainer.height = 16
 
 RXPFrame.BarContainer = BarContainer
 BarContainer.barTexture = "Interface\\CHARACTERFRAME\\BarFill"
@@ -12,22 +12,22 @@ BarContainer.barIcon = "Interface\\ICONS\\INV_Misc_PocketWatch_02"
 BarContainer.barPool = {}
 BarContainer.labels = {}
 
-function BarContainer.SetAnchor()
+function BarContainer.SetAnchor(self)
 
-    local lastActive
-    for _,bar in ipairs(BarContainer.barPool) do
+    --local lastActive
+    local nBars = 0
+    local spacing = 0
+    for i,bar in ipairs(BarContainer.barPool) do
         if bar:IsShown() then
+            spacing = -(BarContainer.height+2)*nBars
             bar:ClearAllPoints()
-            if not lastActive then
-                bar:SetPoint("TOPLEFT",BarContainer,"TOPLEFT")
-                bar:SetPoint("TOPRIGHT",BarContainer,"TOPRIGHT")
-            else
-                bar:SetPoint("TOPLEFT",lastActive,"BOTTOMLEFT",0,-3)
-                bar:SetPoint("TOPRIGHT",lastActive,"BOTTOMRIGHT",0,-3)
-            end
-            lastActive = bar
+            bar:SetPoint("TOPLEFT",BarContainer,"BOTTOMLEFT",0,spacing)
+            bar:SetPoint("TOPRIGHT",BarContainer,"BOTTOMRIGHT",0,spacing)
+            nBars = nBars + 1
+            print(i,spacing)
         end
     end
+    BarContainer:SetHeight(spacing+BarContainer.height)
 end
 
 function BarContainer:Acquire(label)
