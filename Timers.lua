@@ -24,7 +24,7 @@ function BarContainer.SetAnchor(self)
             bar:SetPoint("TOPLEFT",BarContainer,"BOTTOMLEFT",0,spacing)
             bar:SetPoint("TOPRIGHT",BarContainer,"BOTTOMRIGHT",0,spacing)
             nBars = nBars + 1
-            print(i,spacing)
+            --print(i,spacing)
         end
     end
     BarContainer:SetHeight(spacing+BarContainer.height)
