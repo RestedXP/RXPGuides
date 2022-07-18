@@ -1379,9 +1379,8 @@ step << Orc Warlock/Undead Warlock
     .goto Eversong Woods,48.2,47.9
     .train 755 >>Train Health Funnel
     .train 705 >>Train Shadow Bolt r3
-step << Undead/BloodElf !Hunter
-   .cooldown item,6948,>0 >>Run to Fairbreeze Village. 
-    .hs >> Hearth to Falconwing and run if its up << !Warlock
+step << Undead/BloodElf !Hunter 
+    .hs >> Hearth to Falconwing and run if its up
     .goto Eversong Woods,46.9,71.8
     .turnin 9252 >> Turn in Defending Fairbreeze Village
     .accept 9253 >> Accept Runewarden Deryan
@@ -2148,12 +2147,12 @@ step
     .goto Ghostlands,62.9,32.8
     .accept 9212 >> Accept Escape from the Catacombs
 step << !Druid !Paladin !Priest
-    >>She has 2 mobs spawn on her about 60 yards after leaving the catacombs
+    >>She has 2 mobs spawn on her about 60 yards after leaving the catacombs. Ensure you finish burning corpses before leaving!
     .goto Ghostlands,67.8,28.9,40,0
     .goto Ghostlands,72.2,30.1
     .complete 9212,1 --Escort Ranger Lilatha back to the Farstrider Enclave
 step << Druid/Paladin/Priest
-    >>She has 2 mobs spawn on her about 60 yards after leaving the catacombs. Remember to buff her
+    >>She has 2 mobs spawn on her about 60 yards after leaving the catacombs. Remember to buff her. Ensure you finish burning corpses before leaving!
     .goto Ghostlands,67.8,28.9,40,0
     .goto Ghostlands,72.1,31.8
     .complete 9212,1 --Escort Ranger Lilatha back to the Farstrider Enclave
@@ -2170,7 +2169,7 @@ step << Rogue
     .accept 10548 >>Accept The Sad Truth
     .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
 step
-    .goto Ghostlands,78.8,19.8,30 >>Enter the building
+    .goto Ghostlands,78.8,19.8,30 >>Enter the building. Be careful, the Arcane Reavers here hit HARD and stun
 step
     >>Go to the top floor. Turn in at the book
     .goto Ghostlands,79.6,17.6
@@ -2193,7 +2192,7 @@ step
     .turnin 9276 >> Turn in Attack on Zeb'Tela
     .accept 9277 >> Accept Assault on Zeb'Nowa
 step
-    >> Head upstairs
+    >> Head up the western ramp
     .goto Ghostlands,72.0,32.7
     .turnin 9162 >> Turn in Hints of the Past
     .accept 9172 >> Accept Report to Magister Kaendris
@@ -2206,7 +2205,9 @@ step << Rogue
 step
     #sticky
     #label Catlords
-    .goto Ghostlands,68.2,57.8
+    .goto Ghostlands,68.2,57.8,40,0
+    .goto Ghostlands,65.1,66.7,40,0
+    .goto Ghostlands,63.0,75.0,40,0
     >>Kill Trolls in the area. Loot them for Staves and Claws
     .complete 9277,1 --Kill Shadowpine Catlord (x10)
     .complete 9277,2 --Kill Shadowpine Hexxer (x10)
@@ -2247,7 +2248,7 @@ step << Rogue
 step << Warlock
     #sticky
     #completewith next
-    >>Kill Kel'gash the Wicked. You should be able to solo him by keeping Fear and dots up on him, as well as line of sight (LoS)ing his spells when he tries to cast on you. Be careful as he has a 100 damage instant-cast lightning shock he uses rarely. If you can't do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest
+    >>Kill Kel'gash the Wicked. You should be able to solo him by letting your pet build aggro, then loading dots up on him, as well as line of sight (LoS)ing his spells when he tries to cast on you. Be careful as he has a 100 damage instant-cast lightning shock he uses rarely. If you can't do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest
     .goto Ghostlands,65.1,79.2
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
 step << Hunter
@@ -2266,6 +2267,7 @@ step
     .goto Ghostlands,58.2,65.1
     .complete 9169,1 --Collect Night Elf Moon Crystal Deactivated (x1)
 step
+    >> Head back to Farstrider Enclave
     .goto Ghostlands,72.4,31.3
     .turnin 9277 >> Turn in Assault on Zeb'Nowa
 step
