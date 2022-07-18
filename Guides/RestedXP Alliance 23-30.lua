@@ -15,6 +15,7 @@ step << Warrior
     .goto Stormwind City,46.7,79.0,0
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
+    #xprate <1.5
 step << Paladin
 	.goto Stormwind City,38.6,32.8
 	.trainer >> Train your class spells
@@ -240,6 +241,7 @@ step << Warrior
     .goto Wetlands,50.2,37.8
     .vendor 8305>>Check the herb vendor and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8,0,1,1 --Collect Liferoot (x8)
+    #xprate <1.5
 step
     .goto Wetlands,56.4,40.4
     .turnin 463 >> Turn in The Greenwarden
@@ -328,6 +330,7 @@ step << Warrior
     .goto Stormwind City,46.7,79.0,0
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
+    #xprate <1.5
 step << Paladin
 	.goto Stormwind City,38.6,32.8
 	.trainer >> Train your class spells
@@ -974,6 +977,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next 30-32 Duskwood/STV
+#xprate <1.5
 
 step
     .goto Stormwind City,60.5,12.3,40,0
@@ -1221,20 +1225,24 @@ step << Warrior
     .goto Wetlands,50.2,37.8
     >>Check the herb vendor and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
+    #xprate <1.5
 step
     .goto Wetlands,56.4,40.5
 	>>Finish off Fen Creepers in the rivers
     .turnin 275 >> Turn in Blisters on The Land
     .isOnQuest 275
 step
+    #completewith next
+    .goto Wetlands,49.9,18.3
+    .turnin 472 >> Turn in Fall of Dun Modr
+step
     .goto Wetlands,49.9,18.3
     .accept 631 >> Accept The Thandol Span
-    .turnin 472 >> Turn in Fall of Dun Modr
     .accept 304 >> Accept A Grim Task
     .accept 303 >> Accept The Dark Iron War
 step
 	#sticky
-	#completewith dwarfquests
+    #label balgaras
     >>Kill Balgaras the Foul, he can spawn in the camp far to the east or inside one of the houses in Dun Modr. Head east after checking Dun Modir. Loot him for his ear.
     .complete 304,1 --Collect Ear of Balgaras (x1)
 	.unitscan Balgaras the Foul
@@ -1249,11 +1257,11 @@ step--?
     .complete 303,3 --Kill Dark Iron Saboteur (x5)
     .complete 303,4 --Kill Dark Iron Demolitionist (x5)
 step
+    #requires balgaras
     .goto Wetlands,49.7,18.3
     .turnin 303 >> Turn in The Dark Iron War
     .turnin 304 >> Turn in A Grim Task
 step
-	#label dwarfquests
     .goto Wetlands,51.2,8.0
 	>> Go downstairs and click on the dwarf corpse. Ignore all the mobs.
     .turnin 631 >> Turn in The Thandol Span
@@ -1272,6 +1280,7 @@ step
 	>>Jump down and loot the letter from the corpse underwater
     .accept 637 >> Accept Sully Balloo's Letter
 step
+    #completewith next
     .goto Arathi Highlands,52.5,90.4,30 >> Swim east toward the ramp here
 step
     .goto Arathi Highlands,48.7,87.9
@@ -1283,6 +1292,11 @@ step
 step
     .goto Arathi Highlands,45.9,47.5
     .turnin 634 >> Turn in Plea To The Alliance
+step
+    #xprate >1.3
+    .goto Arathi Highlands,46.6,47.0
+    .turnin 690 >> Turn in Malin's Request
+    .isOnQuest 690
 step
     .goto Arathi Highlands,45.8,46.1
     .fp Arathi >> Get the Arathi Highlands flight path
@@ -1310,7 +1324,7 @@ step <<  Hunter
      #completewith next
     .goto Hillsbrad Foothills,50.2,58.8
      .stable >> Stable your pet and head east
-step
+step << Hunter tbc
     .xp <30,1
     .goto Hillsbrad Foothills,56.6,53.8
     .train 17264 >> Tame an Elder Moss Creeper, attack mobs with it to learn bite rank 4
@@ -1411,6 +1425,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next RestedXP Alliance 32-47\32-33 Shimmering Flats
+#xprate <1.5
 step << !Mage
 	.goto Ironforge,74.5,50.5,20,0
 	.goto Stormwind City,51.7,12.3
@@ -1882,6 +1897,7 @@ step << Warrior
     .goto Stormwind City,46.7,79.0
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
+    #xprate <1.5
 step << Warrior
     .goto Stormwind City,78.8,45.3
     .accept 1718 >> Accept The Islander
@@ -2060,7 +2076,7 @@ step
     .goto Wetlands,8.4,61.6
     .turnin 1301 >> Turn in James Hyal
     .accept 1302 >> Accept James Hyal
-step << Draenei !Shaman
+step << Draenei !Shaman tbc
 	.goto Wetlands,4.8,57.3,50,0
 	.goto Darkshore,31.0,41.1,30.0
 	.goto The Exodar,81.5,52.5,40,0
@@ -2068,7 +2084,7 @@ step << Draenei !Shaman
 	.money <35.00
 	>> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Otherwise skip this step
 	.hs >>Then hearth to Menethil Harbor and take the boat to Theramore.
-step << NightElf
+step << NightElf tbc
 	.goto Wetlands,4.8,57.3,50,0
 	.goto Darkshore,33.1,40.3,30,0
 	.goto Darnassus,38.1,15.3,30,0
@@ -2079,14 +2095,15 @@ step << NightElf
 step << Shaman
     #sticky
     #completewith next
-    .zone The Exodar >> Take the boat to Darkshore and then to The Exodar. If you have 35g purchase your mount and training otherwise skip this step.
+    .zone The Exodar >> Take the boat to Darkshore and then to The Exodar.
+    >>If you have 35g purchase your mount and training otherwise skip this step. << tbc
 	.goto The Exodar,81.5,52.5,40,0
 step << Shaman
     .goto The Exodar,29.9,33.0
     .turnin 10491 >> Turn in Call of Air
     .accept 9552 >> Accept Call of Air
 step << Shaman
-.isQuestTurnedIn 9508
+    #completewith next
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman
     .goto Bloodmyst Isle,32.3,16.2
@@ -2137,4 +2154,201 @@ step << Shaman
 	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
 step << Shaman
     .hs >> Hearth to Wetlands
+]])
+
+--1.5x guides:
+
+RXPGuides.RegisterGuide([[
+#group RestedXP Alliance 32-47
+<< Alliance
+#name 39-41 Arathi Highlands
+#next 41-43 Badlands
+#xprate >1.3
+
+
+step
+	#completewith next
+	#label arathi
+	.goto Ironforge,55.5,48.0
+    .fly Arathi Highlands>> Fly to Arathi Highlands
+step
+    .goto Arathi Highlands,46.0,47.6
+    .accept 684 >> Accept Wanted!  Marez Cowl
+    .accept 685 >> Accept Wanted!  Otto and Falconcrest
+step
+    .goto Arathi Highlands,29.6,63.1
+    >>Kill Marez Cowl, she has multiple spawn points around the eastern side of the keep
+    .complete 684,1 --Collect Marez's Head (x1)
+    .unitscan Marez Cowl
+step
+    .goto Arathi Highlands,26.1,65.6
+    >>Go to the keep's 2nd floor and kill the two named mobs
+    .complete 685,1 --Collect Otto's Head (x1)
+    .complete 685,2 --Collect Falconcrest's Head (x1)
+step
+    #completewith next
+    .goto Arathi Highlands,21.6,75.6,20,0
+    .goto Arathi Highlands,22.1,79.9,20 >> The path to Faldir's Cove starts here
+step
+    .goto Arathi Highlands,31.8,82.6
+	>>Head to Faldir's Cove, just behind the Stromgarde Keep's southeastern wall
+    .accept 663 >> Accept Land Ho!
+    step
+    .goto Arathi Highlands,32.3,81.4
+    .turnin 663 >> Turn in Land Ho!
+step
+    .goto Arathi Highlands,32.8,81.5
+    .accept 662 >> Accept Deep Sea Salvage
+step
+    .goto Arathi Highlands,33.9,80.7
+    .accept 664 >> Accept Drowned Sorrows
+    .accept 665 >> Accept Sunken Treasure
+step
+	>>Two water elementals will spawn. Kill them
+    .complete 665,1 --Escort Professor Phizzlethorpe
+step
+    .goto Arathi Highlands,33.9,80.7
+    .turnin 665 >> Turn in Sunken Treasure
+    .accept 666 >> Accept Sunken Treasure
+step << !Druid !Warlock !Shaman
+	#completewith next
+	.use 5996 >> Use your Elixir of Water Breathing you took out of your bank earlier
+	.itemcount 5996,1
+step
+	#sticky
+	#completewith swimmingsucks
+    .goto Arathi Highlands,23.0,87.7,0
+    .complete 664,1 --Kill Daggerspine Raider (x10)
+    .complete 664,2 --Kill Daggerspine Sorceress (x3)
+	.use 4491 >>Look for Elven Gems underwater, use the goggles provided to track them on your minimap
+    .complete 666,1 --Collect Elven Gem (x10)
+step
+    .goto Arathi Highlands,23.5,85.1
+	>>Enter the ship through the stairs at the front side of the deck and loot the book inside the cauldron next to the base of the stairs
+    .complete 662,2 --Collect Maiden's Folly Log (x1)
+step
+    .goto Arathi Highlands,23.1,84.4
+	>>Move towards the back of the ship and loot the chart hanging on the ledge of the wooden ring that supports the ship's mast
+    .complete 662,1 --Collect Maiden's Folly Charts (x1)
+step
+    .goto Arathi Highlands,20.4,85.7
+	>>Enter the ship through the opening on the front side of the deck and loot the chart on top of a box next to a cannon
+    .complete 662,3 --Collect Spirit of Silverpine Charts (x1)
+step
+    .goto Arathi Highlands,20.6,85.1
+	>>Exit the ship and enter it from the hole on the hull, then loot the ledger on the sea floor
+    .complete 662,4 --Collect Spirit of Silverpine Log (x1)
+step
+	#label swimmingsucks
+	#sticky
+    .goto Arathi Highlands,19.3,84.1,90,0
+    .goto Arathi Highlands,17.7,89.5,90,0
+    .goto Arathi Highlands,25.5,90.8,90,0
+    .goto Arathi Highlands,24.1,85.7,90,0
+    .goto Arathi Highlands,23.2,89.7,90,0
+    .goto Arathi Highlands,19.3,84.1,90,0
+    .goto Arathi Highlands,17.7,89.5,90,0
+    .goto Arathi Highlands,25.5,90.8,90,0
+    .goto Arathi Highlands,24.1,85.7,90,0
+    .goto Arathi Highlands,23.2,89.7,90,0
+    .goto Arathi Highlands,19.3,84.1
+	.use 4491 >>Use your Goggles of Gem Finding to find Elven Gems. Loot them. Kill nagas in the way of gems.
+    .complete 666,1 --Collect Elven Gem (x10)
+    .complete 664,1 --Kill Daggerspine Raider (x10)
+    .complete 664,2 --Kill Daggerspine Sorceress (x3)
+step
+	#requires swimmingsucks
+    .goto Arathi Highlands,32.7,81.5
+    .turnin 662 >> Turn in Deep Sea Salvage
+step
+    .goto Arathi Highlands,33.9,80.7
+    .turnin 666 >> Turn in Sunken Treasure
+    .accept 668 >> Accept Sunken Treasure
+    .turnin 664 >> Turn in Drowned Sorrows
+step
+    .goto Arathi Highlands,32.3,81.4
+    .turnin 668 >> Turn in Sunken Treasure
+    .accept 669 >> Accept Sunken Treasure
+step
+	#completewith end1
+    .goto Arathi Highlands,35.8,79.5
+    .goto Arathi Highlands,48.7,55.8,100 >> Logout on top of the rock in the cave where you escorted the gnome, then log back in
+    .link https://www.twitch.tv/videos/1219247236?t=01h28m13s >> Click HERE for video reference
+step
+    .goto Arathi Highlands,45.9,47.4
+    .turnin 684 >> Turn in Wanted!  Marez Cowl
+    .turnin 685 >> Turn in Wanted!  Otto and Falconcrest
+step << !Mage
+    #label end1
+	.goto Arathi Highlands,45.8,46.1
+	.fly Ironforge>> Fly to Ironforge
+    .zoneskip Ironforge
+step
+    .goto Ironforge,74.7,12.3
+    .turnin 514 >> Turn in Letter to Stormpike
+    .accept 525 >> Accept Further Mysteries
+    .accept 707 >> Accept Ironband Wants You!
+    .isQuestTurnedIn 511
+step
+    .goto Ironforge,74.3,9.8
+    .accept 1360 >> Accept Reclaimed Treasures
+step << Warlock
+    .goto Ironforge,74.3,9.8
+    .turnin 1758 >>Turn in Tome of the Cabal
+    .isOnQuest 1758
+step << Warlock
+    .goto Ironforge,74.3,9.8
+    .accept 1802 >>Accept Tome of the Cabal
+    .isQuestTurnedIn 1758
+step << Priest
+    .goto Ironforge,23.1,15.9
+    >>Buy the level 40 weapon upgrade from the wand vendor (35dps)
+    .collect 5238,1
+    >>Skip this step if you can find a better wand at the Auction House
+step << Shaman
+    .goto Ironforge,61.8,88.6
+    >>Buy the level 41 weapon upgrade (26dps)
+    .collect 2530,1
+    >>Skip this step if you can find a better weapon at the Auction House
+step << Paladin
+    .goto Ironforge,61.8,88.6
+    >>Buy the level 39 2h weapon upgrade (31dps)
+    .collect 2531,1
+    >>Skip this step if you can find a better weapon at the Auction House
+step << Rogue
+    .goto Ironforge,45.2,6.6
+    >>Buy the level 41 weapon upgrades (25dps)
+    .collect 2528,1
+    .collect 2534,1
+    >>Skip this step if you can find a better weapon at the Auction House
+step
+	#completewith next
+	    .goto Ironforge,34.1,62.3,0
+	+Bank things if you need to
+step << Mage
+    >>Teleport to Ironforge
+	.goto Ironforge,28.6,7.2
+	.trainer >> Train your spells
+step << !Mage
+	.goto Ironforge,69.8,83.0 << Hunter
+	.goto Ironforge,66.4,88.7 << Warrior
+	.goto Ironforge,24.7,8.8 << Priest
+	.goto Ironforge,24.6,9.2 << Paladin
+	.goto Ironforge,50.3,5.8 << Warlock
+	.goto Ironforge,51.6,15.2 << Rogue
+	.goto Ironforge,55.4,29.1 << Shaman
+	.trainer >> Train your spells
+step << Dwarf !Paladin
+	#sticky
+	#completewith next
+	.goto Dun Morogh,63.5,50.6
+	.money <35.00
+	.train 152 >> Head to Dun Morogh, train riding and purchase your mount.
+step << Gnome !Warlock
+	#sticky
+	#completewith next
+	.goto Dun Morogh,49.2,48.1
+	.money <35.00
+	.train 553 >> Head to Dun Morogh, train riding and purchase your mount.
+
 ]])
