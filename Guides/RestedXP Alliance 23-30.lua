@@ -2158,197 +2158,915 @@ step << Shaman
 
 --1.5x guides:
 
+
 RXPGuides.RegisterGuide([[
-#group RestedXP Alliance 32-47
+#tbc
+#wotlk
 << Alliance
-#name 39-41 Arathi Highlands
-#next 41-43 Badlands
+#name 28-30 Duskwood
+#version 1
+#group RestedXP Alliance 20-32
+#next 30-32 Hillsbrad
 #xprate >1.3
-
-
 step
-	#completewith next
-	#label arathi
-	.goto Ironforge,55.5,48.0
-    .fly Arathi Highlands>> Fly to Arathi Highlands
-step
-    .goto Arathi Highlands,46.0,47.6
-    .accept 684 >> Accept Wanted!  Marez Cowl
-    .accept 685 >> Accept Wanted!  Otto and Falconcrest
-step
-    .goto Arathi Highlands,29.6,63.1
-    >>Kill Marez Cowl, she has multiple spawn points around the eastern side of the keep
-    .complete 684,1 --Collect Marez's Head (x1)
-    .unitscan Marez Cowl
-step
-    .goto Arathi Highlands,26.1,65.6
-    >>Go to the keep's 2nd floor and kill the two named mobs
-    .complete 685,1 --Collect Otto's Head (x1)
-    .complete 685,2 --Collect Falconcrest's Head (x1)
-step
-    #completewith next
-    .goto Arathi Highlands,21.6,75.6,20,0
-    .goto Arathi Highlands,22.1,79.9,20 >> The path to Faldir's Cove starts here
-step
-    .goto Arathi Highlands,31.8,82.6
-	>>Head to Faldir's Cove, just behind the Stromgarde Keep's southeastern wall
-    .accept 663 >> Accept Land Ho!
-    step
-    .goto Arathi Highlands,32.3,81.4
-    .turnin 663 >> Turn in Land Ho!
-step
-    .goto Arathi Highlands,32.8,81.5
-    .accept 662 >> Accept Deep Sea Salvage
-step
-    .goto Arathi Highlands,33.9,80.7
-    .accept 664 >> Accept Drowned Sorrows
-    .accept 665 >> Accept Sunken Treasure
-step
-	>>Two water elementals will spawn. Kill them
-    .complete 665,1 --Escort Professor Phizzlethorpe
-step
-    .goto Arathi Highlands,33.9,80.7
-    .turnin 665 >> Turn in Sunken Treasure
-    .accept 666 >> Accept Sunken Treasure
-step << !Druid !Warlock !Shaman
-	#completewith next
-	.use 5996 >> Use your Elixir of Water Breathing you took out of your bank earlier
-	.itemcount 5996,1
-step
-	#sticky
-	#completewith swimmingsucks
-    .goto Arathi Highlands,23.0,87.7,0
-    .complete 664,1 --Kill Daggerspine Raider (x10)
-    .complete 664,2 --Kill Daggerspine Sorceress (x3)
-	.use 4491 >>Look for Elven Gems underwater, use the goggles provided to track them on your minimap
-    .complete 666,1 --Collect Elven Gem (x10)
-step
-    .goto Arathi Highlands,23.5,85.1
-	>>Enter the ship through the stairs at the front side of the deck and loot the book inside the cauldron next to the base of the stairs
-    .complete 662,2 --Collect Maiden's Folly Log (x1)
-step
-    .goto Arathi Highlands,23.1,84.4
-	>>Move towards the back of the ship and loot the chart hanging on the ledge of the wooden ring that supports the ship's mast
-    .complete 662,1 --Collect Maiden's Folly Charts (x1)
-step
-    .goto Arathi Highlands,20.4,85.7
-	>>Enter the ship through the opening on the front side of the deck and loot the chart on top of a box next to a cannon
-    .complete 662,3 --Collect Spirit of Silverpine Charts (x1)
-step
-    .goto Arathi Highlands,20.6,85.1
-	>>Exit the ship and enter it from the hole on the hull, then loot the ledger on the sea floor
-    .complete 662,4 --Collect Spirit of Silverpine Log (x1)
-step
-	#label swimmingsucks
-	#sticky
-    .goto Arathi Highlands,19.3,84.1,90,0
-    .goto Arathi Highlands,17.7,89.5,90,0
-    .goto Arathi Highlands,25.5,90.8,90,0
-    .goto Arathi Highlands,24.1,85.7,90,0
-    .goto Arathi Highlands,23.2,89.7,90,0
-    .goto Arathi Highlands,19.3,84.1,90,0
-    .goto Arathi Highlands,17.7,89.5,90,0
-    .goto Arathi Highlands,25.5,90.8,90,0
-    .goto Arathi Highlands,24.1,85.7,90,0
-    .goto Arathi Highlands,23.2,89.7,90,0
-    .goto Arathi Highlands,19.3,84.1
-	.use 4491 >>Use your Goggles of Gem Finding to find Elven Gems. Loot them. Kill nagas in the way of gems.
-    .complete 666,1 --Collect Elven Gem (x10)
-    .complete 664,1 --Kill Daggerspine Raider (x10)
-    .complete 664,2 --Kill Daggerspine Sorceress (x3)
-step
-	#requires swimmingsucks
-    .goto Arathi Highlands,32.7,81.5
-    .turnin 662 >> Turn in Deep Sea Salvage
-step
-    .goto Arathi Highlands,33.9,80.7
-    .turnin 666 >> Turn in Sunken Treasure
-    .accept 668 >> Accept Sunken Treasure
-    .turnin 664 >> Turn in Drowned Sorrows
-step
-    .goto Arathi Highlands,32.3,81.4
-    .turnin 668 >> Turn in Sunken Treasure
-    .accept 669 >> Accept Sunken Treasure
-step
-	#completewith end1
-    .goto Arathi Highlands,35.8,79.5
-    .goto Arathi Highlands,48.7,55.8,100 >> Logout on top of the rock in the cave where you escorted the gnome, then log back in
-    .link https://www.twitch.tv/videos/1219247236?t=01h28m13s >> Click HERE for video reference
-step
-    .goto Arathi Highlands,45.9,47.4
-    .turnin 684 >> Turn in Wanted!  Marez Cowl
-    .turnin 685 >> Turn in Wanted!  Otto and Falconcrest
-step << !Mage
-    #label end1
-	.goto Arathi Highlands,45.8,46.1
-	.fly Ironforge>> Fly to Ironforge
-    .zoneskip Ironforge
-step
-    .goto Ironforge,74.7,12.3
-    .turnin 514 >> Turn in Letter to Stormpike
-    .accept 525 >> Accept Further Mysteries
-    .accept 707 >> Accept Ironband Wants You!
-    .isQuestTurnedIn 511
-step
-    .goto Ironforge,74.3,9.8
-    .accept 1360 >> Accept Reclaimed Treasures
-step << Warlock
-    .goto Ironforge,74.3,9.8
-    .turnin 1758 >>Turn in Tome of the Cabal
-    .isOnQuest 1758
-step << Warlock
-    .goto Ironforge,74.3,9.8
-    .accept 1802 >>Accept Tome of the Cabal
-    .isQuestTurnedIn 1758
-step << Priest
-    .goto Ironforge,23.1,15.9
-    >>Buy the level 40 weapon upgrade from the wand vendor (35dps)
-    .collect 5238,1
-    >>Skip this step if you can find a better wand at the Auction House
-step << Shaman
-    .goto Ironforge,61.8,88.6
-    >>Buy the level 41 weapon upgrade (26dps)
-    .collect 2530,1
-    >>Skip this step if you can find a better weapon at the Auction House
+    #sticky
+    #completewith exit
+    >>Buy a Bronze Tube from the Auction House
+    .complete 174,1
+	.bronzetube
 step << Paladin
-    .goto Ironforge,61.8,88.6
-    >>Buy the level 39 2h weapon upgrade (31dps)
-    .collect 2531,1
-    >>Skip this step if you can find a better weapon at the Auction House
+    .goto Stormwind City,40.0,29.9
+    .turnin 1652 >>Turn in The Tome of Valor
+    .accept 1653 >>Accept The Test of Righteousness
+step << Paladin
+	.goto Stormwind City,38.6,32.8
+	.trainer >> Train your class spells
+step << Priest
+	.goto Stormwind City,38.5,26.8
+	.trainer >> Train your class spells
+step
+    .goto Stormwind City,39.3,28.0
+    .turnin 269 >> Turn in Seeking Wisdom
+    .accept 270 >> Accept The Doomed Fleet
+step
+    .goto Stormwind City,51.7,12.3
+    .turnin 322 >> Turn in Blessed Arm
+    .accept 325 >> Accept Armed and Ready
+step
+	#sticky
+	#label MDiplomats
+	#completewith nomorekid
+    .goto Stormwind City,41.5,31.7
+	>>Talk to the patrolling kid
+    .accept 1274 >> Accept The Missing Diplomat
+step
+    .goto Stormwind City,39.7,27.6
+    .turnin 293 >> Turn in Cleansing the Eye
+step
+	#label nomorekid
+	#requires MDiplomats
+	.zone Stormwind City >> Exit the Chapel
+step << Paladin tbc --TODO, move that to the lvl 30 part
+    .goto Stormwind City,39.9,29.8
+    >>Speak to Duthorian Rall
+    .accept 4486 >>Accept The Tome of Nobility
+    .turnin 4486 >>Turn in The Tome of Nobility
+step << Human Paladin
+    .goto Stormwind City,39.8,30.1
+    >>Speak to Duthorian Rall and click on the Tome of Divinity provided
+    .accept 1642 >>Accept The Tome of Divinity
+    .turnin 1642 >>Turn in The Tome of Divinity
+    .accept 1643 >>Accept The Tome of Divinity
+step << Warlock
+    .goto Stormwind City,25.3,78.7
+	.trainer >> Train your class spells
+step
+   .isOnQuest 337
+	.goto Stormwind City,74.1,7.6
+    .accept 337 >> Accept An Old History Book
+    .turnin 337 >> Turn in An Old History Book
+    .accept 538 >> Accept Southshore
+step
+    .goto Stormwind City,78.1,25.1
+    .turnin 1274 >> Turn in The Missing Diplomat
+    .accept 1241 >> Accept The Missing Diplomat
+step << Hunter
+    .goto Stormwind City,72.8,16.1
+    .turnin 563 >> Turn in Reassignment
+    .isOnQuest 563
+step << Human Paladin
+    #completewith linen
+    >>Buy 10 linen cloth at the Auction House if you don't have it already
+    .collect 2589,10,1644,1
+step << Human Paladin
+    .goto Stormwind City,56.9,61.9
+    .turnin 1643 >>Turn in The Tome of Divinity
+    .accept 1644 >>Accept The Tome of Divinity
+step << Human Paladin
+    #label linen
+    .goto Stormwind City,56.9,61.9
+    .complete 1644,1
+    .turnin 1644 >>Turn in The Tome of Divinity
+    .accept 1780 >>Accept The Tome of Divinity
+step << Warrior
+	.goto Stormwind City,78.6,45.8
+	.trainer >> Go upstairs. Train your class spells
+step << Rogue
+	.goto Stormwind City,74.6,52.8
+	.trainer >> Train your class spells
+step
+    .goto Stormwind City,73.1,78.3
+    .turnin 1241 >> Turn in The Missing Diplomat
+    .accept 1242 >> Accept The Missing Diplomat
+step
+    .goto Stormwind City,60.1,64.4
+    .turnin 1242 >> Turn in The Missing Diplomat
+    .accept 1243 >> Accept The Missing Diplomat
+step << Human Paladin
+    .goto Stormwind City,40.1,29.9
+    .turnin 1780 >>Turn in The Tome of Divinity
+    .accept 1781 >>Accept The Tome of Divinity
+step << Human Paladin
+    .goto Stormwind City,38.7,26.6
+    .turnin 1781 >>Turn in The Tome of Divinity
+    .accept 1786 >>Accept The Tome of Divinity
+step
+	#label exit
+	.goto Stormwind City,66.2,62.1
+    .fly Duskwood>> Fly to Duskwood
+step
+	#completewith notubeandy
+    .goto Duskwood,79.8,47.9
+    .accept 174 >> Accept Look To The Stars
+    .turnin 174 >> Turn in Look To The Stars
+    >>Skip this step if you don't have a Bronze Tube
+step
+    .goto Duskwood,79.8,47.9
+    .accept 175 >> Accept Look To The Stars
+    .isQuestTurnedIn 174
+step
+    .goto Duskwood,82.0,59.0
+    .turnin 175 >> Turn in Look To The Stars
+    .accept 177 >> Accept Look To The Stars
+    .isQuestTurnedIn 174
+step
+    .goto Duskwood,80.9,71.8
+    >>Kill the Insane Ghoul at the chapel
+    .complete 177,1 --Collect Mary's Looking Glass (x1)
+    .isQuestTurnedIn 174
+	.unitscan Insane Ghoul
+step
+    .goto Duskwood,79.8,47.8
+    .turnin 177 >> Turn in Look To The Stars
+    .accept 181 >> Accept Look To The Stars
+    .isQuestTurnedIn 174
+step
+	#label notubeandy
+    .goto Duskwood,73.8,44.5
+    .turnin 156 >> Turn in Gather Rot Blossoms
+    .accept 159 >> Accept Juice Delivery
+step
+    .home >> Set your Hearthstone to Darkshire
+step << !Hunter !Paladin
+    .goto Duskwood,73.7,46.8
+    .turnin 57 >> Turn in The Night Watch
+    .accept 58 >> Accept The Night Watch
+    .turnin 228 >> Turn in Mor'Ladim
+    .accept 229 >> Accept The Daughter Who Lived
+step << Paladin/Hunter
+    .goto Duskwood,73.7,46.8
+    .turnin 57 >> Turn in The Night Watch
+    .accept 58 >> Accept The Night Watch
+step << !Hunter !Paladin
+	.goto Duskwood,73.7,46.8
+    .turnin 228 >> Turn in Mor'Ladim
+    .accept 229 >> Accept The Daughter Who Lived
+step << !Hunter !Paladin
+    .goto Duskwood,74.5,46.1
+    .turnin 229 >> Turn in The Daughter Who Lived
+    .accept 231 >> Accept A Daughter's Love
+step
+    .goto Duskwood,72.6,33.9
+    .turnin 1243 >> Turn in The Missing Diplomat
+    .accept 1244 >> Accept The Missing Diplomat
+step
+    .goto Elwynn Forest,84.6,69.5
+	>> Run north to Eastvale Logging Camp in Elwynn Forest
+    .turnin 74 >> Turn in The Legend of Stalvan
+    .accept 75 >> Accept The Legend of Stalvan
+step
+    .goto Elwynn Forest,85.6,69.6
+    >>Loot the chest upstairs
+    .complete 75,1 --Collect A Faded Journal Page (x1)
+step
+    .goto Elwynn Forest,84.7,69.4
+    .turnin 75 >> Turn in The Legend of Stalvan
+    .accept 78 >> Accept The Legend of Stalvan
+step << Human tbc
+	#level 30
+	.goto Elwynn Forest,84.2,65.2
+	.train 148 >> Train riding and purchase your mount.
+	.money <35.00
+step << Shaman
+    #completewith next
+    .hs >> Hearth to Darkshire
+step << Shaman
+    .goto Duskwood,73.9,44.5
+    .turnin 78 >> Turn in The Legend of Stalvan
+    .accept 79 >> Accept The Legend of Stalvan
+step << Shaman
+    .goto Duskwood,73.6,46.7
+    .turnin 79 >> Turn in The Legend of Stalvan
+    .accept 80 >> Accept The Legend of Stalvan
+step << Shaman
+    .goto Duskwood,72.6,46.9
+    .turnin 80 >> Turn in The Legend of Stalvan
+    .accept 97 >> Accept The Legend of Stalvan
+step << Shaman
+    .goto Duskwood,73.5,46.8
+    .turnin 97 >> Turn in The Legend of Stalvan
+    .accept 98 >> Accept The Legend of Stalvan
+step << Shaman
+    #sticky
+	#label TearT
+	.goto Duskwood,78.4,35.9
+    >>Look for a small flower on the ground
+    .complete 335,1 --Collect Tear of Tilloa (x1)
+    .isOnQuest 335
+step << Shaman
+    .goto Duskwood,77.4,36.1
+	>> Kill the undead in the house and loot him for his ring
+    .complete 98,1 --Collect Mistmantle Family Ring (x1)
+step << Shaman
+    #requires TearT
+	.goto Duskwood,75.7,45.3
+    .turnin 98 >> Turn in The Legend of Stalvan
+step << Shaman
+    #completewith next
+	.goto Duskwood,77.6,44.6
+    .fly Westfall>> Fly to Westfall
+step << Human Paladin
+    .goto Elwynn Forest,72.7,51.5
+    >>Use the Symbol of Life on Henze Faulk
+    .turnin 1786 >>Turn in The Tome of Divinity
+    .accept 1787 >>Accept The Tome of Divinity
+step << Human Paladin
+    .goto Elwynn Forest,73.5,51.3
+    >>Kill Defias Wizards around the island
+    .complete 1787,1 --Defias Script (1)
+step
+    .goto Duskwood,28.0,31.6
+	>> Head back to Duskwood
+    .turnin 159 >> Turn in Juice Delivery
+    .accept 133 >> Accept Ghoulish Effigy
+step
+	#sticky
+	#completewith HistoryB4
+	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.collect 2794,1,337
+	.accept 337 >> Accept An Old History Book
+step
+    .goto Duskwood,23.6,35.0
+	>> Kill Plague Spreaders in the crypt and loot them
+    .complete 133,1 --Collect Ghoul Rib (x7)
+    .complete 58,1 --Kill Plague Spreader (x20)
+    .complete 101,1 --Collect Ghoul Fang (x10)
+step
+    .goto Duskwood,28.0,31.5
+    .turnin 133 >> Turn in Ghoulish Effigy
+    .accept 134 >> Accept Ogre Thieves
+step
+    .goto Duskwood,23.9,72.0
+    >>Loot the chest inside the small house
+    .complete 1244,1 --Collect Defias Docket (x1)
+step
+    .goto Duskwood,33.5,76.3
+    >>Loot the crate next to the cave entrance
+    .complete 134,1 --Collect Abercrombie's Crate (x1)
+step
+    .goto Duskwood,36.8,83.8
+    >>Kill Zzarc' Vul and loot him for his monocle
+	.unitscan Zzarc'Vul
+    .complete 181,1 --Collect Ogre's Monocle (x1)
+step
+    .goto Stranglethorn Vale,38.2,4.1
+    >>Head out of the cave and then south to STV
+    .fp Rebel >> Get the Rebel Camp flight path
+step
+    .goto Duskwood,31.6,45.4
+	>> Kill spiders and loot them for their venom
+    .complete 101,2 --Collect Vial of Spider Venom (x5)
+step
+    .goto Duskwood,28.1,31.5
+    .turnin 134 >> Turn in Ogre Thieves
+    .accept 160 >> Accept Note to the Mayor
+step << !Hunter !Paladin
+    .goto Duskwood,17.7,29.2
+    .turnin 231 >> Turn in A Daughter's Love
+step << Shaman tbc/Dwarf Paladin tbc
+    #sticky
+    #completewith next
+    .hs >> Hearth to Darkshire
+step
+#completewith next
+    .goto Westfall,56.5,52.6
+    .fly Darkshire>> Fly to Darkshire
+step
+    .goto Duskwood,79.8,47.9
+    .turnin 181 >> Turn in Look To The Stars
+step
+    .goto Duskwood,75.7,45.3
+    .turnin 101 >> Turn in The Totem of Infliction
+step << !Shaman
+    .goto Duskwood,73.9,44.5
+    .turnin 78 >> Turn in The Legend of Stalvan
+    .accept 79 >> Accept The Legend of Stalvan
+step
+    .goto Duskwood,73.6,46.7
+    .turnin 58 >> Turn in The Night Watch
+    .turnin 79 >> Turn in The Legend of Stalvan << !Shaman
+    .accept 80 >> Accept The Legend of Stalvan << !Shaman
+step << !Shaman
+    .goto Duskwood,72.6,46.9
+    .turnin 80 >> Turn in The Legend of Stalvan
+    .accept 97 >> Accept The Legend of Stalvan
+step
+    .goto Duskwood,71.9,46.6
+    .turnin 160 >> Turn in Note to the Mayor
+    .accept 251 >> Accept Translate Abercrombie's Note
+step
+    .goto Duskwood,72.6,47.7
+    .turnin 251 >> Turn in Translate Abercrombie's Note
+    .accept 401 >> Accept Wait for Sirra to Finish
+    .turnin 401 >> Turn in Wait for Sirra to Finish
+    .accept 252 >> Accept Translation to Ello
+step
+    .goto Duskwood,71.9,46.6
+    .turnin 252 >> Turn in Translation to Ello
+    .accept 253 >> Accept Bride of the Embalmer
+step
+	#sticky
+	#completewith next
+	.destroy 3248 >> You can delete "Translated Letter From The Embalmer" from your bags, as it's no longer needed
+step << !Shaman
+    .goto Duskwood,73.5,46.8
+    .turnin 97 >> Turn in The Legend of Stalvan
+    .accept 98 >> Accept The Legend of Stalvan
+step
+    .goto Duskwood,72.6,33.9
+    .turnin 1244 >> Turn in The Missing Diplomat
+    .accept 1245 >> Accept The Missing Diplomat
+step << !Shaman
+    .goto Duskwood,77.4,36.1
+    .complete 98,1 --Collect Mistmantle Family Ring (x1)
+step << !Shaman
+    .goto Duskwood,78.4,35.9
+    >>Look for a small flower on the ground
+    .complete 335,1 --Collect Tear of Tilloa (x1)
+step << !Shaman
+    .goto Duskwood,75.7,45.3
+    .turnin 98 >> Turn in The Legend of Stalvan
+step
+    .goto Duskwood,64.7,49.7
+    .complete 221,1 --Kill Nightbane Dark Runner (x12)
+step
+    .goto Duskwood,75.3,48.1
+    .turnin 221 >> Turn in Worgen in the Woods
+    .accept 222 >> Accept Worgen in the Woods
+step
+    #label HistoryB4
+	.goto Duskwood,73.0,75.0
+    .complete 222,1 --Kill Nightbane Vile Fang (x8)
+    .complete 222,2 --Kill Nightbane Tainted One (x8)
+step
+    .xp 30-10575
+step
+    .goto Duskwood,75.7,47.6
+    .turnin 222 >> Turn in Worgen in the Woods
+    .accept 223 >> Accept Worgen in the Woods
+step
+    .goto Duskwood,75.3,48.9
+    .turnin 223 >> Turn in Worgen in the Woods
+step << !Mage
+	.goto Duskwood,77.5,44.2
+    .fly Stormwind>> Fly to Stormwind
+step << Shaman
+    .goto Stormwind City,61.9,83.9
+    .accept 10491 >> Accept Call of Air
+    .trainer >> Train your class spells
+    .xp <30,1
+step << Mage
+	>> Teleport to stormwind
+    .goto Stormwind City,39.6,79.6
+	.trainer >> Train your class spells
+step << Dwarf Paladin
+    #sticky
+	#completewith next
+    >>Buy 10 Linen Cloth from the Auction House
+    .complete 1648,1
+step
+    .goto Stormwind City,60.1,64.4
+    .turnin 1245 >> Turn in The Missing Diplomat
+    .accept 1246 >> Accept The Missing Diplomat
+step << Paladin
+	.goto Stormwind City,38.6,32.8
+	.trainer >> Train your class spells
+step << Priest
+	.goto Stormwind City,38.5,26.8
+	.trainer >> Train your class spells
+step << Warrior
+    #sticky
+    #completewith next
+    .goto Stormwind City,64.1,61.2
+    .goto Stormwind City,46.7,79.0
+    >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
+    .collect 3357,8 --Collect Liferoot (x8)
+    #xprate <1.5
+step << Warrior
+    .goto Stormwind City,78.8,45.3
+    .accept 1718 >> Accept The Islander
+	.trainer >> Train class spells
+    .xp <30,1
+step << Rogue
+	.goto Stormwind City,74.6,52.8
+	.trainer >> Train your class spells
+step
+    .goto Stormwind City,70.3,44.8
+    >>Beat Dashel Stonefist
+    .turnin 1246 >> Turn in The Missing Diplomat
+    .accept 1447 >> Accept The Missing Diplomat
+    .turnin 1447 >> Turn in The Missing Diplomat
+    .accept 1247 >> Accept The Missing Diplomat
+step
+    .goto Stormwind City,60.1,63.9
+    .turnin 1247 >> Turn in The Missing Diplomat
+    .accept 1248 >> Accept The Missing Diplomat
+step
+    .goto Stormwind City,39.9,81.3
+    .accept 690 >> Accept Malin's Request
+step
+    .goto Stormwind City,40.6,91.7
+    .accept 1301 >> Accept James Hyal
+step << Warlock
+    .goto Stormwind City,25.3,78.5
+    .accept 4738 >>Accept In Search of Menara Voidrender
+    .accept 1798 >>Accept Seeking Strahad
+	.trainer >> Train your class spells
+step << Human Paladin
+    .goto Stormwind City,38.6,26.7
+    .turnin 1787 >>Turn in The Tome of Divinity
+    .accept 1788 >>Accept The Tome of Divinity
+step << Human Paladin
+    .goto Stormwind City,39.9,29.8
+    .turnin 1788 >>Turn in The Tome of Divinity
+step
+    .goto Stormwind City,74.1,7.6
+    >>Click on the Old History Book in your bags, skip this step if you havent found it
+    .accept 337 >> Accept An Old History Book
+    .turnin 337 >> Turn in An Old History Book
+    .use 2794
+step
+    .goto Stormwind City,74.1,7.6
+    .accept 538 >> Accept Southshore
+    .isQuestTurnedIn 337
+step
+    #sticky
+	#completewith next
+    .goto Stormwind City,60.5,12.3,40,0
+    .goto Stormwind City,60.5,12.3,0
+    .zone Ironforge >> Take the tram to Ironforge
+    >>Teleport to Ironforge instead if you have that spell trained << Mage
+step
+    .goto Ironforge,69.8,50.1
+    .turnin 2923 >> Turn in Tinkmaster Overspark
+    .isOnQuest 2923
+step << Rogue
+    #sticky
+    #completewith end
+    .trainer >> Train your class spells in ironforge
 step << Rogue
     .goto Ironforge,45.2,6.6
-    >>Buy the level 41 weapon upgrades (25dps)
-    .collect 2528,1
-    .collect 2534,1
+    >>Buy the level 31 weapon upgrades (17dps)
+    .collect 2520,1
+    .collect 2526,1
     >>Skip this step if you can find a better weapon at the Auction House
-step
-	#completewith next
-	    .goto Ironforge,34.1,62.3,0
-	+Bank things if you need to
-step << Mage
-    >>Teleport to Ironforge
-	.goto Ironforge,28.6,7.2
-	.trainer >> Train your spells
-step << !Mage
-	.goto Ironforge,69.8,83.0 << Hunter
-	.goto Ironforge,66.4,88.7 << Warrior
-	.goto Ironforge,24.7,8.8 << Priest
-	.goto Ironforge,24.6,9.2 << Paladin
-	.goto Ironforge,50.3,5.8 << Warlock
-	.goto Ironforge,51.6,15.2 << Rogue
-	.goto Ironforge,55.4,29.1 << Shaman
-	.trainer >> Train your spells
-step << Dwarf !Paladin
+step << Hunter/Warrior/Paladin/Shaman/Rogue
+	.goto Ironforge,61.34,89.25
+	.train 197 >> Train 2H Axes << !Rogue
+	.train 266 >> Train Guns << Hunter/Warrior/Rogue
+    .train 199 >> Train 2H Maces << Warrior/Shaman
+    .train 54 >> Train Maces << Rogue/Shaman
+    .train 44 >> Train Axes << Shaman
+step << Hunter
 	#sticky
 	#completewith next
-	.goto Dun Morogh,63.5,50.6
-	.money <35.00
-	.train 152 >> Head to Dun Morogh, train riding and purchase your mount.
-step << Gnome !Warlock
-	#sticky
-	#completewith next
-	.goto Dun Morogh,49.2,48.1
-	.money <35.00
-	.train 553 >> Head to Dun Morogh, train riding and purchase your mount.
+	.goto Ironforge,61.34,89.25
+	>>Go inside the building, head downstairs and buy a level 30 quiver from Thalgus Thunderfist
+	.collect 7371,1
+step << Dwarf Paladin
+    .goto Ironforge,18.5,51.6
+    .home >>Set your HS to Ironforge
+step << Dwarf Paladin
+    .goto Ironforge,23.3,6.1
+    .accept 2999 >>Accept Tome of Divinity
+step << Dwarf Paladin
+    .goto Ironforge,27.4,12.1
+    >>Go upstairs and speak to Tiza Battleforge
+    .turnin 2999 >>Turn in Tome of Divinity
+    .accept 1645 >>Accept The Tome of Divinity
+    .turnin 1645 >>Turn in The Tome of Divinity
+    .accept 1646 >>Accept The Tome of Divinity
+    .turnin 1646 >>Turn in The Tome of Divinity
+    .accept 1647 >>Accept The Tome of Divinity
+step << Dwarf Paladin
+    >>Speak to John Turner, he walks around the outer ring of the city
+    .turnin 1647 >>Turn in The Tome of Divinity
+    .accept 1648 >>Accept The Tome of Divinity
+    .turnin 1648 >>Turn in The Tome of Divinity
+    .accept 1778 >>Accept The Tome of Divinity
+step << Dwarf Paladin
+    .goto Ironforge,27.7,12.3
+    >>Return to Tiza Battleforge
+    .turnin 1778 >>Turn in The Tome of Divinity
+    .accept 1779 >>Accept The Tome of Divinity
+step << Dwarf Paladin
+    .goto Ironforge,23.6,8.6
+    >>Speak to Muiredon Battleforge
+    .turnin 1779 >>Turn in The Tome of Divinity
+    .accept 1783 >>Accept The Tome of Divinity
+step << Dwarf Paladin
+    #completewith next
+    .goto Dun Morogh,53.2,35.3
+    .zone Dun Morogh >> Head outside to Dun Morogh
 
+step << Paladin
+    .goto Dun Morogh,52.5,36.8
+    >> Head to the gates of Ironforge << !Dwarf
+    .turnin 1653 >>Turn in The Test of Righteousness
+step << Dwarf Paladin
+    .goto Dun Morogh,78.3,58.1
+    >>Use the Symbol of Life on Narm Faulk
+    .turnin 1783 >>Turn in The Tome of Divinity
+    .accept 1784 >>Accept The Tome of Divinity
+step << Dwarf Paladin
+    .goto Dun Morogh,77.3,60.5
+    >>Kill Dark Iron Spies
+    .complete 1784,1 --Dark Iron Script (1)
+step << Dwarf Paladin
+    #completewith next
+    .hs >> Hearth to Ironforge
+step << Dwarf Paladin
+    .goto Ironforge,23.6,8.5
+    >>Speak to Muiredon upstairs
+    .turnin 1784 >>Turn in The Tome of Divinity
+    .accept 1785 >>Accept The Tome of Divinity
+step << Dwarf Paladin
+    .goto Ironforge,27.4,11.9
+    .turnin 1785 >>Turn in The Tome of Divinity
+step << Dwarf !Paladin tbc
+	.money <35.0
+	.goto Dun Morogh,63.5,50.6
+	.train 152 >> Train riding and buy your mount
+step << Gnome !Warlock tbc
+	.money <35.0
+	.goto Dun Morogh,49.2,48.1
+	.train 553 >> Train riding and buy your mount
+step << Mage
+    .goto Ironforge,25.5,7.1
+    .train 3562>>Train Teleport: Ironforge
+
+step << Draenei/NightElf --Not needed, including just in case someone forgets to set HS to SW
+    .goto Ironforge,55.5,47.7
+    .fp Ironforge>> Get the Ironforge Flight Path
+step
+	.zoneskip Dun Morogh
+    .goto Ironforge,55.5,47.2
+	.fly Wetlands>> Fly to Wetlands
+    >>Skip this step if you don't have the Wetlands FP << NightElf/Draenei
+
+step << Draenei/NightElf
+    #completewith next
+    .goto Dun Morogh,59.5,42.8,40,0
+    .goto Dun Morogh,60.4,44.1,40,0
+    .goto Dun Morogh,61.1,44.1,40,0
+    .goto Dun Morogh,61.2,42.3,40,0
+    .goto Dun Morogh,60.8,40.9,40,0
+    .goto Dun Morogh,59.0,39.5,40,0
+    .goto Dun Morogh,60.3,38.6,40,0
+    .goto Dun Morogh,61.7,38.7,40,0
+    .goto Dun Morogh,65.7,21.6,40,0
+    .goto Dun Morogh,65.8,12.5,40,0
+    .goto Dun Morogh,65.6,10.8,40,0
+    .goto Dun Morogh,66.5,10.0,40,0
+    .goto Dun Morogh,66.9,8.5,40,0
+    .goto Wetlands,20.6,67.2,50,0
+    .goto Wetlands,17.7,67.7,40,0
+    .goto Wetlands,16.8,65.3,40,0
+    .goto Wetlands,15.1,64.0,40,0
+    .goto Wetlands,12.1,60.3,40,0
+    >>Do the Deathless Dun Morogh -> Wetlands skip
+    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
+    .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
+step << Draenei/NightElf
+    .goto Wetlands,9.5,59.7
+    .fp Menethil >> Get the Menethil Harbor flight path
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
+<< Alliance
+#version 1
+#group RestedXP Alliance 20-32
+#name 30-32 Hillsbrad
+#next RestedXP Alliance 32-47\32-33 Shimmering Flats
+#xprate >1.3
+
+step
+    .goto Wetlands,10.8,59.6
+    .accept 288 >> Accept The Third Fleet
+step
+    .goto Wetlands,10.6,60.5
+    .turnin 270 >> Turn in The Doomed Fleet
+    .accept 321 >> Accept Lightforge Iron
+step
+    #label mead
+    #sticky
+    .goto Wetlands,10.7,60.9
+    >> Buy a Flagon of Mead from the Innkeeper
+    .complete 288,1 --Collect Flagon of Mead (x1)
+step
+    .goto Wetlands,10.6,60.7
+    .home >> Set your Hearthstone to Wetlands
+step
+    #requires mead
+    .goto Wetlands,10.6,60.7
+    .turnin 1248 >> Turn in The Missing Diplomat
+    .accept 1249 >> Accept The Missing Diplomat
+step
+    >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn
+    .complete 1249,1 --Defeat Tapoke Jahn
+step
+    .goto Wetlands,10.6,60.7
+    .turnin 1249 >> Turn in The Missing Diplomat
+step
+    .goto Wetlands,10.6,60.3
+    .accept 1250 >> Accept The Missing Diplomat
+step
+    .goto Wetlands,10.6,60.7
+    .turnin 1250 >> Turn in The Missing Diplomat
+    .accept 1264 >> Accept The Missing Diplomat
+step
+    .goto Wetlands,8.4,61.6
+    .turnin 1301 >> Turn in James Hyal
+    .accept 1302 >> Accept James Hyal
+step << Draenei !Shaman tbc
+	.goto Wetlands,4.8,57.3,50,0
+	.goto Darkshore,31.0,41.1,30.0
+	.goto The Exodar,81.5,52.5,40,0
+	.goto Wetlands,5.2,63.3,50,0
+	.money <35.00
+	>> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Otherwise skip this step
+	.hs >>Then hearth to Menethil Harbor and take the boat to Theramore.
+step << NightElf tbc
+	.goto Wetlands,4.8,57.3,50,0
+	.goto Darkshore,33.1,40.3,30,0
+	.goto Darnassus,38.1,15.3,30,0
+	.goto Wetlands,5.2,63.3,50,0
+	.money <35.00
+	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount.
+	.hs >> Then hearth back to Menethil Harbor and take the boat to Theramore.
+step << Shaman
+    #sticky
+    #completewith next
+    .zone The Exodar >> Take the boat to Darkshore and then to The Exodar. If you have 35g purchase your mount and training otherwise skip this step.
+	.goto The Exodar,81.5,52.5,40,0
+step << Shaman
+    .goto The Exodar,29.9,33.0
+    .turnin 10491 >> Turn in Call of Air
+    .accept 9552 >> Accept Call of Air
+step << Shaman
+.isQuestTurnedIn 9508
+    .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
+step << Shaman
+    .goto Bloodmyst Isle,32.3,16.2
+    .turnin 9504 >> Turn in Call of Water
+    .accept 9508 >> Accept Call of Water
+step << Shaman
+    .goto Bloodmyst Isle,26.0,40.9
+	>>Kill Tel'athion and loot him for his head
+    .complete 9508,1 --Collect Head of Tel'athion (x1)
+step << Shaman
+    .goto Bloodmyst Isle,32.2,16.1
+    .turnin 9508 >> Turn in Call of Water
+    .accept 9509 >> Accept Call of Water
+step << Shaman
+	#sticky
+	#completewith ZExodar
+	.deathskip >> Drown yourself and spirit rez
+step << Shaman
+	#sticky
+	#completewith next
+	.goto Bloodmyst Isle,57.7,53.9
+	>>Run back to Blood Watch, then fly to The Exodar
+    .fly The Exodar>> Fly to The Exodar
+step << Shaman
+	#label ZExodar
+	.zone The Exodar >> Go to The Exodar
+step << Shaman
+    .goto Azuremyst Isle,26.8,27.3,42
+    >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
+step << Shaman
+    .goto Azuremyst Isle,24.9,35.9
+    .turnin 9552 >> Turn in Call of Air
+    .accept 9553 >> Accept Call of Air
+step << Shaman
+    .goto Azuremyst Isle,22.3,32.5
+    .turnin 9553 >> Turn in Call of Air
+    .accept 9554 >> Accept Call of Air
+step << Shaman
+    #sticky
+    #completewith next
+    .zone The Exodar>>Speak with Susurrus again so he can send you back flying to The Exodar
+step << Shaman
+    .goto The Exodar,30.0,33.1
+    .turnin 9509 >> Turn in Call of Water
+step << Shaman
+    .goto The Exodar,29.6,33.4
+    .turnin 9554 >> Turn in Call of Air
+	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
+step << Shaman
+    .hs >> Hearth to Wetlands
+step
+    .goto Wetlands,12.1,64.1
+    .turnin 321 >> Turn in Lightforge Iron
+    .accept 324 >> Accept The Lost Ingots
+step
+    .goto Wetlands,10.1,69.5
+	>> Kill murlocs and loot them for ingots. The droprate can be very low.
+    .complete 324,1 --Collect Lightforge Ingot (x5)
+step
+    .goto Wetlands,10.6,60.4
+    .turnin 324 >> Turn in The Lost Ingots
+    .accept 322 >> Accept Blessed Arm
+step
+    .goto Wetlands,10.9,55.9
+    .accept 472 >> Accept Fall of Dun Modr
+step
+    .goto Wetlands,13.9,30.4
+    >>To find Snellig, enter the ship by the hole on the hull close to the shore
+    >> The ship to the north usually has more Marines if you're having trouble finding some.
+    .complete 289,3 --Collect Snellig's Snuffbox (x1)
+    .complete 289,1 --Kill Cursed Sailor (x13)
+    .complete 289,2 --Kill Cursed Marine (x5)
+
+    step
+    #completewith next
+    .goto Wetlands,49.9,18.3
+    .turnin 472 >> Turn in Fall of Dun Modr
+step
+    .goto Wetlands,49.9,18.3
+    .accept 631 >> Accept The Thandol Span
+    .accept 304 >> Accept A Grim Task
+    .accept 303 >> Accept The Dark Iron War
+step
+	#sticky
+    #label balgaras
+    >>Kill Balgaras the Foul, he can spawn in the camp far to the east or inside one of the houses in Dun Modr. Head east after checking Dun Modir. Loot him for his ear.
+    .complete 304,1 --Collect Ear of Balgaras (x1)
+	.unitscan Balgaras the Foul
+    .goto Wetlands,47.4,15.4,40,0
+    .goto Wetlands,61.8,31.0,80,0
+    .goto Wetlands,46.8,16.0
+step--?
+    .goto Wetlands,47.3,16.6
+	>> Kill Dark Iron dwarves in the area
+    .complete 303,1 --Kill Dark Iron Dwarf (x10)
+    .complete 303,2 --Kill Dark Iron Tunneler (x5)
+    .complete 303,3 --Kill Dark Iron Saboteur (x5)
+    .complete 303,4 --Kill Dark Iron Demolitionist (x5)
+step
+    #requires balgaras
+    .goto Wetlands,49.7,18.3
+    .turnin 303 >> Turn in The Dark Iron War
+    .turnin 304 >> Turn in A Grim Task
+step
+    .goto Wetlands,51.2,8.0
+	>> Go downstairs and click on the dwarf corpse. Ignore all the mobs.
+    .turnin 631 >> Turn in The Thandol Span
+    .accept 632 >> Accept The Thandol Span
+step
+    .goto Wetlands,49.9,18.3
+    .turnin 632 >> Turn in The Thandol Span
+    .accept 633 >> Accept The Thandol Span
+step
+    .goto Arathi Highlands,43.3,92.6
+    .accept 647 >> Accept MacKreel's Moonshine
+    >>You can still get this quest if you don't have any kind of speed increase or slow fall
+    .link https://www.twitch.tv/videos/646111384 >>Click here for reference
+step
+    .goto Arathi Highlands,44.3,93.0
+	>>Jump down and loot the letter from the corpse underwater
+    .accept 637 >> Accept Sully Balloo's Letter
+step
+    #completewith next
+    .goto Arathi Highlands,52.5,90.4,30 >> Swim east toward the ramp here
+step
+    .goto Arathi Highlands,48.7,87.9
+    .complete 633,1 --Collect Cache of Explosives Destroyed (x1)
+step
+    .goto Wetlands,49.9,18.3
+    .turnin 633 >> Turn in The Thandol Span
+    .accept 634 >> Accept Plea To The Alliance
+step
+    .goto Arathi Highlands,45.9,47.5
+    .turnin 634 >> Turn in Plea To The Alliance
+step
+    #xprate >1.3
+    .goto Arathi Highlands,46.6,47.0
+    .turnin 690 >> Turn in Malin's Request
+    .isOnQuest 690
+step
+    .goto Arathi Highlands,45.8,46.1
+    .fp Arathi >> Get the Arathi Highlands flight path
+step
+.isOnQuest 647
+>>Run to Southshore and go downstairs in the inn. Turn in before the timer is up. Watch out for the courier on the road.
+	.unitscan Forsaken Bodyguard
+.goto Hillsbrad Foothills,52.2,58.6
+    .turnin 647 >> Turn in MacKreel's Moonshine
+step
+	.goto Hillsbrad Foothills,50.5,57.2
+    .turnin 538 >> Turn in Southshore
+	.isOnQuest 538
+step
+    .goto Hillsbrad Foothills,51.9,58.7
+    .accept 555 >> Accept Soothing Turtle Bisque
+step
+    .xp <30,1
+    .goto Hillsbrad Foothills,51.4,58.5
+    .accept 536 >> Accept Down the Coast
+step
+    .goto Hillsbrad Foothills,50.9,58.8
+    .accept 9435 >> Accept Missing Crystals
+step <<  Hunter
+     #completewith next
+    .goto Hillsbrad Foothills,50.2,58.8
+     .stable >> Stable your pet and head east
+step << Hunter tbc
+    .xp <30,1
+    .goto Hillsbrad Foothills,56.6,53.8
+    .train 17264 >> Tame an Elder Moss Creeper, attack mobs with it to learn bite rank 4
+	.unitscan Elder Moss Creeper
+step
+    .xp <30,1
+    .goto Hillsbrad Foothills,44.0,67.6
+	>> Kill murlocs in the area
+    .complete 536,1 --Kill Torn Fin Tidehunter (x10)
+    .complete 536,2 --Kill Torn Fin Oracle (x10)
+step
+    .xp <30,1
+    .goto Hillsbrad Foothills,51.4,58.5
+    .turnin 536 >> Turn in Down the Coast
+    .accept 559 >> Accept Farren's Proof
+step
+    .xp <30,1
+    .goto Hillsbrad Foothills,42.3,68.3
+	>> Kill murlocs and loot them for their head
+    .complete 559,1 --Collect Murloc Head (x10)
+step
+    .xp <30,1
+    .goto Hillsbrad Foothills,51.4,58.5
+    .turnin 559 >> Turn in Farren's Proof
+    .accept 560 >> Accept Farren's Proof
+step
+    .xp <30,1
+    .goto Hillsbrad Foothills,49.5,58.8
+    .turnin 560 >> Turn in Farren's Proof
+    .accept 561 >> Accept Farren's Proof
+step
+    .xp <30,1
+    .goto Hillsbrad Foothills,51.4,58.4
+    .turnin 561 >> Turn in Farren's Proof
+    .accept 562 >> Accept Stormwind Ho!
+step
+    .xp <30,1
+    .goto Hillsbrad Foothills,57.1,67.4
+	>> Kill naga in the area, you may need to go in the water if you get unlucky spawns
+    .complete 562,1 --Kill Daggerspine Shorehunter (x10)
+    .complete 562,2 --Kill Daggerspine Siren (x10)
+step
+    .xp <30,1
+    .goto Hillsbrad Foothills,51.4,58.5
+    .turnin 562 >> Turn in Stormwind Ho!
+    .accept 563 >> Accept Reassignment
+step
+    .goto Hillsbrad Foothills,50.9,58.8
+    .accept 9435 >> Accept Missing Crystals
+step
+    .goto Hillsbrad Foothills,49.3,52.3
+    .fp Southshore >> Get the Southshore flight path
+step
+    .goto Hillsbrad Foothills,55.6,35.1
+    >>Look for a wooden box inside of the destroyed tower
+    .complete 9435,1 --Collect Shipment of Rare Crystals (x1)
+step
+    .goto Western Plaguelands,42.9,85.0
+    >>Head north to Western Plaguelands
+    .fp Chillwind >> Get the Chillwind Camp flight path
+step
+    #completewith next
+    .goto Western Plaguelands,42.9,85.0
+    .fly Southshore>> Fly to Southshore
+step
+    .goto Hillsbrad Foothills,50.9,58.8
+    .turnin 9435 >> Turn in Missing Crystals
+step
+    #completewith next
+    .hs >> Hearth to Menethil
+step
+    .goto Wetlands,10.8,59.6
+    .turnin 289 >> Turn in The Cursed Crew
 ]])
