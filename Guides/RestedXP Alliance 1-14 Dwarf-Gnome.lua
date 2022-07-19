@@ -82,9 +82,11 @@ step << !Dwarf !Gnome
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
 step
+#xprate <1.5
     .goto Dun Morogh,29.7,71.2
     .accept 170 >> Accept A New Threat
 step
+#xprate <1.5
     #sticky
     #completewith Rockjaw
     >>Kill Normal Rockjaw Troggs that you see. You may need to kill extra Burly Rockjaw Troggs to force respawns.
@@ -128,6 +130,7 @@ step << Paladin/Mage
     .accept 3364 >> Accept Scalding Mornbrew Delivery
 >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << Paladin/Mage
+#xprate <1.5
     .goto Dun Morogh,28.7,77.5
     >>Go up here and kill Troggs if you're not done with them by now
     .complete 170,1 --Kill Rockjaw Trogg (x6)
@@ -166,6 +169,7 @@ step << Human Mage/Draenei Mage
     .train 1459 >>Train Arcane Intellect
     .train 116 >>Train Frostbolt
 step << Paladin/Mage
+#xprate <1.5
     .goto Dun Morogh,29.7,71.2
     .turnin 170 >> Turn in A New Threat
 step << Mage
@@ -173,6 +177,7 @@ step << Mage
     .vendor >>Vendor, buy 10 water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Paladin !Mage
+#xprate <1.5
     #sticky
     #label TrollTroggs
 >>Kill any Rockjaw Troggs you see nearby whilst doing Trolls
@@ -275,6 +280,7 @@ step << Human Warrior/NightElf Warrior/Draenei Warrior
     .train 772 >>Train Rend
     .train 100 >>Train Charge
 step << !Paladin !Mage
+#xprate <1.5
     .goto Dun Morogh,29.7,71.2
     .turnin 170 >> Turn in A New Threat
 step << Priest
@@ -323,7 +329,7 @@ step
 >> Kill boars to get some Boar Ribs for later
 .collect 2886,6 --Collect Crag Boar Rib (x6)
 step << Dwarf Priest
->>grind boars north-east to Kharanos
+>>Grind boars north-east to Kharanos
 .goto Dun Morogh,36.4,62.9,45,0
     .goto Dun Morogh,37.7,60.5,45,0
     .goto Dun Morogh,43.9,55.7
@@ -380,14 +386,12 @@ step << Dwarf Priest
     .goto Dun Morogh,45.8,54.6
      .complete 5625,1 --Heal and fortify Mountaineer Dolf
 step << Dwarf Priest
-    .istrained 2052
 .goto Dun Morogh,47.3,52.2
     .turnin 5625 >> Garments of the Light
     .train 591 >>Train Smite r2
     .train 17 >>Train Power Word: Shield
     .train 2052 >>Train Lesser Heal r2
-step << Human Priest/NightElf Priest/Draenei Priest
-.istrained 591,17
+step << !Dwarf Priest
 .goto Dun Morogh,47.3,52.2
     .train 591 >>Train Smite r2
     .train 17 >>Train Power Word: Shield
@@ -458,6 +462,7 @@ step
     >>DON'T kill bears en route
     .accept 317 >> Accept Stocking Jetsteam
 step
+#xprate <1.5
     .goto Dun Morogh,49.6,48.6
     .accept 313 >> Accept The Grizzled Den
 step
@@ -534,6 +539,7 @@ step << Priest/Mage/Shaman/Druid
 .goto Dun Morogh,47.4,52.5
     .vendor >> Buy as much level 5 drink as you can afford.
 step << !Paladin !Warrior !Rogue
+#xprate <1.5
 .goto Dun Morogh,42.5,54.8,40,0
     .goto Dun Morogh,42.4,52.2,40,0
     .goto Dun Morogh,41.0,49.4,40,0
@@ -547,36 +553,7 @@ step << !Paladin !Warrior !Rogue
     .goto Dun Morogh,42.4,52.2,40,0
     .goto Dun Morogh,41.0,49.4,40,0
     >> Go into the cave. Kill Wendigos. Loot them for their Manes
-    .complete 313,1 --Collect Wendigo Mane (x8)
-step << Warrior/Rogue
-    .goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
->> Kill Wendigos. Loot them for their Manes. Keep an eye out for Veins to get rough stones for Sharpening stones for your weapon
-    .complete 313,1 --Collect Wendigo Mane (x8)
-step << Paladin
-    .goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
-    .goto Dun Morogh,42.4,52.2,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
->> Kill Wendigos. Loot them for their Manes. Keep an eye out for Veins to get rough stones for Weightstones for your weapon
+    >>Keep an eye out for Veins to get rough stones for sharpening/weight stones for your weapon << Paladin/Warrior/Rogue
     .complete 313,1 --Collect Wendigo Mane (x8)
 step
     >>Loot the crate
@@ -786,6 +763,7 @@ step
     .goto Dun Morogh,46.7,53.8
     .accept 287 >> Accept Frostmane Hold
 step
+#xprate <1.5
     .goto Dun Morogh,49.6,48.6
     .turnin 313 >> Turn in The Grizzled Den
 step << !Rogue
@@ -796,6 +774,7 @@ step << Rogue
     >>Choose the Camping Knife. Save it for later
     .turnin 320 >> Turn in Return to Bellowfiz
 step
+#xprate <1.5
     .goto Dun Morogh,45.8,49.4
     .accept 412 >> Accept Operation Recombobulation
 step
@@ -836,6 +815,7 @@ step
     .goto Dun Morogh,30.2,45.5
     .turnin 311 >> Turn in Return to Marleth
 step
+#xprate <1.5
     .goto Dun Morogh,27.2,43.0,40,0
     .goto Dun Morogh,24.8,39.3,40,0
     .goto Dun Morogh,25.6,43.4,40,0
@@ -845,20 +825,20 @@ step
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
 step
-    .xp 9 >> Grind to 9
-step
-.goto Dun Morogh,24.5,50.8,30 >>Enter the cave
+    .goto Dun Morogh,24.5,50.8,30 >>Enter the cave
 step
     .goto Dun Morogh,22.1,50.3,40,0
-       .goto Dun Morogh,21.3,52.9,40,0
+    .goto Dun Morogh,21.3,52.9,40,0
     >>Kill Headhunters inside the cave
     .complete 287,1 --Kill Frostmane Headhunter (x5)
-step
+    step
     .goto Dun Morogh,23.4,51.5,15 >>Go back up the cave
 step
-    >>Jump down, you die after
-.goto Dun Morogh,23.0,52.2
+    >>Jump down
+    .goto Dun Morogh,23.0,52.2
     .complete 287,2 --Fully explore Frostmane Hold
+step
+    .xp 9 >> Grind to 9
 step
 .deathskip >> Die and respawn at the Spirit Healer
 step
@@ -866,19 +846,20 @@ step
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
 step
+#xprate <1.5
     .goto Dun Morogh,45.8,49.4
     .turnin 412 >> Turn in Operation Recombobulation
-step << Warrior
+step << Warrior tbc
     #sticky
     #completewith next
 .money >0.0950
     +Start grinding until you have 9s 50c of vendorables, then run into Ironforge
-step << Warrior
+step << Warrior tbc
     .goto Dun Morogh,53.5,34.9,30 >> Run into Ironforge
-step << Warrior
+step << Warrior tbc
 .goto Ironforge,61.2,89.5
     .train 199 >>Train 2h Maces
-step << Warrior
+step << Warrior tbc
     #sticky
     #completewith next
 .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
@@ -943,26 +924,26 @@ step << Paladin/Mage/Priest/Shaman/Druid/Hunter
 step << Warrior/Rogue
     .goto Dun Morogh,68.4,54.5
     .vendor >> Buy x10 level 5 food
-step << Priest/Rogue
+step << Priest tbc/Rogue tbc
     .goto Dun Morogh,47.1,55.1,60 >> Die and respawn at the Spirit Healer, or run back
-step << Priest
+step << Priest tbc
     #sticky
 #completewith next
 .goto Dun Morogh,47.3,52.2
     .train 2006 >>If you're going to be playing with other players, Train Resurrection
-step << Human Priest/Dwarf Priest
+step << !NightElf !Draenei Priest tbc
     .goto Dun Morogh,47.3,52.2
     .accept 5636 >> Accept Desperate Prayer
     .train 2053 >>Train Lesser Heal r3
     .train 8092 >>Train Mind Blast
 .train 594 >>Train Shadow Word: Pain r2
     .train 13908 >>Train Desperate Prayer
-step << NightElf Priest/Draenei Priest
+step << !NightElf !Draenei Priest tbc
     .goto Dun Morogh,47.3,52.2
     .train 2053 >>Train Lesser Heal r3
     .train 8092 >>Train Mind Blast
 .train 594 >>Train Shadow Word: Pain r2
-step << Rogue
+step << Rogue tbc
     .goto Dun Morogh,47.6,52.5
     .accept 2218 >> Accept Road to Salvation
     .train 2983 >>Train Sprint
@@ -998,14 +979,17 @@ step
 step
 .goto Dun Morogh,86.2,51.3,20 >>Go through the tunnel
 step << !Rogue
+#xprate <1.5
     .goto Loch Modan,22.1,73.1
     .accept 224 >> Accept In Defense of the King's Lands
 step << !Rogue
+#xprate <1.5
     .goto Loch Modan,22.6,75.4,30,0
 .goto Loch Modan,23.2,73.7
     >>Go into the bunker
     .accept 267 >> Accept The Trogg Threat
 step << !Rogue
+#xprate <1.5
     .goto Loch Modan,30.0,68.4,30,0
 .goto Loch Modan,30.0,72.4,50,0
     .goto Loch Modan,34.7,71.6,50,0
@@ -1021,10 +1005,13 @@ step << !Rogue
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
 step << !Rogue
+#xprate <1.5
     .goto Loch Modan,29.9,68.2,30,0
 .goto Loch Modan,22.2,73.3
+#xprate <1.5
     .turnin 224 >> Turn in In Defense of the King's Lands
 step << !Rogue
+#xprate <1.5
     .goto Loch Modan,23.2,73.7
     .turnin 267 >> Turn in The Trogg Threat
 step
@@ -1231,6 +1218,7 @@ step << Mage
 step << Rogue
     .goto Loch Modan,32.0,47.2,150 >>Die and respawn at the Spirit Healer, or run to here
 step << Rogue
+#xprate <1.5
     #sticky
     #completewith next
     +Grind mobs until you have at least 33 Silver worth of money and vendorables
@@ -1250,9 +1238,7 @@ step << Gnome/Dwarf
     .accept 6388 >> Accept Gryth Thurden
 step << Paladin
     .goto Ironforge,23.1,6.1
-    .train 1022 >>Train Blessing of Protection
-    .train 633 >>Train Lay on Hands
-    .train 10290 >>Train Devotion Aura r2
+    .trainer >>Visit your class trainer and train spells
 step << Mage
     .goto Ironforge,27.2,8.6
     .train 145 >>Train Fireball r3
@@ -1284,30 +1270,32 @@ step << Warrior
 step << Warrior
     .goto Ironforge,48.7,42.7
     .turnin 1680 >>Turn in Tormus Deepforge
-step << Gnome Rogue/Dwarf Rogue
+step << !NightElf Rogue/wotlk
     >>do NOT fly anywhere
 .goto Ironforge,55.5,47.8
     .turnin 6388 >> Turn in Gryth Thurden
-    .accept 6392 >> Accept Return to Brock
-step << Gnome !Rogue/Dwarf !Rogue
+    .accept 6392 >> Accept Return to Brock << tbc
+step << Gnome !Rogue/Dwarf !Rogue tbc
     .goto Ironforge,55.5,47.8
     .turnin 6388 >> Turn in Gryth Thurden
     .fly Menethil >> Fly to Menethil
-step << Rogue
+step << Rogue/wotlk
 .goto Ironforge,77.0,51.0,30 >>Enter the Deeprun Tram
-step << Rogue
+step << Rogue/wotlk
     .accept 6661 >> Accept Deeprun Rat Roundup
-step << Rogue
+step << Rogue/wotlk
     .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
-step << Rogue
+step << Rogue/wotlk
     .turnin 6661 >> Turn in Deeprun Rat Roundup
-step << Rogue
-    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
-    .goto StormwindClassic,62.4,10.1,30 >>Take the Deeprun Tram and enter Stormwind
-step << Rogue
+    .accept 6662 >> Accept Me Brother, Nipsy
+step << Rogue/wotlk
+     >> Ride to the other side of the tram and turn in
+    .turnin 6662 >> Turn in Me Brother, Nipsy
+step << Rogue/wotlk
     .goto StormwindClassic,58.1,16.5
     .turnin 1338 >> Turn in Stormpike's Order
+    .isOnQuest 1338
 step << Rogue
     .goto StormwindClassic,57.1,57.7
     .train 201 >>Train 1h Swords
@@ -1318,15 +1306,15 @@ step << Rogue
     #sticky
     #completewith next
 .hs >> Hearth to Thelsamar
-step << Gnome Rogue/Dwarf Rogue
+step << !NightElf Rogue tbc
     .goto Loch Modan,37.0,47.8
 .turnin 6392 >> Turn in Return to Brock
-step << Rogue
+step << Rogue tbc
     .goto Ironforge,55.5,47.8
     .fly Menethil >> Fly to Menethil
 step << Gnome/Dwarf
     .abandon 6392 >> Abandon Return to Brock
-step
+step << tbc
     .money <0.076
     .goto Wetlands,10.4,56.0,15,0
 .goto Wetlands,10.1,56.9,15,0
@@ -1334,18 +1322,20 @@ step
 .goto Wetlands,10.7,56.8
     .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
     .bronzetube
-step
+step << tbc
     .money <0.0385
 .goto Wetlands,8.1,56.3
     .vendor >> Check Dewin for Heal Potions, buy down to 1s
-step
+step << tbc
     #sticky
 #completewith Darkshore1
 +Wait here for the boat
 .goto Wetlands,4.7,57.3
-step
+step << tbc
     #label Darkshore1
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore
+step << wotlk
+    .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1414,6 +1404,7 @@ step
     .vendor >>vendor trash, buy 15 water. Grind for more money if you don't have enough
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step
+#xprate <1.5
     .goto Dun Morogh,29.7,71.2
     .accept 170 >> Accept A New Threat
 step
@@ -1422,6 +1413,7 @@ step
     >>Kill Normal Rockjaw Troggs that you see
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step
+#xprate <1.5
     .goto Dun Morogh,26.9,72.7,30,0
     .goto Dun Morogh,25.1,72.1,30,0
     .goto Dun Morogh,26.9,72.7,30,0
@@ -1456,6 +1448,7 @@ step
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
 step
+#xprate <1.5
     #sticky
     #label Troggs
     .goto Dun Morogh,28.7,77.5
@@ -1486,6 +1479,7 @@ step
     .train 172 >>Train Corruption
     .turnin 3115 >> Turn in Tainted Memorandum
 step
+#xprate <1.5
     .goto Dun Morogh,29.7,71.2
     .turnin 170 >> Turn in A New Threat
 step
@@ -1585,6 +1579,7 @@ step
     >>DON'T kill bears en route
     .accept 317 >> Accept Stocking Jetsteam
 step
+#xprate <1.5
     .goto Dun Morogh,49.6,48.6
     .accept 313 >> Accept The Grizzled Den
 step
@@ -1650,6 +1645,7 @@ step
     .home >> Set your Hearthstone to Thunderbrew Distillery
     .vendor >> Buy as much level 5 drink as you can
 step
+#xprate <1.5
 .goto Dun Morogh,42.5,54.8,40,0
     .goto Dun Morogh,42.4,52.2,40,0
     .goto Dun Morogh,41.0,49.4,40,0
@@ -1783,12 +1779,14 @@ step
     .goto Dun Morogh,46.7,53.8
     .accept 287 >> Accept Frostmane Hold
 step
+#xprate <1.5
     .goto Dun Morogh,49.6,48.6
     .turnin 313 >> Turn in The Grizzled Den
 step
     .goto Dun Morogh,49.4,48.4
     .turnin 320 >> Turn in Return to Bellowfiz
 step
+#xprate <1.5
     .goto Dun Morogh,45.8,49.4
     .accept 412 >> Accept Operation Recombobulation
 step
@@ -1821,6 +1819,7 @@ step
     .goto Dun Morogh,30.2,45.5
     .turnin 311 >> Turn in Return to Marleth
 step
+#xprate <1.5
     .goto Dun Morogh,27.2,43.0,40,0
     .goto Dun Morogh,24.8,39.3,40,0
     .goto Dun Morogh,25.6,43.4,40,0
@@ -1851,6 +1850,7 @@ step
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
 step
+#xprate <1.5
     .goto Dun Morogh,45.8,49.4
     .turnin 412 >> Turn in Operation Recombobulation
 step
