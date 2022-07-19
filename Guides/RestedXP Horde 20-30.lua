@@ -7,13 +7,13 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Horde 1-30
 #next 23-27 Hillsbrad / Ashenvale
 step
-.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
+    .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step
->>Go to the top of the tower
-.goto Orgrimmar,45.1,63.9
-.fp Orgrimmar >> Get the Orgrimmar flight path
+    >>Go to the top of the tower
+    .goto Orgrimmar,45.1,63.9
+    .fp Orgrimmar >> Get the Orgrimmar flight path
 step
-.goto Orgrimmar,39.8,37.0,20 >>Run into the Keep
+    .goto Orgrimmar,39.8,37.0,20 >>Run into the Keep
 step << BloodElf
     .isOnQuest 9626
 .goto Orgrimmar,31.8,38.1
@@ -23,6 +23,9 @@ step << !BloodElf
     .isOnQuest 9813
 .goto Orgrimmar,31.8,38.1
     .turnin 9813 >> Turn in Meeting the Warchief
+step
+    .goto Orgrimmar,39.0,38.3
+    .accept 1061 >> Accept The Spirits of Stonetalon
 step << Warlock
     #sticky
     >>You must abandon the quest Carendin's Summons to be able to accept Devourer of Souls
@@ -41,37 +44,37 @@ step << Warlock
 step << BloodElf
     .goto Orgrimmar,31.8,38.2
     .accept 9428 >> Accept Report to Splintertree Post
-step
-    .goto Orgrimmar,39.0,38.3
-    .accept 1061 >> Accept The Spirits of Stonetalon
 step << Mage
     .goto Orgrimmar,38.7,85.4
 .train 11417 >> Go and train Portal: Orgrimmar
 step
-.goto Orgrimmar,52.5,85.1,50,0
+    .goto Orgrimmar,52.5,85.1,50,0
     .goto Orgrimmar,49.1,94.3,50 >>Exit Orgrimmar
 step
     >>Run all the way down to Ratchet and get the flight path.
-.goto The Barrens,63.1,37.1
+    .goto The Barrens,63.1,37.1
     .fp Ratchet >> Get the Ratchet flight path
 step
-    .goto The Barrens,63.1,37.6
-    .accept 959 >>Accept Trouble at the Docks
-step
-    .goto The Barrens,63.0,37.2
+    >> Accept quest around Ratchet
     .accept 1483 >>Accept Ziz Fizziks
+    .goto The Barrens,63.0,37.2
+    .accept 959 >>Accept Trouble at the Docks
+    .goto The Barrens,63.1,37.6
+    .accept 865 >>Accept Raptor Horns
+    .goto The Barrens,62.4,37.6
+    .maxlevel 22
 step
     .goto The Barrens,62.4,37.6
-    .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
 step << Rogue
 	.goto The Barrens,65.0,45.4
     >>Run to the boat then go down to the 2nd floor. Start picking lockboxes until you're at 80 lockpicking skill.
 	.skill lockpicking,80
 step
-    >>Run to Crossroads
-.goto The Barrens,52.3,31.9
+    .maxlevel 22
+    >>Run to the Crossroads and accept quests
     .accept 870 >>Accept The Forgotten Pools
+    .goto The Barrens,52.3,31.9
 step
     .goto The Barrens,51.9,31.6
     .accept 899 >>Accept Consumed by Hatred
@@ -90,17 +93,22 @@ step
 step
     .goto The Barrens,51.5,30.1
     .accept 848 >> Accept Fungal Spores
+    .maxlevel 22
 step
+    >> Head west out of the Crossroads
     .goto The Barrens,45.4,28.4
     .accept 850 >> Accept Kolkar Leaders
+    .maxlevel 22
 step
     #sticky
     #completewith next
     >>Collect the white mushrooms around The Forgotten Pools
-.complete 848,1 --Collect Fungal Spores (x4)
+    .complete 848,1 --Collect Fungal Spores (x4)
+    .isOnQuest 848
 step
->>Dive underwater to the bubble fissure
-.goto The Barrens,45.1,22.5
+    .isOnQuest 870
+    >>Dive underwater to the bubble fissure
+    .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
 >>Finish collecting the white mushrooms around The Forgotten Pools
@@ -118,13 +126,20 @@ step
     #sticky
     #completewith next
     .goto The Barrens,35.3,27.9
->>Kill & Loot any raptor as you see them en route to the next step
+>>Kill & Loot level 16+ raptors as you see them en route to the next step
     .complete 865,1 --Collect Intact Raptor Horn (x5)
+    .isOnQuest 865
 step
     .goto The Barrens,35.3,27.9
     .turnin 1061 >> Turn in The Spirits of Stonetalon
-    .accept 1062 >> Accept Goblin Invaders
     .accept 6548 >> Accept Avenge My Village
+    .maxlevel 22
+step
+    .goto The Barrens,35.3,27.9
+    .accept 1062 >> Accept Goblin Invaders
+step
+    .goto Stonetalon Mountains,81.8,96.1
+    .zone Stonetalon Mountains >> Head to Stonetalon Mountains
 step
     >>Kill Grimtotems in the area
 .goto Stonetalon Mountains,80.7,89.2,50,0
@@ -137,10 +152,13 @@ step
     .goto Stonetalon Mountains,82.3,90.0
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
+    .isOnQuest 6548
 step
     .goto The Barrens,35.2,27.8
+    >> Head back to the quest giver in The Barrens
     .turnin 6548 >> Turn in Avenge My Village
     .accept 6629 >> Accept Kill Grundig Darkcloud
+    .maxlevel 22
 step
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
 step << Warlock
@@ -149,59 +167,92 @@ step << Warlock
     .accept 1511 >>Accept Ken'zigla's Draught
 step
     .goto Stonetalon Mountains,71.4,95.1
+    >> Talk to Xen'Zilla in the hut
     .accept 6461 >> Accept Blood Feeders
 step
     #sticky
     #completewith next
 	.goto Stonetalon Mountains,71.7,86.7,40 >>Run to the path here
+    .isOnQuest 6629
 step
     >>Make sure you kill all 6 brutes before starting the quest inside. Kill Grundig in front of the main tent
 	.goto Stonetalon Mountains,74.0,86.2
     .complete 6629,1 --Kill Grundig Darkcloud (x1)
     .complete 6629,2 --Kill Grimtotem Brute (x6)
 	.unitscan Grundig Darkcloud
+    .isOnQuest 6629
 step
     >>Start the Kaya Escort
-.goto Stonetalon Mountains,73.5,85.8
+    .goto Stonetalon Mountains,73.5,85.8
     .accept 6523 >> Accept Protect Kaya
+    .isOnQuest 6629
 step
        >>Escort Kaya and stay close to her. 3 Grimtotems will spawn at the bonfire. Eat/drink before she gets to the camp
     .goto Stonetalon Mountains,75.8,91.4
     .complete 6523,1 --Kaya Escorted to Camp Aparaje
+    .isOnQuest 6523
 step
-    >>Click the Wanted poster
-.goto Stonetalon Mountains,59.0,75.7
+    #sticky
+    #completewith next
+    >> Kill Deepmoss Creepers en route to the wanted poster. You do not have to finish the quest now.
+    .complete 6461,1 --Kill Deepmoss Creeper (x10)
+step
+    >>Click the Wanted poster up the road
+    .goto Stonetalon Mountains,59.0,75.7
     .accept 6284 >> Accept Arachnophobia
 step
-.goto Stonetalon Mountains,57.5,76.2,30 >>Run up the path here to Sishir Canyon
+    .goto Stonetalon Mountains,57.5,76.2,30 >>Run up the path here to Sishir Canyon
 step
-#sticky
-#label deepmossegg
->>Click the spider eggs near the trees. Be careful as mobs can spawn from the eggs
+    #sticky
+    #label deepmossegg
+    #completewith spiderend
+    >>Click the spider eggs near the trees. Be careful as mobs can spawn from the eggs
     .complete 1069,1 --Collect Deepmoss Egg (x15)
+    .isOnQuest 1069
 step
->>Kill the Deepmoss Spiders and Besseleth in the area. Loot Besseleth for his fang
-.goto Stonetalon Mountains,54.7,71.9,40,0
+    #sticky
+    #label besseleth
+    #completewith spiderend
+    .goto Stonetalon Mountains,54.7,71.9,40,0
     .goto Stonetalon Mountains,52.6,71.8,40,0
     .goto Stonetalon Mountains,52.2,75.6,40,0
     .goto Stonetalon Mountains,53.9,74.2,40,0
-.goto Stonetalon Mountains,54.7,71.9,40,0
+    .goto Stonetalon Mountains,54.7,71.9,40,0
+    .goto Stonetalon Mountains,52.6,71.8,40,0
+    .goto Stonetalon Mountains,52.2,75.6,40,0
+    .goto Stonetalon Mountains,53.9,74.2
+    >> Kill and loot Besseleth for his fang
+    .complete 6284,1 --Collect Besseleth's Fang (x1)
+	.unitscan Besseleth
+    .isOnQuest 6284
+step
+    >>Kill the Deepmoss Spiders and Besseleth in the area. Loot Besseleth for his fang
+    .goto Stonetalon Mountains,54.7,71.9,40,0
+    .goto Stonetalon Mountains,52.6,71.8,40,0
+    .goto Stonetalon Mountains,52.2,75.6,40,0
+    .goto Stonetalon Mountains,53.9,74.2,40,0
+    .goto Stonetalon Mountains,54.7,71.9,40,0
     .goto Stonetalon Mountains,52.6,71.8,40,0
     .goto Stonetalon Mountains,52.2,75.6,40,0
     .goto Stonetalon Mountains,53.9,74.2
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
-.complete 6461,2 --Kill Deepmoss Venomspitter (x7)
-    .complete 6284,1 --Collect Besseleth's Fang (x1)
-	.unitscan Besseleth
+    .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
+    .isOnQuest 6461
 step
+    #label spiderend
+    >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1483 >> Turn in Ziz Fizziks
+    .isOnQuest 1483
+step
+    >> Head to the goblin hut behind the hill
+    .goto Stonetalon Mountains,59.0,62.6
     .accept 1093 >> Accept Super Reaper 6000
 step
     #sticky
     #completewith next
     >>Kill Loggers as you search for Operators to get the Blueprints
-.complete 1062,1 --Kill Venture Co. Logger (x15)
+    .complete 1062,1 --Kill Venture Co. Logger (x15)
 step
     >>Kill Venture Co. Operators until you get the Blueprints
 .goto Stonetalon Mountains,62.8,53.7,40,0
@@ -229,27 +280,37 @@ step
 step
 #completewith next
 #requires deepmossegg
+    .goto The Barrens,52.2,31.9
     .hs >> Hearth to Crossroads
 step
+    .isOnQuest 870
     .goto The Barrens,52.2,31.9
     .turnin 870 >> Turn in The Forgotten Pools
+step
+    .isQuestTurnedIn 870
+    .goto The Barrens,52.2,31.9
     .accept 877 >> Accept The Stagnant Oasis
 step
     .goto The Barrens,52.3,31.9
     .vendor >> Vendor trash & repair your gear.
 step
-    >>Turning this in will start a timed quest. Log out here if you're going to be busy in the next 45+ minutes
+    .isOnQuest 848
+    >>Turning this in will start a timed quest. Log out here if you're going to be busy in the next 45+ minutes.
 .goto The Barrens,51.5,30.2
     .turnin 848 >> Turn in Fungal Spores
+step
+    .isQuestTurnedIn 848
+    >> Wait for the roleplay then accept the quest
+    .goto The Barrens,51.5,30.2
     .accept 853 >> Accept Apothecary Zamah
 step
     #sticky
     #completewith Zamah
-+You have 45 minutes to complete the Apothecary quest so keep an eye on the timer. Skip the quest if you fail it
+    +You have 45 minutes to complete the Apothecary quest so keep an eye on the timer. Skip the quest if you fail it
 step
-#sticky
-#completewith Horns
->>Kill & Loot any Raptors you see
+    #sticky
+    #completewith Horns
+    >>Kill & Loot any level 16+ Raptors you see
     .complete 865,1 --Collect Intact Raptor Horn (x5)
 step
     >>Click the Bubble Fissure underwater
@@ -257,48 +318,43 @@ step
     .complete 877,1 --Collect Test the Dried Seeds (x1)
 step
     #label Horns
-.goto The Barrens,49.3,50.4
-    .complete 4921,1 --Find Mankrik's Wife
-	.skipgossip
-step
     .goto The Barrens,52.2,46.6,40,0
     .goto The Barrens,57.8,54.1,40,0
     .goto The Barrens,52.2,46.6,40,0
     .goto The Barrens,57.8,54.1,40,0
     .goto The Barrens,52.2,46.6,40,0
     .goto The Barrens,57.8,54.1
->>Finish looting the rest of the Raptor Horns
+    >>Finish looting the rest of the Raptor Horns
     .complete 865,1 --Collect Intact Raptor Horn (x5)
+    .isOnQuest 865
 step
-#sticky
-#label Owatanka1
-#completewith weapons
-.goto The Barrens,49.2,62.6,75,0
-.goto The Barrens,49.6,60.0,75,0
-.goto The Barrens,49.2,62.6,75,0
-.goto The Barrens,49.6,60.0,75,0
-.goto The Barrens,49.2,62.6,75,0
-.goto The Barrens,49.6,60
->>Search for Owatanka (Blue Thunder Lizard) around the area. If you find him, loot his Tailspike and start the quest. You'll check more spots later if you don't get it
-.collect 5102,1,884 --Collect Owatanka's Tailspike
-.accept 884 >>Accept Owatanka
+.goto The Barrens,49.3,50.4
+    >> Head to the small outpost by the road to the south
+    .skipgossip
+    .complete 4921,1 --Find Mankrik's Wife
 step
-#sticky
-#label Lakota1
-#completewith next
-	.goto The Barrens,50.0,53.1,75,0
-    .goto The Barrens,46.0,49.2,75,0
-    .goto The Barrens,45.3,52.5,75,0
+    #sticky
+    #label Lakota1
+    #completewith weapons
 	.goto The Barrens,50.0,53.1,75,0
     .goto The Barrens,46.0,49.2,75,0
     .goto The Barrens,45.3,52.5	
->>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
-.collect 5099,1,883 --Collect Hoof of Lakota'Mani
-.accept 883 >>Accept Lakota'Mani
+    .unitscan Lakota'mani
+    >>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
+    .collect 5099,1,883 --Collect Hoof of Lakota'Mani
+    .accept 883 >>Accept Lakota'Mani
 step
+    #requires Lakota1
     #label weapons
-.goto The Barrens,45.1,57.7
+    .goto The Barrens,45.1,57.7
     .accept 893 >>Accept Weapons of Choice
+step
+    .isOnQuest 883
+    .goto The Barrens,44.7,59.1
+    .turnin 883 >> Turn in Lakota'mani
+step
+    .goto The Barrens,44.8,59.1
+    .accept 1130 >> Accept Melor Sends Word
 step << Warlock
     .goto The Barrens,44.6,59.3
     .turnin 1511 >>Turn in Ken'zigla's Draught
@@ -306,37 +362,27 @@ step << Warlock
 step
     .goto The Barrens,44.5,59.2
     .accept 878 >> Accept Tribes at War
-step
-    .goto The Barrens,44.7,59.1
-    .accept 1130 >> Accept Melor Sends Word
+    
 step
     .goto The Barrens,44.5,59.2
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
 step << Warlock
-    #sticky
-#completewith next
->>Save the Blood Shards you get
-.complete 878,1 --Kill Bristleback Water Seeker (x6)
-    .complete 878,2 --Kill Bristleback Thornweaver (x12)
-    .complete 878,3 --Kill Bristleback Geomancer (x12)
-    .complete 899,1 --Collect Bristleback Quilboar Tusk (x60)
-step << Warlock
     >>Kill Quillboars en route to here
-.goto The Barrens,43.3,47.9
+    .goto The Barrens,43.3,47.9
     .turnin 1515 >>Turn in Dogran's Captivity
     .accept 1512 >>Accept Love's Gift
-step
-    >>Kill a LOT of Quillboars. Loot them for their tusks. Save the Blood Shards you get
-.goto The Barrens,44.3,52.3,50,0
+step << Warlock
+    >>Kill a LOT of Quillboars. Prioritize Thornweavers, Water Seekers, and Geomancers where you can. Loot them for their tusks. Save the Blood Shards you get
+    *Water Seekers only spawn in the south western most camps. Go East or North West for Geomancers / Thornweavers.
     .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,45.2,54.3,50,0
-.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,42.2,48.3,50,0
+    .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,45.2,54.3,50,0
-.goto The Barrens,44.3,52.3,50,0
-    .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,45.2,54.3,50,0
-.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,53.2,54.3,50,0
+    .goto The Barrens,53.3,51.3,50,0
+    .goto The Barrens,53.2,54.3,50,0
+    .goto The Barrens,53.3,51.3,50,0
+    .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
     .goto The Barrens,45.2,54.3
 .complete 878,1 --Kill Bristleback Water Seeker (x6)
@@ -344,14 +390,28 @@ step
     .complete 878,3 --Kill Bristleback Geomancer (x12)
     .complete 899,1 --Collect Bristleback Quilboar Tusk (x60)
 step
-	#sticky
-	#completewith next
-	+Use your Blood Shards on any buff from Mangletooth
+    #sticky
+    #label Owatanka2
+    #completewith next
+    .goto The Barrens,44.2,62.1,75,0
+    .goto The Barrens,49.2,62.6,75,0
+    .goto The Barrens,49.6,60.0,75,0
+    .goto The Barrens,44.2,62.1,75,0
+    .goto The Barrens,49.2,62.6,75,0
+    .goto The Barrens,49.6,60.0
+    >>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
+    .collect 5102,1,884 --Collect Owatanka's Tailspike
+    .accept 884 >>Accept Owatanka
+    .unitscan Owatanka
 step
+    #requires Owatanka2
     .goto The Barrens,44.6,59.2
     .turnin 878 >> Turn in Tribes at War
     .accept 5052 >>Accept Blood Shards of Agamaggan
-.turnin 5052 >>Turn in Blood Shards of Agamaggan
+    .turnin 5052 >>Turn in Blood Shards of Agamaggan
+	>> Use your Blood Shards on Spirit of the Wind
+    .accept 889 >> Accept Spirit of the Wind
+    .turnin 889 >> Turn in Spirit of the Wind
 step
     .isOnQuest 884
     .goto The Barrens,44.9,59.1
@@ -379,23 +439,25 @@ step << Druid
 	.accept 27 >>Accept A Lesson to Learn
 	.trainer >> Go and train your class spells
 step
-    .goto Thunder Bluff,30.1,30.0,25 >>Go into The Pools of Vision
+    .goto Thunder Bluff,30.1,30.0,25 >>Go into The Pools of Vision below the Spirit Rise
 step
-#label Zamah
->>Talk to Clarice Foster
-.goto Thunder Bluff,27.5,24.7
+    #label Zamah
+    >>Talk to Clarice Foster
+    .goto Thunder Bluff,27.5,24.7
     .accept 264 >> Accept Until Death Do Us Part
 step
-.goto Thunder Bluff,23.0,20.9
->> If you failed the Zamah quest, just abandon it
+    .goto Thunder Bluff,23.0,20.9
+    >> If you failed the Zamah quest, just abandon it
     .turnin 853 >> Turn in Apothecary Zamah
-.accept 962 >> Accept Serpentbloom
+    .accept 962 >> Accept Serpentbloom
+    .maxlevel 23
 step << Tauren
-#completewith next
+    #completewith next
     .goto Thunder Bluff,45.8,64.7
-.home >> Set your Hearthstone to Thunder Bluff
+    .home >> Set your Hearthstone to Thunder Bluff
 step
     .goto Thunder Bluff,61.4,80.9
+    >> Head to Hunter's Rise
     .turnin 1130 >> Turn in Melor Sends Word
     .accept 1131 >> Accept Steelsnap
 step
@@ -403,25 +465,36 @@ step
     .accept 1195 >> Accept The Sacred Flame
 step << !Tauren
     >>Go up the tower
-.goto Thunder Bluff,47.0,49.8
-.fp Thunder Bluff >>Get the Thunder Bluff Flight Path
-step
-#completewith next
     .goto Thunder Bluff,47.0,49.8
-.fly Ratchet >> Fly to Ratchet
+    .fp Thunder Bluff >>Get the Thunder Bluff Flight Path
 step
+    #completewith next
+    .goto Thunder Bluff,47.0,49.8
+    .fly Ratchet >> Fly to Ratchet
+step
+    .isOnQuest 865
     .goto The Barrens,62.4,37.6
     .turnin 865 >> Turn in Raptor Horns
-    .turnin 1069 >> Turn in Deepmoss Spider Eggs
+step
+    .isQuestTurnedIn 865
+    .goto The Barrens,62.4,37.6
     .accept 1491 >>Accept Smart Drinks
+step
+    .goto The Barrens,62.4,37.6
+    .turnin 1069 >> Turn in Deepmoss Spider Eggs
+step
+    #sticky
+    #completewith next
+    .itemcount 5570,1
+    .destroy 5570 >> Destroy any leftover Deepmoss Spider Eggs
 step
     .goto The Barrens,63.0,37.2
     .turnin 1094 >> Turn in Further Instructions
     .accept 1095 >> Accept Further Instructions
 step
-#completewith next
+    #completewith next
     .goto The Barrens,63.1,37.2
-.fly Crossroads >> Fly to Crossroads
+    .fly Crossroads >> Fly to Crossroads
 step
     .goto The Barrens,52.0,31.6
     .turnin 4921 >> Turn in Lost in Battle
@@ -433,25 +506,31 @@ step
 .goto The Barrens,47.0,34.7,15,0
 .goto The Barrens,46.4,34.9,15,0
 .goto The Barrens,46.6,34.8,10 >>Go up the mountain here
+    .isOnQuest 959
 step
-.goto Kalimdor,51.9,55.4,30,0
-.goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
+    .goto Kalimdor,51.9,55.4,30,0
+    .goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
+    .isOnQuest 959
 step
->>Go into the eye of the cave
-.goto Kalimdor,51.9,55.4
-.accept 1486 >>Accept Deviate Hides
+    >>Go into the eye of the cave
+    .goto Kalimdor,51.9,55.4
+    .accept 1486 >>Accept Deviate Hides
+    .isOnQuest 959
 step
-.goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
+    .goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
+    .isOnQuest 959
 step
-#sticky
-#label Deviate
->>Kill Deviate mobs. Loot them for their hides
-.complete 1486,1 --Deviate Hide (20)
+    #sticky
+    #label Deviate
+    >>Kill Deviate mobs. Loot them for their hides
+    .complete 1486,1 --Deviate Hide (20)
+    .isOnQuest 1486
 step
-#sticky
-#label Serpentbloom
->>Look for green and red flowers on the ground
-.complete 962,1 --Serpentbloom (10)
+    #sticky
+    #label Serpentbloom
+    >>Look for green and red flowers on the ground
+    .complete 962,1 --Serpentbloom (10)
+    .isOnQuest 962
 step
 .goto Kalimdor,52.0,55.4,20,0
 .goto Kalimdor,52.2,55.2,35,0
@@ -466,11 +545,13 @@ step
 .goto Kalimdor,52.2,55.2,35,0
 .goto Kalimdor,51.8,54.8,20,0
 .goto Kalimdor,52.2,55.2
->>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
-.complete 959,1 --Collect 99-Year-Old Port (1)
-.unitscan Mad Magglish
+    >>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
+    .complete 959,1 --Collect 99-Year-Old Port (1)
+    .unitscan Mad Magglish
+    .isOnQuest 959
 step
-.goto Kalimdor,51.9,54.9,20 >>Enter the deeper part of the cave
+    .goto Kalimdor,51.9,54.9,20 >>Enter the deeper part of the cave
+    .isOnQuest 1491
 step
     .goto Kalimdor,52.1,54.5,30,0
     .goto Kalimdor,52.3,54.6,30,0
@@ -488,29 +569,46 @@ step
     .goto Kalimdor,52.8,54.8,30,0
     .goto Kalimdor,52.6,54.5,30,0
 	.goto Kalimdor,52.6,54.5
->>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
-.complete 1491,1 --Wailing Essence (6)
+    >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
+    .complete 1491,1 --Wailing Essence (6)
+    .isOnQuest 1491
 step
-#requires Serpentbloom
+    #requires Serpentbloom
+    .isOnQuest 962
 step
-#requires Deviate
->>Run back to the eye of the cave
-.goto Kalimdor,51.9,55.4
-.turnin 1486 >>Turn in Deviate Hides
+    #requires Deviate
+    >>Run back to the eye of the cave
+    .goto Kalimdor,51.9,55.4
+    .turnin 1486 >>Turn in Deviate Hides
+    .isOnQuest 1486
 step
     .goto The Barrens,45.4,28.4
     .turnin 850 >> Turn in Kolkar Leaders
+    .isOnQuest 850
 step
+    >> Head towards Stonetalon
     .goto The Barrens,35.3,27.8
     .turnin 1062 >> Turn in Goblin Invaders
+    .accept 1063 >> Accept The Elder Crone
+step
+    .isOnQuest 6523
+    .goto The Barrens,35.3,27.8
     .turnin 6629 >> Turn in Kill Grundig Darkcloud
     .turnin 6523 >> Turn in Protect Kaya
-    .accept 6401 >> Accept Kaya's Alive
-    .accept 1063 >> Accept The Elder Crone
+step
+    .isQuestTurnedIn 6523
+    .goto The Barrens,35.3,27.8
+    .accept 6401 >> Accept Kaya's Alive 
+step
+	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
+    .isOnQuest 6461
 step
     .goto Stonetalon Mountains,71.3,95.0
     .turnin 6461 >> Turn in Blood Feeders
 step
+    >> Head to Sun Rock Retreat
+    >> Head up the side mountain path to your left once you reach Sun Rock
+    .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
     .accept 6562 >> Accept Trouble in the Deeps
 step
@@ -522,6 +620,7 @@ step
 step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
+    .isOnQuest 6401
 step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
