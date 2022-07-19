@@ -27,3 +27,8 @@ jobs:
         uses: BigWigsMods/packager@v2
         with:
           args: -g bcc
+
+      - name: Package and release Wrath
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -g wrath
