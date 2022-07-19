@@ -1988,7 +1988,11 @@ step
     .turnin 9175 >> Turn in The Lady's Necklace
     .turnin 9173 >> Turn in Retaking Windrunner Spire
 step << BloodElf
+    .goto Ghostlands,44.8,32.5
     .accept 9180 >> Accept Journey to Undercity
+step << !BloodElf
+    .goto Ghostlands,44.8,32.5
+    .accept 9177 >> Accept Journey to Undercity
 step << Druid
     >>Teleport to Moonglade
     .goto Moonglade,52.5,40.6
@@ -2282,6 +2286,7 @@ step
     .goto Ghostlands,72.6,31.5
     .turnin 9275 >> Turn in A Little Dash of Seasoning
 step
+    >> Head into the mountain camp above the Sanctum of the Sun
     .goto Ghostlands,65.0,41.2,60,0
     .goto Ghostlands,60.3,35.8
     .turnin 9169 >> Turn in Deactivate An'owyn
@@ -2291,14 +2296,16 @@ step << Rogue
     .turnin 10548 >>Turn in The Sad Truth
     .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers again. Buy either if they're up if you didn't get them earlier
 step
+    #sticky
+    #completewith endofsun
+    >> Run back to Tranquillien. If Magister Darenis isn't there, come back to this step, he should respawn soon.
     .goto Ghostlands,45.9,32.1
     .accept 9151 >> Accept The Sanctum of the Sun
 step
-    .goto Ghostlands,44.8,32.7
     .turnin 9193 >> Turn in Investigate the Amani Catacombs
-step
-    .goto Ghostlands,44.8,32.3
+    .goto Ghostlands,44.8,32.7
     .turnin 9199 >> Turn in Troll Juju
+    .goto Ghostlands,44.8,32.3
 step << Mage/Warlock/Priest
     .goto Ghostlands,47.7,32.3
     .vendor >> Purchase Apothecary's Robe. Equip it
@@ -2336,7 +2343,9 @@ step << Mage
     .train 475 >>Train Remove Lesser Curse
     .train 2120 >>Train Flamestrike
 step << Warlock
+    .goto Silvermoon City,75.5,45.1,10,0
     .goto Silvermoon City,74.4,47.2
+    >> Head into the building then go downstairs
     .train 1014 >>Train Curse of Agony r2
     .train 1455 >>Train Life Tap r2
     .train 693 >>Train Create Soulstone (Minor)
@@ -2369,6 +2378,7 @@ step << BloodElf Mage
     .goto Ghostlands,47.3,29.3
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
 step
+    #label endofsun
     .goto Ghostlands,55.1,48.7
     .turnin 9172 >> Turn in Report to Magister Kaendris
     .accept 9176 >> Accept The Twin Ziggurats
@@ -2505,7 +2515,7 @@ step
     .unitscan Borgoth the Bloodletter
 step
     #label Borgoth
-    #requires Varnis
+    #requires Vedoran
     >> Kill Masophet the Black. He's inside one of the ziggurats
     .goto Ghostlands,35.8,89.1,30,0
     .goto Ghostlands,29.3,88.9,30,0
@@ -2516,6 +2526,7 @@ step
     .complete 9170,4 --Kill Masophet the Black (x1)
     .unitscan Masophet the Black
 step
+    #label Wanted
     >>Kill Dar'Khan. You may need a group for this quest. You can skip it, but we HIGHLY recommend doing this quest due to how much of an upgrade the weapons are, how much money and experience you get, etc
     *You can use mana tap to ranged pull mobs out of the room << BloodElf
     *Be sure to use the weapon you got from an earlier quest then swap to your normal weapon
@@ -2525,11 +2536,6 @@ step
     #requires Borgoth
     .goto Ghostlands,54.9,48.5
     .deathskip >> Die and rez at the spirit healer if you aren't killing Dar'Khan or have already killed him.
-step
-    #label borgothturnin
-    #requires Borgoth
-    .goto Ghostlands,54.9,48.5
-    .turnin 9170 >> Turn in Dar'Khan's Lieutenants
 step << BloodElf Hunter
 .isQuestComplete 9167
 >>Choose the 2h sword as it's incredible for melee damage/melee weaving (the bow is too fast)
@@ -2557,12 +2563,15 @@ step << !BloodElf
     .isQuestComplete 9167
     .goto Ghostlands,55.2,48.8
     .turnin 9167 >> Turn in The Traitor's Destruction
-step
-    .goto Ghostlands,47.6,34.9
-    .turnin 9164 >>Turn in Captives at Deatholme
 step << !BloodElf
     .isQuestTurnedIn 9167
     .accept 9811 >> Accept Friend of the Sin'dorei
+step
+    #label borgothturnin
+    .goto Ghostlands,54.9,48.5
+    >> Head upstairs
+    .turnin 9170 >> Turn in Dar'Khan's Lieutenants
+    .turnin 9164 >>Turn in Captives at Deatholme
 step
     #completewith next
     .cooldown item,6948,>0 >>Hearth to Tranquillien if it's up. Otherwise, just run back
@@ -2583,7 +2592,7 @@ step
     .xp 20 >>Grind to 20
 step
     #completewith next
-    .goto Ghostlands,45.5,30.5,0
+    .goto Ghostlands,45.5,30.5
     .fly Silvermoon >> Fly to Silvermoon City
 step << Shaman
     .goto Silvermoon City,71.8,56.6
@@ -2641,6 +2650,9 @@ step << Warlock
     .train 3698 >>Train Health Funnel r2
     .train 706 >>Train Demon Armor
     .train 5740 >>Train Rain of Fire
+step << Warlock
+    .vendor >> Purchase Grimoire of Torment (Rank 2)
+    .collect 16346,1
 step << Hunter
 .goto Silvermoon City,82.2,28.1
     .train 14923 >>Train Growl
@@ -2672,19 +2684,19 @@ step << Paladin
 .train 26573 >>Train Consecration
 step << BloodElf
     .isQuestTurnedIn 9167
-#label Hero
-.goto Silvermoon City,53.8,20.5
+    #label Hero
+    .goto Silvermoon City,53.8,20.5
     .turnin 9328 >> Turn in Hero of the Sin'dorei
     .accept 9621 >> Accept Envoy to the Horde
 step << !BloodElf
     .isQuestTurnedIn 9167
-#label Hero
-.goto Silvermoon City,53.8,20.5
+    #label Hero
+    .goto Silvermoon City,53.8,20.5
     .turnin 9811 >> Turn in Friend of the Sin'dorei
     .accept 9812 >> Accept Envoy to the Horde
 step
-.goto Silvermoon City,49.5,15.0,15,0
-.zone Undercity >>Take the Orb of Translocation to Undercity
+    .goto Silvermoon City,49.5,15.0,15,0
+    .zone Undercity >>Take the Orb of Translocation to Undercity
 step << Warlock
     .abandon 10605 >>Abandon Carendin Summons
 step << Warlock
@@ -2692,37 +2704,41 @@ step << Warlock
     #completewith Royal
     +Do NOT take your warlock quest in Undercity. You're going to do it in Orgrimmar as the questline is a lot better
 step
-.goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
+    .goto Undercity,66.0,44.0,35 >>Take one of the lifts down to Undercity
 step << !Scourge
     .goto Undercity,63.3,48.6
-.fp Undercity >> Get the Undercity flight path
+    .fp Undercity >> Get the Undercity flight path
 step << Mage
     .goto Undercity,84.2,15.6
     .trainer >>Train Teleport Undercity
 step
-#label Royal
-.goto Undercity,52.0,64.6,35 >>Enter the Royal Quarter
+    #label Royal
+    .goto Undercity,52.0,64.6,35 >>Enter the Royal Quarter
 step << BloodElf
     #label Envoy
-.isQuestTurnedIn 9167
-.goto Undercity,57.8,91.8
+    .isQuestTurnedIn 9167
+    .goto Undercity,57.8,91.8
+     >> Speak to Lady Sylvanas Windrunner
     .accept 9425 >> Accept Report to Tarren Mill
     .turnin 9621 >> Turn in Envoy to the Horde
     .accept 9626 >> Accept Meeting the Warchief
     .turnin 9180 >> Turn in Journey to Undercity
 step << BloodElf
-.goto Undercity,57.8,91.8
+    .goto Undercity,57.8,91.8
+     >> Speak to Lady Sylvanas Windrunner
     .accept 9425 >> Accept Report to Tarren Mill
     .turnin 9180 >> Turn in Journey to Undercity
 step << !BloodElf
-.isQuestTurnedIn 9167
-.goto Undercity,57.8,91.8
+    .isQuestTurnedIn 9167
+    .goto Undercity,57.8,91.8
+    >> Speak to Lady Sylvanas Windrunner
     .turnin 9812 >> Turn in Envoy to the Horde
     .accept 9813 >> Accept Meeting the Orcs
-    .turnin 9180 >> Turn in Journey to Undercity
+    .turnin 9177 >> Turn in Journey to Undercity
 step << !BloodElf
-.goto Undercity,57.8,91.8
-    .turnin 9180 >> Turn in Journey to Undercity
+    .isOnQuest 9177
+    .goto Undercity,57.8,91.8
+    .turnin 9177 >> Turn in Journey to Undercity
 step
 .goto Undercity,52.0,64.6,35 >>Exit the Royal Quarter
 step << BloodElf
@@ -2737,8 +2753,7 @@ step
 step
     #sticky
     #completewith next
-+Go to the Zeppelin tower. Take the zeppelin to Durotar
-.goto Tirisfal Glades,60.7,58.8,15,0
-step
-.zone Durotar >>Arrive in Durotar
+    .zone Durotar >> Go to the Zeppelin tower. Take the zeppelin to Durotar
+    .goto Tirisfal Glades,60.7,58.8
+
 ]])
