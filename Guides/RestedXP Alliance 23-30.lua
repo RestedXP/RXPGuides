@@ -11,74 +11,74 @@ RXPGuides.RegisterGuide([[
 step << Warrior
     #sticky
     #completewith exit1
-    .goto Stormwind City,64.1,61.2,0
-    .goto Stormwind City,46.7,79.0,0
+    .goto StormwindClassic,64.1,61.2,0
+    .goto StormwindClassic,46.7,79.0,0
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
     #xprate <1.5
 step << Paladin
-	.goto Stormwind City,38.6,32.8
+	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
-	.goto Stormwind City,38.5,26.8
+	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step << Paladin
-    .goto Stormwind City,40.1,30.0
+    .goto StormwindClassic,40.1,30.0
     >>Speak to Duthorian Rall and right click on the Tome of Valor provided
     .accept 1649 >>Accept The Tome of Valor
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
 step << Warlock
-    .goto Stormwind City,25.3,78.7
+    .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock
-    .goto Stormwind City,25.2,77.5
+    .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
 step << Warlock
-    .goto Stormwind City,25.4,78.7
+    .goto StormwindClassic,25.4,78.7
     .turnin 1739 >>Turn in The Binding
 step << Mage
-    .goto Stormwind City,39.6,79.6
+    .goto StormwindClassic,39.6,79.6
     .train 3561>>Train Teleport: Stormwind
     .trainer >> Train your class spells
 step
-    .goto Stormwind City,52.61,65.71
+    .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
 step << Rogue
-	.goto Stormwind City,74.6,52.8
+	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step << Warrior
-	.goto Stormwind City,78.6,45.8
+	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
 step << Rogue
     #sticky
-    .goto Stormwind City,75.8,60.1
+    .goto StormwindClassic,75.8,60.1
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
 step << Rogue
-	.goto Stormwind City,78.3,57.0
+	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
 step << Rogue
-    .goto Stormwind City,52.6,65.6
+    .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei
-    .goto Stormwind City,78.4,18.3
+    .goto StormwindClassic,78.4,18.3
     .accept 9429 >> Accept Travel to Darkshire
 step << Hunter
-	.goto Stormwind City,61.7,15.4
+	.goto StormwindClassic,61.7,15.4
 	.trainer >> Train your class spells
 step
-    .goto Stormwind City,53.62,59.76,30,0
-    .goto Stormwind City,55.25,7.08
+    .goto StormwindClassic,53.62,59.76,30,0
+    .goto StormwindClassic,55.25,7.08
     .vendor 5519>> Check Billibub in the Dwarven District for a Bronze Tube. Buy one if it's available
     .collect 4371,1,175,1,1
     .bronzetube
 step
     #label exit1
-    .goto Stormwind City,63.9,8.3
+    .goto StormwindClassic,63.9,8.3
     .zone Ironforge >>Enter the Deeprun Tram and cross the Tram into Ironforge
     .zoneskip Dun Morogh
 step
@@ -326,74 +326,74 @@ RXPGuides.RegisterGuide([[
 step << Warrior
     #sticky
     #completewith exit
-    .goto Stormwind City,64.1,61.2,0
-    .goto Stormwind City,46.7,79.0,0
+    .goto StormwindClassic,64.1,61.2,0
+    .goto StormwindClassic,46.7,79.0,0
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
     #xprate <1.5
 step << Paladin
-	.goto Stormwind City,38.6,32.8
+	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
-	.goto Stormwind City,38.5,26.8
+	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step << Paladin
-    .goto Stormwind City,40.1,30.0
+    .goto StormwindClassic,40.1,30.0
     >>Speak to Duthorian Rall and right click on the Tome of Valor provided
     .accept 1649 >>Accept The Tome of Valor
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
 step << Warlock
-    .goto Stormwind City,25.3,78.7
+    .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock
-    .goto Stormwind City,25.2,77.5
+    .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
 step << Warlock
-    .goto Stormwind City,25.4,78.7
+    .goto StormwindClassic,25.4,78.7
     .turnin 1739 >>Turn in The Binding
 step << Mage
-    .goto Stormwind City,39.6,79.6
+    .goto StormwindClassic,39.6,79.6
     .train 3561>>Train Teleport: Stormwind
     .trainer >> Train your class spells
 step << Rogue
-	.goto Stormwind City,74.6,52.8
+	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step << Warrior
-	.goto Stormwind City,78.6,45.8
+	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
 step << Rogue
     #sticky
-    .goto Stormwind City,75.8,60.1
+    .goto StormwindClassic,75.8,60.1
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
 step << Rogue
-	.goto Stormwind City,78.3,57.0
+	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
 step << Rogue
-    .goto Stormwind City,52.6,65.6
+    .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei
-    .goto Stormwind City,78.4,18.3
+    .goto StormwindClassic,78.4,18.3
     .accept 9429 >> Accept Travel to Darkshire
 step << Hunter
-	.goto Stormwind City,61.7,15.4
+	.goto StormwindClassic,61.7,15.4
 	.train 14323 >> Train your class spells
 step
-    .goto Stormwind City,53.62,59.76,30,0
-    .goto Stormwind City,55.25,7.08
+    .goto StormwindClassic,53.62,59.76,30,0
+    .goto StormwindClassic,55.25,7.08
     .vendor 5519>> Check Billibub in the Dwarven District for a Bronze Tube. Buy one if it's available
     .collect 4371,1,175,1,1
     .bronzetube
 step << skip --Not needed, going from SW -> Duskwood later in the guide after doing the Goldshire inn quest
-	.goto Stormwind City,62.5,62.3,30,0
-	.goto Stormwind City,66.3,62.1
+	.goto StormwindClassic,62.5,62.3,30,0
+	.goto StormwindClassic,66.3,62.1
     .fp Stormwind >> Get the Stormwind flight path
 step << Shaman
-	.goto Stormwind City,61.9,84.0
+	.goto StormwindClassic,61.9,84.0
 	.trainer >> Train your class spells
 step
 	#label exit
@@ -602,43 +602,43 @@ step << Rogue/Druid
     #completewith next
     .hs >> Hearth back to town
 step << Rogue
-    .goto Stormwind City,75.9,59.9
+    .goto StormwindClassic,75.9,59.9
     .turnin 2359 >> Turn in Klaven's Tower
     .accept 2607 >> Accept The Touch of Zanzil
 step << Rogue
-    .goto Stormwind City,78.1,59.0
+    .goto StormwindClassic,78.1,59.0
     >>Head to the basement
     .turnin 2607 >> Turn in The Touch of Zanzil
     .accept 2608 >> Accept The Touch of Zanzil
 step << Rogue
-    .goto Stormwind City,78.1,59.0
+    .goto StormwindClassic,78.1,59.0
     >>Type /lay on the chat and wait until the quest complete itself
     .complete 2608,1 --Diagnosis Complete
 step << Rogue
-    .goto Stormwind City,78.0,58.8
+    .goto StormwindClassic,78.0,58.8
     .turnin 2608 >> Turn in The Touch of Zanzil
     .accept 2609 >> Accept The Touch of Zanzil
 step << Rogue
-    .goto Stormwind City,78.2,59.0
+    .goto StormwindClassic,78.2,59.0
     >>Buy a Leaded Vial from the Shady Dealer
     .complete 2609,2 --Collect Leaded Vial (x1)
 step << Rogue
     >>Head to the flower vendor
     .complete 2609,1 --Collect Simple Wildflowers (x1)
-    .goto Stormwind City,64.3,60.8
+    .goto StormwindClassic,64.3,60.8
 step << Rogue
     >>Buy a Bronze Tube at the Auction House
     .complete 2609,3 --Collect Bronze Tube (x1)
-    .goto Stormwind City,53.6,59.3
+    .goto StormwindClassic,53.6,59.3
     >>Head to the shop next to the bridge between the Cathedral Square and the Park
     .complete 2609,4 --Collect Spool of Light Chartreuse Silk Thread (x1)
-    .goto Stormwind City,39.8,46.5
+    .goto StormwindClassic,39.8,46.5
     >>If you can't find a bronze tube, you will have to skip this quest, train First Aid to 80, farm a small venom sac from spiders in Duskwood, craft an Anti-Venom and remove the Zanzil poison.
 step << Rogue
-    .goto Stormwind City,78.0,58.9
+    .goto StormwindClassic,78.0,58.9
     .turnin 2609 >> Turn in The Touch of Zanzil
 step << Rogue
-    .goto Stormwind City,66.2,62.2
+    .goto StormwindClassic,66.2,62.2
     .fly Duskwood>> Fly to Duskwood
 step << !Rogue !Druid
     .goto Duskwood,60.8,29.7
@@ -913,57 +913,57 @@ step
 	.goto Elwynn Forest,44.2,65.9
     .complete 70,1 --Collect An Undelivered Letter (x1)
 step << Shaman
-	.goto Stormwind City,61.9,84.0
+	.goto StormwindClassic,61.9,84.0
 	.trainer >> Train your class spells
 step << Warrior
-	.goto Stormwind City,78.6,45.8
+	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
 step << Warlock
-    .goto Stormwind City,25.3,78.7
+    .goto StormwindClassic,25.3,78.7
 	.trainer >> Train your class spells
 step << Mage
-    .goto Stormwind City,39.6,79.6
+    .goto StormwindClassic,39.6,79.6
 	>> Teleport to stormwind
 	.trainer >> Train your class spells
 step
     #xprate <1.5
-    .goto Stormwind City,26.4,78.4
+    .goto StormwindClassic,26.4,78.4
     .accept 335 >> Accept A Noble Brew
 step
-    .goto Stormwind City,29.8,61.8
+    .goto StormwindClassic,29.8,61.8
     .turnin 70 >> Turn in The Legend of Stalvan
     .accept 72 >> Accept The Legend of Stalvan
 step
-    .goto Stormwind City,29.6,61.7
+    .goto StormwindClassic,29.6,61.7
     .turnin 72 >> Turn in The Legend of Stalvan
     .accept 74 >> Accept The Legend of Stalvan
 step <<!Mage
-    .goto Stormwind City,40.8,30.8
+    .goto StormwindClassic,40.8,30.8
     .accept 2923 >> Accept Tinkmaster Overspark
 step << Paladin
-    .goto Stormwind City,40.0,29.9
+    .goto StormwindClassic,40.0,29.9
     .turnin 1652 >>Turn in The Tome of Valor
     .accept 1653 >>Accept The Test of Righteousness
 step
-    .goto Stormwind City,39.3,28.0
+    .goto StormwindClassic,39.3,28.0
     .turnin 269 >> Turn in Seeking Wisdom
     .accept 270 >> Accept The Doomed Fleet
 step
     #xprate >1.3
-    .goto Stormwind City,41.5,31.7
+    .goto StormwindClassic,41.5,31.7
 	>>Talk to the patrolling kid
     .accept 1274 >> Accept The Missing Diplomat
 step << Paladin
 #xprate <1.5
-	.goto Stormwind City,38.6,32.8
+	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
 #xprate <1.5
-	.goto Stormwind City,38.5,26.8
+	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step << Hunter
 #xprate <1.5
-	.goto Stormwind City,61.7,15.4
+	.goto StormwindClassic,61.7,15.4
 	.trainer >> Train your class spells
 --????
 
@@ -980,8 +980,8 @@ RXPGuides.RegisterGuide([[
 #xprate <1.5
 
 step
-    .goto Stormwind City,60.5,12.3,40,0
-    .goto Stormwind City,60.5,12.3,0
+    .goto StormwindClassic,60.5,12.3,40,0
+    .goto StormwindClassic,60.5,12.3,0
     .zone Ironforge >> Take the tram to Ironforge
 step <<!Mage
     .goto Ironforge,69.8,50.1
@@ -1428,14 +1428,14 @@ RXPGuides.RegisterGuide([[
 #xprate <1.5
 step << !Mage
 	.goto Ironforge,74.5,50.5,20,0
-	.goto Stormwind City,51.7,12.3
+	.goto StormwindClassic,51.7,12.3
     .zone Stormwind City>> Take the tram and head to Stormwind
 step << Mage
 	>> Teleport to stormwind
-    .goto Stormwind City,39.6,79.6
+    .goto StormwindClassic,39.6,79.6
 	.trainer >> Train your class spells
 step << Hunter
-	.goto Stormwind City,61.7,15.4
+	.goto StormwindClassic,61.7,15.4
 	.trainer >> Train your class spells
 	.train 14924>> Train Growl 4 at the pet trainer
 step
@@ -1450,103 +1450,103 @@ step << Human Paladin
     >>Buy 10 linen cloth at the Auction House if you don't have it already
     .collect 2589,10,1644
 step << Paladin
-    .goto Stormwind City,40.0,29.9
+    .goto StormwindClassic,40.0,29.9
     .turnin 1652 >>Turn in The Tome of Valor
     .accept 1653 >>Accept The Test of Righteousness
 step << Paladin
-	.goto Stormwind City,38.6,32.8
+	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
-	.goto Stormwind City,38.5,26.8
+	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step
-    .goto Stormwind City,39.3,28.0
+    .goto StormwindClassic,39.3,28.0
     .turnin 269 >> Turn in Seeking Wisdom
     .accept 270 >> Accept The Doomed Fleet
 step
-    .goto Stormwind City,51.7,12.3
+    .goto StormwindClassic,51.7,12.3
     .turnin 322 >> Turn in Blessed Arm
     .accept 325 >> Accept Armed and Ready
 step
 	#sticky
 	#label MDiplomats
 	#completewith nomorekid
-    .goto Stormwind City,41.5,31.7
+    .goto StormwindClassic,41.5,31.7
 	>>Talk to the patrolling kid
     .accept 1274 >> Accept The Missing Diplomat
 step
-    .goto Stormwind City,39.7,27.6
+    .goto StormwindClassic,39.7,27.6
     .turnin 293 >> Turn in Cleansing the Eye
 step
 	#label nomorekid
 	#requires MDiplomats
 	.zone Stormwind City >> Exit the Chapel
 step << Paladin tbc
-    .goto Stormwind City,39.9,29.8
+    .goto StormwindClassic,39.9,29.8
     >>Speak to Duthorian Rall
     .accept 4486 >>Accept The Tome of Nobility
     .turnin 4486 >>Turn in The Tome of Nobility
 step << Human Paladin
-    .goto Stormwind City,39.8,30.1
+    .goto StormwindClassic,39.8,30.1
     >>Speak to Duthorian Rall and click on the Tome of Divinity provided
     .accept 1642 >>Accept The Tome of Divinity
     .turnin 1642 >>Turn in The Tome of Divinity
     .accept 1643 >>Accept The Tome of Divinity
 step << Warlock
-    .goto Stormwind City,25.3,78.7
+    .goto StormwindClassic,25.3,78.7
 	.trainer >> Train your class spells
 step
    .isOnQuest 337
-	.goto Stormwind City,74.1,7.6
+	.goto StormwindClassic,74.1,7.6
     .accept 337 >> Accept An Old History Book
     .turnin 337 >> Turn in An Old History Book
     .accept 538 >> Accept Southshore
 step
-    .goto Stormwind City,78.1,25.1
+    .goto StormwindClassic,78.1,25.1
     .turnin 1274 >> Turn in The Missing Diplomat
     .accept 1241 >> Accept The Missing Diplomat
 step << Hunter
-    .goto Stormwind City,72.8,16.1
+    .goto StormwindClassic,72.8,16.1
     .turnin 563 >> Turn in Reassignment
     .isOnQuest 563
 step << Human Paladin
-    .goto Stormwind City,56.9,61.9
+    .goto StormwindClassic,56.9,61.9
     .turnin 1643 >>Turn in The Tome of Divinity
     .accept 1644 >>Accept The Tome of Divinity
 step << Human Paladin
-    .goto Stormwind City,56.9,61.9
+    .goto StormwindClassic,56.9,61.9
     .complete 1644,1
     .turnin 1644 >>Turn in The Tome of Divinity
     .accept 1780 >>Accept The Tome of Divinity
 step << Shaman
-    .goto Stormwind City,61.9,83.9
+    .goto StormwindClassic,61.9,83.9
     .accept 10491 >> Accept Call of Air
 	.trainer >> Train your class spells
 step << Warrior
-	.goto Stormwind City,78.6,45.8
+	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
 step << Rogue
-	.goto Stormwind City,74.6,52.8
+	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step
-    .goto Stormwind City,73.1,78.3
+    .goto StormwindClassic,73.1,78.3
     .turnin 1241 >> Turn in The Missing Diplomat
     .accept 1242 >> Accept The Missing Diplomat
 step
-    .goto Stormwind City,60.1,64.4
+    .goto StormwindClassic,60.1,64.4
     .turnin 1242 >> Turn in The Missing Diplomat
     .accept 1243 >> Accept The Missing Diplomat
 step << Human Paladin
-    .goto Stormwind City,40.1,29.9
+    .goto StormwindClassic,40.1,29.9
     .turnin 1780 >>Turn in The Tome of Divinity
     .accept 1781 >>Accept The Tome of Divinity
 step << Human Paladin
-    .goto Stormwind City,38.7,26.6
+    .goto StormwindClassic,38.7,26.6
     .turnin 1781 >>Turn in The Tome of Divinity
     .accept 1786 >>Accept The Tome of Divinity
 step
 	#label exit
-	.goto Stormwind City,66.2,62.1
+	.goto StormwindClassic,66.2,62.1
     .fly Duskwood>> Fly to Duskwood
 step
 	#completewith notubeandy
@@ -1873,7 +1873,7 @@ step << !Mage
     .fly Stormwind>> Fly to Stormwind
 step << Mage
 	>> Teleport to stormwind
-    .goto Stormwind City,39.6,79.6
+    .goto StormwindClassic,39.6,79.6
 	.trainer >> Train your class spells
 step << Dwarf Paladin
     #sticky
@@ -1881,83 +1881,83 @@ step << Dwarf Paladin
     >>Buy 10 Linen Cloth from the Auction House
     .complete 1648,1
 step
-    .goto Stormwind City,60.1,64.4
+    .goto StormwindClassic,60.1,64.4
     .turnin 1245 >> Turn in The Missing Diplomat
     .accept 1246 >> Accept The Missing Diplomat
 step << Paladin
-	.goto Stormwind City,38.6,32.8
+	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
-	.goto Stormwind City,38.5,26.8
+	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step << Warrior
     #sticky
     #completewith next
-    .goto Stormwind City,64.1,61.2
-    .goto Stormwind City,46.7,79.0
+    .goto StormwindClassic,64.1,61.2
+    .goto StormwindClassic,46.7,79.0
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
     #xprate <1.5
 step << Warrior
-    .goto Stormwind City,78.8,45.3
+    .goto StormwindClassic,78.8,45.3
     .accept 1718 >> Accept The Islander
 	.trainer >> Train class spells
 step << Shaman
-    .goto Stormwind City,61.9,83.9
+    .goto StormwindClassic,61.9,83.9
 	.trainer >> Train your class spells
 step << Rogue
-	.goto Stormwind City,74.6,52.8
+	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step
-    .goto Stormwind City,70.3,44.8
+    .goto StormwindClassic,70.3,44.8
     >>Beat Dashel Stonefist
     .turnin 1246 >> Turn in The Missing Diplomat
     .accept 1447 >> Accept The Missing Diplomat
     .turnin 1447 >> Turn in The Missing Diplomat
     .accept 1247 >> Accept The Missing Diplomat
 step
-    .goto Stormwind City,60.1,63.9
+    .goto StormwindClassic,60.1,63.9
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
 step
    	#sticky
 	#completewith next
-	.goto Stormwind City,55.4,68.3,20 >> Bank here if you need to
+	.goto StormwindClassic,55.4,68.3,20 >> Bank here if you need to
 step
-    .goto Stormwind City,39.9,81.3
+    .goto StormwindClassic,39.9,81.3
     .accept 690 >> Accept Malin's Request
 step
-    .goto Stormwind City,40.6,91.7
+    .goto StormwindClassic,40.6,91.7
     .accept 1301 >> Accept James Hyal
 step
-    .goto Stormwind City,26.4,78.3
+    .goto StormwindClassic,26.4,78.3
     .turnin 335 >> Turn in A Noble Brew
     .isQuestComplete 335
 step
-    .goto Stormwind City,26.4,78.3
+    .goto StormwindClassic,26.4,78.3
     .accept 336 >> Accept A Noble Brew
     .isQuestTurnedIn 335
 step << Warlock
-    .goto Stormwind City,25.3,78.5
+    .goto StormwindClassic,25.3,78.5
     .accept 4738 >>Accept In Search of Menara Voidrender
     .accept 1798 >>Accept Seeking Strahad
 	.trainer >> Train your class spells
 step << Human Paladin
-    .goto Stormwind City,38.6,26.7
+    .goto StormwindClassic,38.6,26.7
     .turnin 1787 >>Turn in The Tome of Divinity
     .accept 1788 >>Accept The Tome of Divinity
 step << Human Paladin
-    .goto Stormwind City,39.9,29.8
+    .goto StormwindClassic,39.9,29.8
     .turnin 1788 >>Turn in The Tome of Divinity
 step
-    .goto Stormwind City,74.3,30.3
+    .goto StormwindClassic,74.3,30.3
     .accept 543 >> Accept The Perenolde Tiara
 step
-    .goto Stormwind City,75.1,31.4
+    .goto StormwindClassic,75.1,31.4
     .turnin 336 >> Turn in A Noble Brew
     .isOnQuest 336
 step
-    .goto Stormwind City,74.1,7.6
+    .goto StormwindClassic,74.1,7.6
     .accept 337 >> Accept An Old History Book
     .turnin 337 >> Turn in An Old History Book
     .accept 538 >> Accept Southshore
@@ -2023,7 +2023,7 @@ step << Dwarf Paladin
 step << Dwarf !Paladin
 	.skill riding,75,1
 	.money <35.0
-	.goto Stormwind City,66.2,62.2
+	.goto StormwindClassic,66.2,62.2
 	.fly Ironforge >> Fly to Ironforge, we're going to train our mount.
 step << Dwarf !Paladin
 	.money <35.0
@@ -2032,7 +2032,7 @@ step << Dwarf !Paladin
 step << Gnome !Warlock
 	.skill riding,75,1
 	.money <35.0
-	.goto Stormwind City,66.2,62.2
+	.goto StormwindClassic,66.2,62.2
 	.fly Ironforge >> Fly to Ironforge, we're going to train our mount.
 step << Gnome !Warlock
 	.money <35.0
@@ -2046,11 +2046,11 @@ step << Gnome !Warlock/Dwarf
 step << !Gnome Warlock/!Dwarf
 	.skill riding,<75,1
 	.zoneskip Wetlands
-	.goto Stormwind City,66.2,62.2
+	.goto StormwindClassic,66.2,62.2
 	.fly Wetlands>> Fly to Wetlands
 step << Gnome !Warlock/Dwarf !Paladin
 	.zoneskip Wetlands
-	.goto Stormwind City,66.2,62.2
+	.goto StormwindClassic,66.2,62.2
 	.fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.6,60.7
@@ -2175,63 +2175,63 @@ step
     .complete 174,1
 	.bronzetube
 step << Paladin
-    .goto Stormwind City,40.0,29.9
+    .goto StormwindClassic,40.0,29.9
     .turnin 1652 >>Turn in The Tome of Valor
     .accept 1653 >>Accept The Test of Righteousness
 step << Paladin
-	.goto Stormwind City,38.6,32.8
+	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
-	.goto Stormwind City,38.5,26.8
+	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step
-    .goto Stormwind City,39.3,28.0
+    .goto StormwindClassic,39.3,28.0
     .turnin 269 >> Turn in Seeking Wisdom
     .accept 270 >> Accept The Doomed Fleet
 step
-    .goto Stormwind City,51.7,12.3
+    .goto StormwindClassic,51.7,12.3
     .turnin 322 >> Turn in Blessed Arm
     .accept 325 >> Accept Armed and Ready
 step
 	#sticky
 	#label MDiplomats
 	#completewith nomorekid
-    .goto Stormwind City,41.5,31.7
+    .goto StormwindClassic,41.5,31.7
 	>>Talk to the patrolling kid
     .accept 1274 >> Accept The Missing Diplomat
 step
-    .goto Stormwind City,39.7,27.6
+    .goto StormwindClassic,39.7,27.6
     .turnin 293 >> Turn in Cleansing the Eye
 step
 	#label nomorekid
 	#requires MDiplomats
 	.zone Stormwind City >> Exit the Chapel
 step << Paladin tbc --TODO, move that to the lvl 30 part
-    .goto Stormwind City,39.9,29.8
+    .goto StormwindClassic,39.9,29.8
     >>Speak to Duthorian Rall
     .accept 4486 >>Accept The Tome of Nobility
     .turnin 4486 >>Turn in The Tome of Nobility
 step << Human Paladin
-    .goto Stormwind City,39.8,30.1
+    .goto StormwindClassic,39.8,30.1
     >>Speak to Duthorian Rall and click on the Tome of Divinity provided
     .accept 1642 >>Accept The Tome of Divinity
     .turnin 1642 >>Turn in The Tome of Divinity
     .accept 1643 >>Accept The Tome of Divinity
 step << Warlock
-    .goto Stormwind City,25.3,78.7
+    .goto StormwindClassic,25.3,78.7
 	.trainer >> Train your class spells
 step
    .isOnQuest 337
-	.goto Stormwind City,74.1,7.6
+	.goto StormwindClassic,74.1,7.6
     .accept 337 >> Accept An Old History Book
     .turnin 337 >> Turn in An Old History Book
     .accept 538 >> Accept Southshore
 step
-    .goto Stormwind City,78.1,25.1
+    .goto StormwindClassic,78.1,25.1
     .turnin 1274 >> Turn in The Missing Diplomat
     .accept 1241 >> Accept The Missing Diplomat
 step << Hunter
-    .goto Stormwind City,72.8,16.1
+    .goto StormwindClassic,72.8,16.1
     .turnin 563 >> Turn in Reassignment
     .isOnQuest 563
 step << Human Paladin
@@ -2239,40 +2239,40 @@ step << Human Paladin
     >>Buy 10 linen cloth at the Auction House if you don't have it already
     .collect 2589,10,1644,1
 step << Human Paladin
-    .goto Stormwind City,56.9,61.9
+    .goto StormwindClassic,56.9,61.9
     .turnin 1643 >>Turn in The Tome of Divinity
     .accept 1644 >>Accept The Tome of Divinity
 step << Human Paladin
     #label linen
-    .goto Stormwind City,56.9,61.9
+    .goto StormwindClassic,56.9,61.9
     .complete 1644,1
     .turnin 1644 >>Turn in The Tome of Divinity
     .accept 1780 >>Accept The Tome of Divinity
 step << Warrior
-	.goto Stormwind City,78.6,45.8
+	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
 step << Rogue
-	.goto Stormwind City,74.6,52.8
+	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step
-    .goto Stormwind City,73.1,78.3
+    .goto StormwindClassic,73.1,78.3
     .turnin 1241 >> Turn in The Missing Diplomat
     .accept 1242 >> Accept The Missing Diplomat
 step
-    .goto Stormwind City,60.1,64.4
+    .goto StormwindClassic,60.1,64.4
     .turnin 1242 >> Turn in The Missing Diplomat
     .accept 1243 >> Accept The Missing Diplomat
 step << Human Paladin
-    .goto Stormwind City,40.1,29.9
+    .goto StormwindClassic,40.1,29.9
     .turnin 1780 >>Turn in The Tome of Divinity
     .accept 1781 >>Accept The Tome of Divinity
 step << Human Paladin
-    .goto Stormwind City,38.7,26.6
+    .goto StormwindClassic,38.7,26.6
     .turnin 1781 >>Turn in The Tome of Divinity
     .accept 1786 >>Accept The Tome of Divinity
 step
 	#label exit
-	.goto Stormwind City,66.2,62.1
+	.goto StormwindClassic,66.2,62.1
     .fly Duskwood>> Fly to Duskwood
 step
 	#completewith notubeandy
@@ -2531,13 +2531,13 @@ step << !Mage
 	.goto Duskwood,77.5,44.2
     .fly Stormwind>> Fly to Stormwind
 step << Shaman
-    .goto Stormwind City,61.9,83.9
+    .goto StormwindClassic,61.9,83.9
     .accept 10491 >> Accept Call of Air
     .trainer >> Train your class spells
     .xp <30,1
 step << Mage
 	>> Teleport to stormwind
-    .goto Stormwind City,39.6,79.6
+    .goto StormwindClassic,39.6,79.6
 	.trainer >> Train your class spells
 step << Dwarf Paladin
     #sticky
@@ -2545,75 +2545,75 @@ step << Dwarf Paladin
     >>Buy 10 Linen Cloth from the Auction House
     .complete 1648,1
 step
-    .goto Stormwind City,60.1,64.4
+    .goto StormwindClassic,60.1,64.4
     .turnin 1245 >> Turn in The Missing Diplomat
     .accept 1246 >> Accept The Missing Diplomat
 step << Paladin
-	.goto Stormwind City,38.6,32.8
+	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest
-	.goto Stormwind City,38.5,26.8
+	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step << Warrior
     #sticky
     #completewith next
-    .goto Stormwind City,64.1,61.2
-    .goto Stormwind City,46.7,79.0
+    .goto StormwindClassic,64.1,61.2
+    .goto StormwindClassic,46.7,79.0
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
     #xprate <1.5
 step << Warrior
-    .goto Stormwind City,78.8,45.3
+    .goto StormwindClassic,78.8,45.3
     .accept 1718 >> Accept The Islander
 	.trainer >> Train class spells
     .xp <30,1
 step << Rogue
-	.goto Stormwind City,74.6,52.8
+	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step
-    .goto Stormwind City,70.3,44.8
+    .goto StormwindClassic,70.3,44.8
     >>Beat Dashel Stonefist
     .turnin 1246 >> Turn in The Missing Diplomat
     .accept 1447 >> Accept The Missing Diplomat
     .turnin 1447 >> Turn in The Missing Diplomat
     .accept 1247 >> Accept The Missing Diplomat
 step
-    .goto Stormwind City,60.1,63.9
+    .goto StormwindClassic,60.1,63.9
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
 step
-    .goto Stormwind City,39.9,81.3
+    .goto StormwindClassic,39.9,81.3
     .accept 690 >> Accept Malin's Request
 step
-    .goto Stormwind City,40.6,91.7
+    .goto StormwindClassic,40.6,91.7
     .accept 1301 >> Accept James Hyal
 step << Warlock
-    .goto Stormwind City,25.3,78.5
+    .goto StormwindClassic,25.3,78.5
     .accept 4738 >>Accept In Search of Menara Voidrender
     .accept 1798 >>Accept Seeking Strahad
 	.trainer >> Train your class spells
 step << Human Paladin
-    .goto Stormwind City,38.6,26.7
+    .goto StormwindClassic,38.6,26.7
     .turnin 1787 >>Turn in The Tome of Divinity
     .accept 1788 >>Accept The Tome of Divinity
 step << Human Paladin
-    .goto Stormwind City,39.9,29.8
+    .goto StormwindClassic,39.9,29.8
     .turnin 1788 >>Turn in The Tome of Divinity
 step
-    .goto Stormwind City,74.1,7.6
+    .goto StormwindClassic,74.1,7.6
     >>Click on the Old History Book in your bags, skip this step if you havent found it
     .accept 337 >> Accept An Old History Book
     .turnin 337 >> Turn in An Old History Book
     .use 2794
 step
-    .goto Stormwind City,74.1,7.6
+    .goto StormwindClassic,74.1,7.6
     .accept 538 >> Accept Southshore
     .isQuestTurnedIn 337
 step
     #sticky
 	#completewith next
-    .goto Stormwind City,60.5,12.3,40,0
-    .goto Stormwind City,60.5,12.3,0
+    .goto StormwindClassic,60.5,12.3,40,0
+    .goto StormwindClassic,60.5,12.3,0
     .zone Ironforge >> Take the tram to Ironforge
     >>Teleport to Ironforge instead if you have that spell trained << Mage
 step

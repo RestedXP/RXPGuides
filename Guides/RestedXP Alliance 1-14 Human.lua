@@ -901,37 +901,37 @@ step
     .fly Stormwind >> Fly to Stormwind
 step << Rogue
     >>Go inside the building
-    .goto Stormwind City,57.32,62.08,20,0
-    .goto Stormwind City,58.37,61.69
+    .goto StormwindClassic,57.32,62.08,20,0
+    .goto StormwindClassic,58.37,61.69
     .vendor >> Buy the level 3 thrown from Thurman. Equip it
 step
-    .goto Stormwind City,56.2,64.6
+    .goto StormwindClassic,56.2,64.6
     >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling
     .turnin 61 >> Turn in Shipment to Stormwind
 step << Warrior
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >> Train 2h Swords
 step << Priest
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >>Train Staves
 step << Mage/Warlock
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >> Train Staves, then 1h Swords if you still have money
 step << Rogue
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >>Train 1h Swords
 step << Rogue
-    .goto Stormwind City,57.6,57.1
+    .goto StormwindClassic,57.6,57.1
     .vendor >>Buy a Cutlass from Gunther and equip it, Stiletto in Offhand
 step << Paladin
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >>Train 2h Swords
 step << Warlock
     #completewith next
-    .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     .turnin 1685 >> Turn in Gakin's Summons
     .accept 1688 >> Accept Surena Caledon
 step << Warlock
@@ -980,70 +980,70 @@ step << Warlock
 step << Warlock
     #sticky
     #completewith next
-    .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     .turnin 1688 >> Turn in Surena Caledon
     .accept 1689 >> Accept The Binding
 step << Warlock
-    .goto Stormwind City,25.2,80.7,14,0
-    .goto Stormwind City,23.2,79.5,14,0
-    .goto Stormwind City,26.3,79.5,14,0
-    .goto Stormwind City,25.5,78.1
+    .goto StormwindClassic,25.2,80.7,14,0
+    .goto StormwindClassic,23.2,79.5,14,0
+    .goto StormwindClassic,26.3,79.5,14,0
+    .goto StormwindClassic,25.5,78.1
     >>Go to the bottom of the crypt. Summon the Voidwalker using the Bloodstone Choker and kill it
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     >>Don't summon your voidwalker once you learn it
     .turnin 1689 >> Turn in The Binding
 step << Human
-    .goto Stormwind City,74.3,47.2
+    .goto StormwindClassic,74.3,47.2
     .turnin 6281 >> Turn in Continue to Stormwind
     .accept 6261 >> Accept Dungar Longdrink
 step << Warrior
      >>Enter the inn
-    .goto Stormwind City,71.7,39.9,20,0
-    .goto Stormwind City,74.3,37.3
+    .goto StormwindClassic,71.7,39.9,20,0
+    .goto StormwindClassic,74.3,37.3
     .turnin 1638 >> Turn in A Warrior's Training
     .accept 1639 >> Accept Bartleby the Drunk
 step << Warrior
-    .goto Stormwind City,73.8,36.3
+    .goto StormwindClassic,73.8,36.3
     .turnin 1639 >> Turn in Bartleby the Drunk
     .accept 1640 >> Accept Beat Bartleby
     .complete 1640,1 --Beat Bartleby
 step << Warrior
-    .goto Stormwind City,73.8,36.3
+    .goto StormwindClassic,73.8,36.3
     .turnin 1640 >> Turn in Beat Bartleby
     .accept 1665 >> Accept Bartleby's Mug
 step << Warrior
     >>You'll now learn Defensive Stance and Sunder Armor
-    .goto Stormwind City,74.3,37.3
+    .goto StormwindClassic,74.3,37.3
     .turnin 1665 >> Turn in Bartleby's Mug
 step << Priest
     #completewith next
-    .goto Stormwind City,38.8,26.4
+    .goto StormwindClassic,38.8,26.4
     .turnin 5635 >> Turn in Desperate Prayer
 step << Priest
-    .goto Stormwind City,38.62,26.10
+    .goto StormwindClassic,38.62,26.10
     .train 13908 >> Train Desperate Prayer
 step << Warrior/Paladin/Rogue
     #sticky
     #completewith StormpikeDelivery
     >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior
-    .goto Stormwind City,56.3,17.0
+    .goto StormwindClassic,56.3,17.0
     .vendor >>Buy a Mining Pick. You'll train Mining later
 step
     #completewith next
-    .goto Stormwind City,51.8,12.1
+    .goto StormwindClassic,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
 step
     #label StormpikeDelivery
-    .goto Stormwind City,51.8,12.1
+    .goto StormwindClassic,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step
     #completewith next
-    .goto Stormwind City,63.9,8.3,20 >>Enter the Deeprun Tram
+    .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
 step
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
     >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin

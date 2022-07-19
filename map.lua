@@ -930,3 +930,54 @@ function addon.UpdateGotoSteps()
 
     if forceArrowUpdate then updateArrow() end
 end
+
+local p1 = {
+    ["y"] = 25,
+    ["x"] = 25,
+    ["yb"] = 43.7789069363158,
+    ["xb"] = 39.02232393772481,
+}
+local p2 = 	{
+    ["y"] = 75,
+    ["x"] = 75,
+    ["yb"] = 82.47040384981797,
+    ["xb"] = 77.70637435364208,
+}
+
+local function GetMapCoefficients(p1x,p1y,p1xb,p1yb,p2x,p2y,p2xb,p2yb)
+    local ax = (p1xb-p2xb)/(p1x-p2x)
+    local bx = p1xb-p1x*ax
+    local ay = (p1yb-p2yb)/(p1y-p2y)
+    local by = p1yb-p1y*ax
+    return {ax,bx,ay,by}
+end
+
+addon.classicToWrath = GetMapCoefficients(p1.x,p1.y,p1.xb,p1.yb,p2.x,p2.y,p2.xb,p2.yb)
+addon.wrathToClassic = GetMapCoefficients(p1.xb,p1.yb,p1.x,p1.y,p2.xb,p2.yb,p2.x,p2.y)
+
+function addon.GetMapInfo(zone,x,y)
+    x = tonumber(x)
+    y = tonumber(y)
+    if not (x and y and zone) then
+        return
+    elseif zone == "StormwindClassic" then
+        if addon.gameVersion > 30000 then
+            local c = addon.classicToWrath
+            x = x*c[1]+c[2]
+            y = y*c[3]+c[4]
+        end
+        return addon.mapId["Stormwind City"],x,y
+    elseif zone == "StormwindNew" then
+        if addon.gameVersion < 30000 then
+            local c = addon.wrathToClassic
+            x = x*c[1]+c[2]
+            y = y*c[3]+c[4]
+        end
+        return addon.mapId["Stormwind City"],x,y
+    else
+        return addon.mapId[zone] or tonumber(zone),x,y
+    end
+end
+
+addon.mapId["StormwindClassic"] = addon.mapId["Stormwind City"]
+addon.mapId["StormwindNew"] = addon.mapId["Stormwind City"]

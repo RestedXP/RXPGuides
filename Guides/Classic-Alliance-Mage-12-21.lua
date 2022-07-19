@@ -661,7 +661,7 @@ step
     .zone Stormwind City >> Take the tram to Stormwind City
 step
     #completewith FlyAndy
-    .goto Stormwind City,55.21,7.04
+    .goto StormwindClassic,55.21,7.04
     .vendor >> Buy a Bronze Tube if you haven't
     >>This is a limited supply item, skip this step if the npc doesn't have it
     .bronzetube
@@ -675,12 +675,12 @@ step << Gnome
 step << Gnome
     #label FlyAndy
     >>Run into Stormwind and get the Flight Path
-    .goto Stormwind City,57.62,59.48,50,0
-    .goto Stormwind City,66.27,62.13
+    .goto StormwindClassic,57.62,59.48,50,0
+    .goto StormwindClassic,66.27,62.13
     .fp >> Get the Stormwind City Flight Path
 step << Gnome
-    .goto Stormwind City,66.05,65.64,12,0
-    .goto Stormwind City,64.97,67.69,18 >> Drop down to the small ledge by running into the white wall. Be careful. Run along it toward the exit of Stormwind
+    .goto StormwindClassic,66.05,65.64,12,0
+    .goto StormwindClassic,64.97,67.69,18 >> Drop down to the small ledge by running into the white wall. Be careful. Run along it toward the exit of Stormwind
 step
     >> Run into the upstairs of the Goldshire Inn
     .goto Elwynn Forest,42.97,65.65,15,0
@@ -777,24 +777,24 @@ step
     .fly Stormwind >> Fly to Stormwind
 step
     >>Go into Stormwind. Go to the weapon trainer
-   .goto Stormwind City,57.13,57.71
+   .goto StormwindClassic,57.13,57.71
    .trainer >> Train 1h Swords and Daggers
 step
     #softcore
-    .goto Stormwind City,53.62,59.76,30,0
-    .goto Stormwind City,55.25,7.08
+    .goto StormwindClassic,53.62,59.76,30,0
+    .goto StormwindClassic,55.25,7.08
     +Go to the Auction House. Buy a Bronze Tube if its affordable
     >>If theres none here or they're too expensive, you can also potentially buy one from Billibub in the Dwarven District
     >>If you can't find one, skip this step
     .bronzetube
 step
     #hardcore
-    .goto Stormwind City,53.62,59.76,30,0
-    .goto Stormwind City,55.25,7.08
+    .goto StormwindClassic,53.62,59.76,30,0
+    .goto StormwindClassic,55.25,7.08
     .vendor >> Check Billibub in the Dwarven District for a Bronze Tube. Buy one if it's available
     .bronzetube
 step
-    .goto Stormwind City,63.99,75.34
+    .goto StormwindClassic,63.99,75.34
     .turnin 120 >>Turn in Messenger to Stormwind
     .accept 121 >>Accept Messenger to Stormwind
 step

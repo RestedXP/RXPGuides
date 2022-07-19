@@ -1304,15 +1304,15 @@ step << Rogue
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step << Rogue
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
-    .goto Stormwind City,62.4,10.1,30 >>Take the Deeprun Tram and enter Stormwind
+    .goto StormwindClassic,62.4,10.1,30 >>Take the Deeprun Tram and enter Stormwind
 step << Rogue
-    .goto Stormwind City,58.1,16.5
+    .goto StormwindClassic,58.1,16.5
     .turnin 1338 >> Turn in Stormpike's Order
 step << Rogue
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .train 201 >>Train 1h Swords
 step << Rogue
-    .goto Stormwind City,57.6,57.1
+    .goto StormwindClassic,57.6,57.1
     .vendor >> Buy a Cutlass from Gunther and equip it, Craftsman's Dagger in OH
 step << Rogue
     #sticky
@@ -2032,31 +2032,31 @@ step
 step
     #label Tram
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
-    .goto Stormwind City,62.4,10.1,30 >>Take the Deeprun Tram and enter Stormwind
+    .goto StormwindClassic,62.4,10.1,30 >>Take the Deeprun Tram and enter Stormwind
 step
-    .goto Stormwind City,58.1,16.5
+    .goto StormwindClassic,58.1,16.5
     .turnin 1338 >> Turn in Stormpike's Order
 step
-    .goto Stormwind City,62.5,62.3,30,0
-.goto Stormwind City,66.3,62.1
+    .goto StormwindClassic,62.5,62.3,30,0
+.goto StormwindClassic,66.3,62.1
     .fp Stormwind >> Get the Stormwind flight path
 step
     .money <0.3040
-.goto Stormwind City,57.1,57.7
+.goto StormwindClassic,57.1,57.7
     .train 227 >>Train Staves
 .train 201 >>Train 1h Swords
 step
 .money <0.2090
-.goto Stormwind City,57.1,57.7
+.goto StormwindClassic,57.1,57.7
     .train 227 >>Train Staves
 step
     #sticky
     #completewith next
-.goto Stormwind City,29.2,74.0,15 >> Go into The Slaughtered Lamb
+.goto StormwindClassic,29.2,74.0,15 >> Go into The Slaughtered Lamb
 step
-    .goto Stormwind City,27.2,78.1,10 >> Go Downstairs
+    .goto StormwindClassic,27.2,78.1,10 >> Go Downstairs
 step
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     .accept 1688 >> Accept Surena Caledon
     .train 1120 >>Train Drain Soul
     .train 6201 >> Train Create Healthstone
@@ -2319,31 +2319,31 @@ step
     .fly Stormwind >> Fly to Stormwind
 step
     >>Choose rockets. These have very good damage, and can be used for splitpulling
-    .goto Stormwind City,56.2,64.6
+    .goto StormwindClassic,56.2,64.6
     .turnin 61 >> Turn in Shipment to Stormwind
 step
     #sticky
     #completewith next
-.goto Stormwind City,29.2,74.0,15 >> Go into The Slaughtered Lamb
+.goto StormwindClassic,29.2,74.0,15 >> Go into The Slaughtered Lamb
 step
-    .goto Stormwind City,27.2,78.1,10 >> Go Downstairs
+    .goto StormwindClassic,27.2,78.1,10 >> Go Downstairs
 step
-.goto Stormwind City,25.3,78.2
+.goto StormwindClassic,25.3,78.2
     .train 755 >>Train Health Funnel
     .train 705 >>Train Shadow Bolt r3
 step
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     .turnin 1688 >> Turn in Surena Caledon
     .accept 1689 >> Accept The Binding
 step
-    .goto Stormwind City,25.2,80.7,12,0
-    .goto Stormwind City,23.2,79.5,12,0
-    .goto Stormwind City,26.3,79.5,12,0
-    .goto Stormwind City,25.5,78.1
+    .goto StormwindClassic,25.2,80.7,12,0
+    .goto StormwindClassic,23.2,79.5,12,0
+    .goto StormwindClassic,26.3,79.5,12,0
+    .goto StormwindClassic,25.5,78.1
     >>Go to the bottom of the crypt. Summon the Voidwalker using the Bloodstone Choker and kill it
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
 step
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     >>Don't summon your voidwalker once you learn it
     .turnin 1689 >> Turn in The Binding
 step
@@ -3292,7 +3292,7 @@ step << wotlk
 step << wotlk
     .zone Stormwind City >> Exit the tram into Stormwind
 step << wotlk
-    .goto Stormwind City,57.0,57.6
+    .goto StormwindClassic,57.0,57.6
     .trainer >>Train Crossbows at the trade district
 step << wotlk
     >>Head to the Stormwind Harbor

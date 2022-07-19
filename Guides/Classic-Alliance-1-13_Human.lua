@@ -945,50 +945,50 @@ step
 step << Rogue
     #som
     >>Go inside the building
-    .goto Stormwind City,57.32,62.08,20,0
-    .goto Stormwind City,58.37,61.69
+    .goto StormwindClassic,57.32,62.08,20,0
+    .goto StormwindClassic,58.37,61.69
     .vendor >> Buy the level 11 thrown from Thurman. Equip it when you're level 11
 step << Rogue
     #era
     >>Go inside the building
-    .goto Stormwind City,57.32,62.08,20,0
-    .goto Stormwind City,58.37,61.69
+    .goto StormwindClassic,57.32,62.08,20,0
+    .goto StormwindClassic,58.37,61.69
     .vendor >> Buy the level 3 thrown from Thurman. Equip it
 step
-    .goto Stormwind City,56.2,64.6
+    .goto StormwindClassic,56.2,64.6
     >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling
     .turnin 61 >> Turn in Shipment to Stormwind
 step << !Warlock
-    .goto Stormwind City,52.61,65.71
+    .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
 step << Warrior
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >> Train 2h Swords if you have enough money. You must save 20s for later
 step << Priest
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >>Train Staves
 step << Mage/Warlock
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >> Train Staves, then 1h Swords if you still have money
 step << Rogue
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >>Train 1h Swords
 step << Rogue
-    .goto Stormwind City,57.6,57.1
+    .goto StormwindClassic,57.6,57.1
     .vendor >>Buy a Cutlass from Gunther and equip it, Stiletto in Offhand
 step << Paladin
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >>Train 2h Swords
 step << Warlock
-    .goto Stormwind City,52.61,65.71
+    .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
 step << Warlock
     #sticky
     #completewith next
-    .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     .turnin 1685 >> Turn in Gakin's Summons
     .accept 1688 >> Accept Surena Caledon
 step << Warlock
@@ -1037,68 +1037,68 @@ step << Warlock
 step << Warlock
     #sticky
     #completewith next
-    .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     .turnin 1688 >> Turn in Surena Caledon
     .accept 1689 >> Accept The Binding
 step << Warlock
-    .goto Stormwind City,25.2,80.7,14,0
-    .goto Stormwind City,23.2,79.5,14,0
-    .goto Stormwind City,26.3,79.5,14,0
-    .goto Stormwind City,25.5,78.1
+    .goto StormwindClassic,25.2,80.7,14,0
+    .goto StormwindClassic,23.2,79.5,14,0
+    .goto StormwindClassic,26.3,79.5,14,0
+    .goto StormwindClassic,25.5,78.1
     >>Go to the bottom of the crypt. Summon the Voidwalker using the Bloodstone Choker and kill it
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     >>Don't summon your voidwalker once you learn it
     .turnin 1689 >> Turn in The Binding
 step << Human
-    .goto Stormwind City,74.3,47.2
+    .goto StormwindClassic,74.3,47.2
     .turnin 6281 >> Turn in Continue to Stormwind
     .accept 6261 >> Accept Dungar Longdrink
 step << Warrior
      >>Enter the inn
-    .goto Stormwind City,71.7,39.9,20,0
-    .goto Stormwind City,74.3,37.3
+    .goto StormwindClassic,71.7,39.9,20,0
+    .goto StormwindClassic,74.3,37.3
     .turnin 1638 >> Turn in A Warrior's Training
     .accept 1639 >> Accept Bartleby the Drunk
 step << Warrior
-    .goto Stormwind City,73.8,36.3
+    .goto StormwindClassic,73.8,36.3
     .turnin 1639 >> Turn in Bartleby the Drunk
     .accept 1640 >> Accept Beat Bartleby
     .complete 1640,1 --Beat Bartleby
 step << Warrior
-    .goto Stormwind City,73.8,36.3
+    .goto StormwindClassic,73.8,36.3
     .turnin 1640 >> Turn in Beat Bartleby
     .accept 1665 >> Accept Bartleby's Mug
 step << Warrior
     >>You'll now learn Defensive Stance and Sunder Armor
-    .goto Stormwind City,74.3,37.3
+    .goto StormwindClassic,74.3,37.3
     .turnin 1665 >> Turn in Bartleby's Mug
 step << Priest
     #completewith next
-    .goto Stormwind City,38.8,26.4
+    .goto StormwindClassic,38.8,26.4
     .turnin 5635 >> Turn in Desperate Prayer
 step << Priest
-    .goto Stormwind City,38.62,26.10
+    .goto StormwindClassic,38.62,26.10
     .train 13908 >> Train Desperate Prayer
 step
     #completewith next
-    .goto Stormwind City,51.8,12.1
+    .goto StormwindClassic,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
 step
-    .goto Stormwind City,51.8,12.1
+    .goto StormwindClassic,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step << Warrior/Paladin/Rogue
     >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior
-    .goto Stormwind City,56.3,17.0
+    .goto StormwindClassic,56.3,17.0
     .vendor >>Buy a Mining Pick. You'll train Mining later
 step
     #sticky
     #completewith next
-    .goto Stormwind City,63.9,8.3,20 >>Enter the Deeprun Tram
+    .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
 step
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
     >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin
@@ -1458,73 +1458,73 @@ step << Warlock/Priest
     #label Wand1
     #completewith Wand2
      >>Alternatively, buy a Greater Magic Wand from the AH if it costs <33s 40c
-    .goto Stormwind City,53.60,59.77
+    .goto StormwindClassic,53.60,59.77
     .collect 11288,1 --Greater Magic Wand (1)
 step << Warlock/Priest
     #softcore
     #label Wand2
     #completewith Wand1
      >>Go in the building. Buy a Smoldering Wand
-    .goto Stormwind City,42.65,67.16,14,0
-    .goto Stormwind City,42.84,65.14
+    .goto StormwindClassic,42.65,67.16,14,0
+    .goto StormwindClassic,42.84,65.14
     .collect 5208,1 --Smoldering Wand (1)
 step << Warlock/Priest
     #hardcore
      >>Go in the building. Buy a Smoldering Wand
-    .goto Stormwind City,42.65,67.16,14,0
-    .goto Stormwind City,42.84,65.14
+    .goto StormwindClassic,42.65,67.16,14,0
+    .goto StormwindClassic,42.84,65.14
     .collect 5208,1 --Smoldering Wand (1)
 step << Warlock
     #sticky
     #completewith next
-    .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto Stormwind City,26.11,77.20
+    .goto StormwindClassic,26.11,77.20
     .trainer >> Train your class spells
-    .goto Stormwind City,25.65,77.63
+    .goto StormwindClassic,25.65,77.63
     .vendor >> Buy Consume Shadows r1 then Sacrifice r1 books (if you have money)
 step << Mage
-    .goto Stormwind City,37.69,82.09,10 >> Go up the tower, then through the portal
+    .goto StormwindClassic,37.69,82.09,10 >> Go up the tower, then through the portal
     .trainer >> Train your class spells
 step << Paladin
     >>Do the quests for Duthorian Rall
-    .goto Stormwind City,39.80,29.77
+    .goto StormwindClassic,39.80,29.77
     .turnin 1641 >> Turn in The Tome of Divinity
     .collect 6775,1,1642 --Tome of Divinity (1)
     .accept 1642 >> Accept The Tome of Divinity
     .turnin 1642 >> Turn in The Tome of Divinity
     .accept 1643 >> Accept The Tome of Divinity
 step << Paladin
-    .goto Stormwind City,38.68,32.85
+    .goto StormwindClassic,38.68,32.85
     .trainer >> Train your class spells
 step << Priest
-    .goto Stormwind City,38.54,26.86
+    .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
 step
-    .goto Stormwind City,58.08,16.52
+    .goto StormwindClassic,58.08,16.52
     .turnin 1338 >> Turn in Stormpike's Order
 step << Rogue
-   .goto Stormwind City,74.65,52.83
+   .goto StormwindClassic,74.65,52.83
     .trainer >> Train your class spells
 step << Warrior
     #completewith next
-    .goto Stormwind City,74.91,51.55,20 >> Enter the Command Center
+    .goto StormwindClassic,74.91,51.55,20 >> Enter the Command Center
 step << Warrior
-    .goto Stormwind City,78.67,45.80
+    .goto StormwindClassic,78.67,45.80
     .trainer >> Go upstairs. Train your class spells
 step << Paladin
-    .goto Stormwind City,57.08,61.74
+    .goto StormwindClassic,57.08,61.74
     .turnin 1643 >> Turn in The Tome of Divinity
     .accept 1644 >> Accept The Tome of Divinity
     .turnin 1644 >> Turn in The Tome of Divinity
     .accept 1780 >> Accept The Tome of Divinity
 step
-    .goto Stormwind City,66.28,62.13
+    .goto StormwindClassic,66.28,62.13
     .turnin 6261 >> Turn in Dungar Longdrink
     .accept 6285 >> Accept Return to Lewis
 step
-    .goto Stormwind City,66.28,62.13
+    .goto StormwindClassic,66.28,62.13
     .fly Westfall >> Fly to Westfall
 ]])
 
@@ -2397,41 +2397,41 @@ step
     .fly Stormwind >> Fly to Stormwind
 step << Rogue/Warrior
     >>Go inside the building
-    .goto Stormwind City,57.32,62.08,20,0
-    .goto Stormwind City,58.37,61.69
+    .goto StormwindClassic,57.32,62.08,20,0
+    .goto StormwindClassic,58.37,61.69
     .vendor >> Buy the level 11 thrown from Thurman. Equip it << Rogue
     .vendor >> Buy the level 11 thrown from Thurman. You'll equip it later << Warrior
 step
-    .goto Stormwind City,56.2,64.6
+    .goto StormwindClassic,56.2,64.6
     >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling
     .turnin 61 >> Turn in Shipment to Stormwind
 step << Warrior
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >> Train 2h Swords if you have spare money. You must save 20s for later
 step << Priest/Mage/Warlock
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >>Train Staves
 step << Rogue
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >>Train 1h Swords
 step << Rogue
-    .goto Stormwind City,57.6,57.1
+    .goto StormwindClassic,57.6,57.1
     .vendor >>Buy a Cutlass from Gunther and equip it, Stiletto in Offhand
     >>If you don't have enough money, skip this step
 step << Paladin
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >>Train 2h Swords
 step << Warlock
     #sticky
     #completewith next
-    .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     .turnin 1685 >> Turn in Gakin's Summons
     .accept 1688 >> Accept Surena Caledon
 step << Warlock
-    .goto Stormwind City,26.44,78.66
+    .goto StormwindClassic,26.44,78.66
      .trainer >> Train your class spells << Warlock
 step << Warlock
     #softcore
@@ -2479,75 +2479,75 @@ step << Warlock
 step << Warlock
     #sticky
     #completewith next
-    .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     .turnin 1688 >> Turn in Surena Caledon
     .accept 1689 >> Accept The Binding
 step << Warlock
-    .goto Stormwind City,25.2,80.7,14,0
-    .goto Stormwind City,23.2,79.5,14,0
-    .goto Stormwind City,26.3,79.5,14,0
-    .goto Stormwind City,25.5,78.1
+    .goto StormwindClassic,25.2,80.7,14,0
+    .goto StormwindClassic,23.2,79.5,14,0
+    .goto StormwindClassic,26.3,79.5,14,0
+    .goto StormwindClassic,25.5,78.1
     >>Go to the bottom of the crypt. Summon the Voidwalker using the Bloodstone Choker and kill it
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     >>Don't summon your voidwalker once you learn it
     .turnin 1689 >> Turn in The Binding
 step << Human
-    .goto Stormwind City,74.3,47.2
+    .goto StormwindClassic,74.3,47.2
     .turnin 6281 >> Turn in Continue to Stormwind
 step << !Mage !Warlock
-    .goto Stormwind City,42.66,33.75,30,0 << Paladin/Priest
-     .goto Stormwind City,38.68,32.85 << Paladin
-    .goto Stormwind City,38.54,26.86 << Priest
-    .goto Stormwind City,74.91,51.55,20,0 << Warrior
-    .goto Stormwind City,78.67,45.80 << Warrior
-    .goto Stormwind City,74.64,52.82 << Rogue
+    .goto StormwindClassic,42.66,33.75,30,0 << Paladin/Priest
+     .goto StormwindClassic,38.68,32.85 << Paladin
+    .goto StormwindClassic,38.54,26.86 << Priest
+    .goto StormwindClassic,74.91,51.55,20,0 << Warrior
+    .goto StormwindClassic,78.67,45.80 << Warrior
+    .goto StormwindClassic,74.64,52.82 << Rogue
     .trainer >> Train your class spells
 step << Warrior
      >>Enter the inn
-    .goto Stormwind City,71.7,39.9,20,0
-    .goto Stormwind City,74.3,37.3
+    .goto StormwindClassic,71.7,39.9,20,0
+    .goto StormwindClassic,74.3,37.3
     .turnin 1638 >> Turn in A Warrior's Training
     .accept 1639 >> Accept Bartleby the Drunk
 step << Warrior
-    .goto Stormwind City,73.8,36.3
+    .goto StormwindClassic,73.8,36.3
     .turnin 1639 >> Turn in Bartleby the Drunk
     .accept 1640 >> Accept Beat Bartleby
     .complete 1640,1 --Beat Bartleby
 step << Warrior
-    .goto Stormwind City,73.8,36.3
+    .goto StormwindClassic,73.8,36.3
     .turnin 1640 >> Turn in Beat Bartleby
     .accept 1665 >> Accept Bartleby's Mug
 step << Warrior
     >>You'll now learn Defensive Stance and Sunder Armor
-    .goto Stormwind City,74.3,37.3
+    .goto StormwindClassic,74.3,37.3
     .turnin 1665 >> Turn in Bartleby's Mug
 step << Priest
     #completewith next
-    .goto Stormwind City,38.8,26.4
+    .goto StormwindClassic,38.8,26.4
     .turnin 5635 >> Turn in Desperate Prayer
 step << Priest
-    .goto Stormwind City,38.62,26.10
+    .goto StormwindClassic,38.62,26.10
     .train 13908 >> Train Desperate Prayer
 step
     #completewith next
-    .goto Stormwind City,51.8,12.1
+    .goto StormwindClassic,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
 step
-    .goto Stormwind City,51.8,12.1
+    .goto StormwindClassic,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step << Warrior/Paladin/Rogue
     >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior
-    .goto Stormwind City,56.3,17.0
+    .goto StormwindClassic,56.3,17.0
     .vendor >>Buy a Mining Pick. You'll train Mining later
 step
     #sticky
     #completewith next
-    .goto Stormwind City,63.9,8.3,20 >>Enter the Deeprun Tram
+    .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
 step
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
     >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin

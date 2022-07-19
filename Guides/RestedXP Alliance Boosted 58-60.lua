@@ -14,185 +14,185 @@ step << Warrior
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
 step << Warrior
-    .goto Stormwind City,78.3,47.4
+    .goto StormwindClassic,78.3,47.4
     .turnin 64031 >>Turn in Tools for Survival
     .accept 64034 >>Accept Combat Training
     .complete 64034,1 --1/1 Train a Spell (1)
 step << Warrior
-    .goto Stormwind City,78.3,47.4
+    .goto StormwindClassic,78.3,47.4
     .turnin 64034 >>Turn in Combat Training
     .accept 64035 >>Accept Talented
     .complete 64035,1 --5 Talent Points Allocated (1)
 step << Warrior
-    .goto Stormwind City,78.3,47.4
+    .goto StormwindClassic,78.3,47.4
     .turnin 64035 >>Turn in Talented
     .accept 64038 >>Accept The Dark Portal
 --
 step << Paladin
-    .goto Stormwind City,37.3,33.0
+    .goto StormwindClassic,37.3,33.0
     .accept 64028 >>Accept A New Beginning
 step << Paladin
-    .goto Stormwind City,37.2,33.2
+    .goto StormwindClassic,37.2,33.2
     .turnin 64028 >>Turn in A New Beginning
     .accept 64031 >>Accept Tools for Survival
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
 step << Paladin
-    .goto Stormwind City,37.2,33.2
+    .goto StormwindClassic,37.2,33.2
     .turnin 64031 >>Turn in Tools for Survival
     .accept 64034 >>Accept Combat Training
     .complete 64034,1 --1/1 Train a Spell (1)
 step << Paladin
-    .goto Stormwind City,37.2,33.2
+    .goto StormwindClassic,37.2,33.2
     .turnin 64034 >>Turn in Combat Training
     .accept 64035 >>Accept Talented
     .complete 64035,1 --5 Talent Points Allocated (1)
 step << Paladin
-    .goto Stormwind City,37.2,33.2
+    .goto StormwindClassic,37.2,33.2
     .turnin 64035 >>Turn in Talented
     .accept 64038 >>Accept The Dark Portal
 --
 step << Rogue
-    .goto Stormwind City,78.3,57.3
+    .goto StormwindClassic,78.3,57.3
     .accept 64028 >>Accept A New Beginning
     .turnin 64028 >>Turn in A New Beginning
     .accept 64031 >>Accept Tools for Survival
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
 step << Rogue
-    .goto Stormwind City,78.3,57.3
+    .goto StormwindClassic,78.3,57.3
     .turnin 64031 >>Turn in Tools for Survival
     .accept 64034 >>Accept Combat Training
     .complete 64034,1 --1/1 Train a Spell (1)
 step << Rogue
-    .goto Stormwind City,78.3,57.3
+    .goto StormwindClassic,78.3,57.3
     .turnin 64034 >>Turn in Combat Training
     .accept 64035 >>Accept Talented
     .complete 64035,1 --5 Talent Points Allocated (1)
 step << Rogue
-    .goto Stormwind City,78.3,57.3
+    .goto StormwindClassic,78.3,57.3
     .turnin 64035 >>Turn in Talented
     .accept 64038 >>Accept The Dark Portal
 --
 step << Priest
-    .goto Stormwind City,38.8,26.4
+    .goto StormwindClassic,38.8,26.4
     .accept 64028 >>Accept A New Beginning
     .turnin 64028 >>Turn in A New Beginning
     .accept 64031 >>Accept Tools for Survival
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
 step << Priest
-    .goto Stormwind City,38.8,26.4
+    .goto StormwindClassic,38.8,26.4
     .turnin 64031 >>Turn in Tools for Survival
     .accept 64034 >>Accept Combat Training
     .complete 64034,1 --1/1 Train a Spell (1)
 step << Priest
-    .goto Stormwind City,38.8,26.4
+    .goto StormwindClassic,38.8,26.4
     .turnin 64034 >>Turn in Combat Training
     .accept 64035 >>Accept Talented
     .complete 64035,1 --5 Talent Points Allocated (1)
 step << Priest
-    .goto Stormwind City,38.8,26.4
+    .goto StormwindClassic,38.8,26.4
     .turnin 64035 >>Turn in Talented
     .accept 64038 >>Accept The Dark Portal
 
 --
 step << Mage
-    .goto Stormwind City,38.7,79.3
+    .goto StormwindClassic,38.7,79.3
     .accept 64028 >>Accept A New Beginning
     .turnin 64028 >>Turn in A New Beginning
     .accept 64031 >>Accept Tools for Survival
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
 step << Mage
-    .goto Stormwind City,38.7,79.3
+    .goto StormwindClassic,38.7,79.3
     .turnin 64031 >>Turn in Tools for Survival
     .accept 64034 >>Accept Combat Training
     .complete 64034,1 --1/1 Train a Spell (1)
 step << Mage
-    .goto Stormwind City,38.7,79.3
+    .goto StormwindClassic,38.7,79.3
     .turnin 64034 >>Turn in Combat Training
     .accept 64035 >>Accept Talented
     .complete 64035,1 --5 Talent Points Allocated (1)
 step << Mage
-    .goto Stormwind City,38.7,79.3
+    .goto StormwindClassic,38.7,79.3
     .turnin 64035 >>Turn in Talented
     .accept 64038 >>Accept The Dark Portal
 
 --
 step << Warlock
-    .goto Stormwind City,26.0,77.4
+    .goto StormwindClassic,26.0,77.4
     .accept 64028 >>Accept A New Beginning
     .turnin 64028 >>Turn in A New Beginning
     .accept 64031 >>Accept Tools for Survival
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
 step << Warlock
-    .goto Stormwind City,26.0,77.4
+    .goto StormwindClassic,26.0,77.4
     .turnin 64031 >>Turn in Tools for Survival
     .accept 64034 >>Accept Combat Training
     .complete 64034,1 --1/1 Train a Spell (1)
 step << Warlock
-    .goto Stormwind City,26.0,77.4
+    .goto StormwindClassic,26.0,77.4
     .turnin 64034 >>Turn in Combat Training
     .accept 64035 >>Accept Talented
     .complete 64035,1 --5 Talent Points Allocated (1)
 step << Warlock
-    .goto Stormwind City,26.1,77.4
+    .goto StormwindClassic,26.1,77.4
     .turnin 64035 >>Turn in Talented
     .accept 64038 >>Accept The Dark Portal
 
 --
 step << Hunter
-    .goto Stormwind City,61.7,15.2
+    .goto StormwindClassic,61.7,15.2
     .accept 64028 >>Accept A New Beginning
     .turnin 64028 >>Turn in A New Beginning
     .accept 64031 >>Accept Tools for Survival
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
 step << Hunter
-    .goto Stormwind City,61.7,15.2
+    .goto StormwindClassic,61.7,15.2
     .turnin 64031 >>Turn in Tools for Survival
     .accept 64034 >>Accept Combat Training
     .complete 64034,1 --1/1 Train a Spell (1)
 step << Hunter
-    .goto Stormwind City,61.7,15.2
+    .goto StormwindClassic,61.7,15.2
     .turnin 64034 >>Turn in Combat Training
     .accept 64035 >>Accept Talented
     .complete 64035,1 --5 Talent Points Allocated (1)
 step << Hunter
-    .goto Stormwind City,61.7,15.2
+    .goto StormwindClassic,61.7,15.2
     .turnin 64035 >>Turn in Talented
     .accept 64038 >>Accept The Dark Portal
 
 step << Druid
-    .goto Stormwind City,21.4,51.4
+    .goto StormwindClassic,21.4,51.4
     .turnin 64028 >>Turn in A New Beginning
     .accept 64031 >>Accept Tools for Survival
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
 step << Druid
-    .goto Stormwind City,21.4,51.4
+    .goto StormwindClassic,21.4,51.4
     .turnin 64031 >>Turn in Tools for Survival
     .accept 64034 >>Accept Combat Training
     .complete 64034,1 --1/1 Train a Spell (1)
 step << Druid
-    .goto Stormwind City,21.4,51.4
+    .goto StormwindClassic,21.4,51.4
     .turnin 64034 >>Turn in Combat Training
     .accept 64035 >>Accept Talented
     .complete 64035,1 --5 Talent Points Allocated (1)
 step << Druid
-    .goto Stormwind City,21.4,51.4
+    .goto StormwindClassic,21.4,51.4
     .turnin 64035 >>Turn in Talented
     .accept 64038 >>Accept The Dark Portal
 step << skip
     #completewith bs1
-    .goto Stormwind City,78.0,18.2
+    .goto StormwindClassic,78.0,18.2
     .accept 6182 >>Accept The First and the Last
     >>There is a long scripted RP sequence part of the Onyxia attunement quest that makes Bolvar not able to interact with players for a few minutes, if that's the case, skip this step and try to get this quest later after finishing Burning Steppes
 step
     #label bs1
-    .goto Stormwind City,66.2,62.2
+    .goto StormwindClassic,66.2,62.2
     .complete 64038,1 --Speak to Dungar Longdrink, the Gryphon Master (1)
     .fly Morgan's Vigil>>Fly to Morgan's Vigil
 step
@@ -222,26 +222,26 @@ step
     .goto Redridge Mountains,30.58,59.41
     .fly Stormwind>>Fly to Stormwind
 step
-    .goto Stormwind City,78.0,18.2
+    .goto StormwindClassic,78.0,18.2
     .turnin 4184 >>Turn in The True Masters
     .accept 4185 >>Accept The True Masters
 -- .accept 6182 >>Accept The First and the Last
 step
-    .goto Stormwind City,78.11,17.75
+    .goto StormwindClassic,78.11,17.75
     >>Talk to Lady Prestor
     .complete 4185,1 --Advice from Lady Prestor (1)
 step
-    .goto Stormwind City,78.0,18.2
+    .goto StormwindClassic,78.0,18.2
     .turnin 4185 >>Turn in The True Masters
     .accept 4186 >>Accept The True Masters
 step << skip
-    .goto Stormwind City,75.9,59.8
+    .goto StormwindClassic,75.9,59.8
     .turnin 6182 >>Turn in The First and the Last
     .accept 6183 >>Accept Honor the Dead
     .turnin 6183 >>Turn in Honor the Dead
     .accept 6184 >>Accept Flint Shadowmore
 step
-    .goto Stormwind City,66.2,62.3
+    .goto StormwindClassic,66.2,62.3
     .fly Lakeshire >>Fly to Lakeshire
 step
     .goto Redridge Mountains,29.8,44.5
@@ -646,6 +646,6 @@ step
     .goto Eastern Plaguelands,81.64,59.28
     .fly Stormwind >>Fly to Stormwind
 step << skip
-    .goto Stormwind City,77.9,18.2
+    .goto StormwindClassic,77.9,18.2
     .turnin 6186 >>Turn in The Blightcaller Cometh
 ]])

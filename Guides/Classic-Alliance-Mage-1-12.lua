@@ -532,28 +532,28 @@ step
     .accept 6281 >> Accept Continue To Stormwind
     .fly Stormwind >> Fly to Stormwind
 step
-    .goto Stormwind City,56.2,64.6
+    .goto StormwindClassic,56.2,64.6
     >>Choose rockets. These have very good damage, and can be used for splitpulling
     .turnin 61 >> Turn in Shipment to Stormwind
 step
     #era/som
-    .goto Stormwind City,57.1,57.7
+    .goto StormwindClassic,57.1,57.7
     .trainer >> Train 1h Swords
 step
-    .goto Stormwind City,74.3,47.2
+    .goto StormwindClassic,74.3,47.2
     .turnin 6281 >> Turn in Continue to Stormwind
     >>Vendor and Repair
 step
     #completewith next
-    .goto Stormwind City,51.8,12.1
+    .goto StormwindClassic,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
 step
-    .goto Stormwind City,51.8,12.1
+    .goto StormwindClassic,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step
     #sticky
     #completewith next
-    .goto Stormwind City,63.9,8.3,20 >>Enter the Deeprun Tram
+    .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
 step
     >>Take the tram when it arrives, then get off when it arrives on the other side
     .accept 6661 >> Accept Deeprun Rat Roundup

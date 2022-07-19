@@ -1127,15 +1127,13 @@ addon.functions["goto"] = function(self, ...)
         else
             zone = lastZone
         end
-        local mapID = addon.mapId[zone] or tonumber(zone)
-        element.x = tonumber(x)
-        element.y = tonumber(y)
-        if not (element.x and element.y and zone and mapID) then
+        element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        if not (element.x and element.y and element.zone) then
             return addon.error(
                        "Error parsing guide " .. addon.currentGuideName ..
                            ": Invalid coordinates or map name\n" .. self)
         end
-        element.zone = mapID
+
         element.radius = tonumber(radius)
         radius = element.radius
         element.wx, element.wy, element.instance =
@@ -1188,15 +1186,13 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         else
             zone = lastZone
         end
-        local mapID = addon.mapId[zone] or tonumber(zone)
-        element.x = tonumber(x)
-        element.y = tonumber(y)
-        if not (element.x and element.y and zone and mapID) then
+        element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        if not (element.x and element.y and element.zone) then
             return addon.error(
                        "Error parsing guide " .. addon.currentGuideName ..
                            ": Invalid coordinates or map name\n" .. self)
         end
-        element.zone = mapID
+
         element.radius = tonumber(radius)
         element.lowPrio = lowPrio
         if lowPrio and not tonumber(lowPrio) then
@@ -1248,15 +1244,13 @@ function addon.functions.pin(self, ...)
         else
             zone = lastZone
         end
-        local mapID = addon.mapId[zone] or tonumber(zone)
-        element.x = tonumber(x)
-        element.y = tonumber(y)
-        if not (element.x and element.y and zone and mapID) then
+        element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        if not (element.x and element.y and element.zone) then
             return addon.error(
                        "Error parsing guide " .. addon.currentGuideName ..
                            ": Invalid coordinates or map name\n" .. self)
         end
-        element.zone = mapID
+
         element.wx, element.wy, element.instance =
             HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)

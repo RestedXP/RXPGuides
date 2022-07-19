@@ -2200,66 +2200,66 @@ RXPGuides.RegisterGuide([[
 #next 20-21 Darkshore/Ashenvale
 step
     #completewith start
-    .goto Stormwind City,55.21,7.04
+    .goto StormwindClassic,55.21,7.04
     .vendor >> Buy a Bronze Tube if you haven't
     >>This is a limited supply item, skip this step if the npc doesn't have it
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
 step << !NightElf
 	.isOnQuest 1338
-    .goto Stormwind City,58.08,16.52
+    .goto StormwindClassic,58.08,16.52
     .turnin 1338 >> Turn in Stormpike's Order
 step << Warlock/Priest
      >>Go in the building. Buy a Burning Wand if it's an upgrade
      >>It's important to buy a non-shadow wand, you'll have to deal with mobs resistant to shadow damage later
-    .goto Stormwind City,42.65,67.16,14,0
-    .goto Stormwind City,42.84,65.14
+    .goto StormwindClassic,42.65,67.16,14,0
+    .goto StormwindClassic,42.84,65.14
     .collect 5210,1
 step << Warlock
     #completewith next
-    .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto Stormwind City,26.11,77.20
+    .goto StormwindClassic,26.11,77.20
     .trainer >> Train your class spells
 step << Mage
-    .goto Stormwind City,37.69,82.09,10 >> Go up the tower, then through the portal
+    .goto StormwindClassic,37.69,82.09,10 >> Go up the tower, then through the portal
     .trainer >> Train your class spells
 step << Paladin
     >>Do the quests for Duthorian Rall. Make sure you have the 10 Linen Cloth from earlier
-    .goto Stormwind City,39.80,29.77
+    .goto StormwindClassic,39.80,29.77
     .turnin 1641 >> Turn in The Tome of Divinity
     .collect 6775,1,1642 --Tome of Divinity (1)
     .accept 1642 >> Accept The Tome of Divinity
     .turnin 1642 >> Turn in The Tome of Divinity
     .accept 1643 >> Accept The Tome of Divinity
 step << Paladin
-    .goto Stormwind City,38.68,32.85
+    .goto StormwindClassic,38.68,32.85
     .trainer >> Train your class spells
 step << Priest !NightElf
-    .goto Stormwind City,38.54,26.86
+    .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
 step << Rogue !NightElf
-    .goto Stormwind City,74.64,52.82
+    .goto StormwindClassic,74.64,52.82
     .trainer >> Train your class spells
 step << Warrior !NightElf
     >>Enter the Command Center
-    .goto Stormwind City,74.91,51.55,20,0
-    .goto Stormwind City,78.67,45.80
+    .goto StormwindClassic,74.91,51.55,20,0
+    .goto StormwindClassic,78.67,45.80
     .trainer >> Go upstairs. Train your class spells
 step
-    .goto Stormwind City,57.0,57.6
+    .goto StormwindClassic,57.0,57.6
      .train 201 >> Talk to Woo Ping. Train 1h Swords << Mage/Rogue/Warlock
      .train 1180 >> Talk to Woo Ping. Train Daggers << Mage/Druid
      .train 202 >> Talk to Woo Ping. Train 2h Swords << Warrior/Paladin
 step << Paladin
-    .goto Stormwind City,57.08,61.74
+    .goto StormwindClassic,57.08,61.74
     .turnin 1643 >> Turn in The Tome of Divinity
     .accept 1644 >> Accept The Tome of Divinity
     .turnin 1644 >> Turn in The Tome of Divinity
 --  .accept 1780 >> Accept The Tome of Divinity
 step << Rogue
-    .goto Stormwind City,57.38,56.77
+    .goto StormwindClassic,57.38,56.77
     >>Talk to Marda. Buy a Longsword for your mainhand and Kris for your offhand.
     .collect 923,1 --Longsword
     .collect 2209,1 --Kris
@@ -2267,15 +2267,15 @@ step << !Human !Warlock
     #som
     #phase 3-6
      #completewith start
-     .goto Stormwind City,66.2,62.4
+     .goto StormwindClassic,66.2,62.4
     .fp Stormwind >> Get the Stormwind City Flight Path
 step << !Human
     #era/som
      #completewith start
-     .goto Stormwind City,66.2,62.4
+     .goto StormwindClassic,66.2,62.4
     .fp Stormwind >> Get the Stormwind City Flight Path
 step << NightElf
-    .goto Stormwind City,73.2,92.1
+    .goto StormwindClassic,73.2,92.1
     .zone Elwynn Forest >> Leave Stormwind through the main gate
 step << NightElf Warrior
     .goto Elwynn Forest,41.09,65.77
@@ -2303,11 +2303,11 @@ step << NightElf
 step << Human/Warlock
     #som
     #phase 3-6
-    .goto Stormwind City,66.27,62.13
+    .goto StormwindClassic,66.27,62.13
     .fly Redridge >>Fly to Redridge Mountains
 step << !NightElf
     #era/som
-    .goto Stormwind City,66.27,62.13
+    .goto StormwindClassic,66.27,62.13
     .fly Redridge >>Fly to Redridge Mountains
 step << !Human !Warlock
     #som
@@ -2495,75 +2495,75 @@ step
     .fp >> Get the Redridge Mountains flight path << !Human !Warlock
     .fly Stormwind >> Fly to Stormwind City
 step << Rogue
-    .goto Stormwind City,57.55,57.07
+    .goto StormwindClassic,57.55,57.07
     >>Buy a Longsword if you have enough money. Equip it at 21
     >>Buy something from the AH if its cheaper/better
     >>Skip this step if you have something better
     .collect 923,1 --Longsword (1)
 step << Warrior/Paladin
     #softcore
-    .goto Stormwind City,57.55,57.07
+    .goto StormwindClassic,57.55,57.07
     >>Buy a Dacian Falx if you have enough money. Equip it at 21
     >>Buy something from the AH if its cheaper/better
     >>Skip this step if you have something better
     .collect 922,1 --Dacian Falx (1)
 step << Warrior/Paladin
     #hardcore
-    .goto Stormwind City,57.55,57.07
+    .goto StormwindClassic,57.55,57.07
     >>Buy a Dacian Falx if you have enough money. Equip it at 21
     >>Skip this step if you have something better
     .collect 922,1 --Dacian Falx (1)
 step << Warlock
     #sticky
     #completewith next
-    .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto Stormwind City,26.11,77.20
+    .goto StormwindClassic,26.11,77.20
     .trainer >> Train your class spells
-    .goto Stormwind City,25.30,78.50
+    .goto StormwindClassic,25.30,78.50
     .accept 1716 >> Accept Devourer of Souls
 step << Mage
-    .goto Stormwind City,37.69,82.09,10 >> Go up the tower, then through the portal
+    .goto StormwindClassic,37.69,82.09,10 >> Go up the tower, then through the portal
     .trainer >> Train your class spells
 step << Mage
-    .goto Stormwind City,39.83,79.46
+    .goto StormwindClassic,39.83,79.46
     .trainer >> Train Stormwind Portal from Larimaine
 step
-    .goto Stormwind City,21.40,55.80
+    .goto StormwindClassic,21.40,55.80
     .accept 3765 >> Accept The Corruption Abroad
 step << Druid
-    .goto Stormwind City,21.0,55.6
+    .goto StormwindClassic,21.0,55.6
     .trainer >> Train your class spells (Make sure you get Cat Form)
 step << Paladin
-    .goto Stormwind City,42.66,33.75,30,0
-    .goto Stormwind City,40.1,30.0
+    .goto StormwindClassic,42.66,33.75,30,0
+    .goto StormwindClassic,40.1,30.0
     >>Speak to Duthorian Rall and right click on the Tome of Valor provided
     .collect 6776,1,1649 --Tome of Valor (1)
     .accept 1649 >>Accept The Tome of Valor
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
 step << Paladin
-    .goto Stormwind City,38.68,32.85
+    .goto StormwindClassic,38.68,32.85
     .trainer >> Train your class spells
 step << Priest
-    .goto Stormwind City,42.66,33.75,30,0
-    .goto Stormwind City,38.54,26.86
+    .goto StormwindClassic,42.66,33.75,30,0
+    .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
 step << Rogue
-    .goto Stormwind City,74.90,54.00,20,0
-    .goto Stormwind City,78.67,59.48,20,0
-    .goto Stormwind City,75.75,60.36
+    .goto StormwindClassic,74.90,54.00,20,0
+    .goto StormwindClassic,78.67,59.48,20,0
+    .goto StormwindClassic,75.75,60.36
     .trainer >> Train your class spells. Make sure to train lockpicking
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
 step << Warrior
     >>Enter the command center
-    .goto Stormwind City,74.91,51.55,20,0
-    .goto Stormwind City,78.67,45.80
+    .goto StormwindClassic,74.91,51.55,20,0
+    .goto StormwindClassic,78.67,45.80
     .trainer >> Go upstairs. Train your class spells
 step
-    .goto Stormwind City,64.20,75.20
+    .goto StormwindClassic,64.20,75.20
     .turnin 120 >> Turn in Messenger to Stormwind
     .accept 121 >> Accept Messenger to Stormwind
 step
@@ -2578,7 +2578,7 @@ step
 step
     #completewith RunR
     #label FlyR
-    .goto Stormwind City,66.30,62.30
+    .goto StormwindClassic,66.30,62.30
     >> Run back to Stormwind if you're in Goldshire, then fly to Redridge
     .fly Redridge >> Fly to Redridge
 step
@@ -2732,19 +2732,19 @@ step << Rogue
     .fly Stormwind >> Fly to Stormwind
 step << Rogue
     --#softcore
-    .goto Stormwind City,74.90,54.00,20,0
-    .goto Stormwind City,78.67,59.48,20,0
-     .goto Stormwind City,75.9,59.9
+    .goto StormwindClassic,74.90,54.00,20,0
+    .goto StormwindClassic,78.67,59.48,20,0
+     .goto StormwindClassic,75.9,59.9
     .turnin 2359 >> Turn in Klaven's Tower
     .isQuestComplete 2359
 step << Rogue
     --#softcore
-     .goto Stormwind City,75.9,59.9
+     .goto StormwindClassic,75.9,59.9
     .accept 2607 >> Accept The Touch of Zanzil
     .isQuestTurnedIn 2359
 step << Rogue
     --#softcore
-    .goto Stormwind City,78.1,59.0
+    .goto StormwindClassic,78.1,59.0
     >>Head to the basement
     .turnin 2607 >> Turn in The Touch of Zanzil
     .isQuestTurnedIn 2359

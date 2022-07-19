@@ -1495,14 +1495,14 @@ step << tbc
     #completewith next
     .fly Stormwind>> Fly to Stormwind
 step << Warlock
-    .goto Stormwind City,25.3,78.7
+    .goto StormwindClassic,25.3,78.7
 	.trainer >> Train your class spells
 step << Warlock
-    .goto Stormwind City,25.2,78.5
+    .goto StormwindClassic,25.2,78.5
     .accept 1716 >> Accept Devourer of Souls
 step
     #label exit
-    .goto Stormwind City,39.9,54.4
+    .goto StormwindClassic,39.9,54.4
     .zone Darkshore>>Enter the Stockades and ghetto hearth to Auberdine
     >>While you are inside The Stockades, invite some random person and leave group so you can teleport back to Auberdine
     .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> CLICK HERE for an invite/leave macro
