@@ -2,11 +2,11 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 << Alliance !Warlock !Hunter
-#name 1-11 Dun Morogh
+#name 1-6 Coldridge Valley
+#next 6-11 Dun Morogh
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
-#next 11-14 Darkshore
 step << !Gnome !Dwarf
     #sticky
     #completewith next
@@ -301,6 +301,17 @@ step
 step
 .goto Dun Morogh,34.1,71.6,20,0
 .goto Dun Morogh,35.7,66.0,20 >>Go through the tunnel
+]])
+
+RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
+<< Alliance !Warlock !Hunter
+#name 6-11 Dun Morogh
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Gnome/Dwarf
+#next 11-14 Darkshore
 step
     #sticky
 #completewith BoarMeat3
@@ -2717,15 +2728,18 @@ step
     .accept 233 >>Accept Coldridge Valley Mail Delivery
     .accept 3108 >>Accept Etched Rune
 step
+#xprate <1.5
     .goto Dun Morogh,29.7,71.3
     >>Speak to Balir Frosthammer
     .accept 170 >>Accept A New Threat
 step
+#xprate <1.5
     #sticky
     #label Rockjaw
     >>Kill Normal Rockjaw Troggs that you see
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step
+#xprate <1.5
     .goto Dun Morogh,26.9,72.7,30,0
     .goto Dun Morogh,25.1,72.1,30,0
     .goto Dun Morogh,26.9,72.7,30,0
@@ -2758,6 +2772,7 @@ step
     .turnin 234 >>Turn in Coldridge Valley Mail Delivery
     .accept 182 >>Accept The Troll Cave
 step
+#completewith next
     .goto Dun Morogh,22.7,79.3,30,0
     .goto Dun Morogh,20.9,75.7,30,0
     .goto Dun Morogh,22.7,79.3,30,0
@@ -2781,6 +2796,7 @@ step
     #completewith next
     .hs >> Hearth back to the starting area
 step
+#xprate <1.5
     .goto Dun Morogh,29.7,71.3
     >>Speak to Balir Frosthammer
     .turnin 170 >>Turn in A New Threat
@@ -2797,6 +2813,21 @@ step
 step
     .goto Dun Morogh,25.0,75.9
     .turnin 3365 >>Turn in Bring Back the Mug
+step
+#completewith next
+    .goto Dun Morogh,22.7,79.3,30,0
+    .goto Dun Morogh,20.9,75.7,30,0
+    .goto Dun Morogh,22.7,79.3,30,0
+    .goto Dun Morogh,20.9,75.7,30,0
+    .goto Dun Morogh,22.7,79.3,30,0
+    .goto Dun Morogh,20.9,75.7,30,0
+    .goto Dun Morogh,22.7,79.3,30,0
+    .goto Dun Morogh,20.9,75.7,30,0
+    .goto Dun Morogh,22.7,79.3,30,0
+    .goto Dun Morogh,20.9,75.7,30,0
+>>Kill Frostmane Troll Whelps
+.complete 182,1 --Kill Frostmane Troll Whelp (x14)
+    .goto Dun Morogh,25.1,75.7
 step
     .goto Dun Morogh,25.0,75.9
     .turnin 182 >>Turn in The Troll Cave
@@ -2841,7 +2872,7 @@ step
 .goto Dun Morogh,46.7,53.8,100 >> Run to Kharanos
 step
     #label BoarRibs
-.goto Dun Morogh,46.7,53.8,1500 >> .
+.zone Dun Morogh >> .
 step
 .goto Dun Morogh,46.7,53.8
     .turnin 420 >> Turn in Senir's Observations
@@ -2862,6 +2893,7 @@ step
     >>Speak to Pilot Bellowfiz
     .accept 317 >>Accept Stocking Jetsteam
 step
+#xprate <1.5
     .goto Dun Morogh,49.6,48.5
     >>Speak to Pilot Stonegear
     .accept 313 >>Accept The Grizzled Den
@@ -2933,6 +2965,7 @@ step << Hunter
     >>Buy the level 4 gun upgrade, skip this step if you don't have the money for it
     .collect 2509,1
 step
+#xprate <1.5
 .goto Dun Morogh,42.5,54.8,40,0
     .goto Dun Morogh,42.4,52.2,40,0
     .goto Dun Morogh,41.0,49.4,40,0
@@ -2964,9 +2997,6 @@ step
     .goto Dun Morogh,34.6,51.6
     .turnin 312 >>Turn in Tundra MacGrann's Stolen Stash
 step
-.goto Dun Morogh,30.4,45.8
-.vendor >> vendor trash
-step
     .goto Dun Morogh,30.2,45.8
     >>Speak to Rejold Barleybrew
     .turnin 318 >>Turn in Evershine
@@ -2976,31 +3006,20 @@ step
     .goto Dun Morogh,30.2,45.4
     >>Speak to Marleth Barleybrew
     .accept 310 >>Accept Bitter Rivals
+    #label BoarRibs2
 step
-#label BoarRibs2
-.goto Dun Morogh,31.5,38.9,40,0
-    .goto Dun Morogh,28.3,39.9,40,0
-    .goto Dun Morogh,28.7,43.7,40,0
-    .goto Dun Morogh,25.8,47.2,40,0
-    .goto Dun Morogh,25.8,47.2,40,0
-    .goto Dun Morogh,30.0,51.8,40,0
-.goto Dun Morogh,31.5,38.9,40,0
-    .goto Dun Morogh,28.3,39.9,40,0
-    .goto Dun Morogh,28.7,43.7,40,0
-    .goto Dun Morogh,25.8,47.2,40,0
-    .goto Dun Morogh,25.8,47.2,40,0
-    .goto Dun Morogh,30.0,51.8,40,0
+    #title Secondary objective
+    #completewith next
     >> Kill Bears, Boars and Leopards
 .complete 319,1 --Kill Ice Claw Bear (x6)
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .complete 319,3 --Kill Snow Leopard (x8)
 step << Hunter
-    .xp 8-1400 >>Grind your way back to Kharanos.
+>>Start moving back to Kharanos while completing your other quest objectives on the way there.
+    .xp 8-1400
     .complete 384,1
-step << !Hunter
-    #completewith next
-    .deathskip >> Die on purpose and respawn at Kharanos
 step << Hunter
+#xprate <1.5
     .goto Dun Morogh,49.6,48.5
     .turnin 313 >>Turn in The Grizzled Den
 step
@@ -3023,9 +3042,6 @@ step
 step
     .goto Dun Morogh,46.7,53.9
     .accept 287 >>Accept Frostmane Hold
-step << !Hunter
-    .goto Dun Morogh,49.6,48.5
-    .turnin 313 >>Turn in The Grizzled Den
 step << Hunter
     .goto Dun Morogh,45.8,53.0
     .train 5116>> Train Concussive Shot
@@ -3061,7 +3077,8 @@ step
     .goto Dun Morogh,68.9,55.9
     .vendor >> vendor trash, repair
 step
-    .goto Dun Morogh,81.2,42.7,15 >>Grind a bit en route, go inside the tunnel
+    #completewith next
+    .goto Dun Morogh,81.2,42.7,25 >>Grind a bit en route, go inside the tunnel
 step
     .goto Dun Morogh,83.8,39.2
     .accept 419 >> Accept The Lost Pilot
@@ -3077,14 +3094,25 @@ step
 step
     .goto Dun Morogh,83.9,39.2
     .turnin 417 >> Turn in A Pilot's Revenge
-step
+step << tbc
     #sticky
     #completewith next
     .deathskip >> Die on purpose and respawn at Kharanos
+step << wotlk
+    .goto Loch Modan,23.2,17.7
+    .zone Loch Modan >> Take the tunnel northeast to Loch Modan
+step << wotlk
+    >>Once you get to Loch modan, die on purpose and respawn at Thelsamar
+    .goto Loch Modan,33.9,51.0
+    .fp Thelsamar >> Get the Thelsamar flight path
+step << wotlk
+    .hs >> Hearth to Kharanos
 step
+#xprate <1.5
     .goto Dun Morogh,45.8,49.4
     .accept 412 >> Accept Operation Recombobulation
 step
+#completewith next
 .goto Dun Morogh,43.1,45.0,20,0
 .goto Dun Morogh,42.1,45.4,20 >> Run up the ramp to Shimmerweed
 step
@@ -3098,7 +3126,24 @@ step
     .goto Dun Morogh,30.2,45.5
     .turnin 311 >>Turn in Return to Marleth
     .turnin 315 >>Turn in The Perfect Stout
-    .accept 413 >>Accept Shimmer Stout
+    .accept 413 >>Accept Shimmer Stout << tbc
+step
+    .goto Dun Morogh,31.5,38.9,40,0
+    .goto Dun Morogh,28.3,39.9,40,0
+    .goto Dun Morogh,28.7,43.7,40,0
+    .goto Dun Morogh,25.8,47.2,40,0
+    .goto Dun Morogh,25.8,47.2,40,0
+    .goto Dun Morogh,30.0,51.8,40,0
+.goto Dun Morogh,31.5,38.9,40,0
+    .goto Dun Morogh,28.3,39.9,40,0
+    .goto Dun Morogh,28.7,43.7,40,0
+    .goto Dun Morogh,25.8,47.2,40,0
+    .goto Dun Morogh,25.8,47.2,40,0
+    .goto Dun Morogh,30.0,51.8,40,0
+    >> Kill Bears, Boars and Leopards
+.complete 319,1 --Kill Ice Claw Bear (x6)
+    .complete 319,2 --Kill Elder Crag Boar (x8)
+    .complete 319,3 --Kill Snow Leopard (x8)
 step
     .goto Dun Morogh,30.2,45.7
     >>Speak to Rejold Barleybrew
@@ -3115,6 +3160,7 @@ step
 .goto Dun Morogh,22.7,52.0
     .complete 287,1 --Fully explore Frostmane Hold (1)
 step
+#xprate <1.5
     #requires hh
     .goto Dun Morogh,27.2,43.0,40,0
     .goto Dun Morogh,24.8,39.3,40,0
@@ -3129,21 +3175,21 @@ step
     >>Kill Leper Gnomes. Loot them for Gears and Cogs
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
-step
+step << tbc
     .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
-step
+step << tbc
     .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
-step
+step << tbc
 .goto Dun Morogh,33.0,27.2,15,0
     .goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
 .deathskip >>Keep running straight north, drop down and die, then respawn
-step
+step << tbc
 .goto Wetlands,12.7,46.7,30 >> Swim to shore
-step
+step << tbc
 .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
-step
+step << tbc
     #completewith next
     .hs >> Hearth back to Kharanos
 step
@@ -3152,6 +3198,7 @@ step
     .turnin 287 >>Turn in Frostmane Hold
     .accept 291 >>Accept The Reports
 step
+#xprate <1.5
     .goto Dun Morogh,45.9,49.4
     >>Speak to Razzle Sprysprocket
     .turnin 412 >>Turn in Operation Recombobulation
@@ -3187,15 +3234,33 @@ step
     .goto Dun Morogh,45.8,53.0
     .turnin 6085 >>Turn in Taming the Beast
     .accept 6086 >>Accept Training the Beast
-step
+step << tbc
     #sticky
 #completewith next
     +Tame an Ice Claw Bear or a Winter Wolf on your way to Ironforge
     .goto Dun Morogh,49.0,44.6,30,0
 .goto Dun Morogh,45.7,42.2,30,0
-step
+step << tbc
     .goto Ironforge,16.5,84.1
 .zone Ironforge >> Head to Ironforge
+step << wotlk
+#completewith next
+    .tame >> Tame a level 8+ wolf
+step << wotlk
+    .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
+step << wotlk
+    .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
+step << wotlk
+.goto Dun Morogh,33.0,27.2,15,0
+    .goto Dun Morogh,33.0,25.2,15,0
+    .goto Wetlands,11.6,43.4,60,0
+.deathskip >>Keep running straight north, drop down and die, then respawn
+step << wotlk
+.goto Wetlands,12.7,46.7,30 >> Swim to shore
+step << wotlk
+.goto Wetlands,9.5,59.7
+    .fp Menethil >> Get the Menethil Harbor flight path
+    .fly Ironforge >> Fly to Ironforge
 step
     .goto Ironforge,39.6,56.9
     .turnin 291 >>Turn in The Reports
@@ -3210,20 +3275,34 @@ step
     >>Speak to Belia Thundergranite
     .turnin 6086 >>Turn in Training the Beast
 step
-.goto Ironforge,77.0,51.0,30 >>Enter the Deeprun Tram
+#completewith next
+.goto Ironforge,77.0,51.0,20 >>Enter the Deeprun Tram
 step
+    >>Speak to the gnome at the middle platform of the train station
     .accept 6661 >> Accept Deeprun Rat Roundup
 step
     .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
-step
+step << wotlk
     .turnin 6661 >> Turn in Deeprun Rat Roundup
-step
+    .accept 6662 >> Accept Me Brother, Nipsy
+step << wotlk
+     >> Ride to the other side of the tram and turn in
+    .turnin 6662 >> Turn in Me Brother, Nipsy
+step << wotlk
+    .zone Stormwind City >> Exit the tram into Stormwind
+step << wotlk
+    .goto Stormwind City,57.0,57.6
+    .trainer >>Train Crossbows at the trade district
+step << wotlk
+    >>Head to the Stormwind Harbor
+    .zone Darkshore >> Take the boat to Darkshore
+step << tbc
 .goto Ironforge,77.0,51.0,40 >>Go back into Ironforge
-step
+step << tbc
     .goto Ironforge,55.5,47.8
     .fly Menethil >> Fly to Menethil
-step
+step << tbc
     .goto Wetlands,4.6,57.2
     .zone Darkshore >> Take the boat to Darkshore. Make bandages or sharpening stones while you wait.
 ]])

@@ -273,7 +273,6 @@ step << !Paladin !Mage !Warlock
     .goto Dun Morogh,28.8,66.4
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
     .accept 3365 >> Accept Bring Back the Mug
-    .vendor >> vendor trash
 step << Rogue
     .goto Dun Morogh,28.4,67.5
     .turnin 3113 >> Turn in Encrypted Memorandum << Gnome Rogue
