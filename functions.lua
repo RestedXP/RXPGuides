@@ -28,7 +28,8 @@ events.money = "PLAYER_MONEY"
 events.train = {
     "TRAINER_SHOW", "CHAT_MSG_SYSTEM", "SKILL_LINES_CHANGED", "TRAINER_UPDATE"
 }
-events.istrained = {"LEARNED_SPELL_IN_TAB", "TRAINER_UPDATE"}
+events.istrained = events.train
+events.spellmissing = events.train
 events.zone = "ZONE_CHANGED_NEW_AREA"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
@@ -2193,14 +2194,15 @@ function addon.functions.train(self, ...)
     end
 end
 
-function addon.functions.istrained(self, ...)
+function addon.functions.istrained(self, text, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         local args = {...}
-        args[1] = nil
         element.id = args
-        for _, id in pairs(args) do
-            if not C_Spell.IsSpellDataCached(id) then
+        for i, id in pairs(args) do
+            id = tonumber(id)
+            args[i] = id
+            if id and not C_Spell.IsSpellDataCached(id) then
                 C_Spell.RequestLoadSpellData(id)
             end
         end
@@ -2209,7 +2211,8 @@ function addon.functions.istrained(self, ...)
     end
 
     for _, id in pairs(self.element.id) do
-        if IsPlayerSpell(id) then
+        if IsPlayerSpell(id) or IsSpellKnown(id, true) or
+        IsSpellKnown(id) then
             self.element.step.completed = true
             addon.updateSteps = true
             return
@@ -2398,18 +2401,13 @@ function addon.functions.hideifcomplete(self)
     end
 end
 
-function addon.functions.spellMissing(self, ...)
+function addon.functions.spellmissing(self, text, id)
     if type(self) == "string" then -- on parse
-        local element = {}
-        local text, id, rank = ...
-        local spellId = tonumber(id)
-
-        element.id = spellId
-        element.textOnly = true
-
-        return element
+        id = tonumber(id)
+        if not id then return end
+        return {id = id, textOnly = true}
     end
-    if IsPlayerSpell(self.element.id) and self.element.step.active then
+    if not IsPlayerSpell(self.element.id) and self.element.step.active then
         addon.SetElementComplete(self)
         self.element.step.completed = true
         addon.updateSteps = true
