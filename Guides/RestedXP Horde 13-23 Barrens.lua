@@ -781,14 +781,14 @@ step
     *Water Seekers only spawn in the south western most camps. Go East or North West for Geomancers / Thornweavers.
 .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,45.2,54.3,50,0
-.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,42.2,48.3,50,0
+    .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,45.2,54.3,50,0
-.goto The Barrens,44.3,52.3,50,0
-    .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,45.2,54.3,50,0
-.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,53.2,54.3,50,0
+    .goto The Barrens,53.3,51.3,50,0
+    .goto The Barrens,53.2,54.3,50,0
+    .goto The Barrens,53.3,51.3,50,0
+    .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
     .goto The Barrens,45.2,54.3
 .complete 878,1 --Kill Bristleback Water Seeker (x6)
