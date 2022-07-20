@@ -1159,6 +1159,10 @@ step
     .turnin 6563 >>Turn in The Essence of Aku'Mai
     .turnin 6564 >>Turn in Allegiance to the Old Gods
 step
+    #sticky
+    #completewith next
+    .destroy 16784 >> Destroy any leftover Sapphires of Aku'Mai
+step
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >>Turn in Naga at the Zoram Strand
 step << Druid
