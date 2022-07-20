@@ -286,11 +286,11 @@ function addon.GetBestQuests(refreshQuestDB,output)
             end
         end
     end
-    --TODO: Sort low priority quests at the bottom of the list
+
+    local outputString = ""
+    local requestFromServer = true
 
     if output ~= 0 then
-        local outputString = ""
-        local requestFromServer = true
         for k, v in ipairs(qDB) do
             local id = v.Id
             local qname = addon.GetQuestName(id)
@@ -303,8 +303,17 @@ function addon.GetBestQuests(refreshQuestDB,output)
         if bit.band(output,0x1) == 0x1 then
             print(outputString)
         end
-        return outputString,not requestFromServer
     end
+
+    for i = #qDB, 1, -1 do
+        if i > 25 then
+            table.remove(qDB, i)
+        else
+            break
+        end
+    end
+
+    return outputString,not requestFromServer
 end
 
 
