@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Horde 1-30
 #next 23-27 Hillsbrad / Ashenvale
 step
-    .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
+    .zone Orgrimmar >> Run into Orgrimmar
 step
     >>Go to the top of the tower
     .goto Orgrimmar,45.1,63.9
@@ -16,12 +16,12 @@ step
     .goto Orgrimmar,39.8,37.0,20 >>Run into the Keep
 step << BloodElf
     .isOnQuest 9626
-.goto Orgrimmar,31.8,38.1
+    .goto Orgrimmar,31.8,38.1
     .turnin 9626 >> Turn in Meeting the Warchief
-.accept 9627 >> Accept Allegiance to the Horde
+    .accept 9627 >> Accept Allegiance to the Horde
 step << !BloodElf
     .isOnQuest 9813
-.goto Orgrimmar,31.8,38.1
+    .goto Orgrimmar,31.8,38.1
     .turnin 9813 >> Turn in Meeting the Warchief
 step
     .goto Orgrimmar,39.0,38.3
@@ -29,7 +29,7 @@ step
 step << Warlock
     #sticky
     >>You must abandon the quest Carendin's Summons to be able to accept Devourer of Souls
-.abandon 10605 >>Abandon Carendin Summons
+    .abandon 10605 >>Abandon Carendin Summons
 step << Warlock
     .goto Orgrimmar,48.2,45.3
     .accept 1507 >>Accept Devourer of Souls
@@ -44,9 +44,10 @@ step << Warlock
 step << BloodElf
     .goto Orgrimmar,31.8,38.2
     .accept 9428 >> Accept Report to Splintertree Post
+    .maxlevel 22
 step << Mage
     .goto Orgrimmar,38.7,85.4
-.train 11417 >> Go and train Portal: Orgrimmar
+    .train 11417 >> Go and train Portal: Orgrimmar
 step
     .goto Orgrimmar,52.5,85.1,50,0
     .goto Orgrimmar,49.1,94.3,50 >>Exit Orgrimmar
@@ -111,42 +112,45 @@ step
     .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
->>Finish collecting the white mushrooms around The Forgotten Pools
-.goto The Barrens,45.2,23.3,40,0
-.goto The Barrens,45.2,22.0,40,0
+    >>Finish collecting the white mushrooms around The Forgotten Pools
+    .goto The Barrens,45.2,23.3,40,0
+    .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4
-.complete 848,1 --Collect Fungal Spores (x4)
+    .complete 848,1 --Collect Fungal Spores (x4)
+    .isOnQuest 848
 step
->>Kill Kodobane. Loot him for his head
+    >>Kill Kodobane. Loot him for his head
     .goto The Barrens,42.9,23.5
     .complete 850,1 --Collect Kodobane's Head (x1)
 	.unitscan Barak Kodobane
+    .isOnQuest 859
 step
     #sticky
     #completewith next
     .goto The Barrens,35.3,27.9
->>Kill & Loot level 16+ raptors as you see them en route to the next step
+    >>Kill & Loot level 16+ raptors as you see them en route to the next step
     .complete 865,1 --Collect Intact Raptor Horn (x5)
     .isOnQuest 865
 step
+    .isOnQuest 1061
     .goto The Barrens,35.3,27.9
     .turnin 1061 >> Turn in The Spirits of Stonetalon
-    .accept 6548 >> Accept Avenge My Village
-    .maxlevel 22
+    .accept 1062 >> Accept Goblin Invaders
 step
     .goto The Barrens,35.3,27.9
-    .accept 1062 >> Accept Goblin Invaders
+    .accept 6548 >> Accept Avenge My Village
+    .maxlevel 22
 step
     .goto Stonetalon Mountains,81.8,96.1
     .zone Stonetalon Mountains >> Head to Stonetalon Mountains
 step
     >>Kill Grimtotems in the area
-.goto Stonetalon Mountains,80.7,89.2,50,0
+    .goto Stonetalon Mountains,80.7,89.2,50,0
     .goto Stonetalon Mountains,82.0,86.0,50,0
     .goto Stonetalon Mountains,84.7,84.3,50,0
     .goto Stonetalon Mountains,82.3,90.0,50,0
-.goto Stonetalon Mountains,80.7,89.2,50,0
+    .goto Stonetalon Mountains,80.7,89.2,50,0
     .goto Stonetalon Mountains,82.0,86.0,50,0
     .goto Stonetalon Mountains,84.7,84.3,50,0
     .goto Stonetalon Mountains,82.3,90.0
@@ -158,7 +162,7 @@ step
     >> Head back to the quest giver in The Barrens
     .turnin 6548 >> Turn in Avenge My Village
     .accept 6629 >> Accept Kill Grundig Darkcloud
-    .maxlevel 22
+    .isOnQuest 6548
 step
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
 step << Warlock
@@ -253,6 +257,7 @@ step
     #completewith next
     >>Kill Loggers as you search for Operators to get the Blueprints
     .complete 1062,1 --Kill Venture Co. Logger (x15)
+    .isOnQuest 1062
 step
     >>Kill Venture Co. Operators until you get the Blueprints
 .goto Stonetalon Mountains,62.8,53.7,40,0
@@ -265,21 +270,22 @@ step
 step
     >>Finish killing Loggers
     .goto Stonetalon Mountains,64.1,56.7,40,0
-.goto Stonetalon Mountains,73.4,54.3,40,0
+    .goto Stonetalon Mountains,73.4,54.3,40,0
     .goto Stonetalon Mountains,64.1,56.7,40,0
-.goto Stonetalon Mountains,73.4,54.3,40,0
+    .goto Stonetalon Mountains,73.4,54.3,40,0
     .goto Stonetalon Mountains,64.1,56.7,40,0
-.goto Stonetalon Mountains,73.4,54.3,40,0
+    .goto Stonetalon Mountains,73.4,54.3,40,0
     .goto Stonetalon Mountains,64.1,56.7,40,0
-.goto Stonetalon Mountains,73.4,54.3
-.complete 1062,1 --Kill Venture Co. Logger (x15)
+    .goto Stonetalon Mountains,73.4,54.3
+    .complete 1062,1 --Kill Venture Co. Logger (x15)
+    .isOnQuest 1062
 step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1093 >> Turn in Super Reaper 6000
     .accept 1094 >> Accept Further Instructions
 step
-#completewith next
-#requires deepmossegg
+    #completewith next
+    #requires deepmossegg
     .goto The Barrens,52.2,31.9
     .hs >> Hearth to Crossroads
 step
@@ -296,7 +302,7 @@ step
 step
     .isOnQuest 848
     >>Turning this in will start a timed quest. Log out here if you're going to be busy in the next 45+ minutes.
-.goto The Barrens,51.5,30.2
+    .goto The Barrens,51.5,30.2
     .turnin 848 >> Turn in Fungal Spores
 step
     .isQuestTurnedIn 848
@@ -312,10 +318,12 @@ step
     #completewith Horns
     >>Kill & Loot any level 16+ Raptors you see
     .complete 865,1 --Collect Intact Raptor Horn (x5)
+    .isOnQuest 865
 step
     >>Click the Bubble Fissure underwater
-.goto The Barrens,55.6,42.7
+    .goto The Barrens,55.6,42.7
     .complete 877,1 --Collect Test the Dried Seeds (x1)
+    .isOnQuest 877
 step
     #label Horns
     .goto The Barrens,52.2,46.6,40,0
@@ -328,7 +336,7 @@ step
     .complete 865,1 --Collect Intact Raptor Horn (x5)
     .isOnQuest 865
 step
-.goto The Barrens,49.3,50.4
+    .goto The Barrens,49.3,50.4
     >> Head to the small outpost by the road to the south
     .skipgossip
     .complete 4921,1 --Find Mankrik's Wife
@@ -362,7 +370,6 @@ step << Warlock
 step
     .goto The Barrens,44.5,59.2
     .accept 878 >> Accept Tribes at War
-    
 step
     .goto The Barrens,44.5,59.2
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
@@ -385,7 +392,7 @@ step << Warlock
     .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
     .goto The Barrens,45.2,54.3
-.complete 878,1 --Kill Bristleback Water Seeker (x6)
+    .complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
     .complete 878,3 --Kill Bristleback Geomancer (x12)
     .complete 899,1 --Collect Bristleback Quilboar Tusk (x60)
@@ -413,6 +420,9 @@ step
     .accept 889 >> Accept Spirit of the Wind
     .turnin 889 >> Turn in Spirit of the Wind
 step
+    #completewith tbroute
+    .destroy 5075 >> Destroy any leftover Blood Shards
+step
     .isOnQuest 884
     .goto The Barrens,44.9,59.1
     .turnin 884 >> Turn in Owatanka
@@ -421,16 +431,17 @@ step
         .goto The Barrens,44.9,59.1
     .turnin 883 >> Turn in Lakota'mani
 step << !Tauren
-.goto Thunder Bluff,32.1,67.2,30 >>Run to Thunder Bluff
+    #label tbroute
+    .goto Thunder Bluff,32.1,67.2,30 >>Run to Thunder Bluff
 step << !Tauren
-#completewith next
+    #completewith next
     .goto Thunder Bluff,45.8,64.7
 	.home >> Set your Hearthstone to Thunder Bluff
-step << Orc Warlock
+step << Warlock
     .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
 step << Tauren
-#completewith next
+    #completewith next
     .goto The Barrens,44.4,59.2
 	.fly Thunder Bluff>>Fly to Thunder Bluff
 step << Druid
@@ -445,12 +456,15 @@ step
     >>Talk to Clarice Foster
     .goto Thunder Bluff,27.5,24.7
     .accept 264 >> Accept Until Death Do Us Part
+    .maxlevel 22
 step
     .goto Thunder Bluff,23.0,20.9
     >> If you failed the Zamah quest, just abandon it
     .turnin 853 >> Turn in Apothecary Zamah
+step
+    .goto Thunder Bluff,23.0,20.9
     .accept 962 >> Accept Serpentbloom
-    .maxlevel 23
+    .maxlevel 22
 step << Tauren
     #completewith next
     .goto Thunder Bluff,45.8,64.7
@@ -500,12 +514,17 @@ step
     .turnin 4921 >> Turn in Lost in Battle
     .turnin 899 >> Turn in Consumed by Hatred
 step
+    #sticky
+    #completewith next
+    .destroy 5085 >> Destroy any leftover Quilboar Tusks
+step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
+    .isOnQuest 877
 step
-.goto The Barrens,47.0,34.7,15,0
-.goto The Barrens,46.4,34.9,15,0
-.goto The Barrens,46.6,34.8,10 >>Go up the mountain here
+    .goto The Barrens,47.0,34.7,15,0
+    .goto The Barrens,46.4,34.9,15,0
+    .goto The Barrens,46.6,34.8,10 >>Go up the mountain here
     .isOnQuest 959
 step
     .goto Kalimdor,51.9,55.4,30,0
@@ -532,19 +551,19 @@ step
     .complete 962,1 --Serpentbloom (10)
     .isOnQuest 962
 step
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.2,55.2
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.2,55.2
     >>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
     .complete 959,1 --Collect 99-Year-Old Port (1)
     .unitscan Mad Magglish
@@ -582,16 +601,19 @@ step
     .turnin 1486 >>Turn in Deviate Hides
     .isOnQuest 1486
 step
+    >> Head back to the Kolkar outpost
     .goto The Barrens,45.4,28.4
     .turnin 850 >> Turn in Kolkar Leaders
     .isOnQuest 850
 step
+    .isOnQuest 1062
     >> Head towards Stonetalon
     .goto The Barrens,35.3,27.8
     .turnin 1062 >> Turn in Goblin Invaders
     .accept 1063 >> Accept The Elder Crone
 step
     .isOnQuest 6523
+    >> Head towards Stonetalon
     .goto The Barrens,35.3,27.8
     .turnin 6629 >> Turn in Kill Grundig Darkcloud
     .turnin 6523 >> Turn in Protect Kaya
@@ -603,95 +625,156 @@ step
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
     .isOnQuest 6461
 step
+    .isOnQuest 6461
     .goto Stonetalon Mountains,71.3,95.0
     .turnin 6461 >> Turn in Blood Feeders
+step
+    #level 24
+    .isOnQuest 1095
+    >> Head back to the goblin hut behind the hill
+    .goto Stonetalon Mountains,59.0,62.6
+    .turnin 1095 >> Turn in Further Instructions
 step
     >> Head to Sun Rock Retreat
     >> Head up the side mountain path to your left once you reach Sun Rock
     .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
     .accept 6562 >> Accept Trouble in the Deeps
+    .maxlevel 24
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
+    .isOnQuest 6284
 step
     .goto Stonetalon Mountains,45.1,59.8
     .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
+    .maxlevel 23
 step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
     .isOnQuest 6401
 step
+    #level 24
+    .goto Stonetalon Mountains,45.1,59.8
+    .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
+step
+    .isOnQuest 1095
+    >> Head back to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
+    .maxlevel 24
 step
     #sticky
     #completewith next
-.goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
+    .goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
+    .maxlevel 24
 step
-.goto Ashenvale,42.3,71.0,20 >>Run through the cave to Ashenvale
+    .goto Ashenvale,42.3,71.0,20 >>Run through the cave to Ashenvale
+    .maxlevel 24
 step
-.goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
+    .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
+    .maxlevel 24
 step
     .goto Ashenvale,12.3,33.8
     .fp Zoram >> Get the Zoram'gar Outpost flight path
+    .maxlevel 24
 step
     .goto Ashenvale,11.8,34.7
     .accept 216 >> Accept Between a Rock and a Thistlefur
+    .maxlevel 24
 step
+    >> Talk to the trolls in the hut
     .goto Ashenvale,11.6,34.9
     .accept 6442 >> Accept Naga at the Zoram Strand
     .accept 6462 >> Accept Troll Charm
+    .maxlevel 24
 step
+    .isOnQuest 6562
     .goto Ashenvale,11.6,34.3
     .turnin 6562 >> Turn in Trouble in the Deeps
+step
+    .goto Ashenvale,11.6,34.3
     .accept 6563 >> Accept The Essence of Aku'Mai
+    .maxlevel 24
 step
     >>Accepting this quest starts an escort. Follow him
-.goto Ashenvale,12.1,34.4
+    .goto Ashenvale,12.1,34.4
     .accept 6641 >> Accept Vorsha the Lasher
+    .maxlevel 24
 step
-#sticky
-#label wrathtailhead
->>Kill the Nagas around the beach. Loot them for their heads
+    #sticky
+    #label wrathtailhead
+    >>Kill the Nagas around the beach. Loot them for their heads
     .goto Ashenvale,15.5,17.1
     .complete 6442,1 --Collect Wrathtail Head (x20)
+    .isOnQuest 6442
 step
->>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
+    >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
+    .isOnQuest 6641
 step
-.goto Ashenvale,14.2,14.7,40 >>Drop down the hole into Blackfathom Deeps
+    .goto Ashenvale,14.2,14.7,40 >>Drop down the hole into Blackfathom Deeps
+    .isOnQuest 6442
 step
+    #sticky
     #label Sapphires
-.goto Ashenvale,13.0,13.2,30,0
-.goto Ashenvale,13.6,9.0,30,0
-.goto Ashenvale,13.0,13.2,30,0
-.goto Ashenvale,13.6,9.0,30,0
-.goto Ashenvale,13.0,13.2,30,0
-.goto Ashenvale,13.6,9.0,30,0
-.goto Ashenvale,13.0,13.2,30,0
-.goto Ashenvale,13.6,9.0
-        >>Swim under the water, and enter Blackfathom Deeps. Grind mobs until a Damp Note drops, and loot the Sapphires from the walls in the tunnel.
-.collect 16790,1,6564 --Collect Damp Note
+    #completewith zoramend
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0
+    >>Swim under the water and enter Blackfathom Deeps. Kill the Priestess' until a Damp Note drops(quest). Then right click it and accept the quest.
+    .collect 16790,1,6564 --Collect Damp Note
     .accept 6564 >> Accept Allegiance to the Old Gods
-    .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
+    .isOnQuest 6442
 step
-#requires wrathtailhead
->>Return to Zoram'gar Outpost.
+    #requires Sapphires
+    >> Loot the Sapphires from the walls in the tunnel.
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0
+    .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
+    .isOnQuest 6563
+step
+    #label zoramend
+    #requires wrathtailhead
+    >>Return to Zoram'gar Outpost.
     .goto Ashenvale,12.2,34.2
     .turnin 6641 >> Turn in Vorsha the Lasher
+    .isOnQuest 6641
 step
     .goto Ashenvale,11.6,34.3
     .turnin 6563 >> Turn in The Essence of Aku'Mai
+    .isOnQuest 6553
 step
+    #sticky
+    #completewith next
+    .destroy 16784 >> Destroy any leftover Sapphires of Aku'Mai
+step
+    .goto Ashenvale,11.6,34.3
     .turnin 6564 >> Turn in Allegiance to the Old Gods
+    .isOnQuest 6564
 step
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >> Turn in Naga at the Zoram Strand
+    .isOnQuest 6442
 step << Druid
-    .cast 18960 >> Use the spell Teleport: Moonglade
+    #sticky
+    #completewith next
+     +Grind or log off until your hearthstone cooldown is less than 5 minutes
+    .cooldown item,6948,<5m
 step << Druid
+    .cast 18960 >> Use the spell Teleport: Moonglade once your hearthstone is available
     >>Go Upstairs
      .goto Moonglade,56.2,30.6
     .turnin 27 >>Turn in A Lesson to Learn
@@ -699,7 +782,7 @@ step << Druid
 step << Druid
 	#completewith next
     .goto Moonglade,52.5,40.5
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Druid
     >>Search for a vase in the lake. Loot it for a Shrine Bauble
     .goto Moonglade,54.6,46.5,25,0
@@ -714,27 +797,48 @@ step << Druid
     .turnin 28 >>Turn in Trial of the Lake
     .accept 30 >>Accept Trial of the Sea Lion
 step
-#completewith next
+    #completewith next
     .hs >> Hearth to Thunder Bluff
+    .zoneskip Stonetalon Mountains
 step
+    #completewith next
+    >> You can hearth if it is up
+    .goto Stonetalon Mountains,45.1,59.8
+    .fly Thunder Bluff >> Fly to Thunder Bluff 
+    .zoneskip Stonetalon Mountains,1
+step
+    .isOnQuest 1063
     .goto Thunder Bluff,69.8,30.8
     .turnin 1063 >> Turn in The Elder Crone
-step
-    .goto Thunder Bluff,70.2,30.8
+    >> Wait for the RP
     .accept 1064 >> Accept Forsaken Aid
 step
+    .isOnQuest 1064
+    >> Head to the pools under the Spirit Rise
     .goto Thunder Bluff,22.9,21.1
     .turnin 1064 >> Turn in Forsaken Aid
-    .turnin 962 >> Turn in Serpentbloom
     .accept 1065 >> Accept Journey to Tarren Mill
 step
+    .isOnQuest 962
+    >> Head to the pools under the Spirit Rise
+    .goto Thunder Bluff,22.9,21.1
+    .turnin 962 >> Turn in Serpentbloom
+step << !Druid
+	#completewith troubleatdocks1
+    .isOnQuest 959
+    .goto Thunder Bluff,47.0,49.9
+    .fly Ratchet >> Fly to Ratchet
+step << Druid
 	#completewith next
     .goto Thunder Bluff,47.0,49.9
     .fly Ratchet >> Fly to Ratchet
 step
+    #label troubleatdocks1
+    .isOnQuest 959
     .goto The Barrens,63.1,37.6
     .turnin 959 >>Turn in Trouble at the Docks
 step
+    .isOnQuest 1491
     .goto The Barrens,62.4,37.6
     .turnin 1491 >>Turn in Smart Drinks
 step << Druid
@@ -747,32 +851,33 @@ step << Druid
     .goto Orgrimmar,12.4,66.1,40 >>Enter Orgrimmar through the west entrance
 step << !Druid
     #completewith next
-    .goto Thunder Bluff,47.0,49.9
+    .goto Thunder Bluff,47.0,49.9,-1
+    .goto The Barrens,63.1,37.1,-1
     .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     #completewith next
     .goto Orgrimmar,32.4,35.8
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Shaman
     #completewith next
     .goto Orgrimmar,38.6,36.0
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Hunter
     #completewith next
     .goto Orgrimmar,66.1,18.5
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Hunter
     #completewith next
     .goto Orgrimmar,66.3,14.8
-.trainer >> Go and train your pet spells
+    .trainer >> Go and train your pet spells
 step << Warrior
     #completewith next
     .goto Orgrimmar,79.7,31.4
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Rogue
     #completewith next
     .goto Orgrimmar,44.0,54.6
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Warlock
     #completewith next
     .goto Orgrimmar,48.0,46.0
@@ -782,22 +887,22 @@ step << Warlock
 	.goto Orgrimmar,47.5,46.7
     .vendor >> Buy a Grimoire of Soothing Kiss
 	.collect 16375,1
-    >>You can buy the Voidwalker books too, but its recommended not to and to save your money for later
+    >>You can buy the Voidwalker books too if you prefer the Voidwalker.
 step << Mage
-#completewith next
+    #completewith next
     .goto Orgrimmar,38.8,85.6
-.trainer >> Go and train your class spells
+        .trainer >> Go and train your class spells
 step << Priest
-#completewith next
+    #completewith next
     .goto Orgrimmar,35.6,87.8
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Rogue
     .goto Orgrimmar,43.1,53.7
     .accept 2460 >>Accept The Shattered Salute
 step << Rogue
     >>Target Shenthul and type /salute
 	.emote SALUTE,3401
-.complete 2460,1 --Shattered Salute Performed (1)
+    .complete 2460,1 --Shattered Salute Performed (1)
 step << Rogue
     .goto Orgrimmar,43.1,53.7
     .turnin 2460 >>Turn in The Shattered Salute
@@ -807,9 +912,9 @@ step << Rogue
     .train 1759 >>Train Sinister Strike r4
 step << Rogue
 	#completewith next
-.goto Orgrimmar,42.1,49.5
-.vendor >> Buy at least 1 Flash Powder from Rekkul
-.collect 5140,1 --Collect Flash Powder
+    .goto Orgrimmar,42.1,49.5
+    .vendor >> Buy at least 1 Flash Powder from Rekkul
+    .collect 5140,1 --Collect Flash Powder
 step << Rogue
     #sticky
     #completewith next
@@ -826,19 +931,19 @@ step << Rogue
     .complete 2478,5 --Silixiz's Tower Key (1)
 step << Rogue
     .cast 8676 >>Go into the tower & equip your dagger. Ambush one of the Drones. This will instantly kill them. Run away, come back, and do the same to the other Drone
-.goto The Barrens,54.7,5.7
+    .goto The Barrens,54.7,5.7
     .complete 2478,1 --Mutated Venture Co. Drone (2)
 step << Rogue
     .cast 1943 >>Go upstairs to the next floor. Re-equip your main weapon. Use a 1 Combo Point Rupture to kill the mobs. This should do 50% of their health each time
-.goto The Barrens,54.7,5.8
+    .goto The Barrens,54.7,5.8
 .complete 2478,3 --Venture Co. Patroller (2)
 step << Rogue
     .cast 6761 >>Go onto the third floor of the tower. Use a 1 Combo Point Eviscerate to kill the mobs. This should do 50% of their health each time
-.goto The Barrens,54.6,5.6
-.complete 2478,2 --Venture Co. Lookout (2)
+    .goto The Barrens,54.6,5.6
+    .complete 2478,2 --Venture Co. Lookout (2)
 step << Rogue
     >>Go to the top floor of the tower. Equip your dagger again (make sure your cooldowns are up). Ambush Gallywix then re-equip your main weapon in your main hand. Use all of your cooldowns & potions to kill Gallywix. Loot his head after you kill him.
-.goto The Barrens,54.8,5.6
+    .goto The Barrens,54.8,5.6
     .complete 2478,4 --Gallywix's Head (1)
 step << Rogue
     >>Lockpick the box in front of Gallywix in the top floor to loot the Altered Mixture
@@ -866,9 +971,9 @@ step << Warlock
     >>Use the Succubus from now on
     .goto Orgrimmar,48.2,45.3
     .turnin 1513 >>Turn in The Binding
-step
-    #completewith next
-    .home >> Set your Hearthstone to Orgrimmar
+step << Warlock
+    .goto Orgrimmar,48.2,45.3
+    .trainer >> Train your class spells
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -881,7 +986,8 @@ RXPGuides.RegisterGuide([[
 #next 27-30 Lower Barrens / Thousand Needles
 
 step << !Shaman
-#completewith next
+    #completewith next
+    .goto Orgrimmar,54.1,68.5
     .home >> Set your Hearthstone to Orgrimmar
 step
     #sticky
@@ -900,14 +1006,15 @@ step
     .accept 493 >> Accept Journey to Hillsbrad Foothills
 step
     >>Click the stone grave on the ground
-.goto Silverpine Forest,44.1,42.5
+    .goto Silverpine Forest,44.1,42.5
     .turnin 264 >> Turn in Until Death Do Us Part
+    .isOnQuest 264
 step
     .goto Silverpine Forest,45.6,42.6
     .fp The Sepulcher >> Get the The Sepulcher flight path
 step
     >>Run down to Hillsbrad
-.goto Hillsbrad Foothills,20.9,47.2
+    .goto Hillsbrad Foothills,20.9,47.2
     .accept 494 >> Accept Time To Strike
 step
     >>Run to Tarren Mill & get the flight path.
@@ -934,6 +1041,7 @@ step
     .goto Hillsbrad Foothills,63.2,20.6
     .accept 498 >> Accept The Rescue
 step
+    >> Head into the small house
     .goto Hillsbrad Foothills,61.5,19.1
     .turnin 493 >> Turn in Journey to Hillsbrad Foothills
     .turnin 1065 >> Turn in Journey to Tarren Mill
@@ -978,25 +1086,28 @@ step
 .complete 1066,1 --Collect Vial of Innocent Blood (x5)
 step << !Rogue !Hunter !Shaman
     #sticky
-.goto Hillsbrad Foothills,80.1,38.9
-    >>Vendor trash & repair if needed
+    .goto Hillsbrad Foothills,80.1,38.9
+    .vendor >>Vendor trash & repair if needed at Kris Legace, behind the ruined keep.
 step << Rogue/Hunter/Shaman
     #sticky
-.goto Hillsbrad Foothills,80.1,38.9
-    >>Vendor trash & repair if needed. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
+    .goto Hillsbrad Foothills,80.1,38.9
+    .vendor >>Vendor trash & repair if needed at Kris Legace, behind the ruined keep. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
 step
 	.goto Hillsbrad Foothills,79.8,39.3
 	>>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
+    .unitscan Jailor Marlgen
     .collect 3499,1
 step
     >>Click the ball next to Tog'thar
-.goto Hillsbrad Foothills,79.8,39.6
+    .goto Hillsbrad Foothills,79.8,39.6
     .complete 498,2 --Rescue Tog'thar (1)
 step
-    >>Kill Jailor Eston. Loot him for his Dull Iron Key
-.goto Hillsbrad Foothills,79.4,41.6
-.collect 3467,1
-.unitscan Jailor Eston
+    >>Kill Jailor Eston. Loot him for his Dull Iron Key. He has a few spawn points.
+    .unitscan Jailor Eston
+    .goto Hillsbrad Foothills,79.4,41.6,40,0
+    .goto Hillsbrad Foothills,75.8,42.4,40,0
+    .goto Hillsbrad Foothills,79.4,41.6
+    .collect 3467,1
 step
     >>Click the ball next to Drull
 .goto Hillsbrad Foothills,75.3,41.5
@@ -1020,52 +1131,58 @@ step
     .turnin 498 >> Turn in The Rescue
 	.turnin 549 >> Turn in WANTED: Syndicate Personnel
 step
-#sticky
-#label Farmers
->>Kill Farmers in and around the fields
+    #sticky
+    #completewith bearsohmy
+    >>Kill Bears and Mountain Lions as you quest. Loot them for Tongues and Blood
+    .complete 496,1 --Collect Gray Bear Tongue (x10)
+    .complete 501,1 --Collect Mountain Lion Blood (x10)
+step
+    #sticky
+    #label Farmers
+    >>Kill Farmers in and around the fields
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
 	.complete 527,2 --Kill Hillsbrad Farmhand (x6)
 step
->>Kill Farmer Ray. He can be in the 1st or 2nd floor of the house. He can also be outside under the grapevine (hut)
-.goto Hillsbrad Foothills,33.7,35.5,25,0
-.goto Hillsbrad Foothills,33.2,34.8,25,0
-.goto Hillsbrad Foothills,33.7,35.5,25,0
-.goto Hillsbrad Foothills,33.2,34.8,25,0
-.goto Hillsbrad Foothills,33.7,35.5,25,0
-.goto Hillsbrad Foothills,33.2,34.8,25,0
-.goto Hillsbrad Foothills,33.7,35.5,25,0
-.goto Hillsbrad Foothills,33.2,34.8,25,0
-.goto Hillsbrad Foothills,33.7,35.5,25,0
-.goto Hillsbrad Foothills,33.2,34.8,25,0
-.goto Hillsbrad Foothills,33.2,34.8
-.complete 527,3 --Kill Farmer Ray (x1)
-.unitscan Farmer Ray
+    >>Kill Farmer Ray. He can be in the 1st or 2nd floor of the house. He can also be outside under the grapevine (hut)
+    .goto Hillsbrad Foothills,33.7,35.5,25,0
+    .goto Hillsbrad Foothills,33.2,34.8,25,0
+    .goto Hillsbrad Foothills,33.7,35.5,25,0
+    .goto Hillsbrad Foothills,33.2,34.8,25,0
+    .goto Hillsbrad Foothills,33.7,35.5,25,0
+    .goto Hillsbrad Foothills,33.2,34.8,25,0
+    .goto Hillsbrad Foothills,33.7,35.5,25,0
+    .goto Hillsbrad Foothills,33.2,34.8,25,0
+    .goto Hillsbrad Foothills,33.7,35.5,25,0
+    .goto Hillsbrad Foothills,33.2,34.8,25,0
+    .goto Hillsbrad Foothills,33.2,34.8
+    .complete 527,3 --Kill Farmer Ray (x1)
+    .unitscan Farmer Ray
 step
->>Kill Farmer Getz. He can be:
-.goto Hillsbrad Foothills,36.7,39.4,30 >> In the house
-.goto Hillsbrad Foothills,35.2,37.6,30 >> In the barn
-.goto Hillsbrad Foothills,35.1,41.0,30 >> In the field
-.unitscan Farmer Getz
-.complete 527,4 --Kill Farmer Getz (x1)
+    >>Kill Farmer Getz. He can be in the house, barn, or in the fields
+    .goto Hillsbrad Foothills,36.7,39.4,30,0
+    .goto Hillsbrad Foothills,35.2,37.6,30,0
+    .goto Hillsbrad Foothills,35.1,41.0,30,0
+    .unitscan Farmer Getz
+    .complete 527,4 --Kill Farmer Getz (x1)
 step
-#requires Farmers
->>Return to Tarren Mill
+    #requires Farmers
+    >>Return to Tarren Mill
     .goto Hillsbrad Foothills,62.3,20.2
     .turnin 527 >> Turn in Battle of Hillsbrad
-step
-    .goto Hillsbrad Foothills,62.5,20.3
     .accept 528 >> Accept Battle of Hillsbrad
     .accept 546 >> Accept Souvenirs of Death
+    .goto Hillsbrad Foothills,62.1,19.8
 step
+    #label bearsohmy
     >>Kill Bears and Mountain Lions. Loot them for Tongues and Blood
-.goto Hillsbrad Foothills,54.9,29.8,40,0
+    .goto Hillsbrad Foothills,54.9,29.8,40,0
     .goto Hillsbrad Foothills,50.5,37.7,40,0
     .goto Hillsbrad Foothills,43.7,39.9,40,0
     .goto Hillsbrad Foothills,38.4,34.9,40,0
     .goto Hillsbrad Foothills,39.1,45.4,40,0
 	.goto Hillsbrad Foothills,54.9,29.8
-.complete 496,1 --Collect Gray Bear Tongue (x10)
-.complete 501,1 --Collect Mountain Lion Blood (x10)
+    .complete 496,1 --Collect Gray Bear Tongue (x10)
+    .complete 501,1 --Collect Mountain Lion Blood (x10)
 step
     #sticky
     #label Wilkes
@@ -1081,7 +1198,7 @@ step
 	.unitscan Farmer Kalaba
 step
     #label Peasants
-	>>Kill Peasants in and around the field
+	>>Kill Peasants in and around the field. Loot them for skulls, but don't worry about finishing skulls yet.
 	.goto Hillsbrad Foothills,35.2,46.5
 	.complete 528,1 --Kill Hillsbrad Peasant (x15)
 step
@@ -1112,6 +1229,7 @@ step
     #completewith next
     +While turning in Elixir of Pain, you can kill Stanley after for a bunch of extra XP
 step
+    >> Speak to Stanley the dog
 	.goto Hillsbrad Foothills,32.6,35.6
     .turnin 502 >> Turn in Elixir of Pain
 step
@@ -1121,7 +1239,7 @@ step
 	.goto Hillsbrad Foothills,32.0,45.4
     .complete 529,3 --Collect Shipment of Iron (x1)
 step
-	>>Run back to the Hillsbrad Fields
+	>>Run to the blacksmith
 	.goto Hillsbrad Foothills,32.1,45.3
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .complete 529,2 --Kill Hillsbrad Apprentice Blacksmith (x4)
@@ -1208,26 +1326,26 @@ step
 step
     .goto Ashenvale,88.5,64.9,40  >> Run to the Lumber Camp
 step
-    .goto Ashenvale,81.7,62.9,40  >> Run through the camp to here
+    .goto Ashenvale,81.7,62.9,80  >> Run through the camp to here
 step
     .goto Ashenvale,73.2,61.6
     .fp Splintertree >> Get the Splintertree Post flight path
 step
-    .goto Ashenvale,73.2,61.5
     .accept 6441 >> Accept Satyr Horns
-step
-    .goto Ashenvale,73.8,61.5
+    .goto Ashenvale,73.1,61.5
     .turnin 6383 >> Turn in The Ashenvale Hunt
+    .goto Ashenvale,73.8,61.5
 step
     #completewith next
     .goto Ashenvale,74.0,60.6
 	.home >> Set your Hearthstone to Splintertree Post
 step
-    .goto Ashenvale,73.5,60.1
+    .goto Ashenvale,73.6,60.0
     .accept 25 >> Accept Stonetalon Standstill
 step << BloodElf
     .goto Ashenvale,71.3,67.8
     .turnin 9428 >> Turn in Report to Splintertree Post
+    .isOnQuest 9428
 step
     .goto Ashenvale,71.1,68.1
     .accept 6503 >> Accept Ashenvale Outrunners
@@ -1242,7 +1360,9 @@ step
     .goto Ashenvale,68.3,75.3
     .accept 6544 >> Accept Torek's Assault
 step
->>Follow Torek. This quest can get a bit hard. The final wave, run as far into the building as you can. Have Torek tank some of the mobs.
+    >>Follow Torek. This quest can get a bit hard. It will spawn a wave of enemies, you may need to skip. 
+    >> Run as far into the building as you can. Have Torek tank some of the mobs. If you die abandon this quest. 
+    * Use your voidwalker here << Warlock
     .goto Ashenvale,64.6,75.3
     .complete 6544,1 --Take Silverwing Outpost.
 step
@@ -1326,7 +1446,7 @@ step
     .goto Ashenvale,43.8,63.6,40,0
     .goto Ashenvale,41.4,65.9,40,0
     .goto Ashenvale,44.3,68.6
->>Look for Ursangous (Bear). He patrols clockwise. Kill and loot him for Ursangous's Paw then click it to accept the quest.
+    >>Look for Ursangous (Bear). He patrols clockwise. Kill and loot him for Ursangous's Paw then click it to accept the quest.
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
     .accept 23 >> Accept Ursangous's Paw
 	.unitscan Ursangous
