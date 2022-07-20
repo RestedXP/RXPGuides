@@ -442,10 +442,12 @@ function addon.CalculateTotalXP(flags)
         local scryer = addon.AldorScryerCheck("Scryer") and 934
         ignorePreReqs = aldor or scryer or 932
     end
-
-    local function ProcessQuest(quest,qid)
+    local groups = {}
+    local function ProcessQuest(quest,qid,skipgrpcheck)
         qid = qid or quest.Id
-        if IsQuestAvailable(quest,qid,ignorePreReqs) and (ignorePreReqs or (IsPreReqComplete(quest))) then
+        local group = quest.group or ""
+        if (group == "" or skipgrpcheck or groups[group]) and IsQuestAvailable(quest,qid,ignorePreReqs) and (ignorePreReqs or (IsPreReqComplete(quest))) then
+            groups[group] = true
             local xp = quest.xp or 0
             totalXp = totalXp + xp
             if output then
@@ -455,15 +457,18 @@ function addon.CalculateTotalXP(flags)
         end
     end
     if not addon.questLogQuests then addon.GetBestQuests(true) end
-    for i = 1, 25 do
-        local quest = addon.questLogQuests[i]
-        if quest and (ignorePreReqs or addon.IsQuestComplete(quest.Id)) then
-            ProcessQuest(quest)
+    if ignorePreReqs then
+        for i = 1, 25 do
+            local quest = addon.questLogQuests[i]
+            if quest then
+                ProcessQuest(quest)
+            end
         end
     end
-
     for id, quest in pairs(addon.QuestDB) do
-        if not (quest.questLog or addon.IsQuestTurnedIn(id)) then
+        if not ignorePreReqs and quest.questLog and addon.IsQuestComplete(id) then
+            ProcessQuest(quest,id,true)
+        elseif not (quest.questLog or addon.IsQuestTurnedIn(id)) then
             local item = quest.itemId
             if ignorePreReqs and item then
                 ProcessQuest(quest,id)
