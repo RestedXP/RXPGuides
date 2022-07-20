@@ -945,11 +945,11 @@ local p2 = 	{
 }
 
 local function GetMapCoefficients(p1x,p1y,p1xb,p1yb,p2x,p2y,p2xb,p2yb)
-    local ax = (p1xb-p2xb)/(p1x-p2x)
-    local bx = p1xb-p1x*ax
-    local ay = (p1yb-p2yb)/(p1y-p2y)
-    local by = p1yb-p1y*ax
-    return {ax,bx,ay,by}
+    local c11 = (p1xb-p2xb)/(p1x-p2x)
+    local c31 = p1xb-p1x*c11
+    local c22 = (p1yb-p2yb)/(p1y-p2y)
+    local c32 = p1yb-p1y*c22
+    return {c11,c31,c22,c32}
 end
 
 addon.classicToWrath = GetMapCoefficients(p1.x,p1.y,p1.xb,p1.yb,p2.x,p2.y,p2.xb,p2.yb)
