@@ -1372,20 +1372,21 @@ function addon.functions.home(self, ...)
     local event = ...
     if event == "HEARTHSTONE_BOUND" then
         addon.SetElementComplete(self)
+        element.confirm = false
     elseif event == "CONFIRM_BINDER" then
         ConfirmBinder()
+        element.confirm = true
+        _G.StaticPopup1:Hide()
     elseif not element.confirm and event == "GOSSIP_SHOW" then
         if C_GossipInfo.GetOptions then
             for i,option in ipairs(GossipGetOptions()) do
                 if option.type == "binder" then
-                    element.confirm = true
                     return GossipSelectOption(i)
                 end
             end
         else
-            for i,gossipType in ipairs(GossipGetOptions()) do
+            for i,gossipType in ipairs({GossipGetOptions()}) do
                 if i % 2 == 0 and gossipType == "binder" then
-                    element.confirm = true
                     return GossipSelectOption(i/2)
                 end
             end
