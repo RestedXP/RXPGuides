@@ -164,7 +164,7 @@ function addon.QuestAutoTurnIn(title)
                 element = v
             end
         end
-        return (element and element.step.active) and element.reward
+        return (element and element.step.active) and element.reward >= 0
     end
 end
 
@@ -670,6 +670,7 @@ local eventType
 local updateTick = 0
 local updateStart = 0
 
+local skip = 0
 updateFrame:SetScript("OnUpdate", function(self, diff)
 
     updateTick = updateTick + diff
@@ -678,7 +679,7 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
         updateTick = 0
         updateStart = currentTime
         local activeQuestUpdate = 0
-        local skip
+        skip = skip + 1
         local event = ""
 
         if not addon.loadNextStep then
@@ -690,7 +691,7 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
             if activeQuestUpdate > 0 then event = event .. "/activeQ" end
         end
         if addon.nextStep then
-            skip = true
+            skip = 1
             addon.SetStep(addon.nextStep)
             addon.questAutoAccept = true
             addon.updateBottomFrame = true
@@ -699,14 +700,14 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
             addon.loadNextStep = false
             addon.SetStep(RXPCData.currentStep + 1)
             addon.questAutoAccept = true
-            skip = true
+            skip = 1
             addon.updateBottomFrame = true
             event = event .. "/loadNext"
         elseif activeQuestUpdate == 0 then
             if addon.updateSteps then
                 addon.UpdateStepCompletion()
                 event = event .. "/stepComplete"
-            elseif addon.updateStepText and addon.currentGuide then
+            elseif addon.updateStepText and addon.currentGuide and skip % 2 == 1 then
                 addon.updateStepText = false
                 local updateText
                 local steps = addon.currentGuide.steps
@@ -725,18 +726,19 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                     addon.RXPFrame.CurrentStepFrame.UpdateText()
                 end
                 event = event .. "/updateText"
-                skip = true
             elseif addon.updateBottomFrame or currentTime - addon.tickTimer > 5 then
                 addon.RXPFrame.BottomFrame.UpdateFrame()
                 addon.RXPFrame.CurrentStepFrame.UpdateText()
                 addon.RXPFrame.SetStepFrameAnchor()
                 addon.tickTimer = currentTime
                 event = event .. "/bottomFrame"
-                skip = true
+                skip = 1
             end
+        else
+            addon.UpdateItemCooldown()
         end
 
-        if not skip then
+        if skip % 4 == 2 then
             if addon.questAutoAccept then
                 addon.questAutoAccept = false
                 addon.QuestAutomation()
@@ -758,15 +760,16 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                     event = event .. "/inactiveQ"
                 end
             end
+        elseif skip % 4 == 0 then
             addon.UpdateGotoSteps()
-            addon.UpdateItemCooldown()
+            --event = event .. "/updateGoto"
+        elseif skip % 4 == 3 then
             addon.UpdateScheduledTasks()
         end
-
-        if event ~= "" then
+        --[[if event ~= "" then
             eventType = event
-            -- print(event)
-        end
+            print(event)
+        end]]
     end
 end)
 

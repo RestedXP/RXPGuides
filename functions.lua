@@ -201,7 +201,7 @@ function addon.GetQuestName(id)
         end
     else
         local ctime = GetTime()
-        if ctime - timer > 1 then
+        if ctime - timer > 1.5 then
             timer = ctime
             nrequests = 0
         end
@@ -368,7 +368,7 @@ function addon.GetQuestObjectives(id, step)
 
     if not IsOnQuest(id) or err then
         local ctime = GetTime()
-        if ctime - timer > 1 then
+        if ctime - timer > 1.5 then
             timer = ctime
             nrequests = 0
         end

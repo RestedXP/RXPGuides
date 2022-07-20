@@ -64,6 +64,8 @@ function addon.UpdateArrow(self)
                 self.text:SetText(step.title or
                                       string.format("Step %d\n(%dyd)",
                                                     step.index, dist))
+            elseif element.title then
+                self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
             else
                 self.text:SetText(string.format("(%dyd)", dist))
             end
@@ -703,9 +705,13 @@ local function addMiniMapPins(pins)
     end
 end
 
+local isPlayerDead = false
+local corpseWP = {title = "Corpse", generated = true}
 -- Updates the arrow
+
 local function updateArrow()
-    local lowPrioWPs = {}
+
+    local lowPrioWPs
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.lowPrio and not lowPrio then
             table.insert(lowPrioWPs, element)
@@ -724,17 +730,30 @@ local function updateArrow()
             return true
         end
     end
-    af.element = false
+
+    isPlayerDead = UnitIsGhost("player")
+    if isPlayerDead and --Meet at the grave and the follow-up quest:
+        not (addon.QuestAutoTurnIn(3912) or addon.QuestAutoAccept(3913)) then
+        local zone = HBD:GetPlayerZone()
+        local corpse = C_DeathInfo.GetCorpseMapPosition(zone)
+        if corpse and corpse.x  then
+            local wx, wy, i = HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)
+            corpseWP.wx = wx
+            corpseWP.wy = wy
+            corpseWP.instance = i
+            ProcessWaypoint(corpseWP)
+            return
+        end
+    end
+    lowPrioWPs = {}
     for i, element in ipairs(addon.activeWaypoints) do
-        RXPCData.completedWaypoints[i] =
-            RXPCData.completedWaypoints[i] or element.skip
-        if ProcessWaypoint(element, nil, RXPCData.completedWaypoints[i]) then
+        if ProcessWaypoint(element) then
             return
         end
     end
 
     for i, element in ipairs(lowPrioWPs) do
-        if ProcessWaypoint(element, true, RXPCData.completedWaypoints[i]) then
+        if ProcessWaypoint(element, true) then
             return
         end
     end
@@ -784,14 +803,16 @@ end
 
 hooksecurefunc(_G.WorldMapFrame, "OnMapChanged", DisplayLines);
 
+
 function addon.UpdateGotoSteps()
     local hideArrow = false
+    local forceArrowUpdate = UnitIsGhost("player") ~= isPlayerDead
     DisplayLines()
-    if #addon.activeWaypoints == 0 then
+    if #addon.activeWaypoints == 0 and not forceArrowUpdate then
         af:Hide()
         return
     end
-    local minDist, forceArrowUpdate
+    local minDist
 
     local x, y, instance = HBD:GetPlayerWorldPosition()
     if af.element and af.element.instance ~= instance then hideArrow = true end
