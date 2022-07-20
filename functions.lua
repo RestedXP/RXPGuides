@@ -15,7 +15,7 @@ events.turnin = "QUEST_TURNED_IN"
 events.complete = "QUEST_LOG_UPDATE"
 events.fp = {"UI_INFO_MESSAGE", "TAXIMAP_OPENED"}
 events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
-events.home = "HEARTHSTONE_BOUND"
+events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED"}
 events.deathskip = "CONFIRM_XP_LOSS"
 events.xp = {"PLAYER_XP_UPDATE", "PLAYER_LEVEL_UP"}
@@ -1346,6 +1346,9 @@ function addon.functions.hs(self, ...)
     end
 end
 
+local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
+local GossipGetOptions = C_GossipInfo.GetOptions or _G.GetGossipOptions
+
 function addon.functions.home(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
@@ -1360,9 +1363,34 @@ function addon.functions.home(self, ...)
         element.tooltipText = addon.icons.home .. element.text
         return element
     end
-    if not self.element.step.active then return end
+
+    local element = self.element
+    if not element.step.active then
+        element.confirm = false
+        return
+    end
     local event = ...
-    if event == "HEARTHSTONE_BOUND" then addon.SetElementComplete(self) end
+    if event == "HEARTHSTONE_BOUND" then
+        addon.SetElementComplete(self)
+    elseif event == "CONFIRM_BINDER" then
+        ConfirmBinder()
+    elseif not element.confirm and event == "GOSSIP_SHOW" then
+        if C_GossipInfo.GetOptions then
+            for i,option in ipairs(GossipGetOptions()) do
+                if option.type == "binder" then
+                    element.confirm = true
+                    return GossipSelectOption(i)
+                end
+            end
+        else
+            for i,gossipType in ipairs(GossipGetOptions()) do
+                if i % 2 == 0 and gossipType == "binder" then
+                    element.confirm = true
+                    return GossipSelectOption(i/2)
+                end
+            end
+        end
+    end
 end
 
 function addon.functions.fp(self, ...)
