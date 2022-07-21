@@ -387,10 +387,10 @@ local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
     return false
 end
 
+local lsh = bit.lshift
 local function GetPinHash(x,y,instance,element)
-    local c1,c2,c3,c4 = 569,619,89,571
-    return math.floor(x*128)*c1+math.floor(y*128)*c2+instance*c3+element*c4
-
+    return (instance % 256) + lsh(math.floor(x*128),8) +
+            lsh(math.floor(y*1024),15) + lsh((element % 64),25)
 end
 -- Creates a list of Pin data structures.
 --
@@ -439,12 +439,14 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         --
         -- If it is far enough away, we add a new pin to the map.
         local j = 1;
+        local n = 0;
         while numActivePins < numPins and j <= #step.elements do
             local element = step.elements[j]
 
             local skipWp = not(element.zone and element.x)
             if not element.wpHash and not skipWp then
-                element.wpHash = GetPinHash(element.x,element.y,element.zone,j)
+                element.wpHash = GetPinHash(element.x,element.y,element.zone,n)
+                n = n + 1
             end
             if not isMiniMap and step.active and not skipWp then
                 local wpList = RXPCData.completedWaypoints[step.index] or {}
@@ -483,6 +485,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                             wy = element.wy,
                             zone = element.zone,
                             parent = element.parent,
+                            wpHash = element.wpHash,
                         })
                     end
                 end
@@ -559,6 +562,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
         end
 
         local j = 1
+        local n = 0
         while numActivePins < numPins and j <= #step.elements do
             local element = step.elements[j]
 
@@ -623,6 +627,8 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                                 range = element.range,
                                 generated = true
                             }
+                            point.wpHash = GetPinHash(x,y,element.zone,n)
+                            n = n + 1
                             table.insert(addon.linePoints, point)
                             table.insert(addon.activeWaypoints, point)
                         end
@@ -706,7 +712,7 @@ local function addMiniMapPins(pins)
 end
 
 local isPlayerDead = false
-local corpseWP = {title = "Corpse", generated = true}
+local corpseWP = {title = "Corpse", generated = true, wpHash = 0}
 -- Updates the arrow
 
 local function updateArrow()
@@ -736,11 +742,9 @@ local function updateArrow()
         not (addon.QuestAutoTurnIn(3912) or addon.QuestAutoAccept(3913)) then
         local zone = HBD:GetPlayerZone()
         local corpse = C_DeathInfo.GetCorpseMapPosition(zone)
-        if corpse and corpse.x  then
-            local wx, wy, i = HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)
-            corpseWP.wx = wx
-            corpseWP.wy = wy
-            corpseWP.instance = i
+        if corpse and corpse.x then
+            corpseWP.wx, corpseWP.wy, corpseWP.instance =
+                             HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)
             ProcessWaypoint(corpseWP)
             return
         end
@@ -846,7 +850,8 @@ function addon.UpdateGotoSteps()
                         if dist <= element.radius then
                             if element.persistent then
                                 hideArrow = true
-                            else
+                            elseif not (element.textOnly and element.hidePin and
+                                                         element.wpHash ~= af.element.wpHash) then
                                 element.skip = true
                                 addon.updateMap = true
                                 addon.SetElementComplete(element.frame)

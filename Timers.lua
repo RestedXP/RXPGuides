@@ -157,7 +157,7 @@ function addon.GetFlightHash(index,level)
         x,y = TaxiNodePosition(index)
     end
     --print('h:',x,y)
-    return math.floor(x*2048)*1223+math.floor(y*2048)*1069
+    return math.floor(x*4096)+math.floor(y*4096)*4096
 end
 
 local function GetFlightTime(index)
