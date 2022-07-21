@@ -214,7 +214,8 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
         end
     end
 
-    if addon.IsQuestTurnedIn(id) or not repCheck then
+    if addon.IsQuestTurnedIn(id) or not repCheck
+        or (quest.completewith and addon.IsQuestTurnedIn(quest.completewith)) then
         return false
     end
 
