@@ -354,8 +354,10 @@ step
 step
     #requires Lakota1
     #label weapons
+step
     .goto The Barrens,45.1,57.7
     .accept 893 >>Accept Weapons of Choice
+    .maxlevel 26
 step
     .isOnQuest 883
     .goto The Barrens,44.7,59.1
@@ -1337,6 +1339,7 @@ step
     .goto Ashenvale,73.8,61.5
 step
     #completewith next
+    .isOnQuest 216
     .goto Ashenvale,74.0,60.6
 	.home >> Set your Hearthstone to Splintertree Post
 step
@@ -1398,35 +1401,42 @@ step
 step
     #requires Phial
 	.goto Ashenvale,38.5,36.1,50 >>Run to Thistlefur Village
+    .isOnQuest 216
 step
     #sticky
     #completewith next
     >>Kill some of the Furbolgs en route to the cave
     .complete 216,2 --Kill Thistlefur Shaman (x8)
-.complete 216,1 --Kill Thistlefur Avenger (x8)
+    .complete 216,1 --Kill Thistlefur Avenger (x8)
+    .isOnQuest 216
 step
-.goto Ashenvale,38.4,30.6,30 >>Run into Thistlefur Hold
+    .goto Ashenvale,38.4,30.6,30 >>Run into Thistlefur Hold
+    .isOnQuest 216
 step
-#sticky
-#label Charms
->>Loot the tiny chests inside the tunnel.
-.complete 6462,1 --Collect Troll Charm (x8)
+    #sticky
+    #label Charms
+    >>Loot the tiny chests inside the tunnel.
+    .complete 6462,1 --Collect Troll Charm (x8)
+    .isOnQuest 6462
 step
     >>This starts an escort. Start it when ready.
-.goto Ashenvale,41.5,34.5
+    .goto Ashenvale,41.5,34.5
     .accept 6482 >> Accept Freedom to Ruul
+    .isOnQuest 216
 step
     .goto Ashenvale,38.5,36.4
     .complete 6482,1 --Escort Ruul from the Thistlefurs.
+    .isOnQuest 6482
 step
     #requires Charms
     >>Finish killing the Furbolgs
 	.goto Ashenvale,35.9,36.7
     .complete 216,2 --Kill Thistlefur Shaman (x8)
 	.complete 216,1 --Kill Thistlefur Avenger (x8)
+    .isOnQuest 216
 step << Shaman
     .use 7767 >>Fill the Waterskin
-.goto Ashenvale,33.5,67.5
+    .goto Ashenvale,33.5,67.5
     .complete 1534,1 --Filled Blue Waterskin (1)
 step
     .goto Ashenvale,41.5,67.4,40,0
@@ -1492,11 +1502,10 @@ step
 	.unitscan Sharptalon
 step
     >>Go back to town
-.goto Ashenvale,73.1,62.5
     .turnin 6544 >> Turn in Torek's Assault
-step
-    .goto Ashenvale,73.8,61.5
+    .goto Ashenvale,73.1,62.5
     .turnin 2 >> Turn in Sharptalon's Claw
+    .goto Ashenvale,73.8,61.5
     .turnin 24 >> Turn in Shadumbra's Head
     .turnin 23 >> Turn in Ursangous's Paw
     .turnin 247 >> Turn in The Hunt Completed
@@ -1507,20 +1516,28 @@ step
     .goto Ashenvale,73.7,60.0
     .turnin 25 >> Turn in Stonetalon Standstill
     .turnin 1918 >> Turn in The Befouled Element
+step
+    .goto Ashenvale,73.7,60.0
+    .isOnQuest 216
     .accept 824 >> Accept Je'neu of the Earthen Ring
 step
+    >> Head into the inn
     .goto Ashenvale,74.1,60.9
     .turnin 6482 >> Turn in Freedom to Ruul
+    .isOnQuest 6482
 step
 	#completewith next
+    .isOnQuest 216
     .goto Ashenvale,73.2,61.5
     .fly Zoram'gar >> Fly to Zoram'gar Outpost
 step
     .goto Ashenvale,11.9,34.5
     .turnin 216 >> Turn in Between a Rock and a Thistlefur
+    .isOnQuest 216
 step
     .goto Ashenvale,11.7,34.8
     .turnin 6462 >> Turn in Troll Charm
+    .isOnQuest 6462
 step
     .goto Ashenvale,11.6,34.3
     .turnin 824 >> Turn in Je'neu of the Earthen Ring
@@ -1530,36 +1547,39 @@ step << Druid
     .goto Moonglade,52.5,40.5
 	.trainer >> Go and train your class spells
 step
-#completewith next
-    .hs >> Hearth to Splintertree Post
+    #completewith next
+    .hs >> Use your hearthstone
 step << !Warrior !Hunter !Shaman !Druid !Mage !Priest
     .goto Ashenvale,73.2,61.6
     .fly Orgrimmar >> Fly to Orgrimmar
+    .zoneskip Ashenvale,1
 step << Paladin
-	#completewith next
+	#completewith flytimebabyyy
     .goto Orgrimmar,32.4,35.8
 	.trainer >> Go and train your class spells
 step << Warlock
-	#completewith next
+	#completewith flytimebabyyy
     .goto Orgrimmar,48.0,46.0
 	.trainer >> Go and train your class spells
 step << Warlock
-	#completewith next
+	#completewith flytimebabyyy
     .goto Orgrimmar,47.5,46.7
 	.vendor >> Buy Grimoire of Seduction
 	.collect 16379,1
 step << Rogue
-#completewith next
+    #completewith flytimebabyyy
     .goto Orgrimmar,44.0,54.6
 	.trainer >> Go and train your class spells
-step << !Warrior !Hunter !Shaman !Druid !Mage !Priest
-#completewith next
+step
+    #label flytimebabyyy
+step
 	.goto Orgrimmar,45.2,63.8
     .fly Thunder Bluff >> Fly to Thunder Bluff
-step << !Rogue !Paladin !Warlock
-	#completewith next
+    .zoneskip Orgrimmar,1
+step
     .goto Ashenvale,73.2,61.6
-   .fly Thunder Bluff >> Fly to Thunder Bluff
+    .fly Thunder Bluff >> Fly to Thunder Bluff
+    .zoneskip Ashenvale,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1615,15 +1635,17 @@ step
     .goto Thunder Bluff,61.0,81.0
     .accept 1131 >> Accept Steelsnap
 step
-    >>In the cave
+    >>In the pools below the Spirit Rise
 	.goto Thunder Bluff,23.1,21.0
     .turnin 1067 >> Turn in Return to Thunder Bluff
+    .isOnQuest 1067
 step
 	#completewith next
 	.goto Thunder Bluff,45.8,64.7
 	.home >> Set your Hearthstone to Thunder Bluff
 step
 	#completewith next
+    >> Head up the totem tower
     .goto Thunder Bluff,46.8,50.1
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step << Warrior
@@ -1632,12 +1654,17 @@ step << Warrior
 	.turnin 1823 >>Turn in Speak with Ruga
     .accept 1824 >>Accept Trial at the Field of Giants
 step
-    .goto The Barrens,44.6,59.2
+    .maxlevel 29
+    >> Speak to Mangletooth in the cage then pickup Weapons of Choice from Tatternack if you didn't grab it last time
     .accept 879 >> Accept Betrayal from Within
+    .goto The Barrens,44.6,59.2
+    .accept 893 >> Accept Weapons of Choice
+    .goto The Barrens,45.0,57.6
 step
 	#sticky
 	#label Owatanka2
 	#completewith next
+    .maxlevel 30
 	.goto The Barrens,44.2,62.1,75,0
 	.goto The Barrens,49.2,62.6,75,0
 	.goto The Barrens,49.6,60.0,75,0
@@ -1659,48 +1686,57 @@ step << Shaman
     .turnin 1534 >>Turn in Call of Water
     .accept 220 >>Accept Call of Water
 step
-#sticky
-#label Washte
-#completewith next
-.goto The Barrens,44.7,74.7,0
-.goto The Barrens,44.7,77.8,0
-.goto The Barrens,47.6,79.8,0
->>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Accept Gann's Reclamation if you see him en route
-.collect 5103,1,885 --Collect Washte Pawne's Feather
-.accept 885 >>Accept Washte Pawne
-.unitscan Washte Pawne
+    #sticky
+    #label Washte
+    #completewith next
+    .goto The Barrens,44.7,74.7,0
+    .goto The Barrens,44.7,77.8,0
+    .goto The Barrens,47.6,79.8,0
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. 
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
 step
     .goto The Barrens,46.0,76.2,50,0
-.goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
-.goto The Barrens,46.0,81.2,50,0
-.accept 843 >> Accept Gann's Reclamation
+    .goto The Barrens,46.0,81.2,50,0
+    .accept 843 >> Accept Gann's Reclamation. He patrols along the road.
+    .unitscan Gann Stonespire
+    .maxlevel 32
 step
-#sticky
-#label Washte
-#completewith next
-.goto The Barrens,44.7,74.7,0
->>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him in this last spot
-.collect 5103,1,885 --Collect Washte Pawne's Feather
-.accept 885 >>Accept Washte Pawne
-.unitscan Washte Pawne
+    #sticky
+    #label Washte
+    #completewith next
+    .goto The Barrens,44.7,74.7,0
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him in this last spot
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
 step
     #sticky
     #label Weapons
+    .isOnQuest 893
+    .goto The Barrens,43.4,78.8,30,0
+    .goto The Barrens,40.4,80.8,30,0
+    .goto The Barrens,43.8,83.5,30,0
     >>Kill mobs in the area for Weapons of Choice. Backstabber from Stalkers or Pathfinders, Wand from Seers, and Shield from Warfrenzies
     .complete 893,1 --Collect Razormane Backstabber (x1)
     .complete 893,2 --Collect Charred Razormane Wand (x1)
     .complete 893,3 --Collect Razormane War Shield (x1)
 step
-	.goto The Barrens,43.4,78.8 >> All around the ridge
+	.goto The Barrens,43.4,78.8
+    >> Kuz walks all around the ridge. Kill and loot her for her skull.
     .complete 879,1 --Collect Kuz's Skull (x1)
 	.unitscan Kuz 
 step
-    .goto The Barrens,40.6,80.7 >> In the building up from the ramp
+    .goto The Barrens,40.4,80.8
+    >> Lok is in the building up from the ramp. Kill and loot him for his skull.
     .complete 879,3 --Collect Lok's Skull (x1)
 	.unitscan Lok Orcbane
 step
-    .goto The Barrens,43.8,83.5 >> Southern part of the ridge
+    .goto The Barrens,43.8,83.5
+    >> Nak is on the southern part of the ridge. Kill and loot him for his skull.
     .complete 879,2 --Collect Nak's Skull (x1)
 	.unitscan Nak
 step
@@ -1708,7 +1744,7 @@ step
     #sticky
     #label Baeldun
 	.goto The Barrens,48.3,86.2,0,0
->>Kill Dwarves in the area for Gann's Reclamation
+    >>Kill Dwarves in the area for Gann's Reclamation
     .complete 843,1 --Kill Bael'dun Excavator (x15)
     .complete 843,2 --Kill Bael'dun Foreman (x5)
 step
@@ -1717,14 +1753,31 @@ step
 	.goto The Barrens,48.3,86.2
 	.complete 843,3 --Collect Khazgorm's Journal (x1)
 step
-.goto The Barrens,46.0,81.2,50,0
-.goto The Barrens,46.0,76.2,50,0
-.goto The Barrens,46.0,81.2,50,0
-.goto The Barrens,46.0,76.2,50,0
-.turnin 843 >> Turn in Gann's Reclamation
+    #sticky
+    #label Washte
+    #completewith next
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
+step
+    .isOnQuest 843
+    .unitscan Gann Stonespire
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    >> Find Gann on the road again
+    .turnin 843 >> Turn in Gann's Reclamation
+step
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
     .accept 846 >> Accept Revenge of Gann
 step << Hunter/Warlock
     .goto The Barrens,48.9,86.2
+    >> Head up to the dwarven bunker
     .accept 857 >> Accept The Tear of the Moons
 step
     >>Kill mobs and loot them for Revenge of Gann
@@ -1734,51 +1787,75 @@ step
     .complete 846,3 --Collect Sodium Nitrate (x6)
 step << Hunter/Warlock
     >>Go downstairs into the main room of the building. You can either try fighting the mobs by letting your pet tank. (Pull the closest mobs to you, don't directly pull Twinbraid). Alternatively, you can send your pet in, loot the chest, then die and run back.
-.goto The Barrens,49.1,84.3
+    .goto The Barrens,49.1,84.3
     .complete 857,1 --Collect Tear of the Moons (x1)
 step
-.goto The Barrens,46.0,81.2,50,0
-.goto The Barrens,46.0,76.2,50,0
-.goto The Barrens,46.0,81.2,50,0
-.goto The Barrens,46.0,76.2,50,0
-.turnin 846 >> Turn in Revenge of Gann
+    #sticky
+    #label Washte
+    #completewith next
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
+step
+    .isOnQuest 846
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    >> Find Gann on the road again
+    .turnin 846 >> Turn in Revenge of Gann
     .accept 849 >> Accept Revenge of Gann
 step << Hunter/Warlock
     .goto The Barrens,48.9,86.3
+    >> Head up past the dwarven bunker
     .turnin 857 >> Turn in The Tear of the Moons
 step
+    .isOnQuest 849
     >>Right click the Flying Machine at the top of the launch pad
-.goto The Barrens,47.0,85.6
+    .goto The Barrens,47.0,85.6
     .complete 849,1 --Collect Bael Modan Flying Machine destroyed (x1)
 step
-.goto The Barrens,46.0,81.2,50,0
-.goto The Barrens,46.0,76.2,50,0
-.goto The Barrens,46.0,81.2,50,0
-.goto The Barrens,46.0,76.2,50,0
-.turnin 849 >> Turn in Revenge of Gann
+    #sticky
+    #label Washte
+    #completewith next
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
+step
+    .isOnQuest 849
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    >> Find Gann once more
+    .turnin 849 >> Turn in Revenge of Gann
 step
     .goto Thousand Needles,32.2,22.2
+    >> Head south towards Thousand Needles
     .accept 4542 >> Accept Message to Freewind Post
-step
-#sticky
-#completewith next
->>Keep an eye out for the Galak Messenger. If you see it, Kill him, loot the Note, and accept the quest. You can look for him later too if you can't find him.
-.collect 12564,1,4881 --Collect Assassination Note
-.accept 4881 >>Accept Assassination Plot
-.unitscan Galak Messenger
 step
     #sticky
     #completewith next
->>Take the lift down, then run to Freewind Post
+    >>Keep an eye out for the Galak Messenger. If you see it, kill him, loot the Note, and accept the quest. You can look for him later too if you can't find him.
+    .collect 12564,1,4881 --Collect Assassination Note
+    .accept 4881 >>Accept Assassination Plot
+    .unitscan Galak Messenger
+step
+    #sticky
+    #completewith next
+    >>Take the lift down, then run to Freewind Post
     .goto Thousand Needles,47.1,48.3,60
 step
-.goto Thousand Needles,46.1,50.5
+    >> Accept quests around Freewind Post
     .accept 9431 >> Accept A Different Approach
-step
-    .goto Thousand Needles,45.9,50.9
+    .goto Thousand Needles,46.1,50.5
     .accept 5147 >> Accept Wanted - Arnak Grimtotem
+    .goto Thousand Needles,45.9,50.9
 step
     .goto Thousand Needles,46.1,51.7
+    .isOnQuest 1196
     .turnin 1196 >> Turn in The Sacred Flame
     .accept 1197 >> Accept The Sacred Flame
 step
@@ -1789,65 +1866,66 @@ step
     .goto Thousand Needles,45.1,49.2
     .fp Freewind Post >> Get the Freewind Post flight path
 step
-    .goto Thousand Needles,44.8,49.1
     .accept 4767 >> Accept Wind Rider
-step
-    .goto Thousand Needles,44.7,50.2
+    .goto Thousand Needles,44.8,49.1
     .accept 4821 >> Accept Alien Egg
+    .goto Thousand Needles,44.7,50.2
 step << Hunter
 #completewith next
     .goto Thousand Needles,44.9,50.7
     .vendor >> Go buy Dense Shortbow if it's in the shop.
     .collect 11305,1
 step
-#sticky
-#completewith next
-    >>Go into the Galak cave. Run along the left side
-.goto Thousand Needles,44.0,37.4,40
+    #sticky
+    #completewith next
+    .isOnQuest 1197
+    >>Go into the Galak cave. Run along the left side. Kill centaurs en route
+    .goto Thousand Needles,44.0,37.4,40
 step
-    >>Loot the Brazier at the end
-.goto Thousand Needles,42.0,31.5
+    >>Loot the Brazier at the end of the cave system. Take a left once you are at the crossroads of the cave.
+    .goto Thousand Needles,42.0,31.5
     .complete 1197,1 --Collect Cloven Hoof (x1)
 step
     >>Kill Centaurs in the area
-.goto Thousand Needles,41.3,37.7
+    .goto Thousand Needles,41.3,37.7
     .complete 4841,3 --Kill Galak Windchaser (x6)
     .complete 4841,1 --Kill Galak Scout (x12)
     .complete 4841,2 --Kill Galak Wrangler (x10)
 step
     #sticky
     #completewith next
->>Run up the path here, then go in the cave
-.goto Thousand Needles,54.6,44.3,30
+    >>Run up the path here, then go in the cave
+    .goto Thousand Needles,54.6,44.3,30
 step
-.goto Thousand Needles,53.9,41.5
+    .goto Thousand Needles,53.9,41.5
     .accept 1149 >> Accept Test of Faith
 step
+    .isOnQuest 1149
     >>Jump off the end of the wooden platform, you don't die.
-.goto Thousand Needles,26.4,32.6,15
+    .goto Thousand Needles,26.4,32.6,15
 step
     .goto Thousand Needles,53.9,41.7
-.turnin 1149 >> Turn in Test of Faith
+    .turnin 1149 >> Turn in Test of Faith
     .accept 1150 >> Accept Test of Endurance
 step
     #sticky
     #label Egg5
->>Look for the Alien Egg. It's a lootable object in one of the camps
+    >>Look for the Alien Egg. It's a lootable object in one of the camps. It looks like spider eggs.
     .goto Thousand Needles,56.3,50.4,20,0
-.goto Thousand Needles,52.4,55.2,20,0
-.goto Thousand Needles,37.7,56.1,20,0
+    .goto Thousand Needles,52.4,55.2,20,0
+    .goto Thousand Needles,37.7,56.1,20,0
     .goto Thousand Needles,56.3,50.4,20,0
-.goto Thousand Needles,52.4,55.2,20,0
-.goto Thousand Needles,37.7,56.1
+    .goto Thousand Needles,52.4,55.2,20,0
+    .goto Thousand Needles,37.7,56.1
     .complete 4821,1 --Collect Alien Egg (x1)
 step
     >>Kill Thundering Boulderkins. Loot them for Purifying Earth
-.goto Thousand Needles,65.2,62.4
+    .goto Thousand Needles,65.2,62.4
     .complete 9431,1 --Collect Purifying Earth (x2)
 step
     #requires Egg5
->>Go back to Freewind Post
-.goto Thousand Needles,45.6,50.8
+    >>Go back to Freewind Post
+    .goto Thousand Needles,45.6,50.8
     .turnin 4841 >> Turn in Pacify the Centaur
     .accept 5064 >> Accept Grimtotem Spying
 step
@@ -1858,16 +1936,20 @@ step
     .turnin 4821 >> Turn in Alien Egg
     .accept 4865 >> Accept Serpent Wild
 step
-.goto Thousand Needles,27.7,50.0,20 >>Run up the path here
+    .isOnQuest 1150
+    .goto Thousand Needles,27.7,50.0,20 >> Make your way down from Freewind Point then run up the path here
 step
-.goto Thousand Needles,27.3,51.2,20 >>Enter the cave
+    .isOnQuest 1150
+    .goto Thousand Needles,27.3,51.2,20 >>Enter the cave
+    >> Keep in mind the harpies here can do an aoe silence << Priest/Warlock/Druid/Paladin/Mage/Shaman
 step
     >>Go to the end of the cave, and open the Crate. Kill Grenka and loot her
-.goto Thousand Needles,25.9,54.6
+    .goto Thousand Needles,25.9,54.6
     .complete 1150,1 --Collect Grenka's Claw (x1)
 step
+    .isOnQuest 4767
     >>Exit the cave then run up the path here
-.goto Thousand Needles,13.9,31.7,25
+    .goto Thousand Needles,13.9,31.7,25
 step
     #sticky
     #label Eggs
@@ -1875,14 +1957,15 @@ step
     >>Loot the eggs on the ground in the area. Loot any you see
     .complete 4767,1 --Collect Highperch Wyvern Egg (x10)
 step
-.goto Thousand Needles,13.2,39.7,20 >>Run up the path here
+    .isOnQuest 4767
+    .goto Thousand Needles,13.2,39.7,20 >>Run up the path here
 step
-        >>This starts an Escort. Start it when ready
+        >>This starts an Escort. Start it when ready. Try to have 5-6 eggs before starting so you can finish on the way out.
     .goto Thousand Needles,17.8,40.6
     .accept 4770 >> Accept Homeward Bound
 step
     #label Paoka
->>Escort Pao'ka down the mountain.
+    >>Escort Pao'ka down the mountain. 3 wyvern will spawn when he reaches the middle of the area.
     .goto Thousand Needles,14.6,32.7
     .complete 4770,1 --Escort Pao'ka from Highperch
 step
@@ -1911,7 +1994,9 @@ step
 .accept 4881 >> Accept Assassination Plot
 step
     #label steelsnap
->>Use the Robotron Control Unit hiding in the bushes. Walk over to the moonwell and collect the water (the arrow won't move when controlling the tank)
+    .use 23675>>Use the Robotron Control Unit hiding in the bushes ontop of the ledge. 
+    >> Once you're in the robot walk over to the moonwell and collect the water using the pet action bar button.
+    * Note: the quest arrow won't move when controlling the robot. Click the buff off once you're done. 
 .goto Thousand Needles,9.4,18.7,15,0
 .goto Feralas,89.6,46.3
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
@@ -1943,7 +2028,7 @@ step
     .goto Thousand Needles,25.2,33.8,40,0
     .goto Thousand Needles,36.0,29.0,40,0
     .goto Thousand Needles,39.6,33.6,40,0
-.goto Thousand Needles,36.0,29.0,40,0
+    .goto Thousand Needles,36.0,29.0,40,0
     .goto Thousand Needles,25.2,33.8,40,0
     .goto Thousand Needles,18.4,22.2,40,0
     .goto Thousand Needles,25.2,33.8,40,0
@@ -1969,7 +2054,7 @@ step
     .goto Thousand Needles,33.5,32.4,30,0
     .goto Thousand Needles,37.5,38.4,30,0
     .goto Thousand Needles,33.5,32.4
-    >>Go back and forth in the pool, collecting yellow plants near the edges of the water
+    >>Go back and forth in the pool, collecting yellow plants near the edges of the water as well as underwater.
     .complete 5062,1 --Collect Incendia Agave (x10)
 step
 	#completewith next
@@ -1977,31 +2062,31 @@ step
 step << Druid
 	#completewith next
     .goto Thunder Bluff,77.0,29.9
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Hunter
 	#completewith next
     .goto Thunder Bluff,59.1,86.9
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Hunter
 	#completewith next
     .goto Thunder Bluff,54.1,83.9
-.trainer >> Go and train your pet spells
+    .trainer >> Go and train your pet spells
 step << Warrior
 	#completewith next
     .goto Thunder Bluff,57.6,85.5
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Shaman
 	#completewith next
     .goto Thunder Bluff,22.8,21.0
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Priest
 	#completewith next
     .goto Thunder Bluff,24.6,22.6
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Mage
 	#completewith next
     .goto Thunder Bluff,25.2,20.9
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step
     .goto Thunder Bluff,61.4,80.8
     .turnin 1131 >> Turn in Steelsnap
@@ -2014,48 +2099,273 @@ step
 step
     .goto Thunder Bluff,70.1,30.9
     .accept 5088 >> Accept Arikara
+step << Tauren
+    #level 30
+    .money
+    --Mount training
 step
 	#completewith next
     .goto Thunder Bluff,46.9,49.4
+    .isOnQuest 879
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step
     .goto The Barrens,44.6,59.2
+    >> Talk to Mangletooth in the cage
+    .isOnQuest 879
     .turnin 879 >> Turn in Betrayal from Within
     .accept 906 >> Accept Betrayal from Within
 step
     .goto The Barrens,45.1,57.7
+    .isOnQuest 893
     .turnin 893 >> Turn in Weapons of Choice
     .accept 1153 >> Accept A New Ore Sample
+step
+    #level 32
+    #completewith next
+    .goto The Barrens,44.4,59.1
+    .fly The Crossroads >> Fly to The Crossroads
+    .zoneskip The Barrens,1
+step
+    #level 32
+	#completewith next
+    .goto Thunder Bluff,46.9,49.4
+    .fly The Crossroads >> Fly to The Crossroads
+    .zoneskip Thunder Bluff,1
+step
+    #level 32
+    .isOnQuest 906
+    .goto The Barrens,51.5,30.9
+    .turnin 906 >> Turn in Betrayal from Within
+step
+    #level 32
+    .goto The Barrens,51.1,29.7
+    .accept 1145 >> Accept The Swarm Grows
+step << Warrior
+    #level 32
+    >>Skip Followup
+    .goto The Barrens,57.2,30.3
+    .turnin 1825 >>Turn in Speak with Thun'grim
+step << !Warrior
+    #level 32
+	#completewith next
+    .goto The Barrens,51.5,30.3
+    .fly Ratchet >> Fly to Ratchet
+step << Warrior
+    #level 32
+    .goto The Barrens,63.3,38.4,150 >>Run to Ratchet
+step
+    #level 32
+    .isOnQuest 1111
+    .goto The Barrens,63.3,38.4
+    .turnin 1111 >> Turn in Wharfmaster Dizzywig
+    .accept 1112 >> Accept Parts for Kravel
+step << Warrior
+    #level 32
+    .goto The Barrens,51.5,30.3,-1
+    .goto The Barrens,63.1,37.2,-1
+    .abandon 1838 >>Abandon Brutal Armor
+step
+    #level 32
+	#completewith next
+    .goto The Barrens,51.5,30.3,-1
+    .goto The Barrens,63.1,37.2,-1
+    .fly Orgrimmar >> Fly to Orgrimmar
+step << Paladin
+    #level 32
+	#completewith next
+    .goto Orgrimmar,32.4,35.8
+    .trainer >> Go and train your class spells
+step << Shaman
+    #level 32
+	#completewith next
+    .goto Orgrimmar,38.6,36.0
+    .trainer >> Go and train your class spells
+step << Hunter
+    #level 32
+	#completewith next
+    .goto Orgrimmar,66.1,18.5
+    .trainer >> Go and train your class spells
+step << Hunter
+    #level 32
+	#completewith next
+    .goto Orgrimmar,66.3,14.8
+    .trainer >> Go and train your pet spells
+step << Warrior
+    #level 32
+	#completewith next
+    .goto Orgrimmar,79.7,31.4
+    .accept 1718 >>Accept The Islander
+    .trainer >> Go and train your class spells
+step << Rogue
+    #level 32
+	#completewith next
+    .goto Orgrimmar,44.0,54.6
+    .trainer >> Go and train your class spells
+step << Warlock
+    #level 32
+	#completewith next
+    .goto Orgrimmar,48.0,46.0
+    .trainer >> Go and train your class spells
+step << Warlock
+    #level 32
+	#completewith next
+    .goto Orgrimmar,47.5,46.7
+    .vendor >> Buy pet spell books
+	.collect 16368,1
+step << Mage
+    #level 32
+	#completewith next
+    .goto Orgrimmar,38.8,85.6
+    .trainer >> Go and train your class spells
+step << Priest
+    #level 32
+	#completewith next
+    .goto Orgrimmar,35.6,87.8
+    .trainer >> Go and train your class spells
+step
+    #level 32
+    .isOnQuest 1145
+    .goto Orgrimmar,75.2,34.2
+    .turnin 1145 >> Turn in The Swarm Grows
+step
+    #level 32
+    .isQuestTurnedIn 1145
+    .goto Orgrimmar,74.7,33.9
+    .accept 1146 >> Accept The Swarm Grows
+step << Orc
+    #level 32
+    .money
+    .skill
+    --Mount
+step << Troll
+    #level 32
+    .money
+    .skill
+    --Mount
+step << Undead
+    #level 32
+    .money
+    .skill
+    --Mount
+step << Blood Elf
+    #level 32
+    .money
+    .skill
+    --Mount
+step << Warrior/Shaman
+    #level 32
+	#completewith next
+    .goto Orgrimmar,45.1,63.9
+    .fly Ratchet >>Fly to Ratchet
+step << Warrior/Shaman
+    #level 32
+    .isOnQuest 874
+    .goto The Barrens,65.8,43.8
+    .turnin 874 >>Turn in Mahren Skyseer
+    .accept 873 >>Accept Isha Awak
+step << Shaman
+    #level 32
+    .goto The Barrens,65.8,43.8
+    .turnin 220 >>Turn in Call of Water
+    .accept 63 >>Accept Call of Water
+step << Warrior/Shaman
+    #level 32
+    .isOnQuest 873
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2,40,0
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2,40,0
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2,40,0
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2
+    >>Look in the water for Isha Awak (Red Threshadon). Kill and loot it for its heart
+    .complete 873,1 --Heart of Isha Awak (1)
+	.unitscan Isha Awak
+step << Warrior
+    #level 32
+    >>Swim to the island
+    .goto The Barrens,68.6,49.2
+    .turnin 1718 >>Turn in The Islander
+    .accept 1719 >>Accept The Affray
+step << Warrior
+    #level 32
+    .goto The Barrens,68.6,48.7
+    .complete 1719,1 --Step on the grate to begin the Affray (1)
+    .complete 1719,2 --Big Will (1)
+step << Warrior
+    #level 32
+    .goto The Barrens,68.6,49.2
+    .turnin 1719 >>Turn in The Affray
+    .accept 1791 >>Accept The Windwatcher
+step << Warrior/Shaman
+    #level 32
+    .goto The Barrens,65.8,43.8
+    .turnin 873 >>Turn in Isha Awak
+step << Shaman
+    #level 32
+	#completewith next
+    .goto The Barrens,63.1,37.1
+    .fly Orgrimmar >>Fly to Orgrimmar
+step << Shaman
+    #level 32
+    .goto Orgrimmar,38.0,37.7
+    .accept 1531 >>Accept Call of Air
+step
+    #level 32
+    #completewith next
+    .goto The Barrens,63.1,37.1,-1
+    .goto Orgrimmar,45.2,64.3,-1
+    .fly Freewind Post >> Fly to Freewind Post
 step
     #completewith next
     .goto The Barrens,44.4,59.1
     .fly Freewind Post >> Fly to Freewind Post
-step
-    .goto Thousand Needles,44.8,49.0
-    .turnin 4767 >> Turn in Wind Rider
-step
-    .goto Thousand Needles,46.2,50.5
-    .turnin 9434 >> Turn in Testing the Tonic
+    .zoneskip The Barrens,1
 step
 	#completewith next
-    .home >> Set your Hearthstone to Freewind Post
+    .goto Thunder Bluff,46.9,49.4
+    .fly Freewind Post >> Fly to Freewind Post
+    .zoneskip Thunder Bluff,1
 step
-    .goto Thousand Needles,54.0,41.4
-    .turnin 1150 >> Turn in Test of Endurance
-    .accept 1151 >> Accept Test of Strength
+    .turnin 4767 >> Turn in Wind Rider
+    .goto Thousand Needles,44.8,49.0
+    .turnin 9434 >> Turn in Testing the Tonic
+    .goto Thousand Needles,46.2,50.5
+step
+	#completewith next
+    .goto Thousand Needles,46.1,51.5
+    .home >> Set your Hearthstone to Freewind Post
 step
     #sticky
     #completewith OreSample
->>Kill Kobolds you see whilst doing other quests. Loot them for an Unrefined Ore Sample
+    >>Kill Kobolds you see whilst doing other quests. Loot them for an Unrefined Ore Sample
     .collect 5842,1 --Collect Unrefined Ore Sample (x1)
 step
-    >>Kill Rok'Alim The Pounder (Rock Elemental). Loot him for his Fragments
-.goto Thousand Needles,21.1,40.6,40,0
+    .goto Thousand Needles,54.0,41.4
+    >> Head to the northeastern cave
+    .turnin 1150 >> Turn in Test of Endurance
+    .accept 1151 >> Accept Test of Strength
+step
+    >>Kill Rok'Alim The Pounder (Rock Elemental). Loot him for his Fragments. He patrols a large circle around western Thousand Needles.
+    .goto Thousand Needles,29.3,33.6,40,0
+    .goto Thousand Needles,27.1,28.7,40,0
+    .goto Thousand Needles,22.5,31.3,40,0
+    .goto Thousand Needles,17.5,27.0,40,0
+    .goto Thousand Needles,12.8,20.9,40,0
     .goto Thousand Needles,9.3,21.0,40,0
-.goto Thousand Needles,21.1,40.6,40,0
+    .goto Thousand Needles,21.1,40.6,40,0
+    .goto Thousand Needles,34.3,37.5,40,0
+    .goto Thousand Needles,33.2,53.5,40,0
+    .goto Thousand Needles,29.3,33.6,40,0
+    .goto Thousand Needles,27.1,28.7,40,0
+    .goto Thousand Needles,22.5,31.3,40,0
+    .goto Thousand Needles,17.5,27.0,40,0
+    .goto Thousand Needles,12.8,20.9,40,0
     .goto Thousand Needles,9.3,21.0,40,0
-.goto Thousand Needles,21.1,40.6,40,0
-    .goto Thousand Needles,9.3,21.0
+    .goto Thousand Needles,21.1,40.6,40,0
+    .goto Thousand Needles,34.3,37.5,40,0
+    .unitscan Roh'Alim the Pounder
     .complete 1151,1 --Collect Fragments of Rok'Alim (x1)
 step
 	>>Escort will start when you accept next part of the quest.
@@ -2069,6 +2379,7 @@ step
     .turnin 4966 >> Turn in Protect Kanati Greycloud
 step
 	.goto Thousand Needles,31.2,36.9,30 >>Run up the path here
+    .isOnQuest 5064
 step
 >>Climb up the mountain and cross the bridges to find the notes. Loot the chests
     .goto Thousand Needles,32.0,32.6
@@ -2080,8 +2391,8 @@ step
     .goto Thousand Needles,39.3,41.6
     .complete 5064,3 --Collect Secret Note #3 (x1)
 step
-    >>Clear the mobs around the bonfire, then light it, then kill Arikara. Loot her
-.goto Thousand Needles,37.9,35.3
+    .use 12785 >>Clear the mobs around the bonfire, then light it, then kill Arikara. Loot her
+    .goto Thousand Needles,37.9,35.3
     .complete 5088,1 --Collect Arikara Serpent Skin (x1)
     .complete 5088,2 --Light the Sacred Fire of Life
 step
@@ -2093,7 +2404,8 @@ step
     .goto Thousand Needles,38.1,26.6
     .accept 4904 >> Accept Free at Last
 step
-    >>Follow Lakota and protect her through the whole escort.
+    >>Follow Lakota and protect her through the whole escort. Mobs will spawn periodically on the platforms.
+    .goto Thousand Needles,30.7,37.1
     .complete 4904,1 --Escort Lakota Windsong from the Darkcloud Pinnacle.
 step
 >>Open the panther cage and kill it. Make sure to have your cooldowns/potions available
@@ -2109,8 +2421,8 @@ step
 .goto Thousand Needles,9.2,21.0
     .collect 5842,1 --Collect Unrefined Ore Sample (x1)
 step
-	.goto Feralas,88.9,41.2,50 >>Run to Feralas. We're getting the Flight Path for later
-step
+    >>Run to Feralas. We're getting the Flight Path for later
+	.goto Feralas,88.9,41.2,50,0
     .goto Feralas,75.4,44.3
     .fp Mojache >> Get the Camp Mojache flight path
 step
@@ -2127,13 +2439,102 @@ step
 step
     .goto Thousand Needles,53.9,41.4
     .turnin 1151 >> Turn in Test of Strength
+step << Shaman
+    #sticky
+    .isOnQuest 1531
+    #completewith next
+    .goto Thousand Needles,54.7,44.4,20 >> Run up the ramp here
+step << Shaman
+    .isOnQuest 1531
+	>>This gives you a 40% movespeed & 30% attack speed buff for 1 hour on turnin
+	.goto Thousand Needles,53.5,42.7
+    .turnin 1531 >>Turn in Call of Air
+step
+    .isOnQuest 1146
+    .goto Thousand Needles,67.6,64.0
+    .turnin 1146 >> Turn in The Swarm Grows
+    .accept 1147 >> Accept The Swarm Grows
+step
+    #level 32
+    >> Accept quests around the racetrack
+	.accept 1110 >> Accept Rocket Car Parts
+    .goto Thousand Needles,77.8,77.2
+	.accept 1104 >> Accept Salt Flat Venom
+    .goto Thousand Needles,77.9,77.2
+    .accept 1105 >> Accept Hardened Shells
+    .goto Thousand Needles,78.1,77.1
 step
     .goto Thousand Needles,77.8,77.3
     .accept 1111 >> Accept Wharfmaster Dizzywig
     .accept 5762 >> Accept Hemet Nesingwary Jr.
 step
+    #level 32
+    .accept 1176 >> Accept Load Lightening
+    .goto Thousand Needles,80.2,75.8
+    .accept 1175 >> Accept A Bump in the Road
+    .goto Thousand Needles,81.7,78.0
+step
+    #level 32
+	#sticky
+	#completewith ShimmeringF
+	>>Save the turtle meat for a quest later.
+	.collect 3712,10
+step
+    #level 32
+   >>Kill Gazers in the area. Also kill some Crystalhides that you see
+	.goto Thousand Needles,78.4,89.1
+	.complete 1175,3 --Kill Saltstone Gazer (x6)
+step
+    #level 32
+	#label ShimmeringF
+	>>Circle the area killing and collecting for the Shimmering Flats quests
+	.complete 1110,1 --Collect Rocket Car Parts (x30)
+	.complete 1104,1 --Collect Salty Scorpid Venom (x6)
+	.complete 1176,1 --Collect Hollow Vulture Bone (x10)
+    .complete 1105,1 --Collect Hardened Tortoise Shell (x9)
+	.complete 1175,1 --Kill Saltstone Basilisk (x10)
+	.complete 1175,2 --Kill Saltstone Crystalhide (x10)
+step
+    #level 32
+	#sticky
+	#label partsoftheswarm
+	>>Grind the Silithid creatures until you get a Cracked Silithid Carapace. Click it to accept a quest.
+	.collect 5877,1,1148
+	.accept 1148 >> Accept Parts of the Swarm
+step
+    #level 32
+    .goto Thousand Needles,67.8,85.7
+	.complete 1148,1 --Collect Silithid Heart (x1)
+    .complete 1148,2 --Collect Silithid Talon (x5)
+    .complete 1147,3 --Kill Silithid Invader (x5)	
+    .complete 1147,1 --Kill Silithid Searcher (x5)
+    .complete 1148,3 --Collect Intact Silithid Carapace (x3)
+    .complete 1147,2 --Kill Silithid Hive Drone (x5)	
+step
+    #level 32
+	#requires partsoftheswarm
+    .turnin 1147 >> Turn in The Swarm Grows
+    .goto Thousand Needles,67.6,63.9
+    .turnin 1110 >> Turn in Rocket Car Parts
+    .goto Thousand Needles,77.8,77.2
+    .turnin 1104 >> Turn in Salt Flat Venom
+    .goto Thousand Needles,78.0,77.1
+    .turnin 1105 >> Turn in Hardened Shells
+    .accept 1107 >> Accept Encrusted Tail Fins
+    .accept 1106 >> Accept Martek the Exiled
+step
+    .isOnQuest 1176
+    .goto Thousand Needles,80.2,75.8
+    .turnin 1176 >> Turn in Load Lightening
+    .accept 1178 >> Accept Goblin Sponsorship
+step
+    .isOnQuest 1175
+    .goto Thousand Needles,81.6,78.0
+    .turnin 1175 >> Turn in A Bump in the Road
+step
+    .isOnQuest 1152
     .goto Tanaris,51.6,25.4
-.abandon 1152 >> Abandon Test of Lore
+    .abandon 1152 >> Abandon Test of Lore
 step
     .goto Tanaris,51.6,25.4
     .fp Gadgetzan >> Get the Gadgetzan flight path
@@ -2145,7 +2546,7 @@ step
     .goto Thousand Needles,45.1,49.2
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step
-.isOnQuest 885
+    .isOnQuest 885
     .goto The Barrens,44.9,59.1
     .turnin 885 >> Turn in Washte Pawne
 step
@@ -2153,32 +2554,40 @@ step
     .goto The Barrens,44.9,59.1
     .turnin 884 >> Turn in Owatanka
 step
-.isOnQuest 883
+    .isOnQuest 883
     .goto The Barrens,44.9,59.1
     .turnin 883 >> Turn in Lakota'mani
 step
+    .isOnQuest 1153
     .goto The Barrens,45.1,57.7
     .turnin 1153 >> Turn in A New Ore Sample
 step
-#completewith next
+    #completewith next
     .goto The Barrens,44.4,59.1
     .fly Crossroads>> Fly to Crossroads
 step
+    .isOnQuest 906
     .goto The Barrens,51.5,30.9
     .turnin 906 >> Turn in Betrayal from Within
 step
+    .isQuestAvailable 1145
     .goto The Barrens,51.1,29.7
     .accept 1145 >> Accept The Swarm Grows
+step
+    .isOnQuest 1148
+    .goto The Barrens,51.1,29.6
+    .turnin 1148 >> Turn in Parts of the Swarm
+    .accept 1184 >> Accept Parts of the Swarm
 step << Warrior
-    >>Skip Followup
+    >>Skip the Followup
     .goto The Barrens,57.2,30.3
-.turnin 1825 >>Turn in Speak with Thun'grim
+    .turnin 1825 >>Turn in Speak with Thun'grim
 step << !Warrior
 	#completewith next
     .goto The Barrens,51.5,30.3
     .fly Ratchet >> Fly to Ratchet
 step << Warrior
-.goto The Barrens,63.3,38.4,150 >>Run to Ratchet
+    .goto The Barrens,63.3,38.4,150 >>Run to Ratchet
 step
     .goto The Barrens,63.3,38.4
     .turnin 1111 >> Turn in Wharfmaster Dizzywig
@@ -2190,65 +2599,82 @@ step
     .goto Ashenvale,73.2,61.5
     .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,32.4,35.8
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Shaman
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,38.6,36.0
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Hunter
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,66.1,18.5
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Hunter
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,66.3,14.8
-.trainer >> Go and train your pet spells
+    .trainer >> Go and train your pet spells
 step << Warrior
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,79.7,31.4
     .accept 1718 >>Accept The Islander
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Rogue
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,44.0,54.6
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Warlock
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,48.0,46.0
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Warlock
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,47.5,46.7
-.vendor >> Buy Grimoire of Last of Pain (Rank 2)
+    .vendor >> Buy your pet books
 	.collect 16368,1
 step << Mage
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,38.8,85.6
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Priest
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,35.6,87.8
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step
+    .isOnQuest 1145
     .goto Orgrimmar,75.2,34.2
     .turnin 1145 >> Turn in The Swarm Grows
 step
+    .isQuestAvailable 1146
     .goto Orgrimmar,74.7,33.9
     .accept 1146 >> Accept The Swarm Grows
 step << Warrior/Shaman
+    .isOnQuest 874
 	#completewith next
     .goto Orgrimmar,45.1,63.9
     .fly Ratchet >>Fly to Ratchet
 step << Warrior/Shaman
-.turnin 874 >>Turn in Mahren Skyseer
+    .isOnQuest 874
+    .goto The Barrens,65.8,43.8
+    .turnin 874 >>Turn in Mahren Skyseer
     .accept 873 >>Accept Isha Awak
 step << Shaman
+    .isOnQuest 220
     .goto The Barrens,65.8,43.8
     .turnin 220 >>Turn in Call of Water
     .accept 63 >>Accept Call of Water
 step << Warrior/Shaman
+    .isOnQuest 873
 	.goto The Barrens,65.6,47.1,40,0
     .goto The Barrens,63.3,54.2,40,0
 	.goto The Barrens,65.6,47.1,40,0
@@ -2261,26 +2687,31 @@ step << Warrior/Shaman
     .complete 873,1 --Heart of Isha Awak (1)
 	.unitscan Isha Awak
 step << Warrior
+    .isOnQuest 1718
     >>Swim to the island
-.goto The Barrens,68.6,49.2
+    .goto The Barrens,68.6,49.2
     .turnin 1718 >>Turn in The Islander
     .accept 1719 >>Accept The Affray
 step << Warrior
+    .isOnQuest 1719
     .goto The Barrens,68.6,48.7
     .complete 1719,1 --Step on the grate to begin the Affray (1)
     .complete 1719,2 --Big Will (1)
 step << Warrior
+    .isOnQuest 1719
     .goto The Barrens,68.6,49.2
     .turnin 1719 >>Turn in The Affray
     .accept 1791 >>Accept The Windwatcher
 step << Warrior/Shaman
+    .isOnQuest 873
     .goto The Barrens,65.8,43.8
     .turnin 873 >>Turn in Isha Awak
-step << Warrior
+step << Warrior/Shaman
 	#completewith next
     .goto The Barrens,63.1,37.1
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Shaman
+    .isQuestAvailable 1531
     .goto Orgrimmar,38.0,37.7
     .accept 1531 >>Accept Call of Air
 ]])
