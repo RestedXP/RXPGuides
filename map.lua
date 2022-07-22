@@ -711,7 +711,6 @@ local function addMiniMapPins(pins)
     end
 end
 
-local isPlayerDead = false
 local corpseWP = {title = "Corpse", generated = true, wpHash = 0}
 -- Updates the arrow
 
@@ -737,8 +736,7 @@ local function updateArrow()
         end
     end
 
-    isPlayerDead = UnitIsGhost("player")
-    if isPlayerDead and --Meet at the grave and the follow-up quest:
+    if UnitIsGhost("player") and --Meet at the grave and the follow-up quest:
         not (addon.QuestAutoTurnIn(3912) or addon.QuestAutoAccept(3913)) then
         local zone = HBD:GetPlayerZone()
         local corpse = C_DeathInfo.GetCorpseMapPosition(zone)
@@ -810,7 +808,7 @@ hooksecurefunc(_G.WorldMapFrame, "OnMapChanged", DisplayLines);
 
 function addon.UpdateGotoSteps()
     local hideArrow = false
-    local forceArrowUpdate = UnitIsGhost("player") ~= isPlayerDead
+    local forceArrowUpdate = UnitIsGhost("player") == (af.element ~= corpseWP)
     DisplayLines()
     if #addon.activeWaypoints == 0 and not forceArrowUpdate then
         af:Hide()
