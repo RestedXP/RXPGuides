@@ -1929,6 +1929,10 @@ step
     .turnin 4841 >> Turn in Pacify the Centaur
     .accept 5064 >> Accept Grimtotem Spying
 step
+    #completewith exitfreewind33
+    #level 29
+    +If you have access to more gold on this server, mail yourself 35g, we will be buying your mount soon.
+step
     .goto Thousand Needles,46.1,51.7
     .turnin 1197 >> Turn in The Sacred Flame
 step
@@ -1936,6 +1940,7 @@ step
     .turnin 4821 >> Turn in Alien Egg
     .accept 4865 >> Accept Serpent Wild
 step
+    #label exitfreewind33
     .isOnQuest 1150
     .goto Thousand Needles,27.7,50.0,20 >> Make your way down from Freewind Point then run up the path here
 step
@@ -2101,8 +2106,9 @@ step
     .accept 5088 >> Accept Arikara
 step << Tauren
     #level 30
-    .money
-    --Mount training
+    .money <35.00
+    .goto Mulgore,47.5,58.5
+    .train 713 >> Go to Bloodhoof Village. Train riding and buy your mount
 step
 	#completewith next
     .goto Thunder Bluff,46.9,49.4
@@ -2232,26 +2238,58 @@ step
     .isQuestTurnedIn 1145
     .goto Orgrimmar,74.7,33.9
     .accept 1146 >> Accept The Swarm Grows
-step << Orc
+step << Orc !Warlock
     #level 32
-    .money
-    .skill
-    --Mount
-step << Troll
+	#sticky
+	#completewith next
+	.money <35.00
+	.goto Orgrimmar,63.3,12.8
+	.train 149 >> Head to the Valley of Honor. Train riding and purchase your mount
+step << Troll !Warlock
     #level 32
-    .money
-    .skill
-    --Mount
-step << Undead
+	#sticky
+	#completewith next
+	.money <35.00
+	.goto Durotar,55.2,75.5
+	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
+step << Undead !Warlock
     #level 32
-    .money
-    .skill
-    --Mount
-step << Blood Elf
+    .money <35.00
+    .goto Durotar,50.8,13.7
+    .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
+    >> If you can teleport to the Undercity skip this step and teleport << Mage
+step << Undead !Warlock
     #level 32
-    .money
-    .skill
-    --Mount
+    .money <35.00
+    .goto Tirisfal Glades,60.1,52.6
+    .train 554 >> Train riding and purchase your mount
+    .zoneskip Tirisfal Glades,1
+step << Blood Elf !Warlock
+    #level 32
+    .money <35.00
+    .goto Durotar,50.8,13.7
+    .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
+    >> If you can teleport to Undercity or Silvermoon skip this step and teleport << Mage
+step << Blood Elf !Warlock
+    #level 32
+    .money <35.00
+    .goto Undercity,66.3,4.5,30,0
+    .goto Undercity,54.9,11.3
+    .zone Silvermoon City >> Click on the Orb of Translocation to head to Silvermoon City
+    .zoneskip Orgrimmar
+step << Blood Elf !Warlock
+    #level 32
+    .money <35.00
+    .goto Eversong Woods,61.1,54.7,5,0
+    .goto Eversong Woods,61.4,54.0
+    .train 33388 >> Leave Silvermoon City, then train riding and purchase your mount.
+    .zoneskip Orgrimmar
+step << Blood Elf !Warlock
+    #level 32
+    .goto Silvermoon City,49.4,14.3
+    >> Teleport to Orgrimmar if you can << Mage
+    .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
+    .zoneskip Orgrimmar
 step << Warrior/Shaman
     #level 32
 	#completewith next
@@ -2539,12 +2577,20 @@ step
     .goto Tanaris,51.6,25.4
     .fp Gadgetzan >> Get the Gadgetzan flight path
 step
+    #completewith next
+    .money <35.00
+    +If you have access to gold on this server, mail yourself 35g for mount training soon!
+step
 	#completewith next
     .hs >> Hearth to Freewind Post
 step
     #completewith next
     .goto Thousand Needles,45.1,49.2
     .fly Camp Taurajo >> Fly to Camp Taurajo
+step
+    .isOnQuest 1153
+    .goto The Barrens,44.9,59.1
+    .zone The Barrens >> Arrive in the Barrens
 step
     .isOnQuest 885
     .goto The Barrens,44.9,59.1
@@ -2596,7 +2642,8 @@ step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
 	#completewith next
-    .goto Ashenvale,73.2,61.5
+    .goto Ashenvale,73.2,61.5,-1
+    .goto The Barrens,63.1,37.1,-1
     .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     .isOnQuest 1145
@@ -2654,10 +2701,19 @@ step
     .isOnQuest 1145
     .goto Orgrimmar,75.2,34.2
     .turnin 1145 >> Turn in The Swarm Grows
-step
-    .isQuestAvailable 1146
-    .goto Orgrimmar,74.7,33.9
     .accept 1146 >> Accept The Swarm Grows
+step << Orc !Warlock
+	#sticky
+	#completewith next
+	.money <35.00
+	.goto Orgrimmar,63.3,12.8
+	.train 149 >> Head to the Valley of Honor. Train riding and purchase your mount
+step << Troll !Warlock
+	#sticky
+	#completewith next
+	.money <35.00
+	.goto Durotar,55.2,75.5
+	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
 step << Warrior/Shaman
     .isOnQuest 874
 	#completewith next
@@ -2706,12 +2762,66 @@ step << Warrior/Shaman
     .isOnQuest 873
     .goto The Barrens,65.8,43.8
     .turnin 873 >>Turn in Isha Awak
+step << Tauren
+    .money <35.00
+    .goto The Barrens,63.1,37.1,-1
+    .goto Orgrimmar,45.1,63.9,-1
+    .fly Thunder Bluff >>Fly to Thunder Bluff, we're going to train riding
+step << Tauren
+    .money <35.00
+    .goto Mulgore,47.5,58.5
+    .train 713 >> Head down the lifts and then go to Bloodhoof Village. Train riding and buy your mount
 step << Warrior/Shaman
 	#completewith next
-    .goto The Barrens,63.1,37.1
+    .goto The Barrens,63.1,37.1,-1
+    .goto Thunder Bluff,46.9,49.9,-1
     .fly Orgrimmar >>Fly to Orgrimmar
+step << Tauren
+    #completewith next
+    .goto Thunder Bluff,46.9,49.9,-1
+    .fly Orgrimmar >>Fly to Orgrimmar    
 step << Shaman
     .isQuestAvailable 1531
     .goto Orgrimmar,38.0,37.7
     .accept 1531 >>Accept Call of Air
+step << Undead !Warlock
+    .money <35.00
+    .goto Durotar,50.8,13.7
+    .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
+    >> If you can teleport to the Undercity skip this step << Mage
+step << Undead !Warlock
+    .money <35.00
+    .goto Tirisfal Glades,60.1,52.6
+    .train 554 >> Train riding and purchase your mount
+    .zoneskip Tirisfal Glades,1
+step << Blood Elf !Warlock
+    .money <35.00
+    .goto Durotar,50.8,13.7
+    .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
+    >> If you can teleport to Undercity or Silvermoon skip this step << Mage
+step << Blood Elf !Warlock
+    .money <35.00
+    .goto Undercity,66.3,4.5,30,0
+    .goto Undercity,54.9,11.3
+    .zone Silvermoon City >> Click on the Orb of Translocation to head to Silvermoon City
+    .zoneskip Orgrimmar
+step << Blood Elf !Warlock
+    .money <35.00
+    .goto Eversong Woods,61.1,54.7,5,0
+    .goto Eversong Woods,61.4,54.0
+    .train 33388 >> Leave Silvermoon City, then train riding and purchase your mount.
+    .zoneskip Orgrimmar
+step << Blood Elf !Warlock
+    .goto Silvermoon City,49.4,14.3
+    >> Teleport to The Undercity if you can << Mage
+    .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
+    .zoneskip Orgrimmar
+step << Blood Elf !Warlock
+    .goto Tirisfal Glades,61.9,59.1
+    .zone Stranglethorn Vale >> Board the Zeppelin to Stranglethorn Vale
+    .zoneskip Tirisfal Glades,1
+step << Undead !Warlock
+    .goto Tirisfal Glades,61.9,59.1
+    .zone Stranglethorn Vale >> Board the Zeppelin to Stranglethorn Vale
+    .zoneskip Tirisfal Glades,1
 ]])
