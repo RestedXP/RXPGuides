@@ -164,7 +164,7 @@ function addon.QuestAutoTurnIn(title)
                 element = v
             end
         end
-        return (element and element.step.active) and element.reward >= 0
+        return (element and element.step.active) and element.reward >= 0 and element.reward
     end
 end
 
@@ -386,8 +386,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         local choices = GetNumQuestChoices()
         if reward then
             if choices <= 1 then
-                GetQuestReward(choices)
-            elseif reward > 0 then
+                GetQuestReward(1)
+            elseif reward and reward > 0 then
                 GetQuestReward(reward)
             end
         end
