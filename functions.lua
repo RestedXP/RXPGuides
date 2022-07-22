@@ -2103,13 +2103,13 @@ function addon.functions.next(skip, guide)
         local next = guide.next
         local guideSkip
         --Different guides can be separated by a semicolon when using #next
-        for guideName in string.gmatch(guide.next,"%s*([^;]-)%s*") do
+        for guideName in string.gmatch(guide.next,"%s*([^;]+)%s*") do
             next = guideName:gsub("^%s*(.+)\\%s*", function(grp)
                 group = grp
                 return ""
             end)
+            --print(next,guideSkip)
             guideSkip = addon.GetGuideTable(group, next)
-
             --Iterates through every guide until it finds a valid one
             --It uses the last one listed in case none of them are valid
             if guideSkip and addon.IsGuideActive(guideSkip) then
@@ -2117,7 +2117,7 @@ function addon.functions.next(skip, guide)
             end
         end
         local nextGuide
-
+        --print(guideSkip)
         if addon.game ~= "CLASSIC" then
             local faction = next:match("Aldor") or next:match("Scryer")
             if not addon.AldorScryerCheck(faction) then
