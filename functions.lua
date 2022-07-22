@@ -1176,6 +1176,10 @@ addon.functions["goto"] = function(self, ...)
     end
 end
 
+addon.functions.groundgoto = function(self, ...)
+    return addon.functions["goto"](self, ...)
+end
+
 function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
     -- creates an waypoint arrow without a map pin
     if type(self) == "string" then
