@@ -116,7 +116,7 @@ local IsQuestTurnedIn = function(id)
     return isQuestTurnedIn or (recentTurnIn and GetTime() - recentTurnIn < 2)
 end
 
-local function IsQuestComplete(id)
+function addon.IsQuestComplete(id)
 
     if C_QuestLog.IsComplete then
         return C_QuestLog.IsComplete(id)
@@ -134,6 +134,7 @@ local function IsQuestComplete(id)
         end
     end
 end
+local IsQuestComplete = addon.IsQuestComplete
 
 local function IsOnQuest(id) return C_QuestLog.IsOnQuest(id) end
 
