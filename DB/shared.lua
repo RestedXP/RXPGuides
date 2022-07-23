@@ -240,7 +240,6 @@ function addon.GetBestQuests(refreshQuestDB,output)
         for id, v in pairs(addon.QuestDB) do
             v.Id = id
             local group = v.group or ""
-            ff = v.group and print(v.group)
             if IsQuestAvailable(v,id) and not v.itemId and (group == "" or not groups[group]) and
                 v.questLog and (not v.forcePreReq or IsPreReqComplete(v)) then
                 table.insert(addon.questLogQuests, v)
