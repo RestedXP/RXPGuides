@@ -125,11 +125,7 @@ function addon.IsQuestComplete(id)
             local questLogTitleText, level, questTag, isHeader, isCollapsed,
                   isComplete, frequency, questID = GetQuestLogTitle(i);
             if questID == id then
-                if isComplete then
-                    return true
-                else
-                    return false
-                end
+                return isComplete
             end
         end
     end
