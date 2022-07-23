@@ -200,18 +200,18 @@ function addon.GetProfessionLevel()
     end
     names = professionNames
 
+    if IsPlayerSpell(33388) then
+        currrentSkillLevel["riding"] = 75
+    elseif IsPlayerSpell(33391) then
+        currrentSkillLevel["riding"] = 150
+    elseif IsPlayerSpell(34090) then
+        currrentSkillLevel["riding"] = 225
+    elseif IsPlayerSpell(34091) then
+        currrentSkillLevel["riding"] = 300
+    elseif IsPlayerSpell(90265) then
+        currrentSkillLevel["riding"] = 375
+    end
     if not _G.GetSkillLineInfo then
-        if IsPlayerSpell(33388) then
-            currrentSkillLevel["riding"] = 75
-        elseif IsPlayerSpell(33391) then
-            currrentSkillLevel["riding"] = 150
-        elseif IsPlayerSpell(34090) then
-            currrentSkillLevel["riding"] = 225
-        elseif IsPlayerSpell(34091) then
-            currrentSkillLevel["riding"] = 300
-        elseif IsPlayerSpell(90265) then
-            currrentSkillLevel["riding"] = 375
-        end
         return
     end
     if not names.riding then names.riding = GetSpellInfo(33388) end
