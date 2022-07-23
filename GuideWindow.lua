@@ -100,6 +100,7 @@ function addon.RenderFrame()
     Footer:ClearBackdrop()
     Footer:SetBackdrop(RXPFrame.backdropEdge)
     Footer:SetBackdropColor(unpack(addon.colors.background))
+    Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
     GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
     GuideName.icon:SetTexture(addon.GetTexture("rxp_logo-64"))
