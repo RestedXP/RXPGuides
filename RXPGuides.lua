@@ -100,13 +100,7 @@ function RXPG_init()
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.arrowText = RXPData.arrowText or 9
     RXPData.skipMissingPreReqs = false
-    if RXPCData.flightPaths then
-        if UnitLevel("player") <= 6 then
-            for i in pairs(RXPCData.flightPaths) do
-                RXPCData.flightPaths[i] = nil
-            end
-        end
-    else
+    if not RXPCData.flightPaths or UnitLevel("player") <= 6 then
         RXPCData.flightPaths = {}
     end
     RXPData.batchSize = RXPData.batchSize or 5

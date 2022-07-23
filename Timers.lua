@@ -118,18 +118,14 @@ function addon:TAXIMAP_OPENED()
         for _, v in pairs(FPList) do
             local id = v.nodeID
             --print(id)
-            if id then
-                if v.state == 2 then
-                    RXPCData.flightPaths[id] = false
-                else
-                    local hash = addon.GetFlightHash(v.slotIndex)
-                    flightInfo.nodeHash[hash] = id
-                    RXPCData.flightPaths[id] = v.name
-                    flightInfo[v.slotIndex] = v.nodeID
-                    --print(v.nodeID,v.name,hash)
-                    if v.state == 0 then
-                        flightInfo.currentFP = id
-                    end
+            if id and v.state ~= Enum.FlightPathState.Unreachable then
+                local hash = addon.GetFlightHash(v.slotIndex)
+                flightInfo.nodeHash[hash] = id
+                RXPCData.flightPaths[id] = v.name
+                flightInfo[v.slotIndex] = v.nodeID
+                --print(v.nodeID,v.name,hash)
+                if v.state == Enum.FlightPathState.Current then
+                    flightInfo.currentFP = id
                 end
             end
         end
