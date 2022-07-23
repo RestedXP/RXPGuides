@@ -1059,8 +1059,9 @@ step << Rogue
 	.complete 2480,1 --Cure Completed
     .turnin 2480 >> Turn in Hinott's Assistance
 step << !Rogue
+    .maxlevel 28
     >>Click the Wanted poster on the wall
-.goto Hillsbrad Foothills,62.5,19.8
+    .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
 step << Shaman/Warrior/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
@@ -1071,6 +1072,7 @@ step << Rogue
     .vendor >> Go buy Broad Bladed Knife from the vendor if you have enough money. It's not always in the shop.
     .collect 12247,1
 step << Rogue
+    .maxlevel 28
     .use 8095 >>Use Hinott's Oil on yourself to cure the debuff, then click the Wanted poster on the wall
 .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
@@ -1171,9 +1173,12 @@ step
     >>Return to Tarren Mill
     .goto Hillsbrad Foothills,62.3,20.2
     .turnin 527 >> Turn in Battle of Hillsbrad
+step
+    .maxlevel 29
+    .goto Hillsbrad Foothills,62.1,19.8
     .accept 528 >> Accept Battle of Hillsbrad
     .accept 546 >> Accept Souvenirs of Death
-    .goto Hillsbrad Foothills,62.1,19.8
+    
 step
     #label bearsohmy
     >>Kill Bears and Mountain Lions. Loot them for Tongues and Blood
