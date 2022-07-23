@@ -111,9 +111,8 @@ else
     addon.mapId = {["ScarletEnclave"] = 124}
     for i = 1, 2200 do
         local map = C_Map.GetMapInfo(i)
-        if map then
-            map = map.name
-            if not addon.mapId[map] then addon.mapId[map] = i end
+        if map and not addon.mapId[map.name] then
+            addon.mapId[map.name] = i
         end
     end
     addon.mapId["IcecrownGlacier"] = addon.mapId["Icecrown"]
@@ -125,6 +124,7 @@ else
     addon.mapId["GrizzlyHills"] = addon.mapId["Grizzly Hills"]
     addon.mapId["HowlingFjord"] = addon.mapId["Howling Fjord"]
     addon.mapId["BoreanTundra"] = addon.mapId["Borean Tundra"]
+    addon.mapId["Northrend"] = 571
 end
 
 addon.professionID = {

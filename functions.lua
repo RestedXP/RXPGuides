@@ -1120,7 +1120,7 @@ local lastZone
 addon.functions["goto"] = function(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        element.tag = "goto"
+        --element.tag = "goto"
         local text, zone, x, y, radius, optional = ...
         if zone then
             lastZone = zone

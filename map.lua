@@ -815,13 +815,19 @@ function addon.UpdateGotoSteps()
         return
     end
     local minDist
-
+    local zone = C_Map.GetBestMapForUnit("player")
     local x, y, instance = HBD:GetPlayerWorldPosition()
     if af.element and af.element.instance ~= instance then hideArrow = true end
     for i, element in ipairs(addon.activeWaypoints) do
         if element.step and element.step.active then
 
-            if (element.radius or element.dynamic) and element.arrow and
+            if element.tag == "groundgoto" and
+                                 IsFlyableArea() and addon.GetSkillLevel("riding") >= 225 and
+                                 zone == element.zone and (not addon.game == "WOTLK" or
+                                 instance ~= addon.mapId["Northrend"] or IsPlayerSpell(54197)) then
+                forceArrowUpdate = forceArrowUpdate or not element.skip
+                element.skip = true
+            elseif (element.radius or element.dynamic) and element.arrow and
                 not (element.parent and
                     (element.parent.completed or element.parent.skip) and
                     not element.parent.textOnly) and not element.skip then
