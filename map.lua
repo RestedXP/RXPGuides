@@ -64,6 +64,8 @@ function addon.UpdateArrow(self)
                 self.text:SetText(step.title or
                                       string.format("Step %d\n(%dyd)",
                                                     step.index, dist))
+            elseif element.title then
+                self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
             else
                 self.text:SetText(string.format("(%dyd)", dist))
             end
@@ -385,10 +387,10 @@ local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
     return false
 end
 
+local lsh = bit.lshift
 local function GetPinHash(x,y,instance,element)
-    local c1,c2,c3,c4 = 569,619,89,571
-    return math.floor(x*128)*c1+math.floor(y*128)*c2+instance*c3+element*c4
-
+    return (instance % 256) + lsh(math.floor(x*128),8) +
+            lsh(math.floor(y*1024),15) + lsh((element % 64),25)
 end
 -- Creates a list of Pin data structures.
 --
@@ -437,12 +439,14 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         --
         -- If it is far enough away, we add a new pin to the map.
         local j = 1;
+        local n = 0;
         while numActivePins < numPins and j <= #step.elements do
             local element = step.elements[j]
 
             local skipWp = not(element.zone and element.x)
             if not element.wpHash and not skipWp then
-                element.wpHash = GetPinHash(element.x,element.y,element.zone,j)
+                element.wpHash = GetPinHash(element.x,element.y,element.zone,n)
+                n = n + 1
             end
             if not isMiniMap and step.active and not skipWp then
                 local wpList = RXPCData.completedWaypoints[step.index] or {}
@@ -481,6 +485,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                             wy = element.wy,
                             zone = element.zone,
                             parent = element.parent,
+                            wpHash = element.wpHash,
                         })
                     end
                 end
@@ -557,6 +562,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
         end
 
         local j = 1
+        local n = 0
         while numActivePins < numPins and j <= #step.elements do
             local element = step.elements[j]
 
@@ -621,6 +627,8 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                                 range = element.range,
                                 generated = true
                             }
+                            point.wpHash = GetPinHash(x,y,element.zone,n)
+                            n = n + 1
                             table.insert(addon.linePoints, point)
                             table.insert(addon.activeWaypoints, point)
                         end
@@ -703,9 +711,12 @@ local function addMiniMapPins(pins)
     end
 end
 
+local corpseWP = {title = "Corpse", generated = true, wpHash = 0}
 -- Updates the arrow
+
 local function updateArrow()
-    local lowPrioWPs = {}
+
+    local lowPrioWPs
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.lowPrio and not lowPrio then
             table.insert(lowPrioWPs, element)
@@ -724,17 +735,27 @@ local function updateArrow()
             return true
         end
     end
-    af.element = false
+
+    if UnitIsGhost("player") and --Meet at the grave and the follow-up quest:
+        not (addon.QuestAutoTurnIn(3912) or addon.QuestAutoAccept(3913)) then
+        local zone = HBD:GetPlayerZone()
+        local corpse = C_DeathInfo.GetCorpseMapPosition(zone)
+        if corpse and corpse.x then
+            corpseWP.wx, corpseWP.wy, corpseWP.instance =
+                             HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)
+            ProcessWaypoint(corpseWP)
+            return
+        end
+    end
+    lowPrioWPs = {}
     for i, element in ipairs(addon.activeWaypoints) do
-        RXPCData.completedWaypoints[i] =
-            RXPCData.completedWaypoints[i] or element.skip
-        if ProcessWaypoint(element, nil, RXPCData.completedWaypoints[i]) then
+        if ProcessWaypoint(element) then
             return
         end
     end
 
     for i, element in ipairs(lowPrioWPs) do
-        if ProcessWaypoint(element, true, RXPCData.completedWaypoints[i]) then
+        if ProcessWaypoint(element, true) then
             return
         end
     end
@@ -784,21 +805,29 @@ end
 
 hooksecurefunc(_G.WorldMapFrame, "OnMapChanged", DisplayLines);
 
+
 function addon.UpdateGotoSteps()
     local hideArrow = false
+    local forceArrowUpdate = UnitIsGhost("player") == (af.element ~= corpseWP)
     DisplayLines()
-    if #addon.activeWaypoints == 0 then
+    if #addon.activeWaypoints == 0 and not forceArrowUpdate then
         af:Hide()
         return
     end
-    local minDist, forceArrowUpdate
-
+    local minDist
+    local zone = C_Map.GetBestMapForUnit("player")
     local x, y, instance = HBD:GetPlayerWorldPosition()
     if af.element and af.element.instance ~= instance then hideArrow = true end
     for i, element in ipairs(addon.activeWaypoints) do
         if element.step and element.step.active then
 
-            if (element.radius or element.dynamic) and element.arrow and
+            if element.tag == "groundgoto" and
+                                 IsFlyableArea() and addon.GetSkillLevel("riding") >= 225 and
+                                 zone == element.zone and (not addon.game == "WOTLK" or
+                                 instance ~= addon.mapId["Northrend"] or IsPlayerSpell(54197)) then
+                forceArrowUpdate = forceArrowUpdate or not element.skip
+                element.skip = true
+            elseif (element.radius or element.dynamic) and element.arrow and
                 not (element.parent and
                     (element.parent.completed or element.parent.skip) and
                     not element.parent.textOnly) and not element.skip then
@@ -825,7 +854,8 @@ function addon.UpdateGotoSteps()
                         if dist <= element.radius then
                             if element.persistent then
                                 hideArrow = true
-                            else
+                            elseif not (element.textOnly and element.hidePin and
+                                                         element.wpHash ~= af.element.wpHash) then
                                 element.skip = true
                                 addon.updateMap = true
                                 addon.SetElementComplete(element.frame)
@@ -930,3 +960,54 @@ function addon.UpdateGotoSteps()
 
     if forceArrowUpdate then updateArrow() end
 end
+
+local p1 = {
+    ["y"] = 25,
+    ["x"] = 25,
+    ["yb"] = 43.7789069363158,
+    ["xb"] = 39.02232393772481,
+}
+local p2 = 	{
+    ["y"] = 75,
+    ["x"] = 75,
+    ["yb"] = 82.47040384981797,
+    ["xb"] = 77.70637435364208,
+}
+
+local function GetMapCoefficients(p1x,p1y,p1xb,p1yb,p2x,p2y,p2xb,p2yb)
+    local c11 = (p1xb-p2xb)/(p1x-p2x)
+    local c31 = p1xb-p1x*c11
+    local c22 = (p1yb-p2yb)/(p1y-p2y)
+    local c32 = p1yb-p1y*c22
+    return {c11,c31,c22,c32}
+end
+
+addon.classicToWrath = GetMapCoefficients(p1.x,p1.y,p1.xb,p1.yb,p2.x,p2.y,p2.xb,p2.yb)
+addon.wrathToClassic = GetMapCoefficients(p1.xb,p1.yb,p1.x,p1.y,p2.xb,p2.yb,p2.x,p2.y)
+
+function addon.GetMapInfo(zone,x,y)
+    x = tonumber(x)
+    y = tonumber(y)
+    if not (x and y and zone) then
+        return
+    elseif zone == "StormwindClassic" then
+        if addon.gameVersion > 30000 then
+            local c = addon.classicToWrath
+            x = x*c[1]+c[2]
+            y = y*c[3]+c[4]
+        end
+        return addon.mapId["Stormwind City"],x,y
+    elseif zone == "StormwindNew" then
+        if addon.gameVersion < 30000 then
+            local c = addon.wrathToClassic
+            x = x*c[1]+c[2]
+            y = y*c[3]+c[4]
+        end
+        return addon.mapId["Stormwind City"],x,y
+    else
+        return addon.mapId[zone] or tonumber(zone),x,y
+    end
+end
+
+addon.mapId["StormwindClassic"] = addon.mapId["Stormwind City"]
+addon.mapId["StormwindNew"] = addon.mapId["Stormwind City"]

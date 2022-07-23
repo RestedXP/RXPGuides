@@ -111,9 +111,8 @@ else
     addon.mapId = {["ScarletEnclave"] = 124}
     for i = 1, 2200 do
         local map = C_Map.GetMapInfo(i)
-        if map then
-            map = map.name
-            if not addon.mapId[map] then addon.mapId[map] = i end
+        if map and not addon.mapId[map.name] then
+            addon.mapId[map.name] = i
         end
     end
     addon.mapId["IcecrownGlacier"] = addon.mapId["Icecrown"]
@@ -125,6 +124,7 @@ else
     addon.mapId["GrizzlyHills"] = addon.mapId["Grizzly Hills"]
     addon.mapId["HowlingFjord"] = addon.mapId["Howling Fjord"]
     addon.mapId["BoreanTundra"] = addon.mapId["Borean Tundra"]
+    addon.mapId["Northrend"] = 571
 end
 
 addon.professionID = {
@@ -214,7 +214,8 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
         end
     end
 
-    if addon.IsQuestTurnedIn(id) or not repCheck then
+    if addon.IsQuestTurnedIn(id) or not repCheck
+        or (quest.completewith and addon.IsQuestTurnedIn(quest.completewith)) then
         return false
     end
 
@@ -234,13 +235,17 @@ function addon.GetBestQuests(refreshQuestDB,output)
     output = output or 0
     if not addon.questLogQuests or refreshQuestDB then
         addon.questLogQuests = {}
+
+        local groups = {}
         for id, v in pairs(addon.QuestDB) do
             v.Id = id
-
-            if IsQuestAvailable(v,id) and not v.itemId and
+            local group = v.group or ""
+            ff = v.group and print(v.group)
+            if IsQuestAvailable(v,id) and not v.itemId and (group == "" or not groups[group]) and
                 v.questLog and (not v.forcePreReq or IsPreReqComplete(v)) then
                 table.insert(addon.questLogQuests, v)
                 v.isActive = true
+                groups[group] = true
             elseif v.questLog then
                 v.isActive = false
             end
@@ -286,11 +291,11 @@ function addon.GetBestQuests(refreshQuestDB,output)
             end
         end
     end
-    --TODO: Sort low priority quests at the bottom of the list
+
+    local outputString = ""
+    local requestFromServer = true
 
     if output ~= 0 then
-        local outputString = ""
-        local requestFromServer = true
         for k, v in ipairs(qDB) do
             local id = v.Id
             local qname = addon.GetQuestName(id)
@@ -303,8 +308,17 @@ function addon.GetBestQuests(refreshQuestDB,output)
         if bit.band(output,0x1) == 0x1 then
             print(outputString)
         end
-        return outputString,not requestFromServer
     end
+
+    for i = #qDB, 1, -1 do
+        if i > 25 then
+            qDB[i].isActive = false
+        else
+            break
+        end
+    end
+
+    return outputString,not requestFromServer
 end
 
 
@@ -442,10 +456,12 @@ function addon.CalculateTotalXP(flags)
         local scryer = addon.AldorScryerCheck("Scryer") and 934
         ignorePreReqs = aldor or scryer or 932
     end
-
-    local function ProcessQuest(quest,qid)
+    local groups = {}
+    local function ProcessQuest(quest,qid,skipgrpcheck)
         qid = qid or quest.Id
-        if IsQuestAvailable(quest,qid,ignorePreReqs) and (ignorePreReqs or (IsPreReqComplete(quest))) then
+        local group = quest.group or ""
+        if (group == "" or skipgrpcheck or not groups[group]) and IsQuestAvailable(quest,qid,ignorePreReqs) and (ignorePreReqs or (IsPreReqComplete(quest))) then
+            groups[group] = true
             local xp = quest.xp or 0
             totalXp = totalXp + xp
             if output then
@@ -455,15 +471,18 @@ function addon.CalculateTotalXP(flags)
         end
     end
     if not addon.questLogQuests then addon.GetBestQuests(true) end
-    for i = 1, 25 do
-        local quest = addon.questLogQuests[i]
-        if quest and (ignorePreReqs or addon.IsQuestComplete(quest.Id)) then
-            ProcessQuest(quest)
+    if ignorePreReqs then
+        for i = 1, 25 do
+            local quest = addon.questLogQuests[i]
+            if quest then
+                ProcessQuest(quest)
+            end
         end
     end
-
     for id, quest in pairs(addon.QuestDB) do
-        if not (quest.questLog or addon.IsQuestTurnedIn(id)) then
+        if not ignorePreReqs and quest.questLog and addon.IsQuestComplete(id) then
+            ProcessQuest(quest,id,true)
+        elseif not (quest.questLog or addon.IsQuestTurnedIn(id)) then
             local item = quest.itemId
             if ignorePreReqs and item then
                 ProcessQuest(quest,id)
@@ -486,1151 +505,1662 @@ function addon.CalculateTotalXP(flags)
     return totalXp
 end
 
+
 addon.QuestDB = {
-    [11505] = {
-        ["questLog"] = true,
-        ["xp"] = 10050,
-        ["appliesTo"] = "Alliance",
-    },
-    [9977] = {
-        ["priority"] = 2,
-        ["questLog"] = true,
-        ["xp"] = 17450,
-        ["previousQuest"] = 9973,
-    },
-    [9724] = {
-        ["xp"] = 10560,
-        ["previousQuest"] = 9731,
-    },
-    [11003] = {
-        ["itemId"] = 32386,
-        ["itemAmount"] = 1,
-        ["xp"] = 19000,
-        ["appliesTo"] = "Horde",
-    },
-    [11515] = {
-        ["priority"] = 11,
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["previousQuest"] = 11526,
-    },
-    [11007] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 19000,
-        ["itemId"] = 32405,
-    },
-    [10754] = {
-        ["itemId"] = {
-            31239, -- [1]
-            23445, -- [2]
-            22445, -- [3]
-            22574, -- [4]
-        },
-        ["itemAmount"] = {
-            1, -- [1]
-            4, -- [2]
-            2, -- [3]
-            4, -- [4]
-        },
-        ["xp"] = 28450,
-        ["appliesTo"] = "Alliance",
-    },
-    [11521] = {
-        ["questLog"] = true,
-        ["xp"] = 15800,
-        ["priority"] = 1,
-    },
-    [9738] = {
-        ["xp"] = 22000,
-        ["questLog"] = true,
-    },
-    [11015] = {
-        ["itemAmount"] = 30,
-        ["xp"] = 12650,
-        ["itemId"] = 32427,
-    },
-    [11017] = {
-        ["appliesTo"] = "herbalism",
-        ["itemAmount"] = 40,
-        ["xp"] = 12650,
-        ["itemId"] = 32468,
-    },
-    [10509] = {
-        ["xp"] = 9500,
-        ["previousQuest"] = 10508,
-    },
-    [11531] = {
-        ["itemId"] = 34474,
-        ["itemAmount"] = 1,
-        ["xp"] = 12650,
-        ["appliesTo"] = "Alliance",
-    },
-    [9493] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["appliesTo"] = "Alliance",
-    },
-    [9495] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["appliesTo"] = "Horde",
-    },
-    [10772] = {
-        ["itemId"] = 31310,
-        ["itemAmount"] = 1,
-        ["xp"] = 9500,
-        ["appliesTo"] = "Alliance",
-    },
-    [11539] = {
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["priority"] = 9,
-    },
-    [11541] = {
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["priority"] = 6,
-    },
-    [10013] = {
-        ["itemId"] = 25765,
-        ["itemAmount"] = 1,
-        ["xp"] = 8600,
-        ["appliesTo"] = "Horde",
-    },
-    [11035] = {
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["priority"] = 3,
-    },
-    [11547] = {
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["priority"] = 7,
-    },
-    [9764] = {
-        ["itemAmount"] = {
-            1, -- [1]
-            1, -- [2]
-        },
-        ["xp"] = 37950,
-        ["itemId"] = {
-            24367, -- [1]
-            24368, -- [2]
-        },
-    },
-    [10280] = {
-        ["xp"] = 19000,
-        ["previousQuest"] = 10276,
-    },
-    [11049] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 15800,
-        ["itemId"] = 32506,
-    },
-    [10541] = {
-        ["xp"] = 6250,
-        ["previousQuest"] = 10540,
-    },
-    [11053] = {
-        ["repfaction"] = 1015,
-        ["xp"] = 12650,
-        ["reputation"] = "friendly",
-    },
-    [11055] = {
-        ["xp"] = 6250,
-    },
-    [10039] = {
-        ["xp"] = 2120,
-        ["appliesTo"] = "Horde",
-    },
-    [10806] = {
-        ["previousQuest"] = 10805,
-        ["priority"] = 4,
-        ["questLog"] = true,
-        ["xp"] = 19000,
-        ["appliesTo"] = "Alliance",
-    },
-    [10810] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 18100,
-        ["itemId"] = 31384,
-    },
-    [9794] = {
-        ["itemId"] = 26048,
-        ["itemAmount"] = 1,
-        ["xp"] = 2700,
-        ["appliesTo"] = "Alliance",
-    },
-    [10306] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 12300,
-        ["itemId"] = 29235,
-    },
-    [9802] = {
-        ["itemAmount"] = 10,
-        ["xp"] = 6240,
-        ["itemId"] = 24401,
-    },
-    [9806] = {
-        ["itemAmount"] = 6,
-        ["xp"] = 8600,
-        ["itemId"] = 24449,
-    },
-    [9808] = {
-        ["itemAmount"] = 10,
-        ["xp"] = 8600,
-        ["itemId"] = 24245,
-    },
-    [10579] = {
-        ["xp"] = 6250,
-        ["previousQuest"] = 10578,
-    },
-    [9563] = {
-        ["repfaction"] = 946,
-        ["itemId"] = 23848,
-        ["reputation"] = "friendly",
-        ["itemAmount"] = 1,
-        ["xp"] = 4020,
-        ["appliesTo"] = "Alliance",
-    },
-    [11099] = {
-        ["repfaction"] = 1015,
-        ["xp"] = 12650,
-        ["reputation"] = "revered",
-    },
-    [9828] = {
-        ["itemId"] = 24484,
-        ["itemAmount"] = 1,
-        ["xp"] = 4020,
-        ["appliesTo"] = "Horde",
-    },
-    [10091] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["previousQuest"] = 10178,
-    },
-    [10093] = {
-        ["appliesTo"] = "Alliance",
-        ["xp"] = 1560,
-        ["previousQuest"] = 10047,
-    },
-    [10095] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["previousQuest"] = 10094,
-    },
-    [10097] = {
-        ["xp"] = 24600,
-        ["questLog"] = true,
-    },
-    [11380] = {
-        ["daily"] = true,
-        ["priority"] = 12,
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["appliesTo"] = "cooking",
-    },
-    [11384] = {
-        ["priority"] = 1,
-        ["questLog"] = true,
-        ["xp"] = 19000,
-        ["daily"] = true,
-    },
-    [10880] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 4320,
-        ["itemId"] = 31707,
-    },
-    [9866] = {
-        ["appliesTo"] = "Horde",
-        ["xp"] = 5800,
-        ["previousQuest"] = 9865,
-    },
-    [10633] = {
-        ["appliesTo"] = "Horde",
-        ["xp"] = 6250,
-        ["previousQuest"] = 10625,
-    },
-    [9870] = {
-        ["xp"] = 2850,
-        ["appliesTo"] = "Horde",
-    },
-    [9872] = {
-        ["repfaction"] = 941,
-        ["itemId"] = 24558,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 1,
-        ["xp"] = 11650,
-        ["appliesTo"] = "Horde",
-    },
-    [9882] = {
-        ["repfaction"] = 933,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 10,
-        ["xp"] = 11300,
-        ["itemId"] = 25416,
-    },
-    [10649] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["previousQuest"] = 10646,
-    },
-    [10653] = {
-        ["repfaction"] = 932,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 10,
-        ["xp"] = 12650,
-        ["itemId"] = 30809,
-    },
-    [10408] = {
-        ["priority"] = 3,
-        ["questLog"] = true,
-        ["xp"] = 19000,
-        ["previousQuest"] = 10406,
-    },
-    [10410] = {
-        ["xp"] = 9500,
-        ["previousQuest"] = 10407,
-    },
-    [10667] = {
-        ["questLog"] = true,
-        ["xp"] = 33825,
-        ["previousQuest"] = {
-            10665, -- [1]
-            10666, -- [2]
-        },
-    },
-    [10416] = {
-        ["repfaction"] = 934,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 1,
-        ["xp"] = 15800,
-        ["itemId"] = 29739,
-    },
-    [10165] = {
-        ["xp"] = 22600,
-        ["questLog"] = true,
-    },
-    [9914] = {
-        ["repfaction"] = 933,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 27,
-        ["xp"] = 11300,
-        ["itemId"] = 25463,
-    },
-    [10434] = {
-        ["xp"] = 1250,
-        ["previousQuest"] = 10433,
-    },
-    [9418] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 6240,
-        ["itemId"] = 23580,
-    },
-    [9934] = {
-        ["appliesTo"] = "Horde",
-        ["xp"] = 14150,
-        ["previousQuest"] = {
-            9931, -- [1]
-            9932, -- [2]
-        },
-    },
-    [9938] = {
-        ["priority"] = 1,
-        ["questLog"] = true,
-        ["xp"] = 17450,
-        ["appliesTo"] = "Alliance",
-    },
-    [10707] = {
-        ["priority"] = 6,
-        ["questLog"] = true,
-        ["xp"] = 19000,
-        ["previousQuest"] = 10706,
-    },
-    [9944] = {
-        ["xp"] = 1150,
-        ["appliesTo"] = "Horde",
-    },
-    [10201] = {
-        ["appliesTo"] = "Horde",
-        ["xp"] = 8250,
-        ["previousQuest"] = 9993,
-    },
-    [9697] = {
-        ["repfaction"] = 942,
-        ["xp"] = 9390,
-        ["reputation"] = "friendly",
-    },
-    [10466] = {
-        ["repfaction"] = 990,
-        ["previousQuest"] = 10462,
-        ["reputation"] = "honored",
-        ["xp"] = 15800,
-        ["uniqueWith"] = {
-            10465, -- [1]
-            10467, -- [2]
-            10464, -- [3]
-        },
-    },
-    [10470] = {
-        ["repfaction"] = 990,
-        ["previousQuest"] = 10466,
-        ["reputation"] = "revered",
-        ["xp"] = 15800,
-        ["uniqueWith"] = {
-            10469, -- [1]
-            10471, -- [2]
-            10468, -- [3]
-        },
-    },
-    [11492] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["previousQuest"] = 11490,
-    },
-    [10474] = {
-        ["repfaction"] = 990,
-        ["previousQuest"] = 10470,
-        ["reputation"] = "exalted",
-        ["xp"] = 15800,
-        ["uniqueWith"] = {
-            10473, -- [1]
-            10475, -- [2]
-            10472, -- [3]
-        },
-    },
-    [10476] = {
-        ["itemId"] = 25433,
-        ["itemAmount"] = 10,
-        ["xp"] = 11650,
-        ["appliesTo"] = "Alliance",
-    },
-    [9715] = {
-        ["itemAmount"] = 5,
-        ["xp"] = 22000,
-        ["itemId"] = 24246,
-    },
-    [11502] = {
-        ["priority"] = 13,
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["appliesTo"] = "Alliance",
-    },
-    [11506] = {
-        ["questLog"] = true,
-        ["xp"] = 10050,
-        ["appliesTo"] = "Horde",
-    },
-    [11000] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["previousQuest"] = 10998,
-    },
-    [11002] = {
-        ["itemId"] = 32385,
-        ["itemAmount"] = 1,
-        ["xp"] = 19000,
-        ["appliesTo"] = "Alliance",
-    },
-    [11004] = {
-        ["itemAmount"] = 6,
-        ["xp"] = 12650,
-        ["itemId"] = 32388,
-    },
-    [11516] = {
-        ["priority"] = 5,
-        ["questLog"] = true,
-        ["xp"] = 9500,
-        ["previousQuest"] = 11526,
-    },
-    [11008] = {
-        ["priority"] = 10,
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["previousQuest"] = 11098,
-    },
-    [10755] = {
-        ["itemId"] = {
-            31241, -- [1]
-            23445, -- [2]
-            22445, -- [3]
-            22574, -- [4]
-        },
-        ["itemAmount"] = {
-            1, -- [1]
-            4, -- [2]
-            2, -- [3]
-            4, -- [4]
-        },
-        ["xp"] = 28450,
-        ["appliesTo"] = "Horde",
-    },
-    [9373] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 1960,
-        ["itemId"] = 23338,
-    },
-    [9739] = {
-        ["itemAmount"] = 10,
-        ["xp"] = 6240,
-        ["itemId"] = 24290,
-    },
-    [11016] = {
-        ["appliesTo"] = "skinning",
-        ["itemAmount"] = 35,
-        ["xp"] = 12650,
-        ["itemId"] = 32470,
-    },
-    [11018] = {
-        ["appliesTo"] = "mining",
-        ["itemAmount"] = 40,
-        ["xp"] = 12650,
-        ["itemId"] = 32464,
-    },
-    [11020] = {
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["priority"] = 2,
-    },
-    [9492] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["appliesTo"] = "Alliance",
-    },
-    [9494] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["appliesTo"] = "Alliance",
-    },
-    [9496] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["appliesTo"] = "Horde",
-    },
-    [11021] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 13000,
-        ["itemId"] = 32523,
-    },
-    [10010] = {
-        ["xp"] = 6000,
-        ["previousQuest"] = 10009,
-    },
-    [11542] = {
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["priority"] = 8,
-    },
-    [11544] = {
-        ["questLog"] = true,
-        ["xp"] = 15800,
-        ["priority"] = 2,
-    },
-    [11546] = {
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["priority"] = 5,
-    },
-    [9763] = {
-        ["xp"] = 25300,
-        ["questLog"] = true,
-    },
-    [11550] = {
-        ["xp"] = 3150,
-    },
-    [7165] = {
-        ["repfaction"] = 729,
-        ["previousQuest"] = 7164,
-        ["reputation"] = "revered",
-        ["xp"] = 25150,
-        ["appliesTo"] = "Horde",
-    },
-    [10024] = {
-        ["repfaction"] = 932,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 8,
-        ["xp"] = 11000,
-        ["itemId"] = 25744,
-    },
-    [9771] = {
-        ["appliesTo"] = "Horde",
-        ["xp"] = 4020,
-        ["previousQuest"] = 9774,
-    },
-    [10793] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 9500,
-        ["itemId"] = 31345,
-    },
-    [9775] = {
-        ["xp"] = 1020,
-        ["appliesTo"] = "Horde",
-    },
-    [10511] = {
-        ["itemId"] = 29443,
-        ["itemAmount"] = 11,
-        ["xp"] = 11300,
-        ["appliesTo"] = "Alliance",
-    },
-    [9743] = {
-        ["itemAmount"] = 6,
-        ["xp"] = 8600,
-        ["itemId"] = 24291,
-    },
-    [7172] = {
-        ["repfaction"] = 730,
-        ["previousQuest"] = 7171,
-        ["reputation"] = "exalted",
-        ["xp"] = 30150,
-        ["appliesTo"] = "Alliance",
-    },
-    [10038] = {
-        ["xp"] = 2120,
-        ["appliesTo"] = "Alliance",
-    },
-    [9785] = {
-        ["repfaction"] = 942,
-        ["xp"] = 4320,
-        ["reputation"] = "friendly",
-    },
-    [10297] = {
-        ["xp"] = 25300,
-        ["previousQuest"] = 10296,
-    },
-    [7171] = {
-        ["repfaction"] = 730,
-        ["previousQuest"] = 7170,
-        ["reputation"] = "exalted",
-        ["xp"] = 30150,
-        ["appliesTo"] = "Alliance",
-    },
-    [7170] = {
-        ["repfaction"] = 730,
-        ["previousQuest"] = 7169,
-        ["reputation"] = "revered",
-        ["xp"] = 25150,
-        ["appliesTo"] = "Alliance",
-    },
-    [9401] = {
-        ["appliesTo"] = "Horde",
-        ["xp"] = 6020,
-        ["previousQuest"] = 9400,
-    },
-    [10305] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 12300,
-        ["itemId"] = 29234,
-    },
-    [10307] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 12300,
-        ["itemId"] = 29236,
-    },
-    [7168] = {
-        ["repfaction"] = 730,
-        ["previousQuest"] = 7162,
-        ["reputation"] = "friendly",
-        ["xp"] = 20100,
-        ["appliesTo"] = "Alliance",
-    },
-    [10462] = {
-        ["repfaction"] = 990,
-        ["uniqueWith"] = {
-            10461, -- [1]
-            10460, -- [2]
-            10463, -- [3]
-        },
-        ["xp"] = 12650,
-        ["reputation"] = "friendly",
-    },
-    [10727] = {
-        ["repfaction"] = 967,
-        ["previousQuest"] = 10740,
-        ["reputation"] = "exalted",
-        ["xp"] = 15800,
-        ["uniqueWith"] = {
-            10728, -- [1]
-            10725, -- [2]
-            10726, -- [3]
-        },
-    },
-    [10825] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 1200,
-        ["itemId"] = 31489,
-    },
-    [10317] = {
-        ["xp"] = 12650,
-    },
-    [11084] = {
-        ["repfaction"] = 1015,
-        ["xp"] = 12650,
-        ["reputation"] = "honored",
-    },
-    [10740] = {
-        ["repfaction"] = 967,
-        ["previousQuest"] = 10735,
-        ["reputation"] = "revered",
-        ["xp"] = 15800,
-        ["uniqueWith"] = {
-            10741, -- [1]
-            10738, -- [2]
-            10739, -- [3]
-        },
-    },
-    [10735] = {
-        ["repfaction"] = 967,
-        ["previousQuest"] = 10731,
-        ["reputation"] = "honored",
-        ["xp"] = 15800,
-        ["uniqueWith"] = {
-            10736, -- [1]
-            10733, -- [2]
-            10734, -- [3]
-        },
-    },
-    [10325] = {
-        ["repfaction"] = 932,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 10,
-        ["xp"] = 11000,
-        ["itemId"] = 29425,
-    },
-    [11092] = {
-        ["repfaction"] = 1015,
-        ["xp"] = 12650,
-        ["reputation"] = "revered",
-    },
-    [10074] = {
-        ["itemId"] = 26043,
-        ["itemAmount"] = 20,
-        ["xp"] = 11650,
-        ["appliesTo"] = "Horde",
-    },
-    [10076] = {
-        ["itemId"] = 26043,
-        ["itemAmount"] = 20,
-        ["xp"] = 11650,
-        ["appliesTo"] = "Alliance",
-    },
-    [10731] = {
-        ["repfaction"] = 967,
-        ["uniqueWith"] = {
-            10732, -- [1]
-            10729, -- [2]
-            10730, -- [3]
-        },
-        ["xp"] = 12650,
-        ["reputation"] = "friendly",
-    },
-    [10423] = {
-        ["xp"] = 1250,
-        ["previousQuest"] = 10418,
-    },
-    [9827] = {
-        ["itemId"] = 24483,
-        ["itemAmount"] = 1,
-        ["xp"] = 4020,
-        ["appliesTo"] = "Alliance",
-    },
-    [10334] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 9250,
-        ["itemId"] = 29428,
-    },
-    [9831] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["previousQuest"] = 9829,
-    },
-    [11108] = {
-        ["priority"] = 8,
-        ["questLog"] = true,
-        ["xp"] = 19000,
-        ["previousQuest"] = 11107,
-    },
-    [10316] = {
-        ["xp"] = 12300,
-        ["previousQuest"] = 10312,
-    },
-    [11877] = {
-        ["questLog"] = true,
-        ["xp"] = 9500,
-        ["priority"] = 4,
-    },
-    [10249] = {
-        ["xp"] = 18450,
-        ["previousQuest"] = 10248,
-    },
-    [11030] = {
-        ["itemAmount"] = {
-            1, -- [1]
-            1, -- [2]
-        },
-        ["xp"] = 25300,
-        ["itemId"] = {
-            32598, -- [1]
-            32601, -- [2]
-        },
-    },
-    [10098] = {
-        ["xp"] = 24600,
-        ["questLog"] = true,
-    },
-    [10682] = {
-        ["xp"] = 11650,
-    },
-    [10580] = {
-        ["appliesTo"] = "Alliance",
-        ["xp"] = 5800,
-        ["previousQuest"] = 10518,
-    },
-    [9795] = {
-        ["xp"] = 2700,
-        ["appliesTo"] = "Horde",
-    },
-    [11009] = {
-        ["xp"] = 15800,
-        ["previousQuest"] = 11022,
-    },
-    [9853] = {
-        ["priority"] = 3,
-        ["questLog"] = true,
-        ["xp"] = 17450,
-        ["previousQuest"] = 9849,
-    },
-    [11094] = {
-        ["repfaction"] = 1015,
-        ["xp"] = 12650,
-        ["reputation"] = "revered",
-    },
-    [10523] = {
-        ["xp"] = 3150,
-        ["previousQuest"] = 10522,
-    },
-    [11389] = {
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["priority"] = 1,
-    },
-    [9861] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 11650,
-        ["itemId"] = 24504,
-    },
-    [10750] = {
-        ["xp"] = 9500,
-        ["appliesTo"] = "Horde",
-    },
-    [10745] = {
-        ["appliesTo"] = "Horde",
-        ["xp"] = 15800,
-        ["previousQuest"] = 10613,
-    },
-    [10782] = {
-        ["xp"] = 12300,
-        ["previousQuest"] = 10780,
-    },
-    [9871] = {
-        ["repfaction"] = 978,
-        ["itemId"] = 24559,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 1,
-        ["xp"] = 11650,
-        ["appliesTo"] = "Alliance",
-    },
-    [10680] = {
-        ["xp"] = 3150,
-        ["appliesTo"] = "Alliance",
-    },
-    [10744] = {
-        ["appliesTo"] = "Alliance",
-        ["xp"] = 15800,
-        ["previousQuest"] = 10612,
-    },
-    [10251] = {
-        ["xp"] = 5800,
-        ["previousQuest"] = 10231,
-    },
-    [10134] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 3150,
-        ["itemId"] = 29476,
-    },
-    [9933] = {
-        ["appliesTo"] = "Alliance",
-        ["xp"] = 14150,
-        ["previousQuest"] = {
-            9931, -- [1]
-            9932, -- [2]
-        },
-    },
-    [10393] = {
-        ["itemId"] = 29590,
-        ["itemAmount"] = 1,
-        ["xp"] = 970,
-        ["appliesTo"] = "Horde",
-    },
-    [10395] = {
-        ["itemId"] = 29588,
-        ["itemAmount"] = 1,
-        ["xp"] = 970,
-        ["appliesTo"] = "Alliance",
-    },
-    [10413] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 15800,
-        ["itemId"] = 29738,
-    },
-    [10012] = {
-        ["itemId"] = 25765,
-        ["itemAmount"] = 1,
-        ["xp"] = 8600,
-        ["appliesTo"] = "Alliance",
-    },
-    [10656] = {
-        ["repfaction"] = 934,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 10,
-        ["xp"] = 12650,
-        ["itemId"] = 30810,
-    },
-    [9893] = {
-        ["repfaction"] = 933,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 20,
-        ["xp"] = 11650,
-        ["itemId"] = 25433,
-    },
-    [10017] = {
-        ["itemAmount"] = 8,
-        ["xp"] = 8600,
-        ["itemId"] = 25802,
-    },
-    [10917] = {
-        ["itemAmount"] = 30,
-        ["xp"] = 11000,
-        ["itemId"] = 25719,
-    },
-    [10926] = {
-        ["xp"] = 8250,
-        ["previousQuest"] = 10921,
-    },
-    [10863] = {
-        ["xp"] = 6240,
-        ["appliesTo"] = "Alliance",
-    },
-    [11178] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 19000,
-        ["itemId"] = 33102,
-    },
-    [10670] = {
-        ["questLog"] = true,
-        ["xp"] = 33825,
-        ["previousQuest"] = {
-            10665, -- [1]
-            10666, -- [2]
-        },
-    },
-    [10862] = {
-        ["xp"] = 6240,
-        ["appliesTo"] = "Horde",
-    },
-    [10164] = {
-        ["xp"] = 23300,
-        ["questLog"] = true,
-    },
-    [9911] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 8600,
-        ["itemId"] = 25459,
-    },
-    [9913] = {
-        ["xp"] = 1150,
-    },
-    [7141] = {
-        ["appliesTo"] = "Alliance",
-        ["questLog"] = true,
-        ["xp"] = 31650,
-        ["previousQuest"] = 7221,
-    },
-    [7142] = {
-        ["appliesTo"] = "Horde",
-        ["questLog"] = true,
-        ["xp"] = 31650,
-        ["previousQuest"] = 7222,
-    },
-    [9919] = {
-        ["repfaction"] = 970,
-        ["xp"] = 8600,
-        ["reputation"] = "neutral",
-    },
-    [10006] = {
-        ["appliesTo"] = "Horde",
-        ["xp"] = 9330,
-        ["previousQuest"] = 10447,
-    },
-    [10005] = {
-        ["appliesTo"] = "Alliance",
-        ["xp"] = 9330,
-        ["previousQuest"] = 10446,
-    },
-    [10742] = {
-        ["previousQuest"] = 10724,
-        ["priority"] = 4,
-        ["questLog"] = true,
-        ["xp"] = 19000,
-        ["appliesTo"] = "Horde",
-    },
-    [10182] = {
-        ["itemAmount"] = 1,
-        ["xp"] = 12000,
-        ["itemId"] = 29233,
-    },
-    [10439] = {
-        ["priority"] = 2,
-        ["questLog"] = true,
-        ["xp"] = 19000,
-        ["previousQuest"] = 10438,
-    },
-    [10412] = {
-        ["repfaction"] = 934,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 10,
-        ["xp"] = 11000,
-        ["itemId"] = 29426,
-    },
-    [9423] = {
-        ["appliesTo"] = "Alliance",
-        ["xp"] = 1020,
-        ["previousQuest"] = 9390,
-    },
-    [10445] = {
-        ["questLog"] = true,
-        ["xp"] = 19000,
-        ["priority"] = 7,
-    },
-    [9937] = {
-        ["priority"] = 1,
-        ["questLog"] = true,
-        ["xp"] = 17450,
-        ["appliesTo"] = "Horde",
-    },
-    [9837] = {
-        ["xp"] = 19000,
-        ["previousQuest"] = 9836,
-    },
-    [9587] = {
-        ["itemId"] = 23890,
-        ["itemAmount"] = 1,
-        ["xp"] = 8040,
-        ["appliesTo"] = "Alliance",
-    },
-    [9588] = {
-        ["itemId"] = 23892,
-        ["itemAmount"] = 1,
-        ["xp"] = 8040,
-        ["appliesTo"] = "Horde",
-    },
-    [10860] = {
-        ["itemId"] = {
-            31670, -- [1]
-            31671, -- [2]
-        },
-        ["itemAmount"] = {
-            3, -- [1]
-            3, -- [2]
-        },
-        ["xp"] = 11650,
-        ["appliesTo"] = "Horde",
-    },
-    [11536] = {
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["priority"] = 4,
-    },
-    [10420] = {
-        ["repfaction"] = 932,
-        ["reputation"] = "neutral",
-        ["itemAmount"] = 1,
-        ["xp"] = 15800,
-        ["itemId"] = 29740,
-    },
-    [11525] = {
-        ["questLog"] = true,
-        ["xp"] = 9500,
-        ["priority"] = 3,
-    },
-    [11514] = {
-        ["questLog"] = true,
-        ["xp"] = 9500,
-        ["priority"] = 6,
-    },
-    [11533] = {
-        ["questLog"] = true,
-        ["xp"] = 9500,
-        ["priority"] = 2,
-    },
-    [11523] = {
-        ["questLog"] = true,
-        ["xp"] = 9500,
-        ["priority"] = 1,
-    },
-    [7163] = {
-        ["repfaction"] = 729,
-        ["previousQuest"] = 7161,
-        ["reputation"] = "friendly",
-        ["xp"] = 20100,
-        ["appliesTo"] = "Horde",
-    },
-    [7164] = {
-        ["repfaction"] = 729,
-        ["previousQuest"] = 7163,
-        ["reputation"] = "honored",
-        ["xp"] = 20100,
-        ["appliesTo"] = "Horde",
-    },
-    [10218] = {
-        ["xp"] = 22600,
-        ["questLog"] = true,
-    },
-    [7166] = {
-        ["repfaction"] = 729,
-        ["previousQuest"] = 7165,
-        ["reputation"] = "exalted",
-        ["xp"] = 30150,
-        ["appliesTo"] = "Horde",
-    },
-    [7167] = {
-        ["repfaction"] = 729,
-        ["previousQuest"] = 7166,
-        ["reputation"] = "exalted",
-        ["xp"] = 30150,
-        ["appliesTo"] = "Horde",
-    },
-    [10479] = {
-        ["itemId"] = 25433,
-        ["itemAmount"] = 10,
-        ["xp"] = 11650,
-        ["appliesTo"] = "Horde",
-    },
-    [7169] = {
-        ["repfaction"] = 730,
-        ["previousQuest"] = 7162,
-        ["reputation"] = "honored",
-        ["xp"] = 20100,
-        ["appliesTo"] = "Alliance",
-    },
-    [11503] = {
-        ["priority"] = 13,
-        ["questLog"] = true,
-        ["xp"] = 12650,
-        ["appliesTo"] = "Horde",
-    },
-    [10257] = {
-        ["questLog"] = true,
-        ["xp"] = 25300,
-        ["previousQuest"] = 10256,
-    }
+	[11505] = {
+		["isActive"] = false,
+		["Id"] = 11505,
+		["questLog"] = true,
+		["xp"] = 10050,
+		["appliesTo"] = "Alliance",
+	},
+	[10742] = {
+		["isActive"] = false,
+		["priority"] = 4,
+		["previousQuest"] = 10724,
+		["Id"] = 10742,
+		["questLog"] = true,
+		["xp"] = 19000,
+		["appliesTo"] = "Horde",
+	},
+	[9724] = {
+		["Id"] = 9724,
+		["xp"] = 10560,
+		["previousQuest"] = 9731,
+	},
+	[11003] = {
+		["itemId"] = 32386,
+		["Id"] = 11003,
+		["itemAmount"] = 1,
+		["xp"] = 19000,
+		["appliesTo"] = "Horde",
+	},
+	[11515] = {
+		["isActive"] = false,
+		["previousQuest"] = 11526,
+		["Id"] = 11515,
+		["questLog"] = true,
+		["xp"] = 12650,
+		["priority"] = 11,
+	},
+	[11007] = {
+		["Id"] = 11007,
+		["itemAmount"] = 1,
+		["xp"] = 19000,
+		["itemId"] = 32405,
+	},
+	[10754] = {
+		["itemId"] = {
+			31239, -- [1]
+			23445, -- [2]
+			22445, -- [3]
+			22574, -- [4]
+		},
+		["Id"] = 10754,
+		["itemAmount"] = {
+			1, -- [1]
+			4, -- [2]
+			2, -- [3]
+			4, -- [4]
+		},
+		["xp"] = 28450,
+		["appliesTo"] = "Alliance",
+	},
+	[11521] = {
+		["isActive"] = false,
+		["Id"] = 11521,
+		["priority"] = 1,
+		["xp"] = 15800,
+		["questLog"] = true,
+	},
+	[9738] = {
+		["Id"] = 9738,
+		["questLog"] = true,
+		["xp"] = 22000,
+		["isActive"] = true,
+	},
+	[11015] = {
+		["Id"] = 11015,
+		["itemAmount"] = 30,
+		["xp"] = 12650,
+		["itemId"] = 32427,
+	},
+	[11017] = {
+		["Id"] = 11017,
+		["appliesTo"] = "herbalism",
+		["group"] = "netherwingprofessions",
+		["itemAmount"] = 40,
+		["xp"] = 12650,
+		["itemId"] = 32468,
+	},
+	[10509] = {
+		["Id"] = 10509,
+		["xp"] = 9500,
+		["previousQuest"] = 10508,
+	},
+	[11021] = {
+		["Id"] = 11021,
+		["itemAmount"] = 1,
+		["xp"] = 13000,
+		["itemId"] = 32523,
+	},
+	[9493] = {
+		["isActive"] = true,
+		["Id"] = 9493,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["appliesTo"] = "Alliance",
+	},
+	[9495] = {
+		["isActive"] = false,
+		["Id"] = 9495,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["appliesTo"] = "Horde",
+	},
+	[10772] = {
+		["itemId"] = 31310,
+		["Id"] = 10772,
+		["itemAmount"] = 1,
+		["xp"] = 9500,
+		["appliesTo"] = "Alliance",
+	},
+	[11539] = {
+		["isActive"] = false,
+		["Id"] = 11539,
+		["priority"] = 9,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[11541] = {
+		["isActive"] = false,
+		["Id"] = 11541,
+		["priority"] = 6,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[10013] = {
+		["itemId"] = 25765,
+		["Id"] = 10013,
+		["itemAmount"] = 1,
+		["xp"] = 8600,
+		["appliesTo"] = "Horde",
+	},
+	[11035] = {
+		["isActive"] = false,
+		["Id"] = 11035,
+		["priority"] = 3,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[11547] = {
+		["isActive"] = false,
+		["Id"] = 11547,
+		["priority"] = 7,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[9764] = {
+		["Id"] = 9764,
+		["itemAmount"] = {
+			1, -- [1]
+			1, -- [2]
+		},
+		["xp"] = 37950,
+		["itemId"] = {
+			24367, -- [1]
+			24368, -- [2]
+		},
+	},
+	[10280] = {
+		["Id"] = 10280,
+		["xp"] = 19000,
+		["previousQuest"] = 10276,
+	},
+	[11049] = {
+		["Id"] = 11049,
+		["itemAmount"] = 1,
+		["xp"] = 15800,
+		["itemId"] = 32506,
+	},
+	[10541] = {
+		["Id"] = 10541,
+		["xp"] = 6250,
+		["previousQuest"] = 10540,
+	},
+	[11053] = {
+		["repfaction"] = 1015,
+		["Id"] = 11053,
+		["xp"] = 12650,
+		["reputation"] = "friendly",
+	},
+	[10039] = {
+		["Id"] = 10039,
+		["xp"] = 2120,
+		["appliesTo"] = "Horde",
+	},
+	[10806] = {
+		["isActive"] = false,
+		["priority"] = 4,
+		["previousQuest"] = 10805,
+		["Id"] = 10806,
+		["questLog"] = true,
+		["xp"] = 19000,
+		["appliesTo"] = "Alliance",
+	},
+	[10810] = {
+		["Id"] = 10810,
+		["itemAmount"] = 1,
+		["xp"] = 18100,
+		["itemId"] = 31384,
+	},
+	[9794] = {
+		["itemId"] = 26048,
+		["Id"] = 9794,
+		["itemAmount"] = 1,
+		["xp"] = 2700,
+		["appliesTo"] = "Alliance",
+	},
+	[10306] = {
+		["Id"] = 10306,
+		["itemAmount"] = 1,
+		["xp"] = 12300,
+		["itemId"] = 29235,
+	},
+	[11075] = {
+		["xp"] = 6250,
+		["Id"] = 11075,
+	},
+	[9802] = {
+		["Id"] = 9802,
+		["itemAmount"] = 10,
+		["xp"] = 6240,
+		["itemId"] = 24401,
+	},
+	[11336] = {
+		["isActive"] = true,
+		["Id"] = 11336,
+		["group"] = "dailybgalliance",
+		["questLog"] = true,
+		["xp"] = 30150,
+		["appliesTo"] = "Alliance",
+	},
+	[11338] = {
+		["isActive"] = false,
+		["Id"] = 11338,
+		["group"] = "dailybgalliance",
+		["questLog"] = true,
+		["xp"] = 30150,
+		["appliesTo"] = "Alliance",
+	},
+	[11340] = {
+		["isActive"] = false,
+		["Id"] = 11340,
+		["group"] = "dailybghorde",
+		["questLog"] = true,
+		["xp"] = 30150,
+		["appliesTo"] = "Horde",
+	},
+	[11342] = {
+		["isActive"] = false,
+		["Id"] = 11342,
+		["group"] = "dailybghorde",
+		["questLog"] = true,
+		["xp"] = 30150,
+		["appliesTo"] = "Horde",
+	},
+	[10579] = {
+		["Id"] = 10579,
+		["xp"] = 6250,
+		["previousQuest"] = 10578,
+	},
+	[9563] = {
+		["repfaction"] = 946,
+		["Id"] = 9563,
+		["itemId"] = 23848,
+		["reputation"] = "friendly",
+		["itemAmount"] = 1,
+		["xp"] = 4020,
+		["appliesTo"] = "Alliance",
+	},
+	[11354] = {
+		["isActive"] = true,
+		["Id"] = 11354,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[9828] = {
+		["itemId"] = 24484,
+		["Id"] = 9828,
+		["itemAmount"] = 1,
+		["xp"] = 4020,
+		["appliesTo"] = "Horde",
+	},
+	[11362] = {
+		["isActive"] = false,
+		["Id"] = 11362,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11364] = {
+		["isActive"] = false,
+		["Id"] = 11364,
+		["group"] = "dailynormaldungeon",
+		["priority"] = 1,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[10091] = {
+		["previousQuest"] = 10178,
+		["Id"] = 10091,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["isActive"] = true,
+	},
+	[11368] = {
+		["isActive"] = false,
+		["Id"] = 11368,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[10095] = {
+		["previousQuest"] = 10094,
+		["Id"] = 10095,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["isActive"] = true,
+	},
+	[11372] = {
+		["isActive"] = false,
+		["Id"] = 11372,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11374] = {
+		["isActive"] = false,
+		["Id"] = 11374,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11376] = {
+		["isActive"] = false,
+		["Id"] = 11376,
+		["group"] = "dailynormaldungeon",
+		["priority"] = 1,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[11378] = {
+		["isActive"] = false,
+		["Id"] = 11378,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11380] = {
+		["isActive"] = false,
+		["Id"] = 11380,
+		["priority"] = 12,
+		["group"] = "dailycooking",
+		["questLog"] = true,
+		["xp"] = 12650,
+		["appliesTo"] = "cooking",
+	},
+	[11382] = {
+		["isActive"] = false,
+		["Id"] = 11382,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11384] = {
+		["isActive"] = false,
+		["Id"] = 11384,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11386] = {
+		["isActive"] = false,
+		["Id"] = 11386,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11388] = {
+		["isActive"] = false,
+		["Id"] = 11388,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[10880] = {
+		["Id"] = 10880,
+		["itemAmount"] = 1,
+		["xp"] = 4320,
+		["itemId"] = 31707,
+	},
+	[9866] = {
+		["Id"] = 9866,
+		["appliesTo"] = "Horde",
+		["xp"] = 5800,
+		["previousQuest"] = 9865,
+	},
+	[10633] = {
+		["Id"] = 10633,
+		["appliesTo"] = "Horde",
+		["xp"] = 6250,
+		["previousQuest"] = 10625,
+	},
+	[9870] = {
+		["Id"] = 9870,
+		["xp"] = 2850,
+		["appliesTo"] = "Horde",
+	},
+	[9872] = {
+		["repfaction"] = 941,
+		["Id"] = 9872,
+		["itemId"] = 24558,
+		["reputation"] = "neutral",
+		["itemAmount"] = 1,
+		["xp"] = 11650,
+		["appliesTo"] = "Horde",
+	},
+	[9882] = {
+		["repfaction"] = 933,
+		["Id"] = 9882,
+		["reputation"] = "neutral",
+		["itemAmount"] = 10,
+		["xp"] = 11300,
+		["itemId"] = 25416,
+	},
+	[10649] = {
+		["previousQuest"] = 10646,
+		["Id"] = 10649,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["isActive"] = true,
+	},
+	[10653] = {
+		["repfaction"] = 932,
+		["Id"] = 10653,
+		["reputation"] = "neutral",
+		["itemAmount"] = 10,
+		["xp"] = 12650,
+		["itemId"] = 30809,
+	},
+	[10408] = {
+		["isActive"] = true,
+		["previousQuest"] = 10406,
+		["Id"] = 10408,
+		["questLog"] = true,
+		["xp"] = 19000,
+		["priority"] = 3,
+	},
+	[10410] = {
+		["Id"] = 10410,
+		["xp"] = 9500,
+		["previousQuest"] = 10407,
+	},
+	[10412] = {
+		["repfaction"] = 934,
+		["Id"] = 10412,
+		["reputation"] = "neutral",
+		["itemAmount"] = 10,
+		["xp"] = 11000,
+		["itemId"] = 29426,
+	},
+	[10420] = {
+		["repfaction"] = 932,
+		["Id"] = 10420,
+		["reputation"] = "neutral",
+		["itemAmount"] = 1,
+		["xp"] = 15800,
+		["itemId"] = 29740,
+	},
+	[10416] = {
+		["repfaction"] = 934,
+		["Id"] = 10416,
+		["reputation"] = "neutral",
+		["itemAmount"] = 1,
+		["xp"] = 15800,
+		["itemId"] = 29739,
+	},
+	[10667] = {
+		["previousQuest"] = {
+			10665, -- [1]
+			10666, -- [2]
+		},
+		["Id"] = 10667,
+		["questLog"] = true,
+		["xp"] = 33825,
+		["isActive"] = true,
+	},
+	[10165] = {
+		["Id"] = 10165,
+		["questLog"] = true,
+		["xp"] = 22600,
+		["isActive"] = true,
+	},
+	[7165] = {
+		["repfaction"] = 729,
+		["previousQuest"] = 7164,
+		["reputation"] = "revered",
+		["Id"] = 7165,
+		["xp"] = 25150,
+		["appliesTo"] = "Horde",
+	},
+	[9914] = {
+		["repfaction"] = 933,
+		["Id"] = 9914,
+		["reputation"] = "neutral",
+		["itemAmount"] = 27,
+		["xp"] = 11300,
+		["itemId"] = 25463,
+	},
+	[10413] = {
+		["Id"] = 10413,
+		["itemAmount"] = 1,
+		["xp"] = 15800,
+		["itemId"] = 29738,
+	},
+	[9373] = {
+		["Id"] = 9373,
+		["itemAmount"] = 1,
+		["xp"] = 1960,
+		["itemId"] = 23338,
+	},
+	[7172] = {
+		["repfaction"] = 730,
+		["previousQuest"] = 7171,
+		["reputation"] = "exalted",
+		["Id"] = 7172,
+		["xp"] = 30150,
+		["appliesTo"] = "Alliance",
+	},
+	[7171] = {
+		["repfaction"] = 730,
+		["previousQuest"] = 7170,
+		["reputation"] = "exalted",
+		["Id"] = 7171,
+		["xp"] = 30150,
+		["appliesTo"] = "Alliance",
+	},
+	[10434] = {
+		["Id"] = 10434,
+		["xp"] = 1250,
+		["previousQuest"] = 10433,
+	},
+	[7170] = {
+		["repfaction"] = 730,
+		["previousQuest"] = 7169,
+		["reputation"] = "revered",
+		["Id"] = 7170,
+		["xp"] = 25150,
+		["appliesTo"] = "Alliance",
+	},
+	[9418] = {
+		["Id"] = 9418,
+		["itemAmount"] = 1,
+		["xp"] = 6240,
+		["itemId"] = 23580,
+	},
+	[9492] = {
+		["isActive"] = true,
+		["Id"] = 9492,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["appliesTo"] = "Alliance",
+	},
+	[7168] = {
+		["repfaction"] = 730,
+		["previousQuest"] = 7162,
+		["reputation"] = "friendly",
+		["Id"] = 7168,
+		["xp"] = 20100,
+		["appliesTo"] = "Alliance",
+	},
+	[9934] = {
+		["Id"] = 9934,
+		["appliesTo"] = "Horde",
+		["xp"] = 14150,
+		["previousQuest"] = {
+			9931, -- [1]
+			9932, -- [2]
+		},
+	},
+	[10317] = {
+		["xp"] = 12650,
+		["Id"] = 10317,
+	},
+	[9938] = {
+		["isActive"] = false,
+		["priority"] = 1,
+		["Id"] = 9938,
+		["questLog"] = true,
+		["xp"] = 17450,
+		["appliesTo"] = "Alliance",
+	},
+	[10731] = {
+		["repfaction"] = 967,
+		["reputation"] = "friendly",
+		["Id"] = 10731,
+		["xp"] = 12650,
+		["uniqueWith"] = {
+			10732, -- [1]
+			10729, -- [2]
+			10730, -- [3]
+		},
+	},
+	[10707] = {
+		["isActive"] = false,
+		["previousQuest"] = 10706,
+		["Id"] = 10707,
+		["questLog"] = true,
+		["xp"] = 19000,
+		["priority"] = 6,
+	},
+	[9944] = {
+		["Id"] = 9944,
+		["xp"] = 1150,
+		["appliesTo"] = "Horde",
+	},
+	[10201] = {
+		["Id"] = 10201,
+		["appliesTo"] = "Horde",
+		["xp"] = 8250,
+		["previousQuest"] = 9993,
+	},
+	[10740] = {
+		["repfaction"] = 967,
+		["previousQuest"] = 10735,
+		["reputation"] = "revered",
+		["Id"] = 10740,
+		["xp"] = 15800,
+		["uniqueWith"] = {
+			10741, -- [1]
+			10738, -- [2]
+			10739, -- [3]
+		},
+	},
+	[10462] = {
+		["repfaction"] = 990,
+		["reputation"] = "friendly",
+		["Id"] = 10462,
+		["xp"] = 12650,
+		["uniqueWith"] = {
+			10461, -- [1]
+			10460, -- [2]
+			10463, -- [3]
+		},
+	},
+	[9697] = {
+		["repfaction"] = 942,
+		["Id"] = 9697,
+		["xp"] = 9390,
+		["reputation"] = "friendly",
+	},
+	[10727] = {
+		["repfaction"] = 967,
+		["previousQuest"] = 10740,
+		["reputation"] = "exalted",
+		["Id"] = 10727,
+		["xp"] = 15800,
+		["uniqueWith"] = {
+			10728, -- [1]
+			10725, -- [2]
+			10726, -- [3]
+		},
+	},
+	[10466] = {
+		["repfaction"] = 990,
+		["previousQuest"] = 10462,
+		["reputation"] = "honored",
+		["Id"] = 10466,
+		["xp"] = 15800,
+		["uniqueWith"] = {
+			10465, -- [1]
+			10467, -- [2]
+			10464, -- [3]
+		},
+	},
+	[10735] = {
+		["repfaction"] = 967,
+		["previousQuest"] = 10731,
+		["reputation"] = "honored",
+		["Id"] = 10735,
+		["xp"] = 15800,
+		["uniqueWith"] = {
+			10736, -- [1]
+			10733, -- [2]
+			10734, -- [3]
+		},
+	},
+	[10470] = {
+		["repfaction"] = 990,
+		["previousQuest"] = 10466,
+		["reputation"] = "revered",
+		["Id"] = 10470,
+		["xp"] = 15800,
+		["uniqueWith"] = {
+			10469, -- [1]
+			10471, -- [2]
+			10468, -- [3]
+		},
+	},
+	[11492] = {
+		["previousQuest"] = 11490,
+		["Id"] = 11492,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["isActive"] = true,
+	},
+	[10474] = {
+		["repfaction"] = 990,
+		["previousQuest"] = 10470,
+		["reputation"] = "exalted",
+		["Id"] = 10474,
+		["xp"] = 15800,
+		["uniqueWith"] = {
+			10473, -- [1]
+			10475, -- [2]
+			10472, -- [3]
+		},
+	},
+	[10476] = {
+		["itemId"] = 25433,
+		["Id"] = 10476,
+		["itemAmount"] = 10,
+		["xp"] = 11650,
+		["appliesTo"] = "Alliance",
+	},
+	[10423] = {
+		["Id"] = 10423,
+		["xp"] = 1250,
+		["previousQuest"] = 10418,
+	},
+	[9715] = {
+		["Id"] = 9715,
+		["itemAmount"] = 5,
+		["xp"] = 22000,
+		["itemId"] = 24246,
+	},
+	[11502] = {
+		["isActive"] = false,
+		["priority"] = 13,
+		["Id"] = 11502,
+		["questLog"] = true,
+		["xp"] = 12650,
+		["appliesTo"] = "Alliance",
+	},
+	[10334] = {
+		["Id"] = 10334,
+		["itemAmount"] = 1,
+		["xp"] = 9250,
+		["itemId"] = 29428,
+	},
+	[11506] = {
+		["isActive"] = false,
+		["Id"] = 11506,
+		["questLog"] = true,
+		["xp"] = 10050,
+		["appliesTo"] = "Horde",
+	},
+	[10316] = {
+		["Id"] = 10316,
+		["xp"] = 12300,
+		["previousQuest"] = 10312,
+	},
+	[11000] = {
+		["previousQuest"] = 10998,
+		["Id"] = 11000,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["isActive"] = true,
+	},
+	[11002] = {
+		["itemId"] = 32385,
+		["Id"] = 11002,
+		["itemAmount"] = 1,
+		["xp"] = 19000,
+		["appliesTo"] = "Alliance",
+	},
+	[11004] = {
+		["Id"] = 11004,
+		["itemAmount"] = 6,
+		["xp"] = 12650,
+		["itemId"] = 32388,
+	},
+	[11516] = {
+		["isActive"] = false,
+		["previousQuest"] = 11526,
+		["Id"] = 11516,
+		["questLog"] = true,
+		["xp"] = 9500,
+		["priority"] = 5,
+	},
+	[11008] = {
+		["isActive"] = false,
+		["previousQuest"] = 11098,
+		["Id"] = 11008,
+		["questLog"] = true,
+		["xp"] = 12650,
+		["priority"] = 10,
+	},
+	[10755] = {
+		["itemId"] = {
+			31241, -- [1]
+			23445, -- [2]
+			22445, -- [3]
+			22574, -- [4]
+		},
+		["Id"] = 10755,
+		["itemAmount"] = {
+			1, -- [1]
+			4, -- [2]
+			2, -- [3]
+			4, -- [4]
+		},
+		["xp"] = 28450,
+		["appliesTo"] = "Horde",
+	},
+	[10249] = {
+		["Id"] = 10249,
+		["xp"] = 18450,
+		["previousQuest"] = 10248,
+	},
+	[9739] = {
+		["Id"] = 9739,
+		["itemAmount"] = 10,
+		["xp"] = 6240,
+		["itemId"] = 24290,
+	},
+	[11016] = {
+		["Id"] = 11016,
+		["appliesTo"] = "skinning",
+		["group"] = "netherwingprofessions",
+		["itemAmount"] = 35,
+		["xp"] = 12650,
+		["itemId"] = 32470,
+	},
+	[11018] = {
+		["Id"] = 11018,
+		["appliesTo"] = "mining",
+		["group"] = "netherwingprofessions",
+		["itemAmount"] = 40,
+		["xp"] = 12650,
+		["itemId"] = 32464,
+	},
+	[11020] = {
+		["isActive"] = false,
+		["Id"] = 11020,
+		["priority"] = 2,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[10257] = {
+		["previousQuest"] = 10256,
+		["Id"] = 10257,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["isActive"] = true,
+	},
+	[9494] = {
+		["isActive"] = true,
+		["Id"] = 9494,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["appliesTo"] = "Alliance",
+	},
+	[9496] = {
+		["isActive"] = false,
+		["Id"] = 9496,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["appliesTo"] = "Horde",
+	},
+	[11030] = {
+		["Id"] = 11030,
+		["itemAmount"] = {
+			1, -- [1]
+			1, -- [2]
+		},
+		["xp"] = 25300,
+		["itemId"] = {
+			32598, -- [1]
+			32601, -- [2]
+		},
+	},
+	[10010] = {
+		["Id"] = 10010,
+		["xp"] = 6000,
+		["previousQuest"] = 10009,
+	},
+	[11542] = {
+		["isActive"] = false,
+		["Id"] = 11542,
+		["priority"] = 8,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[11544] = {
+		["isActive"] = false,
+		["Id"] = 11544,
+		["priority"] = 2,
+		["xp"] = 15800,
+		["questLog"] = true,
+	},
+	[11546] = {
+		["isActive"] = false,
+		["Id"] = 11546,
+		["priority"] = 5,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[9763] = {
+		["Id"] = 9763,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["isActive"] = true,
+	},
+	[11550] = {
+		["xp"] = 3150,
+		["Id"] = 11550,
+	},
+	[10682] = {
+		["xp"] = 11650,
+		["Id"] = 10682,
+	},
+	[10024] = {
+		["repfaction"] = 932,
+		["Id"] = 10024,
+		["reputation"] = "neutral",
+		["itemAmount"] = 8,
+		["xp"] = 11000,
+		["itemId"] = 25744,
+	},
+	[9771] = {
+		["Id"] = 9771,
+		["appliesTo"] = "Horde",
+		["xp"] = 4020,
+		["previousQuest"] = 9774,
+	},
+	[10793] = {
+		["Id"] = 10793,
+		["itemAmount"] = 1,
+		["xp"] = 9500,
+		["itemId"] = 31345,
+	},
+	[9775] = {
+		["Id"] = 9775,
+		["xp"] = 1020,
+		["appliesTo"] = "Horde",
+	},
+	[10580] = {
+		["previousQuest"] = 10518,
+		["completewith"] = 10581,
+		["Id"] = 10580,
+		["xp"] = 5800,
+		["appliesTo"] = "Alliance",
+	},
+	[9795] = {
+		["Id"] = 9795,
+		["xp"] = 2700,
+		["appliesTo"] = "Horde",
+	},
+	[11009] = {
+		["Id"] = 11009,
+		["xp"] = 15800,
+		["previousQuest"] = 11022,
+	},
+	[10038] = {
+		["Id"] = 10038,
+		["xp"] = 2120,
+		["appliesTo"] = "Alliance",
+	},
+	[9785] = {
+		["repfaction"] = 942,
+		["Id"] = 9785,
+		["xp"] = 4320,
+		["reputation"] = "friendly",
+	},
+	[10297] = {
+		["Id"] = 10297,
+		["xp"] = 25300,
+		["previousQuest"] = 10296,
+	},
+	[10782] = {
+		["Id"] = 10782,
+		["xp"] = 12300,
+		["previousQuest"] = 10780,
+	},
+	[11084] = {
+		["repfaction"] = 1015,
+		["Id"] = 11084,
+		["xp"] = 12650,
+		["reputation"] = "honored",
+	},
+	[11094] = {
+		["repfaction"] = 1015,
+		["Id"] = 11094,
+		["xp"] = 12650,
+		["reputation"] = "revered",
+	},
+	[10305] = {
+		["Id"] = 10305,
+		["itemAmount"] = 1,
+		["xp"] = 12300,
+		["itemId"] = 29234,
+	},
+	[10307] = {
+		["Id"] = 10307,
+		["itemAmount"] = 1,
+		["xp"] = 12300,
+		["itemId"] = 29236,
+	},
+	[11099] = {
+		["repfaction"] = 1015,
+		["Id"] = 11099,
+		["xp"] = 12650,
+		["reputation"] = "revered",
+	},
+	[10523] = {
+		["Id"] = 10523,
+		["xp"] = 3150,
+		["previousQuest"] = 10522,
+	},
+	[10750] = {
+		["Id"] = 10750,
+		["xp"] = 9500,
+		["appliesTo"] = "Horde",
+	},
+	[10825] = {
+		["Id"] = 10825,
+		["itemAmount"] = 1,
+		["xp"] = 1200,
+		["itemId"] = 31489,
+	},
+	[11337] = {
+		["isActive"] = false,
+		["Id"] = 11337,
+		["group"] = "dailybgalliance",
+		["questLog"] = true,
+		["xp"] = 30150,
+		["appliesTo"] = "Alliance",
+	},
+	[11339] = {
+		["isActive"] = false,
+		["Id"] = 11339,
+		["group"] = "dailybghorde",
+		["questLog"] = true,
+		["xp"] = 30150,
+		["appliesTo"] = "Horde",
+	},
+	[11341] = {
+		["isActive"] = false,
+		["Id"] = 11341,
+		["group"] = "dailybghorde",
+		["questLog"] = true,
+		["xp"] = 30150,
+		["appliesTo"] = "Horde",
+	},
+	[10745] = {
+		["Id"] = 10745,
+		["appliesTo"] = "Horde",
+		["xp"] = 15800,
+		["previousQuest"] = 10613,
+	},
+	[10325] = {
+		["repfaction"] = 932,
+		["Id"] = 10325,
+		["reputation"] = "neutral",
+		["itemAmount"] = 10,
+		["xp"] = 11000,
+		["itemId"] = 29425,
+	},
+	[11092] = {
+		["repfaction"] = 1015,
+		["Id"] = 11092,
+		["xp"] = 12650,
+		["reputation"] = "revered",
+	},
+	[10074] = {
+		["itemId"] = 26043,
+		["Id"] = 10074,
+		["itemAmount"] = 20,
+		["xp"] = 11650,
+		["appliesTo"] = "Horde",
+	},
+	[10076] = {
+		["itemId"] = 26043,
+		["Id"] = 10076,
+		["itemAmount"] = 20,
+		["xp"] = 11650,
+		["appliesTo"] = "Alliance",
+	},
+	[10680] = {
+		["Id"] = 10680,
+		["xp"] = 3150,
+		["appliesTo"] = "Alliance",
+	},
+	[10744] = {
+		["Id"] = 10744,
+		["appliesTo"] = "Alliance",
+		["xp"] = 15800,
+		["previousQuest"] = 10612,
+	},
+	[9827] = {
+		["itemId"] = 24483,
+		["Id"] = 9827,
+		["itemAmount"] = 1,
+		["xp"] = 4020,
+		["appliesTo"] = "Alliance",
+	},
+	[10251] = {
+		["Id"] = 10251,
+		["xp"] = 5800,
+		["previousQuest"] = 10231,
+	},
+	[9831] = {
+		["previousQuest"] = 9829,
+		["Id"] = 9831,
+		["questLog"] = true,
+		["xp"] = 25300,
+		["isActive"] = true,
+	},
+	[11363] = {
+		["isActive"] = false,
+		["Id"] = 11363,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[9933] = {
+		["Id"] = 9933,
+		["appliesTo"] = "Alliance",
+		["xp"] = 14150,
+		["previousQuest"] = {
+			9931, -- [1]
+			9932, -- [2]
+		},
+	},
+	[9837] = {
+		["Id"] = 9837,
+		["xp"] = 19000,
+		["previousQuest"] = 9836,
+	},
+	[11369] = {
+		["isActive"] = false,
+		["Id"] = 11369,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11371] = {
+		["isActive"] = false,
+		["Id"] = 11371,
+		["group"] = "dailynormaldungeon",
+		["priority"] = 1,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[10098] = {
+		["Id"] = 10098,
+		["questLog"] = true,
+		["xp"] = 24600,
+		["isActive"] = true,
+	},
+	[11375] = {
+		["isActive"] = false,
+		["Id"] = 11375,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11377] = {
+		["isActive"] = false,
+		["Id"] = 11377,
+		["priority"] = 12,
+		["group"] = "dailycooking",
+		["questLog"] = true,
+		["xp"] = 12650,
+		["appliesTo"] = "cooking",
+	},
+	[11379] = {
+		["isActive"] = false,
+		["Id"] = 11379,
+		["priority"] = 12,
+		["group"] = "dailycooking",
+		["questLog"] = true,
+		["xp"] = 12650,
+		["appliesTo"] = "cooking",
+	},
+	[11381] = {
+		["isActive"] = false,
+		["Id"] = 11381,
+		["priority"] = 12,
+		["group"] = "dailycooking",
+		["questLog"] = true,
+		["xp"] = 12650,
+		["appliesTo"] = "cooking",
+	},
+	[11383] = {
+		["isActive"] = false,
+		["Id"] = 11383,
+		["group"] = "dailynormaldungeon",
+		["priority"] = 1,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[11385] = {
+		["isActive"] = false,
+		["Id"] = 11385,
+		["group"] = "dailynormaldungeon",
+		["priority"] = 1,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[11387] = {
+		["isActive"] = false,
+		["Id"] = 11387,
+		["group"] = "dailynormaldungeon",
+		["priority"] = 1,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[11389] = {
+		["isActive"] = false,
+		["Id"] = 11389,
+		["group"] = "dailynormaldungeon",
+		["priority"] = 1,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[9861] = {
+		["Id"] = 9861,
+		["itemAmount"] = 1,
+		["xp"] = 11650,
+		["itemId"] = 24504,
+	},
+	[11335] = {
+		["isActive"] = false,
+		["Id"] = 11335,
+		["group"] = "dailybgalliance",
+		["questLog"] = true,
+		["xp"] = 30150,
+		["appliesTo"] = "Alliance",
+	},
+	[11525] = {
+		["isActive"] = false,
+		["Id"] = 11525,
+		["priority"] = 3,
+		["xp"] = 9500,
+		["questLog"] = true,
+	},
+	[10017] = {
+		["Id"] = 10017,
+		["itemAmount"] = 8,
+		["xp"] = 8600,
+		["itemId"] = 25802,
+	},
+	[10926] = {
+		["Id"] = 10926,
+		["xp"] = 8250,
+		["previousQuest"] = 10921,
+	},
+	[9871] = {
+		["repfaction"] = 978,
+		["Id"] = 9871,
+		["itemId"] = 24559,
+		["reputation"] = "neutral",
+		["itemAmount"] = 1,
+		["xp"] = 11650,
+		["appliesTo"] = "Alliance",
+	},
+	[10863] = {
+		["completewith"] = 10847,
+		["Id"] = 10863,
+		["xp"] = 6240,
+		["appliesTo"] = "Alliance",
+	},
+	[10862] = {
+		["completewith"] = 10847,
+		["Id"] = 10862,
+		["xp"] = 6240,
+		["appliesTo"] = "Horde",
+	},
+	[10012] = {
+		["itemId"] = 25765,
+		["Id"] = 10012,
+		["itemAmount"] = 1,
+		["xp"] = 8600,
+		["appliesTo"] = "Alliance",
+	},
+	[10134] = {
+		["Id"] = 10134,
+		["itemAmount"] = 1,
+		["xp"] = 3150,
+		["itemId"] = 29476,
+	},
+	[10006] = {
+		["Id"] = 10006,
+		["appliesTo"] = "Horde",
+		["xp"] = 9330,
+		["previousQuest"] = 10447,
+	},
+	[10393] = {
+		["itemId"] = 29590,
+		["Id"] = 10393,
+		["itemAmount"] = 1,
+		["xp"] = 970,
+		["appliesTo"] = "Horde",
+	},
+	[10395] = {
+		["itemId"] = 29588,
+		["Id"] = 10395,
+		["itemAmount"] = 1,
+		["xp"] = 970,
+		["appliesTo"] = "Alliance",
+	},
+	[10005] = {
+		["Id"] = 10005,
+		["appliesTo"] = "Alliance",
+		["xp"] = 9330,
+		["previousQuest"] = 10446,
+	},
+	[11533] = {
+		["isActive"] = false,
+		["Id"] = 11533,
+		["priority"] = 2,
+		["xp"] = 9500,
+		["questLog"] = true,
+	},
+	[10656] = {
+		["repfaction"] = 934,
+		["Id"] = 10656,
+		["reputation"] = "neutral",
+		["itemAmount"] = 10,
+		["xp"] = 12650,
+		["itemId"] = 30810,
+	},
+	[9893] = {
+		["repfaction"] = 933,
+		["Id"] = 9893,
+		["reputation"] = "neutral",
+		["itemAmount"] = 20,
+		["xp"] = 11650,
+		["itemId"] = 25433,
+	},
+	[10093] = {
+		["Id"] = 10093,
+		["appliesTo"] = "Alliance",
+		["xp"] = 1560,
+		["previousQuest"] = 10047,
+	},
+	[10917] = {
+		["Id"] = 10917,
+		["itemAmount"] = 30,
+		["xp"] = 11000,
+		["itemId"] = 25719,
+	},
+	[9587] = {
+		["itemId"] = 23890,
+		["Id"] = 9587,
+		["itemAmount"] = 1,
+		["xp"] = 8040,
+		["appliesTo"] = "Alliance",
+	},
+	[9401] = {
+		["Id"] = 9401,
+		["appliesTo"] = "Horde",
+		["xp"] = 6020,
+		["previousQuest"] = 9400,
+	},
+	[11178] = {
+		["Id"] = 11178,
+		["itemAmount"] = 1,
+		["xp"] = 19000,
+		["itemId"] = 33102,
+	},
+	[10670] = {
+		["previousQuest"] = {
+			10665, -- [1]
+			10666, -- [2]
+		},
+		["Id"] = 10670,
+		["questLog"] = true,
+		["xp"] = 33825,
+		["isActive"] = true,
+	},
+	[9806] = {
+		["Id"] = 9806,
+		["itemAmount"] = 6,
+		["xp"] = 8600,
+		["itemId"] = 24449,
+	},
+	[10164] = {
+		["Id"] = 10164,
+		["questLog"] = true,
+		["xp"] = 23300,
+		["isActive"] = true,
+	},
+	[9911] = {
+		["Id"] = 9911,
+		["itemAmount"] = 1,
+		["xp"] = 8600,
+		["itemId"] = 25459,
+	},
+	[9913] = {
+		["xp"] = 1150,
+		["Id"] = 9913,
+	},
+	[7141] = {
+		["isActive"] = true,
+		["previousQuest"] = 7221,
+		["Id"] = 7141,
+		["questLog"] = true,
+		["xp"] = 20150,
+		["appliesTo"] = "Alliance",
+	},
+	[7142] = {
+		["isActive"] = false,
+		["previousQuest"] = 7222,
+		["Id"] = 7142,
+		["questLog"] = true,
+		["xp"] = 20150,
+		["appliesTo"] = "Horde",
+	},
+	[9919] = {
+		["repfaction"] = 970,
+		["Id"] = 9919,
+		["xp"] = 8600,
+		["reputation"] = "neutral",
+	},
+	[11523] = {
+		["isActive"] = false,
+		["Id"] = 11523,
+		["priority"] = 1,
+		["xp"] = 9500,
+		["questLog"] = true,
+	},
+	[11877] = {
+		["isActive"] = false,
+		["Id"] = 11877,
+		["priority"] = 4,
+		["xp"] = 9500,
+		["questLog"] = true,
+	},
+	[11514] = {
+		["isActive"] = false,
+		["Id"] = 11514,
+		["priority"] = 6,
+		["xp"] = 9500,
+		["questLog"] = true,
+	},
+	[10182] = {
+		["Id"] = 10182,
+		["itemAmount"] = 1,
+		["xp"] = 12000,
+		["itemId"] = 29233,
+	},
+	[10439] = {
+		["isActive"] = true,
+		["previousQuest"] = 10438,
+		["Id"] = 10439,
+		["questLog"] = true,
+		["xp"] = 19000,
+		["priority"] = 2,
+	},
+	[11108] = {
+		["isActive"] = false,
+		["previousQuest"] = 11107,
+		["Id"] = 11108,
+		["questLog"] = true,
+		["xp"] = 19000,
+		["priority"] = 8,
+	},
+	[9423] = {
+		["Id"] = 9423,
+		["appliesTo"] = "Alliance",
+		["xp"] = 1020,
+		["previousQuest"] = 9390,
+	},
+	[10445] = {
+		["isActive"] = true,
+		["Id"] = 10445,
+		["priority"] = 7,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[9937] = {
+		["isActive"] = false,
+		["priority"] = 1,
+		["Id"] = 9937,
+		["questLog"] = true,
+		["xp"] = 17450,
+		["appliesTo"] = "Horde",
+	},
+	[9588] = {
+		["itemId"] = 23892,
+		["Id"] = 9588,
+		["itemAmount"] = 1,
+		["xp"] = 8040,
+		["appliesTo"] = "Horde",
+	},
+	[10097] = {
+		["Id"] = 10097,
+		["questLog"] = true,
+		["xp"] = 24600,
+		["isActive"] = true,
+	},
+	[10860] = {
+		["itemId"] = {
+			31670, -- [1]
+			31671, -- [2]
+		},
+		["Id"] = 10860,
+		["itemAmount"] = {
+			3, -- [1]
+			3, -- [2]
+		},
+		["xp"] = 11650,
+		["appliesTo"] = "Horde",
+	},
+	[11370] = {
+		["isActive"] = false,
+		["Id"] = 11370,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[11373] = {
+		["isActive"] = false,
+		["Id"] = 11373,
+		["group"] = "dailyheroic",
+		["priority"] = 1,
+		["xp"] = 19000,
+		["questLog"] = true,
+	},
+	[9977] = {
+		["isActive"] = false,
+		["previousQuest"] = 9973,
+		["Id"] = 9977,
+		["questLog"] = true,
+		["xp"] = 17450,
+		["priority"] = 2,
+	},
+	[9853] = {
+		["isActive"] = false,
+		["previousQuest"] = 9849,
+		["Id"] = 9853,
+		["questLog"] = true,
+		["xp"] = 17450,
+		["priority"] = 3,
+	},
+	[11536] = {
+		["isActive"] = false,
+		["Id"] = 11536,
+		["priority"] = 4,
+		["xp"] = 12650,
+		["questLog"] = true,
+	},
+	[9743] = {
+		["Id"] = 9743,
+		["itemAmount"] = 6,
+		["xp"] = 8600,
+		["itemId"] = 24291,
+	},
+	[10511] = {
+		["itemId"] = 29443,
+		["Id"] = 10511,
+		["itemAmount"] = 11,
+		["xp"] = 11300,
+		["appliesTo"] = "Alliance",
+	},
+	[7163] = {
+		["repfaction"] = 729,
+		["previousQuest"] = 7161,
+		["reputation"] = "friendly",
+		["Id"] = 7163,
+		["xp"] = 20100,
+		["appliesTo"] = "Horde",
+	},
+	[7164] = {
+		["repfaction"] = 729,
+		["previousQuest"] = 7163,
+		["reputation"] = "honored",
+		["Id"] = 7164,
+		["xp"] = 20100,
+		["appliesTo"] = "Horde",
+	},
+	[10218] = {
+		["Id"] = 10218,
+		["questLog"] = true,
+		["xp"] = 22600,
+		["isActive"] = true,
+	},
+	[7166] = {
+		["repfaction"] = 729,
+		["previousQuest"] = 7165,
+		["reputation"] = "exalted",
+		["Id"] = 7166,
+		["xp"] = 30150,
+		["appliesTo"] = "Horde",
+	},
+	[7167] = {
+		["repfaction"] = 729,
+		["previousQuest"] = 7166,
+		["reputation"] = "exalted",
+		["Id"] = 7167,
+		["xp"] = 30150,
+		["appliesTo"] = "Horde",
+	},
+	[10479] = {
+		["itemId"] = 25433,
+		["Id"] = 10479,
+		["itemAmount"] = 10,
+		["xp"] = 11650,
+		["appliesTo"] = "Horde",
+	},
+	[7169] = {
+		["repfaction"] = 730,
+		["previousQuest"] = 7162,
+		["reputation"] = "honored",
+		["Id"] = 7169,
+		["xp"] = 20100,
+		["appliesTo"] = "Alliance",
+	},
+	[11503] = {
+		["isActive"] = false,
+		["priority"] = 13,
+		["Id"] = 11503,
+		["questLog"] = true,
+		["xp"] = 12650,
+		["appliesTo"] = "Horde",
+	},
+	[9808] = {
+		["Id"] = 9808,
+		["itemAmount"] = 10,
+		["xp"] = 8600,
+		["itemId"] = 24245,
+	},
 }
