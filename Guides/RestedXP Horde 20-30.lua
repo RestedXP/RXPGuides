@@ -2789,6 +2789,10 @@ step << Shaman
     .isQuestAvailable 1531
     .goto Orgrimmar,38.0,37.7
     .accept 1531 >>Accept Call of Air
+step << Warrior
+	#completewith next
+	.goto Orgrimmar,81.5,19.6
+	.train 2567 >> Train Thrown from Hanashi
 step << Undead !Warlock
     .money <35.00
     .goto Durotar,50.8,13.7
