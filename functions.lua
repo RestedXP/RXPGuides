@@ -47,6 +47,8 @@ events.cast = events.hs
 events.blastedLands = events.collect
 events.daily = events.accept
 events.dailyturnin = events.turnin
+events.acceptmultiple = events.accept
+events.dailyturninmultiple = events.turnin
 
 local function GetIcon(path,index,size)
 local x1, x2, y1, y2 = GetPOITextureCoords(index)
@@ -89,6 +91,8 @@ else
     addon.icons.home = GetIcon("Interface/MINIMAP/POIICONS",4,128)
 end
 
+addon.icons.acceptmultiple = addon.icons.accept
+addon.icons.turninmultiple = addon.icons.turnin
 addon.icons.xpto60 = addon.icons.xp
 
 function addon.error(msg) print(msg) end
@@ -700,13 +704,13 @@ function addon.functions.daily(self, text, ...)
         element.title = ""
         -- element.title = addon.GetQuestName(id)
         element.text = text or ""
-        element.tooltipText = addon.icons.daily .. element.text
+        --element.tooltipText = addon.icons.daily .. element.text
         element.ids = ids
 
         return element
     else
         local element = self.element
-        if RXPCData.skipDailies then
+        if RXPCData.skipDailies and element.tag == "daily" then
             addon.SetElementComplete(self, true)
             return
         end
@@ -881,7 +885,7 @@ function addon.functions.dailyturnin(self, text, ...)
     end
 
     local element = self.element
-    if RXPCData.skipDailies then
+    if RXPCData.skipDailies and element.tag == "dailyturnin" then
         addon.SetElementComplete(self, true)
         return
     end
@@ -892,6 +896,9 @@ function addon.functions.dailyturnin(self, text, ...)
     end
 
 end
+
+addon.functions.acceptmultiple = addon.functions.daily
+addon.functions.turninmultiple = addon.functions.dailyturnin
 
 local questMonster = string.gsub(_G.QUEST_MONSTERS_KILLED, "%d+%$", "")
 questMonster = questMonster:gsub("%%s", "%.%*"):gsub("%%d", "%%d%+")
