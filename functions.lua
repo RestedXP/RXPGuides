@@ -927,7 +927,9 @@ function addon.UpdateQuestCompletionData(self)
     if objectives and #objectives > 0 then
         if element.obj and element.obj <= #objectives then
             local obj = objectives[element.obj]
-            if element.objMax and obj.numRequired then
+            obj.numFulfilled = obj.numFulfilled or 0
+            obj.numRequired = obj.numRequired or 0xff
+            if element.objMax then
                 obj.numRequired = math.min(element.objMax, obj.numRequired)
                 --[[if obj.numFulfilled > obj.numRequired then
                     obj.numFulfilled = obj.numRequired
@@ -962,6 +964,8 @@ function addon.UpdateQuestCompletionData(self)
         else
             completed = true
             for i, obj in pairs(objectives) do
+                obj.numFulfilled = obj.numFulfilled or 0
+                obj.numRequired = obj.numRequired or 0xff
                 local t = obj.text
                 completed = completed and obj.finished
                 if not obj.questie then
@@ -1611,10 +1615,11 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
             local objectives = addon.GetQuestObjectives(questId)
             if objectives then
                 if element.subtract then
-                    for _, obj in ipairs(objIndex) do
-                        if objectives[obj] then
-                            numRequired = numRequired -
-                                              objectives[obj].numFulfilled*element.multiplier
+                    for _, n in ipairs(objIndex) do
+                        local obj = objectives[n]
+                        if obj then
+                            obj.numFulfilled = obj.numFulfilled or 0
+                            numRequired = numRequired - obj.numFulfilled*element.multiplier
                         end
                     end
                     if numRequired < 0 then numRequired = 0 end
