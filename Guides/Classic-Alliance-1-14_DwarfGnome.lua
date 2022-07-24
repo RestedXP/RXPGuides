@@ -1149,7 +1149,7 @@ step << Warlock
      +Start life tapping on your way to the flight master
 step
     .goto StormwindClassic,66.20,62.40
-    .fp >> Get the Stormwind City Flight Path
+    .fp Stormwind City >> Get the Stormwind City flight path
 step << Warlock
      #softcore
     #completewith next
@@ -1491,7 +1491,7 @@ step << Dwarf Paladin
     .collect 2589,10,1648,1
 step
     .goto Westfall,56.6,52.6
-    .fp >> Get the Sentinel Hill flight path
+    .fp Sentinel Hill >> Get the Sentinel Hill flight path
     .fly Stormwind >> Fly to Stormwind << !Paladin
 step << Paladin
     .goto StormwindClassic,60.5,12.3,40,0
@@ -2537,7 +2537,7 @@ step
     #hardcore
     #label fp
     .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
 step
     .goto Wetlands,4.6,57.2
     .zone Darkshore >>Head to the Menethil Harbor docks and take the boat to Darkshore
@@ -3597,7 +3597,7 @@ step
      +Start life tapping on your way to the flight master
 step
     .goto StormwindClassic,66.20,62.40
-    .fp >> Get the Stormwind City Flight Path
+    .fp Stormwind City >> Get the Stormwind City flight path
 step
      #softcore
     #completewith next
@@ -4236,7 +4236,7 @@ step
     #hardcore
 	#label EndLoch
     .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
 step
     .goto Wetlands,4.6,57.2
     .zone Darkshore >>Head to the Menethil Harbor docks and take the boat to Darkshore
@@ -4884,7 +4884,7 @@ step
     #hardcore
     #label fp
     .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
 step << Hunter
 	.goto Wetlands,11.4,59.6
 	>>Buy the level 16 weapon upgrade from Murndan Deth inside the blacksmith, skip this step if you don't have enough money

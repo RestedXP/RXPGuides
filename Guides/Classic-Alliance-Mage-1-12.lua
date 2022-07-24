@@ -463,12 +463,12 @@ step
 step
     #softcore
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step
     #hardcore
     >>Run toward the Flight Path. Be exceedingly careful to not aggro or die to any mobs en route. Try sticking to the road and keeping an eye out
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step
     .hs >> Hearth to Goldshire
 step
@@ -527,7 +527,7 @@ step
     .xp 11+3750 >> Grind to 3750+/8800xp
 step
     .goto Westfall,56.6,52.6
-    .fp >> Get the Sentinel Hill flight path
+    .fp Sentinel Hill >> Get the Sentinel Hill flight path
     .turnin 6181 >> Turn in A Swift Message
     .accept 6281 >> Accept Continue To Stormwind
     .fly Stormwind >> Fly to Stormwind
@@ -566,7 +566,7 @@ step
     .goto Ironforge,77.0,51.0,30 >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
-    .fp >> Get the Ironforge flight path
+    .fp Ironforge >> Get the Ironforge flight path
 step
     #phase 3-6
     .goto Ironforge,27.17,8.57
@@ -1470,7 +1470,7 @@ step << Gnome
 step
     #requires RatCatching
     .goto Loch Modan,33.94,50.96
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
     .turnin 6387 >>Turn in Honor Students << Gnome
     .accept 6391 >>Accept Ride to Ironforge << Gnome
     .fly Ironforge >> Fly to Ironforge
@@ -1574,7 +1574,7 @@ step
     .vendor >> Check Dewin for Heal Potions, buy down to 1s
 step
     .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
 step
     #era/som
     #sticky

@@ -19,7 +19,7 @@ step <<  NightElf
     .fly Auberdine >> Fly to Darkshore
 step <<  !NightElf
     .goto Felwood,19.10,20.63
-    .fp >> Get the Auberdine flight path
+    .fp Auberdine >> Get the Auberdine flight path
 step
     .goto Felwood,19.10,20.63
     .accept 3524 >> Accept Washed Ashore
@@ -807,7 +807,7 @@ step
     .vendor >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there
 step << Human/Dwarf Paladin
     .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
 step
     .money <0.04
     .goto Wetlands,8.1,56.3
@@ -1328,7 +1328,7 @@ step
     .accept 3524 >> Accept Washed Ashore
 step <<  !NightElf
     .goto Felwood,19.10,20.63
-    .fp >> Get the Auberdine flight path
+    .fp Auberdine >> Get the Auberdine flight path
 step <<  NightElf
     .goto Felwood,19.27,19.14
     .turnin 6342 >> Turn in Flight to Auberdine
@@ -2492,7 +2492,7 @@ step
     .xp 20 >> If you are not yet level 20, turn in all your Redridge quests, you should have enough from turn ins
 step
     .goto Redridge Mountains,30.59,59.42
-    .fp >> Get the Redridge Mountains flight path << !Human !Warlock
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path << !Human !Warlock
     .fly Stormwind >> Fly to Stormwind City
 step << Rogue
     .goto StormwindClassic,57.55,57.07

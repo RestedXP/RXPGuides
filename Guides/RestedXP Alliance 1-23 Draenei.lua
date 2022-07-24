@@ -2039,7 +2039,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #defaultfor Draenei
-#next 23-24 Wetlands;24-27 Redridge/Duskwood
+#next RestedXP Alliance 20-32\23-24 Wetlands;RestedXP Alliance 20-32\24-27 Redridge/Duskwood
 step
 #xprate <1.5
     .goto Ashenvale,26.2,38.6

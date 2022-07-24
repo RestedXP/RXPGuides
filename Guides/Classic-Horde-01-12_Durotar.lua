@@ -1275,7 +1275,7 @@ step << Warrior/Shaman
     .accept 5041 >>Accept Supplies for the Crossroads
 step << Warrior/Shaman
     .goto The Barrens,51.5,30.4
-    .fp >>Get the The Crossroads Flight Path
+    .fp The Crossroads >> Get the The Crossroads flight path
 step << !Tauren Warrior/!Tauren Shaman
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
@@ -1328,7 +1328,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     >>Run down the road. Be careful of higher level mobs en route
     .goto The Barrens,44.4,59.2
-    .fp >>Get the Camp Taurajo Flight Path
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path
 step << Warrior/Shaman
     >>Go west into Mulgore and Look for Morin Cloudstalker. He patrols along the eastern road
     .goto Mulgore,59.7,62.5,70,0
@@ -1408,7 +1408,7 @@ step << Warrior/Shaman
     >>Go to the top floor of the tower
     .goto Thunder Bluff,45.6,52.0,25,0
     .goto Thunder Bluff,46.8,49.9
-    .fp >>Get the Thunder Bluff Flight Path
+    .fp Thunder Bluff >> Get the Thunder Bluff flight path
 step << Warrior/Shaman
 	>>Go into the Thunder Bluff cave
     .goto Thunder Bluff,29.6,29.7,25,0
@@ -1816,7 +1816,7 @@ step << !Shaman !Warrior
     .accept 5041 >>Accept Supplies for the Crossroads
 step << !Shaman !Warrior
     .goto The Barrens,51.5,30.4
-    .fp >>Get the The Crossroads Flight Path
+    .fp The Crossroads >> Get the The Crossroads flight path
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
@@ -1863,7 +1863,7 @@ step << Rogue
 	#phase 3-6
     >>Take one of the elevators down
     .goto Undercity,63.25,48.56
-    .fp >> Get the Undercity Flight Path
+    .fp Undercity >> Get the Undercity flight path
 step << Rogue
 	#som
 	#phase 3-6

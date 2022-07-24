@@ -1293,7 +1293,7 @@ step << !Undead Rogue
 step << !Undead Rogue
     >>Take one of the elevators down
     .goto Undercity,63.25,48.56
-    .fp >> Get the Undercity Flight Path
+    .fp Undercity >> Get the Undercity flight path
 step << !Undead Rogue
     .money <0.3023
     .goto Tirisfal Glades,64.16,75.54
@@ -1485,7 +1485,7 @@ step << Undead
     >>DO NOT go Undercity yet
     .turnin 6321 >>Turn in Supplying the Sepulcher
     .accept 6323 >>Accept Ride to the Undercity
-    .fp >> Get The Sepulcher Flight Path
+    .fp Sepulcher >> Get the Sepulcher flight path
 step
     >>Click on the Boat
     .goto Silverpine Forest,58.39,34.79
@@ -1552,7 +1552,7 @@ step << Undead
     .hs >> Hearth to Undercity
 step << !Undead Rogue
    .goto Silverpine Forest,45.62,42.60
-    .fp >> Get The Sepulcher Flight Path
+    .fp Sepulcher >> Get the Sepulcher flight path
     .fly Undercity >> Fly to Undercity
 step << Undead
     .goto Undercity,61.48,41.81

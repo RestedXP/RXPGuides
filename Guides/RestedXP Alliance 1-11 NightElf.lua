@@ -7,6 +7,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
 #next 6-11 Teldrassil
+step
+.goto 129,18.91,51.58
+.complete 13095,1
 step << !NightElf
     #sticky
     #completewith next

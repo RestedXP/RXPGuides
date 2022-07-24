@@ -654,10 +654,10 @@ step
     .zone The Barrens >> Run into The Barrens
 step << !Druid
     .goto The Barrens,44.5,59.1
-    .fp >>Get the Camp Taurajo Flight Path
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path
 step << Druid
     .goto The Barrens,44.5,59.1
-    .fp >>Get the Camp Taurajo Flight Path
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path
     .fly Thunder Bluff >>Fly to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,45.8,64.4
@@ -715,7 +715,7 @@ step << Tauren
     .turnin 854 >>Turn in Journey to the Crossroads
 step
     .goto The Barrens,51.5,30.4
-    .fp >>Get the The Crossroads Flight Path
+    .fp The Crossroads >> Get the The Crossroads flight path
 step
     .goto The Barrens,51.1,29.0
     .accept 6361 >>Accept A Bundle of Hides
@@ -1127,7 +1127,7 @@ step
 	.link https://www.youtube.com/watch?v=NfLrBPzt56s >> CLICK HERE for reference
 step
     .goto The Barrens,44.5,59.1
-    .fp >>Get the Camp Taurajo Flight Path
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path
 step
 	#completewith next
 	#softcore
@@ -1137,7 +1137,7 @@ step
     .goto The Barrens,51.49,31.00,8 >> Go to The Crossroads and check for the weapon or armor crate next to the other uninteractable crate
 step
     .goto The Barrens,51.5,30.4
-    .fp >>Get the The Crossroads Flight Path
+    .fp The Crossroads >> Get the The Crossroads flight path
 step
     .hs >> Hearth to Camp Narache
 step

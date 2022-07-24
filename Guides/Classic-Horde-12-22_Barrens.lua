@@ -72,7 +72,7 @@ step << !Shaman !Warrior/Undead
 step << !Shaman !Warrior/Undead
 	#completewith next
     .goto The Barrens,51.5,30.4
-    .fp >>Get the Crossroads Flight Path
+    .fp Crossroads >> Get the Crossroads flight path
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
@@ -259,7 +259,7 @@ step
     .accept 887 >>Accept Southsea Freebooters
 step
     .goto The Barrens,63.1,37.1
-    .fp >>Get the Ratchet Flight Path
+    .fp Ratchet >> Get the Ratchet flight path
 step
     .goto The Barrens,63.0,37.2
     .accept 894 >>Accept Samophlange
@@ -551,7 +551,7 @@ step << Priest
 step << Tauren/Undead
     >>Run to the Flight Master tower. Get the Flight Path. DON'T fly anywhere
     .goto Orgrimmar,45.2,63.8
-    .fp >>Get the Orgrimmar Flight Path
+    .fp Orgrimmar >> Get the Orgrimmar flight path
 step
     >>Run to Grommash Hold
     .goto Orgrimmar,39.1,38.1
@@ -772,7 +772,7 @@ step
     .accept 878 >>Accept Tribes at War
 step
     .goto The Barrens,44.5,59.2
-    .fp >> Get the Camp Taurajo Flight Path << !Shaman !Warrior !Tauren
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path << !Shaman !Warrior !Tauren
     .fly Crossroads >>Fly to Crossroads
 step
     .goto The Barrens,51.9,30.3
@@ -1263,7 +1263,7 @@ step << Hunter
 step << !Tauren !Shaman !Warrior
 	#requires UntilD
     .goto Thunder Bluff,46.9,49.9
-    .fp >> Get the Thunder Bluff Flight Path
+    .fp Thunder Bluff >> Get the Thunder Bluff flight path
 step << !Warlock/!Shaman
 	#som
     .goto The Barrens,51.50,30.34
@@ -1397,7 +1397,7 @@ step
 step
      #completewith next
     .goto Ashenvale,12.20,33.80
-    .fp >> Get the Zoram'gar Outpost Flight Path
+    .fp Zoram'gar Outpost >> Get the Zoram'gar Outpost flight path
 step
 	#sticky
 	#label VorshaL

@@ -738,12 +738,12 @@ step << !Warlock
 step << !Warlock
     #softcore
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step << !Warlock
     #hardcore
     >>Run toward the Flight Path. Be exceedingly careful to not aggro or die to any mobs en route. Try sticking to the road and keeping an eye out
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step
     .hs >> Hearth to Goldshire
 step
@@ -1032,7 +1032,7 @@ step << Warlock
     .turnin 244 >> Turn in Encroaching Gnolls
 step << Warlock
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
 step << Warlock
     #sticky
@@ -1114,7 +1114,7 @@ step
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
-    .fp >> Get the Ironforge Flight Path
+    .fp Ironforge >> Get the Ironforge flight path
 step << Warrior
     .goto Ironforge,61.2,89.5
     .trainer >>Train 2h Maces and Thrown
@@ -1406,7 +1406,7 @@ step
     .collect 4471,1 --Flint and Tinder (1)
 step
     .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
 step
     .goto Loch Modan,22.1,73.1
     .accept 224 >> Accept In Defense of the King's Lands
@@ -2239,12 +2239,12 @@ step << !Warlock
 step << !Warlock
     #softcore
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step << !Warlock
     #hardcore
     >>Run toward the Flight Path. Be exceedingly careful to not aggro or die to any mobs en route. Try sticking to the road and keeping an eye out
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step
     .hs >> Hearth to Goldshire
 step
@@ -2474,7 +2474,7 @@ step << Warlock
     .turnin 244 >> Turn in Encroaching Gnolls
 step << Warlock
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
 step << Warlock
     #sticky
@@ -2563,7 +2563,7 @@ step
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
-    .fp >> Get the Ironforge Flight Path
+    .fp Ironforge >> Get the Ironforge flight path
 step << Mage
     .goto Ironforge,27.17,8.57
     .trainer >> Train your class spells
@@ -2673,7 +2673,7 @@ step
     .accept 307 >> Accept Filthy Paws
 step
     .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
 step
     #sticky
     #label StormpikeO
@@ -2838,7 +2838,7 @@ step
     .vendor >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there
 step
     .goto Wetlands,9.5,59.7
-    .fp >> Get the Menethil Harbor flight path
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
 step
     .money <0.04
     .goto Wetlands,8.1,56.3

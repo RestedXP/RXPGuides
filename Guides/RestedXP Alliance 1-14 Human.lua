@@ -737,12 +737,12 @@ step << !Warlock
 step << !Warlock
     #softcore
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step << !Warlock
     #hardcore
     >>Run toward the Flight Path. Be exceedingly careful to not aggro or die to any mobs en route. Try sticking to the road and keeping an eye out
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step
     .hs >> Hearth to Goldshire
 step
@@ -975,7 +975,7 @@ step << Warlock
     .turnin 244 >> Turn in Encroaching Gnolls
 step << Warlock
     .goto Redridge Mountains,30.6,59.4
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
 step << Warlock
     #sticky
@@ -1060,7 +1060,7 @@ step
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.5,47.7
-    .fp >> Get the Ironforge Flight Path
+    .fp Ironforge >> Get the Ironforge flight path
 step << Warlock
     .goto Ironforge,20.93,53.19,20,0
     .goto Ironforge,18.16,51.46
@@ -1313,7 +1313,7 @@ step << Warlock/Mage/Rogue
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
     .goto Loch Modan,33.9,51.0
-    .fp >> Get the Thelsamar flight path
+    .fp Thelsamar >> Get the Thelsamar flight path
     .fly Ironforge >> Fly to Ironforge << !Warlock
 step << Warlock
     .goto Loch Modan,22.1,73.1

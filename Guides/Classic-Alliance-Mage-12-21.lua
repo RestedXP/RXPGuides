@@ -36,7 +36,7 @@ step
     .accept 3524 >>Accept Washed Ashore
 step
     .goto Darkshore,36.34,45.58
-    .fp >> Get the Auberdine flight path
+    .fp Auberdine >> Get the Auberdine flight path
 step
     #completewith Bear
      >> Kill Crawlers along the coast
@@ -677,7 +677,7 @@ step << Gnome
     >>Run into Stormwind and get the Flight Path
     .goto StormwindClassic,57.62,59.48,50,0
     .goto StormwindClassic,66.27,62.13
-    .fp >> Get the Stormwind City Flight Path
+    .fp Stormwind City >> Get the Stormwind City flight path
 step << Gnome
     .goto StormwindClassic,66.05,65.64,12,0
     .goto StormwindClassic,64.97,67.69,18 >> Drop down to the small ledge by running into the white wall. Be careful. Run along it toward the exit of Stormwind
@@ -719,7 +719,7 @@ step
     .accept 246 >>Accept Assessing the Threat
 step
     .goto Redridge Mountains,30.59,59.40
-    .fp >> Get the Redridge Mountains flight path
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step
     #requires Gnolls
     .goto Redridge Mountains,33.51,48.96
@@ -814,7 +814,7 @@ step
     #completewith hsLakeshire
     #label WFFP
     .goto Westfall,56.55,52.65
-    .fp >> Get the Westfall Flight Path << Gnome
+    .fp Westfall >> Get the Westfall flight path << Gnome
     .fly Redridge >> Fly to Redridge
 step
     #requires WFFP

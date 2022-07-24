@@ -35,7 +35,7 @@ step
     .accept 5041 >>Accept Supplies for the Crossroads
 step
     .goto The Barrens,51.5,30.4
-    .fp >>Get the The Crossroads Flight Path
+    .fp The Crossroads >> Get the The Crossroads flight path
 step << Troll Mage
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
@@ -145,7 +145,7 @@ step
     .accept 887 >>Accept Southsea Freebooters
 step
     .goto The Barrens,63.1,37.1
-    .fp >>Get the Ratchet Flight Path
+    .fp Ratchet >> Get the Ratchet flight path
 step
     .goto The Barrens,63.0,37.2
     .accept 894 >>Accept Samophlange
@@ -345,7 +345,7 @@ step
 step
     >>Run up to the Flight Master. Do NOT fly anywhere
     .goto Orgrimmar,45.2,63.8
-    .fp >>Get the Orgrimmar Flight Path << Undead
+    .fp Orgrimmar >> Get the Orgrimmar flight path << Undead
     .turnin 6385 >>Turn in Doras the Wind Rider Master
     .accept 6386 >>Accept Return to the Crossroads.
 step
@@ -471,7 +471,7 @@ step
     .accept 878 >>Accept Tribes at War
 step
     .goto The Barrens,44.5,59.2
-    .fp >> Get the Camp Taurajo Flight Path
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path
     .fly Crossroads >>Fly to Crossroads
 step
     .goto The Barrens,51.9,30.3
@@ -846,7 +846,7 @@ step
     .accept 264 >>Accept Until Death Do Us Part
 step
 	.goto Thunder Bluff,46.9,49.9
-    .fp >> Get the Thunder Bluff Flight Path
+    .fp Thunder Bluff >> Get the Thunder Bluff flight path
     .fly Crossroads >>Fly to Crossroads
 step
     >>Kill Serena Bloodfeather. Loot her for her Head
