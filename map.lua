@@ -33,7 +33,7 @@ af:SetPoint("TOP")
 af:Hide()
 
 af:SetScript("OnMouseDown", function(self, button)
-    if not RXPData.lockFrames then af:StartMoving() end
+    if not RXPData.lockFrames and af:GetAlpha() ~= 0 then af:StartMoving() end
 end)
 af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
 
@@ -46,7 +46,8 @@ function addon.UpdateArrow(self)
         local angle, dist = HBD:GetWorldVector(instance, x, y, element.wx,
                                                element.wy)
         local facing = GetPlayerFacing()
-        if not (dist and facing) then return end
+        if not (dist and facing) then return af:SetAlpha(0) end
+        af:SetAlpha(1)
         local orientation = angle - facing
         local diff = math.abs(orientation - self.orientation)
         dist = math.floor(dist)
