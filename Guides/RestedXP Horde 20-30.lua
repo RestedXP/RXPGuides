@@ -2707,6 +2707,11 @@ step
     .goto Orgrimmar,75.2,34.2
     .turnin 1145 >> Turn in The Swarm Grows
     .accept 1146 >> Accept The Swarm Grows
+step << !Warrior !Shaman
+	#completewith next
+    #level 33
+    .goto Orgrimmar,54.1,68.4
+    .home >>Set your Hearthstone to Valley of Strength
 step << Orc !Warlock
 	#sticky
 	#completewith next
@@ -2793,6 +2798,11 @@ step << Warrior
 	#completewith next
 	.goto Orgrimmar,81.5,19.6
 	.train 2567 >> Train Thrown from Hanashi
+step << Warrior/Shaman
+	#completewith next
+    #level 33
+    .goto Orgrimmar,54.1,68.4
+    .home >>Set your Hearthstone to Valley of Strength
 step << Undead !Warlock
     .money <35.00
     .goto Durotar,50.8,13.7
