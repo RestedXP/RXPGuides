@@ -46,8 +46,18 @@ function addon.UpdateArrow(self)
         local angle, dist = HBD:GetWorldVector(instance, x, y, element.wx,
                                                element.wy)
         local facing = GetPlayerFacing()
-        if not (dist and facing) then return af:SetAlpha(0) end
-        af:SetAlpha(1)
+
+        if not (dist and facing) then
+            if af.alpha ~= 0 then
+                af.alpha = 0
+                af:SetAlpha(0)
+            end
+            return
+        elseif af.alpha ~= 1 then
+            af.alpha = 1
+            af:SetAlpha(1)
+        end
+
         local orientation = angle - facing
         local diff = math.abs(orientation - self.orientation)
         dist = math.floor(dist)
