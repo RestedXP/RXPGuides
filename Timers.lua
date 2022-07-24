@@ -198,7 +198,7 @@ _G.hooksecurefunc("TaxiNodeOnButtonEnter", function(button)
     local index = button:GetID()
     if TaxiNodeGetType(index) == "REACHABLE" then
         local time = GetFlightTime(index)
-        if time then
+        if time and not _G.GameTooltip:IsForbidden() then
             _G.GameTooltip:AddLine(format("%s %d:%02d", addon.icons.clock, time / 60, time % 60), 1, 1, 1)
             _G.GameTooltip:Show()
         end

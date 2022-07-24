@@ -529,12 +529,13 @@ local function ProcessItems(value, step, questId, isTurnIn)
 end
 
 function addon.InsertQuestGuide(id,tbl)
-    if not tbl[id] then tbl[id] = {} end
+    tbl[id] = tbl[id] or {}
     local entry = {}
 
     entry.step = addon.step
     entry.name = addon.currentGuideName
     entry.group = addon.currentGuideGroup
+    entry.guide = addon.guide
 
     table.insert(tbl[id],entry)
 end
@@ -1515,6 +1516,7 @@ function addon.functions.deathskip(self, ...)
     if event == "CONFIRM_XP_LOSS" then addon.SetElementComplete(self) end
 end
 
+addon.questItemList = {}
 function addon.functions.collect(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
@@ -1568,6 +1570,9 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         else
             element.requestFromServer = true
             element.text = " "
+        end
+        if flags ~= 0 and element.questId and element.questId > 0 then
+            addon.questItemList[id] = element.questId
         end
         return element
     end

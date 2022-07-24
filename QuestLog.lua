@@ -44,7 +44,7 @@ function addon.UpdateQuestButton(index)
         local groups = {}
         local guides = {}
         for _,entry in pairs(list) do
-            if addon.IsStepShown(entry.step) then
+            if addon.IsGuideActive(entry.guide) and addon.IsStepShown(entry.step) then
                 if not guides[entry.group] then
                     guides[entry.group] = {}
                     table.insert(groups,entry.group)
@@ -161,3 +161,23 @@ function addon.GetQuestLog(QL)
     end
     return QL
 end
+
+_G.GameTooltip:HookScript("OnTooltipSetItem", function(self)
+    if self:IsForbidden() then
+        return
+    end
+    local _,link = _G.GameTooltip:GetItem()
+    local id = tonumber(link:match("item:(%d+)"))
+    local questId = id and addon.questItemList[id]
+    local guideList = questId and addon.turnInList[questId]
+
+    if guideList and #guideList > 0 then
+        local prefix = "Item used in guide:\n"
+        for _,entry in ipairs(guideList) do
+            if addon.IsGuideActive(entry.guide) and addon.IsStepShown(entry.step) then
+                _G.GameTooltip:AddLine(prefix..addon.icons.turnin..entry.name)
+                prefix = ""
+            end
+        end
+    end
+end)
