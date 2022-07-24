@@ -1201,15 +1201,15 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
                            ": Invalid coordinates or map name\n" .. self)
         end
 
-        element.radius = tonumber(radius)
+        radius = tonumber(radius)
         element.lowPrio = lowPrio
         if lowPrio and not tonumber(lowPrio) then
             element.args = radius
             element.event = {...}
             element.callback = lowPrio
-            element.radius = nil
             radius = nil
         end
+        element.radius = radius
         if element.radius == 0 then
             element.radius = nil
             if not lowPrio then element.lowPrio = true end
@@ -3570,7 +3570,7 @@ function addon.functions.wptimer(self)
     if not self.time then
         self.time = tonumber(self.args) or 0
         self.state = self.time >= 0
-        self.time = abs(self.time)
+        self.time = math.abs(self.time)
         return not self.state
     elseif not step.active or step.completed then
         self.timerstart = false
@@ -3586,10 +3586,10 @@ function addon.functions.wptimer(self)
 end
 
 function addon.functions.wpbuff(self)
-    if not self.buff then
+    if self.buff == nil then
         self.buff = tonumber(self.args)
         self.state = self.buff and self.buff > 0
-        self.buff = math.abs(self.buff)
+        self.buff = self.buff and math.abs(self.buff)
     end
     for i = 1, 32 do
         local _, _, _, _, _, _, _, _, _, id = UnitAura("player", i)
