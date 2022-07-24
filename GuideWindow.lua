@@ -882,7 +882,7 @@ Footer.text:SetJustifyH("LEFT")
 Footer.text:SetJustifyV("CENTER")
 Footer.text:SetTextColor(1, 1, 1)
 Footer.text:SetFont(addon.font, 9)
-Footer.text:SetText("RXPGuides v4.1.1b")
+Footer.text:SetText("RXPGuides " .. GetAddOnMetadata(addonName, "Version"))
 Footer:SetFrameLevel(6)
 Footer.bg = Footer:CreateTexture("$parentBG", "BACKGROUND")
 Footer.bg:SetTexture("Interface/AddOns/" .. addonName ..

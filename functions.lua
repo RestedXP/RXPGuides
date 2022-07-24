@@ -16,7 +16,7 @@ events.complete = "QUEST_LOG_UPDATE"
 events.fp = {"UI_INFO_MESSAGE", "TAXIMAP_OPENED"}
 events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
-events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED"}
+events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED", "GOSSIP_SHOW"}
 events.deathskip = "CONFIRM_XP_LOSS"
 events.xp = {"PLAYER_XP_UPDATE", "PLAYER_LEVEL_UP"}
 events.reputation = "UPDATE_FACTION"
@@ -1356,6 +1356,23 @@ end
 
 local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
 local GossipGetOptions = C_GossipInfo.GetOptions or _G.GetGossipOptions
+function addon.SelectGossipType(type)
+    if C_GossipInfo.GetOptions then
+        for i,option in ipairs(GossipGetOptions()) do
+            if option.type == type then
+                GossipSelectOption(i)
+                return true
+            end
+        end
+    else
+        for i,gossipType in ipairs({GossipGetOptions()}) do
+            if i % 2 == 0 and gossipType == type then
+                GossipSelectOption(i/2)
+                return true
+            end
+        end
+    end
+end
 
 function addon.functions.home(self, ...)
     if type(self) == "string" then -- on parse
@@ -1386,19 +1403,7 @@ function addon.functions.home(self, ...)
         element.confirm = true
         _G.StaticPopup1:Hide()
     elseif not element.confirm and event == "GOSSIP_SHOW" then
-        if C_GossipInfo.GetOptions then
-            for i,option in ipairs(GossipGetOptions()) do
-                if option.type == "binder" then
-                    return GossipSelectOption(i)
-                end
-            end
-        else
-            for i,gossipType in ipairs({GossipGetOptions()}) do
-                if i % 2 == 0 and gossipType == "binder" then
-                    return GossipSelectOption(i/2)
-                end
-            end
-        end
+        addon.SelectGossipType("binder")
     end
 end
 
@@ -1460,7 +1465,9 @@ function addon.functions.fly(self, ...)
     local element = self.element
     if not element.step.active then return end
     local event = ...
-    if event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and
+    if not element.confirm and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
+        element.confirm = true
+    elseif event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and
         element.location then
         addon:TAXIMAP_OPENED()
         for i = 1, NumTaxiNodes() do
@@ -1468,7 +1475,9 @@ function addon.functions.fly(self, ...)
             local name = id and addon.FPDB[faction][id] and addon.FPDB[faction][id].name
             if name and strupper(name):find(element.location) then
                 _G.TaxiNodeOnButtonEnter(getglobal("TaxiButton" .. i))
-                return TakeTaxiNode(i)
+                TakeTaxiNode(i)
+                _G.GameTooltip:Hide()
+                return
             end
         end
     elseif (event and UnitOnTaxi("player")) or
