@@ -1,4 +1,4 @@
-local addonName, addon = ...
+local _, addon = ...
 
 local fmt, smatch, strsub, tinsert = string.format, string.match, string.sub,
                                      tinsert
@@ -9,11 +9,12 @@ local UnitLevel, GetRealZoneText, IsInGroup, tonumber = UnitLevel,
 local _G = _G
 local AceGUI = LibStub("AceGUI-3.0")
 
-addon.tracker = addon:NewModule(addonName, "AceEvent-3.0")
+addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0")
 
 addon.tracker.playerLevel = UnitLevel("player")
 addon.tracker.maxLevel = GetMaxPlayerLevel()
 addon.tracker.state = {}
+addon.tracker.reportData = {}
 
 -- Silence our /played yellow text
 local ReportPlayedTimeToChat = false
@@ -47,7 +48,9 @@ function addon.tracker:SetupTracker()
     addon.tracker:UpgradeDB()
     addon.tracker:GenerateDBLevel(addon.tracker.playerLevel)
 
-    if addon.enableTrackerReport then addon.tracker:CreateGui() end
+    if addon.settings.db.profile.enableTrackerReport then
+        addon.tracker:CreateGui()
+    end
 end
 
 function addon.tracker:UpgradeDB()
@@ -74,7 +77,7 @@ function addon.tracker:GenerateDBLevel(level)
         profile["levels"][level] = {
             quests = {}, -- [zone] = { questId = xpReward }
             mobs = {}, -- [zone] = xp
-            timestamp = {started = -1, finished = -1},
+            timestamp = {}, -- started, finished
             groupExperience = 0,
             deaths = 0
         }
@@ -128,6 +131,10 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
         end
 
         addon.tracker.waitingForTimePlayed = false
+
+        -- Build data after processing level up
+        addon.tracker.reportData[data.level - 1] =
+            addon.tracker:CompileLevelData(data.level - 1)
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
         addon.tracker.state.login = {
             time = time(),
@@ -419,88 +426,92 @@ function addon.tracker:ShowReport()
     _G.CharacterFrame:Show()
 end
 
-function addon.tracker:CompileData()
-    local profile = addon.tracker.db.profile
+function addon.tracker:CompileLevelData(level, d)
+    local data = d or addon.tracker.db.profile["levels"][level]
 
-    addon.tracker.reportData = {}
-    local rData = addon.tracker.reportData
+    local report = {questXP = 0, mobXP = 0, zoneXP = {}}
 
-    local lReport
-    for level, data in pairs(profile["levels"]) do
-        rData[level] = {questXP = 0, mobXP = 0, zoneXP = {}}
-        lReport = rData[level]
+    local zoneXP = {}
 
-        local zoneXP = {}
-
-        for zoneName, questData in pairs(data.quests) do
-            if not zoneXP[zoneName] then
-                zoneXP[zoneName] = {xp = 0, name = zoneName}
-            end
-
-            for _, questXP in pairs(questData) do
-                lReport.questXP = lReport.questXP + questXP
-
-                zoneXP[zoneName].xp = zoneXP[zoneName].xp + questXP
-            end
+    for zoneName, questData in pairs(data.quests) do
+        if not zoneXP[zoneName] then
+            zoneXP[zoneName] = {xp = 0, name = zoneName}
         end
 
-        for zoneName, mobData in pairs(data.mobs) do
-            if not zoneXP[zoneName] then
-                zoneXP[zoneName] = {xp = 0, name = zoneName}
-            end
+        for _, questXP in pairs(questData) do
+            report.questXP = report.questXP + questXP
 
-            for _, mobXP in pairs(mobData) do
-                lReport.mobXP = lReport.mobXP + mobXP
-
-                zoneXP[zoneName].xp = zoneXP[zoneName].xp + mobXP
-            end
-        end
-
-        -- Turn dictionary into array
-        for _, z in pairs(zoneXP) do tinsert(lReport.zoneXP, z) end
-
-        -- Sort lReport.zoneXP highest to the top
-        table.sort(lReport.zoneXP, function(a, b) return a.xp > b.xp end)
-
-        lReport.groupExperience = data.groupExperience
-
-        -- Quests aren't tracked for group vs solo
-        lReport.soloExperience = lReport.mobXP - data.groupExperience
-
-        lReport.totalXP = lReport.mobXP + lReport.questXP
-
-        lReport.timestamp = {
-            started = data.timestamp.started,
-            finished = data.timestamp.finished
-        }
-
-        lReport.deaths = data.deaths
-
-        if data.timestamp.dateStarted then -- Level 1
-
-            lReport.timestamp.dateStarted =
-                fmt("%s %d, %d at %d:%d %s Server",
-                    _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp.dateStarted
-                        .month], data.timestamp.dateStarted.monthDay,
-                    data.timestamp.dateStarted.year,
-                    data.timestamp.dateStarted.hour % 12,
-                    data.timestamp.dateStarted.minute,
-                    data.timestamp.dateStarted.hour >= 12 and "PM" or "AM")
-        elseif data.timestamp.dateFinished then
-            lReport.timestamp.dateFinished =
-                fmt("%s %d, %d at %d:%d %s Server",
-                    _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp.dateFinished
-                        .month], data.timestamp.dateFinished.monthDay,
-                    data.timestamp.dateFinished.year,
-                    data.timestamp.dateFinished.hour % 12,
-                    data.timestamp.dateFinished.minute,
-                    data.timestamp.dateFinished.hour >= 12 and "PM" or "AM")
+            zoneXP[zoneName].xp = zoneXP[zoneName].xp + questXP
         end
     end
 
+    for zoneName, mobData in pairs(data.mobs) do
+        if not zoneXP[zoneName] then
+            zoneXP[zoneName] = {xp = 0, name = zoneName}
+        end
+
+        for _, mobXP in pairs(mobData) do
+            report.mobXP = report.mobXP + mobXP
+
+            zoneXP[zoneName].xp = zoneXP[zoneName].xp + mobXP
+        end
+    end
+
+    -- Turn dictionary into array
+    for _, z in pairs(zoneXP) do tinsert(report.zoneXP, z) end
+
+    -- Sort report.zoneXP highest to the top
+    table.sort(report.zoneXP, function(a, b) return a.xp > b.xp end)
+
+    report.groupExperience = data.groupExperience
+
+    -- Quests aren't tracked for group vs solo
+    report.soloExperience = report.mobXP - data.groupExperience
+
+    report.totalXP = report.mobXP + report.questXP
+
+    report.timestamp = {
+        started = data.timestamp.started,
+        finished = data.timestamp.finished
+    }
+
+    report.deaths = data.deaths
+
+    if data.timestamp.dateStarted then -- Level 1
+        report.timestamp.dateStarted = fmt("%s %d, %d at %d:%d %s Server",
+                                           _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
+                                               .dateStarted.month],
+                                           data.timestamp.dateStarted.monthDay,
+                                           data.timestamp.dateStarted.year,
+                                           data.timestamp.dateStarted.hour % 12,
+                                           data.timestamp.dateStarted.minute,
+                                           data.timestamp.dateStarted.hour >= 12 and
+                                               "PM" or "AM")
+    elseif data.timestamp.dateFinished then
+        report.timestamp.dateFinished = fmt("%s %d, %d at %d:%d %s Server",
+                                            _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
+                                                .dateFinished.month],
+                                            data.timestamp.dateFinished.monthDay,
+                                            data.timestamp.dateFinished.year,
+                                            data.timestamp.dateFinished.hour %
+                                                12,
+                                            data.timestamp.dateFinished.minute,
+                                            data.timestamp.dateFinished.hour >=
+                                                12 and "PM" or "AM")
+    end
+
+    return report
 end
 
-local function prettyPrintTime(s)
+function addon.tracker:CompileData()
+    addon.tracker.reportData = {}
+
+    for level, data in pairs(addon.tracker.db.profile["levels"]) do
+        addon.tracker.reportData[level] = self:CompileLevelData(level, data)
+    end
+end
+
+function addon.tracker:PrettyPrintTime(s)
     local days = floor(s / 24 / 60 / 60)
     s = mod(s, 24 * 60 * 60)
 
@@ -549,10 +560,10 @@ function addon.tracker:UpdateReport(selectedLevel)
                                                          selectedLevel)
         end
 
-        trackerUi.speedContainer.data:SetText(prettyPrintTime(
-                                                  secondsSinceLogin +
-                                                      addon.tracker.state.login
-                                                          .timePlayedThisLevel))
+        trackerUi.speedContainer.data:SetText(
+            addon.tracker:PrettyPrintTime(secondsSinceLogin +
+                                              addon.tracker.state.login
+                                                  .timePlayedThisLevel))
 
         if selectedLevel == 1 then
             trackerUi.reachedContainer.data:SetText(
@@ -573,10 +584,12 @@ function addon.tracker:UpdateReport(selectedLevel)
             report.timestamp.dateFinished or "Missing data")
 
         if report.timestamp and report.timestamp.started and
-            report.timestamp.finished then
+            report.timestamp.started > -1 and report.timestamp.finished and
+            report.timestamp.finished > -1 then
             local s = report.timestamp.finished - report.timestamp.started
 
-            trackerUi.speedContainer.data:SetText(prettyPrintTime(s))
+            trackerUi.speedContainer.data:SetText(
+                addon.tracker:PrettyPrintTime(s))
         else
             trackerUi.speedContainer.data:SetText("Missing data")
         end

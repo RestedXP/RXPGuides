@@ -3,7 +3,6 @@ local addonName, addon = ...
 local _G = _G
 
 local AceConfig = LibStub("AceConfig-3.0")
-local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 
 SLASH_RXPG1 = "/rxp"
 SLASH_RXPG2 = "/rxpg"
@@ -14,21 +13,48 @@ local buffer = {}
 local importFrame
 local ProcessBuffer
 
-_G.SlashCmdList["RXPG"] = function(msg)
+_G.SlashCmdList["RXPG"] = function(_)
     _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
     _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
 end
 
 if not addon.settings then
-    addon.settings = {gui = {}, functions = {}}
+    addon.settings = {gui = {}, extras = {}}
 else
     if not addon.settings.gui then addon.settings.gui = {} end
-    if not addon.settings.functions then addon.settings.functions = {} end
+    if not addon.settings.extras then addon.settings.extras = {} end
 end
 
 addon.settings.gui.selectedDeleteGuide = ""
 
-function addon.CreateOptionsPanel()
+function addon.settings.InitializeSettings()
+    -- New character settings format
+    -- Only set defaults for enabled = true
+    local settingsDBDefaults = {
+        profile = {
+            enableTracker = true,
+            enableLevelUpAnnounceSolo = true,
+            enableLevelUpAnnounceGroup = true
+        }
+    }
+
+    addon.settings.db = LibStub("AceDB-3.0"):New("RXPCSettings",
+                                                 settingsDBDefaults)
+
+    addon.settings.CreateOptionsPanel()
+    addon.settings.CreateImportOptionsPanel()
+    addon.settings.CreateExtrasOptionsPanel()
+end
+
+local function GetProfileOption(info)
+    return addon.settings.db.profile[info[#info]]
+end
+
+local function SetProfileOption(info, value)
+    addon.settings.db.profile[info[#info]] = value
+end
+
+function addon.settings.CreateOptionsPanel()
     addon.RXPOptions = CreateFrame("Frame", "RXPOptions")
     addon.RXPOptions.name = "RXP Guides"
     _G.InterfaceOptions_AddCategory(addon.RXPOptions)
@@ -280,8 +306,8 @@ function addon.CreateOptionsPanel()
         button.tooltip =
             "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"
     elseif addon.gameVersion > 30000 then
-        button = CreateFrame("CheckButton", "$parentNorthrendLM", addon.RXPOptions,
-                             "ChatConfigCheckButtonTemplate");
+        button = CreateFrame("CheckButton", "$parentNorthrendLM",
+                             addon.RXPOptions, "ChatConfigCheckButtonTemplate");
         table.insert(options, button)
         button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
         index = index + 1
@@ -385,11 +411,12 @@ function addon.CreateOptionsPanel()
                               "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests",
                               slider, 0, -25, 1, "1", "6")
     elseif addon.game == "WOTLK" then
-        slider = CreateSlider(RXPCData, "xprate", 1, 1.5, "Experience rates: %.1fx",
-        "Adjusts the guide routes to match increased xp rate bonuses",
-        slider, 0, -25, 0.5, "1x", "1.5x")
+        slider = CreateSlider(RXPCData, "xprate", 1, 1.5,
+                              "Experience rates: %.1fx",
+                              "Adjusts the guide routes to match increased xp rate bonuses",
+                              slider, 0, -25, 0.5, "1x", "1.5x")
     end
---[[
+    --[[
     if addon.farmGuides > 0 then
         local GApanel = CreateFrame("Frame", "RXPGAOptions")
         GApanel.name = "Gold Assistant"
@@ -413,12 +440,55 @@ function addon.CreateOptionsPanel()
 
     end]]
 
+end
+
+function addon.settings.ImportBoxValidate()
+
+    local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,
+                                                           addon.RXPFrame)
+    if guidesLoaded then
+        addon.settings.gui.selectedDeleteGuide = "mustReload"
+        return true
+    else
+        importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
+        return errorMsg or "Failed to Import Guides: Invalid Import String"
+    end
+end
+
+function addon.settings.GetImportedGuides()
+    local display = {empty = ""}
+    local importedGuidesFound = false
+
+    if addon.settings.gui.selectedDeleteGuide == "mustReload" then
+        return {mustReload = "Must reload UI"}
+    end
+
+    for _, guide in ipairs(addon.guides) do
+        if guide.imported or guide.cache then
+            importedGuidesFound = true
+            local group, subgroup, name = guide.key:match("^(.*)|(.*)|(.*)")
+            if subgroup ~= "" then group = group .. "/" .. subgroup end
+            display[guide.key] = string.format("%s/%s - version %s", group,
+                                               name, guide.version)
+        end
+    end
+
+    table.sort(display)
+
+    if importedGuidesFound then
+        return display
+    else
+        addon.settings.gui.selectedDeleteGuide = "none"
+        return {none = "none"}
+    end
+
+end
+
+function addon.settings.CreateImportOptionsPanel()
     local importOptionsTable = {
         type = "group",
         name = "RestedXP Guide Import",
-        handler = addon.settings.functions,
-        -- get = "getProfileOption",
-        -- set = "setProfileOption",
+        handler = addon.settings,
         args = {
             buffer = { -- Buffer hacked in right-aligned icon
                 order = 1,
@@ -436,7 +506,7 @@ function addon.CreateOptionsPanel()
                 -- usage = "Usage string",
 
                 validate = function(_, val)
-                    return addon.settings.functions.ImportBoxValidate(val)
+                    return addon.settings.ImportBoxValidate(val)
                 end
             },
             currentGuides = {
@@ -446,7 +516,7 @@ function addon.CreateOptionsPanel()
                 name = "Currently loaded imported guides",
                 width = 'full',
                 values = function()
-                    return addon.settings.functions.GetImportedGuides()
+                    return addon.settings.GetImportedGuides()
                 end,
                 disabled = function()
                     return addon.settings.gui.selectedDeleteGuide ==
@@ -578,53 +648,75 @@ function addon.CreateOptionsPanel()
 
 end
 
-function addon.settings.functions.getProfileOption(info)
-    return addon.db.profile[info[#info]]
-end
+function addon.settings.CreateExtrasOptionsPanel()
+    local extraOptionsTable = {
+        type = "group",
+        name = "RestedXP Extras",
+        get = GetProfileOption,
+        set = SetProfileOption,
+        args = {
+            buffer = { -- Buffer hacked in right-aligned icon
+                order = 1,
+                name = "Optional extras",
+                type = "description",
+                width = "full",
+                fontSize = "medium"
+            },
+            trackerOptionsHeader = {
+                name = "Leveling Tracker",
+                type = "header",
+                width = "full",
+                order = 2
+            },
+            enableTracker = {
+                name = "Enable leveling tracker",
+                type = "toggle",
+                width = "normal",
+                order = 3
+            },
+            enableTrackerReport = {
+                name = "Enable leveling report",
+                type = "toggle",
+                width = "normal",
+                order = 4
+            }, -- TODO add reload UI if changes made
+            commsOptionsHeader = {
+                name = "Announcements",
+                type = "header",
+                width = "full",
+                order = 5
+            },
+            enableLevelUpAnnounceSolo = {
+                name = "Level up (Emote)",
+                type = "toggle",
+                order = 6
+            },
+            enableLevelUpAnnounceGroup = {
+                name = "Level up (Group)",
+                type = "toggle",
+                order = 7
+            },
+            enableLevelUpAnnounceGuild = {
+                name = "Level up (Guild)",
+                type = "toggle",
+                order = 8
+            }
+        }
+    }
 
-function addon.settings.functions.setProfileOption(info, value)
-    local key = info[#info]
-    addon.db.profile[key] = value
-end
+    AceConfig:RegisterOptionsTable("RXP Guides/Extras", extraOptionsTable)
 
-function addon.settings.functions.ImportBoxValidate()
+    addon.settings.gui.extras = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                                    "RXP Guides/Extras", "Extras", "RXP Guides")
 
-    local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,
-                                                           addon.RXPFrame)
-    if guidesLoaded then
-        addon.settings.gui.selectedDeleteGuide = "mustReload"
-        return true
-    else
-        importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
-        return errorMsg or "Failed to Import Guides: Invalid Import String"
-    end
-end
+    -- Ace3 ConfigDialog doesn't support embedding icons in header
+    -- Directly references Ace3 built frame object
+    -- Hackery ahead
 
-function addon.settings.functions.GetImportedGuides()
-    local display = {empty = ""}
-    local importedGuidesFound = false
-
-    if addon.settings.gui.selectedDeleteGuide == "mustReload" then
-        return {mustReload = "Must reload UI"}
-    end
-
-    for _, guide in ipairs(addon.guides) do
-        if guide.imported or guide.cache then
-            importedGuidesFound = true
-            local group, subgroup, name = guide.key:match("^(.*)|(.*)|(.*)")
-            if subgroup ~= "" then group = group .. "/" .. subgroup end
-            display[guide.key] = string.format("%s/%s - version %s", group,
-                                               name, guide.version)
-        end
-    end
-
-    table.sort(display)
-
-    if importedGuidesFound then
-        return display
-    else
-        addon.settings.gui.selectedDeleteGuide = "none"
-        return {none = "none"}
-    end
+    local extrasFrame = addon.settings.gui.extras.obj.frame
+    extrasFrame.icon = extrasFrame:CreateTexture()
+    extrasFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
+                                    "\\Textures\\rxp_logo-64")
+    extrasFrame.icon:SetPoint("TOPRIGHT", -5, -5)
 
 end
