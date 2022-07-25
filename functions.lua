@@ -545,7 +545,7 @@ function addon.functions.accept(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         element.tag = "accept"
-        local text, id, flags = ...
+        local text, id, flags, arg1 = ...
         id = tonumber(id)
         flags = tonumber(flags) or 0
         if not id then
@@ -571,8 +571,11 @@ function addon.functions.accept(self, ...)
         --[[
         flags:
             1 - disable auto accept
+            2 - skip the step if quest Id defined by arg1 is not turned in
         ]]
-
+        if bit.band(flags,0x2) == 0x2 then
+            element.requiredTurnIn = tonumber(arg1)
+        end
         addon.InsertQuestGuide(id,addon.pickUpList)
         return element
     else
@@ -662,7 +665,9 @@ function addon.functions.accept(self, ...)
         end
 
         if step.active then
-            if event then
+            if element.requiredTurnIn and not IsQuestTurnedIn(element.requiredTurnIn) then
+                addon.SetElementComplete(self, true)
+            elseif event then
                 local itemFrame = self.GetParent and
                                       self:GetParent().activeItemFrame
                 if completed ~= element.completed and itemFrame then
@@ -735,6 +740,10 @@ function addon.functions.turnin(self, ...)
             return addon.error(
                        "Error parsing guide " .. addon.currentGuideName ..
                            ": Invalid quest ID\n" .. self)
+        end
+        if id < 0 then
+            id = -id
+            element.skipIfMissing = true
         end
         element.questId = questConversion[id] or id
         element.reward = tonumber(reward) or 0
@@ -836,7 +845,9 @@ function addon.functions.turnin(self, ...)
         end
 
         if step.active then
-            if event then
+            if element.skipIfMissing and not IsOnQuest(id) then
+                addon.SetElementComplete(self, true)
+            elseif event then
                 local itemFrame = self.GetParent and
                                       self:GetParent().activeItemFrame
                 if completed ~= element.completed and itemFrame then
@@ -1092,6 +1103,10 @@ function addon.functions.complete(self, ...)
         element.dynamicText = true
         -- element.title = addon.GetQuestName(id)
         -- local objectives = addon.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
+        if id < 0 then
+            id = -id
+            element.skipIfMissing = true
+        end
         element.questId = questConversion[id] or id
 
         element.text = ""
@@ -1100,12 +1115,17 @@ function addon.functions.complete(self, ...)
         return element
     end
     local event = ...
-    local step = self.element.step
+    local element = self.element
+    local step = element.step
     local id = self.element.questId
 
     if event then
         if step.active then
-            addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
+            if element.skipIfMissing and not IsOnQuest(element.questId) then
+                addon.SetElementComplete(self,true)
+            else
+                addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
+            end
         else
             addon.updateInactiveQuest[self] = addon.UpdateQuestCompletionData
         end
