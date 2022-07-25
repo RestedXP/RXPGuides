@@ -645,11 +645,18 @@ step
     .complete 876,1 --Serena's Head (1)
 step
     .goto The Barrens,35.3,27.9
+    >> Head towards Stonetalon Mountains
+    .isOnQuest 1061
     .turnin 1061 >> Turn in The Spirits of Stonetalon
     .accept 1062 >> Accept Goblin Invaders
+step
+    .maxlevel 22
+    .goto The Barrens,35.3,27.9
+    >> Head towards Stonetalon Mountains
     .accept 6548 >> Accept Avenge My Village
 step
-.goto Stonetalon Mountains,80.7,89.2,50,0
+    .isOnQuest 6548
+    .goto Stonetalon Mountains,80.7,89.2,50,0
     .goto Stonetalon Mountains,82.0,86.0,50,0
     .goto Stonetalon Mountains,84.7,84.3,50,0
     .goto Stonetalon Mountains,82.3,90.0,50,0
@@ -661,7 +668,9 @@ step
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
 step
+    .isOnQuest 6548
     .goto The Barrens,35.2,27.8
+    >> Head back to the quest giver in The Barrens
     .turnin 6548 >> Turn in Avenge My Village
     .accept 6629 >> Accept Kill Grundig Darkcloud
 step
@@ -672,35 +681,60 @@ step
 step
     #sticky
     #completewith next
-.goto Stonetalon Mountains,71.7,86.7,40 >>Run to the path here
+    .isOnQuest 6629
+    .goto Stonetalon Mountains,71.7,86.7,40 >>Run to the path here
 step
+    .isOnQuest 6629
     >>Make sure you kill all 6 brutes before starting the quest inside. Kill Grundig in front of the main tent
-.goto Stonetalon Mountains,74.0,86.2
+    .goto Stonetalon Mountains,74.0,86.2
     .complete 6629,1 --Kill Grundig Darkcloud (x1)
     .complete 6629,2 --Kill Grimtotem Brute (x6)
 step
     >>Start the Kaya Escort
-.goto Stonetalon Mountains,73.5,85.8
+    .goto Stonetalon Mountains,73.5,85.8
     .accept 6523 >> Accept Protect Kaya
+    .isOnQuest 6629
 step
        >>Escort Kaya and stay close to her. 3 Grimtotems will spawn at the bonfire. Eat/drink before she gets to the camp
     .goto Stonetalon Mountains,75.8,91.4
     .complete 6523,1 --Kaya Escorted to Camp Aparaje
+    .isOnQuest 6523
 step
-    >>Click the Wanted poster
-.goto Stonetalon Mountains,59.0,75.7
+    #sticky
+    #completewith next
+    >> Kill Deepmoss Creepers en route to the wanted poster. You do not have to finish the quest now.
+    .complete 6461,1 --Kill Deepmoss Creeper (x10)
+step
+    >>Click the Wanted poster up the road
+    .goto Stonetalon Mountains,59.0,75.7
     .accept 6284 >> Accept Arachnophobia
 step
     .goto Stonetalon Mountains,57.5,76.2,30 >>Run up the path here to Sishir Canyon
 step
-#sticky
-#label deepmossegg
-        #completewith eggend
-    .goto Stonetalon Mountains,62.8,59.8,80
-    >>Click the spider eggs near the trees. Make sure you're at full health each time you open the eggs as they may spawn difficult/multiple mobs
+    #sticky
+    #label deepmossegg
+    #completewith spiderend
+    >>Click the spider eggs near the trees. Be careful as mobs can spawn from the eggs
     .complete 1069,1 --Collect Deepmoss Egg (x15)
+    .isOnQuest 1069
 step
-    >>Kill the Deepmoss Spiders and Besseleth in the area
+    #sticky
+    #label besseleth
+    #completewith spiderend
+    .goto Stonetalon Mountains,54.7,71.9,40,0
+    .goto Stonetalon Mountains,52.6,71.8,40,0
+    .goto Stonetalon Mountains,52.2,75.6,40,0
+    .goto Stonetalon Mountains,53.9,74.2,40,0
+    .goto Stonetalon Mountains,54.7,71.9,40,0
+    .goto Stonetalon Mountains,52.6,71.8,40,0
+    .goto Stonetalon Mountains,52.2,75.6,40,0
+    .goto Stonetalon Mountains,53.9,74.2
+    >> Kill and loot Besseleth for his fang
+    .complete 6284,1 --Collect Besseleth's Fang (x1)
+	.unitscan Besseleth
+    .isOnQuest 6284
+step
+    >>Kill the Deepmoss Spiders and Besseleth in the area. Loot Besseleth for his fang
     .goto Stonetalon Mountains,54.7,71.9,40,0
     .goto Stonetalon Mountains,52.6,71.8,40,0
     .goto Stonetalon Mountains,52.2,75.6,40,0
@@ -711,16 +745,23 @@ step
     .goto Stonetalon Mountains,53.9,74.2
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
-    .complete 6284,1 --Collect Besseleth's Fang (x1)
+    .isOnQuest 6461
 step
+    #label spiderend
+    >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1483 >> Turn in Ziz Fizziks
+    .isOnQuest 1483
+step
+    >> Head to the goblin hut behind the hill
+    .goto Stonetalon Mountains,59.0,62.6
     .accept 1093 >> Accept Super Reaper 6000
 step
     #sticky
     #completewith next
     >>Kill Loggers as you search for Operators to get the Blueprints
-.complete 1062,1 --Kill Venture Co. Logger (x15)
+    .complete 1062,1 --Kill Venture Co. Logger (x15)
+    .isOnQuest 1062
 step
     >>Kill Venture Co. Operators until you get the Blueprints
 .goto Stonetalon Mountains,62.8,53.7,40,0
@@ -728,19 +769,20 @@ step
     .goto Stonetalon Mountains,66.8,45.3,40,0
     .goto Stonetalon Mountains,71.7,49.9,40,0
     .goto Stonetalon Mountains,74.3,54.7,40,0
-    .goto Stonetalon Mountains,62.8,53.7,40,0
+    .goto Stonetalon Mountains,62.8,53.7
     .complete 1093,1 --Collect Super Reaper 6000 Blueprints (x1)
 step
     >>Finish killing Loggers
     .goto Stonetalon Mountains,64.1,56.7,40,0
-.goto Stonetalon Mountains,73.4,54.3,40,0
+    .goto Stonetalon Mountains,73.4,54.3,40,0
     .goto Stonetalon Mountains,64.1,56.7,40,0
-.goto Stonetalon Mountains,73.4,54.3,40,0
+    .goto Stonetalon Mountains,73.4,54.3,40,0
     .goto Stonetalon Mountains,64.1,56.7,40,0
-.goto Stonetalon Mountains,73.4,54.3,40,0
+    .goto Stonetalon Mountains,73.4,54.3,40,0
     .goto Stonetalon Mountains,64.1,56.7,40,0
-.goto Stonetalon Mountains,73.4,54.3
-.complete 1062,1 --Kill Venture Co. Logger (x15)
+    .goto Stonetalon Mountains,73.4,54.3
+    .complete 1062,1 --Kill Venture Co. Logger (x15)
+    .isOnQuest 1062
 step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1093 >> Turn in Super Reaper 6000
@@ -1050,12 +1092,21 @@ step
     .turnin 850 >> Turn in Kolkar Leaders
 step
     .goto The Barrens,35.3,27.9
+    .isOnQuest 1062
     .turnin 1062 >>Turn in Goblin Invaders
-    .turnin 6629 >>Turn in Kill Grundig Darkcloud
-    .turnin 6523 >>Turn in Protect Kaya
-    .accept 6401 >>Accept Kaya's Alive
     .accept 1063 >>Accept The Elder Crone
 step
+    .isOnQuest 6629
+    .goto The Barrens,35.3,27.9
+    .turnin 6629 >>Turn in Kill Grundig Darkcloud
+step
+    .isOnQuest 6523
+    .goto The Barrens,35.3,27.9
+    .turnin 6523 >>Turn in Protect Kaya
+    .accept 6401 >>Accept Kaya's Alive
+
+step
+    .isOnQuest 1060
     >>Up the mountain again, then inside the cave
 .goto Stonetalon Mountains,74.5,97.8
     .turnin 1060 >>Turn in Letter to Jin'Zil
@@ -1063,64 +1114,91 @@ step
     .goto Stonetalon Mountains,71.3,95.1
     .turnin 6461 >>Turn in Blood Feeders
 step
+    #level 25
+    .isOnQuest 1095
+    >> Head back to the goblin hut behind the hill
+    .goto Stonetalon Mountains,59.0,62.6
+    .turnin 1095 >> Turn in Further Instructions
+step
+    >> Head to Sun Rock Retreat
+    >> Head up the side mountain path to your left once you reach Sun Rock
     .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
-    >> Head up the side mountain path
-    .accept 6562 >>Accept Trouble in the Deeps
+    .accept 6562 >> Accept Trouble in the Deeps
+    .maxlevel 24
 step
     .goto Stonetalon Mountains,47.2,61.1
-    .turnin 6284 >>Turn in Arachnophobia
+    .turnin 6284 >> Turn in Arachnophobia
+    .isOnQuest 6284
 step
-    .goto Stonetalon Mountains,41.0,59.9
-    #completewith next
-    .fp Sun Rock >> Get the Sun Rock Retreat flight path
+    .goto Stonetalon Mountains,45.1,59.8
+    .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
+    .maxlevel 23
 step
-    .goto Stonetalon Mountains,47.5,58.4
-    .turnin 6401 >>Turn in Kaya's Alive
+    .goto Stonetalon Mountains,47.5,58.3
+    .turnin 6401 >> Turn in Kaya's Alive
+    .isOnQuest 6401
 step
+    #level 24
+    .goto Stonetalon Mountains,45.1,59.8
+    .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
+step
+    .isOnQuest 1095
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >>Turn in Further Instructions
 step
     #sticky
     #completewith next
-.goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
+    .goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
+    .maxlevel 24
 step
-.goto Ashenvale,42.3,71.0,25 >> Run through the cave to Ashenvale
+    .goto Ashenvale,42.3,71.0,20 >>Run through the cave to Ashenvale
+    .maxlevel 24
 step
-.goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid the Astranaar guards en route
-
+    .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
+    .maxlevel 24
 step
     .goto Ashenvale,12.3,33.8
-    #completewith next
     .fp Zoram >> Get the Zoram'gar Outpost flight path
-step
-    .goto Ashenvale,11.6,34.3
-    .turnin 6562 >>Turn in Trouble in the Deeps
-    .accept 6563 >>Accept The Essence of Aku'Mai
+    .maxlevel 24
 step
     .goto Ashenvale,11.8,34.7
-    .accept 216 >>Accept Between a Rock and a Thistlefur
+    .accept 216 >> Accept Between a Rock and a Thistlefur
+    .maxlevel 24
 step
-    .goto Ashenvale,11.7,34.9
-    .accept 6462 >>Accept Troll Charm
-    .accept 6442 >>Accept Naga at the Zoram Strand
+    >> Talk to the trolls in the hut
+    .goto Ashenvale,11.6,34.9
+    .accept 6442 >> Accept Naga at the Zoram Strand
+    .accept 6462 >> Accept Troll Charm
+    .maxlevel 24
+step
+    .isOnQuest 6562
+    .goto Ashenvale,11.6,34.3
+    .turnin 6562 >> Turn in Trouble in the Deeps
+step
+    .goto Ashenvale,11.6,34.3
     .accept 6563 >> Accept The Essence of Aku'Mai
+    .maxlevel 24
 step
     >>Accepting this quest starts an escort. Follow him
     .goto Ashenvale,12.1,34.4
     .accept 6641 >> Accept Vorsha the Lasher
+    .maxlevel 24
 step
-#sticky
-#label wrathtailhead
->>Kill Nagas. Loot them for their heads
+    #sticky
+    #label wrathtailhead
+    >>Kill the Nagas around the beach. Loot them for their heads
     .goto Ashenvale,15.5,17.1
     .complete 6442,1 --Collect Wrathtail Head (x20)
+    .isOnQuest 6442
 step
->>There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
+    >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
+    .isOnQuest 6641
 step
-.goto Ashenvale,14.2,14.7,40 >>Drop down the hole into Blackfathom Deeps
+    .goto Ashenvale,14.2,14.7,40 >>Drop down the hole into Blackfathom Deeps
+    .isOnQuest 6442
 step
     #sticky
     #label Sapphires
@@ -1136,6 +1214,7 @@ step
     >>Swim under the water and enter Blackfathom Deeps. Kill the Priestess' until a Damp Note drops(quest). Then right click it and accept the quest.
     .collect 16790,1,6564 --Collect Damp Note
     .accept 6564 >> Accept Allegiance to the Old Gods
+    .isOnQuest 6442
 step
     #requires Sapphires
     >> Loot the Sapphires from the walls in the tunnel.
@@ -1148,60 +1227,83 @@ step
     .goto Ashenvale,13.0,13.2,30,0
     .goto Ashenvale,13.6,9.0
     .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
+    .isOnQuest 6563
 step
     #label zoramend
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
     .goto Ashenvale,12.2,34.2
     .turnin 6641 >> Turn in Vorsha the Lasher
+    .isOnQuest 6641
 step
     .goto Ashenvale,11.6,34.3
-    .turnin 6563 >>Turn in The Essence of Aku'Mai
-    .turnin 6564 >>Turn in Allegiance to the Old Gods
+    .turnin 6563 >> Turn in The Essence of Aku'Mai
+    .isOnQuest 6553
 step
     #sticky
     #completewith next
     .destroy 16784 >> Destroy any leftover Sapphires of Aku'Mai
 step
+    .goto Ashenvale,11.6,34.3
+    .turnin 6564 >> Turn in Allegiance to the Old Gods
+    .isOnQuest 6564
+step
     .goto Ashenvale,11.7,34.9
-    .turnin 6442 >>Turn in Naga at the Zoram Strand
+    .turnin 6442 >> Turn in Naga at the Zoram Strand
+    .isOnQuest 6442
 step << Druid
     >>Teleport to Moonglade
     .goto Moonglade,52.4,40.6
     .trainer 12042 >> Train spells
 step
     #completewith next
-    .goto Ashenvale,12.2,33.8
-    .hs > Hearth or fly to Thunder Bluff
+    .hs >> Hearth to Thunder Bluff
+    .zoneskip Stonetalon Mountains
 step
-    .goto Thunder Bluff,70.1,30.9
-    .turnin 1063 >>Turn in The Elder Crone
+    #completewith next
+    >> You can hearth if it is up
+    .goto Stonetalon Mountains,45.1,59.8
+    .fly Thunder Bluff >> Fly to Thunder Bluff 
+    .zoneskip Stonetalon Mountains,1
 step
+    .isOnQuest 1063
+    .goto Thunder Bluff,69.8,30.8
+    .turnin 1063 >> Turn in The Elder Crone
+    >> Wait for the roleplay to finish
+    .accept 1064 >> Accept Forsaken Aid
+step
+    .isOnQuest 1489
     .goto Thunder Bluff,78.4,28.8
     .turnin 1489 >>Turn in Hamuul Runetotem
 step
+    .isQuestAvailable 1490
     .goto Thunder Bluff,78.1,29.3
     .accept 1490 >>Accept Nara Wildmane
 step
+    .isOnQuest 1490
     .goto Thunder Bluff,75.7,31.3
     .turnin 1490 >>Turn in Nara Wildmane
 step
-    .goto Thunder Bluff,70.2,30.8
-    .accept 1064 >>Accept Forsaken Aid
+    .isOnQuest 1064
+    >> Head to the pools under the Spirit Rise
+    .goto Thunder Bluff,22.9,21.1
+    .turnin 1064 >> Turn in Forsaken Aid
+    .accept 1065 >> Accept Journey to Tarren Mill
 step
-    .goto Thunder Bluff,22.8,20.9
-    >> Head to the Pools of Vision below Spirit Rise
-    .turnin 1064 >>Turn in Forsaken Aid
-    .accept 1065 >>Accept Journey to Tarren Mill
-    .turnin 962 >>Turn in Serpentbloom
+    .isOnQuest 962
+    >> Head to the pools under the Spirit Rise
+    .goto Thunder Bluff,22.9,21.1
+    .turnin 962 >> Turn in Serpentbloom
 step
     .goto Thunder Bluff,46.9,49.9
     #completewith next
     .fly Ratchet >>Fly to Ratchet
 step
+    .isOnQuest 959
     .goto The Barrens,63.1,37.6
     .turnin 959 >>Turn in Trouble at the Docks
 step
+    .isOnQuest 1491
     .goto The Barrens,62.4,37.6
     .turnin 1491 >>Turn in Smart Drinks
 step << Shaman
@@ -1253,6 +1355,4 @@ step << Warrior/Paladin/Shaman
     .train 197 >>Train 2h Axes
 step
     .destroy 11149 >>Delete your Samophlange Manual
-step
-.goto Orgrimmar,49.1,94.5,30 >>Exit Orgrimmar
 ]])
