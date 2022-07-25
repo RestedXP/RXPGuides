@@ -39,9 +39,10 @@ local questFrame = CreateFrame("Frame");
 
 local buffCheckTimer
 local function SoMCheck()
-    local function CheckBuff(buffId,key)
-        if GetTime() - buffCheckTimer < 300 and RXPCData and
-                            type(RXPCData[key]) ~= "boolean" then
+    local function CheckBuff(buffId,key,value)
+        value = value or true
+        if RXPCData and RXPCData[key] == nil and
+                GetTime() - buffCheckTimer < 300 then
 
             local id = 0
             local n = 1
@@ -49,7 +50,7 @@ local function SoMCheck()
                 id = select(10, UnitBuff("player", n))
                 n = n + 1
                 if id == buffId then
-                    RXPCData[key] = true
+                    RXPCData[key] = value
                     if addon.currentGuide and addon.currentGuide.name then
                         addon:LoadGuide(addon.currentGuide)
                     end
@@ -62,6 +63,7 @@ local function SoMCheck()
                 addon.ReloadGuide()
                 addon.RXPFrame.GenerateMenuTable()
             end
+            return RXPCData[key]
         end
     end
 
@@ -71,6 +73,8 @@ local function SoMCheck()
 
     if gameVersion < 20000 then
         CheckBuff(362859,"SoM")
+    elseif CheckBuff(377749,"JoyousJourneys") then
+        RXPCData.xprate = 1.5
     end
 
 end
