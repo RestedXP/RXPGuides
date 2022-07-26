@@ -55,5 +55,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./ftp_release/
-          server-dir: ${{ secrets.FTP_DIR }}
+          server-dir: ${{ secrets.FTP_DIR }}/
           dry-run: true
