@@ -471,15 +471,12 @@ function addon:OnInitialize()
     RXPG_init()
     local importGuidesDefault = {profile = {guides = {}}}
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
+
+    addon.settings.InitializeSettings()
     addon.RXPG.LoadEmbeddedGuides()
     addon.RXPG.LoadCachedGuides()
 
-    -- TODO setting
-    addon.enableTracker = true
-    addon.enableTrackerReport = false
-
     addon.RXPFrame.GenerateMenuTable()
-    addon.CreateOptionsPanel()
     ProcessSpells()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
@@ -498,7 +495,9 @@ function addon:OnInitialize()
         addon.noGuide = true
     end
 
-    if addon.enableTracker then addon.tracker.SetupTracker() end
+    if addon.settings.db.profile.enableTracker then addon.tracker.SetupTracker() end
+
+    addon.comms:Setup()
 end
 
 function addon:OnEnable()

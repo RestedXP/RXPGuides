@@ -164,6 +164,8 @@ step
     .accept 6629 >> Accept Kill Grundig Darkcloud
     .isOnQuest 6548
 step
+    #sticky
+    #completewith next
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
 step << Warlock
     .goto Stonetalon Mountains,73.2,95.1
@@ -631,7 +633,7 @@ step
     .goto Stonetalon Mountains,71.3,95.0
     .turnin 6461 >> Turn in Blood Feeders
 step
-    #level 24
+    #level 25
     .isOnQuest 1095
     >> Head back to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
@@ -812,7 +814,7 @@ step
     .isOnQuest 1063
     .goto Thunder Bluff,69.8,30.8
     .turnin 1063 >> Turn in The Elder Crone
-    >> Wait for the RP
+    >> Wait for the roleplay to finish
     .accept 1064 >> Accept Forsaken Aid
 step
     .isOnQuest 1064

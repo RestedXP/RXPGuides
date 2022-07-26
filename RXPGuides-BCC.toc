@@ -6,20 +6,9 @@
 ## Version: @project-version@
 ## OptionalDeps: Questie, unitscan
 ## SavedVariables: RXPData, RXPDB
-## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData
+## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
 
-libs\HereBeDragons\LibStub\LibStub.lua
-libs\HereBeDragons\CallbackHandler-1.0\CallbackHandler-1.0.lua
-libs\AceEvent-3.0\AceEvent-3.0.xml
-libs\AceDB-3.0\AceDB-3.0.lua
-libs\AceAddon-3.0\AceAddon-3.0.xml
-libs\AceGUI-3.0\AceGUI-3.0.xml
-libs\AceConfig-3.0\AceConfig-3.0.xml
-libs\HereBeDragons\HereBeDragons-2.0.lua
-libs\HereBeDragons\HereBeDragons-Pins-2.0.lua
-libs\plc\base64.lua
-libs\LibDeflate\lib.xml
-libs\LibCandyBar-3.0\lib.xml
+libs\embeds.xml
 
 RXPGuides.lua
 GuideWindow.lua
@@ -29,6 +18,7 @@ QuestLog.lua
 ActiveItemFrame.lua
 LevelingTracker.lua
 Timers.lua
+Communications.lua
 
 DB/tbc.xml
 
