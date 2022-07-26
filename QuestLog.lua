@@ -105,12 +105,13 @@ if _G.QuestLog_SetSelection then
 end
 
 -- Debug function, helps finding out quest log problems on a given guide
-function addon.GetQuestLog(QL)
+function addon.GetQuestLog(QL,LT)
 
     local guide = addon.currentGuide
     local name = RXPCData.currentGuideName
     local group = addon.RXPG[RXPCData.currentGuideGroup]
     QL = QL or {}
+    LT = LT or {}
     local qError
     local eStep
     local maxQuests
@@ -129,7 +130,12 @@ function addon.GetQuestLog(QL)
         for en, element in pairs(step.elements) do
             if element.tag == "accept" then
                 QL[element.questId] = element.text or tostring(element.questId)
+                LT[element.questId] = false
             elseif element.tag == "turnin" or element.tag == "abandon" then
+                if LT[element.questId] == nil and not element.skipIfMissing then
+                    local t = element.questId .. "/" .. (element.text or tostring(element.questId)) .. "/" ..  guide.name
+                    LT[element.questId] = t:gsub("^[Tt]urn in","")
+                end
                 QL[element.questId] = nil
             end
         end
@@ -154,9 +160,17 @@ function addon.GetQuestLog(QL)
                      eStep.index))
     else
         if group.next() then
-            return addon.GetQuestLog(QL)
-        else
+            return addon.GetQuestLog(QL,LT)
+        elseif eStep then
             print(format("Error at step %d", eStep.index))
+        end
+    end
+
+    local prefix = "\n\nQuests missing an accept step:\n"
+    for _,v in pairs(LT) do
+        if type(v) == "string" and not v:find("A Donation of") then
+            print(prefix..v)
+            prefix = ""
         end
     end
     return QL
