@@ -1469,14 +1469,17 @@ RXPGuides.RegisterGuide([[
 #next 14-20 Bloodmyst
 
 step
+    .maxlevel 13
     #completewith next
     .goto Darkshore,36.8,44.3,0
     .vendor >> You can buy cheap food from Laird on the bottom floor of the inn if you wish (20c level 5 food).
 step
+    .maxlevel 13
     >>Top floor of the Inn
     .goto Darkshore,37.0,44.1
     .accept 983 >> Accept Buzzbox 827
 step
+    .maxlevel 13
     >> Accept quests around Auberdine
     .accept 2118 >> Accept Plagued Lands
     .goto Darkshore,38.8,43.4
@@ -1485,16 +1488,20 @@ step
     .accept 3524 >> Accept Washed Ashore
     .goto Darkshore,36.6,45.6
 step
+    .maxlevel 13
     .goto Darkshore,36.3,45.6
     .fp Auberdine >> Get the Auberdine flight path
 step
+    .isOnQuest 983
     #completewith Darkshore2
     >>Kill Crawlers. Loot them for their Legs whilst doing other quests
     .complete 983,1 --Collect Crawler Leg (x6)
 step
+    .isOnQuest 3524
     .goto Darkshore,36.4,50.9
     .complete 3524,1 --Collect Sea Creature Bones (x1)
 step
+    .isOnQuest 2118
     .goto Darkshore,38.3,52.7,70,0
     .goto Darkshore,38.9,62.0,70,0
     .goto Darkshore,38.3,52.7,70,0
@@ -1504,10 +1511,12 @@ step
     .complete 2118,1 --Rabid Thistle Bear Captured
     .unitscan Rabid Thistle Bear
 step
+    .isOnQuest 984
     #label Darkshore2
 .goto Darkshore,39.0,53.2
     .complete 984,1 --Find a corrupt furbolg camp
 step
+    .isOnQuest 983
     .goto Darkshore,36.7,52.4,70,0
     .goto Darkshore,35.6,47.6,70,0
     .goto Darkshore,36.2,44.5,70,0
@@ -1515,29 +1524,30 @@ step
     >>Kill Crawlers. Loot them for their Legs
     .complete 983,1 --Collect Crawler Leg (x6)
 step
+    .isOnQuest 983
     .goto Darkshore,36.6,46.3
     .turnin 983 >> Turn in Buzzbox 827
 step
+    .isOnQuest 3524
     .goto Darkshore,36.6,45.6
     .turnin 3524 >> Turn in Washed Ashore
 step
+    .isOnQuest 2118
     .goto Darkshore,38.8,43.4
     .turnin 2118 >> Turn in Plagued Lands
 step
+    .isOnQuest 984
     .goto Darkshore,39.3,43.4
     .turnin 984 >> Turn in How Big a Threat?
 step
     .goto Darkshore,36.6,45.6
     .abandon 1001 >> Abandon Buzzbox 411
 step
-    #completewith Azuremyst
-    +Wait here for the boat
-    .goto Darkshore,30.8,41.0
-step
     .goto Darkshore,30.8,41.0
     .abandon 4681 >> Abandon Washed Ashore
 step
     #label Azuremyst
-    .zone Azuremyst Isle >>Get onto the boat when it comes.
+        .goto Darkshore,30.8,41.0
+    .zone Azuremyst Isle >> Wait for the boat here. Get onto the boat when it comes.
     >> Level first aid or make weapon stones while waiting. << Warrior/Rogue/Paladin
 ]])
