@@ -1,0 +1,21 @@
+name: Update website
+
+on:
+  workflow_run:
+    workflows: ["Package Addon"]
+    types: [completed]
+    branches: [add_ftp_automation]
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download latest artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          branch: add_ftp_automation
+          skip_unpack: true
+      - name: Display structure of downloaded files
+        run: ls -R
