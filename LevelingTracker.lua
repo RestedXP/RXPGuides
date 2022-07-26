@@ -183,8 +183,13 @@ function addon.tracker:QUEST_TURNED_IN(_, questId, xpReward)
 end
 
 function addon.tracker:PLAYER_DEAD()
-    addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths =
-        addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths + 1
+    if addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths then
+        addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths =
+            addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths +
+                1
+    else
+        addon.tracker.db.profile["levels"][addon.tracker.playerLevel].deaths = 1
+    end
 end
 
 function addon.tracker:PLAYER_ENTERING_WORLD()
