@@ -1312,7 +1312,7 @@ step
 	.goto Hillsbrad Foothills,50.5,57.2
     .turnin 538 >> Turn in Southshore
 	.isOnQuest 538
-step
+step << !Warlock
 #xprate <1.5
     .goto Hillsbrad Foothills,51.9,58.7
     .accept 555 >> Accept Soothing Turtle Bisque
