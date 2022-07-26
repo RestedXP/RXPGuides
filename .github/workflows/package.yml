@@ -32,3 +32,6 @@ jobs:
         uses: BigWigsMods/packager@v2
         with:
           args: -g wrath
+
+      - name: Display structure of packages
+        run: ls -R /home/runner/work/RXPGuides-dev/RXPGuides-dev/.release

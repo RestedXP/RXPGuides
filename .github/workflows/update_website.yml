@@ -1,9 +1,6 @@
 name: Update website
 
 on:
-  workflow_run:
-    workflows: ["Package Addon"]
-    types: [completed]
   workflow_dispatch:
 
 jobs:
