@@ -11,7 +11,6 @@ jobs:
 
     env:
       GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
-      REPO_NAME:
 
     steps:
       - name: Clone project
@@ -42,7 +41,7 @@ jobs:
 
       - name: Stage releases
         run: |
-          echo ${{ env.REPO_NAME }}
+          echo ${{ env.REPOSITORY_NAME }}
           mkdir -p ./ftp_release/
           find . -type f -name "*.zip" | while read zip; do
             cp "${zip}" ./ftp_release/
