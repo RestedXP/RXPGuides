@@ -142,6 +142,7 @@ step
 	>> Buy a Flagon of Mead from the Innkeeper
     .complete 288,1 --Collect Flagon of Mead (x1)
 step
+    .goto Wetlands,10.84,60.43
 	>>Go upstairs and talk to Archaeologist Flagongut
 	.turnin 942 >>Turn in The Absent Minded Prospector
 	.accept 943 >>Accept The Absent Minded Prospector
@@ -1276,6 +1277,7 @@ step
     >>You can still get this quest if you don't have any kind of speed increase or slow fall
     .link https://www.twitch.tv/videos/646111384 >>Click here for reference
 step
+#xprate <1.5
     .goto Arathi Highlands,44.3,93.0
 	>>Jump down and loot the letter from the corpse underwater
     .accept 637 >> Accept Sully Balloo's Letter
@@ -1310,7 +1312,8 @@ step
 	.goto Hillsbrad Foothills,50.5,57.2
     .turnin 538 >> Turn in Southshore
 	.isOnQuest 538
-step
+step << !Warlock
+#xprate <1.5
     .goto Hillsbrad Foothills,51.9,58.7
     .accept 555 >> Accept Soothing Turtle Bisque
 step
@@ -1476,7 +1479,7 @@ step
     .accept 1274 >> Accept The Missing Diplomat
 step
     .goto StormwindClassic,39.7,27.6
-    .turnin 293 >> Turn in Cleansing the Eye
+    .turnin -293 >> Turn in Cleansing the Eye
 step
 	#label nomorekid
 	#requires MDiplomats
@@ -2201,7 +2204,7 @@ step
     .accept 1274 >> Accept The Missing Diplomat
 step
     .goto StormwindClassic,39.7,27.6
-    .turnin 293 >> Turn in Cleansing the Eye
+    .turnin -293 >> Turn in Cleansing the Eye
 step
 	#label nomorekid
 	#requires MDiplomats
@@ -2781,6 +2784,11 @@ step
     .goto Wetlands,10.6,60.7
     .home >> Set your Hearthstone to Wetlands
 step
+    .goto Wetlands,10.84,60.43
+    >>Go upstairs and talk to Archaeologist Flagongut
+    .turnin 942 >>Turn in The Absent Minded Prospector
+    .isOnQuest 942
+step
     #requires mead
     .goto Wetlands,10.6,60.7
     .turnin 1248 >> Turn in The Missing Diplomat
@@ -2802,6 +2810,10 @@ step
     .goto Wetlands,8.4,61.6
     .turnin 1301 >> Turn in James Hyal
     .accept 1302 >> Accept James Hyal
+step
+    .goto Wetlands,10.8,59.7
+    .turnin 288 >> Turn in The Third Fleet
+    .accept 289 >> Accept The Cursed Crew
 step << Draenei !Shaman tbc
 	.goto Wetlands,4.8,57.3,50,0
 	.goto Darkshore,31.0,41.1,30.0
@@ -2947,6 +2959,7 @@ step
     >>You can still get this quest if you don't have any kind of speed increase or slow fall
     .link https://www.twitch.tv/videos/646111384 >>Click here for reference
 step
+#xprate <1.5
     .goto Arathi Highlands,44.3,93.0
 	>>Jump down and loot the letter from the corpse underwater
     .accept 637 >> Accept Sully Balloo's Letter
@@ -2982,6 +2995,7 @@ step
     .turnin 538 >> Turn in Southshore
 	.isOnQuest 538
 step
+#xprate <1.5
     .goto Hillsbrad Foothills,51.9,58.7
     .accept 555 >> Accept Soothing Turtle Bisque
 step

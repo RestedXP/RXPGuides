@@ -118,6 +118,9 @@ step
     .turnin 4761 >> Turn in Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River
     .accept 954 >> Accept Bashal'Aran
+step
+    #xprate <1.5
+    .goto Darkshore,37.4,40.2
     .accept 958 >> Accept Tools of the Highborne
 step
     .goto Darkshore,44.1,36.3
@@ -142,6 +145,9 @@ step
 step
     .goto Darkshore,44.2,36.3
     .turnin 956 >> Turn in Bashal'Aran
+step
+#xprate <1.5
+    .goto Darkshore,44.2,36.3
     .accept 957 >> Accept Bashal'Aran
 step
 #xprate <1.5
@@ -244,6 +250,7 @@ step
     .turnin 4762 >> Turn in The Cliffspring River
     .isQuestComplete 4762
 step
+#xprate <1.5
     .goto Darkshore,38.8,43.4
     .turnin 2138 >> Turn in Cleansing of the Infected
     .isQuestComplete 2138
@@ -1035,6 +1042,7 @@ step << Druid
     >>Loot the small lockbox underwater, located in between 2 big stones
     .collect 15883,1 --Collect Half Pendant of Aquatic Agility (x1)
 step--encrusted crawlers
+#xprate <1.5
     .goto Darkshore,53.1,18.2
     .accept 4727 >> Accept Beached Sea Turtle
     .isQuestTurnedIn 4681
@@ -1148,7 +1156,7 @@ step << Druid
     .turnin 6122 >> Turn in The Principal Source
 step
     .goto Darkshore,38.1,41.3
-    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .turnin -982 >> Turn in Deep Ocean, Vast Sea
     .isQuestComplete 982
 step
     .goto Darkshore,37.5,41.9
@@ -1255,7 +1263,7 @@ step
 step
     #requires escort
     .goto Darkshore,45.0,85.3
-    .turnin 993 >> Turn in A Lost Master
+    .turnin -993 >> Turn in A Lost Master
     .isOnQuest 993
 step
     .goto Darkshore,45.0,85.3
