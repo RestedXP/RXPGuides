@@ -11,6 +11,7 @@ jobs:
 
     env:
       GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+      REPO_NAME:
 
     steps:
       - name: Clone project
@@ -33,5 +34,26 @@ jobs:
         with:
           args: -g wrath
 
-      - name: Display structure of packages
-        run: ls -R /home/runner/work/RXPGuides-dev/RXPGuides-dev/.release
+      - name: Display structure of directory
+        run: ls -R
+
+      - name: get repository name
+        run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+
+      - name: Stage releases
+        run: |
+          echo ${{ env.REPO_NAME }}
+          mkdir -p ./ftp_release/
+          find . -type f -name "*.zip" | while read zip; do
+            cp "${zip}" ./ftp_release/
+          done
+
+      - name: Upload files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./ftp_release/
+          server-dir: ${{ secrets.FTP_DIR }}
+          dry-run: true
