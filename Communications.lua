@@ -50,7 +50,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
         local levelData = addon.tracker.reportData[level - 1]
 
         if levelData then
-            if level == 1 then
+            if level == 2 then
                 s = levelData.timestamp.finished
             else
                 s = levelData.timestamp.finished - levelData.timestamp.started
@@ -65,7 +65,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
             C_Timer.After(5, function()
                 levelData = addon.tracker.reportData[level - 1]
 
-                if level == 1 then
+                if level == 2 then
                     s = levelData.timestamp.finished
                 else
                     s = levelData.timestamp.finished -
