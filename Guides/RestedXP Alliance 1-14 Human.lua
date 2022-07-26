@@ -1041,6 +1041,10 @@ step
     #label StormpikeDelivery
     .goto StormwindClassic,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
+step << Warrior/Paladin/Rogue
+    .goto StormwindClassic,56.3,17.0
+    >>Buy a Mining Pick. You'll train Mining later
+    .collect 2901,1
 step
     #completewith next
     .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
@@ -1226,18 +1230,19 @@ step << Warlock/Mage/Rogue
     .complete 307,1 --Collect Miners' Gear (x4)
 step << Warlock/Mage/Rogue
     >> Kill Kobolds. Loot them for their Ears
+    .goto Loch Modan,36.3,24.7
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .collect 2589,10 << Paladin
 step << Warlock/Mage/Rogue
-    #completewith Thelsamar2
+    #completewith Ichor9
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
     .complete 418,3 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
-    #completewith Thelsamar2
+    #completewith Meat9
     >>Kill Bears in the zone for Thelsamar Blood Sausages
     .complete 418,2 --Collect Bear Meat (x3)
 step << Warlock/Mage/Rogue
-    #completewith Thelsamar2
+    #completewith Intest9
     >>Kill Boars in the zone for Thelsamar Blood Sausages
     .complete 418,1 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
@@ -1245,7 +1250,7 @@ step << Warlock/Mage/Rogue
 step << Warlock/Mage/Rogue
     #completewith next
     .goto Loch Modan,24.1,18.2
-    .vendor >>vendor and repair
+    .vendor >>vendor and repair - Do NOT sell any items used for Thelsamar Blood Sausages
 step << Warlock/Mage/Rogue
     .goto Loch Modan,24.7,18.3
     .turnin 307 >> Turn in Filthy Paws
@@ -1285,6 +1290,7 @@ step << Warlock/Mage/Rogue
     >>Kill Spiders. Loot them for Ichor
     .complete 418,3 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
+    #label Intest9
     .goto Loch Modan,38.0,34.9,100,0
     .goto Loch Modan,37.1,39.8,100,0
     .goto Loch Modan,29.8,35.9,100,0
@@ -1308,6 +1314,7 @@ step << Warlock/Mage/Rogue
     .goto Loch Modan,36.7,41.6
     >>Find Kadrell. He patrols along the Thelsamar road
     .turnin 416 >> Turn in Rat Catching
+    .unitscan Mountaineer Kadrell
 step << Warlock/Mage/Rogue
     .goto Loch Modan,34.8,49.3
     .turnin 418 >> Turn in Thelsamar Blood Sausages
@@ -1426,7 +1433,7 @@ step
     .goto Dun Morogh,33.0,27.2,15,0
     .goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
-    .deathskip >>Keep running straight north, drop down and die, then respawn
+    .deathskip >>Keep running straight north, drop down and die, then respawn at the Spirit Healer.
 step
     #softcore
     .goto Wetlands,12.7,46.7,30 >> Swim to shore
@@ -1470,14 +1477,13 @@ step
     .goto Darkshore,37.0,44.1
     .accept 983 >> Accept Buzzbox 827
 step
-    .goto Darkshore,38.8,43.4
+    >> Accept quests around Auberdine
     .accept 2118 >> Accept Plagued Lands
-step
-    .goto Darkshore,39.3,43.4
+    .goto Darkshore,38.8,43.4
     .accept 984 >> Accept How Big a Threat?
-step
-    .goto Darkshore,36.6,45.6
+    .goto Darkshore,39.3,43.4
     .accept 3524 >> Accept Washed Ashore
+    .goto Darkshore,36.6,45.6
 step
     .goto Darkshore,36.3,45.6
     .fp Auberdine >> Get the Auberdine flight path
