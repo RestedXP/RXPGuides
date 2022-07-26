@@ -1046,6 +1046,7 @@ step
     .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
 step
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin
     >>Take the tram when it arrives. Cast Summon Voidwalker and Create Healthstone. Get off the tram on the other side << Warlock
     .accept 6661 >> Accept Deeprun Rat Roundup
@@ -1055,7 +1056,6 @@ step
 step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
 step
