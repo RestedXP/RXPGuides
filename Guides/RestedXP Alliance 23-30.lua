@@ -1479,7 +1479,7 @@ step
     .accept 1274 >> Accept The Missing Diplomat
 step
     .goto StormwindClassic,39.7,27.6
-    .turnin 293 >> Turn in Cleansing the Eye
+    .turnin -293 >> Turn in Cleansing the Eye
 step
 	#label nomorekid
 	#requires MDiplomats
@@ -2204,7 +2204,7 @@ step
     .accept 1274 >> Accept The Missing Diplomat
 step
     .goto StormwindClassic,39.7,27.6
-    .turnin 293 >> Turn in Cleansing the Eye
+    .turnin -293 >> Turn in Cleansing the Eye
 step
 	#label nomorekid
 	#requires MDiplomats

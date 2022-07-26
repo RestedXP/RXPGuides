@@ -250,6 +250,7 @@ step
     .turnin 4762 >> Turn in The Cliffspring River
     .isQuestComplete 4762
 step
+#xprate <1.5
     .goto Darkshore,38.8,43.4
     .turnin 2138 >> Turn in Cleansing of the Infected
     .isQuestComplete 2138
@@ -1155,7 +1156,7 @@ step << Druid
     .turnin 6122 >> Turn in The Principal Source
 step
     .goto Darkshore,38.1,41.3
-    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .turnin -982 >> Turn in Deep Ocean, Vast Sea
     .isQuestComplete 982
 step
     .goto Darkshore,37.5,41.9
@@ -1262,7 +1263,7 @@ step
 step
     #requires escort
     .goto Darkshore,45.0,85.3
-    .turnin 993 >> Turn in A Lost Master
+    .turnin -993 >> Turn in A Lost Master
     .isOnQuest 993
 step
     .goto Darkshore,45.0,85.3
