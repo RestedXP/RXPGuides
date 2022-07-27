@@ -1131,10 +1131,6 @@ step
     .turnin 6284 >> Turn in Arachnophobia
     .isOnQuest 6284
 step
-    .goto Stonetalon Mountains,45.1,59.8
-    .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
-    .maxlevel 23
-step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
     .isOnQuest 6401
