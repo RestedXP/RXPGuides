@@ -69,8 +69,8 @@ jobs:
             cp "${zip}" ./ftp_release/
           done
 
-      - name: Display structure of .releases directory
-        run: ls -R .releases
+      - name: Display structure of directory
+        run: ls -R
 
       - name: Upload files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -80,4 +80,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./ftp_release/
           server-dir: ${{ secrets.FTP_DIR }}/
-          dry-run: true
