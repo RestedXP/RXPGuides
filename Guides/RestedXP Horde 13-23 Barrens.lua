@@ -401,6 +401,7 @@ step << Druid
 step
     #completewith next
     .hs >>Hearth to Ratchet
+    .cooldown item,6948,>0    
 step
     .goto The Barrens,63.0,37.2
     .turnin 902 >>Turn in Samophlange
@@ -520,8 +521,8 @@ step << !Tauren !Undead !BloodElf
 step << Tauren/Undead/BloodElf
     #completewith next
     >>Run to the Flight Master tower. Get the Flight Path
-.goto Orgrimmar,45.2,63.8
-.fp Orgrimmar>>Get the Orgrimmar Flight Path
+    .goto Orgrimmar,45.2,63.8
+    .fp Orgrimmar >>Get the Orgrimmar Flight Path
     .fly Crossroads >>Fly to Crossroads
 step
     >>Top of the tower
