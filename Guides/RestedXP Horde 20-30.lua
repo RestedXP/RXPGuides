@@ -733,7 +733,7 @@ step
     .goto Ashenvale,13.6,9.0,30,0
     .goto Ashenvale,13.0,13.2,30,0
     .goto Ashenvale,13.6,9.0
-    >>Swim under the water and enter Blackfathom Deeps. Kill the Priestess' until a Damp Note drops(quest). Then right click it and accept the quest.
+    .use 16790 >>Swim under the water and enter Blackfathom Deeps. Kill the Priestess' until a Damp Note drops(quest). Then right click it and accept the quest.
     .collect 16790,1,6564 --Collect Damp Note
     .accept 6564 >> Accept Allegiance to the Old Gods
     .isOnQuest 6442
@@ -805,6 +805,7 @@ step << Druid
 step
     #completewith next
     .hs >> Hearth to Thunder Bluff
+    .cooldown item,6948,>0
     .zoneskip Stonetalon Mountains
 step
     #completewith next
@@ -856,8 +857,8 @@ step << Druid
     .goto Orgrimmar,12.4,66.1,40 >>Enter Orgrimmar through the west entrance
 step << !Druid
     #completewith next
+    .goto The Barrens,63.1,37.1,-1    
     .goto Thunder Bluff,47.0,49.9,-1
-    .goto The Barrens,63.1,37.1,-1
     .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     #completewith next
@@ -969,7 +970,7 @@ step << Warlock
     .turnin 1512 >>Turn in Love's Gift
     .accept 1513 >>Accept The Binding
 step << Warlock
-    >>Summon the Succubus at the circle in the building. Kill her
+    .use 6626 >>Use Dogran's Pendant to summon the Succubus at the circle in the building. Kill her
 	.goto Orgrimmar,49.4,50.0
     .complete 1513,1 --Summoned Succubus (1)
 step << Warlock
@@ -1373,8 +1374,8 @@ step
     .goto Ashenvale,68.3,75.3
     .accept 6544 >> Accept Torek's Assault
 step
-    >>Follow Torek. This quest can get a bit hard. It will spawn a wave of enemies, you may need to skip. 
-    >> Run as far into the building as you can. Have Torek tank some of the mobs. If you die abandon this quest. 
+    >>Follow Torek. This quest can get a bit hard. It will spawn a wave enemies inside the building. You may need to skip.
+    >> Run as far into the building as you can. Have Torek tank some of the mobs. Abandon this quest if you die. 
     * Use your voidwalker here << Warlock
     .goto Ashenvale,64.6,75.3
     .complete 6544,1 --Take Silverwing Outpost.
@@ -1392,7 +1393,7 @@ step
     >>Kill Laughing Sisters until they drop Etched Phial
     .collect 5867 --Collect Etched Phial (x1)
 step
->>Look for Shadumbra (a panther) and loot her for Shadumbra's Head, then accept it.0
+>>Look for Shadumbra (a panther) and loot her for Shadumbra's Head, then accept the quest from clicking it.
 	.goto Ashenvale,62.2,49.6,40,0
     .goto Ashenvale,58.0,56.2,40,0
     .goto Ashenvale,51.9,54.3,40,0
