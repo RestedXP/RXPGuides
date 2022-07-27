@@ -30,6 +30,7 @@ step << Warlock
     #sticky
     >>You must abandon the quest Carendin's Summons to be able to accept Devourer of Souls
     .abandon 10605 >>Abandon Carendin Summons
+    .isOnQuest 10605
 step << Warlock
     .goto Orgrimmar,48.2,45.3
     .accept 1507 >>Accept Devourer of Souls
@@ -70,7 +71,7 @@ step
 step << Rogue
 	.goto The Barrens,65.0,45.4
     >>Run to the boat then go down to the 2nd floor. Start picking lockboxes until you're at 80 lockpicking skill.
-	.skill lockpicking,80
+	.skill lockpicking,>80
 step
     .maxlevel 22
     >>Run to the Crossroads and accept quests
@@ -81,8 +82,8 @@ step
     .accept 899 >>Accept Consumed by Hatred
     .accept 4921 >>Accept Lost in Battle
 step
+    #completewith next    
     .goto The Barrens,52.0,29.9
-	#completewith next
 	.home >> Set your Hearthstone to The Crossroads
 step << Warlock
     .goto The Barrens,51.9,30.3
@@ -107,10 +108,10 @@ step
     .complete 848,1 --Collect Fungal Spores (x4)
     .isOnQuest 848
 step
-    .isOnQuest 870
     >>Dive underwater to the bubble fissure
     .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
+    .isOnQuest 870
 step
     >>Finish collecting the white mushrooms around The Forgotten Pools
     .goto The Barrens,45.2,23.3,40,0
@@ -262,7 +263,7 @@ step
     .isOnQuest 1062
 step
     >>Kill Venture Co. Operators until you get the Blueprints
-.goto Stonetalon Mountains,62.8,53.7,40,0
+    .goto Stonetalon Mountains,62.8,53.7,40,0
     .goto Stonetalon Mountains,61.7,51.5,40,0
     .goto Stonetalon Mountains,66.8,45.3,40,0
     .goto Stonetalon Mountains,71.7,49.9,40,0
@@ -290,6 +291,7 @@ step
     #requires deepmossegg
     .goto The Barrens,52.2,31.9
     .hs >> Hearth to Crossroads
+    .cooldown item,6948,>0
 step
     .isOnQuest 870
     .goto The Barrens,52.2,31.9
@@ -340,8 +342,8 @@ step
 step
     .goto The Barrens,49.3,50.4
     >> Head to the small outpost by the road to the south
-    .skipgossip
     .complete 4921,1 --Find Mankrik's Wife
+    .skipgossip
 step
     #sticky
     #label Lakota1
@@ -353,6 +355,7 @@ step
     >>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
     .collect 5099,1,883 --Collect Hoof of Lakota'Mani
     .accept 883 >>Accept Lakota'Mani
+    .unitscan Lakota'Mani
 step
     #requires Lakota1
     #label weapons
@@ -401,21 +404,17 @@ step << Warlock
     .complete 878,3 --Kill Bristleback Geomancer (x12)
     .complete 899,1 --Collect Bristleback Quilboar Tusk (x60)
 step
-    #sticky
-    #label Owatanka2
-    #completewith next
     .goto The Barrens,44.2,62.1,75,0
     .goto The Barrens,49.2,62.6,75,0
     .goto The Barrens,49.6,60.0,75,0
     .goto The Barrens,44.2,62.1,75,0
     .goto The Barrens,49.2,62.6,75,0
     .goto The Barrens,49.6,60.0
-    >>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
+    >>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. Skip this quest if you can't find him
     .collect 5102,1,884 --Collect Owatanka's Tailspike
     .accept 884 >>Accept Owatanka
     .unitscan Owatanka
-step
-    #requires Owatanka2
+step    
     .goto The Barrens,44.6,59.2
     .turnin 878 >> Turn in Tribes at War
     .accept 5052 >>Accept Blood Shards of Agamaggan
@@ -426,6 +425,7 @@ step
 step
     #completewith tbroute
     .destroy 5075 >> Destroy any leftover Blood Shards
+    .itemcount 5075,1
 step
     .isOnQuest 884
     .goto The Barrens,44.9,59.1
@@ -447,7 +447,7 @@ step << Warlock
 step << Tauren
     #completewith next
     .goto The Barrens,44.4,59.2
-	.fly Thunder Bluff>>Fly to Thunder Bluff
+	.fly Thunder Bluff >>Fly to Thunder Bluff
 step << Druid
 	#completewith next
 	.goto Thunder Bluff,76.5,27.2
@@ -521,6 +521,7 @@ step
     #sticky
     #completewith next
     .destroy 5085 >> Destroy any leftover Quilboar Tusks
+    .itemcount 5085,1
 step
     .goto The Barrens,52.2,31.9
     .turnin 877 >> Turn in The Stagnant Oasis
@@ -629,9 +630,9 @@ step
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
     .isOnQuest 6461
 step
-    .isOnQuest 6461
     .goto Stonetalon Mountains,71.3,95.0
     .turnin 6461 >> Turn in Blood Feeders
+    .isOnQuest 6461 
 step
     #level 25
     .isOnQuest 1095
@@ -693,7 +694,7 @@ step
     .accept 6462 >> Accept Troll Charm
     .maxlevel 24
 step
-    .isOnQuest 6562
+    .isQuestComplete 6562
     .goto Ashenvale,11.6,34.3
     .turnin 6562 >> Turn in Trouble in the Deeps
 step
@@ -755,15 +756,16 @@ step
     >>Return to Zoram'gar Outpost.
     .goto Ashenvale,12.2,34.2
     .turnin 6641 >> Turn in Vorsha the Lasher
-    .isOnQuest 6641
+    .isQuestComplete 6641
 step
     .goto Ashenvale,11.6,34.3
     .turnin 6563 >> Turn in The Essence of Aku'Mai
-    .isOnQuest 6553
+    .isQuestComplete 6553
 step
     #sticky
     #completewith next
     .destroy 16784 >> Destroy any leftover Sapphires of Aku'Mai
+    .itemcount 16784,1
 step
     .goto Ashenvale,11.6,34.3
     .turnin 6564 >> Turn in Allegiance to the Old Gods
@@ -771,7 +773,7 @@ step
 step
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >> Turn in Naga at the Zoram Strand
-    .isOnQuest 6442
+    .isQuestComplete 6442
 step << Druid
     #sticky
     #completewith next
@@ -806,7 +808,6 @@ step
     .zoneskip Stonetalon Mountains
 step
     #completewith next
-    >> You can hearth if it is up
     .goto Stonetalon Mountains,45.1,59.8
     .fly Thunder Bluff >> Fly to Thunder Bluff 
     .zoneskip Stonetalon Mountains,1
@@ -885,7 +886,7 @@ step << Rogue
 step << Warlock
     #completewith next
     .goto Orgrimmar,48.0,46.0
-.trainer >> Go and train your class spells
+    .trainer >> Go and train your class spells
 step << Warlock
 	#completewith next
 	.goto Orgrimmar,47.5,46.7
@@ -975,6 +976,7 @@ step << Warlock
     >>Use the Succubus from now on
     .goto Orgrimmar,48.2,45.3
     .turnin 1513 >>Turn in The Binding
+    .isQuestComplete 1513
 step << Warlock
     .goto Orgrimmar,48.2,45.3
     .trainer >> Train your class spells
@@ -1004,6 +1006,7 @@ step << Druid
     .goto Silverpine Forest,30.0,29.1
     .collect 15882,1
     --Video link in future?
+    .isOnQuest 30
 step
     >>Run to The Sepulcher
 	.goto Silverpine Forest,42.9,40.9
@@ -1075,7 +1078,7 @@ step << Rogue
     .collect 12247,1
 step << Rogue
     .maxlevel 28
-    .use 8095 >>Use Hinott's Oil on yourself to cure the debuff, then click the Wanted poster on the wall
+    .use 8095 >>Use Hinott's Oil on yourself to cure the debuff then click the Wanted poster on the wall
 .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
 step
@@ -1097,7 +1100,7 @@ step << !Rogue !Hunter !Shaman
 step << Rogue/Hunter/Shaman
     #sticky
     .goto Hillsbrad Foothills,80.1,38.9
-    .vendor >>Vendor trash & repair if needed at Kris Legace, behind the ruined keep. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
+    .vendor >>Vendor trash & repair if needed at Kris Legace behind the ruined keep. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
 step
 	.goto Hillsbrad Foothills,79.8,39.3
 	>>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
@@ -1938,7 +1941,7 @@ step
 step
     #completewith exitfreewind33
     #level 29
-    +If you have access to more gold on this server, mail yourself 35g, we will be buying your mount soon.
+    +If you have access to more gold on this server, mail yourself 35g. We will be buying your mount soon.
 step
     .goto Thousand Needles,46.1,51.7
     .turnin 1197 >> Turn in The Sacred Flame
