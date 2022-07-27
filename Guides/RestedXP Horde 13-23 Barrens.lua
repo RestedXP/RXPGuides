@@ -105,6 +105,9 @@ step << Orc/Troll
     .goto The Barrens,52.6,29.9
     .turnin 6386 >>Turn in Return to the Crossroads.
 step
+    .goto The Barrens,51.4,30.2
+    .accept 1492 >>Accept Wharfmaster Dizzywig    
+step
     >>Top of the tower
 .goto The Barrens,51.5,30.9
     .turnin 871 >>Turn in Disrupt the Attacks
@@ -352,7 +355,7 @@ step
 step
     #sticky
     #completewith next
->>Kill Plainstriders. Loot them for their Kidneys
+>>Kill Plainstriders. Loot them for their Kidneys. This does not need to be completed right now but kill them as you see them.
     .complete 821,2 --Plainstrider Kidney (5)
 step
 .goto The Barrens,54.3,12.3,40,0
@@ -453,6 +456,15 @@ step
     .use 10327 >>Use the Horn of Echeyakee in your bags to summon Echeyakee. Kill him and loot him for his hide
 .goto The Barrens,55.5,17.3
     .complete 881,1 --Echeyakee's Hide (1)
+step
+    >>Finish killing Plainstriders for their Kidneys.
+    .goto The Barrens,54.3,12.3,40,0
+    .goto The Barrens,54.6,16.7,40,0
+    .goto The Barrens,42.6,15.1,40,0
+    .goto The Barrens,54.3,12.3,40,0
+    .goto The Barrens,54.6,16.7,40,0    
+    .complete 821,2 --Plainstrider Kidney (5)
+    
 step
     #sticky
     #completewith Slugs
@@ -649,6 +661,8 @@ step
     >> Head towards Stonetalon Mountains
     .isOnQuest 1061
     .turnin 1061 >> Turn in The Spirits of Stonetalon
+step
+    .goto The Barrens,35.3,27.9    
     .accept 1062 >> Accept Goblin Invaders
 step
     .maxlevel 22
@@ -662,11 +676,11 @@ step
     .goto Stonetalon Mountains,82.0,86.0,50,0
     .goto Stonetalon Mountains,84.7,84.3,50,0
     .goto Stonetalon Mountains,82.3,90.0,50,0
-.goto Stonetalon Mountains,80.7,89.2,50,0
+    .goto Stonetalon Mountains,80.7,89.2,50,0
     .goto Stonetalon Mountains,82.0,86.0,50,0
     .goto Stonetalon Mountains,84.7,84.3,50,0
     .goto Stonetalon Mountains,82.3,90.0
->>Kill Grimtotems in the area
+    >>Kill Grimtotems in the area
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
 step
@@ -982,7 +996,7 @@ step << Shaman/Warrior
     +If it's cheaper, buy a green 2h mace from the Auction House. Skip this step if you will run Wailing Caverns, the quest staff is much better.
 step << Shaman/Warrior
     .goto Thunder Bluff,53.2,58.2
-    .vendor >> Go buy Maul
+    .vendor >> Buy a Maul
     .collect 924,1
 step
     .goto Thunder Bluff,61.4,80.9
@@ -991,6 +1005,12 @@ step
 step
     .goto Thunder Bluff,54.7,51.1
     .accept 1195 >>Accept The Sacred Flame
+step << Warrior
+    .goto Thunder Bluff,57.2,87.4
+    .accept 1823 >>Accept Speak with Ruga
+    .train 845 >>Train Cleave
+    .train 6547 >>Train Rend r3
+    .train 20230 >>Train Retaliation    
 step
     .goto Thunder Bluff,22.8,20.9
     >> Go into the Pools of Vision below the Spirit Rise
@@ -1008,27 +1028,22 @@ step << Shaman
 .train 8052 >>Train Flame Shock r2
 .train 6390 >>Train Stoneclaw Totem r2
 .train 8056 >> Train Frost Shock
-step << Warrior
-    .goto Thunder Bluff,57.2,87.4
-    .accept 1823 >>Accept Speak with Ruga
-    .train 845 >>Train Cleave
-    .train 6547 >>Train Rend r3
-    .train 20230 >>Train Retaliation
 step
     #completewith next
     .goto Thunder Bluff,46.9,49.9
     .fly Crossroads >>Fly to Crossroads
 step
-.goto The Barrens,47.0,34.7,15,0
-.goto The Barrens,46.4,34.9,15,0
-.goto The Barrens,46.6,34.8,10 >>Go up the mountain here
+    >>Spam Hamstring & Rend while on your way to the mountain to train your weapon skill >> Warrior
+    .goto The Barrens,47.0,34.7,15,0
+    .goto The Barrens,46.4,34.9,15,0
+    .goto The Barrens,46.6,34.8,10 >>Go up the mountain here
 step
-.goto Kalimdor,51.9,55.4,30,0
-.goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
+    .goto Kalimdor,51.9,55.4,30,0
+    .goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
 step
->>Go into the eye of the cave
-.goto Kalimdor,51.9,55.4
-.accept 1486 >>Accept Deviate Hides
+    >>Go into the eye of the cave
+    .goto Kalimdor,51.9,55.4
+    .accept 1486 >>Accept Deviate Hides
 step
 .goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
 step
