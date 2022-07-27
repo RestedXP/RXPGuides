@@ -715,10 +715,12 @@ local function addMiniMapPins(pins)
     for i = #pins, 1, -1 do
         local pin = pins[i]
         local element = pin.elements[1]
-        local miniMapFrame = miniMapFramePool:Acquire()
-        miniMapFrame.render(pin, true)
-        HBDPins:AddMinimapIconWorld(addon, miniMapFrame, element.instance,
-                                    element.wx, element.wy, true, true)
+        if element and element.x then
+            local miniMapFrame = miniMapFramePool:Acquire()
+            miniMapFrame.render(pin, true)
+            HBDPins:AddMinimapIconMap(addon, miniMapFrame, element.zone,
+                                      element.x / 100, element.y / 100, true, true)
+        end
     end
 end
 
