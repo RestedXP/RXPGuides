@@ -20,14 +20,15 @@ step
 	.goto Darkshore,37.0,44.1
     .home >> Set your Hearthstone to Auberdine
 step
+    >> Head upstairs
     .goto Darkshore,37.0,44.1
     .accept 983 >> Accept Buzzbox 827
 step
-    .goto Darkshore,38.8,43.4
+    >> Accept quests around Auberdine
     .accept 2118 >> Accept Plagued Lands
-step
-    .goto Darkshore,39.3,43.4
+    .goto Darkshore,38.8,43.4
     .accept 984 >> Accept How Big a Threat?
+    .goto Darkshore,39.3,43.4
 step << Dwarf Hunter
     #sticky
     .train 2981 >> Tame a Thistle Bear and learn Claw 2
@@ -35,13 +36,16 @@ step << Dwarf Hunter
 step
 	#sticky
 	#completewith Crawlers
+    .isOnQuest 983
 	>> Kill crabs along the coast and loot them for their legs
     .complete 983,1 --Collect Crawler Leg (x6)
 step
+    .isOnQuest 3524
     .goto Darkshore,36.4,50.8
 	>> Loot the Beached Sea Creature
     .complete 3524,1 --Collect Sea Creature Bones (x1)
 step
+    .isOnQuest 2118
     .goto Darkshore,38.3,52.7,30,0
     .goto Darkshore,38.9,62.0,30,0
     .goto Darkshore,38.3,52.7,30,0
@@ -51,9 +55,11 @@ step
     .complete 2118,1 --Rabid Thistle Bear Captured
 step
    #label Crawlers
+    .isOnQuest 984
     .goto Darkshore,38.9,53.0
     .complete 984,1 --Find a corrupt furbolg camp
 step
+    .isOnQuest 983
 	.goto Darkshore,36.7,52.4,40,0
 	.goto Darkshore,35.6,47.6,40,0
 	.goto Darkshore,36.2,44.5,40,0
@@ -63,22 +69,27 @@ step
 	>>Kill Crawlers. Loot them for their Legs
     .complete 983,1 --Collect Crawler Leg (x6)
 step
+    .isOnQuest 983
     .goto Darkshore,36.6,46.3
 	.complete 983,1
     .turnin 983 >> Turn in Buzzbox 827
 step
+    .isOnQuest 3524
     .goto Darkshore,36.6,45.6
     .turnin 3524 >> Turn in Washed Ashore
     .accept 4681 >> Accept Washed Ashore
 step
-    #xprate <1.5--ff?
+    #xprate <1.5
+    .maxlevel 13
     .goto Darkshore,35.8,43.7
     .accept 963 >> Accept For Love Eternal
 step
+    .isOnQuest 4681
     .goto Darkshore,31.9,46.4
 	>> Loot the sea turtle bones underwater
     .complete 4681,1 --Collect Sea Turtle Remains (x1)
 step
+    .isOnQuest 4681
     .goto Darkshore,36.6,45.6
     .turnin 4681 >> Turn in Washed Ashore
 step << !Dwarf/!Hunter
@@ -87,13 +98,16 @@ step << !Dwarf/!Hunter
     .goto Darkshore,37.7,43.4
     .accept 4811 >> Accept The Red Crystal
 step
+    .isOnQuest 2118
     .goto Darkshore,38.8,43.4
     .turnin 2118 >> Turn in Plagued Lands
 step
 #xprate <1.5
+    .maxlevel 13
     .goto Darkshore,38.8,43.4
     .accept 2138 >> Accept Cleansing of the Infected
 step
+    .isOnQuest 984
     .goto Darkshore,39.3,43.5
     .turnin 984 >> Turn in How Big a Threat?
     .accept 985 >> Accept How Big a Threat?
@@ -114,15 +128,20 @@ step << !Dwarf/!Hunter
 	>>Fill the water tube at the moonwell
     .complete 4812,1 --Collect Moonwell Water Tube (x1)
 step
+    .isOnQuest 4761
     .goto Darkshore,37.4,40.2
     .turnin 4761 >> Turn in Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River
+step
+    .goto Darkshore,37.4,40.2
     .accept 954 >> Accept Bashal'Aran
 step
     #xprate <1.5
+    .maxlevel 14
     .goto Darkshore,37.4,40.2
     .accept 958 >> Accept Tools of the Highborne
 step
+    .isOnQuest 954
     .goto Darkshore,44.1,36.3
     .turnin 954 >> Turn in Bashal'Aran
     .accept 955 >> Accept Bashal'Aran
@@ -131,32 +150,39 @@ step << !Dwarf/!Hunter
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
+    .isOnQuest 955
     .goto Darkshore,44.8,37.2
 	>>Collect Grell Earrings
     .complete 955,1 --Collect Grell Earring (x8)
 step
+    .isOnQuest 955
     .goto Darkshore,44.2,36.3
     .turnin 955 >> Turn in Bashal'Aran
     .accept 956 >> Accept Bashal'Aran
 step
+    .isOnQuest 956
     .goto Darkshore,45.6,36.9
 	>> Kill and loot Satyrs in Bashal'Aran
     .complete 956,1 --Collect Ancient Moonstone Seal (x1)
 step
+    .isOnQuest 956
     .goto Darkshore,44.2,36.3
     .turnin 956 >> Turn in Bashal'Aran
 step
 #xprate <1.5
+    .maxlevel 14
     .goto Darkshore,44.2,36.3
     .accept 957 >> Accept Bashal'Aran
 step
 #xprate <1.5
 	#sticky
 	#label bears
+    .maxlevel 14
     .goto Darkshore,42.3,66.9,0
 	>>Kill Rabid Thistle Bears as you quest
     .complete 2138,1 --Kill Rabid Thistle Bear (x20)
 step
+    .isOnQuest 4762
     .goto Darkshore,50.8,25.6
 	.use 15844 >>Use the empty sampling tube at the base of the waterfall
     .complete 4762,1 --Collect Cliffspring River Sample (x1)
@@ -174,14 +200,17 @@ step
     #completewith next
     .hs >> Hearth to Auberdine
 step << !Dwarf/!Hunter
+    .isOnQuest 4813
     .goto Darkshore,37.7,43.4
     .turnin 4813 >> Turn in The Fragments Within
 step << Dwarf Hunter
 #xprate <1.5
+    .maxlevel 14
     .goto Darkshore,37.7,43.4
     .accept 4811 >> Accept The Red Crystal
 step << Dwarf Hunter
 #xprate <1.5
+    .isOnQuest 4811
     .goto Darkshore,47.2,48.6
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step << !Dwarf/!Hunter
@@ -189,10 +218,12 @@ step << !Dwarf/!Hunter
     .complete 985,1 --Kill Blackwood Pathfinder (x8)
     .complete 985,2 --Kill Blackwood Windtalker (x5)
 step
+    .maxlevel 14
     .goto Darkshore,40.3,59.7
     .accept 953 >> Accept The Fall of Ameth'Aran
     #xprate <1.5
 step
+    .maxlevel 14
     .goto Darkshore,37.1,62.1
     .accept 4722 >> Accept Beached Sea Turtle
     #xprate <1.5
@@ -200,6 +231,7 @@ step
     #requires bears
 	#sticky
 	#completewith DarkshoreEnd
+    .isOnQuest 963
 	>>Kill Anaya Dawnrunner, she patrols around Ameth'Aran
     .goto Darkshore,43.3,58.8,0
     .complete 963,1 --Collect Anaya's Pendant (x1)
@@ -210,6 +242,7 @@ step
 	#completewith DarkshoreEnd
     .goto Darkshore,42.0,59.3,0
 	>>Kill Ghosts. Loot them for their Relics
+    .isOnQuest 958
     .complete 958,1 --Collect Highborne Relic (x7)
     #xprate <1.5
 step
@@ -225,9 +258,11 @@ step
     #xprate <1.5
 step
 #xprate <1.5
+    .isOnQuest 953
     .goto Darkshore,40.3,59.7
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step << Dwarf Hunter
+    .isOnQuest 985
     .goto Darkshore,39.9,54.9
     .complete 985,1 --Kill Blackwood Pathfinder (x8)
     .complete 985,2 --Kill Blackwood Windtalker (x5)
@@ -236,13 +271,16 @@ step
     #sticky
     #completewith next
     .goto Darkshore,42.0,58.3
+    .isOnQuest 953
     .deathskip >>Die at the north side of Ameth'Aran and spirit rez at the northern graveyar
 step
 #xprate <1.5
+    .isOnquest 957
     .goto Darkshore,44.2,36.3
     .turnin 957 >> Turn in Bashal'Aran
 step
 #xprate <1.5
+    .isOnQuest 958
     .goto Darkshore,37.4,40.1
     .turnin 958 >> Turn in Tools of the Highborne
 step
@@ -255,6 +293,7 @@ step
     .turnin 2138 >> Turn in Cleansing of the Infected
     .isQuestComplete 2138
 step
+    .isOnQuest 985
     .goto Darkshore,39.3,43.5
     .turnin 985 >> Turn in How Big a Threat?
 step << Dwarf Hunter
@@ -263,10 +302,12 @@ step << Dwarf Hunter
     .isQuestComplete 4811
 step
 #xprate <1.5
+    .isOnQuest 4722
     .goto Darkshore,36.6,45.6
     .turnin 4722 >> Turn in Beached Sea Turtle
 step
 #xprate <1.5
+    .isOnQuest 963
     .goto Darkshore,35.7,43.7
     .turnin 963 >> Turn in For Love Eternal
 step << Druid tbc
@@ -320,8 +361,8 @@ step << Hunter/Warrior/Paladin
     .train 202 >>Train 2h swords
 	.train 5011 >>Train Crossbows << Hunter
 step
-	>>Head north to Bloodmyst Isle
     .goto Bloodmyst Isle,63.4,88.7
+	.zone Bloodmyst Isle >>Head north to Bloodmyst Isle
 step
 	#sticky
 	#completewith monunment
@@ -335,27 +376,24 @@ step
     >>Use the mount buff to run to Blood Watch, if you go around the bridge you won't get dismounted
     .abandon 9663 >> Abandon The Kessel Run once you lose the mount buff
 step
-	.goto Bloodmyst Isle,58.5,75.0,40,0
-	.goto Bloodmyst Isle,57.1,73.5,40,0
-	.goto Bloodmyst Isle,54.2,60.3
+	.goto Bloodmyst Isle,58.5,75.0,100,0
+    .goto Bloodmyst Isle,57.1,73.5,100,0
+	.goto Bloodmyst Isle,54.2,60.3,40,0
     .goto Bloodmyst Isle,53.3,57.7
     .accept 9629 >> Accept Catch and Release
 step
-    .goto Bloodmyst Isle,55.2,59.2
+    >> Accept quests around Blood Watch
     .accept 9646 >> Accept WANTED: Deathclaw
-step
-    .goto Bloodmyst Isle,55.7,59.7
+    .goto Bloodmyst Isle,55.2,59.2
     .home >> Set your Hearthstone to Blood Watch
-step
-    .goto Bloodmyst Isle,55.0,58.0
+    .goto Bloodmyst Isle,55.7,59.7
     .accept 9567 >> Accept Know Thine Enemy
-step
-    .goto Bloodmyst Isle,55.9,56.9
+    .goto Bloodmyst Isle,55.0,58.0
     .accept 9580 >> Accept The Bear Necessities
+    .goto Bloodmyst Isle,55.9,56.9
     .accept 9643 >> Accept Constrictor Vines
-step
-    .goto Bloodmyst Isle,56.4,56.8
     .accept 9648 >> Accept Mac'Aree Mushroom Menagerie
+    .goto Bloodmyst Isle,56.4,56.8
 step << Paladin
 	.goto Bloodmyst Isle,55.6,55.4
 	.trainer >>Train class spells at Vindicator Aesom
@@ -375,6 +413,7 @@ step << Dwarf Hunter
     .turnin 9693 >> Turn in What Argus Means to Me
     .accept 9694 >> Accept Blood Watch
 step << Dwarf Hunter
+    >> Kill blood elves in the area
     .goto Bloodmyst Isle,48.5,46.8
     .complete 9694,1 --Kill Sunhawk Spy (x10)
 step << Dwarf Hunter
@@ -471,6 +510,7 @@ step
     .turnin 9581 >> Turn in Learning from the Crystals
     .accept 9620 >> Accept The Missing Survey Team
 step << !Dwarf/!Hunter
+    >> Kill blood elves in the area
     .goto Bloodmyst Isle,48.5,46.8
     .complete 9694,1 --Kill Sunhawk Spy (x10)
 step << !Dwarf/!Hunter
@@ -526,6 +566,7 @@ step
 	.goto Bloodmyst Isle,57.9,53.5
     .fly Exodar>> Fly to The Exodar
 step
+    >> Head into the Exodar
 	.goto The Exodar,77.3,57.5,60,0
 	.goto The Exodar,74.4,54.2,60,0
 	.goto The Exodar,49.9,50.7,60,0
@@ -616,6 +657,7 @@ step
 	>>Kill the Void Anomalies in the area
     .complete 9700,2 --Kill Void Anomaly (x5)
 step
+    #label BloodmystBearsnLashers
 	.goto Bloodmyst Isle,47.6,24.9,60,0
 	.goto Bloodmyst Isle,44.9,26.4,100,0
 	.goto Bloodmyst Isle,48.3,33.4,100,0
@@ -669,7 +711,8 @@ step
 	>>Kill flutterers as you quest
     .complete 9647,1 --Kill Royal Blue Flutterer (x10)
 step
-    .goto Bloodmyst Isle,37.5,61.3 >> Prioritize turning in the quest, don't grind elves yet.
+    .goto Bloodmyst Isle,37.5,61.3 
+    >> Prioritize turning in the quest, don't grind elves yet.
     .turnin 9578 >> Turn in Searching for Galaen
     .accept 9579 >> Accept Galaen's Fate
     .accept 9706 >> Accept Galaen's Journal - The Fate of Vindicator Saruan
@@ -723,15 +766,18 @@ step
     .accept 10067 >> Accept Fouled Water Spirits
 step
     #sticky
+    #label ravager3
+    >>Finish off Ravagers/Tanglers
     .goto Bloodmyst Isle,30.3,57.2,0
     .complete 10066,1 --Kill Mutated Tangler (x8)
     .complete 10065,1 --Kill Enraged Ravager (x10)
 step
-    .goto Bloodmyst Isle,19.6,63.2 >> You have to kill the anomalies in the water to eventually spawn the Critters
+    .goto Bloodmyst Isle,19.6,63.2 
+    >> You have to kill the anomalies in the water to eventually spawn the Critters
     .complete 9741,1 --Kill Void Critter (x12)
 step
+    #requires ravager3
 	#label bloodmyst2
-	>>Finish off Ravagers/Tanglers
     .turnin 10066 >> Turn in Oh, the Tangled Webs They Weave
     .goto Bloodmyst Isle,30.7,46.9
     .turnin 10065 >> Turn in Cutting a Path
