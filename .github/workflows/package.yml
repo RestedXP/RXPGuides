@@ -37,7 +37,7 @@ jobs:
         run: |
           cd .release
           mkdir -p ./ftp/
-          version_re='(\w+)-(v[0-9]+(\.[0-9]+[a-z]*)*)-?([0-9a-zA-Z]+)\-'
+          version_re='(\w+)-(v[0-9]+(\.[0-9]+[a-z]*)*)[0-9a-zA-Z\-]*-(\w+)\.zip$'
 
           find . -type f -name "*.zip" | while read zip; do
             [[ $zip =~ $version_re ]]
@@ -45,18 +45,16 @@ jobs:
             # 'v4.1.3b' from RXPGuides-v4.1.3b-bcc.zip
             release_version=$(echo "${BASH_REMATCH[2]}")
 
-            # '75-' from RXPGuides-v4.1.3b-75-gdcd9f95-bcc
+            # 'bcc' from RXPGuides-v4.1.3b-75-gdcd9f95-bcc
             release_tag=$(echo "${BASH_REMATCH[4]}")
 
-            cp "${zip}" ./ftp/
+            cp RXPGuides/CHANGELOG.md ./ftp/
+            echo $release_version > ./ftp/latest
 
-            #If tagged release, then update latest
+            cp "${zip}" "./ftp/RXPGuides-latest-${release_tag}.zip"
+
             if [[ "$release_tag" == "wrath" || "$release_tag" == "bcc" || "$release_tag" == "classic" ]]; then
               echo "FTP_DIR=beta" >> $GITHUB_ENV
-              cp RXPGuides/CHANGELOG.md "./ftp/latest_CHANGELOG.md"
-              echo $release_version > ./ftp/latest
-
-              cp "${zip}" "./ftp/RXPGuides-latest-${release_tag}.zip"
             else
               echo "FTP_DIR=dev" >> $GITHUB_ENV
             fi
