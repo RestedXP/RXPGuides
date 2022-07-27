@@ -50,12 +50,15 @@ jobs:
 
           #If tagged release, then update latest
           if [[ "$isalphaorclient" == "wrath" || "$isalphaorclient" == "bcc" || "$isalphaorclient" == "classic" ]]; then
+            echo "FTP_DIR=beta" >> $GITHUB_ENV
             cp RXPGuides/CHANGELOG.md "./ftp/latest_CHANGELOG.md"
             echo $release_version > ./ftp/latest
 
             find . -type f -name "*.zip" | while read zip; do
               cp "${zip}" "./ftp/RXPGuides-latest-${isalphaorclient}.zip"
             done
+          else
+            echo "FTP_DIR=dev" >> $GITHUB_ENV
           fi
 
           cp RXPGuides/CHANGELOG.md "./ftp/${release_version}_CHANGELOG.md"
@@ -76,4 +79,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: .release/ftp/
-          server-dir: ${{ secrets.FTP_DIR }}/
+          server-dir: ${{ env.FTP_DIR }}/
