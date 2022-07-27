@@ -42,7 +42,7 @@ jobs:
       - name: Stage releases
         run: |
           cd /home/runner/work/${{ env.REPO_NAME }}/${{ env.REPO_NAME }}/.release
-          mkdir -p ./ftp_release/
+          mkdir -p ./ftp/
           zip=$(ls *-bcc.zip)
           version_re='(\w+)-(v[0-9]+(\.[0-9]+[a-z]*)*)-?([0-9a-zA-Z]+)\-'
           [[ $zip =~ $version_re ]]
@@ -55,18 +55,18 @@ jobs:
 
           #If tagged release, then update latest
           if [[ "$isalphaorclient" == "wrath" || "$isalphaorclient" == "bcc" || "$isalphaorclient" == "classic" ]]; then
-            cp RXPGuides/CHANGELOG.md "./ftp_release/latest_CHANGELOG.md"
-            echo $release_version > ./ftp_release/latest
+            cp RXPGuides/CHANGELOG.md "./ftp/latest_CHANGELOG.md"
+            echo $release_version > ./ftp/latest
 
             find . -type f -name "*.zip" | while read zip; do
-              cp "${zip}" "./ftp_release/RXPGuides-latest-${isalphaorclient}.zip"
+              cp "${zip}" "./ftp/RXPGuides-latest-${isalphaorclient}.zip"
             done
           fi
 
-          cp RXPGuides/CHANGELOG.md "./ftp_release/${release_version}_CHANGELOG.md"
+          cp RXPGuides/CHANGELOG.md "./ftp/${release_version}_CHANGELOG.md"
 
           find . -type f -name "*.zip" | while read zip; do
-            cp "${zip}" ./ftp_release/
+            cp "${zip}" ./ftp/
           done
 
       - name: Display structure of directory
@@ -78,5 +78,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./ftp_release/
+          local-dir: ./ftp/
           server-dir: ${{ secrets.FTP_DIR }}/
