@@ -45,7 +45,7 @@ step << Warlock
 step << BloodElf
     .goto Orgrimmar,31.8,38.2
     .accept 9428 >> Accept Report to Splintertree Post
-    .maxlevel 22
+    .maxlevel 21
 step << Mage
     .goto Orgrimmar,38.7,85.4
     .train 11417 >> Go and train Portal: Orgrimmar
@@ -64,7 +64,7 @@ step
     .goto The Barrens,63.1,37.6
     .accept 865 >>Accept Raptor Horns
     .goto The Barrens,62.4,37.6
-    .maxlevel 22
+    .maxlevel 21
 step
     .goto The Barrens,62.4,37.6
     .accept 1069 >>Accept Deepmoss Spider Eggs
@@ -73,7 +73,7 @@ step << Rogue
     >>Run to the boat then go down to the 2nd floor. Start picking lockboxes until you're at 80 lockpicking skill.
 	.skill lockpicking,>80
 step
-    .maxlevel 22
+    .maxlevel 21
     >>Run to the Crossroads and accept quests
     .accept 870 >>Accept The Forgotten Pools
     .goto The Barrens,52.3,31.9
@@ -95,12 +95,12 @@ step
 step
     .goto The Barrens,51.5,30.1
     .accept 848 >> Accept Fungal Spores
-    .maxlevel 22
+    .maxlevel 21
 step
     >> Head west out of the Crossroads
     .goto The Barrens,45.4,28.4
     .accept 850 >> Accept Kolkar Leaders
-    .maxlevel 22
+    .maxlevel 21
 step
     #sticky
     #completewith next
@@ -141,7 +141,7 @@ step
 step
     .goto The Barrens,35.3,27.9
     .accept 6548 >> Accept Avenge My Village
-    .maxlevel 22
+    .maxlevel 21
 step
     .goto Stonetalon Mountains,81.8,96.1
     .zone Stonetalon Mountains >> Head to Stonetalon Mountains
@@ -362,7 +362,7 @@ step
 step
     .goto The Barrens,45.1,57.7
     .accept 893 >>Accept Weapons of Choice
-    .maxlevel 26
+    .maxlevel 25
 step
     .isOnQuest 883
     .goto The Barrens,44.7,59.1
@@ -460,7 +460,7 @@ step
     >>Talk to Clarice Foster
     .goto Thunder Bluff,27.5,24.7
     .accept 264 >> Accept Until Death Do Us Part
-    .maxlevel 22
+    .maxlevel 21
 step
     .goto Thunder Bluff,23.0,20.9
     >> If you failed the Zamah quest, just abandon it
@@ -468,7 +468,7 @@ step
 step
     .goto Thunder Bluff,23.0,20.9
     .accept 962 >> Accept Serpentbloom
-    .maxlevel 22
+    .maxlevel 21
 step << Tauren
     #completewith next
     .goto Thunder Bluff,45.8,64.7
@@ -645,7 +645,7 @@ step
     .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
     .accept 6562 >> Accept Trouble in the Deeps
-    .maxlevel 24
+    .maxlevel 23
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
@@ -667,32 +667,32 @@ step
     >> Head back to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
-    .maxlevel 24
+    .maxlevel 23
 step
     #sticky
     #completewith next
     .goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
-    .maxlevel 24
+    .maxlevel 23
 step
     .goto Ashenvale,42.3,71.0,20 >>Run through the cave to Ashenvale
-    .maxlevel 24
+    .maxlevel 23
 step
     .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
-    .maxlevel 24
+    .maxlevel 23
 step
     .goto Ashenvale,12.3,33.8
     .fp Zoram >> Get the Zoram'gar Outpost flight path
-    .maxlevel 24
+    .maxlevel 23
 step
     .goto Ashenvale,11.8,34.7
     .accept 216 >> Accept Between a Rock and a Thistlefur
-    .maxlevel 24
+    .maxlevel 23
 step
     >> Talk to the trolls in the hut
     .goto Ashenvale,11.6,34.9
     .accept 6442 >> Accept Naga at the Zoram Strand
     .accept 6462 >> Accept Troll Charm
-    .maxlevel 24
+    .maxlevel 23
 step
     .isQuestComplete 6562
     .goto Ashenvale,11.6,34.3
@@ -700,12 +700,12 @@ step
 step
     .goto Ashenvale,11.6,34.3
     .accept 6563 >> Accept The Essence of Aku'Mai
-    .maxlevel 24
+    .maxlevel 23
 step
     >>Accepting this quest starts an escort. Follow him
     .goto Ashenvale,12.1,34.4
     .accept 6641 >> Accept Vorsha the Lasher
-    .maxlevel 24
+    .maxlevel 23
 step
     #sticky
     #label wrathtailhead
@@ -1065,7 +1065,7 @@ step << Rogue
 	.complete 2480,1 --Cure Completed
     .turnin 2480 >> Turn in Hinott's Assistance
 step << !Rogue
-    .maxlevel 28
+    .maxlevel 27
     >>Click the Wanted poster on the wall
     .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
@@ -1078,7 +1078,7 @@ step << Rogue
     .vendor >> Go buy Broad Bladed Knife from the vendor if you have enough money. It's not always in the shop.
     .collect 12247,1
 step << Rogue
-    .maxlevel 28
+    .maxlevel 27
     .use 8095 >>Use Hinott's Oil on yourself to cure the debuff then click the Wanted poster on the wall
 .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
@@ -1180,7 +1180,7 @@ step
     .goto Hillsbrad Foothills,62.3,20.2
     .turnin 527 >> Turn in Battle of Hillsbrad
 step
-    .maxlevel 29
+    .maxlevel 28
     .goto Hillsbrad Foothills,62.1,19.8
     .accept 528 >> Accept Battle of Hillsbrad
     .accept 546 >> Accept Souvenirs of Death
@@ -1665,7 +1665,7 @@ step << Warrior
 	.turnin 1823 >>Turn in Speak with Ruga
     .accept 1824 >>Accept Trial at the Field of Giants
 step
-    .maxlevel 29
+    .maxlevel 28
     >> Speak to Mangletooth in the cage then pickup Weapons of Choice from Tatternack if you didn't grab it last time
     .accept 879 >> Accept Betrayal from Within
     .goto The Barrens,44.6,59.2
@@ -1675,7 +1675,7 @@ step
 	#sticky
 	#label Owatanka2
 	#completewith next
-    .maxlevel 30
+    .maxlevel 29
 	.goto The Barrens,44.2,62.1,75,0
 	.goto The Barrens,49.2,62.6,75,0
 	.goto The Barrens,49.6,60.0,75,0
@@ -1714,7 +1714,7 @@ step
     .goto The Barrens,46.0,81.2,50,0
     .accept 843 >> Accept Gann's Reclamation. He patrols along the road.
     .unitscan Gann Stonespire
-    .maxlevel 32
+    .maxlevel 28
 step
     #sticky
     #label Washte
