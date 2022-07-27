@@ -41,6 +41,7 @@ jobs:
 
       - name: Stage releases
         run: |
+          cd /home/runner/work/${{ env.REPO_NAME }}/${{ env.REPO_NAME }}/.release
           mkdir -p ./ftp_release/
           zip=$(ls *-bcc.zip)
           version_re='(\w+)-(v[0-9]+(\.[0-9]+[a-z]*)*)-?([0-9a-zA-Z]+)\-'
