@@ -36,41 +36,33 @@ jobs:
       - name: Stage releases
         run: |
           cd .release
-          pwd
           mkdir -p ./ftp/
-          zip=$(ls *-bcc.zip)
           version_re='(\w+)-(v[0-9]+(\.[0-9]+[a-z]*)*)-?([0-9a-zA-Z]+)\-'
-          [[ $zip =~ $version_re ]]
-
-          # 'v4.1.3b' from RXPGuides-v4.1.3b-bcc.zip
-          release_version=$(echo "${BASH_REMATCH[2]}")
-
-          # '75-' from RXPGuides-v4.1.3b-75-gdcd9f95-bcc
-          isalphaorclient=$(echo "${BASH_REMATCH[4]}")
-
-          #If tagged release, then update latest
-          if [[ "$isalphaorclient" == "wrath" || "$isalphaorclient" == "bcc" || "$isalphaorclient" == "classic" ]]; then
-            echo "FTP_DIR=beta" >> $GITHUB_ENV
-            cp RXPGuides/CHANGELOG.md "./ftp/latest_CHANGELOG.md"
-            echo $release_version > ./ftp/latest
-
-            find . -type f -name "*.zip" | while read zip; do
-              cp "${zip}" "./ftp/RXPGuides-latest-${isalphaorclient}.zip"
-            done
-          else
-            echo "FTP_DIR=dev" >> $GITHUB_ENV
-          fi
-
-          cp RXPGuides/CHANGELOG.md "./ftp/${release_version}_CHANGELOG.md"
 
           find . -type f -name "*.zip" | while read zip; do
+            [[ $zip =~ $version_re ]]
+
+            # 'v4.1.3b' from RXPGuides-v4.1.3b-bcc.zip
+            release_version=$(echo "${BASH_REMATCH[2]}")
+
+            # '75-' from RXPGuides-v4.1.3b-75-gdcd9f95-bcc
+            release_tag=$(echo "${BASH_REMATCH[4]}")
+
             cp "${zip}" ./ftp/
+
+            #If tagged release, then update latest
+            if [[ "$release_tag" == "wrath" || "$release_tag" == "bcc" || "$release_tag" == "classic" ]]; then
+              echo "FTP_DIR=beta" >> $GITHUB_ENV
+              cp RXPGuides/CHANGELOG.md "./ftp/latest_CHANGELOG.md"
+              echo $release_version > ./ftp/latest
+
+              cp "${zip}" "./ftp/RXPGuides-latest-${release_tag}.zip"
+            else
+              echo "FTP_DIR=dev" >> $GITHUB_ENV
+            fi
           done
 
           cd ..
-
-      - name: Display structure of directory
-        run: pwd; ls -la .release
 
       - name: Upload files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
