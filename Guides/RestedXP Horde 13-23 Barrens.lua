@@ -651,6 +651,7 @@ step
     .accept 1062 >> Accept Goblin Invaders
 step
     .maxlevel 22
+#xprate <1.5
     .goto The Barrens,35.3,27.9
     >> Head towards Stonetalon Mountains
     .accept 6548 >> Accept Avenge My Village
@@ -1120,12 +1121,14 @@ step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
 step
+#xprate <1.5
     >> Head to Sun Rock Retreat
     >> Head up the side mountain path to your left once you reach Sun Rock
     .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
     .accept 6562 >> Accept Trouble in the Deeps
     .maxlevel 24
+
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
@@ -1135,7 +1138,6 @@ step
     .turnin 6401 >> Turn in Kaya's Alive
     .isOnQuest 6401
 step
-    #level 24
     .goto Stonetalon Mountains,45.1,59.8
     .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
 step
@@ -1143,44 +1145,54 @@ step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >>Turn in Further Instructions
 step
+#xprate <1.5
     #sticky
     #completewith next
     .goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .goto Ashenvale,42.3,71.0,20 >>Run through the cave to Ashenvale
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .goto Ashenvale,12.3,33.8
     .fp Zoram >> Get the Zoram'gar Outpost flight path
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .goto Ashenvale,11.8,34.7
     .accept 216 >> Accept Between a Rock and a Thistlefur
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     >> Talk to the trolls in the hut
     .goto Ashenvale,11.6,34.9
     .accept 6442 >> Accept Naga at the Zoram Strand
     .accept 6462 >> Accept Troll Charm
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .isOnQuest 6562
     .goto Ashenvale,11.6,34.3
     .turnin 6562 >> Turn in Trouble in the Deeps
 step
+#xprate <1.5
     .goto Ashenvale,11.6,34.3
     .accept 6563 >> Accept The Essence of Aku'Mai
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     >>Accepting this quest starts an escort. Follow him
     .goto Ashenvale,12.1,34.4
     .accept 6641 >> Accept Vorsha the Lasher
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     #sticky
     #label wrathtailhead
     >>Kill the Nagas around the beach. Loot them for their heads
@@ -1188,14 +1200,17 @@ step
     .complete 6442,1 --Collect Wrathtail Head (x20)
     .isOnQuest 6442
 step
+#xprate <1.5
     >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
     .isOnQuest 6641
 step
+#xprate <1.5
     .goto Ashenvale,14.2,14.7,40 >>Drop down the hole into Blackfathom Deeps
     .isOnQuest 6442
 step
+#xprate <1.5
     #sticky
     #label Sapphires
     #completewith zoramend
@@ -1212,6 +1227,7 @@ step
     .accept 6564 >> Accept Allegiance to the Old Gods
     .isOnQuest 6442
 step
+#xprate <1.5
     #requires Sapphires
     >> Loot the Sapphires from the walls in the tunnel.
     .goto Ashenvale,13.0,13.2,30,0
@@ -1225,6 +1241,7 @@ step
     .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
     .isOnQuest 6563
 step
+#xprate <1.5
     #label zoramend
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
@@ -1232,18 +1249,22 @@ step
     .turnin 6641 >> Turn in Vorsha the Lasher
     .isOnQuest 6641
 step
+#xprate <1.5
     .goto Ashenvale,11.6,34.3
     .turnin 6563 >> Turn in The Essence of Aku'Mai
     .isOnQuest 6553
 step
+#xprate <1.5
     #sticky
     #completewith next
     .destroy 16784 >> Destroy any leftover Sapphires of Aku'Mai
 step
+#xprate <1.5
     .goto Ashenvale,11.6,34.3
     .turnin 6564 >> Turn in Allegiance to the Old Gods
     .isOnQuest 6564
 step
+#xprate <1.5
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >> Turn in Naga at the Zoram Strand
     .isOnQuest 6442
