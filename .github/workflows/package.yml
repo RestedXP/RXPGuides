@@ -33,14 +33,12 @@ jobs:
         with:
           args: -g wrath
 
-      - name: Display structure of directory
-        run: pwd; ls -la
-
       - name: Stage releases
         run: |
+          cd .release
           pwd
           mkdir -p ./ftp/
-          zip=$(ls .release/*-bcc.zip)
+          zip=$(ls *-bcc.zip)
           version_re='(\w+)-(v[0-9]+(\.[0-9]+[a-z]*)*)-?([0-9a-zA-Z]+)\-'
           [[ $zip =~ $version_re ]]
 
@@ -69,7 +67,7 @@ jobs:
           cd ..
 
       - name: Display structure of directory
-        run: pwd; ls -la
+        run: pwd; ls -la .release
 
       - name: Upload files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
