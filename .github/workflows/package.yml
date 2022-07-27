@@ -32,3 +32,41 @@ jobs:
         uses: BigWigsMods/packager@v2
         with:
           args: -g wrath
+
+      - name: Stage releases
+        run: |
+          cd .release
+          mkdir -p ./ftp/
+          version_re='(\w+)-(v[0-9]+(\.[0-9]+[a-z]*)*)[0-9a-zA-Z\-]*-(\w+)\.zip$'
+
+          find . -type f -name "*.zip" | while read zip; do
+            [[ $zip =~ $version_re ]]
+
+            # 'v4.1.3b' from RXPGuides-v4.1.3b-bcc.zip
+            release_version=$(echo "${BASH_REMATCH[2]}")
+
+            # 'bcc' from RXPGuides-v4.1.3b-75-gdcd9f95-bcc
+            release_tag=$(echo "${BASH_REMATCH[4]}")
+
+            cp RXPGuides/CHANGELOG.md ./ftp/
+            echo $release_version > ./ftp/latest
+
+            cp "${zip}" "./ftp/RXPGuides-latest-${release_tag}.zip"
+
+            if [[ "$release_tag" == "wrath" || "$release_tag" == "bcc" || "$release_tag" == "classic" ]]; then
+              echo "FTP_DIR=beta" >> $GITHUB_ENV
+            else
+              echo "FTP_DIR=dev" >> $GITHUB_ENV
+            fi
+          done
+
+          cd ..
+
+      - name: Upload files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: .release/ftp/
+          server-dir: ${{ env.FTP_DIR }}/

@@ -1286,21 +1286,22 @@ step << Warlock/Mage/Rogue
 step << Warlock/Mage/Rogue
 #xprate <1.5
     >> Kill Kobolds. Loot them for their Ears
+    .goto Loch Modan,36.3,24.7
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .collect 2589,10 << Paladin
 step << Warlock/Mage/Rogue
 #xprate <1.5
-    #completewith Thelsamar2
+    #completewith Ichor9
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
     .complete 418,3 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
-    #completewith Thelsamar2
+    #completewith Meat9
     >>Kill Bears in the zone for Thelsamar Blood Sausages
     .complete 418,2 --Collect Bear Meat (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
-    #completewith Thelsamar2
+    #completewith Intest9
     >>Kill Boars in the zone for Thelsamar Blood Sausages
     .complete 418,1 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
@@ -1310,7 +1311,7 @@ step << Warlock/Mage/Rogue
 #xprate <1.5
     #completewith next
     .goto Loch Modan,24.1,18.2
-    .vendor >>vendor and repair
+    .vendor >>vendor and repair - Do NOT sell any items used for Thelsamar Blood Sausages
 step << Warlock/Mage/Rogue
 #xprate <1.5
     .goto Loch Modan,24.7,18.3
@@ -1354,6 +1355,7 @@ step << Warlock/Mage/Rogue
     .complete 418,3 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
+    #label Intest9
     .goto Loch Modan,38.0,34.9,100,0
     .goto Loch Modan,37.1,39.8,100,0
     .goto Loch Modan,29.8,35.9,100,0
@@ -1379,6 +1381,7 @@ step << Warlock/Mage/Rogue
     .goto Loch Modan,36.7,41.6
     >>Find Kadrell. He patrols along the Thelsamar road
     .turnin 416 >> Turn in Rat Catching
+    .unitscan Mountaineer Kadrell
 step << Warlock/Mage/Rogue
 #xprate <1.5
     .goto Loch Modan,34.8,49.3
@@ -1502,7 +1505,7 @@ step
     .goto Dun Morogh,33.0,27.2,15,0
     .goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
-    .deathskip >>Keep running straight north, when the General Chat changes to Wetlands, drop down and die, then respawn
+    .deathskip >>Keep running straight north, drop down and die, then respawn at the Spirit Healer.
 step
     #softcore
     .goto Wetlands,12.7,46.7,30 >> Swim to shore
@@ -1538,33 +1541,39 @@ RXPGuides.RegisterGuide([[
 #next 14-20 Bloodmyst
 
 step
+    .maxlevel 13
     #completewith next
     .goto Darkshore,36.8,44.3,0
     .vendor >> You can buy cheap food from Laird on the bottom floor of the inn if you wish (20c level 5 food).
 step
+    .maxlevel 13
     >>Top floor of the Inn
     .goto Darkshore,37.0,44.1
     .accept 983 >> Accept Buzzbox 827
 step
-    .goto Darkshore,38.8,43.4
+    .maxlevel 13
+    >> Accept quests around Auberdine
     .accept 2118 >> Accept Plagued Lands
-step
-    .goto Darkshore,39.3,43.4
+    .goto Darkshore,38.8,43.4
     .accept 984 >> Accept How Big a Threat?
-step
-    .goto Darkshore,36.6,45.6
+    .goto Darkshore,39.3,43.4
     .accept 3524 >> Accept Washed Ashore
+    .goto Darkshore,36.6,45.6
 step
+    .maxlevel 13
     .goto Darkshore,36.3,45.6
     .fp Auberdine >> Get the Auberdine flight path
 step
+    .isOnQuest 983
     #completewith Darkshore2
     >>Kill Crawlers. Loot them for their Legs whilst doing other quests
     .complete 983,1 --Collect Crawler Leg (x6)
 step
+    .isOnQuest 3524
     .goto Darkshore,36.4,50.9
     .complete 3524,1 --Collect Sea Creature Bones (x1)
 step
+    .isOnQuest 2118
     .goto Darkshore,38.3,52.7,70,0
     .goto Darkshore,38.9,62.0,70,0
     .goto Darkshore,38.3,52.7,70,0
@@ -1574,10 +1583,12 @@ step
     .complete 2118,1 --Rabid Thistle Bear Captured
     .unitscan Rabid Thistle Bear
 step
+    .isOnQuest 984
     #label Darkshore2
 .goto Darkshore,39.0,53.2
     .complete 984,1 --Find a corrupt furbolg camp
 step
+    .isOnQuest 983
     .goto Darkshore,36.7,52.4,70,0
     .goto Darkshore,35.6,47.6,70,0
     .goto Darkshore,36.2,44.5,70,0
@@ -1585,29 +1596,30 @@ step
     >>Kill Crawlers. Loot them for their Legs
     .complete 983,1 --Collect Crawler Leg (x6)
 step
+    .isOnQuest 983
     .goto Darkshore,36.6,46.3
     .turnin 983 >> Turn in Buzzbox 827
 step
+    .isOnQuest 3524
     .goto Darkshore,36.6,45.6
     .turnin 3524 >> Turn in Washed Ashore
 step
+    .isOnQuest 2118
     .goto Darkshore,38.8,43.4
     .turnin 2118 >> Turn in Plagued Lands
 step
+    .isOnQuest 984
     .goto Darkshore,39.3,43.4
     .turnin 984 >> Turn in How Big a Threat?
 step
     .goto Darkshore,36.6,45.6
     .abandon 1001 >> Abandon Buzzbox 411
 step
-    #completewith Azuremyst
-    +Wait here for the boat
-    .goto Darkshore,30.8,41.0
-step
     .goto Darkshore,30.8,41.0
     .abandon 4681 >> Abandon Washed Ashore
 step
     #label Azuremyst
-    .zone Azuremyst Isle >>Get onto the boat when it comes.
+        .goto Darkshore,30.8,41.0
+    .zone Azuremyst Isle >> Wait for the boat here. Get onto the boat when it comes.
     >> Level first aid or make weapon stones while waiting. << Warrior/Rogue/Paladin
 ]])
