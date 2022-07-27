@@ -216,6 +216,7 @@ step
     .goto The Barrens,63.0,37.2
     .accept 894 >>Accept Samophlange
 step
+    .maxlevel 16
     .goto The Barrens,63.1,37.6
     .accept 959 >>Accept Trouble at the Docks
 step
@@ -1012,6 +1013,7 @@ step << Warrior
     .train 6547 >>Train Rend r3
     .train 20230 >>Train Retaliation    
 step
+    .maxlevel 21
     .goto Thunder Bluff,22.8,20.9
     >> Go into the Pools of Vision below the Spirit Rise
     .accept 962 >>Accept Serpentbloom
@@ -1033,48 +1035,56 @@ step
     .goto Thunder Bluff,46.9,49.9
     .fly Crossroads >>Fly to Crossroads
 step
-    >>Spam Hamstring & Rend while on your way to the mountain to train your weapon skill >> Warrior
+    >>Spam Hamstring & Rend while on your way to the mountain to train your weapon skill << Warrior
     .goto The Barrens,47.0,34.7,15,0
     .goto The Barrens,46.4,34.9,15,0
     .goto The Barrens,46.6,34.8,10 >>Go up the mountain here
+    .isOnQuest 959
 step
     .goto Kalimdor,51.9,55.4,30,0
     .goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
+    .isOnQuest 959
 step
     >>Go into the eye of the cave
     .goto Kalimdor,51.9,55.4
     .accept 1486 >>Accept Deviate Hides
+    .isOnQuest 959
 step
-.goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
+    .goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
+    .isOnQuest 959
 step
-#sticky
-#label Deviate
->>Kill Deviate mobs. Loot them for their hides
-.complete 1486,1 --Deviate Hide (20)
+    #sticky
+    #label Deviate
+    >>Kill Deviate mobs. Loot them for their hides
+    .complete 1486,1 --Deviate Hide (20)
+    .isOnQuest 1486
 step
-#sticky
-#label Serpentbloom
->>Look for green and red flowers on the ground. Herbalists can track them on the minimap.
-.complete 962,1 --Serpentbloom (10)
+    #sticky
+    #label Serpentbloom
+    >>Look for green and red flowers on the ground
+    .complete 962,1 --Serpentbloom (10)
+    .isOnQuest 962
 step
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.2,55.2
->>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
-.complete 959,1 --Collect 99-Year-Old Port (1)
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.2,55.2
+    >>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
+    .complete 959,1 --Collect 99-Year-Old Port (1)
     .unitscan Mad Magglish
+    .isOnQuest 959
 step
-.goto Kalimdor,51.9,54.9,25 >>Enter the deeper part of the cave
+    .goto Kalimdor,51.9,54.9,20 >>Enter the deeper part of the cave
+    .isOnQuest 1491
 step
     .goto Kalimdor,52.1,54.5,30,0
     .goto Kalimdor,52.3,54.6,30,0
@@ -1090,23 +1100,25 @@ step
     .goto Kalimdor,52.3,54.6,30,0
     .goto Kalimdor,52.4,55.1,30,0
     .goto Kalimdor,52.8,54.8,30,0
-    .goto Kalimdor,52.6,54.5
-.goto Kalimdor,52.6,54.5
->>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
-    .unitscan Boahn
-    .unitscan Trigore the Lasher
-.complete 1491,1 --Wailing Essence (6)
+    .goto Kalimdor,52.6,54.5,30,0
+	.goto Kalimdor,52.6,54.5
+    >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
+    .complete 1491,1 --Wailing Essence (6)
+    .isOnQuest 1491
 step
-#requires Serpentbloom
-.goto Kalimdor,52.8,55.0,3000 >> .
+    #requires Serpentbloom
+    .isOnQuest 962
 step
-#requires Deviate
->>Run back to the eye of the cave
-.goto Kalimdor,51.9,55.4
-.turnin 1486 >>Turn in Deviate Hides
+    #requires Deviate
+    >>Run back to the eye of the cave
+    .goto Kalimdor,51.9,55.4
+    .turnin 1486 >>Turn in Deviate Hides
+    .isOnQuest 1486
 step
+    >> Head back to the Kolkar outpost
     .goto The Barrens,45.4,28.4
     .turnin 850 >> Turn in Kolkar Leaders
+    .isOnQuest 850
 step
     .goto The Barrens,35.3,27.9
     .isOnQuest 1062
