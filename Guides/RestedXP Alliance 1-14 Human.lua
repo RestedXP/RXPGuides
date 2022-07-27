@@ -6,8 +6,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
-#next 12-14 Loch Modan << Warlock
-#next 11-12 Loch Modan << !Warlock
+#next 12-14 Loch Modan;11-14 Darkshore << Warlock
+#next 11-12 Loch Modan;11-14 Darkshore << !Warlock
 step << !Human
     #sticky
     #completewith next
@@ -556,6 +556,9 @@ step
     .goto Elwynn Forest,61.8,54.0,70,0
     .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
+step << wotlk
+    #completewith next
+    .deathskip >> Die on purpose and respawn at The Tower of Azora
 step
     .goto Elwynn Forest,74.0,72.2
     .turnin 35 >> Turn in Further Concerns
@@ -708,9 +711,9 @@ step << !Warlock
 step << Warlock
     .xp 9+3400 >> Grind to 3400+/6500xp
 step
-    #softcore
     #completewith next
     .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
+    >>Make sure you are on the east side of the farm before dying << wotlk
 step
     #label Deed
     .goto Elwynn Forest,79.5,68.9
@@ -789,17 +792,17 @@ step << Mage/Priest/Rogue
     .goto Elwynn Forest,43.7,66.4,10 >>Go Upstairs
 step << Priest
     .goto Elwynn Forest,43.3,65.7
-    .accept 5635 >> Accept Desperate Prayer
+    .accept 5635 >> Accept Desperate Prayer << tbc
     .trainer >> Train your class spells
 step << Mage
     .goto Elwynn Forest,43.2,66.2
     .trainer >> Train your class spells
-step << Rogue
+step << Rogue tbc
     .goto Elwynn Forest,43.9,65.9
     >>Don't worry about not having 2 weapons, we'll get another soon
     >>Be VERY careful about your money when training here. You will need 31s 52c by next level. Make sure you train Dual Wield and Sprint though.
     .trainer >> Train your class spells
-step << Rogue
+step << Rogue tbc
     .goto Elwynn Forest,41.7,65.9
     .money >0.3152
     .vendor >>You don't have enough money, so buy Stiletto for your Offhand
@@ -922,7 +925,7 @@ step << Rogue
     .trainer >>Train 1h Swords
 step << Rogue
     .goto StormwindClassic,57.6,57.1
-    .vendor >>Buy a Cutlass from Gunther and equip it, Stiletto in Offhand
+    .vendor >>Buy a Cutlass from Gunther and equip it
 step << Paladin
     .goto StormwindClassic,57.1,57.7
     .trainer >>Train 2h Swords
@@ -1002,10 +1005,13 @@ step << Human
     .turnin 6281 >> Turn in Continue to Stormwind
     .accept 6261 >> Accept Dungar Longdrink
 step << Warrior
-     >>Enter the inn
-    .goto StormwindClassic,71.7,39.9,20,0
     .goto StormwindClassic,74.3,37.3
-    .turnin 1638 >> Turn in A Warrior's Training
+    #completewith next
+     >>Enter the inn
+     .turnin 1638 >> Turn in A Warrior's Training
+step << Warrior
+     .goto StormwindClassic,71.7,39.9,20,0
+    .goto StormwindClassic,74.3,37.3
     .accept 1639 >> Accept Bartleby the Drunk
 step << Warrior
     .goto StormwindClassic,73.8,36.3
@@ -1020,57 +1026,122 @@ step << Warrior
     >>You'll now learn Defensive Stance and Sunder Armor
     .goto StormwindClassic,74.3,37.3
     .turnin 1665 >> Turn in Bartleby's Mug
-step << Priest
+step << Priest tbc
     #completewith next
     .goto StormwindClassic,38.8,26.4
     .turnin 5635 >> Turn in Desperate Prayer
-step << Priest
+step << Priest tbc
     .goto StormwindClassic,38.62,26.10
     .train 13908 >> Train Desperate Prayer
 step << Warrior/Paladin/Rogue
+#xprate <1.5
     #sticky
     #completewith StormpikeDelivery
-    >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior
+    >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior tbc
     .goto StormwindClassic,56.3,17.0
     .vendor >>Buy a Mining Pick. You'll train Mining later
-step
+step << tbc/Warlock wotlk
     #completewith next
     .goto StormwindClassic,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
-step
+step << tbc
     #label StormpikeDelivery
     .goto StormwindClassic,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
-step
+step << tbc/Warlock wotlk
     #completewith next
-    .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
-step
+    .goto StormwindClassic,63.9,8.3,25 >>Enter the Deeprun Tram
+step << tbc/Warlock wotlk
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin
     >>Take the tram when it arrives. Cast Summon Voidwalker and Create Healthstone. Get off the tram on the other side << Warlock
     .accept 6661 >> Accept Deeprun Rat Roundup
-step
+step << tbc/Warlock wotlk
     >>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
-step
+step << tbc/Warlock wotlk
     .turnin 6661 >> Turn in Deeprun Rat Roundup
-step
+step << Warlock wotlk
+#xprate >1.3
+    .hs >> Hearth to Sentinel Hill
+
+
+step << wotlk
+    .goto StormwindNew,21.8,56.2
+    .zone Darkshore >> Take the boat to Darkshore
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+    .zoneskip Darkshore
+step << tbc
     .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
-step
+step << tbc
     .goto Ironforge,55.5,47.7
     .fp Ironforge >> Get the Ironforge flight path
-step << Warlock
+step << Warlock tbc
     .goto Ironforge,20.93,53.19,20,0
     .goto Ironforge,18.16,51.46
     .home >> Set your Hearthstone to Ironforge
-step << Warrior
+step << Warrior tbc
     .goto Ironforge,61.2,89.5
     .trainer >>Train 2h Maces
-step
+step << tbc
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
+
+--TBC only part:
+step << tbc
+#xprate >1.3
+    .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
+step << tbc
+#xprate >1.3
+    .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
+step << tbc
+#xprate >1.3
+    .goto Dun Morogh,33.0,27.2,15,0
+    .goto Dun Morogh,33.0,25.2,15,0
+    .goto Wetlands,11.6,43.4,60,0
+    .deathskip >>Keep running straight north, when the General Chat changes to Wetlands, drop down and die, then respawn
+step << tbc
+#xprate >1.3
+    .goto Wetlands,12.7,46.7,30 >> Swim to shore
+step << tbc
+#xprate >1.3
+    .money <0.076
+    .goto Wetlands,10.4,56.0,15,0
+    .goto Wetlands,10.1,56.9,15,0
+    .goto Wetlands,10.6,57.2,15,0
+    .goto Wetlands,10.7,56.8
+    .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
+    .bronzetube
+step << tbc
+#xprate >1.3
+    .goto Wetlands,9.5,59.7
+    .fp Menethil >> Get the Menethil Harbor flight path
+step << tbc
+#xprate >1.3
+    .money <0.0385
+    .goto Wetlands,8.1,56.3
+    .vendor >> Check Dewin for Heal Potions, buy down to 1s
+step << tbc
+#xprate >1.3
+    .goto Wetlands,4.7,57.3
+    .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore.
+    >> Use this time to level your first aid or make weapon stones. << Warrior/Rogue/Paladin
+]])
+
+RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
+<< Alliance
+#name 11-12 Loch Modan << !Warlock
+#name 12-14 Loch Modan << Warlock
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Human
+#next 14-14 Darkshore << Warlock
+#next 11-14 Darkshore << !Warlock
 step
     .goto Dun Morogh,60.1,52.6,50,0
     .goto Dun Morogh,63.1,49.8
@@ -1087,23 +1158,15 @@ step
     .goto Dun Morogh,63.1,49.8
     .turnin 314 >> Turn in Protecting the Herd
 step
-    .goto Dun Morogh,68.6,54.7
-    .vendor >>Vendor, buy food+water << !Rogue !Warrior
-    .vendor >>Vendor, buy food << Rogue/Warrior
-step
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
 step
     .goto Dun Morogh,69.1,56.3
     .accept 432 >> Accept Those Blasted Troggs!
-step << Warrior/Paladin/Rogue
-    .goto Dun Morogh,69.3,55.5
-    .train 2575 >>Train Mining, cast Find Minerals
 step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39
     >>Kill Troggs in the cave
-    >>Keep an eye out for nodes to get more rough stones. << Rogue/Warrior/Paladin
     .complete 432,1 --Kill Rockjaw Skullthumper (6)
     .complete 433,1 --Kill Rockjaw Bonesnapper (10)
 step << !Warlock
@@ -1114,16 +1177,13 @@ step
     .goto Dun Morogh,69.1,56.3
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
-    .goto Dun Morogh,68.9,55.9
-    .vendor >> vendor trash, repair
-step
     .goto Dun Morogh,68.7,56.0
     .turnin 433 >> Turn in The Public Servant
 step << !Warlock
     .xp 11
 step
     .goto Dun Morogh,68.6,54.7
-    .vendor >>Vendor, buy x30 level 5 drink << Mage/Warlock/Priest
+    .vendor >>Vendor, buy level 5 drink << Mage/Warlock/Priest
 step
     .goto Dun Morogh,78.1,49.5,30,0
     .goto Dun Morogh,81.2,42.7,45,0
@@ -1144,34 +1204,24 @@ step
     >>Choose the dagger, use it as your offhand << Rogue
     .turnin 417 >> Turn in A Pilot's Revenge
 step
-    .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
-]])
-
-RXPGuides.RegisterGuide([[
-#tbc
-#wotlk
-<< Alliance
-#name 11-12 Loch Modan << !Warlock
-#name 12-14 Loch Modan << Warlock
-#version 1
-#group RestedXP Alliance 1-20
-#defaultfor Human
-#next 14-14 Darkshore << Warlock
-#next 11-14 Darkshore << !Warlock
-step
     #completewith next
-    .goto Loch Modan,24.1,18.2
-    .vendor >>Vendor and repair
+    .goto Dun Morogh,84.4,31.1
+    .zoneskip Loch modan>>Go through the tunnel to Loch Modan
 step
     .goto Loch Modan,24.8,18.4
     .turnin 353 >> Turn in Stormpike's Delivery
-    .accept 307 >> Accept Filthy Paws << Warlock/Mage/Rogue
-step << !Warlock !Mage !Rogue
+step << Warlock/Mage/Rogue
+    #xprate <1.5
+    .goto Loch Modan,24.8,18.4
+    .accept 307 >> Accept Filthy Paws
+step << !Mage !Rogue
+#xprate >1.3 << Warlock
     #softcore
     #completewith next
     .goto Loch Modan,28.14,18.29
     .deathskip >> Die and respawn to Thelsamar
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #completewith next
     >>Kill Spiders in the zone for Spider Ichor
     .collect 3174,3 --Collect Spider Ichor (x3)
@@ -1180,9 +1230,11 @@ step << Warlock/Mage/Rogue
     >>Kill Boars in the zone for Boar Intestines.
     .collect 3172,3 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     .goto Loch Modan,34.8,49.3
     .accept 418 >> Accept Thelsamar Blood Sausages
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #sticky
     #label StormpikeO
     .abandon 1338 >> Abandon Stormpike's Order. This is to unlock Mountaineer Stormpike's Task
@@ -1194,6 +1246,7 @@ step << Warlock/Mage/Rogue
     .vendor >> Buy food/water (try to have 40 level 5 drink, 20 level 5 food) << Mage/Warlock
     .vendor >> Buy food, try to have about 40 level 5 food << Rogue
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #requires StormpikeO
     .goto Loch Modan,32.6,49.9,80.0,0
     .goto Loch Modan,37.2,46.1,80.0,0
@@ -1202,55 +1255,69 @@ step << Warlock/Mage/Rogue
     .accept 416 >> Accept Rat Catching
     .accept 1339 >> Accept Mountaineer Stormpike's Task
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #completewith Thelsamar1
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
     .complete 418,3 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #completewith Thelsamar1
     >>Kill Bears in the zone for Thelsamar Blood Sausages
     .complete 418,2 --Collect Bear Meat (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #completewith Thelsamar1
     >>Kill Boars in the zone for Thelsamar Blood Sausages.
     .complete 418,1 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #label Thelsamar1
     .goto Loch Modan,39.3,27.0,130 >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
 step << Warlock/Mage/Rogue
+#xprate <1.5
     .goto Loch Modan,35.5,18.2,45 >>Go to the entrance of the cave whilst killing rats
 step << Warlock/Mage/Rogue
+#xprate <1.5
     .goto Loch Modan,36.3,24.7
     >>Collect the crates you find in the cave. Be careful because this is difficult at level 11
     >>Be careful as the Geomancers cast Flame Ward (Fire immunity) after a few seconds << Mage/Warlock
     >>You can backtrack after looting one further in the cave, as the crates can respawn behind you
     .complete 307,1 --Collect Miners' Gear (x4)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     >> Kill Kobolds. Loot them for their Ears
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .collect 2589,10 << Paladin
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #completewith Thelsamar2
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
     .complete 418,3 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #completewith Thelsamar2
     >>Kill Bears in the zone for Thelsamar Blood Sausages
     .complete 418,2 --Collect Bear Meat (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #completewith Thelsamar2
     >>Kill Boars in the zone for Thelsamar Blood Sausages
     .complete 418,1 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     .goto Loch Modan,23.3,17.9,45 >>Run back to the bunker, grinding en route
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #completewith next
     .goto Loch Modan,24.1,18.2
     .vendor >>vendor and repair
 step << Warlock/Mage/Rogue
+#xprate <1.5
     .goto Loch Modan,24.7,18.3
     .turnin 307 >> Turn in Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #sticky
     #label Meat9
     .goto Loch Modan,26.9,10.7,100,0
@@ -1269,6 +1336,7 @@ step << Warlock/Mage/Rogue
     >>Kill Bears. Loot them for Meat
     .complete 418,2 --Collect Bear Meat (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #sticky
     #label Ichor9
     .goto Loch Modan,31.9,16.4,100,0
@@ -1285,6 +1353,7 @@ step << Warlock/Mage/Rogue
     >>Kill Spiders. Loot them for Ichor
     .complete 418,3 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     .goto Loch Modan,38.0,34.9,100,0
     .goto Loch Modan,37.1,39.8,100,0
     .goto Loch Modan,29.8,35.9,100,0
@@ -1299,8 +1368,10 @@ step << Warlock/Mage/Rogue
     >>Kill Boars. Loot them for Intestines
     .complete 418,1 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #requires Meat9
 step << Warlock/Mage/Rogue
+#xprate <1.5
     #label RatCatching
     #requires Ichor9
     .goto Loch Modan,32.6,49.9,80.0,0
@@ -1309,6 +1380,7 @@ step << Warlock/Mage/Rogue
     >>Find Kadrell. He patrols along the Thelsamar road
     .turnin 416 >> Turn in Rat Catching
 step << Warlock/Mage/Rogue
+#xprate <1.5
     .goto Loch Modan,34.8,49.3
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
@@ -1323,8 +1395,6 @@ step << Warlock
     >>Go into the bunker from behind
     .accept 267 >> Accept The Trogg Threat
 step << Warlock
-    .goto Loch Modan,29.9,68.2,45 >> Run to the Troggs Entrance
-step << Warlock
     .goto Loch Modan,30.0,72.4,100,0
     .goto Loch Modan,34.7,71.6,100,0
     .goto Loch Modan,30.9,81.1,100,0
@@ -1336,13 +1406,20 @@ step << Warlock
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
 step << Warlock
+#xprate <1.5
     #completewith TroggT
     .money >0.7150
     .goto Loch Modan,32.7,76.5,0
     +Grind here until you have 71s 50c of vendorables+money, then turnin
 step << Warlock
+#xprate <1.5
     .goto Loch Modan,32.7,76.5,0
-    .xp 13+9600 >>Grind until 9600+/11400xp
+    .xp 14-1820 >>Grind until you are 1800xp away from level 14
+step << Warlock
+#xprate >1.499
+    .goto Loch Modan,32.7,76.5,0
+    .xp 14-2730 >>Grind until you are 2730xp away from level 14
+
 step << Warlock
     .goto Loch Modan,22.2,73.3
     .turnin 224 >> Turn in In Defense of the King's Lands
@@ -1372,12 +1449,11 @@ step << Warlock
     .goto Ironforge,51.1,8.7,15,0 >> Enter the building
     .goto Ironforge,50.4,6.3
     .trainer >> Train your class spells
-step << Warlock
+step << Warlock tbc
     .goto Ironforge,53.2,7.8,15,0 >> Enter the building
     .goto Ironforge,53.0,6.4
     .vendor >>Buy Consume Shadows r1, then Sacrifice r1
 step << !Warlock
-    #level 12
     .goto Ironforge,65.90,88.41 << Warrior
     .goto Ironforge,51.50,15.34 << Rogue
     .goto Ironforge,25.21,10.75 << Priest
@@ -1426,7 +1502,7 @@ step
     .goto Dun Morogh,33.0,27.2,15,0
     .goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
-    .deathskip >>Keep running straight north, drop down and die, then respawn
+    .deathskip >>Keep running straight north, when the General Chat changes to Wetlands, drop down and die, then respawn
 step
     #softcore
     .goto Wetlands,12.7,46.7,30 >> Swim to shore
