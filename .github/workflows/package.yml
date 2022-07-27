@@ -34,7 +34,7 @@ jobs:
           args: -g wrath
 
       - name: Display structure of directory
-        run: pwd; ls -R
+        run: pwd; ls -la
 
       - name: Stage releases
         run: |
@@ -69,7 +69,7 @@ jobs:
           cd ..
 
       - name: Display structure of directory
-        run: pwd; ls -R
+        run: pwd; ls -la
 
       - name: Upload files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
