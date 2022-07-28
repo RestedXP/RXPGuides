@@ -1137,9 +1137,10 @@ step
     .goto Hillsbrad Foothills,61.5,19.1
     .turnin 1066 >> Turn in Blood of Innocents
 step
-    .goto Hillsbrad Foothills,63.2,20.7
     .turnin 498 >> Turn in The Rescue
+    .goto Hillsbrad Foothills,63.2,20.7
 	.turnin 549 >> Turn in WANTED: Syndicate Personnel
+    .goto Hillsbrad Foothills,62.32,20.35
 step
     #sticky
     #completewith bearsohmy
