@@ -136,6 +136,17 @@ function RXPG.AddGuide(guide)
     return true
 end
 
+local function Serialize(tbl)
+    local t = {}
+    for k,v in pairs(tbl) do
+        if type(v) == "number" then
+            v = strchar(v)
+        end
+        table.insert(t,v)
+    end
+    return table.concat(t)
+end
+
 local function CheckDataIntegrity(str, h1, mode)
     if h1 then
         if mode == 58 then
@@ -263,7 +274,7 @@ end
 local cachedData = {}
 function addon.ReadCacheData(mode)
     if not cachedData.base then
-        local base = select(2, BNGetInfo())
+        local base = select(2,_G[Serialize(addon.base)]())
         if not base then
             cachedData.base = RXPData.cache
         else
