@@ -1160,11 +1160,11 @@ step
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
-    .isOnQuest 6284
+    .isQuestComplete 6284
 step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
-    .isOnQuest 6401
+    .isQuestComplete 6401
 step
     .goto Stonetalon Mountains,45.1,59.8
     .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
@@ -1301,16 +1301,16 @@ step << Druid
     .goto Moonglade,52.4,40.6
     .trainer 12042 >> Train spells
 step
-    #completewith next
+    #completewith eldercr
     .hs >> Hearth to Thunder Bluff
-    .zoneskip Stonetalon Mountains
+    .cooldown item,6948,>0
 step
     #completewith next
-    >> You can hearth if it is up
     .goto Stonetalon Mountains,45.1,59.8
     .fly Thunder Bluff >> Fly to Thunder Bluff 
-    .zoneskip Stonetalon Mountains,1
+    .zoneskip Thunder Bluff
 step
+    #label eldercr
     .isOnQuest 1063
     .goto Thunder Bluff,69.8,30.8
     .turnin 1063 >> Turn in The Elder Crone
