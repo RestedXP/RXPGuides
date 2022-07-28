@@ -1519,6 +1519,7 @@ step
     .turnin 832 >>Turn in Burning Shadows
 step
     .goto Durotar,41.6,18.7
+    >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step
     .goto Durotar,43.1,30.3
