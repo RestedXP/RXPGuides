@@ -1291,7 +1291,7 @@ step << Shaman
 	.fly Orgrimmar >>Fly to Orgrimmar
 step
     .goto Orgrimmar,54.2,68.4
-    .vendor >>Talk to Innkeeper Gryshka and buy some food/water if needed. You're going to do a lot of running shortly.
+    .vendor >>Talk to Innkeeper Gryshka and buy some food/water if needed. Also, be sure to check the auction house for any weapon upgrades. You're going to do a lot of running shortly.
 step << Paladin
     #completewith next
     .goto Orgrimmar,32.4,35.8
@@ -2079,10 +2079,12 @@ step
     .goto Thousand Needles,37.5,38.4,30,0
     .goto Thousand Needles,33.5,32.4
     >>Go back and forth in the pool, collecting yellow plants near the edges of the water as well as underwater.
+    >>The elementals are immune to fire & frost damage. Try your best to avoid them << Mage
     .complete 5062,1 --Collect Incendia Agave (x10)
 step
 	#completewith next
     .hs >> Hearth to Thunder Bluff
+    .cooldown item,6948,>0
 step << Druid
 	#completewith next
     .goto Thunder Bluff,77.0,29.9
