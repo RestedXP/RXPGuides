@@ -910,20 +910,20 @@ step
     .accept 1489 >>Accept Hamuul Runetotem
     .accept 3301 >>Accept Mura Runetotem
 step
+    #completewith camptflight
     .goto The Barrens,51.5,30.3
-    #completewith next
     .fly Camp Taurajo >>Fly to Camp Taurajo
 step
     .goto The Barrens,53.0,52.1
     >>Kill Quillboars for a Blood Shard
 .collect 5075 --Collect Blood Shard (1)
 step
+    #label camptflight
     .goto The Barrens,44.6,59.2
     .turnin 878 >>Turn in Tribes at War
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 step
-#completewith BloodShard
     >> Use your Blood Shards on Spirit of the Wind
     .accept 889 >> Accept Spirit of the Wind
     .turnin 889 >> Turn in Spirit of the Wind
@@ -936,7 +936,6 @@ step
     .accept 1130 >>Accept Melor Sends Word
     .accept 6382 >>Accept The Ashenvale Hunt
 step
-#label BloodShard
 .goto The Barrens,44.8,59.1
     .turnin 882 >>Turn in Ishamuhale
     .accept 907 >>Accept Enraged Thunder Lizards
