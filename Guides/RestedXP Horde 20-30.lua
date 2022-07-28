@@ -2371,21 +2371,22 @@ step << Shaman
     .accept 1531 >>Accept Call of Air
 step
     #level 32
-    #completewith next
+    #completewith flyskip
     .goto The Barrens,63.1,37.1,-1
     .goto Orgrimmar,45.2,64.3,-1
     .fly Freewind Post >> Fly to Freewind Post
 step
-    #completewith next
+    #completewith flyskip
     .goto The Barrens,44.4,59.1
     .fly Freewind Post >> Fly to Freewind Post
     .zoneskip The Barrens,1
 step
-	#completewith next
+	#completewith flyskip
     .goto Thunder Bluff,46.9,49.4
     .fly Freewind Post >> Fly to Freewind Post
     .zoneskip Thunder Bluff,1
 step
+    #label flyskip
     .turnin 4767 >> Turn in Wind Rider
     .goto Thousand Needles,44.8,49.0
     .turnin 9434 >> Turn in Testing the Tonic
