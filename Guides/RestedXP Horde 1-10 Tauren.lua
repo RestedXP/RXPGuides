@@ -296,7 +296,7 @@ step << Hunter
     .accept 771 >>Accept Rite of Vision
 step << Hunter
     .goto Mulgore,45.5,58.5
-     >> vendor trash. Sell your weapon if it gives you enough money for Ornate Blunderbuss (3s 93c). Skip this step if you don't have enough
+     >> Vendor trash. Sell your weapon if it gives you enough money for Ornate Blunderbuss (3s 93c). Skip this step if you don't have enough
     .collect 2509,1 --Collect Ornate Blunderbuss
 step << Hunter
     .goto Mulgore,47.0,57.0
@@ -600,6 +600,7 @@ step
 step << !Druid
     #completewith next
     .hs >>Hearth to Bloodhoof Village
+    .cooldown item,6948,>0
 step << Druid
     #softcore
     #completewith next
@@ -921,6 +922,7 @@ step
     >>Keep an eye out for Ghost Howl (white wolf rare). Loot him for Demon Scarred Cloak. If you can't find him, skip this step.
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Accept The Demon Scarred Cloak
+    .unitscan Ghost Howl
 step
     .goto Mulgore,31.7,28.2,40,0
     .goto Mulgore,30.2,19.5,40,0

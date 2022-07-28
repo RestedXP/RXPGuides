@@ -777,13 +777,18 @@ step
     .complete 818,1 --Intact Makrura Eye (4)
     .complete 818,2 --Crawler Mucus (8)
 step
-    #label Tools
+    #completewith next
     >>Check the boat closest to the shore for the Toolboxes. Check other boats if you can't find these spawns. They can be a bit hard to see
     .goto Durotar,61.9,55.5,10 >> In the window underwater
     .goto Durotar,62.3,56.3,10 >> Underwater
     .goto Durotar,61.4,56.1,10 >> Near the shore
+step
+    .goto Durotar,61.9,55.5,10,0
+    .goto Durotar,62.3,56.3,10,0
+    .goto Durotar,61.4,56.1,10,0    
     .complete 825,1 --Gnomish Tools (3)
 step
+    #label Tools    
     .goto Durotar,67.2,70.0,125 >>Swim to the Island
 step
     #sticky

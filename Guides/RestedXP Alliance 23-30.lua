@@ -132,7 +132,6 @@ step
 step
     .goto Wetlands,8.6,55.8
     .accept 484 >> Accept Young Crocolisk Skins
-    .maxlevel 23
 step
     .goto Wetlands,10.8,59.6
     .accept 288 >> Accept The Third Fleet

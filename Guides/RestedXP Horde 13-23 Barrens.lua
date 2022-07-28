@@ -105,6 +105,9 @@ step << Orc/Troll
     .goto The Barrens,52.6,29.9
     .turnin 6386 >>Turn in Return to the Crossroads.
 step
+    .goto The Barrens,51.4,30.2
+    .accept 1492 >>Accept Wharfmaster Dizzywig    
+step
     >>Top of the tower
 .goto The Barrens,51.5,30.9
     .turnin 871 >>Turn in Disrupt the Attacks
@@ -213,6 +216,7 @@ step
     .goto The Barrens,63.0,37.2
     .accept 894 >>Accept Samophlange
 step
+    .maxlevel 16
     .goto The Barrens,63.1,37.6
     .accept 959 >>Accept Trouble at the Docks
 step
@@ -352,7 +356,7 @@ step
 step
     #sticky
     #completewith next
->>Kill Plainstriders. Loot them for their Kidneys
+>>Kill Plainstriders. Loot them for their Kidneys. This does not need to be completed right now but kill them as you see them.
     .complete 821,2 --Plainstrider Kidney (5)
 step
 .goto The Barrens,54.3,12.3,40,0
@@ -401,6 +405,7 @@ step << Druid
 step
     #completewith next
     .hs >>Hearth to Ratchet
+    .cooldown item,6948,>0    
 step
     .goto The Barrens,63.0,37.2
     .turnin 902 >>Turn in Samophlange
@@ -452,6 +457,15 @@ step
     .use 10327 >>Use the Horn of Echeyakee in your bags to summon Echeyakee. Kill him and loot him for his hide
 .goto The Barrens,55.5,17.3
     .complete 881,1 --Echeyakee's Hide (1)
+step
+    >>Finish killing Plainstriders for their Kidneys.
+    .goto The Barrens,54.3,12.3,40,0
+    .goto The Barrens,54.6,16.7,40,0
+    .goto The Barrens,42.6,15.1,40,0
+    .goto The Barrens,54.3,12.3,40,0
+    .goto The Barrens,54.6,16.7,40,0    
+    .complete 821,2 --Plainstrider Kidney (5)
+    
 step
     #sticky
     #completewith Slugs
@@ -520,8 +534,8 @@ step << !Tauren !Undead !BloodElf
 step << Tauren/Undead/BloodElf
     #completewith next
     >>Run to the Flight Master tower. Get the Flight Path
-.goto Orgrimmar,45.2,63.8
-.fp Orgrimmar>>Get the Orgrimmar Flight Path
+    .goto Orgrimmar,45.2,63.8
+    .fp Orgrimmar >>Get the Orgrimmar Flight Path
     .fly Crossroads >>Fly to Crossroads
 step
     >>Top of the tower
@@ -648,9 +662,12 @@ step
     >> Head towards Stonetalon Mountains
     .isOnQuest 1061
     .turnin 1061 >> Turn in The Spirits of Stonetalon
+step
+    .goto The Barrens,35.3,27.9    
     .accept 1062 >> Accept Goblin Invaders
 step
     .maxlevel 22
+#xprate <1.5
     .goto The Barrens,35.3,27.9
     >> Head towards Stonetalon Mountains
     .accept 6548 >> Accept Avenge My Village
@@ -660,11 +677,11 @@ step
     .goto Stonetalon Mountains,82.0,86.0,50,0
     .goto Stonetalon Mountains,84.7,84.3,50,0
     .goto Stonetalon Mountains,82.3,90.0,50,0
-.goto Stonetalon Mountains,80.7,89.2,50,0
+    .goto Stonetalon Mountains,80.7,89.2,50,0
     .goto Stonetalon Mountains,82.0,86.0,50,0
     .goto Stonetalon Mountains,84.7,84.3,50,0
     .goto Stonetalon Mountains,82.3,90.0
->>Kill Grimtotems in the area
+    >>Kill Grimtotems in the area
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
 step
@@ -893,20 +910,20 @@ step
     .accept 1489 >>Accept Hamuul Runetotem
     .accept 3301 >>Accept Mura Runetotem
 step
+    #completewith camptflight
     .goto The Barrens,51.5,30.3
-    #completewith next
     .fly Camp Taurajo >>Fly to Camp Taurajo
 step
     .goto The Barrens,53.0,52.1
     >>Kill Quillboars for a Blood Shard
 .collect 5075 --Collect Blood Shard (1)
 step
+    #label camptflight
     .goto The Barrens,44.6,59.2
     .turnin 878 >>Turn in Tribes at War
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 step
-#completewith BloodShard
     >> Use your Blood Shards on Spirit of the Wind
     .accept 889 >> Accept Spirit of the Wind
     .turnin 889 >> Turn in Spirit of the Wind
@@ -919,7 +936,6 @@ step
     .accept 1130 >>Accept Melor Sends Word
     .accept 6382 >>Accept The Ashenvale Hunt
 step
-#label BloodShard
 .goto The Barrens,44.8,59.1
     .turnin 882 >>Turn in Ishamuhale
     .accept 907 >>Accept Enraged Thunder Lizards
@@ -980,7 +996,7 @@ step << Shaman/Warrior
     +If it's cheaper, buy a green 2h mace from the Auction House. Skip this step if you will run Wailing Caverns, the quest staff is much better.
 step << Shaman/Warrior
     .goto Thunder Bluff,53.2,58.2
-    .vendor >> Go buy Maul
+    .vendor >> Buy a Maul
     .collect 924,1
 step
     .goto Thunder Bluff,61.4,80.9
@@ -989,7 +1005,14 @@ step
 step
     .goto Thunder Bluff,54.7,51.1
     .accept 1195 >>Accept The Sacred Flame
+step << Warrior
+    .goto Thunder Bluff,57.2,87.4
+    .accept 1823 >>Accept Speak with Ruga
+    .train 845 >>Train Cleave
+    .train 6547 >>Train Rend r3
+    .train 20230 >>Train Retaliation    
 step
+    .maxlevel 21
     .goto Thunder Bluff,22.8,20.9
     >> Go into the Pools of Vision below the Spirit Rise
     .accept 962 >>Accept Serpentbloom
@@ -1006,58 +1029,61 @@ step << Shaman
 .train 8052 >>Train Flame Shock r2
 .train 6390 >>Train Stoneclaw Totem r2
 .train 8056 >> Train Frost Shock
-step << Warrior
-    .goto Thunder Bluff,57.2,87.4
-    .accept 1823 >>Accept Speak with Ruga
-    .train 845 >>Train Cleave
-    .train 6547 >>Train Rend r3
-    .train 20230 >>Train Retaliation
 step
     #completewith next
     .goto Thunder Bluff,46.9,49.9
     .fly Crossroads >>Fly to Crossroads
 step
-.goto The Barrens,47.0,34.7,15,0
-.goto The Barrens,46.4,34.9,15,0
-.goto The Barrens,46.6,34.8,10 >>Go up the mountain here
+    >>Spam Hamstring & Rend while on your way to the mountain to train your weapon skill << Warrior
+    .goto The Barrens,47.0,34.7,15,0
+    .goto The Barrens,46.4,34.9,15,0
+    .goto The Barrens,46.6,34.8,10 >>Go up the mountain here
+    .isOnQuest 959
 step
-.goto Kalimdor,51.9,55.4,30,0
-.goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
+    .goto Kalimdor,51.9,55.4,30,0
+    .goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
+    .isOnQuest 959
 step
->>Go into the eye of the cave
-.goto Kalimdor,51.9,55.4
-.accept 1486 >>Accept Deviate Hides
+    >>Go into the eye of the cave
+    .goto Kalimdor,51.9,55.4
+    .accept 1486 >>Accept Deviate Hides
+    .isOnQuest 959
 step
-.goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
+    .goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
+    .isOnQuest 959
 step
-#sticky
-#label Deviate
->>Kill Deviate mobs. Loot them for their hides
-.complete 1486,1 --Deviate Hide (20)
+    #sticky
+    #label Deviate
+    >>Kill Deviate mobs. Loot them for their hides
+    .complete 1486,1 --Deviate Hide (20)
+    .isOnQuest 1486
 step
-#sticky
-#label Serpentbloom
->>Look for green and red flowers on the ground. Herbalists can track them on the minimap.
-.complete 962,1 --Serpentbloom (10)
+    #sticky
+    #label Serpentbloom
+    >>Look for green and red flowers on the ground
+    .complete 962,1 --Serpentbloom (10)
+    .isOnQuest 962
 step
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.0,55.4,20,0
-.goto Kalimdor,52.2,55.2,35,0
-.goto Kalimdor,51.8,54.8,20,0
-.goto Kalimdor,52.2,55.2
->>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
-.complete 959,1 --Collect 99-Year-Old Port (1)
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.2,55.2
+    >>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
+    .complete 959,1 --Collect 99-Year-Old Port (1)
     .unitscan Mad Magglish
+    .isOnQuest 959
 step
-.goto Kalimdor,51.9,54.9,25 >>Enter the deeper part of the cave
+    .goto Kalimdor,51.9,54.9,20 >>Enter the deeper part of the cave
+    .isOnQuest 1491
 step
     .goto Kalimdor,52.1,54.5,30,0
     .goto Kalimdor,52.3,54.6,30,0
@@ -1073,23 +1099,25 @@ step
     .goto Kalimdor,52.3,54.6,30,0
     .goto Kalimdor,52.4,55.1,30,0
     .goto Kalimdor,52.8,54.8,30,0
-    .goto Kalimdor,52.6,54.5
-.goto Kalimdor,52.6,54.5
->>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
-    .unitscan Boahn
-    .unitscan Trigore the Lasher
-.complete 1491,1 --Wailing Essence (6)
+    .goto Kalimdor,52.6,54.5,30,0
+	.goto Kalimdor,52.6,54.5
+    >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
+    .complete 1491,1 --Wailing Essence (6)
+    .isOnQuest 1491
 step
-#requires Serpentbloom
-.goto Kalimdor,52.8,55.0,3000 >> .
+    #requires Serpentbloom
+    .isOnQuest 962
 step
-#requires Deviate
->>Run back to the eye of the cave
-.goto Kalimdor,51.9,55.4
-.turnin 1486 >>Turn in Deviate Hides
+    #requires Deviate
+    >>Run back to the eye of the cave
+    .goto Kalimdor,51.9,55.4
+    .turnin 1486 >>Turn in Deviate Hides
+    .isOnQuest 1486
 step
+    >> Head back to the Kolkar outpost
     .goto The Barrens,45.4,28.4
     .turnin 850 >> Turn in Kolkar Leaders
+    .isOnQuest 850
 step
     .goto The Barrens,35.3,27.9
     .isOnQuest 1062
@@ -1120,26 +1148,23 @@ step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
 step
+#xprate <1.5
     >> Head to Sun Rock Retreat
     >> Head up the side mountain path to your left once you reach Sun Rock
     .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
     .accept 6562 >> Accept Trouble in the Deeps
     .maxlevel 24
+
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
-    .isOnQuest 6284
-step
-    .goto Stonetalon Mountains,45.1,59.8
-    .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
-    .maxlevel 23
+    .isQuestComplete 6284
 step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
-    .isOnQuest 6401
+    .isQuestComplete 6401
 step
-    #level 24
     .goto Stonetalon Mountains,45.1,59.8
     .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
 step
@@ -1147,44 +1172,54 @@ step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >>Turn in Further Instructions
 step
+#xprate <1.5
     #sticky
     #completewith next
     .goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .goto Ashenvale,42.3,71.0,20 >>Run through the cave to Ashenvale
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .goto Ashenvale,12.3,33.8
     .fp Zoram >> Get the Zoram'gar Outpost flight path
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .goto Ashenvale,11.8,34.7
     .accept 216 >> Accept Between a Rock and a Thistlefur
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     >> Talk to the trolls in the hut
     .goto Ashenvale,11.6,34.9
     .accept 6442 >> Accept Naga at the Zoram Strand
     .accept 6462 >> Accept Troll Charm
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     .isOnQuest 6562
     .goto Ashenvale,11.6,34.3
     .turnin 6562 >> Turn in Trouble in the Deeps
 step
+#xprate <1.5
     .goto Ashenvale,11.6,34.3
     .accept 6563 >> Accept The Essence of Aku'Mai
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     >>Accepting this quest starts an escort. Follow him
     .goto Ashenvale,12.1,34.4
     .accept 6641 >> Accept Vorsha the Lasher
-    .maxlevel 24
+    .maxlevel 23
 step
+#xprate <1.5
     #sticky
     #label wrathtailhead
     >>Kill the Nagas around the beach. Loot them for their heads
@@ -1192,14 +1227,17 @@ step
     .complete 6442,1 --Collect Wrathtail Head (x20)
     .isOnQuest 6442
 step
+#xprate <1.5
     >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
     .isOnQuest 6641
 step
+#xprate <1.5
     .goto Ashenvale,14.2,14.7,40 >>Drop down the hole into Blackfathom Deeps
     .isOnQuest 6442
 step
+#xprate <1.5
     #sticky
     #label Sapphires
     #completewith zoramend
@@ -1216,6 +1254,7 @@ step
     .accept 6564 >> Accept Allegiance to the Old Gods
     .isOnQuest 6442
 step
+#xprate <1.5
     #requires Sapphires
     >> Loot the Sapphires from the walls in the tunnel.
     .goto Ashenvale,13.0,13.2,30,0
@@ -1229,6 +1268,7 @@ step
     .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
     .isOnQuest 6563
 step
+#xprate <1.5
     #label zoramend
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
@@ -1236,18 +1276,22 @@ step
     .turnin 6641 >> Turn in Vorsha the Lasher
     .isOnQuest 6641
 step
+#xprate <1.5
     .goto Ashenvale,11.6,34.3
     .turnin 6563 >> Turn in The Essence of Aku'Mai
     .isOnQuest 6553
 step
+#xprate <1.5
     #sticky
     #completewith next
     .destroy 16784 >> Destroy any leftover Sapphires of Aku'Mai
 step
+#xprate <1.5
     .goto Ashenvale,11.6,34.3
     .turnin 6564 >> Turn in Allegiance to the Old Gods
     .isOnQuest 6564
 step
+#xprate <1.5
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >> Turn in Naga at the Zoram Strand
     .isOnQuest 6442
@@ -1256,16 +1300,16 @@ step << Druid
     .goto Moonglade,52.4,40.6
     .trainer 12042 >> Train spells
 step
-    #completewith next
+    #completewith eldercr
     .hs >> Hearth to Thunder Bluff
-    .zoneskip Stonetalon Mountains
+    .cooldown item,6948,>0
 step
     #completewith next
-    >> You can hearth if it is up
     .goto Stonetalon Mountains,45.1,59.8
     .fly Thunder Bluff >> Fly to Thunder Bluff 
-    .zoneskip Stonetalon Mountains,1
+    .zoneskip Thunder Bluff
 step
+    #label eldercr
     .isOnQuest 1063
     .goto Thunder Bluff,69.8,30.8
     .turnin 1063 >> Turn in The Elder Crone

@@ -1780,7 +1780,7 @@ step
     #sticky
     #completewith next
     .goto Ghostlands,37.8,20.6,40,0
-    >>Kill some Spiders for Crunchy Spider Legs
+    >>Kill some Spiders for Crunchy Spider Legs. This does not need to be finished now.
     .complete 9171,1 --Collect Crunchy Spider Leg (x5)
 step << BloodElf Rogue
     >>DON'T kill the Sentinel Leader en route
@@ -1821,7 +1821,7 @@ step
 step
     #sticky
     #completewith stopspiderlegs
-    >>Loot Spiders for Crunchy Spider Legs
+    >>Loot Spiders for Crunchy Spider Legs. This does not need to be finished now.
     .complete 9171,1 --Collect Crunchy Spider Leg (x5)
 step
     #sticky
@@ -1893,7 +1893,7 @@ step << Warlock/Mage/Priest
     .collect 28155,1 --Collect Apothecary's Waistband (1)
 step
     .goto Ghostlands,48.9,32.4
-    .vendor >> Buy Food/drink, some of the next quests are difficult.
+    .vendor >> Buy Food/drink. Some of the next quests are difficult.
 step
     >>Finish killing Vampiric Mistbats
     .goto Ghostlands,42.1,39.2,50,0
@@ -1914,19 +1914,23 @@ step
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step
-        >>Kill Fallen Rangers and Deatholme Acolytes. Keep grinding until you get The Lady's Necklace to drop. These mobs can be hard, try not to pull more than one at a time.
+    #sticky
+    #label theladynecklace
+    .goto Ghostlands,13.2,56.8,0,0
+    >>Continue grinding these mobs until you get The Lady's Necklace to drop. Accept the quest from it.
+    .use 22597 >> Click on the necklace in your bags
+    .collect 22597,1,9175 --Collect The Lady's Necklace (x1)
+    .accept 9175 >> Accept The Lady's Necklace
+step
+        >>Kill Fallen Rangers and Deatholme Acolytes. These mobs can be hard, try not to pull more than one at a time.
     .goto Ghostlands,13.2,56.8
        .collect 22597,1 --Collect The Lady's Necklace (x1)
     .complete 9173,1 --Deatholme Acolyte (8)
     .complete 9173,2 --Fallen Ranger (10)
 step
-    .goto Ghostlands,20.6,45.1
-    .use 22597 >> Click on the necklace in your bags
-    .accept 9175 >> Accept The Lady's Necklace
+    #requires theladynecklace
 step
-    #sticky
-    #coompletewith spiderz2
-    #label Legs
+    #completewith next
     >>Loot Spiders for Crunchy Spider Legs
     .complete 9171,1 --Collect Crunchy Spider Leg (x5)
 step
@@ -1943,8 +1947,19 @@ step
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step
-    #requires Legs
-    >>Kill and loot Phantasms for Substances, and Gargoyles for Fragments in the area
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,0
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,0
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,0
+    .goto Ghostlands,16.5,62.5,0
+    .goto Ghostlands,44.1,57.6,30,0
+    .goto Ghostlands,16.5,62.5,30,0    
+    >>Finish looting Spiders for Crunchy Spider Legs if you haven't gotten 5 legs by now.
+    .complete 9171,1 --Collect Crunchy Spider Leg (x5)
+step
+    >>Kill and loot Phantasms for Substances and Gargoyles for Fragments in the area.
     .goto Ghostlands,20.4,48.7,30,0
     .goto Ghostlands,19.6,45.2,30,0
     .goto Ghostlands,20.3,42.3,30,0
@@ -1956,7 +1971,7 @@ step
     .complete 9140,1 --Collect Phantasmal Substance (x6)
     .complete 9140,2 --Collect Gargoyle Fragment (x4)
 step
-    >>Loot Scrolls in the area. They can have multiple spawnpoints in the tents in the area.
+    >>Loot Scrolls in the area. They can have multiple spawnpoints in the tents.
     .goto Ghostlands,12.7,25.3
     .complete 9163,2 --Collect Night Elf Plans: An'owyn (x1)
     .goto Ghostlands,12.5,26.4

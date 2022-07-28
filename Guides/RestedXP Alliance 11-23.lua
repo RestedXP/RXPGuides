@@ -275,7 +275,7 @@ step
     .deathskip >>Die at the north side of Ameth'Aran and spirit rez at the northern graveyar
 step
 #xprate <1.5
-    .isOnquest 957
+    .isOnQuest 957
     .goto Darkshore,44.2,36.3
     .turnin 957 >> Turn in Bashal'Aran
 step
@@ -986,6 +986,7 @@ step
     .accept 9633 >> Accept The Way to Auberdine
 step << !Druid
     >>Head to the docks right next to the Night Elf you just spoke with. Level first aid while waiting.
+    .goto Azuremyst Isle,20.4,54.2
     .zone Darkshore >> Take the boat to Darkshore
 step << Druid
     #completewith next
@@ -1009,6 +1010,7 @@ RXPGuides.RegisterGuide([[
 #next 21-23 Ashenvale
 step
 #xprate <1.5
+    .maxlevel 21
     .goto Darkshore,36.1,44.9
     .accept 1138 >> Accept Fruit of the Sea
 step
@@ -1016,6 +1018,7 @@ step
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
 #xprate <1.5 << !Druid
+    .maxlevel 21
     .goto Darkshore,37.3,43.7
     .accept 947 >> Accept Cave Mushrooms
 step
@@ -1023,10 +1026,13 @@ step
     .accept 729 >> Accept The Absent Minded Prospector
 step
 #xprate <1.5
+    .maxlevel 21
+    .isQuestComplete 4762
     .goto Darkshore,37.4,40.1
     .accept 4763 >> Accept The Blackwood Corrupted
 step
 #xprate <1.5
+    .maxlevel 21
     .goto Darkshore,38.1,41.2
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step
@@ -1038,11 +1044,13 @@ step
     .collect 12347,1 --Collect Filled Cleansing Bowl (x1)
     .isOnQuest 4763
 step
+    .isOnQuest 9633
     .goto Darkshore,37.4,40.2
     .turnin 9633 >> Turn in The Way to Auberdine
     .accept 10752 >> Accept Onward to Ashenvale
 step
 #xprate <1.5
+    .maxlevel 21
     .goto Darkshore,38.8,43.5
     .accept 2139 >> Accept Tharnariun's Hope
 	.isQuestTurnedIn 2138
@@ -1053,33 +1061,40 @@ step
     .isQuestTurnedIn 985
 step
 #xprate <1.5 << !Druid
+    .maxlevel 21
     .goto Darkshore,39.1,43.5
     .accept 965 >> Accept The Tower of Althalaxx
 step
 #xprate <1.5
+    .maxlevel 21
     .goto Darkshore,38.1,41.2
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step
+    .isOnQuest 9633
     .goto Darkshore,37.4,40.2
 	.turnin 9633 >> Turn in The Way to Auberdine
     .accept 10752 >> Accept Onward to Ashenvale
 step
 #xprate <1.5
+    .isOnQuest 982
     .goto Darkshore,38.2,28.8
 	>>Enter the sunken ship through the hole on the hull and loot the chest at the bottom floor
     .complete 982,1 --Collect Silver Dawning's Lockbox (x1)
 step
 #xprate <1.5
+    .isOnQuest 982
     .goto Darkshore,39.6,27.5
 	>>Enter the sunken ship through the hole on the hull and loot the chest at the bottom floor
     .complete 982,2 --Collect Mist Veil's Lockbox (x1)
 step
 #xprate <1.5
 	#sticky
+    #completewith crabraveboys
 	>>Kill Reef Crawlers and Encrusted Tide Crawlers along the coast
     .complete 1138,1 --Collect Fine Crab Chunks (x6)
 step--murlocs
 #xprate <1.5 << !Druid
+    .maxlevel 21
     .goto Darkshore,44.2,20.7
     .accept 4725 >> Accept Beached Sea Turtle
     .isQuestTurnedIn 4681
@@ -1089,11 +1104,13 @@ step << Druid
     .collect 15883,1 --Collect Half Pendant of Aquatic Agility (x1)
 step--encrusted crawlers
 #xprate <1.5
+    .maxlevel 21
     .goto Darkshore,53.1,18.2
     .accept 4727 >> Accept Beached Sea Turtle
     .isQuestTurnedIn 4681
 step
 #xprate <1.5
+    .isOnQuest 2098
 	>>Start heading north while grinding crabs along the coast
     .goto Darkshore,56.7,13.5
     .accept 2098 >> Accept Gyromast's Retrieval
@@ -1101,11 +1118,13 @@ step
 #xprate <1.5
 	#label foreststriders
 	#sticky
+    .isOnQuest 2098
     .goto Darkshore,59.5,12.6
 	>>Kill Giant Foreststriders
     .complete 2098,1 --Collect Top of Gelkak's Key (x1)
 step
 #xprate <1.5
+    .isOnQuest 986
     .goto Darkshore,61.1,10.4
 	>>Kill Monstalker Sires/Matriarchs. Loot them for their pelts
 	>>Sires share their spawns with Bears, and Matriarchs share their spawns with Foreststriders
@@ -1115,25 +1134,35 @@ step
 #xprate <1.5
 	#requires foreststriders
 	#sticky
+    #label bottomkeyman
+    .isOnQuest 2098
     >>Kill Raging Reef Crawlers
     .complete 2098,3 --Collect Bottom of Gelkak's Key (x1)
 step
 #xprate <1.5
+    .isOnQuest 2098
     .goto Darkshore,55.4,12.6
 	>>Kill murlocs next to the sunken ship
     .complete 2098,2 --Collect Middle of Gelkak's Key (x1)
 step
 #xprate <1.5
+    #requires bottomkeyman
+    .isOnQuest 2098
     .goto Darkshore,56.7,13.5
     .turnin 2098 >> Turn in Gyromast's Retrieval
     .accept 2078 >> Accept Gyromast's Revenge
 step
+    #requires crabraveboys
+    .isOnQuest 1138
+step
 #xprate <1.5
+    .isOnQuest 2078
     .goto Darkshore,55.8,18.2
 	>>Talk to the big robot and escort him back to the quest giver and then kill it once it turns hostile
     .complete 2078,1 --Gelkak's First Mate
 step
 #xprate <1.5
+    .isOnQuest 2078
     .goto Darkshore,56.7,13.5
     .turnin 2078 >> Turn in Gyromast's Revenge
 step << !Druid
@@ -1143,16 +1172,19 @@ step << !Druid
 	+Make sure to save your water breathing potions, you will need them later to deal with a couple of underwater sections from 30-40
 step
 #xprate <1.5 << !Druid
+    .isOnQuest 965
     .goto Darkshore,55.0,24.9
     .turnin 965 >> Turn in The Tower of Althalaxx
     .accept 966 >> Accept The Tower of Althalaxx
 step
 #xprate <1.5 << !Druid
+    .isOnQuest 966
     .goto Darkshore,55.3,26.7
 	>> Kill cultists and loot them for parchment
     .complete 966,1 --Collect Worn Parchment (x4)
 step
 #xprate <1.5 << !Druid
+    .isOnQuest 966
     .goto Darkshore,55.0,24.9
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
@@ -1162,6 +1194,7 @@ step << Druid
     .complete 6122,1 --Collect Filled Cliffspring Falls Sampler (x1)
 step
 #xprate <1.5 << !Druid
+    .isOnQuest 947
     .goto Darkshore,55.3,34.0
 	>> Loot mushrooms around the cave, hug right and check the upper level for a Death cap. If you don't see one you'll need to go down below.
     .complete 947,1 --Collect Scaber Stalk (x5)
@@ -1171,6 +1204,7 @@ step
 #xprate <1.5
 	#sticky
 	#completewith next
+    .isOnQuest 4763
 	>>Loot the Grain Stores around the furbolg camp
 	.collect 12342,1
 	.goto Darkshore,50.74,34.68
@@ -1224,6 +1258,7 @@ step
     .isQuestTurnedIn 986
 step
 #xprate <1.5 << !Druid
+    .isOnQuest 947
     .goto Darkshore,37.4,43.7
     .turnin 947 >> Turn in Cave Mushrooms
     .accept 948 >> Accept Onu
@@ -1235,6 +1270,7 @@ step
     .isQuestTurnedIn 4681
 step
 #xprate <1.5
+    .isOnQuest 1138
     .goto Darkshore,36.1,44.9
     .turnin 1138 >> Turn in Fruit of the Sea
 step << Dwarf Hunter/!NightElf Rogue
@@ -1244,12 +1280,14 @@ step << NightElf Rogue
     #completewith next
     .fly Teldrassil>>Fly to Teldrassil
 step << Rogue
+    .goto Teldrassil,56.0,90.0,30,0
     .goto Darnassus,58.7,44.6
     >>Buy the level 21 weapon upgrade
     .collect 923,1
 step << Dwarf Hunter
 	#sticky
 	#completewith next
+    .goto Teldrassil,56.0,90.0,30,0
 	.goto Darnassus,63.3,66.3
 	Buy the level 20 weapon upgrade
 	.collect 3027,1
@@ -1258,8 +1296,11 @@ step << Dwarf Hunter
 	.train 264 >> Train Bows
     .train 227 >> Train Staves
 step << Rogue
+    .goto Darnassus,32.7,16.3
+    >> Head into the tree
     .trainer >> Train your level 20 spells
 step << Dwarf Hunter/!NightElf Rogue
+    .goto Darnassus,31.0,41.5,30,0
     .goto Teldrassil,58.4,94.0
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << Dwarf Hunter/Rogue
@@ -1267,32 +1308,39 @@ step << Dwarf Hunter/Rogue
     .fly Auberdine >>Fly back to Auberdine
 step
 #xprate <1.5 << !Druid
+    .isOnQuest 948
     .goto Darkshore,43.5,76.2
     .turnin 948 >> Turn in Onu
     .accept 944 >> Accept The Master's Glaive
 step
+    .isOnQuest 4740
    >>Clear the camp, but be careful as going next to the campfire will start an event spawning 3 waves of mobs. Be sure to run away from the campfire so you don't keep aggroing them and can eat/drink after each wave. Murkdeep nets so be careful
 	.goto Darkshore,36.6,76.6
     .complete 4740,1 --Kill Murkdeep (x1)
 step
+    .isOnQuest 729
     .goto Darkshore,35.7,83.7
     .turnin 729 >> Turn in The Absent Minded Prospector
     >>Start the escort quest
     .accept 731,1 >> Accept The Absent Minded Prospector
 step
+    .isOnQuest 731
     .complete 731,1 --Escort Prospector Remtravel
 step
 #xprate <1.5 << !Druid
+    .isOnQuest 944
     .goto Darkshore,39.0,86.4
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
 step
 #xprate <1.5 << !Druid
+    .isOnQuest 944
     .goto Darkshore,39.0,86.4
     >>Use the scrying bowl in your bags and right click it
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
 step
+    .isOnQuest 944
     .goto Darkshore,38.7,87.3
 	>>Talk to the dryad at the back of the camp. If she's not here someone else may be escorting here, skip this step if she's not around.
     .accept 945 >> Accept Therylune's Escape
@@ -1303,6 +1351,7 @@ step
     .isOnQuest 945
 step
 #xprate <1.5 << !Druid
+    .maxlevel 21
     .goto Darkshore,38.6,86.1
     >>Click on the tome on top of the pedestal
     .turnin 949 >> Turn in The Twilight Camp
@@ -1337,6 +1386,7 @@ step
     .isOnQuest 967
 step
 #xprate <1.5
+    .isQuestTurnedIn 967
     .goto Ashenvale,26.2,38.6
     .accept 970 >> Accept The Tower of Althalaxx
 step
@@ -1348,6 +1398,7 @@ step
     .complete 1010,1 --Collect Bathran's Hair (x5)
 step
 #xprate <1.5
+    .isOnQuest 970
     .goto Ashenvale,31.4,31.0
 	>> The drop rate is very very low, just keep killing mobs.
     .complete 970,1 --Collect Glowing Soul Gem (x1)
@@ -1357,6 +1408,7 @@ step
     .accept 1020 >> Accept Orendil's Cure
 step
 #xprate <1.5
+    .isOnQuest 970
     .goto Ashenvale,26.2,38.6
     .turnin 970 >> Turn in The Tower of Althalaxx
     .accept 973 >> Accept The Tower of Althalaxx
@@ -1372,16 +1424,17 @@ step
     .turnin 10752 >> Turn in Onward to Ashenvale
     .accept 991 >> Accept Raene's Cleansing
 step
+    .goto Ashenvale,37.0,49.3
     .home >> Set your Hearthstone to Astranaar
 step
-    #timer Orendil's Cure RP
+    #timer Orendil's Cure roleplay
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
-    .timer 26,Orendil's Cure RP
+    .timer 26,Orendil's Cure roleplay
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
-	>> CLick on the small blue seed on the ground.
+	>> Click on the small blue seed on the ground.
     .complete 1033,1 --Collect Elune's Tear (x1)
 step
     .goto Ashenvale,37.8,34.7
@@ -1392,8 +1445,10 @@ step
     .goto Ashenvale,36.6,49.6
     .turnin 1054 >> Turn in Culling the Threat
 step
+    #timer Elune's tear roleplay
     .goto Ashenvale,37.3,51.8
     .turnin 1033 >> Turn in Elune's Tear
+    .timer 10,Elune's tear roleplay
     .accept 1034 >> Accept The Ruins of Stardust
 step
     .goto Ashenvale,33.3,67.4
@@ -1401,6 +1456,7 @@ step
     .complete 1034,1 --Collect Handful of Stardust (x5)
 step
 #xprate <1.5
+    .isOnQuest 973
     .goto Ashenvale,25.3,60.8
 	>> Kill Ilkrud and loot him for his tome, you can stun him to stop him from summoning help.
     .complete 973,1 --Collect Ilkrud Magthrull's Tome (x1)
@@ -1410,10 +1466,12 @@ step
     .isQuestComplete 945
 step
 #xprate <1.5
+    .isOnQuest 973
     .goto Ashenvale,26.2,38.7
     .turnin 973 >> Turn in The Tower of Althalaxx
 step <<  Hunter/NightElf/Rogue/wotlk
     .goto Ashenvale,20.3,42.4
+    >> Head to Zoram Strand
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
 step << Hunter/NightElf/Rogue/wotlk
@@ -1427,11 +1485,11 @@ step
     #label nagas
     #sticky
     .goto Ashenvale,13.8,29.1,0,0
-	>>Kill nagas around the coast
+	>>Kill nagas around the coast, loot them for their heads
     .complete 1008,1 --Collect Wrathtail Head (x20)
 step
     .goto Ashenvale,14.2,20.6
-	>> Kill naga en route but don't go out of your way for them.
+	>> Head to the Ancient Statuette and loot it off the ground. Kill naga en route but don't go out of your way for them, you have plenty of chances for heads.
     .complete 1007,1 --Collect Ancient Statuette (x1)
 step
     .goto Ashenvale,14.8,31.3
@@ -1454,6 +1512,7 @@ step << Druid
     .goto Moonglade,52.4,40.6
     .trainer >> Train your spells
 step << Hunter/NightElf/Rogue/wotlk
+    .goto Ashenvale,36.6,49.6
     .hs >> Hearth to Astranaar
 step << !Hunter !NightElf !Rogue tbc
     .goto Ashenvale,20.3,42.4
@@ -1612,6 +1671,7 @@ step
     .turnin 10752 >> Turn in Onward to Ashenvale
     .accept 991 >> Accept Raene's Cleansing
 step
+    .goto Ashenvale,37.0,49.3
     .home >> Set your Hearthstone to Astranaar
 step
     #timer Orendil's Cure RP
@@ -1624,13 +1684,16 @@ step
 	>> Loot the tiny blue seed on the ground
     .complete 1033,1 --Collect Elune's Tear (x1)
 step
+    #timer Elune's tear roleplay
     .goto Ashenvale,37.3,51.8
     .turnin 1033 >> Turn in Elune's Tear
+    .timer 10,Elune's tear roleplay
     .accept 1034 >> Accept The Ruins of Stardust
 step
     .goto Ashenvale,33.3,67.4
     .complete 1034,1 --Collect Handful of Stardust (x5)
 step
+    .isOnQuest 945
     .goto Ashenvale,22.7,51.9
     .turnin 945 >> Turn in Therylune's Escape
 step
