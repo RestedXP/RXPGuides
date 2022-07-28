@@ -1804,19 +1804,26 @@ step << Hunter/Warlock
 step
     #sticky
     #label Washte
-    #completewith next
+    #completewith wpscout1
     >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
     .unitscan Washte Pawne
 step
-    .isOnQuest 846
+    #label wpscout1
+    .isQuestComplete 846
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
     >> Find Gann on the road again
     .turnin 846 >> Turn in Revenge of Gann
+step
+    .isQuestTurnedIn 846
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
     .accept 849 >> Accept Revenge of Gann
 step << Hunter/Warlock
     .goto The Barrens,48.9,86.3
@@ -1830,12 +1837,13 @@ step
 step
     #sticky
     #label Washte
-    #completewith next
+    #completewith wpscout2
     >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
     .unitscan Washte Pawne
 step
+    #label wpscout2
     .isOnQuest 849
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
