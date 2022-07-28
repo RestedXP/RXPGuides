@@ -813,25 +813,31 @@ step
 step
     .goto Elwynn Forest,34.7,84.5
     .turnin 88 >> Turn in Princess Must Die!
-step << Warlock
+step << Warlock/Mage wotlk
+#xprate >1.3 << Mage
     >>Click any of the wanted posters around
     .goto Elwynn Forest,24.6,74.7
     .accept 176 >> Accept Wanted:   "Hogger"
 step
     .goto Elwynn Forest,24.2,74.5
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
+step << Warlock/Mage wotlk
+#xprate >1.3 << Mage
+    .goto Elwynn Forest,24.2,74.5
     .accept 11 >> Accept Riverpaw Gnoll Bounty << Warlock
 step << Warrior
     .money >0.2099
     >>Grind a bit until you have 20s 99c+ of vendorables/money
     >>This is for thrown, 2h mace, 2h sword training, and flying to Stormwind
     .goto Elwynn Forest,27.6,93.0
-step << Warlock
+step << Warlock/Mage wotlk
+#xprate >1.3 << Mage
     #completewith Armbands
     >>Keep an eye out for the gold pickup schedule (lucky drop), or a 100% Drop from Gruff Swiftbite (rare). Extra 210xp
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >> Accept The Collector
-step << Warlock
+step << Warlock/Mage wotlk
+#xprate >1.3 << Mage
     #label Hogger
     .unitscan Hogger
     .goto Elwynn Forest,27.0,86.7,80,0
@@ -865,10 +871,21 @@ step << Rogue
     >> Kill Gnolls. Loot them for Armbands
     .complete 11,1 --Collect Painted Gnoll Armband (x8)
     .isOnQuest 11
-step << Warlock/Rogue
+step << Warlock/Rogue/Mage wotlk
+#xprate >1.3 << Mage
     .goto Elwynn Forest,24.2,74.5
     .turnin 11 >> Turn in Riverpaw Gnoll Bounty
     .isOnQuest 11
+step << Mage wotlk
+#xprate >1.3
+    #completewith next
+    .deathskip >> Die and respawn at Goldshire
+step << Mage wotlk
+#xprate >1.3
+    .goto Elwynn Forest,42.1,65.9
+    >>Choose the Staff. Equip it
+    .turnin 176 >> Turn in Wanted:    "Hogger"
+    .isQuestComplete 176
 step << Rogue
     .abandon 123 >>Abandon The Collector
 step
@@ -882,23 +899,56 @@ step
     .goto Westfall,56.4,30.5
     .turnin 36 >> Turn in Westfall Stew
 step
-    #softcore
     #completewith next
     .goto Westfall,51.7,49.4,150 >> Die and respawn at the Spirit Healer, or run to Sentinel Hill
+step << Warlock wotlk
+#xprate >1.3
+    .goto Westfall,52.8,53.6
+    .home >> Set your Hearthstone to Sentinel Hill
+step << Mage wotlk/Warlock wotlk
+#xprate >1.3
+    .goto Westfall,54.00,53.00
+    .accept 153 >> Accept Red Leather Bandanas
 step
     .goto Westfall,56.3,47.5
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
+step << Mage wotlk/Warlock wotlk
+#xprate >1.3
+    .goto Westfall,56.3,47.5
+    .accept 12 >> Accept The People's Militia
 step << Human
     .goto Westfall,57.0,47.2
     .vendor >>vendor trash
     .accept 6181 >> Accept A Swift Message
-step << Rogue
+step << Mage wotlk
+#xprate >1.3
+    >> Kill the Defias. Loot them for their bandanas
+   .goto Westfall,48.21,46.70,60,0
+   .goto Westfall,46.74,52.87,60,0
+   .goto Westfall,48.21,46.70,-1
+   .goto Westfall,46.74,52.87,-1
+   .complete 12,1
+   .complete 12,2
+   .complete 153,1
+
+step << Mage wotlk
+#xprate >1.3
+    .goto Westfall,54.00,52.90
+    .turnin 153 >> Turn in Red Leather Bandanas
+step << Mage wotlk
+#xprate >1.3
+    .goto Westfall,56.30,47.50
+    .turnin 12 >> Turn in The People's Militia
+step << Rogue tbc
     .money >0.3152
     +Grind until you have 31s 52c of vendorables/money
-step
+step << Human
     .goto Westfall,56.6,52.6
-    .turnin 6181 >> Turn in A Swift Message << Human
-    .accept 6281 >> Accept Continue To Stormwind << Human
+    .turnin 6181 >> Turn in A Swift Message
+    .accept 6281 >> Accept Continue To Stormwind
+step << Mage wotlk
+#xprate >1.3
+    .xp 12 >> Grind to level 12
 step
     .goto Westfall,56.6,52.6
     .fly Stormwind >> Fly to Stormwind
@@ -929,6 +979,11 @@ step << Rogue
 step << Paladin
     .goto StormwindClassic,57.1,57.7
     .trainer >>Train 2h Swords
+step << Warlock wotlk
+#xprate >1.3
+    .goto StormwindClassic,74.3,47.2
+    .turnin 6281 >> Turn in Continue to Stormwind
+    .accept 6261 >> Accept Dungar Longdrink
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -939,7 +994,7 @@ step << Warlock
     .accept 1688 >> Accept Surena Caledon
 step << Warlock
     #softcore
-    .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to you
+    .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to the Warlock trainers
 step << Warlock
     .goto Elwynn Forest,42.1,65.9
     .zone Elwynn Forest >> Run back out of Stormwind to Elwynn
@@ -963,6 +1018,9 @@ step << Warlock
 step << Warlock
     .goto Elwynn Forest,79.5,68.8
     .turnin 59 >> Turn in Cloth and Leather Armor
+step << Warlock wotlk
+#xprate >1.3
+    .xp 12
 step << Warlock
     #sticky
     #completewith next
@@ -976,10 +1034,38 @@ step << Warlock
     >>Be careful of the mobs en route
     .goto Redridge Mountains,30.7,60.0
     .turnin 244 >> Turn in Encroaching Gnolls
+step << Warlock wotlk
+#xprate >1.3
+    .goto Redridge Mountains,29.30,53.60
+    .accept 3741 >> Accept Hilary's Necklace
+step << Warlock wotlk
+#xprate >1.3
+    >>Look for Hilary's Necklace underwater. It's in a brown patch of dirt
+    .goto Redridge Mountains,27.80,56.05,0
+    .goto Redridge Mountains,26.56,50.63,0
+    .goto Redridge Mountains,23.96,55.17,0
+    .goto Redridge Mountains,19.16,51.75,0
+    .goto Redridge Mountains,31.12,54.21,0
+    .goto Redridge Mountains,34.03,55.34,0
+    .goto Redridge Mountains,38.09,54.49,0
+    .goto Redridge Mountains,19.16,51.75,70,0
+    .goto Redridge Mountains,38.09,54.49,70,0
+    .complete 3741,1 --Hilary's Necklace (1)
+step << Warlock wotlk
+#xprate >1.3
+    .goto Redridge Mountains,29.20,53.60
+    .turnin 3741 >> Turn in Hilary's Necklace
 step << Warlock
     .goto Redridge Mountains,30.6,59.4
-    .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
+step << Warlock wotlk
+    .goto StormwindClassic,66.3,62.1
+    .turnin -6261 >> Turn in Dungar Longdrink
+step << Warlock wotlk
+#xprate >1.3
+    .goto StormwindClassic,66.3,62.1
+    .accept 6262 >> Accept Return to Lewis
+    .isQuestTurnedIn 6261
 step << Warlock
     #sticky
     #completewith next
@@ -1065,18 +1151,59 @@ step << tbc/Warlock wotlk
 step << Warlock wotlk
 #xprate >1.3
     .hs >> Hearth to Sentinel Hill
-
-
+step << Warlock wotlk
+#xprate >1.3
+    >> Kill the Defias. Loot them for their bandanas
+    .goto Westfall,48.21,46.70,60,0
+    .goto Westfall,46.74,52.87,60,0
+    .goto Westfall,48.21,46.70,-1
+    .goto Westfall,46.74,52.87,-1
+    .complete 12,1
+    .complete 12,2
+    .complete 153,1
+step << Warlock wotlk
+#xprate >1.3
+    .goto Westfall,54.00,52.90
+    .turnin 153 >> Turn in Red Leather Bandanas
+step << Warlock wotlk
+#xprate >1.3
+    .goto Westfall,56.30,47.50
+    .turnin 12 >> Turn in The People's Militia
+step << Warlock wotlk
+#xprate >1.3
+    .xp 14 >> Grind to level 14
+step << Warlock wotlk
+#xprate >1.3
+    .goto Westfall,56.6,52.6
+    .fly Stormwind >> Fly to Stormwind
+step << Warlock wotlk
+#xprate >1.3
+    #completewith next
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+step << Warlock wotlk
+#xprate >1.3
+    .train 6222 >> Train Corruption rank 2 and drain life from the warlock trainer
+step << Warlock wotlk
+#xprate >1.3
+    >>Go in the building. Buy a Smoldering Wand if you have the money for it
+    .goto StormwindClassic,42.65,67.16,14,0
+    .goto StormwindClassic,42.84,65.14
+    .collect 5208,1 --Smoldering Wand (1)
+    .money >0.3174
 step << wotlk
+#xprate >1.3 << Warlock
     .goto StormwindNew,21.8,56.2
     .zone Darkshore >> Take the boat to Darkshore
     .zoneskip Darnassus
     .zoneskip Teldrassil
     .zoneskip Darkshore
-step << tbc
+step << tbc/Warlock
+#xprate <1.5 << Warlock wotlk
     .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
-step << tbc
+step << tbc/Warlock
+#xprate <1.5 << Warlock wotlk
     .goto Ironforge,55.5,47.7
     .fp Ironforge >> Get the Ironforge flight path
 step << Warlock tbc
@@ -1086,7 +1213,8 @@ step << Warlock tbc
 step << Warrior tbc
     .goto Ironforge,61.2,89.5
     .trainer >>Train 2h Maces
-step << tbc
+step << tbc/Warlock
+#xprate <1.5 << Warlock wotlk
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
 
@@ -1134,9 +1262,10 @@ step << tbc
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Alliance
+<< Alliance tbc/Alliance Warlock
 #name 11-12 Loch Modan << !Warlock
 #name 12-14 Loch Modan << Warlock
+#xprate <1.5 << Warlock wotlk
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
@@ -1434,20 +1563,39 @@ step << Warlock
     .xp 14 >> Grind to 14
 step << Warlock
     #label HearthIF
-    .goto Ironforge,18.1,51.4,100 >> Hearth to Ironforge
-    .vendor >> vendor trash
-step << Warlock
+    .zone Ironforge >> Hearth to Ironforge << tbc
+    .hs >> Hearth to Stormwind << wotlk
+
+step << Warlock wotlk
+    #completewith next
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+step << Warlock wotlk
+    .train 6222 >> Train Corruption rank 2 and drain life from the warlock trainer
+step << Warlock wotlk
+    >>Go in the building. Buy a Smoldering Wand if you have the money for it
+    .goto StormwindClassic,42.65,67.16,14,0
+    .goto StormwindClassic,42.84,65.14
+    .collect 5208,1 --Smoldering Wand (1)
+    .money >0.3174
+step << wotlk
+    .goto StormwindNew,21.8,56.2
+    .zone Darkshore >> Take the boat to Darkshore
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+    .zoneskip Darkshore
+step << Warlock tbc
     #label Wand1
     #completewith Wand2
     .goto Ironforge,25.8,75.2,0 >> Alternatively, buy a Greater Magic Wand from the AH if it costs <30s 6c
     .collect 11288,1 --Collect Greater Magic Wand
-step << Warlock
+step << Warlock tbc
     #label Wand2
     #completewith Wand1
     .goto Ironforge,24.0,16.7,20,0
     .goto Ironforge,22.6,16.5
     .vendor >>Go in the building, then downstairs. Buy a Smoldering Wand
-step << Warlock
+step << Warlock tbc
     #requires Wand2
     .goto Ironforge,51.1,8.7,15,0 >> Enter the building
     .goto Ironforge,50.4,6.3
@@ -1463,13 +1611,13 @@ step << !Warlock
     .goto Ironforge,27.17,8.57 << Mage
     .goto Ironforge,24.55,4.46 << Paladin
      .trainer >> Train your class spells
-step
+step << tbc
     .goto Dun Morogh,53.5,34.9,60 >>Exit Ironforge
-step
+step << tbc
     #hardcore
     #completewith next
     .goto Dun Morogh,59.43,42.85,150 >> Travel to the skip spot
-step
+step << tbc
     #hardcore
     .goto Dun Morogh,59.5,42.8,40,0
     .goto Dun Morogh,60.4,44.1,40,0
@@ -1494,22 +1642,22 @@ step
     >>Avoid the Crocodiles when crossing the sea
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for reference
     .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
-step
+step << tbc
     #softcore
     .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
-step
+step << tbc
     #softcore
     .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
-step
+step << tbc
     #softcore
     .goto Dun Morogh,33.0,27.2,15,0
     .goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
     .deathskip >>Keep running straight north, drop down and die, then respawn at the Spirit Healer.
-step
+step << tbc
     #softcore
     .goto Wetlands,12.7,46.7,30 >> Swim to shore
-step
+step << tbc
     .money <0.076
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
@@ -1517,14 +1665,14 @@ step
     .goto Wetlands,10.7,56.8
     .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
     .bronzetube
-step
+step << tbc
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
-step
+step << tbc
     .money <0.0385
     .goto Wetlands,8.1,56.3
     .vendor >> Check Dewin for Heal Potions, buy down to 1s
-step
+step << tbc
     .goto Wetlands,4.7,57.3
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore.
     >> Use this time to level your first aid or make weapon stones. << Warrior/Rogue/Paladin
