@@ -1290,9 +1290,8 @@ step << Shaman
 	.goto The Barrens,44.5,59.1
 	.fly Orgrimmar >>Fly to Orgrimmar
 step
-    #sticky
-    #completewith next
-    +Buy food behind you if you need to. You're now going to do a lot of running
+    .goto Orgrimmar,54.2,68.4
+    .vendor >>Talk to Innkeeper Gryshka and buy some food/water if needed. You're going to do a lot of running shortly.
 step << Paladin
     #completewith next
     .goto Orgrimmar,32.4,35.8
@@ -1858,7 +1857,7 @@ step
 step
     #sticky
     #completewith next
-    >>Keep an eye out for the Galak Messenger. If you see it, kill him, loot the Note, and accept the quest. You can look for him later too if you can't find him.
+    .use 12564 >>Keep an eye out for the Galak Messenger. If you see it, kill him, loot the Note, and accept the quest. You can look for him later too if you can't find him.
     .collect 12564,1,4881 --Collect Assassination Note
     .accept 4881 >>Accept Assassination Plot
     .unitscan Galak Messenger
@@ -2014,7 +2013,7 @@ step
 step
 #sticky
 #completewith messenger
->>Find the Galak Messenger that patrols the zone. Kill him and loot his note.
+.use 12564 >>Find the Galak Messenger that patrols the zone. Kill him and loot his note.
     .collect 12564,1,4881 --Collect Assassination Note (x1)
 .accept 4881 >> Accept Assassination Plot
 step
@@ -2048,7 +2047,7 @@ step
     .turnin 9433 >> Turn in A Dip in the Moonwell
     .accept 9434 >> Accept Testing the Tonic
 step
->>Search for the Galak Messenger. He starts at a camp, goes on the road, then goes to the other camp
+.use 12564 >>Search for the Galak Messenger. He starts at a camp, goes on the road, then goes to the other camp
     .goto Thousand Needles,18.4,22.2,40,0
     .goto Thousand Needles,25.2,33.8,40,0
     .goto Thousand Needles,36.0,29.0,40,0
@@ -2427,14 +2426,23 @@ step
     .unitscan Roh'Alim the Pounder
     .complete 1151,1 --Collect Fragments of Rok'Alim (x1)
 step
+    .isOnQuest 4881
 	>>Escort will start when you accept next part of the quest.
 	.goto Thousand Needles,21.3,32.0
 	.turnin 4881 >> Turn in Assassination Plot
+step
+    .isQuestTurnedIn 4881
+	>>Escort will start when you accept next part of the quest.
+	.goto Thousand Needles,21.3,32.0    
 	.accept 4966 >> Accept Protect Kanati Greycloud
 step
+    .isOnQuest 4966
 	>>3 mobs will spawn. Let Kanati get aggro, then simply kill them
 	.goto Thousand Needles,21.4,31.8
     .complete 4966,1 --Protect Kanati Greycloud
+step
+    .isQuestComplete 4966
+	.goto Thousand Needles,21.4,31.8    
     .turnin 4966 >> Turn in Protect Kanati Greycloud
 step
 	.goto Thousand Needles,31.2,36.9,30 >>Run up the path here
