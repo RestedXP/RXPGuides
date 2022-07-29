@@ -2682,6 +2682,7 @@ step
 step
 	#completewith next
     .hs >> Hearth to Freewind Post
+    .cooldown item,6948,>0
 step
     #completewith next
     .goto Thousand Needles,45.1,49.2
