@@ -1089,7 +1089,7 @@ step << Warlock
 step << Human
     .goto StormwindClassic,74.3,47.2
     .turnin 6281 >> Turn in Continue to Stormwind
-    .accept 6261 >> Accept Dungar Longdrink
+    --.accept 6261 >> Accept Dungar Longdrink
 step << Warrior
     .goto StormwindClassic,74.3,37.3
     #completewith next

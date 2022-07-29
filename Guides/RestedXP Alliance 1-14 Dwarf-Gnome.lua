@@ -838,7 +838,7 @@ step
     .goto Dun Morogh,23.0,52.2
     .complete 287,2 --Fully explore Frostmane Hold
 step
-    .xp 9 >> Grind to 9
+    .xp 9 >> Grind to level 9
 step
 .deathskip >> Die and respawn at the Spirit Healer
 step
@@ -887,9 +887,6 @@ step
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
 step
-    .goto Dun Morogh,68.9,55.9
-    .vendor >> vendor trash, repair
-step
     .goto Dun Morogh,69.1,56.3
     .accept 432 >> Accept Those Blasted Troggs!
 step
@@ -908,9 +905,6 @@ step
     .goto Dun Morogh,69.1,56.3
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
-    .goto Dun Morogh,68.9,55.9
-    .vendor >> vendor trash, repair
-step
     .goto Dun Morogh,68.7,56.0
     .turnin 433 >> Turn in The Public Servant
 step
@@ -918,7 +912,7 @@ step
 .goto Dun Morogh,70.7,58.2,40,0
 .goto Dun Morogh,71.0,53.9,40,0
 .xp 10 >> Grind to 10 at the troggs
-step << Paladin/Mage/Priest/Shaman/Druid/Hunter
+step << !Warrior !Rogue
     .goto Dun Morogh,68.4,54.5
     .vendor >> Buy x10 level 5 food and drink
 step << Warrior/Rogue
@@ -978,72 +972,73 @@ step
     .accept 414 >> Accept Stout to Kadrell
 step
 .goto Dun Morogh,86.2,51.3,20 >>Go through the tunnel
-step << !Rogue
-#xprate <1.5
+step << Mage/Rogue
     .goto Loch Modan,22.1,73.1
     .accept 224 >> Accept In Defense of the King's Lands
-step << !Rogue
-#xprate <1.5
+step << Mage/Rogue
     .goto Loch Modan,22.6,75.4,30,0
 .goto Loch Modan,23.2,73.7
     >>Go into the bunker
     .accept 267 >> Accept The Trogg Threat
-step << !Rogue
-#xprate <1.5
+step << Mage/Rogue
     .goto Loch Modan,30.0,68.4,30,0
-.goto Loch Modan,30.0,72.4,50,0
+    .goto Loch Modan,30.0,72.4,50,0
     .goto Loch Modan,34.7,71.6,50,0
     .goto Loch Modan,30.9,81.1,50,0
-.goto Loch Modan,30.0,72.4,50,0
+    .goto Loch Modan,30.0,72.4,50,0
     .goto Loch Modan,34.7,71.6,50,0
     .goto Loch Modan,30.9,81.1,50,0
-.goto Loch Modan,30.0,72.4,50,0
+    .goto Loch Modan,30.0,72.4,50,0
     .goto Loch Modan,34.7,71.6,50,0
     .goto Loch Modan,30.9,81.1,50,0
     >>Kill Stonesplinter Troggs. Loot them for their Teeth
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
-step << !Rogue
-#xprate <1.5
+step << Mage/Rogue
     .goto Loch Modan,29.9,68.2,30,0
-.goto Loch Modan,22.2,73.3
-#xprate <1.5
+    .goto Loch Modan,22.2,73.3
     .turnin 224 >> Turn in In Defense of the King's Lands
-step << !Rogue
-#xprate <1.5
+step << Mage/Rogue
     .goto Loch Modan,23.2,73.7
     .turnin 267 >> Turn in The Trogg Threat
 step
-.goto Loch Modan,35.3,46.9,150 >>Run to Thelsamar
+    #completewith next
+    .goto Loch Modan,35.3,46.9,150 >>Run to Thelsamar
 step << Mage
     .goto Loch Modan,35.5,48.4
     .vendor >> Buy 40 level 5 milk
 step << Mage
+#xprate <1.5
     .goto Loch Modan,34.8,49.3
     .accept 418 >> Accept Thelsamar Blood Sausages
-step << Mage
-    .goto Loch Modan,34.8,48.6
-    .vendor >> Buy max 3 6 slot bags
-step << Rogue
+step << Rogue tbc
     .goto Loch Modan,35.5,48.4
     .home >> Set your Hearthstone to Thelsamar
 step << Paladin/Warrior/Priest
-.goto Loch Modan,32.6,49.9,40,0
-.goto Loch Modan,37.2,46.1,40,0
-.goto Loch Modan,36.7,41.6,40,0
-.goto Loch Modan,32.6,49.9,40,0
-.goto Loch Modan,37.2,46.1,40,0
-.goto Loch Modan,36.7,41.6,40,0
+
+step << Mage
+    .goto Loch Modan,34.8,48.6
+    .vendor >> Buy max 3 6 slot bags
+step << !Mage/wotlk
+#xprate >1.499 << Mage
+    .goto Loch Modan,32.6,49.9,40,0
+    .goto Loch Modan,37.2,46.1,40,0
+    .goto Loch Modan,36.7,41.6,40,0
+    .goto Loch Modan,32.6,49.9,40,0
+    .goto Loch Modan,37.2,46.1,40,0
+    .goto Loch Modan,36.7,41.6,40,0
     >>Find Kadrell, he patrols along the main road
     .turnin 414 >> Turn in Stout to Kadrell
+    .accept 1339 >> Accept Mountaineer Stormpike's Task << wotlk/Rogue
 step << Mage
-.goto Loch Modan,32.6,49.9,40,0
-.goto Loch Modan,37.2,46.1,40,0
-.goto Loch Modan,36.7,41.6,40,0
-.goto Loch Modan,32.6,49.9,40,0
-.goto Loch Modan,37.2,46.1,40,0
-.goto Loch Modan,36.7,41.6,40,0
+#xprate <1.5
+    .goto Loch Modan,32.6,49.9,40,0
+    .goto Loch Modan,37.2,46.1,40,0
+    .goto Loch Modan,36.7,41.6,40,0
+    .goto Loch Modan,32.6,49.9,40,0
+    .goto Loch Modan,37.2,46.1,40,0
+    .goto Loch Modan,36.7,41.6,40,0
     >>Find Kadrell, he patrols along the main road
     .turnin 414 >> Turn in Stout to Kadrell
     .accept 416 >> Accept Rat Catching
@@ -1055,41 +1050,51 @@ step << Gnome/Dwarf
 .goto Loch Modan,37.0,47.8
     .accept 6387 >> Accept Honor Students
 step << Mage
-#sticky
-#completewith ThelsamarFood
->>Kill Spiders. Loot them for Spider Ichor
-.complete 418,3 --Collect Spider Ichor (x3)
-step << Mage
+#xprate <1.5
     #sticky
     #completewith ThelsamarFood
->>Kill Bears. Loot them for Bear Meat
-.complete 418,2 --Collect Bear Meat (x3)
+    >>Kill Spiders. Loot them for Spider Ichor
+    .complete 418,3 --Collect Spider Ichor (x3)
 step << Mage
+#xprate <1.5
     #sticky
     #completewith ThelsamarFood
->>Kill Boars. Kill them for Boar Intestines
-.complete 418,1 --Collect Boar Intestines (x3)
+    >>Kill Bears. Loot them for Bear Meat
+    .complete 418,2 --Collect Bear Meat (x3)
 step << Mage
-#label ThelsamarFood
-.goto Loch Modan,23.3,17.9,30 >>Run to the north bunker. Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
+#xprate <1.5
+    #sticky
+    #completewith ThelsamarFood
+    >>Kill Boars. Kill them for Boar Intestines
+    .complete 418,1 --Collect Boar Intestines (x3)
+step << Mage
+#xprate <1.5
+    #label ThelsamarFood
+    .goto Loch Modan,23.3,17.9,30 >>Run to the north bunker. Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
 step << Rogue
+#xprate <1.5
 .goto Loch Modan,23.3,17.9,30 >>Run to the north bunker
 step << Rogue/Mage
     .goto Loch Modan,24.1,18.2
     .vendor >> vendor trash, repair
 step << Mage
+#xprate <1.5
     >>Upstairs
-.goto Loch Modan,24.7,18.3
+    .goto Loch Modan,24.7,18.3
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 307 >> Accept Filthy Paws
-step << Rogue
+step << Rogue/wotlk
+#xprate >1.499 << Mage
     >>Upstairs
-.goto Loch Modan,24.7,18.3
+    .goto Loch Modan,24.7,18.3
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order
 step << Mage
-.goto Loch Modan,35.5,18.2,30 >>Go to the entrance of the cave whilst killing rats
+#xprate <1.5
+    #completewith next
+    .goto Loch Modan,35.5,18.2,40 >>Go to the entrance of the cave whilst killing rats
 step << Mage
+#xprate <1.5
 .goto Loch Modan,35.5,19.9,12,0
 .goto Loch Modan,36.4,20.7,12,0
 .goto Loch Modan,35.3,22.0,12,0
@@ -1106,45 +1111,43 @@ step << Mage
     >>Collect the crates you find in the cave. Be careful because this is difficult at level 11, and the geomancers flame ward (Fire immunity)
     .complete 307,1 --Collect Miners' Gear (x4)
 step << Mage
-.goto Loch Modan,35.5,18.2,30 >>Go back out the cave
-step << Mage
-    #sticky
-    #completewith Kobolds
-    .goto Loch Modan,42.9,9.9
-    .vendor >> Vendor, repair if needed (optional)
-step << Mage
+#xprate <1.5
     #label Kobolds
     >> Kill Kobolds. Loot them for their Ears
-.complete 416,1 --Collect Tunnel Rat Ear (x12)
+    .complete 416,1 --Collect Tunnel Rat Ear (x12)
 step << Mage
-#sticky
-#completewith Thelsamar3
->>Kill Spiders in the zone for Thelsamar Blood Sausages
-.complete 418,3 --Collect Spider Ichor (x3)
-step << Mage
+#xprate <1.5
     #sticky
     #completewith Thelsamar3
->>Kill Bears in the zone for Thelsamar Blood Sausages
-.complete 418,2 --Collect Bear Meat (x3)
+    >>Kill Spiders in the zone for Thelsamar Blood Sausages
+    .complete 418,3 --Collect Spider Ichor (x3)
 step << Mage
+#xprate <1.5
     #sticky
     #completewith Thelsamar3
->>Kill Boars in the zone for Thelsamar Blood Sausages
-.complete 418,1 --Collect Boar Intestines (x3)
+    >>Kill Bears in the zone for Thelsamar Blood Sausages
+    .complete 418,2 --Collect Bear Meat (x3)
 step << Mage
+#xprate <1.5
+    #sticky
+    #completewith Thelsamar3
+    >>Kill Boars in the zone for Thelsamar Blood Sausages
+    .complete 418,1 --Collect Boar Intestines (x3)
+step << Mage
+#xprate <1.5
     #label Thelsamar3
-.goto Loch Modan,23.3,17.9,30 >>Run back to the bunker, grinding en route
+    .goto Loch Modan,23.3,17.9,40 >>Run back to the bunker, grinding en route
 step << Mage
-    .goto Loch Modan,24.1,18.2
-    .vendor >>vendor and repair
-step << Mage
+#xprate <1.5
     .goto Loch Modan,24.7,18.3
     .turnin 307 >> Turn in Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .accept 1338 >> Accept Stormpike's Order << wotlk
 step << Mage
+#xprate <1.5
     #sticky
-#label Meat9
-.goto Loch Modan,26.9,10.7,40,0
+    #label Meat9
+    .goto Loch Modan,26.9,10.7,40,0
     .goto Loch Modan,30.9,10.6,40,0
     .goto Loch Modan,28.6,15.4,40,0
     .goto Loch Modan,30.5,26.6,40,0
@@ -1160,9 +1163,10 @@ step << Mage
     >>Kill Bears. Loot them for Meat
     .complete 418,2 --Collect Bear Meat (x3)
 step << Mage
+#xprate <1.5
     #sticky
-#label Ichor9
-.goto Loch Modan,31.9,16.4,40,0
+    #label Ichor9
+    .goto Loch Modan,31.9,16.4,40,0
     .goto Loch Modan,28.0,20.6,40,0
     .goto Loch Modan,33.8,40.5,40,0
     .goto Loch Modan,36.2,30.9,40,0
@@ -1172,12 +1176,13 @@ step << Mage
     .goto Loch Modan,33.8,40.5,40,0
     .goto Loch Modan,36.2,30.9,40,0
     .goto Loch Modan,39.0,32.1,40,0
-.goto Loch Modan,31.9,16.4
+    .goto Loch Modan,31.9,16.4
     >>Kill Spiders. Loot them for Ichor
     .complete 418,3 --Collect Spider Ichor (x3)
 step << Mage
+#xprate <1.5
     #sticky
-#label Intestines9
+    #label Intestines9
     .goto Loch Modan,38.0,34.9,40,0
     .goto Loch Modan,37.1,39.8,40,0
     .goto Loch Modan,29.8,35.9,40,0
@@ -1188,35 +1193,42 @@ step << Mage
     .goto Loch Modan,29.8,35.9,40,0
     .goto Loch Modan,27.7,25.3,40,0
     .goto Loch Modan,28.6,22.6,40,0
-.goto Loch Modan,38.0,34.9
+    .goto Loch Modan,38.0,34.9
     >>Kill Boars. Loot them for Intestines
     .complete 418,1 --Collect Boar Intestines (x3)
 step << Mage
+#xprate <1.5
     #requires Meat9
-.goto Loch Modan,36.9,46.1,2500 >> .
+    .zone Loch Modan >> .
 step << Mage
+#xprate <1.5
     #requires Ichor9
-.goto Loch Modan,36.9,46.1,2500 >> .
+    .zone Loch Modan >> .
 step << Mage
+#xprate <1.5
     #requires Intestines9
-.goto Loch Modan,36.9,46.1,2500 >> .
+    .zone Loch Modan >> .
 step << Mage
-.goto Loch Modan,32.6,49.9,40,0
-.goto Loch Modan,37.2,46.1,40,0
-.goto Loch Modan,36.7,41.6,40,0
-.goto Loch Modan,32.6,49.9,40,0
-.goto Loch Modan,37.2,46.1,40,0
-.goto Loch Modan,36.7,41.6,40,0
+#xprate <1.5
+    .goto Loch Modan,32.6,49.9,40,0
+    .goto Loch Modan,37.2,46.1,40,0
+    .goto Loch Modan,36.7,41.6,40,0
+    .goto Loch Modan,32.6,49.9,40,0
+    .goto Loch Modan,37.2,46.1,40,0
+    .goto Loch Modan,36.7,41.6,40,0
     >>Find Kadrell, he patrols along the main road
-.goto Loch Modan,36.9,46.1
+    .goto Loch Modan,36.9,46.1
     .turnin 416 >> Turn in Rat Catching
 step << Mage
+#xprate <1.5
     .goto Loch Modan,34.8,49.3
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step << Mage
-    .xp 12 >> Grind to 12
-step << Rogue
-    .goto Loch Modan,32.0,47.2,150 >>Die and respawn at the Spirit Healer, or run to here
+    .xp 12-420 <<tbc
+    .xp 12-2310 << wotlk
+step << Rogue/wotlk
+    #xprate >1.499 << Mage
+    .deathskip >>Die and respawn at Thelsamar
 step << Rogue
 #xprate <1.5
     #sticky
@@ -1236,6 +1248,11 @@ step << Gnome/Dwarf
     .goto Ironforge,51.5,26.3
     .turnin 6391 >> Turn in Ride to Ironforge
     .accept 6388 >> Accept Gryth Thurden
+step << Dwarf/Gnome
+    >>do NOT fly anywhere
+.goto Ironforge,55.5,47.8
+    .turnin 6388 >> Turn in Gryth Thurden
+    .accept 6392 >> Accept Return to Brock << Rogue tbc
 step << Paladin
     .goto Ironforge,23.1,6.1
     .trainer >>Visit your class trainer and train spells
@@ -1270,15 +1287,6 @@ step << Warrior
 step << Warrior
     .goto Ironforge,48.7,42.7
     .turnin 1680 >>Turn in Tormus Deepforge
-step << !NightElf Rogue/wotlk
-    >>do NOT fly anywhere
-.goto Ironforge,55.5,47.8
-    .turnin 6388 >> Turn in Gryth Thurden
-    .accept 6392 >> Accept Return to Brock << tbc
-step << Gnome !Rogue/Dwarf !Rogue tbc
-    .goto Ironforge,55.5,47.8
-    .turnin 6388 >> Turn in Gryth Thurden
-    .fly Menethil >> Fly to Menethil
 step << Rogue/wotlk
 .goto Ironforge,77.0,51.0,30 >>Enter the Deeprun Tram
 step << Rogue/wotlk
@@ -1288,7 +1296,11 @@ step << Rogue/wotlk
     .complete 6661,1 --Rats Captured (x5)
 step << Rogue/wotlk
     .turnin 6661 >> Turn in Deeprun Rat Roundup
-    .accept 6662 >> Accept Me Brother, Nipsy
+    .accept 6662 >> Accept Me Brother, Nipsy << Rogue/wotlk
+step << !Rogue tbc
+    .goto Ironforge,55.5,47.8
+    >>Go back to Ironforge
+    .fly Menethil >> Fly to Menethil
 step << Rogue/wotlk
      >> Ride to the other side of the tram and turn in
     .turnin 6662 >> Turn in Me Brother, Nipsy
@@ -1301,7 +1313,7 @@ step << Rogue
     .train 201 >>Train 1h Swords
 step << Rogue
     .goto StormwindClassic,57.6,57.1
-    .vendor >> Buy a Cutlass from Gunther and equip it, Craftsman's Dagger in OH
+    .vendor >> Buy a Cutlass from Gunther and equip it
 step << Rogue
     #sticky
     #completewith next
@@ -1335,6 +1347,7 @@ step << tbc
     #label Darkshore1
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore
 step << wotlk
+    .goto StormwindNew,21.8,56.2
     .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 ]])
 
@@ -1346,7 +1359,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome Warlock
-#next 12-14 Loch Modan Gnome
+#next 12-14 Loch Modan Gnome;11-14 Darkshore
 step << !Gnome !Dwarf
     #sticky
     #completewith next
@@ -1356,18 +1369,18 @@ step
     >>Delete your Hearthstone
     .goto Dun Morogh,29.9,71.2
     .accept 179 >> Accept Dwarven Outfitters
-step
-#sticky
-#completewith next
-.goto Dun Morogh,28.6,72.2,20,0
-+Kill Wolves for 10c+ of vendor trash, then enter the building
-step
+step << tbc
+    #sticky
+    #completewith next
+    .goto Dun Morogh,28.6,72.2,20,0
+    +Kill Wolves for 10c+ of vendor trash, then enter the building
+step << tbc
     .goto Dun Morogh,28.8,69.2,20 >>Enter the building
-step
+step << tbc
     .goto Dun Morogh,28.8,66.2
     .vendor >> Talk to the Demon Book vendor, vendor trash
-step
-.goto Dun Morogh,28.6,66.1
+step << tbc
+    .goto Dun Morogh,28.6,66.1
     .train 348 >>Train Immolate
     .accept 1599 >> Accept Beginnings
 step
@@ -1376,21 +1389,21 @@ step
     .complete 179,1 --Collect Tough Wolf Meat (x8)
 step
     .xp 2 >> Grind to 2
-step
+step << tbc
 #sticky
 #completewith next
     .goto Dun Morogh,26.8,79.8,30,0
     .goto Dun Morogh,30.1,82.4,30 >> Kill some Wolves en route, then watch this
 .link https://www.youtube.com/watch?v=iUvGsRbIVp8 >> CLICK HERE
-step
+step << tbc
     >>Kill Frostmane Novices. Loot them for Feather Charms
 .goto Dun Morogh,29.0,82.6,20,0
 .goto Dun Morogh,29.0,81.2,30,0
 .goto Dun Morogh,30.1,82.4,20,0
     .complete 1599,1 --Collect Feather Charm (x3)
-step
+step << tbc
     .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at the Spirit Healer
-step
+step << tbc
     .goto Dun Morogh,28.6,66.1
     .turnin 1599 >> Turn in Beginnings
 step
@@ -1398,7 +1411,7 @@ step
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3115 >> Accept Tainted Memorandum
-step
+step << tbc
 >>Summon Imp, rebuff
 .goto Dun Morogh,30.0,71.5
     .vendor >>vendor trash, buy 15 water. Grind for more money if you don't have enough
@@ -1408,6 +1421,7 @@ step
     .goto Dun Morogh,29.7,71.2
     .accept 170 >> Accept A New Threat
 step
+#xprate <1.5
     #sticky
     #completewith Rockjaw
     >>Kill Normal Rockjaw Troggs that you see
@@ -1440,10 +1454,7 @@ step
     .goto Dun Morogh,22.6,71.4
     .turnin 183 >> Turn in The Boar Hunter
 step
-    .xp 4 >> Grind to 4
-step
 #label Rockjaw
->>Kill mobs (troggs) en route
     .goto Dun Morogh,25.1,75.7
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
@@ -1455,9 +1466,13 @@ step
     >>Go up here if you're not done with troggs by now
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step
+    .xp 4 >> Grind to 4
+step
 .goto Dun Morogh,25.0,76.0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
 >> Once accepted, a 5 minute timer will start. Relax and follow the guide
+step << wotlk
+    .hs >> Use your Hearthstone
 step
     #sticky
     #completewith next
@@ -1476,13 +1491,14 @@ step
 step
 .goto Dun Morogh,28.6,66.1
     >>Go upstairs
+    .train 688 >> Train Summon Imp << wotlk
     .train 172 >>Train Corruption
     .turnin 3115 >> Turn in Tainted Memorandum
 step
 #xprate <1.5
     .goto Dun Morogh,29.7,71.2
     .turnin 170 >> Turn in A New Threat
-step
+step << tbc
 .goto Dun Morogh,30.0,71.5
     .vendor >>Vendor, buy x5 more water
 step
@@ -1546,10 +1562,10 @@ step
     .goto Dun Morogh,47.0,55.1,75 >> Die and respawn at the Spirit Healer, or run to Kharanos. Make sure your subzone is NOT Coldridge Pass
 step
     #label BoarMeat3
-.goto Dun Morogh,47.0,55.1,1500 >> .
+    .zone Dun Morogh >> .
 step
     #label BoarRibs
-.goto Dun Morogh,47.0,55.1,1500 >> .
+    .zone Dun Morogh >> .
 step
 .goto Dun Morogh,46.7,53.8
     .turnin 420 >> Turn in Senir's Observations
@@ -1558,7 +1574,7 @@ step
 step
     .goto Dun Morogh,46.7,53.5
     .vendor >>vendor trash
-step
+step << tbc
 .goto Dun Morogh,47.3,53.7
     .vendor >>go to Dannie, buy the Blood Pact book and use it
 step
@@ -1643,30 +1659,29 @@ step
 step
 .goto Dun Morogh,47.4,52.5
     .home >> Set your Hearthstone to Thunderbrew Distillery
-    .vendor >> Buy as much level 5 drink as you can
 step
 #xprate <1.5
-.goto Dun Morogh,42.5,54.8,40,0
+    .goto Dun Morogh,42.5,54.8,40,0
     .goto Dun Morogh,42.4,52.2,40,0
     .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
+    .goto Dun Morogh,42.5,54.8,40,0
     .goto Dun Morogh,42.4,52.2,40,0
     .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
+    .goto Dun Morogh,42.5,54.8,40,0
     .goto Dun Morogh,42.4,52.2,40,0
     .goto Dun Morogh,41.0,49.4,40,0
-.goto Dun Morogh,42.5,54.8,40,0
+    .goto Dun Morogh,42.5,54.8,40,0
     .goto Dun Morogh,42.4,52.2,40,0
     .goto Dun Morogh,41.0,49.4,40,0
     >> Go into the cave. Kill Wendigos. Loot them for their Manes
     .complete 313,1 --Collect Wendigo Mane (x8)
 step
     >>Loot the crate
-.goto Dun Morogh,44.1,56.9
+    .goto Dun Morogh,44.1,56.9
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
-.goto Dun Morogh,40.6,62.6,30,0
-.goto Dun Morogh,40.7,65.1
+    .goto Dun Morogh,40.6,62.6,30,0
+    .goto Dun Morogh,40.7,65.1
     .turnin 5541 >> Turn in Ammo for Rumbleshot
     .vendor >> Vendor and repair
 step
@@ -1690,38 +1705,38 @@ step
     .accept 310 >> Accept Bitter Rivals
 step
 #label BoarRibs2
-.goto Dun Morogh,31.5,38.9,40,0
+    .goto Dun Morogh,31.5,38.9,40,0
     .goto Dun Morogh,28.3,39.9,40,0
     .goto Dun Morogh,28.7,43.7,40,0
     .goto Dun Morogh,25.8,47.2,40,0
     .goto Dun Morogh,25.8,47.2,40,0
     .goto Dun Morogh,30.0,51.8,40,0
-.goto Dun Morogh,31.5,38.9,40,0
+    .goto Dun Morogh,31.5,38.9,40,0
     .goto Dun Morogh,28.3,39.9,40,0
     .goto Dun Morogh,28.7,43.7,40,0
     .goto Dun Morogh,25.8,47.2,40,0
     .goto Dun Morogh,25.8,47.2,40,0
     .goto Dun Morogh,30.0,51.8,40,0
     >> Kill Bears, Boars and Leopards
-.complete 319,1 --Kill Ice Claw Bear (x6)
+    .complete 319,1 --Kill Ice Claw Bear (x6)
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .complete 319,3 --Kill Snow Leopard (x8)
 step
->> Finish off getting the Boar Ribs
-.complete 384,1 --Collect Crag Boar Rib (x6)
+    >> Finish off getting the Boar Ribs
+    .complete 384,1 --Collect Crag Boar Rib (x6)
 step
-.goto Dun Morogh,30.2,45.7
+    .goto Dun Morogh,30.2,45.7
     .turnin 319 >> Turn in A Favor for Evershine
     .accept 320 >> Accept Return to Bellowfiz
 step
-.xp 7+3735 >>Grind until 3735+/4500xp
-.goto Dun Morogh,31.5,38.9,40,0
+    .xp 7+3735 >>Grind until 3735+/4500xp
+    .goto Dun Morogh,31.5,38.9,40,0
     .goto Dun Morogh,28.3,39.9,40,0
     .goto Dun Morogh,28.7,43.7,40,0
     .goto Dun Morogh,25.8,47.2,40,0
     .goto Dun Morogh,25.8,47.2,40,0
     .goto Dun Morogh,30.0,51.8,40,0
-.goto Dun Morogh,31.5,38.9,40,0
+    .goto Dun Morogh,31.5,38.9,40,0
     .goto Dun Morogh,28.3,39.9,40,0
     .goto Dun Morogh,28.7,43.7,40,0
     .goto Dun Morogh,25.8,47.2,40,0
@@ -1738,22 +1753,22 @@ step
 step
     .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
 step
-.goto Dun Morogh,33.0,27.2,15,0
+    .goto Dun Morogh,33.0,27.2,15,0
     .goto Dun Morogh,33.0,25.2,15,0
     .goto Wetlands,11.6,43.4,60,0
-.deathskip >>Keep running straight north, drop down and die, then respawn
+    .deathskip >>Keep running straight north, drop down and die, then respawn
 step
-.goto Wetlands,12.7,46.7,30 >> Swim to shore
+    .goto Wetlands,12.7,46.7,30 >> Swim to shore
 step
-.goto Wetlands,9.5,59.7
+    .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
 step
-.hs >> Hearth to Kharanos
+    .hs >> Hearth to Kharanos
 step
-.goto Dun Morogh,47.4,52.5
->> Buy a Rhapsody Malt and Thunder Ale from Belm
+    .goto Dun Morogh,47.4,52.5
+    >> Buy a Rhapsody Malt and Thunder Ale from Belm
     .complete 384,2 --Collect Rhapsody Malt (x1)
-    .collect 2686,1 --Collect Thunder Ale (x1)
+    .collect 2686,1,310,1 --Collect Thunder Ale (x1)
 step
     .goto Dun Morogh,47.6,52.4,10 >>Go in the room behind the innkeeper
 step
@@ -1762,18 +1777,18 @@ step
     .turnin 310 >> Turn in Bitter Rivals
     .accept 311 >> Accept Return to Marleth
 step
-.goto Dun Morogh,46.8,52.4
+    .goto Dun Morogh,46.8,52.4
     .turnin 384 >> Turn in Beer Basted Boar Ribs
      >>Sell the recipe when you next vendor
 step
     .xp 8 >> Grind to 8
-step
-.goto Dun Morogh,47.3,53.7
+step << tbc
+    .goto Dun Morogh,47.3,53.7
     .vendor >>go to Dannie, buy the Firebolt r2 book and use it
 step
-.goto Dun Morogh,47.3,53.7
+    .goto Dun Morogh,47.3,53.7
     >>Talk to Gimrizz
-.train 980 >>Train Curse of Agony
+    .train 980 >>Train Curse of Agony
     .train 5782 >>Train Fear
 step
     .goto Dun Morogh,46.7,53.8
@@ -1790,8 +1805,9 @@ step
     .goto Dun Morogh,45.8,49.4
     .accept 412 >> Accept Operation Recombobulation
 step
-.goto Dun Morogh,43.1,45.0,20,0
-.goto Dun Morogh,42.1,45.4,20 >> Run up the ramp to Shimmerweed
+    #completewith next
+    .goto Dun Morogh,43.1,45.0,20,0
+    .goto Dun Morogh,42.1,45.4,20 >> Run up the ramp to Shimmerweed
 step
     .goto Dun Morogh,40.9,45.3,30,0
     .goto Dun Morogh,41.5,43.6,30,0
@@ -1800,17 +1816,18 @@ step
     >>Clear mobs in this area. Be careful if you need to clear the middle camp. You can pull the mobs in the huts and line of sight (LoS) them behind the huts if you need 2 more mobs. If you get unlucky, run to the other area
     .complete 315,1 --Collect Shimmerweed (x6)
 step
-.goto Dun Morogh,38.4,49.9,40 >> Run toward Old Icebeard
+    #completewith next
+    .goto Dun Morogh,38.4,49.9,40 >> Run toward Old Icebeard
 step
-    >>Fear Old Icebeard, then loot the meat
-.goto Dun Morogh,38.5,53.9
+    >>Fear Old Icebeard, then loot the chest inside the cave
+    .goto Dun Morogh,38.5,53.9
     .complete 312,1 --Collect MacGrann's Dried Meats (x1)
 step
     .goto Dun Morogh,34.6,51.7
     .turnin 312 >> Turn in Tundra MacGrann's Stolen Stash
-step
-.goto Dun Morogh,30.4,45.8
-.vendor >> Buy as much level 5 drink as you can afford
+step << tbc
+    .goto Dun Morogh,30.4,45.8
+    .vendor >> Buy as much level 5 drink as you can afford
 step
     .goto Dun Morogh,30.2,45.7
     .turnin 315 >> Turn in The Perfect Stout
@@ -1831,20 +1848,20 @@ step
 step
     .xp 9 >> Grind to 9
 step
-.goto Dun Morogh,24.5,50.8,30 >>Enter the cave
+    #completewith next
+    .goto Dun Morogh,24.5,50.8,30 >>Enter the cave
 step
     .goto Dun Morogh,22.1,50.3,40,0
        .goto Dun Morogh,21.3,52.9,40,0
     >>Kill Headhunters inside the cave
     .complete 287,1 --Kill Frostmane Headhunter (x5)
 step
-    .goto Dun Morogh,23.4,51.5,15 >>Go back up the cave
-step
-    >>Jump down, you die after
-.goto Dun Morogh,23.0,52.2
+    >>Jump down into the nook below
+    .goto Dun Morogh,23.0,52.2
     .complete 287,2 --Fully explore Frostmane Hold
 step
-.deathskip >> Die and respawn at the Spirit Healer
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer
 step
     .goto Dun Morogh,46.7,53.8
     .turnin 287 >> Turn in Frostmane Hold
@@ -1855,7 +1872,7 @@ step
     .turnin 412 >> Turn in Operation Recombobulation
 step
     .goto Dun Morogh,60.1,52.6,50,0
-.goto Dun Morogh,63.1,49.8
+    .goto Dun Morogh,63.1,49.8
     .accept 314 >> Accept Protecting the Herd
 step
     #sticky
@@ -1871,14 +1888,11 @@ step
     .turnin 314 >> Turn in Protecting the Herd
 step
     >>Grind a little en route
-.goto Dun Morogh,68.6,54.7
+    .goto Dun Morogh,68.6,54.7
     .vendor >>Vendor, buy x10 level 5 water/x5 level 5 food
 step
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
-step
-    .goto Dun Morogh,68.9,55.9
-    .vendor >> vendor trash, repair
 step
     .goto Dun Morogh,69.1,56.3
     .accept 432 >> Accept Those Blasted Troggs!
@@ -1897,9 +1911,6 @@ step
 step
     .goto Dun Morogh,69.1,56.3
     .turnin 432 >> Turn in Those Blasted Troggs!
-step
-    .goto Dun Morogh,68.9,55.9
-    .vendor >> vendor trash, repair
 step
     .goto Dun Morogh,68.7,56.0
     .turnin 433 >> Turn in The Public Servant
@@ -1923,79 +1934,100 @@ step
     .goto Dun Morogh,83.9,39.2
     .turnin 417 >> Turn in A Pilot's Revenge
 step
-    .goto Dun Morogh,81.2,42.7,15 >>Go back through the tunnel
+    #completewith next
+    .goto Dun Morogh,81.2,42.7,25 >>Go back through the tunnel
 step
     .goto Dun Morogh,79.6,50.7,50,0
-.goto Dun Morogh,82.3,53.5,25,0
+    .goto Dun Morogh,82.3,53.5,25,0
     .goto Dun Morogh,86.3,48.8
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
 step
-.goto Dun Morogh,86.2,51.3,20 >>Go through the tunnel
+    #completewith next
+    .goto Dun Morogh,86.2,51.3,20 >>Go through the tunnel
 step
     .goto Loch Modan,22.1,73.1
     .accept 224 >> Accept In Defense of the King's Lands
 step
     .goto Loch Modan,22.6,75.4,30,0
-.goto Loch Modan,23.2,73.7
+    .goto Loch Modan,23.2,73.7
     >>Go into the bunker
     .accept 267 >> Accept The Trogg Threat
+step << wotlk
+    .goto Loch Modan,30.0,72.4,100,0
+    .goto Loch Modan,34.7,71.6,100,0
+    .goto Loch Modan,30.9,81.1,100,0
+    .goto Loch Modan,30.0,72.4,100,0
+    .goto Loch Modan,34.7,71.6,100,0
+    .goto Loch Modan,30.9,81.1,100,0
+    >>Kill Stonesplinter Troggs. Loot them for their Teeth
+    .complete 224,1 --Kill Stonesplinter Trogg (x10)
+    .complete 224,2 --Kill Stonesplinter Scout (x10)
+    .complete 267,1 --Collect Trogg Stone Tooth (x8)
+step << wotlk
+    .goto Loch Modan,22.2,73.3
+    .turnin 224 >> Turn in In Defense of the King's Lands
+step << wotlk
+    .goto Loch Modan,23.2,73.7
+    .turnin 267 >> Turn in The Trogg Threat
 step
-.goto Loch Modan,35.3,46.9,150 >>Run to Thelsamar
-step
+    .goto Loch Modan,35.3,46.9,150 >>Run to Thelsamar
+step << tbc
     .goto Loch Modan,35.5,48.4
     .home >> Set your Hearthstone to Thelsamar
-step
+step << tbc
+#xprate <1.5
     .goto Loch Modan,34.8,49.3
     .accept 418 >> Accept Thelsamar Blood Sausages
 step
     .goto Loch Modan,34.0,46.5
     .vendor >>vendor trash, Repair
 step
-.goto Loch Modan,32.6,49.9,40,0
-.goto Loch Modan,37.2,46.1,40,0
-.goto Loch Modan,36.7,41.6,40,0
-.goto Loch Modan,32.6,49.9,40,0
-.goto Loch Modan,37.2,46.1,40,0
-.goto Loch Modan,36.7,41.6,40,0
+    .goto Loch Modan,32.6,49.9,40,0
+    .goto Loch Modan,37.2,46.1,40,0
+    .goto Loch Modan,36.7,41.6,40,0
+    .goto Loch Modan,32.6,49.9,40,0
+    .goto Loch Modan,37.2,46.1,40,0
+    .goto Loch Modan,36.7,41.6,40,0
     >>Find Kadrell, he patrols along the main road
     .turnin 414 >> Turn in Stout to Kadrell
-    .accept 416 >> Accept Rat Catching
+    .accept 416 >> Accept Rat Catching << tbc
     .accept 1339 >> Accept Mountaineer Stormpike's Task
 step
     >>Go inside the building, then go downstairs. Talk to Brock
     .goto Loch Modan,37.2,46.9,15,0
-.goto Loch Modan,37.0,47.8
+    .goto Loch Modan,37.0,47.8
     .accept 6387 >> Accept Honor Students
-step
-#sticky
-#completewith ThelsamarFood
->>Kill Spiders. Loot them for Spider Ichor
-.complete 418,3 --Collect Spider Ichor (x3)
-step
+step << tbc
     #sticky
     #completewith ThelsamarFood
->>Kill Bears. Loot them for Bear Meat
-.complete 418,2 --Collect Bear Meat (x3)
-step
+    >>Kill Spiders. Loot them for Spider Ichor
+    .complete 418,3 --Collect Spider Ichor (x3)
+step << tbc
     #sticky
     #completewith ThelsamarFood
->>Kill Boars. Kill them for Boar Intestines
-.complete 418,1 --Collect Boar Intestines (x3)
+    >>Kill Bears. Loot them for Bear Meat
+    .complete 418,2 --Collect Bear Meat (x3)
+step << tbc
+    #sticky
+    #completewith ThelsamarFood
+    >>Kill Boars. Kill them for Boar Intestines
+    .complete 418,1 --Collect Boar Intestines (x3)
 step
-#label ThelsamarFood
-.goto Loch Modan,23.3,17.9,30 >>Run to the north bunker. Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
+    #completewith next
+    #label ThelsamarFood
+    .goto Loch Modan,23.3,17.9,30 >>Run to the north bunker. Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
 step
     .goto Loch Modan,24.1,18.2
     .vendor >>vendor trash, repair
 step
->>Upstairs
-.goto Loch Modan,24.7,18.3
+    >>Upstairs
+    .goto Loch Modan,24.7,18.3
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
-    .accept 307 >> Accept Filthy Paws
+    .accept 307 >> Accept Filthy Paws << tbc
     .accept 1338 >> Accept Stormpike's Order
 step
-#label Thelsamar
+    #label Thelsamar
     .goto Loch Modan,32.0,47.2,150 >>Die and respawn at the Spirit Healer, or run to here
 step
     .goto Loch Modan,33.9,51.0
@@ -2028,33 +2060,27 @@ step
     .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step
-.turnin 6661 >> Turn in Deeprun Rat Roundup
+    .turnin 6661 >> Turn in Deeprun Rat Roundup
+    .accept 6662 >> Accept Me Brother, Nipsy
 step
-    #label Tram
-    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
-    .goto StormwindClassic,62.4,10.1,30 >>Take the Deeprun Tram and enter Stormwind
+     >> Ride to the other side of the tram and turn in
+    .turnin 6662 >> Turn in Me Brother, Nipsy
 step
     .goto StormwindClassic,58.1,16.5
     .turnin 1338 >> Turn in Stormpike's Order
 step
     .goto StormwindClassic,62.5,62.3,30,0
-.goto StormwindClassic,66.3,62.1
+    .goto StormwindClassic,66.3,62.1
     .fp Stormwind >> Get the Stormwind flight path
 step
-    .money <0.3040
-.goto StormwindClassic,57.1,57.7
-    .train 227 >>Train Staves
-.train 201 >>Train 1h Swords
-step
-.money <0.2090
-.goto StormwindClassic,57.1,57.7
+    .money <0.2090
+    .goto StormwindClassic,57.1,57.7
     .train 227 >>Train Staves
 step
     #sticky
     #completewith next
-.goto StormwindClassic,29.2,74.0,15 >> Go into The Slaughtered Lamb
-step
-    .goto StormwindClassic,27.2,78.1,10 >> Go Downstairs
+    .goto StormwindClassic,29.2,74.0,15,0
+    .goto StormwindClassic,27.2,78.1,10 >> Go into The Slaughtered Lamb
 step
     .goto StormwindClassic,25.2,78.5
     .accept 1688 >> Accept Surena Caledon
@@ -2067,46 +2093,62 @@ step
 step
     .goto Elwynn Forest,41.7,65.9
     .vendor >>vendor trash, repair
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,42.1,65.9
     .accept 62 >> Accept The Fargodeep Mine
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,42.9,65.7
     .abandon 109 >> Abandon Report to Gryan Stoutmantle
-step
+step << tbc
+#xprate <1.5
+    #completewith next
     .goto Elwynn Forest,42.9,65.7,15 >>Go in the inn
-step
+step << tbc
+#xprate <1.5
     >>On your close left as you go in
     .goto Elwynn Forest,43.3,65.7
     .accept 60 >> Accept Kobold Candles
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,42.1,67.3
     .accept 47 >> Accept Gold Dust Exchange
-    .accept 40 >> Accept A Fishy Peril
 step
+.goto Elwynn Forest,42.1,67.3
+    .accept 40 >> Accept A Fishy Peril
+step << tbc
+#xprate <1.5
     #sticky
-#completewith Candles
+    #completewith Candles
     >> Get Candles from nearby Kobolds
     .complete 60,1 --Collect Kobold Candle (x8)
-step
+step << tbc
+#xprate <1.5
     #sticky
 #completewith Dust
     >> Get Gold Dust from nearby Kobolds
     .complete 47,1 --Collect Gold Dust (x10)
-step
-.goto Elwynn Forest,38.1,81.6,15 >>Enter through the lower entrance
-step
+step << tbc
+#xprate <1.5
+    #completewith next
+    .goto Elwynn Forest,38.1,81.6,15 >>Enter through the lower entrance
+step << tbc
+#xprate <1.5
     >>Keep running through the mine
 .goto Elwynn Forest,40.5,82.3
     .complete 62,1 --Scout Through the Fargodeep Mine
-step
+step << tbc
+#xprate <1.5
     #label Candles
     .goto Elwynn Forest,38.4,83.4,2500 >> .
-step
+step << tbc
+#xprate <1.5
     #label Dust
-.goto Elwynn Forest,38.4,83.4,2500 >> .
-step
-.goto Elwynn Forest,38.4,83.4
+    .goto Elwynn Forest,38.4,83.4,2500 >> .
+step << tbc
+#xprate <1.5
+    .goto Elwynn Forest,38.4,83.4
     >>Kill Kobolds. Loot them for Candles and Dust
     .complete 60,1 --Collect Kobold Candle (x8)
     .complete 47,1 --Collect Gold Dust (x10)
@@ -2139,88 +2181,105 @@ step
     >>Hogger can be in multiple spots in the area. Keep him fear chained, and/or kite him at <60% hp to the tower at 24,80. Loot him for his Claw
     .complete 176,1 --Collect Huge Gnoll Claw (x1)
 step
+#completewith next
     .goto Elwynn Forest,39.5,60.5,200 >> Die and respawn at the Spirit Healer, or run back to Goldshire
-step
-    .goto Elwynn Forest,41.7,65.9
-    .vendor >>vendor trash, repair
 step
 .goto Elwynn Forest,42.1,65.9
     >>Choose the Staff. Equip it
     .turnin 176 >> Turn in Wanted:    "Hogger"
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
-    .turnin 62 >> Turn in The Fargodeep Mine
-    .accept 76 >> Accept The Jasperlode Mine
 step
+    #sticky
     .isOnQuest 123
     .goto Elwynn Forest,42.1,65.9
     .turnin 123 >> Turn in The Collector, Skip followup
-step
+step << tbc
+#xprate <1.5
+    .goto Elwynn Forest,42.1,65.9
+    .turnin 62 >> Turn in The Fargodeep Mine
+    .accept 76 >> Accept The Jasperlode Mine
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,42.1,67.3
     .turnin 47 >> Turn in Gold Dust Exchange
 step
     .abandon 147 >> Abandon Manhunt
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,43.3,65.7
     .turnin 60 >> Turn in Kobold Candles
     .accept 61 >> Accept Shipment to Stormwind
 step
     #sticky
     #completewith soylago
-.goto Elwynn Forest,44.1,66.0,12 >>If you're level 12, go to the room behind the innkeeper, then go downstairs. Otherwise, skip this step
-.goto Elwynn Forest,44.4,66.2
+    .goto Elwynn Forest,44.1,66.0,12 >>If you're level 12, go to the room behind the innkeeper, then go downstairs. Otherwise, skip this step
+    .goto Elwynn Forest,44.4,66.2
     .train 755 >>Train Health Funnel
     .train 705 >>Train Shadow Bolt r3
+    .xp <12,1
 step
-.goto Elwynn Forest,43.8,65.8
+    .goto Elwynn Forest,43.8,65.8
     .vendor >> Buy x10 level 5 drink
-step
-#label soylago
-.goto Elwynn Forest,47.6,63.3,60,0
-.goto Elwynn Forest,61.8,54.0,20 >>Go toward the outside of the mine
-step
+step << tbc
+#xprate <1.5
+    #label soylago
+    .goto Elwynn Forest,47.6,63.3,60,0
+    .goto Elwynn Forest,61.8,54.0,20 >>Go toward the outside of the mine
+step << tbc
+#xprate <1.5
     >>Go in the mine, and keep following the middle path
-.goto Elwynn Forest,60.4,50.2
+    .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
 step
     .goto Elwynn Forest,61.8,54.0,40,0
-.goto Elwynn Forest,74.0,72.2
+    .goto Elwynn Forest,74.0,72.2
     >>Grind a bit en route to here
     .turnin 35 >> Turn in Further Concerns
+step << tbc
+    #xprate <1.5
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
-step
+step << tbc
+#xprate <1.5
     #sticky
-#completewith Prowlers
+    #completewith Prowlers
     >>Kill Prowlers as you do other quests
     .complete 52,1 --Kill Prowler (x8)
-step
+step << tbc
+#xprate <1.5
     #sticky
-#completewith Bears
+    #completewith Bears
     >>Kill Bears as you do other quests. Kill any you see
     .complete 52,2 --Kill Young Forest Bear (x5)
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,72.7,60.3
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,81.4,66.1
     .accept 5545 >> Accept A Bundle of Trouble
-step
-.goto Elwynn Forest,83.3,66.1
+step << tbc
+#xprate <1.5
+    .goto Elwynn Forest,83.3,66.1
     .vendor >> vendor trash and repair if needed
-step
+step << tbc
+#xprate <1.5
     #sticky
     #completewith next
->>Keep an eye out for the bundles of logs at the base of the trees.
+    >>Keep an eye out for the bundles of logs at the base of the trees.
     .complete 5545,1 --Collect Bundle of Wood (x8)
-step
+step << tbc
+#xprate <1.5
     #label Bundles
-.goto Elwynn Forest,79.8,55.5
+    .goto Elwynn Forest,79.8,55.5
     >> Pull the mobs in front of the huts, move away then keep one feared, and try to keep dots on both. Then loot the carcass on the ground
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
-step
+step << tbc
+#xprate <1.5
 .goto Elwynn Forest,76.8,62.4,40,0
     .goto Elwynn Forest,83.7,59.4,40,0
     .goto Elwynn Forest,76.8,62.4,40,0
@@ -2235,102 +2294,134 @@ step
     .goto Elwynn Forest,83.7,59.4,40,0
     >>Start running back, finish off the bundles
     .collect 13872,8 --Collect Bundle of Wood (x8)
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,81.4,66.1
     .turnin 5545 >> Turn in A Bundle of Trouble
-step
-    .xp 12 >> Grind to 12
-step
+step << tbc
+#xprate <1.5
     #label Bears
 .goto Elwynn Forest,79.5,68.8
     .accept 83 >> Accept Red Linen Goods
-step
+step << tbc
+#xprate <1.5
     #label Prowlers
-.goto Elwynn Forest,79.5,68.8,10000
-step
-.goto Elwynn Forest,76.7,75.6,40,0
-.goto Elwynn Forest,79.7,83.7,40,0
-.goto Elwynn Forest,82.0,76.8,40,0
-.goto Elwynn Forest,76.7,75.6,40,0
-.goto Elwynn Forest,79.7,83.7,40,0
-.goto Elwynn Forest,82.0,76.8,40,0
->>Kill the last mobs for Protect the Frontier
+    .goto Elwynn Forest,79.5,68.8,10000
+    step
+    .goto Elwynn Forest,76.7,75.6,40,0
+    .goto Elwynn Forest,79.7,83.7,40,0
+    .goto Elwynn Forest,82.0,76.8,40,0
+    .goto Elwynn Forest,76.7,75.6,40,0
+    .goto Elwynn Forest,79.7,83.7,40,0
+    .goto Elwynn Forest,82.0,76.8,40,0
+    >>Kill the last mobs for Protect the Frontier
     .complete 52,1 --Kill Prowler (x8)
     .complete 52,2 --Kill Young Forest Bear (x5)
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,74.0,72.2
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,70.5,77.6,40,0
     .goto Elwynn Forest,68.1,77.5,40,0
     .goto Elwynn Forest,68.2,81.4,40,0
-        .goto Elwynn Forest,70.8,80.9,40,0
+    .goto Elwynn Forest,70.8,80.9,40,0
     .goto Elwynn Forest,70.5,77.6,40,0
     .goto Elwynn Forest,68.1,77.5,40,0
     .goto Elwynn Forest,68.2,81.4,40,0
-        .goto Elwynn Forest,70.8,80.9,40,0
+    .goto Elwynn Forest,70.8,80.9,40,0
     .goto Elwynn Forest,70.5,77.6,40,0
     .goto Elwynn Forest,68.1,77.5,40,0
     .goto Elwynn Forest,68.2,81.4,40,0
-        .goto Elwynn Forest,70.8,80.9,40,0
->>Start circling the farm, killing Defias and looting them for Bandanas
+    .goto Elwynn Forest,70.8,80.9,40,0
+    >>Start circling the farm, killing Defias and looting them for Bandanas
     .complete 83,1 --Collect Red Linen Bandana (x6)
 step
     .goto Elwynn Forest,69.8,79.5
-.abandon 109 >> Abandon Report to Gryan Stoutmantle
+    .abandon 109 >> Abandon Report to Gryan Stoutmantle
 step
     >>Kill the mobs inside the house, keep Morgan feared (he gouges and kills pet), nuke Surena. Loot her for her Choker
     .goto Elwynn Forest,71.0,80.8
     .complete 1688,1 --Collect Surena's Choker (x)
 step
-#label Deed
-.goto Elwynn Forest,69.8,79.5
+    #label Deed
+    .goto Elwynn Forest,69.8,79.5
     .goto Elwynn Forest,69.5,76.4,0
     .goto Elwynn Forest,71.3,79.2,0
     >>Kill Princess. Loot her for her Collar
     .complete 88,1 --Collect Brass Collar (x1)
-step
+step << tbc
+#xprate <1.5
     .goto Elwynn Forest,79.5,68.9
     .turnin 83 >> Turn in Red Linen Goods
-step
+step << tbc
+#xprate <1.5
     #sticky
     #completewith next
-.goto Elwynn Forest,83.3,66.1
+    .goto Elwynn Forest,83.3,66.1
     .vendor >> vendor trash, repair
+step << tbc
+    .xp 12
 step
     #sticky
     #completewith next
-.goto Elwynn Forest,91.7,72.3,90 >>Grind en route, make sure to have at least 2 Soul Shards (using Drain Soul)
+    .goto Elwynn Forest,91.7,72.3,90 >>Grind en route, make sure to have at least 2 Soul Shards (using Drain Soul)
     .collect 6265,2 --Collect Soul Shard (x2)
 step
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> Accept Encroaching Gnolls
 step
-.abandon 184 >> Abandon Furlbrow's Deed
+    .abandon 184 >> Abandon Furlbrow's Deed
 step
     >>Be careful of the mobs en route
-.goto Redridge Mountains,30.7,60.0
+    .goto Redridge Mountains,30.7,60.0
     .turnin 244 >> Turn in Encroaching Gnolls
+step
+    .goto Redridge Mountains,29.30,53.60
+    .accept 3741 >> Accept Hilary's Necklace
+    .xp <12,1
+step
+    >>Look for Hilary's Necklace underwater. It's in a brown patch of dirt
+    .goto Redridge Mountains,27.80,56.05,0
+    .goto Redridge Mountains,26.56,50.63,0
+    .goto Redridge Mountains,23.96,55.17,0
+    .goto Redridge Mountains,19.16,51.75,0
+    .goto Redridge Mountains,31.12,54.21,0
+    .goto Redridge Mountains,34.03,55.34,0
+    .goto Redridge Mountains,38.09,54.49,0
+    .goto Redridge Mountains,19.16,51.75,70,0
+    .goto Redridge Mountains,38.09,54.49,70,0
+    .complete 3741,1 --Hilary's Necklace (1)
+    .xp <12,1
+step
+    .goto Redridge Mountains,29.20,53.60
+    .turnin 3741 >> Turn in Hilary's Necklace
+    .xp <12,1
 step
     .goto Redridge Mountains,30.6,59.4
     .fp Redridge >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
-step
+step << wotlk
+    .goto StormwindClassic,52.8,65.4
+    .home >> Set your Hearthstone to Stormwind
+step << tbc
+#xprate <1.5
     >>Choose rockets. These have very good damage, and can be used for splitpulling
     .goto StormwindClassic,56.2,64.6
     .turnin 61 >> Turn in Shipment to Stormwind
 step
     #sticky
     #completewith next
-.goto StormwindClassic,29.2,74.0,15 >> Go into The Slaughtered Lamb
-step
-    .goto StormwindClassic,27.2,78.1,10 >> Go Downstairs
+    .goto StormwindClassic,29.2,74.0,15,0
+    .goto StormwindClassic,27.2,78.1,10 >> Go into The Slaughtered Lamb
 step
 .goto StormwindClassic,25.3,78.2
     .train 755 >>Train Health Funnel
     .train 705 >>Train Shadow Bolt r3
+    .xp <12,1
 step
     .goto StormwindClassic,25.2,78.5
     .turnin 1688 >> Turn in Surena Caledon
@@ -2347,27 +2438,39 @@ step
     >>Don't summon your voidwalker once you learn it
     .turnin 1689 >> Turn in The Binding
 step
-    .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to you
+    .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to the Warlock trainers
 step
     .goto Elwynn Forest,41.7,65.9
     .vendor >>vendor trash, repair
 step
     .goto Elwynn Forest,42.1,65.9
-    .turnin 76 >> Turn in The Jasperlode Mine
-    .turnin 39 >> Turn in Deliver Thomas' Report
+    .turnin -76 >> Turn in The Jasperlode Mine
+    .turnin -39 >> Turn in Deliver Thomas' Report
 step
     .goto Elwynn Forest,34.7,84.5
     .turnin 88 >> Turn in Princess Must Die!
 step
     .abandon 59 >> Abandon Cloth and Leather Armor
+step << wotlk
+    .goto Elwynn Forest,27.0,93.9
+    .xp 12
+step << wotlk
+    .goto Elwynn Forest,44.4,66.2
+    >>Die on purpose and respawn at goldshire
+    >>Head to the basement of the inn
+    .train 755 >>Train Health Funnel
+    .train 705 >>Train Shadow Bolt r3
 step
-    .hs >> Hearth to Loch Modan
-    .goto Loch Modan,35.5,48.4,90
+    .hs >> Hearth to Loch Modan << tbc
+    .hs >> Hearth to Stormwind << wotlk
+step << wotlk
+    .goto StormwindNew,21.8,56.2
+    >> Head to Stormwind
+    .zone Darkshore >> Take the boat to Darkshore
 ]])
 
 RXPGuides.RegisterGuide([[
 #tbc
-#wotlk
 << Alliance Warlock
 #name 12-14 Loch Modan Gnome
 #version 1
