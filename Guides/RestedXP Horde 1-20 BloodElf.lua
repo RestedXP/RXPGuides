@@ -2071,7 +2071,7 @@ step << Paladin
     >>Jump down the hole behind the trainer
     .goto Silvermoon City,92.1,36.2
     .turnin 9681 >>Turn in A Study in Power
-    .accept 9684 >>Accept Claiming the Light
+    .accept 63866 >>Accept Claiming the Light
 step << Paladin
     .use 24157 >>Stand in the light beam and use the Shimmering Vessel on M'uru
     .goto Silvermoon City,92.6,36.8
