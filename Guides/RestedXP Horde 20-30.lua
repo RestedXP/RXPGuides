@@ -1674,11 +1674,11 @@ step
     .accept 1196 >> Accept The Sacred Flame
 step << Shaman/Paladin/Warrior
     .goto Thunder Bluff,54.0,57.3
-    .vendor >> Go buy Merciless Axe if u didn't get it in Hillsbrad
+    .vendor >> Buy a Merciless Axe if you didn't get one in Hillsbrad
     .collect 12249,1
 step << Hunter
     .goto Thunder Bluff,46.9,45.7
-    .vendor >> Go and buy Sturdy Recurve if it's in the shop.
+    .vendor >> Go and buy a Sturdy Recurve if it's in the shop.
     .collect 11306,1
 step << Druid
     .goto Thunder Bluff,77.0,29.9
@@ -2084,11 +2084,13 @@ step
 .accept 4881 >> Accept Assassination Plot
 step
     #label steelsnap
-    .use 23675>>Use the Robotron Control Unit hiding in the bushes ontop of the ledge. 
+    .use 23675 >>Use the Robotron Control Unit hiding in the bushes ontop of the ledge. 
     >> Once you're in the robot walk over to the moonwell and collect the water using the pet action bar button.
-    * Note: the quest arrow won't move when controlling the robot. Click the buff off once you're done. 
-.goto Thousand Needles,9.4,18.7,15,0
-.goto Feralas,89.6,46.3
+    * Note: the quest arrow won't move when controlling the robot. Click the buff off once you're done.
+    .goto Thousand Needles,12.0,18.8,15,0
+    .goto Thousand Needles,10.7,17.6,15,0
+    .goto Thousand Needles,9.5,18.7,10,0
+    .goto Feralas,89.6,46.3
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
 step
 .goto Thousand Needles,18.7,22.2,40,0
