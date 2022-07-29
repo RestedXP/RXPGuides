@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 24-27 Redridge/Duskwood
 #xprate <1.5
 
-step << Warrior
+step << Warrior/wotlk
     #sticky
     #completewith exit1
     .goto StormwindClassic,64.1,61.2,0
@@ -16,85 +16,85 @@ step << Warrior
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
     #xprate <1.5
-step << Paladin
+step << Paladin/wotlk
 	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
-step << Priest
+step << Priest/wotlk
 	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
-step << Paladin
+step << Paladin/wotlk
     .goto StormwindClassic,40.1,30.0
     >>Speak to Duthorian Rall and right click on the Tome of Valor provided
     .accept 1649 >>Accept The Tome of Valor
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
-step << Warlock
+step << Warlock/wotlk
     .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
-step << Warlock
+step << Warlock/wotlk
     .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
-step << Warlock
+step << Warlock/wotlk
     .goto StormwindClassic,25.4,78.7
     .turnin 1739 >>Turn in The Binding
-step << Mage
+step << Mage/wotlk
     .goto StormwindClassic,39.6,79.6
     .train 3561>>Train Teleport: Stormwind
     .trainer >> Train your class spells
-step
+step << wotlk
     .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
-step << Rogue
+step << Rogue/wotlk
 	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
-step << Warrior
+step << Warrior/wotlk
 	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
-step << Rogue
+step << Rogue/wotlk
     #sticky
     .goto StormwindClassic,75.8,60.1
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
-step << Rogue
+step << Rogue/wotlk
 	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
-step << Rogue
+step << Rogue/wotlk
     .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
-step << Draenei
+step << Draenei/wotlk
     .goto StormwindClassic,78.4,18.3
     .accept 9429 >> Accept Travel to Darkshire
-step << Hunter
+step << Hunter/wotlk
 	.goto StormwindClassic,61.7,15.4
 	.trainer >> Train your class spells
-step
+step << wotlk
     .goto StormwindClassic,53.62,59.76,30,0
     .goto StormwindClassic,55.25,7.08
     .vendor 5519>> Check Billibub in the Dwarven District for a Bronze Tube. Buy one if it's available
     .collect 4371,1,175,1,1
     .bronzetube
-step
+step << wotlk
     #label exit1
     .goto StormwindClassic,63.9,8.3
     .zone Ironforge >>Enter the Deeprun Tram and cross the Tram into Ironforge
     .zoneskip Dun Morogh
-step
+step << wotlk
     #sticky
     #completewith exit2
     .vendor 5175>>Buy a Bronze Tube from Gearcutter Cogspinner (limited supply), skip this step if he doesn't have it or if you already have one
     .goto Ironforge,67.86,42.87
     .collect 4371,1,175,1,1
 	.bronzetube
-step << Draenei/NightElf --Not needed, including just in case someone forgets to set HS to SW
+step << Draenei/NightElf/wotlk--Not needed, including just in case someone forgets to set HS to SW
     .goto Ironforge,55.5,47.7
     .fp Ironforge>> Get the Ironforge Flight Path
-step << Mage
+step << Mage/wotlk
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
-step << Draenei/NightElf
+step << Draenei/NightElf/wotlk
     #completewith next
     .goto Dun Morogh,59.5,42.8,40,0
     .goto Dun Morogh,60.4,44.1,40,0
@@ -117,13 +117,13 @@ step << Draenei/NightElf
     >>Do the Deathless Dun Morogh -> Wetlands skip
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
     .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
-step << Draenei/NightElf
+step << Draenei/NightElf/wotlk
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
-step << Human/Gnome/Dwarf
+step << Human/Gnome/Dwarf/wotlk
     .goto Ironforge,55.5,47.7
     .fly Wetlands >> Fly to Wetlands
-step << Mage
+step << Mage/wotlk
     .goto Wetlands,10.7,60.9
     .home >> Set your Hearthstone to Deepwater Tavern
 step
@@ -264,6 +264,10 @@ step
     .turnin 276 >> Turn in Tramping Paws
     .isQuestComplete 276
 step
+    .isOnQuest 276
+    #completewith wettylandy
+    .abandon 276 >> Abandon Tramping Paws
+step
     .goto Wetlands,56.4,40.3
     .accept 277 >> Accept Fire Taboo
     .isQuestTurnedIn 276
@@ -290,29 +294,36 @@ step << NightElf/Draenei
 step << NightElf/Draenei
     .goto Loch Modan,33.9,50.9
     .fp Thelsamar >> Get the Thelsamar flight path
-step
+step << wotlk
+    #label wettylandy
     #completewith next
     .goto Wetlands,9.5,59.7
     .hs >> Hearth to Stormwind << !Mage
     .hs >> Hearth to Menethil << Mage
 step
+    .zoneskip Wetlands,1
     .goto Wetlands,8.4,58.5
     .turnin 279 >> Turn in Claws from the Deep
     .accept 281 >> Accept Reclaiming Goods
-step << Mage
+step
     .goto Wetlands,8.6,55.8
     .turnin 469 >> Turn in Daily Delivery
     .isOnQuest 469
-step << Mage
+step
     .goto Wetlands,8.6,55.8
     .turnin 484 >> Turn in Young Crocolisk Skins
     .isOnQuest 484
-step << Mage
+step
     .goto Wetlands,8.6,55.8
     .accept 471 >> Accept Apprentice's Duties
     .isQuestTurnedIn 484
 step << Mage
     .zone Stormwind City >> Teleport to Stormwind
+step
+    .zoneskip Wetlands,1
+    .goto Wetlands,9.5,59.7
+    >> Hearth if your hearthstone is set to Stormwind
+    .fly Stormwind City >> Fly to Stormwind City
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -417,6 +428,7 @@ step
     .goto Redridge Mountains,33.4,49.1
     .accept 20 >> Accept Blackrock Menace
 step
+    >> Head into the town hall
     .goto Redridge Mountains,29.6,44.3
     .accept 91 >> Accept Solomon's Law
 step << Hunter

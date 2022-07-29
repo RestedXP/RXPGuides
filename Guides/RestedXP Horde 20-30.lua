@@ -1137,9 +1137,10 @@ step
     .goto Hillsbrad Foothills,61.5,19.1
     .turnin 1066 >> Turn in Blood of Innocents
 step
-    .goto Hillsbrad Foothills,63.2,20.7
     .turnin 498 >> Turn in The Rescue
+    .goto Hillsbrad Foothills,63.2,20.7
 	.turnin 549 >> Turn in WANTED: Syndicate Personnel
+    .goto Hillsbrad Foothills,62.32,20.35
 step
     #sticky
     #completewith bearsohmy
@@ -1289,9 +1290,8 @@ step << Shaman
 	.goto The Barrens,44.5,59.1
 	.fly Orgrimmar >>Fly to Orgrimmar
 step
-    #sticky
-    #completewith next
-    +Buy food behind you if you need to. You're now going to do a lot of running
+    .goto Orgrimmar,54.2,68.4
+    .vendor >>Talk to Innkeeper Gryshka and buy some food/water if needed. Also, be sure to check the auction house for any weapon upgrades. You're going to do a lot of running shortly.
 step << Paladin
     #completewith next
     .goto Orgrimmar,32.4,35.8
@@ -1803,19 +1803,26 @@ step << Hunter/Warlock
 step
     #sticky
     #label Washte
-    #completewith next
+    #completewith wpscout1
     >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
     .unitscan Washte Pawne
 step
-    .isOnQuest 846
+    #label wpscout1
+    .isQuestComplete 846
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
     >> Find Gann on the road again
     .turnin 846 >> Turn in Revenge of Gann
+step
+    .isQuestTurnedIn 846
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
     .accept 849 >> Accept Revenge of Gann
 step << Hunter/Warlock
     .goto The Barrens,48.9,86.3
@@ -1829,12 +1836,13 @@ step
 step
     #sticky
     #label Washte
-    #completewith next
+    #completewith wpscout2
     >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
     .unitscan Washte Pawne
 step
+    #label wpscout2
     .isOnQuest 849
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
@@ -1849,7 +1857,7 @@ step
 step
     #sticky
     #completewith next
-    >>Keep an eye out for the Galak Messenger. If you see it, kill him, loot the Note, and accept the quest. You can look for him later too if you can't find him.
+    .use 12564 >>Keep an eye out for the Galak Messenger. If you see it, kill him, loot the Note, and accept the quest. You can look for him later too if you can't find him.
     .collect 12564,1,4881 --Collect Assassination Note
     .accept 4881 >>Accept Assassination Plot
     .unitscan Galak Messenger
@@ -2005,7 +2013,7 @@ step
 step
 #sticky
 #completewith messenger
->>Find the Galak Messenger that patrols the zone. Kill him and loot his note.
+.use 12564 >>Find the Galak Messenger that patrols the zone. Kill him and loot his note.
     .collect 12564,1,4881 --Collect Assassination Note (x1)
 .accept 4881 >> Accept Assassination Plot
 step
@@ -2039,7 +2047,7 @@ step
     .turnin 9433 >> Turn in A Dip in the Moonwell
     .accept 9434 >> Accept Testing the Tonic
 step
->>Search for the Galak Messenger. He starts at a camp, goes on the road, then goes to the other camp
+.use 12564 >>Search for the Galak Messenger. He starts at a camp, goes on the road, then goes to the other camp
     .goto Thousand Needles,18.4,22.2,40,0
     .goto Thousand Needles,25.2,33.8,40,0
     .goto Thousand Needles,36.0,29.0,40,0
@@ -2071,10 +2079,12 @@ step
     .goto Thousand Needles,37.5,38.4,30,0
     .goto Thousand Needles,33.5,32.4
     >>Go back and forth in the pool, collecting yellow plants near the edges of the water as well as underwater.
+    >>The elementals are immune to fire & frost damage. Try your best to avoid them << Mage
     .complete 5062,1 --Collect Incendia Agave (x10)
 step
 	#completewith next
     .hs >> Hearth to Thunder Bluff
+    .cooldown item,6948,>0
 step << Druid
 	#completewith next
     .goto Thunder Bluff,77.0,29.9
@@ -2362,21 +2372,22 @@ step << Shaman
     .accept 1531 >>Accept Call of Air
 step
     #level 32
-    #completewith next
+    #completewith flyskip
     .goto The Barrens,63.1,37.1,-1
     .goto Orgrimmar,45.2,64.3,-1
     .fly Freewind Post >> Fly to Freewind Post
 step
-    #completewith next
+    #completewith flyskip
     .goto The Barrens,44.4,59.1
     .fly Freewind Post >> Fly to Freewind Post
     .zoneskip The Barrens,1
 step
-	#completewith next
+	#completewith flyskip
     .goto Thunder Bluff,46.9,49.4
     .fly Freewind Post >> Fly to Freewind Post
     .zoneskip Thunder Bluff,1
 step
+    #label flyskip
     .turnin 4767 >> Turn in Wind Rider
     .goto Thousand Needles,44.8,49.0
     .turnin 9434 >> Turn in Testing the Tonic
@@ -2417,14 +2428,23 @@ step
     .unitscan Roh'Alim the Pounder
     .complete 1151,1 --Collect Fragments of Rok'Alim (x1)
 step
+    .isOnQuest 4881
 	>>Escort will start when you accept next part of the quest.
 	.goto Thousand Needles,21.3,32.0
 	.turnin 4881 >> Turn in Assassination Plot
+step
+    .isQuestTurnedIn 4881
+	>>Escort will start when you accept next part of the quest.
+	.goto Thousand Needles,21.3,32.0    
 	.accept 4966 >> Accept Protect Kanati Greycloud
 step
+    .isOnQuest 4966
 	>>3 mobs will spawn. Let Kanati get aggro, then simply kill them
 	.goto Thousand Needles,21.4,31.8
     .complete 4966,1 --Protect Kanati Greycloud
+step
+    .isQuestComplete 4966
+	.goto Thousand Needles,21.4,31.8    
     .turnin 4966 >> Turn in Protect Kanati Greycloud
 step
 	.goto Thousand Needles,31.2,36.9,30 >>Run up the path here
