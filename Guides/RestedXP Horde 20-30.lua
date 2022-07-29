@@ -639,13 +639,19 @@ step
     >> Head back to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
-step
+step << !Rogue
     >> Head to Sun Rock Retreat
     >> Head up the side mountain path to your left once you reach Sun Rock
     .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
     .accept 6562 >> Accept Trouble in the Deeps
     .maxlevel 23
+step << Rogue
+    >> Head to Sun Rock Retreat
+    >> Head up the side mountain path to your left once you reach Sun Rock
+    .goto Stonetalon Mountains,49.0,62.8,40,0
+    .goto Stonetalon Mountains,47.3,64.2
+    .accept 6562 >> Accept Trouble in the Deeps
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
@@ -1409,6 +1415,31 @@ step
     >>Kill Laughing Sisters until they drop Etched Phial
     .goto Ashenvale,61.3,51.9
     .collect 5867 --Collect Etched Phial (x1)
+step << Rogue
+    .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
+step << Rogue
+    .goto Ashenvale,12.3,33.8
+    .fp Zoram >> Get the Zoram'gar Outpost flight path
+step << Rogue
+    .goto Ashenvale,11.8,34.7
+    .accept 216 >> Accept Between a Rock and a Thistlefur
+step << Rogue
+    >> Talk to the trolls in the hut
+    .goto Ashenvale,11.6,34.9
+    .accept 6462 >> Accept Troll Charm
+step << Rogue
+    .isQuestComplete 6562
+    .goto Ashenvale,11.6,34.3
+    .turnin 6562 >> Turn in Trouble in the Deeps
+step << Rogue
+    >>Accepting this quest starts an escort. Follow him
+    .goto Ashenvale,12.1,34.4
+    .accept 6641 >> Accept Vorsha the Lasher
+step << Rogue
+    >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
+    .goto Ashenvale,9.8,27.4
+    .complete 6641,1 --Defeat Vorsha the Lasher
+    .isOnQuest 6641
 step
     #requires Phial
 	.goto Ashenvale,38.5,36.1,50 >>Run to Thistlefur Village
@@ -1552,6 +1583,41 @@ step
 step
     .goto Ashenvale,11.6,34.3
     .turnin 824 >> Turn in Je'neu of the Earthen Ring
+step << Rogue
+    #label zoramend
+    #requires wrathtailhead
+    >>Return to Zoram'gar Outpost.
+    .goto Ashenvale,12.2,34.2
+    .turnin 6641 >> Turn in Vorsha the Lasher
+    .isQuestComplete 6641
+step << Rogue
+    .goto Ashenvale,11.59,34.27
+    .accept 6921 >>Accept Amongst the Ruins
+    .accept 6563 >>Accept The Essence of Aku'Mai
+step << Rogue
+    .goto Ashenvale,14.0,15.0,100 >> Go to the entrance of Blackfathom Deeps
+step << Rogue
+    .goto Ashenvale,13.15,12.96
+	>> Kill Blackfathom Tide Priestesses until Damp Note drops. Start the quest
+	.collect 16790,1,6564
+    .accept 6564 >> Accept Allegiance to the Old Gods
+step << Rogue
+    .goto Ashenvale,17.04,12.29
+	>> Stealth towards the dungeon while looting the 20 Sapphires on the walls
+    .complete 6563,1 --Sapphire of Aku'Mai (20)
+step << Rogue
+	#completewith next
+	+To solo this quest you need to play correctly in 2 ways. First of all you need to not die to breath, that means before you aggro the boss you should have full breath. The second thing to be aware of is that you need to kick EVERY frostbolt you can and use evasion after a kick. Most of his damage will be from frostbolts. Remember you can vanish and try again 5 mins later, aslong as you don't die to breath.
+	.link https://youtu.be/ehXV0stmDrM?t=202 >> CLICK HERE for a guide on this section
+step << Rogue
+	>> Stealth all the way to the Moonshine Ruins, then swim under the Bridge and prepare for the boss (Use all buffs you have)
+	>> Loot the Fathom Core, this spawns the boss.
+	>> Loot the Globe from Baron Aquanis. Accept the quest
+	.collect 16762,1,6922 
+	.accept 6922 >> Accept Baron Aquanis
+step << Rogue
+    .hs >> Hearth to Splintertree Post
+	>> Buy food/water if needed
 step << Druid
 #completewith next
     .cast 18960 >> Use the spell Teleport to Moonglade
