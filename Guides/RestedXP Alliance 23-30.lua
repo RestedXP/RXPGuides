@@ -80,6 +80,7 @@ step << wotlk
 step << wotlk
     #label exit1
     .goto StormwindClassic,63.9,8.3
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     .zone Ironforge >>Enter the Deeprun Tram and cross the Tram into Ironforge
     .zoneskip Dun Morogh
 step << wotlk
@@ -193,6 +194,7 @@ step
     .collect 4371,1,175,1,1
 	.bronzetube
 step
+    #xprate >1.5
 	.goto Wetlands,34.3,41.2,60,0
     .goto Wetlands,38.2,50.9
     .accept 294 >> Accept Ormer's Revenge
@@ -315,6 +317,7 @@ step
     .turnin 484 >> Turn in Young Crocolisk Skins
     .isOnQuest 484
 step
+    #xprate >1.5
     .goto Wetlands,8.6,55.8
     .accept 471 >> Accept Apprentice's Duties
     .isQuestTurnedIn 484
@@ -372,6 +375,7 @@ step << Mage
     .train 3561>>Train Teleport: Stormwind
     .trainer >> Train your class spells
 step << Rogue
+    >> Make sure you train lockpicking and pickpocketing
 	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step << Warrior
@@ -471,6 +475,9 @@ step
 step << Rogue
     .goto Redridge Mountains,28.1,52.1
     .turnin 2282 >> Turn in Alther's Mill
+step << Rogue
+    #completewith next
+    .destroy 7907 >> Delete the Certificate of Thievery
 step
     .goto Redridge Mountains,26.7,46.5
 	>>Click on the wanted poster outside the inn
@@ -664,6 +671,7 @@ step << Rogue
     #sticky
     #completewith next
     .use 8432 >> Use the antidote to the poison.
+    .destroy 8046 >> Destroy Kearnen's Journal
 step << Rogue
     .goto StormwindClassic,66.2,62.2
     .fly Duskwood>> Fly to Duskwood
@@ -903,6 +911,7 @@ step
     .accept 323 >> Accept Proving Your Worth
 step << Hunter/Paladin
     .goto Duskwood,17.7,29.2
+    >> She can patrol around the fountain
     .turnin 231 >> Turn in A Daughter's Love
 step << Hunter/Paladin
     .goto Duskwood,21.6,45.1
@@ -1011,10 +1020,10 @@ RXPGuides.RegisterGuide([[
 step
     .goto StormwindClassic,60.5,12.3,40,0
     .goto StormwindClassic,60.5,12.3,0
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     .zone Ironforge >> Take the tram to Ironforge
 step <<!Mage
     .goto Ironforge,69.8,50.1
-    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >>Enter the Deeprun Tram and go to Ironforge. Click here for a logout skip in the tram.
     .turnin 2923 >> Turn in Tinkmaster Overspark
 step << Rogue
     #sticky
@@ -1460,6 +1469,7 @@ RXPGuides.RegisterGuide([[
 step << !Mage
 	.goto Ironforge,74.5,50.5,20,0
 	.goto StormwindClassic,51.7,12.3
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     .zone Stormwind City>> Take the tram and head to Stormwind
 step << Mage
 	>> Teleport to stormwind
@@ -1652,7 +1662,7 @@ step
     .goto Elwynn Forest,84.7,69.4
     .turnin 75 >> Turn in The Legend of Stalvan
     .accept 78 >> Accept The Legend of Stalvan
-step << Human tbc
+step << Human !Paladin !Warlock
 	#level 30
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
@@ -1748,6 +1758,7 @@ step
     .accept 160 >> Accept Note to the Mayor
 step << !Hunter !Paladin
     .goto Duskwood,17.7,29.2
+    >> She can patrol around the fountain
     .turnin 231 >> Turn in A Daughter's Love
 step << !Dwarf/!Paladin
     .goto Duskwood,7.8,34.1
@@ -2312,6 +2323,10 @@ step
 	.goto StormwindClassic,66.2,62.1
     .fly Duskwood>> Fly to Duskwood
 step
+    #completewith next
+    + If you have more gold on this server, mail yourself atleast 5 gold, we're buying our mounts soon.
+    .money >5.00
+step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
     .accept 174 >> Accept Look To The Stars
@@ -2379,11 +2394,15 @@ step
     .goto Elwynn Forest,84.7,69.4
     .turnin 75 >> Turn in The Legend of Stalvan
     .accept 78 >> Accept The Legend of Stalvan
-step << Human tbc
+step << Human !Paladin !Warlock tbc
 	#level 30
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
+step << Human !Paladin !Warlock wotlk
+	.goto Elwynn Forest,84.2,65.2
+	.train 148 >> Train riding and purchase your mount.
+	.money <5.00
 step << Shaman
     #completewith next
     .hs >> Hearth to Darkshire
@@ -2467,7 +2486,8 @@ step
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
     .goto Stranglethorn Vale,38.2,4.1
-    >>Head out of the cave and then south to STV
+    >>Head out of the cave and then south to STV. Alternatively do the logout skip by hopping on the banner.
+    .link https://www.youtube.com/watch?v=i5dIhfOmyd8 >> Click here for a video on how to do the logout skip
     .fp Rebel >> Get the Rebel Camp flight path
 step
     .goto Duskwood,31.6,45.4
@@ -2479,6 +2499,7 @@ step
     .accept 160 >> Accept Note to the Mayor
 step << !Hunter !Paladin
     .goto Duskwood,17.7,29.2
+    >> She can patrol around the fountain
     .turnin 231 >> Turn in A Daughter's Love
 step << Shaman tbc/Dwarf Paladin tbc
     #sticky
@@ -2487,6 +2508,7 @@ step << Shaman tbc/Dwarf Paladin tbc
 step
 #completewith next
     .goto Westfall,56.5,52.6
+    >> Head to Westfall, it's faster than running back to Darkshire.
     .fly Darkshire>> Fly to Darkshire
 step
     .goto Duskwood,79.8,47.9
@@ -2531,12 +2553,15 @@ step << !Shaman
     .accept 98 >> Accept The Legend of Stalvan
 step
     .goto Duskwood,72.6,33.9
+    >> He patrols along the north road
     .turnin 1244 >> Turn in The Missing Diplomat
     .accept 1245 >> Accept The Missing Diplomat
 step << !Shaman
     .goto Duskwood,77.4,36.1
+    >> Kill and loot Stalvan Mistmantle
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << !Shaman
+    .isOnQuest 335
     .goto Duskwood,78.4,35.9
     >>Look for a small flower on the ground
     .complete 335,1 --Collect Tear of Tilloa (x1)
@@ -2545,6 +2570,7 @@ step << !Shaman
     .turnin 98 >> Turn in The Legend of Stalvan
 step
     .goto Duskwood,64.7,49.7
+    >> Kill worgen in the area
     .complete 221,1 --Kill Nightbane Dark Runner (x12)
 step
     .goto Duskwood,75.3,48.1
@@ -2552,6 +2578,7 @@ step
     .accept 222 >> Accept Worgen in the Woods
 step
     #label HistoryB4
+    >> Kill Worgen in the area
 	.goto Duskwood,73.0,75.0
     .complete 222,1 --Kill Nightbane Vile Fang (x8)
     .complete 222,2 --Kill Nightbane Tainted One (x8)
@@ -2651,6 +2678,7 @@ step
 	#completewith next
     .goto StormwindClassic,60.5,12.3,40,0
     .goto StormwindClassic,60.5,12.3,0
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     .zone Ironforge >> Take the tram to Ironforge
     >>Teleport to Ironforge instead if you have that spell trained << Mage
 step
@@ -2672,7 +2700,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
 	.train 197 >> Train 2H Axes << !Rogue
 	.train 266 >> Train Guns << Hunter/Warrior/Rogue
     .train 199 >> Train 2H Maces << Warrior/Shaman
-    .train 54 >> Train Maces << Rogue/Shaman
+    .train 198 >> Train Maces << Rogue/Shaman
     .train 44 >> Train Axes << Shaman
 step << Hunter
 	#sticky
@@ -2828,7 +2856,7 @@ step
     .turnin 1248 >> Turn in The Missing Diplomat
     .accept 1249 >> Accept The Missing Diplomat
 step
-    >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn
+    >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn. Two level 34 enemies will attack you. You may need to skip this step and do it later if you cannot kill them.
     .complete 1249,1 --Defeat Tapoke Jahn
 step
     .goto Wetlands,10.6,60.7
@@ -2941,13 +2969,36 @@ step
     .goto Wetlands,10.9,55.9
     .accept 472 >> Accept Fall of Dun Modr
 step
+    .isOnQuest 464
+    .goto Wetlands,9.9,57.4
+    .turnin 464 >> Turn in War Banners
+step
+    .isOnQuest 281
+    .goto Wetlands,13.5,41.5
+    .turnin 281 >> Turn in Reclaiming Goods
+    .accept 284 >> Accept The Search Continues
+step
+    .isOnQuest 284
+    .goto Wetlands,13.5,38.4
+    .turnin 284 >> Turn in The Search Continues
+    .accept 285 >> Accept Search More Hovels
+step
+    .isOnQuest 285
+    .goto Wetlands,13.9,34.8
+    .turnin 285 >> Turn in Search More Hovels
+    .accept 286 >> Accept Return the Statuette
+step
     .goto Wetlands,13.9,30.4
     >>To find Snellig, enter the ship by the hole on the hull close to the shore
     >> The ship to the north usually has more Marines if you're having trouble finding some.
     .complete 289,3 --Collect Snellig's Snuffbox (x1)
     .complete 289,1 --Kill Cursed Sailor (x13)
     .complete 289,2 --Kill Cursed Marine (x5)
-
+step
+    .isOnQuest 470
+    .goto Wetlands,44.2,25.8
+    >>Kill slimes around the crypt
+    .complete 470,1 --Collect Sida's Bag (x1)
     step
     #completewith next
     .goto Wetlands,49.9,18.3
@@ -2985,6 +3036,7 @@ step
     .accept 632 >> Accept The Thandol Span
 step
     .goto Wetlands,49.9,18.3
+    >> Run back outside and turn in the quest
     .turnin 632 >> Turn in The Thandol Span
     .accept 633 >> Accept The Thandol Span
 step
