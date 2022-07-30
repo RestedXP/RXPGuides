@@ -56,6 +56,7 @@ step << Warrior/wotlk
 step << Rogue/wotlk
     #sticky
     .goto StormwindClassic,75.8,60.1
+    >> Make sure to train Lockpicking and Pick Pocket
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
 step << Rogue/wotlk
@@ -490,6 +491,7 @@ step
     .accept 66 >> Accept The Legend of Stalvan
     .accept 101 >> Accept The Totem of Infliction
 step << !Rogue
+    .goto Duskwood,73.9,44.5
     .home >> Set your Hearthstone to Darkshire
 step
     .goto Duskwood,73.6,46.8
@@ -511,12 +513,14 @@ step
     .accept 173 >> Accept Worgen in the Woods
 step
     >>Buy a bronze tube from Herble Baubbletump (limited supply) if you don't have one
-    .complete 174,1
     .goto Duskwood,77.8,48.2
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
     .goto Duskwood,79.8,47.9
     .bronzetube
+step << Rogue
+    .goto Duskwood,77.5,44.4
+    .fp Duskwood >> Get the Duskwood flight point
 step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
@@ -540,6 +544,7 @@ step
 	.unitscan Insane Ghoul
 step
     .goto Duskwood,79.3,70.3
+    >> Kill skeletal mobs in the area
     .complete 56,1 --Kill Skeletal Warrior (x8)
     .complete 56,2 --Kill Skeletal Mage (x6)
 step
@@ -639,16 +644,26 @@ step << Rogue
     .complete 2609,1 --Collect Simple Wildflowers (x1)
     .goto StormwindClassic,64.3,60.8
 step << Rogue
-    >>Buy a Bronze Tube at the Auction House
+    #sticky
+    #completewith next
+    >>Buy a Bronze Tube at the Auction House. This is for your rogue quest, not Look to the Stars!
     .complete 2609,3 --Collect Bronze Tube (x1)
+step << Rogue
     .goto StormwindClassic,53.6,59.3
-    >>Head to the shop next to the bridge between the Cathedral Square and the Park
+    >>Head to the shop next to the bridge between the Cathedral Square and the Park. This is an object on the ground you must pickup.
     .complete 2609,4 --Collect Spool of Light Chartreuse Silk Thread (x1)
     .goto StormwindClassic,39.8,46.5
     >>If you can't find a bronze tube, you will have to skip this quest, train First Aid to 80, farm a small venom sac from spiders in Duskwood, craft an Anti-Venom and remove the Zanzil poison.
 step << Rogue
     .goto StormwindClassic,78.0,58.9
     .turnin 2609 >> Turn in The Touch of Zanzil
+step << Rogue
+    .goto StormwindClassic,78.2,59.0
+    .vendor >>Buy Dust of Decay and Empty Vials so you can make poisons
+step << Rogue
+    #sticky
+    #completewith next
+    .use 8432 >> Use the antidote to the poison.
 step << Rogue
     .goto StormwindClassic,66.2,62.2
     .fly Duskwood>> Fly to Duskwood
@@ -907,6 +922,8 @@ step
 	.xp 27+12000 >> Grind to 12000+/32200xp
 step << !Hunter !Paladin
     .goto Duskwood,19.7,39.7
+    >>Kill the level 30 elite roaming the cemetery. Skip this step if you cannot solo her or find a group.
+    .unitscan Mor'Ladim
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
 step
     #label HistoryB3
@@ -1478,6 +1495,7 @@ step
     .turnin 269 >> Turn in Seeking Wisdom
     .accept 270 >> Accept The Doomed Fleet
 step
+    .isOnQuest 322
     .goto StormwindClassic,51.7,12.3
     .turnin 322 >> Turn in Blessed Arm
     .accept 325 >> Accept Armed and Ready
@@ -1510,10 +1528,14 @@ step << Warlock
     .goto StormwindClassic,25.3,78.7
 	.trainer >> Train your class spells
 step
-   .isOnQuest 337
+    .itemcount 2794
+    >> Head into Stormwind Keep
 	.goto StormwindClassic,74.1,7.6
     .accept 337 >> Accept An Old History Book
     .turnin 337 >> Turn in An Old History Book
+step
+    .isQuestTurnedIn 337
+    .goto StormwindClassic,74.1,7.6
     .accept 538 >> Accept Southshore
 step
     .goto StormwindClassic,78.1,25.1
@@ -2203,6 +2225,7 @@ step
     .turnin 269 >> Turn in Seeking Wisdom
     .accept 270 >> Accept The Doomed Fleet
 step
+    .isOnQuest 322
     .goto StormwindClassic,51.7,12.3
     .turnin 322 >> Turn in Blessed Arm
     .accept 325 >> Accept Armed and Ready
