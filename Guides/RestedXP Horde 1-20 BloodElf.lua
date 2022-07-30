@@ -1364,17 +1364,21 @@ step << Druid
 step << Undead/BloodElf !Hunter
     #completewith next
     .goto Eversong Woods,46.9,71.8
-    .hs Hearth to Falconwing and run if its up
+    .hs Hearth to Falconwing
+    .cooldown item,6948,>0
 step << !BloodElf/!Hunter !Warlock/!BloodElf
+    #completewith springpawhs
     .goto Eversong Woods,56.7,49.6,30 >>Exit Silvermoon
 step << BloodElf/Undead
     #sticky
+    #label springpawhs
     #completewith next
     >>Finish off getting Springpaw Pelts
     .complete 8491,1 --Collect Springpaw Pelt (x6)
 step << Orc Warlock/Undead Warlock
     .goto Eversong Woods,48.2,47.9
     .hs >> Hearth to Falconwing Square then run upstairs
+    .cooldown item,6948,>0
 step << Orc Warlock/Undead Warlock
     .goto Eversong Woods,48.2,47.9
     .train 755 >>Train Health Funnel
