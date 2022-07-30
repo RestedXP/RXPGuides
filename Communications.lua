@@ -53,6 +53,10 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
             if level == 2 then
                 s = levelData.timestamp.finished
             else
+                -- missing data or alpha/beta tracking data
+                if not levelData.timestamp.started or
+                    levelData.timestamp.started == -1 then return end
+
                 s = levelData.timestamp.finished - levelData.timestamp.started
             end
 
