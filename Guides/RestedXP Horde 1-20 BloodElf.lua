@@ -2734,10 +2734,8 @@ step << BloodElf
     .isQuestTurnedIn 9167
     .goto Undercity,57.8,91.8
      >> Speak to Lady Sylvanas Windrunner
-    .accept 9425 >> Accept Report to Tarren Mill
     .turnin 9621 >> Turn in Envoy to the Horde
     .accept 9626 >> Accept Meeting the Warchief
-    .turnin 9180 >> Turn in Journey to Undercity
 step << BloodElf
     .goto Undercity,57.8,91.8
      >> Speak to Lady Sylvanas Windrunner
