@@ -4,7 +4,15 @@ local _G = _G
 
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
-addon.versionText = "Version " .. GetAddOnMetadata(addonName, "Version")
+addon.release = GetAddOnMetadata(addonName, "Version")
+
+if string.match(addon.release, 'project') then
+    addon.release = 'Development'
+    addon.versionText = 'Development'
+else
+    addon.versionText = "Version " .. addon.release
+end
+
 addon.version = 40000
 local gameVersion = select(4, GetBuildInfo())
 addon.gameVersion = gameVersion
