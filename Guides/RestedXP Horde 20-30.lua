@@ -1396,10 +1396,10 @@ step
 step
     #sticky
     #completewith next
-    >>Kill Laughing Sisters until they drop Etched Phial
+    >>Kill Laughing Sisters until they drop an Etched Phial
     .collect 5867 --Collect Etched Phial (x1)
 step
->>Look for Shadumbra (a panther) and loot her for Shadumbra's Head, then accept the quest from clicking it.
+    >>Look for Shadumbra (a panther) and loot her for Shadumbra's Head, then accept the quest from clicking it.
 	.goto Ashenvale,62.2,49.6,40,0
     .goto Ashenvale,58.0,56.2,40,0
     .goto Ashenvale,51.9,54.3,40,0
