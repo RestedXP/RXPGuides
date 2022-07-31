@@ -1538,7 +1538,7 @@ step << Warlock
     .goto StormwindClassic,25.3,78.7
 	.trainer >> Train your class spells
 step
-    .itemcount 2794
+    .itemcount 2794,1
     >> Head into Stormwind Keep
 	.goto StormwindClassic,74.1,7.6
     .accept 337 >> Accept An Old History Book
