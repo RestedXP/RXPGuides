@@ -432,23 +432,23 @@ function RXPG.LoadCachedGuides()
 
     for key, guideData in pairs(addon.db.profile.guides) do
         local guide, errorMsg
-        local enabledFor = guideData.enabledFor
-        if (not enabledFor or applies(enabledFor)) then
+        local enabled = not guideData.enabledFor or applies(guideData.enabledFor)
+        if enabled then
             guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
             if guide:match("^--" .. addon.ReadCacheData("string")) then
                 guide, errorMsg = RXPG.ParseGuide(guide)
             else
                 guide = nil
             end
-        end
-        if not errorMsg and guide then
-            guide.imported = true
-            RXPG.AddGuide(guide)
-        else
-            if DEBUG then
-                print(fmt('Unable to decode cached guide (%s), removed', key))
+            if not errorMsg and guide then
+                guide.imported = true
+                RXPG.AddGuide(guide)
+            else
+                if DEBUG then
+                    print(fmt('Unable to decode cached guide (%s), removed', key))
+                end
+                addon.db.profile.guides[key] = nil
             end
-            addon.db.profile.guides[key] = nil
         end
     end
 end
