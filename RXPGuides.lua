@@ -481,8 +481,8 @@ function addon:OnInitialize()
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
 
     addon.settings.InitializeSettings()
-    addon.RXPG.LoadEmbeddedGuides()
     addon.RXPG.LoadCachedGuides()
+    addon.RXPG.LoadEmbeddedGuides()
 
     addon.RXPFrame.GenerateMenuTable()
     ProcessSpells()

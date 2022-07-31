@@ -559,8 +559,24 @@ function addon.settings.CreateImportOptionsPanel()
                     addon.settings.gui.selectedDeleteGuide = "mustReload"
                 end
             },
-            reloadGuides = {
+            purge = {
                 order = 13,
+                type = 'execute',
+                name = "Purge All Data",
+                confirm = function(_, key)
+                    return string.format("This action will remove ALL guides from the database\nAre you sure?")
+                end,
+                disabled = function()
+                    return addon.settings.gui.selectedDeleteGuide ==
+                               "mustReload"
+                end,
+                func = function(_)
+                    addon.db.profile.guides = {}
+                    addon.settings.gui.selectedDeleteGuide = "mustReload"
+                end
+            },
+            reloadGuides = {
+                order = 14,
                 name = "Reload guides and UI",
                 type = 'execute',
                 func = function() _G.ReloadUI() end,
@@ -568,7 +584,7 @@ function addon.settings.CreateImportOptionsPanel()
                     return addon.settings.gui.selectedDeleteGuide ~=
                                "mustReload"
                 end
-            }
+            },
         }
     }
 
@@ -586,6 +602,17 @@ function addon.settings.CreateImportOptionsPanel()
     importFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
                                     "\\Textures\\rxp_logo-64")
     importFrame.icon:SetPoint("TOPRIGHT", -5, -5)
+
+    importFrame.text = importFrame:CreateFontString(nil, "OVERLAY")
+    importFrame.text:ClearAllPoints()
+    importFrame.text:SetPoint("CENTER", importFrame, 1, 1)
+    importFrame.text:SetJustifyH("LEFT")
+    importFrame.text:SetJustifyV("CENTER")
+    importFrame.text:SetTextColor(1, 1, 1)
+    importFrame.text:SetFont(addon.font, 14)
+    importFrame.text:SetText("")
+    addon.RXPG.LoadText = importFrame.text
+
 
     local function EditBoxHook(self)
         if importFrame:IsShown() then

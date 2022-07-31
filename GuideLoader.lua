@@ -195,18 +195,23 @@ function addon.CacheGuide(key, guide, enabledFor, guideVersion)
 end
 
 -- Parse and cache one-time guide
-function addon.ImportGuide(guide)
+function addon.ImportGuide(guide,text,defaultFor,cache)
     if addon.db then -- Addon loaded already
         local importedGuide, errorMsg = RXPG.ParseGuide(guide)
-        if not errorMsg and importedGuide and RXPG.AddGuide(importedGuide) then
+        if importedGuide and ((errorMsg and not cache) or RXPG.AddGuide(importedGuide)) then
             -- print(errorMsg,importedGuide.name)
             importedGuide.imported = true
             addon.CacheGuide(importedGuide.key, guide, importedGuide.enabledFor,
                             importedGuide.version)
-            return importedGuide
         end
+        return importedGuide
     else -- Addon not loaded, add to queue
-        table.insert(embeddedGuides, RXPG.BuildCacheObject(guide))
+        table.insert(embeddedGuides, {
+            groupOrContent = guide,
+            text = text,
+            defaultFor = defaultFor,
+            cache = true
+        })
     end
 end
 
@@ -375,12 +380,19 @@ function RXPG.ProcessBuffer(frame)
     if size > 0 then
         local parseGuide = RXPGuides.ImportGuide(buffer[size])
         table.remove(buffer, size)
-        if type(parseGuide) == "function" then return parseGuide() end
+        if type(parseGuide) == "table" and parseGuide.name then
+            local progress = addon.bufferSize - size + 1
+            addon.RXPG.LoadText:SetText(format("Loading Guides... (%d/%d)",
+                             progress,addon.bufferSize))
+        end
         return true
     elseif frame then
         frame:SetScript("OnUpdate", nil)
     end
-    addon.bufferSize = 0
+    if addon.bufferSize > 0 then
+        addon.RXPG.LoadText:SetText("Guides Loaded Successfully")
+        addon.bufferSize = 0
+    end
     addon.RXPFrame.GenerateMenuTable()
 end
 
@@ -391,11 +403,18 @@ function RXPG.LoadEmbeddedGuides()
     end
 
     for _, guideData in pairs(embeddedGuides) do
-        local guide, errorMsg = RXPG.ParseGuide(guideData.groupOrContent,
-                                                guideData.text,
-                                                guideData.defaultFor)
+        if guideData.cache then
+            addon.ImportGuide(guideData.groupOrContent,
+                              guideData.text,
+                              guideData.defaultFor,
+                              true)
+        else
+            local guide, errorMsg = RXPG.ParseGuide(guideData.groupOrContent,
+                                                    guideData.text,
+                                                    guideData.defaultFor)
 
-        if not errorMsg then RXPG.AddGuide(guide) end
+            if not errorMsg then RXPG.AddGuide(guide) end
+        end
     end
 
     embeddedGuides = nil
