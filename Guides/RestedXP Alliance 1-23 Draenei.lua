@@ -2220,9 +2220,12 @@ step
     .turnin 731 >> Turn in The Absent Minded Prospector
 	.accept 741 >> Accept The Absent Minded Prospector << !Hunter
 step << !Hunter
-    .goto Darkshore,33.1,39.9,30>>Take the boat to Teldrassil
+    .goto Darkshore,33.1,39.9,30
+    .zone Teldrassil >>Take the boat to Teldrassil
 step << !Hunter
-    .goto Teldrassil,55.9,89.8,30 >> Take the purple portal to Darnassus
+    #completewith next
+    .goto Teldrassil,55.9,89.8
+    .zone Darnassus >> Take the purple portal to Darnassus
 step << !Hunter
 	.goto Teldrassil,23.7,64.5
 	.turnin 741 >> Turn in The Absent Minded Prospector

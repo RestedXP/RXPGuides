@@ -1036,22 +1036,18 @@ step
     .accept 4763 >> Accept The Blackwood Corrupted
 step
 #xprate <1.5
-    .maxlevel 21
-    .goto Darkshore,38.1,41.2
-    .accept 982 >> Accept Deep Ocean, Vast Sea
-step
-#xprate <1.5
-    #sticky
-    #completewith blackwood
-    .goto Darkshore,37.8,44.0
-    .use 12346 >>Fill the empty bowl at the moonwell
-    .collect 12347,1 --Collect Filled Cleansing Bowl (x1)
-    .isOnQuest 4763
-step
     .isOnQuest 9633
     .goto Darkshore,37.4,40.2
     .turnin 9633 >> Turn in The Way to Auberdine
     .accept 10752 >> Accept Onward to Ashenvale
+step
+#xprate <1.5
+    .maxlevel 21
+    .goto Darkshore,38.1,41.2
+    .accept 982 >> Accept Deep Ocean, Vast Sea
+step
+    .goto Darkshore,38.37,43.05
+    .accept 1275 >> Accept Researching the Corruption
 step
 #xprate <1.5
     .maxlevel 21
@@ -1070,9 +1066,10 @@ step
     .accept 965 >> Accept The Tower of Althalaxx
 step
 #xprate <1.5
-    .maxlevel 21
-    .goto Darkshore,38.1,41.2
-    .accept 982 >> Accept Deep Ocean, Vast Sea
+    .goto Darkshore,37.8,44.0
+    .use 12346 >>Fill the empty bowl at the moonwell
+    .collect 12347,1,4763,1 --Collect Filled Cleansing Bowl (x1)
+    .isOnQuest 4763
 step
     .isOnQuest 9633
     .goto Darkshore,37.4,40.2
@@ -1332,19 +1329,18 @@ step
     .complete 731,1 --Escort Prospector Remtravel
 step
 #xprate <1.5 << !Druid
-    .isOnQuest 944
+    .isQuestTurnedIn 947
     .goto Darkshore,39.0,86.4
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
 step
 #xprate <1.5 << !Druid
-    .isOnQuest 944
+    .isQuestTurnedIn 947
     .goto Darkshore,39.0,86.4
     >>Use the scrying bowl in your bags and right click it
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
 step
-    .isOnQuest 944
     .goto Darkshore,38.7,87.3
 	>>Talk to the dryad at the back of the camp. If she's not here someone else may be escorting here, skip this step if she's not around.
     .accept 945 >> Accept Therylune's Escape
@@ -1355,7 +1351,7 @@ step
     .isOnQuest 945
 step
 #xprate <1.5 << !Druid
-    .maxlevel 21
+    .isOnQuest 949
     .goto Darkshore,38.6,86.1
     >>Click on the tome on top of the pedestal
     .turnin 949 >> Turn in The Twilight Camp
@@ -1363,10 +1359,9 @@ step
     #requires escort
     .goto Darkshore,45.0,85.3
     .turnin -993 >> Turn in A Lost Master
-    .isOnQuest 993
 step
     .goto Darkshore,45.0,85.3
-    .accept 994 >> Accept Escape Through Force
+    .accept 994,1 >> Accept Escape Through Force
     .isQuestTurnedIn 986
 step
 	#label end
@@ -1393,6 +1388,7 @@ step
     .isQuestTurnedIn 967
     .goto Ashenvale,26.2,38.6
     .accept 970 >> Accept The Tower of Althalaxx
+    .maxlevel 21
 step
     .goto Ashenvale,26.4,38.6
     .accept 1010 >> Accept Bathran's Hair
@@ -1406,15 +1402,20 @@ step
     .goto Ashenvale,31.4,31.0
 	>> The drop rate is very very low, just keep killing mobs.
     .complete 970,1 --Collect Glowing Soul Gem (x1)
+    .maxlevel 21
 step
     .goto Ashenvale,26.4,38.6
     .turnin 1010 >> Turn in Bathran's Hair
     .accept 1020 >> Accept Orendil's Cure
 step
 #xprate <1.5
-    .isOnQuest 970
+    .isQuestComplete 970
     .goto Ashenvale,26.2,38.6
     .turnin 970 >> Turn in The Tower of Althalaxx
+step
+    #xprate <1.5
+    .isQuestTurnedIn 970
+    .goto Ashenvale,26.2,38.6
     .accept 973 >> Accept The Tower of Althalaxx
 step
     .goto Ashenvale,34.40,48.00
@@ -1449,7 +1450,6 @@ step
     .goto Ashenvale,36.6,49.6
     .turnin 1054 >> Turn in Culling the Threat
 step
-    #timer Elune's tear roleplay
     .goto Ashenvale,37.3,51.8
     .turnin 1033 >> Turn in Elune's Tear
     .timer 10,Elune's tear roleplay
@@ -1468,6 +1468,9 @@ step
     .goto Ashenvale,22.7,51.9
     .turnin 945 >> Turn in Therylune's Escape
     .isQuestComplete 945
+step
+    .goto Ashenvale,22.7,51.9
+    .abandon 945 >> Abandon Therylune's Escape if you haven't completed it
 step
 #xprate <1.5
     .isOnQuest 973
@@ -1506,6 +1509,10 @@ step
 	>>Head to the island north and kill Ruuzel
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
     .complete 1009,1 --Collect Ring of Zoram (x1)
+step
+    .goto Darkshore,33.6,94.4--TODO: BFD waypoint
+    >>Enter the temple like building into the BFD caves and kill nagas/satyrs
+    .complete 1275,1
 step
     #requires nagas
     .goto Ashenvale,14.8,31.3
@@ -1550,9 +1557,11 @@ step
     .goto Darkshore,37.7,43.4
     .turnin 4740 >> Turn in WANTED: Murkdeep!
 step
+    .goto Darkshore,38.36,43.07
+    .turnin 1275 >> Turn in Researching the Corruption
+step
     .goto Darkshore,39.3,43.4
-    .turnin 994 >> Turn in Escape Through Force
-    .isQuestTurnedIn 986
+    .turnin -994 >> Turn in Escape Through Force
 step
     .goto Darkshore,37.5,41.9
     .turnin 731 >> Turn in The Absent Minded Prospector
@@ -1630,6 +1639,9 @@ step
     .goto Darkshore,37.5,41.8
     .accept 729 >> Accept The Absent Minded Prospector
 step
+    .goto Darkshore,38.37,43.05
+    .accept 1275 >> Accept Researching the Corruption
+step
     .goto Darkshore,37.4,40.2
     .turnin 9633 >> Turn in The Way to Auberdine
     .accept 10752 >> Accept Onward to Ashenvale
@@ -1654,6 +1666,7 @@ step
     .complete 945,1 --Escort Therylune
 step
     .goto Ashenvale,26.4,38.6
+    >>Head southeast to Ashenvale
     .accept 1010 >> Accept Bathran's Hair
 step
     >>Look out for the hair. They look like little hay clumps on the ground. Turn down your ground clutter in your graphical settings as it may help (some are half-stuck in the ground).
@@ -1718,8 +1731,7 @@ step
 .goto Ashenvale,13.8,29.1
     .complete 1008,1 --Collect Wrathtail Head (x20)
 step
-    #label Statuette
-.goto Ashenvale,14.2,20.6
+    .goto Ashenvale,14.2,20.6
     .complete 1007,1 --Collect Ancient Statuette (x1)
 step
     .goto Ashenvale,14.8,31.3
@@ -1729,8 +1741,12 @@ step
 step
 	>>Head to the island north and kill Ruuzel
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
-.goto Ashenvale,7.0,13.4
+    .goto Ashenvale,7.0,13.4
     .complete 1009,1 --Collect Ring of Zoram (x1)
+step
+    .goto Darkshore,33.6,94.4--TODO: BFD waypoint
+    >>Enter the temple like building into the BFD caves and kill nagas/satyrs
+    .complete 1275,1
 step
     #requires nagas
     .goto Ashenvale,14.8,31.3
@@ -1803,11 +1819,11 @@ step
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
 step << Warlock
     >>Loot the big tree
-.goto Ashenvale,31.6,31.6
+    .goto Ashenvale,31.6,31.6
     .complete 1738,1 --Collect Heartswood (x1)
 step
     .goto Ashenvale,40.1,53.1,0
-    .deathskip >>Head towards the murloc lake and die at the next to the base of the mountain, east side of the lake then respawn at the Spirit Healer
+    .deathskip >>Head towards the murloc lake and die next to the base of the mountain, east side of the lake then respawn at the Spirit Healer
 step
 #xprate <1.5
     .goto Ashenvale,49.8,67.2
@@ -1837,12 +1853,12 @@ step
     #completewith next
     .goto Darkshore,33.2,40.2
     .zone Teldrassil>>Take the boat to Darnassus
-step << Warrior
-    .goto Darnassus,57.6,46.8
-	.train 2567 >> Train Thrown from Ilyenia
+step
+    #completewith next
+    .goto Teldrassil,55.9,89.8
+    .zone Darnassus >> Take the purple portal to Darnassus
 step
     .goto Darnassus,31.2,84.5
-    >>Take the purple portal into Darnassus
     .turnin 741 >> Turn in The Absent Minded Prospector
     .accept 942 >> Accept The Absent Minded Prospector
 step
