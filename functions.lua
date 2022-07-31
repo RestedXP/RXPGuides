@@ -39,10 +39,12 @@ events.emote = "PLAYER_TARGET_CHANGED"
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
+--[[
 events.isQuestComplete = events.complete
 events.isOnQuest = events.complete
 events.isQuestTurnedIn = events.complete
 events.isQuestAvailable = events.isQuestTurnedIn
+]]
 events.cast = events.hs
 events.blastedLands = events.collect
 events.daily = events.accept
