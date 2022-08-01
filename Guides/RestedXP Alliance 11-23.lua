@@ -1849,6 +1849,10 @@ step
     .goto Darkshore,37.5,41.9
     .turnin 731 >> Turn in The Absent Minded Prospector
     .accept 741 >> Accept The Absent Minded Prospector
+step << NightElf/Draenei !Paladin wotlk
+    #level 20
+    #completewith next
+    + If you have gold on this server, mail yourself 5g. We'll be buying our mounts soon.
 step
     #completewith next
     .goto Darkshore,33.2,40.2
@@ -1857,6 +1861,10 @@ step
     #completewith next
     .goto Teldrassil,55.9,89.8
     .zone Darnassus >> Take the purple portal to Darnassus
+step << NightElf wotlk
+	.goto Darnassus,38.7,15.8
+    .money <5.00
+	.skill riding,150 >> Train riding and buy your mount
 step
     .goto Darnassus,31.2,84.5
     .turnin 741 >> Turn in The Absent Minded Prospector
@@ -1866,7 +1874,12 @@ step
     >>Exit Darnassus trhough the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
     .fly Auberdine>> Fly to Auberdine
-
+step << Draenei !Paladin wotlk
+    .goto Darkshore,30.8,41.0,40,0
+	.goto The Exodar,81.18,52.56
+    .money <5.00
+    >> Take the western most boat to Azuremyst Isle
+    .skill riding,150 >>Head to Exodar, buy and train your mount
 step << tbc
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
