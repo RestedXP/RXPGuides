@@ -1,11 +1,12 @@
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Alliance !Warlock/Gnome wotlk
+<< Alliance !Warlock/Alliance wotlk
 #name 11-14 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
-#defaultfor !Draenei !Warlock
+#defaultfor !Draenei !Warlock << tbc
+#defaultfor !Draenei << wotlk
 #next 14-20 Bloodmyst
 step
     .goto Darkshore,36.6,45.6
@@ -1846,12 +1847,13 @@ step
     .goto Darkshore,37.7,43.4
     .turnin 4740 >> Turn in WANTED: Murkdeep!
 step
+    .goto Darkshore,38.36,43.07
+    .turnin 1275 >> Turn in Researching the Corruption
+    .isQuestComplete 1275
+step
     .goto Darkshore,37.5,41.9
     .turnin 731 >> Turn in The Absent Minded Prospector
     .accept 741 >> Accept The Absent Minded Prospector
-step << wotlk
-    #completewith next
-    +If you have gold on this server, mail yourself 5g. We'll be buying our mounts soon.
 step
     #completewith next
     .goto Darkshore,33.2,40.2
