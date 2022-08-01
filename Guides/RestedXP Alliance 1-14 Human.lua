@@ -1335,7 +1335,7 @@ step
 step
     #completewith next
     .goto Dun Morogh,84.4,31.1
-    .zoneskip Loch modan >>Go through the tunnel to Loch Modan
+    .zoneskip Loch Modan >>Go through the tunnel to Loch Modan
 step
     .goto Loch Modan,24.8,18.4
     .turnin 353 >> Turn in Stormpike's Delivery
