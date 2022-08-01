@@ -230,15 +230,13 @@ local function buildSpacer(height)
 end
 
 function addon.tracker:CreateGui()
-    -- local BackdropTemplate = _G.BackdropTemplateMixin and "BackdropTemplate" or nil
-
     local attachment = _G.PaperDollItemsFrame
     local offset = {
         x = -38,
         y = -32,
         tabsHeight = _G.CharacterFrameTab1:GetHeight()
     }
-    local spacers = {element = 4}
+    local padding = 4
 
     addon.tracker.ui = AceGUI:Create("Frame")
     local trackerUi = addon.tracker.ui
@@ -271,13 +269,6 @@ function addon.tracker:CreateGui()
     _G["RESTEDXP_TRACKER_SUMMARY_WINDOW"] = trackerUi.frame
     tinsert(_G.UISpecialFrames, "RESTEDXP_TRACKER_SUMMARY_WINDOW")
 
-    -- local linksContainer = AceGUI:Create("SimpleGroup")
-    -- linksContainer:SetLayout('Flow')
-    -- TODO RXP and Discord links
-
-    -- trackerUi.scrollContainer:AddChild(linksContainer)
-    -- trackerUi.scrollContainer:AddChild(buildSpacer(spacers.element))
-
     local topContainer = AceGUI:Create("SimpleGroup")
     topContainer:SetLayout('Flow')
 
@@ -306,8 +297,7 @@ function addon.tracker:CreateGui()
     trackerUi.reachedContainer.label:SetFullWidth(true)
 
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.label)
-    trackerUi.reachedContainer:AddChild(buildSpacer(spacers.element))
-    _G.RXPRC = trackerUi.reachedContainer.label
+    trackerUi.reachedContainer:AddChild(buildSpacer(padding))
 
     trackerUi.reachedContainer.data = AceGUI:Create("Label")
     trackerUi.reachedContainer.data:SetText("In-progress")
@@ -325,7 +315,7 @@ function addon.tracker:CreateGui()
     trackerUi.speedContainer.label:SetText("Time spent")
     trackerUi.speedContainer.label:SetFullWidth(true)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.label)
-    trackerUi.speedContainer:AddChild(buildSpacer(spacers.element))
+    trackerUi.speedContainer:AddChild(buildSpacer(padding))
 
     trackerUi.speedContainer.data = AceGUI:Create("Label")
     trackerUi.speedContainer.data:SetText("In-progress")
@@ -360,7 +350,7 @@ function addon.tracker:CreateGui()
     trackerUi.sourcesContainer.label:SetFullWidth(true)
 
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.label)
-    trackerUi.sourcesContainer:AddChild(buildSpacer(spacers.element))
+    trackerUi.sourcesContainer:AddChild(buildSpacer(padding))
 
     trackerUi.sourcesContainer.data = {
         quests = AceGUI:Create("Label"),
@@ -371,7 +361,7 @@ function addon.tracker:CreateGui()
     trackerUi.sourcesContainer.data['quests']:SetFont(addon.font, 12)
     trackerUi.sourcesContainer:AddChild(
         trackerUi.sourcesContainer.data['quests'])
-    trackerUi.sourcesContainer:AddChild(buildSpacer(spacers.element))
+    trackerUi.sourcesContainer:AddChild(buildSpacer(padding))
 
     trackerUi.sourcesContainer.data['mobs']:SetText('mobs')
     trackerUi.sourcesContainer.data['mobs']:SetFont(addon.font, 12)
@@ -388,7 +378,7 @@ function addon.tracker:CreateGui()
     trackerUi.teamworkContainer.label:SetText("Teamwork")
     trackerUi.teamworkContainer.label:SetFullWidth(true)
     trackerUi.teamworkContainer:AddChild(trackerUi.teamworkContainer.label)
-    trackerUi.teamworkContainer:AddChild(buildSpacer(spacers.element))
+    trackerUi.teamworkContainer:AddChild(buildSpacer(padding))
 
     trackerUi.teamworkContainer.data = {}
 
@@ -397,7 +387,7 @@ function addon.tracker:CreateGui()
     trackerUi.teamworkContainer.data['solo']:SetFont(addon.font, 12)
     trackerUi.teamworkContainer:AddChild(
         trackerUi.teamworkContainer.data['solo'])
-    trackerUi.teamworkContainer:AddChild(buildSpacer(spacers.element))
+    trackerUi.teamworkContainer:AddChild(buildSpacer(padding))
 
     trackerUi.teamworkContainer.data['group'] = AceGUI:Create("Label")
     trackerUi.teamworkContainer.data['group']:SetText('group')
@@ -416,7 +406,7 @@ function addon.tracker:CreateGui()
     trackerUi.extrasContainer.label:SetText("Extras")
     trackerUi.extrasContainer.label:SetFullWidth(true)
     trackerUi.extrasContainer:AddChild(trackerUi.extrasContainer.label)
-    trackerUi.extrasContainer:AddChild(buildSpacer(spacers.element))
+    trackerUi.extrasContainer:AddChild(buildSpacer(padding))
 
     trackerUi.extrasContainer.data = AceGUI:Create("Label")
     trackerUi.extrasContainer.data:SetText("")
@@ -601,60 +591,56 @@ function addon.tracker:UpdateReport(selectedLevel)
 
     end
 
-    local teamworkRatio = report.groupExperience /
-                              (report.soloExperience + report.groupExperience)
-    local soloPercentage = 100 * teamworkRatio
+    local ratio = report.groupExperience /
+                      (report.soloExperience + report.groupExperience)
+    local percentage = 100 * ratio
 
     if selectedLevel == addon.tracker.maxLevel then
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %s", 'N/A'))
         trackerUi.teamworkContainer.data['group']:SetText(fmt("* Group: %s",
                                                               'N/A'))
-    elseif smatch(tostring(teamworkRatio), "nan") then -- If division error
-        trackerUi.teamworkContainer.data['solo']:SetText(
-            fmt("* Solo: %.1f%%", 0))
+    elseif smatch(tostring(ratio), "nan") then -- If division error
+        trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%", 0))
         trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %.1f%%", 0))
-    elseif soloPercentage == 0 then -- If numerator is 0, flip 100%
+            fmt("* Group: %d%%", 0))
+    elseif report.groupExperience == 0 then
         trackerUi.teamworkContainer.data['solo']:SetText(
-            fmt("* Solo: %.1f%%", 100 - soloPercentage))
+            fmt("* Solo: %.2f%%", 100))
         trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %.1f%%", soloPercentage))
+            fmt("* Group: %.2f%%", 0))
     else
         trackerUi.teamworkContainer.data['solo']:SetText(
-            fmt("* Solo: %.1f%%", soloPercentage))
+            fmt("* Solo: %.2f%%", 100 - percentage))
         trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %.1f%%", 100 - soloPercentage))
+            fmt("* Group: %.2f%%", percentage))
     end
 
-    local sourceRatio = report.questXP / (report.questXP + report.mobXP)
-
-    local questsPercentage = 100 * sourceRatio
+    ratio = report.questXP / (report.questXP + report.mobXP)
+    percentage = 100 * ratio
 
     if selectedLevel == addon.tracker.maxLevel then
         trackerUi.sourcesContainer.data['quests']:SetText(fmt("* Quests: %s",
                                                               "N/A"))
         trackerUi.sourcesContainer.data['mobs']:SetText(
             fmt("* Killing: %s", "N/A"))
-    elseif smatch(tostring(sourceRatio), "nan") then -- If division error
+    elseif smatch(tostring(ratio), "nan") then -- If division error
+        trackerUi.sourcesContainer.data['quests']:SetText(
+            fmt("* Quests: %d%%", 0))
+        trackerUi.sourcesContainer.data['mobs']:SetText(
+            fmt("* Killing: %d%%", 0))
+    elseif report.questXP == 0 then
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
-                                                              "* Quests: %.1f%%",
+                                                              "* Quests: %.2f%%",
                                                               0))
         trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Killing: %.1f%%", 0))
-    elseif questsPercentage == 0 then -- If numerator is 0, flip 100%
-        trackerUi.sourcesContainer.data['quests']:SetText(fmt(
-                                                              "* Quests: %.1f%%",
-                                                              100 -
-                                                                  questsPercentage))
-        trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Killing: %.1f%%", questsPercentage))
+            fmt("* Killing: %.2f%%", 100))
     else
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
-                                                              "* Quests: %.1f%%",
-                                                              questsPercentage))
+                                                              "* Quests: %.2f%%",
+                                                              100 - percentage))
         trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Killing: %.1f%%", 100 - questsPercentage))
+            fmt("* Killing: %.2f%%", percentage))
     end
 
     local zonesBlock = ""
