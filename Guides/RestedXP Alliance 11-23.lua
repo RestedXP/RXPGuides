@@ -1849,10 +1849,9 @@ step
     .goto Darkshore,37.5,41.9
     .turnin 731 >> Turn in The Absent Minded Prospector
     .accept 741 >> Accept The Absent Minded Prospector
-step << NightElf/Draenei !Paladin wotlk
-    #level 20
+step << wotlk
     #completewith next
-    + If you have gold on this server, mail yourself 5g. We'll be buying our mounts soon.
+    +If you have gold on this server, mail yourself 5g. We'll be buying our mounts soon.
 step
     #completewith next
     .goto Darkshore,33.2,40.2
