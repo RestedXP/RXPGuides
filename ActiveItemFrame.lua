@@ -61,6 +61,54 @@ local function GetActiveItemList(ref)
     return itemList
 end
 
+local function UpdateCooldowns()
+    print('dingding')
+    if not (addon.activeItemFrame and addon.activeItemFrame:IsShown()) then
+        return
+    end
+    local itemFrame = addon.activeItemFrame
+    local buttonList = itemFrame.buttonList
+    --[[local function FormatCooldown(startTime, remaining, enable)
+
+        if remaining < 60 and remaining > 0 then
+            return tostring(math.ceil(remaining))
+        elseif remaining <= 0 or startTime == 0 then
+            return ""
+        elseif remaining >= 60 and remaining < 3600 then
+            return tostring(math.ceil(remaining / 60 - 0.5)) .. "m"
+        elseif remaining >= 3600 then
+            return tostring(math.ceil(remaining / 3600 - 0.5)) .. "h"
+        end
+    end]]
+    for i, btn in ipairs(buttonList) do
+        local id = btn.itemId
+        if id and btn:IsShown() then
+            local start,duration
+            if btn.spell then
+                start,duration = GetSpellCooldown(id)
+            else
+                start,duration = GetItemCooldown(id)
+            end
+            --local remaining, cd
+            if start then
+                --remaining = start + duration - GetTime()
+                --cd = FormatCooldown(start,remaining,enable)
+                if btn.cooldown:GetCooldownDuration() == 0 or
+                                         not btn.cooldown:IsShown() then
+                    btn.cooldown:SetCooldown(start,duration)
+                end
+            --else
+                --cd = ""
+            end
+            -- print(cd)
+            --[[if cd ~= btn.cd then
+                btn.cd = cd
+                btn.text:SetText(cd)
+            end]]
+        end
+    end
+end
+
 function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not self or self.activeItemFrame then return end
@@ -91,7 +139,9 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
     f.parent = self
     f.buttonList = {}
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
-    f:SetScript("OnEvent", addon.UpdateItemFrame)
+
+    f:RegisterEvent("SPELL_UPDATE_COOLDOWN")
+    f:SetScript("OnEvent",UpdateCooldowns)
 
     if not f.title then
         f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplate)
@@ -135,56 +185,6 @@ local fOnLeave = function(self)
         end
     end
 end
-
-
-function addon:SPELL_UPDATE_COOLDOWN()
-    if not (addon.activeItemFrame and addon.activeItemFrame:IsShown()) then
-        return
-    end
-    local itemFrame = addon.activeItemFrame
-    local buttonList = itemFrame.buttonList
-    --[[local function FormatCooldown(startTime, remaining, enable)
-
-        if remaining < 60 and remaining > 0 then
-            return tostring(math.ceil(remaining))
-        elseif remaining <= 0 or startTime == 0 then
-            return ""
-        elseif remaining >= 60 and remaining < 3600 then
-            return tostring(math.ceil(remaining / 60 - 0.5)) .. "m"
-        elseif remaining >= 3600 then
-            return tostring(math.ceil(remaining / 3600 - 0.5)) .. "h"
-        end
-    end]]
-    for i, btn in ipairs(buttonList) do
-        local id = btn.itemId
-        if id and btn:IsShown() then
-            local start,duration
-            if btn.spell then
-                start,duration = GetSpellCooldown(id)
-            else
-                start,duration = GetItemCooldown(id)
-            end
-            --local remaining, cd
-            if start then
-                --remaining = start + duration - GetTime()
-                --cd = FormatCooldown(start,remaining,enable)
-                if btn.cooldown:GetCooldownDuration() == 0 or
-                                         not btn.cooldown:IsShown() then
-                    btn.cooldown:SetCooldown(start,duration,0.1)
-                end
-            --else
-                --cd = ""
-            end
-            -- print(cd)
-            --[[if cd ~= btn.cd then
-                btn.cd = cd
-                btn.text:SetText(cd)
-            end]]
-        end
-    end
-end
-
-addon:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 
 function addon.UpdateItemFrame(itemFrame)
     if not itemFrame then
@@ -302,5 +302,6 @@ function addon.UpdateItemFrame(itemFrame)
     for n = i + 1, #buttonList do buttonList[n]:Hide() end
     local width = math.max(itemFrame.title:GetWidth() + 10, i * 27 + 8)
     itemFrame:SetWidth(width);
+    UpdateCooldowns()
 
 end
