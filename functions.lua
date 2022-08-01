@@ -1082,6 +1082,15 @@ function addon.UpdateQuestCompletionData(self)
     addon.UpdateStepText(self)
 
     if completed then
+        if not element.completed and step.active == true then
+            addon.comms:AnnounceStepEvent('.complete', {
+                title = element.title,
+                completionText = element.text,
+                step = RXPCData.currentStep,
+                guideName = RXPCData.currentGuideName
+            })
+        end
+
         addon.SetElementComplete(self, true)
         -- elseif skip then
         --    addon.SetElementComplete(self)
@@ -1510,6 +1519,11 @@ function addon.functions.fly(self, ...)
     elseif (event and UnitOnTaxi("player")) or
         (event == "PLAYER_CONTROL_LOST" and GetTime() - addon.flightInfo.startFlight < 1.5) then
         addon.SetElementComplete(self)
+        addon.comms:AnnounceStepEvent('.fly', {
+            destination = addon.flightInfo.dest,
+            duration = addon.flightInfo.timer,
+            guideName = RXPCData.currentGuideName
+        })
         if element.timer then
             addon.StartTimer(element.timer,element.timerText)
         end
@@ -1606,7 +1620,6 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     local numRequired = element.qty
     local event = ...
     local isComplete
-
     if name then
         element.requestFromServer = nil
     else
@@ -1708,6 +1721,14 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     element.lastCount = count
 
     if numRequired > 0 and count >= numRequired then
+        if not element.completed and step.active == true then
+            addon.comms:AnnounceStepEvent('.collect', {
+                title = element.text,
+                completionText = element.text,
+                step = RXPCData.currentStep,
+                guideName = RXPCData.currentGuideName
+            })
+        end
         addon.SetElementComplete(self, true)
     elseif numRequired == 0 and count == 0 then
         addon.SetElementComplete(self)

@@ -378,6 +378,8 @@ function addon.SetStep(n, n2, loopback)
     if not guide then return end
     local group = guide.group
 
+    addon.lastStepUpdate = GetTime()
+
     -- print(n)
     if n > #guide.steps then
         if guide.loop then

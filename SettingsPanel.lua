@@ -727,6 +727,32 @@ function addon.settings.CreateExtrasOptionsPanel()
                 name = "Level up (Guild)",
                 type = "toggle",
                 order = 8
+            },
+            enableCollectStepAnnouncements = {
+                name = "Collect step updates",
+                type = "toggle",
+                order = 9
+            },
+            enableCompleteStepAnnouncements = {
+                name = "Completed step updates",
+                type = "toggle",
+                order = 10
+            },
+            enableFlyStepAnnouncements = {
+                name = "Flying step updates",
+                type = "toggle",
+                order = 11
+            },
+            ignoreQuestieConflicts = {
+                name = "Ignore Questie",
+                type = "toggle",
+                order = 12,
+                hidden = not _G.Questie
+            },
+            alwaysSendBranded = {
+                name = "Send without RXP group",
+                type = "toggle",
+                order = 13
             }
         }
     }
