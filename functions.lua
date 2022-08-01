@@ -17,7 +17,7 @@ events.fp = {"UI_INFO_MESSAGE", "TAXIMAP_OPENED"}
 events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED", "GOSSIP_SHOW"}
-events.deathskip = "CONFIRM_XP_LOSS"
+events.deathskip = {"CONFIRM_XP_LOSS","GOSSIP_SHOW"}
 events.xp = {"PLAYER_XP_UPDATE", "PLAYER_LEVEL_UP"}
 events.reputation = "UPDATE_FACTION"
 events.vendor = {"MERCHANT_SHOW", "MERCHANT_CLOSED"}
@@ -1554,7 +1554,12 @@ function addon.functions.deathskip(self, ...)
     end
     if not self.element.step.active then return end
     local event = ...
-    if event == "CONFIRM_XP_LOSS" then addon.SetElementComplete(self) end
+    if event == "CONFIRM_XP_LOSS" then
+         addon.SetElementComplete(self)
+         AcceptXPLoss()
+    elseif event == "GOSSIP_SHOW" then
+        addon.SelectGossipType("healer")
+    end
 end
 
 addon.questItemList = {}

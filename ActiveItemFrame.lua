@@ -62,7 +62,6 @@ local function GetActiveItemList(ref)
 end
 
 local function UpdateCooldowns()
-    print('dingding')
     if not (addon.activeItemFrame and addon.activeItemFrame:IsShown()) then
         return
     end
