@@ -251,15 +251,6 @@ CurrentStepFrame:SetScript("OnMouseDown", RXPFrame.OnMouseDown)
 CurrentStepFrame:SetScript("OnMouseUp", RXPFrame.OnMouseUp)
 CurrentStepFrame:EnableMouse(1)
 
-local function ClearTable(tab)
-    if #tab > 1 then
-        while #tab > 0 do table.remove(tab) end
-    else
-        for k in pairs(tab) do tab[k] = nil end
-    end
-    return tab
-end
-
 CurrentStepFrame.framePool = {}
 
 local function ClearFrameData()
@@ -424,10 +415,11 @@ function addon.SetStep(n, n2, loopback)
         if n < #guide.steps then step.completed = nil end
     end
 
-    ClearTable(activeSteps)
-    ClearTable(addon.questAccept)
-    ClearTable(addon.questTurnIn)
-    ClearTable(addon.activeItems)
+    table.wipe(activeSteps)
+    table.wipe(addon.questAccept)
+    table.wipe(addon.questTurnIn)
+    table.wipe(addon.activeItems)
+    table.wipe(addon.activeSpells)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1
@@ -682,8 +674,13 @@ function addon.SetStep(n, n2, loopback)
         if step.active then
             stepframe:Show()
             if step.activeItems then
-                for i, v in pairs(step.activeItems) do
-                    addon.activeItems[i] = v
+                for k, v in pairs(step.activeItems) do
+                    addon.activeItems[k] = v
+                end
+            end
+            if step.activeSpells then
+                for k, v in pairs(step.activeSpells) do
+                    addon.activeSpells[k] = v
                 end
             end
         else
@@ -1069,8 +1066,8 @@ function addon:LoadGuide(guide, OnLoad)
     --local totalHeight = 0
     local nframes = 0
 
-    ClearTable(addon.scheduledTasks)
-    ClearTable(addon.stepUpdateList)
+    table.wipe(addon.scheduledTasks)
+    table.wipe(addon.stepUpdateList)
     addon.currentGuide = {}
 
     for k, v in pairs(guide) do addon.currentGuide[k] = v end

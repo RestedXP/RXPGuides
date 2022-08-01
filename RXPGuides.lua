@@ -30,6 +30,7 @@ addon.itemQueryList = {}
 addon.questAccept = {}
 addon.questTurnIn = {}
 addon.activeItems = {}
+addon.activeSpells = {}
 addon.RXPG = {}
 addon.functions = {}
 
@@ -739,8 +740,6 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                 event = event .. "/bottomFrame"
                 skip = 1
             end
-        else
-            addon.UpdateItemCooldown()
         end
 
         if skip % 4 == 2 then

@@ -1384,6 +1384,17 @@ function addon.functions.hs(self, ...)
         return element
     end
     local event, unit, _, id = ...
+    local step = self.element.step
+    if class == "SHAMAN" then
+        step.activeSpells = step.activeSpells or {}
+        step.activeSpells[556] = true
+    end
+
+    step.activeItems = step.activeItems or {}
+    step.activeItems[6948] = true
+    step.activeItems[348699] = true
+    step.activeItems[184871] = true
+
     if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and
         (id == 8690 or id == 556 or id == 348699 or id == 184871) then
         addon.SetElementComplete(self)
@@ -3246,10 +3257,21 @@ function addon.functions.use(self, text, ...)
     end
     local element = self.element
     local step = element.step
+    local itemTable
+    if element.tag == "usespell" then
+        itemTable = step.activeSpells or {}
+        step.activeSpells = itemTable
+    else
+        itemTable = step.activeItems or {}
+        step.activeItems = itemTable
+    end
     -- if not text and step.active then
-    if not step.activeItems then step.activeItems = {} end
-    for item in pairs(element.activeItems) do step.activeItems[item] = true end
+    for item in pairs(element.activeItems) do itemTable[item] = true end
     -- end
+end
+
+function addon.functions.usespell(...)
+    return addon.functions.use(...)
 end
 
 function addon.functions.vehicle(self, ...)
