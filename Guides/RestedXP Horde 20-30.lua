@@ -1581,6 +1581,7 @@ step
     .turnin 6462 >> Turn in Troll Charm
     .isOnQuest 6462
 step
+    .isQuestTurnedIn 6462
     .goto Ashenvale,11.6,34.3
     .turnin 824 >> Turn in Je'neu of the Earthen Ring
 step << Rogue
