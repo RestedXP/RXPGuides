@@ -1017,6 +1017,7 @@ step
     >> Go into the Pools of Vision below the Spirit Rise
     .accept 962 >>Accept Serpentbloom
 step
+    .maxlevel 22
     .goto Thunder Bluff,28.4,27.7
     .accept 264 >>Accept Until Death Do Us Part
 step << Shaman
