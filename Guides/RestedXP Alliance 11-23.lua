@@ -1860,7 +1860,7 @@ step
     #completewith next
     .goto Teldrassil,55.9,89.8
     .zone Darnassus >> Take the purple portal to Darnassus
-step << NightElf wotlk
+step << NightElf/wotlk
 	.goto Darnassus,38.7,15.8
     .money <5.00
 	.skill riding,150 >> Train riding and buy your mount
@@ -1873,7 +1873,7 @@ step
     >>Exit Darnassus trhough the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
     .fly Auberdine>> Fly to Auberdine
-step << Draenei !Paladin wotlk
+step << Draenei !Paladin/wotlk
     .goto Darkshore,30.8,41.0,40,0
 	.goto The Exodar,81.18,52.56
     .money <5.00
