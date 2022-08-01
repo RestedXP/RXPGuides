@@ -157,7 +157,7 @@ if _G.QuestieLoader then db = _G.QuestieLoader:ImportModule("QuestieDB") end
 addon.questieDB = db
 
 function addon.FormatNumber(number, precision)
-    if not precision then precision = 0 end
+    precision = precision or 0
     local integer = math.floor(number)
     local decimal = math.floor((number - integer) * 10 ^ precision + 0.5)
     if decimal > 0 then
@@ -669,15 +669,11 @@ function addon.functions.accept(self, ...)
         if step.active then
             if element.requiredTurnIn and not IsQuestTurnedIn(element.requiredTurnIn) then
                 addon.SetElementComplete(self, true)
-            elseif event then
-                local itemFrame = self.GetParent and
-                                      self:GetParent().activeItemFrame
-                if completed ~= element.completed and itemFrame then
-                    ProcessItems(not element.completed, step, id)
-                    addon.UpdateItemFrame(itemFrame)
-                end
-            else
+            elseif not event then
                 ProcessItems(true, step, id)
+            elseif completed ~= element.completed then
+                ProcessItems(not element.completed, step, id)
+                addon.UpdateItemFrame()
             end
         end
 
@@ -849,15 +845,13 @@ function addon.functions.turnin(self, ...)
         if step.active then
             if element.skipIfMissing and not IsOnQuest(id) then
                 addon.SetElementComplete(self, true)
-            elseif event then
-                local itemFrame = self.GetParent and
-                                      self:GetParent().activeItemFrame
-                if completed ~= element.completed and itemFrame then
-                    ProcessItems(not element.completed, step, id, true)
-                    addon.UpdateItemFrame(itemFrame)
-                end
-            else
+                ProcessItems(false, step, id, true)
+                addon.UpdateItemFrame()
+            elseif not event then
                 ProcessItems(true, step, id, true)
+            elseif completed ~= element.completed then
+                ProcessItems(not element.completed, step, id, true)
+                addon.UpdateItemFrame()
             end
         end
 
@@ -1130,17 +1124,7 @@ function addon.functions.complete(self, ...)
     local step = element.step
     local id = self.element.questId
 
-    if event then
-        if step.active then
-            if element.skipIfMissing and not IsOnQuest(element.questId) then
-                addon.SetElementComplete(self,true)
-            else
-                addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
-            end
-        else
-            addon.updateInactiveQuest[self] = addon.UpdateQuestCompletionData
-        end
-    else
+    if not event then
         if step.active and addon.questCompleteItems[id] then
             local qItem = addon.questCompleteItems[id]
             if not step.activeItems then step.activeItems = {} end
@@ -1153,6 +1137,16 @@ function addon.functions.complete(self, ...)
             end
         end
         addon.UpdateQuestCompletionData(self)
+    else
+        if not step.active then
+            addon.updateInactiveQuest[self] = addon.UpdateQuestCompletionData
+        elseif event ~= "WindowUpdate" then
+            if element.skipIfMissing and not IsOnQuest(element.questId) then
+                addon.SetElementComplete(self,true)
+            else
+                addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
+            end
+        end
     end
 end
 
@@ -1642,18 +1636,15 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     if step.active and questId then
         if step.objFlags == 0 then
             -- adds the item to the active item list, in case it's an item that starts a quest
-            if not step.activeItems then step.activeItems = {} end
-            if event then
-                if event ~= "BAG_UPDATE_DELAYED" then
-                    step.activeItems[element.id] = not IsOnQuest(questId)
-                    local itemFrame = self.GetParent and
-                                          self:GetParent().activeItemFrame
-                    if itemFrame then
-                        addon.UpdateItemFrame(itemFrame)
-                    end
-                end
-            else
+
+            step.activeItems = step.activeItems or {}
+            if not event then
                 step.activeItems[element.id] = true
+            elseif event ~= "BAG_UPDATE_DELAYED" and event ~= "WindowUpdate" and addon.activeItems then
+                local isItemActive = not IsOnQuest(questId)
+                step.activeItems[element.id] = isItemActive
+                addon.activeItems[element.id] = isItemActive
+                addon.UpdateItemFrame()
             end
         elseif element.subtract or element.checkObjectives then
             local bitMask = element.objFlags
@@ -3066,7 +3057,7 @@ function addon.functions.buy(self, ...)
     local event = ...
     local element = self.element
     local step = element.step
-    if not (step.active and event) then return end
+    if not (step.active and event and event ~= "WindowUpdate") then return end
 
     local id = element.id
     local count = GetItemCount(id)
@@ -3074,7 +3065,7 @@ function addon.functions.buy(self, ...)
     local objIndex = element.objIndex
     local questId = element.questId
 
-    if event ~= "BAG_UPDATE_DELAYED" then
+    if event ~= "BAG_UPDATE_DELAYED" and event ~= "WindowUpdate" then
         if addon.IsQuestComplete(questId) or addon.IsQuestTurnedIn(questId) then
             element.isQuestComplete = true
         elseif objIndex and event then

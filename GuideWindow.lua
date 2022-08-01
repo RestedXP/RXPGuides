@@ -1248,7 +1248,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                 if not element.element then
                     element.element = element
                 end
-                RXPG[addon.currentGuide.group][element.tag](element)
+                RXPG[addon.currentGuide.group][element.tag](element,"WindowUpdate")
                 if element.requestFromServer then
                     addon.updateStepText = true
                     addon.stepUpdateList[element.step.index] = true
@@ -1304,14 +1304,14 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                     local stepDiff = element.step.index - RXPCData.currentStep
                     element.element = element
                     if element.requestFromServer then
-                        RXPG[addon.currentGuide.group][element.tag](element)
+                        RXPG[addon.currentGuide.group][element.tag](element,"WindowUpdate")
                         addon.updateStepText =
                             addon.updateStepText or
                                 not element.requestFromServer
                         addon.stepUpdateList[element.step.index] =
                             not element.requestFromServer
                     elseif element.tag and (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
-                        RXPG[addon.currentGuide.group][element.tag](element)
+                        RXPG[addon.currentGuide.group][element.tag](element,"WindowUpdate")
                     end
                 end
                 local rawtext = element.tooltipText
