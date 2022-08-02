@@ -100,13 +100,13 @@ step << wotlk
     .goto Ironforge,67.86,42.87
     .collect 4371,1,175,1,1
 	.bronzetube
-step << Draenei/NightElf wotlk--Not needed, including just in case someone forgets to set HS to SW
+step << Draenei wotlk/NightElf wotlk--Not needed, including just in case someone forgets to set HS to SW
     .goto Ironforge,55.5,47.7
     .fp Ironforge>> Get the Ironforge Flight Path
 step << Mage wotlk
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
-step << Draenei/NightElf wotlk
+step << Draenei wotlk/NightElf wotlk
     #completewith next
     .goto Dun Morogh,59.5,42.8,40,0
     .goto Dun Morogh,60.4,44.1,40,0
@@ -129,7 +129,7 @@ step << Draenei/NightElf wotlk
     >>Do the Deathless Dun Morogh -> Wetlands skip
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
     .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
-step << Draenei/NightElf wotlk
+step << Draenei wotlk/NightElf wotlk
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
 step << Dwarf !Paladin wotlk
@@ -144,7 +144,7 @@ step << Gnome !Warlock wotlk
 	.goto Dun Morogh,49.2,48.1
 	.money <5.00
 	.train 553 >> Head to Dun Morogh, train riding and purchase your mount.
-step << Human/Gnome/Dwarf wotlk
+step << Human/Gnome/Dwarf/wotlk
     .goto Ironforge,55.5,47.7
     .fly Wetlands >> Fly to Wetlands
 step << Mage wotlk
