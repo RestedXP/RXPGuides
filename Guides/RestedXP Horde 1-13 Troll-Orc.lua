@@ -1480,7 +1480,8 @@ step
 step
     #sticky
     #label Collars2
->>Kill Burning Blade mobs in Skull Rock for Searing Collars, and until Lieutenant's Insignia drops
+   .goto Durotar,51.8,10.0 
+>>Kill Burning Blade mobs in Skull Rock for Searing Collars and until Lieutenant's Insignia drops
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)
 step << Orc Shaman/Troll Shaman/Orc Warrior/Troll Shaman
