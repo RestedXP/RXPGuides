@@ -1389,7 +1389,7 @@ step << Orc/Troll
     .accept 6385 >>Accept Doras the Wind Rider Master
 step << Orc/Troll
     .goto Orgrimmar,45.2,64.0
-     >> Turn in the quests but do NOT fly back to the crossroads
+     >> Turn in the quests but do NOT fly back to The Crossroads
     .turnin 6385 >>Turn in Doras the Wind Rider Master
     .accept 6386 >>Accept Return to the Crossroads.
 step << Orc/Troll
@@ -1408,12 +1408,12 @@ step
     .accept 813 >>Accept Finding the Antidote
 step
     #completewith next
-    >> Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it
+    >> Abandon Need for a Cure. This will remove the timer on the quest but still allow you to still do it.
     .abandon 812 >>Abandon Need for a Cure
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run out of Orgrimmar
 step
-.goto Durotar,41.7,25.5,20 >>Jump into Thunder Ridge
+.goto Durotar,41.7,25.5,30 >>Jump into Thunder Ridge
 step
     >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space
 .goto Durotar,41.9,26.0
@@ -1421,15 +1421,17 @@ step
 step << !Warrior
 .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
+    .goto Durotar,39.2,32.3
+    >>Kill Lightning Hides for Singed Scales. Follow the arrow towards the exit while doing this.
+    .complete 1498,1 --Singed Scale (5)
+step << Warrior
+    .isQuestComplete 1498
     #sticky
     #completewith next
-.goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
-step << Warrior
-    >>Kill Lightning Hides for Singed Scales
-    .complete 1498,1 --Singed Scale (5)
+.goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge    
 step
 >>Start killing crocodiles for the Amulet
-    >> Kill them while heading south, we're doing your totem quest next << Troll Shaman/Orc Shaman
+    >> Kill them while heading south. We're doing your totem quest next << Troll Shaman/Orc Shaman
     .goto Durotar,35.2,27.5,60,0
     .goto Durotar,35.7,57.8,60,0
     .goto Durotar,35.2,27.5,60,0
