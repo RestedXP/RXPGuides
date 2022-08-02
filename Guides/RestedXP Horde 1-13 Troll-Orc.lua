@@ -481,10 +481,10 @@ step << Orc Warrior
     .money <0.0460
     >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior
+step << Paladin
     .goto Durotar,56.5,73.1
 .vendor >> Vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
-step << Troll Warrior/Paladin
+step << Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
     >> Buy a Gladius and equip it
@@ -545,7 +545,7 @@ step << Orc Warrior
     >>Talk to Traxexir from below the stairs outside
     >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior/Paladin
+step << Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
     >>Talk to Traxexir from below the stairs outside
@@ -557,7 +557,7 @@ step << Hunter
     >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
-    .goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill
+    .goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill. Try to focus on Scorpions as they drop Dry Scorpid Eyes that vendor for 95c each.
 step
     >>Inside the top floor of the bunker
     .goto Durotar,51.9,43.5
@@ -586,7 +586,7 @@ step << Orc Warrior
     .money <0.0460
     >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior
+step << Paladin
     .goto Durotar,52.0,40.5
     .money <0.0509
     >> Buy a Gladius and equip it
@@ -710,7 +710,7 @@ step << Orc Warrior
     .money <0.0460
     >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior
+step << Paladin
     .goto Durotar,52.0,40.5
     .money <0.0509
     >> Buy a Gladius and equip it
