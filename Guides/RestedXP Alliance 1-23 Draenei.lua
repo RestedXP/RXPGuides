@@ -1358,7 +1358,7 @@ step
     .vendor >>Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
 	>> Restock on arrows << Hunter
 	>> Restock on ice cold milk if needed << Hunter/Priest/Shaman/Paladin
-    .collect 4371,1,175
+    .collect 4371,1,175,1,1
 step
     .goto Bloodmyst Isle,40.4,20.4,60,0
 	.goto Bloodmyst Isle,38.5,22.5,30,0
@@ -1380,8 +1380,8 @@ step
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
 step
     .goto Bloodmyst Isle,42.1,21.2
-	>> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
-	.collect 4371,1,175
+	.vendor >> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
+	.collect 4371,1,175,1,1
 	.bronzetube
 step
     .goto Bloodmyst Isle,53.1,20.3

@@ -5,9 +5,13 @@ RXPGuides.RegisterGuide([[
 #name 11-14 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
-#defaultfor !Draenei !Warlock << tbc
-#defaultfor !Draenei << wotlk
+#defaultfor !Draenei
 #next 14-20 Bloodmyst
+step << !NightElf !Draenei wotlk
+    #sticky
+    .goto StormwindNew,21.8,56.2,20,0
+    .goto StormwindNew,21.8,56.2,0
+    .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 step
     .goto Darkshore,36.6,45.6
     .accept 3524 >> Accept Washed Ashore
@@ -17,7 +21,7 @@ step << !NightElf
 step << NightElf
     .goto Darkshore,36.8,44.3
     .turnin 6342 >> Turn in Flight to Auberdine
-step
+step << !Warlock
 	.goto Darkshore,37.0,44.1
     .home >> Set your Hearthstone to Auberdine
 step
@@ -36,8 +40,14 @@ step << Dwarf Hunter
     *Thistle Bears can stun, you have to use a dummy pet to tank the stun, abandon the pet and then tame the bear
 step
 	#sticky
-	#completewith Crawlers
+	#label Crawlers
     .isOnQuest 983
+    .waypoint Darkshore,36.7,52.4,40,0
+	.waypoint Darkshore,35.6,47.6,40,0
+	.waypoint Darkshore,36.2,44.5,40,0
+	.waypoint Darkshore,36.7,52.4,40,0
+	.waypoint Darkshore,35.6,47.6,40,0
+	.waypoint Darkshore,36.2,44.5,40,0
 	>> Kill crabs along the coast and loot them for their legs
     .complete 983,1 --Collect Crawler Leg (x6)
 step
@@ -59,19 +69,9 @@ step
     .goto Darkshore,38.9,53.0
     .complete 984,1 --Find a corrupt furbolg camp
 step
-    .isOnQuest 983
-	.goto Darkshore,36.7,52.4,40,0
-	.goto Darkshore,35.6,47.6,40,0
-	.goto Darkshore,36.2,44.5,40,0
-	.goto Darkshore,36.7,52.4,40,0
-	.goto Darkshore,35.6,47.6,40,0
-	.goto Darkshore,36.2,44.5,40,0
-	>>Kill Crawlers. Loot them for their Legs
-    .complete 983,1 --Collect Crawler Leg (x6)
-step
+    #requires Crawlers
     .isOnQuest 983
     .goto Darkshore,36.6,46.3
-	.complete 983,1
     .turnin 983 >> Turn in Buzzbox 827
 step
     .isOnQuest 3524
@@ -140,7 +140,7 @@ step
     .goto Darkshore,44.1,36.3
     .turnin 954 >> Turn in Bashal'Aran
     .accept 955 >> Accept Bashal'Aran
-step << !Dwarf/!Hunter
+step << !Dwarf !Warlock/!Hunter !Warlock
     .goto Darkshore,47.3,48.6
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
@@ -164,12 +164,17 @@ step
     .maxlevel 14
     .goto Darkshore,44.2,36.3
     .accept 957 >> Accept Bashal'Aran
+step << Warlock
+    .goto Darkshore,47.3,48.6
+    .turnin 4812 >> Turn in As Water Cascades
+    .accept 4813 >> Accept The Fragments Within
 step
 #xprate <1.5
 	#sticky
 	#label bears
+    #title Secondary Objective
     .maxlevel 14
-    .goto Darkshore,42.3,66.9,0
+    .goto Darkshore,42.3,66.9,0,0
 	>>Kill Rabid Thistle Bears as you quest
     .complete 2138,1 --Kill Rabid Thistle Bear (x20)
 step << !Warlock
@@ -220,7 +225,7 @@ step
 step
     #requires bears
 	#sticky
-	#completewith DarkshoreEnd
+	#label anaya
     .isOnQuest 963
 	>>Kill Anaya Dawnrunner, she patrols around Ameth'Aran
     .goto Darkshore,43.3,58.8,0
@@ -229,7 +234,7 @@ step
 step
     #requires bears
 	#sticky
-	#completewith DarkshoreEnd
+	#label relics1
     .goto Darkshore,42.0,59.3,0
 	>>Kill Ghosts. Loot them for their Relics
     .isOnQuest 958
@@ -248,23 +253,27 @@ step
     #xprate <1.5
 step
 #xprate <1.5
+    #requires anaya
     .isOnQuest 953
     .goto Darkshore,40.3,59.7
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step << Dwarf Hunter
+    #requires relics1
     .isOnQuest 985
     .goto Darkshore,39.9,54.9
     .complete 985,1 --Kill Blackwood Pathfinder (x8)
     .complete 985,2 --Kill Blackwood Windtalker (x5)
 step
 #xprate <1.5
+    #requires relics1
     #sticky
     #completewith next
     .goto Darkshore,42.0,58.3
-    .isOnQuest 953
+    .isOnQuest 957
     .deathskip >>Die at the north side of Ameth'Aran and spirit rez at the northern graveyar
 step
 #xprate <1.5
+    #requires relics1
     .isOnQuest 957
     .goto Darkshore,44.2,36.3
     .turnin 957 >> Turn in Bashal'Aran
@@ -320,6 +329,12 @@ step << Warlock wotlk
     .train 6222 >>Train Corruption r2
     >>Train drain life if you have cash to spare
 step << Warlock wotlk
+    >>Go in the building. Buy a Smoldering Wand if you have the money for it
+    .goto StormwindClassic,42.65,67.16,14,0
+    .goto StormwindClassic,42.84,65.14
+    .collect 5208,1 --Smoldering Wand (1)
+    .money >0.3174
+step << Warlock wotlk
     .goto StormwindNew,21.8,56.2
     .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
     .zoneskip Azuremyst Isle
@@ -371,8 +386,35 @@ step
 step
 	#sticky
 	#completewith monunment
+    #title Secondary Objective
 	>> Collect Irradiated Crystal Shards from any mobs on Bloodmyst Isle. Don't throw these away.
 	.collect 23984,10 -- Collect Irradiated Crystal Shard (x10)
+step
+    .accept 9624 >> Accept A Favorite Treat
+    .goto Bloodmyst Isle,63.5,88.8
+    .accept 9634 >> Accept Alien Predators
+    .goto Bloodmyst Isle,63.1,88.0
+    .maxlevel 14
+step
+	#label pears
+    #sticky
+    .goto Bloodmyst Isle,59.3,89.1,0,0
+	>>Collect the small pears on the ground. They can be hard to spot, check around trees.
+    .complete 9624,1 --Collect Sand Pear (x10)
+    .isOnQuest 9624
+step
+    .goto Bloodmyst Isle,59.3,89.1
+    .complete 9634,1 --Kill Bloodmyst Hatchling (x10)
+    .isOnQuest 9634
+step
+    #requires pears
+    .goto Bloodmyst Isle,63.4,88.7
+    .turnin 9624 >> Turn in A Favorite Treat
+    .isQuestComplete 9624
+step
+    .goto Bloodmyst Isle,63.1,87.9
+    .turnin 9634 >> Turn in Alien Predators
+    .isQuestComplete 9634
 step
     .goto Bloodmyst Isle,63.0,87.5
     .accept 9663 >> Accept The Kessel Run
@@ -387,16 +429,19 @@ step
     .goto Bloodmyst Isle,53.3,57.7
     .accept 9629 >> Accept Catch and Release
 step
+    #sticky
+    .goto Bloodmyst Isle,55.7,59.7
+    .home >> Set your Hearthstone to Blood Watch
+step
     >> Accept quests around Blood Watch
     .accept 9646 >> Accept WANTED: Deathclaw
     .goto Bloodmyst Isle,55.2,59.2
-    .home >> Set your Hearthstone to Blood Watch
-    .goto Bloodmyst Isle,55.7,59.7
     .accept 9567 >> Accept Know Thine Enemy
     .goto Bloodmyst Isle,55.0,58.0
     .accept 9580 >> Accept The Bear Necessities
     .goto Bloodmyst Isle,55.9,56.9
     .accept 9643 >> Accept Constrictor Vines
+    .goto Bloodmyst Isle,56.4,56.8
     .accept 9648 >> Accept Mac'Aree Mushroom Menagerie
     .goto Bloodmyst Isle,56.4,56.8
 step << Paladin
@@ -427,6 +472,7 @@ step << Dwarf Hunter
     .accept 9779 >> Accept Intercepting the Message
 step
 	#sticky
+    #label bloodmushroom
     .goto Bloodmyst Isle,42.9,71.3,0
 	>>Look for small red mushrooms while you quest through Bloodmyst
     .complete 9648,2 --Collect Blood Mushroom (x1)
@@ -440,23 +486,27 @@ step
     .goto Bloodmyst Isle,38.2,81.7,60,0
 	.goto Bloodmyst Isle,36.5,71.5,60,0
 	.goto Bloodmyst Isle,38.2,81.7
-    .use 23900 >>Kill the named Felguard, Tzerak, that roams the area between the summoning sigil and the Monument Glyph (where he despawns before reappearing at the sigil). Loot him for his Armor Plate, then click it in your bags
+    .use 23900 >>Kill Tzerak, the Felguard that roams the area.
+    >>Loot him for his Armor Plate, then click it in your bags.
+    *He walks from the summoning sigil to the monument and then despawn, a full spawn/despawn cycle takes about 6 minutes.
 	.collect 23900,1,9594 --Tzerak's Armor Plate
     .accept 9594 >> Accept Signs of the Legion
 	.unitscan Tzerak
 step
 	#requires monument
     .goto Bloodmyst Isle,37.0,78.7
-	>>Finish killing Satyr
+	>>Kill Satyrs and Felsworn in the area. You may have to kill Rogues to force the respawns of the satyr's you need.
     .complete 9594,1 --Kill Nazzivus Satyr (x8)
     .complete 9594,2 --Kill Nazzivus Felsworn (x8)
+    .isOnQuest 9594
 step
 	>>Look for small green mushrooms close to the satyr area
     .complete 9648,4 --Collect Fel Cone Fungus (x1)
 step
-	#completewith next
-    .goto Bloodmyst Isle,35.6,94.2,0
-    .goto Bloodmyst Isle,51.3,93.9,0
+	#label mtag1
+    #sticky
+    .goto Bloodmyst Isle,35.6,94.2,0,0
+    .goto Bloodmyst Isle,51.3,93.9,0,0
 	.use 23995 >>Use the Blacksilt tagger in your bags to tag scouts. This will make them non-hostile towards you.
     .complete 9629,1 --Blacksilt Scouts Tagged (x6)
 step
@@ -469,17 +519,13 @@ step
     .accept 9576 >> Accept Cruelfin's Necklace
 	.unitscan Cruelfin
 step
-    .goto Bloodmyst Isle,35.6,94.2,70,0
-    .goto Bloodmyst Isle,51.3,93.9
-	.use 23995 >>Use the Blacksilt tagger in your bags to tag scouts. This will make them non-hostile towards you.
-    .complete 9629,1 --Blacksilt Scouts Tagged (x6)
-step
+    #requires mtag1
     .goto Bloodmyst Isle,58.2,83.4
 	.use 23875 >>Use the pick in your bags to collect the small red crystal
     .complete 9581,1 --Collect Impact Site Crystal Sample (x1)
 step
     .goto Bloodmyst Isle,57.8,73.4
-	>>Loot a big red mushroom underwater
+	>>Loot a big red mushroom underwater, they can also drop from the fishes
     .complete 9648,1 --Collect Aquatic Stinkhorn (x1)
 step
     .goto Bloodmyst Isle,53.3,57.9
@@ -492,6 +538,7 @@ step
 	>>Kill treants around this area and loot them for their bark. Grind mobs en route.
     .complete 9574,1 --Collect Crystallized Bark (x6)
 step
+    #requires bloodmushroom
     .goto Bloodmyst Isle,53.3,57.8
     .turnin 9574 >> Turn in Victims of Corruption
     .accept 9578 >> Accept Searching for Galaen
@@ -571,10 +618,18 @@ step
 	.goto Bloodmyst Isle,57.9,53.5
     .fly Exodar>> Fly to The Exodar
 step
-    >> Head into the Exodar
-	.goto The Exodar,77.3,57.5,60,0
-	.goto The Exodar,74.4,54.2,60,0
-	.goto The Exodar,49.9,50.7,60,0
+    #completewith audience
+	.goto The Exodar,75.0,54.8,80,0
+	.goto The Exodar,64.4,42.4,80,0
+    .goto The Exodar,56.9,50.2,100 >> Head into the Exodar
+step << Warlock/Mage/Priest
+    #completewith hs1
+    .goto The Exodar,46.6,61.2
+    .vendor 16632>>Buy a Smoldering Wand (13 dps) if you don't have a Wand yet
+    >>Aternatively, you can try to buy a better wand from the Auction house
+    .collect 5208,1,0,1,1 --Smoldering Wand (1)
+step
+    #label audience
     .goto The Exodar,32.8,54.4
     .turnin 9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
@@ -583,8 +638,9 @@ step << Druid
     .goto Moonglade,52.4,40.6
     .trainer 12042 >> Train spells
 step
-    #completewith next
+    #label hs1
     .hs >> Hearth back to Blood Watch
+    .zoneskip Bloodmyst Isle
 step
     .goto Bloodmyst Isle,55.0,58.0
     .accept 9569 >> Accept Containing the Threat
@@ -615,7 +671,7 @@ step
 step
 	.goto Bloodmyst Isle,42.0,21.2
 	.vendor >> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it
-	.collect 4371,1,175
+	.collect 4371,1,175,1,1
 	.bronzetube
 step
     #sticky
@@ -642,8 +698,8 @@ step
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
 step
     .goto Bloodmyst Isle,42.1,21.2
-	>> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
-	.collect 4371,1,175
+	.vendor >> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
+	.collect 4371,1,175,1,1
 	.bronzetube
 step
     .goto Bloodmyst Isle,53.1,20.3
@@ -652,7 +708,7 @@ step
     .accept 9550 >> Accept A Map to Where?
 step
 	#sticky
-	#label Sun Portal Site
+	#label SunPortalSite
     .goto Bloodmyst Isle,53.1,20.3
 	>>Get close to the spaceship like building
 	.complete 9700,1 --Sun Portal Site Confirmed (1)
@@ -662,6 +718,7 @@ step
 	>>Kill the Void Anomalies in the area
     .complete 9700,2 --Kill Void Anomaly (x5)
 step
+    #requires SunPortalSite
     #label BloodmystBearsnLashers
 	.goto Bloodmyst Isle,47.6,24.9,60,0
 	.goto Bloodmyst Isle,44.9,26.4,100,0

@@ -979,11 +979,10 @@ step << Rogue
 step << Paladin
     .goto StormwindClassic,57.1,57.7
     .trainer >>Train 2h Swords
-step << Warlock wotlk
-#xprate >1.3
+step << Warlock/wotlk
     .goto StormwindClassic,74.3,47.2
     .turnin 6281 >> Turn in Continue to Stormwind
-    .accept 6261 >> Accept Dungar Longdrink
+    .accept 6261 >> Accept Dungar Longdrink << Warlock
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -993,11 +992,8 @@ step << Warlock
     .turnin 1685 >> Turn in Gakin's Summons
     .accept 1688 >> Accept Surena Caledon
 step << Warlock
-    #softcore
     .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to the Warlock trainers
-step << Warlock
-    .goto Elwynn Forest,42.1,65.9
-    .zone Elwynn Forest >> Run back out of Stormwind to Elwynn
+    .zoneskip Elwynn Forest
 step << Warlock
     .isOnQuest 123
     .goto Elwynn Forest,42.1,65.9
@@ -1058,7 +1054,7 @@ step << Warlock wotlk
 step << Warlock
     .goto Redridge Mountains,30.6,59.4
     .fly Stormwind >> Fly to Stormwind
-step << Warlock wotlk
+step << Warlock
     .goto StormwindClassic,66.3,62.1
     .turnin -6261 >> Turn in Dungar Longdrink
 step << Warlock wotlk
@@ -1066,6 +1062,10 @@ step << Warlock wotlk
     .goto StormwindClassic,66.3,62.1
     .accept 6262 >> Accept Return to Lewis
     .isQuestTurnedIn 6261
+step << Warlock wotlk
+    #xprate <1.5
+    .goto StormwindClassic,52.61,65.71
+    .home >> Set your Hearthstone to Stormwind City
 step << Warlock
     #sticky
     #completewith next
@@ -1127,6 +1127,7 @@ step << Warrior/Paladin/Rogue
     .goto StormwindClassic,56.3,17.0
     .vendor >>Buy a Mining Pick. You'll train Mining later
 step << tbc/Warlock wotlk
+    #xprate >1.3 << Warlock wotlk
     #completewith next
     .goto StormwindClassic,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
@@ -1135,18 +1136,22 @@ step << tbc
     .goto StormwindClassic,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step << tbc/Warlock wotlk
+#xprate >1.3 << Warlock wotlk
     #completewith next
     .goto StormwindClassic,63.9,8.3,25 >>Enter the Deeprun Tram
 step << tbc/Warlock wotlk
+#xprate >1.3 << Warlock wotlk
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin
     >>Take the tram when it arrives. Cast Summon Voidwalker and Create Healthstone. Get off the tram on the other side << Warlock
     .accept 6661 >> Accept Deeprun Rat Roundup
 step << tbc/Warlock wotlk
+#xprate >1.3 << Warlock wotlk
     >>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step << tbc/Warlock wotlk
+#xprate >1.3 << Warlock wotlk
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step << Warlock wotlk
 #xprate >1.3
@@ -1198,12 +1203,10 @@ step << wotlk
     .zoneskip Darnassus
     .zoneskip Teldrassil
     .zoneskip Darkshore
-step << tbc/Warlock
-#xprate <1.5 << Warlock wotlk
+step << tbc
     .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
-step << tbc/Warlock
-#xprate <1.5 << Warlock wotlk
+step << tbc
     .goto Ironforge,55.5,47.7
     .fp Ironforge >> Get the Ironforge flight path
 step << Warlock tbc
@@ -1213,8 +1216,7 @@ step << Warlock tbc
 step << Warrior tbc
     .goto Ironforge,61.2,89.5
     .trainer >>Train 2h Maces
-step << tbc/Warlock
-#xprate <1.5 << Warlock wotlk
+step << tbc
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
 
@@ -1261,7 +1263,6 @@ step << tbc
 
 RXPGuides.RegisterGuide([[
 #tbc
-#wotlk
 << Alliance tbc/Alliance Warlock
 #name 11-12 Loch Modan << !Warlock
 #name 12-14 Loch Modan << Warlock
@@ -1680,7 +1681,6 @@ step << tbc
 
 RXPGuides.RegisterGuide([[
 #tbc
-#wotlk
 << Alliance Warlock
 #name 14-14 Darkshore
 #version 1
