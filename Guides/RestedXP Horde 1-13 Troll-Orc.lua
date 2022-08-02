@@ -1033,7 +1033,7 @@ step << Warlock
 #label Skull
 .goto Durotar,47.2,17.7,225 >> Die and respawn at the Spirit Healer, or run back
 step << Warlock
-.goto Orgrimmar,49.0,94.2,20    >>Run into Orgrimmar
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Warlock
     .goto Orgrimmar,31.8,37.8
     .turnin 5726 >>Turn in Hidden Enemies
@@ -1484,7 +1484,7 @@ step
 >>Kill Burning Blade mobs in Skull Rock for Searing Collars and until Lieutenant's Insignia drops
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)
-step << Orc Shaman/Troll Shaman/Orc Warrior/Troll Shaman
+step << Orc Shaman/Troll Shaman/Orc Warrior/Troll Shaman/Troll Warrior
     .use 4945 >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave. Use the Faintly Glowing Skull you saved from earlier, sticky glue on the voidwalker to reduce your damage taken, and Healing Potions to restore health. Use LoS (line of sight) to avoid his shadowbolts. Don't be afraid to die if it means killing and looting Gazz'uz
 .goto Durotar,51.8,10.0
 .collect 4903,1,832 --Collect Eye of Burning Shadow
@@ -1533,6 +1533,9 @@ step
     .goto Orgrimmar,49.4,50.5
     .turnin 829 >>Turn in Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
+step
+    .isOnQuest 832
+    .goto Orgrimmar,49.4,50.5
     .turnin 832 >>Turn in Burning Shadows
 step
     .goto Durotar,41.6,18.7
