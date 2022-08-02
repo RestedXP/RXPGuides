@@ -272,7 +272,9 @@ step << !Warlock
 .goto Durotar,45.2,56.8
     >>Kill Imps in front of the cave
     .complete 792,1 --Vile Familiar (12)
-step <<!Warlock
+step << !Warlock
+    #sticky
+    #label scorpytails
 >>Finish off the Scorpion Tails
 .goto Durotar,39.8,63.5
     .complete 789,1 --Scorpid Worker Tail (10)
@@ -286,6 +288,8 @@ step
     .goto Durotar,47.4,65.7
     .use 16114 >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
+step
+    #requires scorpytails
 step
     #requires cactusapples
     .goto Durotar,42.7,67.2
