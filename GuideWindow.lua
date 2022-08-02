@@ -741,7 +741,7 @@ function CurrentStepFrame.UpdateText()
                                "BOTTOMRIGHT", 0, -5)
         end
 
-        stepframe.number.text:SetText("Step " .. index)
+        stepframe.number.text:SetText(step.title or ("Step " .. index))
         stepframe.number:SetSize(stepframe.number.text:GetStringWidth() + 10, 17)
 
         local e = 0

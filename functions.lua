@@ -1517,8 +1517,7 @@ function addon.functions.fly(self, ...)
             if name and strupper(name):find(element.location) then
                 _G.TaxiNodeOnButtonEnter(getglobal("TaxiButton" .. i))
                 TakeTaxiNode(i)
-                _G.GameTooltip:Hide()
-                return
+                return not _G.GameTooltip:IsForbidden() and _G.GameTooltip:Hide()
             end
         end
     elseif (event and UnitOnTaxi("player")) or
@@ -2424,7 +2423,7 @@ function addon.functions.isQuestComplete(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) then
+    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not RXP.debug then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2446,7 +2445,7 @@ function addon.functions.isOnQuest(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not IsOnQuest(id) then
+    if self.element.step.active and not IsOnQuest(id) and not addon.debug then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2476,7 +2475,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
         questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
     end
 
-    if step.active and (not questTurnedIn == not element.reverse) then
+    if step.active and (not questTurnedIn == not element.reverse) and not addon.debug then
         step.completed = true
         addon.updateSteps = true
     end

@@ -177,7 +177,7 @@ function addon.GetQuestLog(QL,LT)
 end
 
 _G.GameTooltip:HookScript("OnTooltipSetItem", function(self)
-    if self:IsForbidden() then
+    if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
         return
     end
     local _,link = _G.GameTooltip:GetItem()
