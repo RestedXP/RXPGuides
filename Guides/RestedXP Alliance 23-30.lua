@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 24-27 Redridge/Duskwood
 #xprate <1.5
 
-step << Warrior/wotlk
+step << Warrior wotlk
     #sticky
     #completewith exit1
     .goto StormwindClassic,64.1,61.2,0
@@ -21,6 +21,11 @@ step << Human !Warlock !Paladin wotlk
 	.train 33388 >> Head to Eastvale in Elwynn Forest and train/purchase your mount
 	.money <5.0
     .skill riding,1,1
+step << Paladin wotlk
+    .goto StormwindClassic,39.9,29.8
+    >>Speak to Duthorian Rall
+    .accept 4486 >>Accept The Tome of Nobility
+    .turnin 4486 >>Turn in The Tome of Nobility
 step << Paladin wotlk
 	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
@@ -2283,7 +2288,7 @@ step
 	#label nomorekid
 	#requires MDiplomats
 	.zone Stormwind City >> Exit the Chapel
-step << Paladin wotlk
+step << Paladin
     .goto StormwindClassic,39.9,29.8
     >>Speak to Duthorian Rall
     .accept 4486 >>Accept The Tome of Nobility
