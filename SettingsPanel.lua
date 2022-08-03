@@ -333,6 +333,7 @@ function addon.settings.CreateOptionsPanel()
         addon.updateMap = true
         if (self.key == "phase" or self.key == "xprate") and addon.currentGuide then
             addon.ReloadGuide()
+            addon.RXPFrame.GenerateMenuTable()
         end
         addon.RXPFrame.SetStepFrameAnchor()
     end
