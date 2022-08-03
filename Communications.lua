@@ -15,11 +15,10 @@ addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0",
                               "AceSerializer-3.0")
 
 SLASH_RXPGC1 = "/rxpgc"
-_G.SlashCmdList["RXPGC"] = function(_)
-    print(addon.comms:IsNewRelease("v4.2.1d"))
-    print(addon.comms:IsNewRelease("v4.2.1"))
-    print(addon.comms:IsNewRelease("v4.1.4"))
-end
+_G.SlashCmdList["RXPGC"] = function(_) addon.comms:AnnounceSelf("ANNOUNCE") end
+
+_G.RXPGC = addon.comms
+_G.RXPGS = addon.settings
 
 addon.comms._commPrefix = "RXPGComms"
 addon.comms.state = {
@@ -107,10 +106,8 @@ function addon.comms:GROUP_JOINED()
     print("GROUP_JOINED: fired")
     -- Pre-formed event spam
     -- GROUP_JOINED fires multiple times before a group is created or joined
-    if GetNumGroupMembers() <= 1 or
-        (self.state.groupJoined and GetTime() - self.state.groupJoined < 1) then
-        return
-    end
+    -- Fires on login, but not on reload, TODO handle reload state
+    if GetNumGroupMembers() <= 1 then return end
 
     print("GROUP_JOINED: processing")
 
@@ -121,8 +118,14 @@ end
 
 function addon.comms:GROUP_LEFT()
     self.state.groupLeft = GetTime()
-    -- TODO log playtime with person
-    -- TODO doesn't account for player joing mid group
+
+    if self.state.groupJoined then
+        -- TODO doesn't account for player joing mid group
+        local secondsGrouped = self.state.groupJoined - self.state.groupLeft
+        -- TODO log playtime with person
+    end
+    self.state.groupJoined = nil
+
     self.state.rxpGroupDetected = false
 
     for p, data in pairs(self.state.players) do end
@@ -148,8 +151,8 @@ function addon.comms:AnnounceSelf(command)
 end
 
 function addon.comms:OnCommReceived(prefix, data, _, sender)
-    print("OnCommReceived:prefix, from: " .. sender)
-    if prefix ~= addon._commPrefix or sender == playerName then return end
+    print(fmt("OnCommReceived: %s, from %s", prefix, sender))
+    if prefix ~= self._commPrefix or sender == playerName then return end
 
     if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then
         return
@@ -240,18 +243,18 @@ function addon.comms:HandleAnnounce(data)
     end
 end
 
-function addon:Broadcast(data)
+function addon.comms:Broadcast(data)
     if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then
         return
     end
 
     local sz = self:Serialize(data)
-    self:SendCommMessage(addon._commPrefix, sz, "PARTY")
+    self:SendCommMessage(self._commPrefix, sz, "PARTY")
 end
 
 function addon.comms:AnnounceStepEvent(event, data)
     -- Only send branded messages if in an RXP party
-    if not self.state.rxpGroupDetected or
+    if not self.state.rxpGroupDetected and
         not addon.settings.db.profile.alwaysSendBranded then return end
 
     -- Probably step replay, shush
