@@ -1,15 +1,31 @@
 local addonName, addon = ...
 
-local fmt = string.format
+local fmt, mrand, smatch, sbyte = string.format, math.random, string.match,
+                                  string.byte
 
-local GetNumGroupMembers, SendChatMessage, GetTime = GetNumGroupMembers,
-                                                     SendChatMessage, GetTime
+local GetNumGroupMembers, SendChatMessage, GetTime, UnitLevel, UnitClass,
+      UnitXP, UnitXPMax = GetNumGroupMembers, SendChatMessage, GetTime,
+                          UnitLevel, UnitClass, UnitXP, UnitXPMax
 
 local _G = _G
 
-addon.comms = addon:NewModule("Communications", "AceEvent-3.0")
+local playerName = _G.UnitName("player")
+
+addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0",
+                              "AceSerializer-3.0")
+
+SLASH_RXPGC1 = "/rxpgc"
+_G.SlashCmdList["RXPGC"] = function(_)
+    print(addon.comms:IsNewRelease("v4.2.1d"))
+    print(addon.comms:IsNewRelease("v4.2.1"))
+    print(addon.comms:IsNewRelease("v4.1.4"))
+end
+
+addon.comms._commPrefix = "RXPGComms"
 addon.comms.state = {
-    rxpGroupDetected = true -- TODO clustering and/or setting
+    rxpGroupDetected = false, -- TODO clustering and/or setting
+    players = {},
+    updateFound = {guide = false, addon = false}
 }
 
 local function announceLevelUp(message)
@@ -29,11 +45,15 @@ local function announceLevelUp(message)
 end
 
 function addon.comms:Setup()
-    local defaults = {profile = {levels = {}, announcements = {}}}
+    local defaults = {profile = {announcements = {}, players = {}}}
 
     self.db = LibStub("AceDB-3.0"):New("RXPCComms", defaults)
 
     self:RegisterEvent("PLAYER_LEVEL_UP")
+    self:RegisterEvent("GROUP_JOINED")
+    self:RegisterEvent("GROUP_LEFT")
+
+    self:RegisterComm(self._commPrefix)
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
@@ -81,6 +101,152 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
 
     msg = self.BuildNotification("I just leveled up to %d", level)
     announceLevelUp(msg)
+end
+
+function addon.comms:GROUP_JOINED()
+    print("GROUP_JOINED: fired")
+    -- Pre-formed event spam
+    -- GROUP_JOINED fires multiple times before a group is created or joined
+    if GetNumGroupMembers() <= 1 or
+        (self.state.groupJoined and GetTime() - self.state.groupJoined < 1) then
+        return
+    end
+
+    print("GROUP_JOINED: processing")
+
+    self.state.groupJoined = GetTime()
+
+    C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end)
+end
+
+function addon.comms:GROUP_LEFT()
+    self.state.groupLeft = GetTime()
+    -- TODO log playtime with person
+    -- TODO doesn't account for player joing mid group
+    self.state.rxpGroupDetected = false
+
+    for p, data in pairs(self.state.players) do end
+end
+
+function addon.comms:AnnounceSelf(command)
+    local data = {
+        command = command,
+        player = {
+            name = playerName,
+            class = select(2, UnitClass("player")),
+            level = UnitLevel("player"),
+            xpPercentage = floor(UnitXP("player") / UnitXPMax("player"))
+        },
+        guide = {
+            name = addon.currentGuide.name,
+            version = addon.currentGuide.version
+        },
+        addon = {release = addon.release}
+    }
+
+    self:Broadcast(data)
+end
+
+function addon.comms:OnCommReceived(prefix, data, _, sender)
+    print("OnCommReceived:prefix, from: " .. sender)
+    if prefix ~= addon._commPrefix or sender == playerName then return end
+
+    if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then
+        return
+    end
+
+    local status, obj = self:Deserialize(data)
+
+    if not status or not obj.command then return end
+    print("OnCommReceived: obj.command = " .. obj.command)
+
+    self.state.rxpGroupDetected = true
+
+    if obj.command == 'ANNOUNCE' then
+        self:HandleAnnounce(data)
+        self:AnnounceSelf("REPLY")
+    elseif obj.command == 'REPLY' then
+        self:HandleAnnounce(data)
+        -- Don't response on REPLY
+    end
+
+end
+
+function addon.comms:IsNewRelease(theirRelease)
+    -- Treat Development announcements as equal to current
+    if theirRelease == 'Development' then
+        return false
+    elseif addon.release == 'Development' then
+        print(self.BuildPrint("IsNewRelease:theirRelease = %s", theirRelease))
+        return false
+    end
+
+    local myMajor, myMinor, myPatch, mySub =
+        smatch(addon.release, "v(%d+)%.(%d+)%.(%d+)(%a?)")
+
+    mySub = mySub and sbyte(mySub) or 0
+
+    local myIntVersion = tonumber(fmt('%d%d%d', myMajor, myMinor, myPatch))
+
+    local theirMajor, theirMinor, theirPatch, theirSub =
+        smatch(theirRelease, "v(%d+)%.(%d+)%.(%d)(%a?)")
+
+    theirSub = theirSub and sbyte(theirSub) or 0
+
+    local theirIntVersion = tonumber(fmt('%d%d%d', theirMajor, theirMinor,
+                                         theirPatch))
+
+    -- Failed to parse version
+    if myIntVersion == 0 or theirIntVersion == 0 then return false end
+
+    -- Sub versioned letter, compare ascii codes
+    if myIntVersion == theirIntVersion and mySub < theirSub then return true end
+
+    return myIntVersion < theirIntVersion
+end
+
+function addon.comms:HandleAnnounce(data)
+    if self.db.profile.players[data.player.name] then
+        self.db.profile.players[data.player.name] = {playTime = 0}
+    end
+
+    self.db.profile.players[data.player.name].class = data.player.class
+    self.db.profile.players[data.player.name].level = data.player.level
+    self.db.profile.players[data.player.name].lastSeen = GetTime()
+
+    if self.state.players[data.player.name] then
+        self.state.players[data.player.name] = {}
+    end
+
+    self.state.players[data.player.name].level = data.player.level
+    self.state.players[data.player.name].xpPercentage = data.player.xpPercentage
+
+    if not self.state.updateFound.addon and
+        self:IsNewRelease(data.addon.release) > 0 then
+
+        self.state.updateFound.addon = true
+
+        print(self.BuildPrint("There's a new addon version (%s) available",
+                              data.addon.release))
+    end
+
+    if not self.state.updateFound.guide and data.currentGuide.name ==
+        data.guide.name and data.guide.version > addon.currentGuide.version then
+
+        self.state.updateFound.guide = true
+
+        print(self.BuildPrint("There's a new version (%s) available for %s",
+                              data.guide.version, data.guide.name))
+    end
+end
+
+function addon:Broadcast(data)
+    if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then
+        return
+    end
+
+    local sz = self:Serialize(data)
+    self:SendCommMessage(addon._commPrefix, sz, "PARTY")
 end
 
 function addon.comms:AnnounceStepEvent(event, data)
@@ -161,4 +327,8 @@ end
 
 function addon.comms.BuildNotification(msg, ...)
     return fmt("{rt3} %s: %s", addonName, fmt(msg, ...))
+end
+
+function addon.comms.BuildPrint(msg, ...)
+    return fmt("%s: %s", addonName, fmt(msg, ...))
 end
