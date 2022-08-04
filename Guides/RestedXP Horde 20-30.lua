@@ -314,6 +314,7 @@ step
     .goto The Barrens,51.5,30.2
     .accept 853 >> Accept Apothecary Zamah
 step
+    .isOnQuest 853
     #sticky
     #completewith Zamah
     +You have 45 minutes to complete the Apothecary quest so keep an eye on the timer. Skip the quest if you fail it
@@ -385,7 +386,7 @@ step << Warlock
     .goto The Barrens,43.3,47.9
     .turnin 1515 >>Turn in Dogran's Captivity
     .accept 1512 >>Accept Love's Gift
-step << Warlock
+step
     >>Kill a LOT of Quillboars. Prioritize Thornweavers, Water Seekers, and Geomancers where you can. Loot them for their tusks. Save the Blood Shards you get
     *Water Seekers only spawn in the south western most camps. Go East or North West for Geomancers / Thornweavers.
     .goto The Barrens,47.1,53.3,50,0
@@ -462,6 +463,7 @@ step
     .accept 264 >> Accept Until Death Do Us Part
     .maxlevel 21
 step
+    .isOnQuest 853
     .goto Thunder Bluff,23.0,20.9
     >> If you failed the Zamah quest, just abandon it
     .turnin 853 >> Turn in Apothecary Zamah
@@ -1187,12 +1189,12 @@ step
     .turnin 527 >> Turn in Battle of Hillsbrad
 step
     .maxlevel 28
+    #label bearsohmy
     .goto Hillsbrad Foothills,62.1,19.8
     .accept 528 >> Accept Battle of Hillsbrad
     .accept 546 >> Accept Souvenirs of Death
     
 step
-    #label bearsohmy
     >>Kill Bears and Mountain Lions. Loot them for Tongues and Blood
     .goto Hillsbrad Foothills,54.9,29.8,40,0
     .goto Hillsbrad Foothills,50.5,37.7,40,0
@@ -1756,7 +1758,10 @@ step << Warrior
 step << Warrior
     >>In the building
 	.goto The Barrens,44.7,59.4
-    .turnin 1824 >>Turn in Trial at the Field of Giants
+    .turnin -1824 >>Turn in Trial at the Field of Giants
+step << Warrior
+    #xprate <1.5
+    .goto The Barrens,44.7,59.4
     .accept 1825 >>Accept Speak with Thun'grim
 step << Shaman
     .goto The Barrens,43.4,77.4
@@ -2674,16 +2679,16 @@ step
 	.collect 5877,1,1148
 	.accept 1148 >> Accept Parts of the Swarm
 step
-    #level 32
+    .maxlevel 31
     .goto Thousand Needles,67.8,85.7
-	.complete 1148,1 --Collect Silithid Heart (x1)
-    .complete 1148,2 --Collect Silithid Talon (x5)
-    .complete 1147,3 --Kill Silithid Invader (x5)	
-    .complete 1147,1 --Kill Silithid Searcher (x5)
-    .complete 1148,3 --Collect Intact Silithid Carapace (x3)
-    .complete 1147,2 --Kill Silithid Hive Drone (x5)	
+	.complete -1148,1 --Collect Silithid Heart (x1)
+    .complete -1148,2 --Collect Silithid Talon (x5)
+    .complete -1147,3 --Kill Silithid Invader (x5)	
+    .complete -1147,1 --Kill Silithid Searcher (x5)
+    .complete -1148,3 --Collect Intact Silithid Carapace (x3)
+    .complete -1147,2 --Kill Silithid Hive Drone (x5)	
 step
-    #level 32
+    .maxlevel 31
 	#requires partsoftheswarm
     .turnin 1147 >> Turn in The Swarm Grows
     .goto Thousand Needles,67.6,63.9
@@ -2713,14 +2718,16 @@ step
 step
     #completewith next
     .money <35.00
-    +If you have access to gold on this server, mail yourself 35g for mount training soon!
+    +If you have access to gold on this server, mail yourself gold for mount training soon!
 step
+    .zoneskip Tanaris,1
 	#completewith next
     .hs >> Hearth to Freewind Post
     .cooldown item,6948,>0
 step
     #completewith next
-    .goto Thousand Needles,45.1,49.2
+    .goto Thousand Needles,45.1,49.2,-1
+    .goto Tanaris,51.6,25.4,-1
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step
     .isOnQuest 1153
@@ -2776,7 +2783,6 @@ step
 step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
-	#completewith next
     .goto Ashenvale,73.2,61.5,-1
     .goto The Barrens,63.1,37.1,-1
     .fly Orgrimmar >> Fly to Orgrimmar
