@@ -1,9 +1,7 @@
 name: Package Addon
 
 on:
-  release:
-    types:
-      - published
+  push:
     branches: [ main ]
     tags: [ '*' ]
 
@@ -50,9 +48,9 @@ jobs:
 
             # Lazy check if alpha (RXPGuides-v4.1.3b-75-gdcd9f95-bcc) vs (RXPGuides-v4.1.3b-bcc)
             if (( $(awk -F'-' '{print NF-1}' <<< "${zip}") > 2 )); then
-              echo "FTP_DIR=dev" >> $GITHUB_ENV
-            else
               echo "FTP_DIR=beta" >> $GITHUB_ENV
+            else
+              echo "FTP_DIR=prod" >> $GITHUB_ENV
             fi
           done
 
