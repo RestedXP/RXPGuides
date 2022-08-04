@@ -216,6 +216,7 @@ step
     .goto The Barrens,63.0,37.2
     .accept 894 >>Accept Samophlange
 step
+    #xprate <1.5
     .maxlevel 16
     .goto The Barrens,63.1,37.6
     .accept 959 >>Accept Trouble at the Docks
@@ -879,6 +880,9 @@ step
     .goto The Barrens,62.4,37.6
     .turnin 865 >>Turn in Raptor Horns
     .turnin 1069 >>Turn in Deepmoss Spider Eggs
+step
+    #xprate <1.5
+    .goto The Barrens,62.4,37.6
     .accept 1491 >>Accept Smart Drinks
 step
     #completewith next
@@ -1012,6 +1016,7 @@ step << Warrior
     .train 6547 >>Train Rend r3
     .train 20230 >>Train Retaliation    
 step
+    #xprate <1.5
     .maxlevel 21
     .goto Thunder Bluff,22.8,20.9
     >> Go into the Pools of Vision below the Spirit Rise
@@ -1301,6 +1306,7 @@ step << Druid
     .goto Moonglade,52.4,40.6
     .trainer 12042 >> Train spells
 step
+    .zoneskip Stonetalon Mountains
     #completewith eldercr
     .hs >> Hearth to Thunder Bluff
     .cooldown item,6948,>0
