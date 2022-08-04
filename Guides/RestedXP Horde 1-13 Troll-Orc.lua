@@ -685,8 +685,11 @@ step
     .turnin 784 >>Turn in Vanquish the Betrayers
     .accept 825 >>Accept From The Wreckage....
     .turnin 830 >>Turn in The Admiral's Orders
-    .accept 831 >>Accept The Admiral's Orders << Warlock/Shaman/Warrior
     .accept 837 >>Accept Encroachment
+step << Warlock/Shaman/Warrior
+    #xprate <1.5
+    .goto Durotar,51.9,43.5
+.accept 831 >>Accept The Admiral's Orders 
 step
     .goto Durotar,51.1,42.4
     .accept 815 >>Accept Break a Few Eggs
