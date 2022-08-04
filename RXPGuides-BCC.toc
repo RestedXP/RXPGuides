@@ -7,6 +7,7 @@
 ## OptionalDeps: Questie, unitscan
 ## SavedVariables: RXPData, RXPDB
 ## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
+## X-Curse-Project-ID: 486246
 
 libs\embeds.xml
 
