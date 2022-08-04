@@ -1,10 +1,11 @@
 name: Package Addon
 
 on:
-  push:
+  release:    
+    types:
+      - published
     branches: [ main ]
     tags: [ "*" ]
-
 jobs:
   release:
     runs-on: ubuntu-latest
