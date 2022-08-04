@@ -23,7 +23,6 @@ _G.RXPGS = addon.settings
 addon.comms._commPrefix = "RXPGComms"
 addon.comms.state = {
     rxpGroupDetected = false, -- TODO clustering and/or setting
-    players = {},
     updateFound = {guide = false, addon = false}
 }
 
@@ -47,10 +46,12 @@ function addon.comms:Setup()
     local defaults = {profile = {announcements = {}, players = {}}}
 
     self.db = LibStub("AceDB-3.0"):New("RXPCComms", defaults)
+    self.players = self.db.profile.players
 
     self:RegisterEvent("PLAYER_LEVEL_UP")
     self:RegisterEvent("GROUP_JOINED")
     self:RegisterEvent("GROUP_LEFT")
+    self:RegisterEvent("PLAYER_XP_UPDATE")
 
     self:RegisterComm(self._commPrefix)
 end
@@ -106,29 +107,40 @@ function addon.comms:GROUP_JOINED()
     print("GROUP_JOINED: fired")
     -- Pre-formed event spam
     -- GROUP_JOINED fires multiple times before a group is created or joined
-    -- Fires on login, but not on reload, TODO handle reload state
+    -- If already in a group fires on login, but not on reload, TODO handle reload state
     if GetNumGroupMembers() <= 1 then return end
 
     print("GROUP_JOINED: processing")
 
-    self.state.groupJoined = GetTime()
-
     C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end)
 end
 
-function addon.comms:GROUP_LEFT()
-    self.state.groupLeft = GetTime()
+function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
 
-    if self.state.groupJoined then
-        -- TODO doesn't account for player joing mid group
-        local secondsGrouped = self.state.groupJoined - self.state.groupLeft
-        -- TODO log playtime with person
+function addon.comms:PLAYER_XP_UPDATE(unitTarget)
+    print("PLAYER_XP_UPDATE:unitTarget = " .. unitTarget)
+
+    if self.state.lastXPGain then self:TallyGroup() end
+
+    self.state.lastXPGain = GetTime()
+end
+
+function addon.comms:TallyGroup()
+    local diff = self.state.lastXPGain - GetTime()
+    local name
+    for i = 1, GetNumGroupMembers() - 1 do
+        name = UnitName("party" .. i)
+        if not name then break end
+
+        if self.players[name] then
+            self.players[name].timePlayed = self.players[name].timePlayed + diff
+        else
+            self.players[name] = {
+                timePlayed = 0,
+                class = UnitClassBase("party" .. i)
+            }
+        end
     end
-    self.state.groupJoined = nil
-
-    self.state.rxpGroupDetected = false
-
-    for p, data in pairs(self.state.players) do end
 end
 
 function addon.comms:AnnounceSelf(command)
@@ -170,7 +182,7 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
         self:AnnounceSelf("REPLY")
     elseif obj.command == 'REPLY' then
         self:HandleAnnounce(data)
-        -- Don't response on REPLY
+        -- Don't respond on REPLY
     end
 
 end
@@ -209,23 +221,18 @@ function addon.comms:IsNewRelease(theirRelease)
 end
 
 function addon.comms:HandleAnnounce(data)
-    if self.db.profile.players[data.player.name] then
-        self.db.profile.players[data.player.name] = {playTime = 0}
+    if self.players[data.player.name] then
+        self.players[data.player.name] = {timePlayed = 0}
     end
 
-    self.db.profile.players[data.player.name].class = data.player.class
-    self.db.profile.players[data.player.name].level = data.player.level
-    self.db.profile.players[data.player.name].lastSeen = GetTime()
-
-    if self.state.players[data.player.name] then
-        self.state.players[data.player.name] = {}
-    end
-
-    self.state.players[data.player.name].level = data.player.level
-    self.state.players[data.player.name].xpPercentage = data.player.xpPercentage
+    self.players[data.player.name].class = data.player.class
+    self.players[data.player.name].level = data.player.level
+    self.players[data.player.name].xpPercentage = data.player.xpPercentage
+    self.players[data.player.name].isRxp = true
+    self.players[data.player.name].lastSeen = GetTime()
 
     if not self.state.updateFound.addon and
-        self:IsNewRelease(data.addon.release) > 0 then
+        self:IsNewRelease(data.addon.release) then
 
         self.state.updateFound.addon = true
 
