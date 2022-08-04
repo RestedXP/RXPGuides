@@ -1,11 +1,12 @@
 name: Package Addon
 
 on:
-  release:    
+  release:
     types:
       - published
     branches: [ main ]
-    tags: [ "*" ]
+    tags: [ 'v[0-9]+.[0-9]+.[0-9]+[a-z]?' ]
+
 jobs:
   release:
     runs-on: ubuntu-latest
