@@ -212,10 +212,10 @@ function addon.GetQuestName(id)
         if nrequests < 3 or requests[id] == 0 then
             local isLoaded
 
-            if C_QuestLog.RequestLoadQuestByID and not requests[id] then
+            --[[if C_QuestLog.RequestLoadQuestByID and not requests[id] then
                 C_QuestLog.RequestLoadQuestByID(id)
                 requests[id] = GetTime()
-            end
+            end]]
 
             if (not requests[id] or ctime - requests[id] > 3) then
                 isLoaded = HaveQuestData(id)
@@ -379,10 +379,10 @@ function addon.GetQuestObjectives(id, step)
         if nrequests < 3 or requests[id] == 0 then
             local isLoaded
 
-            if C_QuestLog.RequestLoadQuestByID and not requests[id] then
+            --[[if C_QuestLog.RequestLoadQuestByID and not requests[id] then
                 C_QuestLog.RequestLoadQuestByID(id)
                 requests[id] = GetTime()
-            end
+            end]]
 
             if (not requests[id] or ctime - requests[id] > 3) then
                 isLoaded = HaveQuestData(id)
@@ -944,7 +944,11 @@ function addon.UpdateQuestCompletionData(self)
                 end]]
             end
             local t = obj.text
-
+            if t:find("%a") then
+                element.requestFromServer = false
+            else
+                element.requestFromServer = true
+            end
             if obj.type == "item" then
                 icon = addon.icons.collect
             elseif obj.type == "monster" and
@@ -969,34 +973,9 @@ function addon.UpdateQuestCompletionData(self)
                             (element.objMax and obj.numFulfilled >=
                                 obj.numRequired)
             objtext = t
-        else
-            completed = true
-            for i, obj in pairs(objectives) do
-                obj.numFulfilled = obj.numFulfilled or 0
-                obj.numRequired = obj.numRequired or 0xff
-                local t = obj.text
-                completed = completed and obj.finished
-                if not obj.questie then
-                    if obj.type == "event" then
-                        if isQuestComplete then
-                            t = string.format(t .. ": %d/%d", obj.numRequired,
-                                              obj.numRequired)
-                        else
-                            t = string.format(t .. ": %d/%d", obj.numFulfilled,
-                                              obj.numRequired)
-                        end
-                    elseif isQuestComplete then
-                        t = t:gsub(": %d+/(%d+)", ": %1/%1")
-                    end
-                end
-                if objtext then
-                    objtext = objtext .. "\n" .. t
-                else
-                    objtext = t
-                end
-            end
         end
     else
+        element.requestFromServer = true
         element.text = "Retrieving quest data..."
         element.tooltipText = nil
 
@@ -1139,7 +1118,20 @@ function addon.functions.complete(self, ...)
         addon.UpdateQuestCompletionData(self)
     else
         if not step.active then
-            addon.updateInactiveQuest[self] = addon.UpdateQuestCompletionData
+            if math.abs(RXPCData.currentStep - step.index) > 2 then
+                local update = true
+                for _,v in pairs(addon.updateInactiveQuest) do
+                    if v == self then
+                        update = false
+                        break
+                    end
+                end
+                if update and element.requestFromServer then
+                    table.insert(addon.updateInactiveQuest,self)
+                end
+            else
+                addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
+            end
         elseif event ~= "WindowUpdate" then
             if element.skipIfMissing and not IsOnQuest(element.questId) then
                 addon.SetElementComplete(self,true)
