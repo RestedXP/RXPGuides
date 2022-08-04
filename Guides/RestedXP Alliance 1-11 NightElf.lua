@@ -7,10 +7,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
 #next 6-11 Teldrassil
-step
-.goto 129,18.91,51.58
-.complete 13095,1
 step << !NightElf
+--    .hs >> 1234
     #sticky
     #completewith next
     +You have selected a guide meant for Night Elves. You should choose the same starter zone that you start in

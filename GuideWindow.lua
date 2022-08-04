@@ -251,15 +251,6 @@ CurrentStepFrame:SetScript("OnMouseDown", RXPFrame.OnMouseDown)
 CurrentStepFrame:SetScript("OnMouseUp", RXPFrame.OnMouseUp)
 CurrentStepFrame:EnableMouse(1)
 
-local function ClearTable(tab)
-    if #tab > 1 then
-        while #tab > 0 do table.remove(tab) end
-    else
-        for k in pairs(tab) do tab[k] = nil end
-    end
-    return tab
-end
-
 CurrentStepFrame.framePool = {}
 
 local function ClearFrameData()
@@ -424,10 +415,11 @@ function addon.SetStep(n, n2, loopback)
         if n < #guide.steps then step.completed = nil end
     end
 
-    ClearTable(activeSteps)
-    ClearTable(addon.questAccept)
-    ClearTable(addon.questTurnIn)
-    ClearTable(addon.activeItems)
+    table.wipe(activeSteps)
+    table.wipe(addon.questAccept)
+    table.wipe(addon.questTurnIn)
+    table.wipe(addon.activeItems)
+    table.wipe(addon.activeSpells)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1
@@ -682,8 +674,13 @@ function addon.SetStep(n, n2, loopback)
         if step.active then
             stepframe:Show()
             if step.activeItems then
-                for i, v in pairs(step.activeItems) do
-                    addon.activeItems[i] = v
+                for k, v in pairs(step.activeItems) do
+                    addon.activeItems[k] = v
+                end
+            end
+            if step.activeSpells then
+                for k, v in pairs(step.activeSpells) do
+                    addon.activeSpells[k] = v
                 end
             end
         else
@@ -744,7 +741,7 @@ function CurrentStepFrame.UpdateText()
                                "BOTTOMRIGHT", 0, -5)
         end
 
-        stepframe.number.text:SetText("Step " .. index)
+        stepframe.number.text:SetText(step.title or ("Step " .. index))
         stepframe.number:SetSize(stepframe.number.text:GetStringWidth() + 10, 17)
 
         local e = 0
@@ -1069,8 +1066,8 @@ function addon:LoadGuide(guide, OnLoad)
     --local totalHeight = 0
     local nframes = 0
 
-    ClearTable(addon.scheduledTasks)
-    ClearTable(addon.stepUpdateList)
+    table.wipe(addon.scheduledTasks)
+    table.wipe(addon.stepUpdateList)
     addon.currentGuide = {}
 
     for k, v in pairs(guide) do addon.currentGuide[k] = v end
@@ -1251,7 +1248,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                 if not element.element then
                     element.element = element
                 end
-                RXPG[addon.currentGuide.group][element.tag](element)
+                RXPG[addon.currentGuide.group][element.tag](element,"WindowUpdate")
                 if element.requestFromServer then
                     addon.updateStepText = true
                     addon.stepUpdateList[element.step.index] = true
@@ -1307,14 +1304,14 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                     local stepDiff = element.step.index - RXPCData.currentStep
                     element.element = element
                     if element.requestFromServer then
-                        RXPG[addon.currentGuide.group][element.tag](element)
+                        RXPG[addon.currentGuide.group][element.tag](element,"WindowUpdate")
                         addon.updateStepText =
                             addon.updateStepText or
                                 not element.requestFromServer
                         addon.stepUpdateList[element.step.index] =
                             not element.requestFromServer
                     elseif element.tag and (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
-                        RXPG[addon.currentGuide.group][element.tag](element)
+                        RXPG[addon.currentGuide.group][element.tag](element,"WindowUpdate")
                     end
                 end
                 local rawtext = element.tooltipText

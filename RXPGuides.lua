@@ -30,6 +30,7 @@ addon.itemQueryList = {}
 addon.questAccept = {}
 addon.questTurnIn = {}
 addon.activeItems = {}
+addon.activeSpells = {}
 addon.RXPG = {}
 addon.functions = {}
 
@@ -690,8 +691,9 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
         if not addon.loadNextStep then
             for ref, func in pairs(addon.updateActiveQuest) do
                 func(ref)
-                addon.updateActiveQuest[ref] = nil
                 activeQuestUpdate = activeQuestUpdate + 1
+                addon.updateActiveQuest[ref] = nil
+                --print('f',ref.element.step.index,math.random())
             end
             if activeQuestUpdate > 0 then event = event .. "/activeQ" end
         end
@@ -739,8 +741,6 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                 event = event .. "/bottomFrame"
                 skip = 1
             end
-        else
-            addon.UpdateItemCooldown()
         end
 
         if skip % 4 == 2 then
@@ -751,25 +751,33 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
             if addon.updateMap then
                 addon.UpdateMap()
                 event = event .. "/map"
-            elseif activeQuestUpdate == 0 then
-                for ref, func in pairs(addon.updateInactiveQuest) do
-                    activeQuestUpdate = activeQuestUpdate + 1
-                    if activeQuestUpdate > 4 then
-                        break
-                    else
-                        func(ref)
-                        addon.updateInactiveQuest[ref] = nil
-                    end
-                end
-                if activeQuestUpdate > 0 then
-                    event = event .. "/inactiveQ"
-                end
             end
         elseif skip % 4 == 0 then
             addon.UpdateGotoSteps()
             --event = event .. "/updateGoto"
         elseif skip % 4 == 3 then
             addon.UpdateScheduledTasks()
+        elseif skip % 16 == 1 then
+            activeQuestUpdate = 0
+            local deletedIndexes = {}
+            for i,ref in ipairs(addon.updateInactiveQuest) do
+                activeQuestUpdate = activeQuestUpdate + 1
+                if activeQuestUpdate > 3 then
+                    break
+                else
+                    --print('ok',ref.element.step.index,ref.element.requestFromServer)
+                    addon.UpdateQuestCompletionData(ref)
+                    table.insert(deletedIndexes,i)
+                end
+            end
+            for i = #deletedIndexes,1,-1 do
+                local element = deletedIndexes[i]
+                table.remove(addon.updateInactiveQuest,element)
+                --print('r'..element)
+            end
+            if activeQuestUpdate > 0 then
+                event = event .. "/inactiveQ"
+            end
         end
         --[[if event ~= "" then
             eventType = event

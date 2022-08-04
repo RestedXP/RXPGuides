@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 24-27 Redridge/Duskwood
 #xprate <1.5
 
-step << Warrior/wotlk
+step << Warrior wotlk
     #sticky
     #completewith exit1
     .goto StormwindClassic,64.1,61.2,0
@@ -16,19 +16,29 @@ step << Warrior/wotlk
     >>Check the the AH, the flower shop at the trade district and the alchemy shop at the mage district and buy some Liferoot, you will need 8 for a quest later, skip this step if you already have it
     .collect 3357,8 --Collect Liferoot (x8)
     #xprate <1.5
-step << Paladin/wotlk
+step << Human !Warlock !Paladin wotlk
+	.goto Elwynn Forest,84.3,64.9
+	.train 33388 >> Head to Eastvale in Elwynn Forest and train/purchase your mount
+	.money <5.0
+    .skill riding,1,1
+step << Paladin wotlk
+    .goto StormwindClassic,39.9,29.8
+    >>Speak to Duthorian Rall
+    .accept 4486 >>Accept The Tome of Nobility
+    .turnin 4486 >>Turn in The Tome of Nobility
+step << Paladin wotlk
 	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest/wotlk
 	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
-step << Paladin/wotlk
+step << Paladin wotlk
     .goto StormwindClassic,40.1,30.0
     >>Speak to Duthorian Rall and right click on the Tome of Valor provided
     .accept 1649 >>Accept The Tome of Valor
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
-step << Warlock/wotlk
+step << Warlock wotlk
     .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
@@ -37,38 +47,38 @@ step << Warlock/wotlk
     .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
-step << Warlock/wotlk
+step << Warlock wotlk
     .goto StormwindClassic,25.4,78.7
     .turnin 1739 >>Turn in The Binding
-step << Mage/wotlk
+step << Mage wotlk
     .goto StormwindClassic,39.6,79.6
     .train 3561>>Train Teleport: Stormwind
     .trainer >> Train your class spells
 step << wotlk
     .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
-step << Rogue/wotlk
+step << Rogue wotlk
 	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
-step << Warrior/wotlk
+step << Warrior wotlk
 	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
-step << Rogue/wotlk
+step << Rogue wotlk
     #sticky
     .goto StormwindClassic,75.8,60.1
     >> Make sure to train Lockpicking and Pick Pocket
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
-step << Rogue/wotlk
+step << Rogue wotlk
 	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
 step << Rogue/wotlk
     .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
-step << Draenei/wotlk
+step << Draenei wotlk
     .goto StormwindClassic,78.4,18.3
     .accept 9429 >> Accept Travel to Darkshire
-step << Hunter/wotlk
+step << Hunter wotlk
 	.goto StormwindClassic,61.7,15.4
 	.trainer >> Train your class spells
 step << wotlk
@@ -90,13 +100,13 @@ step << wotlk
     .goto Ironforge,67.86,42.87
     .collect 4371,1,175,1,1
 	.bronzetube
-step << Draenei/NightElf/wotlk--Not needed, including just in case someone forgets to set HS to SW
+step << Draenei wotlk/NightElf wotlk--Not needed, including just in case someone forgets to set HS to SW
     .goto Ironforge,55.5,47.7
     .fp Ironforge>> Get the Ironforge Flight Path
-step << Mage/wotlk
+step << Mage wotlk
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
-step << Draenei/NightElf/wotlk
+step << Draenei wotlk/NightElf wotlk
     #completewith next
     .goto Dun Morogh,59.5,42.8,40,0
     .goto Dun Morogh,60.4,44.1,40,0
@@ -119,13 +129,25 @@ step << Draenei/NightElf/wotlk
     >>Do the Deathless Dun Morogh -> Wetlands skip
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
     .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
-step << Draenei/NightElf/wotlk
+step << Draenei wotlk/NightElf wotlk
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
+step << Dwarf !Paladin wotlk
+	#sticky
+	#completewith next
+	.goto Dun Morogh,63.5,50.6
+	.money <5.00
+	.train 152 >> Head to Dun Morogh, train riding and purchase your mount.
+step << Gnome !Warlock wotlk
+	#sticky
+	#completewith next
+	.goto Dun Morogh,49.2,48.1
+	.money <5.00
+	.train 553 >> Head to Dun Morogh, train riding and purchase your mount.
 step << Human/Gnome/Dwarf/wotlk
     .goto Ironforge,55.5,47.7
     .fly Wetlands >> Fly to Wetlands
-step << Mage/wotlk
+step << Mage wotlk
     .goto Wetlands,10.7,60.9
     .home >> Set your Hearthstone to Deepwater Tavern
 step
@@ -1055,6 +1077,18 @@ step << Paladin
     .goto Dun Morogh,52.5,36.8
     >> Head to the gates of Ironforge
     .turnin 1653 >>Turn in The Test of Righteousness
+step << Dwarf !Paladin/wotlk
+	#sticky
+	#completewith next
+	.goto Dun Morogh,63.5,50.6
+	.money <5.00
+	.train 152 >> Head to Dun Morogh, train riding and purchase your mount.
+step << Gnome !Warlock/wotlk
+	#sticky
+	#completewith next
+	.goto Dun Morogh,49.2,48.1
+	.money <5.00
+	.train 553 >> Head to Dun Morogh, train riding and purchase your mount.
 step
 	#label end
 	.goto Ironforge,56.2,46.8
@@ -2254,7 +2288,7 @@ step
 	#label nomorekid
 	#requires MDiplomats
 	.zone Stormwind City >> Exit the Chapel
-step << Paladin tbc --TODO, move that to the lvl 30 part
+step << Paladin
     .goto StormwindClassic,39.9,29.8
     >>Speak to Duthorian Rall
     .accept 4486 >>Accept The Tome of Nobility
@@ -2399,7 +2433,7 @@ step << Human !Paladin !Warlock tbc
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
-step << Human !Paladin !Warlock wotlk
+step << Human !Paladin !Warlock/wotlk
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <5.00
@@ -2850,6 +2884,9 @@ step
     >>Go upstairs and talk to Archaeologist Flagongut
     .turnin 942 >>Turn in The Absent Minded Prospector
     .isOnQuest 942
+step << wotlk
+    #completewith next
+    + If you don't already have your mount, mail yourself 5g if you can. More opportunities soon.
 step
     #requires mead
     .goto Wetlands,10.6,60.7
@@ -2876,6 +2913,14 @@ step
     .goto Wetlands,10.8,59.7
     .turnin 288 >> Turn in The Third Fleet
     .accept 289 >> Accept The Cursed Crew
+step << Draenei !Shaman wotlk
+	.goto Wetlands,4.8,57.3,50,0
+	.goto Darkshore,31.0,41.1,30.0
+	.goto The Exodar,81.5,52.5,40,0
+	.goto Wetlands,5.2,63.3,50,0
+	.money <5.00
+	>> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Otherwise skip this step
+	.hs >>Then hearth to Menethil Harbor and take the boat to Theramore.
 step << Draenei !Shaman tbc
 	.goto Wetlands,4.8,57.3,50,0
 	.goto Darkshore,31.0,41.1,30.0
@@ -2884,6 +2929,14 @@ step << Draenei !Shaman tbc
 	.money <35.00
 	>> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Otherwise skip this step
 	.hs >>Then hearth to Menethil Harbor and take the boat to Theramore.
+step << NightElf wotlk
+	.goto Wetlands,4.8,57.3,50,0
+	.goto Darkshore,33.1,40.3,30,0
+	.goto Darnassus,38.1,15.3,30,0
+	.goto Wetlands,5.2,63.3,50,0
+	.money <5.00
+	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount.
+	.hs >> Then hearth back to Menethil Harbor and take the boat to Theramore.
 step << NightElf tbc
 	.goto Wetlands,4.8,57.3,50,0
 	.goto Darkshore,33.1,40.3,30,0

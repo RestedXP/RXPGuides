@@ -12,6 +12,35 @@ local function GetActiveItemList(ref)
         ref = addon
     end]]
     ref = addon
+
+    if ref.activeSpells then
+        for spellId in pairs(ref.activeSpells) do
+            if IsPlayerSpell(spellId) then
+                local name, rank, icon = GetSpellInfo(spellId)
+                table.insert(itemList, {
+                    name = name,
+                    texture = icon,
+                    spell = true,
+                    id = spellId,
+                })
+            end
+        end
+    end
+
+    for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+        local id = GetInventoryItemID("player", i)
+        if id and ref.activeItems[id] then
+            local itemName, _, _, _, _, _, _, _, _, itemTexture, _, classID =
+                GetItemInfo(id)
+            table.insert(itemList, {
+                name = itemName,
+                texture = itemTexture,
+                invSlot = i,
+                id = id,
+            })
+        end
+    end
+
     for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
@@ -19,16 +48,64 @@ local function GetActiveItemList(ref)
             if id and ref.activeItems[id] then
                 local itemName, _, _, _, _, _, _, _, _, itemTexture, _, classID =
                     GetItemInfo(id)
-                itemList[id] = {
+                table.insert(itemList,{
                     name = itemName,
                     texture = itemTexture,
                     bag = bag,
-                    slot = slot
-                }
+                    slot = slot,
+                    id = id,
+                })
             end
         end
     end
     return itemList
+end
+
+local function UpdateCooldowns()
+    if not (addon.activeItemFrame and addon.activeItemFrame:IsShown()) then
+        return
+    end
+    local itemFrame = addon.activeItemFrame
+    local buttonList = itemFrame.buttonList
+    --[[local function FormatCooldown(startTime, remaining, enable)
+
+        if remaining < 60 and remaining > 0 then
+            return tostring(math.ceil(remaining))
+        elseif remaining <= 0 or startTime == 0 then
+            return ""
+        elseif remaining >= 60 and remaining < 3600 then
+            return tostring(math.ceil(remaining / 60 - 0.5)) .. "m"
+        elseif remaining >= 3600 then
+            return tostring(math.ceil(remaining / 3600 - 0.5)) .. "h"
+        end
+    end]]
+    for i, btn in ipairs(buttonList) do
+        local id = btn.itemId
+        if id and btn:IsShown() then
+            local start,duration
+            if btn.spell then
+                start,duration = GetSpellCooldown(id)
+            else
+                start,duration = GetItemCooldown(id)
+            end
+            --local remaining, cd
+            if start then
+                --remaining = start + duration - GetTime()
+                --cd = FormatCooldown(start,remaining,enable)
+                if btn.cooldown:GetCooldownDuration() == 0 or
+                                         not btn.cooldown:IsShown() then
+                    btn.cooldown:SetCooldown(start,duration)
+                end
+            --else
+                --cd = ""
+            end
+            -- print(cd)
+            --[[if cd ~= btn.cd then
+                btn.cd = cd
+                btn.text:SetText(cd)
+            end]]
+        end
+    end
 end
 
 function addon.CreateActiveItemFrame(self, anchor, enableText)
@@ -61,7 +138,9 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
     f.parent = self
     f.buttonList = {}
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
-    f:SetScript("OnEvent", addon.UpdateItemFrame)
+
+    f:RegisterEvent("SPELL_UPDATE_COOLDOWN")
+    f:SetScript("OnEvent",UpdateCooldowns)
 
     if not f.title then
         f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplate)
@@ -73,7 +152,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
         f.title.text:SetJustifyV("CENTER")
         f.title.text:SetTextColor(1, 1, 1)
         f.title.text:SetFont(addon.font, 9)
-        f.title.text:SetText("Quest Items")
+        f.title.text:SetText("Active Items")
         f.title:EnableMouse(true)
         f.title:SetScript("OnMouseDown", f.onMouseDown)
         f.title:SetScript("OnMouseUp", f.onMouseUp)
@@ -86,9 +165,13 @@ addon:CreateActiveItemFrame()
 
 local fOnEnter = function(self)
     -- print(self.itemId)
-    if self.itemId and not GameTooltip:IsForbidden() then
+    if not GameTooltip:IsForbidden() and self.itemId then
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetInventoryItemByID(self.itemId)
+        if self.bag or self.invSlot then
+            GameTooltip:SetInventoryItemByID(self.itemId)
+        elseif self.spell then
+            GameTooltip:SetSpellByID(self.itemId)
+        end
         GameTooltip:Show()
     end
 end
@@ -96,42 +179,8 @@ end
 local fOnLeave = function(self)
     if not GameTooltip:IsForbidden() then GameTooltip:Hide() end
     if IsMouseButtonDown() and not InCombatLockdown() then
-        PickupContainerItem(self.bag, self.slot)
-    end
-end
-
-function addon.UpdateItemCooldown()
-    if not (addon.activeItemFrame and addon.activeItemFrame:IsShown()) then
-        return
-    end
-    local itemFrame = addon.activeItemFrame
-    local buttonList = itemFrame.buttonList
-    local function FormatCooldown(startTime, duration, enable)
-        local remaining
-        if startTime then
-            remaining = startTime + duration - GetTime()
-        else
-            return ""
-        end
-        if remaining < 60 and remaining > 0 then
-            return tostring(math.ceil(remaining))
-        elseif remaining <= 0 or startTime == 0 then
-            return ""
-        elseif remaining >= 60 and remaining < 3600 then
-            return tostring(math.ceil(remaining / 60 - 0.5)) .. "m"
-        elseif remaining >= 3600 then
-            return tostring(math.ceil(remaining / 3600 - 0.5)) .. "h"
-        end
-    end
-    for i, btn in ipairs(buttonList) do
-        local id = btn.itemId
-        if id and btn:IsShown() then
-            local cd = FormatCooldown(GetItemCooldown(id))
-            -- print(cd)
-            if cd ~= btn.cd then
-                btn.cd = cd
-                btn.text:SetText(cd)
-            end
+        if self.bag and self.slot then
+            PickupContainerItem(self.bag, self.slot)
         end
     end
 end
@@ -179,12 +228,12 @@ function addon.UpdateItemFrame(itemFrame)
     end
     itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 17)
     local i = 0
-    for id, item in pairs(itemList) do
+    for _, item in ipairs(itemList) do
         i = i + 1
         local btn = buttonList[i]
 
         if not btn then
-            btn = CreateFrame("CheckButton", "$parentButton" .. i, itemFrame,
+            btn = CreateFrame("Button", "$parentButton" .. i, itemFrame,
                               "SecureActionButtonTemplate")
             btn:SetAttribute("type", "item")
             btn:SetSize(25, 25)
@@ -202,14 +251,18 @@ function addon.UpdateItemFrame(itemFrame)
             icon:SetAllPoints(true);
             icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
 
-            btn.text = btn:CreateFontString(nil, "OVERLAY")
+            --[[btn.text = btn:CreateFontString(nil, "OVERLAY")
             btn.text:ClearAllPoints()
             btn.text:SetPoint("CENTER", btn, 0, 0)
             btn.text:SetJustifyH("CENTER")
             btn.text:SetJustifyV("CENTER")
             btn.text:SetTextColor(1, 1, 1)
             btn.text:SetFont(addon.font, 15, "OUTLINE")
-            btn.text:SetText("")
+            btn.text:SetText("")]]
+
+            btn.cooldown = CreateFrame("Cooldown", "$parentCooldown", btn, "CooldownFrameTemplate")
+            btn.cooldown:SetAllPoints();
+            btn.cooldown:Hide()
 
             btn:SetScript("OnEnter", fOnEnter)
             btn:SetScript("OnLeave", fOnLeave)
@@ -221,10 +274,18 @@ function addon.UpdateItemFrame(itemFrame)
         end
 
         -- print(id,item.texture,item.name)
-        btn:SetAttribute("item", item.name)
-        btn.itemId = id
+        local attribute = "item"
+        if btn.spell then
+            attribute = "spell"
+        end
+        btn:SetAttribute("type",attribute)
+        btn:SetAttribute(attribute, item.name)
+        btn.itemId = item.id
         btn.bag = item.bag
         btn.slot = item.slot
+        btn.invSlot = item.invSlot
+        btn.spell = item.spell
+
         btn.icon:SetTexture(item.texture)
         btn:Show()
     end
@@ -240,5 +301,6 @@ function addon.UpdateItemFrame(itemFrame)
     for n = i + 1, #buttonList do buttonList[n]:Hide() end
     local width = math.max(itemFrame.title:GetWidth() + 10, i * 27 + 8)
     itemFrame:SetWidth(width);
+    UpdateCooldowns()
 
 end

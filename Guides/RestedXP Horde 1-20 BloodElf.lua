@@ -994,14 +994,14 @@ step << Undead/BloodElf !Hunter
     .collect 22776,1 --Collect Springpaw Appetizers
 step << !Hunter
     .goto Eversong Woods,60.3,62.8
-    .turnin 9359 >>Turn in Farstrider Retreat
+    .turnin -9359 >>Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
 step << BloodElf Hunter
     .goto Eversong Woods,60.3,62.8
     .accept 8476 >> Accept Amani Encroachment
 step << !BloodElf
     .goto Eversong Woods,60.3,62.8
-    .turnin 9359 >> Turn in Farstrider Retreat
+    .turnin -9359 >> Turn in Farstrider Retreat
     .accept 8476 >> Accept Amani Encroachment
 step << BloodElf Hunter
     .accept 9484 >> Accept Taming the Beast

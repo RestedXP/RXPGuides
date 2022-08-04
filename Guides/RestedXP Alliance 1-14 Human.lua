@@ -13,19 +13,19 @@ step << !Human
     #completewith next
     .goto Elwynn Forest,48.2,42.9
     +You have selected a guide meant for Humans. You should choose the same starter zone that you start in
-step << Warlock
+step << Warlock tbc
     #sticky
     #completewith next
     +Kill Wolves for 10c+ of vendor trash. It's worth training Immolate early
     .goto Elwynn Forest,49.4,45.6,60,0
-step << Warlock
+step << Warlock tbc
     .goto Elwynn Forest,50.1,42.7
     .vendor >>vendor trash
-step << Warlock
+step << Warlock tbc
     .goto Elwynn Forest,49.9,42.6
     .accept 1598 >> Accept The Stolen Tome
     .trainer >>Train Immolate
-step << Warlock
+step << Warlock tbc
     #hardcore
     .goto Elwynn Forest,52.9,44.3,60,0
     >>Kill some Wolves en route, then watch this
@@ -33,26 +33,26 @@ step << Warlock
     >>Use your Hearthstone inside the camp when you loot it
     .goto Elwynn Forest,56.7,44.0
     .complete 1598,1 --Collect Powers of the Void (x1)
-step << Warlock
+step << Warlock tbc
     #softcore
     .goto Elwynn Forest,52.9,44.3,60,0
     >>Kill some Wolves en route, then watch this
     .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
     .goto Elwynn Forest,56.7,44.0
     .complete 1598,1 --Collect Powers of the Void (x1)
-step << Warlock
+step << Warlock tbc
     #softcore
     .deathskip >> Die and respawn at the Spirit Healer
-step << Warlock
+step << Warlock tbc
     #hardcore
     #completewith next
     >>Make sure you're deep inside the tent so you don't reaggro
     .hs >> Hearth back to Northshire Valley
-step << Warlock
+step << Warlock tbc
     .goto Elwynn Forest,49.9,42.6
     .turnin 1598 >> Turn in The Stolen Tome
 step
-    >>Summon Imp, rebuff Demon Skin << Warlock
+    >>Summon Imp, rebuff Demon Skin << Warlock tbc
     >>Delete your Hearthstone
     .goto Elwynn Forest,48.2,42.9
     .accept 783 >> Accept A Threat Within
@@ -75,7 +75,7 @@ step
     >>Run back outside << Warrior
     .goto Elwynn Forest,48.2,42.9
     .accept 5261 >> Accept Eagan Peltskinner
-step << Priest/Mage/Warlock
+step << Priest tbc/Mage tbc/Warlock tbc
     .goto Elwynn Forest,46.2,40.4
     .vendor >>Kill wolves until 50c worth of vendor trash. Vendor, then buy x10 water from Brother Danil.
     .collect 159,10 --Collect Refreshing Spring Water (x10)
@@ -96,11 +96,11 @@ step
 step
     .goto Elwynn Forest,48.9,40.2
     .turnin 33 >> Turn in Wolves Across The Border
-step << Priest/Mage/Warlock
+step << Priest tbc/Mage tbc/Warlock tbc
     .goto Elwynn Forest,47.6,41.5
     .vendor >>vendor trash, then buy x10 more water from Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
-step << !Priest !Mage !Warlock
+step << !Priest !Mage !Warlock/wotlk
     .goto Elwynn Forest,47.6,41.5
     .vendor >>vendor trash
 step
@@ -113,6 +113,11 @@ step
     .accept 3103 >> Accept Hallowed Letter << Priest
     .accept 3104 >> Accept Glyphic Letter << Mage
     .accept 3105 >> Accept Tainted Letter << Warlock
+step << Warlock wotlk
+    .goto Elwynn Forest,49.9,42.6
+    .turnin 3105 >> Turn in Tainted Letter
+    .train 688 >> Learn Summon Imp from your class trainer
+    >>You'll need 95c, if you don't have the money yet, grind a little bit
 step
     .xp 3 >> Grind to 3
 step
@@ -309,7 +314,7 @@ step << Warlock
     .goto Elwynn Forest,44.4,66.2
     .trainer >> Train your class spells
     .goto Elwynn Forest,44.4,66.0
-    .vendor >> Buy the Blood Pact book if you have money after training (otherwise buy it later)
+    .vendor >> Buy the Blood Pact book if you have money after training (otherwise buy it later) << tbc
 step << Mage/Priest/Rogue
     #completewith next
     .goto Elwynn Forest,43.7,66.4,12 >>Go upstairs
@@ -329,10 +334,10 @@ step << Rogue/Warrior
     .money <0.01
     .goto Elwynn Forest,43.4,65.5
     .train 3273 >> Train First Aid - Don't make all your bandages at once, better time to make them later
-step << Warrior
+step << Warrior tbc
     .goto Elwynn Forest,43.8,65.8
     .vendor >> Buy level 5 food down to 1 Silver
-step << Rogue
+step << Rogue tbc
     .goto Elwynn Forest,43.8,65.8
     .vendor >> Buy up to 20 level 5 food
 step << Warrior
@@ -394,10 +399,10 @@ step
     #label BoarMeat1
     .goto Elwynn Forest,43.2,89.6
     .accept 106 >> Accept Young Lovers
-step << Mage/Priest/Warlock
+step << Mage tbc/Priest tbc/Warlock tbc
     .goto Elwynn Forest,42.4,89.4
     .vendor >>Vendor, buy as much milk as you can
-step << !Mage !Priest !Warlock
+step << !Mage !Priest !Warlock tbc
     .goto Elwynn Forest,42.4,89.4
     .vendor >>vendor trash
 step
@@ -507,7 +512,7 @@ step << Warlock
     .goto Elwynn Forest,44.4,66.2
     .trainer >> Train your class spells
     .goto Elwynn Forest,44.4,66.0
-    .vendor >> Buy the Firebolt book if you have money after training (otherwise buy it later)
+    .vendor >> Buy the Firebolt book if you have money after training (otherwise buy it later) << tbc
 step
     .money <0.1250
     .goto Elwynn Forest,44.0,65.9
@@ -535,10 +540,10 @@ step << Rogue/Warrior/Paladin
     .money <0.01
     .goto Elwynn Forest,43.4,65.5
     .trainer >> Train First Aid - Don't make all your bandages at once, better time to make them later
-step << !Warrior !Rogue
+step << !Warrior !Rogue tbc
     .goto Elwynn Forest,43.8,65.8
     .vendor >>Buy level 5 Water up to 40
-step << Warrior/Rogue
+step << Warrior/Rogue tbc
     .goto Elwynn Forest,43.8,65.8
     .vendor 295 >>Buy level 5 Food up to 40
 step
@@ -586,9 +591,6 @@ step
 step
     .goto Elwynn Forest,81.4,66.1
     .accept 5545 >> Accept A Bundle of Trouble
-step
-    .goto Elwynn Forest,83.3,66.1
-    .vendor >> vendor trash, repair
 step << Paladin
     #softcore
     .goto Elwynn Forest,76.8,62.4,100,0
@@ -713,15 +715,11 @@ step << Warlock
 step
     #completewith next
     .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
-    >>Make sure you are on the east side of the farm before dying << wotlk
+    >>Make sure you are on the far east side of the farm before dying << wotlk
 step
     #label Deed
     .goto Elwynn Forest,79.5,68.9
     .turnin 83 >> Turn in Red Linen Goods
-step << !Warlock
-    #softcore
-    .goto Elwynn Forest,83.3,66.1
-    .vendor >> vendor trash, repair
 step << !Warlock
     .goto Redridge Mountains,8.5,72.0
     .xp 9+4475 >> Grind until 4475+/6500xp
@@ -918,7 +916,6 @@ step << Mage wotlk/Warlock wotlk
     .accept 12 >> Accept The People's Militia
 step << Human
     .goto Westfall,57.0,47.2
-    .vendor >>vendor trash
     .accept 6181 >> Accept A Swift Message
 step << Mage wotlk
 #xprate >1.3
@@ -979,11 +976,10 @@ step << Rogue
 step << Paladin
     .goto StormwindClassic,57.1,57.7
     .trainer >>Train 2h Swords
-step << Warlock wotlk
-#xprate >1.3
+step << Warlock/wotlk
     .goto StormwindClassic,74.3,47.2
     .turnin 6281 >> Turn in Continue to Stormwind
-    .accept 6261 >> Accept Dungar Longdrink
+    .accept 6261 >> Accept Dungar Longdrink << Warlock
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -993,11 +989,8 @@ step << Warlock
     .turnin 1685 >> Turn in Gakin's Summons
     .accept 1688 >> Accept Surena Caledon
 step << Warlock
-    #softcore
     .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to the Warlock trainers
-step << Warlock
-    .goto Elwynn Forest,42.1,65.9
-    .zone Elwynn Forest >> Run back out of Stormwind to Elwynn
+    .zoneskip Elwynn Forest
 step << Warlock
     .isOnQuest 123
     .goto Elwynn Forest,42.1,65.9
@@ -1058,7 +1051,7 @@ step << Warlock wotlk
 step << Warlock
     .goto Redridge Mountains,30.6,59.4
     .fly Stormwind >> Fly to Stormwind
-step << Warlock wotlk
+step << Warlock
     .goto StormwindClassic,66.3,62.1
     .turnin -6261 >> Turn in Dungar Longdrink
 step << Warlock wotlk
@@ -1066,6 +1059,10 @@ step << Warlock wotlk
     .goto StormwindClassic,66.3,62.1
     .accept 6262 >> Accept Return to Lewis
     .isQuestTurnedIn 6261
+step << Warlock wotlk
+    #xprate <1.5
+    .goto StormwindClassic,52.61,65.71
+    .home >> Set your Hearthstone to Stormwind City
 step << Warlock
     #sticky
     #completewith next
@@ -1127,6 +1124,7 @@ step << Warrior/Paladin/Rogue
     .goto StormwindClassic,56.3,17.0
     .vendor >>Buy a Mining Pick. You'll train Mining later
 step << tbc/Warlock wotlk
+    #xprate >1.3 << Warlock wotlk
     #completewith next
     .goto StormwindClassic,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
@@ -1135,18 +1133,22 @@ step << tbc
     .goto StormwindClassic,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step << tbc/Warlock wotlk
+#xprate >1.3 << Warlock wotlk
     #completewith next
     .goto StormwindClassic,63.9,8.3,25 >>Enter the Deeprun Tram
 step << tbc/Warlock wotlk
+#xprate >1.3 << Warlock wotlk
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin
     >>Take the tram when it arrives. Cast Summon Voidwalker and Create Healthstone. Get off the tram on the other side << Warlock
     .accept 6661 >> Accept Deeprun Rat Roundup
 step << tbc/Warlock wotlk
+#xprate >1.3 << Warlock wotlk
     >>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step << tbc/Warlock wotlk
+#xprate >1.3 << Warlock wotlk
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step << Warlock wotlk
 #xprate >1.3
@@ -1198,12 +1200,10 @@ step << wotlk
     .zoneskip Darnassus
     .zoneskip Teldrassil
     .zoneskip Darkshore
-step << tbc/Warlock
-#xprate <1.5 << Warlock wotlk
+step << tbc
     .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
-step << tbc/Warlock
-#xprate <1.5 << Warlock wotlk
+step << tbc
     .goto Ironforge,55.5,47.7
     .fp Ironforge >> Get the Ironforge flight path
 step << Warlock tbc
@@ -1213,8 +1213,7 @@ step << Warlock tbc
 step << Warrior tbc
     .goto Ironforge,61.2,89.5
     .trainer >>Train 2h Maces
-step << tbc/Warlock
-#xprate <1.5 << Warlock wotlk
+step << tbc
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
 
@@ -1261,7 +1260,6 @@ step << tbc
 
 RXPGuides.RegisterGuide([[
 #tbc
-#wotlk
 << Alliance tbc/Alliance Warlock
 #name 11-12 Loch Modan << !Warlock
 #name 12-14 Loch Modan << Warlock
@@ -1310,9 +1308,9 @@ step
     .turnin 433 >> Turn in The Public Servant
 step << !Warlock
     .xp 11
-step
+step << Mage/Warlock/Priest
     .goto Dun Morogh,68.6,54.7
-    .vendor >>Vendor, buy level 5 drink << Mage/Warlock/Priest
+    .vendor >>Vendor, buy level 5 drink
 step
     .goto Dun Morogh,78.1,49.5,30,0
     .goto Dun Morogh,81.2,42.7,45,0
@@ -1335,7 +1333,7 @@ step
 step
     #completewith next
     .goto Dun Morogh,84.4,31.1
-    .zoneskip Loch modan >>Go through the tunnel to Loch Modan
+    .zoneskip Loch Modan >>Go through the tunnel to Loch Modan
 step
     .goto Loch Modan,24.8,18.4
     .turnin 353 >> Turn in Stormpike's Delivery
@@ -1680,7 +1678,6 @@ step << tbc
 
 RXPGuides.RegisterGuide([[
 #tbc
-#wotlk
 << Alliance Warlock
 #name 14-14 Darkshore
 #version 1

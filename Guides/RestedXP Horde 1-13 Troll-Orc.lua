@@ -272,7 +272,9 @@ step << !Warlock
 .goto Durotar,45.2,56.8
     >>Kill Imps in front of the cave
     .complete 792,1 --Vile Familiar (12)
-step <<!Warlock
+step << !Warlock
+    #sticky
+    #label scorpytails
 >>Finish off the Scorpion Tails
 .goto Durotar,39.8,63.5
     .complete 789,1 --Scorpid Worker Tail (10)
@@ -286,6 +288,8 @@ step
     .goto Durotar,47.4,65.7
     .use 16114 >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
+step
+    #requires scorpytails
 step
     #requires cactusapples
     .goto Durotar,42.7,67.2
@@ -477,10 +481,10 @@ step << Orc Warrior
     .money <0.0460
     >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior
+step << Paladin
     .goto Durotar,56.5,73.1
 .vendor >> Vendor trash. Sell your weapon if it gives you enough money for Gladius (5s 9c). You'll come back later if you don't have enough yet
-step << Troll Warrior/Paladin
+step << Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
     >> Buy a Gladius and equip it
@@ -541,7 +545,7 @@ step << Orc Warrior
     >>Talk to Traxexir from below the stairs outside
     >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior/Paladin
+step << Paladin
     .goto Durotar,56.5,73.1
     .money <0.0509
     >>Talk to Traxexir from below the stairs outside
@@ -553,7 +557,7 @@ step << Hunter
     >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
-    .goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill
+    .goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill. Try to focus on Scorpions as they drop Dry Scorpid Eyes that vendor for 95c each.
 step
     >>Inside the top floor of the bunker
     .goto Durotar,51.9,43.5
@@ -582,7 +586,7 @@ step << Orc Warrior
     .money <0.0460
     >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior
+step << Paladin
     .goto Durotar,52.0,40.5
     .money <0.0509
     >> Buy a Gladius and equip it
@@ -681,8 +685,11 @@ step
     .turnin 784 >>Turn in Vanquish the Betrayers
     .accept 825 >>Accept From The Wreckage....
     .turnin 830 >>Turn in The Admiral's Orders
-    .accept 831 >>Accept The Admiral's Orders
     .accept 837 >>Accept Encroachment
+step << Warlock/Shaman/Warrior
+    #xprate <1.5
+    .goto Durotar,51.9,43.5
+.accept 831 >>Accept The Admiral's Orders 
 step
     .goto Durotar,51.1,42.4
     .accept 815 >>Accept Break a Few Eggs
@@ -706,7 +713,7 @@ step << Orc Warrior
     .money <0.0460
     >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
-step << Troll Warrior
+step << Paladin
     .goto Durotar,52.0,40.5
     .money <0.0509
     >> Buy a Gladius and equip it
@@ -1029,7 +1036,7 @@ step << Warlock
 #label Skull
 .goto Durotar,47.2,17.7,225 >> Die and respawn at the Spirit Healer, or run back
 step << Warlock
-.goto Orgrimmar,49.0,94.2,20    >>Run into Orgrimmar
+.goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Warlock
     .goto Orgrimmar,31.8,37.8
     .turnin 5726 >>Turn in Hidden Enemies
@@ -1254,7 +1261,7 @@ step << !Tauren
     .accept 5041 >>Accept Supplies for the Crossroads
 step << !Tauren
     .goto The Barrens,51.5,30.4
-    .fp Crossroads>>Get the The Crossroads Flight Path
+    .fp >>Get the The Crossroads Flight Path
 step << Orc/Troll
     >>do NOT fly to Orgrimmar
 .goto The Barrens,51.5,30.3
@@ -1294,9 +1301,14 @@ step << !Tauren
 step << !Tauren
     >>Run down the road
 .goto The Barrens,44.4,59.2
-    .fp Taurajo>>Get the Camp Taurajo Flight Path
+    .fp >>Get the Camp Taurajo Flight Path
 step << !Tauren
     .line Mulgore,69.0,60.0,58.4,61.7,51.9,59.3
+    .goto Mulgore,51.4 59.2,50,0
+    .goto Mulgore,59.6 62.4,50,0
+    .goto Mulgore,51.4 59.2,50,0
+    .goto Mulgore,59.6 62.4,50,0
+        .goto Mulgore,51.4 59.2
     >> The quest giver patrols along the entire road
     .unitscan Morin Cloudstalker
     .accept 749 >>Accept The Ravaged Caravan
@@ -1314,6 +1326,11 @@ step << !Tauren
     .collect 33009,1 --Collect Tender Strider Meat (1)
 step << !Tauren
     .line Mulgore,51.9,59.3,58.4,61.7,69.0,60.0
+    .goto Mulgore,51.4 59.2,50,0
+    .goto Mulgore,59.6 62.4,50,0
+    .goto Mulgore,51.4 59.2,50,0
+    .goto Mulgore,59.6 62.4,50,0
+        .goto Mulgore,51.4 59.2
     .unitscan Morin Cloudstalker
     .turnin 751 >>Turn in The Ravaged Caravan
 step << !Tauren
@@ -1341,7 +1358,7 @@ step << !Tauren
 step << !Tauren
     >>Go to the top floor of the tower
 .goto Thunder Bluff,46.8,49.9
-    .fp Thunder Bluff>>Get the Thunder Bluff Flight Path
+    .fp >>Get the Thunder Bluff Flight Path
 step << !Tauren
 .goto Thunder Bluff,29.6,29.7,15 >>Jump down into the cave
 step << !Tauren
@@ -1375,7 +1392,7 @@ step << Orc/Troll
     .accept 6385 >>Accept Doras the Wind Rider Master
 step << Orc/Troll
     .goto Orgrimmar,45.2,64.0
-     >> Turn in the quests but do NOT fly back to the crossroads
+     >> Turn in the quests but do NOT fly back to The Crossroads
     .turnin 6385 >>Turn in Doras the Wind Rider Master
     .accept 6386 >>Accept Return to the Crossroads.
 step << Orc/Troll
@@ -1394,12 +1411,12 @@ step
     .accept 813 >>Accept Finding the Antidote
 step
     #completewith next
-    >> Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it
+    >> Abandon Need for a Cure. This will remove the timer on the quest but still allow you to still do it.
     .abandon 812 >>Abandon Need for a Cure
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run out of Orgrimmar
 step
-.goto Durotar,41.7,25.5,20 >>Jump into Thunder Ridge
+.goto Durotar,41.7,25.5,30 >>Jump into Thunder Ridge
 step
     >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space
 .goto Durotar,41.9,26.0
@@ -1407,15 +1424,17 @@ step
 step << !Warrior
 .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
+    .goto Durotar,39.2,32.3
+    >>Kill Lightning Hides for Singed Scales. Follow the arrow towards the exit while doing this.
+    .complete 1498,1 --Singed Scale (5)
+step << Warrior
+    .isQuestComplete 1498
     #sticky
     #completewith next
-.goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
-step << Warrior
-    >>Kill Lightning Hides for Singed Scales
-    .complete 1498,1 --Singed Scale (5)
+.goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge    
 step
 >>Start killing crocodiles for the Amulet
-    >> Kill them while heading south, we're doing your totem quest next << Troll Shaman/Orc Shaman
+    >> Kill them while heading south. We're doing your totem quest next << Troll Shaman/Orc Shaman
     .goto Durotar,35.2,27.5,60,0
     .goto Durotar,35.7,57.8,60,0
     .goto Durotar,35.2,27.5,60,0
@@ -1464,10 +1483,11 @@ step
 step
     #sticky
     #label Collars2
->>Kill Burning Blade mobs in Skull Rock for Searing Collars, and until Lieutenant's Insignia drops
+   .goto Durotar,51.8,10.0 
+>>Kill Burning Blade mobs in Skull Rock for Searing Collars and until Lieutenant's Insignia drops
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)
-step << Orc Shaman/Troll Shaman/Orc Warrior/Troll Shaman
+step << Orc Shaman/Troll Shaman/Orc Warrior/Troll Shaman/Troll Warrior
     .use 4945 >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave. Use the Faintly Glowing Skull you saved from earlier, sticky glue on the voidwalker to reduce your damage taken, and Healing Potions to restore health. Use LoS (line of sight) to avoid his shadowbolts. Don't be afraid to die if it means killing and looting Gazz'uz
 .goto Durotar,51.8,10.0
 .collect 4903,1,832 --Collect Eye of Burning Shadow
@@ -1516,6 +1536,9 @@ step
     .goto Orgrimmar,49.4,50.5
     .turnin 829 >>Turn in Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
+step
+    .isOnQuest 832
+    .goto Orgrimmar,49.4,50.5
     .turnin 832 >>Turn in Burning Shadows
 step
     .goto Durotar,41.6,18.7

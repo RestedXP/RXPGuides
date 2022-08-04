@@ -314,6 +314,7 @@ step
     .goto The Barrens,51.5,30.2
     .accept 853 >> Accept Apothecary Zamah
 step
+    .isOnQuest 853
     #sticky
     #completewith Zamah
     +You have 45 minutes to complete the Apothecary quest so keep an eye on the timer. Skip the quest if you fail it
@@ -385,7 +386,7 @@ step << Warlock
     .goto The Barrens,43.3,47.9
     .turnin 1515 >>Turn in Dogran's Captivity
     .accept 1512 >>Accept Love's Gift
-step << Warlock
+step
     >>Kill a LOT of Quillboars. Prioritize Thornweavers, Water Seekers, and Geomancers where you can. Loot them for their tusks. Save the Blood Shards you get
     *Water Seekers only spawn in the south western most camps. Go East or North West for Geomancers / Thornweavers.
     .goto The Barrens,47.1,53.3,50,0
@@ -462,6 +463,7 @@ step
     .accept 264 >> Accept Until Death Do Us Part
     .maxlevel 21
 step
+    .isOnQuest 853
     .goto Thunder Bluff,23.0,20.9
     >> If you failed the Zamah quest, just abandon it
     .turnin 853 >> Turn in Apothecary Zamah
@@ -634,7 +636,7 @@ step
     .turnin 6461 >> Turn in Blood Feeders
     .isOnQuest 6461 
 step
-    #level 25
+    .maxlevel 23
     .isOnQuest 1095
     >> Head back to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
@@ -665,7 +667,6 @@ step
     .turnin 6401 >> Turn in Kaya's Alive
     .isOnQuest 6401
 step
-    #level 24
     .goto Stonetalon Mountains,45.1,59.8
     .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
 step
@@ -1188,12 +1189,12 @@ step
     .turnin 527 >> Turn in Battle of Hillsbrad
 step
     .maxlevel 28
+    #label bearsohmy
     .goto Hillsbrad Foothills,62.1,19.8
     .accept 528 >> Accept Battle of Hillsbrad
     .accept 546 >> Accept Souvenirs of Death
     
 step
-    #label bearsohmy
     >>Kill Bears and Mountain Lions. Loot them for Tongues and Blood
     .goto Hillsbrad Foothills,54.9,29.8,40,0
     .goto Hillsbrad Foothills,50.5,37.7,40,0
@@ -1581,6 +1582,7 @@ step
     .turnin 6462 >> Turn in Troll Charm
     .isOnQuest 6462
 step
+    .isQuestTurnedIn 6462
     .goto Ashenvale,11.6,34.3
     .turnin 824 >> Turn in Je'neu of the Earthen Ring
 step << Rogue
@@ -1756,7 +1758,10 @@ step << Warrior
 step << Warrior
     >>In the building
 	.goto The Barrens,44.7,59.4
-    .turnin 1824 >>Turn in Trial at the Field of Giants
+    .turnin -1824 >>Turn in Trial at the Field of Giants
+step << Warrior
+    #xprate <1.5
+    .goto The Barrens,44.7,59.4
     .accept 1825 >>Accept Speak with Thun'grim
 step << Shaman
     .goto The Barrens,43.4,77.4
@@ -2015,7 +2020,6 @@ step
     .accept 5064 >> Accept Grimtotem Spying
 step
     #completewith exitfreewind33
-    #level 29
     +If you have access to more gold on this server, mail yourself 35g. We will be buying your mount soon.
 step
     .goto Thousand Needles,46.1,51.7
@@ -2215,188 +2219,225 @@ step
     .turnin 893 >> Turn in Weapons of Choice
     .accept 1153 >> Accept A New Ore Sample
 step
-    #level 32
+    .isQuestComplete 906
     #completewith next
     .goto The Barrens,44.4,59.1
     .fly The Crossroads >> Fly to The Crossroads
     .zoneskip The Barrens,1
 step
-    #level 32
+    .isQuestComplete 906
 	#completewith next
     .goto Thunder Bluff,46.9,49.4
     .fly The Crossroads >> Fly to The Crossroads
     .zoneskip Thunder Bluff,1
 step
-    #level 32
-    .isOnQuest 906
-    .goto The Barrens,51.5,30.9
-    .turnin 906 >> Turn in Betrayal from Within
-step
-    #level 32
+    .isQuestComplete 906
     .goto The Barrens,51.1,29.7
     .accept 1145 >> Accept The Swarm Grows
+step
+    .isQuestComplete 906
+    .goto The Barrens,51.5,30.9
+    .turnin 906 >> Turn in Betrayal from Within
 step << Warrior
-    #level 32
-    >>Skip Followup
+    .isOnQuest 1145
+    >>Skip the followup quest
     .goto The Barrens,57.2,30.3
     .turnin 1825 >>Turn in Speak with Thun'grim
 step << !Warrior
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto The Barrens,51.5,30.3
     .fly Ratchet >> Fly to Ratchet
 step << Warrior
-    #level 32
+    .isOnQuest 1145
     .goto The Barrens,63.3,38.4,150 >>Run to Ratchet
 step
-    #level 32
     .isOnQuest 1111
     .goto The Barrens,63.3,38.4
+    >> Head to Ratchet
     .turnin 1111 >> Turn in Wharfmaster Dizzywig
     .accept 1112 >> Accept Parts for Kravel
 step << Warrior
-    #level 32
     .goto The Barrens,51.5,30.3,-1
     .goto The Barrens,63.1,37.2,-1
     .abandon 1838 >>Abandon Brutal Armor
 step
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto The Barrens,51.5,30.3,-1
     .goto The Barrens,63.1,37.2,-1
     .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,32.4,35.8
     .trainer >> Go and train your class spells
 step << Shaman
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,38.6,36.0
     .trainer >> Go and train your class spells
 step << Hunter
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,66.1,18.5
     .trainer >> Go and train your class spells
 step << Hunter
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,66.3,14.8
     .trainer >> Go and train your pet spells
 step << Warrior
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,79.7,31.4
     .accept 1718 >>Accept The Islander
     .trainer >> Go and train your class spells
 step << Rogue
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,44.0,54.6
     .trainer >> Go and train your class spells
 step << Warlock
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,48.0,46.0
     .trainer >> Go and train your class spells
 step << Warlock
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,47.5,46.7
     .vendor >> Buy pet spell books
 	.collect 16368,1
 step << Mage
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,38.8,85.6
     .trainer >> Go and train your class spells
 step << Priest
-    #level 32
+    .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,35.6,87.8
     .trainer >> Go and train your class spells
 step
-    #level 32
     .isOnQuest 1145
     .goto Orgrimmar,75.2,34.2
     .turnin 1145 >> Turn in The Swarm Grows
 step
-    #level 32
     .isQuestTurnedIn 1145
     .goto Orgrimmar,74.7,33.9
     .accept 1146 >> Accept The Swarm Grows
-step << Orc !Warlock
-    #level 32
+step << Orc !Warlock tbc
 	#sticky
 	#completewith next
 	.money <35.00
 	.goto Orgrimmar,63.3,12.8
 	.train 149 >> Head to the Valley of Honor. Train riding and purchase your mount
-step << Troll !Warlock
+step << Troll !Warlock tbc
     #level 32
 	#sticky
 	#completewith next
 	.money <35.00
 	.goto Durotar,55.2,75.5
 	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
-step << Undead !Warlock
+step << Undead !Warlock tbc
     #level 32
     .money <35.00
     .goto Durotar,50.8,13.7
     .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
     >> If you can teleport to the Undercity skip this step and teleport << Mage
-step << Undead !Warlock
+step << Undead !Warlock tbc
     #level 32
     .money <35.00
     .goto Tirisfal Glades,60.1,52.6
     .train 554 >> Train riding and purchase your mount
     .zoneskip Tirisfal Glades,1
-step << Blood Elf !Warlock
+step << Blood Elf !Warlock tbc
     #level 32
     .money <35.00
     .goto Durotar,50.8,13.7
     .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
     >> If you can teleport to Undercity or Silvermoon skip this step and teleport << Mage
-step << Blood Elf !Warlock
+step << Blood Elf !Warlock tbc
     #level 32
     .money <35.00
     .goto Undercity,66.3,4.5,30,0
     .goto Undercity,54.9,11.3
     .zone Silvermoon City >> Click on the Orb of Translocation to head to Silvermoon City
     .zoneskip Orgrimmar
-step << Blood Elf !Warlock
+step << Blood Elf !Warlock tbc
     #level 32
     .money <35.00
     .goto Eversong Woods,61.1,54.7,5,0
     .goto Eversong Woods,61.4,54.0
     .train 33388 >> Leave Silvermoon City, then train riding and purchase your mount.
     .zoneskip Orgrimmar
-step << Blood Elf !Warlock
+step << Blood Elf !Warlock tbc
     #level 32
     .goto Silvermoon City,49.4,14.3
     >> Teleport to Orgrimmar if you can << Mage
     .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
     .zoneskip Orgrimmar
+step << Orc !Warlock wotlk
+	#sticky
+	#completewith next
+	.money <5.00
+	.goto Orgrimmar,63.3,12.8
+	.train 149 >> Head to the Valley of Honor. Train riding and purchase your mount
+step << Troll !Warlock wotlk
+	#sticky
+	#completewith next
+	.money <5.00
+	.goto Durotar,55.2,75.5
+	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
+step << Undead !Warlock wotlk
+    .money <5.00
+    .goto Durotar,50.8,13.7
+    .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
+    >> If you can teleport to the Undercity skip this step and teleport << Mage
+step << Undead !Warlock wotlk
+    .money <5.00
+    .goto Tirisfal Glades,60.1,52.6
+    .train 554 >> Train riding and purchase your mount
+    .zoneskip Tirisfal Glades,1
+step << Blood Elf !Warlock wotlk
+    .money <5.00
+    .goto Durotar,50.8,13.7
+    .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
+    >> If you can teleport to Undercity or Silvermoon skip this step and teleport << Mage
+step << Blood Elf !Warlock wotlk
+    .money <5.00
+    .goto Undercity,66.3,4.5,30,0
+    .goto Undercity,54.9,11.3
+    .zone Silvermoon City >> Click on the Orb of Translocation to head to Silvermoon City
+    .zoneskip Orgrimmar
+step << Blood Elf !Warlock wotlk
+    .money <5.00
+    .goto Eversong Woods,61.1,54.7,5,0
+    .goto Eversong Woods,61.4,54.0
+    .train 33388 >> Leave Silvermoon City, then train riding and purchase your mount.
+    .zoneskip Orgrimmar
+step << Blood Elf !Warlock wotlk
+    .goto Silvermoon City,49.4,14.3
+    >> Teleport to Orgrimmar if you can << Mage
+    .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
+    .zoneskip Orgrimmar
 step << Warrior/Shaman
-    #level 32
+    .isOnQuest 874
 	#completewith next
     .goto Orgrimmar,45.1,63.9
     .fly Ratchet >>Fly to Ratchet
 step << Warrior/Shaman
-    #level 32
     .isOnQuest 874
     .goto The Barrens,65.8,43.8
     .turnin 874 >>Turn in Mahren Skyseer
     .accept 873 >>Accept Isha Awak
 step << Shaman
-    #level 32
+    .isQuestComplete 220
     .goto The Barrens,65.8,43.8
     .turnin 220 >>Turn in Call of Water
     .accept 63 >>Accept Call of Water
 step << Warrior/Shaman
-    #level 32
     .isOnQuest 873
 	.goto The Barrens,65.6,47.1,40,0
     .goto The Barrens,63.3,54.2,40,0
@@ -2410,36 +2451,35 @@ step << Warrior/Shaman
     .complete 873,1 --Heart of Isha Awak (1)
 	.unitscan Isha Awak
 step << Warrior
-    #level 32
+    .isOnQuest 1718
     >>Swim to the island
     .goto The Barrens,68.6,49.2
     .turnin 1718 >>Turn in The Islander
     .accept 1719 >>Accept The Affray
 step << Warrior
-    #level 32
+    .isOnQuest 1719
     .goto The Barrens,68.6,48.7
     .complete 1719,1 --Step on the grate to begin the Affray (1)
     .complete 1719,2 --Big Will (1)
 step << Warrior
-    #level 32
+    .isOnQuest 1719
     .goto The Barrens,68.6,49.2
     .turnin 1719 >>Turn in The Affray
     .accept 1791 >>Accept The Windwatcher
 step << Warrior/Shaman
-    #level 32
+    .isOnQuest 873
     .goto The Barrens,65.8,43.8
     .turnin 873 >>Turn in Isha Awak
 step << Shaman
-    #level 32
+    .isQuestComplete 1531
 	#completewith next
     .goto The Barrens,63.1,37.1
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Shaman
-    #level 32
+    .isQuestComplete 1531
     .goto Orgrimmar,38.0,37.7
     .accept 1531 >>Accept Call of Air
 step
-    #level 32
     #completewith flyskip
     .goto The Barrens,63.1,37.1,-1
     .goto Orgrimmar,45.2,64.3,-1
@@ -2639,16 +2679,16 @@ step
 	.collect 5877,1,1148
 	.accept 1148 >> Accept Parts of the Swarm
 step
-    #level 32
+    .maxlevel 31
     .goto Thousand Needles,67.8,85.7
-	.complete 1148,1 --Collect Silithid Heart (x1)
-    .complete 1148,2 --Collect Silithid Talon (x5)
-    .complete 1147,3 --Kill Silithid Invader (x5)	
-    .complete 1147,1 --Kill Silithid Searcher (x5)
-    .complete 1148,3 --Collect Intact Silithid Carapace (x3)
-    .complete 1147,2 --Kill Silithid Hive Drone (x5)	
+	.complete -1148,1 --Collect Silithid Heart (x1)
+    .complete -1148,2 --Collect Silithid Talon (x5)
+    .complete -1147,3 --Kill Silithid Invader (x5)	
+    .complete -1147,1 --Kill Silithid Searcher (x5)
+    .complete -1148,3 --Collect Intact Silithid Carapace (x3)
+    .complete -1147,2 --Kill Silithid Hive Drone (x5)	
 step
-    #level 32
+    .maxlevel 31
 	#requires partsoftheswarm
     .turnin 1147 >> Turn in The Swarm Grows
     .goto Thousand Needles,67.6,63.9
@@ -2678,14 +2718,16 @@ step
 step
     #completewith next
     .money <35.00
-    +If you have access to gold on this server, mail yourself 35g for mount training soon!
+    +If you have access to gold on this server, mail yourself gold for mount training soon!
 step
+    .zoneskip Tanaris,1
 	#completewith next
     .hs >> Hearth to Freewind Post
     .cooldown item,6948,>0
 step
     #completewith next
-    .goto Thousand Needles,45.1,49.2
+    .goto Thousand Needles,45.1,49.2,-1
+    .goto Tanaris,51.6,25.4,-1
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step
     .isOnQuest 1153
@@ -2741,7 +2783,6 @@ step
 step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
-	#completewith next
     .goto Ashenvale,73.2,61.5,-1
     .goto The Barrens,63.1,37.1,-1
     .fly Orgrimmar >> Fly to Orgrimmar

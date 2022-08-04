@@ -17,7 +17,7 @@ events.fp = {"UI_INFO_MESSAGE", "TAXIMAP_OPENED"}
 events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED", "GOSSIP_SHOW"}
-events.deathskip = "CONFIRM_XP_LOSS"
+events.deathskip = {"CONFIRM_XP_LOSS","GOSSIP_SHOW"}
 events.xp = {"PLAYER_XP_UPDATE", "PLAYER_LEVEL_UP"}
 events.reputation = "UPDATE_FACTION"
 events.vendor = {"MERCHANT_SHOW", "MERCHANT_CLOSED"}
@@ -157,7 +157,7 @@ if _G.QuestieLoader then db = _G.QuestieLoader:ImportModule("QuestieDB") end
 addon.questieDB = db
 
 function addon.FormatNumber(number, precision)
-    if not precision then precision = 0 end
+    precision = precision or 0
     local integer = math.floor(number)
     local decimal = math.floor((number - integer) * 10 ^ precision + 0.5)
     if decimal > 0 then
@@ -212,10 +212,10 @@ function addon.GetQuestName(id)
         if nrequests < 3 or requests[id] == 0 then
             local isLoaded
 
-            if C_QuestLog.RequestLoadQuestByID and not requests[id] then
+            --[[if C_QuestLog.RequestLoadQuestByID and not requests[id] then
                 C_QuestLog.RequestLoadQuestByID(id)
                 requests[id] = GetTime()
-            end
+            end]]
 
             if (not requests[id] or ctime - requests[id] > 3) then
                 isLoaded = HaveQuestData(id)
@@ -379,10 +379,10 @@ function addon.GetQuestObjectives(id, step)
         if nrequests < 3 or requests[id] == 0 then
             local isLoaded
 
-            if C_QuestLog.RequestLoadQuestByID and not requests[id] then
+            --[[if C_QuestLog.RequestLoadQuestByID and not requests[id] then
                 C_QuestLog.RequestLoadQuestByID(id)
                 requests[id] = GetTime()
-            end
+            end]]
 
             if (not requests[id] or ctime - requests[id] > 3) then
                 isLoaded = HaveQuestData(id)
@@ -669,15 +669,11 @@ function addon.functions.accept(self, ...)
         if step.active then
             if element.requiredTurnIn and not IsQuestTurnedIn(element.requiredTurnIn) then
                 addon.SetElementComplete(self, true)
-            elseif event then
-                local itemFrame = self.GetParent and
-                                      self:GetParent().activeItemFrame
-                if completed ~= element.completed and itemFrame then
-                    ProcessItems(not element.completed, step, id)
-                    addon.UpdateItemFrame(itemFrame)
-                end
-            else
+            elseif not event then
                 ProcessItems(true, step, id)
+            elseif completed ~= element.completed then
+                ProcessItems(not element.completed, step, id)
+                addon.UpdateItemFrame()
             end
         end
 
@@ -849,15 +845,13 @@ function addon.functions.turnin(self, ...)
         if step.active then
             if element.skipIfMissing and not IsOnQuest(id) then
                 addon.SetElementComplete(self, true)
-            elseif event then
-                local itemFrame = self.GetParent and
-                                      self:GetParent().activeItemFrame
-                if completed ~= element.completed and itemFrame then
-                    ProcessItems(not element.completed, step, id, true)
-                    addon.UpdateItemFrame(itemFrame)
-                end
-            else
+                ProcessItems(false, step, id, true)
+                addon.UpdateItemFrame()
+            elseif not event then
                 ProcessItems(true, step, id, true)
+            elseif completed ~= element.completed then
+                ProcessItems(not element.completed, step, id, true)
+                addon.UpdateItemFrame()
             end
         end
 
@@ -950,7 +944,11 @@ function addon.UpdateQuestCompletionData(self)
                 end]]
             end
             local t = obj.text
-
+            if t:find("%a") then
+                element.requestFromServer = false
+            else
+                element.requestFromServer = true
+            end
             if obj.type == "item" then
                 icon = addon.icons.collect
             elseif obj.type == "monster" and
@@ -975,34 +973,9 @@ function addon.UpdateQuestCompletionData(self)
                             (element.objMax and obj.numFulfilled >=
                                 obj.numRequired)
             objtext = t
-        else
-            completed = true
-            for i, obj in pairs(objectives) do
-                obj.numFulfilled = obj.numFulfilled or 0
-                obj.numRequired = obj.numRequired or 0xff
-                local t = obj.text
-                completed = completed and obj.finished
-                if not obj.questie then
-                    if obj.type == "event" then
-                        if isQuestComplete then
-                            t = string.format(t .. ": %d/%d", obj.numRequired,
-                                              obj.numRequired)
-                        else
-                            t = string.format(t .. ": %d/%d", obj.numFulfilled,
-                                              obj.numRequired)
-                        end
-                    elseif isQuestComplete then
-                        t = t:gsub(": %d+/(%d+)", ": %1/%1")
-                    end
-                end
-                if objtext then
-                    objtext = objtext .. "\n" .. t
-                else
-                    objtext = t
-                end
-            end
         end
     else
+        element.requestFromServer = true
         element.text = "Retrieving quest data..."
         element.tooltipText = nil
 
@@ -1130,17 +1103,7 @@ function addon.functions.complete(self, ...)
     local step = element.step
     local id = self.element.questId
 
-    if event then
-        if step.active then
-            if element.skipIfMissing and not IsOnQuest(element.questId) then
-                addon.SetElementComplete(self,true)
-            else
-                addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
-            end
-        else
-            addon.updateInactiveQuest[self] = addon.UpdateQuestCompletionData
-        end
-    else
+    if not event then
         if step.active and addon.questCompleteItems[id] then
             local qItem = addon.questCompleteItems[id]
             if not step.activeItems then step.activeItems = {} end
@@ -1153,6 +1116,29 @@ function addon.functions.complete(self, ...)
             end
         end
         addon.UpdateQuestCompletionData(self)
+    else
+        if not step.active then
+            if math.abs(RXPCData.currentStep - step.index) > 2 then
+                local update = true
+                for _,v in pairs(addon.updateInactiveQuest) do
+                    if v == self then
+                        update = false
+                        break
+                    end
+                end
+                if update and element.requestFromServer then
+                    table.insert(addon.updateInactiveQuest,self)
+                end
+            else
+                addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
+            end
+        elseif event ~= "WindowUpdate" then
+            if element.skipIfMissing and not IsOnQuest(element.questId) then
+                addon.SetElementComplete(self,true)
+            else
+                addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
+            end
+        end
     end
 end
 
@@ -1384,6 +1370,17 @@ function addon.functions.hs(self, ...)
         return element
     end
     local event, unit, _, id = ...
+    local step = self.element.step
+    if class == "SHAMAN" then
+        step.activeSpells = step.activeSpells or {}
+        step.activeSpells[556] = true
+    end
+
+    step.activeItems = step.activeItems or {}
+    step.activeItems[6948] = true
+    step.activeItems[348699] = true
+    step.activeItems[184871] = true
+
     if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and
         (id == 8690 or id == 556 or id == 348699 or id == 184871) then
         addon.SetElementComplete(self)
@@ -1512,8 +1509,7 @@ function addon.functions.fly(self, ...)
             if name and strupper(name):find(element.location) then
                 _G.TaxiNodeOnButtonEnter(getglobal("TaxiButton" .. i))
                 TakeTaxiNode(i)
-                _G.GameTooltip:Hide()
-                return
+                return not _G.GameTooltip:IsForbidden() and _G.GameTooltip:Hide()
             end
         end
     elseif (event and UnitOnTaxi("player")) or
@@ -1549,7 +1545,12 @@ function addon.functions.deathskip(self, ...)
     end
     if not self.element.step.active then return end
     local event = ...
-    if event == "CONFIRM_XP_LOSS" then addon.SetElementComplete(self) end
+    if event == "CONFIRM_XP_LOSS" then
+         addon.SetElementComplete(self)
+         AcceptXPLoss()
+    elseif event == "GOSSIP_SHOW" then
+        addon.SelectGossipType("healer")
+    end
 end
 
 addon.questItemList = {}
@@ -1631,18 +1632,15 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     if step.active and questId then
         if step.objFlags == 0 then
             -- adds the item to the active item list, in case it's an item that starts a quest
-            if not step.activeItems then step.activeItems = {} end
-            if event then
-                if event ~= "BAG_UPDATE_DELAYED" then
-                    step.activeItems[element.id] = not IsOnQuest(questId)
-                    local itemFrame = self.GetParent and
-                                          self:GetParent().activeItemFrame
-                    if itemFrame then
-                        addon.UpdateItemFrame(itemFrame)
-                    end
-                end
-            else
+
+            step.activeItems = step.activeItems or {}
+            if not event then
                 step.activeItems[element.id] = true
+            elseif event ~= "BAG_UPDATE_DELAYED" and event ~= "WindowUpdate" and addon.activeItems then
+                local isItemActive = not IsOnQuest(questId)
+                step.activeItems[element.id] = isItemActive
+                addon.activeItems[element.id] = isItemActive
+                addon.UpdateItemFrame()
             end
         elseif element.subtract or element.checkObjectives then
             local bitMask = element.objFlags
@@ -2417,7 +2415,7 @@ function addon.functions.isQuestComplete(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) then
+    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not RXP.debug then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2439,7 +2437,7 @@ function addon.functions.isOnQuest(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not IsOnQuest(id) then
+    if self.element.step.active and not IsOnQuest(id) and not addon.debug then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2469,7 +2467,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
         questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
     end
 
-    if step.active and (not questTurnedIn == not element.reverse) then
+    if step.active and (not questTurnedIn == not element.reverse) and not addon.debug then
         step.completed = true
         addon.updateSteps = true
     end
@@ -3055,7 +3053,7 @@ function addon.functions.buy(self, ...)
     local event = ...
     local element = self.element
     local step = element.step
-    if not (step.active and event) then return end
+    if not (step.active and event and event ~= "WindowUpdate") then return end
 
     local id = element.id
     local count = GetItemCount(id)
@@ -3063,7 +3061,7 @@ function addon.functions.buy(self, ...)
     local objIndex = element.objIndex
     local questId = element.questId
 
-    if event ~= "BAG_UPDATE_DELAYED" then
+    if event ~= "BAG_UPDATE_DELAYED" and event ~= "WindowUpdate" then
         if addon.IsQuestComplete(questId) or addon.IsQuestTurnedIn(questId) then
             element.isQuestComplete = true
         elseif objIndex and event then
@@ -3246,10 +3244,21 @@ function addon.functions.use(self, text, ...)
     end
     local element = self.element
     local step = element.step
+    local itemTable
+    if element.tag == "usespell" then
+        itemTable = step.activeSpells or {}
+        step.activeSpells = itemTable
+    else
+        itemTable = step.activeItems or {}
+        step.activeItems = itemTable
+    end
     -- if not text and step.active then
-    if not step.activeItems then step.activeItems = {} end
-    for item in pairs(element.activeItems) do step.activeItems[item] = true end
+    for item in pairs(element.activeItems) do itemTable[item] = true end
     -- end
+end
+
+function addon.functions.usespell(...)
+    return addon.functions.use(...)
 end
 
 function addon.functions.vehicle(self, ...)

@@ -645,7 +645,7 @@ step
     .goto Wetlands,10.6,57.2,15,0
     .goto Wetlands,10.7,56.8
     >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there. Otherwise, skip this step
-    .collect 4371,1
+    .collect 4371,1,175,1
 step
     #hardcore
     .goto Wetlands,9.49,59.69

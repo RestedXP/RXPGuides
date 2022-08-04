@@ -216,6 +216,7 @@ step
     .goto The Barrens,63.0,37.2
     .accept 894 >>Accept Samophlange
 step
+    #xprate <1.5
     .maxlevel 16
     .goto The Barrens,63.1,37.6
     .accept 959 >>Accept Trouble at the Docks
@@ -879,6 +880,9 @@ step
     .goto The Barrens,62.4,37.6
     .turnin 865 >>Turn in Raptor Horns
     .turnin 1069 >>Turn in Deepmoss Spider Eggs
+step
+    #xprate <1.5
+    .goto The Barrens,62.4,37.6
     .accept 1491 >>Accept Smart Drinks
 step
     #completewith next
@@ -1012,11 +1016,13 @@ step << Warrior
     .train 6547 >>Train Rend r3
     .train 20230 >>Train Retaliation    
 step
+    #xprate <1.5
     .maxlevel 21
     .goto Thunder Bluff,22.8,20.9
     >> Go into the Pools of Vision below the Spirit Rise
     .accept 962 >>Accept Serpentbloom
 step
+    .maxlevel 21
     .goto Thunder Bluff,28.4,27.7
     .accept 264 >>Accept Until Death Do Us Part
 step << Shaman
@@ -1176,32 +1182,32 @@ step
     #sticky
     #completewith next
     .goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
-    .maxlevel 23
+    .maxlevel 22
 step
 #xprate <1.5
     .goto Ashenvale,42.3,71.0,20 >>Run through the cave to Ashenvale
-    .maxlevel 23
+    .maxlevel 22
 step
 #xprate <1.5
     .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
-    .maxlevel 23
+    .maxlevel 22
 step
 #xprate <1.5
     .goto Ashenvale,12.3,33.8
     .fp Zoram >> Get the Zoram'gar Outpost flight path
-    .maxlevel 23
+    .maxlevel 22
 step
 #xprate <1.5
     .goto Ashenvale,11.8,34.7
     .accept 216 >> Accept Between a Rock and a Thistlefur
-    .maxlevel 23
+    .maxlevel 22
 step
 #xprate <1.5
     >> Talk to the trolls in the hut
     .goto Ashenvale,11.6,34.9
     .accept 6442 >> Accept Naga at the Zoram Strand
     .accept 6462 >> Accept Troll Charm
-    .maxlevel 23
+    .maxlevel 22
 step
 #xprate <1.5
     .isOnQuest 6562
@@ -1211,13 +1217,13 @@ step
 #xprate <1.5
     .goto Ashenvale,11.6,34.3
     .accept 6563 >> Accept The Essence of Aku'Mai
-    .maxlevel 23
+    .maxlevel 22
 step
 #xprate <1.5
     >>Accepting this quest starts an escort. Follow him
     .goto Ashenvale,12.1,34.4
     .accept 6641 >> Accept Vorsha the Lasher
-    .maxlevel 23
+    .maxlevel 22
 step
 #xprate <1.5
     #sticky
@@ -1300,6 +1306,7 @@ step << Druid
     .goto Moonglade,52.4,40.6
     .trainer 12042 >> Train spells
 step
+    .zoneskip Stonetalon Mountains
     #completewith eldercr
     .hs >> Hearth to Thunder Bluff
     .cooldown item,6948,>0
