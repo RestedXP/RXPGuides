@@ -484,6 +484,7 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     elseif math.floor(gameVersion/1e4) ~= math.floor(RXPData.gameVersion/1e4) then
         addon.db.profile.guides = {}
+        RXPData.gameVersion = gameVersion
     end
     addon.settings.InitializeSettings()
     addon.RXPG.LoadCachedGuides()
