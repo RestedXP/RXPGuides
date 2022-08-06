@@ -1304,11 +1304,11 @@ step << !Tauren
     .fp >>Get the Camp Taurajo Flight Path
 step << !Tauren
     .line Mulgore,69.0,60.0,58.4,61.7,51.9,59.3
-    .goto Mulgore,51.4 59.2,50,0
-    .goto Mulgore,59.6 62.4,50,0
-    .goto Mulgore,51.4 59.2,50,0
-    .goto Mulgore,59.6 62.4,50,0
-        .goto Mulgore,51.4 59.2
+    .goto Mulgore,51.4,59.2,50,0
+    .goto Mulgore,59.6,62.4,50,0
+    .goto Mulgore,51.4,59.2,50,0
+    .goto Mulgore,59.6,62.4,50,0
+        .goto Mulgore,51.4,59.2
     >> The quest giver patrols along the entire road
     .unitscan Morin Cloudstalker
     .accept 749 >>Accept The Ravaged Caravan
@@ -1326,11 +1326,11 @@ step << !Tauren
     .collect 33009,1 --Collect Tender Strider Meat (1)
 step << !Tauren
     .line Mulgore,51.9,59.3,58.4,61.7,69.0,60.0
-    .goto Mulgore,51.4 59.2,50,0
-    .goto Mulgore,59.6 62.4,50,0
-    .goto Mulgore,51.4 59.2,50,0
-    .goto Mulgore,59.6 62.4,50,0
-        .goto Mulgore,51.4 59.2
+    .goto Mulgore,51.4,59.2,50,0
+    .goto Mulgore,59.6,62.4,50,0
+    .goto Mulgore,51.4,59.2,50,0
+    .goto Mulgore,59.6,62.4,50,0
+        .goto Mulgore,51.4,59.2
     .unitscan Morin Cloudstalker
     .turnin 751 >>Turn in The Ravaged Caravan
 step << !Tauren
