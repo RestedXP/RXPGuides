@@ -230,7 +230,7 @@ local function buildSpacer(height)
 end
 
 function addon.tracker:CreateGui()
-    local attachment = _G.PaperDollItemsFrame
+    local attachment = _G.CharacterFrame
     local offset = {
         x = -38,
         y = -32,
@@ -243,7 +243,11 @@ function addon.tracker:CreateGui()
 
     trackerUi:SetLayout("Fill")
     trackerUi:Hide()
+
+    -- Link to CharacterFrame show/hide
     trackerUi:EnableResize(false)
+    trackerUi.frame:SetMovable(false)
+    trackerUi.frame:SetParent(attachment)
 
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
     trackerUi:SetTitle("RestedXP Leveling Report")
@@ -263,6 +267,13 @@ function addon.tracker:CreateGui()
         -- refresh data
         addon.tracker:CompileData()
         addon.tracker:UpdateReport(addon.tracker.playerLevel, true)
+    end)
+
+    -- if addon.settings.db.profile.enableTrackerReport
+    trackerUi:SetCallback("OnClose", function()
+        -- Hide tracker frame when parent hides
+        -- Prevent tracker from being open next time character is
+        trackerUi:Hide()
     end)
 
     -- Make sure the window can be closed by pressing the escape button
