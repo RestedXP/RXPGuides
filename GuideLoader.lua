@@ -198,7 +198,7 @@ end
 function addon.ImportGuide(guide,text,defaultFor,cache)
     if addon.db then -- Addon loaded already
         local importedGuide, errorMsg = RXPG.ParseGuide(guide)
-        if importedGuide and ((errorMsg and not cache) or RXPG.AddGuide(importedGuide)) then
+        if errorMsg ~= "#0" and importedGuide and ((errorMsg and not cache) or RXPG.AddGuide(importedGuide)) then
             -- print(errorMsg,importedGuide.name)
             importedGuide.imported = true
             addon.CacheGuide(importedGuide.key, guide, importedGuide.enabledFor,
@@ -601,7 +601,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             guide.key = guide.key or RXPG.BuildGuideKey(guide)
             if currentStep == 0 and (not guide[game] and not(game == "tbc" and not (guide.classic or guide.wotlk))) then
                 --print(game,guide[game],guide.name)
-                skipGuide = addon.game
+                skipGuide = "#0"
             end
             if skipGuide then
                 guide.version = tonumber(guide.version) or 0

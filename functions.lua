@@ -972,7 +972,7 @@ function addon.UpdateQuestCompletionData(self)
             completed = obj.finished or
                             (element.objMax and obj.numFulfilled >=
                                 obj.numRequired)
-            objtext = t
+            objtext = t or " "
         end
     else
         element.requestFromServer = true
