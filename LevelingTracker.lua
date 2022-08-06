@@ -243,11 +243,15 @@ function addon.tracker:CreateGui()
 
     trackerUi:SetLayout("Fill")
     trackerUi:Hide()
-
-    -- Link to CharacterFrame show/hide
     trackerUi:EnableResize(false)
-    trackerUi.frame:SetMovable(false)
-    trackerUi.frame:SetParent(attachment)
+
+    -- Firmly attach to CharacterFrame show/hide
+    if addon.settings.db.profile.openTrackerReportOnCharOpen then
+        trackerUi.frame:SetMovable(false)
+        trackerUi.frame:SetParent(attachment)
+
+        attachment:HookScript("OnShow", function() trackerUi:Show() end)
+    end
 
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
     trackerUi:SetTitle("RestedXP Leveling Report")
@@ -269,12 +273,13 @@ function addon.tracker:CreateGui()
         addon.tracker:UpdateReport(addon.tracker.playerLevel, true)
     end)
 
-    -- if addon.settings.db.profile.enableTrackerReport
-    trackerUi:SetCallback("OnClose", function()
-        -- Hide tracker frame when parent hides
-        -- Prevent tracker from being open next time character is
-        trackerUi:Hide()
-    end)
+    if addon.settings.db.profile.openTrackerReportOnCharOpen then
+        trackerUi:SetCallback("OnClose", function()
+            -- Hide tracker frame when parent hides
+            -- Prevent tracker from being open next time character is
+            trackerUi:Hide()
+        end)
+    end
 
     -- Make sure the window can be closed by pressing the escape button
     _G["RESTEDXP_TRACKER_SUMMARY_WINDOW"] = trackerUi.frame
@@ -429,7 +434,7 @@ end
 
 function addon.tracker:ShowReport()
     addon.tracker.ui:Show()
-    _G.CharacterFrame:Show()
+    ShowUIPanel(_G.CharacterFrame)
 end
 
 function addon.tracker:CompileLevelData(level, d)

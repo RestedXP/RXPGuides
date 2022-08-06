@@ -34,7 +34,8 @@ function addon.settings.InitializeSettings()
         profile = {
             enableTracker = true,
             enableLevelUpAnnounceSolo = true,
-            enableLevelUpAnnounceGroup = true
+            enableLevelUpAnnounceGroup = true,
+            openTrackerReportOnCharOpen = true,
         }
     }
 
@@ -724,6 +725,11 @@ function addon.settings.CreateExtrasOptionsPanel()
                 width = "normal",
                 order = 4
             }, -- TODO add reload UI if changes made
+            openTrackerReportOnCharOpen = {
+                name = "Always open leveling report with character",
+                type = "toggle",
+                order = 5
+            },
             commsOptionsHeader = {
                 name = "Announcements",
                 type = "header",
