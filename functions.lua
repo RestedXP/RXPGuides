@@ -3278,10 +3278,10 @@ function addon.functions.vehicle(self, ...)
 
     local element = self.element
 
-    if not element or element.tag ~= "vehicle" then
-        return UnitInVehicle("player")
-    elseif not (element.step and element.step.active) then
+    if not (UnitInVehicle and element.step and element.step.active) then
         return
+    elseif not element or element.tag ~= "vehicle" then
+        return UnitInVehicle("player")
     end
     local event, unit, showVehicleFrame, isControlSeat, vehicleUIIndicatorID,
           guid = ...
