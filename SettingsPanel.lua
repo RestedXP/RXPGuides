@@ -37,6 +37,8 @@ function addon.settings.InitializeSettings()
             enableLevelUpAnnounceSolo = true,
             enableLevelUpAnnounceGroup = true,
             openTrackerReportOnCharOpen = true,
+            enableFlyStepAnnouncements = true,
+            alwaysSendBranded = true
         }
     }
 
