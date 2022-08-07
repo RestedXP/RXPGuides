@@ -135,6 +135,9 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
         -- Build data after processing level up
         addon.tracker.reportData[data.level - 1] =
             addon.tracker:CompileLevelData(data.level - 1)
+        addon.tracker.ui.levelDropdown:SetList(addon.tracker
+                                                   .BuildDropdownLevels())
+        addon.tracker.ui.levelDropdown:SetValue(addon.tracker.playerLevel)
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
         addon.tracker.state.login = {
             time = time(),
@@ -523,6 +526,8 @@ function addon.tracker:CompileData()
 end
 
 function addon.tracker:PrettyPrintTime(s)
+    if not tonumber(s) then return end
+
     local days = floor(s / 24 / 60 / 60)
     s = mod(s, 24 * 60 * 60)
 
@@ -607,16 +612,14 @@ function addon.tracker:UpdateReport(selectedLevel)
 
     end
 
-    local ratio = report.groupExperience /
-                      (report.soloExperience + report.groupExperience)
-    local percentage = 100 * ratio
+    local ratio, percentage
 
     if selectedLevel == addon.tracker.maxLevel then
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %s", 'N/A'))
         trackerUi.teamworkContainer.data['group']:SetText(fmt("* Group: %s",
                                                               'N/A'))
-    elseif smatch(tostring(ratio), "nan") then -- If division error
+    elseif report.soloExperience + report.groupExperience == 0 then -- If division error
         trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%", 0))
         trackerUi.teamworkContainer.data['group']:SetText(
             fmt("* Group: %d%%", 0))
@@ -626,21 +629,21 @@ function addon.tracker:UpdateReport(selectedLevel)
         trackerUi.teamworkContainer.data['group']:SetText(
             fmt("* Group: %.2f%%", 0))
     else
+        ratio = report.groupExperience /
+                    (report.soloExperience + report.groupExperience)
+        percentage = 100 * ratio
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %.2f%%", 100 - percentage))
         trackerUi.teamworkContainer.data['group']:SetText(
             fmt("* Group: %.2f%%", percentage))
     end
 
-    ratio = report.questXP / (report.questXP + report.mobXP)
-    percentage = 100 * ratio
-
     if selectedLevel == addon.tracker.maxLevel then
         trackerUi.sourcesContainer.data['quests']:SetText(fmt("* Quests: %s",
                                                               "N/A"))
         trackerUi.sourcesContainer.data['mobs']:SetText(
             fmt("* Killing: %s", "N/A"))
-    elseif smatch(tostring(ratio), "nan") then -- If division error
+    elseif report.questXP + report.mobXP == 0 then -- If division error
         trackerUi.sourcesContainer.data['quests']:SetText(
             fmt("* Quests: %d%%", 0))
         trackerUi.sourcesContainer.data['mobs']:SetText(
@@ -652,6 +655,8 @@ function addon.tracker:UpdateReport(selectedLevel)
         trackerUi.sourcesContainer.data['mobs']:SetText(
             fmt("* Killing: %.2f%%", 100))
     else
+        ratio = report.questXP / (report.questXP + report.mobXP)
+        percentage = 100 * ratio
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
                                                               "* Quests: %.2f%%",
                                                               100 - percentage))
