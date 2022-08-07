@@ -91,7 +91,7 @@ function addon.tracker:GenerateDBLevel(level)
         }
     end
 
-    if level == 1 then profile["levels"][level].started = 0 end
+    if level == 1 then profile["levels"][level].timestamp.started = 0 end
 end
 
 function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
