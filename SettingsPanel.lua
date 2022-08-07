@@ -752,7 +752,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                         order = 1
                     },
                     enableLevelUpAnnounceSolo = {
-                        name = "Announce Level Ups (Local Chat)",
+                        name = "Announce Level Ups (Emote)",
                         type = "toggle",
                         width = "full",
                         order = 6
