@@ -33,8 +33,12 @@ function addon.settings.InitializeSettings()
     local settingsDBDefaults = {
         profile = {
             enableTracker = true,
+            enableTrackerReport = true,
             enableLevelUpAnnounceSolo = true,
-            enableLevelUpAnnounceGroup = true
+            enableLevelUpAnnounceGroup = true,
+            openTrackerReportOnCharOpen = true,
+            enableFlyStepAnnouncements = true,
+            alwaysSendBranded = true
         }
     }
 
@@ -52,6 +56,11 @@ end
 
 local function SetProfileOption(info, value)
     addon.settings.db.profile[info[#info]] = value
+end
+
+local function IsBnetOnline()
+    local query = select(2, BNGetInfo())
+    return query ~= nil, query
 end
 
 function addon.settings.CreateOptionsPanel()
@@ -493,10 +502,20 @@ function addon.settings.CreateImportOptionsPanel()
         args = {
             buffer = { -- Buffer hacked in right-aligned icon
                 order = 1,
-                name = "Paste encoded strings",
+                name = function()
+                    local online, tag = IsBnetOnline()
+                    if online then
+                        return "Paste encoded strings linked to " .. tag
+                    else
+                        return "Unable to connect to your Battle.net ID, please make sure you are online or relog."
+                    end
+                end,
                 type = "description",
                 width = "full",
-                fontSize = "medium"
+                fontSize = "medium",
+                disabled = function()
+                    return not IsBnetOnline()
+                end
             },
             importBox = {
                 order = 10,
@@ -504,8 +523,9 @@ function addon.settings.CreateImportOptionsPanel()
                 name = 'Guides to import',
                 width = "full",
                 multiline = 5,
-                -- usage = "Usage string",
-
+                disabled = function()
+                    return not IsBnetOnline()
+                end,
                 validate = function(_, val)
                     return addon.settings.ImportBoxValidate(val)
                 end
@@ -583,7 +603,7 @@ function addon.settings.CreateImportOptionsPanel()
                 func = function() _G.ReloadUI() end,
                 disabled = function()
                     return addon.settings.gui.selectedDeleteGuide ~=
-                               "mustReload"
+                               "mustReload" or not IsBnetOnline()
                 end
             },
         }
@@ -682,6 +702,7 @@ function addon.settings.CreateExtrasOptionsPanel()
         name = "RestedXP Extras",
         get = GetProfileOption,
         set = SetProfileOption,
+        childGroups = "tab",
         args = {
             buffer = { -- Buffer hacked in right-aligned icon
                 order = 1,
@@ -690,71 +711,105 @@ function addon.settings.CreateExtrasOptionsPanel()
                 width = "full",
                 fontSize = "medium"
             },
-            trackerOptionsHeader = {
+            levelingTracker = {
+                type = "group",
                 name = "Leveling Tracker",
-                type = "header",
-                width = "full",
-                order = 2
+                order = 2,
+                args = {
+                    trackerOptionsHeader = {
+                        name = "Leveling Tracker",
+                        type = "header",
+                        width = "full",
+                        order = 1
+                    },
+                    enableTracker = {
+                        name = "Track Leveling Data",
+                        type = "toggle",
+                        width = "full",
+                        order = 2
+                    },
+                    enableTrackerReport = {
+                        name = "Enable Leveling Report",
+                        type = "toggle",
+                        width = "full",
+                        order = 3
+                    }, -- TODO add reload UI if changes made
+                    openTrackerReportOnCharOpen = {
+                        name = "Always Open Leveling Report With Character Panel",
+                        type = "toggle",
+                        width = "full",
+                        order = 4
+                    },
+                },
             },
-            enableTracker = {
-                name = "Enable leveling tracker",
-                type = "toggle",
-                width = "normal",
-                order = 3
+            communications = {
+                type = "group",
+                name = "Communications",
+                order = 3,
+                args = {
+                    commsLevelUpOptionsHeader = {
+                        name = "Announcements",
+                        type = "header",
+                        width = "full",
+                        order = 1
+                    },
+                    enableLevelUpAnnounceSolo = {
+                        name = "Announce Level Ups (Emote)",
+                        type = "toggle",
+                        width = "full",
+                        order = 6
+                    },
+                    enableLevelUpAnnounceGroup = {
+                        name = "Announce Level Ups (Party Chat)",
+                        type = "toggle",
+                        width = "full",
+                        order = 7
+                    },
+                    enableLevelUpAnnounceGuild = {
+                        name = "Announce Level Ups (Guild Chat)",
+                        type = "toggle",
+                        width = "full",
+                        order = 8
+                    },
+                    groupCoordinationHeader = {
+                        name = "Group coordination",
+                        type = "header",
+                        width = "full",
+                        order = 9
+                    },
+                    alwaysSendBranded = {
+                        name = "Send announcements without another RXP user in group",
+                        type = "toggle",
+                        width = "full",
+                        order = 10
+                    },
+                    enableCompleteStepAnnouncements = {
+                        name = "Announce when Quest Step is completed",
+                        type = "toggle",
+                        width = "full",
+                        order = 11
+                    },
+                    enableCollectStepAnnouncements = {
+                        name = "Announce when all Step items are Collected",
+                        type = "toggle",
+                        width = "full",
+                        order = 12
+                    },
+                    enableFlyStepAnnouncements = {
+                        name = "Announce Flying Step timers",
+                        type = "toggle",
+                        width = "full",
+                        order = 13
+                    },
+                    ignoreQuestieConflicts = {
+                        name = "Ignore Questie announcements",
+                        type = "toggle",
+                        width = "full",
+                        order = 14,
+                        hidden = not _G.Questie
+                    },
+                }
             },
-            enableTrackerReport = {
-                name = "Enable leveling report",
-                type = "toggle",
-                width = "normal",
-                order = 4
-            }, -- TODO add reload UI if changes made
-            commsOptionsHeader = {
-                name = "Announcements",
-                type = "header",
-                width = "full",
-                order = 5
-            },
-            enableLevelUpAnnounceSolo = {
-                name = "Level up (Emote)",
-                type = "toggle",
-                order = 6
-            },
-            enableLevelUpAnnounceGroup = {
-                name = "Level up (Group)",
-                type = "toggle",
-                order = 7
-            },
-            enableLevelUpAnnounceGuild = {
-                name = "Level up (Guild)",
-                type = "toggle",
-                order = 8
-            },
-            enableCollectStepAnnouncements = {
-                name = "Collect step updates",
-                type = "toggle",
-                order = 9
-            },
-            enableCompleteStepAnnouncements = {
-                name = "Completed step updates",
-                type = "toggle",
-                order = 10
-            },
-            enableFlyStepAnnouncements = {
-                name = "Flying step updates",
-                type = "toggle",
-                order = 11
-            },
-            ignoreQuestieConflicts = {
-                name = "Ignore Questie",
-                type = "toggle",
-                order = 12,
-                hidden = not _G.Questie
-            },
-            alwaysSendBranded = {
-                name = "Send without RXP group",
-                type = "toggle",
-                order = 13
-            }
         }
     }
 
