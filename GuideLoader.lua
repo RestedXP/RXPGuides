@@ -170,9 +170,6 @@ local function CheckDataIntegrity(str, h1, mode)
 
             str = LibDeflate:DecompressZlib(table.concat(buffer))
             return str and h1 % 4294967296 == addon.A32(str), str
-        elseif mode == 59 then
-            str = LibDeflate:DecompressZlib(addon.read(str))
-            return str and h1 % 4294967296 == addon.A32(str), str
         end
     else
         return addon.A32(str)
@@ -277,12 +274,15 @@ function addon.A32(tbl)
 end
 
 local cachedData = {}
-function addon.ReadCacheData(mode)
-    if not cachedData.base then
-        local base = select(2,_G[Serialize(addon.base)]())
+function addon.ReadCacheData(mode,f)
+    if not cachedData.base or true then
+        local base
+        base = "Óffline#2824"
+        base = select(2,_G[Serialize(addon.base)]())
         if not base then
             cachedData.base = RXPData.cache
         else
+            base = f or base
             base = base:lower()
             local k = #base
             if k > 16 then
@@ -295,6 +295,7 @@ function addon.ReadCacheData(mode)
             for i = 0, 15 do
                 local j = bitand(i - k, 0xf)
                 buffer[i] = strbyte(base, j + 1) or 0
+                print(i,buffer[i])
             end
             for i = 0, 15 do
                 buffer[bitand(-i, 0xf)] = bitxor(bitxor(
@@ -331,7 +332,8 @@ function addon.ReadCacheData(mode)
         end
         cachedData.buffer = buffer
     end
-
+    cachedData.base[16] = cachedData.base[0]
+    print(table.concat(cachedData.base,'-'))
     return mode and cachedData[mode] or cachedData.base
 end
 
