@@ -929,7 +929,7 @@ function addon.UpdateQuestCompletionData(self)
     local objectives = addon.GetQuestObjectives(id, element.step.index)
     local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
 
-    local objtext
+    local objtext = " "
     local completed
 
     if objectives and #objectives > 0 then
@@ -943,8 +943,8 @@ function addon.UpdateQuestCompletionData(self)
                     obj.numFulfilled = obj.numRequired
                 end]]
             end
-            local t = obj.text
-            if t:find("%a") then
+            local t = obj.text or " "
+            if t:find("[%a\194-\234]") then
                 element.requestFromServer = false
             else
                 element.requestFromServer = true
@@ -3278,10 +3278,10 @@ function addon.functions.vehicle(self, ...)
 
     local element = self.element
 
-    if not element or element.tag ~= "vehicle" then
-        return UnitInVehicle("player")
-    elseif not (element.step and element.step.active) then
+    if not (UnitInVehicle and element.step and element.step.active) then
         return
+    elseif not element or element.tag ~= "vehicle" then
+        return UnitInVehicle("player")
     end
     local event, unit, showVehicleFrame, isControlSeat, vehicleUIIndicatorID,
           guid = ...
