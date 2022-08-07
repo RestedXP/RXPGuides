@@ -14,6 +14,7 @@ local playerName = _G.UnitName("player")
 addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0",
                               "AceSerializer-3.0")
 
+-- TODO debugging
 SLASH_RXPGC1 = "/rxpgc"
 _G.SlashCmdList["RXPGC"] = function(_) addon.comms:AnnounceSelf("ANNOUNCE") end
 
@@ -22,7 +23,7 @@ _G.RXPGS = addon.settings
 
 addon.comms._commPrefix = "RXPGComms"
 addon.comms.state = {
-    rxpGroupDetected = false, -- TODO clustering and/or setting
+    rxpGroupDetected = false,
     updateFound = {guide = false, addon = false}
 }
 
@@ -62,16 +63,8 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
     if addon.settings.db.profile.enableTracker then
         local levelData = addon.tracker.reportData[level - 1]
 
-        if levelData then
-            if level == 2 then
-                s = levelData.timestamp.finished
-            else
-                -- missing data or alpha/beta tracking data
-                if not levelData.timestamp.started or
-                    levelData.timestamp.started == -1 then return end
-
-                s = levelData.timestamp.finished - levelData.timestamp.started
-            end
+        if levelData and levelData.timestamp and levelData.timestamp.finished then
+            s = levelData.timestamp.finished - levelData.timestamp.started
 
             msg = self.BuildNotification("I just leveled from %d to %d in %s",
                                          level - 1, level,
@@ -82,12 +75,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
             C_Timer.After(5, function()
                 levelData = addon.tracker.reportData[level - 1]
 
-                if level == 2 then
-                    s = levelData.timestamp.finished
-                else
-                    s = levelData.timestamp.finished -
-                            levelData.timestamp.started
-                end
+                s = levelData.timestamp.finished - levelData.timestamp.started
 
                 msg = self.BuildNotification(
                           "I just leveled from %d to %d in %s", level - 1,
@@ -117,15 +105,15 @@ end
 
 function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
 
-function addon.comms:PLAYER_XP_UPDATE(unitTarget)
-    print("PLAYER_XP_UPDATE:unitTarget = " .. unitTarget)
-
+function addon.comms:PLAYER_XP_UPDATE()
     if self.state.lastXPGain then self:TallyGroup() end
 
     self.state.lastXPGain = GetTime()
 end
 
 function addon.comms:TallyGroup()
+    if GetNumGroupMembers() < 1 then return end
+
     local diff = self.state.lastXPGain - GetTime()
     local name
     for i = 1, GetNumGroupMembers() - 1 do
@@ -295,6 +283,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.db.profile.enableCompleteStepAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
+        elseif addon.release == 'Development' then
+            print(msg)
         end
 
         guideAnnouncements.complete[data.title] = UnitLevel("Player")
@@ -314,6 +304,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.db.profile.enableCollectAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
+        elseif addon.release == 'Development' then
+            print(msg)
         end
 
         guideAnnouncements.collect[data.title] = UnitLevel("Player")
@@ -328,6 +320,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.db.profile.enableFlyStepAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
+        elseif addon.release == 'Development' then
+            print(msg)
         end
     else
         error("Unhandled step event announce: (" .. event .. ")")
