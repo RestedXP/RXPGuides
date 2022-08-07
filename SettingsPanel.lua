@@ -33,6 +33,7 @@ function addon.settings.InitializeSettings()
     local settingsDBDefaults = {
         profile = {
             enableTracker = true,
+            enableTrackerReport = true,
             enableLevelUpAnnounceSolo = true,
             enableLevelUpAnnounceGroup = true,
             openTrackerReportOnCharOpen = true,
@@ -699,6 +700,7 @@ function addon.settings.CreateExtrasOptionsPanel()
         name = "RestedXP Extras",
         get = GetProfileOption,
         set = SetProfileOption,
+        childGroups = "tab",
         args = {
             buffer = { -- Buffer hacked in right-aligned icon
                 order = 1,
@@ -707,76 +709,105 @@ function addon.settings.CreateExtrasOptionsPanel()
                 width = "full",
                 fontSize = "medium"
             },
-            trackerOptionsHeader = {
+            levelingTracker = {
+                type = "group",
                 name = "Leveling Tracker",
-                type = "header",
-                width = "full",
-                order = 2
+                order = 2,
+                args = {
+                    trackerOptionsHeader = {
+                        name = "Leveling Tracker",
+                        type = "header",
+                        width = "full",
+                        order = 1
+                    },
+                    enableTracker = {
+                        name = "Track Leveling Data",
+                        type = "toggle",
+                        width = "full",
+                        order = 2
+                    },
+                    enableTrackerReport = {
+                        name = "Enable Leveling Report",
+                        type = "toggle",
+                        width = "full",
+                        order = 3
+                    }, -- TODO add reload UI if changes made
+                    openTrackerReportOnCharOpen = {
+                        name = "Always Open Leveling Report With Character Panel",
+                        type = "toggle",
+                        width = "full",
+                        order = 4
+                    },
+                },
             },
-            enableTracker = {
-                name = "Enable leveling tracker",
-                type = "toggle",
-                width = "normal",
-                order = 3
+            communications = {
+                type = "group",
+                name = "Communications",
+                order = 3,
+                args = {
+                    commsLevelUpOptionsHeader = {
+                        name = "Announcements",
+                        type = "header",
+                        width = "full",
+                        order = 1
+                    },
+                    enableLevelUpAnnounceSolo = {
+                        name = "Announce Level Ups (Local Chat)",
+                        type = "toggle",
+                        width = "full",
+                        order = 6
+                    },
+                    enableLevelUpAnnounceGroup = {
+                        name = "Announce Level Ups (Party Chat)",
+                        type = "toggle",
+                        width = "full",
+                        order = 7
+                    },
+                    enableLevelUpAnnounceGuild = {
+                        name = "Announce Level Ups (Guild Chat)",
+                        type = "toggle",
+                        width = "full",
+                        order = 8
+                    },
+                    groupCoordinationHeader = {
+                        name = "Group coordination",
+                        type = "header",
+                        width = "full",
+                        order = 9
+                    },
+                    alwaysSendBranded = {
+                        name = "Send announcements without another RXP user in group",
+                        type = "toggle",
+                        width = "full",
+                        order = 10
+                    },
+                    enableCompleteStepAnnouncements = {
+                        name = "Announce when Quest Step is completed",
+                        type = "toggle",
+                        width = "full",
+                        order = 11
+                    },
+                    enableCollectStepAnnouncements = {
+                        name = "Announce when all Step items are Collected",
+                        type = "toggle",
+                        width = "full",
+                        order = 12
+                    },
+                    enableFlyStepAnnouncements = {
+                        name = "Announce Flying Step timers",
+                        type = "toggle",
+                        width = "full",
+                        order = 13
+                    },
+                    ignoreQuestieConflicts = {
+                        name = "Ignore Questie announcements",
+                        type = "toggle",
+                        width = "full",
+                        order = 14,
+                        hidden = not _G.Questie
+                    },
+                }
             },
-            enableTrackerReport = {
-                name = "Enable leveling report",
-                type = "toggle",
-                width = "normal",
-                order = 4
-            }, -- TODO add reload UI if changes made
-            openTrackerReportOnCharOpen = {
-                name = "Always open leveling report with character",
-                type = "toggle",
-                order = 5
-            },
-            commsOptionsHeader = {
-                name = "Announcements",
-                type = "header",
-                width = "full",
-                order = 5
-            },
-            enableLevelUpAnnounceSolo = {
-                name = "Level up (Emote)",
-                type = "toggle",
-                order = 6
-            },
-            enableLevelUpAnnounceGroup = {
-                name = "Level up (Group)",
-                type = "toggle",
-                order = 7
-            },
-            enableLevelUpAnnounceGuild = {
-                name = "Level up (Guild)",
-                type = "toggle",
-                order = 8
-            },
-            enableCollectStepAnnouncements = {
-                name = "Collect step updates",
-                type = "toggle",
-                order = 9
-            },
-            enableCompleteStepAnnouncements = {
-                name = "Completed step updates",
-                type = "toggle",
-                order = 10
-            },
-            enableFlyStepAnnouncements = {
-                name = "Flying step updates",
-                type = "toggle",
-                order = 11
-            },
-            ignoreQuestieConflicts = {
-                name = "Ignore Questie",
-                type = "toggle",
-                order = 12,
-                hidden = not _G.Questie
-            },
-            alwaysSendBranded = {
-                name = "Send without RXP group",
-                type = "toggle",
-                order = 13
-            }
         }
     }
 
