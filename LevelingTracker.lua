@@ -65,6 +65,14 @@ function addon.tracker:UpgradeDB()
             levelDB[l].groupExperience = 0
         end
 
+        if levelDB[l].timestamp and levelDB[l].timestamp.started == -1 then
+            levelDB[l].timestamp.started = nil
+        end
+
+        if levelDB[l].timestamp and levelDB[l].timestamp.finished == -1 then
+            levelDB[l].timestamp.finished = nil
+        end
+
         if not levelDB[l].mobs then levelDB[l].mobs = {} end
     end
 end
@@ -82,6 +90,8 @@ function addon.tracker:GenerateDBLevel(level)
             deaths = 0
         }
     end
+
+    if level == 1 then profile["levels"][level].started = 0 end
 end
 
 function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
@@ -120,15 +130,15 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
     if not data then return end
 
     if data.event == 'PLAYER_LEVEL_UP' then
+        addon.tracker.db.profile["levels"][data.level - 1].timestamp
+            .dateFinished = data.date
+        addon.tracker.db.profile["levels"][data.level - 1].timestamp.finished =
+            totalTimePlayed - 1
+
         addon.tracker.db.profile["levels"][data.level].timestamp.started =
             totalTimePlayed
-
-        if data.level > 1 then
-            addon.tracker.db.profile["levels"][data.level - 1].timestamp
-                .dateFinished = data.date
-            addon.tracker.db.profile["levels"][data.level - 1].timestamp
-                .finished = totalTimePlayed - 1
-        end
+        addon.tracker.db.profile["levels"][data.level].timestamp.dateStarted =
+            data.date
 
         addon.tracker.waitingForTimePlayed = false
 
@@ -137,7 +147,7 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
             addon.tracker:CompileLevelData(data.level - 1)
         addon.tracker.ui.levelDropdown:SetList(addon.tracker
                                                    .BuildDropdownLevels())
-        addon.tracker.ui.levelDropdown:SetValue(addon.tracker.playerLevel)
+        addon.tracker.ui.levelDropdown:SetValue(data.level)
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
         addon.tracker.state.login = {
             time = time(),
@@ -273,7 +283,7 @@ function addon.tracker:CreateGui()
     trackerUi:SetCallback("OnShow", function()
         -- refresh data
         addon.tracker:CompileData()
-        addon.tracker:UpdateReport(addon.tracker.playerLevel, true)
+        addon.tracker:UpdateReport(addon.tracker.playerLevel)
     end)
 
     if addon.settings.db.profile.openTrackerReportOnCharOpen then
@@ -526,8 +536,6 @@ function addon.tracker:CompileData()
 end
 
 function addon.tracker:PrettyPrintTime(s)
-    if not tonumber(s) then return end
-
     local days = floor(s / 24 / 60 / 60)
     s = mod(s, 24 * 60 * 60)
 
@@ -600,8 +608,7 @@ function addon.tracker:UpdateReport(selectedLevel)
             report.timestamp.dateFinished or "Missing data")
 
         if report.timestamp and report.timestamp.started and
-            report.timestamp.started > -1 and report.timestamp.finished and
-            report.timestamp.finished > -1 then
+            report.timestamp.finished then
             local s = report.timestamp.finished - report.timestamp.started
 
             trackerUi.speedContainer.data:SetText(
@@ -619,7 +626,7 @@ function addon.tracker:UpdateReport(selectedLevel)
             fmt("* Solo: %s", 'N/A'))
         trackerUi.teamworkContainer.data['group']:SetText(fmt("* Group: %s",
                                                               'N/A'))
-    elseif report.soloExperience + report.groupExperience == 0 then -- If division error
+    elseif (report.soloExperience + report.groupExperience) == 0 then -- If division error
         trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%", 0))
         trackerUi.teamworkContainer.data['group']:SetText(
             fmt("* Group: %d%%", 0))
@@ -643,7 +650,7 @@ function addon.tracker:UpdateReport(selectedLevel)
                                                               "N/A"))
         trackerUi.sourcesContainer.data['mobs']:SetText(
             fmt("* Killing: %s", "N/A"))
-    elseif report.questXP + report.mobXP == 0 then -- If division error
+    elseif (report.questXP + report.mobXP) == 0 then -- If division error
         trackerUi.sourcesContainer.data['quests']:SetText(
             fmt("* Quests: %d%%", 0))
         trackerUi.sourcesContainer.data['mobs']:SetText(
