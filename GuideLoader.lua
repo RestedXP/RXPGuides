@@ -170,9 +170,6 @@ local function CheckDataIntegrity(str, h1, mode)
 
             str = LibDeflate:DecompressZlib(table.concat(buffer))
             return str and h1 % 4294967296 == addon.A32(str), str
-        elseif mode == 59 then
-            str = LibDeflate:DecompressZlib(addon.read(str))
-            return str and h1 % 4294967296 == addon.A32(str), str
         end
     else
         return addon.A32(str)

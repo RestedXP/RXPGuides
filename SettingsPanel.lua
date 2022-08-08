@@ -58,10 +58,6 @@ local function SetProfileOption(info, value)
     addon.settings.db.profile[info[#info]] = value
 end
 
-local function IsBnetOnline()
-    local query = select(2, BNGetInfo())
-    return query ~= nil, query
-end
 
 function addon.settings.CreateOptionsPanel()
     addon.RXPOptions = CreateFrame("Frame", "RXPOptions")
@@ -460,8 +456,12 @@ function addon.settings.ImportBoxValidate()
         addon.settings.gui.selectedDeleteGuide = "mustReload"
         return true
     else
+        local relog = ""
+        if not not RXPData.cache then
+            relog = "Please restart your game client and try again"
+        end
         importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
-        return errorMsg or "Failed to Import Guides: Invalid Import String"
+        return errorMsg or ("Failed to Import Guides: Invalid Import String" .. relog)
     end
 end
 
@@ -502,20 +502,11 @@ function addon.settings.CreateImportOptionsPanel()
         args = {
             buffer = { -- Buffer hacked in right-aligned icon
                 order = 1,
-                name = function()
-                    local online, tag = IsBnetOnline()
-                    if online then
-                        return "Paste encoded strings linked to " .. tag
-                    else
-                        return "Unable to connect to your Battle.net ID, please make sure you are online or relog."
-                    end
-                end,
+                name = "Paste encoded strings",
                 type = "description",
                 width = "full",
                 fontSize = "medium",
-                disabled = function()
-                    return not IsBnetOnline()
-                end
+
             },
             importBox = {
                 order = 10,
@@ -523,9 +514,6 @@ function addon.settings.CreateImportOptionsPanel()
                 name = 'Guides to import',
                 width = "full",
                 multiline = 5,
-                disabled = function()
-                    return not IsBnetOnline()
-                end,
                 validate = function(_, val)
                     return addon.settings.ImportBoxValidate(val)
                 end
@@ -603,7 +591,7 @@ function addon.settings.CreateImportOptionsPanel()
                 func = function() _G.ReloadUI() end,
                 disabled = function()
                     return addon.settings.gui.selectedDeleteGuide ~=
-                               "mustReload" or not IsBnetOnline()
+                               "mustReload"
                 end
             },
         }
