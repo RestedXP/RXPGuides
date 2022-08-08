@@ -1888,6 +1888,7 @@ step
     .goto The Barrens,46.0,76.2,50,0
     >> Find Gann on the road again
     .turnin 846 >> Turn in Revenge of Gann
+    .unitscan Gann Stonespire
 step
     .isQuestTurnedIn 846
     .goto The Barrens,46.0,81.2,50,0
@@ -1921,6 +1922,7 @@ step
     .goto The Barrens,46.0,76.2,50,0
     >> Find Gann once more
     .turnin 849 >> Turn in Revenge of Gann
+    .unitscan Gann Stonespire
 step
     .goto Thousand Needles,32.2,22.2
     >> Head south towards Thousand Needles
