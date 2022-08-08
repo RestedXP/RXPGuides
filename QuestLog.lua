@@ -181,7 +181,7 @@ _G.GameTooltip:HookScript("OnTooltipSetItem", function(self)
         return
     end
     local _,link = _G.GameTooltip:GetItem()
-    local id = tonumber(link:match("item:(%d+)"))
+    local id = type(link) == "string" and tonumber(link:match("item:(%d+)"))
     local questId = id and addon.questItemList[id]
     local guideList = questId and addon.turnInList[questId]
 

@@ -3313,8 +3313,8 @@ function addon.functions.itemcount(self, ...)
         end
         element.id = tonumber(id)
         element.total = tonumber(total)
-        if not (total and id) then
-            addon.error("Error parsing guide " .. addon.currentGuideName ..
+        if not (element.total and element.id) then
+            return addon.error("Error parsing guide " .. addon.currentGuideName ..
                             ": Invalid item ID/count\n" .. self)
         end
         if operator == "<" then
