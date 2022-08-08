@@ -14,13 +14,6 @@ local playerName = _G.UnitName("player")
 addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0",
                               "AceSerializer-3.0")
 
--- TODO debugging
-SLASH_RXPGC1 = "/rxpgc"
-_G.SlashCmdList["RXPGC"] = function(_) addon.comms:AnnounceSelf("ANNOUNCE") end
-
-_G.RXPGC = addon.comms
-_G.RXPGS = addon.settings
-
 addon.comms._commPrefix = "RXPGComms"
 addon.comms.state = {
     rxpGroupDetected = false,
