@@ -1039,7 +1039,10 @@ function addon.UpdateQuestCompletionData(self)
     else
         element.title = ""
     end
-    local prefix = objtext:sub(1, 1)
+    local prefix = " "
+    if objtext and #objtext > 0 then
+        prefix = objtext:sub(1, 1)
+    end
     if not quest or prefix == " " or prefix == ":" then
         element.requestFromServer = true
     elseif quest then
