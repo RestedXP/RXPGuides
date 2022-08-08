@@ -164,18 +164,18 @@ step
     .complete 3376,1 --Chief Sharptusk Thornmantle's Head (1)
 step << !Shaman
     #requires Belt
-    >>Go into the cave. Loot the map on the ground then click it to accept the quest.
+    >>Go into the cave. Loot the Attack Plans on the ground then accept the quest.
     .goto Mulgore,63.2,82.7
-    .collect 4851,1,781 --Collect Dirt-Stained Map
-    .accept 781 >>Accept Attack on Camp Narache
+    .collect 4850,1,24857 --Collect Bristleback Attack Plans
+    .accept 24857 >>Accept Attack on Camp Narache
 step << Shaman
     #requires Belt
 step << Shaman
     #requires Salve
-    >>Go into the cave. Loot the map on the ground then click it to accept the quest.
+    >>Go into the cave. Loot the Attack Plans on the ground then accept the quest.
     .goto Mulgore,63.2,82.7
-    .collect 4851,1,781 --Collect Dirt-Stained Map
-    .accept 781 >>Accept Attack on Camp Narache
+    .collect 4850,1,24857 --Collect Bristleback Attack Plans
+    .accept 24857 >>Accept Attack on Camp Narache
 step
 	#label nomoreboar
 	#completewith next
@@ -202,7 +202,7 @@ step
     .turnin 3376 >>Turn in Break Sharptusk!
 step
     .goto Mulgore,44.2,76.1
-    .turnin 781 >>Turn in Attack on Camp Narache
+    .turnin 24857 >>Turn in Attack on Camp Narache
     .turnin 757 >>Turn in Rite of Strength
     .accept 763 >>Accept Rites of the Earthmother
 step
