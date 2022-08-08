@@ -93,14 +93,11 @@ end
 
 function addon.comms:GROUP_JOINED()
     print("GROUP_JOINED: fired")
-    -- Pre-formed event spam
-    -- GROUP_JOINED fires multiple times before a group is created or joined
-    -- If already in a group fires on login, but not on reload, TODO handle reload state
-    if GetNumGroupMembers() <= 1 then return end
 
-    print("GROUP_JOINED: processing")
-
-    C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end)
+    C_Timer.After(5 + mrand(5), function()
+        print("GROUP_JOINED: processing")
+        self:AnnounceSelf("ANNOUNCE")
+    end)
 end
 
 function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
@@ -166,10 +163,10 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
     self.state.rxpGroupDetected = true
 
     if obj.command == 'ANNOUNCE' then
-        self:HandleAnnounce(data)
+        self:HandleAnnounce(obj)
         self:AnnounceSelf("REPLY")
     elseif obj.command == 'REPLY' then
-        self:HandleAnnounce(data)
+        self:HandleAnnounce(obj)
         -- Don't respond on REPLY
     end
 
