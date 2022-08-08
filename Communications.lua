@@ -93,12 +93,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
 end
 
 function addon.comms:GROUP_FORMED()
-    print("GROUP_FORMED: fired")
-
-    C_Timer.After(5 + mrand(5), function()
-        print("GROUP_FORMED: processing")
-        self:AnnounceSelf("ANNOUNCE")
-    end)
+    C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end)
 end
 
 function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
@@ -157,7 +152,6 @@ function addon.comms:AnnounceSelf(command)
 end
 
 function addon.comms:OnCommReceived(prefix, data, _, sender)
-    print(fmt("OnCommReceived: %s, from %s", prefix, sender))
     if prefix ~= self._commPrefix or sender == playerName then return end
 
     if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then
@@ -167,7 +161,6 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
     local status, obj = self:Deserialize(data)
 
     if not status or not obj.command then return end
-    print("OnCommReceived: obj.command = " .. obj.command)
 
     self.state.rxpGroupDetected = true
 
@@ -249,8 +242,6 @@ function addon.comms:Broadcast(data)
     if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then
         return
     end
-
-    print("Sending command: " .. data.command)
 
     local sz = self:Serialize(data)
     self:SendCommMessage(self._commPrefix, sz, "PARTY")
