@@ -458,7 +458,7 @@ function addon.settings.ImportBoxValidate()
     else
         local relog = ""
         if not RXPData.cache then
-            relog = "Please restart your game client and try again"
+            relog = "\nPlease restart your game client and try again"
         end
         importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
         return errorMsg or ("Failed to Import Guides: Invalid Import String" .. relog)
