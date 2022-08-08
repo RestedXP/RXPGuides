@@ -156,8 +156,8 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
 
         if not addon.tracker.db.profile["levels"][addon.tracker.playerLevel]
             .timestamp.dateStarted and timePlayedThisLevel < 60 then
-            addon.tracker.db.profile["levels"][data.level].timestamp.dateStarted =
-                data.date
+            addon.tracker.db.profile["levels"][addon.tracker.playerLevel]
+                .timestamp.dateStarted = data.date
         end
 
         addon.tracker.waitingForTimePlayed = false
