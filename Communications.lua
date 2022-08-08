@@ -53,6 +53,7 @@ function addon.comms:Setup()
     self:RegisterEvent("GROUP_JOINED")
     self:RegisterEvent("GROUP_LEFT")
     self:RegisterEvent("PLAYER_XP_UPDATE")
+    self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     self:RegisterComm(self._commPrefix)
 end
@@ -102,6 +103,8 @@ end
 
 function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
 
+function addon.comms:PLAYER_ENTERING_WORLD() self:AnnounceSelf("ANNOUNCE") end
+
 function addon.comms:PLAYER_XP_UPDATE()
     if self.state.lastXPGain then self:TallyGroup() end
 
@@ -129,6 +132,7 @@ function addon.comms:TallyGroup()
 end
 
 function addon.comms:AnnounceSelf(command)
+    -- TODO call when active guide changes
     local data = {
         command = command,
         player = {
