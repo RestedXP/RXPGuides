@@ -761,12 +761,6 @@ function CurrentStepFrame.UpdateText()
             elseif element.text then
                 elementFrame:SetAlpha(1)
                 local text = elementFrame.text
-                text:SetText(element.text)
-                local h = math.ceil(elementFrame.text:GetStringHeight() * 1.1) +
-                              1
-                -- print('sh:',h)
-                elementFrame:SetHeight(h)
-                frameHeight = frameHeight + h
 
                 elementFrame.button:ClearAllPoints()
                 elementFrame.button:SetPoint("TOPLEFT", elementFrame, 6, -1);
@@ -774,6 +768,22 @@ function CurrentStepFrame.UpdateText()
                 elementFrame.text:SetPoint("TOPLEFT", elementFrame.button,
                                            "TOPRIGHT", 11, -1)
                 elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
+
+                text:SetText(element.text)
+                local h = math.ceil(elementFrame.text:GetStringHeight() * 1.1) +
+                              1
+                -- print('sh:',h)
+                elementFrame:SetHeight(h)
+                frameHeight = frameHeight + h
+
+                --local diffx,diffy = elementFrame.text:GetWidth() - GuideName:GetWidth(),elementFrame.text:GetHeight() - GuideName:GetHeight()
+                if elementFrame.text:GetWidth() > GuideName:GetWidth() + 600 then
+                    elementFrame:EnableMouse(false)
+                    elementFrame.button:EnableMouse(false)
+                else
+                    elementFrame:EnableMouse(true)
+                    elementFrame.button:EnableMouse(true)
+                end
                 elementFrame.icon:ClearAllPoints()
                 elementFrame.icon:SetPoint("TOPLEFT", elementFrame.button,
                                            "TOPRIGHT", 0, -1)
@@ -816,7 +826,11 @@ function CurrentStepFrame.UpdateText()
             frameHeight = 1
             stepframe:EnableMouse(false)
         else
-            stepframe:EnableMouse(true)
+            if stepframe:GetWidth() > GuideName:GetWidth() + 600 then
+                stepframe:EnableMouse(false)
+            else
+                stepframe:EnableMouse(true)
+            end
             stepframe:SetAlpha(1)
             frameHeight = math.ceil(frameHeight + 18)
         end
