@@ -103,7 +103,9 @@ end
 
 function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
 
-function addon.comms:PLAYER_ENTERING_WORLD() self:AnnounceSelf("ANNOUNCE") end
+function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
+    if isInitialLogin or isReloadingUi then self:AnnounceSelf("ANNOUNCE") end
+end
 
 function addon.comms:PLAYER_XP_UPDATE()
     if self.state.lastXPGain then self:TallyGroup() end
