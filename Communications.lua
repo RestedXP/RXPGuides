@@ -211,24 +211,26 @@ function addon.comms:HandleAnnounce(data)
     self.players[data.player.name].isRxp = true
     self.players[data.player.name].lastSeen = GetTime()
 
-    if not self.state.updateFound.addon and
-        self:IsNewRelease(data.addon.release) then
+    if addon.settings.db.profile.checkVersions then
+        if not self.state.updateFound.addon and
+            self:IsNewRelease(data.addon.release) then
 
-        self.state.updateFound.addon = true
+            self.state.updateFound.addon = true
 
-        print(self.BuildPrint("There's a new addon version (%s) available",
-                              data.addon.release))
-    end
+            print(self.BuildPrint("There's a new addon version (%s) available",
+                                  data.addon.release))
+        end
 
-    if not self.state.updateFound.guide and addon.currentGuide and data.guide and
-        addon.currentGuide.name == data.guide.name and
-        addon.currentGuide.version and data.guide.version and
-        addon.currentGuide.version < data.guide.version then
+        if not self.state.updateFound.guide and addon.currentGuide and
+            data.guide and addon.currentGuide.name == data.guide.name and
+            addon.currentGuide.version and data.guide.version and
+            addon.currentGuide.version < data.guide.version then
 
-        self.state.updateFound.guide = true
+            self.state.updateFound.guide = true
 
-        print(self.BuildPrint("There's a new version (%s) available for %s",
-                              data.guide.version, data.guide.name))
+            print(self.BuildPrint("There's a new version (%s) available for %s",
+                                  data.guide.version, data.guide.name))
+        end
     end
 end
 

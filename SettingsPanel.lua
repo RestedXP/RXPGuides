@@ -38,7 +38,8 @@ function addon.settings.InitializeSettings()
             enableLevelUpAnnounceGroup = true,
             openTrackerReportOnCharOpen = true,
             enableFlyStepAnnouncements = true,
-            alwaysSendBranded = true
+            alwaysSendBranded = true,
+            checkVersions = true
         }
     }
 
@@ -801,11 +802,18 @@ function addon.settings.CreateExtrasOptionsPanel()
                         width = "full",
                         order = 13
                     },
+                    checkVersions = {
+                        name = "Enable Addon Version Checks",
+                        desc = "Advertises and compares addon versions with all RXP users in party",
+                        type = "toggle",
+                        width = "full",
+                        order = 14,
+                    },
                     ignoreQuestieConflicts = {
                         name = "Ignore Questie announcements",
                         type = "toggle",
                         width = "full",
-                        order = 14,
+                        order = 15,
                         hidden = not _G.Questie
                     },
                 }
