@@ -137,12 +137,15 @@ function addon.comms:AnnounceSelf(command)
             level = UnitLevel("player"),
             xpPercentage = floor(UnitXP("player") / UnitXPMax("player"))
         },
-        guide = {
-            name = addon.currentGuide.name,
-            version = addon.currentGuide.version
-        },
         addon = {release = addon.release}
     }
+
+    if addon.currentGuide then
+        data.guide = {
+            name = addon.currentGuide.name,
+            version = addon.currentGuide.version
+        }
+    end
 
     self:Broadcast(data)
 end
@@ -225,7 +228,8 @@ function addon.comms:HandleAnnounce(data)
                               data.addon.release))
     end
 
-    if not self.state.updateFound.guide and data.currentGuide.name ==
+    if addon.currentGuide and data.currentGuide and
+        not self.state.updateFound.guide and data.currentGuide.name ==
         data.guide.name and data.guide.version > addon.currentGuide.version then
 
         self.state.updateFound.guide = true
