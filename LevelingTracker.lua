@@ -626,15 +626,15 @@ function addon.tracker:UpdateReport(selectedLevel)
             fmt("* Solo: %s", 'N/A'))
         trackerUi.teamworkContainer.data['group']:SetText(fmt("* Group: %s",
                                                               'N/A'))
-    elseif (report.soloExperience + report.groupExperience) == 0 then -- If division error
-        trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%", 0))
-        trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %d%%", 0))
     elseif report.groupExperience == 0 then
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %.2f%%", 100))
         trackerUi.teamworkContainer.data['group']:SetText(
             fmt("* Group: %.2f%%", 0))
+    elseif (report.soloExperience + report.groupExperience) == 0 then -- If division error
+        trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%", 0))
+        trackerUi.teamworkContainer.data['group']:SetText(
+            fmt("* Group: %d%%", 0))
     else
         ratio = report.groupExperience /
                     (report.soloExperience + report.groupExperience)
@@ -650,17 +650,17 @@ function addon.tracker:UpdateReport(selectedLevel)
                                                               "N/A"))
         trackerUi.sourcesContainer.data['mobs']:SetText(
             fmt("* Killing: %s", "N/A"))
-    elseif (report.questXP + report.mobXP) == 0 then -- If division error
-        trackerUi.sourcesContainer.data['quests']:SetText(
-            fmt("* Quests: %d%%", 0))
-        trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Killing: %d%%", 0))
     elseif report.questXP == 0 then
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
                                                               "* Quests: %.2f%%",
                                                               0))
         trackerUi.sourcesContainer.data['mobs']:SetText(
             fmt("* Killing: %.2f%%", 100))
+    elseif (report.questXP + report.mobXP) == 0 then -- If division error
+        trackerUi.sourcesContainer.data['quests']:SetText(
+            fmt("* Quests: %d%%", 0))
+        trackerUi.sourcesContainer.data['mobs']:SetText(
+            fmt("* Killing: %d%%", 0))
     else
         ratio = report.questXP / (report.questXP + report.mobXP)
         percentage = 100 * ratio
@@ -687,7 +687,7 @@ function addon.tracker:UpdateReport(selectedLevel)
         report.timestamp.finished and selectedLevel ~= addon.tracker.maxLevel then
         local levelSeconds
 
-        if report.timestamp.finished > 0 then
+        if report.timestamp.finished then
             levelSeconds = report.timestamp.finished - report.timestamp.started
         else
             levelSeconds = difftime(time(), addon.tracker.state.login.time) +
