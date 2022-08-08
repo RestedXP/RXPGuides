@@ -154,10 +154,9 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
             timePlayedThisLevel = timePlayedThisLevel
         }
 
-        if addon.tracker.playerLevel == 1 and
-            not addon.tracker.db.profile["levels"][1].timestamp.dateStarted and
-            timePlayedThisLevel < 60 then
-            addon.tracker.db.profile["levels"][1].timestamp.dateStarted =
+        if not addon.tracker.db.profile["levels"][addon.tracker.playerLevel]
+            .timestamp.dateStarted and timePlayedThisLevel < 60 then
+            addon.tracker.db.profile["levels"][data.level].timestamp.dateStarted =
                 data.date
         end
 
@@ -511,7 +510,8 @@ function addon.tracker:CompileLevelData(level, d)
                                            data.timestamp.dateStarted.minute,
                                            data.timestamp.dateStarted.hour >= 12 and
                                                "PM" or "AM")
-    elseif data.timestamp.dateFinished then
+    end
+    if data.timestamp.dateFinished then
         report.timestamp.dateFinished = fmt("%s %d, %d at %d:%d %s Server",
                                             _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
                                                 .dateFinished.month],
