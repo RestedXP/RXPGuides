@@ -229,6 +229,7 @@ function addon.comms:HandleAnnounce(data)
 
     if not self.state.updateFound.guide and addon.currentGuide and data.guide and
         addon.currentGuide.name == data.guide.name and
+        addon.currentGuide.version and data.guide.version and
         addon.currentGuide.version < data.guide.version then
 
         self.state.updateFound.guide = true
