@@ -206,7 +206,7 @@ function addon.comms:IsNewRelease(theirRelease)
 end
 
 function addon.comms:HandleAnnounce(data)
-    if self.players[data.player.name] then
+    if not self.players[data.player.name] then
         self.players[data.player.name] = {timePlayed = 0}
     end
 
@@ -239,6 +239,8 @@ function addon.comms:Broadcast(data)
     if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then
         return
     end
+
+    print("Sending command: " .. data.command)
 
     local sz = self:Serialize(data)
     self:SendCommMessage(self._commPrefix, sz, "PARTY")
