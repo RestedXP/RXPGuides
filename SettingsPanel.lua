@@ -457,7 +457,7 @@ function addon.settings.ImportBoxValidate()
         return true
     else
         local relog = ""
-        if not not RXPData.cache then
+        if not RXPData.cache then
             relog = "Please restart your game client and try again"
         end
         importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
