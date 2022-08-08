@@ -50,7 +50,7 @@ function addon.comms:Setup()
     self.players = self.db.profile.players
 
     self:RegisterEvent("PLAYER_LEVEL_UP")
-    self:RegisterEvent("GROUP_JOINED")
+    self:RegisterEvent("GROUP_FORMED")
     self:RegisterEvent("GROUP_LEFT")
     self:RegisterEvent("PLAYER_XP_UPDATE")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -92,11 +92,11 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
     announceLevelUp(msg)
 end
 
-function addon.comms:GROUP_JOINED()
-    print("GROUP_JOINED: fired")
+function addon.comms:GROUP_FORMED()
+    print("GROUP_FORMED: fired")
 
     C_Timer.After(5 + mrand(5), function()
-        print("GROUP_JOINED: processing")
+        print("GROUP_FORMED: processing")
         self:AnnounceSelf("ANNOUNCE")
     end)
 end
