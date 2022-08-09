@@ -1253,9 +1253,6 @@ step << BloodElf Mage
     .accept 9404 >>Accept Recently Living
 step << !Warlock
     .goto Eversong Woods,56.7,49.6,30 >>Go into Silvermoon
-step << Shaman
-    .goto Silvermoon City,71.8,56.6
-    .trainer >> Train your class spells
 step << Priest/Mage
     .goto Silvermoon City,63.5,32.0,20 >>Run up the ramp
 step << Priest

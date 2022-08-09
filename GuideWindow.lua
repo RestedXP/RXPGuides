@@ -749,66 +749,80 @@ function CurrentStepFrame.UpdateText()
         for j, element in ipairs(step.elements or {}) do
             e = j
             local elementFrame = stepframe.elements[e]
+            if elementFrame then
+                elementFrame:Show()
 
-            elementFrame:Show()
-
-            local spacing = 0
-            if step.hidewindow then
-                elementFrame:SetAlpha(0)
-                elementFrame.button:Hide()
-                elementFrame:SetHeight(1)
-                spacing = 1
-            elseif element.text then
-                elementFrame:SetAlpha(1)
-                local text = elementFrame.text
-                text:SetText(element.text)
-                local h = math.ceil(elementFrame.text:GetStringHeight() * 1.1) +
-                              1
-                -- print('sh:',h)
-                elementFrame:SetHeight(h)
-                frameHeight = frameHeight + h
-
-                elementFrame.button:ClearAllPoints()
-                elementFrame.button:SetPoint("TOPLEFT", elementFrame, 6, -1);
-                elementFrame.text:ClearAllPoints()
-                elementFrame.text:SetPoint("TOPLEFT", elementFrame.button,
-                                           "TOPRIGHT", 11, -1)
-                elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
-                elementFrame.icon:ClearAllPoints()
-                elementFrame.icon:SetPoint("TOPLEFT", elementFrame.button,
-                                           "TOPRIGHT", 0, -1)
-                if element.textOnly then
-                    elementFrame.button:SetChecked(true)
+                local spacing = 0
+                if step.hidewindow then
+                    elementFrame:SetAlpha(0)
                     elementFrame.button:Hide()
-                    element.completed = true
+                    elementFrame:SetHeight(1)
+                    spacing = 1
+                elseif element.text then
+                    elementFrame:SetAlpha(1)
+                    local text = elementFrame.text
+
+                    elementFrame.button:ClearAllPoints()
+                    elementFrame.button:SetPoint("TOPLEFT", elementFrame, 6, -1);
+                    elementFrame.text:ClearAllPoints()
+                    elementFrame.text:SetPoint("TOPLEFT", elementFrame.button,
+                                            "TOPRIGHT", 11, -1)
+                    elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
+
+                    text:SetText(element.text)
+                    local h = math.ceil(elementFrame.text:GetStringHeight() * 1.1) +
+                                1
+                    -- print('sh:',h)
+                    elementFrame:SetHeight(h)
+                    frameHeight = frameHeight + h
+
+                    --local diffx,diffy = elementFrame.text:GetWidth() - GuideName:GetWidth(),elementFrame.text:GetHeight() - GuideName:GetHeight()
+                    if elementFrame.text:GetWidth() > GuideName:GetWidth() + 600 then
+                        elementFrame:EnableMouse(false)
+                        elementFrame.button:EnableMouse(false)
+                    else
+                        elementFrame:EnableMouse(true)
+                        elementFrame.button:EnableMouse(true)
+                    end
+                    elementFrame.icon:ClearAllPoints()
+                    elementFrame.icon:SetPoint("TOPLEFT", elementFrame.button,
+                                            "TOPRIGHT", 0, -1)
+                    if element.textOnly then
+                        elementFrame.button:SetChecked(true)
+                        elementFrame.button:Hide()
+                        element.completed = true
+                    else
+                        elementFrame.button:Show()
+                    end
+
                 else
-                    elementFrame.button:Show()
+                    elementFrame:SetAlpha(0)
+                    elementFrame.button:Hide()
+                    elementFrame:SetHeight(1)
+                    element.completed = true
+                    spacing = 1
+                end
+                elementFrame:ClearAllPoints()
+                if e == 1 then
+                    elementFrame:SetPoint("TOPLEFT", stepframe, 0, -10 + spacing)
+                    elementFrame:SetPoint("TOPRIGHT", stepframe, 0, -10 + spacing)
+                else
+                    elementFrame:SetPoint("TOPLEFT", stepframe.elements[e - 1],
+                                        "BOTTOMLEFT", 0, 0 + spacing)
+                    elementFrame:SetPoint("TOPRIGHT", stepframe.elements[e - 1],
+                                        "BOTTOMRIGHT", 0, 0 + spacing)
+                end
+                if element.tag and element.text then
+                    local icon = element.icon or addon.icons[element.tag] or ""
+                    elementFrame.icon:SetText(icon)
+                    elementFrame.icon:Show()
+                else
+                    elementFrame.icon:Hide()
                 end
 
-            else
-                elementFrame:SetAlpha(0)
-                elementFrame.button:Hide()
-                elementFrame:SetHeight(1)
-                element.completed = true
-                spacing = 1
+
             end
-            elementFrame:ClearAllPoints()
-            if e == 1 then
-                elementFrame:SetPoint("TOPLEFT", stepframe, 0, -10 + spacing)
-                elementFrame:SetPoint("TOPRIGHT", stepframe, 0, -10 + spacing)
-            else
-                elementFrame:SetPoint("TOPLEFT", stepframe.elements[e - 1],
-                                      "BOTTOMLEFT", 0, 0 + spacing)
-                elementFrame:SetPoint("TOPRIGHT", stepframe.elements[e - 1],
-                                      "BOTTOMRIGHT", 0, 0 + spacing)
-            end
-            if element.tag and element.text then
-                local icon = element.icon or addon.icons[element.tag] or ""
-                elementFrame.icon:SetText(icon)
-                elementFrame.icon:Show()
-            else
-                elementFrame.icon:Hide()
-            end
+
         end
 
         if step.hidewindow then
@@ -816,7 +830,11 @@ function CurrentStepFrame.UpdateText()
             frameHeight = 1
             stepframe:EnableMouse(false)
         else
-            stepframe:EnableMouse(true)
+            if stepframe:GetWidth() > GuideName:GetWidth() + 600 then
+                stepframe:EnableMouse(false)
+            else
+                stepframe:EnableMouse(true)
+            end
             stepframe:SetAlpha(1)
             frameHeight = math.ceil(frameHeight + 18)
         end

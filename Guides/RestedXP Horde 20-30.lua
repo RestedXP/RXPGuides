@@ -1888,6 +1888,7 @@ step
     .goto The Barrens,46.0,76.2,50,0
     >> Find Gann on the road again
     .turnin 846 >> Turn in Revenge of Gann
+    .unitscan Gann Stonespire
 step
     .isQuestTurnedIn 846
     .goto The Barrens,46.0,81.2,50,0
@@ -1921,6 +1922,7 @@ step
     .goto The Barrens,46.0,76.2,50,0
     >> Find Gann once more
     .turnin 849 >> Turn in Revenge of Gann
+    .unitscan Gann Stonespire
 step
     .goto Thousand Needles,32.2,22.2
     >> Head south towards Thousand Needles
@@ -2151,7 +2153,7 @@ step
     .goto Thousand Needles,37.5,38.4,30,0
     .goto Thousand Needles,33.5,32.4
     >>Go back and forth in the pool, collecting yellow plants near the edges of the water as well as underwater.
-    >>The elementals are immune to fire & frost damage. Try your best to avoid them << Mage
+    >>The elementals are immune to frost damage and highly resistant to Fire. Try your best to avoid them << Mage
     .complete 5062,1 --Collect Incendia Agave (x10)
 step
 	#completewith next
@@ -2750,14 +2752,15 @@ step
     .goto The Barrens,45.1,57.7
     .turnin 1153 >> Turn in A New Ore Sample
 step
-    #completewith next
+    #completewith swarmgrows
     .goto The Barrens,44.4,59.1
-    .fly Crossroads>> Fly to Crossroads
+    .fly Crossroads >> Fly to Crossroads
 step
     .isOnQuest 906
     .goto The Barrens,51.5,30.9
     .turnin 906 >> Turn in Betrayal from Within
 step
+    #label swarmgrows
     .isQuestAvailable 1145
     .goto The Barrens,51.1,29.7
     .accept 1145 >> Accept The Swarm Grows

@@ -1039,7 +1039,10 @@ function addon.UpdateQuestCompletionData(self)
     else
         element.title = ""
     end
-    local prefix = objtext:sub(1, 1)
+    local prefix = " "
+    if objtext and #objtext > 0 then
+        prefix = objtext:sub(1, 1)
+    end
     if not quest or prefix == " " or prefix == ":" then
         element.requestFromServer = true
     elseif quest then
@@ -3310,8 +3313,8 @@ function addon.functions.itemcount(self, ...)
         end
         element.id = tonumber(id)
         element.total = tonumber(total)
-        if not (total and id) then
-            addon.error("Error parsing guide " .. addon.currentGuideName ..
+        if not (element.total and element.id) then
+            return addon.error("Error parsing guide " .. addon.currentGuideName ..
                             ": Invalid item ID/count\n" .. self)
         end
         if operator == "<" then
