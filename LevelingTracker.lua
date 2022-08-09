@@ -190,8 +190,13 @@ function addon.tracker:QUEST_TURNED_IN(_, questId, xpReward)
 
     levelData.quests[zoneName][questId] = xpReward
 
-    -- Quest turnins not applicable for group vs solo, easily miscategorized.
+    -- Quest turnins can easily be miscategorized
     -- e.g. complete quest solo, join dungeon group, then turn in before flying or inverse
+    -- However, summary report looks weird without it, calculate anyway
+    if IsInGroup() then
+        levelData.groupExperience = levelData.groupExperience + xpReward
+        -- else solo, total - group = solo, no need to keep track separately
+    end
 end
 
 function addon.tracker:PLAYER_DEAD()
@@ -488,10 +493,9 @@ function addon.tracker:CompileLevelData(level, d)
 
     report.groupExperience = data.groupExperience
 
-    -- Quests aren't tracked for group vs solo
-    report.soloExperience = report.mobXP - data.groupExperience
-
     report.totalXP = report.mobXP + report.questXP
+
+    report.soloExperience = report.totalXP - data.groupExperience
 
     report.timestamp = {
         started = data.timestamp.started,
