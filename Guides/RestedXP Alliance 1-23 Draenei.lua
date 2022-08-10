@@ -832,7 +832,7 @@ step
     .vendor >> Buy water/food for you and your pet << Hunter
 step
     .goto Bloodmyst Isle,56.4,56.8
-    .accept 9648 >> Accept Mac'Aree Mushroom Menagerie
+    .accept 9648 >> Accept Maatparm Mushroom Menagerie
 step
 	#completewith next
     .goto Bloodmyst Isle,57.6,54.0
@@ -1119,7 +1119,7 @@ step
     .turnin 9667 >> Turn in Saving Princess Stillpine
 step
     .goto Bloodmyst Isle,56.4,56.7
-    .turnin 9648 >> Turn in Mac'Aree Mushroom Menagerie
+    .turnin 9648 >> Turn in Maatparm Mushroom Menagerie
 step
     .goto Bloodmyst Isle,55.4,55.3
     .accept 9641 >> Accept Irradiated Crystal Shards
