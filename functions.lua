@@ -1611,7 +1611,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
             element.requestFromServer = true
             element.text = " "
         end
-        if flags ~= 0 and element.questId and element.questId > 0 then
+        if objFlags ~= 0 and element.questId and element.questId > 0 then
             addon.questItemList[id] = element.questId
         end
         return element
