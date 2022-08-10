@@ -401,7 +401,7 @@ end
 local lsh = bit.lshift
 local function GetPinHash(x,y,instance,element)
     return (instance % 256) + lsh(math.floor(x*128),8) +
-            lsh(math.floor(y*1024),15) + lsh((element % 64),25)
+            lsh(math.floor(y*1024),15) + lsh((element % 128),25)
 end
 -- Creates a list of Pin data structures.
 --
@@ -605,10 +605,10 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                                 local yinc = (fY - sY) / length
                                 local xpos, ypos = sX, sY
 
-                                for n = 1, nSegments do
+                                for k = 1, nSegments do
                                     local endx = xpos + xinc
                                     local endy = ypos + yinc
-                                    local alpha = bit.band(n, 0x1)
+                                    local alpha = bit.band(k, 0x1)
                                     if alpha > 0 then
                                         InsertLine(element, xpos, ypos, endx,
                                                    endy, alpha)
@@ -868,7 +868,7 @@ function addon.UpdateGotoSteps()
                             if element.persistent then
                                 hideArrow = true
                             elseif not (element.textOnly and element.hidePin and
-                                                         element.wpHash ~= af.element.wpHash) then
+                                         element.wpHash ~= af.element.wpHash and not element.generated) then
                                 element.skip = true
                                 addon.updateMap = true
                                 addon.SetElementComplete(element.frame)
