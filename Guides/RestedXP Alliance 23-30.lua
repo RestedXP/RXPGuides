@@ -1631,9 +1631,9 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
+    .itemcount 4371,1
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    >>Skip this step if you don't have a Bronze Tube
 step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
@@ -1779,6 +1779,7 @@ step
     .complete 134,1 --Collect Abercrombie's Crate (x1)
 step
     .goto Duskwood,36.8,83.8
+    .isOnQuest 181
     >>Kill Zzarc' Vul and loot him for his monocle
 	.unitscan Zzarc'Vul
     .complete 181,1 --Collect Ogre's Monocle (x1)
@@ -1814,6 +1815,7 @@ step << Druid/Hunter/Mage/!Dwarf Paladin/Priest/Rogue/Warlock/Warrior
     .fly Darkshire>> Fly to Darkshire
 step
     .goto Duskwood,79.8,47.9
+    .isOnQuest 181
     .turnin 181 >> Turn in Look To The Stars
 step
     .goto Duskwood,75.7,45.3
@@ -2363,9 +2365,9 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
+    .itemcount 4371,1
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    >>Skip this step if you don't have a Bronze Tube
 step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
@@ -2517,6 +2519,7 @@ step
     .goto Duskwood,36.8,83.8
     >>Kill Zzarc' Vul and loot him for his monocle
 	.unitscan Zzarc'Vul
+    .isOnQuest 181
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
     .goto Stranglethorn Vale,38.2,4.1
@@ -2546,6 +2549,7 @@ step
     .fly Darkshire>> Fly to Darkshire
 step
     .goto Duskwood,79.8,47.9
+    .isOnQuest 181
     .turnin 181 >> Turn in Look To The Stars
 step
     .goto Duskwood,75.7,45.3
