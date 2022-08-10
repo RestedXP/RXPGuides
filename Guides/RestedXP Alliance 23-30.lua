@@ -144,12 +144,46 @@ step << Gnome !Warlock wotlk
 	.goto Dun Morogh,49.2,48.1
 	.money <5.00
 	.train 553 >> Head to Dun Morogh, train riding and purchase your mount.
-step << Human/Gnome/Dwarf/wotlk
+step << Draenei wotlk/NightElf wotlk
+    .goto Wetlands,9.5,59.7
+    .fp Menethil >> Get the Menethil Harbor flight path
+step << Human wotlk/Gnome wotlk/Dwarf wotlk
+    #completewith next
     .goto Ironforge,55.5,47.7
     .fly Wetlands >> Fly to Wetlands
 step << Mage wotlk
     .goto Wetlands,10.7,60.9
     .home >> Set your Hearthstone to Deepwater Tavern
+step << Human tbc/Gnome tbc/Dwarf tbc
+    #completewith next
+    >> If you have the Loch Modan flight path, fly there. Otherwise skip this step.
+    .goto Ironforge,55.5,47.7
+    .fly Loch Modan >> Fly to Loch Modan
+    .zoneskip Wetlands
+step << Human tbc/Gnome tbc/Dwarf tbc
+    #completewith next
+    .goto Dun Morogh,59.5,42.8,40,0
+    .goto Dun Morogh,60.4,44.1,40,0
+    .goto Dun Morogh,61.1,44.1,40,0
+    .goto Dun Morogh,61.2,42.3,40,0
+    .goto Dun Morogh,60.8,40.9,40,0
+    .goto Dun Morogh,59.0,39.5,40,0
+    .goto Dun Morogh,60.3,38.6,40,0
+    .goto Dun Morogh,61.7,38.7,40,0
+    .goto Dun Morogh,65.7,21.6,40,0
+    .goto Dun Morogh,65.8,12.5,40,0
+    .goto Dun Morogh,65.6,10.8,40,0
+    .goto Dun Morogh,66.5,10.0,40,0
+    .goto Dun Morogh,66.9,8.5,40,0
+    .goto Wetlands,20.6,67.2,50,0
+    .goto Wetlands,17.7,67.7,40,0
+    .goto Wetlands,16.8,65.3,40,0
+    .goto Wetlands,15.1,64.0,40,0
+    .goto Wetlands,12.1,60.3,40,0
+    >>Do the Deathless Dun Morogh -> Wetlands skip
+    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
+    .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
+    .zoneskip Wetlands
 step
     .goto Wetlands,8.3,58.5
     .accept 279 >> Accept Claws from the Deep
