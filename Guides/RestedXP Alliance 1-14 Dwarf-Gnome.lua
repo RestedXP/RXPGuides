@@ -1267,6 +1267,9 @@ step << Mage
 step
     .goto Ironforge,39.5,57.5
     .turnin 291 >> Turn in The Reports
+step << Warrior/Rogue
+    .goto Ironforge,62.0,88.8
+    .collect 25873,1 >> Buy a Keen Throwing Knife from Brenwyn Wintersteel. Equip it.
 step << Warrior
     #sticky
     .goto Ironforge,65.9,88.4
