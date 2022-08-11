@@ -1398,6 +1398,9 @@ step << Warrior
 .goto Orgrimmar,79.7,31.4
         #completewith next
 .trainer >> Go and train your class spells
+step << Warrior
+    .goto Orgrimmar,81.2,19.0
+    .collect 29009,1 >> Purchase a Heavy Throwing Dagger from Zendo'jian
 step
     .goto Orgrimmar,76.5,24.5
     .turnin 3923 >>Turn in Rilli Greasygob
