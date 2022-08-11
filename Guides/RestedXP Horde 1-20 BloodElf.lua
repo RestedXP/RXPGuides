@@ -11,7 +11,7 @@ step << !BloodElf
     #sticky
     #completewith next
 .goto Eversong Woods,38.2,20.8
-    +You have selected a guide meant for Blood Elves. I DO NOT recommend doing the 1-6 zone due to there being no quests for non-Blood Elves. You should choose the same starter zone that you start in
+    +You have selected a guide meant for Blood Elves. We do not recommend doing the 1-6 zone due to there being no quests for non-Blood Elves. You should choose the same starter zone that you start in
 step
     .goto Eversong Woods,38.2,20.8
     .accept 8325 >> Accept Reclaiming Sunstrider Isle
@@ -45,13 +45,13 @@ step << Hunter
     .accept 9393 >> Accept Hunter Training
 step << Paladin/Rogue
     .goto Eversong Woods,38.7,20.3
-    .vendor >>Go inside, vendor trash
+    .vendor >>Go inside the building and vendor trash
 step << Hunter
     .goto Eversong Woods,38.7,20.3
-    .vendor >>Go inside, vendor trash, fill your quiver with arrows
+    .vendor >>Go inside, vendor trash, and fill your quiver with arrows
 step << Mage/Priest/Warlock
     .goto Eversong Woods,38.7,20.3
-    .vendor >>Go inside, vendor trash, buy 10 Water
+    .vendor >>Go inside, vendor trash, and buy 10 Water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Paladin
     .goto Eversong Woods,39.5,20.6
@@ -185,7 +185,7 @@ step << !Warlock
      #label manaarcane
     .goto Eversong Woods,37.7,24.9,0
     >>Use the spell "Mana Tap" on Mana Wryms as you quest. It's in the General tab of your spellbook.
-    >>Kill Mana Wryms as you quest for Slivers. Don't go out of your way to kill them, you'll only need to kill them as your mana tap comes off cooldown.
+    >>Kill Mana Wryms as you quest for Slivers. Don't go out of your way to kill them as you'll only need to kill them when your mana tap comes off cooldown.
       .complete 8346,1 --Mana Tap creature (x6)
     .complete 8336,1 --Collect Arcane Sliver (x6)
 step
@@ -228,7 +228,7 @@ step << !Warlock
 step << Mage/Priest
     #completewith pepegavendor
     .goto Eversong Woods,38.7,20.3
-    .vendor >>vendor trash, buy 10 Water
+    .vendor >>vendor trash, and buy 10 Water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Rogue/Paladin/Hunter
     #completewith pepegavendor
@@ -343,7 +343,7 @@ step
     .goto Eversong Woods,47.3,46.3
     .accept 8472 >> Accept Major Malfunction
 step
-    .goto Eversong Woods,47.7,47.2,20     >>Go in the inn
+    .goto Eversong Woods,47.7,47.2,20 >>Go in the inn
 step << BloodElf
     .goto Eversong Woods,48.2,47.7
     .turnin 8350 >> Turn in Completing the Delivery
@@ -471,6 +471,7 @@ step << BloodElf Priest
     .spell 1243 >>Use Power Word: Fortitude (Stam buff) on the Eversong Rangers
     .goto Eversong Woods,50.3,51.0
     .complete 9489,1 --Eversong Ranger Blessed (6)
+    .unitscan Eversong Ranger
 step
     #completewith next
     .goto Eversong Woods,55.7,54.5
@@ -560,10 +561,10 @@ step
     .accept 8885 >> Accept The Ring of Mmmrrrggglll
 step << Warrior/Warlock/Hunter/Rogue
     .goto Eversong Woods,35.4,55.2
-     .goto Eversong Woods,48.0,49.6,150 >> Go here, then die and respawn at the Spirit Healer (make sure your subzone is Eversong Woods and NOT West Sanctum). Or, just run back to Falconwing Square
+     .goto Eversong Woods,48.0,49.6,150 >> Go here then die and respawn at the Spirit Healer (make sure your subzone is Eversong Woods and NOT West Sanctum). Or just run back to Falconwing Square
 step << Paladin/Priest/Mage
     .goto Eversong Woods,28.1,61.0,20,0
-    .goto Eversong Woods,44.3,71.2,120 >>Die and respawn at the spirit Healer, or run to Fairbreeze Village
+    .goto Eversong Woods,44.3,71.2,120 >>Die and respawn at the spirit Healer or run to Fairbreeze Village
 step << Warrior/Warlock/Hunter/Rogue
     #isOnQuest 8482
     .goto Eversong Woods,48.2,46.0
@@ -592,8 +593,9 @@ step << Warlock
     .vendor >>Buy the Firebolt r2 book and use it
 step << Warrior/Warlock/Hunter/Rogue
     .goto Eversong Woods,44.8,53.1
-    >>Talk to Prospector Anvilward, wait out the roleplay event, then kill and loot him
+    >>Talk to Prospector Anvilward and wait out the roleplay event. Kill and loot him after.
     .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
+    .skipgossip
 step << Warrior/Warlock/Hunter/Rogue
     .use 22473 >>Use the Disciplinary Rod in your bags on Ralen
     .goto Eversong Woods,45.2,57.0
@@ -721,6 +723,7 @@ step << Hunter
     >>Kill Old Whitebark. Loot him for his pendant. Click the pendant to start the quest
         .collect 23228,1,8474 --Collect Old Whitebark's Pendant (x1)
     .accept 8474 >> Accept Old Whitebark's Pendant
+    .unitscan Old Whitebark
 step << Hunter
     >>Be careful as the Green Keepers have a double-damage Heroic Strike spell
     .complete 8473,1 --Kill Withered Green Keeper (x10)
@@ -818,7 +821,7 @@ step << Undead Warlock
 step << Undead Warlock
     .goto Undercity,66.2,1.1,20 >>Exit Undercity
 step << Undead Warlock
-    >>Kill the mobs in the tower, then loot the chest
+    >>Kill the mobs in the tower & loot the chest
     .goto Tirisfal Glades,51.1,67.6
     .complete 1473,1 --Creature of the Void (1)
 step << Undead Warlock
@@ -846,8 +849,9 @@ step << Paladin/Priest/Mage
 step << Paladin/Priest/Mage
     .goto Eversong Woods,44.8,53.1
     .skipgossip
-    >>Talk to Prospector Anvilward, wait out the roleplay event, then kill and loot him
+    >>Talk to Prospector Anvilward and wait out the roleplay event. Kill and loot him after.
     .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
+    .skipgossip
 step << !Hunter
     .goto Eversong Woods,48.2,46.0
     .turnin 8483 >> Turn in The Dwarven Spy
@@ -957,6 +961,7 @@ step << Warrior
     .zone Durotar >> Go to the Zeppelin tower. Take the zeppelin to Durotar
     .goto Tirisfal Glades,60.7,58.8
 step << Warrior
+    .isOnQuest 1818
     .abandon 1818 >>Abandon Speak with Dillinger
 step << Warrior
     .goto Durotar,46.4,22.9
@@ -1148,7 +1153,7 @@ step << BloodElf Hunter
     .train 13549 >>Train Serpent Sting r2
 step << BloodElf Hunter
     .goto Eversong Woods,44.8,53.1
-    >>Talk to Prospector Anvilward, wait out the roleplay event, then loot and kill him
+    >>Talk to Prospector Anvilward and wait out the roleplay event. Kill and loot him after.
     .skipgossip
     .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
 step << BloodElf Hunter
@@ -1447,6 +1452,7 @@ step
     .goto Eversong Woods,49.0,89.0
     .turnin 9144 >> Turn in Missing in the Ghostlands
 step << !BloodElf/!Hunter
+    .isOnQuest 8490
     .abandon 8490 >>Abandon Powering our Defenses
 step
     .goto Eversong Woods,49.0,89.2
@@ -1626,7 +1632,7 @@ step
     .turnin 9157 >> Turn in Forgotten Rituals
     .accept 9174 >> Accept Vanquishing Aquantion
 step
-    >>Click the shrine, then kill Aquantion when he's summoned. He is immmune to CC and hits relatively hard, be careful!
+    >>Click the shrine and kill Aquantion when he's summoned. He is immmune to CC and hits relatively hard. Be careful!
     .goto Ghostlands,71.3,15.0
     .complete 9174,1 --Kill Aquantion (x1)
 step
@@ -1694,6 +1700,7 @@ step << Paladin
 step
     #label Poster13
     #completewith next
+    .isOnQuest 9315
     .abandon 9315 >> Abandon Anok'suten
 step
     .goto Ghostlands,46.0,32.0
@@ -2123,7 +2130,7 @@ step << Hunter
     .collect 3026,1 --Collect Reinforced Bow
 step << Hunter
     .goto Ghostlands,72.1,32.0
-    .vendor >> Sell trash. Refill on Arrows
+    .vendor >> Sell trash & refill on Arrows
 step
     .goto Ghostlands,72.5,31.1
     .accept 9276 >> Accept Attack on Zeb'Tela
@@ -2154,7 +2161,7 @@ step << Rogue
     #sticky
     #completewith Lillyend
     #label Lilatha
-    >>Loot the chests around the crypt. Make sure you have 20 lockpicking skill, and have looted the Gold Band. Otherwise, don't start the escort
+    >>Loot the chests around the crypt. Make sure you have 20 lockpicking skill and have looted the Gold Band. Otherwise, don't start the escort
     .complete 9491,1 --Pitted Gold Band (1)
 step
     >>Run into the campfire room
@@ -2714,6 +2721,7 @@ step
     .goto Silvermoon City,49.5,15.0,15,0
     .zone Undercity >>Take the Orb of Translocation to Undercity
 step << Warlock
+    .isOnQuest 10605
     .abandon 10605 >>Abandon Carendin Summons
 step << Warlock
     #sticky
@@ -2758,6 +2766,7 @@ step
 step << BloodElf
     #sticky
     #completewith next
+    .isOnQuest 9189
 .abandon 9189 >>Abandon Delivery to the Sepulcher
 step
 .goto Undercity,66.0,44.1,40 >>Go to the bank area
