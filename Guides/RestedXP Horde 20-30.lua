@@ -1400,7 +1400,7 @@ step
     >>Kill Laughing Sisters until they drop an Etched Phial
     .collect 5867 --Collect Etched Phial (x1)
 step
-    >>Look for Shadumbra (a panther) and loot her for Shadumbra's Head, then accept the quest from clicking it.
+    .use 16304 >>Look for Shadumbra (a panther) and loot her for Shadumbra's Head, then accept the quest from clicking it.
 	.goto Ashenvale,62.2,49.6,40,0
     .goto Ashenvale,58.0,56.2,40,0
     .goto Ashenvale,51.9,54.3,40,0
@@ -1499,14 +1499,14 @@ step
     .goto Ashenvale,43.8,63.6,40,0
     .goto Ashenvale,41.4,65.9,40,0
     .goto Ashenvale,44.3,68.6
-    >>Look for Ursangous (Bear). He patrols clockwise. Kill and loot him for Ursangous's Paw then click it to accept the quest.
+    .use 16303 >>Look for Ursangous (Bear). He patrols clockwise. Kill and loot him for Ursangous's Paw then click it to accept the quest.
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
     .accept 23 >> Accept Ursangous's Paw
 	.unitscan Ursangous
 step
     #sticky
     #label Tideress
-    >>Kill Tideress who is located around the middle of the lake. Loot her for a Befouled Water Globe, then click it to accept the quest
+    .use 16408 >>Kill Tideress who is located around the middle of the lake. Loot her for a Befouled Water Globe, then click it to accept the quest
     .collect 16408,1,1918 --Collect Befouled Water Globe (x1)
     .accept 1918 >>Accept The Befouled Element
 	.unitscan Tideress
@@ -1539,16 +1539,18 @@ step
     .goto Ashenvale,75.7,70.0,40,0
     .goto Ashenvale,78.2,65.5,40,0
     .goto Ashenvale,75.3,72.0,0
-	>>Look for Sharptalon (Big Bird). He Patrols clockwise. Kill and loot him for Sharptalon's Claw. Accept the quest from it. Solo him down to about 60% health then kite him to the undead camp to kill him.
+	.use 16305 >>Look for Sharptalon (big bird). He Patrols clockwise. Kill and loot him for Sharptalon's Claw. Accept the quest from it. Solo him down to about 60% health then kite him to the undead camp to kill him.
     .collect 16305,1,2 --Collect Sharptalon's Claw
     .accept 2 >> Accept Sharptalon's Claw
 	.unitscan Sharptalon
 step
+    .isQuestComplete 6544
     >>Go back to town
     .turnin 6544 >> Turn in Torek's Assault
     .goto Ashenvale,73.1,62.5
-    .turnin 2 >> Turn in Sharptalon's Claw
+step    
     .goto Ashenvale,73.8,61.5
+    .turnin 2 >> Turn in Sharptalon's Claw
     .turnin 24 >> Turn in Shadumbra's Head
     .turnin 23 >> Turn in Ursangous's Paw
     .turnin 247 >> Turn in The Hunt Completed
@@ -1573,6 +1575,9 @@ step
     .isOnQuest 216
     .goto Ashenvale,73.2,61.5
     .fly Zoram'gar >> Fly to Zoram'gar Outpost
+step
+    .isOnQuest 6544
+    .abandon 6544
 step
     .goto Ashenvale,11.9,34.5
     .turnin 216 >> Turn in Between a Rock and a Thistlefur
@@ -1974,11 +1979,19 @@ step
     >>Go into the Galak cave. Run along the left side. Kill centaurs en route
     .goto Thousand Needles,44.0,37.4,40
 step
+    #sticky
+    #completewith next
+    >>Kill Centaurs in the area
+    .goto Thousand Needles,41.3,37.7,0,0
+    .complete 4841,3 --Kill Galak Windchaser (x6)
+    .complete 4841,1 --Kill Galak Scout (x12)
+    .complete 4841,2 --Kill Galak Wrangler (x10)    
+step
     >>Loot the Brazier at the end of the cave system. Take a left once you are at the crossroads of the cave.
     .goto Thousand Needles,42.0,31.5
     .complete 1197,1 --Collect Cloven Hoof (x1)
 step
-    >>Kill Centaurs in the area
+    >>Finish killing Centaurs in the area
     .goto Thousand Needles,41.3,37.7
     .complete 4841,3 --Kill Galak Windchaser (x6)
     .complete 4841,1 --Kill Galak Scout (x12)
