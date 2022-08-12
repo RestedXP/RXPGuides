@@ -922,7 +922,7 @@ function addon.UpdateQuestCompletionData(self)
     local id = element.questId
 
     if type(id) ~= "number" then
-        print('Error: Invalid quest ID at step ' .. element.step.index)
+        print('Error (.' .. element.tag .. '): Invalid quest ID at step ' .. element.step.index)
         return
     end
     -- local skip
@@ -1081,6 +1081,7 @@ function addon.functions.complete(self, ...)
         local element = {}
         local text, id, obj, objMax = ...
         id = tonumber(id)
+        id = id and questConversion[id] or id
         if not (id and obj) then
             addon.error("Error parsing guide " .. addon.currentGuideName ..
                             ": Invalid objective or quest ID\n" .. self)
@@ -1091,10 +1092,10 @@ function addon.functions.complete(self, ...)
         -- element.title = addon.GetQuestName(id)
         -- local objectives = addon.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
         if id < 0 then
-            id = -id
+            id = math.abs(id)
             element.skipIfMissing = true
         end
-        element.questId = questConversion[id] or id
+        element.questId = id
 
         element.text = ""
         element.requestFromServer = true
@@ -1611,7 +1612,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
             element.requestFromServer = true
             element.text = " "
         end
-        if flags ~= 0 and element.questId and element.questId > 0 then
+        if objFlags ~= 0 and element.questId and element.questId > 0 then
             addon.questItemList[id] = element.questId
         end
         return element
@@ -2418,7 +2419,7 @@ function addon.functions.isQuestComplete(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not RXP.debug then
+    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2440,7 +2441,7 @@ function addon.functions.isOnQuest(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not IsOnQuest(id) and not addon.debug then
+    if self.element.step.active and not IsOnQuest(id) and not addon.settings.db.profile.debug then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2470,7 +2471,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
         questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
     end
 
-    if step.active and (not questTurnedIn == not element.reverse) and not addon.debug then
+    if step.active and (not questTurnedIn == not element.reverse) and not addon.settings.db.profile.debug then
         step.completed = true
         addon.updateSteps = true
     end
