@@ -922,7 +922,7 @@ function addon.UpdateQuestCompletionData(self)
     local id = element.questId
 
     if type(id) ~= "number" then
-        print('Error: Invalid quest ID at step ' .. element.step.index)
+        print('Error (.' .. element.tag .. '): Invalid quest ID at step ' .. element.step.index)
         return
     end
     -- local skip
@@ -1081,6 +1081,7 @@ function addon.functions.complete(self, ...)
         local element = {}
         local text, id, obj, objMax = ...
         id = tonumber(id)
+        id = id and questConversion[id] or id
         if not (id and obj) then
             addon.error("Error parsing guide " .. addon.currentGuideName ..
                             ": Invalid objective or quest ID\n" .. self)
@@ -1094,7 +1095,7 @@ function addon.functions.complete(self, ...)
             id = -id
             element.skipIfMissing = true
         end
-        element.questId = questConversion[id] or id
+        element.questId = id
 
         element.text = ""
         element.requestFromServer = true
