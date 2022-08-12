@@ -4,30 +4,51 @@ local _G = _G
 
 local AceConfig = LibStub("AceConfig-3.0")
 
-SLASH_RXPG1 = "/rxp"
-SLASH_RXPG2 = "/rxpg"
-SLASH_RXPG3 = "/rxpguides"
 local importString = ""
 local previousFrame = 0
 local buffer = {}
 local importFrame
 local ProcessBuffer
 
-_G.SlashCmdList["RXPG"] = function(_)
-    _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-    _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
+
+if not addon.settings.gui then addon.settings.gui = {selectedDeleteGuide = ""} end
+if not addon.settings.extras then addon.settings.extras = {} end
+
+function addon.settings.ChatCommand(input)
+    if not input then
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+    end
+
+    input = input:trim()
+    if input == "import" then
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+    elseif input == "extras" then
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
+    elseif input == "debug" then
+        addon.settings.db.profile.debug = not addon.settings.db.profile.debug
+
+        if addon.settings.db.profile.debug then
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
+        end
+    elseif input == "beta" then
+        addon.settings.db.profile.enableBetaFeatures = not addon.settings.db.profile.enableBetaFeatures
+
+        if addon.settings.db.profile.enableBetaFeatures then
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
+        end
+    else
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+    end
 end
 
-if not addon.settings then
-    addon.settings = {gui = {}, extras = {}}
-else
-    if not addon.settings.gui then addon.settings.gui = {} end
-    if not addon.settings.extras then addon.settings.extras = {} end
-end
-
-addon.settings.gui.selectedDeleteGuide = ""
-
-function addon.settings.InitializeSettings()
+function addon.settings:InitializeSettings()
     -- New character settings format
     -- Only set defaults for enabled = true
     local settingsDBDefaults = {
@@ -43,12 +64,16 @@ function addon.settings.InitializeSettings()
         }
     }
 
-    addon.settings.db = LibStub("AceDB-3.0"):New("RXPCSettings",
+    self.db = LibStub("AceDB-3.0"):New("RXPCSettings",
                                                  settingsDBDefaults)
 
-    addon.settings.CreateOptionsPanel()
-    addon.settings.CreateImportOptionsPanel()
-    addon.settings.CreateExtrasOptionsPanel()
+    self.CreateOptionsPanel()
+    self.CreateImportOptionsPanel()
+    self.CreateExtrasOptionsPanel()
+
+    self:RegisterChatCommand("rxp", self.ChatCommand)
+    self:RegisterChatCommand("rxpg", self.ChatCommand)
+    self:RegisterChatCommand("rxpguides", self.ChatCommand)
 end
 
 local function GetProfileOption(info)
@@ -806,6 +831,34 @@ function addon.settings.CreateExtrasOptionsPanel()
                     },
                 }
             },
+            betaSettings = {
+                type = "group",
+                name = "Beta Settings",
+                order = 4,
+                hidden = function ()
+                    return addon.release ~= 'Development' or not addon.settings.db.profile.enableBetaFeatures
+                end,
+                args = {
+                    betaFeaturesHeader = {
+                        name = "Beta features",
+                        type = "header",
+                        width = "full",
+                        order = 1
+                    },
+                    enableBetaFeatures = {
+                        name = "Enable Beta Features",
+                        type = "toggle",
+                        width = "full",
+                        order = 2,
+                    },
+                    debug = {
+                        name = "Enable Debug",
+                        type = "toggle",
+                        width = "full",
+                        order = 3,
+                    },
+                }
+            }
         }
     }
 
