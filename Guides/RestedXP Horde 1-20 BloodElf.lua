@@ -13,46 +13,43 @@ step << !BloodElf
 .goto Eversong Woods,38.2,20.8
     +You have selected a guide meant for Blood Elves. We do not recommend doing the 1-6 zone due to there being no quests for non-Blood Elves. You should choose the same starter zone that you start in
 step
-    .goto Eversong Woods,38.2,20.8
+    .goto Eversong Woods,38.2,20.8 << tbc
+	.goto Eversong Woods,38.02,21.01 << wotlk
     .accept 8325 >> Accept Reclaiming Sunstrider Isle
 step
     >>Kill Mana Wyrms in the area
+	>>Grind mobs until you have 65 copper worth of vendor items. You can also sell your gear for 13c << Warlock wotlk
     .goto Eversong Woods,37.5,23.2
     .complete 8325,1 --Kill Mana Wyrm (x8)
 step
-    .goto Eversong Woods,38.2,20.8
+    .goto Eversong Woods,38.2,20.8 << tbc
+	.goto Eversong Woods,38.02,21.01 << wotlk
+	>>Continue grinding mobs until you have 65 copper worth of vendor items before turning in this quest. << Warlock wotlk
     .turnin 8325 >> Turn in Reclaiming Sunstrider Isle
 step
-    .goto Eversong Woods,38.2,20.8
-        .accept 8326 >> Accept Unfortunate Measures
-step << Paladin
-    .goto Eversong Woods,38.2,20.8
-    .accept 9676 >> Accept Paladin Training
-step << Mage
-    .goto Eversong Woods,38.2,20.8
-    .accept 8328 >> Accept Mage Training
-step << Priest
-    .goto Eversong Woods,38.2,20.8
-    .accept 8564 >> Accept Priest Training
-step << Warlock
-    .goto Eversong Woods,38.2,20.8
-    .accept 8563 >> Accept Warlock Training
-step << Rogue
-    .goto Eversong Woods,38.2,20.8
-    .accept 9392 >> Accept Rogue Training
-step << Hunter
-    .goto Eversong Woods,38.2,20.8
-    .accept 9393 >> Accept Hunter Training
+    .goto Eversong Woods,38.2,20.8 << tbc
+	.goto Eversong Woods,38.02,21.01 << wotlk	
+    .accept 8326 >> Accept Unfortunate Measures
+	.accept 9393 >> Accept Hunter Training << Hunter
+	.accept 9392 >> Accept Rogue Training << Rogue
+    .accept 8563 >> Accept Warlock Training << Warlock
+    .accept 8564 >> Accept Priest Training << Priest
+    .accept 8328 >> Accept Mage Training << Mage
+    .accept 9676 >> Accept Paladin Training << Paladin
 step << Paladin/Rogue
     .goto Eversong Woods,38.7,20.3
     .vendor >>Go inside the building and vendor trash
 step << Hunter
     .goto Eversong Woods,38.7,20.3
-    .vendor >>Go inside, vendor trash, and fill your quiver with arrows
-step << Mage/Priest/Warlock
+    .vendor >>Go inside the building, vendor trash, and fill your quiver with arrows
+step << Mage tbc/Priest tbc/Warlock tbc
     .goto Eversong Woods,38.7,20.3
-    .vendor >>Go inside, vendor trash, and buy 10 Water
+    .vendor >>Go inside, vendor trash, & buy 10 Water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
+step << Mage wotlk/Priest wotlk/Warlock wotlk 
+    .goto Eversong Woods,38.7,20.3
+	>>Make sure you have 65c worth of vendor items. If not, farm more mobs. << Warlock
+    .vendor >>Go inside and vendor trash.
 step << Paladin
     .goto Eversong Woods,39.5,20.6
     .turnin 9676 >> Turn in Paladin Training
@@ -65,7 +62,7 @@ step << Mage
     .turnin 8328 >> Turn in Mage Training
 step << Mage
     .goto Eversong Woods,39.2,21.5
-    .accept 10069 >> Accept Well Watcher Solanian
+    .accept 10068 >> Accept Well Watcher Solanian
     .train 1459 >> Train Arcane Intellect
 step << Priest
     .goto Eversong Woods,39.4,20.4
@@ -92,8 +89,9 @@ step << Warlock
 step << Warlock
     .goto Eversong Woods,38.9,21.4
     .accept 10073 >> Accept Well Watcher Solanian
-    .accept 8344 >> Accept Windows to the Source
-    .train 348 >> Train Immolate
+    .accept 8344 >> Accept Windows to the Source << tbc
+    .train 348 >> Train Immolate << tbc
+	.train 688 >> Train Summon Imp << wotlk
 step
     .goto Eversong Woods,38.8,19.4
     >>Go upstairs
@@ -101,7 +99,7 @@ step
     .turnin 10072 >> Turn in Well Watcher Solanian << Priest
     .turnin 10071 >> Turn in Well Watcher Solanian << Rogue
     .turnin 10070 >> Turn in Well Watcher Solanian << Hunter
-    .turnin 10069 >> Turn in Well Watcher Solanian << Mage
+    .turnin 10068 >> Turn in Well Watcher Solanian << Mage
     .accept 8330 >> Accept Solanian's Belongings
     .accept 8345 >> Accept The Shrine of Dath'Remar
 step
@@ -111,64 +109,71 @@ step
     >>Equip your new bag
 .goto Eversong Woods,37.2,18.9
     .accept 8346 >> Accept Thirst Unending
-step << Warlock
+step << Warlock tbc
     #sticky
     #completewith next
     >> Grind Springpaw Lynxes and Cubs en route. Loot them for their collars. You don't have to finish this quest now.
     .collect 20797,8
-step << Warlock
-    >>Run up the ramp
+step << Warlock tbc
+    >>Run up the ramp. Look for any Mana Taps you can get while running here.
     .goto Eversong Woods,32.6,25.5,30
-step << Warlock
+step << Warlock tbc
     #sticky
     #completewith ArcaneSliver
     >>Grind and Mana Tap creatures with mana as you quest. Be sure to loot them for Arcane Slivers
-      .complete 8346,1 --Mana Tap creature (x6)
+    .complete 8346,1 --Mana Tap creature (x6)
     .complete 8336,1 --Collect Arcane Sliver (x6)
-step << Warlock
+step << Warlock tbc
     >> Loot the Arcane Wraiths for Wraith Essence. Be careful as they pull together if they're next to each other
     .goto Eversong Woods,32.3,28.1
     .complete 8344,1 --Wraith Essence (4)
-step << Warlock
+step << Warlock tbc
+	#label ArcaneSliver
     .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for the Essence and Tainted Arcane Sliver. Click the Sliver in your bags to accept the quest
     .goto Eversong Woods,31.6,29.3
     .unitscan Tainted Arcane Wraith
     .complete 8344,2 --Tainted Wraith Essence (1)
     .collect 20483,1,8338 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
-step << Warlock
+step << Warlock tbc
     .goto Eversong Woods,37.5,23.2
-    >>Finish off Mana Tapping creatures and Arcane Sliver
+    >>Finish Mana Tapping creatures and getting the remaining Arcane Slivers
     .complete 8346,1 --Mana Tap creature (x6)
     .complete 8336,1 --Collect Arcane Sliver (x6)
-step << Warlock
+step << Warlock tbc
     .xp 3+200 >> Grind until Level 3+200xp
-step << Warlock
+step << Warlock tbc
     .deathskip >> Die and respawn at the Spirit Healer or run back
     .goto Eversong Woods,38.2,17.6,100
-step << BloodElf Warlock
+step << BloodElf Warlock tbc
     .goto Eversong Woods,37.2,18.9
     .turnin 8346 >> Turn in Thirst Unending
     .turnin 8338 >> Turn in Tainted Arcane Sliver
-step << Warlock
+step << Warlock tbc
     .goto Eversong Woods,38.3,19.1
     .turnin 8336 >> Turn in A Fistful of Slivers
-step << Warlock
+step << Warlock tbc
     .goto Eversong Woods,38.7,20.3
     .vendor >> Vendor trash & buy 10 Water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
-step << Warlock
-    .goto Eversong Woods,38.9,21.4
-    .vendor >> Go to Yasmine, buy the Blood Pact book and use it after summoning your imp
-step << Warlock
+step << Warlock tbc
     .goto Eversong Woods,38.9,21.4
     .turnin 8344 >> Turn in Windows to the Source
-    .xp 4 >> Grind to 4
+step << Warlock tbc
+    .goto Eversong Woods,34.9,19.6
+    .xp 4 >> Grind to 4	
+step << Warlock tbc
+    .goto Eversong Woods,38.9,21.4
+    .collect 16321 >> Go to Yasmine and buy the Blood Pact book. Use it after summoning your Imp
     .train 172 >> Train Corruption
-    .cast 688 >>Summon your Imp after
+    .cast 688 >> Summon your Imp
+	.use 16321
+	.cast 20397 >> Use your Grimoire of Blood Pact
+step << Warlock wotlk
+	#completewith next
+	.cast 688 >>Summon your Imp if you haven't already or despawned.
 step
     >>Kill Lynxes for Lynx Collars
-    .use 16321 >>Use the Blood Pact book << Warlock
     .goto Eversong Woods,40.4,16.7,20,0
     .goto Eversong Woods,40.0,22.1,20,0
     .goto Eversong Woods,40.4,16.7,20,0
@@ -176,17 +181,27 @@ step
     .goto Eversong Woods,40.6,16.2
     .complete 8326,1 --Collect Lynx Collar (x8)
 step
-    .goto Eversong Woods,38.2,20.8
+    .goto Eversong Woods,38.2,20.8 << tbc
+	.goto Eversong Woods,38.02,21.01 << wotlk
     .turnin 8326 >> Turn in Unfortunate Measures
     .accept 8327 >> Accept Report to Lanthan Perilon
-step << !Warlock
+step << !Warlock tbc
     #sticky
     #completewith arcaneend
-     #label manaarcane
+    #label manaarcane
     .goto Eversong Woods,37.7,24.9,0
-    >>Use the spell "Mana Tap" on Mana Wryms as you quest. It's in the General tab of your spellbook.
-    >>Kill Mana Wryms as you quest for Slivers. Don't go out of your way to kill them as you'll only need to kill them when your mana tap comes off cooldown.
-      .complete 8346,1 --Mana Tap creature (x6)
+    >>Use the spell "Mana Tap" on Mana users as you quest. It's in the General tab of your spellbook.
+    >>Kill Mana users as you quest for Slivers. Don't go out of your way to kill them as you'll only need to kill them when your mana tap comes off cooldown.
+    .complete 8346,1 --Mana Tap creature (x6)
+    .complete 8336,1 --Collect Arcane Sliver (x6)
+step << wotlk
+    #sticky
+    #completewith arcaneend
+    #label manaarcane
+    .goto Eversong Woods,37.7,24.9,0
+    >>Use the spell "Arcane Torrent" on Mana Wyrms as you quest. It's in the General tab of your spellbook. Group them up to get more than 1 credit per cast.
+    >>Kill Mana Wyrms as you quest for Slivers. Don't go out of your way to kill them as you'll only need to kill them when your Arcane Torrent comes off cooldown.
+    .complete 8346,1 --Mana Tap creature (x6)
     .complete 8336,1 --Collect Arcane Sliver (x6)
 step
     #label Report
@@ -217,23 +232,41 @@ step
     .goto Eversong Woods,35.4,22.5
     .turnin 8334 >> Turn in Aggression
     .accept 8335 >> Accept Felendren the Banished
-step << !Warlock
+step << wotlk
+    #label arcaneend
+    #requires manaarcane	
+    .goto Eversong Woods,37.2,18.9
+    .turnin 8346 >> Turn in Thirst Unending
+step << !Warlock tbc
     #label arcaneend
     #requires manaarcane
     .goto Eversong Woods,38.3,19.1
     .turnin 8336 >> Turn in A Fistful of Slivers
-step << !Warlock
+step << wotlk
+	.isQuestComplete 8336
+    .goto Eversong Woods,38.3,19.1
+    .turnin 8336 >> Turn in A Fistful of Slivers
+
+
+step << !Warlock tbc
     .goto Eversong Woods,35.3,28.5
     .xp 4 >> Grind to 4
-step << Mage/Priest
+step << wotlk
+    .goto Eversong Woods,35.3,28.5
+    .xp 4 >> Grind to 4	
+step << Mage tbc/Priest tbc
     #completewith pepegavendor
     .goto Eversong Woods,38.7,20.3
-    .vendor >>vendor trash, and buy 10 Water
+    .vendor >>Vendor trash and buy 10 Water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
+step << Mage wotlk/Priest wotlk/Warlock wotlk
+    #completewith pepegavendor
+    .goto Eversong Woods,38.7,20.3
+    .vendor >>Vendor trash
 step << Rogue/Paladin/Hunter
     #completewith pepegavendor
 .goto Eversong Woods,38.7,20.3
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step << Hunter
     .goto Eversong Woods,39.0,20.0
     .train 1978 >>Train Serpent Sting
@@ -248,6 +281,10 @@ step << Paladin
 step << Mage
     .goto Eversong Woods,39.2,21.5
     .train 116 >>Train Frostbolt
+step << Warlock wotlk
+    .goto Eversong Woods,38.9,21.4
+    .train 172 >> Train Corruption
+	.train 348 >> Train Immolate
 step
     #label pepegavendor
     >>Read the plaque on the wall. Grind some mobs en route
@@ -260,37 +297,35 @@ step
 step
     #completewith next
     .goto Eversong Woods,32.6,25.5,30 >>Run up the ramp
-step << !Warlock
-    #completewith next
+step << !Warlock tbc
+    #completewith silverhstbc
+	#label sliveracctbc
     .goto Eversong Woods,30.7,27.5,0
     .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for a Tainted Arcane Sliver. Click the Sliver in your bags
     .collect 20483,1,8338 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
-step << !Warlock
-    .goto Eversong Woods,30.7,27.5
-    >>Head to the top of the tower killing mobs en route. Kill Felendren at the top, and loot him for his head
-    .complete 8335,1 --Kill Arcane Wraith (x8)
-    .complete 8335,2 --Kill Tainted Arcane Wraith (x2)
-    .complete 8335,3 --Collect Felendren's Head (x1)
-step << !Warlock
-    .goto Eversong Woods,30.7,27.5
+step << wotlk
+    #completewith sliverhs
+	#label sliveracc
+    .goto Eversong Woods,30.7,27.5,0
     .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for a Tainted Arcane Sliver. Click the Sliver in your bags
     .collect 20483,1,8338 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
-step << Warlock
+step 
     .goto Eversong Woods,30.7,27.5
-    >>Felendren and the Tainted Arcane Wraiths are located at the top of the tower.
+    >>Head to the top of the tower killing mobs en route. Kill Felendren at the top and loot him for his head
     .complete 8335,1 --Kill Arcane Wraith (x8)
     .complete 8335,2 --Kill Tainted Arcane Wraith (x2)
     .complete 8335,3 --Collect Felendren's Head (x1)
 step
+	#requires sliveracc << wotlk
+	#requires sliveracctbc << !Warlock tbc
+step
+	#label sliverhs << wotlk
+	#label silverhstbc << tbc
     #completewith next
     .goto Eversong Woods,38.7,20.3
     .hs >> Hearth to Sunstrider Isle
-step << !Warlock
-    .goto Eversong Woods,37.2,18.9
-    .turnin 8346 >> Turn in Thirst Unending
-    .turnin 8338 >> Turn in Tainted Arcane Sliver
 step
     #completewith next
     .goto Eversong Woods,38.7,20.3
@@ -300,6 +335,14 @@ step
     .goto Eversong Woods,38.7,19.4
     .turnin 8330 >> Turn in Solanian's Belongings
     .turnin 8345 >> Turn in The Shrine of Dath'Remar
+step << !Warlock tbc
+    .goto Eversong Woods,37.2,18.9
+    .turnin 8346 >> Turn in Thirst Unending
+    .turnin 8338 >> Turn in Tainted Arcane Sliver
+step << wotlk
+    .goto Eversong Woods,37.2,18.9
+    .turnin 8346 >> Turn in Thirst Unending
+    .turnin 8338 >> Turn in Tainted Arcane Sliver	
 step
     .goto Eversong Woods,35.4,22.5
     .turnin 8335 >> Turn in Felendren the Banished
