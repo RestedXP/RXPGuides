@@ -29,7 +29,7 @@ step << Paladin wotlk
 step << Paladin wotlk
 	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
-step << Priest/wotlk
+step << Priest wotlk
 	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step << Paladin wotlk
@@ -43,7 +43,7 @@ step << Warlock wotlk
     .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
-step << Warlock/wotlk
+step << Warlock wotlk
     .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
@@ -72,7 +72,7 @@ step << Rogue wotlk
 step << Rogue wotlk
 	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
-step << Rogue/wotlk
+step << Rogue wotlk
     .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei wotlk
