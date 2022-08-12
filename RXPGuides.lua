@@ -657,8 +657,10 @@ function addon.UpdateScheduledTasks()
         if cTime > time then
             local group = addon.currentGuide.group
             local element = ref.element or ref
-            RXPGuides[group][element.tag](ref)
-            addon.scheduledTasks[ref] = nil
+            if group and RXPGuides[group] and element and RXPGuides[group][element.tag] then
+                RXPGuides[group][element.tag](ref)
+                addon.scheduledTasks[ref] = nil
+            end
             return
         end
     end
