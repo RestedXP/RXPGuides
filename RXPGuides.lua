@@ -486,7 +486,7 @@ function addon:OnInitialize()
         addon.db.profile.guides = {}
         RXPData.gameVersion = gameVersion
     end
-    addon.settings.InitializeSettings()
+    addon.settings:InitializeSettings()
     addon.RXPG.LoadCachedGuides()
     addon.RXPG.LoadEmbeddedGuides()
 
