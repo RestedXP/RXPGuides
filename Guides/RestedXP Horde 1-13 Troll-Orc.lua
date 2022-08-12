@@ -1531,6 +1531,9 @@ step
     .complete 835,2 --Dustwind Storm Witch (8)
 step
     .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
+step << Warrior/Rogue
+	.goto Orgrimmar,81.2,19.0
+	.collect 25873,1 >> Purchase a Keen Throwing Knife from Zendo'jian
 step
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
