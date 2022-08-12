@@ -995,6 +995,9 @@ step
 step
     .goto Bloodmyst Isle,55.1,58.0
     .accept 9567 >> Accept Know Thine Enemy
+step << Warrior/Rogue
+    .goto Bloodmyst Isle,55.2,58.2
+    .collect 25873,1 >> Purchase a Keen Throwing Knife from Meriaad
 step
     .goto Bloodmyst Isle,63.1,87.7
     .turnin 9663 >> Turn in The Kessel Run
