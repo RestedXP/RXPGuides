@@ -325,7 +325,7 @@ MapLinePool.creationFunc = function(framePool)
         -- self:Show()
 
         f:SetScript("OnEnter", function(self)
-            if RXPData.debug and self.lineData then
+            if addon.settings.db.profile.debug and self.lineData then
                 local line = self.lineData
                 self:SetAlpha(0.5)
                 print("Line start point:", line.sX, ",", line.sY)

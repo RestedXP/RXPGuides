@@ -65,6 +65,14 @@ function addon.tracker:UpgradeDB()
             levelDB[l].groupExperience = 0
         end
 
+        if levelDB[l].timestamp and levelDB[l].timestamp.started == -1 then
+            levelDB[l].timestamp.started = nil
+        end
+
+        if levelDB[l].timestamp and levelDB[l].timestamp.finished == -1 then
+            levelDB[l].timestamp.finished = nil
+        end
+
         if not levelDB[l].mobs then levelDB[l].mobs = {} end
     end
 end
@@ -82,6 +90,8 @@ function addon.tracker:GenerateDBLevel(level)
             deaths = 0
         }
     end
+
+    if level == 1 then profile["levels"][level].timestamp.started = 0 end
 end
 
 function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
@@ -120,32 +130,34 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
     if not data then return end
 
     if data.event == 'PLAYER_LEVEL_UP' then
+        addon.tracker.db.profile["levels"][data.level - 1].timestamp
+            .dateFinished = data.date
+        addon.tracker.db.profile["levels"][data.level - 1].timestamp.finished =
+            totalTimePlayed - 1
+
         addon.tracker.db.profile["levels"][data.level].timestamp.started =
             totalTimePlayed
-
-        if data.level > 1 then
-            addon.tracker.db.profile["levels"][data.level - 1].timestamp
-                .dateFinished = data.date
-            addon.tracker.db.profile["levels"][data.level - 1].timestamp
-                .finished = totalTimePlayed - 1
-        end
+        addon.tracker.db.profile["levels"][data.level].timestamp.dateStarted =
+            data.date
 
         addon.tracker.waitingForTimePlayed = false
 
         -- Build data after processing level up
         addon.tracker.reportData[data.level - 1] =
             addon.tracker:CompileLevelData(data.level - 1)
+        addon.tracker.ui.levelDropdown:SetList(addon.tracker
+                                                   .BuildDropdownLevels())
+        addon.tracker.ui.levelDropdown:SetValue(data.level)
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
         addon.tracker.state.login = {
             time = time(),
             timePlayedThisLevel = timePlayedThisLevel
         }
 
-        if addon.tracker.playerLevel == 1 and
-            not addon.tracker.db.profile["levels"][1].timestamp.dateStarted and
-            timePlayedThisLevel < 60 then
-            addon.tracker.db.profile["levels"][1].timestamp.dateStarted =
-                data.date
+        if not addon.tracker.db.profile["levels"][addon.tracker.playerLevel]
+            .timestamp.dateStarted and timePlayedThisLevel < 60 then
+            addon.tracker.db.profile["levels"][addon.tracker.playerLevel]
+                .timestamp.dateStarted = data.date
         end
 
         addon.tracker.waitingForTimePlayed = false
@@ -178,8 +190,13 @@ function addon.tracker:QUEST_TURNED_IN(_, questId, xpReward)
 
     levelData.quests[zoneName][questId] = xpReward
 
-    -- Quest turnins not applicable for group vs solo, easily miscategorized.
+    -- Quest turnins can easily be miscategorized
     -- e.g. complete quest solo, join dungeon group, then turn in before flying or inverse
+    -- However, summary report looks weird without it, calculate anyway
+    if IsInGroup() then
+        levelData.groupExperience = levelData.groupExperience + xpReward
+        -- else solo, total - group = solo, no need to keep track separately
+    end
 end
 
 function addon.tracker:PLAYER_DEAD()
@@ -270,7 +287,7 @@ function addon.tracker:CreateGui()
     trackerUi:SetCallback("OnShow", function()
         -- refresh data
         addon.tracker:CompileData()
-        addon.tracker:UpdateReport(addon.tracker.playerLevel, true)
+        addon.tracker:UpdateReport(addon.tracker.playerLevel)
     end)
 
     if addon.settings.db.profile.openTrackerReportOnCharOpen then
@@ -476,10 +493,9 @@ function addon.tracker:CompileLevelData(level, d)
 
     report.groupExperience = data.groupExperience
 
-    -- Quests aren't tracked for group vs solo
-    report.soloExperience = report.mobXP - data.groupExperience
-
     report.totalXP = report.mobXP + report.questXP
+
+    report.soloExperience = report.totalXP - data.groupExperience
 
     report.timestamp = {
         started = data.timestamp.started,
@@ -498,7 +514,8 @@ function addon.tracker:CompileLevelData(level, d)
                                            data.timestamp.dateStarted.minute,
                                            data.timestamp.dateStarted.hour >= 12 and
                                                "PM" or "AM")
-    elseif data.timestamp.dateFinished then
+    end
+    if data.timestamp.dateFinished then
         report.timestamp.dateFinished = fmt("%s %d, %d at %d:%d %s Server",
                                             _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
                                                 .dateFinished.month],
@@ -595,8 +612,7 @@ function addon.tracker:UpdateReport(selectedLevel)
             report.timestamp.dateFinished or "Missing data")
 
         if report.timestamp and report.timestamp.started and
-            report.timestamp.started > -1 and report.timestamp.finished and
-            report.timestamp.finished > -1 then
+            report.timestamp.finished then
             local s = report.timestamp.finished - report.timestamp.started
 
             trackerUi.speedContainer.data:SetText(
@@ -607,51 +623,51 @@ function addon.tracker:UpdateReport(selectedLevel)
 
     end
 
-    local ratio = report.groupExperience /
-                      (report.soloExperience + report.groupExperience)
-    local percentage = 100 * ratio
+    local ratio, percentage
 
     if selectedLevel == addon.tracker.maxLevel then
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %s", 'N/A'))
         trackerUi.teamworkContainer.data['group']:SetText(fmt("* Group: %s",
                                                               'N/A'))
-    elseif smatch(tostring(ratio), "nan") then -- If division error
-        trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%", 0))
-        trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %d%%", 0))
     elseif report.groupExperience == 0 then
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %.2f%%", 100))
         trackerUi.teamworkContainer.data['group']:SetText(
             fmt("* Group: %.2f%%", 0))
+    elseif (report.soloExperience + report.groupExperience) == 0 then -- If division error
+        trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%", 0))
+        trackerUi.teamworkContainer.data['group']:SetText(
+            fmt("* Group: %d%%", 0))
     else
+        ratio = report.groupExperience /
+                    (report.soloExperience + report.groupExperience)
+        percentage = 100 * ratio
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %.2f%%", 100 - percentage))
         trackerUi.teamworkContainer.data['group']:SetText(
             fmt("* Group: %.2f%%", percentage))
     end
 
-    ratio = report.questXP / (report.questXP + report.mobXP)
-    percentage = 100 * ratio
-
     if selectedLevel == addon.tracker.maxLevel then
         trackerUi.sourcesContainer.data['quests']:SetText(fmt("* Quests: %s",
                                                               "N/A"))
         trackerUi.sourcesContainer.data['mobs']:SetText(
             fmt("* Killing: %s", "N/A"))
-    elseif smatch(tostring(ratio), "nan") then -- If division error
-        trackerUi.sourcesContainer.data['quests']:SetText(
-            fmt("* Quests: %d%%", 0))
-        trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Killing: %d%%", 0))
     elseif report.questXP == 0 then
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
                                                               "* Quests: %.2f%%",
                                                               0))
         trackerUi.sourcesContainer.data['mobs']:SetText(
             fmt("* Killing: %.2f%%", 100))
+    elseif (report.questXP + report.mobXP) == 0 then -- If division error
+        trackerUi.sourcesContainer.data['quests']:SetText(
+            fmt("* Quests: %d%%", 0))
+        trackerUi.sourcesContainer.data['mobs']:SetText(
+            fmt("* Killing: %d%%", 0))
     else
+        ratio = report.questXP / (report.questXP + report.mobXP)
+        percentage = 100 * ratio
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
                                                               "* Quests: %.2f%%",
                                                               100 - percentage))
@@ -675,7 +691,7 @@ function addon.tracker:UpdateReport(selectedLevel)
         report.timestamp.finished and selectedLevel ~= addon.tracker.maxLevel then
         local levelSeconds
 
-        if report.timestamp.finished > 0 then
+        if report.timestamp.finished then
             levelSeconds = report.timestamp.finished - report.timestamp.started
         else
             levelSeconds = difftime(time(), addon.tracker.state.login.time) +
