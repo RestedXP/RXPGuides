@@ -144,7 +144,7 @@ step << Gnome !Warlock wotlk
 	.goto Dun Morogh,49.2,48.1
 	.money <5.00
 	.train 553 >> Head to Dun Morogh, train riding and purchase your mount.
-step << Human/Gnome/Dwarf/wotlk
+step << Human wotlk/Gnome wotlk/Dwarf wotlk
     .goto Ironforge,55.5,47.7
     .fly Wetlands >> Fly to Wetlands
 step << Mage wotlk
@@ -1077,13 +1077,13 @@ step << Paladin
     .goto Dun Morogh,52.5,36.8
     >> Head to the gates of Ironforge
     .turnin 1653 >>Turn in The Test of Righteousness
-step << Dwarf !Paladin/wotlk
+step << Dwarf !Paladin wotlk
 	#sticky
 	#completewith next
 	.goto Dun Morogh,63.5,50.6
 	.money <5.00
 	.train 152 >> Head to Dun Morogh, train riding and purchase your mount.
-step << Gnome !Warlock/wotlk
+step << Gnome !Warlock wotlk
 	#sticky
 	#completewith next
 	.goto Dun Morogh,49.2,48.1
@@ -1696,7 +1696,7 @@ step
     .goto Elwynn Forest,84.7,69.4
     .turnin 75 >> Turn in The Legend of Stalvan
     .accept 78 >> Accept The Legend of Stalvan
-step << Human !Paladin !Warlock
+step << Human !Paladin !Warlock tbc
 	#level 30
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
@@ -2433,7 +2433,7 @@ step << Human !Paladin !Warlock tbc
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
-step << Human !Paladin !Warlock/wotlk
+step << Human !Paladin !Warlock wotlk
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <5.00
