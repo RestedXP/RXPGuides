@@ -1342,18 +1342,18 @@ step << Hunter
 step << BloodElf Hunter
     .goto Silvermoon City,82.2,28.1
     .turnin 9673 >> Turn in Beast Training
-    .train 4195 >>Train Great Stamina
-    .train 4196 >>Train Great Stamina r2
-    .train 24547 >>Train Natural Armor
-    .train 24556 >>Train Natural Armor r2
-step << Hunter
+    .train 4195 >>Train Great Stamina << tbc
+    .train 4196 >>Train Great Stamina r2 << tbc 
+    .train 24547 >>Train Natural Armor << tbc
+    .train 24556 >>Train Natural Armor r2 << tbc
+step << Hunter tbc
     .istrained 24556
     .istrained 4196
-.goto Silvermoon City,82.2,28.1
+    .goto Silvermoon City,82.2,28.1
     .train 4196 >>Train Great Stamina r2
     .train 24556 >>Train Natural Armor r2
 step << BloodElf Hunter
-    >>Put "Beast Training" on your bars. Remember to teach your pet skills later
+    >>Put "Beast Training" on your bars. Remember to teach your pet skills later << tbc
     .goto Silvermoon City,82.4,26.0
     .train 136 >>Train Mend Pet
     .train 2974 >>Train Wing Clip
@@ -1402,10 +1402,6 @@ step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
     >> Buy Suntouched Special Reserve from Vinemaster Suntouched
     .collect 22775,1 --Collect Suntouched Special Reserve
-step << Druid
-    >>Teleport to Moonglade
-    .goto Moonglade,52.4,40.6
-    .trainer 12042 >> Train spells
 step << Undead/BloodElf !Hunter
     #completewith next
     .goto Eversong Woods,46.9,71.8
