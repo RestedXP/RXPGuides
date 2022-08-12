@@ -949,11 +949,11 @@ step << Mage wotlk
 step
     .goto Westfall,56.6,52.6
     .fly Stormwind >> Fly to Stormwind
-step << Rogue
+step << Rogue/Warrior
     >>Go inside the building
     .goto StormwindClassic,57.32,62.08,20,0
     .goto StormwindClassic,58.37,61.69
-    .vendor >> Buy the level 3 thrown from Thurman. Equip it
+    .collect 25873,1 >> Buy the Keen Throwing Knife from Thurman. Equip it
 step
     .goto StormwindClassic,56.2,64.6
     >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling

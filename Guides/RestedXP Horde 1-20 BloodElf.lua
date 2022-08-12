@@ -2387,7 +2387,7 @@ step << Mage/Priest/Warlock/Hunter/Shaman
     #completewith next
     .goto Ghostlands,45.4,30.5
     .fly Silvermoon >> Fly to Silvermoon City
-step << Shaman
+step << Shaman wotlk
     .goto Silvermoon City,71.8,56.6
     .trainer >> Train your class spells
 step << BloodElf Mage

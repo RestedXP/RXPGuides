@@ -1111,13 +1111,13 @@ step << Paladin
     .goto Dun Morogh,52.5,36.8
     >> Head to the gates of Ironforge
     .turnin 1653 >>Turn in The Test of Righteousness
-step << Dwarf !Paladin/wotlk
+step << Dwarf !Paladin wotlk
 	#sticky
 	#completewith next
 	.goto Dun Morogh,63.5,50.6
 	.money <5.00
 	.train 152 >> Head to Dun Morogh, train riding and purchase your mount.
-step << Gnome !Warlock/wotlk
+step << Gnome !Warlock wotlk
 	#sticky
 	#completewith next
 	.goto Dun Morogh,49.2,48.1
@@ -1665,9 +1665,9 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
+    .itemcount 4371,1
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    >>Skip this step if you don't have a Bronze Tube
 step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
@@ -1730,7 +1730,7 @@ step
     .goto Elwynn Forest,84.7,69.4
     .turnin 75 >> Turn in The Legend of Stalvan
     .accept 78 >> Accept The Legend of Stalvan
-step << Human !Paladin !Warlock
+step << Human !Paladin !Warlock tbc
 	#level 30
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
@@ -1813,6 +1813,7 @@ step
     .complete 134,1 --Collect Abercrombie's Crate (x1)
 step
     .goto Duskwood,36.8,83.8
+    .isOnQuest 181
     >>Kill Zzarc' Vul and loot him for his monocle
 	.unitscan Zzarc'Vul
     .complete 181,1 --Collect Ogre's Monocle (x1)
@@ -1848,6 +1849,7 @@ step << Druid/Hunter/Mage/!Dwarf Paladin/Priest/Rogue/Warlock/Warrior
     .fly Darkshire>> Fly to Darkshire
 step
     .goto Duskwood,79.8,47.9
+    .isOnQuest 181
     .turnin 181 >> Turn in Look To The Stars
 step
     .goto Duskwood,75.7,45.3
@@ -2397,9 +2399,9 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
+    .itemcount 4371,1
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    >>Skip this step if you don't have a Bronze Tube
 step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
@@ -2467,7 +2469,7 @@ step << Human !Paladin !Warlock tbc
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
-step << Human !Paladin !Warlock/wotlk
+step << Human !Paladin !Warlock wotlk
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <5.00
@@ -2551,6 +2553,7 @@ step
     .goto Duskwood,36.8,83.8
     >>Kill Zzarc' Vul and loot him for his monocle
 	.unitscan Zzarc'Vul
+    .isOnQuest 181
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
     .goto Stranglethorn Vale,38.2,4.1
@@ -2580,6 +2583,7 @@ step
     .fly Darkshire>> Fly to Darkshire
 step
     .goto Duskwood,79.8,47.9
+    .isOnQuest 181
     .turnin 181 >> Turn in Look To The Stars
 step
     .goto Duskwood,75.7,45.3
