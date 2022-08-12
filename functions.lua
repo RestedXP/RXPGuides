@@ -2419,7 +2419,7 @@ function addon.functions.isQuestComplete(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not RXP.debug then
+    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2441,7 +2441,7 @@ function addon.functions.isOnQuest(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not IsOnQuest(id) and not addon.debug then
+    if self.element.step.active and not IsOnQuest(id) and not addon.settings.db.profile.debug then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2471,7 +2471,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
         questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
     end
 
-    if step.active and (not questTurnedIn == not element.reverse) and not addon.debug then
+    if step.active and (not questTurnedIn == not element.reverse) and not addon.settings.db.profile.debug then
         step.completed = true
         addon.updateSteps = true
     end
