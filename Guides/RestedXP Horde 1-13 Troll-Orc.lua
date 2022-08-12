@@ -32,16 +32,16 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     .goto Durotar,42.6,67.3
     .vendor >> Vendor trash. Vendor armor if less than 10c
+step
+    .goto Durotar,42.1,68.4
+    .turnin 4641 >>Turn in Your Place In The World
+    .accept 788 >>Accept Cutting Teeth
 step << Warrior
     .goto Durotar,42.9,69.4
     .train 6673 >>Train Battle Shout
 step << Shaman
     .goto Durotar,42.4,69.0
     .train 8017 >>Train Rockbiter Weapon
-step
-    .goto Durotar,42.1,68.4
-    .turnin 4641 >>Turn in Your Place In The World
-    .accept 788 >>Accept Cutting Teeth
 step << Warlock
     .goto Durotar,40.6,68.4
     .vendor >>vendor trash at the demon trainer
@@ -360,9 +360,9 @@ step
 .goto Durotar,42.7,53.0
     .complete 794,1 --Burning Blade Medallion (1)
 step << !Shaman
-    .xp 5+1200 >> Grind to 1200+/2800xp
+    .xp 5+1725 >> Grind to 1725+/2800xp
 step << Shaman
-    .xp 5+690 >> Grind to 690+/2800xp
+    .xp 5+1200 >> Grind to 1200+/2800xp
 step << !Paladin
     #completewith next
     .hs >>Hearth to Valley of Trials
@@ -651,8 +651,6 @@ step
     .complete 784,1 --Kul Tiras Sailor (10)
     .complete 784,2 --Kul Tiras Marine (8)
     .complete 791,1 --Canvas Scraps (8)
-step
-    .goto Durotar,59.2,58.3,15 >>Go inside the keep
 step
     .goto Durotar,59.7,58.3
     >>Go to the top floor of the Keep. Kill Lieutenant Benedict and loot his key - be careful as he uses Shield Bash (Interrupt)
@@ -1382,7 +1380,7 @@ step
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines
 step
-    .goto Durotar,41.5,18.6
+    .goto Durotar,40.8,16.3
     .accept 812 >>Accept Need for a Cure
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
@@ -1477,8 +1475,10 @@ step
     .turnin 828 >>Turn in Margoz
     .accept 827 >>Accept Skull Rock
 step
-    >>Kill Scorpions for Poison Sacs
-.goto Durotar,55.7,15.7
+    #sticky
+    #completewith next
+    >>Kill Scorpions for Poison Sacs as you travel
+    .goto Durotar,55.7,15.7
     .complete 813,1 --Venomtail Poison Sac (4)
 step
     #sticky
@@ -1499,6 +1499,13 @@ step << Tauren Shaman/Tauren Warrior/Undead Warrior/Paladin
     .accept 832 >>Accept Burning Shadows
 step
     #requires Collars2
+    #sticky
+    #completewith harpingme
+    >>Kill Scorpions for Poison Sacs as you travel
+    .goto Durotar,55.7,15.7
+    .complete 813,1 --Venomtail Poison Sac (4)
+step
+    #requires Collars2
 .goto Durotar,56.4,20.1
     .turnin 827 >>Turn in Skull Rock
     .accept 829 >>Accept Neeru Fireblade
@@ -1512,6 +1519,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,52.8,28.7,20 >> Leave the cave
 step
+    #label harpingme
     .goto Durotar,54.0,27.7,30,0
     .goto Durotar,51.3,23.5,30,0
     .goto Durotar,51.5,19.1,30,0
@@ -1523,9 +1531,16 @@ step
     .complete 835,2 --Dustwind Storm Witch (8)
 step
     .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
+step << Warrior/Rogue
+	.goto Orgrimmar,81.2,19.0
+	.collect 25873,1 >> Purchase a Keen Throwing Knife from Zendo'jian
 step
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
+step
+    >>Kill Scorpions for Poison Sacs
+    .goto Durotar,55.7,15.7
+    .complete 813,1 --Venomtail Poison Sac (4)
 step
     .goto Orgrimmar,31.8,37.8
     .turnin 5726 >>Turn in Hidden Enemies
@@ -1541,7 +1556,7 @@ step
     .goto Orgrimmar,49.4,50.5
     .turnin 832 >>Turn in Burning Shadows
 step
-    .goto Durotar,41.6,18.7
+    .goto Durotar,40.8,16.3
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step

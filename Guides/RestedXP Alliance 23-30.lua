@@ -29,7 +29,7 @@ step << Paladin wotlk
 step << Paladin wotlk
 	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
-step << Priest/wotlk
+step << Priest wotlk
 	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step << Paladin wotlk
@@ -43,7 +43,7 @@ step << Warlock wotlk
     .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
-step << Warlock/wotlk
+step << Warlock wotlk
     .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
@@ -72,7 +72,7 @@ step << Rogue wotlk
 step << Rogue wotlk
 	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
-step << Rogue/wotlk
+step << Rogue wotlk
     .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei wotlk
@@ -144,12 +144,46 @@ step << Gnome !Warlock wotlk
 	.goto Dun Morogh,49.2,48.1
 	.money <5.00
 	.train 553 >> Head to Dun Morogh, train riding and purchase your mount.
-step << Human/Gnome/Dwarf/wotlk
+step << Draenei wotlk/NightElf wotlk
+    .goto Wetlands,9.5,59.7
+    .fp Menethil >> Get the Menethil Harbor flight path
+step << Human wotlk/Gnome wotlk/Dwarf wotlk
+    #completewith next
     .goto Ironforge,55.5,47.7
     .fly Wetlands >> Fly to Wetlands
 step << Mage wotlk
     .goto Wetlands,10.7,60.9
     .home >> Set your Hearthstone to Deepwater Tavern
+step << Human tbc/Gnome tbc/Dwarf tbc
+    #completewith next
+    >> If you have the Loch Modan flight path, fly there. Otherwise skip this step.
+    .goto Ironforge,55.5,47.7
+    .fly Loch Modan >> Fly to Loch Modan
+    .zoneskip Wetlands
+step << Human tbc/Gnome tbc/Dwarf tbc
+    #completewith next
+    .goto Dun Morogh,59.5,42.8,40,0
+    .goto Dun Morogh,60.4,44.1,40,0
+    .goto Dun Morogh,61.1,44.1,40,0
+    .goto Dun Morogh,61.2,42.3,40,0
+    .goto Dun Morogh,60.8,40.9,40,0
+    .goto Dun Morogh,59.0,39.5,40,0
+    .goto Dun Morogh,60.3,38.6,40,0
+    .goto Dun Morogh,61.7,38.7,40,0
+    .goto Dun Morogh,65.7,21.6,40,0
+    .goto Dun Morogh,65.8,12.5,40,0
+    .goto Dun Morogh,65.6,10.8,40,0
+    .goto Dun Morogh,66.5,10.0,40,0
+    .goto Dun Morogh,66.9,8.5,40,0
+    .goto Wetlands,20.6,67.2,50,0
+    .goto Wetlands,17.7,67.7,40,0
+    .goto Wetlands,16.8,65.3,40,0
+    .goto Wetlands,15.1,64.0,40,0
+    .goto Wetlands,12.1,60.3,40,0
+    >>Do the Deathless Dun Morogh -> Wetlands skip
+    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
+    .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
+    .zoneskip Wetlands
 step
     .goto Wetlands,8.3,58.5
     .accept 279 >> Accept Claws from the Deep
@@ -1077,13 +1111,13 @@ step << Paladin
     .goto Dun Morogh,52.5,36.8
     >> Head to the gates of Ironforge
     .turnin 1653 >>Turn in The Test of Righteousness
-step << Dwarf !Paladin/wotlk
+step << Dwarf !Paladin wotlk
 	#sticky
 	#completewith next
 	.goto Dun Morogh,63.5,50.6
 	.money <5.00
 	.train 152 >> Head to Dun Morogh, train riding and purchase your mount.
-step << Gnome !Warlock/wotlk
+step << Gnome !Warlock wotlk
 	#sticky
 	#completewith next
 	.goto Dun Morogh,49.2,48.1
@@ -1631,9 +1665,9 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
+    .itemcount 4371,1
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    >>Skip this step if you don't have a Bronze Tube
 step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
@@ -1696,7 +1730,7 @@ step
     .goto Elwynn Forest,84.7,69.4
     .turnin 75 >> Turn in The Legend of Stalvan
     .accept 78 >> Accept The Legend of Stalvan
-step << Human !Paladin !Warlock
+step << Human !Paladin !Warlock tbc
 	#level 30
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
@@ -1779,6 +1813,7 @@ step
     .complete 134,1 --Collect Abercrombie's Crate (x1)
 step
     .goto Duskwood,36.8,83.8
+    .isOnQuest 181
     >>Kill Zzarc' Vul and loot him for his monocle
 	.unitscan Zzarc'Vul
     .complete 181,1 --Collect Ogre's Monocle (x1)
@@ -1814,6 +1849,7 @@ step << Druid/Hunter/Mage/!Dwarf Paladin/Priest/Rogue/Warlock/Warrior
     .fly Darkshire>> Fly to Darkshire
 step
     .goto Duskwood,79.8,47.9
+    .isOnQuest 181
     .turnin 181 >> Turn in Look To The Stars
 step
     .goto Duskwood,75.7,45.3
@@ -2363,9 +2399,9 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
+    .itemcount 4371,1
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    >>Skip this step if you don't have a Bronze Tube
 step
     .goto Duskwood,79.8,47.9
     .accept 175 >> Accept Look To The Stars
@@ -2433,7 +2469,7 @@ step << Human !Paladin !Warlock tbc
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
-step << Human !Paladin !Warlock/wotlk
+step << Human !Paladin !Warlock wotlk
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <5.00
@@ -2517,6 +2553,7 @@ step
     .goto Duskwood,36.8,83.8
     >>Kill Zzarc' Vul and loot him for his monocle
 	.unitscan Zzarc'Vul
+    .isOnQuest 181
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
     .goto Stranglethorn Vale,38.2,4.1
@@ -2546,6 +2583,7 @@ step
     .fly Darkshire>> Fly to Darkshire
 step
     .goto Duskwood,79.8,47.9
+    .isOnQuest 181
     .turnin 181 >> Turn in Look To The Stars
 step
     .goto Duskwood,75.7,45.3

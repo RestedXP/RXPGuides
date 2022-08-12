@@ -31,6 +31,13 @@ step << Warrior
     .accept 1503 >>Accept Forged Steel
 step << Warrior
     #sticky
+    #completewith next
+    .goto The Barrens,55.6,26.6
+    >>Kill Quillboars in the area
+    .complete 871,2 --Razormane Thornweaver (8)
+    .complete 871,1 --Razormane Water Seeker (8)
+    .complete 871,3 --Razormane Hunter (3)
+step << Warrior
     #label Steel
     >>Loot the gray chest for Forged Steel Bars
     .goto The Barrens,55.0,26.7
@@ -38,8 +45,10 @@ step << Warrior
 step << Warrior
     #sticky
     #completewith next
-#requires Steel
-    .goto The Barrens,54.7,28.0,20 >>You can run up the mountain here
+    #requires Steel
+    >>Kill some Plainstriders en route. Loot them for Beaks << !Tauren
+    .complete 844,1 --Plainstrider Beak (7) << !Tauren
+    .goto The Barrens,54.7,28.0,20 >>Run up the mountain here
 step << Warrior
     #requires Steel
 .goto The Barrens,57.2,30.3
@@ -64,7 +73,7 @@ step
 step << !Tauren
     #completewith next
     .goto The Barrens,62.4,20.0
-    .cooldown item,4986,<10m >>Delete your Flawed Power Stone then go back and loot the Purple Stone next to Ak'Zeloth again.
+    .cooldown item,4986,<5m >>Delete your Flawed Power Stone then go back and loot the Purple Stone next to Ak'Zeloth again.
 step << !Tauren
     .goto The Barrens,62.4,20.0
         .turnin 926 >>Turn in Flawed Power Stone
@@ -231,10 +240,6 @@ step
     .goto The Barrens,62.3,38.4
     .turnin 819 >>Turn in Chen's Empty Keg
     .accept 821 >>Accept Chen's Empty Keg
-step
-    #completewith next
-    .goto The Barrens,62.0,39.4
-    .home >>Set your Hearthstone to Ratchet
 step
     .goto The Barrens,61.2,39.4
     >> The level 5 fish food here is super cheap, stock up << Warrior/Rogue
@@ -940,7 +945,7 @@ step
     .accept 1130 >>Accept Melor Sends Word
     .accept 6382 >>Accept The Ashenvale Hunt
 step
-.goto The Barrens,44.8,59.1
+    .goto The Barrens,44.8,59.1
     .turnin 882 >>Turn in Ishamuhale
     .accept 907 >>Accept Enraged Thunder Lizards
     .accept 1130 >>Accept Melor Sends Word
@@ -1004,7 +1009,7 @@ step << Shaman/Warrior
     .collect 924,1
 step
     .goto Thunder Bluff,61.4,80.9
-    .turnin 1130 >>Turn in Melor Sends Word
+    .turnin -1130 >>Turn in Melor Sends Word
     .accept 1131 >>Accept Steelsnap
 step
     .goto Thunder Bluff,54.7,51.1
@@ -1398,6 +1403,9 @@ step << Warrior
 .goto Orgrimmar,79.7,31.4
         #completewith next
 .trainer >> Go and train your class spells
+step << Warrior
+    .goto Orgrimmar,81.2,19.0
+    .collect 29009,1 >> Purchase a Heavy Throwing Dagger from Zendo'jian
 step
     .goto Orgrimmar,76.5,24.5
     .turnin 3923 >>Turn in Rilli Greasygob

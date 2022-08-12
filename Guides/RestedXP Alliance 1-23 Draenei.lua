@@ -832,7 +832,7 @@ step
     .vendor >> Buy water/food for you and your pet << Hunter
 step
     .goto Bloodmyst Isle,56.4,56.8
-    .accept 9648 >> Accept Mac'Aree Mushroom Menagerie
+    .accept 9648 >> Accept Maatparm Mushroom Menagerie
 step
 	#completewith next
     .goto Bloodmyst Isle,57.6,54.0
@@ -1122,7 +1122,7 @@ step
     .turnin 9667 >> Turn in Saving Princess Stillpine
 step
     .goto Bloodmyst Isle,56.4,56.7
-    .turnin 9648 >> Turn in Mac'Aree Mushroom Menagerie
+    .turnin 9648 >> Turn in Maatparm Mushroom Menagerie
 step
     .goto Bloodmyst Isle,55.4,55.3
     .accept 9641 >> Accept Irradiated Crystal Shards
@@ -1548,8 +1548,6 @@ step
     .complete 9647,1 --Kill Royal Blue Flutterer (10)
 	.complete 9580,1 --Elder Brown Bear Flank (8)
 step
-	.goto Bloodmyst Isle,43.7,26.6,80,0
-	.goto Bloodmyst Isle,46.3,32.0,80,0
     .goto Bloodmyst Isle,29.6,39.5
 	>>Kill the Fouled Water Spirits in the area
     .complete 10067,1 --Kill Fouled Water Spirit (x6)

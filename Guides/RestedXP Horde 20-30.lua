@@ -864,6 +864,15 @@ step
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
 step
+    .isOnQuest 1489
+    .goto Thunder Bluff,78.4,28.4
+    .turnin 1489 >> Turn in Hamuul Runetotem
+    .accept 1490 >> Accept Nara Runetotem
+step
+    .isQuestTurnedIn 1489
+    .goto Thunder Bluff,75.6,31.2
+    .turnin 1490 >> Turn in Nara Runetotem
+step
     .isOnQuest 962
     >> Head to the pools under the Spirit Rise
     .goto Thunder Bluff,22.9,21.1
@@ -1056,6 +1065,10 @@ step
     .goto Silverpine Forest,44.1,42.5
     .turnin 264 >> Turn in Until Death Do Us Part
     .isOnQuest 264
+step
+    .isOnQuest 3301
+    .goto Silverpine Forest,43.0,42.0
+    .turnin 3301 >> Turn in Mara Runetotem
 step
     .goto Silverpine Forest,45.6,42.6
     .fp The Sepulcher >> Get the The Sepulcher flight path
@@ -1696,13 +1709,9 @@ step << Rogue
 step
     #label flytimebabyyy
 step
-	.goto Orgrimmar,45.2,63.8
+	.goto Orgrimmar,45.2,63.8,-1
+    .goto Ashenvale,73.2,61.6,-1
     .fly Thunder Bluff >> Fly to Thunder Bluff
-    .zoneskip Orgrimmar,1
-step
-    .goto Ashenvale,73.2,61.6
-    .fly Thunder Bluff >> Fly to Thunder Bluff
-    .zoneskip Ashenvale,1
 ]])
 
 RXPGuides.RegisterGuide([[

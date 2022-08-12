@@ -760,6 +760,9 @@ step << Rogue
     .goto Teldrassil,44.0,54.6
     .deathskip >>Once you get past the furbolg area, die on purpose and respawn at the Darnassus graveyard
 step << Rogue
+    .goto Darnassus,64.6,53.0
+    .collect 25873,1 >> Purchase a Keen Throwing Knife from Ellandrieth
+step << Rogue
     .goto Darnassus,38.3,21.4
     .turnin 922 >> Turn in Rellian Greenspyre
     .accept 923 >> Accept Tumors
@@ -834,6 +837,9 @@ step
     .accept 6344 >> Accept Nessa Shadowsong
 step
 	.abandon 927 >> Abandon The Moss-twined Heart. You never have an opportunity to turn it in
+step << Warrior
+    .goto Darnassus,64.6,53.0
+    .collect 25873,1 >> Purchase a Keen Throwing Knife from Ellandrieth
 step << Warrior
     .goto Darnassus,57.4,34.8
     .turnin 1684 >> Turn in Elanaria
