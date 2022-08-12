@@ -857,6 +857,12 @@ function addon.settings.CreateExtrasOptionsPanel()
                         width = "full",
                         order = 3,
                     },
+                    enablelevelSplits = {
+                        name = "Enable Level Splits",
+                        type = "toggle",
+                        width = "full",
+                        order = 4,
+                    },
                 }
             }
         }

@@ -51,6 +51,10 @@ function addon.tracker:SetupTracker()
     if addon.settings.db.profile.enableTrackerReport then
         addon.tracker:CreateGui()
     end
+
+    if addon.settings.db.profile.enableBetaFeatures then
+        self:ShowLevelSplits()
+    end
 end
 
 function addon.tracker:UpgradeDB()
@@ -707,5 +711,27 @@ function addon.tracker:UpdateReport(selectedLevel)
     trackerUi.extrasContainer.data:SetText(extrasBlock)
 
     trackerUi.scrollContainer:DoLayout()
+
+end
+
+function addon.tracker:ShowLevelSplits()
+    if not addon.settings.db.profile.enablelevelSplits then return end
+
+    addon.tracker.levelSplits = AceGUI:Create("Frame")
+    local levelSplits = addon.tracker.levelSplits
+
+    levelSplits:SetLayout("Fill")
+    levelSplits.statustext:GetParent():Hide() -- Hide the statustext bar
+    levelSplits:SetTitle("RestedXP Level Splits")
+    -- levelSplits:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
+    levelSplits:SetWidth(32)
+    levelSplits:SetHeight(96)
+
+    levelSplits.scrollContainer = AceGUI:Create("ScrollFrame")
+    levelSplits.scrollContainer:SetLayout("Flow")
+    levelSplits:AddChild(levelSplits.scrollContainer)
+
+    levelSplits.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    levelSplits.frame:SetBackdropColor(unpack(addon.colors.background))
 
 end
