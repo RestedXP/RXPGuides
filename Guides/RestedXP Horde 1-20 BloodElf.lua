@@ -56,7 +56,6 @@ step << Paladin
 step << Paladin
     .goto Eversong Woods,39.5,20.6
     .accept 10069 >> Accept Well Watcher Solanian
-    .train 465 >> Train Devotion Aura
 step << Mage
     .goto Eversong Woods,39.2,21.5
     .turnin 8328 >> Turn in Mage Training
@@ -100,6 +99,7 @@ step
     .turnin 10071 >> Turn in Well Watcher Solanian << Rogue
     .turnin 10070 >> Turn in Well Watcher Solanian << Hunter
     .turnin 10068 >> Turn in Well Watcher Solanian << Mage
+    .turnin 10069 >> Turn in Well Watcher Solanian << Paladin
     .accept 8330 >> Accept Solanian's Belongings
     .accept 8345 >> Accept The Shrine of Dath'Remar
 step
@@ -120,7 +120,7 @@ step << Warlock tbc
 step << Warlock tbc
     #sticky
     #completewith ArcaneSliver
-    >>Grind and Mana Tap creatures with mana as you quest. Be sure to loot them for Arcane Slivers
+    >>Grind and Arcane Torrent creatures with mana as you quest. Be sure to loot them for Arcane Slivers
     .complete 8346,1 --Mana Tap creature (x6)
     .complete 8336,1 --Collect Arcane Sliver (x6)
 step << Warlock tbc
@@ -232,11 +232,18 @@ step
     .goto Eversong Woods,35.4,22.5
     .turnin 8334 >> Turn in Aggression
     .accept 8335 >> Accept Felendren the Banished
+step << !Warlock tbc
+    .goto Eversong Woods,35.3,28.5
+    .xp 4-360 >> Grind til you are 360 exp from level 4.
+step << wotlk
+    .goto Eversong Woods,35.3,28.5
+    .xp 4-610 >> Grind til you are 610 exp from level 4.
 step << wotlk
     #label arcaneend
     #requires manaarcane	
     .goto Eversong Woods,37.2,18.9
     .turnin 8346 >> Turn in Thirst Unending
+    .vendor >> Vendor your trash << !Mage !Priest !Warlock
 step << !Warlock tbc
     #label arcaneend
     #requires manaarcane
@@ -246,14 +253,6 @@ step << wotlk
 	.isQuestComplete 8336
     .goto Eversong Woods,38.3,19.1
     .turnin 8336 >> Turn in A Fistful of Slivers
-
-
-step << !Warlock tbc
-    .goto Eversong Woods,35.3,28.5
-    .xp 4 >> Grind to 4
-step << wotlk
-    .goto Eversong Woods,35.3,28.5
-    .xp 4 >> Grind to 4	
 step << Mage tbc/Priest tbc
     #completewith pepegavendor
     .goto Eversong Woods,38.7,20.3
@@ -263,7 +262,7 @@ step << Mage wotlk/Priest wotlk/Warlock wotlk
     #completewith pepegavendor
     .goto Eversong Woods,38.7,20.3
     .vendor >>Vendor trash
-step << Rogue/Paladin/Hunter
+step << Rogue tbc/Paladin tbc/Hunter tbc
     #completewith pepegavendor
 .goto Eversong Woods,38.7,20.3
     .vendor >>Vendor trash
@@ -383,14 +382,17 @@ RXPGuides.RegisterGuide([[
 #next 10-20 Eversong Woods / Ghostlands << !Warrior
 #next 10-13 Durotar << Warrior
 step
+    >> Talk to Magister Jaronis
     .goto Eversong Woods,47.3,46.3
     .accept 8472 >> Accept Major Malfunction
 step
     .goto Eversong Woods,47.7,47.2,20 >>Go in the inn
 step << BloodElf
+    >> Talk to Innkeeper Delaniel
     .goto Eversong Woods,48.2,47.7
     .turnin 8350 >> Turn in Completing the Delivery
-step << Priest/Mage/Warlock/Warrior/Rogue/Paladin/Shaman
+    .home >> Go back downstairs. Set your Hearthstone to Falconwing Square
+step << Priest/Mage/Warlock/Warrior/Rogue
     .goto Eversong Woods,48.3,47.0,8 >>Go upstairs
 step << BloodElf Priest
     .goto Eversong Woods,47.9,48.0
@@ -409,7 +411,7 @@ step << Warlock
     .goto Eversong Woods,48.2,47.9
     .train 695 >>Train Shadow Bolt r2
     .train 1454 >>Train Life Tap
-step << Warrior/Rogue/Paladin
+step << Warrior/Rogue
     .goto Eversong Woods,48.6,47.6
     .train 3273 >>Train First Aid
 step
@@ -419,6 +421,7 @@ step
 step
     .goto Eversong Woods,47.7,47.2,10 >>Go outside
 step
+    >> Talk to the Wanted Poster then Aeldon Sunbrand
     .goto Eversong Woods,48.1,46.2
     .accept 8468 >> Accept Wanted: Thaelis the Hungerer
     .accept 8463 >> Accept Unstable Mana Crystals
@@ -469,13 +472,16 @@ step
 step
     #requires thaelishead
     .goto Eversong Woods,47.3,46.3
+    >> Talk to Maigster Jaronis
     .turnin 8472 >> Turn in Major Malfunction
     .accept 8895 >> Accept Delivery to the North Sanctum
 step
+    >> Talk to Sergeant Kan'ren
     .goto Eversong Woods,47.8,46.6
     .turnin 8468 >> Turn in Wanted: Thaelis the Hungerer
 step
     .goto Eversong Woods,48.2,46.0
+    >> Talk to Aeldon Sunbrand
     .turnin 8463 >> Turn in Unstable Mana Crystals
     .accept 9352 >> Accept Darnassian Intrusions
 step << Warrior/Paladin
@@ -489,13 +495,16 @@ step << Rogue
     >>Buy Stiletto and equip it
     .collect 2494,1 --Collect Stiletto
 step
+    >> Leave Falconwing Square and talk to Ley-Keeper Caidanis
     .goto Eversong Woods,44.6,53.1
     .turnin 8895 >> Turn in Delivery to the North Sanctum
     .accept 9119 >> Accept Malfunction at the West Sanctum
 step
     .goto Eversong Woods,45.2,56.4
+    >> Talk to Apprentice Ralen beside the cart
     .accept 9035 >> Accept Roadside Ambush
 step
+    >> Talk to Apprentice Meledor by the river
     .goto Eversong Woods,44.9,61.0
     .turnin 9035 >> Turn in Roadside Ambush
     .accept 9062 >> Accept Soaked Pages
@@ -504,10 +513,12 @@ step
     >>The Grimoire is in the water under the bridge.
     .complete 9062,1 --Collect Antheol's Elemental Grimoire (x1)
 step
+    >> Return to Apprentice Meledor
     .goto Eversong Woods,44.9,61.0
     .turnin 9062 >> Turn in Soaked Pages
     .accept 9064 >> Accept Taking the Fall
 step
+    >> talk to Ranger Jaela at the Dead Scar
     .goto Eversong Woods,50.3,50.8
     .accept 8475 >> Accept The Dead Scar
 step << BloodElf Priest
@@ -522,6 +533,7 @@ step
     .complete 8475,1 --Kill Plaguebone Pillager (x8)
 step
     .goto Eversong Woods,55.7,54.5
+    >> Talk to Instructor Antheol
     .turnin 9064 >> Turn in Taking the Fall
     .accept 9066 >> Accept Swift Discipline
 step
@@ -536,6 +548,7 @@ step
     .goto Eversong Woods,50.2,51.8
     .complete 8475,1 --Kill Plaguebone Pillager (x8)
 step
+    >> Return to Ranger Jaela
     .goto Eversong Woods,50.3,50.8
     .turnin 8475 >> Turn in The Dead Scar
 step << Paladin/Priest/Mage
@@ -548,6 +561,7 @@ step << Paladin/Priest/Mage
     .complete 9066,1 --Apprentice Meledor Disciplined
 step
     .goto Eversong Woods,36.7,57.4
+    >> Talk to Ley-Keeper Valania
     .turnin 9119 >> Turn in Malfunction at the West Sanctum
     .accept 8486 >> Accept Arcane Instability
 step
@@ -564,6 +578,7 @@ step
        .collect 20765,1
     .unitscan Darnassian Scout
 step
+    >> Kill mana enemies in the area
     .goto Eversong Woods,36.0,59.3
     .complete 8486,1 --Kill Manawraith (x5)
     .complete 8486,2 --Kill Mana Stalker (x5)
@@ -575,10 +590,12 @@ step
            .collect 20765,1,8482
     .accept 8482 >> Accept Incriminating Documents
 step
+    >> Return to Ley-Keeper Velania
     .goto Eversong Woods,36.7,57.4
     .turnin 8486 >> Turn in Arcane Instability
     .turnin 9352 >> Turn in Darnassian Intrusions
 step
+    >> Talk to Hathvelion Sungaze
     .goto Eversong Woods,30.2,58.4
     .accept 8884 >> Accept Fish Heads, Fish Heads...
 step
@@ -588,6 +605,7 @@ step
     >>Kill Murlocs until you loot Captain Kelisendra's Lost Rutters
     .goto Eversong Woods,28.1,60.1
         .collect 21776,1,8887 --Captain Kelisendra's Lost Rutters
+    .use 21776
     .accept 8887 >> Accept Captain Kelisendra's Lost Rutters
 step
     >>Kill Murlocs for Murloc Heads
@@ -600,6 +618,7 @@ step
     #label murlocend3
         #requires CaptainKelisendra
     .goto Eversong Woods,30.2,58.4
+    >> Return to Hathvelion Sungaze
     .turnin 8884 >> Turn in Fish Heads, Fish Heads...
     .accept 8885 >> Accept The Ring of Mmmrrrggglll
 step << Warrior/Warlock/Hunter/Rogue
@@ -648,10 +667,12 @@ step << Warrior/Warlock/Hunter/Rogue
     .goto Eversong Woods,44.9,61.0
     .complete 9066,1 --Apprentice Meledor Disciplined
 step << !Hunter
+    >> Speak to Magistrix Landra Dawnstrider
     .goto Eversong Woods,44.0,70.8
     .accept 9395 >> Accept Saltheril's Haven
     .accept 9254 >> Accept The Wayward Apprentice
 step << Hunter
+    >> Speak to Magistrix Landra Dawnstrider
     .goto Eversong Woods,44.0,70.8
     .accept 9254 >> Accept The Wayward Apprentice
 step << Hunter
@@ -662,9 +683,11 @@ step << Hunter
     .goto Eversong Woods,43.7,71.3
     .home >> Set your Hearthstone to Fairbreeze Village
 step << !Hunter
+    >> Speak to Marniel Amberlight
     .goto Eversong Woods,43.7,71.3
     .accept 9358 >> Accept Ranger Sareyn
 step
+    >> Speak to Ardeyn Riverwind
     .goto Eversong Woods,43.6,71.2
     .accept 9258 >>Accept The Scorched Grove
 step
@@ -677,9 +700,11 @@ step
     .goto Eversong Woods,44.0,70.4,0,0
     .vendor >> Vendor trash. You can buy some 6 slot bags from Halis if you want. Money is plentiful in the Blood Elf zones.
 step
+    >> Speak to Velan Brightoak
     .goto Eversong Woods,44.7,69.6
     .accept 8491 >> Accept Pelt Collection
 step
+    >> Speak to Ranger Sareyn
     .goto Eversong Woods,46.9,71.8
     .turnin 9358 >> Turn in Ranger Sareyn
     .accept 9252 >> Accept Defending Fairbreeze Village
@@ -689,11 +714,13 @@ step
     >>Keep an eye out for Springpaws for some of the Pelts.
     .complete 8491,1 --Collect Springpaw Pelt (x6)
 step << !BloodElf/!Hunter
+    >> Speak to Lord Saltheril
     .goto Eversong Woods,38.1,73.6
     .turnin 9395 >> Turn in Saltheril's Haven
     .accept 9067 >>Accept The Party Never Ends
 step
     #label Sunsail
+    >> Speak to Captain Kelisendra and Velendris Whitemorn
     .goto Eversong Woods,36.4,66.7
     .turnin 8887 >> Turn in Captain Kelisendra's Lost Rutters
     .accept 8886 >> Accept Grimscale Pirates!
@@ -709,6 +736,7 @@ step
     >>Look around for boxes of Armaments. There's a lot in the main building on the first 2 floors and some in/near the docks and boats
     .complete 8480,1 --Collect Sin'dorei Armaments (x8)
 step
+    >> Return to the Captain's camp
     .goto Eversong Woods,36.4,66.8
     .turnin 8480 >>Turn in Lost Armaments
     .accept 9076 >>Accept Wretched Ringleader
@@ -723,7 +751,7 @@ step
     .complete 8892,2 --Kill Wretched Hooligan (x5)
 step
     #sticky
-#completewith next
+    #completewith pelttyyy
     >>Keep an eye out for Springpaws for some of the Pelts en route to murlocs
     .complete 8491,1 --Collect Springpaw Pelt (x6)
 step
@@ -747,11 +775,13 @@ step
     .unitscan Mmmrrrggglll
 step
     #requires Cargo
+    >> Return to Hathvelion Sungaze ontop of the hill
     .goto Eversong Woods,30.2,58.4
     .turnin 8885 >> Turn in The Ring of Mmmrrrggglll
 step
-    >> Kill and loot any Springpaw Lynxes you see en route
+    #label pelttyyy
     .goto Eversong Woods,36.4,66.7
+    >> Return to the Captain's camp
     .turnin 8886 >> Turn in Grimscale Pirates!
     .turnin 9076 >> Turn in Wretched Ringleader
 step << Hunter
@@ -787,7 +817,7 @@ step
     >>Keep an eye out for Springpaws for some of the Pelts
     .complete 8491,1 --Collect Springpaw Pelt (x6)
 step << !Hunter
-    >> Head upstairs
+    >> Head upstairs, speak with Ranger Degolien
     .goto Eversong Woods,43.3,70.8
     .turnin 8892 >>Turn in Situation at Sunsail Anchorage
     .accept 9359 >>Accept Farstrider Retreat
@@ -796,6 +826,7 @@ step << !Hunter
     .vendor >> Vendor trash and repair downstairs
 step << !Hunter
     .isQuestComplete 8491
+    >> Talk to Velan Brightoak
     .goto Eversong Woods,44.7,69.7
     .turnin 8491 >> Turn in Pelt Collection
 step
@@ -809,6 +840,7 @@ step
     .complete 9252,2 --Kill Darkwraith (x4)
     .complete 9252,1 --Kill Rotlimb Marauder (x4)
 step
+    >> Speak to Apprentice Mirveda
     .goto Eversong Woods,54.3,71.0
     .turnin 9254 >> Turn in The Wayward Apprentice
     .accept 8487 >> Accept Corrupted Soil
