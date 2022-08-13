@@ -316,7 +316,7 @@ step
 step
 	.goto Tirisfal Glades,42.59,51.30,50,0
 	.goto Tirisfal Glades,42.59,51.30	
-    .deathskip >> Die and respawn at the Spirit Healer	in Brill
+    .deathskip >> Die and respawn at the Spirit Healer in Brill
 step
     .goto Tirisfal Glades,60.6,51.8
     .turnin 383 >> Turn in Vital Intelligence
