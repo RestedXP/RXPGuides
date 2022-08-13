@@ -598,6 +598,7 @@ step << Warrior/Paladin/Rogue
     .goto Dun Morogh,50.2,50.4
 .train 2580 >>Go inside the house. Train Mining, cast Find Minerals
 step << Warrior/Paladin/Rogue
+    .isOnQuest 313
     .goto Dun Morogh,49.6,48.6
     .turnin 313 >> Turn in The Grizzled Den
 step << Warrior/Paladin/Rogue
@@ -706,6 +707,7 @@ step
 .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
 step
+    #completewith next
 .hs >> Hearth to Kharanos
 step
 .goto Dun Morogh,47.4,52.5
@@ -713,6 +715,7 @@ step
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1 --Collect Thunder Ale (x1)
 step
+    .isOnQuest 310
     .goto Dun Morogh,47.6,52.4,10 >>Go in the room behind the innkeeper
 step
     >>Go downstairs, then talk to Jarven, and give him the Thunder Ale
@@ -825,6 +828,7 @@ step
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
 step
+    .isOnQuest 287
     .goto Dun Morogh,24.5,50.8,30 >>Enter the cave
 step
     .goto Dun Morogh,22.1,50.3,40,0
@@ -838,8 +842,11 @@ step
     .goto Dun Morogh,23.0,52.2
     .complete 287,2 --Fully explore Frostmane Hold
 step
+    .goto Dun Morogh,23.0,52.2
     .xp 9 >> Grind to level 9
 step
+    .isOnQuest 287
+    .goto Dun Morogh,46.7,53.8
 .deathskip >> Die and respawn at the Spirit Healer
 step
     .goto Dun Morogh,46.7,53.8
@@ -963,14 +970,19 @@ step
     .goto Dun Morogh,83.9,39.2
     .turnin 417 >> Turn in A Pilot's Revenge
 step
+    .isOnQuest 413
     .goto Dun Morogh,81.2,42.7,15 >>Go back through the tunnel
 step
     .goto Dun Morogh,79.6,50.7,50,0
 .goto Dun Morogh,82.3,53.5,25,0
     .goto Dun Morogh,86.3,48.8
-    .turnin 413 >> Turn in Shimmer Stout
+    .turnin -413 >> Turn in Shimmer Stout
+step
+    .isQuestTurnedIn 413
+    .goto Dun Morogh,86.3,48.8
     .accept 414 >> Accept Stout to Kadrell
 step
+    .isOnQuest 414
 .goto Dun Morogh,86.2,51.3,20 >>Go through the tunnel
 step << Mage/Rogue
     .goto Loch Modan,22.1,73.1
@@ -1015,8 +1027,6 @@ step << Mage
 step << Rogue tbc
     .goto Loch Modan,35.5,48.4
     .home >> Set your Hearthstone to Thelsamar
-step << Paladin/Warrior/Priest
-
 step << Mage
     .goto Loch Modan,34.8,48.6
     .vendor >> Buy max 3 6 slot bags
