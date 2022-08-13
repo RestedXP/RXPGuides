@@ -16,12 +16,12 @@ step << !Orc !Troll
 step
     .goto Durotar,43.3,68.5
     .accept 4641 >>Accept Your Place In The World
-step << Warlock
+step << Warlock tbc
     #sticky
     #completewith next
     +Kill Boars for 10c+ of vendor trash
     .goto Durotar,44.0,71.3,30,0
-step << Warlock
+step << Warlock tbc
     .goto Durotar,42.6,69.0
 .accept 1485 >>Accept Vile Familiars
 step << Warrior/Shaman
@@ -32,20 +32,20 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     .goto Durotar,42.6,67.3
     .vendor >> Vendor trash. Vendor armor if less than 10c
-step
-    .goto Durotar,42.1,68.4
-    .turnin 4641 >>Turn in Your Place In The World
-    .accept 788 >>Accept Cutting Teeth
 step << Warrior
     .goto Durotar,42.9,69.4
     .train 6673 >>Train Battle Shout
 step << Shaman
     .goto Durotar,42.4,69.0
     .train 8017 >>Train Rockbiter Weapon
-step << Warlock
+step
+    .goto Durotar,42.1,68.4
+    .turnin 4641 >>Turn in Your Place In The World
+    .accept 788 >>Accept Cutting Teeth
+step << Warlock tbc
     .goto Durotar,40.6,68.4
-    .vendor >>vendor trash at the demon trainer
-step << Warlock
+    .vendor >>Vendor trash at the demon trainer
+step << Warlock tbc
      .goto Durotar,40.6,68.5
     .train 348 >>Train Immolate
 step << !Warlock
@@ -53,21 +53,23 @@ step << !Warlock
     #label motboars
     .goto Durotar,41.9,63.7,0,0
     .complete 788,1 --Mottled Boar (10)
-step << Warlock
+step << Warlock tbc
     #sticky
     #completewith WarlockBoars
 >>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don't sit and drink for these
     .complete 788,1 --Mottled Boar (10)
-step << Warlock
+step << Warlock tbc
     #label WarlockBoars
     .goto Durotar,45.0,57.4,90 >> Run to the Familiars
-step << Warlock
+step << Warlock tbc
     .goto Durotar,45.3,56.9
     >>Kill Vile Familiars for their heads
     .complete 1485,1 --Vile Familiar Head (6)
 step << Warlock
-    #sticky
->>Finish off killing the Mottled Boars
+    #sticky << tbc
+	>>Finish off killing the Mottled Boars << tbc
+	>>Kill Mottled Boars << wotlk
+	.goto Durotar,41.9,63.7 << wotlk
     #label warlockboarfi
     .complete 788,1 --Mottled Boar (10)
 step << Warlock
@@ -78,32 +80,35 @@ step << !Warlock
     .goto Durotar,40.6,62.6
     .accept 790 >>Accept Sarkoth
 step
+	#sticky
+	#completewith next
     .goto Durotar,40.7,65.2,15 >>Go up the path here
 step << Warlock
     #requires warlockboarfi
     >>Kill Sarkoth. Loot his claw
-.goto Durotar,40.7,67.3
+	.goto Durotar,40.7,67.3
     .complete 790,1 --Sarkoth's Mangled Claw (1)
 step << !Warlock
     >>Kill Sarkoth. Loot his claw
-.goto Durotar,40.7,67.3
+	.goto Durotar,40.7,67.3
     .complete 790,1 --Sarkoth's Mangled Claw (1)
 step
     .goto Durotar,40.6,62.6
     .turnin 790 >>Turn in Sarkoth
     .accept 804 >>Accept Sarkoth
-step << Warlock
+step << Warlock tbc
     .xp 3+850 >> Grind to 850+/1400xp on the way back to town
 step << Warlock
     .goto Durotar,42.6,67.3
-    .vendor >>vendor trash, buy 10 water
-step << Warlock
+    .vendor >>Vendor trash, buy 10 water << tbc
+    .vendor >>Vendor trash << wotlk	
+step << Warlock tbc
     .goto Durotar,42.6,69.0
     .turnin 1485 >>Turn in Vile Familiars
     .accept 1499 >>Accept Vile Familiars
-step << Warlock
+step << Warlock tbc
     .cast 688 >>Choose the dagger and equip it. Remember to summon your Imp
-.goto Durotar,42.9,69.1
+	.goto Durotar,42.9,69.1
     .turnin 1499 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
 step << !Orc !Troll
@@ -189,25 +194,41 @@ step << Orc Warlock
     .accept 3090>>Accept Tainted Parchment
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Rogue
-      .goto Durotar,41.3,68.0
+    .goto Durotar,41.3,68.0
     .turnin 3088 >>Turn in Encrypted Parchment
-step << Orc Warlock
+step << Orc Warlock tbc
     .goto Durotar,40.6,68.4
-    .vendor >>vendor trash at the Demon trainer
+    .vendor >>Vendor trash at the Demon trainer
+step << Warlock wotlk
+    .goto Durotar,40.51,68.04
+	.money >0.0065
+	.vendor >>Grind mobs until you get a total of 65 copper. (After vendoring everything)
+	*Sell your starting gear as well to get 95 copper.
+--95c for imp, 65c for min before quest gear/starting gear vendor price.
+step << Warlock wotlk
+	#completewith next
+    .goto Tirisfal Glades,32.3,65.4
+	.money >0.0095
+	.vendor >>Grind mobs until you get a total of 95 copper. Vendor anything you can if it helps you get 95 copper.
+--95c for imp	
 step << Orc Warlock
-     .goto Durotar,40.6,68.5
+    .goto Durotar,40.6,68.5
     .turnin 3090>>Turn in Tainted Parchment
-    .train 172 >>Train Corruption
+    .train 172 >>Train Corruption << tbc
+	.train 688 >> Train Summon Imp << wotlk
 step << Shaman/Priest/Mage
     .goto Durotar,42.6,67.3
     .vendor >>Vendor trash & buy 10 water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Warrior/Rogue
     .goto Durotar,42.6,67.3
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step << Hunter
     .goto Durotar,42.6,67.3
     .vendor >> Vendor trash. Buy arrows until your Quiver is full (1000 arrows)
+step << Warlock wotlk
+	#completewith next
+	.cast 688 >> Summon your Imp	
 step
 .goto Durotar,42.7,67.3
     .accept 4402 >>Accept Galgar's Cactus Apple Surprise
@@ -237,7 +258,7 @@ step << Orc Warrior
 step << Troll Warrior
     .goto Durotar,42.9,69.4
     .turnin 3065 >>Turn in Simple Tablet
-step << !Warlock
+step << !Warlock tbc/Warlock wotlk
     .goto Durotar,42.9,69.1
     .accept 792 >>Accept Vile Familiars
 step
@@ -264,10 +285,10 @@ step << !Warlock
 step << Warlock
     >>Kill Scorpions for their tails
 .complete 789,1 --Scorpid Worker Tail (10)
-.goto Durotar,47.1,65.2,30,0
-.goto Durotar,46.6,58.2,30,0
+.goto Durotar,47.1,65.2,40,0
+.goto Durotar,46.6,58.2,40,0
 .goto Durotar,39.8,63.5
-step << !Warlock
+step << !Warlock tbc/Warlock wotlk
     #label imps
 .goto Durotar,45.2,56.8
     >>Kill Imps in front of the cave
@@ -282,7 +303,7 @@ step
     #sticky
     #label cactusapples
     .goto Durotar,44.0,65.3,0,0
-    >>Loot Cactuses that you see with apples on them
+    >>Loot the Cacti that you see with apples on them
     .complete 4402,1 --Cactus Apple (10)
 step
     .goto Durotar,47.4,65.7
@@ -299,8 +320,9 @@ step << Warrior/Rogue/Hunter/Druid/Paladin/Shaman
 .vendor >> Vendor trash
 step << Mage/Priest/Warlock
     .goto Durotar,42.6,67.3
-    .vendor >> Vendor trash & buy 10 water
-    .collect 159,10 --Collect Refreshing Spring Water (x10)
+    .vendor >> Vendor trash & buy 10 water << tbc
+    .vendor >> Vendor trash << wotlk
+    .collect 159,10 << tbc --Collect Refreshing Spring Water (x10)
 step
     .goto Durotar,42.1,68.3
     .turnin 789 >>Turn in Sting of the Scorpid
@@ -320,7 +342,7 @@ step << Priest
     .money <0.0190
     .goto Durotar,42.4,68.8
     .train 589 >>Train Shadow Word: Pain
-step << !Shaman !Warlock
+step << !Shaman !Warlock tbc/Warlock wotlk
     .goto Durotar,42.9,69.1
     .turnin 792 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
@@ -341,6 +363,7 @@ step
     .turnin 5441 >>Turn in Lazy Peons
     .accept 6394 >>Accept Thazz'ril's Pick
 step
+	#completewith next
     .goto Durotar,45.2,56.8,30 >>Run to the cave
 step << Shaman
     #sticky
@@ -359,10 +382,11 @@ step
     >>Kill Yarrog. Loot him for the Medallion
 .goto Durotar,42.7,53.0
     .complete 794,1 --Burning Blade Medallion (1)
+	.unitscan Yarrog Baneshadow
 step << !Shaman
-    .xp 5+1725 >> Grind to 1725+/2800xp
-step << Shaman
     .xp 5+1200 >> Grind to 1200+/2800xp
+step << Shaman
+    .xp 5+690 >> Grind to 690+/2800xp
 step << !Paladin
     #completewith next
     .hs >>Hearth to Valley of Trials
@@ -373,19 +397,20 @@ step
     .goto Durotar,44.6,68.6
     .turnin 6394 >>Turn in Thazz'ril's Pick
 step
-    .goto Durotar,42.6,67.3
-.vendor >> Vendor trash
-step
     >>Save the healing potion you get as you may need it later for the centaurs
 .goto Durotar,42.8,69.1
     .turnin 794 >>Turn in Burning Blade Medallion
     .accept 805 >>Accept Report to Sen'jin Village
+step
+	#completewith next
+    .goto Durotar,42.6,67.3
+	.vendor >> Vendor trash	
 step << !Shaman
     .xp 6 >> Grind to level 6
 step << Priest
-.goto Durotar,42.4,68.8
-.accept 5649 >> In Favor of Spirituality
-.train 591 >>Train Smite rank 2
+	.goto Durotar,42.4,68.8
+	.accept 5649 >> In Favor of Spirituality
+	.train 591 >>Train Smite rank 2
     .train 17 >>Train Power Word: Shield
 step << Mage
     .goto Durotar,42.5,69.0
@@ -409,7 +434,7 @@ step << Rogue
 step << Warlock
     .goto Durotar,40.6,68.5
     .train 695 >>Train Shadow Bolt rank 2
-    .train 1454 >>Train Life Tap
+    .train 1454 >>Train Life Tap << tbc
 step << Warlock
     .money <0.0095
 .goto Durotar,40.6,68.4
@@ -651,6 +676,8 @@ step
     .complete 784,1 --Kul Tiras Sailor (10)
     .complete 784,2 --Kul Tiras Marine (8)
     .complete 791,1 --Canvas Scraps (8)
+step
+    .goto Durotar,59.2,58.3,15 >>Go inside the keep
 step
     .goto Durotar,59.7,58.3
     >>Go to the top floor of the Keep. Kill Lieutenant Benedict and loot his key - be careful as he uses Shield Bash (Interrupt)
@@ -1380,7 +1407,7 @@ step
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines
 step
-    .goto Durotar,40.8,16.3
+    .goto Durotar,41.5,18.6
     .accept 812 >>Accept Need for a Cure
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
@@ -1475,10 +1502,8 @@ step
     .turnin 828 >>Turn in Margoz
     .accept 827 >>Accept Skull Rock
 step
-    #sticky
-    #completewith next
-    >>Kill Scorpions for Poison Sacs as you travel
-    .goto Durotar,55.7,15.7
+    >>Kill Scorpions for Poison Sacs
+.goto Durotar,55.7,15.7
     .complete 813,1 --Venomtail Poison Sac (4)
 step
     #sticky
@@ -1499,13 +1524,6 @@ step << Tauren Shaman/Tauren Warrior/Undead Warrior/Paladin
     .accept 832 >>Accept Burning Shadows
 step
     #requires Collars2
-    #sticky
-    #completewith harpingme
-    >>Kill Scorpions for Poison Sacs as you travel
-    .goto Durotar,55.7,15.7
-    .complete 813,1 --Venomtail Poison Sac (4)
-step
-    #requires Collars2
 .goto Durotar,56.4,20.1
     .turnin 827 >>Turn in Skull Rock
     .accept 829 >>Accept Neeru Fireblade
@@ -1519,7 +1537,6 @@ step << Shaman
 step << Shaman
     .goto Durotar,52.8,28.7,20 >> Leave the cave
 step
-    #label harpingme
     .goto Durotar,54.0,27.7,30,0
     .goto Durotar,51.3,23.5,30,0
     .goto Durotar,51.5,19.1,30,0
@@ -1531,16 +1548,9 @@ step
     .complete 835,2 --Dustwind Storm Witch (8)
 step
     .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
-step << Warrior/Rogue
-	.goto Orgrimmar,81.2,19.0
-	.collect 25873,1 >> Purchase a Keen Throwing Knife from Zendo'jian
 step
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
-step
-    >>Kill Scorpions for Poison Sacs
-    .goto Durotar,55.7,15.7
-    .complete 813,1 --Venomtail Poison Sac (4)
 step
     .goto Orgrimmar,31.8,37.8
     .turnin 5726 >>Turn in Hidden Enemies
@@ -1556,7 +1566,7 @@ step
     .goto Orgrimmar,49.4,50.5
     .turnin 832 >>Turn in Burning Shadows
 step
-    .goto Durotar,40.8,16.3
+    .goto Durotar,41.6,18.7
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step
