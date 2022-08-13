@@ -13,25 +13,25 @@ step << !Scourge
     .goto Tirisfal Glades,30.2,71.7
     +You have selected a guide meant for Undead. It is recommended you choose the same starter zone that you start in
 step
-    >>Delete your Hearthstone
 	.destroy 6948
-     >>Run out of the crypt
-    .goto Tirisfal Glades,30.2,71.7
+    >>Run out of the crypt and delete your Hearthstone << tbc
+    .goto Tirisfal Glades,30.2,71.7 << tbc
+    .goto Tirisfal Glades,29.99,71.86 << wotlk
     .accept 363 >> Accept Rude Awakening
 step << Warrior
     #sticky
     #completewith vendorWar
-    +Grind mobs toward town until you have 10c of vendorables
+    +Grind mobs toward town until you have 10c worth of vendorables
     .goto Tirisfal Glades,31.5,69.8
-step << Warlock
+step << Warlock tbc
     #sticky
     #completewith vendorLock
-    +Grind mobs toward town until you have 10c of vendorables
+    +Grind mobs toward town until you have 10c worth of vendorables
     .goto Tirisfal Glades,31.5,69.8
 step << Priest/Mage
     #sticky
     #completewith vendorCaster
-    +Grind mobs toward town until you have 35c of vendorables
+    +Grind mobs toward town until you have 35c worth of vendorables
     .goto Tirisfal Glades,31.5,69.8
 step << Warrior
     #label vendorWar
@@ -43,38 +43,39 @@ step << Warrior
 step << Priest/Mage
     #label vendorCaster
     .goto Tirisfal Glades,32.3,65.4
-    .vendor >> Vendor Trash and then purchase 10 Refreshing Spring Water
-	.collect 159,10 --Collect Refreshing Spring Water (x10)
-step << Warlock
+    .vendor >> Vendor Trash and then purchase 10 Refreshing Spring Water << tbc
+    .vendor >> Vendor Trash << wotlk	
+	.collect 159,10 << tbc --Collect Refreshing Spring Water (x10)
+step << Warlock tbc
     #label vendorLock
     .goto Tirisfal Glades,30.8,66.4
     .vendor >>Vendor trash at Demon Trainer
-step << Warlock
+step << Warlock tbc
     .goto Tirisfal Glades,30.9,66.3
     .train 348 >>Train Immolate
-step << Warlock
+step << Warlock tbc
     .goto Tirisfal Glades,31.0,66.4
     .accept 1470 >>Accept Piercing the Veil
 step << Warlock
     .goto Tirisfal Glades,30.8,66.2
     .turnin 363 >> Turn in Rude Awakening
     .accept 364 >> Accept The Mindless Ones
-step << Warlock
+step << Warlock tbc
     .goto Tirisfal Glades,32.5,61.4
     >> Kill Rattlecage Skeletons in the area for Skulls
     .complete 1470,1 --Rattlecage Skull (3)
-step << Warlock
+step << Warlock tbc
     #completewith next
-    .goto Tirisfal Glades,32.3,65.4,30 >> Grind on your way back to town until 25c+ of vendorables
-step << Warlock
+    .goto Tirisfal Glades,32.3,65.4,30 >> Grind on your way back to town until you have 25c+ of vendorables
+step << Warlock tbc
     .goto Tirisfal Glades,32.3,65.4
     .vendor >> Vendor trash & buy 5 water from Joshua
 	.collect 159,5 --Collect Refreshing Spring Water (x5)
-step << Warlock
-    >>Summon your Imp after you turnin
+step << Warlock tbc
+    >>Summon your Imp after you turnin your quest
     .goto Tirisfal Glades,31.0,66.4
     .turnin 1470 >>Turn in Piercing the Veil
-step << Warlock
+step << Warlock tbc
     .xp 2 >> Grind to level 2
 step << Mage
     #completewith next
@@ -96,13 +97,22 @@ step
 step
 	.goto Tirisfal Glades,32.4,62.8
 	.xp 2 >> Grind to level 2
-step << Mage/Warlock/Priest
+step << Mage tbc/Warlock tbc/Priest tbc
     .goto Tirisfal Glades,32.3,65.4
     .vendor >>Vendor trash & buy 10 more waters
 	.collect 159,10 --Collect Refreshing Spring Water (x10)
+step << Mage wotlk/Priest wotlk
+    .goto Tirisfal Glades,32.3,65.4
+    .vendor >>Vendor trash
 step << Warrior/Rogue
     .goto Tirisfal Glades,32.3,65.4
     .vendor >>Vendor trash
+step << Warlock wotlk
+    .goto Tirisfal Glades,32.3,65.4
+	.money >0.0054
+	.vendor >>Grind mobs until you get a total of 54 copper. (From items after vendoring everything)
+	*We will get 17c from a the next quest turn in and 12c from starting gear
+--95c for imp
 step
     .goto Tirisfal Glades,30.8,66.2
     .turnin 364 >> Turn in The Mindless Ones
@@ -121,9 +131,22 @@ step << Mage
 step << Warlock
     .goto Tirisfal Glades,30.9,66.3
     .turnin 3099 >> Turn in Tainted Scroll
+step << Warlock wotlk
+	#completewith next
+    .goto Tirisfal Glades,32.3,65.4
+	.money >0.0095
+	.vendor >>Grind mobs until you get a total of 95 copper. Vendor anything you can if it helps you get 95 copper.
+--95c for imp	
+step << Warlock wotlk
+	#label impcheck
+	.goto Tirisfal Glades,30.9,66.3
+	.train 688 >> Train Summon Imp
 step << Priest
     .goto Tirisfal Glades,31.1,66.0
     .turnin 3097 >> Turn in Hallowed Scroll
+step << Warlock wotlk
+	#completewith next
+	.cast 688 >> Summon your Imp
 step
     .goto Tirisfal Glades,29.5,67.2,40,0
     .goto Tirisfal Glades,29.6,61.3,50,0
@@ -142,22 +165,21 @@ step
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
 step
     .xp 3+980 >>Grind mobs en route back to town to 980+/1400xp
-step << Mage/Warlock
+step << Mage tbc/Mage wotlk/Warlock tbc
     .goto Tirisfal Glades,32.3,65.4
     .vendor >>Vendor trash & buy water down to no less than 95c
+step << Warlock wotlk
+    .goto Tirisfal Glades,32.3,65.4
+    .vendor >>Vendor trash
 step << Priest
     .goto Tirisfal Glades,32.3,65.4
     .vendor >>Vendor trash & buy water down to no less than 1s 90c
 step
-    .goto Tirisfal Glades,30.9,66.2
     .turnin 3901 >> Turn in Rattling the Rattlecages
-step
-    #label BatsWolves
-    .goto Tirisfal Glades,30.9,66.1
-    .turnin 376 >> Turn in The Damned
-step
-	.goto Tirisfal Glades,30.9,66.1
-    .accept 6395 >> Accept Marla's Last Wish
+    .goto Tirisfal Glades,30.9,66.2	
+    .turnin 376 >> Turn in The Damned	
+    .accept 6395 >> Accept Marla's Last Wish	
+    .goto Tirisfal Glades,30.9,66.1	
 step << Priest
     #completewith next
     .goto Tirisfal Glades,31.1,66.0
@@ -204,7 +226,7 @@ step
 	.goto Tirisfal Glades,27.1,59.0
     >>Kill all but 2-3 Young Spiders outside the cave and then enter the cave and kill the Night Web Spiders inside. Kill the remaining 2-3 Young Spiders as you leave.
     .complete 380,1 --Kill Young Night Web Spider (10)
-	complete 380,2 --Kill Night Web Spider (x8)
+	.complete 380,2 --Kill Night Web Spider (x8)
 step
 	#softcore
     #requires Goods
@@ -214,7 +236,7 @@ step
 	.goto Tirisfal Glades,27.1,59.0
     >>Kill Young Spiders outside the cave and then enter the cave and kill the Night Web Spiders inside. We're deathskipping in the cave, make sure you're done with Young Spiders before entering.
     .complete 380,1 --Kill Young Night Web Spider (10)
-	complete 380,2 --Kill Night Web Spider (x8)step
+	.complete 380,2 --Kill Night Web Spider (x8)
 step
     #softcore
     #completewith next
@@ -223,17 +245,14 @@ step
     #hardcore
     #completewith next
     .goto Tirisfal Glades,31.2,64.9,120 >> Run out of the cave back to Deathknell
-step << Warlock
+step
     .goto Tirisfal Glades,31.6,65.6
-	.cast 688 >> Resummon your imp
-    .turnin 3902 >> Turn in Scavenging Deathknell
-step << !Warlock
-    .goto Tirisfal Glades,31.6,65.6
+	.cast 688 >> Resummon your Imp << Warlock
     .turnin 3902 >> Turn in Scavenging Deathknell
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.41,65.66
     .vendor >>Vendor trash & repair your weapon
-step << Priest/Mage/Warlock
+step << Priest tbc/Mage tbc/Warlock tbc
     .goto Tirisfal Glades,32.3,65.4
     .vendor >>Vendor trash & buy 15 water
 	.collect 159,15 --Collect Refreshing Spring Water (x15)
@@ -276,6 +295,9 @@ step
 step
 	.goto Tirisfal Glades,32.1,66.0
     .accept 382 >> Accept The Red Messenger
+step << Warlock
+	#completewith next
+	.cast 688 >> Resummon your Imp
 step
     >>Kill Meven and loot him for the documents << !Rogue !Warrior
     >>Kill Meven whilst kiting him back to town. Loot him for the documents << Rogue/Warrior
@@ -291,6 +313,10 @@ step
 step
     .goto Tirisfal Glades,38.2,56.8
     .accept 8 >> Accept A Rogue's Deal
+step
+	.goto Tirisfal Glades,42.59,51.30,50,0
+	.goto Tirisfal Glades,42.59,51.30	
+    .deathskip >> Die and respawn at the Spirit Healer	in Brill
 step
     .goto Tirisfal Glades,60.6,51.8
     .turnin 383 >> Turn in Vital Intelligence
