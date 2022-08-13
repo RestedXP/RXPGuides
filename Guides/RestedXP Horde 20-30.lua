@@ -293,11 +293,9 @@ step
     .turnin 1093 >> Turn in Super Reaper 6000
     .accept 1094 >> Accept Further Instructions
 step
-    #completewith next
     #requires deepmossegg
     .goto The Barrens,52.2,31.9
     .hs >> Hearth to Crossroads
-    .cooldown item,6948,>0
 step
     .isOnQuest 870
     .goto The Barrens,52.2,31.9
@@ -361,6 +359,7 @@ step
     .unitscan Lakota'mani
     >>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
     .collect 5099,1,883 --Collect Hoof of Lakota'Mani
+    .use 5099
     .accept 883 >>Accept Lakota'Mani
     .unitscan Lakota'Mani
 step
@@ -420,6 +419,7 @@ step
     .goto The Barrens,49.6,60.0
     >>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. Skip this quest if you can't find him
     .collect 5102,1,884 --Collect Owatanka's Tailspike
+    .use 5102
     .accept 884 >>Accept Owatanka
     .unitscan Owatanka
 step    
@@ -462,6 +462,7 @@ step << Druid
 	.accept 27 >>Accept A Lesson to Learn
 	.trainer >> Go and train your class spells
 step
+    #xprate <1.5
     .goto Thunder Bluff,30.1,30.0,25 >>Go into The Pools of Vision below the Spirit Rise
 step
     #xprate <1.5
@@ -475,6 +476,9 @@ step
     .goto Thunder Bluff,23.0,20.9
     >> If you failed the Zamah quest, just abandon it
     .turnin 853 >> Turn in Apothecary Zamah
+step
+    .isOnQuest 853
+    .abandon 853 >> Abandon Apothecary Zamah
 step
     #xprate <1.5
     .goto Thunder Bluff,23.0,20.9
@@ -497,7 +501,7 @@ step << !Tauren
     .goto Thunder Bluff,47.0,49.8
     .fp Thunder Bluff >>Get the Thunder Bluff Flight Path
 step
-    #completewith next
+    #completewith ratchetanchor1
     .goto Thunder Bluff,47.0,49.8
     .fly Ratchet >> Fly to Ratchet
 step
@@ -510,6 +514,7 @@ step
     .goto The Barrens,62.4,37.6
     .accept 1491 >>Accept Smart Drinks
 step
+    #label ratchetanchor1
     .goto The Barrens,62.4,37.6
     .turnin 1069 >> Turn in Deepmoss Spider Eggs
 step
@@ -1381,20 +1386,31 @@ step << Priest
     .goto Orgrimmar,35.6,87.8
 .trainer >> Go and train your class spells
 step
+    #completewith fp12
     .goto Orgrimmar,16.2,62.2,30  >> Exit Orgrimmar through the west exit
 step
+    #completewith fp12
     .goto Ashenvale,94.7,76.8,30  >> Run along the side of the river
 step
+    #completewith fp12
     .goto Ashenvale,90.8,66.9,30  >> Run up the ramp here
 step
+    #completewith fp12
     .goto Ashenvale,89.2,68.4,30  >> Go up the ramp. Be careful of the level 28/29 spider mobs
 step
+    #completewith fp12
     .goto Ashenvale,88.5,64.9,40  >> Run to the Lumber Camp
 step
+    #completewith fp12
     .goto Ashenvale,81.7,62.9,80  >> Run through the camp to here
 step
+    #label fp12
     .goto Ashenvale,73.2,61.6
     .fp Splintertree >> Get the Splintertree Post flight path
+step
+    .goto Orgrimmar,45.1,63.9
+    .fly Splintertree >> Fly to Splintertree Post
+    .zoneskip Ashenvale
 step
     .accept 6441 >> Accept Satyr Horns
     .goto Ashenvale,73.1,61.5
@@ -1422,6 +1438,7 @@ step
     .goto Ashenvale,76.3,67.3,40,0
     .goto Ashenvale,72.5,72.5
     .complete 6503,1 --Kill Ashenvale Outrunner (x9)
+    .unitscan Ashenvale Outrunner
 step
     .goto Ashenvale,68.3,75.3
     .accept 6544 >> Accept Torek's Assault
@@ -1776,7 +1793,6 @@ step
 	.goto Thunder Bluff,45.8,64.7
 	.home >> Set your Hearthstone to Thunder Bluff
 step
-	#completewith next
     >> Head up the totem tower
     .goto Thunder Bluff,46.8,50.1
     .fly Camp Taurajo >> Fly to Camp Taurajo
@@ -1802,6 +1818,7 @@ step
 	.goto The Barrens,49.6,60.0,75,0
 	>>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
 	.collect 5102,1,884 --Collect Owatanka's Tailspike
+    .use 5102
 	.accept 884 >>Accept Owatanka
 	.unitscan Owatanka
 step << Warrior
@@ -2526,7 +2543,6 @@ step
     .hs >> Hearth to Freewind Post
     .cooldown item,6948,>0
 step
-    #completewith next
     .goto Thousand Needles,45.1,49.2,-1
     .goto Tanaris,51.6,25.4,-1
     .fly Camp Taurajo >> Fly to Camp Taurajo
