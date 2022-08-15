@@ -3221,7 +3221,7 @@ function addon.functions.maxlevel(self, ...)
                            "(Skip this step if you are level %d or above)",
                            element.level + 1)
     else
-        element.text = ""
+        element.text = nil
     end
 
 end
