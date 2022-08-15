@@ -16,10 +16,12 @@
 	<Script file="Guides/RestedXP Horde 20-30.lua"/>
 	<Script file="Guides/RestedXP Horde Boosted 58-60.lua"/>
 
+    <Script file="Guides/Deathknight.lua"/>
+
     <Script file="Guides/farmguides.lua"/>
     <Script file="Guides/Mining.lua"/>
     <Script file="Guides/Herbalism.lua"/>
     <Script file="Guides/Skinning.lua"/>
-    
+
     <Script file="Guides/Import.lua"/>
 </Ui>
