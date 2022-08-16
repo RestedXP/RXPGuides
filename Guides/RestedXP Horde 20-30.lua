@@ -2325,7 +2325,7 @@ step
     .goto Thousand Needles,44.8,49.0
     .turnin 9434 >> Turn in Testing the Tonic
     .goto Thousand Needles,46.2,50.5
-step
+step << !Warrior
 	#completewith next
     .goto Thousand Needles,46.1,51.5
     .home >> Set your Hearthstone to Freewind Post
@@ -2543,13 +2543,30 @@ step << wotlk
 step
     .zoneskip Tanaris,1
 	#completewith next
-    .hs >> Hearth to Freewind Post
+    .hs >> Hearth to Freewind Post << !Warrior
+    .hs >> Hearth or fly to Thunder Bluff << Warrior
     .cooldown item,6948,>0
-step
+step << !Warrior
     .goto Thousand Needles,45.1,49.2,-1
     .goto Tanaris,51.6,25.4,-1
     .fly Camp Taurajo >> Fly to Camp Taurajo
-step
+step << Warrior
+    #completewith next
+    .goto Thousand Needles,45.1,49.2,-1
+    .goto Tanaris,51.6,25.4,-1
+    .fly Thunder Bluff >> Fly to Thunder Bluff
+    .zoneskip Thunder Bluff
+step << Warrior
+    .isOnQuest 1145
+	#completewith next
+    .goto Thunder Bluff,57.4,87.2
+    .accept 1718 >>Accept The Islander
+    .trainer >> Go and train your class spells
+step << Warrior
+    .isOnQuest 1153
+    .goto Thunder Bluff,47.0,49.8
+    .fly Camp Taurajo >> Fly to Camp Taurajo
+step << !Warrior
     .isOnQuest 1153
     .goto The Barrens,44.9,59.1
     .zone The Barrens >> Arrive in the Barrens
@@ -2559,7 +2576,8 @@ step
     .turnin 1153 >> Turn in A New Ore Sample
 step
     #completewith swarmgrows
-    .goto The Barrens,44.4,59.1
+    .goto The Barrens,44.4,59.1,-1
+    .goto Thunder Bluff,47.0,49.8,-1
     .fly Crossroads >> Fly to Crossroads
 step
     .isOnQuest 906
@@ -2575,16 +2593,47 @@ step
     .goto The Barrens,51.1,29.6
     .turnin 1148 >> Turn in Parts of the Swarm
     .accept 1184 >> Accept Parts of the Swarm
-step << !Warrior
+step
 	#completewith next
     .goto The Barrens,51.5,30.3
     .fly Ratchet >> Fly to Ratchet
-step << Warrior
-    .goto The Barrens,63.3,38.4,150 >>Run to Ratchet
 step
     .goto The Barrens,63.3,38.4
     .turnin 1111 >> Turn in Wharfmaster Dizzywig
     .accept 1112 >> Accept Parts for Kravel
+step << Warrior
+    .isOnQuest 873
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2,40,0
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2,40,0
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2,40,0
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2
+    >>Look in the water for Isha Awak (Red Threshadon). Kill and loot it for its heart
+    .complete 873,1 --Heart of Isha Awak (1)
+	.unitscan Isha Awak
+step << Warrior
+    .isOnQuest 1718
+    >>Swim to the island
+    .goto The Barrens,68.6,49.2
+    .turnin 1718 >>Turn in The Islander
+    .accept 1719 >>Accept The Affray
+step << Warrior
+    .isOnQuest 1719
+    .goto The Barrens,68.6,48.7
+    .complete 1719,1 --Step on the grate to begin the Affray (1)
+    .complete 1719,2 --Big Will (1)
+step << Warrior
+    .isOnQuest 1719
+    .goto The Barrens,68.6,49.2
+    .turnin 1719 >>Turn in The Affray
+    .accept 1791 >>Accept The Windwatcher
+step << Warrior
+    .isOnQuest 873
+    .goto The Barrens,65.8,43.8
+    .turnin 873 >>Turn in Isha Awak
 step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
@@ -2611,12 +2660,6 @@ step << Hunter
 	#completewith next
     .goto Orgrimmar,66.3,14.8
     .trainer >> Go and train your pet spells
-step << Warrior
-    .isOnQuest 1145
-	#completewith next
-    .goto Orgrimmar,79.7,31.4
-    .accept 1718 >>Accept The Islander
-    .trainer >> Go and train your class spells
 step << Rogue
     .isOnQuest 1145
 	#completewith next
@@ -2665,12 +2708,12 @@ step << Troll !Warlock tbc
 	.money <35.00
 	.goto Durotar,55.2,75.5
 	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
-step << Warrior/Shaman
+step << Shaman
     .isOnQuest 874
 	#completewith next
     .goto Orgrimmar,45.1,63.9
     .fly Ratchet >>Fly to Ratchet
-step << Warrior/Shaman
+step << Shaman
     .isOnQuest 874
     .goto The Barrens,65.8,43.8
     .turnin 874 >>Turn in Mahren Skyseer
@@ -2680,7 +2723,7 @@ step << Shaman
     .goto The Barrens,65.8,43.8
     .turnin 220 >>Turn in Call of Water
     .accept 63 >>Accept Call of Water
-step << Warrior/Shaman
+step << Shaman
     .isOnQuest 873
 	.goto The Barrens,65.6,47.1,40,0
     .goto The Barrens,63.3,54.2,40,0
@@ -2709,7 +2752,7 @@ step << Warrior
     .goto The Barrens,68.6,49.2
     .turnin 1719 >>Turn in The Affray
     .accept 1791 >>Accept The Windwatcher
-step << Warrior/Shaman
+step << Shaman
     .isOnQuest 873
     .goto The Barrens,65.8,43.8
     .turnin 873 >>Turn in Isha Awak
