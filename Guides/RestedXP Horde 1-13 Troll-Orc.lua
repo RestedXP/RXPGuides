@@ -1535,6 +1535,7 @@ step
     .turnin 827 >>Turn in Skull Rock
     .accept 829 >>Accept Neeru Fireblade
 step << Shaman
+    .isOnQuest 1525
     .goto Durotar,56.3,28.0,60,0
     .goto Durotar,52.8,28.7,20 >> Head south then into the cave here, above the harpy area
 step << Shaman
@@ -1542,6 +1543,7 @@ step << Shaman
 .goto Durotar,52.5,26.7
     .complete 1525,2 --Reagent Pouch (1)
 step << Shaman
+    .isOnQuest 1525
     .goto Durotar,52.8,28.7,20 >> Leave the cave
 step
     .goto Durotar,54.0,27.7,30,0
