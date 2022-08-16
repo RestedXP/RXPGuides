@@ -542,7 +542,10 @@ function addon.settings.CreateImportOptionsPanel()
                 multiline = 5,
                 validate = function(_, val)
                     return addon.settings.ImportBoxValidate(val)
-                end
+                end,
+                disabled = function()
+                    return addon.loading
+                end,
             },
             currentGuides = {
                 order = 11,
