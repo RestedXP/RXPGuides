@@ -2442,6 +2442,9 @@ step
     .goto Thousand Needles,53.9,41.4
     .turnin 1151 >> Turn in Test of Strength
 step
+    .goto Thousand Needles,67.6,64.0
+    .xp 30 >> Grind to level 30
+step
     .isOnQuest 1146
     .goto Thousand Needles,67.6,64.0
     .turnin 1146 >> Turn in The Swarm Grows
