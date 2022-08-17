@@ -357,6 +357,7 @@ function RXPG.ImportString(str, frame)
         end
     end
     if addon.bufferSize > 0 then
+        addon.parsing = true
         if frame then
             frame:SetScript("OnUpdate", RXPG.ProcessBuffer)
         else
@@ -390,6 +391,7 @@ function RXPG.ProcessBuffer(frame)
         addon.RXPG.LoadText:SetText("Guides Loaded Successfully")
         addon.bufferSize = 0
     end
+    addon.parsing = false
     addon.RXPFrame.GenerateMenuTable()
 end
 

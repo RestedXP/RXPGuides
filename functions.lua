@@ -1092,7 +1092,7 @@ function addon.functions.complete(self, ...)
         -- element.title = addon.GetQuestName(id)
         -- local objectives = addon.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
         if id < 0 then
-            id = -id
+            id = math.abs(id)
             element.skipIfMissing = true
         end
         element.questId = id
@@ -3221,7 +3221,7 @@ function addon.functions.maxlevel(self, ...)
                            "(Skip this step if you are level %d or above)",
                            element.level + 1)
     else
-        element.text = ""
+        element.text = nil
     end
 
 end

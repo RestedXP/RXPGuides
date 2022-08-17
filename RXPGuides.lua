@@ -34,15 +34,15 @@ addon.activeSpells = {}
 addon.RXPG = {}
 addon.functions = {}
 
-BINDING_HEADER_RXPGuides = "RXPGuides"
+BINDING_HEADER_RXPGuides = addonName
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
-    "Quest Item Button 1"
+    "Active Item Button 1"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] =
-    "Quest Item Button 2"
+    "Active Item Button 2"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
-    "Quest Item Button 3"
+    "Active Item Button 3"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
-    "Quest Item Button 4"
+    "Active Item Button 4"
 
 local questFrame = CreateFrame("Frame");
 
@@ -657,8 +657,10 @@ function addon.UpdateScheduledTasks()
         if cTime > time then
             local group = addon.currentGuide.group
             local element = ref.element or ref
-            RXPGuides[group][element.tag](ref)
-            addon.scheduledTasks[ref] = nil
+            if group and RXPGuides[group] and element and RXPGuides[group][element.tag] then
+                RXPGuides[group][element.tag](ref)
+                addon.scheduledTasks[ref] = nil
+            end
             return
         end
     end

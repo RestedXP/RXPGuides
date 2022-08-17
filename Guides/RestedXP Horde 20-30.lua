@@ -43,6 +43,7 @@ step << Warlock
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
 step << BloodElf
+    #xprate <1.5
     .goto Orgrimmar,31.8,38.2
     .accept 9428 >> Accept Report to Splintertree Post
     .maxlevel 21
@@ -57,6 +58,7 @@ step
     .goto The Barrens,63.1,37.1
     .fp Ratchet >> Get the Ratchet flight path
 step
+    #xprate <1.5
     >> Accept quest around Ratchet
     .accept 1483 >>Accept Ziz Fizziks
     .goto The Barrens,63.0,37.2
@@ -73,6 +75,7 @@ step << Rogue
     >>Run to the boat then go down to the 2nd floor. Start picking lockboxes until you're at 80 lockpicking skill.
 	.skill lockpicking,>80
 step
+    #xprate <1.5
     .maxlevel 21
     >>Run to the Crossroads and accept quests
     .accept 870 >>Accept The Forgotten Pools
@@ -93,10 +96,12 @@ step
     .goto The Barrens,51.5,30.3
     .fp The Crossroads >> Get the The Crossroads flight path
 step
+    #xprate <1.5
     .goto The Barrens,51.5,30.1
     .accept 848 >> Accept Fungal Spores
     .maxlevel 21
 step
+    #xprate <1.5
     >> Head west out of the Crossroads
     .goto The Barrens,45.4,28.4
     .accept 850 >> Accept Kolkar Leaders
@@ -139,6 +144,7 @@ step
     .turnin 1061 >> Turn in The Spirits of Stonetalon
     .accept 1062 >> Accept Goblin Invaders
 step
+    #xprate <1.5
     .goto The Barrens,35.3,27.9
     .accept 6548 >> Accept Avenge My Village
     .maxlevel 21
@@ -287,11 +293,9 @@ step
     .turnin 1093 >> Turn in Super Reaper 6000
     .accept 1094 >> Accept Further Instructions
 step
-    #completewith next
     #requires deepmossegg
     .goto The Barrens,52.2,31.9
     .hs >> Hearth to Crossroads
-    .cooldown item,6948,>0
 step
     .isOnQuest 870
     .goto The Barrens,52.2,31.9
@@ -355,12 +359,14 @@ step
     .unitscan Lakota'mani
     >>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
     .collect 5099,1,883 --Collect Hoof of Lakota'Mani
+    .use 5099
     .accept 883 >>Accept Lakota'Mani
     .unitscan Lakota'Mani
 step
     #requires Lakota1
     #label weapons
 step
+    #xprate <1.5
     .goto The Barrens,45.1,57.7
     .accept 893 >>Accept Weapons of Choice
     .maxlevel 25
@@ -413,6 +419,7 @@ step
     .goto The Barrens,49.6,60.0
     >>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. Skip this quest if you can't find him
     .collect 5102,1,884 --Collect Owatanka's Tailspike
+    .use 5102
     .accept 884 >>Accept Owatanka
     .unitscan Owatanka
 step    
@@ -455,8 +462,10 @@ step << Druid
 	.accept 27 >>Accept A Lesson to Learn
 	.trainer >> Go and train your class spells
 step
+    #xprate <1.5
     .goto Thunder Bluff,30.1,30.0,25 >>Go into The Pools of Vision below the Spirit Rise
 step
+    #xprate <1.5
     #label Zamah
     >>Talk to Clarice Foster
     .goto Thunder Bluff,27.5,24.7
@@ -468,6 +477,10 @@ step
     >> If you failed the Zamah quest, just abandon it
     .turnin 853 >> Turn in Apothecary Zamah
 step
+    .isOnQuest 853
+    .abandon 853 >> Abandon Apothecary Zamah
+step
+    #xprate <1.5
     .goto Thunder Bluff,23.0,20.9
     .accept 962 >> Accept Serpentbloom
     .maxlevel 21
@@ -488,7 +501,7 @@ step << !Tauren
     .goto Thunder Bluff,47.0,49.8
     .fp Thunder Bluff >>Get the Thunder Bluff Flight Path
 step
-    #completewith next
+    #completewith ratchetanchor1
     .goto Thunder Bluff,47.0,49.8
     .fly Ratchet >> Fly to Ratchet
 step
@@ -496,10 +509,12 @@ step
     .goto The Barrens,62.4,37.6
     .turnin 865 >> Turn in Raptor Horns
 step
+    #xprate <1.5
     .isQuestTurnedIn 865
     .goto The Barrens,62.4,37.6
     .accept 1491 >>Accept Smart Drinks
 step
+    #label ratchetanchor1
     .goto The Barrens,62.4,37.6
     .turnin 1069 >> Turn in Deepmoss Spider Eggs
 step
@@ -636,12 +651,14 @@ step
     .turnin 6461 >> Turn in Blood Feeders
     .isOnQuest 6461 
 step
+    #xprate <1.5
     .maxlevel 23
     .isOnQuest 1095
     >> Head back to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
 step << !Rogue
+    #xprate <1.5
     >> Head to Sun Rock Retreat
     >> Head up the side mountain path to your left once you reach Sun Rock
     .goto Stonetalon Mountains,49.0,62.8,40,0
@@ -659,6 +676,7 @@ step
     .turnin 6284 >> Turn in Arachnophobia
     .isOnQuest 6284
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,45.1,59.8
     .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
     .maxlevel 23
@@ -676,44 +694,54 @@ step
     .turnin 1095 >> Turn in Further Instructions
     .maxlevel 23
 step
+    #xprate <1.5
     #sticky
     #completewith next
     .goto Stonetalon Mountains,78.2,42.8,30 >>Go to Talondeep Path
     .maxlevel 23
 step
+    #xprate <1.5
     .goto Ashenvale,42.3,71.0,20 >>Run through the cave to Ashenvale
     .maxlevel 23
 step
+    #xprate <1.5
     .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
     .maxlevel 23
 step
+    #xprate <1.5
     .goto Ashenvale,12.3,33.8
     .fp Zoram >> Get the Zoram'gar Outpost flight path
     .maxlevel 23
 step
+    #xprate <1.5
     .goto Ashenvale,11.8,34.7
     .accept 216 >> Accept Between a Rock and a Thistlefur
     .maxlevel 23
 step
+    #xprate <1.5
     >> Talk to the trolls in the hut
     .goto Ashenvale,11.6,34.9
     .accept 6442 >> Accept Naga at the Zoram Strand
     .accept 6462 >> Accept Troll Charm
     .maxlevel 23
 step
+    #xprate <1.5
     .isQuestComplete 6562
     .goto Ashenvale,11.6,34.3
     .turnin 6562 >> Turn in Trouble in the Deeps
 step
+    #xprate <1.5
     .goto Ashenvale,11.6,34.3
     .accept 6563 >> Accept The Essence of Aku'Mai
     .maxlevel 23
 step
+    #xprate <1.5
     >>Accepting this quest starts an escort. Follow him
     .goto Ashenvale,12.1,34.4
     .accept 6641 >> Accept Vorsha the Lasher
     .maxlevel 23
 step
+    #xprate <1.5
     #sticky
     #label wrathtailhead
     >>Kill the Nagas around the beach. Loot them for their heads
@@ -721,14 +749,17 @@ step
     .complete 6442,1 --Collect Wrathtail Head (x20)
     .isOnQuest 6442
 step
+    #xprate <1.5
     >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
     .goto Ashenvale,9.8,27.4
     .complete 6641,1 --Defeat Vorsha the Lasher
     .isOnQuest 6641
 step
+    #xprate <1.5
     .goto Ashenvale,14.2,14.7,40 >>Drop down the hole into Blackfathom Deeps
     .isOnQuest 6442
 step
+    #xprate <1.5
     #sticky
     #label Sapphires
     #completewith zoramend
@@ -745,6 +776,7 @@ step
     .accept 6564 >> Accept Allegiance to the Old Gods
     .isOnQuest 6442
 step
+    #xprate <1.5
     #requires Sapphires
     >> Loot the Sapphires from the walls in the tunnel.
     .goto Ashenvale,13.0,13.2,30,0
@@ -758,6 +790,7 @@ step
     .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
     .isOnQuest 6563
 step
+    #xprate <1.5
     #label zoramend
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
@@ -765,19 +798,23 @@ step
     .turnin 6641 >> Turn in Vorsha the Lasher
     .isQuestComplete 6641
 step
+    #xprate <1.5
     .goto Ashenvale,11.6,34.3
     .turnin 6563 >> Turn in The Essence of Aku'Mai
     .isQuestComplete 6553
 step
+    #xprate <1.5
     #sticky
     #completewith next
     .destroy 16784 >> Destroy any leftover Sapphires of Aku'Mai
     .itemcount 16784,1
 step
+    #xprate <1.5
     .goto Ashenvale,11.6,34.3
     .turnin 6564 >> Turn in Allegiance to the Old Gods
     .isOnQuest 6564
 step
+    #xprate <1.5
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >> Turn in Naga at the Zoram Strand
     .isQuestComplete 6442
@@ -831,6 +868,15 @@ step
     .goto Thunder Bluff,22.9,21.1
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
+step
+    .isOnQuest 1489
+    .goto Thunder Bluff,78.4,28.4
+    .turnin 1489 >> Turn in Hamuul Runetotem
+    .accept 1490 >> Accept Nara Runetotem
+step
+    .isQuestTurnedIn 1489
+    .goto Thunder Bluff,75.6,31.2
+    .turnin 1490 >> Turn in Nara Runetotem
 step
     .isOnQuest 962
     >> Head to the pools under the Spirit Rise
@@ -1024,6 +1070,10 @@ step
     .goto Silverpine Forest,44.1,42.5
     .turnin 264 >> Turn in Until Death Do Us Part
     .isOnQuest 264
+step
+    .isOnQuest 3301
+    .goto Silverpine Forest,43.0,42.0
+    .turnin 3301 >> Turn in Mara Runetotem
 step
     .goto Silverpine Forest,45.6,42.6
     .fp The Sepulcher >> Get the The Sepulcher flight path
@@ -1336,20 +1386,31 @@ step << Priest
     .goto Orgrimmar,35.6,87.8
 .trainer >> Go and train your class spells
 step
+    #completewith fp12
     .goto Orgrimmar,16.2,62.2,30  >> Exit Orgrimmar through the west exit
 step
+    #completewith fp12
     .goto Ashenvale,94.7,76.8,30  >> Run along the side of the river
 step
+    #completewith fp12
     .goto Ashenvale,90.8,66.9,30  >> Run up the ramp here
 step
+    #completewith fp12
     .goto Ashenvale,89.2,68.4,30  >> Go up the ramp. Be careful of the level 28/29 spider mobs
 step
+    #completewith fp12
     .goto Ashenvale,88.5,64.9,40  >> Run to the Lumber Camp
 step
+    #completewith fp12
     .goto Ashenvale,81.7,62.9,80  >> Run through the camp to here
 step
+    #label fp12
     .goto Ashenvale,73.2,61.6
     .fp Splintertree >> Get the Splintertree Post flight path
+step
+    .goto Orgrimmar,45.1,63.9
+    .fly Splintertree >> Fly to Splintertree Post
+    .zoneskip Ashenvale
 step
     .accept 6441 >> Accept Satyr Horns
     .goto Ashenvale,73.1,61.5
@@ -1377,6 +1438,7 @@ step
     .goto Ashenvale,76.3,67.3,40,0
     .goto Ashenvale,72.5,72.5
     .complete 6503,1 --Kill Ashenvale Outrunner (x9)
+    .unitscan Ashenvale Outrunner
 step
     .goto Ashenvale,68.3,75.3
     .accept 6544 >> Accept Torek's Assault
@@ -1504,6 +1566,7 @@ step
     .accept 23 >> Accept Ursangous's Paw
 	.unitscan Ursangous
 step
+    #xprate <1.5
     #sticky
     #label Tideress
     .use 16408 >>Kill Tideress who is located around the middle of the lake. Loot her for a Befouled Water Globe, then click it to accept the quest
@@ -1563,6 +1626,11 @@ step
     .turnin 1918 >> Turn in The Befouled Element
 step
     .goto Ashenvale,73.7,60.0
+    .abandon 1918 >> Abandon The Befouled Element
+    .destroy 16408 >> Destroy Befouled Water Globe
+step
+    #xprate <1.5
+    .goto Ashenvale,73.7,60.0
     .isOnQuest 216
     .accept 824 >> Accept Je'neu of the Earthen Ring
 step
@@ -1571,22 +1639,23 @@ step
     .turnin 6482 >> Turn in Freedom to Ruul
     .isOnQuest 6482
 step
+    #xprate <1.5
 	#completewith next
     .isOnQuest 216
     .goto Ashenvale,73.2,61.5
     .fly Zoram'gar >> Fly to Zoram'gar Outpost
 step
-    .isOnQuest 6544
-    .abandon 6544
-step
+    #xprate <1.5
     .goto Ashenvale,11.9,34.5
     .turnin 216 >> Turn in Between a Rock and a Thistlefur
     .isOnQuest 216
 step
+    #xprate <1.5
     .goto Ashenvale,11.7,34.8
     .turnin 6462 >> Turn in Troll Charm
     .isOnQuest 6462
 step
+    #xprate <1.5
     .isQuestTurnedIn 6462
     .goto Ashenvale,11.6,34.3
     .turnin 824 >> Turn in Je'neu of the Earthen Ring
@@ -1657,13 +1726,9 @@ step << Rogue
 step
     #label flytimebabyyy
 step
-	.goto Orgrimmar,45.2,63.8
+	.goto Orgrimmar,45.2,63.8,-1
+    .goto Ashenvale,73.2,61.6,-1
     .fly Thunder Bluff >> Fly to Thunder Bluff
-    .zoneskip Orgrimmar,1
-step
-    .goto Ashenvale,73.2,61.6
-    .fly Thunder Bluff >> Fly to Thunder Bluff
-    .zoneskip Ashenvale,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1728,7 +1793,6 @@ step
 	.goto Thunder Bluff,45.8,64.7
 	.home >> Set your Hearthstone to Thunder Bluff
 step
-	#completewith next
     >> Head up the totem tower
     .goto Thunder Bluff,46.8,50.1
     .fly Camp Taurajo >> Fly to Camp Taurajo
@@ -1754,6 +1818,7 @@ step
 	.goto The Barrens,49.6,60.0,75,0
 	>>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
 	.collect 5102,1,884 --Collect Owatanka's Tailspike
+    .use 5102
 	.accept 884 >>Accept Owatanka
 	.unitscan Owatanka
 step << Warrior
@@ -2112,8 +2177,9 @@ step
     .goto Feralas,89.6,46.3
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
 step
-.goto Thousand Needles,18.7,22.2,40,0
-.xp 29+500 >> Grind to 500+/36300 xp
+    #xprate <1.5
+    .goto Thousand Needles,18.7,22.2,40,0
+    .xp 29+500 >> Grind to 500+/36300 xp
 step
     #label messenger
 >>Search for Steelsnap (Hyena). He patrols counter-clockwise
@@ -2212,7 +2278,11 @@ step
 step
     .goto Thunder Bluff,70.1,30.9
     .accept 5088 >> Accept Arikara
-step << Tauren
+step << Tauren wotlk
+    .money <5.00
+    .goto Mulgore,47.5,58.5
+    .train 713 >> Go to Bloodhoof Village. Train riding and buy your mount
+step << Tauren tbc
     #level 30
     .money <35.00
     .goto Mulgore,47.5,58.5
@@ -2255,7 +2325,7 @@ step
     .goto Thousand Needles,44.8,49.0
     .turnin 9434 >> Turn in Testing the Tonic
     .goto Thousand Needles,46.2,50.5
-step
+step << !Warrior
 	#completewith next
     .goto Thousand Needles,46.1,51.5
     .home >> Set your Hearthstone to Freewind Post
@@ -2372,12 +2442,15 @@ step
     .goto Thousand Needles,53.9,41.4
     .turnin 1151 >> Turn in Test of Strength
 step
+    .goto Thousand Needles,67.6,64.0
+    .xp 30 >> Grind to level 30
+step
     .isOnQuest 1146
     .goto Thousand Needles,67.6,64.0
     .turnin 1146 >> Turn in The Swarm Grows
     .accept 1147 >> Accept The Swarm Grows
 step
-    #level 32
+    .xp <32
     >> Accept quests around the racetrack
 	.accept 1110 >> Accept Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
@@ -2390,13 +2463,13 @@ step
     .accept 1111 >> Accept Wharfmaster Dizzywig
     .accept 5762 >> Accept Hemet Nesingwary Jr.
 step
-    #level 32
+    .xp <32
     .accept 1176 >> Accept Load Lightening
     .goto Thousand Needles,80.2,75.8
     .accept 1175 >> Accept A Bump in the Road
     .goto Thousand Needles,81.7,78.0
 step
-    .isOnQuest 1175
+    .xp <32
 	#sticky
 	#completewith ShimmeringF
 	>>Save the turtle meat for a quest later.
@@ -2407,24 +2480,22 @@ step
 	.goto Thousand Needles,78.4,89.1
 	.complete 1175,3 --Kill Saltstone Gazer (x6)
 step
-    .isOnQuest 1175
 	#label ShimmeringF
 	>>Circle the area killing and collecting for the Shimmering Flats quests
-	.complete 1110,1 --Collect Rocket Car Parts (x30)
-	.complete 1104,1 --Collect Salty Scorpid Venom (x6)
-	.complete 1176,1 --Collect Hollow Vulture Bone (x10)
-    .complete 1105,1 --Collect Hardened Tortoise Shell (x9)
-	.complete 1175,1 --Kill Saltstone Basilisk (x10)
-	.complete 1175,2 --Kill Saltstone Crystalhide (x10)
+	.complete -1110,1 --Collect Rocket Car Parts (x30)
+	.complete -1104,1 --Collect Salty Scorpid Venom (x6)
+	.complete -1176,1 --Collect Hollow Vulture Bone (x10)
+    .complete -1105,1 --Collect Hardened Tortoise Shell (x9)
+	.complete -1175,1 --Kill Saltstone Basilisk (x10)
+	.complete -1175,2 --Kill Saltstone Crystalhide (x10)
 step
-    .isOnQuest 1175
 	#sticky
 	#label partsoftheswarm
+    .isQuestTurnedIn 1147
 	>>Grind the Silithid creatures until you get a Cracked Silithid Carapace. Click it to accept a quest.
 	.collect 5877,1,1148
 	.accept 1148 >> Accept Parts of the Swarm
 step
-    .isOnQuest 1175
     .goto Thousand Needles,67.8,85.7
 	.complete -1148,1 --Collect Silithid Heart (x1)
     .complete -1148,2 --Collect Silithid Talon (x5)
@@ -2433,15 +2504,16 @@ step
     .complete -1148,3 --Collect Intact Silithid Carapace (x3)
     .complete -1147,2 --Kill Silithid Hive Drone (x5)	
 step
-    .isQuestComplete 1175
 	#requires partsoftheswarm
-    .turnin 1147 >> Turn in The Swarm Grows
+    .turnin -1147 >> Turn in The Swarm Grows
     .goto Thousand Needles,67.6,63.9
-    .turnin 1110 >> Turn in Rocket Car Parts
+    .turnin -1110 >> Turn in Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
-    .turnin 1104 >> Turn in Salt Flat Venom
+    .turnin -1104 >> Turn in Salt Flat Venom
     .goto Thousand Needles,78.0,77.1
-    .turnin 1105 >> Turn in Hardened Shells
+    .turnin -1105 >> Turn in Hardened Shells
+step
+    .xp <32
     .accept 1107 >> Accept Encrusted Tail Fins
     .accept 1106 >> Accept Martek the Exiled
 step
@@ -2460,21 +2532,41 @@ step
 step
     .goto Tanaris,51.6,25.4
     .fp Gadgetzan >> Get the Gadgetzan flight path
-step
+step << tbc
     #completewith next
     .money <35.00
+    +If you have access to gold on this server, mail yourself gold for mount training soon!
+step << wotlk
+    #completewith next
+    .money <5.00
     +If you have access to gold on this server, mail yourself gold for mount training soon!
 step
     .zoneskip Tanaris,1
 	#completewith next
-    .hs >> Hearth to Freewind Post
+    .hs >> Hearth to Freewind Post << !Warrior
+    .hs >> Hearth or fly to Thunder Bluff << Warrior
     .cooldown item,6948,>0
-step
-    #completewith next
+step << !Warrior
     .goto Thousand Needles,45.1,49.2,-1
     .goto Tanaris,51.6,25.4,-1
     .fly Camp Taurajo >> Fly to Camp Taurajo
-step
+step << Warrior
+    #completewith next
+    .goto Thousand Needles,45.1,49.2,-1
+    .goto Tanaris,51.6,25.4,-1
+    .fly Thunder Bluff >> Fly to Thunder Bluff
+    .zoneskip Thunder Bluff
+step << Warrior
+    .isOnQuest 1145
+	#completewith next
+    .goto Thunder Bluff,57.4,87.2
+    .accept 1718 >>Accept The Islander
+    .trainer >> Go and train your class spells
+step << Warrior
+    .isOnQuest 1153
+    .goto Thunder Bluff,47.0,49.8
+    .fly Camp Taurajo >> Fly to Camp Taurajo
+step << !Warrior
     .isOnQuest 1153
     .goto The Barrens,44.9,59.1
     .zone The Barrens >> Arrive in the Barrens
@@ -2484,7 +2576,8 @@ step
     .turnin 1153 >> Turn in A New Ore Sample
 step
     #completewith swarmgrows
-    .goto The Barrens,44.4,59.1
+    .goto The Barrens,44.4,59.1,-1
+    .goto Thunder Bluff,47.0,49.8,-1
     .fly Crossroads >> Fly to Crossroads
 step
     .isOnQuest 906
@@ -2500,16 +2593,47 @@ step
     .goto The Barrens,51.1,29.6
     .turnin 1148 >> Turn in Parts of the Swarm
     .accept 1184 >> Accept Parts of the Swarm
-step << !Warrior
+step
 	#completewith next
     .goto The Barrens,51.5,30.3
     .fly Ratchet >> Fly to Ratchet
-step << Warrior
-    .goto The Barrens,63.3,38.4,150 >>Run to Ratchet
 step
     .goto The Barrens,63.3,38.4
     .turnin 1111 >> Turn in Wharfmaster Dizzywig
     .accept 1112 >> Accept Parts for Kravel
+step << Warrior
+    .isOnQuest 873
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2,40,0
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2,40,0
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2,40,0
+	.goto The Barrens,65.6,47.1,40,0
+    .goto The Barrens,63.3,54.2
+    >>Look in the water for Isha Awak (Red Threshadon). Kill and loot it for its heart
+    .complete 873,1 --Heart of Isha Awak (1)
+	.unitscan Isha Awak
+step << Warrior
+    .isOnQuest 1718
+    >>Swim to the island
+    .goto The Barrens,68.6,49.2
+    .turnin 1718 >>Turn in The Islander
+    .accept 1719 >>Accept The Affray
+step << Warrior
+    .isOnQuest 1719
+    .goto The Barrens,68.6,48.7
+    .complete 1719,1 --Step on the grate to begin the Affray (1)
+    .complete 1719,2 --Big Will (1)
+step << Warrior
+    .isOnQuest 1719
+    .goto The Barrens,68.6,49.2
+    .turnin 1719 >>Turn in The Affray
+    .accept 1791 >>Accept The Windwatcher
+step << Warrior
+    .isOnQuest 873
+    .goto The Barrens,65.8,43.8
+    .turnin 873 >>Turn in Isha Awak
 step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
@@ -2536,12 +2660,6 @@ step << Hunter
 	#completewith next
     .goto Orgrimmar,66.3,14.8
     .trainer >> Go and train your pet spells
-step << Warrior
-    .isOnQuest 1145
-	#completewith next
-    .goto Orgrimmar,79.7,31.4
-    .accept 1718 >>Accept The Islander
-    .trainer >> Go and train your class spells
 step << Rogue
     .isOnQuest 1145
 	#completewith next
@@ -2578,24 +2696,24 @@ step << !Warrior !Shaman
     #level 33
     .goto Orgrimmar,54.1,68.4
     .home >>Set your Hearthstone to Valley of Strength
-step << Orc !Warlock
+step << Orc !Warlock tbc
 	#sticky
 	#completewith next
 	.money <35.00
 	.goto Orgrimmar,63.3,12.8
 	.train 149 >> Head to the Valley of Honor. Train riding and purchase your mount
-step << Troll !Warlock
+step << Troll !Warlock tbc
 	#sticky
 	#completewith next
 	.money <35.00
 	.goto Durotar,55.2,75.5
 	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
-step << Warrior/Shaman
+step << Shaman
     .isOnQuest 874
 	#completewith next
     .goto Orgrimmar,45.1,63.9
     .fly Ratchet >>Fly to Ratchet
-step << Warrior/Shaman
+step << Shaman
     .isOnQuest 874
     .goto The Barrens,65.8,43.8
     .turnin 874 >>Turn in Mahren Skyseer
@@ -2605,7 +2723,7 @@ step << Shaman
     .goto The Barrens,65.8,43.8
     .turnin 220 >>Turn in Call of Water
     .accept 63 >>Accept Call of Water
-step << Warrior/Shaman
+step << Shaman
     .isOnQuest 873
 	.goto The Barrens,65.6,47.1,40,0
     .goto The Barrens,63.3,54.2,40,0
@@ -2634,16 +2752,16 @@ step << Warrior
     .goto The Barrens,68.6,49.2
     .turnin 1719 >>Turn in The Affray
     .accept 1791 >>Accept The Windwatcher
-step << Warrior/Shaman
+step << Shaman
     .isOnQuest 873
     .goto The Barrens,65.8,43.8
     .turnin 873 >>Turn in Isha Awak
-step << Tauren
+step << Tauren tbc
     .money <35.00
     .goto The Barrens,63.1,37.1,-1
     .goto Orgrimmar,45.1,63.9,-1
     .fly Thunder Bluff >>Fly to Thunder Bluff, we're going to train riding
-step << Tauren
+step << Tauren tbc
     .money <35.00
     .goto Mulgore,47.5,58.5
     .train 713 >> Head down the lifts and then go to Bloodhoof Village. Train riding and buy your mount
@@ -2666,46 +2784,46 @@ step << Warrior
 	.train 2567 >> Train Thrown from Hanashi
 step << Warrior/Shaman
 	#completewith next
-    #level 33
+    .xp <33
     .goto Orgrimmar,54.1,68.4
     .home >>Set your Hearthstone to Valley of Strength
-step << Undead !Warlock
+step << Undead !Warlock tbc
     .money <35.00
     .goto Durotar,50.8,13.7
     .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
     >> If you can teleport to the Undercity skip this step << Mage
-step << Undead !Warlock
+step << Undead !Warlock tbc
     .money <35.00
     .goto Tirisfal Glades,60.1,52.6
     .train 554 >> Train riding and purchase your mount
     .zoneskip Tirisfal Glades,1
-step << Blood Elf !Warlock
+step << Blood Elf !Warlock tbc
     .money <35.00
     .goto Durotar,50.8,13.7
     .zone Tirisfal Glades >> Board the zeppelin to Tirisfal Glades, we're buying our mount.
     >> If you can teleport to Undercity or Silvermoon skip this step << Mage
-step << Blood Elf !Warlock
+step << Blood Elf !Warlock tbc
     .money <35.00
     .goto Undercity,66.3,4.5,30,0
     .goto Undercity,54.9,11.3
     .zone Silvermoon City >> Click on the Orb of Translocation to head to Silvermoon City
     .zoneskip Orgrimmar
-step << Blood Elf !Warlock
+step << Blood Elf !Warlock tbc
     .money <35.00
     .goto Eversong Woods,61.1,54.7,5,0
     .goto Eversong Woods,61.4,54.0
     .train 33388 >> Leave Silvermoon City, then train riding and purchase your mount.
     .zoneskip Orgrimmar
-step << Blood Elf !Warlock
+step << Blood Elf !Warlock tbc
     .goto Silvermoon City,49.4,14.3
     >> Teleport to The Undercity if you can << Mage
     .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
     .zoneskip Orgrimmar
-step << Blood Elf !Warlock
+step << Blood Elf !Warlock tbc
     .goto Tirisfal Glades,61.9,59.1
     .zone Stranglethorn Vale >> Board the Zeppelin to Stranglethorn Vale
     .zoneskip Tirisfal Glades,1
-step << Undead !Warlock
+step << Undead !Warlock tbc
     .goto Tirisfal Glades,61.9,59.1
     .zone Stranglethorn Vale >> Board the Zeppelin to Stranglethorn Vale
     .zoneskip Tirisfal Glades,1

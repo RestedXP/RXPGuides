@@ -1,6 +1,6 @@
 <Bindings>
-    <Binding name="CLICK RXPItemFrameButton1:LeftButton" header="RXPGuides" />
-    <Binding name="CLICK RXPItemFrameButton2:LeftButton" />
-    <Binding name="CLICK RXPItemFrameButton3:LeftButton" />
-    <Binding name="CLICK RXPItemFrameButton4:LeftButton" />
+    <Binding name="CLICK RXPItemFrameButton1:LeftButton" header="Active Items" category="BINDING_HEADER_RXPGuides" />
+    <Binding name="CLICK RXPItemFrameButton2:LeftButton" category="BINDING_HEADER_RXPGuides"/>
+    <Binding name="CLICK RXPItemFrameButton3:LeftButton" category="BINDING_HEADER_RXPGuides"/>
+    <Binding name="CLICK RXPItemFrameButton4:LeftButton" category="BINDING_HEADER_RXPGuides"/>
 </Bindings>

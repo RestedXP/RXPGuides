@@ -1643,9 +1643,8 @@ step << !Hunter !NightElf !Rogue
     .goto Teldrassil,58.4,94.0
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << !Hunter !NightElf !Rogue
+    .goto Teldrassil,58.4,94.0
     .fly Auberdine >>Fly back to Auberdine
-
-
 step << tbc
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
@@ -1677,6 +1676,7 @@ step << tbc
     .zone Wetlands >>Take the boat to Wetlands
 step << tbc
     #completewith next
+    .goto Wetlands,9.5,59.7
     .fly Stormwind>> Fly to Stormwind
 step << Warlock
     .goto StormwindClassic,25.3,78.7
@@ -1684,7 +1684,7 @@ step << Warlock
 step << Warlock
     .goto StormwindClassic,25.2,78.5
     .accept 1716 >> Accept Devourer of Souls
-step
+step 
     #label exit
     .goto StormwindClassic,39.9,54.4
     .zone Darkshore>>Enter the Stockades and ghetto hearth to Auberdine
@@ -1889,6 +1889,9 @@ step
 step
 #xprate <1.5
     .deathskip >>Die and respawn at the Spirit Healer
+step << wotlk
+    #completewith next
+    *If you have money on this server, mail yourself 5g, we'll be buying our mounts soon
 step
     .goto Ashenvale,36.6,49.6
     .turnin 1054 >> Turn in Culling the Threat
@@ -1923,6 +1926,9 @@ step << NightElf wotlk
 	.goto Darnassus,38.7,15.8
     .money <5.00
 	.skill riding,150 >> Train riding and buy your mount
+step << Warrior/Rogue
+    .goto Darnassus,64.6,53.0
+    .collect 29009,1 >> Purchase a Heavy Throwing Dagger from Ellandrieth
 step
     .goto Darnassus,31.2,84.5
     .turnin 741 >> Turn in The Absent Minded Prospector
