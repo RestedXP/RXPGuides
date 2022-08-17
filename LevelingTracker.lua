@@ -814,23 +814,27 @@ function addon.tracker:CreateLevelSplits()
     f.title.text:SetText("Level splits")
     f.title.text:SetPoint("CENTER", f.title, 0, 1)
 
-    f.summary = AceGUI:Create("Label")
-    f.summary:SetFont(addon.font, 11)
-    f.summary.frame:SetParent(f)
-    f.summary.frame:SetPoint("TOPLEFT", f, "TOPLEFT", 8,
+    f.current = AceGUI:Create("Label")
+    f.current:SetFont(addon.font, 11)
+    f.current.frame:SetParent(f)
+    f.current.frame:SetPoint("TOPLEFT", f, "TOPLEFT", 8,
                              -(f.title:GetHeight() / 2 + 2))
-    f.summary.frame:Show()
-
-    f.summary:SetText([[Level Time: X:Y:Z
-Total time: X:Y:Z]])
+    f.current.frame:Show()
+    f.current:SetText("Current Level Time: X:Y:Z")
 
     f.history = AceGUI:Create("Label")
     f.history:SetFont(addon.font, 11)
     f.history.frame:SetParent(f)
-    f.history.frame:SetPoint("TOPLEFT", f.summary.frame, "BOTTOMLEFT", 0, -8)
+    f.history.frame:SetPoint("TOPLEFT", f.current.frame, "BOTTOMLEFT", 0, -8)
     f.history.frame:Show()
+    f.history:SetText("Level X: X:Y:Z")
 
-    f.history:SetText("Level Time: X:Y:Z")
+    f.total = AceGUI:Create("Label")
+    f.total:SetFont(addon.font, 11)
+    f.total.frame:SetParent(f)
+    f.total.frame:SetPoint("TOPLEFT", f.history.frame, "BOTTOMLEFT", 0, -8)
+    f.total.frame:Show()
+    f.total:SetText("Total Level Time: X:Y:Z")
 
     -- Immediately overwritten in UpdateLevelSplits on PLAYER_ENTERING_WORLD
     f:SetSize(50, 100)
@@ -868,21 +872,19 @@ function addon.tracker:UpdateLevelSplits(kind)
 
     local s = secondsSinceLogin + addon.tracker.state.login.timePlayedThisLevel
 
-    local splitsString = fmt("Level Time: %s", addon.tracker:UglyPrintTime(s))
+    f.current:SetText(fmt("Level Time: %s", addon.tracker:UglyPrintTime(s)))
 
     s = addon.tracker.state.login.totalTimePlayed + secondsSinceLogin
 
-    splitsString = fmt("%s\nTotal time: %s", splitsString,
-                       addon.tracker:UglyPrintTime(s))
-
-    f.summary:SetText(splitsString)
+    f.total:SetText(fmt("Total Time: %s", addon.tracker:UglyPrintTime(s)))
 
     if kind == "full" then
-        local data
+        local data, splitsString
+        local totalSeconds = 0
         -- TODO settings slider for level history, or rebuild with scroll pane
         local oldestLevel = addon.tracker.playerLevel - 10
         local highestLevel = addon.tracker.playerLevel - 1
-        splitsString = ""
+
         for l = oldestLevel, highestLevel do
             data = addon.tracker.reportData[l]
 
@@ -890,13 +892,20 @@ function addon.tracker:UpdateLevelSplits(kind)
                 if data.timestamp and data.timestamp.started and
                     data.timestamp.finished then
                     s = data.timestamp.finished - data.timestamp.started
+                    totalSeconds = totalSeconds + s
 
-                    splitsString = fmt("Level %d: %s\n%s", l,
-                                       addon.tracker:UglyPrintTime(s),
-                                       splitsString)
+                    if splitsString then
+                        splitsString = fmt("%s\nLevel %d: %s", splitsString, l,
+                                           addon.tracker:UglyPrintTime(
+                                               totalSeconds))
+                    else
+                        splitsString = fmt("Level %d: %s", l,
+                                           addon.tracker:UglyPrintTime(
+                                               totalSeconds))
+                    end
                 else
-                    splitsString = fmt("Level %d: Missing Data\n%s", l,
-                                       splitsString)
+                    splitsString = fmt("%s\nLevel %d: Missing Data",
+                                       splitsString, l)
                 end
             end
         end
@@ -904,12 +913,16 @@ function addon.tracker:UpdateLevelSplits(kind)
         f.history:SetText(splitsString)
     end
 
-    local width = max(f.summary.label:GetStringWidth(),
-                      f.history.label:GetStringWidth())
+    local width = max(f.current.label:GetStringWidth(),
+                      f.history.label:GetStringWidth(),
+                      f.total.label:GetStringWidth())
 
     -- Frame heights plus offsets plus borders
-    local height = max(f.summary.label:GetStringHeight(),
-                       f.history.label:GetStringHeight()) + 48
-    f.title:SetWidth(width)
-    f:SetSize(width + 16, height)
+    local height = f.current.label:GetStringHeight() +
+                       f.history.label:GetStringHeight() +
+                       f.total.label:GetStringHeight() + 36
+
+    --- Only update width if next is wider, prevent jittering
+    f.title:SetWidth(max(f.title:GetWidth(), width))
+    f:SetSize(max(f:GetWidth(), width + 16), height)
 end
