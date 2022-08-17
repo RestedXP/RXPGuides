@@ -43,7 +43,7 @@ function addon.settings.ChatCommand(input)
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
         end
     elseif input == "splits" then
-        addon.tracker:ShowLevelSplits()
+        addon.tracker:ToggleLevelSplits()
     else
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
