@@ -140,6 +140,7 @@ local IsQuestComplete = addon.IsQuestComplete
 
 local function IsOnQuest(id) return C_QuestLog.IsOnQuest(id) end
 
+addon.IsOnQuest = IsOnQuest
 addon.IsQuestTurnedIn = IsQuestTurnedIn
 addon.IsQuestComplete = IsQuestComplete
 
