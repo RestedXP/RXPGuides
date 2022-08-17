@@ -490,7 +490,6 @@ function addon:OnInitialize()
     addon.RXPG.LoadCachedGuides()
     addon.RXPG.LoadEmbeddedGuides()
 
-    addon.RXPFrame.GenerateMenuTable()
     ProcessSpells()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
@@ -527,6 +526,8 @@ function addon:OnEnable()
     self:RegisterEvent("UNIT_PET")
     self:RegisterEvent("PLAYER_CONTROL_LOST")
     self:RegisterEvent("PLAYER_CONTROL_GAINED")
+
+    self:RegisterEvent("PLAYER_ENTERING_WORLD")
     -- self:RegisterEvent("QUEST_LOG_UPDATE")
 
     questFrame:RegisterEvent("QUEST_COMPLETE")
@@ -544,6 +545,10 @@ function addon:OnEnable()
     if _G.WOW_PROJECT_ID == _G.WOW_PROJECT_CLASSIC then
         self:RegisterEvent("UNIT_AURA")
     end
+end
+
+function addon:PLAYER_ENTERING_WORLD()
+    addon.RXPFrame.GenerateMenuTable()
 end
 
 function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
