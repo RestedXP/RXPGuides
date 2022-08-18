@@ -83,10 +83,14 @@ step
     .goto Elwynn Forest,48.9,40.2
     .turnin 5261 >> Turn in Eagan Peltskinner
     .accept 33 >> Accept Wolves Across The Border
-step
+step << tbc
     .goto Elwynn Forest,46.70,37.78
-    >>Kill Young Wolves. Loot them for Meat
+    >>Kill Young Wolves. Loot them for their Meat
     .complete 33,1 --Collect Tough Wolf Meat (x8)
+step << wotlk
+    .goto Elwynn Forest,46.70,37.78
+    >>Kill Diseased Young Wolves. Loot them for their Pelts
+    .complete 33,1 --Collect Diseased Wolf Pelt (8)
 step
     .goto Elwynn Forest,49.05,35.33
     >>Kill Kobold Vermin
