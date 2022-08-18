@@ -57,7 +57,8 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
     if addon.settings.db.profile.enableTracker then
         local levelData = addon.tracker.reportData[level - 1]
 
-        if levelData and levelData.timestamp and levelData.timestamp.finished then
+        if levelData and levelData.timestamp and levelData.timestamp.started and
+            levelData.timestamp.finished then
             s = levelData.timestamp.finished - levelData.timestamp.started
 
             msg = self.BuildNotification("I just leveled from %d to %d in %s",
@@ -69,12 +70,20 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
             C_Timer.After(5, function()
                 levelData = addon.tracker.reportData[level - 1]
 
-                s = levelData.timestamp.finished - levelData.timestamp.started
+                if levelData and levelData.timestamp and
+                    levelData.timestamp.started and levelData.timestamp.finished then
 
-                msg = self.BuildNotification(
-                          "I just leveled from %d to %d in %s", level - 1,
-                          level, addon.tracker:PrettyPrintTime(s))
-                announceLevelUp(msg)
+                    s = levelData.timestamp.finished -
+                            levelData.timestamp.started
+
+                    msg = self.BuildNotification(
+                              "I just leveled from %d to %d in %s", level - 1,
+                              level, addon.tracker:PrettyPrintTime(s))
+                    announceLevelUp(msg)
+                elseif addon.release == 'Development' then
+                    print(self.BuildPrint("Invalid .started or .finished %d",
+                                          level))
+                end
             end)
         end
 
