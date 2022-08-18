@@ -341,3 +341,93 @@ end
 function addon.comms.BuildPrint(msg, ...)
     return fmt("%s: %s", addonName, fmt(msg, ...))
 end
+
+function addon.comms:OpenBugReport()
+    local character = fmt("%s / %s / level %d (%.2f%%)", UnitRace("player"),
+                          select(1, UnitClass("player")), UnitLevel("player"),
+                          UnitXP("player") / UnitXPMax("player") * 100)
+
+    local position = C_Map.GetPlayerMapPosition(
+                         C_Map.GetBestMapForUnit("player") or -1, "player")
+    local zone = fmt("%s / %s / %.2f,%.2f", GetRealZoneText(), GetSubZoneText(),
+                     position and position.x * 100 or -1,
+                     position and position.y * 100 or -1)
+
+    local guide = fmt("%s (v%d)",
+                      addon.currentGuide and addon.currentGuide.key or 'nil',
+                      addon.currentGuide.name and addon.currentGuide.version or
+                          'N/A')
+
+    local stepData = ""
+    if addon.currentGuide and addon.currentGuide.steps and RXPCData.currentStep then
+        local step = addon.currentGuide.steps[RXPCData.currentStep]
+        _G.RXPD = step
+        if type(step) == "table" then
+            if step.elements then
+                for s, e in pairs(step.elements) do
+                    stepData = fmt(
+                                   "%s\nStep %d:%d\n  title = %s\n  text = %s\n  tag = %s\n  questId = %s\n",
+                                   stepData, RXPCData.currentStep, s,
+                                   e.title or '', e.text or '', e.tag or '',
+                                   e.questId or '')
+                end
+            else
+                stepData = fmt("%s\nUnknown table", stepData, step)
+            end
+        elseif type(step) == "string" then
+            stepData = fmt("%s\n%s", stepData, step)
+        end
+
+    else
+        stepData = "N/A"
+    end
+
+    local content = fmt([[Describe your issue:
+
+
+
+Do not edit below this line
+```
+Character: %s
+Zone: %s
+Guide: %s
+Addon: %s
+XP Rate: %.1f
+Locale: %s
+
+Current Step data
+%s
+```
+]], character or "Error", zone or "Error", guide or "Error", addon.release,
+                        RXPCData.xprate, GetLocale(), stepData)
+
+    local AceGUI = LibStub("AceGUI-3.0")
+    local f = AceGUI:Create("Frame")
+
+    f:SetLayout("Fill")
+    f:EnableResize(true)
+    f.statustext:GetParent():Hide()
+    f:SetTitle("RestedXP Support Ticket")
+
+    f.scrollContainer = AceGUI:Create("ScrollFrame")
+    f.scrollContainer:SetLayout("Fill")
+    f.scrollContainer:SetFullHeight(true)
+    f:AddChild(f.scrollContainer)
+
+    f.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.frame:SetBackdropColor(unpack(addon.colors.background))
+
+    local editbox = AceGUI:Create("MultiLineEditBox")
+    editbox:SetLabel(
+        "Join discord.gg/restedxp and follow instructions in the #open-ticket channel")
+    editbox:SetFullWidth(true)
+    editbox:SetFullHeight(true)
+    editbox:SetText(content)
+    editbox:DisableButton(true)
+    f.scrollContainer:AddChild(editbox)
+
+    _G["RESTEDXP_BUG_REPORT_WINDOW"] = f.frame
+    tinsert(_G.UISpecialFrames, "RESTEDXP_BUG_REPORT_WINDOW")
+
+    -- TODO save to variable to preserve open/close
+end
