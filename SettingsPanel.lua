@@ -42,6 +42,8 @@ function addon.settings.ChatCommand(input)
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
         end
+    elseif input == "splits" then
+        addon.tracker:ToggleLevelSplits()
     else
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
@@ -859,6 +861,12 @@ function addon.settings.CreateExtrasOptionsPanel()
                         type = "toggle",
                         width = "full",
                         order = 3,
+                    },
+                    enablelevelSplits = {
+                        name = "Enable Level Splits",
+                        type = "toggle",
+                        width = "full",
+                        order = 4,
                     },
                 }
             }
