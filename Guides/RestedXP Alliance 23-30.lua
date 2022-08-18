@@ -778,7 +778,8 @@ step
     .isOnQuest 226
 step << Hunter/Paladin
     .goto Duskwood,19.7,39.7
-    >>Kill the level 30 elite roaming the cemetery
+    >>Kill the level 30 elite roaming the cemetery. Kite him around the big trees in the area.
+    >> Run away and heal when he enrages, use the big trees to make space. Don't try to tank him during the enrage << Paladin
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
 step
     .goto Duskwood,7.8,34.0
@@ -964,6 +965,7 @@ step
 step << !Hunter !Paladin
     .goto Duskwood,19.7,39.7
     >>Kill the level 30 elite roaming the cemetery. Skip this step if you cannot solo her or find a group.
+    >> Run away when he enrages, use the big trees to kite and make space. Don't try to tank him during the enrage
     .unitscan Mor'Ladim
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
 step
