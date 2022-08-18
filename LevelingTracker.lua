@@ -370,6 +370,7 @@ function addon.tracker:CreateGui()
     trackerUi.reachedContainer.data = AceGUI:Create("Label")
     trackerUi.reachedContainer.data:SetText("In-progress")
     trackerUi.reachedContainer.data:SetFont(addon.font, 12)
+    trackerUi.reachedContainer.data:SetFullWidth(true)
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.data)
 
     trackerUi.scrollContainer:AddChild(trackerUi.reachedContainer)
