@@ -748,6 +748,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                     },
                     openTrackerReportOnCharOpen = {
                         name = "Always Open Leveling Report With Character Panel",
+                        desc = "Requires Reload for changes to take effect\nEnables the RestedXP Leveling Report when you open your character panel",
                         type = "toggle",
                         width = "full",
                         order = 3
@@ -767,18 +768,21 @@ function addon.settings.CreateExtrasOptionsPanel()
                     },
                     enableLevelUpAnnounceSolo = {
                         name = "Announce Level Ups (Emote)",
+                        desc = "Make a public emote when you level up",
                         type = "toggle",
                         width = "full",
                         order = 6
                     },
                     enableLevelUpAnnounceGroup = {
                         name = "Announce Level Ups (Party Chat)",
+                        desc = "Announce in party chat when you level up",
                         type = "toggle",
                         width = "full",
                         order = 7
                     },
                     enableLevelUpAnnounceGuild = {
                         name = "Announce Level Ups (Guild Chat)",
+                        desc = "Announce in guild chat when you level up",
                         type = "toggle",
                         width = "full",
                         order = 8
@@ -791,24 +795,28 @@ function addon.settings.CreateExtrasOptionsPanel()
                     },
                     alwaysSendBranded = {
                         name = "Send announcements without another RXP user in group",
+                        desc = "Without this checked we will only send announcements if another RestedXP User is in your group",
                         type = "toggle",
                         width = "full",
                         order = 10
                     },
                     enableCompleteStepAnnouncements = {
                         name = "Announce when Quest Step is completed",
+                        desc = "Announce in party chat when you complete certain quests (.complete)",
                         type = "toggle",
                         width = "full",
                         order = 11
                     },
                     enableCollectStepAnnouncements = {
-                        name = "Announce when all Step items are Collected",
+                        name = "Announce when all Step items are collected",
+                        desc = "Announce in party chat when you collect all the items relevant to a quest (.collect)",
                         type = "toggle",
                         width = "full",
                         order = 12
                     },
                     enableFlyStepAnnouncements = {
                         name = "Announce Flying Step timers",
+                        desc = "Announce in party chat where you're flying and how long until you arrive",
                         type = "toggle",
                         width = "full",
                         order = 13
@@ -822,6 +830,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                     },
                     ignoreQuestieConflicts = {
                         name = "Ignore Questie announcements",
+                        desc = "Send quest and collect step announcements even if Questie is enabled",
                         type = "toggle",
                         width = "full",
                         order = 15,
