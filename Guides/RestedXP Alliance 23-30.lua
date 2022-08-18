@@ -300,7 +300,7 @@ step
     .goto Wetlands,56.4,40.3
     .accept 277 >> Accept Fire Taboo
     .isQuestTurnedIn 276
-step << NightElf/Draenei/Human tbc
+step << NightElf/Draenei/Human wotlk
     #completewith next
     .goto Wetlands,53.7,72.3,75 >> The path to Loch Modan starts here
 step << NightElf/Draenei/Human wotlk
