@@ -726,7 +726,7 @@ function addon.tracker:UpdateReport(selectedLevel)
         trackerUi.sourcesContainer.data['mobs']:SetText(
             fmt("* Killing: %d%%", 0))
     else
-        ratio = report.questXP / (report.questXP + report.mobXP)
+        ratio = report.mobXP / (report.questXP + report.mobXP)
         percentage = 100 * ratio
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
                                                               "* Quests: %.2f%%",
