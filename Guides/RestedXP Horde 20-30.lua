@@ -252,6 +252,8 @@ step
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .isOnQuest 6461
 step
+    #requires besseleth
+step
     #label spiderend
     >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
