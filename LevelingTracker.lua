@@ -905,7 +905,7 @@ function addon.tracker:UpdateLevelSplits(kind)
                     end
                 else
                     splitsString = fmt("%s\nLevel %d: Missing Data",
-                                       splitsString, l)
+                                       splitsString or "", l)
                 end
             end
         end
