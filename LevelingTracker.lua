@@ -84,6 +84,26 @@ function addon.tracker:UpgradeDB()
         end
 
         if not levelDB[l].mobs then levelDB[l].mobs = {} end
+
+        -- Repair started or finished timestamps if surrounding data exists
+        if not levelDB[l].timestamp.started and levelDB[l - 1] and
+            levelDB[l - 1].timestamp.finished then
+
+            print(addon.comms.BuildPrint("Repairing level %d started timestamp",
+                                         l))
+
+            levelDB[l].timestamp.started = levelDB[l - 1].timestamp.finished + 1
+        end
+
+        -- Repair finished if not current level
+        if l < addon.tracker.playerLevel and not levelDB[l].timestamp.finished and
+            levelDB[l + 1] and levelDB[l + 1].timestamp.started then
+
+            print(addon.comms.BuildPrint(
+                      "Repairing level %d finished timestamp", l))
+
+            levelDB[l].timestamp.finished = levelDB[l + 1].timestamp.started - 1
+        end
     end
 end
 
