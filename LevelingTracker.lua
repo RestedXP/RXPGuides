@@ -886,7 +886,9 @@ end
 
 function addon.tracker:UpdateLevelSplits(kind)
     if not addon.settings.db.profile.enablelevelSplits or
-        not addon.tracker.levelSplits then return end
+        not addon.tracker.levelSplits or not addon.tracker.state.login then
+        return
+    end
 
     local f = addon.tracker.levelSplits
     local secondsSinceLogin = difftime(time(), addon.tracker.state.login.time)
