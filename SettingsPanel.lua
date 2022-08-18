@@ -56,7 +56,6 @@ function addon.settings:InitializeSettings()
     local settingsDBDefaults = {
         profile = {
             enableTracker = true,
-            enableTrackerReport = true,
             enableLevelUpAnnounceSolo = true,
             enableLevelUpAnnounceGroup = true,
             openTrackerReportOnCharOpen = true,
@@ -742,23 +741,17 @@ function addon.settings.CreateExtrasOptionsPanel()
                         order = 1
                     },
                     enableTracker = {
-                        name = "Track Leveling Data",
+                        name = "Enable Leveling Tracker",
                         type = "toggle",
                         width = "full",
                         order = 2
                     },
-                    enableTrackerReport = {
-                        name = "Enable Leveling Report",
-                        type = "toggle",
-                        width = "full",
-                        order = 3
-                    }, -- TODO add reload UI if changes made
                     openTrackerReportOnCharOpen = {
                         name = "Always Open Leveling Report With Character Panel",
                         type = "toggle",
                         width = "full",
-                        order = 4
-                    },
+                        order = 3
+                    }
                 },
             },
             communications = {
