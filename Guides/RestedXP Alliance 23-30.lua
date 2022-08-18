@@ -100,13 +100,13 @@ step << wotlk
     .goto Ironforge,67.86,42.87
     .collect 4371,1,175,1,1
 	.bronzetube
-step << Draenei wotlk/NightElf wotlk--Not needed, including just in case someone forgets to set HS to SW
+step << !Dwarf !Gnome wotlk--Not needed, including just in case someone forgets to set HS to SW
     .goto Ironforge,55.5,47.7
     .fp Ironforge>> Get the Ironforge Flight Path
 step << Mage wotlk
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
-step << Draenei wotlk/NightElf wotlk
+step << wotlk !Dwarf !Gnome
     #completewith next
     .goto Dun Morogh,59.5,42.8,40,0
     .goto Dun Morogh,60.4,44.1,40,0
@@ -129,7 +129,7 @@ step << Draenei wotlk/NightElf wotlk
     >>Do the Deathless Dun Morogh -> Wetlands skip
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
     .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
-step << Draenei wotlk/NightElf wotlk
+step << wotlk !Dwarf !Gnome
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
 step << Dwarf !Paladin wotlk
@@ -137,53 +137,23 @@ step << Dwarf !Paladin wotlk
 	#completewith next
 	.goto Dun Morogh,63.5,50.6
 	.money <5.00
-	.train 152 >> Head to Dun Morogh, train riding and purchase your mount.
+	.skill riding,75 >> Head to Dun Morogh, train riding and purchase your mount.
 step << Gnome !Warlock wotlk
 	#sticky
 	#completewith next
 	.goto Dun Morogh,49.2,48.1
 	.money <5.00
-	.train 553 >> Head to Dun Morogh, train riding and purchase your mount.
-step << Draenei wotlk/NightElf wotlk
+	.skill riding,75 >> Head to Dun Morogh, train riding and purchase your mount.
+step << !Dwarf !Gnome wotlk
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
-step << Human wotlk/Gnome wotlk/Dwarf wotlk
+step << Gnome wotlk/Dwarf wotlk
     #completewith next
     .goto Ironforge,55.5,47.7
     .fly Wetlands >> Fly to Wetlands
 step << Mage wotlk
     .goto Wetlands,10.7,60.9
     .home >> Set your Hearthstone to Deepwater Tavern
-step << Human tbc/Gnome tbc/Dwarf tbc
-    #completewith next
-    >> If you have the Loch Modan flight path, fly there. Otherwise skip this step.
-    .goto Ironforge,55.5,47.7
-    .fly Loch Modan >> Fly to Loch Modan
-    .zoneskip Wetlands
-step << Human tbc/Gnome tbc/Dwarf tbc
-    #completewith next
-    .goto Dun Morogh,59.5,42.8,40,0
-    .goto Dun Morogh,60.4,44.1,40,0
-    .goto Dun Morogh,61.1,44.1,40,0
-    .goto Dun Morogh,61.2,42.3,40,0
-    .goto Dun Morogh,60.8,40.9,40,0
-    .goto Dun Morogh,59.0,39.5,40,0
-    .goto Dun Morogh,60.3,38.6,40,0
-    .goto Dun Morogh,61.7,38.7,40,0
-    .goto Dun Morogh,65.7,21.6,40,0
-    .goto Dun Morogh,65.8,12.5,40,0
-    .goto Dun Morogh,65.6,10.8,40,0
-    .goto Dun Morogh,66.5,10.0,40,0
-    .goto Dun Morogh,66.9,8.5,40,0
-    .goto Wetlands,20.6,67.2,50,0
-    .goto Wetlands,17.7,67.7,40,0
-    .goto Wetlands,16.8,65.3,40,0
-    .goto Wetlands,15.1,64.0,40,0
-    .goto Wetlands,12.1,60.3,40,0
-    >>Do the Deathless Dun Morogh -> Wetlands skip
-    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
-    .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
-    .zoneskip Wetlands
 step
     .goto Wetlands,8.3,58.5
     .accept 279 >> Accept Claws from the Deep
@@ -330,29 +300,33 @@ step
     .goto Wetlands,56.4,40.3
     .accept 277 >> Accept Fire Taboo
     .isQuestTurnedIn 276
-step << NightElf/Draenei
+step << NightElf/Draenei/Human tbc
     #completewith next
     .goto Wetlands,53.7,72.3,75 >> The path to Loch Modan starts here
-step << NightElf/Draenei
+step << NightElf/Draenei/Human wotlk
     .goto Loch Modan,25.4,10.6
     .zone Loch Modan >> Cross the tunnel into Loch Modan
-step << NightElf/Draenei
+step << NightElf/Draenei/Human wotlk
     .goto Loch Modan,46.0,13.3
     .accept 250 >> Accept A Dark Threat Looms
     .maxlevel 23
-step << NightElf/Draenei
+step << NightElf/Draenei/Human wotlk
     .goto Loch Modan,56.1,13.3
     >>Click on the small explosive barrel
     .turnin 250 >> Turn in A Dark Threat Looms
     .accept 199 >> Accept A Dark Threat Looms
     .maxlevel 23
-step << NightElf/Draenei
+step << NightElf/Draenei/Human wotlk
     .goto Loch Modan,46.0,13.3
     .turnin 199 >> Turn in A Dark Threat Looms
     .isOnQuest 199
-step << NightElf/Draenei
+step << NightElf/Draenei/Human wotlk
     .goto Loch Modan,33.9,50.9
     .fp Thelsamar >> Get the Thelsamar flight path
+step << Draenei tbc/NightElf tbc
+    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
+    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
+    .zoneskip Elwynn Forest
 step << wotlk
     #label wettylandy
     #completewith next
@@ -365,6 +339,7 @@ step
     .turnin 279 >> Turn in Claws from the Deep
     .accept 281 >> Accept Reclaiming Goods
 step
+    .zoneskip Wetlands,1
     .goto Wetlands,8.6,55.8
     .turnin 469 >> Turn in Daily Delivery
     .isOnQuest 469
@@ -372,12 +347,13 @@ step
     .goto Wetlands,8.6,55.8
     .turnin 484 >> Turn in Young Crocolisk Skins
     .isOnQuest 484
+    .zoneskip Wetlands,1
 step
-    #xprate >1.5
     .goto Wetlands,8.6,55.8
     .accept 471 >> Accept Apprentice's Duties
     .isQuestTurnedIn 484
-step << Mage
+    .zoneskip Wetlands,1
+step << Mage wotlk
     .zone Stormwind City >> Teleport to Stormwind
 step
     .zoneskip Wetlands,1
@@ -2852,16 +2828,13 @@ step << Mage
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
 
-step << Draenei/NightElf --Not needed, including just in case someone forgets to set HS to SW
+step << !Dwarf !Gnome wotlk
     .goto Ironforge,55.5,47.7
     .fp Ironforge>> Get the Ironforge Flight Path
-step
-	.zoneskip Dun Morogh
-    .goto Ironforge,55.5,47.2
-	.fly Wetlands>> Fly to Wetlands
-    >>Skip this step if you don't have the Wetlands FP << NightElf/Draenei
-
-step << Draenei/NightElf
+step << Gnome/Dwarf/tbc
+    .goto Ironforge,55.5,47.7
+    .fly Wetlands>> Fly to wetlands
+step << wotlk !Dwarf !Gnome
     #completewith next
     .goto Dun Morogh,59.5,42.8,40,0
     .goto Dun Morogh,60.4,44.1,40,0
@@ -2884,7 +2857,22 @@ step << Draenei/NightElf
     >>Do the Deathless Dun Morogh -> Wetlands skip
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> CLICK HERE for video reference
     .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
-step << Draenei/NightElf
+step << wotlk !Dwarf !Gnome
+    .goto Wetlands,9.5,59.7
+    .fp Menethil >> Get the Menethil Harbor flight path
+step << Dwarf !Paladin wotlk
+	#sticky
+	#completewith next
+	.goto Dun Morogh,63.5,50.6
+	.money <5.00
+	.skill riding,75 >> Head to Dun Morogh, train riding and purchase your mount.
+step << Gnome !Warlock wotlk
+	#sticky
+	#completewith next
+	.goto Dun Morogh,49.2,48.1
+	.money <5.00
+	.skill riding,75 >> Head to Dun Morogh, train riding and purchase your mount.
+step << !Dwarf !Gnome wotlk
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
 

@@ -2253,6 +2253,47 @@ step
     >>Go back to the Darkshore docks
     .zone Stormwind City >> Take the boat to Stormwind << wotlk
     .zone Wetlands >> Take the boat to Wetlands << tbc
+step << Draenei tbc/NightElf tbc
+#xprate >1.499
+    .goto Wetlands,9.5,59.7
+    .fp Menethil >> Get the Menethil Harbor flight path
+step << Draenei tbc/NightElf tbc
+#xprate >1.499
+    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
+    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
+    .zoneskip Elwynn Forest
 
+
+step << Draenei tbc/NightElf tbc
+#xprate >1.499
+    #completewith next
+    .goto Wetlands,63.9,78.6
+    .zone Loch Modan >> Logout on top of the mushrooms at the back of the cave. When you log back in, this will teleport you to Thelsamar.
+    >>Make sure to logout as close as possible to the back of the cave. This trick won't work if you log out next to the edge of the mushroom closer to the mouth of the cave.
+    .link https://www.youtube.com/watch?v=21CuGto26Mk >> CLICK HERE for a reference
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    .goto Loch Modan,33.9,50.9
+    .fp Thelsamar >> Get the Thelsamar flight path
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    #completewith next
+    .goto Loch Modan,21.30,68.60,40,0
+    .zone Dun Morogh>> Run to Dun Morogh
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    >>Go inside the South-eastern Trogg cave. Perform a logout skip
+    .goto Dun Morogh,70.63,56.70,60,0
+    .goto Dun Morogh,70.60,54.86
+    .link https://www.youtube.com/watch?v=yQBW3KyguCM >> CLICK HERE
+    .zone Ironforge >> Logout Skip or travel to Ironforge
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    .goto Ironforge,76.03,50.98,30,0
+    .zone Stormwind City >> Take the tram to Stormwind
 ]])
 
