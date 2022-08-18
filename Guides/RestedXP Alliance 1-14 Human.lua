@@ -34,14 +34,12 @@ step << Warlock tbc
     .goto Elwynn Forest,56.7,44.0
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock tbc
-    #softcore
     .goto Elwynn Forest,52.9,44.3,60,0
     >>Kill some Wolves en route, then watch this
     .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
     .goto Elwynn Forest,56.7,44.0
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock tbc
-    #softcore
     .deathskip >> Die and respawn at the Spirit Healer
 step << Warlock tbc
     #hardcore
@@ -598,11 +596,6 @@ step << Paladin
     .goto Elwynn Forest,83.7,59.4,100,0
     .goto Elwynn Forest,76.8,62.4
     >>Get bundles of wood at the base of the trees
-    .complete 5545,1 --Collect Bundle of Wood (x8)
-step << Paladin
-    #hardcore
-    #completewith Bundles
-    >>Keep an eye out for the bundles of logs at the base of the trees
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step << !Paladin
     #sticky
