@@ -44,6 +44,12 @@ function addon.settings.ChatCommand(input)
         end
     elseif input == "splits" then
         addon.tracker:ToggleLevelSplits()
+    elseif input == "show" then
+        -- Do not persist change, temporary toggle
+        addon.RXPFrame:SetShown(true)
+    elseif input == "hide" then
+        -- Do not persist change, temporary toggle
+        addon.RXPFrame:SetShown(false)
     else
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
