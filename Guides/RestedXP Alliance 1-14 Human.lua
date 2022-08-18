@@ -266,8 +266,8 @@ step
     .goto Elwynn Forest,39.5,60.5,200 >> Die and respawn at the Spirit Healer, or run to Goldshire
 step << Warrior/Paladin/Rogue
     .goto Elwynn Forest,41.7,65.5
-    .trainer >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. << Warrior/Rogue
-    .trainer >> Train Blacksmithing from Argus. This will allow you to make +2 damage weightstones for your weapon which are very strong. << Paladin
+    .trainer >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. Make them until level 20ish << Warrior/Rogue
+    .trainer >> Train Blacksmithing from Argus. This will allow you to make +2 damage weightstones for your weapon which are very strong. Make them until level 20ish << Paladin
 step << Warrior
     .goto Elwynn Forest,41.5,65.9
     .money <0.0509
@@ -569,8 +569,7 @@ step
     .turnin 35 >> Turn in Further Concerns
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
-step << Paladin
-    #softcore
+step << Paladin tbc
     #sticky
     #completewith Bundles
     +Complete all quests before heading to the murlocs, we are going to do a deathskip.
@@ -628,20 +627,19 @@ step << !Paladin
     >> Be careful as this quest is difficult
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
-step << Paladin
+step << Paladin tbc
     #softcore
     .goto Elwynn Forest,79.8,55.5
     >> Run on top of the corpse, then use Divine Protection and IMMEDIATELY loot the corpse, handin, and accept the quest. You'll die after
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
-step << Paladin
-    #hardcore
+step << Paladin wotlk
     .goto Elwynn Forest,79.8,55.5
     >> Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away, and nuke one of the hut mobs. Bubble, heal/run away if needed, then come back and kill the other mob
     >> Be careful as this quest is difficult
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
-step << Paladin
+step << Paladin tbc
     #softcore
     #sticky
     #completewith Bundles2
