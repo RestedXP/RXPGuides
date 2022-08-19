@@ -66,7 +66,6 @@ function addon.settings:InitializeSettings()
             enableTracker = true,
             enableLevelUpAnnounceSolo = true,
             enableLevelUpAnnounceGroup = true,
-            openTrackerReportOnCharOpen = true,
             enableFlyStepAnnouncements = true,
             alwaysSendBranded = true,
             checkVersions = true
