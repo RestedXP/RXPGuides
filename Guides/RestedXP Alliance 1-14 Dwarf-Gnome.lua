@@ -445,10 +445,10 @@ step << Druid/Shaman
     .collect 2495,1 --Collect Walking Stick
 step << Warrior/Rogue
     .goto Dun Morogh,45.3,51.9
-    .train 2018 >>Train Blacksmithing. You'll get mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You can skip Blacksmithing if you wish
+    .train 2018 >>Train Blacksmithing. You'll get mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You should stop making these around level 20.
 step << Paladin
     .goto Dun Morogh,45.3,51.9
-    .train 2018 >>Train Blacksmithing. You'll get mining later which will allow you to craft Weightstones (+2 weapon damage for 1 hour). You can skip Blacksmithing if you wish
+    .train 2018 >>Train Blacksmithing. You'll get mining later which will allow you to craft Weightstones (+2 weapon damage for 1 hour). You should stop making these around level 20.
 step
     .goto Dun Morogh,46.0,51.7
     .accept 400 >> Accept Tools for Steelgrill
