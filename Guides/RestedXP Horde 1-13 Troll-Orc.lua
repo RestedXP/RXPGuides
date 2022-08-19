@@ -624,7 +624,7 @@ step << Hunter
 step << Warrior/Rogue/Paladin
     .goto Durotar,52.0,40.7
     .money <0.0020
-    .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
+    .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You should stop making these around level 20. You can skip Blacksmithing and Mining if you wish
 step << Warrior/Rogue/Paladin
     .goto Durotar,51.8,40.9
     .money <0.0010
