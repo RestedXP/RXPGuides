@@ -35,13 +35,6 @@ function addon.settings.ChatCommand(input)
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
         end
-    elseif input == "beta" then
-        addon.settings.db.profile.enableBetaFeatures = not addon.settings.db.profile.enableBetaFeatures
-
-        if addon.settings.db.profile.enableBetaFeatures then
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
-        end
     elseif input == "splits" then
         addon.tracker:ToggleLevelSplits()
     elseif input == "show" then
@@ -722,12 +715,12 @@ function addon.settings.CreateImportOptionsPanel()
 end
 
 function addon.settings.CreateExtrasOptionsPanel()
-    local function isAdvanced()
+    local function isNotAdvanced()
         return addon.release ~= 'Development' or not addon.settings.db.profile.enableBetaFeatures
     end
 
     local function requiresReload()
-        return "This requires reload to take effect, continue?"
+        return "This requires a reload to take effect, continue?"
     end
 
     local extraOptionsTable = {
@@ -760,14 +753,10 @@ function addon.settings.CreateExtrasOptionsPanel()
                         type = "toggle",
                         width = "full",
                         order = 2,
+                        confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if value then
-                                addon.tracker:CreateGui()
-                                addon.tracker.ui:Show()
-                            else
-                                addon.tracker.ui:Hide()
-                            end
+                            _G.ReloadUI()
                         end,
                     },
                     openTrackerReportOnCharOpen = {
@@ -781,7 +770,27 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             _G.ReloadUI()
                         end,
-                    }
+                    },
+                    splitsOptionsHeader = {
+                        name = "Level Splits (Beta)",
+                        type = "header",
+                        width = "full",
+                        order = 4,
+                        hidden = isNotAdvanced(),
+                    },
+                    enablelevelSplits = {
+                        name = "Enable Level Splits",
+                        type = "toggle",
+                        width = "full",
+                        order = 5,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        disabled = not addon.settings.db.profile.enableTracker,
+                        hidden = isNotAdvanced(),
+                    },
                 },
             },
             communications = {
@@ -889,14 +898,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                         type = "toggle",
                         width = "full",
                         order = 2,
-                        hidden = isAdvanced,
-                    },
-                    enablelevelSplits = {
-                        name = "Enable Level Splits",
-                        type = "toggle",
-                        width = "full",
-                        order = 3,
-                        hidden = isAdvanced,
+                        hidden = isNotAdvanced,
                     },
                 }
             }

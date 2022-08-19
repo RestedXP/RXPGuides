@@ -52,7 +52,7 @@ function addon.tracker:SetupTracker()
 
     addon.tracker:CompileData()
 
-    if addon.settings.db.profile.enableTracker then addon.tracker:CreateGui() end
+    addon.tracker:CreateGui()
 
     if addon.settings.db.profile.enablelevelSplits then
         addon.tracker:CreateLevelSplits()
