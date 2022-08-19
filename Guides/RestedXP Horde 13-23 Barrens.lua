@@ -183,14 +183,14 @@ step << Warrior
 .goto The Barrens,55.8,20.0
 .collect 4926,1,819 --Collect Chen's Empty Keg
 .accept 819 >> Accept Chen's Empty Keg
-step
+step << !Tauren !Undead
     #sticky
     #completewith next
     >>Kill any Zhevras you see. Loot them for Hooves
     .complete 845,1 --Zhevra Hooves (4)
 step << Tauren Warrior
     .goto The Barrens,56.7,19.8,60 >> Run to here, grinding mobs en route
-step << !Tauren
+step << !Tauren !Undead
     .goto The Barrens,62.3,20.1
     .turnin 924 >>Turn in The Demon Seed
 step << Shaman
@@ -228,7 +228,7 @@ step
     .accept 887 >>Accept Southsea Freebooters
 step
     .goto The Barrens,63.1,37.1
-    #completewith next
+    #completewith ratchetfp
     .fp Ratchet >>Get the Ratchet Flight Path
 step
     .goto The Barrens,63.0,37.2
@@ -253,6 +253,7 @@ step
     .turnin 819 >>Turn in Chen's Empty Keg
     .accept 821 >>Accept Chen's Empty Keg
 step
+    #label rachetfp
     .goto The Barrens,61.2,39.4
     >> The level 5 fish food here is super cheap, stock up << Warrior/Rogue
     .vendor >> Restock on food/water
@@ -354,16 +355,9 @@ step
 step
     #sticky
     #completewith next
->>Kill Plainstriders. Loot them for their Kidneys. This does not need to be completed right now but kill them as you see them.
+>>Kill Plainstriders. Loot them for their Kidneys. This does not need to be completed right now but kill them as you see them. Also get atleast 2/5 Raptor Horns before u arrive at Samophlange.
     .complete 821,2 --Plainstrider Kidney (5)
-step
-.goto The Barrens,54.3,12.3,40,0
-    .goto The Barrens,54.6,16.7,40,0
-.goto The Barrens,42.6,15.1,40,0
-.goto The Barrens,54.3,12.3,40,0
-    .goto The Barrens,54.6,16.7,40,0
-.goto The Barrens,42.6,15.1
->>Kill Raptors. Loot them for their heads
+    .complete 865,1 --Intact Raptor Horn (5)
     .complete 869,1 --Raptor Head (12)
 step
     >>Click on the Control Console
@@ -416,12 +410,28 @@ step
 .goto The Barrens,55.3,7.8
     .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site (1)
 step
+.goto The Barrens,55.8,6.2,40,0
+    .goto The Barrens,57.2,6.6,40,0
+.goto The Barrens,60.0,7.6,40,0
+.goto The Barrens,60.8,10.6,40,0
+    .goto The Barrens,60.4,1.2,40,0
+.goto The Barrens,61.2,13.2
+>>Finish up the Raptor & Plainstrider quests.
+    .complete 821,2 --Plainstrider Kidney (5)
+    .complete 865,1 --Intact Raptor Horn (5)
+    .complete 869,1 --Raptor Head (12)
+step
     >>Grind mobs in the area. Loot them until Cats Eye Emerald drops
 .goto The Barrens,61.5,4.3
     .complete 896,1 -- Cats Eye Emerald (1)
 step
     #completewith next
     .goto Orgrimmar,11.5,67.0,50 >>Run to the west entrance of Orgrimmar
+step << Tauren/Undead/BloodElf
+    #completewith next
+    >>Run to the Flight Master tower. Get the Flight Path
+    .goto Orgrimmar,45.2,63.8
+    .fp Orgrimmar >>Get the Orgrimmar Flight Path
 step
     >>Hug the left side. Run to Grommash Hold
 .goto Orgrimmar,39.1,38.1
@@ -441,11 +451,6 @@ step << Warrior
     .goto Orgrimmar,80.4,32.4
     .train 1160 >> Train Demoralizing Shout r1
     .train 285 >> Train Heroic Strike r3
-step << Tauren/Undead/BloodElf
-    #completewith next
-    >>Run to the Flight Master tower. Get the Flight Path
-    .goto Orgrimmar,45.2,63.8
-    .fp Orgrimmar >>Get the Orgrimmar Flight Path
 step
     #completewith next
     .hs >>Hearth to Crossroads
@@ -459,7 +464,7 @@ step
 .goto The Barrens,51.6,30.9
     .turnin 867 >>Turn in Harpy Raiders
 step
-    .isQuestTurnedIn 867
+#xprate <1.5
     .maxlevel 17
     .goto The Barrens,51.6,30.9
     .accept 875 >>Accept Harpy Lieutenants
@@ -468,11 +473,7 @@ step
     .turnin 903 >>Turn in Prowlers of the Barrens
     .accept 881 >>Accept Echeyakee
 step
-    #sticky
-    #completewith LionTusks
->>Kill Plainstriders. Loot them for their Kidneys
-    .complete 821,2 --Plainstrider Kidney (5)
-step
+#xprate <1.5
     .isOnQuest 875
 .goto The Barrens,39.8,17.3,40,0
     .goto The Barrens,37.4,15.8,40,0
@@ -495,19 +496,12 @@ step
 .goto The Barrens,55.5,17.3
     .complete 881,1 --Echeyakee's Hide (1)
 step
-    >>Finish killing Plainstriders for their Kidneys.
-    .goto The Barrens,54.3,12.3,40,0
-    .goto The Barrens,54.6,16.7,40,0
-    .goto The Barrens,42.6,15.1,40,0
-    .goto The Barrens,54.3,12.3,40,0
-    .goto The Barrens,54.6,16.7,40,0    
-    .complete 821,2 --Plainstrider Kidney (5)
-step
     >> Head back to the Crossroads
     .goto The Barrens,52.2,31.0
     .turnin 881 >>Turn in Echeyakee
     .accept 905 >>Accept The Angry Scytheclaws
 step
+#xprate <1.5
     .isOnQuest 875
     >>Top of the tower
 .goto The Barrens,51.6,30.9
@@ -537,6 +531,8 @@ step
 step
     .goto The Barrens,62.4,37.6
     .accept 1069 >>Accept Deepmoss Spider Eggs
+    .turnin 865 >>Turn in Raptor Horns
+    .accept 1491 >>Accept Smart Drinks
 step
     .goto The Barrens,62.7,36.3
     .turnin 892 >>Turn in The Missing Shipment
@@ -557,7 +553,6 @@ step
     #completewith Nest
     >>Kill any raptor you see. Loot them for their Horns and Feathers. You need 3 feathers before leaving
     *Be careful as the raptors have a thrash ability.
-    .complete 865,1 --Intact Raptor Horn (5)
     .collect 5165,3 --Sunscale Feather (3)
 step
     >>Loot the chest for Stolen Silver
@@ -585,22 +580,6 @@ step
     >>Click the egg. You need a Sunscale Feather from the raptors
     .goto The Barrens,52.0,46.5
     .complete 905,2 --Visit Yellow Raptor Nest (1)
-step
-    #requires nestegg
-.goto The Barrens,57.3,53.7,40,0
-.goto The Barrens,52.0,46.5,40,0
-.goto The Barrens,57.3,53.7,40,0
-.goto The Barrens,52.0,46.5,40,0
-.goto The Barrens,57.3,53.7,40,0
-.goto The Barrens,52.0,46.5,40,0
-.goto The Barrens,57.3,53.7,40,0
-.goto The Barrens,52.0,46.5
->>Finish killing Raptors. Loot them for their Horns
-    .complete 865,1 --Intact Raptor Horn (5)
-step   
-    .goto The Barrens,49.3,48.5
->>Kill Plainstriders in the area. Loot them for their Kidneys
-    .complete 821,2 --Plainstrider Kidney (5)
 step
     >>Talk to Mankrik's Wife
 .goto The Barrens,49.3,50.4
@@ -635,10 +614,58 @@ step
     .goto The Barrens,52.0,31.6
     .turnin 4921 >>Turn in Lost in Battle
 step
-    .goto The Barrens,49.0,11.2
-    .turnin 3922 >>Turn in Nugget Slugs
-    .accept 3923 >>Accept Rilli Greasygob
+    .goto The Barrens,46.1,36.7,35 >>Go into the WC cave.
+    .isOnQuest 959
 step
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.0,55.4,20,0
+    .goto Kalimdor,52.2,55.2,35,0
+    .goto Kalimdor,51.8,54.8,20,0
+    .goto Kalimdor,52.2,55.2
+    >>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
+    .complete 959,1 --Collect 99-Year-Old Port (1)
+    .unitscan Mad Magglish
+    .isOnQuest 959
+step
+    .goto Kalimdor,51.9,54.9,20 >>Enter the deeper part of the cave
+    .isOnQuest 1491
+step
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+    .goto Kalimdor,52.1,54.5,30,0
+    .goto Kalimdor,52.3,54.6,30,0
+    .goto Kalimdor,52.4,55.1,30,0
+    .goto Kalimdor,52.8,54.8,30,0
+    .goto Kalimdor,52.6,54.5,30,0
+	.goto Kalimdor,52.6,54.5
+    >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE weapons.
+    .complete 1491,1 --Wailing Essence (6)
+    .unitscan Trigore the Lasher
+    .unitscan Boahn
+    .isOnQuest 1491
+step
+    >> Head back to the Kolkar outpost
+    .goto The Barrens,45.4,28.4
+    .turnin 850 >> Turn in Kolkar Leaders
+    .isOnQuest 850
+step
+#xprate <1.5
     >>Kill Serena Bloodfeather. Loot her for her Head
 .goto The Barrens,39.2,12.2
     .complete 876,1 --Serena's Head (1)
@@ -652,7 +679,6 @@ step
     .accept 1062 >> Accept Goblin Invaders
 step
     .maxlevel 22
-#xprate <1.5
     .goto The Barrens,35.3,27.9
     >> Head towards Stonetalon Mountains
     .accept 6548 >> Accept Avenge My Village
@@ -861,13 +887,13 @@ step
     .turnin 1094 >>Turn in Further Instructions
     .accept 1095 >>Accept Further Instructions
 step
-    .goto The Barrens,62.4,37.6
-    .turnin 865 >>Turn in Raptor Horns
-    .turnin 1069 >>Turn in Deepmoss Spider Eggs
+    .isOnQuest 959
+    .goto The Barrens,63.1,37.6
+    .turnin 959 >>Turn in Trouble at the Docks
 step
-    #xprate <1.5
     .goto The Barrens,62.4,37.6
-    .accept 1491 >>Accept Smart Drinks
+    .turnin 1069 >>Turn in Deepmoss Spider Eggs
+    .turnin 1491 >>Turn in Smart Drinks
 step
     #completewith next
     .destroy 5570 >> You can destroy any leftover Deepmoss Spider Eggs now
@@ -885,6 +911,7 @@ step
     #completewith next
     .fly Crossroads >>Fly to Crossroads
 step
+#xprate <1.5
     >>Top of the tower
 .goto The Barrens,51.6,30.9
     .turnin 876 >>Turn in Serena Bloodfeather
@@ -1005,10 +1032,6 @@ step
     .goto Thunder Bluff,22.8,20.9
     >> Go into the Pools of Vision below the Spirit Rise
     .accept 962 >>Accept Serpentbloom
-step
-    .maxlevel 21
-    .goto Thunder Bluff,28.4,27.7
-    .accept 264 >>Accept Until Death Do Us Part
 step << Shaman
     .goto Thunder Bluff,23.6,19.1
     .accept 1529 >>Accept Call of Water
@@ -1023,91 +1046,6 @@ step
     #completewith next
     .goto Thunder Bluff,46.9,49.9
     .fly Crossroads >>Fly to Crossroads
-step
-    >>Spam Hamstring & Rend while on your way to the mountain to train your weapon skill << Warrior
-    .goto The Barrens,47.0,34.7,15,0
-    .goto The Barrens,46.4,34.9,15,0
-    .goto The Barrens,46.6,34.8,10 >>Go up the mountain here
-    .isOnQuest 959
-step
-    .goto Kalimdor,51.9,55.4,30,0
-    .goto Kalimdor,51.9,55.6,15 >> Drop down carefully to the eye of the cave (you may have to walk or backpedal off)
-    .isOnQuest 959
-step
-    >>Go into the eye of the cave
-    .goto Kalimdor,51.9,55.4
-    .accept 1486 >>Accept Deviate Hides
-    .isOnQuest 959
-step
-    .goto The Barrens,46.1,36.7,35 >>Leave the eye. Go to the mouth of the cave
-    .isOnQuest 959
-step
-    #sticky
-    #label Deviate
-    >>Kill Deviate mobs. Loot them for their hides
-    .complete 1486,1 --Deviate Hide (20)
-    .isOnQuest 1486
-step
-    #sticky
-    #label Serpentbloom
-    >>Look for green and red flowers on the ground
-    .complete 962,1 --Serpentbloom (10)
-    .isOnQuest 962
-step
-    .goto Kalimdor,52.0,55.4,20,0
-    .goto Kalimdor,52.2,55.2,35,0
-    .goto Kalimdor,51.8,54.8,20,0
-    .goto Kalimdor,52.0,55.4,20,0
-    .goto Kalimdor,52.2,55.2,35,0
-    .goto Kalimdor,51.8,54.8,20,0
-    .goto Kalimdor,52.0,55.4,20,0
-    .goto Kalimdor,52.2,55.2,35,0
-    .goto Kalimdor,51.8,54.8,20,0
-    .goto Kalimdor,52.0,55.4,20,0
-    .goto Kalimdor,52.2,55.2,35,0
-    .goto Kalimdor,51.8,54.8,20,0
-    .goto Kalimdor,52.2,55.2
-    >>Look for Mad Magglish (a goblin). He's stealthed, and has multiple spawnpoints. Kill and loot him for 99-Year-Old Port
-    .complete 959,1 --Collect 99-Year-Old Port (1)
-    .unitscan Mad Magglish
-    .isOnQuest 959
-step
-    .goto Kalimdor,51.9,54.9,20 >>Enter the deeper part of the cave
-    .isOnQuest 1491
-step
-    .goto Kalimdor,52.1,54.5,30,0
-    .goto Kalimdor,52.3,54.6,30,0
-    .goto Kalimdor,52.4,55.1,30,0
-    .goto Kalimdor,52.8,54.8,30,0
-    .goto Kalimdor,52.6,54.5,30,0
-    .goto Kalimdor,52.1,54.5,30,0
-    .goto Kalimdor,52.3,54.6,30,0
-    .goto Kalimdor,52.4,55.1,30,0
-    .goto Kalimdor,52.8,54.8,30,0
-    .goto Kalimdor,52.6,54.5,30,0
-    .goto Kalimdor,52.1,54.5,30,0
-    .goto Kalimdor,52.3,54.6,30,0
-    .goto Kalimdor,52.4,55.1,30,0
-    .goto Kalimdor,52.8,54.8,30,0
-    .goto Kalimdor,52.6,54.5,30,0
-	.goto Kalimdor,52.6,54.5
-    >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
-    .complete 1491,1 --Wailing Essence (6)
-    .isOnQuest 1491
-step
-    #requires Serpentbloom
-    .isOnQuest 962
-step
-    #requires Deviate
-    >>Run back to the eye of the cave
-    .goto Kalimdor,51.9,55.4
-    .turnin 1486 >>Turn in Deviate Hides
-    .isOnQuest 1486
-step
-    >> Head back to the Kolkar outpost
-    .goto The Barrens,45.4,28.4
-    .turnin 850 >> Turn in Kolkar Leaders
-    .isOnQuest 850
 step
     .goto The Barrens,35.3,27.9
     .isOnQuest 1062
@@ -1324,23 +1262,14 @@ step
     .goto Thunder Bluff,22.9,21.1
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
-step
-    .isOnQuest 962
-    >> Head to the pools under the Spirit Rise
-    .goto Thunder Bluff,22.9,21.1
-    .turnin 962 >> Turn in Serpentbloom
-step
+step << !Shaman
+    .goto Thunder Bluff,46.9,49.9
+    #completewith next
+    .fly Orgrimmar >>Fly to Orgrimmar
+step << Shaman
     .goto Thunder Bluff,46.9,49.9
     #completewith next
     .fly Ratchet >>Fly to Ratchet
-step
-    .isOnQuest 959
-    .goto The Barrens,63.1,37.6
-    .turnin 959 >>Turn in Trouble at the Docks
-step
-    .isOnQuest 1491
-    .goto The Barrens,62.4,37.6
-    .turnin 1491 >>Turn in Smart Drinks
 step << Shaman
     .goto The Barrens,65.8,43.8
     .turnin 1529 >>Turn in Call of Water
@@ -1366,8 +1295,8 @@ step << Shaman
     .goto The Barrens,43.4,77.4
     .turnin 1535 >>Turn in Call of Water
     .accept 1536 >>Accept Call of Water
-step
-    .goto The Barrens,44.5,59.1
+step << Shaman
+    .goto Thunder Bluff,44.4,59.0
     #completewith next
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Shaman
@@ -1385,9 +1314,6 @@ step << Warrior
 step << Warrior
     .goto Orgrimmar,81.2,19.0
     .collect 29009,1 >> Purchase a Heavy Throwing Dagger from Zendo'jian
-step
-    .goto Orgrimmar,76.5,24.5
-    .turnin 3923 >>Turn in Rilli Greasygob
 step << Warrior/Paladin/Shaman
     .goto Orgrimmar,81.5,19.6
     .train 197 >>Train 2h Axes
