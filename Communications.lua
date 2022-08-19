@@ -407,7 +407,7 @@ Current Step data
     f:SetLayout("Fill")
     f:EnableResize(true)
     f.statustext:GetParent():Hide()
-    f:SetTitle("RestedXP Support Ticket")
+    f:SetTitle("RestedXP Feedback Form")
 
     f.scrollContainer = AceGUI:Create("ScrollFrame")
     f.scrollContainer:SetLayout("Fill")
@@ -419,7 +419,7 @@ Current Step data
 
     local editbox = AceGUI:Create("MultiLineEditBox")
     editbox:SetLabel(
-        "Join discord.gg/restedxp and follow instructions in the #open-ticket channel")
+        "Join our support discord at discord.gg/RestedXP and copy paste this form into #addon-feedback ")
     editbox:SetFullWidth(true)
     editbox:SetFullHeight(true)
     editbox:SetText(content)
