@@ -393,12 +393,13 @@ Guide: %s
 Addon: %s
 XP Rate: %.1f
 Locale: %s
+Realm: %s
 
 Current Step data
 %s
 ```
 ]], character or "Error", zone or "Error", guide or "Error", addon.release,
-                        RXPCData.xprate, GetLocale(), stepData)
+                        RXPCData.xprate, GetLocale(), GetRealmName(), stepData)
 
     local AceGUI = LibStub("AceGUI-3.0")
     local f = AceGUI:Create("Frame")
