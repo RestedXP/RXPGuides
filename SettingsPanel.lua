@@ -772,7 +772,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                     },
                     openTrackerReportOnCharOpen = {
                         name = "Always Open Leveling Report With Character Panel",
-                        desc = "Enables the RestedXP Leveling Report when you open your character panel\nRequires a reload",
+                        desc = "Enables the RestedXP Leveling Report when you open your character panel",
                         type = "toggle",
                         width = "full",
                         order = 3,
@@ -873,11 +873,12 @@ function addon.settings.CreateExtrasOptionsPanel()
                 order = 4,
                 args = {
                     enableBetaFeatures = {
-                        name = "Enable Beta Features (Reload)",
+                        name = "Enable Beta Features",
                         desc = "Enables new features, forces reload to take effect",
                         type = "toggle",
                         width = "full",
                         order = 1,
+                        confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             _G.ReloadUI()
