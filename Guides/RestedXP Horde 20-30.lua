@@ -6,6 +6,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Horde 1-30
 #next 23-27 Hillsbrad / Ashenvale
+step << wotlk
+    #completewith next
+    +If you have access to gold on this server, mail yourself gold for mount training soon!
 step
     .zone Orgrimmar >> Run into Orgrimmar
 step
@@ -14,6 +17,7 @@ step
     .fp Orgrimmar >> Get the Orgrimmar flight path
 step
     .goto Orgrimmar,39.8,37.0,20 >>Run into the Keep
+    .zoneskip Orgrimmar,1
 step << BloodElf
     .isOnQuest 9626
     .goto Orgrimmar,31.8,38.1
@@ -57,6 +61,7 @@ step << Orc !Warlock wotlk
 step
     .goto Orgrimmar,52.5,85.1,50,0
     .goto Orgrimmar,49.1,94.3,50 >>Exit Orgrimmar
+    .zoneskip Orgrimmar,1
 step << Troll !Warlock wotlk
 	.money <5.00
 	.goto Durotar,55.2,75.5
@@ -896,6 +901,10 @@ step
     >> Head to the pools under the Spirit Rise
     .goto Thunder Bluff,22.9,21.1
     .turnin 962 >> Turn in Serpentbloom
+step << Tauren wotlk
+    .money <5.00
+    .goto Mulgore,47.5,58.5
+    .train 713 >> Go to Bloodhoof Village. Train riding and buy your mount
 step << !Druid
 	#completewith troubleatdocks1
     .isOnQuest 959
@@ -1048,6 +1057,8 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,48.2,45.3
     .trainer >> Train your class spells
+step << wotlk
+    +If you have access to gold on this server, mail yourself gold for mount training soon!
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2149,7 +2160,7 @@ step
     .goto Thousand Needles,45.6,50.8
     .turnin 4841 >> Turn in Pacify the Centaur
     .accept 5064 >> Accept Grimtotem Spying
-step
+step << tbc
     #completewith exitfreewind33
     +If you have access to more gold on this server, mail yourself 35g. We will be buying your mount soon.
 step
@@ -2585,11 +2596,6 @@ step
     .fp Gadgetzan >> Get the Gadgetzan flight path
 step << tbc
     #completewith next
-    .money <35.00
-    +If you have access to gold on this server, mail yourself gold for mount training soon!
-step << wotlk
-    #completewith next
-    .money <5.00
     +If you have access to gold on this server, mail yourself gold for mount training soon!
 step
     .zoneskip Tanaris,1
