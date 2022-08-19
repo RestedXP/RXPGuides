@@ -280,6 +280,8 @@ local function buildSpacer(height)
 end
 
 function addon.tracker:CreateGui()
+    if addon.tracker.ui then return end
+
     local attachment = _G.CharacterFrame
     local offset = {
         x = -38,
