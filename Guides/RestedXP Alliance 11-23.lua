@@ -1930,7 +1930,7 @@ step
 step << NightElf wotlk
 	.goto Darnassus,38.7,15.8
     .money <5.00
-	.skill riding,150 >> Train riding and buy your mount
+	.skill riding,75 >> Train riding and buy your mount
 step << Warrior/Rogue
     .goto Darnassus,64.6,53.0
     .collect 29009,1 >> Purchase a Heavy Throwing Dagger from Ellandrieth
@@ -1948,7 +1948,7 @@ step << Draenei !Paladin wotlk
 	.goto The Exodar,81.18,52.56
     .money <5.00
     >> Take the western most boat to Azuremyst Isle
-    .skill riding,150 >>Head to Exodar, buy and train your mount
+    .skill riding,75 >>Head to Exodar, buy and train your mount
 step << tbc
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
