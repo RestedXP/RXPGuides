@@ -1443,10 +1443,12 @@ step
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Orc/Troll
+#xprate <1.5
     .goto Orgrimmar,54.2,68.6
     .turnin 6384 >>Turn in Ride to Orgrimmar
     .accept 6385 >>Accept Doras the Wind Rider Master
 step << Orc/Troll
+#xprate <1.5
     .goto Orgrimmar,45.2,64.0
      >> Turn in the quests but do NOT fly back to The Crossroads
     .turnin 6385 >>Turn in Doras the Wind Rider Master
