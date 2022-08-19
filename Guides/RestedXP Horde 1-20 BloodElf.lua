@@ -1108,7 +1108,7 @@ step << BloodElf Hunter
     .goto Eversong Woods,61.4,65.8
     .complete 9484,1 --Tame a Crazed Dragonhawk
 step << Paladin/Rogue
-    .train 2018 >> Train Blacksmithing. You'll get Mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You can skip Blacksmithing if you wish
+    .train 2018 >> Train Blacksmithing. You'll get Mining later which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour). You should stop making these around level 20. You can skip Blacksmithing if you wish
     .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
 step << !Paladin !Rogue
@@ -1444,7 +1444,7 @@ step << BloodElf Hunter
 step << Paladin/Rogue
     #label miningr
     .goto Silvermoon City,78.9,43.3
-    .train 2580 >>Train Mining. You're now able to mine nodes for Rough Stones which will allow you to craft Sharpening Stones (+2 weapon damage for 1 hour).
+    .train 2580 >>Train Mining. You're now able to mine nodes for Rough Stones which will allow you to craft Sharpening Stones. You should stop making these around level 20. (+2 weapon damage for 1 hour).
     .skill blacksmithing,1,1
     .cast 2580 >>Cast Find Minerals
 step << Paladin/Rogue
