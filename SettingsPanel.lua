@@ -722,6 +722,14 @@ function addon.settings.CreateImportOptionsPanel()
 end
 
 function addon.settings.CreateExtrasOptionsPanel()
+    local function isAdvanced()
+        return addon.release ~= 'Development' or not addon.settings.db.profile.enableBetaFeatures
+    end
+
+    local function requiresReload()
+        return "This requires reload to take effect, continue?"
+    end
+
     local extraOptionsTable = {
         type = "group",
         name = "RestedXP Extras",
@@ -736,9 +744,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                 width = "full",
                 fontSize = "medium"
             },
-            levelingTracker = {
+            optionalFeatures = {
                 type = "group",
-                name = "Leveling Tracker",
+                name = "Optional Features",
                 order = 2,
                 args = {
                     trackerOptionsHeader = {
@@ -751,14 +759,28 @@ function addon.settings.CreateExtrasOptionsPanel()
                         name = "Enable Leveling Tracker",
                         type = "toggle",
                         width = "full",
-                        order = 2
+                        order = 2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                addon.tracker:CreateGui()
+                                addon.tracker.ui:Show()
+                            else
+                                addon.tracker.ui:Hide()
+                            end
+                        end,
                     },
                     openTrackerReportOnCharOpen = {
                         name = "Always Open Leveling Report With Character Panel",
-                        desc = "Requires Reload for changes to take effect\nEnables the RestedXP Leveling Report when you open your character panel",
+                        desc = "Enables the RestedXP Leveling Report when you open your character panel\nRequires a reload",
                         type = "toggle",
                         width = "full",
-                        order = 3
+                        order = 3,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
                     }
                 },
             },
@@ -845,37 +867,35 @@ function addon.settings.CreateExtrasOptionsPanel()
                     },
                 }
             },
-            betaSettings = {
+            advancedSettings = {
                 type = "group",
-                name = "Beta Settings",
+                name = "Advanced Settings",
                 order = 4,
-                hidden = function ()
-                    return addon.release ~= 'Development' or not addon.settings.db.profile.enableBetaFeatures
-                end,
                 args = {
-                    betaFeaturesHeader = {
-                        name = "Beta features",
-                        type = "header",
-                        width = "full",
-                        order = 1
-                    },
                     enableBetaFeatures = {
-                        name = "Enable Beta Features",
+                        name = "Enable Beta Features (Reload)",
+                        desc = "Enables new features, forces reload to take effect",
                         type = "toggle",
                         width = "full",
-                        order = 2,
+                        order = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end
                     },
                     debug = {
                         name = "Enable Debug",
                         type = "toggle",
                         width = "full",
-                        order = 3,
+                        order = 2,
+                        hidden = isAdvanced,
                     },
                     enablelevelSplits = {
                         name = "Enable Level Splits",
                         type = "toggle",
                         width = "full",
-                        order = 4,
+                        order = 3,
+                        hidden = isAdvanced,
                     },
                 }
             }
