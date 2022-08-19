@@ -1741,6 +1741,10 @@ step << Shaman
 step << Shaman
     .goto Bloodmyst Isle,57.7,53.9
     .fly The Exodar>> Fly to The Exodar
+step << Draenei !Paladin wotlk
+	.goto The Exodar,81.18,52.56
+    .money <5.00
+    .skill riding,75 >>Head to Exodar, buy and train your mount
 step << Hunter
 	.goto The Exodar,42.0,71.4,60,0
 	.goto The Exodar,54.5,85.6,60,0
