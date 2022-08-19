@@ -81,6 +81,48 @@ step << !Tauren
     .goto The Barrens,62.4,20.0
         .turnin 926 >>Turn in Flawed Power Stone
 step << !Tauren
+#xprate >1.499
+    .goto The Barrens,52.2,31.8
+    .accept 870 >>Accept The Forgotten Pools
+step << !Tauren
+#xprate >1.499
+    #completewith next
+    .goto The Barrens,52.3,32.0
+    .vendor >> Purchase as many 6 slot bags as you need
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,52.2,31.0
+    .turnin 842 >>Turn in Crossroads Conscription
+    .accept 844 >>Accept Plainstrider Menace
+step << Orc/Troll
+#xprate >1.499
+    .goto The Barrens,52.5,29.8
+    .accept 6365 >>Accept Meats to Orgrimmar
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,51.9,30.3
+    .accept 869 >>Accept Raptor Thieves
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,51.5,30.8
+    .accept 871 >>Accept Disrupt the Attacks
+    .accept 5041 >>Accept Supplies for the Crossroads
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,51.5,30.4
+    .fp >>Get the The Crossroads Flight Path
+step << Orc/Troll
+#xprate >1.499
+    >>do NOT fly to Orgrimmar
+.goto The Barrens,51.5,30.3
+    .turnin 6365 >>Turn in Meats to Orgrimmar
+    .accept 6384 >>Accept Ride to Orgrimmar
+step << !Tauren
+#xprate >1.499
+.goto The Barrens,51.5,30.1
+    .accept 1492 >>Accept Wharfmaster Dizzywig
+        .accept 848 >>Accept Fungal Spores
+step << !Tauren
     #sticky
 #completewith BeakCave
 >>Kill some Plainstriders en route if you have time on Flawed Power Stone. Loot them for Beaks
@@ -116,6 +158,7 @@ step << Tauren
     >>Kill Plainstriders. Loot them for Beaks
     .complete 844,1 --Plainstrider Beak (7)
 step << Orc/Troll
+#xprate <1.5
     .goto The Barrens,52.6,29.9
     .turnin 6386 >>Turn in Return to the Crossroads.
 step
@@ -317,6 +360,25 @@ step
 step
     .goto The Barrens,45.4,28.4
     .accept 850 >>Accept Kolkar Leaders
+step << !Tauren
+#xprate >1.499
+    #sticky
+    #completewith next
+    >>Collect the white mushrooms around The Forgotten Pools. Try to avoid mobs the best you can.
+.complete 848,1 --Collect Fungal Spores (x4)
+step << !Tauren
+#xprate >1.499
+>>Dive underwater to the bubble fissure
+.goto The Barrens,45.1,22.5
+    .complete 870,1 --Explore the waters of the Forgotten Pools
+step << !Tauren
+#xprate >1.499
+>>Collect the white mushrooms around The Forgotten Pools. Try to avoid mobs the best you can.
+.goto The Barrens,45.2,23.3,40,0
+.goto The Barrens,45.2,22.0,40,0
+    .goto The Barrens,44.6,22.5,40,0
+    .goto The Barrens,43.9,24.4,40,0
+.complete 848,1 --Collect Fungal Spores (x4)
 step
 >>Kill Kodobane. Loot him for his head. Grind mobs en route.
 .goto The Barrens,42.8,23.5
@@ -427,6 +489,17 @@ step
 step
     #completewith next
     .goto Orgrimmar,11.5,67.0,50 >>Run to the west entrance of Orgrimmar
+step << Orc/Troll
+#xprate >1.499
+    .goto Orgrimmar,54.2,68.6
+    .turnin 6384 >>Turn in Ride to Orgrimmar
+    .accept 6385 >>Accept Doras the Wind Rider Master
+step << Orc/Troll
+#xprate >1.499
+    .goto Orgrimmar,45.2,64.0
+     >> Turn in the quests but do NOT fly back to The Crossroads
+    .turnin 6385 >>Turn in Doras the Wind Rider Master
+    .accept 6386 >>Accept Return to the Crossroads.
 step << Tauren/Undead/BloodElf
     #completewith next
     >>Run to the Flight Master tower. Get the Flight Path
@@ -459,6 +532,10 @@ step
     .goto The Barrens,51.9,30.3
     .turnin 869 >>Turn in Raptor Thieves
     .accept 3281 >>Accept Stolen Silver
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,51.5,30.1
+    .turnin 848 >>Turn in Fungal Spores
 step
     >>Top of the tower
 .goto The Barrens,51.6,30.9
@@ -468,10 +545,19 @@ step
     .maxlevel 17
     .goto The Barrens,51.6,30.9
     .accept 875 >>Accept Harpy Lieutenants
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,52.2,31.8
+    .turnin 870 >>Turn in The Forgotten Pools
+    .accept 877 >>Accept The Stagnant Oasis
 step
     .goto The Barrens,52.3,31.0
     .turnin 903 >>Turn in Prowlers of the Barrens
     .accept 881 >>Accept Echeyakee
+step << Orc/Troll
+#xprate >1.499
+    .goto The Barrens,52.6,29.9
+    .turnin 6386 >>Turn in Return to the Crossroads.
 step
 #xprate <1.5
     .isOnQuest 875
@@ -998,10 +1084,18 @@ step
     .turnin 913 >>Turn in Cry of the Thunderhawk
     .accept 874 >>Accept Mahren Skyseer
 step
+#xprate <1.5
     .goto The Barrens,44.5,59.1
     #completewith next
     .fly Thunder Bluff >>Fly to Thunder Bluff
 step
+#xprate >1.499
+    .goto Thunder Bluff,45.9,64.7
+    #completewith next
+    >> Walk to Thunderbluff.
+    .home >>Set your Hearthstone to Thunder Bluff
+step
+#xprate <1.5
     .goto Thunder Bluff,45.9,64.7
     #completewith next
     .home >>Set your Hearthstone to Thunder Bluff
@@ -1046,6 +1140,10 @@ step
     #completewith next
     .goto Thunder Bluff,46.9,49.9
     .fly Crossroads >>Fly to Crossroads
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,51.5,30.1
+    .accept 853 >>Accept Apothecary Zamah
 step
     .goto The Barrens,35.3,27.9
     .isOnQuest 1062
@@ -1060,7 +1158,6 @@ step
     .goto The Barrens,35.3,27.9
     .turnin 6523 >>Turn in Protect Kaya
     .accept 6401 >>Accept Kaya's Alive
-
 step
     .isOnQuest 1060
     >>Up the mountain again, then inside the cave
@@ -1083,7 +1180,6 @@ step
     .goto Stonetalon Mountains,47.3,64.2
     .accept 6562 >> Accept Trouble in the Deeps
     .maxlevel 24
-
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >> Turn in Arachnophobia
@@ -1262,6 +1358,10 @@ step
     .goto Thunder Bluff,22.9,21.1
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
+step << !Tauren
+#xprate >1.499
+    .goto Thunder Bluff,23.0,21.1
+    .turnin 853 >>Turn in Apothecary Zamah
 step << !Shaman
     .goto Thunder Bluff,46.9,49.9
     #completewith next
