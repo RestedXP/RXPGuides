@@ -1001,6 +1001,11 @@ step
 step
     .goto Bloodmyst Isle,56.4,56.7
     .turnin 9649 >> Turn in Ysera's Tears
+step
+    .itemcount 23984,10
+    .goto Bloodmyst Isle,55.4,55.2
+    >> Turn in your remaining Irradiated Crystal Shards before leaving Bloodmyst!
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards
 step << Paladin
 	#completewith next
 	#level20
