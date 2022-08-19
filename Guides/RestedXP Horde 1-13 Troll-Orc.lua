@@ -1260,50 +1260,63 @@ step << Orc Shaman/Troll Shaman
     .turnin 2983 >>Turn in Call of Fire
     .accept 1524 >>Accept Call of Fire
 step << !Tauren
+#xprate <1.5
     .goto The Barrens,52.0,30.5,150 >> Run to the Crossroads
 step << !Tauren
+#xprate <1.5
     .goto The Barrens,52.2,31.8
     .accept 870 >>Accept The Forgotten Pools
 step << !Tauren
+#xprate <1.5
     #completewith next
     .goto The Barrens,52.3,32.0
     .vendor >> Purchase as many 6 slot bags as you need
 step << !Tauren
+#xprate <1.5
     .goto The Barrens,52.2,31.0
     .turnin 842 >>Turn in Crossroads Conscription
     .accept 844 >>Accept Plainstrider Menace
 step << Orc/Troll
+#xprate <1.5
     .goto The Barrens,52.5,29.8
     .accept 6365 >>Accept Meats to Orgrimmar
 step << !Tauren
+#xprate <1.5
     .goto The Barrens,51.9,30.3
     .accept 869 >>Accept Raptor Thieves
 step << !Tauren
+#xprate <1.5
     .goto The Barrens,51.5,30.8
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
 step << !Tauren
+#xprate <1.5
     .goto The Barrens,51.5,30.4
     .fp >>Get the The Crossroads Flight Path
 step << Orc/Troll
+#xprate <1.5
     >>do NOT fly to Orgrimmar
 .goto The Barrens,51.5,30.3
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
 step << !Tauren
+#xprate <1.5
 .goto The Barrens,51.5,30.1
     .accept 1492 >>Accept Wharfmaster Dizzywig
         .accept 848 >>Accept Fungal Spores
 step << !Tauren
+#xprate <1.5
     #sticky
     #completewith next
     >>Collect the white mushrooms around The Forgotten Pools. Try to avoid mobs the best you can.
 .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
+#xprate <1.5
 >>Dive underwater to the bubble fissure
 .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Tauren
+#xprate <1.5
 >>Collect the white mushrooms around The Forgotten Pools. Try to avoid mobs the best you can.
 .goto The Barrens,45.2,23.3,40,0
 .goto The Barrens,45.2,22.0,40,0
@@ -1311,21 +1324,26 @@ step << !Tauren
     .goto The Barrens,43.9,24.4,40,0
 .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
+#xprate <1.5
     .goto The Barrens,52.0,30.6,150 >> Die and respawn at the Spirit Healer, or run back
 step << !Tauren
+#xprate <1.5
     .goto The Barrens,51.5,30.1
     .turnin 848 >>Turn in Fungal Spores
     >> Wait for the roleplay to finish, it takes a couple of seconds. Apothecary Zamah is a TIMED QUEST, if you have to afk at any point before you turn it in, log off.
     .accept 853 >>Accept Apothecary Zamah
 step << !Tauren
+#xprate <1.5
     .goto The Barrens,52.2,31.8
     .turnin 870 >>Turn in The Forgotten Pools
     .accept 877 >>Accept The Stagnant Oasis
 step << !Tauren
+#xprate <1.5
     >>Run down the road
 .goto The Barrens,44.4,59.2
     .fp >>Get the Camp Taurajo Flight Path
 step << !Tauren
+#xprate <1.5
     .line Mulgore,69.0,60.0,58.4,61.7,51.9,59.3
     .goto Mulgore,51.4,59.2,50,0
     .goto Mulgore,59.6,62.4,50,0
@@ -1336,18 +1354,22 @@ step << !Tauren
     .unitscan Morin Cloudstalker
     .accept 749 >>Accept The Ravaged Caravan
 step << !Tauren
+#xprate <1.5
     .goto Mulgore,48.2,53.4
     .accept 11129 >>Accept Kyle's Gone Missing!
 step << !Tauren
+#xprate <1.5
     .goto Mulgore,53.7,48.1
     >> Cross the lake then loot the chest in the middle of the caravan
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step << !Tauren
+#xprate <1.5
     .goto Mulgore,55.5,55.8
     >>Kill a plainstrider for Tender Strider Meat
     .collect 33009,1 --Collect Tender Strider Meat (1)
 step << !Tauren
+#xprate <1.5
     .line Mulgore,51.9,59.3,58.4,61.7,69.0,60.0
     .goto Mulgore,51.4,59.2,50,0
     .goto Mulgore,59.6,62.4,50,0
@@ -1357,6 +1379,7 @@ step << !Tauren
     .unitscan Morin Cloudstalker
     .turnin 751 >>Turn in The Ravaged Caravan
 step << !Tauren
+#xprate <1.5
     .goto Mulgore,47.3,56.9,30,0
     .goto Mulgore,49.4,63.9,30,0
     .goto Mulgore,50.2,60.2,30,0
@@ -1365,29 +1388,38 @@ step << !Tauren
     .unitscan Kyle the Frenzied
 .complete 11129,1 --Kyle Fed (1)
 step << !Tauren
+#xprate <1.5
     .goto Mulgore,48.3,53.3
     .turnin 11129 >>Turn in Kyle's Gone Missing!
 step << !Tauren
+#xprate <1.5
 .goto Thunder Bluff,32.0,66.9,20 >>Run to the lift and take it into Thunder Bluff
 step << !Tauren !Paladin
+#xprate <1.5
     .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
     .train 199 >>Train 2h Maces
 step << Paladin
+#xprate <1.5
     .goto Thunder Bluff,40.9,62.7
     .train 199 >>Train 2h Maces
 step << !Tauren
+#xprate <1.5
 .goto Thunder Bluff,45.6,52.0,15 >>Go up the tower
 step << !Tauren
+#xprate <1.5
     >>Go to the top floor of the tower
 .goto Thunder Bluff,46.8,49.9
     .fp >>Get the Thunder Bluff Flight Path
 step << !Tauren
+#xprate <1.5
 .goto Thunder Bluff,29.6,29.7,15 >>Jump down into the cave
 step << !Tauren
+#xprate <1.5
     .goto Thunder Bluff,23.0,21.1
     .turnin 853 >>Turn in Apothecary Zamah
 step << !Tauren
+#xprate <1.5
     #completewith next
     .hs >>Hearth to Razor Hill
 step
