@@ -1693,6 +1693,11 @@ step << Hunter/Shaman/Mage
 step << !Shaman
     #completewith next
     .deathskip >> Death skip back to Blood Watch
+step
+    .itemcount 23984,10
+    .goto Bloodmyst Isle,55.4,55.2
+    >> Turn in your remaining Irradiated Crystal Shards before leaving Bloodmyst!
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards
 step << Paladin
 	#completewith next
 	#level20
