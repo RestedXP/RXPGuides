@@ -50,9 +50,17 @@ step << BloodElf
 step << Mage
     .goto Orgrimmar,38.7,85.4
     .train 11417 >> Go and train Portal: Orgrimmar
+step << Orc !Warlock wotlk
+	.money <5.00
+	.goto Orgrimmar,63.3,12.8
+	.train 149 >> Head to the Valley of Honor. Train riding and purchase your mount
 step
     .goto Orgrimmar,52.5,85.1,50,0
     .goto Orgrimmar,49.1,94.3,50 >>Exit Orgrimmar
+step << Troll !Warlock wotlk
+	.money <5.00
+	.goto Durotar,55.2,75.5
+	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
 step
     >>Run all the way down to Ratchet and get the flight path.
     .goto The Barrens,63.1,37.1
@@ -454,10 +462,14 @@ step << !Tauren
 step << Warlock
     .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
+step << Tauren wotlk
+    .money <5.00
+    .goto Mulgore,47.5,58.5
+    .train 713 >> Go to Bloodhoof Village. Train riding and buy your mount
 step << Tauren
     #completewith next
     .goto The Barrens,44.4,59.2
-	.fly Thunder Bluff >>Fly to Thunder Bluff
+	.fly Thunder Bluff >>Fly or run to Thunder Bluff
 step << Druid
 	#completewith next
 	.goto Thunder Bluff,76.5,27.2
@@ -1051,12 +1063,37 @@ step << !Shaman
     #completewith next
     .goto Orgrimmar,54.1,68.5
     .home >> Set your Hearthstone to Orgrimmar
+step << Orc !Warlock wotlk
+	.money <5.00
+	.goto Orgrimmar,63.3,12.8
+	.train 149 >> Head to the Valley of Honor. Train riding and purchase your mount
+step << Troll !Warlock wotlk
+	.money <5.00
+	.goto Durotar,55.2,75.5
+	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
 step
-    #sticky
-    #completewith next
 	>>Go to the Zeppelin tower. Take the zeppelin to Tirisfal
 	.goto Durotar,50.8,13.8
 	.zone Tirisfal Glades >>Arrive in Tirisfal Glades
+step << Undead !Warlock wotlk
+    .money <5.00
+    .goto Tirisfal Glades,60.1,52.6
+    .train 554 >> Train riding and purchase your mount
+    .zoneskip Tirisfal Glades,1
+step << Blood Elf !Warlock wotlk
+    .money <5.00
+    .goto Undercity,66.3,4.5,30,0
+    .goto Undercity,54.9,11.3
+    .zone Silvermoon City >> Click on the Orb of Translocation to head to Silvermoon City
+step << Blood Elf !Warlock wotlk
+    .money <5.00
+    .goto Eversong Woods,61.1,54.7,5,0
+    .goto Eversong Woods,61.4,54.0
+    .train 33388 >> Leave Silvermoon City, then train riding and purchase your mount.
+step << Blood Elf !Warlock wotlk
+    .goto Silvermoon City,49.4,14.3
+    >> Teleport to The Undercity if you can << Mage
+    .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
 step << Druid
     >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
     .goto Silverpine Forest,30.0,29.1
@@ -1387,6 +1424,14 @@ step << Priest
     #completewith next
     .goto Orgrimmar,35.6,87.8
 .trainer >> Go and train your class spells
+step << Orc !Warlock wotlk
+	.money <5.00
+	.goto Orgrimmar,63.3,12.8
+	.train 149 >> Head to the Valley of Honor. Train riding and purchase your mount
+step << Troll !Warlock wotlk
+	.money <5.00
+	.goto Durotar,55.2,75.5
+	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
 step
     #completewith fp12
     .goto Orgrimmar,16.2,62.2,30  >> Exit Orgrimmar through the west exit
@@ -1794,6 +1839,10 @@ step
 	#completewith next
 	.goto Thunder Bluff,45.8,64.7
 	.home >> Set your Hearthstone to Thunder Bluff
+step << Tauren wotlk
+    .money <5.00
+    .goto Mulgore,47.5,58.5
+    .train 713 >> Go to Bloodhoof Village. Train riding and buy your mount
 step
     >> Head up the totem tower
     .goto Thunder Bluff,46.8,50.1
