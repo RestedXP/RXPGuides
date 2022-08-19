@@ -443,6 +443,10 @@ step << skip --Not needed, going from SW -> Duskwood later in the guide after do
 step << Shaman
 	.goto StormwindClassic,61.9,84.0
 	.trainer >> Train your class spells
+step << Human
+	.goto StormwindClassic,62.5,62.3,30,0
+	.goto StormwindClassic,66.3,62.1
+    .fly Redridge >> Fly to Redridge Mountains
 step << !Human
 	#label exit
     .goto Elwynn Forest,65.2,69.8
