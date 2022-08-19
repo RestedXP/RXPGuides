@@ -252,6 +252,8 @@ step
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .isOnQuest 6461
 step
+    #requires besseleth
+step
     #label spiderend
     >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
@@ -2450,7 +2452,7 @@ step
     .turnin 1146 >> Turn in The Swarm Grows
     .accept 1147 >> Accept The Swarm Grows
 step
-    .xp <32
+    .xp <33,1
     >> Accept quests around the racetrack
 	.accept 1110 >> Accept Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
@@ -2463,13 +2465,13 @@ step
     .accept 1111 >> Accept Wharfmaster Dizzywig
     .accept 5762 >> Accept Hemet Nesingwary Jr.
 step
-    .xp <32
+    .xp <33,1
     .accept 1176 >> Accept Load Lightening
     .goto Thousand Needles,80.2,75.8
     .accept 1175 >> Accept A Bump in the Road
     .goto Thousand Needles,81.7,78.0
 step
-    .xp <32
+    .xp <33,1
 	#sticky
 	#completewith ShimmeringF
 	>>Save the turtle meat for a quest later.
@@ -2513,7 +2515,7 @@ step
     .goto Thousand Needles,78.0,77.1
     .turnin -1105 >> Turn in Hardened Shells
 step
-    .xp <32
+    .xp <33,1
     .accept 1107 >> Accept Encrusted Tail Fins
     .accept 1106 >> Accept Martek the Exiled
 step
@@ -2784,7 +2786,7 @@ step << Warrior
 	.train 2567 >> Train Thrown from Hanashi
 step << Warrior/Shaman
 	#completewith next
-    .xp <33
+    .xp <33,1
     .goto Orgrimmar,54.1,68.4
     .home >>Set your Hearthstone to Valley of Strength
 step << Undead !Warlock tbc
