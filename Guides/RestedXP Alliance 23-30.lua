@@ -443,7 +443,7 @@ step << skip --Not needed, going from SW -> Duskwood later in the guide after do
 step << Shaman
 	.goto StormwindClassic,61.9,84.0
 	.trainer >> Train your class spells
-step
+step << !Human
 	#label exit
     .goto Elwynn Forest,65.2,69.8
 	>>Head to the top of the Tower of Azora
@@ -872,6 +872,7 @@ step
 	>> Kill Fangore, and loot him for his Paw. be careful as lots of gnolls patrol around him, he is shadow immune, and can social aggro all gnolls at any time within 40 yards.
     .complete 180,1 --Collect Fangore's Paw (x1)
 step
+    .isOnQuest 94
     .goto Redridge Mountains,84.3,46.9
     .turnin 94 >> Turn in A Watchful Eye
     .accept 248 >> Accept Looking Further
@@ -890,6 +891,7 @@ step
 	>>Kill Blackrock Shadowcasters. Loot them for Midnight Orbs
     .complete 115,1 --Collect Midnight Orb (x3)
 step
+    .isOnQuest 248
     .goto Redridge Mountains,63.2,49.7
 	>>Climb to the top of the tower
     .turnin 248 >> Turn in Looking Further
@@ -915,6 +917,7 @@ step
     .turnin 128 >> Turn in Blackrock Bounty
     .isQuestComplete 128
 step
+    #completewith fpwfend
 	.goto Redridge Mountains,30.5,59.3
     .fly Westfall>> Fly to Westfall
 step
@@ -924,6 +927,7 @@ step
 	.collect 2794,1,337
 	.accept 337 >> Accept An Old History Book
 step
+    #completewith fpwfend
     .goto Duskwood,18.4,56.5
     .turnin 453 >> Turn in Finding the Shadowy Figure
     .accept 268 >> Accept Return to Sven
