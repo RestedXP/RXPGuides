@@ -50,6 +50,8 @@ function addon.settings.ChatCommand(input)
     elseif input == "hide" then
         -- Do not persist change, temporary toggle
         addon.RXPFrame:SetShown(false)
+    elseif input == "support" or input == "ticket" or input == "bug" or input == "feedback" then
+        addon.comms:OpenBugReport()
     else
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
