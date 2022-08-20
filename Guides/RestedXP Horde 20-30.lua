@@ -1676,12 +1676,12 @@ step
     .turnin 23 >> Turn in Ursangous's Paw
     .turnin 247 >> Turn in The Hunt Completed
 step
-    .goto Ashenvale,73.1,61.5
-    .turnin 6441 >> Turn in Satyr Horns
-step
     .goto Ashenvale,73.7,60.0
     .turnin 25 >> Turn in Stonetalon Standstill
     .turnin 1918 >> Turn in The Befouled Element
+step
+    .goto Ashenvale,73.1,61.5
+    .turnin 6441 >> Turn in Satyr Horns
 step
     .goto Ashenvale,73.7,60.0
     .abandon 1918 >> Abandon The Befouled Element
