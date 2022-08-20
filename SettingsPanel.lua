@@ -61,7 +61,8 @@ function addon.settings:InitializeSettings()
             enableLevelUpAnnounceGroup = true,
             enableFlyStepAnnouncements = true,
             alwaysSendBranded = true,
-            checkVersions = true
+            checkVersions = true,
+            enableLevelingReportInspections = true,
         }
     }
 
@@ -788,6 +789,16 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             _G.ReloadUI()
                         end,
+                        disabled = not addon.settings.db.profile.enableTracker,
+                        hidden = isNotAdvanced(),
+                    },
+                    enableLevelingReportInspections = {
+                        name = "Enable Leveling Report Inspections (Beta)",
+                        desc = "Send or receive inspection requests for other Leveling Reports",
+                        type = "toggle",
+                        width = "full",
+                        order = 6,
+                        confirm = requiresReload,
                         disabled = not addon.settings.db.profile.enableTracker,
                         hidden = isNotAdvanced(),
                     },
