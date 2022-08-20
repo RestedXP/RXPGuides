@@ -855,21 +855,25 @@ function addon.tracker:CreateLevelSplits()
     f.current.frame:SetPoint("TOPLEFT", f, "TOPLEFT", 8,
                              -(f.title:GetHeight() / 2 + 2))
     f.current.frame:Show()
-    f.current:SetText("Current Level Time: X:Y:Z")
+    if addon.tracker.playerLevel == addon.tracker.maxLevel then
+        f.current:SetText("Level Time: Max")
+    else
+        f.current:SetText("Level Time: 00:00:00")
+    end
 
     f.history = AceGUI:Create("Label")
     f.history:SetFont(addon.font, 11)
     f.history.frame:SetParent(f)
     f.history.frame:SetPoint("TOPLEFT", f.current.frame, "BOTTOMLEFT", 0, -8)
     f.history.frame:Show()
-    f.history:SetText("Level X: X:Y:Z")
+    f.history:SetText("Level X: 00:00:00")
 
     f.total = AceGUI:Create("Label")
     f.total:SetFont(addon.font, 11)
     f.total.frame:SetParent(f)
     f.total.frame:SetPoint("TOPLEFT", f.history.frame, "BOTTOMLEFT", 0, -8)
     f.total.frame:Show()
-    f.total:SetText("Total Level Time: X:Y:Z")
+    f.total:SetText("Total Time: 00:00:00")
 
     -- Immediately overwritten in UpdateLevelSplits on PLAYER_ENTERING_WORLD
     f:SetSize(50, 100)
@@ -907,13 +911,36 @@ function addon.tracker:UpdateLevelSplits(kind)
     local f = addon.tracker.levelSplits
     local secondsSinceLogin = difftime(time(), addon.tracker.state.login.time)
 
-    local s = secondsSinceLogin + addon.tracker.state.login.timePlayedThisLevel
+    local s
 
-    f.current:SetText(fmt("Level Time: %s", addon.tracker:UglyPrintTime(s)))
+    if addon.tracker.playerLevel == addon.tracker.maxLevel then
+        -- Leave creation or full placeholder on updates
+        if kind == "full" then
+            f.current:SetText("Level Time: Max")
 
-    s = addon.tracker.state.login.totalTimePlayed + secondsSinceLogin
+            if addon.tracker.reportData[addon.tracker.maxLevel - 1] and
+                addon.tracker.reportData[addon.tracker.maxLevel - 1].timestamp and
+                addon.tracker.reportData[addon.tracker.maxLevel - 1].timestamp
+                    .finished then
+                -- Use lvl 69/79 ding as total time to level
+                s = addon.tracker.reportData[addon.tracker.maxLevel - 1]
+                        .timestamp.finished
+                f.total:SetText(fmt("Time to %d: %s", addon.tracker.maxLevel,
+                                    addon.tracker:UglyPrintTime(s)))
+            else
+                s = addon.tracker.state.login.totalTimePlayed +
+                        secondsSinceLogin
+                f.total:SetText(fmt("Total Time: %s",
+                                    addon.tracker:UglyPrintTime(s)))
+            end
+        end
+    else
+        s = secondsSinceLogin + addon.tracker.state.login.timePlayedThisLevel
+        f.current:SetText(fmt("Level Time: %s", addon.tracker:UglyPrintTime(s)))
 
-    f.total:SetText(fmt("Total Time: %s", addon.tracker:UglyPrintTime(s)))
+        s = addon.tracker.state.login.totalTimePlayed + secondsSinceLogin
+        f.total:SetText(fmt("Total Time: %s", addon.tracker:UglyPrintTime(s)))
+    end
 
     if kind == "full" then
         local data, splitsString
@@ -962,4 +989,9 @@ function addon.tracker:UpdateLevelSplits(kind)
     --- Only update width if next is wider, prevent jittering
     f.title:SetWidth(max(f.title:GetWidth(), width))
     f:SetSize(max(f:GetWidth(), width + 16), height)
+
+    -- Remove refresh after the first full update at max level
+    if addon.tracker.playerLevel == addon.tracker.maxLevel and kind == "full" then
+        addon.tracker.levelSplits:SetScript("OnUpdate", nil)
+    end
 end
