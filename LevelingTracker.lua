@@ -102,6 +102,12 @@ function addon.tracker:UpgradeDB()
 
             levelDB[l].timestamp.finished = levelDB[l + 1].timestamp.started - 1
         end
+
+        for _, questData in pairs(levelDB[l].quests) do
+            for i, questXP in pairs(questData) do
+                if questXP <= 0 then questData[i] = nil end
+            end
+        end
     end
 end
 
