@@ -629,10 +629,6 @@ step << Warrior/Rogue/Paladin
     .goto Durotar,51.8,40.9
     .money <0.0010
     .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
-step << Warrior/Rogue/Paladin
-    .goto Durotar,53.0,42.0
-    .money <0.0077
-.collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << Priest/Mage/Warlock/Shaman/Druid
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
@@ -647,6 +643,10 @@ step << Paladin
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
+step << Warrior/Rogue/Paladin
+    .goto Durotar,53.0,42.0
+    .money <0.0077
+.collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << Paladin
     .goto Orgrimmar,49.1,94.7,20 >> Run into Orgrimmar
 step << Paladin
