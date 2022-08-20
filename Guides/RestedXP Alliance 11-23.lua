@@ -13,6 +13,7 @@ step << !NightElf !Draenei wotlk
     .goto StormwindNew,21.8,56.2,0
     .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 step
+    >> Speak to Gwennyth ontop of the platform
     .goto Darkshore,36.6,45.6
     .accept 3524 >> Accept Washed Ashore
 step << !NightElf
@@ -34,7 +35,7 @@ step
     .goto Darkshore,38.8,43.4
     .accept 984 >> Accept How Big a Threat?
     .goto Darkshore,39.3,43.4
-step << Dwarf Hunter
+step << Dwarf Hunter tbc
     #sticky
     .train 2981 >> Tame a Thistle Bear and learn Claw 2
     *Thistle Bears can stun, you have to use a dummy pet to tank the stun, abandon the pet and then tame the bear
@@ -67,15 +68,18 @@ step
 step
    #label Crawlers
     .goto Darkshore,38.9,53.0
+    >> Run to the outskirts of the furbolg camp, try to not aggro any mobs.
     .complete 984,1 --Find a corrupt furbolg camp
 step
     #requires Crawlers
     .isOnQuest 983
     .goto Darkshore,36.6,46.3
+    >> Click on the machine on the hill
     .turnin 983 >> Turn in Buzzbox 827
 step
     .isOnQuest 3524
     .goto Darkshore,36.6,45.6
+    >> Head back to Gwennyth on the platform
     .turnin 3524 >> Turn in Washed Ashore
     .accept 4681 >> Accept Washed Ashore
 step
@@ -87,26 +91,29 @@ step
     .isOnQuest 4681
     .goto Darkshore,31.9,46.4
 	>> Loot the sea turtle bones underwater
+    * You can run along the docks to get their faster than just swimming!
     .complete 4681,1 --Collect Sea Turtle Remains (x1)
 step
     .isOnQuest 4681
+    >> Head back to Gwennyth
     .goto Darkshore,36.6,45.6
-    .turnin 4681 >> Turn in Washed Ashore
+    .turnin 4681,2 >> Turn in Washed Ashore >> Druid/Paladin/Hunter
+    .turnin 4681 >> Turn in Washed Ashore >> !Druid !Paladin !Hunter
 step << !Dwarf/!Hunter
     .xp 12 >> Grind to level 12
 step << !Dwarf/!Hunter
-    .goto Darkshore,37.7,43.4
+    >> Talk to Sentinel Glynda and Tharnariun 
     .accept 4811 >> Accept The Red Crystal
-step
-    .isOnQuest 2118
+    .goto Darkshore,37.7,43.4
+    .turnin -2118 >> Turn in Plagued Lands
     .goto Darkshore,38.8,43.4
-    .turnin 2118 >> Turn in Plagued Lands
 step
 #xprate <1.5
     .maxlevel 13
     .goto Darkshore,38.8,43.4
     .accept 2138 >> Accept Cleansing of the Infected
 step
+    >> Talk to Terenthis inside the building
     .goto Darkshore,39.3,43.5
     .turnin 984 >> Turn in How Big a Threat?
     .accept 985 >> Accept How Big a Threat?
@@ -117,7 +124,10 @@ step << Druid
     .complete 6001,1 --Defeat Lunaclaw (x1)
 step << !Dwarf/!Hunter
     .goto Darkshore,47.2,48.6
+    >> Careful, the Moonkin in the area enrage and call for help, very deadly!
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
+step << wotlk !Dwarf/!Hunter
+    .hs >> Hearth back to Auberdine
 step << !Dwarf/!Hunter
     .goto Darkshore,37.7,43.4
     .turnin 4811 >> Turn in The Red Crystal
@@ -128,6 +138,7 @@ step << !Dwarf/!Hunter
     .complete 4812,1 --Collect Moonwell Water Tube (x1)
 step
     .goto Darkshore,37.4,40.2
+    >> Talk to Thundris in the town hall building
     .turnin 4761 >> Turn in Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River << !Warlock
     .accept 954 >> Accept Bashal'Aran
@@ -138,10 +149,12 @@ step
     .accept 958 >> Accept Tools of the Highborne
 step
     .goto Darkshore,44.1,36.3
+    >> Head to the ruins east of town
     .turnin 954 >> Turn in Bashal'Aran
     .accept 955 >> Accept Bashal'Aran
 step << !Dwarf !Warlock/!Hunter !Warlock
     .goto Darkshore,47.3,48.6
+    >> Grind Grell as you head southeast to turn in the quest. We're coming back after.
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
@@ -150,6 +163,7 @@ step
     .complete 955,1 --Collect Grell Earring (x8)
 step
     .goto Darkshore,44.2,36.3
+    >> Return to the shrine
     .turnin 955 >> Turn in Bashal'Aran
     .accept 956 >> Accept Bashal'Aran
 step
@@ -158,6 +172,7 @@ step
     .complete 956,1 --Collect Ancient Moonstone Seal (x1)
 step
     .goto Darkshore,44.2,36.3
+    >> Return to the shrine
     .turnin 956 >> Turn in Bashal'Aran
 step
 #xprate <1.5
@@ -181,6 +196,7 @@ step << !Warlock
     .isOnQuest 4762
     .goto Darkshore,50.8,25.6
 	.use 15844 >>Use the empty sampling tube at the base of the waterfall
+    * Grind mobs en route if your hearthstone is less than 3 minutes from being off cooldown
     .complete 4762,1 --Collect Cliffspring River Sample (x1)
 step << Druid
     #sticky
@@ -196,6 +212,7 @@ step << !Warlock
     #completewith next
     .hs >> Hearth to Auberdine
 step << !Dwarf/!Hunter
+    >> Talk to Sentinel Glynda
     .goto Darkshore,37.7,43.4
     .turnin 4813 >> Turn in The Fragments Within
 step << Dwarf Hunter
@@ -210,6 +227,7 @@ step << Dwarf Hunter
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step << !Dwarf/!Hunter
     .goto Darkshore,39.9,54.9
+    >> Head south to the furbolg camp
     .complete 985,1 --Kill Blackwood Pathfinder (x8)
     .complete 985,2 --Kill Blackwood Windtalker (x5)
 step
@@ -283,18 +301,17 @@ step
     .goto Darkshore,37.4,40.1
     .turnin 958 >> Turn in Tools of the Highborne
 step << !Warlock
-    .goto Darkshore,37.4,40.1
-    .turnin 4762 >> Turn in The Cliffspring River
+    >> Head back to town
+    .turnin -4762 >> Turn in The Cliffspring River
+    .goto Darkshore,37.4,40.1,-1
+    .turnin -985 >> Turn in How Big a Threat?
+    .goto Darkshore,39.3,43.5,-1
     .isQuestComplete 4762
 step
 #xprate <1.5
     .goto Darkshore,38.8,43.4
     .turnin 2138 >> Turn in Cleansing of the Infected
     .isQuestComplete 2138
-step
-    .isOnQuest 985
-    .goto Darkshore,39.3,43.5
-    .turnin 985 >> Turn in How Big a Threat?
 step << Dwarf Hunter
     .goto Darkshore,37.7,43.4
     .turnin 4811 >> Turn in The Red Crystal
@@ -375,10 +392,10 @@ step << Warrior
 	.goto The Exodar,54.5,85.6,60,0
 	.goto The Exodar,55.6,82.3
 	.trainer >> Train spells in The Exodar
-step << Hunter/Warrior/Paladin
+step << Hunter/Warrior tbc/Paladin
 	>>Go into The Exodar and talk to the weapon master at the top floor of the Trader's Tier
     .goto The Exodar,53.3,85.7
-    .train 202 >>Train 2h swords
+    .train 202 >>Train 2h swords << Hunter/Warrior tbc/Paladin
 	.train 5011 >>Train Crossbows << Hunter
 step
     .goto Bloodmyst Isle,63.4,88.7
@@ -390,6 +407,7 @@ step
 	>> Collect Irradiated Crystal Shards from any mobs on Bloodmyst Isle. Don't throw these away.
 	.collect 23984,10 -- Collect Irradiated Crystal Shard (x10)
 step
+    >> Talk to the Draenei at the ranch
     .accept 9624 >> Accept A Favorite Treat
     .goto Bloodmyst Isle,63.5,88.8
     .accept 9634 >> Accept Alien Predators
@@ -398,24 +416,32 @@ step
 step
 	#label pears
     #sticky
+    #completewith kesselstart
     .goto Bloodmyst Isle,59.3,89.1,0,0
-	>>Collect the small pears on the ground. They can be hard to spot, check around trees.
+	>>Prioritize this quest. Collect the small pears on the ground. They can be hard to spot, check around trees. Only a finite amount of them can be spawned at once, if you don't see any, try the other side of the area.
     .complete 9624,1 --Collect Sand Pear (x10)
     .isOnQuest 9624
 step
+    .goto Bloodmyst Isle,59.3,89.1,40,0
+    .goto Bloodmyst Isle,59.2,81.9,40,0
     .goto Bloodmyst Isle,59.3,89.1
     .complete 9634,1 --Kill Bloodmyst Hatchling (x10)
     .isOnQuest 9634
 step
     #requires pears
+    >> Return to the ranch
     .goto Bloodmyst Isle,63.4,88.7
-    .turnin 9624 >> Turn in A Favorite Treat
+    .turnin 9624,3 >> Turn in A Favorite Treat << Warrior/Paladin
+    .turnin 9624 >> Turn in A Favorite Treat << !Warrior !Paladin
     .isQuestComplete 9624
 step
     .goto Bloodmyst Isle,63.1,87.9
-    .turnin 9634 >> Turn in Alien Predators
+    .turnin 9634,1 >> Turn in Alien Predators << Paladin
+    .turnin 9634 >> Turn in Alien Predators << !Paladin
     .isQuestComplete 9634
 step
+    #label kesselstart
+    >> Talk to Kessel
     .goto Bloodmyst Isle,63.0,87.5
     .accept 9663 >> Accept The Kessel Run
 step
@@ -430,24 +456,28 @@ step
     .accept 9629 >> Accept Catch and Release
 step
     #sticky
+    #completewith next
     .goto Bloodmyst Isle,55.7,59.7
     .home >> Set your Hearthstone to Blood Watch
 step
-    >> Accept quests around Blood Watch
+    >> Accept quests around Blood Watch.
+    >> Talk to the Wanted Poster and Vindicator Aalesia
     .accept 9646 >> Accept WANTED: Deathclaw
     .goto Bloodmyst Isle,55.2,59.2
     .accept 9567 >> Accept Know Thine Enemy
     .goto Bloodmyst Isle,55.0,58.0
+    >> Speak with the Tracker and Maatparm
     .accept 9580 >> Accept The Bear Necessities
     .goto Bloodmyst Isle,55.9,56.9
     .accept 9643 >> Accept Constrictor Vines
     .goto Bloodmyst Isle,56.4,56.8
-    .accept 9648 >> Accept Mac'Aree Mushroom Menagerie
+    .accept 9648 >> Accept Maatparm Mushroom Menagerie
     .goto Bloodmyst Isle,56.4,56.8
 step << Paladin
 	.goto Bloodmyst Isle,55.6,55.4
 	.trainer >>Train class spells at Vindicator Aesom
 step
+    >> Talk to Vindicator Boros
     .goto Bloodmyst Isle,55.4,55.4
     .accept 9641 >> Accept Irradiated Crystal Shards
 step
@@ -455,6 +485,7 @@ step
 	.itemcount 23984,10
 	.turnin 9641 >> Turn in Irradiated Crystal Shards
 step
+    >> Speak to the Draenei in the building on the hill
     .goto Bloodmyst Isle,52.7,53.3
     .accept 9693 >> Accept What Argus Means to Me
     .accept 9581 >> Accept Learning from the Crystals
@@ -493,15 +524,19 @@ step
     .accept 9594 >> Accept Signs of the Legion
 	.unitscan Tzerak
 step
+    #requires monument
+    #sticky
+    #completewith mtag1
+    .goto Bloodmyst Isle,37.0,78.7
+	>>Look for small green mushrooms close to the satyr area
+    .complete 9648,4 --Collect Fel Cone Fungus (x1)
+step
 	#requires monument
     .goto Bloodmyst Isle,37.0,78.7
 	>>Kill Satyrs and Felsworn in the area. You may have to kill Rogues to force the respawns of the satyr's you need.
     .complete 9594,1 --Kill Nazzivus Satyr (x8)
     .complete 9594,2 --Kill Nazzivus Felsworn (x8)
     .isOnQuest 9594
-step
-	>>Look for small green mushrooms close to the satyr area
-    .complete 9648,4 --Collect Fel Cone Fungus (x1)
 step
 	#label mtag1
     #sticky
@@ -531,18 +566,25 @@ step
     .goto Bloodmyst Isle,53.3,57.9
 	>>Grind mobs en route
     .turnin 9576 >> Turn in Cruelfin's Necklace
-    .turnin 9629 >> Turn in Catch and Release
+    .turnin 9629,1 >> Turn in Catch and Release << Warrior/Paladin
+    .turnin 9629 >> Turn in Catch and Release << !Warrior !Paladin
     .accept 9574 >> Accept Victims of Corruption
+step
+    #completewith next
+    .goto Bloodmyst Isle,53.3,56.6
+    .vendor >> Vendor trash and repair
 step
     .goto Bloodmyst Isle,51.3,75.7
 	>>Kill treants around this area and loot them for their bark. Grind mobs en route.
     .complete 9574,1 --Collect Crystallized Bark (x6)
 step
     #requires bloodmushroom
+    >> Return to town
     .goto Bloodmyst Isle,53.3,57.8
     .turnin 9574 >> Turn in Victims of Corruption
     .accept 9578 >> Accept Searching for Galaen
 step
+    >> Talk to Vindicator Aalesia
     .goto Bloodmyst Isle,55.0,58.1
     .turnin 9594 >> Turn in Signs of the Legion
 	.isQuestComplete 9594
@@ -550,30 +592,37 @@ step
     .goto Bloodmyst Isle,54.9,58.0
     .turnin 9567 >> Turn in Know Thine Enemy
 step << !Dwarf/!Hunter
+    >> Speak to Vindicator Boros
     .goto Bloodmyst Isle,55.4,55.4
     .turnin 9693 >> Turn in What Argus Means to Me
     .accept 9694 >> Accept Blood Watch
 step
 	.goto Bloodmyst Isle,55.4,55.4
 	.itemcount 23984,10
-	.turnin 9641 >> Turn in Irradiated Crystal Shards
+	.turnin 9641,3 >> Turn in Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock/Druid
 step
+    >> Head into the building on the hill
     .goto Bloodmyst Isle,52.6,53.3
-    .turnin 9581 >> Turn in Learning from the Crystals
+    .turnin 9581,2 >> Turn in Learning from the Crystals << Warrior/Paladin
+    .turnin 9581 >> Turn in Learning from the Crystals << !Warrior !Paladin
     .accept 9620 >> Accept The Missing Survey Team
 step << !Dwarf/!Hunter
-    >> Kill blood elves in the area
+    >> Kill blood elves in the area. Try to end on the south side, we're going back to town after.
     .goto Bloodmyst Isle,48.5,46.8
     .complete 9694,1 --Kill Sunhawk Spy (x10)
 step << !Dwarf/!Hunter
+    >> Talk to Vindicator Boros
     .goto Bloodmyst Isle,55.4,55.2
-    .turnin 9694 >> Turn in Blood Watch
+    .turnin 9694,3 >> Turn in Blood Watch << Hunter
+    .turnin 9694 >> Turn in Blood Watch << !Hunter
     .accept 9779 >> Accept Intercepting the Message
 step
     .goto Bloodmyst Isle,47.7,46.6
-	>>Kill Sunhawk Spies
+	>>Kill Sunhawk Spies and loot them for their missive.
     .complete 9779,1 --Collect Sunhawk Missive (x1)
 step
+    >> Head east and talk to the corpse in the naga ruins
     .goto Bloodmyst Isle,61.3,48.6
     .turnin 9620 >> Turn in The Missing Survey Team
     .accept 9628 >> Accept Salvaging the Data
@@ -585,10 +634,11 @@ step
     .complete 9648,3 --Collect Ruinous Polyspore (x1)
 step
     .goto Bloodmyst Isle,64.4,41.8
-	>>Kill nagas around this area
+	>>Kill nagas around this area and loot them
     .complete 9628,1 --Collect Survey Data Crystal (x1)
 step
     #requires bluemushroom
+    >> Cross the ocean to the island
     .goto Bloodmyst Isle,74.3,33.4
     .accept 9687 >> Accept Restoring Sanctity
 step
@@ -596,22 +646,28 @@ step
 	#completewith next
 	.deathskip >> Die and respawn at Blood Watch
 step
+    >> Talk to Maatparm
     .goto Bloodmyst Isle,56.4,56.8
-    .turnin 9648 >> Turn in Mac'Aree Mushroom Menagerie
+    .turnin 9648,3 >> Turn in Maatparm Mushroom Menagerie << Warrior/Paladin
+    .turnin 9648 >> Turn in Maatparm Mushroom Menagerie << !Warrior !Paladin
     .accept 9649 >> Accept Ysera's Tears
 step
     .goto Bloodmyst Isle,55.4,55.4
+    >> Talk to Vindicator Boros
     .turnin 9779 >> Turn in Intercepting the Message
     .accept 9696 >> Accept Translations...
 step
+    >> Speak with Elysia by the cage
     .goto Bloodmyst Isle,54.5,54.5
     .turnin 9696 >> Turn in Translations...
     .accept 9698 >> Accept Audience with the Prophet
 step
+    >> Into the house up the hill
     .goto Bloodmyst Isle,52.6,53.3
     .turnin 9628 >> Turn in Salvaging the Data
     .accept 9584 >> Accept The Second Sample
 step
+    >> Talk to the dwarf by the tree
     .goto Bloodmyst Isle,56.3,54.3
     .accept 10063 >> Accept Explorers' League, Is That Something for Gnomes?
 step
@@ -631,6 +687,7 @@ step << Warlock/Mage/Priest
 step
     #label audience
     .goto The Exodar,32.8,54.4
+    >> Speak with Velen 
     .turnin 9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
 step << Druid
@@ -642,29 +699,37 @@ step
     .hs >> Hearth back to Blood Watch
     .zoneskip Bloodmyst Isle
 step
-    .goto Bloodmyst Isle,55.0,58.0
+    >> Talk to Vindicator Aalesia
     .accept 9569 >> Accept Containing the Threat
-step
-    .goto Bloodmyst Isle,55.4,55.4
+    .goto Bloodmyst Isle,55.0,58.0
+    >> Talk to Boros
     .turnin 9699 >> Turn in Truth or Fiction
+    .goto Bloodmyst Isle,55.4,55.4
     .accept 9700 >> Accept I Shoot Magic Into the Darkness
+step
+    .itemcount 23984,10
+    .goto Bloodmyst Isle,55.4,55.2
+    .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage/Druid
 step
     .goto Bloodmyst Isle,45.7,47.9
 	.use 23875 >>Use the pick in your bags to collect the crystal sample
     .complete 9584,1 --Collect Altered Crystal Sample (x1)
 step
 	#sticky
-	#completewith BloodmystBearsnLashers
+	#completewith gnomeyboi
 	#label constrictors
     >>Kill Mutated Constrictors. Loot them for their Vines
     .complete 9643,1 --Collect Thorny Constrictor Vine (x6)
 step
 	#sticky
-	#completewith bearend
+	#completewith next
 	>>Kill Bears. Loot them for their Bear Flanks
 	.complete 9580,1 --Elder Brown Bear Flank (8)
 step
+    #label gnomeyboi
     .goto Bloodmyst Isle,42.0,21.2
+    >> Talk to the gnome in the turtle shell
     .turnin 10063 >> Turn in Explorers' League, Is That Something for Gnomes?
     .accept 9548 >> Accept Pilfered Equipment
     .accept 9549 >> Accept Artifacts of the Blacksilt
@@ -702,6 +767,16 @@ step
 	.collect 4371,1,175,1,1
 	.bronzetube
 step
+	#sticky
+	#completewith gnome
+    >>Kill Mutated Constrictors. Loot them for their Vines
+    .complete 9643,1 --Collect Thorny Constrictor Vine (x6)
+step
+	#sticky
+	#completewith vinesdoneboss
+	>>Kill Bears. Loot them for their Bear Flanks
+	.complete 9580,1 --Elder Brown Bear Flank (8)
+step
     .goto Bloodmyst Isle,53.1,20.3
     .use 23837 >>Click on the Weathered Treasure Map in your bags from the Artifacts of the Blacksilt quest
 	.collect 23837,1,9550 --Collect Weathered Treasure Map (x1)
@@ -719,7 +794,7 @@ step
     .complete 9700,2 --Kill Void Anomaly (x5)
 step
     #requires SunPortalSite
-    #label BloodmystBearsnLashers
+    #label vinesdoneboss
 	.goto Bloodmyst Isle,47.6,24.9,60,0
 	.goto Bloodmyst Isle,44.9,26.4,100,0
 	.goto Bloodmyst Isle,48.3,33.4,100,0
@@ -736,29 +811,40 @@ step
     .goto Bloodmyst Isle,53.9,35.4,60,0
     .goto Bloodmyst Isle,57.0,34.3,60,0
     .goto Bloodmyst Isle,56.1,40.2
-	>>Loot the Dragon Bones on the ground in the tree camps
+	>>Loot the Dragon Bones on the ground in the tree camps. Try to end towards the southeast side.
     .complete 9687,1 --Collect Dragon Bone (x8)
 step
     .goto Bloodmyst Isle,61.1,41.9
+    >> Talk to the book in the ruins
     .turnin 9550 >> Turn in A Map to Where?
     .accept 9557 >> Accept Deciphering the Book
 step
+    >> Run back into town and talk to Anchorite Paetheus. Don't wait for his roleplay sequence.
     .goto Bloodmyst Isle,54.7,54.1
     .turnin 9557 >> Turn in Deciphering the Book
 step
+    >> Head into the building up the hill
     .goto Bloodmyst Isle,52.6,53.3
     .turnin 9584 >> Turn in The Second Sample
     .accept 9585 >> Accept The Final Sample
     .accept 10064 >> Accept Talk to the Hand
 step
+    >> Return to the Anchorite
     .goto Bloodmyst Isle,54.7,54.0
     .accept 9561 >> Accept Nolkai's Words
 step
     .goto Bloodmyst Isle,55.4,55.2
-    .turnin 9700 >> Turn in I Shoot Magic Into the Darkness
+    .turnin 9700,3 >> Turn in I Shoot Magic Into the Darkness << Warrior/Paladin
+    .turnin 9700 >> Turn in I Shoot Magic Into the Darkness << !Warrior !Paladin
     .accept 9703 >> Accept The Cryo-Core
 step
+    .itemcount 23984,10
+    .goto Bloodmyst Isle,55.4,55.2
+    .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage/Druid
+step
 	#label flutterers
+    >> Speak to Tracker Lyceon
     .goto Bloodmyst Isle,55.9,56.9
     .turnin 9643 >> Turn in Constrictor Vines
     .accept 9647 >> Accept Culling the Flutterers
@@ -784,17 +870,32 @@ step
     .complete 9579,1 --Collect Galaen's Amulet (x1)
     .complete 9703,1 --Collect Medical Supplies (x12)
 step
+    .isQuestComplete 9579
+    >> Return to town
     .goto Bloodmyst Isle,53.3,57.7
     .turnin 9579 >> Turn in Galaen's Fate
 step
+    >> Talk to Achelus
     .goto Bloodmyst Isle,53.3,57.2
     .accept 9669 >> Accept The Missing Expedition
 step
+    #completewith next
+    .goto Bloodmyst Isle,53.3,56.7
+    .vendor >> Vendor and repair
+step
+    >> Talk to Vindicator Kuros
     .goto Bloodmyst Isle,55.6,55.1
-    .turnin 9703 >> Turn in The Cryo-Core
+    .turnin 9703,1 >> Turn in The Cryo-Core << Paladin
+    .turnin 9703 >> Turn in The Cryo-Core << !Paladin
     .turnin 9706 >> Turn in Galaen's Journal - The Fate of Vindicator Saruan
     .accept 9711 >> Accept Matis the Cruel
     .accept 9748 >> Accept Don't Drink the Water
+step
+	#sticky
+	#completewith bearend
+    .isOnQuest 9580
+	>>Kill Bears. Loot them for their Bear Flanks
+	.complete 9580,1 --Elder Brown Bear Flank (8)
 step
     .goto Bloodmyst Isle,41.3,30.6
 	.use 23875 >>Use the pick in your bags to collect the crystal sample
@@ -808,9 +909,10 @@ step
     .complete 9569,4 --Collect Corrupted Crystal (x5)
 step
 	#completewith AliveM
-    .goto Bloodmyst Isle,43.9,43.7,0
-    .goto Bloodmyst Isle,30.1,51.7,0
-    .goto Bloodmyst Isle,22.4,54.3,0
+    .goto Bloodmyst Isle,43.9,43.7,40,0
+    .goto Bloodmyst Isle,30.1,51.7,40,0
+    .goto Bloodmyst Isle,22.4,54.3,40,0
+    .goto Bloodmyst Isle,43.9,43.7
 	.line Bloodmyst Isle,43.1,43.7,36.5,47.2,33.5,47.1,29.9,51.8,27.7,51.8,25.1,54.1,22.0,54.3
     .use 24278 >>Look for Matis the Cruel, he patrols the main road next to Vindicator's Rest
     .complete 9711,1 --Capture Matis the Cruel
@@ -819,17 +921,20 @@ step
 	.unitscan Matis the Cruel
 step
     .goto Bloodmyst Isle,30.3,45.8
+    >> Talk to the Scouts at Vindicator's Rest
     .turnin 10064 >> Turn in Talk to the Hand
     .accept 10065 >> Accept Cutting a Path
     .accept 9741 >> Accept Critters of the Void
 step
+    >> Talk to Vindicator Corin
     .goto Bloodmyst Isle,30.8,46.8
     .accept 10066 >> Accept Oh, the Tangled Webs They Weave
     .accept 10067 >> Accept Fouled Water Spirits
 step
     #sticky
+    #completewith bloodmyst2
     #label ravager3
-    >>Finish off Ravagers/Tanglers
+    >>Kill Ravagers and Tanglers as you quest
     .goto Bloodmyst Isle,30.3,57.2,0
     .complete 10066,1 --Kill Mutated Tangler (x8)
     .complete 10065,1 --Kill Enraged Ravager (x10)
@@ -838,29 +943,35 @@ step
     >> You have to kill the anomalies in the water to eventually spawn the Critters
     .complete 9741,1 --Kill Void Critter (x12)
 step
-    #requires ravager3
+    #label ravager4
+    >>Finish off the Ravagers and Tanglers
+    .goto Bloodmyst Isle,30.3,57.2
+    .complete 10066,1 --Kill Mutated Tangler (x8)
+    .complete 10065,1 --Kill Enraged Ravager (x10)
+step
+    #requires ravager4
 	#label bloodmyst2
+    >> Return to Vindicator's Rest
     .turnin 10066 >> Turn in Oh, the Tangled Webs They Weave
     .goto Bloodmyst Isle,30.7,46.9
     .turnin 10065 >> Turn in Cutting a Path
     .goto Bloodmyst Isle,30.3,46.0
 step
-    .goto Bloodmyst Isle,33.4,43.8
-	>>Kill Bears and Flutterers. Loot the bears for their Flanks
-	>>Finish killing and looting Bears and Flutterers
+    .goto Bloodmyst Isle,38.4,47,100
+	>>Finish killing and looting Bears and Flutterers. Flutterers can typically be found near the Cyro Core. Bears north of the road towards Axxarien. Try to end on the north side.
     .complete 9647,1 --Kill Royal Blue Flutterer (10)
 	.complete 9580,1 --Elder Brown Bear Flank (8)
 step
-	.goto Bloodmyst Isle,43.7,26.6,80,0
-	.goto Bloodmyst Isle,46.3,32.0,80,0
     .goto Bloodmyst Isle,29.6,39.5
 	>>Kill the Fouled Water Spirits in the area
     .complete 10067,1 --Kill Fouled Water Spirit (x6)
 step
     .goto Bloodmyst Isle,30.7,46.8
+    >> Quickly go back and turn in the quest
     .turnin 10067 >> Turn in Fouled Water Spirits
 step
     .goto Bloodmyst Isle,24.9,34.3
+    >> Head back north past the water elementals and talk to Researcher Cornelius
     .accept 9670 >> Accept They're Alive! Maybe...
 step
 	#sticky
@@ -879,6 +990,7 @@ step
 step
 	#requires Researchers
 	#label AliveM
+    >> Return to the Researcher
     .goto Bloodmyst Isle,24.9,34.4
     .turnin 9670 >> Turn in They're Alive! Maybe...
 step
@@ -933,33 +1045,56 @@ step
     .hs >> Hearth to Blood Watch
 step
     .goto Bloodmyst Isle,55.0,58.1
-    .turnin 9569 >> Turn in Containing the Threat
+    >> Talk to Vindicator Aalesia
+    .turnin 9569,1 >> Turn in Containing the Threat << Hunter
+    .turnin 9569,2 >> Turn in Containing the Threat << Warlock/Mage/Priest
+    .turnin 9569 >> Turn in Containing the Threat << !Warlock !Hunter !Mage !Priest
 step
+    >> Talk to Achelus
     .goto Bloodmyst Isle,53.4,57.1
     .turnin 9669 >> Turn in The Missing Expedition
 step
+    #completewith next
+    .vendor >> Vendor and repair
+step
+    >> Go into the building up the hill
     .goto Bloodmyst Isle,52.7,53.3
     .turnin 9585 >> Turn in The Final Sample
     .turnin 9646 >> Turn in WANTED: Deathclaw
 step
+    >> Talk to Anchorite Paetheus
     .goto Bloodmyst Isle,54.7,54.1
     .accept 9632 >> Accept Newfound Allies
 step
-	#completewith next
+	>> Talk to the Vindicators
     .goto Bloodmyst Isle,55.6,55.3
     .turnin 9741 >> Turn in Critters of the Void
     .turnin 9748 >> Turn in Don't Drink the Water
-    .turnin 9711 >> Turn in Matis the Cruel
-	.trainer >>Train class spells at Vindicator Aesom << Paladin
+    .turnin 9711,3 >> Turn in Matis the Cruel << Warrior/Paladin
+    .turnin 9711 >> Turn in Matis the Cruel << !Warrior !Paladin
+	.trainer >>Train class spells at Vindicator Aesom. << Paladin
+step
+    .itemcount 23984,10
+    .goto Bloodmyst Isle,55.4,55.2
+    .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage/Druid
 step
 	#label bearend
+    >> Talk to Tracker Lyceon
     .goto Bloodmyst Isle,55.9,56.9
-    .turnin 9647 >> Turn in Culling the Flutterers
+    .turnin 9647,3 >> Turn in Culling the Flutterers << Warrior/Paladin
+    .turnin 9647 >> Turn in Culling the Flutterers << !Warrior !Paladin
     .turnin 9580 >> Turn in The Bear Necessities
+step << Paladin wotlk
+    .xp <20,1
+    .goto Bloodmyst Isle,55.6,55.3
+    .train 13819 >> Train your mount spell, it will be under your "pet" tab of your character panel
 step
+    >> Head to the naga ruins
     .goto Bloodmyst Isle,61.4,49.6
     .turnin 9561 >> Turn in Nolkai's Words
 step
+    >> Swim to the island
     .goto Bloodmyst Isle,74.6,33.6
     .turnin 9687 >> Turn in Restoring Sanctity
     .accept 9688 >> Accept Into the Dream
@@ -974,6 +1109,7 @@ step
     .complete 9688,1 --Kill Veridian Whelp (x5)
     .complete 9688,2 --Kill Veridian Broodling (x5)
 step
+    >> Return to the Prince
     .goto Bloodmyst Isle,74.3,33.4
     .turnin 9688 >> Turn in Into the Dream
     .accept 9689 >> Accept Razormaw
@@ -983,8 +1119,12 @@ step
     .complete 9689,1 --Kill Razormaw (x1)
     *This quest can be tough, skip this step if you can't find a group or solo this quest
 step
+    >> Return to the Prince
     .goto Bloodmyst Isle,74.3,33.4
-    .turnin 9689 >> Turn in Razormaw
+    .turnin 9689,2 >> Turn in Razormaw << Warrior/Paladin
+    .turnin 9689,3 >> Turn in Razormaw << Rogue/Hunter
+    .turnin 9689,1 >> Turn in Razormaw << Mage/Warlock/Priest
+    .turnin 9689 >> Turn in Razormaw << Druid/Shaman
 step << Hunter/Warlock/Mage
     #completewith next
     .goto Bloodmyst Isle,24.8,51.3
@@ -1081,6 +1221,7 @@ step
     .goto Darkshore,36.1,44.9
     .accept 1138 >> Accept Fruit of the Sea
 step
+    >> Talk to the Wanted Poster outside the inn
     .goto Darkshore,37.2,44.2
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
@@ -1089,6 +1230,7 @@ step
     .goto Darkshore,37.3,43.7
     .accept 947 >> Accept Cave Mushrooms
 step
+    >> Talk to the dwarf by the town hall
     .goto Darkshore,37.5,41.8
     .accept 729 >> Accept The Absent Minded Prospector
 step
@@ -1098,7 +1240,7 @@ step
     .goto Darkshore,37.4,40.1
     .accept 4763 >> Accept The Blackwood Corrupted
 step
-#xprate <1.5
+#xprate >1.5
     .isOnQuest 9633
     .goto Darkshore,37.4,40.2
     .turnin 9633 >> Turn in The Way to Auberdine
@@ -1109,6 +1251,7 @@ step
     .goto Darkshore,38.1,41.2
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step
+    >> Talk to Gershala in the shrine
     .goto Darkshore,38.37,43.05
     .accept 1275 >> Accept Researching the Corruption
 step
