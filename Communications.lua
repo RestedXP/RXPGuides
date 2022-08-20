@@ -339,7 +339,9 @@ function addon.comms.BuildNotification(msg, ...)
 end
 
 function addon.comms.BuildPrint(msg, ...)
-    return fmt("%s: %s", addonName, fmt(msg, ...))
+    return fmt("%s%s: %s", addonName,
+               addon.settings.db.profile.debug and ' (Debug)' or '',
+               fmt(msg, ...))
 end
 
 function addon.comms:OpenBugReport()
