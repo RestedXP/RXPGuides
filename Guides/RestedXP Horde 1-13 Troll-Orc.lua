@@ -629,10 +629,6 @@ step << Warrior/Rogue/Paladin
     .goto Durotar,51.8,40.9
     .money <0.0010
     .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
-step << Warrior/Rogue/Paladin
-    .goto Durotar,53.0,42.0
-    .money <0.0077
-.collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << Priest/Mage/Warlock/Shaman/Druid
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
@@ -647,6 +643,10 @@ step << Paladin
     .goto Durotar,51.5,41.6
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
+step << Warrior/Rogue/Paladin
+    .goto Durotar,53.0,42.0
+    .money <0.0077
+.collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << Paladin
     .goto Orgrimmar,49.1,94.7,20 >> Run into Orgrimmar
 step << Paladin
@@ -1049,6 +1049,7 @@ step << Warlock
     .use 4945 >>Optionally, you can kill Gazz'uz (level 14 warlock) for a quest item. Be sure to use your Skull from earlier, any potions you have, or sticky glue on the voidwalker. You can LoS (Line of Sight) Gazz'uz to avoid his shadowbolts, and fear his pet. If you can't kill him, try to sneak past, or die and respawn past him in the water.
     .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
+    .unitscan Gazz'uz
 step << Warlock
     .goto Durotar,53.6,8.5,10,0
     .goto Durotar,51.8,8.1,10,0
@@ -1552,11 +1553,13 @@ step << Orc Shaman/Troll Shaman/Orc Warrior/Troll Shaman/Troll Warrior
 .goto Durotar,51.8,10.0
 .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
+    .unitscan Gazz'uz
 step << Tauren Shaman/Tauren Warrior/Undead Warrior/Paladin
     .use 4945 >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave. Use healing potions to restore health if you have them. Use LoS (line of sight) to avoid his shadowbolts. Don't be afraid to die if it means killing and looting Gazz'uz
 .goto Durotar,51.8,10.0
 .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
+    .unitscan Gazz'uz
 step
     #requires Collars2
     #sticky
