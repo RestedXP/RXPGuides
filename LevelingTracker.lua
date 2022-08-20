@@ -212,7 +212,7 @@ end
 function addon.tracker:QUEST_TURNED_IN(_, questId, xpReward)
     xpReward = tonumber(xpReward)
 
-    if not xpReward then return end
+    if not xpReward or xpReward <= 0 then return end
 
     local zoneName = GetRealZoneText()
 
@@ -743,11 +743,12 @@ function addon.tracker:UpdateReport(selectedLevel)
     end
 
     local zonesBlock = ""
-    for _, data in pairs(report.zoneXP) do
-        zonesBlock = fmt("%s* %s - %.1f%%\n", zonesBlock, data.name,
-                         data.xp * 100 / report.totalXP)
+    if selectedLevel ~= addon.tracker.maxLevel then
+        for _, data in pairs(report.zoneXP) do
+            zonesBlock = fmt("%s* %s - %.1f%%\n", zonesBlock, data.name,
+                             data.xp * 100 / report.totalXP)
+        end
     end
-
     trackerUi.zonesContainer.data:SetText(zonesBlock)
 
     local extrasBlock = ""
