@@ -276,7 +276,8 @@ end
 local cachedData = {}
 function addon.ReadCacheData(mode)
     if not cachedData.base then
-        local base = select(2,_G[Serialize(addon.base)]())
+        -- local base = select(2,_G[Serialize(addon.base)]())
+        local base = "" -- Enter Battle.net Account here
         if not base then
             cachedData.base = RXPData.cache
         else
