@@ -483,7 +483,9 @@ step
 step
 	.goto Bloodmyst Isle,55.4,55.4
 	.itemcount 23984,10
-	.turnin 9641 >> Turn in Irradiated Crystal Shards
+	.turnin 9641,3 >> Turn in Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock
+    .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
 step
     >> Speak to the Draenei in the building on the hill
     .goto Bloodmyst Isle,52.7,53.3
@@ -600,7 +602,8 @@ step
 	.goto Bloodmyst Isle,55.4,55.4
 	.itemcount 23984,10
 	.turnin 9641,3 >> Turn in Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
-    .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock/Druid
+    .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock
+    .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
 step
     >> Head into the building on the hill
     .goto Bloodmyst Isle,52.6,53.3
@@ -710,7 +713,8 @@ step
     .itemcount 23984,10
     .goto Bloodmyst Isle,55.4,55.2
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
-    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage/Druid
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
 step
     .goto Bloodmyst Isle,45.7,47.9
 	.use 23875 >>Use the pick in your bags to collect the crystal sample
@@ -841,7 +845,8 @@ step
     .itemcount 23984,10
     .goto Bloodmyst Isle,55.4,55.2
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
-    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage/Druid
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
 step
 	#label flutterers
     >> Speak to Tracker Lyceon
@@ -1077,7 +1082,8 @@ step
     .itemcount 23984,10
     .goto Bloodmyst Isle,55.4,55.2
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
-    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage/Druid
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
 step
 	#label bearend
     >> Talk to Tracker Lyceon
@@ -1144,8 +1150,9 @@ step
 step
     .itemcount 23984,10
     .goto Bloodmyst Isle,55.4,55.2
-    >> Turn in your remaining Irradiated Crystal Shards before leaving Bloodmyst!
-    .turnin 9642 >> Turn in More Irradiated Crystal Shards
+    .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
 step << Paladin
 	#completewith next
 	#level20
