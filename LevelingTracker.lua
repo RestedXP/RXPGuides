@@ -52,7 +52,7 @@ function addon.tracker:SetupTracker()
 
     addon.tracker:CompileData()
 
-    if addon.settings.db.profile.enableTracker then addon.tracker:CreateGui() end
+    addon.tracker:CreateGui()
 
     if addon.settings.db.profile.enablelevelSplits then
         addon.tracker:CreateLevelSplits()
@@ -280,6 +280,8 @@ local function buildSpacer(height)
 end
 
 function addon.tracker:CreateGui()
+    if addon.tracker.ui then return end
+
     local attachment = _G.CharacterFrame
     local offset = {
         x = -38,

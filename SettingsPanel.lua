@@ -35,13 +35,6 @@ function addon.settings.ChatCommand(input)
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
         end
-    elseif input == "beta" then
-        addon.settings.db.profile.enableBetaFeatures = not addon.settings.db.profile.enableBetaFeatures
-
-        if addon.settings.db.profile.enableBetaFeatures then
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
-        end
     elseif input == "splits" then
         addon.tracker:ToggleLevelSplits()
     elseif input == "show" then
@@ -66,7 +59,6 @@ function addon.settings:InitializeSettings()
             enableTracker = true,
             enableLevelUpAnnounceSolo = true,
             enableLevelUpAnnounceGroup = true,
-            openTrackerReportOnCharOpen = true,
             enableFlyStepAnnouncements = true,
             alwaysSendBranded = true,
             checkVersions = true
@@ -723,6 +715,14 @@ function addon.settings.CreateImportOptionsPanel()
 end
 
 function addon.settings.CreateExtrasOptionsPanel()
+    local function isNotAdvanced()
+        return addon.release ~= 'Development' or not addon.settings.db.profile.enableBetaFeatures
+    end
+
+    local function requiresReload()
+        return "This requires a reload to take effect, continue?"
+    end
+
     local extraOptionsTable = {
         type = "group",
         name = "RestedXP Extras",
@@ -737,9 +737,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                 width = "full",
                 fontSize = "medium"
             },
-            levelingTracker = {
+            optionalFeatures = {
                 type = "group",
-                name = "Leveling Tracker",
+                name = "Optional Features",
                 order = 2,
                 args = {
                     trackerOptionsHeader = {
@@ -752,15 +752,45 @@ function addon.settings.CreateExtrasOptionsPanel()
                         name = "Enable Leveling Tracker",
                         type = "toggle",
                         width = "full",
-                        order = 2
+                        order = 2,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
                     },
                     openTrackerReportOnCharOpen = {
                         name = "Always Open Leveling Report With Character Panel",
-                        desc = "Requires Reload for changes to take effect\nEnables the RestedXP Leveling Report when you open your character panel",
+                        desc = "Enables the RestedXP Leveling Report when you open your character panel",
                         type = "toggle",
                         width = "full",
-                        order = 3
-                    }
+                        order = 3,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                    },
+                    splitsOptionsHeader = {
+                        name = "Level Splits (Beta)",
+                        type = "header",
+                        width = "full",
+                        order = 4,
+                        hidden = isNotAdvanced(),
+                    },
+                    enablelevelSplits = {
+                        name = "Enable Level Splits",
+                        type = "toggle",
+                        width = "full",
+                        order = 5,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        disabled = not addon.settings.db.profile.enableTracker,
+                        hidden = isNotAdvanced(),
+                    },
                 },
             },
             communications = {
@@ -846,37 +876,29 @@ function addon.settings.CreateExtrasOptionsPanel()
                     },
                 }
             },
-            betaSettings = {
+            advancedSettings = {
                 type = "group",
-                name = "Beta Settings",
+                name = "Advanced Settings",
                 order = 4,
-                hidden = function ()
-                    return addon.release ~= 'Development' or not addon.settings.db.profile.enableBetaFeatures
-                end,
                 args = {
-                    betaFeaturesHeader = {
-                        name = "Beta features",
-                        type = "header",
-                        width = "full",
-                        order = 1
-                    },
                     enableBetaFeatures = {
                         name = "Enable Beta Features",
+                        desc = "Enables new features, forces reload to take effect",
                         type = "toggle",
                         width = "full",
-                        order = 2,
+                        order = 1,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end
                     },
                     debug = {
                         name = "Enable Debug",
                         type = "toggle",
                         width = "full",
-                        order = 3,
-                    },
-                    enablelevelSplits = {
-                        name = "Enable Level Splits",
-                        type = "toggle",
-                        width = "full",
-                        order = 4,
+                        order = 2,
+                        hidden = isNotAdvanced,
                     },
                 }
             }
