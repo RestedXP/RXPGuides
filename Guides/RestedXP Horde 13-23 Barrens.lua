@@ -1099,11 +1099,17 @@ step
     .goto Thunder Bluff,45.9,64.7
     #completewith next
     .home >>Set your Hearthstone to Thunder Bluff
-step << Shaman/Warrior
+step << Warrior wotlk
+	.train 198 >> Train 1h Maces
+    .goto Thunder Bluff,40.93,62.71
+    .vendor >> Buy a Flail
+    .collect 925,1
+    .goto Thunder Bluff,53.20,58.27
+step << Warrior tbc/Shaman
     #sticky
     #completewith next
     +If it's cheaper, buy a green 2h mace from the Auction House. Skip this step if you will run Wailing Caverns, the quest staff is much better.
-step << Shaman/Warrior
+step << Warrior tbc/Shaman
     .goto Thunder Bluff,53.2,58.2
     .vendor >> Buy a Maul
     .collect 924,1
