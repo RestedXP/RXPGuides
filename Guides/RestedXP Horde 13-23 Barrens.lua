@@ -297,7 +297,7 @@ step
     .accept 821 >>Accept Chen's Empty Keg
 step
     #label rachetfp
-    .goto The Barrens,61.2,39.4
+    .goto The Barrens,62.05,39.41
     >> The level 5 fish food here is super cheap, stock up << Warrior/Rogue
     .vendor >> Restock on food/water
 step
