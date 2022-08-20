@@ -1624,7 +1624,7 @@ step
     .accept 23 >> Accept Ursangous's Paw
 	.unitscan Ursangous
 step
-    #xprate <1.5
+    #xprate
     #sticky
     #label Tideress
     .use 16408 >>Kill Tideress who is located around the middle of the lake. Loot her for a Befouled Water Globe, then click it to accept the quest
