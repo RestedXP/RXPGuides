@@ -772,18 +772,28 @@ function addon.settings.CreateExtrasOptionsPanel()
                             _G.ReloadUI()
                         end,
                     },
+                    enableLevelingReportInspections = {
+                        name = "Enable Leveling Report Inspections (Beta)",
+                        desc = "Send or receive inspection requests for other Leveling Reports",
+                        type = "toggle",
+                        width = "full",
+                        order = 4,
+                        confirm = requiresReload,
+                        disabled = not addon.settings.db.profile.enableTracker,
+                        hidden = isNotAdvanced(),
+                    },
                     splitsOptionsHeader = {
                         name = "Level Splits (Beta)",
                         type = "header",
                         width = "full",
-                        order = 4,
+                        order = 5,
                         hidden = isNotAdvanced(),
                     },
                     enablelevelSplits = {
                         name = "Enable Level Splits",
                         type = "toggle",
                         width = "full",
-                        order = 5,
+                        order = 6,
                         confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -791,17 +801,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                         end,
                         disabled = not addon.settings.db.profile.enableTracker,
                         hidden = isNotAdvanced(),
-                    },
-                    enableLevelingReportInspections = {
-                        name = "Enable Leveling Report Inspections (Beta)",
-                        desc = "Send or receive inspection requests for other Leveling Reports",
-                        type = "toggle",
-                        width = "full",
-                        order = 6,
-                        confirm = requiresReload,
-                        disabled = not addon.settings.db.profile.enableTracker,
-                        hidden = isNotAdvanced(),
-                    },
+                    }
                 },
             },
             communications = {
