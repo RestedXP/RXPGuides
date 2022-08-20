@@ -1520,11 +1520,16 @@ function addon.functions.fly(self, ...)
     elseif (event and UnitOnTaxi("player")) or
         (event == "PLAYER_CONTROL_LOST" and GetTime() - addon.flightInfo.startFlight < 1.5) then
         addon.SetElementComplete(self)
-        addon.comms:AnnounceStepEvent('.fly', {
-            destination = addon.flightInfo.dest,
-            duration = addon.flightInfo.timer,
-            guideName = RXPCData.currentGuideName
-        })
+
+        -- Only send flight announcements on initial loss
+        if event == "PLAYER_CONTROL_LOST" then
+            addon.comms:AnnounceStepEvent('.fly', {
+                destination = addon.flightInfo.dest,
+                duration = addon.flightInfo.timer,
+                guideName = RXPCData.currentGuideName
+            })
+        end
+
         if element.timer then
             addon.StartTimer(element.timer,element.timerText)
         end
