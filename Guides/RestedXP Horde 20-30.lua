@@ -1176,7 +1176,7 @@ step << !Rogue
     >>Click the Wanted poster on the wall
     .goto Hillsbrad Foothills,62.5,19.8
     .accept 567 >> Accept Dangerous!
-step << Shaman/Warrior/Paladin
+step << Shaman/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy Merciless Axe from the vendor if you have enough money. It's not always in the shop.
     .collect 12249,1
@@ -1337,7 +1337,7 @@ step
     .accept 502 >> Accept Elixir of Pain
     .turnin 499 >> Turn in Elixir of Suffering
     .accept 1067 >> Accept Return to Thunder Bluff
-step << Shaman/Warrior/Paladin
+step << Shaman/Paladin
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
     .collect 12249,1
@@ -1802,7 +1802,7 @@ step
 	.goto Thunder Bluff,55.2,51.5
     .turnin 1195 >> Turn in The Sacred Flame
     .accept 1196 >> Accept The Sacred Flame
-step << Shaman/Paladin/Warrior
+step << Shaman/Paladin
     .goto Thunder Bluff,54.0,57.3
     .vendor >> Buy a Merciless Axe if you didn't get one in Hillsbrad
     .collect 12249,1
