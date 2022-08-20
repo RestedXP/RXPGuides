@@ -11,13 +11,16 @@ local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime = UnitLevel,
 local _G = _G
 local AceGUI = LibStub("AceGUI-3.0")
 
-addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0")
+addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0",
+                                "AceComm-3.0", "AceSerializer-3.0")
 
 addon.tracker.playerLevel = UnitLevel("player")
 addon.tracker.maxLevel = GetMaxPlayerLevel()
-addon.tracker.state = {}
+addon.tracker.state = {otherReports = {}}
 addon.tracker.reportData = {}
+addon.tracker._commPrefix = "RXPLTComms"
 
+local playerName = _G.UnitName("player")
 -- Silence our /played yellow text
 local ReportPlayedTimeToChat = false
 local hookedChatFrame_DisplayTimePlayed = ChatFrame_DisplayTimePlayed
@@ -46,6 +49,12 @@ function addon.tracker:SetupTracker()
     addon.tracker:RegisterEvent("QUEST_TURNED_IN")
     addon.tracker:RegisterEvent("PLAYER_DEAD")
     addon.tracker:RegisterEvent("PLAYER_ENTERING_WORLD")
+
+    if addon.settings.db.profile.enableLevelingReportInspections and
+        addon.settings.db.profile.enableBetaFeatures then
+        addon.tracker:RegisterEvent("INSPECT_READY")
+        addon.tracker:RegisterComm(addon.tracker._commPrefix)
+    end
 
     addon.tracker:UpgradeDB()
     addon.tracker:GenerateDBLevel(addon.tracker.playerLevel)
@@ -586,6 +595,8 @@ function addon.tracker:CompileData()
     for level, data in pairs(addon.tracker.db.profile["levels"]) do
         addon.tracker.reportData[level] = self:CompileLevelData(level, data)
     end
+
+    return addon.tracker.reportData
 end
 
 function addon.tracker:PrettyPrintTime(s)
@@ -994,4 +1005,53 @@ function addon.tracker:UpdateLevelSplits(kind)
     if addon.tracker.playerLevel == addon.tracker.maxLevel and kind == "full" then
         addon.tracker.levelSplits:SetScript("OnUpdate", nil)
     end
+end
+
+function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
+    if prefix ~= self._commPrefix or distribution ~= 'WHISPER' then return end -- or sender == playerName then return end
+    local d = addon.settings.db.profile.debug
+    local bp = addon.comms.BuildPrint
+    if UnitInBattleground("player") ~= nil then return end
+
+    local status, obj = self:Deserialize(data)
+
+    if d then print(bp("Deserialize:status %s", tostring(status))) end
+    if not status or not obj.command then return end
+
+    if obj.command == 'LEVEL_REPORT_REQ' then
+        local sz = self:Serialize({
+            command = 'LEVEL_REPORT_RESP',
+            playerName = playerName,
+            reportData = self:CompileData(),
+            compileTime = GetTime()
+        })
+
+        if d then
+            print(bp("Responding to LEVEL_REPORT_REQ, from %s", sender))
+        end
+        self:SendCommMessage(self._commPrefix, sz, "WHISPER", sender)
+    elseif obj.command == 'LEVEL_REPORT_RESP' then
+        if sender ~= obj.playerName then
+            if d then
+                print(bp("Invalid LEVEL_REPORT_RESP, %s != %s", sender,
+                         obj.playerName))
+                return
+            end
+        end
+        if d then
+            print(bp("Caching LEVEL_REPORT_RESP, from %s at %s", sender,
+                     obj.compileTime))
+        end
+
+        self.state.otherReports[sender] = obj.reportData
+    else
+        if d then print(bp("Unknown command (%s)", obj.command)) end
+    end
+end
+
+function addon.tracker:INSPECT_READY(_, inspecteeGUID)
+    local inspectedName = select(6, GetPlayerInfoByGUID(inspecteeGUID))
+
+    local sz = self:Serialize({command = "LEVEL_REPORT_REQ"})
+    self:SendCommMessage(self._commPrefix, sz, "WHISPER", inspectedName)
 end
