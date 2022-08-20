@@ -1428,7 +1428,7 @@ function addon.functions.home(self, ...)
     end
 
     local element = self.element
-    if not element.step.active then
+    if not element.step.active or element.completed or element.skip then
         element.confirm = false
         return
     end
