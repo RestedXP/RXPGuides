@@ -297,8 +297,8 @@ step
 step
     .goto Azuremyst Isle,46.4,71.2
 	.vendor >> Vendor and Repair
-    .trainer >> Train Blacksmithing and buy a Mining Pick from Calypso. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. << Warrior
-    .trainer >> Train Blacksmithing and buy a Mining Pick from Calypso. This will allow you to make +2 damage weightstones for your weapon which are very strong. << Paladin
+    .trainer >> Train Blacksmithing and buy a Mining Pick from Calypso. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. You should stop making these around level 20. << Warrior
+    .trainer >> Train Blacksmithing and buy a Mining Pick from Calypso. This will allow you to make +2 damage weightstones for your weapon which are very strong. You should stop making these around level 20. << Paladin
 step
     .goto Azuremyst Isle,58.5,66.3
 	>>Grind en route
@@ -1693,6 +1693,11 @@ step << Hunter/Shaman/Mage
 step << !Shaman
     #completewith next
     .deathskip >> Death skip back to Blood Watch
+step
+    .itemcount 23984,10
+    .goto Bloodmyst Isle,55.4,55.2
+    >> Turn in your remaining Irradiated Crystal Shards before leaving Bloodmyst!
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards
 step << Paladin
 	#completewith next
 	#level20
@@ -1736,6 +1741,10 @@ step << Shaman
 step << Shaman
     .goto Bloodmyst Isle,57.7,53.9
     .fly The Exodar>> Fly to The Exodar
+step << Draenei !Paladin wotlk
+	.goto The Exodar,81.18,52.56
+    .money <5.00
+    .skill riding,75 >>Head to Exodar, buy and train your mount
 step << Hunter
 	.goto The Exodar,42.0,71.4,60,0
 	.goto The Exodar,54.5,85.6,60,0

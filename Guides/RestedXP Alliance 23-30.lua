@@ -22,11 +22,6 @@ step << Human !Warlock !Paladin wotlk
 	.money <5.0
     .skill riding,1,1
 step << Paladin wotlk
-    .goto StormwindClassic,39.9,29.8
-    >>Speak to Duthorian Rall
-    .accept 4486 >>Accept The Tome of Nobility
-    .turnin 4486 >>Turn in The Tome of Nobility
-step << Paladin wotlk
 	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest wotlk
@@ -100,7 +95,7 @@ step << wotlk
     .goto Ironforge,67.86,42.87
     .collect 4371,1,175,1,1
 	.bronzetube
-step << !Dwarf !Gnome wotlk--Not needed, including just in case someone forgets to set HS to SW
+step << !Dwarf wotlk !Gnome wotlk--Not needed, including just in case someone forgets to set HS to SW
     .goto Ironforge,55.5,47.7
     .fp Ironforge>> Get the Ironforge Flight Path
 step << Mage wotlk
@@ -443,14 +438,29 @@ step << skip --Not needed, going from SW -> Duskwood later in the guide after do
 step << Shaman
 	.goto StormwindClassic,61.9,84.0
 	.trainer >> Train your class spells
-step
-	#label exit
+step << Human !Warlock !Paladin wotlk
+    .goto Elwynn Forest,65.2,69.8
+	>>Head to the top of the Tower of Azora in Elwynn Forest
+    .money <5.0
+    .accept 94 >> Accept A Watchful Eye
+step << Human !Warlock !Paladin wotlk
+	.goto Elwynn Forest,84.3,64.9
+	.train 33388 >> Head to Eastvale Logging Camp in Elwynn Forest and train/purchase your mount
+	.money <5.0
+    .skill riding,1,1
+step << Human
+	.goto StormwindClassic,62.5,62.3,30,0
+	.goto StormwindClassic,66.3,62.1
+    .fly Redridge >> Fly to Redridge Mountains
+    .zoneskip Elwynn Forest
+step << !Human
     .goto Elwynn Forest,65.2,69.8
 	>>Head to the top of the Tower of Azora
     .accept 94 >> Accept A Watchful Eye
 step
+    #label exit
     .goto Redridge Mountains,17.4,69.6
-	>>Talk to Guard Parker
+	>>Talk to Guard Parker in Redridge Mountains
     .accept 244 >> Accept Encroaching Gnolls
 step
 	#sticky
@@ -872,6 +882,7 @@ step
 	>> Kill Fangore, and loot him for his Paw. be careful as lots of gnolls patrol around him, he is shadow immune, and can social aggro all gnolls at any time within 40 yards.
     .complete 180,1 --Collect Fangore's Paw (x1)
 step
+    .isOnQuest 94
     .goto Redridge Mountains,84.3,46.9
     .turnin 94 >> Turn in A Watchful Eye
     .accept 248 >> Accept Looking Further
@@ -890,6 +901,7 @@ step
 	>>Kill Blackrock Shadowcasters. Loot them for Midnight Orbs
     .complete 115,1 --Collect Midnight Orb (x3)
 step
+    .isOnQuest 248
     .goto Redridge Mountains,63.2,49.7
 	>>Climb to the top of the tower
     .turnin 248 >> Turn in Looking Further
@@ -915,6 +927,7 @@ step
     .turnin 128 >> Turn in Blackrock Bounty
     .isQuestComplete 128
 step
+    #completewith fpwfend
 	.goto Redridge Mountains,30.5,59.3
     .fly Westfall>> Fly to Westfall
 step
@@ -924,6 +937,7 @@ step
 	.collect 2794,1,337
 	.accept 337 >> Accept An Old History Book
 step
+    #completewith fpwfend
     .goto Duskwood,18.4,56.5
     .turnin 453 >> Turn in Finding the Shadowy Figure
     .accept 268 >> Accept Return to Sven
@@ -1569,11 +1583,6 @@ step
 	#label nomorekid
 	#requires MDiplomats
 	.zone Stormwind City >> Exit the Chapel
-step << Paladin tbc
-    .goto StormwindClassic,39.9,29.8
-    >>Speak to Duthorian Rall
-    .accept 4486 >>Accept The Tome of Nobility
-    .turnin 4486 >>Turn in The Tome of Nobility
 step << Human Paladin
     .goto StormwindClassic,39.8,30.1
     >>Speak to Duthorian Rall and click on the Tome of Divinity provided
@@ -2115,21 +2124,21 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     .goto Ironforge,27.4,11.9
     .turnin 1785 >>Turn in The Tome of Divinity
-step << Dwarf !Paladin
+step << Dwarf !Paladin tbc
 	.skill riding,75,1
 	.money <35.0
 	.goto StormwindClassic,66.2,62.2
 	.fly Ironforge >> Fly to Ironforge, we're going to train our mount.
-step << Dwarf !Paladin
+step << Dwarf !Paladin tbc
 	.money <35.0
 	.goto Dun Morogh,63.5,50.6
 	.train 152 >> Train riding and buy your mount
-step << Gnome !Warlock
+step << Gnome !Warlock tbc
 	.skill riding,75,1
 	.money <35.0
 	.goto StormwindClassic,66.2,62.2
 	.fly Ironforge >> Fly to Ironforge, we're going to train our mount.
-step << Gnome !Warlock
+step << Gnome !Warlock tbc
 	.money <35.0
 	.goto Dun Morogh,49.2,48.1
 	.train 553 >> Train riding and buy your mount
@@ -2302,11 +2311,6 @@ step
 	#label nomorekid
 	#requires MDiplomats
 	.zone Stormwind City >> Exit the Chapel
-step << Paladin
-    .goto StormwindClassic,39.9,29.8
-    >>Speak to Duthorian Rall
-    .accept 4486 >>Accept The Tome of Nobility
-    .turnin 4486 >>Turn in The Tome of Nobility
 step << Human Paladin
     .goto StormwindClassic,39.8,30.1
     >>Speak to Duthorian Rall and click on the Tome of Divinity provided
@@ -2405,7 +2409,9 @@ step
     .goto Duskwood,73.8,44.5
     .turnin 156 >> Turn in Gather Rot Blossoms
     .accept 159 >> Accept Juice Delivery
-step
+step << !NightElf !Draenei
+    .home >> Set your Hearthstone to Darkshire
+step << Shaman
     .home >> Set your Hearthstone to Darkshire
 step << !Hunter !Paladin
     .goto Duskwood,73.7,46.8
@@ -2723,6 +2729,22 @@ step
     .goto StormwindClassic,74.1,7.6
     .accept 538 >> Accept Southshore
     .isQuestTurnedIn 337
+step << NightElf wotlk
+	.goto Stormwind City,4.8,57.3,50,0
+	.goto Darkshore,33.1,40.3,30,0
+	.goto Darnassus,38.1,15.3,30,0
+	.goto Wetlands,5.2,63.3,50,0
+	.money <5.00
+	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount.
+	.hs >> Then hearth back to Menethil Harbor
+step << Draenei !Shaman !Paladin wotlk
+	.goto Stormwind City,4.8,57.3,50,0
+	.goto Darkshore,31.0,41.1,30.0
+	.goto The Exodar,81.5,52.5,40,0
+	.goto Wetlands,5.2,63.3,50,0
+	.money <5.00
+	>> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Otherwise skip this step
+	.hs >>Then hearth to Menethil Harbor
 step
     #sticky
 	#completewith next
@@ -2731,10 +2753,12 @@ step
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     .zone Ironforge >> Take the tram to Ironforge
     >>Teleport to Ironforge instead if you have that spell trained << Mage
+    .zoneskip Wetlands
 step
     .goto Ironforge,69.8,50.1
     .turnin 2923 >> Turn in Tinkmaster Overspark
     .isOnQuest 2923
+    .zoneskip Wetlands
 step << Rogue
     #sticky
     #completewith end
@@ -2752,6 +2776,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
     .train 199 >> Train 2H Maces << Warrior/Shaman
     .train 198 >> Train Maces << Rogue/Shaman
     .train 44 >> Train Axes << Shaman
+    .zoneskip Wetlands
 step << Hunter
 	#sticky
 	#completewith next
@@ -2793,7 +2818,6 @@ step << Dwarf Paladin
     #completewith next
     .goto Dun Morogh,53.2,35.3
     .zone Dun Morogh >> Head outside to Dun Morogh
-
 step << Paladin
     .goto Dun Morogh,52.5,36.8
     >> Head to the gates of Ironforge << !Dwarf
@@ -2941,14 +2965,6 @@ step
     .goto Wetlands,10.8,59.7
     .turnin 288 >> Turn in The Third Fleet
     .accept 289 >> Accept The Cursed Crew
-step << Draenei !Shaman wotlk
-	.goto Wetlands,4.8,57.3,50,0
-	.goto Darkshore,31.0,41.1,30.0
-	.goto The Exodar,81.5,52.5,40,0
-	.goto Wetlands,5.2,63.3,50,0
-	.money <5.00
-	>> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Otherwise skip this step
-	.hs >>Then hearth to Menethil Harbor and take the boat to Theramore.
 step << Draenei !Shaman tbc
 	.goto Wetlands,4.8,57.3,50,0
 	.goto Darkshore,31.0,41.1,30.0
@@ -2957,14 +2973,6 @@ step << Draenei !Shaman tbc
 	.money <35.00
 	>> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Otherwise skip this step
 	.hs >>Then hearth to Menethil Harbor and take the boat to Theramore.
-step << NightElf wotlk
-	.goto Wetlands,4.8,57.3,50,0
-	.goto Darkshore,33.1,40.3,30,0
-	.goto Darnassus,38.1,15.3,30,0
-	.goto Wetlands,5.2,63.3,50,0
-	.money <5.00
-	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount.
-	.hs >> Then hearth back to Menethil Harbor and take the boat to Theramore.
 step << NightElf tbc
 	.goto Wetlands,4.8,57.3,50,0
 	.goto Darkshore,33.1,40.3,30,0
