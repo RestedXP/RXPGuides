@@ -42,7 +42,7 @@ step
     .complete 9280,1 --Collect Vial of Moth Blood (x8)
 step
     .goto Azuremyst Isle,78.4,44.3
-	>>Prioritize Volatile Mutations, we're turning it in the heading to the Root Lashers. You can do Moth Blood on the way back.
+	>>Prioritize Volatile Mutations, we're turning it in then heading to the Root Lashers. You can do Moth Blood on the way back.
     .complete 10302,1 --Kill Volatile Mutation (x8)
 step
     .goto Azuremyst Isle,79.1,46.4
