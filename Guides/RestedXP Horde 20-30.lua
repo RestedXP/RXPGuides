@@ -670,10 +670,9 @@ step
     .turnin 6461 >> Turn in Blood Feeders
     .isOnQuest 6461 
 step
-    #xprate <1.5
-    .maxlevel 23
+    #xprate >1.499
     .isOnQuest 1095
-    >> Head back to the goblin hut behind the hill
+    >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
 step << !Rogue
@@ -1128,204 +1127,244 @@ step
     .goto Silverpine Forest,45.6,42.6
     .fp The Sepulcher >> Get the The Sepulcher flight path
 step
-    >>Run down to Hillsbrad
-    .goto Hillsbrad Foothills,20.9,47.2
+    .goto Hillsbrad Foothills,20.80,47.40
     .accept 494 >> Accept Time To Strike
 step
-    >>Run to Tarren Mill & get the flight path.
-	.goto Hillsbrad Foothills,60.1,18.7
-    .fp Tarren Mill >> Get the Tarren Mill flight path
-step << BloodElf
-    .goto Hillsbrad Foothills,62.5,20.7
-    .turnin 9425 >> Turn in Report to Tarren Mill
-step
-    .goto Hillsbrad Foothills,62.4,20.3
-    .turnin 494 >> Turn in Time To Strike
-    .goto Hillsbrad Foothills,62.5,20.5
-    .accept 527 >> Accept Battle of Hillsbrad
+    .goto Hillsbrad Foothills,60.10,18.60
+    .fp Tarren Mill>> Get the Tarren Mill Flight Path
 step << Shaman
-    .use 7768 >>Fill the Waterskin at the well
-.goto Hillsbrad Foothills,62.2,20.8
+	.goto Hillsbrad Foothills,62.2,20.8
+    >>Fill the Waterskin at the well
     .complete 1536,1 --Filled Red Waterskin (1)
 step
-    >>Click the Wanted poster on the wall
-    .goto Hillsbrad Foothills,62.7,20.5
-    .accept 549 >> Accept WANTED: Syndicate Personnel
-step
-    >>Go inside the chapel
-    .goto Hillsbrad Foothills,63.2,20.6
-    .accept 498 >> Accept The Rescue
-step
-    >> Head into the small house
-    .goto Hillsbrad Foothills,61.5,19.1
+    .goto Hillsbrad Foothills,61.50,19.20
     .turnin 493 >> Turn in Journey to Hillsbrad Foothills
     .turnin 1065 >> Turn in Journey to Tarren Mill
     .accept 1066 >> Accept Blood of Innocents
+step
+    .goto Hillsbrad Foothills,61.50,19.20
     .accept 496 >> Accept Elixir of Suffering
     .accept 501 >> Accept Elixir of Pain
-step << Rogue
-    .goto Hillsbrad Foothills,61.6,19.2
-    .turnin 2479 >>Turn in Hinott's Assistance
-    .accept 2480 >> Accept Hinott's Assistance
-step << Rogue
-    >>Wait for him to complete the cure
-	.complete 2480,1 --Cure Completed
-    .turnin 2480 >> Turn in Hinott's Assistance
-step << !Rogue
-    .maxlevel 27
-    >>Click the Wanted poster on the wall
-    .goto Hillsbrad Foothills,62.5,19.8
-    .accept 567 >> Accept Dangerous!
-step << Shaman/Warrior/Paladin
-    .goto Hillsbrad Foothills,60.4,26.2
-    .vendor >> Go buy Merciless Axe from the vendor if you have enough money. It's not always in the shop.
-    .collect 12249,1
-step << Rogue
-    .goto Hillsbrad Foothills,60.4,26.2
-    .vendor >> Go buy Broad Bladed Knife from the vendor if you have enough money. It's not always in the shop.
-    .collect 12247,1
-step << Rogue
-    .maxlevel 27
-    .use 8095 >>Use Hinott's Oil on yourself to cure the debuff then click the Wanted poster on the wall
-.goto Hillsbrad Foothills,62.5,19.8
+step
+    .goto Hillsbrad Foothills,62.50,19.70
+     >> Click the Wanted poster just outside of the Inn
     .accept 567 >> Accept Dangerous!
 step
+    .goto Hillsbrad Foothills,62.20,20.50
+    .turnin 494 >> Turn in Time To Strike
+    .accept 527 >> Accept Battle of Hillsbrad
+step
+    .goto Hillsbrad Foothills,62.60,20.70
+    >>Click the Wanted poster next to Melisara
+    .accept 549 >> Accept WANTED: Syndicate Personnel
+step
+    .goto Hillsbrad Foothills,63.20,20.70
+    .accept 498 >> Accept The Rescue
+step << Hunter
+	#completewith next
+	.goto Hillsbrad Foothills,62.56,19.91
+	.vendor >> Buy arrows until your quiver is full
+step
+    .goto Hillsbrad Foothills,62.79,19.05
+	.vendor 2388 >> Go inside the Inn. Vendor trash, and buy Food/Water from Shay
+step << Shaman
+    .goto Hillsbrad Foothills,60.4,26.2
+    .vendor >> Go buy a Merciless Axe from the vendor if you have enough money. It's not always in the shop.
+    .collect 12249,1
+step << Rogue/Warrior
+    .goto Hillsbrad Foothills,60.4,26.2
+    .vendor >> Go buy a Broad Bladed Knife from the vendor if you have enough money. It's not always in the shop.
+    .collect 12247,1
+step
+	#era
+	#completewith next
+	>>Kill Bears and Spiders en route to the syndicates
+	.complete 496,1 --Collect Gray Bear Tongue (x10)
+    .complete 496,2 --Collect Creeper Ichor (x1) 
+step
+	#era
+	    .goto Hillsbrad Foothills,78.46,43.06,200 >> Run to Dornholde Keep
+step
     #sticky
-#label syndicateq
->>Kill Syndicates in the area
-.goto Hillsbrad Foothills,77.8,44.1,0
+	#label syndicateq
+	>>Kill Syndicates in the area
+	.goto Hillsbrad Foothills,77.8,44.1,0
     .complete 549,1 --Kill Syndicate Rogue (x10)
-.complete 549,2 --Kill Syndicate Watchman (x10)
+	.complete 549,2 --Kill Syndicate Watchman (x10)
 step
     #sticky
     #label shadowmage
+    .goto Hillsbrad Foothills,80.61,45.40,0
     >>Kill Shadow Mages. Loot them for Vials of Innocent Blood
-.complete 1066,1 --Collect Vial of Innocent Blood (x5)
+	.complete 1066,1 --Collect Vial of Innocent Blood (x5)
 step << !Rogue !Hunter !Shaman
-    #sticky
-    .goto Hillsbrad Foothills,80.1,38.9
-    .vendor >>Vendor trash & repair if needed at Kris Legace, behind the ruined keep.
+    #completewith next
+	.goto Hillsbrad Foothills,80.1,38.9
+    .vendor >> vendor trash, repair if needed
 step << Rogue/Hunter/Shaman
-    #sticky
-    .goto Hillsbrad Foothills,80.1,38.9
-    .vendor >>Vendor trash & repair if needed at Kris Legace behind the ruined keep. Buy Stalking Pants and/or Wolf Bracers if they're up and if you need them
+	#completewith Drull
+	.goto Hillsbrad Foothills,80.1,38.9
+    .vendor >> Vendor & repair if needed. If Stalking Pants and/or Wolf Bracers are in the shop, buy them
 step
+	#completewith next
 	.goto Hillsbrad Foothills,79.8,39.3
-	>>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
     .unitscan Jailor Marlgen
+	>>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
     .collect 3499,1
 step
-    >>Click the ball next to Tog'thar
-    .goto Hillsbrad Foothills,79.8,39.6
+    >>Click the ball and chain
+	.goto Hillsbrad Foothills,79.8,39.6
     .complete 498,2 --Rescue Tog'thar (1)
 step
-    >>Kill Jailor Eston. Loot him for his Dull Iron Key. He has a few spawn points.
-    .unitscan Jailor Eston
-    .goto Hillsbrad Foothills,79.4,41.6,40,0
-    .goto Hillsbrad Foothills,75.8,42.4,40,0
-    .goto Hillsbrad Foothills,79.4,41.6
-    .collect 3467,1
+	#completewith next
+    >>Kill Jailor Eston. Loot him for his Dull Iron Key, he can either spawn up top or inside one of the lodges at the bottom floor
+	.goto Hillsbrad Foothills,79.4,41.6
+	.collect 3467,1
+	.unitscan Jailor Eston
 step
-    >>Click the ball next to Drull
-.goto Hillsbrad Foothills,75.3,41.5
+	#label Drull
+    >>Click the ball and chain
+	.goto Hillsbrad Foothills,75.3,41.5
     .complete 498,1 --Rescue Drull (1)
 step
-    #requires shadowmage
-	>>Kill Spiders. Loot them until Creeper Ichor drops
-	.goto Hillsbrad Foothills,63.5,33.0,50,0
-    .goto Hillsbrad Foothills,57.9,34.5,50,0
-    .goto Hillsbrad Foothills,57.2,22.1,50,0
-	.goto Hillsbrad Foothills,63.5,33.0,50,0
-    .goto Hillsbrad Foothills,57.9,34.5,50,0
-    .goto Hillsbrad Foothills,57.2,22.1
-    .complete 496,2 --Collect Creeper Ichor (x1)
+	#som
+	#requires shadowmage
+step
+        #requires shadowmage
+	#completewith next
+	>>Kill Bears. Loot them for their Tongues
+	.complete 496,1 --Collect Gray Bear Tongue (x10)
 step
         #requires syndicateq
+	>>Kill Spiders. Loot them until Creeper Ichor drops
+	.goto Hillsbrad Foothills,63.5,33.0,100,0
+    .goto Hillsbrad Foothills,57.9,34.5,100,0
+    .goto Hillsbrad Foothills,57.2,22.1,100,0
+	.goto Hillsbrad Foothills,63.5,33.0,100,0
+    .goto Hillsbrad Foothills,57.9,34.5,100,0
+    .goto Hillsbrad Foothills,57.2,22.1,100,0
+	.goto Hillsbrad Foothills,63.5,33.0
+    .complete 496,2 --Collect Creeper Ichor (x1) 
+step
+	#requires syndicateq
     .goto Hillsbrad Foothills,61.5,19.1
     .turnin 1066 >> Turn in Blood of Innocents
 step
-    .turnin 498 >> Turn in The Rescue
-    .goto Hillsbrad Foothills,63.2,20.7
+    .goto Hillsbrad Foothills,62.38,20.52
 	.turnin 549 >> Turn in WANTED: Syndicate Personnel
-    .goto Hillsbrad Foothills,62.32,20.35
 step
-    #sticky
-    #completewith bearsohmy
-    >>Kill Bears and Mountain Lions as you quest. Loot them for Tongues and Blood
-    .complete 496,1 --Collect Gray Bear Tongue (x10)
-    .complete 501,1 --Collect Mountain Lion Blood (x10)
+    .goto Hillsbrad Foothills,63.2,20.7
+    .turnin 498 >> Turn in The Rescue
+step << Hunter
+	#completewith next
+	.goto Hillsbrad Foothills,62.56,19.91
+	.vendor >> Buy arrows until your quiver is full
 step
-    #sticky
-    #label Farmers
-    >>Kill Farmers in and around the fields
+    .goto Hillsbrad Foothills,62.79,19.05
+	.vendor 2388 >> Go inside the Inn. Vendor trash, and buy Food/Water from Shay	
+step
+	#completewith next
+    >>Kill Bears and Mountain Lions en route to the Fields. Loot them for Tongues and Blood
+	.complete 496,1 --Collect Gray Bear Tongue (x10)
+	.complete 501,1 --Collect Mountain Lion Blood (x10)
+step
+    .goto Hillsbrad Foothills,36.02,39.19,150 >> Run to the Hillsbrad Fields
+step
+	#sticky
+	#label Farmers
+	>>Kill Farmers in and around the fields
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
 	.complete 527,2 --Kill Hillsbrad Farmhand (x6)
 step
+    #sticky
+    #label Getz
+    >>Kill Farmer Getz. He can be in the house, barn, or field
+    .goto Hillsbrad Foothills,36.7,39.4,60,0
+    .goto Hillsbrad Foothills,35.2,37.6,45,0
+    .goto Hillsbrad Foothills,35.1,41.0,60,0
+    .goto Hillsbrad Foothills,36.7,39.4,60,0
+    .goto Hillsbrad Foothills,35.2,37.6,45,0
+    .goto Hillsbrad Foothills,35.1,41.0,60,0
+    .goto Hillsbrad Foothills,36.7,39.4
+    .complete 527,4 --Farmer Getz (1)
+step
     >>Kill Farmer Ray. He can be in the 1st or 2nd floor of the house. He can also be outside under the grapevine (hut)
-    .goto Hillsbrad Foothills,33.7,35.5,25,0
-    .goto Hillsbrad Foothills,33.2,34.8,25,0
-    .goto Hillsbrad Foothills,33.7,35.5,25,0
-    .goto Hillsbrad Foothills,33.2,34.8,25,0
-    .goto Hillsbrad Foothills,33.7,35.5,25,0
-    .goto Hillsbrad Foothills,33.2,34.8,25,0
-    .goto Hillsbrad Foothills,33.7,35.5,25,0
-    .goto Hillsbrad Foothills,33.2,34.8,25,0
-    .goto Hillsbrad Foothills,33.7,35.5,25,0
-    .goto Hillsbrad Foothills,33.2,34.8,25,0
+    .goto Hillsbrad Foothills,33.7,35.5,20,0
+    .goto Hillsbrad Foothills,33.2,34.8,20,0
+    .goto Hillsbrad Foothills,33.7,35.5,20,0
+    .goto Hillsbrad Foothills,33.2,34.8,20,0
+    .goto Hillsbrad Foothills,33.7,35.5,20,0
+    .goto Hillsbrad Foothills,33.2,34.8,20,0
+    .goto Hillsbrad Foothills,33.7,35.5,20,0
+    .goto Hillsbrad Foothills,33.2,34.8,20,0
+    .goto Hillsbrad Foothills,33.7,35.5,20,0
+    .goto Hillsbrad Foothills,33.2,34.8,20,0
     .goto Hillsbrad Foothills,33.2,34.8
-    .complete 527,3 --Kill Farmer Ray (x1)
-    .unitscan Farmer Ray
+    .complete 527,3 --Farmer Ray (1)
 step
-    >>Kill Farmer Getz. He can be in the house, barn, or in the fields
-    .goto Hillsbrad Foothills,36.7,39.4,30,0
-    .goto Hillsbrad Foothills,35.2,37.6,30,0
-    .goto Hillsbrad Foothills,35.1,41.0,30,0
-    .unitscan Farmer Getz
-    .complete 527,4 --Kill Farmer Getz (x1)
+	#requires Getz
 step
-    #requires Farmers
-    >>Return to Tarren Mill
+	#requires Farmers
+	#completewith next
+    >>Kill Bears and Mountain Lions. Loot them for Tongues and Blood
+	.complete 496,1 --Collect Gray Bear Tongue (x10)
+	.complete 501,1 --Collect Mountain Lion Blood (x10)
+--N Claw rank 3?
+step
+	#requires Farmers
+	>>Return to Tarren Mill
     .goto Hillsbrad Foothills,62.3,20.2
     .turnin 527 >> Turn in Battle of Hillsbrad
 step
-    .maxlevel 28
-    #label bearsohmy
-    .goto Hillsbrad Foothills,62.1,19.8
+    .goto Hillsbrad Foothills,62.5,20.3
     .accept 528 >> Accept Battle of Hillsbrad
     .accept 546 >> Accept Souvenirs of Death
-    
 step
+	#completewith next
     >>Kill Bears and Mountain Lions. Loot them for Tongues and Blood
-    .goto Hillsbrad Foothills,54.9,29.8,40,0
-    .goto Hillsbrad Foothills,50.5,37.7,40,0
-    .goto Hillsbrad Foothills,43.7,39.9,40,0
-    .goto Hillsbrad Foothills,38.4,34.9,40,0
-    .goto Hillsbrad Foothills,39.1,45.4,40,0
+	.goto Hillsbrad Foothills,54.9,29.8,90,0
+    .goto Hillsbrad Foothills,50.5,37.7,90,0
+    .goto Hillsbrad Foothills,43.7,39.9,90,0
+    .goto Hillsbrad Foothills,38.4,34.9,90,0
+    .goto Hillsbrad Foothills,39.1,45.4,90,0
 	.goto Hillsbrad Foothills,54.9,29.8
-    .complete 496,1 --Collect Gray Bear Tongue (x10)
-    .complete 501,1 --Collect Mountain Lion Blood (x10)
+	.complete 496,1 --Collect Gray Bear Tongue (x10)
+	.complete 501,1 --Collect Mountain Lion Blood (x10)
+step
+    .goto Hillsbrad Foothills,36.02,39.19,150 >> Run to the Hillsbrad Fields
 step
     #sticky
     #label Wilkes
+	.unitscan Citizen Wilkes
     >>Kill Citizen Wilkes. He patrols every road in the town
 	.complete 567,2 --Kill Citizen Wilkes (x1)
-	.unitscan Citizen Wilkes
 step
     #sticky
     #label Kalaba
+	.unitscan Farmer Kalaba
     >>Kill Farmer Kalaba. She patrols the field of Peasants
 	.goto Hillsbrad Foothills,35.2,46.5
     .complete 567,4 --Kill Farmer Kalaba (x1)
-	.unitscan Farmer Kalaba
 step
     #label Peasants
-	>>Kill Peasants in and around the field. Loot them for skulls, but don't worry about finishing skulls yet.
+	>>Kill Peasants in and around the field
 	.goto Hillsbrad Foothills,35.2,46.5
 	.complete 528,1 --Kill Hillsbrad Peasant (x15)
 step
     #requires Wilkes
 step
     #requires Kalaba
+    >>Finish killing Bears and Mountain Lions. Loot them for Tongues and Blood
+    .goto Hillsbrad Foothills,39.1,45.4,90,0
+    .goto Hillsbrad Foothills,38.4,34.9,90,0
+    .goto Hillsbrad Foothills,43.7,39.9,90,0
+    .goto Hillsbrad Foothills,50.5,37.7,90,0
+	.goto Hillsbrad Foothills,54.9,29.8,90,0
+    .goto Hillsbrad Foothills,39.1,45.4
+	.complete 496,1 --Collect Gray Bear Tongue (x10)
+	.complete 501,1 --Collect Mountain Lion Blood (x10)
+step
+	>>Run back to Tarren Mill
 	.goto Hillsbrad Foothills,62.4,20.3
     .turnin 528 >> Turn in Battle of Hillsbrad
     .accept 529 >> Accept Battle of Hillsbrad
@@ -1337,7 +1376,7 @@ step
     .accept 502 >> Accept Elixir of Pain
     .turnin 499 >> Turn in Elixir of Suffering
     .accept 1067 >> Accept Return to Thunder Bluff
-step << Shaman/Warrior/Paladin
+step << Shaman/Warrior
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
     .collect 12249,1
@@ -1350,20 +1389,31 @@ step
     #completewith next
     +While turning in Elixir of Pain, you can kill Stanley after for a bunch of extra XP
 step
-    >> Speak to Stanley the dog
 	.goto Hillsbrad Foothills,32.6,35.6
     .turnin 502 >> Turn in Elixir of Pain
 step
-    #sticky
-    #label Crate
-	>>Collect the crate inside the Blacksmith
-	.goto Hillsbrad Foothills,32.0,45.4
-    .complete 529,3 --Collect Shipment of Iron (x1)
+	.isOnQuest 546
+	#sticky
+    #label humanskull
+	>>Kill Humans. Loot them for their skulls
+    .complete 546,1 --Collect Hillsbrad Human Skull (x30)
 step
-	>>Run to the blacksmith
+	>>Kill Blacksmith Verringtan and his Apprentices
 	.goto Hillsbrad Foothills,32.1,45.3
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .complete 529,2 --Kill Hillsbrad Apprentice Blacksmith (x4)
+    .complete 529,3 --Collect Shipment of Iron (x1)
+step
+    #xprate >1.499 
+	.goto Hillsbrad Foothills,62.4,20.3
+    #requires humanskull
+    .turnin 529 >> Turn in Battle of Hillsbrad
+    .turnin 546 >> Turn in Souvenirs of Death
+step << Druid
+#completewith next
+	.cast 18960 >> Use the spell Teleport: Moonglade
+    .goto Moonglade,52.5,40.5
+	.trainer >> Go and train your class spells
 step << Druid
     .use 15883 >>Click the Half Pendant (blue) in your bag to craft the Pendant
 	.goto Moonglade,36.2,41.8
@@ -1373,11 +1423,6 @@ step << Druid
     .goto Moonglade,56.2,30.6
     .turnin 30 >>Turn in Trial of the Sea Lion
     .accept 31 >>Accept Aquatic Form
-step << Druid
-#completewith next
-	.cast 18960 >> Use the spell Teleport: Moonglade
-    .goto Moonglade,52.5,40.5
-	.trainer >> Go and train your class spells
 step << !Shaman
 	#completewith next
 	#requires Crate
@@ -1624,7 +1669,7 @@ step
     .accept 23 >> Accept Ursangous's Paw
 	.unitscan Ursangous
 step
-    #xprate <1.5
+    #xprate
     #sticky
     #label Tideress
     .use 16408 >>Kill Tideress who is located around the middle of the lake. Loot her for a Befouled Water Globe, then click it to accept the quest
@@ -1649,7 +1694,12 @@ step
 	.use 5867 >>Use the Etched Phial from earlier at the moonwell
 	.goto Ashenvale,60.2,72.9
     .complete 1195,1 --Collect Filled Etched Phial (x1)
+step << !Rogue
+    #xprate >1.499 
+    .hs >> Hearth to Splintertree Post
+	>> Buy food/water if needed
 step
+    #xprate <1.5
     .goto Ashenvale,71.2,68.1
     .turnin 6503 >> Turn in Ashenvale Outrunners
 step
@@ -1676,12 +1726,12 @@ step
     .turnin 23 >> Turn in Ursangous's Paw
     .turnin 247 >> Turn in The Hunt Completed
 step
-    .goto Ashenvale,73.1,61.5
-    .turnin 6441 >> Turn in Satyr Horns
-step
     .goto Ashenvale,73.7,60.0
     .turnin 25 >> Turn in Stonetalon Standstill
     .turnin 1918 >> Turn in The Befouled Element
+step
+    .goto Ashenvale,73.1,61.5
+    .turnin 6441 >> Turn in Satyr Horns
 step
     .goto Ashenvale,73.7,60.0
     .abandon 1918 >> Abandon The Befouled Element
@@ -1696,6 +1746,10 @@ step
     .goto Ashenvale,74.1,60.9
     .turnin 6482 >> Turn in Freedom to Ruul
     .isOnQuest 6482
+step
+    #xprate >1.499 
+    .goto Ashenvale,71.2,68.1
+    .turnin 6503 >> Turn in Ashenvale Outrunners
 step
     #xprate <1.5
 	#completewith next
@@ -1802,7 +1856,7 @@ step
 	.goto Thunder Bluff,55.2,51.5
     .turnin 1195 >> Turn in The Sacred Flame
     .accept 1196 >> Accept The Sacred Flame
-step << Shaman/Paladin/Warrior
+step << Warrior tbc/Paladin/Shaman
     .goto Thunder Bluff,54.0,57.3
     .vendor >> Buy a Merciless Axe if you didn't get one in Hillsbrad
     .collect 12249,1

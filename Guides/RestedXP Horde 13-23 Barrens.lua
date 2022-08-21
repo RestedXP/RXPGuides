@@ -283,6 +283,7 @@ step
     .accept 959 >>Accept Trouble at the Docks
 step
     .goto The Barrens,63.3,38.4
+    .turnin 1492 >>Turn in Wharfmaster Dizzywig
     .accept 896 >>Accept Miner's Fortune
 step
     >>Click the Wanted poster. You can bank here too if you want
@@ -297,7 +298,7 @@ step
     .accept 821 >>Accept Chen's Empty Keg
 step
     #label rachetfp
-    .goto The Barrens,61.2,39.4
+    .goto The Barrens,62.05,39.41
     >> The level 5 fish food here is super cheap, stock up << Warrior/Rogue
     .vendor >> Restock on food/water
 step
@@ -611,7 +612,6 @@ step
 step
     .goto The Barrens,63.3,38.4
     .turnin 896 >>Turn in Miner's Fortune
-    .turnin 1492 >>Turn in Wharfmaster Dizzywig
     .turnin 890 >>Turn in The Missing Shipment
     .accept 892 >>Accept The Missing Shipment
 step
@@ -1099,11 +1099,17 @@ step
     .goto Thunder Bluff,45.9,64.7
     #completewith next
     .home >>Set your Hearthstone to Thunder Bluff
-step << Shaman/Warrior
+step << Warrior wotlk
+	.train 198 >> Train 1h Maces
+    .goto Thunder Bluff,40.93,62.71
+    .vendor >> Buy a Flail
+    .collect 925,1
+    .goto Thunder Bluff,53.20,58.27
+step << Warrior tbc/Shaman
     #sticky
     #completewith next
     +If it's cheaper, buy a green 2h mace from the Auction House. Skip this step if you will run Wailing Caverns, the quest staff is much better.
-step << Shaman/Warrior
+step << Warrior tbc/Shaman
     .goto Thunder Bluff,53.2,58.2
     .vendor >> Buy a Maul
     .collect 924,1
@@ -1167,9 +1173,9 @@ step
     .goto Stonetalon Mountains,71.3,95.1
     .turnin 6461 >>Turn in Blood Feeders
 step
-    #level 25
+#xprate >1.499
     .isOnQuest 1095
-    >> Head back to the goblin hut behind the hill
+    >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
 step

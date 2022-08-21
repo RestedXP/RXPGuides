@@ -42,7 +42,7 @@ step
     .complete 9280,1 --Collect Vial of Moth Blood (x8)
 step
     .goto Azuremyst Isle,78.4,44.3
-	>>Prioritize Volatile Mutations, we're turning it in the heading to the Root Lashers. You can do Moth Blood on the way back.
+	>>Prioritize Volatile Mutations, we're turning it in then heading to the Root Lashers. You can do Moth Blood on the way back.
     .complete 10302,1 --Kill Volatile Mutation (x8)
 step
     .goto Azuremyst Isle,79.1,46.4
@@ -1127,7 +1127,18 @@ step
     .goto Bloodmyst Isle,55.4,55.3
     .accept 9641 >> Accept Irradiated Crystal Shards
     .accept 9779 >> Accept Intercepting the Message
-	.turnin 9641 >> Turn in Irradiated Crystal Shards
+step
+	.goto Bloodmyst Isle,55.4,55.4
+	.itemcount 23984,10
+	.turnin 9641,3 >> Turn in Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock
+    .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
+step
+    .itemcount 23984,10
+    .goto Bloodmyst Isle,55.4,55.2
+    .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
 step
     .goto Bloodmyst Isle,61.1,48.6
     .turnin 9620 >> Turn in The Missing Survey Team
@@ -1443,6 +1454,12 @@ step
     .accept 9703 >> Accept The Cryo-Core
 	.trainer >>Train class spells at Vindicator Aesom << Paladin
 step
+    .itemcount 23984,10
+    .goto Bloodmyst Isle,55.4,55.2
+    .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
+step
     .goto Bloodmyst Isle,55.9,56.9
     .turnin 9643 >> Turn in Constrictor Vines
     .accept 9647 >> Accept Culling the Flutterers
@@ -1697,7 +1714,9 @@ step
     .itemcount 23984,10
     .goto Bloodmyst Isle,55.4,55.2
     >> Turn in your remaining Irradiated Crystal Shards before leaving Bloodmyst!
-    .turnin 9642 >> Turn in More Irradiated Crystal Shards
+    .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
+    .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
+    .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
 step << Paladin
 	#completewith next
 	#level20

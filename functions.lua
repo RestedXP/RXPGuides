@@ -574,7 +574,7 @@ function addon.functions.accept(self, ...)
         --[[
         flags:
             1 - disable auto accept
-            2 - skip the step if quest Id defined by arg1 is not turned in
+            2 - mark element as complete if quest Id defined by arg1 is not turned in
         ]]
         if bit.band(flags,0x2) == 0x2 then
             element.requiredTurnIn = tonumber(arg1)
@@ -1428,7 +1428,7 @@ function addon.functions.home(self, ...)
     end
 
     local element = self.element
-    if not element.step.active then
+    if not element.step.active or element.completed or element.skip then
         element.confirm = false
         return
     end
@@ -1589,12 +1589,12 @@ function addon.functions.collect(self, ...)
 flags:
 1   (0x1): Disables the checkBox
 2   (0x2): Subtract from the given quest objective (given by the objective bitmask from objFlags)
-4   (0x4): Completes the step if the flagged objectives are complete (see objFlags again)
+4   (0x4): Element completes itself if the flagged objectives are complete (see objFlags again)
 8   (0x8): Includes items in your bank into the item count
-16 (0x10): Don't complete the element if the quest is turned in
+16 (0x10): Element doesn't complete itself if the quest is turned in
 negative sign: same as 3 (0x2+0x1), -5 subtracts 5 units for each quest item
 
-By default, the step will complete the step if the quest ID provided is turned in
+By default, the element will complete itself if the quest ID provided is turned in
 
 objFlags:
 Each power of 2 corresponds to an objective, as an example:
