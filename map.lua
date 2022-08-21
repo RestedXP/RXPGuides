@@ -39,7 +39,7 @@ af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
 
 function addon.UpdateArrow(self)
 
-    if RXPData.disableArrow or not self then return end
+    if RXPCData.disableArrow or not self then return end
     local element = self.element
     if element then
         local x, y, instance = HBD:GetPlayerWorldPosition()
@@ -740,7 +740,7 @@ local function updateArrow()
                 (element.parent.completed or element.parent.skip)) and
             not (element.text and (element.completed or isComplete) and
                 not isComplete)) then
-            af:SetShown(not RXPData.disableArrow and not addon.hideArrow)
+            af:SetShown(not RXPCData.disableArrow and not addon.hideArrow)
             af.dist = 0
             af.orientation = 0
             af.element = element

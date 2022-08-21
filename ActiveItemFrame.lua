@@ -292,7 +292,7 @@ function addon.UpdateItemFrame(itemFrame)
     -- print("s:",i)
     if i > 0 then itemFrame:SetAlpha(1) end
 
-    if i == 0 then
+    if i == 0 or RXPCData.disableItemWindow then
         itemFrame:Hide()
     else
         itemFrame:Show()
