@@ -974,6 +974,14 @@ function addon.UpdateGotoSteps()
     if forceArrowUpdate then updateArrow() end
 end
 
+local function GetMapCoefficients(p1x,p1y,p1xb,p1yb,p2x,p2y,p2xb,p2yb)
+    local c11 = (p1xb-p2xb)/(p1x-p2x)
+    local c31 = p1xb-p1x*c11
+    local c22 = (p1yb-p2yb)/(p1y-p2y)
+    local c32 = p1yb-p1y*c22
+    return {c11,c31,c22,c32}
+end
+
 local p1 = {
     ["y"] = 25,
     ["x"] = 25,
@@ -987,16 +995,25 @@ local p2 = 	{
     ["xb"] = 77.70637435364208,
 }
 
-local function GetMapCoefficients(p1x,p1y,p1xb,p1yb,p2x,p2y,p2xb,p2yb)
-    local c11 = (p1xb-p2xb)/(p1x-p2x)
-    local c31 = p1xb-p1x*c11
-    local c22 = (p1yb-p2yb)/(p1y-p2y)
-    local c32 = p1yb-p1y*c22
-    return {c11,c31,c22,c32}
-end
 
-addon.classicToWrath = GetMapCoefficients(p1.x,p1.y,p1.xb,p1.yb,p2.x,p2.y,p2.xb,p2.yb)
-addon.wrathToClassic = GetMapCoefficients(p1.xb,p1.yb,p1.x,p1.y,p2.xb,p2.yb,p2.x,p2.y)
+addon.classicToWrathSW = GetMapCoefficients(p1.x,p1.y,p1.xb,p1.yb,p2.x,p2.y,p2.xb,p2.yb)
+addon.wrathToClassicSW = GetMapCoefficients(p1.xb,p1.yb,p1.x,p1.y,p2.xb,p2.yb,p2.x,p2.y)
+
+p1 = {
+    ["x"] = 81.51690,
+    ["y"] = 59.23138,
+    ["xb"] = 75.75077,
+    ["yb"] = 53.32378,
+}
+p2 = {
+    ["x"] = 48.12616,
+    ["y"] = 21.96377,
+    ["xb"] = 43.67876,
+    ["yb"] = 17.52954,
+}
+
+addon.classicToWrathEPL = GetMapCoefficients(p1.x,p1.y,p1.xb,p1.yb,p2.x,p2.y,p2.xb,p2.yb)
+addon.wrathToClassicEPL = GetMapCoefficients(p1.xb,p1.yb,p1.x,p1.y,p2.xb,p2.yb,p2.x,p2.y)
 
 function addon.GetMapInfo(zone,x,y)
     x = tonumber(x)
@@ -1005,18 +1022,32 @@ function addon.GetMapInfo(zone,x,y)
         return
     elseif zone == "StormwindClassic" then
         if addon.gameVersion > 30000 then
-            local c = addon.classicToWrath
+            local c = addon.classicToWrathSW
             x = x*c[1]+c[2]
             y = y*c[3]+c[4]
         end
         return addon.mapId["Stormwind City"],x,y
+    elseif zone == "EPLClassic" then
+        if addon.gameVersion > 30000 then
+            local c = addon.classicToWrathEPL
+            x = x*c[1]+c[2]
+            y = y*c[3]+c[4]
+        end
+        return addon.mapId["Eastern Plaguelands"],x,y
     elseif zone == "StormwindNew" then
         if addon.gameVersion < 30000 then
-            local c = addon.wrathToClassic
+            local c = addon.wrathToClassicSW
             x = x*c[1]+c[2]
             y = y*c[3]+c[4]
         end
         return addon.mapId["Stormwind City"],x,y
+    elseif zone == "EPLNew" then
+        if addon.gameVersion < 30000 then
+            local c = addon.wrathToClassicEPL
+            x = x*c[1]+c[2]
+            y = y*c[3]+c[4]
+        end
+        return addon.mapId["Eastern Plaguelands"],x,y
     else
         return addon.mapId[zone] or tonumber(zone),x,y
     end
@@ -1024,3 +1055,5 @@ end
 
 addon.mapId["StormwindClassic"] = addon.mapId["Stormwind City"]
 addon.mapId["StormwindNew"] = addon.mapId["Stormwind City"]
+addon.mapId["EPLClassic"] = addon.mapId["Eastern Plaguelands"]
+addon.mapId["EPLNew"] = addon.mapId["Eastern Plaguelands"]
