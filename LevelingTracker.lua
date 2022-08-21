@@ -896,7 +896,7 @@ function addon.tracker:RefreshSplitsSummary()
     end
 
     local now = GetTime()
-    if (now - self.state.lastSplitsUpdate) > 2 + mrand(5) then
+    if (now - self.state.lastSplitsUpdate) > 1 then
         self.state.lastSplitsUpdate = now
         addon.tracker:UpdateLevelSplits()
     end
