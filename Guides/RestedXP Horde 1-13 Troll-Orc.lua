@@ -252,15 +252,15 @@ step << Troll Shaman
 step << Orc Shaman
     .goto Durotar,42.4,69.0
     .turnin 3089 >>Turn in Rune-Inscribed Parchment
+step << !Warlock tbc/Warlock wotlk
+    .goto Durotar,42.9,69.1
+    .accept 792 >>Accept Vile Familiars
 step << Orc Warrior
     .goto Durotar,42.9,69.4
     .turnin 2383 >>Turn in Simple Parchment
 step << Troll Warrior
     .goto Durotar,42.9,69.4
     .turnin 3065 >>Turn in Simple Tablet
-step << !Warlock tbc/Warlock wotlk
-    .goto Durotar,42.9,69.1
-    .accept 792 >>Accept Vile Familiars
 step
     .goto Durotar,44.6,68.7
     .accept 5441 >>Accept Lazy Peons
@@ -591,6 +591,9 @@ step
     .goto Durotar,51.1,42.6
     .vendor >>Vendor trash
 step
+    .goto Durotar,51.1,42.4
+    .accept 815 >>Accept Break a Few Eggs
+step
     .goto Durotar,50.2,43.1,15 >>Go up this path here
 step
     >>Go up the tower
@@ -713,9 +716,6 @@ step << Warlock/Shaman/Warrior
     #xprate <1.5
     .goto Durotar,51.9,43.5
 .accept 831 >>Accept The Admiral's Orders 
-step
-    .goto Durotar,51.1,42.4
-    .accept 815 >>Accept Break a Few Eggs
 step
 .goto Durotar,49.9,40.3
     .turnin 791 >>Turn in Carry Your Weight
