@@ -354,7 +354,13 @@ step << Priest
     .money <0.0190
     .goto Durotar,42.4,68.8
     .train 589 >>Train Shadow Word: Pain
-step << !Shaman !Warlock tbc/Warlock wotlk
+step << !Shaman
+    #wotlk
+    .goto Durotar,42.9,69.1
+    .turnin 792 >>Turn in Vile Familiars
+    .accept 794 >>Accept Burning Blade Medallion
+step << !Shaman !Warlock
+    #tbc
     .goto Durotar,42.9,69.1
     .turnin 792 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
