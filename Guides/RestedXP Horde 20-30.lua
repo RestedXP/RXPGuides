@@ -670,10 +670,9 @@ step
     .turnin 6461 >> Turn in Blood Feeders
     .isOnQuest 6461 
 step
-    #xprate <1.5
-    .maxlevel 23
+    #xprate >1.499
     .isOnQuest 1095
-    >> Head back to the goblin hut behind the hill
+    >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
 step << !Rogue
