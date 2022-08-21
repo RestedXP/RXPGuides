@@ -252,7 +252,12 @@ step << Troll Shaman
 step << Orc Shaman
     .goto Durotar,42.4,69.0
     .turnin 3089 >>Turn in Rune-Inscribed Parchment
-step << !Warlock tbc/Warlock wotlk
+step << !Warlock
+    #tbc
+    .goto Durotar,42.9,69.1
+    .accept 792 >>Accept Vile Familiars
+step
+    #wotlk
     .goto Durotar,42.9,69.1
     .accept 792 >>Accept Vile Familiars
 step << Orc Warrior
