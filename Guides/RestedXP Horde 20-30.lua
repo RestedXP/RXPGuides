@@ -1132,16 +1132,6 @@ step
 step
     .goto Hillsbrad Foothills,60.10,18.60
     .fp Tarren Mill>> Get the Tarren Mill Flight Path
-step << Rogue
-     .goto Hillsbrad Foothills,61.55,19.19
-    .turnin 2479 >>Turn in Hinott's Assistance
-    .accept 2480 >>Accept Hinott's Assistance
-step << Rogue
-    >>Wait for Serge to complete the cure
-    .complete 2480,1 --Cure Completed (1)
-step << Rogue  
-    .goto Hillsbrad Foothills,61.50,19.20 
-    .turnin 2480 >>Turn in Hinott's Assistance 
 step << Shaman
 	.goto Hillsbrad Foothills,62.2,20.8
     >>Fill the Waterskin at the well
@@ -1177,11 +1167,11 @@ step << Hunter
 step
     .goto Hillsbrad Foothills,62.79,19.05
 	.vendor 2388 >> Go inside the Inn. Vendor trash, and buy Food/Water from Shay
-step << Shaman/Warrior
+step << Shaman
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy a Merciless Axe from the vendor if you have enough money. It's not always in the shop.
     .collect 12249,1
-step << Rogue
+step << Rogue/Warrior
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy a Broad Bladed Knife from the vendor if you have enough money. It's not always in the shop.
     .collect 12247,1
@@ -1218,6 +1208,7 @@ step << Rogue/Hunter/Shaman
 step
 	#completewith next
 	.goto Hillsbrad Foothills,79.8,39.3
+    .unitscan Jailor Marlgen
 	>>Kill Jailor Marlgen. Loot him for his Burnished Gold Key
     .collect 3499,1
 step
@@ -1344,11 +1335,13 @@ step
 step
     #sticky
     #label Wilkes
+	.unitscan Citizen Wilkes
     >>Kill Citizen Wilkes. He patrols every road in the town
 	.complete 567,2 --Kill Citizen Wilkes (x1)
 step
     #sticky
     #label Kalaba
+	.unitscan Farmer Kalaba
     >>Kill Farmer Kalaba. She patrols the field of Peasants
 	.goto Hillsbrad Foothills,35.2,46.5
     .complete 567,4 --Kill Farmer Kalaba (x1)
