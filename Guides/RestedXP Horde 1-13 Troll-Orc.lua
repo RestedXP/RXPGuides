@@ -288,7 +288,14 @@ step << Warlock
 .goto Durotar,47.1,65.2,40,0
 .goto Durotar,46.6,58.2,40,0
 .goto Durotar,39.8,63.5
-step << !Warlock tbc/Warlock wotlk
+step << !Warlock
+	#tbc
+    #label imps
+.goto Durotar,45.2,56.8
+    >>Kill Imps in front of the cave
+    .complete 792,1 --Vile Familiar (12)
+step << Warlock
+	#wotlk
     #label imps
 .goto Durotar,45.2,56.8
     >>Kill Imps in front of the cave
