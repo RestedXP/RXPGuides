@@ -283,6 +283,7 @@ step
     .accept 959 >>Accept Trouble at the Docks
 step
     .goto The Barrens,63.3,38.4
+    .turnin 1492 >>Turn in Wharfmaster Dizzywig
     .accept 896 >>Accept Miner's Fortune
 step
     >>Click the Wanted poster. You can bank here too if you want
@@ -611,7 +612,6 @@ step
 step
     .goto The Barrens,63.3,38.4
     .turnin 896 >>Turn in Miner's Fortune
-    .turnin 1492 >>Turn in Wharfmaster Dizzywig
     .turnin 890 >>Turn in The Missing Shipment
     .accept 892 >>Accept The Missing Shipment
 step
@@ -1173,9 +1173,9 @@ step
     .goto Stonetalon Mountains,71.3,95.1
     .turnin 6461 >>Turn in Blood Feeders
 step
-    #level 25
+#xprate >1.499
     .isOnQuest 1095
-    >> Head back to the goblin hut behind the hill
+    >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1095 >> Turn in Further Instructions
 step

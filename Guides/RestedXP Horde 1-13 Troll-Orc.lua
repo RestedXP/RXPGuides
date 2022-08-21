@@ -252,15 +252,20 @@ step << Troll Shaman
 step << Orc Shaman
     .goto Durotar,42.4,69.0
     .turnin 3089 >>Turn in Rune-Inscribed Parchment
+step << !Warlock
+    #tbc
+    .goto Durotar,42.9,69.1
+    .accept 792 >>Accept Vile Familiars
+step
+    #wotlk
+    .goto Durotar,42.9,69.1
+    .accept 792 >>Accept Vile Familiars
 step << Orc Warrior
     .goto Durotar,42.9,69.4
     .turnin 2383 >>Turn in Simple Parchment
 step << Troll Warrior
     .goto Durotar,42.9,69.4
     .turnin 3065 >>Turn in Simple Tablet
-step << !Warlock tbc/Warlock wotlk
-    .goto Durotar,42.9,69.1
-    .accept 792 >>Accept Vile Familiars
 step
     .goto Durotar,44.6,68.7
     .accept 5441 >>Accept Lazy Peons
@@ -288,7 +293,14 @@ step << Warlock
 .goto Durotar,47.1,65.2,40,0
 .goto Durotar,46.6,58.2,40,0
 .goto Durotar,39.8,63.5
-step << !Warlock tbc/Warlock wotlk
+step << !Warlock
+	#tbc
+    #label imps
+.goto Durotar,45.2,56.8
+    >>Kill Imps in front of the cave
+    .complete 792,1 --Vile Familiar (12)
+step << Warlock
+	#wotlk
     #label imps
 .goto Durotar,45.2,56.8
     >>Kill Imps in front of the cave
@@ -342,7 +354,13 @@ step << Priest
     .money <0.0190
     .goto Durotar,42.4,68.8
     .train 589 >>Train Shadow Word: Pain
-step << !Shaman !Warlock tbc/Warlock wotlk
+step << !Shaman
+    #wotlk
+    .goto Durotar,42.9,69.1
+    .turnin 792 >>Turn in Vile Familiars
+    .accept 794 >>Accept Burning Blade Medallion
+step << !Shaman !Warlock
+    #tbc
     .goto Durotar,42.9,69.1
     .turnin 792 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
@@ -587,9 +605,21 @@ step
     >>Inside the top floor of the bunker
     .goto Durotar,51.9,43.5
     .accept 784 >>Accept Vanquish the Betrayers
+step << Shaman/Warrior
+    #xprate <1.5
+    .goto Durotar,52.2,43.2
+    .turnin 823 >>Turn in Report to Orgnil
+    .accept 806 >>Accept Dark Storms
+step << !Shaman !Warrior
+    #xprate <1.5
+    .goto Durotar,52.2,43.2
+    .turnin 823 >>Turn in Report to Orgnil
 step
     .goto Durotar,51.1,42.6
     .vendor >>Vendor trash
+step
+    .goto Durotar,51.1,42.4
+    .accept 815 >>Accept Break a Few Eggs
 step
     .goto Durotar,50.2,43.1,15 >>Go up this path here
 step
@@ -691,19 +721,15 @@ step
 .collect 4881,1,830 --Collect Aged Envelope (1)
 .accept 830 >>Accept The Admiral's Orders
 step
+    #xprate <1.5
     .goto Durotar,58.4,57.2
 .xp 7+2195 >> Grind to 2195+/4500xp
 step
+    #xprate <1.5
     #requires KulTiras
 .goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer, or run back
-step << Shaman/Warrior
-    .goto Durotar,52.2,43.2
-    .turnin 823 >>Turn in Report to Orgnil
-    .accept 806 >>Accept Dark Storms
-step << !Shaman !Warrior
-    .goto Durotar,52.2,43.2
-    .turnin 823 >>Turn in Report to Orgnil
 step
+    #xprate <1.5
     .goto Durotar,51.9,43.5
     .turnin 784 >>Turn in Vanquish the Betrayers
     .accept 825 >>Accept From The Wreckage....
@@ -714,90 +740,108 @@ step << Warlock/Shaman/Warrior
     .goto Durotar,51.9,43.5
 .accept 831 >>Accept The Admiral's Orders 
 step
-    .goto Durotar,51.1,42.4
-    .accept 815 >>Accept Break a Few Eggs
-step
+    #xprate <1.5
 .goto Durotar,49.9,40.3
     .turnin 791 >>Turn in Carry Your Weight
 step << !Shaman !Warrior
+    #xprate <1.5
     .abandon 806 >>Abandon Dark Storms
 step << Shaman
+    #xprate <1.5
     .goto Durotar,52.0,40.5
     .money <0.0480
     >> Buy a Walking Stick and equip it
     .collect 2495,1 --Collect Walking Stick
 step << Rogue
+    #xprate <1.5
     .goto Durotar,52.0,40.5
     .money <0.0382
     >> Buy a Stiletto and equip it
     .collect 2494,1 --Collect Stiletto
 step << Orc Warrior
+    #xprate <1.5
     .goto Durotar,52.0,40.5
     .money <0.0460
     >> Buy a Large Axe and equip it
     .collect 2491,1 --Collect Large Axe
 step << Paladin
+    #xprate <1.5
     .goto Durotar,52.0,40.5
     .money <0.0509
     >> Buy a Gladius and equip it
     .collect 2488,1 --Collect Gladius
 step << Hunter
+    #xprate <1.5
     .goto Durotar,53.0,41.0
     .money <0.0271
     >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Warrior/Rogue
+    #xprate <1.5
     .goto Durotar,52.0,40.7
     .money <0.0020
     .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
 step << Warrior/Rogue
+    #xprate <1.5
 .goto Durotar,51.8,40.9
     .money <0.0010
     .train 2580 >> Train Mining. 
     .cast 2580 >>Cast “Find Minerals” in your spellbook
 step << Warrior/Rogue
+    #xprate <1.5
     .goto Durotar,53.0,42.0
     .money <0.0077
 .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon
 step << Shaman
+    #xprate <1.5
     .goto Durotar,54.4,42.6
     .train 2484 >>Train Earthbind Totem
     .train 324 >>Train Lightning Shield
     .train 8044 >>Train Earth Shock r2
     .train 8018 >>Train Rockbiter Weapon r2
 step << Priest
+    #xprate <1.5
     .goto Durotar,54.3,42.9
     .train 139 >>Train Renew
 step << Warrior
+    #xprate <1.5
 .goto Durotar,54.2,42.5
     .train 284 >>Train Heroic Strike r2
     .train 1715 >>Train Hamstring
 step << Hunter
+    #xprate <1.5
     .goto Durotar,51.8,43.5
     .train 5116 >>Train Concussive Shot
 step << Rogue
+    #xprate <1.5
 .goto Durotar,52.0,43.7
     .train 6760 >>Train Eviscerate r2
     .train 5277 >>Train Evasion
 step << Warlock
+    #xprate <1.5
     .goto Durotar,54.4,41.2
     .train 980 >>Train Curse of Agony
     .train 5782 >>Train Fear
 step << Warlock
+    #xprate <1.5
 .goto Durotar,54.7,41.5
     .vendor >>Buy the Firebolt r2 book and use it
 step << Warrior/Rogue
+    #xprate <1.5
     .goto Durotar,54.2,41.9
     .money <0.0095
     .train 3273 >>Train First Aid
 step
+    #xprate <1.5
     .goto Durotar,54.4,42.2
     .money <0.1184
 .vendor >>Buy a 6 slot bag from Jark
 step << Priest/Warlock/Mage
+    #xprate <1.5
     .goto Durotar,51.5,41.6
     .vendor >> Buy as much Ice Cold Milk as you can
 step << Warrior/Rogue
+    #xprate <1.5
     .goto Durotar,51.5,41.6
     .vendor >> Buy as much Haunch of Meat as you can
 step
@@ -807,12 +851,14 @@ step
     .complete 818,1 --Intact Makrura Eye (4)
     .complete 818,2 --Crawler Mucus (8)
 step
+    #xprate <1.5
     #completewith next
     >>Check the boat closest to the shore for the Toolboxes. Check other boats if you can't find these spawns. They can be a bit hard to see
     .goto Durotar,61.9,55.5,10 >> In the window underwater
     .goto Durotar,62.3,56.3,10 >> Underwater
     .goto Durotar,61.4,56.1,10 >> Near the shore
 step
+    #xprate <1.5
     .goto Durotar,61.9,55.5,10,0
     .goto Durotar,62.3,56.3,10,0
     .goto Durotar,61.4,56.1,10,0    
@@ -913,22 +959,43 @@ step
     .goto Durotar,48.9,48.5
     .hs >> Hearth back to Razor Hill
 step
+    #xprate <1.5
     .goto Durotar,48.9,48.5
     >>Kill Quilboars and Scouts in the area
     .complete 837,1 --Razormane Quilboar (4)
     .complete 837,2 --Razormane Scout (4)
 step
+    #xprate <1.5
     .goto Durotar,43.8,39.1
     >>Kill Dustrunners and Battleguards in the area. Dustrunners have Rejuvenation (Heal) and Battleguards are tanky
     .complete 837,3 --Razormane Dustrunner (4)
     .complete 837,4 --Razormane Battleguard (4)
 step
+    #xprate <1.5
     .goto Durotar,43.8,39.1
     .xp 9+5175 >>Grind to 5175+/6500xp
+step
+    #xprate >1.499 
+    .goto Durotar,51.9,43.5
+    .turnin 784 >>Turn in Vanquish the Betrayers
+    .turnin 830 >>Turn in The Admiral's Orders
+    .accept 837 >>Accept Encroachment
+step << Warlock/Shaman/Warrior
+    #xprate >1.499 
+    .goto Durotar,51.9,43.5
+.accept 831 >>Accept The Admiral's Orders 
 step
     .goto Durotar,51.1,42.4
         .turnin 815 >>Turn in Break a Few Eggs
 step
+    #xprate >1.499 
+.goto Durotar,49.9,40.3
+    .turnin 791 >>Turn in Carry Your Weight
+step << !Shaman !Warrior
+    #xprate >1.499 
+    .abandon 806 >>Abandon Dark Storms
+step
+    #xprate <1.5
     .goto Durotar,51.9,43.5
     .turnin 825 >>Turn in From The Wreckage....
     .turnin 837 >>Turn in Encroachment
@@ -1246,6 +1313,18 @@ step << Undead Warrior
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
 step
+    #xprate >1.499 
+    .goto Durotar,48.9,48.5
+    >>Kill Quilboars and Scouts in the area
+    .complete 837,1 --Razormane Quilboar (4)
+    .complete 837,2 --Razormane Scout (4)
+step
+    #xprate >1.499 
+    .goto Durotar,43.8,39.1
+    >>Kill Dustrunners and Battleguards in the area. Dustrunners have Rejuvenation (Heal) and Battleguards are tanky
+    .complete 837,3 --Razormane Dustrunner (4)
+    .complete 837,4 --Razormane Battleguard (4)
+step
     .goto The Barrens,62.2,19.4
     .turnin 840 >>Turn in Conscript of the Horde
     .accept 842 >>Accept Crossroads Conscription
@@ -1529,6 +1608,10 @@ step << Warrior
 step << !Warrior
     .goto Durotar,54.4,42.2
 .vendor >>Buy 6 slot bags from Jark until you can't equip new bags
+step
+    #xprate >1.499 
+    .goto Durotar,51.9,43.5
+    .turnin 837 >>Turn in Encroachment
 step
     >> Head out of Razor Hill to the east then head straight north
     .goto Durotar,55.6,36.6,80,0
