@@ -335,12 +335,14 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
     trackerUi.frame:SetBackdropColor(unpack(addon.colors.background))
 
-    trackerUi:SetCallback("OnShow", function()
-        -- refresh data
-        addon.tracker:CompileData()
-        addon.tracker:UpdateReport(addon.tracker.playerLevel, playerName,
-                                   _G.CharacterFrame)
-    end)
+    if attachment:GetName() == 'CharacterFrame' then
+        trackerUi:SetCallback("OnShow", function()
+            -- refresh data
+            addon.tracker:CompileData()
+            addon.tracker:UpdateReport(addon.tracker.playerLevel, playerName,
+                                       _G.CharacterFrame)
+        end)
+    end
 
     if addon.settings.db.profile.openTrackerReportOnCharOpen then
         trackerUi:SetCallback("OnClose", function()
@@ -1083,7 +1085,7 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
 
         -- TODO purge cache on event loop
         -- TODO use cache
-        self.state.otherReports[sender] = obj.reportData
+        self.state.otherReports[sender] = obj
         self:CreateGui(_G.InspectFrame, sender)
         self:UpdateReport(obj.playerLevel, sender, _G.InspectFrame)
         self:ShowReport(_G.InspectFrame)
@@ -1094,6 +1096,24 @@ end
 
 function addon.tracker:INSPECT_READY(_, inspecteeGUID)
     local inspectedName = select(6, GetPlayerInfoByGUID(inspecteeGUID))
+
+    if self.state.otherReports[inspectedName] and
+        self.state.otherReports[inspectedName].compileTime and GetTime() -
+        self.state.otherReports[inspectedName].compileTime < 30 then
+
+        if addon.settings.db.profile.debug then
+            addon.comms.BuildPrint(
+                "Displaying cached data for %s from %.2f seconds ago",
+                inspectedName,
+                GetTime() - self.state.otherReports[inspectedName].compileTime)
+        end
+
+        self:CreateGui(_G.InspectFrame, inspectedName)
+        self:UpdateReport(UnitLevel(inspectedName), inspectedName,
+                          _G.InspectFrame)
+        self:ShowReport(_G.InspectFrame)
+        return
+    end
 
     local sz = self:Serialize({command = "LEVEL_REPORT_REQ"})
     self:SendCommMessage(self._commPrefix, sz, "WHISPER", inspectedName)
