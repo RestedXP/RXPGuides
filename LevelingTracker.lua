@@ -1084,8 +1084,9 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
         -- TODO purge cache on event loop
         -- TODO use cache
         self.state.otherReports[sender] = obj.reportData
-        addon.tracker:CreateGui(_G.InspectFrame, sender)
-        addon.tracker:UpdateReport(obj.playerLevel, sender, _G.InspectFrame)
+        self:CreateGui(_G.InspectFrame, sender)
+        self:UpdateReport(obj.playerLevel, sender, _G.InspectFrame)
+        self:ShowReport(_G.InspectFrame)
     else
         if d then print(bp("Unknown command (%s)", obj.command)) end
     end
