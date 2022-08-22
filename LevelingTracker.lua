@@ -18,6 +18,7 @@ addon.tracker.playerLevel = UnitLevel("player")
 addon.tracker.maxLevel = GetMaxPlayerLevel()
 addon.tracker.state = {otherReports = {}}
 addon.tracker.reportData = {}
+addon.tracker.ui = {}
 addon.tracker._commPrefix = "RXPLTComms"
 
 local playerName = _G.UnitName("player")
@@ -61,7 +62,7 @@ function addon.tracker:SetupTracker()
 
     addon.tracker:CompileData()
 
-    addon.tracker:CreateGui()
+    addon.tracker:CreateGui(_G.CharacterFrame, playerName)
 
     if addon.settings.db.profile.enablelevelSplits then
         addon.tracker:CreateLevelSplits()
@@ -188,9 +189,10 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
         -- Build data after processing level up
         addon.tracker.reportData[data.level - 1] =
             addon.tracker:CompileLevelData(data.level - 1)
-        addon.tracker.ui.levelDropdown:SetList(addon.tracker
-                                                   .BuildDropdownLevels())
-        addon.tracker.ui.levelDropdown:SetValue(data.level)
+        addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetList(
+            addon.tracker.BuildDropdownLevels())
+        addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetValue(
+            data.level)
 
         addon.tracker:UpdateLevelSplits("full")
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
@@ -294,10 +296,9 @@ local function buildSpacer(height)
     return spacer
 end
 
-function addon.tracker:CreateGui()
-    if addon.tracker.ui then return end
+function addon.tracker:CreateGui(attachment, target)
+    if addon.tracker.ui[attachment:GetName()] then return end
 
-    local attachment = _G.CharacterFrame
     local offset = {
         x = -38,
         y = -32,
@@ -305,8 +306,8 @@ function addon.tracker:CreateGui()
     }
     local padding = 4
 
-    addon.tracker.ui = AceGUI:Create("Frame")
-    local trackerUi = addon.tracker.ui
+    addon.tracker.ui[attachment:GetName()] = AceGUI:Create("Frame")
+    local trackerUi = addon.tracker.ui[attachment:GetName()]
 
     trackerUi:SetLayout("Fill")
     trackerUi:Hide()
@@ -337,7 +338,8 @@ function addon.tracker:CreateGui()
     trackerUi:SetCallback("OnShow", function()
         -- refresh data
         addon.tracker:CompileData()
-        addon.tracker:UpdateReport(addon.tracker.playerLevel)
+        addon.tracker:UpdateReport(addon.tracker.playerLevel, playerName,
+                                   _G.CharacterFrame)
     end)
 
     if addon.settings.db.profile.openTrackerReportOnCharOpen then
@@ -362,10 +364,18 @@ function addon.tracker:CreateGui()
     trackerUi.levelDropdown:SetRelativeWidth(0.45)
 
     trackerUi.levelDropdown:SetCallback("OnValueChanged", function(_, _, key)
-        addon.tracker:UpdateReport(key)
+        addon.tracker:UpdateReport(key, target, attachment)
     end)
 
     topContainer:AddChild(trackerUi.levelDropdown)
+
+    trackerUi.target = AceGUI:Create("Label")
+
+    trackerUi.target:SetText(target)
+    trackerUi.target:SetJustifyH("CENTER")
+    trackerUi.target:SetRelativeWidth(0.55)
+
+    topContainer:AddChild(trackerUi.target)
 
     trackerUi.scrollContainer:AddChild(topContainer)
 
@@ -507,9 +517,9 @@ function addon.tracker:CreateGui()
     trackerUi.scrollContainer:AddChild(trackerUi.extrasContainer)
 end
 
-function addon.tracker:ShowReport()
-    addon.tracker.ui:Show()
-    ShowUIPanel(_G.CharacterFrame)
+function addon.tracker:ShowReport(attachment)
+    addon.tracker.ui[attachment:GetName()]:Show()
+    ShowUIPanel(attachment)
 end
 
 function addon.tracker:CompileLevelData(level, d)
@@ -656,12 +666,39 @@ function addon.tracker:UglyPrintTime(s)
     return formattedString
 end
 
-function addon.tracker:UpdateReport(selectedLevel)
-    local trackerUi = addon.tracker.ui
+function addon.tracker:UpdateReport(selectedLevel, target, attachment)
+    local trackerUi = addon.tracker.ui[attachment:GetName()]
+    self.state.levelReportData = nil
 
-    local report = addon.tracker.reportData[selectedLevel]
+    if target then -- and target ~= playerName then
+        print(fmt("UpdateReport:target(%s)", target))
+        if self.state.otherReports[target] and
+            self.state.otherReports[target].reportData and
+            self.state.otherReports[target].reportData[selectedLevel] then
 
-    if selectedLevel == addon.tracker.playerLevel then
+            self.state.levelReportData =
+                self.state.otherReports[target].reportData[selectedLevel]
+            self.state.levelReportData.playerLevel =
+                self.state.otherReports[target].playerLevel
+
+        end
+    else
+        self.state.levelReportData = addon.tracker.reportData[selectedLevel]
+        self.state.levelReportData.playerLevel = addon.tracker.playerLevel
+    end
+
+    local report = self.state.levelReportData
+
+    if not report then
+        print(addon.comms.BuildPrint("Unable to retrieve report for %s", target))
+        -- TODO debugging, workaround target != playerName disabling
+        self.state.levelReportData = addon.tracker.reportData[selectedLevel]
+        self.state.levelReportData.playerLevel = addon.tracker.playerLevel
+        report = self.state.levelReportData
+        -- return
+    end
+
+    if selectedLevel == self.state.levelReportData.playerLevel then
         local secondsSinceLogin = difftime(time(),
                                            addon.tracker.state.login.time)
 
@@ -1023,7 +1060,8 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
             command = 'LEVEL_REPORT_RESP',
             playerName = playerName,
             reportData = self:CompileData(),
-            compileTime = GetTime()
+            compileTime = GetTime(),
+            playerLevel = addon.tracker.playerLevel
         })
 
         if d then
@@ -1043,7 +1081,11 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
                      obj.compileTime))
         end
 
+        -- TODO purge cache on event loop
+        -- TODO use cache
         self.state.otherReports[sender] = obj.reportData
+        addon.tracker:CreateGui(_G.InspectFrame, sender)
+        addon.tracker:UpdateReport(obj.playerLevel, sender, _G.InspectFrame)
     else
         if d then print(bp("Unknown command (%s)", obj.command)) end
     end
