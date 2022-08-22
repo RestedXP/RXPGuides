@@ -2829,6 +2829,16 @@ step
     .goto Stranglethorn Vale,26.9,77.0
     .fp Booty Bay >> Get the Booty Bay flight path
 step
+    .xp <33,1
+    #completewith next
+	+Go to the dock. Take the boat back to Ratchet.
+   .goto The Barrens,63.7,38.6,15,0
+	.goto The Barrens,63.7,38.6
+step
+    .xp <33,1
+	.maxlevel 36
+	.zone The Barrens >>Arrive in Ratchet
+step
     .xp >33,1
     .goto Ashenvale,73.2,61.5,-1
     .goto The Barrens,63.1,37.1,-1
