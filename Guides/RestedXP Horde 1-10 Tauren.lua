@@ -326,10 +326,9 @@ step << !Hunter
 step
     #sticky
     #completewith Well
-	.goto Mulgore,55.9,63.1,90,0
-    .goto Mulgore,51.1,66.5,90,0
-    .goto Mulgore,40.7,73.0,90,0
-    .goto Mulgore,55.9,63.1
+	.goto Mulgore,55.9,63.1,90
+    .goto Mulgore,51.1,66.5,90
+    .goto Mulgore,40.7,73.0,90
     >>Get the items for Mazzranache as you quest throughout the zone
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
@@ -598,17 +597,12 @@ step
     .goto Mulgore,61.5,21.9
     .xp 9+4400 >> Grind to 4400+/6500xp
 step << !Druid
-    #completewith next
+    #completewith hsfailsafe3
     .hs >>Hearth to Bloodhoof Village
-    .cooldown item,6948,>0
 step << Druid
-    #softcore
     #completewith next
     .goto Mulgore,54.76,35.10
     .deathskip >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
-step << Druid
-    #hardcore
-    .goto Mulgore,46.5,55.5,300 >> Run back to Bloodhoof Village
 step << !Hunter
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
@@ -626,6 +620,7 @@ step << !Hunter
     .goto Mulgore,47.5,60.2
     .turnin 746 >>Turn in Dwarven Digging
 step
+    #label hsfailsafe3
     .goto Mulgore,47.4,62.0
     .turnin 743 >>Turn in Dangers of the Windfury
 step << Druid
@@ -826,10 +821,11 @@ step
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4
     .complete 848,1 --Collect Fungal Spores (x4)
-step
+step << tbc
     .goto The Barrens,52.0,30.6,150 >> Die and respawn at the Spirit Healer, or run back
 step
     .goto The Barrens,52.3,31.9
+    >> Head back to The Crossroads
     .turnin 870 >>Turn in The Forgotten Pools
     .accept 877 >>Accept The Stagnant Oasis
 step
