@@ -304,6 +304,7 @@ function addon.tracker:CreateGui(attachment, target)
         tabsHeight = _G.CharacterFrameTab1:GetHeight()
     }
     local padding = 4
+    local levelData, playerLevel
 
     addon.tracker.ui[attachment:GetName()] = AceGUI:Create("Frame")
     local trackerUi = addon.tracker.ui[attachment:GetName()]
@@ -349,6 +350,12 @@ function addon.tracker:CreateGui(attachment, target)
             addon.tracker:UpdateReport(addon.tracker.playerLevel, playerName,
                                        _G.CharacterFrame)
         end)
+
+        levelData = addon.tracker.db.profile["levels"]
+        playerLevel = addon.tracker.playerLevel
+    else
+        levelData = self.state.otherReports[target].reportData
+        playerLevel = self.state.otherReports[target].playerLevel
     end
 
     -- Make sure the window can be closed by pressing the escape button
@@ -360,11 +367,10 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.levelDropdown = AceGUI:Create("Dropdown")
 
-    -- TODO inspect frame
-    trackerUi.levelDropdown:SetList(addon.tracker.BuildDropdownLevels(
-                                        addon.tracker.db.profile["levels"],
-                                        addon.tracker.playerLevel))
-    trackerUi.levelDropdown:SetValue(addon.tracker.playerLevel)
+    trackerUi.levelDropdown:SetList(self.BuildDropdownLevels(levelData,
+                                                             playerLevel))
+    trackerUi.levelDropdown:SetValue(playerLevel)
+
     trackerUi.levelDropdown:SetRelativeWidth(0.45)
 
     trackerUi.levelDropdown:SetCallback("OnValueChanged", function(_, _, key)
@@ -389,9 +395,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.reachedContainer:SetFullWidth(true)
 
     trackerUi.reachedContainer.label = AceGUI:Create("Heading")
-    -- TODO inspect frame
-    trackerUi.reachedContainer.label:SetText("Reached Level " ..
-                                                 addon.tracker.playerLevel)
+    trackerUi.reachedContainer.label:SetText("Reached Level " .. playerLevel)
     trackerUi.reachedContainer.label:SetFullWidth(true)
 
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.label)
