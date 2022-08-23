@@ -188,7 +188,8 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
         addon.tracker.reportData[data.level - 1] =
             addon.tracker:CompileLevelData(data.level - 1)
         addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetList(
-            addon.tracker.BuildDropdownLevels())
+            addon.tracker.BuildDropdownLevels(addon.tracker.db.profile["levels"],
+                                              data.level))
         addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetValue(
             data.level)
 
@@ -266,12 +267,12 @@ function addon.tracker:PLAYER_ENTERING_WORLD()
     RequestTimePlayed()
 end
 
-function addon.tracker.BuildDropdownLevels()
+function addon.tracker.BuildDropdownLevels(levels, playerLevel)
     local dropdownLevels = {}
     local sortOrder = {}
 
-    for level, _ in pairs(addon.tracker.db.profile["levels"]) do
-        if level > addon.tracker.playerLevel then break end
+    for level, _ in pairs(levels) do
+        if level > playerLevel then break end
 
         if level == addon.tracker.maxLevel then
             dropdownLevels[level] = fmt("%d (Max)", level)
@@ -311,14 +312,6 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi:Hide()
     trackerUi:EnableResize(false)
 
-    -- Firmly attach to CharacterFrame show/hide
-    if addon.settings.db.profile.openTrackerReportOnCharOpen then
-        trackerUi.frame:SetMovable(false)
-        trackerUi.frame:SetParent(attachment)
-
-        attachment:HookScript("OnShow", function() trackerUi:Show() end)
-    end
-
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
     trackerUi:SetTitle("RestedXP Leveling Report")
     trackerUi:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
@@ -334,19 +327,27 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.frame:SetBackdropColor(unpack(addon.colors.background))
 
     if attachment:GetName() == 'CharacterFrame' then
+        -- Firmly attach to CharacterFrame show/hide
+        if addon.settings.db.profile.openTrackerReportOnCharOpen then
+            trackerUi.frame:SetMovable(false)
+            trackerUi.frame:SetParent(attachment)
+
+            attachment:HookScript("OnShow", function()
+                trackerUi:Show()
+            end)
+
+            trackerUi:SetCallback("OnClose", function()
+                -- Hide tracker frame when parent hides
+                -- Prevent tracker from being open next time character is
+                trackerUi:Hide()
+            end)
+        end
+
         trackerUi:SetCallback("OnShow", function()
             -- refresh data
             addon.tracker:CompileData()
             addon.tracker:UpdateReport(addon.tracker.playerLevel, playerName,
                                        _G.CharacterFrame)
-        end)
-    end
-
-    if addon.settings.db.profile.openTrackerReportOnCharOpen then
-        trackerUi:SetCallback("OnClose", function()
-            -- Hide tracker frame when parent hides
-            -- Prevent tracker from being open next time character is
-            trackerUi:Hide()
         end)
     end
 
@@ -359,7 +360,10 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.levelDropdown = AceGUI:Create("Dropdown")
 
-    trackerUi.levelDropdown:SetList(addon.tracker.BuildDropdownLevels())
+    -- TODO inspect frame
+    trackerUi.levelDropdown:SetList(addon.tracker.BuildDropdownLevels(
+                                        addon.tracker.db.profile["levels"],
+                                        addon.tracker.playerLevel))
     trackerUi.levelDropdown:SetValue(addon.tracker.playerLevel)
     trackerUi.levelDropdown:SetRelativeWidth(0.45)
 
@@ -385,6 +389,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.reachedContainer:SetFullWidth(true)
 
     trackerUi.reachedContainer.label = AceGUI:Create("Heading")
+    -- TODO inspect frame
     trackerUi.reachedContainer.label:SetText("Reached Level " ..
                                                  addon.tracker.playerLevel)
     trackerUi.reachedContainer.label:SetFullWidth(true)
@@ -698,6 +703,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
         -- return
     end
 
+    -- TODO inspect frame
     if selectedLevel == self.state.levelReportData.playerLevel then
         local secondsSinceLogin = difftime(time(),
                                            addon.tracker.state.login.time)
