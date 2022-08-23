@@ -868,7 +868,7 @@ step
 step << Paladin/Priest/Mage
      .goto Eversong Woods,52.0,69.1
     .xp 9+5875 >> Grind to 5875+/6500xp
-step << Warrior/Warlock/Rogue !Undead/!Warlock
+step << Warrior/Warlock/Rogue !Undead/!Warlock !Paladin !Priest !Mage
      .goto Eversong Woods,52.0,69.1
     .xp 9+5700 >> Grind to 5700+/6500xp
 step << Undead Warlock
@@ -1485,6 +1485,7 @@ step << Undead/BloodElf !Hunter
     .hs >> Hearth to Falconwing or run if its not up
 step << Undead/BloodElf !Hunter 
     >> Talk to Ranger Sareyn
+    .goto Eversong Woods,46.9,71.8
     .turnin 9252 >> Turn in Defending Fairbreeze Village
     .accept 9253 >> Accept Runewarden Deryan
 step << Undead/BloodElf !Hunter
