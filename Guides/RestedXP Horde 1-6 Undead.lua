@@ -94,7 +94,7 @@ step
     .goto Tirisfal Glades,32.4,62.8
     .complete 364,1 --Kill Mindless Zombie (x8)
     .complete 364,2 --Kill Wretched Zombie (x8)
-step
+step !Warlock tbc
 	.goto Tirisfal Glades,32.4,62.8
 	.xp 2 >> Grind to level 2
 step << Mage tbc/Warlock tbc/Priest tbc
@@ -218,17 +218,6 @@ step
     .goto Tirisfal Glades,33.84,64.09
     .complete 3902,1 --Collect Scavenged Goods (x6)
 step
-	#hardcore
-    #requires Goods
-    .goto Tirisfal Glades,27.1,59.0,80,0
-    .goto Tirisfal Glades,26.8,59.4,30,0
-    .goto Tirisfal Glades,24.0,58.2,60,0
-	.goto Tirisfal Glades,27.1,59.0
-    >>Kill all but 2-3 Young Spiders outside the cave and then enter the cave and kill the Night Web Spiders inside. Kill the remaining 2-3 Young Spiders as you leave.
-    .complete 380,1 --Kill Young Night Web Spider (10)
-	.complete 380,2 --Kill Night Web Spider (x8)
-step
-	#softcore
     #requires Goods
     .goto Tirisfal Glades,27.1,59.0,80,0
     .goto Tirisfal Glades,26.8,59.4,30,0
@@ -238,13 +227,8 @@ step
     .complete 380,1 --Kill Young Night Web Spider (10)
 	.complete 380,2 --Kill Night Web Spider (x8)
 step
-    #softcore
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer
-step
-    #hardcore
-    #completewith next
-    .goto Tirisfal Glades,31.2,64.9,120 >> Run out of the cave back to Deathknell
 step
     .goto Tirisfal Glades,31.6,65.6
 	.cast 688 >> Resummon your Imp << Warlock
@@ -272,7 +256,6 @@ step
     .collect 16333,1 --Collect Samuel's Remains
     .unitscan Samuel Fipps
 step
-    #softcore
 	.goto Tirisfal Glades,36.7,61.6
     .deathskip >> Die and respawn at the Spirit Healer
 step

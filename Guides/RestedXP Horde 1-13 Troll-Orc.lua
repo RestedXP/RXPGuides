@@ -59,6 +59,7 @@ step << Warlock tbc
 >>Kill Mottled Boars en route to Vile Familiars. Try to ding 2 before getting to Familiars. Don't sit and drink for these
     .complete 788,1 --Mottled Boar (10)
 step << Warlock tbc
+    #completewith next
     #label WarlockBoars
     .goto Durotar,45.0,57.4,90 >> Run to the Familiars
 step << Warlock tbc
@@ -101,7 +102,7 @@ step << Warlock tbc
 step << Warlock
     .goto Durotar,42.6,67.3
     .vendor >>Vendor trash, buy 10 water << tbc
-    .vendor >>Vendor trash << wotlk	
+    .vendor >>Vendor trash << wotlk
 step << Warlock tbc
     .goto Durotar,42.6,69.0
     .turnin 1485 >>Turn in Vile Familiars
@@ -210,7 +211,7 @@ step << Warlock wotlk
     .goto Tirisfal Glades,32.3,65.4
 	.money >0.0095
 	.vendor >>Grind mobs until you get a total of 95 copper. Vendor anything you can if it helps you get 95 copper.
---95c for imp	
+--95c for imp
 step << Orc Warlock
     .goto Durotar,40.6,68.5
     .turnin 3090>>Turn in Tainted Parchment
@@ -228,7 +229,7 @@ step << Hunter
     .vendor >> Vendor trash. Buy arrows until your Quiver is full (1000 arrows)
 step << Warlock wotlk
 	#completewith next
-	.cast 688 >> Summon your Imp	
+	.cast 688 >> Summon your Imp
 step
 .goto Durotar,42.7,67.3
     .accept 4402 >>Accept Galgar's Cactus Apple Surprise
@@ -252,12 +253,7 @@ step << Troll Shaman
 step << Orc Shaman
     .goto Durotar,42.4,69.0
     .turnin 3089 >>Turn in Rune-Inscribed Parchment
-step << !Warlock
-    #tbc
-    .goto Durotar,42.9,69.1
-    .accept 792 >>Accept Vile Familiars
-step
-    #wotlk
+step << !Warlock tbc/wotlk
     .goto Durotar,42.9,69.1
     .accept 792 >>Accept Vile Familiars
 step << Orc Warrior
@@ -293,14 +289,8 @@ step << Warlock
 .goto Durotar,47.1,65.2,40,0
 .goto Durotar,46.6,58.2,40,0
 .goto Durotar,39.8,63.5
-step << !Warlock
-	#tbc
-    #label imps
-.goto Durotar,45.2,56.8
-    >>Kill Imps in front of the cave
-    .complete 792,1 --Vile Familiar (12)
-step << Warlock
-	#wotlk
+
+step << !Warlock tbc/wotlk
     #label imps
 .goto Durotar,45.2,56.8
     >>Kill Imps in front of the cave
@@ -342,11 +332,6 @@ step << Shaman
     .goto Durotar,42.4,69.1
     .accept 1516 >>Accept Call of Earth
     .train 8042 >>Train Earth Shock
-step << Shaman
-    .goto Durotar,42.9,69.1
-    >>Choose the staff
-    .turnin 792 >>Turn in Vile Familiars
-    .accept 794 >>Accept Burning Blade Medallion
 step << Mage
     .goto Durotar,42.5,69.0
     .train 116 >>Train Frostbolt
@@ -354,13 +339,7 @@ step << Priest
     .money <0.0190
     .goto Durotar,42.4,68.8
     .train 589 >>Train Shadow Word: Pain
-step << !Shaman
-    #wotlk
-    .goto Durotar,42.9,69.1
-    .turnin 792 >>Turn in Vile Familiars
-    .accept 794 >>Accept Burning Blade Medallion
-step << !Shaman !Warlock
-    #tbc
+step << tbc !Warlock/wotlk
     .goto Durotar,42.9,69.1
     .turnin 792 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
@@ -422,7 +401,7 @@ step
 step
 	#completewith next
     .goto Durotar,42.6,67.3
-	.vendor >> Vendor trash	
+	.vendor >> Vendor trash
 step << !Shaman
     .xp 6 >> Grind to level 6
 step << Priest
@@ -738,7 +717,7 @@ step
 step << Warlock/Shaman/Warrior
     #xprate <1.5
     .goto Durotar,51.9,43.5
-.accept 831 >>Accept The Admiral's Orders 
+.accept 831 >>Accept The Admiral's Orders
 step
     #xprate <1.5
 .goto Durotar,49.9,40.3
@@ -785,7 +764,7 @@ step << Warrior/Rogue
     #xprate <1.5
 .goto Durotar,51.8,40.9
     .money <0.0010
-    .train 2580 >> Train Mining. 
+    .train 2580 >> Train Mining.
     .cast 2580 >>Cast “Find Minerals” in your spellbook
 step << Warrior/Rogue
     #xprate <1.5
@@ -861,10 +840,10 @@ step
     #xprate <1.5
     .goto Durotar,61.9,55.5,10,0
     .goto Durotar,62.3,56.3,10,0
-    .goto Durotar,61.4,56.1,10,0    
+    .goto Durotar,61.4,56.1,10,0
     .complete 825,1 --Gnomish Tools (3)
 step
-    #label Tools    
+    #label Tools
     .goto Durotar,67.2,70.0,125 >>Swim to the Island
 step
     #sticky
@@ -975,24 +954,24 @@ step
     .goto Durotar,43.8,39.1
     .xp 9+5175 >>Grind to 5175+/6500xp
 step
-    #xprate >1.499 
+    #xprate >1.499
     .goto Durotar,51.9,43.5
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 837 >>Accept Encroachment
 step << Warlock/Shaman/Warrior
-    #xprate >1.499 
+    #xprate >1.499
     .goto Durotar,51.9,43.5
-.accept 831 >>Accept The Admiral's Orders 
+.accept 831 >>Accept The Admiral's Orders
 step
     .goto Durotar,51.1,42.4
         .turnin 815 >>Turn in Break a Few Eggs
 step
-    #xprate >1.499 
+    #xprate >1.499
 .goto Durotar,49.9,40.3
     .turnin 791 >>Turn in Carry Your Weight
 step << !Shaman !Warrior
-    #xprate >1.499 
+    #xprate >1.499
     .abandon 806 >>Abandon Dark Storms
 step
     #xprate <1.5
@@ -1313,13 +1292,13 @@ step << Undead Warrior
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
 step
-    #xprate >1.499 
+    #xprate >1.499
     .goto Durotar,48.9,48.5
     >>Kill Quilboars and Scouts in the area
     .complete 837,1 --Razormane Quilboar (4)
     .complete 837,2 --Razormane Scout (4)
 step
-    #xprate >1.499 
+    #xprate >1.499
     .goto Durotar,43.8,39.1
     >>Kill Dustrunners and Battleguards in the area. Dustrunners have Rejuvenation (Heal) and Battleguards are tanky
     .complete 837,3 --Razormane Dustrunner (4)
@@ -1569,7 +1548,7 @@ step << Warrior
     .isQuestComplete 1498
     #sticky
     #completewith next
-.goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge    
+.goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step
 >>Start killing crocodiles for the Amulet
     >> Kill them while heading south. We're doing your totem quest next << Troll Shaman/Orc Shaman
@@ -1609,7 +1588,7 @@ step << !Warrior
     .goto Durotar,54.4,42.2
 .vendor >>Buy 6 slot bags from Jark until you can't equip new bags
 step
-    #xprate >1.499 
+    #xprate >1.499
     .goto Durotar,51.9,43.5
     .turnin 837 >>Turn in Encroachment
 step
@@ -1627,7 +1606,7 @@ step
 step
     #sticky
     #label Collars2
-   .goto Durotar,51.8,10.0 
+   .goto Durotar,51.8,10.0
 >>Kill Burning Blade mobs in Skull Rock for Searing Collars and until Lieutenant's Insignia drops
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)

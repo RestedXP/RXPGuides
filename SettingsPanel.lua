@@ -150,19 +150,6 @@ function addon.settings.CreateOptionsPanel()
     button.tooltip =
         "Allows the guide to automatically fly you to your destination"
 
-    button = CreateFrame("CheckButton", "$parentArrow", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        local checkbox = self:GetChecked()
-        addon.arrowFrame:SetShown(addon.currentGuide and checkbox)
-        RXPData.disableArrow = not checkbox
-    end)
-    button:SetChecked(not RXPData.disableArrow)
-    button.Text:SetText("Enable waypoint arrow")
-    button.tooltip = "Show/Hide the waypoint arrow"
 
     button = CreateFrame("CheckButton", "$parentMiniMapPin", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
@@ -203,6 +190,33 @@ function addon.settings.CreateOptionsPanel()
     button.Text:SetText("Auto load starting zone guides")
     button.tooltip =
         "Automatically picks a suitable guide whenever you log in for the first time on a character"
+    --
+    button = CreateFrame("CheckButton", "$parentArrow", addon.RXPOptions,
+    "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    index = index + 1
+    button:SetScript("PostClick", function(self)
+        local checkbox = self:GetChecked()
+        addon.updateMap = true
+        RXPCData.disableArrow = checkbox
+    end)
+    button:SetChecked(RXPCData.disableArrow)
+    button.Text:SetText("Hide waypoint arrow")
+    --button.tooltip = "Show/Hide the waypoint arrow"
+    --
+    button = CreateFrame("CheckButton", "$parentActiveItem", addon.RXPOptions,
+    "ChatConfigCheckButtonTemplate");
+    table.insert(options, button)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    index = index + 1
+    button:SetScript("PostClick", function(self)
+        RXPCData.disableItemWindow = self:GetChecked()
+        addon.UpdateItemFrame()
+    end)
+    button:SetChecked(RXPCData.disableItemWindow)
+    button.Text:SetText("Hide Active Item window")
+    --button.tooltip = "Show/Hide the Active Item Window"
     --
     button = CreateFrame("CheckButton", "$parentHideWindow", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");

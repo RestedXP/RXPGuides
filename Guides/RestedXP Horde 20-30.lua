@@ -2566,7 +2566,7 @@ step
     .turnin 1146 >> Turn in The Swarm Grows
     .accept 1147 >> Accept The Swarm Grows
 step
-    .xp <33,1
+    .xp >33,1
     >> Accept quests around the racetrack
 	.accept 1110 >> Accept Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
@@ -2597,6 +2597,7 @@ step
 	.complete 1175,3 --Kill Saltstone Gazer (x6)
 step
 	#label ShimmeringF
+    .isOnQuest 1110
 	>>Circle the area killing and collecting for the Shimmering Flats quests
 	.complete -1110,1 --Collect Rocket Car Parts (x30)
 	.complete -1104,1 --Collect Salty Scorpid Venom (x6)
@@ -2607,11 +2608,12 @@ step
 step
 	#sticky
 	#label partsoftheswarm
-    .isQuestTurnedIn 1147
+    .isQuestTurnedIn 1146
 	>>Grind the Silithid creatures until you get a Cracked Silithid Carapace. Click it to accept a quest.
 	.collect 5877,1,1148
 	.accept 1148 >> Accept Parts of the Swarm
 step
+    .isQuestTurnedIn 1146
     .goto Thousand Needles,67.8,85.7
 	.complete -1148,1 --Collect Silithid Heart (x1)
     .complete -1148,2 --Collect Silithid Talon (x5)
@@ -2622,6 +2624,7 @@ step
 step
 	#requires partsoftheswarm
     .turnin -1147 >> Turn in The Swarm Grows
+step
     .goto Thousand Needles,67.6,63.9
     .turnin -1110 >> Turn in Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
@@ -2713,6 +2716,11 @@ step
     .turnin 1111 >> Turn in Wharfmaster Dizzywig
     .accept 1112 >> Accept Parts for Kravel
 step << Warrior
+    .isOnQuest 874
+    .goto The Barrens,65.8,43.8
+    .turnin 874 >>Turn in Mahren Skyseer
+    .accept 873 >>Accept Isha Awak
+step << Warrior
     .isOnQuest 873
 	.goto The Barrens,65.6,47.1,40,0
     .goto The Barrens,63.3,54.2,40,0
@@ -2736,11 +2744,16 @@ step << Warrior
     .goto The Barrens,68.6,48.7
     .complete 1719,1 --Step on the grate to begin the Affray (1)
     .complete 1719,2 --Big Will (1)
-step << Warrior
+step << Warrior tbc
     .isOnQuest 1719
     .goto The Barrens,68.6,49.2
     .turnin 1719 >>Turn in The Affray
     .accept 1791 >>Accept The Windwatcher
+step << Warrior wotlk
+    #xprate >1.499 
+    .isOnQuest 1719
+    .goto The Barrens,68.6,49.2
+    .turnin 1719 >>Turn in The Affray
 step << Warrior
     .isOnQuest 873
     .goto The Barrens,65.8,43.8
@@ -2748,63 +2761,152 @@ step << Warrior
 step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
+    .xp <33,1
+    #completewith next
+	+Go to the dock. Take the boat to Stranglethorn Vale
+   .goto The Barrens,63.7,38.6,15,0
+	.goto The Barrens,63.7,38.6
+step
+    .xp <33,1
+	.maxlevel 36
+	.zone Stranglethorn Vale >>Arrive in Stranglethorn Vale
+step << Shaman
+    .xp <33,1
+	.maxlevel 36
+	#label Protection
+	#completewith BigStick
+ .goto Stranglethorn Vale,28.3,75.5
+    .vendor >> Go to the vendor and buy Staff of Protection or Big Stick if it's in the shop.
+    .collect 12252,1
+step << Shaman
+    .xp <33,1
+	.maxlevel 36
+	#label BigStick
+	#completewith Protection 
+ .goto Stranglethorn Vale,28.3,75.5
+    .collect 12251,1
+step
+    .xp <33,1
+	.isQuestTurnedIn 1178
+    .goto Stranglethorn Vale,26.4,73.5
+    .turnin 1180 >> Turn in Goblin Sponsorship
+    .accept 1181 >> Accept Goblin Sponsorship
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+	>> Head to the second level of buildings
+    .goto Stranglethorn Vale,28.3,77.6
+    .accept 575 >> Accept Supply and Demand
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+	>> Head into the inn, this quest is on the bottom floor
+    .goto Stranglethorn Vale,27.0,77.2
+    .accept 605 >> Accept Singing Blue Shards
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+	>> These quests are on the top floors of the inn
+	.goto Stranglethorn Vale,27.1,77.3
+    .accept 189 >> Accept Bloodscalp Ears
+    .accept 213 >> Accept Hostile Takeover
+    .accept 201 >> Accept Investigate the Camp
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+    .goto Stranglethorn Vale,27.2,76.9
+    .turnin 1181 >> Turn in Goblin Sponsorship
+    .accept 1182 >> Accept Goblin Sponsorship
+step << Rogue
+    .xp <33,1
+	.isQuestTurnedIn 1180
+	#completewith next
+    .goto Stranglethorn Vale,26.8,77.2
+	.trainer >> Go and train your class spells
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+    .goto Stranglethorn Vale,26.9,77.0
+    .fp Booty Bay >> Get the Booty Bay flight path
+step
+    .xp <33,1
+    #completewith next
+	+Go to the dock. Take the boat back to Ratchet.
+   .goto The Barrens,63.7,38.6,15,0
+	.goto The Barrens,63.7,38.6
+step
+    .xp <33,1
+	.maxlevel 36
+	.zone The Barrens >>Arrive in Ratchet
+step
+    .xp >33,1
     .goto Ashenvale,73.2,61.5,-1
     .goto The Barrens,63.1,37.1,-1
     .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,32.4,35.8
     .trainer >> Go and train your class spells
 step << Shaman
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,38.6,36.0
     .trainer >> Go and train your class spells
 step << Hunter
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,66.1,18.5
     .trainer >> Go and train your class spells
 step << Hunter
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,66.3,14.8
     .trainer >> Go and train your pet spells
 step << Rogue
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,44.0,54.6
     .trainer >> Go and train your class spells
 step << Warlock
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,48.0,46.0
     .trainer >> Go and train your class spells
 step << Warlock
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,47.5,46.7
     .vendor >> Buy your pet books
 	.collect 16368,1
 step << Mage
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,38.8,85.6
     .trainer >> Go and train your class spells
 step << Priest
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,35.6,87.8
     .trainer >> Go and train your class spells
 step
+    .xp >33,1
     .isOnQuest 1145
     .goto Orgrimmar,75.2,34.2
     .turnin 1145 >> Turn in The Swarm Grows
     .accept 1146 >> Accept The Swarm Grows
-step << !Warrior !Shaman
+step
 	#completewith next
-    #level 33
+    .xp >33,1
     .goto Orgrimmar,54.1,68.4
     .home >>Set your Hearthstone to Valley of Strength
 step << Orc !Warlock tbc
@@ -2847,22 +2949,6 @@ step << Shaman
     >>Look in the water for Isha Awak (Red Threshadon). Kill and loot it for its heart
     .complete 873,1 --Heart of Isha Awak (1)
 	.unitscan Isha Awak
-step << Warrior
-    .isOnQuest 1718
-    >>Swim to the island
-    .goto The Barrens,68.6,49.2
-    .turnin 1718 >>Turn in The Islander
-    .accept 1719 >>Accept The Affray
-step << Warrior
-    .isOnQuest 1719
-    .goto The Barrens,68.6,48.7
-    .complete 1719,1 --Step on the grate to begin the Affray (1)
-    .complete 1719,2 --Big Will (1)
-step << Warrior
-    .isOnQuest 1719
-    .goto The Barrens,68.6,49.2
-    .turnin 1719 >>Turn in The Affray
-    .accept 1791 >>Accept The Windwatcher
 step << Shaman
     .isOnQuest 873
     .goto The Barrens,65.8,43.8

@@ -352,7 +352,7 @@ s["PALADIN"] = {
         19740 -- Blessing of might
     },
     [6] = {
-        498, -- Divine protections
+        498, -- Divine protection
         639, -- Holy Light R2
         3127 -- parry
     },
@@ -376,7 +376,8 @@ s["PALADIN"] = {
         20162 -- Seal of the crusader r2
     },
     [16] = {
-        7294 -- Retribution Aura
+        7294, -- Retribution Aura
+        62124, --Hand of reckoning
     },
     [18] = {
         5573, -- Divine Protection R2
@@ -386,12 +387,14 @@ s["PALADIN"] = {
         26573, -- Consecration
         19750, -- Flash of Light
         879, -- Exorcism
-        643 -- Devotion Aura R3
+        --643 -- Devotion Aura R3
+        34769, -- summon warhorse (belf)
+        13819, -- summon warhorse (alliance)
     },
     [22] = {
         1026, -- Holy Light R4
         19835, -- blessing of might r3
-        20305 -- seal of teh crusader r3
+        --20305 -- seal of teh crusader r3
     },
     [24] = {
         19850, -- blessing of wisdom r2
@@ -406,17 +409,15 @@ s["PALADIN"] = {
         5614 -- exorcism r2
     },
     [30] = {
-        34769, -- summon warhorse (belf)
-        13819, -- summon warhorse (alliance)
         20116, -- consecration r2
         1042, -- holy light r5
-        10291, -- devotion aura r4
+        --10291, -- devotion aura r4
         2800, -- lay of hands r2
         20915 -- seal of command r2
     },
     [32] = {
         19836, -- blessing of might r4
-        20306 -- seal of the crusader r4
+        --20306 -- seal of the crusader r4
     },
     [34] = {
         642, -- divine shield
@@ -435,14 +436,14 @@ s["PALADIN"] = {
     [40] = {
         20922, -- consecration r3
         5589, -- hammer of justice r3
-        1032, -- devotion aura r5
+        --1032, -- devotion aura r5
         20918 -- seal of command r3
     },
     [42] = {
         4987, -- cleanse
         19837, --  blessing of might r5
         19941, -- flash of light r4
-        20307 -- seal of the crusader r5
+        --20307 -- seal of the crusader r5
     },
     [44] = {
         24275, -- hammer of wrath
@@ -491,9 +492,6 @@ s["PALADIN"] = {
         25290, -- blessing of wisdom r6
         24239, -- hammer of wrath r3
         20920 -- seal of command r5
-    },
-    [61] = {
-        27158 -- seal of the crusader
     },
     [62] = {
         32223, -- crusader aura

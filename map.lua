@@ -39,7 +39,7 @@ af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
 
 function addon.UpdateArrow(self)
 
-    if RXPData.disableArrow or not self then return end
+    if RXPCData.disableArrow or not self then return end
     local element = self.element
     if element then
         local x, y, instance = HBD:GetPlayerWorldPosition()
@@ -497,6 +497,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                             zone = element.zone,
                             parent = element.parent,
                             wpHash = element.wpHash,
+                            overrideCorpse = not element.textOnly,
                         })
                     end
                 end
@@ -740,7 +741,7 @@ local function updateArrow()
                 (element.parent.completed or element.parent.skip)) and
             not (element.text and (element.completed or isComplete) and
                 not isComplete)) then
-            af:SetShown(not RXPData.disableArrow and not addon.hideArrow)
+            af:SetShown(not RXPCData.disableArrow and not addon.hideArrow)
             af.dist = 0
             af.orientation = 0
             af.element = element
@@ -751,9 +752,13 @@ local function updateArrow()
 
     if UnitIsGhost("player") and --Meet at the grave and the follow-up quest:
         not (addon.QuestAutoTurnIn(3912) or addon.QuestAutoAccept(3913)) then
+        local skip
+        for i,element in ipairs(addon.activeWaypoints) do
+            skip = skip or element.overrideCorpse
+        end
         local zone = HBD:GetPlayerZone()
         local corpse = C_DeathInfo.GetCorpseMapPosition(zone)
-        if corpse and corpse.x then
+        if not skip and corpse and corpse.x then
             corpseWP.wx, corpseWP.wy, corpseWP.instance =
                              HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)
             ProcessWaypoint(corpseWP)
