@@ -414,9 +414,11 @@ step << Warlock
 step << Warrior/Rogue
     .goto Eversong Woods,48.6,47.6
     .train 3273 >>Train First Aid
-step
+step !BloodElf
     .goto Eversong Woods,48.2,47.7
     .home >> Go back downstairs. Set your Hearthstone to Falconwing Square
+step
+    .goto Eversong Woods,48.2,47.7
     .vendor >> Buy as much level 5 drink as you can afford << Mage/Warlock/Priest
 step
     #completewith next
