@@ -97,8 +97,7 @@ function addon.tracker:UpgradeDB()
         if not levelDB[l].timestamp.started and levelDB[l - 1] and
             levelDB[l - 1].timestamp.finished then
 
-            print(addon.comms.BuildPrint("Repairing level %d started timestamp",
-                                         l))
+            addon.comms.PrettyPrint("Repairing level %d started timestamp", l)
 
             levelDB[l].timestamp.started = levelDB[l - 1].timestamp.finished + 1
         end
@@ -107,8 +106,7 @@ function addon.tracker:UpgradeDB()
         if l < addon.tracker.playerLevel and not levelDB[l].timestamp.finished and
             levelDB[l + 1] and levelDB[l + 1].timestamp.started then
 
-            print(addon.comms.BuildPrint(
-                      "Repairing level %d finished timestamp", l))
+            addon.comms.PrettyPrint("Repairing level %d finished timestamp", l)
 
             levelDB[l].timestamp.finished = levelDB[l + 1].timestamp.started - 1
         end
@@ -692,7 +690,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     local report = self.state.levelReportData
 
     if not report then
-        print(addon.comms.BuildPrint("Unable to retrieve report for %s", target))
+        addon.comms.PrettyPrint("Unable to retrieve report for %s", target)
         -- TODO debugging, workaround target != playerName disabling
         self.state.levelReportData = addon.tracker.reportData[selectedLevel]
         self.state.levelReportData.playerLevel = addon.tracker.playerLevel
@@ -1049,12 +1047,12 @@ end
 function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
     if prefix ~= self._commPrefix or distribution ~= 'WHISPER' then return end -- or sender == playerName then return end
     local d = addon.settings.db.profile.debug
-    local bp = addon.comms.BuildPrint
+    local pp = addon.comms.PrettyPrint
     if UnitInBattleground("player") ~= nil then return end
 
     local status, obj = self:Deserialize(data)
 
-    if d then print(bp("Deserialize:status %s", tostring(status))) end
+    if d then pp("Deserialize:status %s", tostring(status)) end
     if not status or not obj.command then return end
 
     if obj.command == 'LEVEL_REPORT_REQ' then
@@ -1066,31 +1064,29 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
             playerLevel = addon.tracker.playerLevel
         })
 
-        if d then
-            print(bp("Responding to LEVEL_REPORT_REQ, from %s", sender))
-        end
+        if d then pp("Responding to LEVEL_REPORT_REQ, from %s", sender) end
         self:SendCommMessage(self._commPrefix, sz, "WHISPER", sender)
     elseif obj.command == 'LEVEL_REPORT_RESP' then
         if sender ~= obj.playerName then
             if d then
-                print(bp("Invalid LEVEL_REPORT_RESP, %s != %s", sender,
-                         obj.playerName))
+                pp("Invalid LEVEL_REPORT_RESP, %s != %s", sender, obj.playerName)
                 return
             end
         end
         if d then
-            print(bp("Caching LEVEL_REPORT_RESP, from %s at %s", sender,
-                     obj.compileTime))
+            pp("Caching LEVEL_REPORT_RESP, from %s at %s", sender,
+               obj.compileTime)
         end
 
         -- TODO purge cache on event loop
         -- TODO use cache
+
         self.state.otherReports[sender] = obj
         self:CreateGui(_G.InspectFrame, sender)
         self:UpdateReport(obj.playerLevel, sender, _G.InspectFrame)
         self:ShowReport(_G.InspectFrame)
     else
-        if d then print(bp("Unknown command (%s)", obj.command)) end
+        if d then pp("Unknown command (%s)", obj.command) end
     end
 end
 
@@ -1102,7 +1098,7 @@ function addon.tracker:INSPECT_READY(_, inspecteeGUID)
         self.state.otherReports[inspectedName].compileTime < 30 then
 
         if addon.settings.db.profile.debug then
-            addon.comms.BuildPrint(
+            addon.comms.PrettyPrint(
                 "Displaying cached data for %s from %.2f seconds ago",
                 inspectedName,
                 GetTime() - self.state.otherReports[inspectedName].compileTime)
