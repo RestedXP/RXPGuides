@@ -2635,6 +2635,7 @@ function addon.functions.cast(self, ...)
         if not text or text == "" then
             element.textOnly = true
             element.dynamicText = true
+            element.text = nil
         elseif icon then
             element.icon = "|T" .. icon .. ":0|t"
             element.tooltipText = element.icon .. element.text
