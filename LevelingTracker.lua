@@ -1093,7 +1093,7 @@ function addon.tracker:INSPECT_READY(_, inspecteeGUID)
     if self.state.otherReports[inspectedName] and
         self.state.otherReports[inspectedName].compileTime and GetServerTime() -
         self.state.otherReports[inspectedName].compileTime < 30 then
-        print(self.state.otherReports[inspectedName].compileTime)
+
         if addon.settings.db.profile.debug then
             addon.comms.PrettyPrint(
                 "Displaying cached data for %s from %.2f seconds ago",
