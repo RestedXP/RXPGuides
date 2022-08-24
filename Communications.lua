@@ -354,10 +354,10 @@ function addon.comms:OpenBugReport()
                      position and position.x * 100 or -1,
                      position and position.y * 100 or -1)
 
-    local guide = fmt("%s (v%d)",
-                      addon.currentGuide and addon.currentGuide.key or 'nil',
-                      addon.currentGuide.name and addon.currentGuide.version or
-                          'N/A')
+    local guide = fmt("%s (%s)",
+                      addon.currentGuide and addon.currentGuide.key or
+                          'Inactive', addon.currentGuide.name and
+                          addon.currentGuide.version or 'N/A')
 
     local stepData = ""
     if addon.currentGuide and addon.currentGuide.steps and RXPCData.currentStep then
@@ -365,11 +365,29 @@ function addon.comms:OpenBugReport()
         if type(step) == "table" then
             if step.elements then
                 for s, e in pairs(step.elements) do
-                    stepData = fmt(
-                                   "%s\nStep %d:%d\n  title = %s\n  text = %s\n  tag = %s\n  questId = %s\n",
-                                   stepData, RXPCData.currentStep, s,
-                                   e.title or '', e.text or '', e.tag or '',
-                                   e.questId or '')
+                    stepData = fmt("%s\nStep %d:%d", stepData,
+                                   RXPCData.currentStep, s)
+                    if e.title then
+                        stepData = fmt("%s\n  title = %s", stepData, e.title)
+                    end
+
+                    if e.text then
+                        stepData = fmt("%s\n  text = %s", stepData, e.text)
+                    end
+
+                    if e.tag then
+                        stepData = fmt("%s\n  tag = %s", stepData, e.tag)
+                    end
+
+                    if e.questId then
+                        stepData =
+                            fmt("%s\n  questId = %s", stepData, e.questId)
+                    end
+
+                    if e.x and e.y then
+                        stepData = fmt("%s\n  goto = %.2f / %.2f", stepData,
+                                       e.x, e.y)
+                    end
                 end
             else
                 stepData = fmt("%s\nUnknown table", stepData, step)
@@ -394,13 +412,14 @@ Guide: %s
 Addon: %s
 XP Rate: %.1f
 Locale: %s
-Realm: %s
+Client Version: %s
 
 Current Step data
 %s
 ```
 ]], character or "Error", zone or "Error", guide or "Error", addon.release,
-                        RXPCData.xprate, GetLocale(), GetRealmName(), stepData)
+                        RXPCData.xprate, GetLocale(), select(1, GetBuildInfo()),
+                        stepData)
 
     local AceGUI = LibStub("AceGUI-3.0")
     local f = AceGUI:Create("Frame")
