@@ -1660,9 +1660,19 @@ step << BloodElf !Hunter
     .goto Ghostlands,46.3,28.4
     .accept 9138 >> Accept Suncrown Village
 step << !BloodElf
+    >> Speak to High Executor Mavren
+    .turnin 9327 >> Turn in The Forsaken
     .goto Ghostlands,44.8,32.5
-    .turnin 9329 >> Turn in The Forsaken
     .accept 9758 >> Accept Return to Arcanist Vandril
+    >> Then speak to Quartermaster Lymel and Rathis Tomber
+    .accept 9130 >> Accept Goods from Silvermoon City
+    .goto Ghostlands,47.3,28.9
+    .accept 9152 >> Accept Tomber's Supplies
+    .goto Ghostlands,47.0,28.5
+    >> Lastly talk to Arcanist Vandril again
+    .turnin 9758 >> Turn in Return to Arcanist Vandril
+    .goto Ghostlands,46.3,28.4
+    .accept 9138 >> Accept Suncrown Village
 step << Warlock
     #completewith next
     .goto Ghostlands,48.9,32.4
