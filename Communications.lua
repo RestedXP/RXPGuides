@@ -49,6 +49,14 @@ function addon.comms:Setup()
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     self:RegisterComm(self._commPrefix)
+
+    -- Update Feedback Report into GuideWindow context menu, load order workaround
+    for i, m in ipairs(addon.RXPFrame.bottomMenu) do
+        if m.text == "Give Feedback for step" then
+            addon.RXPFrame.bottomMenu[i].func = addon.comms.OpenBugReport
+            break
+        end
+    end
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
@@ -343,7 +351,12 @@ function addon.comms.PrettyPrint(msg, ...)
               fmt(msg, ...)))
 end
 
-function addon.comms:OpenBugReport()
+function addon.comms.OpenBugReport(stepNumber)
+    -- Came from dropdown menu
+    if type(stepNumber) == "table" and stepNumber.arg1 then
+        stepNumber = stepNumber.arg1
+    end
+
     local character = fmt("%s / %s / level %d (%.2f%%)", UnitRace("player"),
                           select(1, UnitClass("player")), UnitLevel("player"),
                           UnitXP("player") / UnitXPMax("player") * 100)
@@ -359,14 +372,14 @@ function addon.comms:OpenBugReport()
                           'Inactive', addon.currentGuide.name and
                           addon.currentGuide.version or 'N/A')
 
+    stepNumber = stepNumber or RXPCData.currentStep
     local stepData = ""
-    if addon.currentGuide and addon.currentGuide.steps and RXPCData.currentStep then
-        local step = addon.currentGuide.steps[RXPCData.currentStep]
+    if addon.currentGuide and addon.currentGuide.steps and stepNumber then
+        local step = addon.currentGuide.steps[stepNumber]
         if type(step) == "table" then
             if step.elements then
                 for s, e in pairs(step.elements) do
-                    stepData = fmt("%s\nStep %d:%d", stepData,
-                                   RXPCData.currentStep, s)
+                    stepData = fmt("%s\nStep %d:%d", stepData, stepNumber, s)
                     if e.title then
                         stepData = fmt("%s\n  title = %s", stepData, e.title)
                     end
