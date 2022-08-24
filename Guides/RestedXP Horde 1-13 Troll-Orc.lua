@@ -1495,9 +1495,11 @@ step
     .goto Durotar,46.4,22.9
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines
-step
-    .goto Durotar,41.5,18.6 << tbc
-    .goto Durotar,40.8,16.3 << wotlk
+step << wotlk
+    .goto Durotar,40.8,16.3
+    .accept 812 >>Accept Need for a Cure
+step << tbc
+    .goto Durotar,41.5,18.6
     .accept 812 >>Accept Need for a Cure
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
@@ -1527,6 +1529,7 @@ step
     >> Head into the Cleft of Shadow
     .accept 813 >>Accept Finding the Antidote
 step
+    .isOnQuest 812
     #completewith next
     >> Abandon Need for a Cure. This will remove the timer on the quest but still allow you to still do it.
     .abandon 812 >>Abandon Need for a Cure
@@ -1680,9 +1683,12 @@ step
     .isOnQuest 832
     .goto Orgrimmar,49.4,50.5
     .turnin 832 >>Turn in Burning Shadows
-step
-    .goto Durotar,41.6,18.7 << tbc
-    .goto Durotar,40.8,16.3 << wotlk
+step << tbc
+    .goto Durotar,41.6,18.7
+    >>You are still able to turn in this quest even if it shows 'missing pre-req'
+    .turnin 812 >>Turn in Need for a Cure
+step << wotlk
+    .goto Durotar,40.8,16.3
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step
