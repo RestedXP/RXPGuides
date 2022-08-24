@@ -81,8 +81,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
                               level, addon.tracker:PrettyPrintTime(s))
                     announceLevelUp(msg)
                 elseif addon.release == 'Development' then
-                    print(self.BuildPrint("Invalid .started or .finished %d",
-                                          level))
+                    self.PrettyPrint("Invalid .started or .finished %d", level)
                 end
             end)
         end
@@ -181,7 +180,7 @@ function addon.comms:IsNewRelease(theirRelease)
     if theirRelease == 'Development' then
         return false
     elseif addon.release == 'Development' then
-        print(self.BuildPrint("IsNewRelease:theirRelease = %s", theirRelease))
+        self.PrettyPrint("IsNewRelease:theirRelease = %s", theirRelease)
         return false
     end
 
@@ -226,8 +225,8 @@ function addon.comms:HandleAnnounce(data)
 
             self.state.updateFound.addon = true
 
-            print(self.BuildPrint("There's a new addon version (%s) available",
-                                  data.addon.release))
+            self.PrettyPrint("There's a new addon version (%s) available",
+                             data.addon.release)
         end
 
         if not self.state.updateFound.guide and addon.currentGuide and
@@ -237,8 +236,8 @@ function addon.comms:HandleAnnounce(data)
 
             self.state.updateFound.guide = true
 
-            print(self.BuildPrint("There's a new version (%s) available for %s",
-                                  data.guide.version, data.guide.name))
+            self.PrettyPrint("There's a new version (%s) available for %s",
+                             data.guide.version, data.guide.name)
         end
     end
 end
@@ -338,8 +337,10 @@ function addon.comms.BuildNotification(msg, ...)
     return fmt("{rt3} %s: %s", addonName, fmt(msg, ...))
 end
 
-function addon.comms.BuildPrint(msg, ...)
-    return fmt("%s: %s", addonName, fmt(msg, ...))
+function addon.comms.PrettyPrint(msg, ...)
+    print(fmt("%s%s: %s", addonName,
+              addon.settings.db.profile.debug and ' (Debug)' or '',
+              fmt(msg, ...)))
 end
 
 function addon.comms:OpenBugReport()

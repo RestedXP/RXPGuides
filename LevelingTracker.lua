@@ -3,21 +3,22 @@ local _, addon = ...
 local fmt, smatch, strsub, tinsert, mrand = string.format, string.match,
                                             string.sub, tinsert, math.random
 
-local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime = UnitLevel,
-                                                                 GetRealZoneText,
-                                                                 IsInGroup,
-                                                                 tonumber,
-                                                                 GetTime
+local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime =
+    UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime
 local _G = _G
 local AceGUI = LibStub("AceGUI-3.0")
 
-addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0")
+addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0",
+                                "AceComm-3.0", "AceSerializer-3.0")
 
 addon.tracker.playerLevel = UnitLevel("player")
 addon.tracker.maxLevel = GetMaxPlayerLevel()
-addon.tracker.state = {}
+addon.tracker.state = {otherReports = {}}
 addon.tracker.reportData = {}
+addon.tracker.ui = {}
+addon.tracker._commPrefix = "RXPLTComms"
 
+local playerName = _G.UnitName("player")
 -- Silence our /played yellow text
 local ReportPlayedTimeToChat = false
 local hookedChatFrame_DisplayTimePlayed = ChatFrame_DisplayTimePlayed
@@ -47,12 +48,18 @@ function addon.tracker:SetupTracker()
     addon.tracker:RegisterEvent("PLAYER_DEAD")
     addon.tracker:RegisterEvent("PLAYER_ENTERING_WORLD")
 
+    if addon.settings.db.profile.enableLevelingReportInspections and
+        addon.settings.db.profile.enableBetaFeatures then
+        addon.tracker:RegisterEvent("INSPECT_READY")
+        addon.tracker:RegisterComm(addon.tracker._commPrefix)
+    end
+
     addon.tracker:UpgradeDB()
     addon.tracker:GenerateDBLevel(addon.tracker.playerLevel)
 
     addon.tracker:CompileData()
 
-    addon.tracker:CreateGui()
+    addon.tracker:CreateGui(_G.CharacterFrame, playerName)
 
     if addon.settings.db.profile.enablelevelSplits then
         addon.tracker:CreateLevelSplits()
@@ -87,8 +94,7 @@ function addon.tracker:UpgradeDB()
         if not levelDB[l].timestamp.started and levelDB[l - 1] and
             levelDB[l - 1].timestamp.finished then
 
-            print(addon.comms.BuildPrint("Repairing level %d started timestamp",
-                                         l))
+            addon.comms.PrettyPrint("Repairing level %d started timestamp", l)
 
             levelDB[l].timestamp.started = levelDB[l - 1].timestamp.finished + 1
         end
@@ -97,8 +103,7 @@ function addon.tracker:UpgradeDB()
         if l < addon.tracker.playerLevel and not levelDB[l].timestamp.finished and
             levelDB[l + 1] and levelDB[l + 1].timestamp.started then
 
-            print(addon.comms.BuildPrint(
-                      "Repairing level %d finished timestamp", l))
+            addon.comms.PrettyPrint("Repairing level %d finished timestamp", l)
 
             levelDB[l].timestamp.finished = levelDB[l + 1].timestamp.started - 1
         end
@@ -179,9 +184,11 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
         -- Build data after processing level up
         addon.tracker.reportData[data.level - 1] =
             addon.tracker:CompileLevelData(data.level - 1)
-        addon.tracker.ui.levelDropdown:SetList(addon.tracker
-                                                   .BuildDropdownLevels())
-        addon.tracker.ui.levelDropdown:SetValue(data.level)
+        addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetList(
+            addon.tracker.BuildDropdownLevels(addon.tracker.db.profile["levels"],
+                                              data.level))
+        addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetValue(
+            data.level)
 
         addon.tracker:UpdateLevelSplits("full")
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
@@ -257,12 +264,12 @@ function addon.tracker:PLAYER_ENTERING_WORLD()
     RequestTimePlayed()
 end
 
-function addon.tracker.BuildDropdownLevels()
+function addon.tracker.BuildDropdownLevels(levels, playerLevel)
     local dropdownLevels = {}
     local sortOrder = {}
 
-    for level, _ in pairs(addon.tracker.db.profile["levels"]) do
-        if level > addon.tracker.playerLevel then break end
+    for level, _ in pairs(levels) do
+        if level > playerLevel then break end
 
         if level == addon.tracker.maxLevel then
             dropdownLevels[level] = fmt("%d (Max)", level)
@@ -285,31 +292,23 @@ local function buildSpacer(height)
     return spacer
 end
 
-function addon.tracker:CreateGui()
-    if addon.tracker.ui then return end
+function addon.tracker:CreateGui(attachment, target)
+    if addon.tracker.ui[attachment:GetName()] then return end
 
-    local attachment = _G.CharacterFrame
     local offset = {
         x = -38,
         y = -32,
         tabsHeight = _G.CharacterFrameTab1:GetHeight()
     }
     local padding = 4
+    local levelData, playerLevel
 
-    addon.tracker.ui = AceGUI:Create("Frame")
-    local trackerUi = addon.tracker.ui
+    addon.tracker.ui[attachment:GetName()] = AceGUI:Create("Frame")
+    local trackerUi = addon.tracker.ui[attachment:GetName()]
 
     trackerUi:SetLayout("Fill")
     trackerUi:Hide()
     trackerUi:EnableResize(false)
-
-    -- Firmly attach to CharacterFrame show/hide
-    if addon.settings.db.profile.openTrackerReportOnCharOpen then
-        trackerUi.frame:SetMovable(false)
-        trackerUi.frame:SetParent(attachment)
-
-        attachment:HookScript("OnShow", function() trackerUi:Show() end)
-    end
 
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
     trackerUi:SetTitle("RestedXP Leveling Report")
@@ -325,19 +324,35 @@ function addon.tracker:CreateGui()
     trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
     trackerUi.frame:SetBackdropColor(unpack(addon.colors.background))
 
-    trackerUi:SetCallback("OnShow", function()
-        -- refresh data
-        addon.tracker:CompileData()
-        addon.tracker:UpdateReport(addon.tracker.playerLevel)
-    end)
+    if attachment:GetName() == 'CharacterFrame' then
+        -- Firmly attach to CharacterFrame show/hide
+        if addon.settings.db.profile.openTrackerReportOnCharOpen then
+            attachment:HookScript("OnShow", function()
+                trackerUi:Show()
+            end)
 
-    if addon.settings.db.profile.openTrackerReportOnCharOpen then
-        trackerUi:SetCallback("OnClose", function()
-            -- Hide tracker frame when parent hides
-            -- Prevent tracker from being open next time character is
-            trackerUi:Hide()
+            trackerUi:SetCallback("OnClose", function()
+                -- Hide tracker frame when parent hides
+                -- Prevent tracker from being open next time character is
+                trackerUi:Hide()
+            end)
+        end
+
+        trackerUi:SetCallback("OnShow", function()
+            -- refresh data
+            addon.tracker:CompileData()
+            addon.tracker:UpdateReport(addon.tracker.playerLevel, playerName,
+                                       _G.CharacterFrame)
         end)
+
+        levelData = addon.tracker.db.profile["levels"]
+        playerLevel = addon.tracker.playerLevel
+    else
+        levelData = self.state.otherReports[target].reportData
+        playerLevel = self.state.otherReports[target].playerLevel
     end
+
+    attachment:HookScript("OnHide", function() trackerUi:Hide() end)
 
     -- Make sure the window can be closed by pressing the escape button
     _G["RESTEDXP_TRACKER_SUMMARY_WINDOW"] = trackerUi.frame
@@ -348,15 +363,25 @@ function addon.tracker:CreateGui()
 
     trackerUi.levelDropdown = AceGUI:Create("Dropdown")
 
-    trackerUi.levelDropdown:SetList(addon.tracker.BuildDropdownLevels())
-    trackerUi.levelDropdown:SetValue(addon.tracker.playerLevel)
+    trackerUi.levelDropdown:SetList(self.BuildDropdownLevels(levelData,
+                                                             playerLevel))
+    trackerUi.levelDropdown:SetValue(playerLevel)
+
     trackerUi.levelDropdown:SetRelativeWidth(0.45)
 
     trackerUi.levelDropdown:SetCallback("OnValueChanged", function(_, _, key)
-        addon.tracker:UpdateReport(key)
+        addon.tracker:UpdateReport(key, target, attachment)
     end)
 
     topContainer:AddChild(trackerUi.levelDropdown)
+
+    trackerUi.target = AceGUI:Create("Label")
+
+    trackerUi.target:SetText(target)
+    trackerUi.target:SetJustifyH("CENTER")
+    trackerUi.target:SetRelativeWidth(0.55)
+
+    topContainer:AddChild(trackerUi.target)
 
     trackerUi.scrollContainer:AddChild(topContainer)
 
@@ -366,8 +391,7 @@ function addon.tracker:CreateGui()
     trackerUi.reachedContainer:SetFullWidth(true)
 
     trackerUi.reachedContainer.label = AceGUI:Create("Heading")
-    trackerUi.reachedContainer.label:SetText("Reached Level " ..
-                                                 addon.tracker.playerLevel)
+    trackerUi.reachedContainer.label:SetText("Reached Level " .. playerLevel)
     trackerUi.reachedContainer.label:SetFullWidth(true)
 
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.label)
@@ -498,9 +522,9 @@ function addon.tracker:CreateGui()
     trackerUi.scrollContainer:AddChild(trackerUi.extrasContainer)
 end
 
-function addon.tracker:ShowReport()
-    addon.tracker.ui:Show()
-    ShowUIPanel(_G.CharacterFrame)
+function addon.tracker:ShowReport(attachment)
+    addon.tracker.ui[attachment:GetName()]:Show()
+    ShowUIPanel(attachment)
 end
 
 function addon.tracker:CompileLevelData(level, d)
@@ -586,6 +610,8 @@ function addon.tracker:CompileData()
     for level, data in pairs(addon.tracker.db.profile["levels"]) do
         addon.tracker.reportData[level] = self:CompileLevelData(level, data)
     end
+
+    return addon.tracker.reportData
 end
 
 function addon.tracker:PrettyPrintTime(s)
@@ -645,12 +671,35 @@ function addon.tracker:UglyPrintTime(s)
     return formattedString
 end
 
-function addon.tracker:UpdateReport(selectedLevel)
-    local trackerUi = addon.tracker.ui
+function addon.tracker:UpdateReport(selectedLevel, target, attachment)
+    local trackerUi = addon.tracker.ui[attachment:GetName()]
+    self.state.levelReportData = nil
 
-    local report = addon.tracker.reportData[selectedLevel]
+    if target and target ~= playerName then
+        if self.state.otherReports[target] and
+            self.state.otherReports[target].reportData and
+            self.state.otherReports[target].reportData[selectedLevel] then
 
-    if selectedLevel == addon.tracker.playerLevel then
+            self.state.levelReportData =
+                self.state.otherReports[target].reportData[selectedLevel]
+            self.state.levelReportData.playerLevel =
+                self.state.otherReports[target].playerLevel
+
+        end
+    else
+        self.state.levelReportData = addon.tracker.reportData[selectedLevel]
+        self.state.levelReportData.playerLevel = addon.tracker.playerLevel
+    end
+
+    local report = self.state.levelReportData
+
+    if not report then
+        addon.comms.PrettyPrint("Unable to retrieve report for %s", target)
+        return
+    end
+
+    if selectedLevel == self.state.levelReportData.playerLevel then
+        -- TODO inspect frame, ignore active timer
         local secondsSinceLogin = difftime(time(),
                                            addon.tracker.state.login.time)
 
@@ -994,4 +1043,71 @@ function addon.tracker:UpdateLevelSplits(kind)
     if addon.tracker.playerLevel == addon.tracker.maxLevel and kind == "full" then
         addon.tracker.levelSplits:SetScript("OnUpdate", nil)
     end
+end
+
+function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
+    if prefix ~= self._commPrefix or distribution ~= 'WHISPER' then return end -- or sender == playerName then return end
+    local d = addon.settings.db.profile.debug
+    local pp = addon.comms.PrettyPrint
+    if UnitInBattleground("player") ~= nil then return end
+
+    local status, obj = self:Deserialize(data)
+
+    if d then pp("Deserialize:status %s", tostring(status)) end
+    if not status or not obj.command then return end
+
+    if obj.command == 'LEVEL_REPORT_REQ' then
+        local sz = self:Serialize({
+            command = 'LEVEL_REPORT_RESP',
+            playerName = playerName,
+            reportData = self:CompileData(),
+            compileTime = GetServerTime(),
+            playerLevel = addon.tracker.playerLevel
+        })
+
+        if d then pp("Responding to LEVEL_REPORT_REQ, from %s", sender) end
+        self:SendCommMessage(self._commPrefix, sz, "WHISPER", sender)
+    elseif obj.command == 'LEVEL_REPORT_RESP' then
+        if sender ~= obj.playerName then
+            if d then
+                pp("Invalid LEVEL_REPORT_RESP, %s != %s", sender, obj.playerName)
+                return
+            end
+        end
+        if d then
+            pp("Caching LEVEL_REPORT_RESP, from %s at %s", sender,
+               obj.compileTime)
+        end
+
+        self.state.otherReports[sender] = obj
+        self:CreateGui(_G.InspectFrame, sender)
+        self:UpdateReport(obj.playerLevel, sender, _G.InspectFrame)
+        self:ShowReport(_G.InspectFrame)
+    else
+        if d then pp("Unknown command (%s)", obj.command) end
+    end
+end
+
+function addon.tracker:INSPECT_READY(_, inspecteeGUID)
+    local inspectedName = select(6, GetPlayerInfoByGUID(inspecteeGUID))
+    if self.state.otherReports[inspectedName] and
+        self.state.otherReports[inspectedName].compileTime and GetServerTime() -
+        self.state.otherReports[inspectedName].compileTime < 30 then
+
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint(
+                "Displaying cached data for %s from %.2f seconds ago",
+                inspectedName, GetServerTime() -
+                    self.state.otherReports[inspectedName].compileTime)
+        end
+
+        self:CreateGui(_G.InspectFrame, inspectedName)
+        self:UpdateReport(UnitLevel(inspectedName), inspectedName,
+                          _G.InspectFrame)
+        self:ShowReport(_G.InspectFrame)
+        return
+    end
+
+    local sz = self:Serialize({command = "LEVEL_REPORT_REQ"})
+    self:SendCommMessage(self._commPrefix, sz, "WHISPER", inspectedName)
 end

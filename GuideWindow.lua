@@ -1604,7 +1604,7 @@ function RXPFrame.GenerateMenuTable()
         table.insert(menuList, {
             text = "Leveling report",
             notCheckable = 1,
-            func = function() addon.tracker:ShowReport() end
+            func = function() addon.tracker:ShowReport(_G.CharacterFrame) end
         })
     end
 
