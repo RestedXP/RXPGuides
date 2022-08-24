@@ -784,7 +784,7 @@ step << !Warlock
 step << !Warlock
     #sticky
     #completewith next
-    .deatskip >> Die to the mobs here then ressurect at the Spirit Healer
+    .deathskip >> Die to the mobs here then ressurect at the Spirit Healer
     .goto Redridge Mountains,11.2,78.4
 step << !Warlock
     #softcore
