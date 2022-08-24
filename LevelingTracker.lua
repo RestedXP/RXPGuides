@@ -3,8 +3,9 @@ local _, addon = ...
 local fmt, smatch, strsub, tinsert, mrand = string.format, string.match,
                                             string.sub, tinsert, math.random
 
-local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime =
-    UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime
+local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
+      UnitXP = UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime,
+               GetServerTime, UnitXP
 local _G = _G
 local AceGUI = LibStub("AceGUI-3.0")
 
@@ -747,7 +748,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 
     local ratio, percentage
 
-    if selectedLevel == addon.tracker.maxLevel then
+    if selectedLevel == addon.tracker.maxLevel or UnitXP("player") == 0 then
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %s", 'N/A'))
         trackerUi.teamworkContainer.data['group']:SetText(fmt("* Group: %s",
@@ -771,7 +772,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
             fmt("* Group: %.2f%%", percentage))
     end
 
-    if selectedLevel == addon.tracker.maxLevel then
+    if selectedLevel == addon.tracker.maxLevel or UnitXP("player") == 0 then
         trackerUi.sourcesContainer.data['quests']:SetText(fmt("* Quests: %s",
                                                               "N/A"))
         trackerUi.sourcesContainer.data['mobs']:SetText(
