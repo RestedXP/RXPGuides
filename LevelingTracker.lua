@@ -679,8 +679,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     local trackerUi = addon.tracker.ui[attachment:GetName()]
     self.state.levelReportData = nil
 
-    if target then -- and target ~= playerName then
-        print(fmt("UpdateReport:target(%s)", target))
+    if target and target ~= playerName then
         if self.state.otherReports[target] and
             self.state.otherReports[target].reportData and
             self.state.otherReports[target].reportData[selectedLevel] then
@@ -700,15 +699,11 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 
     if not report then
         addon.comms.PrettyPrint("Unable to retrieve report for %s", target)
-        -- TODO debugging, workaround target != playerName disabling
-        self.state.levelReportData = addon.tracker.reportData[selectedLevel]
-        self.state.levelReportData.playerLevel = addon.tracker.playerLevel
-        report = self.state.levelReportData
-        -- return
+        return
     end
 
-    -- TODO inspect frame
     if selectedLevel == self.state.levelReportData.playerLevel then
+        -- TODO inspect frame, ignore active timer
         local secondsSinceLogin = difftime(time(),
                                            addon.tracker.state.login.time)
 
@@ -1087,9 +1082,6 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
             pp("Caching LEVEL_REPORT_RESP, from %s at %s", sender,
                obj.compileTime)
         end
-
-        -- TODO purge cache on event loop
-        -- TODO use cache
 
         self.state.otherReports[sender] = obj
         self:CreateGui(_G.InspectFrame, sender)
