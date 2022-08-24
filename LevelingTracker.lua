@@ -3,11 +3,8 @@ local _, addon = ...
 local fmt, smatch, strsub, tinsert, mrand = string.format, string.match,
                                             string.sub, tinsert, math.random
 
-local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime = UnitLevel,
-                                                                 GetRealZoneText,
-                                                                 IsInGroup,
-                                                                 tonumber,
-                                                                 GetTime
+local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime =
+    UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime
 local _G = _G
 local AceGUI = LibStub("AceGUI-3.0")
 
@@ -1065,7 +1062,7 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
             command = 'LEVEL_REPORT_RESP',
             playerName = playerName,
             reportData = self:CompileData(),
-            compileTime = GetTime(),
+            compileTime = GetServerTime(),
             playerLevel = addon.tracker.playerLevel
         })
 
@@ -1094,16 +1091,15 @@ end
 
 function addon.tracker:INSPECT_READY(_, inspecteeGUID)
     local inspectedName = select(6, GetPlayerInfoByGUID(inspecteeGUID))
-
     if self.state.otherReports[inspectedName] and
-        self.state.otherReports[inspectedName].compileTime and GetTime() -
+        self.state.otherReports[inspectedName].compileTime and GetServerTime() -
         self.state.otherReports[inspectedName].compileTime < 30 then
-
+        print(self.state.otherReports[inspectedName].compileTime)
         if addon.settings.db.profile.debug then
             addon.comms.PrettyPrint(
                 "Displaying cached data for %s from %.2f seconds ago",
-                inspectedName,
-                GetTime() - self.state.otherReports[inspectedName].compileTime)
+                inspectedName, GetServerTime() -
+                    self.state.otherReports[inspectedName].compileTime)
         end
 
         self:CreateGui(_G.InspectFrame, inspectedName)
