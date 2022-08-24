@@ -899,7 +899,8 @@ function addon.tracker:CreateLevelSplits()
     f.title.text:SetPoint("CENTER", f.title, 0, 1)
 
     f.current = AceGUI:Create("Label")
-    f.current:SetFont(addon.font, 11)
+    f.current:SetFont(addon.font, addon.settings.db.profile.levelSplitsFontSize)
+    f.current:SetFullWidth(true)
     f.current.frame:SetParent(f)
     f.current.frame:SetPoint("TOPLEFT", f, "TOPLEFT", 8,
                              -(f.title:GetHeight() / 2 + 2))
@@ -911,14 +912,16 @@ function addon.tracker:CreateLevelSplits()
     end
 
     f.history = AceGUI:Create("Label")
-    f.history:SetFont(addon.font, 11)
+    f.history:SetFont(addon.font, addon.settings.db.profile.levelSplitsFontSize)
+    f.history:SetFullWidth(true)
     f.history.frame:SetParent(f)
     f.history.frame:SetPoint("TOPLEFT", f.current.frame, "BOTTOMLEFT", 0, -8)
     f.history.frame:Show()
     f.history:SetText("Level X: 00:00:00")
 
     f.total = AceGUI:Create("Label")
-    f.total:SetFont(addon.font, 11)
+    f.total:SetFont(addon.font, addon.settings.db.profile.levelSplitsFontSize)
+    f.total:SetFullWidth(true)
     f.total.frame:SetParent(f)
     f.total.frame:SetPoint("TOPLEFT", f.history.frame, "BOTTOMLEFT", 0, -8)
     f.total.frame:Show()
@@ -1027,6 +1030,19 @@ function addon.tracker:UpdateLevelSplits(kind)
         f.history:SetText(splitsString)
     end
 
+    local currentFontSize = math.floor(select(2, f.current.label:GetFont()) +
+                                           0.5)
+
+    if currentFontSize ~= addon.settings.db.profile.levelSplitsFontSize then
+        -- Font size changed, set new size before calculating width/height
+        f.current:SetFont(addon.font,
+                          addon.settings.db.profile.levelSplitsFontSize)
+        f.history:SetFont(addon.font,
+                          addon.settings.db.profile.levelSplitsFontSize)
+        f.total:SetFont(addon.font,
+                        addon.settings.db.profile.levelSplitsFontSize)
+    end
+
     local width = max(f.current.label:GetStringWidth(),
                       f.history.label:GetStringWidth(),
                       f.total.label:GetStringWidth())
@@ -1036,9 +1052,15 @@ function addon.tracker:UpdateLevelSplits(kind)
                        f.history.label:GetStringHeight() +
                        f.total.label:GetStringHeight() + 36
 
-    --- Only update width if next is wider, prevent jittering
-    f.title:SetWidth(max(f.title:GetWidth(), width))
-    f:SetSize(max(f:GetWidth(), width + 16), height)
+    if currentFontSize == addon.settings.db.profile.levelSplitsFontSize then
+        -- Font unchanged
+        -- Only update width if next is wider, prevent jittering
+        f.title:SetWidth(max(f.title:GetWidth(), width))
+        f:SetSize(max(f:GetWidth(), width + 16), height)
+    else
+        f.title:SetWidth(width)
+        f:SetSize(width + 16, height)
+    end
 
     -- Remove refresh after the first full update at max level
     if addon.tracker.playerLevel == addon.tracker.maxLevel and kind == "full" then

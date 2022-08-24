@@ -63,7 +63,8 @@ function addon.settings:InitializeSettings()
             alwaysSendBranded = true,
             checkVersions = true,
             enableLevelingReportInspections = true,
-            levelSplitsHistory = GetMaxPlayerLevel()
+            levelSplitsHistory = GetMaxPlayerLevel(),
+            levelSplitsFontSize = 11
         }
     }
 
@@ -832,7 +833,23 @@ function addon.settings.CreateExtrasOptionsPanel()
                         end,
                         disabled = not addon.settings.db.profile.enablelevelSplits,
                         hidden = isNotAdvanced(),
+                    },
+                    levelSplitsFontSize = {
+                        name = "Level Splits Font Size",
+                        type = "range",
+                        width = "normal",
+                        order = 8,
+                        min = 9,
+                        max = 17, -- Formatting gets wonky >=18
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = not addon.settings.db.profile.enablelevelSplits,
+                        hidden = isNotAdvanced(),
                     }
+
                 },
             },
             communications = {
