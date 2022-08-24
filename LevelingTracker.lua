@@ -327,9 +327,6 @@ function addon.tracker:CreateGui(attachment, target)
     if attachment:GetName() == 'CharacterFrame' then
         -- Firmly attach to CharacterFrame show/hide
         if addon.settings.db.profile.openTrackerReportOnCharOpen then
-            trackerUi.frame:SetMovable(false)
-            trackerUi.frame:SetParent(attachment)
-
             attachment:HookScript("OnShow", function()
                 trackerUi:Show()
             end)
@@ -354,6 +351,8 @@ function addon.tracker:CreateGui(attachment, target)
         levelData = self.state.otherReports[target].reportData
         playerLevel = self.state.otherReports[target].playerLevel
     end
+
+    attachment:HookScript("OnHide", function() trackerUi:Hide() end)
 
     -- Make sure the window can be closed by pressing the escape button
     _G["RESTEDXP_TRACKER_SUMMARY_WINDOW"] = trackerUi.frame
