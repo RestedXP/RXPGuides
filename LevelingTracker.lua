@@ -995,7 +995,8 @@ function addon.tracker:UpdateLevelSplits(kind)
         local data, splitsString
         local totalSeconds = 0
         -- TODO settings slider for level history, or rebuild with scroll pane
-        local oldestLevel = addon.tracker.playerLevel - 10
+        local oldestLevel = addon.tracker.playerLevel -
+                                addon.settings.db.profile.levelSplitsHistory
         local highestLevel = addon.tracker.playerLevel - 1
 
         for l = oldestLevel, highestLevel do

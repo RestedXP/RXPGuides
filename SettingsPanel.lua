@@ -63,6 +63,7 @@ function addon.settings:InitializeSettings()
             alwaysSendBranded = true,
             checkVersions = true,
             enableLevelingReportInspections = true,
+            levelSplitsHistory = GetMaxPlayerLevel()
         }
     }
 
@@ -806,7 +807,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                     enablelevelSplits = {
                         name = "Enable Level Splits",
                         type = "toggle",
-                        width = "full",
+                        width = "normal",
                         order = 6,
                         confirm = requiresReload,
                         set = function(info, value)
@@ -814,6 +815,22 @@ function addon.settings.CreateExtrasOptionsPanel()
                             _G.ReloadUI()
                         end,
                         disabled = not addon.settings.db.profile.enableTracker,
+                        hidden = isNotAdvanced(),
+                    },
+                    levelSplitsHistory = {
+                        name = "Level Splits History",
+                        desc = "Historical levels to show",
+                        type = "range",
+                        width = "normal",
+                        order = 7,
+                        min = 1,
+                        max = GetMaxPlayerLevel(),
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = not addon.settings.db.profile.enablelevelSplits,
                         hidden = isNotAdvanced(),
                     }
                 },
