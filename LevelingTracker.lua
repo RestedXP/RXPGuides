@@ -197,6 +197,13 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
 
         addon.tracker.waitingForTimePlayed = false
 
+        -- Refresh baseline time on level up
+        addon.tracker.state.login = {
+            time = time(),
+            timePlayedThisLevel = timePlayedThisLevel,
+            totalTimePlayed = totalTimePlayed
+        }
+
         -- Build data after processing level up
         addon.tracker.reportData[data.level - 1] =
             addon.tracker:CompileLevelData(data.level - 1)
