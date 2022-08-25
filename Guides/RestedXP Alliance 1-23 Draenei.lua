@@ -8,7 +8,8 @@ RXPGuides.RegisterGuide([[
 #defaultfor Draenei
 #next 11-20 Bloodmyst (Draenei)
 step
-    .goto Azuremyst Isle,82.9,44.0
+    .goto Azuremyst Isle,82.96,43.88 << tbc
+    .goto Azuremyst Isle,84.19,43.03 << wotlk    
     .accept 9279 >> Accept You Survived!
 step << Shaman
 	#completewith next
