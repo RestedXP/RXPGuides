@@ -1791,7 +1791,7 @@ step << !Hunter !NightElf !Rogue/NightElf wotlk
 step << NightElf wotlk
     .goto Darnassus,38.6,15.6
     .skill riding,1 >> Train riding skill and buy a mount
-step << Mage/Warrior/Priest/Warlock
+step << Warrior tbc/Mage/Priest/Warlock
 	.goto Teldrassil,29.2,56.7
     .train 227 >> Train Staves
 step << !Hunter !NightElf !Rogue
