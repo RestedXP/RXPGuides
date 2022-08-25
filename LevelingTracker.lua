@@ -547,6 +547,7 @@ function addon.tracker:CreateGui(attachment, target)
 end
 
 function addon.tracker:ShowReport(attachment)
+    if not attachment then return end
     addon.tracker.ui[attachment:GetName()]:Show()
     ShowUIPanel(attachment)
 end
@@ -696,7 +697,9 @@ function addon.tracker:UglyPrintTime(s)
 end
 
 function addon.tracker:UpdateReport(selectedLevel, target, attachment)
+    if not attachment then return end
     local trackerUi = addon.tracker.ui[attachment:GetName()]
+    if not trackerUi then return end
     self.state.levelReportData = nil
 
     if target and target ~= playerName then
