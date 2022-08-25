@@ -700,11 +700,20 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
                 self.state.otherReports[target].reportData[selectedLevel]
             self.state.levelReportData.playerLevel =
                 self.state.otherReports[target].playerLevel
+            self.state.levelReportData.timePlayedThisLevel = self.state
+                                                                 .otherReports[target]
+                                                                 .timePlayedThisLevel
 
         end
     else
+        local secondsSinceLogin = difftime(time(),
+                                           addon.tracker.state.login.time)
         self.state.levelReportData = addon.tracker.reportData[selectedLevel]
         self.state.levelReportData.playerLevel = addon.tracker.playerLevel
+        self.state.levelReportData.timePlayedThisLevel = secondsSinceLogin +
+                                                             addon.tracker.state
+                                                                 .login
+                                                                 .timePlayedThisLevel
     end
 
     local report = self.state.levelReportData
@@ -715,10 +724,6 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     end
 
     if selectedLevel == self.state.levelReportData.playerLevel then
-        -- TODO inspect frame, ignore active timer
-        local secondsSinceLogin = difftime(time(),
-                                           addon.tracker.state.login.time)
-
         if selectedLevel == addon.tracker.maxLevel then
             trackerUi.reachedContainer.label:SetText("Reached max level")
         else
@@ -727,9 +732,9 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
         end
 
         trackerUi.speedContainer.data:SetText(
-            addon.tracker:PrettyPrintTime(secondsSinceLogin +
-                                              addon.tracker.state.login
-                                                  .timePlayedThisLevel))
+            addon.tracker:PrettyPrintTime(self.state.levelReportData
+                                              .timePlayedThisLevel or
+                                              "Missing data"))
 
         if selectedLevel == 1 then
             trackerUi.reachedContainer.data:SetText(
@@ -1096,12 +1101,17 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
     if not status or not obj.command then return end
 
     if obj.command == 'LEVEL_REPORT_REQ' then
+        local secondsSinceLogin = difftime(time(),
+                                           addon.tracker.state.login.time)
+
         local sz = self:Serialize({
             command = 'LEVEL_REPORT_RESP',
             playerName = playerName,
             reportData = self:CompileData(),
             compileTime = GetServerTime(),
-            playerLevel = addon.tracker.playerLevel
+            playerLevel = addon.tracker.playerLevel,
+            timePlayedThisLevel = secondsSinceLogin +
+                addon.tracker.state.login.timePlayedThisLevel
         })
 
         if d then pp("Responding to LEVEL_REPORT_REQ, from %s", sender) end
