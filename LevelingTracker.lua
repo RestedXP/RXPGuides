@@ -316,6 +316,7 @@ local function buildSpacer(height)
 end
 
 function addon.tracker:CreateGui(attachment, target)
+    if not attachment then return end
     if addon.tracker.ui[attachment:GetName()] then return end
 
     local offset = {
