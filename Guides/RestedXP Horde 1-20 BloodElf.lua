@@ -1104,6 +1104,7 @@ RXPGuides.RegisterGuide([[
 #next 20-23 Stonetalon / The Barrens
 step << Orc Hunter/Troll Hunter
     .money <0.1000
+    >> Head to Farstriders' Square and talk to Ileda
     .goto Silvermoon City,91.2,38.7
     .train 202 >>Train 2h Swords
 step << Orc/Troll/Tauren
@@ -1146,6 +1147,7 @@ step << Paladin/Rogue
     .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
 step << !Paladin !Rogue
+    >> Talk to Arathel Sunforge
     .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
 step << BloodElf Hunter
@@ -1161,6 +1163,7 @@ step << BloodElf Hunter
     .goto Eversong Woods,65.3,59.5,30,0
     .goto Eversong Woods,66.2,57.5,30,0
     .complete 9486,1 --Tame an Elder Springpaw
+    .unitscan Elder springpaw
 step << BloodElf Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9486 >> Turn in Taming the Beast
@@ -1175,6 +1178,10 @@ step
     >>Kill Trolls in the area whilst doing other quests. Be careful as the Berserkers enrage at low hp
     .complete 8476,1 --Kill Amani Berserker (x5)
     .complete 8476,2 --Kill Amani Axe Thrower (x5)
+step << Orc Hunter wotlk / Troll Hunter wotlk
+    #completewith next
+    .tame 15652 >>Tame a Elder Springpaw en route to the quest area
+    .unitscan Elder Springpaw
 step
      .goto Eversong Woods,70.1,72.3
     >> Kill and loot Otembe for his hammer
@@ -1321,15 +1328,10 @@ step
     .turnin 8888 >> Turn in The Magister's Apprentice
     .accept 8889 >> Accept Deactivating the Spire
     .accept 9394 >> Accept Where's Wyllithen?
-step << Hunter
-    .tame 15652 >>Tame a level 9 Elder Springpaw (level 9 comes with Claw rank 2) << tbc
-    .tame 15652 >>Tame a Elder Springpaw << wotlk
-    .goto Eversong Woods,68.7,46.9
-    .turnin 9394 >> Turn in Where's Wyllithen?
-    .accept 8894 >> Accept Cleaning up the Grounds
-step << !Hunter
+step
     >> Speak to Groundskeeper Wyllithen
     .goto Eversong Woods,68.7,46.9
+    .tame 15652 >>Tame a level 9 Elder Springpaw (level 9 comes with Claw rank 2) << Hunter tbc
     .turnin 9394 >> Turn in Where's Wyllithen?
     .accept 8894 >> Accept Cleaning up the Grounds
 step
@@ -1367,7 +1369,7 @@ step << !BloodElf/!Warlock
     >> Grind mobs in the area
     .xp 11+8175 >> Grind to 8175+/8700xp
 step
-    >> Speak to Apprentice Loralthalis
+    >> Speak to Apprentice Loralthalis up the road
     .goto Eversong Woods,67.8,56.5
     .turnin 8889 >> Turn in Deactivating the Spire
     .accept 8890 >> Accept Word from the Spire
@@ -1425,7 +1427,7 @@ step << Druid
     .train 5229 >>Train Enrage
 step << Hunter
     #completewith next
-    .goto Silvermoon City,83.4,30.1,20 >>Enter the building
+    .goto Silvermoon City,83.4,30.1,20 >>Enter the building in the Farstriders' Square
 step << BloodElf Hunter
     .goto Silvermoon City,82.2,28.1
     .turnin 9673 >> Turn in Beast Training
@@ -1535,13 +1537,13 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,44.0,70.8
     .turnin 9255 >>Turn in Research Notes
 step << !BloodElf/!Hunter
-    .goto Eversong Woods,44.0,70.8
+    >> Talk to Magistrix Landra, then go inside the inn and talk to Ardeyn Riverwind
     .accept 9144 >>Accept Missing in the Ghostlands
-step << !BloodElf/!Hunter
-    .goto Eversong Woods,43.6,71.2
+    .goto Eversong Woods,44.0,70.8
 .accept 9258 >>Accept The Scorched Grove
+    .goto Eversong Woods,43.6,71.2
 step << !BloodElf/!Hunter
-    >> Speak to Ranger Degolien
+    >> Speak to Ranger Degolien upstairs
     .goto Eversong Woods,43.3,70.8
     .turnin 9363 >>Turn in Warning Fairbreeze Village
 step
@@ -1552,7 +1554,7 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,38.1,73.6
     .turnin 9067 >> Turn in The Party Never Ends
 step << !BloodElf/!Hunter
-    >> Speak to Larianna Riverwind
+    >> Speak to Larianna Riverwind to the west
     .goto Eversong Woods,34.1,80.0
     .turnin 9258 >> Turn in The Scorched Grove
     .accept 8473 >> Accept A Somber Task
@@ -1591,13 +1593,13 @@ step << BloodElf Mage
     >>Kill Treants in the area. Loot them for the Branch
     .goto Eversong Woods,53.9,80.6
     .collect 23553,1 --Collect Living Branch (x1)
+step << !BloodElf/!Hunter
+    .isOnQuest 8490
+    .abandon 8490 >>Abandon Powering our Defenses
 step
     >> Speak with Courier Dawnstrider
     .goto Eversong Woods,49.0,89.0
     .turnin 9144 >> Turn in Missing in the Ghostlands
-step << !BloodElf/!Hunter
-    .isOnQuest 8490
-    .abandon 8490 >>Abandon Powering our Defenses
 step
     >> Speak with Apothecary Thedra
     .goto Eversong Woods,49.0,89.2
@@ -1646,30 +1648,25 @@ step << !BloodElf/!Hunter
     .goto Ghostlands,45.5,30.5
     .fp Tranquillien >> Get the Tranquillien flight path
 step << BloodElf !Hunter
-    >> Speak to High Executor Mavren
+    >> Speak to High Executor Mavren, then run outside and speak to Quartermaster Lymel and Rathis Tomber. Lastly talk to Arcanist Vandril again
     .turnin 9327 >> Turn in The Forsaken
     .goto Ghostlands,44.8,32.5
     .accept 9758 >> Accept Return to Arcanist Vandril
-    >> Then speak to Quartermaster Lymel and Rathis Tomber
     .accept 9130 >> Accept Goods from Silvermoon City
     .goto Ghostlands,47.3,28.9
     .accept 9152 >> Accept Tomber's Supplies
     .goto Ghostlands,47.0,28.5
-    >> Lastly talk to Arcanist Vandril again
     .turnin 9758 >> Turn in Return to Arcanist Vandril
     .goto Ghostlands,46.3,28.4
     .accept 9138 >> Accept Suncrown Village
 step << !BloodElf
-    >> Speak to High Executor Mavren
-    .turnin 9327 >> Turn in The Forsaken
+    >> Speak to High Executor Mavren, then run outside and speak to Quartermaster Lymel and Rathis Tomber. Lastly talk to Arcanist Vandril again
+    .turnin 9329 >> Turn in The Forsaken
     .goto Ghostlands,44.8,32.5
     .accept 9758 >> Accept Return to Arcanist Vandril
-    >> Then speak to Quartermaster Lymel and Rathis Tomber
-    .accept 9130 >> Accept Goods from Silvermoon City
     .goto Ghostlands,47.3,28.9
     .accept 9152 >> Accept Tomber's Supplies
     .goto Ghostlands,47.0,28.5
-    >> Lastly talk to Arcanist Vandril again
     .turnin 9758 >> Turn in Return to Arcanist Vandril
     .goto Ghostlands,46.3,28.4
     .accept 9138 >> Accept Suncrown Village
@@ -1724,6 +1721,7 @@ step << Paladin
     .complete 9678,1 --Undergo the First Trial
 step
      .goto Ghostlands,61.3,11.9
+    >> Kill Nerubis enemies. Try to end on the eastern side of the area
     .complete 9138,1 --Kill Nerubis Guard (x10)
 step
     #label Nerubis
@@ -1784,7 +1782,7 @@ step
     .goto Ghostlands,70.6,22.0
     .complete 9157,1 --Collect Wavefront Medallion (x8)
 step
-    #xprate <1.5
+    #xprate >1.4
     #completewith next
     .isOnQuest 9274
     + If there is any competition for Apparitions or you got an awkward spawn where you'll need to clear the zone to get the respawns you need, just abandon the quest and skip it, it's barely worth it on 50% xp.
@@ -1866,9 +1864,9 @@ step << Orc Hunter/Troll Hunter
     .train 202 >>Train 2h Swords
 step << Hunter
     .goto Ghostlands,47.7,32.3
-    .vendor >> Purchase Bogwalker Boots and Tranquillien Flamberge from Vredigar. Equip them
+     .buy 22992,1 >> Purchase the below item(s) from Vredigar. Equip them
     .collect 22992,1 --Collect Bogwalker Boots (1)
-    .collect 28164,1 --Collect Tranquillien Flamberge (1)
+    .collect 28164,1 --Collect Tranquillien Flamberge (1) << tbc
 step << Paladin
     .goto Ghostlands,47.7,32.3
     .buy 28164,1 >> Purchase Volunteer's Greaves and Tranquillien Flamberge from Vredigar. Equip them
@@ -1982,6 +1980,7 @@ step << BloodElf Rogue
     .collect 23686 --Collect Lacy Handkerchief (x1)
 step
     .goto Ghostlands,36.9,15.7
+    >> Try to finish the step on the northwest side of the camp
     .complete 9160,1 --Kill Sentinel Spy (x12)
     >>Go within 10 yards of the giant shrine in the middle of the camps
     .complete 9160,2 --Investigate An'daroth
@@ -1995,7 +1994,7 @@ step << BloodElf Rogue
     .accept 9618 >> Accept Return the Reports
 step
     .goto Ghostlands,25.3,15.8
-    >>Kill Ghosts in the area. Try to end the quest on the northest side of the area.
+    >>Kill Ghosts in the area. Try to end the quest on the northwest side of the area.
     .complete 9139,2 --Kill Quel'dorei Wraith (x4)
     .complete 9139,1 --Kill Quel'dorei Ghost (x6)
 step
