@@ -14,7 +14,8 @@ step << !Gnome !Dwarf
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
     >>Delete your Hearthstone
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk	
     .accept 179 >> Accept Dwarven Outfitters
 step << Warrior
 #sticky
@@ -43,42 +44,50 @@ step << Paladin/Warrior
     .goto Dun Morogh,30.0,71.5
     .vendor >>vendor trash
 step << Paladin
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3107 >> Accept Consecrated Rune
 step << Gnome Warrior
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3112 >> Accept Simple Memorandum
 step << Dwarf Warrior
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3106 >> Accept Simple Rune
 step << Mage
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3114 >> Accept Glyphic Memorandum
 step << Priest
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3110 >> Accept Hallowed Rune
 step << Gnome Rogue
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3113 >> Accept Encrypted Memorandum
 step << Dwarf Rogue
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3109 >> Accept Encrypted Rune
 step << !Dwarf !Gnome
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
 step
@@ -1380,7 +1389,8 @@ step << !Gnome !Dwarf
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
     >>Delete your Hearthstone
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .accept 179 >> Accept Dwarven Outfitters
 step << tbc
     #sticky
@@ -1420,7 +1430,8 @@ step << tbc
     .goto Dun Morogh,28.6,66.1
     .turnin 1599 >> Turn in Beginnings
 step
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3115 >> Accept Tainted Memorandum
@@ -2832,14 +2843,16 @@ step << !Gnome !Dwarf
 .goto Dun Morogh,29.9,71.2
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     >>Speak to Sten Stoutarm
     .accept 179 >>Accept Dwarven Outfitters
 step
     .goto Dun Morogh,29.0,74.4
     .complete 179,1 --Tough Wolf Meat (8)
 step
-    .goto Dun Morogh,29.9,71.3
+    .goto Dun Morogh,29.93,71.20 << tbc
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >>Turn in Dwarven Outfitters
     .accept 233 >>Accept Coldridge Valley Mail Delivery
     .accept 3108 >>Accept Etched Rune
