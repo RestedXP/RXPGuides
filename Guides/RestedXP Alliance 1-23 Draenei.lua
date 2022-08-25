@@ -2121,7 +2121,7 @@ step
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure RP
-step << Warrior/Paladin
+step << Warrior tbc/Paladin
 	#sticky
 	.goto Ashenvale,35.8,52.0
 	>>Buy the level 21 weapon upgrade
@@ -2259,7 +2259,7 @@ step << !Hunter
 	.goto Teldrassil,23.7,64.5
 	.turnin 741 >> Turn in The Absent Minded Prospector
 	.accept 942 >> Accept The Absent Minded Prospector
-step << Mage/Warrior
+step << Warrior tbc/Mage
 	.goto Teldrassil,29.2,56.7
     .train 227 >> Train Staves
 step << !Hunter
