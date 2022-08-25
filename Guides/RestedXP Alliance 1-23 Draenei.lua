@@ -635,7 +635,7 @@ step << Hunter
 	.goto The Exodar,44.6,72.0,60,0
     .goto The Exodar,44.1,86.6
     .turnin 9675 >> Turn in Beast Training
-	.trainer >> Train your pet spells
+	.trainer >> Train your pet spells << tbc
 step << Hunter
 	#completewith next
     .goto The Exodar,47.9,89.
