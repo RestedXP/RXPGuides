@@ -1488,7 +1488,7 @@ step << Paladin/Rogue
     .cast 2580 >>Cast Find Minerals
 step << Paladin/Rogue
     .goto Silvermoon City,78.4,42.5
-    .buy 2901 >> Purchase a mining pick
+    .buy 2901,1 >> Purchase a mining pick
     .collect 2901,1 >> Mining Pick Acquired
 step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
@@ -1844,7 +1844,6 @@ step
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran
     .goto Ghostlands,48.2,31.6
 step << !Warlock
-    #completewith next
     .goto Ghostlands,48.9,32.4
     .home >> Set your Hearthstone to Tranquillien
 step << Mage/Priest/Warlock
@@ -2068,11 +2067,11 @@ step
     .goto Ghostlands,47.3,28.6
 step << Paladin
     .goto Ghostlands,47.7,32.3
-    .buy 28162 >> Purchase Tranquillien Defender's Girdle. Equip it
+    .buy 28162,1 >> Purchase Tranquillien Defender's Girdle. Equip it
     .collect 28162,1 --Collect Tranquillien Defender's Girdle (1)
 step << Rogue/Hunter/Druid/Shaman
     .goto Ghostlands,47.7,32.3
-    .buy 28158 >> Purchase Batskin Belt. Equip it
+    .buy 28158,1 >> Purchase Batskin Belt. Equip it
     .collect 28158,1 --Collect Batskin Belt (1)
 step
     .goto Ghostlands,48.9,32.4
