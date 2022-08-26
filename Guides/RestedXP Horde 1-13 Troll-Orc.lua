@@ -1,4 +1,4 @@
-aRXPGuides.RegisterGuide([[
+RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 << Horde
