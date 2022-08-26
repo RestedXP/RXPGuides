@@ -19,8 +19,8 @@ step << Shaman
     .goto Azuremyst Isle,79.3,49.1
 	.trainer >> Train Rockbiter Weapon
 step << Warrior
-    #sticky
-	    .goto Azuremyst Isle,80.0,47.1
+    #completewith next
+        .goto Azuremyst Isle,80.0,47.1
 	.vendor >> Kill 2-3 mobs for vendor trash (worth 10c+), then vendor trash inside
 step << Warrior
     .goto Azuremyst Isle,79.6,49.4
