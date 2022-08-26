@@ -282,7 +282,7 @@ step << Priest
     .goto Elwynn Forest,49.8,39.5
     .accept 5623 >> Accept In Favor of the Light
 step
-    >> Lead Northshire Valley and talk to Falkhaan Isenstrider
+    >> Leave Northshire Valley and talk to Falkhaan Isenstrider
     .goto Elwynn Forest,45.6,47.7
     .accept 2158 >> Accept Rest and Relaxation
 step
