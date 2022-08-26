@@ -1013,7 +1013,7 @@ step << Hunter
     .accept 6062 >>Accept Taming the Beast
     .train 13165 >>Train Aspect of the Hawk
     .train 13549 >>Train Serpent Sting r2
-step << Warlock/Shaman/Warrior
+step << Warlock/Shaman/Warrior/Hunter
     #xprate >1.499
     .goto Durotar,51.9,43.5
 .accept 831 >>Accept The Admiral's Orders
@@ -1090,6 +1090,9 @@ step << Hunter
     .train 13165 >>Train Aspect of the Hawk
     .train 13549 >>Train Serpent Sting r2
 step << Hunter
+    .goto Durotar,53.0,41.0
+    .vendor >> Vendor and stock up on level 10 arrows
+step << Hunter
     .use 15917 >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
 .goto Durotar,51.5,50.0
 .complete 6062,1 --Tame a Dire Mottled Boar
@@ -1137,7 +1140,7 @@ step << Warlock
 .goto Orgrimmar,48.3,45.3
 .turnin 1506 >>Turn in Gan'rul's Summons
 .accept 1501 >>Accept Creature of the Void
-step << Warlock
+step << Warlock/Hunter
     .goto Orgrimmar,34.3,36.4
     .turnin 831 >>Turn in The Admiral's Orders
 step << Warlock
