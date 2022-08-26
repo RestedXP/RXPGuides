@@ -986,13 +986,8 @@ function addon.tracker:RefreshSplitsSummary()
     end
 end
 
-function addon.tracker:UpdateLevelSplits(kind)
-    if not addon.settings.db.profile.enablelevelSplits or
-        not addon.tracker.levelSplits or not addon.tracker.state.login then
-        return
-    end
-
-    local f = addon.tracker.levelSplits
+function addon.tracker:CompileLevelSplits(kind)
+    local splitsReportData = {}
     local secondsSinceLogin = difftime(time(), addon.tracker.state.login.time)
 
     local s
@@ -1000,7 +995,7 @@ function addon.tracker:UpdateLevelSplits(kind)
     if addon.tracker.playerLevel == addon.tracker.maxLevel then
         -- Leave creation or full placeholder on updates
         if kind == "full" then
-            f.current:SetText("Level Time: Max")
+            splitsReportData.current = {text = "Level Time: Max"}
 
             if addon.tracker.reportData[addon.tracker.maxLevel - 1] and
                 addon.tracker.reportData[addon.tracker.maxLevel - 1].timestamp and
@@ -1009,32 +1004,42 @@ function addon.tracker:UpdateLevelSplits(kind)
                 -- Use lvl 69/79 ding as total time to level
                 s = addon.tracker.reportData[addon.tracker.maxLevel - 1]
                         .timestamp.finished
-                f.total:SetText(fmt("Time to %d: %s", addon.tracker.maxLevel,
-                                    addon.tracker:UglyPrintTime(s)))
+
+                splitsReportData.total = {
+                    text = fmt("Time to %d: %s", addon.tracker.maxLevel,
+                               addon.tracker:UglyPrintTime(s)),
+                    duration = s
+                }
             else
                 s = addon.tracker.state.login.totalTimePlayed +
                         secondsSinceLogin
-                f.total:SetText(fmt("Total Time: %s",
-                                    addon.tracker:UglyPrintTime(s)))
+
+                splitsReportData.total = {
+                    text = fmt("Total Time: %s", addon.tracker:UglyPrintTime(s)),
+                    duration = s
+                }
             end
         end
     else
         s = secondsSinceLogin + addon.tracker.state.login.timePlayedThisLevel
-        f.current:SetText(fmt("Level Time: %s", addon.tracker:UglyPrintTime(s)))
+        splitsReportData.current = {
+            text = fmt("Level Time: %s", addon.tracker:UglyPrintTime(s)),
+            duration = s
+        }
 
         s = addon.tracker.state.login.totalTimePlayed + secondsSinceLogin
-        f.total:SetText(fmt("Total Time: %s", addon.tracker:UglyPrintTime(s)))
+        splitsReportData.total = {
+            text = fmt("Total Time: %s", addon.tracker:UglyPrintTime(s)),
+            duration = s
+        }
     end
 
     if kind == "full" then
-        local data, splitsString
+        local data
+        local splitsData = {levels = {}}
         local totalSeconds = 0
-        -- TODO settings slider for level history, or rebuild with scroll pane
-        local oldestLevel = addon.tracker.playerLevel -
-                                addon.settings.db.profile.levelSplitsHistory
-        local highestLevel = addon.tracker.playerLevel - 1
 
-        for l = oldestLevel, highestLevel do
+        for l = 1, addon.tracker.playerLevel - 1 do
             data = addon.tracker.reportData[l]
 
             if data then
@@ -1043,18 +1048,62 @@ function addon.tracker:UpdateLevelSplits(kind)
                     s = data.timestamp.finished - data.timestamp.started
                     totalSeconds = totalSeconds + s
 
-                    if splitsString then
-                        splitsString = fmt("%s\nLevel %d: %s", splitsString, l,
-                                           addon.tracker:UglyPrintTime(
-                                               totalSeconds))
-                    else
-                        splitsString = fmt("Level %d: %s", l,
-                                           addon.tracker:UglyPrintTime(
-                                               totalSeconds))
-                    end
+                    splitsData.levels[l] = {
+                        text = fmt("Level %d: %s", l,
+                                   addon.tracker:UglyPrintTime(totalSeconds)),
+                        duration = s,
+                        totalDuration = totalSeconds
+                    }
                 else
-                    splitsString = fmt("%s\nLevel %d: Missing Data",
-                                       splitsString or "", l)
+                    splitsData.levels[l] = {
+                        text = fmt("Level %d: Missing Data", l)
+                    }
+                end
+            end
+        end
+
+        splitsReportData.history = splitsData
+    end
+
+    return splitsReportData
+end
+
+function addon.tracker:UpdateLevelSplits(kind)
+    if not addon.settings.db.profile.enablelevelSplits or
+        not addon.tracker.levelSplits or not addon.tracker.state.login then
+        return
+    end
+
+    local f = addon.tracker.levelSplits
+    local reportSplitsData = self:CompileLevelSplits(kind)
+
+    if addon.tracker.playerLevel == addon.tracker.maxLevel then
+        -- Leave creation or full placeholder on updates
+        if kind == "full" then
+            f.current:SetText(reportSplitsData.current.text)
+
+            f.total:SetText(reportSplitsData.total.text)
+        end
+    else
+        f.current:SetText(reportSplitsData.current.text)
+
+        f.total:SetText(reportSplitsData.total.text)
+    end
+
+    if kind == "full" then
+        local oldestLevel = addon.tracker.playerLevel -
+                                addon.settings.db.profile.levelSplitsHistory
+        local highestLevel = addon.tracker.playerLevel - 1
+        local data, splitsString
+
+        for l = oldestLevel, highestLevel do
+            data = reportSplitsData.history.levels[l]
+
+            if data then
+                if splitsString then
+                    splitsString = fmt("%s\n%s", splitsString, data.text)
+                else
+                    splitsString = data.text
                 end
             end
         end
