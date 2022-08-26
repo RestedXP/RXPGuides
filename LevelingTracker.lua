@@ -1103,7 +1103,7 @@ function addon.tracker:UpdateLevelSplits(kind)
                 if splitsString then
                     splitsString = fmt("%s\n%s", splitsString, data.text)
                 else
-                    splitsString = fmt("%s", data.text)
+                    splitsString = data.text
                 end
             end
         end
