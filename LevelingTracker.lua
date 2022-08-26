@@ -986,13 +986,8 @@ function addon.tracker:RefreshSplitsSummary()
     end
 end
 
-function addon.tracker:UpdateLevelSplits(kind)
-    if not addon.settings.db.profile.enablelevelSplits or
-        not addon.tracker.levelSplits or not addon.tracker.state.login then
-        return
-    end
-
-    local f = addon.tracker.levelSplits
+function addon.tracker:CompileLevelSplits(kind)
+    local splitsReportData = {}
     local secondsSinceLogin = difftime(time(), addon.tracker.state.login.time)
 
     local s
@@ -1000,7 +995,7 @@ function addon.tracker:UpdateLevelSplits(kind)
     if addon.tracker.playerLevel == addon.tracker.maxLevel then
         -- Leave creation or full placeholder on updates
         if kind == "full" then
-            f.current:SetText("Level Time: Max")
+            splitsReportData.current = "Level Time: Max"
 
             if addon.tracker.reportData[addon.tracker.maxLevel - 1] and
                 addon.tracker.reportData[addon.tracker.maxLevel - 1].timestamp and
@@ -1009,27 +1004,31 @@ function addon.tracker:UpdateLevelSplits(kind)
                 -- Use lvl 69/79 ding as total time to level
                 s = addon.tracker.reportData[addon.tracker.maxLevel - 1]
                         .timestamp.finished
-                f.total:SetText(fmt("Time to %d: %s", addon.tracker.maxLevel,
-                                    addon.tracker:UglyPrintTime(s)))
+                splitsReportData.total =
+                    fmt("Time to %d: %s", addon.tracker.maxLevel,
+                        addon.tracker:UglyPrintTime(s))
             else
                 s = addon.tracker.state.login.totalTimePlayed +
                         secondsSinceLogin
-                f.total:SetText(fmt("Total Time: %s",
-                                    addon.tracker:UglyPrintTime(s)))
+
+                splitsReportData.total =
+                    fmt("Total Time: %s", addon.tracker:UglyPrintTime(s))
             end
         end
     else
         s = secondsSinceLogin + addon.tracker.state.login.timePlayedThisLevel
-        f.current:SetText(fmt("Level Time: %s", addon.tracker:UglyPrintTime(s)))
+        splitsReportData.current = fmt("Level Time: %s",
+                                       addon.tracker:UglyPrintTime(s))
 
         s = addon.tracker.state.login.totalTimePlayed + secondsSinceLogin
-        f.total:SetText(fmt("Total Time: %s", addon.tracker:UglyPrintTime(s)))
+        splitsReportData.total = fmt("Total Time: %s",
+                                     addon.tracker:UglyPrintTime(s))
     end
 
     if kind == "full" then
         local data, splitsString
         local totalSeconds = 0
-        -- TODO settings slider for level history, or rebuild with scroll pane
+
         local oldestLevel = addon.tracker.playerLevel -
                                 addon.settings.db.profile.levelSplitsHistory
         local highestLevel = addon.tracker.playerLevel - 1
@@ -1059,8 +1058,35 @@ function addon.tracker:UpdateLevelSplits(kind)
             end
         end
 
-        f.history:SetText(splitsString)
+        splitsReportData.history = splitsString
     end
+
+    return splitsReportData
+end
+
+function addon.tracker:UpdateLevelSplits(kind)
+    if not addon.settings.db.profile.enablelevelSplits or
+        not addon.tracker.levelSplits or not addon.tracker.state.login then
+        return
+    end
+
+    local f = addon.tracker.levelSplits
+    local reportSplitsData = self:CompileLevelSplits(kind)
+
+    if addon.tracker.playerLevel == addon.tracker.maxLevel then
+        -- Leave creation or full placeholder on updates
+        if kind == "full" then
+            f.current:SetText(reportSplitsData.current)
+
+            f.total:SetText(reportSplitsData.total)
+        end
+    else
+        f.current:SetText(reportSplitsData.current)
+
+        f.total:SetText(reportSplitsData.total)
+    end
+
+    if kind == "full" then f.history:SetText(reportSplitsData.history) end
 
     local currentFontSize = math.floor(select(2, f.current.label:GetFont()) +
                                            0.5)
