@@ -1691,7 +1691,6 @@ step
     .turnin 973 >> Turn in The Tower of Althalaxx
 step <<  Hunter/NightElf/Rogue/wotlk
     .goto Ashenvale,20.3,42.4
-    >> Head to Zoram Strand
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
 step << Hunter/NightElf/Rogue/wotlk
