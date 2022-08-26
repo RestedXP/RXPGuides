@@ -1388,7 +1388,7 @@ step << !Gnome !Dwarf
 .goto Dun Morogh,29.9,71.2
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
-    >>Delete your Hearthstone
+    >>Delete your Hearthstone << tbc
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     .accept 179 >> Accept Dwarven Outfitters
