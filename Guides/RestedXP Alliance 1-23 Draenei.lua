@@ -1849,7 +1849,7 @@ step
     .maxlevel 20
 step
     .goto Darkshore,37.4,40.2
-	.turnin 9633 >> Turn in The Way to Auberdine
+	.turnin -9633 >> Turn in The Way to Auberdine
     .accept 10752 >> Accept Onward to Ashenvale
 step
 #xprate <1.5
