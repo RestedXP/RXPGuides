@@ -921,6 +921,34 @@ function addon.tracker:CreateLevelSplits()
     -- Width immediately overwritten in UpdateLevelSplits on PLAYER_ENTERING_WORLD
     f.title:SetSize(50, 17)
 
+    local menu = {
+        {
+            text = "Export",
+            notCheckable = 1,
+            func = function() print("You've chosen option 1"); end
+        }, {
+            text = "Hide",
+            tooltipTitle = "Temporarily hide, use '/rxp splits' to show again",
+            tooltipOnButton = true,
+            notCheckable = 1,
+            func = function() f:Hide() end
+        }, {text = "Cancel", notCheckable = 1, func = function() end}
+    }
+
+    local SplitsMenuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame",
+                                        f.title, "UIDropDownMenuTemplate")
+
+    -- Prevent frame dragging with right-click menu
+    f.title:HookScript("OnMouseDown", function(_, button)
+        if button == "RightButton" then f:StopMovingOrSizing() end
+    end)
+
+    f.title:HookScript("OnMouseUp", function(_, button)
+        if button == "RightButton" then
+            _G.EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
+        end
+    end)
+
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
     f.title.text:ClearAllPoints()
     f.title.text:SetJustifyH("CENTER")
