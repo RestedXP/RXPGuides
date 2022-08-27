@@ -3299,7 +3299,8 @@ step
     .accept 514 >> Accept Letter to Stormpike
 step
     .goto Hillsbrad Foothills,48.2,59.3
-    .turnin 510 >> Turn in Foreboding Plansstep
+    .turnin 510 >> Turn in Foreboding Plans
+step
     .goto Hillsbrad Foothills,50.9,58.8
     .turnin 9435 >> Turn in Missing Crystals
 step
