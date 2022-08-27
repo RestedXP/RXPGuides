@@ -3019,13 +3019,13 @@ function addon.functions.bronzetube(self, text, rev)
     if type(self) == "string" then -- on parse
         local element = {}
         element.textOnly = true
+        element.rev = rev
 
         if text and text ~= "" then element.text = text end
         return element
     end
 
     local element = self.element
-    element.rev = rev
 
     local count = GetItemCount(4371)
     local total = 0
@@ -3035,7 +3035,7 @@ function addon.functions.bronzetube(self, text, rev)
         total = total + 1
     end]]
 
-    if count >= total then
+    if count >= total == not element.rev then
         self.element.step.completed = true
         addon.updateSteps = true
     end
