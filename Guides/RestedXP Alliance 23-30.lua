@@ -719,7 +719,7 @@ step << Rogue
     .fly Duskwood>> Fly to Duskwood
 step << !Rogue !Druid
     .goto Duskwood,60.8,29.7
-	>>Grind your way back to eastern Duskwood
+	>>Grind your way back to eastern Duskwood. If killing Shadow Weavers is too difficult right now skip this step, you will complete it later
     .complete 173,1 --Kill Nightbane Shadow Weaver (x6)
 step
     .goto Duskwood,73.8,43.3
@@ -861,6 +861,11 @@ step << Hunter/Paladin
     .goto Duskwood,74.5,46.1
     .turnin 229 >> Turn in The Daughter Who Lived
     .accept 231 >> Accept A Daughter's Love
+step << !Rogue !Druid
+    .isOnQuest 173
+    .goto Duskwood,60.8,29.7
+	>>Kill Shadow Weavers above Darkshire
+    .complete 173,1 --Kill Nightbane Shadow Weaver (x6)
 step
 	#spiderend12
     .goto Duskwood,75.3,47.9
