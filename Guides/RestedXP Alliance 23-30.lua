@@ -139,9 +139,6 @@ step << Gnome !Warlock wotlk
 	.goto Dun Morogh,49.2,48.1
 	.money <5.00
 	.skill riding,75 >> Head to Dun Morogh, train riding and purchase your mount.
-step << !Dwarf !Gnome wotlk
-    .goto Wetlands,9.5,59.7
-    .fp Menethil >> Get the Menethil Harbor flight path
 step << Gnome wotlk/Dwarf wotlk
     #completewith next
     .goto Ironforge,55.5,47.7
