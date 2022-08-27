@@ -942,13 +942,13 @@ function addon.tracker:CreateLevelSplits()
                                               20, 200)
             end
         }, {
-            text = "Import",
+            --[[text = "Import",
             notCheckable = 1,
             func = function()
                 addon.comms.OpenBrandedExport("Import Level Splits", "", "TODO",
                                               20, 200)
             end
-        }, {
+        }, {--]]
             text = "Hide",
             tooltipTitle = "Temporarily hide, use '/rxp splits' to show again",
             tooltipOnButton = true,
