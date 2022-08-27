@@ -2206,7 +2206,12 @@ step
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
     .complete 1009,1 --Collect Ring of Zoram (x1)
 step
-    .goto Darkshore,33.6,94.4--TODO: BFD waypoint
+    .goto 1414,43.97,35.31,20,0
+    .goto 1414,43.80,35.18,20,0
+	.goto 1414,43.94,34.89,20,0
+	.goto 1414,43.91,34.58,20,0
+	.goto 1414,44.02,34.58,20,0
+	.goto 1414,44.16,34.85
     >>Enter the temple like building into the BFD caves and kill nagas/satyrs
     .complete 1275,1
 step
