@@ -96,14 +96,16 @@ local function UpdateCooldowns()
                                          not btn.cooldown:IsShown() then
                     btn.cooldown:SetCooldown(start,duration)
                 end
-            --else
-                --cd = ""
+            else
+                btn.cooldown:Clear()
             end
             -- print(cd)
             --[[if cd ~= btn.cd then
                 btn.cd = cd
                 btn.text:SetText(cd)
             end]]
+        else
+            btn.cooldown:Clear()
         end
     end
 end
@@ -280,6 +282,9 @@ function addon.UpdateItemFrame(itemFrame)
         end
         btn:SetAttribute("type",attribute)
         btn:SetAttribute(attribute, item.name)
+        if btn.itemId ~= item.id and btn.cooldown then
+            btn.cooldown:Clear()
+        end
         btn.itemId = item.id
         btn.bag = item.bag
         btn.slot = item.slot
