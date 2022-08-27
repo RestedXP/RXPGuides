@@ -1031,7 +1031,7 @@ step << Warrior
 step << Priest
     .goto StormwindClassic,57.1,57.7
     .trainer >>Train Staves
-step << Mage/Warlock
+step << Mage/Warlock tbc
     .goto StormwindClassic,57.1,57.7
     .trainer >> Train Staves, then 1h Swords if you still have money
 step << Rogue

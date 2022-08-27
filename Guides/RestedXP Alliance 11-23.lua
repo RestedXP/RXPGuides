@@ -7,6 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #defaultfor !Draenei
 #next 14-20 Bloodmyst
+#xprate <1.5 << Human Warlock
 step << !NightElf !Draenei wotlk
     #sticky
     .goto StormwindNew,21.8,56.2,20,0
@@ -97,12 +98,12 @@ step
     .isOnQuest 4681
     >> Head back to Gwennyth
     .goto Darkshore,36.6,45.6
-    .turnin 4681,2 >> Turn in Washed Ashore >> Druid/Paladin/Hunter
-    .turnin 4681 >> Turn in Washed Ashore >> !Druid !Paladin !Hunter
+    .turnin 4681,2 >> Turn in Washed Ashore << Druid/Paladin/Hunter
+    .turnin 4681 >> Turn in Washed Ashore << !Druid !Paladin !Hunter
 step << !Dwarf/!Hunter
     .xp 12 >> Grind to level 12
 step << !Dwarf/!Hunter
-    >> Talk to Sentinel Glynda and Tharnariun 
+    >> Talk to Sentinel Glynda and Tharnariun
     .accept 4811 >> Accept The Red Crystal
     .goto Darkshore,37.7,43.4
     .turnin -2118 >> Turn in Plagued Lands
@@ -690,7 +691,7 @@ step << Warlock/Mage/Priest
 step
     #label audience
     .goto The Exodar,32.8,54.4
-    >> Speak with Velen 
+    >> Speak with Velen
     .turnin 9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
 step << Druid
@@ -1804,10 +1805,58 @@ step << !Hunter !NightElf !Rogue
 step << !Hunter !NightElf !Rogue
     .goto Teldrassil,58.4,94.0
     .fly Auberdine >>Fly back to Auberdine
+step << Draenei !Paladin wotlk
+    .goto Darkshore,30.8,41.0,40,0
+	.goto The Exodar,81.18,52.56
+    .money <4.60
+    >> Take the western most boat to Azuremyst Isle
+    .skill riding,75 >>Head to Exodar, buy and train your mount
 step << tbc
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
     .zone Wetlands >>Take the boat to Wetlands
+step << Draenei tbc/NightElf tbc
+#xprate >1.499
+    .goto Wetlands,9.5,59.7
+    .fp Menethil >> Get the Menethil Harbor flight path
+step << Draenei tbc/NightElf tbc
+#xprate >1.499
+    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
+    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
+    .zoneskip Elwynn Forest
+
+
+step << Draenei tbc/NightElf tbc
+#xprate >1.499
+   #completewith next
+   .goto Wetlands,63.9,78.6
+   .zone Loch Modan >> Logout on top of the mushrooms at the back of the cave. When you log back in, this will teleport you to Thelsamar.
+   >>Make sure to logout as close as possible to the back of the cave. This trick won't work if you log out next to the edge of the mushroom closer to the mouth of the cave.
+   .link https://www.youtube.com/watch?v=21CuGto26Mk >> CLICK HERE for a reference
+   .zoneskip Elwynn Forest
+   .zoneskip Stormwind City
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    .goto Loch Modan,33.9,50.9
+    .fp Thelsamar >> Get the Thelsamar flight path
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    #completewith next
+    .goto Loch Modan,21.30,68.60,40,0
+    .zone Dun Morogh>> Run to Dun Morogh
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+	>>Go inside the South-eastern Trogg cave. Perform a logout skip
+    .goto Dun Morogh,70.63,56.70,60,0
+    .goto Dun Morogh,70.60,54.86
+	.link https://www.youtube.com/watch?v=yQBW3KyguCM >> CLICK HERE
+	.zone Ironforge >> Logout Skip or travel to Ironforge
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    .goto Ironforge,76.03,50.98,30,0
+    .zone Stormwind City >> Take the tram to Stormwind
 step << wotlk
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
@@ -1975,6 +2024,12 @@ step
     .turnin 1009 >> Turn in Ruuzel
 step
     .hs >> Hearth to Astranaar
+step << wotlk
+    .goto Ashenvale,39.0,35.9
+    .goto Ashenvale,35.9,32.0
+    >>Start looking for Dal Bloodclaw, he walks around the furbolg camp
+	.unitscan Dal Bloodclaw
+    .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
 step
     .goto Ashenvale,36.6,49.6
     .turnin 1023 >> Turn in Raene's Cleansing
@@ -2010,12 +2065,12 @@ step
 #xprate <1.5
     .goto Ashenvale,49.8,67.2
     .turnin 1016 >> Turn in Elemental Bracers
-    .accept 1017 >> Accept Mage Summoner
-step
+    .accept 1017 >> Accept Mage Summoner << tbc
+step << tbc
     .goto The Barrens,49.0,5.3,80,0
     .goto The Barrens,49.0,5.3,0
     .zone The Barrens>>Enter The Barrens through the broken wall. Be careful of the guards near the wall at the main road
-step
+step << tbc
 #xprate <1.5
     .goto The Barrens,48.2,19.1
     >>Climb the mountain and Kill Sarilus Foulborne
@@ -2024,36 +2079,37 @@ step << tbc
     #completewith next
     .goto The Barrens,50.8,32.6,0
     .deathskip >>Die and respawn at the Spirit Healer
-step
+step << tbc
     .goto The Barrens,49.3,57.1
     .turnin 1716 >> Turn in Devourer of Souls
     .accept 1738 >> Accept Heartswood
-step
+step << tbc
     >>Run to Ratchet
     .goto The Barrens,63.1,37.2
     .fp Ratchet >> Get the Ratchet flight path
     .fly Astranaar>> Fly to Astranaar
-step
+step << tbc
     .goto Ashenvale,39.0,35.9
     .goto Ashenvale,35.9,32.0
     >>Start looking for Dal Bloodclaw, he walks around the furbolg camp
 	.unitscan Dal Bloodclaw
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
-step << Warlock
+step << Warlock tbc
     >>Loot the big tree
     .goto Ashenvale,31.6,31.6
     .complete 1738,1 --Collect Heartswood (x1)
-step
+step << tbc
     .goto Ashenvale,40.1,53.1,0
     .deathskip >>Head towards the murloc lake and die next to the base of the mountain, east side of the lake then respawn at the Spirit Healer
-step
+step << tbc
 #xprate <1.5
     .goto Ashenvale,49.8,67.2
     .turnin 1017 >> Turn in Mage Summoner
 step
-#xprate <1.5
-    .deathskip >>Die and respawn at the Spirit Healer
-step << wotlk
+#xprate <1.5 << tbc
+    #completewith next
+    .deathskip >>Die and respawn at the Spirit Healer in Astranaar
+step << wotlk !Paladin !Warlock
     #completewith next
     *If you have money on this server, mail yourself 5g, we'll be buying our mounts soon
 step
@@ -2088,7 +2144,7 @@ step
     .zone Darnassus >> Take the purple portal to Darnassus
 step << NightElf wotlk
 	.goto Darnassus,38.7,15.8
-    .money <5.00
+    .money <4.6
 	.skill riding,75 >> Train riding and buy your mount
 step << Warrior/Rogue
     .goto Darnassus,64.6,53.0
@@ -2105,7 +2161,7 @@ step
 step << Draenei !Paladin wotlk
     .goto Darkshore,30.8,41.0,40,0
 	.goto The Exodar,81.18,52.56
-    .money <5.00
+    .money <4.60
     >> Take the western most boat to Azuremyst Isle
     .skill riding,75 >>Head to Exodar, buy and train your mount
 step << tbc
