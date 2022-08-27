@@ -182,11 +182,6 @@ step
 	>>Kill the Scarlet mobs in the area
 	.complete 12678,1 --Scarlet Crusader (10)
 step
-	#label Mailbox
-    .goto ScarletEnclave,55.3,46.2
-	>>Click the letter on the mailbox
-    .turnin 12711 >>Turn in Abandoned Mail
-step
 	#sticky
 	#label Citizens
     .goto ScarletEnclave,56.0,58.8,0,0
@@ -292,6 +287,10 @@ step
     .goto ScarletEnclave,52.9,35.2
     >> Buy 40 Corpse Dust
     .collect 37201,40
+step
+    .goto ScarletEnclave,55.3,46.2
+	>>Click the letter on the mailbox
+    .turnin 12711 >>Turn in Abandoned Mail
 step
     .goto ScarletEnclave,55.8,52.4
 	>>Talk to Noth in the field in front of the cauldron
