@@ -634,6 +634,10 @@ step << Horde
     .goto Orgrimmar,31.9,37.8
     .turnin 13189 >>Turn in Warchief's Blessing
 --X unsure of how good coordinates are
+step << Horde
+	#completewith next
+    .goto Orgrimmar,38.1,85.8
+	.zone Blasted Lands >> Take the portal to Blasted Lands
 step << Alliance
     .goto ScarletEnclave,50.9,36.3
 	.zone Elwynn Forest >>Take the portal to Stormwind
