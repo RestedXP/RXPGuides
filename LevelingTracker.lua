@@ -8,6 +8,7 @@ local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
                GetServerTime, UnitXP
 local _G = _G
 local AceGUI = LibStub("AceGUI-3.0")
+local LibDeflate = LibStub("LibDeflate")
 
 addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0",
                                 "AceComm-3.0", "AceSerializer-3.0")
@@ -923,9 +924,30 @@ function addon.tracker:CreateLevelSplits()
 
     local menu = {
         {
+            text = "Share",
+            notCheckable = 1,
+            func = function()
+                addon.comms.OpenBrandedExport("Share Level Splits", "",
+                                              addon.tracker:BuildSplitsShare(),
+                                              20, 200)
+            end
+        }, {
             text = "Export",
             notCheckable = 1,
-            func = function() print("You've chosen option 1"); end
+            func = function()
+                addon.comms.OpenBrandedExport("Export Level Splits",
+                                              "Export string for Importing into another character's comparison data",
+                                              LibDeflate:EncodeForPrint(
+                                                  addon.tracker:BuildSplitsExport()),
+                                              20, 200)
+            end
+        }, {
+            text = "Import",
+            notCheckable = 1,
+            func = function()
+                addon.comms.OpenBrandedExport("Import Level Splits", "", "TODO",
+                                              20, 200)
+            end
         }, {
             text = "Hide",
             tooltipTitle = "Temporarily hide, use '/rxp splits' to show again",
@@ -1015,7 +1037,10 @@ function addon.tracker:RefreshSplitsSummary()
 end
 
 function addon.tracker:CompileLevelSplits(kind)
-    local splitsReportData = {}
+    local splitsReportData = {
+        title = fmt("%s (%s) - %s", playerName, _G.UnitClass("player"),
+                    _G.GetRealmName())
+    }
     local secondsSinceLogin = difftime(time(), addon.tracker.state.login.time)
 
     local s
@@ -1247,4 +1272,32 @@ function addon.tracker:INSPECT_READY(_, inspecteeGUID)
 
     local sz = self:Serialize({command = "LEVEL_REPORT_REQ"})
     self:SendCommMessage(self._commPrefix, sz, "WHISPER", inspectedName)
+end
+
+function addon.tracker:BuildSplitsShare()
+    local reportSplitsData = self:CompileLevelSplits("full")
+
+    local splitsString = fmt("%s\n", reportSplitsData.title)
+
+    splitsString = fmt("%s\n%s\n", splitsString, reportSplitsData.current.text)
+    local data
+
+    for l = 1, addon.tracker.playerLevel - 1 do
+        data = reportSplitsData.history.levels[l]
+
+        if data then
+            splitsString = fmt("%s\n%s", splitsString, data.text)
+        end
+    end
+
+    splitsString = fmt("%s\n\n%s", splitsString, reportSplitsData.total.text)
+
+    return splitsString
+end
+
+function addon.tracker:BuildSplitsExport()
+    local reportSplitsData = self:CompileLevelSplits("full")
+    local data = addon.comms:Serialize(reportSplitsData)
+
+    return LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(data))
 end

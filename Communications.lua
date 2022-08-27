@@ -9,6 +9,8 @@ local GetNumGroupMembers, SendChatMessage, GetTime, UnitLevel, UnitClass,
 
 local _G = _G
 
+local AceGUI = LibStub("AceGUI-3.0")
+
 local playerName = _G.UnitName("player")
 
 addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0",
@@ -434,7 +436,6 @@ Current Step data
                         RXPCData.xprate, GetLocale(), select(1, GetBuildInfo()),
                         stepData)
 
-    local AceGUI = LibStub("AceGUI-3.0")
     local f = AceGUI:Create("Frame")
 
     f:SetLayout("Fill")
@@ -463,4 +464,49 @@ Current Step data
     tinsert(_G.UISpecialFrames, "RESTEDXP_BUG_REPORT_WINDOW")
 
     -- TODO save to variable to preserve open/close
+end
+
+function addon.comms.OpenBrandedExport(title, description, content, width,
+                                       height)
+
+    local f = AceGUI:Create("Frame") -- TODO use AceGUI:Create("Window")
+    f:Hide()
+
+    f:SetLayout("Fill")
+    f:EnableResize(true)
+    f.statustext:GetParent():Hide()
+    f:SetTitle("RestedXP: " .. title)
+
+    f.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.frame:SetBackdropColor(unpack(addon.colors.background))
+
+    local editbox = AceGUI:Create("MultiLineEditBox")
+    editbox:SetLabel(description)
+    editbox:SetFullWidth(true)
+    editbox:SetFullHeight(true)
+    editbox:SetText(content)
+    editbox:DisableButton(true)
+    f:AddChild(editbox)
+
+    editbox:SetCallback("OnTextChanged",
+                        function() editbox:SetText(description) end)
+    editbox:SetCallback("OnEnterPressed",
+                        function() editbox.editbox:ClearFocus() end)
+    editbox.editBox:SetScript("OnMouseUp",
+                              function() editbox:HighlightText() end)
+
+    local frameWidth = max(width or 0, f.titletext:GetWidth() * 1.5,
+                           editbox.label:GetStringWidth() * 1.1)
+
+    f:SetWidth(frameWidth)
+    f:SetHeight(height or 100)
+    f.frame:SetMinResize(frameWidth, height or 20)
+
+    _G["RESTEDXP_BRANDED_EXPORT"] = f.frame
+    tinsert(_G.UISpecialFrames, "RESTEDXP_BRANDED_EXPORT")
+
+    f:SetCallback("OnClose", function() f:Release() end)
+
+    f:DoLayout()
+    f:Show()
 end
