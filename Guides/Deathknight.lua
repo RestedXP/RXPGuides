@@ -289,6 +289,10 @@ step
     .turnin 12714 >>Turn in The Will Of The Lich King
     .accept 12715 >>Accept The Crypt of Remembrance
 step
+    .goto ScarletEnclave,52.9,35.2
+    >> Buy 40 Corpse Dust
+    .collect 37201,40
+step
     .goto ScarletEnclave,55.8,52.4
 	>>Talk to Noth in the field in front of the cauldron
     .accept 12716 >>Accept The Plaguebringer's Request
