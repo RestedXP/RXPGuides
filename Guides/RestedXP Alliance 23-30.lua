@@ -3281,17 +3281,10 @@ step
     >>Look for a wooden box inside of the destroyed tower
     .complete 9435,1 --Collect Shipment of Rare Crystals (x1)
 step
-    .goto Hillsbrad Foothills,50.5,57.1
-    .turnin 511 >> Turn in Encrypted Letter
-    .accept 514 >> Accept Letter to Stormpike
-step
     .goto Alterac Mountains,58.4,67.9
 	>>Click on the map on top of a small table
     .accept 510 >> Accept Foreboding Plans
     .accept 511 >> Accept Encrypted Letter
-step
-    .goto Hillsbrad Foothills,48.2,59.3
-    .turnin 510 >> Turn in Foreboding Plans
 step
     .goto Western Plaguelands,42.9,85.0
     >>Head north to Western Plaguelands
@@ -3301,6 +3294,12 @@ step
     .goto Western Plaguelands,42.9,85.0
     .fly Southshore>> Fly to Southshore
 step
+    .goto Hillsbrad Foothills,50.5,57.1
+    .turnin 511 >> Turn in Encrypted Letter
+    .accept 514 >> Accept Letter to Stormpike
+step
+    .goto Hillsbrad Foothills,48.2,59.3
+    .turnin 510 >> Turn in Foreboding Plansstep
     .goto Hillsbrad Foothills,50.9,58.8
     .turnin 9435 >> Turn in Missing Crystals
 step
