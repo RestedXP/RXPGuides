@@ -2780,7 +2780,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
 	.train 266 >> Train Guns << Hunter/Warrior/Rogue
     .train 199 >> Train 2H Maces << Warrior/Shaman
     .train 198 >> Train Maces << Rogue/Shaman
-    .train 44 >> Train Axes << Shaman
+    .train 44 >> Train Axes << Warrior wotlk/Shaman
     .zoneskip Wetlands
 step << Hunter
 	#sticky
