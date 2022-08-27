@@ -450,9 +450,6 @@ step
     >>Use the mount buff to run to Blood Watch, if you go around the bridge you won't get dismounted
     .abandon 9663 >> Abandon The Kessel Run once you lose the mount buff
 step
-	.goto Bloodmyst Isle,58.5,75.0,100,0
-    .goto Bloodmyst Isle,57.1,73.5,100,0
-	.goto Bloodmyst Isle,54.2,60.3,40,0
     .goto Bloodmyst Isle,53.3,57.7
     .accept 9629 >> Accept Catch and Release
 step
@@ -1860,7 +1857,7 @@ step << NightElf tbc/Draenei tbc
 step << wotlk
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
-    .zone Wetlands >>Take the boat to Stormwind
+    .zone Stormwind City >>Take the boat to Stormwind
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1886,12 +1883,18 @@ step << tbc
     #completewith next
     .goto Wetlands,9.5,59.7
     .fly Stormwind>> Fly to Stormwind
+step << Warlock wotlk
+    .goto StormwindNew,36.35,67.49
+    .accept 3765>>Accept The Corruption Abroad
 step << Warlock
     .goto StormwindClassic,25.3,78.7
 	.trainer >> Train your class spells
 step << Warlock
     .goto StormwindClassic,25.2,78.5
     .accept 1716 >> Accept Devourer of Souls
+step << Warlock tbc
+    .goto StormwindNew,36.35,67.49
+    .accept 3765>>Accept The Corruption Abroad
 step
     #label exit
     .goto StormwindClassic,39.9,54.4
@@ -1904,6 +1907,10 @@ step
 step
     .goto Darkshore,37.5,41.8
     .accept 729 >> Accept The Absent Minded Prospector
+step
+    #completewith next
+    .goto Darkshore,38.37,43.05
+    .turnin -3765>>Turn in The Corruption Abroad
 step
     .goto Darkshore,38.37,43.05
     .accept 1275 >> Accept Researching the Corruption
@@ -1994,7 +2001,7 @@ step
     #sticky
     #label nagas
     >Kill Nagas for Wrathtail Heads en route to next quests
-.goto Ashenvale,13.8,29.1
+.goto Ashenvale,13.8,29.1,0,0
     .complete 1008,1 --Collect Wrathtail Head (x20)
 step
     .goto Ashenvale,14.2,20.6
@@ -2136,7 +2143,8 @@ step
     .accept 741 >> Accept The Absent Minded Prospector
 step
     #completewith next
-    .goto Darkshore,33.2,40.2
+    .goto Darkshore,33.2,40.2,25,0
+    .goto Darkshore,33.2,40.2,0
     .zone Teldrassil>>Take the boat to Darnassus
 step
     #completewith next
@@ -2213,5 +2221,5 @@ step << NightElf tbc/Draenei tbc
 step << wotlk
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
-    .zone Wetlands >>Take the boat to Stormwind
+    .zone Stormwind City >>Take the boat to Stormwind
 ]])
