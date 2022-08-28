@@ -30,19 +30,19 @@ step << !BloodElf
 step
     .goto Orgrimmar,39.0,38.3
     .accept 1061 >> Accept The Spirits of Stonetalon
-step << Warlock
+step << Warlock tbc
     #sticky
     >>You must abandon the quest Carendin's Summons to be able to accept Devourer of Souls
     .abandon 10605 >>Abandon Carendin Summons
     .isOnQuest 10605
-step << Warlock
+step << Warlock tbc
     .goto Orgrimmar,48.2,45.3
     .accept 1507 >>Accept Devourer of Souls
-step << Warlock
+step << Warlock tbc
     .goto Orgrimmar,47.0,46.5
     .turnin 1507 >>Turn in Devourer of Souls
     .accept 1508 >>Accept Blind Cazul
-step << Warlock
+step << Warlock tbc
     .goto Orgrimmar,37.0,59.4
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
@@ -101,7 +101,7 @@ step
     #completewith next    
     .goto The Barrens,52.0,29.9
 	.home >> Set your Hearthstone to The Crossroads
-step << Warlock
+step << Warlock tbc
     .goto The Barrens,51.9,30.3
     .turnin 1509 >>Turn in News of Dogran
     .accept 1510 >>Accept News of Dogran
@@ -187,7 +187,7 @@ step
     #sticky
     #completewith next
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
-step << Warlock
+step << Warlock tbc
     .goto Stonetalon Mountains,73.2,95.1
     .turnin 1510 >>Turn in News of Dogran
     .accept 1511 >>Accept Ken'zigla's Draught
@@ -392,7 +392,7 @@ step
 step
     .goto The Barrens,44.8,59.1
     .accept 1130 >> Accept Melor Sends Word
-step << Warlock
+step << Warlock tbc
     .goto The Barrens,44.6,59.3
     .turnin 1511 >>Turn in Ken'zigla's Draught
     .accept 1515 >>Accept Dogran's Captivity
@@ -402,7 +402,7 @@ step
 step
     .goto The Barrens,44.5,59.2
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
-step << Warlock
+step << Warlock tbc
     >>Kill Quillboars en route to here
     .goto The Barrens,43.3,47.9
     .turnin 1515 >>Turn in Dogran's Captivity
@@ -963,7 +963,7 @@ step << Warlock
     #completewith next
     .goto Orgrimmar,48.0,46.0
     .trainer >> Go and train your class spells
-step << Warlock
+step << Warlock tbc
 	#completewith next
 	.goto Orgrimmar,47.5,46.7
     .vendor >> Buy a Grimoire of Soothing Kiss
@@ -1040,15 +1040,15 @@ step << Rogue tbc
 	.goto Orgrimmar,43.1,53.7
     .turnin 2478 >>Turn in Mission: Possible But Not Probable
     .accept 2479 >>Accept Hinott's Assistance
-step << Warlock
+step << Warlock tbc
     .goto Orgrimmar,48.2,45.3
     .turnin 1512 >>Turn in Love's Gift
     .accept 1513 >>Accept The Binding
-step << Warlock
+step << Warlock tbc
     .use 6626 >>Use Dogran's Pendant to summon the Succubus at the circle in the building. Kill her
 	.goto Orgrimmar,49.4,50.0
     .complete 1513,1 --Summoned Succubus (1)
-step << Warlock
+step << Warlock tbc
     >>Use the Succubus from now on
     .goto Orgrimmar,48.2,45.3
     .turnin 1513 >>Turn in The Binding
@@ -1825,7 +1825,7 @@ step << Warlock
 	#completewith flytimebabyyy
     .goto Orgrimmar,48.0,46.0
 	.trainer >> Go and train your class spells
-step << Warlock
+step << Warlock tbc
 	#completewith flytimebabyyy
     .goto Orgrimmar,47.5,46.7
 	.vendor >> Buy Grimoire of Seduction
