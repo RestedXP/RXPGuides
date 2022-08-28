@@ -932,7 +932,7 @@ function addon.tracker:CreateLevelSplits()
                                               20, 200)
             end
         }, {
-            text = "Export",
+            --[[text = "Export",
             notCheckable = 1,
             func = function()
                 addon.comms.OpenBrandedExport("Export Level Splits",
@@ -940,6 +940,16 @@ function addon.tracker:CreateLevelSplits()
                                               LibDeflate:EncodeForPrint(
                                                   addon.tracker:BuildSplitsExport()),
                                               20, 200)
+            end
+        }, {--]]
+            text = "Options",
+            tooltipOnButton = true,
+            notCheckable = 1,
+            func = function()
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
+                                                            .extras)
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
+                                                            .extras)
             end
         }, {
             --[[text = "Import",
