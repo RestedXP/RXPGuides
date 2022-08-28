@@ -673,25 +673,6 @@ function addon.tracker:PrettyPrintTime(s)
     return formattedString
 end
 
-function addon.tracker:PrintSplitsTime(s)
-    local hours = floor(s / 60 / 60)
-    s = mod(s, 60 * 60)
-
-    local minutes = floor(s / 60)
-    s = mod(s, 60)
-
-    local formattedString
-    if hours > 0 then
-        formattedString = fmt("%02d:%02d:%02d", hours, minutes, s)
-    elseif minutes > 0 then
-        formattedString = fmt("%02d:%02d", minutes, s)
-    else
-        formattedString = fmt("%02d", s) -- Big gratz for leveling in under a minute
-    end
-
-    return formattedString
-end
-
 function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     if not attachment then return end
     local trackerUi = addon.tracker.ui[attachment:GetName()]
@@ -861,24 +842,23 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 
 end
 
-function addon.tracker:ToggleLevelSplits()
-    if InCombatLockdown() or not addon.settings.db.profile.enablelevelSplits then
-        return
+function addon.tracker:PrintSplitsTime(s)
+    local hours = floor(s / 60 / 60)
+    s = mod(s, 60 * 60)
+
+    local minutes = floor(s / 60)
+    s = mod(s, 60)
+
+    local formattedString
+    if hours > 0 then
+        formattedString = fmt("%02d:%02d:%02d", hours, minutes, s)
+    elseif minutes > 0 then
+        formattedString = fmt("%02d:%02d", minutes, s)
+    else
+        formattedString = fmt("%02d", s) -- Big gratz for leveling in under a minute
     end
 
-    if not addon.settings.db.profile.enableBetaFeatures then return end
-
-    -- Already built
-    if addon.tracker.levelSplits then
-        if addon.tracker.levelSplits:IsShown() then
-            addon.tracker.levelSplits:Hide()
-        else
-            addon.tracker:UpdateLevelSplits("full")
-            addon.tracker.levelSplits:Show()
-        end
-
-        return
-    end
+    return formattedString
 end
 
 function addon.tracker:CreateLevelSplits()
@@ -1032,6 +1012,26 @@ function addon.tracker:CreateLevelSplits()
     addon.tracker.levelSplits:HookScript("OnUpdate", function()
         addon.tracker:RefreshSplitsSummary()
     end)
+end
+
+function addon.tracker:ToggleLevelSplits()
+    if InCombatLockdown() or not addon.settings.db.profile.enablelevelSplits then
+        return
+    end
+
+    if not addon.settings.db.profile.enableBetaFeatures then return end
+
+    -- Already built
+    if addon.tracker.levelSplits then
+        if addon.tracker.levelSplits:IsShown() then
+            addon.tracker.levelSplits:Hide()
+        else
+            addon.tracker:UpdateLevelSplits("full")
+            addon.tracker.levelSplits:Show()
+        end
+
+        return
+    end
 end
 
 function addon.tracker:RefreshSplitsSummary()
@@ -1219,6 +1219,40 @@ function addon.tracker:UpdateLevelSplits(kind)
     end
 end
 
+function addon.tracker:BuildSplitsShare()
+    local reportSplitsData = self:CompileLevelSplits("full")
+
+    local splitsString = fmt("%s\n", reportSplitsData.title)
+
+    if reportSplitsData.current.duration then
+        splitsString = fmt("%s\nLevel %d time: %s\n", splitsString,
+                           addon.tracker.playerLevel,
+                           addon.tracker:PrintSplitsTime(
+                               reportSplitsData.current.duration))
+    end
+
+    local data
+
+    for l = 1, addon.tracker.playerLevel - 1 do
+        data = reportSplitsData.history.levels[l]
+
+        if data then
+            splitsString = fmt("%s\n%s", splitsString, data.text)
+        end
+    end
+
+    splitsString = fmt("%s\n\n%s", splitsString, reportSplitsData.total.text)
+
+    return splitsString
+end
+
+function addon.tracker:BuildSplitsExport()
+    local reportSplitsData = self:CompileLevelSplits("full")
+    local data = addon.comms:Serialize(reportSplitsData)
+
+    return LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(data))
+end
+
 function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
     if prefix ~= self._commPrefix or distribution ~= 'WHISPER' then return end -- or sender == playerName then return end
     local d = addon.settings.db.profile.debug
@@ -1289,38 +1323,4 @@ function addon.tracker:INSPECT_READY(_, inspecteeGUID)
 
     local sz = self:Serialize({command = "LEVEL_REPORT_REQ"})
     self:SendCommMessage(self._commPrefix, sz, "WHISPER", inspectedName)
-end
-
-function addon.tracker:BuildSplitsShare()
-    local reportSplitsData = self:CompileLevelSplits("full")
-
-    local splitsString = fmt("%s\n", reportSplitsData.title)
-
-    if reportSplitsData.current.duration then
-        splitsString = fmt("%s\nLevel %d time: %s\n", splitsString,
-                           addon.tracker.playerLevel,
-                           addon.tracker:PrintSplitsTime(
-                               reportSplitsData.current.duration))
-    end
-
-    local data
-
-    for l = 1, addon.tracker.playerLevel - 1 do
-        data = reportSplitsData.history.levels[l]
-
-        if data then
-            splitsString = fmt("%s\n%s", splitsString, data.text)
-        end
-    end
-
-    splitsString = fmt("%s\n\n%s", splitsString, reportSplitsData.total.text)
-
-    return splitsString
-end
-
-function addon.tracker:BuildSplitsExport()
-    local reportSplitsData = self:CompileLevelSplits("full")
-    local data = addon.comms:Serialize(reportSplitsData)
-
-    return LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(data))
 end
