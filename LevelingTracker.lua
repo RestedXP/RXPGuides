@@ -1030,11 +1030,9 @@ function addon.tracker:CreateLevelSplits()
     -- Immediately overwritten in UpdateLevelSplits on PLAYER_ENTERING_WORLD
     f:SetSize(50, 100)
 
-    f:SetAlpha(0.9)
+    f:SetAlpha(addon.settings.db.profile.levelSplitsOpacity)
     f.title:SetIgnoreParentAlpha(true)
-    f.title:SetAlpha(1)
-    f.title.text:SetIgnoreParentAlpha(true)
-    f.title.text:SetAlpha(1)
+    f.title:SetAlpha(addon.settings.db.profile.levelSplitsOpacity + 0.1)
 
     addon.tracker.levelSplits:HookScript("OnUpdate", function()
         addon.tracker:RefreshSplitsSummary()
@@ -1212,6 +1210,11 @@ function addon.tracker:UpdateLevelSplits(kind)
     else
         f.title:SetWidth(width)
         f:SetSize(width + 16, height)
+    end
+
+    if f:GetAlpha() ~= addon.settings.db.profile.levelSplitsOpacity then
+        f:SetAlpha(addon.settings.db.profile.levelSplitsOpacity)
+        f.title:SetAlpha(addon.settings.db.profile.levelSplitsOpacity + 0.1)
     end
 
     -- Remove refresh after the first full update at max level

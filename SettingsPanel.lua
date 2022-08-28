@@ -64,7 +64,8 @@ function addon.settings:InitializeSettings()
             checkVersions = true,
             enableLevelingReportInspections = true,
             levelSplitsHistory = GetMaxPlayerLevel(),
-            levelSplitsFontSize = 11
+            levelSplitsFontSize = 11,
+            levelSplitsOpacity = 0.9
         }
     }
 
@@ -853,8 +854,23 @@ function addon.settings.CreateExtrasOptionsPanel()
                         end,
                         disabled = not addon.settings.db.profile.enablelevelSplits,
                         hidden = isNotAdvanced(),
+                    },
+                    levelSplitsOpacity = {
+                        name = "Level Splits Opacity",
+                        desc = "Lower number to make Level Splits more transparent",
+                        type = "range",
+                        width = "normal",
+                        order = 9,
+                        min = 0.1,
+                        max = 1,
+                        step = 0.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = not addon.settings.db.profile.enablelevelSplits,
+                        hidden = isNotAdvanced(),
                     }
-
                 },
             },
             communications = {
