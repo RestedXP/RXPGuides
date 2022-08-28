@@ -887,6 +887,7 @@ function addon.tracker:ToggleLevelSplits()
 end
 
 function addon.tracker:CreateLevelSplits()
+    if addon.tracker.levelSplits then return end
     -- AceGUI:Create("Frame") has too much magic for how simple this is
     local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
     local anchor = UIParent

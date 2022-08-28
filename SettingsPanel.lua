@@ -810,10 +810,15 @@ function addon.settings.CreateExtrasOptionsPanel()
                         type = "toggle",
                         width = "normal",
                         order = 6,
-                        confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            _G.ReloadUI()
+                            if addon.settings.db.profile.enablelevelSplits then
+                                addon.tracker:CreateLevelSplits()
+                                addon.tracker:UpdateLevelSplits("full")
+                                addon.tracker.levelSplits:Show()
+                            else
+                                addon.tracker.levelSplits:Hide()
+                            end
                         end,
                         disabled = not addon.settings.db.profile.enableTracker,
                         hidden = isNotAdvanced(),
