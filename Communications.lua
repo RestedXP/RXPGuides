@@ -491,8 +491,12 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
     editbox:SetCallback("OnTextChanged", function() editbox:SetText(content) end)
     editbox:SetCallback("OnEnterPressed",
                         function() editbox.editbox:ClearFocus() end)
-    editbox.editBox:SetScript("OnMouseUp",
-                              function() editbox:HighlightText() end)
+    editbox.editBox:SetScript("OnMouseUp", function()
+        editbox:HighlightText()
+
+        -- Only highlight text on first enter
+        editbox.editBox:SetScript("OnMouseUp", nil)
+    end)
 
     local frameWidth = max(width or 0, f.titletext:GetWidth() * 1.5,
                            editbox.label:GetStringWidth() * 1.1)
