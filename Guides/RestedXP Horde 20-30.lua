@@ -478,7 +478,7 @@ step << Tauren
 step << Druid
 	#completewith next
 	.goto Thunder Bluff,76.5,27.2
-	.accept 27 >>Accept A Lesson to Learn
+	.accept 27 >>Accept A Lesson to Learn << tbc
 	.trainer >> Go and train your class spells
 step
     #xprate <1.5
@@ -836,31 +836,31 @@ step
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >> Turn in Naga at the Zoram Strand
     .isQuestComplete 6442
-step << Druid
+step << Druid tbc
     #sticky
     #completewith next
      +Grind or log off until your hearthstone cooldown is less than 5 minutes
     .cooldown item,6948,<5m
-step << Druid
+step << Druid tbc
     .cast 18960 >> Use the spell Teleport: Moonglade once your hearthstone is available
     >>Go Upstairs
      .goto Moonglade,56.2,30.6
     .turnin 27 >>Turn in A Lesson to Learn
     .accept 28 >>Accept Trial of the Lake
-step << Druid
+step << Druid tbc
 	#completewith next
     .goto Moonglade,52.5,40.5
     .trainer >> Go and train your class spells
-step << Druid
+step << Druid tbc
     >>Search for a vase in the lake. Loot it for a Shrine Bauble
     .goto Moonglade,54.6,46.5,25,0
     .goto Moonglade,53.0,48.4
     .collect 15877,1
-step << Druid
+step << Druid tbc
     .use 15877 >>Use the Shrine Bauble
     .goto Moonglade,36.2,41.8
     .complete 28,1 --Complete the Trial of the Lake. (1)
-step << Druid
+step << Druid tbc
     .goto Moonglade,36.5,40.1
     .turnin 28 >>Turn in Trial of the Lake
     .accept 30 >>Accept Trial of the Sea Lion
@@ -922,15 +922,15 @@ step
     .isOnQuest 1491
     .goto The Barrens,62.4,37.6
     .turnin 1491 >>Turn in Smart Drinks
-step << Druid
+step << Druid tbc
     >>Loot the gray chest underwater
     .goto The Barrens,56.7,8.3
     .collect 15883,1
-step << Druid
+step << Druid tbc
     #sticky
     #completewith next
     .goto Orgrimmar,12.4,66.1,40 >>Enter Orgrimmar through the west entrance
-step << !Druid
+step << Druid wotlk/!Druid
     #completewith next
     .goto The Barrens,63.1,37.1,-1    
     .goto Thunder Bluff,47.0,49.9,-1
@@ -1104,7 +1104,7 @@ step << Blood Elf !Warlock wotlk
     .goto Silvermoon City,49.4,14.3
     >> Teleport to The Undercity if you can << Mage
     .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
-step << Druid
+step << Druid tbc
     >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
     .goto Silverpine Forest,30.0,29.1
     .collect 15882,1
@@ -1414,11 +1414,11 @@ step << Druid
 	.cast 18960 >> Use the spell Teleport: Moonglade
     .goto Moonglade,52.5,40.5
 	.trainer >> Go and train your class spells
-step << Druid
+step << Druid tbc
     .use 15883 >>Click the Half Pendant (blue) in your bag to craft the Pendant
 	.goto Moonglade,36.2,41.8
     .complete 30,1 --Pendant of the Sea Lion (1)
-step << Druid
+step << Druid tbc
     >>Go Upstairs
     .goto Moonglade,56.2,30.6
     .turnin 30 >>Turn in Trial of the Sea Lion
@@ -1866,7 +1866,7 @@ step << Hunter
 step << Druid
     .goto Thunder Bluff,77.0,29.9
 	.trainer >> Go and train your class spells
-	.turnin 31 >>Turn in Aquatic Form
+	.turnin 31 >>Turn in Aquatic Form << tbc
 step << Hunter
 	#completewith next
     .goto Thunder Bluff,59.1,86.9
