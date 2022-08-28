@@ -58,16 +58,16 @@ step << Rogue wotlk
 step << Warrior wotlk
 	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
-step << Rogue wotlk
+step << Rogue tbc
     #sticky
     .goto StormwindClassic,75.8,60.1
     >> Make sure to train Lockpicking and Pick Pocket
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
-step << Rogue wotlk
+step << Rogue
 	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
-step << Rogue wotlk
+step << Rogue tbc
     .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei wotlk
@@ -410,15 +410,15 @@ step << Rogue
 step << Warrior
 	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
-step << Rogue
+step << Rogue tbc
     #sticky
     .goto StormwindClassic,75.8,60.1
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
-step << Rogue
+step << Rogue tbc
 	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei
@@ -487,7 +487,7 @@ step
     .goto Redridge Mountains,27.7,47.3
     .accept 127 >> Accept Selling Fish
     .accept 150 >> Accept Murloc Poachers
-step << Rogue
+step << Rogue tbc
     .goto Redridge Mountains,28.1,52.1
     .turnin 2281 >> Turn in Redridge Rendezvous
     .accept 2282 >> Accept Alther's Mill
@@ -502,10 +502,10 @@ step
 	>> Kill murlocs. Loot them for their Sunfish and Fins
     .complete 127,1 --Collect Spotted Sunfish (x10)
     .complete 150,1 --Collect Murloc Fin (x8)
-step << Rogue
+step << Rogue tbc
 	#completewith next
     +Open the chests to train lockpicking, you will need 75 skill points for a quest later. Do NOT open the brown chest until you've done this
-step << Rogue
+step << Rogue tbc
     .goto Redridge Mountains,52.0,44.8
     .complete 2282,1 --Collect Token of Thievery (x1)
 step
@@ -516,10 +516,10 @@ step
     .goto Redridge Mountains,27.8,47.4
     .turnin 127 >> Turn in Selling Fish
     .turnin 150 >> Turn in Murloc Poachers
-step << Rogue
+step << Rogue tbc
     .goto Redridge Mountains,28.1,52.1
     .turnin 2282 >> Turn in Alther's Mill
-step << Rogue
+step << Rogue tbc
     #completewith next
     .destroy 7907 >> Delete the Certificate of Thievery
 step
@@ -541,7 +541,7 @@ step
 	.goto Duskwood,75.7,45.3
     .accept 66 >> Accept The Legend of Stalvan
     .accept 101 >> Accept The Totem of Infliction
-step << !Rogue
+step << Rogue wotlk/!Rogue
     .goto Duskwood,73.9,44.5
     .home >> Set your Hearthstone to Darkshire
 step
@@ -629,15 +629,15 @@ step << !Rogue !Druid
 step << Rogue/Druid
     .goto Westfall,56.6,52.6
     .fp Sentinel >> Get the Sentinel Hill flight path
-step << Rogue
+step << Rogue tbc
     .goto Westfall,68.5,70.0
     .turnin 2360 >> Turn in Mathias and the Defias
     .accept 2359 >> Accept Klaven's Tower
-step << Rogue
+step << Rogue tbc
     .goto Westfall,70.6,72.8
     >>Pickpocket one of the Defias Drones and loot the tower key
     .complete 2359,2 --Collect Defias Tower Key (x1)
-step << Rogue
+step << Rogue tbc
     .goto Westfall,70.4,74.0
     >>Climb to the top of the tower and loot the small chest on the floor
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
@@ -671,54 +671,54 @@ step << Rogue/Druid
     #sticky
     #completewith next
     .hs >> Hearth back to town
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,75.9,59.9
     .turnin 2359 >> Turn in Klaven's Tower
     .accept 2607 >> Accept The Touch of Zanzil
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.1,59.0
     >>Head to the basement
     .turnin 2607 >> Turn in The Touch of Zanzil
     .accept 2608 >> Accept The Touch of Zanzil
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.1,59.0
     >>Type /lay on the chat and wait until the quest complete itself
     .complete 2608,1 --Diagnosis Complete
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.0,58.8
     .turnin 2608 >> Turn in The Touch of Zanzil
     .accept 2609 >> Accept The Touch of Zanzil
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.2,59.0
     >>Buy a Leaded Vial from the Shady Dealer
     .complete 2609,2 --Collect Leaded Vial (x1)
-step << Rogue
+step << Rogue tbc
     >>Head to the flower vendor
     .complete 2609,1 --Collect Simple Wildflowers (x1)
     .goto StormwindClassic,64.3,60.8
-step << Rogue
+step << Rogue tbc
     #sticky
     #completewith next
     >>Buy a Bronze Tube at the Auction House. This is for your rogue quest, not Look to the Stars!
     .complete 2609,3 --Collect Bronze Tube (x1)
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,53.6,59.3
     >>Head to the shop next to the bridge between the Cathedral Square and the Park. This is an object on the ground you must pickup.
     .complete 2609,4 --Collect Spool of Light Chartreuse Silk Thread (x1)
     .goto StormwindClassic,39.8,46.5
     >>If you can't find a bronze tube, you will have to skip this quest, train First Aid to 80, farm a small venom sac from spiders in Duskwood, craft an Anti-Venom and remove the Zanzil poison.
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.0,58.9
     .turnin 2609 >> Turn in The Touch of Zanzil
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.2,59.0
     .vendor >>Buy Dust of Decay and Empty Vials so you can make poisons
-step << Rogue
+step << Rogue tbc
     #sticky
     #completewith next
     .use 8432 >> Use the antidote to the poison.
     .destroy 8046 >> Destroy Kearnen's Journal
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,66.2,62.2
     .fly Duskwood>> Fly to Duskwood
 step << !Rogue !Druid !Priest !Warlock
