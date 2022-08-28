@@ -977,65 +977,65 @@ step << Priest
     #completewith next
     .goto Orgrimmar,35.6,87.8
     .trainer >> Go and train your class spells
-step << Rogue
+step << Rogue tbc
     .goto Orgrimmar,43.1,53.7
     .accept 2460 >>Accept The Shattered Salute
-step << Rogue
+step << Rogue tbc
     >>Target Shenthul and type /salute
 	.emote SALUTE,3401
     .complete 2460,1 --Shattered Salute Performed (1)
 step << Rogue
     .goto Orgrimmar,43.1,53.7
-    .turnin 2460 >>Turn in The Shattered Salute
-    .accept 2458 >>Accept Deep Cover
+    .turnin 2460 >>Turn in The Shattered Salute << tbc
+    .accept 2458 >>Accept Deep Cover << tbc
     .train 1725 >>Train Distract
     .train 1856 >>Train Vanish
     .train 1759 >>Train Sinister Strike r4
-step << Rogue
+step << Rogue tbc
 	#completewith next
     .goto Orgrimmar,42.1,49.5
     .vendor >> Buy at least 1 Flash Powder from Rekkul
     .collect 5140,1 --Collect Flash Powder
-step << Rogue
+step << Rogue tbc
     #sticky
     #completewith next
     +Make sure you have a dagger in your inventory. If you don't, buy the cheapest one you can find
-step << Rogue
+step << Rogue tbc
     .use 8051 >>Use the Flare Gun when you're about 50 yards from Taskmaster Fizzule. Then /salute him. Speak to him when he turns friendly
 	.emote SALUTE,7233
 .goto The Barrens,55.4,5.6
     .turnin 2458 >>Turn in Deep Cover
     .accept 2478 >>Mission: Possible But Not Probable
-step << Rogue
+step << Rogue tbc
 	.cast 5967 >>Stealth and pickpocket Silixiz for his Tower Key. Make you hug the tower wall as much as possible then go behind him to pickpocket him. If he says something, back up, then approach from a different angle to try to pickpocket him again. Do NOT kill him
     .goto The Barrens,54.8,5.9
     .complete 2478,5 --Silixiz's Tower Key (1)
-step << Rogue
+step << Rogue tbc
     .cast 8676 >>Go into the tower & equip your dagger. Ambush one of the Drones. This will instantly kill them. Run away, come back, and do the same to the other Drone
     .goto The Barrens,54.7,5.7
     .complete 2478,1 --Mutated Venture Co. Drone (2)
-step << Rogue
+step << Rogue tbc
     .cast 1943 >>Go upstairs to the next floor. Re-equip your main weapon. Use a 1 Combo Point Rupture to kill the mobs. This should do 50% of their health each time
     .goto The Barrens,54.7,5.8
 .complete 2478,3 --Venture Co. Patroller (2)
-step << Rogue
+step << Rogue tbc
     .cast 6761 >>Go onto the third floor of the tower. Use a 1 Combo Point Eviscerate to kill the mobs. This should do 50% of their health each time
     .goto The Barrens,54.6,5.6
     .complete 2478,2 --Venture Co. Lookout (2)
-step << Rogue
+step << Rogue tbc
     >>Go to the top floor of the tower. Equip your dagger again (make sure your cooldowns are up). Ambush Gallywix then re-equip your main weapon in your main hand. Use all of your cooldowns & potions to kill Gallywix. Loot his head after you kill him.
     .goto The Barrens,54.8,5.6
     .complete 2478,4 --Gallywix's Head (1)
-step << Rogue
+step << Rogue tbc
     >>Lockpick the box in front of Gallywix in the top floor to loot the Altered Mixture
 	.goto The Barrens,54.8,5.6
 	.complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
-step << Rogue
+step << Rogue tbc
     #sticky
     #completewith next
 	>>Run back to Orgrimmar through the West Entrance
     .goto Orgrimmar,11.6,66.9,30
-step << Rogue
+step << Rogue tbc
 	>>You're now going to get a week long debuff making you unable to use stealth. Simply continue following the route.
 	.goto Orgrimmar,43.1,53.7
     .turnin 2478 >>Turn in Mission: Possible But Not Probable
