@@ -1,4 +1,4 @@
-local _, addon = ...
+local addonName, addon = ...
 
 local fmt, smatch, strsub, tinsert, mrand = string.format, string.match,
                                             string.sub, tinsert, math.random
@@ -971,15 +971,22 @@ function addon.tracker:CreateLevelSplits()
     local SplitsMenuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame",
                                         f.title, "UIDropDownMenuTemplate")
 
-    -- Prevent frame dragging with right-click menu
-    f.title:HookScript("OnMouseDown", function(_, button)
-        if button == "RightButton" then f:StopMovingOrSizing() end
+    f.title.cog = CreateFrame("Button", "$parentCogwheel", f.title)
+    f.title.cog:SetFrameLevel(f.title:GetFrameLevel() + 1)
+    f.title.cog:SetWidth(18)
+    f.title.cog:SetHeight(18)
+    f.title.cog:SetPoint("LEFT", f.title, "LEFT", -9, 0)
+    f.title.cog:SetNormalTexture("Interface/AddOns/" .. addonName ..
+                                     "/Textures/rxp_cog-32")
+    f.title.cog:SetHighlightTexture(
+        "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
+    f.title.cog:Show()
+    f.title.cog:SetScript("OnClick", function()
+        _G.EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
     end)
 
-    f.title:HookScript("OnMouseUp", function(_, button)
-        if button == "RightButton" then
-            _G.EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
-        end
+    f.title.cog:SetScript("OnMouseDown", function()
+        _G.EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
     end)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
