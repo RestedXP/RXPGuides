@@ -34,9 +34,11 @@ step << Paladin wotlk
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
 step << Warlock wotlk
-    .isOnQuest 1738
     .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
+step << Warlock wotlk 
+    .isOnQuest 1738
+    .goto StormwindClassic,25.3,78.7
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock wotlk
@@ -391,9 +393,11 @@ step << Paladin
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
 step << Warlock
-    .isOnQuest 1738
     .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
+step << Warlock
+    .isOnQuest 1738
+    .goto StormwindClassic,25.3,78.7
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock
