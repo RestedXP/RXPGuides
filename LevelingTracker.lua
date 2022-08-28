@@ -673,7 +673,7 @@ function addon.tracker:PrettyPrintTime(s)
     return formattedString
 end
 
-function addon.tracker:UglyPrintTime(s)
+function addon.tracker:PrintSplitsTime(s)
     local days = floor(s / 24 / 60 / 60)
     s = mod(s, 24 * 60 * 60)
 
@@ -1076,7 +1076,7 @@ function addon.tracker:CompileLevelSplits(kind)
 
                 splitsReportData.total = {
                     text = fmt("Time to %d: %s", addon.tracker.maxLevel,
-                               addon.tracker:UglyPrintTime(s)),
+                               addon.tracker:PrintSplitsTime(s)),
                     duration = s
                 }
             else
@@ -1084,7 +1084,8 @@ function addon.tracker:CompileLevelSplits(kind)
                         secondsSinceLogin
 
                 splitsReportData.total = {
-                    text = fmt("Total Time: %s", addon.tracker:UglyPrintTime(s)),
+                    text = fmt("Total Time: %s",
+                               addon.tracker:PrintSplitsTime(s)),
                     duration = s
                 }
             end
@@ -1092,13 +1093,13 @@ function addon.tracker:CompileLevelSplits(kind)
     else
         s = secondsSinceLogin + addon.tracker.state.login.timePlayedThisLevel
         splitsReportData.current = {
-            text = fmt("Level Time: %s", addon.tracker:UglyPrintTime(s)),
+            text = fmt("Level Time: %s", addon.tracker:PrintSplitsTime(s)),
             duration = s
         }
 
         s = addon.tracker.state.login.totalTimePlayed + secondsSinceLogin
         splitsReportData.total = {
-            text = fmt("Total Time: %s", addon.tracker:UglyPrintTime(s)),
+            text = fmt("Total Time: %s", addon.tracker:PrintSplitsTime(s)),
             duration = s
         }
     end
@@ -1119,7 +1120,7 @@ function addon.tracker:CompileLevelSplits(kind)
 
                     splitsData.levels[l] = {
                         text = fmt("Level %d: %s", l,
-                                   addon.tracker:UglyPrintTime(totalSeconds)),
+                                   addon.tracker:PrintSplitsTime(totalSeconds)),
                         duration = s,
                         totalDuration = totalSeconds
                     }
@@ -1303,7 +1304,7 @@ function addon.tracker:BuildSplitsShare()
     if reportSplitsData.current.duration then
         splitsString = fmt("%s\nLevel %d time: %s\n", splitsString,
                            addon.tracker.playerLevel,
-                           addon.tracker:UglyPrintTime(
+                           addon.tracker:PrintSplitsTime(
                                reportSplitsData.current.duration))
     end
 
