@@ -34,15 +34,18 @@ step << Paladin wotlk
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
 step << Warlock wotlk
+    .isOnQuest 1738
     .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock wotlk
+    .isOnQuest 1739
     .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
 step << Warlock wotlk
+    .isQuestComplete 1739
     .goto StormwindClassic,25.4,78.7
     .turnin 1739 >>Turn in The Binding
 step << Mage wotlk
@@ -388,15 +391,18 @@ step << Paladin
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
 step << Warlock
+    .isOnQuest 1738
     .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock
+    .isOnQuest 1739
     .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
 step << Warlock
+    .isQuestComplete 1739
     .goto StormwindClassic,25.4,78.7
     .turnin 1739 >>Turn in The Binding
 step << Mage
