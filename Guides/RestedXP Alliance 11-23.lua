@@ -1026,20 +1026,20 @@ step << Druid
     .fly Teldrassil>> Fly to Teldrassil
 step << Druid
     .goto Darnassus,35.3,8.5
-    .accept 26 >> Accept A Lesson to Learn
+    .accept 26 >> Accept A Lesson to Learn << tbc
     .accept 6121 >> Accept Lessons Anew
 step << Druid
     .goto Moonglade,56.1,30.7
     >>Teleport to Moonglade
     .turnin 6121 >> Turn in Lessons Anew
     .accept 6122 >> Accept The Principal Source
-    .turnin 26 >> Turn in A Lesson to Learn
-    .accept 29 >> Accept Trial of the Lake
-step << Druid
+    .turnin 26 >> Turn in A Lesson to Learn << tbc
+    .accept 29 >> Accept Trial of the Lake << tbc
+step << Druid tbc
     .goto Moonglade,52.6,51.6
     >>Dive into the lake and look for a Shrine Bauble, it looks like a small red jar
     .complete 29,1 --Complete the Trial of the Lake.
-step << Druid
+step << Druid tbc
     .goto Moonglade,36.5,40.1
     .turnin 29 >> Turn in Trial of the Lake
     .accept 272 >> Accept Trial of the Sea Lion
@@ -1310,7 +1310,7 @@ step--murlocs
     .goto Darkshore,44.2,20.7
     .accept 4725 >> Accept Beached Sea Turtle
     .isQuestTurnedIn 4681
-step << Druid
+step << Druid tbc
     .goto Darkshore,48.9,11.3
     >>Loot the small lockbox underwater, located in between 2 big stones
     .collect 15883,1 --Collect Half Pendant of Aquatic Agility (x1)
