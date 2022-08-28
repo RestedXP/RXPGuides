@@ -674,9 +674,6 @@ function addon.tracker:PrettyPrintTime(s)
 end
 
 function addon.tracker:PrintSplitsTime(s)
-    local days = floor(s / 24 / 60 / 60)
-    s = mod(s, 24 * 60 * 60)
-
     local hours = floor(s / 60 / 60)
     s = mod(s, 60 * 60)
 
@@ -684,9 +681,7 @@ function addon.tracker:PrintSplitsTime(s)
     s = mod(s, 60)
 
     local formattedString
-    if days > 0 then
-        formattedString = fmt("%02d:%02d:%02d:%02d", days, hours, minutes, s)
-    elseif hours > 0 then
+    if hours > 0 then
         formattedString = fmt("%02d:%02d:%02d", hours, minutes, s)
     elseif minutes > 0 then
         formattedString = fmt("%02d:%02d", minutes, s)
