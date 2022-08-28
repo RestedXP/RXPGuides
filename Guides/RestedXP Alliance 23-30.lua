@@ -645,26 +645,26 @@ step << Rogue/Druid
     .goto Westfall,41.5,66.8
     .turnin 67 >> Turn in The Legend of Stalvan
     .accept 68 >> Accept The Legend of Stalvan
-step << Druid
+step << Druid tbc
     .goto Westfall,18.0,33.2
     >>Loot the lockbox located deep underwater
     .collect 15882,1 --Collect Half Pendant of Aquatic Endurance (x1)
-step << Druid
+step << Druid tbc
     .goto Moonglade,36.0,41.4
     >>Teleport to moonglade
     >>Combine the 2 pendants at the Shrine of Remulos
     .complete 272,1 --Collect Pendant of the Sea Lion (x1)
-step << Druid
+step << Druid tbc
     .goto Moonglade,56.2,30.6
     >>Teleport back to Nighthaven
     .turnin 272 >> Turn in Trial of the Sea Lion
     .accept 5061 >> Accept Aquatic Form
-step << Druid
+step << Druid tbc
     #sticky
     #completewith next
     .goto Moonglade,44.1,45.2
     .fly Teldrassil>> Fly to Teldrassil
-step << Druid
+step << Druid tbc
     .goto Darnassus,35.4,8.3
     .turnin 5061 >> Turn in Aquatic Form
 step << Rogue/Druid
