@@ -488,8 +488,7 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
     editbox:DisableButton(true)
     f:AddChild(editbox)
 
-    editbox:SetCallback("OnTextChanged",
-                        function() editbox:SetText(description) end)
+    editbox:SetCallback("OnTextChanged", function() editbox:SetText(content) end)
     editbox:SetCallback("OnEnterPressed",
                         function() editbox.editbox:ClearFocus() end)
     editbox.editBox:SetScript("OnMouseUp",

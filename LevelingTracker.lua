@@ -1289,7 +1289,13 @@ function addon.tracker:BuildSplitsShare()
 
     local splitsString = fmt("%s\n", reportSplitsData.title)
 
-    splitsString = fmt("%s\n%s\n", splitsString, reportSplitsData.current.text)
+    if reportSplitsData.current.duration then
+        splitsString = fmt("%s\nLevel %d time: %s\n", splitsString,
+                           addon.tracker.playerLevel,
+                           addon.tracker:UglyPrintTime(
+                               reportSplitsData.current.duration))
+    end
+
     local data
 
     for l = 1, addon.tracker.playerLevel - 1 do
