@@ -147,7 +147,7 @@ function addon.comms:AnnounceSelf(command)
             name = playerName,
             class = select(2, UnitClass("player")),
             level = UnitLevel("player"),
-            xpPercentage = floor(UnitXP("player") / UnitXPMax("player"))
+            xpPercentage = floor(100 * UnitXP("player") / UnitXPMax("player"))
         },
         addon = {release = addon.release}
     }
