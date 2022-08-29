@@ -895,6 +895,10 @@ function addon.tracker:CreateLevelSplits()
 
     f.parent = addon
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
+    f.bg = f:CreateTexture("RXPLevelSplitsFrameBG", "BACKGROUND")
+    f.bg:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp-banner")
+    f.bg:SetPoint("TOPLEFT", 4, -2)
+    f.bg:SetPoint("BOTTOMRIGHT", -2, 4)
 
     f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplate)
     f.title:ClearAllPoints()
@@ -905,6 +909,12 @@ function addon.tracker:CreateLevelSplits()
     f.title:ClearBackdrop()
     f.title:SetBackdrop(addon.RXPFrame.backdropEdge)
     f.title:SetBackdropColor(unpack(addon.colors.background))
+    f.title.bg = f.title:CreateTexture("$$parent_titleBG", "BACKGROUND")
+    f.title.bg:SetTexture("Interface/AddOns/" .. addonName ..
+                              "/Textures/rxp-banner")
+    f.title.bg:SetPoint("TOPLEFT", 4, -2)
+    f.title.bg:SetPoint("BOTTOMRIGHT", -2, 4)
+
     f.title:SetPoint("TOP", f, 0, 5)
     -- Width immediately overwritten in UpdateLevelSplits on PLAYER_ENTERING_WORLD
     f.title:SetSize(50, 17)
