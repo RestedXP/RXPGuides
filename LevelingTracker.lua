@@ -1,7 +1,7 @@
 local addonName, addon = ...
 
-local fmt, smatch, strsub, tinsert, mrand = string.format, string.match,
-                                            string.sub, tinsert, math.random
+local fmt, smatch, strsub, tinsert, srep = string.format, string.match,
+                                           string.sub, tinsert, string.rep
 
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
       UnitXP = UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime,
@@ -19,6 +19,7 @@ addon.tracker.state = {otherReports = {}}
 addon.tracker.reportData = {}
 addon.tracker.ui = {}
 addon.tracker._commPrefix = "RXPLTComms"
+addon.tracker.fonts = {["splits"] = "Fonts\\ARIALN.ttf"}
 
 local playerName = _G.UnitName("player")
 -- Silence our /played yellow text
@@ -861,11 +862,21 @@ function addon.tracker:PrintSplitsTime(s)
     return formattedString
 end
 
+function addon.tracker:BuildSplitsLevelLine(level, splitsString)
+    local gap = #"Level 12    "
+    local formattedString = fmt("Level %d%s%s%s", level,
+                                level < 10 and '  ' or '',
+                                srep(' ', gap - #splitsString), splitsString)
+
+    return formattedString
+end
+
 function addon.tracker:CreateLevelSplits()
     if addon.tracker.levelSplits then return end
     -- AceGUI:Create("Frame") has too much magic for how simple this is
     local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
     local anchor = UIParent
+
     addon.tracker.levelSplits = CreateFrame("Frame", "RXPLevelSplits", anchor,
                                             BackdropTemplate)
 
@@ -974,7 +985,8 @@ function addon.tracker:CreateLevelSplits()
     f.title.text:SetPoint("CENTER", f.title, 0, 1)
 
     f.current = AceGUI:Create("Label")
-    f.current:SetFont(addon.font, addon.settings.db.profile.levelSplitsFontSize)
+    f.current:SetFont(self.fonts.splits,
+                      addon.settings.db.profile.levelSplitsFontSize)
     f.current:SetFullWidth(true)
     f.current.frame:SetParent(f)
     f.current.frame:SetPoint("TOPLEFT", f, "TOPLEFT", 8,
@@ -987,7 +999,8 @@ function addon.tracker:CreateLevelSplits()
     end
 
     f.history = AceGUI:Create("Label")
-    f.history:SetFont(addon.font, addon.settings.db.profile.levelSplitsFontSize)
+    f.history:SetFont(self.fonts.splits,
+                      addon.settings.db.profile.levelSplitsFontSize)
     f.history:SetFullWidth(true)
     f.history.frame:SetParent(f)
     f.history.frame:SetPoint("TOPLEFT", f.current.frame, "BOTTOMLEFT", 0, -8)
@@ -995,7 +1008,8 @@ function addon.tracker:CreateLevelSplits()
     f.history:SetText("Level X: 00:00:00")
 
     f.total = AceGUI:Create("Label")
-    f.total:SetFont(addon.font, addon.settings.db.profile.levelSplitsFontSize)
+    f.total:SetFont(self.fonts.splits,
+                    addon.settings.db.profile.levelSplitsFontSize)
     f.total:SetFullWidth(true)
     f.total.frame:SetParent(f)
     f.total.frame:SetPoint("TOPLEFT", f.history.frame, "BOTTOMLEFT", 0, -8)
@@ -1114,8 +1128,9 @@ function addon.tracker:CompileLevelSplits(kind)
                     totalSeconds = totalSeconds + s
 
                     splitsData.levels[l] = {
-                        text = fmt("Level %d: %s", l,
-                                   addon.tracker:PrintSplitsTime(totalSeconds)),
+                        text = self:BuildSplitsLevelLine(l,
+                                                         addon.tracker:PrintSplitsTime(
+                                                             totalSeconds)),
                         duration = s,
                         totalDuration = totalSeconds
                     }
@@ -1181,11 +1196,11 @@ function addon.tracker:UpdateLevelSplits(kind)
 
     if currentFontSize ~= addon.settings.db.profile.levelSplitsFontSize then
         -- Font size changed, set new size before calculating width/height
-        f.current:SetFont(addon.font,
+        f.current:SetFont(self.fonts.splits,
                           addon.settings.db.profile.levelSplitsFontSize)
-        f.history:SetFont(addon.font,
+        f.history:SetFont(self.fonts.splits,
                           addon.settings.db.profile.levelSplitsFontSize)
-        f.total:SetFont(addon.font,
+        f.total:SetFont(self.fonts.splits,
                         addon.settings.db.profile.levelSplitsFontSize)
     end
 
