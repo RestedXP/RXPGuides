@@ -9,6 +9,8 @@ local GetNumGroupMembers, SendChatMessage, GetTime, UnitLevel, UnitClass,
 
 local _G = _G
 
+local AceGUI = LibStub("AceGUI-3.0")
+
 local playerName = _G.UnitName("player")
 
 addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0",
@@ -49,6 +51,14 @@ function addon.comms:Setup()
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     self:RegisterComm(self._commPrefix)
+
+    -- Update Feedback Report into GuideWindow context menu, load order workaround
+    for i, m in ipairs(addon.RXPFrame.bottomMenu) do
+        if m.text == "Give Feedback for step" then
+            addon.RXPFrame.bottomMenu[i].func = addon.comms.OpenBugReport
+            break
+        end
+    end
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
@@ -81,8 +91,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
                               level, addon.tracker:PrettyPrintTime(s))
                     announceLevelUp(msg)
                 elseif addon.release == 'Development' then
-                    print(self.BuildPrint("Invalid .started or .finished %d",
-                                          level))
+                    self.PrettyPrint("Invalid .started or .finished %d", level)
                 end
             end)
         end
@@ -181,7 +190,7 @@ function addon.comms:IsNewRelease(theirRelease)
     if theirRelease == 'Development' then
         return false
     elseif addon.release == 'Development' then
-        print(self.BuildPrint("IsNewRelease:theirRelease = %s", theirRelease))
+        self.PrettyPrint("IsNewRelease:theirRelease = %s", theirRelease)
         return false
     end
 
@@ -226,8 +235,8 @@ function addon.comms:HandleAnnounce(data)
 
             self.state.updateFound.addon = true
 
-            print(self.BuildPrint("There's a new addon version (%s) available",
-                                  data.addon.release))
+            self.PrettyPrint("There's a new addon version (%s) available",
+                             data.addon.release)
         end
 
         if not self.state.updateFound.guide and addon.currentGuide and
@@ -237,8 +246,8 @@ function addon.comms:HandleAnnounce(data)
 
             self.state.updateFound.guide = true
 
-            print(self.BuildPrint("There's a new version (%s) available for %s",
-                                  data.guide.version, data.guide.name))
+            self.PrettyPrint("There's a new version (%s) available for %s",
+                             data.guide.version, data.guide.name)
         end
     end
 end
@@ -338,11 +347,18 @@ function addon.comms.BuildNotification(msg, ...)
     return fmt("{rt3} %s: %s", addonName, fmt(msg, ...))
 end
 
-function addon.comms.BuildPrint(msg, ...)
-    return fmt("%s: %s", addonName, fmt(msg, ...))
+function addon.comms.PrettyPrint(msg, ...)
+    print(fmt("%s%s: %s", addonName,
+              addon.settings.db.profile.debug and ' (Debug)' or '',
+              fmt(msg, ...)))
 end
 
-function addon.comms:OpenBugReport()
+function addon.comms.OpenBugReport(stepNumber)
+    -- Came from dropdown menu
+    if type(stepNumber) == "table" and stepNumber.arg1 then
+        stepNumber = stepNumber.arg1
+    end
+
     local character = fmt("%s / %s / level %d (%.2f%%)", UnitRace("player"),
                           select(1, UnitClass("player")), UnitLevel("player"),
                           UnitXP("player") / UnitXPMax("player") * 100)
@@ -353,22 +369,40 @@ function addon.comms:OpenBugReport()
                      position and position.x * 100 or -1,
                      position and position.y * 100 or -1)
 
-    local guide = fmt("%s (v%d)",
-                      addon.currentGuide and addon.currentGuide.key or 'nil',
-                      addon.currentGuide.name and addon.currentGuide.version or
-                          'N/A')
+    local guide = fmt("%s (%s)",
+                      addon.currentGuide and addon.currentGuide.key or
+                          'Inactive', addon.currentGuide.name and
+                          addon.currentGuide.version or 'N/A')
 
+    stepNumber = stepNumber or RXPCData.currentStep
     local stepData = ""
-    if addon.currentGuide and addon.currentGuide.steps and RXPCData.currentStep then
-        local step = addon.currentGuide.steps[RXPCData.currentStep]
+    if addon.currentGuide and addon.currentGuide.steps and stepNumber then
+        local step = addon.currentGuide.steps[stepNumber]
         if type(step) == "table" then
             if step.elements then
                 for s, e in pairs(step.elements) do
-                    stepData = fmt(
-                                   "%s\nStep %d:%d\n  title = %s\n  text = %s\n  tag = %s\n  questId = %s\n",
-                                   stepData, RXPCData.currentStep, s,
-                                   e.title or '', e.text or '', e.tag or '',
-                                   e.questId or '')
+                    stepData = fmt("%s\nStep %d:%d", stepData, stepNumber, s)
+                    if e.title then
+                        stepData = fmt("%s\n  title = %s", stepData, e.title)
+                    end
+
+                    if e.text then
+                        stepData = fmt("%s\n  text = %s", stepData, e.text)
+                    end
+
+                    if e.tag then
+                        stepData = fmt("%s\n  tag = %s", stepData, e.tag)
+                    end
+
+                    if e.questId then
+                        stepData =
+                            fmt("%s\n  questId = %s", stepData, e.questId)
+                    end
+
+                    if e.x and e.y then
+                        stepData = fmt("%s\n  goto = %.2f / %.2f", stepData,
+                                       e.x, e.y)
+                    end
                 end
             else
                 stepData = fmt("%s\nUnknown table", stepData, step)
@@ -393,15 +427,15 @@ Guide: %s
 Addon: %s
 XP Rate: %.1f
 Locale: %s
-Realm: %s
+Client Version: %s
 
 Current Step data
 %s
 ```
 ]], character or "Error", zone or "Error", guide or "Error", addon.release,
-                        RXPCData.xprate, GetLocale(), GetRealmName(), stepData)
+                        RXPCData.xprate, GetLocale(), select(1, GetBuildInfo()),
+                        stepData)
 
-    local AceGUI = LibStub("AceGUI-3.0")
     local f = AceGUI:Create("Frame")
 
     f:SetLayout("Fill")
@@ -430,4 +464,52 @@ Current Step data
     tinsert(_G.UISpecialFrames, "RESTEDXP_BUG_REPORT_WINDOW")
 
     -- TODO save to variable to preserve open/close
+end
+
+function addon.comms.OpenBrandedExport(title, description, content, width,
+                                       height)
+
+    local f = AceGUI:Create("Frame") -- TODO use AceGUI:Create("Window")
+    f:Hide()
+
+    f:SetLayout("Fill")
+    f:EnableResize(true)
+    f.statustext:GetParent():Hide()
+    f:SetTitle("RestedXP: " .. title)
+
+    f.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.frame:SetBackdropColor(unpack(addon.colors.background))
+
+    local editbox = AceGUI:Create("MultiLineEditBox")
+    editbox:SetLabel(description)
+    editbox:SetFullWidth(true)
+    editbox:SetFullHeight(true)
+    editbox:SetText(content)
+    editbox:DisableButton(true)
+    f:AddChild(editbox)
+
+    editbox:SetCallback("OnTextChanged", function() editbox:SetText(content) end)
+    editbox:SetCallback("OnEnterPressed",
+                        function() editbox.editbox:ClearFocus() end)
+    editbox.editBox:SetScript("OnMouseUp", function()
+        editbox:HighlightText()
+
+        -- Only highlight text on first enter
+        editbox.editBox:SetScript("OnMouseUp", nil)
+    end)
+
+    local frameWidth = max(width or 0, f.titletext:GetWidth() * 1.5,
+                           editbox.label:GetStringWidth() * 1.1)
+
+    f:SetWidth(frameWidth)
+    f:SetHeight(height or 100)
+    f.frame:SetMinResize(frameWidth, height or 20)
+
+    _G["RESTEDXP_BRANDED_EXPORT"] = f.frame
+    tinsert(_G.UISpecialFrames, "RESTEDXP_BRANDED_EXPORT")
+
+    f:SetCallback("OnClose", function() f:Release() end)
+
+    f:DoLayout()
+    f:Show()
 end

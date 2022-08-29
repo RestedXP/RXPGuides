@@ -36,13 +36,18 @@ step << Paladin wotlk
 step << Warlock wotlk
     .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
+step << Warlock wotlk 
+    .isOnQuest 1738
+    .goto StormwindClassic,25.3,78.7
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock wotlk
+    .isOnQuest 1739
     .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
 step << Warlock wotlk
+    .isQuestComplete 1739
     .goto StormwindClassic,25.4,78.7
     .turnin 1739 >>Turn in The Binding
 step << Mage wotlk
@@ -58,16 +63,16 @@ step << Rogue wotlk
 step << Warrior wotlk
 	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
-step << Rogue wotlk
+step << Rogue tbc
     #sticky
     .goto StormwindClassic,75.8,60.1
     >> Make sure to train Lockpicking and Pick Pocket
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
-step << Rogue wotlk
+step << Rogue
 	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
-step << Rogue wotlk
+step << Rogue tbc
     .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei wotlk
@@ -101,6 +106,11 @@ step << !Dwarf wotlk !Gnome wotlk--Not needed, including just in case someone fo
 step << Mage wotlk
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
+step << wotlk !Dwarf !Gnome
+    #sticky
+    .goto Dun Morogh,53.2,35.3
+    .zone Dun Morogh >> Head outside to Dun Morogh
+    .zoneskip Ironforge,1
 step << wotlk !Dwarf !Gnome
     #completewith next
     .goto Dun Morogh,59.5,42.8,40,0
@@ -139,9 +149,6 @@ step << Gnome !Warlock wotlk
 	.goto Dun Morogh,49.2,48.1
 	.money <5.00
 	.skill riding,75 >> Head to Dun Morogh, train riding and purchase your mount.
-step << !Dwarf !Gnome wotlk
-    .goto Wetlands,9.5,59.7
-    .fp Menethil >> Get the Menethil Harbor flight path
 step << Gnome wotlk/Dwarf wotlk
     #completewith next
     .goto Ironforge,55.5,47.7
@@ -388,13 +395,18 @@ step << Paladin
 step << Warlock
     .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
+step << Warlock
+    .isOnQuest 1738
+    .goto StormwindClassic,25.3,78.7
     .turnin 1738 >>Turn in Heartswood
     .accept 1739 >>Accept The Binding
 step << Warlock
+    .isOnQuest 1739
     .goto StormwindClassic,25.2,77.5
     >>Go down into the crypt and use the quest item provided at the summoning circle
     .complete 1739,1 --Summoned Succubus (1)
 step << Warlock
+    .isQuestComplete 1739
     .goto StormwindClassic,25.4,78.7
     .turnin 1739 >>Turn in The Binding
 step << Mage
@@ -408,15 +420,15 @@ step << Rogue
 step << Warrior
 	.goto StormwindClassic,78.6,45.8
 	.trainer >> Go upstairs. Train your class spells
-step << Rogue
+step << Rogue tbc
     #sticky
     .goto StormwindClassic,75.8,60.1
     .accept 2281 >> Accept Redridge Rendezvous
     .accept 2360 >> Accept Mathias and the Defias
-step << Rogue
+step << Rogue tbc
 	.goto StormwindClassic,78.3,57.0
     .train 1804>>Make sure to train lockpicking
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,52.6,65.6
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei
@@ -474,7 +486,7 @@ step
 	#requires LakeshireFP
     .goto Redridge Mountains,33.4,49.1
     .accept 20 >> Accept Blackrock Menace
-step
+step << !Warlock
     >> Head into the town hall
     .goto Redridge Mountains,29.6,44.3
     .accept 91 >> Accept Solomon's Law
@@ -485,7 +497,7 @@ step
     .goto Redridge Mountains,27.7,47.3
     .accept 127 >> Accept Selling Fish
     .accept 150 >> Accept Murloc Poachers
-step << Rogue
+step << Rogue tbc
     .goto Redridge Mountains,28.1,52.1
     .turnin 2281 >> Turn in Redridge Rendezvous
     .accept 2282 >> Accept Alther's Mill
@@ -500,10 +512,10 @@ step
 	>> Kill murlocs. Loot them for their Sunfish and Fins
     .complete 127,1 --Collect Spotted Sunfish (x10)
     .complete 150,1 --Collect Murloc Fin (x8)
-step << Rogue
+step << Rogue tbc
 	#completewith next
     +Open the chests to train lockpicking, you will need 75 skill points for a quest later. Do NOT open the brown chest until you've done this
-step << Rogue
+step << Rogue tbc
     .goto Redridge Mountains,52.0,44.8
     .complete 2282,1 --Collect Token of Thievery (x1)
 step
@@ -514,10 +526,10 @@ step
     .goto Redridge Mountains,27.8,47.4
     .turnin 127 >> Turn in Selling Fish
     .turnin 150 >> Turn in Murloc Poachers
-step << Rogue
+step << Rogue tbc
     .goto Redridge Mountains,28.1,52.1
     .turnin 2282 >> Turn in Alther's Mill
-step << Rogue
+step << Rogue tbc
     #completewith next
     .destroy 7907 >> Delete the Certificate of Thievery
 step
@@ -539,7 +551,7 @@ step
 	.goto Duskwood,75.7,45.3
     .accept 66 >> Accept The Legend of Stalvan
     .accept 101 >> Accept The Totem of Infliction
-step << !Rogue
+step << Rogue wotlk/!Rogue
     .goto Duskwood,73.9,44.5
     .home >> Set your Hearthstone to Darkshire
 step
@@ -561,12 +573,14 @@ step
     .goto Duskwood,75.4,48.0
     .accept 173 >> Accept Worgen in the Woods
 step
-    >>Buy a bronze tube from Herble Baubbletump (limited supply) if you don't have one
     .goto Duskwood,77.8,48.2
+    .vendor >>Buy a bronze tube from Herble Baubbletump (limited supply) if you don't have one
+    .bronzetube
+step
+    .goto Duskwood,79.8,47.9
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    .goto Duskwood,79.8,47.9
-    .bronzetube
+    .bronzetube -1
 step << Rogue
     .goto Duskwood,77.5,44.4
     .fp Duskwood >> Get the Duskwood flight point
@@ -625,15 +639,15 @@ step << !Rogue !Druid
 step << Rogue/Druid
     .goto Westfall,56.6,52.6
     .fp Sentinel >> Get the Sentinel Hill flight path
-step << Rogue
+step << Rogue tbc
     .goto Westfall,68.5,70.0
     .turnin 2360 >> Turn in Mathias and the Defias
     .accept 2359 >> Accept Klaven's Tower
-step << Rogue
+step << Rogue tbc
     .goto Westfall,70.6,72.8
     >>Pickpocket one of the Defias Drones and loot the tower key
     .complete 2359,2 --Collect Defias Tower Key (x1)
-step << Rogue
+step << Rogue tbc
     .goto Westfall,70.4,74.0
     >>Climb to the top of the tower and loot the small chest on the floor
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
@@ -641,85 +655,85 @@ step << Rogue/Druid
     .goto Westfall,41.5,66.8
     .turnin 67 >> Turn in The Legend of Stalvan
     .accept 68 >> Accept The Legend of Stalvan
-step << Druid
+step << Druid tbc
     .goto Westfall,18.0,33.2
     >>Loot the lockbox located deep underwater
     .collect 15882,1 --Collect Half Pendant of Aquatic Endurance (x1)
-step << Druid
+step << Druid tbc
     .goto Moonglade,36.0,41.4
     >>Teleport to moonglade
     >>Combine the 2 pendants at the Shrine of Remulos
     .complete 272,1 --Collect Pendant of the Sea Lion (x1)
-step << Druid
+step << Druid tbc
     .goto Moonglade,56.2,30.6
     >>Teleport back to Nighthaven
     .turnin 272 >> Turn in Trial of the Sea Lion
     .accept 5061 >> Accept Aquatic Form
-step << Druid
+step << Druid tbc
     #sticky
     #completewith next
     .goto Moonglade,44.1,45.2
     .fly Teldrassil>> Fly to Teldrassil
-step << Druid
+step << Druid tbc
     .goto Darnassus,35.4,8.3
     .turnin 5061 >> Turn in Aquatic Form
 step << Rogue/Druid
     #sticky
     #completewith next
     .hs >> Hearth back to town
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,75.9,59.9
     .turnin 2359 >> Turn in Klaven's Tower
     .accept 2607 >> Accept The Touch of Zanzil
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.1,59.0
     >>Head to the basement
     .turnin 2607 >> Turn in The Touch of Zanzil
     .accept 2608 >> Accept The Touch of Zanzil
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.1,59.0
     >>Type /lay on the chat and wait until the quest complete itself
     .complete 2608,1 --Diagnosis Complete
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.0,58.8
     .turnin 2608 >> Turn in The Touch of Zanzil
     .accept 2609 >> Accept The Touch of Zanzil
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.2,59.0
     >>Buy a Leaded Vial from the Shady Dealer
     .complete 2609,2 --Collect Leaded Vial (x1)
-step << Rogue
+step << Rogue tbc
     >>Head to the flower vendor
     .complete 2609,1 --Collect Simple Wildflowers (x1)
     .goto StormwindClassic,64.3,60.8
-step << Rogue
+step << Rogue tbc
     #sticky
     #completewith next
     >>Buy a Bronze Tube at the Auction House. This is for your rogue quest, not Look to the Stars!
     .complete 2609,3 --Collect Bronze Tube (x1)
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,53.6,59.3
     >>Head to the shop next to the bridge between the Cathedral Square and the Park. This is an object on the ground you must pickup.
     .complete 2609,4 --Collect Spool of Light Chartreuse Silk Thread (x1)
     .goto StormwindClassic,39.8,46.5
     >>If you can't find a bronze tube, you will have to skip this quest, train First Aid to 80, farm a small venom sac from spiders in Duskwood, craft an Anti-Venom and remove the Zanzil poison.
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.0,58.9
     .turnin 2609 >> Turn in The Touch of Zanzil
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,78.2,59.0
     .vendor >>Buy Dust of Decay and Empty Vials so you can make poisons
-step << Rogue
+step << Rogue tbc
     #sticky
     #completewith next
     .use 8432 >> Use the antidote to the poison.
     .destroy 8046 >> Destroy Kearnen's Journal
-step << Rogue
+step << Rogue tbc
     .goto StormwindClassic,66.2,62.2
     .fly Duskwood>> Fly to Duskwood
-step << !Rogue !Druid
+step << !Rogue !Druid !Priest !Warlock
     .goto Duskwood,60.8,29.7
-	>>Grind your way back to eastern Duskwood
+	>>Grind your way back to eastern Duskwood. If killing Shadow Weavers is too difficult right now skip this step, you will complete it later
     .complete 173,1 --Kill Nightbane Shadow Weaver (x6)
 step
     .goto Duskwood,73.8,43.3
@@ -861,12 +875,17 @@ step << Hunter/Paladin
     .goto Duskwood,74.5,46.1
     .turnin 229 >> Turn in The Daughter Who Lived
     .accept 231 >> Accept A Daughter's Love
-step
-	#spiderend12
+step << !Rogue !Druid
+    .isOnQuest 173
+    .goto Duskwood,60.8,29.7
+	>>Kill Shadow Weavers above Darkshire
+    .complete 173,1 --Kill Nightbane Shadow Weaver (x6)
+step << !Priest !Warlock
     .goto Duskwood,75.3,47.9
     .turnin 173 >> Turn in Worgen in the Woods
     .accept 221 >> Accept Worgen in the Woods
 step
+    #label spiderend12
     .goto Duskwood,77.5,44.3
  .fly Redridge >> Fly to Redridge
 step
@@ -885,8 +904,11 @@ step
     .isOnQuest 94
     .goto Redridge Mountains,84.3,46.9
     .turnin 94 >> Turn in A Watchful Eye
-    .accept 248 >> Accept Looking Further
 step
+    .goto Redridge Mountains,84.3,46.9
+    .accept 248 >> Accept Looking Further
+    .isQuestTurnedIn 94
+step << !Warlock
     .goto Redridge Mountains,74.2,42.1
 	>> Kill gnolls in the area
     .complete 91,1 --Collect Shadowhide Pendant (x10)
@@ -916,7 +938,7 @@ step
 step
 	.goto Redridge Mountains,33.5,48.9
     .turnin 115 >> Turn in Shadow Magic
-step
+step << !Warlock
     .goto Redridge Mountains,29.6,44.3
     .turnin 91 >> Turn in Solomon's Law
 step
@@ -945,6 +967,10 @@ step
     .goto Duskwood,18.4,56.5
     .turnin 240 >> Turn in Return to Jitters
     .isOnQuest 240
+step
+    .goto Duskwood,7.7,34.1
+    .turnin 268 >> Turn in Return to Sven
+    .accept 323 >> Accept Proving Your Worth
 step << !Hunter !Paladin
     .goto Duskwood,21.6,45.1
 	>> Kill undead in the area and loot them
@@ -952,13 +978,9 @@ step << !Hunter !Paladin
     .complete 57,2 --Kill Skeletal Horror (x15)
     .complete 156,1 --Collect Rot Blossom (x8)
     .complete 101,3 --Collect Skeleton Finger (x10)
-step
-    .goto Duskwood,7.7,34.1
-    .turnin 268 >> Turn in Return to Sven
-    .accept 323 >> Accept Proving Your Worth
 step << Hunter/Paladin
     .goto Duskwood,17.7,29.2
-    >> She can patrol around the fountain
+    >> Click on the gravestone
     .turnin 231 >> Turn in A Daughter's Love
 step << Hunter/Paladin
     .goto Duskwood,21.6,45.1
@@ -1002,10 +1024,11 @@ step << Shaman
 	.goto StormwindClassic,61.9,84.0
 	.trainer >> Train your class spells
 step << Warrior
-	.goto StormwindClassic,78.6,45.8
-	.trainer >> Go upstairs. Train your class spells
+    .goto Elwynn Forest,41.1,65.8
+    .trainer >> Train your class spells
 step << Warlock
-    .goto StormwindClassic,25.3,78.7
+    >>Go into the inn basement
+    .goto Elwynn Forest,44.4,66.2
 	.trainer >> Train your class spells
 step << Mage
     .goto StormwindClassic,39.6,79.6
@@ -1705,6 +1728,9 @@ step
     .turnin 1243 >> Turn in The Missing Diplomat
     .accept 1244 >> Accept The Missing Diplomat
 step
+    .goto Duskwood,60.8,29.7
+    .complete -173,1 --Kill Nightbane Shadow Weaver (x6)
+step
     .goto Elwynn Forest,84.6,69.5
 	>> Run north to Eastvale Logging Camp in Elwynn Forest
     .turnin 74 >> Turn in The Legend of Stalvan
@@ -1814,7 +1840,7 @@ step
     .accept 160 >> Accept Note to the Mayor
 step << !Hunter !Paladin
     .goto Duskwood,17.7,29.2
-    >> She can patrol around the fountain
+    >> Click on the gravestone
     .turnin 231 >> Turn in A Daughter's Love
 step << !Dwarf/!Paladin
     .goto Duskwood,7.8,34.1
@@ -1827,18 +1853,25 @@ step << !Dwarf/!Paladin
 step << !Dwarf/!Paladin
     .goto Duskwood,7.8,34.3
     .turnin 55 >> Turn in Morbent Fel
-step << Shaman/Dwarf Paladin
+step << Shaman/Dwarf Paladin/wotlk
     #sticky
-    #completewith next
+    #completewith ds1
     .hs >> Hearth to Darkshire
-step << Druid/Hunter/Mage/!Dwarf Paladin/Priest/Rogue/Warlock/Warrior
+step << !Shaman !Paladin/!Dwarf Paladin
     .goto Westfall,56.5,52.6
+    >>Fly to Darkshire if your HS is on cooldown << wotlk
     .fly Darkshire>> Fly to Darkshire
+    .cooldown item,6948,<1 << wotlk
 step
     .goto Duskwood,79.8,47.9
     .isOnQuest 181
     .turnin 181 >> Turn in Look To The Stars
 step
+    .goto Duskwood,75.3,47.9
+    .turnin 173 >> Turn in Worgen in the Woods
+    .accept 221 >> Accept Worgen in the Woods
+step
+    #label ds1
     .goto Duskwood,75.7,45.3
     .turnin 101 >> Turn in The Totem of Infliction
 step << !Shaman
@@ -2044,6 +2077,9 @@ step
 step << Warlock
     .goto StormwindClassic,25.3,78.5
     .accept 4738 >>Accept In Search of Menara Voidrender
+    .xp <31,1
+step << Warlock
+    .goto StormwindClassic,25.3,78.5
     .accept 1798 >>Accept Seeking Strahad
 	.trainer >> Train your class spells
 step << Human Paladin
@@ -2436,6 +2472,9 @@ step
     .turnin 1243 >> Turn in The Missing Diplomat
     .accept 1244 >> Accept The Missing Diplomat
 step
+    .goto Duskwood,60.8,29.7
+    .complete -173,1 --Kill Nightbane Shadow Weaver (x6)
+step
     .goto Elwynn Forest,84.6,69.5
 	>> Run north to Eastvale Logging Camp in Elwynn Forest
     .turnin 74 >> Turn in The Legend of Stalvan
@@ -2554,22 +2593,28 @@ step
     .accept 160 >> Accept Note to the Mayor
 step << !Hunter !Paladin
     .goto Duskwood,17.7,29.2
-    >> She can patrol around the fountain
+    >> Click on the gravestone
     .turnin 231 >> Turn in A Daughter's Love
-step << Shaman tbc/Dwarf Paladin tbc
+step << Shaman tbc/Dwarf Paladin tbc/wotlk
     #sticky
-    #completewith next
+    #completewith ds2
     .hs >> Hearth to Darkshire
 step
 #completewith next
     .goto Westfall,56.5,52.6
-    >> Head to Westfall, it's faster than running back to Darkshire.
+    >>Fly to Darkshire if your HS is on cooldown << wotlk
     .fly Darkshire>> Fly to Darkshire
+    .cooldown item,6948,<1 << wotlk
 step
     .goto Duskwood,79.8,47.9
     .isOnQuest 181
     .turnin 181 >> Turn in Look To The Stars
 step
+    .goto Duskwood,75.3,47.9
+    .turnin 173 >> Turn in Worgen in the Woods
+    .accept 221 >> Accept Worgen in the Woods
+step
+    #label ds2
     .goto Duskwood,75.7,45.3
     .turnin 101 >> Turn in The Totem of Infliction
 step << !Shaman
@@ -2710,6 +2755,9 @@ step
 step << Warlock
     .goto StormwindClassic,25.3,78.5
     .accept 4738 >>Accept In Search of Menara Voidrender
+    .xp <31,1
+step << Warlock
+    .goto StormwindClassic,25.3,78.5
     .accept 1798 >>Accept Seeking Strahad
 	.trainer >> Train your class spells
 step << Human Paladin
@@ -2775,7 +2823,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
 	.train 266 >> Train Guns << Hunter/Warrior/Rogue
     .train 199 >> Train 2H Maces << Warrior/Shaman
     .train 198 >> Train Maces << Rogue/Shaman
-    .train 44 >> Train Axes << Shaman
+    .train 44 >> Train Axes << Warrior wotlk/Shaman
     .zoneskip Wetlands
 step << Hunter
 	#sticky
@@ -2783,7 +2831,7 @@ step << Hunter
 	.goto Ironforge,61.34,89.25
 	>>Go inside the building, head downstairs and buy a level 30 quiver from Thalgus Thunderfist
 	.collect 7371,1
-step << Dwarf Paladin
+step
     .goto Ironforge,18.5,51.6
     .home >>Set your HS to Ironforge
 step << Dwarf Paladin
@@ -2861,6 +2909,11 @@ step << Gnome/Dwarf/tbc
     .goto Ironforge,55.5,47.7
     .fly Wetlands>> Fly to wetlands
 step << wotlk !Dwarf !Gnome
+    #sticky
+    .goto Dun Morogh,53.2,35.3
+    .zone Dun Morogh >> Head outside to Dun Morogh
+    .zoneskip Ironforge,1
+step << wotlk !Dwarf !Gnome
     #completewith next
     .goto Dun Morogh,59.5,42.8,40,0
     .goto Dun Morogh,60.4,44.1,40,0
@@ -2929,9 +2982,6 @@ step
     >> Buy a Flagon of Mead from the Innkeeper
     .complete 288,1 --Collect Flagon of Mead (x1)
 step
-    .goto Wetlands,10.6,60.7
-    .home >> Set your Hearthstone to Wetlands
-step
     .goto Wetlands,10.84,60.43
     >>Go upstairs and talk to Archaeologist Flagongut
     .turnin 942 >>Turn in The Absent Minded Prospector
@@ -2958,13 +3008,13 @@ step
     .turnin 1250 >> Turn in The Missing Diplomat
     .accept 1264 >> Accept The Missing Diplomat
 step
-    .goto Wetlands,8.4,61.6
-    .turnin 1301 >> Turn in James Hyal
-    .accept 1302 >> Accept James Hyal
-step
     .goto Wetlands,10.8,59.7
     .turnin 288 >> Turn in The Third Fleet
     .accept 289 >> Accept The Cursed Crew
+step
+    .goto Wetlands,8.4,61.6
+    .turnin 1301 >> Turn in James Hyal
+    .accept 1302 >> Accept James Hyal
 step << Draenei !Shaman tbc
 	.goto Wetlands,4.8,57.3,50,0
 	.goto Darkshore,31.0,41.1,30.0
@@ -3134,7 +3184,6 @@ step
     >>You can still get this quest if you don't have any kind of speed increase or slow fall
     .link https://www.twitch.tv/videos/646111384 >>Click here for reference
 step
-#xprate <1.5
     .goto Arathi Highlands,44.3,93.0
 	>>Jump down and loot the letter from the corpse underwater
     .accept 637 >> Accept Sully Balloo's Letter
@@ -3242,6 +3291,11 @@ step
     >>Look for a wooden box inside of the destroyed tower
     .complete 9435,1 --Collect Shipment of Rare Crystals (x1)
 step
+    .goto Alterac Mountains,58.4,67.9
+	>>Click on the map on top of a small table
+    .accept 510 >> Accept Foreboding Plans
+    .accept 511 >> Accept Encrypted Letter
+step
     .goto Western Plaguelands,42.9,85.0
     >>Head north to Western Plaguelands
     .fp Chillwind >> Get the Chillwind Camp flight path
@@ -3250,11 +3304,37 @@ step
     .goto Western Plaguelands,42.9,85.0
     .fly Southshore>> Fly to Southshore
 step
+    .goto Hillsbrad Foothills,50.5,57.1
+    .turnin 511 >> Turn in Encrypted Letter
+    .accept 514 >> Accept Letter to Stormpike
+step
+    .goto Hillsbrad Foothills,48.2,59.3
+    .turnin 510 >> Turn in Foreboding Plans
+step
     .goto Hillsbrad Foothills,50.9,58.8
     .turnin 9435 >> Turn in Missing Crystals
 step
     #completewith next
-    .hs >> Hearth to Menethil
+    .hs >> Hearth to Ironforge
+step
+    .goto Ironforge,63.79,67.78
+    .turnin 637 >>Turn in Sully Balloo's Letter
+step
+    .goto Ironforge,74.64,11.74
+    .turnin 514 >>Turn in Letter to Stormpike
+step
+    .goto Ironforge,63.79,67.78
+    .accept 683 >>Accept Sara Balloo's Plea
+step
+    .goto Ironforge,39.10,56.19
+    .turnin 683 >>Turn in Sara Balloo's Plea
+    .accept 686 >>Accept A King's Tribute
+step
+    .goto Ironforge,38.75,87.04
+    .turnin 686 >>Turn in A King's Tribute
+step
+    .goto Ironforge,55.5,47.7
+    .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.8,59.6
     .turnin 289 >> Turn in The Cursed Crew

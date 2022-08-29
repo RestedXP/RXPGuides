@@ -13,7 +13,8 @@ step << !NightElf
     #completewith next
     +You have selected a guide meant for Night Elves. You should choose the same starter zone that you start in
 step
-    .goto Teldrassil,58.7,44.4
+    .goto Teldrassil,58.69,44.27 << tbc
+    .goto Teldrassil,58.62,44.71 << wotlk
     .accept 456 >> Accept The Balance of Nature
 step
     #sticky
@@ -50,7 +51,8 @@ step << Hunter
     .accept 459 >> Accept The Woodland Protector
 step
     #requires balance1
-	.goto Teldrassil,58.7,44.2
+    .goto Teldrassil,58.69,44.27 << tbc
+    .goto Teldrassil,58.62,44.71 << wotlk
     .turnin 456 >> Turn in The Balance of Nature
     .accept 457 >> Accept The Balance of Nature
 	.accept 3116 >> Accept Simple Sigil << Warrior

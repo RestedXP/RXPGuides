@@ -497,6 +497,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                             zone = element.zone,
                             parent = element.parent,
                             wpHash = element.wpHash,
+                            overrideCorpse = not element.textOnly,
                         })
                     end
                 end
@@ -751,9 +752,13 @@ local function updateArrow()
 
     if UnitIsGhost("player") and --Meet at the grave and the follow-up quest:
         not (addon.QuestAutoTurnIn(3912) or addon.QuestAutoAccept(3913)) then
+        local skip
+        for i,element in ipairs(addon.activeWaypoints) do
+            skip = skip or element.overrideCorpse
+        end
         local zone = HBD:GetPlayerZone()
         local corpse = C_DeathInfo.GetCorpseMapPosition(zone)
-        if corpse and corpse.x then
+        if not skip and corpse and corpse.x then
             corpseWP.wx, corpseWP.wy, corpseWP.instance =
                              HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)
             ProcessWaypoint(corpseWP)

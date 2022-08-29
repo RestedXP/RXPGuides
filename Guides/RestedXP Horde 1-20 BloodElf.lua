@@ -13,6 +13,7 @@ step << !BloodElf
 .goto Eversong Woods,38.2,20.8
     +You have selected a guide meant for Blood Elves. We do not recommend doing the 1-6 zone due to there being no quests for non-Blood Elves. You should choose the same starter zone that you start in
 step
+    >> Talk to Magistrix Erona
     .goto Eversong Woods,38.2,20.8 << tbc
 	.goto Eversong Woods,38.02,21.01 << wotlk
     .accept 8325 >> Accept Reclaiming Sunstrider Isle
@@ -25,7 +26,8 @@ step
     .goto Eversong Woods,38.2,20.8 << tbc
 	.goto Eversong Woods,38.02,21.01 << wotlk
 	>>Continue grinding mobs until you have 65 copper worth of vendor items before turning in this quest. << Warlock wotlk
-    .turnin 8325 >> Turn in Reclaiming Sunstrider Isle
+    .turnin 8325,1 >> Turn in Reclaiming Sunstrider Isle << Paladin
+    .turnin 8325 >> Turn in Reclaiming Sunstrider Isle << !Paladin
 step
     .goto Eversong Woods,38.2,20.8 << tbc
 	.goto Eversong Woods,38.02,21.01 << wotlk	
@@ -77,10 +79,9 @@ step << Rogue
     .goto Eversong Woods,38.9,20.0
     .accept 10071 >> Accept Well Watcher Solanian
 step << Hunter
+    >> Talk to Ranger Sallina on the bottom floor
     .goto Eversong Woods,39.0,20.0
     .turnin 9393 >> Turn in Hunter Training
-step << Hunter
-    .goto Eversong Woods,39.0,20.0
     .accept 10070 >> Accept Well Watcher Solanian
 step << Warlock
     .goto Eversong Woods,38.9,21.4
@@ -183,7 +184,9 @@ step
 step
     .goto Eversong Woods,38.2,20.8 << tbc
 	.goto Eversong Woods,38.02,21.01 << wotlk
-    .turnin 8326 >> Turn in Unfortunate Measures
+    >> Head back to Magistrix Erona
+    .turnin 8326,1 >> Turn in Unfortunate Measures << Paladin
+    .turnin 8326 >> Turn in Unfortunate Measures << !Paladin
     .accept 8327 >> Accept Report to Lanthan Perilon
 step << !Warlock tbc
     #sticky
@@ -197,15 +200,15 @@ step << !Warlock tbc
 step << wotlk
     #sticky
     #completewith arcaneend
-    #label manaarcane
     .goto Eversong Woods,37.7,24.9,0
     >>Use the spell "Arcane Torrent" on Mana Wyrms as you quest. It's in the General tab of your spellbook. Group them up to get more than 1 credit per cast.
-    >>Kill Mana Wyrms as you quest for Slivers. Don't go out of your way to kill them as you'll only need to kill them when your Arcane Torrent comes off cooldown.
+    >>Loot enemies as you quest for Slivers. Don't go out of your way for them, you'll get plenty.
     .complete 8346,1 --Mana Tap creature (x6)
     .complete 8336,1 --Collect Arcane Sliver (x6)
 step
     #label Report
     .goto Eversong Woods,35.4,22.5
+    >> Talk to Lanthan Perilon by the benches
     .turnin 8327 >> Turn in Report to Lanthan Perilon
     .accept 8334 >> Accept Aggression
 step
@@ -224,14 +227,24 @@ step
     .goto Eversong Woods,35.1,28.9
     .complete 8330,1 --Collect Solanian's Scrying Orb (x1)
 step
-    >>Finish killing Tenders in the area
+    >>Finish killing Tenders in the area. Try to end on the north side, we're hading back to Lanthan Perilon after.
     .goto Eversong Woods,35.3,28.5
     .complete 8334,1 --Kill Tender (x7)
     .complete 8334,2 --Kill Feral Tender (x7)
 step
+    #label arcaneend
     .goto Eversong Woods,35.4,22.5
-    .turnin 8334 >> Turn in Aggression
+    >> Return to Lanthan Perilon
+    .turnin 8334,5 >> Turn in Aggression << Paladin
+    .turnin 8334 >> Turn in Aggression << !Paladin
     .accept 8335 >> Accept Felendren the Banished
+step << wotlk
+    #label manaarcane
+    .goto Eversong Woods,37.7,24.9
+    >>Use the spell "Arcane Torrent" on Mana Wyrms as you quest. It's in the General tab of your spellbook. Group them up to get more than 1 credit per cast.
+    >>Loot enemies as you quest for Slivers. Don't go out of your way for them, you'll get plenty.
+    .complete 8346,1 --Mana Tap creature (x6)
+    .complete 8336,1 --Collect Arcane Sliver (x6)
 step << !Warlock tbc
     .goto Eversong Woods,35.3,28.5
     .xp 4-360 >> Grind til you are 360 exp from level 4.
@@ -239,14 +252,16 @@ step << wotlk
     .goto Eversong Woods,35.3,28.5
     .xp 4-610 >> Grind til you are 610 exp from level 4.
 step << wotlk
-    #label arcaneend
     #requires manaarcane	
     .goto Eversong Woods,37.2,18.9
-    .turnin 8346 >> Turn in Thirst Unending
+    >> Return to Arcanist Helion
+    .turnin 8346,1 >> Turn in Thirst Unending << Paladin
+    .turnin 8346 >> Turn in Thirst Unending << !Paladin
     .vendor >> Vendor your trash << !Mage !Priest !Warlock
 step << !Warlock tbc
     #label arcaneend
     #requires manaarcane
+    >> Talk to Arcanist Ithanas
     .goto Eversong Woods,38.3,19.1
     .turnin 8336 >> Turn in A Fistful of Slivers
 step << wotlk
@@ -267,6 +282,7 @@ step << Rogue tbc/Paladin tbc/Hunter tbc
 .goto Eversong Woods,38.7,20.3
     .vendor >>Vendor trash
 step << Hunter
+    >> Head inside the building
     .goto Eversong Woods,39.0,20.0
     .train 1978 >>Train Serpent Sting
 step << Priest
@@ -286,7 +302,7 @@ step << Warlock wotlk
 	.train 348 >> Train Immolate
 step
     #label pepegavendor
-    >>Read the plaque on the wall. Grind some mobs en route
+    >>Head far west. Read the plaque on the wall. Grind some mobs en route
     .goto Eversong Woods,29.6,19.4
     .complete 8345,1 --Collect Shrine of Dath'Remar Read (x1)
 step
@@ -332,19 +348,24 @@ step
 step
     >>Go upstairs in the building
     .goto Eversong Woods,38.7,19.4
-    .turnin 8330 >> Turn in Solanian's Belongings
+    .turnin 8330,1 >> Turn in Solanian's Belongings << Paladin/Rogue/Hunter
+    .turnin 8330 >> Turn in Solanian's Belongings << !Paladin !Rogue !Hunter
     .turnin 8345 >> Turn in The Shrine of Dath'Remar
 step << !Warlock tbc
     .goto Eversong Woods,37.2,18.9
     .turnin 8346 >> Turn in Thirst Unending
     .turnin 8338 >> Turn in Tainted Arcane Sliver
 step << wotlk
+    >> Talk to Arcanist Helion
     .goto Eversong Woods,37.2,18.9
     .turnin 8346 >> Turn in Thirst Unending
     .turnin 8338 >> Turn in Tainted Arcane Sliver	
 step
+    >> Return to Lanthan Perilon by the bench
     .goto Eversong Woods,35.4,22.5
-    .turnin 8335 >> Turn in Felendren the Banished
+    .turnin 8335,1 >> Turn in Felendren the Banished << Hunter
+    .turnin 8335,2 >> Turn in Felendren the Banished << Paladin
+    .turnin 8335 >> Turn in Felendren the Banished << !Hunter !Paladin
 step
     .goto Eversong Woods,35.4,22.5
     .accept 8347 >> Accept Aiding the Outrunners
@@ -352,16 +373,18 @@ step
     .goto Eversong Woods,35.3,28.5
     .xp 5+1800 >> Grind to 1800+/2800xp. We want to be level 6 entering the next town.
 step
+    >> Leave Sunstrider Isle by following the road south. Talk to Outrunner Alarion
     .goto Eversong Woods,40.4,32.2
     .turnin 8347 >> Turn in Aiding the Outrunners
     .accept 9704 >> Accept Slain by the Wretched
 step
+    >> Head up the road and talk to the corpse
     .goto Eversong Woods,42.0,35.7
     .turnin 9704 >> Turn in Slain by the Wretched
     .accept 9705 >> Accept Package Recovery
 step
     .goto Eversong Woods,40.4,32.2
-    >> Head back to the previous quest giver
+    >> Head back to Outrunner Alarion
     .turnin 9705 >> Turn in Package Recovery
     .accept 8350 >> Accept Completing the Delivery
 step
@@ -414,9 +437,11 @@ step << Warlock
 step << Warrior/Rogue
     .goto Eversong Woods,48.6,47.6
     .train 3273 >>Train First Aid
-step
+step !BloodElf
     .goto Eversong Woods,48.2,47.7
     .home >> Go back downstairs. Set your Hearthstone to Falconwing Square
+step
+    .goto Eversong Woods,48.2,47.7
     .vendor >> Buy as much level 5 drink as you can afford << Mage/Warlock/Priest
 step
     #completewith next
@@ -427,6 +452,7 @@ step
     .accept 8468 >> Accept Wanted: Thaelis the Hungerer
     .accept 8463 >> Accept Unstable Mana Crystals
 step << Paladin
+    >> Go inside
     .goto Eversong Woods,48.4,46.5
     .train 639 >>Train Holy Light r2
     .train 498 >>Train Divine Protection
@@ -436,6 +462,7 @@ step << Rogue
     .train 1757 >>Train Sinister Strike r2
     .train 1776 >>Train Gouge
 step << Hunter
+    >> Go inside
     .goto Eversong Woods,48.3,46.1
     .train 1130 >>Train Hunter's Mark
     .train 3044 >>Train Arcane Shot
@@ -519,7 +546,7 @@ step
     .turnin 9062 >> Turn in Soaked Pages
     .accept 9064 >> Accept Taking the Fall
 step
-    >> talk to Ranger Jaela at the Dead Scar
+    >> Talk to Ranger Jaela at the Dead Scar
     .goto Eversong Woods,50.3,50.8
     .accept 8475 >> Accept The Dead Scar
 step << BloodElf Priest
@@ -551,7 +578,8 @@ step
 step
     >> Return to Ranger Jaela
     .goto Eversong Woods,50.3,50.8
-    .turnin 8475 >> Turn in The Dead Scar
+    .turnin 8475,2 >> Turn in The Dead Scar << Paladin
+    .turnin 8475 >> Turn in The Dead Scar << !Paladin
 step << Paladin/Priest/Mage
     .use 22473 >>Use the Disciplinary Rod in your bags on Ralen
     .goto Eversong Woods,45.2,57.0
@@ -593,7 +621,8 @@ step
 step
     >> Return to Ley-Keeper Velania
     .goto Eversong Woods,36.7,57.4
-    .turnin 8486 >> Turn in Arcane Instability
+    .turnin 8486,1 >> Turn in Arcane Instability << Paladin
+    .turnin 8486 >> Turn in Arcane Instability << !Paladin
     .turnin 9352 >> Turn in Darnassian Intrusions
 step
     >> Talk to Hathvelion Sungaze
@@ -778,13 +807,16 @@ step
     #requires Cargo
     >> Return to Hathvelion Sungaze ontop of the hill
     .goto Eversong Woods,30.2,58.4
-    .turnin 8885 >> Turn in The Ring of Mmmrrrggglll
+    .turnin 8885,1 >> Turn in The Ring of Mmmrrrggglll << Hunter
+    .turnin 8885,4 >> Turn in The Ring of Mmmrrrggglll << Paladin
+    .turnin 8885 >> Turn in The Ring of Mmmrrrggglll << !Hunter !Paladin
 step
     #label pelttyyy
     .goto Eversong Woods,36.4,66.7
     >> Return to the Captain's camp
     .turnin 8886 >> Turn in Grimscale Pirates!
-    .turnin 9076 >> Turn in Wretched Ringleader
+    .turnin 9076,1 >> Turn in Wretched Ringleader << Paladin
+    .turnin 9076 >> Turn in Wretched Ringleader << !Paladin
 step << Hunter
     .goto Eversong Woods,34.1,80.0
     .turnin 9258 >> Turn in The Scorched Grove
@@ -829,7 +861,8 @@ step << !Hunter
     .isQuestComplete 8491
     >> Talk to Velan Brightoak
     .goto Eversong Woods,44.7,69.7
-    .turnin 8491 >> Turn in Pelt Collection
+    .turnin 8491,2 >> Turn in Pelt Collection << Paladin
+    .turnin 8491 >> Turn in Pelt Collection << !Paladin
 step
     >> Be aware that Darkwraiths Enrage at low health. Rotlimb Marauders also have an instant-cast 15 damage spell
     .goto Eversong Woods,50.9,80.7,60,0
@@ -866,7 +899,7 @@ step
 step << Paladin/Priest/Mage
      .goto Eversong Woods,52.0,69.1
     .xp 9+5875 >> Grind to 5875+/6500xp
-step << Warrior/Warlock/Rogue !Undead/!Warlock
+step << Warrior/Warlock/Rogue !Undead/!Warlock !Paladin !Priest !Mage
      .goto Eversong Woods,52.0,69.1
     .xp 9+5700 >> Grind to 5700+/6500xp
 step << Undead Warlock
@@ -934,7 +967,8 @@ step << Paladin/Priest/Mage
 step << !Hunter
     >> Return to Aeldon Sunbrand
     .goto Eversong Woods,48.2,46.0
-    .turnin 8483 >> Turn in The Dwarven Spy
+    .turnin 8483,1 >> Turn in The Dwarven Spy << Paladin
+    .turnin 8483 >> Turn in The Dwarven Spy << !Paladin
 step << !Hunter
      .goto Eversong Woods,47.7,47.2
     .xp 10 << Grind to 10
@@ -1070,6 +1104,7 @@ RXPGuides.RegisterGuide([[
 #next 20-23 Stonetalon / The Barrens
 step << Orc Hunter/Troll Hunter
     .money <0.1000
+    >> Head to Farstriders' Square and talk to Ileda
     .goto Silvermoon City,91.2,38.7
     .train 202 >>Train 2h Swords
 step << Orc/Troll/Tauren
@@ -1112,6 +1147,7 @@ step << Paladin/Rogue
     .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
 step << !Paladin !Rogue
+    >> Talk to Arathel Sunforge
     .goto Eversong Woods,59.5,62.6
     .accept 8477 >> Accept The Spearcrafter's Hammer
 step << BloodElf Hunter
@@ -1127,6 +1163,7 @@ step << BloodElf Hunter
     .goto Eversong Woods,65.3,59.5,30,0
     .goto Eversong Woods,66.2,57.5,30,0
     .complete 9486,1 --Tame an Elder Springpaw
+    .unitscan Elder springpaw
 step << BloodElf Hunter
     .goto Eversong Woods,60.3,62.8
     .turnin 9486 >> Turn in Taming the Beast
@@ -1141,6 +1178,10 @@ step
     >>Kill Trolls in the area whilst doing other quests. Be careful as the Berserkers enrage at low hp
     .complete 8476,1 --Kill Amani Berserker (x5)
     .complete 8476,2 --Kill Amani Axe Thrower (x5)
+step << Orc Hunter wotlk / Troll Hunter wotlk
+    #completewith next
+    .tame 15652 >>Tame a Elder Springpaw en route to the quest area
+    .unitscan Elder Springpaw
 step
      .goto Eversong Woods,70.1,72.3
     >> Kill and loot Otembe for his hammer
@@ -1165,7 +1206,9 @@ step
     #label Marosh
     .goto Eversong Woods,70.5,72.4
     >> Kill Otembe one more time if you still didn't get a good green weapon << Paladin/Rogue/Warrior
-    .turnin 8479 >> Turn in Zul'Marosh
+    .turnin 8479,1 >> Turn in Zul'Marosh << Hunter
+    .turnin 8479,2 >> Turn in Zul'Marosh << Priest/Warlock/Mage
+    .turnin 8479 >> Turn in Zul'Marosh << !Hunter !Priest !Warlock !Mage
 step
     >>Finish killing Trolls in the area whilst doing other quests. Be careful as the Berserkers enrage at low hp
     .goto Eversong Woods,71.1,77.3
@@ -1268,7 +1311,8 @@ step << Undead/BloodElf !Hunter
 step
     >>Talk to Arathel Sunforge
     .goto Eversong Woods,59.5,62.6
-    .turnin 8477 >> Turn in The Spearcrafter's Hammer
+    .turnin 8477,1 >> Turn in The Spearcrafter's Hammer << Paladin
+    .turnin 8477 >> Turn in The Spearcrafter's Hammer << !Paladin
 step
     .goto Eversong Woods,60.4,61.3
     >> Head upstairs to the right. Speak to Magister Duskwither
@@ -1284,15 +1328,10 @@ step
     .turnin 8888 >> Turn in The Magister's Apprentice
     .accept 8889 >> Accept Deactivating the Spire
     .accept 9394 >> Accept Where's Wyllithen?
-step << Hunter
-    .tame 15652 >>Tame a level 9 Elder Springpaw (level 9 comes with Claw rank 2) << tbc
-    .tame 15652 >>Tame a Elder Springpaw << wotlk
-    .goto Eversong Woods,68.7,46.9
-    .turnin 9394 >> Turn in Where's Wyllithen?
-    .accept 8894 >> Accept Cleaning up the Grounds
-step << !Hunter
+step
     >> Speak to Groundskeeper Wyllithen
     .goto Eversong Woods,68.7,46.9
+    .tame 15652 >>Tame a level 9 Elder Springpaw (level 9 comes with Claw rank 2) << Hunter tbc
     .turnin 9394 >> Turn in Where's Wyllithen?
     .accept 8894 >> Accept Cleaning up the Grounds
 step
@@ -1330,7 +1369,7 @@ step << !BloodElf/!Warlock
     >> Grind mobs in the area
     .xp 11+8175 >> Grind to 8175+/8700xp
 step
-    >> Speak to Apprentice Loralthalis
+    >> Speak to Apprentice Loralthalis up the road
     .goto Eversong Woods,67.8,56.5
     .turnin 8889 >> Turn in Deactivating the Spire
     .accept 8890 >> Accept Word from the Spire
@@ -1388,7 +1427,7 @@ step << Druid
     .train 5229 >>Train Enrage
 step << Hunter
     #completewith next
-    .goto Silvermoon City,83.4,30.1,20 >>Enter the building
+    .goto Silvermoon City,83.4,30.1,20 >>Enter the building in the Farstriders' Square
 step << BloodElf Hunter
     .goto Silvermoon City,82.2,28.1
     .turnin 9673 >> Turn in Beast Training
@@ -1449,7 +1488,7 @@ step << Paladin/Rogue
     .cast 2580 >>Cast Find Minerals
 step << Paladin/Rogue
     .goto Silvermoon City,78.4,42.5
-    .buy 2901 >> Purchase a mining pick
+    .buy 2901,1 >> Purchase a mining pick
     .collect 2901,1 >> Mining Pick Acquired
 step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
@@ -1483,6 +1522,7 @@ step << Undead/BloodElf !Hunter
     .hs >> Hearth to Falconwing or run if its not up
 step << Undead/BloodElf !Hunter 
     >> Talk to Ranger Sareyn
+    .goto Eversong Woods,46.9,71.8
     .turnin 9252 >> Turn in Defending Fairbreeze Village
     .accept 9253 >> Accept Runewarden Deryan
 step << Undead/BloodElf !Hunter
@@ -1497,21 +1537,24 @@ step << Undead/BloodElf !Hunter
     .goto Eversong Woods,44.0,70.8
     .turnin 9255 >>Turn in Research Notes
 step << !BloodElf/!Hunter
-    .goto Eversong Woods,44.0,70.8
+    >> Talk to Magistrix Landra, then go inside the inn and talk to Ardeyn Riverwind
     .accept 9144 >>Accept Missing in the Ghostlands
-step << !BloodElf/!Hunter
-    .goto Eversong Woods,43.6,71.2
+    .goto Eversong Woods,44.0,70.8
 .accept 9258 >>Accept The Scorched Grove
+    .goto Eversong Woods,43.6,71.2
 step << !BloodElf/!Hunter
-    >> Speak to Ranger Degolien
+    >> Speak to Ranger Degolien upstairs
     .goto Eversong Woods,43.3,70.8
     .turnin 9363 >>Turn in Warning Fairbreeze Village
+step
+    #completewith next
+    .abandon 9363 >> Abandon Warning Fairbreeze Village
 step << Undead/BloodElf !Hunter
     >> Speak to Lord Saltheril
     .goto Eversong Woods,38.1,73.6
     .turnin 9067 >> Turn in The Party Never Ends
 step << !BloodElf/!Hunter
-    >> Speak to Larianna Riverwind
+    >> Speak to Larianna Riverwind to the west
     .goto Eversong Woods,34.1,80.0
     .turnin 9258 >> Turn in The Scorched Grove
     .accept 8473 >> Accept A Somber Task
@@ -1550,13 +1593,13 @@ step << BloodElf Mage
     >>Kill Treants in the area. Loot them for the Branch
     .goto Eversong Woods,53.9,80.6
     .collect 23553,1 --Collect Living Branch (x1)
+step << !BloodElf/!Hunter
+    .isOnQuest 8490
+    .abandon 8490 >>Abandon Powering our Defenses
 step
     >> Speak with Courier Dawnstrider
     .goto Eversong Woods,49.0,89.0
     .turnin 9144 >> Turn in Missing in the Ghostlands
-step << !BloodElf/!Hunter
-    .isOnQuest 8490
-    .abandon 8490 >>Abandon Powering our Defenses
 step
     >> Speak with Apothecary Thedra
     .goto Eversong Woods,49.0,89.2
@@ -1593,7 +1636,8 @@ step
 step << BloodElf !Hunter
     >> Speak to Arcanist Vandril
     .goto Ghostlands,46.5,28.4
-    .turnin 9148 >> Turn in Delivery to Tranquillien
+    .turnin 9148,3 >> Turn in Delivery to Tranquillien << Paladin
+    .turnin 9148 >> Turn in Delivery to Tranquillien << !Paladin
     .accept 9327 >> Accept The Forsaken
 step << !BloodElf
     >> Speak to Arcanist Vandril
@@ -1604,23 +1648,28 @@ step << !BloodElf/!Hunter
     .goto Ghostlands,45.5,30.5
     .fp Tranquillien >> Get the Tranquillien flight path
 step << BloodElf !Hunter
-    >> Speak to High Executor Mavren
+    >> Speak to High Executor Mavren, then run outside and speak to Quartermaster Lymel and Rathis Tomber. Lastly talk to Arcanist Vandril again
     .turnin 9327 >> Turn in The Forsaken
     .goto Ghostlands,44.8,32.5
     .accept 9758 >> Accept Return to Arcanist Vandril
-    >> Then speak to Quartermaster Lymel and Rathis Tomber
     .accept 9130 >> Accept Goods from Silvermoon City
     .goto Ghostlands,47.3,28.9
     .accept 9152 >> Accept Tomber's Supplies
     .goto Ghostlands,47.0,28.5
-    >> Lastly talk to Arcanist Vandril again
     .turnin 9758 >> Turn in Return to Arcanist Vandril
     .goto Ghostlands,46.3,28.4
     .accept 9138 >> Accept Suncrown Village
 step << !BloodElf
-    .goto Ghostlands,44.8,32.5
+    >> Speak to High Executor Mavren, then run outside and speak to Quartermaster Lymel and Rathis Tomber. Lastly talk to Arcanist Vandril again
     .turnin 9329 >> Turn in The Forsaken
+    .goto Ghostlands,44.8,32.5
     .accept 9758 >> Accept Return to Arcanist Vandril
+    .goto Ghostlands,47.3,28.9
+    .accept 9152 >> Accept Tomber's Supplies
+    .goto Ghostlands,47.0,28.5
+    .turnin 9758 >> Turn in Return to Arcanist Vandril
+    .goto Ghostlands,46.3,28.4
+    .accept 9138 >> Accept Suncrown Village
 step << Warlock
     #completewith next
     .goto Ghostlands,48.9,32.4
@@ -1665,12 +1714,14 @@ step
     #completewith Nerubis
     >>Anok'suten may require a group. If you can't kill him or find a group, skip this quest. He patrols clockwise around the path on the town, and calls for help from nearby mobs (about 60 yards) at 50%
     .complete 9315,1 --Kill Anok'suten (x1)
+    .unitscan Anok'suten
 step << Paladin
     >>Swim to the island killing Nerubis Guards en route and go in the cave. Light the brazier and kill the mob that spawns
     .goto Ghostlands,68.4,7.5
     .complete 9678,1 --Undergo the First Trial
 step
      .goto Ghostlands,61.3,11.9
+    >> Kill Nerubis enemies. Try to end on the eastern side of the area
     .complete 9138,1 --Kill Nerubis Guard (x10)
 step
     #label Nerubis
@@ -1731,7 +1782,7 @@ step
     .goto Ghostlands,70.6,22.0
     .complete 9157,1 --Collect Wavefront Medallion (x8)
 step
-    #xprate <1.5
+    #xprate >1.4
     #completewith next
     .isOnQuest 9274
     + If there is any competition for Apparitions or you got an awkward spawn where you'll need to clear the zone to get the respawns you need, just abandon the quest and skip it, it's barely worth it on 50% xp.
@@ -1793,7 +1844,6 @@ step
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran
     .goto Ghostlands,48.2,31.6
 step << !Warlock
-    #completewith next
     .goto Ghostlands,48.9,32.4
     .home >> Set your Hearthstone to Tranquillien
 step << Mage/Priest/Warlock
@@ -1813,9 +1863,9 @@ step << Orc Hunter/Troll Hunter
     .train 202 >>Train 2h Swords
 step << Hunter
     .goto Ghostlands,47.7,32.3
-    .vendor >> Purchase Bogwalker Boots and Tranquillien Flamberge from Vredigar. Equip them
+     .buy 22992,1 >> Purchase the below item(s) from Vredigar. Equip them
     .collect 22992,1 --Collect Bogwalker Boots (1)
-    .collect 28164,1 --Collect Tranquillien Flamberge (1)
+    .collect 28164,1 --Collect Tranquillien Flamberge (1) << tbc
 step << Paladin
     .goto Ghostlands,47.7,32.3
     .buy 28164,1 >> Purchase Volunteer's Greaves and Tranquillien Flamberge from Vredigar. Equip them
@@ -1929,6 +1979,7 @@ step << BloodElf Rogue
     .collect 23686 --Collect Lacy Handkerchief (x1)
 step
     .goto Ghostlands,36.9,15.7
+    >> Try to finish the step on the northwest side of the camp
     .complete 9160,1 --Kill Sentinel Spy (x12)
     >>Go within 10 yards of the giant shrine in the middle of the camps
     .complete 9160,2 --Investigate An'daroth
@@ -1942,7 +1993,7 @@ step << BloodElf Rogue
     .accept 9618 >> Accept Return the Reports
 step
     .goto Ghostlands,25.3,15.8
-    >>Kill Ghosts in the area. Try to end the quest on the northest side of the area.
+    >>Kill Ghosts in the area. Try to end the quest on the northwest side of the area.
     .complete 9139,2 --Kill Quel'dorei Wraith (x4)
     .complete 9139,1 --Kill Quel'dorei Ghost (x6)
 step
@@ -2016,11 +2067,11 @@ step
     .goto Ghostlands,47.3,28.6
 step << Paladin
     .goto Ghostlands,47.7,32.3
-    .buy 28162 >> Purchase Tranquillien Defender's Girdle. Equip it
+    .buy 28162,1 >> Purchase Tranquillien Defender's Girdle. Equip it
     .collect 28162,1 --Collect Tranquillien Defender's Girdle (1)
 step << Rogue/Hunter/Druid/Shaman
     .goto Ghostlands,47.7,32.3
-    .buy 28158 >> Purchase Batskin Belt. Equip it
+    .buy 28158,1 >> Purchase Batskin Belt. Equip it
     .collect 28158,1 --Collect Batskin Belt (1)
 step
     .goto Ghostlands,48.9,32.4
@@ -2125,7 +2176,9 @@ step
 step
     #label spiderz2
     >> Speak to Arcanist Vandril
-    .turnin 9140 >> Turn in Windrunner Village
+    .turnin 9140,2 >> Turn in Windrunner Village << Paladin
+    .turnin 9140,4 >> Turn in Windrunner Village << Warlock/Mage/Priest
+    .turnin 9140 >> Turn in Windrunner Village << !Paladin !Warlock !Mage !Priest
     .goto Ghostlands,46.3,28.5
 step
     .isQuestComplete 9171
@@ -2258,7 +2311,8 @@ step
     .accept 9169 >> Accept Deactivate An'owyn
 step
     >> Talk to Farstider Sedina at the Farstider Enclave
-    .turnin 9159 >> Turn in Curbing the Plague
+    .turnin 9159,3 >> Turn in Curbing the Plague << Paladin
+    .turnin 9159 >> Turn in Curbing the Plague << !Paladin
     .goto Ghostlands,72.4,32.0
 step << Hunter
     #sticky
@@ -2332,7 +2386,8 @@ step
 step
     >> Talk to Captain Helios
     .goto Ghostlands,72.4,29.7
-    .turnin 9212 >> Turn in Escape from the Catacombs
+    .turnin 9212,1 >> Turn in Escape from the Catacombs << Paladin
+    .turnin 9212 >> Turn in Escape from the Catacombs << !Paladin
 step << Rogue
     >>Run back to Tranquillien
     .goto Ghostlands,47.2,34.3
@@ -2441,11 +2496,13 @@ step
 step
     >> Head back to Farstrider Enclave
     .goto Ghostlands,72.4,31.3
-    .turnin 9277 >> Turn in Assault on Zeb'Nowa
+    .turnin 9277,1 >> Turn in Assault on Zeb'Nowa << Paladin
+    .turnin 9277 >> Turn in Assault on Zeb'Nowa << !Paladin
 step
     .isQuestComplete 9215
     .goto Ghostlands,72.4,29.7
-    .turnin 9215 >> Turn in Bring Me Kel'gash's Head!
+    .turnin 9215,1 >> Turn in Bring Me Kel'gash's Head! << Hunter
+    .turnin 9215 >> Turn in Bring Me Kel'gash's Head! << !Hunter
 step
     .goto Ghostlands,72.4,29.7
     .turnin 9214 >> Turn in Shadowpine Weaponry
@@ -2723,7 +2780,8 @@ step << Orc Hunter/Troll Hunter
 step << BloodElf !Hunter
     .isQuestComplete 9167
     .goto Ghostlands,55.2,48.8
-    .turnin 9167 >> Turn in The Traitor's Destruction
+    .turnin 9167,4 >> Turn in The Traitor's Destruction << Paladin
+    .turnin 9167 >> Turn in The Traitor's Destruction << !Paladin
 step << BloodElf !Hunter
     .isQuestTurnedIn 9167
     .accept 9328 >> Accept Hero of the Sin'dorei
@@ -2749,7 +2807,9 @@ step
     #label Wanted
 .isQuestComplete 9156
     .goto Ghostlands,46.1,33.5
-    .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran
+    .turnin 9156,1 >> Turn in Wanted: Knucklerot and Luzran << Warlock/Priest/Mage
+    .turnin 9156,2 >> Turn in Wanted: Knucklerot and Luzran << Rogue/Paladin
+    .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran << !Warlock !Priest !Mage !Rogue !Paladin
 step
 .isQuestTurnedIn 9167
 .goto Ghostlands,47.7,32.3

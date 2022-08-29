@@ -182,11 +182,6 @@ step
 	>>Kill the Scarlet mobs in the area
 	.complete 12678,1 --Scarlet Crusader (10)
 step
-	#label Mailbox
-    .goto ScarletEnclave,55.3,46.2
-	>>Click the letter on the mailbox
-    .turnin 12711 >>Turn in Abandoned Mail
-step
 	#sticky
 	#label Citizens
     .goto ScarletEnclave,56.0,58.8,0,0
@@ -288,6 +283,14 @@ step
 	>>Talk to Valanar. He's moved closer to the mountain edge
     .turnin 12714 >>Turn in The Will Of The Lich King
     .accept 12715 >>Accept The Crypt of Remembrance
+step
+    .goto ScarletEnclave,52.9,35.2
+    >> Buy 40 Corpse Dust
+    .collect 37201,40
+step
+    .goto ScarletEnclave,55.3,46.2
+	>>Click the letter on the mailbox
+    .turnin 12711 >>Turn in Abandoned Mail
 step
     .goto ScarletEnclave,55.8,52.4
 	>>Talk to Noth in the field in front of the cauldron
@@ -631,6 +634,10 @@ step << Horde
     .goto Orgrimmar,31.9,37.8
     .turnin 13189 >>Turn in Warchief's Blessing
 --X unsure of how good coordinates are
+step << Horde
+	#completewith next
+    .goto Orgrimmar,38.1,85.8
+	.zone Blasted Lands >> Take the portal to Blasted Lands
 step << Alliance
     .goto ScarletEnclave,50.9,36.3
 	.zone Elwynn Forest >>Take the portal to Stormwind

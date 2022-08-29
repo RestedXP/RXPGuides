@@ -1049,6 +1049,10 @@ RXPFrame.bottomMenu = {
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
     end},
+    { -- Give Feedback for step, updated by addon.comms:Setup()
+        notCheckable = 1,
+        text = "Give Feedback for step",
+    },
     {text = "Close", notCheckable = 1, func = function(self) self:Hide() end}
 }
 
@@ -1115,6 +1119,15 @@ function addon:LoadGuide(guide, OnLoad)
     local lastStep = guide.steps[#guide.steps]
     if lastStep then lastStep.lastStep = true end
 
+    --Lookup feedbackMenuIndex, avoid dynamic/future menu change conflicts
+    local feedbackMenuIndex
+    for i, m in ipairs(addon.RXPFrame.bottomMenu) do
+        if m.text == "Give Feedback for step" then
+            feedbackMenuIndex = i
+            break
+        end
+    end
+
     for n, step in ipairs(guide.steps) do
         step.index = n
         BottomFrame.stepList[n] = n
@@ -1179,6 +1192,7 @@ function addon:LoadGuide(guide, OnLoad)
                 local bottomMenu = RXPFrame.bottomMenu
                 bottomMenu[1].text = "Go to step " .. n
                 bottomMenu[1].arg1 = n
+                bottomMenu[feedbackMenuIndex].arg1 = n
                 _G.EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
             else
                 self.timer = GetTime()
@@ -1604,9 +1618,15 @@ function RXPFrame.GenerateMenuTable()
         table.insert(menuList, {
             text = "Leveling report",
             notCheckable = 1,
-            func = function() addon.tracker:ShowReport() end
+            func = function() addon.tracker:ShowReport(_G.CharacterFrame) end
         })
     end
+
+    table.insert(menuList, {
+        text = "Open Feedback Form",
+        notCheckable = 1,
+        func = function() addon.comms.OpenBugReport() end
+    })
 
     table.insert(menuList, {
         text = "Close",

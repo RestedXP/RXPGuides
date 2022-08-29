@@ -44,7 +44,7 @@ function addon.settings.ChatCommand(input)
         -- Do not persist change, temporary toggle
         addon.RXPFrame:SetShown(false)
     elseif input == "support" or input == "ticket" or input == "bug" or input == "feedback" then
-        addon.comms:OpenBugReport()
+        addon.comms.OpenBugReport()
     else
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
@@ -61,7 +61,11 @@ function addon.settings:InitializeSettings()
             enableLevelUpAnnounceGroup = true,
             enableFlyStepAnnouncements = true,
             alwaysSendBranded = true,
-            checkVersions = true
+            checkVersions = true,
+            enableLevelingReportInspections = true,
+            levelSplitsHistory = GetMaxPlayerLevel(),
+            levelSplitsFontSize = 11,
+            levelSplitsOpacity = 0.9
         }
     }
 
@@ -785,26 +789,96 @@ function addon.settings.CreateExtrasOptionsPanel()
                             _G.ReloadUI()
                         end,
                     },
+                    enableLevelingReportInspections = {
+                        name = "Enable Leveling Report Inspections (Beta)",
+                        desc = "Send or receive inspection requests for other Leveling Reports",
+                        type = "toggle",
+                        width = "full",
+                        order = 4,
+                        confirm = requiresReload,
+                        disabled = not addon.settings.db.profile.enableTracker,
+                        hidden = isNotAdvanced(),
+                    },
                     splitsOptionsHeader = {
                         name = "Level Splits (Beta)",
                         type = "header",
                         width = "full",
-                        order = 4,
+                        order = 5,
                         hidden = isNotAdvanced(),
                     },
                     enablelevelSplits = {
                         name = "Enable Level Splits",
                         type = "toggle",
-                        width = "full",
-                        order = 5,
-                        confirm = requiresReload,
+                        width = "normal",
+                        order = 6,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            _G.ReloadUI()
+                            if addon.settings.db.profile.enablelevelSplits then
+                                addon.tracker:CreateLevelSplits()
+                                addon.tracker:UpdateLevelSplits("full")
+                                addon.tracker.levelSplits:Show()
+                            else
+                                addon.tracker.levelSplits:Hide()
+                            end
                         end,
-                        disabled = not addon.settings.db.profile.enableTracker,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enableTracker
+                        end,
                         hidden = isNotAdvanced(),
                     },
+                    levelSplitsHistory = {
+                        name = "Level Splits History",
+                        desc = "Historical levels to show",
+                        type = "range",
+                        width = "normal",
+                        order = 7,
+                        min = 1,
+                        max = GetMaxPlayerLevel(),
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enablelevelSplits
+                        end,
+                        hidden = isNotAdvanced(),
+                    },
+                    levelSplitsFontSize = {
+                        name = "Level Splits Font Size",
+                        type = "range",
+                        width = "normal",
+                        order = 8,
+                        min = 9,
+                        max = 17, -- Formatting gets wonky >=18
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enablelevelSplits
+                        end,
+                        hidden = isNotAdvanced(),
+                    },
+                    levelSplitsOpacity = {
+                        name = "Level Splits Opacity",
+                        desc = "Lower number to make Level Splits more transparent",
+                        type = "range",
+                        width = "normal",
+                        order = 9,
+                        min = 0.1,
+                        max = 1,
+                        step = 0.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enablelevelSplits
+                        end,
+                        hidden = isNotAdvanced(),
+                    }
                 },
             },
             communications = {

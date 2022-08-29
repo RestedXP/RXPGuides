@@ -8,7 +8,8 @@ RXPGuides.RegisterGuide([[
 #defaultfor Draenei
 #next 11-20 Bloodmyst (Draenei)
 step
-    .goto Azuremyst Isle,82.9,44.0
+    .goto Azuremyst Isle,82.96,43.88 << tbc
+    .goto Azuremyst Isle,84.19,43.03 << wotlk    
     .accept 9279 >> Accept You Survived!
 step << Shaman
 	#completewith next
@@ -18,8 +19,8 @@ step << Shaman
     .goto Azuremyst Isle,79.3,49.1
 	.trainer >> Train Rockbiter Weapon
 step << Warrior
-    #sticky
-	    .goto Azuremyst Isle,80.0,47.1
+    #completewith next
+        .goto Azuremyst Isle,80.0,47.1
 	.vendor >> Kill 2-3 mobs for vendor trash (worth 10c+), then vendor trash inside
 step << Warrior
     .goto Azuremyst Isle,79.6,49.4
@@ -634,7 +635,7 @@ step << Hunter
 	.goto The Exodar,44.6,72.0,60,0
     .goto The Exodar,44.1,86.6
     .turnin 9675 >> Turn in Beast Training
-	.trainer >> Train your pet spells
+	.trainer >> Train your pet spells << tbc
 step << Hunter
 	#completewith next
     .goto The Exodar,47.9,89.
@@ -1848,7 +1849,7 @@ step
     .maxlevel 20
 step
     .goto Darkshore,37.4,40.2
-	.turnin 9633 >> Turn in The Way to Auberdine
+	.turnin -9633 >> Turn in The Way to Auberdine
     .accept 10752 >> Accept Onward to Ashenvale
 step
 #xprate <1.5
@@ -2121,7 +2122,7 @@ step
     .goto Ashenvale,37.3,51.8
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure RP
-step << Warrior/Paladin
+step << Warrior tbc/Paladin
 	#sticky
 	.goto Ashenvale,35.8,52.0
 	>>Buy the level 21 weapon upgrade
@@ -2205,7 +2206,12 @@ step
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
     .complete 1009,1 --Collect Ring of Zoram (x1)
 step
-    .goto Darkshore,33.6,94.4--TODO: BFD waypoint
+    .goto 1414,43.97,35.31,20,0
+    .goto 1414,43.80,35.18,20,0
+	.goto 1414,43.94,34.89,20,0
+	.goto 1414,43.91,34.58,20,0
+	.goto 1414,44.02,34.58,20,0
+	.goto 1414,44.16,34.85
     >>Enter the temple like building into the BFD caves and kill nagas/satyrs
     .complete 1275,1
 step
@@ -2259,7 +2265,7 @@ step << !Hunter
 	.goto Teldrassil,23.7,64.5
 	.turnin 741 >> Turn in The Absent Minded Prospector
 	.accept 942 >> Accept The Absent Minded Prospector
-step << Mage/Warrior
+step << Warrior tbc/Mage
 	.goto Teldrassil,29.2,56.7
     .train 227 >> Train Staves
 step << !Hunter

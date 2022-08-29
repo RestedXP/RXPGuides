@@ -52,8 +52,8 @@ step << Warlock tbc
 step
     >>Summon Imp, rebuff Demon Skin << Warlock tbc
     >> Talk to Deputy Willem
-    .goto Elwynn Forest,48.2,42.9 << tbc
-    .goto Elwynn Forest,48.0,43.5 << wotlk
+    .goto Elwynn Forest,48.17,42.94 << tbc
+    .goto Elwynn Forest,48.05,43.55 << wotlk
     .accept 783 >> Accept A Threat Within
 step << Warrior
     #sticky
@@ -74,8 +74,8 @@ step << Warrior
 step
     >>Run back outside << Warrior
     >> Talk to Deputy Willem again
-    .goto Elwynn Forest,48.2,42.9 << tbc
-    .goto Elwynn Forest,48.0,43.5 << wotlk
+    .goto Elwynn Forest,48.17,42.94 << tbc
+    .goto Elwynn Forest,48.05,43.55 << wotlk
     .accept 5261 >> Accept Eagan Peltskinner
 step << Priest tbc/Mage tbc/Warlock tbc
     .goto Elwynn Forest,46.2,40.4
@@ -186,7 +186,8 @@ step << Paladin
 step
     #label thievesaccept
     >> Speak with Deputy Willem
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.17,42.94 << tbc
+    .goto Elwynn Forest,48.05,43.55 << wotlk
     .accept 18 >> Accept Brotherhood of Thieves
 step << Warlock
     .goto Elwynn Forest,49.9,42.6
@@ -201,7 +202,8 @@ step << Rogue
     .xp 4 >> Grind to 4
 step
     >> Speak with Deputy Willem
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.17,42.94 << tbc
+    .goto Elwynn Forest,48.05,43.55 << wotlk
     .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
     .turnin 18,1 >> Turn in Brotherhood of Thieves << Rogue/Warlock
     .turnin 18,5 >> Turn in Brotherhood of Thieves << Mage
@@ -258,7 +260,8 @@ step << Priest/Mage
     .accept 3905 >>Accept Grape Manifest
 step
     >> Speak with Deputy Willem
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.17,42.94 << tbc
+    .goto Elwynn Forest,48.05,43.55 << wotlk
     .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
     .turnin 6 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
 step
@@ -279,7 +282,7 @@ step << Priest
     .goto Elwynn Forest,49.8,39.5
     .accept 5623 >> Accept In Favor of the Light
 step
-    >> Lead Northshire Valley and talk to Falkhaan Isenstrider
+    >> Leave Northshire Valley and talk to Falkhaan Isenstrider
     .goto Elwynn Forest,45.6,47.7
     .accept 2158 >> Accept Rest and Relaxation
 step
@@ -784,7 +787,7 @@ step << !Warlock
 step << !Warlock
     #sticky
     #completewith next
-    .deatskip >> Die to the mobs here then ressurect at the Spirit Healer
+    .deathskip >> Die to the mobs here then ressurect at the Spirit Healer
     .goto Redridge Mountains,11.2,78.4
 step << !Warlock
     #softcore
@@ -1028,7 +1031,7 @@ step << Warrior
 step << Priest
     .goto StormwindClassic,57.1,57.7
     .trainer >>Train Staves
-step << Mage/Warlock
+step << Mage/Warlock tbc
     .goto StormwindClassic,57.1,57.7
     .trainer >> Train Staves, then 1h Swords if you still have money
 step << Rogue

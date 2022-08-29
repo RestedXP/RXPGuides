@@ -30,19 +30,19 @@ step << !BloodElf
 step
     .goto Orgrimmar,39.0,38.3
     .accept 1061 >> Accept The Spirits of Stonetalon
-step << Warlock
+step << Warlock tbc
     #sticky
     >>You must abandon the quest Carendin's Summons to be able to accept Devourer of Souls
     .abandon 10605 >>Abandon Carendin Summons
     .isOnQuest 10605
-step << Warlock
+step << Warlock tbc
     .goto Orgrimmar,48.2,45.3
     .accept 1507 >>Accept Devourer of Souls
-step << Warlock
+step << Warlock tbc
     .goto Orgrimmar,47.0,46.5
     .turnin 1507 >>Turn in Devourer of Souls
     .accept 1508 >>Accept Blind Cazul
-step << Warlock
+step << Warlock tbc
     .goto Orgrimmar,37.0,59.4
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
@@ -101,7 +101,7 @@ step
     #completewith next    
     .goto The Barrens,52.0,29.9
 	.home >> Set your Hearthstone to The Crossroads
-step << Warlock
+step << Warlock tbc
     .goto The Barrens,51.9,30.3
     .turnin 1509 >>Turn in News of Dogran
     .accept 1510 >>Accept News of Dogran
@@ -187,7 +187,7 @@ step
     #sticky
     #completewith next
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
-step << Warlock
+step << Warlock tbc
     .goto Stonetalon Mountains,73.2,95.1
     .turnin 1510 >>Turn in News of Dogran
     .accept 1511 >>Accept Ken'zigla's Draught
@@ -392,7 +392,7 @@ step
 step
     .goto The Barrens,44.8,59.1
     .accept 1130 >> Accept Melor Sends Word
-step << Warlock
+step << Warlock tbc
     .goto The Barrens,44.6,59.3
     .turnin 1511 >>Turn in Ken'zigla's Draught
     .accept 1515 >>Accept Dogran's Captivity
@@ -402,7 +402,7 @@ step
 step
     .goto The Barrens,44.5,59.2
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
-step << Warlock
+step << Warlock tbc
     >>Kill Quillboars en route to here
     .goto The Barrens,43.3,47.9
     .turnin 1515 >>Turn in Dogran's Captivity
@@ -478,7 +478,7 @@ step << Tauren
 step << Druid
 	#completewith next
 	.goto Thunder Bluff,76.5,27.2
-	.accept 27 >>Accept A Lesson to Learn
+	.accept 27 >>Accept A Lesson to Learn << tbc
 	.trainer >> Go and train your class spells
 step
     #xprate <1.5
@@ -836,31 +836,31 @@ step
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >> Turn in Naga at the Zoram Strand
     .isQuestComplete 6442
-step << Druid
+step << Druid tbc
     #sticky
     #completewith next
      +Grind or log off until your hearthstone cooldown is less than 5 minutes
     .cooldown item,6948,<5m
-step << Druid
+step << Druid tbc
     .cast 18960 >> Use the spell Teleport: Moonglade once your hearthstone is available
     >>Go Upstairs
      .goto Moonglade,56.2,30.6
     .turnin 27 >>Turn in A Lesson to Learn
     .accept 28 >>Accept Trial of the Lake
-step << Druid
+step << Druid tbc
 	#completewith next
     .goto Moonglade,52.5,40.5
     .trainer >> Go and train your class spells
-step << Druid
+step << Druid tbc
     >>Search for a vase in the lake. Loot it for a Shrine Bauble
     .goto Moonglade,54.6,46.5,25,0
     .goto Moonglade,53.0,48.4
     .collect 15877,1
-step << Druid
+step << Druid tbc
     .use 15877 >>Use the Shrine Bauble
     .goto Moonglade,36.2,41.8
     .complete 28,1 --Complete the Trial of the Lake. (1)
-step << Druid
+step << Druid tbc
     .goto Moonglade,36.5,40.1
     .turnin 28 >>Turn in Trial of the Lake
     .accept 30 >>Accept Trial of the Sea Lion
@@ -922,15 +922,15 @@ step
     .isOnQuest 1491
     .goto The Barrens,62.4,37.6
     .turnin 1491 >>Turn in Smart Drinks
-step << Druid
+step << Druid tbc
     >>Loot the gray chest underwater
     .goto The Barrens,56.7,8.3
     .collect 15883,1
-step << Druid
+step << Druid tbc
     #sticky
     #completewith next
     .goto Orgrimmar,12.4,66.1,40 >>Enter Orgrimmar through the west entrance
-step << !Druid
+step << Druid wotlk/!Druid
     #completewith next
     .goto The Barrens,63.1,37.1,-1    
     .goto Thunder Bluff,47.0,49.9,-1
@@ -963,7 +963,7 @@ step << Warlock
     #completewith next
     .goto Orgrimmar,48.0,46.0
     .trainer >> Go and train your class spells
-step << Warlock
+step << Warlock tbc
 	#completewith next
 	.goto Orgrimmar,47.5,46.7
     .vendor >> Buy a Grimoire of Soothing Kiss
@@ -977,78 +977,78 @@ step << Priest
     #completewith next
     .goto Orgrimmar,35.6,87.8
     .trainer >> Go and train your class spells
-step << Rogue
+step << Rogue tbc
     .goto Orgrimmar,43.1,53.7
     .accept 2460 >>Accept The Shattered Salute
-step << Rogue
+step << Rogue tbc
     >>Target Shenthul and type /salute
 	.emote SALUTE,3401
     .complete 2460,1 --Shattered Salute Performed (1)
 step << Rogue
     .goto Orgrimmar,43.1,53.7
-    .turnin 2460 >>Turn in The Shattered Salute
-    .accept 2458 >>Accept Deep Cover
+    .turnin 2460 >>Turn in The Shattered Salute << tbc
+    .accept 2458 >>Accept Deep Cover << tbc
     .train 1725 >>Train Distract
     .train 1856 >>Train Vanish
     .train 1759 >>Train Sinister Strike r4
-step << Rogue
+step << Rogue tbc
 	#completewith next
     .goto Orgrimmar,42.1,49.5
     .vendor >> Buy at least 1 Flash Powder from Rekkul
     .collect 5140,1 --Collect Flash Powder
-step << Rogue
+step << Rogue tbc
     #sticky
     #completewith next
     +Make sure you have a dagger in your inventory. If you don't, buy the cheapest one you can find
-step << Rogue
+step << Rogue tbc
     .use 8051 >>Use the Flare Gun when you're about 50 yards from Taskmaster Fizzule. Then /salute him. Speak to him when he turns friendly
 	.emote SALUTE,7233
 .goto The Barrens,55.4,5.6
     .turnin 2458 >>Turn in Deep Cover
     .accept 2478 >>Mission: Possible But Not Probable
-step << Rogue
+step << Rogue tbc
 	.cast 5967 >>Stealth and pickpocket Silixiz for his Tower Key. Make you hug the tower wall as much as possible then go behind him to pickpocket him. If he says something, back up, then approach from a different angle to try to pickpocket him again. Do NOT kill him
     .goto The Barrens,54.8,5.9
     .complete 2478,5 --Silixiz's Tower Key (1)
-step << Rogue
+step << Rogue tbc
     .cast 8676 >>Go into the tower & equip your dagger. Ambush one of the Drones. This will instantly kill them. Run away, come back, and do the same to the other Drone
     .goto The Barrens,54.7,5.7
     .complete 2478,1 --Mutated Venture Co. Drone (2)
-step << Rogue
+step << Rogue tbc
     .cast 1943 >>Go upstairs to the next floor. Re-equip your main weapon. Use a 1 Combo Point Rupture to kill the mobs. This should do 50% of their health each time
     .goto The Barrens,54.7,5.8
 .complete 2478,3 --Venture Co. Patroller (2)
-step << Rogue
+step << Rogue tbc
     .cast 6761 >>Go onto the third floor of the tower. Use a 1 Combo Point Eviscerate to kill the mobs. This should do 50% of their health each time
     .goto The Barrens,54.6,5.6
     .complete 2478,2 --Venture Co. Lookout (2)
-step << Rogue
+step << Rogue tbc
     >>Go to the top floor of the tower. Equip your dagger again (make sure your cooldowns are up). Ambush Gallywix then re-equip your main weapon in your main hand. Use all of your cooldowns & potions to kill Gallywix. Loot his head after you kill him.
     .goto The Barrens,54.8,5.6
     .complete 2478,4 --Gallywix's Head (1)
-step << Rogue
+step << Rogue tbc
     >>Lockpick the box in front of Gallywix in the top floor to loot the Altered Mixture
 	.goto The Barrens,54.8,5.6
 	.complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
-step << Rogue
+step << Rogue tbc
     #sticky
     #completewith next
 	>>Run back to Orgrimmar through the West Entrance
     .goto Orgrimmar,11.6,66.9,30
-step << Rogue
+step << Rogue tbc
 	>>You're now going to get a week long debuff making you unable to use stealth. Simply continue following the route.
 	.goto Orgrimmar,43.1,53.7
     .turnin 2478 >>Turn in Mission: Possible But Not Probable
     .accept 2479 >>Accept Hinott's Assistance
-step << Warlock
+step << Warlock tbc
     .goto Orgrimmar,48.2,45.3
     .turnin 1512 >>Turn in Love's Gift
     .accept 1513 >>Accept The Binding
-step << Warlock
+step << Warlock tbc
     .use 6626 >>Use Dogran's Pendant to summon the Succubus at the circle in the building. Kill her
 	.goto Orgrimmar,49.4,50.0
     .complete 1513,1 --Summoned Succubus (1)
-step << Warlock
+step << Warlock tbc
     >>Use the Succubus from now on
     .goto Orgrimmar,48.2,45.3
     .turnin 1513 >>Turn in The Binding
@@ -1104,7 +1104,7 @@ step << Blood Elf !Warlock wotlk
     .goto Silvermoon City,49.4,14.3
     >> Teleport to The Undercity if you can << Mage
     .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
-step << Druid
+step << Druid tbc
     >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
     .goto Silverpine Forest,30.0,29.1
     .collect 15882,1
@@ -1414,11 +1414,11 @@ step << Druid
 	.cast 18960 >> Use the spell Teleport: Moonglade
     .goto Moonglade,52.5,40.5
 	.trainer >> Go and train your class spells
-step << Druid
+step << Druid tbc
     .use 15883 >>Click the Half Pendant (blue) in your bag to craft the Pendant
 	.goto Moonglade,36.2,41.8
     .complete 30,1 --Pendant of the Sea Lion (1)
-step << Druid
+step << Druid tbc
     >>Go Upstairs
     .goto Moonglade,56.2,30.6
     .turnin 30 >>Turn in Trial of the Sea Lion
@@ -1669,7 +1669,6 @@ step
     .accept 23 >> Accept Ursangous's Paw
 	.unitscan Ursangous
 step
-    #xprate
     #sticky
     #label Tideress
     .use 16408 >>Kill Tideress who is located around the middle of the lake. Loot her for a Befouled Water Globe, then click it to accept the quest
@@ -1826,7 +1825,7 @@ step << Warlock
 	#completewith flytimebabyyy
     .goto Orgrimmar,48.0,46.0
 	.trainer >> Go and train your class spells
-step << Warlock
+step << Warlock tbc
 	#completewith flytimebabyyy
     .goto Orgrimmar,47.5,46.7
 	.vendor >> Buy Grimoire of Seduction
@@ -1867,7 +1866,7 @@ step << Hunter
 step << Druid
     .goto Thunder Bluff,77.0,29.9
 	.trainer >> Go and train your class spells
-	.turnin 31 >>Turn in Aquatic Form
+	.turnin 31 >>Turn in Aquatic Form << tbc
 step << Hunter
 	#completewith next
     .goto Thunder Bluff,59.1,86.9
@@ -2566,7 +2565,7 @@ step
     .turnin 1146 >> Turn in The Swarm Grows
     .accept 1147 >> Accept The Swarm Grows
 step
-    .xp <33,1
+    .xp >33,1
     >> Accept quests around the racetrack
 	.accept 1110 >> Accept Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
@@ -2597,6 +2596,7 @@ step
 	.complete 1175,3 --Kill Saltstone Gazer (x6)
 step
 	#label ShimmeringF
+    .isOnQuest 1110
 	>>Circle the area killing and collecting for the Shimmering Flats quests
 	.complete -1110,1 --Collect Rocket Car Parts (x30)
 	.complete -1104,1 --Collect Salty Scorpid Venom (x6)
@@ -2607,11 +2607,12 @@ step
 step
 	#sticky
 	#label partsoftheswarm
-    .isQuestTurnedIn 1147
+    .isQuestTurnedIn 1146
 	>>Grind the Silithid creatures until you get a Cracked Silithid Carapace. Click it to accept a quest.
 	.collect 5877,1,1148
 	.accept 1148 >> Accept Parts of the Swarm
 step
+    .isQuestTurnedIn 1146
     .goto Thousand Needles,67.8,85.7
 	.complete -1148,1 --Collect Silithid Heart (x1)
     .complete -1148,2 --Collect Silithid Talon (x5)
@@ -2622,6 +2623,7 @@ step
 step
 	#requires partsoftheswarm
     .turnin -1147 >> Turn in The Swarm Grows
+step
     .goto Thousand Needles,67.6,63.9
     .turnin -1110 >> Turn in Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
@@ -2713,6 +2715,11 @@ step
     .turnin 1111 >> Turn in Wharfmaster Dizzywig
     .accept 1112 >> Accept Parts for Kravel
 step << Warrior
+    .isOnQuest 874
+    .goto The Barrens,65.8,43.8
+    .turnin 874 >>Turn in Mahren Skyseer
+    .accept 873 >>Accept Isha Awak
+step << Warrior
     .isOnQuest 873
 	.goto The Barrens,65.6,47.1,40,0
     .goto The Barrens,63.3,54.2,40,0
@@ -2736,11 +2743,16 @@ step << Warrior
     .goto The Barrens,68.6,48.7
     .complete 1719,1 --Step on the grate to begin the Affray (1)
     .complete 1719,2 --Big Will (1)
-step << Warrior
+step << Warrior tbc
     .isOnQuest 1719
     .goto The Barrens,68.6,49.2
     .turnin 1719 >>Turn in The Affray
     .accept 1791 >>Accept The Windwatcher
+step << Warrior wotlk
+    #xprate >1.499 
+    .isOnQuest 1719
+    .goto The Barrens,68.6,49.2
+    .turnin 1719 >>Turn in The Affray
 step << Warrior
     .isOnQuest 873
     .goto The Barrens,65.8,43.8
@@ -2748,63 +2760,152 @@ step << Warrior
 step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
 step
+    .xp <33,1
+    #completewith next
+	+Go to the dock. Take the boat to Stranglethorn Vale
+   .goto The Barrens,63.7,38.6,15,0
+	.goto The Barrens,63.7,38.6
+step
+    .xp <33,1
+	.maxlevel 36
+	.zone Stranglethorn Vale >>Arrive in Stranglethorn Vale
+step << Shaman
+    .xp <33,1
+	.maxlevel 36
+	#label Protection
+	#completewith BigStick
+ .goto Stranglethorn Vale,28.3,75.5
+    .vendor >> Go to the vendor and buy Staff of Protection or Big Stick if it's in the shop.
+    .collect 12252,1
+step << Shaman
+    .xp <33,1
+	.maxlevel 36
+	#label BigStick
+	#completewith Protection 
+ .goto Stranglethorn Vale,28.3,75.5
+    .collect 12251,1
+step
+    .xp <33,1
+	.isQuestTurnedIn 1178
+    .goto Stranglethorn Vale,26.4,73.5
+    .turnin 1180 >> Turn in Goblin Sponsorship
+    .accept 1181 >> Accept Goblin Sponsorship
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+	>> Head to the second level of buildings
+    .goto Stranglethorn Vale,28.3,77.6
+    .accept 575 >> Accept Supply and Demand
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+	>> Head into the inn, this quest is on the bottom floor
+    .goto Stranglethorn Vale,27.0,77.2
+    .accept 605 >> Accept Singing Blue Shards
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+	>> These quests are on the top floors of the inn
+	.goto Stranglethorn Vale,27.1,77.3
+    .accept 189 >> Accept Bloodscalp Ears
+    .accept 213 >> Accept Hostile Takeover
+    .accept 201 >> Accept Investigate the Camp
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+    .goto Stranglethorn Vale,27.2,76.9
+    .turnin 1181 >> Turn in Goblin Sponsorship
+    .accept 1182 >> Accept Goblin Sponsorship
+step << Rogue
+    .xp <33,1
+	.isQuestTurnedIn 1180
+	#completewith next
+    .goto Stranglethorn Vale,26.8,77.2
+	.trainer >> Go and train your class spells
+step
+    .xp <33,1
+	.isQuestTurnedIn 1180
+    .goto Stranglethorn Vale,26.9,77.0
+    .fp Booty Bay >> Get the Booty Bay flight path
+step
+    .xp <33,1
+    #completewith next
+	+Go to the dock. Take the boat back to Ratchet.
+   .goto The Barrens,63.7,38.6,15,0
+	.goto The Barrens,63.7,38.6
+step
+    .xp <33,1
+	.maxlevel 36
+	.zone The Barrens >>Arrive in Ratchet
+step
+    .xp >33,1
     .goto Ashenvale,73.2,61.5,-1
     .goto The Barrens,63.1,37.1,-1
     .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,32.4,35.8
     .trainer >> Go and train your class spells
 step << Shaman
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,38.6,36.0
     .trainer >> Go and train your class spells
 step << Hunter
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,66.1,18.5
     .trainer >> Go and train your class spells
 step << Hunter
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,66.3,14.8
     .trainer >> Go and train your pet spells
 step << Rogue
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,44.0,54.6
     .trainer >> Go and train your class spells
 step << Warlock
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,48.0,46.0
     .trainer >> Go and train your class spells
 step << Warlock
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,47.5,46.7
     .vendor >> Buy your pet books
 	.collect 16368,1
 step << Mage
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,38.8,85.6
     .trainer >> Go and train your class spells
 step << Priest
+    .xp >33,1
     .isOnQuest 1145
 	#completewith next
     .goto Orgrimmar,35.6,87.8
     .trainer >> Go and train your class spells
 step
+    .xp >33,1
     .isOnQuest 1145
     .goto Orgrimmar,75.2,34.2
     .turnin 1145 >> Turn in The Swarm Grows
     .accept 1146 >> Accept The Swarm Grows
-step << !Warrior !Shaman
+step
 	#completewith next
-    #level 33
+    .xp >33,1
     .goto Orgrimmar,54.1,68.4
     .home >>Set your Hearthstone to Valley of Strength
 step << Orc !Warlock tbc
@@ -2847,22 +2948,6 @@ step << Shaman
     >>Look in the water for Isha Awak (Red Threshadon). Kill and loot it for its heart
     .complete 873,1 --Heart of Isha Awak (1)
 	.unitscan Isha Awak
-step << Warrior
-    .isOnQuest 1718
-    >>Swim to the island
-    .goto The Barrens,68.6,49.2
-    .turnin 1718 >>Turn in The Islander
-    .accept 1719 >>Accept The Affray
-step << Warrior
-    .isOnQuest 1719
-    .goto The Barrens,68.6,48.7
-    .complete 1719,1 --Step on the grate to begin the Affray (1)
-    .complete 1719,2 --Big Will (1)
-step << Warrior
-    .isOnQuest 1719
-    .goto The Barrens,68.6,49.2
-    .turnin 1719 >>Turn in The Affray
-    .accept 1791 >>Accept The Windwatcher
 step << Shaman
     .isOnQuest 873
     .goto The Barrens,65.8,43.8

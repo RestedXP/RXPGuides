@@ -14,6 +14,7 @@ step << !Orc !Troll
 .goto Durotar,43.3,68.5
     +You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in
 step
+    >> Talk to Kaltunk
     .goto Durotar,43.3,68.5
     .accept 4641 >>Accept Your Place In The World
 step << Warlock tbc
@@ -33,6 +34,7 @@ step << Warrior/Shaman
     .goto Durotar,42.6,67.3
     .vendor >> Vendor trash. Vendor armor if less than 10c
 step
+    >> Talk to Gornek in the Den
     .goto Durotar,42.1,68.4
     .turnin 4641 >>Turn in Your Place In The World
     .accept 788 >>Accept Cutting Teeth
@@ -51,6 +53,7 @@ step << Warlock tbc
 step << !Warlock
     #sticky
     #label motboars
+    >> Kill boars to the north
     .goto Durotar,41.9,63.7,0,0
     .complete 788,1 --Mottled Boar (10)
 step << Warlock tbc
@@ -78,6 +81,7 @@ step << Warlock
 .goto Durotar,40.6,62.6
     .accept 790 >>Accept Sarkoth
 step << !Warlock
+    >> Grind boars en route. Talk to Hana'zua by the tree
     .goto Durotar,40.6,62.6
     .accept 790 >>Accept Sarkoth
 step
@@ -94,6 +98,7 @@ step << !Warlock
 	.goto Durotar,40.7,67.3
     .complete 790,1 --Sarkoth's Mangled Claw (1)
 step
+    >> Return to Hana'zua
     .goto Durotar,40.6,62.6
     .turnin 790 >>Turn in Sarkoth
     .accept 804 >>Accept Sarkoth
@@ -120,34 +125,39 @@ step << !Orc !Troll
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Rogue
     #requires motboars
+    >> Grind your way back to town
     .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
+    .turnin 788,2 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3088 >>Accept Encrypted Parchment
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Rogue
     #requires motboars
+    >> Grind your way back to town
     .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
+    .turnin 788,2 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3083 >>Accept Encrypted Tablet
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Hunter
     #requires motboars
+    >> Grind your way back to town
     .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
+    .turnin 788,2 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3087 >>Accept Etched Parchment
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Hunter
     #requires motboars
+    >> Grind your way back to town
     .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
+    .turnin 788,2 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3082 >>Accept Etched Tablet
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Mage
     #requires motboars
+    >> Grind your way back to town
     .goto Durotar,42.1,68.3
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
@@ -162,34 +172,39 @@ step << Troll Priest
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Shaman
     #requires motboars
+    >> Grind your way back to town
     .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
+    .turnin 788,2 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3084 >>Accept Rune-Inscribed Tablet
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Shaman
     #requires motboars
+    >> Grind your way back to town
     .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
+    .turnin 788,2 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3089 >>Accept Rune-Inscribed Parchment
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Warrior
     #requires motboars
+    >> Grind your way back to town
     .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
+    .turnin 788,2 >>Turn in Cutting Teeth
+    .turnin 804,2 >>Turn in Sarkoth
     .accept 2383 >>Accept Simple Parchment
     .accept 789 >>Accept Sting of the Scorpid
 step << Troll Warrior
     #requires motboars
+    >> Grind your way back to town
     .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
+    .turnin 788,2 >>Turn in Cutting Teeth
+    .turnin 804,2 >>Turn in Sarkoth
     .accept 3065 >>Accept Simple Tablet
     .accept 789 >>Accept Sting of the Scorpid
 step << Orc Warlock
     .goto Durotar,42.1,68.3
+    >> Grind your way back to town
     .turnin 788 >>Turn in Cutting Teeth
     .turnin 804 >>Turn in Sarkoth
     .accept 3090>>Accept Tainted Parchment
@@ -226,17 +241,20 @@ step << Warrior/Rogue
     .vendor >>Vendor trash
 step << Hunter
     .goto Durotar,42.6,67.3
-    .vendor >> Vendor trash. Buy arrows until your Quiver is full (1000 arrows)
+    .vendor >> Vendor trash. Buy 1000 arrows 
 step << Warlock wotlk
 	#completewith next
 	.cast 688 >> Summon your Imp
 step
+    >> Talk to Galgar
 .goto Durotar,42.7,67.3
     .accept 4402 >>Accept Galgar's Cactus Apple Surprise
 step << Orc Hunter
+    >> Talk to Jen'shan under the tent
     .goto Durotar,42.8,69.3
     .turnin 3087 >>Turn in Etched Parchment
 step << Troll Hunter
+    >> Talk to Jen'shan under the tent
     .goto Durotar,42.8,69.3
     .turnin 3082 >>Turn in Etched Tablet
 step << Troll Mage
@@ -254,6 +272,7 @@ step << Orc Shaman
     .goto Durotar,42.4,69.0
     .turnin 3089 >>Turn in Rune-Inscribed Parchment
 step << !Warlock tbc/wotlk
+    >> Talk to Zureetha Fargaze
     .goto Durotar,42.9,69.1
     .accept 792 >>Accept Vile Familiars
 step << Orc Warrior
@@ -263,13 +282,14 @@ step << Troll Warrior
     .goto Durotar,42.9,69.4
     .turnin 3065 >>Turn in Simple Tablet
 step
+    >> Talk to Foreman Thazz'ril by the bonfire up the road
     .goto Durotar,44.6,68.7
     .accept 5441 >>Accept Lazy Peons
 step
     #sticky
     #completewith imps
     .goto Durotar,44.0,65.3,0,0
-    >>Loot Cacti that you see with apples on them
+    >>Loot Cacti that you see with apples on them as you quest
     .complete 4402,1 --Cactus Apple (10)
 step
     #sticky
@@ -315,6 +335,7 @@ step
     #requires scorpytails
 step
     #requires cactusapples
+    >> Return to town and talk to Galgar
     .goto Durotar,42.7,67.2
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
 step << Warrior/Rogue/Hunter/Druid/Paladin/Shaman
@@ -326,6 +347,7 @@ step << Mage/Priest/Warlock
     .vendor >> Vendor trash << wotlk
     .collect 159,10 << tbc --Collect Refreshing Spring Water (x10)
 step
+    >> Head inside the den
     .goto Durotar,42.1,68.3
     .turnin 789 >>Turn in Sting of the Scorpid
 step << Shaman
@@ -340,8 +362,10 @@ step << Priest
     .goto Durotar,42.4,68.8
     .train 589 >>Train Shadow Word: Pain
 step << tbc !Warlock/wotlk
+    >> Talk to Zureetha Fargaze
     .goto Durotar,42.9,69.1
-    .turnin 792 >>Turn in Vile Familiars
+    .turnin 792,3 >>Turn in Vile Familiars << Hunter
+    .turnin 792 >>Turn in Vile Familiars << !Hunter
     .accept 794 >>Accept Burning Blade Medallion
 step << Hunter
     .money <0.0190
@@ -357,6 +381,7 @@ step << Warrior
     .train 100 >>Train Charge
 step
     .goto Durotar,44.6,68.7
+    >> Talk to Foreman Thazz'ril
     .turnin 5441 >>Turn in Lazy Peons
     .accept 6394 >>Accept Thazz'ril's Pick
 step
@@ -367,7 +392,7 @@ step << Shaman
 >>Kill Felstalkers for Hooves
 .complete 1516,1 --Felstalker Hoof (2)
 step
->>Go into the middle room and loot the Pick
+>>Go into the middle room and loot the Pick from the ground
 .goto Durotar,43.7,53.8
     .complete 6394,1 --Thazz'ril's Pick (1)
 step
@@ -391,12 +416,15 @@ step << !Paladin
 step << Paladin
     .goto Durotar,43.3,69.0,140 >>Die near the start of the cave and respawn at the spirit healer or simply run back to town.
 step
+    #xprate >1.4
+    >> Talk to the Foreman. We're turning it in early to hit level 6.
     .goto Durotar,44.6,68.6
     .turnin 6394 >>Turn in Thazz'ril's Pick
 step
     >>Save the healing potion you get as you may need it later for the centaurs
 .goto Durotar,42.8,69.1
-    .turnin 794 >>Turn in Burning Blade Medallion
+    .turnin 794,2 >>Turn in Burning Blade Medallion << Warrior
+    .turnin 794 >> Turn in Burning Blade Medallion << !Warrior
     .accept 805 >>Accept Report to Sen'jin Village
 step
 	#completewith next
@@ -455,6 +483,11 @@ step << Shaman
     .turnin 1518 >>Turn in Call of Earth
     .train 332 >>Train Healing Wave rank 2
 step
+    .isOnQuest 6394
+    >> Talk to the Foreman.
+    .goto Durotar,44.6,68.6
+    .turnin 6394 >>Turn in Thazz'ril's Pick
+step
     >>Leave the starting area
 .goto Durotar,52.1,68.3
     .accept 2161 >>Accept A Peon's Burden
@@ -465,17 +498,18 @@ step
     .goto Durotar,54.3,73.3,15,0
     .goto Durotar,54.5,75.0,15,0
     .goto Durotar,54.1,76.6
-    >>Quest giver patrols between 3 points
+    >>Talk to Lar Prowltusk. He patrols between 3 points
     .accept 786 >>Accept Thwarting Kolkar Aggression
+    .unitscan Lar Prowltusk
 step
-    .goto Durotar,56.0,73.9
+    >> Speak with Vel'rin Fang in the hut
     .accept 817 >>Accept Practical Prey
-step
-    .goto Durotar,55.9,74.4
+    .goto Durotar,56.0,73.9
+    >> Speak with Master Vornal and Gadrin by the pool
     .accept 818 >>Accept A Solvent Spirit
-step
-    .goto Durotar,55.9,74.7
+    .goto Durotar,55.9,74.4 
     .turnin 805 >>Turn in Report to Sen'jin Village
+    .goto Durotar,55.9,74.7
     .accept 808 >>Accept Minshina's Skull
     .accept 826 >>Accept Zalazane
     .accept 823 >>Accept Report to Orgnil
@@ -522,8 +556,8 @@ step << Hunter
 step
 #sticky
 #completewith next
-.goto Durotar,59.7,71.7,50,0
-    .goto Durotar,57.6,77.9,50,0
+.goto Durotar,59.7,71.7,0
+    .goto Durotar,57.6,77.9,0
     >> Run down the beach killing as many Crawlers and Makrura as possible for Mucus and Eyes. This quest can be completed later on.
     .complete 818,2 --Crawler Mucus (8)
     .complete 818,1 --Intact Makrura Eye (4)
@@ -579,7 +613,12 @@ step << Hunter
     >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
+    #completewith next
     .goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill. Try to focus on Scorpions as they drop Dry Scorpid Eyes that vendor for 95c each.
+step
+    .isOnQuest 823
+    .goto Durotar,52.2,43.2
+    .turnin 823 >> Turn in Report to Orgnil
 step
     >>Inside the top floor of the bunker
     .goto Durotar,51.9,43.5
@@ -597,12 +636,13 @@ step
     .goto Durotar,51.1,42.6
     .vendor >>Vendor trash
 step
+    >> Talk to Cook Torka
     .goto Durotar,51.1,42.4
     .accept 815 >>Accept Break a Few Eggs
 step
     .goto Durotar,50.2,43.1,15 >>Go up this path here
 step
-    >>Go up the tower
+    >>Go up the tower and talk to Furl Scornbrow
 .goto Durotar,49.9,40.3
     .accept 791 >>Accept Carry Your Weight
 step << Shaman
@@ -628,7 +668,7 @@ step << Paladin
 step << Hunter
     .goto Durotar,53.0,41.0
     .money <0.0271
-    >> Buy a Hornwood Recurve Bow and equip it
+    >> Buy a Hornwood Recurve Bow and equip it, stock up on arrows
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Warrior/Rogue/Paladin
     .goto Durotar,52.0,40.7
@@ -640,16 +680,19 @@ step << Warrior/Rogue/Paladin
     .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
 step << Priest/Mage/Warlock/Shaman/Druid
     .goto Durotar,51.5,41.6
+    >> Talk to the innkeeper
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much Ice Cold Milk as you can
 step << Warrior/Rogue/Hunter
     .goto Durotar,51.5,41.6
+    >> Talk to the innkeeper
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much Haunch of Meat as you can
 step << Paladin
     .goto Durotar,51.5,41.6
+    >> Talk to the innkeeper
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
 step << Warrior/Rogue/Paladin
@@ -680,7 +723,7 @@ step << Priest
 step
     #sticky
     #label KulTiras
-    .goto Durotar,59.2,58.3,15
+    .goto Durotar,59.2,58.3
 >>Kill Kul Tiras mobs. Loot them for Scraps
     .complete 784,1 --Kul Tiras Sailor (10)
     .complete 784,2 --Kul Tiras Marine (8)
@@ -698,6 +741,7 @@ step
 >>Loot the chest. Accept the quest from the item
 .goto Durotar,59.3,57.6
 .collect 4881,1,830 --Collect Aged Envelope (1)
+    .use 4881
 .accept 830 >>Accept The Admiral's Orders
 step
     #xprate <1.5
@@ -825,8 +869,9 @@ step << Warrior/Rogue
     .vendor >> Buy as much Haunch of Meat as you can
 step
     #sticky
+    #requires KulTiras
     #completewith Tools
-    >>Kill some Makrura here for eyes/Crawlers for Mucus
+    >>Kill some Makrura here for eyes/Crawlers for Mucus en route to other quests. You don't need to finish it here.
     .complete 818,1 --Intact Makrura Eye (4)
     .complete 818,2 --Crawler Mucus (8)
 step
@@ -843,6 +888,7 @@ step
     .goto Durotar,61.4,56.1,10,0
     .complete 825,1 --Gnomish Tools (3)
 step
+    #requires KulTiras
     #label Tools
     .goto Durotar,67.2,70.0,125 >>Swim to the Island
 step
@@ -904,9 +950,7 @@ step
     .goto Durotar,57.5,73.3,200 >> Die and respawn at the Spirit Healer, or run back
 step
     >> Finish getting the rest of the items from the Makrura and Crawlers
-    .complete 818,1 --Intact Makrura Eye (4)
-    .complete 818,2 --Crawler Mucus (8)
-    .goto Durotar,59.7,71.7,50,0
+        .goto Durotar,59.7,71.7,50,0
     .goto Durotar,57.6,77.9,50,0
     .goto Durotar,59.7,71.7,50,0
     .goto Durotar,57.6,77.9,50,0
@@ -914,25 +958,28 @@ step
     .goto Durotar,57.6,77.9,50,0
     .goto Durotar,59.7,71.7,50,0
     .goto Durotar,57.6,77.9
+    .complete 818,1 --Intact Makrura Eye (4)
+    .complete 818,2 --Crawler Mucus (8)
 step << Mage
     >>Go inside the tent
 .goto Durotar,56.3,75.1
     .train 205 >>Train Frostbolt r2
 .train 118 >>Train Polymorph
 step
-    >>Save the Faintly Glowing Skull for later
+    >>Head back to Sen'jin Village. Save the Faintly Glowing Skull for later
 .goto Durotar,55.9,74.7
     .turnin 808 >>Turn in Minshina's Skull
-    .turnin 826 >>Turn in Zalazane
+    .turnin 826,1 >>Turn in Zalazane << Warrior
+    turnin 826 >>Turn in Zalazane << !Warrior
 step
-    .goto Durotar,56.0,74.3
+    >> Talk to Master Vornal, Vel'rin, and Lar Prowltusk
     .turnin 818 >>Turn in A Solvent Spirit
-step
-    .goto Durotar,56.0,73.9
+    .goto Durotar,56.0,74.3
     .turnin 817 >>Turn in Practical Prey
-step
-    .goto Durotar,54.3,73.3
+    .goto Durotar,56.0,73.9
+    .unitscan Lar Prowltusk
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
+    .goto Durotar,54.3,73.3
 step
     #completewith next
     .goto Durotar,48.9,48.5
@@ -956,20 +1003,34 @@ step
 step
     #xprate >1.499
     .goto Durotar,51.9,43.5
+    >> Head to the bunker
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
-    .accept 837 >>Accept Encroachment
-step << Warlock/Shaman/Warrior
+    .accept 837 >>Accept Encroachment << Warrior/Shaman
+step << Hunter
+    .xp <10,1
+    .goto Durotar,51.8,43.5
+    .accept 6062 >>Accept Taming the Beast
+    .train 13165 >>Train Aspect of the Hawk
+    .train 13549 >>Train Serpent Sting r2
+step << Warlock/Shaman/Warrior/Hunter
     #xprate >1.499
     .goto Durotar,51.9,43.5
 .accept 831 >>Accept The Admiral's Orders
 step
+    >> Talk to Cook Torka
     .goto Durotar,51.1,42.4
         .turnin 815 >>Turn in Break a Few Eggs
 step
     #xprate >1.499
+    >> Head up the hill and up the tower, talk to Furl Scornbrow equip your new bag after.
 .goto Durotar,49.9,40.3
     .turnin 791 >>Turn in Carry Your Weight
+step << Hunter
+    .isOnQuest 6062
+    .use 15917 >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
+.goto Durotar,51.5,50.0
+.complete 6062,1 --Tame a Dire Mottled Boar
 step << !Shaman !Warrior
     #xprate >1.499
     .abandon 806 >>Abandon Dark Storms
@@ -1029,18 +1090,24 @@ step << Hunter
     .train 13165 >>Train Aspect of the Hawk
     .train 13549 >>Train Serpent Sting r2
 step << Hunter
+    .goto Durotar,53.0,41.0
+    .vendor >> Vendor and stock up on level 10 arrows
+step << Hunter
     .use 15917 >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
 .goto Durotar,51.5,50.0
 .complete 6062,1 --Tame a Dire Mottled Boar
+    .unitscan Dire Mottled Boar
 step << Hunter
     .goto Durotar,51.8,43.5
 .turnin 6062 >>Turn in Taming the Beast
 .accept 6083 >>Accept Taming the Beast
 step << Hunter
-    .use 15919 >>Don't kill the Armored Scorpids you see as you need to tame one next
+    .use 15919 >>Don't kill the Armored Scorpids you see as you need to tame one next. Head north to the beaches and tame a Surf Crawler.
 .goto Durotar,59.3,27.6
 .complete 6083,1 --Tame a Surf Crawler
+    .unitscan Surf Crawler
 step << Hunter
+    >> Head back to Razor Hill
     .goto Durotar,51.8,43.5
 .turnin 6083 >>Turn in Taming the Beast
 .accept 6082 >>Accept Taming the Beast
@@ -1048,19 +1115,23 @@ step << Hunter
     .use 15920 >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
     .goto Durotar,59.3,27.6
     .complete 6082,1 --Tame an Armored Scorpid
+    .unitscan Armored Scorpid
 step << Hunter
+    >> Return to Thotar
     .goto Durotar,51.8,43.5
     .turnin 6082 >>Turn in Taming the Beast
     .accept 6081 >>Accept Training the Beast
 step << Hunter
+    >> Follow the road north and talk to Rezlak
     .goto Durotar,46.4,22.9
     .accept 834 >>Accept Winds in the Desert
 step << Warlock/Hunter
     .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Hunter
+    >> Head to the Valley of Honor and talk to Ormak Grimshot
     .goto Orgrimmar,66.0,18.5
     .turnin 6081 >>Turn in Training the Beast
-step << Hunter
+step << Hunter tbc
     >>Put "Beast Training" on your bars. Remember to teach your pet skills later
 .goto Orgrimmar,66.3,14.8
     .train 4195 >>Train Great Stamina
@@ -1069,7 +1140,7 @@ step << Warlock
 .goto Orgrimmar,48.3,45.3
 .turnin 1506 >>Turn in Gan'rul's Summons
 .accept 1501 >>Accept Creature of the Void
-step << Warlock
+step << Warlock/Hunter
     .goto Orgrimmar,34.3,36.4
     .turnin 831 >>Turn in The Admiral's Orders
 step << Warlock
@@ -1079,7 +1150,7 @@ step << Warlock
     #sticky
     #completewith next
 .goto Orgrimmar,36.0,37.7 >> Click off your Demon Skin buff. Run on top of the brazier, and use Life Tap to die. Respawn outside of orgrimmar
-step << Warlock
+step << Warlock/Hunter
 .goto Orgrimmar,49.0,94.2,275 >>Run out of Orgrimmar
 step << Warlock
 .goto Durotar,55.0,9.7,25 >>Enter Skull Rock
@@ -1150,6 +1221,7 @@ step << !Shaman !Warrior !Warlock
     .complete 834,1 --Sack of Supplies (5)
 step << !Shaman !Warrior !Warlock
     .goto Durotar,46.4,22.9
+    >> Return to Rezlak
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines
 step << !Shaman !Warrior !Warlock
@@ -1165,11 +1237,14 @@ step << !Shaman !Warrior !Warlock
     .complete 835,1 --Dustwind Savage (12)
     .complete 835,2 --Dustwind Storm Witch (8)
 step << !Shaman !Warrior !Warlock
+    #completewith next
     .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
 step << !Shaman !Warrior !Warlock
     .goto Durotar,46.4,22.9
-    .turnin 835 >>Turn in Securing the Lines
-step << Hunter
+    >> Return to Rezlak
+    .turnin 835,2 >>Turn in Securing the Lines << Hunter
+    .turnin 835 >>Turn in Securing the Lines << !Hunter
+step << Hunter tbc
     .goto Durotar,57.2,12.0
     .tame 3108 >>Tame an Encrusted Surf Crawler (They have Claw Rank 3)
 step << !Shaman !Warrior
@@ -1495,9 +1570,11 @@ step
     .goto Durotar,46.4,22.9
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines
-step
-    .goto Durotar,41.5,18.6 << tbc
-    .goto Durotar,40.8,16.3 << wotlk
+step << wotlk
+    .goto Durotar,40.8,16.3
+    .accept 812 >>Accept Need for a Cure
+step << tbc
+    .goto Durotar,41.5,18.6
     .accept 812 >>Accept Need for a Cure
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
@@ -1527,6 +1604,7 @@ step
     >> Head into the Cleft of Shadow
     .accept 813 >>Accept Finding the Antidote
 step
+    .isOnQuest 812
     #completewith next
     >> Abandon Need for a Cure. This will remove the timer on the quest but still allow you to still do it.
     .abandon 812 >>Abandon Need for a Cure
@@ -1680,9 +1758,12 @@ step
     .isOnQuest 832
     .goto Orgrimmar,49.4,50.5
     .turnin 832 >>Turn in Burning Shadows
-step
-    .goto Durotar,41.6,18.7 << tbc
-    .goto Durotar,40.8,16.3 << wotlk
+step << tbc
+    .goto Durotar,41.6,18.7
+    >>You are still able to turn in this quest even if it shows 'missing pre-req'
+    .turnin 812 >>Turn in Need for a Cure
+step << wotlk
+    .goto Durotar,40.8,16.3
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step

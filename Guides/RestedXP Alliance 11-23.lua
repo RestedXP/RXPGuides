@@ -7,6 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #defaultfor !Draenei
 #next 14-20 Bloodmyst
+#xprate <1.5 << Human Warlock
 step << !NightElf !Draenei wotlk
     #sticky
     .goto StormwindNew,21.8,56.2,20,0
@@ -97,12 +98,12 @@ step
     .isOnQuest 4681
     >> Head back to Gwennyth
     .goto Darkshore,36.6,45.6
-    .turnin 4681,2 >> Turn in Washed Ashore >> Druid/Paladin/Hunter
-    .turnin 4681 >> Turn in Washed Ashore >> !Druid !Paladin !Hunter
+    .turnin 4681,2 >> Turn in Washed Ashore << Druid/Paladin/Hunter
+    .turnin 4681 >> Turn in Washed Ashore << !Druid !Paladin !Hunter
 step << !Dwarf/!Hunter
     .xp 12 >> Grind to level 12
 step << !Dwarf/!Hunter
-    >> Talk to Sentinel Glynda and Tharnariun 
+    >> Talk to Sentinel Glynda and Tharnariun
     .accept 4811 >> Accept The Red Crystal
     .goto Darkshore,37.7,43.4
     .turnin -2118 >> Turn in Plagued Lands
@@ -449,9 +450,6 @@ step
     >>Use the mount buff to run to Blood Watch, if you go around the bridge you won't get dismounted
     .abandon 9663 >> Abandon The Kessel Run once you lose the mount buff
 step
-	.goto Bloodmyst Isle,58.5,75.0,100,0
-    .goto Bloodmyst Isle,57.1,73.5,100,0
-	.goto Bloodmyst Isle,54.2,60.3,40,0
     .goto Bloodmyst Isle,53.3,57.7
     .accept 9629 >> Accept Catch and Release
 step
@@ -690,7 +688,7 @@ step << Warlock/Mage/Priest
 step
     #label audience
     .goto The Exodar,32.8,54.4
-    >> Speak with Velen 
+    >> Speak with Velen
     .turnin 9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
 step << Druid
@@ -1028,20 +1026,20 @@ step << Druid
     .fly Teldrassil>> Fly to Teldrassil
 step << Druid
     .goto Darnassus,35.3,8.5
-    .accept 26 >> Accept A Lesson to Learn
+    .accept 26 >> Accept A Lesson to Learn << tbc
     .accept 6121 >> Accept Lessons Anew
 step << Druid
     .goto Moonglade,56.1,30.7
     >>Teleport to Moonglade
     .turnin 6121 >> Turn in Lessons Anew
     .accept 6122 >> Accept The Principal Source
-    .turnin 26 >> Turn in A Lesson to Learn
-    .accept 29 >> Accept Trial of the Lake
-step << Druid
+    .turnin 26 >> Turn in A Lesson to Learn << tbc
+    .accept 29 >> Accept Trial of the Lake << tbc
+step << Druid tbc
     .goto Moonglade,52.6,51.6
     >>Dive into the lake and look for a Shrine Bauble, it looks like a small red jar
     .complete 29,1 --Complete the Trial of the Lake.
-step << Druid
+step << Druid tbc
     .goto Moonglade,36.5,40.1
     .turnin 29 >> Turn in Trial of the Lake
     .accept 272 >> Accept Trial of the Sea Lion
@@ -1312,7 +1310,7 @@ step--murlocs
     .goto Darkshore,44.2,20.7
     .accept 4725 >> Accept Beached Sea Turtle
     .isQuestTurnedIn 4681
-step << Druid
+step << Druid tbc
     .goto Darkshore,48.9,11.3
     >>Loot the small lockbox underwater, located in between 2 big stones
     .collect 15883,1 --Collect Half Pendant of Aquatic Agility (x1)
@@ -1691,7 +1689,6 @@ step
     .turnin 973 >> Turn in The Tower of Althalaxx
 step <<  Hunter/NightElf/Rogue/wotlk
     .goto Ashenvale,20.3,42.4
-    >> Head to Zoram Strand
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
 step << Hunter/NightElf/Rogue/wotlk
@@ -1723,7 +1720,12 @@ step
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
     .complete 1009,1 --Collect Ring of Zoram (x1)
 step
-    .goto Darkshore,33.6,94.4--TODO: BFD waypoint
+    .goto 1414,43.97,35.31,20,0
+    .goto 1414,43.80,35.18,20,0
+	.goto 1414,43.94,34.89,20,0
+	.goto 1414,43.91,34.58,20,0
+	.goto 1414,44.02,34.58,20,0
+	.goto 1414,44.16,34.85
     >>Enter the temple like building into the BFD caves and kill nagas/satyrs
     .complete 1275,1
 step
@@ -1791,7 +1793,7 @@ step << !Hunter !NightElf !Rogue/NightElf wotlk
 step << NightElf wotlk
     .goto Darnassus,38.6,15.6
     .skill riding,1 >> Train riding skill and buy a mount
-step << Mage/Warrior/Priest/Warlock
+step << Warrior tbc/Mage/Priest/Warlock
 	.goto Teldrassil,29.2,56.7
     .train 227 >> Train Staves
 step << !Hunter !NightElf !Rogue
@@ -1800,14 +1802,62 @@ step << !Hunter !NightElf !Rogue
 step << !Hunter !NightElf !Rogue
     .goto Teldrassil,58.4,94.0
     .fly Auberdine >>Fly back to Auberdine
+step << Draenei !Paladin wotlk
+    .goto Darkshore,30.8,41.0,40,0
+	.goto The Exodar,81.18,52.56
+    .money <4.60
+    >> Take the western most boat to Azuremyst Isle
+    .skill riding,75 >>Head to Exodar, buy and train your mount
 step << tbc
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
     .zone Wetlands >>Take the boat to Wetlands
+step << Draenei tbc/NightElf tbc
+#xprate >1.499
+    .goto Wetlands,9.5,59.7
+    .fp Menethil >> Get the Menethil Harbor flight path
+step << Draenei tbc/NightElf tbc
+#xprate >1.499
+    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
+    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
+    .zoneskip Elwynn Forest
+
+
+step << Draenei tbc/NightElf tbc
+#xprate >1.499
+   #completewith next
+   .goto Wetlands,63.9,78.6
+   .zone Loch Modan >> Logout on top of the mushrooms at the back of the cave. When you log back in, this will teleport you to Thelsamar.
+   >>Make sure to logout as close as possible to the back of the cave. This trick won't work if you log out next to the edge of the mushroom closer to the mouth of the cave.
+   .link https://www.youtube.com/watch?v=21CuGto26Mk >> CLICK HERE for a reference
+   .zoneskip Elwynn Forest
+   .zoneskip Stormwind City
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    .goto Loch Modan,33.9,50.9
+    .fp Thelsamar >> Get the Thelsamar flight path
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    #completewith next
+    .goto Loch Modan,21.30,68.60,40,0
+    .zone Dun Morogh>> Run to Dun Morogh
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+	>>Go inside the South-eastern Trogg cave. Perform a logout skip
+    .goto Dun Morogh,70.63,56.70,60,0
+    .goto Dun Morogh,70.60,54.86
+	.link https://www.youtube.com/watch?v=yQBW3KyguCM >> CLICK HERE
+	.zone Ironforge >> Logout Skip or travel to Ironforge
+step << NightElf tbc/Draenei tbc
+#xprate >1.499
+    .goto Ironforge,76.03,50.98,30,0
+    .zone Stormwind City >> Take the tram to Stormwind
 step << wotlk
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
-    .zone Wetlands >>Take the boat to Stormwind
+    .zone Stormwind City >>Take the boat to Stormwind
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1833,12 +1883,18 @@ step << tbc
     #completewith next
     .goto Wetlands,9.5,59.7
     .fly Stormwind>> Fly to Stormwind
+step << Warlock wotlk
+    .goto StormwindNew,36.35,67.49
+    .accept 3765>>Accept The Corruption Abroad
 step << Warlock
     .goto StormwindClassic,25.3,78.7
 	.trainer >> Train your class spells
 step << Warlock
     .goto StormwindClassic,25.2,78.5
     .accept 1716 >> Accept Devourer of Souls
+step << Warlock tbc
+    .goto StormwindNew,36.35,67.49
+    .accept 3765>>Accept The Corruption Abroad
 step
     #label exit
     .goto StormwindClassic,39.9,54.4
@@ -1851,6 +1907,10 @@ step
 step
     .goto Darkshore,37.5,41.8
     .accept 729 >> Accept The Absent Minded Prospector
+step
+    #completewith next
+    .goto Darkshore,38.37,43.05
+    .turnin -3765>>Turn in The Corruption Abroad
 step
     .goto Darkshore,38.37,43.05
     .accept 1275 >> Accept Researching the Corruption
@@ -1941,7 +2001,7 @@ step
     #sticky
     #label nagas
     >Kill Nagas for Wrathtail Heads en route to next quests
-.goto Ashenvale,13.8,29.1
+.goto Ashenvale,13.8,29.1,0,0
     .complete 1008,1 --Collect Wrathtail Head (x20)
 step
     .goto Ashenvale,14.2,20.6
@@ -1957,7 +2017,12 @@ step
     .goto Ashenvale,7.0,13.4
     .complete 1009,1 --Collect Ring of Zoram (x1)
 step
-    .goto Darkshore,33.6,94.4--TODO: BFD waypoint
+    .goto 1414,43.97,35.31,20,0
+    .goto 1414,43.80,35.18,20,0
+	.goto 1414,43.94,34.89,20,0
+	.goto 1414,43.91,34.58,20,0
+	.goto 1414,44.02,34.58,20,0
+	.goto 1414,44.16,34.85
     >>Enter the temple like building into the BFD caves and kill nagas/satyrs
     .complete 1275,1
 step
@@ -1966,6 +2031,12 @@ step
     .turnin 1009 >> Turn in Ruuzel
 step
     .hs >> Hearth to Astranaar
+step << wotlk
+    .goto Ashenvale,39.0,35.9
+    .goto Ashenvale,35.9,32.0
+    >>Start looking for Dal Bloodclaw, he walks around the furbolg camp
+	.unitscan Dal Bloodclaw
+    .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
 step
     .goto Ashenvale,36.6,49.6
     .turnin 1023 >> Turn in Raene's Cleansing
@@ -2001,12 +2072,12 @@ step
 #xprate <1.5
     .goto Ashenvale,49.8,67.2
     .turnin 1016 >> Turn in Elemental Bracers
-    .accept 1017 >> Accept Mage Summoner
-step
+    .accept 1017 >> Accept Mage Summoner << tbc
+step << tbc
     .goto The Barrens,49.0,5.3,80,0
     .goto The Barrens,49.0,5.3,0
     .zone The Barrens>>Enter The Barrens through the broken wall. Be careful of the guards near the wall at the main road
-step
+step << tbc
 #xprate <1.5
     .goto The Barrens,48.2,19.1
     >>Climb the mountain and Kill Sarilus Foulborne
@@ -2015,36 +2086,37 @@ step << tbc
     #completewith next
     .goto The Barrens,50.8,32.6,0
     .deathskip >>Die and respawn at the Spirit Healer
-step
+step << tbc
     .goto The Barrens,49.3,57.1
     .turnin 1716 >> Turn in Devourer of Souls
     .accept 1738 >> Accept Heartswood
-step
+step << tbc
     >>Run to Ratchet
     .goto The Barrens,63.1,37.2
     .fp Ratchet >> Get the Ratchet flight path
     .fly Astranaar>> Fly to Astranaar
-step
+step << tbc
     .goto Ashenvale,39.0,35.9
     .goto Ashenvale,35.9,32.0
     >>Start looking for Dal Bloodclaw, he walks around the furbolg camp
 	.unitscan Dal Bloodclaw
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
-step << Warlock
+step << Warlock tbc
     >>Loot the big tree
     .goto Ashenvale,31.6,31.6
     .complete 1738,1 --Collect Heartswood (x1)
-step
+step << tbc
     .goto Ashenvale,40.1,53.1,0
     .deathskip >>Head towards the murloc lake and die next to the base of the mountain, east side of the lake then respawn at the Spirit Healer
-step
+step << tbc
 #xprate <1.5
     .goto Ashenvale,49.8,67.2
     .turnin 1017 >> Turn in Mage Summoner
 step
-#xprate <1.5
-    .deathskip >>Die and respawn at the Spirit Healer
-step << wotlk
+#xprate <1.5 << tbc
+    #completewith next
+    .deathskip >>Die and respawn at the Spirit Healer in Astranaar
+step << wotlk !Paladin !Warlock
     #completewith next
     *If you have money on this server, mail yourself 5g, we'll be buying our mounts soon
 step
@@ -2071,7 +2143,8 @@ step
     .accept 741 >> Accept The Absent Minded Prospector
 step
     #completewith next
-    .goto Darkshore,33.2,40.2
+    .goto Darkshore,33.2,40.2,25,0
+    .goto Darkshore,33.2,40.2,0
     .zone Teldrassil>>Take the boat to Darnassus
 step
     #completewith next
@@ -2079,7 +2152,7 @@ step
     .zone Darnassus >> Take the purple portal to Darnassus
 step << NightElf wotlk
 	.goto Darnassus,38.7,15.8
-    .money <5.00
+    .money <4.6
 	.skill riding,75 >> Train riding and buy your mount
 step << Warrior/Rogue
     .goto Darnassus,64.6,53.0
@@ -2096,7 +2169,7 @@ step
 step << Draenei !Paladin wotlk
     .goto Darkshore,30.8,41.0,40,0
 	.goto The Exodar,81.18,52.56
-    .money <5.00
+    .money <4.60
     >> Take the western most boat to Azuremyst Isle
     .skill riding,75 >>Head to Exodar, buy and train your mount
 step << tbc
@@ -2148,5 +2221,5 @@ step << NightElf tbc/Draenei tbc
 step << wotlk
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
-    .zone Wetlands >>Take the boat to Stormwind
+    .zone Stormwind City >>Take the boat to Stormwind
 ]])
