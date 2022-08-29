@@ -47,7 +47,7 @@ function addon.comms:Setup()
     self:RegisterEvent("PLAYER_LEVEL_UP")
     self:RegisterEvent("GROUP_FORMED")
     self:RegisterEvent("GROUP_LEFT")
-    self:RegisterEvent("PLAYER_XP_UPDATE")
+    self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     self:RegisterComm(self._commPrefix)
@@ -124,30 +124,53 @@ function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
     if isInitialLogin or isReloadingUi then self:AnnounceSelf("ANNOUNCE") end
 end
 
-function addon.comms:PLAYER_XP_UPDATE()
-    if self.state.lastXPGain then self:TallyGroup() end
+function addon.comms:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
+    -- Exclude "You gain 360 experience" from quest turnin, doubles up on mob kill
+    -- TODO use _G.COMBATLOG_XPGAIN_FIRSTPERSON or _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED
+    if 'You' == strsub(text, 0, #'You') then return end
 
-    self.state.lastXPGain = GetTime()
+    local xpGained = tonumber(smatch(text, "%d+"))
+
+    if not xpGained or xpGained == 0 then return end
 end
 
-function addon.comms:TallyGroup()
+function addon.tracker:QUEST_TURNED_IN(_, _, xpReward)
+    xpReward = tonumber(xpReward)
+
+    if not xpReward or xpReward <= 0 then return end
+
+    self:TallyXP(xpReward)
+end
+
+function addon.comms:TallyGroup(xp)
     if GetNumGroupMembers() < 1 then return end
 
-    local diff = GetTime() - self.state.lastXPGain
     local name
     for i = 1, GetNumGroupMembers() - 1 do
         name = UnitName("party" .. i)
+
         if not name then break end
 
-        if self.players[name] then
-            self.players[name].timePlayed = self.players[name].timePlayed + diff
-        else
-            self.players[name] = {
+        if not self.players[name] then
+            self.players[name].timePlayed = {
+                xp = xp,
                 timePlayed = 0,
                 class = UnitClassBase("party" .. i)
             }
         end
+
+        if self.state.lastXPGain then
+            local diff = GetTime() - self.state.lastXPGain
+
+            -- Only calculate < 5 minutes between XP gains
+            if diff < 300 then
+                self.players[name].timePlayed =
+                    self.players[name].timePlayed + diff
+            end
+        end
     end
+
+    self.state.lastXPGain = GetTime()
 end
 
 function addon.comms:AnnounceSelf(command)
