@@ -196,12 +196,12 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
 
 end
 
-function addon.comms:IsNewRelease(theirRelease)
+function addon.comms:IsNewRelease(theirRelease, name)
     -- Treat Development announcements as equal to current
     if theirRelease == 'Development' then
         return false
     elseif addon.release == 'Development' then
-        self.PrettyPrint("IsNewRelease:theirRelease = %s", theirRelease)
+        self.PrettyPrint("%s:theirRelease = %s", name, theirRelease)
         return false
     end
 
@@ -242,7 +242,7 @@ function addon.comms:HandleAnnounce(data)
 
     if addon.settings.db.profile.checkVersions then
         if not self.state.updateFound.addon and
-            self:IsNewRelease(data.addon.release) then
+            self:IsNewRelease(data.addon.release, data.player.name) then
 
             self.state.updateFound.addon = true
 
