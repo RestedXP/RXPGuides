@@ -33,7 +33,7 @@ s["DEATHKNIGHT"] = {
         49998, --Death Strike [Rank 1]
         50842, --Pestilence
         46584 --Raise Dead
-    },	
+    },
 	[57] = {
         48263, --Frost Presence
         47528 --Mind Freeze
@@ -420,8 +420,8 @@ s["PALADIN"] = {
         1152 -- Purify
     },
     [12] = {
-        19834 -- Blessing of Might R2
-	53408 -- Judgement of Wisdom
+        19834, -- Blessing of Might R2
+        53408, -- Judgement of Wisdom
     },
     [14] = {
         19742, -- Blessing of Wisdom
