@@ -122,7 +122,7 @@ end
 function addon.comms:TallyGroup()
     if GetNumGroupMembers() < 1 then return end
 
-    local diff = self.state.lastXPGain - GetTime()
+    local diff = GetTime() - self.state.lastXPGain
     local name
     for i = 1, GetNumGroupMembers() - 1 do
         name = UnitName("party" .. i)
