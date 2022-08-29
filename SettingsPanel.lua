@@ -64,7 +64,8 @@ function addon.settings:InitializeSettings()
             checkVersions = true,
             enableLevelingReportInspections = true,
             levelSplitsHistory = GetMaxPlayerLevel(),
-            levelSplitsFontSize = 11
+            levelSplitsFontSize = 11,
+            levelSplitsOpacity = 0.9
         }
     }
 
@@ -810,12 +811,19 @@ function addon.settings.CreateExtrasOptionsPanel()
                         type = "toggle",
                         width = "normal",
                         order = 6,
-                        confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            _G.ReloadUI()
+                            if addon.settings.db.profile.enablelevelSplits then
+                                addon.tracker:CreateLevelSplits()
+                                addon.tracker:UpdateLevelSplits("full")
+                                addon.tracker.levelSplits:Show()
+                            else
+                                addon.tracker.levelSplits:Hide()
+                            end
                         end,
-                        disabled = not addon.settings.db.profile.enableTracker,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enableTracker
+                        end,
                         hidden = isNotAdvanced(),
                     },
                     levelSplitsHistory = {
@@ -831,7 +839,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
                         end,
-                        disabled = not addon.settings.db.profile.enablelevelSplits,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enablelevelSplits
+                        end,
                         hidden = isNotAdvanced(),
                     },
                     levelSplitsFontSize = {
@@ -846,10 +856,29 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
                         end,
-                        disabled = not addon.settings.db.profile.enablelevelSplits,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enablelevelSplits
+                        end,
+                        hidden = isNotAdvanced(),
+                    },
+                    levelSplitsOpacity = {
+                        name = "Level Splits Opacity",
+                        desc = "Lower number to make Level Splits more transparent",
+                        type = "range",
+                        width = "normal",
+                        order = 9,
+                        min = 0.1,
+                        max = 1,
+                        step = 0.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enablelevelSplits
+                        end,
                         hidden = isNotAdvanced(),
                     }
-
                 },
             },
             communications = {
