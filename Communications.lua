@@ -59,6 +59,17 @@ function addon.comms:Setup()
             break
         end
     end
+
+    addon.comms:UpgradeDB()
+end
+
+function addon.comms:UpgradeDB()
+    local abs = math.abs
+    for _, data in pairs(self.players) do
+        if data.timePlayed < 0 then
+            data.timePlayed = abs(data.timePlayed)
+        end
+    end
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
