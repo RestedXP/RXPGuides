@@ -29,6 +29,60 @@ addon.defaultSpellList = s
 
 s["DEATHKNIGHT"] = {
 
+	[56] = {
+        49998, --Death Strike [Rank 1]
+        50842, --Pestilence
+        46584 --Raise Dead
+    },	
+	[57] = {
+        48263, --Frost Presence
+        47528 --Mind Freeze
+    },
+	[58] = {
+        48721, --Blood Boil [Rank 1]
+        45524 --Chains of Ice
+    },
+	[59] = {
+        49926, --Blood Strike [Rank 2]
+        47476 --Strangulate
+    },
+	[60] = {
+        43265, --Death and Decay [Rank 1]
+        49917, --Plague Strike [Rank 2]
+		49158, --Corpse Explosion r2
+    },
+	[61] = {
+        49896, --Icy Touch [Rank 2]
+        49020, --Obliterate [Rank 1]
+		3714 -- Path of Frost
+    },
+	[62] = {
+        49892, --Death Coil [Rank 2]
+        48792 --Icebound Fortitude
+    },
+	[63] = {
+        49999, --Death Strike [Rank 2]
+    },
+	[64] = {
+        49927, --Blood Strike [Rank 3]
+        45529 --Blood Tap
+    },
+	[65] = {
+        56222, --Dark Command
+        57330, --Horn of Winter
+        49918 --Plague Strike [Rank 3]
+    },
+	[66] = {
+        49939, --Blood Boil [Rank 2]
+        48743 --Death Pact
+    },
+    [67] = {
+        49939, --Death and Decay [Rank 2]
+        49903, --Icy Touch [Rank 3]
+        51423, --Obliterate [Rank 2]
+        56815, --Rune Strike
+		55265 -- scourge strike r2
+    },
     [68] = {
         62902, --Death Coil
         49893, --Death Coil
