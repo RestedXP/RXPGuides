@@ -821,7 +821,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                                 addon.tracker.levelSplits:Hide()
                             end
                         end,
-                        disabled = not addon.settings.db.profile.enableTracker,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enableTracker
+                        end,
                         hidden = isNotAdvanced(),
                     },
                     levelSplitsHistory = {
@@ -837,7 +839,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
                         end,
-                        disabled = not addon.settings.db.profile.enablelevelSplits,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enablelevelSplits
+                        end,
                         hidden = isNotAdvanced(),
                     },
                     levelSplitsFontSize = {
@@ -852,7 +856,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
                         end,
-                        disabled = not addon.settings.db.profile.enablelevelSplits,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enablelevelSplits
+                        end,
                         hidden = isNotAdvanced(),
                     },
                     levelSplitsOpacity = {
@@ -868,7 +874,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
                         end,
-                        disabled = not addon.settings.db.profile.enablelevelSplits,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enablelevelSplits
+                        end,
                         hidden = isNotAdvanced(),
                     }
                 },
