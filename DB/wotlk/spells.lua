@@ -1451,7 +1451,8 @@ s["ROGUE"] = {
 
 s["WARLOCK"] = {
     [1] = {
-        348 -- immolate
+        348, -- immolate
+        688,
     },
     [4] = {
         172 -- corruption
@@ -1482,19 +1483,21 @@ s["WARLOCK"] = {
         1455 -- life tap r2
     },
     [18] = {
-        1014 -- curse of agony r2
+        1014, -- curse of agony r2
+        5676, -- searing pain r1
     },
     [20] = {
         706, -- demon armor
         3698, -- health funnel r2
         1094, -- immolate r3
         1088, -- shadowbolt r4
-        5740 -- rain of fire r1
+        5784, -- summon felsteed
     },
     [22] = {
         6202, -- create healthstone r2
         699, -- drain life r2
-        5676 -- searing pain r1
+        8288, --drain soul 2
+        5740, -- rain of fire r1
     },
     [26] = {
         1714, -- curse of tongues
@@ -1503,18 +1506,19 @@ s["WARLOCK"] = {
     [28] = {
         710, -- banish
         6217, -- curse of agony r3
-        3699, -- health funnel r3
-        1106 -- shadow bolt r5
+        --3699, -- health funnel r3
+        --1106 -- shadow bolt r5
     },
     [30] = {
         20752, -- create soulstone r2
         1086, -- demon armor r2
         709, -- drain life r3
         2941, -- immolate r4
-        5784 -- summon felsteed
+        1949, -- hellfire 1
     },
     [32] = {
-        6213 -- fear r2
+        6213, -- fear r2
+        6229 -- Shadow ward
     },
     [34] = {
         7684, -- corruption r4
@@ -1524,12 +1528,13 @@ s["WARLOCK"] = {
         2362, -- create spellstone
         3700, -- health funnel
         11687, -- life tap r4
-        7641 -- shadow bolt r6
+        --7641 -- shadow bolt r6
     },
     [38] = {
-        18879, -- siphon life r2
+        --18879, -- siphon life r2
         11711, -- curse of agony r4
-        7651 -- drain life r4
+        7651, -- drain life r4
+        8289 --drain soul 3
     },
     [40] = {
         20755, -- create soulstone r3
@@ -1543,7 +1548,7 @@ s["WARLOCK"] = {
     [44] = {
         11671, -- corruption r5
         11693, -- health funnel r5
-        11659 -- shadowbolt r7
+        --11659 -- shadowbolt r7
     },
     [46] = {
         11729, -- create healthstone
@@ -1551,20 +1556,26 @@ s["WARLOCK"] = {
         11688 -- life tap r5
     },
     [48] = {
-        18880, -- siphon life r3
-        18647, -- banish r2
-        11712 -- curse of agony r5
+        --18880, -- siphon life r3
+        --18647, -- banish r2
+        11712, -- curse of agony r5
+        17727, -- spellstone 2
+        7641,
+        11659,
     },
     [50] = {
         18937, -- dark pact r2
         20756, -- create soulstone r4
         17925, -- death coil r2
         11734, -- demon armor r4
-        11667 -- immolate r6
+        --11667, -- immolate r6
+        11739 -- Shadow Ward 2
     },
     [52] = {
         11694, -- health funnel r6
-        11660 -- shadow bolt r8
+        11660, -- shadow bolt r8
+        11740, -- shadow ward 3
+        11675, -- Drain soul 4
     },
     [54] = {
         11672, -- corruption r6
@@ -1574,7 +1585,7 @@ s["WARLOCK"] = {
     [56] = {
         6215, -- fear r3
         11689, -- life tap r6
-        18881, -- siphon life r4
+        --18881, -- siphon life r4
         11730 -- create healthstone r5
     },
     [58] = {
@@ -1587,26 +1598,25 @@ s["WARLOCK"] = {
         20757, -- create soulstone r5
         11735, -- demon armor r5
         11696, -- health funnel r7
-        11668, -- immolate r7
-        25309, -- immolate r8
-        11661, -- shadow bolt r9
-        25307, -- shadow bolt r10
+        --11668, -- immolate r7
+        --25309, -- immolate r8
+        --11661, -- shadow bolt r9
+        --25307, -- shadow bolt r10
         18938, -- dark pact r3
-        25311 -- corruption r7
+        25311, -- corruption r7
+        17728, -- spellstone 3
     },
     [62] = {
         27219, -- drain life r7
         28176 -- fel armor
     },
-    [63] = {
-        27264 -- siphon life r5
-    },
     [65] = {
-        27216 -- corruption r8
+        27216, -- corruption r8
+        28172, -- spellstone
     },
     [67] = {
         27218, -- curse of agony r7
-        27259 -- health funnel r8
+        --27259 -- health funnel r8
     },
     [68] = {
         27230, --Create Healthstone (Rank 6)
