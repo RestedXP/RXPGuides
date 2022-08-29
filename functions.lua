@@ -2434,7 +2434,8 @@ end
 function addon.functions.isOnQuest(self, ...)
     if type(self) == "string" then
         local element = {}
-        local text, id = ...
+        local text, id, reverse = ...
+        element.reverse = reverse
         id = tonumber(id)
         if not id then
             return addon.error(
@@ -2446,11 +2447,16 @@ function addon.functions.isOnQuest(self, ...)
         element.textOnly = true
         return element
     end
-    local id = self.element.questId
-    if self.element.step.active and not IsOnQuest(id) and not addon.settings.db.profile.debug then
-        self.element.step.completed = true
+    local element = self.element
+    local id = element.questId
+    if (element.step.active and not IsOnQuest(id) and not addon.settings.db.profile.debug) == not element.reverse then
+        element.step.completed = true
         addon.updateSteps = true
     end
+end
+
+function addon.functions.isNotOnQuest(self, text, id)
+    return addon.functions.isOnQuest(self, text, id, true)
 end
 
 function addon.functions.isQuestTurnedIn(self, text, ...)
