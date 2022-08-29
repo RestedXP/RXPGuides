@@ -1895,12 +1895,16 @@ step << Warlock
 step << Warlock tbc
     .goto StormwindNew,36.35,67.49
     .accept 3765>>Accept The Corruption Abroad
-step
+step << tbc
     #label exit
     .goto StormwindClassic,39.9,54.4
     .zone Darkshore>>Enter the Stockades and ghetto hearth to Auberdine
     >>While you are inside The Stockades, invite some random person and leave group so you can teleport back to Auberdine
     .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> CLICK HERE for an invite/leave macro
+step << wotlk
+    .goto StormwindNew,21.8,56.2,20,0
+    .goto StormwindNew,21.8,56.2,0
+    .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 step
     .goto Darkshore,37.2,44.2
     .accept 4740 >> Accept WANTED: Murkdeep!
