@@ -18,6 +18,8 @@ local LibDeflate = LibStub("LibDeflate")
 local RXPG = addon.RXPG
 local game = strlower(addon.game)
 local suffix = 1
+-- Alias addon.locale.Get
+local L = addon.locale.Get
 
 -- File guides and string-imports need different load order support
 local embeddedGuides = {}
@@ -352,7 +354,7 @@ function RXPG.ImportString(str, frame)
                 addon.bufferSize = addon.bufferSize + 1
             end
         else
-            errorMsg = "Error parsing guides\nTotal guides loaded: %d/%s"
+            errorMsg = L("Error parsing guides")
             break
         end
     end
@@ -369,7 +371,7 @@ function RXPG.ImportString(str, frame)
             return true
         end
     else
-        return false, "Error: Unable to parse guides, invalid import string"
+        return false, L("Error: Unable to parse guides")
     end
 end
 
