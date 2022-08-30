@@ -35,14 +35,6 @@ addon.RXPG = {}
 addon.functions = {}
 
 BINDING_HEADER_RXPGuides = addonName
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
-    "Active Item Button 1"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] =
-    "Active Item Button 2"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
-    "Active Item Button 3"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
-    "Active Item Button 4"
 
 local questFrame = CreateFrame("Frame");
 
