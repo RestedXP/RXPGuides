@@ -559,7 +559,7 @@ function addon.settings.CreateImportOptionsPanel()
             importBox = {
                 order = 10,
                 type = 'input',
-                name = 'Guides to import',
+                name = L('Guides to import'),
                 width = "full",
                 multiline = 5,
                 validate = function(_, val)
