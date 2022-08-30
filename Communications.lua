@@ -155,7 +155,7 @@ function addon.comms:TallyGroup(xp)
         if not name then break end
 
         if not self.players[name] then
-            self.players[name].timePlayed = {
+            self.players[name] = {
                 xp = xp,
                 timePlayed = 0,
                 class = UnitClassBase("party" .. i)
