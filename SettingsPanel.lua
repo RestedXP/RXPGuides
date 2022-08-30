@@ -796,15 +796,17 @@ function addon.settings.CreateExtrasOptionsPanel()
                         width = "full",
                         order = 4,
                         confirm = requiresReload,
-                        disabled = not addon.settings.db.profile.enableTracker,
-                        hidden = isNotAdvanced(),
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enableTracker
+                        end,
+                        hidden = isNotAdvanced,
                     },
                     splitsOptionsHeader = {
                         name = "Level Splits (Beta)",
                         type = "header",
                         width = "full",
                         order = 5,
-                        hidden = isNotAdvanced(),
+                        hidden = isNotAdvanced,
                     },
                     enablelevelSplits = {
                         name = "Enable Level Splits",
@@ -824,7 +826,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                         disabled = function () --Requires function to dynamically update
                             return not addon.settings.db.profile.enableTracker
                         end,
-                        hidden = isNotAdvanced(),
+                        hidden = isNotAdvanced,
                     },
                     levelSplitsHistory = {
                         name = "Level Splits History",
@@ -842,7 +844,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                         disabled = function () --Requires function to dynamically update
                             return not addon.settings.db.profile.enablelevelSplits
                         end,
-                        hidden = isNotAdvanced(),
+                        hidden = isNotAdvanced,
                     },
                     levelSplitsFontSize = {
                         name = "Level Splits Font Size",
@@ -859,7 +861,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                         disabled = function () --Requires function to dynamically update
                             return not addon.settings.db.profile.enablelevelSplits
                         end,
-                        hidden = isNotAdvanced(),
+                        hidden = isNotAdvanced,
                     },
                     levelSplitsOpacity = {
                         name = "Level Splits Opacity",
@@ -877,7 +879,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                         disabled = function () --Requires function to dynamically update
                             return not addon.settings.db.profile.enablelevelSplits
                         end,
-                        hidden = isNotAdvanced(),
+                        hidden = isNotAdvanced,
                     }
                 },
             },
