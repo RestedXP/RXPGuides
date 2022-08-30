@@ -4,6 +4,9 @@ local RXPG = addon.RXPG
 local _, class = UnitClass("player")
 local _G = _G
 
+-- Alias addon.locale.Get
+local L = addon.locale.Get
+
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
 addon.width, addon.height = 235, 125 -- Default width/height
@@ -769,7 +772,7 @@ function CurrentStepFrame.UpdateText()
                                             "TOPRIGHT", 11, -1)
                     elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
 
-                    text:SetText(element.text)
+                    text:SetText(L(element.text))
                     local h = math.ceil(elementFrame.text:GetStringHeight() * 1.1) +
                                 1
                     -- print('sh:',h)
