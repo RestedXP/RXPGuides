@@ -543,6 +543,34 @@ function addon.InsertQuestGuide(id,tbl)
     table.insert(tbl[id],entry)
 end
 
+function addon.IsOnTurnInGuide(self)
+    if UnitLevel("player") >= 70 or not RXPData.skipTurnInGuideQuests then
+        return
+    end
+    if type(self) == "table" then
+        local element = self.element
+        local id = element.questId
+        if id and addon.turnInList[id] then
+            for i,v in pairs(addon.turnInList[id]) do
+                if v.name == "Launch Turn in Guide" then
+                    addon.SetElementComplete(self, true)
+                    --print(addon.GetQuestName(id),v.name,id)
+                    return
+                end
+            end
+        end
+    elseif type(self) == "number" then
+        local id = self
+        if id and addon.turnInList[id] then
+            for i,v in pairs(addon.turnInList[id]) do
+                if v.name == "Launch Turn in Guide" then
+                    return true
+                end
+            end
+        end
+    end
+end
+
 addon.pickUpList = {}
 function addon.functions.accept(self, ...)
     if type(self) == "string" then -- on parse
@@ -679,7 +707,7 @@ function addon.functions.accept(self, ...)
         end
 
     end
-
+    addon.IsOnTurnInGuide(self)
 end
 
 function addon.functions.daily(self, text, ...)
@@ -857,7 +885,7 @@ function addon.functions.turnin(self, ...)
         end
 
     end
-
+    addon.IsOnTurnInGuide(self)
 end
 
 function addon.functions.dailyturnin(self, text, ...)
@@ -1145,6 +1173,7 @@ function addon.functions.complete(self, ...)
             end
         end
     end
+    addon.IsOnTurnInGuide(self)
 end
 
 local lastZone
@@ -1743,7 +1772,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     elseif not element.textOnly then
         addon.SetElementIncomplete(self)
     end
-
+    addon.IsOnTurnInGuide(self)
 end
 
 function addon.functions.destroy(self, ...)
