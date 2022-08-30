@@ -29,6 +29,60 @@ addon.defaultSpellList = s
 
 s["DEATHKNIGHT"] = {
 
+	[56] = {
+        49998, --Death Strike [Rank 1]
+        50842, --Pestilence
+        46584 --Raise Dead
+    },
+	[57] = {
+        48263, --Frost Presence
+        47528 --Mind Freeze
+    },
+	[58] = {
+        48721, --Blood Boil [Rank 1]
+        45524 --Chains of Ice
+    },
+	[59] = {
+        49926, --Blood Strike [Rank 2]
+        47476 --Strangulate
+    },
+	[60] = {
+        43265, --Death and Decay [Rank 1]
+        49917, --Plague Strike [Rank 2]
+		49158, --Corpse Explosion r2
+    },
+	[61] = {
+        49896, --Icy Touch [Rank 2]
+        49020, --Obliterate [Rank 1]
+		3714 -- Path of Frost
+    },
+	[62] = {
+        49892, --Death Coil [Rank 2]
+        48792 --Icebound Fortitude
+    },
+	[63] = {
+        49999, --Death Strike [Rank 2]
+    },
+	[64] = {
+        49927, --Blood Strike [Rank 3]
+        45529 --Blood Tap
+    },
+	[65] = {
+        56222, --Dark Command
+        57330, --Horn of Winter
+        49918 --Plague Strike [Rank 3]
+    },
+	[66] = {
+        49939, --Blood Boil [Rank 2]
+        48743 --Death Pact
+    },
+    [67] = {
+        49939, --Death and Decay [Rank 2]
+        49903, --Icy Touch [Rank 3]
+        51423, --Obliterate [Rank 2]
+        56815, --Rune Strike
+		55265 -- scourge strike r2
+    },
     [68] = {
         62902, --Death Coil
         49893, --Death Coil
@@ -348,7 +402,7 @@ s["PALADIN"] = {
         465 -- Devotion Aura
     },
     [4] = {
-        20271, -- Judgement
+        20271, -- Judgement of Light
         19740 -- Blessing of might
     },
     [6] = {
@@ -366,22 +420,19 @@ s["PALADIN"] = {
         1152 -- Purify
     },
     [12] = {
-        20287, -- Seal of Righteousness R2
-        19834 -- Blessing of Might R2
+        19834, -- Blessing of Might R2
+        53408, -- Judgement of Wisdom
     },
     [14] = {
         19742, -- Blessing of Wisdom
         647, -- Holy Light R3
-        21082, -- Seal of the crusader r1
-        20162 -- Seal of the crusader r2
     },
     [16] = {
         7294, -- Retribution Aura
-        62124, --Hand of reckoning
     },
     [18] = {
         5573, -- Divine Protection R2
-        20288 -- Seal of Rightousness
+	1044, -- Hand of freedom
     },
     [20] = {
         26573, -- Consecration
@@ -394,7 +445,6 @@ s["PALADIN"] = {
     [22] = {
         1026, -- Holy Light R4
         19835, -- blessing of might r3
-        --20305 -- seal of teh crusader r3
     },
     [24] = {
         19850, -- blessing of wisdom r2
@@ -413,11 +463,9 @@ s["PALADIN"] = {
         1042, -- holy light r5
         --10291, -- devotion aura r4
         2800, -- lay of hands r2
-        20915 -- seal of command r2
     },
     [32] = {
         19836, -- blessing of might r4
-        --20306 -- seal of the crusader r4
     },
     [34] = {
         642, -- divine shield
@@ -437,13 +485,11 @@ s["PALADIN"] = {
         20922, -- consecration r3
         5589, -- hammer of justice r3
         --1032, -- devotion aura r5
-        20918 -- seal of command r3
     },
     [42] = {
         4987, -- cleanse
         19837, --  blessing of might r5
         19941, -- flash of light r4
-        --20307 -- seal of the crusader r5
     },
     [44] = {
         24275, -- hammer of wrath
@@ -462,13 +508,11 @@ s["PALADIN"] = {
         10310, -- lay of hands r3
         10292, -- devotion aura r6
         20923, -- consecration r4
-        20919 -- seal of command r4
     },
     [52] = {
         19838, -- blessing of might r6
         24274, -- hammer of wrath r2
         10313, -- exorcism r5
-        20308 -- seal of the crusader r6
     },
     [54] = {
         10308, -- hammer of justice r4
@@ -491,7 +535,6 @@ s["PALADIN"] = {
         10293, -- devotion aura r7
         25290, -- blessing of wisdom r6
         24239, -- hammer of wrath r3
-        20920 -- seal of command r5
     },
     [62] = {
         32223, -- crusader aura
@@ -874,7 +917,7 @@ s["HUNTER"] = {
     },
     [8] = {
         5116, -- concussive shot
-        14260, -- raptor strike r2
+        --14260, -- raptor strike r2
         1130, -- hunter's mark
         13163, -- aspect of the monkey
         3127 -- parry
@@ -882,119 +925,104 @@ s["HUNTER"] = {
     [10] = {
         13165, -- aspect of the hawk
         13549, -- serpent string r2
-        4187, -- great stamina
-        24545 -- natural armor
     },
     [12] = {
         136, -- mend pet
         2974, -- wing clip
-        4188, -- great stamina r2
-        24549 -- natural armor r2
+        14281, --arcane 2
     },
     [14] = {
         1513 -- scare beast
     },
     [16] = {
-        13795 -- immolation trap
+        13795, -- immolation trap
+        5118, -- cheetah
+        1495, -- mongoose 1
     },
     [18] = {
-        14281, -- arcane shot 2
         14318, -- aspect of the hawk r2
         13550, -- serpent sting r3
-        4187, -- great stamina r3
-        24550 -- natural armor r3
     },
     [20] = {
-        5118, -- aspect of the cheetah
-        1499, -- freezing trap
         3111, -- mend pet r2
-        15147, -- growl r3
-        781 -- disengage r1
+        781, -- disengage
+        2643, -- multishot
+        14282 -- arcane shot r3
     },
     [22] = {
-        2643, -- multishot
         14323 -- hunters mark r2
-    },
-    [24] = {
-        4190, -- great stamina r4
-        24551 -- natural armor r4
     },
     [26] = {
         3045, -- rapid fire
-        13551 -- serpent sting r4
+        13551, -- serpent sting r4
+        1499, -- freezing trap
     },
     [28] = {
         14319, -- aspect of the hawk r3
         13809, -- frost trap
-        3661 -- mend pet r3
+        3661, -- mend pet r3
+        20900, -- aimed 2
+        14283, -- arcane 4
     },
     [30] = {
         5384, -- feign death
-        4191, -- great stamina r5
-        24552, -- natural armor r5
-        14924, -- growl r4
-        35694, -- avoidance
-        25076, -- cobra reflexes
-        14282 -- arcane shot r3
-    },
-    [32] = {
-        14283 -- arcane shot r4
+        14269, -- mongoose 2
     },
     [34] = {
         13552 -- serpent sting r5
     },
     [36] = {
         3662, -- mend pet r4
-        4192, -- great stamina r6
-        24553, -- natural armor r6
-        3034 -- viper sting
+        3034, -- viper sting
+        20901, --aimed 3
+        14284, -- arcane shot r5
     },
     [38] = {
         14320 -- aspect of the hawk r4
     },
     [40] = {
-        14310, -- freezing trap r2
         14324, -- hunter's mark r3
-        14925 -- growl r5
+        1510, --volley
     },
     [42] = {
         13553, -- serpentsting r6
-        4193, -- great stamina r7
-        24561 -- natural armor r7
     },
     [44] = {
-        13542, -- mend pet r5
-        14284, -- arcane shot r5
-        14285 -- arcaneshot r6
+        14285, -- arcaneshot r6
+        20902, --aimed 4
     },
     [46] = {
         14384 -- arcane shot r5
     },
     [48] = {
+        13542, -- mend pet r5
         14321, -- aspect of the hawk r5
-        4194, -- great stamina r8
-        24555, -- natural armor r8
-        14279 -- viper r2
+        56641, -- steady 1
     },
     [50] = {
         13554, -- serpent sting r7
-        14926 -- growl r6
+        14290, -- multishot 2
+        14290, -- multishot 3
+        14294, --volley 2
+        13813, --explosive trap 1
+        14316, --explosive trap 2
     },
     [52] = {
-        13543 -- mend pet r6
+        13543, -- mend pet r6
+        20903, -- aimed 5
+        14286, -- arcaneshot 7
     },
     [54] = {
-        5041, -- great stamina r9
-        24629 -- natural armor r9
+        14290, -- multishot 4
+        14317, --explosive trap 3
+        14290, --multishot 4
     },
-    [56] = {
-        14286, -- arcaneshot r7
-        14280 -- viper r3
-    },
+
     [58] = {
         14322, -- aspect of the hawk r6
         14325, -- hunter's mark r4
-        13555 -- serpent sting r8
+        13555, -- serpent sting r8
+        14295, -- volley 3
     },
     [60] = {
         14287, -- arcaneshot r8
@@ -1002,13 +1030,13 @@ s["HUNTER"] = {
         14311, -- freezing trap r3
         13544, -- mend pet r7
         25295, -- serpentsting r9
-        5042, -- great stamind r10
-        24630, -- natural armor r10
-        14927, -- growl r7
-        35698 -- avoidance r2
+        20904, --aimed 6
+        19263, --Deterrence
+        27025, --explosive trap 4
+        25294, --multi-shot 5
     },
     [62] = {
-        34120 -- steady shot
+        34120 -- steady shot 2
     },
     [64] = {
         34074 -- aspect of the viper
@@ -1017,7 +1045,9 @@ s["HUNTER"] = {
         34026 -- kill command
     },
     [67] = {
-        27016 -- serpentsting r10
+        27016, -- serpentsting r10
+        27021, -- multishot 6
+        27022, -- volley 4
     },
     [68] = {
         27044, --Aspect of the Hawk
@@ -1408,7 +1438,8 @@ s["ROGUE"] = {
 
 s["WARLOCK"] = {
     [1] = {
-        348 -- immolate
+        348, -- immolate
+        688,
     },
     [4] = {
         172 -- corruption
@@ -1439,19 +1470,21 @@ s["WARLOCK"] = {
         1455 -- life tap r2
     },
     [18] = {
-        1014 -- curse of agony r2
+        1014, -- curse of agony r2
+        5676, -- searing pain r1
     },
     [20] = {
         706, -- demon armor
         3698, -- health funnel r2
         1094, -- immolate r3
         1088, -- shadowbolt r4
-        5740 -- rain of fire r1
+        5784, -- summon felsteed
     },
     [22] = {
         6202, -- create healthstone r2
         699, -- drain life r2
-        5676 -- searing pain r1
+        8288, --drain soul 2
+        5740, -- rain of fire r1
     },
     [26] = {
         1714, -- curse of tongues
@@ -1460,18 +1493,19 @@ s["WARLOCK"] = {
     [28] = {
         710, -- banish
         6217, -- curse of agony r3
-        3699, -- health funnel r3
-        1106 -- shadow bolt r5
+        --3699, -- health funnel r3
+        --1106 -- shadow bolt r5
     },
     [30] = {
         20752, -- create soulstone r2
         1086, -- demon armor r2
         709, -- drain life r3
         2941, -- immolate r4
-        5784 -- summon felsteed
+        1949, -- hellfire 1
     },
     [32] = {
-        6213 -- fear r2
+        6213, -- fear r2
+        6229 -- Shadow ward
     },
     [34] = {
         7684, -- corruption r4
@@ -1481,12 +1515,13 @@ s["WARLOCK"] = {
         2362, -- create spellstone
         3700, -- health funnel
         11687, -- life tap r4
-        7641 -- shadow bolt r6
+        --7641 -- shadow bolt r6
     },
     [38] = {
-        18879, -- siphon life r2
+        --18879, -- siphon life r2
         11711, -- curse of agony r4
-        7651 -- drain life r4
+        7651, -- drain life r4
+        8289 --drain soul 3
     },
     [40] = {
         20755, -- create soulstone r3
@@ -1500,7 +1535,7 @@ s["WARLOCK"] = {
     [44] = {
         11671, -- corruption r5
         11693, -- health funnel r5
-        11659 -- shadowbolt r7
+        --11659 -- shadowbolt r7
     },
     [46] = {
         11729, -- create healthstone
@@ -1508,20 +1543,26 @@ s["WARLOCK"] = {
         11688 -- life tap r5
     },
     [48] = {
-        18880, -- siphon life r3
-        18647, -- banish r2
-        11712 -- curse of agony r5
+        --18880, -- siphon life r3
+        --18647, -- banish r2
+        11712, -- curse of agony r5
+        17727, -- spellstone 2
+        7641,
+        11659,
     },
     [50] = {
         18937, -- dark pact r2
         20756, -- create soulstone r4
         17925, -- death coil r2
         11734, -- demon armor r4
-        11667 -- immolate r6
+        --11667, -- immolate r6
+        11739 -- Shadow Ward 2
     },
     [52] = {
         11694, -- health funnel r6
-        11660 -- shadow bolt r8
+        11660, -- shadow bolt r8
+        11740, -- shadow ward 3
+        11675, -- Drain soul 4
     },
     [54] = {
         11672, -- corruption r6
@@ -1531,7 +1572,7 @@ s["WARLOCK"] = {
     [56] = {
         6215, -- fear r3
         11689, -- life tap r6
-        18881, -- siphon life r4
+        --18881, -- siphon life r4
         11730 -- create healthstone r5
     },
     [58] = {
@@ -1544,26 +1585,25 @@ s["WARLOCK"] = {
         20757, -- create soulstone r5
         11735, -- demon armor r5
         11696, -- health funnel r7
-        11668, -- immolate r7
-        25309, -- immolate r8
-        11661, -- shadow bolt r9
-        25307, -- shadow bolt r10
+        --11668, -- immolate r7
+        --25309, -- immolate r8
+        --11661, -- shadow bolt r9
+        --25307, -- shadow bolt r10
         18938, -- dark pact r3
-        25311 -- corruption r7
+        25311, -- corruption r7
+        17728, -- spellstone 3
     },
     [62] = {
         27219, -- drain life r7
         28176 -- fel armor
     },
-    [63] = {
-        27264 -- siphon life r5
-    },
     [65] = {
-        27216 -- corruption r8
+        27216, -- corruption r8
+        28172, -- spellstone
     },
     [67] = {
         27218, -- curse of agony r7
-        27259 -- health funnel r8
+        --27259 -- health funnel r8
     },
     [68] = {
         27230, --Create Healthstone (Rank 6)

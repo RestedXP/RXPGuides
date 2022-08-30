@@ -378,7 +378,7 @@ function addon.settings.CreateOptionsPanel()
         addon.RXPFrame:SetScale(RXPData.windowSize)
         local size = RXPData.arrowSize
         addon.arrowFrame:SetSize(32 * size, 32 * size)
-        addon.arrowFrame.text:SetFont(addon.font, RXPData.arrowText)
+        addon.arrowFrame.text:SetFont(addon.font, RXPData.arrowText, "OUTLINE")
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
         addon.updateMap = true
         if (self.key == "phase" or self.key == "xprate") and addon.currentGuide then
