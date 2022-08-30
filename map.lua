@@ -838,12 +838,14 @@ function addon.UpdateGotoSteps()
     for i, element in ipairs(addon.activeWaypoints) do
         if element.step and element.step.active then
 
-            if element.tag == "groundgoto" and
+            if element.tag == "groundgoto" and not element.skip and
                                  IsFlyableArea() and addon.GetSkillLevel("riding") >= 225 and
                                  zone == element.zone and (not addon.game == "WOTLK" or
                                  instance ~= addon.mapId["Northrend"] or IsPlayerSpell(54197)) then
-                forceArrowUpdate = forceArrowUpdate or not element.skip
+                --forceArrowUpdate = forceArrowUpdate or not element.skip
                 element.skip = true
+                addon.updateMap = true
+                return
             elseif (element.radius or element.dynamic) and element.arrow and
                 not (element.parent and
                     (element.parent.completed or element.parent.skip) and
