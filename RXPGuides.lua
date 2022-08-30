@@ -35,23 +35,15 @@ addon.RXPG = {}
 addon.functions = {}
 
 BINDING_HEADER_RXPGuides = addonName
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
-    "Active Item Button 1"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] =
-    "Active Item Button 2"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
-    "Active Item Button 3"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
-    "Active Item Button 4"
 
 local questFrame = CreateFrame("Frame");
 
 local buffCheckTimer
 local function SoMCheck()
-    local function CheckBuff(buffId,key,value)
+    local function CheckBuff(buffId, key, value)
         value = value or true
-        if RXPCData and RXPCData[key] == nil and
-                GetTime() - buffCheckTimer < 300 then
+        if RXPCData and RXPCData[key] == nil and GetTime() - buffCheckTimer <
+            300 then
 
             local id = 0
             local n = 1
@@ -76,13 +68,11 @@ local function SoMCheck()
         end
     end
 
-    if not buffCheckTimer then
-        buffCheckTimer = GetTime()
-    end
+    if not buffCheckTimer then buffCheckTimer = GetTime() end
 
     if gameVersion < 20000 then
-        CheckBuff(362859,"SoM")
-    elseif CheckBuff(377749,"JoyousJourneys") then
+        CheckBuff(362859, "SoM")
+    elseif CheckBuff(377749, "JoyousJourneys") then
         RXPCData.xprate = 1.5
     end
 
@@ -170,7 +160,8 @@ function addon.QuestAutoTurnIn(title)
                 element = v
             end
         end
-        return (element and element.step.active) and element.reward >= 0 and element.reward
+        return (element and element.step.active) and element.reward >= 0 and
+                   element.reward
     end
 end
 
@@ -217,9 +208,7 @@ function addon.GetProfessionLevel()
     elseif IsPlayerSpell(90265) then
         currrentSkillLevel["riding"] = 375
     end
-    if not _G.GetSkillLineInfo then
-        return
-    end
+    if not _G.GetSkillLineInfo then return end
     if not names.riding then names.riding = GetSpellInfo(33388) end
     for i = 1, _G.GetNumSkillLines() do
         local skillName, _, _, skillRank, _, _, skillMaxRank =
@@ -481,7 +470,8 @@ function addon:OnInitialize()
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
-    elseif math.floor(gameVersion/1e4) ~= math.floor(RXPData.gameVersion/1e4) then
+    elseif math.floor(gameVersion / 1e4) ~=
+        math.floor(RXPData.gameVersion / 1e4) then
         addon.db.profile.guides = {}
         RXPData.gameVersion = gameVersion
     end
@@ -489,7 +479,9 @@ function addon:OnInitialize()
     addon.RXPG.LoadCachedGuides()
     addon.RXPG.LoadEmbeddedGuides()
 
-    if addon.settings.db.profile.enableTracker then addon.tracker.SetupTracker() end
+    if addon.settings.db.profile.enableTracker then
+        addon.tracker.SetupTracker()
+    end
 
     addon.comms:Setup()
 
@@ -515,7 +507,6 @@ function addon:OnEnable()
         addon.noGuide = true
     end
     addon.RXPFrame.GenerateMenuTable()
-
 
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     self:RegisterEvent("BAG_UPDATE_DELAYED")
@@ -660,7 +651,8 @@ function addon.UpdateScheduledTasks()
         if cTime > time then
             local group = addon.currentGuide.group
             local element = ref.element or ref
-            if group and RXPGuides[group] and element and RXPGuides[group][element.tag] then
+            if group and RXPGuides[group] and element and
+                RXPGuides[group][element.tag] then
                 RXPGuides[group][element.tag](ref)
                 addon.scheduledTasks[ref] = nil
             end
@@ -690,7 +682,7 @@ local skip = 0
 updateFrame:SetScript("OnUpdate", function(self, diff)
 
     updateTick = updateTick + diff
-    if updateTick > (0.05+math.random()/128) then
+    if updateTick > (0.05 + math.random() / 128) then
         local currentTime = GetTime()
         updateTick = 0
         updateStart = currentTime
@@ -703,7 +695,7 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                 func(ref)
                 activeQuestUpdate = activeQuestUpdate + 1
                 addon.updateActiveQuest[ref] = nil
-                --print('f',ref.element.step.index,math.random())
+                -- print('f',ref.element.step.index,math.random())
             end
             if activeQuestUpdate > 0 then event = event .. "/activeQ" end
         end
@@ -764,26 +756,26 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
             end
         elseif skip % 4 == 0 then
             addon.UpdateGotoSteps()
-            --event = event .. "/updateGoto"
+            -- event = event .. "/updateGoto"
         elseif skip % 4 == 3 then
             addon.UpdateScheduledTasks()
         elseif skip % 16 == 1 then
             activeQuestUpdate = 0
             local deletedIndexes = {}
-            for i,ref in ipairs(addon.updateInactiveQuest) do
+            for i, ref in ipairs(addon.updateInactiveQuest) do
                 activeQuestUpdate = activeQuestUpdate + 1
                 if activeQuestUpdate > 3 then
                     break
                 else
-                    --print('ok',ref.element.step.index,ref.element.requestFromServer)
+                    -- print('ok',ref.element.step.index,ref.element.requestFromServer)
                     addon.UpdateQuestCompletionData(ref)
-                    table.insert(deletedIndexes,i)
+                    table.insert(deletedIndexes, i)
                 end
             end
-            for i = #deletedIndexes,1,-1 do
+            for i = #deletedIndexes, 1, -1 do
                 local element = deletedIndexes[i]
-                table.remove(addon.updateInactiveQuest,element)
-                --print('r'..element)
+                table.remove(addon.updateInactiveQuest, element)
+                -- print('r'..element)
             end
             if activeQuestUpdate > 0 then
                 event = event .. "/inactiveQ"
@@ -837,9 +829,7 @@ end
 
 function addon.PhaseCheck(phase)
 
-    if type(phase) == "table" then
-        phase = phase.phase
-    end
+    if type(phase) == "table" then phase = phase.phase end
 
     if phase and RXPCData and RXPCData.phase then
         local pmin, pmax
@@ -862,11 +852,11 @@ function addon.PhaseCheck(phase)
 end
 
 function addon.IsStepShown(step)
-    return not(step.daily and RXPCData.skipDailies) and
-            (RXPCData.northrendLM or not step.questguide) and
-             addon.AldorScryerCheck(step) and
-             addon.PhaseCheck(step) and addon.HardcoreCheck(step) and
-             addon.SeasonCheck(step) and addon.XpRateCheck(step)
+    return not (step.daily and RXPCData.skipDailies) and
+               (RXPCData.northrendLM or not step.questguide) and
+               addon.AldorScryerCheck(step) and addon.PhaseCheck(step) and
+               addon.HardcoreCheck(step) and addon.SeasonCheck(step) and
+               addon.XpRateCheck(step)
 end
 
 function addon.SeasonCheck(step)
@@ -885,9 +875,10 @@ end
 
 function addon.XpRateCheck(step)
     if step.xprate then
-        local xpmin,xpmax = 1,0xfff
+        local xpmin, xpmax = 1, 0xfff
 
-        step.xprate:gsub("^([<>]?)%s*(%d+%.?%d*)%-?(%d*%.?%d*)",function(op,arg1,arg2)
+        step.xprate:gsub("^([<>]?)%s*(%d+%.?%d*)%-?(%d*%.?%d*)",
+                         function(op, arg1, arg2)
             if op == "<" then
                 xpmin = 0
                 xpmax = tonumber(arg1) - 1e-4
@@ -905,4 +896,4 @@ function addon.XpRateCheck(step)
     end
     return true
 end
-RXP = addon --debug purposes
+RXP = addon -- debug purposes
