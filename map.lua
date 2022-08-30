@@ -497,7 +497,6 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                             zone = element.zone,
                             parent = element.parent,
                             wpHash = element.wpHash,
-                            overrideCorpse = not element.textOnly,
                         })
                     end
                 end
@@ -753,8 +752,8 @@ local function updateArrow()
     if UnitIsGhost("player") and --Meet at the grave and the follow-up quest:
         not (addon.QuestAutoTurnIn(3912) or addon.QuestAutoAccept(3913)) then
         local skip
-        for i,element in ipairs(addon.activeWaypoints) do
-            skip = skip or element.overrideCorpse
+        for i,element in pairs(addon.activeWaypoints) do
+            skip = skip or (not element.textOnly and addon.currentGuide.name == "41-43 Badlands")
         end
         local zone = HBD:GetPlayerZone()
         local corpse = C_DeathInfo.GetCorpseMapPosition(zone)
