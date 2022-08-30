@@ -354,7 +354,7 @@ function RXPG.ImportString(str, frame)
                 addon.bufferSize = addon.bufferSize + 1
             end
         else
-            errorMsg = L("Error parsing guides")
+            errorMsg = L("Error parsing guides\nTotal guides loaded: %d/%s")
             break
         end
     end

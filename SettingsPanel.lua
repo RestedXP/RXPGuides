@@ -101,7 +101,7 @@ function addon.settings.CreateOptionsPanel()
     addon.RXPOptions.title = addon.RXPOptions:CreateFontString(nil, "ARTWORK",
                                                                "GameFontNormalLarge")
     addon.RXPOptions.title:SetPoint("TOPLEFT", 16, -16)
-    addon.RXPOptions.title:SetText("RestedXP Guides")
+    addon.RXPOptions.title:SetText(L("RestedXP Guides"))
 
     addon.RXPOptions.subtext = addon.RXPOptions:CreateFontString(nil, "ARTWORK",
                                                                  "GameFontHighlightSmall")
@@ -126,9 +126,9 @@ function addon.settings.CreateOptionsPanel()
         RXPData.disableQuestAutomation = not self:GetChecked()
     end)
     button:SetChecked(not RXPData.disableQuestAutomation)
-    button.Text:SetText("Quest auto accept/turn in")
+    button.Text:SetText(L("Quest auto accept/turn in"))
     button.tooltip =
-        "Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"
+        L("Holding the Control key modifier also toggles the quest the quest auto accept feature on and off")
 
     button = CreateFrame("CheckButton", "$parentTrainer", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
@@ -139,9 +139,9 @@ function addon.settings.CreateOptionsPanel()
         RXPData.disableTrainerAutomation = not self:GetChecked()
     end)
     button:SetChecked(not RXPData.disableTrainerAutomation)
-    button.Text:SetText("Trainer automation")
+    button.Text:SetText(L("Trainer automation"))
     button.tooltip =
-        "Allows the guide to buy useful leveling spells automatically"
+        L("Allows the guide to buy useful leveling spells automatically")
 
     button = CreateFrame("CheckButton", "$parentFP", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
@@ -152,9 +152,9 @@ function addon.settings.CreateOptionsPanel()
         RXPData.disableFPAutomation = not self:GetChecked()
     end)
     button:SetChecked(not RXPData.disableFPAutomation)
-    button.Text:SetText("Flight Path automation")
+    button.Text:SetText(L("Flight Path automation"))
     button.tooltip =
-        "Allows the guide to automatically fly you to your destination"
+        L("Allows the guide to automatically fly you to your destination")
 
 
     button = CreateFrame("CheckButton", "$parentMiniMapPin", addon.RXPOptions,
@@ -167,7 +167,7 @@ function addon.settings.CreateOptionsPanel()
         addon.UpdateMap()
     end)
     button:SetChecked(RXPData.hideMiniMapPins)
-    button.Text:SetText("Hide Mini Map Pins")
+    button.Text:SetText(L("Hide Mini Map Pins"))
     -- button.tooltip = ""
 
     button = CreateFrame("CheckButton", "$parentUnusedGuides", addon.RXPOptions,
@@ -180,9 +180,9 @@ function addon.settings.CreateOptionsPanel()
         addon.RXPFrame.GenerateMenuTable()
     end)
     button:SetChecked(not RXPData.hideUnusedGuides)
-    button.Text:SetText("Show unused guides")
+    button.Text:SetText(L("Show unused guides"))
     button.tooltip =
-        "Displays guides that are not applicable for your class/race such as starting zones for other races"
+        L("Displays guides that are not applicable for your class/race such as starting zones for other races")
 
     button = CreateFrame("CheckButton", "$parentAutoLoad", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
@@ -193,9 +193,9 @@ function addon.settings.CreateOptionsPanel()
         RXPData.autoLoadGuides = self:GetChecked()
     end)
     button:SetChecked(RXPData.autoLoadGuides)
-    button.Text:SetText("Auto load starting zone guides")
+    button.Text:SetText(L("Auto load starting zone guides"))
     button.tooltip =
-        "Automatically picks a suitable guide whenever you log in for the first time on a character"
+        L("Automatically picks a suitable guide whenever you log in for the first time on a character")
     --
     button = CreateFrame("CheckButton", "$parentArrow", addon.RXPOptions,
     "ChatConfigCheckButtonTemplate");
@@ -208,7 +208,7 @@ function addon.settings.CreateOptionsPanel()
         RXPCData.disableArrow = checkbox
     end)
     button:SetChecked(RXPCData.disableArrow)
-    button.Text:SetText("Hide waypoint arrow")
+    button.Text:SetText(L("Hide waypoint arrow"))
     --button.tooltip = "Show/Hide the waypoint arrow"
     --
     button = CreateFrame("CheckButton", "$parentActiveItem", addon.RXPOptions,
@@ -221,7 +221,7 @@ function addon.settings.CreateOptionsPanel()
         addon.UpdateItemFrame()
     end)
     button:SetChecked(RXPCData.disableItemWindow)
-    button.Text:SetText("Hide Active Item window")
+    button.Text:SetText(L("Hide Active Item window"))
     --button.tooltip = "Show/Hide the Active Item Window"
     --
     button = CreateFrame("CheckButton", "$parentHideWindow", addon.RXPOptions,
@@ -235,8 +235,8 @@ function addon.settings.CreateOptionsPanel()
         addon.RXPFrame:SetShown(not hide)
     end)
     button:SetChecked(RXPCData.hideWindow)
-    button.Text:SetText("Hide Window")
-    button.tooltip = "Hides the main window"
+    button.Text:SetText(L("Hide Window"))
+    button.tooltip = L("Hides the main window")
 
     button = CreateFrame("CheckButton", "$parentLock", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
@@ -246,9 +246,9 @@ function addon.settings.CreateOptionsPanel()
     button:SetScript("PostClick",
                      function(self) RXPData.lockFrames = self:GetChecked() end)
     button:SetChecked(RXPData.lockFrames)
-    button.Text:SetText("Lock Frames")
+    button.Text:SetText(L("Lock Frames"))
     button.tooltip =
-        "Disable dragging/resizing, use alt+left click on the main window to resize it"
+        L("Disable dragging/resizing, use alt+left click on the main window to resize it")
     --
     button = CreateFrame("CheckButton", "$parentShowUpcoming", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
@@ -270,9 +270,9 @@ function addon.settings.CreateOptionsPanel()
         addon.updateBottomFrame = true
     end)
     button:SetChecked(addon.RXPFrame.BottomFrame:GetHeight() >= 35)
-    button.Text:SetText("Show step list")
+    button.Text:SetText(L("Show step list"))
     button.tooltip =
-        "Show/Hide the bottom frame listing all the steps of the current guide"
+        L("Show/Hide the bottom frame listing all the steps of the current guide")
     --
     button = CreateFrame("CheckButton", "$parentHideCompleted",
                          addon.RXPOptions, "ChatConfigCheckButtonTemplate");
@@ -284,9 +284,9 @@ function addon.settings.CreateOptionsPanel()
         addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
     end)
     button:SetChecked(RXPData.hideCompletedSteps)
-    button.Text:SetText("Hide completed steps")
+    button.Text:SetText(L("Hide completed steps"))
     button.tooltip =
-        "Only shows current and future steps on the step list window"
+        L("Only shows current and future steps on the step list window")
     --
     button = CreateFrame("CheckButton", "$parentMapCircle", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
@@ -298,8 +298,8 @@ function addon.settings.CreateOptionsPanel()
         addon.updateMap = true
     end)
     button:SetChecked(RXPData.mapCircle)
-    button.Text:SetText("Highlight active map pins")
-    button.tooltip = "Show a targeting circle around active map pins"
+    button.Text:SetText(L("Highlight active map pins"))
+    button.tooltip = L("Show a targeting circle around active map pins")
     --[[
     if QuestieLoader then
         button = CreateFrame("CheckButton", "$parentSkipPreReqs", addon.RXPOptions, "ChatConfigCheckButtonTemplate");
@@ -324,9 +324,9 @@ function addon.settings.CreateOptionsPanel()
             RXPData.disableUnitscan = not self:GetChecked()
         end)
         button:SetChecked(not RXPData.disableUnitscan)
-        button.Text:SetText("Unitscan integration")
+        button.Text:SetText(L("Unitscan integration"))
         button.tooltip =
-            "Automatically adds important npcs to your unitscan list"
+            L("Automatically adds important npcs to your unitscan list")
     end
 
     if addon.game == "CLASSIC" then
@@ -341,8 +341,8 @@ function addon.settings.CreateOptionsPanel()
             addon.RenderFrame()
         end)
         button:SetChecked(RXPCData.hardcore)
-        button.Text:SetText("Hardcore mode")
-        button.tooltip = "Adjust the leveling routes to the deathless ruleset"
+        button.Text:SetText(L("Hardcore mode"))
+        button.tooltip = L("Adjust the leveling routes to the deathless ruleset")
 
         button = CreateFrame("CheckButton", "$parentSoM", addon.RXPOptions,
                              "ChatConfigCheckButtonTemplate");
@@ -355,9 +355,9 @@ function addon.settings.CreateOptionsPanel()
             addon.ReloadGuide()
         end)
         button:SetChecked(RXPCData.SoM)
-        button.Text:SetText("Season of Mastery")
+        button.Text:SetText(L("Season of Mastery"))
         button.tooltip =
-            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"
+            L("Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)")
     elseif addon.gameVersion > 30000 then
         button = CreateFrame("CheckButton", "$parentNorthrendLM",
                              addon.RXPOptions, "ChatConfigCheckButtonTemplate");
@@ -369,9 +369,9 @@ function addon.settings.CreateOptionsPanel()
             addon.ReloadGuide()
         end)
         button:SetChecked(RXPCData.northrendLM)
-        button.Text:SetText("Northrend Loremaster")
+        button.Text:SetText(L("Northrend Loremaster"))
         button.tooltip =
-            "Adjust the routes to include almost every quest in the Northrend zones"
+            L("Adjust the routes to include almost every quest in the Northrend zones")
     end
 
     local SliderUpdate = function(self, value)
@@ -426,13 +426,13 @@ function addon.settings.CreateOptionsPanel()
         return slider
     end
     local slider
-    slider = CreateSlider(RXPData, "arrowSize", 0.2, 2, "Arrow Scale: %.2f",
-                          "Scale of the Waypoint Arrow", addon.RXPOptions.title,
+    slider = CreateSlider(RXPData, "arrowSize", 0.2, 2, L("Arrow Scale: %.2f"),
+                          L("Scale of the Waypoint Arrow"), addon.RXPOptions.title,
                           315, -25, 0.05)
-    slider = CreateSlider(RXPData, "arrowText", 5, 20, "Arrow Text Size: %d",
-                          "Size of the waypoint arrow text", slider, 0, -25, 1)
-    slider = CreateSlider(RXPData, "windowSize", 0.2, 2, "Window Scale: %.2f",
-                          "Scale of the Main Window, use alt+left click on the main window to resize it",
+    slider = CreateSlider(RXPData, "arrowText", 5, 20, L("Arrow Text Size: %d"),
+                          L("Size of the waypoint arrow text"), slider, 0, -25, 1)
+    slider = CreateSlider(RXPData, "windowSize", 0.2, 2, L("Window Scale: %.2f"),
+                          L("Scale of the Main Window, use alt+left click on the main window to resize it"),
                           slider, 0, -25, 0.05)
     slider = CreateSlider(RXPData, "numMapPins", 1, 20,
                           "Number of Map Pins: %d",
