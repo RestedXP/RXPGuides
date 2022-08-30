@@ -48,6 +48,7 @@ function addon.comms:Setup()
     self:RegisterEvent("GROUP_FORMED")
     self:RegisterEvent("GROUP_LEFT")
     self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
+    self:RegisterEvent("QUEST_TURNED_IN")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     self:RegisterComm(self._commPrefix)
@@ -132,14 +133,16 @@ function addon.comms:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
     local xpGained = tonumber(smatch(text, "%d+"))
 
     if not xpGained or xpGained == 0 then return end
+
+    self:TallyGroup(xpGained)
 end
 
-function addon.tracker:QUEST_TURNED_IN(_, _, xpReward)
+function addon.comms:QUEST_TURNED_IN(_, _, xpReward)
     xpReward = tonumber(xpReward)
 
     if not xpReward or xpReward <= 0 then return end
 
-    self:TallyXP(xpReward)
+    self:TallyGroup(xpReward)
 end
 
 function addon.comms:TallyGroup(xp)
