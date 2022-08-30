@@ -17,3 +17,4 @@ L.words = {["Accept"] = "接受", ["Kill"] = "杀"}
 L["Error parsing guides"] = "错误解析指南\n加载的总指南: %d/%s"
 L["Error: Unable to parse guides"] =
     "错误：无法解析指南，导入字符串无效"
+L["Paste encoded strings"] = "粘贴编码字符串"

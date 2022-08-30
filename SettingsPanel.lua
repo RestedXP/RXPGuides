@@ -10,6 +10,9 @@ local buffer = {}
 local importFrame
 local ProcessBuffer
 
+-- Alias addon.locale.Get
+local L = addon.locale.Get
+
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
 
 if not addon.settings.gui then addon.settings.gui = {selectedDeleteGuide = ""} end
@@ -547,7 +550,7 @@ function addon.settings.CreateImportOptionsPanel()
         args = {
             buffer = { -- Buffer hacked in right-aligned icon
                 order = 1,
-                name = "Paste encoded strings",
+                name = L("Paste encoded strings"),
                 type = "description",
                 width = "full",
                 fontSize = "medium",
