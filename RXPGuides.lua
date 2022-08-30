@@ -486,13 +486,11 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     end
     addon.settings:InitializeSettings()
-    addon.RXPG.LoadCachedGuides()
-    addon.RXPG.LoadEmbeddedGuides()
-
+    addon.comms:Setup()
     if addon.settings.db.profile.enableTracker then addon.tracker.SetupTracker() end
 
-    addon.comms:Setup()
-
+    addon.RXPG.LoadCachedGuides()
+    addon.RXPG.LoadEmbeddedGuides()
 end
 
 function addon:OnEnable()

@@ -57,8 +57,8 @@ function addon.tracker:SetupTracker()
         addon.tracker:RegisterComm(addon.tracker._commPrefix)
     end
 
-    addon.tracker:UpgradeDB()
     addon.tracker:GenerateDBLevel(addon.tracker.playerLevel)
+    addon.tracker:UpgradeDB()
 
     addon.tracker:CompileData()
 
