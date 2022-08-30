@@ -165,14 +165,14 @@ s["DRUID"] = {
     },
     [16] = {
         1430, -- rejuvenation r3
-        779 -- swipe
+        779, -- swipe
+        783 -- travel form
     },
     [18] = {
-        1062, -- entangling roots r2
         770, -- faerie fire
-        2637, -- hibernate
         6808, -- maul r2
-        8938 -- regrowth
+        8938, -- regrowth
+        16857 -- Faerie Fire (Feral)
     },
     [20] = {
         768, -- cat form
@@ -188,18 +188,15 @@ s["DRUID"] = {
     [24] = {
         1822, -- rake
         8939, -- regrowth r3
-        2782, -- remove curse
         1075, -- thorns r3
         5217 -- tigers fury
     },
     [26] = {
-        2893, -- abolish poison
         1850, -- dash
         5189, -- healing touch r5
         3029 -- claw r2
     },
     [28] = {
-        5195, -- entangling roots r3
         2091, -- rejuvenation r5
         9492 -- rip r2
     },
@@ -208,7 +205,6 @@ s["DRUID"] = {
         778, -- faerie fire r2
         5234, -- mark of the wild
         8940, -- regrowth r4
-        783 -- travel form
     },
     [32] = {
         22568, -- ferocious bite
@@ -1329,7 +1325,7 @@ s["ROGUE"] = {
         1833 -- cheap shot
     },
     [28] = {
-        8687 -- instant poison 2
+
     },
     [30] = {
         408, -- kidney shot
@@ -1343,7 +1339,7 @@ s["ROGUE"] = {
         8696 -- sprint r2
     },
     [36] = {
-        8691 -- instant posion 3
+
     },
     [38] = {
         8621 -- sinister strike r6
@@ -1358,7 +1354,7 @@ s["ROGUE"] = {
         1857 -- vanish r2
     },
     [44] = {
-        11341 -- instant poison 4
+
     },
     [46] = {
         11293 -- sinister strike r7
@@ -1371,7 +1367,7 @@ s["ROGUE"] = {
         8643 -- kidney shot r2
     },
     [52] = {
-        11342 -- instant poison r5
+
     },
     [54] = {
         11294 -- sinister strike r8
@@ -1384,7 +1380,7 @@ s["ROGUE"] = {
     },
     [60] = {
         31016, -- eviscerate r9
-        11343, -- instant poison r6
+
         1787 -- stealth r4
     },
     [62] = {
@@ -1401,7 +1397,7 @@ s["ROGUE"] = {
     [68] = {
         26863, --Backstab
         26867, --Rupture
-        6892, -- instant poison r7
+
     },
     [69] = {
         32684, --Envenom
