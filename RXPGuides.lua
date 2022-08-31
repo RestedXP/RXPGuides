@@ -5,12 +5,13 @@ local _G = _G
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 addon.release = GetAddOnMetadata(addonName, "Version")
+local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
-    addon.release = 'Development'
-    addon.versionText = 'Development'
+    addon.release = L('Development')
+    addon.versionText = L('Development')
 else
-    addon.versionText = "Version " .. addon.release
+    addon.versionText = string.format("%s %s", _G.GAME_VERSION_LABEL, addon.release)
 end
 
 addon.version = 40000

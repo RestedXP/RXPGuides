@@ -1056,7 +1056,7 @@ RXPFrame.bottomMenu = {
         notCheckable = 1,
         text = L("Give Feedback for step"),
     },
-    {text = "Close", notCheckable = 1, func = function(self) self:Hide() end}
+    {text = _G.CLOSE, notCheckable = 1, func = function(self) self:Hide() end}
 }
 
 local emptyGuide = {
@@ -1632,7 +1632,7 @@ function RXPFrame.GenerateMenuTable()
     })
 
     table.insert(menuList, {
-        text = "Close",
+        text = _G.CLOSE,
         notCheckable = 1,
         func = function(self) self:Hide() end
     })
