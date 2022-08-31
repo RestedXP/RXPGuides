@@ -1370,7 +1370,7 @@ function addon.functions.hs(self, ...)
             element.text = text
         else
             element.textOnly = true
-            element.text = string.format("%s %s", L("Set your Hearthstone to", location))
+            element.text = string.format("%s %s", L("Set your Hearthstone to"), location)
         end
         element.tooltipText = addon.icons.hs .. element.text
         return element
