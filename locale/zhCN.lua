@@ -273,4 +273,6 @@ L["Time spent"] = "所花费的时间"
 L["Reached Level"] = "达到水平"
 L["Max"] = "最大限度"
 L["Resetting level %d start time to now!"] =
-    "将第 %d 级开始时间重置为现在"
+    "将第 %d 级开始时间重置为现在！"
+L["Quest is being picked up at"] = "任务正在领取"
+L["Quest is being turned in at"] = "任务正在上交"
