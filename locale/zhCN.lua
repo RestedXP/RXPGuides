@@ -3,6 +3,9 @@ local addonName, addon = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(addonName, "zhCN", false)
 if not L then return end
 
+-- Before adding new items, check for global strings to use instead
+-- https://github.com/tekkub/wow-globalstrings/blob/master/GlobalStrings/enUS.lua
+
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
     "活动项目按钮 1"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] =
@@ -15,7 +18,7 @@ _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
 -- Full common phrases
 
 -- Words
-L.words = {["Accept"] = "接受", ["Kill"] = "杀"}
+L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "杀"}
 
 -- Core Addon UI translations
 L["Error parsing guides\nTotal guides loaded: %d/%s"] =
@@ -191,3 +194,34 @@ L["Do not edit below this line"] = "请勿在此行下方编辑"
 L["RestedXP Feedback Form"] = "RestedXP 反馈表"
 L["Join our support discord at discord.gg/RestedXP and copy paste this form into #addon-feedback"] =
     "在 discord.gg/RestedXP 加入我们的支持不和谐并将此表格复制粘贴到#addon-feedback"
+L["Objective Complete"] = "目标完成"
+L["Error parsing guide"] = "错误解析指南"
+L["Missing pre-requisites"] = "缺少先决条件"
+L["Invalid quest ID"] = ""
+L["Skip to step %d if you are level %d or above"] =
+    "如果您的等级为 %d 或更高，请跳至步骤 %d"
+L["(Skip this step if you are level %d or above)"] =
+    "(如果你是 %d 级或以上，请跳过此步骤)"
+L["Attempting to withdraw"] = "试图撤回"
+L["Attempting to deposit"] = "尝试存款"
+L["Do the Blasted Lands collection quests"] = "做诅咒之地收集任务"
+L["Collect the following items:"] = "收集以下物品:"
+L["Click to view the link"] = "点击查看链接"
+L["Stable your pet"] = "稳定你的宠物"
+L["Train skills"] = "训练技能"
+L["Sell junk/resupply"] = "卖垃圾/补给"
+L["Grind until you are %.0f%% into %s with %s"] = "用 %s 磨到 %.0f%% 成 %s"
+L["Grind until you are %s into %s with %s"] = "和 %s 一起磨到 %s 到 %s"
+L["Grind until you are %d away from %s with %s"] =
+    "用 %s 研磨直到你离 %s %d"
+L["Grind until you are %d xp away from level %s"] =
+    "磨到你距离 %s 级 %d xp"
+L["Grind until you are %s xp into level %s"] = "磨到你的 %s xp 到 %s 级"
+L["Grind until you are %.0f%% into level %s"] = "磨到你 %.0f%% 到 %s 级"
+L["Throw away %s%s from your bags"] = "把 %s%s 从你的包里扔掉"
+L["Die and respawn at the graveyard"] = "在墓地死去重生"
+L["Fly to"] = "飞向"
+L["Get the %s flight path"] = "获取 %s 飞行路径"
+L["Set your Hearthstone to"] = "将你的炉石设置为"
+L["Go to"] = "去"
+L["Retrieving quest data"] = "检索任务数据"
