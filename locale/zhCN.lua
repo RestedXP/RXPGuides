@@ -174,3 +174,20 @@ L["Enables new features, forces reload to take effect"] =
     "启用新功能，强制重新加载生效"
 L["Enable Debug"] = "启用调试"
 L["Extras"] = "附加功能"
+
+L["Give Feedback for step"] = "反馈步骤"
+L["I just leveled from %d to %d in %s"] =
+    "我刚刚在 %s 内从 %d 升级到 %d"
+L["I just leveled up to %d"] = "我刚升级到 %d"
+L["There's a new addon version (%s) available"] =
+    "有一个新的插件版本 (%s) 可用"
+L["There's a new version (%s) available for %s"] =
+    "有一个可用于 %s 的新版本 (%s)"
+L["Completed step %d - %s"] = "已完成步骤 %d - %s"
+L["Collected step %d - %s"] = "收集的步骤 %d - %s"
+L["Flying to %s ETA %s"] = "飞往 %s ETA %s"
+L["Describe your issue:"] = "描述你的问题："
+L["Do not edit below this line"] = "请勿在此行下方编辑"
+L["RestedXP Feedback Form"] = "RestedXP 反馈表"
+L["Join our support discord at discord.gg/RestedXP and copy paste this form into #addon-feedback"] =
+    "在 discord.gg/RestedXP 加入我们的支持不和谐并将此表格复制粘贴到#addon-feedback"

@@ -9,6 +9,8 @@ local GetNumGroupMembers, SendChatMessage, GetTime, UnitLevel, UnitClass,
 
 local _G = _G
 
+local L = addon.locale.Get
+
 local AceGUI = LibStub("AceGUI-3.0")
 
 local playerName = _G.UnitName("player")
@@ -55,7 +57,7 @@ function addon.comms:Setup()
 
     -- Update Feedback Report into GuideWindow context menu, load order workaround
     for i, m in ipairs(addon.RXPFrame.bottomMenu) do
-        if m.text == "Give Feedback for step" then
+        if m.text == L("Give Feedback for step") then
             addon.RXPFrame.bottomMenu[i].func = addon.comms.OpenBugReport
             break
         end
@@ -83,9 +85,9 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
             levelData.timestamp.finished then
             s = levelData.timestamp.finished - levelData.timestamp.started
 
-            msg = self.BuildNotification("I just leveled from %d to %d in %s",
-                                         level - 1, level,
-                                         addon.tracker:PrettyPrintTime(s))
+            msg = self.BuildNotification(
+                      L("I just leveled from %d to %d in %s"), level - 1, level,
+                      addon.tracker:PrettyPrintTime(s))
             announceLevelUp(msg)
         else
             -- Leave enough time for TIME_PLAYED to return, ish
@@ -98,9 +100,10 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
                     s = levelData.timestamp.finished -
                             levelData.timestamp.started
 
-                    msg = self.BuildNotification(
-                              "I just leveled from %d to %d in %s", level - 1,
-                              level, addon.tracker:PrettyPrintTime(s))
+                    msg = self.BuildNotification(L(
+                                                     "I just leveled from %d to %d in %s"),
+                                                 level - 1, level,
+                                                 addon.tracker:PrettyPrintTime(s))
                     announceLevelUp(msg)
                 elseif addon.release == 'Development' then
                     self.PrettyPrint("Invalid .started or .finished %d", level)
@@ -111,7 +114,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
         return
     end
 
-    msg = self.BuildNotification("I just leveled up to %d", level)
+    msg = self.BuildNotification(L("I just leveled up to %d"), level)
     announceLevelUp(msg)
 end
 
@@ -272,7 +275,7 @@ function addon.comms:HandleAnnounce(data)
 
             self.state.updateFound.addon = true
 
-            self.PrettyPrint("There's a new addon version (%s) available",
+            self.PrettyPrint(L("There's a new addon version (%s) available"),
                              data.addon.release)
         end
 
@@ -283,7 +286,7 @@ function addon.comms:HandleAnnounce(data)
 
             self.state.updateFound.guide = true
 
-            self.PrettyPrint("There's a new version (%s) available for %s",
+            self.PrettyPrint(L("There's a new version (%s) available for %s"),
                              data.guide.version, data.guide.name)
         end
     end
@@ -328,8 +331,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         -- Replay of guide, don't spam
         if guideAnnouncements.complete[data.title] then return end
 
-        local msg = self.BuildNotification("Completed step %d - %s", data.step,
-                                           data.title)
+        local msg = self.BuildNotification(L("Completed step %d - %s"),
+                                           data.step, data.title)
 
         if addon.settings.db.profile.enableCompleteStepAnnouncements and
             GetNumGroupMembers() > 0 then
@@ -349,8 +352,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         -- Replay of guide, don't spam
         if guideAnnouncements.collect[data.title] then return end
 
-        local msg = self.BuildNotification("Collected step %d - %s", data.step,
-                                           data.title)
+        local msg = self.BuildNotification(L("Collected step %d - %s"),
+                                           data.step, data.title)
 
         if addon.settings.db.profile.enableCollectAnnouncements and
             GetNumGroupMembers() > 0 then
@@ -363,7 +366,7 @@ function addon.comms:AnnounceStepEvent(event, data)
 
     elseif event == '.fly' then
         -- Questie doesn't announce flight-time, so okay to send this out
-        local msg = self.BuildNotification("Flying to %s ETA %s",
+        local msg = self.BuildNotification(L("Flying to %s ETA %s"),
                                            data.destination,
                                            addon.tracker:PrettyPrintTime(
                                                data.duration))
@@ -452,11 +455,11 @@ function addon.comms.OpenBugReport(stepNumber)
         stepData = "N/A"
     end
 
-    local content = fmt([[Describe your issue:
+    local content = fmt([[%s
 
 
 
-Do not edit below this line
+%s
 ```
 Character: %s
 Zone: %s
@@ -469,16 +472,17 @@ Client Version: %s
 Current Step data
 %s
 ```
-]], character or "Error", zone or "Error", guide or "Error", addon.release,
-                        RXPCData.xprate, GetLocale(), select(1, GetBuildInfo()),
-                        stepData)
+]], L("Describe your issue:"), L("Do not edit below this line"),
+                        character or "Error", zone or "Error", guide or "Error",
+                        addon.release, RXPCData.xprate, GetLocale(),
+                        select(1, GetBuildInfo()), stepData)
 
     local f = AceGUI:Create("Frame")
 
     f:SetLayout("Fill")
     f:EnableResize(true)
     f.statustext:GetParent():Hide()
-    f:SetTitle("RestedXP Feedback Form")
+    f:SetTitle(L("RestedXP Feedback Form"))
 
     f.scrollContainer = AceGUI:Create("ScrollFrame")
     f.scrollContainer:SetLayout("Fill")
@@ -489,8 +493,8 @@ Current Step data
     f.frame:SetBackdropColor(unpack(addon.colors.background))
 
     local editbox = AceGUI:Create("MultiLineEditBox")
-    editbox:SetLabel(
-        "Join our support discord at discord.gg/RestedXP and copy paste this form into #addon-feedback ")
+    editbox:SetLabel(L(
+                         "Join our support discord at discord.gg/RestedXP and copy paste this form into #addon-feedback"))
     editbox:SetFullWidth(true)
     editbox:SetFullHeight(true)
     editbox:SetText(content)
