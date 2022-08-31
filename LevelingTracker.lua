@@ -9,6 +9,7 @@ local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
 local _G = _G
 local AceGUI = LibStub("AceGUI-3.0")
 local LibDeflate = LibStub("LibDeflate")
+local L = addon.locale.Get
 
 addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0",
                                 "AceComm-3.0", "AceSerializer-3.0")
@@ -129,7 +130,7 @@ function addon.tracker:UpgradeDB()
         else
             levelDB[self.playerLevel].timestamp = {started = time()}
         end
-        addon.comms.PrettyPrint("Resetting level %d start time to now!",
+        addon.comms.PrettyPrint(L("Resetting level %d start time to now!"),
                                 self.playerLevel)
     end
 end
@@ -154,6 +155,7 @@ end
 function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
     -- Exclude "You gain 360 experience" from quest turnin, doubles up on mob kill
     -- TODO use _G.COMBATLOG_XPGAIN_FIRSTPERSON or _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED
+    -- TODO won't track zhCN
     if 'You' == strsub(text, 0, #'You') then return end
 
     local xpGained = tonumber(smatch(text, "%d+"))
@@ -297,7 +299,7 @@ function addon.tracker.BuildDropdownLevels(levels, playerLevel)
         if level > playerLevel then break end
 
         if level == addon.tracker.maxLevel then
-            dropdownLevels[level] = fmt("%d (Max)", level)
+            dropdownLevels[level] = fmt("%d (%s)", level, L("Max"))
         else
             dropdownLevels[level] = fmt("%d to %d", level, level + 1)
         end
@@ -417,14 +419,15 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.reachedContainer:SetFullWidth(true)
 
     trackerUi.reachedContainer.label = AceGUI:Create("Heading")
-    trackerUi.reachedContainer.label:SetText("Reached Level " .. playerLevel)
+    trackerUi.reachedContainer.label:SetText(
+        L("Reached Level") .. " " .. playerLevel)
     trackerUi.reachedContainer.label:SetFullWidth(true)
 
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.label)
     trackerUi.reachedContainer:AddChild(buildSpacer(padding))
 
     trackerUi.reachedContainer.data = AceGUI:Create("Label")
-    trackerUi.reachedContainer.data:SetText("In-progress")
+    trackerUi.reachedContainer.data:SetText(L("In-progress"))
     trackerUi.reachedContainer.data:SetFont(addon.font, 12)
     trackerUi.reachedContainer.data:SetFullWidth(true)
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.data)
@@ -437,13 +440,13 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.speedContainer:SetFullWidth(true)
 
     trackerUi.speedContainer.label = AceGUI:Create("Heading")
-    trackerUi.speedContainer.label:SetText("Time spent")
+    trackerUi.speedContainer.label:SetText(L("Time spent"))
     trackerUi.speedContainer.label:SetFullWidth(true)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.label)
     trackerUi.speedContainer:AddChild(buildSpacer(padding))
 
     trackerUi.speedContainer.data = AceGUI:Create("Label")
-    trackerUi.speedContainer.data:SetText("In-progress")
+    trackerUi.speedContainer.data:SetText(L("In-progress"))
     trackerUi.speedContainer.data:SetFont(addon.font, 12)
     trackerUi.speedContainer.data:SetFullWidth(true)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.data)
@@ -455,7 +458,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.zonesContainer = {}
 
     trackerUi.zonesContainer.label = AceGUI:Create("Heading")
-    trackerUi.zonesContainer.label:SetText("Zones & Dungeons")
+    trackerUi.zonesContainer.label:SetText(L("Zones & Dungeons"))
     trackerUi.zonesContainer.label:SetFullWidth(true)
 
     trackerUi.scrollContainer:AddChild(trackerUi.zonesContainer.label)
@@ -473,7 +476,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.sourcesContainer:SetFullWidth(true)
 
     trackerUi.sourcesContainer.label = AceGUI:Create("Heading")
-    trackerUi.sourcesContainer.label:SetText("Experience Sources")
+    trackerUi.sourcesContainer.label:SetText(L("Experience Sources"))
     trackerUi.sourcesContainer.label:SetFullWidth(true)
 
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.label)
@@ -504,7 +507,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.teamworkContainer:SetFullWidth(true)
 
     trackerUi.teamworkContainer.label = AceGUI:Create("Heading")
-    trackerUi.teamworkContainer.label:SetText("Teamwork")
+    trackerUi.teamworkContainer.label:SetText(L("Teamwork"))
     trackerUi.teamworkContainer.label:SetFullWidth(true)
     trackerUi.teamworkContainer:AddChild(trackerUi.teamworkContainer.label)
     trackerUi.teamworkContainer:AddChild(buildSpacer(padding))
@@ -534,7 +537,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.extrasContainer:SetFullWidth(true)
 
     trackerUi.extrasContainer.label = AceGUI:Create("Heading")
-    trackerUi.extrasContainer.label:SetText("Extras")
+    trackerUi.extrasContainer.label:SetText(L("Extras"))
     trackerUi.extrasContainer.label:SetFullWidth(true)
     trackerUi.extrasContainer:AddChild(trackerUi.extrasContainer.label)
     trackerUi.extrasContainer:AddChild(buildSpacer(padding))
@@ -654,21 +657,22 @@ function addon.tracker:PrettyPrintTime(s)
     local formattedString
     if days > 0 then
         formattedString = fmt("%d %s %d %s %d %s %d %s", days,
-                              days == 1 and 'day' or 'days', hours,
-                              hours == 1 and 'hour' or 'hours', minutes,
-                              minutes == 1 and 'minute' or 'minutes', s,
-                              s == 1 and 'second' or 'seconds')
+                              days == 1 and L('day') or L('days'), hours,
+                              hours == 1 and L('hour') or L('hours'), minutes,
+                              minutes == 1 and L('minute') or L('minutes'), s,
+                              s == 1 and L('second') or L('seconds'))
     elseif hours > 0 then
         formattedString = fmt("%d %s %d %s %d %s", hours,
-                              hours == 1 and 'hour' or 'hours', minutes,
-                              minutes == 1 and 'minute' or 'minutes', s,
-                              s == 1 and 'second' or 'seconds')
+                              hours == 1 and L('hour') or L('hours'), minutes,
+                              minutes == 1 and L('minute') or L('minutes'), s,
+                              s == 1 and L('second') or L('seconds'))
     elseif minutes > 0 then
         formattedString = fmt("%d %s %d %s", minutes,
-                              minutes == 1 and 'minute' or 'minutes', s,
-                              s == 1 and 'second' or 'seconds')
+                              minutes == 1 and L('minute') or L('minutes'), s,
+                              s == 1 and L('second') or L('seconds'))
     else
-        formattedString = fmt("%d %s", s, s == 1 and 'second' or 'seconds') -- Big gratz for leveling in under a minute
+        formattedString =
+            fmt("%d %s", s, s == 1 and L('second') or L('seconds')) -- Big gratz for leveling in under a minute
     end
 
     return formattedString
@@ -708,7 +712,8 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     local report = self.state.levelReportData
 
     if not report then
-        addon.comms.PrettyPrint("Unable to retrieve report for %s", target)
+        addon.comms.PrettyPrint(L("Unable to retrieve report for") .. " %s",
+                                target)
         return
     end
 
@@ -818,7 +823,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 
     local extrasBlock = ""
     extrasBlock = fmt("%s* %s: %s\n", extrasBlock, "Deaths",
-                      report.deaths or "Missing data")
+                      report.deaths or L("Missing data"))
 
     if report.timestamp and report.timestamp.started and
         report.timestamp.finished and selectedLevel ~= addon.tracker.maxLevel then
@@ -863,8 +868,8 @@ function addon.tracker:PrintSplitsTime(s)
 end
 
 function addon.tracker:BuildSplitsLevelLine(level, splitsString)
-    local gap = #"Level 12    "
-    local formattedString = fmt("Level %d%s%s%s", level,
+    local gap = #fmt("%s 12    ", L("Level"))
+    local formattedString = fmt("%s %d%s%s%s", L("Level"), level,
                                 level < 10 and '  ' or '',
                                 srep(' ', gap - #splitsString), splitsString)
 
@@ -921,10 +926,12 @@ function addon.tracker:CreateLevelSplits()
 
     local menu = {
         {
-            text = "Share",
+            text = _G.SHARE_QUEST_ABBREV,
             notCheckable = 1,
             func = function()
-                addon.comms.OpenBrandedExport("Share Level Splits", "",
+                addon.comms.OpenBrandedExport(fmt("%s %s",
+                                                  _G.SHARE_QUEST_ABBREV,
+                                                  L("Level Splits")), "",
                                               addon.tracker:BuildSplitsShare(),
                                               20, 200)
             end
@@ -939,7 +946,7 @@ function addon.tracker:CreateLevelSplits()
                                               20, 200)
             end
         }, {--]]
-            text = "Options",
+            text = _G.GAMEOPTIONS_MENU,
             tooltipOnButton = true,
             notCheckable = 1,
             func = function()
@@ -957,11 +964,11 @@ function addon.tracker:CreateLevelSplits()
             end
         }, {--]]
             text = "Hide",
-            tooltipTitle = "Temporarily hide, use '/rxp splits' to show again",
+            tooltipTitle = L("Temporarily hide, use '/rxp splits' to show again"),
             tooltipOnButton = true,
             notCheckable = 1,
             func = function() f:Hide() end
-        }, {text = "Cancel", notCheckable = 1, func = function() end}
+        }, {text = _G.CANCEL, notCheckable = 1, func = function() end}
     }
 
     local SplitsMenuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame",
@@ -1083,7 +1090,7 @@ function addon.tracker:CompileLevelSplits(kind)
     if addon.tracker.playerLevel == addon.tracker.maxLevel then
         -- Leave creation or full placeholder on updates
         if kind == "full" then
-            splitsReportData.current = {text = "Level Time: Max"}
+            splitsReportData.current = {text = fmt("%s: Max", L("Level Time"))}
 
             if addon.tracker.reportData[addon.tracker.maxLevel - 1] and
                 addon.tracker.reportData[addon.tracker.maxLevel - 1].timestamp and
@@ -1094,7 +1101,8 @@ function addon.tracker:CompileLevelSplits(kind)
                         .timestamp.finished
 
                 splitsReportData.total = {
-                    text = fmt("Time to %d: %s", addon.tracker.maxLevel,
+                    text = fmt("%s %d: %s", L("Time to"),
+                               addon.tracker.maxLevel,
                                addon.tracker:PrintSplitsTime(s)),
                     duration = s
                 }
@@ -1103,7 +1111,7 @@ function addon.tracker:CompileLevelSplits(kind)
                         secondsSinceLogin
 
                 splitsReportData.total = {
-                    text = fmt("Total Time: %s",
+                    text = fmt("%s: %s", L("Total Time"),
                                addon.tracker:PrintSplitsTime(s)),
                     duration = s
                 }
@@ -1112,13 +1120,15 @@ function addon.tracker:CompileLevelSplits(kind)
     else
         s = secondsSinceLogin + addon.tracker.state.login.timePlayedThisLevel
         splitsReportData.current = {
-            text = fmt("Level Time: %s", addon.tracker:PrintSplitsTime(s)),
+            text = fmt("%s: %s", L("Level Time"),
+                       addon.tracker:PrintSplitsTime(s)),
             duration = s
         }
 
         s = addon.tracker.state.login.totalTimePlayed + secondsSinceLogin
         splitsReportData.total = {
-            text = fmt("Total Time: %s", addon.tracker:PrintSplitsTime(s)),
+            text = fmt("%s: %s", L("Total Time"),
+                       addon.tracker:PrintSplitsTime(s)),
             duration = s
         }
     end
@@ -1146,7 +1156,7 @@ function addon.tracker:CompileLevelSplits(kind)
                     }
                 else
                     splitsData.levels[l] = {
-                        text = fmt("Level %d: Missing Data", l)
+                        text = fmt("%s: %s", L("Level %d"), L("Missing Data"), l)
                     }
                 end
             end
@@ -1250,7 +1260,7 @@ function addon.tracker:BuildSplitsShare()
     local splitsString = fmt("%s\n", reportSplitsData.title)
 
     if reportSplitsData.current.duration then
-        splitsString = fmt("%s\nLevel %d time: %s\n", splitsString,
+        splitsString = fmt("%s\n%s: %s\n", splitsString, L("Level %d time"),
                            addon.tracker.playerLevel,
                            addon.tracker:PrintSplitsTime(
                                reportSplitsData.current.duration))
