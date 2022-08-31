@@ -76,3 +76,101 @@ L["Size of the waypoint arrow text"] = "航点箭头文本的大小"
 L["Window Scale: %.2f"] = "窗口比例：%.2f"
 L["Scale of the Main Window, use alt+left click on the main window to resize it"] =
     "主窗口的比例，使用 alt+左键单击主窗口来调整它的大小"
+L["Number of Map Pins: %d"] = "地图针数：%d"
+L["Number of map pins shown on the world map"] =
+    "世界地图上显示的地图图钉数量"
+L["Map Pin Scale: %.2f"] = "地图引脚比例：%.2f"
+L["Adjusts the size of the world map pins"] =
+    "调整世界地图图钉的大小"
+L["Distance Between Pins: %.2f"] = "引脚之间的距离：%.2f"
+L["If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."] =
+    "如果两个或多个步骤非常接近，此插件会将它们分组到地图上的单个图钉中。 调整此范围以确定两个步骤必须靠得多近才能形成一个组。"
+L["Map Pin Background Opacity: %.2f"] = "地图图钉背景不透明度：%.2f"
+L["The opacity of the black circles on the map and mini map"] =
+    "地图和小地图上黑圈的不透明度"
+L["Current step frame anchor"] = "当前步帧锚"
+L["Sets the current step frame to grow from bottom to top or top to bottom by default"] =
+    "设置当前步进帧默认从下到上或从上到下增长"
+L["Batching window size: %d ms"] = "批处理窗口大小：%d 毫秒"
+L["Adjusts the batching window tolerance, used for hearthstone batching"] =
+    "调整批处理窗口容差，用于炉石批处理"
+L["Content phase: %d"] = "内容阶段：%d"
+L["Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"] =
+    "调整引导路线以匹配内容阶段\n第 2 阶段：厄运之槌任务\n第 3 阶段: 100% 任务 XP (SoM)\n第 4 阶段: ZG/希利苏斯任务\n第 5 阶段:AQ 任务\n第 6 阶段：东瘟疫之地任务"
+L["Experience rates: %.1fx"] = "经验率：%.1fx"
+L["Adjusts the guide routes to match increased xp rate bonuses"] =
+    "调整引导路线以匹配增加的经验值奖励"
+L["Please restart your game client and try again"] =
+    "请重新启动您的游戏客户端，然后重试"
+L["Failed to Import Guides: Invalid Import String"] =
+    "导入指南失败：导入字符串无效"
+L["Must reload UI"] = "必须重新加载 UI"
+L["Guide Import"] = "引导导入"
+L["Currently loaded imported guides"] = "当前加载的导入指南"
+L["Delete imported guide"] = "删除导入的指南"
+L["Remove"] = "消除"
+L["Purge All Data"] = "清除所有数据"
+L["This action will remove ALL guides from the database\nAre you sure?"] =
+    "此操作将从数据库中删除所有指南\n您确定吗？"
+L["Reload guides and UI"] = "重新加载指南和 UI"
+L["Import"] = "进口"
+L["This requires a reload to take effect, continue?"] =
+    "这需要重新加载才能生效，继续吗？"
+L["Extras"] = "额外"
+L["Optional extras"] = "可选额外"
+L["Optional Features"] = "可选功能"
+L["Leveling Tracker"] = ""
+L["Leveling Tracker"] = "调平跟踪器"
+L["Enable Leveling Tracker"] = "启用调平跟踪器"
+L["Always Open Leveling Report With Character Panel"] =
+    "始终使用字符面板打开调平报告"
+L["Enables the RestedXP Leveling Report when you open your character panel"] =
+    "打开角色面板时启用 RestedXP 升级报告"
+L["Enable Leveling Report Inspections"] = "启用调平报告检查"
+L["Send or receive inspection requests for other Leveling Reports"] =
+    "发送或接收其他调平报告的检查请求"
+L["Level Splits"] = "级别拆分"
+L["Enable Level Splits"] = "启用级别拆分"
+L["Level Splits History"] = "级别拆分历史"
+L["Historical levels to show"] = "要显示的历史水平"
+L["Level Splits Font Size"] = "级别拆分字体大小"
+L["Level Splits Opacity"] = "级别拆分不透明度"
+L["Lower number to make Level Splits more transparent"] =
+    "较低的数字使级别拆分更透明"
+L["Communications"] = "通讯"
+L["Announcements"] = "公告"
+L["Announce Level Ups (Emote)"] = "宣布升级（表情）"
+L["Make a public emote when you level up"] = "升级时公开表情"
+L["Announce Level Ups (Party Chat)"] = "宣布升级（派对聊天）"
+L["Announce in party chat when you level up"] =
+    "升级时在聚会聊天中宣布"
+L["Announce Level Ups (Guild Chat)"] = "宣布升级（公会聊天）"
+L["Announce in guild chat when you level up"] =
+    "升级时在公会聊天中宣布"
+L["Group coordination"] = "集团协调"
+L["Send announcements without another RXP user in group"] =
+    "在组中没有其他 RXP 用户的情况下发送通知"
+L["Without this checked we will only send announcements if another RestedXP User is in your group"] =
+    "如果没有选中此选项，我们只会在您的组中有另一个 RestedXP 用户时发送通知"
+L["Announce when Quest Step is completed"] = "任务步骤完成时通知"
+L["Announce in party chat when you complete certain quests (.complete)"] =
+    "当您完成某些任务时在群聊中宣布 (.complete)"
+L["Announce when all Step items are collected"] =
+    "收集所有步骤物品时宣布"
+L["Announce in party chat when you collect all the items relevant to a quest (.collect)"] =
+    "当您收集与任务相关的所有物品时在聚会聊天中宣布（.collect）"
+L["Announce Flying Step timers"] = "宣布飞步计时器"
+L["Announce in party chat where you're flying and how long until you arrive"] =
+    "在聚会聊天中宣布您的飞行地点以及您到达的时间"
+L["Enable Addon Version Checks"] = "启用插件版本检查"
+L["Advertises and compares addon versions with all RXP users in party"] =
+    "向所有 RXP 用户宣传和比较插件版本"
+L["Ignore Questie announcements"] = "忽略 Questie 公告"
+L["Send quest and collect step announcements even if Questie is enabled"] =
+    "即使启用了 Questie，也可以发送任务并收集步骤通知"
+L["Advanced Settings"] = "高级设置"
+L["Enable Beta Features"] = "启用 Beta 功能"
+L["Enables new features, forces reload to take effect"] =
+    "启用新功能，强制重新加载生效"
+L["Enable Debug"] = "启用调试"
+L["Extras"] = "附加功能"
