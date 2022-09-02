@@ -5,6 +5,7 @@
 ## Interface-BCC: 20504
 ## Title: RXP Guides
 ## Notes: In-game leveling guides
+## Notes-zhCN: TODO
 ## Author: RestedXP
 ## Version: @project-version@
 ## OptionalDeps: Questie, unitscan
@@ -13,7 +14,9 @@
 ## X-Curse-Project-ID: 486246
 
 libs\embeds.xml
+locale\locales.xml
 
+Locale.lua
 RXPGuides.lua
 GuideWindow.lua
 SettingsPanel.lua

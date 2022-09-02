@@ -5,12 +5,13 @@ local _G = _G
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 addon.release = GetAddOnMetadata(addonName, "Version")
+local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
-    addon.release = 'Development'
-    addon.versionText = 'Development'
+    addon.release = L('Development')
+    addon.versionText = L('Development')
 else
-    addon.versionText = "Version " .. addon.release
+    addon.versionText = string.format("%s %s", _G.GAME_VERSION_LABEL, addon.release)
 end
 
 addon.version = 40000
@@ -35,14 +36,6 @@ addon.RXPG = {}
 addon.functions = {}
 
 BINDING_HEADER_RXPGuides = addonName
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
-    "Active Item Button 1"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] =
-    "Active Item Button 2"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
-    "Active Item Button 3"
-_G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
-    "Active Item Button 4"
 
 local questFrame = CreateFrame("Frame");
 

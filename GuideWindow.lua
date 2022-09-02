@@ -4,6 +4,9 @@ local RXPG = addon.RXPG
 local _, class = UnitClass("player")
 local _G = _G
 
+-- Alias addon.locale.Get
+local L = addon.locale.Get
+
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
 addon.width, addon.height = 235, 125 -- Default width/height
@@ -528,7 +531,7 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number:SetBackdropColor(unpack(addon.colors.background))
         end
 
-        local titletext = step.title or ("Step " .. tostring(index))
+        local titletext = step.title or (L("Step") .. " " .. tostring(index))
 
         if titletext == "" then
             stepframe.number:SetAlpha(0)
@@ -741,7 +744,7 @@ function CurrentStepFrame.UpdateText()
                                "BOTTOMRIGHT", 0, -5)
         end
 
-        stepframe.number.text:SetText(step.title or ("Step " .. index))
+        stepframe.number.text:SetText(step.title or (L("Step") .. " " .. index))
         stepframe.number:SetSize(stepframe.number.text:GetStringWidth() + 10, 17)
 
         local e = 0
@@ -769,7 +772,7 @@ function CurrentStepFrame.UpdateText()
                                             "TOPRIGHT", 11, -1)
                     elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
 
-                    text:SetText(element.text)
+                    text:SetText(L(element.text))
                     local h = math.ceil(elementFrame.text:GetStringHeight() * 1.1) +
                                 1
                     -- print('sh:',h)
@@ -874,7 +877,7 @@ GuideName.text:SetJustifyH("CENTER")
 GuideName.text:SetJustifyV("CENTER")
 GuideName.text:SetTextColor(1, 1, 1)
 GuideName.text:SetFont(addon.font, 11)
-GuideName.text:SetText("Welcome to RestedXP Guides\nRight click to pick a guide")
+GuideName.text:SetText(L("Welcome to RestedXP Guides\nRight click to pick a guide"))
 GuideName:SetFrameLevel(6)
 
 GuideName.bg = GuideName:CreateTexture("$parentBG", "BACKGROUND")
@@ -1035,13 +1038,13 @@ function addon.GetGuideName(guide)
 end
 
 RXPFrame.bottomMenu = {
-    {notCheckable = 1, text = "Go to step 1", func = addon.SetStep, arg1 = 1},
+    {notCheckable = 1, text = L("Go to step") .. " 1", func = addon.SetStep, arg1 = 1},
     {
         notCheckable = 1,
-        text = "Select another guide",
+        text = L("Select another guide"),
         func = RXPFrame.DropDownMenu
     }, {
-        text = "Reload Guide",
+        text = L("Reload Guide"),
         notCheckable = 1,
         func = addon.LoadGuide,
         arg1 = addon.currentGuide
@@ -1051,9 +1054,9 @@ RXPFrame.bottomMenu = {
     end},
     { -- Give Feedback for step, updated by addon.comms:Setup()
         notCheckable = 1,
-        text = "Give Feedback for step",
+        text = L("Give Feedback for step"),
     },
-    {text = "Close", notCheckable = 1, func = function(self) self:Hide() end}
+    {text = _G.CLOSE, notCheckable = 1, func = function(self) self:Hide() end}
 }
 
 local emptyGuide = {
@@ -1061,7 +1064,7 @@ local emptyGuide = {
     hidewindow = true,
     name = "",
     group = "",
-    displayName = "Welcome to RestedXP Guides\nRight click to pick a guide",
+    displayName = L("Welcome to RestedXP Guides\nRight click to pick a guide"),
     steps = {{hidewindow = true, text = ""}}
 }
 
@@ -1122,7 +1125,7 @@ function addon:LoadGuide(guide, OnLoad)
     --Lookup feedbackMenuIndex, avoid dynamic/future menu change conflicts
     local feedbackMenuIndex
     for i, m in ipairs(addon.RXPFrame.bottomMenu) do
-        if m.text == "Give Feedback for step" then
+        if m.text == L("Give Feedback for step") then
             feedbackMenuIndex = i
             break
         end
@@ -1190,7 +1193,7 @@ function addon:LoadGuide(guide, OnLoad)
                 self.timer = 0
                 local n = self.step.index
                 local bottomMenu = RXPFrame.bottomMenu
-                bottomMenu[1].text = "Go to step " .. n
+                bottomMenu[1].text = L("Go to step") .. " " .. n
                 bottomMenu[1].arg1 = n
                 bottomMenu[feedbackMenuIndex].arg1 = n
                 _G.EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
@@ -1551,13 +1554,13 @@ function RXPFrame.GenerateMenuTable()
 
     if #groupList > 0 then
         table.insert(menuList,
-                     {text = "Available Guides", isTitle = 1, notCheckable = 1})
+                     {text = L("Available Guides"), isTitle = 1, notCheckable = 1})
         for _, group in ipairs(groupList) do createMenu(group) end
     end
 
     if #farmGuides > 0 then
         table.insert(menuList, {
-            text = "Gold Farming Guides",
+            text = L("Gold Farming Guides"),
             notCheckable = 1,
             isTitle = 1
         })
@@ -1566,7 +1569,7 @@ function RXPFrame.GenerateMenuTable()
 
     if not (RXPData and RXPData.hideUnusedGuides) and #unusedGuides > 0 then
         table.insert(menuList,
-                     {text = "Unused Guides", notCheckable = 1, isTitle = 1})
+                     {text = L("Unused Guides"), notCheckable = 1, isTitle = 1})
         for _, group in ipairs(unusedGuides) do createMenu(group) end
     end
 
@@ -1575,9 +1578,9 @@ function RXPFrame.GenerateMenuTable()
     if addon.game == "CLASSIC" then
         local hctext
         if RXPData and RXPCData.hardcore then
-            hctext = "Deactivate Hardcore mode"
+            hctext = L("Deactivate Hardcore mode")
         else
-            hctext = "Activate Hardcore mode"
+            hctext = L("Activate Hardcore mode")
         end
         table.insert(menuList, {
             text = hctext,
@@ -1587,17 +1590,17 @@ function RXPFrame.GenerateMenuTable()
     end
 
     if RXPCData and RXPCData.GA then
-        local text = "Activate the Quest Guide mode"
+        local text = L("Activate the Quest Guide mode")
         table.insert(menuList,
                      {text = text, notCheckable = 1, func = addon.GAToggle})
     elseif addon.farmGuides > 0 then
-        local text = "Activate the Gold Assistant mode"
+        local text = L("Activate the Gold Assistant mode")
         table.insert(menuList,
                      {text = text, notCheckable = 1, func = addon.GAToggle})
     end
 
     table.insert(menuList, {
-        text = "Options...",
+        text = _G.GAMEOPTIONS_MENU .. "...",
         notCheckable = 1,
         func = function ()
             _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
@@ -1606,7 +1609,7 @@ function RXPFrame.GenerateMenuTable()
     })
 
     table.insert(menuList, {
-        text = "Import guide",
+        text = L("Import guide"),
         notCheckable = 1,
         func = function()
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
@@ -1616,20 +1619,20 @@ function RXPFrame.GenerateMenuTable()
 
     if addon.settings.db and addon.settings.db.profile.enableTracker then
         table.insert(menuList, {
-            text = "Leveling report",
+            text = L("Leveling report"),
             notCheckable = 1,
             func = function() addon.tracker:ShowReport(_G.CharacterFrame) end
         })
     end
 
     table.insert(menuList, {
-        text = "Open Feedback Form",
+        text = L("Open Feedback Form"),
         notCheckable = 1,
         func = function() addon.comms.OpenBugReport() end
     })
 
     table.insert(menuList, {
-        text = "Close",
+        text = _G.CLOSE,
         notCheckable = 1,
         func = function(self) self:Hide() end
     })

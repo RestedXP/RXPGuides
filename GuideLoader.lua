@@ -18,6 +18,8 @@ local LibDeflate = LibStub("LibDeflate")
 local RXPG = addon.RXPG
 local game = strlower(addon.game)
 local suffix = 1
+-- Alias addon.locale.Get
+local L = addon.locale.Get
 
 -- File guides and string-imports need different load order support
 local embeddedGuides = {}
@@ -352,7 +354,7 @@ function RXPG.ImportString(str, frame)
                 addon.bufferSize = addon.bufferSize + 1
             end
         else
-            errorMsg = "Error parsing guides\nTotal guides loaded: %d/%s"
+            errorMsg = L("Error parsing guides\nTotal guides loaded: %d/%s")
             break
         end
     end
@@ -369,7 +371,7 @@ function RXPG.ImportString(str, frame)
             return true
         end
     else
-        return false, "Error: Unable to parse guides, invalid import string"
+        return false, L("Error: Unable to parse guides")
     end
 end
 
@@ -380,7 +382,7 @@ function RXPG.ProcessBuffer(frame)
         table.remove(buffer, size)
         if type(parseGuide) == "table" and parseGuide.name then
             local progress = addon.bufferSize - size + 1
-            addon.RXPG.LoadText:SetText(format("Loading Guides... (%d/%d)",
+            addon.RXPG.LoadText:SetText(format(L("Loading Guides") .. "... (%d/%d)",
                              progress,addon.bufferSize))
         end
         return true
@@ -388,7 +390,7 @@ function RXPG.ProcessBuffer(frame)
         frame:SetScript("OnUpdate", nil)
     end
     if addon.bufferSize > 0 then
-        addon.RXPG.LoadText:SetText("Guides Loaded Successfully")
+        addon.RXPG.LoadText:SetText(L("Guides Loaded Successfully"))
         addon.bufferSize = 0
     end
     addon.parsing = false
@@ -444,7 +446,7 @@ function RXPG.LoadCachedGuides()
                 RXPG.AddGuide(guide)
             else
                 if DEBUG then
-                    print(fmt('Unable to decode cached guide (%s), removed', key))
+                    print(fmt(L('Unable to decode cached guide (%s), removed'), key))
                 end
                 addon.db.profile.guides[key] = nil
             end
@@ -479,7 +481,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             groupOrContent = text:match("^%s*#group%s+(.-)%s*[\r\n]") or
                                  text:match("[\r\n]%s*#group%s+(.-)%s*[\r\n]")
             if not groupOrContent then
-                print("\nError parsing guide: Invalid guide group",
+                print("\n" .. L("Error parsing guide") .. ": Invalid guide group",
                       text:match("#name%s+.-%s*[\r\n]"))
                 return
             end
@@ -559,7 +561,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
                     element.parent = lastElement
                 end
             else
-                return addon.error("Error parsing guide " ..
+                return addon.error(L("Error parsing guide") .. " " ..
                                        addon.currentGuideName ..
                                        ": Invalid function call (." .. tag ..
                                        ")\n" .. linetext)
@@ -595,7 +597,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
         -- print(line)
         if line:sub(1, 4) == "step" then
             if not addon.currentGuideName then
-                error("Error parsing guide: Guide has no name")
+                error(L("Error parsing guide") .. ": " .. L("Guide has no name"))
             end
             guide.key = guide.key or RXPG.BuildGuideKey(guide)
             if currentStep == 0 and (not guide[game] and not(game == "tbc" and not (guide.classic or guide.wotlk))) then
@@ -659,7 +661,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
     end
     -- print(guide)
     addon.step = false
-    if not guide.name then error('Guide has no name') end
+    if not guide.name then error(L('Guide has no name')) end
 
     defaultFor = guide.defaultfor or defaultFor
     if defaultFor then
