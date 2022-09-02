@@ -1156,7 +1156,7 @@ function addon.tracker:CompileLevelSplits(kind)
                     }
                 else
                     splitsData.levels[l] = {
-                        text = fmt("%s: %s", L("Level %d"), L("Missing Data"), l)
+                        text = fmt(L("Level %d") .. ": %s", l, L("Missing Data"))
                     }
                 end
             end
@@ -1260,7 +1260,7 @@ function addon.tracker:BuildSplitsShare()
     local splitsString = fmt("%s\n", reportSplitsData.title)
 
     if reportSplitsData.current.duration then
-        splitsString = fmt("%s\n%s: %s\n", splitsString, L("Level %d time"),
+        splitsString = fmt("%s\n" .. L("Level %d time") .. ": %s\n", splitsString,
                            addon.tracker.playerLevel,
                            addon.tracker:PrintSplitsTime(
                                reportSplitsData.current.duration))
