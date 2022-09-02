@@ -2473,7 +2473,7 @@ step
     .goto Thousand Needles,9.3,21.0,40,0
     .goto Thousand Needles,21.1,40.6,40,0
     .goto Thousand Needles,34.3,37.5,40,0
-    .unitscan Roh'Alim the Pounder
+    .unitscan Rok'Alim the Pounder
     .complete 1151,1 --Collect Fragments of Rok'Alim (x1)
 step
     .isOnQuest 4881
