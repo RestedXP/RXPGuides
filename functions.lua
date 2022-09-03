@@ -951,7 +951,9 @@ function addon.UpdateQuestCompletionData(self)
     local icon = addon.icons.complete
     local id = element.questId
 
-    if type(id) ~= "number" then
+    if element.tag ~= "complete" then
+        return
+    elseif type(id) ~= "number" then
         print('Error (.' .. element.tag .. '): Invalid quest ID at step ' .. element.step.index)
         return
     end
