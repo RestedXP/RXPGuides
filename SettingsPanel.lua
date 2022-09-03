@@ -737,7 +737,7 @@ end
 
 function addon.settings.CreateExtrasOptionsPanel()
     local function isNotAdvanced()
-        return addon.release ~= 'Development' or not addon.settings.db.profile.enableBetaFeatures
+        return not addon.settings.db.profile.enableBetaFeatures
     end
 
     local function requiresReload()

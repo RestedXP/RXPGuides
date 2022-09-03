@@ -105,7 +105,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
                                                  level - 1, level,
                                                  addon.tracker:PrettyPrintTime(s))
                     announceLevelUp(msg)
-                elseif addon.release == 'Development' then
+                elseif addon.settings.db.profile.debug then
                     self.PrettyPrint("Invalid .started or .finished %d", level)
                 end
             end)
@@ -230,7 +230,9 @@ function addon.comms:IsNewRelease(theirRelease, name)
     if theirRelease == 'Development' then
         return false
     elseif addon.release == 'Development' then
-        self.PrettyPrint("%s:theirRelease = %s", name, theirRelease)
+        if addon.settings.db.profile.debug then
+            self.PrettyPrint("%s:theirRelease = %s", name, theirRelease)
+        end
         return false
     end
 
@@ -337,8 +339,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.db.profile.enableCompleteStepAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
-        elseif addon.release == 'Development' then
-            print(msg)
+        elseif addon.settings.db.profile.debug then
+            self.PrettyPrint(msg)
         end
 
         guideAnnouncements.complete[data.title] = UnitLevel("Player")
@@ -358,8 +360,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.db.profile.enableCollectAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
-        elseif addon.release == 'Development' then
-            print(msg)
+        elseif addon.settings.db.profile.debug then
+            self.PrettyPrint(msg)
         end
 
         guideAnnouncements.collect[data.title] = UnitLevel("Player")
@@ -374,8 +376,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.db.profile.enableFlyStepAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
-        elseif addon.release == 'Development' then
-            print(msg)
+        elseif addon.settings.db.profile.debug then
+            self.PrettyPrint(msg)
         end
     else
         error("Unhandled step event announce: (" .. event .. ")")
