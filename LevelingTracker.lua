@@ -984,11 +984,8 @@ function addon.tracker:CreateLevelSplits()
     f.title.cog:SetHighlightTexture(
         "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
     f.title.cog:Show()
-    f.title.cog:SetScript("OnClick", function()
-        _G.EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
-    end)
 
-    f.title.cog:SetScript("OnMouseDown", function()
+    f.title.cog:SetScript("OnClick", function()
         _G.EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
     end)
 
@@ -1260,8 +1257,8 @@ function addon.tracker:BuildSplitsShare()
     local splitsString = fmt("%s\n", reportSplitsData.title)
 
     if reportSplitsData.current.duration then
-        splitsString = fmt("%s\n" .. L("Level %d time") .. ": %s\n", splitsString,
-                           addon.tracker.playerLevel,
+        splitsString = fmt("%s\n" .. L("Level %d time") .. ": %s\n",
+                           splitsString, addon.tracker.playerLevel,
                            addon.tracker:PrintSplitsTime(
                                reportSplitsData.current.duration))
     end
