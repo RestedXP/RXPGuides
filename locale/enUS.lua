@@ -13,5 +13,7 @@ _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
     "Active Item Button 4"
 
 L.delimiter = ' '
+-- Words
+L.words = {}
 
 -- enUS locale content not needed (yet), parsed guides already enUS
