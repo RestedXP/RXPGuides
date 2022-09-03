@@ -531,7 +531,7 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number:SetBackdropColor(unpack(addon.colors.background))
         end
 
-        local titletext = step.title or (L("Step") .. " " .. tostring(index))
+        local titletext = step.title or (string.format(L("Step %d"), index))
 
         if titletext == "" then
             stepframe.number:SetAlpha(0)
@@ -744,7 +744,7 @@ function CurrentStepFrame.UpdateText()
                                "BOTTOMRIGHT", 0, -5)
         end
 
-        stepframe.number.text:SetText(step.title or (L("Step") .. " " .. index))
+        stepframe.number.text:SetText(step.title or (string.format(L("Step %d"), index)))
         stepframe.number:SetSize(stepframe.number.text:GetStringWidth() + 10, 17)
 
         local e = 0

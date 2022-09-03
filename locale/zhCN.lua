@@ -246,7 +246,7 @@ L["Welcome to RestedXP Guides\nRight click to pick a guide"] =
     "欢迎使用 RestedXP 指南\n右键单击选择指南"
 L["Reload Guide"] = "重新加载指南"
 L["Select another guide"] = "选择其他指南"
-L["Step"] = "步"
+L["Step %d"] = "第%d步"
 L["Level %d time"] = "第 %d 级时间"
 L["Level %d"] = "级别 %d"
 L["Missing Data"] = "缺失数据"
