@@ -636,6 +636,8 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
                         skipGuide = not isValid and tag
                         guide.enabledFor = guide.enabledFor or tag
                         -- print("$"..code.."$",tag,#code)
+                    elseif not isValid then
+                        return ""
                     end
                     return code
                 end)
