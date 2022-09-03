@@ -1,7 +1,7 @@
 local addonName, addon = ...
 
-local ssplit, strjoin, ipairs, pairs, unpack = strsplittable, strjoin, ipairs,
-                                               pairs, unpack
+local ssplit, strjoin, ipairs, unpack, next = strsplittable, strjoin, ipairs,
+                                              unpack, next
 
 addon.locale = {}
 
@@ -14,23 +14,18 @@ local lazyTranslationCache = {}
 if DEBUG then print(addonName .. ": Processing locale: " .. GetLocale()) end
 
 local function getForeign(text)
-    if text and L["Randomstuff"] then return end
-    -- Lookup language locale, falls back to enUS
-    if DEBUG then print("Getting: " .. (text or 'unknown')) end
-    if L[text] then
-        if DEBUG then
-            print("Phrase found, returning match")
-            print("Match: (" .. L[text] .. ")")
-        end
-        return L[text]
+    if not text then return end
+    if L[text] then return L[text] end
+
+    if lazyTranslationCache[text] then return lazyTranslationCache[text] end
+
+    if next(L.words) == nil then
+        -- No custom words added
+        lazyTranslationCache[text] = text
+        return text
     end
 
     if DEBUG then print("Phrase not found, looking for words") end
-
-    if lazyTranslationCache[text] then
-        if DEBUG then print("lazyTranslationCache[text] hit, returning") end
-        return lazyTranslationCache[text]
-    end
 
     -- Direct text doesn't match, so iterate over phrase and lazy translate
     local words = ssplit(delim, text)
@@ -40,14 +35,17 @@ local function getForeign(text)
 
     local lazyPhrase = strjoin(delim, unpack(words))
     lazyTranslationCache[text] = lazyPhrase
+
     return lazyPhrase
 end
 
 local function noop(text) return text end
 
--- Short circuit enUS native guides
-if GetLocale() == 'enUS' then
-    addon.locale.Get = noop
-else
+local locale = GetLocale()
+
+-- Explicitly check supported languages, default to enUS
+if locale == 'zhCN' then
     addon.locale.Get = getForeign
+else
+    addon.locale.Get = noop
 end
