@@ -1,12 +1,13 @@
 local addonName, addon = ...
 
+local _G = _G
 local fmt, smatch, strsub, tinsert, srep = string.format, string.match,
                                            string.sub, tinsert, string.rep
 
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
-      UnitXP = UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime,
-               GetServerTime, UnitXP
-local _G = _G
+      UnitXP, EasyMenu = UnitLevel, GetRealZoneText, IsInGroup, tonumber,
+                         GetTime, GetServerTime, UnitXP, _G.EasyMenu
+
 local AceGUI = LibStub("AceGUI-3.0")
 local LibDeflate = LibStub("LibDeflate")
 local L = addon.locale.Get
@@ -211,11 +212,7 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
         -- Build data after processing level up
         addon.tracker.reportData[data.level - 1] =
             addon.tracker:CompileLevelData(data.level - 1)
-        addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetList(
-            addon.tracker.BuildDropdownLevels(addon.tracker.db.profile["levels"],
-                                              data.level))
-        addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetValue(
-            data.level)
+        -- TODO levelButton:SetText?
 
         addon.tracker:UpdateLevelSplits("full")
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
@@ -309,6 +306,42 @@ function addon.tracker.BuildDropdownLevels(levels, playerLevel)
     return dropdownLevels, sortOrder
 end
 
+function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
+                                          attachment)
+
+    local trackerUi = addon.tracker.ui[attachment:GetName()]
+    local menu = {}
+    local insertData
+
+    for level, _ in pairs(levelData) do
+        if level > playerLevel then break end
+
+        insertData = {
+            notCheckable = 1,
+            func = function(_, l, text)
+                addon.tracker:UpdateReport(l, target, attachment)
+
+                trackerUi.levelButton:SetText(text)
+            end
+        }
+
+        if level == addon.tracker.maxLevel then
+            insertData.text = fmt("%d (%s)", level, L("Max"))
+
+        else
+            insertData.text = fmt("%d to %d", level, level + 1)
+        end
+
+        insertData.arg1 = level
+        insertData.arg2 = insertData.text
+
+        tinsert(menu, 1, insertData)
+    end
+
+    EasyMenu(menu, trackerUi.levelMenuFrame, trackerUi.levelButton.frame, 0, 0,
+             "MENU")
+end
+
 local function buildSpacer(height)
     local spacer = AceGUI:Create("SimpleGroup")
     spacer:SetLayout("Fill")
@@ -389,19 +422,22 @@ function addon.tracker:CreateGui(attachment, target)
     local topContainer = AceGUI:Create("SimpleGroup")
     topContainer:SetLayout('Flow')
 
-    trackerUi.levelDropdown = AceGUI:Create("Dropdown")
+    trackerUi.levelButton = AceGUI:Create("Button")
+    trackerUi.levelButton:SetRelativeWidth(0.45)
 
-    trackerUi.levelDropdown:SetList(self.BuildDropdownLevels(levelData,
-                                                             playerLevel))
-    trackerUi.levelDropdown:SetValue(playerLevel)
+    -- TODO initialize with current level
+    trackerUi.levelButton:SetText("Placeholder")
 
-    trackerUi.levelDropdown:SetRelativeWidth(0.45)
+    trackerUi.levelMenuFrame = CreateFrame("Frame", "RXPG_LevelMenuFrame",
+                                           trackerUi.levelButton.frame,
+                                           "UIDropDownMenuTemplate")
 
-    trackerUi.levelDropdown:SetCallback("OnValueChanged", function(_, _, key)
-        addon.tracker:UpdateReport(key, target, attachment)
+    trackerUi.levelButton:SetCallback("OnClick", function()
+        addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
+                                         attachment)
     end)
 
-    topContainer:AddChild(trackerUi.levelDropdown)
+    topContainer:AddChild(trackerUi.levelButton)
 
     trackerUi.target = AceGUI:Create("Label")
 
@@ -986,7 +1022,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.cog:Show()
 
     f.title.cog:SetScript("OnClick", function()
-        _G.EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
+        EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
     end)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
