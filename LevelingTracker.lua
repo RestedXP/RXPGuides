@@ -212,8 +212,6 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
         -- Build data after processing level up
         addon.tracker.reportData[data.level - 1] =
             addon.tracker:CompileLevelData(data.level - 1)
-        -- TODO levelButton:SetText?
-
         addon.tracker:UpdateLevelSplits("full")
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
         addon.tracker.state.login = {
@@ -435,8 +433,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.levelButton = AceGUI:Create("Button")
     trackerUi.levelButton:SetRelativeWidth(0.45)
 
-    -- TODO initialize with current level
-    trackerUi.levelButton:SetText("Placeholder")
+    trackerUi.levelButton:SetText(fmt("%d to %d", playerLevel, playerLevel + 1))
 
     trackerUi.levelMenuFrame = CreateFrame("Frame", "RXPG_LevelMenuFrame",
                                            trackerUi.levelButton.frame,
@@ -765,8 +762,12 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 
     if selectedLevel == self.state.levelReportData.playerLevel then
         if selectedLevel == addon.tracker.maxLevel then
+            trackerUi.levelButton:SetText(
+                fmt("%d (%s)", selectedLevel, L("Max")))
             trackerUi.reachedContainer.label:SetText("Reached max level")
         else
+            trackerUi.levelButton:SetText(
+                fmt("%d to %d", selectedLevel, selectedLevel + 1))
             trackerUi.reachedContainer.label:SetText("Started level " ..
                                                          selectedLevel)
         end
@@ -788,6 +789,8 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
             trackerUi.reachedContainer.data:SetText("Missing data")
         end
     else
+        trackerUi.levelButton:SetText(fmt("%d to %d", selectedLevel,
+                                          selectedLevel + 1))
         trackerUi.reachedContainer.label:SetText("Reached Level " ..
                                                      selectedLevel + 1)
 
