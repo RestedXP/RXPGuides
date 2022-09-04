@@ -1137,8 +1137,11 @@ step << Shaman
     >>Fill the Waterskin at the well
     .complete 1536,1 --Filled Red Waterskin (1)
 step
-    .goto Hillsbrad Foothills,61.50,19.20
+    .goto Hillsbrad Foothills,61.5,19.2
     .turnin 493 >> Turn in Journey to Hillsbrad Foothills
+step
+    .isOnQuest 1065
+    .goto Hillsbrad Foothills,61.5,19.2
     .turnin 1065 >> Turn in Journey to Tarren Mill
     .accept 1066 >> Accept Blood of Innocents
 step
