@@ -311,9 +311,19 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
 
     local trackerUi = addon.tracker.ui[attachment:GetName()]
     local menu = {}
-    local insertData
+    local insertData, parentRange
 
     for level, _ in pairs(levelData) do
+        parentRange = floor(level / 10) + 1
+
+        if not menu[parentRange] then
+            menu[parentRange] = {
+                text = fmt("%d to %d", level, level + 10),
+                hasArrow = true,
+                menuList = {}
+            }
+        end
+
         if level > playerLevel then break end
 
         insertData = {
@@ -322,12 +332,12 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
                 addon.tracker:UpdateReport(l, target, attachment)
 
                 trackerUi.levelButton:SetText(text)
+                _G.CloseDropDownMenus()
             end
         }
 
         if level == addon.tracker.maxLevel then
             insertData.text = fmt("%d (%s)", level, L("Max"))
-
         else
             insertData.text = fmt("%d to %d", level, level + 1)
         end
@@ -335,7 +345,7 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
         insertData.arg1 = level
         insertData.arg2 = insertData.text
 
-        tinsert(menu, 1, insertData)
+        tinsert(menu[parentRange].menuList, insertData)
     end
 
     EasyMenu(menu, trackerUi.levelMenuFrame, trackerUi.levelButton.frame, 0, 0,
