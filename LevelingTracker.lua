@@ -286,24 +286,6 @@ function addon.tracker:PLAYER_ENTERING_WORLD()
     RequestTimePlayed()
 end
 
-function addon.tracker.BuildDropdownLevels(levels, playerLevel)
-    local dropdownLevels = {}
-    local sortOrder = {}
-
-    for level, _ in pairs(levels) do
-        if level > playerLevel then break end
-
-        if level == addon.tracker.maxLevel then
-            dropdownLevels[level] = fmt("%d (%s)", level, L("Max"))
-        else
-            dropdownLevels[level] = fmt("%d to %d", level, level + 1)
-        end
-        tinsert(sortOrder, 1, level)
-    end
-
-    return dropdownLevels, sortOrder
-end
-
 function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
                                           attachment)
 
