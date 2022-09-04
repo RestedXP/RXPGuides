@@ -66,7 +66,7 @@ function addon.settings:InitializeSettings()
             alwaysSendBranded = true,
             checkVersions = true,
             enableLevelingReportInspections = true,
-            levelSplitsHistory = GetMaxPlayerLevel(),
+            levelSplitsHistory = 10,
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9
         }
