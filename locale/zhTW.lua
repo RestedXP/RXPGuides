@@ -122,7 +122,6 @@ L["This requires a reload to take effect, continue?"] =
 L["Extras"] = "額外"
 L["Optional extras"] = "可選額外"
 L["Optional Features"] = "可選功能"
-L["Leveling Tracker"] = ""
 L["Leveling Tracker"] = "升等跟蹤器"
 L["Enable Leveling Tracker"] = "啟用升等跟蹤器"
 L["Always Open Leveling Report With Character Panel"] =
