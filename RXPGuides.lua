@@ -470,7 +470,10 @@ end
 
 function addon:OnInitialize()
     RXPG_init()
-    local importGuidesDefault = {profile = {guides = {}}}
+    local importGuidesDefault = {
+        profile = {guides = {}, reports = {splits = {}}}
+    }
+
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
@@ -480,7 +483,7 @@ function addon:OnInitialize()
     end
     addon.settings:InitializeSettings()
     addon.comms:Setup()
-    if addon.settings.db.profile.enableTracker then addon.tracker.SetupTracker() end
+    if addon.settings.db.profile.enableTracker then addon.tracker:SetupTracker() end
 
     addon.RXPG.LoadCachedGuides()
     addon.RXPG.LoadEmbeddedGuides()

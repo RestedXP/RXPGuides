@@ -44,33 +44,34 @@ end
 function addon.tracker:SetupTracker()
     local trackerDefaults = {profile = {levels = {}}}
 
-    addon.tracker.db = LibStub("AceDB-3.0"):New("RXPCTrackingData",
-                                                trackerDefaults)
+    self.db = LibStub("AceDB-3.0"):New("RXPCTrackingData", trackerDefaults)
 
-    addon.tracker:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
-    addon.tracker:RegisterEvent("TIME_PLAYED_MSG")
-    addon.tracker:RegisterEvent("PLAYER_LEVEL_UP")
-    addon.tracker:RegisterEvent("QUEST_TURNED_IN")
-    addon.tracker:RegisterEvent("PLAYER_DEAD")
-    addon.tracker:RegisterEvent("PLAYER_ENTERING_WORLD")
+    self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
+    self:RegisterEvent("TIME_PLAYED_MSG")
+    self:RegisterEvent("PLAYER_LEVEL_UP")
+    self:RegisterEvent("QUEST_TURNED_IN")
+    self:RegisterEvent("PLAYER_DEAD")
+    self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     if addon.settings.db.profile.enableLevelingReportInspections and
         addon.settings.db.profile.enableBetaFeatures then
-        addon.tracker:RegisterEvent("INSPECT_READY")
-        addon.tracker:RegisterComm(addon.tracker._commPrefix)
+        self:RegisterEvent("INSPECT_READY")
+        self:RegisterComm(self._commPrefix)
     end
 
-    addon.tracker:GenerateDBLevel(addon.tracker.playerLevel)
-    addon.tracker:UpgradeDB()
+    self:GenerateDBLevel(self.playerLevel)
+    self:UpgradeDB()
 
-    addon.tracker:CompileData()
+    self:CompileData()
 
-    addon.tracker:CreateGui(_G.CharacterFrame, playerName)
+    self:CreateGui(_G.CharacterFrame, playerName)
 
     if addon.settings.db.profile.enablelevelSplits then
-        addon.tracker:CreateLevelSplits()
+        self.reportKey = fmt("%s|%s|%s", playerName, _G.UnitClass("player"),
+                             _G.GetRealmName())
+        self:CreateLevelSplits()
 
-        addon.tracker.levelSplits:Show()
+        self.levelSplits:Show()
     end
 end
 
@@ -924,6 +925,100 @@ function addon.tracker:BuildSplitsLevelLine(level, splitsString)
     return formattedString
 end
 
+function addon.tracker:UpdateSplitsMenu(menuFrame, button)
+
+    if addon.tracker.state.splitsMenu then
+        -- EasyMenu(addon.tracker.state.splitsMenu, menuFrame, button, 0, 0, "MENU")
+        -- return
+    end
+
+    local comparisonsMenu = {}
+
+    local menu = {
+        {
+            text = _G.SHARE_QUEST_ABBREV,
+            notCheckable = 1,
+            func = function()
+                addon.comms.OpenBrandedExport(fmt("%s %s",
+                                                  _G.SHARE_QUEST_ABBREV,
+                                                  L("Level Splits")), "",
+                                              addon.tracker:BuildSplitsShare(),
+                                              20, 200)
+            end
+        }, {
+            text = _G.GAMEOPTIONS_MENU,
+            tooltipOnButton = true,
+            notCheckable = 1,
+            func = function()
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
+                                                            .extras)
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
+                                                            .extras)
+            end
+        }, {
+            text = "Hide",
+            tooltipTitle = L("Temporarily hide, use '/rxp splits' to show again"),
+            tooltipOnButton = true,
+            notCheckable = 1,
+            func = function() addon.tracker.levelSplits:Hide() end
+        }
+    }
+
+    if addon.settings.db.profile.enableBetaFeatures then
+        tinsert(comparisonsMenu, {
+            text = "Export",
+            notCheckable = 1,
+            func = function()
+                addon.comms.OpenBrandedExport("Export Level Splits",
+                                              "Export string for Importing into another character's comparison data",
+                                              LibDeflate:EncodeForPrint(
+                                                  addon.tracker:BuildSplitsExport()),
+                                              20, 200)
+            end
+        })
+
+        tinsert(comparisonsMenu, {
+            text = "Import",
+            notCheckable = 1,
+            func = function()
+                addon.comms.OpenBrandedExport("Import Level Splits", "", "TODO",
+                                              20, 200)
+            end
+        })
+
+        tinsert(comparisonsMenu,
+                {text = _G.CHARACTER, notCheckable = 1, isTitle = true})
+
+        for k, d in pairs(addon.db.profile.reports.splits) do
+            if k ~= self.reportKey then
+                tinsert(comparisonsMenu, {
+                    text = d.title,
+                    arg1 = k,
+                    func = function(_, key)
+                        addon.comms.PrettyPrint("key = %s", key)
+                        addon.tracker.state.splitsComparisonKey = key
+                        _G.CloseDropDownMenus()
+                        addon.tracker:UpdateLevelSplits("full")
+                    end,
+                    notCheckable = 1
+                })
+            end
+        end
+
+        tinsert(menu, {
+            text = "Compare", -- TODO localize
+            hasArrow = true,
+            menuList = comparisonsMenu,
+            notCheckable = 1
+        })
+    end
+
+    tinsert(menu, {text = _G.CANCEL, notCheckable = 1, func = function() end})
+
+    addon.tracker.state.reportLevelMenu = menu
+    EasyMenu(menu, menuFrame, button, 0, 0, "MENU")
+end
+
 function addon.tracker:CreateLevelSplits()
     if addon.tracker.levelSplits then return end
     -- AceGUI:Create("Frame") has too much magic for how simple this is
@@ -972,55 +1067,8 @@ function addon.tracker:CreateLevelSplits()
     -- Width immediately overwritten in UpdateLevelSplits on PLAYER_ENTERING_WORLD
     f.title:SetSize(50, 17)
 
-    local menu = {
-        {
-            text = _G.SHARE_QUEST_ABBREV,
-            notCheckable = 1,
-            func = function()
-                addon.comms.OpenBrandedExport(fmt("%s %s",
-                                                  _G.SHARE_QUEST_ABBREV,
-                                                  L("Level Splits")), "",
-                                              addon.tracker:BuildSplitsShare(),
-                                              20, 200)
-            end
-        }, {
-            --[[text = "Export",
-            notCheckable = 1,
-            func = function()
-                addon.comms.OpenBrandedExport("Export Level Splits",
-                                              "Export string for Importing into another character's comparison data",
-                                              LibDeflate:EncodeForPrint(
-                                                  addon.tracker:BuildSplitsExport()),
-                                              20, 200)
-            end
-        }, {--]]
-            text = _G.GAMEOPTIONS_MENU,
-            tooltipOnButton = true,
-            notCheckable = 1,
-            func = function()
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .extras)
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .extras)
-            end
-        }, {
-            --[[text = "Import",
-            notCheckable = 1,
-            func = function()
-                addon.comms.OpenBrandedExport("Import Level Splits", "", "TODO",
-                                              20, 200)
-            end
-        }, {--]]
-            text = "Hide",
-            tooltipTitle = L("Temporarily hide, use '/rxp splits' to show again"),
-            tooltipOnButton = true,
-            notCheckable = 1,
-            func = function() f:Hide() end
-        }, {text = _G.CANCEL, notCheckable = 1, func = function() end}
-    }
-
-    local SplitsMenuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame",
-                                        f.title, "UIDropDownMenuTemplate")
+    f.title.splitsMenuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame",
+                                          f.title, "UIDropDownMenuTemplate")
 
     f.title.cog = CreateFrame("Button", "$parentCogwheel", f.title)
     f.title.cog:SetFrameLevel(f.title:GetFrameLevel() + 1)
@@ -1034,7 +1082,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.cog:Show()
 
     f.title.cog:SetScript("OnClick", function()
-        EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
+        addon.tracker:UpdateSplitsMenu(f.title.splitsMenuFrame, f.title.cog)
     end)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
@@ -1208,6 +1256,9 @@ function addon.tracker:CompileLevelSplits(kind)
         end
 
         splitsReportData.history = splitsData
+
+        -- Add full report to account variables
+        addon.db.profile.reports.splits[self.reportKey] = splitsReportData
     end
 
     return splitsReportData
@@ -1221,6 +1272,7 @@ function addon.tracker:UpdateLevelSplits(kind)
 
     local f = addon.tracker.levelSplits
     local reportSplitsData = self:CompileLevelSplits(kind)
+    -- TODO addon.tracker.state.splitsComparisonKey
 
     if addon.tracker.playerLevel == addon.tracker.maxLevel then
         -- Leave creation or full placeholder on updates
