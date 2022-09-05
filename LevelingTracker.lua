@@ -1046,13 +1046,22 @@ function addon.tracker:CreateLevelSplits()
     f.title.text:SetText("Level splits")
     f.title.text:SetPoint("CENTER", f.title, 0, 1)
 
+    f.history = AceGUI:Create("Label")
+    f.history:SetFont(self.fonts.splits,
+                      addon.settings.db.profile.levelSplitsFontSize)
+    f.history:SetFullWidth(true)
+    f.history.frame:SetParent(f)
+    f.history.frame:SetPoint("TOPLEFT", f, "TOPLEFT", 8,
+                             -(f.title:GetHeight() / 2 + 2))
+    f.history.frame:Show()
+    f.history:SetText("Level X: 00:00:00")
+
     f.current = AceGUI:Create("Label")
     f.current:SetFont(self.fonts.splits,
                       addon.settings.db.profile.levelSplitsFontSize)
     f.current:SetFullWidth(true)
     f.current.frame:SetParent(f)
-    f.current.frame:SetPoint("TOPLEFT", f, "TOPLEFT", 8,
-                             -(f.title:GetHeight() / 2 + 2))
+    f.current.frame:SetPoint("TOPLEFT", f.history.frame, "BOTTOMLEFT", 0, -8)
     f.current.frame:Show()
     if addon.tracker.playerLevel == addon.tracker.maxLevel then
         f.current:SetText("Level Time: Max")
@@ -1060,21 +1069,12 @@ function addon.tracker:CreateLevelSplits()
         f.current:SetText("Level Time: 00:00:00")
     end
 
-    f.history = AceGUI:Create("Label")
-    f.history:SetFont(self.fonts.splits,
-                      addon.settings.db.profile.levelSplitsFontSize)
-    f.history:SetFullWidth(true)
-    f.history.frame:SetParent(f)
-    f.history.frame:SetPoint("TOPLEFT", f.current.frame, "BOTTOMLEFT", 0, -8)
-    f.history.frame:Show()
-    f.history:SetText("Level X: 00:00:00")
-
     f.total = AceGUI:Create("Label")
     f.total:SetFont(self.fonts.splits,
                     addon.settings.db.profile.levelSplitsFontSize)
     f.total:SetFullWidth(true)
     f.total.frame:SetParent(f)
-    f.total.frame:SetPoint("TOPLEFT", f.history.frame, "BOTTOMLEFT", 0, -8)
+    f.total.frame:SetPoint("TOPLEFT", f.current.frame, "BOTTOMLEFT", 0, 0)
     f.total.frame:Show()
     f.total:SetText("Total Time: 00:00:00")
 
@@ -1276,7 +1276,7 @@ function addon.tracker:UpdateLevelSplits(kind)
     -- Frame heights plus offsets plus borders
     local height = f.current.label:GetStringHeight() +
                        f.history.label:GetStringHeight() +
-                       f.total.label:GetStringHeight() + 36
+                       f.total.label:GetStringHeight() + 26
 
     if currentFontSize == addon.settings.db.profile.levelSplitsFontSize then
         -- Font unchanged
