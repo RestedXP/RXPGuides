@@ -1,8 +1,9 @@
 local addonName, addon = ...
 
 local _G = _G
-local fmt, smatch, strsub, tinsert, srep = string.format, string.match,
-                                           string.sub, tinsert, string.rep
+local fmt, smatch, strsub, tinsert, srep, mmax = string.format, string.match,
+                                                 string.sub, tinsert,
+                                                 string.rep, math.max
 
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
       UnitXP, EasyMenu = UnitLevel, GetRealZoneText, IsInGroup, tonumber,
@@ -299,14 +300,16 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
     end
 
     local sparse = {}
-    local insertData, parentRange
+    local insertData, parentIndex, lowerLevel, upperLevel
 
     for level, _ in pairs(levelData) do
-        parentRange = floor(level / 10)
+        parentIndex = floor(level / 10) + 1
+        lowerLevel = mmax(floor(level / 10) * 10, 1) -- Handle 0 to 10 phrasing
+        upperLevel = floor(level / 10) * 10 + 10
 
-        if not sparse[parentRange] then
-            sparse[parentRange] = {
-                text = fmt("%d to %d", parentRange * 10, parentRange * 10 + 10),
+        if not sparse[parentIndex] then
+            sparse[parentIndex] = {
+                text = fmt("%d to %d", lowerLevel, upperLevel),
                 hasArrow = true,
                 menuList = {}
             }
@@ -333,7 +336,7 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
         insertData.arg1 = level
         insertData.arg2 = insertData.text
 
-        tinsert(sparse[parentRange].menuList, insertData)
+        tinsert(sparse[parentIndex].menuList, insertData)
     end
 
     local menu = {}
