@@ -1,12 +1,14 @@
 local addonName, addon = ...
 
-local fmt, smatch, strsub, tinsert, srep = string.format, string.match,
-                                           string.sub, tinsert, string.rep
+local _G = _G
+local fmt, smatch, strsub, tinsert, srep, mmax = string.format, string.match,
+                                                 string.sub, tinsert,
+                                                 string.rep, math.max
 
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
-      UnitXP = UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime,
-               GetServerTime, UnitXP
-local _G = _G
+      UnitXP, EasyMenu = UnitLevel, GetRealZoneText, IsInGroup, tonumber,
+                         GetTime, GetServerTime, UnitXP, _G.EasyMenu
+
 local AceGUI = LibStub("AceGUI-3.0")
 local LibDeflate = LibStub("LibDeflate")
 local L = addon.locale.Get
@@ -211,12 +213,6 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
         -- Build data after processing level up
         addon.tracker.reportData[data.level - 1] =
             addon.tracker:CompileLevelData(data.level - 1)
-        addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetList(
-            addon.tracker.BuildDropdownLevels(addon.tracker.db.profile["levels"],
-                                              data.level))
-        addon.tracker.ui[_G.CharacterFrame:GetName()].levelDropdown:SetValue(
-            data.level)
-
         addon.tracker:UpdateLevelSplits("full")
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
         addon.tracker.state.login = {
@@ -245,6 +241,7 @@ function addon.tracker:PLAYER_LEVEL_UP(_, level)
         level = level,
         date = C_DateAndTime.GetCurrentCalendarTime()
     }
+    addon.tracker.state.reportLevelMenu = nil
 
     RequestTimePlayed()
 end
@@ -291,22 +288,65 @@ function addon.tracker:PLAYER_ENTERING_WORLD()
     RequestTimePlayed()
 end
 
-function addon.tracker.BuildDropdownLevels(levels, playerLevel)
-    local dropdownLevels = {}
-    local sortOrder = {}
+function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
+                                          attachment)
 
-    for level, _ in pairs(levels) do
-        if level > playerLevel then break end
+    local trackerUi = addon.tracker.ui[attachment:GetName()]
 
-        if level == addon.tracker.maxLevel then
-            dropdownLevels[level] = fmt("%d (%s)", level, L("Max"))
-        else
-            dropdownLevels[level] = fmt("%d to %d", level, level + 1)
-        end
-        tinsert(sortOrder, 1, level)
+    if addon.tracker.state.reportLevelMenu then
+        EasyMenu(addon.tracker.state.reportLevelMenu, trackerUi.levelMenuFrame,
+                 trackerUi.levelButton.frame, 0, 0, "MENU")
+        return
     end
 
-    return dropdownLevels, sortOrder
+    local sparse = {}
+    local insertData, parentIndex, lowerLevel, upperLevel
+
+    for level, _ in pairs(levelData) do
+        parentIndex = floor(level / 10) + 1
+        lowerLevel = mmax(floor(level / 10) * 10, 1) -- Handle 0 to 10 phrasing
+        upperLevel = floor(level / 10) * 10 + 10
+
+        if not sparse[parentIndex] then
+            sparse[parentIndex] = {
+                text = fmt("%d to %d", lowerLevel, upperLevel),
+                hasArrow = true,
+                menuList = {}
+            }
+        end
+
+        if level > playerLevel then break end
+
+        insertData = {
+            notCheckable = 1,
+            func = function(_, l, text)
+                addon.tracker:UpdateReport(l, target, attachment)
+
+                trackerUi.levelButton:SetText(text)
+                _G.CloseDropDownMenus()
+            end
+        }
+
+        if level == addon.tracker.maxLevel then
+            insertData.text = fmt("%d (%s)", level, L("Max"))
+        else
+            insertData.text = fmt("%d to %d", level, level + 1)
+        end
+
+        insertData.arg1 = level
+        insertData.arg2 = insertData.text
+
+        tinsert(sparse[parentIndex].menuList, insertData)
+    end
+
+    local menu = {}
+
+    -- Shrink sparse array, e.g. missing data
+    for _, d in pairs(sparse) do tinsert(menu, d) end
+
+    addon.tracker.state.reportLevelMenu = menu
+    EasyMenu(menu, trackerUi.levelMenuFrame, trackerUi.levelButton.frame, 0, 0,
+             "MENU")
 end
 
 local function buildSpacer(height)
@@ -389,19 +429,21 @@ function addon.tracker:CreateGui(attachment, target)
     local topContainer = AceGUI:Create("SimpleGroup")
     topContainer:SetLayout('Flow')
 
-    trackerUi.levelDropdown = AceGUI:Create("Dropdown")
+    trackerUi.levelButton = AceGUI:Create("Button")
+    trackerUi.levelButton:SetRelativeWidth(0.45)
 
-    trackerUi.levelDropdown:SetList(self.BuildDropdownLevels(levelData,
-                                                             playerLevel))
-    trackerUi.levelDropdown:SetValue(playerLevel)
+    trackerUi.levelButton:SetText(fmt("%d to %d", playerLevel, playerLevel + 1))
 
-    trackerUi.levelDropdown:SetRelativeWidth(0.45)
+    trackerUi.levelMenuFrame = CreateFrame("Frame", "RXPG_LevelMenuFrame",
+                                           trackerUi.levelButton.frame,
+                                           "UIDropDownMenuTemplate")
 
-    trackerUi.levelDropdown:SetCallback("OnValueChanged", function(_, _, key)
-        addon.tracker:UpdateReport(key, target, attachment)
+    trackerUi.levelButton:SetCallback("OnClick", function()
+        addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
+                                         attachment)
     end)
 
-    topContainer:AddChild(trackerUi.levelDropdown)
+    topContainer:AddChild(trackerUi.levelButton)
 
     trackerUi.target = AceGUI:Create("Label")
 
@@ -719,8 +761,12 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 
     if selectedLevel == self.state.levelReportData.playerLevel then
         if selectedLevel == addon.tracker.maxLevel then
+            trackerUi.levelButton:SetText(
+                fmt("%d (%s)", selectedLevel, L("Max")))
             trackerUi.reachedContainer.label:SetText("Reached max level")
         else
+            trackerUi.levelButton:SetText(
+                fmt("%d to %d", selectedLevel, selectedLevel + 1))
             trackerUi.reachedContainer.label:SetText("Started level " ..
                                                          selectedLevel)
         end
@@ -742,6 +788,8 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
             trackerUi.reachedContainer.data:SetText("Missing data")
         end
     else
+        trackerUi.levelButton:SetText(fmt("%d to %d", selectedLevel,
+                                          selectedLevel + 1))
         trackerUi.reachedContainer.label:SetText("Reached Level " ..
                                                      selectedLevel + 1)
 
@@ -984,12 +1032,9 @@ function addon.tracker:CreateLevelSplits()
     f.title.cog:SetHighlightTexture(
         "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
     f.title.cog:Show()
-    f.title.cog:SetScript("OnClick", function()
-        _G.EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
-    end)
 
-    f.title.cog:SetScript("OnMouseDown", function()
-        _G.EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
+    f.title.cog:SetScript("OnClick", function()
+        EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
     end)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
@@ -1260,8 +1305,8 @@ function addon.tracker:BuildSplitsShare()
     local splitsString = fmt("%s\n", reportSplitsData.title)
 
     if reportSplitsData.current.duration then
-        splitsString = fmt("%s\n" .. L("Level %d time") .. ": %s\n", splitsString,
-                           addon.tracker.playerLevel,
+        splitsString = fmt("%s\n" .. L("Level %d time") .. ": %s\n",
+                           splitsString, addon.tracker.playerLevel,
                            addon.tracker:PrintSplitsTime(
                                reportSplitsData.current.duration))
     end
