@@ -18,7 +18,7 @@ _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
 -- Full common phrases
 
 -- Words
-L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "殺"}
+L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "擊殺"}
 
 -- Core Addon UI translations
 L["Error parsing guides\nTotal guides loaded: %d/%s"] =
@@ -180,7 +180,7 @@ L["Extras"] = "附加功能"
 
 L["Give Feedback for step"] = "反饋進度"
 L["I just leveled from %d to %d in %s"] =
-    "我剛剛在 %s 內從 %d 升等到 %d"
+    "我剛剛從 %d 升等到 %d 使用了 %s"
 L["I just leveled up to %d"] = "我剛升等到 %d"
 L["There's a new addon version (%s) available"] =
     "有一個新的插件版本 (%s) 可用"
@@ -210,14 +210,14 @@ L["Click to view the link"] = "點擊查看鏈接"
 L["Stable your pet"] = "穩定你的寵物"
 L["Train skills"] = "訓練技能"
 L["Sell junk/resupply"] = "賣垃圾/補給"
-L["Grind until you are %.0f%% into %s with %s"] = "重複做 %s 直到 %s 達到 %.0f%%"
-L["Grind until you are %s into %s with %s"] = "重複做 %s 直到 %s 達到 %s"
+L["Grind until you are %.0f%% into %s with %s"] = "重複做，直到達到 %.0f%%, %s （%s）"
+L["Grind until you are %s into %s with %s"] = "重複做，直到達到 %s, %s （%s）"
 L["Grind until you are %d away from %s with %s"] =
-    "重複做 %s 直到你離 %s %d"
+    "重複做，直到 %d 距離 %s (%s)"
 L["Grind until you are %d xp away from level %s"] =
-    "重複直到距離 %s 級 %d xp"
-L["Grind until you are %s xp into level %s"] = "重複直到 %s xp（ %s 級）"
-L["Grind until you are %.0f%% into level %s"] = "重複直到 %.0f%% （ %s 級）"
+    "重複做，直到 %d xp 距離 %s 級"
+L["Grind until you are %s xp into level %s"] = "重複直到 %s xp（%s 級）"
+L["Grind until you are %.0f%% into level %s"] = "重複直到 %.0f%% （%s 級）"
 L["Throw away %s%s from your bags"] = "把 %s%s 從你的包包裡扔掉"
 L["Die and respawn at the graveyard"] = "自盡，在墓地使用靈魂醫者復活"
 L["Fly to"] = "飛到"
@@ -246,7 +246,7 @@ L["Welcome to RestedXP Guides\nRight click to pick a guide"] =
     "歡迎使用 RestedXP 指南\n右鍵單擊選擇指南"
 L["Reload Guide"] = "重新載入指南"
 L["Select another guide"] = "選擇其他指南"
-L["Step %d"] = "第%d步"
+L["Step %d"] = "第 %d 步"
 L["Level %d time"] = "第 %d 級時間"
 L["Level %d"] = "等級 %d"
 L["Missing Data"] = "缺失數據"
