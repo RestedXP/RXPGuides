@@ -240,6 +240,7 @@ function addon.tracker:PLAYER_LEVEL_UP(_, level)
         level = level,
         date = C_DateAndTime.GetCurrentCalendarTime()
     }
+    addon.tracker.state.reportLevelMenu = nil
 
     RequestTimePlayed()
 end
@@ -290,15 +291,22 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
                                           attachment)
 
     local trackerUi = addon.tracker.ui[attachment:GetName()]
-    local menu = {}
+
+    if addon.tracker.state.reportLevelMenu then
+        EasyMenu(addon.tracker.state.reportLevelMenu, trackerUi.levelMenuFrame,
+                 trackerUi.levelButton.frame, 0, 0, "MENU")
+        return
+    end
+
+    local sparse = {}
     local insertData, parentRange
 
     for level, _ in pairs(levelData) do
-        parentRange = floor(level / 10) + 1
+        parentRange = floor(level / 10)
 
-        if not menu[parentRange] then
-            menu[parentRange] = {
-                text = fmt("%d to %d", level, level + 10),
+        if not sparse[parentRange] then
+            sparse[parentRange] = {
+                text = fmt("%d to %d", parentRange * 10, parentRange * 10 + 10),
                 hasArrow = true,
                 menuList = {}
             }
@@ -325,9 +333,15 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
         insertData.arg1 = level
         insertData.arg2 = insertData.text
 
-        tinsert(menu[parentRange].menuList, insertData)
+        tinsert(sparse[parentRange].menuList, insertData)
     end
 
+    local menu = {}
+
+    -- Shrink sparse array, e.g. missing data
+    for _, d in pairs(sparse) do tinsert(menu, d) end
+
+    addon.tracker.state.reportLevelMenu = menu
     EasyMenu(menu, trackerUi.levelMenuFrame, trackerUi.levelButton.frame, 0, 0,
              "MENU")
 end
