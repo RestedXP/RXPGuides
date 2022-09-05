@@ -650,7 +650,7 @@ function addon.tracker:CompileLevelData(level, d)
     report.deaths = data.deaths
 
     if data.timestamp.dateStarted then -- Level 1
-        report.timestamp.dateStarted = fmt("%s %d, %d at %d:%d %s Server",
+        report.timestamp.dateStarted = fmt("%s %d, %d at %d:%02d %s Server",
                                            _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
                                                .dateStarted.month],
                                            data.timestamp.dateStarted.monthDay,
@@ -661,7 +661,7 @@ function addon.tracker:CompileLevelData(level, d)
                                                "PM" or "AM")
     end
     if data.timestamp.dateFinished then
-        report.timestamp.dateFinished = fmt("%s %d, %d at %d:%d %s Server",
+        report.timestamp.dateFinished = fmt("%s %d, %d at %d:%02d %s Server",
                                             _G.CALENDAR_FULLDATE_MONTH_NAMES[data.timestamp
                                                 .dateFinished.month],
                                             data.timestamp.dateFinished.monthDay,
