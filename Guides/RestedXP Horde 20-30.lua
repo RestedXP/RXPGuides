@@ -2626,15 +2626,17 @@ step
 step
 	#requires partsoftheswarm
     .turnin -1147 >> Turn in The Swarm Grows
-step
     .goto Thousand Needles,67.6,63.9
+step
     .turnin -1110 >> Turn in Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
     .turnin -1104 >> Turn in Salt Flat Venom
     .goto Thousand Needles,78.0,77.1
     .turnin -1105 >> Turn in Hardened Shells
+    .goto Thousand Needles,78.1,77.1
 step
     .xp <33,1
+    .isQuestTurnedIn 1104
     .accept 1107 >> Accept Encrusted Tail Fins
     .accept 1106 >> Accept Martek the Exiled
 step
