@@ -845,10 +845,6 @@ step << Warlock
     .goto Durotar,54.4,41.2
     .train 980 >>Train Curse of Agony
     .train 5782 >>Train Fear
-step << Warlock
-    #xprate <1.5
-.goto Durotar,54.7,41.5
-    .vendor >>Buy the Firebolt r2 book and use it
 step << Warrior/Rogue
     #xprate <1.5
     .goto Durotar,54.2,41.9
