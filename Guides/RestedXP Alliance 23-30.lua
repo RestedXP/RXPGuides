@@ -1059,6 +1059,7 @@ step
     .accept 270 >> Accept The Doomed Fleet
 step
     #xprate >1.3
+    .xp <28,1
     .goto StormwindClassic,41.5,31.7
 	>>Talk to the patrolling kid
     .accept 1274 >> Accept The Missing Diplomat
@@ -1596,6 +1597,7 @@ step
 	#sticky
 	#label MDiplomats
 	#completewith nomorekid
+    .xp <28,1
     .goto StormwindClassic,41.5,31.7
 	>>Talk to the patrolling kid
     .accept 1274 >> Accept The Missing Diplomat
@@ -1626,6 +1628,7 @@ step
     .goto StormwindClassic,74.1,7.6
     .accept 538 >> Accept Southshore
 step
+    .isOnQuest 1274
     .goto StormwindClassic,78.1,25.1
     .turnin 1274 >> Turn in The Missing Diplomat
     .accept 1241 >> Accept The Missing Diplomat
@@ -1653,10 +1656,12 @@ step << Rogue
 	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step
+    .isOnQuest 1241
     .goto StormwindClassic,73.1,78.3
     .turnin 1241 >> Turn in The Missing Diplomat
     .accept 1242 >> Accept The Missing Diplomat
 step
+    .isOnQuest 1242
     .goto StormwindClassic,60.1,64.4
     .turnin 1242 >> Turn in The Missing Diplomat
     .accept 1243 >> Accept The Missing Diplomat
@@ -1724,6 +1729,7 @@ step << !Hunter !Paladin
     .turnin 229 >> Turn in The Daughter Who Lived
     .accept 231 >> Accept A Daughter's Love
 step
+    .isOnQuest 1243
     .goto Duskwood,72.6,33.9
     .turnin 1243 >> Turn in The Missing Diplomat
     .accept 1244 >> Accept The Missing Diplomat
@@ -1910,6 +1916,7 @@ step << !Shaman
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
 step
+    .isOnQuest 1244
     .goto Duskwood,72.6,33.9
     .turnin 1244 >> Turn in The Missing Diplomat
     .accept 1245 >> Accept The Missing Diplomat
@@ -2018,6 +2025,7 @@ step << Dwarf Paladin
     >>Buy 10 Linen Cloth from the Auction House
     .complete 1648,1
 step
+    .isOnQuest 1245
     .goto StormwindClassic,60.1,64.4
     .turnin 1245 >> Turn in The Missing Diplomat
     .accept 1246 >> Accept The Missing Diplomat
@@ -2046,6 +2054,7 @@ step << Rogue
 	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step
+    .isOnQuest 1246
     .goto StormwindClassic,70.3,44.8
     >>Beat Dashel Stonefist
     .turnin 1246 >> Turn in The Missing Diplomat
@@ -2053,6 +2062,7 @@ step
     .turnin 1447 >> Turn in The Missing Diplomat
     .accept 1247 >> Accept The Missing Diplomat
 step
+    .isOnQuest 1247
     .goto StormwindClassic,60.1,63.9
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
@@ -2196,6 +2206,7 @@ step
     .goto Wetlands,10.6,60.7
     .home >> Set your Hearthstone to Wetlands
 step
+    .isOnQuest 1248
     .goto Wetlands,10.6,60.7
     .turnin 1248 >> Turn in The Missing Diplomat
     .accept 1249 >> Accept The Missing Diplomat
@@ -2203,12 +2214,15 @@ step
     >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn
     .complete 1249,1 --Defeat Tapoke Jahn
 step
+    .isOnQuest 1249
     .goto Wetlands,10.6,60.7
     .turnin 1249 >> Turn in The Missing Diplomat
 step
+    .isOnQuest 1250
     .goto Wetlands,10.6,60.3
     .accept 1250 >> Accept The Missing Diplomat
 step
+    .isOnQuest 1250
     .goto Wetlands,10.6,60.7
     .turnin 1250 >> Turn in The Missing Diplomat
     .accept 1264 >> Accept The Missing Diplomat
@@ -2337,6 +2351,7 @@ step
 	#sticky
 	#label MDiplomats
 	#completewith nomorekid
+    .xp <28,1
     .goto StormwindClassic,41.5,31.7
 	>>Talk to the patrolling kid
     .accept 1274 >> Accept The Missing Diplomat
@@ -2363,6 +2378,7 @@ step
     .turnin 337 >> Turn in An Old History Book
     .accept 538 >> Accept Southshore
 step
+    .isOnQuest 1274
     .goto StormwindClassic,78.1,25.1
     .turnin 1274 >> Turn in The Missing Diplomat
     .accept 1241 >> Accept The Missing Diplomat
@@ -2391,10 +2407,12 @@ step << Rogue
 	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step
+    .isOnQuest 1241
     .goto StormwindClassic,73.1,78.3
     .turnin 1241 >> Turn in The Missing Diplomat
     .accept 1242 >> Accept The Missing Diplomat
 step
+    .isOnQuest 1242
     .goto StormwindClassic,60.1,64.4
     .turnin 1242 >> Turn in The Missing Diplomat
     .accept 1243 >> Accept The Missing Diplomat
@@ -2468,6 +2486,7 @@ step << !Hunter !Paladin
     .turnin 229 >> Turn in The Daughter Who Lived
     .accept 231 >> Accept A Daughter's Love
 step
+    .isOnQuest 1243
     .goto Duskwood,72.6,33.9
     .turnin 1243 >> Turn in The Missing Diplomat
     .accept 1244 >> Accept The Missing Diplomat
@@ -2653,6 +2672,7 @@ step << !Shaman
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
 step
+    .isOnQuest 1244
     .goto Duskwood,72.6,33.9
     >> He patrols along the north road
     .turnin 1244 >> Turn in The Missing Diplomat
@@ -2710,6 +2730,7 @@ step << Dwarf Paladin
     >>Buy 10 Linen Cloth from the Auction House
     .complete 1648,1
 step
+    .isOnQuest 1245
     .goto StormwindClassic,60.1,64.4
     .turnin 1245 >> Turn in The Missing Diplomat
     .accept 1246 >> Accept The Missing Diplomat
@@ -2736,6 +2757,7 @@ step << Rogue
 	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
 step
+    .isOnQuest 1246
     .goto StormwindClassic,70.3,44.8
     >>Beat Dashel Stonefist
     .turnin 1246 >> Turn in The Missing Diplomat
@@ -2743,6 +2765,7 @@ step
     .turnin 1447 >> Turn in The Missing Diplomat
     .accept 1247 >> Accept The Missing Diplomat
 step
+    .isOnQuest 1247
     .goto StormwindClassic,60.1,63.9
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
@@ -2991,6 +3014,7 @@ step << wotlk
     + If you don't already have your mount, mail yourself 5g if you can. More opportunities soon.
 step
     #requires mead
+    .isOnQuest 1248
     .goto Wetlands,10.6,60.7
     .turnin 1248 >> Turn in The Missing Diplomat
     .accept 1249 >> Accept The Missing Diplomat
@@ -2998,12 +3022,15 @@ step
     >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn. Two level 34 enemies will attack you. You may need to skip this step and do it later if you cannot kill them.
     .complete 1249,1 --Defeat Tapoke Jahn
 step
+    .isOnQuest 1249
     .goto Wetlands,10.6,60.7
     .turnin 1249 >> Turn in The Missing Diplomat
 step
+    .isQuestTurnedIn 1249
     .goto Wetlands,10.6,60.3
     .accept 1250 >> Accept The Missing Diplomat
 step
+    .isOnQuest 1250
     .goto Wetlands,10.6,60.7
     .turnin 1250 >> Turn in The Missing Diplomat
     .accept 1264 >> Accept The Missing Diplomat
