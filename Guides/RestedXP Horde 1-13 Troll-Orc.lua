@@ -1604,11 +1604,6 @@ step
     >> Head into the Cleft of Shadow
     .accept 813 >>Accept Finding the Antidote
 step
-    .isOnQuest 812
-    #completewith next
-    >> Abandon Need for a Cure. This will remove the timer on the quest but still allow you to still do it.
-    .abandon 812 >>Abandon Need for a Cure
-step
 .goto Orgrimmar,49.0,94.2,20 >>Run out of Orgrimmar
 step
 .goto Durotar,41.7,25.5,30 >>Jump into Thunder Ridge
