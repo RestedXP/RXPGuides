@@ -289,7 +289,7 @@ step
     #completewith next
     .goto Darkshore,42.0,58.3
     .isOnQuest 957
-    .deathskip >>Die at the north side of Ameth'Aran and spirit rez at the northern graveyar
+    .deathskip >>Die at the north side of Ameth'Aran and spirit rez at the northern graveyard
 step
 #xprate <1.5
     #requires relics1
