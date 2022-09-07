@@ -4,8 +4,8 @@ local fmt, mrand, smatch, sbyte = string.format, math.random, string.match,
                                   string.byte
 
 local GetNumGroupMembers, SendChatMessage, GetTime, UnitLevel, UnitClass,
-      UnitXP, UnitXPMax = GetNumGroupMembers, SendChatMessage, GetTime,
-                          UnitLevel, UnitClass, UnitXP, UnitXPMax
+      UnitXP, UnitXPMax, pcall = GetNumGroupMembers, SendChatMessage, GetTime,
+                                 UnitLevel, UnitClass, UnitXP, UnitXPMax, pcall
 
 local _G = _G
 
@@ -510,7 +510,7 @@ Current Step data
 end
 
 function addon.comms.OpenBrandedExport(title, description, content, width,
-                                       height)
+                                       height, acceptCallback)
 
     local f = AceGUI:Create("Frame") -- TODO use AceGUI:Create("Window")
     f:Hide()
@@ -527,19 +527,29 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
     editbox:SetLabel(description)
     editbox:SetFullWidth(true)
     editbox:SetFullHeight(true)
+    editbox:SetMaxLetters(0)
     editbox:SetText(content)
-    editbox:DisableButton(true)
+
+    if acceptCallback then
+        editbox:SetCallback("OnEnterPressed", function(_, _, text)
+            local success = pcall(acceptCallback, text)
+            if success then editbox:SetText("") end
+        end)
+    else
+        -- Fake read-only
+        editbox:DisableButton(true)
+        editbox:SetCallback("OnTextChanged",
+                            function() editbox:SetText(content) end)
+
+        editbox.editBox:SetScript("OnMouseUp", function()
+            editbox:HighlightText()
+
+            -- Only highlight text on first enter
+            editbox.editBox:SetScript("OnMouseUp", nil)
+        end)
+    end
+
     f:AddChild(editbox)
-
-    editbox:SetCallback("OnTextChanged", function() editbox:SetText(content) end)
-    editbox:SetCallback("OnEnterPressed",
-                        function() editbox.editbox:ClearFocus() end)
-    editbox.editBox:SetScript("OnMouseUp", function()
-        editbox:HighlightText()
-
-        -- Only highlight text on first enter
-        editbox.editBox:SetScript("OnMouseUp", nil)
-    end)
 
     local frameWidth = max(width or 0, f.titletext:GetWidth() * 1.5,
                            editbox.label:GetStringWidth() * 1.1)

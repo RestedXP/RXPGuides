@@ -971,8 +971,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
             func = function()
                 addon.comms.OpenBrandedExport("Export Level Splits",
                                               "Export string for Importing into another character's comparison data",
-                                              LibDeflate:EncodeForPrint(
-                                                  addon.tracker:BuildSplitsExport()),
+                                              addon.tracker:BuildSplitsExport(),
                                               20, 200)
             end
         })
@@ -981,8 +980,10 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
             text = "Import",
             notCheckable = 1,
             func = function()
-                addon.comms.OpenBrandedExport("Import Level Splits", "", "TODO",
-                                              20, 200)
+                return addon.comms.OpenBrandedExport("Import Level Splits",
+                                                     "Import string from another character",
+                                                     "", 20, 200,
+                                                     addon.tracker.ImportSplits)
             end
         })
 
@@ -1174,7 +1175,9 @@ end
 function addon.tracker:CompileLevelSplits(kind)
     local splitsReportData = {
         title = fmt("%s (%s) - %s", playerName, _G.UnitClass("player"),
-                    _G.GetRealmName())
+                    _G.GetRealmName()),
+        reportKey = fmt("%s|%s|%s", playerName, _G.UnitClass("player"),
+                        _G.GetRealmName())
     }
     local secondsSinceLogin = difftime(time(), addon.tracker.state.login.time)
 
@@ -1380,9 +1383,32 @@ end
 
 function addon.tracker:BuildSplitsExport()
     local reportSplitsData = self:CompileLevelSplits("full")
-    local data = addon.comms:Serialize(reportSplitsData)
 
-    return LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(data))
+    return LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(
+                                         addon.comms:Serialize(reportSplitsData)))
+end
+
+function addon.tracker.ImportSplits(encodedText)
+    local decoded = LibDeflate:DecodeForPrint(encodedText)
+
+    if not decoded then
+        addon.comms.PrettyPrint("Invalid data")
+        return
+    end
+    local decompressed = LibDeflate:DecompressDeflate(decoded)
+
+    local deserializeResult, deserialized =
+        addon.comms:Deserialize(decompressed)
+
+    if not deserializeResult then
+        addon.comms.PrettyPrint("Error Importing: " .. deserialized)
+        return
+    end
+
+    addon.comms.PrettyPrint("Importing %s", deserialized.title)
+    addon.db.profile.reports.splits[deserialized.reportKey] = deserialized
+
+    return true
 end
 
 function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
