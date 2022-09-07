@@ -1001,10 +1001,23 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
                         _G.CloseDropDownMenus()
                         addon.tracker:UpdateLevelSplits("full")
                     end,
-                    notCheckable = 1
+                    checked = function()
+                        return k == self.state.splitsComparisonKey
+                    end
                 })
             end
         end
+
+        tinsert(comparisonsMenu, {
+            text = _G.NONE,
+            func = function()
+                addon.tracker.state.splitsComparisonKey = nil
+                _G.CloseDropDownMenus()
+            end,
+            checked = function()
+                return not self.state.splitsComparisonKey
+            end
+        })
 
         tinsert(menu, {
             text = "Compare", -- TODO localize
@@ -1275,9 +1288,11 @@ function addon.tracker:UpdateLevelSplits(kind)
 
     local f = addon.tracker.levelSplits
     local reportSplitsData = self:CompileLevelSplits(kind)
-    -- TODO addon.tracker.state.splitsComparisonKey
+    local compareTo = self.state.splitsComparisonKey and
+                          addon.db.profile.reports.splits[self.state
+                              .splitsComparisonKey]
 
-    if addon.tracker.playerLevel == addon.tracker.maxLevel then
+    if self.playerLevel == self.maxLevel then
         -- Leave creation or full placeholder on updates
         if kind == "full" then
             f.current:SetText(reportSplitsData.current.text)
@@ -1291,9 +1306,9 @@ function addon.tracker:UpdateLevelSplits(kind)
     end
 
     if kind == "full" then
-        local oldestLevel = addon.tracker.playerLevel -
+        local oldestLevel = self.playerLevel -
                                 addon.settings.db.profile.levelSplitsHistory
-        local highestLevel = addon.tracker.playerLevel - 1
+        local highestLevel = self.playerLevel - 1
         local data, splitsString
 
         for l = oldestLevel, highestLevel do
@@ -1349,8 +1364,8 @@ function addon.tracker:UpdateLevelSplits(kind)
     end
 
     -- Remove refresh after the first full update at max level
-    if addon.tracker.playerLevel == addon.tracker.maxLevel and kind == "full" then
-        addon.tracker.levelSplits:SetScript("OnUpdate", nil)
+    if self.playerLevel == self.maxLevel and kind == "full" then
+        self.levelSplits:SetScript("OnUpdate", nil)
     end
 end
 
