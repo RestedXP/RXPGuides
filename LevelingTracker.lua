@@ -1379,12 +1379,11 @@ function addon.tracker:UpdateLevelSplits(kind)
                        f.history.label:GetStringHeight() +
                        f.total.label:GetStringHeight() + 26
 
-
     if kind == "full" and not self.state.splitsComparisonKey then
         -- Shrink to smallest after removing comparison deltas
         f.title:SetWidth(min(f.title:GetWidth(), width))
         f:SetSize(min(f:GetWidth(), width + 16), height)
-    elseif currentFontSize == addon.settings.db.profile.levelSplitsFontSize
+    elseif currentFontSize == addon.settings.db.profile.levelSplitsFontSize then
         -- Font unchanged
         -- Only update width if next is wider, prevent jittering
         f.title:SetWidth(max(f.title:GetWidth(), width))
