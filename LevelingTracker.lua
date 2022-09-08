@@ -1325,6 +1325,9 @@ function addon.tracker:UpdateLevelSplits(kind)
     end
 
     if kind == "full" then
+        -- Sometimes texture doesn't load, set again
+        f.bg:SetTexture(addon.GetTexture("rxp-banner"))
+
         local oldestLevel = self.playerLevel -
                                 addon.settings.db.profile.levelSplitsHistory
         local highestLevel = self.playerLevel - 1
@@ -1381,8 +1384,8 @@ function addon.tracker:UpdateLevelSplits(kind)
 
     if kind == "full" and not self.state.splitsComparisonKey then
         -- Shrink to smallest after removing comparison deltas
-        f.title:SetWidth(min(f.title:GetWidth(), width))
-        f:SetSize(min(f:GetWidth(), width + 16), height)
+        f.title:SetWidth(width)
+        f:SetSize(width + 16, height)
     elseif currentFontSize == addon.settings.db.profile.levelSplitsFontSize then
         -- Font unchanged
         -- Only update width if next is wider, prevent jittering
