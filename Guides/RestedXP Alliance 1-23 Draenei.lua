@@ -40,6 +40,7 @@ step
 step
 	#sticky
     #label mothblood
+    >> Kill and loot Vale Moths
     .complete 9280,1 --Collect Vial of Moth Blood (x8)
 step
     .goto Azuremyst Isle,78.4,44.3
@@ -140,7 +141,7 @@ step
     .accept 9303 >> Accept Inoculation
 step
     .goto Azuremyst Isle,85.3,66.2
-	.use 22962 >>Use the Innoculating Crystal in your bags to innoculate the neutral Owlbeasts.
+	.use 22962 >>Use the Innoculating Crystal in your bags to innoculate the Nestlewood Owlkins.
 	>> Loot Emitters on the ground, they look like spinning pink crystals.
     .complete 9303,1 --Nestlewood Owlkin inoculated (x6)
     .complete 9305,1 --Collect Emitter Spare Part (x4)
@@ -177,20 +178,20 @@ step
 step
     .goto Azuremyst Isle,69.2,65.5
     .complete 9311,1 --Kill Surveyor Candress (x1)
-	>>Loot the plans from the Surveyor and right click it
+	.use 23003 >>Loot the plans from the Surveyor and right click it
     .accept 9798 >> Accept Blood Elf Plans
 step
 	#sticky
 	#completewith next
     .xp 6-1485 >>Grind elves until you are 1485xp away from level 6 (1315/2800). Let yourself get low hp on the last few mobs, we're death skipping after.
 step
-	>>Die and talk to the spirit healer to respawn at the graveyard
+	.deathskip >>Die and talk to the spirit healer to respawn at the graveyard
     .goto Azuremyst Isle,79.2,46.4
     .turnin 9294 >> Turn in Healing the Lake
 step
     #label survivors2
     #requires survivors
-    .goto Azuremyst Isle,80.1,49.0,0
+    .goto Azuremyst Isle,80.1,49.0
     .turnin 9283 >> Turn in Rescue the Survivors!
 step
     .goto Azuremyst Isle,79.5,51.6
@@ -1620,7 +1621,7 @@ step << Hunter/Shaman/Mage
     #completewith L20
     #requires limit1
     .goto Bloodmyst Isle,55.6,55.3
-    .turnin 9746 >> Turnin Limits of Physical Exhaustion
+    .turnin 9746 >> Turn in Limits of Physical Exhaustion
     .accept 9740 >> Accept The Sun Gate
 step << Hunter/Shaman/Mage
     #label sungate
@@ -1654,13 +1655,13 @@ step
     .turnin 9741 >> Turn in Critters of the Void
     .turnin 9748 >> Turn in Don't Drink the Water
     .turnin 9711 >> Turn in Matis the Cruel
-    .accept 9746 >> Accept Limits of Physical Exhaustion
+    .accept 9746 >> Accept Limits of Physical Exhaustion << Hunter/Shaman/Mage
 	.isQuestComplete 9711
 step
     .goto Bloodmyst Isle,55.6,55.3
     .turnin 9741 >> Turn in Critters of the Void
     .turnin 9748 >> Turn in Don't Drink the Water
-    .accept 9746 >> Accept Limits of Physical Exhaustion
+    .accept 9746 >> Accept Limits of Physical Exhaustion << Hunter/Shaman/Mage
 step
 	.goto Bloodmyst Isle,55.6,55.3
 	.abandon 9711 >> Abandon Matis the Cruel
