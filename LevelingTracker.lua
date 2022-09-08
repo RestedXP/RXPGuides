@@ -899,6 +899,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 end
 
 function addon.tracker:PrintSplitsTime(s)
+    s = abs(s)
     local hours = floor(s / 60 / 60)
     s = mod(s, 60 * 60)
 
@@ -911,7 +912,7 @@ function addon.tracker:PrintSplitsTime(s)
     elseif minutes > 0 then
         formattedString = fmt("%02d:%02d", minutes, s)
     else
-        formattedString = fmt("%s00:%02d", s < 0 and '-' or '', abs(s)) -- Big gratz for leveling in under a minute
+        formattedString = fmt("00:%02d", s)
     end
 
     return formattedString
@@ -1284,17 +1285,25 @@ function addon.tracker:CompileLevelSplits(kind)
     return splitsReportData
 end
 
-local function splitTime(mine, theirs)
+local function printDelta(mine, theirs)
+    local w = #"-00:00:00:00"
+    if not mine or not theirs then
+        return fmt("%s%s", srep(' ', w - #'-'), '-')
+    end
+
     local diff = mine - theirs
+    local diffString = addon.tracker:PrintSplitsTime(diff)
+
+    diffString = fmt("%s%s", srep(' ', w - #diffString), diffString)
 
     if diff < 0 then
-        return fmt("|cff00aa00%s|r", addon.tracker:PrintSplitsTime(diff))
+        return fmt("|cff00aa00%s|r", diffString)
     elseif diff > 0 then
-        return fmt("|cffff0000%s|r", addon.tracker:PrintSplitsTime(diff))
+        return fmt("|cffff0000%s|r", diffString)
     end
 
     -- Even time, use default color
-    return addon.tracker:PrintSplitsTime(diff)
+    return diffString
 end
 
 function addon.tracker:UpdateLevelSplits(kind)
@@ -1305,7 +1314,6 @@ function addon.tracker:UpdateLevelSplits(kind)
 
     local f = addon.tracker.levelSplits
     local reportSplitsData = self:CompileLevelSplits(kind)
-    local s = '   '
     local compareTo = self.state.splitsComparisonKey and
                           addon.db.profile.reports.splits[self.state
                               .splitsComparisonKey]
@@ -1318,9 +1326,9 @@ function addon.tracker:UpdateLevelSplits(kind)
             -- If max level and compareTo level exists, compare total time
             if compareTo and compareTo[self.playerLevel] and
                 compareTo.total.duration then
-                f.total:SetText(fmt("%s%s%s", reportSplitsData.total.text, s,
-                                    splitTime(reportSplitsData.total.text,
-                                              compareTo.total.duration)))
+                f.total:SetText(fmt("%s %s", reportSplitsData.total.text,
+                                    printDelta(reportSplitsData.total.text,
+                                               compareTo.total.duration)))
             else
                 f.total:SetText(reportSplitsData.total.text)
             end
@@ -1333,12 +1341,6 @@ function addon.tracker:UpdateLevelSplits(kind)
     end
 
     if kind == "full" then
-        -- Sometimes texture doesn't load, set again
-        f:ClearBackdrop()
-        f:SetBackdrop(addon.RXPFrame.backdropEdge)
-        f:SetBackdropColor(unpack(addon.colors.background))
-        f.bg:SetTexture(addon.GetTexture("rxp-banner"))
-
         local oldestLevel = self.playerLevel -
                                 addon.settings.db.profile.levelSplitsHistory
         local highestLevel = self.playerLevel - 1
@@ -1350,17 +1352,18 @@ function addon.tracker:UpdateLevelSplits(kind)
 
             if data then
                 if splitsString then
-                    if cData and cData.duration then
-                        splitsString = fmt("%s\n%s%s%s", splitsString,
-                                           data.text, s, splitTime(
-                                               data.duration, cData.duration))
+                    if compareTo then
+                        splitsString = fmt("%s\n%s %s", splitsString, data.text,
+                                           printDelta(data.duration, cData and
+                                                          cData.duration or nil))
                     else
                         splitsString = fmt("%s\n%s", splitsString, data.text)
                     end
                 else
-                    if cData and cData.duration then
-                        splitsString = fmt("%s%s%s", data.text, s, splitTime(
-                                               data.duration, cData.duration))
+                    if compareTo then
+                        splitsString = fmt("%s %s", data.text, printDelta(
+                                               data.duration,
+                                               cData and cData.duration or nil))
                     else
                         splitsString = data.text
                     end
