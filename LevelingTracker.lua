@@ -1,9 +1,10 @@
 local addonName, addon = ...
 
 local _G = _G
-local fmt, smatch, strsub, tinsert, srep, mmax = string.format, string.match,
-                                                 string.sub, tinsert,
-                                                 string.rep, math.max
+local fmt, smatch, strsub, tinsert, srep, mmax, abs = string.format,
+                                                      string.match, string.sub,
+                                                      tinsert, string.rep,
+                                                      math.max, abs
 
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
       UnitXP, EasyMenu = UnitLevel, GetRealZoneText, IsInGroup, tonumber,
@@ -44,33 +45,34 @@ end
 function addon.tracker:SetupTracker()
     local trackerDefaults = {profile = {levels = {}}}
 
-    addon.tracker.db = LibStub("AceDB-3.0"):New("RXPCTrackingData",
-                                                trackerDefaults)
+    self.db = LibStub("AceDB-3.0"):New("RXPCTrackingData", trackerDefaults)
 
-    addon.tracker:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
-    addon.tracker:RegisterEvent("TIME_PLAYED_MSG")
-    addon.tracker:RegisterEvent("PLAYER_LEVEL_UP")
-    addon.tracker:RegisterEvent("QUEST_TURNED_IN")
-    addon.tracker:RegisterEvent("PLAYER_DEAD")
-    addon.tracker:RegisterEvent("PLAYER_ENTERING_WORLD")
+    self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
+    self:RegisterEvent("TIME_PLAYED_MSG")
+    self:RegisterEvent("PLAYER_LEVEL_UP")
+    self:RegisterEvent("QUEST_TURNED_IN")
+    self:RegisterEvent("PLAYER_DEAD")
+    self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     if addon.settings.db.profile.enableLevelingReportInspections and
         addon.settings.db.profile.enableBetaFeatures then
-        addon.tracker:RegisterEvent("INSPECT_READY")
-        addon.tracker:RegisterComm(addon.tracker._commPrefix)
+        self:RegisterEvent("INSPECT_READY")
+        self:RegisterComm(self._commPrefix)
     end
 
-    addon.tracker:GenerateDBLevel(addon.tracker.playerLevel)
-    addon.tracker:UpgradeDB()
+    self:GenerateDBLevel(self.playerLevel)
+    self:UpgradeDB()
 
-    addon.tracker:CompileData()
+    self:CompileData()
 
-    addon.tracker:CreateGui(_G.CharacterFrame, playerName)
+    self:CreateGui(_G.CharacterFrame, playerName)
 
     if addon.settings.db.profile.enablelevelSplits then
-        addon.tracker:CreateLevelSplits()
+        self.reportKey = fmt("%s|%s|%s", playerName, _G.UnitClass("player"),
+                             _G.GetRealmName())
+        self:CreateLevelSplits()
 
-        addon.tracker.levelSplits:Show()
+        self.levelSplits:Show()
     end
 end
 
@@ -897,6 +899,8 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 end
 
 function addon.tracker:PrintSplitsTime(s)
+    local prefix = s < 0 and '-' or ''
+    s = abs(s)
     local hours = floor(s / 60 / 60)
     s = mod(s, 60 * 60)
 
@@ -909,10 +913,10 @@ function addon.tracker:PrintSplitsTime(s)
     elseif minutes > 0 then
         formattedString = fmt("%02d:%02d", minutes, s)
     else
-        formattedString = fmt("%02d", s) -- Big gratz for leveling in under a minute
+        formattedString = fmt("00:%02d", s)
     end
 
-    return formattedString
+    return prefix .. formattedString
 end
 
 function addon.tracker:BuildSplitsLevelLine(level, splitsString)
@@ -922,6 +926,118 @@ function addon.tracker:BuildSplitsLevelLine(level, splitsString)
                                 srep(' ', gap - #splitsString), splitsString)
 
     return formattedString
+end
+
+function addon.tracker:UpdateSplitsMenu(menuFrame, button)
+
+    if addon.tracker.state.splitsMenu then
+        EasyMenu(addon.tracker.state.splitsMenu, menuFrame, button, 0, 0, "MENU")
+        return
+    end
+
+    local comparisonsMenu = {}
+
+    local menu = {
+        {
+            text = _G.SHARE_QUEST_ABBREV,
+            notCheckable = 1,
+            func = function()
+                addon.comms.OpenBrandedExport(fmt("%s %s",
+                                                  _G.SHARE_QUEST_ABBREV,
+                                                  L("Level Splits")), "",
+                                              addon.tracker:BuildSplitsShare(),
+                                              20, 200)
+            end
+        }, {
+            text = _G.GAMEOPTIONS_MENU,
+            tooltipOnButton = true,
+            notCheckable = 1,
+            func = function()
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
+                                                            .extras)
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
+                                                            .extras)
+            end
+        }, {
+            text = "Hide",
+            tooltipTitle = L("Temporarily hide, use '/rxp splits' to show again"),
+            tooltipOnButton = true,
+            notCheckable = 1,
+            func = function() addon.tracker.levelSplits:Hide() end
+        }
+    }
+
+    if addon.settings.db.profile.enableBetaFeatures then
+        tinsert(comparisonsMenu, {
+            text = "Export",
+            notCheckable = 1,
+            func = function()
+                addon.comms.OpenBrandedExport("Export Level Splits",
+                                              "Export string for Importing into another character's comparison data",
+                                              addon.tracker:BuildSplitsExport(),
+                                              20, 200)
+                _G.CloseDropDownMenus()
+            end
+        })
+
+        tinsert(comparisonsMenu, {
+            text = "Import",
+            notCheckable = 1,
+            func = function()
+                addon.comms.OpenBrandedExport("Import Level Splits",
+                                              "Import string from another character",
+                                              "", 20, 200,
+                                              addon.tracker.ImportSplits)
+                -- Regenerate menu on next load
+                addon.tracker.state.splitsMenu = nil
+                _G.CloseDropDownMenus()
+            end
+        })
+
+        tinsert(comparisonsMenu,
+                {text = _G.CHARACTER, notCheckable = 1, isTitle = true})
+
+        for k, d in pairs(addon.db.profile.reports.splits) do
+            if k ~= self.reportKey then
+                tinsert(comparisonsMenu, {
+                    text = d.title,
+                    arg1 = k,
+                    func = function(_, key)
+                        addon.tracker.state.splitsComparisonKey = key
+                        _G.CloseDropDownMenus()
+                        addon.tracker:UpdateLevelSplits("full")
+                    end,
+                    checked = function()
+                        return k == self.state.splitsComparisonKey
+                    end
+                })
+            end
+        end
+
+        tinsert(comparisonsMenu, {
+            text = _G.NONE,
+            func = function()
+                addon.tracker.state.splitsComparisonKey = nil
+                _G.CloseDropDownMenus()
+                addon.tracker:UpdateLevelSplits("full")
+            end,
+            checked = function()
+                return not self.state.splitsComparisonKey
+            end
+        })
+
+        tinsert(menu, {
+            text = "Compare", -- TODO localize
+            hasArrow = true,
+            menuList = comparisonsMenu,
+            notCheckable = 1
+        })
+    end
+
+    tinsert(menu, {text = _G.CANCEL, notCheckable = 1, func = function() end})
+
+    addon.tracker.state.splitsMenu = menu
+    EasyMenu(menu, menuFrame, button, 0, 0, "MENU")
 end
 
 function addon.tracker:CreateLevelSplits()
@@ -949,7 +1065,7 @@ function addon.tracker:CreateLevelSplits()
     f.parent = addon
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
     f.bg = f:CreateTexture("RXPLevelSplitsFrameBG", "BACKGROUND")
-    f.bg:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp-banner")
+    f.bg:SetTexture(addon.GetTexture("rxp-banner"))
     f.bg:SetPoint("TOPLEFT", 4, -2)
     f.bg:SetPoint("BOTTOMRIGHT", -2, 4)
 
@@ -962,9 +1078,8 @@ function addon.tracker:CreateLevelSplits()
     f.title:ClearBackdrop()
     f.title:SetBackdrop(addon.RXPFrame.backdropEdge)
     f.title:SetBackdropColor(unpack(addon.colors.background))
-    f.title.bg = f.title:CreateTexture("$$parent_titleBG", "BACKGROUND")
-    f.title.bg:SetTexture("Interface/AddOns/" .. addonName ..
-                              "/Textures/rxp-banner")
+    f.title.bg = f.title:CreateTexture("$parent_titleBG", "BACKGROUND")
+    f.title.bg:SetTexture(addon.GetTexture("rxp-banner"))
     f.title.bg:SetPoint("TOPLEFT", 4, -2)
     f.title.bg:SetPoint("BOTTOMRIGHT", -2, 4)
 
@@ -972,55 +1087,8 @@ function addon.tracker:CreateLevelSplits()
     -- Width immediately overwritten in UpdateLevelSplits on PLAYER_ENTERING_WORLD
     f.title:SetSize(50, 17)
 
-    local menu = {
-        {
-            text = _G.SHARE_QUEST_ABBREV,
-            notCheckable = 1,
-            func = function()
-                addon.comms.OpenBrandedExport(fmt("%s %s",
-                                                  _G.SHARE_QUEST_ABBREV,
-                                                  L("Level Splits")), "",
-                                              addon.tracker:BuildSplitsShare(),
-                                              20, 200)
-            end
-        }, {
-            --[[text = "Export",
-            notCheckable = 1,
-            func = function()
-                addon.comms.OpenBrandedExport("Export Level Splits",
-                                              "Export string for Importing into another character's comparison data",
-                                              LibDeflate:EncodeForPrint(
-                                                  addon.tracker:BuildSplitsExport()),
-                                              20, 200)
-            end
-        }, {--]]
-            text = _G.GAMEOPTIONS_MENU,
-            tooltipOnButton = true,
-            notCheckable = 1,
-            func = function()
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .extras)
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .extras)
-            end
-        }, {
-            --[[text = "Import",
-            notCheckable = 1,
-            func = function()
-                addon.comms.OpenBrandedExport("Import Level Splits", "", "TODO",
-                                              20, 200)
-            end
-        }, {--]]
-            text = "Hide",
-            tooltipTitle = L("Temporarily hide, use '/rxp splits' to show again"),
-            tooltipOnButton = true,
-            notCheckable = 1,
-            func = function() f:Hide() end
-        }, {text = _G.CANCEL, notCheckable = 1, func = function() end}
-    }
-
-    local SplitsMenuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame",
-                                        f.title, "UIDropDownMenuTemplate")
+    f.title.splitsMenuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame",
+                                          f.title, "UIDropDownMenuTemplate")
 
     f.title.cog = CreateFrame("Button", "$parentCogwheel", f.title)
     f.title.cog:SetFrameLevel(f.title:GetFrameLevel() + 1)
@@ -1034,7 +1102,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.cog:Show()
 
     f.title.cog:SetScript("OnClick", function()
-        EasyMenu(menu, SplitsMenuFrame, f.title, 0, 0, "MENU")
+        addon.tracker:UpdateSplitsMenu(f.title.splitsMenuFrame, f.title.cog)
     end)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
@@ -1126,7 +1194,9 @@ end
 function addon.tracker:CompileLevelSplits(kind)
     local splitsReportData = {
         title = fmt("%s (%s) - %s", playerName, _G.UnitClass("player"),
-                    _G.GetRealmName())
+                    _G.GetRealmName()),
+        reportKey = fmt("%s|%s|%s", playerName, _G.UnitClass("player"),
+                        _G.GetRealmName())
     }
     local secondsSinceLogin = difftime(time(), addon.tracker.state.login.time)
 
@@ -1208,9 +1278,33 @@ function addon.tracker:CompileLevelSplits(kind)
         end
 
         splitsReportData.history = splitsData
+
+        -- Add full report to account variables
+        addon.db.profile.reports.splits[self.reportKey] = splitsReportData
     end
 
     return splitsReportData
+end
+
+local function printDelta(mine, theirs)
+    local w = #"-00:00:00:00"
+    if not mine or not theirs then
+        return fmt("%s%s", srep(' ', w - #'-'), '-')
+    end
+
+    local diff = mine - theirs
+    local diffString = addon.tracker:PrintSplitsTime(diff)
+
+    diffString = fmt("%s%s", srep(' ', w - #diffString), diffString)
+
+    if diff < 0 then
+        return fmt("|cff00aa00%s|r", diffString)
+    elseif diff > 0 then
+        return fmt("|cffff0000%s|r", diffString)
+    end
+
+    -- Even time, use default color
+    return diffString
 end
 
 function addon.tracker:UpdateLevelSplits(kind)
@@ -1221,34 +1315,59 @@ function addon.tracker:UpdateLevelSplits(kind)
 
     local f = addon.tracker.levelSplits
     local reportSplitsData = self:CompileLevelSplits(kind)
+    local compareTo = self.state.splitsComparisonKey and
+                          addon.db.profile.reports.splits[self.state
+                              .splitsComparisonKey]
 
-    if addon.tracker.playerLevel == addon.tracker.maxLevel then
+    if self.playerLevel == self.maxLevel then
         -- Leave creation or full placeholder on updates
         if kind == "full" then
             f.current:SetText(reportSplitsData.current.text)
 
-            f.total:SetText(reportSplitsData.total.text)
+            -- If max level and compareTo level exists, compare total time
+            if compareTo and compareTo[self.playerLevel] and
+                compareTo.total.duration then
+                f.total:SetText(fmt("%s %s", reportSplitsData.total.text,
+                                    printDelta(reportSplitsData.total.text,
+                                               compareTo.total.duration)))
+            else
+                f.total:SetText(reportSplitsData.total.text)
+            end
         end
     else
+        -- Don't compare splits on current level
         f.current:SetText(reportSplitsData.current.text)
 
         f.total:SetText(reportSplitsData.total.text)
     end
 
     if kind == "full" then
-        local oldestLevel = addon.tracker.playerLevel -
+        local oldestLevel = self.playerLevel -
                                 addon.settings.db.profile.levelSplitsHistory
-        local highestLevel = addon.tracker.playerLevel - 1
-        local data, splitsString
+        local highestLevel = self.playerLevel - 1
+        local data, splitsString, cData
 
         for l = oldestLevel, highestLevel do
             data = reportSplitsData.history.levels[l]
+            cData = compareTo and compareTo.history.levels[l]
 
             if data then
                 if splitsString then
-                    splitsString = fmt("%s\n%s", splitsString, data.text)
+                    if compareTo then
+                        splitsString = fmt("%s\n%s %s", splitsString, data.text,
+                                           printDelta(data.duration, cData and
+                                                          cData.duration or nil))
+                    else
+                        splitsString = fmt("%s\n%s", splitsString, data.text)
+                    end
                 else
-                    splitsString = data.text
+                    if compareTo then
+                        splitsString = fmt("%s %s", data.text, printDelta(
+                                               data.duration,
+                                               cData and cData.duration or nil))
+                    else
+                        splitsString = data.text
+                    end
                 end
             end
         end
@@ -1278,7 +1397,8 @@ function addon.tracker:UpdateLevelSplits(kind)
                        f.history.label:GetStringHeight() +
                        f.total.label:GetStringHeight() + 26
 
-    if currentFontSize == addon.settings.db.profile.levelSplitsFontSize then
+    if kind ~= "full" and currentFontSize ==
+        addon.settings.db.profile.levelSplitsFontSize then
         -- Font unchanged
         -- Only update width if next is wider, prevent jittering
         f.title:SetWidth(max(f.title:GetWidth(), width))
@@ -1294,8 +1414,8 @@ function addon.tracker:UpdateLevelSplits(kind)
     end
 
     -- Remove refresh after the first full update at max level
-    if addon.tracker.playerLevel == addon.tracker.maxLevel and kind == "full" then
-        addon.tracker.levelSplits:SetScript("OnUpdate", nil)
+    if self.playerLevel == self.maxLevel and kind == "full" then
+        self.levelSplits:SetScript("OnUpdate", nil)
     end
 end
 
@@ -1328,9 +1448,32 @@ end
 
 function addon.tracker:BuildSplitsExport()
     local reportSplitsData = self:CompileLevelSplits("full")
-    local data = addon.comms:Serialize(reportSplitsData)
 
-    return LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(data))
+    return LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(
+                                         addon.comms:Serialize(reportSplitsData)))
+end
+
+function addon.tracker.ImportSplits(encodedText)
+    local decoded = LibDeflate:DecodeForPrint(encodedText)
+
+    if not decoded then
+        addon.comms.PrettyPrint("Invalid data")
+        return
+    end
+    local decompressed = LibDeflate:DecompressDeflate(decoded)
+
+    local deserializeResult, deserialized =
+        addon.comms:Deserialize(decompressed)
+
+    if not deserializeResult then
+        addon.comms.PrettyPrint("Error Importing: " .. deserialized)
+        return
+    end
+
+    addon.comms.PrettyPrint("Importing %s", deserialized.title)
+    addon.db.profile.reports.splits[deserialized.reportKey] = deserialized
+
+    return true
 end
 
 function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
