@@ -781,19 +781,19 @@ step
 step << !Warlock
     .goto Redridge Mountains,8.5,72.0
     .xp 9+4475 >> Grind until 4475+/6500xp
-step << !Warlock
+step << Paladin
     .goto Redridge Mountains,8.5,72.0
     .zone Redridge Mountains >> Travel east to Redridge Mountains
-step << !Warlock
+step << Paladin
     #sticky
     #completewith next
     .deathskip >> Die to the mobs here then resurrect at the Spirit Healer
     .goto Redridge Mountains,11.2,78.4
-step << !Warlock
+step << Paladin
     #softcore
     .goto Redridge Mountains,30.6,59.4
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
-step << !Warlock
+step << Paladin
     #hardcore
     >>Run toward the Flight Path. Be exceedingly careful to not aggro or die to any mobs en route. Try sticking to the road and keeping an eye out
     .goto Redridge Mountains,30.6,59.4
