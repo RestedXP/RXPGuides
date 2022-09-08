@@ -899,6 +899,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 end
 
 function addon.tracker:PrintSplitsTime(s)
+    local prefix = s < 0 and '-' or ''
     s = abs(s)
     local hours = floor(s / 60 / 60)
     s = mod(s, 60 * 60)
@@ -915,7 +916,7 @@ function addon.tracker:PrintSplitsTime(s)
         formattedString = fmt("00:%02d", s)
     end
 
-    return formattedString
+    return prefix .. formattedString
 end
 
 function addon.tracker:BuildSplitsLevelLine(level, splitsString)
