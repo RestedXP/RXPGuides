@@ -845,7 +845,7 @@ step << Warlock
     .goto Elwynn Forest,44.4,66.2
     .accept 1685 >> Accept Gakin's Summons
     .trainer >> Train your class spells
-step << Mage/Priest/Rogue
+step << Mage/Priest/Rogue tbc
     #sticky
     #completewith next
     .goto Elwynn Forest,43.7,66.4,10 >>Go Upstairs
