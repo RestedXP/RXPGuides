@@ -1285,7 +1285,16 @@ function addon.tracker:CompileLevelSplits(kind)
 end
 
 local function splitTime(mine, theirs)
-    return addon.tracker:PrintSplitsTime(mine - theirs)
+    local diff = mine - theirs
+
+    if diff < 0 then
+        return fmt("|cff00aa00%s|r", addon.tracker:PrintSplitsTime(diff))
+    elseif diff > 0 then
+        return fmt("|cffff0000%s|r", addon.tracker:PrintSplitsTime(diff))
+    end
+
+    -- Even time, use default color
+    return addon.tracker:PrintSplitsTime(diff)
 end
 
 function addon.tracker:UpdateLevelSplits(kind)
