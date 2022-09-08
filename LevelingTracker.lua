@@ -1076,7 +1076,7 @@ function addon.tracker:CreateLevelSplits()
     f.title:ClearBackdrop()
     f.title:SetBackdrop(addon.RXPFrame.backdropEdge)
     f.title:SetBackdropColor(unpack(addon.colors.background))
-    f.title.bg = f.title:CreateTexture("$$parent_titleBG", "BACKGROUND")
+    f.title.bg = f.title:CreateTexture("$parent_titleBG", "BACKGROUND")
     f.title.bg:SetTexture(addon.GetTexture("rxp-banner"))
     f.title.bg:SetPoint("TOPLEFT", 4, -2)
     f.title.bg:SetPoint("BOTTOMRIGHT", -2, 4)
@@ -1325,6 +1325,9 @@ function addon.tracker:UpdateLevelSplits(kind)
 
     if kind == "full" then
         -- Sometimes texture doesn't load, set again
+        f:ClearBackdrop()
+        f:SetBackdrop(addon.RXPFrame.backdropEdge)
+        f:SetBackdropColor(unpack(addon.colors.background))
         f.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
         local oldestLevel = self.playerLevel -
@@ -1381,11 +1384,8 @@ function addon.tracker:UpdateLevelSplits(kind)
                        f.history.label:GetStringHeight() +
                        f.total.label:GetStringHeight() + 26
 
-    if kind == "full" and not self.state.splitsComparisonKey then
-        -- Shrink to smallest after removing comparison deltas
-        f.title:SetWidth(width)
-        f:SetSize(width + 16, height)
-    elseif currentFontSize == addon.settings.db.profile.levelSplitsFontSize then
+    if kind ~= "full" and currentFontSize ==
+        addon.settings.db.profile.levelSplitsFontSize then
         -- Font unchanged
         -- Only update width if next is wider, prevent jittering
         f.title:SetWidth(max(f.title:GetWidth(), width))
