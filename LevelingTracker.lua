@@ -1001,7 +1001,6 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
                     text = d.title,
                     arg1 = k,
                     func = function(_, key)
-                        addon.comms.PrettyPrint("key = %s", key)
                         addon.tracker.state.splitsComparisonKey = key
                         _G.CloseDropDownMenus()
                         addon.tracker:UpdateLevelSplits("full")
