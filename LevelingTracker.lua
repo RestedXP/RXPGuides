@@ -1,9 +1,10 @@
 local addonName, addon = ...
 
 local _G = _G
-local fmt, smatch, strsub, tinsert, srep, mmax = string.format, string.match,
-                                                 string.sub, tinsert,
-                                                 string.rep, math.max
+local fmt, smatch, strsub, tinsert, srep, mmax, abs = string.format,
+                                                      string.match, string.sub,
+                                                      tinsert, string.rep,
+                                                      math.max, abs
 
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
       UnitXP, EasyMenu = UnitLevel, GetRealZoneText, IsInGroup, tonumber,
@@ -910,7 +911,7 @@ function addon.tracker:PrintSplitsTime(s)
     elseif minutes > 0 then
         formattedString = fmt("%02d:%02d", minutes, s)
     else
-        formattedString = fmt("%02d", s) -- Big gratz for leveling in under a minute
+        formattedString = fmt("%s00:%02d", s < 0 and '-' or '', abs(s)) -- Big gratz for leveling in under a minute
     end
 
     return formattedString
@@ -928,8 +929,8 @@ end
 function addon.tracker:UpdateSplitsMenu(menuFrame, button)
 
     if addon.tracker.state.splitsMenu then
-        -- EasyMenu(addon.tracker.state.splitsMenu, menuFrame, button, 0, 0, "MENU")
-        -- return
+        EasyMenu(addon.tracker.state.splitsMenu, menuFrame, button, 0, 0, "MENU")
+        return
     end
 
     local comparisonsMenu = {}
@@ -973,6 +974,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
                                               "Export string for Importing into another character's comparison data",
                                               addon.tracker:BuildSplitsExport(),
                                               20, 200)
+                _G.CloseDropDownMenus()
             end
         })
 
@@ -980,10 +982,13 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
             text = "Import",
             notCheckable = 1,
             func = function()
-                return addon.comms.OpenBrandedExport("Import Level Splits",
-                                                     "Import string from another character",
-                                                     "", 20, 200,
-                                                     addon.tracker.ImportSplits)
+                addon.comms.OpenBrandedExport("Import Level Splits",
+                                              "Import string from another character",
+                                              "", 20, 200,
+                                              addon.tracker.ImportSplits)
+                -- Regenerate menu on next load
+                addon.tracker.state.splitsMenu = nil
+                _G.CloseDropDownMenus()
             end
         })
 
@@ -1013,6 +1018,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
             func = function()
                 addon.tracker.state.splitsComparisonKey = nil
                 _G.CloseDropDownMenus()
+                addon.tracker:UpdateLevelSplits("full")
             end,
             checked = function()
                 return not self.state.splitsComparisonKey
@@ -1029,7 +1035,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
 
     tinsert(menu, {text = _G.CANCEL, notCheckable = 1, func = function() end})
 
-    addon.tracker.state.reportLevelMenu = menu
+    addon.tracker.state.splitsMenu = menu
     EasyMenu(menu, menuFrame, button, 0, 0, "MENU")
 end
 
@@ -1058,7 +1064,7 @@ function addon.tracker:CreateLevelSplits()
     f.parent = addon
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
     f.bg = f:CreateTexture("RXPLevelSplitsFrameBG", "BACKGROUND")
-    f.bg:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp-banner")
+    f.bg:SetTexture(addon.GetTexture("rxp-banner"))
     f.bg:SetPoint("TOPLEFT", 4, -2)
     f.bg:SetPoint("BOTTOMRIGHT", -2, 4)
 
@@ -1072,8 +1078,7 @@ function addon.tracker:CreateLevelSplits()
     f.title:SetBackdrop(addon.RXPFrame.backdropEdge)
     f.title:SetBackdropColor(unpack(addon.colors.background))
     f.title.bg = f.title:CreateTexture("$$parent_titleBG", "BACKGROUND")
-    f.title.bg:SetTexture("Interface/AddOns/" .. addonName ..
-                              "/Textures/rxp-banner")
+    f.title.bg:SetTexture(addon.GetTexture("rxp-banner"))
     f.title.bg:SetPoint("TOPLEFT", 4, -2)
     f.title.bg:SetPoint("BOTTOMRIGHT", -2, 4)
 
@@ -1280,6 +1285,10 @@ function addon.tracker:CompileLevelSplits(kind)
     return splitsReportData
 end
 
+local function splitTime(mine, theirs)
+    return addon.tracker:PrintSplitsTime(mine - theirs)
+end
+
 function addon.tracker:UpdateLevelSplits(kind)
     if not addon.settings.db.profile.enablelevelSplits or
         not addon.tracker.levelSplits or not addon.tracker.state.login then
@@ -1288,6 +1297,7 @@ function addon.tracker:UpdateLevelSplits(kind)
 
     local f = addon.tracker.levelSplits
     local reportSplitsData = self:CompileLevelSplits(kind)
+    local s = '   '
     local compareTo = self.state.splitsComparisonKey and
                           addon.db.profile.reports.splits[self.state
                               .splitsComparisonKey]
@@ -1297,9 +1307,18 @@ function addon.tracker:UpdateLevelSplits(kind)
         if kind == "full" then
             f.current:SetText(reportSplitsData.current.text)
 
-            f.total:SetText(reportSplitsData.total.text)
+            -- If max level and compareTo level exists, compare total time
+            if compareTo and compareTo[self.playerLevel] and
+                compareTo.total.duration then
+                f.total:SetText(fmt("%s%s%s", reportSplitsData.total.text, s,
+                                    splitTime(reportSplitsData.total.text,
+                                              compareTo.total.duration)))
+            else
+                f.total:SetText(reportSplitsData.total.text)
+            end
         end
     else
+        -- Don't compare splits on current level
         f.current:SetText(reportSplitsData.current.text)
 
         f.total:SetText(reportSplitsData.total.text)
@@ -1309,16 +1328,28 @@ function addon.tracker:UpdateLevelSplits(kind)
         local oldestLevel = self.playerLevel -
                                 addon.settings.db.profile.levelSplitsHistory
         local highestLevel = self.playerLevel - 1
-        local data, splitsString
+        local data, splitsString, cData
 
         for l = oldestLevel, highestLevel do
             data = reportSplitsData.history.levels[l]
+            cData = compareTo and compareTo.history.levels[l]
 
             if data then
                 if splitsString then
-                    splitsString = fmt("%s\n%s", splitsString, data.text)
+                    if cData and cData.duration then
+                        splitsString = fmt("%s\n%s%s%s", splitsString,
+                                           data.text, s, splitTime(
+                                               data.duration, cData.duration))
+                    else
+                        splitsString = fmt("%s\n%s", splitsString, data.text)
+                    end
                 else
-                    splitsString = data.text
+                    if cData and cData.duration then
+                        splitsString = fmt("%s%s%s", data.text, s, splitTime(
+                                               data.duration, cData.duration))
+                    else
+                        splitsString = data.text
+                    end
                 end
             end
         end
@@ -1348,7 +1379,12 @@ function addon.tracker:UpdateLevelSplits(kind)
                        f.history.label:GetStringHeight() +
                        f.total.label:GetStringHeight() + 26
 
-    if currentFontSize == addon.settings.db.profile.levelSplitsFontSize then
+
+    if kind == "full" and not self.state.splitsComparisonKey then
+        -- Shrink to smallest after removing comparison deltas
+        f.title:SetWidth(min(f.title:GetWidth(), width))
+        f:SetSize(min(f:GetWidth(), width + 16), height)
+    elseif currentFontSize == addon.settings.db.profile.levelSplitsFontSize
         -- Font unchanged
         -- Only update width if next is wider, prevent jittering
         f.title:SetWidth(max(f.title:GetWidth(), width))
