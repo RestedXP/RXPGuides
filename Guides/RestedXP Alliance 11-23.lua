@@ -935,7 +935,7 @@ step
     .accept 10067 >> Accept Fouled Water Spirits
 step
     #sticky
-    #completewith bloodmyst2
+    #completewith next
     #label ravager3
     >>Kill Ravagers and Tanglers as you quest
     .goto Bloodmyst Isle,30.3,57.2,0
@@ -960,7 +960,7 @@ step
     .turnin 10065 >> Turn in Cutting a Path
     .goto Bloodmyst Isle,30.3,46.0
 step
-    .goto Bloodmyst Isle,38.4,47,100
+    .goto Bloodmyst Isle,38.4,47
 	>>Finish killing and looting Bears and Flutterers. Flutterers can typically be found near the Cyro Core. Bears north of the road towards Axxarien. Try to end on the north side.
     .complete 9647,1 --Kill Royal Blue Flutterer (10)
 	.complete 9580,1 --Elder Brown Bear Flank (8)
@@ -1141,7 +1141,7 @@ step << Hunter/Warlock/Mage
     >>You'll need to hit level 20 before leaving Bloodmyst
 step
     #completewith next
-    .deathskip >>Die and respawn at Blood Watch
+    .deathskip >> Die and respawn at Blood Watch
 step
     .goto Bloodmyst Isle,56.4,56.7
     .turnin 9649 >> Turn in Ysera's Tears
