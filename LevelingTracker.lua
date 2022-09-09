@@ -898,8 +898,10 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 
 end
 
-function addon.tracker:PrintSplitsTime(s)
+function addon.tracker:PrintSplitsTime(s, isDelta)
     local prefix = s < 0 and '-' or ''
+    if isDelta and s > 0 then prefix = '+' end
+
     s = abs(s)
     local hours = floor(s / 60 / 60)
     s = mod(s, 60 * 60)
@@ -1298,7 +1300,7 @@ local function printDelta(mine, theirs)
     end
 
     local diff = mine - theirs
-    local diffString = addon.tracker:PrintSplitsTime(diff)
+    local diffString = addon.tracker:PrintSplitsTime(diff, 'delta')
 
     diffString = fmt("%s%s", srep(' ', w - #diffString), diffString)
 
