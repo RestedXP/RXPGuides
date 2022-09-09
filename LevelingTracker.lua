@@ -1279,8 +1279,11 @@ function addon.tracker:CompileLevelSplits(kind)
 
         splitsReportData.history = splitsData
 
-        -- Add full report to account variables
-        addon.db.profile.reports.splits[self.reportKey] = splitsReportData
+        -- Handle initialization issue on first load
+        if addon.db.profile.reports and addon.db.profile.reports.splits then
+            -- Add full report to account variables
+            addon.db.profile.reports.splits[self.reportKey] = splitsReportData
+        end
     end
 
     return splitsReportData
