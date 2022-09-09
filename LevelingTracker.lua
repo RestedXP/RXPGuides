@@ -66,10 +66,10 @@ function addon.tracker:SetupTracker()
     self:CompileData()
 
     self:CreateGui(_G.CharacterFrame, playerName)
+    self.reportKey = fmt("%s|%s|%s", playerName, _G.UnitClass("player"),
+                         _G.GetRealmName())
 
     if addon.settings.db.profile.enablelevelSplits then
-        self.reportKey = fmt("%s|%s|%s", playerName, _G.UnitClass("player"),
-                             _G.GetRealmName())
         self:CreateLevelSplits()
 
         self.levelSplits:Show()
@@ -1285,11 +1285,7 @@ function addon.tracker:CompileLevelSplits(kind)
 
         splitsReportData.history = splitsData
 
-        -- Handle initialization issue on first load
-        if addon.db.profile.reports and addon.db.profile.reports.splits then
-            -- Add full report to account variables
-            addon.db.profile.reports.splits[self.reportKey] = splitsReportData
-        end
+        addon.db.profile.reports.splits[self.reportKey] = splitsReportData
     end
 
     return splitsReportData
