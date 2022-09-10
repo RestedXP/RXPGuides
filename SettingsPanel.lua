@@ -1011,9 +1011,6 @@ function addon.settings.CreateExtrasOptionsPanel()
                                 LibDBIcon:Hide(addonName)
                             end
                         end,
-                        disabled = function () --Requires function to dynamically update
-                            return not addon.settings.db.profile.enableTracker
-                        end,
                         hidden = isNotAdvanced,
                     },
                 }
