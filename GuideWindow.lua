@@ -1459,8 +1459,8 @@ end
 
 addon.IsGuideActive = IsGuideActive
 
-function RXPFrame.GenerateMenuTable()
-    local menuList = {}
+function RXPFrame.GenerateMenuTable(menu)
+    local menuList = menu or {}
 
     local groupList = {}
     local farmGuides = {}
@@ -1637,7 +1637,11 @@ function RXPFrame.GenerateMenuTable()
         notCheckable = 1,
         func = function(self) self:Hide() end
     })
-    RXPFrame.menuList = menuList
+
+    -- Only update RXPFrame.menuList by default
+    if not menu then
+        RXPFrame.menuList = menuList
+    end
 
     return menuList
 end

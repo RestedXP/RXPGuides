@@ -1034,9 +1034,8 @@ function addon.settings.CreateExtrasOptionsPanel()
 end
 
 local function buildMinimapMenu()
-    local menu = addon.RXPFrame.GenerateMenuTable()
-    -- TODO updates the main frame menu too, okay for now but not later?
-    -- https://stackoverflow.com/a/5710588
+    local menu = {}
+    addon.RXPFrame.GenerateMenuTable(menu)
 
     if addon.settings.db.profile.minimap.show then
         table.insert(menu, #menu, {
