@@ -1069,14 +1069,12 @@ function addon.tracker:CreateLevelSplits()
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
     f:SetMovable(true)
-    -- f:ClearBackdrop()
-    -- f:SetBackdrop(addon.RXPFrame.backdropEdge)
-    -- f:SetBackdropColor(unpack(addon.colors.background))
-    self:RenderSplitsBackground()
     function f.onMouseDown() f:StartMoving() end
     function f.onMouseUp() f:StopMovingOrSizing() end
     f:SetScript("OnMouseDown", f.StartMoving)
     f:SetScript("OnMouseUp", f.StopMovingOrSizing)
+
+    self:RenderSplitsBackground()
 
     f.parent = addon
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
