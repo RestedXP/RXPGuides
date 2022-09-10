@@ -3,6 +3,8 @@ local addonName, addon = ...
 local _G = _G
 
 local AceConfig = LibStub("AceConfig-3.0")
+local LibDBIcon = LibStub("LibDBIcon-1.0")
+local LibDataBroker = LibStub("LibDataBroker-1.1")
 
 local importString = ""
 local previousFrame = 0
@@ -68,7 +70,9 @@ function addon.settings:InitializeSettings()
             enableLevelingReportInspections = true,
             levelSplitsHistory = 10,
             levelSplitsFontSize = 11,
-            levelSplitsOpacity = 0.9
+            levelSplitsOpacity = 0.9,
+            enableMinimapButton = true,
+            minimap = {}
         }
     }
 
@@ -78,6 +82,7 @@ function addon.settings:InitializeSettings()
     self.CreateOptionsPanel()
     self.CreateImportOptionsPanel()
     self.CreateExtrasOptionsPanel()
+    self:UpdateMinimapButton()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
     self:RegisterChatCommand("rxpg", self.ChatCommand)
@@ -91,7 +96,6 @@ end
 local function SetProfileOption(info, value)
     addon.settings.db.profile[info[#info]] = value
 end
-
 
 function addon.settings.CreateOptionsPanel()
     addon.RXPOptions = CreateFrame("Frame", "RXPOptions")
@@ -993,6 +997,25 @@ function addon.settings.CreateExtrasOptionsPanel()
                         order = 2,
                         hidden = isNotAdvanced,
                     },
+                    enableMinimapButton = {
+                        name = L("Enable Minimap Button"),
+                        desc = L("Add main options menu to minimap"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                LibDBIcon:Show(addonName)
+                            else
+                                LibDBIcon:Hide(addonName)
+                            end
+                        end,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enableTracker
+                        end,
+                        hidden = isNotAdvanced,
+                    },
                 }
             }
         }
@@ -1013,4 +1036,23 @@ function addon.settings.CreateExtrasOptionsPanel()
                                     "\\Textures\\rxp_logo-64")
     extrasFrame.icon:SetPoint("TOPRIGHT", -5, -5)
 
+end
+
+function addon.settings:UpdateMinimapButton()
+    if not addon.settings.db.profile.enableMinimapButton then return end
+
+    local minimapButton = LibDataBroker:NewDataObject(addonName, {
+        type = "data source",
+        label = addonName,
+        icon = addon.GetTexture("rxp_logo-64"),
+        tocname = addonName,
+        OnClick = function ()
+            addon.RXPFrame.DropDownMenu()
+        end,
+        OnTooltipShow = function (tooltip)
+            tooltip:AddLine(addonName, unpack(addon.colors.mapPins))
+        end
+    })
+
+    LibDBIcon:Register(addonName, minimapButton, self.db.minimap);
 end
