@@ -831,12 +831,42 @@ function addon.settings.CreateExtrasOptionsPanel()
                         end,
                         hidden = isNotAdvanced,
                     },
+                    compareNextLevelSplit = {
+                        name = L("Compare Next Level"),
+                        desc = L("When comparing, show next level's time"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 7,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enableTracker
+                        end,
+                        hidden = isNotAdvanced,
+                    },
+                    hideSplitsBackground = {
+                        name = L("Hide Splits Background"),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 8,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:RenderSplitsBackground()
+                        end,
+                        disabled = function () --Requires function to dynamically update
+                            return not addon.settings.db.profile.enableTracker
+                        end,
+                        hidden = isNotAdvanced,
+                    },
                     levelSplitsHistory = {
                         name = L("Level Splits History"),
                         desc = L("Historical levels to show"),
                         type = "range",
                         width = "normal",
-                        order = 7,
+                        order = 9,
                         min = 1,
                         max = GetMaxPlayerLevel(),
                         step = 1,
@@ -853,7 +883,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                         name = L("Level Splits Font Size"),
                         type = "range",
                         width = "normal",
-                        order = 8,
+                        order = 10,
                         min = 9,
                         max = 17, -- Formatting gets wonky >=18
                         step = 1,
@@ -871,7 +901,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                         desc = L("Lower number to make Level Splits more transparent"),
                         type = "range",
                         width = "normal",
-                        order = 9,
+                        order = 11,
                         min = 0.1,
                         max = 1,
                         step = 0.1,
@@ -883,7 +913,7 @@ function addon.settings.CreateExtrasOptionsPanel()
                             return not addon.settings.db.profile.enablelevelSplits
                         end,
                         hidden = isNotAdvanced,
-                    }
+                    },
                 },
             },
             communications = {
