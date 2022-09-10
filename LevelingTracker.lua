@@ -18,7 +18,7 @@ addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0",
                                 "AceComm-3.0", "AceSerializer-3.0")
 
 addon.tracker.playerLevel = UnitLevel("player")
-addon.tracker.maxLevel = GetMaxPlayerLevel()
+addon.tracker.maxLevel = 70 -- GetMaxPlayerLevel() --Currently returns 80 on login, 70 on reloads
 addon.tracker.state = {otherReports = {}}
 addon.tracker.reportData = {}
 addon.tracker.ui = {}
@@ -44,7 +44,6 @@ end
 
 function addon.tracker:SetupTracker()
     local trackerDefaults = {profile = {levels = {}}}
-
     self.db = LibStub("AceDB-3.0"):New("RXPCTrackingData", trackerDefaults)
 
     self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
@@ -921,8 +920,8 @@ function addon.tracker:PrintSplitsTime(s, isDelta)
     return prefix .. formattedString
 end
 
+local gap = #fmt("%s 12    ", L("Level"))
 function addon.tracker:BuildSplitsLevelLine(level, splitsString)
-    local gap = #fmt("%s 12    ", L("Level"))
     local formattedString = fmt("%s %d%s%s%s", L("Level"), level,
                                 level < 10 and '  ' or '',
                                 srep(' ', gap - #splitsString), splitsString)
@@ -1042,6 +1041,20 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
     EasyMenu(menu, menuFrame, button, 0, 0, "MENU")
 end
 
+function addon.tracker:RenderSplitsBackground()
+    if not addon.tracker.levelSplits then return end
+
+    local f = addon.tracker.levelSplits
+
+    if addon.settings.db.profile.hideSplitsBackground then
+        f:ClearBackdrop()
+    else
+        f:ClearBackdrop()
+        f:SetBackdrop(addon.RXPFrame.backdropEdge)
+        f:SetBackdropColor(unpack(addon.colors.background))
+    end
+end
+
 function addon.tracker:CreateLevelSplits()
     if addon.tracker.levelSplits then return end
     -- AceGUI:Create("Frame") has too much magic for how simple this is
@@ -1056,13 +1069,12 @@ function addon.tracker:CreateLevelSplits()
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
     f:SetMovable(true)
-    f:ClearBackdrop()
-    f:SetBackdrop(addon.RXPFrame.backdropEdge)
-    f:SetBackdropColor(unpack(addon.colors.background))
     function f.onMouseDown() f:StartMoving() end
     function f.onMouseUp() f:StopMovingOrSizing() end
     f:SetScript("OnMouseDown", f.StartMoving)
     f:SetScript("OnMouseUp", f.StopMovingOrSizing)
+
+    self:RenderSplitsBackground()
 
     f.parent = addon
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
@@ -1279,7 +1291,7 @@ function addon.tracker:CompileLevelSplits(kind)
                     }
                 else
                     splitsData.levels[l] = {
-                        text = fmt(L("Level %d") .. ": %s", l, L("Missing Data"))
+                        text = self:BuildSplitsLevelLine(l, '-')
                     }
                 end
             end
@@ -1293,8 +1305,8 @@ function addon.tracker:CompileLevelSplits(kind)
     return splitsReportData
 end
 
+local w = #"  -00:00:00"
 local function printDelta(mine, theirs)
-    local w = #"-00:00:00:00"
     if not mine or not theirs then
         return fmt("%s%s", srep(' ', w - #'-'), '-')
     end
@@ -1335,15 +1347,27 @@ function addon.tracker:UpdateLevelSplits(kind)
             if compareTo and compareTo[self.playerLevel] and
                 compareTo.total.duration then
                 f.total:SetText(fmt("%s %s", reportSplitsData.total.text,
-                                    printDelta(reportSplitsData.total.text,
+                                    printDelta(reportSplitsData.total.duration,
                                                compareTo.total.duration)))
             else
                 f.total:SetText(reportSplitsData.total.text)
             end
         end
     else
-        -- Don't compare splits on current level
-        f.current:SetText(reportSplitsData.current.text)
+        if compareTo and compareTo.history.levels[self.playerLevel] and
+            addon.settings.db.profile.compareNextLevelSplit then
+            local cTime = self:BuildSplitsLevelLine(self.playerLevel,
+                                                    self:PrintSplitsTime(
+                                                        compareTo.history.levels[self.playerLevel +
+                                                            1].duration))
+
+            f.current:SetText(fmt("%s %s\n\n%s", cTime, printDelta(
+                                      reportSplitsData.current.duration,
+                                      compareTo.current.duration),
+                                  reportSplitsData.current.text))
+        else
+            f.current:SetText(reportSplitsData.current.text)
+        end
 
         f.total:SetText(reportSplitsData.total.text)
     end
