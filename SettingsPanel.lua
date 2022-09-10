@@ -95,7 +95,7 @@ end
 
 function addon.settings.CreateOptionsPanel()
     addon.RXPOptions = CreateFrame("Frame", "RXPOptions")
-    addon.RXPOptions.name = "RXP Guides"
+    addon.RXPOptions.name = "RestedXP Guides"
     _G.InterfaceOptions_AddCategory(addon.RXPOptions)
 
     addon.RXPOptions.title = addon.RXPOptions:CreateFontString(nil, "ARTWORK",
@@ -474,7 +474,7 @@ function addon.settings.CreateOptionsPanel()
     if addon.farmGuides > 0 then
         local GApanel = CreateFrame("Frame", "RXPGAOptions")
         GApanel.name = "Gold Assistant"
-        GApanel.parent = "RXP Guides"
+        GApanel.parent = "RestedXP Guides"
         _G.InterfaceOptions_AddCategory(GApanel)
 
         GApanel.title = GApanel:CreateFontString(nil, "ARTWORK",
@@ -648,10 +648,10 @@ function addon.settings.CreateImportOptionsPanel()
         }
     }
 
-    AceConfig:RegisterOptionsTable("RXP Guides/Import", importOptionsTable)
+    AceConfig:RegisterOptionsTable("RestedXP Guides/Import", importOptionsTable)
 
     addon.settings.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                    "RXP Guides/Import", L("Import"), "RXP Guides")
+                                    "RestedXP Guides/Import", L("Import"), "RestedXP Guides")
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
@@ -1028,10 +1028,10 @@ function addon.settings.CreateExtrasOptionsPanel()
         }
     }
 
-    AceConfig:RegisterOptionsTable("RXP Guides/Extras", extraOptionsTable)
+    AceConfig:RegisterOptionsTable("RestedXP Guides/Extras", extraOptionsTable)
 
     addon.settings.gui.extras = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                    "RXP Guides/Extras", L("Extras"), "RXP Guides")
+                                    "RestedXP Guides/Extras", L("Extras"), "RestedXP Guides")
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
