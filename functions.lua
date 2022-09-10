@@ -1113,20 +1113,23 @@ function addon.functions.complete(self, ...)
         local element = {}
         local text, id, obj, objMax = ...
         id = tonumber(id)
+        if id and id < 0 then
+            id = math.abs(id)
+            element.skipIfMissing = true
+        end
         id = id and questConversion[id] or id
+        obj = tonumber(obj)
         if not (id and obj) then
             addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
                             ": Invalid objective or quest ID\n" .. self)
+            return
         end
-        element.obj = tonumber(obj)
+        element.obj = obj
         element.objMax = tonumber(objMax)
         element.dynamicText = true
         -- element.title = addon.GetQuestName(id)
         -- local objectives = addon.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
-        if id < 0 then
-            id = math.abs(id)
-            element.skipIfMissing = true
-        end
+
         element.questId = id
 
         element.text = ""
@@ -1152,6 +1155,9 @@ function addon.functions.complete(self, ...)
             end
         end
         addon.UpdateQuestCompletionData(self)
+        if step.active and element.skipIfMissing and not IsOnQuest(element.questId) then
+            addon.SetElementComplete(self,true)
+        end
     else
         if not step.active then
             if math.abs(RXPCData.currentStep - step.index) > 2 then
