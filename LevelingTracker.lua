@@ -726,6 +726,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     if not attachment then return end
     local trackerUi = addon.tracker.ui[attachment:GetName()]
     if not trackerUi then return end
+    addon.activeFrames["trackerUi"] = trackerUi
     self.state.levelReportData = nil
 
     if target and target ~= playerName then
@@ -1052,6 +1053,7 @@ function addon.tracker:CreateLevelSplits()
                                             BackdropTemplate)
 
     local f = addon.tracker.levelSplits
+    addon.activeFrames["levelSplits"] = f
 
     f:SetClampedToScreen(true)
     f:EnableMouse(true)

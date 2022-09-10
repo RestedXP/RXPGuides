@@ -44,6 +44,7 @@ addon.texturePath = addon.defaultTextures
 
 local RXPFrame = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 addon.RXPFrame = RXPFrame
+addon.activeFrames["RXPFrame"] = RXPFrame
 
 local BottomFrame = CreateFrame("Frame", "$parent_bottomFrame", RXPFrame,
                                 BackdropTemplate)
@@ -1637,4 +1638,6 @@ function RXPFrame.GenerateMenuTable()
         func = function(self) self:Hide() end
     })
     RXPFrame.menuList = menuList
+
+    return menuList
 end

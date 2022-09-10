@@ -43,11 +43,9 @@ function addon.settings.ChatCommand(input)
     elseif input == "splits" then
         addon.tracker:ToggleLevelSplits()
     elseif input == "show" then
-        -- Do not persist change, temporary toggle
-        addon.RXPFrame:SetShown(true)
+        addon.settings.RestoreActive()
     elseif input == "hide" then
-        -- Do not persist change, temporary toggle
-        addon.RXPFrame:SetShown(false)
+        addon.settings.HideActive()
     elseif input == "support" or input == "ticket" or input == "bug" or input == "feedback" then
         addon.comms.OpenBugReport()
     else
@@ -72,7 +70,7 @@ function addon.settings:InitializeSettings()
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9,
             enableMinimapButton = true,
-            minimap = {}
+            minimap = {show = true}
         }
     }
 
@@ -1035,8 +1033,39 @@ function addon.settings.CreateExtrasOptionsPanel()
 
 end
 
+local function buildMinimapMenu()
+    local menu = addon.RXPFrame.GenerateMenuTable()
+    -- TODO updates the main frame menu too, okay for now but not later?
+    -- https://stackoverflow.com/a/5710588
+
+    if addon.settings.db.profile.minimap.show then
+        table.insert(menu, #menu, {
+            text = _G.HIDE,
+            notCheckable = 1,
+            func = function()
+                addon.settings.HideActive()
+            end
+        })
+    else
+        table.insert(menu, #menu, {
+            text = _G.SHOW,
+            notCheckable = 1,
+            func = function()
+                addon.settings.RestoreActive()
+            end
+        })
+    end
+
+    return menu
+end
+
 function addon.settings:UpdateMinimapButton()
     if not addon.settings.db.profile.enableMinimapButton then return end
+
+    if not addon.settings.minimapFrame then
+        addon.settings.minimapFrame = CreateFrame("Frame", "RXP_MMMenuFrame", UIParent,
+            "UIDropDownMenuTemplate")
+    end
 
     local minimapButton = LibDataBroker:NewDataObject(addonName, {
         type = "data source",
@@ -1044,12 +1073,33 @@ function addon.settings:UpdateMinimapButton()
         icon = addon.GetTexture("rxp_logo-64"),
         tocname = addonName,
         OnClick = function ()
-            addon.RXPFrame.DropDownMenu()
+            _G.EasyMenu(buildMinimapMenu(), addon.settings.minimapFrame, "cursor", 0, 0, "MENU");
         end,
         OnTooltipShow = function (tooltip)
             tooltip:AddLine(addonName, unpack(addon.colors.mapPins))
         end
     })
 
-    LibDBIcon:Register(addonName, minimapButton, self.db.minimap);
+    LibDBIcon:Register(addonName, minimapButton, self.db.profile.minimap);
+end
+
+function addon.settings.HideActive()
+    for _, frame in pairs(addon.activeFrames) do
+        frame.restoreState = frame:IsShown()
+        if frame.restoreState then
+            frame:Hide()
+        end
+    end
+
+    addon.settings.db.profile.minimap.show = false
+end
+
+function addon.settings.RestoreActive()
+    for _, frame in pairs(addon.activeFrames) do
+        if frame.restoreState then
+            frame:Show()
+        end
+    end
+
+    addon.settings.db.profile.minimap.show = true
 end
