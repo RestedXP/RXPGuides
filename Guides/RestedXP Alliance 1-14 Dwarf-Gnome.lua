@@ -756,7 +756,7 @@ step << Warrior
 .goto Dun Morogh,47.4,52.6
     .train 284 >>Train Heroic Strike r2
     .train 1715 >>Train Hamstring
-step << Warrior/Rogue/Paladin
+step << Warrior/Rogue/Paladin tbc
     .istrained 3273
 .money <0.0095
     .goto Dun Morogh,47.2,52.6
