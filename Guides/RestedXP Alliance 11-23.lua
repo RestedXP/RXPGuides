@@ -114,10 +114,17 @@ step
     .goto Darkshore,38.8,43.4
     .accept 2138 >> Accept Cleansing of the Infected
 step
+    #xprate <1.5
     >> Talk to Terenthis inside the building
     .goto Darkshore,39.3,43.5
     .turnin 984 >> Turn in How Big a Threat?
     .accept 985 >> Accept How Big a Threat?
+    .accept 4761 >> Accept Thundris Windweaver
+step
+    #xprate >1.499 
+    >> Talk to Terenthis inside the building
+    .goto Darkshore,39.3,43.5
+    .turnin 984 >> Turn in How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
 step << Druid
     .goto Darkshore,43.5,45.9
@@ -128,7 +135,7 @@ step << !Dwarf/!Hunter
     >> Careful, the Moonkin in the area enrage and call for help, very deadly!
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step << wotlk !Dwarf/!Hunter
-    .hs >> Hearth back to Auberdine
+    .deathskip >> Die to the Owl Beasts nearby and spawn in Auberdine
 step << !Dwarf/!Hunter
     .goto Darkshore,37.7,43.4
     .turnin 4811 >> Turn in The Red Crystal
@@ -193,6 +200,12 @@ step
     .goto Darkshore,42.3,66.9,0,0
 	>>Kill Rabid Thistle Bears as you quest
     .complete 2138,1 --Kill Rabid Thistle Bear (x20)
+step
+    .goto Darkshore,41.94,31.47
+    .accept 4723 >> Accept Beached Sea Creature
+step
+    .goto Darkshore,44.18,20.60
+    .accept 4725 >> Accept Beached Sea Turtle
 step << !Warlock
     .isOnQuest 4762
     .goto Darkshore,50.8,25.6
@@ -227,6 +240,7 @@ step << Dwarf Hunter
     .goto Darkshore,47.2,48.6
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step << !Dwarf/!Hunter
+    #xprate <1.5
     .goto Darkshore,39.9,54.9
     >> Head south to the furbolg camp
     .complete 985,1 --Kill Blackwood Pathfinder (x8)
