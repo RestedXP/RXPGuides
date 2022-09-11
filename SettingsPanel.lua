@@ -6,7 +6,7 @@ local AceConfig = LibStub("AceConfig-3.0")
 local LibDBIcon = LibStub("LibDBIcon-1.0")
 local LibDataBroker = LibStub("LibDataBroker-1.1")
 
-local fmt = string.format
+local fmt, tostr = string.format, tostring
 
 local importString = ""
 local previousFrame = 0
@@ -73,7 +73,10 @@ function addon.settings:InitializeSettings()
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9,
             enableMinimapButton = true,
-            minimap = {show = true}
+            minimap = {show = true},
+
+            --
+            enableQuestAutomation = true
         }
     }
 
@@ -81,12 +84,31 @@ function addon.settings:InitializeSettings()
 
     self.CreateOptionsPanel()
     self.CreateImportOptionsPanel()
+    self:MigrateSettings()
     self.CreateNewOptionsPanel()
     self:UpdateMinimapButton()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
     self:RegisterChatCommand("rxpg", self.ChatCommand)
     self:RegisterChatCommand("rxpguides", self.ChatCommand)
+end
+
+function addon.settings:MigrateSettings()
+    if not RXPData then return end
+
+    local d = addon.settings.db.profile.debug
+    local db = addon.settings.db.profile
+    local pp = addon.comms.PrettyPrint
+    local function n(t, v)
+        if d then pp(fmt("Migrating %s = %s", t, tostr(v))) end
+    end
+
+    if RXPData.disableQuestAutomation ~= nil then
+        n("disableQuestAutomation", RXPData.disableQuestAutomation)
+        db.enableQuestAutomation = not RXPData.disableQuestAutomation
+        RXPData.disableQuestAutomation = nil
+    end
+
 end
 
 local function GetProfileOption(info)
@@ -121,23 +143,13 @@ function addon.settings.CreateOptionsPanel()
     -- panel.icon:SetSize(64,64)
     local index = 0
     local options = {}
-    local button = CreateFrame("CheckButton", "$parentQuestTurnIn",
-                               addon.RXPOptions, "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    index = index + 1
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    button:SetScript("PostClick", function(self)
-        RXPData.disableQuestAutomation = not self:GetChecked()
-    end)
-    button:SetChecked(not RXPData.disableQuestAutomation)
-    button.Text:SetText(L("Quest auto accept/turn in"))
-    button.tooltip = L(
-                         "Holding the Control key modifier also toggles the quest the quest auto accept feature on and off")
+    local button
 
+    --
     button = CreateFrame("CheckButton", "$parentTrainer", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.disableTrainerAutomation = not self:GetChecked()
@@ -477,30 +489,6 @@ function addon.settings.CreateOptionsPanel()
                                   "Adjusts the guide routes to match increased xp rate bonuses"),
                               slider, 0, -25, 0.5, "1x", "1.5x")
     end
-    --[[
-    if addon.farmGuides > 0 then
-        local GApanel = CreateFrame("Frame", "RXPGAOptions")
-        GApanel.name = "Gold Assistant"
-        GApanel.parent = addon.title
-        _G.InterfaceOptions_AddCategory(GApanel)
-
-        GApanel.title = GApanel:CreateFontString(nil, "ARTWORK",
-                                                 "GameFontNormalLarge")
-        GApanel.title:SetPoint("TOPLEFT", 16, -16)
-        GApanel.title:SetText("RestedXP Gold Assistant")
-
-        GApanel.subtext = GApanel:CreateFontString(nil, "ARTWORK",
-                                                   "GameFontHighlightSmall")
-        GApanel.subtext:SetPoint("TOPLEFT", GApanel.title, "BOTTOMLEFT", 0, -8)
-        GApanel.subtext:SetText(addon.versionText)
-
-        GApanel.icon = GApanel:CreateTexture()
-        GApanel.icon:SetTexture("Interface/AddOns/" .. addonName ..
-                                    "/Textures/rxp_logo-64")
-        GApanel.icon:SetPoint("TOPRIGHT", -5, -5)
-
-    end]]
-
 end
 
 function addon.settings.ImportBoxValidate()
@@ -753,7 +741,7 @@ function addon.settings.CreateNewOptionsPanel()
 
     local extraOptionsTable = {
         type = "group",
-        name = addon.title, -- TODO
+        name = addon.title,
         get = GetProfileOption,
         set = SetProfileOption,
         childGroups = "tab",
@@ -765,10 +753,48 @@ function addon.settings.CreateNewOptionsPanel()
                 width = "full",
                 fontSize = "medium"
             },
+            mainSettings = {
+                type = "group",
+                name = L("Main"),
+                order = 2,
+                args = {
+                    enableQuestAutomation = {
+                        name = L("Quest auto accept/turn in"),
+                        desc = L(
+                            "Holding the Control key modifier also toggles the quest auto accept feature on and off"),
+                        type = "toggle",
+                        width = "2",
+                        order = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                LibDBIcon:Show(addonName)
+                            else
+                                LibDBIcon:Hide(addonName)
+                            end
+                        end
+                    },
+                    enableMinimapButton = {
+                        name = L("Enable Minimap Button"),
+                        desc = L("Add main options menu to minimap"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 9,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                LibDBIcon:Show(addonName)
+                            else
+                                LibDBIcon:Hide(addonName)
+                            end
+                        end
+                    }
+                }
+            },
             optionalFeatures = {
                 type = "group",
                 name = L("Optional Features"),
-                order = 2,
+                order = 3,
                 args = {
                     trackerOptionsHeader = {
                         name = L("Leveling Tracker"),
@@ -927,7 +953,7 @@ function addon.settings.CreateNewOptionsPanel()
             communications = {
                 type = "group",
                 name = L("Communications"),
-                order = 3,
+                order = 4,
                 args = {
                     commsLevelUpOptionsHeader = {
                         name = L("Announcements"),
@@ -1017,7 +1043,7 @@ function addon.settings.CreateNewOptionsPanel()
             advancedSettings = {
                 type = "group",
                 name = L("Advanced Settings"),
-                order = 4,
+                order = 5,
                 args = {
                     enableBetaFeatures = {
                         name = L("Enable Beta Features"),
@@ -1037,22 +1063,6 @@ function addon.settings.CreateNewOptionsPanel()
                         type = "toggle",
                         width = "full",
                         order = 2,
-                        hidden = isNotAdvanced
-                    },
-                    enableMinimapButton = {
-                        name = L("Enable Minimap Button"),
-                        desc = L("Add main options menu to minimap"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 3,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            if value then
-                                LibDBIcon:Show(addonName)
-                            else
-                                LibDBIcon:Hide(addonName)
-                            end
-                        end,
                         hidden = isNotAdvanced
                     }
                 }

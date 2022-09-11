@@ -357,7 +357,7 @@ local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                      _G.GetGossipAvailableQuests
 
 function addon:QuestAutomation(event, arg1, arg2, arg3)
-    if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
+    if not addon.settings.db.profile.enableQuestAutomation or IsControlKeyDown() then
         return
     end
 
