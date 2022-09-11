@@ -708,7 +708,7 @@ end
 
 -- Generate pins using only the active steps, then add the pins to the Mini Map
 local function addMiniMapPins(pins)
-    if RXPData.hideMiniMapPins then return end
+    if addon.settings.db.profile.hideMiniMapPins then return end
     -- Calculate which pins should be on the mini map
     local pins = generatePins(addon.currentGuide.steps, RXPData.numMapPins,
                               RXPCData.currentStep, true)

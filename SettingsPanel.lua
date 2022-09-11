@@ -121,6 +121,12 @@ function addon.settings:MigrateSettings()
         db.enableFPAutomation = not RXPData.disableFPAutomation
         RXPData.disableFPAutomation = nil
     end
+
+    if RXPData.hideMiniMapPins ~= nil then
+        n("hideMiniMapPins", RXPData.hideMiniMapPins)
+        db.hideMiniMapPins = not RXPData.hideMiniMapPins
+        RXPData.hideMiniMapPins = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -156,24 +162,11 @@ function addon.settings.CreateOptionsPanel()
     local index = 0
     local options = {}
     local button
-
-    button = CreateFrame("CheckButton", "$parentMiniMapPin", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        RXPData.hideMiniMapPins = self:GetChecked()
-        addon.UpdateMap()
-    end)
-    button:SetChecked(RXPData.hideMiniMapPins)
-    button.Text:SetText(L("Hide Mini Map Pins"))
-    -- button.tooltip = ""
-
+    -- addon.settings.db.profile.
     button = CreateFrame("CheckButton", "$parentUnusedGuides", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideUnusedGuides = not self:GetChecked()
@@ -758,6 +751,12 @@ function addon.settings.CreateNewOptionsPanel()
                         type = "toggle",
                         width = "normal",
                         order = 2
+                    },
+                    hideMiniMapPins = {
+                        name = L("Hide Mini Map Pins"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 3
                     },
                     enableMinimapButton = {
                         name = L("Enable Minimap Button"),
