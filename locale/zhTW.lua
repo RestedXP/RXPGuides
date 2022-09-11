@@ -29,7 +29,7 @@ L["Paste encoded strings"] = "粘貼編碼字符串"
 L["Guides to import"] = "導入指南"
 L["RestedXP Guides"] = "指南"
 L["Quest auto accept/turn in"] = "任務自動接受/上交"
-L["Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"] =
+L["Holding the Control key modifier also toggles the quest auto accept feature on and off"] =
     "當按住 Control 鍵時，修改器還會打開和關閉任務自動接受功能"
 L["Trainer automation"] = "訓練師自動化"
 L["Allows the guide to buy useful leveling spells automatically"] =
@@ -209,16 +209,20 @@ L["Click to view the link"] = "點擊查看鏈接"
 L["Stable your pet"] = "穩定你的寵物"
 L["Train skills"] = "訓練技能"
 L["Sell junk/resupply"] = "賣垃圾/補給"
-L["Grind until you are %.0f%% into %s with %s"] = "重複做，直到達到 %.0f%%, %s （%s）"
-L["Grind until you are %s into %s with %s"] = "重複做，直到達到 %s, %s （%s）"
+L["Grind until you are %.0f%% into %s with %s"] =
+    "重複做，直到達到 %.0f%%, %s （%s）"
+L["Grind until you are %s into %s with %s"] =
+    "重複做，直到達到 %s, %s （%s）"
 L["Grind until you are %d away from %s with %s"] =
     "重複做，直到 %d 距離 %s (%s)"
 L["Grind until you are %d xp away from level %s"] =
     "重複做，直到 %d xp 距離 %s 級"
 L["Grind until you are %s xp into level %s"] = "重複直到 %s xp（%s 級）"
-L["Grind until you are %.0f%% into level %s"] = "重複直到 %.0f%% （%s 級）"
+L["Grind until you are %.0f%% into level %s"] =
+    "重複直到 %.0f%% （%s 級）"
 L["Throw away %s%s from your bags"] = "把 %s%s 從你的包包裡扔掉"
-L["Die and respawn at the graveyard"] = "自盡，在墓地使用靈魂醫者復活"
+L["Die and respawn at the graveyard"] =
+    "自盡，在墓地使用靈魂醫者復活"
 L["Fly to"] = "飛到"
 L["Get the %s flight path"] = "獲取 %s 的飛行路徑"
 L["Set your Hearthstone to"] = "在以下地點設置爐石："

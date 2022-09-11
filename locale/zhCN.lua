@@ -29,7 +29,7 @@ L["Paste encoded strings"] = "粘贴编码字符串"
 L["Guides to import"] = "导入指南"
 L["RestedXP Guides"] = "指南"
 L["Quest auto accept/turn in"] = "任务自动接受/上交"
-L["Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"] =
+L["Holding the Control key modifier also toggles the quest auto accept feature on and off"] =
     "按住 Control 键修改器还会打开和关闭任务自动接受功能"
 L["Trainer automation"] = "培训师自动化"
 L["Allows the guide to buy useful leveling spells automatically"] =
