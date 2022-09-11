@@ -111,9 +111,6 @@ function RXPG_init()
         RXPCData.flightPaths = {}
     end
     RXPData.batchSize = RXPData.batchSize or 5
-    if RXPData.disableTrainerAutomation == nil then
-        RXPData.disableTrainerAutomation = true
-    end
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
@@ -294,35 +291,33 @@ local function ProcessSpells(names, rank)
 end
 
 local function OnTrainer()
+    if not addon.settings.db.profile.enableTrainerAutomation then return end
 
-    if not RXPData.disableTrainerAutomation then
-        local level = UnitLevel("player")
-        local i = GetNumTrainerServices()
+    local i = GetNumTrainerServices()
 
-        if not i or i == 0 or GetTime() - trainerUpdate > 15 then return end
+    if not i or i == 0 or GetTime() - trainerUpdate > 15 then return end
 
-        local names = {}
-        local rank = {}
+    local names = {}
+    local rank = {}
 
-        for id = 1, i do
-            local n, r, cat = GetTrainerServiceInfo(id)
-            if cat == "available" then
-                names[id] = n
-                rank[id] = r
-            end
+    for id = 1, i do
+        local n, r, cat = GetTrainerServiceInfo(id)
+        if cat == "available" then
+            names[id] = n
+            rank[id] = r
         end
+    end
 
-        ProcessSpells(names, rank)
+    ProcessSpells(names, rank)
 
-        for spellName, spellRank in pairs(addon.skillList) do
-            for id, name in pairs(names) do
-                if name == spellName then
-                    local r = rank[id]
-                    r = r and tonumber(r:match("(%d+)")) or 0
-                    if (r <= spellRank or spellRank == 0) then
-                        BuyTrainerService(id)
-                        return
-                    end
+    for spellName, spellRank in pairs(addon.skillList) do
+        for id, name in pairs(names) do
+            if name == spellName then
+                local r = rank[id]
+                r = r and tonumber(r:match("(%d+)")) or 0
+                if (r <= spellRank or spellRank == 0) then
+                    BuyTrainerService(id)
+                    return
                 end
             end
         end

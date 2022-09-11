@@ -109,6 +109,12 @@ function addon.settings:MigrateSettings()
         RXPData.disableQuestAutomation = nil
     end
 
+    if RXPData.disableTrainerAutomation ~= nil then
+        n("disableTrainerAutomation", RXPData.disableTrainerAutomation)
+        db.enableTrainerAutomation = not RXPData.disableTrainerAutomation
+        RXPData.disableTrainerAutomation = nil
+    end
+
 end
 
 local function GetProfileOption(info)
@@ -145,24 +151,10 @@ function addon.settings.CreateOptionsPanel()
     local options = {}
     local button
 
-    --
-    button = CreateFrame("CheckButton", "$parentTrainer", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        RXPData.disableTrainerAutomation = not self:GetChecked()
-    end)
-    button:SetChecked(not RXPData.disableTrainerAutomation)
-    button.Text:SetText(L("Trainer automation"))
-    button.tooltip = L(
-                         "Allows the guide to buy useful leveling spells automatically")
-
     button = CreateFrame("CheckButton", "$parentFP", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.disableFPAutomation = not self:GetChecked()
@@ -763,16 +755,16 @@ function addon.settings.CreateNewOptionsPanel()
                         desc = L(
                             "Holding the Control key modifier also toggles the quest auto accept feature on and off"),
                         type = "toggle",
-                        width = "2",
-                        order = 1,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            if value then
-                                LibDBIcon:Show(addonName)
-                            else
-                                LibDBIcon:Hide(addonName)
-                            end
-                        end
+                        width = "normal",
+                        order = 1
+                    },
+                    enableTrainerAutomation = {
+                        name = L("Trainer automation"),
+                        desc = L(
+                            "Allows the guide to buy useful leveling spells automatically"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2
                     },
                     enableMinimapButton = {
                         name = L("Enable Minimap Button"),
