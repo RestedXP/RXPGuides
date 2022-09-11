@@ -135,6 +135,12 @@ function addon.settings:MigrateSettings()
     end
 
     -- TODO autoLoadGuides -> autoLoadStartingGuides
+
+    if RXPCData.disableArrow ~= nil then
+        n("disableArrow", RXPCData.disableArrow)
+        db.disableArrow = not RXPCData.disableArrow
+        RXPCData.disableArrow = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -170,24 +176,10 @@ function addon.settings.CreateOptionsPanel()
     local options = {}
     local button
     -- addon.settings.db.profile
-    button = CreateFrame("CheckButton", "$parentArrow", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        local checkbox = self:GetChecked()
-        addon.updateMap = true
-        RXPCData.disableArrow = checkbox
-    end)
-    button:SetChecked(RXPCData.disableArrow)
-    button.Text:SetText(L("Hide waypoint arrow"))
-    -- button.tooltip = "Show/Hide the waypoint arrow"
-    --
     button = CreateFrame("CheckButton", "$parentActiveItem", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPCData.disableItemWindow = self:GetChecked()
@@ -761,6 +753,17 @@ function addon.settings.CreateNewOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
+                        end
+                    },
+                    disableArrow = {
+                        name = L("Hide waypoint arrow"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        hidden = true, -- TODO, Impossible situation with character-specific settings
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.updateMap = true
                         end
                     },
                     enableMinimapButton = {
