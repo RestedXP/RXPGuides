@@ -956,9 +956,9 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
             notCheckable = 1,
             func = function()
                 _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .extras)
+                                                            .new)
                 _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .extras)
+                                                            .new)
             end
         }, {
             text = "Hide",

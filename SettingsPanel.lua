@@ -33,14 +33,14 @@ function addon.settings.ChatCommand(input)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
     elseif input == "extras" then
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.new)
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.new)
     elseif input == "debug" then
         addon.settings.db.profile.debug = not addon.settings.db.profile.debug
 
         if addon.settings.db.profile.debug then
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.extras)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.new)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.new)
         end
     elseif input == "splits" then
         addon.tracker:ToggleLevelSplits()
@@ -81,7 +81,7 @@ function addon.settings:InitializeSettings()
 
     self.CreateOptionsPanel()
     self.CreateImportOptionsPanel()
-    self.CreateExtrasOptionsPanel()
+    self.CreateNewOptionsPanel()
     self:UpdateMinimapButton()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
@@ -742,7 +742,7 @@ function addon.settings.CreateImportOptionsPanel()
 
 end
 
-function addon.settings.CreateExtrasOptionsPanel()
+function addon.settings.CreateNewOptionsPanel()
     local function isNotAdvanced()
         return not addon.settings.db.profile.enableBetaFeatures
     end
@@ -753,14 +753,14 @@ function addon.settings.CreateExtrasOptionsPanel()
 
     local extraOptionsTable = {
         type = "group",
-        name = "RestedXP " .. L("Extras"),
+        name = addon.title, -- TODO
         get = GetProfileOption,
         set = SetProfileOption,
         childGroups = "tab",
         args = {
             buffer = { -- Buffer hacked in right-aligned icon
                 order = 1,
-                name = L("Optional extras"),
+                name = addon.versionText,
                 type = "description",
                 width = "full",
                 fontSize = "medium"
@@ -810,17 +810,16 @@ function addon.settings.CreateExtrasOptionsPanel()
                         width = "full",
                         order = 4,
                         confirm = requiresReload,
-                        disabled = function() -- Requires function to dynamically update
+                        disabled = function()
                             return not addon.settings.db.profile.enableTracker
                         end,
                         hidden = isNotAdvanced
                     },
                     splitsOptionsHeader = {
-                        name = L("Level Splits") .. " (Beta)",
+                        name = L("Level Splits"),
                         type = "header",
                         width = "full",
-                        order = 5,
-                        hidden = isNotAdvanced
+                        order = 5
                     },
                     enablelevelSplits = {
                         name = L("Enable Level Splits"),
@@ -837,10 +836,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                                 addon.tracker.levelSplits:Hide()
                             end
                         end,
-                        disabled = function() -- Requires function to dynamically update
+                        disabled = function()
                             return not addon.settings.db.profile.enableTracker
-                        end,
-                        hidden = isNotAdvanced
+                        end
                     },
                     compareNextLevelSplit = {
                         name = L("Compare Next Level"),
@@ -852,10 +850,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
                         end,
-                        disabled = function() -- Requires function to dynamically update
+                        disabled = function()
                             return not addon.settings.db.profile.enableTracker
-                        end,
-                        hidden = isNotAdvanced
+                        end
                     },
                     hideSplitsBackground = {
                         name = L("Hide Splits Background"),
@@ -867,10 +864,9 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:RenderSplitsBackground()
                         end,
-                        disabled = function() -- Requires function to dynamically update
+                        disabled = function()
                             return not addon.settings.db.profile.enableTracker
-                        end,
-                        hidden = isNotAdvanced
+                        end
                     },
                     levelSplitsHistory = {
                         name = L("Level Splits History"),
@@ -885,11 +881,10 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
                         end,
-                        disabled = function() -- Requires function to dynamically update
+                        disabled = function()
                             return not addon.settings.db.profile
                                        .enablelevelSplits
-                        end,
-                        hidden = isNotAdvanced
+                        end
                     },
                     levelSplitsFontSize = {
                         name = L("Level Splits Font Size"),
@@ -903,11 +898,10 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
                         end,
-                        disabled = function() -- Requires function to dynamically update
+                        disabled = function()
                             return not addon.settings.db.profile
                                        .enablelevelSplits
-                        end,
-                        hidden = isNotAdvanced
+                        end
                     },
                     levelSplitsOpacity = {
                         name = L("Level Splits Opacity"),
@@ -923,11 +917,10 @@ function addon.settings.CreateExtrasOptionsPanel()
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
                         end,
-                        disabled = function() -- Requires function to dynamically update
+                        disabled = function()
                             return not addon.settings.db.profile
                                        .enablelevelSplits
-                        end,
-                        hidden = isNotAdvanced
+                        end
                     }
                 }
             },
@@ -1067,17 +1060,16 @@ function addon.settings.CreateExtrasOptionsPanel()
         }
     }
 
-    AceConfig:RegisterOptionsTable(addon.title .. "/Extras", extraOptionsTable)
+    AceConfig:RegisterOptionsTable(addon.title .. "/New", extraOptionsTable)
 
-    addon.settings.gui.extras = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                    addon.title .. "/Extras", L("Extras"),
-                                    addon.title)
+    addon.settings.gui.new = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                                 addon.title .. "/New", L("New"), addon.title)
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
     -- Hackery ahead
 
-    local extrasFrame = addon.settings.gui.extras.obj.frame
+    local extrasFrame = addon.settings.gui.new.obj.frame
     extrasFrame.icon = extrasFrame:CreateTexture()
     extrasFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
                                     "\\Textures\\rxp_logo-64")
