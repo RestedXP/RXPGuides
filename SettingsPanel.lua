@@ -1069,7 +1069,7 @@ function addon.settings:UpdateMinimapButton()
     local minimapButton = LibDataBroker:NewDataObject(addonName, {
         type = "data source",
         label = addonName,
-        icon = addon.GetTexture("rxp_logo-64"),
+        icon = "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64",
         tocname = addonName,
         OnClick = function ()
             _G.EasyMenu(buildMinimapMenu(), addon.settings.minimapFrame, "cursor", 0, 0, "MENU");
