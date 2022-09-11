@@ -1285,7 +1285,7 @@ function addon.tracker:CompileLevelSplits(kind)
                     totalSeconds = totalSeconds + s
 
                     splitsData.levels[l] = {
-                        text = self:BuildSplitsLevelLine(l,
+                        text = self:BuildSplitsLevelLine(l + 1,
                                                          addon.tracker:PrintSplitsTime(
                                                              totalSeconds)),
                         duration = s,
@@ -1293,7 +1293,7 @@ function addon.tracker:CompileLevelSplits(kind)
                     }
                 else
                     splitsData.levels[l] = {
-                        text = self:BuildSplitsLevelLine(l, '-')
+                        text = self:BuildSplitsLevelLine(l + 1, '-')
                     }
                 end
             end
@@ -1358,7 +1358,7 @@ function addon.tracker:UpdateLevelSplits(kind)
     else
         if compareTo and compareTo.history.levels[self.playerLevel] and
             addon.settings.db.profile.compareNextLevelSplit then
-            local cTime = self:BuildSplitsLevelLine(self.playerLevel,
+            local cTime = self:BuildSplitsLevelLine(self.playerLevel + 1,
                                                     self:PrintSplitsTime(
                                                         compareTo.history.levels[self.playerLevel +
                                                             1].duration))
