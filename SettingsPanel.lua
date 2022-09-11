@@ -133,6 +133,8 @@ function addon.settings:MigrateSettings()
         db.hideUnusedGuides = not RXPData.hideUnusedGuides
         RXPData.hideUnusedGuides = nil
     end
+
+    -- TODO autoLoadGuides -> autoLoadStartingGuides
 end
 
 local function GetProfileOption(info)
@@ -164,28 +166,14 @@ function addon.settings.CreateOptionsPanel()
                                          "/Textures/rxp_logo-64")
     addon.RXPOptions.icon:SetPoint("TOPRIGHT", -5, -5)
 
-    -- panel.icon:SetSize(64,64)
     local index = 0
     local options = {}
     local button
     -- addon.settings.db.profile
-    button = CreateFrame("CheckButton", "$parentAutoLoad", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        RXPData.autoLoadGuides = self:GetChecked()
-    end)
-    button:SetChecked(RXPData.autoLoadGuides)
-    button.Text:SetText(L("Auto load starting zone guides"))
-    button.tooltip = L(
-                         "Automatically picks a suitable guide whenever you log in for the first time on a character")
-    --
     button = CreateFrame("CheckButton", "$parentArrow", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick", function(self)
         local checkbox = self:GetChecked()
@@ -757,6 +745,19 @@ function addon.settings.CreateNewOptionsPanel()
                         type = "toggle",
                         width = "normal",
                         order = 2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.GenerateMenuTable()
+                        end
+                    },
+                    autoLoadStartingGuides = {
+                        name = L("Auto load starting zone guides"),
+                        desc = L(
+                            "Automatically picks a suitable guide whenever you log in for the first time on a character"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        hidden = true, -- TODO, Impossible situation with character-specific settings
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()

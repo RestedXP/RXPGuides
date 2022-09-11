@@ -492,7 +492,7 @@ function addon:OnEnable()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
                                       RXPCData.currentGuideName)
-    if not guide and RXPData.autoLoadGuides then
+    if not guide and addon.settings.db.profile.autoLoadStartingGuides then
         guide = addon.defaultGuide
         if addon.game == "TBC" and
             (UnitLevel("player") == 58 and not guide.boost58) then
