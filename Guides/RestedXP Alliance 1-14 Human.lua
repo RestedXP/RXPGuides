@@ -1127,7 +1127,7 @@ step << Warlock wotlk
     .goto StormwindClassic,66.3,62.1
     .accept 6262 >> Accept Return to Lewis
     .isQuestTurnedIn 6261
-step << Warlock wotlk
+step << Warlock wotlk/Rogue wotlk
     #xprate <1.5
     .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
