@@ -5,6 +5,7 @@ local _G = _G
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 addon.release = GetAddOnMetadata(addonName, "Version")
+addon.title = GetAddOnMetadata(addonName, "Title")
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -36,7 +37,7 @@ addon.RXPG = {}
 addon.functions = {}
 addon.activeFrames = {} -- Hold all active frame/features for Hide/Show
 
-BINDING_HEADER_RXPGuides = addonName
+BINDING_HEADER_RXPGuides = addon.title
 
 local questFrame = CreateFrame("Frame");
 

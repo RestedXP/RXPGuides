@@ -99,13 +99,13 @@ end
 
 function addon.settings.CreateOptionsPanel()
     addon.RXPOptions = CreateFrame("Frame", "RXPOptions")
-    addon.RXPOptions.name = "RestedXP Guides"
+    addon.RXPOptions.name = addon.title
     _G.InterfaceOptions_AddCategory(addon.RXPOptions)
 
     addon.RXPOptions.title = addon.RXPOptions:CreateFontString(nil, "ARTWORK",
                                                                "GameFontNormalLarge")
     addon.RXPOptions.title:SetPoint("TOPLEFT", 16, -16)
-    addon.RXPOptions.title:SetText(L("RestedXP Guides"))
+    addon.RXPOptions.title:SetText(L(addon.title))
 
     addon.RXPOptions.subtext = addon.RXPOptions:CreateFontString(nil, "ARTWORK",
                                                                  "GameFontHighlightSmall")
@@ -478,7 +478,7 @@ function addon.settings.CreateOptionsPanel()
     if addon.farmGuides > 0 then
         local GApanel = CreateFrame("Frame", "RXPGAOptions")
         GApanel.name = "Gold Assistant"
-        GApanel.parent = "RestedXP Guides"
+        GApanel.parent = addon.title
         _G.InterfaceOptions_AddCategory(GApanel)
 
         GApanel.title = GApanel:CreateFontString(nil, "ARTWORK",
@@ -652,10 +652,10 @@ function addon.settings.CreateImportOptionsPanel()
         }
     }
 
-    AceConfig:RegisterOptionsTable("RestedXP Guides/Import", importOptionsTable)
+    AceConfig:RegisterOptionsTable(addon.title .. "/Import", importOptionsTable)
 
     addon.settings.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                    "RestedXP Guides/Import", L("Import"), "RestedXP Guides")
+                                    addon.title .. "/Import", L("Import"), addon.title)
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
@@ -1048,10 +1048,10 @@ function addon.settings.CreateExtrasOptionsPanel()
         }
     }
 
-    AceConfig:RegisterOptionsTable("RestedXP Guides/Extras", extraOptionsTable)
+    AceConfig:RegisterOptionsTable(addon.title .. "/Extras", extraOptionsTable)
 
     addon.settings.gui.extras = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                    "RestedXP Guides/Extras", L("Extras"), "RestedXP Guides")
+                                    addon.title .. "/Extras", L("Extras"), addon.title)
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
@@ -1115,7 +1115,7 @@ function addon.settings:UpdateMinimapButton()
             end
           end,
           OnTooltipShow = function (tooltip)
-            tooltip:AddLine(fmt("%s %s", addonName, addon.release))
+            tooltip:AddLine(addon.title)
             tooltip:AddLine("|cff909090Left Click: |cffffcc00Toggle Guide|r")
             tooltip:AddLine("|cff909090Right Click: |cffffcc00Show Menu|r")
           end

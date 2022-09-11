@@ -3,6 +3,7 @@ local addonName, addon = ...
 local RXPG = addon.RXPG
 local _, class = UnitClass("player")
 local _G = _G
+local fmt = string.format
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -903,7 +904,7 @@ Footer.text:SetJustifyH("LEFT")
 Footer.text:SetJustifyV("CENTER")
 Footer.text:SetTextColor(1, 1, 1)
 Footer.text:SetFont(addon.font, 9)
-Footer.text:SetText("RestedXP Guides " .. addon.release)
+Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
 Footer:SetFrameLevel(6)
 Footer.bg = Footer:CreateTexture("$parentBG", "BACKGROUND")
 Footer.bg:SetTexture("Interface/AddOns/" .. addonName ..
