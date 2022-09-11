@@ -1569,7 +1569,7 @@ function RXPFrame.GenerateMenuTable(menu)
         for _, group in ipairs(farmGuides) do createMenu(group) end
     end
 
-    if not (RXPData and RXPData.hideUnusedGuides) and #unusedGuides > 0 then
+    if not addon.settings.db.profile.hideUnusedGuides and #unusedGuides > 0 then
         table.insert(menuList,
                      {text = L("Unused Guides"), notCheckable = 1, isTitle = 1})
         for _, group in ipairs(unusedGuides) do createMenu(group) end

@@ -127,6 +127,12 @@ function addon.settings:MigrateSettings()
         db.hideMiniMapPins = not RXPData.hideMiniMapPins
         RXPData.hideMiniMapPins = nil
     end
+
+    if RXPData.hideUnusedGuides ~= nil then
+        n("hideUnusedGuides", RXPData.hideUnusedGuides)
+        db.hideUnusedGuides = not RXPData.hideUnusedGuides
+        RXPData.hideUnusedGuides = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -162,25 +168,11 @@ function addon.settings.CreateOptionsPanel()
     local index = 0
     local options = {}
     local button
-    -- addon.settings.db.profile.
-    button = CreateFrame("CheckButton", "$parentUnusedGuides", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        RXPData.hideUnusedGuides = not self:GetChecked()
-        addon.RXPFrame.GenerateMenuTable()
-    end)
-    button:SetChecked(not RXPData.hideUnusedGuides)
-    button.Text:SetText(L("Show unused guides"))
-    button.tooltip = L(
-                         "Displays guides that are not applicable for your class/race such as starting zones for other races")
-
+    -- addon.settings.db.profile
     button = CreateFrame("CheckButton", "$parentAutoLoad", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.autoLoadGuides = self:GetChecked()
@@ -757,6 +749,18 @@ function addon.settings.CreateNewOptionsPanel()
                         type = "toggle",
                         width = "normal",
                         order = 3
+                    },
+                    hideUnusedGuides = {
+                        name = L("Show unused guides"),
+                        desc = L(
+                            "Displays guides that are not applicable for your class/race such as starting zones for other races"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.GenerateMenuTable()
+                        end
                     },
                     enableMinimapButton = {
                         name = L("Enable Minimap Button"),
