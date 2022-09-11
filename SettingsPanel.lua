@@ -6,6 +6,8 @@ local AceConfig = LibStub("AceConfig-3.0")
 local LibDBIcon = LibStub("LibDBIcon-1.0")
 local LibDataBroker = LibStub("LibDataBroker-1.1")
 
+local fmt = string.format
+
 local importString = ""
 local previousFrame = 0
 local buffer = {}
@@ -1101,12 +1103,22 @@ function addon.settings:UpdateMinimapButton()
         label = addonName,
         icon = "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64",
         tocname = addonName,
-        OnClick = function ()
-            _G.EasyMenu(buildMinimapMenu(), addon.settings.minimapFrame, "cursor", 0, 0, "MENU");
-        end,
-        OnTooltipShow = function (tooltip)
-            tooltip:AddLine(addonName, unpack(addon.colors.mapPins))
-        end
+        OnClick = function (_, button)
+            if button == "RightButton" then
+              _G.EasyMenu(buildMinimapMenu(), addon.settings.minimapFrame, "cursor", 0, 0, "MENU")
+            else
+              if addon.settings.db.profile.minimap.show then
+                addon.settings.HideActive()
+              else
+                addon.settings.RestoreActive()
+              end
+            end
+          end,
+          OnTooltipShow = function (tooltip)
+            tooltip:AddLine(fmt("%s %s", addonName, addon.release))
+            tooltip:AddLine("|cff909090Left Click: |cffffcc00Toggle Guide|r")
+            tooltip:AddLine("|cff909090Right Click: |cffffcc00Show Menu|r")
+          end
     })
 
     LibDBIcon:Register(addonName, minimapButton, self.db.profile.minimap);
