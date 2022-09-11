@@ -201,9 +201,11 @@ step
 	>>Kill Rabid Thistle Bears as you quest
     .complete 2138,1 --Kill Rabid Thistle Bear (x20)
 step
+    #xprate >1.499 
     .goto Darkshore,41.94,31.47
     .accept 4723 >> Accept Beached Sea Creature
 step
+    #xprate >1.499 
     .goto Darkshore,44.18,20.60
     .accept 4725 >> Accept Beached Sea Turtle
 step << !Warlock
@@ -322,6 +324,11 @@ step << !Warlock
     .turnin -985 >> Turn in How Big a Threat?
     .goto Darkshore,39.3,43.5,-1
     .isQuestComplete 4762
+step
+    #xprate >1.499 
+    .goto Darkshore,36.6,45.5
+    .turnin 4725 >> Turn in Beached Sea Turtle
+    .turnin 4727 >> Turn in Beached Sea Turtle
 step
 #xprate <1.5
     .goto Darkshore,38.8,43.4
