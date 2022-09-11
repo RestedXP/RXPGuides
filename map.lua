@@ -10,6 +10,8 @@ addon.linePoints = {}
 
 addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
+addon.activeFrames["arrowFrame"] = af
+
 af:SetMovable(true)
 af:EnableMouse(1)
 af:SetClampedToScreen(true)

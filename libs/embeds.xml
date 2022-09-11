@@ -16,4 +16,6 @@
   <Script file="plc\base64.lua"/>
   <Include file="LibDeflate\lib.xml"/>
   <Include file="LibCandyBar-3.0\lib.xml"/>
+  <Script file="LibDataBroker-1.1\LibDataBroker-1.1.lua"/>
+  <Include file="LibDBIcon-1.0\lib.xml"/>
 </Ui>

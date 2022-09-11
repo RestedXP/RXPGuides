@@ -34,6 +34,7 @@ addon.activeItems = {}
 addon.activeSpells = {}
 addon.RXPG = {}
 addon.functions = {}
+addon.activeFrames = {} -- Hold all active frame/features for Hide/Show
 
 BINDING_HEADER_RXPGuides = addonName
 

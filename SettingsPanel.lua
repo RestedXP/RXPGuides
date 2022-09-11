@@ -3,6 +3,8 @@ local addonName, addon = ...
 local _G = _G
 
 local AceConfig = LibStub("AceConfig-3.0")
+local LibDBIcon = LibStub("LibDBIcon-1.0")
+local LibDataBroker = LibStub("LibDataBroker-1.1")
 
 local importString = ""
 local previousFrame = 0
@@ -41,11 +43,9 @@ function addon.settings.ChatCommand(input)
     elseif input == "splits" then
         addon.tracker:ToggleLevelSplits()
     elseif input == "show" then
-        -- Do not persist change, temporary toggle
-        addon.RXPFrame:SetShown(true)
+        addon.settings.RestoreActive()
     elseif input == "hide" then
-        -- Do not persist change, temporary toggle
-        addon.RXPFrame:SetShown(false)
+        addon.settings.HideActive()
     elseif input == "support" or input == "ticket" or input == "bug" or input == "feedback" then
         addon.comms.OpenBugReport()
     else
@@ -68,7 +68,9 @@ function addon.settings:InitializeSettings()
             enableLevelingReportInspections = true,
             levelSplitsHistory = 10,
             levelSplitsFontSize = 11,
-            levelSplitsOpacity = 0.9
+            levelSplitsOpacity = 0.9,
+            enableMinimapButton = true,
+            minimap = {show = true}
         }
     }
 
@@ -78,6 +80,7 @@ function addon.settings:InitializeSettings()
     self.CreateOptionsPanel()
     self.CreateImportOptionsPanel()
     self.CreateExtrasOptionsPanel()
+    self:UpdateMinimapButton()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
     self:RegisterChatCommand("rxpg", self.ChatCommand)
@@ -91,7 +94,6 @@ end
 local function SetProfileOption(info, value)
     addon.settings.db.profile[info[#info]] = value
 end
-
 
 function addon.settings.CreateOptionsPanel()
     addon.RXPOptions = CreateFrame("Frame", "RXPOptions")
@@ -1023,6 +1025,22 @@ function addon.settings.CreateExtrasOptionsPanel()
                         order = 2,
                         hidden = isNotAdvanced,
                     },
+                    enableMinimapButton = {
+                        name = L("Enable Minimap Button"),
+                        desc = L("Add main options menu to minimap"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                LibDBIcon:Show(addonName)
+                            else
+                                LibDBIcon:Hide(addonName)
+                            end
+                        end,
+                        hidden = isNotAdvanced,
+                    },
                 }
             }
         }
@@ -1043,4 +1061,74 @@ function addon.settings.CreateExtrasOptionsPanel()
                                     "\\Textures\\rxp_logo-64")
     extrasFrame.icon:SetPoint("TOPRIGHT", -5, -5)
 
+end
+
+local function buildMinimapMenu()
+    local menu = {}
+    addon.RXPFrame.GenerateMenuTable(menu)
+
+    if addon.settings.db.profile.minimap.show then
+        table.insert(menu, #menu, {
+            text = _G.HIDE,
+            notCheckable = 1,
+            func = function()
+                addon.settings.HideActive()
+            end
+        })
+    else
+        table.insert(menu, #menu, {
+            text = _G.SHOW,
+            notCheckable = 1,
+            func = function()
+                addon.settings.RestoreActive()
+            end
+        })
+    end
+
+    return menu
+end
+
+function addon.settings:UpdateMinimapButton()
+    if not addon.settings.db.profile.enableMinimapButton then return end
+
+    if not addon.settings.minimapFrame then
+        addon.settings.minimapFrame = CreateFrame("Frame", "RXP_MMMenuFrame", UIParent,
+            "UIDropDownMenuTemplate")
+    end
+
+    local minimapButton = LibDataBroker:NewDataObject(addonName, {
+        type = "data source",
+        label = addonName,
+        icon = "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64",
+        tocname = addonName,
+        OnClick = function ()
+            _G.EasyMenu(buildMinimapMenu(), addon.settings.minimapFrame, "cursor", 0, 0, "MENU");
+        end,
+        OnTooltipShow = function (tooltip)
+            tooltip:AddLine(addonName, unpack(addon.colors.mapPins))
+        end
+    })
+
+    LibDBIcon:Register(addonName, minimapButton, self.db.profile.minimap);
+end
+
+function addon.settings.HideActive()
+    for _, frame in pairs(addon.activeFrames) do
+        frame.restoreState = frame:IsShown()
+        if frame.restoreState then
+            frame:Hide()
+        end
+    end
+
+    addon.settings.db.profile.minimap.show = false
+end
+
+function addon.settings.RestoreActive()
+    for _, frame in pairs(addon.activeFrames) do
+        if frame.restoreState then
+            frame:Show()
+        end
+    end
+
+    addon.settings.db.profile.minimap.show = true
 end

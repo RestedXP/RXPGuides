@@ -114,6 +114,8 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not self or self.activeItemFrame then return end
 
+    addon.activeFrames["activeItemFrame"] = self.activeItemFrame
+
     local f
 
     if not anchor then
