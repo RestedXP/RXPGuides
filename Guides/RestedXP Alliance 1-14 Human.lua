@@ -819,7 +819,7 @@ step
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
     .accept 59 >>Accept Cloth and Leather Armor << Warlock
-step
+step << tbc/Warlock wotlk
     >> Talk to Smith Argus in the blacksmithery
     .goto Elwynn Forest,41.7,65.5
     .accept 1097 >> Accept Elmore's Task
