@@ -1543,7 +1543,7 @@ function addon.functions.fly(self, ...)
     local event = ...
     if not element.confirm and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
         element.confirm = true
-    elseif event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and
+    elseif event == "TAXIMAP_OPENED" and addon.settings.db.profile.enableQuestAutomation and
         element.location then
         addon:TAXIMAP_OPENED()
         for i = 1, NumTaxiNodes() do

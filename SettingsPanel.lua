@@ -76,7 +76,8 @@ function addon.settings:InitializeSettings()
             minimap = {show = true},
 
             --
-            enableQuestAutomation = true
+            enableQuestAutomation = true,
+            enableFPAutomation = true
         }
     }
 
@@ -115,6 +116,11 @@ function addon.settings:MigrateSettings()
         RXPData.disableTrainerAutomation = nil
     end
 
+    if RXPData.disableFPAutomation ~= nil then
+        n("disableFPAutomation", RXPData.disableFPAutomation)
+        db.enableFPAutomation = not RXPData.disableFPAutomation
+        RXPData.disableFPAutomation = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -151,23 +157,10 @@ function addon.settings.CreateOptionsPanel()
     local options = {}
     local button
 
-    button = CreateFrame("CheckButton", "$parentFP", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        RXPData.disableFPAutomation = not self:GetChecked()
-    end)
-    button:SetChecked(not RXPData.disableFPAutomation)
-    button.Text:SetText(L("Flight Path automation"))
-    button.tooltip = L(
-                         "Allows the guide to automatically fly you to your destination")
-
     button = CreateFrame("CheckButton", "$parentMiniMapPin", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideMiniMapPins = self:GetChecked()
