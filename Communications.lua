@@ -1,4 +1,4 @@
-local addonName, addon = ...
+local _, addon = ...
 
 local fmt, mrand, smatch, sbyte = string.format, math.random, string.match,
                                   string.byte
@@ -386,11 +386,11 @@ function addon.comms:AnnounceStepEvent(event, data)
 end
 
 function addon.comms.BuildNotification(msg, ...)
-    return fmt("{rt3} %s: %s", addonName, fmt(msg, ...))
+    return fmt("{rt3} %s: %s", addon.title, fmt(msg, ...))
 end
 
 function addon.comms.PrettyPrint(msg, ...)
-    print(fmt("%s%s: %s", addonName,
+    print(fmt("%s%s: %s", addon.title,
               addon.settings.db.profile.debug and ' (Debug)' or '',
               fmt(msg, ...)))
 end

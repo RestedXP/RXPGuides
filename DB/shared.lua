@@ -562,10 +562,10 @@ function CreatePanel()
 
     }
 
-    LibStub("AceConfig-3.0"):RegisterOptionsTable("RestedXP Guides/Quest Data", questDataTable)
+    LibStub("AceConfig-3.0"):RegisterOptionsTable(addon.title .. "/Quest Data", questDataTable)
 
     addon.settings.gui.quest = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                    "RestedXP Guides/Quest Data", "Quest Data", "RestedXP Guides")
+                                    addon.title .. "/Quest Data", "Quest Data", addon.title)
 
 end
 
