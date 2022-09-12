@@ -102,7 +102,6 @@ function RXPG_init()
     RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
     RXPData.worldMapPinBackgroundOpacity =
         RXPData.worldMapPinBackgroundOpacity or 0.35
-    RXPData.arrowSize = RXPData.arrowSize or 1
     RXPData.windowSize = RXPData.windowSize or 1
     RXPData.arrowText = RXPData.arrowText or 9
     if not RXPCData.flightPaths or UnitLevel("player") <= 6 then

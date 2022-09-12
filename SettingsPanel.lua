@@ -79,7 +79,10 @@ function addon.settings:InitializeSettings()
             enableQuestAutomation = true,
             enableFPAutomation = true,
             showUnusedGuides = true,
-            SoM = 1
+            SoM = 1,
+
+            -- Sliders
+            arrowSize = 1
         }
     }
 
@@ -222,9 +225,6 @@ function addon.settings.CreateOptionsPanel()
                                          "/Textures/rxp_logo-64")
     addon.RXPOptions.icon:SetPoint("TOPRIGHT", -5, -5)
 
-    local index = 0
-    local options = {}
-    local button
     -- addon.settings.db.profile
     -- button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
 
@@ -233,9 +233,6 @@ function addon.settings.CreateOptionsPanel()
         local updateFunc = self.updateFunc or string.format
         self.Text:SetText(updateFunc(self.defaultText, value))
         addon.RXPFrame:SetScale(RXPData.windowSize)
-        local size = RXPData.arrowSize
-        addon.arrowFrame:SetSize(32 * size, 32 * size)
-        addon.arrowFrame.text:SetFont(addon.font, RXPData.arrowText, "OUTLINE")
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
         addon.updateMap = true
         if (self.key == "phase" or self.key == "xprate") and addon.currentGuide then
@@ -280,12 +277,10 @@ function addon.settings.CreateOptionsPanel()
         return slider
     end
     local slider
-    slider = CreateSlider(RXPData, "arrowSize", 0.2, 2, L("Arrow Scale: %.2f"),
-                          L("Scale of the Waypoint Arrow"),
-                          addon.RXPOptions.title, 315, -25, 0.05)
+    -- addon.RXPOptions.title, 315, -25
     slider = CreateSlider(RXPData, "arrowText", 5, 20, L("Arrow Text Size: %d"),
-                          L("Size of the waypoint arrow text"), slider, 0, -25,
-                          1)
+                          L("Size of the waypoint arrow text"),
+                          addon.RXPOptions.title, 315, -25, 1)
     slider = CreateSlider(RXPData, "windowSize", 0.2, 2,
                           L("Window Scale: %.2f"), L(
                               "Scale of the Main Window, use alt+left click on the main window to resize it"),
@@ -806,6 +801,23 @@ function addon.settings.CreateNewOptionsPanel()
                             else
                                 LibDBIcon:Hide(addonName)
                             end
+                        end
+                    },
+                    arrowSize = {
+                        name = L("Arrow Scale"),
+                        desc = L("Scale of the Waypoint Arrow"),
+                        type = "range",
+                        width = "normal",
+                        order = 20.1,
+                        min = 0.2,
+                        max = 2,
+                        step = 0.05,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.arrowFrame:SetSize(32 * value, 32 * value)
+                            addon.arrowFrame.text:SetFont(addon.font,
+                                                          RXPData.arrowText,
+                                                          "OUTLINE")
                         end
                     }
                 }

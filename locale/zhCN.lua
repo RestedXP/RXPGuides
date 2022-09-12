@@ -72,7 +72,7 @@ L["Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp
 L["Northrend Loremaster"] = "诺森德博学者"
 L["Adjust the routes to include almost every quest in the Northrend zones"] =
     "调整路线以包含诺森德地区的几乎所有任务"
-L["Arrow Scale: %.2f"] = "箭头比例：%.2f"
+L["Arrow Scale"] = "箭头比例"
 L["Scale of the Waypoint Arrow"] = "航点箭头的比例"
 L["Arrow Text Size: %d"] = "箭头文字大小：%d"
 L["Size of the waypoint arrow text"] = "航点箭头文本的大小"
