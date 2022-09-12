@@ -476,8 +476,8 @@ Current Step data
 ```
 ]], L("Describe your issue:"), L("Do not edit below this line"),
                         character or "Error", zone or "Error", guide or "Error",
-                        addon.release, RXPCData.xprate, GetLocale(),
-                        select(1, GetBuildInfo()), stepData)
+                        addon.release, addon.settings.db.profile.xprate,
+                        GetLocale(), select(1, GetBuildInfo()), stepData)
 
     local f = AceGUI:Create("Frame")
 

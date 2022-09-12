@@ -91,7 +91,8 @@ function addon.settings:InitializeSettings()
             distanceBetweenPins = 1,
             worldMapPinBackgroundOpacity = 0.35,
             batchSize = 5,
-            phase = 6
+            phase = 6,
+            xpRate = 1
         }
     }
 
@@ -251,6 +252,12 @@ function addon.settings:MigrateSettings()
         db.anchorTop = RXPData.anchorOrientation == 1
         RXPData.anchorOrientation = nil
     end
+
+    if RXPCData.xprate ~= nil then
+        n("xprate", RXPData.xprate)
+        db.xprate = RXPData.xprate
+        RXPData.xprate = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -282,62 +289,6 @@ function addon.settings.CreateOptionsPanel()
                                          "/Textures/rxp_logo-64")
     addon.RXPOptions.icon:SetPoint("TOPRIGHT", -5, -5)
 
-    local SliderUpdate = function(self, value)
-        self.ref[self.key] = value
-        local updateFunc = self.updateFunc or string.format
-        self.Text:SetText(updateFunc(self.defaultText, value))
-        addon.updateMap = true
-        if (self.key == "phase" or self.key == "xprate") and addon.currentGuide then
-            addon.ReloadGuide()
-            addon.RXPFrame.GenerateMenuTable()
-        end
-        addon.RXPFrame.SetStepFrameAnchor()
-    end
-
-    local CreateSlider = function(ref, key, smin, smax, text, tooltip, anchor,
-                                  x, y, steps, minText, maxText, updateFunc)
-        local slider, dvalue
-
-        slider = CreateFrame("Slider", "$parentArrowSlider", addon.RXPOptions,
-                             "OptionsSliderTemplate")
-        slider:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", x, y)
-        slider:SetOrientation('HORIZONTAL')
-        if steps then
-            slider:SetValueStep(steps)
-            slider:SetStepsPerPage(steps)
-            slider:SetObeyStepOnDrag(true)
-        end
-        slider:SetThumbTexture(
-            "Interface/Buttons/UI-SliderBar-Button-Horizontal")
-        slider.ref = ref
-        slider.key = key
-        dvalue = ref[key] or smin
-
-        slider.defaultText = text
-        slider.tooltipText = tooltip
-        slider:SetScript("OnValueChanged", SliderUpdate)
-
-        slider:SetMinMaxValues(smin, smax)
-        SliderUpdate(slider, dvalue)
-        slider:SetValue(dvalue)
-
-        slider.Low:SetText(minText or tostring(smin));
-        slider.High:SetText(maxText or tostring(smax));
-
-        slider.updateFunc = updateFunc
-
-        return slider
-    end
-    local slider
-    -- addon.RXPOptions.title, 315
-    -- addon.settings.db.profile
-    if addon.gameVersion < 40000 then
-        slider = CreateSlider(RXPCData, "xprate", 1, 1.5,
-                              L("Experience rates: %.1fx"), L(
-                                  "Adjusts the guide routes to match increased xp rate bonuses"),
-                              addon.RXPOptions.title, 315, -25, 0.5, "1x",
-                              "1.5x")
-    end
 end
 
 function addon.settings.ImportBoxValidate()
@@ -958,7 +909,26 @@ function addon.settings.CreateNewOptionsPanel()
                             SetProfileOption(info, value)
                             addon.ReloadGuide()
                             addon.RXPFrame.GenerateMenuTable()
-                        end
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
+                    },
+                    xprate = {
+                        name = L("Experience rates"),
+                        desc = L(
+                            "Adjusts the guide routes to match increased xp rate bonuses"),
+                        type = "range",
+                        width = "normal",
+                        order = 20.10,
+                        min = 1,
+                        max = 1.5,
+                        step = 0.5,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
+                        end,
+                        hidden = addon.gameVersion < 30000 or addon.gameVersion >
+                            40000
                     }
                 }
             },

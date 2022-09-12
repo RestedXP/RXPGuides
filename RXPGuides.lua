@@ -78,7 +78,7 @@ local function SoMCheck()
     if gameVersion < 20000 then
         CheckBuff(362859,"SoM")
     elseif CheckBuff(377749,"JoyousJourneys") then
-        RXPCData.xprate = 1.5
+        addon.settings.db.profile.xprate = 1.5 -- TODO don't overwrite constantly
     end
 
 end
@@ -91,7 +91,6 @@ function RXPG_init()
     addon.settings.db.profile.hardcore = addon.game == "CLASSIC" and addon.settings.db.profile.hardcore
     addon.RenderFrame()
     RXPCData.stepSkip = RXPCData.stepSkip or {}
-    RXPCData.xprate = RXPCData.xprate or 1
     if not RXPCData.flightPaths or UnitLevel("player") <= 6 then
         RXPCData.flightPaths = {}
     end
@@ -871,7 +870,7 @@ function addon.XpRateCheck(step)
                 xpmax = tonumber(arg2) or 0xfff
             end
         end)
-        if RXPCData.xprate < xpmin or RXPCData.xprate > xpmax then
+        if addon.settings.db.profile.xprate < xpmin or addon.settings.db.profile.xprate > xpmax then
             return false
         end
     end
