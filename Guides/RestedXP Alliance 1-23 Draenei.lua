@@ -1387,7 +1387,7 @@ step
     .complete 9548,1 --Collect Clopper's Equipment (x1)
 step
     .goto Bloodmyst Isle,39.5,20.7
-	>> Kill and loot murlocs
+	>> Kill and loot murlocs. Idols drop from Seers and Oracles. Knives from the melee murlocs.
     .complete 9549,1 --Collect Crude Murloc Idol (x3)
     .complete 9549,2 --Collect Crude Murloc Knife (x6)
 step

@@ -762,6 +762,9 @@ step << Rogue
     .goto Teldrassil,44.0,54.6
     .deathskip >>Once you get past the furbolg area, die on purpose and respawn at the Darnassus graveyard
 step << Rogue
+    .goto Darnassus,67.2,15.8
+    .home >> Set your Hearthstone to Darnasus 
+step << Rogue
     .goto Darnassus,64.6,53.0
     .collect 25873,1 >> Purchase a Keen Throwing Knife from Ellandrieth
 step << Rogue
