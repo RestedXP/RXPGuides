@@ -247,9 +247,8 @@ step << !Priest !Mage
     #sticky
     .abandon 3904 >> Abandon Milly's Harvest
 step << !Priest !Mage
+    .goto Elwynn Forest,54.5,49.4
     .xp 5+1715 >> Grind on your way back to 1715+/2800xp
-    .hs >> Hearth back once you're at the required exp
-    .goto Elwynn Forest,48.2,42.9
 step << Priest/Mage
     .xp 5+1175 >> Grind on your way back to 1175+/2800xp
     .goto Elwynn Forest,50.7,39.2
@@ -258,6 +257,9 @@ step << Priest/Mage
     .goto Elwynn Forest,50.7,39.2
     .turnin 3904 >> Turn in Milly's Harvest
     .accept 3905 >>Accept Grape Manifest
+step << !Priest !Mage
+    #completewith next
+    .hs >> Hearth or run back to Northshire Abbey
 step
     >> Speak with Deputy Willem
     .goto Elwynn Forest,48.17,42.94 << tbc
