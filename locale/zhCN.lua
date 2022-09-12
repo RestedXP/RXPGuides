@@ -85,7 +85,7 @@ L["Number of map pins shown on the world map"] =
 L["Map Pin Scale"] = "地图引脚比例"
 L["Adjusts the size of the world map pins"] =
     "调整世界地图图钉的大小"
-L["Distance Between Pins: %.2f"] = "引脚之间的距离：%.2f"
+L["Distance Between Pins"] = "引脚之间的距离"
 L["If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."] =
     "如果两个或多个步骤非常接近，此插件会将它们分组到地图上的单个图钉中。 调整此范围以确定两个步骤必须靠得多近才能形成一个组。"
 L["Map Pin Background Opacity: %.2f"] = "地图图钉背景不透明度：%.2f"

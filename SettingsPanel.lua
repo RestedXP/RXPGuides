@@ -86,7 +86,8 @@ function addon.settings:InitializeSettings()
             arrowText = 9,
             windowSize = 1,
             numMapPins = 7,
-            worldMapPinScale = 1
+            worldMapPinScale = 1,
+            distanceBetweenPins = 1
         }
     }
 
@@ -228,6 +229,12 @@ function addon.settings:MigrateSettings()
         db.worldMapPinScale = RXPData.worldMapPinScale
         RXPData.worldMapPinScale = nil
     end
+
+    if RXPData.distanceBetweenPins ~= nil then
+        n("distanceBetweenPins", RXPData.distanceBetweenPins)
+        db.distanceBetweenPins = RXPData.distanceBetweenPins
+        RXPData.distanceBetweenPins = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -308,14 +315,10 @@ function addon.settings.CreateOptionsPanel()
     local slider
     -- addon.RXPOptions.title, 315, -25
     -- addon.settings.db.profile
-    slider = CreateSlider(RXPData, "distanceBetweenPins", 0.05, 2,
-                          ("Distance Between Pins: %.2f"), L(
-                              "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."),
-                          addon.RXPOptions.title, 315, 0.05, "0.05", "2")
     slider = CreateSlider(RXPData, "worldMapPinBackgroundOpacity", 0, 1,
                           L("Map Pin Background Opacity: %.2f"), L(
                               "The opacity of the black circles on the map and mini map"),
-                          slider, 0, -25, 0.05, "0", "1")
+                          addon.RXPOptions.title, 315, -25, 0.05, "0", "1")
     slider = CreateSlider(RXPData, "anchorOrientation", -1, 1,
                           L("Current step frame anchor"), L(
                               "Sets the current step frame to grow from bottom to top or top to bottom by default"),
@@ -885,6 +888,21 @@ function addon.settings.CreateNewOptionsPanel()
                         order = 20.5,
                         min = 0.05,
                         max = 1,
+                        step = 0.05,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.updateMap = true
+                        end
+                    },
+                    distanceBetweenPins = {
+                        name = L("Distance Between Pins"),
+                        desc = L(
+                            "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."),
+                        type = "range",
+                        width = "normal",
+                        order = 20.6,
+                        min = 0.05,
+                        max = 2,
                         step = 0.05,
                         set = function(info, value)
                             SetProfileOption(info, value)

@@ -97,7 +97,6 @@ function RXPG_init()
     addon.RenderFrame()
     RXPCData.stepSkip = RXPCData.stepSkip or {}
     RXPCData.xprate = RXPCData.xprate or 1
-    RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
     RXPData.worldMapPinBackgroundOpacity =
         RXPData.worldMapPinBackgroundOpacity or 0.35
     if not RXPCData.flightPaths or UnitLevel("player") <= 6 then

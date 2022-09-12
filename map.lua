@@ -362,7 +362,7 @@ local lineMapFramePool = MapLinePool.create()
 
 -- Calculates if a given element is close to any other provided pins
 local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
-    local overlap = RXPData.distanceBetweenPins or 1
+    local overlap = addon.settings.db.profile.distanceBetweenPins or 1
     local pinDistanceMod, pinMaxDistance = 0, 0
     if isMiniMapPin then
         pinMaxDistance = 25
