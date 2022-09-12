@@ -208,19 +208,6 @@ function addon.settings.CreateOptionsPanel()
     local button
     -- addon.settings.db.profile
     -- button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    --[[
-    if QuestieLoader then
-        button = CreateFrame("CheckButton", "$parentSkipPreReqs", addon.RXPOptions, "ChatConfigCheckButtonTemplate");
-        table.insert(options,button)
-        button:SetPoint("TOPLEFT",options[index],"BOTTOMLEFT",0,0)
-        index = index + 1
-        button:SetScript("PostClick",function(self)
-            RXPData.skipMissingPreReqs = self:GetChecked()
-        end)
-        button:SetChecked(RXPData.skipMissingPreReqs)
-        button.Text:SetText("Skip quests with missing pre-requisites")
-        button.tooltip = "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"
-    end]]
     --
     if _G.unitscan_targets then
         button = CreateFrame("CheckButton", "$parentUnitscan", addon.RXPOptions,
@@ -788,6 +775,16 @@ function addon.settings.CreateNewOptionsPanel()
                             SetProfileOption(info, value)
                             addon.updateMap = true
                         end
+                    },
+                    skipMissingPreReqs = {
+                        name = L("Skip quests with missing pre-requisites"),
+                        desc = L(
+                            "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        hidden = true or not _G.QuestieLoader, -- Not used
+                        disabled = true -- Not used
                     },
                     enableMinimapButton = {
                         name = L("Enable Minimap Button"),
