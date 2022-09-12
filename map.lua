@@ -673,7 +673,7 @@ end
 -- Generate pins using the current guide's steps, then add the pins to the world map
 local function addWorldMapPins()
     -- Calculate which pins should be on the world map
-    local pins = generatePins(addon.currentGuide.steps, RXPData.numMapPins,
+    local pins = generatePins(addon.currentGuide.steps, addon.settings.db.profile.numMapPins,
                               RXPCData.currentStep, false)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the world map
@@ -691,7 +691,7 @@ local function addWorldMapPins()
 end
 
 local function addWorldMapLines()
-    local lineData = generateLines(addon.currentGuide.steps, RXPData.numMapPins,
+    local lineData = generateLines(addon.currentGuide.steps, addon.settings.db.profile.numMapPins,
                                    RXPCData.currentStep, false)
 
     for i = #lineData, 1, -1 do
@@ -710,7 +710,7 @@ end
 local function addMiniMapPins(pins)
     if addon.settings.db.profile.hideMiniMapPins then return end
     -- Calculate which pins should be on the mini map
-    local pins = generatePins(addon.currentGuide.steps, RXPData.numMapPins,
+    local pins = generatePins(addon.currentGuide.steps, addon.settings.db.profile.numMapPins,
                               RXPCData.currentStep, true)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the mini map

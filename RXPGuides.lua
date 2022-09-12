@@ -97,7 +97,6 @@ function RXPG_init()
     addon.RenderFrame()
     RXPCData.stepSkip = RXPCData.stepSkip or {}
     RXPCData.xprate = RXPCData.xprate or 1
-    RXPData.numMapPins = RXPData.numMapPins or 7
     RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
     RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
     RXPData.worldMapPinBackgroundOpacity =

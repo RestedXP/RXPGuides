@@ -79,7 +79,7 @@ L["Size of the waypoint arrow text"] = "導航箭頭文字的大小"
 L["Window Scale"] = "視窗比例"
 L["Scale of the Main Window, use alt+left click on the main window to resize it"] =
     "主視窗的比例，使用 alt+左鍵單擊主視窗來調整它的大小"
-L["Number of Map Pins: %d"] = "地圖針數：%d"
+L["Number of Map Pins"] = "地圖針數"
 L["Number of map pins shown on the world map"] =
     "世界地圖上顯示的地圖圖釘數量"
 L["Map Pin Scale: %.2f"] = "地圖引腳比例：%.2f"

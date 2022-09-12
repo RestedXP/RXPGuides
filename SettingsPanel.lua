@@ -84,7 +84,8 @@ function addon.settings:InitializeSettings()
             -- Sliders
             arrowSize = 1,
             arrowText = 9,
-            windowSize = 1
+            windowSize = 1,
+            numMapPins = 7
         }
     }
 
@@ -214,6 +215,12 @@ function addon.settings:MigrateSettings()
         db.windowSize = RXPData.windowSize
         RXPData.windowSize = nil
     end
+
+    if RXPData.numMapPins ~= nil then
+        n("numMapPins", RXPData.numMapPins)
+        db.numMapPins = RXPData.numMapPins
+        RXPData.numMapPins = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -245,14 +252,10 @@ function addon.settings.CreateOptionsPanel()
                                          "/Textures/rxp_logo-64")
     addon.RXPOptions.icon:SetPoint("TOPRIGHT", -5, -5)
 
-    -- addon.settings.db.profile
-    -- button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
         local updateFunc = self.updateFunc or string.format
         self.Text:SetText(updateFunc(self.defaultText, value))
-        RXPData.numMapPins = math.floor(RXPData.numMapPins)
         addon.updateMap = true
         if (self.key == "phase" or self.key == "xprate") and addon.currentGuide then
             addon.ReloadGuide()
@@ -297,14 +300,11 @@ function addon.settings.CreateOptionsPanel()
     end
     local slider
     -- addon.RXPOptions.title, 315, -25
-    slider = CreateSlider(RXPData, "numMapPins", 1, 20,
-                          L("Number of Map Pins: %d"),
-                          L("Number of map pins shown on the world map"),
-                          addon.RXPOptions.title, 315, -25, 1, "1", "20")
+    -- addon.settings.db.profile
     slider = CreateSlider(RXPData, "worldMapPinScale", 0.05, 1,
                           L("Map Pin Scale: %.2f"),
-                          L("Adjusts the size of the world map pins"), slider,
-                          0, -25, 0.05, "0.05", "1")
+                          L("Adjusts the size of the world map pins"),
+                          addon.RXPOptions.title, 315, -25, 0.05, "0.05", "1")
     slider = CreateSlider(RXPData, "distanceBetweenPins", 0.05, 2,
                           ("Distance Between Pins: %.2f"), L(
                               "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."),
@@ -857,6 +857,21 @@ function addon.settings.CreateNewOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetScale(value)
+                        end
+                    },
+                    numMapPins = {
+                        name = L("Number of Map Pins"),
+                        desc = L("Number of map pins shown on the world map"),
+                        type = "range",
+                        width = "normal",
+                        order = 20.4,
+                        min = 1,
+                        max = 20,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame:SetScale(value)
+                            addon.updateMap = true
                         end
                     }
                 }
