@@ -1372,7 +1372,7 @@ step
 #xprate <1.5
     .isOnQuest 986
     .goto Darkshore,61.1,10.4
-	>>Kill Monstalker Sires/Matriarchs. Loot them for their pelts
+	>>Kill Moonstalker Sires/Matriarchs. Loot them for their pelts
 	>>Sires share their spawns with Bears, and Matriarchs share their spawns with Foreststriders
 	>>If you cannot find any moonstalkers, skip this quest
     .complete 986,1 --Collect Fine Moonstalker Pelt (x5)
