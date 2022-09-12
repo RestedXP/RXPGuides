@@ -82,7 +82,8 @@ function addon.settings:InitializeSettings()
             SoM = 1,
 
             -- Sliders
-            arrowSize = 1
+            arrowSize = 1,
+            arrowText = 9
         }
     }
 
@@ -100,7 +101,7 @@ function addon.settings:InitializeSettings()
 end
 
 function addon.settings:MigrateSettings()
-    if not RXPData then return end
+    if not RXPData or not RXPCData then return end
 
     local d = addon.settings.db.profile.debug
     local db = addon.settings.db.profile
@@ -194,6 +195,18 @@ function addon.settings:MigrateSettings()
         db.northrendLM = RXPCData.northrendLM
         RXPCData.northrendLM = nil
     end
+
+    if RXPData.arrowSize ~= nil then
+        n("arrowSize", RXPData.arrowSize)
+        db.arrowSize = RXPData.arrowSize
+        RXPData.arrowSize = nil
+    end
+
+    if RXPData.arrowText ~= nil then
+        n("arrowText", RXPData.arrowText)
+        db.arrowText = RXPData.arrowText
+        RXPData.arrowText = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -278,13 +291,10 @@ function addon.settings.CreateOptionsPanel()
     end
     local slider
     -- addon.RXPOptions.title, 315, -25
-    slider = CreateSlider(RXPData, "arrowText", 5, 20, L("Arrow Text Size: %d"),
-                          L("Size of the waypoint arrow text"),
-                          addon.RXPOptions.title, 315, -25, 1)
     slider = CreateSlider(RXPData, "windowSize", 0.2, 2,
                           L("Window Scale: %.2f"), L(
                               "Scale of the Main Window, use alt+left click on the main window to resize it"),
-                          slider, 0, -25, 0.05)
+                          addon.RXPOptions.title, 315, -25, 0.05)
     slider = CreateSlider(RXPData, "numMapPins", 1, 20,
                           L("Number of Map Pins: %d"),
                           L("Number of map pins shown on the world map"),
@@ -815,8 +825,20 @@ function addon.settings.CreateNewOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.arrowFrame:SetSize(32 * value, 32 * value)
-                            addon.arrowFrame.text:SetFont(addon.font,
-                                                          RXPData.arrowText,
+                        end
+                    },
+                    arrowText = {
+                        name = L("Arrow Text Size"),
+                        desc = L("Size of the waypoint arrow text"),
+                        type = "range",
+                        width = "normal",
+                        order = 20.1,
+                        min = 5,
+                        max = 20,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.arrowFrame.text:SetFont(addon.font, value,
                                                           "OUTLINE")
                         end
                     }

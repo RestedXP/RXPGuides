@@ -74,7 +74,7 @@ L["Adjust the routes to include almost every quest in the Northrend zones"] =
     "調整路線以包含北裂境地區的幾乎所有任務"
 L["Arrow Scale"] = "箭頭比例"
 L["Scale of the Waypoint Arrow"] = "導航箭頭的比例"
-L["Arrow Text Size: %d"] = "箭頭文字大小：%d"
+L["Arrow Text Size"] = "箭頭文字大小"
 L["Size of the waypoint arrow text"] = "導航箭頭文字的大小"
 L["Window Scale: %.2f"] = "視窗比例：%.2f"
 L["Scale of the Main Window, use alt+left click on the main window to resize it"] =

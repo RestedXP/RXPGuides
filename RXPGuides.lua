@@ -103,7 +103,6 @@ function RXPG_init()
     RXPData.worldMapPinBackgroundOpacity =
         RXPData.worldMapPinBackgroundOpacity or 0.35
     RXPData.windowSize = RXPData.windowSize or 1
-    RXPData.arrowText = RXPData.arrowText or 9
     if not RXPCData.flightPaths or UnitLevel("player") <= 6 then
         RXPCData.flightPaths = {}
     end
