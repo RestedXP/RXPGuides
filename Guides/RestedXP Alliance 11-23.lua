@@ -356,7 +356,7 @@ step << Druid tbc
 step << Druid tbc
     .goto Moonglade,48.1,67.2
     .fly Auberdine>>Fly to Darkshore
-step << Warlock wotlk
+step << Warlock wotlk/Rogue wotlk
     .hs >> Hearth to Stormwind
 step << Warlock wotlk
     #sticky
@@ -373,7 +373,10 @@ step << Warlock wotlk
     .goto StormwindClassic,42.84,65.14
     .collect 5208,1 --Smoldering Wand (1)
     .money >0.3174
-step << Warlock wotlk
+step << Rogue wotlk
+	.goto StormwindClassic,74.6,52.8
+	.trainer >> Train your class spells
+step << Warlock wotlk/Rogue wotlk
     .goto StormwindNew,21.8,56.2
     .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
     .zoneskip Azuremyst Isle
