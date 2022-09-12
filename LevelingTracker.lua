@@ -955,10 +955,8 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
             tooltipOnButton = true,
             notCheckable = 1,
             func = function()
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .new)
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .new)
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
             end
         }, {
             text = "Hide",

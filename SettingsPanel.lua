@@ -20,7 +20,6 @@ local L = addon.locale.Get
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
 
 if not addon.settings.gui then addon.settings.gui = {selectedDeleteGuide = ""} end
-if not addon.settings.extras then addon.settings.extras = {} end
 
 function addon.settings.ChatCommand(input)
     if not input then
@@ -32,15 +31,12 @@ function addon.settings.ChatCommand(input)
     if input == "import" then
         _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
-    elseif input == "extras" then
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.new)
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.new)
     elseif input == "debug" then
         addon.settings.db.profile.debug = not addon.settings.db.profile.debug
 
         if addon.settings.db.profile.debug then
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.new)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.new)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         end
     elseif input == "splits" then
         addon.tracker:ToggleLevelSplits()
@@ -98,10 +94,9 @@ function addon.settings:InitializeSettings()
 
     self.db = LibStub("AceDB-3.0"):New("RXPCSettings", settingsDBDefaults)
 
-    self.CreateOptionsPanel()
+    self.CreateAceOptionsPanel()
     self.CreateImportOptionsPanel()
     self:MigrateSettings()
-    self.CreateNewOptionsPanel()
     self:UpdateMinimapButton()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
@@ -254,9 +249,9 @@ function addon.settings:MigrateSettings()
     end
 
     if RXPCData.xprate ~= nil then
-        n("xprate", RXPData.xprate)
-        db.xprate = RXPData.xprate
-        RXPData.xprate = nil
+        n("xprate", RXPCData.xprate)
+        db.xprate = RXPCData.xprate
+        RXPCData.xprate = nil
     end
 end
 
@@ -266,29 +261,6 @@ end
 
 local function SetProfileOption(info, value)
     addon.settings.db.profile[info[#info]] = value
-end
-
-function addon.settings.CreateOptionsPanel()
-    addon.RXPOptions = CreateFrame("Frame", "RXPOptions")
-    addon.RXPOptions.name = addon.title
-    _G.InterfaceOptions_AddCategory(addon.RXPOptions)
-
-    addon.RXPOptions.title = addon.RXPOptions:CreateFontString(nil, "ARTWORK",
-                                                               "GameFontNormalLarge")
-    addon.RXPOptions.title:SetPoint("TOPLEFT", 16, -16)
-    addon.RXPOptions.title:SetText(L(addon.title))
-
-    addon.RXPOptions.subtext = addon.RXPOptions:CreateFontString(nil, "ARTWORK",
-                                                                 "GameFontHighlightSmall")
-    addon.RXPOptions.subtext:SetPoint("TOPLEFT", addon.RXPOptions.title,
-                                      "BOTTOMLEFT", 0, -8)
-    addon.RXPOptions.subtext:SetText(addon.versionText)
-
-    addon.RXPOptions.icon = addon.RXPOptions:CreateTexture()
-    addon.RXPOptions.icon:SetTexture("Interface/AddOns/" .. addonName ..
-                                         "/Textures/rxp_logo-64")
-    addon.RXPOptions.icon:SetPoint("TOPRIGHT", -5, -5)
-
 end
 
 function addon.settings.ImportBoxValidate()
@@ -530,7 +502,7 @@ function addon.settings.CreateImportOptionsPanel()
 
 end
 
-function addon.settings.CreateNewOptionsPanel()
+function addon.settings.CreateAceOptionsPanel()
     local function isNotAdvanced()
         return not addon.settings.db.profile.enableBetaFeatures
     end
@@ -539,7 +511,7 @@ function addon.settings.CreateNewOptionsPanel()
         return L("This requires a reload to take effect, continue?")
     end
 
-    local extraOptionsTable = {
+    local optionsTable = {
         type = "group",
         name = addon.title,
         get = GetProfileOption,
@@ -1211,20 +1183,20 @@ function addon.settings.CreateNewOptionsPanel()
         }
     }
 
-    AceConfig:RegisterOptionsTable(addon.title .. "/New", extraOptionsTable)
+    AceConfig:RegisterOptionsTable(addon.title, optionsTable)
 
-    addon.settings.gui.new = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                 addon.title .. "/New", L("New"), addon.title)
+    addon.RXPOptions = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                           addon.title)
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
     -- Hackery ahead
 
-    local extrasFrame = addon.settings.gui.new.obj.frame
-    extrasFrame.icon = extrasFrame:CreateTexture()
-    extrasFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
-                                    "\\Textures\\rxp_logo-64")
-    extrasFrame.icon:SetPoint("TOPRIGHT", -5, -5)
+    local f = addon.RXPOptions.obj.frame
+    f.icon = f:CreateTexture()
+    f.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
+                          "\\Textures\\rxp_logo-64")
+    f.icon:SetPoint("TOPRIGHT", -5, -5)
 
 end
 
