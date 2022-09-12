@@ -87,7 +87,8 @@ function addon.settings:InitializeSettings()
             windowSize = 1,
             numMapPins = 7,
             worldMapPinScale = 1,
-            distanceBetweenPins = 1
+            distanceBetweenPins = 1,
+            worldMapPinBackgroundOpacity = 0.35
         }
     }
 
@@ -235,6 +236,12 @@ function addon.settings:MigrateSettings()
         db.distanceBetweenPins = RXPData.distanceBetweenPins
         RXPData.distanceBetweenPins = nil
     end
+
+    if RXPData.worldMapPinBackgroundOpacity ~= nil then
+        n("worldMapPinBackgroundOpacity", RXPData.worldMapPinBackgroundOpacity)
+        db.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity
+        RXPData.worldMapPinBackgroundOpacity = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -315,14 +322,10 @@ function addon.settings.CreateOptionsPanel()
     local slider
     -- addon.RXPOptions.title, 315, -25
     -- addon.settings.db.profile
-    slider = CreateSlider(RXPData, "worldMapPinBackgroundOpacity", 0, 1,
-                          L("Map Pin Background Opacity: %.2f"), L(
-                              "The opacity of the black circles on the map and mini map"),
-                          addon.RXPOptions.title, 315, -25, 0.05, "0", "1")
     slider = CreateSlider(RXPData, "anchorOrientation", -1, 1,
                           L("Current step frame anchor"), L(
                               "Sets the current step frame to grow from bottom to top or top to bottom by default"),
-                          slider, 0, -25, 2, "Bottom", "Top")
+                          addon.RXPOptions.title, 315, -25, 2, "Bottom", "Top")
 
     slider = CreateSlider(RXPData, "batchSize", 1, 100,
                           L("Batching window size: %d ms"), L(
@@ -903,6 +906,21 @@ function addon.settings.CreateNewOptionsPanel()
                         order = 20.6,
                         min = 0.05,
                         max = 2,
+                        step = 0.05,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.updateMap = true
+                        end
+                    },
+                    worldMapPinBackgroundOpacity = {
+                        name = L("Map Pin Background Opacity"),
+                        desc = L(
+                            "The opacity of the black circles on the map and mini map"),
+                        type = "range",
+                        width = "normal",
+                        order = 20.6,
+                        min = 0,
+                        max = 1,
                         step = 0.05,
                         set = function(info, value)
                             SetProfileOption(info, value)

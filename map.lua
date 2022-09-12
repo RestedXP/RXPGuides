@@ -162,7 +162,7 @@ MapPinPool.creationFunc = function(framePool)
                 f:SetWidth(size + 3)
                 f:SetHeight(size + 3)
                 f:SetBackdropColor(0.0, 0.0, 0.0,
-                                   RXPData.worldMapPinBackgroundOpacity)
+                                   addon.settings.db.profile.worldMapPinBackgroundOpacity)
                 f.inner:SetBackdropColor(1, 1, 1, 1)
                 f.inner:SetWidth(size + 3)
                 f.inner:SetHeight(size + 3)
@@ -170,7 +170,7 @@ MapPinPool.creationFunc = function(framePool)
                 f.text:SetFont(addon.font, 14, "OUTLINE")
             else
                 f:SetBackdropColor(0.1, 0.1, 0.1,
-                                   RXPData.worldMapPinBackgroundOpacity)
+                                   addon.settings.db.profile.worldMapPinBackgroundOpacity)
                 f:SetWidth(size)
                 f:SetHeight(size)
 
@@ -188,7 +188,7 @@ MapPinPool.creationFunc = function(framePool)
             if step.active and not isMiniMapPin then
                 f:SetAlpha(1)
                 f:SetBackdropColor(0.0, 0.0, 0.0,
-                                   RXPData.worldMapPinBackgroundOpacity)
+                                   addon.settings.db.profile.worldMapPinBackgroundOpacity)
                 f.inner:SetBackdropColor(1, 1, 1, 1)
                 f.inner:SetWidth(8 + 3)
                 f.inner:SetHeight(8 + 3)
@@ -196,7 +196,7 @@ MapPinPool.creationFunc = function(framePool)
                 f.text:SetFont(addon.font, 14, "OUTLINE")
             else
                 local bgAlpha = isMiniMapPin and 0 or
-                                    RXPData.worldMapPinBackgroundOpacity
+                                    addon.settings.db.profile.worldMapPinBackgroundOpacity
                 f:SetBackdropColor(0.1, 0.1, 0.1, bgAlpha)
 
                 f.inner:SetBackdropColor(0, 0, 0, 0)
