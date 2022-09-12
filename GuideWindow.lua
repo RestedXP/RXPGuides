@@ -169,9 +169,9 @@ RXPFrame.SetStepFrameAnchor = SetStepFrameAnchor
 local isResizing
 
 RXPFrame.OnMouseDown = function(self, button, resize)
-    if RXPData.lockFrames then
-        return
-    elseif resize or IsAltKeyDown() and
+    if addon.settings.db.profile.lockFrames then return end
+
+    if resize or IsAltKeyDown() and
         not (addon.currentGuide and addon.currentGuide.hidewindow) then
         RXPFrame:StartSizing("BOTTOMRIGHT")
         RXPFrame:SetScript("OnUpdate",

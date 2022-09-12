@@ -154,6 +154,12 @@ function addon.settings:MigrateSettings()
         db.hideWindow = not RXPCData.hideWindow
         RXPCData.hideWindow = nil
     end
+
+    if RXPData.lockFrames ~= nil then
+        n("hideWindow", RXPData.lockFrames)
+        db.lockFrames = not RXPData.lockFrames
+        RXPData.lockFrames = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -189,18 +195,6 @@ function addon.settings.CreateOptionsPanel()
     local options = {}
     local button
     -- addon.settings.db.profile
-    button = CreateFrame("CheckButton", "$parentLock", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    index = index + 1
-    button:SetScript("PostClick",
-                     function(self) RXPData.lockFrames = self:GetChecked() end)
-    button:SetChecked(RXPData.lockFrames)
-    button.Text:SetText(L("Lock Frames"))
-    button.tooltip = L(
-                         "Disable dragging/resizing, use alt+left click on the main window to resize it")
-    --
     button = CreateFrame("CheckButton", "$parentShowUpcoming", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
@@ -228,7 +222,7 @@ function addon.settings.CreateOptionsPanel()
     button = CreateFrame("CheckButton", "$parentHideCompleted",
                          addon.RXPOptions, "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideCompletedSteps = self:GetChecked()
@@ -772,6 +766,14 @@ function addon.settings.CreateNewOptionsPanel()
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetShown(not value)
                         end
+                    },
+                    lockFrames = {
+                        name = L("Lock Frames"),
+                        desc = L(
+                            "Disable dragging/resizing, use alt+left click on the main window to resize it"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2
                     },
                     enableMinimapButton = {
                         name = L("Enable Minimap Button"),

@@ -35,7 +35,7 @@ af:SetPoint("TOP")
 af:Hide()
 
 af:SetScript("OnMouseDown", function(self, button)
-    if not RXPData.lockFrames and af:GetAlpha() ~= 0 then af:StartMoving() end
+    if not addon.settings.db.profile.lockFrames and af:GetAlpha() ~= 0 then af:StartMoving() end
 end)
 af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
 
