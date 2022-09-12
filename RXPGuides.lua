@@ -116,7 +116,6 @@ function RXPG_init()
     end
 
     RXPData.anchorOrientation = RXPData.anchorOrientation or 1
-    addon.RXPFrame:SetShown(not RXPCData.hideWindow)
     C_Timer.After(0.5, function()
         if addon.errorCount == addon.guideErrorCount then
             addon.errorCount = -1
@@ -484,6 +483,7 @@ function addon:OnInitialize()
 
     addon.RXPG.LoadCachedGuides()
     addon.RXPG.LoadEmbeddedGuides()
+    addon.RXPFrame:SetShown(not addon.settings.db.profile.hideGuideWindow)
 end
 
 function addon:OnEnable()

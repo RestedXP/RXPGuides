@@ -147,6 +147,12 @@ function addon.settings:MigrateSettings()
         db.disableItemWindow = not RXPCData.disableItemWindow
         RXPCData.disableItemWindow = nil
     end
+
+    if RXPCData.hideWindow ~= nil then
+        n("hideWindow", RXPCData.hideWindow)
+        db.hideWindow = not RXPCData.hideWindow
+        RXPCData.hideWindow = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -182,24 +188,10 @@ function addon.settings.CreateOptionsPanel()
     local options = {}
     local button
     -- addon.settings.db.profile
-    button = CreateFrame("CheckButton", "$parentHideWindow", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        local hide = self:GetChecked()
-        RXPCData.hideWindow = hide
-        addon.RXPFrame:SetShown(not hide)
-    end)
-    button:SetChecked(RXPCData.hideWindow)
-    button.Text:SetText(L("Hide Window"))
-    button.tooltip = L("Hides the main window")
-
     button = CreateFrame("CheckButton", "$parentLock", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick",
                      function(self) RXPData.lockFrames = self:GetChecked() end)
@@ -760,13 +752,24 @@ function addon.settings.CreateNewOptionsPanel()
                         end
                     },
                     disableItemWindow = {
-                        name = L("Hide waypoint arrow"),
+                        name = L("Hide Active Item window"),
                         type = "toggle",
                         width = "normal",
                         order = 2,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateItemFrame()
+                        end
+                    },
+                    hideWindow = {
+                        name = L("Hide Window"),
+                        desc = L("Hides the main window"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame:SetShown(not value)
                         end
                     },
                     enableMinimapButton = {
