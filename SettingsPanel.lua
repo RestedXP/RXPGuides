@@ -125,7 +125,7 @@ function addon.settings:MigrateSettings()
 
     if RXPData.hideMiniMapPins ~= nil then
         n("hideMiniMapPins", RXPData.hideMiniMapPins)
-        db.hideMiniMapPins = not RXPData.hideMiniMapPins
+        db.hideMiniMapPins = RXPData.hideMiniMapPins
         RXPData.hideMiniMapPins = nil
     end
 
@@ -139,26 +139,32 @@ function addon.settings:MigrateSettings()
 
     if RXPCData.disableArrow ~= nil then
         n("disableArrow", RXPCData.disableArrow)
-        db.disableArrow = not RXPCData.disableArrow
+        db.disableArrow = RXPCData.disableArrow
         RXPCData.disableArrow = nil
     end
 
     if RXPCData.disableItemWindow ~= nil then
         n("disableItemWindow", RXPCData.disableItemWindow)
-        db.disableItemWindow = not RXPCData.disableItemWindow
+        db.disableItemWindow = RXPCData.disableItemWindow
         RXPCData.disableItemWindow = nil
     end
 
     if RXPCData.hideWindow ~= nil then
         n("hideWindow", RXPCData.hideWindow)
-        db.hideWindow = not RXPCData.hideWindow
+        db.hideWindow = RXPCData.hideWindow
         RXPCData.hideWindow = nil
     end
 
     if RXPData.lockFrames ~= nil then
         n("hideWindow", RXPData.lockFrames)
-        db.lockFrames = not RXPData.lockFrames
+        db.lockFrames = RXPData.lockFrames
         RXPData.lockFrames = nil
+    end
+
+    if RXPCData.frameHeight ~= nil then
+        n("hideWindow", RXPCData.frameHeight)
+        db.frameHeight = RXPCData.frameHeight
+        RXPCData.frameHeight = nil
     end
 end
 
@@ -195,34 +201,10 @@ function addon.settings.CreateOptionsPanel()
     local options = {}
     local button
     -- addon.settings.db.profile
-    button = CreateFrame("CheckButton", "$parentShowUpcoming", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        if addon.currentGuide and addon.currentGuide.hidewindow then
-            return
-        end
-        local show = self:GetChecked()
-        if show then
-            addon.RXPFrame:SetHeight(addon.height)
-            RXPCData.frameHeight = addon.height
-        else
-            addon.RXPFrame:SetHeight(10)
-            RXPCData.frameHeight = 10
-        end
-        addon.updateBottomFrame = true
-    end)
-    button:SetChecked(addon.RXPFrame.BottomFrame:GetHeight() >= 35)
-    button.Text:SetText(L("Show step list"))
-    button.tooltip = L(
-                         "Show/Hide the bottom frame listing all the steps of the current guide")
-    --
     button = CreateFrame("CheckButton", "$parentHideCompleted",
                          addon.RXPOptions, "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
+    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.hideCompletedSteps = self:GetChecked()
@@ -774,6 +756,33 @@ function addon.settings.CreateNewOptionsPanel()
                         type = "toggle",
                         width = "normal",
                         order = 2
+                    },
+                    showStepList = { -- Not actually a direct setting, indirectly frameHeight
+                        name = L("Show step list"),
+                        desc = L(
+                            "Show/Hide the bottom frame listing all the steps of the current guide"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        get = function()
+                            return addon.RXPFrame.BottomFrame:GetHeight() >= 35
+                        end,
+                        set = function(info, value)
+                            if addon.currentGuide and
+                                addon.currentGuide.hidewindow then
+                                return
+                            end
+
+                            if value then
+                                addon.RXPFrame:SetHeight(addon.height)
+                                addon.settings.db.profile.frameHeight =
+                                    addon.height
+                            else
+                                addon.RXPFrame:SetHeight(10)
+                                addon.settings.db.profile.frameHeight = 10
+                            end
+                            addon.updateBottomFrame = true
+                        end
                     },
                     enableMinimapButton = {
                         name = L("Enable Minimap Button"),

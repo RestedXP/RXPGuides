@@ -185,7 +185,7 @@ end
 RXPFrame.OnMouseUp = function(self, button)
     RXPFrame:StopMovingOrSizing()
     if isResizing then
-        RXPCData.frameHeight = RXPFrame:GetHeight()
+        addon.settings.db.profile.frameHeight = RXPFrame:GetHeight()
         addon.SetStep(RXPCData.currentStep)
         RXPFrame:SetScript("OnUpdate", nil)
     end
@@ -1077,8 +1077,8 @@ function addon:LoadGuide(guide, OnLoad)
         (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA)
          then return addon:LoadGuide(emptyGuide) end
 
-    if RXPCData.frameHeight then
-        RXPFrame:SetHeight(RXPCData.frameHeight)
+    if addon.settings.db.profile.frameHeight then
+        RXPFrame:SetHeight(addon.settings.db.profile.frameHeight)
     end
     if addon.noGuide then
         RXPFrame:SetHeight(addon.height)
@@ -1410,13 +1410,13 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
         end
     elseif guide and guide.hidewindow then
         if RXPFrame:GetHeight() > 50 then
-            RXPCData.frameHeight = RXPFrame:GetHeight()
+            addon.settings.db.profile.frameHeight = RXPFrame:GetHeight()
         end
         RXPFrame:SetHeight(28)
         BottomFrame:Hide()
     elseif not BottomFrame:IsShown() then
-        if RXPCData.frameHeight then
-            RXPFrame:SetHeight(math.max(RXPCData.frameHeight,50))
+        if addon.settings.db.profile.frameHeight then
+            RXPFrame:SetHeight(math.max(addon.settings.db.profile.frameHeight,50))
         end
         BottomFrame:Show()
     end
