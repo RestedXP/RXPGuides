@@ -82,7 +82,7 @@ L["Scale of the Main Window, use alt+left click on the main window to resize it"
 L["Number of Map Pins"] = "地图针数"
 L["Number of map pins shown on the world map"] =
     "世界地图上显示的地图图钉数量"
-L["Map Pin Scale: %.2f"] = "地图引脚比例：%.2f"
+L["Map Pin Scale"] = "地图引脚比例"
 L["Adjusts the size of the world map pins"] =
     "调整世界地图图钉的大小"
 L["Distance Between Pins: %.2f"] = "引脚之间的距离：%.2f"

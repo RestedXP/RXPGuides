@@ -85,7 +85,8 @@ function addon.settings:InitializeSettings()
             arrowSize = 1,
             arrowText = 9,
             windowSize = 1,
-            numMapPins = 7
+            numMapPins = 7,
+            worldMapPinScale = 1
         }
     }
 
@@ -221,6 +222,12 @@ function addon.settings:MigrateSettings()
         db.numMapPins = RXPData.numMapPins
         RXPData.numMapPins = nil
     end
+
+    if RXPData.worldMapPinScale ~= nil then
+        n("worldMapPinScale", RXPData.worldMapPinScale)
+        db.worldMapPinScale = RXPData.worldMapPinScale
+        RXPData.worldMapPinScale = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -301,14 +308,10 @@ function addon.settings.CreateOptionsPanel()
     local slider
     -- addon.RXPOptions.title, 315, -25
     -- addon.settings.db.profile
-    slider = CreateSlider(RXPData, "worldMapPinScale", 0.05, 1,
-                          L("Map Pin Scale: %.2f"),
-                          L("Adjusts the size of the world map pins"),
-                          addon.RXPOptions.title, 315, -25, 0.05, "0.05", "1")
     slider = CreateSlider(RXPData, "distanceBetweenPins", 0.05, 2,
                           ("Distance Between Pins: %.2f"), L(
                               "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."),
-                          slider, 0, -25, 0.05, "0.05", "2")
+                          addon.RXPOptions.title, 315, 0.05, "0.05", "2")
     slider = CreateSlider(RXPData, "worldMapPinBackgroundOpacity", 0, 1,
                           L("Map Pin Background Opacity: %.2f"), L(
                               "The opacity of the black circles on the map and mini map"),
@@ -871,6 +874,20 @@ function addon.settings.CreateNewOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetScale(value)
+                            addon.updateMap = true
+                        end
+                    },
+                    worldMapPinScale = {
+                        name = L("Map Pin Scale"),
+                        desc = L("Adjusts the size of the world map pins"),
+                        type = "range",
+                        width = "normal",
+                        order = 20.5,
+                        min = 0.05,
+                        max = 1,
+                        step = 0.05,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
                             addon.updateMap = true
                         end
                     }

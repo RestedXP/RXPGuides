@@ -182,7 +182,7 @@ MapPinPool.creationFunc = function(framePool)
             f.inner:SetWidth(size)
             f.inner:SetHeight(size)
             f.text:SetPoint("CENTER", f, 0, 0)
-            f:SetScale(RXPData.worldMapPinScale)
+            f:SetScale(addon.settings.db.profile.worldMapPinScale)
             f:SetAlpha(pin.opacity)
         else
             if step.active and not isMiniMapPin then
@@ -210,7 +210,7 @@ MapPinPool.creationFunc = function(framePool)
             f.inner:SetWidth(1)
             f.inner:SetHeight(1)
             f.text:SetPoint("CENTER", f, 0, 0)
-            f:SetScale(RXPData.worldMapPinScale)
+            f:SetScale(addon.settings.db.profile.worldMapPinScale)
             f:SetAlpha(pin.opacity)
         end
 
