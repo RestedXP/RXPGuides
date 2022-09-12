@@ -78,7 +78,8 @@ function addon.settings:InitializeSettings()
             --
             enableQuestAutomation = true,
             enableFPAutomation = true,
-            showUnusedGuides = true
+            showUnusedGuides = true,
+            SoM = 1
         }
     }
 
@@ -220,22 +221,7 @@ function addon.settings.CreateOptionsPanel()
     local button
     -- addon.settings.db.profile
     -- button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    if addon.game == "CLASSIC" then
-        button = CreateFrame("CheckButton", "$parentSoM", addon.RXPOptions,
-                             "ChatConfigCheckButtonTemplate");
-        table.insert(options, button)
-        button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-        index = index + 1
-        button:SetScript("PostClick", function(self)
-            RXPCData.SoM = self:GetChecked()
-            addon.RXPFrame.GenerateMenuTable()
-            addon.ReloadGuide()
-        end)
-        button:SetChecked(RXPCData.SoM)
-        button.Text:SetText(L("Season of Mastery"))
-        button.tooltip = L(
-                             "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)")
-    elseif addon.gameVersion > 30000 then
+    if addon.gameVersion > 30000 then
         button = CreateFrame("CheckButton", "$parentNorthrendLM",
                              addon.RXPOptions, "ChatConfigCheckButtonTemplate");
         table.insert(options, button)
@@ -786,6 +772,20 @@ function addon.settings.CreateNewOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RenderFrame()
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
+                    },
+                    SoM = {
+                        name = L("Season of Mastery"),
+                        desc = L(
+                            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 10.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.GenerateMenuTable()
+                            addon.ReloadGuide()
                         end,
                         hidden = addon.game ~= "CLASSIC"
                     },

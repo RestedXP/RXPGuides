@@ -2247,7 +2247,7 @@ function addon.functions.next(skip, guide)
             local era = "(Era)"
             local som = "(SoM)"
 
-            if RXPCData.SoM then
+            if addon.settings.db.profile.SoM then
                 next = next:gsub(era, som)
             else
                 next = next:gsub(som, era)
@@ -2257,8 +2257,8 @@ function addon.functions.next(skip, guide)
         nextGuide = addon.GetGuideTable(group, next)
 
         if nextGuide then
-            if (nextGuide.era and RXPCData.SoM or nextGuide.som and
-                not RXPCData.SoM or RXPCData.SoM and RXPCData.phase > 2 and
+            if (nextGuide.era and addon.settings.db.profile.SoM or nextGuide.som and
+                not addon.settings.db.profile.SoM or addon.settings.db.profile.SoM and RXPCData.phase > 2 and
                 nextGuide["era/som"]) or
                 (nextGuide.hardcore and not (addon.settings.db.profile.hardcore) or
                     nextGuide.softcore and addon.settings.db.profile.hardcore) then

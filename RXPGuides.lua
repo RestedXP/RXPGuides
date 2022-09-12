@@ -94,7 +94,6 @@ function RXPG_init()
         RXPCData.phase = 6
     end
     RXPCData.phase = RXPCData.phase or 6
-    RXPCData.SoM = RXPCData.SoM or 1
     addon.RenderFrame()
     RXPCData.stepSkip = RXPCData.stepSkip or {}
     RXPCData.xprate = RXPCData.xprate or 1
@@ -858,8 +857,8 @@ function addon.IsStepShown(step)
 end
 
 function addon.SeasonCheck(step)
-    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM or
-        RXPCData.SoM and RXPCData.phase > 2 and step["era/som"] then
+    if addon.settings.db.profile.SoM and step.era or step.som and not addon.settings.db.profile.SoM or
+    addon.settings.db.profile.SoM and RXPCData.phase > 2 and step["era/som"] then
         return false
     end
     return true

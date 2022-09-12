@@ -1029,7 +1029,7 @@ RXPFrame.bottomBackdrop = {
 
 function addon.GetGuideName(guide)
     if not guide then guide = addon.currentGuide end
-    local som = RXPCData.SoM
+    local som = addon.settings.db.profile.SoM
     if som and guide.somname then
         return guide.somname
     elseif not som and guide.eraname then
