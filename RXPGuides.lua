@@ -88,7 +88,7 @@ function RXPG_init()
     RXPCData = RXPCData or {}
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
-    addon.settings.db.profile.hardcore = (addon.game == "CLASSIC") and RXPCData.addon.settings.db.profile
+    addon.settings.db.profile.hardcore = addon.game == "CLASSIC" and addon.settings.db.profile.hardcore
     if not RXPData.addonVersion or RXPData.addonVersion < addon.version then
         RXPData.addonVersion = addon.version
         RXPCData.phase = 6
@@ -464,12 +464,12 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
 end
 
 function addon:OnInitialize()
-    RXPG_init()
     local importGuidesDefault = {
         profile = {guides = {}, reports = {splits = {}}}
     }
 
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
+
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
     elseif math.floor(gameVersion/1e4) ~= math.floor(RXPData.gameVersion/1e4) then
@@ -477,6 +477,7 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     end
     addon.settings:InitializeSettings()
+    RXPG_init()
     addon.comms:Setup()
     if addon.settings.db.profile.enableTracker then addon.tracker:SetupTracker() end
 
