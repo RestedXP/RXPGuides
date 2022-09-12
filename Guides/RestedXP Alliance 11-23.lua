@@ -1790,11 +1790,42 @@ step
     .goto Ashenvale,36.6,49.6
     .turnin 1023 >> Turn in Raene's Cleansing
 step
+#xprate <1.5 << tbc
     .goto Ashenvale,36.6,49.6
-    .turnin 1023 >> Turn in Raene's Cleansing
+    .accept 1025 >> Accept An Aggressive Defense
 step
     .goto Ashenvale,37.3,51.8
     .turnin 1034 >> Turn in The Ruins of Stardust
+step
+    .goto Ashenvale,34.7,48.9
+    .turnin 1008 >> Turn in The Zoram Strand
+step
+#xprate <1.5 << tbc
+    >>Kill the mobs for An Aggressive Defense
+    .goto Ashenvale,49.9,60.8
+    .goto Ashenvale,56.9,63.7
+    .complete 1025,1 --Kill Foulweald Den Watcher (x1)
+    .complete 1025,2 --Kill Foulweald Ursa (x2)
+    .complete 1025,3 --Kill Foulweald Totemic (x10)
+    .complete 1025,4 --Kill Foulweald Warrior (x12)
+step
+#xprate <1.5 << tbc
+    .goto Ashenvale,49.8,67.2
+    .accept 1016 >> Accept Elemental Bracers
+step
+#xprate <1.5 << tbc
+    >>Kill all water elementals on the island/in the water for Intact Elemental Bracers. When you have 5, right click the Divining Scroll
+    .goto Ashenvale,48.0,69.9
+    .complete 1016,1 --Collect Divined Scroll (x1)
+step
+#xprate <1.5 << tbc
+    .goto Ashenvale,49.8,67.2
+    .turnin 1016 >> Turn in Elemental Bracers
+step
+#xprate <1.5 << tbc
+    .goto Ashenvale,36.6,49.6
+    .turnin 1025 >> Turn in An Aggressive Defense
+    .isQuestComplete 1025
 step
     .goto Ashenvale,34.7,48.9
     .turnin 1008 >> Turn in The Zoram Strand
@@ -2083,8 +2114,42 @@ step
     .goto Ashenvale,36.6,49.6
     .accept 1025 >> Accept An Aggressive Defense
 step
+#xprate <1.5 << tbc
+    .goto Ashenvale,36.6,49.6
+    .accept 1025 >> Accept An Aggressive Defense
+step
     .goto Ashenvale,37.3,51.8
     .turnin 1034 >> Turn in The Ruins of Stardust
+step
+    .goto Ashenvale,34.7,48.9
+    .turnin 1008 >> Turn in The Zoram Strand
+step
+#xprate <1.5 << tbc
+    >>Kill the mobs for An Aggressive Defense
+    .goto Ashenvale,49.9,60.8
+    .goto Ashenvale,56.9,63.7
+    .complete 1025,1 --Kill Foulweald Den Watcher (x1)
+    .complete 1025,2 --Kill Foulweald Ursa (x2)
+    .complete 1025,3 --Kill Foulweald Totemic (x10)
+    .complete 1025,4 --Kill Foulweald Warrior (x12)
+step
+#xprate <1.5 << tbc
+    .goto Ashenvale,49.8,67.2
+    .accept 1016 >> Accept Elemental Bracers
+step
+#xprate <1.5 << tbc
+    >>Kill all water elementals on the island/in the water for Intact Elemental Bracers. When you have 5, right click the Divining Scroll
+    .goto Ashenvale,48.0,69.9
+    .complete 1016,1 --Collect Divined Scroll (x1)
+step
+#xprate <1.5 << tbc
+    .goto Ashenvale,49.8,67.2
+    .turnin 1016 >> Turn in Elemental Bracers
+step
+#xprate <1.5 << tbc
+    .goto Ashenvale,36.6,49.6
+    .turnin 1025 >> Turn in An Aggressive Defense
+        .isQuestComplete 1025
 step
     .goto Ashenvale,34.7,48.9
     .turnin 1008 >> Turn in The Zoram Strand
