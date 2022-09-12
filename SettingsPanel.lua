@@ -77,7 +77,8 @@ function addon.settings:InitializeSettings()
 
             --
             enableQuestAutomation = true,
-            enableFPAutomation = true
+            enableFPAutomation = true,
+            showUnusedGuides = true
         }
     }
 
@@ -130,7 +131,7 @@ function addon.settings:MigrateSettings()
 
     if RXPData.hideUnusedGuides ~= nil then
         n("hideUnusedGuides", RXPData.hideUnusedGuides)
-        db.hideUnusedGuides = not RXPData.hideUnusedGuides
+        db.showUnusedGuides = not RXPData.hideUnusedGuides
         RXPData.hideUnusedGuides = nil
     end
 
@@ -715,7 +716,7 @@ function addon.settings.CreateNewOptionsPanel()
                         width = "normal",
                         order = 3
                     },
-                    hideUnusedGuides = {
+                    showUnusedGuides = {
                         name = L("Show unused guides"),
                         desc = L(
                             "Displays guides that are not applicable for your class/race such as starting zones for other races"),
