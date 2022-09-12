@@ -959,7 +959,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
                 _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
             end
         }, {
-            text = "Hide",
+            text = _G.HIDE,
             tooltipTitle = L("Temporarily hide, use '/rxp splits' to show again"),
             tooltipOnButton = true,
             notCheckable = 1,
@@ -967,72 +967,68 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
         }
     }
 
-    if addon.settings.db.profile.enableBetaFeatures then
-        tinsert(comparisonsMenu, {
-            text = "Export",
-            notCheckable = 1,
-            func = function()
-                addon.comms.OpenBrandedExport("Export Level Splits",
-                                              "Export string for Importing into another character's comparison data",
-                                              addon.tracker:BuildSplitsExport(),
-                                              20, 200)
-                _G.CloseDropDownMenus()
-            end
-        })
-
-        tinsert(comparisonsMenu, {
-            text = "Import",
-            notCheckable = 1,
-            func = function()
-                addon.comms.OpenBrandedExport("Import Level Splits",
-                                              "Import string from another character",
-                                              "", 20, 200,
-                                              addon.tracker.ImportSplits)
-                -- Regenerate menu on next load
-                addon.tracker.state.splitsMenu = nil
-                _G.CloseDropDownMenus()
-            end
-        })
-
-        tinsert(comparisonsMenu,
-                {text = _G.CHARACTER, notCheckable = 1, isTitle = true})
-
-        for k, d in pairs(addon.db.profile.reports.splits) do
-            if k ~= self.reportKey then
-                tinsert(comparisonsMenu, {
-                    text = d.title,
-                    arg1 = k,
-                    func = function(_, key)
-                        addon.tracker.state.splitsComparisonKey = key
-                        _G.CloseDropDownMenus()
-                        addon.tracker:UpdateLevelSplits("full")
-                    end,
-                    checked = function()
-                        return k == self.state.splitsComparisonKey
-                    end
-                })
-            end
+    tinsert(comparisonsMenu, {
+        text = L("Export"),
+        notCheckable = 1,
+        func = function()
+            addon.comms.OpenBrandedExport("Export Level Splits",
+                                          "Export string for Importing into another character's comparison data",
+                                          addon.tracker:BuildSplitsExport(), 20,
+                                          200)
+            _G.CloseDropDownMenus()
         end
+    })
 
-        tinsert(comparisonsMenu, {
-            text = _G.NONE,
-            func = function()
-                addon.tracker.state.splitsComparisonKey = nil
-                _G.CloseDropDownMenus()
-                addon.tracker:UpdateLevelSplits("full")
-            end,
-            checked = function()
-                return not self.state.splitsComparisonKey
-            end
-        })
+    tinsert(comparisonsMenu, {
+        text = L("Import"),
+        notCheckable = 1,
+        func = function()
+            addon.comms.OpenBrandedExport("Import Level Splits",
+                                          "Import string from another character",
+                                          "", 20, 200,
+                                          addon.tracker.ImportSplits)
+            -- Regenerate menu on next load
+            addon.tracker.state.splitsMenu = nil
+            _G.CloseDropDownMenus()
+        end
+    })
 
-        tinsert(menu, {
-            text = "Compare", -- TODO localize
-            hasArrow = true,
-            menuList = comparisonsMenu,
-            notCheckable = 1
-        })
+    tinsert(comparisonsMenu,
+            {text = _G.CHARACTER, notCheckable = 1, isTitle = true})
+
+    for k, d in pairs(addon.db.profile.reports.splits) do
+        if k ~= self.reportKey then
+            tinsert(comparisonsMenu, {
+                text = d.title,
+                arg1 = k,
+                func = function(_, key)
+                    addon.tracker.state.splitsComparisonKey = key
+                    _G.CloseDropDownMenus()
+                    addon.tracker:UpdateLevelSplits("full")
+                end,
+                checked = function()
+                    return k == self.state.splitsComparisonKey
+                end
+            })
+        end
     end
+
+    tinsert(comparisonsMenu, {
+        text = _G.NONE,
+        func = function()
+            addon.tracker.state.splitsComparisonKey = nil
+            _G.CloseDropDownMenus()
+            addon.tracker:UpdateLevelSplits("full")
+        end,
+        checked = function() return not self.state.splitsComparisonKey end
+    })
+
+    tinsert(menu, {
+        text = L("Compare"), -- TODO localize
+        hasArrow = true,
+        menuList = comparisonsMenu,
+        notCheckable = 1
+    })
 
     tinsert(menu, {text = _G.CANCEL, notCheckable = 1, func = function() end})
 
@@ -1182,8 +1178,6 @@ function addon.tracker:ToggleLevelSplits()
     if InCombatLockdown() or not addon.settings.db.profile.enablelevelSplits then
         return
     end
-
-    if not addon.settings.db.profile.enableBetaFeatures then return end
 
     -- Already built
     if addon.tracker.levelSplits then
