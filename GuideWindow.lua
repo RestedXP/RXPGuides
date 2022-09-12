@@ -152,14 +152,14 @@ local function SetStepFrameAnchor()
         frame.anchor = "BOTTOM"
     end
 
-    if RXPData.anchorOrientation < 0 then
-        SetBottom()
-        if frame:GetBottom() * scale < 0 then SetTop() end
-        if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
-    else
+    if addon.settings.db.profile.anchorTop then
         SetTop()
         if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
         if frame:GetBottom() * scale < 0 then SetTop() end
+    else
+        SetBottom()
+        if frame:GetBottom() * scale < 0 then SetTop() end
+        if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
     end
 
 end

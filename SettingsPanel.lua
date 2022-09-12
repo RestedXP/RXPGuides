@@ -80,6 +80,7 @@ function addon.settings:InitializeSettings()
             enableFPAutomation = true,
             showUnusedGuides = true,
             SoM = 1,
+            anchorTop = true,
 
             -- Sliders
             arrowSize = 1,
@@ -242,6 +243,12 @@ function addon.settings:MigrateSettings()
         db.worldMapPinBackgroundOpacity = RXPData.worldMapPinBackgroundOpacity
         RXPData.worldMapPinBackgroundOpacity = nil
     end
+
+    if RXPData.anchorOrientation ~= nil then
+        n("anchorOrientation", RXPData.anchorOrientation)
+        db.anchorTop = RXPData.anchorOrientation == 1
+        RXPData.anchorOrientation = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -320,17 +327,12 @@ function addon.settings.CreateOptionsPanel()
         return slider
     end
     local slider
-    -- addon.RXPOptions.title, 315, -25
+    -- addon.RXPOptions.title, 315
     -- addon.settings.db.profile
-    slider = CreateSlider(RXPData, "anchorOrientation", -1, 1,
-                          L("Current step frame anchor"), L(
-                              "Sets the current step frame to grow from bottom to top or top to bottom by default"),
-                          addon.RXPOptions.title, 315, -25, 2, "Bottom", "Top")
-
     slider = CreateSlider(RXPData, "batchSize", 1, 100,
                           L("Batching window size: %d ms"), L(
                               "Adjusts the batching window tolerance, used for hearthstone batching"),
-                          slider, 0, -25, 1, "1", "100")
+                          addon.RXPOptions.title, 315, -25, 1, "1", "100")
 
     if addon.game == "CLASSIC" then
         slider = CreateSlider(RXPCData, "phase", 1, 6, L("Content phase: %d"),
@@ -925,6 +927,17 @@ function addon.settings.CreateNewOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.updateMap = true
+                        end
+                    },
+                    anchorTop = {
+                        name = L("Anchor frame to top"), -- TODO locales
+                        desc = L(
+                            "Sets the current step frame to grow from bottom to top or top to bottom"),
+                        type = "toggle",
+                        width = "normal",
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.SetStepFrameAnchor()
                         end
                     }
                 }

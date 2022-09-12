@@ -105,7 +105,6 @@ function RXPG_init()
         RXPData.trainGenericSpells = true
     end
 
-    RXPData.anchorOrientation = RXPData.anchorOrientation or 1
     C_Timer.After(0.5, function()
         if addon.errorCount == addon.guideErrorCount then
             addon.errorCount = -1
