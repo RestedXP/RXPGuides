@@ -1336,7 +1336,7 @@ step << Rogue
 step << Rogue
     .goto StormwindClassic,57.6,57.1
     .vendor >> Buy a Cutlass from Gunther and equip it
-step << Rogue
+step << Rogue tbc
     #sticky
     #completewith next
 .hs >> Hearth to Thelsamar
@@ -1368,6 +1368,10 @@ step << tbc
 step << tbc
     #label Darkshore1
     .zone Darkshore >>Get onto the boat when it comes. Take it to Darkshore
+step << Warlock wotlk/Rogue wotlk
+    #xprate <1.5
+    .goto StormwindClassic,52.61,65.71
+    .home >> Set your Hearthstone to Stormwind City
 step << wotlk
     .goto StormwindNew,21.8,56.2
     .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
