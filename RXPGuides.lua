@@ -100,7 +100,6 @@ function RXPG_init()
     if not RXPCData.flightPaths or UnitLevel("player") <= 6 then
         RXPCData.flightPaths = {}
     end
-    RXPData.batchSize = RXPData.batchSize or 5
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end

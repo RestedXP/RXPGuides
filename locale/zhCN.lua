@@ -94,7 +94,7 @@ L["The opacity of the black circles on the map and mini map"] =
 L["Current step frame anchor"] = "当前步帧锚"
 L["Sets the current step frame to grow from bottom to top or top to bottom by default"] =
     "设置当前步进帧默认从下到上或从上到下增长"
-L["Batching window size: %d ms"] = "批处理窗口大小：%d 毫秒"
+L["Batching window size (ms)"] = "批处理窗口大小 (毫秒)"
 L["Adjusts the batching window tolerance, used for hearthstone batching"] =
     "调整批处理窗口容差，用于炉石批处理"
 L["Content phase: %d"] = "内容阶段：%d"

@@ -89,7 +89,8 @@ function addon.settings:InitializeSettings()
             numMapPins = 7,
             worldMapPinScale = 1,
             distanceBetweenPins = 1,
-            worldMapPinBackgroundOpacity = 0.35
+            worldMapPinBackgroundOpacity = 0.35,
+            batchSize = 5
         }
     }
 
@@ -329,11 +330,6 @@ function addon.settings.CreateOptionsPanel()
     local slider
     -- addon.RXPOptions.title, 315
     -- addon.settings.db.profile
-    slider = CreateSlider(RXPData, "batchSize", 1, 100,
-                          L("Batching window size: %d ms"), L(
-                              "Adjusts the batching window tolerance, used for hearthstone batching"),
-                          addon.RXPOptions.title, 315, -25, 1, "1", "100")
-
     if addon.game == "CLASSIC" then
         slider = CreateSlider(RXPCData, "phase", 1, 6, L("Content phase: %d"),
                               L(
@@ -343,7 +339,8 @@ function addon.settings.CreateOptionsPanel()
         slider = CreateSlider(RXPCData, "xprate", 1, 1.5,
                               L("Experience rates: %.1fx"), L(
                                   "Adjusts the guide routes to match increased xp rate bonuses"),
-                              slider, 0, -25, 0.5, "1x", "1.5x")
+                              addon.RXPOptions.title, 315, -25, 0.5, "1x",
+                              "1.5x")
     end
 end
 
@@ -939,6 +936,17 @@ function addon.settings.CreateNewOptionsPanel()
                             SetProfileOption(info, value)
                             addon.RXPFrame.SetStepFrameAnchor()
                         end
+                    },
+                    batchSize = {
+                        name = L("Batching window size (ms)"),
+                        desc = L(
+                            "Adjusts the batching window tolerance, used for hearthstone batching"),
+                        type = "range",
+                        width = "normal",
+                        order = 20.7,
+                        min = 1,
+                        max = 100,
+                        step = 1
                     }
                 }
             },
