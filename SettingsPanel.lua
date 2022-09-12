@@ -141,6 +141,12 @@ function addon.settings:MigrateSettings()
         db.disableArrow = not RXPCData.disableArrow
         RXPCData.disableArrow = nil
     end
+
+    if RXPCData.disableItemWindow ~= nil then
+        n("disableItemWindow", RXPCData.disableItemWindow)
+        db.disableItemWindow = not RXPCData.disableItemWindow
+        RXPCData.disableItemWindow = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -176,19 +182,6 @@ function addon.settings.CreateOptionsPanel()
     local options = {}
     local button
     -- addon.settings.db.profile
-    button = CreateFrame("CheckButton", "$parentActiveItem", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        RXPCData.disableItemWindow = self:GetChecked()
-        addon.UpdateItemFrame()
-    end)
-    button:SetChecked(RXPCData.disableItemWindow)
-    button.Text:SetText(L("Hide Active Item window"))
-    -- button.tooltip = "Show/Hide the Active Item Window"
-    --
     button = CreateFrame("CheckButton", "$parentHideWindow", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
@@ -764,6 +757,16 @@ function addon.settings.CreateNewOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.updateMap = true
+                        end
+                    },
+                    disableItemWindow = {
+                        name = L("Hide waypoint arrow"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.UpdateItemFrame()
                         end
                     },
                     enableMinimapButton = {
