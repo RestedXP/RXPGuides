@@ -76,7 +76,7 @@ L["Arrow Scale"] = "箭头比例"
 L["Scale of the Waypoint Arrow"] = "航点箭头的比例"
 L["Arrow Text Size"] = "箭头文字大小"
 L["Size of the waypoint arrow text"] = "航点箭头文本的大小"
-L["Window Scale: %.2f"] = "窗口比例：%.2f"
+L["Window Scale"] = "窗口比例"
 L["Scale of the Main Window, use alt+left click on the main window to resize it"] =
     "主窗口的比例，使用 alt+左键单击主窗口来调整它的大小"
 L["Number of Map Pins: %d"] = "地图针数：%d"

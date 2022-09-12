@@ -83,7 +83,8 @@ function addon.settings:InitializeSettings()
 
             -- Sliders
             arrowSize = 1,
-            arrowText = 9
+            arrowText = 9,
+            windowSize = 1
         }
     }
 
@@ -207,6 +208,12 @@ function addon.settings:MigrateSettings()
         db.arrowText = RXPData.arrowText
         RXPData.arrowText = nil
     end
+
+    if RXPData.windowSize ~= nil then
+        n("windowSize", RXPData.windowSize)
+        db.windowSize = RXPData.windowSize
+        RXPData.windowSize = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -245,7 +252,6 @@ function addon.settings.CreateOptionsPanel()
         self.ref[self.key] = value
         local updateFunc = self.updateFunc or string.format
         self.Text:SetText(updateFunc(self.defaultText, value))
-        addon.RXPFrame:SetScale(RXPData.windowSize)
         RXPData.numMapPins = math.floor(RXPData.numMapPins)
         addon.updateMap = true
         if (self.key == "phase" or self.key == "xprate") and addon.currentGuide then
@@ -291,14 +297,10 @@ function addon.settings.CreateOptionsPanel()
     end
     local slider
     -- addon.RXPOptions.title, 315, -25
-    slider = CreateSlider(RXPData, "windowSize", 0.2, 2,
-                          L("Window Scale: %.2f"), L(
-                              "Scale of the Main Window, use alt+left click on the main window to resize it"),
-                          addon.RXPOptions.title, 315, -25, 0.05)
     slider = CreateSlider(RXPData, "numMapPins", 1, 20,
                           L("Number of Map Pins: %d"),
                           L("Number of map pins shown on the world map"),
-                          slider, 0, -25, 1, "1", "20")
+                          addon.RXPOptions.title, 315, -25, 1, "1", "20")
     slider = CreateSlider(RXPData, "worldMapPinScale", 0.05, 1,
                           L("Map Pin Scale: %.2f"),
                           L("Adjusts the size of the world map pins"), slider,
@@ -840,6 +842,21 @@ function addon.settings.CreateNewOptionsPanel()
                             SetProfileOption(info, value)
                             addon.arrowFrame.text:SetFont(addon.font, value,
                                                           "OUTLINE")
+                        end
+                    },
+                    windowSize = {
+                        name = L("Window Scale"),
+                        desc = L(
+                            "Scale of the Main Window, use alt+left click on the main window to resize it"),
+                        type = "range",
+                        width = "normal",
+                        order = 20.3,
+                        min = 0.2,
+                        max = 2,
+                        step = 0.05,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame:SetScale(value)
                         end
                     }
                 }
