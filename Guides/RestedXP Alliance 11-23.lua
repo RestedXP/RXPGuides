@@ -360,6 +360,14 @@ step << Warlock wotlk/Rogue wotlk
     .xp >> Grind to level 14
 step << Warlock wotlk/wotlk Gnome Rogue/wotlk Human Rogue/wotlk Dwarf Rogue
     .hs >> Hearth to Stormwind
+step << wotlk Night Elf Rogue
+    .hs >> Hearth to Darnassus
+step << wotlk Night Elf Rogue
+    .goto Teldrassil,56.4,60.1
+	.trainer >> Go and train your spells
+step << wotlk Night Elf Rogue
+    .zone Darkshore >> Head to the Harbor and take the two boars to get to Azuremyst Isle.
+    .zoneskip Azuremyst Isle
 step << Warlock wotlk
     #sticky
     #completewith next
