@@ -850,7 +850,7 @@ end
 
 function addon.IsStepShown(step)
     return not(step.daily and RXPCData.skipDailies) and
-            (RXPCData.northrendLM or not step.questguide) and
+            (addon.settings.db.profile.northrendLM or not step.questguide) and
              addon.AldorScryerCheck(step) and
              addon.PhaseCheck(step) and addon.HardcoreCheck(step) and
              addon.SeasonCheck(step) and addon.XpRateCheck(step)

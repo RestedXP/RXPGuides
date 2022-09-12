@@ -1903,7 +1903,7 @@ function addon.functions.xp(self, ...)
             (element.level == level and currentXP >= maxXP * element.xp)))) ==
         not reverseLogic then
         if element.skipstep then
-            if step.active and not step.completed and not(RXPCData.northrendLM and not reverseLogic) then
+            if step.active and not step.completed and not(addon.settings.db.profile.northrendLM and not reverseLogic) then
                 addon.updateSteps = true
                 step.completed = true
             end
@@ -3253,7 +3253,7 @@ function addon.functions.maxlevel(self, ...)
     local ref = element.ref
 
     if level > element.level then
-        if step.active and not step.completed and not RXPCData.northrendLM then
+        if step.active and not step.completed and not addon.settings.db.profile.northrendLM then
             addon.updateSteps = true
             step.completed = true
         end

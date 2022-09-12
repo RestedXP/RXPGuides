@@ -185,6 +185,12 @@ function addon.settings:MigrateSettings()
         db.hardcore = RXPCData.hardcore
         RXPCData.hardcore = nil
     end
+
+    if RXPCData.northrendLM ~= nil then
+        n("northrendLM", RXPCData.northrendLM)
+        db.northrendLM = RXPCData.northrendLM
+        RXPCData.northrendLM = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -221,21 +227,6 @@ function addon.settings.CreateOptionsPanel()
     local button
     -- addon.settings.db.profile
     -- button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    if addon.gameVersion > 30000 then
-        button = CreateFrame("CheckButton", "$parentNorthrendLM",
-                             addon.RXPOptions, "ChatConfigCheckButtonTemplate");
-        table.insert(options, button)
-        button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-        index = index + 1
-        button:SetScript("PostClick", function(self)
-            RXPCData.northrendLM = self:GetChecked()
-            addon.ReloadGuide()
-        end)
-        button:SetChecked(RXPCData.northrendLM)
-        button.Text:SetText(L("Northrend Loremaster"))
-        button.tooltip = L(
-                             "Adjust the routes to include almost every quest in the Northrend zones")
-    end
 
     local SliderUpdate = function(self, value)
         self.ref[self.key] = value
@@ -788,6 +779,19 @@ function addon.settings.CreateNewOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = addon.game ~= "CLASSIC"
+                    },
+                    northrendLM = {
+                        name = L("Northrend Loremaster"),
+                        desc = L(
+                            "Adjust the routes to include almost every quest in the Northrend zones"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 10.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                        end,
+                        hidden = addon.gameVersion < 30000
                     },
                     enableMinimapButton = {
                         name = L("Enable Minimap Button"),
