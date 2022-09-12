@@ -2258,7 +2258,7 @@ function addon.functions.next(skip, guide)
 
         if nextGuide then
             if (nextGuide.era and addon.settings.db.profile.SoM or nextGuide.som and
-                not addon.settings.db.profile.SoM or addon.settings.db.profile.SoM and RXPCData.phase > 2 and
+                not addon.settings.db.profile.SoM or addon.settings.db.profile.SoM and addon.settings.db.profile.phase > 2 and
                 nextGuide["era/som"]) or
                 (nextGuide.hardcore and not (addon.settings.db.profile.hardcore) or
                     nextGuide.softcore and addon.settings.db.profile.hardcore) then

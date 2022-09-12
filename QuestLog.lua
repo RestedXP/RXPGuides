@@ -124,7 +124,7 @@ function addon.GetQuestLog(QL,LT)
     addon.next = group.next
 
     if (addon.settings.db.profile.SoM and guide.era or not addon.settings.db.profile.SoM and guide.som or
-    addon.settings.db.profile.SoM and RXPCData.phase > 2 and guide["era/som"]) or not guide then
+    addon.settings.db.profile.SoM and addon.settings.db.profile.phase > 2 and guide["era/som"]) or not guide then
         return
     end
     for ns, step in ipairs(guide.steps) do

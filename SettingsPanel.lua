@@ -90,7 +90,8 @@ function addon.settings:InitializeSettings()
             worldMapPinScale = 1,
             distanceBetweenPins = 1,
             worldMapPinBackgroundOpacity = 0.35,
-            batchSize = 5
+            batchSize = 5,
+            phase = 6
         }
     }
 
@@ -330,12 +331,7 @@ function addon.settings.CreateOptionsPanel()
     local slider
     -- addon.RXPOptions.title, 315
     -- addon.settings.db.profile
-    if addon.game == "CLASSIC" then
-        slider = CreateSlider(RXPCData, "phase", 1, 6, L("Content phase: %d"),
-                              L(
-                                  "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"),
-                              slider, 0, -25, 1, "1", "6")
-    elseif addon.gameVersion < 40000 then
+    if addon.gameVersion < 40000 then
         slider = CreateSlider(RXPCData, "xprate", 1, 1.5,
                               L("Experience rates: %.1fx"), L(
                                   "Adjusts the guide routes to match increased xp rate bonuses"),
@@ -947,6 +943,22 @@ function addon.settings.CreateNewOptionsPanel()
                         min = 1,
                         max = 100,
                         step = 1
+                    },
+                    phase = {
+                        name = L("Content phase"),
+                        desc = L(
+                            "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"),
+                        type = "range",
+                        width = "normal",
+                        order = 20.9,
+                        min = 1,
+                        max = 6,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
+                        end
                     }
                 }
             },

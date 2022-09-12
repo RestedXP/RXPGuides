@@ -89,11 +89,6 @@ function RXPG_init()
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
     addon.settings.db.profile.hardcore = addon.game == "CLASSIC" and addon.settings.db.profile.hardcore
-    if not RXPData.addonVersion or RXPData.addonVersion < addon.version then
-        RXPData.addonVersion = addon.version
-        RXPCData.phase = 6
-    end
-    RXPCData.phase = RXPCData.phase or 6
     addon.RenderFrame()
     RXPCData.stepSkip = RXPCData.stepSkip or {}
     RXPCData.xprate = RXPCData.xprate or 1

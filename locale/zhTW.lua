@@ -97,7 +97,7 @@ L["Sets the current step frame to grow from bottom to top or top to bottom by de
 L["Batching window size (ms)"] = "批處理視窗大小 (毫秒)"
 L["Adjusts the batching window tolerance, used for hearthstone batching"] =
     "調整批處理視窗容差，用於爐石批處理"
-L["Content phase: %d"] = "內容階段：%d"
+L["Content phase"] = "內容階段"
 L["Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"] =
     "調整引導路線以匹配內容階段\n第 2 階段：厄運之槌任務\n第 3 階段: 100% 任務 XP (SoM)\n第 4 階段: ZG/希利蘇斯任務\n第 5 階段:AQ 任務\n第 6 階段：東瘟疫之地任務"
 L["Experience rates: %.1fx"] = "經驗率：%.1fx"
