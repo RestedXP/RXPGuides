@@ -154,7 +154,7 @@ MapPinPool.creationFunc = function(framePool)
             f.text:SetText(stepIndex)
         end
 
-        if RXPData.mapCircle and not isMiniMapPin then
+        if addon.settings.db.profile.mapCircle and not isMiniMapPin then
             local size = math.max(f.text:GetWidth(), f.text:GetHeight()) + 8
 
             if step.active then

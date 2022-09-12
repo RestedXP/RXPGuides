@@ -166,6 +166,12 @@ function addon.settings:MigrateSettings()
         db.frameHeight = RXPCData.frameHeight
         RXPCData.frameHeight = nil
     end
+
+    if RXPData.mapCircle ~= nil then
+        n("mapCircle", RXPData.mapCircle)
+        db.mapCircle = RXPData.mapCircle
+        RXPData.mapCircle = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -202,18 +208,6 @@ function addon.settings.CreateOptionsPanel()
     local button
     -- addon.settings.db.profile
     -- button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    button = CreateFrame("CheckButton", "$parentMapCircle", addon.RXPOptions,
-                         "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        RXPData.mapCircle = self:GetChecked()
-        addon.updateMap = true
-    end)
-    button:SetChecked(RXPData.mapCircle)
-    button.Text:SetText(L("Highlight active map pins"))
-    button.tooltip = L("Show a targeting circle around active map pins")
     --[[
     if QuestieLoader then
         button = CreateFrame("CheckButton", "$parentSkipPreReqs", addon.RXPOptions, "ChatConfigCheckButtonTemplate");
@@ -781,6 +775,18 @@ function addon.settings.CreateNewOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
+                        end
+                    },
+                    mapCircle = {
+                        name = L("Highlight active map pins"),
+                        desc = L(
+                            "Show a targeting circle around active map pins"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.updateMap = true
                         end
                     },
                     enableMinimapButton = {
