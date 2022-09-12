@@ -73,7 +73,7 @@ function addon.GetTexture(name) return addon.texturePath .. name end
 function addon.RenderFrame()
     local path
     local colors
-    if RXPCData.hardcore then
+    if addon.settings.db.profile.hardcore then
         path = addon.hardcoreTextures
         colors = hardcoreColors
     elseif RXPCData.GA then
@@ -523,8 +523,8 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number.text:SetTextColor(1, 1, 1)
             stepframe.number.text:SetFont(addon.font, 9)
         end
-        if stepframe.hardcore ~= RXPCData.hardcore or not stepframe.hardcore then
-            stepframe.hardcore = RXPCData.hardcore
+        if stepframe.hardcore ~= addon.settings.db.profile.hardcore or not stepframe.hardcore then
+            stepframe.hardcore = addon.settings.db.profile.hardcore
             stepframe:ClearBackdrop()
             stepframe:SetBackdrop(RXPFrame.backdropEdge)
             stepframe:SetBackdropColor(unpack(addon.colors.background))
@@ -630,7 +630,7 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.button:HookScript("OnEnter", tpOnEnter)
                 elementFrame.button:HookScript("OnLeave", tpOnLeave)
             end
-            if elementFrame.button.hardcore ~= RXPCData.hardcore or
+            if elementFrame.button.hardcore ~= addon.settings.db.profile.hardcore or
                 not elementFrame.hardcore then
                 elementFrame.button:SetNormalTexture(addon.GetTexture(
                                                          "rxp-btn-blank-32"))
@@ -638,7 +638,7 @@ function addon.SetStep(n, n2, loopback)
                                                           "rxp-checked-32"))
                 elementFrame.button:SetDisabledCheckedTexture(addon.GetTexture(
                                                                   "rxp-checked-32"))
-                elementFrame.button.hardcore = RXPCData.hardcore
+                elementFrame.button.hardcore = addon.settings.db.profile.hardcore
             end
             elementFrame.step = step
             elementFrame.element = element
@@ -1579,7 +1579,7 @@ function RXPFrame.GenerateMenuTable(menu)
 
     if addon.game == "CLASSIC" then
         local hctext
-        if RXPData and RXPCData.hardcore then
+        if addon.settings.db.profile.hardcore then
             hctext = L("Deactivate Hardcore mode")
         else
             hctext = L("Activate Hardcore mode")

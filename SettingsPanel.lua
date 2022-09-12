@@ -178,6 +178,12 @@ function addon.settings:MigrateSettings()
         db.disableUnitscan = RXPData.disableUnitscan
         RXPData.disableUnitscan = nil
     end
+
+    if RXPCData.hardcore ~= nil then
+        n("hardcore", RXPCData.hardcore)
+        db.hardcore = RXPCData.hardcore
+        RXPCData.hardcore = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -215,25 +221,10 @@ function addon.settings.CreateOptionsPanel()
     -- addon.settings.db.profile
     -- button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     if addon.game == "CLASSIC" then
-        button = CreateFrame("CheckButton", "$parentHC", addon.RXPOptions,
-                             "ChatConfigCheckButtonTemplate");
-        addon.hardcoreButton = button
-        table.insert(options, button)
-        button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-        index = index + 1
-        button:SetScript("PostClick", function(self)
-            RXPCData.hardcore = self:GetChecked()
-            addon.RenderFrame()
-        end)
-        button:SetChecked(RXPCData.hardcore)
-        button.Text:SetText(L("Hardcore mode"))
-        button.tooltip =
-            L("Adjust the leveling routes to the deathless ruleset")
-
         button = CreateFrame("CheckButton", "$parentSoM", addon.RXPOptions,
                              "ChatConfigCheckButtonTemplate");
         table.insert(options, button)
-        button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+        button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
         index = index + 1
         button:SetScript("PostClick", function(self)
             RXPCData.SoM = self:GetChecked()
@@ -784,6 +775,19 @@ function addon.settings.CreateNewOptionsPanel()
                         width = "normal",
                         order = 2,
                         hidden = not _G.unitscan_targets
+                    },
+                    hardcore = {
+                        name = L("Hardcore mode"),
+                        desc = L(
+                            "Adjust the leveling routes to the deathless ruleset"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 10.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RenderFrame()
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
                     },
                     enableMinimapButton = {
                         name = L("Enable Minimap Button"),

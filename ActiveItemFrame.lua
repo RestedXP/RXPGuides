@@ -220,8 +220,8 @@ function addon.UpdateItemFrame(itemFrame)
     local buttonList = itemFrame.buttonList
     local itemList = GetActiveItemList()
 
-    if itemFrame.hardcore ~= RXPCData.hardcore or not itemFrame.hardcore then
-        itemFrame.hardcore = RXPCData.hardcore
+    if itemFrame.hardcore ~= addon.settings.db.profile.hardcore or not itemFrame.hardcore then
+        itemFrame.hardcore = addon.settings.db.profile.hardcore
         itemFrame:ClearBackdrop()
         itemFrame:SetBackdrop(addon.RXPFrame.backdropEdge)
         local r, g, b = unpack(addon.colors.background)

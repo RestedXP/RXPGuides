@@ -88,7 +88,7 @@ function RXPG_init()
     RXPCData = RXPCData or {}
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
-    RXPCData.hardcore = (addon.game == "CLASSIC") and RXPCData.hardcore
+    addon.settings.db.profile.hardcore = (addon.game == "CLASSIC") and RXPCData.addon.settings.db.profile
     if not RXPData.addonVersion or RXPData.addonVersion < addon.version then
         RXPData.addonVersion = addon.version
         RXPCData.phase = 6
@@ -270,7 +270,7 @@ local function ProcessSpells(names, rank)
                             spellRequest[spellId] = true
                         end
                         if names and rank and
-                            not (RXPCData.hardcore and addon.HCSpellList and
+                            not (addon.settings.db.profile.hardcore and addon.HCSpellList and
                                 addon.HCSpellList[spellId]) then
                             spellRequest[spellId] = nil
                             local sName = GetSpellInfo(spellId)
@@ -787,12 +787,9 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
 end)
 
 function addon.HardcoreToggle()
-    if RXPCData and addon.game == "CLASSIC" then
-        RXPCData.hardcore = not RXPCData.hardcore
+    if addon.game == "CLASSIC" then
+        addon.settings.db.profile.hardcore = not addon.settings.db.profile.hardcore
         addon.RenderFrame()
-        if addon.hardcoreButton then
-            addon.hardcoreButton:SetChecked(RXPCData.hardcore)
-        end
     end
 end
 
@@ -868,7 +865,7 @@ function addon.SeasonCheck(step)
 end
 
 function addon.HardcoreCheck(step)
-    local hc = RXPCData.hardcore
+    local hc = addon.settings.db.profile.hardcore
     if step.softcore and hc or step.hardcore and not hc then return false end
     return true
 end

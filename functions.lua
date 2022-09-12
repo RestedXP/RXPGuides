@@ -2260,8 +2260,8 @@ function addon.functions.next(skip, guide)
             if (nextGuide.era and RXPCData.SoM or nextGuide.som and
                 not RXPCData.SoM or RXPCData.SoM and RXPCData.phase > 2 and
                 nextGuide["era/som"]) or
-                (nextGuide.hardcore and not (RXPCData.hardcore) or
-                    nextGuide.softcore and RXPCData.hardcore) then
+                (nextGuide.hardcore and not (addon.settings.db.profile.hardcore) or
+                    nextGuide.softcore and addon.settings.db.profile.hardcore) then
                 return addon.functions.next(nil, nextGuide)
             else
                 addon:LoadGuide(nextGuide)
