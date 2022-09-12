@@ -156,13 +156,13 @@ function addon.settings:MigrateSettings()
     end
 
     if RXPData.lockFrames ~= nil then
-        n("hideWindow", RXPData.lockFrames)
+        n("lockFrames", RXPData.lockFrames)
         db.lockFrames = RXPData.lockFrames
         RXPData.lockFrames = nil
     end
 
     if RXPCData.frameHeight ~= nil then
-        n("hideWindow", RXPCData.frameHeight)
+        n("frameHeight", RXPCData.frameHeight)
         db.frameHeight = RXPCData.frameHeight
         RXPCData.frameHeight = nil
     end
@@ -201,24 +201,11 @@ function addon.settings.CreateOptionsPanel()
     local options = {}
     local button
     -- addon.settings.db.profile
-    button = CreateFrame("CheckButton", "$parentHideCompleted",
-                         addon.RXPOptions, "ChatConfigCheckButtonTemplate");
-    table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
-    index = index + 1
-    button:SetScript("PostClick", function(self)
-        RXPData.hideCompletedSteps = self:GetChecked()
-        addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
-    end)
-    button:SetChecked(RXPData.hideCompletedSteps)
-    button.Text:SetText(L("Hide completed steps"))
-    button.tooltip = L(
-                         "Only shows current and future steps on the step list window")
-    --
+    -- button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     button = CreateFrame("CheckButton", "$parentMapCircle", addon.RXPOptions,
                          "ChatConfigCheckButtonTemplate");
     table.insert(options, button)
-    button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+    button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
     index = index + 1
     button:SetScript("PostClick", function(self)
         RXPData.mapCircle = self:GetChecked()
@@ -782,6 +769,18 @@ function addon.settings.CreateNewOptionsPanel()
                                 addon.settings.db.profile.frameHeight = 10
                             end
                             addon.updateBottomFrame = true
+                        end
+                    },
+                    hideCompletedSteps = {
+                        name = L("Hide completed steps"),
+                        desc = L(
+                            "Only shows current and future steps on the step list window"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
                         end
                     },
                     enableMinimapButton = {

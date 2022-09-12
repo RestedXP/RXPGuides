@@ -1007,7 +1007,7 @@ hooksecurefunc(ScrollFrame.ScrollBar, "SetValue", function(self, value)
     local scroll = h - BottomFrame:GetHeight()
     local index = RXPCData.currentStep and RXPCData.currentStep > 1 and
     stepPos[RXPCData.currentStep - 1]
-    local zero = RXPData.hideCompletedSteps and index and
+    local zero = addon.settings.db.profile.hideCompletedSteps and index and
                      index + RXPCData.currentStep or
                      0
     if scroll < zero then scroll = zero end
