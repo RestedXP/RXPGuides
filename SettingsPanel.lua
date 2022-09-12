@@ -172,6 +172,12 @@ function addon.settings:MigrateSettings()
         db.mapCircle = RXPData.mapCircle
         RXPData.mapCircle = nil
     end
+
+    if RXPData.disableUnitscan ~= nil then
+        n("disableUnitscan", RXPData.disableUnitscan)
+        db.disableUnitscan = RXPData.disableUnitscan
+        RXPData.disableUnitscan = nil
+    end
 end
 
 local function GetProfileOption(info)
@@ -208,28 +214,12 @@ function addon.settings.CreateOptionsPanel()
     local button
     -- addon.settings.db.profile
     -- button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
-    --
-    if _G.unitscan_targets then
-        button = CreateFrame("CheckButton", "$parentUnitscan", addon.RXPOptions,
-                             "ChatConfigCheckButtonTemplate");
-        table.insert(options, button)
-        button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
-        index = index + 1
-        button:SetScript("PostClick", function(self)
-            RXPData.disableUnitscan = not self:GetChecked()
-        end)
-        button:SetChecked(not RXPData.disableUnitscan)
-        button.Text:SetText(L("Unitscan integration"))
-        button.tooltip = L(
-                             "Automatically adds important npcs to your unitscan list")
-    end
-
     if addon.game == "CLASSIC" then
         button = CreateFrame("CheckButton", "$parentHC", addon.RXPOptions,
                              "ChatConfigCheckButtonTemplate");
         addon.hardcoreButton = button
         table.insert(options, button)
-        button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+        button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
         index = index + 1
         button:SetScript("PostClick", function(self)
             RXPCData.hardcore = self:GetChecked()
@@ -258,7 +248,7 @@ function addon.settings.CreateOptionsPanel()
         button = CreateFrame("CheckButton", "$parentNorthrendLM",
                              addon.RXPOptions, "ChatConfigCheckButtonTemplate");
         table.insert(options, button)
-        button:SetPoint("TOPLEFT", options[index], "BOTTOMLEFT", 0, 0)
+        button:SetPoint("TOPLEFT", addon.RXPOptions.title, "BOTTOMLEFT", 0, -25)
         index = index + 1
         button:SetScript("PostClick", function(self)
             RXPCData.northrendLM = self:GetChecked()
@@ -785,6 +775,15 @@ function addon.settings.CreateNewOptionsPanel()
                         order = 2,
                         hidden = true or not _G.QuestieLoader, -- Not used
                         disabled = true -- Not used
+                    },
+                    disableUnitscan = {
+                        name = L("Unitscan integration"),
+                        desc = L(
+                            "Automatically adds important npcs to your unitscan list"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2,
+                        hidden = not _G.unitscan_targets
                     },
                     enableMinimapButton = {
                         name = L("Enable Minimap Button"),
