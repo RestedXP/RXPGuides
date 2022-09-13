@@ -731,7 +731,11 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Hide Mini Map Pins"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 4.2
+                        order = 4.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.updateMap = true
+                        end
                     },
                     mapCircle = {
                         name = L("Highlight active map pins"),
@@ -771,7 +775,6 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 1,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.RXPFrame:SetScale(value)
                             addon.updateMap = true
                         end
                     },
