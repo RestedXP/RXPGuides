@@ -76,7 +76,7 @@ function addon.settings:InitializeSettings()
             enableFPAutomation = true,
             showUnusedGuides = true,
             SoM = 1,
-            anchorTop = true,
+            anchorOrientation = "top",
 
             -- Sliders
             arrowSize = 1,
@@ -248,7 +248,8 @@ function addon.settings:MigrateSettings()
 
     if RXPData.anchorOrientation ~= nil then
         n("anchorOrientation", RXPData.anchorOrientation)
-        db.anchorTop = RXPData.anchorOrientation == 1
+        db.anchorOrientation = RXPData.anchorOrientation == 1 and "top" or
+                                   "bottom"
         RXPData.anchorOrientation = nil
     end
 
@@ -624,11 +625,13 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = true or not _G.QuestieLoader, -- Not used
                         disabled = true -- Not used
                     },
-                    anchorTop = {
-                        name = L("Anchor frame to top"), -- TODO locales
+                    anchorOrientation = {
+                        name = L("Current step frame anchor"),
                         desc = L(
                             "Sets the current step frame to grow from bottom to top or top to bottom"),
-                        type = "toggle",
+                        type = "select",
+                        values = {top = "Top", bottom = "Bottom"},
+                        sorting = {"top", "bottom"},
                         width = optionsWidth,
                         order = 1.9,
                         set = function(info, value)

@@ -152,7 +152,7 @@ local function SetStepFrameAnchor()
         frame.anchor = "BOTTOM"
     end
 
-    if addon.settings.db.profile.anchorTop then
+    if addon.settings.db.profile.anchorOrientation == "top" then
         SetTop()
         if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
         if frame:GetBottom() * scale < 0 then SetTop() end
