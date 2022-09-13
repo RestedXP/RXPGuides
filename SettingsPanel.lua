@@ -511,6 +511,8 @@ function addon.settings.CreateAceOptionsPanel()
         return L("This requires a reload to take effect, continue?")
     end
 
+    local optionsWidth = 1.08
+
     local optionsTable = {
         type = "group",
         name = addon.title,
@@ -525,13 +527,13 @@ function addon.settings.CreateAceOptionsPanel()
                 width = "full",
                 fontSize = "medium"
             },
-            guideSettings = {
+            generalSettings = {
                 type = "group",
-                name = _G.GUIDE,
+                name = _G.GENERAL,
                 order = 2,
                 args = {
-                    generalHeader = {
-                        name = _G.GENERAL,
+                    guideHeader = {
+                        name = _G.GUIDE,
                         type = "header",
                         width = "full",
                         order = 1.1
@@ -541,7 +543,7 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L(
                             "Displays guides that are not applicable for your class/race such as starting zones for other races"),
                         type = "toggle",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 1.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -553,7 +555,7 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L(
                             "Automatically picks a suitable guide whenever you log in for the first time on a character"),
                         type = "toggle",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 1.3,
                         hidden = true, -- TODO, Impossible situation with character-specific settings
                         set = function(info, value)
@@ -561,23 +563,12 @@ function addon.settings.CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
-                    hideWindow = {
-                        name = L("Hide Window"),
-                        desc = L("Hides the main window"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 1.4,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RXPFrame:SetShown(not value)
-                        end
-                    },
                     lockFrames = {
                         name = L("Lock Frames"),
                         desc = L(
                             "Disable dragging/resizing, use alt+left click on the main window to resize it"),
                         type = "toggle",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 1.5
                     },
                     showStepList = { -- Not actually a direct setting, indirectly frameHeight
@@ -585,7 +576,7 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L(
                             "Show/Hide the bottom frame listing all the steps of the current guide"),
                         type = "toggle",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 1.6,
                         get = function()
                             return addon.RXPFrame.BottomFrame:GetHeight() >= 35
@@ -612,7 +603,7 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L(
                             "Only shows current and future steps on the step list window"),
                         type = "toggle",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 1.7,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -624,7 +615,7 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L(
                             "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"),
                         type = "toggle",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 1.8,
                         hidden = true or not _G.QuestieLoader, -- Not used
                         disabled = true -- Not used
@@ -634,62 +625,117 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L(
                             "Sets the current step frame to grow from bottom to top or top to bottom"),
                         type = "toggle",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 1.9,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.SetStepFrameAnchor()
                         end
                     },
+                    northrendLM = {
+                        name = L("Northrend Loremaster"),
+                        desc = L(
+                            "Adjust the routes to include almost every quest in the Northrend zones"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.90,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                        end,
+                        hidden = addon.gameVersion < 30000
+                    },
+                    interfaceHeader = {
+                        name = _G.UIOPTIONS_MENU,
+                        type = "header",
+                        width = "full",
+                        order = 2
+                    },
+                    hideWindow = {
+                        name = L("Hide Window"),
+                        desc = L("Hides the main window"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame:SetShown(not value)
+                        end
+                    },
+                    disableItemWindow = {
+                        name = L("Hide Active Item window"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.UpdateItemFrame()
+                        end
+                    },
+                    windowSize = {
+                        name = L("Window Scale"),
+                        desc = L(
+                            "Scale of the Main Window, use alt+left click on the main window to resize it"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.3,
+                        min = 0.2,
+                        max = 2,
+                        step = 0.05,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame:SetScale(value)
+                        end
+                    },
                     automationHeader = {
                         name = L("Automation"), -- TODO locale
                         type = "header",
                         width = "full",
-                        order = 2.1
+                        order = 3.1
                     },
                     enableQuestAutomation = {
                         name = L("Quest auto accept/turn in"),
                         desc = L(
                             "Holding the Control key modifier also toggles the quest auto accept feature on and off"),
                         type = "toggle",
-                        width = "normal",
-                        order = 2.2
+                        width = optionsWidth,
+                        order = 3.2
                     },
                     enableTrainerAutomation = {
                         name = L("Trainer automation"),
                         desc = L(
                             "Allows the guide to buy useful leveling spells automatically"),
                         type = "toggle",
-                        width = "normal",
-                        order = 2.3
+                        width = optionsWidth,
+                        order = 3.3
                     },
                     enableFPAutomation = {
                         name = L("Flight Path automation"),
                         desc = L(
                             "Allows the guide to automatically fly you to your destination"),
                         type = "toggle",
-                        width = "normal",
-                        order = 2.4
+                        width = optionsWidth,
+                        order = 3.4
                     },
                     mapHeader = {
                         name = _G.MAP_OPTIONS_TEXT,
                         type = "header",
                         width = "full",
-                        order = 3.1
+                        order = 4.1
                     },
                     hideMiniMapPins = {
                         name = L("Hide Mini Map Pins"),
                         type = "toggle",
-                        width = "normal",
-                        order = 3.2
+                        width = optionsWidth,
+                        order = 4.2
                     },
                     mapCircle = {
                         name = L("Highlight active map pins"),
                         desc = L(
                             "Show a targeting circle around active map pins"),
                         type = "toggle",
-                        width = "normal",
-                        order = 3.3,
+                        width = optionsWidth,
+                        order = 4.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.updateMap = true
@@ -699,8 +745,8 @@ function addon.settings.CreateAceOptionsPanel()
                         name = L("Enable Minimap Button"),
                         desc = L("Add main options menu to minimap"),
                         type = "toggle",
-                        width = "normal",
-                        order = 3.4,
+                        width = optionsWidth,
+                        order = 4.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             if value then
@@ -714,8 +760,8 @@ function addon.settings.CreateAceOptionsPanel()
                         name = L("Number of Map Pins"),
                         desc = L("Number of map pins shown on the world map"),
                         type = "range",
-                        width = "normal",
-                        order = 3.5,
+                        width = optionsWidth,
+                        order = 4.5,
                         min = 1,
                         max = 20,
                         step = 1,
@@ -729,8 +775,8 @@ function addon.settings.CreateAceOptionsPanel()
                         name = L("Map Pin Scale"),
                         desc = L("Adjusts the size of the world map pins"),
                         type = "range",
-                        width = "normal",
-                        order = 3.6,
+                        width = optionsWidth,
+                        order = 4.6,
                         min = 0.05,
                         max = 1,
                         step = 0.05,
@@ -744,8 +790,8 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L(
                             "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."),
                         type = "range",
-                        width = "normal",
-                        order = 3.7,
+                        width = optionsWidth,
+                        order = 4.7,
                         min = 0.05,
                         max = 2,
                         step = 0.05,
@@ -759,8 +805,8 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L(
                             "The opacity of the black circles on the map and mini map"),
                         type = "range",
-                        width = "normal",
-                        order = 3.8,
+                        width = optionsWidth,
+                        order = 4.8,
                         min = 0,
                         max = 1,
                         step = 0.05,
@@ -769,89 +815,29 @@ function addon.settings.CreateAceOptionsPanel()
                             addon.updateMap = true
                         end
                     },
-                    todoHeader = {
-                        name = "TODO",
+                    arrowHeader = {
+                        name = L("Waypoint Arrow"), -- TODO locale
                         type = "header",
                         width = "full",
-                        order = 10
+                        order = 5
                     },
                     disableArrow = {
                         name = L("Hide waypoint arrow"),
                         type = "toggle",
-                        width = "normal",
-                        order = 20,
+                        width = optionsWidth,
+                        order = 5.1,
                         hidden = true, -- TODO, Impossible situation with character-specific settings
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.updateMap = true
                         end
                     },
-                    disableItemWindow = {
-                        name = L("Hide Active Item window"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 20,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.UpdateItemFrame()
-                        end
-                    },
-                    disableUnitscan = {
-                        name = L("Unitscan integration"),
-                        desc = L(
-                            "Automatically adds important npcs to your unitscan list"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 20,
-                        hidden = not _G.unitscan_targets
-                    },
-                    hardcore = {
-                        name = L("Hardcore mode"),
-                        desc = L(
-                            "Adjust the leveling routes to the deathless ruleset"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 20,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RenderFrame()
-                        end,
-                        hidden = addon.game ~= "CLASSIC"
-                    },
-                    SoM = {
-                        name = L("Season of Mastery"),
-                        desc = L(
-                            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 20,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RXPFrame.GenerateMenuTable()
-                            addon.ReloadGuide()
-                        end,
-                        hidden = addon.game ~= "CLASSIC"
-                    },
-                    northrendLM = {
-                        name = L("Northrend Loremaster"),
-                        desc = L(
-                            "Adjust the routes to include almost every quest in the Northrend zones"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 20,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                        end,
-                        hidden = addon.gameVersion < 30000
-                    },
-
                     arrowSize = {
                         name = L("Arrow Scale"),
                         desc = L("Scale of the Waypoint Arrow"),
                         type = "range",
-                        width = "normal",
-                        order = 20,
+                        width = optionsWidth,
+                        order = 5.2,
                         min = 0.2,
                         max = 2,
                         step = 0.05,
@@ -864,7 +850,7 @@ function addon.settings.CreateAceOptionsPanel()
                         name = L("Arrow Text Size"),
                         desc = L("Size of the waypoint arrow text"),
                         type = "range",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 20,
                         min = 5,
                         max = 20,
@@ -874,87 +860,19 @@ function addon.settings.CreateAceOptionsPanel()
                             addon.arrowFrame.text:SetFont(addon.font, value,
                                                           "OUTLINE")
                         end
-                    },
-                    windowSize = {
-                        name = L("Window Scale"),
-                        desc = L(
-                            "Scale of the Main Window, use alt+left click on the main window to resize it"),
-                        type = "range",
-                        width = "normal",
-                        order = 20,
-                        min = 0.2,
-                        max = 2,
-                        step = 0.05,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RXPFrame:SetScale(value)
-                        end
-                    },
-
-                    batchSize = {
-                        name = L("Batching window size (ms)"),
-                        desc = L(
-                            "Adjusts the batching window tolerance, used for hearthstone batching"),
-                        type = "range",
-                        width = "normal",
-                        order = 20,
-                        min = 1,
-                        max = 100,
-                        step = 1
-                    },
-                    phase = {
-                        name = L("Content phase"),
-                        desc = L(
-                            "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"),
-                        type = "range",
-                        width = "normal",
-                        order = 20,
-                        min = 1,
-                        max = 6,
-                        step = 1,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                            addon.RXPFrame.GenerateMenuTable()
-                        end,
-                        hidden = addon.game ~= "CLASSIC"
-                    },
-                    xprate = {
-                        name = L("Experience rates"),
-                        desc = L(
-                            "Adjusts the guide routes to match increased xp rate bonuses"),
-                        type = "range",
-                        width = "normal",
-                        order = 20,
-                        min = 1,
-                        max = 1.5,
-                        step = 0.5,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                            addon.RXPFrame.GenerateMenuTable()
-                        end,
-                        hidden = addon.gameVersion < 30000 or addon.gameVersion >
-                            40000
                     }
                 }
             },
-            optionalFeatures = {
+            levelTrackerFeatures = {
                 type = "group",
-                name = L("Optional Features"),
+                name = L("Leveling Tracker"),
                 order = 3,
                 args = {
-                    trackerOptionsHeader = {
-                        name = L("Leveling Tracker"),
-                        type = "header",
-                        width = "full",
-                        order = 1
-                    },
                     enableTracker = {
                         name = L("Enable Leveling Tracker"),
                         type = "toggle",
                         width = "full",
-                        order = 2,
+                        order = 1,
                         confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -968,7 +886,7 @@ function addon.settings.CreateAceOptionsPanel()
                             "Enables the RestedXP Leveling Report when you open your character panel"),
                         type = "toggle",
                         width = "full",
-                        order = 3,
+                        order = 1.1,
                         confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -982,7 +900,7 @@ function addon.settings.CreateAceOptionsPanel()
                             "Send or receive inspection requests for other Leveling Reports"),
                         type = "toggle",
                         width = "full",
-                        order = 4,
+                        order = 1.2,
                         confirm = requiresReload,
                         disabled = function()
                             return not addon.settings.db.profile.enableTracker
@@ -993,13 +911,13 @@ function addon.settings.CreateAceOptionsPanel()
                         name = L("Level Splits"),
                         type = "header",
                         width = "full",
-                        order = 5
+                        order = 2
                     },
                     enablelevelSplits = {
                         name = L("Enable Level Splits"),
                         type = "toggle",
                         width = "normal",
-                        order = 6,
+                        order = 2.1,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             if addon.settings.db.profile.enablelevelSplits then
@@ -1019,7 +937,7 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L("When comparing, show next level's time"),
                         type = "toggle",
                         width = "normal",
-                        order = 7,
+                        order = 2.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
@@ -1033,7 +951,7 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L("Make background transparent"),
                         type = "toggle",
                         width = "normal",
-                        order = 8,
+                        order = 2.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.tracker:RenderSplitsBackground()
@@ -1047,7 +965,7 @@ function addon.settings.CreateAceOptionsPanel()
                         desc = L("Historical levels to show"),
                         type = "range",
                         width = "normal",
-                        order = 9,
+                        order = 2.4,
                         min = 1,
                         max = GetMaxPlayerLevel(),
                         step = 1,
@@ -1064,7 +982,7 @@ function addon.settings.CreateAceOptionsPanel()
                         name = L("Level Splits Font Size"),
                         type = "range",
                         width = "normal",
-                        order = 10,
+                        order = 2.5,
                         min = 9,
                         max = 17, -- Formatting gets wonky >=18
                         step = 1,
@@ -1083,7 +1001,7 @@ function addon.settings.CreateAceOptionsPanel()
                             "Lower number to make Level Splits more transparent"),
                         type = "range",
                         width = "normal",
-                        order = 11,
+                        order = 2.6,
                         min = 0.1,
                         max = 1,
                         step = 0.1,
@@ -1210,9 +1128,92 @@ function addon.settings.CreateAceOptionsPanel()
                         name = L("Enable Debug"),
                         type = "toggle",
                         width = "full",
-                        order = 2,
+                        order = 1.1,
                         hidden = isNotAdvanced
+                    },
+                    batchSize = {
+                        name = L("Batching window size (ms)"),
+                        desc = L(
+                            "Adjusts the batching window tolerance, used for hearthstone batching"),
+                        type = "range",
+                        width = "normal",
+                        order = 2.1,
+                        min = 1,
+                        max = 100,
+                        step = 1
+                    },
+                    phase = {
+                        name = L("Content phase"),
+                        desc = L(
+                            "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"),
+                        type = "range",
+                        width = "normal",
+                        order = 2.2,
+                        min = 1,
+                        max = 6,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
+                    },
+                    xprate = {
+                        name = L("Experience rates"),
+                        desc = L(
+                            "Adjusts the guide routes to match increased xp rate bonuses"),
+                        type = "range",
+                        width = "normal",
+                        order = 2.2,
+                        min = 1,
+                        max = 1.5,
+                        step = 0.5,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
+                        end,
+                        hidden = addon.gameVersion < 30000 or addon.gameVersion >
+                            40000
+                    },
+                    disableUnitscan = {
+                        name = L("Unitscan integration"),
+                        desc = L(
+                            "Automatically adds important npcs to your unitscan list"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 3,
+                        hidden = not _G.unitscan_targets
+                    },
+                    hardcore = {
+                        name = L("Hardcore mode"),
+                        desc = L(
+                            "Adjust the leveling routes to the deathless ruleset"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 4,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RenderFrame()
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
+                    },
+                    SoM = {
+                        name = L("Season of Mastery"),
+                        desc = L(
+                            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 5,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.GenerateMenuTable()
+                            addon.ReloadGuide()
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
                     }
+
                 }
             }
         }
