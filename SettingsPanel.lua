@@ -1177,6 +1177,7 @@ function addon.settings.CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.ReloadGuide()
                             addon.RXPFrame.GenerateMenuTable()
+                            addon.settings.db.profile.xpRateOverriden = true
                         end,
                         hidden = addon.gameVersion < 30000 or addon.gameVersion >
                             40000
@@ -1211,13 +1212,13 @@ function addon.settings.CreateAceOptionsPanel()
                         width = "normal",
                         order = 5,
                         set = function(info, value)
+                            addon.settings.db.profile.xpRateOverriden = true
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
                             addon.ReloadGuide()
                         end,
                         hidden = addon.game ~= "CLASSIC"
                     }
-
                 }
             }
         }
@@ -1312,4 +1313,39 @@ function addon.settings.RestoreActive()
     end
 
     addon.settings.db.profile.minimap.show = true
+end
+
+function addon.settings:DetectXPRate()
+    if addon.settings.db.profile.xpRateOverriden then return end
+
+    local UnitBuff = UnitBuff
+
+    local function CheckBuff(buffId)
+        local id
+
+        for i = 1, 40 do
+            id = select(10, UnitBuff("player", i))
+            if not id then return false end
+
+            if id == buffId then return true end
+        end
+    end
+
+    if addon.gameVersion < 20000 then
+        addon.settings.db.profile.SoM = CheckBuff(362859) -- SoM
+    elseif addon.gameVersion < 40000 then
+        if CheckBuff(377749) then -- Joyous Journeys
+            addon.settings.db.profile.xprate = 1.5
+        else -- Reset to 1 after buff goes away for Wrath
+            addon.settings.db.profile.xprate = 1
+        end
+    end
+
+    if addon.currentGuide and addon.currentGuide.name then
+        addon:LoadGuide(addon.currentGuide)
+    else
+        addon.ReloadGuide()
+    end
+
+    addon.RXPFrame.GenerateMenuTable()
 end

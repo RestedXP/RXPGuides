@@ -41,48 +41,6 @@ BINDING_HEADER_RXPGuides = addon.title
 
 local questFrame = CreateFrame("Frame");
 
-local buffCheckTimer
-local function SoMCheck()
-    local function CheckBuff(buffId,key,value)
-        value = value or true
-        if RXPCData and RXPCData[key] == nil and
-                GetTime() - buffCheckTimer < 300 then
-
-            local id = 0
-            local n = 1
-            while id do
-                id = select(10, UnitBuff("player", n))
-                n = n + 1
-                if id == buffId then
-                    RXPCData[key] = value
-                    if addon.currentGuide and addon.currentGuide.name then
-                        addon:LoadGuide(addon.currentGuide)
-                    end
-                    addon.RXPFrame.GenerateMenuTable()
-                    break
-                end
-            end
-            if id ~= buffId and RXPCData[key] then
-                RXPCData[key] = nil
-                addon.ReloadGuide()
-                addon.RXPFrame.GenerateMenuTable()
-            end
-            return RXPCData[key]
-        end
-    end
-
-    if not buffCheckTimer then
-        buffCheckTimer = GetTime()
-    end
-
-    if gameVersion < 20000 then
-        CheckBuff(362859,"SoM")
-    elseif CheckBuff(377749,"JoyousJourneys") then
-        addon.settings.db.profile.xprate = 1.5 -- TODO don't overwrite constantly
-    end
-
-end
-
 function RXPG_init()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
@@ -470,7 +428,8 @@ function addon:OnInitialize()
 end
 
 function addon:OnEnable()
-    SoMCheck()
+    --TODO might not be early enough?
+    addon.settings:DetectXPRate()
     ProcessSpells()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
@@ -516,10 +475,6 @@ function addon:OnEnable()
 
     if C_QuestLog.RequestLoadQuestByID then
         self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
-    end
-
-    if _G.WOW_PROJECT_ID == _G.WOW_PROJECT_CLASSIC then
-        self:RegisterEvent("UNIT_AURA")
     end
 end
 
@@ -568,11 +523,6 @@ function addon:PLAYER_LEVEL_UP(_, level)
     -- addon:LoadGuide(addon.currentGuide)
     addon.SetStep(1)
     addon.SetStep(stepn)
-end
-
-function addon:UNIT_AURA(_, unit)
-    if unit ~= "player" then return end
-    SoMCheck()
 end
 
 function addon:UNIT_PET(_, unit)
