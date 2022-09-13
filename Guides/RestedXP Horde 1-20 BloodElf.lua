@@ -1990,21 +1990,12 @@ step
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .complete 9281,1 --Kill Greater Spindleweb (x10)
 step
-    #sticky
-    #label theladynecklace
-    .goto Ghostlands,13.2,56.8,0,0
-    >>Continue grinding these mobs until you get The Lady's Necklace to drop. Accept the quest from it.
-    .use 22597 >> Click on the necklace in your bags
-    .collect 22597,1,9175 --Collect The Lady's Necklace (x1)
-    .accept 9175 >> Accept The Lady's Necklace
-step
-        >>Kill Fallen Rangers and Deatholme Acolytes. These mobs can be hard, try not to pull more than one at a time.
+        >>Kill Fallen Rangers and Deatholme Acolytes. Loot them for the Lady's Necklace. Click it in your bags. These mobs can be hard, try not to pull more than one at a time.
     .goto Ghostlands,13.2,56.8
-       .collect 22597,1 --Collect The Lady's Necklace (x1)
     .complete 9173,1 --Deatholme Acolyte (8)
     .complete 9173,2 --Fallen Ranger (10)
-step
-    #requires theladynecklace
+    .collect 22597,1,9175 --Collect The Lady's Necklace (x1)
+    .accept 9175 >> Accept The Lady's Necklace
 step
     #completewith next
     >>Loot Spiders for Crunchy Spider Legs
@@ -2265,8 +2256,6 @@ step << Druid/Paladin/Priest
     .complete 9212,1 --Escort Ranger Lilatha back to the Farstrider Enclave
 step
     #requires Juju
-    .goto Ghostlands,72.1,31.8,2500
-step
     >> Talk to Captain Helios
     .goto Ghostlands,72.4,29.7
     .turnin 9212,1 >> Turn in Escape from the Catacombs << Paladin
@@ -2278,10 +2267,8 @@ step << Rogue
     .accept 10548 >>Accept The Sad Truth
     .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
 step
-    .isOnQuest 9161
-    .goto Ghostlands,78.8,19.8,30 >>Enter the building. Be careful, the Arcane Reavers here hit HARD and stun
-step
-    >>Go to the top floor. Turn in at the book
+    >>Go to the top floor of the building. Talk to the book
+    .goto Ghostlands,78.8,19.8,30,0
     .goto Ghostlands,79.6,17.6
     .turnin 9161 >> Turn in The Traitor's Shadow
     .accept 9162 >> Accept Hints of the Past
@@ -2307,7 +2294,6 @@ step
     .turnin 9162 >> Turn in Hints of the Past
     .accept 9172 >> Accept Report to Magister Kaendris
 step << Rogue
-    #sticky
     #completewith shrunkedheads
     #label ShrunkenHead
     >>Open the Primitive Chests around until you loot a Head.
@@ -2315,9 +2301,7 @@ step << Rogue
 step
     #sticky
     #label Catlords
-    .goto Ghostlands,68.2,57.8,40,0
-    .goto Ghostlands,65.1,66.7,40,0
-    .goto Ghostlands,63.0,75.0,40,0
+    .goto Ghostlands,63.0,75.0,0,0
     >>Kill Trolls in the area. Loot them for Staves and Claws
     .complete 9277,1 --Kill Shadowpine Catlord (x10)
     .complete 9277,2 --Kill Shadowpine Hexxer (x10)
@@ -2343,7 +2327,6 @@ step
     .goto Ghostlands,65.1,66.7
     .xp 18 >> Grind til level 18
 step << Priest/Mage/Druid/Paladin
-    #sticky
     #completewith next
     >>Kill Kel'gash the Wicked. You should be able to solo him on every class by abusing line of sight (LoS) at the cylinder behind where he stands when he starts casting spells. Just be sure to have cooldowns available (and potions if you can). If you can't do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest
     .goto Ghostlands,65.1,79.2
@@ -2356,13 +2339,11 @@ step << Rogue
     .goto Ghostlands,65.1,79.2
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
 step << Warlock
-    #sticky
     #completewith next
     >>Kill Kel'gash the Wicked. You should be able to solo him by letting your pet build aggro, then loading dots up on him, as well as line of sight (LoS)ing his spells when he tries to cast on you. Be careful as he has a 100 damage instant-cast lightning shock he uses rarely. If you can't do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest
     .goto Ghostlands,65.1,79.2
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
 step << Hunter
-    #sticky
     #completewith next
     >>Kill Kel'gash the Wicked. You should be able to solo him by line of sight (LoS)ing his spells when he tries to cast on you. Be careful as he has a 100 damage instant-cast lightning shock he uses rarely. If you can't do it, then you can either look for a group, or skip. I HIGHLY recommend doing this quest.
     .goto Ghostlands,65.1,79.2
