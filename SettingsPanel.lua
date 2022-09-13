@@ -94,7 +94,11 @@ function addon.settings:InitializeSettings()
 
     self.db = LibStub("AceDB-3.0"):New("RXPCSettings", settingsDBDefaults)
 
-    self.CreateAceOptionsPanel()
+    self.db.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
+    self.db.RegisterCallback(self, "OnProfileCopied", "RefreshProfile")
+    self.db.RegisterCallback(self, "OnProfileReset", "RefreshProfile")
+
+    self:CreateAceOptionsPanel()
     self.CreateImportOptionsPanel()
     self:MigrateSettings()
     self:UpdateMinimapButton()
@@ -502,9 +506,9 @@ function addon.settings.CreateImportOptionsPanel()
 
 end
 
-function addon.settings.CreateAceOptionsPanel()
+function addon.settings:CreateAceOptionsPanel()
     local function isNotAdvanced()
-        return not addon.settings.db.profile.enableBetaFeatures
+        return not self.db.profile.enableBetaFeatures
     end
 
     local function requiresReload()
@@ -1226,6 +1230,10 @@ function addon.settings.CreateAceOptionsPanel()
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
 
+    optionsTable.args.profiles = LibStub("AceDBOptions-3.0"):GetOptionsTable(
+                                     self.db)
+    optionsTable.args.profiles.order = 20
+
     addon.RXPOptions = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
                            addon.title)
 
@@ -1348,4 +1356,15 @@ function addon.settings:DetectXPRate()
     end
 
     addon.RXPFrame.GenerateMenuTable()
+end
+
+function addon.settings:RefreshProfile()
+    if addon.currentGuide and addon.currentGuide.name then
+        addon:LoadGuide(addon.currentGuide)
+    else
+        addon.ReloadGuide()
+    end
+    addon.updateMap = true
+    addon.RXPFrame.GenerateMenuTable()
+    addon.RXPFrame.SetStepFrameAnchor()
 end
