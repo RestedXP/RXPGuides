@@ -842,7 +842,7 @@ end
 
 function addon.SeasonCheck(step)
     if addon.settings.db.profile.SoM and step.era or step.som and not addon.settings.db.profile.SoM or
-    addon.settings.db.profile.SoM and RXPCData.phase > 2 and step["era/som"] then
+    addon.settings.db.profile.SoM and addon.settings.db.profile.phase > 2 and step["era/som"] then
         return false
     end
     return true
