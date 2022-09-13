@@ -1169,6 +1169,10 @@ function addon.settings.CreateAceOptionsPanel()
                         min = 1,
                         max = 1.5,
                         step = 0.5,
+                        confirm = function()
+                            return L(
+                                       "Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them") -- TODO locale
+                        end,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.ReloadGuide()
