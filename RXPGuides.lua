@@ -425,10 +425,10 @@ function addon:OnInitialize()
     addon.RXPG.LoadCachedGuides()
     addon.RXPG.LoadEmbeddedGuides()
     addon.RXPFrame:SetShown(not addon.settings.db.profile.hideGuideWindow)
+    addon.RXPFrame:SetScale(addon.settings.db.profile.windowScale)
 end
 
 function addon:OnEnable()
-    --TODO might not be early enough?
     addon.settings:DetectXPRate()
     ProcessSpells()
     addon.GetProfessionLevel()

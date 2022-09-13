@@ -679,7 +679,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.UpdateItemFrame()
                         end
                     },
-                    windowSize = {
+                    windowScale = {
                         name = L("Window Scale"),
                         desc = L(
                             "Scale of the Main Window, use alt+left click on the main window to resize it"),
