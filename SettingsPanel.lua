@@ -206,7 +206,7 @@ function addon.settings:MigrateSettings()
 
     if RXPData.arrowSize ~= nil then
         n("arrowSize", RXPData.arrowSize)
-        db.arrowSize = RXPData.arrowSize
+        db.arrowScale = RXPData.arrowSize
         RXPData.arrowSize = nil
     end
 
@@ -218,7 +218,7 @@ function addon.settings:MigrateSettings()
 
     if RXPData.windowSize ~= nil then
         n("windowSize", RXPData.windowSize)
-        db.windowSize = RXPData.windowSize
+        db.windowScale = RXPData.windowSize
         RXPData.windowSize = nil
     end
 
@@ -842,7 +842,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.updateMap = true
                         end
                     },
-                    arrowSize = {
+                    arrowScale = {
                         name = L("Arrow Scale"),
                         desc = L("Scale of the Waypoint Arrow"),
                         type = "range",

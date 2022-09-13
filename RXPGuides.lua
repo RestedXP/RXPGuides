@@ -426,6 +426,7 @@ function addon:OnInitialize()
     addon.RXPG.LoadEmbeddedGuides()
     addon.RXPFrame:SetShown(not addon.settings.db.profile.hideGuideWindow)
     addon.RXPFrame:SetScale(addon.settings.db.profile.windowScale)
+    addon.arrowFrame:SetSize(32 * addon.settings.db.profile.arrowScale, 32 * addon.settings.db.profile.arrowScale)
 end
 
 function addon:OnEnable()
