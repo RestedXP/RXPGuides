@@ -247,9 +247,8 @@ step << !Priest !Mage
     #sticky
     .abandon 3904 >> Abandon Milly's Harvest
 step << !Priest !Mage
+    .goto Elwynn Forest,54.5,49.4
     .xp 5+1715 >> Grind on your way back to 1715+/2800xp
-    .hs >> Hearth back once you're at the required exp
-    .goto Elwynn Forest,48.2,42.9
 step << Priest/Mage
     .xp 5+1175 >> Grind on your way back to 1175+/2800xp
     .goto Elwynn Forest,50.7,39.2
@@ -258,6 +257,9 @@ step << Priest/Mage
     .goto Elwynn Forest,50.7,39.2
     .turnin 3904 >> Turn in Milly's Harvest
     .accept 3905 >>Accept Grape Manifest
+step << !Priest !Mage
+    #completewith next
+    .hs >> Hearth or run back to Northshire Abbey
 step
     >> Speak with Deputy Willem
     .goto Elwynn Forest,48.17,42.94 << tbc
@@ -292,9 +294,8 @@ step
     .accept 62 >> Accept The Fargodeep Mine
 step
     #softcore
-    #sticky
     #completewith Goldshire
-    .goto Elwynn Forest,39.5,60.5,200 >> Die and respawn at the Spirit Healer, or run to Goldshire
+    .deathskip >> Die and respawn at the Spirit Healer
 step << Rogue
     .goto Elwynn Forest,41.7,65.5
     .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. Make them until level 20ish << Rogue
@@ -374,14 +375,14 @@ step << Rogue tbc
     .vendor >> Buy up to 20 level 5 food
 step << Warrior/Paladin
     .goto Elwynn Forest,41.7,65.5
-    .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. Make them until level 20ish << Warrior
-    .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage weightstones for your weapon which are very strong. Make them until level 20ish << Paladin
+    .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon << Warrior
+    .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage weightstones for your weapon << Paladin
 step << Warrior
     .goto Elwynn Forest,41.1,65.8
     .trainer >> Train your class spells
 step << Paladin
     .goto Elwynn Forest,41.1,66.0
-    .trainer >> Train your class spells behind the blacksmith building
+    .trainer >> Train your class spells
 step
     >> Speak with Remy "Two Times"
     .goto Elwynn Forest,42.1,67.3
@@ -479,7 +480,6 @@ step
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
 step
-    #sticky
     #completewith next
     >> Kill Kobolds for Gold Dust and Candles
     .complete 47,1 --Collect Gold Dust (x10)
@@ -740,14 +740,12 @@ step
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
 step
-    #sticky
     #completewith Deed
     .use 1972 >>Keep an eye out for Westfall Deed from the Defias (lucky drop)
     .collect 1972,1,184,1 --Collect Westfall Deed (x1)
     .accept 184 >> Accept Furlbrow's Deed
 step
-    #sticky
-    #completewith Deed
+    #completewith Grindxp
     .goto Elwynn Forest,69.53,79.47
     >>Start circling the farm, killing Defias and looting them for Bandanas.
     >> Try to get low on health for the last one, we're deathskipping afterwards << tbc
@@ -767,9 +765,16 @@ step << !Rogue !Warrior
     .complete 88,1 --Collect Brass Collar (x1)
     .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> Click here if struggling
 step << !Warlock
+    #label Grindxp
     .xp 9+3695 >> Grind to 3695+/6500xp
 step << Warlock
+    #label Grindxp
     .xp 9+3400 >> Grind to 3400+/6500xp
+step
+    .goto Elwynn Forest,69.53,79.47
+    >>Start circling the farm, killing Defias and looting them for Bandanas.
+    >> Try to get low on health for the last one, we're deathskipping afterwards << tbc
+    .complete 83,1 --Collect Red Linen Bandana (x6)
 step << tbc
     #completewith next
     .deathskip >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
