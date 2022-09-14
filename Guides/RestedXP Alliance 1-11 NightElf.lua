@@ -790,7 +790,7 @@ step << Hunter
 	.goto Teldrassil,44.2,39.8,0
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
-    .train 2981 >> Tame a Strigid Hunter and learn claw rank 2
+    .train 2981 >> Tame a Strigid Hunter
 step
     .goto Teldrassil,43.1,32.9
     >>Exit Darnassus << Rogue
