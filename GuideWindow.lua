@@ -73,7 +73,7 @@ function addon.GetTexture(name) return addon.texturePath .. name end
 function addon.RenderFrame()
     local path
     local colors
-    if RXPCData.hardcore then
+    if addon.settings.db.profile.hardcore then
         path = addon.hardcoreTextures
         colors = hardcoreColors
     elseif RXPCData.GA then
@@ -152,14 +152,14 @@ local function SetStepFrameAnchor()
         frame.anchor = "BOTTOM"
     end
 
-    if RXPData.anchorOrientation < 0 then
-        SetBottom()
-        if frame:GetBottom() * scale < 0 then SetTop() end
-        if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
-    else
+    if addon.settings.db.profile.anchorOrientation == "top" then
         SetTop()
         if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
         if frame:GetBottom() * scale < 0 then SetTop() end
+    else
+        SetBottom()
+        if frame:GetBottom() * scale < 0 then SetTop() end
+        if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
     end
 
 end
@@ -169,9 +169,9 @@ RXPFrame.SetStepFrameAnchor = SetStepFrameAnchor
 local isResizing
 
 RXPFrame.OnMouseDown = function(self, button, resize)
-    if RXPData.lockFrames then
-        return
-    elseif resize or IsAltKeyDown() and
+    if addon.settings.db.profile.lockFrames then return end
+
+    if resize or IsAltKeyDown() and
         not (addon.currentGuide and addon.currentGuide.hidewindow) then
         RXPFrame:StartSizing("BOTTOMRIGHT")
         RXPFrame:SetScript("OnUpdate",
@@ -185,7 +185,7 @@ end
 RXPFrame.OnMouseUp = function(self, button)
     RXPFrame:StopMovingOrSizing()
     if isResizing then
-        RXPCData.frameHeight = RXPFrame:GetHeight()
+        addon.settings.db.profile.frameHeight = RXPFrame:GetHeight()
         addon.SetStep(RXPCData.currentStep)
         RXPFrame:SetScript("OnUpdate", nil)
     end
@@ -523,8 +523,8 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number.text:SetTextColor(1, 1, 1)
             stepframe.number.text:SetFont(addon.font, 9)
         end
-        if stepframe.hardcore ~= RXPCData.hardcore or not stepframe.hardcore then
-            stepframe.hardcore = RXPCData.hardcore
+        if stepframe.hardcore ~= addon.settings.db.profile.hardcore or not stepframe.hardcore then
+            stepframe.hardcore = addon.settings.db.profile.hardcore
             stepframe:ClearBackdrop()
             stepframe:SetBackdrop(RXPFrame.backdropEdge)
             stepframe:SetBackdropColor(unpack(addon.colors.background))
@@ -630,7 +630,7 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.button:HookScript("OnEnter", tpOnEnter)
                 elementFrame.button:HookScript("OnLeave", tpOnLeave)
             end
-            if elementFrame.button.hardcore ~= RXPCData.hardcore or
+            if elementFrame.button.hardcore ~= addon.settings.db.profile.hardcore or
                 not elementFrame.hardcore then
                 elementFrame.button:SetNormalTexture(addon.GetTexture(
                                                          "rxp-btn-blank-32"))
@@ -638,7 +638,7 @@ function addon.SetStep(n, n2, loopback)
                                                           "rxp-checked-32"))
                 elementFrame.button:SetDisabledCheckedTexture(addon.GetTexture(
                                                                   "rxp-checked-32"))
-                elementFrame.button.hardcore = RXPCData.hardcore
+                elementFrame.button.hardcore = addon.settings.db.profile.hardcore
             end
             elementFrame.step = step
             elementFrame.element = element
@@ -1007,7 +1007,7 @@ hooksecurefunc(ScrollFrame.ScrollBar, "SetValue", function(self, value)
     local scroll = h - BottomFrame:GetHeight()
     local index = RXPCData.currentStep and RXPCData.currentStep > 1 and
     stepPos[RXPCData.currentStep - 1]
-    local zero = RXPData.hideCompletedSteps and index and
+    local zero = addon.settings.db.profile.hideCompletedSteps and index and
                      index + RXPCData.currentStep or
                      0
     if scroll < zero then scroll = zero end
@@ -1029,7 +1029,7 @@ RXPFrame.bottomBackdrop = {
 
 function addon.GetGuideName(guide)
     if not guide then guide = addon.currentGuide end
-    local som = RXPCData.SoM
+    local som = addon.settings.db.profile.SoM
     if som and guide.somname then
         return guide.somname
     elseif not som and guide.eraname then
@@ -1077,8 +1077,8 @@ function addon:LoadGuide(guide, OnLoad)
         (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA)
          then return addon:LoadGuide(emptyGuide) end
 
-    if RXPCData.frameHeight then
-        RXPFrame:SetHeight(RXPCData.frameHeight)
+    if addon.settings.db.profile.frameHeight then
+        RXPFrame:SetHeight(addon.settings.db.profile.frameHeight)
     end
     if addon.noGuide then
         RXPFrame:SetHeight(addon.height)
@@ -1410,13 +1410,13 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
         end
     elseif guide and guide.hidewindow then
         if RXPFrame:GetHeight() > 50 then
-            RXPCData.frameHeight = RXPFrame:GetHeight()
+            addon.settings.db.profile.frameHeight = RXPFrame:GetHeight()
         end
         RXPFrame:SetHeight(28)
         BottomFrame:Hide()
     elseif not BottomFrame:IsShown() then
-        if RXPCData.frameHeight then
-            RXPFrame:SetHeight(math.max(RXPCData.frameHeight,50))
+        if addon.settings.db.profile.frameHeight then
+            RXPFrame:SetHeight(math.max(addon.settings.db.profile.frameHeight,50))
         end
         BottomFrame:Show()
     end
@@ -1569,7 +1569,7 @@ function RXPFrame.GenerateMenuTable(menu)
         for _, group in ipairs(farmGuides) do createMenu(group) end
     end
 
-    if not (RXPData and RXPData.hideUnusedGuides) and #unusedGuides > 0 then
+    if addon.settings.db.profile.showUnusedGuides and #unusedGuides > 0 then
         table.insert(menuList,
                      {text = L("Unused Guides"), notCheckable = 1, isTitle = 1})
         for _, group in ipairs(unusedGuides) do createMenu(group) end
@@ -1579,7 +1579,7 @@ function RXPFrame.GenerateMenuTable(menu)
 
     if addon.game == "CLASSIC" then
         local hctext
-        if RXPData and RXPCData.hardcore then
+        if addon.settings.db.profile.hardcore then
             hctext = L("Deactivate Hardcore mode")
         else
             hctext = L("Activate Hardcore mode")

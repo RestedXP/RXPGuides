@@ -41,85 +41,21 @@ BINDING_HEADER_RXPGuides = addon.title
 
 local questFrame = CreateFrame("Frame");
 
-local buffCheckTimer
-local function SoMCheck()
-    local function CheckBuff(buffId,key,value)
-        value = value or true
-        if RXPCData and RXPCData[key] == nil and
-                GetTime() - buffCheckTimer < 300 then
-
-            local id = 0
-            local n = 1
-            while id do
-                id = select(10, UnitBuff("player", n))
-                n = n + 1
-                if id == buffId then
-                    RXPCData[key] = value
-                    if addon.currentGuide and addon.currentGuide.name then
-                        addon:LoadGuide(addon.currentGuide)
-                    end
-                    addon.RXPFrame.GenerateMenuTable()
-                    break
-                end
-            end
-            if id ~= buffId and RXPCData[key] then
-                RXPCData[key] = nil
-                addon.ReloadGuide()
-                addon.RXPFrame.GenerateMenuTable()
-            end
-            return RXPCData[key]
-        end
-    end
-
-    if not buffCheckTimer then
-        buffCheckTimer = GetTime()
-    end
-
-    if gameVersion < 20000 then
-        CheckBuff(362859,"SoM")
-    elseif CheckBuff(377749,"JoyousJourneys") then
-        RXPCData.xprate = 1.5
-    end
-
-end
-
 function RXPG_init()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
-    RXPCData.hardcore = (addon.game == "CLASSIC") and RXPCData.hardcore
-    if not RXPData.addonVersion or RXPData.addonVersion < addon.version then
-        RXPData.addonVersion = addon.version
-        RXPCData.phase = 6
-    end
-    RXPCData.phase = RXPCData.phase or 6
-    RXPCData.SoM = RXPCData.SoM or 1
+    addon.settings.db.profile.hardcore = addon.game == "CLASSIC" and addon.settings.db.profile.hardcore
     addon.RenderFrame()
     RXPCData.stepSkip = RXPCData.stepSkip or {}
-    RXPCData.xprate = RXPCData.xprate or 1
-    RXPData.numMapPins = RXPData.numMapPins or 7
-    RXPData.worldMapPinScale = RXPData.worldMapPinScale or 1
-    RXPData.distanceBetweenPins = RXPData.distanceBetweenPins or 1
-    RXPData.worldMapPinBackgroundOpacity =
-        RXPData.worldMapPinBackgroundOpacity or 0.35
-    RXPData.arrowSize = RXPData.arrowSize or 1
-    RXPData.windowSize = RXPData.windowSize or 1
-    RXPData.arrowText = RXPData.arrowText or 9
-    RXPData.skipMissingPreReqs = false
     if not RXPCData.flightPaths or UnitLevel("player") <= 6 then
         RXPCData.flightPaths = {}
-    end
-    RXPData.batchSize = RXPData.batchSize or 5
-    if RXPData.disableTrainerAutomation == nil then
-        RXPData.disableTrainerAutomation = true
     end
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
 
-    RXPData.anchorOrientation = RXPData.anchorOrientation or 1
-    addon.RXPFrame:SetShown(not RXPCData.hideWindow)
     C_Timer.After(0.5, function()
         if addon.errorCount == addon.guideErrorCount then
             addon.errorCount = -1
@@ -275,7 +211,7 @@ local function ProcessSpells(names, rank)
                             spellRequest[spellId] = true
                         end
                         if names and rank and
-                            not (RXPCData.hardcore and addon.HCSpellList and
+                            not (addon.settings.db.profile.hardcore and addon.HCSpellList and
                                 addon.HCSpellList[spellId]) then
                             spellRequest[spellId] = nil
                             local sName = GetSpellInfo(spellId)
@@ -294,35 +230,33 @@ local function ProcessSpells(names, rank)
 end
 
 local function OnTrainer()
+    if not addon.settings.db.profile.enableTrainerAutomation then return end
 
-    if not RXPData.disableTrainerAutomation then
-        local level = UnitLevel("player")
-        local i = GetNumTrainerServices()
+    local i = GetNumTrainerServices()
 
-        if not i or i == 0 or GetTime() - trainerUpdate > 15 then return end
+    if not i or i == 0 or GetTime() - trainerUpdate > 15 then return end
 
-        local names = {}
-        local rank = {}
+    local names = {}
+    local rank = {}
 
-        for id = 1, i do
-            local n, r, cat = GetTrainerServiceInfo(id)
-            if cat == "available" then
-                names[id] = n
-                rank[id] = r
-            end
+    for id = 1, i do
+        local n, r, cat = GetTrainerServiceInfo(id)
+        if cat == "available" then
+            names[id] = n
+            rank[id] = r
         end
+    end
 
-        ProcessSpells(names, rank)
+    ProcessSpells(names, rank)
 
-        for spellName, spellRank in pairs(addon.skillList) do
-            for id, name in pairs(names) do
-                if name == spellName then
-                    local r = rank[id]
-                    r = r and tonumber(r:match("(%d+)")) or 0
-                    if (r <= spellRank or spellRank == 0) then
-                        BuyTrainerService(id)
-                        return
-                    end
+    for spellName, spellRank in pairs(addon.skillList) do
+        for id, name in pairs(names) do
+            if name == spellName then
+                local r = rank[id]
+                r = r and tonumber(r:match("(%d+)")) or 0
+                if (r <= spellRank or spellRank == 0) then
+                    BuyTrainerService(id)
+                    return
                 end
             end
         end
@@ -357,7 +291,7 @@ local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                      _G.GetGossipAvailableQuests
 
 function addon:QuestAutomation(event, arg1, arg2, arg3)
-    if IsControlKeyDown() == not (RXPData and RXPData.disableQuestAutomation) then
+    if not addon.settings.db.profile.enableQuestAutomation or IsControlKeyDown() then
         return
     end
 
@@ -471,12 +405,12 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
 end
 
 function addon:OnInitialize()
-    RXPG_init()
     local importGuidesDefault = {
         profile = {guides = {}, reports = {splits = {}}}
     }
 
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
+
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
     elseif math.floor(gameVersion/1e4) ~= math.floor(RXPData.gameVersion/1e4) then
@@ -484,20 +418,24 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     end
     addon.settings:InitializeSettings()
+    RXPG_init()
     addon.comms:Setup()
     if addon.settings.db.profile.enableTracker then addon.tracker:SetupTracker() end
 
     addon.RXPG.LoadCachedGuides()
     addon.RXPG.LoadEmbeddedGuides()
+    addon.RXPFrame:SetShown(not addon.settings.db.profile.hideGuideWindow)
+    addon.RXPFrame:SetScale(addon.settings.db.profile.windowScale)
+    addon.arrowFrame:SetSize(32 * addon.settings.db.profile.arrowScale, 32 * addon.settings.db.profile.arrowScale)
 end
 
 function addon:OnEnable()
-    SoMCheck()
+    addon.settings:DetectXPRate()
     ProcessSpells()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
                                       RXPCData.currentGuideName)
-    if not guide and RXPData.autoLoadGuides then
+    if not guide and addon.settings.db.profile.autoLoadStartingGuides then
         guide = addon.defaultGuide
         if addon.game == "TBC" and
             (UnitLevel("player") == 58 and not guide.boost58) then
@@ -538,10 +476,6 @@ function addon:OnEnable()
 
     if C_QuestLog.RequestLoadQuestByID then
         self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
-    end
-
-    if _G.WOW_PROJECT_ID == _G.WOW_PROJECT_CLASSIC then
-        self:RegisterEvent("UNIT_AURA")
     end
 end
 
@@ -592,11 +526,6 @@ function addon:PLAYER_LEVEL_UP(_, level)
     addon.SetStep(stepn)
 end
 
-function addon:UNIT_AURA(_, unit)
-    if unit ~= "player" then return end
-    SoMCheck()
-end
-
 function addon:UNIT_PET(_, unit)
     if unit ~= "player" then return end
     addon.petFamily = GetPetIcon() or addon.petFamily
@@ -620,7 +549,7 @@ end
 
 function addon.UnitScanUpdate()
     local unitscanList = addon.currentGuide.unitscan
-    if _G.unitscan_targets and unitscanList and not RXPData.disableUnitscan then
+    if _G.unitscan_targets and unitscanList and not addon.settings.db.profile.disableUnitscan then
         for unit, elements in pairs(unitscanList) do
             local enabled
             for _, element in pairs(elements) do
@@ -793,12 +722,9 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
 end)
 
 function addon.HardcoreToggle()
-    if RXPCData and addon.game == "CLASSIC" then
-        RXPCData.hardcore = not RXPCData.hardcore
+    if addon.game == "CLASSIC" then
+        addon.settings.db.profile.hardcore = not addon.settings.db.profile.hardcore
         addon.RenderFrame()
-        if addon.hardcoreButton then
-            addon.hardcoreButton:SetChecked(RXPCData.hardcore)
-        end
     end
 end
 
@@ -859,22 +785,22 @@ end
 
 function addon.IsStepShown(step)
     return not(step.daily and RXPCData.skipDailies) and
-            (RXPCData.northrendLM or not step.questguide) and
+            (addon.settings.db.profile.northrendLM or not step.questguide) and
              addon.AldorScryerCheck(step) and
              addon.PhaseCheck(step) and addon.HardcoreCheck(step) and
              addon.SeasonCheck(step) and addon.XpRateCheck(step)
 end
 
 function addon.SeasonCheck(step)
-    if RXPCData.SoM and step.era or step.som and not RXPCData.SoM or
-        RXPCData.SoM and RXPCData.phase > 2 and step["era/som"] then
+    if addon.settings.db.profile.SoM and step.era or step.som and not addon.settings.db.profile.SoM or
+    addon.settings.db.profile.SoM and addon.settings.db.profile.phase > 2 and step["era/som"] then
         return false
     end
     return true
 end
 
 function addon.HardcoreCheck(step)
-    local hc = RXPCData.hardcore
+    local hc = addon.settings.db.profile.hardcore
     if step.softcore and hc or step.hardcore and not hc then return false end
     return true
 end
@@ -895,7 +821,7 @@ function addon.XpRateCheck(step)
                 xpmax = tonumber(arg2) or 0xfff
             end
         end)
-        if RXPCData.xprate < xpmin or RXPCData.xprate > xpmax then
+        if addon.settings.db.profile.xprate < xpmin or addon.settings.db.profile.xprate > xpmax then
             return false
         end
     end

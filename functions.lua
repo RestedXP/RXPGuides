@@ -1543,7 +1543,7 @@ function addon.functions.fly(self, ...)
     local event = ...
     if not element.confirm and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
         element.confirm = true
-    elseif event == "TAXIMAP_OPENED" and not RXPData.disableFPAutomation and
+    elseif event == "TAXIMAP_OPENED" and addon.settings.db.profile.enableFPAutomation and
         element.location then
         addon:TAXIMAP_OPENED()
         for i = 1, NumTaxiNodes() do
@@ -1903,7 +1903,7 @@ function addon.functions.xp(self, ...)
             (element.level == level and currentXP >= maxXP * element.xp)))) ==
         not reverseLogic then
         if element.skipstep then
-            if step.active and not step.completed and not(RXPCData.northrendLM and not reverseLogic) then
+            if step.active and not step.completed and not(addon.settings.db.profile.northrendLM and not reverseLogic) then
                 addon.updateSteps = true
                 step.completed = true
             end
@@ -2247,7 +2247,7 @@ function addon.functions.next(skip, guide)
             local era = "(Era)"
             local som = "(SoM)"
 
-            if RXPCData.SoM then
+            if addon.settings.db.profile.SoM then
                 next = next:gsub(era, som)
             else
                 next = next:gsub(som, era)
@@ -2257,11 +2257,11 @@ function addon.functions.next(skip, guide)
         nextGuide = addon.GetGuideTable(group, next)
 
         if nextGuide then
-            if (nextGuide.era and RXPCData.SoM or nextGuide.som and
-                not RXPCData.SoM or RXPCData.SoM and RXPCData.phase > 2 and
+            if (nextGuide.era and addon.settings.db.profile.SoM or nextGuide.som and
+                not addon.settings.db.profile.SoM or addon.settings.db.profile.SoM and addon.settings.db.profile.phase > 2 and
                 nextGuide["era/som"]) or
-                (nextGuide.hardcore and not (RXPCData.hardcore) or
-                    nextGuide.softcore and RXPCData.hardcore) then
+                (nextGuide.hardcore and not (addon.settings.db.profile.hardcore) or
+                    nextGuide.softcore and addon.settings.db.profile.hardcore) then
                 return addon.functions.next(nil, nextGuide)
             else
                 addon:LoadGuide(nextGuide)
@@ -3253,7 +3253,7 @@ function addon.functions.maxlevel(self, ...)
     local ref = element.ref
 
     if level > element.level then
-        if step.active and not step.completed and not RXPCData.northrendLM then
+        if step.active and not step.completed and not addon.settings.db.profile.northrendLM then
             addon.updateSteps = true
             step.completed = true
         end

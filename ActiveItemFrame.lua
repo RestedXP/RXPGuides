@@ -220,8 +220,8 @@ function addon.UpdateItemFrame(itemFrame)
     local buttonList = itemFrame.buttonList
     local itemList = GetActiveItemList()
 
-    if itemFrame.hardcore ~= RXPCData.hardcore or not itemFrame.hardcore then
-        itemFrame.hardcore = RXPCData.hardcore
+    if itemFrame.hardcore ~= addon.settings.db.profile.hardcore or not itemFrame.hardcore then
+        itemFrame.hardcore = addon.settings.db.profile.hardcore
         itemFrame:ClearBackdrop()
         itemFrame:SetBackdrop(addon.RXPFrame.backdropEdge)
         local r, g, b = unpack(addon.colors.background)
@@ -299,7 +299,7 @@ function addon.UpdateItemFrame(itemFrame)
     -- print("s:",i)
     if i > 0 then itemFrame:SetAlpha(1) end
 
-    if i == 0 or RXPCData.disableItemWindow then
+    if i == 0 or addon.settings.db.profile.disableItemWindow then
         itemFrame:Hide()
     else
         itemFrame:Show()

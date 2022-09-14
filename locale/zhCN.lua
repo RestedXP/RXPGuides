@@ -29,7 +29,7 @@ L["Paste encoded strings"] = "粘贴编码字符串"
 L["Guides to import"] = "导入指南"
 L["RestedXP Guides"] = "指南"
 L["Quest auto accept/turn in"] = "任务自动接受/上交"
-L["Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"] =
+L["Holding the Control key modifier also toggles the quest auto accept feature on and off"] =
     "按住 Control 键修改器还会打开和关闭任务自动接受功能"
 L["Trainer automation"] = "培训师自动化"
 L["Allows the guide to buy useful leveling spells automatically"] =
@@ -72,20 +72,20 @@ L["Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp
 L["Northrend Loremaster"] = "诺森德博学者"
 L["Adjust the routes to include almost every quest in the Northrend zones"] =
     "调整路线以包含诺森德地区的几乎所有任务"
-L["Arrow Scale: %.2f"] = "箭头比例：%.2f"
+L["Arrow Scale"] = "箭头比例"
 L["Scale of the Waypoint Arrow"] = "航点箭头的比例"
-L["Arrow Text Size: %d"] = "箭头文字大小：%d"
+L["Arrow Text Size"] = "箭头文字大小"
 L["Size of the waypoint arrow text"] = "航点箭头文本的大小"
-L["Window Scale: %.2f"] = "窗口比例：%.2f"
+L["Window Scale"] = "窗口比例"
 L["Scale of the Main Window, use alt+left click on the main window to resize it"] =
     "主窗口的比例，使用 alt+左键单击主窗口来调整它的大小"
-L["Number of Map Pins: %d"] = "地图针数：%d"
+L["Number of Map Pins"] = "地图针数"
 L["Number of map pins shown on the world map"] =
     "世界地图上显示的地图图钉数量"
-L["Map Pin Scale: %.2f"] = "地图引脚比例：%.2f"
+L["Map Pin Scale"] = "地图引脚比例"
 L["Adjusts the size of the world map pins"] =
     "调整世界地图图钉的大小"
-L["Distance Between Pins: %.2f"] = "引脚之间的距离：%.2f"
+L["Distance Between Pins"] = "引脚之间的距离"
 L["If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."] =
     "如果两个或多个步骤非常接近，此插件会将它们分组到地图上的单个图钉中。 调整此范围以确定两个步骤必须靠得多近才能形成一个组。"
 L["Map Pin Background Opacity: %.2f"] = "地图图钉背景不透明度：%.2f"
@@ -94,13 +94,13 @@ L["The opacity of the black circles on the map and mini map"] =
 L["Current step frame anchor"] = "当前步帧锚"
 L["Sets the current step frame to grow from bottom to top or top to bottom by default"] =
     "设置当前步进帧默认从下到上或从上到下增长"
-L["Batching window size: %d ms"] = "批处理窗口大小：%d 毫秒"
+L["Batching window size (ms)"] = "批处理窗口大小 (毫秒)"
 L["Adjusts the batching window tolerance, used for hearthstone batching"] =
     "调整批处理窗口容差，用于炉石批处理"
-L["Content phase: %d"] = "内容阶段：%d"
+L["Content phase"] = "内容阶段"
 L["Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"] =
     "调整引导路线以匹配内容阶段\n第 2 阶段：厄运之槌任务\n第 3 阶段: 100% 任务 XP (SoM)\n第 4 阶段: ZG/希利苏斯任务\n第 5 阶段:AQ 任务\n第 6 阶段：东瘟疫之地任务"
-L["Experience rates: %.1fx"] = "经验率：%.1fx"
+L["Experience rates"] = "经验率"
 L["Adjusts the guide routes to match increased xp rate bonuses"] =
     "调整引导路线以匹配增加的经验值奖励"
 L["Please restart your game client and try again"] =

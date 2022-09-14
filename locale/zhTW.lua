@@ -29,7 +29,7 @@ L["Paste encoded strings"] = "粘貼編碼字符串"
 L["Guides to import"] = "導入指南"
 L["RestedXP Guides"] = "指南"
 L["Quest auto accept/turn in"] = "任務自動接受/上交"
-L["Holding the Control key modifier also toggles the quest the quest auto accept feature on and off"] =
+L["Holding the Control key modifier also toggles the quest auto accept feature on and off"] =
     "當按住 Control 鍵時，修改器還會打開和關閉任務自動接受功能"
 L["Trainer automation"] = "訓練師自動化"
 L["Allows the guide to buy useful leveling spells automatically"] =
@@ -72,20 +72,20 @@ L["Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp
 L["Northrend Loremaster"] = "北裂境博學大師"
 L["Adjust the routes to include almost every quest in the Northrend zones"] =
     "調整路線以包含北裂境地區的幾乎所有任務"
-L["Arrow Scale: %.2f"] = "箭頭比例：%.2f"
+L["Arrow Scale"] = "箭頭比例"
 L["Scale of the Waypoint Arrow"] = "導航箭頭的比例"
-L["Arrow Text Size: %d"] = "箭頭文字大小：%d"
+L["Arrow Text Size"] = "箭頭文字大小"
 L["Size of the waypoint arrow text"] = "導航箭頭文字的大小"
-L["Window Scale: %.2f"] = "視窗比例：%.2f"
+L["Window Scale"] = "視窗比例"
 L["Scale of the Main Window, use alt+left click on the main window to resize it"] =
     "主視窗的比例，使用 alt+左鍵單擊主視窗來調整它的大小"
-L["Number of Map Pins: %d"] = "地圖針數：%d"
+L["Number of Map Pins"] = "地圖針數"
 L["Number of map pins shown on the world map"] =
     "世界地圖上顯示的地圖圖釘數量"
-L["Map Pin Scale: %.2f"] = "地圖引腳比例：%.2f"
+L["Map Pin Scale"] = "地圖引腳比例"
 L["Adjusts the size of the world map pins"] =
     "調整世界地圖圖釘的大小"
-L["Distance Between Pins: %.2f"] = "引腳之間的距離：%.2f"
+L["Distance Between Pins"] = "引腳之間的距離"
 L["If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."] =
     "如果兩個或多個進度非常接近，此插件會將它們分組到地圖上的單個圖釘中。 調整此範圍以確定兩個進度必須靠得多近才能形成一個組。"
 L["Map Pin Background Opacity: %.2f"] = "地圖圖釘背景不透明度：%.2f"
@@ -94,13 +94,13 @@ L["The opacity of the black circles on the map and mini map"] =
 L["Current step frame anchor"] = "當前步幀錨"
 L["Sets the current step frame to grow from bottom to top or top to bottom by default"] =
     "設置當前步進幀默認從下到上或從上到下增長"
-L["Batching window size: %d ms"] = "批處理視窗大小：%d 毫秒"
+L["Batching window size (ms)"] = "批處理視窗大小 (毫秒)"
 L["Adjusts the batching window tolerance, used for hearthstone batching"] =
     "調整批處理視窗容差，用於爐石批處理"
-L["Content phase: %d"] = "內容階段：%d"
+L["Content phase"] = "內容階段"
 L["Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"] =
     "調整引導路線以匹配內容階段\n第 2 階段：厄運之槌任務\n第 3 階段: 100% 任務 XP (SoM)\n第 4 階段: ZG/希利蘇斯任務\n第 5 階段:AQ 任務\n第 6 階段：東瘟疫之地任務"
-L["Experience rates: %.1fx"] = "經驗率：%.1fx"
+L["Experience rates"] = "經驗率"
 L["Adjusts the guide routes to match increased xp rate bonuses"] =
     "調整引導路線以匹配增加的經驗值獎勵"
 L["Please restart your game client and try again"] =
@@ -209,16 +209,20 @@ L["Click to view the link"] = "點擊查看鏈接"
 L["Stable your pet"] = "穩定你的寵物"
 L["Train skills"] = "訓練技能"
 L["Sell junk/resupply"] = "賣垃圾/補給"
-L["Grind until you are %.0f%% into %s with %s"] = "重複做，直到達到 %.0f%%, %s （%s）"
-L["Grind until you are %s into %s with %s"] = "重複做，直到達到 %s, %s （%s）"
+L["Grind until you are %.0f%% into %s with %s"] =
+    "重複做，直到達到 %.0f%%, %s （%s）"
+L["Grind until you are %s into %s with %s"] =
+    "重複做，直到達到 %s, %s （%s）"
 L["Grind until you are %d away from %s with %s"] =
     "重複做，直到 %d 距離 %s (%s)"
 L["Grind until you are %d xp away from level %s"] =
     "重複做，直到 %d xp 距離 %s 級"
 L["Grind until you are %s xp into level %s"] = "重複直到 %s xp（%s 級）"
-L["Grind until you are %.0f%% into level %s"] = "重複直到 %.0f%% （%s 級）"
+L["Grind until you are %.0f%% into level %s"] =
+    "重複直到 %.0f%% （%s 級）"
 L["Throw away %s%s from your bags"] = "把 %s%s 從你的包包裡扔掉"
-L["Die and respawn at the graveyard"] = "自盡，在墓地使用靈魂醫者復活"
+L["Die and respawn at the graveyard"] =
+    "自盡，在墓地使用靈魂醫者復活"
 L["Fly to"] = "飛到"
 L["Get the %s flight path"] = "獲取 %s 的飛行路徑"
 L["Set your Hearthstone to"] = "在以下地點設置爐石："
