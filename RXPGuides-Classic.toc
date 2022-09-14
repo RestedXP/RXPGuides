@@ -15,6 +15,7 @@ locale\locales.xml
 Locale.lua
 RXPGuides.lua
 GuideWindow.lua
+Help.lua
 SettingsPanel.lua
 HSBatching.lua
 QuestLog.lua
