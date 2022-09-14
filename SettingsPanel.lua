@@ -69,7 +69,7 @@ function addon.settings:InitializeSettings()
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9,
             enableMinimapButton = true,
-            minimap = {show = true},
+            minimap = {show = true, minimapPos = 146},
 
             --
             enableQuestAutomation = true,
