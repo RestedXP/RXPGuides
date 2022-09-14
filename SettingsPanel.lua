@@ -79,9 +79,9 @@ function addon.settings:InitializeSettings()
             anchorOrientation = "top",
 
             -- Sliders
-            arrowSize = 1,
+            arrowScale = 1,
             arrowText = 9,
-            windowSize = 1,
+            windowScale = 1,
             numMapPins = 7,
             worldMapPinScale = 1,
             distanceBetweenPins = 1,
