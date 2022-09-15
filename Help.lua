@@ -2,17 +2,17 @@ local _, addon = ...
 
 local H = {}
 
-H['How do I import my guides?'] = [[
-We have a video guide here: https://www.youtube.com/watch?v=DT_Ig5r_REQ&feature=emb_title
-]]
-
 H['Why do I get an error when importing my guides?'] = [[
 It depends on the error, the 3 most common ones are listed below:
 
-  undefined: If your string file says undefined, your battle.net is not set on our site. Try clearing your browser cache and trying again.
-  Invalid Value: This means the guide didn't connect to your battle.net, please appear online or restart your game
-  Invalid Import String: This likely means your battle.net does not match the one on your account, please open-ticket to get your battle.net adjusted.
-  Unable to parse guide Same as above
+|cffffcc00undefined|r:
+  If your string file says undefined, your battle.net is not set on our site. Try clearing your browser cache and trying again.
+
+|cffffcc00Invalid Value|r:
+  This means the guide didn't connect to your battle.net, please appear online or restart your game
+
+|cffffcc00Invalid Import String|r or |cffffcc00Unable to parse guide|r
+  This likely means your battle.net does not match the one on your account, please see Discord's #open-ticket to get your battle.net adjusted.
 ]]
 
 H["I'm missing a lot of exp, why?"] = [[
