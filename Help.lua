@@ -5,10 +5,10 @@ local H = {}
 H['Why do I get an error when importing my guides?'] = [[
 It depends on the error, the 3 most common ones are listed below:
 
-|cffffcc00undefined|r:
+|cffffcc00undefined|r
   If your string file says undefined, your battle.net is not set on our site. Try clearing your browser cache and trying again.
 
-|cffffcc00Invalid Value|r:
+|cffffcc00Invalid Value|r
   This means the guide didn't connect to your battle.net, please appear online or restart your game
 
 |cffffcc00Invalid Import String|r or |cffffcc00Unable to parse guide|r
