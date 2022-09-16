@@ -547,7 +547,7 @@ function addon:GROUP_ROSTER_UPDATE(_)
     if UnitInRaid("player") then
         addon.RXPFrame:SetShown(false)
     else
-        addon.RXPFrame:SetShown(false)
+        addon.RXPFrame:SetShown(true)
     end
 end
 

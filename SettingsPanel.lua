@@ -653,8 +653,8 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = addon.gameVersion < 30000
                     },
                     hideInRaid = {
-                        name = L("Hide in Raids"),
-                        desc = L("Hide resetted XP when you are in a raid"),
+                        name = L("Autohide in Raids"),
+                        desc = L("Hide resetted XP when you are in a raid, and unhide when you leave a raid"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.91,
