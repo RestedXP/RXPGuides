@@ -742,7 +742,7 @@ local function updateArrow()
                 (element.parent.completed or element.parent.skip)) and
             not (element.text and (element.completed or isComplete) and
                 not isComplete)) then
-            af:SetShown(not addon.settings.db.profile.disableArrow and not addon.hideArrow)
+            af:SetShown(not addon.settings.db.profile.disableArrow and not addon.hideArrow and addon.settings.db.profile.minimap.show)
             af.dist = 0
             af.orientation = 0
             af.element = element
