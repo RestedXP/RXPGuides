@@ -708,14 +708,18 @@ step << Druid/Hunter
     .turnin 751 >> Turn in The Ravaged Caravan
 	.unitscan Morin Cloudstalker
 step << Tauren Warrior/Tauren Shaman
-    >>Kill Wolves in the area. Loot them for teeth
-    .goto Mulgore,66.9,67.2
+    >>Kill Wolves in the area. Loot them for their teeth
+    .goto Mulgore,62.48,66.93,80,0
+    .goto Mulgore,66.9,67.2,80,0
+    .goto Mulgore,66.66,58.40,80,0
+    .goto Mulgore,62.38,57.56,80,0
     .complete 759,1 --Prairie Alpha Tooth (8)
-step << Warrior/Shaman
+step << Warrior tbc/Shaman tbc
     #sticky
     #completewith next
     .goto Mulgore,46.5,55.5,200 >> Die and respawn at the Spirit Healer, or run to Bloodhoof Village
 step << Tauren Warrior/Tauren Shaman
+    >>Run back to Bloodhoof Village << wotlk
     .goto Mulgore,48.5,60.4
     .turnin 759 >>Turn in Wildmane Totem
     .accept 760 >>Accept Wildmane Cleansing
