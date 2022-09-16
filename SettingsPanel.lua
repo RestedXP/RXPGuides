@@ -164,7 +164,7 @@ function addon.settings:MigrateSettings()
 
     if RXPCData.hideWindow ~= nil then
         n("hideWindow", RXPCData.hideWindow)
-        db.hideWindow = RXPCData.hideWindow
+        db.hideGuideWindow = RXPCData.hideWindow
         RXPCData.hideWindow = nil
     end
 
@@ -658,7 +658,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 2
                     },
-                    hideWindow = {
+                    hideGuideWindow = {
                         name = L("Hide Window"),
                         desc = L("Hides the main window"),
                         type = "toggle",
