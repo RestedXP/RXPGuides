@@ -13,7 +13,7 @@ step << !Tauren
     .goto Mulgore,44.9,77.1
     +You have selected a guide meant for Tauren. This zone will NOT work well for you due to missing one of the main questlines that are gated for Tauren only. It is recommended you choose the same starter zone that you start in
 step
-    .goto Mulgore,44.92,77.12
+    .goto Mulgore,44.9,77.1
     .accept 747 >>Accept The Hunt Begins
 step
     .goto Mulgore,44.2,76.1
@@ -53,7 +53,7 @@ step
     .complete 747,1 --Plainstrider Meat (7)
     .complete 747,2 --Plainstrider Feather (7)
 step
-    .goto Mulgore,44.92,77.12
+    .goto Mulgore,44.8,77.0
     .turnin 747 >>Turn in The Hunt Begins
     .accept 3091 >>Accept Simple Note << Warrior
     .accept 3092 >>Accept Etched Note << Hunter
@@ -968,7 +968,7 @@ step << !Tauren
     .goto Mulgore,44.9,77.1
     +You have selected a guide meant for Tauren. This zone will NOT work well for you due to missing one of the main questlines that are gated for Tauren only. It is recommended you choose the same starter zone that you start in
 step
-    .goto Mulgore,44.92,77.12
+    .goto Mulgore,44.9,77.1
     .accept 747 >>Accept The Hunt Begins
 step
     .goto Mulgore,44.2,76.1
@@ -1008,7 +1008,7 @@ step
     .complete 747,1 --Plainstrider Meat (7)
     .complete 747,2 --Plainstrider Feather (7)
 step
-    .goto Mulgore,44.92,77.12
+    .goto Mulgore,44.8,77.0
     .turnin 747 >>Turn in The Hunt Begins
     .accept 3091 >>Accept Simple Note << Warrior
     .accept 3092 >>Accept Etched Note << Hunter
