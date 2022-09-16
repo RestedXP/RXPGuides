@@ -1049,8 +1049,17 @@ step << Warrior
     .turnin 1505 >>Turn in Veteran Uzzek
     .accept 1498 >>Accept Path of Defense
 step << Warrior
-    >>Kill Lightning Hides for Singed Scales
+    .goto Durotar,39.2,32.3,40,0
+    .goto Durotar,39.62,28.10,40,0	
+    .goto Durotar,40.20,24.13,40,0		
+    .goto Durotar,43.33,24.32,40,0
+    .goto Durotar,39.2,32.3	
+    >>Kill Thunder Lizards and Lightning Hides in Thunder Ridge for their Scales
     .complete 1498,1 --Singed Scale (5)
+step << Warrior
+    .isQuestComplete 1498
+    #completewith next
+.goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1498 >>Turn in Path of Defense
