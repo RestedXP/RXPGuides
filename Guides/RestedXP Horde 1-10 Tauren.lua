@@ -789,15 +789,15 @@ step << Druid
 step << !Druid
     .goto The Barrens,52.2,31.9
     .accept 870 >>Accept The Forgotten Pools
-step
-    .goto The Barrens,51.5,30.1
-    .accept 848 >>Accept Fungal Spores
 step << Tauren
     .goto The Barrens,51.5,30.8
     .turnin 854 >>Turn in Journey to the Crossroads
 step
     .goto The Barrens,51.5,30.4
     .fp The Crossroads >>Get the The Crossroads Flight Path
+step
+    .goto The Barrens,51.5,30.1
+    .accept 848 >>Accept Fungal Spores
 step
     .goto The Barrens,51.1,29.0
     .accept 6361 >>Accept A Bundle of Hides
