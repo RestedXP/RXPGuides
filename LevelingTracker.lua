@@ -120,6 +120,12 @@ function addon.tracker:UpgradeDB()
                 if questXP <= 0 then questData[i] = nil end
             end
         end
+
+        -- Repair DK starting time
+        if l == 55 and addon.player.class == "DEATHKNIGHT" and
+            not levelDB[l].timestamp.started then
+            levelDB[l].timestamp.started = 0
+        end
     end
 
     -- On 60/70 login, set timestamp.started to now
@@ -152,7 +158,11 @@ function addon.tracker:GenerateDBLevel(level)
         }
     end
 
-    if level == 1 then profile["levels"][level].timestamp.started = 0 end
+    if level == 1 then
+        profile["levels"][level].timestamp.started = 0
+    elseif level == 55 and addon.player.class == "DEATHKNIGHT" then
+        profile["levels"][level].timestamp.started = 0
+    end
 end
 
 function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
@@ -778,7 +788,8 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
                                               .timePlayedThisLevel or
                                               "Missing data"))
 
-        if selectedLevel == 1 then
+        if selectedLevel == 1 or
+            (selectedLevel == 55 and addon.player.class == "DEATHKNIGHT") then
             trackerUi.reachedContainer.data:SetText(
                 addon.tracker.reportData[selectedLevel].timestamp.dateStarted or
                     "Missing data")
