@@ -1017,6 +1017,9 @@ step
     #completewith next
     .hs >> Hearth or fly back to Crossroads
 step
+    .goto The Barrens,52.0,30.3
+    .accept 869 >>Accept Raptor Thieves
+step
     .goto The Barrens,51.2,29.1
     .turnin 6364 >>Turn in Return to Jahan
 step
@@ -1031,9 +1034,6 @@ step
     .goto The Barrens,52.2,31.0
     .turnin 860 >>Turn in Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
-step
-    .goto The Barrens,52.0,30.3
-    .accept 869 >>Accept Raptor Thieves
 step << Shaman
     .goto The Barrens,55.9,19.9
     .turnin 2984 >>Turn in Call of Fire
