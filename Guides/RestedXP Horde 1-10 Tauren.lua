@@ -315,19 +315,12 @@ step << Hunter
 step << Hunter
     .goto Mulgore,48.3,53.3
     .accept 11129 >>Accept Kyle's Gone Missing!
-step << Hunter
+step
     .goto Mulgore,49.3,56.2,15,0
     .goto Mulgore,52.0,61.1,15,0
     .goto Mulgore,50.0,66.4,15,0
     .goto Mulgore,50.4,66.5
-    >>Collect the 'Acorn' looking items on the ground, below the trees
-    .complete 771,2 --Ambercorn (2)
-step << !Hunter
-    .goto Mulgore,49.3,56.2,15,0
-    .goto Mulgore,52.0,61.1,15,0
-    .goto Mulgore,50.0,66.4,15,0
-    .goto Mulgore,50.4,66.5
-    >>Collect the 'Acorn' looking items on the ground, below the trees
+    >>Collect Ambercorn off the ground beneath trees
     .complete 771,2 --Ambercorn (2)
 step
     #sticky
