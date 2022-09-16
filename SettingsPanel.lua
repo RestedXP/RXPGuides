@@ -1295,7 +1295,8 @@ function addon.settings:UpdateMinimapButton()
                 _G.EasyMenu(buildMinimapMenu(), addon.settings.minimapFrame,
                             "cursor", 0, 0, "MENU")
             else
-                if addon.settings.db.profile.minimap.show then
+                if addon.settings.db.profile.minimap.show or
+                    addon.RXPFrame:IsShown() then
                     addon.settings.HideActive()
                 else
                     addon.settings.RestoreActive()
