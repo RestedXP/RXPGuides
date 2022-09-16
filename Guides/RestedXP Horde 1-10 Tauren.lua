@@ -1014,10 +1014,8 @@ step << Warrior
     .train 5242 >>Train Battle Shout r2
     .train 7384 >>Train Overpower
 step
-    #sticky
     #completewith next
-    .cooldown item,6948,>0
-    .goto The Barrens,52.0,29.9,100 >>Hearth or fly back to Crossroads
+    .hs >> Hearth or fly back to Crossroads
 step
     .goto The Barrens,51.2,29.1
     .turnin 6364 >>Turn in Return to Jahan
