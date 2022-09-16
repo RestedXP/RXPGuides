@@ -132,6 +132,7 @@ step << Shaman
     .goto Mulgore,44.7,76.2
     .accept 1519 >>Accept Call of Earth
 step
+    >>Talk to Windfeather. She patrols around the camp
     .goto Mulgore,45.0,76.4
     .accept 3376 >>Accept Break Sharptusk!
 step << Hunter
@@ -198,6 +199,7 @@ step << Shaman
     .goto Mulgore,44.7,76.2
     .turnin 1521 >>Turn in Call of Earth
 step
+    >>Talk to Windfeather. She patrols around the camp
     .goto Mulgore,44.5,76.5
     .turnin 3376 >>Turn in Break Sharptusk!
 step
