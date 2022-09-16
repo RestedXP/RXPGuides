@@ -84,7 +84,7 @@ function BarContainer:CreateBar(label)
 end
 --RXP = addon
 function addon.StartTimer(duration,label,options)
-    if type(duration) ~= "number" or duration <= 0 then return end
+    if type(duration) ~= "number" or duration <= 0 or not RXPFrame:IsShown() then return end
     local bar = RXPFrame.BarContainer:Acquire(label or "")
     bar:SetDuration(duration)
     if options then
