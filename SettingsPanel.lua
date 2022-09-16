@@ -1259,7 +1259,7 @@ local function buildMinimapMenu()
     local menu = {}
     addon.RXPFrame.GenerateMenuTable(menu)
 
-    if addon.settings.db.profile.minimap.show or addon.RXPFrame.IsShown() then
+    if addon.settings.db.profile.minimap.show or addon.RXPFrame:IsShown() then
         table.insert(menu, #menu, {
             text = _G.HIDE,
             notCheckable = 1,
