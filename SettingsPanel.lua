@@ -1329,7 +1329,7 @@ function addon.settings.RestoreActive()
     addon.settings.db.profile.minimap.show = true
 end
 
-function addon.settings:DetectXPRate()
+function addon.settings:DetectXPRate(heirloomCheck)
     if addon.settings.db.profile.xpRateOverriden then return end
 
     local UnitBuff = UnitBuff
@@ -1355,10 +1355,13 @@ function addon.settings:DetectXPRate()
         end
     end
 
-    if addon.currentGuide and addon.currentGuide.name then
-        addon:LoadGuide(addon.currentGuide)
-    else
-        addon.ReloadGuide()
+    -- TODO heirloomCheck for periodic checking
+    if heirloomCheck then
+        if addon.currentGuide and addon.currentGuide.name then
+            addon:LoadGuide(addon.currentGuide, 'onLoad')
+        else
+            addon.ReloadGuide()
+        end
     end
 
     addon.RXPFrame.GenerateMenuTable()
