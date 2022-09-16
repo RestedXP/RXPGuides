@@ -143,7 +143,7 @@ step << Warrior
     .trainer >> Train your class spells
 step
     .goto Mulgore,58.2,85.0
-    >>Kill Battleboars outside the cave for Flanks and Snouts
+    >>Kill Battleboars outside the cave for their Flanks and Snouts
     .complete 780,2 --Battleboar Flank (8)
     .complete 780,1 --Battleboar Snout (8)
 step
