@@ -591,7 +591,7 @@ step
     .turnin 833 >>Turn in A Sacred Burial
 step
     .goto Mulgore,61.5,21.9
-    .xp 9+4400 >> Grind to 4400+/6500xp
+    .xp 9+4400 >> Grind to 4450+/6500xp
 step << !Druid
     #completewith hsfailsafe3
     .hs >>Hearth to Bloodhoof Village
@@ -605,9 +605,6 @@ step << !Hunter
 step
     .goto Mulgore,48.7,59.4
     .turnin 761 >>Turn in Swoop Hunting
-step << !Hunter !Druid
-    .goto Mulgore,46.9,60.2
-    .accept 861 >>Accept The Hunter's Way
 step
     .goto Mulgore,48.5,60.4
     .turnin 758 >>Turn in Thunderhorn Cleansing
@@ -615,6 +612,9 @@ step
 step << !Hunter
     .goto Mulgore,47.5,60.2
     .turnin 746 >>Turn in Dwarven Digging
+step << !Hunter !Druid
+    .goto Mulgore,46.9,60.2
+    .accept 861 >>Accept The Hunter's Way
 step
     #label hsfailsafe3
     .goto Mulgore,47.4,62.0
