@@ -184,6 +184,10 @@ step
 step
     .goto Mulgore,44.9,77.0
     .turnin 780 >>Turn in The Battleboars
+step
+    #completewith next
+    .goto Mulgore,44.65,77.90
+    .vendor >>vendor trash
 step << Shaman
     .goto Mulgore,44.7,76.2
     .turnin 1519 >>Turn in Call of Earth
