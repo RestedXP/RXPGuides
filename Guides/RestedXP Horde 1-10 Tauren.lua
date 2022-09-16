@@ -325,9 +325,6 @@ step
 step
     #sticky
     #completewith Well
-	.goto Mulgore,55.9,63.1,90
-    .goto Mulgore,51.1,66.5,90
-    .goto Mulgore,40.7,73.0,90
     >>Get the items for Mazzranache as you quest throughout the zone
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
