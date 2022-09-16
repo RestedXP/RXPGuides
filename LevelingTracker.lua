@@ -53,11 +53,7 @@ function addon.tracker:SetupTracker()
     self:RegisterEvent("PLAYER_DEAD")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
-    if addon.settings.db.profile.enableLevelingReportInspections and
-        addon.settings.db.profile.enableBetaFeatures then
-        self:RegisterEvent("INSPECT_READY")
-        self:RegisterComm(self._commPrefix)
-    end
+    self:SetupInspections()
 
     self:GenerateDBLevel(self.playerLevel)
     self:UpgradeDB()
@@ -72,6 +68,16 @@ function addon.tracker:SetupTracker()
         self:CreateLevelSplits()
 
         self.levelSplits:Show()
+    end
+end
+
+function addon.tracker:SetupInspections()
+    if addon.settings.db.profile.enableLevelingReportInspections and
+        addon.settings.db.profile.enableBetaFeatures then
+        self:RegisterEvent("INSPECT_READY")
+        self:RegisterComm(self._commPrefix)
+    else
+        self:UnregisterEvent("INSPECT_READY")
     end
 end
 
@@ -1561,6 +1567,10 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
 end
 
 function addon.tracker:INSPECT_READY(_, inspecteeGUID)
+    if not addon.settings.db.profile.enableLevelingReportInspections then
+        return
+    end
+
     local inspectedName = select(6, GetPlayerInfoByGUID(inspecteeGUID))
     if self.state.otherReports[inspectedName] and
         self.state.otherReports[inspectedName].compileTime and GetServerTime() -

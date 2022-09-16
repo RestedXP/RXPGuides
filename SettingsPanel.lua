@@ -911,7 +911,10 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = "full",
                         order = 1.2,
-                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:SetupInspections()
+                        end,
                         disabled = function()
                             return not addon.settings.db.profile.enableTracker
                         end,
