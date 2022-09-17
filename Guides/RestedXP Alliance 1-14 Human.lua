@@ -1030,7 +1030,7 @@ step
     >>Talk to Morgan Pestle in the building. Use the rockets for AoE damage or to splitpull packs
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> Click here for a guide on splitpulling (long but informative)
     .turnin 61,1 >> Turn in Shipment to Stormwind
-step << Warrior
+step << Warrior tbc
     .goto StormwindClassic,57.1,57.7
     .trainer >> Train 2h Swords
 step << Priest
