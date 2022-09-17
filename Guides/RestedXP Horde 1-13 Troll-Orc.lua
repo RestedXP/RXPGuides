@@ -624,7 +624,6 @@ step
     .goto Durotar,51.9,43.5
     .accept 784 >>Accept Vanquish the Betrayers
 step << Shaman/Warrior
-    #xprate <1.5
     .goto Durotar,52.2,43.2
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
