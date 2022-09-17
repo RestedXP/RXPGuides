@@ -9,6 +9,13 @@ local fmt = string.format
 local L = addon.locale.Get
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
+function addon.SetResizeBounds(frame,width,height)
+    if frame.SetResizeBounds then
+        frame:SetResizeBounds(width,height)
+    else
+        frame:SetMinResize(width,height)
+    end
+end
 
 addon.width, addon.height = 235, 125 -- Default width/height
 addon.font = _G.GameFontNormal:GetFont()
@@ -123,7 +130,7 @@ RXPFrame:Show()
 RXPFrame:SetMovable(true)
 RXPFrame:SetClampedToScreen(true)
 RXPFrame:SetResizable(true)
-RXPFrame:SetMinResize(220, 20)
+addon.SetResizeBounds(RXPFrame, 220, 20)
 
 local function SetStepFrameAnchor()
     local frame = CurrentStepFrame

@@ -54,7 +54,8 @@ events.acceptmultiple = events.accept
 events.dailyturninmultiple = events.turnin
 
 local function GetIcon(path,index,size)
-local x1, x2, y1, y2 = GetPOITextureCoords(index)
+    local coords = GetPOITextureCoords or C_Minimap.GetPOITextureCoords
+    local x1, x2, y1, y2 = coords(index)
     return format("|T%s:0:0:0:0:%d:%d:%d:%d:%d:%d|t", path, size, size, x1*size, x2*size, y1*size, y2*size)
 end
 
