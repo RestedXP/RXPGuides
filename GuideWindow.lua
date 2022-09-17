@@ -528,7 +528,7 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number.text:SetJustifyH("CENTER")
             stepframe.number.text:SetJustifyV("CENTER")
             stepframe.number.text:SetTextColor(1, 1, 1)
-            stepframe.number.text:SetFont(addon.font, 9)
+            stepframe.number.text:SetFont(addon.font, 9, "")
         end
         if stepframe.hardcore ~= addon.settings.db.profile.hardcore or not stepframe.hardcore then
             stepframe.hardcore = addon.settings.db.profile.hardcore
@@ -583,7 +583,7 @@ function addon.SetStep(n, n2, loopback)
                 end)
 
                 --
-                button:SetPushedTexture(nil)
+                button:SetPushedTexture("")
                 button:SetHighlightTexture(
                     "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
 
@@ -594,7 +594,7 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.text:SetJustifyH("LEFT")
                 elementFrame.text:SetJustifyV("CENTER")
                 elementFrame.text:SetTextColor(1, 1, 1)
-                elementFrame.text:SetFont(addon.font, 11)
+                elementFrame.text:SetFont(addon.font, 11, "")
 
                 elementFrame.icon =
                     elementFrame:CreateFontString(nil, "OVERLAY")
@@ -885,7 +885,7 @@ GuideName.text:SetPoint("RIGHT", GuideName, 0, 0)
 GuideName.text:SetJustifyH("CENTER")
 GuideName.text:SetJustifyV("CENTER")
 GuideName.text:SetTextColor(1, 1, 1)
-GuideName.text:SetFont(addon.font, 11)
+GuideName.text:SetFont(addon.font, 11, "")
 GuideName.text:SetText(L("Welcome to RestedXP Guides\nRight click to pick a guide"))
 GuideName:SetFrameLevel(6)
 
@@ -910,7 +910,7 @@ Footer.text:SetPoint("RIGHT", Footer, -16, 1)
 Footer.text:SetJustifyH("LEFT")
 Footer.text:SetJustifyV("CENTER")
 Footer.text:SetTextColor(1, 1, 1)
-Footer.text:SetFont(addon.font, 9)
+Footer.text:SetFont(addon.font, 9, "")
 Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
 Footer:SetFrameLevel(6)
 Footer.bg = Footer:CreateTexture("$parentBG", "BACKGROUND")
@@ -1226,7 +1226,7 @@ function addon:LoadGuide(guide, OnLoad)
             frame.number.text:SetJustifyH("CENTER")
             frame.number.text:SetJustifyV("CENTER")
             frame.number.text:SetTextColor(1, 1, 1, 1)
-            frame.number.text:SetFont(addon.font, 8)
+            frame.number.text:SetFont(addon.font, 8, "")
             local prefix = ""
             if n < 10 then prefix = "0" end
             frame.number.text:SetText(prefix .. tostring(n))
@@ -1240,7 +1240,7 @@ function addon:LoadGuide(guide, OnLoad)
         frame.text:SetJustifyH("LEFT")
         frame.text:SetJustifyV("TOP")
         frame.text:SetTextColor(1, 1, 1, 1)
-        frame.text:SetFont(addon.font, 9)
+        frame.text:SetFont(addon.font, 9, "")
 
         -- frame.text:SetHeight(1000)
 

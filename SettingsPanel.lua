@@ -442,7 +442,7 @@ function addon.settings.CreateImportOptionsPanel()
     importFrame.text:SetJustifyH("LEFT")
     importFrame.text:SetJustifyV("CENTER")
     importFrame.text:SetTextColor(1, 1, 1)
-    importFrame.text:SetFont(addon.font, 14)
+    importFrame.text:SetFont(addon.font, 14, "")
     importFrame.text:SetText("")
     addon.RXPG.LoadText = importFrame.text
 

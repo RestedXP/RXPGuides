@@ -487,7 +487,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.reachedContainer.data = AceGUI:Create("Label")
     trackerUi.reachedContainer.data:SetText(L("In-progress"))
-    trackerUi.reachedContainer.data:SetFont(addon.font, 12)
+    trackerUi.reachedContainer.data:SetFont(addon.font, 12, "")
     trackerUi.reachedContainer.data:SetFullWidth(true)
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.data)
 
@@ -506,7 +506,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.speedContainer.data = AceGUI:Create("Label")
     trackerUi.speedContainer.data:SetText(L("In-progress"))
-    trackerUi.speedContainer.data:SetFont(addon.font, 12)
+    trackerUi.speedContainer.data:SetFont(addon.font, 12, "")
     trackerUi.speedContainer.data:SetFullWidth(true)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.data)
 
@@ -524,7 +524,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.zonesContainer.data = AceGUI:Create("Label")
     trackerUi.zonesContainer.data:SetText("")
-    trackerUi.zonesContainer.data:SetFont(addon.font, 12)
+    trackerUi.zonesContainer.data:SetFont(addon.font, 12, "")
     trackerUi.zonesContainer.data:SetFullWidth(true)
 
     trackerUi.scrollContainer:AddChild(trackerUi.zonesContainer.data)
@@ -547,14 +547,14 @@ function addon.tracker:CreateGui(attachment, target)
     }
 
     trackerUi.sourcesContainer.data['quests']:SetText('quests')
-    trackerUi.sourcesContainer.data['quests']:SetFont(addon.font, 12)
+    trackerUi.sourcesContainer.data['quests']:SetFont(addon.font, 12,"")
     trackerUi.sourcesContainer.data['quests']:SetFullWidth(true)
     trackerUi.sourcesContainer:AddChild(
         trackerUi.sourcesContainer.data['quests'])
     trackerUi.sourcesContainer:AddChild(buildSpacer(padding))
 
     trackerUi.sourcesContainer.data['mobs']:SetText('mobs')
-    trackerUi.sourcesContainer.data['mobs']:SetFont(addon.font, 12)
+    trackerUi.sourcesContainer.data['mobs']:SetFont(addon.font, 12,"")
     trackerUi.sourcesContainer.data['mobs']:SetFullWidth(true)
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.data['mobs'])
 
@@ -575,7 +575,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.teamworkContainer.data['solo'] = AceGUI:Create("Label")
     trackerUi.teamworkContainer.data['solo']:SetText('solo')
-    trackerUi.teamworkContainer.data['solo']:SetFont(addon.font, 12)
+    trackerUi.teamworkContainer.data['solo']:SetFont(addon.font, 12,"")
     trackerUi.teamworkContainer.data['solo']:SetFullWidth(true)
     trackerUi.teamworkContainer:AddChild(
         trackerUi.teamworkContainer.data['solo'])
@@ -583,7 +583,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.teamworkContainer.data['group'] = AceGUI:Create("Label")
     trackerUi.teamworkContainer.data['group']:SetText('group')
-    trackerUi.teamworkContainer.data['group']:SetFont(addon.font, 12)
+    trackerUi.teamworkContainer.data['group']:SetFont(addon.font, 12, "")
     trackerUi.teamworkContainer.data['group']:SetFullWidth(true)
     trackerUi.teamworkContainer:AddChild(
         trackerUi.teamworkContainer.data['group'])
@@ -603,7 +603,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.extrasContainer.data = AceGUI:Create("Label")
     trackerUi.extrasContainer.data:SetText("")
-    trackerUi.extrasContainer.data:SetFont(addon.font, 12)
+    trackerUi.extrasContainer.data:SetFont(addon.font, 12, "")
     trackerUi.extrasContainer.data:SetFullWidth(true)
     trackerUi.extrasContainer:AddChild(trackerUi.extrasContainer.data)
 
@@ -1143,7 +1143,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.text:SetJustifyH("CENTER")
     f.title.text:SetJustifyV("CENTER")
     f.title.text:SetTextColor(1, 1, 1)
-    f.title.text:SetFont(addon.font, 9)
+    f.title.text:SetFont(addon.font, 9, "")
     f.title.text:SetText("Level splits")
     f.title.text:SetPoint("CENTER", f.title, 0, 1)
 
