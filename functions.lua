@@ -2517,11 +2517,16 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     local ids = element.questIds
     local questTurnedIn = false
 
-    for _, id in pairs(ids) do
-        questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
+    if element.reverse then
+        for _, id in pairs(ids) do
+            questTurnedIn = questTurnedIn or not IsQuestTurnedIn(id)
+        end
+    else
+        for _, id in pairs(ids) do
+            questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
+        end
     end
-
-    if step.active and (not questTurnedIn == not element.reverse) and not addon.settings.db.profile.debug then
+    if step.active and questTurnedIn and not addon.settings.db.profile.debug then
         step.completed = true
         addon.updateSteps = true
     end
