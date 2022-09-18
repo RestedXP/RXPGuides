@@ -547,7 +547,7 @@ function addon:QUEST_DATA_LOAD_RESULT(_, questId, success)
 end
 
 function addon:GROUP_ROSTER_UPDATE(_)
-    if addon.settings.db.profile.hideInRaid or (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then return end
+    if not addon.settings.db.profile.hideInRaid or (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then return end
 
     if UnitInRaid("player") then
         addon.settings.HideActive()
