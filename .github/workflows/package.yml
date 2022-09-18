@@ -19,15 +19,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Package and release Classic
+      - name: Package and release
         uses: BigWigsMods/packager@v2
         with:
-          args: -g classic
-
-      - name: Package and release Wrath
-        uses: BigWigsMods/packager@v2
-        with:
-          args: -g wrath
+          args: -S
 
       - name: Stage releases
         run: |

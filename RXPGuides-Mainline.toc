@@ -1,8 +1,4 @@
-## Interface: 30400
-## Interface-Mainline: 90205
-## Interface-Wrath: 30400
-## Interface-Classic: 11403
-## Interface-BCC: 20504
+## Interface: 90205
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Notes-zhCN: TODO
