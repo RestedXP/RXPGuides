@@ -480,6 +480,8 @@ function addon:OnEnable()
     if C_QuestLog.RequestLoadQuestByID then
         self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
     end
+
+    self:RegisterEvent("GROUP_ROSTER_UPDATE")
 end
 
 function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
@@ -540,6 +542,15 @@ function addon:QUEST_DATA_LOAD_RESULT(_, questId, success)
     addon.requestQuestInfo[questId] = 0
     addon.updateStepText = true
 end
+
+function addon:GROUP_ROSTER_UPDATE(_)
+    if UnitInRaid("player") then
+        addon.RXPFrame:SetShown(false)
+    else
+        addon.RXPFrame:SetShown(true)
+    end
+end
+
 
 questFrame:SetScript("OnEvent", addon.QuestAutomation)
 
