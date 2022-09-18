@@ -520,17 +520,28 @@ function addon.settings:CreateAceOptionsPanel()
 
     local optionsTable = {
         type = "group",
-        name = addon.title,
+        name = fmt("%s - %s", addon.title, addon.versionText),
         get = GetProfileOption,
         set = SetProfileOption,
         childGroups = "tab",
         args = {
-            buffer = { -- Buffer hacked in right-aligned icon
-                order = 1,
-                name = addon.versionText,
-                type = "description",
-                width = "full",
-                fontSize = "medium"
+            discordButton = {
+                order = 1.0,
+                name = L("Join Discord"), -- TODO locale
+                type = "execute",
+                width = "normal",
+                func = function()
+                    addon.url = "https://discord.gg/restedxp"
+                    _G.StaticPopup_Show("RXP_Link")
+                    addon.url = nil
+                end
+            },
+            feedbackButton = {
+                order = 1.1,
+                name = L("Open Feedback Form"),
+                type = "execute",
+                width = "normal",
+                func = addon.comms.OpenBugReport
             },
             generalSettings = {
                 type = "group",
@@ -1135,10 +1146,16 @@ function addon.settings:CreateAceOptionsPanel()
                     }
                 }
             },
+            helpPanel = {
+                type = "group",
+                name = _G.HELP_LABEL,
+                order = 9,
+                args = {}
+            },
             advancedSettings = {
                 type = "group",
                 name = L("Advanced Settings"),
-                order = 5,
+                order = 10,
                 args = {
                     enableBetaFeatures = {
                         name = L("Enable Beta Features"),
@@ -1252,6 +1269,26 @@ function addon.settings:CreateAceOptionsPanel()
             }
         }
     }
+
+    -- Build FAQ items
+    local faqBatch = 2
+    for q, a in pairs(addon.help) do
+        optionsTable.args.helpPanel.args[faqBatch .. "q"] = {
+            order = faqBatch + 0.1,
+            name = q,
+            type = "header",
+            width = "full"
+        }
+
+        optionsTable.args.helpPanel.args[faqBatch .. "a"] = {
+            order = faqBatch + 0.2,
+            name = a,
+            type = "description",
+            width = "full",
+            fontSize = "medium"
+        }
+        faqBatch = faqBatch + 1
+    end
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
 
