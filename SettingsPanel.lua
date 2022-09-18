@@ -653,15 +653,20 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = addon.gameVersion < 30000
                     },
                     hideInRaid = {
-                        name = L("Autohide in Raids"),
-                        desc = L("Hide resetted XP when you are in a raid, and unhide when you leave a raid"),
+                        name = L("Autohide in Raids"), -- TODO locale
+                        desc = L(
+                            "Automatically hide when in a raid, and unhide when you leave a raid"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.91,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                        end,
+                            if value then
+                                addon:RegisterEvent("GROUP_ROSTER_UPDATE")
+                            else
+                                addon:UnregisterEvent("GROUP_ROSTER_UPDATE")
+                            end
+                        end
                     },
                     interfaceHeader = {
                         name = _G.UIOPTIONS_MENU,
