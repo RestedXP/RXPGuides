@@ -1,6 +1,7 @@
 ﻿local addonName, addon = ...
 
 local _G = _G
+local UnitInRaid = UnitInRaid
 
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
@@ -480,6 +481,10 @@ function addon:OnEnable()
     if C_QuestLog.RequestLoadQuestByID then
         self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
     end
+
+    if addon.settings.db.profile.hideInRaid then
+        self:RegisterEvent("GROUP_ROSTER_UPDATE")
+    end
 end
 
 function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
@@ -540,6 +545,17 @@ function addon:QUEST_DATA_LOAD_RESULT(_, questId, success)
     addon.requestQuestInfo[questId] = 0
     addon.updateStepText = true
 end
+
+function addon:GROUP_ROSTER_UPDATE(_)
+    if not addon.settings.db.profile.hideInRaid or (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then return end
+
+    if UnitInRaid("player") then
+        addon.settings.HideActive()
+    else
+        addon.settings.RestoreActive()
+    end
+end
+
 
 questFrame:SetScript("OnEvent", addon.QuestAutomation)
 
