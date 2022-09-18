@@ -100,7 +100,6 @@ function addon.settings:InitializeSettings()
 
     self:CreateAceOptionsPanel()
     self.CreateImportOptionsPanel()
-    self.CreateHelpOptionsPanel()
     self:MigrateSettings()
     self:UpdateMinimapButton()
 
@@ -521,17 +520,28 @@ function addon.settings:CreateAceOptionsPanel()
 
     local optionsTable = {
         type = "group",
-        name = addon.title,
+        name = fmt("%s - %s", addon.title, addon.versionText),
         get = GetProfileOption,
         set = SetProfileOption,
         childGroups = "tab",
         args = {
-            buffer = { -- Buffer hacked in right-aligned icon
-                order = 1,
-                name = addon.versionText,
-                type = "description",
-                width = "full",
-                fontSize = "medium"
+            discordButton = {
+                order = 1.0,
+                name = L("Join Discord"), -- TODO locale
+                type = "execute",
+                width = "normal",
+                func = function()
+                    addon.url = "https://discord.gg/restedxp"
+                    _G.StaticPopup_Show("RXP_Link")
+                    addon.url = nil
+                end
+            },
+            feedbackButton = {
+                order = 1.1,
+                name = L("Open Feedback Form"),
+                type = "execute",
+                width = "normal",
+                func = addon.comms.OpenBugReport
             },
             generalSettings = {
                 type = "group",
@@ -1120,10 +1130,16 @@ function addon.settings:CreateAceOptionsPanel()
                     }
                 }
             },
+            helpPanel = {
+                type = "group",
+                name = _G.HELP_LABEL,
+                order = 9,
+                args = {}
+            },
             advancedSettings = {
                 type = "group",
                 name = L("Advanced Settings"),
-                order = 5,
+                order = 10,
                 args = {
                     enableBetaFeatures = {
                         name = L("Enable Beta Features"),
@@ -1237,6 +1253,26 @@ function addon.settings:CreateAceOptionsPanel()
             }
         }
     }
+
+    -- Build FAQ items
+    local faqBatch = 2
+    for q, a in pairs(addon.help) do
+        optionsTable.args.helpPanel.args[faqBatch .. "q"] = {
+            order = faqBatch + 0.1,
+            name = q,
+            type = "header",
+            width = "full"
+        }
+
+        optionsTable.args.helpPanel.args[faqBatch .. "a"] = {
+            order = faqBatch + 0.2,
+            name = a,
+            type = "description",
+            width = "full",
+            fontSize = "medium"
+        }
+        faqBatch = faqBatch + 1
+    end
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
 
@@ -1381,85 +1417,4 @@ function addon.settings:RefreshProfile()
     addon.updateMap = true
     addon.RXPFrame.GenerateMenuTable()
     addon.RXPFrame.SetStepFrameAnchor()
-end
-
-function addon.settings.CreateHelpOptionsPanel()
-    local importOptionsTable = {
-        type = "group",
-        name = fmt("%s %s", addon.title, _G.HELP_LABEL),
-        handler = addon.settings,
-        args = {
-            feedbackButton = {
-                order = 0.1,
-                name = L("Open Feedback Form"),
-                type = "execute",
-                width = "normal",
-                func = addon.comms.OpenBugReport
-            },
-            discordButton = {
-                order = 0.2,
-                name = _G.HELP_FRAME_TITLE,
-                type = "execute",
-                width = "normal",
-                func = function()
-                    addon.url = "https://discord.gg/restedxp"
-                    _G.StaticPopup_Show("RXP_Link")
-                    addon.url = nil
-                end
-            },
-            faqHeader = {
-                order = 1,
-                name = " ",
-                type = "description",
-                width = "full",
-                fontSize = "medium"
-
-            }
-        }
-    }
-
-    local batch = 2
-    for q, a in pairs(addon.help) do
-        importOptionsTable.args[batch .. "q"] = {
-            order = batch + 0.1,
-            name = q,
-            type = "header",
-            width = "full"
-        }
-
-        importOptionsTable.args[batch .. "a"] = {
-            order = batch + 0.2,
-            name = a,
-            type = "description",
-            width = "full",
-            fontSize = "medium"
-        }
-        batch = batch + 1
-    end
-
-    AceConfig:RegisterOptionsTable(addon.title .. "/Help", importOptionsTable)
-
-    addon.settings.gui.help = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                  addon.title .. "/Help", _G.HELP_LABEL,
-                                  addon.title)
-
-    -- Ace3 ConfigDialog doesn't support embedding icons in header
-    -- Directly references Ace3 built frame object
-    -- Hackery ahead
-
-    importFrame = addon.settings.gui.help.obj.frame
-    importFrame.icon = importFrame:CreateTexture()
-    importFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
-                                    "\\Textures\\rxp_logo-64")
-    importFrame.icon:SetPoint("TOPRIGHT", -5, -5)
-
-    importFrame.text = importFrame:CreateFontString(nil, "OVERLAY")
-    importFrame.text:ClearAllPoints()
-    importFrame.text:SetPoint("CENTER", importFrame, 1, 1)
-    importFrame.text:SetJustifyH("LEFT")
-    importFrame.text:SetJustifyV("CENTER")
-    importFrame.text:SetTextColor(1, 1, 1)
-    importFrame.text:SetFont(addon.font, 14)
-    importFrame.text:SetText("")
-
 end
