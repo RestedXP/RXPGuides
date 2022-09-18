@@ -54,7 +54,8 @@ events.acceptmultiple = events.accept
 events.dailyturninmultiple = events.turnin
 
 local function GetIcon(path,index,size)
-local x1, x2, y1, y2 = GetPOITextureCoords(index)
+    local coords = GetPOITextureCoords or C_Minimap.GetPOITextureCoords
+    local x1, x2, y1, y2 = coords(index)
     return format("|T%s:0:0:0:0:%d:%d:%d:%d:%d:%d|t", path, size, size, x1*size, x2*size, y1*size, y2*size)
 end
 
@@ -2517,11 +2518,16 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     local ids = element.questIds
     local questTurnedIn = false
 
-    for _, id in pairs(ids) do
-        questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
+    if element.reverse then
+        for _, id in pairs(ids) do
+            questTurnedIn = questTurnedIn or not IsQuestTurnedIn(id)
+        end
+    else
+        for _, id in pairs(ids) do
+            questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
+        end
     end
-
-    if step.active and (not questTurnedIn == not element.reverse) and not addon.settings.db.profile.debug then
+    if step.active and questTurnedIn and not addon.settings.db.profile.debug then
         step.completed = true
         addon.updateSteps = true
     end

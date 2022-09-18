@@ -75,13 +75,11 @@ step
 	.vendor >> Vendor and Repair
 step << Mage
 	#completewith next
-	    .goto Azuremyst Isle,80.0,47.1
-	.accept 9290 >> Accept Mage Training
+	    .goto Azuremyst Isle,79.6,48.8
 	.turnin 9290 >> Turnin Mage Training
 	.trainer >> Train your spells
 step << Paladin
 	#completewith next
-	.accept 9287 >> Accept Paladin Training
 	.turnin 9287 >> Turnin Paladin Training
 	    .goto Azuremyst Isle,79.7,48.2
 	.trainer >> Train your spells
@@ -100,7 +98,6 @@ step << Shaman
     .accept 9450 >> Accept Call of Earth
 step << Warrior
     .goto Azuremyst Isle,79.6,49.4
-	.accept 9289 >> Accept Warrior Training
 	.turnin 9289 >> Turnin Warrior Training
 	.trainer >> Train your spells
 step
@@ -127,10 +124,9 @@ step << Priest
 	.goto Azuremyst Isle,79.3,50.9
     .vendor >>Purchase more water from Ryosh
     .collect 159,10 --Collect Refreshing Spring Water (x15)
-step
+step << Hunter
 	#completewith next
 	.goto Azuremyst Isle,79.3,50.9
-	.vendor >> Vendor and Repair
 	.vendor >> Buy 6 stacks of arrows from Mura << Hunter
 step
 	#label spareparts2

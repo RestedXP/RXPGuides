@@ -2266,7 +2266,7 @@ step
     .accept 942 >> Accept The Absent Minded Prospector
 step
     .goto Teldrassil,58.4,94.0
-    >>Exit Darnassus trhough the purple portal
+    >>Exit Darnassus through the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
     .fly Auberdine>> Fly to Auberdine
 step << Draenei !Paladin wotlk

@@ -29,6 +29,11 @@ jobs:
         with:
           args: -g wrath
 
+      - name: Package and release Retail
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -g retail
+
       - name: Stage releases
         run: |
           cd .release

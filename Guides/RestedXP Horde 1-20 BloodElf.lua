@@ -1149,6 +1149,7 @@ step
     .complete 8479,1 --Collect Chieftain Zul'Marosh's Head (x1)
     .collect 23249,1,9360 --Collect Amani Invasion Plans (x1)
     .accept 9360 >> Accept Amani Invasion
+    .use 23249
 step
     #label Marosh
     .goto Eversong Woods,70.5,72.4
@@ -1995,7 +1996,8 @@ step
     .complete 9173,1 --Deatholme Acolyte (8)
     .complete 9173,2 --Fallen Ranger (10)
     .collect 22597,1,9175 --Collect The Lady's Necklace (x1)
-    .accept 9175 >> Accept The Lady's Necklace
+    .accept 9175 >> Accept The Lady's Necklace  
+    .use 22597
 step
     #completewith next
     >>Loot Spiders for Crunchy Spider Legs

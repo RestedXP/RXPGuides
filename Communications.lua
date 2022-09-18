@@ -556,8 +556,7 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
 
     f:SetWidth(frameWidth)
     f:SetHeight(height or 100)
-    f.frame:SetMinResize(frameWidth, height or 20)
-
+    addon.SetResizeBounds(f.frame, frameWidth, height or 20)
     _G["RESTEDXP_BRANDED_EXPORT"] = f.frame
     tinsert(_G.UISpecialFrames, "RESTEDXP_BRANDED_EXPORT")
 

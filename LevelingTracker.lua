@@ -53,11 +53,7 @@ function addon.tracker:SetupTracker()
     self:RegisterEvent("PLAYER_DEAD")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
-    if addon.settings.db.profile.enableLevelingReportInspections and
-        addon.settings.db.profile.enableBetaFeatures then
-        self:RegisterEvent("INSPECT_READY")
-        self:RegisterComm(self._commPrefix)
-    end
+    self:SetupInspections()
 
     self:GenerateDBLevel(self.playerLevel)
     self:UpgradeDB()
@@ -72,6 +68,16 @@ function addon.tracker:SetupTracker()
         self:CreateLevelSplits()
 
         self.levelSplits:Show()
+    end
+end
+
+function addon.tracker:SetupInspections()
+    if addon.settings.db.profile.enableLevelingReportInspections and
+        addon.settings.db.profile.enableBetaFeatures then
+        self:RegisterEvent("INSPECT_READY")
+        self:RegisterComm(self._commPrefix)
+    else
+        self:UnregisterEvent("INSPECT_READY")
     end
 end
 
@@ -120,6 +126,12 @@ function addon.tracker:UpgradeDB()
                 if questXP <= 0 then questData[i] = nil end
             end
         end
+
+        -- Repair DK starting time
+        if l == 55 and addon.player.class == "DEATHKNIGHT" and
+            not levelDB[l].timestamp.started then
+            levelDB[l].timestamp.started = 0
+        end
     end
 
     -- On 60/70 login, set timestamp.started to now
@@ -152,7 +164,11 @@ function addon.tracker:GenerateDBLevel(level)
         }
     end
 
-    if level == 1 then profile["levels"][level].timestamp.started = 0 end
+    if level == 1 then
+        profile["levels"][level].timestamp.started = 0
+    elseif level == 55 and addon.player.class == "DEATHKNIGHT" then
+        profile["levels"][level].timestamp.started = 0
+    end
 end
 
 function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
@@ -471,7 +487,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.reachedContainer.data = AceGUI:Create("Label")
     trackerUi.reachedContainer.data:SetText(L("In-progress"))
-    trackerUi.reachedContainer.data:SetFont(addon.font, 12)
+    trackerUi.reachedContainer.data:SetFont(addon.font, 12, "")
     trackerUi.reachedContainer.data:SetFullWidth(true)
     trackerUi.reachedContainer:AddChild(trackerUi.reachedContainer.data)
 
@@ -490,7 +506,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.speedContainer.data = AceGUI:Create("Label")
     trackerUi.speedContainer.data:SetText(L("In-progress"))
-    trackerUi.speedContainer.data:SetFont(addon.font, 12)
+    trackerUi.speedContainer.data:SetFont(addon.font, 12, "")
     trackerUi.speedContainer.data:SetFullWidth(true)
     trackerUi.speedContainer:AddChild(trackerUi.speedContainer.data)
 
@@ -508,7 +524,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.zonesContainer.data = AceGUI:Create("Label")
     trackerUi.zonesContainer.data:SetText("")
-    trackerUi.zonesContainer.data:SetFont(addon.font, 12)
+    trackerUi.zonesContainer.data:SetFont(addon.font, 12, "")
     trackerUi.zonesContainer.data:SetFullWidth(true)
 
     trackerUi.scrollContainer:AddChild(trackerUi.zonesContainer.data)
@@ -531,14 +547,14 @@ function addon.tracker:CreateGui(attachment, target)
     }
 
     trackerUi.sourcesContainer.data['quests']:SetText('quests')
-    trackerUi.sourcesContainer.data['quests']:SetFont(addon.font, 12)
+    trackerUi.sourcesContainer.data['quests']:SetFont(addon.font, 12,"")
     trackerUi.sourcesContainer.data['quests']:SetFullWidth(true)
     trackerUi.sourcesContainer:AddChild(
         trackerUi.sourcesContainer.data['quests'])
     trackerUi.sourcesContainer:AddChild(buildSpacer(padding))
 
     trackerUi.sourcesContainer.data['mobs']:SetText('mobs')
-    trackerUi.sourcesContainer.data['mobs']:SetFont(addon.font, 12)
+    trackerUi.sourcesContainer.data['mobs']:SetFont(addon.font, 12,"")
     trackerUi.sourcesContainer.data['mobs']:SetFullWidth(true)
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.data['mobs'])
 
@@ -559,7 +575,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.teamworkContainer.data['solo'] = AceGUI:Create("Label")
     trackerUi.teamworkContainer.data['solo']:SetText('solo')
-    trackerUi.teamworkContainer.data['solo']:SetFont(addon.font, 12)
+    trackerUi.teamworkContainer.data['solo']:SetFont(addon.font, 12,"")
     trackerUi.teamworkContainer.data['solo']:SetFullWidth(true)
     trackerUi.teamworkContainer:AddChild(
         trackerUi.teamworkContainer.data['solo'])
@@ -567,7 +583,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.teamworkContainer.data['group'] = AceGUI:Create("Label")
     trackerUi.teamworkContainer.data['group']:SetText('group')
-    trackerUi.teamworkContainer.data['group']:SetFont(addon.font, 12)
+    trackerUi.teamworkContainer.data['group']:SetFont(addon.font, 12, "")
     trackerUi.teamworkContainer.data['group']:SetFullWidth(true)
     trackerUi.teamworkContainer:AddChild(
         trackerUi.teamworkContainer.data['group'])
@@ -587,7 +603,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.extrasContainer.data = AceGUI:Create("Label")
     trackerUi.extrasContainer.data:SetText("")
-    trackerUi.extrasContainer.data:SetFont(addon.font, 12)
+    trackerUi.extrasContainer.data:SetFont(addon.font, 12, "")
     trackerUi.extrasContainer.data:SetFullWidth(true)
     trackerUi.extrasContainer:AddChild(trackerUi.extrasContainer.data)
 
@@ -778,7 +794,8 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
                                               .timePlayedThisLevel or
                                               "Missing data"))
 
-        if selectedLevel == 1 then
+        if selectedLevel == 1 or
+            (selectedLevel == 55 and addon.player.class == "DEATHKNIGHT") then
             trackerUi.reachedContainer.data:SetText(
                 addon.tracker.reportData[selectedLevel].timestamp.dateStarted or
                     "Missing data")
@@ -1126,7 +1143,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.text:SetJustifyH("CENTER")
     f.title.text:SetJustifyV("CENTER")
     f.title.text:SetTextColor(1, 1, 1)
-    f.title.text:SetFont(addon.font, 9)
+    f.title.text:SetFont(addon.font, 9, "")
     f.title.text:SetText("Level splits")
     f.title.text:SetPoint("CENTER", f.title, 0, 1)
 
@@ -1550,6 +1567,10 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
 end
 
 function addon.tracker:INSPECT_READY(_, inspecteeGUID)
+    if not addon.settings.db.profile.enableLevelingReportInspections then
+        return
+    end
+
     local inspectedName = select(6, GetPlayerInfoByGUID(inspecteeGUID))
     if self.state.otherReports[inspectedName] and
         self.state.otherReports[inspectedName].compileTime and GetServerTime() -

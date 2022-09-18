@@ -36,6 +36,9 @@ addon.activeSpells = {}
 addon.RXPG = {}
 addon.functions = {}
 addon.activeFrames = {} -- Hold all active frame/features for Hide/Show
+addon.player = {
+    class = select(2, UnitClass("player"))
+}
 
 BINDING_HEADER_RXPGuides = addon.title
 
