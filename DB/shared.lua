@@ -504,13 +504,22 @@ local CreatePanel
 local requestText = true
 local questText = ""
 local requestTimer = 0
+local mode
+local missingQs
+
 local SetText = function()
     local ctime = GetTime()
     if requestText and ctime - requestTimer > 0.2 then
         requestTimer = ctime
         questText,requestText = addon.GetBestQuests(false,2)
+        missingQs = addon.ShowMissingQuests()
     end
-    return questText
+
+    if mode == "missing" then
+        return missingQs
+    else
+        return questText
+    end
 end
 
 local function OnClick(self)
@@ -557,7 +566,25 @@ function CreatePanel()
                 name = "Refresh",
                 type = 'execute',
                 func = function() _G.InterfaceOptionsFrame_OpenToCategory(RXP.settings.gui.quest) end,
-            }
+            },
+            showAvailable = {
+                order = 14,
+                name = "Show 25 Quests",
+                type = 'execute',
+                func = function()
+                    mode = "quests"
+                    _G.InterfaceOptionsFrame_OpenToCategory(RXP.settings.gui.quest)
+                end,
+            },
+            showMissing = {
+                order = 15,
+                name = "Show Missing Quests",
+                type = 'execute',
+                func = function()
+                    mode = "missing"
+                    _G.InterfaceOptionsFrame_OpenToCategory(RXP.settings.gui.quest)
+                end,
+            },
         }
 
     }
@@ -624,6 +651,9 @@ function addon.functions.showtotalxp(self,text,flags)
 
 end
 
+addon.questsDone = {}
+addon.questsAvailable = {}
+
 function addon.CalculateTotalXP(flags)
     local totalXp = 0
     flags = flags or 0
@@ -633,12 +663,15 @@ function addon.CalculateTotalXP(flags)
         local aldor = addon.AldorScryerCheck("Aldor") and 932
         local scryer = addon.AldorScryerCheck("Scryer") and 934
         ignorePreReqs = aldor or scryer or 932
+    else
+        addon.questsDone = {}
     end
     local groups = {}
     local function ProcessQuest(quest,qid,skipgrpcheck)
         qid = qid or quest.Id
         local group = quest.group or ""
-        if (group == "" or skipgrpcheck or not groups[group]) and IsQuestAvailable(quest,qid,ignorePreReqs) and (ignorePreReqs or (IsPreReqComplete(quest))) then
+        local isAvailable = IsQuestAvailable(quest,qid,ignorePreReqs)
+        if (group == "" or skipgrpcheck or not groups[group]) and isAvailable and (ignorePreReqs or (IsPreReqComplete(quest))) then
             groups[group] = true
             local xp = quest.xp or 0
             totalXp = totalXp + xp
@@ -647,6 +680,7 @@ function addon.CalculateTotalXP(flags)
                                     addon.GetQuestName(qid) or "", qid))
             end
         end
+        return isAvailable
     end
     if not addon.questLogQuests then addon.GetBestQuests(true) end
     if ignorePreReqs then
@@ -654,28 +688,42 @@ function addon.CalculateTotalXP(flags)
             local quest = addon.questLogQuests[i]
             if quest then
                 ProcessQuest(quest)
+                addon.questsAvailable[quest.Id] = true
             end
         end
     end
     for id, quest in pairs(addon.QuestDB) do
+
         if not ignorePreReqs and quest.questLog and addon.IsQuestComplete(id) then
-            ProcessQuest(quest,id,true)
+            if ProcessQuest(quest,id) then
+                addon.questsDone[id] = true
+            end
         elseif not (quest.questLog or addon.IsQuestTurnedIn(id)) then
             local item = quest.itemId
             if ignorePreReqs and item then
-                ProcessQuest(quest,id)
+                if ProcessQuest(quest,id) then
+                    addon.questsDone[id] = true
+                end
             elseif type(item) == "table" then
                 local state = true
                 for n, itemId in pairs(item) do
                     state = state and GetItemCount(itemId, true) >=
                                 quest.itemAmount[n]
                 end
-                if state then ProcessQuest(quest,id) end
+                if state then
+                    if ProcessQuest(quest,id) then
+                        addon.questsDone[id] = true
+                    end
+                end
             elseif type(item) == "number" and GetItemCount(item, true) >=
                 quest.itemAmount then
-                ProcessQuest(quest,id)
+                if ProcessQuest(quest,id) then
+                    addon.questsDone[id] = true
+                end
             elseif not item then
-                ProcessQuest(quest,id)
+                if ProcessQuest(quest,id) then
+                    addon.questsDone[id] = true
+                end
             end
         end
     end
@@ -683,6 +731,21 @@ function addon.CalculateTotalXP(flags)
     return totalXp
 end
 
+function addon.ShowMissingQuests(output)
+    RXP.CalculateTotalXP(1)
+    RXP.CalculateTotalXP(0)
+    local t = ""
+    for qid,v in pairs(addon.questsAvailable) do
+        if not addon.questsDone[qid] and qid > 0 then
+            t = string.format("%s\n%s (%d)", t,
+                addon.GetQuestName(qid) or "", qid)
+        end
+    end
+    if output then
+        print(t)
+    end
+    return t
+end
 
 addon.QuestDB = {
 	[11505] = {
