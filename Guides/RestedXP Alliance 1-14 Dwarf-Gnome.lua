@@ -223,10 +223,12 @@ step << !Paladin !Mage
     .xp 4 >> Grind to 4
 step << !Paladin !Mage
     #requires TrollTroggs
-.turnin 182 >> Turn in The Troll Cave
+    .goto Dun Morogh,25.1,75.7
+    .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << Paladin/Mage
-.turnin 182 >> Turn in The Troll Cave
+    .goto Dun Morogh,25.1,75.7
+    .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << !Paladin !Mage
     .goto Dun Morogh,25.0,76.0
