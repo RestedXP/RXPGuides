@@ -857,7 +857,7 @@ step
     .turnin 9550 >> Turn in A Map to Where?
     .accept 9557 >> Accept Deciphering the Book
 step
-    >> Run back into town and talk to Anchorite Paetheus. Don't wait for his roleplay sequence.
+    .hs >> Hearth or run back into town and talk to Anchorite Paetheus. Don't wait for his roleplay sequence.
     .goto Bloodmyst Isle,54.7,54.1
     .turnin 9557 >> Turn in Deciphering the Book
 step
@@ -1256,6 +1256,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 20-32
 #defaultfor !Draenei
 #next 21-23 Ashenvale
+step << NightElf wotlk
+    .goto Darnassus,38.6,15.6
+    >> Take the boat or fly to Darnassus
+    .skill riding,1 >> Train riding skill and buy a mount
+    .money <4.60
 step
 #xprate <1.5
     .maxlevel 21
@@ -1569,6 +1574,9 @@ step
     .isOnQuest 729
     .goto Darkshore,35.7,83.7
     .turnin 729 >> Turn in The Absent Minded Prospector
+step
+    .isQuestTurnedIn 729
+    .goto Darkshore,35.7,83.7
     >>Start the escort quest
     .accept 731,1 >> Accept The Absent Minded Prospector
 step
@@ -1681,6 +1689,7 @@ step
 step
     #timer Orendil's Cure roleplay
     .goto Ashenvale,37.3,51.8
+    >> Wait for the roleplay, it takes 26 seconds. 
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure roleplay
     .accept 1033 >> Accept Elune's Tear
@@ -1698,6 +1707,7 @@ step
     .turnin 1054 >> Turn in Culling the Threat
 step
     .goto Ashenvale,37.3,51.8
+    >> Wait for the roleplay, it takes 10 seconds
     .turnin 1033 >> Turn in Elune's Tear
     .timer 10,Elune's tear roleplay
     .accept 1034 >> Accept The Ruins of Stardust
@@ -1713,6 +1723,7 @@ step
     .complete 973,1 --Collect Ilkrud Magthrull's Tome (x1)
 step
     .goto Ashenvale,22.7,51.9
+    >> Run up and over the mountains then turn in Therylune's Escape
     .turnin 945 >> Turn in Therylune's Escape
     .isQuestComplete 945
 step
@@ -1804,8 +1815,9 @@ step
 step
 #xprate <1.5 << tbc
     >>Kill the mobs for An Aggressive Defense
+    .goto Ashenvale,49.9,60.8,40,0
+    .goto Ashenvale,56.9,63.7,40,0
     .goto Ashenvale,49.9,60.8
-    .goto Ashenvale,56.9,63.7
     .complete 1025,1 --Kill Foulweald Den Watcher (x1)
     .complete 1025,2 --Kill Foulweald Ursa (x2)
     .complete 1025,3 --Kill Foulweald Totemic (x10)
@@ -1852,14 +1864,19 @@ step << !Hunter !NightElf !Rogue
     .goto Darkshore,33.1,39.9
     .zone Teldrassil>>Take the boat to Teldrassil
 step << NightElf wotlk
+    .isOnQuest 741
+    .goto Darkshore,36.3,45.6
     .fly Teldrassil >> Fly to Teldrassil
 step << !Hunter !NightElf !Rogue/NightElf wotlk
 	.goto Teldrassil,23.7,64.5
+    .isOnQuest 741
 	.turnin 741 >> Turn in The Absent Minded Prospector
 	.accept 942 >> Accept The Absent Minded Prospector
 step << NightElf wotlk
     .goto Darnassus,38.6,15.6
+    >> Fly or take the boat to Darnassus
     .skill riding,1 >> Train riding skill and buy a mount
+    .money <4.60
 step << Warrior tbc/Mage/Priest/Warlock
 	.goto Teldrassil,29.2,56.7
     .train 227 >> Train Staves
@@ -2323,6 +2340,10 @@ step << NightElf tbc/Draenei tbc
 #xprate >1.499
     .goto Ironforge,76.03,50.98,30,0
     .zone Stormwind City >> Take the tram to Stormwind
+step << wotlk
+    .zoneskip Darnassus,1
+    .goto Teldrassil,58.4,94.0
+    >>Exit Darnassus through the purple portal
 step << wotlk
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
