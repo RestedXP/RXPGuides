@@ -842,6 +842,9 @@ step << Rogue
     >>Climb to the top of the tree house
     .turnin -935 >> Turn in Crown of the Earth
     .turnin 940 >> Turn in Teldrassil
+step << Rogue
+    #xprate <1.5
+    .goto Darnassus,34.7,9.0
     .accept 952 >> Accept Grove of the Ancients
 step << Rogue
     .goto Darnassus,36.8,21.8
@@ -944,6 +947,9 @@ step
 step
     .goto Darnassus,34.8,9.2
     .turnin 940 >> Turn in Teldrassil << Hunter
+step
+    #xprate <1.5
+    .goto Darnassus,34.8,9.2
     .accept 952 >> Accept Grove of the Ancients
 step << Hunter
     .goto Darnassus,40.3,8.8
