@@ -502,11 +502,14 @@ step << Hunter
 	>>Kill crabs along the coast
     .complete 9512,1 --Collect Skittering Crawler Meat (x6)
 step
+    .goto Azuremyst Isle,50.2,70.6,40,0
+    .goto Azuremyst Isle,45.7,73.2,40,0
     .goto Azuremyst Isle,50.2,70.6
-	>>Speak with the gnome npc patrolling the beach southeast, wait for his dialogue sequence and kill him
+	>>Speak with Engineer "Spark" Overgrind patrolling the beach southeast, wait for his dialogue sequence and kill him
     .complete 9537,1 --Collect Traitor's Communication (x1)
     .skipgossip 17243
     .timer 18,Traitor's Communication RP
+    .unitscan Engineer "Spark" Overgrind
 step << Hunter
     .goto Azuremyst Isle,46.7,70.5
     .turnin 9512 >> Turn in Cookie's Jumbo Gumbo
