@@ -217,16 +217,9 @@ step
 	>>Loot a Webwood Egg at the back of the cave
     .complete 917,1 --Collect Webwood Egg (x1)
 step
-	#softcore
 	#completewith next
-	.deathskip >>Die and respawn at the Spirit Healer
-step
-	#hardcore
-	#completewith next
-	.goto Teldrassil,56.87,26.74
-	.goto Teldrassil,58.98,42.62,40 >>Logout skip on the ledge behind the eggs. Move your character until it looks like they're floating. Log out, and then log back in.
-	*If you fall down, just run out the cave normally to the quest turn in
-	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference
+	.deathskip >>Die and respawn at the Spirit Healer, or do the logout skip.
+    .link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference on how to do the logout skip
 step
     .goto Teldrassil,57.81,41.65
     >>Talk to Gilshalan
@@ -498,7 +491,7 @@ step
 	.goto Teldrassil,69.2,53.3
 	>>Kill Ferocitas. Loot the Necklace
     .collect 8049,1,2459,0x2,1 --Gnarlpine Necklace (1)
-    >>Right Click the Necklace to loot the Jewel
+    .use 8049 >>Right Click the Necklace to loot the Jewel
     .complete 2459,2 --Collect Tallonkai's Jewel (x1)
 step
     #requires mystics
@@ -847,7 +840,7 @@ step << Rogue
 step << Rogue
     .goto Darnassus,34.7,9.0
     >>Climb to the top of the tree house
-    .turnin 935 >> Turn in Crown of the Earth
+    .turnin -935 >> Turn in Crown of the Earth
     .turnin 940 >> Turn in Teldrassil
     .accept 952 >> Accept Grove of the Ancients
 step << Rogue
@@ -945,8 +938,11 @@ step << Druid
     .turnin 5931 >> Turn in Back to Darnassus
     .accept 6001 >> Accept Body and Heart
 step
+    .isOnQuest 935
     .goto Darnassus,34.8,9.2
     .turnin 935 >> Turn in Crown of the Earth
+step
+    .goto Darnassus,34.8,9.2
     .turnin 940 >> Turn in Teldrassil << Hunter
     .accept 952 >> Accept Grove of the Ancients
 step << Hunter
