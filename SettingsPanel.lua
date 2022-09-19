@@ -863,10 +863,13 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.1,
-                        hidden = true, -- TODO, Impossible situation with character-specific settings
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            if value then
+                                addon.UpdateArrow(addon.arrowFrame)
+                            else
+                                addon.arrowFrame:Hide()
+                            end
                         end
                     },
                     arrowScale = {
