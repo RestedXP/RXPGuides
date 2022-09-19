@@ -2568,7 +2568,7 @@ step
     .turnin 1146 >> Turn in The Swarm Grows
     .accept 1147 >> Accept The Swarm Grows
 step
-    .xp >33,1
+    .xp <33,1
     >> Accept quests around the racetrack
 	.accept 1110 >> Accept Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
@@ -2610,7 +2610,7 @@ step
 step
 	#sticky
 	#label partsoftheswarm
-    .isQuestTurnedIn 1146
+    .isOnQuest 1110
 	>>Grind the Silithid creatures until you get a Cracked Silithid Carapace. Click it to accept a quest.
 	.collect 5877,1,1148
 	.accept 1148 >> Accept Parts of the Swarm
