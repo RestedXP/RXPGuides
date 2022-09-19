@@ -2488,7 +2488,7 @@ function addon.functions.isOnQuest(self, ...)
     end
     local element = self.element
     local id = element.questId
-    if (element.step.active and not IsOnQuest(id) and not addon.settings.db.profile.debug) == not element.reverse then
+    if element.step.active and not addon.settings.db.profile.debug and (not IsOnQuest(id)) == not element.reverse then
         element.step.completed = true
         addon.updateSteps = true
     end
