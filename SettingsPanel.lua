@@ -1295,9 +1295,11 @@ function addon.settings:CreateAceOptionsPanel()
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
 
-    optionsTable.args.profiles = LibStub("AceDBOptions-3.0"):GetOptionsTable(
-                                     self.db)
-    optionsTable.args.profiles.order = 20
+    if addon.settings.db.profile.enableBetaFeature then
+        optionsTable.args.profiles =
+            LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db)
+        optionsTable.args.profiles.order = 20
+    end
 
     addon.RXPOptions = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
                            addon.title)
