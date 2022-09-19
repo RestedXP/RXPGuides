@@ -329,6 +329,7 @@ step << !Warlock/!Rogue
     .goto Darkshore,36.6,45.5
     .turnin 4725 >> Turn in Beached Sea Turtle
     .turnin 4727 >> Turn in Beached Sea Turtle
+    .turnin -4723 >> Turn in Beached Sea Creature
 step
 #xprate <1.5
     .goto Darkshore,38.8,43.4
@@ -343,6 +344,7 @@ step
     .isOnQuest 4722
     .goto Darkshore,36.6,45.6
     .turnin 4722 >> Turn in Beached Sea Turtle
+    .turnin -4723 >> Turn in Beached Sea Creature
 step
 #xprate <1.5
     .isQuestComplete 963
