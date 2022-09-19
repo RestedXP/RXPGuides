@@ -1114,15 +1114,15 @@ step
     .goto Thunder Bluff,61.4,80.9
     .turnin -1130 >>Turn in Melor Sends Word
     .accept 1131 >>Accept Steelsnap
-step
-    .goto Thunder Bluff,54.7,51.1
-    .accept 1195 >>Accept The Sacred Flame
 step << Warrior
     .goto Thunder Bluff,57.2,87.4
     .accept 1823 >>Accept Speak with Ruga
     .train 845 >>Train Cleave
     .train 6547 >>Train Rend r3
-    .train 20230 >>Train Retaliation    
+    .train 20230 >>Train Retaliation  
+step
+    .goto Thunder Bluff,54.7,51.1
+    .accept 1195 >>Accept The Sacred Flame  
 step
     #xprate <1.5
     .maxlevel 21
