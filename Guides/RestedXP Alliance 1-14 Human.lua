@@ -345,7 +345,7 @@ step << Warlock
     .goto Elwynn Forest,44.1,66.0,10 >>Go to the room behind the innkeeper, then go downstairs.
 step << Warlock
     .goto Elwynn Forest,44.4,66.2
-    .trainer >> Train your class spells
+    .trainer >> Train your class spells. It is in the basement.
     .goto Elwynn Forest,44.4,66.0
     .vendor >> Buy the Blood Pact book if you have money after training (otherwise buy it later) << tbc
 step << Mage/Priest/Rogue
