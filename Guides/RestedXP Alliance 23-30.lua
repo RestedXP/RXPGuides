@@ -453,7 +453,6 @@ step << Shaman
 step << Human !Warlock wotlk !Paladin wotlk
     .goto Elwynn Forest,65.2,69.8
 	>>Head to the top of the Tower of Azora in Elwynn Forest
-    .money <5.0
     .accept 94 >> Accept A Watchful Eye
 step << Human !Warlock wotlk/Human !Paladin wotlk
 	.goto Elwynn Forest,84.3,64.9
@@ -465,9 +464,9 @@ step << Human Paladin/Human Warlock
 	.goto StormwindClassic,66.3,62.1
     .fly Redridge >> Fly to Redridge Mountains
     .zoneskip Elwynn Forest
-step << Human !Warlock wotlk/Human !Paladin wotlk
+step << !Human
     .goto Elwynn Forest,65.2,69.8
-	>>Head to the top of the Tower of Azora
+	>>Head to the top of the Tower of Azora. You do NOT need to get the Stormwind Flight Path. We will get it later. 
     .accept 94 >> Accept A Watchful Eye
 step
     #label exit
@@ -627,8 +626,9 @@ step
     .turnin 165 >> Turn in The Hermit
     .accept 148 >> Accept Supplies from Darkshire
 step
-    >>Do the wolf quest if you're not yet level 25
+    >>Run up the coast killing wolves
     .xp <25,1
+    .goto Duskwood,17.6,24.6
     .complete 226,1 --Kill Starving Dire Wolf (x12)
     .complete 226,2 --Kill Rabid Dire Wolf (x8)
 step << Rogue/Druid
@@ -2060,8 +2060,14 @@ step
     .goto StormwindClassic,70.3,44.8
     >>Beat Dashel Stonefist
     .turnin 1246 >> Turn in The Missing Diplomat
+step
+    .isQuestTurnedIn 1246
+    .goto StormwindClassic,70.3,44.8
     .accept 1447 >> Accept The Missing Diplomat
     .turnin 1447 >> Turn in The Missing Diplomat
+step
+    .isQuestTurnedIn 1447
+    .goto StormwindClassic,70.3,44.8
     .accept 1247 >> Accept The Missing Diplomat
 step
     .isOnQuest 1247
@@ -2432,7 +2438,7 @@ step
     .fly Duskwood>> Fly to Duskwood
 step
     #completewith next
-    + If you have more gold on this server, mail yourself atleast 5 gold, we're buying our mounts soon.
+    .skill riding,75 >>If you have more gold on this server, mail yourself atleast 5 gold, we're buying our mounts soon.
     .money >5.00
 step
 	#completewith notubeandy
@@ -2771,6 +2777,9 @@ step
     .goto StormwindClassic,60.1,63.9
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
+step << NightElf/Draenei
+    #completewith next
+    .home >> Set your hearthstone in Stormwind
 step
     .goto StormwindClassic,39.9,81.3
     .accept 690 >> Accept Malin's Request
@@ -2808,16 +2817,14 @@ step << NightElf wotlk
 	.goto Darnassus,38.1,15.3,30,0
 	.goto Wetlands,5.2,63.3,50,0
 	.money <5.00
-	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount.
-	.hs >> Then hearth back to Menethil Harbor
+	.skill riding,75 >> Take the boat to Darkshore then to Darnassus and buy your mount. Then hearth back to Stormwind
 step << Draenei !Shaman !Paladin wotlk
 	.goto Stormwind City,4.8,57.3,50,0
 	.goto Darkshore,31.0,41.1,30.0
 	.goto The Exodar,81.5,52.5,40,0
 	.goto Wetlands,5.2,63.3,50,0
 	.money <5.00
-	>> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Otherwise skip this step
-	.hs >>Then hearth to Menethil Harbor
+	.skill riding,75 >> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Then hearth to Stormwind
 step
     #sticky
 	#completewith next
@@ -2856,9 +2863,12 @@ step << Hunter
 	.goto Ironforge,61.34,89.25
 	>>Go inside the building, head downstairs and buy a level 30 quiver from Thalgus Thunderfist
 	.collect 7371,1
+step << !Dwarf !Gnome wotlk
+    .goto Ironforge,55.5,47.7
+    .fp Ironforge>> Get the Ironforge Flight Path
 step
     .goto Ironforge,18.5,51.6
-    .home >>Set your HS to Ironforge
+    .home >>Set your hearthstone to Ironforge
 step << Dwarf Paladin
     .goto Ironforge,23.3,6.1
     .accept 2999 >>Accept Tome of Divinity
@@ -2926,10 +2936,6 @@ step << Gnome !Warlock tbc
 step << Mage
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
-
-step << !Dwarf !Gnome wotlk
-    .goto Ironforge,55.5,47.7
-    .fp Ironforge>> Get the Ironforge Flight Path
 step << Gnome/Dwarf/tbc
     .goto Ironforge,55.5,47.7
     .fly Wetlands>> Fly to wetlands
@@ -3024,9 +3030,6 @@ step
     .isOnQuest 1249
     .goto Wetlands,10.6,60.7
     .turnin 1249 >> Turn in The Missing Diplomat
-step
-    .isQuestTurnedIn 1249
-    .goto Wetlands,10.6,60.3
     .accept 1250 >> Accept The Missing Diplomat
 step
     .isOnQuest 1250
