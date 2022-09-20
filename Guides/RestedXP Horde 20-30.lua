@@ -1249,23 +1249,6 @@ step
 	.goto Hillsbrad Foothills,63.5,33.0
     .complete 496,2 --Collect Creeper Ichor (x1) 
 step
-	#requires syndicateq
-    .goto Hillsbrad Foothills,61.5,19.1
-    .turnin 1066 >> Turn in Blood of Innocents
-step
-    .goto Hillsbrad Foothills,62.38,20.52
-	.turnin 549 >> Turn in WANTED: Syndicate Personnel
-step
-    .goto Hillsbrad Foothills,63.2,20.7
-    .turnin 498 >> Turn in The Rescue
-step << Hunter
-	#completewith next
-	.goto Hillsbrad Foothills,62.56,19.91
-	.vendor >> Buy arrows until your quiver is full
-step
-    .goto Hillsbrad Foothills,62.79,19.05
-	.vendor 2388 >> Go inside the Inn. Vendor trash, and buy Food/Water from Shay	
-step
 	#completewith next
     >>Kill Bears and Mountain Lions en route to the Fields. Loot them for Tongues and Blood
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
@@ -1313,6 +1296,23 @@ step
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
 	.complete 501,1 --Collect Mountain Lion Blood (x10)
 --N Claw rank 3?
+step
+	#requires syndicateq
+    .goto Hillsbrad Foothills,61.5,19.1
+    .turnin 1066 >> Turn in Blood of Innocents
+step
+    .goto Hillsbrad Foothills,62.38,20.52
+	.turnin 549 >> Turn in WANTED: Syndicate Personnel
+step
+    .goto Hillsbrad Foothills,63.2,20.7
+    .turnin 498 >> Turn in The Rescue
+step << Hunter
+	#completewith next
+	.goto Hillsbrad Foothills,62.56,19.91
+	.vendor >> Buy arrows until your quiver is full
+step
+    .goto Hillsbrad Foothills,62.79,19.05
+	.vendor 2388 >> Go inside the Inn. Vendor trash, and buy Food/Water from Shay	
 step
 	#requires Farmers
 	>>Return to Tarren Mill
