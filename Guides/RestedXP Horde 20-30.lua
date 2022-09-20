@@ -2479,25 +2479,6 @@ step
     .unitscan Rok'Alim the Pounder
     .complete 1151,1 --Collect Fragments of Rok'Alim (x1)
 step
-    .isOnQuest 4881
-	>>Escort will start when you accept next part of the quest.
-	.goto Thousand Needles,21.3,32.0
-	.turnin 4881 >> Turn in Assassination Plot
-step
-    .isQuestTurnedIn 4881
-	>>Escort will start when you accept next part of the quest.
-	.goto Thousand Needles,21.3,32.0    
-	.accept 4966 >> Accept Protect Kanati Greycloud
-step
-    .isOnQuest 4966
-	>>3 mobs will spawn. Let Kanati get aggro, then simply kill them
-	.goto Thousand Needles,21.4,31.8
-    .complete 4966,1 --Protect Kanati Greycloud
-step
-    .isQuestComplete 4966
-	.goto Thousand Needles,21.4,31.8    
-    .turnin 4966 >> Turn in Protect Kanati Greycloud
-step
 	.goto Thousand Needles,31.2,36.9,30 >>Run up the path here
     .isOnQuest 5064
 step
@@ -2531,6 +2512,25 @@ step
 >>Open the panther cage and kill it. Make sure to have your cooldowns/potions available
     .goto Thousand Needles,23.3,23.3
     .complete 5151,1 --Collect Hypercapacitor Gizmo (x1)
+step
+    .isOnQuest 4881
+	>>Escort will start when you accept next part of the quest.
+	.goto Thousand Needles,21.3,32.0
+	.turnin 4881 >> Turn in Assassination Plot
+step
+    .isQuestTurnedIn 4881
+	>>Escort will start when you accept next part of the quest.
+	.goto Thousand Needles,21.3,32.0    
+	.accept 4966 >> Accept Protect Kanati Greycloud
+step
+    .isOnQuest 4966
+	>>3 mobs will spawn. Let Kanati get aggro, then simply kill them
+	.goto Thousand Needles,21.4,31.8
+    .complete 4966,1 --Protect Kanati Greycloud
+step
+    .isQuestComplete 4966
+	.goto Thousand Needles,21.4,31.8    
+    .turnin 4966 >> Turn in Protect Kanati Greycloud
 step
     #label OreSample
 .goto Thousand Needles,21.5,32.3
