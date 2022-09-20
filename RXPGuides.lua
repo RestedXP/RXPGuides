@@ -46,9 +46,6 @@ BINDING_HEADER_RXPGuides = addon.title
 local questFrame = CreateFrame("Frame");
 
 function RXPG_init()
-    RXPData = RXPData or {}
-    RXPCData = RXPCData or {}
-
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
     addon.settings.db.profile.hardcore = addon.game == "CLASSIC" and addon.settings.db.profile.hardcore
     addon.RenderFrame()
@@ -414,6 +411,8 @@ function addon:OnInitialize()
     }
 
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
+    RXPData = RXPData or {}
+    RXPCData = RXPCData or {}
 
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
