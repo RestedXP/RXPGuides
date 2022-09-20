@@ -568,7 +568,7 @@ end
 
 function addon.UnitScanUpdate()
     local unitscanList = addon.currentGuide.unitscan
-    if _G.unitscan_targets and unitscanList and not addon.settings.db.profile.disableUnitscan then
+    if _G.unitscan_targets and unitscanList and addon.settings.db.profile.enableUnitscan then
         for unit, elements in pairs(unitscanList) do
             local enabled
             for _, element in pairs(elements) do

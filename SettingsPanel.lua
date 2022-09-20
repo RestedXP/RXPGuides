@@ -77,6 +77,7 @@ function addon.settings:InitializeSettings()
             showUnusedGuides = true,
             SoM = 1,
             anchorOrientation = "top",
+            enableUnitscan = true,
 
             -- Sliders
             arrowScale = 1,
@@ -189,7 +190,7 @@ function addon.settings:MigrateSettings()
 
     if RXPData.disableUnitscan ~= nil then
         n("disableUnitscan", RXPData.disableUnitscan)
-        db.disableUnitscan = RXPData.disableUnitscan
+        db.enableUnitscan = not RXPData.disableUnitscan
         RXPData.disableUnitscan = nil
     end
 
@@ -1247,7 +1248,7 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = addon.gameVersion < 30000 or addon.gameVersion >
                             40000
                     },
-                    disableUnitscan = {
+                    enableUnitscan = {
                         name = L("Unitscan integration"),
                         desc = L(
                             "Automatically adds important npcs to your unitscan list"),
