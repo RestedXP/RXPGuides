@@ -2908,9 +2908,8 @@ step
     .goto Orgrimmar,75.2,34.2
     .turnin 1145 >> Turn in The Swarm Grows
     .accept 1146 >> Accept The Swarm Grows
-step
-	#completewith next
-    .xp >33,1
+step << !Shaman !Warrior
+    .maxlevel 32
     .goto Orgrimmar,54.1,68.4
     .home >>Set your Hearthstone to Valley of Strength
 step << Orc !Warlock tbc
