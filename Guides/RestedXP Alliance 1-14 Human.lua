@@ -222,11 +222,7 @@ step
     .complete 21,1 --Kill Kobold Laborer (x12)
 step
     .xp 5 >> Grind to 5
-step << !Priest !Mage
-    >> Speak with Milly Osworth
-    .goto Elwynn Forest,50.7,39.2
-    .turnin 3903 >> Turn in Milly Osworth. Skip followup
-step << Priest/Mage
+step
     >> Speak with Milly Osworth
     .goto Elwynn Forest,50.7,39.2
     .turnin 3903 >> Turn in Milly Osworth
@@ -235,7 +231,7 @@ step << Rogue
     .goto Elwynn Forest,50.3,39.9
     >>You don't need to train
     .turnin 3102 >> Turn in Encrypted Letter
-step << Priest/Mage
+step
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly's Harvest (x8)
@@ -243,23 +239,14 @@ step
     .goto Elwynn Forest,57.5,48.2
     >>Grind en route. Kill Garrick and loot his Head
     .complete 6,1 --Collect Garrick's Head (x1)
-step << !Priest !Mage
-    #sticky
-    .abandon 3904 >> Abandon Milly's Harvest
-step << !Priest !Mage
-    .goto Elwynn Forest,54.5,49.4
-    .xp 5+1715 >> Grind on your way back to 1715+/2800xp
-step << Priest/Mage
+step
     .xp 5+1175 >> Grind on your way back to 1175+/2800xp
     .goto Elwynn Forest,50.7,39.2
-step << Priest/Mage
+step
     >> Return to Milly
     .goto Elwynn Forest,50.7,39.2
     .turnin 3904 >> Turn in Milly's Harvest
     .accept 3905 >>Accept Grape Manifest
-step << !Priest !Mage
-    #completewith next
-    .hs >> Hearth or run back to Northshire Abbey
 step
     >> Speak with Deputy Willem
     .goto Elwynn Forest,48.17,42.94 << tbc
@@ -272,12 +259,12 @@ step
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
     .turnin 21 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin
     .accept 54 >> Accept Report to Goldshire
-step << Priest/Mage
+step
     #sticky
     #completewith next
     .goto Elwynn Forest,49.6,41.6,15,0
     .goto Elwynn Forest,48.9,41.3,10 >>Go upstairs
-step << Priest/Mage
+step
     .goto Elwynn Forest,49.5,41.6
     .turnin 3905 >>Turn in Grape Manifest
 step << Priest
