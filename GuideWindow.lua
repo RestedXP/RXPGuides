@@ -528,7 +528,7 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number.text:SetJustifyH("CENTER")
             stepframe.number.text:SetJustifyV("CENTER")
             stepframe.number.text:SetTextColor(1, 1, 1)
-            stepframe.number.text:SetFont(addon.font, 9, "")
+            stepframe.number.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize, "")
         end
         if stepframe.hardcore ~= addon.settings.db.profile.hardcore or not stepframe.hardcore then
             stepframe.hardcore = addon.settings.db.profile.hardcore
@@ -594,7 +594,7 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.text:SetJustifyH("LEFT")
                 elementFrame.text:SetJustifyV("CENTER")
                 elementFrame.text:SetTextColor(1, 1, 1)
-                elementFrame.text:SetFont(addon.font, 11, "")
+                elementFrame.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize + 2, "") -- 11
 
                 elementFrame.icon =
                     elementFrame:CreateFontString(nil, "OVERLAY")
@@ -1226,7 +1226,7 @@ function addon:LoadGuide(guide, OnLoad)
             frame.number.text:SetJustifyH("CENTER")
             frame.number.text:SetJustifyV("CENTER")
             frame.number.text:SetTextColor(1, 1, 1, 1)
-            frame.number.text:SetFont(addon.font, 8, "")
+            frame.number.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize - 1, "") -- 8
             local prefix = ""
             if n < 10 then prefix = "0" end
             frame.number.text:SetText(prefix .. tostring(n))
@@ -1240,7 +1240,7 @@ function addon:LoadGuide(guide, OnLoad)
         frame.text:SetJustifyH("LEFT")
         frame.text:SetJustifyV("TOP")
         frame.text:SetTextColor(1, 1, 1, 1)
-        frame.text:SetFont(addon.font, 9, "")
+        frame.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize, "")
 
         -- frame.text:SetHeight(1000)
 
@@ -1652,4 +1652,11 @@ function RXPFrame.GenerateMenuTable(menu)
     end
 
     return menuList
+end
+
+function addon.UpdateGuideFontSize()
+    local size = (addon.settings.db and addon.settings.db.profile.guideFontSize) or 9
+
+    GuideName.text:SetFont(addon.font, size + 2, "")
+    Footer.text:SetFont(addon.font, size, "")
 end
