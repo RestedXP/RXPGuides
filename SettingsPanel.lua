@@ -88,7 +88,8 @@ function addon.settings:InitializeSettings()
             worldMapPinBackgroundOpacity = 0.35,
             batchSize = 5,
             phase = 6,
-            xpRate = 1
+            xpRate = 1,
+            guideFontSize = 9
         }
     }
 
@@ -721,6 +722,21 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame:SetScale(value)
                         end
                     },
+                    guideFontSize = {
+                        name = L("Guide Font Size"), -- TODO locale
+                        desc = L("Change font size of the Guide Window"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.4,
+                        min = 9,
+                        max = 18,
+                        step = 1,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end
+                    },
                     automationHeader = {
                         name = L("Automation"), -- TODO locale
                         type = "header",
@@ -1295,7 +1311,7 @@ function addon.settings:CreateAceOptionsPanel()
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
 
-    if addon.settings.db.profile.enableBetaFeature then
+    if addon.settings.db.profile.enableBetaFeatures then
         optionsTable.args.profiles =
             LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db)
         optionsTable.args.profiles.order = 20
