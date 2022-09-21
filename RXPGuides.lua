@@ -485,6 +485,8 @@ function addon:OnEnable()
     if addon.settings.db.profile.hideInRaid then
         self:RegisterEvent("GROUP_ROSTER_UPDATE")
     end
+
+    addon.targeting:Setup()
 end
 
 function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
