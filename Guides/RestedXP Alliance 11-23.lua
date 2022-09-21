@@ -521,7 +521,7 @@ step
     .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock
     .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
 step << Human Warrior/Human Paladin/Human Rogue
-    .goto Bloodmyst Isle,56.2 54.2
+    .goto Bloodmyst Isle,56.2,54.2
     .train 2580 >> Talk to the dwarf by the forge. Train Mining, cast Find Minerals
 step
     >> Speak to the Draenei in the building on the hill
