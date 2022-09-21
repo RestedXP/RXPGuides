@@ -590,7 +590,7 @@ step
 step
 	#sticky
 	#completewith HistoryB
-	>>Keep an eye out for the book (zone-wide drop). You'll need this for later
+	.use 2794 >>Keep an eye out for the book (zone-wide drop). You'll need this for later
 	.collect 2794,1,337
 	.accept 337 >> Accept An Old History Book
 step
@@ -2855,7 +2855,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
 	.train 266 >> Train Guns << Hunter/Warrior/Rogue
     .train 199 >> Train 2H Maces << Warrior/Shaman
     .train 198 >> Train Maces << Rogue/Shaman
-    .train 44 >> Train Axes << Warrior wotlk/Shaman
+    .train 44 >> Train Axes << Warrior wotlk/Shaman/Rogue wotlk
     .zoneskip Wetlands
 step << Hunter
 	#sticky
@@ -3212,6 +3212,7 @@ step
     .accept 647 >> Accept MacKreel's Moonshine
     >>You can still get this quest if you don't have any kind of speed increase or slow fall
     .link https://www.twitch.tv/videos/646111384 >>Click here for reference
+    .timer 900,Moonshine Expiration Time
 step
     .goto Arathi Highlands,44.3,93.0
 	>>Jump down and loot the letter from the corpse underwater
@@ -3361,6 +3362,16 @@ step
 step
     .goto Ironforge,38.75,87.04
     .turnin 686 >>Turn in A King's Tribute
+step 
+	.goto Ironforge,69.8,83.0 << Hunter
+	.goto Ironforge,66.4,88.7 << Warrior
+	.goto Ironforge,24.7,8.8 << Priest
+	.goto Ironforge,24.6,9.2 << Paladin
+	.goto Ironforge,50.3,5.8 << Warlock
+	.goto Ironforge,51.6,15.2 << Rogue
+	.goto Ironforge,55.4,29.1 << Shaman
+    .goto Ironforge,28.6,7.2 << Mage
+	.trainer >> Train your spells
 step
     .goto Ironforge,55.5,47.7
     .fly Wetlands>> Fly to Wetlands
