@@ -3245,10 +3245,6 @@ step
 .goto Hillsbrad Foothills,52.2,58.6
     .turnin 647 >> Turn in MacKreel's Moonshine
 step
-	.goto Hillsbrad Foothills,50.5,57.2
-    .turnin 538 >> Turn in Southshore
-	.isOnQuest 538
-step
 #xprate <1.5
     .goto Hillsbrad Foothills,51.9,58.7
     .accept 555 >> Accept Soothing Turtle Bisque
@@ -3259,7 +3255,7 @@ step
 step
     .goto Hillsbrad Foothills,50.9,58.8
     .accept 9435 >> Accept Missing Crystals
-step <<  Hunter
+step <<  Hunter tbc
      #completewith next
     .goto Hillsbrad Foothills,50.2,58.8
      .stable >> Stable your pet and head east
@@ -3268,6 +3264,10 @@ step << Hunter tbc
     .goto Hillsbrad Foothills,56.6,53.8
     .train 17264 >> Tame an Elder Moss Creeper, attack mobs with it to learn bite rank 4
 	.unitscan Elder Moss Creeper
+step
+	.goto Hillsbrad Foothills,50.5,57.2
+    .turnin 538 >> Turn in Southshore
+	.isOnQuest 538
 step
     .xp <30,1
     .goto Hillsbrad Foothills,44.0,67.6
