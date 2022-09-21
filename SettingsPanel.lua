@@ -78,6 +78,7 @@ function addon.settings:InitializeSettings()
             SoM = 1,
             anchorOrientation = "top",
             enableUnitscan = true,
+            enableTargetMacro = true,
 
             -- Sliders
             arrowScale = 1,
@@ -680,6 +681,13 @@ function addon.settings:CreateAceOptionsPanel()
                                 addon:UnregisterEvent("GROUP_ROSTER_UPDATE")
                             end
                         end
+                    },
+                    enableTargetMacro = {
+                        name = L("Create Targeting Macro"), -- TODO locale
+                        desc = L("Automatically create a targeting macro"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 1.92
                     },
                     interfaceHeader = {
                         name = _G.UIOPTIONS_MENU,
