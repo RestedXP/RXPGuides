@@ -2527,7 +2527,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
             questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
         end
     end
-    if step.active and questTurnedIn and not addon.settings.db.profile.debug then
+    if step.active and not questTurnedIn and not addon.settings.db.profile.debug then
         step.completed = true
         addon.updateSteps = true
     end
