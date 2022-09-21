@@ -34,7 +34,8 @@ function addon.targeting:UpdateMacro(targets)
         content = fmt('/targetexact %s\n%s', t, content or "")
 
         -- Prevent multiple spams
-        if not announcedTargets[t] then
+        if not announcedTargets[t] and
+            addon.settings.db.profile.notifyOnTargetUpdates then
             C_Timer.After(2, function()
                 addon.comms.PrettyPrint(L(
                                             "You have a new target (%s) for step %d"),
@@ -50,7 +51,7 @@ function addon.targeting:UpdateMacro(targets)
                       L("current step has no configured targets")) -- TODO locale
     EditMacro(self.macroName, self.macroName, nil, content)
 
-    if not macroAnnounced then
+    if not macroAnnounced and addon.settings.db.profile.notifyOnTargetUpdates then
         C_Timer.After(5, function()
             addon.comms.PrettyPrint(L(
                                         "A macro has been automatically built to aid in leveling. Please move %s to your action bars."),

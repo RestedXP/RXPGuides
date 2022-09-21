@@ -79,6 +79,7 @@ function addon.settings:InitializeSettings()
             anchorOrientation = "top",
             enableUnitscan = true,
             enableTargetMacro = true,
+            notifyOnTargetUpdates = true,
 
             -- Sliders
             arrowScale = 1,
@@ -686,8 +687,15 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Create Targeting Macro"), -- TODO locale
                         desc = L("Automatically create a targeting macro"),
                         type = "toggle",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 1.92
+                    },
+                    notifyOnTargetUpdates = {
+                        name = L("Notify on Target Macro updates"), -- TODO locale
+                        desc = L("Notify when a new target is loaded"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.93
                     },
                     interfaceHeader = {
                         name = _G.UIOPTIONS_MENU,
