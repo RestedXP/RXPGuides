@@ -51,7 +51,8 @@ function addon.targeting:UpdateMacro(targets)
                       L("current step has no configured targets")) -- TODO locale
     EditMacro(self.macroName, self.macroName, nil, content)
 
-    if not macroAnnounced and addon.settings.db.profile.notifyOnTargetUpdates then
+    if not macroAnnounced and addon.settings.db.profile.notifyOnTargetUpdates and
+        next(targets) ~= nil then
         C_Timer.After(5, function()
             addon.comms.PrettyPrint(L(
                                         "A macro has been automatically built to aid in leveling. Please move %s to your action bars."),
