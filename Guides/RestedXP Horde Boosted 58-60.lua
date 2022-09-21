@@ -1,4 +1,6 @@
 RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
 << Horde
 #name Boosted Character 58-60
 #version 1

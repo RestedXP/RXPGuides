@@ -222,11 +222,7 @@ step
     .complete 21,1 --Kill Kobold Laborer (x12)
 step
     .xp 5 >> Grind to 5
-step << !Priest !Mage
-    >> Speak with Milly Osworth
-    .goto Elwynn Forest,50.7,39.2
-    .turnin 3903 >> Turn in Milly Osworth. Skip followup
-step << Priest/Mage
+step
     >> Speak with Milly Osworth
     .goto Elwynn Forest,50.7,39.2
     .turnin 3903 >> Turn in Milly Osworth
@@ -235,7 +231,7 @@ step << Rogue
     .goto Elwynn Forest,50.3,39.9
     >>You don't need to train
     .turnin 3102 >> Turn in Encrypted Letter
-step << Priest/Mage
+step
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly's Harvest (x8)
@@ -243,17 +239,10 @@ step
     .goto Elwynn Forest,57.5,48.2
     >>Grind en route. Kill Garrick and loot his Head
     .complete 6,1 --Collect Garrick's Head (x1)
-step << !Priest !Mage
-    #sticky
-    .abandon 3904 >> Abandon Milly's Harvest
-step << !Priest !Mage
-    .xp 5+1715 >> Grind on your way back to 1715+/2800xp
-    .hs >> Hearth back once you're at the required exp
-    .goto Elwynn Forest,48.2,42.9
-step << Priest/Mage
+step
     .xp 5+1175 >> Grind on your way back to 1175+/2800xp
     .goto Elwynn Forest,50.7,39.2
-step << Priest/Mage
+step
     >> Return to Milly
     .goto Elwynn Forest,50.7,39.2
     .turnin 3904 >> Turn in Milly's Harvest
@@ -270,12 +259,12 @@ step
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
     .turnin 21 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin
     .accept 54 >> Accept Report to Goldshire
-step << Priest/Mage
+step
     #sticky
     #completewith next
     .goto Elwynn Forest,49.6,41.6,15,0
     .goto Elwynn Forest,48.9,41.3,10 >>Go upstairs
-step << Priest/Mage
+step
     .goto Elwynn Forest,49.5,41.6
     .turnin 3905 >>Turn in Grape Manifest
 step << Priest
@@ -292,9 +281,8 @@ step
     .accept 62 >> Accept The Fargodeep Mine
 step
     #softcore
-    #sticky
     #completewith Goldshire
-    .goto Elwynn Forest,39.5,60.5,200 >> Die and respawn at the Spirit Healer, or run to Goldshire
+    .deathskip >> Die and respawn at the Spirit Healer
 step << Rogue
     .goto Elwynn Forest,41.7,65.5
     .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. Make them until level 20ish << Rogue
@@ -344,7 +332,7 @@ step << Warlock
     .goto Elwynn Forest,44.1,66.0,10 >>Go to the room behind the innkeeper, then go downstairs.
 step << Warlock
     .goto Elwynn Forest,44.4,66.2
-    .trainer >> Train your class spells
+    .trainer >> Train your class spells. It is in the basement.
     .goto Elwynn Forest,44.4,66.0
     .vendor >> Buy the Blood Pact book if you have money after training (otherwise buy it later) << tbc
 step << Mage/Priest/Rogue
@@ -374,14 +362,14 @@ step << Rogue tbc
     .vendor >> Buy up to 20 level 5 food
 step << Warrior/Paladin
     .goto Elwynn Forest,41.7,65.5
-    .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. Make them until level 20ish << Warrior
-    .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage weightstones for your weapon which are very strong. Make them until level 20ish << Paladin
+    .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon << Warrior
+    .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage weightstones for your weapon << Paladin
 step << Warrior
     .goto Elwynn Forest,41.1,65.8
     .trainer >> Train your class spells
 step << Paladin
     .goto Elwynn Forest,41.1,66.0
-    .trainer >> Train your class spells behind the blacksmith building
+    .trainer >> Train your class spells
 step
     >> Speak with Remy "Two Times"
     .goto Elwynn Forest,42.1,67.3
@@ -479,7 +467,6 @@ step
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
 step
-    #sticky
     #completewith next
     >> Kill Kobolds for Gold Dust and Candles
     .complete 47,1 --Collect Gold Dust (x10)
@@ -740,14 +727,12 @@ step
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
 step
-    #sticky
     #completewith Deed
     .use 1972 >>Keep an eye out for Westfall Deed from the Defias (lucky drop)
     .collect 1972,1,184,1 --Collect Westfall Deed (x1)
     .accept 184 >> Accept Furlbrow's Deed
 step
-    #sticky
-    #completewith Deed
+    #completewith Grindxp
     .goto Elwynn Forest,69.53,79.47
     >>Start circling the farm, killing Defias and looting them for Bandanas.
     >> Try to get low on health for the last one, we're deathskipping afterwards << tbc
@@ -767,9 +752,16 @@ step << !Rogue !Warrior
     .complete 88,1 --Collect Brass Collar (x1)
     .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> Click here if struggling
 step << !Warlock
+    #label Grindxp
     .xp 9+3695 >> Grind to 3695+/6500xp
 step << Warlock
+    #label Grindxp
     .xp 9+3400 >> Grind to 3400+/6500xp
+step
+    .goto Elwynn Forest,69.53,79.47
+    >>Start circling the farm, killing Defias and looting them for Bandanas.
+    >> Try to get low on health for the last one, we're deathskipping afterwards << tbc
+    .complete 83,1 --Collect Red Linen Bandana (x6)
 step << tbc
     #completewith next
     .deathskip >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
@@ -781,19 +773,19 @@ step
 step << !Warlock
     .goto Redridge Mountains,8.5,72.0
     .xp 9+4475 >> Grind until 4475+/6500xp
-step << !Warlock
+step << Paladin
     .goto Redridge Mountains,8.5,72.0
     .zone Redridge Mountains >> Travel east to Redridge Mountains
-step << !Warlock
+step << Paladin
     #sticky
     #completewith next
-    .deathskip >> Die to the mobs here then ressurect at the Spirit Healer
+    .deathskip >> Die to the mobs here then resurrect at the Spirit Healer
     .goto Redridge Mountains,11.2,78.4
-step << !Warlock
+step << Paladin
     #softcore
     .goto Redridge Mountains,30.6,59.4
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
-step << !Warlock
+step << Paladin
     #hardcore
     >>Run toward the Flight Path. Be exceedingly careful to not aggro or die to any mobs en route. Try sticking to the road and keeping an eye out
     .goto Redridge Mountains,30.6,59.4
@@ -819,7 +811,7 @@ step
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
     .accept 59 >>Accept Cloth and Leather Armor << Warlock
-step
+step << tbc/Warlock wotlk
     >> Talk to Smith Argus in the blacksmithery
     .goto Elwynn Forest,41.7,65.5
     .accept 1097 >> Accept Elmore's Task
@@ -845,7 +837,7 @@ step << Warlock
     .goto Elwynn Forest,44.4,66.2
     .accept 1685 >> Accept Gakin's Summons
     .trainer >> Train your class spells
-step << Mage/Priest/Rogue
+step << Mage/Priest/Rogue tbc
     #sticky
     #completewith next
     .goto Elwynn Forest,43.7,66.4,10 >>Go Upstairs
@@ -1025,7 +1017,7 @@ step
     >>Talk to Morgan Pestle in the building. Use the rockets for AoE damage or to splitpull packs
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> Click here for a guide on splitpulling (long but informative)
     .turnin 61,1 >> Turn in Shipment to Stormwind
-step << Warrior
+step << Warrior tbc
     .goto StormwindClassic,57.1,57.7
     .trainer >> Train 2h Swords
 step << Priest
@@ -1127,7 +1119,7 @@ step << Warlock wotlk
     .goto StormwindClassic,66.3,62.1
     .accept 6262 >> Accept Return to Lewis
     .isQuestTurnedIn 6261
-step << Warlock wotlk
+step << Warlock wotlk/Rogue wotlk
     #xprate <1.5
     .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City

@@ -1,4 +1,5 @@
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -16,6 +17,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -34,6 +36,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -52,6 +55,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -69,6 +73,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -86,6 +91,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -104,6 +110,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -121,6 +128,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -138,6 +146,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -155,6 +164,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -172,6 +182,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -189,6 +200,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -206,6 +218,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -222,6 +235,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -238,6 +252,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -254,6 +269,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -271,6 +287,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -288,6 +305,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -305,6 +323,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -322,6 +341,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -339,6 +359,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Mining & Herbalism
 #loop
 #hidewindow
@@ -356,6 +377,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -370,6 +392,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -384,6 +407,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -398,6 +422,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -412,6 +437,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -426,6 +452,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -440,6 +467,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -454,6 +482,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -470,6 +499,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -488,6 +518,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -502,6 +533,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -516,6 +548,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -530,6 +563,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -545,6 +579,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -560,6 +595,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -574,6 +610,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -588,6 +625,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -602,6 +640,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -621,6 +660,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -635,6 +675,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -649,6 +690,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -663,6 +705,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -678,6 +721,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -692,6 +736,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -706,6 +751,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -720,6 +766,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -734,6 +781,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Outland Farming
 #loop
 #hidewindow
@@ -748,6 +796,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Azeroth Farming
 #loop
 #hidewindow
@@ -765,6 +814,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Azeroth Farming
 #loop
 #hidewindow
@@ -782,6 +832,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Azeroth Farming
 #loop
 #hidewindow
@@ -799,6 +850,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Azeroth Farming
 #loop
 #hidewindow
@@ -816,6 +868,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Azeroth Farming
 #loop
 #hidewindow
@@ -833,6 +886,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Azeroth Farming
 #loop
 #hidewindow

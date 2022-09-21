@@ -1,4 +1,5 @@
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Profession leveling
 #subgroup Herbalism
 << Horde
@@ -268,6 +269,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#wotlk
 #group +Profession leveling
 #subgroup Herbalism
 << Alliance

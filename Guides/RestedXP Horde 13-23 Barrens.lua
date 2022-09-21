@@ -24,6 +24,52 @@ step << Tauren Shaman
     .goto The Barrens,62.2,19.4
     .turnin 840 >>Turn in Conscript of the Horde
     .accept 842 >>Accept Crossroads Conscription
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,52.2,31.8
+    .accept 870 >>Accept The Forgotten Pools
+step << !Tauren
+#xprate >1.499
+    #completewith next
+    .goto The Barrens,52.3,32.0
+    .vendor >> Purchase as many 6 slot bags as you need
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,52.2,31.0
+    .turnin 842 >>Turn in Crossroads Conscription
+    .accept 844 >>Accept Plainstrider Menace
+step << Orc/Troll
+#xprate >1.499
+    .goto The Barrens,52.5,29.8
+    .accept 6365 >>Accept Meats to Orgrimmar
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,51.9,30.3
+    .accept 869 >>Accept Raptor Thieves
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,51.5,30.8
+    .accept 871 >>Accept Disrupt the Attacks
+    .accept 5041 >>Accept Supplies for the Crossroads
+step << !Tauren
+#xprate >1.499
+    .goto The Barrens,51.5,30.4
+    .fp >>Get the The Crossroads Flight Path
+step << Orc/Troll
+#xprate >1.499
+    >>do NOT fly to Orgrimmar
+.goto The Barrens,51.5,30.3
+    .turnin 6365 >>Turn in Meats to Orgrimmar
+    .accept 6384 >>Accept Ride to Orgrimmar
+step << !Tauren
+#xprate >1.499
+.goto The Barrens,51.5,30.1
+    .accept 1492 >>Accept Wharfmaster Dizzywig
+        .accept 848 >>Accept Fungal Spores
+step << Orc/Troll
+#xprate <1.5
+    .goto The Barrens,52.6,29.9
+    .turnin 6386 >>Turn in Return to the Crossroads.   
 step << Warrior
     .isOnQuest 1502
     .goto The Barrens,57.9,25.5,30 >>Run up the mountain here
@@ -81,48 +127,6 @@ step << !Tauren
     .goto The Barrens,62.4,20.0
         .turnin 926 >>Turn in Flawed Power Stone
 step << !Tauren
-#xprate >1.499
-    .goto The Barrens,52.2,31.8
-    .accept 870 >>Accept The Forgotten Pools
-step << !Tauren
-#xprate >1.499
-    #completewith next
-    .goto The Barrens,52.3,32.0
-    .vendor >> Purchase as many 6 slot bags as you need
-step << !Tauren
-#xprate >1.499
-    .goto The Barrens,52.2,31.0
-    .turnin 842 >>Turn in Crossroads Conscription
-    .accept 844 >>Accept Plainstrider Menace
-step << Orc/Troll
-#xprate >1.499
-    .goto The Barrens,52.5,29.8
-    .accept 6365 >>Accept Meats to Orgrimmar
-step << !Tauren
-#xprate >1.499
-    .goto The Barrens,51.9,30.3
-    .accept 869 >>Accept Raptor Thieves
-step << !Tauren
-#xprate >1.499
-    .goto The Barrens,51.5,30.8
-    .accept 871 >>Accept Disrupt the Attacks
-    .accept 5041 >>Accept Supplies for the Crossroads
-step << !Tauren
-#xprate >1.499
-    .goto The Barrens,51.5,30.4
-    .fp >>Get the The Crossroads Flight Path
-step << Orc/Troll
-#xprate >1.499
-    >>do NOT fly to Orgrimmar
-.goto The Barrens,51.5,30.3
-    .turnin 6365 >>Turn in Meats to Orgrimmar
-    .accept 6384 >>Accept Ride to Orgrimmar
-step << !Tauren
-#xprate >1.499
-.goto The Barrens,51.5,30.1
-    .accept 1492 >>Accept Wharfmaster Dizzywig
-        .accept 848 >>Accept Fungal Spores
-step << !Tauren
     #sticky
 #completewith BeakCave
 >>Kill some Plainstriders en route if you have time on Flawed Power Stone. Loot them for Beaks
@@ -157,16 +161,6 @@ step << Tauren
     .goto The Barrens,49.8,31.2
     >>Kill Plainstriders. Loot them for Beaks
     .complete 844,1 --Plainstrider Beak (7)
-step << Orc/Troll
-#xprate <1.5
-    .goto The Barrens,52.6,29.9
-    .turnin 6386 >>Turn in Return to the Crossroads.
-step
-    .goto The Barrens,51.4,30.2
-    .accept 1492 >>Accept Wharfmaster Dizzywig    
-step
-    .goto The Barrens,52.0,29.9
-    .home >> Set your Hearthstone to the Crossroads
 step
     >>Top of the tower
 .goto The Barrens,51.5,30.9
@@ -180,6 +174,9 @@ step
 step << Tauren Shaman
     .goto The Barrens,52.2,31.0
     .turnin 842 >>Turn in Crossroads Conscription
+step
+    .goto The Barrens,52.0,29.9
+    .home >> Set your Hearthstone to the Crossroads
 step << !Hunter !Rogue !Warlock !Mage !Priest
      #sticky
     #completewith next
@@ -1117,15 +1114,15 @@ step
     .goto Thunder Bluff,61.4,80.9
     .turnin -1130 >>Turn in Melor Sends Word
     .accept 1131 >>Accept Steelsnap
-step
-    .goto Thunder Bluff,54.7,51.1
-    .accept 1195 >>Accept The Sacred Flame
 step << Warrior
     .goto Thunder Bluff,57.2,87.4
     .accept 1823 >>Accept Speak with Ruga
     .train 845 >>Train Cleave
     .train 6547 >>Train Rend r3
-    .train 20230 >>Train Retaliation    
+    .train 20230 >>Train Retaliation  
+step
+    .goto Thunder Bluff,54.7,51.1
+    .accept 1195 >>Accept The Sacred Flame  
 step
     #xprate <1.5
     .maxlevel 21

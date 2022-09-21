@@ -1,0 +1,33 @@
+## Interface: 30400
+## Title: RestedXP Guides
+## Notes: In-game leveling guides
+## Notes-zhCN: TODO
+## Author: RestedXP
+## Version: @project-version@
+## OptionalDeps: Questie, unitscan
+## SavedVariables: RXPData, RXPDB
+## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
+## X-Curse-Project-ID: 486246
+
+libs\embeds.xml
+locale\locales.xml
+
+Locale.lua
+RXPGuides.lua
+GuideWindow.lua
+Help.lua
+SettingsPanel.lua
+HSBatching.lua
+QuestLog.lua
+ActiveItemFrame.lua
+LevelingTracker.lua
+Timers.lua
+Communications.lua
+
+DB/wotlk.xml
+
+map.lua
+functions.lua
+GuideLoader.lua
+
+Guides/GuideList.xml

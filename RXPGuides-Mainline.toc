@@ -1,7 +1,7 @@
-## Interface: 20504
-## Interface-Classic: 11403
-## Title: RXP Guides
+## Interface: 90205
+## Title: RestedXP Guides
 ## Notes: In-game leveling guides
+## Notes-zhCN: TODO
 ## Author: RestedXP
 ## Version: @project-version@
 ## OptionalDeps: Questie, unitscan
@@ -9,8 +9,10 @@
 ## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
 ## X-Curse-Project-ID: 486246
 
-libs\embeds.xml
+libs\embeds_Mainline.xml
+locale\locales.xml
 
+Locale.lua
 RXPGuides.lua
 GuideWindow.lua
 SettingsPanel.lua
@@ -21,7 +23,7 @@ LevelingTracker.lua
 Timers.lua
 Communications.lua
 
-DB/tbc.xml
+DB/wotlk.xml
 
 map.lua
 functions.lua
