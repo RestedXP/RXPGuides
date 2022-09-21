@@ -520,6 +520,9 @@ step
 	.turnin 9641,3 >> Turn in Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock
     .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
+step << Human Warrior/Human Paladin/Human Rogue
+    .goto Bloodmyst Isle,56.2 54.2
+    .train 2580 >> Talk to the dwarf by the forge. Train Mining, cast Find Minerals
 step
     >> Speak to the Draenei in the building on the hill
     .goto Bloodmyst Isle,52.7,53.3
@@ -613,6 +616,9 @@ step
     .goto Bloodmyst Isle,51.3,75.7
 	>>Kill treants around this area and loot them for their bark. Grind mobs en route.
     .complete 9574,1 --Collect Crystallized Bark (x6)
+step << Rogue/Warlock
+    #completewith next
+    .hs >> Hearth back to Blood Watch
 step
     #requires bloodmushroom
     >> Return to town
@@ -693,11 +699,15 @@ step
     >> Talk to Vindicator Boros
     .turnin 9779 >> Turn in Intercepting the Message
     .accept 9696 >> Accept Translations...
-step
+step << !Rogue !Warlock
     >> Speak with Elysia by the cage
     .goto Bloodmyst Isle,54.5,54.5
     .turnin 9696 >> Turn in Translations...
     .accept 9698 >> Accept Audience with the Prophet
+step << Rogue/Warlock
+    >> Speak with Elysia by the cage
+    .goto Bloodmyst Isle,54.5,54.5
+    .turnin 9696 >> Turn in Translations...
 step
     >> Into the house up the hill
     .goto Bloodmyst Isle,52.6,53.3
@@ -707,21 +717,44 @@ step
     >> Talk to the dwarf by the tree
     .goto Bloodmyst Isle,56.3,54.3
     .accept 10063 >> Accept Explorers' League, Is That Something for Gnomes?
-step
+step << !Rogue !Warlock
 	.goto Bloodmyst Isle,57.9,53.5
     .fly Exodar>> Fly to The Exodar
-step
+step << !Rogue !Warlock
     #completewith audience
 	.goto The Exodar,75.0,54.8,80,0
 	.goto The Exodar,64.4,42.4,80,0
     .goto The Exodar,56.9,50.2,100 >> Head into the Exodar
-step << Warlock/Mage/Priest
+step << Mage/Priest
     #completewith hs1
     .goto The Exodar,46.6,61.2
     .vendor 16632>>Buy a Smoldering Wand (13 dps) if you don't have a Wand yet
     >>Aternatively, you can try to buy a better wand from the Auction house
     .collect 5208,1,0,1,1 --Smoldering Wand (1)
-step
+step << Shaman
+	.goto The Exodar,49.5,36.9,70,0
+	.goto The Exodar,33.2,24.6
+	.trainer >> Train spells in The Exodar
+step << Mage
+	.goto The Exodar,51.0,46.8,80,0
+	.goto The Exodar,47.2,62.3,20,0
+	    .goto The Exodar,46.0,62.7
+    .trainer >> Train spells in The Exodar
+step << Hunter
+	.goto The Exodar,42,71.4,60,0
+	.goto The Exodar,54.5,85.6,60,0
+	.goto The Exodar,47.6,88.3
+	.trainer >> Train spells in The Exodar
+step << Warrior
+	.goto The Exodar,42,71.4,60,0
+	.goto The Exodar,54.5,85.6,60,0
+	.goto The Exodar,55.6,82.3
+	.trainer >> Train spells in The Exodar
+step << Priest
+    >> Enter The Exodar and train your spells
+    .trainer >> Train your class spells
+    .goto The Exodar,39.2,51.3
+step << !Rogue !Warlock
     #label audience
     .goto The Exodar,32.8,54.4
     >> Speak with Velen
@@ -731,7 +764,7 @@ step << Druid
     >>Teleport to Moonglade
     .goto Moonglade,52.4,40.6
     .trainer 12042 >> Train spells
-step
+step << !Warlock !Rogue
     #label hs1
     .hs >> Hearth back to Blood Watch
     .zoneskip Bloodmyst Isle
@@ -740,7 +773,7 @@ step
     .accept 9569 >> Accept Containing the Threat
     .goto Bloodmyst Isle,55.0,58.0
     >> Talk to Boros
-    .turnin 9699 >> Turn in Truth or Fiction
+    .turnin -9699 >> Turn in Truth or Fiction
     .goto Bloodmyst Isle,55.4,55.4
     .accept 9700 >> Accept I Shoot Magic Into the Darkness
 step
