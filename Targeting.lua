@@ -6,10 +6,14 @@ local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown = GetMacroInfo,
                                                                EditMacro,
                                                                InCombatLockdown
 
+local L = addon.locale.Get
+
 addon.targeting = addon:NewModule("Targeting", "AceEvent-3.0")
 addon.targeting.macroName = "RXPTargeting"
 
+local macroAnnounced -- TODO persist across reloads?
 local newTargets
+local announcedTargets = {}
 
 function addon.targeting:UpdateMacro(targets)
     if not addon.settings.db.profile.enableTargetMacro then return end
@@ -28,18 +32,40 @@ function addon.targeting:UpdateMacro(targets)
     local content
     for _, t in ipairs(targets) do
         content = fmt('/targetexact %s\n%s', t, content or "")
+
+        -- Prevent multiple spams
+        if not announcedTargets[t] then
+            C_Timer.After(2, function()
+                addon.comms.PrettyPrint(L(
+                                            "You have a new target (%s) for step %d"),
+                                        t, RXPCData.currentStep) -- TODO locale
+            end)
+        end
+
+        announcedTargets[t] = true
     end
 
     content = content or
-                  fmt('//%s\n/run UIErrorsFrame:AddMessage("%s")', addon.title,
-                      _G.ERR_GENERIC_NO_TARGET)
+                  fmt('//%s - %s', addon.title,
+                      L("current step has no configured targets")) -- TODO locale
     EditMacro(self.macroName, self.macroName, nil, content)
 
+    if not macroAnnounced then
+        C_Timer.After(5, function()
+            addon.comms.PrettyPrint(L(
+                                        "A macro has been automatically built to aid in leveling. Please move %s to your action bars."),
+                                    self.macroName)
+
+        end)
+        macroAnnounced = true
+    end
     newTargets = nil
 end
 
 function addon.targeting:PLAYER_REGEN_ENABLED()
-    if newTargets then self:UpdateMacro(newTargets) end
+    if newTargets then
+        C_Timer.After(2, function() self:UpdateMacro(newTargets) end)
+    end
 end
 
 function addon.targeting:Setup()
