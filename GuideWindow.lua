@@ -492,6 +492,7 @@ function addon.SetStep(n, n2, loopback)
     local totalHeight = 0
     local c = 0
     local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
+    local stepTargets = {}
     for i, step in pairs(activeSteps) do
 
         local index = step.index
@@ -677,6 +678,12 @@ function addon.SetStep(n, n2, loopback)
                     end
                 end
             end
+            if element.targets then
+                for _, t in ipairs(element.targets) do
+                    print('element.targets = ' .. t)
+                    table.insert(stepTargets, t)
+                end
+            end
             local spacing = 0
 
         end
@@ -694,6 +701,10 @@ function addon.SetStep(n, n2, loopback)
                 for k, v in pairs(step.activeSpells) do
                     addon.activeSpells[k] = v
                 end
+            end
+
+            if stepTargets then
+                addon.targeting:UpdateMacro(stepTargets)
             end
         else
             stepframe:Hide()
