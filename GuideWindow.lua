@@ -680,7 +680,6 @@ function addon.SetStep(n, n2, loopback)
             end
             if element.targets then
                 for _, t in ipairs(element.targets) do
-                    print('element.targets = ' .. t)
                     table.insert(stepTargets, t)
                 end
             end
