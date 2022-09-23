@@ -1201,8 +1201,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Enable Debug"),
                         type = "toggle",
                         width = "full",
-                        order = 1.1,
-                        hidden = isNotAdvanced
+                        order = 1.1
                     },
                     batchSize = {
                         name = L("Batching window size (ms)"),
