@@ -483,6 +483,12 @@ function addon:OnEnable()
         self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
     end
 
+    for _, frame in pairs(addon.enabledFrames) do
+        if frame.IsFeatureEnabled() then
+            frame:SetShown(addon.settings.db.profile.showEnabled)
+        end
+    end
+
     if addon.settings.db.profile.hideInRaid then
         self:RegisterEvent("GROUP_JOINED", addon.HideInRaid)
         self:RegisterEvent("GROUP_FORMED", addon.HideInRaid)
