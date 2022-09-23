@@ -36,7 +36,7 @@ addon.activeItems = {}
 addon.activeSpells = {}
 addon.RXPG = {}
 addon.functions = {}
-addon.activeFrames = {} -- Hold all active frame/features for Hide/Show
+addon.enabledFrames = {} -- Hold all enabled frame/features for Hide/Show
 addon.player = {
     class = select(2, UnitClass("player"))
 }
@@ -483,7 +483,12 @@ function addon:OnEnable()
     end
 
     if addon.settings.db.profile.hideInRaid then
-        self:RegisterEvent("GROUP_ROSTER_UPDATE")
+        self:RegisterEvent("GROUP_JOINED", addon.HideInRaid)
+        self:RegisterEvent("GROUP_FORMED", addon.HideInRaid)
+        self:RegisterEvent("GROUP_LEFT")
+
+        -- Check if reloading in raid
+        addon.HideInRaid()
     end
 end
 
@@ -546,16 +551,25 @@ function addon:QUEST_DATA_LOAD_RESULT(_, questId, success)
     addon.updateStepText = true
 end
 
-function addon:GROUP_ROSTER_UPDATE(_)
+function addon:GROUP_LEFT()
     if not addon.settings.db.profile.hideInRaid or (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then return end
 
-    if UnitInRaid("player") then
-        addon.settings.HideActive()
-    else
-        addon.settings.RestoreActive()
+    if not addon.settings.db.profile.showEnabled then return end
+
+    for _, frame in pairs(addon.enabledFrames) do
+        frame:SetShown(frame.IsFeatureEnabled())
     end
 end
 
+function addon.HideInRaid()
+    if not addon.settings.db.profile.hideInRaid or (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then return end
+
+    if not UnitInRaid("player") then return end
+
+    for _, frame in pairs(addon.enabledFrames) do
+        frame:Hide()
+    end
+end
 
 questFrame:SetScript("OnEvent", addon.QuestAutomation)
 
