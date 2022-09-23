@@ -67,7 +67,9 @@ function addon.tracker:SetupTracker()
     if addon.settings.db.profile.enablelevelSplits then
         self:CreateLevelSplits()
 
-        self.levelSplits:Show()
+        if addon.settings.db.profile.showEnabled then
+            self.levelSplits:Show()
+        end
     end
 end
 
@@ -743,7 +745,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     if not trackerUi then return end
     addon.enabledFrames["trackerUi"] = trackerUi
     trackerUi.IsFeatureEnabled = function()
-        return not addon.settings.db.profile.enableTracker
+        return addon.settings.db.profile.enableTracker
     end
     self.state.levelReportData = nil
 
@@ -1081,7 +1083,9 @@ function addon.tracker:CreateLevelSplits()
 
     local f = addon.tracker.levelSplits
     addon.enabledFrames["levelSplits"] = f
-
+    f.IsFeatureEnabled = function()
+        return addon.settings.db.profile.enablelevelSplits
+    end
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
     f:SetMovable(true)
@@ -1342,9 +1346,8 @@ end
 
 function addon.tracker:UpdateLevelSplits(kind)
     if not addon.settings.db.profile.enablelevelSplits or
-        not addon.tracker.levelSplits or not addon.tracker.state.login then
-        return
-    end
+        not addon.tracker.levelSplits or not addon.tracker.state.login or
+        not addon.settings.db.profile.showEnabled then return end
 
     local f = addon.tracker.levelSplits
     local reportSplitsData = self:CompileLevelSplits(kind)
