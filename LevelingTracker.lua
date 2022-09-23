@@ -547,14 +547,14 @@ function addon.tracker:CreateGui(attachment, target)
     }
 
     trackerUi.sourcesContainer.data['quests']:SetText('quests')
-    trackerUi.sourcesContainer.data['quests']:SetFont(addon.font, 12,"")
+    trackerUi.sourcesContainer.data['quests']:SetFont(addon.font, 12, "")
     trackerUi.sourcesContainer.data['quests']:SetFullWidth(true)
     trackerUi.sourcesContainer:AddChild(
         trackerUi.sourcesContainer.data['quests'])
     trackerUi.sourcesContainer:AddChild(buildSpacer(padding))
 
     trackerUi.sourcesContainer.data['mobs']:SetText('mobs')
-    trackerUi.sourcesContainer.data['mobs']:SetFont(addon.font, 12,"")
+    trackerUi.sourcesContainer.data['mobs']:SetFont(addon.font, 12, "")
     trackerUi.sourcesContainer.data['mobs']:SetFullWidth(true)
     trackerUi.sourcesContainer:AddChild(trackerUi.sourcesContainer.data['mobs'])
 
@@ -575,7 +575,7 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.teamworkContainer.data['solo'] = AceGUI:Create("Label")
     trackerUi.teamworkContainer.data['solo']:SetText('solo')
-    trackerUi.teamworkContainer.data['solo']:SetFont(addon.font, 12,"")
+    trackerUi.teamworkContainer.data['solo']:SetFont(addon.font, 12, "")
     trackerUi.teamworkContainer.data['solo']:SetFullWidth(true)
     trackerUi.teamworkContainer:AddChild(
         trackerUi.teamworkContainer.data['solo'])
@@ -741,7 +741,10 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     if not attachment then return end
     local trackerUi = addon.tracker.ui[attachment:GetName()]
     if not trackerUi then return end
-    addon.activeFrames["trackerUi"] = trackerUi
+    addon.enabledFrames["trackerUi"] = trackerUi
+    trackerUi.IsFeatureEnabled = function()
+        return not addon.settings.db.profile.enableTracker
+    end
     self.state.levelReportData = nil
 
     if target and target ~= playerName then
@@ -1077,7 +1080,7 @@ function addon.tracker:CreateLevelSplits()
                                             BackdropTemplate)
 
     local f = addon.tracker.levelSplits
-    addon.activeFrames["levelSplits"] = f
+    addon.enabledFrames["levelSplits"] = f
 
     f:SetClampedToScreen(true)
     f:EnableMouse(true)

@@ -134,6 +134,9 @@ function addon:TAXIMAP_OPENED()
 end
 
 function addon:PLAYER_CONTROL_LOST()
+    -- Don't display flight timer if addon hidden
+    if not addon.settings.db.profile.showEnabled then return end
+
     if GetTime() - flightInfo.startFlight < 1.5 then
         flightInfo.flightBar = addon.StartTimer(flightInfo.timer,flightInfo.dest)
     end

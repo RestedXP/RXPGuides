@@ -114,7 +114,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not self or self.activeItemFrame then return end
 
-    addon.activeFrames["activeItemFrame"] = self.activeItemFrame
+    addon.enabledFrames["activeItemFrame"] = self.activeItemFrame
 
     local f
 
@@ -130,6 +130,10 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
         self.activeItemFrame = CreateFrame("Frame", "$parentItemFrame", anchor,
                                            BackdropTemplate)
         f = self.activeItemFrame
+    end
+
+    f.IsFeatureEnabled = function()
+        return not addon.settings.db.profile.disableItemWindow
     end
 
     f:ClearBackdrop()
