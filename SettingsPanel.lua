@@ -707,7 +707,8 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Notify when a new target is loaded"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.93
+                        order = 1.93,
+                        disabled = true and _G.unitscan_targets
                     },
                     interfaceHeader = {
                         name = _G.UIOPTIONS_MENU,

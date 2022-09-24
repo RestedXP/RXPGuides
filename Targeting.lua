@@ -15,7 +15,9 @@ local newTargets
 local announcedTargets = {}
 
 function addon.targeting:UpdateMacro(targets)
-    if not addon.settings.db.profile.enableTargetMacro then return end
+    if not addon.settings.db.profile.enableTargetMacro or _G.unitscan_targets then
+        return
+    end
 
     if InCombatLockdown() then
         newTargets = targets
@@ -70,7 +72,7 @@ function addon.targeting:PLAYER_REGEN_ENABLED()
 end
 
 function addon.targeting:Setup()
-    if not addon.settings.db.profile.enableTargetMacro then
+    if not addon.settings.db.profile.enableTargetMacro or _G.unitscan_targets then
         DeleteMacro(self.macroName)
         return
     end
