@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Alliance !Warlock/Alliance wotlk
+<< Alliance !Warlock
 #name 11-14 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
@@ -121,7 +121,7 @@ step
     .accept 985 >> Accept How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
 step
-    #xprate >1.499 
+    #xprate >1.499
     >> Talk to Terenthis inside the building
     .goto Darkshore,39.3,43.5
     .turnin 984 >> Turn in How Big a Threat?
@@ -201,11 +201,11 @@ step
 	>>Kill Rabid Thistle Bears as you quest
     .complete 2138,1 --Kill Rabid Thistle Bear (x20)
 step << !Warlock/!Rogue
-    #xprate >1.499 
+    #xprate >1.499
     .goto Darkshore,41.94,31.47
     .accept 4723 >> Accept Beached Sea Creature
 step << !Warlock/!Rogue
-    #xprate >1.499 
+    #xprate >1.499
     .goto Darkshore,44.18,20.60
     .accept 4725 >> Accept Beached Sea Turtle
 step << !Warlock/!Rogue
@@ -325,7 +325,7 @@ step << !Warlock/!Rogue
     .goto Darkshore,39.3,43.5,-1
     .isQuestComplete 4762
 step << !Warlock/!Rogue
-    #xprate >1.499 
+    #xprate >1.499
     .goto Darkshore,36.6,45.5
     .turnin 4725 >> Turn in Beached Sea Turtle
     .turnin 4727 >> Turn in Beached Sea Turtle
@@ -1722,7 +1722,7 @@ step
 step
     #timer Orendil's Cure roleplay
     .goto Ashenvale,37.3,51.8
-    >> Wait for the roleplay, it takes 26 seconds. 
+    >> Wait for the roleplay, it takes 26 seconds.
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure roleplay
     .accept 1033 >> Accept Elune's Tear

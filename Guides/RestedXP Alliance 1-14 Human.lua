@@ -1119,7 +1119,7 @@ step << Warlock wotlk
     .goto StormwindClassic,66.3,62.1
     .accept 6262 >> Accept Return to Lewis
     .isQuestTurnedIn 6261
-step << Warlock wotlk/Rogue wotlk
+step << wotlk --Warlock wotlk/Rogue wotlk
     #xprate <1.5
     .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
@@ -1320,10 +1320,12 @@ step << tbc
 
 RXPGuides.RegisterGuide([[
 #tbc
-<< Alliance tbc/Alliance Warlock
+#wotlk
+<< Alliance
+-- Alliance tbc/Alliance Warlock
 #name 11-12 Loch Modan << !Warlock
 #name 12-14 Loch Modan << Warlock
-#xprate <1.5 << Warlock wotlk
+#xprate <1.5 << wotlk
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
@@ -1623,7 +1625,8 @@ step << Warlock
     #label HearthIF
     .zone Ironforge >> Hearth to Ironforge << tbc
     .hs >> Hearth to Stormwind << wotlk
-
+step << !Warlock wotlk
+        .hs >> Hearth to Stormwind
 step << Warlock wotlk
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -1738,12 +1741,14 @@ step << tbc
 
 RXPGuides.RegisterGuide([[
 #tbc
+#wotlk
 << Alliance Warlock
 #name 14-14 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human Warlock
 #next 14-20 Bloodmyst
+#xprate <1.5 << wotlk
 
 step
     .maxlevel 13
