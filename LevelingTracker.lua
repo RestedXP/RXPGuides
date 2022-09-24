@@ -205,50 +205,76 @@ function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
 end
 
 function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
-    local data = addon.tracker.waitingForTimePlayed
+    local data = self.waitingForTimePlayed
 
     if not data then return end
 
     if data.event == 'PLAYER_LEVEL_UP' then
-        addon.tracker.db.profile["levels"][data.level - 1].timestamp
-            .dateFinished = data.date
-        addon.tracker.db.profile["levels"][data.level - 1].timestamp.finished =
+        self.db.profile["levels"][data.level - 1].timestamp.dateFinished =
+            data.date
+        self.db.profile["levels"][data.level - 1].timestamp.finished =
             totalTimePlayed - 1
 
-        addon.tracker.db.profile["levels"][data.level].timestamp.started =
+        self.db.profile["levels"][data.level].timestamp.started =
             totalTimePlayed
-        addon.tracker.db.profile["levels"][data.level].timestamp.dateStarted =
-            data.date
+        self.db.profile["levels"][data.level].timestamp.dateStarted = data.date
 
-        addon.tracker.waitingForTimePlayed = false
+        self.waitingForTimePlayed = false
 
         -- Refresh baseline time on level up
-        addon.tracker.state.login = {
+        self.state.login = {
             time = time(),
             timePlayedThisLevel = timePlayedThisLevel,
             totalTimePlayed = totalTimePlayed
         }
 
         -- Build data after processing level up
-        addon.tracker.reportData[data.level - 1] =
-            addon.tracker:CompileLevelData(data.level - 1)
-        addon.tracker:UpdateLevelSplits("full")
+        self.reportData[data.level - 1] = self:CompileLevelData(data.level - 1)
+        self:UpdateLevelSplits("full")
     elseif data.event == 'PLAYER_ENTERING_WORLD' then
-        addon.tracker.state.login = {
+        self.state.login = {
             time = time(),
             timePlayedThisLevel = timePlayedThisLevel,
             totalTimePlayed = totalTimePlayed
         }
 
-        addon.tracker:UpdateLevelSplits("full")
-
-        if not addon.tracker.db.profile["levels"][addon.tracker.playerLevel]
-            .timestamp.dateStarted and timePlayedThisLevel < 60 then
-            addon.tracker.db.profile["levels"][addon.tracker.playerLevel]
-                .timestamp.dateStarted = data.date
+        if not self.db.profile["levels"][self.playerLevel].timestamp.dateStarted and
+            timePlayedThisLevel < 60 then
+            self.db.profile["levels"][self.playerLevel].timestamp.dateStarted =
+                data.date
         end
 
-        addon.tracker.waitingForTimePlayed = false
+        local remainingTime = totalTimePlayed - timePlayedThisLevel
+        local levelDB = self.db.profile["levels"]
+        local levelDuration
+        -- Reverse engineer splits repairing
+        for l = self.playerLevel - 1, 2, -1 do
+            if not levelDB[l] or not levelDB[l].timestamp then break end
+
+            if levelDB[l].timestamp.finished and levelDB[l].timestamp.started then
+
+                levelDuration = levelDB[l].timestamp.finished -
+                                    levelDB[l].timestamp.started
+                remainingTime = remainingTime - levelDuration
+
+            elseif levelDB[l].timestamp.finished and
+                not levelDB[l].timestamp.started then
+
+                addon.comms.PrettyPrint("Repairing level %d started timestamp",
+                                        l)
+                levelDB[l].timestamp.started = remainingTime -
+                                                   levelDB[l].timestamp.finished
+                break
+            else
+                -- Not sure how we got here, but it's probably bad
+                break
+            end
+
+        end
+
+        self:CompileData()
+        self:UpdateLevelSplits("full")
+        self.waitingForTimePlayed = false
     end
 end
 
@@ -1196,6 +1222,10 @@ function addon.tracker:CreateLevelSplits()
     addon.tracker.levelSplits:HookScript("OnUpdate", function()
         addon.tracker:RefreshSplitsSummary()
     end)
+
+    addon.tracker.levelSplits:HookScript("OnShow", function()
+        addon.tracker:UpdateLevelSplits("full")
+    end)
 end
 
 function addon.tracker:ToggleLevelSplits()
@@ -1208,7 +1238,6 @@ function addon.tracker:ToggleLevelSplits()
         if addon.tracker.levelSplits:IsShown() then
             addon.tracker.levelSplits:Hide()
         else
-            addon.tracker:UpdateLevelSplits("full")
             addon.tracker.levelSplits:Show()
         end
 

@@ -989,7 +989,6 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             if addon.settings.db.profile.enablelevelSplits then
                                 addon.tracker:CreateLevelSplits()
-                                addon.tracker:UpdateLevelSplits("full")
                                 addon.tracker.levelSplits:Show()
                             else
                                 addon.tracker.levelSplits:Hide()
