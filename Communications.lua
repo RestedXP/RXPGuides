@@ -1,7 +1,7 @@
 local _, addon = ...
 
-local fmt, mrand, smatch, sbyte = string.format, math.random, string.match,
-                                  string.byte
+local fmt, mrand, smatch, sbyte, tostr = string.format, math.random,
+                                         string.match, string.byte, tostring
 
 local GetNumGroupMembers, SendChatMessage, GetTime, UnitLevel, UnitClass,
       UnitXP, UnitXPMax, pcall = GetNumGroupMembers, SendChatMessage, GetTime,
@@ -452,7 +452,7 @@ function addon.comms.OpenBugReport(stepNumber)
                     end
                 end
             else
-                stepData = fmt("%s\nUnknown table", stepData, step)
+                stepData = fmt("%s\nNo active step elements", stepData, step)
             end
         elseif type(step) == "string" then
             stepData = fmt("%s\n%s", stepData, step)
@@ -461,6 +461,17 @@ function addon.comms.OpenBugReport(stepNumber)
     else
         stepData = "N/A"
     end
+
+    local af = addon.arrowFrame
+    local arrowData = af and fmt(
+                          "  Shown: %s\n  hideArrow: %s\n  disableArrow: %s\n  Distance: %s\n  Instance: %s\n  Zone: %s\n  Coordinates: wy (%.02f) wx (%.02f)\n",
+                          tostr(af:IsShown()), tostr(addon.hideArrow),
+                          tostr(addon.settings.db.profile.disableArrow),
+                          af.distance or -1,
+                          af.element and af.element.instance or 'N/A',
+                          af.element and af.element.zone or 'N/A',
+                          af.element and af.element.wy or 0,
+                          af.element and af.element.wx or 0) or 'N/A'
 
     local content = fmt([[%s
 
@@ -478,11 +489,15 @@ Client Version: %s
 
 Current Step data
 %s
+
+Arrow data
+%s
 ```
 ]], L("Describe your issue:"), L("Do not edit below this line"),
                         character or "Error", zone or "Error", guide or "Error",
                         addon.release, addon.settings.db.profile.xprate,
-                        GetLocale(), select(1, GetBuildInfo()), stepData)
+                        GetLocale(), select(1, GetBuildInfo()), stepData,
+                        arrowData)
 
     local f = AceGUI:Create("Frame")
 

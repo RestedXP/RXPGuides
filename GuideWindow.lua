@@ -52,7 +52,10 @@ addon.texturePath = addon.defaultTextures
 
 local RXPFrame = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 addon.RXPFrame = RXPFrame
-addon.activeFrames["RXPFrame"] = RXPFrame
+addon.enabledFrames["RXPFrame"] = RXPFrame
+RXPFrame.IsFeatureEnabled = function ()
+    return not addon.settings.db.profile.hideGuideWindow
+end
 
 local BottomFrame = CreateFrame("Frame", "$parent_bottomFrame", RXPFrame,
                                 BackdropTemplate)
