@@ -11,7 +11,6 @@ local L = addon.locale.Get
 addon.targeting = addon:NewModule("Targeting", "AceEvent-3.0")
 addon.targeting.macroName = "RXPTargeting"
 
-local macroAnnounced -- TODO persist across reloads?
 local newTargets
 local announcedTargets = {}
 
@@ -51,15 +50,15 @@ function addon.targeting:UpdateMacro(targets)
                       L("current step has no configured targets")) -- TODO locale
     EditMacro(self.macroName, self.macroName, nil, content)
 
-    if not macroAnnounced and addon.settings.db.profile.notifyOnTargetUpdates and
-        next(targets) ~= nil then
+    if not addon.settings.db.profile.macroAnnounced and
+        addon.settings.db.profile.notifyOnTargetUpdates and next(targets) ~= nil then
         C_Timer.After(5, function()
             addon.comms.PrettyPrint(L(
                                         "A macro has been automatically built to aid in leveling. Please move %s to your action bars."),
                                     self.macroName)
 
         end)
-        macroAnnounced = true
+        addon.settings.db.profile.macroAnnounced = true
     end
     newTargets = nil
 end

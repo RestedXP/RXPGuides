@@ -699,7 +699,8 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Automatically create a targeting macro"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.92
+                        order = 1.92,
+                        disabled = true and _G.unitscan_targets
                     },
                     notifyOnTargetUpdates = {
                         name = L("Notify on Target Macro updates"), -- TODO locale
