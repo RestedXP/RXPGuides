@@ -694,22 +694,6 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
-                    enableTargetMacro = {
-                        name = L("Create Targeting Macro"), -- TODO locale
-                        desc = L("Automatically create a targeting macro"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 1.92,
-                        disabled = _G.unitscan_targets and true
-                    },
-                    notifyOnTargetUpdates = {
-                        name = L("Notify on new macro target"), -- TODO locale
-                        desc = L("Notify when a new target is loaded"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 1.93,
-                        disabled = _G.unitscan_targets and true
-                    },
                     interfaceHeader = {
                         name = _G.UIOPTIONS_MENU,
                         type = "header",
@@ -933,7 +917,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Size of the waypoint arrow text"),
                         type = "range",
                         width = optionsWidth,
-                        order = 20,
+                        order = 5.3,
                         min = 5,
                         max = 20,
                         step = 1,
@@ -942,6 +926,28 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.arrowFrame.text:SetFont(addon.font, value,
                                                           "OUTLINE")
                         end
+                    },
+                    macroHeader = {
+                        name = L("Targeting Macro"), -- TODO locale
+                        type = "header",
+                        width = "full",
+                        order = 6
+                    },
+                    enableTargetMacro = {
+                        name = L("Create Targeting Macro"), -- TODO locale
+                        desc = L("Automatically create a targeting macro"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 6.1,
+                        disabled = _G.unitscan_targets and true
+                    },
+                    notifyOnTargetUpdates = {
+                        name = L("Notify on new target"), -- TODO locale
+                        desc = L("Notify when a new target is loaded"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 6.2,
+                        disabled = _G.unitscan_targets and true
                     }
                 }
             },
