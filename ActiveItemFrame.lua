@@ -114,8 +114,6 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not self or self.activeItemFrame then return end
 
-    addon.enabledFrames["activeItemFrame"] = self.activeItemFrame
-
     local f
 
     if not anchor then
@@ -132,6 +130,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
         f = self.activeItemFrame
     end
 
+    addon.enabledFrames["activeItemFrame"] = f
     f.IsFeatureEnabled = function()
         return not addon.settings.db.profile.disableItemWindow
     end
