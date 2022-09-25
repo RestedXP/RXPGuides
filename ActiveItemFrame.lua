@@ -132,7 +132,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     addon.enabledFrames["activeItemFrame"] = f
     f.IsFeatureEnabled = function()
-        return not addon.settings.db.profile.disableItemWindow
+        return not addon.settings.db.profile.disableItemWindow and next(GetActiveItemList()) ~= nil
     end
 
     f:ClearBackdrop()
