@@ -483,7 +483,8 @@ step
     .accept 9663 >> Accept The Kessel Run
 step
     #sticky
-    >>Use the mount buff to run to Blood Watch, if you go around the bridge you won't get dismounted
+    #completewith next
+    >>Use the mount buff to run to Blood Watch, if you go to the right and jump across the river to get around the bridge you won't get dismounted
     .abandon 9663 >> Abandon The Kessel Run once you lose the mount buff
 step
     .goto Bloodmyst Isle,53.3,57.7
@@ -1189,6 +1190,7 @@ step
 step
     .goto Bloodmyst Isle,73.0,21.0
 	>>Climb to the top of the mountain and click on the bonfire to summon Razormaw (elite). He can take some time to spawn in.
+    *Note: He can fear
     .complete 9689,1 --Kill Razormaw (x1)
     *This quest can be tough, skip this step if you can't find a group or solo this quest
 step
@@ -1455,6 +1457,7 @@ step << !Druid
 #xprate <1.5
 	#sticky
 	#completewith end
+    .isQuestTurnedIn 2078
 	+Make sure to save your water breathing potions, you will need them later to deal with a couple of underwater sections from 30-40
 step
 #xprate <1.5 << !Druid
@@ -1466,7 +1469,7 @@ step
 #xprate <1.5 << !Druid
     .isOnQuest 966
     .goto Darkshore,55.3,26.7
-	>> Kill cultists and loot them for parchment
+	>> Kill Dark Strand Fanatics and loot them for parchment
     .complete 966,1 --Collect Worn Parchment (x4)
 step
 #xprate <1.5 << !Druid
@@ -1522,7 +1525,7 @@ step << Druid
     .turnin 6122 >> Turn in The Principal Source
 step
     .goto Darkshore,38.1,41.3
-    .turnin -982 >> Turn in Deep Ocean, Vast Sea
+    .turnin 982 >> Turn in Deep Ocean, Vast Sea
     .isQuestComplete 982
 step
     .goto Darkshore,37.5,41.9
@@ -1588,6 +1591,7 @@ step << Rogue
 step << Dwarf Hunter/!NightElf Rogue
     .goto Darnassus,31.0,41.5,30,0
     .goto Teldrassil,58.4,94.0
+    >> Exit Darnassus through the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << Dwarf Hunter/Rogue
     .goto Teldrassil,58.4,94.0
@@ -1625,7 +1629,7 @@ step
 #xprate <1.5 << !Druid
     .isQuestTurnedIn 947
     .goto Darkshore,39.0,86.4
-    >>Use the scrying bowl in your bags and right click it
+    .use 5251 >>Use the scrying bowl in your bags and right click it
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
 step
@@ -1653,6 +1657,7 @@ step
     .isQuestTurnedIn 986
 step
 	#label end
+    >> Lead Volcor to the road
     .complete 994,1 --Escort Volcor
     .isQuestTurnedIn 986
 ]])
@@ -1732,7 +1737,7 @@ step
     .complete 1033,1 --Collect Elune's Tear (x1)
 step
     .goto Ashenvale,37.8,34.7
-	>> Kill Dal Bloodclaw and loot him for his skull.
+	>> Kill Dal Bloodclaw and loot him for his skull. He patrols around the camps.
 	.unitscan Dal Bloodclaw
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
 step
@@ -1767,11 +1772,11 @@ step
     .isOnQuest 973
     .goto Ashenvale,26.2,38.7
     .turnin 973 >> Turn in The Tower of Althalaxx
-step <<  Hunter/NightElf/Rogue/wotlk
+step <<  NightElf Hunter wotlk/NightElf Rogue wotlk
     .goto Ashenvale,20.3,42.4
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
-step << Hunter/NightElf/Rogue/wotlk
+step << Hunter wotlk/NightElf Rogue wotlk
     .goto Ashenvale,20.3,42.4
 	>> Kill murlocs for the gem, the drop rate can be very low.
     .complete 1023,1 --Collect Glowing Gem (x1)
@@ -1817,7 +1822,7 @@ step << Druid
     >>Teleport to Moonglade
     .goto Moonglade,52.4,40.6
     .trainer >> Train your spells
-step << Hunter/NightElf/Rogue/wotlk
+step << wotlk Hunter/wotlk NightElf Rogue
     .goto Ashenvale,36.6,49.6
     .hs >> Hearth to Astranaar
 step << !Hunter !NightElf !Rogue tbc
@@ -1833,6 +1838,7 @@ step << !Hunter !NightElf !Rogue tbc
     #completewith next
     .deathskip >>Head to the east side of the lake, die on purpose and respawn at Astranaar
 step
+    .isOnQuest 1023
     .goto Ashenvale,36.6,49.6
     .turnin 1023 >> Turn in Raene's Cleansing
 step
@@ -1914,7 +1920,9 @@ step << Warrior tbc/Mage/Priest/Warlock
 	.goto Teldrassil,29.2,56.7
     .train 227 >> Train Staves
 step << !Hunter !NightElf !Rogue
+    .goto Darnassus,31.0,41.5,30,0
     .goto Teldrassil,58.4,94.0
+    >> Exit Darnassus through the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << !Hunter !NightElf !Rogue
     .goto Teldrassil,58.4,94.0
@@ -2317,8 +2325,9 @@ step
     .turnin 741 >> Turn in The Absent Minded Prospector
     .accept 942 >> Accept The Absent Minded Prospector
 step
+    .goto Darnassus,31.0,41.5,30,0
     .goto Teldrassil,58.4,94.0
-    >>Exit Darnassus through the purple portal
+    >> Exit Darnassus through the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
     .fly Auberdine>> Fly to Auberdine
 step << Draenei !Paladin wotlk
