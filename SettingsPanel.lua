@@ -700,15 +700,15 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.92,
-                        disabled = true and _G.unitscan_targets
+                        disabled = _G.unitscan_targets and true
                     },
                     notifyOnTargetUpdates = {
-                        name = L("Notify on Target Macro updates"), -- TODO locale
+                        name = L("Notify on new macro target"), -- TODO locale
                         desc = L("Notify when a new target is loaded"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.93,
-                        disabled = true and _G.unitscan_targets
+                        disabled = _G.unitscan_targets and true
                     },
                     interfaceHeader = {
                         name = _G.UIOPTIONS_MENU,
