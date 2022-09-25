@@ -253,7 +253,8 @@ step << Hunter/Warlock
 step << Hunter/Warlock
     .goto Wetlands,31.5,48.9,50,0
     .goto Wetlands,33.3,51.5
-	>>Kill Sarltooth atop the hill. Loot him for his Talon. Be careful as he Thrashes and has a 6 minute respawn
+	>>Kill Sarltooth atop the hill. Loot him for his Talon. Be careful as he Thrashes and has a 6 minute respawn.
+    *Note: He can very very rarely be found patroling the quarry below.
     .complete 296,1 --Collect Sarltooth's Talon (x1)
 step << Hunter/Warlock
     .goto Wetlands,38.2,50.9
@@ -314,7 +315,7 @@ step << NightElf/Draenei/Human wotlk
     .maxlevel 23
 step << NightElf/Draenei/Human wotlk
     .goto Loch Modan,56.1,13.3
-    >>Click on the small explosive barrel
+    >>Click on the Suspicious Barrel
     .turnin 250 >> Turn in A Dark Threat Looms
     .accept 199 >> Accept A Dark Threat Looms
     .maxlevel 23
@@ -900,7 +901,7 @@ step
     .accept 115 >> Accept Shadow Magic
 step
     .goto Redridge Mountains,80.3,37.2
-	>> Kill Fangore, and loot him for his Paw. be careful as lots of gnolls patrol around him, he is shadow immune, and can social aggro all gnolls at any time within 40 yards.
+	>> Kill Fangore, and loot him for his Paw. Be careful as lots of gnolls patrol around him, he is shadow immune, and can social aggro all gnolls at any time within 40 yards.
     .complete 180,1 --Collect Fangore's Paw (x1)
 step
     .isOnQuest 94
@@ -918,7 +919,7 @@ step
 	#sticky
 	#label tharilzun
     .goto Redridge Mountains,69.2,59.8
-	Kill Tharil'zun and loot his head
+	>> Kill Tharil'zun and loot his head.
     .complete 19,1 --Collect Tharil'zun's Head (x1)
 step
     .goto Redridge Mountains,66.6,55.4
@@ -1012,9 +1013,7 @@ step
     .turnin 323 >> Turn in Proving Your Worth
     .accept 269 >> Accept Seeking Wisdom
 step
-    #completewith next
-    .deathskip >>Head to Elwynn Forest, aggro a bunch of low level mobs, die on purpose and respawn at Goldshire.
-step
+    >> Run to Goldshire
     .goto Elwynn Forest,43.7,65.9
     .turnin 69 >> Turn in The Legend of Stalvan
     .accept 70 >> Accept The Legend of Stalvan
@@ -1327,11 +1326,12 @@ step
     .complete 290,1 --Collect Intrepid Strongbox Key (x1)
 step
     .goto Wetlands,14.4,24.0
-	>> Dive underwater. Theres a hole in the hull of the north side of the ship.
+	>> Dive underwater. Theres a hole in the hull of the north side of the ship. Do NOT delete the Cursed Eye of Paleth, it's used for a later quest.
     .turnin 290 >> Turn in Lifting the Curse
     .accept 292 >> Accept The Eye of Paleth
 step
 	#sticky
+    #completewith Nekkywekky
     >>Kill Fen Creepers, they are stealth mobs lurking along the river stream
     .complete 275,1 --Kill Fen Creeper (x8)--O
     .isOnQuest 275
@@ -1340,6 +1340,7 @@ step
     .turnin 465 >> Turn in Nek'rosh's Gambit
     .accept 474 >> Accept Defeat Nek'rosh
 step
+    #label Nekkywekky
     .goto Wetlands,53.5,54.6
 	>> Kill Nek'rosh and loot him for his head
     .complete 474,1 --Collect Nek'rosh's Head (x1)
@@ -1353,14 +1354,14 @@ step << Warrior
 step
     .goto Wetlands,56.4,40.5
 	>>Finish off Fen Creepers in the rivers
+    .complete 275,1 --Kill Fen Creeper (x8)
+step
+    .goto Wetlands,56.4,40.5
     .turnin 275 >> Turn in Blisters on The Land
     .isOnQuest 275
 step
-    #completewith next
     .goto Wetlands,49.9,18.3
-    .turnin 472 >> Turn in Fall of Dun Modr
-step
-    .goto Wetlands,49.9,18.3
+    .turnin -472 >> Turn in Fall of Dun Modr
     .accept 631 >> Accept The Thandol Span
     .accept 304 >> Accept A Grim Task
     .accept 303 >> Accept The Dark Iron War
@@ -1601,7 +1602,7 @@ step
 	#completewith nomorekid
     .xp <28,1
     .goto StormwindClassic,41.5,31.7
-	>>Talk to the patrolling kid
+	>>Talk to Thomas, the patrolling kid
     .accept 1274 >> Accept The Missing Diplomat
 step
     .goto StormwindClassic,39.7,27.6
@@ -1952,7 +1953,7 @@ step
 	#sticky
 	#completewith thorsen
 	    .goto Stranglethorn Vale,40.4,8.4,0
-	>>Look out for Private Thorsen's RP event while you quest, he patrols down the road every ~30 minutes
+	>>Look out for Private Thorsen's roleplay event while you quest, he patrols down the road every ~30 minutes. Wait for the two guards to attack him, if you rescue him you'll get the quest.
 	.accept 215 >> Accept Jungle Secrets
 step
     .goto Stranglethorn Vale,35.6,10.5
@@ -2219,7 +2220,7 @@ step
     .turnin 1248 >> Turn in The Missing Diplomat
     .accept 1249 >> Accept The Missing Diplomat
 step
-    >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn
+    >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn. He's by the door.
     .complete 1249,1 --Defeat Tapoke Jahn
 step
     .isOnQuest 1249
