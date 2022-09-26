@@ -931,7 +931,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.4,
                         name = L("Reset Arrow Position"), -- TODO locale
                         type = "execute",
-                        width = "small",
+                        width = optionsWidth,
                         func = function()
                             addon.ResetArrowPosition()
                         end
