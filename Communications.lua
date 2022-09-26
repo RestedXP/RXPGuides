@@ -486,6 +486,7 @@ Addon: %s
 XP Rate: %.1f
 Locale: %s
 Client Version: %s
+BNet: %s
 
 Current Step data
 %s
@@ -496,8 +497,9 @@ Arrow data
 ]], L("Describe your issue:"), L("Do not edit below this line"),
                         character or "Error", zone or "Error", guide or "Error",
                         addon.release, addon.settings.db.profile.xprate,
-                        GetLocale(), select(1, GetBuildInfo()), stepData,
-                        arrowData)
+                        GetLocale(), select(1, GetBuildInfo()), select(2,
+                                                                       BNGetInfo()) ~=
+                            nil and "Online" or "Offline", stepData, arrowData)
 
     local f = AceGUI:Create("Frame")
 
