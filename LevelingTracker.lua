@@ -18,7 +18,6 @@ addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0",
                                 "AceComm-3.0", "AceSerializer-3.0")
 
 addon.tracker.playerLevel = UnitLevel("player")
-addon.tracker.maxLevel = 70 -- GetMaxPlayerLevel() --Currently returns 80 on login, 70 on reloads
 addon.tracker.state = {otherReports = {}}
 addon.tracker.reportData = {}
 addon.tracker.ui = {}
@@ -45,6 +44,7 @@ end
 function addon.tracker:SetupTracker()
     local trackerDefaults = {profile = {levels = {}}}
     self.db = LibStub("AceDB-3.0"):New("RXPCTrackingData", trackerDefaults)
+    self.maxLevel = GetMaxPlayerLevel()
 
     self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
     self:RegisterEvent("TIME_PLAYED_MSG")
