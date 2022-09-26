@@ -44,7 +44,7 @@ af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
 
 function addon.ResetArrowPosition()
     af:ClearAllPoints()
-    af:SetPoint("CENTER", af:GetParent(), "CENTER", 0, 0)
+    af:SetPoint("CENTER", 0, 200)
 end
 
 function addon.UpdateArrow(self)
