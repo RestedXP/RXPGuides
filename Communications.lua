@@ -445,6 +445,11 @@ function addon.comms.OpenBugReport(stepNumber)
                         stepData = fmt("%s\n  goto = %.2f / %.2f", stepData,
                                        e.x, e.y)
                     end
+
+                    if e.targets then
+                        stepData = fmt("%s\n  targets = %s", stepData,
+                                       strjoin(', ', unpack(e.targets)))
+                    end
                 end
             else
                 stepData = fmt("%s\nNo active step elements", stepData, step)

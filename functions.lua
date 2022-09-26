@@ -2725,6 +2725,7 @@ function addon.functions.unitscan(self, text, ...)
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
+        element.targets = npcs
         return element
     end
 

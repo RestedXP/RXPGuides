@@ -497,6 +497,8 @@ function addon:OnEnable()
         -- Check if reloading in raid
         addon.HideInRaid()
     end
+
+    addon.targeting:Setup()
 end
 
 function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
