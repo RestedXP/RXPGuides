@@ -927,6 +927,15 @@ function addon.settings:CreateAceOptionsPanel()
                                                           "OUTLINE")
                         end
                     },
+                    resetArrowPosition = {
+                        order = 5.4,
+                        name = L("Reset Arrow Position"), -- TODO locale
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            addon.ResetArrowPosition()
+                        end
+                    },
                     macroHeader = {
                         name = L("Targeting Macro"), -- TODO locale
                         type = "header",
