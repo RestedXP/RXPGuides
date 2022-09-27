@@ -131,21 +131,6 @@ function addon.tracker:UpgradeDB()
             levelDB[l].timestamp.started = 0
         end
     end
-
-    -- On 60/70 login, set timestamp.started to now
-    -- aka ignore raiding time against 60-61 and 70-71
-    -- Also support fresh Wrath users of RXP
-    if UnitXP("player") == 0 and self.playerLevel == 70 and self.maxLevel >
-        self.playerLevel then
-
-        if levelDB[self.playerLevel].timestamp then
-            levelDB[self.playerLevel].timestamp.started = time()
-        else
-            levelDB[self.playerLevel].timestamp = {started = time()}
-        end
-        addon.comms.PrettyPrint(L("Resetting level %d start time to now!"),
-                                self.playerLevel)
-    end
 end
 
 function addon.tracker:GenerateDBLevel(level)
@@ -266,6 +251,22 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
                 break
             end
 
+        end
+
+        -- On 60/70 login, set timestamp.started to now
+        -- aka ignore raiding time against 60-61 and 70-71
+        -- Also support fresh Wrath users of RXP
+        -- Must be later in client load order, returns 0 erroneously oftentimes on init
+        if UnitXP("player") == 0 and self.playerLevel == 70 and self.maxLevel >
+            self.playerLevel then
+
+            if levelDB[self.playerLevel].timestamp then
+                levelDB[self.playerLevel].timestamp.started = time()
+            else
+                levelDB[self.playerLevel].timestamp = {started = time()}
+            end
+            addon.comms.PrettyPrint(L("Resetting level %d start time to now!"),
+                                    self.playerLevel)
         end
 
         self:CompileData()
