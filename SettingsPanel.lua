@@ -937,7 +937,9 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     macroHeader = {
-                        name = L("Targeting Macro"), -- TODO locale
+                        name = fmt("%s%s", L("Targeting Macro"),
+                                   addon.targeting:CanCreateMacro() and '' or
+                                       ' - ' .. L("Macro capacity reached")), -- TODO locale
                         type = "header",
                         width = "full",
                         order = 6
@@ -948,7 +950,8 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 6.1,
-                        disabled = _G.unitscan_targets and true
+                        disabled = (_G.unitscan_targets and true) or
+                            not addon.targeting:CanCreateMacro()
                     },
                     notifyOnTargetUpdates = {
                         name = L("Notify on new target"), -- TODO locale
@@ -956,7 +959,8 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 6.2,
-                        disabled = _G.unitscan_targets and true
+                        disabled = (_G.unitscan_targets and true) or
+                            not addon.targeting:CanCreateMacro()
                     }
                 }
             },
