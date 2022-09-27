@@ -130,6 +130,8 @@ function addon.tracker:UpgradeDB()
             not levelDB[l].timestamp.started then
             levelDB[l].timestamp.started = 0
         end
+
+        -- TODO repair level 70 duration, calculated as negative because of level 70 reset grace value
     end
 end
 
