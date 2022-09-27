@@ -1319,15 +1319,22 @@ function addon.tracker:CompileLevelSplits(kind)
                 if data.timestamp and data.timestamp.started and
                     data.timestamp.finished then
                     s = data.timestamp.finished - data.timestamp.started
-                    totalSeconds = totalSeconds + s
 
-                    splitsData.levels[l] = {
-                        text = self:BuildSplitsLevelLine(l + 1,
-                                                         addon.tracker:PrintSplitsTime(
-                                                             totalSeconds)),
-                        duration = s,
-                        totalDuration = totalSeconds
-                    }
+                    if s > 0 then
+                        totalSeconds = totalSeconds + s
+
+                        splitsData.levels[l] = {
+                            text = self:BuildSplitsLevelLine(l + 1,
+                                                             addon.tracker:PrintSplitsTime(
+                                                                 totalSeconds)),
+                            duration = s,
+                            totalDuration = totalSeconds
+                        }
+                    else
+                        splitsData.levels[l] = {
+                            text = self:BuildSplitsLevelLine(l + 1, '-')
+                        }
+                    end
                 else
                     splitsData.levels[l] = {
                         text = self:BuildSplitsLevelLine(l + 1, '-')
