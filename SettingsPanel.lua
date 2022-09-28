@@ -72,6 +72,7 @@ function addon.settings:InitializeSettings()
             --
             enableQuestAutomation = true,
             enableFPAutomation = true,
+            enableBindAutomation = true,
             showUnusedGuides = true,
             SoM = 1,
             anchorOrientation = "top",
@@ -780,6 +781,14 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.4
+                    },
+                    enableBindAutomation = {
+                        name = L("Inkeeper bind automation"), -- TODO locale
+                        desc = L(
+                            "Allows the guide to automatically set your home at an Innkeeper"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.5
                     },
                     mapHeader = {
                         name = _G.MAP_OPTIONS_TEXT,
