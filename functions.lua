@@ -1466,6 +1466,8 @@ function addon.functions.home(self, ...)
         return element
     end
 
+    if not addon.settings.db.profile.enableBindAutomation or IsShiftKeyDown() then return end
+
     local element = self.element
     if not element.step.active or element.completed or element.skip then
         element.confirm = false
