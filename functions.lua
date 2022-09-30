@@ -1541,6 +1541,8 @@ function addon.functions.fly(self, ...)
         return element
     end
 
+    if not addon.settings.db.profile.enableBindAutomation or IsShiftKeyDown() then return end
+
     local element = self.element
     if not element.step.active then return end
     local event = ...
@@ -3181,6 +3183,8 @@ function addon.functions.skipgossip(self, text, ...)
         element.args = #args > 0 and args
         return element
     end
+
+    if not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     local args = element.args or {}

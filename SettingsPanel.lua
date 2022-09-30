@@ -73,6 +73,7 @@ function addon.settings:InitializeSettings()
             enableQuestAutomation = true,
             enableFPAutomation = true,
             enableBindAutomation = true,
+            enableGossipAutomation = true,
             showUnusedGuides = true,
             SoM = 1,
             anchorOrientation = "top",
@@ -783,12 +784,20 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.4
                     },
                     enableBindAutomation = {
-                        name = L("Inkeeper bind automation"), -- TODO locale
+                        name = L("Inkeeper Bind automation"), -- TODO locale
                         desc = L(
                             "Allows the guide to automatically set your home at an Innkeeper"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.5
+                    },
+                    enableGossipAutomation = {
+                        name = L("Skip Gossip"), -- TODO locale
+                        desc = L(
+                            "Allows the guide to automatically skip gossip for NPCs"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.6
                     },
                     mapHeader = {
                         name = _G.MAP_OPTIONS_TEXT,
