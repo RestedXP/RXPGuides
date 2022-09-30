@@ -582,7 +582,8 @@ step
 .goto Durotar,46.3,79.0
     .complete 786,3 --Attack Plan: Orgrimmar destroyed (1)
 step
-    .goto Durotar,57.5,73.3,200 >> Die at the Bonfire and respawn at the Spirit Healer, or run back
+    #completewith next
+    .deathskip >> Die at the Bonfire and respawn at the Spirit Healer, or run back to Sen'jin Village
 step << Shaman
     .goto Durotar,56.6,73.1
     .money <0.0480
@@ -677,6 +678,19 @@ step << Warrior/Rogue/Paladin
     .goto Durotar,51.8,40.9
     .money <0.0010
     .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
+step << Priest
+    .goto Durotar,54.3,42.9
+    .turnin 5649 >> In Favor of Spirituality
+    .accept 5648 >> Garments of Spirituality
+    .train 2052 >> Train Lesser Heal r2
+step << Priest
+    .goto Durotar,53.1,46.5
+    .cast 2052 >>Cast Lesser Heal (Rank 2) on Grunt Kor'ja
+    .cast 1243 >>Cast Power Word: Fortitude (Rank 1) on Grunt Kor'ja
+    .complete 5648,1 --Heal and cast Fortify on Grunt Kor'ja
+step << Priest
+    .goto Durotar,54.3,42.9
+    .turnin 5648 >> Garments of Spirituality
 step << Priest/Mage/Warlock/Shaman/Druid
     .goto Durotar,51.5,41.6
     >> Talk to the innkeeper
@@ -707,18 +721,6 @@ step << Paladin
     #completewith next
     .goto Durotar,59.2,58.3,15
     .hs >>Hearth to Razor Hill
-step << Priest
-    .goto Durotar,54.3,42.9
-    .turnin 5649 >> In Favor of Spirituality
-    .accept 5648 >> Garments of Spirituality
-step << Priest
-    .goto Durotar,53.1,46.5
-    .cast 2052 >>Cast Lesser Heal (Rank 2) on Grunt Kor'ja
-    .cast 1243 >>Cast Fortify on Grunt Kor'ja
-    .complete 5648,1 --Heal and cast Fortify on Grunt Kor'ja
-step << Priest
-    .goto Durotar,54.3,42.9
-    .turnin 5649 >> In Favor of Spirituality
 step
     #sticky
     #label KulTiras
@@ -749,7 +751,8 @@ step
 step
     #xprate <1.5
     #requires KulTiras
-.goto Durotar,53.5,44.5,120 >> Die and respawn at the Spirit Healer, or run back
+    #completewith next
+.deathskip >> Die and respawn at the Spirit Healer, or run back to Razor Hill
 step
     #xprate <1.5
     .goto Durotar,51.9,43.5
@@ -942,7 +945,8 @@ step
     .goto Durotar,59.9,83.6,30,0
     .complete 817,1 --Durotar Tiger Fur (4)
 step
-    .goto Durotar,57.5,73.3,200 >> Die and respawn at the Spirit Healer, or run back
+     #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer, or run back to Sen'jin Village
 step
     >> Finish getting the rest of the items from the Makrura and Crawlers
         .goto Durotar,59.7,71.7,50,0
@@ -1169,8 +1173,9 @@ step << Warlock
     >> Go into the Right path of the cave. Continue following the cave, then loot the Chest at the end of it
     .complete 1501,1 --Tablet of Verga (1)
 step << Warlock
-#label Skull
-.goto Durotar,47.2,17.7,225 >> Die and respawn at the Spirit Healer, or run back
+    #label Skull
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer, or run to Orgrimmar
 step << Warlock
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Warlock
@@ -1233,7 +1238,7 @@ step << !Shaman !Warrior !Warlock
     .complete 835,2 --Dustwind Storm Witch (8)
 step << !Shaman !Warrior !Warlock
     #completewith next
-    .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
+    .deathskip >> Die and respawn at the Spirit Healer, or run back to Rezlak
 step << !Shaman !Warrior !Warlock
     .goto Durotar,46.4,22.9
     >> Return to Rezlak
@@ -1350,7 +1355,8 @@ step << Undead Warrior
     .complete 826,1 --Hexed Troll (8)
     .complete 826,2 --Voodoo Troll (8)
 step << Undead Warrior
-    .goto Durotar,57.5,73.3,200 >> Die and respawn at the Spirit Healer, or run back
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer, or run back to Sen'jin Village
 step << Undead Warrior
     >>Save the Faintly Glowing Skull for later
 .goto Durotar,55.9,74.7
@@ -1454,7 +1460,8 @@ step << !Tauren
 .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
 #xprate <1.5
-    .goto The Barrens,52.0,30.6,150 >> Die and respawn at the Spirit Healer, or run back
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer, or run back to Crossroads
 step << !Tauren
 #xprate <1.5
     .goto The Barrens,51.5,30.1
@@ -1632,7 +1639,8 @@ step << Troll Shaman/Orc Shaman
     .turnin 1524 >>Turn in Call of Fire
     .accept 1525 >>Accept Call of Fire
 step
-    .goto Durotar,53.5,44.5,60 >> Die and respawn at the Spirit Healer, or run back
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer, or run back to Razor Hill
 step
 .goto Durotar,52.3,43.1
     .turnin 806 >>Turn in Dark Storms
@@ -1723,8 +1731,10 @@ step
     .complete 835,1 --Dustwind Savage (12)
     .complete 835,2 --Dustwind Storm Witch (8)
 step
-    .goto Durotar,47.2,17.6,60 >> Die and respawn at the Spirit Healer, or run back
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer, or run back to Rezlak
 step
+    >>Return to Rezlak
     .goto Durotar,46.4,22.9
     .turnin 835 >>Turn in Securing the Lines
 step
