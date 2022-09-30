@@ -130,21 +130,8 @@ function addon.tracker:UpgradeDB()
             not levelDB[l].timestamp.started then
             levelDB[l].timestamp.started = 0
         end
-    end
 
-    -- On 60/70 login, set timestamp.started to now
-    -- aka ignore raiding time against 60-61 and 70-71
-    -- Also support fresh Wrath users of RXP
-    if UnitXP("player") == 0 and self.playerLevel == 70 and self.maxLevel >
-        self.playerLevel then
-
-        if levelDB[self.playerLevel].timestamp then
-            levelDB[self.playerLevel].timestamp.started = time()
-        else
-            levelDB[self.playerLevel].timestamp = {started = time()}
-        end
-        addon.comms.PrettyPrint(L("Resetting level %d start time to now!"),
-                                self.playerLevel)
+        -- TODO repair level 70 duration, calculated as negative because of level 70 reset grace value
     end
 end
 
@@ -266,6 +253,22 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
                 break
             end
 
+        end
+
+        -- On 60/70 login, set timestamp.started to now
+        -- aka ignore raiding time against 60-61 and 70-71
+        -- Also support fresh Wrath users of RXP
+        -- Must be later in client load order, returns 0 erroneously oftentimes on init
+        if UnitXP("player") == 0 and self.playerLevel == 70 and self.maxLevel >
+            self.playerLevel then
+
+            if levelDB[self.playerLevel].timestamp then
+                levelDB[self.playerLevel].timestamp.started = time()
+            else
+                levelDB[self.playerLevel].timestamp = {started = time()}
+            end
+            addon.comms.PrettyPrint(L("Resetting level %d start time to now!"),
+                                    self.playerLevel)
         end
 
         self:CompileData()
@@ -1318,15 +1321,22 @@ function addon.tracker:CompileLevelSplits(kind)
                 if data.timestamp and data.timestamp.started and
                     data.timestamp.finished then
                     s = data.timestamp.finished - data.timestamp.started
-                    totalSeconds = totalSeconds + s
 
-                    splitsData.levels[l] = {
-                        text = self:BuildSplitsLevelLine(l + 1,
-                                                         addon.tracker:PrintSplitsTime(
-                                                             totalSeconds)),
-                        duration = s,
-                        totalDuration = totalSeconds
-                    }
+                    if s > 0 then
+                        totalSeconds = totalSeconds + s
+
+                        splitsData.levels[l] = {
+                            text = self:BuildSplitsLevelLine(l + 1,
+                                                             addon.tracker:PrintSplitsTime(
+                                                                 totalSeconds)),
+                            duration = s,
+                            totalDuration = totalSeconds
+                        }
+                    else
+                        splitsData.levels[l] = {
+                            text = self:BuildSplitsLevelLine(l + 1, '-')
+                        }
+                    end
                 else
                     splitsData.levels[l] = {
                         text = self:BuildSplitsLevelLine(l + 1, '-')

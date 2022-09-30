@@ -1466,6 +1466,8 @@ function addon.functions.home(self, ...)
         return element
     end
 
+    if not addon.settings.db.profile.enableBindAutomation or IsShiftKeyDown() then return end
+
     local element = self.element
     if not element.step.active or element.completed or element.skip then
         element.confirm = false
@@ -1538,6 +1540,8 @@ function addon.functions.fly(self, ...)
         element.tooltipText = addon.icons.fly .. element.text
         return element
     end
+
+    if not addon.settings.db.profile.enableBindAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     if not element.step.active then return end
@@ -3179,6 +3183,8 @@ function addon.functions.skipgossip(self, text, ...)
         element.args = #args > 0 and args
         return element
     end
+
+    if not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     local args = element.args or {}

@@ -1,10 +1,8 @@
 local _, addon = ...
 
 local fmt = string.format
-local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown = GetMacroInfo,
-                                                               CreateMacro,
-                                                               EditMacro,
-                                                               InCombatLockdown
+local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros =
+    GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros
 
 local L = addon.locale.Get
 
@@ -25,6 +23,7 @@ function addon.targeting:UpdateMacro(targets)
     end
 
     if not GetMacroInfo(self.macroName) then
+        if not self:CanCreateMacro() then return end
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
 
@@ -80,3 +79,4 @@ function addon.targeting:Setup()
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
 end
 
+function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end

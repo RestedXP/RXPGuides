@@ -72,6 +72,8 @@ function addon.settings:InitializeSettings()
             --
             enableQuestAutomation = true,
             enableFPAutomation = true,
+            enableBindAutomation = true,
+            enableGossipAutomation = true,
             showUnusedGuides = true,
             SoM = 1,
             anchorOrientation = "top",
@@ -781,6 +783,22 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.4
                     },
+                    enableBindAutomation = {
+                        name = L("Inkeeper Bind automation"), -- TODO locale
+                        desc = L(
+                            "Allows the guide to automatically set your home at an Innkeeper"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.5
+                    },
+                    enableGossipAutomation = {
+                        name = L("Skip Gossip"), -- TODO locale
+                        desc = L(
+                            "Allows the guide to automatically skip gossip for NPCs"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.6
+                    },
                     mapHeader = {
                         name = _G.MAP_OPTIONS_TEXT,
                         type = "header",
@@ -927,8 +945,19 @@ function addon.settings:CreateAceOptionsPanel()
                                                           "OUTLINE")
                         end
                     },
+                    resetArrowPosition = {
+                        order = 5.4,
+                        name = L("Reset Arrow Position"), -- TODO locale
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            addon.ResetArrowPosition()
+                        end
+                    },
                     macroHeader = {
-                        name = L("Targeting Macro"), -- TODO locale
+                        name = fmt("%s%s", L("Targeting Macro"),
+                                   addon.targeting:CanCreateMacro() and '' or
+                                       ' - ' .. L("Macro capacity reached")), -- TODO locale
                         type = "header",
                         width = "full",
                         order = 6
@@ -939,7 +968,8 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 6.1,
-                        disabled = _G.unitscan_targets and true
+                        disabled = (_G.unitscan_targets and true) or
+                            not addon.targeting:CanCreateMacro()
                     },
                     notifyOnTargetUpdates = {
                         name = L("Notify on new target"), -- TODO locale
@@ -947,7 +977,8 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 6.2,
-                        disabled = _G.unitscan_targets and true
+                        disabled = (_G.unitscan_targets and true) or
+                            not addon.targeting:CanCreateMacro()
                     }
                 }
             },

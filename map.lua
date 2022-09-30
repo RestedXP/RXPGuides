@@ -42,6 +42,11 @@ af:SetScript("OnMouseDown", function(self, button)
 end)
 af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
 
+function addon.ResetArrowPosition()
+    af:ClearAllPoints()
+    af:SetPoint("CENTER", 0, 200)
+end
+
 function addon.UpdateArrow(self)
 
     if addon.settings.db.profile.disableArrow or not self then return end
