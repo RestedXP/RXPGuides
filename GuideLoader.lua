@@ -3,8 +3,6 @@ local _, addon = ...
 addon.guides = {}
 addon.guideList = {}
 
-local DEBUG = false
-
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
@@ -44,9 +42,9 @@ local function applies(text)
                     uppercase = "DEATHKNIGHT"
                 end
                 v = v and
-                        ((uppercase == class or uppercase == addon.game or
-                            entry == race or entry == faction or playerLevel >=
-                            level) == state)
+                        ((uppercase == class or uppercase == addon.game or entry ==
+                            race or entry == faction or playerLevel >= level) ==
+                            state)
             end
             isMatch = isMatch or v
         end
@@ -90,16 +88,17 @@ function RXPG.AddGuide(guide)
         end
     end
 
-    if loadedGuide then
+    if loadedGuide and addon.settings.db.profile.debug then
         if guide.version == loadedGuide.version then
-            return false
+            addon.comms.PrettyPrint('Overwriting (%s) v%d',
+                guide.key, guide.version)
         elseif guide.version > loadedGuide.version then
-            if DEBUG then
-                print(fmt(
-                          'Newer guide for (%s) already exists (%s) >= checkGuide (%d)',
-                          guide.key, guide.version, loadedGuide.version))
-            end
-            return false
+            addon.comms.PrettyPrint(
+                'Newer guide for (%s) already exists (%s) >= checkGuide (%d)',
+                guide.key, guide.version, loadedGuide.version)
+        else
+            addon.comms.PrettyPrint('Loading new version for (%s) v%d',
+                guide.key, guide.version)
         end
     end
 
@@ -140,11 +139,9 @@ end
 
 local function Serialize(tbl)
     local t = {}
-    for k,v in pairs(tbl) do
-        if type(v) == "number" then
-            v = strchar(v)
-        end
-        table.insert(t,v)
+    for k, v in pairs(tbl) do
+        if type(v) == "number" then v = strchar(v) end
+        table.insert(t, v)
     end
     return table.concat(t)
 end
@@ -194,14 +191,15 @@ function addon.CacheGuide(key, guide, enabledFor, guideVersion)
 end
 
 -- Parse and cache one-time guide
-function addon.ImportGuide(guide,text,defaultFor,cache)
+function addon.ImportGuide(guide, text, defaultFor, cache)
     if addon.db then -- Addon loaded already
         local importedGuide, errorMsg = RXPG.ParseGuide(guide)
-        if errorMsg ~= "#0" and importedGuide and ((errorMsg and not cache) or RXPG.AddGuide(importedGuide)) then
+        if errorMsg ~= "#0" and importedGuide and
+            ((errorMsg and not cache) or RXPG.AddGuide(importedGuide)) then
             -- print(errorMsg,importedGuide.name)
             importedGuide.imported = true
             addon.CacheGuide(importedGuide.key, guide, importedGuide.enabledFor,
-                            importedGuide.version)
+                             importedGuide.version)
         end
         return importedGuide
     else -- Addon not loaded, add to queue
@@ -278,7 +276,7 @@ end
 local cachedData = {}
 function addon.ReadCacheData(mode)
     if not cachedData.base then
-        local base = select(2,_G[Serialize(addon.base)]())
+        local base = select(2, _G[Serialize(addon.base)]())
         if not base then
             cachedData.base = RXPData.cache
         else
@@ -313,7 +311,7 @@ function addon.ReadCacheData(mode)
         return
     elseif not cachedData.number then
         cachedData.number = addon.A32(cachedData.base)
-        cachedData.number = cachedData.number - math.floor(addon.version/1e2)
+        cachedData.number = cachedData.number - math.floor(addon.version / 1e2)
         cachedData.string = tostring(cachedData.number)
     end
 
@@ -341,11 +339,11 @@ function RXPG.ImportString(str, frame)
     local errorMsg
     local nGuides = str:match("^(%d+)|")
     local base = str:match("|(%d+)$")
-    if tonumber(base) < addon.version then
-        return
-    end
+    if tonumber(base) < addon.version then return end
     for hash, mode, content in str:gmatch("(%-?%d+)(%D)([%w%+%/%=]+)") do
-        if DEBUG then print('g:', hash) end
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint('g:', hash)
+        end
         local validData, data = CheckDataIntegrity(content, tonumber(hash),
                                                    strbyte(mode))
         if validData then
@@ -382,8 +380,9 @@ function RXPG.ProcessBuffer(frame)
         table.remove(buffer, size)
         if type(parseGuide) == "table" and parseGuide.name then
             local progress = addon.bufferSize - size + 1
-            addon.RXPG.LoadText:SetText(format(L("Loading Guides") .. "... (%d/%d)",
-                             progress,addon.bufferSize))
+            addon.RXPG.LoadText:SetText(format(
+                                            L("Loading Guides") .. "... (%d/%d)",
+                                            progress, addon.bufferSize))
         end
         return true
     elseif frame then
@@ -405,10 +404,8 @@ function RXPG.LoadEmbeddedGuides()
 
     for _, guideData in pairs(embeddedGuides) do
         if guideData.cache then
-            addon.ImportGuide(guideData.groupOrContent,
-                              guideData.text,
-                              guideData.defaultFor,
-                              true)
+            addon.ImportGuide(guideData.groupOrContent, guideData.text,
+                              guideData.defaultFor, true)
         else
             local guide, errorMsg = RXPG.ParseGuide(guideData.groupOrContent,
                                                     guideData.text,
@@ -422,7 +419,8 @@ function RXPG.LoadEmbeddedGuides()
 end
 
 function RXPG.BuildGuideKey(guide)
-    return string.format("%s|%s|%s", guide.group, guide.subgroup or '', guide.name)
+    return string.format("%s|%s|%s", guide.group, guide.subgroup or '',
+                         guide.name)
 end
 
 function RXPG.LoadCachedGuides()
@@ -433,7 +431,8 @@ function RXPG.LoadCachedGuides()
 
     for key, guideData in pairs(addon.db.profile.guides) do
         local guide, errorMsg
-        local enabled = not guideData.enabledFor or applies(guideData.enabledFor)
+        local enabled = not guideData.enabledFor or
+                            applies(guideData.enabledFor)
         if enabled then
             guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
             if guide:match("^--" .. addon.ReadCacheData("string")) then
@@ -445,8 +444,10 @@ function RXPG.LoadCachedGuides()
                 guide.imported = true
                 RXPG.AddGuide(guide)
             else
-                if DEBUG then
-                    print(fmt(L('Unable to decode cached guide (%s), removed'), key))
+                if addon.settings.db.profile.debug then
+                    addon.comms.PrettyPrint(L(
+                                                'Unable to decode cached guide (%s), removed'),
+                                            key)
                 end
                 addon.db.profile.guides[key] = nil
             end
@@ -481,7 +482,8 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             groupOrContent = text:match("^%s*#group%s+(.-)%s*[\r\n]") or
                                  text:match("[\r\n]%s*#group%s+(.-)%s*[\r\n]")
             if not groupOrContent then
-                print("\n" .. L("Error parsing guide") .. ": Invalid guide group",
+                print("\n" .. L("Error parsing guide") ..
+                          ": Invalid guide group",
                       text:match("#name%s+.-%s*[\r\n]"))
                 return
             end
@@ -600,8 +602,9 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
                 error(L("Error parsing guide") .. ": " .. L("Guide has no name"))
             end
             guide.key = guide.key or RXPG.BuildGuideKey(guide)
-            if currentStep == 0 and (not guide[game] and (guide.classic or guide.tbc or guide.wotlk or guide.mainline)) then
-                --print(game,guide[game],guide.name)
+            if currentStep == 0 and (not guide[game] and
+                (guide.classic or guide.tbc or guide.wotlk or guide.mainline)) then
+                -- print(game,guide[game],guide.name)
                 skipGuide = "#0"
             end
             if skipGuide then
