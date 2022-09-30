@@ -11,7 +11,7 @@ step << wotlk
     +If you have access to gold on this server, mail yourself gold for mount training soon!
 step
     .zone Orgrimmar >> Run into Orgrimmar
-step
+step << !Troll !Orc
     >>Go to the top of the tower
     .goto Orgrimmar,45.1,63.9
     .fp Orgrimmar >> Get the Orgrimmar flight path
@@ -90,7 +90,7 @@ step << Rogue
 step
     #xprate <1.5
     .maxlevel 21
-    >>Run to the Crossroads and accept quests
+    >>Run to the Crossroads
     .accept 870 >>Accept The Forgotten Pools
     .goto The Barrens,52.3,31.9
 step
@@ -135,7 +135,7 @@ step
     .goto The Barrens,45.2,23.3,40,0
     .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
-    .goto The Barrens,43.9,24.4
+    .goto The Barrens,45.0,22.7
     .complete 848,1 --Collect Fungal Spores (x4)
     .isOnQuest 848
 step
@@ -143,7 +143,7 @@ step
     .goto The Barrens,42.9,23.5
     .complete 850,1 --Collect Kodobane's Head (x1)
 	.unitscan Barak Kodobane
-    .isOnQuest 859
+    .isOnQuest 850
 step
     #sticky
     #completewith next
@@ -338,8 +338,7 @@ step
     #completewith Zamah
     +You have 45 minutes to complete the Apothecary quest so keep an eye on the timer. Skip the quest if you fail it
 step
-    #sticky
-    #completewith Horns
+    #completewith next
     >>Kill & Loot any level 16+ Raptors you see
     .complete 865,1 --Collect Intact Raptor Horn (x5)
     .isOnQuest 865
@@ -647,11 +646,14 @@ step
     .turnin 850 >> Turn in Kolkar Leaders
     .isOnQuest 850
 step
-    .isOnQuest 1062
-    >> Head towards Stonetalon
+    .isQuestComplete 1062
+    >> Head towards Stonetalon. Talk to Seereth
     .goto The Barrens,35.3,27.8
     .turnin 1062 >> Turn in Goblin Invaders
+step
+    .goto The Barrens,35.3,27.8
     .accept 1063 >> Accept The Elder Crone
+    .isQuestTurnedIn 1062
 step
     .isOnQuest 6523
     >> Head towards Stonetalon
@@ -819,7 +821,7 @@ step
     #xprate <1.5
     .goto Ashenvale,11.6,34.3
     .turnin 6563 >> Turn in The Essence of Aku'Mai
-    .isQuestComplete 6553
+    .isQuestComplete 6563
 step
     #xprate <1.5
     #sticky
@@ -1548,6 +1550,7 @@ step
 step
     .goto Ashenvale,68.3,75.3
     .accept 6544 >> Accept Torek's Assault
+    >> If he is not there he can take a few minutes to respawn
 step
     >>Follow Torek. This quest can get a bit hard. It will spawn a wave enemies inside the building. You may need to skip.
     >> Run as far into the building as you can. Have Torek tank some of the mobs. Abandon this quest if you die. 
@@ -1839,7 +1842,6 @@ step << Rogue
 	.trainer >> Go and train your class spells
 step
     #label flytimebabyyy
-step
 	.goto Orgrimmar,45.2,63.8,-1
     .goto Ashenvale,73.2,61.6,-1
     .fly Thunder Bluff >> Fly to Thunder Bluff
@@ -1871,27 +1873,27 @@ step << Druid
 	.trainer >> Go and train your class spells
 	.turnin 31 >>Turn in Aquatic Form << tbc
 step << Hunter
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,59.1,86.9
 	.trainer >> Go and train your class spells
 step << Hunter
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,54.1,83.9
 	.trainer >> Go and train your pet spells
 step << Warrior
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,57.6,85.5
 	.trainer >> Go and train your class spells
 step << Shaman
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,22.8,21.0
 	.trainer >> Go and train your class spells
 step << Priest
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,24.6,22.6
 	.trainer >> Go and train your class spells
 step << Mage
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,25.2,20.9
 	.trainer >> Go and train your class spells
 step
@@ -1903,6 +1905,7 @@ step
     .turnin 1067 >> Turn in Return to Thunder Bluff
     .isOnQuest 1067
 step
+    #label hearth
 	#completewith next
 	.goto Thunder Bluff,45.8,64.7
 	.home >> Set your Hearthstone to Thunder Bluff
