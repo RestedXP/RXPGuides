@@ -902,3 +902,642 @@ step
     .loop 20,Winterspring,58.3,33.3,55.9,27.3,51.5,24.6,48.6,11.3,48.8,8.6,55.5,13.7,60.5,14.3,60.3,17.4,58.8,19.7,60.5,23.4,65.8,20.2,66.4,21.7,64.6,25.9,65.7,29.1,67.4,29.8,68.4,34.9,67.2,35.9,69.0,37.9,66.8,39.6,64.6,39.2,66.8,44.7,66.6,54.1,65.0,58.2,65.7,60.4,62.5,66.7,61.7,70.9,62.7,74.2,59.6,75.6,60.3,78.4,62.8,78.7,64.4,79.5,64.4,79.5,62.8,78.7,60.3,78.4,61.2,82.2,62.0,83.6,59.0,83.5,59.1,87.0,57.4,88.9,55.3,84.1,53.8,84.8,53.6,86.1,53.1,86.3,52.7,88.5,51.4,89.2,53.0,84.8,55.0,79.9,56.8,79.4,58.2,72.6,57.7,68.0,61.8,70.9,62.5,66.5,62.1,63.1,58.6,61.1,60.5,56.2,61.0,51.7,63.4,50.4,62.5,47.6,57.6,47.0,57.1,43.7,53.3,44.5,48.6,43.3,45.0,44.1,45.0,37.7,48.0,37.1,51.9,38.1,53.2,38.0,58.3,33.3
     .openmap Winterspring
 ]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Borean Tundra
+#name Eternal Water (Frozen Elemental)
+step
+    #sticky
+    .waypoint Borean Tundra,50,50
+    .zone Borean Tundra >> Head to Borean Tundra
+step
+    #hidewindow
+    +test
+    .loop 20,Borean Tundra,99.0,42.0,97.2,36.1,94.2,35.8,91.2,40.7,86.9,42.8,82.9,45.0,83.6,48.1,85.3,48.9,88.4,47.1,91.9,43.2,96.7,43.9,99.0,42.0
+    .openmap Borean Tundra
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Borean Tundra
+#name Eternal Water (Steam Rager)
+step
+    #sticky
+    .waypoint Borean Tundra,50,50
+    .zone Borean Tundra >> Head to Borean Tundra
+step
+    #hidewindow
+    +test
+    .loop 20,Borean Tundra,76.2,33.1,74.2,27.7,73.2,23.8,70.6,21.3,68.0,22.7,68.6,28.4,70.6,31.9,71.5,37.0,70.9,39.9,72.9,42.1,75.2,39.6,76.2,33.1
+    .openmap Borean Tundra
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Borean Tundra
+#name Eternal Water (Boiling Spirit)
+step
+    #sticky
+    .waypoint Borean Tundra,50,50
+    .zone Borean Tundra >> Head to Borean Tundra
+step
+    #hidewindow
+    +test
+    .loop 20,Borean Tundra,46.9,16.6,48.6,12.8,46.4,10.5,45.0,11.1,45.6,16.4,46.9,16.6
+    .openmap Borean Tundra
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Borean Tundra
+#name Eternal Fire (Boiling Spirit)
+step
+    #sticky
+    .waypoint Borean Tundra,50,50
+    .zone Borean Tundra >> Head to Borean Tundra
+step
+    #hidewindow
+    +test
+    .loop 20,Borean Tundra,47.3,16.4,49.4,18.3,50.9,15.2,49.5,12.7,47.0,11.9,47.3,16.4
+    .openmap Borean Tundra
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Borean Tundra
+#name Eternal Air (Enraged Tempest)
+step
+    #sticky
+    .waypoint Borean Tundra,50,50
+    .zone Borean Tundra >> Head to Borean Tundra
+step
+    #hidewindow
+    +test
+    .loop 20,Borean Tundra,44.4,12.2,46.8,11.2,46.7,7.2,45.1,5.8,41.8,8.2,42.2,10.8,44.4,12.2
+    .openmap Borean Tundra
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Cooking & Skinning
+#loop
+#hidewindow
+#subgroup Borean Tundra
+#name Rhino Meat & Borean Leather
+step
+    #sticky
+    .waypoint Borean Tundra,50,50
+    .zone Borean Tundra >> Head to Borean Tundra
+step
+    #hidewindow
+    +area1
+    .loop 20,Borean Tundra,47.3,39.4,44.7,39.8,42.2,42.6,40.6,42.8,42.1,48.0,42.2,48.9,47.9,48.0,47.3,39.4
+    .openmap Borean Tundra
+    #hidewindow
+    +area2
+    .loop 20,Borean Tundra,49.7,74.3,43.4,76.4,40.1,73.8,40.6,70.3,45.8,69.7,48.7,68.9,50.7,66.7,52.1,68.7,49.7,74.3
+    .openmap Borean Tundra
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Cooking & Skinning
+#loop
+#hidewindow
+#subgroup Sholazar Basin
+#name Chilled Meat & Sholazar Basin
+step
+    #sticky
+    .waypoint Sholazar Basin,50,50
+    .zone Borean Tundra >> Head to Sholazar Basin
+step
+    #hidewindow
+    +area1
+    .loop 20,Sholazar Basin,20.6,62.6,22.1,75.6,27.8,79.8,30.2,70.5,32.8,65.7,27.2,64.5,24.9,60.8,29.6,55.9,33.4,41.7,31.5,36.4,26.2,45.0,22.7,50.5,20.6,62.6
+    .openmap Sholazar Basin
+    #hidewindow
+    +area2
+    .loop 20,Sholazar Basin,56.8,81.0,59.4,74.2,64.4,70.1,57.7,65.5,55.0,76.5,56.8,81.0
+    .openmap Sholazar Basin
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Sholazar Basin
+#name Eternal Earth (Lifeblood Elemental)
+step
+    #sticky
+    .waypoint Sholazar Basin,50,50
+    .zone Sholazar Basin >> Head to Sholazar Basin
+step
+    #hidewindow
+    +test
+    .loop 20,Sholazar Basin,69.1,60.2,71.9,62.1,74.7,59.7,75.5,56.7,73.5,53.9,67.9,53.5,69.1,60.2
+    .openmap Sholazar Basin
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Sholazar Basin
+#name Eternal Earth (Sholazar Guardian)
+step
+    #sticky
+    .waypoint Sholazar Basin,50,50
+    .zone Sholazar Basin >> Head to Sholazar Basin
+step
+    #hidewindow
+    +test
+    .loop 20,Sholazar Basin,80.5,54.4,84.3,53.6,
+    .openmap Sholazar Basin
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Cooking & Skinning
+#loop
+#hidewindow
+#subgroup Sholazar Basin
+#name Chunk o' Mammoth & Borean Leather
+step
+    #sticky
+    .waypoint Sholazar Basin,50,50
+    .zone Sholazar Basin >> Head to Sholazar Basin
+step
+    #hidewindow
+    +test
+    .loop 20,Sholazar Basin,58.6,38.6,56.5,30.1,51.3,28.7,39.2,26.5,36.4,27.8,36.3,32.4,46.9,44.5,54.0,44.8,55.1,38.4,58.6,38.6,
+    .openmap Sholazar Basin
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Sholazar Basin
+#name Eternal Water & Air (Storm Revenant & Aqueous Spirit)
+step
+    #sticky
+    .waypoint Sholazar Basin,50,50
+    .zone Sholazar Basin >> Head to Sholazar Basin
+step
+    #hidewindow
+    +test
+    .loop 20,Sholazar Basin,32.2,30.7,30.4,34.8,26.3,40.7,24.4,45.1,20.9,48.6,20.0,47.1,22.0,43.5,21.9,33.7,26.1,30.3,30.6,28.9,32.2,30.7
+    .openmap Sholazar Basin
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Dragonblight
+#name Eternal Water (Crystalline Ice Elemental)
+step
+    #sticky
+    .waypoint Dragonblight,50,50
+    .zone Dragonblight >> Head to Dragonblight
+step
+    #hidewindow
+    +test
+    .loop 20,Dragonblight,48.4,20.0,49.0,21.9,53.3,21.1,53.4,17.5,50.4,15.7,46.8,15.2,46.6,19.1,48.4,20.0
+    .openmap Dragonblight
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Dragonblight
+#name Eternal Shadow (Deathbringer Revenant)
+step
+    #sticky
+    .waypoint Dragonblight,50,50
+    .zone Dragonblight >> Head to Dragonblight
+step
+    #hidewindow
+    +test
+    .loop 20,Dragonblight,74.3,23.6,72.9,20.1,75.4,19.0,76.2,20.0,75.9,21.1,74.3,23.6
+    .openmap Dragonblight
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Dragonblight
+#name Eternal Water (Ice Revenant)
+step
+    #sticky
+    .waypoint Dragonblight,50,50
+    .zone Dragonblight >> Head to Dragonblight
+step
+    #hidewindow
+    +test
+    .loop 20,Dragonblight,66.0,51.9,68.4,50.3,68.9,52.7,68.1,56.2,66.9,56.4,66.2,54.2,66.0,51.9
+    .openmap Dragonblight
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Grizzly Hills
+#name Eternal Earth (Runic Battle Golem)
+step
+    #sticky
+    .waypoint Grizzly Hills,50,50
+    .zone Grizzly Hills >> Head to Grizzly Hills
+step
+    #hidewindow
+    +test
+    .loop 20,Grizzly Hills,62.8,25.8,62.1,23.0,63.0,19.3,64.7,18.4,66.2,20.1,67.3,24.2,64.0,28.2,62.7,27.4,62.8,25.8
+    .openmap Grizzly Hills
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Grizzly Hills
+#name Eternal Air (Lightning Sentry)
+step
+    #sticky
+    .waypoint Grizzly Hills,50,50
+    .zone Grizzly Hills >> Head to Grizzly Hills
+step
+    #hidewindow
+    +test
+    .loop 20,Grizzly Hills,75.7,49.9,78.2,51.5,81.1,56.6,80.8,59.6,76.7,63.6,71.9,62.7,71.9,55.7,73.4,50.7,75.7,49.9
+    .openmap Grizzly Hills
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Howling Fjord
+#name Eternal Earth (Iron Rune Sentinel)
+step
+    #sticky
+    .waypoint Howling Fjord,50,50
+    .zone Howling Fjord >> Head to Howling Fjord
+step
+    #hidewindow
+    +test
+    .loop 20,Howling Fjord,70.8,31.6,69.0,30.4,65.8,29.1,66.3,24.4,69.8,20.9,72.5,17.8,74.7,24.2,70.8,31.6
+    .openmap Howling Fjord
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Howling Fjord
+#name Eternal Earth (Iron Rune Golem)
+step
+    #sticky
+    .waypoint Howling Fjord,50,50
+    .zone Howling Fjord >> Head to Howling Fjord
+step
+    #hidewindow
+    +test
+    .loop 20,Howling Fjord,73.5,70.5,73.2,69.6,71.8,70.1,71.2,69.6,70.9,71.5,71.4,72.4,
+    .openmap Howling Fjord
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Howling Fjord
+#name Eternal Water (Ice Elemental)
+step
+    #sticky
+    .waypoint Howling Fjord,50,50
+    .zone Howling Fjord >> Head to Howling Fjord
+step
+    #hidewindow
+    +test
+    .loop 20,Howling Fjord,60.7,20.0,62.5,20.2,64.1,22.0,64.0,24.3,63.0,26.3,60.2,24.8,58.8,22.5,59.0,19.5,60.7,20.0
+    .openmap Howling Fjord
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Howling Fjord
+#name Eternal Water (Iceshard Elemental)
+step
+    #sticky
+    .waypoint Howling Fjord,50,50
+    .zone Howling Fjord >> Head to Howling Fjord
+step
+    #hidewindow
+    +test
+    .loop 20,Howling Fjord,57.4,9.1,59.1,9.1,60.2,11.7,58.2,15.0,53.8,12.3,51.1,5.8,50.4,1.6,56.5,1.8,56.3,8.0,57.4,9.1
+    .openmap Howling Fjord
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Howling Fjord
+#name Eternal Life (Thornvine Creeper)
+step
+    #sticky
+    .waypoint Howling Fjord,50,50
+    .zone Howling Fjord >> Head to Howling Fjord
+step
+    #hidewindow
+    +test
+    .loop 20,Howling Fjord,55.8,17.1,55.7,19.6,52.1,20.2,51.6,16.6,52.4,14.0,55.3,15.3,55.8,17.1
+    .openmap Howling Fjord
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Zul'Drak
+#name Eternal Water (Crazed Water Spirit)
+step
+    #sticky
+    .waypoint Zul'Drak,50,50
+    .zone Zul'Drak >> Head to Zul'Drak
+step
+    #hidewindow
+    +test
+    .loop 20,Zul'Drak,43.2,84.7,37.5,75.7,41.2,70.5,47.0,80.1,45.5,83.3,43.2,84.7
+    .openmap Zul'Drak
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Cooking & Skinning
+#loop
+#hidewindow
+#subgroup Zul'Drak
+#name Iceweb Spider Silk & Borean Leather
+step
+    #sticky
+    .waypoint Zul'Drak,50,50
+    .zone Zul'Drak >> Head to Zul'Drak
+step
+    #hidewindow
+    +test
+    .loop 20,Zul'Drak,34.7,58.1,34.5,46.1,37.1,46.5,43.3,49.2,43.5,36.8,46.4,36.0,46.3,50.8,39.9,58.2,34.7,58.1
+    .openmap Zul'Drak
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Zul'Drak
+#name Eternal Water (Frozen Earth)
+step
+    #sticky
+    .waypoint Zul'Drak,50,50
+    .zone Zul'Drak >> Head to Zul'Drak
+step
+    #hidewindow
+    +test
+    .loop 20,Zul'Drak,52.2,56.7,48.7,49.1,48.8,42.1,57.2,42.1,59.5,49.8,54.7,57.3,52.2,56.7
+    .openmap Zul'Drak
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Zul'Drak
+#name Eternal Earth (Guardian of Zum'Rhuk)
+step
+    #sticky
+    .waypoint Zul'Drak,50,50
+    .zone Zul'Drak >> Head to Zul'Drak
+step
+    #hidewindow
+    +test
+    .loop 20,Zul'Drak,59.3,49.3,56.5,44.7,59.6,39.8,62.7,44.3,59.3,49.3
+    .openmap Zul'Drak
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Cooking & Skinning
+#loop
+#hidewindow
+#subgroup Storm Peaks
+#name Chunk o' Mammoth & Borean Leather
+step
+    #sticky
+    .waypoint The Storm Peaks,50,50
+    .zone The Storm Peaks >> Head to Storm Peaks
+step
+    #hidewindow
+    +test
+    .loop 20,The Storm Peaks,60.6,61.7,59.9,57.5,57.9,58.7,56.4,63.4,53.5,65.5,56.0,68.2,60.6,61.7
+    .openmap The Storm Peaks
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Cooking & Skinning
+#loop
+#hidewindow
+#subgroup The Storm Peaks
+#name Worm Meat & Borean Leather
+step
+    #sticky
+    .waypoint The Storm Peaks,50,50
+    .zone The Storm Peaks >> Head to Storm Peaks
+step
+    #hidewindow
+    +test
+    .loop 20,The Storm Peaks,
+    .openmap The Storm Peaks
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup The Storm Peaks
+#name Eternal Fire (Seething Revenant)
+step
+    #sticky
+    .waypoint The Storm Peaks,50,50
+    .zone The Storm Peaks >> Head to Storm Peaks
+step
+    #hidewindow
+    +test
+    .loop 20,The Storm Peaks,68.8,62.6,68.7,57.4,70.8,55.5,71.7,56.3,72.2,58.8,72.8,61.8,77.4,61.7,77.9,62.8,76.2,64.4,67.8,63.7,68.8,62.6
+    .openmap The Storm Peaks
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup The Storm Peaks
+#name Eternal Earth (Brittle Revenant)
+step
+    #sticky
+    .waypoint The Storm Peaks,50,50
+    .zone The Storm Peaks >> Head to Storm Peaks
+step
+    #hidewindow
+    +test
+    .loop 20,The Storm Peaks,68.8,62.6,68.7,57.4,70.8,55.5,71.5,58.4,71.5,61.1,72.7,63.4,70.5,63.1,68.8,62.6
+    .openmap The Storm Peaks
+]])
+
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup The Storm Peaks
+#name Eternal Fire (Wailing Winds)
+step
+    #sticky
+    .waypoint The Storm Peaks,50,50
+    .zone The Storm Peaks >> Head to Storm Peaks
+step
+    #hidewindow
+    +test
+    .loop 20,The Storm Peaks,62.5,41.5
+    .openmap The Storm Peaks
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup The Storm Peaks
+#name Eternal Air (Scion of Storm)
+step
+    #sticky
+    .waypoint The Storm Peaks,50,50
+    .zone The Storm Peaks >> Head to Storm Peaks
+step
+    #hidewindow
+    +test
+    .loop 20,The Storm Peaks,66.1,39.2,69.5,39.8,70.8,42.2,68.2,46.0,66.7,45.5,65.4,42.0,66.1,39.2
+    .openmap The Storm Peaks
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup The Storm Peaks
+#name Eternal Water (Icebound Revenant)
+step
+    #sticky
+    .waypoint The Storm Peaks,50,50
+    .zone The Storm Peaks >> Head to Storm Peaks
+step
+    #hidewindow
+    +test
+    .loop 20,The Storm Peaks,42.5,61.1,41.3,60.6,40.7,62.9,41.1,64.3,43.2,66.9,44.8,64.9,42.5,61.1
+    .openmap The Storm Peaks
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup The Storm Peaks
+#name Eternal Water (Stormrider)
+step
+    #sticky
+    .waypoint The Storm Peaks,50,50
+    .zone The Storm Peaks >> Head to Storm Peaks
+step
+    #hidewindow
+    +test
+    .loop 20,The Storm Peaks,34.1,47.3,31.6,50.3,28.8,52.3,27.7,50.4,25.7,41.6,27.4,40.3,28.4,42.4,28.9,46.8,32.3,46.9,33.5,46.4,34.1,47.3
+    .openmap The Storm Peaks
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Icecrown
+#name Frostweave Cloth (Converted Hero)
+step
+    #sticky
+    .waypoint Icecrown,50,50
+    .zone Icecrown >> Head to Icecrown
+step
+    #hidewindow
+    +test
+    .loop 20, Icecrown,40.9,46.6,48.3,50.2,48.1,57.7,40.9,58.6,39.0,58.6,38.6,50.6,40.9,46.6
+    .openmap Icecrown
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Wintergrasp
+#name Eternal Shadow (Wandering Shadow)
+step
+    #sticky
+    .waypoint Wintergrasp,50,50
+    .zone Wintergrasp >> Head to Wintergrasp
+step
+    #hidewindow
+    +test
+    .loop 20, Wintergrasp,22.7,45.1,21.7,52.0,20.4,63.7,16.3,63.9,9.1,54.0,20.1,36.3,22.7,45.1
+    .openmap Wintergrasp
+]])
