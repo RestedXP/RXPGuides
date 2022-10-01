@@ -1,12 +1,14 @@
 local _, addon = ...
 
+local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
+
 addon.guides = {}
 addon.guideList = {}
 
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
-local fmt = string.format
+local fmt, tremove = string.format, tremove
 local strchar = string.char
 local strbyte = string.byte
 local bitand = bit.band
@@ -90,15 +92,15 @@ function RXPG.AddGuide(guide)
 
     if loadedGuide and addon.settings.db.profile.debug then
         if guide.version == loadedGuide.version then
-            addon.comms.PrettyPrint('Overwriting (%s) v%d',
-                guide.key, guide.version)
+            addon.comms.PrettyPrint('Overwriting (%s) v%d', guide.key,
+                                    guide.version)
         elseif guide.version > loadedGuide.version then
             addon.comms.PrettyPrint(
                 'Newer guide for (%s) already exists (%s) >= checkGuide (%d)',
                 guide.key, guide.version, loadedGuide.version)
         else
             addon.comms.PrettyPrint('Loading new version for (%s) v%d',
-                guide.key, guide.version)
+                                    guide.key, guide.version)
         end
     end
 
@@ -137,7 +139,70 @@ function RXPG.AddGuide(guide)
     return true
 end
 
-local function Serialize(tbl)
+function RXPG.RemoveGuide(guideKey)
+    if not guideKey then return false end
+
+    local loadedGuide
+    for _, checkGuide in ipairs(addon.guides) do
+        if guideKey == checkGuide.key then
+            loadedGuide = checkGuide
+            break
+        end
+    end
+
+    if not loadedGuide then
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint('Guide not found (%s)', guideKey)
+        end
+        return
+    end
+
+    if addon.currentGuide and addon.currentGuide.key == guideKey then
+        addon:LoadGuide(addon.emptyGuide)
+    end
+
+    local list = addon.guideList[loadedGuide.group]
+
+    for i, name in ipairs(list.names_) do
+        if loadedGuide.name == name then
+            tremove(list.names_, i)
+            break
+        end
+    end
+
+    for name, _ in pairs(list) do
+        if type(name) ~= "table" then
+            if loadedGuide.name == name then
+                list[name] = nil
+                list.sorted_ = false
+                break
+            end
+        end
+    end
+
+    -- Doesn't actually remove from addon.guides
+    for i, checkGuide in pairs(addon.guides) do
+        print("guides:i = " .. i)
+        if loadedGuide.key == checkGuide.key then
+            -- print("loadedGuide.key == checkGuide.key", checkGuide.key)
+            addon.guides[i] = addon.emptyGuide
+            -- soft delete, hard delete messes up sorting
+            break
+        end
+    end
+
+    _G.RXPD = addon.guideList
+
+    if next(list.names_) == nil then addon.guideList[loadedGuide.group] = nil end
+
+    -- TODO Unregister?
+    -- RXPG.RegisterGroup(loadedGuide.group)
+    addon.RXPFrame.GenerateMenuTable()
+
+    return true
+end
+
+function RXPG.DeserializeTable(tbl)
     local t = {}
     for k, v in pairs(tbl) do
         if type(v) == "number" then v = strchar(v) end
@@ -154,7 +219,13 @@ local function CheckDataIntegrity(str, h1, mode)
             local buffer = {}
 
             local n = addon.ReadCacheData("buffer")
-            for i = 0, 255 do S[i] = n[i] end
+            if not n then
+                if addon.settings.db.profile.debug then
+                    addon.comms.PrettyPrint('Failed to ReadCacheData')
+                end
+                return
+            end
+            for k = 0, 255 do S[k] = n[k] end
 
             i, j, str = 0, 0, addon.read(str)
 
@@ -276,7 +347,7 @@ end
 local cachedData = {}
 function addon.ReadCacheData(mode)
     if not cachedData.base then
-        local base = select(2, _G[Serialize(addon.base)]())
+        local base = select(2, _G[RXPG.DeserializeTable(addon.base)]())
         if not base then
             cachedData.base = RXPData.cache
         else
@@ -308,6 +379,7 @@ function addon.ReadCacheData(mode)
     end
 
     if not cachedData.base then
+        print('not cachedData.base - second, returning nil')
         return
     elseif not cachedData.number then
         cachedData.number = addon.A32(cachedData.base)
@@ -332,65 +404,104 @@ function addon.ReadCacheData(mode)
     return mode and cachedData[mode] or cachedData.base
 end
 
-local buffer = {}
-addon.bufferSize = 0
+local importBuffer = {}
+addon.importBufferSize = 0
 function RXPG.ImportString(str, frame)
-    addon.bufferSize = 0
+    addon.importBufferSize = 0
     local errorMsg
     local nGuides = str:match("^(%d+)|")
     local base = str:match("|(%d+)$")
     if tonumber(base) < addon.version then return end
     for hash, mode, content in str:gmatch("(%-?%d+)(%D)([%w%+%/%=]+)") do
         if addon.settings.db.profile.debug then
-            addon.comms.PrettyPrint('g:', hash)
+            addon.comms.PrettyPrint('ImportString:Hash = ', hash)
         end
         local validData, data = CheckDataIntegrity(content, tonumber(hash),
                                                    strbyte(mode))
-        if validData then
+        if validData and data then
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("validData")
+            end
             for v in data:gmatch("[^%z]+") do
-                table.insert(buffer, v)
-                addon.bufferSize = addon.bufferSize + 1
+                table.insert(importBuffer, v)
+                addon.importBufferSize = addon.importBufferSize + 1
+                if addon.settings.db.profile.debug then
+                    addon.comms.PrettyPrint("addon.importBufferSize = %s",
+                                            addon.importBufferSize)
+                end
             end
         else
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint(L(
+                                            "Error parsing guides\nTotal guides loaded: %d/%s"))
+            end
             errorMsg = L("Error parsing guides\nTotal guides loaded: %d/%s")
             break
         end
     end
-    if addon.bufferSize > 0 then
+
+    if addon.importBufferSize > 0 then
         addon.parsing = true
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint("Starting parse of %s",
+                                    addon.importBufferSize)
+        end
         if frame then
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("OnUpdate: Starting frame parse of %s",
+                                        addon.importBufferSize)
+            end
             frame:SetScript("OnUpdate", RXPG.ProcessBuffer)
         else
-            for n = 1, addon.bufferSize do RXPG.ProcessBuffer() end
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("Starting loop parse of %s",
+                                        addon.importBufferSize)
+            end
+            for n = 1, addon.importBufferSize do RXPG.ProcessBuffer() end
         end
         if errorMsg then
-            return false, errorMsg:format(addon.bufferSize, nGuides)
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint(errorMsg, addon.importBufferSize,
+                                        nGuides)
+            end
+            return false, errorMsg:format(addon.importBufferSize, nGuides)
         else
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("ImportString: returning true")
+            end
             return true
         end
     else
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint(L("Error: Unable to parse guides"))
+        end
         return false, L("Error: Unable to parse guides")
     end
 end
 
 function RXPG.ProcessBuffer(frame)
-    local size = #buffer
+    local size = #importBuffer
     if size > 0 then
-        local parseGuide = RXPGuides.ImportGuide(buffer[size])
-        table.remove(buffer, size)
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint("size > 0, %d", size)
+        end
+        local parseGuide = RXPGuides.ImportGuide(importBuffer[size])
+        table.remove(importBuffer, size)
         if type(parseGuide) == "table" and parseGuide.name then
-            local progress = addon.bufferSize - size + 1
-            addon.RXPG.LoadText:SetText(format(
-                                            L("Loading Guides") .. "... (%d/%d)",
-                                            progress, addon.bufferSize))
+            local progress = addon.importBufferSize - size + 1
+            addon.RXPG.ImportStatus:SetText(format(
+                                                L("Loading Guides") ..
+                                                    "... (%d/%d)", progress,
+                                                addon.importBufferSize))
         end
         return true
     elseif frame then
         frame:SetScript("OnUpdate", nil)
+        AceConfigRegistry:NotifyChange(addon.title .. "/Import")
     end
-    if addon.bufferSize > 0 then
-        addon.RXPG.LoadText:SetText(L("Guides Loaded Successfully"))
-        addon.bufferSize = 0
+    if addon.importBufferSize > 0 then
+        addon.RXPG.ImportStatus:SetText(L("Guides Loaded Successfully"))
+        addon.importBufferSize = 0
     end
     addon.parsing = false
     addon.RXPFrame.GenerateMenuTable()

@@ -1081,7 +1081,7 @@ RXPFrame.bottomMenu = {
     {text = _G.CLOSE, notCheckable = 1, func = function(self) self:Hide() end}
 }
 
-local emptyGuide = {
+addon.emptyGuide = {
     empty = true,
     hidewindow = true,
     name = "",
@@ -1095,7 +1095,7 @@ function addon:LoadGuide(guide, OnLoad)
 
     if not addon.IsGuideActive(guide) or not guide.empty and
         (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA)
-         then return addon:LoadGuide(emptyGuide) end
+         then return addon:LoadGuide(addon.emptyGuide) end
 
     if addon.settings.db.profile.frameHeight then
         RXPFrame:SetHeight(addon.settings.db.profile.frameHeight)

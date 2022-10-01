@@ -6,11 +6,11 @@ local AceConfig = LibStub("AceConfig-3.0")
 local LibDBIcon = LibStub("LibDBIcon-1.0")
 local LibDataBroker = LibStub("LibDataBroker-1.1")
 
-local fmt, tostr = string.format, tostring
+local fmt, tostr, next = string.format, tostring, next
 
 local importString = ""
 local previousFrame = 0
-local buffer = {}
+local importBuffer = {}
 local importFrame
 local ProcessBuffer
 
@@ -105,7 +105,7 @@ function addon.settings:InitializeSettings()
     self.db.RegisterCallback(self, "OnProfileReset", "RefreshProfile")
 
     self:CreateAceOptionsPanel()
-    self.CreateImportOptionsPanel()
+    self:CreateImportOptionsPanel()
     self:MigrateSettings()
     self:UpdateMinimapButton()
 
@@ -276,31 +276,29 @@ local function SetProfileOption(info, value)
     addon.settings.db.profile[info[#info]] = value
 end
 
-function addon.settings.ImportBoxValidate()
-
+function addon.settings.ProcessImportBox()
     local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,
-                                                           addon.RXPFrame)
+                                                           importFrame)
     if guidesLoaded then
-        addon.settings.gui.selectedDeleteGuide = "mustReload"
+        addon.settings.gui.selectedDeleteGuide = "mustReload-TODO"
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint("guidesLoaded true, errorMsg = ", errorMsg)
+        end
         return true
     else
         local relog = ""
         if not RXPData.cache then
             relog = "\n" .. L("Please restart your game client and try again")
         end
-        importFrame.textFrame:SetScript('OnUpdate', ProcessBuffer)
+        importFrame.text:SetScript('OnUpdate', ProcessBuffer)
         return errorMsg or
                    (L("Failed to Import Guides: Invalid Import String") .. relog)
     end
 end
 
 function addon.settings.GetImportedGuides()
-    local display = {empty = ""}
+    local display = {[""] = ""}
     local importedGuidesFound = false
-
-    if addon.settings.gui.selectedDeleteGuide == "mustReload" then
-        return {mustReload = L("Must reload UI")}
-    end
 
     for _, guide in ipairs(addon.guides) do
         if guide.imported or guide.cache then
@@ -323,19 +321,24 @@ function addon.settings.GetImportedGuides()
 
 end
 
-function addon.settings.CreateImportOptionsPanel()
+function addon.settings:CreateImportOptionsPanel()
+    local function notOnline()
+        return not RXPData.cache or
+                   select(2, _G[addon.RXPG.DeserializeTable(addon.base)]()) ==
+                   nil
+    end
+
     local importOptionsTable = {
         type = "group",
-        name = "RestedXP " .. L("Guide Import"),
-        handler = addon.settings,
+        name = fmt("RestedXP %s - %s", L("Guide Import"), addon.versionText),
+        handler = self,
         args = {
-            buffer = { -- Buffer hacked in right-aligned icon
+            buffer = {
                 order = 1,
                 name = L("Paste encoded strings"),
                 type = "description",
                 width = "full",
                 fontSize = "medium"
-
             },
             importBox = {
                 order = 10,
@@ -344,9 +347,9 @@ function addon.settings.CreateImportOptionsPanel()
                 width = "full",
                 multiline = 5,
                 validate = function(_, val)
-                    return addon.settings.ImportBoxValidate(val)
+                    return self.ProcessImportBox(val)
                 end,
-                disabled = function() return addon.loading end
+                disabled = function() return notOnline() end
             },
             currentGuides = {
                 order = 11,
@@ -355,90 +358,77 @@ function addon.settings.CreateImportOptionsPanel()
                 name = L("Currently loaded imported guides"),
                 width = 'full',
                 values = function()
-                    return addon.settings.GetImportedGuides()
+                    print("currentGuides:values()")
+                    return self.GetImportedGuides()
                 end,
                 disabled = function()
-                    return addon.settings.gui.selectedDeleteGuide ==
-                               "mustReload" or
-                               addon.settings.gui.selectedDeleteGuide == "none" or
-                               not addon.settings.gui.selectedDeleteGuide
+                    return next(addon.db.profile.guides) == nil or
+                               not self.gui.selectedDeleteGuide
                 end,
                 get = function()
-                    return addon.settings.gui.selectedDeleteGuide
+                    return self.gui.selectedDeleteGuide
                 end,
                 set = function(_, value)
-                    addon.settings.gui.selectedDeleteGuide = value
+                    print("value (" .. value .. ")")
+                    self.gui.selectedDeleteGuide = value
                 end
             },
             deleteSelectedGuide = {
                 order = 12,
                 type = 'execute',
                 name = L("Delete imported guide"),
-                confirm = function(_, key)
-                    if not addon.settings.gui.selectedDeleteGuide or
-                        addon.settings.gui.selectedDeleteGuide == "none" then
+                confirm = function()
+                    if next(addon.db.profile.guides) == nil or
+                        not self.gui.selectedDeleteGuide then
                         return false
                     end
-                    return string.format(L("Remove") .. "%s?",
-                                         addon.settings.gui.selectedDeleteGuide)
+                    return string.format(L("Remove") .. " %s?",
+                                         self.gui.selectedDeleteGuide)
                 end,
                 disabled = function()
-                    return addon.settings.gui.selectedDeleteGuide ==
-                               "mustReload" or
-                               addon.settings.gui.selectedDeleteGuide == "none" or
-                               not addon.settings.gui.selectedDeleteGuide
+                    return next(addon.db.profile.guides) == nil or
+                               not self.gui.selectedDeleteGuide or
+                               self.gui.selectedDeleteGuide == "" or
+                               self.gui.selectedDeleteGuide == "none"
                 end,
-                func = function(_)
-                    if addon.db.profile.guides[addon.settings.gui
-                        .selectedDeleteGuide] then
-                        addon.db.profile.guides[addon.settings.gui
-                            .selectedDeleteGuide] = nil
+                func = function()
+                    if addon.RXPG.RemoveGuide(self.gui.selectedDeleteGuide) then
+                        addon.db.profile.guides[self.gui.selectedDeleteGuide] =
+                            nil
                     end
-
-                    addon.settings.gui.selectedDeleteGuide = "mustReload"
                 end
             },
-            purge = {
+            purgeAll = {
                 order = 13,
                 type = 'execute',
                 name = L("Purge All Data"),
-                confirm = function(_, key)
+                confirm = function()
                     return L(
                                "This action will remove ALL guides from the database\nAre you sure?")
                 end,
                 disabled = function()
-                    return addon.settings.gui.selectedDeleteGuide ==
-                               "mustReload"
+                    return next(addon.db.profile.guides) == nil
                 end,
-                func = function(_)
-                    addon.db.profile.guides = {}
-                    addon.settings.gui.selectedDeleteGuide = "mustReload"
-                end
+                func = function() addon.db.profile.guides = {} end
             },
-            reloadGuides = {
+            reloadUi = {
                 order = 14,
                 name = L("Reload guides and UI"),
                 type = 'execute',
-                func = function() _G.ReloadUI() end,
-                disabled = function()
-                    return addon.settings.gui.selectedDeleteGuide ~=
-                               "mustReload"
-                end
+                func = function() _G.ReloadUI() end
             }
         }
     }
 
     AceConfig:RegisterOptionsTable(addon.title .. "/Import", importOptionsTable)
 
-    addon.settings.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                    addon.title .. "/Import", L("Import"),
-                                    addon.title)
+    self.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                          addon.title .. "/Import", L("Import"), addon.title)
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
-    -- Hackery ahead
 
-    importFrame = addon.settings.gui.import.obj.frame
+    importFrame = self.gui.import.obj.frame
     importFrame.icon = importFrame:CreateTexture()
     importFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
                                     "\\Textures\\rxp_logo-64")
@@ -451,52 +441,64 @@ function addon.settings.CreateImportOptionsPanel()
     importFrame.text:SetJustifyV("CENTER")
     importFrame.text:SetTextColor(1, 1, 1)
     importFrame.text:SetFont(addon.font, 14, "")
-    importFrame.text:SetText("")
-    addon.RXPG.LoadText = importFrame.text
 
-    local function EditBoxHook(self)
+    if notOnline() then
+        importFrame.text:SetText(L(
+                                     "Battle.net unreachable, please exit your client, restart Battle.net, and try again"))
+    else
+        importFrame.text:SetText("ImportFrame")
+    end
+    addon.RXPG.ImportStatus = importFrame.text
+
+    local function EditBoxHook(this)
         if importFrame:IsShown() then
-            self.isMaxBytesSet = true
-            self:SetMaxBytes(1)
-        elseif self.isMaxBytesSet then
-            self.isMaxBytesSet = false
-            self:SetMaxBytes(0)
+            this.isMaxBytesSet = true
+            this:SetMaxBytes(1)
+        elseif this.isMaxBytesSet then
+            this.isMaxBytesSet = false
+            this:SetMaxBytes(0)
         end
     end
 
-    function ProcessBuffer(self)
-        self:SetScript('OnUpdate', nil)
-        self = importFrame.textFrame
-        if #buffer > 16 then
-            importString = table.concat(buffer)
-            self:ClearHistory()
-            self:SetMaxBytes(0)
-            self:Insert(importString:sub(1, 500))
-            self:ClearFocus()
-            buffer = {}
+    function ProcessBuffer(this)
+        this:SetScript('OnUpdate', nil)
+        this = importFrame.textFrame
+        if #importBuffer > 16 then
+            print("#importBuffer > 16", #importBuffer)
+            importString = table.concat(importBuffer)
+            this:ClearHistory()
+            this:SetMaxBytes(0)
+            this:Insert(importString:sub(1, 500))
+            if #importString > 500 then
+                importFrame.text:SetText(fmt(L(
+                                                 "Loaded %d characters into import buffer, only 500 shown"),
+                                             #importBuffer))
+            end
+            this:ClearFocus()
+            importBuffer = {}
         else
-            -- self:ClearHistory()
-            self:SetText(" ")
-            self:SetMaxBytes(1)
+            -- this:ClearHistory()
+            this:SetText(" ")
+            this:SetMaxBytes(1)
         end
     end
 
-    local function PasteHook(self, char)
+    local function PasteHook(this, char)
         if not importFrame:IsShown() then return end
 
         local time = GetTime()
         if previousFrame ~= time then
             previousFrame = time
-            importFrame.textFrame = self
+            importFrame.textFrame = this
             importFrame:SetScript('OnUpdate', ProcessBuffer)
         end
 
-        table.insert(buffer, char)
+        table.insert(importBuffer, char)
     end
 
     local isHooked = {}
 
-    importFrame:HookScript("OnShow", function(self)
+    importFrame:HookScript("OnShow", function()
         local n = 1
         local editBox = true
 
