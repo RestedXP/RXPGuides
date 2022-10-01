@@ -182,21 +182,15 @@ function RXPG.RemoveGuide(guideKey)
 
     -- Doesn't actually remove from addon.guides
     for i, checkGuide in pairs(addon.guides) do
-        print("guides:i = " .. i)
         if loadedGuide.key == checkGuide.key then
-            -- print("loadedGuide.key == checkGuide.key", checkGuide.key)
-            addon.guides[i] = addon.emptyGuide
             -- soft delete, hard delete messes up sorting
+            addon.guides[i] = addon.emptyGuide
             break
         end
     end
 
-    _G.RXPD = addon.guideList
-
     if next(list.names_) == nil then addon.guideList[loadedGuide.group] = nil end
 
-    -- TODO Unregister?
-    -- RXPG.RegisterGroup(loadedGuide.group)
     addon.RXPFrame.GenerateMenuTable()
 
     return true
@@ -379,7 +373,6 @@ function addon.ReadCacheData(mode)
     end
 
     if not cachedData.base then
-        print('not cachedData.base - second, returning nil')
         return
     elseif not cachedData.number then
         cachedData.number = addon.A32(cachedData.base)
@@ -593,9 +586,9 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             groupOrContent = text:match("^%s*#group%s+(.-)%s*[\r\n]") or
                                  text:match("[\r\n]%s*#group%s+(.-)%s*[\r\n]")
             if not groupOrContent then
-                print("\n" .. L("Error parsing guide") ..
-                          ": Invalid guide group",
-                      text:match("#name%s+.-%s*[\r\n]"))
+                addon.comms:PrettyPrint("\n" .. L("Error parsing guide") ..
+                                            ": Invalid guide group",
+                                        text:match("#name%s+.-%s*[\r\n]"))
                 return
             end
         end

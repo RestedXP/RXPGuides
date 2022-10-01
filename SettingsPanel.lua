@@ -358,7 +358,6 @@ function addon.settings:CreateImportOptionsPanel()
                 name = L("Currently loaded imported guides"),
                 width = 'full',
                 values = function()
-                    print("currentGuides:values()")
                     return self.GetImportedGuides()
                 end,
                 disabled = function()
@@ -369,7 +368,6 @@ function addon.settings:CreateImportOptionsPanel()
                     return self.gui.selectedDeleteGuide
                 end,
                 set = function(_, value)
-                    print("value (" .. value .. ")")
                     self.gui.selectedDeleteGuide = value
                 end
             },
@@ -446,7 +444,7 @@ function addon.settings:CreateImportOptionsPanel()
         importFrame.text:SetText(L(
                                      "Battle.net unreachable, please exit your client, restart Battle.net, and try again"))
     else
-        importFrame.text:SetText("ImportFrame")
+        importFrame.text:SetText("")
     end
     addon.RXPG.ImportStatus = importFrame.text
 
@@ -464,7 +462,6 @@ function addon.settings:CreateImportOptionsPanel()
         this:SetScript('OnUpdate', nil)
         this = importFrame.textFrame
         if #importBuffer > 16 then
-            print("#importBuffer > 16", #importBuffer)
             importString = table.concat(importBuffer)
             this:ClearHistory()
             this:SetMaxBytes(0)
