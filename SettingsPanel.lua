@@ -5,21 +5,21 @@ local _G = _G
 local AceConfig = LibStub("AceConfig-3.0")
 local LibDBIcon = LibStub("LibDBIcon-1.0")
 local LibDataBroker = LibStub("LibDataBroker-1.1")
+local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 
 local fmt, tostr, next = string.format, tostring, next
 
-local importString = ""
-local previousFrame = 0
-local importBuffer = {}
-local importFrame
-local ProcessBuffer
+local importCache = {bufferString = "", bufferData = {}, lastBuffer = 0}
+-- local importFrame
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
 
-if not addon.settings.gui then addon.settings.gui = {selectedDeleteGuide = ""} end
+if not addon.settings.gui then
+    addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
+end
 
 function addon.settings.ChatCommand(input)
     if not input then
@@ -277,21 +277,22 @@ local function SetProfileOption(info, value)
 end
 
 function addon.settings.ProcessImportBox()
-    local guidesLoaded, errorMsg = addon.RXPG.ImportString(importString,
-                                                           importFrame)
-    if guidesLoaded then
-        addon.settings.gui.selectedDeleteGuide = "mustReload-TODO"
-        if addon.settings.db.profile.debug then
-            addon.comms.PrettyPrint("guidesLoaded true, errorMsg = ", errorMsg)
-        end
+    local guidesLoaded, errorMsg = addon.RXPG.ImportString(
+                                       importCache.bufferString,
+                                       importCache.triggerFrame)
+    if guidesLoaded and not errorMsg then
+        addon.settings.gui.selectedDeleteGuide = ""
         return true
     else
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint("guidesLoaded false, errorMsg = ", errorMsg)
+        end
         local relog = ""
         if not RXPData.cache then
             relog = "\n" .. L("Please restart your game client and try again")
         end
-        importFrame.text:SetScript('OnUpdate', ProcessBuffer)
-        return errorMsg or
+        -- importCache.triggerFrame:SetScript('OnUpdate', ProcessBuffer)
+        return false, errorMsg or
                    (L("Failed to Import Guides: Invalid Import String") .. relog)
     end
 end
@@ -321,6 +322,16 @@ function addon.settings.GetImportedGuides()
 
 end
 
+function addon.settings:AddImportStatusHistory(data)
+    if type(data) == "table" then
+        self.gui.importStatusHistory = data
+    else
+        tinsert(self.gui.importStatusHistory, 1, data)
+    end
+
+    AceConfigRegistry:NotifyChange(addon.title .. "/Import")
+end
+
 function addon.settings:CreateImportOptionsPanel()
     local function notOnline()
         return not RXPData.cache or
@@ -346,8 +357,19 @@ function addon.settings:CreateImportOptionsPanel()
                 name = L('Guides to import'),
                 width = "full",
                 multiline = 5,
-                validate = function(_, val)
-                    return self.ProcessImportBox(val)
+                get = function()
+                    print("importBox:get")
+                    -- Prevent auto clearing on NotifyChange
+                    return importCache.bufferString:sub(1, 500)
+                end,
+                validate = function()
+                    local status, errorMsg = self.ProcessImportBox()
+
+                    if errorMsg then
+                        addon.settings:AddImportStatusHistory(errorMsg)
+                        return errorMsg
+                    end
+                    return status
                 end,
                 disabled = function() return notOnline() end
             },
@@ -414,6 +436,27 @@ function addon.settings:CreateImportOptionsPanel()
                 name = L("Reload guides and UI"),
                 type = 'execute',
                 func = function() _G.ReloadUI() end
+            },
+            loadStatusBox = {
+                order = 99,
+                name = _G.HISTORY,
+                type = 'group',
+                inline = true,
+                hidden = function()
+                    return next(self.gui.importStatusHistory) == nil
+                end,
+                args = {
+                    loadHistory = {
+                        order = 1,
+                        name = function()
+                            return table.concat(self.gui.importStatusHistory,
+                                                '\n')
+                        end,
+                        type = "description",
+                        width = "full",
+                        fontSize = "medium"
+                    }
+                }
             }
         }
     }
@@ -426,29 +469,19 @@ function addon.settings:CreateImportOptionsPanel()
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
 
-    importFrame = self.gui.import.obj.frame
-    importFrame.icon = importFrame:CreateTexture()
-    importFrame.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
-                                    "\\Textures\\rxp_logo-64")
-    importFrame.icon:SetPoint("TOPRIGHT", -5, -5)
-
-    importFrame.text = importFrame:CreateFontString(nil, "OVERLAY")
-    importFrame.text:ClearAllPoints()
-    importFrame.text:SetPoint("CENTER", importFrame, 1, 1)
-    importFrame.text:SetJustifyH("LEFT")
-    importFrame.text:SetJustifyV("CENTER")
-    importFrame.text:SetTextColor(1, 1, 1)
-    importFrame.text:SetFont(addon.font, 14, "")
+    local iconFrameParent = self.gui.import.obj.frame
+    iconFrameParent.icon = iconFrameParent:CreateTexture()
+    iconFrameParent.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
+                                        "\\Textures\\rxp_logo-64")
+    iconFrameParent.icon:SetPoint("TOPRIGHT", -5, -5)
 
     if notOnline() then
-        importFrame.text:SetText(L(
-                                     "Battle.net unreachable, please exit your client, restart Battle.net, and try again"))
-    else
-        importFrame.text:SetText("")
+        addon.settings:AddImportStatusHistory(L(
+                                                  "Battle.net unreachable, please exit your client, restart Battle.net, and try again"))
     end
-    addon.RXPG.ImportStatus = importFrame.text
 
     local function EditBoxHook(this)
+        print("EditBoxHook")
         if importFrame:IsShown() then
             this.isMaxBytesSet = true
             this:SetMaxBytes(1)
@@ -459,20 +492,20 @@ function addon.settings:CreateImportOptionsPanel()
     end
 
     function ProcessBuffer(this)
+        print("ProcessBuffer")
         this:SetScript('OnUpdate', nil)
-        this = importFrame.textFrame
-        if #importBuffer > 16 then
-            importString = table.concat(importBuffer)
-            this:ClearHistory()
+        if #importCache.bufferData > 16 then
+            importCache.bufferString = table.concat(importCache.bufferData)
+            -- this:ClearHistory()
             this:SetMaxBytes(0)
-            this:Insert(importString:sub(1, 500))
-            if #importString > 500 then
-                importFrame.text:SetText(fmt(L(
-                                                 "Loaded %d characters into import buffer, only 500 shown"),
-                                             #importBuffer))
+            this:Insert(importCache.bufferString:sub(1, 500))
+            if #importCache.bufferString > 500 then
+                addon.settings:AddImportStatusHistory(fmt(L(
+                                                              "Loaded %d characters into import buffer, only 500 shown"),
+                                                          #importCache.bufferData))
             end
             this:ClearFocus()
-            importBuffer = {}
+            importCache.bufferData = {}
         else
             -- this:ClearHistory()
             this:SetText(" ")
@@ -481,32 +514,32 @@ function addon.settings:CreateImportOptionsPanel()
     end
 
     local function PasteHook(this, char)
-        if not importFrame:IsShown() then return end
+        -- if not importFrame:IsShown() then return end
 
         local time = GetTime()
-        if previousFrame ~= time then
-            previousFrame = time
-            importFrame.textFrame = this
-            importFrame:SetScript('OnUpdate', ProcessBuffer)
+        if importCache.lastBuffer ~= time then
+            importCache.lastBuffer = time
+            -- importFrame:SetScript('OnUpdate', ProcessBuffer)
         end
 
-        table.insert(importBuffer, char)
     end
 
-    local isHooked = {}
-
-    importFrame:HookScript("OnShow", function()
+    self.gui.import.obj.frame:HookScript("OnShow", function()
         local n = 1
-        local editBox = true
+        local inputWidget = true
 
-        while editBox do
-            -- editBox = _G["AceGUI-3.0EditBox" .. n]
-            editBox = _G["MultiLineEditBox" .. n .. "ScrollFrame"]
-            if not isHooked[n] and editBox then
-                editBox = editBox.obj.editBox
-                isHooked[n] = true
-                editBox:HookScript("OnEditFocusGained", EditBoxHook)
-                editBox:HookScript("OnChar", PasteHook)
+        while inputWidget do
+            inputWidget = _G["MultiLineEditBox" .. n .. "ScrollFrame"]
+
+            if inputWidget and inputWidget.obj.label:GetText() ==
+                L('Guides to import') then
+                -- editBox:HookScript("OnEditFocusGained", EditBoxHook)
+                -- inputWidget.obj.editBox:SetMaxBytes(1)
+                inputWidget.obj.editBox:HookScript("OnChar",
+                                                   function(this, char)
+                    tinsert(importCache.bufferData, char)
+                end)
+                break
             end
             n = n + 1
         end

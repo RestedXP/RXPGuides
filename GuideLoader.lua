@@ -1,7 +1,5 @@
 local _, addon = ...
 
-local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
-
 addon.guides = {}
 addon.guideList = {}
 
@@ -217,7 +215,7 @@ local function CheckDataIntegrity(str, h1, mode)
                 if addon.settings.db.profile.debug then
                     addon.comms.PrettyPrint('Failed to ReadCacheData')
                 end
-                return
+                return false, L('Failed to ReadCacheData')
             end
             for k = 0, 255 do S[k] = n[k] end
 
@@ -404,29 +402,34 @@ function RXPG.ImportString(str, frame)
     local errorMsg
     local nGuides = str:match("^(%d+)|")
     local base = str:match("|(%d+)$")
-    if tonumber(base) < addon.version then return end
-    for hash, mode, content in str:gmatch("(%-?%d+)(%D)([%w%+%/%=]+)") do
+    if not nGuides or not base then
         if addon.settings.db.profile.debug then
-            addon.comms.PrettyPrint('ImportString:Hash = ', hash)
+            addon.comms.PrettyPrint("Incomplete or invalid encoded string")
         end
-        local validData, data = CheckDataIntegrity(content, tonumber(hash),
-                                                   strbyte(mode))
-        if validData and data then
-            if addon.settings.db.profile.debug then
-                addon.comms.PrettyPrint("validData")
-            end
-            for v in data:gmatch("[^%z]+") do
+        return false, L("Incomplete or invalid encoded string")
+    end
+
+    if tonumber(base) < addon.version then
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint("Incompatible guide game %d version vs %d",
+                                    tonumber(base), addon.version)
+        end
+        return false, fmt("Incompatible guide, for %d version vs %d",
+                          tonumber(base), addon.version)
+    end
+
+    for hash, mode, content in str:gmatch("(%-?%d+)(%D)([%w%+%/%=]+)") do
+        local validData, dataOrError = CheckDataIntegrity(content,
+                                                          tonumber(hash),
+                                                          strbyte(mode))
+        if validData and dataOrError then
+            for v in dataOrError:gmatch("[^%z]+") do
                 table.insert(importBuffer, v)
                 addon.importBufferSize = addon.importBufferSize + 1
-                if addon.settings.db.profile.debug then
-                    addon.comms.PrettyPrint("addon.importBufferSize = %s",
-                                            addon.importBufferSize)
-                end
             end
         else
             if addon.settings.db.profile.debug then
-                addon.comms.PrettyPrint(L(
-                                            "Error parsing guides\nTotal guides loaded: %d/%s"))
+                addon.comms.PrettyPrint("invalid data")
             end
             errorMsg = L("Error parsing guides\nTotal guides loaded: %d/%s")
             break
@@ -436,22 +439,17 @@ function RXPG.ImportString(str, frame)
     if addon.importBufferSize > 0 then
         addon.parsing = true
         if addon.settings.db.profile.debug then
-            addon.comms.PrettyPrint("Starting parse of %s",
+            addon.comms.PrettyPrint("Processing %s guides",
                                     addon.importBufferSize)
         end
         if frame then
-            if addon.settings.db.profile.debug then
-                addon.comms.PrettyPrint("OnUpdate: Starting frame parse of %s",
-                                        addon.importBufferSize)
-            end
             frame:SetScript("OnUpdate", RXPG.ProcessBuffer)
         else
-            if addon.settings.db.profile.debug then
-                addon.comms.PrettyPrint("Starting loop parse of %s",
-                                        addon.importBufferSize)
+            for n = 1, addon.importBufferSize do
+                RXPG.ProcessBuffer(n)
             end
-            for n = 1, addon.importBufferSize do RXPG.ProcessBuffer() end
         end
+
         if errorMsg then
             if addon.settings.db.profile.debug then
                 addon.comms.PrettyPrint(errorMsg, addon.importBufferSize,
@@ -466,34 +464,33 @@ function RXPG.ImportString(str, frame)
         end
     else
         if addon.settings.db.profile.debug then
-            addon.comms.PrettyPrint(L("Error: Unable to parse guides"))
+            addon.comms.PrettyPrint(L("Error: Total guides loaded: %d/%s"),
+                                    addon.importBufferSize, nGuides)
         end
         return false, L("Error: Unable to parse guides")
     end
 end
 
-function RXPG.ProcessBuffer(frame)
-    local size = #importBuffer
-    if size > 0 then
-        if addon.settings.db.profile.debug then
-            addon.comms.PrettyPrint("size > 0, %d", size)
-        end
-        local parseGuide = RXPGuides.ImportGuide(importBuffer[size])
-        table.remove(importBuffer, size)
+function RXPG.ProcessBuffer(frameOrIndex)
+    if tonumber(frameOrIndex) then
+        local parseGuide = RXPGuides.ImportGuide(importBuffer[frameOrIndex])
+        table.remove(importBuffer, frameOrIndex)
         if type(parseGuide) == "table" and parseGuide.name then
-            local progress = addon.importBufferSize - size + 1
-            addon.RXPG.ImportStatus:SetText(format(
-                                                L("Loading Guides") ..
-                                                    "... (%d/%d)", progress,
-                                                addon.importBufferSize))
+            local progress = addon.importBufferSize - frameOrIndex + 1
+
+            addon.settings:AddImportStatusHistory(fmt(
+                                                      L("Loading Guides") ..
+                                                          "... (%d/%d)",
+                                                      progress,
+                                                      addon.importBufferSize))
         end
         return true
-    elseif frame then
-        frame:SetScript("OnUpdate", nil)
-        AceConfigRegistry:NotifyChange(addon.title .. "/Import")
+    elseif frameOrIndex then
+        frameOrIndex:SetScript("OnUpdate", nil)
+        addon.settings:RefreshImportPanel()
     end
     if addon.importBufferSize > 0 then
-        addon.RXPG.ImportStatus:SetText(L("Guides Loaded Successfully"))
+        addon.settings:AddImportStatusHistory(L("Guides Loaded Successfully"))
         addon.importBufferSize = 0
     end
     addon.parsing = false
