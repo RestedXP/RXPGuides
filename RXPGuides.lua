@@ -428,6 +428,7 @@ function addon:OnInitialize()
     addon.RXPG.LoadCachedGuides()
     addon.RXPG.LoadEmbeddedGuides()
     addon.UpdateGuideFontSize()
+    addon.isHidden = addon.settings.db.profile.hideGuideWindow
     addon.RXPFrame:SetShown(not addon.settings.db.profile.hideGuideWindow)
     addon.RXPFrame:SetScale(addon.settings.db.profile.windowScale)
     addon.arrowFrame:SetSize(32 * addon.settings.db.profile.arrowScale, 32 * addon.settings.db.profile.arrowScale)
@@ -469,6 +470,9 @@ function addon:OnEnable()
     self:RegisterEvent("PLAYER_CONTROL_LOST")
     self:RegisterEvent("PLAYER_CONTROL_GAINED")
 
+    self:RegisterEvent("PLAYER_ENTERING_WORLD")
+    self:RegisterEvent("PLAYER_LEAVING_WORLD")
+
     -- self:RegisterEvent("QUEST_LOG_UPDATE")
 
     questFrame:RegisterEvent("QUEST_COMPLETE")
@@ -499,6 +503,17 @@ function addon:OnEnable()
     end
 
     addon.targeting:Setup()
+end
+
+
+--Tracks if a player is on a loading screen and pauses the main update loop
+--Some information is not available during zone transitions
+function addon:PLAYER_ENTERING_WORLD()
+    addon.isHidden = addon.settings and addon.settings.db.profile.hideGuideWindow
+end
+
+function addon:PLAYER_LEAVING_WORLD()
+    addon.isHidden = true
 end
 
 function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
@@ -657,7 +672,9 @@ local skip = 0
 updateFrame:SetScript("OnUpdate", function(self, diff)
 
     updateTick = updateTick + diff
-    if updateTick > (0.05+math.random()/128) then
+    if addon.isHidden then
+        return
+    elseif updateTick > (0.05+math.random()/128) then
         local currentTime = GetTime()
         updateTick = 0
         updateStart = currentTime
