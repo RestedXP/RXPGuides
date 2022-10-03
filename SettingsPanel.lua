@@ -327,11 +327,11 @@ function addon.settings.GetImportedGuides()
 
 end
 
-function addon.settings:AddImportStatusHistory(data)
+function addon.settings:AddImportStatusHistory(data, ...)
     if type(data) == "table" then
         self.gui.importStatusHistory = data
     else
-        tinsert(self.gui.importStatusHistory, 1, data)
+        tinsert(self.gui.importStatusHistory, 1, fmt(data, ...))
     end
 
     AceConfigRegistry:NotifyChange(addon.title .. "/Import")
@@ -363,7 +363,6 @@ function addon.settings:CreateImportOptionsPanel()
                 width = "full",
                 multiline = 5,
                 get = function()
-                    print("importBox:get")
                     -- Prevent auto clearing on NotifyChange
                     return importCache.bufferString:sub(1, 500)
                 end,
@@ -504,9 +503,13 @@ function addon.settings:CreateImportOptionsPanel()
         this:SetMaxBytes(0)
         -- this:Insert(importCache.bufferString:sub(1, 500))
         if #importCache.bufferString > 500 then
-            addon.settings:AddImportStatusHistory(fmt(L(
-                                                          "Loaded %d characters into import buffer, only 500 shown"),
-                                                      #importCache.bufferData))
+            addon.settings:AddImportStatusHistory(L(
+                                                      "Loaded %d characters into import buffer, %d shown"),
+                                                  #importCache.bufferString, 500)
+        else
+            addon.settings:AddImportStatusHistory(L(
+                                                      "Loaded %d characters into import buffer, %d shown"),
+                                                  #importCache.bufferString, 500)
         end
         this:ClearFocus()
         importCache.bufferData = {}
@@ -540,10 +543,8 @@ function addon.settings:CreateImportOptionsPanel()
 
                 editBox:HookScript("OnEditFocusGained", EditBoxHook)
                 editBox:HookScript("OnChar", PasteHook)
-                editBox:HookScript("OnEditFocusLost", function()
-                    print("OnEditFocusLost")
-                    inputWidget.obj:Fire("OnTextChanged")
-                end)
+                -- Prevent Accept button from being disabled by programatic text update
+                editBox:SetScript("OnTextSet", nil)
                 break
             end
             n = n + 1

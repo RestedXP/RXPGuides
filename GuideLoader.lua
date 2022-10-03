@@ -442,13 +442,8 @@ function RXPG.ImportString(str, frame)
             addon.comms.PrettyPrint("Processing %s guides",
                                     addon.importBufferSize)
         end
-        if frame then
-            frame:SetScript("OnUpdate", RXPG.ProcessBuffer)
-        else
-            for n = 1, addon.importBufferSize do
-                RXPG.ProcessBuffer(n)
-            end
-        end
+
+        while RXPG.ProcessInputBuffer() do end
 
         if errorMsg then
             if addon.settings.db.profile.debug then
@@ -471,30 +466,29 @@ function RXPG.ImportString(str, frame)
     end
 end
 
-function RXPG.ProcessBuffer(frameOrIndex)
-    if tonumber(frameOrIndex) then
-        local parseGuide = RXPGuides.ImportGuide(importBuffer[frameOrIndex])
-        table.remove(importBuffer, frameOrIndex)
-        if type(parseGuide) == "table" and parseGuide.name then
-            local progress = addon.importBufferSize - frameOrIndex + 1
+function RXPG.ProcessInputBuffer()
+    local parseGuide
+    if #importBuffer > 0 then
+        parseGuide = tremove(importBuffer)
+        parseGuide = RXPGuides.ImportGuide(parseGuide)
 
-            addon.settings:AddImportStatusHistory(fmt(
-                                                      L("Loading Guides") ..
-                                                          "... (%d/%d)",
-                                                      progress,
-                                                      addon.importBufferSize))
+        if type(parseGuide) == "table" and parseGuide.name then
+            addon.settings:AddImportStatusHistory(
+                L("Loading Guides") .. "... (%d/%d)",
+                addon.importBufferSize - #importBuffer, addon.importBufferSize)
         end
         return true
-    elseif frameOrIndex then
-        frameOrIndex:SetScript("OnUpdate", nil)
-        addon.settings:RefreshImportPanel()
     end
+
     if addon.importBufferSize > 0 then
         addon.settings:AddImportStatusHistory(L("Guides Loaded Successfully"))
         addon.importBufferSize = 0
     end
+
     addon.parsing = false
     addon.RXPFrame.GenerateMenuTable()
+
+    return false
 end
 
 function RXPG.LoadEmbeddedGuides()
