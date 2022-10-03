@@ -9,7 +9,12 @@ local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 
 local fmt, tostr, next = string.format, tostring, next
 
-local importCache = {bufferString = "", bufferData = {}, lastBuffer = 0}
+local importCache = {
+    bufferString = "",
+    bufferData = {},
+    lastBuffer = 0,
+    widget = {}
+}
 -- local importFrame
 
 -- Alias addon.locale.Get
@@ -357,11 +362,11 @@ function addon.settings:CreateImportOptionsPanel()
                 name = L('Guides to import'),
                 width = "full",
                 multiline = 5,
-                get = function()
-                    print("importBox:get")
-                    -- Prevent auto clearing on NotifyChange
-                    return importCache.bufferString:sub(1, 500)
-                end,
+                -- get = function()
+                --    print("importBox:get")
+                -- Prevent auto clearing on NotifyChange
+                --    return importCache.bufferString:sub(1, 500)
+                -- end,
                 validate = function()
                     local status, errorMsg = self.ProcessImportBox()
 
@@ -481,47 +486,44 @@ function addon.settings:CreateImportOptionsPanel()
     end
 
     local function EditBoxHook(this)
-        print("EditBoxHook")
-        if importFrame:IsShown() then
+        if this:IsShown() then
             this.isMaxBytesSet = true
             this:SetMaxBytes(1)
         elseif this.isMaxBytesSet then
             this.isMaxBytesSet = false
             this:SetMaxBytes(0)
         end
+        -- importCache.bufferString = ""
+        -- importCache.bufferData = {}
     end
 
-    function ProcessBuffer(this)
-        print("ProcessBuffer")
+    local function ProcessBuffer(this)
         this:SetScript('OnUpdate', nil)
-        if #importCache.bufferData > 16 then
-            importCache.bufferString = table.concat(importCache.bufferData)
-            -- this:ClearHistory()
-            this:SetMaxBytes(0)
-            this:Insert(importCache.bufferString:sub(1, 500))
-            if #importCache.bufferString > 500 then
-                addon.settings:AddImportStatusHistory(fmt(L(
-                                                              "Loaded %d characters into import buffer, only 500 shown"),
-                                                          #importCache.bufferData))
-            end
-            this:ClearFocus()
-            importCache.bufferData = {}
-        else
-            -- this:ClearHistory()
-            this:SetText(" ")
-            this:SetMaxBytes(1)
+        importCache.bufferString = table.concat(importCache.bufferData)
+        -- this:ClearHistory()
+        this:SetMaxBytes(0)
+        -- this:Insert(importCache.bufferString:sub(1, 500))
+        if #importCache.bufferString > 500 then
+            addon.settings:AddImportStatusHistory(fmt(L(
+                                                          "Loaded %d characters into import buffer, only 500 shown"),
+                                                      #importCache.bufferData))
         end
+        -- this:ClearFocus()
+        importCache.bufferData = {}
+        print("Processing " .. #importCache.bufferString)
+        importCache.widget.obj.button:Enable()
     end
 
     local function PasteHook(this, char)
-        -- if not importFrame:IsShown() then return end
-
         local time = GetTime()
         if importCache.lastBuffer ~= time then
             importCache.lastBuffer = time
-            -- importFrame:SetScript('OnUpdate', ProcessBuffer)
+            print(" this:SetScript('OnUpdate', ProcessBuffer)")
+            this:SetScript('OnUpdate', ProcessBuffer)
         end
 
+        -- print("tinsert(importCache.bufferData, char) = " .. char)
+        tinsert(importCache.bufferData, char)
     end
 
     self.gui.import.obj.frame:HookScript("OnShow", function()
@@ -533,12 +535,13 @@ function addon.settings:CreateImportOptionsPanel()
 
             if inputWidget and inputWidget.obj.label:GetText() ==
                 L('Guides to import') then
-                -- editBox:HookScript("OnEditFocusGained", EditBoxHook)
-                -- inputWidget.obj.editBox:SetMaxBytes(1)
-                inputWidget.obj.editBox:HookScript("OnChar",
-                                                   function(this, char)
-                    tinsert(importCache.bufferData, char)
-                end)
+                importCache.widget = inputWidget
+                inputWidget.obj.button:SetText(L("Import")) -- TODO locale
+                local editBox = inputWidget.obj.editBox
+
+                editBox:HookScript("OnEditFocusGained", EditBoxHook)
+                editBox:HookScript("OnChar", PasteHook)
+
                 break
             end
             n = n + 1
