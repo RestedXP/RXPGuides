@@ -91,7 +91,7 @@ function addon.settings:InitializeSettings()
             worldMapPinBackgroundOpacity = 0.35,
             batchSize = 5,
             phase = 6,
-            xpRate = 1,
+            xprate = 1,
             guideFontSize = 9,
 
             showEnabled = true
