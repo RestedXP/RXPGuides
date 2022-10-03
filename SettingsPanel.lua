@@ -362,16 +362,16 @@ function addon.settings:CreateImportOptionsPanel()
                 name = L('Guides to import'),
                 width = "full",
                 multiline = 5,
-                -- get = function()
-                --    print("importBox:get")
-                -- Prevent auto clearing on NotifyChange
-                --    return importCache.bufferString:sub(1, 500)
-                -- end,
+                get = function()
+                    print("importBox:get")
+                    -- Prevent auto clearing on NotifyChange
+                    return importCache.bufferString:sub(1, 500)
+                end,
                 validate = function()
                     local status, errorMsg = self.ProcessImportBox()
-
+                    importCache.bufferString = ""
                     if errorMsg then
-                        addon.settings:AddImportStatusHistory(errorMsg)
+                        self:AddImportStatusHistory(errorMsg)
                         return errorMsg
                     end
                     return status
@@ -508,10 +508,9 @@ function addon.settings:CreateImportOptionsPanel()
                                                           "Loaded %d characters into import buffer, only 500 shown"),
                                                       #importCache.bufferData))
         end
-        -- this:ClearFocus()
+        this:ClearFocus()
         importCache.bufferData = {}
         print("Processing " .. #importCache.bufferString)
-        importCache.widget.obj.button:Enable()
     end
 
     local function PasteHook(this, char)
@@ -541,7 +540,10 @@ function addon.settings:CreateImportOptionsPanel()
 
                 editBox:HookScript("OnEditFocusGained", EditBoxHook)
                 editBox:HookScript("OnChar", PasteHook)
-
+                editBox:HookScript("OnEditFocusLost", function()
+                    print("OnEditFocusLost")
+                    inputWidget.obj:Fire("OnTextChanged")
+                end)
                 break
             end
             n = n + 1
