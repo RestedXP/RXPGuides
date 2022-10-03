@@ -2373,7 +2373,7 @@ step
     .goto Ghostlands,72.4,29.7
     .turnin 9214 >> Turn in Shadowpine Weaponry
 step
-    >>Up the east ramp
+    >>Run up the east ramp
     .goto Ghostlands,72.6,31.5
     .turnin 9275 >> Turn in A Little Dash of Seasoning
 step
@@ -2495,7 +2495,7 @@ step
     .goto Ghostlands,31.7,74.3,40,0
     .goto Ghostlands,38.4,77.5,40,0
     .goto Ghostlands,31.7,74.3
-    >>Kill mobs for War on Deatholme
+    >>Kill Eyes, Nerubis and Wailers in Deatholme
     .complete 9220,1 --Kill Eye of Dar'Khan (x5)
     .complete 9220,2 --Kill Nerubis Centurion (x6)
     .complete 9220,3 --Kill Wailer (x6)
@@ -2521,6 +2521,7 @@ step
     .accept 9170 >> Accept Dar'Khan's Lieutenants
     .accept 9877 >> Accept A Restorative Draught
 step
+    >>Return to Tranquillien
     .goto Ghostlands,47.6,34.9
     .turnin 9877 >> Turn in A Restorative Draught
     .accept 9164 >>Accept Captives at Deatholme
@@ -2546,6 +2547,7 @@ step
     .goto Ghostlands,32.1,73.9,-1
     .skipgossip
 step
+    >>Kill Mirdoran
     .goto Ghostlands,37.4,79.3
     .complete 9170,1 --Kill Mirdoran the Fallen (x1)
 step
@@ -2683,7 +2685,7 @@ step << Paladin
 step << Paladin
     .goto Silvermoon City,91.2,36.9
     .trainer >> Train your class spells
-step << BloodElf
+step
     #label Hero
     .goto Silvermoon City,53.8,20.5
     .turnin 9328 >> Turn in Hero of the Sin'dorei << BloodElf
