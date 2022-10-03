@@ -1331,7 +1331,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.2,
                         min = 1,
                         max = 1.5,
-                        step = 0.5,
+                        step = 0.05,
                         confirm = function()
                             return L(
                                        "Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them") -- TODO locale
@@ -1505,12 +1505,6 @@ function addon.settings:DetectXPRate(heirloomCheck)
 
     if addon.gameVersion < 20000 then
         addon.settings.db.profile.SoM = CheckBuff(362859) -- SoM
-    elseif addon.gameVersion < 40000 then
-        if CheckBuff(377749) then -- Joyous Journeys
-            addon.settings.db.profile.xprate = 1.5
-        else -- Reset to 1 after buff goes away for Wrath
-            addon.settings.db.profile.xprate = 1
-        end
     end
 
     -- TODO heirloomCheck for periodic checking
