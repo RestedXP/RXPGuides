@@ -1069,7 +1069,7 @@ RXPGuides.RegisterGuide([[
 #next 27-30 Lower Barrens / Thousand Needles
 
 step << !Shaman
-    #completewith next
+    #completewith Zeppelin
     .goto Orgrimmar,54.1,68.5
     .home >> Set your Hearthstone to Orgrimmar
 step << Orc !Warlock wotlk
@@ -1081,6 +1081,7 @@ step << Troll !Warlock wotlk
 	.goto Durotar,55.2,75.5
 	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
 step
+    #label Zeppelin
 	>>Go to the Zeppelin tower. Take the zeppelin to Tirisfal
 	.goto Durotar,50.8,13.8
 	.zone Tirisfal Glades >>Arrive in Tirisfal Glades
