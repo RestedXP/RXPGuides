@@ -433,6 +433,7 @@ function addon:OnInitialize()
     addon.RXPFrame:SetScale(addon.settings.db.profile.windowScale)
     addon.arrowFrame:SetSize(32 * addon.settings.db.profile.arrowScale, 32 * addon.settings.db.profile.arrowScale)
     addon.arrowFrame.text:SetFont(addon.font, addon.settings.db.profile.arrowText, "OUTLINE")
+    addon.activeItemFrame:SetScale(addon.settings.db.profile.activeItemsScale)
 end
 
 function addon:OnEnable()
@@ -509,7 +510,8 @@ end
 --Tracks if a player is on a loading screen and pauses the main update loop
 --Some information is not available during zone transitions
 function addon:PLAYER_ENTERING_WORLD()
-    addon.isHidden = addon.settings and addon.settings.db.profile.hideGuideWindow
+    addon.isHidden = addon.settings and addon.settings.db.profile.hideGuideWindow or
+                                         not (addon.RXPFrame and addon.RXPFrame:IsShown())
 end
 
 function addon:PLAYER_LEAVING_WORLD()

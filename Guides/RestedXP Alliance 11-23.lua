@@ -1,13 +1,13 @@
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Alliance !Warlock
+<< Alliance
 #name 11-14 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor !Draenei
 #next 14-20 Bloodmyst
-#xprate <1.5 << Human Warlock
+#xprate <1.5 << Warlock
 step << !NightElf !Draenei wotlk
     #sticky
     .goto StormwindNew,21.8,56.2,20,0

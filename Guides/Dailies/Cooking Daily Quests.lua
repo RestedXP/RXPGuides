@@ -319,6 +319,12 @@ step
 	.collect 43137,1 --Aged Dalaran Limburger (1)
 	.isOnQuest 13103 << Alliance
 	.isOnQuest 13115 << Horde
+step 
+	>>Start looking for Half Full Dalaran Wine Glasses. These are scattered throughout Dalaran buildings. Check inside of the inn as well as upstairs
+	.goto Dalaran,54.70,31.57
+	.collect 43138,6 --Half Full Dalaran Wine Glass (6)
+    .isOnQuest 13103 << Alliance
+	.isOnQuest 13115 << Horde
 step << Alliance
 	.use 43139 >>Use the Empty Cheese Serving Platter in your bags to combine 6 Half Full Dalaran Wine Glasses and the Aged Dalaran Limburger to create a Wine and Cheese Platter
 	.complete 13103,1 --Wine and Cheese Platter (1)

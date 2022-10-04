@@ -1366,7 +1366,7 @@ RXPGuides.RegisterGuide([[
 #group +Cooking & Skinning
 #loop
 #hidewindow
-#subgroup Storm Peaks
+#subgroup The Storm Peaks
 #name Chunk o' Mammoth & Borean Leather
 step
     #sticky
@@ -1375,7 +1375,7 @@ step
 step
     #hidewindow
     +test
-    .loop 20,The Storm Peaks,60.6,61.7,59.9,57.5,57.9,58.7,56.4,63.4,53.5,65.5,56.0,68.2,60.6,61.7
+    .loop 20,The Storm Peaks,60.6,61.7,59.9,57.5,57.9,58.7,56.4,63.4,53.5,65.5,56.0,68.2,60.6,61.7,
     .openmap The Storm Peaks
 ]])
 
@@ -1393,7 +1393,7 @@ step
 step
     #hidewindow
     +test
-    .loop 20,The Storm Peaks,
+    .loop 20,The Storm Peaks,46.7,55.3,49.1,52.5,47.7,50.8,47.1,48.7,48.5,48.2,48.1,46.5,47.4,46.1,
     .openmap The Storm Peaks
 ]])
 
@@ -1448,7 +1448,7 @@ step
 step
     #hidewindow
     +test
-    .loop 20,The Storm Peaks,62.5,41.5
+    .loop 20,The Storm Peaks,62.5,41.5,63.2,39.6
     .openmap The Storm Peaks
 ]])
 
@@ -1898,7 +1898,7 @@ step
 step
     #hidewindow
     +test
-    .loop 20,The Storm Peaks,29.80,42.00,27.60,50.10,27.75,53.81,22.86,57.77,26.74,72.81,30.21,71.56,30.21,64.05,35.81,66.65,37.27,62.26,39.25,76.99,37.47,89.17,40.40,81.39,43.73,76.93,43.68,73.70,48.40,63.41,50.07,60.15,52.88,69.12,55.92,63.27,57.68,64.47,61.40,61.48,65.06,61.90,72.11,64.71,70.19,58.66,72.22,58.9,69.72,51.53,66.36,46.62,62.10,41.52,57.11,41.15,52.01,48.72,46.39,54.42,46.91,44.41,43.40,41.58,40.65,44.76,36.11,42.88,33.86,39.06,29.80,42.00
+    .loop 20,The Storm Peaks,48.6,68.3,53.7,65.8,56.0,67.5,55.9,64.1,58.6,58.6,63.4,59.4,63.9,63.1,68.8,62.8,76.3,64.7,77.0,62.7,72.3,59.7,71.9,47.7,70.1,50.6,67.5,47.7,63.9,49.4,62.3,45.9,63.7,43.6,67.0,45.0,68.2,43.1,68.1,39.9,62.2,41.7,58.3,39.7,57.6,42.0,58.7,46.1,55.1,49.5,46.8,55.2,47.3,62.9,41.5,61.5,37.7,62.1,38.3,53.7,47.2,36.8,38.5,44.1,35.3,40.9,34.3,50.0,30.3,45.1,30.7,42.1,29.5,38.5,26.0,43.2,27.3,57.7,22.3,56.8,23.2,62.2,28.1,63.3,26.9,67.0,30.0,65.9,35.9,66.4,36.9,80.8,32.0,83.1,31.9,86.7,35.7,88.2,42.9,86.1,46.6,79.6,39.6,78.2,41.7,69.6,48.6,68.3
     .openmap The Storm Peaks
 ]])
 
@@ -1916,6 +1916,205 @@ step
 step
     #hidewindow
     +test
-    .loop 20,The Storm Peaks,28.00,42.00,27.40,50.10,27.75,53.81,22.76,57.77,26.74,72.81,30.21,71.56,30.21,64.05,35.81,66.65,37.17,62.26,39.25,76.99,37.47,89.17,40.40,81.39,43.73,76.93,43.68,73.70,48.40,63.41,50.07,60.15,52.88,69.12,55.92,63.27,57.68,64.47,61.40,61.48,65.06,61.90,72.11,64.71,70.19,58.66,72.07,51.74,69.72,51.53,66.36,46.62,62.10,41.52,57.11,41.15,52.01,48.72,46.39,54.42,46.91,44.41,43.40,41.58,40.65,44.76,36.11,42.88,33.86,39.06,28.00,42.00
+    .loop 20,The Storm Peaks,48.6,68.3,53.7,65.8,56.0,67.5,55.9,64.1,58.6,58.6,63.4,59.4,63.9,63.1,68.8,62.8,76.3,64.7,77.0,62.7,72.3,59.7,71.9,47.7,70.1,50.6,67.5,47.7,63.9,49.4,62.3,45.9,63.7,43.6,67.0,45.0,68.2,43.1,68.1,39.9,62.2,41.7,58.3,39.7,57.6,42.0,58.7,46.1,55.1,49.5,51.6,49.3,46.8,55.2,48.8,61.8,,47.3,62.9,41.5,61.5,37.7,62.1,38.3,53.7,47.2,36.8,38.5,44.1,35.3,40.9,34.3,50.0,30.3,45.1,30.7,42.1,29.5,38.5,26.0,43.2,27.3,57.7,22.3,56.8,23.2,62.2,28.1,63.3,26.9,67.0,25.6,71.3,26.7,73.0,30.0,70.3,30.0,65.9,35.9,66.4,36.9,80.8,32.0,83.1,31.9,86.7,35.7,88.2,42.9,86.1,46.6,79.6,39.6,78.2,41.7,69.6,48.6,68.3
     .openmap The Storm Peaks
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Mining & Herbalism
+#loop
+#hidewindow
+#subgroup Wintergrasp
+#name Mining
+step
+    #sticky
+    .waypoint Wintergrasp,50,50
+    .zone Wintergrasp >> Head to Wintergrasp
+step
+    #hidewindow
+    +test
+    .loop 20,Wintergrasp,17.6,39.4,34.3,14.7,39.1,11.7,40.4,16.9,40.0,24.2,45.1,31.7,47.7,31.6,47.6,41.1,50.2,47.9,50.8,38.7,55.2,31.6,58.1,23.2,61.9,18.4,70.9,22.5,73.9,28.8,74.2,43.0,83.1,44.0,81.2,51.6,73.0,48.9,65.0,53.3,78.4,59.0,78.7,65.8,85.6,69.4,76.7,86.6,76.5,72.8,65.0,69.8,57.7,83.4,52.9,81.6,60.3,53.9,39.9,58.6,41.1,51.1,37.3,46.6,30.3,39.4,32.4,54.7,26.7,61.5,21.6,57.3,20.7,69.2,11.6,65.1,7.5,65.5,9.5,49.3,22.7,47.6,15.7,43.7,17.6,39.4
+    .openmap Wintergrasp
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Mining & Herbalism
+#loop
+#hidewindow
+#subgroup Wintergrasp
+#name Herbalism
+step
+    #sticky
+    .waypoint Wintergrasp,50,50
+    .zone Wintergrasp >> Head to Wintergrasp
+step
+    #hidewindow
+    +test
+    .loop 20,Wintergrasp,14.0,57.9,9.4,54.4,15.8,53.0,19.0,49.2,20.1,44.1,29.2,41.8,24.3,33.4,27.1,26.6,32.1,28.7,34.3,18.2,38.7,28.0,47.3,36.0,40.3,42.9,40.8,51.3,44.7,49.9,48.4,43.4,53.5,48.8,55.2,40.3,55.4,31.7,61.8,33.5,59.0,47.8,64.3,49.3,67.2,47.4,66.7,37.0,62.6,20.0,69.4,28.4,75.1,38.0,74.1,42.7,79.2,42.0,79.9,47.4,72.5,50.5,73.7,68.6,59.6,79.0,60.0,69.3,60.8,61.6,55.8,56.8,51.9,75.5,46.9,76.3,39.1,58.3,35.8,58.2,37.6,73.4,25.8,70.4,20.3,58.8,14.0,57.9
+    .openmap Wintergrasp
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Mining & Herbalism
+#loop
+#hidewindow
+#subgroup Wintergrasp
+#name Mining & Herbalism
+step
+    #sticky
+    .waypoint Wintergrasp,50,50
+    .zone Wintergrasp >> Head to Wintergrasp
+step
+    #hidewindow
+    +test
+    .loop 20,Wintergrasp,7.0,66.8,9.4,51.4,14.4,58.2,14.4,45.6,18.0,39.6,21.2,43.2,19.0,49.0,21.3,53.8,24.4,45.6,31.6,46.2,29.9,38.2,23.1,32.9,26.7,23.9,32.6,27.8,30.6,19.2,40.2,19.1,38.8,22.3,42.0,29.8,47.3,34.8,40.0,39.4,41.9,51.8,45.3,48.6,44.9,43.7,52.3,48.1,55.4,43.5,51.0,40.9,55.2,33.5,59.8,27.1,62.4,18.8,70.8,22.4,62.3,37.6,59.4,48.2,66.9,45.6,70.5,32.5,74.0,37.9,75.1,44.0,82.7,43.2,80.8,49.8,75.0,48.8,64.8,53.1,77.5,58.8,80.6,67.6,86.0,69.8,76.3,86.7,77.5,72.5,74.4,65.3,66.6,64.5,61.4,79.2,57.2,79.8,60.1,67.8,61.2,56.3,56.1,55.5,53.8,73.2,46.3,74.3,46.6,64.9,49.2,57.6,35.4,56.8,37.1,72.3,26.1,68.6,32.7,63.6,30.7,56.8,24.9,61.1,20.7,60.6,17.2,66.8,7.0,66.8
+    .openmap Wintergrasp
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Wintergrasp
+#name Eternal Life
+step
+    #sticky
+    .waypoint Wintergrasp,50,50
+    .zone Wintergrasp >> Head to Wintergrasp
+step
+    #hidewindow
+    +test
+    .loop 20,Wintergrasp,5.8,66.3,4.5,58.6,8.2,56.3,13.8,60.3,15.2,63.7,13.7,66.7,5.8,66.3
+    .openmap Wintergrasp
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Wintergrasp
+#name Eternal Fire
+step
+    #sticky
+    .waypoint Wintergrasp,50,50
+    .zone Wintergrasp >> Head to Wintergrasp
+step
+    #hidewindow
+    +test
+    .loop 20,Wintergrasp,80.7,74.6,84.8,76.5,88.4,71.1,87.5,63.7,83.1,63.3,80.1,69.0,80.7,74.6
+    .openmap Wintergrasp
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Wintergrasp
+#name Eternal Earth
+step
+    #sticky
+    .waypoint Wintergrasp,50,50
+    .zone Wintergrasp >> Head to Wintergrasp
+step
+    #hidewindow
+    +test
+    .loop 20,Wintergrasp,62.8,57.0,63.0,69.8,59.7,71.2,54.1,56.3,58.3,53.7,62.0,54.6,62.8,57.0
+    .loop 20,Wintergrasp,62.6,46.8,63.0,51.0,58.6,50.4,54.4,43.3,58.1,29.3,65.1,30.2,65.5,33.2,60.5,34.9,60.8,43.5,62.6,46.8
+    .openmap Wintergrasp
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Wintergrasp
+#name Eternal Air
+step
+    #sticky
+    .waypoint Wintergrasp,50,50
+    .zone Wintergrasp >> Head to Wintergrasp
+step
+    #hidewindow
+    +test
+    .loop 20,Wintergrasp,77.4,86.0,77.3,75.8,70.3,72.5,62.8,80.7,64.7,89.3,62.8,80.7,57.2,79.3,54.3,82.0,49.3,83.0,42.4,82.4,34.8,72.2,30.1,71.7,26.9,72.3
+    .openmap Wintergrasp
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Northrend Farming
+#loop
+#hidewindow
+#subgroup Wintergrasp
+#name Eternal Water
+step
+    #sticky
+    .waypoint Wintergrasp,50,50
+    .zone Wintergrasp >> Head to Wintergrasp
+step
+    #hidewindow
+    +test
+    .loop 20,Wintergrasp,33.3,20.9,33.8,25.6,35.9,27.9,31.1,28.5,29.2,23.5,25.8,27.2,28.2,35.3,22.8,38.8,27.2,45.3,27.2,49.2,37.7,53.6,46.2,57.9,52.1,54.1,57.1,51.3,62.4,52.8,64.5,56.0,70.9,47.8,70.1,37.7,75.8,40.6,78.5,46.1
+    .openmap Wintergrasp
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Mining & Herbalism
+#loop
+#hidewindow
+#subgroup Icecrown
+#name Mining
+step
+    #sticky
+    .waypoint Icecrown,50,50
+    .zone Icecrown >> Head to Icecrown
+step
+    #hidewindow
+    +test
+    .loop 20, Icecrown,65.6,35.1,59.3,29.4,54.9,38.6,47.8,35.1,42.8,37.8,39.3,33.4,37.9,36.2,37.2,41.7,41.6,41.1,38.0,50.8,37.9,57.1,40.2,59.8,31.5,58.1,30.8,64.5,36.2,68.9,39.9,65.6,49.6,61.4,48.5,51.2,56.5,44.7,65.6,59.8,67.1,72.2,72.0,63.8,74.2,65.0,77.8,64.3,79.3,57.0,75.8,46.4,67.6,46.5,67.3,42.9,74.1,40.1,74.7,35.3,65.6,35.1
+    .openmap Icecrown
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Mining & Herbalism
+#loop
+#hidewindow
+#subgroup Icecrown
+#name Herbalism
+step
+    #sticky
+    .waypoint Icecrown,50,50
+    .zone Icecrown >> Head to Icecrown
+step
+    #hidewindow
+    +test
+    .loop 20, Icecrown,64.6,56.4,62.0,46.7,57.0,44.7,53.8,41.1,49.1,47.6,47.8,56.4,53.0,72.7,49.1,74.8,44.7,60.9,41.1,59.7,39.3,53.0,42.8,50.3,42.6,40.3,35.5,44.1,28.1,45.5,28.4,40.3,29.6,31.9,31.2,27.0,35.6,29.1,45.3,35.1,47.5,38.1,58.6,36.7,65.3,40.7,70.5,40.6,73.8,30.1,76.1,35.1,74.7,46.4,67.9,52.2,71.0,62.3,70.6,67.7,67.4,68.7,67.6,59.7,64.6,56.4
+    .openmap Icecrown
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#group +Mining & Herbalism
+#loop
+#hidewindow
+#subgroup Icecrown
+#name Mining & Herbalism
+step
+    #sticky
+    .waypoint Icecrown,50,50
+    .zone Icecrown >> Head to Icecrown
+step
+    #hidewindow
+    +test
+    .loop 20, Icecrown,65.5,39.2,73.9,23.8,76.6,38.6,68.8,42.8,71.2,47.7,74.6,47.9,69.6,55.9,70.9,62.3,77.0,58.5,79.9,63.6,71.6,67.3,67.8,69.2,66.5,57.8,60.1,46.4,56.1,42.7,47.1,51.8,48.1,65.3,52.2,74.7,49.1,74.8,45.4,65.8,44.2,59.8,38.5,59.0,36.2,70.2,31.2,62.7,32.7,55.4,37.8,55.1,41.3,46.0,42.3,39.3,40.4,32.9,38.2,36.6,38.8,41.3,35.0,45.7,28.6,45.7,28.6,37.9,31.0,27.6,33.9,26.5,45.4,34.7,49.0,38.1,56.4,37.2,59.5,30.0,63.7,33.3,63.6,38.4,65.5,39.2
+    .openmap Icecrown
 ]])
