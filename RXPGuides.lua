@@ -433,6 +433,7 @@ function addon:OnInitialize()
     addon.RXPFrame:SetScale(addon.settings.db.profile.windowScale)
     addon.arrowFrame:SetSize(32 * addon.settings.db.profile.arrowScale, 32 * addon.settings.db.profile.arrowScale)
     addon.arrowFrame.text:SetFont(addon.font, addon.settings.db.profile.arrowText, "OUTLINE")
+    addon.activeItemFrame:SetScale(addon.settings.db.profile.activeItemsScale)
 end
 
 function addon:OnEnable()

@@ -93,6 +93,7 @@ function addon.settings:InitializeSettings()
             phase = 6,
             xprate = 1,
             guideFontSize = 9,
+            activeItemsScale = 1,
 
             showEnabled = true
         }
@@ -751,6 +752,20 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             _G.ReloadUI()
+                        end
+                    },
+                    activeItemsScale = {
+                        name = L("Active Item Scale"), -- TODO locale
+                        desc = L("Scale of the Active Item frame"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.5,
+                        min = 0.8,
+                        max = 2,
+                        step = 0.05,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.activeItemFrame:SetScale(value)
                         end
                     },
                     automationHeader = {
