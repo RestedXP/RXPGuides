@@ -128,6 +128,9 @@ function addon.RenderFrame()
     if addon.currentGuide then addon.ReloadGuide() end
 end
 
+RXPFrame:SetScript("OnShow",addon.PLAYER_ENTERING_WORLD)
+RXPFrame:SetScript("OnHide",addon.PLAYER_LEAVING_WORLD)
+
 RXPFrame:Show()
 
 RXPFrame:SetMovable(true)
