@@ -705,9 +705,6 @@ step
     .turnin 6401 >> Turn in Kaya's Alive
     .isOnQuest 6401
 step
-    .goto Stonetalon Mountains,45.1,59.8
-    .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
-step
     .isOnQuest 1095
     >> Head back to the goblin hut behind the hill
     .goto Stonetalon Mountains,59.0,62.6
