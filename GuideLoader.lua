@@ -89,17 +89,19 @@ function RXPG.AddGuide(guide)
     end
 
     if loadedGuide and addon.settings.db.profile.debug then
+        local debugText
         if guide.version == loadedGuide.version then
-            addon.comms.PrettyPrint('Overwriting (%s) v%d', guide.key,
-                                    guide.version)
+            debugText = fmt('Overwriting (%s) v%d', guide.key, guide.version)
         elseif guide.version > loadedGuide.version then
-            addon.comms.PrettyPrint(
-                'Newer guide for (%s) already exists (%s) >= checkGuide (%d)',
-                guide.key, guide.version, loadedGuide.version)
+            debugText = fmt(
+                            'Newer guide for (%s) already exists (%s) >= checkGuide (%d)',
+                            guide.key, guide.version, loadedGuide.version)
         else
-            addon.comms.PrettyPrint('Loading new version for (%s) v%d',
-                                    guide.key, guide.version)
+            debugText = fmt('Loading new version for (%s) v%d', guide.key,
+                            guide.version)
         end
+
+        addon.settings:UpdateImportStatusHistory(debugText)
     end
 
     RXPG.RegisterGroup(guide.group)
@@ -397,7 +399,7 @@ end
 
 local importBuffer = {}
 addon.importBufferSize = 0
-function RXPG.ImportString(str, frame)
+function RXPG.ImportString(str)
     addon.importBufferSize = 0
     local errorMsg
     local nGuides = str:match("^(%d+)|")
@@ -445,24 +447,18 @@ function RXPG.ImportString(str, frame)
 
         while RXPG.ProcessInputBuffer() do end
 
-        if errorMsg then
-            if addon.settings.db.profile.debug then
-                addon.comms.PrettyPrint(errorMsg, addon.importBufferSize,
-                                        nGuides)
-            end
-            return false, errorMsg:format(addon.importBufferSize, nGuides)
-        else
-            if addon.settings.db.profile.debug then
-                addon.comms.PrettyPrint("ImportString: returning true")
-            end
-            return true
+        if not errorMsg then return true end
+
+        if addon.settings.db.profile.debug then
+            addon.comms.PrettyPrint(errorMsg, addon.importBufferSize, nGuides)
         end
+        return false, errorMsg:format(addon.importBufferSize, nGuides)
     else
         if addon.settings.db.profile.debug then
             addon.comms.PrettyPrint(L("Error: Total guides loaded: %d/%s"),
                                     addon.importBufferSize, nGuides)
         end
-        return false, L("Error: Unable to parse guides")
+        return false, L("Error: Unable to parse guides") -- TODO locale
     end
 end
 
@@ -473,7 +469,7 @@ function RXPG.ProcessInputBuffer()
         parseGuide = RXPGuides.ImportGuide(parseGuide)
 
         if type(parseGuide) == "table" and parseGuide.name then
-            addon.settings:AddImportStatusHistory(
+            addon.settings:UpdateImportStatusHistory(
                 L("Loading Guides") .. "... (%d/%d)",
                 addon.importBufferSize - #importBuffer, addon.importBufferSize)
         end
@@ -481,7 +477,7 @@ function RXPG.ProcessInputBuffer()
     end
 
     if addon.importBufferSize > 0 then
-        addon.settings:AddImportStatusHistory(L("Guides Loaded Successfully"))
+        addon.settings:UpdateImportStatusHistory(L("Guides Loaded Successfully"))
         addon.importBufferSize = 0
     end
 

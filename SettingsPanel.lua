@@ -281,22 +281,21 @@ local function SetProfileOption(info, value)
     addon.settings.db.profile[info[#info]] = value
 end
 
-function addon.settings.ProcessImportBox()
+function addon.settings:ProcessImportBox()
     local guidesLoaded, errorMsg = addon.RXPG.ImportString(
-                                       importCache.bufferString,
-                                       importCache.triggerFrame)
+                                       importCache.bufferString)
     if guidesLoaded and not errorMsg then
-        addon.settings.gui.selectedDeleteGuide = ""
+        self.gui.selectedDeleteGuide = ""
         return true
     else
-        if addon.settings.db.profile.debug then
+        if self.db.profile.debug then
             addon.comms.PrettyPrint("guidesLoaded false, errorMsg = ", errorMsg)
         end
         local relog = ""
         if not RXPData.cache then
             relog = "\n" .. L("Please restart your game client and try again")
         end
-        -- importCache.triggerFrame:SetScript('OnUpdate', ProcessBuffer)
+
         return false, errorMsg or
                    (L("Failed to Import Guides: Invalid Import String") .. relog)
     end
@@ -327,10 +326,10 @@ function addon.settings.GetImportedGuides()
 
 end
 
-function addon.settings:AddImportStatusHistory(data, ...)
+function addon.settings:UpdateImportStatusHistory(data, ...)
     if type(data) == "table" then
         self.gui.importStatusHistory = data
-    else
+    elseif type(data) == "string" then
         tinsert(self.gui.importStatusHistory, 1, fmt(data, ...))
     end
 
@@ -367,10 +366,10 @@ function addon.settings:CreateImportOptionsPanel()
                     return importCache.bufferString:sub(1, 500)
                 end,
                 validate = function()
-                    local status, errorMsg = self.ProcessImportBox()
+                    local status, errorMsg = self:ProcessImportBox()
                     importCache.bufferString = ""
                     if errorMsg then
-                        self:AddImportStatusHistory(errorMsg)
+                        self:UpdateImportStatusHistory(errorMsg)
                         return errorMsg
                     end
                     return status
@@ -442,7 +441,7 @@ function addon.settings:CreateImportOptionsPanel()
                 func = function() _G.ReloadUI() end
             },
             loadStatusBox = {
-                order = 99,
+                order = 90,
                 name = _G.HISTORY,
                 type = 'group',
                 inline = true,
@@ -461,6 +460,28 @@ function addon.settings:CreateImportOptionsPanel()
                         fontSize = "medium"
                     }
                 }
+            },
+            debugData = {
+                order = 91,
+                name = _G.BINDING_HEADER_DEBUG,
+                type = "header",
+                width = "full",
+                hidden = function()
+                    return not addon.settings.db.profile.debug
+                end
+            },
+            battleNetID = {
+                order = 91.1,
+                name = function()
+                    local _, bt = BNGetInfo()
+                    return fmt("Battle.net ID: %s", bt)
+                end,
+                type = "description",
+                width = "full",
+                fontSize = "small",
+                hidden = function()
+                    return not addon.settings.db.profile.debug
+                end
             }
         }
     }
@@ -480,8 +501,8 @@ function addon.settings:CreateImportOptionsPanel()
     iconFrameParent.icon:SetPoint("TOPRIGHT", -5, -5)
 
     if notOnline() then
-        addon.settings:AddImportStatusHistory(L(
-                                                  "Battle.net unreachable, please exit your client, restart Battle.net, and try again"))
+        self:UpdateImportStatusHistory(L(
+                                           "Battle.net unreachable, please exit your client, restart Battle.net, and try again"))
     end
 
     local function EditBoxHook(this)
@@ -492,39 +513,35 @@ function addon.settings:CreateImportOptionsPanel()
             this.isMaxBytesSet = false
             this:SetMaxBytes(0)
         end
-        -- importCache.bufferString = ""
-        -- importCache.bufferData = {}
     end
 
     local function ProcessBuffer(this)
         this:SetScript('OnUpdate', nil)
         importCache.bufferString = table.concat(importCache.bufferData)
-        -- this:ClearHistory()
         this:SetMaxBytes(0)
-        -- this:Insert(importCache.bufferString:sub(1, 500))
         if #importCache.bufferString > 500 then
-            addon.settings:AddImportStatusHistory(L(
-                                                      "Loaded %d characters into import buffer, %d shown"),
-                                                  #importCache.bufferString, 500)
+            addon.settings:UpdateImportStatusHistory(L(
+                                                         "Loaded %d characters into import buffer, %d shown"),
+                                                     #importCache.bufferString,
+                                                     500)
         else
-            addon.settings:AddImportStatusHistory(L(
-                                                      "Loaded %d characters into import buffer, %d shown"),
-                                                  #importCache.bufferString, 500)
+            addon.settings:UpdateImportStatusHistory(L(
+                                                         "Loaded %d characters into import buffer, %d shown"),
+                                                     #importCache.bufferString,
+                                                     500)
         end
         this:ClearFocus()
         importCache.bufferData = {}
-        print("Processing " .. #importCache.bufferString)
     end
 
     local function PasteHook(this, char)
         local time = GetTime()
         if importCache.lastBuffer ~= time then
             importCache.lastBuffer = time
-            print(" this:SetScript('OnUpdate', ProcessBuffer)")
             this:SetScript('OnUpdate', ProcessBuffer)
+            self:UpdateImportStatusHistory(true)
         end
 
-        -- print("tinsert(importCache.bufferData, char) = " .. char)
         tinsert(importCache.bufferData, char)
     end
 
