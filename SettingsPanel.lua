@@ -475,7 +475,7 @@ function addon.settings:CreateImportOptionsPanel()
                 order = 91.1,
                 name = function()
                     local _, bt = BNGetInfo()
-                    return fmt("Battle.net ID: %s", bt)
+                    return fmt("Battle.net ID: %s", bt or 'Offline')
                 end,
                 type = "description",
                 width = "full",
