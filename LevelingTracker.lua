@@ -381,6 +381,9 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
         insertData.arg2 = insertData.text
 
         tinsert(sparse[parentIndex].menuList, insertData)
+
+        table.sort(sparse[parentIndex].menuList,
+                   function(k1, k2) return k1.arg1 < k2.arg1 end)
     end
 
     local menu = {}
