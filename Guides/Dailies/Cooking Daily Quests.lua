@@ -408,9 +408,8 @@ step << Horde
 	.complete 13113,1 --Northern Stew (4)
 	.isOnQuest 13113
 step
-	>>Talk to Ranid Glowergold in Dalaran
-	.goto Dalaran,36.42,29.64,10,0
-	.goto Dalaran,36.62,27.88
+	>>Talk to Arille Azuregaze in Dalaran
+	.goto Dalaran,48.37,37.47
 	.turnin 13101 >>Convention at the Legerdemain << Alliance
 	.isQuestComplete 13101 << Alliance
 	.turnin 13113 >>Convention at the Legerdemain << Horde
