@@ -302,7 +302,7 @@ function addon.UpdateItemFrame(itemFrame)
     -- print("s:",i)
     if i > 0 then itemFrame:SetAlpha(1) end
 
-    if i == 0 or addon.settings.db.profile.disableItemWindow then
+    if i == 0 or addon.settings.db.profile.disableItemWindow or not addon.settings.db.profile.showEnabled then
         itemFrame:Hide()
     else
         itemFrame:Show()
