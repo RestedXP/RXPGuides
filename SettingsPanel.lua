@@ -15,7 +15,7 @@ local importCache = {
     bufferData = {},
     lastBuffer = 0,
     widget = {},
-    triggerFrame = nil
+    workerFrame = addon.RXPFrame
 }
 
 -- Alias addon.locale.Get
@@ -284,8 +284,15 @@ local function SetProfileOption(info, value)
 end
 
 function addon.settings:ProcessImportBox()
+    if not importCache.workerFrame:IsShown() then
+        importCache.workerFrame:Show()
+    end
+
+    if not addon.settings.db.profile.showEnabled then self.ToggleActive() end
+
     local guidesLoaded, errorMsg = addon.RXPG.ImportString(
-                                       importCache.bufferString)
+                                       importCache.bufferString,
+                                       importCache.workerFrame)
     if guidesLoaded and not errorMsg then
         self.gui.selectedDeleteGuide = ""
         return true
