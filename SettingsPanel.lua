@@ -11,11 +11,12 @@ local fmt, tostr, next = string.format, tostring, next
 
 local importCache = {
     bufferString = "",
+    displayString = "",
     bufferData = {},
     lastBuffer = 0,
-    widget = {}
+    widget = {},
+    triggerFrame = nil
 }
--- local importFrame
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -369,6 +370,9 @@ function addon.settings:CreateImportOptionsPanel()
                 validate = function()
                     local status, errorMsg = self:ProcessImportBox()
                     importCache.bufferString = ""
+
+                    -- Gets disabled on paste, re-enable after processing completes
+                    importCache.widget.obj.editBox:Enable()
                     if errorMsg then
                         self:UpdateImportStatusHistory(errorMsg)
                         return errorMsg
@@ -508,6 +512,8 @@ function addon.settings:CreateImportOptionsPanel()
 
     local function EditBoxHook(this)
         if this:IsShown() then
+            -- Prevent double paste input lag
+            this:SetText("")
             this.isMaxBytesSet = true
             this:SetMaxBytes(1)
         elseif this.isMaxBytesSet then
@@ -527,9 +533,8 @@ function addon.settings:CreateImportOptionsPanel()
                                                      500)
         else
             addon.settings:UpdateImportStatusHistory(L(
-                                                         "Loaded %d characters into import buffer, %d shown"),
-                                                     #importCache.bufferString,
-                                                     500)
+                                                         "Loaded %d characters into import buffer"),
+                                                     #importCache.bufferString)
         end
         this:ClearFocus()
         importCache.bufferData = {}
@@ -537,10 +542,13 @@ function addon.settings:CreateImportOptionsPanel()
 
     local function PasteHook(this, char)
         local time = GetTime()
+        if this:IsEnabled() then
+            -- Disable input while processing paste
+            this:Disable()
+        end
         if importCache.lastBuffer ~= time then
             importCache.lastBuffer = time
             this:SetScript('OnUpdate', ProcessBuffer)
-            self:UpdateImportStatusHistory(true)
         end
 
         tinsert(importCache.bufferData, char)
