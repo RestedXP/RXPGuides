@@ -627,6 +627,7 @@ step
     .turnin 165 >> Turn in The Hermit
     .accept 148 >> Accept Supplies from Darkshire
 step
+    .isOnQuest 226
     >>Run up the coast killing wolves
     .xp <25,1
     .goto Duskwood,17.6,24.6
