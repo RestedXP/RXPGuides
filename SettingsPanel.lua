@@ -377,6 +377,7 @@ function addon.settings:CreateImportOptionsPanel()
                 validate = function()
                     local status, errorMsg = self:ProcessImportBox()
                     importCache.bufferString = ""
+                    importCache.bufferData = {}
 
                     -- Gets disabled on paste, re-enable after processing completes
                     importCache.widget.obj.editBox:Enable()
