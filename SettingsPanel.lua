@@ -33,18 +33,15 @@ function addon.settings.ChatCommand(input)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
     elseif input == "debug" then
         addon.settings.db.profile.debug = not addon.settings.db.profile.debug
-
-        if addon.settings.db.profile.debug then
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-        end
     elseif input == "splits" then
         addon.tracker:ToggleLevelSplits()
     elseif input == "show" or input == "hide" or input == "toggle" then
         addon.settings.ToggleActive()
-    elseif input == "support" or input == "ticket" or input == "bug" or input ==
-        "feedback" then
+    elseif input == "bug" or input == "feedback" then
         addon.comms.OpenBugReport()
+    elseif input == "help" then
+        addon.comms.PrettyPrint(_G.HELP .. "\n" ..
+                                    addon.help["What are command the line options?"])
     else
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
