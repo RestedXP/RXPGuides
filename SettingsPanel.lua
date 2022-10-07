@@ -734,6 +734,16 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame:SetShown(not value)
                         end
                     },
+                    showEnabled = {
+                        name = L("Show all Enabled Frames"),
+                        desc = L("Toggles all addon frames on or off"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.11,
+                        set = function(info, value)
+                            self.ToggleActive()
+                        end
+                    },
                     disableItemWindow = {
                         name = L("Hide Active Item window"),
                         type = "toggle",
