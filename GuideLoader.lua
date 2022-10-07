@@ -453,12 +453,9 @@ function RXPG.ImportString(str, workerFrame)
 
         return false, errorMsg:format(addon.importBufferSize, nGuides)
     else
-        if addon.settings.db.profile.debug then
-            addon.settings:UpdateImportStatusHistory(L(
-                                                         "Error: Total guides loaded: %d/%s"),
-                                                     addon.importBufferSize,
-                                                     nGuides)
-        end
+        addon.settings:UpdateImportStatusHistory(L(
+                                                     "Error: Total guides loaded: %d/%s"),
+                                                 addon.importBufferSize, nGuides)
         return false, L("Error: Unable to parse guides") -- TODO locale
     end
 end
