@@ -859,7 +859,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.5,
                         min = 0.8,
-                        max = 2,
+                        max = 3,
                         step = 0.05,
                         set = function(info, value)
                             SetProfileOption(info, value)
