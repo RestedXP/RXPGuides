@@ -294,9 +294,6 @@ function addon.settings:ProcessImportBox()
         self.gui.selectedDeleteGuide = ""
         return true
     else
-        if self.db.profile.debug then
-            addon.comms.PrettyPrint("guidesLoaded false, errorMsg = ", errorMsg)
-        end
         local relog = ""
         if not RXPData.cache then
             relog = "\n" .. L("Please restart your game client and try again")

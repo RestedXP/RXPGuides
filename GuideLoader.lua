@@ -236,7 +236,8 @@ local function CheckDataIntegrity(str, h1, mode)
 
             if str then return h1 % 4294967296 == addon.A32(str), str end
 
-            return false, L('Account mismatch') -- TODO locale
+            return false, L(
+                       'Account mismatch, import string does not apply to current account') -- TODO locale
         end
     else
         return addon.A32(str)
