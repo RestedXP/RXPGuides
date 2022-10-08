@@ -787,7 +787,7 @@ end
 
 function addon.ResetArrowPosition()
     addon.settings.db.profile.disableArrow = false
-    if not addon.settings.db.profile.toggleActive then
+    if not addon.settings.db.profile.showEnabled then
         addon.settings.ToggleActive()
     end
     af:ClearAllPoints()
