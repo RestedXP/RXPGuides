@@ -215,7 +215,7 @@ local function CheckDataIntegrity(str, h1, mode)
             local n = addon.ReadCacheData("buffer")
             if not n then
                 if addon.settings.db.profile.debug then
-                    addon.comms.PrettyPrint('Failed to ReadCacheData')
+                    addon.comms.PrettyPrint('Failed to ReadCacheData') -- TODO locale
                 end
                 return false, L('Failed to ReadCacheData')
             end
@@ -233,7 +233,10 @@ local function CheckDataIntegrity(str, h1, mode)
             end
 
             str = LibDeflate:DecompressZlib(table.concat(buffer))
-            return str and h1 % 4294967296 == addon.A32(str), str
+
+            if str then return h1 % 4294967296 == addon.A32(str), str end
+
+            return false, L('Account mismatch') -- TODO locale
         end
     else
         return addon.A32(str)
@@ -400,7 +403,6 @@ end
 local importBuffer = {}
 addon.importBufferSize = 0
 function RXPG.ImportString(str, workerFrame)
-    addon.importBufferSize = 0
     local errorMsg
     local nGuides = str:match("^(%d+)|")
     local base = str:match("|(%d+)$")
@@ -427,16 +429,15 @@ function RXPG.ImportString(str, workerFrame)
         if validData and dataOrError then
             for v in dataOrError:gmatch("[^%z]+") do
                 table.insert(importBuffer, v)
-                addon.importBufferSize = addon.importBufferSize + 1
             end
         else
-            if addon.settings.db.profile.debug then
-                addon.comms.PrettyPrint("invalid data")
-            end
-            errorMsg = L("Error parsing guides\nTotal guides loaded: %d/%s")
+            errorMsg = (dataOrError or 'Failed integrity check') .. '\n' ..
+                           L("Total guides loaded: %d/%s") -- TODO locale
             break
         end
     end
+
+    addon.importBufferSize = #importBuffer
 
     if addon.importBufferSize > 0 then
         if workerFrame then
@@ -444,18 +445,11 @@ function RXPG.ImportString(str, workerFrame)
         else
             while RXPG.ProcessInputBuffer() do end
         end
-        if not errorMsg then return true end
-
-        addon.settings:UpdateImportStatusHistory(errorMsg,
-                                                 addon.importBufferSize, nGuides)
-
-        return false, errorMsg:format(addon.importBufferSize, nGuides)
-    else
-        addon.settings:UpdateImportStatusHistory(L(
-                                                     "Error: Total guides loaded: %d/%s"),
-                                                 addon.importBufferSize, nGuides)
-        return false, L("Error: Unable to parse guides") -- TODO locale
     end
+
+    if not errorMsg then return true end
+
+    return false, errorMsg:format(addon.importBufferSize, nGuides)
 end
 
 function RXPG.ProcessInputBuffer(workerFrame)
