@@ -39,18 +39,15 @@ function addon.settings.ChatCommand(input)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
     elseif input == "debug" then
         addon.settings.db.profile.debug = not addon.settings.db.profile.debug
-
-        if addon.settings.db.profile.debug then
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-        end
     elseif input == "splits" then
         addon.tracker:ToggleLevelSplits()
     elseif input == "show" or input == "hide" or input == "toggle" then
         addon.settings.ToggleActive()
-    elseif input == "support" or input == "ticket" or input == "bug" or input ==
-        "feedback" then
+    elseif input == "bug" or input == "feedback" then
         addon.comms.OpenBugReport()
+    elseif input == "help" then
+        addon.comms.PrettyPrint(_G.HELP .. "\n" ..
+                                    addon.help["What are command the line options?"])
     else
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
@@ -73,7 +70,7 @@ function addon.settings:InitializeSettings()
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9,
             enableMinimapButton = true,
-            minimap = {show = true, minimapPos = 146},
+            minimap = {minimapPos = 146},
 
             --
             enableQuestAutomation = true,
@@ -724,11 +721,34 @@ function addon.settings:CreateAceOptionsPanel()
                         values = {top = "Top", bottom = "Bottom"},
                         sorting = {"top", "bottom"},
                         width = optionsWidth,
-                        order = 1.9,
+                        order = 1.81,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.SetStepFrameAnchor()
                         end
+                    },
+                    xprate = {
+                        name = L("Experience rates"),
+                        desc = L(
+                            "Adjusts the guide routes to match increased xp rate bonuses"),
+                        type = "range",
+                        width = "normal",
+                        order = 1.82,
+                        min = 1,
+                        max = 1.5,
+                        step = 0.05,
+                        confirm = function()
+                            return L(
+                                       "Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them") -- TODO locale
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
+                            addon.settings.db.profile.xpRateOverriden = true
+                        end,
+                        hidden = addon.gameVersion < 30000 or addon.gameVersion >
+                            40000
                     },
                     northrendLM = {
                         name = L("Northrend Loremaster"),
@@ -783,6 +803,16 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetShown(not value)
+                        end
+                    },
+                    showEnabled = {
+                        name = L("Show all Enabled Frames"),
+                        desc = L("Toggles all addon frames on or off"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.11,
+                        set = function(info, value)
+                            self.ToggleActive()
                         end
                     },
                     disableItemWindow = {
@@ -1370,29 +1400,6 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end,
                         hidden = addon.game ~= "CLASSIC"
-                    },
-                    xprate = {
-                        name = L("Experience rates"),
-                        desc = L(
-                            "Adjusts the guide routes to match increased xp rate bonuses"),
-                        type = "range",
-                        width = "normal",
-                        order = 2.2,
-                        min = 1,
-                        max = 1.5,
-                        step = 0.05,
-                        confirm = function()
-                            return L(
-                                       "Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them") -- TODO locale
-                        end,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                            addon.RXPFrame.GenerateMenuTable()
-                            addon.settings.db.profile.xpRateOverriden = true
-                        end,
-                        hidden = addon.gameVersion < 30000 or addon.gameVersion >
-                            40000
                     },
                     enableUnitscan = {
                         name = L("Unitscan integration"),

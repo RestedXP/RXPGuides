@@ -20,4 +20,14 @@ These are inefficient areas that we outright removed, don't worry, we added step
 You can view the full guide without any skips by turning your slider to 1x from 1.5x in your options
 ]]
 
+H["What are command the line options?"] = [[
+|cff909090/rxp|r - Open general addon settings
+|cff909090/rxp import|r - Open Import Guide interface
+|cff909090/rxp debug|r - enable debugging output
+|cff909090/rxp splits|r - Toggle Level Splits on or off, if enabled
+|cff909090/rxp show||hide||toggle|r - Toggle all enabled frames on or off
+|cff909090/rxp bug||feedback|r - Open Feedback Form
+|cff909090/rxp help|r - This output
+]]
+
 addon.help = H

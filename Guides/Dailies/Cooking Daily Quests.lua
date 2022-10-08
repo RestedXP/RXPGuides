@@ -355,6 +355,7 @@ step << Horde
 	.isOnQuest 13113
 step
 	#sticky
+    #completewith stew
 	>> Kill Rhinos in The Storm Peaks for Chilled Meat. Alternatively you can buy the Chilled Meat or Northern Stew straight from the Auction House in Dalaran
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
@@ -370,6 +371,7 @@ step
 	.isOnQuest 13113 << Horde
 step << Alliance
 	#sticky
+    #completewith stew
 	>> Kill Rhinos in The Storm Peaks for Chilled Meat. Alternatively you can buy the Chilled Meat or Northern Stew straight from the Auction House in Stormwind City or Ironforge
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
@@ -385,6 +387,7 @@ step << Alliance
 	.isOnQuest 13101
 step << Horde
 	#sticky
+    #completewith stew
 	>> Kill Rhinos in The Storm Peaks for Chilled Meat. Alternatively you can buy the Chilled Meat or Northern Stew straight from the Auction House in Orgrimmar
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
@@ -396,21 +399,42 @@ step << Horde
 	.collect 43013,4,-1 -- Chilled Meat (4)
 	.goto Orgrimmar,54.57,63.68,0
 	.skill engineering,350,1
-	.isOnQuest 13113
+	.isOnQuest 13113   
 step << Alliance
+	#completewith next
+	.isQuestAvailable 13087
+	.isOnQuest 13101
+	>>To learn how to cook Northern Stew you must take 4 Chilled Meat to Brom Brewbaster in Howling Fjord. Alternatively you can buy the Northern Stew straight from the Auction House. If you are buying Northern Stew from the Auction House skip this step
+	>>If you are completing this quest you will need a total of 8 Chilled Meat
+	.collect 43013,4 -- Chilled Meat (4)
+	.accept 13087 >> Accept Northern Cooking
+	.turnin 13087 >> Turn in Northern Cooking
+	.goto HowlingFjord,58.21,62.06	
+step << Horde
+	#completewith next
+	.isQuestAvailable 13089
+	.isOnQuest 13113
+	>>To learn how to cook Northern Stew you must take 4 Chilled Meat to Thomas Kolichio in Howling Fjord. Alternatively you can buy the Northern Stew straight from the Auction House. If you are buying Northern Stew from the Auction House skip this step	
+	>>If you are completing this quest you will need a total of 8 Chilled Meat
+	.collect 43013,4 -- Chilled Meat (4)
+	.accept 13089 >> Accept Northern Cooking
+	.turnin 13089 >> Turn in Northern Cooking
+	.goto HowlingFjord,78.61,29.48
+step << Alliance
+    #label stew
 	.goto Dalaran,40.20,66.98
 	>>Use your Cooking proffession to cook 4 Chilled Meat into 4 Northern Stew
 	.complete 13101,1 --Northern Stew (4)
 	.isOnQuest 13101
 step << Horde
+    #label stew    
 	.goto Dalaran,70.44,39.80
 	>>Use your Cooking proffession to cook 4 Chilled Meat into 4 Northern Stew
 	.complete 13113,1 --Northern Stew (4)
 	.isOnQuest 13113
 step
-	>>Talk to Ranid Glowergold in Dalaran
-	.goto Dalaran,36.42,29.64,10,0
-	.goto Dalaran,36.62,27.88
+	>>Talk to Arille Azuregaze in Dalaran
+	.goto Dalaran,48.37,37.47
 	.turnin 13101 >>Convention at the Legerdemain << Alliance
 	.isQuestComplete 13101 << Alliance
 	.turnin 13113 >>Convention at the Legerdemain << Horde

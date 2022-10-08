@@ -222,7 +222,7 @@ step
     .collect 4371,1,175,1,1
 	.bronzetube
 step
-    #xprate >1.5
+    #xprate <1.5
 	.goto Wetlands,34.3,41.2,60,0
     .goto Wetlands,38.2,50.9
     .accept 294 >> Accept Ormer's Revenge
@@ -627,6 +627,7 @@ step
     .turnin 165 >> Turn in The Hermit
     .accept 148 >> Accept Supplies from Darkshire
 step
+    .isOnQuest 226
     >>Run up the coast killing wolves
     .xp <25,1
     .goto Duskwood,17.6,24.6
