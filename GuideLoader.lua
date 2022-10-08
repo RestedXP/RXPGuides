@@ -439,8 +439,6 @@ function RXPG.ImportString(str, workerFrame)
     end
 
     if addon.importBufferSize > 0 then
-        addon.parsing = true
-
         if workerFrame then
             workerFrame:SetScript("OnUpdate", RXPG.ProcessInputBuffer)
         else
@@ -482,7 +480,6 @@ function RXPG.ProcessInputBuffer(workerFrame)
         addon.importBufferSize = 0
     end
 
-    addon.parsing = false
     addon.RXPFrame.GenerateMenuTable()
 
     return false
