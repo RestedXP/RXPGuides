@@ -7,7 +7,7 @@ local LibDBIcon = LibStub("LibDBIcon-1.0")
 local LibDataBroker = LibStub("LibDataBroker-1.1")
 local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 
-local fmt, tostr, next = string.format, tostring, next
+local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
 local importCache = {
     bufferString = "",
@@ -15,7 +15,8 @@ local importCache = {
     bufferData = {},
     lastBuffer = 0,
     widget = nil,
-    workerFrame = addon.RXPFrame
+    workerFrame = addon.RXPFrame,
+    lastBNetQuery = GetTime()
 }
 
 -- Alias addon.locale.Get
@@ -341,9 +342,15 @@ end
 
 function addon.settings:CreateImportOptionsPanel()
     local function notOnline()
-        return not RXPData.cache or
-                   select(2, _G[addon.RXPG.DeserializeTable(addon.base)]()) ==
-                   nil
+        if not RXPData.cache and GetTime() - importCache.lastBNetQuery > 5 then
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("Battle.net not cached, querying")
+            end
+            importCache.lastBNetQuery = GetTime()
+            _, RXPData.cache = _G[addon.RXPG.DeserializeTable(addon.base)]()
+        end
+
+        return not RXPData.cache
     end
 
     local importOptionsTable = {
