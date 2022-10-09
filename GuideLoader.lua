@@ -406,19 +406,18 @@ addon.importBufferSize = 0
 function RXPG.ImportString(str, workerFrame)
     local errorMsg
     local nGuides = str:match("^(%d+)|")
+    local validHash = str:match("|(%d+):")
     local base = str:match("|(%d+)$")
-    if not nGuides or not base then
+    if not nGuides or not base or not validHash then
         addon.settings:UpdateImportStatusHistory(L(
                                                      "Incomplete or invalid encoded string"))
         return false, L("Incomplete or invalid encoded string")
     end
 
     if tonumber(base) < addon.version then
-        if addon.settings.db.profile.debug then
-            addon.settings:UpdateImportStatusHistory(
-                "Incompatible guide game %d version vs %d", tonumber(base),
-                addon.version)
-        end
+        addon.settings:UpdateImportStatusHistory(
+            "Incompatible guide game %d version vs %d", tonumber(base),
+            addon.version)
         return false, fmt("Incompatible guide, for %d version vs %d",
                           tonumber(base), addon.version)
     end
