@@ -14,7 +14,7 @@ local importCache = {
     displayString = "",
     bufferData = {},
     lastBuffer = 0,
-    widget = {},
+    widget = nil,
     workerFrame = addon.RXPFrame
 }
 
@@ -557,6 +557,9 @@ function addon.settings:CreateImportOptionsPanel()
     end
 
     self.gui.import.obj.frame:HookScript("OnShow", function()
+        -- Prevent hooking multiple times on show
+        if importCache.widget then return end
+
         local n = 1
         local inputWidget = true
 
