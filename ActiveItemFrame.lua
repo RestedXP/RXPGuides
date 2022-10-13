@@ -138,10 +138,13 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
     f:ClearBackdrop()
     f:SetBackdrop(addon.RXPFrame.backdropEdge)
     f:SetBackdropColor(unpack(addon.colors.background))
-    function f.onMouseDown() f:StartMoving() end
+    f.onMouseDown = function()
+        if addon.settings.db.profile.lockFrames and not IsAltKeyDown() then return end
+        f:StartMoving()
+    end
     function f.onMouseUp() f:StopMovingOrSizing() end
-    f:SetScript("OnMouseDown", f.StartMoving)
-    f:SetScript("OnMouseUp", f.StopMovingOrSizing)
+    f:SetScript("OnMouseDown", f.onMouseDown)
+    f:SetScript("OnMouseUp", f.onMouseUp)
     f.parent = self
     f.buttonList = {}
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
