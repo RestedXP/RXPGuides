@@ -149,6 +149,11 @@ function addon.GetProfessionLevel()
     elseif IsPlayerSpell(90265) then
         currrentSkillLevel["riding"] = 375
     end
+
+    if IsPlayerSpell(54197) then
+        currrentSkillLevel["coldweatherflying"] = 1
+    end
+
     if not _G.GetSkillLineInfo then
         return
     end
