@@ -1892,6 +1892,9 @@ function addon.functions.xp(self, ...)
         if not element.xp then element.xp = 0 end
         return element
     end
+
+    if not addon.settings.db.profile.enableXpStepSkipping then return end
+
     local currentXP = UnitXP("player")
     local maxXP = UnitXPMax("player")
     local level = UnitLevel("player")
@@ -3265,7 +3268,7 @@ function addon.functions.maxlevel(self, ...)
     local step = element.step
     local ref = element.ref
 
-    if level > element.level then
+    if level > element.level and addon.settings.db.profile.enableXpStepSkipping then
         if step.active and not step.completed and not addon.settings.db.profile.northrendLM then
             addon.updateSteps = true
             step.completed = true

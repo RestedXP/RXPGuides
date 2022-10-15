@@ -84,6 +84,7 @@ function addon.settings:InitializeSettings()
             enableUnitscan = true,
             enableTargetMacro = true,
             notifyOnTargetUpdates = true,
+            enableXpStepSkipping = true,
 
             -- Sliders
             arrowScale = 1,
@@ -739,7 +740,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Adjusts the guide routes to match increased xp rate bonuses"),
                         type = "range",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 1.82,
                         min = 1,
                         max = 1.5,
@@ -756,6 +757,22 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = addon.gameVersion < 30000 or addon.gameVersion >
                             40000
+                    },
+                    enableXpStepSkipping = {
+                        name = L("Skip Steps Based on XP"),
+                        desc = L("Skip steps you're overlevelled for"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.6,
+                        confirm = function()
+                            return L(
+                                       "Warning: Changing this setting mid-guide may cause quest pre-requisite failures.\nGuides were optimized for experience, disabling this option will result in a disjointed guide steps.") -- TODO locale
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                        end,
+                        hidden = isNotAdvanced
                     },
                     northrendLM = {
                         name = L("Northrend Loremaster"),
