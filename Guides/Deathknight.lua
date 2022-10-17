@@ -1,20 +1,16 @@
 RXPGuides.RegisterGuide([[
-#version 5
+#version 6
 #wotlk
-
 << DK
 #group RestedXP Death Knight Start
-
 #next RestedXP Alliance 60-70\59-61 Hellfire Peninsula << Alliance
 #next RestedXP Horde 60-70\59-61 Hellfire Peninsula << Horde
-
-
 #defaultfor DK
 #name 55-58 The Scarlet Enclave
+    
 step
     .goto ScarletEnclave,51.3,35.1
     .accept 12593 >>Accept In Service Of The Lich King
---X Needs next guide depending on ally/horde
 step
     .goto ScarletEnclave,48.3,28.2
 	>>Talk to Instructor Razuvious to turn in your quest
