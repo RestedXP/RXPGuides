@@ -36,7 +36,7 @@ step
     .accept 12842 >>Accept Runeforging: Preparation For Battle
 step
     .goto ScarletEnclave,47.9,27.5
-	>>Go to the Runeforge. Click on Runeforging in your spellbook and drag it onto your bars. Apply one of the enchants to your new weapon
+	>>Go to the Runeforge. Click on Runeforging in your spellbook and drag it onto your bars. Apply one of the enchants to the Runed Soulblade in your bags
     .complete 12842,1 --Weapon emblazoned (1)
 step
     .goto ScarletEnclave,48.3,28.2
@@ -52,6 +52,11 @@ step
 	>>Return to Razuvious
     .turnin 12848 >>Turn in The Endless Hunger
     .accept 12636 >>Accept The Eye Of Acherus
+step
+    .goto ScarletEnclave,48.67,32.77
+    >>Talk to Karloff. Buy 4 Corpse Dust from him
+    .collect 37201,4 --Corpse Dust (4)
+    .isOnQuest 12636
 step
     .goto ScarletEnclave,51.3,35.1
 	>>Return to The Lich King
@@ -196,10 +201,6 @@ step
 	>>Around Death's Breach, talk to and duel 5 Death Knight Initiates. Do not run out of the 30 yard duel range
     .complete 12733,1 --Death Knights defeated in a duel (5)
 	.skipgossip
-step
-    .goto ScarletEnclave,54.5,34.5
-    .turnin 12733 >>Turn in Death's Challenge
-	.isQuestComplete 12733
 step
 	#requires Citizens
 	>>Ride back to Death's Breach
@@ -376,21 +377,18 @@ step
     .turnin 12717 >>Turn in Noth's Special Brew
     .goto ScarletEnclave,56.2,52.0
 step
-	#completewith next
-    .goto ScarletEnclave,56.2,52.0,0
-	>>If you have more than 20 skulls, click the cauldron again for more of Noth's Special Brew. Bind them to your bars
+    .goto ScarletEnclave,56.2,52.0
+	>>Click the cauldron again for more of Noth's Special Brew
 	.turnin 12718 >>Turn in More Skulls for Brew
+    .itemcount 39328,20
 step
     .goto ScarletEnclave,53.9,58.1,15,0
-	>>Ride back to the Crypt. Re-Equip your normal weapon
+	>>Ride back to the Crypt. Re-Equip your normal weapon. Bind Noth's Special Brew to your bars
 	.turnin 12722 >> Turn in Lambs To The Slaughter
 	.goto ScarletEnclave,54.6,57.5
     .turnin 12720 >>Turn in How To Win Friends And Influence Enemies
     .accept 12723 >>Accept Behind Scarlet Lines
     .goto ScarletEnclave,54.2,57.4
-step
-	#completewith next
-	.destroy 39328 >> Delete any leftover Crusader Skulls that you have in your bags
 step
 	>>Ride to the house, then go upstairs to the second floor
     .turnin 12723 >>Turn in Behind Scarlet Lines
@@ -423,6 +421,14 @@ step
     .goto ScarletEnclave,62.9,68.3
 	>>Go to the top floor and loot the Patrol Schedule on the table
     .complete 12724,1 --New Avalon Patrol Schedule (1)
+step
+    .goto ScarletEnclave,56.2,52.0
+	>>Click the cauldron again for more of Noth's Special Brew
+	.turnin 12718 >>Turn in More Skulls for Brew
+    .itemcount 39328,20
+step
+	#completewith next
+	.destroy 39328 >> Delete any leftover Crusader Skulls that you have in your bags
 step
 	>>Return to the 2nd floor of the House
     .turnin 12724 >>Turn in The Path Of The Righteous Crusader
@@ -600,25 +606,40 @@ step
 	>>Talk to Darion Mograine inside of Ebon Hold
     .turnin 13165 >>Turn in Taking Back Acherus
     .accept 13166 >>Accept The Battle For The Ebon Hold
+    .train 48721 >> Train your class spells
+	.xp <58,1
+step
+    .goto Eastern Plaguelands,83.4,49.4
+	>>Talk to Darion Mograine inside of Ebon Hold
+    .turnin 13165 >>Turn in Taking Back Acherus
+    .accept 13166 >>Accept The Battle For The Ebon Hold
+	.xp <57,1
 step
 	#completewith next
     .goto ScarletEnclave,50.3,33.1,8 >> Go through the portal
 step
-	#sticky
-	#label ScourgeH
+    #sticky
+    #label Cinderglacier
+    .cast 53341 >> Make sure you've equipped your new weapon. Enchant your new weapon with the Rune of Cinderglacier at any of the Runeforges in the room
+step
+	#completewith next
 	>>Kill the Scourge within the main floor of The Ebon Hold
-    .goto ScarletEnclave,48.1,28.4,-1
+    .goto ScarletEnclave,48.1,28.4,0,0
     .complete 13166,2 --Scourge (10)
---X low prio waypoint?
 step
     .goto ScarletEnclave,48.9,29.8
 	>>Kill Patchwerk in the middle of the main floor of The Ebon Hold
     .complete 13166,1 --Patchwerk (1)
 step
+	>>Kill the Scourge within the main floor of The Ebon Hold
+    .goto ScarletEnclave,48.1,28.4
+    .complete 13166,2 --Scourge (10)
+step
+    #requires Cinderglacier
 	#completewith next
     .goto ScarletEnclave,50.5,33.4,10 >>Run into the purple portal
 step
-	#requires ScourgeH
+    #requires Cinderglacier
     .goto ScarletEnclave,50.7,33.7
 	>>Return to Darion Mograine
     .turnin 13166 >>Turn in The Battle For The Ebon Hold
@@ -630,9 +651,7 @@ step << Horde
 step << Horde
     .goto Orgrimmar,31.9,37.8
     .turnin 13189 >>Turn in Warchief's Blessing
---X unsure of how good coordinates are
 step << Horde
-	#completewith next
     .goto Orgrimmar,38.1,85.8
 	.zone Blasted Lands >> Take the portal to Blasted Lands
 step << Alliance
@@ -641,4 +660,7 @@ step << Alliance
 step << Alliance
     .goto Stormwind City,80.0,38.5
     .turnin 13188 >>Turn in Where Kings Walk
+step << Alliance
+    .goto Stormwind City,48.99,87.36
+	.zone Blasted Lands >> Take the portal to Blasted Lands
 ]])
