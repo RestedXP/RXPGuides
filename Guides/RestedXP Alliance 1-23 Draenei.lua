@@ -174,7 +174,7 @@ step
 step
     .goto Azuremyst Isle,69.2,65.5
     .complete 9311,1 --Kill Surveyor Candress (x1)
-	.use 23003 >>Loot the plans from the Surveyor and right click it
+	.use 24414 >>Loot the plans from the Surveyor and right click it
     .accept 9798 >> Accept Blood Elf Plans
 step
 	#sticky
@@ -217,7 +217,7 @@ step
 	.collect 23614,10
 step
     .goto Azuremyst Isle,53.9,34.4
-    >>Go up the west coast killing any Infected Nightstalker Runts en route until they drop a Faintly Glowing Crystal.
+    .use 23678 >>Go up the west coast killing any Infected Nightstalker Runts en route until they drop a Faintly Glowing Crystal.
 	.collect 23678,1
     .accept 9455 >> Accept Strange Findings
 step
@@ -452,7 +452,7 @@ step
     .complete 10324,1 --Collect Moongraze Buck Hide (x6)
 step
 	#sticky
-	#completewith next
+	#completewith treesteptime
 	>>Grind en route
     .collect 23759,1,9514 --Collect Rune Covered Tablet (x1)
 	.use 23759 >>Right click the item in your inventory once you loot it
@@ -465,6 +465,7 @@ step
     .complete 9513,3 --Kill Wrathscale Siren (x5)
     .complete 9523,1 --Collect Ancient Relic (x8)
 step
+    #label treesteptime
     .goto Azuremyst Isle,18.4,84.1
     .use 23792 >>Use the tree disguise at the naga flag
 	>>Once you use the disguise, you'll be unable to move. You have to wait about a minute to get credit for this quest.
@@ -588,8 +589,9 @@ step << Hunter
     .accept 9591 >> Accept Taming the Beast
 step << Hunter
     .goto Azuremyst Isle,20.7,65.1
-	.use 23896 >> Use the rod on a Barbed Crawler
+	.use 23896 >> Use the rod on a Barbed Crawler. They appear further down the coast, don't mistake them for Skittering Crawlers.
     .complete 9591,1 --Tame a Barbed Crawler
+    .unitscan Barbed Crawler
 step << Hunter
     #completewith next
     .goto Azuremyst Isle,27.0,76.7,60 >> The path to Warlord Sriss'tiz starts here
@@ -1199,7 +1201,7 @@ step
     .xp 15
 step
 	#requires mailbox
-	>>Open your mailbox, retrieve the note and accept the quest
+	.use 24132 >>Open your mailbox, retrieve the note and accept the quest
     .goto Bloodmyst Isle,55.1,59.1
 	.collect 24132,1,9672 --Collect A Letter from the Admiral
     .accept 9672 >> Accept The Bloodcurse Legacy
@@ -1250,6 +1252,9 @@ step
     .goto Bloodmyst Isle,79.2,22.7
     .turnin 9682 >> Turn in The Hopeless Ones...
     .isOnQuest 9682
+step
+    .isOnQuest 9682
+    .abandon 9682 >> Abandon The Hopeless Ones...
 step
     .goto Bloodmyst Isle,79.2,22.7
     .accept 9683 >> Accept Ending the Bloodcurse
@@ -1438,6 +1443,10 @@ step
     .turnin 9550 >> Turn in A Map to Where?
     .accept 9557 >> Accept Deciphering the Book
 step
+    #completewith next
+    #requires constrictors
+    .hs >> Hearth or run back to town
+step
    	#requires constrictors
 	.goto Bloodmyst Isle,54.7,54.1
     .turnin 9557 >> Turn in Deciphering the Book
@@ -1512,6 +1521,7 @@ step
     .accept 9756 >> Acccept What We Don't Know...
 step
     >>Open the cage and speak to the prisoner
+    .skipgossip
     .complete 9756,1
     .goto Bloodmyst Isle,54.36,54.30
     .turnin 9756 >> Turn in What We Don't Know...
@@ -1619,6 +1629,7 @@ step << Hunter/Shaman/Mage
     #label limit2
     #completewith L20
     #requires limit1
+    .isOnQuest 9746
     .goto Bloodmyst Isle,55.6,55.3
     .turnin 9746 >> Turn in Limits of Physical Exhaustion
     .accept 9740 >> Accept The Sun Gate
@@ -1626,6 +1637,7 @@ step << Hunter/Shaman/Mage
     #label sungate
     #completewith L20
     #requires limit2
+    .isOnQuest 9740
     .goto Bloodmyst Isle,18.7,64.0
     >>Click on the purple crystals around the lake and then on the big portal in the middle
     .complete 9740,1
@@ -1709,7 +1721,7 @@ step << Hunter/Shaman/Mage
     .xp 20
     >>You'll need to hit level 20 before leaving Bloodmyst
 step << !Shaman
-    #completewith next
+    #completewith flighttoexodar2
     .deathskip >> Death skip back to Blood Watch
 step
     .itemcount 23984,10
@@ -1724,6 +1736,7 @@ step << Paladin
 	.goto Bloodmyst Isle,55.6,55.3
 	>>Train at Vindicator Aesom
 step
+    #label flighttoexodar2
 	#completewith next
     .goto Bloodmyst Isle,57.7,53.9
     .fly the Exodar>> Fly to the Exodar
@@ -1816,7 +1829,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Draenei
 #next 21-23 Ashenvale (Draenei)
 step
-    #xprate <1.5
+    #xprate <1.2
     .goto Darkshore,36.1,44.9
     .accept 1138 >> Accept Fruit of the Sea
     .maxlevel 20
@@ -1827,10 +1840,11 @@ step
     .goto Darkshore,37.0,44.0
     .home >> Set Hearthstone to Auberdine
 step
+    #xprate <1.2
     .goto Darkshore,37.3,44.3
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
-    #xprate <1.5
+    #xprate <1.2
     .goto Darkshore,37.4,43.7
     .accept 947 >> Accept Cave Mushrooms
     .maxlevel 20
@@ -1838,12 +1852,12 @@ step
     .goto Darkshore,38.37,43.05
     .accept 1275 >> Accept Researching the Corruption
 step
-    #xprate <1.5
+    #xprate <1.2
     .goto Darkshore,39.1,43.5
     .accept 965 >> Accept The Tower of Althalaxx
     .maxlevel 20
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,38.1,41.2
     .accept 982 >> Accept Deep Ocean, Vast Sea
     .maxlevel 20
@@ -1852,161 +1866,166 @@ step
 	.turnin -9633 >> Turn in The Way to Auberdine
     .accept 10752 >> Accept Onward to Ashenvale
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,38.2,28.8
 	>>Enter the sunken ship through the hole on the hull and loot the chest at the bottom floor
     .complete 982,1 --Collect Silver Dawning's Lockbox (x1)
     .isOnQuest 982
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,39.6,27.5
 	>>Enter the sunken ship through the hole on the hull and loot the chest at the bottom floor
     .complete 982,2 --Collect Mist Veil's Lockbox (x1)
     .isOnQuest 982
 step
-#xprate <1.5
+#xprate <1.2
 	#sticky
 	>>Kill Reef Crawlers and Encrusted Tide Crawlers along the coast
     .complete 1138,1 --Collect Fine Crab Chunks (x6)
     .isOnQuest 1138
 step
-#xprate <1.5
+#xprate <1.2
 	>>Start heading north while grinding crabs along the coast
     .goto Darkshore,56.7,13.5
     .accept 2098 >> Accept Gyromast's Retrieval
     .isOnQuest 1138
 step
-#xprate <1.5
+#xprate <1.2
 	#completewith q2098
     #label crawlers
     >>Kill Raging Reef Crawlers. Be careful as they thrash (multiple hits at once every 10s or so)
     .complete 2098,3 --Collect Bottom of Gelkak's Key (x1)
     .isOnQuest 2098
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,59.5,12.6
 	>>Kill Giant Foreststriders
     .complete 2098,1 --Collect Top of Gelkak's Key (x1)
     .isOnQuest 2098
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,55.4,12.6
 	>>Kill murlocs next to the sunken ship. You can LoS (line of sight) the oracles around the front of the sunken ship
     .complete 2098,2 --Collect Middle of Gelkak's Key (x1)
     .isOnQuest 2098
 step
-#xprate <1.5
+#xprate <1.2
     #label q2098
     #requires crawlers
     .goto Darkshore,56.7,13.5
     .turnin 2098 >> Turn in Gyromast's Retrieval
     .isOnQuest 2098
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,56.7,13.5
     #requires crawlers
     .accept 2078 >> Accept Gyromast's Revenge
     .isQuestTurnedIn 2098
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,55.8,18.2
 	>>Talk to the big robot and escort him back to the quest giver and then kill it once it turns hostile
     .complete 2078,1 --Gelkak's First Mate
     .isQuestTurnedIn 2098
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,56.7,13.5
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestTurnedIn 2098
 step
-#xprate <1.5
+#xprate <1.2
 	#sticky
 	#completewith deletekey
 	.destroy 7442 >> Delete Gyromast's Key from your inventory (not your keyring). It's no longer needed
     .isQuestTurnedIn 2098
 step << !Druid !Shaman !Warlock
-#xprate <1.5
+#xprate <1.2
     .isQuestTurnedIn 2098
 	#sticky
 	#completewith deletekey
 	+Make sure to save your water breathing potions, you will need them later to deal with a couple of underwater sections from 30-40
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,55.0,24.9
     .turnin 965 >> Turn in The Tower of Althalaxx
     .isOnQuest 965
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,55.0,24.9
     .accept 966 >> Accept The Tower of Althalaxx
     .isQuestTurnedIn 965
 step
-#xprate <1.5
+#xprate <1.2
 	#label deletekey
     .goto Darkshore,55.3,26.7
     .complete 966,1 --Collect Worn Parchment (x4)
     .isOnQuest 966
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,55.0,24.9
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
     .isQuestTurnedIn 965
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,55.3,34.0
     .complete 947,1 --Collect Scaber Stalk (x5)
 	>>Take a right when entering the cave and check the top for a Death Cap. If there's none there, you have to go down below
     .complete 947,2 --Collect Death Cap (x1)
     .isOnQuest 947
 step
-#xprate <1.5
+#xprate <1.2
 	.goto Darkshore,55.3,34.0
     .xp 20-3900	>> Grind until you're level 19 and 16900+/20800xp
 step
-#xprate <1.5
+#xprate <1.2
 	#sticky
 	#completewith next
 	.deathskip >> Death skip to Auberdine << Hunter
     .hs >> Hearth to Auberdine << !Hunter
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,38.1,41.3
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
     .isQuestComplete 982
 step
+#xprate <1.2
     .goto Darkshore,37.5,41.9
     .accept 729 >> Accept The Absent Minded Prospector
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,37.4,43.7
     .turnin 947 >> Turn in Cave Mushrooms
     .isQuestComplete 947
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,37.4,43.7
     .accept 948 >> Accept Onu
     .isQuestTurnedIn 947
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,36.1,44.9
     .turnin 1138 >> Turn in Fruit of the Sea
     .isQuestComplete 1138
 step << Hunter
     #completewith next
+    >> Skip this step if you have an Heirloom Weapon << wotlk
     .goto Darkshore,33.1,39.9,30,0
     .goto Darkshore,33.1,39.9,0
     .zone Teldrassil>>Take the boat to Teldrassil
 step << Hunter
+    >> Skip this step if you have an Heirloom Weapon << wotlk
     .goto Teldrassil,58.4,94.0
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << Hunter
 	#sticky
 	#completewith next
 	.goto Darnassus,63.3,66.3
+    >> Skip this step if you have an Heirloom Weapon << wotlk
 	>>Buy the level 20 weapon upgrade in Darnassus
 	.collect 3027,1
 step << Hunter
+    >> Skip this step if you have an Heirloom Weapon << wotlk
 	.goto Teldrassil,29.2,56.7
 	.train 264 >> Train Bows
     .train 227 >> Train Staves
@@ -2015,7 +2034,7 @@ step << Hunter
     .hs >> Hearth back to Auberdine, fly back if your HS is still on cooldown
     .zoneskip Darkshore
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,43.5,76.2
     .turnin 948 >> Turn in Onu
     .accept 944 >> Accept The Master's Glaive
@@ -2026,32 +2045,35 @@ step
     .complete 4740,1 --Kill Murkdeep (x1)
     .isOnQuest 4740
 step
+    .isOnQuest 729
     .goto Darkshore,35.7,83.7
     .turnin 729 >> Turn in The Absent Minded Prospector
     >>Start the escort quest
     .accept 731,1 >> Accept The Absent Minded Prospector
 step
+    .isOnQuest 729
 	>>Remtravel will not aggro the mobs that don't hit him, or that you aggro first. Be careful as he has low health/armor
     .complete 731,1 --Escort Prospector Remtravel
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,39.0,86.4
 	.use 5251 >> Use the Phial of Scrying anywhere in the area
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
     .isQuestTurnedIn 948
 step
-#xprate <1.5
+#xprate <1.2
     .goto Darkshore,38.6,86.1
     .turnin 949 >> Turn in The Twilight Camp
     >>Skip the follow up
     .isQuestTurnedIn 948
 step
-#xprate <1.5
+#xprate <1.2
 	#sticky
 	#completewith darkshoreend
 	.destroy 5251>> You can now delete the "Phial of Scrying" from your inventory. As it's no longer needed
 step
+#xprate <1.2
     .goto Darkshore,38.7,87.3
     .accept 945 >> Accept Therylune's Escape. If she's not here someone else is escorting her, grind til she respawns.
     .maxlevel 21
@@ -2071,16 +2093,17 @@ RXPGuides.RegisterGuide([[
 #defaultfor Draenei
 #next RestedXP Alliance 20-32\23-24 Wetlands;RestedXP Alliance 20-32\24-27 Redridge/Duskwood
 step
-#xprate <1.5
+#xprate <1.2
     .goto Ashenvale,26.2,38.6
     .turnin 967 >> Turn in The Tower of Althalaxx
     .isOnQuest 967
 step
-#xprate <1.5
+#xprate <1.2
     .goto Ashenvale,26.2,38.6
     .accept 970 >> Accept The Tower of Althalaxx
     .maxlevel 21
 step
+    >> This quest leads into a big chain, it's worth doing even if it seems tedious.
     .goto Ashenvale,26.4,38.6
     .accept 1010 >> Accept Bathran's Hair
 step
@@ -2088,7 +2111,7 @@ step
 	>>Look for small bundles on the ground, they can be hidden partially-inside of the terrain
     .complete 1010,1 --Collect Bathran's Hair (x5)
 step
-#xprate <1.5
+#xprate <1.2
     .goto Ashenvale,31.4,31.0
     .complete 970,1 --Collect Glowing Soul Gem (x1)
     .isOnQuest 970
@@ -2097,12 +2120,12 @@ step
     .turnin 1010 >> Turn in Bathran's Hair
     .accept 1020 >> Accept Orendil's Cure
 step
-#xprate <1.5
+#xprate <1.2
     .goto Ashenvale,26.2,38.6
     .turnin 970 >> Turn in The Tower of Althalaxx
     .isOnQuest 970
 step
-#xprate <1.5
+#xprate <1.2
     .goto Ashenvale,26.2,38.6
     .accept 973 >> Accept The Tower of Althalaxx
     .maxlevel 21
@@ -2156,7 +2179,7 @@ step
     .goto Ashenvale,33.3,67.4
     .complete 1034,1 --Collect Handful of Stardust (x5)
 step
-#xprate <1.5
+#xprate <1.2
     .goto Ashenvale,25.3,60.8
 	>>Try to kill him before he summons his guardians (it's stunnable, but not interruptable)
     .complete 973,1 --Collect Ilkrud Magthrull's Tome (x1)
@@ -2168,7 +2191,7 @@ step
     .turnin 945 >> Turn in Therylune's Escape
     .isQuestComplete 945
 step
-#xprate <1.5
+#xprate <1.2
     .goto Ashenvale,26.2,38.7
     .turnin 973 >> Turn in The Tower of Althalaxx
     .isOnQuest 973
@@ -2259,7 +2282,7 @@ step
     .accept 1016 >> Accept Elemental Bracers
 step
 #xprate <1.5 << tbc
-    >>Kill all water elementals on the island/in the water for Intact Elemental Bracers. When you have 5, right click the Divining Scroll
+    .use 5456 >>Kill all water elementals on the island/in the water for Intact Elemental Bracers. When you have 5, right click the Divining Scroll
     .goto Ashenvale,48.0,69.9
     .complete 1016,1 --Collect Divined Scroll (x1)
 step
@@ -2282,17 +2305,21 @@ step
     .goto Darkshore,38.36,43.07
     .turnin 1275 >> Turn in Researching the Corruption
 step
+    .isOnQuest 731
     .goto Darkshore,37.5,41.9
     .turnin 731 >> Turn in The Absent Minded Prospector
 	.accept 741 >> Accept The Absent Minded Prospector << !Hunter
 step << !Hunter
+    .isOnQuest 741
     .goto Darkshore,33.1,39.9,30
     .zone Teldrassil >>Take the boat to Teldrassil
 step << !Hunter
+    .isOnQuest 741
     #completewith next
     .goto Teldrassil,55.9,89.8
     .zone Darnassus >> Take the purple portal to Darnassus
 step << !Hunter
+    .isOnQuest 741
 	.goto Teldrassil,23.7,64.5
 	.turnin 741 >> Turn in The Absent Minded Prospector
 	.accept 942 >> Accept The Absent Minded Prospector
