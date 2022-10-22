@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 24-27 Redridge/Duskwood
 #xprate <1.5
 
-step << Warrior wotlk
+step << Warrior tbc
     #sticky
     #completewith exit1
     .goto StormwindClassic,64.1,61.2,0
@@ -57,6 +57,9 @@ step << Mage wotlk
 step << wotlk
     .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
+step << !Human
+    .goto Stormwind City,66.4,62.1
+    .fp Stormwind >> Learn the Stormwind Flight Path
 step << Rogue wotlk
 	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
@@ -103,6 +106,13 @@ step << wotlk
 step << !Dwarf wotlk !Gnome wotlk--Not needed, including just in case someone forgets to set HS to SW
     .goto Ironforge,55.5,47.7
     .fp Ironforge>> Get the Ironforge Flight Path
+step << Hunter/Warrior/Paladin/Shaman/Rogue
+	.goto Ironforge,61.34,89.25
+	.train 197 >> Train 2H Axes << !Rogue
+	.train 266 >> Train Guns << Hunter/Warrior/Rogue
+    .train 199 >> Train 2H Maces << Warrior/Shaman
+    .train 54 >> Train Maces << Rogue/Shaman/wotlk Warrior
+    .train 44 >> Train Axes << Shaman/wotlk Warrior
 step << Mage wotlk
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
@@ -202,6 +212,7 @@ step
 step
 	#sticky
 	#label crocs
+    #completewith endofcrocc
 	>> Kill Young Wetlands Crocolisks between quests. Loot them for their Skin
     .complete 484,1 --Collect Young Crocolisk Skin (x4)
 
@@ -275,6 +286,7 @@ step << Warrior
     .collect 3357,8,0,1,1 --Collect Liferoot (x8)
     #xprate <1.5
 step
+    #requires crocs
     .goto Wetlands,56.4,40.4
     .turnin 463 >> Turn in The Greenwarden
 step
@@ -300,6 +312,7 @@ step
     #completewith wettylandy
     .abandon 276 >> Abandon Tramping Paws
 step
+    #label endofcrocc
     .goto Wetlands,56.4,40.3
     .accept 277 >> Accept Fire Taboo
     .isQuestTurnedIn 276
@@ -332,7 +345,7 @@ step << Draenei tbc/NightElf tbc
     .zoneskip Elwynn Forest
 step << wotlk
     #label wettylandy
-    #completewith next
+    >> Skip this step and head back to Menethil Harbor if your hearth is on CD
     .goto Wetlands,9.5,59.7
     .hs >> Hearth to Stormwind << !Mage
     .hs >> Hearth to Menethil << Mage
@@ -362,7 +375,7 @@ step
     .zoneskip Wetlands,1
     .goto Wetlands,9.5,59.7
     >> Hearth if your hearthstone is set to Stormwind
-    .fly Stormwind City >> Fly to Stormwind City
+    .fly Stormwind >> Fly to Stormwind City
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -893,6 +906,7 @@ step
     .goto Duskwood,77.5,44.3
  .fly Redridge >> Fly to Redridge
 step
+    #xprate <1.2
     .goto Redridge Mountains,31.6,57.9
     .accept 128 >> Accept Blackrock Bounty
     .maxlevel 26 << Paladin/Hunter
@@ -959,7 +973,7 @@ step
 step
 	#sticky
 	#completewith HistoryB3
-	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.use 2794 >>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
 	.collect 2794,1,337
 	.accept 337 >> Accept An Old History Book
 step
@@ -975,6 +989,12 @@ step
     .goto Duskwood,7.7,34.1
     .turnin 268 >> Turn in Return to Sven
     .accept 323 >> Accept Proving Your Worth
+step
+    #sticky
+    #completewith nomoreraidernote
+    .goto Duskwood,16.2,38.8,0
+    >> Kill Skeletal Raiders around the crypt and house on the hill as you complete other quests. You typically cannot get all 15 in one go and want to keep them respawning.
+    .complete 323,1 --Kill Skeletal Raider (x15)
 step << !Hunter !Paladin
     .goto Duskwood,21.6,45.1
 	>> Kill undead in the area and loot them
@@ -993,6 +1013,8 @@ step << Hunter/Paladin
     .complete 57,2 --Kill Skeletal Horror (x15)
     .complete 156,1 --Collect Rot Blossom (x8)
     .complete 101,3 --Collect Skeleton Finger (x10)
+step
+    #label nomoreraidernote
 step
     .goto Duskwood,16.2,38.8
     >>Kill mobs around the crypt, you might need to go inside it to kill the 3 warders you need
@@ -1119,7 +1141,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
     .train 199 >> Train 2H Maces << Warrior/Shaman
     .train 54 >> Train Maces << Rogue/Shaman/wotlk Warrior
     .train 44 >> Train Axes << Shaman/wotlk Warrior
-step << Hunter
+step << Hunter tbc
 	#sticky
 	#completewith next
 	.goto Ironforge,61.34,89.25
@@ -1290,6 +1312,16 @@ step
     .accept 275 >> Accept Blisters on The Land
     .isQuestTurnedIn 276
 step
+    .isOnQuest 465
+    .goto Wetlands,47.3,46.9
+    .turnin 465 >> Turn in Nek'rosh's Gambit
+    .accept 474 >> Accept Defeat Nek'rosh
+step
+    .isOnQuest 474
+    .goto Wetlands,53.5,54.6
+	>> Kill Nek'rosh and loot him for his head
+    .complete 474,1 --Collect Nek'rosh's Head (x1)
+step
     .goto Wetlands,64.8,75.3
     >>Loot the tree root at the base of the waterfall
     .complete 335,2 --Collect Musquash Root (x1)
@@ -1345,7 +1377,7 @@ step
     .goto Wetlands,53.5,54.6
 	>> Kill Nek'rosh and loot him for his head
     .complete 474,1 --Collect Nek'rosh's Head (x1)
-step << Warrior
+step << Warrior tbc
     #sticky
 	#completewith next
     .goto Wetlands,50.2,37.8
@@ -1353,6 +1385,7 @@ step << Warrior
     .collect 3357,8 --Collect Liferoot (x8)
     #xprate <1.5
 step
+    .isOnQuest 275
     .goto Wetlands,56.4,40.5
 	>>Finish off Fen Creepers in the rivers
     .complete 275,1 --Kill Fen Creeper (x8)
@@ -1506,6 +1539,9 @@ step
     .goto Western Plaguelands,42.9,85.0
     >>Head north farming turtle meat along the river, once you get at the end of the river, head northwest into WPL. You don't need all 10 meat yet.
     .fp Chillwind >> Get the Chillwind Camp flight path
+step
+    .goto Western Plaguelands,42.9,85.0,-1
+    .goto Hillsbrad Foothills,49.3,52.3,-1
     .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.6,60.5
@@ -1566,7 +1602,7 @@ step << Mage
 step << Hunter
 	.goto StormwindClassic,61.7,15.4
 	.trainer >> Train your class spells
-	.train 14924>> Train Growl 4 at the pet trainer
+	.train 14924>> Train Growl 4 at the pet trainer << tbc
 step
     #sticky
     #completewith exit
@@ -1786,7 +1822,7 @@ step << Shaman
     .isOnQuest 335
 step << Shaman
     .goto Duskwood,77.4,36.1
-	>> Kill the undead in the house and loot him for his ring
+	>> Kill Stalvan in the house and loot him for his ring
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << Shaman
     #requires TearT
@@ -1926,6 +1962,7 @@ step
     .accept 1245 >> Accept The Missing Diplomat
 step << !Shaman
     .goto Duskwood,77.4,36.1
+    >> Kill Stalvan in the house for his ring
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << !Shaman
     .goto Duskwood,78.4,35.9
@@ -1965,11 +2002,11 @@ step
     .accept 185 >> Accept Tiger Mastery
     .accept 190 >> Accept Panther Mastery
 step
-	#sticky
-	#completewith thorsen
 	#label tigers
+    >> Kill young tigers around the hunting camp
     .complete 185,1 --Kill Young Stranglethorn Tiger (x10)
 step
+    >> Cross the bridge and kill young panthers
     .goto Stranglethorn Vale,42.1,11.2
     .complete 190,1 --Kill Young Panther (x10)
 step
@@ -2859,7 +2896,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
     .train 198 >> Train Maces << Rogue/Shaman
     .train 44 >> Train Axes << Warrior wotlk/Shaman/Rogue wotlk
     .zoneskip Wetlands
-step << Hunter
+step << Hunter tbc
 	#sticky
 	#completewith next
 	.goto Ironforge,61.34,89.25
