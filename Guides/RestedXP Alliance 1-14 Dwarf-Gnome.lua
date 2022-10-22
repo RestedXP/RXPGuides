@@ -3431,6 +3431,7 @@ step << wotlk
     .trainer >>Train Crossbows at the trade district
 step << wotlk
     >>Head to the Stormwind Harbor
+    .goto StormwindNew,21.8,56.2
     .zone Darkshore >> Take the boat to Darkshore
 step << tbc
 .goto Ironforge,77.0,51.0,40 >>Go back into Ironforge
