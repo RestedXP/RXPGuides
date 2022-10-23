@@ -1398,7 +1398,6 @@ step--encrusted crawlers
     .isQuestTurnedIn 4681
 step
 #xprate <1.5
-    .isOnQuest 2098
 	>>Start heading north while grinding crabs along the coast
     .goto Darkshore,56.7,13.5
     .accept 2098 >> Accept Gyromast's Retrieval
