@@ -2612,8 +2612,9 @@ step
     .turnin 9170 >> Turn in Dar'Khan's Lieutenants
     .turnin 9164 >>Turn in Captives at Deatholme
 step
-    #completewith next
-    .hs >> Hearth to Tranquillien
+    #sticky
+    #completewith WantedOverrideFix
+    .hs >> Hearth or run to Tranquillien
     .cooldown item,6948,>0
 step
     .isQuestComplete 9156
@@ -2630,6 +2631,8 @@ step
 step
     .goto Ghostlands,31.7,74.3
     .xp 20 >>Grind to 20
+step
+    #label WantedOverrideFix
 step
     #completewith next
     .goto Ghostlands,45.5,30.5
