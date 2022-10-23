@@ -1281,9 +1281,10 @@ step
     .goto Bloodmyst Isle,56.4,56.7
     .turnin 9649 >> Turn in Ysera's Tears
 step
-	#completewith next
     .goto Bloodmyst Isle,57.6,53.9
     .accept 9604 >> Accept On the Wings of a Hippogryph
+step
+    .goto Bloodmyst Isle,57.6,53.9
     .fly The Exodar>> Fly to The Exodar
 step
 	.goto The Exodar,75.0,54.8,80,0
