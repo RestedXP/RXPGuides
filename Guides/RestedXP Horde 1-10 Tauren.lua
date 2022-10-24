@@ -16,14 +16,10 @@ step << !Tauren
 step
     .goto Mulgore,44.9,77.1
     .accept 747 >>Accept The Hunt Begins
-    .unitscan Brave Windfeather
-    .target Grull Hawkwind
 step
 	>> Head into the hut
     .goto Mulgore,44.2,76.1
     .accept 752 >>Accept A Humble Task
-    .unitscan Brave Windfeather
-    .target Grull Hawkwind
 step << Warrior/Shaman
     #sticky
     #completewith next
