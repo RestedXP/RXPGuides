@@ -984,7 +984,7 @@ step << Warlock
     .trainer >>Train your class spells
 step << Warlock
     .goto Silvermoon City,79.5,58.5
-    >> Buy Suntouched Special Reserve from Vinemaster Suntouched
+    >> Buy Suntouched Special Reserve from Vinemaster Suntouched. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22775,1 --Collect Suntouched Special Reserve
 step << Warlock
     .goto Eversong Woods,56.7,49.6
@@ -1067,7 +1067,7 @@ step << Orc/Troll/Tauren
     .fp Silvermoon >> Get the Silvermoon City flight path
 step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
-    .vendor >> Buy Springpaw Appetizers from Zalene
+    .vendor >> Buy Springpaw Appetizers from Zalene. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22776,1 --Collect Springpaw Appetizers
 step << !Hunter
     >> Talk to Lieutenant Dawnrunner
@@ -1421,7 +1421,7 @@ step << Paladin/Rogue
     .collect 2901,1 --Mining Pick (1)
 step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
-    .vendor >> Buy a Suntouched Special Reserve from Vinemaster Suntouched
+    .vendor >> Buy a Suntouched Special Reserve from Vinemaster Suntouched. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22775,1 --Collect Suntouched Special Reserve
 step << Undead/BloodElf !Hunter
     #completewith next
@@ -1456,7 +1456,7 @@ step << Undead/BloodElf !Hunter
     .turnin 8491 >> Turn in Pelt Collection
 step << Undead/BloodElf !Hunter
     .goto Eversong Woods,44.0,70.4
-    .vendor >>Buy a Bundle of Fireworks from Halis
+    .vendor >>Buy a Bundle of Fireworks from Halis. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22777,1 --Bundle of Fireworks (1)
 step << Undead/BloodElf !Hunter
     >> Speak to Magistrix Landra Dawnstrider
@@ -2483,8 +2483,8 @@ step << !Rogue !Hunter
     .goto Ghostlands,37.8,51.9
     >>Grind down The Dead Scar, killing mobs and looting them for Rotting Hearts and Spinal Dust. Be aware that Dreadbone Sentinels interrupt (Shield Bash)
     *Deathcage Sorcerer and Dreadbone Sentinels drop the Spinal Dust. Risen Stalkers and Ghouls drop the Hearts.
-    .complete 9216,1 --Collect Rotting Heart (x10)
-.complete 9218,1 --Collect Spinal Dust (x10)
+    .collect 22641,10 --Collect Rotting Heart (x10)
+    .collect 22642,10 --Collect Spinal Dust (x10)
 step
     .goto Ghostlands,31.7,74.3,40,0
     .goto Ghostlands,38.4,77.5,40,0
