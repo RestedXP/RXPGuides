@@ -1996,16 +1996,19 @@ step
     .complete 893,2 --Collect Charred Razormane Wand (x1)
     .complete 893,3 --Collect Razormane War Shield (x1)
 step
+    .isOnQuest 879
 	.goto The Barrens,43.4,78.8
     >> Kuz walks all around the ridge. Kill and loot her for her skull.
     .complete 879,1 --Collect Kuz's Skull (x1)
 	.unitscan Kuz 
 step
+    .isOnQuest 879
     .goto The Barrens,40.4,80.8
     >> Lok is in the building up from the ramp. Kill and loot him for his skull.
     .complete 879,3 --Collect Lok's Skull (x1)
 	.unitscan Lok Orcbane
 step
+    .isOnQuest 879
     .goto The Barrens,43.8,83.5
     >> Nak is on the southern part of the ridge. Kill and loot him for his skull.
     .complete 879,2 --Collect Nak's Skull (x1)
