@@ -2155,9 +2155,6 @@ step
 	.goto Ashenvale,37.3,51.8
     .accept 1033 >> Accept Elune's Tear
 step
-	.goto Ashenvale,37.2,52.8,40,0
-	.goto Ashenvale,40.5,52.3,80,0
-	.goto Ashenvale,43.3,45.5,80,0
     .goto Ashenvale,46.2,45.9
     >>Look for small pearl shaped objects on the small island on the middle of the lake
     .complete 1033,1 --Collect Elune's Tear (x1)
