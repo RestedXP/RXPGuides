@@ -1197,6 +1197,7 @@ step
 step
     #sticky
     #label shadowmage
+    .isOnQuest 1066
     .goto Hillsbrad Foothills,80.61,45.40,0
     >>Kill Shadow Mages. Loot them for Vials of Innocent Blood
 	.complete 1066,1 --Collect Vial of Innocent Blood (x5)
@@ -1298,6 +1299,7 @@ step
 --N Claw rank 3?
 step
 	#requires syndicateq
+    .isOnQuest 1066
     .goto Hillsbrad Foothills,61.5,19.1
     .turnin 1066 >> Turn in Blood of Innocents
 step
@@ -1928,7 +1930,6 @@ step
     .accept 893 >> Accept Weapons of Choice
     .goto The Barrens,45.0,57.6
 step
-	#sticky
 	#label Owatanka2
 	#completewith next
     .maxlevel 29
@@ -2017,12 +2018,14 @@ step
     #requires Weapons
     #sticky
     #label Baeldun
+    .isOnQuest 843
 	.goto The Barrens,48.3,86.2,0,0
     >>Kill Dwarves in the area for Gann's Reclamation
     .complete 843,1 --Kill Bael'dun Excavator (x15)
     .complete 843,2 --Kill Bael'dun Foreman (x5)
 step
     #requires Weapons
+    .isOnQuest 843
 	>>Kill Prospector Khazgorm. Loot him for his Journal
 	.goto The Barrens,48.3,86.2
 	.complete 843,3 --Collect Khazgorm's Journal (x1)
