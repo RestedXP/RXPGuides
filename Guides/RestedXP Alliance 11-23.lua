@@ -1380,6 +1380,7 @@ step
 #xprate <1.5
 	#sticky
     #completewith crabraveboys
+    .isOnQuest 1138
 	>>Kill Reef Crawlers and Encrusted Tide Crawlers along the coast
     .complete 1138,1 --Collect Fine Crab Chunks (x6)
 step--murlocs
@@ -1561,7 +1562,7 @@ step
     .isQuestTurnedIn 4681
 step
 #xprate <1.5
-    .isOnQuest 1138
+    .isQuestComplete 1138
     .goto Darkshore,36.1,44.9
     .turnin 1138 >> Turn in Fruit of the Sea
 step << Dwarf Hunter/!NightElf Rogue
