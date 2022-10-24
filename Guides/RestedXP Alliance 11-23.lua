@@ -92,7 +92,7 @@ step
     .isOnQuest 4681
     .goto Darkshore,31.9,46.4
 	>> Loot the sea turtle bones underwater
-    * You can run along the docks to get their faster than just swimming!
+    * You can run along the docks to get there faster than just swimming!
     .complete 4681,1 --Collect Sea Turtle Remains (x1)
 step
     .isOnQuest 4681
