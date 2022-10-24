@@ -323,7 +323,6 @@ step << !Warlock/!Rogue
     .goto Darkshore,37.4,40.1,-1
     .turnin -985 >> Turn in How Big a Threat?
     .goto Darkshore,39.3,43.5,-1
-    .isQuestComplete 4762
 step << !Warlock/!Rogue
     #xprate >1.499
     .goto Darkshore,36.6,45.5
