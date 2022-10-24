@@ -892,9 +892,13 @@ step
     .goto Bloodmyst Isle,59.3,89.1
     .complete 9634,1 --Kill Bloodmyst Hatchling (x10)
 step
+    .isQuestTurnedIn 9515
+    .goto Bloodmyst Isle,59.3,89.1
+	.xp 12+3300 >> Grind until you're 3300 exp into level 12 (3300+10100)
+step
 	#label grind3800
 	.goto Bloodmyst Isle,59.3,89.1
-	.xp 12+3880 >> Grind until you're 3880 exp into level 12 (3880+/9800)
+	.xp 12+4140 >> Grind until you're 4140 exp into level 12 (4140+/10100)
 step
     .goto Bloodmyst Isle,67.9,87.9,50,0
     .goto Bloodmyst Isle,66.9,84.5,50,0
