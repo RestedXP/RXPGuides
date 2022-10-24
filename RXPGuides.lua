@@ -42,6 +42,7 @@ addon.player = {
 }
 
 BINDING_HEADER_RXPGuides = addon.title
+BINDING_HEADER_RXPTargeting = addon.title
 
 local questFrame = CreateFrame("Frame");
 

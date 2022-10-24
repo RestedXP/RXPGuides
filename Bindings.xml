@@ -3,4 +3,8 @@
     <Binding name="CLICK RXPItemFrameButton2:LeftButton" category="BINDING_HEADER_RXPGuides"/>
     <Binding name="CLICK RXPItemFrameButton3:LeftButton" category="BINDING_HEADER_RXPGuides"/>
     <Binding name="CLICK RXPItemFrameButton4:LeftButton" category="BINDING_HEADER_RXPGuides"/>
+    <Binding name="CLICK RXPTargetFrameButton1:LeftButton" header="Active Targets" category="BINDING_HEADER_RXPTargeting" />
+    <Binding name="CLICK RXPTargetFrameButton2:LeftButton" category="BINDING_HEADER_RXPTargeting"/>
+    <Binding name="CLICK RXPTargetFrameButton3:LeftButton" category="BINDING_HEADER_RXPTargeting"/>
+    <Binding name="CLICK RXPTargetFrameButton4:LeftButton" category="BINDING_HEADER_RXPTargeting"/>
 </Bindings>

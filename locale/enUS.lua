@@ -12,6 +12,15 @@ _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
     "Active Item Button 4"
 
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrameButton1:LeftButton"] =
+    "Active Target Button 1"
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrameButton2:LeftButton"] =
+    "Active Target Button 2"
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrameButton3:LeftButton"] =
+    "Active Target Button 3"
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrameButton4:LeftButton"] =
+    "Active Target Button 4"
+
 L.delimiter = ' '
 -- Words
 L.words = {}
