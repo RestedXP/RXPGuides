@@ -16,10 +16,14 @@ step << !Tauren
 step
     .goto Mulgore,44.9,77.1
     .accept 747 >>Accept The Hunt Begins
+    .unitscan Brave Windfeather
+    .target Grull Hawkwind
 step
 	>> Head into the hut
     .goto Mulgore,44.2,76.1
     .accept 752 >>Accept A Humble Task
+    .unitscan Brave Windfeather
+    .target Grull Hawkwind
 step << Warrior/Shaman
     #sticky
     #completewith next
@@ -1050,10 +1054,10 @@ step << Warrior
     .accept 1498 >>Accept Path of Defense
 step << Warrior
     .goto Durotar,39.2,32.3,40,0
-    .goto Durotar,39.62,28.10,40,0	
-    .goto Durotar,40.20,24.13,40,0		
+    .goto Durotar,39.62,28.10,40,0
+    .goto Durotar,40.20,24.13,40,0
     .goto Durotar,43.33,24.32,40,0
-    .goto Durotar,39.2,32.3	
+    .goto Durotar,39.2,32.3
     >>Kill Thunder Lizards and Lightning Hides in Thunder Ridge for their Scales
     .complete 1498,1 --Singed Scale (5)
 step << Warrior

@@ -81,9 +81,6 @@ function addon.settings:InitializeSettings()
             showUnusedGuides = true,
             SoM = 1,
             anchorOrientation = "top",
-            enableUnitscan = true,
-            enableTargetMacro = true,
-            notifyOnTargetUpdates = true,
 
             -- Sliders
             arrowScale = 1,
@@ -99,7 +96,13 @@ function addon.settings:InitializeSettings()
             guideFontSize = 9,
             activeItemsScale = 1,
 
-            showEnabled = true
+            showEnabled = true,
+
+            -- Targeting
+            enableUnitscan = true,
+            enableTargetMacro = true,
+            notifyOnTargetUpdates = true,
+            enableProximityTargeting = true
         }
     }
 
@@ -1076,21 +1079,28 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             addon.ResetArrowPosition()
                         end
-                    },
+                    }
+                }
+            },
+            targeting = {
+                type = "group",
+                name = _G.BINDING_HEADER_TARGETING,
+                order = 4,
+                args = {
                     macroHeader = {
                         name = fmt("%s%s", L("Targeting Macro"),
                                    addon.targeting:CanCreateMacro() and '' or
                                        ' - ' .. L("Macro capacity reached")), -- TODO locale
                         type = "header",
                         width = "full",
-                        order = 6
+                        order = 1
                     },
                     enableTargetMacro = {
                         name = L("Create Targeting Macro"), -- TODO locale
                         desc = L("Automatically create a targeting macro"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 6.1,
+                        order = 1.1,
                         disabled = (_G.unitscan_targets and true) or
                             not addon.targeting:CanCreateMacro()
                     },
@@ -1099,16 +1109,38 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Notify when a new target is loaded"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 6.2,
+                        order = 1.2,
                         disabled = (_G.unitscan_targets and true) or
                             not addon.targeting:CanCreateMacro()
+                    },
+                    proximityHeader = {
+                        name = _G.TRACKER_SORT_PROXIMITY,
+                        type = "header",
+                        width = "full",
+                        order = 2
+                    },
+                    enableProximityTargeting = {
+                        name = L("Enable Promimity Targeting"), -- TODO locale
+                        desc = L("Automatically scan nearby targets"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.1
+                    },
+                    enableUnitscan = {
+                        name = L("Unitscan integration"),
+                        desc = L(
+                            "Automatically adds important npcs to your unitscan list"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3,
+                        hidden = not _G.unitscan_targets
                     }
                 }
             },
             levelTrackerFeatures = {
                 type = "group",
                 name = L("Leveling Tracker"),
-                order = 3,
+                order = 5,
                 args = {
                     enableTracker = {
                         name = L("Enable Leveling Tracker"),
@@ -1407,15 +1439,6 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end,
                         hidden = addon.game ~= "CLASSIC"
-                    },
-                    enableUnitscan = {
-                        name = L("Unitscan integration"),
-                        desc = L(
-                            "Automatically adds important npcs to your unitscan list"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 3,
-                        hidden = not _G.unitscan_targets
                     },
                     hardcore = {
                         name = L("Hardcore mode"),

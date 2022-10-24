@@ -2729,10 +2729,22 @@ function addon.functions.unitscan(self, text, ...)
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.targets = npcs
+        element.unitscan = npcs
         return element
     end
 
+end
+
+function addon.functions.target(self, text, ...)
+    if type(self) == "string" then
+        local element = {}
+        local npcs = {...}
+
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        element.targets = npcs --TODO differentiate friend v foe
+        return element
+    end
 end
 
 local BLquests = {

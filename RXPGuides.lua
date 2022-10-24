@@ -428,6 +428,7 @@ function addon:OnInitialize()
     addon.settings:InitializeSettings()
     RXPG_init()
     addon.comms:Setup()
+    addon.targeting:Setup()
     if addon.settings.db.profile.enableTracker then addon.tracker:SetupTracker() end
 
     addon.RXPG.LoadCachedGuides()
@@ -507,8 +508,6 @@ function addon:OnEnable()
         -- Check if reloading in raid
         addon.HideInRaid()
     end
-
-    addon.targeting:Setup()
 end
 
 
