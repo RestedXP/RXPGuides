@@ -92,7 +92,7 @@ step
     .isOnQuest 4681
     .goto Darkshore,31.9,46.4
 	>> Loot the sea turtle bones underwater
-    * You can run along the docks to get their faster than just swimming!
+    * You can run along the docks to get there faster than just swimming!
     .complete 4681,1 --Collect Sea Turtle Remains (x1)
 step
     .isOnQuest 4681
@@ -323,7 +323,6 @@ step << !Warlock/!Rogue
     .goto Darkshore,37.4,40.1,-1
     .turnin -985 >> Turn in How Big a Threat?
     .goto Darkshore,39.3,43.5,-1
-    .isQuestComplete 4762
 step << !Warlock/!Rogue
     #xprate >1.499
     .goto Darkshore,36.6,45.5
@@ -1302,6 +1301,7 @@ step
     .goto Darkshore,36.1,44.9
     .accept 1138 >> Accept Fruit of the Sea
 step
+    #xprate <1.2
     >> Talk to the Wanted Poster outside the inn
     .goto Darkshore,37.2,44.2
     .accept 4740 >> Accept WANTED: Murkdeep!
@@ -1311,6 +1311,7 @@ step
     .goto Darkshore,37.3,43.7
     .accept 947 >> Accept Cave Mushrooms
 step
+    #xprate <1.2
     >> Talk to the dwarf by the town hall
     .goto Darkshore,37.5,41.8
     .accept 729 >> Accept The Absent Minded Prospector
@@ -1378,6 +1379,7 @@ step
 #xprate <1.5
 	#sticky
     #completewith crabraveboys
+    .isOnQuest 1138
 	>>Kill Reef Crawlers and Encrusted Tide Crawlers along the coast
     .complete 1138,1 --Collect Fine Crab Chunks (x6)
 step--murlocs
@@ -1398,7 +1400,6 @@ step--encrusted crawlers
     .isQuestTurnedIn 4681
 step
 #xprate <1.5
-    .isOnQuest 2098
 	>>Start heading north while grinding crabs along the coast
     .goto Darkshore,56.7,13.5
     .accept 2098 >> Accept Gyromast's Retrieval
@@ -1514,6 +1515,7 @@ step
 step << Dwarf Hunter/Rogue
 	#sticky
 	#completewith next
+    .isOnQuest 2139
 	.deathskip >> Death skip to Auberdine
 step
 #xprate <1.5
@@ -1559,7 +1561,7 @@ step
     .isQuestTurnedIn 4681
 step
 #xprate <1.5
-    .isOnQuest 1138
+    .isQuestComplete 1138
     .goto Darkshore,36.1,44.9
     .turnin 1138 >> Turn in Fruit of the Sea
 step << Dwarf Hunter/!NightElf Rogue
@@ -1633,6 +1635,7 @@ step
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
 step
+    #xprate <1.2
     .goto Darkshore,38.7,87.3
 	>>Talk to the dryad at the back of the camp. If she's not here someone else may be escorting here, skip this step if she's not around.
     .accept 945 >> Accept Therylune's Escape
@@ -1649,8 +1652,9 @@ step
     .turnin 949 >> Turn in The Twilight Camp
 step
     #requires escort
+    .isOnQuest 993
     .goto Darkshore,45.0,85.3
-    .turnin -993 >> Turn in A Lost Master
+    .turnin 993 >> Turn in A Lost Master
 step
     .goto Darkshore,45.0,85.3
     .accept 994,1 >> Accept Escape Through Force
@@ -1811,7 +1815,7 @@ step
 	.goto 1414,43.91,34.58,20,0
 	.goto 1414,44.02,34.58,20,0
 	.goto 1414,44.16,34.85
-    >>Enter the temple like building into the BFD caves and kill nagas/satyrs
+    >>Enter the temple building that leads to Blackfathom Deeps and kill nagas/satyrs. Loot them for brain stems.
     .complete 1275,1
 step
     #requires nagas
@@ -1842,7 +1846,7 @@ step
     .goto Ashenvale,36.6,49.6
     .turnin 1023 >> Turn in Raene's Cleansing
 step
-#xprate <1.5 << tbc
+#xprate <1.2
     .goto Ashenvale,36.6,49.6
     .accept 1025 >> Accept An Aggressive Defense
 step
@@ -1852,7 +1856,7 @@ step
     .goto Ashenvale,34.7,48.9
     .turnin 1008 >> Turn in The Zoram Strand
 step
-#xprate <1.5 << tbc
+#xprate <1.2
     >>Kill the mobs for An Aggressive Defense
     .goto Ashenvale,49.9,60.8,40,0
     .goto Ashenvale,56.9,63.7,40,0
@@ -1862,20 +1866,20 @@ step
     .complete 1025,3 --Kill Foulweald Totemic (x10)
     .complete 1025,4 --Kill Foulweald Warrior (x12)
 step
-#xprate <1.5 << tbc
+#xprate <1.2
     .goto Ashenvale,49.8,67.2
     .accept 1016 >> Accept Elemental Bracers
 step
-#xprate <1.5 << tbc
+#xprate <1.2
     >>Kill all water elementals on the island/in the water for Intact Elemental Bracers. When you have 5, right click the Divining Scroll
     .goto Ashenvale,48.0,69.9
     .complete 1016,1 --Collect Divined Scroll (x1)
 step
-#xprate <1.5 << tbc
+#xprate <1.2
     .goto Ashenvale,49.8,67.2
     .turnin 1016 >> Turn in Elemental Bracers
 step
-#xprate <1.5 << tbc
+#xprate <1.2
     .goto Ashenvale,36.6,49.6
     .turnin 1025 >> Turn in An Aggressive Defense
     .isQuestComplete 1025
@@ -1887,20 +1891,24 @@ step
     .fp Astranaar>> Get the Astranaar Flight Path
     .fly Auberdine>> Fly to Auberdine
 step
+    .isOnQuest 4740
     .goto Darkshore,37.7,43.4
     .turnin 4740 >> Turn in WANTED: Murkdeep!
 step
     .goto Darkshore,38.36,43.07
     .turnin 1275 >> Turn in Researching the Corruption
 step
+    .isOnQuest 994
     .goto Darkshore,39.3,43.4
-    .turnin -994 >> Turn in Escape Through Force
+    .turnin 994 >> Turn in Escape Through Force
 step
+    .isOnQuest 731
     .goto Darkshore,37.5,41.9
     .turnin 731 >> Turn in The Absent Minded Prospector
 	.accept 741 >> Accept The Absent Minded Prospector << !Hunter !NightElf !Rogue/NightElf wotlk
 step << !Hunter !NightElf !Rogue
     .goto Darkshore,33.1,39.9
+    .isOnQuest 741
     .zone Teldrassil>>Take the boat to Teldrassil
 step << NightElf wotlk
     .isOnQuest 741
@@ -1917,14 +1925,17 @@ step << NightElf wotlk
     .skill riding,1 >> Train riding skill and buy a mount
     .money <4.60
 step << Warrior tbc/Mage/Priest/Warlock
+    .isOnQuest 942
 	.goto Teldrassil,29.2,56.7
     .train 227 >> Train Staves
 step << !Hunter !NightElf !Rogue
+    .isOnQuest 942
     .goto Darnassus,31.0,41.5,30,0
     .goto Teldrassil,58.4,94.0
     >> Exit Darnassus through the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << !Hunter !NightElf !Rogue
+    .isOnQuest 942
     .goto Teldrassil,58.4,94.0
     .fly Auberdine >>Fly back to Auberdine
 step << Draenei !Paladin wotlk

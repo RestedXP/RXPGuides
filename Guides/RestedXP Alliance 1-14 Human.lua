@@ -1184,7 +1184,7 @@ step << Warrior/Paladin/Rogue
     .goto StormwindClassic,56.3,17.0
     .vendor >>Buy a Mining Pick. You'll train Mining later
 step << tbc/Warlock wotlk
-    #xprate >1.3 << Warlock wotlk
+    #xprate >1.119 << Warlock wotlk
     #completewith next
     .goto StormwindClassic,51.8,12.1
     .turnin 1097 >> Turn in Elmore's Task
@@ -1193,28 +1193,28 @@ step << tbc
     .goto StormwindClassic,51.8,12.1
     .accept 353 >> Accept Stormpike's Delivery
 step << tbc/Warlock wotlk
-#xprate >1.3 << Warlock wotlk
+#xprate >1.119 << Warlock wotlk
     #completewith next
     .goto StormwindClassic,63.9,8.3,25 >>Enter the Deeprun Tram
 step << tbc/Warlock wotlk
-#xprate >1.3 << Warlock wotlk
+#xprate >1.119 << Warlock wotlk
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
     >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin
     >>Take the tram when it arrives. Cast Summon Voidwalker and Create Healthstone. Get off the tram on the other side << Warlock
     .accept 6661 >> Accept Deeprun Rat Roundup
 step << tbc/Warlock wotlk
-#xprate >1.3 << Warlock wotlk
+#xprate >1.119 << Warlock wotlk
     >>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step << tbc/Warlock wotlk
-#xprate >1.3 << Warlock wotlk
+#xprate >1.119 << Warlock wotlk
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step << Warlock wotlk
-#xprate >1.3
+#xprate >1.119
     .hs >> Hearth to Sentinel Hill
 step << Warlock wotlk
-#xprate >1.3
+#xprate >1.119
     >> Kill the Defias. Loot them for their bandanas
     .goto Westfall,48.21,46.70,60,0
     .goto Westfall,46.74,52.87,60,0
@@ -1224,37 +1224,37 @@ step << Warlock wotlk
     .complete 12,2
     .complete 153,1
 step << Warlock wotlk
-#xprate >1.3
+#xprate >1.119
     .goto Westfall,54.00,52.90
     .turnin 153 >> Turn in Red Leather Bandanas
 step << Warlock wotlk
-#xprate >1.3
+#xprate >1.119
     .goto Westfall,56.30,47.50
     .turnin 12 >> Turn in The People's Militia
 step << Warlock wotlk
-#xprate >1.3
+#xprate >1.119
     .xp 14 >> Grind to level 14
 step << Warlock wotlk
-#xprate >1.3
+#xprate >1.119
     .goto Westfall,56.6,52.6
     .fly Stormwind >> Fly to Stormwind
 step << Warlock wotlk
-#xprate >1.3
+#xprate >1.119
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
     .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
 step << Warlock wotlk
-#xprate >1.3
+#xprate >1.119
     .train 6222 >> Train Corruption rank 2 and drain life from the warlock trainer
 step << Warlock wotlk
-#xprate >1.3
+#xprate >1.119
     >>Go in the building. Buy a Smoldering Wand if you have the money for it
     .goto StormwindClassic,42.65,67.16,14,0
     .goto StormwindClassic,42.84,65.14
     .collect 5208,1 --Smoldering Wand (1)
     .money >0.3174
 step << wotlk
-#xprate >1.3 << Warlock
+#xprate >1.119
     .goto StormwindNew,21.8,56.2
     .zone Darkshore >> Take the boat to Darkshore at the Harbor
     .zoneskip Darnassus
@@ -1325,34 +1325,90 @@ RXPGuides.RegisterGuide([[
 -- Alliance tbc/Alliance Warlock
 #name 11-12 Loch Modan << !Warlock
 #name 12-14 Loch Modan << Warlock
-#xprate <1.5 << wotlk
+#xprate <1.2 << wotlk
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #next 14-14 Darkshore << Warlock
 #next 11-14 Darkshore << !Warlock
 step
+    #xprate <1.2
+    #completewith next
+    .isOnQuest 1097
+    .goto StormwindClassic,51.8,12.1
+    .turnin 1097 >> Turn in Elmore's Task
+step
+    #label StormpikeDelivery
+    #xprate <1.2
+    .goto StormwindClassic,51.8,12.1
+    .accept 353 >> Accept Stormpike's Delivery
+step
+#xprate <1.2
+    #completewith next
+    .goto StormwindClassic,63.9,8.3,25 >>Enter the Deeprun Tram
+step
+#xprate <1.2
+    >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
+    >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin
+    >>Take the tram when it arrives. Cast Summon Voidwalker and Create Healthstone. Get off the tram on the other side << Warlock
+    .accept 6661 >> Accept Deeprun Rat Roundup
+step
+#xprate <1.2
+    >>Use your flute on the rats scattered around
+    .complete 6661,1 --Rats Captured (x5)
+step
+    #xprate <1.2
+    .isOnQuest 6661
+    .turnin 6661 >> Turn in Deeprun Rat Roundup
+step
+    #xprate <1.2
+    .goto Ironforge,77.0,51.0
+    .zone Ironforge >>Enter Ironforge
+    .zoneskip Dun Morogh
+step
+    #xprate <1.2
+    .goto Ironforge,55.5,47.7
+    .fp Ironforge >> Get the Ironforge flight path
+    .zoneskip Ironforge,1
+step << Warrior tbc
+    #xprate <1.2
+    .goto Ironforge,61.2,89.5
+    .trainer >>Train 2h Maces
+step
+    #xprate <1.2
+    #completewith next
+    .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
+    .zoneskip Ironforge,1
+step
+    #xprate <1.2
     .goto Dun Morogh,60.1,52.6,50,0
     .goto Dun Morogh,63.1,49.8
     .accept 314 >> Accept Protecting the Herd
 step
+    #xprate <1.2
     #completewith next
     .goto Dun Morogh,62.3,50.3,14,0
     .goto Dun Morogh,62.2,49.4,12 >>Run up this part of the mountain
 step
+    #xprate <1.2
     >>Kill Vagash. Loot him for his Fang.
     .goto Dun Morogh,62.6,46.1
     .complete 314,1 --Collect Fang of Vagash (1)
 step
+    #xprate <1.2
     .goto Dun Morogh,63.1,49.8
     .turnin 314 >> Turn in Protecting the Herd
 step
+    #xprate <1.2
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
 step
+    #xprate <1.2
     .goto Dun Morogh,69.1,56.3
     .accept 432 >> Accept Those Blasted Troggs!
 step
+    #xprate <1.2
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39
     >>Kill Troggs in the cave
@@ -1363,36 +1419,44 @@ step << !Warlock
 step << Warlock
     .xp 12
 step
+    #xprate <1.2
     .goto Dun Morogh,69.1,56.3
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
+    #xprate <1.2
     .goto Dun Morogh,68.7,56.0
     .turnin 433 >> Turn in The Public Servant
 step << !Warlock
     .xp 11
 step << Mage/Warlock/Priest
+    #xprate <1.2
     .goto Dun Morogh,68.6,54.7
     .vendor >>Vendor, buy level 5 drink
 step
+    #xprate <1.2
     .goto Dun Morogh,78.1,49.5,30,0
     .goto Dun Morogh,81.2,42.7,45,0
     .goto Dun Morogh,83.9,39.2
     .accept 419 >> Accept The Lost Pilot
 step
+    #xprate <1.2
     >>Click the Dwarf Corpse
     .goto Dun Morogh,79.7,36.2
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
 step
+    #xprate <1.2
     >>Kill Mangeclaw. Loot him for his Claw
     .goto Dun Morogh,78.9,37.0
     .complete 417,1 --Collect Mangy Claw (x1)
 step
+    #xprate <1.2
     #label LochEntrance
     .goto Dun Morogh,83.9,39.2
     >>Choose the dagger, use it as your offhand << Rogue
     .turnin 417 >> Turn in A Pilot's Revenge
 step
+    #xprate <1.2
     #completewith next
     .goto Dun Morogh,84.4,31.1
     .zoneskip Loch Modan >>Go through the tunnel to Loch Modan
@@ -1572,10 +1636,11 @@ step << Warlock/Mage/Rogue
     .turnin 416 >> Turn in Rat Catching
     .unitscan Mountaineer Kadrell
 step << Warlock/Mage/Rogue
-#xprate <1.5
+#xprate <1.2
     .goto Loch Modan,34.8,49.3
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
+    #xprate <1.2
     .goto Loch Modan,33.9,51.0
     .fp Thelsamar >> Get the Thelsamar flight path
     .fly Ironforge >> Fly to Ironforge << !Warlock
@@ -1598,13 +1663,13 @@ step << Warlock
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
 step << Warlock
-#xprate <1.5
+#xprate <1.2
     #completewith TroggT
     .money >0.7150
     .goto Loch Modan,32.7,76.5,0
     +Grind here until you have 71s 50c of vendorables+money, then turnin
 step << Warlock
-#xprate <1.5
+#xprate <1.2
     .goto Loch Modan,32.7,76.5,0
     .xp 14-1820 >>Grind until you are 1800xp away from level 14
 step << Warlock
@@ -1640,6 +1705,7 @@ step << Warlock wotlk
     .collect 5208,1 --Smoldering Wand (1)
     .money >0.3174
 step << wotlk
+    #xprate <1.2
     .goto StormwindNew,21.8,56.2
     .zone Darkshore >> Take the boat to Darkshore
     .zoneskip Darnassus

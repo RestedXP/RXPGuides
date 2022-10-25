@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 24-27 Redridge/Duskwood
 #xprate <1.5
 
-step << Warrior wotlk
+step << Warrior tbc
     #sticky
     #completewith exit1
     .goto StormwindClassic,64.1,61.2,0
@@ -36,7 +36,7 @@ step << Paladin wotlk
 step << Warlock wotlk
     .goto StormwindClassic,25.3,78.7
     .trainer >> Train your class spells
-step << Warlock wotlk 
+step << Warlock wotlk
     .isOnQuest 1738
     .goto StormwindClassic,25.3,78.7
     .turnin 1738 >>Turn in Heartswood
@@ -57,6 +57,9 @@ step << Mage wotlk
 step << wotlk
     .goto StormwindClassic,52.61,65.71
     .home >> Set your Hearthstone to Stormwind City
+step << !Human
+    .goto Stormwind City,66.4,62.1
+    .fp Stormwind >> Learn the Stormwind Flight Path
 step << Rogue wotlk
 	.goto StormwindClassic,74.6,52.8
 	.trainer >> Train your class spells
@@ -103,6 +106,13 @@ step << wotlk
 step << !Dwarf wotlk !Gnome wotlk--Not needed, including just in case someone forgets to set HS to SW
     .goto Ironforge,55.5,47.7
     .fp Ironforge>> Get the Ironforge Flight Path
+step << Hunter/Warrior/Paladin/Shaman/Rogue
+	.goto Ironforge,61.34,89.25
+	.train 197 >> Train 2H Axes << !Rogue
+	.train 266 >> Train Guns << Hunter/Warrior/Rogue
+    .train 199 >> Train 2H Maces << Warrior/Shaman
+    .train 54 >> Train Maces << Rogue/Shaman/wotlk Warrior
+    .train 44 >> Train Axes << Shaman/wotlk Warrior
 step << Mage wotlk
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
@@ -202,6 +212,7 @@ step
 step
 	#sticky
 	#label crocs
+    #completewith endofcrocc
 	>> Kill Young Wetlands Crocolisks between quests. Loot them for their Skin
     .complete 484,1 --Collect Young Crocolisk Skin (x4)
 
@@ -275,6 +286,7 @@ step << Warrior
     .collect 3357,8,0,1,1 --Collect Liferoot (x8)
     #xprate <1.5
 step
+    #requires crocs
     .goto Wetlands,56.4,40.4
     .turnin 463 >> Turn in The Greenwarden
 step
@@ -300,6 +312,7 @@ step
     #completewith wettylandy
     .abandon 276 >> Abandon Tramping Paws
 step
+    #label endofcrocc
     .goto Wetlands,56.4,40.3
     .accept 277 >> Accept Fire Taboo
     .isQuestTurnedIn 276
@@ -332,7 +345,7 @@ step << Draenei tbc/NightElf tbc
     .zoneskip Elwynn Forest
 step << wotlk
     #label wettylandy
-    #completewith next
+    >> Skip this step and head back to Menethil Harbor if your hearth is on CD
     .goto Wetlands,9.5,59.7
     .hs >> Hearth to Stormwind << !Mage
     .hs >> Hearth to Menethil << Mage
@@ -362,7 +375,7 @@ step
     .zoneskip Wetlands,1
     .goto Wetlands,9.5,59.7
     >> Hearth if your hearthstone is set to Stormwind
-    .fly Stormwind City >> Fly to Stormwind City
+    .fly Stormwind >> Fly to Stormwind City
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -467,7 +480,7 @@ step << Human Paladin/Human Warlock
     .zoneskip Elwynn Forest
 step << !Human
     .goto Elwynn Forest,65.2,69.8
-	>>Head to the top of the Tower of Azora. You do NOT need to get the Stormwind Flight Path. We will get it later. 
+	>>Head to the top of the Tower of Azora. You do NOT need to get the Stormwind Flight Path. We will get it later.
     .accept 94 >> Accept A Watchful Eye
 step
     #label exit
@@ -893,6 +906,7 @@ step
     .goto Duskwood,77.5,44.3
  .fly Redridge >> Fly to Redridge
 step
+    #xprate <1.2
     .goto Redridge Mountains,31.6,57.9
     .accept 128 >> Accept Blackrock Bounty
     .maxlevel 26 << Paladin/Hunter
@@ -959,7 +973,7 @@ step
 step
 	#sticky
 	#completewith HistoryB3
-	>>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
+	.use 2794 >>Keep an eye out for Old History book (zone-wide drop). You'll need this for later
 	.collect 2794,1,337
 	.accept 337 >> Accept An Old History Book
 step
@@ -975,6 +989,12 @@ step
     .goto Duskwood,7.7,34.1
     .turnin 268 >> Turn in Return to Sven
     .accept 323 >> Accept Proving Your Worth
+step
+    #sticky
+    #completewith nomoreraidernote
+    .goto Duskwood,16.2,38.8,0
+    >> Kill Skeletal Raiders around the crypt and house on the hill as you complete other quests. You typically cannot get all 15 in one go and want to keep them respawning.
+    .complete 323,1 --Kill Skeletal Raider (x15)
 step << !Hunter !Paladin
     .goto Duskwood,21.6,45.1
 	>> Kill undead in the area and loot them
@@ -993,6 +1013,8 @@ step << Hunter/Paladin
     .complete 57,2 --Kill Skeletal Horror (x15)
     .complete 156,1 --Collect Rot Blossom (x8)
     .complete 101,3 --Collect Skeleton Finger (x10)
+step
+    #label nomoreraidernote
 step
     .goto Duskwood,16.2,38.8
     >>Kill mobs around the crypt, you might need to go inside it to kill the 3 warders you need
@@ -1119,7 +1141,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
     .train 199 >> Train 2H Maces << Warrior/Shaman
     .train 54 >> Train Maces << Rogue/Shaman/wotlk Warrior
     .train 44 >> Train Axes << Shaman/wotlk Warrior
-step << Hunter
+step << Hunter tbc
 	#sticky
 	#completewith next
 	.goto Ironforge,61.34,89.25
@@ -1290,6 +1312,16 @@ step
     .accept 275 >> Accept Blisters on The Land
     .isQuestTurnedIn 276
 step
+    .isOnQuest 465
+    .goto Wetlands,47.3,46.9
+    .turnin 465 >> Turn in Nek'rosh's Gambit
+    .accept 474 >> Accept Defeat Nek'rosh
+step
+    .isOnQuest 474
+    .goto Wetlands,53.5,54.6
+	>> Kill Nek'rosh and loot him for his head
+    .complete 474,1 --Collect Nek'rosh's Head (x1)
+step
     .goto Wetlands,64.8,75.3
     >>Loot the tree root at the base of the waterfall
     .complete 335,2 --Collect Musquash Root (x1)
@@ -1345,7 +1377,7 @@ step
     .goto Wetlands,53.5,54.6
 	>> Kill Nek'rosh and loot him for his head
     .complete 474,1 --Collect Nek'rosh's Head (x1)
-step << Warrior
+step << Warrior tbc
     #sticky
 	#completewith next
     .goto Wetlands,50.2,37.8
@@ -1353,6 +1385,7 @@ step << Warrior
     .collect 3357,8 --Collect Liferoot (x8)
     #xprate <1.5
 step
+    .isOnQuest 275
     .goto Wetlands,56.4,40.5
 	>>Finish off Fen Creepers in the rivers
     .complete 275,1 --Kill Fen Creeper (x8)
@@ -1506,6 +1539,9 @@ step
     .goto Western Plaguelands,42.9,85.0
     >>Head north farming turtle meat along the river, once you get at the end of the river, head northwest into WPL. You don't need all 10 meat yet.
     .fp Chillwind >> Get the Chillwind Camp flight path
+step
+    .goto Western Plaguelands,42.9,85.0,-1
+    .goto Hillsbrad Foothills,49.3,52.3,-1
     .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.6,60.5
@@ -1566,7 +1602,7 @@ step << Mage
 step << Hunter
 	.goto StormwindClassic,61.7,15.4
 	.trainer >> Train your class spells
-	.train 14924>> Train Growl 4 at the pet trainer
+	.train 14924>> Train Growl 4 at the pet trainer << tbc
 step
     #sticky
     #completewith exit
@@ -1786,7 +1822,7 @@ step << Shaman
     .isOnQuest 335
 step << Shaman
     .goto Duskwood,77.4,36.1
-	>> Kill the undead in the house and loot him for his ring
+	>> Kill Stalvan in the house and loot him for his ring
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << Shaman
     #requires TearT
@@ -1926,6 +1962,7 @@ step
     .accept 1245 >> Accept The Missing Diplomat
 step << !Shaman
     .goto Duskwood,77.4,36.1
+    >> Kill Stalvan in the house for his ring
     .complete 98,1 --Collect Mistmantle Family Ring (x1)
 step << !Shaman
     .goto Duskwood,78.4,35.9
@@ -1965,11 +2002,11 @@ step
     .accept 185 >> Accept Tiger Mastery
     .accept 190 >> Accept Panther Mastery
 step
-	#sticky
-	#completewith thorsen
 	#label tigers
+    >> Kill young tigers around the hunting camp
     .complete 185,1 --Kill Young Stranglethorn Tiger (x10)
 step
+    >> Cross the bridge and kill young panthers
     .goto Stranglethorn Vale,42.1,11.2
     .complete 190,1 --Kill Young Panther (x10)
 step
@@ -2076,6 +2113,9 @@ step
     .goto StormwindClassic,60.1,63.9
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
+step << Shaman wotlk
+    .goto StormwindClassic,52.61,65.71
+    .home >> Set your Hearthstone to Stormwind City
 step
    	#sticky
 	#completewith next
@@ -2102,6 +2142,75 @@ step << Warlock
     .goto StormwindClassic,25.3,78.5
     .accept 1798 >>Accept Seeking Strahad
 	.trainer >> Train your class spells
+
+step << Shaman wotlk
+    .goto StormwindNew,21.8,56.2
+    .zone Darkshore >> Take the boat to Darkshore
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+step << Shaman wotlk
+    #sticky
+    #completewith next
+    .zone The Exodar >> Take the boat to Darkshore and then to The Exodar.
+    >>If you have 35g purchase your mount and training otherwise skip this step. << tbc
+	.goto The Exodar,81.5,52.5,40,0
+step << Shaman wotlk
+    .goto The Exodar,29.9,33.0
+    .turnin 10491 >> Turn in Call of Air
+    .accept 9552 >> Accept Call of Air
+step << Shaman wotlk
+    #completewith next
+    .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
+step << Shaman wotlk
+    .goto Bloodmyst Isle,32.3,16.2
+    .turnin 9504 >> Turn in Call of Water
+    .accept 9508 >> Accept Call of Water
+step << Shaman wotlk
+    .goto Bloodmyst Isle,26.0,40.9
+	>>Kill Tel'athion and loot him for his head
+    .complete 9508,1 --Collect Head of Tel'athion (x1)
+step << Shaman wotlk
+    .goto Bloodmyst Isle,32.2,16.1
+    .turnin 9508 >> Turn in Call of Water
+    .accept 9509 >> Accept Call of Water
+step << Shaman wotlk
+	#sticky
+	#completewith ZExodar
+	.deathskip >> Drown yourself and spirit rez
+step << Shaman wotlk
+	#sticky
+	#completewith next
+	.goto Bloodmyst Isle,57.7,53.9
+	>>Run back to Blood Watch, then fly to The Exodar
+    .fly The Exodar>> Fly to The Exodar
+step << Shaman wotlk
+	#label ZExodar
+	.zone The Exodar >> Go to The Exodar
+step << Shaman wotlk
+    .goto Azuremyst Isle,26.8,27.3,42
+    >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
+step << Shaman wotlk
+    .goto Azuremyst Isle,24.9,35.9
+    .turnin 9552 >> Turn in Call of Air
+    .accept 9553 >> Accept Call of Air
+step << Shaman wotlk
+    .goto Azuremyst Isle,22.3,32.5
+    .turnin 9553 >> Turn in Call of Air
+    .accept 9554 >> Accept Call of Air
+step << Shaman wotlk
+    #sticky
+    #completewith next
+    .zone The Exodar>>Speak with Susurrus again so he can send you back flying to The Exodar
+step << Shaman wotlk
+    .goto The Exodar,30.0,33.1
+    .turnin 9509 >> Turn in Call of Water
+step << Shaman wotlk
+    .goto The Exodar,29.6,33.4
+    .turnin 9554 >> Turn in Call of Air
+	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
+step << Shaman wotlk
+    .hs >> Hearth to Stormwind
+
 step << Human Paladin
     .goto StormwindClassic,38.6,26.7
     .turnin 1787 >>Turn in The Tome of Divinity
@@ -2256,67 +2365,67 @@ step << NightElf tbc
 	.money <35.00
 	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount.
 	.hs >> Then hearth back to Menethil Harbor and take the boat to Theramore.
-step << Shaman
+step << Shaman tbc
     #sticky
     #completewith next
     .zone The Exodar >> Take the boat to Darkshore and then to The Exodar.
     >>If you have 35g purchase your mount and training otherwise skip this step. << tbc
 	.goto The Exodar,81.5,52.5,40,0
-step << Shaman
+step << Shaman tbc
     .goto The Exodar,29.9,33.0
     .turnin 10491 >> Turn in Call of Air
     .accept 9552 >> Accept Call of Air
-step << Shaman
+step << Shaman tbc
     #completewith next
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
-step << Shaman
+step << Shaman tbc
     .goto Bloodmyst Isle,32.3,16.2
     .turnin 9504 >> Turn in Call of Water
     .accept 9508 >> Accept Call of Water
-step << Shaman
+step << Shaman tbc
     .goto Bloodmyst Isle,26.0,40.9
 	>>Kill Tel'athion and loot him for his head
     .complete 9508,1 --Collect Head of Tel'athion (x1)
-step << Shaman
+step << Shaman tbc
     .goto Bloodmyst Isle,32.2,16.1
     .turnin 9508 >> Turn in Call of Water
     .accept 9509 >> Accept Call of Water
-step << Shaman
+step << Shaman tbc
 	#sticky
 	#completewith ZExodar
 	.deathskip >> Drown yourself and spirit rez
-step << Shaman
+step << Shaman tbc
 	#sticky
 	#completewith next
 	.goto Bloodmyst Isle,57.7,53.9
 	>>Run back to Blood Watch, then fly to The Exodar
     .fly The Exodar>> Fly to The Exodar
-step << Shaman
+step << Shaman tbc
 	#label ZExodar
 	.zone The Exodar >> Go to The Exodar
-step << Shaman
+step << Shaman tbc
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
-step << Shaman
+step << Shaman tbc
     .goto Azuremyst Isle,24.9,35.9
     .turnin 9552 >> Turn in Call of Air
     .accept 9553 >> Accept Call of Air
-step << Shaman
+step << Shaman tbc
     .goto Azuremyst Isle,22.3,32.5
     .turnin 9553 >> Turn in Call of Air
     .accept 9554 >> Accept Call of Air
-step << Shaman
+step << Shaman tbc
     #sticky
     #completewith next
     .zone The Exodar>>Speak with Susurrus again so he can send you back flying to The Exodar
-step << Shaman
+step << Shaman tbc
     .goto The Exodar,30.0,33.1
     .turnin 9509 >> Turn in Call of Water
-step << Shaman
+step << Shaman tbc
     .goto The Exodar,29.6,33.4
     .turnin 9554 >> Turn in Call of Air
 	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
-step << Shaman
+step << Shaman tbc
     .hs >> Hearth to Wetlands
 ]])
 
@@ -2613,6 +2722,30 @@ step
     .link https://www.youtube.com/watch?v=i5dIhfOmyd8 >> Click here for a video on how to do the logout skip
     .fp Rebel >> Get the Rebel Camp flight path
 step
+    .goto Stranglethorn Vale,35.6,10.5
+    .accept 583 >> Accept Welcome to the Jungle
+step
+    .goto Stranglethorn Vale,35.7,10.8
+    .turnin 583 >> Turn in Welcome to the Jungle
+    .accept 185 >> Accept Tiger Mastery
+    .accept 190 >> Accept Panther Mastery
+step
+	#sticky
+	#completewith thorsen
+	#label tigers
+    .complete 185,1 --Kill Young Stranglethorn Tiger (x10)
+step
+    .goto Stranglethorn Vale,42.1,11.2
+    .complete 190,1 --Kill Young Panther (x10)
+step
+	#requires tigers
+	#label thorsen
+    .goto Stranglethorn Vale,35.6,10.6
+    .turnin 185 >> Turn in Tiger Mastery
+    .accept 186 >> Accept Tiger Mastery
+    .turnin 190 >> Turn in Panther Mastery
+    .accept 191 >> Accept Panther Mastery
+step
     .goto Duskwood,31.6,45.4
 	>> Kill spiders and loot them for their venom
     .complete 101,2 --Collect Vial of Spider Venom (x5)
@@ -2714,7 +2847,8 @@ step
     .complete 222,1 --Kill Nightbane Vile Fang (x8)
     .complete 222,2 --Kill Nightbane Tainted One (x8)
 step
-    .xp 30-10575
+    .xp 30-10575 << !Shaman
+    .xp 30-7460 << Shaman
 step
     .goto Duskwood,75.7,47.6
     .turnin 222 >> Turn in Worgen in the Woods
@@ -2722,6 +2856,8 @@ step
 step
     .goto Duskwood,75.3,48.9
     .turnin 223 >> Turn in Worgen in the Woods
+step << Shaman
+    .xp 30
 step << !Mage
 	.goto Duskwood,77.5,44.2
     .fly Stormwind>> Fly to Stormwind
@@ -2780,7 +2916,8 @@ step
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
 step << NightElf/Draenei
-    #completewith next
+    #sticky
+    .goto StormwindClassic,52.61,65.71
     .home >> Set your hearthstone in Stormwind
 step
     .goto StormwindClassic,39.9,81.3
@@ -2796,6 +2933,75 @@ step << Warlock
     .goto StormwindClassic,25.3,78.5
     .accept 1798 >>Accept Seeking Strahad
 	.trainer >> Train your class spells
+
+step << Shaman wotlk
+    .goto StormwindNew,21.8,56.2
+    .zone Darkshore >> Take the boat to Darkshore
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+step << Shaman wotlk
+    #sticky
+    #completewith next
+    .zone The Exodar >> Take the boat to Darkshore and then to The Exodar.
+    >>If you have 35g purchase your mount and training otherwise skip this step. << tbc
+	.goto The Exodar,81.5,52.5,40,0
+step << Shaman wotlk
+    .goto The Exodar,29.9,33.0
+    .turnin 10491 >> Turn in Call of Air
+    .accept 9552 >> Accept Call of Air
+step << Shaman wotlk
+    #completewith next
+    .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
+step << Shaman wotlk
+    .goto Bloodmyst Isle,32.3,16.2
+    .turnin 9504 >> Turn in Call of Water
+    .accept 9508 >> Accept Call of Water
+step << Shaman wotlk
+    .goto Bloodmyst Isle,26.0,40.9
+	>>Kill Tel'athion and loot him for his head
+    .complete 9508,1 --Collect Head of Tel'athion (x1)
+step << Shaman wotlk
+    .goto Bloodmyst Isle,32.2,16.1
+    .turnin 9508 >> Turn in Call of Water
+    .accept 9509 >> Accept Call of Water
+step << Shaman wotlk
+	#sticky
+	#completewith ZExodar
+	.deathskip >> Drown yourself and spirit rez
+step << Shaman wotlk
+	#sticky
+	#completewith next
+	.goto Bloodmyst Isle,57.7,53.9
+	>>Run back to Blood Watch, then fly to The Exodar
+    .fly The Exodar>> Fly to The Exodar
+step << Shaman wotlk
+	#label ZExodar
+	.zone The Exodar >> Go to The Exodar
+step << Shaman wotlk
+    .goto Azuremyst Isle,26.8,27.3,42
+    >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
+step << Shaman wotlk
+    .goto Azuremyst Isle,24.9,35.9
+    .turnin 9552 >> Turn in Call of Air
+    .accept 9553 >> Accept Call of Air
+step << Shaman wotlk
+    .goto Azuremyst Isle,22.3,32.5
+    .turnin 9553 >> Turn in Call of Air
+    .accept 9554 >> Accept Call of Air
+step << Shaman wotlk
+    #sticky
+    #completewith next
+    .zone The Exodar>>Speak with Susurrus again so he can send you back flying to The Exodar
+step << Shaman wotlk
+    .goto The Exodar,30.0,33.1
+    .turnin 9509 >> Turn in Call of Water
+step << Shaman wotlk
+    .goto The Exodar,29.6,33.4
+    .turnin 9554 >> Turn in Call of Air
+	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
+step << Shaman wotlk
+    .hs >> Hearth to Stormwind
+
 step << Human Paladin
     .goto StormwindClassic,38.6,26.7
     .turnin 1787 >>Turn in The Tome of Divinity
@@ -2859,7 +3065,7 @@ step << Hunter/Warrior/Paladin/Shaman/Rogue
     .train 198 >> Train Maces << Rogue/Shaman
     .train 44 >> Train Axes << Warrior wotlk/Shaman/Rogue wotlk
     .zoneskip Wetlands
-step << Hunter
+step << Hunter tbc
 	#sticky
 	#completewith next
 	.goto Ironforge,61.34,89.25
@@ -3062,66 +3268,66 @@ step << NightElf tbc
 	.money <35.00
 	.train 150 >> Take the boat to Darkshore then to Darnassus and buy your mount.
 	.hs >> Then hearth back to Menethil Harbor and take the boat to Theramore.
-step << Shaman
+step << Shaman tbc
     #sticky
     #completewith next
     .zone The Exodar >> Take the boat to Darkshore and then to The Exodar. If you have 35g purchase your mount and training otherwise skip this step.
 	.goto The Exodar,81.5,52.5,40,0
-step << Shaman
+step << Shaman tbc
     .goto The Exodar,29.9,33.0
     .turnin 10491 >> Turn in Call of Air
     .accept 9552 >> Accept Call of Air
-step << Shaman
+step << Shaman tbc
 .isQuestTurnedIn 9508
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
-step << Shaman
+step << Shaman tbc
     .goto Bloodmyst Isle,32.3,16.2
     .turnin 9504 >> Turn in Call of Water
     .accept 9508 >> Accept Call of Water
-step << Shaman
+step << Shaman tbc
     .goto Bloodmyst Isle,26.0,40.9
 	>>Kill Tel'athion and loot him for his head
     .complete 9508,1 --Collect Head of Tel'athion (x1)
-step << Shaman
+step << Shaman tbc
     .goto Bloodmyst Isle,32.2,16.1
     .turnin 9508 >> Turn in Call of Water
     .accept 9509 >> Accept Call of Water
-step << Shaman
+step << Shaman tbc
 	#sticky
 	#completewith ZExodar
 	.deathskip >> Drown yourself and spirit rez
-step << Shaman
+step << Shaman tbc
 	#sticky
 	#completewith next
 	.goto Bloodmyst Isle,57.7,53.9
 	>>Run back to Blood Watch, then fly to The Exodar
     .fly The Exodar>> Fly to The Exodar
-step << Shaman
+step << Shaman tbc
 	#label ZExodar
 	.zone The Exodar >> Go to The Exodar
-step << Shaman
+step << Shaman tbc
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
-step << Shaman
+step << Shaman tbc
     .goto Azuremyst Isle,24.9,35.9
     .turnin 9552 >> Turn in Call of Air
     .accept 9553 >> Accept Call of Air
-step << Shaman
+step << Shaman tbc
     .goto Azuremyst Isle,22.3,32.5
     .turnin 9553 >> Turn in Call of Air
     .accept 9554 >> Accept Call of Air
-step << Shaman
+step << Shaman tbc
     #sticky
     #completewith next
     .zone The Exodar>>Speak with Susurrus again so he can send you back flying to The Exodar
-step << Shaman
+step << Shaman tbc
     .goto The Exodar,30.0,33.1
     .turnin 9509 >> Turn in Call of Water
-step << Shaman
+step << Shaman tbc
     .goto The Exodar,29.6,33.4
     .turnin 9554 >> Turn in Call of Air
 	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
-step << Shaman
+step << Shaman tbc
     .hs >> Hearth to Wetlands
 step
     .goto Wetlands,12.1,64.1
@@ -3364,7 +3570,7 @@ step
 step
     .goto Ironforge,38.75,87.04
     .turnin 686 >>Turn in A King's Tribute
-step 
+step
 	.goto Ironforge,69.8,83.0 << Hunter
 	.goto Ironforge,66.4,88.7 << Warrior
 	.goto Ironforge,24.7,8.8 << Priest

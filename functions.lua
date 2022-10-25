@@ -1478,7 +1478,13 @@ function addon.functions.home(self, ...)
         addon.SetElementComplete(self)
         element.confirm = false
     elseif event == "CONFIRM_BINDER" then
-        ConfirmBinder()
+
+        if ConfirmBinder then
+            ConfirmBinder()
+        elseif C_PlayerInteractionManager then
+            C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
+            C_PlayerInteractionManager.ClearInteraction(Enum.PlayerInteractionType.Binder)
+        end
         element.confirm = true
         _G.StaticPopup1:Hide()
     elseif not element.confirm and event == "GOSSIP_SHOW" then
@@ -1892,6 +1898,9 @@ function addon.functions.xp(self, ...)
         if not element.xp then element.xp = 0 end
         return element
     end
+
+    if addon.isHidden then return end
+
     local currentXP = UnitXP("player")
     local maxXP = UnitXPMax("player")
     local level = UnitLevel("player")
@@ -1956,7 +1965,7 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
 
     if (level >= element.level) == not reverseLogic then
         if element.skipstep then
-            if step.active and not step.completed then
+            if step.active and not step.completed and not addon.isHidden then
                 addon.updateSteps = true
                 step.completed = true
             end
@@ -2061,7 +2070,7 @@ function addon.functions.reputation(self, ...)
         element.operator then
         if not element.skipStep then
             addon.SetElementComplete(self, true)
-        elseif step.active then
+        elseif step.active and not addon.isHidden then
             addon.updateSteps = true
             step.completed = true
         end
@@ -2353,7 +2362,7 @@ function addon.functions.istrained(self, text, ...)
         element.textOnly = true
         return element
     end
-
+    if addon.isHidden then return end
     for _, id in pairs(self.element.id) do
         if IsPlayerSpell(id) or IsSpellKnown(id, true) or
         IsSpellKnown(id) then
@@ -2468,7 +2477,7 @@ function addon.functions.isQuestComplete(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug then
+    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug and not addon.isHidden then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2492,7 +2501,7 @@ function addon.functions.isOnQuest(self, ...)
     end
     local element = self.element
     local id = element.questId
-    if element.step.active and not addon.settings.db.profile.debug and (not IsOnQuest(id)) == not element.reverse then
+    if element.step.active and not addon.settings.db.profile.debug and (not IsOnQuest(id)) == not element.reverse and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
@@ -2531,7 +2540,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
             questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
         end
     end
-    if step.active and not questTurnedIn and not addon.settings.db.profile.debug then
+    if step.active and not questTurnedIn and not addon.settings.db.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
     end
@@ -2562,7 +2571,7 @@ function addon.functions.spellmissing(self, text, id)
         if not id then return end
         return {id = id, textOnly = true}
     end
-    if not IsPlayerSpell(self.element.id) and self.element.step.active then
+    if not IsPlayerSpell(self.element.id) and self.element.step.active and not addon.isHidden then
         addon.SetElementComplete(self)
         self.element.step.completed = true
         addon.updateSteps = true
@@ -2590,9 +2599,10 @@ function addon.functions.zone(self, ...)
         element.tooltipText = element.icon .. text
         return element
     end
-    if not self.element.step.active then return end
+    local currentMap = C_Map.GetBestMapForUnit("player")
+    if not self.element.step.active or addon.isHidden or type(currentMap) ~= "number" then return end
     local zone = self.element.map
-    if zone == C_Map.GetBestMapForUnit("player") then
+    if zone == currentMap then
         addon.SetElementComplete(self)
         self.element.step.completed = true
         addon.updateSteps = true
@@ -2620,10 +2630,10 @@ function addon.functions.zoneskip(self, text, zone, flags)
 
     local element = self.element
     local step = element.step
-
-    if not step.active then return end
+    local currentMap = C_Map.GetBestMapForUnit("player")
+    if not step.active or addon.isHidden or type(currentMap) ~= "number" then return end
     local zone = element.map
-    if (zone == C_Map.GetBestMapForUnit("player")) == not element.reverse then
+    if (zone == currentMap) == not element.reverse then
         step.completed = true
         addon.updateSteps = true
     end
@@ -3102,7 +3112,7 @@ function addon.functions.bronzetube(self, text, rev)
         total = total + 1
     end]]
 
-    if count >= total == not element.rev then
+    if count >= total == not element.rev and not addon.isHidden then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -3185,7 +3195,7 @@ local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
                                  _G.GetNumGossipActiveQuests
 local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
                                     _G.GetNumGossipAvailableQuests
-local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
+local GossipSelectOption = _G.SelectGossipOption
 --local GossipGetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
 
 function addon.functions.skipgossip(self, text, ...)
@@ -3277,7 +3287,9 @@ function addon.functions.maxlevel(self, ...)
     local step = element.step
     local ref = element.ref
 
-    if level > element.level then
+    if addon.isHidden then
+        return
+    elseif level > element.level then
         if step.active and not step.completed and not addon.settings.db.profile.northrendLM then
             addon.updateSteps = true
             step.completed = true
@@ -3412,7 +3424,7 @@ function addon.functions.itemcount(self, ...)
 
     local element = self.element
     local step = element.step
-    if not step.active then return end
+    if not step.active or addon.isHidden then return end
     local operator = element.operator
     local eq = element.eq
     local total = element.total
@@ -3535,7 +3547,7 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
 
     local element = self.element or self
     local step = element.step
-    if not step.active or step.completed then
+    if not step.active or step.completed or addon.isHidden then
         element.isActive = false
         return
     elseif not element.isActive then
