@@ -177,12 +177,19 @@ function addon.GetQuestLog(QL,LT)
     return QL
 end
 
-_G.GameTooltip:HookScript("OnTooltipSetItem", function(self)
-    if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
+local function SetItemTooltip(tooltip, tooltipInfo)
+    if tooltip:IsForbidden() or _G.GameTooltip:IsForbidden() then
         return
     end
-    local _,link = _G.GameTooltip:GetItem()
-    local id = type(link) == "string" and tonumber(link:match("item:(%d+)"))
+
+    local id
+    if tooltipInfo then
+        id = tooltipInfo.id
+    else
+        local _,link = tooltip:GetItem()
+        id = type(link) == "string" and tonumber(link:match("item:(%d+)"))
+    end
+
     local questId = id and addon.questItemList[id]
     local guideList = questId and addon.turnInList[questId]
 
@@ -190,9 +197,15 @@ _G.GameTooltip:HookScript("OnTooltipSetItem", function(self)
         local prefix = "Item used in guide:\n"
         for _,entry in ipairs(guideList) do
             if addon.IsGuideActive(entry.guide) and addon.IsStepShown(entry.step) then
-                _G.GameTooltip:AddLine(prefix..addon.icons.turnin..entry.name)
+                tooltip:AddLine(prefix..addon.icons.turnin..entry.name)
                 prefix = ""
             end
         end
     end
-end)
+end
+
+if TooltipDataProcessor then
+    TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, SetItemTooltip)
+else
+    _G.GameTooltip:HookScript("OnTooltipSetItem", SetItemTooltip)
+end
