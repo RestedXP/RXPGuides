@@ -3,8 +3,10 @@ local _, addon = ...
 local fmt = string.format
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros =
     GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros
-local TargetUnit, UnitName, next = TargetUnit, UnitName, next
+local TargetUnit, UnitName, next, IsInRaid = TargetUnit, UnitName, next,
+                                             IsInRaid
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
+local GameTooltip = _G.GameTooltip
 
 local L = addon.locale.Get
 
@@ -18,6 +20,8 @@ local proximityTargets = {}
 local pollingFrequency = 0.1
 local lastPoll = GetTime()
 
+local targetButtonPlaceholders = {132092, 132177, 132130, 132150}
+
 function addon.targeting:Setup()
     if addon.settings.db.profile.enableTargetMacro then
         self:RegisterEvent("PLAYER_REGEN_ENABLED")
@@ -25,15 +29,16 @@ function addon.targeting:Setup()
         DeleteMacro(self.macroName)
     end
 
-    -- TODO separate UnitTarget
     self:CreateTargetFrame()
+
+    -- Only works when nameplates are enabled
     self:RegisterEvent("NAME_PLATE_UNIT_ADDED")
+    self:RegisterEvent("PLAYER_TARGET_CHANGED")
+
     self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
 
     -- TODO toggle without reloads
     if addon.settings.db.profile.enableProximityTargeting then
-        -- Only works when nameplates are enabled
-
         -- Periodic polling
         self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
 
@@ -47,8 +52,8 @@ function addon.targeting:Setup()
             error("No enabled RXP frames to hook onto")
         end
 
-        -- Trigger forbidden at login
-        TargetUnit("player")
+        -- Prevent forbidden UI popup
+        UIParent:UnregisterEvent("ADDON_ACTION_FORBIDDEN")
     end
 end
 
@@ -108,10 +113,16 @@ function addon.targeting:PLAYER_REGEN_ENABLED()
     if macroTargets then
         C_Timer.After(2, function() self:UpdateMacro(macroTargets) end)
     end
+
+    if IsInRaid() or next(proximityTargets) == nil then return end
+
+    self:UpdateTargetFrame()
 end
 
 function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
-    if not nameplateID or next(proximityTargets) == nil then return end
+    if not nameplateID or next(proximityTargets) == nil or IsInRaid() then
+        return
+    end
 
     local unitName = UnitName(nameplateID)
 
@@ -122,6 +133,8 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
             self:UpdateTargetFrame(nameplateID)
             -- TODO incremental marks
             -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
+            FlashClientIcon()
+
             if GetRaidTargetIndex(nameplateID) == nil and
                 GetRaidTargetIndex(nameplateID) ~= 3 then
                 SetRaidTarget(nameplateID, 3)
@@ -131,7 +144,7 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
 end
 
 function addon.targeting:UPDATE_MOUSEOVER_UNIT()
-    if next(proximityTargets) == nil then return end
+    if next(proximityTargets) == nil or IsInRaid() then return end
 
     local unitName = UnitName("mouseover")
 
@@ -140,6 +153,7 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
     for _, name in pairs(proximityTargets) do
         if name == unitName then
             self:UpdateTargetFrame("mouseover")
+            FlashClientIcon()
 
             if GetRaidTargetIndex("mouseover") == nil and
                 GetRaidTargetIndex("mouseover") ~= 3 then
@@ -149,8 +163,27 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
     end
 end
 
+function addon.targeting:PLAYER_TARGET_CHANGED()
+    if next(proximityTargets) == nil or IsInRaid() then return end
+
+    local unitName = UnitName("target")
+
+    if not unitName then return end
+
+    for _, name in pairs(proximityTargets) do
+        if name == unitName then
+            self:UpdateTargetFrame("target")
+
+            if GetRaidTargetIndex("target") == nil and
+                GetRaidTargetIndex("target") ~= 3 then
+                SetRaidTarget('target', 3)
+            end
+        end
+    end
+end
+
 function addon.targeting:PollTargets()
-    if next(proximityTargets) == nil then return end
+    if next(proximityTargets) == nil or IsInRaid() then return end
 
     if GetTime() - lastPoll > pollingFrequency then
         for _, name in pairs(proximityTargets) do TargetUnit(name, true) end
@@ -159,14 +192,16 @@ function addon.targeting:PollTargets()
     lastPoll = GetTime()
 end
 
-function addon.targeting:UpdateTargets(targets) proximityTargets = targets or {} end
+function addon.targeting:UpdateTargets(targets)
+    proximityTargets = targets or {}
 
-function addon.targeting:ADDON_ACTION_FORBIDDEN(_, _, c)
-    print("ADDON_ACTION_FORBIDDEN = " .. c)
+    if InCombatLockdown() then return end
+    self:UpdateTargetFrame()
 end
 
-function addon.targeting:ADDON_ACTION_BLOCKED(_, _, c)
-    print("ADDON_ACTION_BLOCKED = " .. c)
+function addon.targeting:ADDON_ACTION_FORBIDDEN(_, _, c)
+    -- TODO flash buttons that something is near?
+    print("ADDON_ACTION_FORBIDDEN = " .. c)
 end
 
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
@@ -174,6 +209,7 @@ function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
 function addon.targeting:CreateTargetFrame()
     if self.activeTargetFrame then return end
 
+    -- TOOD add scale setting
     self.activeTargetFrame = CreateFrame("Frame", "RXPTargetFrame", UIParent,
                                          BackdropTemplateMixin and
                                              "BackdropTemplate" or nil)
@@ -203,9 +239,6 @@ function addon.targeting:CreateTargetFrame()
     f.buttonList = {}
     f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 
-    -- f:RegisterEvent("SPELL_UPDATE_COOLDOWN")
-    -- f:SetScript("OnEvent", UpdateCooldowns)
-
     f.title = CreateFrame("Frame", "$parent_title", f,
                           BackdropTemplateMixin and "BackdropTemplate" or nil)
     f.title:SetPoint("TOPLEFT", f, 5, 5)
@@ -225,6 +258,18 @@ function addon.targeting:CreateTargetFrame()
     f.title:SetScript("OnMouseUp", f.onMouseUp)
 
     f:SetHeight(40)
+end
+
+local fOnEnter = function(self)
+    if not GameTooltip:IsForbidden() and self.targetName then
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetUnit(self.targetName)
+        GameTooltip:Show()
+    end
+end
+
+local fOnLeave = function(self)
+    if not GameTooltip:IsForbidden() then GameTooltip:Hide() end
 end
 
 function addon.targeting:UpdateTargetFrame(kind)
@@ -260,7 +305,10 @@ function addon.targeting:UpdateTargetFrame(kind)
 
             local icon = btn.icon
             icon:SetAllPoints(true)
-            icon:SetTexture("Interface/Buttons/Button-Backpack-Up");
+            icon:SetTexture(targetButtonPlaceholders[i])
+
+            btn:SetScript("OnEnter", fOnEnter)
+            btn:SetScript("OnLeave", fOnLeave)
 
             local ht = btn:CreateTexture(nil, "HIGHLIGHT")
             ht:SetAllPoints(true)
@@ -270,10 +318,13 @@ function addon.targeting:UpdateTargetFrame(kind)
 
         btn:SetAttribute('macrotext',
                          '/cleartarget\n/targetexact ' .. targetName)
-
+        btn.targetData = {name = targetName, kind = kind}
         -- If target or mouseover, set portrait
-        if kind then SetPortraitTexture(btn.icon, kind) end
-        -- btn.icon:SetTexture(item.texture)
+        if kind and UnitName(kind) == targetName then
+            SetPortraitTexture(btn.icon, kind)
+        else
+            btn.icon:SetTexture(targetButtonPlaceholders[i])
+        end
         btn:Show()
     end
 
