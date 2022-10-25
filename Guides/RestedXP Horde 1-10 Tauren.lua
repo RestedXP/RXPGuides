@@ -27,7 +27,7 @@ step << Warrior/Shaman
     .goto Mulgore,45.6,74.0,30,0
 step << Warrior/Shaman
     .goto Mulgore,45.3,76.5
-    .vendor >> vendor trash
+    .vendor >> Vendor trash.
 step << Warrior
     .goto Mulgore,44.0,76.1
     .train 6673 >>Train Battle Shout
@@ -64,7 +64,7 @@ step
     .accept 750 >>Accept The Hunt Continues
 step << Hunter
     .goto Mulgore,45.3,76.5
-    .vendor >>vendor trash. Buy 1000 bullets (5 stacks)
+    .vendor >>Vendor trash. Buy 1000 bullets (5 stacks)
 step
     .goto Mulgore,44.2,76.1
     .turnin 753 >>Turn in A Humble Task
@@ -77,10 +77,14 @@ step << Hunter
     .turnin 3092 >>Turn in Etched Note
 step << Warrior
     .goto Mulgore,44.7,77.9
-    .vendor >>vendor trash
+    .vendor >>Vendor trash.
 step << Druid/Shaman
     .goto Mulgore,44.7,77.9
-    .vendor >>vendor trash. Do NOT buy water
+    .vendor >>Vendor trash. Do NOT buy water
+step
+    #completewith next
+    >>En route to next quest, grind mobs until level 3. This is to reach level 4 and train after.
+    .xp 3 >> Grind to level 3.
 step
     #completewith next
     >>Kill Cougars for their Pelts
@@ -119,7 +123,7 @@ step << Shaman
     .accept 780 >>Accept The Battleboars
 step
     .goto Mulgore,45.3,76.5
-    .vendor >> vendor trash
+    .vendor >> Vendor trash
 step << Druid
     .goto Mulgore,45.1,75.9
     .turnin 3094 >>Turn in Verdant Note
@@ -142,41 +146,45 @@ step << Warrior
     .goto Mulgore,44.0,76.1
     .trainer >> Train your class spells
 step
+    #completewith nomoreboar
+    .xp 4+1800 >>Grind Bristlebacks until you've reached 1800+/2100xp to hit level 6 and train at Bloodhoof Village.
+step
     .goto Mulgore,58.2,85.0
     >>Kill Battleboars outside the cave for their Flanks and Snouts
     .complete 780,2 --Battleboar Flank (8)
     .complete 780,1 --Battleboar Snout (8)
 step
+    .isOnQuest 757
     .goto Mulgore,59.7,83.2,40 >>Go through the cave
 step
     #sticky
-	#completewith nomoreboar
+	#completewith Sharptusk
     #label Belt
     >>Kill Bristlebacks for their Belts
+    >>Kill Bristleback Shaman and loot them for their Salves. << Shaman
     .complete 757,1 --Bristleback Belt (12)
-step << Shaman
-    #sticky
-    #label Salve
-    >>Kill Bristleback Shamans for their Salves
-    .complete 1519,1 --Ritual Salve (2)
+    .unitscan Bristleback Shaman << Shaman
+    .complete 1519,1 --Ritual Salve(2) << Shaman
 step
+    #label Sharptusk
     >>Kill Sharptusk in the big hut
     .goto Mulgore,64.3,77.9
+    .unitscan Chief Sharptusk Thornmantle
     .complete 3376,1 --Chief Sharptusk Thornmantle's Head (1)
-step << !Shaman
+step
+    #completewith nomoreboar
+    >>Kill Bristlebacks and loot them for their Belts.
+    >>Kill Bristleback Shaman and loot them for their Salves. << Shaman
+    .goto Mulgore,63.0,77.8
+    .complete 757,1 --Bristleback Belt (12)
+    .unitscan Bristleback Shaman << Shaman
+    .complete 1519,1 --Ritual Salve (2) << Shaman
+step
     #requires Belt
-    >>Go into the cave. Loot the Attack Plans on the ground then accept the quest.
+    >>Go into the cave. Loot the Attack Plans in the center, and accept the quest.
     .goto Mulgore,63.2,82.7
-    .collect 4850,1,24857 --Collect Bristleback Attack Plans
-    .accept 24857 >>Accept Attack on Camp Narache
-step << Shaman
-    #requires Belt
-step << Shaman
-    #requires Salve
-    >>Go into the cave. Loot the Attack Plans on the ground then accept the quest.
-    .goto Mulgore,63.2,82.7
-    .collect 4850,1,24857 --Collect Bristleback Attack Plans
-    .accept 24857 >>Accept Attack on Camp Narache
+    .collect 4850,1,24857 --Collect Bristleback Attack Plans.
+    .accept 24857 >>Accept Attack on Camp Narache.
 step
 	#label nomoreboar
 	#completewith next
@@ -187,7 +195,7 @@ step
 step
     #completewith next
     .goto Mulgore,44.65,77.90
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step << Shaman
     .goto Mulgore,44.7,76.2
     .turnin 1519 >>Turn in Call of Earth
@@ -409,16 +417,16 @@ step << Warrior
     .trainer >> Train First Aid
 step << Shaman/Druid
     .goto Mulgore,45.7,58.6
-    >> vendor trash. Sell your weapon if it gives you enough money for Walking Stick (4s 80c). Skip this step if you don't have enough
+     >> Vendor trash. Sell your weapon if it gives you enough money for Walking Stick (4s 80c). Skip this step if you don't have enough
     .collect 2495,1 --Collect Walking Stick
 step << Warrior
     .goto Mulgore,45.7,58.6
-    >> vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (6s 66c). Skip this step if you don't have enough
+     >> Vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (6s 66c). Skip this step if you don't have enough
     .collect 2493,1 --Collect Wooden Mallet
 step << Hunter
     .goto Mulgore,45.5,58.5
     .money <0.0380
-    >> vendor trash. Sell your weapon if it gives you enough money for Ornate Blunderbuss (3s 80c). Skip this step if you don't have enough
+     >> Vendor trash. Sell your weapon if it gives you enough money for Ornate Blunderbuss (3s 80c). Skip this step if you don't have enough
     .collect 2509,1 --Collect Ornate Blunderbuss
 step
     #label Vision
@@ -492,7 +500,7 @@ step
 step
     #completewith next
     .goto Mulgore,46.2,58.2
-    .vendor >>vendor trash
+    .vendor >>Vendor trash.
 step
 	#label TotemW
     .goto Mulgore,48.5,60.4
@@ -516,22 +524,22 @@ step << Warrior
     .trainer >> Train your class spells
 step << Shaman/Druid
     .goto Mulgore,45.7,58.6
-     >> vendor trash. Sell your weapon if it gives you enough money for Walking Stick (4s 80c). Skip this step if you don't have enough
+     >> Vendor trash. Sell your weapon if it gives you enough money for Walking Stick (4s 80c). Skip this step if you don't have enough
     .collect 2495,1 --Collect Walking Stick
 step << Warrior
     .goto Mulgore,45.7,58.6
-     >> vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (6s 66c). Skip this step if you don't have enough
+     >> Vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (6s 66c). Skip this step if you don't have enough
     .collect 2493,1 --Collect Wooden Mallet
 step << Hunter
     .goto Mulgore,45.5,58.5
-     >> vendor trash. Sell your weapon if it gives you enough money for Ornate Blunderbuss (3s 83c). Skip this step if you don't have enough
+     >> Vendor trash. Sell your weapon if it gives you enough money for Ornate Blunderbuss (3s 83c). Skip this step if you don't have enough
     .collect 2509,1 --Collect Ornate Blunderbuss
 step << Warrior
     .goto Mulgore,46.7,60.7
-    .vendor >> vendor trash. Buy as much Freshly Baked Bread as you can afford
+    .vendor >> Vendor trash. Buy as much Freshly Baked Bread as you can afford
 step << Druid/Shaman
     .goto Mulgore,46.7,60.7
-    .vendor >> vendor trash. Buy as much Ice Cold Milk as you can afford
+    .vendor >> Vendor trash. Buy as much Ice Cold Milk as you can afford
 step
     .goto Mulgore,44.5,45.3
     .use 5415 >>Use the Thunderhorn Cleansing Totem at the Well
