@@ -30,12 +30,18 @@ local function StartHSTimer()
     end
 end
 
-hooksecurefunc(C_Container or nil, "UseContainerItem", function(...)
-    if (GetContainerItemID and GetContainerItemID(...) == 6948)
-        or (C_Container and C_Container.GetContainerItemID(...) == 6948) then
-        StartHSTimer()
-    end
-end)
+if _G.C_Container then -- DF+
+    hooksecurefunc(C_Container or nil, "UseContainerItem", function(...)
+        if (GetContainerItemID and GetContainerItemID(...) == 6948)
+            or (C_Container and C_Container.GetContainerItemID(...) == 6948) then
+            StartHSTimer()
+        end
+    end)
+else
+    hooksecurefunc("UseContainerItem", function(...)
+        if GetContainerItemID(...) == 6948 then StartHSTimer() end
+    end)
+end
 
 hooksecurefunc("UseAction", function(...)
     local event, id = GetActionInfo(...)
