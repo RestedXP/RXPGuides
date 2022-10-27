@@ -1547,7 +1547,7 @@ function addon.functions.fly(self, ...)
         return element
     end
 
-    if not addon.settings.db.profile.enableBindAutomation or IsShiftKeyDown() then return end
+    if not addon.settings.db.profile.enableFPAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     if not element.step.active then return end
