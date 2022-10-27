@@ -408,7 +408,9 @@ end
 
 function addon.tracker:CreateGui(attachment, target)
     if not attachment then return end
-    if addon.tracker.ui[attachment:GetName()] then return end
+    local attachmentName = attachment.GetName and attachment:GetName()
+    if not attachmentName then return end
+    if addon.tracker.ui[attachmentName] then return end
 
     local offset = {
         x = -38,
@@ -418,8 +420,8 @@ function addon.tracker:CreateGui(attachment, target)
     local padding = 4
     local levelData, playerLevel
 
-    addon.tracker.ui[attachment:GetName()] = AceGUI:Create("Frame")
-    local trackerUi = addon.tracker.ui[attachment:GetName()]
+    addon.tracker.ui[attachmentName] = AceGUI:Create("Frame")
+    local trackerUi = addon.tracker.ui[attachmentName]
 
     trackerUi:SetLayout("Fill")
     trackerUi:Hide()
@@ -427,7 +429,9 @@ function addon.tracker:CreateGui(attachment, target)
 
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
     trackerUi:SetTitle("RestedXP Leveling Report")
-    trackerUi:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
+    trackerUi.frame:ClearAllPoints()
+    trackerUi.frame:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x,
+                             offset.y)
     trackerUi:SetWidth(attachment:GetWidth() * 0.7)
     trackerUi:SetHeight(attachment:GetHeight() + offset.y - 8 -
                             offset.tabsHeight * 2)
@@ -439,7 +443,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
     trackerUi.frame:SetBackdropColor(unpack(addon.colors.background))
 
-    if attachment:GetName() == 'CharacterFrame' then
+    if attachmentName == 'CharacterFrame' then
         -- Firmly attach to CharacterFrame show/hide
         if addon.settings.db.profile.openTrackerReportOnCharOpen then
             attachment:HookScript("OnShow", function()
