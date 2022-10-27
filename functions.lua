@@ -1431,7 +1431,7 @@ function addon.functions.hs(self, ...)
     end
 end
 
-local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
+local GossipSelectOption = _G.SelectGossipOption
 local GossipGetOptions = C_GossipInfo.GetOptions or _G.GetGossipOptions
 function addon.SelectGossipType(type)
     if C_GossipInfo.GetOptions then

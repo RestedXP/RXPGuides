@@ -368,9 +368,10 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "GOSSIP_SHOW" then
         local nActive = GossipGetNumActiveQuests()
         local nAvailable = GossipGetNumAvailableQuests()
-        local quests
+        local quests, selectActiveByQuestID, selectAvailableByQuestID
         if C_GossipInfo.GetActiveQuests then
             quests = C_GossipInfo.GetActiveQuests()
+            selectActiveByQuestID = true
         end
         for i = 1, nActive do
             local title, level, isTrivial, isComplete
@@ -384,7 +385,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             -- print(title)
             -- print(quests[i])
             if addon.QuestAutoTurnIn(title) and isComplete then
-                return GossipSelectActiveQuest(i)
+                return GossipSelectActiveQuest(selectActiveByQuestID and title or i)
             end
         end
 
@@ -394,6 +395,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             local availableQuests
             if C_GossipInfo.GetAvailableQuests then
                 availableQuests = C_GossipInfo.GetAvailableQuests()
+                selectAvailableByQuestID = true
             end
             for i = 1, nAvailable do
                 local quest
@@ -403,7 +405,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                     quest = select(i * 7 - 6, GossipGetAvailableQuests())
                 end
                 if addon.QuestAutoAccept(quest) then
-                    return GossipSelectAvailableQuest(i)
+                    return GossipSelectAvailableQuest(selectAvailableByQuestID and quest or i)
                 end
             end
         end
