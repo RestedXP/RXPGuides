@@ -9,15 +9,14 @@ This guide is based on speed - which means less quests to turn in. Grinding from
 ]]
 
 H["Why is my guide missing levels?"] = [[
-The level ranges on our guides are intended for standard exp rates, do not worry about following the leveling brackets while on 50% exp.
+The level ranges on our guides are intended for standard exp rates, do not worry about following the leveling brackets while on 20% or 50% exp.
 
 Just follow the guide the best you can.
 ]]
 
 H["Why is my guide skipping lots of steps or zones?"] = [[
-These are inefficient areas that we outright removed, don't worry, we added steps to the start of the next guide to get you caught up.
+These are inefficient areas that we skip if you are missing quest chains or if you are ahead in levels compared to the guide.
 
-You can view the full guide without any skips by turning your slider to 1x from 1.5x in your options
 ]]
 
 H["What are command the line options?"] = [[

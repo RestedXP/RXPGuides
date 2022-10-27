@@ -1573,7 +1573,7 @@ step
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines
 step << wotlk
-    .goto Durotar,40.8,16.3
+    .goto Durotar,42.1,15.0
     .accept 812 >>Accept Need for a Cure
 step << tbc
     .goto Durotar,41.5,18.6

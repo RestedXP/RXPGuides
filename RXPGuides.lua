@@ -149,6 +149,11 @@ function addon.GetProfessionLevel()
     elseif IsPlayerSpell(90265) then
         currrentSkillLevel["riding"] = 375
     end
+
+    if IsPlayerSpell(54197) then
+        currrentSkillLevel["coldweatherflying"] = 1
+    end
+
     if not _G.GetSkillLineInfo then
         return
     end
@@ -281,7 +286,7 @@ local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
                                      _G.GetNumGossipActiveQuests
 local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
                                         _G.GetNumGossipAvailableQuests
-local GossipGetNumOptions = C_GossipInfo.GetNumOptions or _G.GetNumGossipOptions
+local GossipGetNumOptions = C_GossipInfo.GetOptions and function() return #C_GossipInfo.GetOptions() end or _G.GetNumGossipOptions
 local GossipSelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or
                                        _G.SelectGossipAvailableQuest
 local GossipGetActiveQuests = C_GossipInfo.GetActiveQuests or
