@@ -261,9 +261,9 @@ function addon.targeting:CreateTargetFrame()
 end
 
 local fOnEnter = function(self)
-    if not GameTooltip:IsForbidden() and self.targetName then
+    if not GameTooltip:IsForbidden() and self.targetData then
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetUnit(self.targetName)
+        GameTooltip:SetUnit(self.targetData.Name)
         GameTooltip:Show()
     end
 end
@@ -322,8 +322,6 @@ function addon.targeting:UpdateTargetFrame(kind)
         -- If target or mouseover, set portrait
         if kind and UnitName(kind) == targetName then
             SetPortraitTexture(btn.icon, kind)
-        else
-            btn.icon:SetTexture(targetButtonPlaceholders[i])
         end
         btn:Show()
     end
@@ -337,7 +335,10 @@ function addon.targeting:UpdateTargetFrame(kind)
         targetFrame:Show()
     end
 
-    for n = i + 1, #buttonList do buttonList[n]:Hide() end
+    for n = i + 1, #buttonList do
+        buttonList[n]:Hide()
+        buttonList[n].icon:SetTexture(targetButtonPlaceholders[i])
+    end
     local width = math.max(targetFrame.title:GetWidth() + 10, i * 27 + 8)
     targetFrame:SetWidth(width)
 
