@@ -20,10 +20,22 @@ local pollingFrequency = 0.25
 local lastPoll = GetTime()
 
 local friendlyTargets = {}
-local friendlyTargetIcons = {132092, 132177, 132130, 132150}
+local friendlyTargetPlaceholder = 132150
+local friendlyTargetIcons = {
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1.blp",
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_2.blp",
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_3.blp",
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_4.blp"
+}
 
 local enemyTargets = {}
-local enemyTargetIcons = {132212, 132147, 132222, 132336}
+local enemyTargetPlaceholder = 132212
+local enemyTargetIcons = {
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_8.blp",
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_7.blp",
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_6.blp",
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_5.blp"
+}
 
 function addon.targeting:Setup()
     if addon.settings.db.profile.enableTargetMacro then
@@ -71,6 +83,7 @@ function addon.targeting:Setup()
 end
 
 function addon.targeting:UpdateMacro(targets)
+    -- TODO also add friendly targets
     if not addon.settings.db.profile.enableTargetMacro then return end
     targets = targets or {}
     -- TODO remove completed targets?
@@ -340,6 +353,7 @@ end
 local fOnEnter = function(self)
     if self:IsForbidden() or GameTooltip:IsForbidden() then return end
 
+    -- TODO set tooltip color, friendly = green, enemy = red
     GameTooltip:ClearLines()
     -- TODO set tooltip to unit
     GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, 0)
@@ -382,12 +396,13 @@ function addon.targeting:UpdateTargetFrame(kind)
 
     local i = 0
 
+    -- TODO flip enemy to top row?
     for _, targetName in ipairs(friendlyTargets) do
         i = i + 1
         local btn = friendlyTargetButtons[i]
 
         if not btn then
-            btn = CreateFrame("Button", "$parentFriendlyButton" .. i,
+            btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. i,
                               targetFrame, "SecureActionButtonTemplate")
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
@@ -405,8 +420,7 @@ function addon.targeting:UpdateTargetFrame(kind)
 
             local icon = btn.icon
             icon:SetAllPoints(true)
-            icon:SetTexture(friendlyTargetIcons[i] or
-                                "Interface\\Icons\\INV_Misc_QuestionMark")
+            icon:SetTexture(friendlyTargetIcons[i] or friendlyTargetPlaceholder)
 
             btn:SetScript("OnEnter", fOnEnter)
             btn:SetScript("OnLeave", fOnLeave)
@@ -434,8 +448,8 @@ function addon.targeting:UpdateTargetFrame(kind)
         local btn = enemyTargetButtons[j]
 
         if not btn then
-            btn = CreateFrame("Button", "$parentEnemyButton" .. j, targetFrame,
-                              "SecureActionButtonTemplate")
+            btn = CreateFrame("Button", "RXPTargetFrame_EnemyButton" .. j,
+                              targetFrame, "SecureActionButtonTemplate")
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
             tinsert(enemyTargetButtons, btn)
@@ -452,8 +466,7 @@ function addon.targeting:UpdateTargetFrame(kind)
 
             local icon = btn.icon
             icon:SetAllPoints(true)
-            icon:SetTexture(enemyTargetIcons[j] or
-                                "Interface\\Icons\\INV_Misc_QuestionMark")
+            icon:SetTexture(enemyTargetIcons[j] or enemyTargetPlaceholder)
 
             btn:SetScript("OnEnter", fOnEnter)
             btn:SetScript("OnLeave", fOnLeave)
@@ -479,13 +492,13 @@ function addon.targeting:UpdateTargetFrame(kind)
     for n = i + 1, #friendlyTargetButtons do
         friendlyTargetButtons[n]:Hide()
         friendlyTargetButtons[n].icon:SetTexture(
-            "Interface\\Icons\\INV_Misc_QuestionMark")
+            friendlyTargetIcons[n] or friendlyTargetPlaceholder)
     end
 
     for n = j + 1, #enemyTargetButtons do
         enemyTargetButtons[n]:Hide()
         enemyTargetButtons[n].icon:SetTexture(
-            "Interface\\Icons\\INV_Misc_QuestionMark")
+            enemyTargetIcons[n] or enemyTargetPlaceholder)
     end
 
     if (i == 0 and j == 0) or
