@@ -1988,6 +1988,9 @@ step
     .goto Stranglethorn Vale,38.2,4.1
     .fp Rebel >> Get the Rebel Camp flight path
 step
+    .goto Stranglethorn Vale,37.8,3.3
+    .accept 210 >> Accept Krazek's Cookery
+step
 	#sticky
 	#completewith thorsen
 	    .goto Stranglethorn Vale,40.4,8.4,0
@@ -2014,9 +2017,9 @@ step
 	#label thorsen
     .goto Stranglethorn Vale,35.6,10.6
     .turnin 185 >> Turn in Tiger Mastery
-    .accept 186 >> Accept Tiger Mastery
     .turnin 190 >> Turn in Panther Mastery
-    .accept 191 >> Accept Panther Mastery
+    .accept 186 >> Accept Tiger Mastery
+    .accept 191 >> Accept Panther Mastery 
 step
     .goto Duskwood,28.8,30.9
     >>Run back to Duskwood, click on the dirt mound to summon Eliza

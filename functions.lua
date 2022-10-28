@@ -1431,7 +1431,7 @@ function addon.functions.hs(self, ...)
     end
 end
 
-local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
+local GossipSelectOption = _G.SelectGossipOption
 local GossipGetOptions = C_GossipInfo.GetOptions or _G.GetGossipOptions
 function addon.SelectGossipType(type)
     if C_GossipInfo.GetOptions then
@@ -1547,7 +1547,7 @@ function addon.functions.fly(self, ...)
         return element
     end
 
-    if not addon.settings.db.profile.enableBindAutomation or IsShiftKeyDown() then return end
+    if not addon.settings.db.profile.enableFPAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     if not element.step.active then return end
