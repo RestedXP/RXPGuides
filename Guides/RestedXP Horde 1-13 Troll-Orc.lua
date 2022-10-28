@@ -1463,7 +1463,7 @@ step << !Tauren
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
 .complete 848,1 --Collect Fungal Spores (x4)
-step << !Tauren
+step << !Tauren tbc
 #xprate <1.5
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer, or run back to Crossroads
