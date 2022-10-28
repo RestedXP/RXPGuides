@@ -72,6 +72,7 @@ end
 function addon.targeting:UpdateMacro(targets)
     if not addon.settings.db.profile.enableTargetMacro then return end
     targets = targets or {}
+    -- TODO remove completed targets?
 
     if InCombatLockdown() then
         macroTargets = targets
