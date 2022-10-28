@@ -34,6 +34,10 @@ function addon.targeting:Setup()
 
     self:CreateTargetFrame()
 
+    if not addon.settings.db.profile.enableTargetAutomation then return end
+
+    -- TODO toggle without reloads
+
     -- Only works when nameplates are enabled
     self:RegisterEvent("NAME_PLATE_UNIT_ADDED")
 
@@ -45,14 +49,9 @@ function addon.targeting:Setup()
     end
 
     self:RegisterEvent("PLAYER_TARGET_CHANGED")
-
     self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
 
-    -- TODO toggle without reloads
-    if addon.settings.db.profile.enableTargetAutomation then
-        -- Periodic polling
-        self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
-
+    if addon.settings.db.profile.targetWithoutNameplates then
         if addon.settings.db.profile.hideGuideWindow then
             addon.arrowFrame:HookScript("OnUpdate", self.PollEnemyTargets)
         elseif addon.settings.db.profile.hideArrow then
@@ -63,6 +62,8 @@ function addon.targeting:Setup()
         else
             error("No enabled RXP frames to hook onto")
         end
+
+        self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
 
         -- Prevent forbidden UI popup
         UIParent:UnregisterEvent("ADDON_ACTION_FORBIDDEN")
@@ -246,14 +247,12 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
 end
 
 function addon.targeting:PollEnemyTargets()
-    if IsInRaid() or next(enemyTargets) == nil then return end
+    if IsInRaid() or next(enemyTargets) == nil or
+        not addon.settings.db.profile.targetWithoutNameplates or
+        addon.settings.db.profile.enableEnemyTargeting then return end
 
-    if addon.settings.db.profile.enableEnemyTargeting then
-        if GetTime() - lastPoll > pollingFrequency then
-            for _, name in pairs(enemyTargets) do
-                TargetUnit(name, true)
-            end
-        end
+    if GetTime() - lastPoll > pollingFrequency then
+        for _, name in pairs(enemyTargets) do TargetUnit(name, true) end
     end
 
     lastPoll = GetTime()

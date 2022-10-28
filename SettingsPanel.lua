@@ -105,7 +105,8 @@ function addon.settings:InitializeSettings()
             enableFriendlyTargeting = true,
             enableTargetMarking = true,
             enableEnemyTargeting = true,
-            enableEnemyMarking = true
+            enableEnemyMarking = true,
+            targetWithoutNameplates = true
         }
     }
 
@@ -1127,7 +1128,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.2,
-                        disabled = function ()
+                        disabled = function()
                             return not self.db.profile.enableTargetAutomation
                         end
                     },
@@ -1138,8 +1139,9 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.21,
-                        disabled = function ()
-                            return not self.db.profile.enableTargetAutomation or not self.db.profile.enableTargetMarking
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile.enableTargetMarking
                         end
                     },
                     enableEnemyTargeting = {
@@ -1148,7 +1150,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.3,
-                        disabled = function ()
+                        disabled = function()
                             return not self.db.profile.enableTargetAutomation
                         end
                     },
@@ -1159,8 +1161,25 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.31,
-                        disabled = function ()
-                            return not self.db.profile.enableTargetAutomation or not self.db.profile.enableEnemyMarking
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile.enableEnemyMarking
+                        end
+                    },
+                    targetWithoutNameplates = {
+                        name = L("Scan Without Nameplates"), -- TODO locale
+                        desc = L(
+                            "Target enemies outside nameplate range or if nameplates are disabled\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.32,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
                         end
                     },
                     alertHeader = {
@@ -1176,7 +1195,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.1,
-                        disabled = function ()
+                        disabled = function()
                             return not self.db.profile.enableTargetAutomation
                         end
                     },
@@ -1188,7 +1207,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.1,
                         values = {[""] = "none", ["TODO"] = "TODO"},
                         get = function() return "" end,
-                        disabled = function ()
+                        disabled = function()
                             return not self.db.profile.enableTargetAutomation
                         end
                     }
