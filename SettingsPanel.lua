@@ -102,7 +102,9 @@ function addon.settings:InitializeSettings()
             enableUnitscan = true,
             enableTargetMacro = true,
             notifyOnTargetUpdates = true,
-            enableProximityTargeting = true
+            enableProximityTargeting = true,
+            enableTargetMarking = true,
+            enableUnitscanMarking = true
         }
     }
 
@@ -1120,20 +1122,35 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2
                     },
                     enableProximityTargeting = {
-                        name = L("Enable Promimity Targeting"), -- TODO locale
+                        name = L("Nearby scanning"), -- TODO locale
                         desc = L("Automatically scan nearby targets"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.1
                     },
-                    enableUnitscan = {
-                        name = L("Unitscan integration"),
+                    enableTargetMarking = {
+                        name = L("Mark Friendly Targets"), -- TODO locale
                         desc = L(
-                            "Automatically adds important npcs to your unitscan list"),
+                            "Mark friendly targets with star, circle, diamond, and triangle"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3,
-                        hidden = not _G.unitscan_targets
+                        order = 2.2
+                    },
+                    enableUnitscanMarking = {
+                        name = L("Mark Enemy Targets"), -- TODO locale
+                        desc = L(
+                            "Mark enemy targets with skull, cross, square, and moon"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.3
+                    },
+                    flashOnFind = {
+                        name = L("Flash Client Icon"), -- TODO locale
+                        desc = L(
+                            "Flashes the game icon on taskbar when target found"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.9
                     }
                 }
             },

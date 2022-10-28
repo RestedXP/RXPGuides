@@ -6,6 +6,7 @@ local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros =
 local TargetUnit, UnitName, next, IsInRaid = TargetUnit, UnitName, next,
                                              IsInRaid
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
+local GetTime, FlashClientIcon = GetTime, FlashClientIcon
 local GameTooltip = _G.GameTooltip
 
 local L = addon.locale.Get
@@ -17,7 +18,7 @@ local macroTargets
 local announcedTargets = {}
 
 local proximityTargets = {}
-local pollingFrequency = 0.1
+local pollingFrequency = 0.25
 local lastPoll = GetTime()
 
 local targetButtonPlaceholders = {132092, 132177, 132130, 132150}
@@ -33,6 +34,14 @@ function addon.targeting:Setup()
 
     -- Only works when nameplates are enabled
     self:RegisterEvent("NAME_PLATE_UNIT_ADDED")
+
+    -- Increase nameplate scanning distance to max allowed
+    if addon.gameVersion > 40000 then
+        SetCVar("nameplateMaxDistance", "100")
+    else
+        SetCVar("nameplateMaxDistance", "41")
+    end
+
     self:RegisterEvent("PLAYER_TARGET_CHANGED")
 
     self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
@@ -128,16 +137,16 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
 
     if not unitName then return end
 
-    for _, name in pairs(proximityTargets) do
+    for i, name in ipairs(proximityTargets) do
         if name == unitName then
             self:UpdateTargetFrame(nameplateID)
-            -- TODO incremental marks
             -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
-            FlashClientIcon()
+            if addon.settings.db.profile.flashOnFind then
+                FlashClientIcon()
+            end
 
-            if GetRaidTargetIndex(nameplateID) == nil and
-                GetRaidTargetIndex(nameplateID) ~= 3 then
-                SetRaidTarget(nameplateID, 3)
+            if addon.settings.db.profile.enableTargetMarking then
+                self:UpdateMarker("target", nameplateID, i)
             end
         end
     end
@@ -150,14 +159,16 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
 
     if not unitName then return end
 
-    for _, name in pairs(proximityTargets) do
+    for i, name in ipairs(proximityTargets) do
         if name == unitName then
             self:UpdateTargetFrame("mouseover")
-            FlashClientIcon()
 
-            if GetRaidTargetIndex("mouseover") == nil and
-                GetRaidTargetIndex("mouseover") ~= 3 then
-                SetRaidTarget('mouseover', 3)
+            if addon.settings.db.profile.flashOnFind then
+                FlashClientIcon()
+            end
+
+            if addon.settings.db.profile.enableTargetMarking then
+                self:UpdateMarker("target", "mouseover", i)
             end
         end
     end
@@ -170,13 +181,12 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
 
     if not unitName then return end
 
-    for _, name in pairs(proximityTargets) do
+    for i, name in ipairs(proximityTargets) do
         if name == unitName then
             self:UpdateTargetFrame("target")
 
-            if GetRaidTargetIndex("target") == nil and
-                GetRaidTargetIndex("target") ~= 3 then
-                SetRaidTarget('target', 3)
+            if addon.settings.db.profile.enableTargetMarking then
+                self:UpdateMarker("target", "target", i)
             end
         end
     end
@@ -261,15 +271,36 @@ function addon.targeting:CreateTargetFrame()
 end
 
 local fOnEnter = function(self)
-    if not GameTooltip:IsForbidden() and self.targetData then
-        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetUnit(self.targetData.Name)
-        GameTooltip:Show()
-    end
+    if self:IsForbidden() or GameTooltip:IsForbidden() then return end
+
+    GameTooltip:ClearLines()
+    -- TODO set tooltip to unit
+    GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, 0)
+    GameTooltip:AddLine(self.targetData.name, 1, 1, 1)
+    GameTooltip:Show()
 end
 
 local fOnLeave = function(self)
-    if not GameTooltip:IsForbidden() then GameTooltip:Hide() end
+    if self:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
+
+    GameTooltip:Hide()
+end
+
+function addon.targeting:UpdateMarker(kind, unitId, index)
+    -- Only mark 4/8 targets, ignore later marks
+    if index > 4 then return end
+
+    local markerId
+    if kind == "target" then
+        -- Use star, circle, diamond, and triangle
+        markerId = 1 + index
+    elseif kind == "unitscan" then
+        -- use skull, cross, square, and moon
+        markerId = 8 - index
+    end
+
+    if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~=
+        markerId then SetRaidTarget(unitId, markerId) end
 end
 
 function addon.targeting:UpdateTargetFrame(kind)
@@ -305,7 +336,8 @@ function addon.targeting:UpdateTargetFrame(kind)
 
             local icon = btn.icon
             icon:SetAllPoints(true)
-            icon:SetTexture(targetButtonPlaceholders[i])
+            icon:SetTexture(targetButtonPlaceholders[i] or
+                                "Interface\\Icons\\INV_Misc_QuestionMark")
 
             btn:SetScript("OnEnter", fOnEnter)
             btn:SetScript("OnLeave", fOnLeave)
@@ -318,7 +350,7 @@ function addon.targeting:UpdateTargetFrame(kind)
 
         btn:SetAttribute('macrotext',
                          '/cleartarget\n/targetexact ' .. targetName)
-        btn.targetData = {name = targetName, kind = kind}
+        btn.targetData = {name = targetName}
         -- If target or mouseover, set portrait
         if kind and UnitName(kind) == targetName then
             SetPortraitTexture(btn.icon, kind)
@@ -337,7 +369,7 @@ function addon.targeting:UpdateTargetFrame(kind)
 
     for n = i + 1, #buttonList do
         buttonList[n]:Hide()
-        buttonList[n].icon:SetTexture(targetButtonPlaceholders[i])
+        buttonList[n].icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
     end
     local width = math.max(targetFrame.title:GetWidth() + 10, i * 27 + 8)
     targetFrame:SetWidth(width)
