@@ -99,11 +99,12 @@ function addon.settings:InitializeSettings()
             showEnabled = true,
 
             -- Targeting
-            enableUnitscan = true,
             enableTargetMacro = true,
             notifyOnTargetUpdates = true,
             enableProximityTargeting = true,
+            enableFriendlyTargeting = true,
             enableTargetMarking = true,
+            enableEnemyTargeting = true,
             enableUnitscanMarking = true
         }
     }
@@ -202,12 +203,6 @@ function addon.settings:MigrateSettings()
         n("mapCircle", RXPData.mapCircle)
         db.mapCircle = RXPData.mapCircle
         RXPData.mapCircle = nil
-    end
-
-    if RXPData.disableUnitscan ~= nil then
-        n("disableUnitscan", RXPData.disableUnitscan)
-        db.enableUnitscan = not RXPData.disableUnitscan
-        RXPData.disableUnitscan = nil
     end
 
     if RXPCData.hardcore ~= nil then
@@ -1103,8 +1098,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.1,
-                        disabled = (_G.unitscan_targets and true) or
-                            not addon.targeting:CanCreateMacro()
+                        disabled = not addon.targeting:CanCreateMacro()
                     },
                     notifyOnTargetUpdates = {
                         name = L("Notify on new target"), -- TODO locale
@@ -1112,8 +1106,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.2,
-                        disabled = (_G.unitscan_targets and true) or
-                            not addon.targeting:CanCreateMacro()
+                        disabled = not addon.targeting:CanCreateMacro()
                     },
                     proximityHeader = {
                         name = _G.TRACKER_SORT_PROXIMITY,
@@ -1128,13 +1121,27 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.1
                     },
+                    enableFriendlyTargeting = {
+                        name = L("Scan Friendly Targets"), -- TODO locale
+                        desc = L("Scan for friendly targets"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.2
+                    },
                     enableTargetMarking = {
                         name = L("Mark Friendly Targets"), -- TODO locale
                         desc = L(
                             "Mark friendly targets with star, circle, diamond, and triangle"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.2
+                        order = 2.21
+                    },
+                    enableEnemyTargeting = {
+                        name = L("Scan Enemy Targets"), -- TODO locale
+                        desc = L("Scan for enemy targets"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.3
                     },
                     enableUnitscanMarking = {
                         name = L("Mark Enemy Targets"), -- TODO locale
@@ -1142,7 +1149,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Mark enemy targets with skull, cross, square, and moon"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.3
+                        order = 2.31
                     },
                     flashOnFind = {
                         name = L("Flash Client Icon"), -- TODO locale

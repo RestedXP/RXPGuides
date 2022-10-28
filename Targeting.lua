@@ -137,16 +137,18 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
 
     if not unitName then return end
 
-    for i, name in ipairs(proximityTargets) do
-        if name == unitName then
-            self:UpdateTargetFrame(nameplateID)
-            -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
-            if addon.settings.db.profile.flashOnFind then
-                FlashClientIcon()
-            end
+    if addon.settings.db.profile.enableFriendlyTargeting then
+        for i, name in ipairs(proximityTargets) do
+            if name == unitName then
+                self:UpdateTargetFrame(nameplateID)
+                -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
+                if addon.settings.db.profile.flashOnFind then
+                    FlashClientIcon()
+                end
 
-            if addon.settings.db.profile.enableTargetMarking then
-                self:UpdateMarker("target", nameplateID, i)
+                if addon.settings.db.profile.enableTargetMarking then
+                    self:UpdateMarker("target", nameplateID, i)
+                end
             end
         end
     end
@@ -159,16 +161,18 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
 
     if not unitName then return end
 
-    for i, name in ipairs(proximityTargets) do
-        if name == unitName then
-            self:UpdateTargetFrame("mouseover")
+    if addon.settings.db.profile.enableFriendlyTargeting then
+        for i, name in ipairs(proximityTargets) do
+            if name == unitName then
+                self:UpdateTargetFrame("mouseover")
 
-            if addon.settings.db.profile.flashOnFind then
-                FlashClientIcon()
-            end
+                if addon.settings.db.profile.flashOnFind then
+                    FlashClientIcon()
+                end
 
-            if addon.settings.db.profile.enableTargetMarking then
-                self:UpdateMarker("target", "mouseover", i)
+                if addon.settings.db.profile.enableTargetMarking then
+                    self:UpdateMarker("target", "mouseover", i)
+                end
             end
         end
     end
@@ -181,12 +185,14 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
 
     if not unitName then return end
 
-    for i, name in ipairs(proximityTargets) do
-        if name == unitName then
-            self:UpdateTargetFrame("target")
+    if addon.settings.db.profile.enableFriendlyTargeting then
+        for i, name in ipairs(proximityTargets) do
+            if name == unitName then
+                self:UpdateTargetFrame("target")
 
-            if addon.settings.db.profile.enableTargetMarking then
-                self:UpdateMarker("target", "target", i)
+                if addon.settings.db.profile.enableTargetMarking then
+                    self:UpdateMarker("target", "target", i)
+                end
             end
         end
     end
@@ -195,8 +201,12 @@ end
 function addon.targeting:PollTargets()
     if next(proximityTargets) == nil or IsInRaid() then return end
 
-    if GetTime() - lastPoll > pollingFrequency then
-        for _, name in pairs(proximityTargets) do TargetUnit(name, true) end
+    if addon.settings.db.profile.enableFriendlyTargeting then
+        if GetTime() - lastPoll > pollingFrequency then
+            for _, name in pairs(proximityTargets) do
+                TargetUnit(name, true)
+            end
+        end
     end
 
     lastPoll = GetTime()

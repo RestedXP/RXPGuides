@@ -613,36 +613,6 @@ function addon.GetGuideTable(guideGroup, guideName)
     end
 end
 
-function addon.UnitScanUpdate()
-    local unitscanList = addon.currentGuide.unitscan
-    if _G.unitscan_targets and unitscanList and addon.settings.db.profile.enableUnitscan then
-        for unit, elements in pairs(unitscanList) do
-            local enabled
-            for _, element in pairs(elements) do
-                if element.step.active then
-                    enabled = true
-                    break
-                end
-            end
-
-            if enabled then
-                if not _G.unitscan_targets[unit] then
-                    _G.DEFAULT_CHAT_FRAME:AddMessage(
-                        _G.LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> +' .. unit)
-                end
-                _G.unitscan_targets[unit] = true
-            else
-                if _G.unitscan_targets[unit] then
-                    _G.DEFAULT_CHAT_FRAME:AddMessage(
-                        _G.LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> -' .. unit)
-                end
-                _G.unitscan_targets[unit] = nil
-            end
-
-        end
-    end
-end
-
 addon.scheduledTasks = {}
 
 function addon.UpdateScheduledTasks()

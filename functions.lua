@@ -2727,19 +2727,10 @@ end
 function addon.functions.unitscan(self, text, ...)
     if type(self) == "string" then
         local element = {}
-        local npcs = {...}
-        for k, v in pairs(npcs) do
-            local npc = strupper(v)
-            if addon.guide.unitscan[npc] then
-                table.insert(addon.guide.unitscan[npc], element)
-            else
-                addon.guide.unitscan[npc] = {element}
-            end
-        end
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.unitscan = npcs
+        element.unitscan = {...}
         return element
     end
 
@@ -2748,11 +2739,10 @@ end
 function addon.functions.target(self, text, ...)
     if type(self) == "string" then
         local element = {}
-        local npcs = {...}
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.targets = npcs --TODO differentiate friend v foe
+        element.targets = {...} --TODO differentiate friend v foe
         return element
     end
 end

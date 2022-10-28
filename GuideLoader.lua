@@ -586,7 +586,6 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
     addon.currentGuideGroup = groupOrContent
     RXPG.RegisterGroup(guide.group)
 
-    guide.unitscan = {}
     local currentStep = 0
     guide.steps = {}
 
