@@ -105,7 +105,7 @@ function addon.settings:InitializeSettings()
             enableFriendlyTargeting = true,
             enableTargetMarking = true,
             enableEnemyTargeting = true,
-            enableUnitscanMarking = true
+            enableEnemyMarking = true
         }
     }
 
@@ -1152,7 +1152,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.db.profile.enableTargetAutomation
                         end
                     },
-                    enableUnitscanMarking = {
+                    enableEnemyMarking = {
                         name = L("Mark Enemy Targets"), -- TODO locale
                         desc = L(
                             "Mark enemy targets with skull, cross, square, and moon"),
@@ -1160,7 +1160,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.31,
                         disabled = function ()
-                            return not self.db.profile.enableTargetAutomation or not self.db.profile.enableUnitscanMarking
+                            return not self.db.profile.enableTargetAutomation or not self.db.profile.enableEnemyMarking
                         end
                     },
                     alertHeader = {

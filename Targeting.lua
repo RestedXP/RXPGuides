@@ -54,11 +54,12 @@ function addon.targeting:Setup()
         self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
 
         if addon.settings.db.profile.hideGuideWindow then
-            addon.arrowFrame:HookScript("OnUpdate", self.PollTargets)
+            addon.arrowFrame:HookScript("OnUpdate", self.PollEnemyTargets)
         elseif addon.settings.db.profile.hideArrow then
-            addon.RXPFrame:HookScript("OnUpdate", self.PollTargets)
+            addon.RXPFrame:HookScript("OnUpdate", self.PollEnemyTargets)
         elseif addon.settings.db.profile.enableMinimapButton then
-            addon.settings.minimapFrame:HookScript("OnUpdate", self.PollTargets)
+            addon.settings.minimapFrame:HookScript("OnUpdate",
+                                                   self.PollEnemyTargets)
         else
             error("No enabled RXP frames to hook onto")
         end
@@ -143,12 +144,25 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
                 -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
+
+                if addon.settings.db.profile.enableTargetMarking then
+                    self:UpdateMarker("friendly", nameplateID, i)
+                end
+            end
+        end
+    end
+
+    if addon.settings.db.profile.enableEnemyTargeting then
+        for i, name in ipairs(enemyTargets) do
+            if name == unitName then
+                self:UpdateTargetFrame(nameplateID)
+                -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
                 if addon.settings.db.profile.flashOnFind then
                     FlashClientIcon()
                 end
 
-                if addon.settings.db.profile.enableTargetMarking then
-                    self:UpdateMarker("target", nameplateID, i)
+                if addon.settings.db.profile.enableEnemyMarking then
+                    self:UpdateMarker("enemy", nameplateID, i)
                 end
             end
         end
@@ -160,21 +174,35 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
         (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
         return
     end
-    local unitName = UnitName("mouseover")
+
+    local kind = "mouseover"
+    local unitName = UnitName(kind)
 
     if not unitName then return end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
         for i, name in ipairs(friendlyTargets) do
             if name == unitName then
-                self:UpdateTargetFrame("mouseover")
+                self:UpdateTargetFrame(kind)
 
+                if addon.settings.db.profile.enableTargetMarking then
+                    self:UpdateMarker("friendly", kind, i)
+                end
+            end
+        end
+    end
+
+    if addon.settings.db.profile.enableEnemyTargeting then
+        for i, name in ipairs(enemyTargets) do
+            if name == unitName then
+                self:UpdateTargetFrame(kind)
+                -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
                 if addon.settings.db.profile.flashOnFind then
                     FlashClientIcon()
                 end
 
-                if addon.settings.db.profile.enableTargetMarking then
-                    self:UpdateMarker("target", "mouseover", i)
+                if addon.settings.db.profile.enableEnemyMarking then
+                    self:UpdateMarker("enemy", kind, i)
                 end
             end
         end
@@ -186,33 +214,42 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
         (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
         return
     end
-
-    local unitName = UnitName("target")
+    local kind = "target"
+    local unitName = UnitName(kind)
 
     if not unitName then return end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
         for i, name in ipairs(friendlyTargets) do
             if name == unitName then
-                self:UpdateTargetFrame("target")
+                self:UpdateTargetFrame(kind)
 
                 if addon.settings.db.profile.enableTargetMarking then
-                    self:UpdateMarker("target", "target", i)
+                    self:UpdateMarker("friendly", kind, i)
+                end
+            end
+        end
+    end
+
+    if addon.settings.db.profile.enableEnemyTargeting then
+        for i, name in ipairs(enemyTargets) do
+            if name == unitName then
+                self:UpdateTargetFrame(kind)
+
+                if addon.settings.db.profile.enableEnemyMarking then
+                    self:UpdateMarker("enemy", kind, i)
                 end
             end
         end
     end
 end
 
-function addon.targeting:PollTargets()
-    if IsInRaid() or
-        (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
-        return
-    end
+function addon.targeting:PollEnemyTargets()
+    if IsInRaid() or next(enemyTargets) == nil then return end
 
-    if addon.settings.db.profile.enableFriendlyTargeting then
+    if addon.settings.db.profile.enableEnemyTargeting then
         if GetTime() - lastPoll > pollingFrequency then
-            for _, name in pairs(friendlyTargets) do
+            for _, name in pairs(enemyTargets) do
                 TargetUnit(name, true)
             end
         end
@@ -240,7 +277,7 @@ end
 
 function addon.targeting:ADDON_ACTION_FORBIDDEN(_, _, c)
     -- TODO flash buttons that something is near?
-    print("ADDON_ACTION_FORBIDDEN = " .. c)
+    -- print("ADDON_ACTION_FORBIDDEN = " .. c)
 end
 
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
@@ -320,13 +357,15 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     if index > 4 then return end
 
     local markerId
-    if kind == "target" then
+    if kind == "friendly" then
         -- Use star, circle, diamond, and triangle
         markerId = 1 + index
-    elseif kind == "unitscan" then
+    elseif kind == "enemy" then
         -- use skull, cross, square, and moon
         markerId = 8 - index
     end
+
+    if not markerId then return end
 
     if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~=
         markerId then SetRaidTarget(unitId, markerId) end
