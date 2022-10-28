@@ -359,10 +359,10 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     local markerId
     if kind == "friendly" then
         -- Use star, circle, diamond, and triangle
-        markerId = 1 + index
+        markerId = 0 + index
     elseif kind == "enemy" then
         -- use skull, cross, square, and moon
-        markerId = 8 - index
+        markerId = 9 - index
     end
 
     if not markerId then return end
