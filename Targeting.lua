@@ -351,13 +351,19 @@ function addon.targeting:CreateTargetFrame()
 end
 
 local fOnEnter = function(self)
-    if self:IsForbidden() or GameTooltip:IsForbidden() then return end
+    if self:IsForbidden() or GameTooltip:IsForbidden() or not self.targetData then
+        return
+    end
 
-    -- TODO set tooltip color, friendly = green, enemy = red
     GameTooltip:ClearLines()
     -- TODO set tooltip to unit
     GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, 0)
-    GameTooltip:AddLine(self.targetData.name, 1, 1, 1)
+    if self.targetData.kind == "friendly" then
+        GameTooltip:AddLine(self.targetData.name, 0, 1, 0)
+    elseif self.targetData.kind == "enemy" then
+        GameTooltip:AddLine(self.targetData.name, 1, 0, 0)
+    end
+
     GameTooltip:Show()
 end
 
@@ -433,7 +439,7 @@ function addon.targeting:UpdateTargetFrame(kind)
 
         btn:SetAttribute('macrotext',
                          '/cleartarget\n/targetexact ' .. targetName)
-        btn.targetData = {name = targetName}
+        btn.targetData = {name = targetName, kind = "friendly"}
         -- If target or mouseover, set portrait
         if kind and UnitName(kind) == targetName then
             SetPortraitTexture(btn.icon, kind)
@@ -479,7 +485,7 @@ function addon.targeting:UpdateTargetFrame(kind)
 
         btn:SetAttribute('macrotext',
                          '/cleartarget\n/targetexact ' .. targetName)
-        btn.targetData = {name = targetName}
+        btn.targetData = {name = targetName, kind = "enemy"}
         -- If target or mouseover, set portrait
         if kind and UnitName(kind) == targetName then
             SetPortraitTexture(btn.icon, kind)
