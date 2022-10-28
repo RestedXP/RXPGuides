@@ -14,14 +14,16 @@ local L = addon.locale.Get
 addon.targeting = addon:NewModule("Targeting", "AceEvent-3.0")
 addon.targeting.macroName = "RXPTargeting"
 
-local macroTargets
 local announcedTargets = {}
-
-local proximityTargets = {}
+local macroTargets = {}
 local pollingFrequency = 0.25
 local lastPoll = GetTime()
 
-local targetButtonPlaceholders = {132092, 132177, 132130, 132150}
+local friendlyTargets = {}
+local friendlyTargetIcons = {132092, 132177, 132130, 132150}
+
+local enemyTargets = {}
+local enemyTargetIcons = {132212, 132147, 132222, 132336}
 
 function addon.targeting:Setup()
     if addon.settings.db.profile.enableTargetMacro then
@@ -67,9 +69,8 @@ function addon.targeting:Setup()
 end
 
 function addon.targeting:UpdateMacro(targets)
-    if not addon.settings.db.profile.enableTargetMacro or _G.unitscan_targets then
-        return
-    end
+    if not addon.settings.db.profile.enableTargetMacro then return end
+    targets = targets or {}
 
     if InCombatLockdown() then
         macroTargets = targets
@@ -80,8 +81,6 @@ function addon.targeting:UpdateMacro(targets)
         if not self:CanCreateMacro() then return end
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
-
-    targets = targets or {}
 
     local content
     for _, t in ipairs(targets) do
@@ -115,6 +114,7 @@ function addon.targeting:UpdateMacro(targets)
         end)
         addon.settings.db.profile.macroAnnounced = true
     end
+
     macroTargets = nil
 end
 
@@ -123,13 +123,14 @@ function addon.targeting:PLAYER_REGEN_ENABLED()
         C_Timer.After(2, function() self:UpdateMacro(macroTargets) end)
     end
 
-    if IsInRaid() or next(proximityTargets) == nil then return end
+    if IsInRaid() or next(friendlyTargets) == nil then return end
 
     self:UpdateTargetFrame()
 end
 
 function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
-    if not nameplateID or next(proximityTargets) == nil or IsInRaid() then
+    if not nameplateID or IsInRaid() or
+        (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
         return
     end
 
@@ -138,7 +139,7 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
     if not unitName then return end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
-        for i, name in ipairs(proximityTargets) do
+        for i, name in ipairs(friendlyTargets) do
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
                 -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
@@ -155,14 +156,16 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
 end
 
 function addon.targeting:UPDATE_MOUSEOVER_UNIT()
-    if next(proximityTargets) == nil or IsInRaid() then return end
-
+    if IsInRaid() or
+        (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
+        return
+    end
     local unitName = UnitName("mouseover")
 
     if not unitName then return end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
-        for i, name in ipairs(proximityTargets) do
+        for i, name in ipairs(friendlyTargets) do
             if name == unitName then
                 self:UpdateTargetFrame("mouseover")
 
@@ -179,14 +182,17 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
 end
 
 function addon.targeting:PLAYER_TARGET_CHANGED()
-    if next(proximityTargets) == nil or IsInRaid() then return end
+    if IsInRaid() or
+        (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
+        return
+    end
 
     local unitName = UnitName("target")
 
     if not unitName then return end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
-        for i, name in ipairs(proximityTargets) do
+        for i, name in ipairs(friendlyTargets) do
             if name == unitName then
                 self:UpdateTargetFrame("target")
 
@@ -199,11 +205,14 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
 end
 
 function addon.targeting:PollTargets()
-    if next(proximityTargets) == nil or IsInRaid() then return end
+    if IsInRaid() or
+        (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
+        return
+    end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
         if GetTime() - lastPoll > pollingFrequency then
-            for _, name in pairs(proximityTargets) do
+            for _, name in pairs(friendlyTargets) do
                 TargetUnit(name, true)
             end
         end
@@ -212,10 +221,20 @@ function addon.targeting:PollTargets()
     lastPoll = GetTime()
 end
 
-function addon.targeting:UpdateTargets(targets)
-    proximityTargets = targets or {}
+function addon.targeting:UpdateFriendlyTargets(targets)
+    friendlyTargets = targets or {}
 
     if InCombatLockdown() then return end
+
+    self:UpdateTargetFrame()
+end
+
+function addon.targeting:UpdateEnemyTargets(targets)
+    enemyTargets = targets or {}
+
+    if InCombatLockdown() then return end
+
+    self:UpdateMacro(enemyTargets)
     self:UpdateTargetFrame()
 end
 
@@ -241,7 +260,7 @@ function addon.targeting:CreateTargetFrame()
     addon.enabledFrames["activeTargetFrame"] = f
     f.IsFeatureEnabled = function()
         return not addon.settings.db.profile.disableItemWindow and
-                   next(proximityTargets) ~= nil
+                   next(friendlyTargets) ~= nil
     end
 
     f:ClearBackdrop()
@@ -324,7 +343,7 @@ function addon.targeting:UpdateTargetFrame(kind)
 
     local i = 0
 
-    for _, targetName in ipairs(proximityTargets) do
+    for _, targetName in ipairs(friendlyTargets) do
         i = i + 1
         local btn = buttonList[i]
 
@@ -346,7 +365,7 @@ function addon.targeting:UpdateTargetFrame(kind)
 
             local icon = btn.icon
             icon:SetAllPoints(true)
-            icon:SetTexture(targetButtonPlaceholders[i] or
+            icon:SetTexture(friendlyTargetIcons[i] or
                                 "Interface\\Icons\\INV_Misc_QuestionMark")
 
             btn:SetScript("OnEnter", fOnEnter)

@@ -20,4 +20,5 @@ step
     .target Marjak Keenblade
     .target Moodan Sungrain
     .unitscan Brave Lightninghorn
+    .unitscan Plainstrider
 ]])

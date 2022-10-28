@@ -714,11 +714,9 @@ function addon.SetStep(n, n2, loopback)
                 end
             end
 
-            if enemyTargets then
-                addon.targeting:UpdateMacro(enemyTargets)
-            end
+            addon.targeting:UpdateEnemyTargets(enemyTargets)
 
-            addon.targeting:UpdateTargets(friendlyTargets)
+            addon.targeting:UpdateFriendlyTargets(friendlyTargets)
         else
             stepframe:Hide()
         end
