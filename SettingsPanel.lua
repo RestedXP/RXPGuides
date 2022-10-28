@@ -101,7 +101,7 @@ function addon.settings:InitializeSettings()
             -- Targeting
             enableTargetMacro = true,
             notifyOnTargetUpdates = true,
-            enableProximityTargeting = true,
+            enableTargetAutomation = true,
             enableFriendlyTargeting = true,
             enableTargetMarking = true,
             enableEnemyTargeting = true,
@@ -1114,7 +1114,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 2
                     },
-                    enableProximityTargeting = {
+                    enableTargetAutomation = {
                         name = L("Nearby scanning"), -- TODO locale
                         desc = L("Automatically scan nearby targets"),
                         type = "toggle",
@@ -1126,7 +1126,10 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Scan for friendly targets"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.2
+                        order = 2.2,
+                        disabled = function ()
+                            return not self.db.profile.enableTargetAutomation
+                        end
                     },
                     enableTargetMarking = {
                         name = L("Mark Friendly Targets"), -- TODO locale
@@ -1134,14 +1137,20 @@ function addon.settings:CreateAceOptionsPanel()
                             "Mark friendly targets with star, circle, diamond, and triangle"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.21
+                        order = 2.21,
+                        disabled = function ()
+                            return not self.db.profile.enableTargetAutomation or not self.db.profile.enableTargetMarking
+                        end
                     },
                     enableEnemyTargeting = {
                         name = L("Scan Enemy Targets"), -- TODO locale
                         desc = L("Scan for enemy targets"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.3
+                        order = 2.3,
+                        disabled = function ()
+                            return not self.db.profile.enableTargetAutomation
+                        end
                     },
                     enableUnitscanMarking = {
                         name = L("Mark Enemy Targets"), -- TODO locale
@@ -1149,15 +1158,39 @@ function addon.settings:CreateAceOptionsPanel()
                             "Mark enemy targets with skull, cross, square, and moon"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.31
+                        order = 2.31,
+                        disabled = function ()
+                            return not self.db.profile.enableTargetAutomation or not self.db.profile.enableUnitscanMarking
+                        end
+                    },
+                    alertHeader = {
+                        name = _G.COMMUNITIES_NOTIFICATION_SETTINGS,
+                        type = "header",
+                        width = "full",
+                        order = 3
                     },
                     flashOnFind = {
                         name = L("Flash Client Icon"), -- TODO locale
                         desc = L(
-                            "Flashes the game icon on taskbar when target found"),
+                            "Flashes the game icon on taskbar when enemy target found"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.9
+                        order = 3.1,
+                        disabled = function ()
+                            return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    soundOnFind = {
+                        name = L("Play Sound"), -- TODO locale
+                        desc = L("Sends sound on enemy target found"),
+                        type = "select",
+                        width = optionsWidth,
+                        order = 3.1,
+                        values = {[""] = "none", ["TODO"] = "TODO"},
+                        get = function() return "" end,
+                        disabled = function ()
+                            return not self.db.profile.enableTargetAutomation
+                        end
                     }
                 }
             },

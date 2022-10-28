@@ -47,7 +47,7 @@ function addon.targeting:Setup()
     self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
 
     -- TODO toggle without reloads
-    if addon.settings.db.profile.enableProximityTargeting then
+    if addon.settings.db.profile.enableTargetAutomation then
         -- Periodic polling
         self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
 
