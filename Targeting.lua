@@ -1,6 +1,6 @@
 local _, addon = ...
 
-local fmt = string.format
+local fmt, tinsert, mmax = string.format, table.insert, math.max
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros =
     GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros
 local TargetUnit, UnitName, next, IsInRaid = TargetUnit, UnitName, next,
@@ -297,7 +297,7 @@ function addon.targeting:CreateTargetFrame()
     addon.enabledFrames["activeTargetFrame"] = f
     f.IsFeatureEnabled = function()
         return not addon.settings.db.profile.disableItemWindow and
-                   next(friendlyTargets) ~= nil
+                   (next(friendlyTargets) ~= nil or next(enemyTargets) ~= nil)
     end
 
     f:ClearBackdrop()
@@ -312,7 +312,8 @@ function addon.targeting:CreateTargetFrame()
     function f.onMouseUp() f:StopMovingOrSizing() end
     f:SetScript("OnMouseDown", f.onMouseDown)
     f:SetScript("OnMouseUp", f.onMouseUp)
-    f.buttonList = {}
+    f.friendlyTargetButtons = {}
+    f.enemyTargetButtons = {}
     f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 
     f.title = CreateFrame("Frame", "$parent_title", f,
@@ -374,9 +375,8 @@ end
 function addon.targeting:UpdateTargetFrame(kind)
     local targetFrame = self.activeTargetFrame
 
-    -- TOOD queue up for out-of-combat refresh
     if InCombatLockdown() then return end
-    local buttonList = targetFrame.buttonList
+    local friendlyTargetButtons = targetFrame.friendlyTargetButtons
 
     targetFrame.title:SetSize(targetFrame.title.text:GetStringWidth() + 10, 17)
 
@@ -384,21 +384,22 @@ function addon.targeting:UpdateTargetFrame(kind)
 
     for _, targetName in ipairs(friendlyTargets) do
         i = i + 1
-        local btn = buttonList[i]
+        local btn = friendlyTargetButtons[i]
 
         if not btn then
-            btn = CreateFrame("Button", "$parentButton" .. i, targetFrame,
-                              "SecureActionButtonTemplate")
+            btn = CreateFrame("Button", "$parentFriendlyButton" .. i,
+                              targetFrame, "SecureActionButtonTemplate")
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
-            table.insert(buttonList, btn)
-            local n = #buttonList
+            tinsert(friendlyTargetButtons, btn)
+            local n = #friendlyTargetButtons
 
             btn:ClearAllPoints()
             if n == 1 then
-                btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
+                btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
             else
-                btn:SetPoint("CENTER", buttonList[n - 1], "CENTER", 27, 0)
+                btn:SetPoint("CENTER", friendlyTargetButtons[n - 1], "CENTER",
+                             27, 0)
             end
             btn.icon = btn:CreateTexture(nil, "BACKGROUND")
 
@@ -426,20 +427,82 @@ function addon.targeting:UpdateTargetFrame(kind)
         btn:Show()
     end
 
-    if i > 0 then targetFrame:SetAlpha(1) end
+    local enemyTargetButtons = targetFrame.enemyTargetButtons
+    local j = 0
+    for _, targetName in ipairs(enemyTargets) do
+        j = j + 1
+        local btn = enemyTargetButtons[j]
 
-    if i == 0 or addon.settings.db.profile.disableItemWindow or
+        if not btn then
+            btn = CreateFrame("Button", "$parentEnemyButton" .. j, targetFrame,
+                              "SecureActionButtonTemplate")
+            btn:SetAttribute("type", "macro")
+            btn:SetSize(25, 25)
+            tinsert(enemyTargetButtons, btn)
+            local n = #enemyTargetButtons
+
+            btn:ClearAllPoints()
+            if n == 1 then
+                btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
+            else
+                btn:SetPoint("CENTER", enemyTargetButtons[n - 1], "CENTER", 27,
+                             0)
+            end
+            btn.icon = btn:CreateTexture(nil, "BACKGROUND")
+
+            local icon = btn.icon
+            icon:SetAllPoints(true)
+            icon:SetTexture(enemyTargetIcons[j] or
+                                "Interface\\Icons\\INV_Misc_QuestionMark")
+
+            btn:SetScript("OnEnter", fOnEnter)
+            btn:SetScript("OnLeave", fOnLeave)
+
+            local ht = btn:CreateTexture(nil, "HIGHLIGHT")
+            ht:SetAllPoints(true)
+            ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+            ht:SetBlendMode("ADD")
+        end
+
+        btn:SetAttribute('macrotext',
+                         '/cleartarget\n/targetexact ' .. targetName)
+        btn.targetData = {name = targetName}
+        -- If target or mouseover, set portrait
+        if kind and UnitName(kind) == targetName then
+            SetPortraitTexture(btn.icon, kind)
+        end
+        btn:Show()
+    end
+
+    if i > 0 or j > 0 then targetFrame:SetAlpha(1) end
+
+    for n = i + 1, #friendlyTargetButtons do
+        friendlyTargetButtons[n]:Hide()
+        friendlyTargetButtons[n].icon:SetTexture(
+            "Interface\\Icons\\INV_Misc_QuestionMark")
+    end
+
+    for n = j + 1, #enemyTargetButtons do
+        enemyTargetButtons[n]:Hide()
+        enemyTargetButtons[n].icon:SetTexture(
+            "Interface\\Icons\\INV_Misc_QuestionMark")
+    end
+
+    if (i == 0 and j == 0) or
+        not addon.settings.db.profile.enableTargetAutomation or
         not addon.settings.db.profile.showEnabled then
         targetFrame:Hide()
     else
         targetFrame:Show()
     end
 
-    for n = i + 1, #buttonList do
-        buttonList[n]:Hide()
-        buttonList[n].icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
-    end
-    local width = math.max(targetFrame.title:GetWidth() + 10, i * 27 + 8)
+    local width =
+        mmax(targetFrame.title:GetWidth() + 10, i * 27 + 8, j * 27 + 8)
     targetFrame:SetWidth(width)
 
+    if (i > 0 and j == 0) or (j > 0 and i == 0) then
+        targetFrame:SetHeight(40)
+    else
+        targetFrame:SetHeight(68)
+    end
 end
