@@ -2,7 +2,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 << Horde
-#name 13-23 The Barrens
+#name 13-22 The Barrens
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor Shaman/Warrior
@@ -65,11 +65,7 @@ step << !Tauren
 #xprate >1.499
 .goto The Barrens,51.5,30.1
     .accept 1492 >>Accept Wharfmaster Dizzywig
-        .accept 848 >>Accept Fungal Spores
-step << Orc/Troll
-#xprate <1.5
-    .goto The Barrens,52.6,29.9
-    .turnin 6386 >>Turn in Return to the Crossroads.   
+        .accept 848 >>Accept Fungal Spores 
 step << Warrior
     .isOnQuest 1502
     .goto The Barrens,57.9,25.5,30 >>Run up the mountain here
@@ -113,6 +109,7 @@ step
 .goto The Barrens,55.7,27.3
 .collect 4926,1,819 --Collect Chen's Empty Keg
 .accept 819 >> Accept Chen's Empty Keg
+    .use 4926
 step
     .goto The Barrens,55.6,26.6
     >>Kill Quillboars in the area
@@ -185,6 +182,10 @@ step << !Hunter !Rogue !Warlock !Mage !Priest
     .unitscan Lizzarik
     .goto The Barrens,52.5,30.7,20,0
 .collect 4778,1 --Collect Heavy Spiked Mace
+step << Orc/Troll
+#xprate <1.5
+    .goto The Barrens,52.6,29.9
+    .turnin 6386 >>Turn in Return to the Crossroads.  
 step
     .isOnQuest 872
     .goto The Barrens,57.1,25.3,250 >> Run to here
@@ -413,11 +414,9 @@ step
     >>Kill Harpies. Loot them for their Talons
     .complete 867,1 --Witchwing Talon (8)
 step
-    #sticky
-    #completewith next
->>Kill Plainstriders. Loot them for their Kidneys. This does not need to be completed right now but kill them as you see them. Also get atleast 2/5 Raptor Horns before u arrive at Samophlange.
+>>Kill Plainstriders & Raptors in the area.
     .complete 821,2 --Plainstrider Kidney (5)
-    .complete 865,1 --Intact Raptor Horn (5)
+    .complete 865,1,3 --Intact Raptor Horn (5)
     .complete 869,1 --Raptor Head (12)
 step
     >>Click on the Control Console
@@ -476,7 +475,7 @@ step
 .goto The Barrens,60.8,10.6,40,0
     .goto The Barrens,60.4,1.2,40,0
 .goto The Barrens,61.2,13.2
->>Finish up the Raptor & Plainstrider quests.
+>>Finish up the Raptor & Plainstrider quests. They both share respawns with eachother.
     .complete 821,2 --Plainstrider Kidney (5)
     .complete 865,1 --Intact Raptor Horn (5)
     .complete 869,1 --Raptor Head (12)
@@ -518,6 +517,9 @@ step << Shaman
 .train 325 >> Train Lightning Shield r2
 .train 526 >> Train Cure Poison
 .train 8154 >>Train Stoneskin Totem r2
+step << Shaman
+    .goto Orgrimmar,31.8,37.8
+    .turnin 5727 >>Turn in Hidden Enemies
 step << Warrior
     .goto Orgrimmar,80.4,32.4
     .train 1160 >> Train Demoralizing Shout r1
@@ -612,14 +614,14 @@ step
     .turnin 890 >>Turn in The Missing Shipment
     .accept 892 >>Accept The Missing Shipment
 step
+    .goto The Barrens,62.7,36.3
+    .turnin 892 >>Turn in The Missing Shipment
+    .accept 888 >>Accept Stolen Booty
+step
     .goto The Barrens,62.4,37.6
     .accept 1069 >>Accept Deepmoss Spider Eggs
     .turnin 865 >>Turn in Raptor Horns
     .accept 1491 >>Accept Smart Drinks
-step
-    .goto The Barrens,62.7,36.3
-    .turnin 892 >>Turn in The Missing Shipment
-    .accept 888 >>Accept Stolen Booty
 step
     >>Loot the crate
 .goto The Barrens,63.6,49.2
@@ -932,18 +934,9 @@ step
 step
     >>Kill a LOT of Quillboars. Prioritize Thornweavers, Water Seekers, and Geomancers where you can. Loot them for their tusks. Save the Blood Shards you get
     *Water Seekers only spawn in the south western most camps. Go East or North West for Geomancers / Thornweavers.
-.goto The Barrens,44.3,52.3,50,0
-    .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,42.2,48.3,50,0
-    .goto The Barrens,44.3,52.3,50,0
-    .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,53.2,54.3,50,0
-    .goto The Barrens,53.3,51.3,50,0
-    .goto The Barrens,53.2,54.3,50,0
-    .goto The Barrens,53.3,51.3,50,0
-    .goto The Barrens,44.3,52.3,50,0
-    .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,45.2,54.3
+    .goto The Barrens,51.4,57.7,30,0
+    .goto The Barrens,51.4,54.7,30,0
+    .goto The Barrens,52.7,52.9
 .complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
     .complete 878,3 --Kill Bristleback Geomancer (x12)
@@ -1022,10 +1015,6 @@ step
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 step
-    >> Use your Blood Shards on Spirit of the Wind
-    .accept 889 >> Accept Spirit of the Wind
-    .turnin 889 >> Turn in Spirit of the Wind
-step
     .isOnQuest 883
 .goto The Barrens,44.8,59.1
     .turnin 882 >>Turn in Ishamuhale
@@ -1042,7 +1031,6 @@ step
 step
 #sticky
 #label Owatanka2
-#completewith next
 .goto The Barrens,44.2,62.1,75,0
 .goto The Barrens,49.2,62.6,75,0
 .goto The Barrens,49.6,60.0,75,0
@@ -1060,6 +1048,7 @@ step
 >>Kill Thunder Lizards. Loot them for their blood
     .complete 907,1 --Thunder Lizard Blood (3)
 step
+    #requires Owatanka2
 .goto The Barrens,44.9,59.1
     .turnin 907 >>Turn in Enraged Thunder Lizards
     .accept 913 >>Accept Cry of the Thunderhawk
@@ -1123,16 +1112,9 @@ step << Warrior
 step
     .goto Thunder Bluff,54.7,51.1
     .accept 1195 >>Accept The Sacred Flame  
-step
-    #xprate <1.5
-    .maxlevel 21
-    .goto Thunder Bluff,22.8,20.9
-    >> Go into the Pools of Vision below the Spirit Rise
-    .accept 962 >>Accept Serpentbloom
 step << Shaman
     .goto Thunder Bluff,23.6,19.1
     .accept 1529 >>Accept Call of Water
-    .train 2645 >>Train Ghost Wolf
 .train 8004 >>Train Lesser Healing Wave
 .train 6363 >>Train Searing Totem r2
 .train 913 >>Train Healing Wave r4
@@ -1190,7 +1172,7 @@ step
 step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
-    .isQuestComplete 6401
+    .isOnQuest 6401
 step
     .goto Stonetalon Mountains,45.1,59.8
     .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
@@ -1267,7 +1249,6 @@ step
 #xprate <1.5
     #sticky
     #label Sapphires
-    #completewith zoramend
     .goto Ashenvale,13.0,13.2,30,0
     .goto Ashenvale,13.6,9.0,30,0
     .goto Ashenvale,13.0,13.2,30,0
@@ -1280,9 +1261,9 @@ step
     .collect 16790,1,6564 --Collect Damp Note
     .accept 6564 >> Accept Allegiance to the Old Gods
     .isOnQuest 6442
+    .use 16790
 step
 #xprate <1.5
-    #requires Sapphires
     >> Loot the Sapphires from the walls in the tunnel.
     .goto Ashenvale,13.0,13.2,30,0
     .goto Ashenvale,13.6,9.0,30,0
@@ -1295,6 +1276,12 @@ step
     .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
     .isOnQuest 6563
 step
+#xprate <1.5
+    >> Grind until you are 14175 XP into level 21.
+    .xp 21+14175
+    .isOnQuest 6641
+step
+    #requires Sapphires
 #xprate <1.5
     #label zoramend
     #requires wrathtailhead
@@ -1332,6 +1319,7 @@ step
     .hs >> Hearth to Thunder Bluff
     .cooldown item,6948,>0
 step
+#xprate >1.499
     #completewith next
     .goto Stonetalon Mountains,45.1,59.8
     .fly Thunder Bluff >> Fly to Thunder Bluff 
@@ -1361,6 +1349,10 @@ step
     .goto Thunder Bluff,22.9,21.1
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
+step
+    .isOnQuest 1065
+    .goto Thunder Bluff,28.0,25.2
+    .accept 264 >> Accept Until Death Do Us Part
 step << !Tauren
 #xprate >1.499
     .goto Thunder Bluff,23.0,21.1
@@ -1420,6 +1412,9 @@ step << Warrior
 step << Warrior/Paladin/Shaman
     .goto Orgrimmar,81.5,19.6
     .train 197 >>Train 2h Axes
+step << Shaman
+    .goto Orgrimmar,81.5,19.6
+    .train 196 >>Train 1h Axes
 step
     .destroy 11149 >>Delete your Samophlange Manual
 ]])
