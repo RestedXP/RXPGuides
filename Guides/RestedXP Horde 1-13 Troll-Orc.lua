@@ -1281,7 +1281,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor Warrior !Tauren/Shaman !Tauren
-#next 13-23 The Barrens
+#next 13-22 The Barrens
 step
     .goto Durotar,50.8,43.6
     .accept 840 >>Accept Conscript of the Horde
