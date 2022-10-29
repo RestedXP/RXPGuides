@@ -13,7 +13,23 @@ step
     .goto Mulgore,44.2,76.1
     .accept 752 >>Accept A Humble Task
 step
-    .vendor >> Vendor trash.
+    .vendor >> Turn-in demo.
+    .target Grull Hawkwind
+step
+    .vendor >> Group turn-in demo
+    .target Grull Hawkwind
+    .target Brave Windfeather
+    .target Gart Mistrunner
+    .target Marjak Keenblade
+    .target Moodan Sungrain
+step
+    .vendor >> Kill elite demo
+    .unitscan Brave Lightninghorn
+step
+    .vendor >> Kill X mobs
+    .unitscan Plainstrider
+step
+    .vendor >> All the things demo
     .target Grull Hawkwind
     .target Brave Windfeather
     .target Gart Mistrunner

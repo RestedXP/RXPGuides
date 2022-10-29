@@ -1,10 +1,13 @@
 local _, addon = ...
 
-local fmt, tinsert, mmax = string.format, table.insert, math.max
+local fmt, tinsert, tremove, mmax = string.format, table.insert, table.remove,
+                                    math.max
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros =
     GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros
-local TargetUnit, UnitName, next, IsInRaid = TargetUnit, UnitName, next,
-                                             IsInRaid
+local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupAssistant,
+      UnitIsGroupLeader, IsInGroup = TargetUnit, UnitName, next, IsInRaid,
+                                     UnitIsDead, UnitIsGroupAssistant,
+                                     UnitIsGroupLeader, IsInGroup
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
 local GetTime, FlashClientIcon = GetTime, FlashClientIcon
 local GameTooltip = _G.GameTooltip
@@ -21,6 +24,7 @@ local lastPoll = GetTime()
 
 local friendlyTargets = {}
 local friendlyTargetPlaceholder = 132150
+-- TODO add local-only markers and custom placeholders
 local friendlyTargetIcons = {
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1.blp",
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_2.blp",
@@ -63,6 +67,13 @@ function addon.targeting:Setup()
     self:RegisterEvent("PLAYER_TARGET_CHANGED")
     self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
 
+    -- Remove interacted target
+    self:RegisterEvent("GOSSIP_SHOW")
+    self:RegisterEvent("MERCHANT_SHOW")
+    self:RegisterEvent("QUEST_PROGRESS")
+    self:RegisterEvent("QUEST_GREETING")
+    self:RegisterEvent("QUEST_COMPLETE")
+
     if addon.settings.db.profile.targetWithoutNameplates then
         if addon.settings.db.profile.hideGuideWindow then
             addon.arrowFrame:HookScript("OnUpdate", self.PollEnemyTargets)
@@ -82,21 +93,24 @@ function addon.targeting:Setup()
     end
 end
 
-function addon.targeting:UpdateMacro(targets)
-    -- TODO also add friendly targets
+function addon.targeting:UpdateMacro(queuedTargets)
     if not addon.settings.db.profile.enableTargetMacro then return end
-    targets = targets or {}
-    -- TODO remove completed targets?
 
     if InCombatLockdown() then
-        macroTargets = targets
+        macroTargets = queuedTargets
         return
     end
+
+    local targets = queuedTargets or {}
 
     if not GetMacroInfo(self.macroName) then
         if not self:CanCreateMacro() then return end
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
+
+    for _, t in ipairs(friendlyTargets) do tinsert(targets, t) end
+
+    for _, t in ipairs(enemyTargets) do tinsert(targets, t) end
 
     local content
     for _, t in ipairs(targets) do
@@ -104,11 +118,12 @@ function addon.targeting:UpdateMacro(targets)
 
         -- Prevent multiple spams
         if not announcedTargets[t] and
-            addon.settings.db.profile.notifyOnTargetUpdates then
+            addon.settings.db.profile.notifyOnTargetUpdates and
+            not addon.settings.db.profile.enableTargetAutomation then
+            -- Only notify if Active Targets frame is disabled
             C_Timer.After(2, function()
-                addon.comms.PrettyPrint(L(
-                                            "You have a new target (%s) for step %d"),
-                                        t, RXPCData.currentStep) -- TODO locale
+                addon.comms
+                    .PrettyPrint(L("Targeting macro updated with (%s)"), t) -- TODO locale
             end)
         end
 
@@ -131,7 +146,7 @@ function addon.targeting:UpdateMacro(targets)
         addon.settings.db.profile.macroAnnounced = true
     end
 
-    macroTargets = nil
+    macroTargets = {}
 end
 
 function addon.targeting:PLAYER_REGEN_ENABLED()
@@ -158,7 +173,6 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
         for i, name in ipairs(friendlyTargets) do
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
-                -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
 
                 if addon.settings.db.profile.enableTargetMarking then
                     self:UpdateMarker("friendly", nameplateID, i)
@@ -171,7 +185,7 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
         for i, name in ipairs(enemyTargets) do
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
-                -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
+
                 if addon.settings.db.profile.flashOnFind then
                     FlashClientIcon()
                 end
@@ -211,7 +225,7 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
         for i, name in ipairs(enemyTargets) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
-                -- TODO use array to track already found targets, remove after interation MERCHANT_SHOW or GOSSIP_SHOW
+
                 if addon.settings.db.profile.flashOnFind then
                     FlashClientIcon()
                 end
@@ -259,7 +273,42 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
     end
 end
 
+function addon.targeting:GOSSIP_SHOW()
+    local targetUnit = UnitName("target")
+
+    if not targetUnit then return end
+
+    -- Return after first match, won't be an enemy and friendly target as the same step
+    if addon.settings.db.profile.enableFriendlyTargeting then
+        for i, name in ipairs(friendlyTargets) do
+            if name == targetUnit then
+                tremove(friendlyTargets, i)
+                self:UpdateTargetFrame()
+                self:UpdateMacro()
+                return
+            end
+        end
+    end
+
+    if addon.settings.db.profile.enableEnemyTargeting then
+        for i, name in ipairs(enemyTargets) do
+            if name == targetUnit then
+                tremove(enemyTargets, i)
+                self:UpdateTargetFrame()
+                self:UpdateMacro()
+                return
+            end
+        end
+    end
+end
+
+addon.targeting.MERCHANT_SHOW = addon.targeting.GOSSIP_SHOW
+addon.targeting.QUEST_PROGRESS = addon.targeting.GOSSIP_SHOW
+addon.targeting.QUEST_GREETING = addon.targeting.GOSSIP_SHOW
+addon.targeting.QUEST_COMPLETE = addon.targeting.GOSSIP_SHOW
+
 function addon.targeting:PollEnemyTargets()
+    -- TODO add friendly too
     if IsInRaid() or next(enemyTargets) == nil or
         not addon.settings.db.profile.targetWithoutNameplates or
         addon.settings.db.profile.enableEnemyTargeting then return end
@@ -276,6 +325,7 @@ function addon.targeting:UpdateFriendlyTargets(targets)
 
     if InCombatLockdown() then return end
 
+    self:UpdateMacro()
     self:UpdateTargetFrame()
 end
 
@@ -284,13 +334,15 @@ function addon.targeting:UpdateEnemyTargets(targets)
 
     if InCombatLockdown() then return end
 
-    self:UpdateMacro(enemyTargets)
+    self:UpdateMacro()
     self:UpdateTargetFrame()
 end
 
 function addon.targeting:ADDON_ACTION_FORBIDDEN(_, _, c)
     -- TODO flash buttons that something is near?
     -- print("ADDON_ACTION_FORBIDDEN = " .. c)
+    -- TODO pop up window if target detected
+    -- TODO hide if targets out of range
 end
 
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
@@ -374,6 +426,12 @@ local fOnLeave = function(self)
 end
 
 function addon.targeting:UpdateMarker(kind, unitId, index)
+    if UnitIsDead(unitId) then return end
+
+    if IsInGroup() and
+        not (UnitIsGroupAssistant('player') or UnitIsGroupLeader('player')) then
+        return
+    end
     -- Only mark 4/8 targets, ignore later marks
     if index > 4 then return end
 
@@ -396,56 +454,8 @@ function addon.targeting:UpdateTargetFrame(kind)
     local targetFrame = self.activeTargetFrame
 
     if InCombatLockdown() then return end
-    local friendlyTargetButtons = targetFrame.friendlyTargetButtons
 
     targetFrame.title:SetSize(targetFrame.title.text:GetStringWidth() + 10, 17)
-
-    local i = 0
-
-    -- TODO flip enemy to top row?
-    for _, targetName in ipairs(friendlyTargets) do
-        i = i + 1
-        local btn = friendlyTargetButtons[i]
-
-        if not btn then
-            btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. i,
-                              targetFrame, "SecureActionButtonTemplate")
-            btn:SetAttribute("type", "macro")
-            btn:SetSize(25, 25)
-            tinsert(friendlyTargetButtons, btn)
-            local n = #friendlyTargetButtons
-
-            btn:ClearAllPoints()
-            if n == 1 then
-                btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
-            else
-                btn:SetPoint("CENTER", friendlyTargetButtons[n - 1], "CENTER",
-                             27, 0)
-            end
-            btn.icon = btn:CreateTexture(nil, "BACKGROUND")
-
-            local icon = btn.icon
-            icon:SetAllPoints(true)
-            icon:SetTexture(friendlyTargetIcons[i] or friendlyTargetPlaceholder)
-
-            btn:SetScript("OnEnter", fOnEnter)
-            btn:SetScript("OnLeave", fOnLeave)
-
-            local ht = btn:CreateTexture(nil, "HIGHLIGHT")
-            ht:SetAllPoints(true)
-            ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
-            ht:SetBlendMode("ADD")
-        end
-
-        btn:SetAttribute('macrotext',
-                         '/cleartarget\n/targetexact ' .. targetName)
-        btn.targetData = {name = targetName, kind = "friendly"}
-        -- If target or mouseover, set portrait
-        if kind and UnitName(kind) == targetName then
-            SetPortraitTexture(btn.icon, kind)
-        end
-        btn:Show()
-    end
 
     local enemyTargetButtons = targetFrame.enemyTargetButtons
     local j = 0
@@ -463,7 +473,7 @@ function addon.targeting:UpdateTargetFrame(kind)
 
             btn:ClearAllPoints()
             if n == 1 then
-                btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
+                btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
             else
                 btn:SetPoint("CENTER", enemyTargetButtons[n - 1], "CENTER", 27,
                              0)
@@ -486,6 +496,54 @@ function addon.targeting:UpdateTargetFrame(kind)
         btn:SetAttribute('macrotext',
                          '/cleartarget\n/targetexact ' .. targetName)
         btn.targetData = {name = targetName, kind = "enemy"}
+        -- If target or mouseover, set portrait
+        if kind and UnitName(kind) == targetName then
+            -- TODO fix stale icons on new step
+            SetPortraitTexture(btn.icon, kind)
+        end
+        btn:Show()
+    end
+
+    local friendlyTargetButtons = targetFrame.friendlyTargetButtons
+    local i = 0
+
+    for _, targetName in ipairs(friendlyTargets) do
+        i = i + 1
+        local btn = friendlyTargetButtons[i]
+
+        if not btn then
+            btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. i,
+                              targetFrame, "SecureActionButtonTemplate")
+            btn:SetAttribute("type", "macro")
+            btn:SetSize(25, 25)
+            tinsert(friendlyTargetButtons, btn)
+            local n = #friendlyTargetButtons
+
+            btn:ClearAllPoints()
+            if n == 1 then
+                btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
+            else
+                btn:SetPoint("CENTER", friendlyTargetButtons[n - 1], "CENTER",
+                             27, 0)
+            end
+            btn.icon = btn:CreateTexture(nil, "BACKGROUND")
+
+            local icon = btn.icon
+            icon:SetAllPoints(true)
+            icon:SetTexture(friendlyTargetIcons[i] or friendlyTargetPlaceholder)
+
+            btn:SetScript("OnEnter", fOnEnter)
+            btn:SetScript("OnLeave", fOnLeave)
+
+            local ht = btn:CreateTexture(nil, "HIGHLIGHT")
+            ht:SetAllPoints(true)
+            ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+            ht:SetBlendMode("ADD")
+        end
+
+        btn:SetAttribute('macrotext',
+                         '/cleartarget\n/targetexact ' .. targetName)
+        btn.targetData = {name = targetName, kind = "friendly"}
         -- If target or mouseover, set portrait
         if kind and UnitName(kind) == targetName then
             SetPortraitTexture(btn.icon, kind)

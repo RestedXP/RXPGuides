@@ -1101,13 +1101,16 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.1,
                         disabled = not addon.targeting:CanCreateMacro()
                     },
+                    -- TODO add window display setting
+                    -- TODO hide background
                     notifyOnTargetUpdates = {
                         name = L("Notify on new target"), -- TODO locale
                         desc = L("Notify when a new target is loaded"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.2,
-                        disabled = not addon.targeting:CanCreateMacro()
+                        disabled = not addon.targeting:CanCreateMacro() or
+                            not self.db.profile.enableTargetAutomation
                     },
                     proximityHeader = {
                         name = _G.TRACKER_SORT_PROXIMITY,
@@ -1205,7 +1208,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "select",
                         width = optionsWidth,
                         order = 3.1,
-                        values = {[""] = "none", ["TODO"] = "TODO"},
+                        values = {[""] = "none", ["TODO"] = "TODO"}, -- TODO sound presets
                         get = function() return "" end,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation
