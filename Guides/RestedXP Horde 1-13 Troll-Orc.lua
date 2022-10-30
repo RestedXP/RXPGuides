@@ -113,13 +113,17 @@ step << Warlock tbc
     .turnin 1485 >>Turn in Vile Familiars
     .accept 1499 >>Accept Vile Familiars
 step << Warlock tbc
-    .cast 688 >>Choose the dagger and equip it. Remember to summon your Imp
+    #completewith ThazzrilP
+    .cast 688 >>Cast "Summon Imp" to summon your imp
+--X for steps that don't autocomplete based on past progress, add a #completewith X. This applies to .cast, .vendor, etc (basically anything thats not .accept or .turnin)
+step << Warlock tbc
 	.goto Durotar,42.9,69.1
     .turnin 1499 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
 step << !Warlock tbc
     .goto Durotar,42.1,68.3
-    .xp 2+570 >> Grind a bit to make sure you ding 3 in the town.
+    .xp 2+570 >> Grind to 570+/900xp
+--X correct and consistent formatting (Grind to Y+/Zxp)
 step << !Orc !Troll
     #requires motboars
     .goto Durotar,42.1,68.3
@@ -285,6 +289,7 @@ step << Troll Warrior
     .goto Durotar,42.9,69.4
     .turnin 3065 >>Turn in Simple Tablet
 step
+    #label ThazzrilP
     >> Talk to Foreman Thazz'ril by the bonfire up the road
     .goto Durotar,44.6,68.7
     .accept 5441 >>Accept Lazy Peons
@@ -469,23 +474,22 @@ step << Warlock
     .vendor >>Buy the Blood Pact book and use it
     .use 16321
 step << Shaman
-    .goto Durotar,43.0,71.2,30 >>Run up the Hidden Path
-step << Shaman
-.goto Durotar,41.5,73.3,10 >>Run up the Hidden Path
-step << Shaman
-.goto Durotar,40.8,74.1,8 >>Take a left here
-step << Shaman
+    #completewith next
+    .goto Durotar,43.0,71.2,30,0
+    .goto Durotar,41.5,73.3,10,0
+    .goto Durotar,40.8,74.1,8,0
     .goto Durotar,41.8,74.8,10 >>Run up the Hidden Path
+--X Invisible automatic waypoints. Also: for steps that don't autocomplete based on past progress, add a #completewith X. This applies to .cast, .vendor, etc (basically anything thats not .accept or .turnin.)
 step << Shaman
-    .use 6635
     >>Use the Earth Sapta in your bags
-.goto Durotar,44.0,76.2
+    .goto Durotar,44.0,76.2
     .turnin 1517 >>Turn in Call of Earth
     .accept 1518 >>Accept Call of Earth
+    .use 6635
 step << Shaman
     .goto Durotar,42.4,69.1
     .turnin 1518 >>Turn in Call of Earth
-    .train 332 >>Train Healing Wave rank 2
+    .trainer >> Train your class spells
 step
     .isOnQuest 6394
     >> Talk to the Foreman.
@@ -1470,23 +1474,26 @@ step << !Tauren tbc
 step << !Tauren
 #xprate <1.5
     .goto The Barrens,51.5,30.1
+    >>Talk to Helbrim. Apothecary Zamah is a TIMED QUEST, if you have to afk at any point before you turn it in, log off.
     .turnin 848 >>Turn in Fungal Spores
+    .accept 853 >>Accept Apothecary Zamah
+    .timer 2700,Timer to reach Thunder Bluff
 step << !Tauren
 #xprate <1.5
-    .goto The Barrens,51.5,30.1
-    .timer 2700,Timer to reach Thunder Bluff
-    .accept 853 >>Accept Apothecary Zamah
-    >> Wait for the roleplay to finish, it takes a couple of seconds. Apothecary Zamah is a TIMED QUEST, if you have to afk at any point before you turn it in, log off.
+    #completewith CampTaurajoFP
+ +Apothecary Zamah is a TIMED QUEST, if you have to afk at any point before you turn it in, log off.
 step << !Tauren
 #xprate <1.5
     .goto The Barrens,52.2,31.8
     .turnin 870 >>Turn in The Forgotten Pools
     .accept 877 >>Accept The Stagnant Oasis
 step << !Tauren
+    #label CampTaurajoFP
 #xprate <1.5
     >>Run down the road
 .goto The Barrens,44.4,59.2
-    .fp >>Get the Camp Taurajo Flight Path
+    .fp Camp Taurajo >>Get the Camp Taurajo Flight Path
+--X add the actual flight path name to each .fp command. MAKE SURE to check it on the flight map itself as it may differ from the name of the subzone
 step << !Tauren
 #xprate <1.5
     .line Mulgore,69.0,60.0,58.4,61.7,51.9,59.3
@@ -1615,20 +1622,29 @@ step
     >> Head into the Cleft of Shadow
     .accept 813 >>Accept Finding the Antidote
 step
-    .goto Orgrimmar,52.8,49.0
+    #completewith Fizzle
+    .goto Orgrimmar,53.03,48.78
+    .zone 213 >> Zone into Ragefire Chasm
+	.xp >11,1
+--/dump C_Map.GetBestMapForUnit("player")
+step
+    #completewith Fizzle
+    .deathskip >> Die and respawn at the Spirit Healer
+	.xp >11,1
+--If player is 10 or lower
+step
     #completewith next
-    .maxlevel 11
-    .deathskip >> If level 11 or below go into RFC and deathskip out of ORG.
-step
-.goto Orgrimmar,49.0,94.2 >>Run out of Orgrimmar
-    .zone Durotar
-step
-.goto Durotar,41.7,25.5,30 >>Jump into Thunder Ridge
-step
+    .goto Orgrimmar,49.0,94.2
+    .zone Durotar >>Run out of Orgrimmar
+	.xp <11,1
+--If player is 11 or higher
+step    
+    #label Fizzle
     >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space
-.goto Durotar,41.9,26.0
+    .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 step << !Warrior
+    #completewith next
 .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
     .goto Durotar,39.2,32.3
@@ -1784,12 +1800,17 @@ step
     .turnin 832 >>Turn in Burning Shadows
 step << Shaman
     .goto Orgrimmar,49.4,50.5
-    >> Talk to Neeru Fireblade and completet the quest
-    .complete 5727,1
+    >> Talk to Neeru Fireblade
+    .complete 5727,1 
+    .skipgossip 3216,1
+--If NPC has an active quest accept/turnin (available or unavailable) you must add NPCID,X (X being the TALK ONLY gossip, which is 1 99% of the time)
 step
-    .goto Orgrimmar,52.8,49.0
-    #completewith next
-    .deathskip >> Go into RFC and deathskip out of ORG.
+    #completewith LostBut
+    .goto Orgrimmar,53.03,48.78
+    .zone 213 >> Zone into Ragefire Chasm
+step
+    #completewith LostBut
+    .deathskip >> Die and respawn at the Spirit Healer
 step << tbc
     .goto Durotar,41.6,18.7
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
@@ -1799,6 +1820,7 @@ step << wotlk
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step
+    #label LostBut
     .goto Durotar,43.1,30.3
     .turnin 816 >>Turn in Lost But Not Forgotten
 step
