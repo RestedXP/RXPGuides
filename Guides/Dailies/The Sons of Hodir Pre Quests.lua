@@ -350,7 +350,7 @@ step << Human
     .goto TheStormPeaks,69.6,58.8,70,0
     .goto TheStormPeaks,70.3,62.2
 	>>Kill Brittle Revenants. Loot them for Essences of Ice
-	.use 42424 >> Use the Diamond Tipped Pick on the Dead Iron Giants. Kill the mobs that spawn, then loot them for their Stormforged Eyes
+	.use 42424 >> Use the Diamond Tipped Pick on the Dead Iron Giants. Sometimes mobs may spawn which you need to kill, then loot them for their Stormforged Eyes
 	.collect 42246,6 --Essence of Ice (6)
 	.complete 12985,1 --Stormforged Eye (8)
 	.isQuestAvailable 13047
@@ -415,7 +415,7 @@ step << !Human
 step << !Human
     .goto TheStormPeaks,69.6,58.8,70,0
     .goto TheStormPeaks,70.3,62.2
-	.use 42424 >> Use the Diamond Tipped Pick on the Dead Iron Giants. Kill the mobs that spawn, then loot them for their Stormforged Eyes
+	.use 42424 >> Use the Diamond Tipped Pick on the Dead Iron Giants. Sometimes mobs may spawn which you need to kill, then loot them for their Stormforged Eyes
 	.complete 12985,1 --Stormforged Eye (8)
 step << !Human
 	>>Return to Dun Niffelem. Talk to Njormeld and Hodir's Horn
