@@ -1512,10 +1512,6 @@ step << Warrior
     #xprate <1.5
     .goto The Barrens,44.7,59.4
     .accept 1825 >>Accept Speak with Thun'grim
-step << Shaman
-    .goto The Barrens,43.4,77.4
-    .turnin 1534 >>Turn in Call of Water
-    .accept 220 >>Accept Call of Water
 step
     #sticky
     #label Washte
@@ -1863,8 +1859,9 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Horde 30-45\30-34 Hillsbrad / Arathi / Shimmering Flats
 
 step
+    .goto Stonetalon Mountains,45.2,69.8,-1
+    .goto The Barrens,51.6,30.4,-1
 	.fly Orgrimmar >>Fly to Orgrimmar
--- You are either in Crossroads or Stonetalon. Forgot how to put 2x cordinates that knows which location cordinate it should use. 
 step << Paladin
     #completewith next
     .goto Orgrimmar,32.4,35.8
@@ -2304,6 +2301,10 @@ step
     >> Head up the totem tower
     .goto Thunder Bluff,46.8,50.1
     .fly Camp Taurajo >> Fly to Camp Taurajo
+step << Shaman
+    .goto The Barrens,43.4,77.4
+    .turnin 1534 >>Turn in Call of Water
+    .accept 220 >>Accept Call of Water
 step
 	.isOnQuest 5881
     .goto The Barrens,44.00,92.00
