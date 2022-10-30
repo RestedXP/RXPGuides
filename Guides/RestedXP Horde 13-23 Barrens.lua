@@ -106,10 +106,11 @@ step
     #sticky
     #completewith next
     >>Check this location for Chen's Empty Keg. Loot it and start the quest. Otherwise you'll get it later on.
-.goto The Barrens,55.7,27.3
-.collect 4926,1,819 --Collect Chen's Empty Keg
-.accept 819 >> Accept Chen's Empty Keg
+    .goto The Barrens,55.7,27.3,15,0
+    .collect 4926,1,819,1 --Collect Chen's Empty Keg
+    .accept 819 >> Accept Chen's Empty Keg
     .use 4926
+--Add invisible automatic waypoint so user doesnt have to manually click it if it isnt there
 step
     .goto The Barrens,55.6,26.6
     >>Kill Quillboars in the area
@@ -315,7 +316,7 @@ step
     .goto The Barrens,64.2,47.1,40,0
     .goto The Barrens,63.6,49.1,40,0
     .goto The Barrens,62.6,49.7
-    >>Find & kill Baron Longshore at one of the camps. Loot him for his Head
+    >>Find and kill Baron Longshore at one of the camps. Loot him for his Head
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
 step
@@ -414,13 +415,14 @@ step
     >>Kill Harpies. Loot them for their Talons
     .complete 867,1 --Witchwing Talon (8)
 step
->>Kill Plainstriders & Raptors in the area.
+    >>Kill Plainstriders and Raptors
     .complete 821,2 --Plainstrider Kidney (5)
     .complete 865,1,3 --Intact Raptor Horn (5)
     .complete 869,1 --Raptor Head (12)
+--NEEDS WAYPOINTS. Don't use &, use "and" (can always discuss and we can find and replace one or the other). Remove "in the area" from now on
 step
     >>Click on the Control Console
-.goto The Barrens,52.4,11.6
+    .goto The Barrens,52.4,11.6
     .turnin 894 >>Turn in Samophlange
     .accept 900 >>Accept Samophlange
 step
@@ -469,13 +471,15 @@ step
 .goto The Barrens,55.3,7.8
     .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site (1)
 step
-.goto The Barrens,55.8,6.2,40,0
+    .goto The Barrens,55.8,6.2,40,0
     .goto The Barrens,57.2,6.6,40,0
-.goto The Barrens,60.0,7.6,40,0
-.goto The Barrens,60.8,10.6,40,0
+    .goto The Barrens,60.0,7.6,40,0
+    .goto The Barrens,60.8,10.6,40,0
     .goto The Barrens,60.4,1.2,40,0
-.goto The Barrens,61.2,13.2
->>Finish up the Raptor & Plainstrider quests. They both share respawns with eachother.
+    .goto The Barrens,61.2,13.2
+    >>Kill Plainstriders. Loot them for their Kidneys
+    >>Kill Raptors. Loot them for their Horns and Heads
+    *They both share respawns
     .complete 821,2 --Plainstrider Kidney (5)
     .complete 865,1 --Intact Raptor Horn (5)
     .complete 869,1 --Raptor Head (12)
@@ -934,13 +938,14 @@ step
 step
     >>Kill a LOT of Quillboars. Prioritize Thornweavers, Water Seekers, and Geomancers where you can. Loot them for their tusks. Save the Blood Shards you get
     *Water Seekers only spawn in the south western most camps. Go East or North West for Geomancers / Thornweavers.
-    .goto The Barrens,51.4,57.7,30,0
-    .goto The Barrens,51.4,54.7,30,0
+    .goto The Barrens,51.4,57.7,50,0
+    .goto The Barrens,51.4,54.7,50,0
     .goto The Barrens,52.7,52.9
 .complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
     .complete 878,3 --Kill Bristleback Geomancer (x12)
     .complete 899,1 --Collect Bristleback Quilboar Tusk (x60)
+--30 yards is too low for something like this
 step
     #requires Lizard
     >>Go around the lake and kill turtles. Loot them for their shells
@@ -1276,13 +1281,12 @@ step
     .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
     .isOnQuest 6563
 step
-#xprate <1.5
-    >> Grind until you are 14175 XP into level 21.
-    .xp 21+14175
+    #xprate <1.5
+    .xp 21+14175 >> Grind to 14175+/22400xp
     .isOnQuest 6641
 step
     #requires Sapphires
-#xprate <1.5
+    #xprate <1.5
     #label zoramend
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
@@ -1290,12 +1294,12 @@ step
     .turnin 6641 >> Turn in Vorsha the Lasher
     .isOnQuest 6641
 step
-#xprate <1.5
+    #xprate <1.5
     .goto Ashenvale,11.6,34.3
     .turnin 6563 >> Turn in The Essence of Aku'Mai
     .isOnQuest 6553
 step
-#xprate <1.5
+    #xprate <1.5
     #sticky
     #completewith next
     .destroy 16784 >> Destroy any leftover Sapphires of Aku'Mai
