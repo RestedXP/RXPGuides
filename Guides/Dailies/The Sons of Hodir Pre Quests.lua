@@ -28,6 +28,11 @@ step
 	>>Return to K3. Talk to Gretchen inside the Inn
     .turnin 12843 >>Turn in They Took Our Men!
     .accept 12846 >>Accept Leave No Goblin Behind
+step << !Human
+	#completewith tribute
+	>>Loot Relics of Ulduar dropped from the mobs all over The Storm Peaks. Alternatively you can buy them from the Auction House
+    .collect 42780,10 --Relic of Ulduar (10) 
+    .reputation 1119,friendly,>0,1 -- Step only shows if rep is below friendly
 step
     .goto TheStormPeaks,42.1,69.5,60,0
     .goto TheStormPeaks,42.80,68.90
@@ -400,18 +405,29 @@ step << Human
     .goto TheStormPeaks,63.20,63.27
     .turnin 12981 >>Turn in Hot and Cold
     .goto TheStormPeaks,63.13,62.94
-	.isQuestAvailable 13047
+	.isQuestAvailable 13047 
 step << !Human
-	>>Return to Dun Niffelem. Talk to King Jokkum, Fjorn's Anvil, and Njormeld
+	>>Return to Dun Niffelem. Talk to King Jokkum, Fjorn's Anvil and Njormeld
     .turnin 12975 >>Turn in In Memoriam
     .accept 12976 >>Accept A Monument to the Fallen
     .goto TheStormPeaks,65.45,60.16
     .turnin 12981 >>Turn in Hot and Cold
     .goto TheStormPeaks,63.13,62.94
     .turnin 12976 >>Turn in A Monument to the Fallen
-    .accept 12985 >>Accept Forging a Head
     .goto TheStormPeaks,63.20,63.27
-	.isQuestAvailable 13047
+ step << !Human
+	#label tribute
+	.goto TheStormPeaks,66.16,61.44
+    >>You may need to do a single turn in of Relics of Ulduar to get Friendly with The Sons of Hodir. Skip this if you are already Friendly
+    >>Relics of Ulduar can be found from killing all mobs around Storm Peaks or can be bought from the Auction House
+	>>Talk to Lillehoff
+    .collect 42780,10 --Relic of Ulduar (10) 
+	.turnin 13559 >>Turn in Hodir's Tribute
+    .reputation 1119,friendly,>0,1 -- Step only shows if rep is below friendly
+step << !Human
+    >>Talk to Njormeld
+    .accept 12985 >>Accept Forging a Head
+    .goto TheStormPeaks,63.20,63.27  
 step << !Human
     .goto TheStormPeaks,69.6,58.8,70,0
     .goto TheStormPeaks,70.3,62.2
