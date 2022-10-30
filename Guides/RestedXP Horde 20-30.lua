@@ -1185,7 +1185,7 @@ step
 	    .goto Hillsbrad Foothills,78.46,43.06,200 >> Run to Dornholde Keep
 step
     #completewith syndicateq
-	>>Kill Syndicates in the area
+	>>Kill Syndicate Rogues and Watchmen
 	.goto Hillsbrad Foothills,77.8,44.1,0
     .complete 549,1 --Kill Syndicate Rogue (x10)
 	.complete 549,2 --Kill Syndicate Watchman (x10)
@@ -1226,10 +1226,11 @@ step
 	.goto Hillsbrad Foothills,75.3,41.5
     .complete 498,1 --Rescue Drull (1)
 step
-	>>Kill Syndicates in the area
-	.goto Hillsbrad Foothills,66.0,47.6,0
+	>>Kill Syndicate Rogues and Watchmen
+	.goto Hillsbrad Foothills,66.0,47.6
     .complete 549,1 --Kill Syndicate Rogue (x10)
 	.complete 549,2 --Kill Syndicate Watchman (x10)
+--X NEEDS WAYPOINTS
 step
     #label Drull
         #requires syndicateq
@@ -1408,7 +1409,7 @@ step
     .complete 529,3 --Collect Shipment of Iron (x1)
 step
 	.goto Hillsbrad Foothills,35.2,46.5
-.xp 24 >> Grind to level 24
+    .xp 24 >> Grind to level 24
 step
     #xprate >1.499 
 	.goto Hillsbrad Foothills,62.4,20.3
@@ -2503,8 +2504,8 @@ step
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
 step
     #xprate <1.5
-    .goto Thousand Needles,18.7,22.2,40,0
-    .xp 28+25000 >> Grind to 28+25000 XP
+    .goto Thousand Needles,18.7,22.2
+    .xp 28+25000 >> Grind to 25000+/33900xp
 step
     #label messenger
 >>Search for Steelsnap (Hyena). He patrols counter-clockwise
