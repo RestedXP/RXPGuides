@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor Shaman/Warrior
-#next 23-27 Hillsbrad / Ashenvale
+#next 22-25 Hillsbrad / South Barrens
 step << Tauren Shaman
     .goto Durotar,50.8,43.6
     .accept 840 >>Accept Conscript of the Horde
@@ -1375,10 +1375,6 @@ step << Shaman
     .goto The Barrens,63.1,37.1
     #completewith next
     .fly Camp Taurajo >>Fly to Camp Taurajo
-step << Shaman
-    .goto The Barrens,45.6,59.0
-    #completewith next
-    .home >>Set your Hearthstone to Camp Taurajo
 step << Shaman
     .goto The Barrens,43.4,77.4
     .turnin 1530 >>Turn in Call of Water
