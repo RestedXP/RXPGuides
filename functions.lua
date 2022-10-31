@@ -3629,7 +3629,7 @@ function addon.functions.scenario(self, ...)
                                                                 criteriaIndex)
     local required = element.objMax or totalQuantity
     local scenario = C_ScenarioInfo.GetScenarioInfo()
-    local currentStage = scenario.currentStage
+    local currentStage = scenario and scenario.currentStage
     local currentObj = select(9, C_Scenario.GetCriteriaInfo(criteriaIndex))
     if criteriaID == currentObj then element.stagePos = currentStage end
 

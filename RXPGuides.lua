@@ -368,7 +368,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "GOSSIP_SHOW" then
         local nActive = GossipGetNumActiveQuests()
         local nAvailable = GossipGetNumAvailableQuests()
-        local quests, selectActiveByQuestID, selectAvailableByQuestID
+        local quests, selectAvailableByQuestID, selectActiveByQuestID
         if C_GossipInfo.GetActiveQuests then
             quests = C_GossipInfo.GetActiveQuests()
             selectActiveByQuestID = true
@@ -389,14 +389,14 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             end
         end
 
-        if GossipGetNumOptions() == 0 and nAvailable == 1 and nActive == 0 then
-            GossipSelectAvailableQuest(1)
+        local availableQuests
+        if C_GossipInfo.GetAvailableQuests then
+            availableQuests = C_GossipInfo.GetAvailableQuests()
+            selectAvailableByQuestID = true
+        end
+        if GossipGetNumOptions() == 0 and nAvailable == 1 and nActive == 0 and not selectAvailableByQuestID then
+            GossipSelectAvailableQuest(selectAvailableByQuestID and availableQuests[1] and availableQuests[1].questID or 1)
         else
-            local availableQuests
-            if C_GossipInfo.GetAvailableQuests then
-                availableQuests = C_GossipInfo.GetAvailableQuests()
-                selectAvailableByQuestID = true
-            end
             for i = 1, nAvailable do
                 local quest
                 if type(availableQuests) == "table" then
