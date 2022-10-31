@@ -651,7 +651,6 @@ step
     .goto TheStormPeaks,65.45,60.16
     .turnin 12977 >>Turn in Hodir's Call
     .goto TheStormPeaks,64.17,65.01
-	.isOnQuest 12977
 step -- checking that player has honored with hodir to get this quest. will only be humans and any other that turned in rep items
 	>>Talk to Lorekeeper Randvir in Dun Niffelem
 	.goto TheStormPeaks,64.84,59.05
