@@ -1058,7 +1058,7 @@ function addon.GetGuideName(guide)
     elseif not som and guide.eraname then
         return guide.eraname
     else
-        return guide.displayName
+        return guide.displayname
     end
 end
 
@@ -1089,7 +1089,7 @@ addon.emptyGuide = {
     hidewindow = true,
     name = "",
     group = "",
-    displayName = L("Welcome to RestedXP Guides\nRight click to pick a guide"),
+    displayname = L("Welcome to RestedXP Guides\nRight click to pick a guide"),
     steps = {{hidewindow = true, text = ""}}
 }
 

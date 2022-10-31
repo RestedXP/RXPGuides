@@ -769,7 +769,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
         guide.group = groupOrContent
     end
 
-    guide.displayName = guide.name
+    guide.displayname = guide.displayname or guide.name
     guide.name = guide.name:gsub("^(%d)-(%d%d?)", addon.affix)
     if guide.next then
         guide.next = guide.next:gsub("^(%d)-(%d%d?)", addon.affix)
