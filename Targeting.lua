@@ -9,7 +9,8 @@ local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupAssistant,
                                      UnitIsDead, UnitIsGroupAssistant,
                                      UnitIsGroupLeader, IsInGroup
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
-local GetTime, FlashClientIcon = GetTime, FlashClientIcon
+local GetTime, FlashClientIcon, PlaySoundFile = GetTime, FlashClientIcon,
+                                                PlaySoundFile
 local GameTooltip = _G.GameTooltip
 
 local L = addon.locale.Get
@@ -19,12 +20,17 @@ addon.targeting.macroName = "RXPTargeting"
 
 local announcedTargets = {}
 local macroTargets = {}
-local pollingFrequency = 0.25
-local lastPoll = GetTime()
+
+local proxmityPolling = {
+    frequency = 0.25,
+    last = GetTime(),
+    match = false,
+    lastMatch = 0,
+    matchTimeout = 5
+}
 
 local friendlyTargets = {}
 local friendlyTargetPlaceholder = 132150
--- TODO add local-only markers and custom placeholders
 local friendlyTargetIcons = {
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1.blp",
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_2.blp",
@@ -74,16 +80,17 @@ function addon.targeting:Setup()
     self:RegisterEvent("QUEST_GREETING")
     self:RegisterEvent("QUEST_COMPLETE")
 
-    if addon.settings.db.profile.targetWithoutNameplates then
+    if addon.settings.db.profile.showTargetingOnProximity then
         if addon.settings.db.profile.hideGuideWindow then
-            addon.arrowFrame:HookScript("OnUpdate", self.PollEnemyTargets)
+            addon.arrowFrame:HookScript("OnUpdate", self.CheckTargetProximity)
         elseif addon.settings.db.profile.hideArrow then
-            addon.RXPFrame:HookScript("OnUpdate", self.PollEnemyTargets)
+            addon.RXPFrame:HookScript("OnUpdate", self.CheckTargetProximity)
         elseif addon.settings.db.profile.enableMinimapButton then
             addon.settings.minimapFrame:HookScript("OnUpdate",
-                                                   self.PollEnemyTargets)
+                                                   self.CheckTargetProximity)
         else
-            error("No enabled RXP frames to hook onto")
+            addon.comms.PrettyPrint(L(
+                                        "No enabled RXP frames for targeting functionality"))
         end
 
         self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
@@ -93,8 +100,17 @@ function addon.targeting:Setup()
     end
 end
 
+local function shouldTargetCheck()
+    return
+        addon.settings.db.profile.enableTargetAutomation and not IsInRaid() and
+            (next(enemyTargets) ~= nil or next(friendlyTargets) ~= nil)
+
+end
+
 function addon.targeting:UpdateMacro(queuedTargets)
-    if not addon.settings.db.profile.enableTargetMacro then return end
+    if not addon.settings.db.profile.enableTargetMacro and shouldTargetCheck() then
+        return
+    end
 
     if InCombatLockdown() then
         macroTargets = queuedTargets
@@ -118,13 +134,9 @@ function addon.targeting:UpdateMacro(queuedTargets)
 
         -- Prevent multiple spams
         if not announcedTargets[t] and
-            addon.settings.db.profile.notifyOnTargetUpdates and
-            not addon.settings.db.profile.enableTargetAutomation then
+            addon.settings.db.profile.notifyOnTargetUpdates then
             -- Only notify if Active Targets frame is disabled
-            C_Timer.After(2, function()
-                addon.comms
-                    .PrettyPrint(L("Targeting macro updated with (%s)"), t) -- TODO locale
-            end)
+            addon.comms.PrettyPrint(L("Targeting macro updated with (%s)"), t) -- TODO locale
         end
 
         announcedTargets[t] = true
@@ -137,7 +149,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
 
     if not addon.settings.db.profile.macroAnnounced and
         addon.settings.db.profile.notifyOnTargetUpdates and next(targets) ~= nil then
-        C_Timer.After(5, function()
+        C_Timer.After(1, function()
             addon.comms.PrettyPrint(L(
                                         "A macro has been automatically built to aid in leveling. Please move %s to your action bars."),
                                     self.macroName)
@@ -154,16 +166,13 @@ function addon.targeting:PLAYER_REGEN_ENABLED()
         C_Timer.After(2, function() self:UpdateMacro(macroTargets) end)
     end
 
-    if IsInRaid() or next(friendlyTargets) == nil then return end
+    if not shouldTargetCheck() then return end
 
     self:UpdateTargetFrame()
 end
 
 function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
-    if not nameplateID or IsInRaid() or
-        (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
-        return
-    end
+    if not nameplateID or not shouldTargetCheck() then return end
 
     local unitName = UnitName(nameplateID)
 
@@ -199,10 +208,7 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
 end
 
 function addon.targeting:UPDATE_MOUSEOVER_UNIT()
-    if IsInRaid() or
-        (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
-        return
-    end
+    if not shouldTargetCheck() then return end
 
     local kind = "mouseover"
     local unitName = UnitName(kind)
@@ -239,10 +245,8 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
 end
 
 function addon.targeting:PLAYER_TARGET_CHANGED()
-    if IsInRaid() or
-        (next(enemyTargets) == nil and next(friendlyTargets) == nil) then
-        return
-    end
+    if not shouldTargetCheck() then return end
+
     local kind = "target"
     local unitName = UnitName(kind)
 
@@ -283,7 +287,7 @@ function addon.targeting:GOSSIP_SHOW()
         for i, name in ipairs(friendlyTargets) do
             if name == targetUnit then
                 tremove(friendlyTargets, i)
-                self:UpdateTargetFrame()
+                self:UpdateTargetFrame("target")
                 self:UpdateMacro()
                 return
             end
@@ -294,7 +298,7 @@ function addon.targeting:GOSSIP_SHOW()
         for i, name in ipairs(enemyTargets) do
             if name == targetUnit then
                 tremove(enemyTargets, i)
-                self:UpdateTargetFrame()
+                self:UpdateTargetFrame("target")
                 self:UpdateMacro()
                 return
             end
@@ -307,21 +311,61 @@ addon.targeting.QUEST_PROGRESS = addon.targeting.GOSSIP_SHOW
 addon.targeting.QUEST_GREETING = addon.targeting.GOSSIP_SHOW
 addon.targeting.QUEST_COMPLETE = addon.targeting.GOSSIP_SHOW
 
-function addon.targeting:PollEnemyTargets()
-    -- TODO add friendly too
-    if IsInRaid() or next(enemyTargets) == nil or
-        not addon.settings.db.profile.targetWithoutNameplates or
-        addon.settings.db.profile.enableEnemyTargeting then return end
+function addon.targeting.CheckTargetProximity()
+    if not shouldTargetCheck() or
+        not addon.settings.db.profile.showTargetingOnProximity then return end
 
-    if GetTime() - lastPoll > pollingFrequency then
+    if GetTime() - proxmityPolling.last > proxmityPolling.frequency then
         for _, name in pairs(enemyTargets) do TargetUnit(name, true) end
+
+        for _, name in pairs(friendlyTargets) do TargetUnit(name, true) end
+
+        proxmityPolling.last = GetTime()
+
+        -- Unset match if >5s without a ADDON_ACTION_FORBIDDEN
+        if proxmityPolling.match and GetTime() - proxmityPolling.lastMatch >
+            proxmityPolling.matchTimeout then
+
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("Match expired, hiding")
+            end
+
+            proxmityPolling.match = false
+            addon.targeting.activeTargetFrame:Hide()
+        end
+    end
+end
+
+function addon.targeting:ADDON_ACTION_FORBIDDEN(_, _, func)
+    if func ~= "TargetUnit()" then
+        error("Unexpected forbidden function: " .. func)
+        return
     end
 
-    lastPoll = GetTime()
+    proxmityPolling.lastMatch = GetTime()
+
+    -- Only notify once per match
+    if proxmityPolling.match then return end
+
+    if addon.settings.db.profile.debug then
+        addon.comms.PrettyPrint("Target nearby")
+    end
+
+    if addon.settings.db.profile.soundOnFind ~= "none" then
+        PlaySoundFile(addon.settings.db.profile.soundOnFind, 'Master')
+    end
+
+    proxmityPolling.match = true
+
+    self:UpdateTargetFrame()
 end
 
 function addon.targeting:UpdateFriendlyTargets(targets)
-    friendlyTargets = targets or {}
+    proxmityPolling.match = false
+    proxmityPolling.lastMatch = 0
+    if #friendlyTargets == 0 and #targets == 0 then return end
+
+    friendlyTargets = targets
 
     if InCombatLockdown() then return end
 
@@ -330,19 +374,16 @@ function addon.targeting:UpdateFriendlyTargets(targets)
 end
 
 function addon.targeting:UpdateEnemyTargets(targets)
-    enemyTargets = targets or {}
+    proxmityPolling.match = false
+    proxmityPolling.lastMatch = 0
+    if #enemyTargets == 0 and #targets == 0 then return end
+
+    enemyTargets = targets
 
     if InCombatLockdown() then return end
 
     self:UpdateMacro()
     self:UpdateTargetFrame()
-end
-
-function addon.targeting:ADDON_ACTION_FORBIDDEN(_, _, c)
-    -- TODO flash buttons that something is near?
-    -- print("ADDON_ACTION_FORBIDDEN = " .. c)
-    -- TODO pop up window if target detected
-    -- TODO hide if targets out of range
 end
 
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
@@ -355,19 +396,22 @@ function addon.targeting:CreateTargetFrame()
                                          BackdropTemplateMixin and
                                              "BackdropTemplate" or nil)
     local f = self.activeTargetFrame
+
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
     f:SetMovable(true)
 
     addon.enabledFrames["activeTargetFrame"] = f
     f.IsFeatureEnabled = function()
-        return not addon.settings.db.profile.disableItemWindow and
-                   (next(friendlyTargets) ~= nil or next(enemyTargets) ~= nil)
+        if addon.settings.db.profile.showTargetingOnProximity then
+            return proxmityPolling.match and shouldTargetCheck()
+        end
+
+        return shouldTargetCheck()
     end
 
-    f:ClearBackdrop()
-    f:SetBackdrop(addon.RXPFrame.backdropEdge)
-    f:SetBackdropColor(unpack(addon.colors.background))
+    self:RenderTargetFrameBackground()
+
     f.onMouseDown = function()
         if addon.settings.db.profile.lockFrames and not IsAltKeyDown() then
             return
@@ -389,17 +433,33 @@ function addon.targeting:CreateTargetFrame()
     f.title:SetBackdropColor(unpack(addon.colors.background))
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
     f.title.text:ClearAllPoints()
-    f.title.text:SetPoint("CENTER", f.title, 2, 1)
+    f.title.text:SetPoint("CENTER", f.title, 0, 2)
     f.title.text:SetJustifyH("CENTER")
     f.title.text:SetJustifyV("CENTER")
     f.title.text:SetTextColor(1, 1, 1)
     f.title.text:SetFont(addon.font, 9, "")
     f.title.text:SetText("Active Targets")
+    f.title:SetSize(f.title.text:GetStringWidth() + 14, 19)
+
     f.title:EnableMouse(true)
     f.title:SetScript("OnMouseDown", f.onMouseDown)
     f.title:SetScript("OnMouseUp", f.onMouseUp)
 
     f:SetHeight(40)
+end
+
+function addon.targeting:RenderTargetFrameBackground()
+    if not self.activeTargetFrame then return end
+
+    local f = self.activeTargetFrame
+
+    if addon.settings.db.profile.hideActiveTargetsBackground then
+        f:ClearBackdrop()
+    else
+        f:ClearBackdrop()
+        f:SetBackdrop(addon.RXPFrame.backdropEdge)
+        f:SetBackdropColor(unpack(addon.colors.background))
+    end
 end
 
 local fOnEnter = function(self)
@@ -408,7 +468,6 @@ local fOnEnter = function(self)
     end
 
     GameTooltip:ClearLines()
-    -- TODO set tooltip to unit
     GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, 0)
     if self.targetData.kind == "friendly" then
         GameTooltip:AddLine(self.targetData.name, 0, 1, 0)
@@ -453,9 +512,7 @@ end
 function addon.targeting:UpdateTargetFrame(kind)
     local targetFrame = self.activeTargetFrame
 
-    if InCombatLockdown() then return end
-
-    targetFrame.title:SetSize(targetFrame.title.text:GetStringWidth() + 10, 17)
+    if InCombatLockdown() or not shouldTargetCheck() then return end
 
     local enemyTargetButtons = targetFrame.enemyTargetButtons
     local j = 0
@@ -495,10 +552,15 @@ function addon.targeting:UpdateTargetFrame(kind)
 
         btn:SetAttribute('macrotext',
                          '/cleartarget\n/targetexact ' .. targetName)
+
+        if btn.targetData and btn.targetData.name ~= targetName then
+            btn.icon:SetTexture(enemyTargetIcons[j] or enemyTargetPlaceholder)
+        end
+
         btn.targetData = {name = targetName, kind = "enemy"}
         -- If target or mouseover, set portrait
         if kind and UnitName(kind) == targetName then
-            -- TODO fix stale icons on new step
+            -- TODO cache icons, relies on button order, resets otherwise
             SetPortraitTexture(btn.icon, kind)
         end
         btn:Show()
@@ -543,6 +605,12 @@ function addon.targeting:UpdateTargetFrame(kind)
 
         btn:SetAttribute('macrotext',
                          '/cleartarget\n/targetexact ' .. targetName)
+
+        if btn.targetData and btn.targetData.name ~= targetName then
+            btn.icon:SetTexture(friendlyTargetIcons[i] or
+                                    friendlyTargetPlaceholder)
+        end
+
         btn.targetData = {name = targetName, kind = "friendly"}
         -- If target or mouseover, set portrait
         if kind and UnitName(kind) == targetName then
@@ -565,10 +633,14 @@ function addon.targeting:UpdateTargetFrame(kind)
             enemyTargetIcons[n] or enemyTargetPlaceholder)
     end
 
-    if (i == 0 and j == 0) or
-        not addon.settings.db.profile.enableTargetAutomation or
-        not addon.settings.db.profile.showEnabled then
+    if (i == 0 and j == 0) or not addon.settings.db.profile.showEnabled then
         targetFrame:Hide()
+    elseif addon.settings.db.profile.showTargetingOnProximity then
+        if proxmityPolling.match then
+            targetFrame:Show()
+        else
+            targetFrame:Hide()
+        end
     else
         targetFrame:Show()
     end

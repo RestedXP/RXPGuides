@@ -106,7 +106,8 @@ function addon.settings:InitializeSettings()
             enableTargetMarking = true,
             enableEnemyTargeting = true,
             enableEnemyMarking = true,
-            targetWithoutNameplates = true
+            showTargetingOnProximity = true,
+            soundOnFind = 567416
         }
     }
 
@@ -1101,8 +1102,6 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.1,
                         disabled = not addon.targeting:CanCreateMacro()
                     },
-                    -- TODO add window display setting
-                    -- TODO hide background
                     notifyOnTargetUpdates = {
                         name = L("Notify on new target"), -- TODO locale
                         desc = L("Notify when a new target is loaded"),
@@ -1119,7 +1118,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2
                     },
                     enableTargetAutomation = {
-                        name = L("Nearby scanning"), -- TODO locale
+                        name = L("Target Automation"), -- TODO locale
                         desc = L("Automatically scan nearby targets"),
                         type = "toggle",
                         width = optionsWidth,
@@ -1169,10 +1168,10 @@ function addon.settings:CreateAceOptionsPanel()
                                        not self.db.profile.enableEnemyMarking
                         end
                     },
-                    targetWithoutNameplates = {
-                        name = L("Scan Without Nameplates"), -- TODO locale
+                    showTargetingOnProximity = {
+                        name = L("Only show when in range"), -- TODO locale
                         desc = L(
-                            "Target enemies outside nameplate range or if nameplates are disabled\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
+                            "Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.32,
@@ -1180,6 +1179,20 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             _G.ReloadUI()
+                        end,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    hideActiveTargetsBackground = {
+                        name = L("Hide Targets Background"),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2.33,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.targeting:RenderTargetFrameBackground()
                         end,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation
@@ -1199,7 +1212,9 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.1,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile
+                                           .showTargetingOnProximity
                         end
                     },
                     soundOnFind = {
@@ -1207,11 +1222,28 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Sends sound on enemy target found"),
                         type = "select",
                         width = optionsWidth,
-                        order = 3.1,
-                        values = {[""] = "none", ["TODO"] = "TODO"}, -- TODO sound presets
-                        get = function() return "" end,
+                        order = 3.2,
+                        values = {
+                            ["none"] = "none",
+                            [567416] = "Map ping",
+                            [567275] = "War Drums",
+                            [567397] = "Raid Warning"
+                        },
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile
+                                           .showTargetingOnProximity
+                        end
+                    },
+                    testSoundOnFind = {
+                        order = 3.3,
+                        type = 'execute',
+                        name = _G.EVENTTRACE_BUTTON_PLAY,
+                        disabled = function()
+                            return self.db.profile.soundOnFind == "none"
+                        end,
+                        func = function()
+                            PlaySoundFile(self.db.profile.soundOnFind, "master")
                         end
                     }
                 }
