@@ -179,7 +179,7 @@ end
 
 function addon.targeting:PLAYER_REGEN_ENABLED()
     if macroTargets then
-        C_Timer.After(2, function() self:UpdateMacro(macroTargets) end)
+        C_Timer.After(1, function() self:UpdateMacro(macroTargets) end)
     end
 
     if not shouldTargetCheck() then return end
@@ -380,8 +380,6 @@ function addon.targeting:UpdateFriendlyTargets(targets)
 
     friendlyTargets = targets
 
-    if InCombatLockdown() then return end
-
     self:UpdateMacro()
     self:UpdateTargetFrame()
 end
@@ -392,8 +390,6 @@ function addon.targeting:UpdateEnemyTargets(targets)
     if #enemyTargets == 0 and #targets == 0 then return end
 
     enemyTargets = targets
-
-    if InCombatLockdown() then return end
 
     self:UpdateMacro()
     self:UpdateTargetFrame()
