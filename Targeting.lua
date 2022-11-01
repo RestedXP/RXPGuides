@@ -9,8 +9,7 @@ local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupAssistant,
                                      UnitIsDead, UnitIsGroupAssistant,
                                      UnitIsGroupLeader, IsInGroup
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
-local GetTime, FlashClientIcon, PlaySoundFile = GetTime, FlashClientIcon,
-                                                PlaySoundFile
+local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
 local GameTooltip = _G.GameTooltip
 
 local L = addon.locale.Get
@@ -365,7 +364,7 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     end
 
     if addon.settings.db.profile.soundOnFind ~= "none" then
-        PlaySoundFile(addon.settings.db.profile.soundOnFind, 'Master')
+        PlaySound(addon.settings.db.profile.soundOnFind, 'Master')
     end
 
     proxmityPolling.match = true

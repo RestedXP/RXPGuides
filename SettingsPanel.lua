@@ -1225,9 +1225,16 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.2,
                         values = {
                             ["none"] = "none",
-                            [567416] = "Map ping",
-                            [567275] = "War Drums",
-                            [567397] = "Raid Warning"
+                            [3175] = "Map Ping",
+                            [11773] = "War Drums",
+                            [8959] = "Raid Warning",
+                            [5274] = "Auction Window Open",
+                            [17318] = "LFG Dungeon Ready",
+                            [9378] = "PVP Flag Taken",
+                            [8960] = _G.QUEUED_STATUS_READY_CHECK_IN_PROGRESS,
+                            [9374] = "PVP Flag Captured",
+                            [9375] = "PVP Warning",
+                            [180461] = "Fel Reaver"
                         },
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation or
@@ -1243,7 +1250,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return self.db.profile.soundOnFind == "none"
                         end,
                         func = function()
-                            PlaySoundFile(self.db.profile.soundOnFind, "master")
+                            PlaySound(self.db.profile.soundOnFind, "master")
                         end
                     }
                 }
