@@ -1475,7 +1475,7 @@ function BottomFrame.SortSteps()
 end
 
 local function IsGuideActive(guide)
-    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) then
+    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) and addon.FreshAccountCheck(guide) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end

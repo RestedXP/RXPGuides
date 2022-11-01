@@ -3748,3 +3748,56 @@ function addon.functions.wpbuff(self)
     end
     return not self.state
 end
+
+
+function addon.functions.dmf(self, ...)
+    if type(self) == "string" then
+        local element = {}
+        local text, reverse = ...
+        element.reverse = reverse
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+    local element = self.element
+    local isDmfInTown = true -- TODO: Substitute that for the DMF check function
+
+    if element.step.active and not addon.settings.db.profile.debug and (not isDmfInTown) == not element.reverse and not addon.isHidden then
+        element.step.completed = true
+        addon.updateSteps = true
+    end
+end
+
+function addon.functions.nodmf(self, ...)
+    if type(self) == "string" then
+        local element = {}
+        local text = ...
+        element.reverse = true
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+    return addon.functions.dmf(self, ...)
+end
+
+events.flyable = "ZONE_CHANGED"
+function addon.functions.flyable(self, ...)
+    if type(self) == "string" then
+        local element = {}
+        local text, continent, reverse = ...
+        element.reverse = reverse
+        element.continent = addon.mapId[continent] or tonumber(continent)
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+
+    local element = self.element
+    local id = element.questId
+    local canPlayerFly = true -- TODO: Substitute that for the fly mount check function
+
+    if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly) == not element.reverse and not addon.isHidden then
+        element.step.completed = true
+        addon.updateSteps = true
+    end
+end
