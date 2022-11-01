@@ -2890,6 +2890,10 @@ step
     .isQuestAvailable 1145
     .goto The Barrens,51.1,29.7
     .accept 1145 >> Accept The Swarm Grows
+step << !Shaman !Warrior
+    .maxlevel 32
+    .goto The Barrens,52.0,29.8
+    .home >>Set your Hearthstone to Crossroads
 step
     .isOnQuest 1148
     .goto The Barrens,51.1,29.6
@@ -3108,10 +3112,6 @@ step
     .goto Orgrimmar,22.4,52.8
     .turnin 1431 >> Turn in Alliance Relations
     .accept 1432 >> Accept Alliance Relations
-step << !Shaman !Warrior
-    .maxlevel 32
-    .goto Orgrimmar,54.1,68.4
-    .home >>Set your Hearthstone to Valley of Strength
 step << Orc !Warlock tbc
 	#sticky
 	#completewith next
