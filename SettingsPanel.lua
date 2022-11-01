@@ -107,7 +107,7 @@ function addon.settings:InitializeSettings()
             enableEnemyTargeting = true,
             enableEnemyMarking = true,
             showTargetingOnProximity = true,
-            soundOnFind = 567416
+            soundOnFind = 3175
         }
     }
 
