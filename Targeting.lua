@@ -181,8 +181,6 @@ function addon.targeting:PLAYER_REGEN_ENABLED()
         C_Timer.After(1, function() self:UpdateMacro(macroTargets) end)
     end
 
-    if not shouldTargetCheck() then return end
-
     self:UpdateTargetFrame()
 end
 
@@ -520,7 +518,7 @@ end
 function addon.targeting:UpdateTargetFrame(kind)
     local targetFrame = self.activeTargetFrame
 
-    if InCombatLockdown() or not shouldTargetCheck() then return end
+    if InCombatLockdown() then return end
 
     local enemyTargetButtons = targetFrame.enemyTargetButtons
     local j = 0
