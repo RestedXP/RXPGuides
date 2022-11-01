@@ -1,4 +1,4 @@
-local _, addon = ...
+local addonName, addon = ...
 
 local fmt, tinsert, tremove, mmax = string.format, table.insert, table.remove,
                                     math.max
@@ -58,6 +58,9 @@ function addon.targeting:Setup()
 
     if not addon.settings.db.profile.enableTargetAutomation then return end
 
+    -- Reset unitscan integration leftovers
+    self:RegisterEvent("ADDON_LOADED")
+
     -- TODO toggle without reloads
 
     -- Only works when nameplates are enabled
@@ -97,6 +100,19 @@ function addon.targeting:Setup()
 
         -- Prevent forbidden UI popup
         UIParent:UnregisterEvent("ADDON_ACTION_FORBIDDEN")
+    end
+end
+
+function addon.targeting:ADDON_LOADED(_, name)
+    if name ~= 'unitscan' then return end
+
+    if next(_G.unitscan_targets) ~= nil and
+        not addon.settings.db.profile.unitscanReset then
+
+        -- Reset leftover unitscan integration
+        addon.comms.PrettyPrint("Resetting unitscan integration")
+        wipe(_G.unitscan_targets)
+        addon.settings.db.profile.unitscanReset = true
     end
 end
 
@@ -336,11 +352,8 @@ function addon.targeting.CheckTargetProximity()
     end
 end
 
-function addon.targeting:ADDON_ACTION_FORBIDDEN(_, _, func)
-    if func ~= "TargetUnit()" then
-        error("Unexpected forbidden function: " .. func)
-        return
-    end
+function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
+    if func ~= "TargetUnit()" or forbiddenAddon ~= addonName then return end
 
     proxmityPolling.lastMatch = GetTime()
 
