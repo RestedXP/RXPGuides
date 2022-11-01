@@ -1708,7 +1708,6 @@ RXPGuides.RegisterGuide([[
 #next 26-30 Ashenvale / Thousand Needles
 #version 1
 #group RestedXP Horde 1-30
-#next RestedXP Horde 30-45\30-34 Hillsbrad / Arathi / Shimmering Flats
 
 
 step
@@ -1857,7 +1856,7 @@ RXPGuides.RegisterGuide([[
 #name 26-30 Ashenvale / Thousand Needles
 #version 1
 #group RestedXP Horde 1-30
-#next RestedXP Horde 30-45\30-34 Hillsbrad / Arathi / Shimmering Flats
+#next RestedXP Horde 30-45\30-33 Hillsbrad / Arathi / Shimmering Flats
 
 step
     .goto Stonetalon Mountains,45.2,69.8,-1
