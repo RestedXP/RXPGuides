@@ -3043,6 +3043,11 @@ step << Shaman
 	#completewith next
     .goto Orgrimmar,38.6,36.0
     .trainer >> Go and train your class spells
+step
+    .xp >33,1
+    .isOnQuest 1145
+    .goto Orgrimmar,37.8,37.4
+    .accept 1531 >> Accept Call of Air
 step << Hunter
     .xp >33,1
     .isOnQuest 1145
@@ -3074,6 +3079,17 @@ step << Warlock
     .goto Orgrimmar,47.5,46.7
     .vendor >> Buy your pet books
 	.collect 16368,1
+step
+    .xp >33,1
+    .isOnQuest 1145
+    .goto Orgrimmar,49.8,47.6
+    .accept 1431 >> Alliance Relations
+step
+    .xp >33,1
+    .isOnQuest 1145
+    .goto Orgrimmar,75.2,34.2
+    .turnin 1145 >> Turn in The Swarm Grows
+    .accept 1146 >> Accept The Swarm Grows
 step << Mage
     .xp >33,1
     .isOnQuest 1145
@@ -3089,9 +3105,9 @@ step << Priest
 step
     .xp >33,1
     .isOnQuest 1145
-    .goto Orgrimmar,75.2,34.2
-    .turnin 1145 >> Turn in The Swarm Grows
-    .accept 1146 >> Accept The Swarm Grows
+    .goto Orgrimmar,22.4,52.8
+    .turnin 1431 >> Turn in Alliance Relations
+    .accept 1432 >> Accept Alliance Relations
 step << !Shaman !Warrior
     .maxlevel 32
     .goto Orgrimmar,54.1,68.4
