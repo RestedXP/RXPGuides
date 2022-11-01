@@ -1140,6 +1140,10 @@ step
     .turnin 1062 >>Turn in Goblin Invaders
     .accept 1063 >>Accept The Elder Crone
 step
+    .goto The Barrens,35.3,27.9
+    .isQuestTurnedIn 1062
+    .accept 1063 >>Accept The Elder Crone
+step
     .isOnQuest 6629
     .goto The Barrens,35.3,27.9
     .turnin 6629 >>Turn in Kill Grundig Darkcloud
