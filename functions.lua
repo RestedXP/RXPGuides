@@ -2742,7 +2742,7 @@ function addon.functions.target(self, text, ...)
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.targets = {...} --TODO differentiate friend v foe
+        element.targets = {...}
         return element
     end
 end
