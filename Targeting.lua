@@ -551,6 +551,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             btn.icon = btn:CreateTexture(nil, "BACKGROUND")
 
             local icon = btn.icon
+            icon.isDefault = true
             icon:SetAllPoints(true)
             icon:SetTexture(enemyTargetIcons[j] or enemyTargetPlaceholder)
 
@@ -568,13 +569,16 @@ function addon.targeting:UpdateTargetFrame(kind)
 
         if btn.targetData and btn.targetData.name ~= targetName then
             btn.icon:SetTexture(enemyTargetIcons[j] or enemyTargetPlaceholder)
+            btn.icon.isDefault = true
         end
 
         btn.targetData = {name = targetName, kind = "enemy"}
         -- If target or mouseover, set portrait
-        if kind and UnitName(kind) == targetName then
-            -- TODO cache icons, relies on button order, resets otherwise
+        -- TODO cache icons, relies on button order, resets otherwise
+        -- SetPortraitTexture and SetPortraitToTexture?
+        if kind and UnitName(kind) == targetName and btn.icon.isDefault then
             SetPortraitTexture(btn.icon, kind)
+            btn.icon.isDefault = false
         end
         btn:Show()
     end
@@ -604,6 +608,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             btn.icon = btn:CreateTexture(nil, "BACKGROUND")
 
             local icon = btn.icon
+            icon.isDefault = true
             icon:SetAllPoints(true)
             icon:SetTexture(friendlyTargetIcons[i] or friendlyTargetPlaceholder)
 
@@ -622,12 +627,14 @@ function addon.targeting:UpdateTargetFrame(kind)
         if btn.targetData and btn.targetData.name ~= targetName then
             btn.icon:SetTexture(friendlyTargetIcons[i] or
                                     friendlyTargetPlaceholder)
+            btn.icon.isDefault = true
         end
 
         btn.targetData = {name = targetName, kind = "friendly"}
         -- If target or mouseover, set portrait
-        if kind and UnitName(kind) == targetName then
+        if kind and UnitName(kind) == targetName and btn.icon.isDefault then
             SetPortraitTexture(btn.icon, kind)
+            btn.icon.isDefault = false
         end
         btn:Show()
     end
@@ -638,12 +645,14 @@ function addon.targeting:UpdateTargetFrame(kind)
         friendlyTargetButtons[n]:Hide()
         friendlyTargetButtons[n].icon:SetTexture(
             friendlyTargetIcons[n] or friendlyTargetPlaceholder)
+        friendlyTargetButtons[n].icon.isDefault = true
     end
 
     for n = j + 1, #enemyTargetButtons do
         enemyTargetButtons[n]:Hide()
         enemyTargetButtons[n].icon:SetTexture(
             enemyTargetIcons[n] or enemyTargetPlaceholder)
+        enemyTargetButtons[n].icon.isDefault = true
     end
 
     if (i == 0 and j == 0) or not addon.settings.db.profile.showEnabled then
