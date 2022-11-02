@@ -826,7 +826,7 @@ function addon.IsStepShown(step)
             (addon.settings.db.profile.northrendLM or not step.questguide) and
              addon.AldorScryerCheck(step) and
              addon.PhaseCheck(step) and addon.HardcoreCheck(step) and
-             addon.SeasonCheck(step) and addon.XpRateCheck(step)
+             addon.SeasonCheck(step) and addon.XpRateCheck(step) and addon.FreshAccountCheck(step)
 end
 
 function addon.SeasonCheck(step)
@@ -865,4 +865,23 @@ function addon.XpRateCheck(step)
     end
     return true
 end
+
+function addon.IsFreshAccount()
+    --TODO: Check if it's a fresh or a veteran account
+    return false
+end
+
+function addon.FreshAccountCheck(step)
+    local fresh = addon.IsFreshAccount()
+
+    if step.fresh and not fresh then
+        return false
+    elseif step.veteran and fresh then
+        return false
+    end
+
+    return true
+end
+
+
 RXP = addon --debug purposes
