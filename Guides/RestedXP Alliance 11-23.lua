@@ -1297,7 +1297,7 @@ step << NightElf wotlk
     .goto Darnassus,29.55,41.11,20
     .goto Teldrassil,58.4,98.02
     .fly Auberdine >> Fly to Auberdine
-    .zoneskip Darkshore
+    .zoneskip Darnassus,1
 step
 #xprate <1.5
     .maxlevel 21
