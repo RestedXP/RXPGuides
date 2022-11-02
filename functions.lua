@@ -3773,6 +3773,7 @@ function addon.functions.dmf(self, ...)
     -- If called during the loading process, (even at PLAYER_ENTERING_WORLD) the query will not return
     if not addon.calendarLoaded then
         OpenCalendar()
+        return
     end
 
     for i = 1, GetNumDayEvents(0, monthDay) do
