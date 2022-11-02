@@ -598,7 +598,7 @@ step
     .goto Duskwood,79.8,47.9
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    .bronzetube -1
+    .itemCount 4371,1 >> Bronze Tube
 step << Rogue
     .goto Duskwood,77.5,44.4
     .fp Duskwood >> Get the Duskwood flight point
