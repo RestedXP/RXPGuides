@@ -21,12 +21,16 @@ step << Human !Warlock !Paladin wotlk
 	.train 33388 >> Head to Eastvale in Elwynn Forest and train/purchase your mount
 	.money <5.0
     .skill riding,1,1
+step << Human !Warlock !Paladin wotlk
+    .goto Redridge Mountains,30.6,59.4
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
+    .fly Stormwind >> Fly to Stormwind City
 step << Paladin wotlk
 	.goto StormwindClassic,38.6,32.8
 	.trainer >> Train your class spells
 step << Priest wotlk
 	.goto StormwindClassic,38.5,26.8
-	.trainer >> Train your class spells
+	.trainer >> Train your class spells. Skip this if you've just trained in the Temple of the Moon.
 step << Paladin wotlk
     .goto StormwindClassic,40.1,30.0
     >>Speak to Duthorian Rall and right click on the Tome of Valor provided
@@ -308,10 +312,6 @@ step
     .turnin 276 >> Turn in Tramping Paws
     .isQuestComplete 276
 step
-    .isOnQuest 276
-    #completewith wettylandy
-    .abandon 276 >> Abandon Tramping Paws
-step
     #label endofcrocc
     .goto Wetlands,56.4,40.3
     .accept 277 >> Accept Fire Taboo
@@ -349,6 +349,11 @@ step << wotlk
     .goto Wetlands,9.5,59.7
     .hs >> Hearth to Stormwind << !Mage
     .hs >> Hearth to Menethil << Mage
+    .cooldown item,6948,>0
+step << wotlk
+    .goto Wetlands,9.5,59.7
+    >>Return to Menethil Harbor
+    .cooldown item,6948,<0
 step
     .zoneskip Wetlands,1
     .goto Wetlands,8.4,58.5
@@ -760,7 +765,6 @@ step
     .goto Duskwood,73.6,46.8
     .turnin 56 >> Turn in The Night Watch
     .accept 57 >> Accept The Night Watch
-
 step
     .goto Duskwood,72.6,47.6
     .turnin 225 >> Turn in The Weathered Grave
@@ -777,6 +781,11 @@ step
     .goto Duskwood,75.7,45.3
     .turnin 148 >> Turn in Supplies from Darkshire
     .accept 149 >> Accept Ghost Hair Thread
+step
+    .goto Duskwood,75.3,47.9
+    .turnin 173 >> Turn in Worgen in the Woods
+    .accept 221 >> Accept Worgen in the Woods
+    .isQuestComplete 173
 step
     #label HistoryB
 	.goto Duskwood,79.8,47.8
@@ -897,10 +906,11 @@ step << !Rogue !Druid
     .goto Duskwood,60.8,29.7
 	>>Kill Shadow Weavers above Darkshire
     .complete 173,1 --Kill Nightbane Shadow Weaver (x6)
-step << !Priest !Warlock
+step
     .goto Duskwood,75.3,47.9
     .turnin 173 >> Turn in Worgen in the Woods
     .accept 221 >> Accept Worgen in the Woods
+    .isQuestComplete 173
 step
     #label spiderend12
     .goto Duskwood,77.5,44.3
