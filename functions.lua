@@ -106,6 +106,10 @@ local _G = _G
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
 local GetQuestLogTitle = _G.GetQuestLogTitle
+local GetNumDayEvents = _G.C_Calendar.GetNumDayEvents
+local GetDayEvent = _G.C_Calendar.GetDayEvent
+local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
+local OpenCalendar = _G.C_Calendar.OpenCalendar
 
 addon.recentTurnIn = {}
 
@@ -3749,18 +3753,36 @@ function addon.functions.wpbuff(self)
     return not self.state
 end
 
-
 function addon.functions.dmf(self, ...)
     if type(self) == "string" then
         local element = {}
-        local text, reverse = ...
-        element.reverse = reverse
+        local text = ...
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         return element
     end
+
     local element = self.element
-    local isDmfInTown = true -- TODO: Substitute that for the DMF check function
+    local isDmfInTown = false
+
+    local event
+    local monthDay = GetCurrentCalendarTime().monthDay
+
+    -- Async relies on CALENDAR_UPDATE_EVENT_LIST
+    -- Currently results in one false negative if on a DMF step at login
+    -- If called during the loading process, (even at PLAYER_ENTERING_WORLD) the query will not return
+    if not addon.calendarLoaded then
+        OpenCalendar()
+    end
+
+    for i = 1, GetNumDayEvents(0, monthDay) do
+        event = GetDayEvent(0, monthDay, i)
+
+        if event and event.title == _G.CALENDAR_FILTER_DARKMOON then
+            isDmfInTown = true
+            break
+        end
+    end
 
     if element.step.active and not addon.settings.db.profile.debug and (not isDmfInTown) == not element.reverse and not addon.isHidden then
         element.step.completed = true
