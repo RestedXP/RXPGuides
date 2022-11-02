@@ -417,7 +417,22 @@ step << !Shaman
     .xp 5+1725 >> Grind to 1725+/2800xp
 step << Shaman
     .xp 5+1200 >> Grind to 1185+/2800xp
-step << !Paladin
+step
+	#completewith next
+.goto Durotar,53.5,44.9,50 >> Logout skip to Razor Hill, this will save you a few minutes.
+	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> Click here for a video guide
+step
+    >>Inside the top floor of the bunker
+    .goto Durotar,51.9,43.5
+    .accept 784 >>Accept Vanquish the Betrayers
+step
+    #completewith next
+    .goto Durotar,50.2,43.1,15 >>Go up this path here
+step
+    >>Go up the tower and talk to Furl Scornbrow
+.goto Durotar,49.9,40.3
+    .accept 791 >>Accept Carry Your Weight
+step
     #completewith next
     .hs >>Hearth to Valley of Trials
     .goto Durotar,43.3,69.0,100,0
@@ -622,114 +637,16 @@ step << Hunter
     >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
-    #completewith next
-    .goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill. Try to focus on Scorpions as they drop Dry Scorpid Eyes that vendor for 95c each.
-step
-    #label bonfireskip
-    .isOnQuest 823
-    .goto Durotar,52.2,43.2
-    .turnin 823 >> Turn in Report to Orgnil
-step
     >>Inside the top floor of the bunker
     .goto Durotar,51.9,43.5
     .accept 784 >>Accept Vanquish the Betrayers
-step << Shaman/Warrior
-    .goto Durotar,52.2,43.2
-    .turnin 823 >>Turn in Report to Orgnil
-    .accept 806 >>Accept Dark Storms
-step << !Shaman !Warrior
-    #xprate <1.5
-    .goto Durotar,52.2,43.2
-    .turnin 823 >>Turn in Report to Orgnil
 step
-    .goto Durotar,51.1,42.6
-    .vendor >>Vendor trash
-step
-    >> Talk to Cook Torka
-    .goto Durotar,51.1,42.4
-    .accept 815 >>Accept Break a Few Eggs
-step
+    #completewith next
     .goto Durotar,50.2,43.1,15 >>Go up this path here
 step
     >>Go up the tower and talk to Furl Scornbrow
 .goto Durotar,49.9,40.3
     .accept 791 >>Accept Carry Your Weight
-step << Shaman
-    .goto Durotar,52.0,40.5
-    .money <0.0480
-    >> Buy a Walking Stick and equip it
-    .collect 2495,1 --Collect Walking Stick
-step << Rogue
-    .goto Durotar,52.0,40.5
-    .money <0.0382
-    >> Buy a Stiletto and equip it
-    .collect 2494,1 --Collect Stiletto
-step << Orc Warrior
-    .goto Durotar,52.0,40.5
-    .money <0.0460
-    >> Buy a Large Axe and equip it
-    .collect 2491,1 --Collect Large Axe
-step << Paladin
-    .goto Durotar,52.0,40.5
-    .money <0.0509
-    >> Buy a Gladius and equip it
-    .collect 2488,1 --Collect Gladius
-step << Hunter
-    .goto Durotar,53.0,41.0
-    .money <0.0271
-    >> Buy a Hornwood Recurve Bow and equip it, stock up on arrows
-    .collect 2506,1 --Collect Hornwood Recurve Bow
-step << Warrior/Rogue/Paladin
-    .goto Durotar,52.0,40.7
-    .money <0.0020
-    .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You should stop making these around level 20. You can skip Blacksmithing and Mining if you wish
-step << Warrior/Rogue/Paladin
-    .goto Durotar,51.8,40.9
-    .money <0.0010
-    .train 2580 >> Train Mining. Cast “Find Minerals” in your spellbook
-step << Priest
-    .goto Durotar,54.3,42.9
-    .turnin 5649 >> In Favor of Spirituality
-    .accept 5648 >> Garments of Spirituality
-    .train 2052 >> Train Lesser Heal r2
-step << Priest
-    .goto Durotar,53.1,46.5
-    .cast 2052 >>Cast Lesser Heal (Rank 2) on Grunt Kor'ja
-    .cast 1243 >>Cast Power Word: Fortitude (Rank 1) on Grunt Kor'ja
-    .complete 5648,1 --Heal and cast Fortify on Grunt Kor'ja
-step << Priest
-    .goto Durotar,54.3,42.9
-    .turnin 5648 >> Garments of Spirituality
-step << Priest/Mage/Warlock/Shaman/Druid
-    .goto Durotar,51.5,41.6
-    >> Talk to the innkeeper
-    .turnin 2161 >>Turn in A Peon's Burden
-    .home >> Set your Hearthstone to Razor Hill
-    .vendor >> Buy as much Ice Cold Milk as you can
-step << Warrior/Rogue/Hunter
-    .goto Durotar,51.5,41.6
-    >> Talk to the innkeeper
-    .turnin 2161 >>Turn in A Peon's Burden
-    .home >> Set your Hearthstone to Razor Hill
-    .vendor >> Buy as much Haunch of Meat as you can
-step << Paladin
-    .goto Durotar,51.5,41.6
-    >> Talk to the innkeeper
-    .turnin 2161 >>Turn in A Peon's Burden
-    .home >> Set your Hearthstone to Razor Hill
-step << Warrior/Rogue/Paladin
-    .goto Durotar,53.0,42.0
-    .money <0.0077
-.collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
-step << Paladin
-    .goto Orgrimmar,49.1,94.7,20 >> Run into Orgrimmar
-step << Paladin
-    .goto Orgrimmar,32.3,35.7
-    .trainer >> Go and train your class spells
-step << Paladin
-    #completewith next
-    .goto Durotar,59.2,58.3,15
-    .hs >>Hearth to Razor Hill
 step
     #sticky
     #label KulTiras
@@ -739,6 +656,7 @@ step
     .complete 784,2 --Kul Tiras Marine (8)
     .complete 791,1 --Canvas Scraps (8)
 step
+    #label bonfireskip
     .goto Durotar,59.7,58.3
     >>Go to the top floor of the Keep. Kill Lieutenant Benedict and loot his key - be careful as he uses Shield Bash (Interrupt)
 .complete 784,3 --Lieutenant Benedict (1)
@@ -754,21 +672,30 @@ step
     .use 4881
 .accept 830 >>Accept The Admiral's Orders
 step
-    #xprate <1.5
     .goto Durotar,58.4,57.2
 .xp 7+2195 >> Grind to 2195+/4500xp
 step
-    #xprate <1.5
     #requires KulTiras
     #completewith next
 .deathskip >> Die and respawn at the Spirit Healer, or run back to Razor Hill
 step
-    #xprate <1.5
     .goto Durotar,51.9,43.5
     .turnin 784 >>Turn in Vanquish the Betrayers
     .accept 825 >>Accept From The Wreckage....
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 837 >>Accept Encroachment
+step
+    .isOnQuest 823
+    .goto Durotar,52.2,43.2
+    .turnin 823 >> Turn in Report to Orgnil
+step << Shaman/Warrior
+    .goto Durotar,52.2,43.2
+    .turnin 823 >>Turn in Report to Orgnil
+    .accept 806 >>Accept Dark Storms
+step << !Shaman !Warrior
+    #xprate <1.5
+    .goto Durotar,52.2,43.2
+    .turnin 823 >>Turn in Report to Orgnil
 step << Warlock/Shaman/Warrior
     #xprate <1.5
     .goto Durotar,51.9,43.5
@@ -777,6 +704,10 @@ step
     #xprate <1.5
 .goto Durotar,49.9,40.3
     .turnin 791 >>Turn in Carry Your Weight
+step
+    >> Talk to Cook Torka
+    .goto Durotar,51.1,42.4
+    .accept 815 >>Accept Break a Few Eggs
 step << !Shaman !Warrior
     #xprate <1.5
     .abandon 806 >>Abandon Dark Storms
@@ -837,43 +768,70 @@ step << Priest
     #xprate <1.5
     .goto Durotar,54.3,42.9
     .train 139 >>Train Renew
+    .train 2052 >> Train Lesser Heal r2
+    .turnin 5649 >> In Favor of Spirituality
+    .accept 5648 >> Garments of Spirituality
+step << Priest
+    .goto Durotar,53.1,46.5
+    .cast 2052 >>Cast Lesser Heal (Rank 2) on Grunt Kor'ja
+    .cast 1243 >>Cast Power Word: Fortitude (Rank 1) on Grunt Kor'ja
+    .complete 5648,1 --Heal and cast Fortify on Grunt Kor'ja
+step << Priest
+    .goto Durotar,54.3,42.9
+    .turnin 5648 >> Garments of Spirituality
 step << Warrior
-    #xprate <1.5
 .goto Durotar,54.2,42.5
     .train 284 >>Train Heroic Strike r2
     .train 1715 >>Train Hamstring
 step << Hunter
-    #xprate <1.5
     .goto Durotar,51.8,43.5
     .train 5116 >>Train Concussive Shot
 step << Rogue
-    #xprate <1.5
 .goto Durotar,52.0,43.7
     .train 6760 >>Train Eviscerate r2
     .train 5277 >>Train Evasion
 step << Warlock
-    #xprate <1.5
     .goto Durotar,54.4,41.2
     .train 980 >>Train Curse of Agony
     .train 5782 >>Train Fear
 step << Warrior/Rogue
-    #xprate <1.5
     .goto Durotar,54.2,41.9
     .money <0.0095
     .train 3273 >>Train First Aid
 step
-    #xprate <1.5
     .goto Durotar,54.4,42.2
     .money <0.1184
 .vendor >>Buy a 6 slot bag from Jark
-step << Priest/Warlock/Mage
-    #xprate <1.5
+step << Priest/Mage/Warlock/Shaman/Druid
     .goto Durotar,51.5,41.6
+    >> Talk to the innkeeper
+    .turnin 2161 >>Turn in A Peon's Burden
+    .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much Ice Cold Milk as you can
-step << Warrior/Rogue
-    #xprate <1.5
+step << Warrior/Rogue/Hunter
     .goto Durotar,51.5,41.6
+    >> Talk to the innkeeper
+    .turnin 2161 >>Turn in A Peon's Burden
+    .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much Haunch of Meat as you can
+step << Paladin
+    .goto Durotar,51.5,41.6
+    >> Talk to the innkeeper
+    .turnin 2161 >>Turn in A Peon's Burden
+    .home >> Set your Hearthstone to Razor Hill
+step << Warrior/Rogue/Paladin
+    .goto Durotar,53.0,42.0
+    .money <0.0077
+.collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
+step << Paladin
+    .goto Orgrimmar,49.1,94.7,20 >> Run into Orgrimmar
+step << Paladin
+    .goto Orgrimmar,32.3,35.7
+    .trainer >> Go and train your class spells
+step << Paladin
+    #completewith next
+    .goto Durotar,59.2,58.3,15
+    .hs >>Hearth to Razor Hill
 step
     #sticky
     #requires KulTiras
@@ -882,14 +840,12 @@ step
     .complete 818,1 --Intact Makrura Eye (4)
     .complete 818,2 --Crawler Mucus (8)
 step
-    #xprate <1.5
     #completewith next
     >>Check the boat closest to the shore for the Toolboxes. Check other boats if you can't find these spawns. They can be a bit hard to see
     .goto Durotar,61.9,55.5,10 >> In the window underwater
     .goto Durotar,62.3,56.3,10 >> Underwater
     .goto Durotar,61.4,56.1,10 >> Near the shore
 step
-    #xprate <1.5
     .goto Durotar,61.9,55.5,10,0
     .goto Durotar,62.3,56.3,10,0
     .goto Durotar,61.4,56.1,10,0
@@ -993,28 +949,24 @@ step
     .goto Durotar,48.9,48.5
     .hs >> Hearth back to Razor Hill
 step
-    #xprate <1.5
     .goto Durotar,48.9,48.5
     >>Kill Quilboars and Scouts in the area
     .complete 837,1 --Razormane Quilboar (4)
     .complete 837,2 --Razormane Scout (4)
 step
-    #xprate <1.5
     .goto Durotar,43.8,39.1
     >>Kill Dustrunners and Battleguards in the area. Dustrunners have Rejuvenation (Heal) and Battleguards are tanky
     .complete 837,3 --Razormane Dustrunner (4)
     .complete 837,4 --Razormane Battleguard (4)
 step
-    #xprate <1.5
     .goto Durotar,43.8,39.1
     .xp 9+5175 >>Grind to 4550+/6500xp
 step
-    #xprate >1.499
     .goto Durotar,51.9,43.5
     >> Head to the bunker
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
-    .accept 837 >>Accept Encroachment << Warrior/Shaman
+    .turnin 837 >>Turn in Encroachment
 step << Hunter
     .xp <10,1
     .goto Durotar,51.8,43.5
@@ -1029,24 +981,13 @@ step
     >> Talk to Cook Torka
     .goto Durotar,51.1,42.4
         .turnin 815 >>Turn in Break a Few Eggs
-step
-    #xprate >1.499
-    >> Head up the hill and up the tower, talk to Furl Scornbrow equip your new bag after.
-.goto Durotar,49.9,40.3
-    .turnin 791 >>Turn in Carry Your Weight
 step << Hunter
     .isOnQuest 6062
     .use 15917 >>Click the Taming Rod in your bag on a Boar. Try to do it at max range (30 yards)
 .goto Durotar,51.5,50.0
 .complete 6062,1 --Tame a Dire Mottled Boar
 step << !Shaman !Warrior
-    #xprate >1.499
     .abandon 806 >>Abandon Dark Storms
-step
-    #xprate <1.5
-    .goto Durotar,51.9,43.5
-    .turnin 825 >>Turn in From The Wreckage....
-    .turnin 837 >>Turn in Encroachment
 step
     .goto Durotar,43.8,39.1
     .xp 10 >>Grind to 10
