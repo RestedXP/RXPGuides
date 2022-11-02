@@ -250,7 +250,7 @@ step
     .turnin 9455 >> Turn in Strange Findings
     .accept 9456 >> Accept Nightstalker Clean Up, Isle 2...
 step << Shaman
-    .goto Azuremyst Isle,47.3,50.6
+    .goto Azuremyst Isle,48.05,50.42
     .trainer >> Train your spells
 step
     .goto Azuremyst Isle,48.7,50.2
@@ -370,7 +370,7 @@ step
     .turnin 9538 >> Turn in Learning the Language
     .accept 9539 >> Accept Totem of Coo
 step << Shaman
-    .goto Azuremyst Isle,47.3,50.6
+    .goto Azuremyst Isle,48.05,50.41
     .trainer >> Train your spells
 step << Hunter
     .goto Azuremyst Isle,49.8,51.9
@@ -559,7 +559,7 @@ step
     .goto Azuremyst Isle,47.2,50.7
     .turnin 9612 >> Turn in A Hearty Thanks!
 step << Shaman
-    .goto Azuremyst Isle,47.3,50.6
+    .goto Azuremyst Isle,48.05,50.41
     .trainer >> Train your level 10 spells
 step << Hunter
     .goto Azuremyst Isle,49.8,51.9
@@ -578,7 +578,7 @@ step << Warrior
     .trainer >> Train your level 10 spells
     .accept 9582 >> Accept Strength of One
 step << Shaman
-    .goto Azuremyst Isle,48.1,50.5
+    .goto Azuremyst Isle,48.05,50.41
     .accept 9464 >> Accept Call of Fire
 step << Hunter
     .goto Azuremyst Isle,49.7,51.9
@@ -946,7 +946,7 @@ step << !Shaman
     .turnin 9622 >> Turn in Warn Your People
     .complete 9663,2 --Exarch Menelaous Warned
 step << Shaman
-    .goto Azuremyst Isle,48.1,50.5
+    .goto Azuremyst Isle,48.05,50.41
     .turnin 9468 >> Turn in Call of Fire
     .accept 9461 >> Accept Call of Fire
 step << Shaman
