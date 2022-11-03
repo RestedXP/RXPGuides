@@ -1183,6 +1183,7 @@ step << Warrior/Paladin/Rogue
     >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior tbc
     .goto StormwindClassic,56.3,17.0
     .vendor >>Buy a Mining Pick. You'll train Mining later
+    .collect 2901,1 --Mining Pick
 step << tbc/Warlock wotlk
     #xprate >1.119 << Warlock wotlk
     #completewith next
