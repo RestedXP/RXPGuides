@@ -1530,10 +1530,10 @@ step
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines
 step << wotlk
-    .goto Durotar,42.1,15.0
+    .goto Durotar,42.1,15.01
     .accept 812 >>Accept Need for a Cure
 step << tbc
-    .goto Durotar,41.5,18.6
+    .goto Durotar,42.5,18.6
     .accept 812 >>Accept Need for a Cure
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
@@ -1757,7 +1757,7 @@ step << tbc
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step << wotlk
-    .goto Durotar,40.8,16.3
+    .goto Durotar,42.1,15.01
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step
