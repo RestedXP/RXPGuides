@@ -481,6 +481,8 @@ function addon:OnEnable()
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("PLAYER_LEAVING_WORLD")
 
+    self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
+
     -- self:RegisterEvent("QUEST_LOG_UPDATE")
 
     questFrame:RegisterEvent("QUEST_COMPLETE")
@@ -523,6 +525,11 @@ end
 
 function addon:PLAYER_LEAVING_WORLD()
     addon.isHidden = true
+end
+
+function addon:CALENDAR_UPDATE_EVENT_LIST()
+    -- Required by .dmf
+    addon.calendarLoaded = true
 end
 
 function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
