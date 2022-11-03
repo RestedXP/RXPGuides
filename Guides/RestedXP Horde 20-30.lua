@@ -2229,13 +2229,12 @@ step << Druid
     .cast 18960 >> Use the spell Teleport to Moonglade
     .goto Moonglade,52.5,40.5
 	.trainer >> Go and train your class spells
-step
+step << !Rogue
     #completewith next
     .hs >> Use your hearthstone to Thunder Bluff
 step << Rogue
     .goto Ashenvale,73.2,61.6
     .fly Orgrimmar >> Fly to Orgrimmar
-    .zoneskip Ashenvale,1
 step << Rogue
     #completewith flytimebabyyy
     .goto Orgrimmar,44.0,54.6
