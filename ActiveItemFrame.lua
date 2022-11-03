@@ -39,6 +39,7 @@ local function GetActiveItemList(ref)
                 texture = itemTexture,
                 invSlot = i,
                 id = id,
+                spell = false,
             })
         end
     end
@@ -56,6 +57,7 @@ local function GetActiveItemList(ref)
                     bag = bag,
                     slot = slot,
                     id = id,
+                    spell = false,
                 })
             end
         end
@@ -287,7 +289,7 @@ function addon.UpdateItemFrame(itemFrame)
 
         -- print(id,item.texture,item.name)
         local attribute = "item"
-        if btn.spell then
+        if item.spell then
             attribute = "spell"
         end
         btn:SetAttribute("type",attribute)
