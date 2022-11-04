@@ -3,6 +3,8 @@ local _, addon = ...
 local _G = _G
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
+local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or GetContainerNumSlots
+local GetContainerItemID = C_Container and C_Container.GetContainerItemID or GetContainerItemID
 local GameTooltip = _G.GameTooltip
 
 local function GetActiveItemList(ref)
@@ -37,6 +39,7 @@ local function GetActiveItemList(ref)
                 texture = itemTexture,
                 invSlot = i,
                 id = id,
+                spell = false,
             })
         end
     end
@@ -54,6 +57,7 @@ local function GetActiveItemList(ref)
                     bag = bag,
                     slot = slot,
                     id = id,
+                    spell = false,
                 })
             end
         end
@@ -114,8 +118,6 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not self or self.activeItemFrame then return end
 
-    addon.activeFrames["activeItemFrame"] = self.activeItemFrame
-
     local f
 
     if not anchor then
@@ -132,13 +134,21 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
         f = self.activeItemFrame
     end
 
+    addon.enabledFrames["activeItemFrame"] = f
+    f.IsFeatureEnabled = function()
+        return not addon.settings.db.profile.disableItemWindow and next(GetActiveItemList()) ~= nil
+    end
+
     f:ClearBackdrop()
     f:SetBackdrop(addon.RXPFrame.backdropEdge)
     f:SetBackdropColor(unpack(addon.colors.background))
-    function f.onMouseDown() f:StartMoving() end
+    f.onMouseDown = function()
+        if addon.settings.db.profile.lockFrames and not IsAltKeyDown() then return end
+        f:StartMoving()
+    end
     function f.onMouseUp() f:StopMovingOrSizing() end
-    f:SetScript("OnMouseDown", f.StartMoving)
-    f:SetScript("OnMouseUp", f.StopMovingOrSizing)
+    f:SetScript("OnMouseDown", f.onMouseDown)
+    f:SetScript("OnMouseUp", f.onMouseUp)
     f.parent = self
     f.buttonList = {}
     f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
@@ -279,7 +289,7 @@ function addon.UpdateItemFrame(itemFrame)
 
         -- print(id,item.texture,item.name)
         local attribute = "item"
-        if btn.spell then
+        if item.spell then
             attribute = "spell"
         end
         btn:SetAttribute("type",attribute)
@@ -299,7 +309,7 @@ function addon.UpdateItemFrame(itemFrame)
     -- print("s:",i)
     if i > 0 then itemFrame:SetAlpha(1) end
 
-    if i == 0 or addon.settings.db.profile.disableItemWindow then
+    if i == 0 or addon.settings.db.profile.disableItemWindow or not addon.settings.db.profile.showEnabled then
         itemFrame:Hide()
     else
         itemFrame:Show()

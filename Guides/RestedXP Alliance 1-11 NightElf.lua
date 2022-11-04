@@ -288,6 +288,11 @@ RXPGuides.RegisterGuide([[
 #defaultfor NightElf
 #next 11-14 Darkshore
 step
+    #title Shopping List
+    #completewith next
+        >>If you want to use the Auction House to speed up your leveling, mail yourself 7 Small Spider Legs.
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+step
     .goto Teldrassil,60.5,56.3
     .accept 488 >> Accept Zenn's Bidding
 step
@@ -406,7 +411,7 @@ step
 step
     #label zenn
     .goto Teldrassil,63.4,58.1
-	>>Fill the empty vial at the moonwell
+	.use 5619 >>Fill the empty vial at the moonwell
     .complete 929,1 --Collect Filled Jade Phial (x1)
 step
     .goto Teldrassil,63.1,61.0
@@ -529,7 +534,7 @@ step
 	#xprate <1.5
 	#label spiderLegs
 	.goto Teldrassil,42.36,67.26
-	>>Fill the empty vial at the moonwell
+	.use 5621 >>Fill the empty vial at the moonwell
 	.complete 933,1
 step
 	#xprate <1.5
@@ -585,7 +590,7 @@ step
 step
 	#xprate <1.5
     .goto Teldrassil,38.4,34.1
-	>>Fill the empty phial at the moonwell
+	.use 18152 >>Fill the empty phial at the moonwell
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 step
 	#xprate <1.5

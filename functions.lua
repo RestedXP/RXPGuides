@@ -106,6 +106,10 @@ local _G = _G
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
 local GetQuestLogTitle = _G.GetQuestLogTitle
+local GetNumDayEvents = _G.C_Calendar.GetNumDayEvents
+local GetDayEvent = _G.C_Calendar.GetDayEvent
+local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
+local OpenCalendar = _G.C_Calendar.OpenCalendar
 
 addon.recentTurnIn = {}
 
@@ -952,7 +956,7 @@ function addon.UpdateQuestCompletionData(self)
     local icon = addon.icons.complete
     local id = element.questId
 
-    if element.tag ~= "complete" then
+    if not element.tag or element.tag ~= "complete" then
         return
     elseif type(id) ~= "number" then
         print('Error (.' .. element.tag .. '): Invalid quest ID at step ' .. element.step.index)
@@ -1431,7 +1435,7 @@ function addon.functions.hs(self, ...)
     end
 end
 
-local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
+local GossipSelectOption = _G.SelectGossipOption
 local GossipGetOptions = C_GossipInfo.GetOptions or _G.GetGossipOptions
 function addon.SelectGossipType(type)
     if C_GossipInfo.GetOptions then
@@ -1466,6 +1470,8 @@ function addon.functions.home(self, ...)
         return element
     end
 
+    if not addon.settings.db.profile.enableBindAutomation or IsShiftKeyDown() then return end
+
     local element = self.element
     if not element.step.active or element.completed or element.skip then
         element.confirm = false
@@ -1476,7 +1482,13 @@ function addon.functions.home(self, ...)
         addon.SetElementComplete(self)
         element.confirm = false
     elseif event == "CONFIRM_BINDER" then
-        ConfirmBinder()
+
+        if ConfirmBinder then
+            ConfirmBinder()
+        elseif C_PlayerInteractionManager then
+            C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
+            C_PlayerInteractionManager.ClearInteraction(Enum.PlayerInteractionType.Binder)
+        end
         element.confirm = true
         _G.StaticPopup1:Hide()
     elseif not element.confirm and event == "GOSSIP_SHOW" then
@@ -1538,6 +1550,8 @@ function addon.functions.fly(self, ...)
         element.tooltipText = addon.icons.fly .. element.text
         return element
     end
+
+    if not addon.settings.db.profile.enableFPAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     if not element.step.active then return end
@@ -1888,6 +1902,9 @@ function addon.functions.xp(self, ...)
         if not element.xp then element.xp = 0 end
         return element
     end
+
+    if addon.isHidden then return end
+
     local currentXP = UnitXP("player")
     local maxXP = UnitXPMax("player")
     local level = UnitLevel("player")
@@ -1952,7 +1969,7 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
 
     if (level >= element.level) == not reverseLogic then
         if element.skipstep then
-            if step.active and not step.completed then
+            if step.active and not step.completed and not addon.isHidden then
                 addon.updateSteps = true
                 step.completed = true
             end
@@ -2057,7 +2074,7 @@ function addon.functions.reputation(self, ...)
         element.operator then
         if not element.skipStep then
             addon.SetElementComplete(self, true)
-        elseif step.active then
+        elseif step.active and not addon.isHidden then
             addon.updateSteps = true
             step.completed = true
         end
@@ -2349,7 +2366,7 @@ function addon.functions.istrained(self, text, ...)
         element.textOnly = true
         return element
     end
-
+    if addon.isHidden then return end
     for _, id in pairs(self.element.id) do
         if IsPlayerSpell(id) or IsSpellKnown(id, true) or
         IsSpellKnown(id) then
@@ -2464,7 +2481,7 @@ function addon.functions.isQuestComplete(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug then
+    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug and not addon.isHidden then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2488,7 +2505,7 @@ function addon.functions.isOnQuest(self, ...)
     end
     local element = self.element
     local id = element.questId
-    if element.step.active and not addon.settings.db.profile.debug and (not IsOnQuest(id)) == not element.reverse then
+    if element.step.active and not addon.settings.db.profile.debug and (not IsOnQuest(id)) == not element.reverse and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
@@ -2527,7 +2544,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
             questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
         end
     end
-    if step.active and not questTurnedIn and not addon.settings.db.profile.debug then
+    if step.active and not questTurnedIn and not addon.settings.db.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
     end
@@ -2558,7 +2575,7 @@ function addon.functions.spellmissing(self, text, id)
         if not id then return end
         return {id = id, textOnly = true}
     end
-    if not IsPlayerSpell(self.element.id) and self.element.step.active then
+    if not IsPlayerSpell(self.element.id) and self.element.step.active and not addon.isHidden then
         addon.SetElementComplete(self)
         self.element.step.completed = true
         addon.updateSteps = true
@@ -2586,9 +2603,10 @@ function addon.functions.zone(self, ...)
         element.tooltipText = element.icon .. text
         return element
     end
-    if not self.element.step.active then return end
+    local currentMap = C_Map.GetBestMapForUnit("player")
+    if not self.element.step.active or addon.isHidden or type(currentMap) ~= "number" then return end
     local zone = self.element.map
-    if zone == C_Map.GetBestMapForUnit("player") then
+    if zone == currentMap then
         addon.SetElementComplete(self)
         self.element.step.completed = true
         addon.updateSteps = true
@@ -2616,10 +2634,10 @@ function addon.functions.zoneskip(self, text, zone, flags)
 
     local element = self.element
     local step = element.step
-
-    if not step.active then return end
+    local currentMap = C_Map.GetBestMapForUnit("player")
+    if not step.active or addon.isHidden or type(currentMap) ~= "number" then return end
     local zone = element.map
-    if (zone == C_Map.GetBestMapForUnit("player")) == not element.reverse then
+    if (zone == currentMap) == not element.reverse then
         step.completed = true
         addon.updateSteps = true
     end
@@ -2725,6 +2743,7 @@ function addon.functions.unitscan(self, text, ...)
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
+        element.targets = npcs
         return element
     end
 
@@ -3085,7 +3104,7 @@ function addon.functions.bronzetube(self, text, rev)
         total = total + 1
     end]]
 
-    if count >= total == not element.rev then
+    if count >= total == not element.rev and not addon.isHidden then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -3168,7 +3187,7 @@ local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
                                  _G.GetNumGossipActiveQuests
 local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
                                     _G.GetNumGossipAvailableQuests
-local GossipSelectOption = C_GossipInfo.SelectOption or _G.SelectGossipOption
+local GossipSelectOption = _G.SelectGossipOption
 --local GossipGetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
 
 function addon.functions.skipgossip(self, text, ...)
@@ -3178,6 +3197,8 @@ function addon.functions.skipgossip(self, text, ...)
         element.args = #args > 0 and args
         return element
     end
+
+    if not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     local args = element.args or {}
@@ -3258,7 +3279,9 @@ function addon.functions.maxlevel(self, ...)
     local step = element.step
     local ref = element.ref
 
-    if level > element.level then
+    if addon.isHidden then
+        return
+    elseif level > element.level then
         if step.active and not step.completed and not addon.settings.db.profile.northrendLM then
             addon.updateSteps = true
             step.completed = true
@@ -3393,7 +3416,7 @@ function addon.functions.itemcount(self, ...)
 
     local element = self.element
     local step = element.step
-    if not step.active then return end
+    if not step.active or addon.isHidden then return end
     local operator = element.operator
     local eq = element.eq
     local total = element.total
@@ -3516,7 +3539,7 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
 
     local element = self.element or self
     local step = element.step
-    if not step.active or step.completed then
+    if not step.active or step.completed or addon.isHidden then
         element.isActive = false
         return
     elseif not element.isActive then
@@ -3610,7 +3633,7 @@ function addon.functions.scenario(self, ...)
                                                                 criteriaIndex)
     local required = element.objMax or totalQuantity
     local scenario = C_ScenarioInfo.GetScenarioInfo()
-    local currentStage = scenario.currentStage
+    local currentStage = scenario and scenario.currentStage
     local currentObj = select(9, C_Scenario.GetCriteriaInfo(criteriaIndex))
     if criteriaID == currentObj then element.stagePos = currentStage end
 
@@ -3728,4 +3751,76 @@ function addon.functions.wpbuff(self)
         if id == self.buff then return self.state end
     end
     return not self.state
+end
+
+function addon.functions.dmf(self, ...)
+    if type(self) == "string" then
+        local element = {}
+        local text = ...
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+
+    local element = self.element
+    local isDmfInTown = false
+
+    local event
+    local monthDay = GetCurrentCalendarTime().monthDay
+
+    -- Async relies on CALENDAR_UPDATE_EVENT_LIST
+    -- Currently results in one false negative if on a DMF step at login
+    -- If called during the loading process, (even at PLAYER_ENTERING_WORLD) the query will not return
+    if not addon.calendarLoaded then
+        OpenCalendar()
+        return
+    end
+
+    for i = 1, GetNumDayEvents(0, monthDay) do
+        event = GetDayEvent(0, monthDay, i)
+
+        if event and event.title == _G.CALENDAR_FILTER_DARKMOON then
+            isDmfInTown = true
+            break
+        end
+    end
+
+    if element.step.active and not addon.settings.db.profile.debug and (not isDmfInTown) == not element.reverse and not addon.isHidden then
+        element.step.completed = true
+        addon.updateSteps = true
+    end
+end
+
+function addon.functions.nodmf(self, ...)
+    if type(self) == "string" then
+        local element = {}
+        local text = ...
+        element.reverse = true
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+    return addon.functions.dmf(self, ...)
+end
+
+events.flyable = "ZONE_CHANGED"
+function addon.functions.flyable(self, ...)
+    if type(self) == "string" then
+        local element = {}
+        local text, continent, reverse = ...
+        element.reverse = reverse
+        element.continent = addon.mapId[continent] or tonumber(continent)
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+
+    local element = self.element
+    local id = element.questId
+    local canPlayerFly = true -- TODO: Substitute that for the fly mount check function
+
+    if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly) == not element.reverse and not addon.isHidden then
+        element.step.completed = true
+        addon.updateSteps = true
+    end
 end

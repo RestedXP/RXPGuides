@@ -10,7 +10,10 @@ addon.linePoints = {}
 
 addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
-addon.activeFrames["arrowFrame"] = af
+addon.enabledFrames["arrowFrame"] = af
+af.IsFeatureEnabled = function ()
+    return not addon.settings.db.profile.disableArrow and (addon.hideArrow ~= nil and not addon.hideArrow)
+end
 
 af:SetMovable(true)
 af:EnableMouse(1)
@@ -742,7 +745,7 @@ local function updateArrow()
                 (element.parent.completed or element.parent.skip)) and
             not (element.text and (element.completed or isComplete) and
                 not isComplete)) then
-            af:SetShown(not addon.settings.db.profile.disableArrow and not addon.hideArrow and addon.settings.db.profile.minimap.show)
+            af:SetShown(not addon.settings.db.profile.disableArrow and not addon.hideArrow and addon.settings.db.profile.showEnabled)
             af.dist = 0
             af.orientation = 0
             af.element = element
@@ -780,6 +783,16 @@ local function updateArrow()
     end
 
     af:Hide()
+end
+
+function addon.ResetArrowPosition()
+    addon.settings.db.profile.disableArrow = false
+    if not addon.settings.db.profile.showEnabled then
+        addon.settings.ToggleActive()
+    end
+    af:ClearAllPoints()
+    af:SetPoint("CENTER", 0, 200)
+    updateArrow()
 end
 
 -- Removes all pins from the map and mini map and resets all data structrures

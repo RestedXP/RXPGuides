@@ -20,7 +20,7 @@ local CreateFrame, error, setmetatable, UIParent = CreateFrame, error, setmetata
 if not LibStub then error("LibCandyBar-3.0 requires LibStub.") end
 local cbh = LibStub:GetLibrary("CallbackHandler-1.0")
 if not cbh then error("LibCandyBar-3.0 requires CallbackHandler-1.0") end
-local lib = LibStub:NewLibrary("LibCandyBar-3.0", 99) -- Bump minor on changes
+local lib = LibStub:NewLibrary("LibCandyBar-3.0", 100) -- Bump minor on changes
 if not lib then return end
 lib.callbacks = lib.callbacks or cbh:New(lib)
 local cb = lib.callbacks
@@ -434,20 +434,20 @@ function lib:New(texture, width, height)
 		bg:SetAllPoints()
 		bar.candyBarBackground = bg
 
-		local backdrop = CreateFrame("Frame", nil, bar, BackdropTemplateMixin and "BackdropTemplate") -- Used by bar stylers for backdrops
+		local backdrop = CreateFrame("Frame", nil, bar, "BackdropTemplate") -- Used by bar stylers for backdrops
 		backdrop:SetFrameLevel(0)
 		bar.candyBarBackdrop = backdrop
 
-		local iconBackdrop = CreateFrame("Frame", nil, bar, BackdropTemplateMixin and "BackdropTemplate") -- Used by bar stylers for backdrops
+		local iconBackdrop = CreateFrame("Frame", nil, bar, "BackdropTemplate") -- Used by bar stylers for backdrops
 		iconBackdrop:SetFrameLevel(0)
 		bar.candyBarIconFrameBackdrop = iconBackdrop
 
-		local duration = statusbar:CreateFontString(nil, "OVERLAY", GameFontHighlightSmallOutline)
+		local duration = statusbar:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmallOutline")
 		duration:SetPoint("TOPLEFT", statusbar, "TOPLEFT", 2, 0)
 		duration:SetPoint("BOTTOMRIGHT", statusbar, "BOTTOMRIGHT", -2, 0)
 		bar.candyBarDuration = duration
 
-		local label = statusbar:CreateFontString(nil, "OVERLAY", GameFontHighlightSmallOutline)
+		local label = statusbar:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmallOutline")
 		label:SetPoint("TOPLEFT", statusbar, "TOPLEFT", 2, 0)
 		label:SetPoint("BOTTOMRIGHT", statusbar, "BOTTOMRIGHT", -2, 0)
 		bar.candyBarLabel = label
@@ -493,14 +493,14 @@ function lib:New(texture, width, height)
 	bar.candyBarLabel:SetTextColor(1,1,1,1)
 	bar.candyBarLabel:SetJustifyH("LEFT")
 	bar.candyBarLabel:SetJustifyV("MIDDLE")
-	bar.candyBarLabel:SetFont(_fontName, _fontSize, "")
+	bar.candyBarLabel:SetFont(_fontName, _fontSize)
 	bar.candyBarLabel:SetShadowOffset(_fontShadowX, _fontShadowY)
 	bar.candyBarLabel:SetShadowColor(_fontShadowR, _fontShadowG, _fontShadowB, _fontShadowA)
 
 	bar.candyBarDuration:SetTextColor(1,1,1,1)
 	bar.candyBarDuration:SetJustifyH("RIGHT")
 	bar.candyBarDuration:SetJustifyV("MIDDLE")
-	bar.candyBarDuration:SetFont(_fontName, _fontSize, "")
+	bar.candyBarDuration:SetFont(_fontName, _fontSize)
 	bar.candyBarDuration:SetShadowOffset(_fontShadowX, _fontShadowY)
 	bar.candyBarDuration:SetShadowColor(_fontShadowR, _fontShadowG, _fontShadowB, _fontShadowA)
 

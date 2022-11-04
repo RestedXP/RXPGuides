@@ -52,7 +52,10 @@ addon.texturePath = addon.defaultTextures
 
 local RXPFrame = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 addon.RXPFrame = RXPFrame
-addon.activeFrames["RXPFrame"] = RXPFrame
+addon.enabledFrames["RXPFrame"] = RXPFrame
+RXPFrame.IsFeatureEnabled = function ()
+    return not addon.settings.db.profile.hideGuideWindow
+end
 
 local BottomFrame = CreateFrame("Frame", "$parent_bottomFrame", RXPFrame,
                                 BackdropTemplate)
@@ -124,6 +127,9 @@ function addon.RenderFrame()
     addon.UpdateScrollBar()
     if addon.currentGuide then addon.ReloadGuide() end
 end
+
+RXPFrame:SetScript("OnShow",addon.PLAYER_ENTERING_WORLD)
+RXPFrame:SetScript("OnHide",addon.PLAYER_LEAVING_WORLD)
 
 RXPFrame:Show()
 
@@ -492,6 +498,7 @@ function addon.SetStep(n, n2, loopback)
     local totalHeight = 0
     local c = 0
     local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
+    local stepTargets = {}
     for i, step in pairs(activeSteps) do
 
         local index = step.index
@@ -677,6 +684,11 @@ function addon.SetStep(n, n2, loopback)
                     end
                 end
             end
+            if element.targets then
+                for _, t in ipairs(element.targets) do
+                    table.insert(stepTargets, t)
+                end
+            end
             local spacing = 0
 
         end
@@ -694,6 +706,10 @@ function addon.SetStep(n, n2, loopback)
                 for k, v in pairs(step.activeSpells) do
                     addon.activeSpells[k] = v
                 end
+            end
+
+            if stepTargets then
+                addon.targeting:UpdateMacro(stepTargets)
             end
         else
             stepframe:Hide()
@@ -1042,7 +1058,7 @@ function addon.GetGuideName(guide)
     elseif not som and guide.eraname then
         return guide.eraname
     else
-        return guide.displayName
+        return guide.displayname
     end
 end
 
@@ -1068,12 +1084,12 @@ RXPFrame.bottomMenu = {
     {text = _G.CLOSE, notCheckable = 1, func = function(self) self:Hide() end}
 }
 
-local emptyGuide = {
+addon.emptyGuide = {
     empty = true,
     hidewindow = true,
     name = "",
     group = "",
-    displayName = L("Welcome to RestedXP Guides\nRight click to pick a guide"),
+    displayname = L("Welcome to RestedXP Guides\nRight click to pick a guide"),
     steps = {{hidewindow = true, text = ""}}
 }
 
@@ -1082,7 +1098,7 @@ function addon:LoadGuide(guide, OnLoad)
 
     if not addon.IsGuideActive(guide) or not guide.empty and
         (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA)
-         then return addon:LoadGuide(emptyGuide) end
+         then return addon:LoadGuide(addon.emptyGuide) end
 
     if addon.settings.db.profile.frameHeight then
         RXPFrame:SetHeight(addon.settings.db.profile.frameHeight)
@@ -1459,7 +1475,7 @@ function BottomFrame.SortSteps()
 end
 
 local function IsGuideActive(guide)
-    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) then
+    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) and addon.FreshAccountCheck(guide) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end

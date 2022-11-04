@@ -23,6 +23,7 @@ ActiveItemFrame.lua
 LevelingTracker.lua
 Timers.lua
 Communications.lua
+Targeting.lua
 
 DB/classic.xml
 

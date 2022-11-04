@@ -11,6 +11,7 @@
   <Include file="AceSerializer-3.0\AceSerializer-3.0.xml"/>
   <Include file="AceConsole-3.0\AceConsole-3.0.xml"/>
   <Include file="AceLocale-3.0\AceLocale-3.0.xml"/>
+  <Include file="AceDBOptions-3.0\AceDBOptions-3.0.xml"/>
   <Script file="HereBeDragons\HereBeDragons-2.0.lua"/>
   <Script file="HereBeDragons\HereBeDragons-Pins-2.0.lua"/>
   <Script file="plc\base64.lua"/>

@@ -11,7 +11,7 @@ step << wotlk
     +If you have access to gold on this server, mail yourself gold for mount training soon!
 step
     .zone Orgrimmar >> Run into Orgrimmar
-step
+step << !Troll !Orc
     >>Go to the top of the tower
     .goto Orgrimmar,45.1,63.9
     .fp Orgrimmar >> Get the Orgrimmar flight path
@@ -90,7 +90,7 @@ step << Rogue
 step
     #xprate <1.5
     .maxlevel 21
-    >>Run to the Crossroads and accept quests
+    >>Run to the Crossroads
     .accept 870 >>Accept The Forgotten Pools
     .goto The Barrens,52.3,31.9
 step
@@ -135,7 +135,7 @@ step
     .goto The Barrens,45.2,23.3,40,0
     .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
-    .goto The Barrens,43.9,24.4
+    .goto The Barrens,45.0,22.7
     .complete 848,1 --Collect Fungal Spores (x4)
     .isOnQuest 848
 step
@@ -143,7 +143,7 @@ step
     .goto The Barrens,42.9,23.5
     .complete 850,1 --Collect Kodobane's Head (x1)
 	.unitscan Barak Kodobane
-    .isOnQuest 859
+    .isOnQuest 850
 step
     #sticky
     #completewith next
@@ -338,8 +338,7 @@ step
     #completewith Zamah
     +You have 45 minutes to complete the Apothecary quest so keep an eye on the timer. Skip the quest if you fail it
 step
-    #sticky
-    #completewith Horns
+    #completewith next
     >>Kill & Loot any level 16+ Raptors you see
     .complete 865,1 --Collect Intact Raptor Horn (x5)
     .isOnQuest 865
@@ -647,11 +646,14 @@ step
     .turnin 850 >> Turn in Kolkar Leaders
     .isOnQuest 850
 step
-    .isOnQuest 1062
-    >> Head towards Stonetalon
+    .isQuestComplete 1062
+    >> Head towards Stonetalon. Talk to Seereth
     .goto The Barrens,35.3,27.8
     .turnin 1062 >> Turn in Goblin Invaders
+step
+    .goto The Barrens,35.3,27.8
     .accept 1063 >> Accept The Elder Crone
+    .isQuestTurnedIn 1062
 step
     .isOnQuest 6523
     >> Head towards Stonetalon
@@ -702,9 +704,6 @@ step
     .goto Stonetalon Mountains,47.5,58.3
     .turnin 6401 >> Turn in Kaya's Alive
     .isOnQuest 6401
-step
-    .goto Stonetalon Mountains,45.1,59.8
-    .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
 step
     .isOnQuest 1095
     >> Head back to the goblin hut behind the hill
@@ -819,7 +818,7 @@ step
     #xprate <1.5
     .goto Ashenvale,11.6,34.3
     .turnin 6563 >> Turn in The Essence of Aku'Mai
-    .isQuestComplete 6553
+    .isQuestComplete 6563
 step
     #xprate <1.5
     #sticky
@@ -1064,15 +1063,11 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 << Horde
-#name 23-27 Hillsbrad / Ashenvale
+#name 22-25 Hillsbrad / South Barrens
 #version 1
 #group RestedXP Horde 1-30
-#next 27-30 Lower Barrens / Thousand Needles
+#next 25-26 Stonetalon; 26-30 Ashenvale / Thousand Needles
 
-step << !Shaman
-    #completewith next
-    .goto Orgrimmar,54.1,68.5
-    .home >> Set your Hearthstone to Orgrimmar
 step << Orc !Warlock wotlk
 	.money <5.00
 	.goto Orgrimmar,63.3,12.8
@@ -1082,6 +1077,7 @@ step << Troll !Warlock wotlk
 	.goto Durotar,55.2,75.5
 	.train 533 >> Head to Sen'jin Village in Durotar Train riding and purchase your mount
 step
+    #label Zeppelin
 	>>Go to the Zeppelin tower. Take the zeppelin to Tirisfal
 	.goto Durotar,50.8,13.8
 	.zone Tirisfal Glades >>Arrive in Tirisfal Glades
@@ -1115,14 +1111,14 @@ step
 	.goto Silverpine Forest,42.9,40.9
     .accept 493 >> Accept Journey to Hillsbrad Foothills
 step
+    .isOnQuest 3301
+    .goto Silverpine Forest,43.0,42.0
+    .turnin 3301 >> Turn in Mara Runetotem
+step
     >>Click the stone grave on the ground
     .goto Silverpine Forest,44.1,42.5
     .turnin 264 >> Turn in Until Death Do Us Part
     .isOnQuest 264
-step
-    .isOnQuest 3301
-    .goto Silverpine Forest,43.0,42.0
-    .turnin 3301 >> Turn in Mara Runetotem
 step
     .goto Silverpine Forest,45.6,42.6
     .fp The Sepulcher >> Get the The Sepulcher flight path
@@ -1132,10 +1128,6 @@ step
 step
     .goto Hillsbrad Foothills,60.10,18.60
     .fp Tarren Mill>> Get the Tarren Mill Flight Path
-step << Shaman
-	.goto Hillsbrad Foothills,62.2,20.8
-    >>Fill the Waterskin at the well
-    .complete 1536,1 --Filled Red Waterskin (1)
 step
     .goto Hillsbrad Foothills,61.5,19.2
     .turnin 493 >> Turn in Journey to Hillsbrad Foothills
@@ -1171,6 +1163,10 @@ step
     .goto Hillsbrad Foothills,62.79,19.05
 	.vendor 2388 >> Go inside the Inn. Vendor trash, and buy Food/Water from Shay
 step << Shaman
+	.goto Hillsbrad Foothills,62.2,20.8
+    >>Fill the Waterskin at the well
+    .complete 1536,1 --Filled Red Waterskin (1)
+step << Shaman
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> Go buy a Merciless Axe from the vendor if you have enough money. It's not always in the shop.
     .collect 12249,1
@@ -1188,15 +1184,15 @@ step
 	#era
 	    .goto Hillsbrad Foothills,78.46,43.06,200 >> Run to Dornholde Keep
 step
-    #sticky
-	#label syndicateq
-	>>Kill Syndicates in the area
+    #completewith syndicateq
+	>>Kill Syndicate Rogues and Watchmen
 	.goto Hillsbrad Foothills,77.8,44.1,0
     .complete 549,1 --Kill Syndicate Rogue (x10)
 	.complete 549,2 --Kill Syndicate Watchman (x10)
 step
     #sticky
     #label shadowmage
+    .isOnQuest 1066
     .goto Hillsbrad Foothills,80.61,45.40,0
     >>Kill Shadow Mages. Loot them for Vials of Innocent Blood
 	.complete 1066,1 --Collect Vial of Innocent Blood (x5)
@@ -1225,20 +1221,24 @@ step
 	.collect 3467,1
 	.unitscan Jailor Eston
 step
-	#label Drull
+	#label syndicateq
     >>Click the ball and chain
 	.goto Hillsbrad Foothills,75.3,41.5
     .complete 498,1 --Rescue Drull (1)
 step
-	#som
-	#requires shadowmage
+	>>Kill Syndicate Rogues and Watchmen
+	.goto Hillsbrad Foothills,66.0,47.6
+    .complete 549,1 --Kill Syndicate Rogue (x10)
+	.complete 549,2 --Kill Syndicate Watchman (x10)
+--X NEEDS WAYPOINTS
 step
-        #requires shadowmage
+    #label Drull
+        #requires syndicateq
 	#completewith next
 	>>Kill Bears. Loot them for their Tongues
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
 step
-        #requires syndicateq
+        #requires shadowmage
 	>>Kill Spiders. Loot them until Creeper Ichor drops
 	.goto Hillsbrad Foothills,63.5,33.0,100,0
     .goto Hillsbrad Foothills,57.9,34.5,100,0
@@ -1298,8 +1298,10 @@ step
 --N Claw rank 3?
 step
 	#requires syndicateq
+    .isOnQuest 1066
     .goto Hillsbrad Foothills,61.5,19.1
     .turnin 1066 >> Turn in Blood of Innocents
+    .accept 1067 >> Accept Return to Thunder Bluff
 step
     .goto Hillsbrad Foothills,62.38,20.52
 	.turnin 549 >> Turn in WANTED: Syndicate Personnel
@@ -1378,7 +1380,6 @@ step
     .turnin 501 >> Turn in Elixir of Pain
     .accept 502 >> Accept Elixir of Pain
     .turnin 499 >> Turn in Elixir of Suffering
-    .accept 1067 >> Accept Return to Thunder Bluff
 step << Shaman/Warrior
     .goto Hillsbrad Foothills,60.4,26.2
     .vendor >> If you didn't get the Merciless Axe the first time, go buy it in the shop now.
@@ -1407,6 +1408,9 @@ step
     .complete 529,2 --Kill Hillsbrad Apprentice Blacksmith (x4)
     .complete 529,3 --Collect Shipment of Iron (x1)
 step
+	.goto Hillsbrad Foothills,35.2,46.5
+    .xp 24 >> Grind to level 24
+step
     #xprate >1.499 
 	.goto Hillsbrad Foothills,62.4,20.3
     #requires humanskull
@@ -1426,27 +1430,438 @@ step << Druid tbc
     .goto Moonglade,56.2,30.6
     .turnin 30 >>Turn in Trial of the Sea Lion
     .accept 31 >>Accept Aquatic Form
-step << !Shaman
+step
 	#completewith next
 	#requires Crate
 	>>We're not going to turn these quests in until later on.
-	.hs >> Hearth to Orgrimmar
+	.hs >> Hearth to Thunder Bluff
+step << Druid
+    .goto Thunder Bluff,77.0,29.9
+.trainer >> Go and train your class spells
+step << Hunter
+    .goto Thunder Bluff,59.1,86.9
+.trainer >> Go and train your class spells
+step << Hunter
+    .goto Thunder Bluff,54.1,83.9
+.trainer >> Go and train your pet spells
+step << Warrior
+    .goto Thunder Bluff,57.6,85.5
+.trainer >> Go and train your class spells
 step << Shaman
+    .goto Thunder Bluff,22.8,21.0
+.trainer >> Go and train your class spells
+step
+    #xprate >1.099 
+    >>In the pools below the Spirit Rise
+	.goto Thunder Bluff,23.1,21.0
+    .turnin 1067 >> Turn in Return to Thunder Bluff
+    .isOnQuest 1067
+step
+    #xprate <1.1
+    >>In the pools below the Spirit Rise
+	.goto Thunder Bluff,23.1,21.0
+    .turnin 1067 >> Turn in Return to Thunder Bluff
+    .accept 1086 >> Accept The Flying Machine Airport
+    .isOnQuest 1067
+step << Priest
+    .goto Thunder Bluff,24.6,22.6
+.trainer >> Go and train your class spells
+step << Mage
+    .goto Thunder Bluff,25.2,20.9
+.trainer >> Go and train your class spells
+step
+    >> Head up the totem tower
+    .goto Thunder Bluff,46.8,50.1
+    .fly Camp Taurajo >> Fly to Camp Taurajo
+step << Tauren wotlk
+    .money <5.00
+    .goto Mulgore,47.5,58.5
+    .train 713 >> Go to Bloodhoof Village. Train riding and buy your mount
+step << Warrior
+    >>In the building
+	.goto The Barrens,44.7,59.4
+	.turnin 1823 >>Turn in Speak with Ruga
+    .accept 1824 >>Accept Trial at the Field of Giants
+step
+    .maxlevel 28
+    >> Speak to Mangletooth in the cage then pickup Weapons of Choice from Tatternack if you didn't grab it last time
+    .accept 879 >> Accept Betrayal from Within
+    .goto The Barrens,44.6,59.2
+    .accept 893 >> Accept Weapons of Choice
+    .goto The Barrens,45.0,57.6
+step
+	#label Owatanka2
 	#completewith next
-	#requires Crate
-	>>We're not going to turn these quests in until later on.
-	.hs >> Hearth to Camp Taurajo
+    .maxlevel 29
+	.goto The Barrens,44.2,62.1,75,0
+	.goto The Barrens,49.2,62.6,75,0
+	.goto The Barrens,49.6,60.0,75,0
+	>>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
+	.collect 5102,1,884 --Collect Owatanka's Tailspike
+    .use 5102
+	.accept 884 >>Accept Owatanka
+	.unitscan Owatanka
+step << Warrior
+    >>Kill Silithid mobs in the area. Loot them for Twitching Antennae. Be quick as they have a 15m duration
+	.goto The Barrens,48.1,70.3
+	.complete 1824,1 --Twitching Antenna (5)
+step << Warrior
+    >>In the building
+	.goto The Barrens,44.7,59.4
+    .turnin -1824 >>Turn in Trial at the Field of Giants
+step << Warrior
+    #xprate <1.5
+    .goto The Barrens,44.7,59.4
+    .accept 1825 >>Accept Speak with Thun'grim
+step
+    #sticky
+    #label Washte
+    #completewith next
+    .goto The Barrens,44.7,74.7,0
+    .goto The Barrens,44.7,77.8,0
+    .goto The Barrens,47.6,79.8,0
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. 
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
 step << Shaman
 	.goto The Barrens,43.4,77.4
 	.turnin 1536 >>Turn in Call of Water
 	.accept 1534 >>Accept Call of Water
-step << Shaman
-	#completewith next
-	.goto The Barrens,44.5,59.1
-	.fly Orgrimmar >>Fly to Orgrimmar
 step
-    .goto Orgrimmar,54.2,68.4
-    .vendor >>Talk to Innkeeper Gryshka and buy some food/water if needed. Also, be sure to check the auction house for any weapon upgrades. You're going to do a lot of running shortly.
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .accept 843 >> Accept Gann's Reclamation. He patrols along the road.
+    .unitscan Gann Stonespire
+    .maxlevel 28
+step
+    #sticky
+    #label Washte
+    #completewith next
+    .goto The Barrens,44.7,74.7,0
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him in this last spot
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
+step
+    #sticky
+    #label Weapons
+    .isOnQuest 893
+    .goto The Barrens,43.4,78.8,30,0
+    .goto The Barrens,40.4,80.8,30,0
+    .goto The Barrens,43.8,83.5,30,0
+    >>Kill mobs in the area for Weapons of Choice. Backstabber from Stalkers or Pathfinders, Wand from Seers, and Shield from Warfrenzies
+    .complete 893,1 --Collect Razormane Backstabber (x1)
+    .complete 893,2 --Collect Charred Razormane Wand (x1)
+    .complete 893,3 --Collect Razormane War Shield (x1)
+step
+    .isOnQuest 879
+	.goto The Barrens,43.4,78.8
+    >> Kuz walks all around the ridge. Kill and loot her for her skull.
+    .complete 879,1 --Collect Kuz's Skull (x1)
+	.unitscan Kuz 
+step
+    .isOnQuest 879
+    .goto The Barrens,40.4,80.8
+    >> Lok is in the building up from the ramp. Kill and loot him for his skull.
+    .complete 879,3 --Collect Lok's Skull (x1)
+	.unitscan Lok Orcbane
+step
+    .isOnQuest 879
+    .goto The Barrens,43.8,83.5
+    >> Nak is on the southern part of the ridge. Kill and loot him for his skull.
+    .complete 879,2 --Collect Nak's Skull (x1)
+	.unitscan Nak
+step
+    #requires Weapons
+    #sticky
+    #label Baeldun
+    .isOnQuest 843
+	.goto The Barrens,48.3,86.2,0,0
+    >>Kill Dwarves in the area for Gann's Reclamation
+    .complete 843,1 --Kill Bael'dun Excavator (x15)
+    .complete 843,2 --Kill Bael'dun Foreman (x5)
+step
+    #requires Weapons
+    .isOnQuest 843
+	>>Kill Prospector Khazgorm. Loot him for his Journal
+	.goto The Barrens,48.3,86.2
+	.complete 843,3 --Collect Khazgorm's Journal (x1)
+step
+    #sticky
+    #label Washte
+    #completewith next
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
+step
+    .isOnQuest 843
+    .unitscan Gann Stonespire
+    #requires Baeldun
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    >> Find Gann on the road again
+    .turnin 843 >> Turn in Gann's Reclamation
+step
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .accept 846 >> Accept Revenge of Gann
+step
+    >>Kill mobs and loot them for Revenge of Gann
+	.goto The Barrens,49.4,84.3
+    .complete 846,1 --Collect Nitroglycerin (x6)
+    .complete 846,2 --Collect Wood Pulp (x6)
+    .complete 846,3 --Collect Sodium Nitrate (x6)
+step
+    #sticky
+    #label Washte
+    #completewith wpscout1
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
+step
+    #label wpscout1
+    .isQuestComplete 846
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    >> Find Gann on the road again
+    .turnin 846 >> Turn in Revenge of Gann
+    .unitscan Gann Stonespire
+step
+    .isQuestTurnedIn 846
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .accept 849 >> Accept Revenge of Gann
+step
+    .isOnQuest 849
+    >>Right click the Flying Machine. This has a  large range, you can do it from below far away instead of going to the top of the platform.
+    .goto The Barrens,47.0,85.6
+    .complete 849,1 --Collect Bael Modan Flying Machine destroyed (x1)
+step
+    #sticky
+    #label Washte
+    #completewith wpscout2
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
+    .collect 5103,1,885 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .unitscan Washte Pawne
+step
+    #label wpscout2
+    .isOnQuest 849
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    .goto The Barrens,46.0,81.2,50,0
+    .goto The Barrens,46.0,76.2,50,0
+    >> Find Gann once more
+    .turnin 849 >> Turn in Revenge of Gann
+    .unitscan Gann Stonespire
+step
+    .goto The Barrens,44.6,59.2
+    >> Talk to Mangletooth in the cage
+    .isOnQuest 879
+    .turnin 879 >> Turn in Betrayal from Within
+    .accept 906 >> Accept Betrayal from Within
+step
+    .goto The Barrens,45.1,57.7
+    .isOnQuest 893
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+step
+    .isOnQuest 885
+    .goto The Barrens,44.9,59.1
+    .turnin 885 >> Turn in Washte Pawne
+step
+    .isOnQuest 884
+    .goto The Barrens,44.9,59.1
+    .turnin 884 >> Turn in Owatanka
+step
+    .isOnQuest 883
+    .goto The Barrens,44.9,59.1
+    .turnin 883 >> Turn in Lakota'mani
+step
+    .goto The Barrens,51.5,30.3
+    .fly Crossroads >> Fly to Crossroads
+step
+    .isOnQuest 906
+    .goto The Barrens,51.5,30.9
+    .turnin 906 >> Turn in Betrayal from Within
+
+]])
+
+RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
+<< Horde
+#name 25-26 Stonetalon
+#next 26-30 Ashenvale / Thousand Needles
+#version 1
+#group RestedXP Horde 1-30
+
+
+step
+    #xprate <1.1
+    .goto The Barrens,51.5,30.3
+    .fly Sun Rock >> Fly to Stonetalon Mountains
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,45.90,60.40
+    .accept 1087 >> Accept Cenarius' Legacy
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,47.30,64.30
+    .accept 6393 >> Accept Elemental War
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,47.40,58.40
+    .accept 6301 >> Accept Cycle of Rebirth
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,47.30,61.10
+    .accept 5881 >> Accept Calling in the Reserves
+    .accept 6282 >> Accept Harpies Threaten
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,59.00,62.60
+    .accept 1096 >> Accept Gerenzo Wrenchwhistle
+step
+    #xprate <1.1
+	.isOnQuest 1086
+    .goto Stonetalon Mountains,66.40,45.40
+     >> Place the Toxic Fogger
+    .complete 1086,1
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,64.48,40.25
+    >>Climb up the mountain to find Gerenzo. Clear the mobs around him and kill him.
+    .complete 1096,1
+    .unitscan Gerenzo Wrenchwhistle
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,62.6,40.2
+	.vendor >> Go and buy gear upgrades from the vendor at the end of platform. He has the chance of having gear upgrades for every class.
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,58.98,62.59
+    .turnin 1096 >> Turn in Gerenzo Wrenchwhistle
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,50.64,36.60,0,0
+     >> Loot Gaea Seeds as you pass through the lake and around the lake.
+    .complete 6301,1
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,35.84,13.09
+	>>Kill the Dryads and Night Elves in the area
+    .complete 1087,1
+    .complete 1087,2
+    .complete 1087,3
+step
+    #xprate <1.1
+	#completewith next
+    .goto Stonetalon Mountains,32.60,67.40,0
+     >> Kill Fire Elementals. Loot them for Increndrite
+    .complete 6393,1
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,31.10,61.27
+	>>Kill Harpies. Be careful as the Slayers execute you when you're below 20% health, Ambushers shock for a LOT of instant damage on low cooldown, and Roguefeathers thrash (multiple attacks at once every 10 seconds or so)
+    .complete 6282,1
+    .complete 6282,2
+    .complete 6282,3
+    .complete 6282,4
+step
+    #xprate <1.1
+	#completewith next
+    .goto Stonetalon Mountains,38.7,68.6,50 >> Enter Sun Rock Retreat from the West side
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,46.00,60.50
+     >> Head to Sun Rock Retreat
+    .turnin 1087 >> Turn in Cenarius' Legacy
+    .accept 1088 >> Accept Ordanus
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,47.10,61.10
+    .turnin 6282 >> Turn in Harpies Threaten
+    .accept 6283 >> Accept Bloodfury Bloodline
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,47.40,58.50
+    .turnin 6301 >> Turn in Cycle of Rebirth
+    .accept 6381 >> Accept New Life
+step
+    #xprate <1.1
+	#completewith next
+    .goto Stonetalon Mountains,32.60,67.40,0
+     >> Kill Fire Elementals. Loot them for Increndrite
+    .complete 6393,1
+step
+    #xprate <1.1
+	#sticky
+	#completewith Ripper
+    .goto Stonetalon Mountains,31.10,61.27,0
+	>> Plant the trees in the dirt mounds of The Charred Vale
+	.complete 6381,1
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,32.60,67.40
+     >> Kill Fire Elementals. Loot them for Increndrite
+    .complete 6393,1
+step
+    #xprate <1.1
+    #label Ripper
+    .goto Stonetalon Mountains,30.75,61.91
+    .complete 6283,1
+    .unitscan Bloodfury Ripper
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,31.10,61.27
+	>> Plant the trees in the dirt mounds of The Charred Vale
+	.complete 6381,1
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,38.7,68.6,50,0
+    .goto Stonetalon Mountains,47.20,64.40
+     >> Head back to Sun Rock Retreat
+    .turnin 6393 >> Turn in Elemental War
+step
+    #xprate <1.1
+    .isQuestComplete 6283
+    .goto Stonetalon Mountains,47.19,61.15
+    .turnin 6283 >> Turn in Bloodfury Bloodline
+step
+    #xprate <1.1
+    .goto Stonetalon Mountains,47.46,58.37
+    .turnin 6381 >> Turn in New Life
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
+<< Horde
+#name 26-30 Ashenvale / Thousand Needles
+#version 1
+#group RestedXP Horde 1-30
+#next RestedXP Horde 30-45\30-33 Hillsbrad / Arathi / Shimmering Flats
+
+step
+    .goto Stonetalon Mountains,45.2,69.8,-1
+    .goto The Barrens,51.6,30.4,-1
+	.fly Orgrimmar >>Fly to Orgrimmar
 step << Paladin
     #completewith next
     .goto Orgrimmar,32.4,35.8
@@ -1514,15 +1929,11 @@ step
     .goto Ashenvale,73.2,61.6
     .fp Splintertree >> Get the Splintertree Post flight path
 step
-    .goto Orgrimmar,45.1,63.9
-    .fly Splintertree >> Fly to Splintertree Post
-    .zoneskip Ashenvale
-step
     .accept 6441 >> Accept Satyr Horns
     .goto Ashenvale,73.1,61.5
     .turnin 6383 >> Turn in The Ashenvale Hunt
     .goto Ashenvale,73.8,61.5
-step
+step << Rogue
     #completewith next
     .isOnQuest 216
     .goto Ashenvale,74.0,60.6
@@ -1548,6 +1959,7 @@ step
 step
     .goto Ashenvale,68.3,75.3
     .accept 6544 >> Accept Torek's Assault
+    >> If he is not there he can take a few minutes to respawn
 step
     >>Follow Torek. This quest can get a bit hard. It will spawn a wave enemies inside the building. You may need to skip.
     >> Run as far into the building as you can. Have Torek tank some of the mobs. Abandon this quest if you die. 
@@ -1562,6 +1974,10 @@ step
     >>Kill Satyrs in the area. Loot them for their Horns
 .goto Ashenvale,68.2,54.0
     .complete 6441,1 --Collect Satyr Horns (x16)
+step
+    .goto Ashenvale,62.07,51.32
+	>> Ordanus can be quite hard, your should try to burst him, loot him and then jump down from the building. 
+    .complete 1088,1 --Ordanus' Head (1)
 step
     #sticky
     #completewith next
@@ -1587,6 +2003,7 @@ step
 step << Rogue
     .goto Ashenvale,16.3,29.8,90 >>Go to the Zoram'gar Outpost. Be sure to avoid Astranaar guards en route
 step << Rogue
+    #completewith next
     .goto Ashenvale,12.3,33.8
     .fp Zoram >> Get the Zoram'gar Outpost flight path
 step << Rogue
@@ -1624,8 +2041,6 @@ step
     .goto Ashenvale,38.4,30.6,30 >>Run into Thistlefur Hold
     .isOnQuest 216
 step
-    #sticky
-    #label Charms
     >>Loot the tiny chests inside the tunnel.
     .complete 6462,1 --Collect Troll Charm (x8)
     .isOnQuest 6462
@@ -1635,13 +2050,18 @@ step
     .accept 6482 >> Accept Freedom to Ruul
     .isOnQuest 216
 step
+    #completewith escortfi
+    >>Kill quest mobs while you are escorting Ruul
+    .complete 216,2 --Kill Thistlefur Shaman (x8)
+	.complete 216,1 --Kill Thistlefur Avenger (x8)
+    .isOnQuest 216
+step
+    #label escortfi
     .goto Ashenvale,38.5,36.4
     .complete 6482,1 --Escort Ruul from the Thistlefurs.
     .isOnQuest 6482
 step
-    #requires Charms
     >>Finish killing the Furbolgs
-	.goto Ashenvale,35.9,36.7
     .complete 216,2 --Kill Thistlefur Shaman (x8)
 	.complete 216,1 --Kill Thistlefur Avenger (x8)
     .isOnQuest 216
@@ -1696,10 +2116,6 @@ step
 	.use 5867 >>Use the Etched Phial from earlier at the moonwell
 	.goto Ashenvale,60.2,72.9
     .complete 1195,1 --Collect Filled Etched Phial (x1)
-step << !Rogue
-    #xprate >1.499 
-    .hs >> Hearth to Splintertree Post
-	>> Buy food/water if needed
 step
     #xprate <1.5
     .goto Ashenvale,71.2,68.1
@@ -1732,9 +2148,6 @@ step
     .turnin 25 >> Turn in Stonetalon Standstill
     .turnin 1918 >> Turn in The Befouled Element
 step
-    .goto Ashenvale,73.1,61.5
-    .turnin 6441 >> Turn in Satyr Horns
-step
     .goto Ashenvale,73.7,60.0
     .abandon 1918 >> Abandon The Befouled Element
     .destroy 16408 >> Destroy Befouled Water Globe
@@ -1752,6 +2165,9 @@ step
     #xprate >1.499 
     .goto Ashenvale,71.2,68.1
     .turnin 6503 >> Turn in Ashenvale Outrunners
+step
+    .goto Ashenvale,73.1,61.5
+    .turnin 6441 >> Turn in Satyr Horns
 step
     #xprate <1.5
 	#completewith next
@@ -1815,45 +2231,19 @@ step << Druid
 	.trainer >> Go and train your class spells
 step
     #completewith next
-    .hs >> Use your hearthstone
-step << !Warrior !Hunter !Shaman !Druid !Mage !Priest
+    .hs >> Use your hearthstone to Thunder Bluff
+step << Rogue
     .goto Ashenvale,73.2,61.6
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Ashenvale,1
-step << Paladin
-	#completewith flytimebabyyy
-    .goto Orgrimmar,32.4,35.8
-	.trainer >> Go and train your class spells
-step << Warlock
-	#completewith flytimebabyyy
-    .goto Orgrimmar,48.0,46.0
-	.trainer >> Go and train your class spells
-step << Warlock tbc
-	#completewith flytimebabyyy
-    .goto Orgrimmar,47.5,46.7
-	.vendor >> Buy Grimoire of Seduction
-	.collect 16379,1
 step << Rogue
     #completewith flytimebabyyy
     .goto Orgrimmar,44.0,54.6
 	.trainer >> Go and train your class spells
-step
+step << Rogue
     #label flytimebabyyy
-step
 	.goto Orgrimmar,45.2,63.8,-1
-    .goto Ashenvale,73.2,61.6,-1
     .fly Thunder Bluff >> Fly to Thunder Bluff
-]])
-
-RXPGuides.RegisterGuide([[
-#tbc
-#wotlk
-<< Horde
-#name 27-30 Lower Barrens / Thousand Needles
-#version 1
-#group RestedXP Horde 1-30
-#next RestedXP Horde 30-45\30-34 Hillsbrad / Arathi / Shimmering Flats
-
 step
 	.goto Thunder Bluff,55.2,51.5
     .turnin 1195 >> Turn in The Sacred Flame
@@ -1871,246 +2261,54 @@ step << Druid
 	.trainer >> Go and train your class spells
 	.turnin 31 >>Turn in Aquatic Form << tbc
 step << Hunter
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,59.1,86.9
 	.trainer >> Go and train your class spells
 step << Hunter
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,54.1,83.9
 	.trainer >> Go and train your pet spells
 step << Warrior
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,57.6,85.5
 	.trainer >> Go and train your class spells
 step << Shaman
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,22.8,21.0
 	.trainer >> Go and train your class spells
+step 
+    #xprate <1.1
+	.isOnQuest 1086
+    .goto Thunder Bluff,22.80,20.80
+    .turnin 1086 >> Turn in The Flying Machine Airport
 step << Priest
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,24.6,22.6
 	.trainer >> Go and train your class spells
 step << Mage
-	#completewith next
+	#completewith hearth
     .goto Thunder Bluff,25.2,20.9
 	.trainer >> Go and train your class spells
 step
     .goto Thunder Bluff,61.0,81.0
     .accept 1131 >> Accept Steelsnap
-step
-    >>In the pools below the Spirit Rise
-	.goto Thunder Bluff,23.1,21.0
-    .turnin 1067 >> Turn in Return to Thunder Bluff
-    .isOnQuest 1067
-step
+step << Rogue
+    #label hearth
 	#completewith next
 	.goto Thunder Bluff,45.8,64.7
 	.home >> Set your Hearthstone to Thunder Bluff
-step << Tauren wotlk
-    .money <5.00
-    .goto Mulgore,47.5,58.5
-    .train 713 >> Go to Bloodhoof Village. Train riding and buy your mount
 step
     >> Head up the totem tower
     .goto Thunder Bluff,46.8,50.1
     .fly Camp Taurajo >> Fly to Camp Taurajo
-step << Warrior
-    >>In the building
-	.goto The Barrens,44.7,59.4
-	.turnin 1823 >>Turn in Speak with Ruga
-    .accept 1824 >>Accept Trial at the Field of Giants
-step
-    .maxlevel 28
-    >> Speak to Mangletooth in the cage then pickup Weapons of Choice from Tatternack if you didn't grab it last time
-    .accept 879 >> Accept Betrayal from Within
-    .goto The Barrens,44.6,59.2
-    .accept 893 >> Accept Weapons of Choice
-    .goto The Barrens,45.0,57.6
-step
-	#sticky
-	#label Owatanka2
-	#completewith next
-    .maxlevel 29
-	.goto The Barrens,44.2,62.1,75,0
-	.goto The Barrens,49.2,62.6,75,0
-	.goto The Barrens,49.6,60.0,75,0
-	>>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
-	.collect 5102,1,884 --Collect Owatanka's Tailspike
-    .use 5102
-	.accept 884 >>Accept Owatanka
-	.unitscan Owatanka
-step << Warrior
-    >>Kill Silithid mobs in the area. Loot them for Twitching Antennae. Be quick as they have a 15m duration
-	.goto The Barrens,48.1,70.3
-	.complete 1824,1 --Twitching Antenna (5)
-step << Warrior
-    >>In the building
-	.goto The Barrens,44.7,59.4
-    .turnin -1824 >>Turn in Trial at the Field of Giants
-step << Warrior
-    #xprate <1.5
-    .goto The Barrens,44.7,59.4
-    .accept 1825 >>Accept Speak with Thun'grim
 step << Shaman
     .goto The Barrens,43.4,77.4
     .turnin 1534 >>Turn in Call of Water
     .accept 220 >>Accept Call of Water
 step
-    #sticky
-    #label Washte
-    #completewith next
-    .goto The Barrens,44.7,74.7,0
-    .goto The Barrens,44.7,77.8,0
-    .goto The Barrens,47.6,79.8,0
-    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. 
-    .collect 5103,1,885 --Collect Washte Pawne's Feather
-    .accept 885 >>Accept Washte Pawne
-    .unitscan Washte Pawne
-step
-    .goto The Barrens,46.0,76.2,50,0
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    .goto The Barrens,46.0,81.2,50,0
-    .accept 843 >> Accept Gann's Reclamation. He patrols along the road.
-    .unitscan Gann Stonespire
-    .maxlevel 28
-step
-    #sticky
-    #label Washte
-    #completewith next
-    .goto The Barrens,44.7,74.7,0
-    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him in this last spot
-    .collect 5103,1,885 --Collect Washte Pawne's Feather
-    .accept 885 >>Accept Washte Pawne
-    .unitscan Washte Pawne
-step
-    #sticky
-    #label Weapons
-    .isOnQuest 893
-    .goto The Barrens,43.4,78.8,30,0
-    .goto The Barrens,40.4,80.8,30,0
-    .goto The Barrens,43.8,83.5,30,0
-    >>Kill mobs in the area for Weapons of Choice. Backstabber from Stalkers or Pathfinders, Wand from Seers, and Shield from Warfrenzies
-    .complete 893,1 --Collect Razormane Backstabber (x1)
-    .complete 893,2 --Collect Charred Razormane Wand (x1)
-    .complete 893,3 --Collect Razormane War Shield (x1)
-step
-	.goto The Barrens,43.4,78.8
-    >> Kuz walks all around the ridge. Kill and loot her for her skull.
-    .complete 879,1 --Collect Kuz's Skull (x1)
-	.unitscan Kuz 
-step
-    .goto The Barrens,40.4,80.8
-    >> Lok is in the building up from the ramp. Kill and loot him for his skull.
-    .complete 879,3 --Collect Lok's Skull (x1)
-	.unitscan Lok Orcbane
-step
-    .goto The Barrens,43.8,83.5
-    >> Nak is on the southern part of the ridge. Kill and loot him for his skull.
-    .complete 879,2 --Collect Nak's Skull (x1)
-	.unitscan Nak
-step
-    #requires Weapons
-    #sticky
-    #label Baeldun
-	.goto The Barrens,48.3,86.2,0,0
-    >>Kill Dwarves in the area for Gann's Reclamation
-    .complete 843,1 --Kill Bael'dun Excavator (x15)
-    .complete 843,2 --Kill Bael'dun Foreman (x5)
-step
-    #requires Weapons
-	>>Kill Prospector Khazgorm. Loot him for his Journal
-	.goto The Barrens,48.3,86.2
-	.complete 843,3 --Collect Khazgorm's Journal (x1)
-step
-    #sticky
-    #label Washte
-    #completewith next
-    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
-    .collect 5103,1,885 --Collect Washte Pawne's Feather
-    .accept 885 >>Accept Washte Pawne
-    .unitscan Washte Pawne
-step
-    .isOnQuest 843
-    .unitscan Gann Stonespire
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    >> Find Gann on the road again
-    .turnin 843 >> Turn in Gann's Reclamation
-step
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    .accept 846 >> Accept Revenge of Gann
-step << Hunter/Warlock
-    .goto The Barrens,48.9,86.2
-    >> Head up to the dwarven bunker
-    .accept 857 >> Accept The Tear of the Moons
-step
-    >>Kill mobs and loot them for Revenge of Gann
-	.goto The Barrens,49.4,84.3
-    .complete 846,1 --Collect Nitroglycerin (x6)
-    .complete 846,2 --Collect Wood Pulp (x6)
-    .complete 846,3 --Collect Sodium Nitrate (x6)
-step << Hunter/Warlock
-    >>Go downstairs into the main room of the building. You can either try fighting the mobs by letting your pet tank. (Pull the closest mobs to you, don't directly pull Twinbraid). Alternatively, you can send your pet in, loot the chest, then die and run back.
-    .goto The Barrens,49.1,84.3
-    .complete 857,1 --Collect Tear of the Moons (x1)
-step
-    #sticky
-    #label Washte
-    #completewith wpscout1
-    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
-    .collect 5103,1,885 --Collect Washte Pawne's Feather
-    .accept 885 >>Accept Washte Pawne
-    .unitscan Washte Pawne
-step
-    #label wpscout1
-    .isQuestComplete 846
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    >> Find Gann on the road again
-    .turnin 846 >> Turn in Revenge of Gann
-    .unitscan Gann Stonespire
-step
-    .isQuestTurnedIn 846
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    .accept 849 >> Accept Revenge of Gann
-step << Hunter/Warlock
-    .goto The Barrens,48.9,86.3
-    >> Head up past the dwarven bunker
-    .turnin 857 >> Turn in The Tear of the Moons
-step
-    .isOnQuest 849
-    >>Right click the Flying Machine at the top of the launch pad
-    .goto The Barrens,47.0,85.6
-    .complete 849,1 --Collect Bael Modan Flying Machine destroyed (x1)
-step
-    #sticky
-    #label Washte
-    #completewith wpscout2
-    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. Skip the quest If you can't find him
-    .collect 5103,1,885 --Collect Washte Pawne's Feather
-    .accept 885 >>Accept Washte Pawne
-    .unitscan Washte Pawne
-step
-    #label wpscout2
-    .isOnQuest 849
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    .goto The Barrens,46.0,81.2,50,0
-    .goto The Barrens,46.0,76.2,50,0
-    >> Find Gann once more
-    .turnin 849 >> Turn in Revenge of Gann
-    .unitscan Gann Stonespire
+	.isOnQuest 5881
+    .goto The Barrens,44.00,92.00
+    .turnin 5881 >> Turn in Calling in the Reserves
 step
     .goto Thousand Needles,32.2,22.2
     >> Head south towards Thousand Needles
@@ -2143,9 +2341,6 @@ step
     .turnin 4542 >> Turn in Message to Freewind Post
     .accept 4841 >> Accept Pacify the Centaur
 step
-    .goto Thousand Needles,45.1,49.2
-    .fp Freewind Post >> Get the Freewind Post flight path
-step
     .accept 4767 >> Accept Wind Rider
     .goto Thousand Needles,44.8,49.1
     .accept 4821 >> Accept Alien Egg
@@ -2155,6 +2350,9 @@ step << Hunter
     .goto Thousand Needles,44.9,50.7
     .vendor >> Go buy Dense Shortbow if it's in the shop.
     .collect 11305,1
+step
+    .goto Thousand Needles,45.1,49.2
+    .fp Freewind Post >> Get the Freewind Post flight path
 step
     #sticky
     #completewith next
@@ -2196,8 +2394,22 @@ step
     .turnin 1149 >> Turn in Test of Faith
     .accept 1150 >> Accept Test of Endurance
 step
-    #sticky
-    #label Egg5
+	#sticky
+	#label Kobolds
+    .goto Thousand Needles,65.74,49.89,90,0
+    .goto Thousand Needles,67.87,58.33,90,0
+    .goto Thousand Needles,66.03,62.14,90,0
+    .goto Thousand Needles,58.95,57.84,90,0
+    .goto Thousand Needles,65.74,49.89
+     >> Kill all Kobolds you encounter. Loot them for the Ore Sample
+    .complete 1153,1
+    .unitscan Gravelsnout Digger,Gravelsnout Surveyor,Gibblesnik
+step
+    >>Kill Thundering Boulderkins. Loot them for Purifying Earth
+    .goto Thousand Needles,65.2,62.4,0,0
+    .complete 9431,1 --Collect Purifying Earth (x2)
+step
+    #requires Kobolds
     >>Look for the Alien Egg. It's a lootable object in one of the camps. It looks like spider eggs.
     .goto Thousand Needles,56.3,50.4,20,0
     .goto Thousand Needles,52.4,55.2,20,0
@@ -2207,11 +2419,6 @@ step
     .goto Thousand Needles,37.7,56.1
     .complete 4821,1 --Collect Alien Egg (x1)
 step
-    >>Kill Thundering Boulderkins. Loot them for Purifying Earth
-    .goto Thousand Needles,65.2,62.4
-    .complete 9431,1 --Collect Purifying Earth (x2)
-step
-    #requires Egg5
     >>Go back to Freewind Post
     .goto Thousand Needles,45.6,50.8
     .turnin 4841 >> Turn in Pacify the Centaur
@@ -2296,8 +2503,8 @@ step
     .complete 9433,1 --Collect Thalanaar Moonwell Water (x1)
 step
     #xprate <1.5
-    .goto Thousand Needles,18.7,22.2,40,0
-    .xp 29+500 >> Grind to 500+/36300 xp
+    .goto Thousand Needles,18.7,22.2
+    .xp 28+25000 >> Grind to 25000+/33900xp
 step
     #label messenger
 >>Search for Steelsnap (Hyena). He patrols counter-clockwise
@@ -2411,28 +2618,8 @@ step
     .isOnQuest 879
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step
-    .goto The Barrens,44.6,59.2
-    >> Talk to Mangletooth in the cage
-    .isOnQuest 879
-    .turnin 879 >> Turn in Betrayal from Within
-    .accept 906 >> Accept Betrayal from Within
-step
-    .goto The Barrens,45.1,57.7
-    .isOnQuest 893
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-step
-    .isOnQuest 885
-    .goto The Barrens,44.9,59.1
-    .turnin 885 >> Turn in Washte Pawne
-step
-    .isOnQuest 884
-    .goto The Barrens,44.9,59.1
-    .turnin 884 >> Turn in Owatanka
-step
-    .isOnQuest 883
-    .goto The Barrens,44.9,59.1
-    .turnin 883 >> Turn in Lakota'mani
+    .goto The Barrens,45.10,57.70
+    .turnin 1153 >> Turn in A New Ore Sample
 step
     #completewith next
     .goto The Barrens,44.4,59.0
@@ -2698,14 +2885,14 @@ step
     .goto Thunder Bluff,47.0,49.8,-1
     .fly Crossroads >> Fly to Crossroads
 step
-    .isOnQuest 906
-    .goto The Barrens,51.5,30.9
-    .turnin 906 >> Turn in Betrayal from Within
-step
     #label swarmgrows
     .isQuestAvailable 1145
     .goto The Barrens,51.1,29.7
     .accept 1145 >> Accept The Swarm Grows
+step << !Shaman !Warrior
+    .maxlevel 32
+    .goto The Barrens,52.0,29.8
+    .home >>Set your Hearthstone to Crossroads
 step
     .isOnQuest 1148
     .goto The Barrens,51.1,29.6
@@ -2859,6 +3046,11 @@ step << Shaman
 	#completewith next
     .goto Orgrimmar,38.6,36.0
     .trainer >> Go and train your class spells
+step
+    .xp >33,1
+    .isOnQuest 1145
+    .goto Orgrimmar,37.8,37.4
+    .accept 1531 >> Accept Call of Air
 step << Hunter
     .xp >33,1
     .isOnQuest 1145
@@ -2890,6 +3082,17 @@ step << Warlock
     .goto Orgrimmar,47.5,46.7
     .vendor >> Buy your pet books
 	.collect 16368,1
+step
+    .xp >33,1
+    .isOnQuest 1145
+    .goto Orgrimmar,49.8,47.6
+    .accept 1431 >> Alliance Relations
+step
+    .xp >33,1
+    .isOnQuest 1145
+    .goto Orgrimmar,75.2,34.2
+    .turnin 1145 >> Turn in The Swarm Grows
+    .accept 1146 >> Accept The Swarm Grows
 step << Mage
     .xp >33,1
     .isOnQuest 1145
@@ -2905,13 +3108,9 @@ step << Priest
 step
     .xp >33,1
     .isOnQuest 1145
-    .goto Orgrimmar,75.2,34.2
-    .turnin 1145 >> Turn in The Swarm Grows
-    .accept 1146 >> Accept The Swarm Grows
-step << !Shaman !Warrior
-    .maxlevel 32
-    .goto Orgrimmar,54.1,68.4
-    .home >>Set your Hearthstone to Valley of Strength
+    .goto Orgrimmar,22.4,52.8
+    .turnin 1431 >> Turn in Alliance Relations
+    .accept 1432 >> Accept Alliance Relations
 step << Orc !Warlock tbc
 	#sticky
 	#completewith next

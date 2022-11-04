@@ -9,7 +9,11 @@ local batchingWindow = 0.005
 
 local function SwitchBindLocation()
     if GetTime() - HSstart > 10 - batchingWindow then
-        ConfirmBinder()
+        if ConfirmBinder then
+            ConfirmBinder()
+        elseif C_PlayerInteractionManager then
+            C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
+        end
         HSframe:SetScript("OnUpdate", nil)
         SetCVar("maxfps", currentFPS)
         HSstart = 0
@@ -26,9 +30,17 @@ local function StartHSTimer()
     end
 end
 
-hooksecurefunc("UseContainerItem", function(...)
-    if GetContainerItemID(...) == 6948 then StartHSTimer() end
-end)
+if _G.C_Container and _G.C_Container.UseContainerItem then -- DF+
+    hooksecurefunc(C_Container, "UseContainerItem", function(...)
+        if (C_Container.GetContainerItemID(...) == 6948) then
+            StartHSTimer()
+        end
+    end)
+else
+    hooksecurefunc("UseContainerItem", function(...)
+        if GetContainerItemID(...) == 6948 then StartHSTimer() end
+    end)
+end
 
 hooksecurefunc("UseAction", function(...)
     local event, id = GetActionInfo(...)

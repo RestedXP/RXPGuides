@@ -984,7 +984,7 @@ step << Warlock
     .trainer >>Train your class spells
 step << Warlock
     .goto Silvermoon City,79.5,58.5
-    >> Buy Suntouched Special Reserve from Vinemaster Suntouched
+    >> Buy Suntouched Special Reserve from Vinemaster Suntouched. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22775,1 --Collect Suntouched Special Reserve
 step << Warlock
     .goto Eversong Woods,56.7,49.6
@@ -1067,7 +1067,7 @@ step << Orc/Troll/Tauren
     .fp Silvermoon >> Get the Silvermoon City flight path
 step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
-    .vendor >> Buy Springpaw Appetizers from Zalene
+    .vendor >> Buy Springpaw Appetizers from Zalene. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22776,1 --Collect Springpaw Appetizers
 step << !Hunter
     >> Talk to Lieutenant Dawnrunner
@@ -1421,7 +1421,7 @@ step << Paladin/Rogue
     .collect 2901,1 --Mining Pick (1)
 step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
-    .vendor >> Buy a Suntouched Special Reserve from Vinemaster Suntouched
+    .vendor >> Buy a Suntouched Special Reserve from Vinemaster Suntouched. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22775,1 --Collect Suntouched Special Reserve
 step << Undead/BloodElf !Hunter
     #completewith next
@@ -1456,7 +1456,7 @@ step << Undead/BloodElf !Hunter
     .turnin 8491 >> Turn in Pelt Collection
 step << Undead/BloodElf !Hunter
     .goto Eversong Woods,44.0,70.4
-    .vendor >>Buy a Bundle of Fireworks from Halis
+    .vendor >>Buy a Bundle of Fireworks from Halis. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22777,1 --Bundle of Fireworks (1)
 step << Undead/BloodElf !Hunter
     >> Speak to Magistrix Landra Dawnstrider
@@ -2373,7 +2373,7 @@ step
     .goto Ghostlands,72.4,29.7
     .turnin 9214 >> Turn in Shadowpine Weaponry
 step
-    >>Up the east ramp
+    >>Run up the east ramp
     .goto Ghostlands,72.6,31.5
     .turnin 9275 >> Turn in A Little Dash of Seasoning
 step
@@ -2483,8 +2483,8 @@ step << !Rogue !Hunter
     .goto Ghostlands,37.8,51.9
     >>Grind down The Dead Scar, killing mobs and looting them for Rotting Hearts and Spinal Dust. Be aware that Dreadbone Sentinels interrupt (Shield Bash)
     *Deathcage Sorcerer and Dreadbone Sentinels drop the Spinal Dust. Risen Stalkers and Ghouls drop the Hearts.
-    .complete 9216,1 --Collect Rotting Heart (x10)
-.complete 9218,1 --Collect Spinal Dust (x10)
+    .collect 22641,10 --Collect Rotting Heart (x10)
+    .collect 22642,10 --Collect Spinal Dust (x10)
 step
     .goto Ghostlands,31.7,74.3,40,0
     .goto Ghostlands,38.4,77.5,40,0
@@ -2495,7 +2495,7 @@ step
     .goto Ghostlands,31.7,74.3,40,0
     .goto Ghostlands,38.4,77.5,40,0
     .goto Ghostlands,31.7,74.3
-    >>Kill mobs for War on Deatholme
+    >>Kill Eyes, Nerubis and Wailers in Deatholme
     .complete 9220,1 --Kill Eye of Dar'Khan (x5)
     .complete 9220,2 --Kill Nerubis Centurion (x6)
     .complete 9220,3 --Kill Wailer (x6)
@@ -2521,6 +2521,7 @@ step
     .accept 9170 >> Accept Dar'Khan's Lieutenants
     .accept 9877 >> Accept A Restorative Draught
 step
+    >>Return to Tranquillien
     .goto Ghostlands,47.6,34.9
     .turnin 9877 >> Turn in A Restorative Draught
     .accept 9164 >>Accept Captives at Deatholme
@@ -2546,6 +2547,7 @@ step
     .goto Ghostlands,32.1,73.9,-1
     .skipgossip
 step
+    >>Kill Mirdoran
     .goto Ghostlands,37.4,79.3
     .complete 9170,1 --Kill Mirdoran the Fallen (x1)
 step
@@ -2610,8 +2612,9 @@ step
     .turnin 9170 >> Turn in Dar'Khan's Lieutenants
     .turnin 9164 >>Turn in Captives at Deatholme
 step
-    #completewith next
-    .hs >> Hearth to Tranquillien
+    #sticky
+    #completewith WantedOverrideFix
+    .hs >> Hearth or run to Tranquillien
     .cooldown item,6948,>0
 step
     .isQuestComplete 9156
@@ -2628,6 +2631,8 @@ step
 step
     .goto Ghostlands,31.7,74.3
     .xp 20 >>Grind to 20
+step
+    #label WantedOverrideFix
 step
     #completewith next
     .goto Ghostlands,45.5,30.5
@@ -2683,7 +2688,7 @@ step << Paladin
 step << Paladin
     .goto Silvermoon City,91.2,36.9
     .trainer >> Train your class spells
-step << BloodElf
+step
     #label Hero
     .goto Silvermoon City,53.8,20.5
     .turnin 9328 >> Turn in Hero of the Sin'dorei << BloodElf
