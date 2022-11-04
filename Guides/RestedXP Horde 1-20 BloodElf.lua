@@ -1558,8 +1558,9 @@ step
     .turnin 9147 >> Turn in The Fallen Courier
 step
     >> Speak with Courier Dawnstrider
-    .goto Eversong Woods,49.0,89.3
+    .goto Eversong Woods,48.98,89.0
     .accept 9148 >> Accept Delivery to Tranquillien
+    .target Courier Dawnstrider
 step << BloodElf !Hunter
     >> Speak to Arcanist Vandril
     .goto Ghostlands,46.5,28.4
@@ -1670,7 +1671,7 @@ step
 step
     #completewith next
     .goto Ghostlands,72.3,32.3
-    .vendor >> Buy Food/drink if needed. Be sure to buy the level 5 fish as it's VERY cheap
+    .vendor >> Buy Food/drink if needed. Be sure to buy the Longjaw Mud Snapper as it's VERY cheap
 step
     >>Kill any Ghostclaw Lynx you see
     .goto Ghostlands,68.5,33.1,40,0
@@ -1750,13 +1751,15 @@ step
     .turnin 9138 >>Turn in Suncrown Village
     .accept 9139 >>Accept Goldenmist Village
 step
-    #label Poster3
     >> Talk to Master Chef Mouldier
     .accept 9171 >> Accept Culinary Crunch
-    .goto Ghostlands,48.4,30.9
+    .goto Ghostlands,48.43,30.93
+    .target Master Chef Mouldier
+step
+--  #label Poster3
     >>Click the Wanted Poster
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran
-    .goto Ghostlands,48.2,31.6
+    .goto Ghostlands,48.35,31.67
 step << !Warlock
     .goto Ghostlands,48.9,32.4
     .home >> Set your Hearthstone to Tranquillien
