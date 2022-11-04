@@ -31,4 +31,4 @@ map.lua
 functions.lua
 GuideLoader.lua
 
-Guides/GuideList.xml
+
