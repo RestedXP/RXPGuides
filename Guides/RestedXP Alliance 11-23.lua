@@ -358,7 +358,7 @@ step << Druid tbc
     .goto Moonglade,48.1,67.2
     .fly Auberdine>>Fly to Darkshore
 step << Warlock wotlk/Rogue wotlk
-    .xp >> Grind to level 14
+    .xp 14 >> Grind to level 14
 step << Warlock wotlk/wotlk Gnome Rogue/wotlk Human Rogue/wotlk Dwarf Rogue
     .hs >> Hearth to Stormwind
 step << wotlk Night Elf Rogue
