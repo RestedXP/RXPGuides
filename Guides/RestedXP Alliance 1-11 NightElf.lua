@@ -370,16 +370,16 @@ step
     .goto Teldrassil,56.2,61.7
     .turnin 928 >> Turn in Crown of the Earth
     .accept 929 >> Accept Crown of the Earth
-step << Druid
-    #xprate <1.1
-    .goto Teldrassil,57.6,60.6
-    .train 2366 >> Train Herbalism
-    >>You'll need 5 Earthroot for a quest later. You can ditch Herbalism once you get 5 Earthroot
-step << Druid
-    #xprate <1.1
-    #completewith end
-    >>Level Herbalism to 15 and try to find 5 Earthroot for a level 15 quest later
-    .collect 2449,5
+--step << Druid
+--    #xprate <1.1
+--    .goto Teldrassil,57.6,60.6
+--    .train 2366 >> Train Herbalism
+--    >>You'll need 5 Earthroot for a quest later. You can ditch Herbalism once you get 5 Earthroot
+--step << Druid
+--    #xprate <1.1
+--    #completewith end
+--    >>Level Herbalism to 15 and try to find 5 Earthroot for a level 15 quest later
+--    .collect 2449,5
 step << Priest
     >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on Sentinel Shaya
     .goto Teldrassil,57.2,63.5
