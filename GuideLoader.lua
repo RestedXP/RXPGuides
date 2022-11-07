@@ -40,6 +40,9 @@ local function applies(text)
                     entry = "Scourge"
                 elseif uppercase == "DK" then
                     uppercase = "DEATHKNIGHT"
+                elseif uppercase == "MALE" and UnitSex("player") == 2 or
+                       uppercase == "FEMALE" and UnitSex("player") == 3 then
+                    class = uppercase
                 end
                 v = v and
                         ((uppercase == class or uppercase == addon.game or entry ==
