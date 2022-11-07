@@ -1426,12 +1426,18 @@ function addon.functions.hs(self, ...)
 
     step.activeItems = step.activeItems or {}
     step.activeItems[6948] = true
-    step.activeItems[348699] = true
     step.activeItems[184871] = true
 
-    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and
-        (id == 8690 or id == 556 or id == 348699 or id == 184871) then
-        addon.SetElementComplete(self)
+    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" then
+        if (id == 8690 or id == 556 or id == 348699 or id == 184871) then
+            addon.SetElementComplete(self)
+        elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+            for _,v in pairs(addon.hearthstoneSpellIds) do
+                if v == id then
+                    return addon.SetElementComplete(self)
+                end
+            end
+        end
     end
 end
 
