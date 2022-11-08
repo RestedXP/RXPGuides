@@ -1190,7 +1190,7 @@ function addon.tracker:CreateLevelSplits()
 
     f.history = AceGUI:Create("Label")
     f.history:SetFont(self.fonts.splits,
-                      addon.settings.db.profile.levelSplitsFontSize)
+                      addon.settings.db.profile.levelSplitsFontSize, "")
     f.history:SetFullWidth(true)
     f.history.frame:SetParent(f)
     f.history.frame:SetPoint("TOPLEFT", f, "TOPLEFT", 8,
@@ -1200,7 +1200,7 @@ function addon.tracker:CreateLevelSplits()
 
     f.current = AceGUI:Create("Label")
     f.current:SetFont(self.fonts.splits,
-                      addon.settings.db.profile.levelSplitsFontSize)
+                      addon.settings.db.profile.levelSplitsFontSize, "")
     f.current:SetFullWidth(true)
     f.current.frame:SetParent(f)
     f.current.frame:SetPoint("TOPLEFT", f.history.frame, "BOTTOMLEFT", 0, -8)
@@ -1209,7 +1209,7 @@ function addon.tracker:CreateLevelSplits()
 
     f.total = AceGUI:Create("Label")
     f.total:SetFont(self.fonts.splits,
-                    addon.settings.db.profile.levelSplitsFontSize)
+                    addon.settings.db.profile.levelSplitsFontSize, "")
     f.total:SetFullWidth(true)
     f.total.frame:SetParent(f)
     f.total.frame:SetPoint("TOPLEFT", f.current.frame, "BOTTOMLEFT", 0, 0)
@@ -1466,11 +1466,11 @@ function addon.tracker:UpdateLevelSplits(kind)
     if currentFontSize ~= addon.settings.db.profile.levelSplitsFontSize then
         -- Font size changed, set new size before calculating width/height
         f.current:SetFont(self.fonts.splits,
-                          addon.settings.db.profile.levelSplitsFontSize)
+                          addon.settings.db.profile.levelSplitsFontSize, "")
         f.history:SetFont(self.fonts.splits,
-                          addon.settings.db.profile.levelSplitsFontSize)
+                          addon.settings.db.profile.levelSplitsFontSize, "")
         f.total:SetFont(self.fonts.splits,
-                        addon.settings.db.profile.levelSplitsFontSize)
+                        addon.settings.db.profile.levelSplitsFontSize, "")
     end
 
     local width = max(f.current.label:GetStringWidth(),
