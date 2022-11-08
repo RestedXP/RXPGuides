@@ -20,12 +20,14 @@ addon.version = 40000
 local gameVersion = select(4, GetBuildInfo())
 addon.gameVersion = gameVersion
 
-if gameVersion < 20000 then
-    addon.game = "CLASSIC"
-elseif gameVersion > 20000 and gameVersion < 30000 then
+if gameVersion > 40000 then
+    addon.game = "DF"
+elseif gameVersion > 30000 then
+    addon.game = "WOTLK"
+elseif gameVersion > 20000 then
     addon.game = "TBC"
 else
-    addon.game = "WOTLK"
+    addon.game = "CLASSIC"
 end
 
 addon.questQueryList = {}
