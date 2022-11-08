@@ -31,6 +31,7 @@ local function applies(text)
                 local level = tonumber(entry) or 0xfff
                 local playerLevel = UnitLevel("player") or 1
                 local state = true
+                local gendercheck
                 if entry:sub(1, 1) == "!" then
                     entry = entry:sub(2, -1)
                     state = false
@@ -42,10 +43,10 @@ local function applies(text)
                     uppercase = "DEATHKNIGHT"
                 elseif uppercase == "MALE" and UnitSex("player") == 2 or
                        uppercase == "FEMALE" and UnitSex("player") == 3 then
-                    class = uppercase
+                    gendercheck = true
                 end
                 v = v and
-                        ((uppercase == class or uppercase == addon.game or entry ==
+                        ((gendercheck or uppercase == class or uppercase == addon.game or entry ==
                             race or entry == faction or playerLevel >= level) ==
                             state)
             end
