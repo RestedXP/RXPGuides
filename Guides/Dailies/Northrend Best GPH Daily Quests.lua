@@ -30,7 +30,6 @@ step
 	.daily 13046 >> Accept Feeding Arngrim
 	.goto TheStormPeaks,67.61,59.95
 	.reputation 1119,revered,<0,1 -- if you're 0 into revered it will display this step
-	.isQuestTurnedIn 13001
 step
 	>>Talk to Fjorn's Anvil, Hodir's Horn, Hodir's Helm and Frostworg Denmother
     .daily 12981 >>Accept Hot and Cold
@@ -42,7 +41,6 @@ step
 	.daily 12994 >> Accept Spy Hunter
 	.goto TheStormPeaks,63.49,59.73
 	.reputation 1119,honored,<0,1 -- if you're 0 into honored it will display this step
-	.isQuestTurnedIn 13001
 step
 	>>Talk to Fjorn's Anvil, Hodir's Horn and Hodir's Helm
     .daily 12981 >>Accept Hot and Cold
@@ -52,7 +50,6 @@ step
 	.daily 13006 >> Accept A Viscous Cleaning
 	.goto TheStormPeaks,64.24,59.23
 	.reputation 1119,friendly,<0,1 -- if you're 0 into friendly it will display this step
-	.isQuestTurnedIn 13001
 step
 	.goto TheStormPeaks,70.00,58.00,60,0
     .goto TheStormPeaks,70.14,61.16
