@@ -521,6 +521,8 @@ end
 --Tracks if a player is on a loading screen and pauses the main update loop
 --Some information is not available during zone transitions
 function addon:PLAYER_ENTERING_WORLD()
+    addon.hideArrow = false
+    addon.updateMap = true
     addon.isHidden = addon.settings and addon.settings.db.profile.hideGuideWindow or
                                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
 end

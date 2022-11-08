@@ -849,7 +849,7 @@ function addon.UpdateGotoSteps()
     local minDist
     local zone = C_Map.GetBestMapForUnit("player")
     local x, y, instance = HBD:GetPlayerWorldPosition()
-    if af.element and af.element.instance ~= instance then hideArrow = true end
+    if af.element and af.element.instance ~= instance and instance ~= -1 then hideArrow = true end
     for i, element in ipairs(addon.activeWaypoints) do
         if element.step and element.step.active then
 
