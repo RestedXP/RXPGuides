@@ -569,7 +569,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             groupOrContent = text:match("^%s*#group%s+(.-)%s*[\r\n]") or
                                  text:match("[\r\n]%s*#group%s+(.-)%s*[\r\n]")
             if not groupOrContent then
-                addon.comms:PrettyPrint("\n" .. L("Error parsing guide") ..
+                print("\n" .. L("Error parsing guide") ..
                                             ": Invalid guide group",
                                         text:match("#name%s+.-%s*[\r\n]"))
                 return

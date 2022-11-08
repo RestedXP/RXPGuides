@@ -13,6 +13,14 @@ local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
 local AceGUI = LibStub("AceGUI-3.0")
 local LibDeflate = LibStub("LibDeflate")
 local L = addon.locale.Get
+local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0",true)
+local EasyMenu = function(...)
+    if LibDD then
+        LibDD:EasyMenu(...)
+    else
+        _G.EasyMenu(...)
+    end
+end
 
 addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0",
                                 "AceComm-3.0", "AceSerializer-3.0")

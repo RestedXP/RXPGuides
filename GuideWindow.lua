@@ -4,6 +4,7 @@ local RXPG = addon.RXPG
 local _, class = UnitClass("player")
 local _G = _G
 local fmt = string.format
+local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0",true)
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -979,7 +980,11 @@ Footer.cog:SetScript("OnClick",
 --Footer.cog:HookScript("OnLeave", function(self) self:Hide() end)
 
 function RXPFrame.DropDownMenu()
-    _G.EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
+    if LibDD then
+        LibDD:EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
+    else
+        _G.EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
+    end
 end
 
 GuideName.OnMouseDown = function(self, button)
@@ -1221,7 +1226,11 @@ function addon:LoadGuide(guide, OnLoad)
                 bottomMenu[1].text = L("Go to step") .. " " .. n
                 bottomMenu[1].arg1 = n
                 bottomMenu[feedbackMenuIndex].arg1 = n
-                _G.EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
+                if LibDD then
+                    LibDD:EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
+                else
+                    _G.EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
+                end
             else
                 self.timer = GetTime()
             end
