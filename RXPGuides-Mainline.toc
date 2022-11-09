@@ -25,7 +25,7 @@ Timers.lua
 Communications.lua
 Targeting.lua
 
-DB/wotlk.xml
+DB/mainline.xml
 
 map.lua
 functions.lua
