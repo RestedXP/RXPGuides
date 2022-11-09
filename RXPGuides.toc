@@ -1,5 +1,5 @@
 ## Interface: 30400
-## Interface-Mainline: 90205
+## Interface-Mainline: 100002
 ## Interface-Wrath: 30400
 ## Interface-Classic: 11403
 ## Title: RestedXP Guides
