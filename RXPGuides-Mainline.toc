@@ -30,5 +30,5 @@ DB/wotlk.xml
 map.lua
 functions.lua
 GuideLoader.lua
-
+Guides/GuideList-Mainline.xml
 
