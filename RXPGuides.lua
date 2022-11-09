@@ -878,8 +878,9 @@ function addon.XpRateCheck(step)
 end
 
 function addon.IsFreshAccount()
-    --TODO: Check if it's a fresh or a veteran account
-    return false
+    if C_PlayerInfo and C_PlayerInfo.CanPlayerEnterChromieTime then
+        return not C_PlayerInfo.CanPlayerEnterChromieTime()
+    end
 end
 
 function addon.FreshAccountCheck(step)
