@@ -81,9 +81,6 @@ function addon.settings:InitializeSettings()
             showUnusedGuides = true,
             SoM = 1,
             anchorOrientation = "top",
-            enableUnitscan = true,
-            enableTargetMacro = true,
-            notifyOnTargetUpdates = true,
 
             -- Sliders
             arrowScale = 1,
@@ -99,7 +96,18 @@ function addon.settings:InitializeSettings()
             guideFontSize = 9,
             activeItemsScale = 1,
 
-            showEnabled = true
+            showEnabled = true,
+
+            -- Targeting
+            enableTargetMacro = true,
+            notifyOnTargetUpdates = true,
+            enableTargetAutomation = true,
+            enableFriendlyTargeting = true,
+            enableTargetMarking = true,
+            enableEnemyTargeting = true,
+            enableEnemyMarking = true,
+            showTargetingOnProximity = true,
+            soundOnFind = 3175
         }
     }
 
@@ -197,12 +205,6 @@ function addon.settings:MigrateSettings()
         n("mapCircle", RXPData.mapCircle)
         db.mapCircle = RXPData.mapCircle
         RXPData.mapCircle = nil
-    end
-
-    if RXPData.disableUnitscan ~= nil then
-        n("disableUnitscan", RXPData.disableUnitscan)
-        db.enableUnitscan = not RXPData.disableUnitscan
-        RXPData.disableUnitscan = nil
     end
 
     if RXPCData.hardcore ~= nil then
@@ -1076,39 +1078,187 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             addon.ResetArrowPosition()
                         end
-                    },
+                    }
+                }
+            },
+            targeting = {
+                type = "group",
+                name = _G.BINDING_HEADER_TARGETING,
+                order = 4,
+                args = {
                     macroHeader = {
                         name = fmt("%s%s", L("Targeting Macro"),
                                    addon.targeting:CanCreateMacro() and '' or
                                        ' - ' .. L("Macro capacity reached")), -- TODO locale
                         type = "header",
                         width = "full",
-                        order = 6
+                        order = 1
                     },
                     enableTargetMacro = {
                         name = L("Create Targeting Macro"), -- TODO locale
                         desc = L("Automatically create a targeting macro"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 6.1,
-                        disabled = (_G.unitscan_targets and true) or
-                            not addon.targeting:CanCreateMacro()
+                        order = 1.1,
+                        disabled = not addon.targeting:CanCreateMacro()
                     },
                     notifyOnTargetUpdates = {
                         name = L("Notify on new target"), -- TODO locale
                         desc = L("Notify when a new target is loaded"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 6.2,
-                        disabled = (_G.unitscan_targets and true) or
-                            not addon.targeting:CanCreateMacro()
+                        order = 1.2,
+                        disabled = not addon.targeting:CanCreateMacro() or
+                            not self.db.profile.enableTargetAutomation
+                    },
+                    proximityHeader = {
+                        name = _G.TRACKER_SORT_PROXIMITY,
+                        type = "header",
+                        width = "full",
+                        order = 2
+                    },
+                    enableTargetAutomation = {
+                        name = L("Target Automation"), -- TODO locale
+                        desc = L("Automatically scan nearby targets"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.1
+                    },
+                    enableFriendlyTargeting = {
+                        name = L("Scan Friendly Targets"), -- TODO locale
+                        desc = L("Scan for friendly targets"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.2,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    enableTargetMarking = {
+                        name = L("Mark Friendly Targets"), -- TODO locale
+                        desc = L(
+                            "Mark friendly targets with star, circle, diamond, and triangle"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.21,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile.enableTargetMarking
+                        end
+                    },
+                    enableEnemyTargeting = {
+                        name = L("Scan Enemy Targets"), -- TODO locale
+                        desc = L("Scan for enemy targets"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.3,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    enableEnemyMarking = {
+                        name = L("Mark Enemy Targets"), -- TODO locale
+                        desc = L(
+                            "Mark enemy targets with skull, cross, square, and moon"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.31,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile.enableEnemyMarking
+                        end
+                    },
+                    showTargetingOnProximity = {
+                        name = L("Only show when in range"), -- TODO locale
+                        desc = L(
+                            "Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.32,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    hideActiveTargetsBackground = {
+                        name = L("Hide Targets Background"),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 2.33,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.targeting:RenderTargetFrameBackground()
+                        end,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    alertHeader = {
+                        name = _G.COMMUNITIES_NOTIFICATION_SETTINGS,
+                        type = "header",
+                        width = "full",
+                        order = 3
+                    },
+                    flashOnFind = {
+                        name = L("Flash Client Icon"), -- TODO locale
+                        desc = L(
+                            "Flashes the game icon on taskbar when enemy target found"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.1,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile
+                                           .showTargetingOnProximity
+                        end
+                    },
+                    soundOnFind = {
+                        name = L("Play Sound"), -- TODO locale
+                        desc = L("Sends sound on enemy target found"),
+                        type = "select",
+                        width = optionsWidth,
+                        order = 3.2,
+                        values = {
+                            ["none"] = "none",
+                            [3175] = "Map Ping",
+                            [11773] = "War Drums",
+                            [8959] = "Raid Warning",
+                            [5274] = "Auction Window Open",
+                            [17318] = "LFG Dungeon Ready",
+                            [9378] = "PVP Flag Taken",
+                            [8960] = _G.QUEUED_STATUS_READY_CHECK_IN_PROGRESS,
+                            [9374] = "PVP Flag Captured",
+                            [9375] = "PVP Warning",
+                            [180461] = "Fel Reaver"
+                        },
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile
+                                           .showTargetingOnProximity
+                        end
+                    },
+                    testSoundOnFind = {
+                        order = 3.3,
+                        type = 'execute',
+                        name = _G.EVENTTRACE_BUTTON_PLAY,
+                        disabled = function()
+                            return self.db.profile.soundOnFind == "none"
+                        end,
+                        func = function()
+                            PlaySound(self.db.profile.soundOnFind, "master")
+                        end
                     }
                 }
             },
             levelTrackerFeatures = {
                 type = "group",
                 name = L("Leveling Tracker"),
-                order = 3,
+                order = 5,
                 args = {
                     enableTracker = {
                         name = L("Enable Leveling Tracker"),
@@ -1407,15 +1557,6 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end,
                         hidden = addon.game ~= "CLASSIC"
-                    },
-                    enableUnitscan = {
-                        name = L("Unitscan integration"),
-                        desc = L(
-                            "Automatically adds important npcs to your unitscan list"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 3,
-                        hidden = not _G.unitscan_targets
                     },
                     hardcore = {
                         name = L("Hardcore mode"),

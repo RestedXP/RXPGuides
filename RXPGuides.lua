@@ -44,6 +44,7 @@ addon.player = {
 }
 
 BINDING_HEADER_RXPGuides = addon.title
+BINDING_HEADER_RXPTargeting = addon.title
 
 local questFrame = CreateFrame("Frame");
 
@@ -432,6 +433,7 @@ function addon:OnInitialize()
     addon.settings:InitializeSettings()
     RXPG_init()
     addon.comms:Setup()
+    addon.targeting:Setup()
     if addon.settings.db.profile.enableTracker then addon.tracker:SetupTracker() end
 
     addon.RXPG.LoadCachedGuides()
@@ -513,8 +515,6 @@ function addon:OnEnable()
         -- Check if reloading in raid
         addon.HideInRaid()
     end
-
-    addon.targeting:Setup()
 end
 
 
@@ -621,36 +621,6 @@ function addon.GetGuideTable(guideGroup, guideName)
     if guideGroup and addon.guideList[guideGroup] and guideName and
         addon.guideList[guideGroup][guideName] then
         return addon.guides[addon.guideList[guideGroup][guideName]]
-    end
-end
-
-function addon.UnitScanUpdate()
-    local unitscanList = addon.currentGuide.unitscan
-    if _G.unitscan_targets and unitscanList and addon.settings.db.profile.enableUnitscan then
-        for unit, elements in pairs(unitscanList) do
-            local enabled
-            for _, element in pairs(elements) do
-                if element.step.active then
-                    enabled = true
-                    break
-                end
-            end
-
-            if enabled then
-                if not _G.unitscan_targets[unit] then
-                    _G.DEFAULT_CHAT_FRAME:AddMessage(
-                        _G.LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> +' .. unit)
-                end
-                _G.unitscan_targets[unit] = true
-            else
-                if _G.unitscan_targets[unit] then
-                    _G.DEFAULT_CHAT_FRAME:AddMessage(
-                        _G.LIGHTYELLOW_FONT_COLOR_CODE .. '<unitscan> -' .. unit)
-                end
-                _G.unitscan_targets[unit] = nil
-            end
-
-        end
     end
 end
 

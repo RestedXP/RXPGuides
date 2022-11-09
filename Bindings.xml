@@ -3,4 +3,12 @@
     <Binding name="CLICK RXPItemFrameButton2:LeftButton" category="BINDING_HEADER_RXPGuides"/>
     <Binding name="CLICK RXPItemFrameButton3:LeftButton" category="BINDING_HEADER_RXPGuides"/>
     <Binding name="CLICK RXPItemFrameButton4:LeftButton" category="BINDING_HEADER_RXPGuides"/>
+    <Binding name="CLICK RXPTargetFrame_FriendlyButton1:LeftButton" header="Active Friendly Targets" category="BINDING_HEADER_RXPTargeting" />
+    <Binding name="CLICK RXPTargetFrame_FriendlyButton2:LeftButton" category="BINDING_HEADER_RXPTargeting"/>
+    <Binding name="CLICK RXPTargetFrame_FriendlyButton3:LeftButton" category="BINDING_HEADER_RXPTargeting"/>
+    <Binding name="CLICK RXPTargetFrame_FriendlyButton4:LeftButton" category="BINDING_HEADER_RXPTargeting"/>
+    <Binding name="CLICK RXPTargetFrame_EnemyButton1:LeftButton" header="Active Enemy Targets" category="BINDING_HEADER_RXPTargeting" />
+    <Binding name="CLICK RXPTargetFrame_EnemyButton2:LeftButton" category="BINDING_HEADER_RXPTargeting"/>
+    <Binding name="CLICK RXPTargetFrame_EnemyButton3:LeftButton" category="BINDING_HEADER_RXPTargeting"/>
+    <Binding name="CLICK RXPTargetFrame_EnemyButton4:LeftButton" category="BINDING_HEADER_RXPTargeting"/>
 </Bindings>

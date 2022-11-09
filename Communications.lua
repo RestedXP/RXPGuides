@@ -450,6 +450,11 @@ function addon.comms.OpenBugReport(stepNumber)
                         stepData = fmt("%s\n  targets = %s", stepData,
                                        strjoin(', ', unpack(e.targets)))
                     end
+
+                    if e.unitscan then
+                        stepData = fmt("%s\n  unitscan = %s", stepData,
+                                       strjoin(', ', unpack(e.unitscan)))
+                    end
                 end
             else
                 stepData = fmt("%s\nNo active step elements", stepData, step)

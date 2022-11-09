@@ -2737,22 +2737,24 @@ end
 function addon.functions.unitscan(self, text, ...)
     if type(self) == "string" then
         local element = {}
-        local npcs = {...}
-        for k, v in pairs(npcs) do
-            local npc = strupper(v)
-            if addon.guide.unitscan[npc] then
-                table.insert(addon.guide.unitscan[npc], element)
-            else
-                addon.guide.unitscan[npc] = {element}
-            end
-        end
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.targets = npcs
+        element.unitscan = {...}
         return element
     end
 
+end
+
+function addon.functions.target(self, text, ...)
+    if type(self) == "string" then
+        local element = {}
+
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        element.targets = {...}
+        return element
+    end
 end
 
 local BLquests = {
