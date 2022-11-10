@@ -689,7 +689,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             end
             guide.key = guide.key or RXPG.BuildGuideKey(guide)
             if currentStep == 0 and (not guide[game] and
-                (guide.classic or guide.tbc or guide.wotlk or guide.mainline)) then
+                (guide.classic or guide.tbc or guide.wotlk or guide.df)) then
                 -- print(game,guide[game],guide.name)
                 skipGuide = "#0"
             end
