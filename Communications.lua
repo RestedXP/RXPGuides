@@ -367,6 +367,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         guideAnnouncements.collect[data.title] = UnitLevel("Player")
 
     elseif event == '.fly' then
+        if not data.duration or data.duration <= 0 then return end
+
         -- Questie doesn't announce flight-time, so okay to send this out
         local msg = self.BuildNotification(L("Flying to %s ETA %s"),
                                            data.destination,
@@ -601,6 +603,8 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
 end
 
 function addon.comms:PrettyPrintTime(s)
+    if not s or s <= 0 then return end
+
     local days = floor(s / 24 / 60 / 60)
     s = mod(s, 24 * 60 * 60)
 
