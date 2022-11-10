@@ -462,12 +462,12 @@ step << Alliance
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
 	>>Return to Orgrim's Hammer. Talk to Warbringer Davos Rioht, Brother Keltan, Sky-Reaver Korm Blackscar, Chief Engineer Copperclaw and Koltira Deathweaver
-    .turnin -13330 >>Accept Blood of the Chosen
-    .turnin -13302 >>Accept Slaves to Saronite
-    .turnin -13357 >>Accept Retest Now
-    .turnin -13353 >>Accept Drag and Drop
-	.turnin -13365 >>Accept Not a Bug
-    .turnin -13331 >>Accept Keeping the Alliance Blind
+    .turnin -13330 >>Turn in Blood of the Chosen
+    .turnin -13302 >>Turn in Slaves to Saronite
+    .turnin -13357 >>Turn in Retest Now
+    .turnin -13353 >>Turn in Drag and Drop
+	.turnin -13365 >>Turn in Not a Bug
+    .turnin -13331 >>Turn in Keeping the Alliance Blind
 
 --6 Quest section from Knights of the Ebon Blade. 3 come from The Shadow Vault, other 3 from Death's Rise
 
