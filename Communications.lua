@@ -87,7 +87,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
 
             msg = self.BuildNotification(
                       L("I just leveled from %d to %d in %s"), level - 1, level,
-                      addon.tracker:PrettyPrintTime(s))
+                      addon.comms:PrettyPrintTime(s))
             announceLevelUp(msg)
         else
             -- Leave enough time for TIME_PLAYED to return, ish
@@ -103,7 +103,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
                     msg = self.BuildNotification(L(
                                                      "I just leveled from %d to %d in %s"),
                                                  level - 1, level,
-                                                 addon.tracker:PrettyPrintTime(s))
+                                                 addon.comms:PrettyPrintTime(s))
                     announceLevelUp(msg)
                 elseif addon.settings.db.profile.debug then
                     self.PrettyPrint("Invalid .started or .finished %d", level)
@@ -367,10 +367,12 @@ function addon.comms:AnnounceStepEvent(event, data)
         guideAnnouncements.collect[data.title] = UnitLevel("Player")
 
     elseif event == '.fly' then
+        if not data.duration or data.duration <= 0 then return end
+
         -- Questie doesn't announce flight-time, so okay to send this out
         local msg = self.BuildNotification(L("Flying to %s ETA %s"),
                                            data.destination,
-                                           addon.tracker:PrettyPrintTime(
+                                           addon.comms:PrettyPrintTime(
                                                data.duration))
 
         if addon.settings.db.profile.enableFlyStepAnnouncements and
@@ -598,4 +600,40 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
 
     f:DoLayout()
     f:Show()
+end
+
+function addon.comms:PrettyPrintTime(s)
+    if not s or s <= 0 then return end
+
+    local days = floor(s / 24 / 60 / 60)
+    s = mod(s, 24 * 60 * 60)
+
+    local hours = floor(s / 60 / 60)
+    s = mod(s, 60 * 60)
+
+    local minutes = floor(s / 60)
+    s = mod(s, 60)
+
+    local formattedString
+    if days > 0 then
+        formattedString = fmt("%d %s %d %s %d %s %d %s", days,
+                              days == 1 and L('day') or L('days'), hours,
+                              hours == 1 and L('hour') or L('hours'), minutes,
+                              minutes == 1 and L('minute') or L('minutes'), s,
+                              s == 1 and L('second') or L('seconds'))
+    elseif hours > 0 then
+        formattedString = fmt("%d %s %d %s %d %s", hours,
+                              hours == 1 and L('hour') or L('hours'), minutes,
+                              minutes == 1 and L('minute') or L('minutes'), s,
+                              s == 1 and L('second') or L('seconds'))
+    elseif minutes > 0 then
+        formattedString = fmt("%d %s %d %s", minutes,
+                              minutes == 1 and L('minute') or L('minutes'), s,
+                              s == 1 and L('second') or L('seconds'))
+    else
+        formattedString =
+            fmt("%d %s", s, s == 1 and L('second') or L('seconds')) -- Big gratz for leveling in under a minute
+    end
+
+    return formattedString
 end

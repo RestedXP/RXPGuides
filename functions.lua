@@ -34,6 +34,7 @@ events.spellmissing = events.train
 events.zone = "ZONE_CHANGED_NEW_AREA"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
+events.gossipoption = {"GOSSIP_SHOW"}
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
 events.emote = "PLAYER_TARGET_CHANGED"
@@ -3248,6 +3249,25 @@ function addon.functions.skipgossip(self, text, ...)
     elseif element.timer and event == "GOSSIP_CONFIRM_CANCEL" and
                              (not id or id < 10 or element.npcId == id) then
         addon.StartTimer(element.timer,element.timerText)
+    end
+
+end
+
+function addon.functions.gossipoption(self, ...)
+    if type(self) == "string" then
+        local element = {}
+        local text = ...
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+
+    local element = self.element
+    local match = false -- TODO update with real logic
+
+    if element.step.active and not addon.settings.db.profile.debug and not match and not addon.isHidden then
+        element.step.completed = true
+        addon.updateSteps = true
     end
 
 end
