@@ -251,8 +251,8 @@ function addon.UpdateItemFrame(itemFrame)
                               "SecureActionButtonTemplate")
             btn:SetAttribute("type", "item")
             btn:SetSize(25, 25)
-            if btn.RegisterForClick then
-                btn:RegisterForClick("AnyUp", "AnyDown")
+            if btn.RegisterForClicks then
+                btn:RegisterForClicks("AnyUp", "AnyDown")
             end
             table.insert(buttonList, btn)
             local n = #buttonList
