@@ -909,7 +909,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.4
                     },
                     enableBindAutomation = {
-                        name = L("Inkeeper Bind automation"), -- TODO locale
+                        name = L("Innkeeper Bind automation"), -- TODO locale
                         desc = L(
                             "Allows the guide to automatically set your home at an Innkeeper"),
                         type = "toggle",
