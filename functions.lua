@@ -1617,8 +1617,12 @@ function addon.functions.deathskip(self, ...)
     if not self.element.step.active then return end
     local event = ...
     if event == "CONFIRM_XP_LOSS" then
-         addon.SetElementComplete(self)
-         AcceptXPLoss()
+        addon.SetElementComplete(self)
+        if _G.AcceptXPLoss then
+            AcceptXPLoss()
+        elseif C_PlayerInteractionManager then
+            C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.SpiritHealer)
+        end
     elseif event == "GOSSIP_SHOW" then
         addon.SelectGossipType("healer")
     end
