@@ -531,6 +531,9 @@ function addon.targeting:UpdateTargetFrame(kind)
                               targetFrame, "SecureActionButtonTemplate")
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
+            if btn.RegisterForClicks then
+                btn:RegisterForClicks("AnyUp", "AnyDown")
+            end
             tinsert(enemyTargetButtons, btn)
             local n = #enemyTargetButtons
 
@@ -588,6 +591,9 @@ function addon.targeting:UpdateTargetFrame(kind)
                               targetFrame, "SecureActionButtonTemplate")
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
+            if btn.RegisterForClicks then
+                btn:RegisterForClicks("AnyUp", "AnyDown")
+            end
             tinsert(friendlyTargetButtons, btn)
             local n = #friendlyTargetButtons
 
