@@ -72,6 +72,7 @@ addon.icons = {
     reputation = "|TInterface/GossipFrame/WorkOrderGossipIcon:0|t",
     fly = "|TInterface/GossipFrame/TaxiGossipIcon:0|t",
     fp = "|TInterface/AddOns/" .. addonName .. "/Textures/fp:0|t",
+    gossip = "|TInterface/GossipFrame/GossipGossipIcon:0|t",
     hs = "|TInterface/MINIMAP/TRACKING/Innkeeper:0|t",
     trainer = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
     train = "|TInterface/GossipFrame/TrainerGossipIcon:0|t",
@@ -111,6 +112,8 @@ local GetNumDayEvents = _G.C_Calendar.GetNumDayEvents
 local GetDayEvent = _G.C_Calendar.GetDayEvent
 local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
 local OpenCalendar = _G.C_Calendar.OpenCalendar
+local GossipSelectOption = _G.SelectGossipOption
+local GossipGetOptions = C_GossipInfo.GetOptions or _G.GetGossipOptions
 
 addon.recentTurnIn = {}
 
@@ -1442,8 +1445,6 @@ function addon.functions.hs(self, ...)
     end
 end
 
-local GossipSelectOption = _G.SelectGossipOption
-local GossipGetOptions = C_GossipInfo.GetOptions or _G.GetGossipOptions
 function addon.SelectGossipType(type)
     if C_GossipInfo.GetOptions then
         for i,option in ipairs(GossipGetOptions()) do
@@ -3255,21 +3256,44 @@ end
 
 function addon.functions.gossipoption(self, ...)
     if type(self) == "string" then
-        local element = {}
-        local text = ...
-        if text and text ~= "" then element.text = text end
-        element.textOnly = true
+        local element = {icon = addon.icons.gossip}
+        local text, gossipId = ...
+        gossipId = tonumber(gossipId)
+
+        if not gossipId then
+            return addon.error(L("Error parsing guide") .. " " ..
+                                    addon.currentGuideName ..
+                                    ": Invalid gossipoption ID\n" .. self)
+        end
+
+        if text and text ~= "" then
+            element.text = text
+            element.tooltipText = addon.icons.gossip .. text
+        else
+            element.textOnly = true
+        end
+
+        element.gossipId = gossipId
+
         return element
     end
 
+    if not self.element.step.active then return end
+
+    if addon.isHidden or not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then return end
+
     local element = self.element
-    local match = false -- TODO update with real logic
 
-    if element.step.active and not addon.settings.db.profile.debug and not match and not addon.isHidden then
-        element.step.completed = true
-        addon.updateSteps = true
+    if not element or not element.gossipId then return end
+
+    for i, v in pairs(GossipGetOptions()) do
+        if v.gossipOptionID == element.gossipId then
+            -- C_GossipInfo.SelectOption(v.gossipOptionID)
+            GossipSelectOption(i)
+            addon.SetElementComplete(self)
+            break
+        end
     end
-
 end
 
 function addon.functions.maxlevel(self, ...)
