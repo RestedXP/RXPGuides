@@ -487,6 +487,11 @@ function addon:OnEnable()
 
     self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
 
+    self:RegisterEvent("COMPANION_LEARNED");
+    self:RegisterEvent("COMPANION_UNLEARNED");
+    self:RegisterEvent("COMPANION_UPDATE");
+    self:RegisterEvent("NEW_PET_ADDED");
+
     -- self:RegisterEvent("QUEST_LOG_UPDATE")
 
     questFrame:RegisterEvent("QUEST_COMPLETE")
@@ -604,6 +609,14 @@ function addon:GROUP_LEFT()
         frame:SetShown(frame.IsFeatureEnabled())
     end
 end
+
+function addon:COMPANION_LEARNED(...) addon.UpdateItemFrame() end
+
+function addon:COMPANION_UNLEARNED(...) addon.UpdateItemFrame() end
+
+function addon:COMPANION_UPDATE(...) addon.UpdateItemFrame() end
+
+function addon:NEW_PET_ADDED(...) addon.UpdateItemFrame() end
 
 function addon.HideInRaid()
     if not addon.settings.db.profile.hideInRaid or (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then return end

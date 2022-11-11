@@ -38,6 +38,7 @@ events.gossipoption = {"GOSSIP_SHOW"}
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
 events.emote = "PLAYER_TARGET_CHANGED"
+events.collectmount = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
@@ -3882,5 +3883,41 @@ function addon.functions.flyable(self, ...)
     if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly) == not element.reverse and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
+    end
+end
+
+function addon.functions.collectmount(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.dynamicText = true
+        local text, id = ...
+        id = tonumber(id)
+        if not id then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': No mount ID provided\n' .. self)
+        end
+        element.id = id
+        if text and text ~= "" then
+            element.rawtext = text
+            element.tooltipText = element.rawtext
+        else
+            element.text = " "
+        end
+        return element
+    end
+
+    local element = self.element
+    local name, _, _, _, _, _, _, _, _, _, isCollected = C_MountJournal.GetMountInfoByID(element.id)
+    element.itemName = name
+    if element.rawtext then
+        element.tooltipText = element.rawtext
+        element.text = string.format("%s\n%s", element.rawtext, element.itemName)
+    else
+        element.text = string.format("%s", element.itemName)
+        element.tooltipText = element.text
+    end
+    if isCollected then
+        addon.SetElementComplete(self)
     end
 end
