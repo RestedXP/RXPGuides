@@ -908,5 +908,13 @@ function addon.FreshAccountCheck(step)
     return true
 end
 
+function addon.LevelCheck(step)
+    local level = UnitLevel("player")
+    local maxLevel = tonumber(step.maxlevel) or 1000
+    if level <= maxLevel then
+        return true
+    end
+end
+
 
 RXP = addon --debug purposes

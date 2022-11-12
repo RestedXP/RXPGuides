@@ -1847,6 +1847,7 @@ step << Human Paladin
     >>Use the Symbol of Life on Henze Faulk
     .turnin 1786 >>Turn in The Tome of Divinity
     .accept 1787 >>Accept The Tome of Divinity
+    .use 6866
 step << Human Paladin
     .goto Elwynn Forest,73.5,51.3
     >>Kill Defias Wizards around the island
@@ -2029,7 +2030,7 @@ step
     .turnin 185 >> Turn in Tiger Mastery
     .turnin 190 >> Turn in Panther Mastery
     .accept 186 >> Accept Tiger Mastery
-    .accept 191 >> Accept Panther Mastery 
+    .accept 191 >> Accept Panther Mastery
 step
     .goto Duskwood,28.8,30.9
     >>Run back to Duskwood, click on the dirt mound to summon Eliza
@@ -2690,6 +2691,7 @@ step << Human Paladin
     >>Use the Symbol of Life on Henze Faulk
     .turnin 1786 >>Turn in The Tome of Divinity
     .accept 1787 >>Accept The Tome of Divinity
+    .use 6866
 step << Human Paladin
     .goto Elwynn Forest,73.5,51.3
     >>Kill Defias Wizards around the island
