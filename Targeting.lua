@@ -300,9 +300,6 @@ function addon.targeting:GOSSIP_SHOW()
 
     if not targetUnit then return end
 
-    if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~=
-        markerId then SetRaidTarget(unitId, markerId) end
-
     -- Return after first match, won't be an enemy and friendly target as the same step
     if addon.settings.db.profile.enableFriendlyTargeting then
         for i, name in ipairs(friendlyTargets) do
@@ -311,9 +308,8 @@ function addon.targeting:GOSSIP_SHOW()
                 self:UpdateTargetFrame("target")
                 self:UpdateMacro()
 
-                if GetRaidTargetIndex("target") ~= nil and
-                    GetRaidTargetIndex(unitId) ~= markerId then
-                    SetRaidTarget(unitId, markerId)
+                if GetRaidTargetIndex("target") ~= nil then
+                    SetRaidTarget("target", 0)
                 end
                 return
             end
@@ -326,6 +322,10 @@ function addon.targeting:GOSSIP_SHOW()
                 tremove(enemyTargets, i)
                 self:UpdateTargetFrame("target")
                 self:UpdateMacro()
+
+                if GetRaidTargetIndex("target") ~= nil then
+                    SetRaidTarget("target", 0)
+                end
                 return
             end
         end
