@@ -127,7 +127,7 @@ local function shouldTargetCheck()
 end
 
 function addon.targeting:UpdateMacro(queuedTargets)
-    -- TODO handle scanned targets
+    -- TODO add rare targets
     if not addon.settings.db.profile.enableTargetMacro and shouldTargetCheck() then
         return
     end
@@ -587,7 +587,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks then
-                btn:RegisterForClicks("LeftButtonUp")
+                btn:RegisterForClicks("LeftButtonDown")
             end
             tinsert(enemyTargetButtons, btn)
             local n = #enemyTargetButtons
@@ -656,7 +656,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks then
-                btn:RegisterForClicks("LeftButtonUp")
+                btn:RegisterForClicks("LeftButtonDown")
             end
             tinsert(friendlyTargetButtons, btn)
             local n = #friendlyTargetButtons
