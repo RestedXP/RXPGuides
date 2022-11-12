@@ -392,7 +392,6 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     -- Only notify sound once per step
     if proxmityPolling.match then return end
 
-    -- TODO add sound channel option
     if addon.settings.db.profile.soundOnFind ~= "none" then
         PlaySound(addon.settings.db.profile.soundOnFind,
                   addon.settings.db.profile.soundOnFindChannel)
