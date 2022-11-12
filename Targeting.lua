@@ -394,7 +394,8 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
 
     -- TODO add sound channel option
     if addon.settings.db.profile.soundOnFind ~= "none" then
-        PlaySound(addon.settings.db.profile.soundOnFind, 'Master')
+        PlaySound(addon.settings.db.profile.soundOnFind,
+                  addon.settings.db.profile.soundOnFindChannel)
     end
 
     proxmityPolling.match = true

@@ -107,7 +107,8 @@ function addon.settings:InitializeSettings()
             enableEnemyTargeting = true,
             enableEnemyMarking = true,
             showTargetingOnProximity = true,
-            soundOnFind = 3175
+            soundOnFind = 3175,
+            soundOnFindChannel = 'Master'
         }
     }
 
@@ -1242,15 +1243,34 @@ function addon.settings:CreateAceOptionsPanel()
                                            .showTargetingOnProximity
                         end
                     },
-                    testSoundOnFind = {
+                    soundOnFindChannel = {
+                        name = L("Sound Channel"), -- TODO locale
+                        type = "select",
+                        width = optionsWidth,
                         order = 3.3,
+                        values = {
+                            ["Master"] = "Master",
+                            ["Music"] = "Music",
+                            ["Ambience"] = "Ambience",
+                            ["Dialog"] = "Dialog"
+                        },
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile
+                                           .showTargetingOnProximity or
+                                       self.db.profile.soundOnFind == "none"
+                        end
+                    },
+                    testSoundOnFind = {
+                        order = 3.4,
                         type = 'execute',
                         name = _G.EVENTTRACE_BUTTON_PLAY,
                         disabled = function()
                             return self.db.profile.soundOnFind == "none"
                         end,
                         func = function()
-                            PlaySound(self.db.profile.soundOnFind, "master")
+                            PlaySound(self.db.profile.soundOnFind,
+                                      self.db.profile.soundOnFindChannel)
                         end
                     }
                 }
