@@ -1249,10 +1249,10 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.3,
                         values = {
-                            ["Master"] = "Master",
-                            ["Music"] = "Music",
-                            ["Ambience"] = "Ambience",
-                            ["Dialog"] = "Dialog"
+                            ["Master"] = _G.MASTER,
+                            ["Music"] = _G.MUSIC_VOLUME,
+                            ["Ambience"] = _G.AMBIENCE_VOLUME,
+                            ["Dialog"] = _G.DIALOG_VOLUME
                         },
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation or
