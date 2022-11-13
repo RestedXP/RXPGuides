@@ -11,6 +11,7 @@ local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupAssistant,
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
 local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
 local wipe = wipe
+local GetRealZoneText = GetRealZoneText
 local GameTooltip = _G.GameTooltip
 
 local L = addon.locale.Get
@@ -48,6 +49,8 @@ local enemyTargetIcons = {
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_6.blp",
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_5.blp"
 }
+
+local zoneRares = {}
 
 function addon.targeting:Setup()
     if addon.settings.db.profile.enableTargetMacro then
@@ -103,6 +106,11 @@ function addon.targeting:Setup()
         -- Prevent forbidden UI popup
         UIParent:UnregisterEvent("ADDON_ACTION_FORBIDDEN")
     end
+
+    if addon.rares then
+        self:LoadRares()
+        self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+    end
 end
 
 function addon.targeting:ADDON_LOADED(_, name)
@@ -122,7 +130,8 @@ local function shouldTargetCheck()
     return
         addon.settings.db.profile.enableTargetAutomation and not IsInRaid() and
             (next(enemyTargets) ~= nil or next(friendlyTargets) ~= nil or
-                next(proxmityPolling.scannedTargets) ~= nil)
+                next(proxmityPolling.scannedTargets) ~= nil or next(zoneRares) ~=
+                nil)
 
 end
 
@@ -349,6 +358,12 @@ function addon.targeting.CheckTargetProximity()
 
         for _, name in pairs(friendlyTargets) do
             proxmityPolling.scanData = {name = name, kind = 'friendly'}
+            TargetUnit(name, true)
+        end
+
+        for _, name in pairs(zoneRares) do
+            -- TODO set rare icon, use 132212
+            proxmityPolling.scanData = {name = name, kind = 'enemy'}
             TargetUnit(name, true)
         end
 
@@ -739,4 +754,24 @@ function addon.targeting:UpdateTargetFrame(kind)
     else
         targetFrame:SetHeight(68)
     end
+end
+
+function addon.targeting:ZONE_CHANGED_NEW_AREA() self:LoadRares() end
+
+function addon.targeting:LoadRares()
+    if not addon.settings.db.profile.scanForRares or
+        not addon.settings.db.profile.showTargetingOnProximity or
+        not addon.settings.db.profile.enableTargetAutomation or not addon.rares then
+        return
+    end
+
+    local zone = GetRealZoneText()
+
+    if not zone then return end
+
+    zoneRares = addon.rares[zone] or {}
+    self:UpdateTargetFrame()
+
+    print("Rares in zone: ", zone)
+    for i, name in ipairs(zoneRares) do print("- " .. name) end
 end
