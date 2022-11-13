@@ -487,11 +487,13 @@ function addon:OnEnable()
 
     self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
 
-    self:RegisterEvent("COMPANION_LEARNED");
-    self:RegisterEvent("COMPANION_UNLEARNED");
-    self:RegisterEvent("COMPANION_UPDATE");
-    self:RegisterEvent("NEW_PET_ADDED");
-    self:RegisterEvent("TOYS_UPDATED");
+    if addon.gameVersion > 90000 then
+        self:RegisterEvent("COMPANION_LEARNED")
+        self:RegisterEvent("COMPANION_UNLEARNED")
+        self:RegisterEvent("COMPANION_UPDATE")
+        self:RegisterEvent("NEW_PET_ADDED")
+        self:RegisterEvent("TOYS_UPDATED")
+    end
 
     -- self:RegisterEvent("QUEST_LOG_UPDATE")
 
