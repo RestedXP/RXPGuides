@@ -3914,37 +3914,6 @@ function addon.functions.pve(self, ...)
     return addon.functions.pvp(self, ...)
 end
 
-events.flyable = "ZONE_CHANGED"
-function addon.functions.flyable(self, text, zone)
-    if type(self) == "string" then
-        local element = {}
-        element.zone = tonumber(zone) or addon.mapId[zone]
-        if text and text ~= "" then element.text = text end
-        element.textOnly = true
-        return element
-    end
-
-    local element = self.element
-    local canPlayerFly = addon.CanPlayerFly(element.zone) ~= element.reverse
-    --print(canPlayerFly,'t')
-    if element.step.active and not addon.settings.db.profile.debug and not canPlayerFly and not addon.isHidden then
-        element.step.completed = true
-        addon.updateSteps = true
-    end
-end
-
-function addon.functions.noflyable(self, text, zone)
-    if type(self) == "string" then
-        local element = {}
-        element.zone = tonumber(zone) or addon.mapId[zone]
-        if text and text ~= "" then element.text = text end
-        element.textOnly = true
-        element.reverse = true
-        return element
-    end
-    return addon.functions.flyable(self, text, zone)
-end
-
 function addon.CanPlayerFly(zoneOrContinent)
     local region = zoneOrContinent or C_Map.GetBestMapForUnit("player")
     if type(region) ~= "number" then
@@ -3976,5 +3945,37 @@ function addon.CanPlayerFly(zoneOrContinent)
         if ((continentId == addon.mapId["Outland"] or (cwf and continentId == addon.mapId["Northrend"])) and ridingSkill > 224) then
             return true
         end
+    end
+end
+
+events.noflyable = "ZONE_CHANGED"
+function addon.functions.noflyable(self, text, zone)
+    if type(self) == "string" then
+        local element = {}
+        element.zone = tonumber(zone) or addon.mapId[zone]
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        element.reverse = true
+        return element
+    end
+    return addon.functions.flyable(self, text, zone)
+end
+
+events.flyable = "ZONE_CHANGED"
+function addon.functions.flyable(self, text, zone)
+    if type(self) == "string" then
+        local element = {}
+        element.zone = tonumber(zone) or addon.mapId[zone]
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+
+    local element = self.element
+    local canPlayerFly = addon.CanPlayerFly(element.zone) ~= element.reverse
+    --print(canPlayerFly,'t')
+    if element.step.active and not addon.settings.db.profile.debug and not canPlayerFly and not addon.isHidden then
+        element.step.completed = true
+        addon.updateSteps = true
     end
 end
