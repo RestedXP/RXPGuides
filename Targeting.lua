@@ -10,6 +10,7 @@ local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupAssistant,
                                      UnitIsGroupLeader, IsInGroup
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
 local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
+local wipe = wipe
 local GameTooltip = _G.GameTooltip
 
 local L = addon.locale.Get
@@ -25,7 +26,9 @@ local proxmityPolling = {
     last = GetTime(),
     match = false,
     lastMatch = 0,
-    matchTimeout = 5
+    matchTimeout = 5,
+    scanData = {},
+    scannedTargets = {}
 }
 
 local friendlyTargets = {}
@@ -118,11 +121,13 @@ end
 local function shouldTargetCheck()
     return
         addon.settings.db.profile.enableTargetAutomation and not IsInRaid() and
-            (next(enemyTargets) ~= nil or next(friendlyTargets) ~= nil)
+            (next(enemyTargets) ~= nil or next(friendlyTargets) ~= nil or
+                next(proxmityPolling.scannedTargets) ~= nil)
 
 end
 
 function addon.targeting:UpdateMacro(queuedTargets)
+    -- TODO add rare targets
     if not addon.settings.db.profile.enableTargetMacro and shouldTargetCheck() then
         return
     end
@@ -302,6 +307,10 @@ function addon.targeting:GOSSIP_SHOW()
                 tremove(friendlyTargets, i)
                 self:UpdateTargetFrame("target")
                 self:UpdateMacro()
+
+                if GetRaidTargetIndex("target") ~= nil then
+                    SetRaidTarget("target", 0)
+                end
                 return
             end
         end
@@ -313,6 +322,10 @@ function addon.targeting:GOSSIP_SHOW()
                 tremove(enemyTargets, i)
                 self:UpdateTargetFrame("target")
                 self:UpdateMacro()
+
+                if GetRaidTargetIndex("target") ~= nil then
+                    SetRaidTarget("target", 0)
+                end
                 return
             end
         end
@@ -329,9 +342,15 @@ function addon.targeting.CheckTargetProximity()
         not addon.settings.db.profile.showTargetingOnProximity then return end
 
     if GetTime() - proxmityPolling.last > proxmityPolling.frequency then
-        for _, name in pairs(enemyTargets) do TargetUnit(name, true) end
+        for _, name in pairs(enemyTargets) do
+            proxmityPolling.scanData = {name = name, kind = 'enemy'}
+            TargetUnit(name, true)
+        end
 
-        for _, name in pairs(friendlyTargets) do TargetUnit(name, true) end
+        for _, name in pairs(friendlyTargets) do
+            proxmityPolling.scanData = {name = name, kind = 'friendly'}
+            TargetUnit(name, true)
+        end
 
         proxmityPolling.last = GetTime()
 
@@ -344,7 +363,12 @@ function addon.targeting.CheckTargetProximity()
             end
 
             proxmityPolling.match = false
+            wipe(proxmityPolling.scannedTargets)
             addon.targeting.activeTargetFrame:Hide()
+
+            -- Reset raid icons on timeout
+            for i = 1, 8 do SetRaidTarget("player", i) end
+            SetRaidTarget("player", 0)
         end
     end
 end
@@ -352,27 +376,41 @@ end
 function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     if func ~= "TargetUnit()" or forbiddenAddon ~= addonName then return end
 
-    proxmityPolling.lastMatch = GetTime()
-
-    -- Only notify once per match
-    if proxmityPolling.match then return end
-
-    if addon.settings.db.profile.debug then
-        addon.comms.PrettyPrint("Target nearby")
+    if not proxmityPolling.scanData or not proxmityPolling.scanData.name then
+        return
     end
 
+    proxmityPolling.scannedTargets[proxmityPolling.scanData.name] =
+        proxmityPolling.scanData.kind
+    proxmityPolling.lastMatch = GetTime()
+    self:UpdateTargetFrame()
+
+    if addon.settings.db.profile.debug then
+        addon.comms.PrettyPrint(proxmityPolling.scanData.name .. " nearby")
+    end
+
+    -- Only notify sound once per step
+    if proxmityPolling.match then return end
+
     if addon.settings.db.profile.soundOnFind ~= "none" then
-        PlaySound(addon.settings.db.profile.soundOnFind, 'Master')
+        PlaySound(addon.settings.db.profile.soundOnFind,
+                  addon.settings.db.profile.soundOnFindChannel)
     end
 
     proxmityPolling.match = true
-
-    self:UpdateTargetFrame()
 end
 
 function addon.targeting:UpdateFriendlyTargets(targets)
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
+    if addon.settings.db.profile.showTargetingOnProximity then
+        for name, kind in pairs(proxmityPolling.scannedTargets) do
+            if kind == 'friendly' then
+                proxmityPolling.scannedTargets[name] = nil
+            end
+        end
+    end
+
     if #friendlyTargets == 0 and #targets == 0 then return end
 
     friendlyTargets = targets
@@ -384,6 +422,14 @@ end
 function addon.targeting:UpdateEnemyTargets(targets)
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
+    if addon.settings.db.profile.showTargetingOnProximity then
+        for name, kind in pairs(proxmityPolling.scannedTargets) do
+            if kind == 'enemy' then
+                proxmityPolling.scannedTargets[name] = nil
+            end
+        end
+    end
+
     if #enemyTargets == 0 and #targets == 0 then return end
 
     enemyTargets = targets
@@ -522,7 +568,16 @@ function addon.targeting:UpdateTargetFrame(kind)
 
     local enemyTargetButtons = targetFrame.enemyTargetButtons
     local j = 0
-    for _, targetName in ipairs(enemyTargets) do
+    -- If proximity disabled, show all
+    local enemiesList = addon.settings.db.profile.showTargetingOnProximity and
+                            {} or enemyTargets
+
+    if addon.settings.db.profile.showTargetingOnProximity then
+        for name, kind in pairs(proxmityPolling.scannedTargets) do
+            if kind == 'enemy' then tinsert(enemiesList, name) end
+        end
+    end
+    for _, targetName in ipairs(enemiesList) do
         j = j + 1
         local btn = enemyTargetButtons[j]
 
@@ -532,7 +587,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks then
-                btn:RegisterForClicks("AnyUp", "AnyDown")
+                btn:RegisterForClicks("LeftButtonDown")
             end
             tinsert(enemyTargetButtons, btn)
             local n = #enemyTargetButtons
@@ -581,8 +636,17 @@ function addon.targeting:UpdateTargetFrame(kind)
 
     local friendlyTargetButtons = targetFrame.friendlyTargetButtons
     local i = 0
+    -- If proximity disabled, show all
+    local friendlyList = addon.settings.db.profile.showTargetingOnProximity and
+                             {} or friendlyTargets
 
-    for _, targetName in ipairs(friendlyTargets) do
+    if addon.settings.db.profile.showTargetingOnProximity then
+        for name, kind in pairs(proxmityPolling.scannedTargets) do
+            if kind == 'friendly' then tinsert(friendlyList, name) end
+        end
+    end
+
+    for _, targetName in ipairs(friendlyList) do
         i = i + 1
         local btn = friendlyTargetButtons[i]
 
@@ -592,7 +656,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks then
-                btn:RegisterForClicks("AnyUp", "AnyDown")
+                btn:RegisterForClicks("LeftButtonDown")
             end
             tinsert(friendlyTargetButtons, btn)
             local n = #friendlyTargetButtons
