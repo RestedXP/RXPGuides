@@ -3952,7 +3952,7 @@ function addon.CanPlayerFly(zoneOrContinent)
 end
 
 events.noflyable = "ZONE_CHANGED"
-function addon.functions.noflyable(self, text, zone)
+function addon.functions.noflyable(self, text, zone, skill)
     if type(self) == "string" then
         local element = {}
         element.zone = tonumber(zone) or addon.mapId[zone]
@@ -3961,23 +3961,24 @@ function addon.functions.noflyable(self, text, zone)
         element.reverse = true
         return element
     end
-    return addon.functions.flyable(self, text, zone)
+    return addon.functions.flyable(self, text, zone, skill)
 end
 
 events.flyable = "ZONE_CHANGED"
-function addon.functions.flyable(self, text, zone)
+function addon.functions.flyable(self, text, zone, skill)
     if type(self) == "string" then
         local element = {}
         element.zone = tonumber(zone) or addon.mapId[zone]
         if text and text ~= "" then element.text = text end
         element.textOnly = true
+        element.skill = tonumber(skill) or -4
         return element
     end
-
+    local ridingSkill = RXP.GetSkillLevel("riding")
     local element = self.element
     local canPlayerFly = addon.CanPlayerFly(element.zone) ~= element.reverse
     --print(canPlayerFly,'t')
-    if element.step.active and not addon.settings.db.profile.debug and not canPlayerFly and not addon.isHidden then
+    if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly or ridingSkill < element.skill) and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
