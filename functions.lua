@@ -38,6 +38,9 @@ events.gossipoption = {"GOSSIP_SHOW"}
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
 events.emote = "PLAYER_TARGET_CHANGED"
+events.collectmount = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
+events.collecttoy = {"TOYS_UPDATED"}
+events.collectpet = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
@@ -1254,7 +1257,30 @@ addon.functions["goto"] = function(self, ...)
     end
 end
 
+events.flygoto = "ZONE_CHANGED"
+events.groundgoto = "ZONE_CHANGED"
+
+local function DetectFlying(self,mode)
+    if type(self) == "table" and self.element and self.element.step.active then
+        local element = self.element
+        local canPlayerFly = addon.CanPlayerFly(element.zone)
+        if not element.skip and canPlayerFly then
+            element.skip = mode
+            addon.updateMap = true
+        elseif element.skip and not canPlayerFly then
+            element.skip = not mode
+            addon.updateMap = true
+        end
+    end
+end
+
 addon.functions.groundgoto = function(self, ...)
+    DetectFlying(self,true)
+    return addon.functions["goto"](self, ...)
+end
+
+addon.functions.flygoto = function(self, ...)
+    DetectFlying(self,false)
     return addon.functions["goto"](self, ...)
 end
 
@@ -3891,24 +3917,198 @@ function addon.functions.pve(self, ...)
     return addon.functions.pvp(self, ...)
 end
 
-events.flyable = "ZONE_CHANGED"
-function addon.functions.flyable(self, ...)
+function addon.CanPlayerFly(zoneOrContinent)
+    local region = zoneOrContinent or C_Map.GetBestMapForUnit("player")
+    if type(region) ~= "number" then
+        return
+    end
+    local mapInfo = C_Map.GetMapInfo(region)
+    local continentId = mapInfo and mapInfo.parentMapID
+
+    local ridingSkill = RXP.GetSkillLevel("riding")
+
+    if not continentId then
+        return
+    elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+        local shFlying = C_QuestLog.IsQuestFlaggedCompleted(63893)
+        local _, _, _, bfaFlying = GetAchievementInfo(13250)
+        --12 = kalimdor, 18 = eastern kingdoms, 101 = outland,113 = northrend, 127 = dalaran(weird), 424 = Pandaria, 572 = Draenor, 588 = ashran, 1165 = dazar alor, 895 = boralus, 876 = kul'tiras
+        -- 619 = Broken Isles, Zuldazar 862, Shadowlands = 1550, 1978=dragonflight
+        if (ridingSkill > 224 and
+            (continentId == 12 or continentId == 18 or continentId == 101 or continentId == 113  or continentId == 127 or continentId == 424 or continentId == 572 or continentId == 588 or continentId == 619 or continentId == 862) or
+            bfaFlying and (continentId == 876 or continentId == 895 or continentId == 1165) or
+            shFlying and continentId == 1550
+         ) then
+            return true
+        end
+    else
+        local cwf = IsPlayerSpell(54197)
+
+        --1945 = outland,113 = northrend
+        if ((continentId == addon.mapId["Outland"] or (cwf and continentId == addon.mapId["Northrend"])) and ridingSkill > 224) then
+            return true
+        end
+    end
+end
+
+events.noflyable = "ZONE_CHANGED"
+function addon.functions.noflyable(self, text, zone, skill)
     if type(self) == "string" then
         local element = {}
-        local text, continent, reverse = ...
-        element.reverse = reverse
-        element.continent = addon.mapId[continent] or tonumber(continent)
+        element.zone = tonumber(zone) or addon.mapId[zone]
         if text and text ~= "" then element.text = text end
         element.textOnly = true
+        element.reverse = true
+        return element
+    end
+    return addon.functions.flyable(self, text, zone, skill)
+end
+
+events.flyable = "ZONE_CHANGED"
+function addon.functions.flyable(self, text, zone, skill)
+    if type(self) == "string" then
+        local element = {}
+        element.zone = tonumber(zone) or addon.mapId[zone]
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        element.skill = tonumber(skill) or -4
+        return element
+    end
+    local ridingSkill = RXP.GetSkillLevel("riding")
+    local element = self.element
+    local canPlayerFly = addon.CanPlayerFly(element.zone) ~= element.reverse
+    --print(canPlayerFly,'t')
+    if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly or ridingSkill < element.skill) and not addon.isHidden then
+        element.step.completed = true
+        addon.updateSteps = true
+    end
+end
+
+function addon.functions.collectmount(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.dynamicText = true
+        local text, id = ...
+        id = tonumber(id)
+        if not id then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': No mount ID provided\n' .. self)
+        end
+        element.id = id
+        if text and text ~= "" then
+            element.rawtext = text
+            element.tooltipText = element.rawtext
+        else
+            element.text = " "
+        end
         return element
     end
 
     local element = self.element
-    local id = element.questId
-    local canPlayerFly = true -- TODO: Substitute that for the fly mount check function
+    local name, _, _, _, _, _, _, _, _, _, isCollected = C_MountJournal.GetMountInfoByID(element.id)
+    element.itemName = name
+    if element.rawtext then
+        element.tooltipText = element.rawtext
+        element.text = string.format("%s\n%s", element.rawtext, element.itemName)
+    else
+        element.text = string.format("%s", element.itemName)
+        element.tooltipText = element.text
+    end
+    if isCollected then
+        addon.SetElementComplete(self)
+    end
+end
 
-    if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly) == not element.reverse and not addon.isHidden then
-        element.step.completed = true
-        addon.updateSteps = true
+function addon.functions.collecttoy(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.dynamicText = true
+        local text, id = ...
+        id = tonumber(id)
+        if not id then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': No toy ID provided\n' .. self)
+        end
+        element.id = id
+        if text and text ~= "" then
+            element.rawtext = text
+            element.tooltipText = element.rawtext
+        else
+            element.text = " "
+        end
+        return element
+    end
+
+    local element = self.element
+
+    local itemID, toyName, icon, isFavorite, hasFanfare = C_ToyBox.GetToyInfo(element.id)
+    local isCollected = PlayerHasToy(element.id)
+
+    element.itemName = toyName
+    if element.rawtext then
+        element.tooltipText = element.rawtext
+        element.text = string.format("%s\n%s", element.rawtext, element.itemName)
+    else
+        element.text = string.format("%s", element.itemName)
+        element.tooltipText = element.text
+    end
+    if isCollected then
+        addon.SetElementComplete(self)
+    end
+end
+
+function addon.functions.collectpet(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.dynamicText = true
+        local text, id = ...
+        id = tonumber(id)
+        if not id then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': No pet npc ID provided\n' .. self)
+        end
+        element.id = id
+        if text and text ~= "" then
+            element.rawtext = text
+            element.tooltipText = element.rawtext
+        else
+            element.text = " "
+        end
+        return element
+    end
+
+    local element = self.element
+
+    -- we need to reset petjournal search, as owned parameter could be received only from journal by index
+    C_PetJournal.SetSearchFilter("")
+    C_PetJournal.SetFilterChecked(LE_PET_JOURNAL_FILTER_COLLECTED, true)
+    C_PetJournal.SetFilterChecked(LE_PET_JOURNAL_FILTER_NOT_COLLECTED, true)
+    C_PetJournal.SetAllPetTypesChecked(true)
+    C_PetJournal.SetAllPetSourcesChecked(true)
+
+    local isCollected = false -- default values so it doesn't break
+    element.itemName = ""
+
+    for index = 1, C_PetJournal.GetNumPets() do
+        local petID, speciesID, owned, cutomName, _, _, _, speciesName, _, _, companionID = C_PetJournal.GetPetInfoByIndex(index);
+        if (companionID == element.id) then -- we found it
+            element.itemName = speciesName
+            isCollected = owned
+            break
+        end
+    end
+
+    if element.rawtext then
+        element.tooltipText = element.rawtext
+        element.text = string.format("%s\n%s", element.rawtext, element.itemName)
+    else
+        element.text = string.format("%s", element.itemName)
+        element.tooltipText = element.text
+    end
+    if isCollected then
+        addon.SetElementComplete(self)
     end
 end

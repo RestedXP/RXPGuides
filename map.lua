@@ -758,7 +758,7 @@ local function updateArrow()
         not (addon.QuestAutoTurnIn(3912) or addon.QuestAutoAccept(3913)) then
         local skip
         for i,element in pairs(addon.activeWaypoints) do
-            skip = skip or (not element.textOnly and addon.currentGuide.name == "41-43 Badlands")
+            skip = skip or (element.step and element.step.ignorecorpse) or (not element.textOnly and addon.currentGuide.name == "41-43 Badlands")
         end
         local zone = HBD:GetPlayerZone()
         local corpse = C_DeathInfo.GetCorpseMapPosition(zone)
@@ -853,15 +853,7 @@ function addon.UpdateGotoSteps()
     for i, element in ipairs(addon.activeWaypoints) do
         if element.step and element.step.active then
 
-            if element.tag == "groundgoto" and not element.skip and
-                                 IsFlyableArea() and addon.GetSkillLevel("riding") >= 225 and
-                                 zone == element.zone and (not addon.game == "WOTLK" or
-                                 instance ~= addon.mapId["Northrend"] or IsPlayerSpell(54197)) then
-                --forceArrowUpdate = forceArrowUpdate or not element.skip
-                element.skip = true
-                addon.updateMap = true
-                return
-            elseif (element.radius or element.dynamic) and element.arrow and
+            if (element.radius or element.dynamic) and element.arrow and
                 not (element.parent and
                     (element.parent.completed or element.parent.skip) and
                     not element.parent.textOnly) and not element.skip then
