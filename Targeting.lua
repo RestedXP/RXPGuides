@@ -50,7 +50,7 @@ local enemyTargetIcons = {
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_5.blp"
 }
 
-local zoneRares = {}
+local rareTargets = {}
 
 function addon.targeting:Setup()
     if addon.settings.db.profile.enableTargetMacro then
@@ -130,7 +130,7 @@ local function shouldTargetCheck()
     return
         addon.settings.db.profile.enableTargetAutomation and not IsInRaid() and
             (next(enemyTargets) ~= nil or next(friendlyTargets) ~= nil or
-                next(proxmityPolling.scannedTargets) ~= nil or next(zoneRares) ~=
+                next(rareTargets) ~= nil or next(proxmityPolling.scannedTargets) ~=
                 nil)
 
 end
@@ -232,6 +232,21 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
             end
         end
     end
+
+    for i, name in ipairs(rareTargets) do
+        if name == unitName then
+            self:UpdateTargetFrame(nameplateID)
+
+            if addon.settings.db.profile.flashOnFind then
+                FlashClientIcon()
+            end
+
+            if addon.settings.db.profile.enableEnemyMarking then
+                -- Steal moon, lowest of enemies for mark
+                self:UpdateMarker("rare", nameplateID, 4)
+            end
+        end
+    end
 end
 
 function addon.targeting:UPDATE_MOUSEOVER_UNIT()
@@ -269,6 +284,21 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
             end
         end
     end
+
+    for i, name in ipairs(rareTargets) do
+        if name == unitName then
+            self:UpdateTargetFrame(kind)
+
+            if addon.settings.db.profile.flashOnFind then
+                FlashClientIcon()
+            end
+
+            if addon.settings.db.profile.enableEnemyMarking then
+                -- Steal moon, lowest of enemies for mark
+                self:UpdateMarker("rare", kind, 4)
+            end
+        end
+    end
 end
 
 function addon.targeting:PLAYER_TARGET_CHANGED()
@@ -299,6 +329,21 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
                 if addon.settings.db.profile.enableEnemyMarking then
                     self:UpdateMarker("enemy", kind, i)
                 end
+            end
+        end
+    end
+
+    for i, name in ipairs(rareTargets) do
+        if name == unitName then
+            self:UpdateTargetFrame(kind)
+
+            if addon.settings.db.profile.flashOnFind then
+                FlashClientIcon()
+            end
+
+            if addon.settings.db.profile.enableEnemyMarking then
+                -- Steal moon, lowest of enemies for mark
+                self:UpdateMarker("rare", kind, 4)
             end
         end
     end
@@ -361,9 +406,8 @@ function addon.targeting.CheckTargetProximity()
             TargetUnit(name, true)
         end
 
-        for _, name in pairs(zoneRares) do
-            -- TODO set rare icon, use 132212
-            proxmityPolling.scanData = {name = name, kind = 'enemy'}
+        for i, name in ipairs(rareTargets) do
+            proxmityPolling.scanData = {name = name, kind = 'rare'}
             TargetUnit(name, true)
         end
 
@@ -399,10 +443,6 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
         proxmityPolling.scanData.kind
     proxmityPolling.lastMatch = GetTime()
     self:UpdateTargetFrame()
-
-    if addon.settings.db.profile.debug then
-        addon.comms.PrettyPrint(proxmityPolling.scanData.name .. " nearby")
-    end
 
     -- Only notify sound once per step
     if proxmityPolling.match then return end
@@ -565,7 +605,7 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     if kind == "friendly" then
         -- Use star, circle, diamond, and triangle
         markerId = 0 + index
-    elseif kind == "enemy" then
+    elseif kind == "enemy" or kind == 'rare' then
         -- use skull, cross, square, and moon
         markerId = 9 - index
     end
@@ -589,9 +629,12 @@ function addon.targeting:UpdateTargetFrame(kind)
 
     if addon.settings.db.profile.showTargetingOnProximity then
         for name, kind in pairs(proxmityPolling.scannedTargets) do
-            if kind == 'enemy' then tinsert(enemiesList, name) end
+            if kind == 'enemy' or kind == 'rare' then
+                tinsert(enemiesList, name)
+            end
         end
     end
+
     for _, targetName in ipairs(enemiesList) do
         j = j + 1
         local btn = enemyTargetButtons[j]
@@ -765,13 +808,19 @@ function addon.targeting:LoadRares()
         return
     end
 
+    for name, kind in pairs(proxmityPolling.scannedTargets) do
+        if kind == 'rare' then proxmityPolling.scannedTargets[name] = nil end
+    end
+
     local zone = GetRealZoneText()
 
     if not zone then return end
 
-    zoneRares = addon.rares[zone] or {}
+    rareTargets = addon.rares[zone] or {}
     self:UpdateTargetFrame()
 
-    print("Rares in zone: ", zone)
-    for i, name in ipairs(zoneRares) do print("- " .. name) end
+    if addon.settings.db.profile.debug then
+        print("Rares in zone:", zone)
+        for i, name in ipairs(rareTargets) do print("- " .. name) end
+    end
 end
