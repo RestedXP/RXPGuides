@@ -108,7 +108,8 @@ function addon.settings:InitializeSettings()
             enableEnemyMarking = true,
             showTargetingOnProximity = true,
             soundOnFind = 3175,
-            soundOnFindChannel = 'Master'
+            soundOnFindChannel = 'Master',
+            scanForRares = true
         }
     }
 
@@ -1189,7 +1190,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Hide Targets Background"),
                         desc = L("Make background transparent"),
                         type = "toggle",
-                        width = "normal",
+                        width = optionsWidth,
                         order = 2.33,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1197,6 +1198,18 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    scanForRares = {
+                        name = L("Scan for Nearby Rares"), -- TODO locale
+                        desc = L("Checks for nearby rare spawns"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.34,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile
+                                           .showTargetingOnProximity
                         end
                     },
                     alertHeader = {
