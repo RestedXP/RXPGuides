@@ -105,13 +105,13 @@ if gameVersion < 30000 then
         ["Isle of Quel'Danas"] = 1957,
         ["Kalimdor"] = 1414,
         ["Eastern Kingdoms"] = 1415,
-        ["Outland"] = 987
+        ["Outland"] = 1945 --987?
     }
 elseif gameVersion < 40000 then
     addon.mapId = {
         ["Dire Maul"] = 234,
         ["The Hinterlands"] = 1425,
-        ["Northrend"] = 571,
+        ["Northrend"] = 113,
         ["Cosmic"] = 946,
         ["Blackrock Spire"] = 250,
         ["Razorfen Downs"] = 300,
@@ -224,7 +224,6 @@ elseif gameVersion < 40000 then
         ["Auchenai Crypts"] = 256,
         ["Drak'Tharon Keep"] = 160,
         ["Winterspring"] = 1452,
-        ["Outland"] = 987,
         ["Silithus"] = 1451,
         ["GrizzlyHills"] = 116,
         ["Scarlet Monastery"] = 302,
@@ -282,6 +281,7 @@ elseif gameVersion < 40000 then
         ["The Oculus"] = 142,
         ["Hillsbrad Foothills"] = 1424,
         ["The Arcatraz"] = 269,
+        ["Outland"] = 1945, --987?
     }
 else
     addon.mapId = {}
@@ -331,7 +331,6 @@ if gameVersion > 30000 then
     addon.mapId["GrizzlyHills"] = addon.mapId["Grizzly Hills"]
     addon.mapId["HowlingFjord"] = addon.mapId["Howling Fjord"]
     addon.mapId["BoreanTundra"] = addon.mapId["Borean Tundra"]
-    addon.mapId["Northrend"] = 571
 end
 
 addon.professionID = {

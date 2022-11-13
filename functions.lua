@@ -1254,7 +1254,30 @@ addon.functions["goto"] = function(self, ...)
     end
 end
 
+events.flygoto = "ZONE_CHANGED"
+events.groundgoto = "ZONE_CHANGED"
+
+local function DetectFlying(self,mode)
+    if type(self) == "table" and self.element and self.element.step.active then
+        local element = self.element
+        local canPlayerFly = addon.CanPlayerFly(element.zone)
+        if not element.skip and canPlayerFly then
+            element.skip = mode
+            addon.updateMap = true
+        elseif element.skip and not canPlayerFly then
+            element.skip = not mode
+            addon.updateMap = true
+        end
+    end
+end
+
 addon.functions.groundgoto = function(self, ...)
+    DetectFlying(self,true)
+    return addon.functions["goto"](self, ...)
+end
+
+addon.functions.flygoto = function(self, ...)
+    DetectFlying(self,false)
     return addon.functions["goto"](self, ...)
 end
 
@@ -3892,23 +3915,66 @@ function addon.functions.pve(self, ...)
 end
 
 events.flyable = "ZONE_CHANGED"
-function addon.functions.flyable(self, ...)
+function addon.functions.flyable(self, text, zone)
     if type(self) == "string" then
         local element = {}
-        local text, continent, reverse = ...
-        element.reverse = reverse
-        element.continent = addon.mapId[continent] or tonumber(continent)
+        element.zone = tonumber(zone) or addon.mapId[zone]
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         return element
     end
 
     local element = self.element
-    local id = element.questId
-    local canPlayerFly = true -- TODO: Substitute that for the fly mount check function
-
-    if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly) == not element.reverse and not addon.isHidden then
+    local canPlayerFly = addon.CanPlayerFly(element.zone) ~= element.reverse
+    --print(canPlayerFly,'t')
+    if element.step.active and not addon.settings.db.profile.debug and not canPlayerFly and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
+    end
+end
+
+function addon.functions.noflyable(self, text, zone)
+    if type(self) == "string" then
+        local element = {}
+        element.zone = tonumber(zone) or addon.mapId[zone]
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        element.reverse = true
+        return element
+    end
+    return addon.functions.flyable(self, text, zone)
+end
+
+function addon.CanPlayerFly(zoneOrContinent)
+    local region = zoneOrContinent or C_Map.GetBestMapForUnit("player")
+    if type(region) ~= "number" then
+        return
+    end
+    local mapInfo = C_Map.GetMapInfo(region)
+    local continentId = mapInfo and mapInfo.parentMapID
+
+    local ridingSkill = RXP.GetSkillLevel("riding")
+
+    if not continentId then
+        return
+    elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+        local shFlying = C_QuestLog.IsQuestFlaggedCompleted(63893)
+        local _, _, _, bfaFlying = GetAchievementInfo(13250)
+        --12 = kalimdor, 18 = eastern kingdoms, 101 = outland,113 = northrend, 127 = dalaran(weird), 424 = Pandaria, 572 = Draenor, 588 = ashran, 1165 = dazar alor, 895 = boralus, 876 = kul'tiras
+        -- 619 = Broken Isles, Zuldazar 862, Shadowlands = 1550, 1978=dragonflight
+        if (ridingSkill > 224 and
+            (continentId == 12 or continentId == 18 or continentId == 101 or continentId == 113  or continentId == 127 or continentId == 424 or continentId == 572 or continentId == 588 or continentId == 619 or continentId == 862) or
+            bfaFlying and (continentId == 876 or continentId == 895 or continentId == 1165) or
+            shFlying and continentId == 1550
+         ) then
+            return true
+        end
+    else
+        local cwf = IsPlayerSpell(54197)
+
+        --1945 = outland,113 = northrend
+        if ((continentId == addon.mapId["Outland"] or (cwf and continentId == addon.mapId["Northrend"])) and ridingSkill > 224) then
+            return true
+        end
     end
 end
