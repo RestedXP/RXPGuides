@@ -3318,8 +3318,8 @@ function addon.functions.gossipoption(self, ...)
 
     for i, v in pairs(GossipGetOptions()) do
         if v.gossipOptionID == element.gossipId then
-            -- C_GossipInfo.SelectOption(v.gossipOptionID)
-            GossipSelectOption(i)
+            C_GossipInfo.SelectOption(v.gossipOptionID)
+            --GossipSelectOption(i)
             addon.SetElementComplete(self)
             break
         end
