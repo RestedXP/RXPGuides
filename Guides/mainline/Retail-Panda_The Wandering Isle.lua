@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Horde 10-60\1 BfA Intro << Horde
 #defaultfor Pandaren
 
-<<!DK
+<<!DK Pandaren
 
 step
     #sticky
