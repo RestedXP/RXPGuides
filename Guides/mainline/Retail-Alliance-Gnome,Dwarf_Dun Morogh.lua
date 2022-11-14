@@ -10,7 +10,6 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
 #defaultfor Gnome/Dwarf
 
-<<Alliance
 <<Gnome/Dwarf
 
 #next 
