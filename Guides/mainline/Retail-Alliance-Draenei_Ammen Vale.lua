@@ -8,8 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 3Retail-Alliance-Draenei_Azuremyst Isle
 #defaultfor Draenei
 
-<<Alliance
-<<!DK
+<<Alliance !DK
 
 step
     #sticky
