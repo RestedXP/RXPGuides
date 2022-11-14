@@ -10,13 +10,8 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
 #defaultfor Gnome/Dwarf
 
-
-
-
-
-
 <<Alliance
-<<!DK
+<<!DK/!Gnome/!Dwarf
 
 #next 
 step << Gnome
@@ -448,12 +443,3 @@ step <<Dwarf/Gnome
     .zoneskip 37
     .skipgossip
 ]])
-
-
-
-
-
-
-
-
-
