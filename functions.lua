@@ -41,6 +41,7 @@ events.emote = "PLAYER_TARGET_CHANGED"
 events.collectmount = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 events.collecttoy = {"TOYS_UPDATED"}
 events.collectpet = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
+events.tradeskill = events.train
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
@@ -4110,5 +4111,62 @@ function addon.functions.collectpet(self, ...)
     end
     if isCollected then
         addon.SetElementComplete(self)
+    end
+end
+
+function addon.functions.tradeskill(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.dynamicText = true
+        local text, id, index = ...
+        id = tonumber(id)
+        index = tonumber(index)
+        if not id or not index then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': No npc ID or skill index provided provided\n' .. self)
+        end
+        element.id = id
+        element.index = index
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "-"
+        end
+        element.requestFromServer = true
+        element.tooltipText = addon.icons.trainer .. element.text
+        return element
+    end
+
+    local element = self.element
+
+    --print (IsTradeskillTrainer())
+    local _, _, _, _, _, npcId = strsplit('-', UnitGUID("npc") or "");
+    local isCollected = false
+    npcId = tonumber(npcId)
+    if npcId == element.id and IsTradeskillTrainer() then -- npc number check and tradeskill trainer
+        if (not GetTrainerServiceTypeFilter("available")) then
+            SetTrainerServiceTypeFilter("available", 1)
+        end
+        if (not GetTrainerServiceTypeFilter("unavailable")) then
+            SetTrainerServiceTypeFilter("unavailable", 1)
+        end
+        if (not GetTrainerServiceTypeFilter("used")) then
+            SetTrainerServiceTypeFilter("used", 1)
+        end
+        local _, used = GetTrainerServiceInfo(element.index)
+        --print (used)
+        if used == "used" then
+            isCollected = true
+        else
+            if used == "available" then
+                BuyTrainerService(element.index)
+                isCollected = true
+            end
+        end
+    end
+
+    if isCollected then
+        addon.SetElementComplete(self, true)
     end
 end
