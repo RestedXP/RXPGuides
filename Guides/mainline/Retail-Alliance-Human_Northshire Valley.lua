@@ -8,8 +8,7 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Alliance 10-60\2Retail-Alliance_Elwynn Forest
 #defaultfor Human
 
-<<Alliance
-<<!DK
+<<Alliance !DK
 
 step
     #completewith next
