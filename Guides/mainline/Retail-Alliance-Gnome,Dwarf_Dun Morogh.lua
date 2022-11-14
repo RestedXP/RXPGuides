@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Gnome/Dwarf
 
 <<Alliance
-<<!DK/!Gnome/!Dwarf
+<<Gnome/Dwarf
 
 #next 
 step << Gnome
