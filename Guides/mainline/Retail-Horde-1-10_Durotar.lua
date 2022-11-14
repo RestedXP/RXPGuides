@@ -282,7 +282,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Troll Starting Zones << Troll
 #subgroup Orc Starting Zones << Orc
 
-<< Horde
+<< Horde !DK
 
 step << Troll
     .zoneskip 1727
