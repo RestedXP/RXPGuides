@@ -8,8 +8,7 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
 #defaultfor Worgen
 
-<< Alliance
-<< !DK
+<<Alliance !DK
 
 step
     #sticky
