@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 2 Tauren Mulgore
 #defaultfor Tauren
 
-<< Horde
+<< Horde !DK
 
 step << Tauren
     .zoneskip 1727
@@ -176,7 +176,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Tauren Starting Zones
 #defaultfor Tauren
 
-<< Horde
+<< Horde !DK
 
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Maur Raincaller
