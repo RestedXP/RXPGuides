@@ -69,18 +69,18 @@ addon.hearthstoneSpellIds = {
 	366945,
 }
 
-if gameVersion > 30000 then
-    addon.mapId["ScarletEnclave"] = 124
-    addon.mapId["IcecrownGlacier"] = addon.mapId["Icecrown"]
-    addon.mapId["CrystalsongForest"] = addon.mapId["Crystalsong Forest"]
-    addon.mapId["StormPeaks"] = addon.mapId["The Storm Peaks"]
-    addon.mapId["TheStormPeaks"] = addon.mapId["The Storm Peaks"]
-    addon.mapId["SholazarBasin"] = addon.mapId["Sholazar Basin"]
-    addon.mapId["ZulDrak"] = addon.mapId["Zul'Drak"]
-    addon.mapId["GrizzlyHills"] = addon.mapId["Grizzly Hills"]
-    addon.mapId["HowlingFjord"] = addon.mapId["Howling Fjord"]
-    addon.mapId["BoreanTundra"] = addon.mapId["Borean Tundra"]
-end
+
+addon.mapId["ScarletEnclave"] = 124
+addon.mapId["IcecrownGlacier"] = addon.mapId["Icecrown"]
+addon.mapId["CrystalsongForest"] = addon.mapId["Crystalsong Forest"]
+addon.mapId["StormPeaks"] = addon.mapId["The Storm Peaks"]
+addon.mapId["TheStormPeaks"] = addon.mapId["The Storm Peaks"]
+addon.mapId["SholazarBasin"] = addon.mapId["Sholazar Basin"]
+addon.mapId["ZulDrak"] = addon.mapId["Zul'Drak"]
+addon.mapId["GrizzlyHills"] = addon.mapId["Grizzly Hills"]
+addon.mapId["HowlingFjord"] = addon.mapId["Howling Fjord"]
+addon.mapId["BoreanTundra"] = addon.mapId["Borean Tundra"]
+
 
 addon.professionID = {
     alchemy = {2259, 3101, 3464, 11611, 28596, 51304},
