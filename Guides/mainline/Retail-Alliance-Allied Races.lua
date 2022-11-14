@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #displayname Allied Races
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
 
-<<KulTiran/DarkIronDwarf/LightforgedDraenei/Mechagnome/VoidElf/Alliance Pandaren
+<<KulTiran/DarkIronDwarf/LightforgedDraenei/Mechagnome/VoidElf
 
 
 step <<KulTiran/DarkIronDwarf/LightforgedDraenei/Mechagnome/VoidElf
