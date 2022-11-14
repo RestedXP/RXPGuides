@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #subgroup Blood Elf Starting Zones
 #name 1 Blood Elf Starting Zone
-#displayname Blood Elf Starting Zone
+#displayname Chapter 1 - Sunstrider Isle
 #next 2 Blood Elf Eversong Woods
 #defaultfor BloodElf
 
@@ -216,7 +216,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Starting Zones
 #name 2 Blood Elf Eversong Woods
-#displayname Blood Elf Eversong Woods
+#displayname Chapter 2 - Eversong Woods
 #next RestedXP Horde 10-60\1 BfA Intro
 #subgroup Blood Elf Starting Zones
 #defaultfor BloodElf
