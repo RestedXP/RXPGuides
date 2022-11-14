@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Dracthyr Starting Zones
 #name Retail-Dracthyr_The Forbidden Reach
 #displayname Dracthyr Starting Zone
-#next Dragonflight 60-70\Dragonflight Full Campaign + Some Side Quests\1) The Waking Shores Campaign
+#next Dragonflight 60-70\1) The Waking Shores Campaign
 
 <<Dracthyr
 
@@ -28,7 +28,7 @@ step
     .complete 64864,1 --1/1 Dracthyr ally awakened
 step
     #completewith TheForbiddenReachAwakenDracthyr
-    +|cfff78300Spamming Space while moving is faster than normal moving|r
+    +|cfff78300Spamming Space while moving is faster than moving normally|r
 step
     >>Jump down and interact with Tethalash. Wait for your Disintegrate to complete.
     .goto 2109,44.36,85.54
@@ -62,8 +62,7 @@ step
 step
     #sticky
     #label TheForbiddenReachArcaneGuardians
-    >>Focus Ancient Constructs, they destroy themselves below 40% HP
-    *When they die they spawn lesser constructs. Try to get away as fast as possible if not just kill them
+    >>Focus |cff00ecffAncient Constructs|r. Run away when they hit 40% (they splinter and spawn two small adds)
     .complete 64863,1 --4/4 Guardians or Constructs slain
 step
     >>Pick up the Stack of Weapons
@@ -120,14 +119,16 @@ step
     #completewith next
     +Check your Bags for new Equipment
 step
-    >>Kill the Small Elementals for a Damage Buff
-    *Make sure to complete 'Exit reached' before killing the dragon
+    >>Make sure to complete 'Exit reached' before killing the dragon
     .goto 2109,66.4,10.69
     .complete 64871,1 --Exit reached
+step
+    >>Kill |cff00ecffLapisagos|r. The small elementals give you a damage buff on death
+    .goto 2109,66.4,10.69
     .complete 64871,2 --1/1 Lapisagos slain
 step
-    >>Cancel (Right-Click) the "Chocking Buff" to increase Movement Speed
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Scalecommander Cindrethresh and Scalecommander Azurathel
+    >>|cfff78300Cancel the "Chocking Buff" to increase movement speed|r
     .turnin 64871 >>Turn in The Dragon at the Door
     .accept 64872 >>Accept The Fire Within
     .goto 2118,44.39,61.51
@@ -135,8 +136,7 @@ step
     .goto 2118,44.10,61.38
 step
     #completewith TheForbiddenReachTheFireWithin3
-    +Check your Bags for new Equipment
-    *Check your Spellbook for Fire Breath
+    +Check your bags for new equipment
 step
     #completewith TheForbiddenReachTheFireWithin
     +|cfff78300You can click on the Fire Breath Infusers to reset your Fire Breath cooldown|r
@@ -258,7 +258,7 @@ step
     .turnin 65060 >>Turn in Caldera of the Menders
     .accept 65063 >>Accept Into the Hive
 step
-    >>|cfff78300DON'T FOLLOW HIM|r. Just follow the arrow to fill the progress bar by standing within the gas.
+    >>|cfff78300DON'T FOLLOW HIM|r. Just follow the arrow to fill the progress bar by standing in the gas.
     .goto 2110,84.91,77.00
     .complete 65063,1 --1/1 Follow Cindrethresh
 step
@@ -276,21 +276,25 @@ step
     +Spamming Space is faster than walking normally
 step
     #completewith next
-    >>Kill Scythid in the Area
+    >>Kill |cff00ecffScythid|r in the Area
     .complete 65074,1 --4/4 Scythid slain
 step
     >>Kill |cff00ecffScalerenders|r in the area. Loot them for the glands
     .loop 20,2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
     .complete 65073,1 --6/6 Toxin Glands collected
 step
-    >>Kill Scythid in the Area
-    .goto 2118,35.21,24.52
+    >>Kill |cff00ecffScythid|r in the Area
+    .goto 2118,35.21,24.52,30,0
+    .goto 2118,31.33,24.79,30,0
+    .loop 20,2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
     .complete 65074,1 --4/4 Scythid slain
 step
     #completewith next
-    +Use Soar and fly back
+    .cooldown spell,369536,>0,1
+    .cast 369536 >> Cast Soar and follow the arrow
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Scalecommander Cindrethresh and Scalecommander Viridia
+    .goto 2118,20.59,17.44,30,0
     .turnin 65074 >>Turn in Easy Prey
     .goto 2118,20.23,19.01
     .turnin 65073 >>Turn in A Toxic Problem
@@ -310,10 +314,9 @@ step
 step
     >>Use |T4622457:0:0|t[Emerald Blossom] on any |cff00ff00Injured Drakonid|r. Interact with the Emerald Blossom Infuser to reset your cooldown
     *Alternatively use |T4622464:0:0|t[Living Flame]
-    .goto 2118,24.91,12.79,10,0
-    .goto 2118,25.77,17.75,10,0
-    .goto 2118,25.89,18.55,10,0
-    .goto 2118,24.03,22.16,10,0
+    .goto 2118,25.77,17.75,15,0
+    .goto 2118,25.89,18.55,15,0
+    .goto 2118,24.03,22.16,15,0
     .goto 2118,21.89,22.21
     .complete 65307,1 --10/10 Injured dracthyr healed
 step
@@ -364,9 +367,9 @@ step
 step
     #completewith next
     .goto 2110,32.46,40.74,10,0
-    +|cfff78300Stop using the |cffffff00[ExtraActionButton]|r. Just let it happen!
+    +|cfff78300Stop using the |cffffff00[ExtraActionButton]|r. Just let it happen! Step into a Gascloud to generate more toxicity.
 step
-    >>Step into a Gascloud to generate more toxicity and return to Scalecommander Viridia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Scalecommander Viridia
     .goto 2118,20.07,19.08
     .turnin 66324 >>Turn in Never Forgotten
     .accept 65075 >>Accept The Healing Wings
@@ -389,6 +392,7 @@ step
     +|cfff78300Use the mount in your bags and drag a mount to your action bars|r
 step
     #completewith next
+    .cooldown spell,369536,>0,1
     .cast 369536 >>Cast Soar and follow the arrow
 step
     #label TheForbiddenReachStormsunderCrater
@@ -405,10 +409,12 @@ step
 step
     #sticky
     #label TheForbiddenReachConjuredArmy
+    >>Kill |cff00ecffConjured Elementals|r
     .goto 2118,76.04,66.83,0,0
     .complete 65050,1 --12/12 Conjured elementals slain
 step
     #completewith next
+    >>Kill |cff00ecffTaraseks|r
     .complete 65049,1 --7/7 Tarasek slain
 step
     #label TheForbiddenReachThePrimalists1
@@ -422,6 +428,9 @@ step
     >>Interact with the floating stones
     .goto 2118,71.93,54.52
     .complete 65046,3 --1/1 Primalist leaders discovered
+step
+    #completewith next
+    .cast 369536 >>Cast Soar and follow the arrow
 step
     #label TheForbiddenReachThePrimalists
     >>Interact with the floating stones
