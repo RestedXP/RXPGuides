@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 2 Undead Eversong Woods
 #defaultfor Undead
 
-<< Horde
+<< Horde !DK
 
 step << Undead
     .zoneskip 1727
@@ -214,7 +214,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Undead Starting Zones
 #defaultfor Undead
 
-<< Horde
+<< Horde !DK
 
 step
     .itemcount 132516,1
