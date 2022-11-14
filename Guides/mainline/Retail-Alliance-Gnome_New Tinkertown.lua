@@ -8,8 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 3Retail-Alliance-Gnome,Dwarf_Dun Morogh
 #defaultfor Gnome
 
-<<Alliance
-<<!DK
+<<Alliance !DK
 
 step
     #sticky
