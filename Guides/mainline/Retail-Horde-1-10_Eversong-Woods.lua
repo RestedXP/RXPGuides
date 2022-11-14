@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 2 Blood Elf Eversong Woods
 #defaultfor BloodElf
 
-<< Horde
+<< Horde !DK
 
 step
     .zoneskip 1727
@@ -221,7 +221,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Blood Elf Starting Zones
 #defaultfor BloodElf
 
-<< Horde
+<< Horde !DK
 
 step << Hunter
     #completewith next
