@@ -22,7 +22,7 @@ step << Orc
     #completewith DurotarFirstQuestCheck
     +Welcome to the |cfff78300Orc Starting Zone|r Guide of RestedXP.
     *Without consumables/heirlooms this route is roughly 5 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r instead.
-    *With consumbales/heirlooms this route is just as fast or up to 15% faster.
+    *With consumables/heirlooms this route is just as fast or up to 15% faster.
 step << Orc
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the Orc Starting Zone.
