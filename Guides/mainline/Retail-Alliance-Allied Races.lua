@@ -87,7 +87,7 @@ step <<VoidElf
     >>Click the Void Portal
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ambassador Moorgard
     .turnin 49788 >>Turn in For the Alliance
-step
+step <<Kultiran/DarkIronDwarf/LightforgedDraenei/Mechagnome/VoidElf/Pandaren
     >>Talk to Chromie
     .goto 84,56.26,17.32
     .skipgossip 1
