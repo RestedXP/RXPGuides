@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire << Alliance
 #next RestedXP Horde 10-60\1 BfA Intro << Horde
 
-<<!DemonHunter !DK !Kultiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf
+<<!DemonHunter !DK !Kultiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step << Alliance/Horde
 	#completewith next
