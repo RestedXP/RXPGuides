@@ -4,10 +4,13 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #subgroup Orc Starting Zones << Orc
 #subgroup Troll Starting Zones << Troll
+#subgroup Durotar Starting Zones << !Orc !Troll
 #name 1Orc Starting Zone << Orc
 #name 2Orc Starting Zone << Troll
+#name Valley of Trials << !Orc !Troll
 #displayname Chapter 2 - Valley of Trials << Troll
 #displayname Chapter 1 - Orc Starting Zone << Orc
+#displayname Valley of Trials (Orc) << !Orc !Troll
 #next 2Troll Starting Zone << Orc
 #next RestedXP Horde 10-60\1 BfA Intro << Troll
 #defaultfor Orc/Troll
@@ -278,12 +281,15 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #name 1Troll Starting Zone << Troll
 #name 2Troll Starting Zone << Orc
+#name Echo Isles << !Troll !Orc
 #displayname Chapter 1 - Echo Isles << Troll
 #displayname Chapter 2 - Echo Isles << Orc
+#displayname Echo Isles (Troll) << !Troll !Orc
 #next 2Orc Starting Zone << Troll
 #next RestedXP Horde 10-60\1 BfA Intro << Orc
 #subgroup Troll Starting Zones << Troll
 #subgroup Orc Starting Zones << Orc
+#subgroup Durotar Starting Zones << !Troll !Orc
 #defaultfor Orc/Troll
 
 << Horde !DK
