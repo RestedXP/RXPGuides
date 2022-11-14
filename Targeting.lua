@@ -445,7 +445,9 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     self:UpdateTargetFrame()
 
     -- Only notify sound once per step
-    if proxmityPolling.match then return end
+    if proxmityPolling.match or proxmityPolling.scanData.kind == 'friendly' then
+        return
+    end
 
     if addon.settings.db.profile.soundOnFind ~= "none" then
         PlaySound(addon.settings.db.profile.soundOnFind,
