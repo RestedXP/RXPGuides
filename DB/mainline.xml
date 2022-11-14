@@ -6,4 +6,6 @@
     <Script file="DB/mainline/quest.lua"/>
     <Script file="DB/mainline/spells.lua"/>
     <Script file="DB/mainline/rares.lua"/>
+    <Script file="DB/mainline/db.lua"/>
+
 </Ui>
