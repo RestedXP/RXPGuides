@@ -10,8 +10,7 @@ RXPGuides.RegisterGuide([[
 #next Troll Starting Zone << Orc
 #next RestedXP Horde 10-60\1 BfA Intro << Troll
 
-
-<< Horde
+<< Horde !DK
 
 step << Orc
     .zoneskip 1727
