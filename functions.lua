@@ -1520,8 +1520,10 @@ function addon.functions.home(self, ...)
         if ConfirmBinder then
             ConfirmBinder()
         elseif C_PlayerInteractionManager then
-            C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
-            C_PlayerInteractionManager.ClearInteraction(Enum.PlayerInteractionType.Binder)
+            C_Timer.After(0.25, function()
+                C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
+                C_PlayerInteractionManager.ClearInteraction(Enum.PlayerInteractionType.Binder)
+            end)
         end
         element.confirm = true
         _G.StaticPopup1:Hide()
