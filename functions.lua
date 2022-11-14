@@ -1471,17 +1471,30 @@ function addon.functions.hs(self, ...)
     end
 end
 
-function addon.SelectGossipType(type)
+local homeText = strupper(_G.HOME or "%")
+function addon.SelectGossipType(gossipType)
     if C_GossipInfo.GetOptions then
+
         for i,option in ipairs(GossipGetOptions()) do
-            if option.type == type then
+            if option.type == gossipType then
                 GossipSelectOption(i)
                 return true
+            elseif not option.type and not IsModifierKeyDown() then
+                if gossipType == "binder" then
+                    local text = strupper(option.name or "")
+                    if option.icon == 132052 and text:find(homeText) then
+                        GossipSelectOption(i)
+                        return true
+                    end
+                elseif gossipType == "taxi" and option.icon == 132057 then
+                    GossipSelectOption(i)
+                    return true
+                end
             end
         end
     else
         for i,gossipType in ipairs({GossipGetOptions()}) do
-            if i % 2 == 0 and gossipType == type then
+            if i % 2 == 0 and gossipType == gossipType then
                 GossipSelectOption(i/2)
                 return true
             end
