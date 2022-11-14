@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #subgroup Undead Starting Zones
 #name 1 Undead Starting Zone
-#displayname Undead Starting Zone
+#displayname Chapter 1 - Deathknell
 #next 2 Undead Eversong Woods
 #defaultfor Undead
 
@@ -209,7 +209,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Starting Zones
 #name 2 Undead Eversong Woods
-#displayname Undead Eversong Woods
+#displayname Chapter 2 - Eversong Woods
 #next RestedXP Horde 10-60\1 BfA Intro
 #subgroup Undead Starting Zones
 #defaultfor Undead
