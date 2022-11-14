@@ -8,8 +8,7 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
 #defaultfor NightElf
 
-<<Alliance
-<<!DemonHunter !DK
+<<Alliance !DemonHunter !DK
 
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Zenn Foulhoof
