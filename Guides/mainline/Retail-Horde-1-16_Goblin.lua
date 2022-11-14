@@ -6,8 +6,7 @@ RXPGuides.RegisterGuide([[
 #name Goblin Starting Zone
 #next RestedXP Horde 10-60\1 BfA Intro
 
-<< Horde
-<< Goblin
+<< Goblin !DK
 
 step << Goblin
     .zoneskip 1727
