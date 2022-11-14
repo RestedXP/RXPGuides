@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #subgroup Tauren Starting Zones
 #name 1 Tauren Starting Zone
-#displayname Tauren Starting Zone
+#displayname Chapter 1 - Camp Narache
 #next 2 Tauren Mulgore
 #defaultfor Tauren
 
@@ -171,7 +171,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Starting Zones
 #name 2 Tauren Mulgore
-#displayname Tauren Mulgore
+#displayname Chapter 2 - Mulgore
 #next RestedXP Horde 10-60\1 BfA Intro
 #subgroup Tauren Starting Zones
 #defaultfor Tauren
