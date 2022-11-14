@@ -8,8 +8,7 @@ RXPGuides.RegisterGuide([[
 #next 3Retail-Alliance-Night Elf_Teldrassil
 #defaultfor NightElf
 
-<<Alliance
-<<!DemonHunter !DK 
+<<Alliance !DemonHunter !DK 
 
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ilthalaine
