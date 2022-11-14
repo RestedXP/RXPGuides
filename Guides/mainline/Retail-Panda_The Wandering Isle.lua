@@ -831,6 +831,9 @@ step << Horde
     .turnin 31450 >>Turn in A New Fate
     .goto 1,45.57,12.62
     .accept 31012 >>Accept Joining the Horde << Horde
+step << Horde
+    +The Panda Guide is Done to move onto the next Guide type in chat /reload
+    *manually skip this step after
 step <<Alliance << Pandaren
     #veteran
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Renato
@@ -866,6 +869,9 @@ step <<Alliance <<Pandaren
     .skipgossip
     .zoneskip 37
     .goto 84,62.25,72.96
+step << Alliance
+    +The Panda Guide is Done to move onto the next Guide type in chat /reload
+    *manually skip this step after
 ]])
 
 
