@@ -15,7 +15,7 @@ step
     #completewith DraeneiExileCheck
     +Welcome to the Draenei Starting Zone Guide of RestedXP.
     *Without consumables/heirlooms this route is roughly 5 minutes slower than Exiles Reach. For faster leveling recreate your character and choose Exiles Reach instead.
-    *With consumbales/heirlooms this route is just as fast
+    *With consumables/heirlooms this route is just as fast
 step
     #label DraeneiExileCheck
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Megelon
