@@ -901,7 +901,7 @@ step << Rogue
     .turnin 56839 >>Turn in Killclaw the Terrible
 step << Rogue
     >>Use 'Instant Poison'
-    .compete 59968,1
+    .complete 59968,1
 step << Rogue
     .goto 1409,48.6,52.6
     .complete 58933,2 << Alliance --1/1 Gutgruk the Tough slain
