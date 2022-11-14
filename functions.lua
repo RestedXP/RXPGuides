@@ -1601,7 +1601,10 @@ function addon.functions.fly(self, ...)
             local id = addon.flightInfo[i]
             local name = id and addon.FPDB[faction][id] and addon.FPDB[faction][id].name
             if name and strupper(name):find(element.location) then
-                _G.TaxiNodeOnButtonEnter(getglobal("TaxiButton" .. i))
+                local button = getglobal("TaxiButton" .. i)
+                if button then
+                    _G.TaxiNodeOnButtonEnter(button)
+                end
                 TakeTaxiNode(i)
                 return not _G.GameTooltip:IsForbidden() and _G.GameTooltip:Hide()
             end
