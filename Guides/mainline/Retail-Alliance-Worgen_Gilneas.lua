@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #name 2Retail-Alliance-Worgen_Gilneas
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
 
-<<Alliance !DK
+<<Worgen !DK
 
 step
     #sticky
