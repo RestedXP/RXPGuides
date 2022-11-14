@@ -9,7 +9,8 @@ RXPGuides.RegisterGuide([[
 #displayname Chapter 1 - Orc Starting Zone << Orc
 #next Troll Starting Zone << Orc
 #next RestedXP Horde 10-60\1 BfA Intro << Troll
-
+#defaultfor Orc/Troll
+    
 << Horde !DK
 
 step << Orc
@@ -281,6 +282,7 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Horde 10-60\1 BfA Intro << Orc
 #subgroup Troll Starting Zones << Troll
 #subgroup Orc Starting Zones << Orc
+#defaultfor Orc/Troll
 
 << Horde !DK
 
