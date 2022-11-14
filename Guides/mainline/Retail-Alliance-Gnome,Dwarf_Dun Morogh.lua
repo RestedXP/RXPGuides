@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #displayname Gnome_Dun Morogh << Gnome
 #displayname Dwarf_Dun Morogh << Dwarf
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
-#defaultfor Gnome/Dwarf
+#defaultfor !DK 
 
 <<Gnome/Dwarf
 
