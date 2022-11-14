@@ -108,7 +108,7 @@ function addon.settings:InitializeSettings()
             enableEnemyMarking = true,
             showTargetingOnProximity = true,
             soundOnFind = 3175,
-            soundOnFindChannel = 'Master',
+            soundOnFindChannel = 'Dialog',
             scanForRares = true
         }
     }
