@@ -6,8 +6,8 @@ RXPGuides.RegisterGuide([[
 #name Allied Race Starting Zone
 #next RestedXP Horde 10-60\1 BfA Intro
 
-<< Horde
-<< HighmountainTauren DK/ZandalariTroll DK/Nightborne DK/MagharOrc DK/Vulpera DK/Pandaren DK/HighmountainTauren/Nightborne/ZandalariTroll
+<< Horde HighmountainTauren DK/ZandalariTroll DK/Nightborne DK/MagharOrc DK/Vulpera DK/Pandaren DK/HighmountainTauren/Nightborne/ZandalariTroll
+
 
 step << HighmountainTauren !DeathKnight
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Mayla Highmountain
