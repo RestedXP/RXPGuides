@@ -1420,7 +1420,7 @@ step << Alliance
     .turnin 58983 >>Turn in Battle for Azeroth: Tides of War
 step << Alliance
     .nodmf
-    .isQuestTurnedin 58911 --x exile reach no intro skip
+    .isQuestTurnedIn 58911 --x exile reach no intro skip
     .goto 84,73.04,47.56,25,0
     .goto 84,67.45,57.19,25,0
     .goto 84,68.59,62.19,25,0
@@ -1726,13 +1726,3 @@ step << Horde
     .skipgossip
     .complete 60361,2 --Speak with Nathanos Blightcaller
 ]])
-
-
-
-
-
-
-
-
-
-
