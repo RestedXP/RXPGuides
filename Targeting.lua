@@ -5,9 +5,11 @@ local fmt, tinsert, tremove, mmax = string.format, table.insert, table.remove,
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros =
     GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros
 local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupAssistant,
-      UnitIsGroupLeader, IsInGroup = TargetUnit, UnitName, next, IsInRaid,
-                                     UnitIsDead, UnitIsGroupAssistant,
-                                     UnitIsGroupLeader, IsInGroup
+      UnitIsGroupLeader, IsInGroup, UnitOnTaxi = TargetUnit, UnitName, next,
+                                                 IsInRaid, UnitIsDead,
+                                                 UnitIsGroupAssistant,
+                                                 UnitIsGroupLeader, IsInGroup,
+                                                 UnitOnTaxi
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
 local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
 local wipe = wipe
@@ -129,6 +131,7 @@ end
 local function shouldTargetCheck()
     return
         addon.settings.db.profile.enableTargetAutomation and not IsInRaid() and
+            not UnitOnTaxi("player") and
             (next(enemyTargets) ~= nil or next(friendlyTargets) ~= nil or
                 next(rareTargets) ~= nil or next(proxmityPolling.scannedTargets) ~=
                 nil)
