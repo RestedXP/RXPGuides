@@ -294,6 +294,11 @@ RXPGuides.RegisterGuide([[
 
 << Horde !DK
 
+step << Orc
+    #completewith next
+    .cast 202844 >>Use your |T1405809:0|t[Gunshoes] to move faster
+    .use 132516
+    .itemcount 132516,1
 step << Troll
     .zoneskip 1727
     #completewith EchoIslesFirstQuestCheck
