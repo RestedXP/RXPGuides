@@ -896,10 +896,8 @@ function addon.XpRateCheck(step)
 end
 
 function addon.IsFreshAccount()
-    if C_PlayerInfo.CanPlayerEnterChromieTime and C_PlayerInfo.CanPlayerEnterChromieTime() or C_PlayerMentorship and not C_PlayerMentorship.IsActivePlayerConsideredNewcomer() then
-        return false
-    else
-        return true
+    if C_PlayerInfo and C_PlayerInfo.CanPlayerEnterChromieTime then
+        return not C_PlayerInfo.CanPlayerEnterChromieTime()
     end
 end
 
