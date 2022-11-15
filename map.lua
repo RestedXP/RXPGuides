@@ -77,9 +77,8 @@ function addon.UpdateArrow(self)
             self.distance = dist
             local step = element.step
             if step then
-                self.text:SetText(step.title or
-                                      string.format("Step %d\n(%dyd)",
-                                                    step.index, dist))
+                local title = step.title or ("Step "..step.index)
+                self.text:SetText(string.format("%s\n(%dyd)", title, dist))
             elseif element.title then
                 self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
             else
