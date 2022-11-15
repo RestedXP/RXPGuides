@@ -36,8 +36,15 @@ function addon.settings.ChatCommand(input)
 
     input = input:trim()
     if input == "import" then
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+        --addon.RXPOptions.expanded = true
+        if Settings and Settings.GetCategory then
+            Settings.GetCategory(addon.RXPOptions.name).expanded = true;
+            Settings.OpenToCategory(addon.RXPOptions.name);
+            --Settings.OpenToCategory(addon.settings.gui.import); -- causes UI taint on 10.0
+        else
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+        end
     elseif input == "debug" then
         addon.settings.db.profile.debug = not addon.settings.db.profile.debug
     elseif input == "splits" then
@@ -772,7 +779,7 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.ReloadGuide()
                         end,
-                        hidden = addon.gameVersion < 30000
+                        hidden = addon.gameVersion < 30000 or addon.gameVersion > 40000
                     },
                     hideInRaid = {
                         name = L("Autohide in Raids"), -- TODO locale
@@ -1572,7 +1579,8 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.1,
                         min = 1,
                         max = 100,
-                        step = 1
+                        step = 1,
+                        hidden = addon.gameVersion > 40000,
                     },
                     phase = {
                         name = L("Content phase"),

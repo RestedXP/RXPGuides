@@ -1651,8 +1651,14 @@ function RXPFrame.GenerateMenuTable(menu)
         text = L("Import guide"),
         notCheckable = 1,
         func = function()
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+            if Settings and Settings.GetCategory then
+                Settings.GetCategory(addon.RXPOptions.name).expanded = true;
+                Settings.OpenToCategory(addon.RXPOptions.name);
+                --Settings.OpenToCategory(addon.settings.gui.import); -- causes UI taint on 10.0
+            else
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+            end
         end
     })
 
