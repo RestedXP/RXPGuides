@@ -12,787 +12,1131 @@ RXPGuides.RegisterGuide([[
 <<!DK Pandaren
 
 step
-    #sticky
     #completewith next
     +Welcome to the Panda Starting Zone Guide of RestedXP.
     *Without consumables/heirlooms this route is roughly 5 minutes slower than Exiles Reach. For faster leveling recreate your character and choose Exiles Reach instead.
-    *With consumbales/heirlooms this route is just as fast
+    *With consumables/heirlooms this route is just as fast
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
-    .goto 378,56.7,18.2
+    .goto 378,56.67,18.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .accept 30034 >>Accept The Lesson of the Iron Bough << Hunter
     .accept 30027 >>Accept The Lesson of the Iron Bough << Priest/Monk
     .accept 30033 >>Accept The Lesson of the Iron Bough << Mage
-    .accept 30037 >>Accept The Lesson of the Iron Bough << Shaman/Warlock
+    .accept 30037 >>Accept The Lesson of the Iron Bough << Shaman
     .accept 30038 >>Accept The Lesson of the Iron Bough << Warrior
     .accept 30036 >>Accept The Lesson of the Iron Bough << Rogue
-step
-    >>Click on a Weapon Rack and Equip the Weapon that is in your Bag
+	.target Master Shang Xi
+step << Hunter
+    .goto 378,57.22,19.22
+    >>Loot the Weapon Rack for the Trainee's Crossbow. Equip it
+    .collect 73211,1,30034,1 --Trainee's Crossbow (1)
+    .complete 30034,1 --1/1 Loot and Equip a Trainee's Crossbow
+    .use 73211 --Trainee's Crossbow
+step << Mage
+    .goto 378,57.22,19.22
+    >>Loot the Weapon Rack for the Trainee's Spellblade and Hand Fan. Equip them
+    .collect 76390,1,30033,1 --Trainee's Spellblade (1)
+    .collect 76392,1,30033,1 --Trainee's Hand Fan (1)
+    .complete 30033,1 --Loot and Equip a Trainee's Spellblade (1)
+    .complete 30033,2 --Loot and Equip a Trainee's Hand Fan (1)
+    .use 76390 --Trainee's Spellblade
+    .use 76392 --Trainee's Hand Fan
+step << Monk/Priest
+    .goto 378,57.22,19.22
+    >>Loot the Weapon Rack for the Trainee's Staff. Equip it
+    .collect 73209,1,30027,1 --Trainee's Staff (1)
+    .complete 30027,1 --Loot and Equip a Trainee's Staff
     .use 73209
-    .goto 378,57.2,19.1
-    .complete 30034,1  << Hunter --1/1 Loot and Equip a Trainee's Crossbow
-    .complete 30033,1  << Mage
-    .complete 30027,1  << Priest/Monk
-    .complete 30037,1  << Shaman/Warlock
-    .complete 30038,1  << Warrior
-    .complete 30036,1  << Rogue
+step << Shaman
+    .goto 378,57.22,19.22
+    >>Loot the Weapon Rack for the Trainee's Axe and Shield. Equip them
+    .collect 76391,1,30037,1,1  --Trainee's Axe (1)
+    .collect 73213,1,30037,2,1  --Trainee's Shield (1)
+    .complete 30037,1 --Loot and Equip a Trainee's Axe
+    .complete 30037,2 --Loot and Equip a Trainee's Shield
+    .use 76391 --Trainee's Axe
+    .use 73213 --Trainee's Shield
+step << Warrior
+    .goto 378,57.22,19.22
+    >>Loot the Weapon Rack for the Trainee's Axe and Shield. Equip them
+    .collect 76391,1,30038,1,1  --Trainee's Axe (1)
+    .collect 73213,1,30038,2,1  --Trainee's Shield (1)
+    .complete 30038,1 --Loot and Equip a Trainee's Axe
+    .complete 30038,2 --Loot and Equip a Trainee's Shield
+    .use 76391 --Trainee's Axe
+    .use 73213 --Trainee's Shield
+step << Rogue
+    .goto 378,57.22,19.22
+    >>Loot the Weapon Rack for the Trainee's Daggers. Equip them
+    .collect 73208,1,30036,1,1 --Trainee's Dagger (ID 1)
+    .collect 73212,1,30036,1,1 --Trainee's Dagger (ID 2)
+    .complete 30036,1 --Loot and Equip a Trainee's Dagger
+    .complete 30036,2 --Loot and Equip a Second Trainee's Dagger
+    .use 73208 --Trainee's Dagger (ID 1)
+    .use 73212 --Trainee's Dagger (ID 2)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
-    .goto 378,56.7,18.2
+    .goto 378,56.67,18.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 30034 >>Turn in The Lesson of the Iron Bough << Hunter
     .turnin 30033 >>Turn in The Lesson of the Iron Bough << Mage
     .turnin 30027 >>Turn in The Lesson of the Iron Bough << Priest/Monk
-    .turnin 30037 >>Turn in The Lesson of the Iron Bough << Shaman/Warlock
+    .turnin 30037 >>Turn in The Lesson of the Iron Bough << Shaman
     .turnin 30038 >>Turn in The Lesson of the Iron Bough << Warrior
     .turnin 30036 >>Turn in The Lesson of the Iron Bough << Rogue
     .accept 29406 >>Accept The Lesson of the Sandy Fist
+	.target Master Shang Xi
 step
-    >>Destroy 5 Punching Bags
-    .goto 378,57.27,19.02,15,0
+    .goto 378,57.49,18.64,15,0
+    .goto 378,57.12,19.43,15,0
+    .goto 378,57.49,18.64,15,0
+    .goto 378,57.12,19.43,15,0
+    >>Kill Training Targets
     .complete 29406,1 --5/5 Training Targets destroyed
+	.target Training Target
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
-    .goto 378,56.7,18.2
+    .goto 378,56.67,18.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29406 >>Turn in The Lesson of the Sandy Fist
     .accept 29524 >>Accept The Lesson of Stifled Pride
+	.target Master Shang Xi
 step
-    >>Kill 6 Trainees
-    .goto 378,59.9,19.1
+    .goto 378,59.53,19.03,15,0
+    .goto 378,60.30,19.00,15,0
+    .goto 378,60.13,19.77,15,0
+    .goto 378,60.44,19.47
+    >>Go inside the building. Attack Tushui and Huojin Trainees
     .complete 29524,1 --6/6 Sparring Trainees defeated
+	.target Tushui Trainee
+	.target Huojin Trainee
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
     .goto 378,59.67,19.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29524 >>Turn in The Lesson of Stifled Pride
     .accept 29408 >>Accept The Lesson of the Burning Scroll
+	.target Master Shang Xi
 step
-    >>Go upstairs and click the banner
-    .goto 378,59.95,18.62,5,0
-    .goto 378,60.54,18.85,5,0
-    .goto 378,60.23,18.91,5,0
-    .goto 378,60.07,18.76,5,0
-    .goto 378,60.44,19.61,5,0
-    .goto 378,59.96,20.41
+    #completewith next
+    .goto 378,59.97,18.58,8,0
+    .goto 378,60.48,18.85,5,0
+    .goto 378,60.20,18.89,5,0
+    .goto 378,59.98,18.69,5,0 
+	.goto 378,60.46,19.60,8 >>Take the shortcut to the top floor by jumping through the gap under the second set of stairs
+step
+    .goto 378,59.96,20.40
+    >>Click the Banner to burn it
     .complete 29408,2 --1/1 Burn the Edict of Temperance
 step
-    >>Jump over the Fence
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang XI
-    .goto 378,60.01, 19.79,0,0
-    .goto 378,59.7,19.1
+	#completewith next
+    .goto 378,60.19,19.35,6 >> Jump downstairs
+step
+    .goto 378,59.67,19.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29408 >>Turn in The Lesson of the Burning Scroll
     .accept 29409 >>Accept The Disciple's Challenge
+	.target Master Shang Xi
 step
-    >>Attack Jaomin from Range and kill him on the middle of the Bridge << Hunter/Mage
-    >>Kill Jaomin Ro and kite him slowly to the middle of the bridge <<!Hunter
-    .goto 378,65.9,22.8
+    .goto 378,67.78,22.75
+    >>Attack Jaomin to defeat him
     .complete 29409,1 --1/1 Defeat Jaomin Ro
+	.target Jaomin Ro
+--VV not adding things like "Drag the mob to X place" -yet-, need to have a meet about it
+step << Warrior
+	#completewith Lorvo
+    +Use Charge on critters to move faster
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
-    >>Use Charge on critters to move faster <<Warrior
-    .goto 378,66.0,22.8
+    .goto 378,65.97,22.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29409 >>Turn in The Disciple's Challenge
     .accept 29410 >>Accept Aysa of the Tushui
+	.target Master Shang Xi
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Merchant Lorvo
-    .goto 378,55.1,32.8
+	#label Lorvo
+    .goto 378,55.09,32.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Lorvo
     .turnin 29410 >>Turn in Aysa of the Tushui
     .accept 29419 >>Accept The Missing Driver
     .accept 29424 >>Accept Items of Utmost Importance
+	.target Merchant Lorvo
 step
     #completewith next
-    >>Kill and loot Amberleaf Scamps
+    >>Kill Amberleaf Scamps. Loot them for their Supplies
     .complete 29424,1 --6/6 Stolen Training Supplies
+	.target Amberleaf Scamp
 step
-    #label Area1
-    .goto 378,54.13,20.95
-    >>Go near the Panda
+    .goto 378,54.11,20.90
+    >>Run toward Min Dimwind
     .complete 29419,1 --1/1 Rescue the Cart Driver
+	.target Min Dimwind
 step
-    >>Kill and loot Amberleaf Scamps. Get low health towards the end, we're deathskipping after.
-    .goto 378,54.13,20.95
+    .goto 378,54.03,20.93,30,0
+    .goto 378,54.02,17.44,30,0
+    .goto 378,53.00,20.17,30,0
+    .goto 378,54.03,20.93,30,0
+    .goto 378,54.02,17.44
+    >>Kill Amberleaf Scamps. Loot them for their Supplies
     .complete 29424,1 --6/6 Stolen Training Supplies
+	.target Amberleaf Scamp
 step
     #completewith next
-    >>RXP Guides often use Deathskips to quickly go to the desired Location <<!Hunter
-    .deathskip >> Pull as many enemies as you can, Die and Respawn at the Graveyard
+    .goto 378,54.03,20.93,30,0
+    .goto 378,54.02,17.44,30,0
+    .goto 378,53.00,20.17,30,0
+    .goto 378,54.03,20.93
+    .deathskip >> Die and respawn at the Spirit Healer
+	.target Spirit Healer
 step
-    #requires Area1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Merchant Lorvo
-    .goto 378,55.1,32.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Lorvo and Aysa
     .turnin 29419 >>Turn in The Missing Driver
     .turnin 29424 >>Turn in Items of Utmost Importance
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa Cloudsinger
+    .goto 378,55.11,32.40
     .accept 29414 >>Accept The Way of the Tushui
-    .goto 378,55.10, 32.55
+    .goto 378,55.10,32.55
+	.target Merchant Lorvo
+	.target Aysa Cloudsinger
 step << Hunter
-    #completewith next
-    +Tame a fox as you run to the cave
+    .goto 378,56.25,30.34,30,0
+    .goto 378,57.97,30.62
+    .tame 57797 >> Tame a Corsac Fox
+	.isOnQuest 29414
+	.target Corsac Fox
 step
-    >>Defend the NPC's for 2 minutes. Be Careful these enemies keep coming, play defensively if needed
-    .goto 378,55.61,30.90,5,0
-    .goto 378,56.54,31.82,5,0
-    .goto 378,57.6,35.4
+	#completewith next
+    .goto 378,55.61,30.90,30,0 << !Hunter
+    .goto 378,57.53,34.61,20,0
+    .goto 378,57.89,36.55,25 >>Enter the cave
+	.timer 88,The Way of the Tushui RP
+step
+    .goto 378,57.89,36.55
+    >>Defend Aysa from the incoming Amberleaves
     .complete 29414,1 --1/1 Protect Aysa while she meditates
+	.target Amberleaf Troublemaker
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
-    .goto 378,57.5,34.7
+    .goto 378,57.54,34.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29414 >>Turn in The Way of the Tushui
     .accept 29522 >>Accept Ji of the Huojin
+	.target Master Shang Xi
 step << Hunter
     #completewith next
-    .hs >> Use Hearthstone
-    .goto 378,56.15,18.21,1,0
+    .hs >> Hearth to the Shang Xi Training Grounds
 step
+    .goto 378,50.24,21.26
     >>Go on the root of the tree and Disengage up onto the Wall to your left << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,50.5,21.25
     .turnin 29522 >>Turn in Ji of the Huojin
     .accept 29417 >>Accept The Way of the Huojin
+	.target Ji Firepaw
 step
-    >>Kill 8 Hozen in the area
-    .goto 378,50.5,21.25
+    .goto 378,51.18,17.71,30,0
+    .goto 378,49.56,18.31,30,0
+    .goto 378,49.49,20.13,30,0
+    .goto 378,48.27,22.97,30,0
+    .goto 378,49.23,24.48,30,0
+    .goto 378,49.90,23.37,30,0
+    .goto 378,51.18,17.71,30,0
+    .goto 378,49.56,18.31,30,0
+    .goto 378,49.49,20.13,30,0
+    .goto 378,48.27,22.97,30,0
+    .goto 378,49.23,24.48,30,0
+    .goto 378,49.90,23.37
+    >>Kill Fe-Feng Hozen
     .complete 29417,1 --8/8 Fe-Feng attackers slain
+	.target Fe-Feng Hozen
 step
+    .goto 378,50.24,21.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,50.5,21.25
     .turnin 29417 >>Turn in The Way of the Huojin
     .accept 29418 >>Accept Kindling the Fire
     .accept 29523 >>Accept Fanning the Flames
+	.target Ji Firepaw
 step
-    #sticky
-    #label QuestKeybindingsPanda
-    >>Click the Roots in the Area
-    .goto 378,46.18,27.19,5,0
-    .goto 378,45.90,27.65,5,0
-    .goto 378,46.29,28.04,5,0
-    .goto 378,46.84,29.85,5,0
-    .goto 378,46.48,30.32,5,0
-    .complete 29418,1 --5/5 Dry Dogwood Root
-step
-    #sticky
-    #completewith QuestKeybindingsPanda
+    #completewith WindStone
     +If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4
     *This will allow you to press a keybind to use a Quest Item rather than manually clicking it
 step
-    >>Use the Item "Wind Stone" in your Bags on the Shrine then Kill and LOOT the Living Air
+    .goto 378,46.16,27.18
+	>>Loot the Root on the ground
+    .complete 29418,1,1 --5/5 Dry Dogwood Root
+step
+    .goto 378,45.89,27.63
+	>>Loot the Root on the ground
+    .complete 29418,1,2 --5/5 Dry Dogwood Root
+step
+    .goto 378,46.31,28.04
+	>>Loot the Root on the ground
+    .complete 29418,1,3 --5/5 Dry Dogwood Root
+step
+    .goto 378,46.85,29.84
+	>>Loot the Root on the ground
+    .complete 29418,1,4 --5/5 Dry Dogwood Root
+step
+	#label WindStone
+	#completewith next
+    .goto 378,47.29,31.43
+	.cast 106299 >>Use the |T519378:0|t[Wind Stone] at the Shrine
     .use 72109
-    .goto 378,47.29,31.31
+step
+    .goto 378,47.29,31.43
+    >>Kill the Living Air that spawns. Loot it for it's Breeze
     .complete 29523,1 --1/1 Fluttering Breeze
+    .use 72109
+	.target Living Air
 step
-    #requires QuestKeybindingsPanda
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,50.23,21.25
-    .turnin 29523 >>Turn in Fanning the Flames
+    .goto 378,48.31,29.63
+	>>Loot the Root on the ground
+    .complete 29418,1 --5/5 Dry Dogwood Root
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw and Shang Xi
     .turnin 29418 >>Turn in Kindling the Fire
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
-    .goto 378,50.3,21.5
+    .turnin 29523 >>Turn in Fanning the Flames
+    .goto 378,50.24,21.26
     .accept 29420 >>Accept The Spirit's Guardian
+    .goto 378,50.29,21.47
+	.target Ji Firepaw
+	.target Master Shang Xi
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Li Fei inside the Cave
-    .goto 378,40.63,21.98,15,0
-    .goto 378,38.80,25.51
+	#completewith next
+    .goto 378,41.70,25.20,20,0
+    .goto 378,40.83,23.15,15,0
+    .goto 378,40.19,22.45,20 >> Go inside the cave toward Li Fei
+step
+    .goto 378,38.81,25.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Li Fei
     .turnin 29420 >>Turn in The Spirit's Guardian
     .accept 29664 >>Accept The Challenger's Fires
+	.target Master Li Fei
 step
-    >>Click the Brazier of the Flickering Flame
-    .goto 378,38.72,25.41
+    .goto 378,38.71,25.39
+    >>Click the Brazier to light the Torch
     .complete 29664,1 --1/1 Challenger Torch lit
  step
-    >>Click the Brazier of the Violet Flame
-    .goto 378,38.26,24.87
+    >>Click the Braziers to light them
     .complete 29664,4 --1/1 Violet Brazier lit
- step
-    >>Click the Brazier of the Red Flame
-    .goto 378,39.0,23.5
+    .goto 378,38.25,24.87
     .complete 29664,2 --1/1 Red Brazier lit
-step
-    >>Click the Brazier of the Blue Flame
-    .goto 378,39.219,25.39
+    .goto 378,38.99,23.50
     .complete 29664,3 --1/1 Blue Brazier lit
+    .goto 378,39.19,25.41
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Li Fei
-    .goto 378,38.8,25.5
+    .goto 378,38.81,25.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Li Fei
     .turnin 29664 >>Turn in The Challenger's Fires
     .accept 29421 >>Accept Only the Worthy Shall Pass
+	.target Master Li Fei
 step
-    >>Damage Master Li Fei below 20% health
-    .goto 378,38.69,25.51
+    .goto 378,38.88,24.64
+    >>Damage Master Li Fei to 20% or less health
     .complete 29421,1 --1/1 Defeat Master Li Fei
+	.target Master Li Fei
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Li Fei
-    .goto 378,38.8,25.5
-    .turnin 29421,1 >>Turn in Only the Worthy Shall Pass
+    .goto 378,38.81,25.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Li Fei
+    .turnin 29421 >>Turn in Only the Worthy Shall Pass
     .accept 29422 >>Accept Huo, the Spirit of Fire
 step
-    >>Target The NPC and use Huo's Offerings in your Bags
-    >>After using the Item it will take a few seconds for the Objective to finish
-    .use 72583
-    .goto 378,39.3,29.2
-    .complete 29422,1 --1/1 Reignite the Spirit of Fire
+	#completewith next
+    .goto 378,39.45,29.65
+	.cast 102522 >>Use |T133662:0|t[Huo's Offerings] on Huo
+	.timer 11, Huo the Spirit of Fire RP
+	.target Huo
+	.use 72583
 step
+    .goto 378,39.45,29.65
+    >>Wait out the RP
+    .complete 29422,1 --1/1 Reignite the Spirit of Fire
+	.target Huo
+    .use 72583
+step
+    .goto 378,39.41,29.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Huo
-    .goto 378,39.4,29.6
     .turnin 29422 >>Turn in Huo, the Spirit of Fire
     .accept 29423 >>Accept The Passion of Shen-zin Su
+	.target Huo
 step
+	#completewith next
+    .goto 378,40.12,25.50,20,0
+    .goto 378,41.48,25.05,20,0
+    .goto 378,51.04,30.62,20,0
+    .goto 378,51.89,35.93,20,0
+    .goto 378,51.58,40.46,20 >> Travel to the Temple of Five Dawns
+step << skip
     >>Walk into the Temple of Five Dawns
-    .goto 378,40.09,25.99,10,0
-    .goto 378,41.64,25.20,10,0
-    .goto 378,44.86,28.07,80,0
-    .goto 378,50.92,30.58,30,0
-    .goto 378,51.73,35.23,30,0
-    .goto 378,50.10,38.22,30,0
-    .goto 378,51.4,45.6
+    .goto 378,51.41,46.40
     .complete 29423,1 --1/1 Bring the Spirit of Fire to the Temple of Five Dawns
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
-    .goto 378,51.4,46.4
+    .goto 378,51.41,46.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29423 >>Turn in The Passion of Shen-zin Su
     .accept 29521 >>Accept The Singing Pools
+	.target Master Shang Xi
 step
     #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Cheng Dawnscrive and set your Hearthstone
-    .goto 378,51.8,46.1
-    .home >>Set Hearthstone to Temple of Five Dawns
+    .goto 378,51.83,46.08
+    .home >>Set Hearthstone to the Temple of Five Dawns
+	.target Cheng Dawnscrive
 step
-    #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Whittler Dewei. Mining Ores and Herbing gives Experience only take ores/herbs when they are almost on direct path with you
-    .train 2366 >> Learn Herbalism
-    .train 2575 >> Learn Mining
+	#completewith Jojo
+	.goto 378,53.33,47.48,20,0
     .goto 378,63.11,41.45
+    .train 2366 >> Train Herbalism from Whittler Dewei
+	.skipgossip 57620,1,1
+	.target Whittler Dewei
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo Ironbrow
-    .goto 378,63.5,41.9
+    .goto 378,63.11,41.45
+    >>Herbing and Mining Ores gives Experience. Only do this when the herbs/ores are right next to you
+    .train 2575 >> Train Mining from Whittler Dewei
+	.skipgossip 57620,2,3,2
+	.target Whittler Dewei
+step
+	#label Jojo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo and Aysa
     .accept 29662 >>Accept Stronger Than Reeds
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa Cloudsinger
-    .goto 378,65.6,42.6
+    .goto 378,63.50,41.93
     .turnin 29521 >>Turn in The Singing Pools
     .accept 29661 >>Accept The Lesson of Dry Fur
     .accept 29663 >>Accept The Lesson of the Balanced Rock
+    .goto 378,65.59,42.61
+	.target Jojo Ironbrow
+	.target Aysa Cloudsinger
 step
-    #label Area2
-    .goto 378,61.5,47.9
-    >>Click a Balance Pole to Jump on it. Make sure that you are not in the water, it makes you a frog.
-    >>Move to the Shrine by continiously clicking new poles, then click the shrine. Kill monks as you traverse.
-    .complete 29661,1 --1/1 Ring the Training Bell
+	#completewith Shrine
+    .goto 378,63.37,45.17
+	.vehicle >> Click a Balance Pole when you're not a frog to jump onto it
+step
+	#completewith next
+	>>Defeat the Tushui Monks whilst on the Poles
     .complete 29663,1 --6/6 Defeat Tushui Monks
+	.target Tushui Monk
 step
-    >>Click the Wood in the Area
-    .goto 378,62.3,43.8
+	#label Shrine
+    .goto 378,61.39,47.87
+    >>Move to the Shrine in the middle of the lake by jumping onto closer poles, then clicking the shrine
+    .complete 29661,1 --1/1 Ring the Training Bell
+step
+    .goto 378,62.19,48.59,20,0
+    .goto 378,62.99,49.11,20,0
+    .goto 378,61.36,49.66,20,0
+    .goto 378,61.12,46.36,20,0
+    .goto 378,61.19,45.21,20,0
+    .goto 378,62.01,45.88,20,0
+    .goto 378,62.47,44.55,20,0
+    .goto 378,62.19,48.59,20,0
+    .goto 378,62.99,49.11,20,0
+    .goto 378,61.36,49.66,20,0
+    .goto 378,61.12,46.36,20,0
+    .goto 378,61.19,45.21,20,0
+    .goto 378,62.01,45.88,20,0
+    .goto 378,62.47,44.55
+	>>Defeat the Tushui Monks whilst on the Poles
+    .complete 29663,1 --6/6 Defeat Tushui Monks
+	.target Tushui Monk
+step
+    .goto 378,63.36,44.47,30,0
+    .goto 378,63.51,49.09,30,0
+    .goto 378,60.96,50.28,30,0
+    .goto 378,60.47,45.95,30,0
+    .goto 378,63.36,44.47,30,0
+    .goto 378,63.51,49.09,30,0
+    .goto 378,60.96,50.28,30,0
+    .goto 378,60.47,45.95
+    >>Loot the Reeds in the lake whilst running from the Cranes. You can Roll in Frog form. Run out of the lake if your health gets low
     .complete 29662,1 --8/8 Hard Tearwood Reed
 step
-    #requires Area2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo Ironbrow
-    .goto 378,63.5,41.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo and Aysa
     .turnin 29662 >>Turn in Stronger Than Reeds
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa Cloundsinger
-    .goto 378,65.6,42.6
+    .goto 378,63.50,41.93
     .turnin 29661 >>Turn in The Lesson of Dry Fur
     .turnin 29663 >>Turn in The Lesson of the Balanced Rock
     .accept 29676 >>Accept Finding an Old Friend
+    .goto 378,65.59,42.61
+	.target Jojo Ironbrow
+	.target Aysa Cloudsinger
 step
-    >>Travel through the Special Water for increased movement speed and don't jump
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Old Man Yiang
-    .goto 378,71.92,38.19,10,0
-    .goto 378,70.6,38.7
+    .goto 378,71.72,38.16,15,0
+    .goto 378,70.62,38.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Liang
     .turnin 29676 >>Turn in Finding an Old Friend
-    .accept 29677 >>Accept The Sun Pearl
     .accept 29666 >>Accept The Sting of Learning
+    .accept 29677 >>Accept The Sun Pearl
+	.target Old Man Liang
 step
-    >>Kill 6 Water Pincers
-    .goto 378,73.05,41.43,10,0
+    .goto 378,73.86,40.37,30,0
+    .goto 378,72.67,42.89,30,0
+    .goto 378,75.41,37.59,30,0
+    .goto 378,73.86,40.37,30,0
+    .goto 378,72.67,42.89,30,0
+    .goto 378,75.41,37.59
+    >>Kill Water Pincers
     .complete 29666,1 --6/6 Water Pincer slain
 step
-    >>Click the Ancient Clam on the Ocean Floor
-    .goto 378,76.23,46.83
+    .goto 378,76.21,46.87
+    >>Loot the Ancient Clam underwater. You don't need to kill Fang-she if you loot it after she auto attacks you
     .complete 29677,1 --1/1 Sun Pearl
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Old Man Yiang
-    .goto 378,78.48,42.88
+    .goto 378,78.48,42.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Liang
     .turnin 29666 >>Turn in The Sting of Learning
     .turnin 29677 >>Turn in The Sun Pearl
     .accept 29678 >>Accept Shu, the Spirit of Water
-step << !Hunter
-    >>Stand on the Blue Circle
-    .goto 378,79.53, 41.89,5,0
+	.target Old Man Liang
+step
+	#completewith next
+    .goto 378,79.66,41.83,4,0
     .goto 378,79.61,38.72
-    .complete 29678,1 --1/1 Cross to the Pool of Reflection
-step << Hunter
-    >>Stand on the Blue Circle
-    .goto 378,79.53, 41.89,5,0
-    .goto 378,79.61,38.72
+	>>Stand on the blue circle to jump toward the Pool
     .complete 29678,1 --1/1 Cross to the Pool of Reflection
 step
-    >>Use the Item "Sun Pearl" in your Bag on the Water Surface
-    .use 73791
-    .goto 378,79.1,38.1
+    .goto 378,79.59,38.58
+    >>Use the |T463854:0|t[Sun Pearl] on the Water's Surface
     .complete 29678,2 --1/1 Coax Shu, the Water Spirit
+    .use 73791
 step
-    >>Click on the Quest Pop Up in your Questlog and turn in the quest
-    >>Accept the new Quest
-    .goto 378,79.55, 38.58
+    .goto 378,79.82,39.31
+    >>Click on the Quest Pop Up. Turn in the quest
     .turnin 29678 >>Turn in Shu, the Spirit of Water
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa Cloudsinger
-    .goto 378,79.81, 39.32
+    .goto 378,79.82,39.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa
     .accept 29679 >>Accept A New Friend
+	.target Aysa Cloudsinger
 step
-    >>Look at the Water Surface near the Elemental for a sprinkle animation then go there to get launched in the air
-    >>On the last one use disengage right after you get launched in the air  << Hunter
-    >>On the last one use Blink right after you get launched in the air  << Mage
-    .goto 378,79.1,38.1
+    .loop 20,378,79.98,37.97,79.42,36.60,78.17,37.34,78.46,38.73,79.98,37.97
+    >>Follow Shu around. He'll cast a sprout in the water near him. Stand on top of it
+    >>Use Disengage after you get launched in the air for the last Sprout  << Hunter
+    >>Use Blink after you get launched in the air for the last Sprout << Mage
     .complete 29679,1 --5/5 Play with the Spirit of Water
+	.target Shu
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa Cloudsinger
-    .goto 378,79.8,39.3
+    .goto 378,79.82,39.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa
     .turnin 29679 >>Turn in A New Friend
     .accept 29680 >>Accept The Source of Our Livelihood
+	.target Aysa Cloudsinger
 step
-    >>Ignore the Cart walking is faster
-    >>Transform yourself into a crane by being in the water when possible
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,77.01,55.47,30,0
-    .goto 378,68.94,65.02
+    .goto 378,76.57,57.36,40,0
+	>>Ignore the Cart
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw and Gao
     .turnin 29680 >>Turn in The Source of Our Livelihood
     .accept 29769 >>Accept Rascals
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Gao Summerdraft
-    .goto 378,68.13,66.42
+    .goto 378,68.89,64.98
     .accept 29770 >>Accept Still Good!
+    .goto 378,68.13,66.40
+	.target Ji Firepaw
+	.target Gao Summerdraft
 step
-    >>Kill Virmins on your way to the different Vegetables. Do not go out of your way for them.
+	#completewith Carrots
+    >>Kill Plump Virmen
     .complete 29769,1 --10/10 Plump Virmen slain
+	.target Plump Virmen
 step
-    >>Click Turnips in the area
-    .goto 378,67.37,75.94,10,0
-    .goto 378,68.61,77.09
+    .goto 378,70.09,77.69
+    >>Loot the Turnip on the ground
+    .complete 29770,1,1 --3/3 Uprooted Turnip
+step
+    .goto 378,71.12,78.83
+    >>Loot the Turnip on the ground
+    .complete 29770,1,2 --3/3 Uprooted Turnip
+step
+    .goto 378,71.17,77.89
+    >>Loot the Turnip on the ground
     .complete 29770,1 --3/3 Uprooted Turnip
 step
-    >>Click Pumpkins in the area
-    .goto 378,77.71,71.93,5,0
-    .goto 378,77.99,72.59
+    .goto 378,77.81,71.85
+    >>Loot the Pumpkins on the ground
     .complete 29770,3 --3/3 Pilfered Pumpkin
 step
-    >>Go into the Cave. Click Carrots and/or Kill and loot Carrotcrunchers
-    .goto 378,77.12, 71.06,10,0
-    .goto 378,74.92, 70.84
+	#completewith next
+    .goto 378,77.05,71.02,10 >> Go into the cave
+step
+	#label Carrots
+    .goto 378,75.56,72.95,15,0
+    .goto 378,73.92,72.56,15,0
+    .goto 378,73.95,70.75,15,0
+    .goto 378,74.11,75.32,15,0
+    .goto 378,75.11,74.71,15,0
+    .goto 378,75.56,72.95,15,0
+    .goto 378,73.92,72.56,15,0
+    .goto 378,73.95,70.75,15,0
+    .goto 378,74.11,75.32,15,0
+    .goto 378,75.11,74.71
+    >>Kill Plump Carrotcatchers. Loot them for their Carrots. Alternatively, loot the Carrots on the ground
     .complete 29770,2 --3/3 Stolen Carrot
+	.target Plump Carrotcatcher
 step
-    #label Area99
-    .goto 378,77.99,72.59,50,0
-    .goto 378,68.61,77.09
-    >>Kill Virmins on your way to the different Vegetables. Do not go out of your way for them.
+    .goto 378,69.01,71.12,40,0
+    .goto 378,67.05,75.72,40,0
+    .goto 378,71.17,77.89,40,0
+    .goto 378,69.01,71.12,40,0
+    .goto 378,67.05,75.72,40,0
+    .goto 378,71.17,77.89
+    >>Kill Plump Virmen
     .complete 29769,1 --10/10 Plump Virmen slain
+	.target Plump Virmen
 step
-    #requires Area99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw in the small village farm
-    .goto 378,68.9,65.0
-    .turnin 29769 >>Turn in Rascals
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk Gao Summerdraft
-    .goto 378,68.13,66.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Gao, Ji Firepaw, and Jojo
     .turnin 29770 >>Turn in Still Good!
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo Ironbrow
-    .goto 378,69.16,66.7
-    .accept 29771 >>Accept Stronger Than Wood
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,68.9,65.0
+    .goto 378,68.13,66.40
+    .turnin 29769 >>Turn in Rascals
     .accept 29768 >>Accept Missing Mallet
+	.goto 378,68.89,64.98
+    .accept 29771 >>Accept Stronger Than Wood
+    .goto 378,69.16,66.71
+	.target Gao Summerdraft
+	.target Ji Firepaw
+	.target Jojo Ironbrow
 step
-    >>Click the Items in the area. The mallet is near the front door.
-    .goto 378,62.5,76.9
+	#completewith next
+	>>Loot the Wood Planks on the floor
+    .complete 29771,1,6 --12/12 Discarded Wood Plank
+step
+    .goto 378,62.63,77.05
+	>>Loot the Mallet on the barrel
     .complete 29768,1 --1/1 Dai-Lo Recess Mallet
+step
+    .goto 378,63.77,77.19,15,0
+    .goto 378,63.27,79.16,15,0
+    .goto 378,62.94,79.04,15,0
+    .goto 378,62.19,81.08,15,0
+    .goto 378,63.77,77.19,15,0
+    .goto 378,63.27,79.16,15,0
+    .goto 378,62.94,79.04,15,0
+    .goto 378,62.19,81.08
+	>>Loot the Wood Planks on the floor
     .complete 29771,1 --12/12 Discarded Wood Plank
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo Ironbrow
-    .goto 378,69.15,66.73
-    .turnin 29771 >>Turn in Stronger Than Wood
-step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo and Ji Firepaw
+	>>Ring the gong
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,68.9,65.0
+    .turnin 29771 >>Turn in Stronger Than Wood
+    .goto 378,69.16,66.71
     .turnin 29768 >>Turn in Missing Mallet
     .accept 29772 >>Accept Raucous Rousing
-step
-    >>Click the Gong
-    .goto 378,68.94,64.87
+	.goto 378,68.89,64.98
     .complete 29772,1 --1/1 Ring the town gong
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,68.9,65.0
+    .goto 378,68.95,64.80
     .turnin 29772 >>Turn in Raucous Rousing
     .accept 29774 >>Accept Not In the Face!
+	.goto 378,68.89,64.98
+	.target Jojo Ironbrow
+	.target Ji Firepaw
 step
+    .goto 378,68.98,62.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shu
-    .goto 378,69.0,62.9
-    .skipgossip
     .complete 29774,1 --1/1 Ask Shu for help
+    .skipgossip
+	.timer 15,Not In the Face! RP
+	.target Shu
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,68.89,65.00
-    .complete 29774,2 --1/1 Wake Wugou
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,68.9,65.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait out the RP. Talk to Ji Firepaw
+	.goto 378,68.89,64.98
     .turnin 29774 >>Turn in Not In the Face!
     .accept 29775 >>Accept The Spirit and Body of Shen-zin Su
+	.target Ji Firepaw
 step
-    >>Walk to the City without the Cart
+	#completewith next
+    .goto 378,58.86,63.38,40,0
+    .goto 378,55.23,58.57,40,0
+    .goto 378,51.48,57.40,20 >>Ignore the Cart. Travel to the Temple of the Five Dawns
+step
+    .goto 378,51.59,48.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
-    .goto 378,63.34,64.06,25,0
-    .goto 378,59.50,63.60,25,0
-    .goto 378,55.26,58.24,25,0
-    .goto 378,51.71,57.66,25,0
-    .goto 378,51.6,48.3
     .turnin 29775 >>Turn in The Spirit and Body of Shen-zin Su
     .accept 29776 >>Accept Morning Breeze Village
+	.timer 20,Morning Breeze Village RP
+	.target Master Shang Xi
 step
+	#completewith next
+    .goto 378,51.46,47.62,5,0 
+    .goto 378,50.17,48.78,20,0
+    .goto 378,44.88,51.38,20,0
+    .goto 378,35.93,51.19,20,0
+    .goto 378,30.42,37.50,20 >> Wait out the RP. Travel to Morning Breeze Village
+step
+    .goto 378,30.97,36.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,51.33,49.02,15,0
-    .goto 378,50.4,48.78,15,0
-    .goto 378,46.24,51.27,15,0
-    .goto 378,38.43,51.32,15,0
-    .goto 378,31.0,36.7
     .turnin 29776 >>Turn in Morning Breeze Village
     .accept 29778 >>Accept Rewritten Wisdoms
+	.target Ji Firepaw
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo Ironbrow
-    .goto 378,29.9,39.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo and Shaopai
     .accept 29783 >>Accept Stronger Than Stone
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Elder Shaopai
-    .goto 378,31.8,39.7
+    .goto 378,29.90,39.76
     .accept 29777 >>Accept Tools of the Enemy
+    .goto 378,31.78,39.71
+	.target Jojo Ironbrow
+	.target Elder Shaopai
 step
-    #completewith Area3
-    >>Click the Stone Piles in the Area
+    #completewith WisdomScrolls
+    >>Kill Fe-Feng Wisemans. Loot them for their Brushes
+    .complete 29777,1 --8/8 Paint Soaked Brush
+	.target Fe-Feng Wiseman
+step
+    .goto 378,29.48,45.35
+    >>Loot the Stone Blocks on the ground
+    .complete 29783,1,2 --12/12 Abandoned Stone Block
+step
+    .goto 378,29.09,47.53
+    >>Loot the Stone Blocks on the ground
+    .complete 29783,1,4 --12/12 Abandoned Stone Block
+step
+    .goto 378,29.21,48.54
+    >>Loot the Stone Blocks on the ground
+    .complete 29783,1,6 --12/12 Abandoned Stone Block
+step
+    .goto 378,28.36,49.35
+    >>Loot the Stone Blocks on the ground
+    .complete 29783,1,8 --12/12 Abandoned Stone Block
+step
+    .goto 378,28.27,49.59,5,0
+    .goto 378,28.27,49.87,5,0
+    .goto 378,28.27,49.59,5,0
+    .goto 378,28.27,49.87,5,0
+    .goto 378,28.27,49.59
+    >>Click the Scrolls on the Tablets
+    .complete 29778,1,2 --5/5 Defaced Scroll of Wisdom burned
+step
+    .goto 378,31.18,47.97
+    >>Loot the Stone Blocks on the ground
+    .complete 29783,1,10 --12/12 Abandoned Stone Block
+step
+    .goto 378,32.51,46.74
+    >>Click the Scrolls on the Tablet
+    .complete 29778,1,4 --5/5 Defaced Scroll of Wisdom burned
+step
+    .goto 378,32.57,46.44
+    >>Loot the Stone Blocks on the ground
     .complete 29783,1 --12/12 Abandoned Stone Block
 step
-    #completewith next
-    >>Kill and LOOT Fe-Feng Wisemans
-    .complete 29777,1 --8/8 Paint Soaked Brush
-step
-    #label Area3
-    >>Click the Scrolls in the Area
-    .goto 378,32.46,46.70,30,0
-    .goto 378,28.58,49.36,30,0
-    .goto 378,29.26,50.97,30,0
-    .goto 378,32.46,46.70
+	#label WisdomScrolls
+    .goto 378,33.13,46.31
+    >>Click the Scroll on the Tablet
     .complete 29778,1 --5/5 Defaced Scroll of Wisdom burned
 step
-    >>Kill Fe-Feng Wisemans, loot them and the stones on the ground
-    .goto 378,32.46,46.70,30,0
-    .goto 378,28.58,49.36,30,0
-    .goto 378,29.26,50.97,30,0
-    .goto 378,32.46,46.70
+    .goto 378,32.96,51.82,30,0
+    .goto 378,32.29,55.57,30,0
+    .goto 378,28.27,49.59,30,0
+    .goto 378,32.96,51.82,30,0
+    .goto 378,32.29,55.57,30,0
+    .goto 378,28.27,49.59
+    >>Kill Fe-Feng Wisemans. Loot them for their Brushes
     .complete 29777,1 --8/8 Paint Soaked Brush
-    .complete 29783,1 --12/12 Abandoned Stone Block
+	.target Fe-Feng Wiseman
 step
-    #requires Area3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Elder Shaopai
-    .goto 378,31.8,39.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shaopai, Jojo, and Ji Firepaw
     .turnin 29777 >>Turn in Tools of the Enemy
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo Ironbrow
-    .goto 378,29.9,39.8
+    .goto 378,31.78,39.71
     .turnin 29783 >>Turn in Stronger Than Stone
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,31.0,36.7
+    .goto 378,29.90,39.76
     .turnin 29778 >>Turn in Rewritten Wisdoms
     .accept 29779 >>Accept The Direct Solution
     .accept 29780 >>Accept Do No Evil
     .accept 29781 >>Accept Monkey Advisory Warning
+    .goto 378,30.97,36.74
+	.target Elder Shaopai
+	.target Jojo Ironbrow
+	.target Ji Firepaw
 step
-    >>Click the Jade Pillar
-    .goto 378,29.88,39.42,15,0
-    .goto 378,26.4,33.6
+	#completewith JadeP
+    .goto 378,29.28,39.98,30,0
+    .goto 378,27.42,36.25,30,0
+   .goto 378,26.42,33.68,30 >> Travel to the Jade Pillar
+step
+	#completewith FBundle
+	>>Kill Fe-Feng Firethief and Ruffians
+    .complete 29779,1 --20/20 Fe-Feng Hozen slain
+	.target Fe-Feng Firethief
+	.target Fe-Feng Ruffian
+step
+	#label JadeP
+    >>Talk to the Jade Pillar
+    .goto 378,26.42,33.68
     .accept 29782 >>Accept Stronger Than Bone
 step
-    #label Area4
-    .goto 378,26.10,32.27,15,0
-    .goto 378,21.02,34.40
-    >>Click the Firework Bundles in the Area. Kill Ruk-Ruk at the cliffedge.
-    .complete 29781,1 --8/8 Stolen Firework Bundle
+	#sticky
+	#label Fireworks
+    .goto 378,20.95,34.41
+	>>Loot the Firework Bundles on the ground
+    .complete 29781,1,7 --7/8 Stolen Firework Bundle
+step
+    .goto 378,25.41,35.24,20,0
+    .goto 378,21.03,34.38
+	>>Kill Ruk-Ruk
     .complete 29780,1 --1/1 Ruk-Ruk slain
+	.target Ruk-Ruk
 step
-    >>Kill Hozen in the camp
-    goto 378,26.42,30.89
+	#label FBundle
+	#requires Fireworks
+    .goto 378,21.69,33.28
+	>>Loot the Firework Bundle on the ground
+    .complete 29781,1 --8/8 Stolen Firework Bundle
+step
+    .goto 378,26.53,28.87,40,0
+    .goto 378,26.71,31.96
+	>>Kill Fe-Feng Firethief and Ruffians
     .complete 29779,1 --20/20 Fe-Feng Hozen slain
+	.target Fe-Feng Firethief
+	.target Fe-Feng Ruffian
 step
-    #requires Area4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw next to you(if he isn't there try reloggin or phasing in and out the Village)
-    .goto 378,29.89,39.76
-    .turnin 29781 >>Turn in Monkey Advisory Warning
+	#completewith next
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw next to you. If he isn't, ignore this step
     .turnin 29779 >>Turn in The Direct Solution
-    .turnin 29780,1 >>Turn in Do No Evil
+    .turnin 29780 >>Turn in Do No Evil
+    .turnin 29781 >>Turn in Monkey Advisory Warning
     .accept 29784 >>Accept Balanced Perspective
+	.target Ji Firepaw
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo Ironbrow
-    .goto 378,29.9,39.8
+    .goto 378,29.90,39.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo
     .turnin 29782 >>Turn in Stronger Than Bone
+	.target Jojo Ironbrow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa Cloundsinger walk over the rope(be careful)
+    .goto 378,30.97,36.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+    .turnin 29779 >>Turn in The Direct Solution
+    .turnin 29780 >>Turn in Do No Evil
+    .turnin 29781 >>Turn in Monkey Advisory Warning
+    .accept 29784 >>Accept Balanced Perspective
+	.target Ji Firepaw
+step
+	#completewith next
+    .goto 378,31.14,36.79,5,0
+    .goto 378,32.17,36.36,8,0
+    .goto 378,32.88,37.16,8,0
+    .goto 378,32.94,35.61,8 >>Carefully walk over the rope
+step
     .goto 378,32.94,35.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa
     .turnin 29784 >>Turn in Balanced Perspective
     .accept 29785 >>Accept Dafeng, the Spirit of Air
+	.target Aysa Cloudsinger
 step
-    >>Dafeng is inside the Temple but be careful periodically there will be strong winds within the Temple which almost certaintly Kill you there is a safe spot in the middle of the temple wait for the wind to fade before you enter the temple
-    .goto 378,30.38,38.81,20,0
-    .goto 378,26.60,66.68,10,0
-    .goto 378,24.8,69.5
-    .complete 29785,1 --1/1 Locate Dafeng
+	#sticky
+	#label Temple1
+    .goto 378,30.21,38.57,20,0
+    .goto 378,28.94,62.89,20 >>Travel to the Temple
+	.isOnQuest 29785
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Dafeng
-    .goto 378,24.65,69.79
+	#sticky
+	#label Temple2
+	#requires Temple1
+    .goto 378,26.64,66.63,10 >> Run in between the set of stairs after the first time the winds subside
+	.isOnQuest 29785
+step
+	#sticky
+	#label Temple3
+	#requires Temple2
+    .goto 378,26.64,66.63,10 >> Run toward Dafeng after the winds in the next room subside
+	.isOnQuest 29785
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Dafeng and Aysa
     .turnin 29785 >>Turn in Dafeng, the Spirit of Air
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa Cloudsinger
-    .goto 378,24.78, 69.80
+    .goto 378,24.65,69.80
     .accept 29786 >>Accept Battle for the Skies
+    .goto 378,24.78,69.78
+	.target Dafeng
+	.target Aysa Cloudsinger
 step
-    >>Go in a circle around Zhao-Ren and Click all Firework Launcher until he is dead attack him if you can
-    .goto 378,29.43,60.74,5,0
+    .goto 378,29.54,60.74,5,0
     .goto 378,30.18,61.88,5,0
     .goto 378,30.93,61.59,5,0
     .goto 378,31.37,60.05,5,0
-    .goto 378,29.78,58.94,5,0
+    .goto 378,29.78,58.93,5,0
+    .goto 378,29.54,60.74,5,0
+    .goto 378,30.18,61.88,5,0
+    .goto 378,30.93,61.59,5,0
+    .goto 378,31.37,60.05,5,0
+    .goto 378,29.78,58.93,5,0
+    .goto 378,30.52,59.72
+	>>Click Firework Launchers when Zhao-Ren is over them to damage him. He circles counter-clockwise. Avoid his Lightning puddles. Damage him when he lands. Kill him when he lands the second time
     .complete 29786,1 --1/1 Zhao-Ren slain
+	.target Zhao-Ren
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
-    .goto 378,30.0,60.4
+    .goto 378,29.99,60.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29786 >>Turn in Battle for the Skies
     .accept 29787 >>Accept Worthy of Passing
+	.target Master Shang Xi
 step
-    .goto 378,22.6,52.7
+	#completewith next
+    .goto 378,26.32,52.83,20,0
+    .goto 378,22.70,52.80,40 >>Travel to The Elders' Path
+step
+    .goto 378,22.70,52.80
+	>>Kill the Guardian of the Elders
     .complete 29787,1 --1/1 Guardian of the Elders slain
+	.timer 19,Worthy of Passing RP
+	.target Guardian of the Elders
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi. You may need to wait for him to appear.
-    .goto 378,19.46,51.22
+    .goto 378,19.45,51.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29787 >>Turn in Worthy of Passing
-    .accept 29789 >>Accept Small, But Significant
     .accept 29788 >>Accept Unwelcome Nature
+    .accept 29789 >>Accept Small, But Significant
+	.target Master Shang Xi
 step
-    >>Prioritize looting charms from trees while killing Thornbranch Scamps
-    .goto 378,18.74,49.22,10,0
-    .goto 378,19.00,46.44,10,0
-    .goto 378,20.23,43.53,10,0
-    .goto 378,21.54,49.30
+	#completewith RitualCharms
+	>>Kill Thornbranch Scamps
     .complete 29788,1 --8/8 Thornbranch Scamp slain
+	.target Thornbranch Scamp
+step
+    .goto 378,18.84,51.88
+    >>Loot the Charm hanging from the tree
+    .complete 29789,1,1 --8/8 Kun-Pai Ritual Charm
+step
+    .goto 378,18.43,49.88
+    >>Loot the Charms hanging from the tree
+    .complete 29789,1,3 --8/8 Kun-Pai Ritual Charm
+step
+    .goto 378,18.37,48.13
+    >>Loot the Charms hanging from the tree
+    .complete 29789,1,5 --8/8 Kun-Pai Ritual Charm
+step
+    .goto 378,21.57,49.29
+    >>Loot the Charms hanging from the tree
+    .complete 29789,1,7 --8/8 Kun-Pai Ritual Charm
+step
+	#label RitualCharms
+    .goto 378,21.92,48.71
+    >>Loot the Charm hanging from the tree
     .complete 29789,1 --8/8 Kun-Pai Ritual Charm
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
+    .goto 378,24.22,45.72,40,0
+    .goto 378,18.18,44.52,40,0
+    .goto 378,24.22,45.72,40,0
+    .goto 378,18.18,44.52
+	>>Kill Thornbranch Scamps
+    .complete 29788,1 --8/8 Thornbranch Scamp slain
+	.target Thornbranch Scamp
+step
     .goto 378,19.46,51.22
-    .turnin 29789 >>Turn in Small, But Significant
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29788 >>Turn in Unwelcome Nature
+    .turnin 29789 >>Turn in Small, But Significant
     .accept 29790 >>Accept Passing Wisdom
+	.timer 83,Passing Wisdom RP
+	.target Master Shang Xi
 step
-    >>Walk and wait on the Waypoint Location until Shang Xi is done talking. It takes 1 minute.
-    >>You can refresh your Buff Food here
+	#completewith next
+	.cast 108034 >>Eat the |T571818:0|t[Small Sugarcane Stalk] for 10 seconds to get a buff
     .use 77272
-    .goto 378,17.29,50.78
-    .complete 29790,1 --1/1 Listen to Master Shang Xi
-    --.timer 60,Master Shang Xi talking timer
+	.itemcount 77272,1
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa Cloudsinger
-    .goto 378,15.8,49.1
+    .goto 378,17.29,50.78
+    >>Wait out the RP at the arrow location
+    .complete 29790,1 --1/1 Listen to Master Shang Xi
+step
+    .goto 378,15.79,49.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa
     .turnin 29790 >>Turn in Passing Wisdom
     .accept 29791 >>Accept The Suffering of Shen-zin Su
+	.target Aysa Cloudsinger
 step
-    >>Click the Air Baloon
-    .goto 378,15.6,49.0
+    >>Click the Air Balloon to Board it
+    .goto 378,15.55,48.91
     .complete 29791,1 --1/1 Board the Hot Air Balloon
+	.timer 191,The Suffering of Shen-zin Su RP
 step
-    >>You will be dropped of your hot air baloon if you are fast enough you can use disengage midair to quickly go to your next objective <<  Hunter
-    >>This is a 3minute Roleplay
     .goto 378,30.8,92.9
+	>>Wait out the RP
     .complete 29791,2 --1/1 Uncover the source of Shen-zin Su's pain
     --.timer 300,Airbaloon Event
 step
-    >>Disengage Midair to quickly go to your next Objective <<  Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Elder Shaopai
-    .goto 378,51.3,48.3
+    .goto 378,51.31,48.28
+    >>When falling off the Balloon, Disengage to the stairs to the north-east to save time << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shaopai
     .turnin 29791 >>Turn in The Suffering of Shen-zin Su
     .accept 29792 >>Accept Bidden to Greatness
+	.target Elder Shaopai
 step
-    >>Go near the Gate to Open It
-    .goto 378,51.6,60.5
+    .goto 378,51.60,61.39
+    >>Run to the gate to open it. Wait out the RP
     .complete 29792,1 --1/1 Open the Mandori Village Gate
 step
-    >>Go near the Gate to trigger the Gate Opening Sequence then strictly follow the Arrow Waypoints
-    .goto 378,52.1,69.5,10,0
-    .goto 378,50.21,66.44,5,0
-    .goto 378,50.13,67.44,5,0
-    .goto 378,50.2,68.16,5,0
-    .goto 378,50.35,69.35
+	#completewith next
+    .goto 378,50.66,65.62,20,0
+    .goto 378,52.28,68.43,30 >>Travel to the Pei-Wu Gate
+	.timer 28,Pei-Wu Gate RP
+step
+    .goto 378,52.28,68.43
+    >>Run to the gate to open it. Wait out the RP
     .complete 29792,2 --1/1 Open the Pei-Wu Forest Gate
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Wei Palerage
-    .goto 378,50.1,76.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Wei and Korga
     .turnin 29792 >>Turn in Bidden to Greatness
     .accept 30591 >>Accept Preying on the Predators
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Korga Strongmane
-    .goto 378,50.22, 76.64
+    .goto 378,50.07,76.63
     .accept 29795 >>Accept Stocking Stalks
+    .goto 378,50.22,76.65
+	.target Wei Palerage
+	.target Korga Strongmane
 step
-    #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Provisioner Drog
-    .vendor 67186 >> sell as much as you can and repair
+    .goto 378,50.62,78.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Drog
+    .vendor 67186 >> Sell your trash and repair
+	.target Provisioner Drog
+	.isOnQuest 29795
 step
-    #label Area5
-    >>Kill Tigers and click Bamboo Stalks in the area
-    .goto 378,47.91,80.52,40,0
-    .goto 378,46.61,79.10,30,0
-    .goto 378,45.35,75.45,30,0
-    .goto 378,47.41,74.94,30,0
-    .goto 378,47.84,72.31,15,0
-    .goto 378,51.07,72.67,30,0
+	.loop 40,378,54.51,85.54,45.05,85.81,45.89,71.57,55.62,69.49,54.51,85.54
+    >>Kill Pei-Wu Tigers. Loot the Bamboo Stalks on the ground
     .goto 378,47.91,80.52
     .complete 29795,1 --10/10 Broken Bamboo Stalk
     .complete 30591,1 --9/9 Pei-Wu Tiger slain
+	.target Pei-Wu Tiger
 step
-    #requires Area5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk Korga Strongmane
-    .goto 378,50.22, 76.64
-    .turnin 29795 >>Turn in Stocking Stalks
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Wei Palerage
-    .goto 378,50.08,76.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Wei and Korga
     .turnin 30591 >>Turn in Preying on the Predators
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Korga Strongmane
-    .goto 378,50.2,76.6
+    .goto 378,50.07,76.63
+    .turnin 29795 >>Turn in Stocking Stalks
     .accept 30589 >>Accept Wrecking the Wreck
+    .goto 378,50.22,76.65
+	.target Wei Palerage
+	.target Korga Strongmane
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Makael Bay
-    .goto 378,36.3,72.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Makael and Ji Firepaw
     .turnin 30589 >>Turn in Wrecking the Wreck
     .accept 30590 >>Accept Handle With Care
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,36.36,72.53
+    .goto 378,36.32,72.36
     .accept 29793 >>Accept Evil from the Seas
+    .goto 378,36.37,72.53
+	.target Makael Bay
+	.target Ji Firepaw
 step
-    #label Area6
-    >>Kill Darkened Terrors/Horrors while Clicking the Explosive Charges in the Area
-    .goto 378,36.62,75.36,30,0
-    .goto 378,37.5,76.74,30,0
-    .goto 378,36.36,72.53
+    .goto 378,36.06,76.73,40,0
+    .goto 378,35.41,79.00,40,0
+    .goto 378,40.14,78.79,40,0
+    .goto 378,38.29,74.01,40,0
+    .goto 378,36.06,76.73,40,0
+    .goto 378,35.41,79.00,40,0
+    .goto 378,40.14,78.79,40,0
+    .goto 378,38.29,74.01
+    >>Kill Darkened Horrors and Terrors. Be careful of the Horrors' Shadow Geysers. 
+	>>Loot the Explosion Charges on the ground
     .complete 29793,1 --8/8 Darkened Horrors or Darkened Terrors slain
     .complete 30590,1 --6/6 Packed Explosion Charge
+	.target Darkened Horror
+	.target Darkened Terror
 step
-    #requires Area6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,36.37,72.55
-    .turnin 29793 >>Turn in Evil from the Seas
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Makael Bay
-    .goto 378,36.31,72.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Makael and Ji
     .turnin 30590 >>Turn in Handle With Care
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,36.37,72.53
+    .goto 378,36.32,72.36
+    .turnin 29793 >>Turn in Evil from the Seas
     .accept 29796 >>Accept Urgent News
+    .goto 378,36.37,72.53
+	.target Makael Bay
+	.target Ji Firepaw
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Delora Lionheart
-    .goto 378,42.2,86.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Delora and Jojo
     .turnin 29796 >>Turn in Urgent News
     .accept 29794 >>Accept None Left Behind
     .accept 29797 >>Accept Medical Supplies
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo Ironbrow
-    .goto 378,42.29,86.35
+    .goto 378,42.21,86.54
     .accept 29665 >>Accept From Bad to Worse
+    .goto 378,42.30,86.35
+	.target Delora Lionheart
+	.target Jojo Ironbrow
 step
-    #completewith Area7
-    >>Kill Deepscale Tormentor
+	#completewith Sailor2
+    >>Kill Deepscale Tormentors. Loot the Medical Supplies on the ground
     .complete 29665,1 --8/8 Deepscale Tormentor slain
-step
-    #completewith Area7
-    >>Click the Alliance Medical Supplies
     .complete 29797,1 --8/8 Alliance Medical Supplies
+	.target Deepscale Tormentor
 step
-    >>Click the Sailor and carry him back
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74,15,0
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74,15,0
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74,15,0
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74
+	#completewith next
+    .goto 378,40.18,87.69
+	.cast 56685 >>Pick up the Injured Sailor
+	.isOnQuest 29794
+	.target Injured Sailor
+step
+    .goto 378,42.27,86.80
+    >>Carry the Sailor back to Delora's Camp
     .complete 29794,1,1 --3/3 Injured Sailors rescued
 step
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74,15,0
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74,15,0
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74,15,0
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74
+	#completewith next
+    .goto 378,39.41,87.98
+	.cast 56685 >>Pick up the Injured Sailor
+	.isOnQuest 29794
+	.target Injured Sailor
+step
+	#label Sailor2
+    .goto 378,42.27,86.80
+    >>Carry the Sailor back to Delora's Camp
     .complete 29794,1,2 --3/3 Injured Sailors rescued
 step
-    #label Area7
-    >>Click the Sailor and carry him back
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74,15,0
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74,15,0
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74,15,0
-    .goto 378,40.19,87.66,40,0
-    .goto 378,42.29,86.74
-    .complete 29794,1,3 --3/3 Injured Sailors rescued
-step
-    >>Click the Alliance Medical Supplies and kill Deepscale Tormentors
-    .goto 378,37.87,86.61,30,0
-    .goto 378,36.62,83.59,30,0
-    .goto 378,37.81,81.63,30,0
-    .goto 378,37.87,86.61
-    .complete 29797,1 --8/8 Alliance Medical Supplies
+    .goto 378,38.36,87.60,20,0
+    .goto 378,37.04,87.93,20,0
+    .goto 378,35.77,86.77,20,0
+    .goto 378,36.40,83.30,20,0
+    .goto 378,37.92,81.39,20,0
+    .goto 378,37.86,83.22,20,0
+    .goto 378,36.41,85.51,10,0
+    .goto 378,36.82,89.24,20,0
+    .goto 378,38.36,87.60,20,0
+    .goto 378,37.04,87.93,20,0
+    .goto 378,35.77,86.77,20,0
+    .goto 378,36.40,83.30,20,0
+    .goto 378,37.92,81.39,20,0
+    .goto 378,37.86,83.22,20,0
+    .goto 378,36.41,85.51,10,0
+    .goto 378,36.82,89.24
+	>>Don't pick up a new Sailor yet
+    >>Kill Deepscale Tormentors. Loot the Medical Supplies on the ground
     .complete 29665,1 --8/8 Deepscale Tormentor slain
+    .complete 29797,1 --8/8 Alliance Medical Supplies
+	.target Deepscale Tormentor
 step
-    #requires Area7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Delora Ironheart
-    .goto 378,42.2,86.5
+	#completewith next
+    .goto 378,38.36,87.43,-1
+    .goto 378,37.66,87.22,-1
+    .goto 378,36.17,87.63,-1
+    .goto 378,35.49,83.80,-1
+    .goto 378,37.60,81.44,-1
+    .goto 378,38.41,83.09,-1
+    .goto 378,38.08,84.73,-1
+    .goto 378,40.01,84.36,-1
+	.cast 56685 >>Pick up the Injured Sailor
+	.isOnQuest 29794
+	.target Injured Sailor
+step
+    .goto 378,42.27,86.80
+    >>Carry the Sailor back to Delora's Camp
+    .complete 29794,1 --3/3 Injured Sailors rescued
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Delora and Jojo
     .turnin 29794 >>Turn in None Left Behind
     .turnin 29797 >>Turn in Medical Supplies
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo Ironbrow
-    .goto 378,42.3,86.3
+    .goto 378,42.21,86.54
     .turnin 29665 >>Turn in From Bad to Worse
     .accept 29798 >>Accept An Ancient Evil
+    .goto 378,42.30,86.35
+	.target Delora Lionheart
+	.target Jojo Ironbrow
 step
-    >>Kill Vordraka. Be careful he is difficult!
-    .goto 378,36.1,83.7
+    .goto 378,36.50,84.23
+    >>Kill Vordraka. Dodge his Deep Sea Smash. Kill the Deepscale Aggressors when they spawn
     .complete 29798,1 --1/1 Vordraka, the Deep Sea Nightmare slain
+	.target Vordraka, The Deep Sea Nightmare
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa Cloudsinger
-    .goto 378,36.5,84.2
+    .goto 378,36.50,84.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa
     .turnin 29798 >>Turn in An Ancient Evil
     .accept 30767 >>Accept Risking It All
+    .timer 77,Risking It All RP
+	.target Aysa Cloudsinger
 step
-    >>Follow Aysa Cloudsinger. Wait for the roleplay, it takes 1 minute.
-    .goto 378,36.35,86.08,10,0
-    .goto 378,36.90,85.50,5,0
-    .goto 378,36.36,87.2,10,0
-    .goto 378,39.2,86.3
+    .goto 378,36.35,86.08,10,0 << skip
+    .goto 378,36.27,86.99,10,0 << skip
+    .goto 378,36.90,85.50,5,0 << skip
+    .goto 378,36.36,87.2,10,0 << skip
+    .goto 378,36.38,87.12 << skip
+    >>Wait out the RP (you can take a break in this time). Press "Escape" on your keyboard to skip the cinematic
     .complete 30767,1 --1/1 Shen-zin Su's Thorn Removed
-    --.timer 60,Aysa Roleplay
 step
+    .goto 378,39.30,86.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,39.3,86.2
     .turnin 30767 >>Turn in Risking It All
     .accept 29799 >>Accept The Healing of Shen-zin Su
+	.target Ji Firepaw
 step
-    >>Click as many Healers as possible all around the Area
-    >>You might have to Kill specific Enemies to unlock additional Healer's to Click
     .goto 378,39.08,88.32,5,0
     .goto 378,39.04,88.87,5,0
     .goto 378,39.89,88.62,5,0
@@ -801,78 +1145,84 @@ step
     .goto 378,42.01,84.89,5,0
     .goto 378,42.31,83.89,5,0
     .goto 378,42.2,87.3
+    >>Free Priests and Druids from the Wreckages and Talk to them. Kill Dampscale Fleshrippers if they're attacking the Priests or Druids
     .complete 29799,1 --1/1 Protect the healers
+	.target Alliance Priest
+	.target Horde Druid
+	.target Dampscale Fleshripper
 step
+    .goto 378,39.30,86.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
-    .goto 378,39.3,86.2
+	>>Press "Escape" on your keyboard to skip the cinematic
     .turnin 29799 >>Turn in The Healing of Shen-zin Su
+	.timer 18,The Healing of Shen-zin Su RP
+	.target Ji Firepaw
 step
-    >>wait here until you can accept the next quest
-    .goto 378,38.8,86.3
+    >>Wait out the RP
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+    .goto 378,38.77,86.32
     .accept 29800 >>Accept New Allies
+	.target Ji Firepaw
 step
     #completewith next
-    .hs >> Use Hearthstone to Temple of Five Dawns
+    .hs >> Hearthstone to the Temple of Five Dawns
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Spirit of Master Shang Xi
     .goto 378,51.45,48.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the Spirit of Shang Xi. Select your Faction
+	>>Press "Escape" on your keyboard to skip the cinematic
     .turnin 29800 >>Turn in New Allies
     .accept 31450 >>Accept A New Fate
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Spirit of Master Shang Xi and select your Faction
-    .goto 378,51.45,48.28
-    .skipgossip
     .complete 31450,1 --1/1 Choose your faction
+    .skipgossip
+	.target Spirit of Shang Xi
 step << Alliance
+    .goto 84,74.19,91.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa
-    .goto 84,74.20,91.97
     .turnin 31450 >>Turn in A New Fate
+	.accept 30987 >>Accept Joining the Alliance
+	.target Aysa Cloudsinger
+step << skip
+    #veteran
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Renato and the Hero's Herald
+    .accept 332 >>Accept Wine Shop Advert
+    .goto 84,63.77,73.59
+    .accept 46727 >>Accept Battle for Azeroth: Tides of War
+    .goto 84,62.81,71.75
+--VV alliance
+step << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Hero's Herald
+    .goto 84,62.81,71.75
+    .accept 46727 >>Accept Battle for Azeroth: Tides of War
+step << Alliance
+	#completewith next
+    .goto 84,64.52,70.18,20,0
+    .goto 84,68.67,73.75,15,0
+    .goto 84,68.41,75.17,15,0
+    .goto 84,70.23,73.34,20 >>Travel to the Riding Trainer
+step << Alliance
+    .goto 84,70.23,73.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Bralla. Train Journeyman Riding
+    .train 33388 >> Learn Apprentice Riding
+	.target Bralla Cloudwing
+step << skip
+    .dmf 
+	>>Unlearn your professions by copying then pasting the link below into chat
+    .link /run AbandonSkill(186); AbandonSkill(182);>> CLICK HERE
+	.train 2366,1 >>Unlearn Herbalism
+	.train 2575,1 >>Unlearn Mining
+--VV alliance
+step << skip
+    .dmf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the Darkmoon Faire Mystic Mage. Ask for a teleport to the Darkmoon Faire
+    .goto 84,62.25,72.96
+    .accept 7905 >>Accept The Darkmoon Faire
+	.zone 407 >> Travel to the Darkmoon Faire
+	.target Darkmoon Faire Mystic Mage
+	.skipgossip
+--VV alliance
 step << Horde
     .turnin 31450 >>Turn in A New Fate
     .goto 1,45.57,12.62
-    .accept 31012 >>Accept Joining the Horde << Horde
-step << Horde
-    +The Panda Guide is Done to move onto the next Guide type in chat /reload
-    *manually skip this step after
-step <<Alliance << Pandaren
-    #veteran
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Renato
-    .goto 84,67.16,83.4,10,0
-    .goto 84,67.51,80.47,10,0
-    .goto 84,63.77,73.60
-    .accept 332 >>Accept Wine Shop Advert
-step <<Alliance << Pandaren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Hero's Herald
-    .goto 84,67.16,83.4,10,0
-    .goto 84,67.51,80.47,10,0
-    .goto 84,62.81,71.74
-    .accept 46727 >>Accept Battle for Azeroth: Tides of War
-step <<Alliance << Pandaren
-    .goto 84,64.65,70.42,10,0
-    .goto 84,68.36,75.02,10,0
-    .goto 84,70.22,73.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Bralla Cloudwing and Learn Journeyman Riding
-    .skill riding,75 >> Learn Apprentice Riding
-step <<Alliance << Pandaren
-    .dmf
-    .link /run AbandonSkill(186); AbandonSkill(182);>> UNLEARN PROFESSIONS(Copy the Link and type it in chat)
-step << Alliance << Pandaren
-    .isQuestTurnedIn 31450 --x Original Panda Check
-    .dmf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Darkmoon Faire Mystic Mage
-    .goto 84,62.25,72.96
-    .accept 7905 >>Accept The Darkmoon Faire
-step <<Alliance <<Pandaren
-    .dmf
-    .isQuestTurnedIn 31450 --x original panda check
-    +Talk to Darkmoon Faire Mystic Mage and press accept
-    .skipgossip
-    .zoneskip 37
-    .goto 84,62.25,72.96
-step << Alliance
-    +The Panda Guide is Done to move onto the next Guide type in chat /reload
-    *manually skip this step after
+    .accept 31012 >>Accept Joining the Horde
 ]])
-
-
 
