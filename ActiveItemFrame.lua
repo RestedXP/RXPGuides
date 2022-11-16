@@ -252,7 +252,7 @@ function addon.UpdateItemFrame(itemFrame)
             btn:SetAttribute("type", "item")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks then
-                btn:RegisterForClicks("AnyUp", "AnyDown")
+                btn:RegisterForClicks("LeftButtonDown")
             end
             table.insert(buttonList, btn)
             local n = #buttonList
