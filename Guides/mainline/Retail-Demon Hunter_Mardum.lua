@@ -649,13 +649,13 @@ step << Alliance
     .goto 84,85.75,31.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Anduin Wrynn
     .turnin 44463 >>Turn in Demons Among Them
-step << Alliance <<Demon Hunter
+step << Alliance
     .nodmf
     .isQuestTurnedIn 44463 --x DH Check
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Renato
     .accept 332 >>Accept Wine Shop Advert
-step <<Alliance <<Demon Hunter
+step <<Alliance
     .nodmf
     .isQuestTurnedIn 44463 --x DH Check
     #completewith next
@@ -671,7 +671,7 @@ step <<Alliance <<Demon Hunter
     .goto 84,70.41,84.03,25,0
     .goto 84,70.92,72.45
     .fp >>Get the Goldshire Flight Path
-step <<Alliance << Demon Hunter
+step <<Alliance
     .isQuestTurnedIn 40378 --x Demon Hunter Check
     .dmf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Darkmoon Faire Mystic Mage
@@ -680,7 +680,7 @@ step <<Alliance << Demon Hunter
     .goto 84,70.27,46.83,10,0
     .goto 84,62.1,32.16
     .accept 7905 >>Accept The Darkmoon Faire
-step <<Alliance << Demon Hunter
+step <<Alliance
     .dmf
     .isQuestTurnedIn 31450 --x dh check
     +Talk to Darkmoon Faire Mystic Mage and press accept
