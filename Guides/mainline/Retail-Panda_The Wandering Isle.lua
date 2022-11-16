@@ -1210,5 +1210,15 @@ step << Horde
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
     .turnin 31450 >>Turn in A New Fate
     .accept 31012 >>Accept Joining the Horde
---VV Horde need a turnin step for "31012" and normal riding skill. Alliance need a turnin step for "30987" and "46727" (and alternatively 332).
+    .target Ji Firepaw
+step << Horde
+    #completewith next
+    .goto 85,49.87,75.52,20 >> Go inside Grommash Hold
+step << Horde
+    .goto 85,48.76,70.77
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Garrosh
+    .turnin 31012 >> Turn in Joining the Horde
+--  .accept 31013 >> Accept The Horde Way
+    .target Garrosh Hellscream
+--VV Horde need a step for normal riding skill. Alliance need a turnin step for "30987" and "46727" (and alternatively 332 for veterans, it is currently skipped).
 ]])
