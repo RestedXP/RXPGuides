@@ -86,10 +86,11 @@ step
     .accept 29406 >>Accept The Lesson of the Sandy Fist
 	.target Master Shang Xi
 step
-    .goto 378,57.49,18.64,15,0
-    .goto 378,57.12,19.43,15,0
-    .goto 378,57.49,18.64,15,0
-    .goto 378,57.12,19.43,15,0
+    .goto 378,57.49,18.64,10,0
+    .goto 378,57.12,19.43,10,0
+    .goto 378,57.49,18.64,10,0
+    .goto 378,57.12,19.43,10,0
+    .goto 378,57.31,18.97
     >>Kill Training Targets
     .complete 29406,1 --5/5 Training Targets destroyed
 	.target Training Target
@@ -101,8 +102,8 @@ step
 	.target Master Shang Xi
 step
     .goto 378,59.53,19.03,15,0
-    .goto 378,60.30,19.00,15,0
-    .goto 378,60.13,19.77,15,0
+    .goto 378,60.30,19.00,10,0
+    .goto 378,60.13,19.77,10,0
     .goto 378,60.44,19.47
     >>Go inside the building. Attack Tushui and Huojin Trainees
     .complete 29524,1 --6/6 Sparring Trainees defeated
@@ -122,7 +123,7 @@ step
     .goto 378,59.98,18.69,5,0 
 	.goto 378,60.46,19.60,8 >>Take the shortcut to the top floor by jumping through the gap under the second set of stairs
 step
-    .goto 378,59.96,20.40
+    .goto 378,59.95,20.39
     >>Click the Banner to burn it
     .complete 29408,2 --1/1 Burn the Edict of Temperance
 step
@@ -203,11 +204,11 @@ step
 	#completewith next
     .goto 378,55.61,30.90,30,0 << !Hunter
     .goto 378,57.53,34.61,20,0
-    .goto 378,57.89,36.55,25 >>Enter the cave
-	.timer 88,The Way of the Tushui RP
+    .goto 378,57.89,36.55,30 >>Enter the cave
+	.timer 89,The Way of the Tushui RP
 step
     .goto 378,57.89,36.55
-    >>Defend Aysa from the incoming Amberleaves
+    >>Defend Aysa from the incoming Amberleaf Troublemakers
     .complete 29414,1 --1/1 Protect Aysa while she meditates
 	.target Amberleaf Troublemaker
 step
@@ -222,29 +223,29 @@ step << Hunter
 step
     .goto 378,50.24,21.26
     >>Go on the root of the tree and Disengage up onto the Wall to your left << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
     .turnin 29522 >>Turn in Ji of the Huojin
     .accept 29417 >>Accept The Way of the Huojin
 	.target Ji Firepaw
 step
-    .goto 378,51.18,17.71,30,0
-    .goto 378,49.56,18.31,30,0
-    .goto 378,49.49,20.13,30,0
-    .goto 378,48.27,22.97,30,0
-    .goto 378,49.23,24.48,30,0
-    .goto 378,49.90,23.37,30,0
-    .goto 378,51.18,17.71,30,0
-    .goto 378,49.56,18.31,30,0
-    .goto 378,49.49,20.13,30,0
-    .goto 378,48.27,22.97,30,0
-    .goto 378,49.23,24.48,30,0
+    .goto 378,51.18,17.71,20,0
+    .goto 378,49.56,18.31,20,0
+    .goto 378,49.49,20.13,20,0
+    .goto 378,48.27,22.97,20,0
+    .goto 378,49.23,24.48,20,0
+    .goto 378,49.90,23.37,20,0
+    .goto 378,51.18,17.71,20,0
+    .goto 378,49.56,18.31,20,0
+    .goto 378,49.49,20.13,20,0
+    .goto 378,48.27,22.97,20,0
+    .goto 378,49.23,24.48,20,0
     .goto 378,49.90,23.37
     >>Kill Fe-Feng Hozen
     .complete 29417,1 --8/8 Fe-Feng attackers slain
 	.target Fe-Feng Hozen
 step
     .goto 378,50.24,21.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
     .turnin 29417 >>Turn in The Way of the Huojin
     .accept 29418 >>Accept Kindling the Fire
     .accept 29523 >>Accept Fanning the Flames
@@ -254,21 +255,11 @@ step
     +If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4
     *This will allow you to press a keybind to use a Quest Item rather than manually clicking it
 step
-    .goto 378,46.16,27.18
-	>>Loot the Root on the ground
-    .complete 29418,1,1 --5/5 Dry Dogwood Root
-step
-    .goto 378,45.89,27.63
-	>>Loot the Root on the ground
-    .complete 29418,1,2 --5/5 Dry Dogwood Root
-step
-    .goto 378,46.31,28.04
-	>>Loot the Root on the ground
-    .complete 29418,1,3 --5/5 Dry Dogwood Root
-step
-    .goto 378,46.85,29.84
-	>>Loot the Root on the ground
-    .complete 29418,1,4 --5/5 Dry Dogwood Root
+	#completewith next
+    .goto 378,45.89,27.63,30,0
+    .goto 378,46.72,30.39,30,0
+	>>Loot the Roots on the ground
+    .complete 29418,1 --5/5 Dry Dogwood Root
 step
 	#label WindStone
 	#completewith next
@@ -282,11 +273,16 @@ step
     .use 72109
 	.target Living Air
 step
-    .goto 378,48.31,29.63
-	>>Loot the Root on the ground
+    .goto 378,48.74,29.46,30,0
+    .goto 378,50.39,30.78,30,0
+    .goto 378,45.89,27.63,30,0
+    .goto 378,46.72,30.39,30,0
+    .goto 378,48.74,29.46,30,0
+    .goto 378,50.39,30.78
+	>>Loot the Roots on the ground
     .complete 29418,1 --5/5 Dry Dogwood Root
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw and Shang Xi
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji and Shang Xi
     .turnin 29418 >>Turn in Kindling the Fire
     .turnin 29523 >>Turn in Fanning the Flames
     .goto 378,50.24,21.26
@@ -331,8 +327,14 @@ step
 step
     .goto 378,38.81,25.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Li Fei
-    .turnin 29421 >>Turn in Only the Worthy Shall Pass
+    .turnin 29421 >>Turn in Only the Worthy Shall Pass << !Monk
+    .turnin 29421,2 >>Turn in Only the Worthy Shall Pass << Monk
     .accept 29422 >>Accept Huo, the Spirit of Fire
+	.target Master Li Fei
+step << Monk
+	#completewith next
+	+Equip the new Staff in your bags
+	.use 73239
 step
 	#completewith next
     .goto 378,39.45,29.65
@@ -380,7 +382,6 @@ step
     .goto 378,63.11,41.45
     .train 2366 >> Train Herbalism from Whittler Dewei
 	.skipgossip 57620,1,1
-	.target Whittler Dewei
 step
     .goto 378,63.11,41.45
     >>Herbing and Mining Ores gives Experience. Only do this when the herbs/ores are right next to you
@@ -439,7 +440,7 @@ step
     .goto 378,63.51,49.09,30,0
     .goto 378,60.96,50.28,30,0
     .goto 378,60.47,45.95
-    >>Loot the Reeds in the lake whilst running from the Cranes. You can Roll in Frog form. Run out of the lake if your health gets low
+    >>Loot the Reeds in the lake whilst running from the Cranes. You can Roll and Quaking Palm in Frog form. Run out of the lake if your health gets low
     .complete 29662,1 --8/8 Hard Tearwood Reed
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo and Aysa
@@ -470,7 +471,7 @@ step
     .complete 29666,1 --6/6 Water Pincer slain
 step
     .goto 378,76.21,46.87
-    >>Loot the Ancient Clam underwater. You don't need to kill Fang-she if you loot it after she auto attacks you
+    >>Loot the Ancient Clam underwater. You don't need to kill Fang-she if you loot it after she auto attacks you OR you use Quaking Palm on her
     .complete 29677,1 --1/1 Sun Pearl
 step
     .goto 378,78.48,42.86
@@ -515,7 +516,7 @@ step
 step
     .goto 378,76.57,57.36,40,0
 	>>Ignore the Cart
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw and Gao
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji and Gao
     .turnin 29680 >>Turn in The Source of Our Livelihood
     .accept 29769 >>Accept Rascals
     .goto 378,68.89,64.98
@@ -529,19 +530,23 @@ step
     .complete 29769,1 --10/10 Plump Virmen slain
 	.target Plump Virmen
 step
-    .goto 378,70.09,77.69
-    >>Loot the Turnip on the ground
-    .complete 29770,1,1 --3/3 Uprooted Turnip
-step
-    .goto 378,71.12,78.83
-    >>Loot the Turnip on the ground
-    .complete 29770,1,2 --3/3 Uprooted Turnip
-step
-    .goto 378,71.17,77.89
-    >>Loot the Turnip on the ground
+    .goto 378,71.20,77.97,20,0
+    .goto 378,70.89,80.99,20,0
+    .goto 378,68.31,79.35,20,0
+    .goto 378,66.91,77.12,20,0
+    .goto 378,71.20,77.97,20,0
+    .goto 378,70.89,80.99,20,0
+    .goto 378,68.31,79.35,20,0
+    .goto 378,66.91,77.12
+    >>Loot the Turnips on the ground
     .complete 29770,1 --3/3 Uprooted Turnip
 step
-    .goto 378,77.81,71.85
+    .goto 378,77.81,71.85,15,0
+    .goto 378,78.05,72.66,15,0
+    .goto 378,78.84,70.81,15,0
+	.goto 378,77.81,71.85,15,0
+    .goto 378,78.05,72.66,15,0
+    .goto 378,78.84,70.81
     >>Loot the Pumpkins on the ground
     .complete 29770,3 --3/3 Pilfered Pumpkin
 step
@@ -573,7 +578,7 @@ step
     .complete 29769,1 --10/10 Plump Virmen slain
 	.target Plump Virmen
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Gao, Ji Firepaw, and Jojo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Gao, Ji, and Jojo
     .turnin 29770 >>Turn in Still Good!
     .goto 378,68.13,66.40
     .turnin 29769 >>Turn in Rascals
@@ -604,9 +609,9 @@ step
 	>>Loot the Wood Planks on the floor
     .complete 29771,1 --12/12 Discarded Wood Plank
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo and Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo and Ji
 	>>Ring the gong
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
     .turnin 29771 >>Turn in Stronger Than Wood
     .goto 378,69.16,66.71
     .turnin 29768 >>Turn in Missing Mallet
@@ -627,7 +632,7 @@ step
 	.timer 15,Not In the Face! RP
 	.target Shu
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait out the RP. Talk to Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait out the RP. Talk to Ji
 	.goto 378,68.89,64.98
     .turnin 29774 >>Turn in Not In the Face!
     .accept 29775 >>Accept The Spirit and Body of Shen-zin Su
@@ -636,56 +641,44 @@ step
 	#completewith next
     .goto 378,58.86,63.38,40,0
     .goto 378,55.23,58.57,40,0
-    .goto 378,51.48,57.40,20 >>Ignore the Cart. Travel to the Temple of the Five Dawns
+	>>Ignore the Cart
+    .goto 378,51.48,57.40,20 >>Travel to the Temple of the Five Dawns
 step
     .goto 378,51.59,48.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Master Shang Xi
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29775 >>Turn in The Spirit and Body of Shen-zin Su
     .accept 29776 >>Accept Morning Breeze Village
 	.timer 20,Morning Breeze Village RP
 	.target Master Shang Xi
 step
 	#completewith next
-    .goto 378,51.46,47.62,5,0 
+    .goto 378,51.46,47.62,5 >> Wait out the RP
+step
+	#completewith next
     .goto 378,50.17,48.78,20,0
     .goto 378,44.88,51.38,20,0
     .goto 378,35.93,51.19,20,0
-    .goto 378,30.42,37.50,20 >> Wait out the RP. Travel to Morning Breeze Village
+    .goto 378,30.42,37.50,20 >>Travel to Morning Breeze Village
 step
     .goto 378,30.97,36.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
     .turnin 29776 >>Turn in Morning Breeze Village
     .accept 29778 >>Accept Rewritten Wisdoms
 	.target Ji Firepaw
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Jojo and Shaopai
-    .accept 29783 >>Accept Stronger Than Stone
-    .goto 378,29.90,39.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shaopai and Jojo
     .accept 29777 >>Accept Tools of the Enemy
     .goto 378,31.78,39.71
-	.target Jojo Ironbrow
+    .accept 29783 >>Accept Stronger Than Stone
+    .goto 378,29.90,39.76
 	.target Elder Shaopai
+	.target Jojo Ironbrow
 step
     #completewith WisdomScrolls
-    >>Kill Fe-Feng Wisemans. Loot them for their Brushes
+    >>Kill Fe-Feng Wisemans. Loot them for their Brushes. Loot the Stone Blocks on the ground
     .complete 29777,1 --8/8 Paint Soaked Brush
+    .complete 29783,1 --12/12 Abandoned Stone Block
 	.target Fe-Feng Wiseman
-step
-    .goto 378,29.48,45.35
-    >>Loot the Stone Blocks on the ground
-    .complete 29783,1,2 --12/12 Abandoned Stone Block
-step
-    .goto 378,29.09,47.53
-    >>Loot the Stone Blocks on the ground
-    .complete 29783,1,4 --12/12 Abandoned Stone Block
-step
-    .goto 378,29.21,48.54
-    >>Loot the Stone Blocks on the ground
-    .complete 29783,1,6 --12/12 Abandoned Stone Block
-step
-    .goto 378,28.36,49.35
-    >>Loot the Stone Blocks on the ground
-    .complete 29783,1,8 --12/12 Abandoned Stone Block
 step
     .goto 378,28.27,49.59,5,0
     .goto 378,28.27,49.87,5,0
@@ -695,17 +688,9 @@ step
     >>Click the Scrolls on the Tablets
     .complete 29778,1,2 --5/5 Defaced Scroll of Wisdom burned
 step
-    .goto 378,31.18,47.97
-    >>Loot the Stone Blocks on the ground
-    .complete 29783,1,10 --12/12 Abandoned Stone Block
-step
     .goto 378,32.51,46.74
     >>Click the Scrolls on the Tablet
     .complete 29778,1,4 --5/5 Defaced Scroll of Wisdom burned
-step
-    .goto 378,32.57,46.44
-    >>Loot the Stone Blocks on the ground
-    .complete 29783,1 --12/12 Abandoned Stone Block
 step
 	#label WisdomScrolls
     .goto 378,33.13,46.31
@@ -715,14 +700,17 @@ step
     .goto 378,32.96,51.82,30,0
     .goto 378,32.29,55.57,30,0
     .goto 378,28.27,49.59,30,0
+    .goto 378,27.63,45.21,30,0
     .goto 378,32.96,51.82,30,0
     .goto 378,32.29,55.57,30,0
-    .goto 378,28.27,49.59
+    .goto 378,28.27,49.59,30,0
+    .goto 378,27.63,45.21
     >>Kill Fe-Feng Wisemans. Loot them for their Brushes
     .complete 29777,1 --8/8 Paint Soaked Brush
+    .complete 29783,1 --12/12 Abandoned Stone Block
 	.target Fe-Feng Wiseman
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shaopai, Jojo, and Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shaopai, Jojo, and Ji
     .turnin 29777 >>Turn in Tools of the Enemy
     .goto 378,31.78,39.71
     .turnin 29783 >>Turn in Stronger Than Stone
@@ -766,10 +754,12 @@ step
 step
 	#label FBundle
 	#requires Fireworks
-    .goto 378,21.69,33.28
+    .goto 378,21.69,33.28,5,0
+    .goto 378,23.52,32.65
 	>>Loot the Firework Bundle on the ground
     .complete 29781,1 --8/8 Stolen Firework Bundle
 step
+	#requires Fireworks
     .goto 378,26.53,28.87,40,0
     .goto 378,26.71,31.96
 	>>Kill Fe-Feng Firethief and Ruffians
@@ -778,9 +768,10 @@ step
 	.target Fe-Feng Ruffian
 step
 	#completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw next to you. If he isn't, ignore this step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji next to you. If he isn't, ignore this step
     .turnin 29779 >>Turn in The Direct Solution
-    .turnin 29780 >>Turn in Do No Evil
+    .turnin 29780 >>Turn in Do No Evil << !Monk
+    .turnin 29780,2 >>Turn in Do No Evil << Monk
     .turnin 29781 >>Turn in Monkey Advisory Warning
     .accept 29784 >>Accept Balanced Perspective
 	.target Ji Firepaw
@@ -791,12 +782,19 @@ step
 	.target Jojo Ironbrow
 step
     .goto 378,30.97,36.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
     .turnin 29779 >>Turn in The Direct Solution
-    .turnin 29780 >>Turn in Do No Evil
+    .turnin 29780 >>Turn in Do No Evil << !Monk
+    .turnin 29780,2 >>Turn in Do No Evil << Monk
     .turnin 29781 >>Turn in Monkey Advisory Warning
     .accept 29784 >>Accept Balanced Perspective
 	.target Ji Firepaw
+step << Monk
+	#completewith BalancedP
+	+Equip the Sword of the Hozen and Humble Cudgel in your bags
+	.use 74591
+	.use 157020
+--VV Equip Command
 step
 	#completewith next
     .goto 378,31.14,36.79,5,0
@@ -804,6 +802,7 @@ step
     .goto 378,32.88,37.16,8,0
     .goto 378,32.94,35.61,8 >>Carefully walk over the rope
 step
+	#label BalancedP
     .goto 378,32.94,35.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Aysa
     .turnin 29784 >>Turn in Balanced Perspective
@@ -868,44 +867,25 @@ step
 	.target Guardian of the Elders
 step
     .goto 378,19.45,51.22
+	>>Wait out the RP
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shang Xi
     .turnin 29787 >>Turn in Worthy of Passing
     .accept 29788 >>Accept Unwelcome Nature
     .accept 29789 >>Accept Small, But Significant
 	.target Master Shang Xi
 step
-	#completewith RitualCharms
-	>>Kill Thornbranch Scamps
-    .complete 29788,1 --8/8 Thornbranch Scamp slain
-	.target Thornbranch Scamp
-step
-    .goto 378,18.84,51.88
-    >>Loot the Charm hanging from the tree
-    .complete 29789,1,1 --8/8 Kun-Pai Ritual Charm
-step
-    .goto 378,18.43,49.88
-    >>Loot the Charms hanging from the tree
-    .complete 29789,1,3 --8/8 Kun-Pai Ritual Charm
-step
-    .goto 378,18.37,48.13
-    >>Loot the Charms hanging from the tree
-    .complete 29789,1,5 --8/8 Kun-Pai Ritual Charm
-step
-    .goto 378,21.57,49.29
-    >>Loot the Charms hanging from the tree
-    .complete 29789,1,7 --8/8 Kun-Pai Ritual Charm
-step
-	#label RitualCharms
-    .goto 378,21.92,48.71
-    >>Loot the Charm hanging from the tree
-    .complete 29789,1 --8/8 Kun-Pai Ritual Charm
-step
-    .goto 378,24.22,45.72,40,0
-    .goto 378,18.18,44.52,40,0
-    .goto 378,24.22,45.72,40,0
+    .goto 378,18.84,51.88,15,0
+    .goto 378,18.43,49.88,15,0
+    .goto 378,18.37,48.13,15,0
+    .goto 378,21.57,49.29,15,0
+    .goto 378,22.50,48.95,15,0
+    .goto 378,24.22,45.72,30,0
+    .goto 378,18.18,44.52,30,0
+    .goto 378,24.22,45.72,30,0
     .goto 378,18.18,44.52
-	>>Kill Thornbranch Scamps
+	>>Kill Thornbranch Scamps. Loot the Charms hanging from the trees
     .complete 29788,1 --8/8 Thornbranch Scamp slain
+    .complete 29789,1 --8/8 Kun-Pai Ritual Charm
 	.target Thornbranch Scamp
 step
     .goto 378,19.46,51.22
@@ -939,7 +919,6 @@ step
     .goto 378,30.8,92.9
 	>>Wait out the RP
     .complete 29791,2 --1/1 Uncover the source of Shen-zin Su's pain
-    --.timer 300,Airbaloon Event
 step
     .goto 378,51.31,48.28
     >>When falling off the Balloon, Disengage to the stairs to the north-east to save time << Hunter
@@ -979,8 +958,8 @@ step
 	.loop 40,378,54.51,85.54,45.05,85.81,45.89,71.57,55.62,69.49,54.51,85.54
     >>Kill Pei-Wu Tigers. Loot the Bamboo Stalks on the ground
     .goto 378,47.91,80.52
-    .complete 29795,1 --10/10 Broken Bamboo Stalk
     .complete 30591,1 --9/9 Pei-Wu Tiger slain
+    .complete 29795,1 --10/10 Broken Bamboo Stalk
 	.target Pei-Wu Tiger
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Wei and Korga
@@ -992,7 +971,7 @@ step
 	.target Wei Palerage
 	.target Korga Strongmane
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Makael and Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Makael and Ji
     .turnin 30589 >>Turn in Wrecking the Wreck
     .accept 30590 >>Accept Handle With Care
     .goto 378,36.32,72.36
@@ -1122,17 +1101,19 @@ step
     .accept 30767 >>Accept Risking It All
     .timer 77,Risking It All RP
 	.target Aysa Cloudsinger
+	.skipgossip
 step
     .goto 378,36.35,86.08,10,0 << skip
     .goto 378,36.27,86.99,10,0 << skip
     .goto 378,36.90,85.50,5,0 << skip
     .goto 378,36.36,87.2,10,0 << skip
     .goto 378,36.38,87.12 << skip
-    >>Wait out the RP (you can take a break in this time). Press "Escape" on your keyboard to skip the cinematic
+    >>Wait out the RP (you can take a break in this time)
+	>>Press "Escape" on your keyboard to skip the cinematic
     .complete 30767,1 --1/1 Shen-zin Su's Thorn Removed
 step
     .goto 378,39.30,86.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
     .turnin 30767 >>Turn in Risking It All
     .accept 29799 >>Accept The Healing of Shen-zin Su
 	.target Ji Firepaw
@@ -1144,7 +1125,11 @@ step
     .goto 378,42.85,85.16,5,0
     .goto 378,42.01,84.89,5,0
     .goto 378,42.31,83.89,5,0
-    .goto 378,42.2,87.3
+    .goto 378,41.21,83.78,5,0
+    .goto 378,40.55,82.45,5,0
+    .goto 378,40.26,83.35,5,0
+    .goto 378,40.12,84.37,5,0
+    .goto 378,38.44,86.07
     >>Free Priests and Druids from the Wreckages and Talk to them. Kill Dampscale Fleshrippers if they're attacking the Priests or Druids
     .complete 29799,1 --1/1 Protect the healers
 	.target Alliance Priest
@@ -1152,14 +1137,14 @@ step
 	.target Dampscale Fleshripper
 step
     .goto 378,39.30,86.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
 	>>Press "Escape" on your keyboard to skip the cinematic
     .turnin 29799 >>Turn in The Healing of Shen-zin Su
 	.timer 18,The Healing of Shen-zin Su RP
 	.target Ji Firepaw
 step
     >>Wait out the RP
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
     .goto 378,38.77,86.32
     .accept 29800 >>Accept New Allies
 	.target Ji Firepaw
@@ -1221,8 +1206,9 @@ step << skip
 	.skipgossip
 --VV alliance
 step << Horde
+    .goto 1,45.58,12.61
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji
     .turnin 31450 >>Turn in A New Fate
-    .goto 1,45.57,12.62
     .accept 31012 >>Accept Joining the Horde
+--VV Horde need a turnin step for "31012" and normal riding skill. Alliance need a turnin step for "30987" and "46727" (and alternatively 332).
 ]])
-
