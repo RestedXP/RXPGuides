@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Starting Zones
 #subgroup Night Elf Starting Zones
-#displayname Night Elf_Teldrassil
+#displayname Chapter2-Night Elf_Teldrassil
 #name 3Retail-Alliance-Night Elf_Teldrassil
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
 #defaultfor NightElf
