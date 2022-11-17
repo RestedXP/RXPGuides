@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #subgroup Draenei Starting Zones
 #name 2Retail-Alliance-Draenei_Ammen Vale
-#displayname Draenei_Ammen Vale
+#displayname Chapter1-Draenei_Ammen Vale
 #next 3Retail-Alliance-Draenei_Azuremyst Isle
 #defaultfor Draenei
 
