@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Night Elf Starting Zones
 #displayname Chapter2-Night Elf_Teldrassil
 #name 3Retail-Alliance-Night Elf_Teldrassil
-#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
+#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon FaireV
 #defaultfor NightElf
 
 <<Alliance !DemonHunter !DK
