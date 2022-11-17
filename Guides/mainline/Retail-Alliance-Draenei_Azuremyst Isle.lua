@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #subgroup Draenei Starting Zones
 #name 3Retail-Alliance-Draenei_Azuremyst Isle
-#displayname Draenei_Azuremyst Isle
+#displayname Chapter2-Draenei_Azuremyst Isle
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
 #defaultfor Draenei
 
