@@ -5,11 +5,15 @@ local fmt, tinsert, tremove, mmax = string.format, table.insert, table.remove,
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros =
     GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros
 local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupAssistant,
-      UnitIsGroupLeader, IsInGroup, UnitOnTaxi = TargetUnit, UnitName, next,
-                                                 IsInRaid, UnitIsDead,
-                                                 UnitIsGroupAssistant,
-                                                 UnitIsGroupLeader, IsInGroup,
-                                                 UnitOnTaxi
+      UnitIsGroupLeader, IsInGroup, UnitOnTaxi, UnitIsPlayer = TargetUnit,
+                                                               UnitName, next,
+                                                               IsInRaid,
+                                                               UnitIsDead,
+                                                               UnitIsGroupAssistant,
+                                                               UnitIsGroupLeader,
+                                                               IsInGroup,
+                                                               UnitOnTaxi,
+                                                               UnitIsPlayer
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
 local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
 local wipe = wipe
@@ -597,7 +601,7 @@ local fOnLeave = function(self)
 end
 
 function addon.targeting:UpdateMarker(kind, unitId, index)
-    if UnitIsDead(unitId) then return end
+    if UnitIsDead(unitId) or UnitIsPlayer(unitId) then return end
 
     if IsInGroup() and
         not (UnitIsGroupAssistant('player') or UnitIsGroupLeader('player')) then
