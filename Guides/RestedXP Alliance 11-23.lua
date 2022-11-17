@@ -775,10 +775,12 @@ step
     >> Talk to Vindicator Aalesia
     .accept 9569 >> Accept Containing the Threat
     .goto Bloodmyst Isle,55.0,58.0
+step
     >> Talk to Boros
-    .turnin -9699 >> Turn in Truth or Fiction
+    .turnin 9699 >> Turn in Truth or Fiction
     .goto Bloodmyst Isle,55.4,55.4
     .accept 9700 >> Accept I Shoot Magic Into the Darkness
+    .isOnQuest 9699
 step
     .itemcount 23984,10
     .goto Bloodmyst Isle,55.4,55.2
