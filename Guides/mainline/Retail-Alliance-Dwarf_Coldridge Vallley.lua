@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #subgroup Dwarf Starting Zones
 #name 2Retail-Alliance-Dwarf_Coldridge Vallley
-#displayname Dwarf_Coldridge Vallley
+#displayname Chapter1-Dwarf_Coldridge Vallley
 #next 3Retail-Alliance-Gnome,Dwarf_Dun Morogh
 #defaultfor Dwarf
 
