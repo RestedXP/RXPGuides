@@ -5,8 +5,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Dwarf Starting Zones << Dwarf
 #subgroup Gnome Starting Zones << Gnome
 #name 3Retail-Alliance-Gnome,Dwarf_Dun Morogh
-#displayname Gnome_Dun Morogh << Gnome
-#displayname Dwarf_Dun Morogh << Dwarf
+#displayname Chapter2-Gnome_Dun Morogh << Gnome
+#displayname Chapter2-Dwarf_Dun Morogh << Dwarf
 #next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
 #defaultfor !DK 
 
