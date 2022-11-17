@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Worgen Starting Zones
 #displayname Worgen_Gilneas
 #name 2Retail-Alliance-Worgen_Gilneas
-#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
+#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon FaireV
 
 <<Worgen !DK
 
