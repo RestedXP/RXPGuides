@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #subgroup Gnome Starting Zones
 #name 2Retail-Alliance-Gnome_New Tinkertown
-#displayname Gnome_New Tinkertown
+#displayname Chapter1-Gnome_New Tinkertown
 #next 3Retail-Alliance-Gnome,Dwarf_Dun Morogh
 #defaultfor Gnome
 
