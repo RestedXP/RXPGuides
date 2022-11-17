@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Pandaren Starting Zones
 #name 2Retail-Panda_The Wandering Isle
 #displayname Panda The Wandering Isle
-#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire << Alliance
+#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon FaireV << Alliance
 #next RestedXP Horde 10-60\1 BfA Intro << Horde
 #defaultfor Pandaren
 
