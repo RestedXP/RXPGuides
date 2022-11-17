@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #subgroup Night Elf Starting Zones
 #name 2Retail-Alliance-Night Elf_Shadowglen
-#displayname Night Elf_Shadowglen
+#displayname Chapter1-Night Elf_Shadowglen
 #next 3Retail-Alliance-Night Elf_Teldrassil
 #defaultfor NightElf
 
