@@ -1660,7 +1660,7 @@ step << Alliance
 step << Horde
 	#veteran
     .goto 85,52.52,88.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Breka to skip the City Tour
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Breka to skip the City Tour
     *Keep in Mind that when you skip the Introduction it is assumed that you have a Mount already
 	.target Warlord Breka Grimaxe
 	.skipgossip 168431,1
@@ -1668,7 +1668,7 @@ step << Horde
 --VV Gossip objective
 step << Alliance
     .goto 84,63.77,73.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Renato
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Renato
     .accept 332 >>Accept Wine Shop Advert
 	.target Renato Gallina
     .isQuestTurnedIn 63219
