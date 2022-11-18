@@ -1,4 +1,4 @@
-Guides.RegisterGuide([[
+RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP Starting Zones
