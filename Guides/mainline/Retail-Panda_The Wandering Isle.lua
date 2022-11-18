@@ -1186,8 +1186,8 @@ step << Alliance
     .goto 84,70.23,73.34,20 >>Travel to the Riding Trainer
 step << Alliance
     .goto 84,70.23,73.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Bralla. Train Journeyman Riding
-    .train 33388 >> Learn Apprentice Riding
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Bralla. Train Apprentice Riding
+    .skill riding,75 >> Learn Apprentice Riding
 	.target Bralla Cloudwing
 step << skip
     .dmf 
