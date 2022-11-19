@@ -739,7 +739,9 @@ end
 
 function CurrentStepFrame.EventHandler(self, event, ...)
     -- print(event,self.index,self.element.tag)
-    if self.callback and self.step and self.step.active then
+    if addon.isHidden then
+        return
+    elseif self.callback and self.step and self.step.active then
         self.callback(self, event, ...)
     else
         print('!!!') -- ok

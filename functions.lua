@@ -808,6 +808,7 @@ function addon.functions.turnin(self, ...)
         local step = element.step
         local event, questId = ...
         local id = element.questId
+        local isComplete = IsQuestTurnedIn(id)
 
         if step.active or element.retrieveText then
             addon.questTurnIn[id] = element
@@ -832,7 +833,7 @@ function addon.functions.turnin(self, ...)
         -- local skip
         if step.active and db and type(db.QueryQuest) == "function" and
             addon.pickUpList[id] and not addon.questAccept[id] and
-            not addon.skipPreReq[id] and not element.multiple then
+            not addon.skipPreReq[id] and not element.multiple and not isComplete then
             local quest = db:GetQuest(id)
             if not IsOnQuest(id) and quest and not quest.IsRepeatable then
                 local requiredQuests
@@ -873,7 +874,7 @@ function addon.functions.turnin(self, ...)
         --element.tooltipText = element.icon .. element.text
         addon.UpdateStepText(self)
         local completed = element.completed
-        local isComplete = IsQuestTurnedIn(id)
+
         if questId == id then -- repeatable quests
             if element.timer then
                 addon.StartTimer(element.timer,element.timerText)
