@@ -234,5 +234,11 @@ step
 step
     .goto 425,33.5,53.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Marshal McBride
-    .accept 54 >>Accept Report to Goldshire 
+    .accept 54 >>Accept Report to Goldshire
+step << Human
+    #label HumanElwynnForestIntroduction
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Falkhaan
+    .goto 425,29.12,72.38,8,0
+    .goto 37,45.37,49.0
+    .accept 37112 >>Accept Rest and Relaxation
 ]])
