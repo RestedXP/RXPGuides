@@ -1963,12 +1963,13 @@ step << Alliance
     .zoneskip 37
     .goto 84,62.1,32.18
 step << Horde
-    .isQuestTurnedIn 52969
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Warlord Breka Grimaxe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Breka
     .goto 85,52.51,88.06
     .skipgossip 168431,1
     .turnin 63219 >>Skip the Tutorial if possible. Otherwise skip this step
     .abandon 60343 >>Abandon Welcome to Orgrimmar
+    .target Warlord Breka Grimaxe
+    .isQuestTurnedIn 52969
 step << Horde
     .isQuestAvailable 63219
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Warlord Breka Grimaxe
@@ -1981,59 +1982,73 @@ step << Horde
     .goto 85,52.51,88.06
     .skipgossip 168431,1
     .turnin 63219 >>Skip the Tutorial
-    .abandon 60343 >>Abandon Welcome to Orgrimmar
+--VV review these steps. Need to make sure they can differentiate between new/veteran accounts and autoskip correctly based on each
 step << Horde
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Cork Fizzlepop
     .goto 85,51.93,85.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Cork
     .turnin 60343 >>Turn in Welcome to Orgrimmar
     .accept 60344 >>Accept Finding Your Way
-step << Horde
+    .target Cork Fizzlepop
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the Orgrimmar Grunt
-    .goto 85,52.47,84.23
-    .skipgossip 168459,15
+step << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the Orgrimmar Grunt and Cork
     .complete 60344,1 --1/1 Ask a guard for directions to the Stable Master
-step << Horde
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Cork Fizzlepop
-    .goto 85,52.24,84.42
-    .skipgossip
+    .goto 85,52.48,84.18
     .complete 60344,2 --1/1 Speak with Cork Fizzlepop
-step << Horde
+    .goto 85,52.25,84.42
+    .skipgossip 168459,15
+    .skipgossip 168441,1
     .isQuestAvailable 63219
-    >>Follow Cork Fizzlepop. Stay near him otherwise he will stop moving
-    .goto 85,50.98,65.86,20,0
-    .goto 85,56.52,65.02,20,0
-    .goto 85,58.98,60.74,20,0
-    .goto 85,60.47,49.70,20,0
-    .goto 85,62.04,48.19,12,0
-    .goto 85,63.42,51.02,12,0
-    .goto 85,67.34,47.45,20,0
-    .goto 85,67.98,39.28,20,0
-    .goto 85,69.05,33.48,20,0
-    .goto 85,67.86,32.06,20,0
+	.target Orgrimmar Grunt
+	.target Cork Fizzlepop
+step << Horde
+    .goto 85,51.63,79.03,30,0
+    .goto 85,52.15,71.18,30,0
+    .goto 85,50.98,65.86,30,0
+    .goto 85,56.52,65.02,30,0
+    .goto 85,58.98,60.74,30,0
+    .goto 85,60.47,49.70,30,0
+    .goto 85,62.04,48.19,15,0
+    .goto 85,63.42,51.02,15,0
+    .goto 85,67.34,47.45,30,0
+    .goto 85,67.98,39.28,30,0
+    .goto 85,69.05,33.48,30,0
+    .goto 85,67.86,32.06,30,0
     .goto 85,62.06,33.33
+    >>Follow Cork. Stay near him otherwise he will stop moving
     .complete 60344,3 --1/1 Follow Cork Fizzlepop to the Stables
-step << Horde
+	.target Cork Fizzlepop
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Rohaka Tuskmaul
+step << Horde
     .goto 85,61.42,32.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Rohaka
     .turnin 60344 >>Turn in Finding Your Way
     .accept 60345 >>Accept License to Ride
-step << Horde
+	.target Rohaka Tuskmaul
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Kildar and train Apprentice Riding
-    .goto 85,61.32,34.60
+step << Horde
+    .goto 85,61.32,34.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Kildar. Train Apprentice Riding
     .complete 60345,1 --Learn the Apprentice Riding skill
-step << Horde
+	.target Kildar
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Rohaka Tuskmaul
-    .goto 85,61.43,32.76
+--VV Autotrain skill?
+step << Horde
+    .goto 85,61.42,32.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Rohaka
     .turnin 60345 >>Turn in License to Ride
-step << Horde
+	.target Rohaka Tuskmaul
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Cork Fizzlepop
+--VV find out which races get which mount from this quest
+step << Horde Pandaren
+	#label UseMount
+	#completewith Specialize
+	.cast 55884 >> Use the Red Dragon Turtle to learn it << Pandaren
+	.use 87800 << Pandaren
+    .isQuestAvailable 63219
+--VV CHANGE TO OTHER RACES LATER. MUST DO THE QUEST/FIND A WAY TO FIND ALL MOUNT IDS FOR EACH RACE
+step << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Cork
     .goto 85,61.46,32.90
     .accept 60347 >>Accept What's Your Specialty? << Hunter
     .accept 60353 >>Accept What's Your Specialty? << Shaman
@@ -2045,198 +2060,222 @@ step << Horde
     .accept 60349 >>Accept What's Your Specialty? << Monk
     .accept 60351 >>Accept What's Your Specialty? << Priest
     .accept 60346 >>Accept What's Your Specialty? << Druid
+	.target Cork Fizzlepop
+    .isQuestAvailable 63219
 step << Horde
-    .isQuestAvailable 63219
+	#requires UseMount
     #completewith next
-    +|cfff78300Use & drag a mount to your action bars. You can find it in your Mount Journal (Default: SHIFT+P). Use the mount!|r
+    +|cfff78300Move the mount in your Mount Journal to your Action Bars (Default: SHIFT+P). Use the mount to move faster|r
+    .isQuestAvailable 63219
 step << Horde
-    .isQuestAvailable 63219
     #completewith next
-    .goto 85,68.48,32.22,30,0
-    .goto 85,71.46,42.03,10,0
-    .goto 85,71.34,43.08,10,0
-    .goto 85,70.70,45.24,25,0
-    .goto 85,72.79,45.23,15 >>Follow the arrow and jump up the rocks
-step << Horde << Druid
+    .goto 85,71.55,42.30,10,0
+    .goto 85,72.38,45.14,30 >>Swim across the water then run up the makeshift ramp. Go inside the building
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Telotha Pinegrove
+step << Horde Druid
+    #label Specialize
     .goto 85,72.92,43.23
-    .skipgossip 1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Telotha
     .complete 60346,1 --1/1 Speak with Telotha Pinegrove to learn about specializations
     .complete 60346,2 --1/1 Activate a combat specialization
-step << Horde << Hunter
+	.target Telotha Pinegrove
+    .skipgossip 168553,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Tamanji
+step << Horde Druid
+    .goto 85,72.92,43.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Telotha
+    .turnin 60346 >>Turn in What's Your Specialty?
+	.target Telotha Pinegrove
+    .isQuestAvailable 63219
+step << Horde Hunter
+    #label Specialize
     .goto 85,73.89,43.59
-    .skipgossip 1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Tamanji
     .complete 60347,1 --1/1 Speak with Tamanji to learn about specializations
     .complete 60347,2 --1/1 Activate a combat specialization
-step << Horde << Warrior
+	.target Tamanji
+    .skipgossip 168551,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Gormok Ogrefist
+step << Horde Hunter
+    .goto 85,73.89,43.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Tamanji
+    .turnin 60347 >>Turn in What's Your Specialty?
+	.target Tamanji
+    .isQuestAvailable 63219
+step << Horde Warrior
+    #label Specialize
     .goto 85,73.76,47.13
-    .skipgossip 1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Gormok
     .complete 60357,1 --1/1 Speak with Gormok Ogrefist to learn about specializations
     .complete 60357,2 --1/1 Activate a combat specialization
-step << Horde << Shaman
+	.target Gormok Ogrefist
+    .skipgossip 168596,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Hretar Riverspeaker
+step << Horde Warrior
+    .goto 85,73.76,47.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Gormok
+    .turnin 60357 >>Turn in What's Your Specialty?
+	.target Gormok Ogrefist
+    .isQuestAvailable 63219
+step << Horde Shaman
+    #label Specialize
     .goto 85,73.41,43.13
-    .skipgossip 1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Hretar
     .complete 60353,1 --1/1 Speak with Hretar Riverspeaker to learn about specializations
     .complete 60353,2 --1/1 Activate a combat specialization
-step << Horde << Priest
+	.target Hretar Riverspeaker
+    .skipgossip 168628,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Martin Goodchilde
+step << Horde Shaman
+    .goto 85,73.41,43.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Hretar
+    .turnin 60353 >>Turn in What's Your Specialty?
+	.target Hretar Riverspeaker
+    .isQuestAvailable 63219
+step << Horde Priest
+    #label Specialize
     .goto 85,72.64,46.93
-    .skipgossip 1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Martin
     .complete 60351,1 --1/1 Speak with Martin Goodchilde to learn about specializations
     .complete 60351,2 --1/1 Activate a combat specialization
-step << Horde << Paladin
+	.target Martin Goodchilde
+    .skipgossip 168621,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Avaros Dawnglaive
+step << Horde Priest
+    .goto 85,72.64,46.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Martin
+    .turnin 60351 >>Turn in What's Your Specialty?
+	.target Martin Goodchilde
+    .isQuestAvailable 63219
+step << Horde Paladin
+    #label Specialize
     .goto 85,73.19,47.42
-    .skipgossip 1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Avaros
     .complete 60350,1 --1/1 Speak with Avaros Dawnglaive to learn about specializations
     .complete 60350,2 --1/1 Activate a combat specialization
-step << Horde << Mage
+	.target Avaros Dawnglaive
+    .skipgossip 168597,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Feenix Arcshine
-    .goto 85,74.69,43.61
-    .skipgossip 1
+step << Horde Paladin
+    .goto 85,73.19,47.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Avaros
+    .turnin 60350 >>Turn in What's Your Specialty?
+	.target Avaros Dawnglaive
+    .isQuestAvailable 63219
+step << Horde Mage
+    #label Specialize
+    .goto 85,74.68,43.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Feenix
     .complete 60348,1 --1/1 Speak with Feenix Arcshine to learn about specializations
     .complete 60348,2 --1/1 Activate a combat specialization
-step << Horde << Monk
+	.target Feenix Arcshine
+    .skipgossip 168626,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Huinli Wingpaw
-    .goto 85,75.68,43.58
-    .skipgossip 1
+step << Horde Mage
+    .goto 85,74.68,43.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Feenix
+    .turnin 60348 >>Turn in What's Your Specialty?
+	.target Feenix Arcshine
+    .isQuestAvailable 63219
+step << Horde Monk
+    #label Specialize
+    .goto 85,75.69,43.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Huinli
     .complete 60349,1 --1/1 Speak with Huinli Wingpaw to learn about specializations
     .complete 60349,2 --1/1 Activate a combat specialization
-step << Horde << Rogue
+	.target Huinli Wingpaw
+    .skipgossip 168619,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Thega Graveblade
-    .goto 85,75.47,47.50
-    .skipgossip 1
+step << Horde Monk
+    .goto 85,75.68,43.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Huinli
+    .turnin 60349 >>Turn in What's Your Specialty?
+	.target Huinli Wingpaw
+    .isQuestAvailable 63219
+step << Horde Rogue
+    #label Specialize
+    .goto 85,75.47,47.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Thega
     .complete 60352,1 --1/1 Speak with Huinli Wingpaw to learn about specializations
     .complete 60352,2 --1/1 Activate a combat specialization
-step << Horde << Warlock
+	.target Thega Graveblade
+    .skipgossip 168598,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Kazak Darkscream. Afterwards select a specialization (Default: N)
+step << Horde Rogue
+    .goto 85,75.47,47.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Thega Graveblade
+    .turnin 60352 >>Turn in What's Your Specialty?
+	.target Thega Graveblade
+    .isQuestAvailable 63219
+step << Horde Warlock
+    #label Specialize
     .goto 85,74.63,47.42
-    .skipgossip 1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Kazak
     .complete 60355,1 --1/1 Speak with Kazak Darkscream to learn about specializations
     .complete 60355,2 --1/1 Activate a combat specialization
-step << Horde << Druid
+	.target Kazak Darkscream
+    .skipgossip 168623,1
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Telotha Pinegrove
-    .goto 85,72.92,43.23
-    .skipgossip 1
-    .turnin 60346 >>Turn in What's Your Specialty?
-step << Horde << Hunter
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Tamanji
-    .goto 85,73.89,43.59
-    .skipgossip 1
-    .turnin 60347 >>Turn in What's Your Specialty?
-step << Horde << Warrior
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Gormok Ogrefist
-    .goto 85,73.76,47.13
-    .skipgossip 1
-    .turnin 60357 >>Turn in What's Your Specialty?
-step << Horde << Shaman
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Hretar Riverspeaker
-    .goto 85,73.41,43.13
-    .skipgossip 1
-    .turnin 60353 >>Turn in What's Your Specialty?
-step << Horde << Priest
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Martin Goodchilde
-    .goto 85,72.64,46.93
-    .skipgossip 1
-    .turnin 60351 >>Turn in What's Your Specialty?
-step << Horde << Paladin
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Avaros Dawnglaive
-    .goto 85,73.19,47.42
-    .skipgossip 1
-    .turnin 60350 >>Turn in What's Your Specialty?
-step << Horde << Mage
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Feenix Arcshine
-    .goto 85,74.69,43.61
-    .skipgossip 1
-    .turnin 60348 >>Turn in What's Your Specialty?
-step << Horde << Monk
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Huinli Wingpaw
-    .goto 85,75.68,43.58
-    .skipgossip 1
-    .turnin 60349 >>Turn in What's Your Specialty?
-step << Horde << Rogue
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Thega Graveblade
-    .goto 85,75.47,47.50
-    .skipgossip 1
-    .turnin 60352 >>Turn in What's Your Specialty?
-step << Horde << Warlock
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Kazak Darkscream. Afterwards select a specialization (Default: N)
+step << Horde Warlock
     .goto 85,74.63,47.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Kazak
     .turnin 60355 >>Turn in What's Your Specialty?
-step << Horde
+	.target Kazak Darkscream
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Cork Fizzlepop
-    .goto 85,73.24,45.21
+step << Horde
+    .goto 85,73.29,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Cork
     .accept 60359 >>Accept Home Is Where the Hearth Is
-step << Horde
+	.target Cork Fizzlepop
     .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Innkeeper Nufa and click on "Make this inn your home"
-    .goto 85,70.24,48.92,10,0
+step << Horde
+    .goto 85,70.37,49.01,15,0
     .goto 85,71.31,49.97
-    .complete 60359,1 --1/1 Make The Wyvern's Tail your home
-step << Horde
-    .isQuestAvailable 63219
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Innkeeper Nufa
-    .goto 85,71.31,49.97
+	.home >> Set your Hearthstone to The Wyvern's Tail
+    .complete 60359,1 --1/1 Make The Wyvern's Tail your home
     .turnin 60359 >>Turn in Home Is Where the Hearth Is
+	.target Innkeeper Nufa
+    .isOnQuest 60359
 step << Horde
-    .isQuestAvailable 63219
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shuja Grimaxe
+    .goto 85,70.86,49.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Shuja
     *|cfff78300Relog if you can't see her.|r
-    .goto 85,70.87,49.53
     .accept 60360 >>Accept An Urgent Meeting
+	.target Shuja Grimaxe
+    .isQuestAvailable 63219
 step << Horde
-    .isOnQuest 60360
-    >>Follow the arrow to Grommash Hold. Don't forget to use your mount!
-    .goto 85,70.06,48.75,25,0
-    .goto 85,64.92,49.52,25,0
-    .goto 85,63.49,50.94,15,0
-    .goto 85,62.10,48.12,15,0
-    .goto 85,59.81,50.52,15,0
-    .goto 85,58.56,62.79,25,0
-    .goto 85,51.19,66.21,30,0
-    .goto 85,50.36,76.99,30,0
-    .goto 85,49.79,75.31
+	#completewith next
+    .goto 85,64.89,46.56,30,0
+    .goto 85,60.47,50.16,30,0
+    .goto 85,58.35,61.57,30,0
+    .goto 85,52.16,66.44,30,0
+    .goto 85,49.90,75.60,15,0
+    .goto 85,49.29,73.94,15 >>Travel to Grommash Hold. |cfff78300Remember to use your mount|r
+step << skip
+    .goto 85,49.29,73.94
+	>>Go inside Grommash 
     .complete 60360,2 --1/1 Find Warlord Breka Grimaxe at Grommash Hold
+    .isOnQuest 60360
+--VV Horde
 step << Horde
-    .isQuestTurnedIn 60359
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Warlord Breka Grimaxe
-    .goto 85,48.26,71.39
+    .goto 85,48.26,71.38]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Breka
     .turnin 60360 >>Turn in An Urgent Meeting
     .accept 60361 >>Accept Battle for Azeroth: Mission Statement
-step << Horde
+	.timer 42,Mission Statement RP
+	.target Warlord Breka Grimaxe
     .isQuestTurnedIn 60359
-    >>Wait for the roleplay
-    .goto 85,48.26,71.39
+step << Horde
+	#completewith next
+    >>Wait out the RP
     .complete 60361,1 --Meet with Warchief Sylvanas Windrunner
-step << Horde
     .isQuestTurnedIn 60359
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Nathanos Blightcaller
-    .goto 85,48.51,71.23
-    .skipgossip
+step << Horde
+    .goto 85,48.51,71.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Nathanos
     .complete 60361,2 --Speak with Nathanos Blightcaller
---VV Can cut off everything from line 1686 onwards? Feel like it's already all in the BFA intro guide
+	.target Nathanos Blightcaller
+    .skipgossip
+    .isQuestTurnedIn 60359
 ]])
