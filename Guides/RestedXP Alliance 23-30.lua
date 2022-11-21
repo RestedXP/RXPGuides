@@ -1060,10 +1060,6 @@ step << Shaman
 step << Warrior
     .goto Elwynn Forest,41.1,65.8
     .trainer >> Train your class spells
-step << Warlock
-    >>Go into the inn basement
-    .goto Elwynn Forest,44.4,66.2
-	.trainer >> Train your class spells
 step << Mage
     .goto StormwindClassic,39.6,79.6
 	>> Teleport to stormwind
@@ -1072,6 +1068,9 @@ step
     #xprate <1.5
     .goto StormwindClassic,26.4,78.4
     .accept 335 >> Accept A Noble Brew
+step << Warlock
+    .goto StormwindClassic,26.4,78.4
+	.trainer >> Train your class spells
 step
     .goto StormwindClassic,29.8,61.8
     .turnin 70 >> Turn in The Legend of Stalvan
