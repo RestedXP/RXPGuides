@@ -902,15 +902,20 @@ function addon.IsFreshAccount()
 end
 
 function addon.FreshAccountCheck(step)
+    local level = UnitLevel("player")
+    local maxLevelFresh = step.fresh and tonumber(step.fresh) or 1000
+    local maxLevelVeteran = step.veteran and tonumber(step.veteran) or 1000
     local fresh = addon.IsFreshAccount()
 
-    if step.fresh and not fresh then
-        return false
-    elseif step.veteran and fresh then
-        return false
+    if not (step.fresh or step.veteran) then
+        return true
+    elseif (step.fresh and level <= maxLevelFresh) and fresh then
+        return true
+    elseif (step.veteran and level <= maxLevelVeteran) and not fresh then
+        return true
     end
 
-    return true
+    return false
 end
 
 function addon.LevelCheck(step)
