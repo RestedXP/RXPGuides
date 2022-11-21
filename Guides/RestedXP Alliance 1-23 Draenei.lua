@@ -1199,7 +1199,7 @@ step << Paladin
 	.trainer >> Train class spells at Vindicator Aesom
 step
     .goto Bloodmyst Isle,54.5,54.6
-    .turnin 9696 >> Turn in Translations...
+    .turnin -9696 >> Turn in Translations...
     .accept 9698 >> Accept Audience with the Prophet
 step
     .xp 15
@@ -1314,14 +1314,14 @@ step << Shaman
     .goto The Exodar,32.7,54.5
     .turnin 9461 >> Turn in Call of Fire
     .accept 9555 >> Accept Call of Fire
-    .turnin 9698 >> Turn in Audience with the Prophet
+    .turnin -9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
 step << Paladin
     .goto The Exodar,38.8,82.6
     .turnin 9600 >>Turn in Redemption
 step << !Shaman
     .goto The Exodar,32.9,54.6
-    .turnin 9698 >> Turn in Audience with the Prophet
+    .turnin -9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
 step << Shaman
 	#completewith next
@@ -1344,7 +1344,7 @@ step
 step
     #label exit1
     .goto Bloodmyst Isle,55.5,55.4
-    .turnin 9699 >> Turn in Truth or Fiction
+    .turnin -9699 >> Turn in Truth or Fiction
     .accept 9700 >> Accept I Shoot Magic Into the Darkness
 step
     .goto Bloodmyst Isle,56.2,54.3
