@@ -252,8 +252,8 @@ step
 	.target Ji Firepaw
 step
     #completewith WindStone
-    +If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4
-    *This will allow you to press a keybind to use a Quest Item rather than manually clicking it
+    +If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets.
+    *This will allow you to press a Keybind to use a Quest Item/Target a relevant mob
 step
 	#completewith next
     .goto 378,45.89,27.63,30,0
