@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #name 1Retail_Exile's Reach
 #displayname Exile's Reach
-#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire << Alliance
+#next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
 #next RestedXP Horde 10-60\1 BfA Intro << Horde
 
 <<!DemonHunter !DK !Kultiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
