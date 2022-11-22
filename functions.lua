@@ -628,12 +628,10 @@ function addon.functions.accept(self, ...)
         local step = element.step
         local event, arg1, questId = ...
         local id = element.questId
+        local isCompleted = element.completed
         local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
 
         if (event == "QUEST_ACCEPTED" and questId == id) then
-            if element.timer then
-                addon.StartTimer(element.timer,element.timerText)
-            end
             isQuestAccepted = true
         end
 
@@ -717,6 +715,9 @@ function addon.functions.accept(self, ...)
             elseif completed ~= element.completed then
                 ProcessItems(not element.completed, step, id)
                 addon.UpdateItemFrame()
+            end
+            if element.timer and element.completed and not isCompleted then
+                addon.StartTimer(element.timer,element.timerText)
             end
         end
 
