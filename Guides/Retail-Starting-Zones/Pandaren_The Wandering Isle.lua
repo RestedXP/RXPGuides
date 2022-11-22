@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    +Welcome to the Panda Starting Zone Guide of RestedXP.
+    +Welcome to the Pandaren Starting Zone Guide of RestedXP.
     *Without consumables/heirlooms this route is roughly 5 minutes slower than Exiles Reach. For faster leveling recreate your character and choose Exiles Reach instead.
     *With consumables/heirlooms this route is just as fast
 step
