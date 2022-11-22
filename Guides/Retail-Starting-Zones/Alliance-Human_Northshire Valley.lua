@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Human Starting Zones
 #name 2Retail-Alliance-Human_Northshire Valley
 #displayname Chapter1-Human_Northshire Valley
-#next RestedXP Alliance 10-60\2Retail-Alliance_Elwynn Forest
+#next RestedXP Alliance 10-60\1A_Elwynn Forest
 #defaultfor Human
 
 <<Alliance !DK
