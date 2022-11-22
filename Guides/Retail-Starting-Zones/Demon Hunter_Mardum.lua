@@ -5,8 +5,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Demon Hunter Starting Zones
 #name 1Retail-Demon Hunter_Mardum
 #displayname Demon Hunter Mardum
+#next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
 #next RestedXP Horde 10-60\1 BfA Intro << Horde
-#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire << Alliance
 
 <<DemonHunter
 
