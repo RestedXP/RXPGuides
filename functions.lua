@@ -2543,7 +2543,8 @@ function addon.functions.isQuestComplete(self, ...)
         return element
     end
     local id = self.element.questId
-    if self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug and not addon.isHidden then
+    local event = ...
+    if event ~= "WindowUpdate" and self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug and not addon.isHidden then
         self.element.step.completed = true
         addon.updateSteps = true
     end
@@ -2567,7 +2568,8 @@ function addon.functions.isOnQuest(self, ...)
     end
     local element = self.element
     local id = element.questId
-    if element.step.active and not addon.settings.db.profile.debug and (not IsOnQuest(id)) == not element.reverse and not addon.isHidden then
+    local event = ...
+    if event ~= "WindowUpdate" and element.step.active and not addon.settings.db.profile.debug and (not IsOnQuest(id)) == not element.reverse and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
@@ -2596,6 +2598,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     local step = element.step
     local ids = element.questIds
     local questTurnedIn = false
+    local event = ...
 
     if element.reverse then
         for _, id in pairs(ids) do
@@ -2606,7 +2609,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
             questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
         end
     end
-    if step.active and not questTurnedIn and not addon.settings.db.profile.debug and not addon.isHidden then
+    if event ~= "WindowUpdate" and step.active and not questTurnedIn and not addon.settings.db.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
     end
