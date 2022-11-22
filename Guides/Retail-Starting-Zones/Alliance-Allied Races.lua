@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Starting Zones
 #name 3Retail_Allied Races
 #displayname Allied Races
-#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire
+#next RestedXP Alliance 10-60\1A_Elwynn Forest
 
 <<KulTiran/DarkIronDwarf/LightforgedDraenei/Mechagnome/VoidElf
 
