@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Death Knight Starting Zones
 #name 1Retail-Alliance-Death Knight_Plaguelands The Scarlet Enclave
 #displayname Death Knight Plaguelands
-#next RestedXP Alliance 10-60\1Retail-Alliance_Darkmoon Faire << Alliance
+#next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
 #next RestedXP Horde 10-60\1 BfA Intro << Horde
 
 <<DK !Pandaren !KulTiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !HighmountainTauren !ZandalariTroll !Nightborne !Vulpera !MagharOrc
