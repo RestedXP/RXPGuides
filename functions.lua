@@ -1111,6 +1111,9 @@ function addon.UpdateQuestCompletionData(self)
                 step = RXPCData.currentStep,
                 guideName = RXPCData.currentGuideName
             })
+            if element.timer then
+                addon.StartTimer(element.timer,element.timerText)
+            end
         end
 
         addon.SetElementComplete(self, true)
