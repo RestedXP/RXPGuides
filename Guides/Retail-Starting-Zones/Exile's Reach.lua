@@ -111,8 +111,7 @@ step << Horde
 step
     #completewith QuestKeybindingsExile
     +If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets.
-    *This will allow you to press a Keybind to use a Quest Item/Target a relevant mob rather than to manually have to Right-Click it from a less convenient method
-    *In Dragonflight they have added a new Quest Feature that sometimes a Right-Click on he Quest Objective is enough to use your Quest Item!
+    *This will allow you to press a Keybind to use a Quest Item/Target a relevant mob
 step << Alliance
     #label QuestKeybindingsExile
 	>>Use the |T1387611:0|t[First Aid Kit] on Kee-La, Austin, and Bjorn on the ground around you
