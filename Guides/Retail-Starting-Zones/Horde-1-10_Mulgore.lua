@@ -103,6 +103,10 @@ step
     .goto 462,26.78,68.79,0,0
     .complete 14459,1 --10/10 Armored Battleboar slain
 step
+    #completewith QuestKeybindingsTauren
+    +If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets.
+    *This will allow you to press a Keybind to use a Quest Item/Target a relevant mob
+step
     >>Use |T135432:0|t[Adana's Torch] next to the trough
     .use 49539
     .goto 462,26.37,66.33
@@ -113,6 +117,7 @@ step
     .goto 462,25.12,69.15
     .complete 14461,2 --1/1 Second Trough
 step
+    #label QuestKeybindingsTauren
     >>Use |T135432:0|t[Adana's Torch] next to the trough
     .use 49539
     .goto 462,28.2,70.4
