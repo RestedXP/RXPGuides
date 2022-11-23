@@ -569,7 +569,7 @@ step
 	.isOnQuest 12813
 step
 	>>Kill Onslaught mobs, then loot them for their keys. Use them to open chests all around the Onslaught Harbor for the Documents
-	>>The chests do not have a 100% droprate for the documents
+	>>|cff00ecffNOTE: Only open chests that are sparkling for the Documents. Chest which are not sparkling DO NOT contain Documents.|r
     .goto IcecrownGlacier,10.7,45.6,40,0
     .goto IcecrownGlacier,10.3,46.4,40,0
     .goto IcecrownGlacier,8.8,46.7,40,0
