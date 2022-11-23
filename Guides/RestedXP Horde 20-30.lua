@@ -3045,7 +3045,7 @@ step << Shaman
 	#completewith next
     .goto Orgrimmar,38.6,36.0
     .trainer >> Go and train your class spells
-step
+step << Shaman
     .xp >33,1
     .isOnQuest 1145
     .goto Orgrimmar,37.8,37.4
