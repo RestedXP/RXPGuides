@@ -416,10 +416,15 @@ function addon.SetStep(n, n2, loopback)
     -- isUpdating = true
 
     if not guide.steps[n].active then
-        for _, element in ipairs(guide.steps[n]) do
+        local step = guide.steps[n]
+        for _, element in ipairs(step) do
             if element.OnStepActivation then
                 element:OnStepActivation()
             end
+        end
+        local trackId = tonumber(step.track)
+        if C_SuperTrack and trackId then
+            C_SuperTrack.SetSuperTrackedQuestID(trackId)
         end
     end
 
