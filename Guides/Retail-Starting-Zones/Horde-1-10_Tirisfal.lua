@@ -269,6 +269,10 @@ step << Warlock/Hunter
     #completewith next
     +|cfff78300Set your pet to passive by clicking on 'Passive' in your pet bar or in your spell book in the Pet tab|r
 step
+    #completewith next
+    +If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets.
+    *This will allow you to press a Keybind to use a Quest Item/Target a relevant mob
+step
     #requires TirisfalGladesFarmers
     >>Attack a Vile Fin murloc until it runs away then use the Murloc Leash. |cfff78300You mustn't kill it|r
     .use 52059
