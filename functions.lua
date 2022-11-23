@@ -4203,6 +4203,9 @@ function addon.functions.tradeskill(self, ...)
     end
 end
 
+events.achievement = {"CRITERIA_UPDATE","ACHIEVEMENT_EARNED"}
+events.achievementComplete = events.achievement
+events.achievementIncomplete = events.achievement
 function addon.functions.achievement(self, ...)
     if not GetAchievementInfo then
         return
