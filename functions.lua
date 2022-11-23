@@ -894,7 +894,7 @@ function addon.functions.turnin(self, ...)
                 addon.UpdateItemFrame()
             elseif not event then
                 ProcessItems(true, step, id, true)
-                if C_SuperTrack and not step.track then
+                if C_SuperTrack and not step.track and not element.completed then
                     C_SuperTrack.SetSuperTrackedQuestID(id)
                 end
             elseif completed ~= element.completed then
@@ -1179,7 +1179,7 @@ function addon.functions.complete(self, ...)
         if step.active and element.skipIfMissing and not IsOnQuest(element.questId) then
             addon.SetElementComplete(self,true)
         end
-        if step.active and C_SuperTrack and not step.track then
+        if step.active and C_SuperTrack and not step.track and not element.completed then
             C_SuperTrack.SetSuperTrackedQuestID(id)
         end
     else
