@@ -20,6 +20,10 @@ step
     +You are in Exiles Reach but the current Guide is for the |cfff78300Blood Elf Starting Zone|r.
     +Please choose the Exiles Reach Guide.
 step
+    #completewith next
+    +If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets.
+    *This will allow you to press a Keybind to use a Quest Item/Target a relevant mob
+step
     #label SunstriderIsleFirstQuestCheck
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Magistrix Erona
     .goto 467,61.04,45.13
