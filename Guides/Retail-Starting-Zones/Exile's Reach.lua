@@ -509,7 +509,7 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Breka
     .turnin 59950 >>Turn in Stocking Up on Supplies
 	.target Warlord Breka Grimaxe
-step << Alliance Warrior/Priest/Paladin/Warlock
+step << Alliance Warrior/Alliance Warlock/Alliance Paladin/Alliance Priest
     .goto 1409,52.08,55.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Cole
     .accept 58914 >>Accept A Warrior's End << Warrior
@@ -517,7 +517,7 @@ step << Alliance Warrior/Priest/Paladin/Warlock
     .accept 58923 >>Accept A Paladin's Service << Paladin
     .accept 58962 >>Accept A Warlock's Bargain << Warlock
 	.target Private Cole
-step << Horde Warrior/Priest/Paladin/Warlock
+step << Horde Warrior/Horde Warlock/Horde Paladin/Horde Priest
     .goto 1409,52.08,55.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Throg
     .accept 59971 >>Accept A Warrior's End << Warrior
