@@ -175,7 +175,7 @@ step << Rogue/Warrior/Monk/Paladin
     .goto 1409,56.31,74.62,30,0
     .goto 1409,59.58,72.91,30,0
     .goto 1409,58.05,70.22
-    >>Kill Coastal Albatrosses, Coastal Goats, and Prickly Porcupines. Loot them for their Meat
+    >>Kill Coastal Albatrosses, Coastal Goats and Prickly Porcupines. Loot them for their Meat
     .complete 55174,1 << Alliance --5/5 Raw Meat collected from wildlife
     .complete 59932,1 << Horde --5/5 Raw Meat collected from wildlife
 	.target Coastal Albatross
@@ -187,7 +187,7 @@ step << !Rogue !Warrior !Monk !Paladin
     .goto 1409,56.31,74.62,30,0
     .goto 1409,59.58,72.91,30,0
     .goto 1409,58.05,70.22
-    >>Kill Coastal Albatrosses, Coastal Goats, and Prickly Porcupines. Loot them for their Meat
+    >>Kill Coastal Albatrosses, Coastal Goats and Prickly Porcupines. Loot them for their Meat
     .complete 55174,1 << Alliance --5/5 Raw Meat collected from wildlife
     .complete 59932,1 << Horde --5/5 Raw Meat collected from wildlife
 	.target Coastal Albatross
@@ -340,7 +340,7 @@ step
     .goto 1409,61.11,64.05,30,0
     .goto 1409,61.62,65.78,30,0
     .goto 1409,63.47,65.32
-    >>kill Quilboar Warriors and Geomancers
+    >>Kill Quilboar Warriors and Geomancers
     .complete 55184,1 << Alliance --7/7 Quilboar slain
     .complete 59939,1 << Horde --7/7 Quilboar slain
 	.target Quilboar Warrior
@@ -515,7 +515,7 @@ step << Alliance Warrior/Priest/Paladin/Warlock
     .accept 58914 >>Accept A Warrior's End << Warrior
     .accept 58953 >>Accept A Priest's End << Priest
     .accept 58923 >>Accept A Paladin's Service << Paladin
-    .accept 58962 >>Accept A Warlock's Bargain
+    .accept 58962 >>Accept A Warlock's Bargain << Warlock
 	.target Private Cole
 step << Horde Warrior/Priest/Paladin/Warlock
     .goto 1409,52.08,55.29
@@ -669,7 +669,7 @@ step << Horde
 	.target Herbert Gloomburst
 	.target Bo
 step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Meredy, Ka-Lee, and Henry
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Meredy, Ka-Lee and Henry
     .turnin 55763 >>Turn in The Rescue of Meredy Huntswell
     .goto 1409,56.90,46.14
     .turnin 55764 >>Turn in Harpy Culling
@@ -830,7 +830,7 @@ step << Horde Warlock
 step << Warlock
 	#completewith next
     .goto 1409,52.61,45.44
-    >>Use the |538444:0|t[Old Grimoire] next to the Void Portal
+    >>Use the |cff00ecff[Old Grimoire]|r next to the Void Portal
     .complete 58962,3 << Alliance --1/1 Voidwalker summoned with grimoire
     .complete 59970,3 << Horde --1/1 Voidwalker summoned with grimoire
     .use 174947
@@ -1206,8 +1206,9 @@ step << Horde Hunter
     .accept 59953 >>Accept Hunting the Stalker
 	.target Mithdran Dawntracker
 step << Hunter
-    .goto 1409,52.41,54.64
-    >>Drag |T135834:0|tFreezing Trap from the Spellbook to your action bars. Cast |T135834:0|tFreezing Trap to throw it onto the stone path next to you
+    .goto 1409,52.60,53.29
+    >>Drag |T135834:0|tFreezing Trap from the Spellbook to your action bars
+    >>Cast |T135834:0|tFreezing Trap in the middle of the Ogre Ring
     .complete 59356,1 << Alliance --1/1 Freezing trap used within Ogre Ruins to capture stalker
     .complete 59953,1 << Horde --1/1 Freezing trap used within Ogre Ruins to capture stalker
 step << Alliance Hunter
@@ -1244,12 +1245,15 @@ step << Alliance Hunter
 step << Horde Hunter
     .goto 1409,52.56,55.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Mithdran
-    >>Target the Turtle. Cast |T132164:0|tTame Beast on it
+    >>Target the Beast beside you. It could be a Turtle, Wolf or Dragonhawk
+    >>Cast |T132164:0|tTame Beast on it
     .complete 60162,2 -- Speak with Mithdran to summon and tame your new pet
 	.skipgossip 167215,2
 	.timer 7,The Art of Taming RP
 	.target Mithdran Dawntracker
 	.target Turtle
+    .target Wolf
+    .target Dragonhawk
 --VV GOSSIP OBJECTIVE STEP
 step << Alliance Hunter
     .goto 1409,52.42,55.27
@@ -1464,7 +1468,7 @@ step
     .complete 55981,6 << Alliance --Reach the Citadel entrance
     .complete 59978,6 << Horde --Reach the Citadel entrance
 step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Garrick, Henry, and Meredy
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Garrick, Henry and Meredy
     .turnin 55981 >>Turn in Right Beneath Their Eyes
     .accept 55990 >>Accept Controlling their Stones
     .goto 1409,40.16,32.35
@@ -1476,7 +1480,7 @@ step << Alliance
 	.target Henry Garrick
 	.target Meredy Huntsworth
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Breka, Shuja, and Herbert
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Breka, Shuja and Herbert
     .turnin 59978 >>Turn in Right Beneath Their Eyes
     .accept 59981 >>Accept Controlling their Stones
     .goto 1409,40.29,32.45
@@ -1737,7 +1741,14 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Curly
     .turnin 58908 >>Turn in Finding Your Way
     .accept 58909 >>Accept License to Ride
+step << Alliance
+	.goto 84,77.11,67.80
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Darlene. Train Apprentice Riding
     .complete 58909,1 --Learn the Apprentice Riding skill
+    .target Darlene
+step << Alliance
+    .goto 84,77.29,66.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Curly	
     .turnin 58909 >>Turn in License to Ride
 	.target Curly
     .isQuestTurnedIn 59583
@@ -1921,7 +1932,7 @@ step << Alliance Warlock
     .complete 59593,1 --1/1 Speak with Laphandrus Voidheart to learn about specializations
     .complete 59593,2 --1/1 Activate a combat specialization
 	.target Laphandrus Voidheart
-	.skipgossip 164941
+	.skipgossip 164941,1
     .isQuestTurnedIn 59583
 step << Alliance Warlock
     .goto 84,78.99,69.61
