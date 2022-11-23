@@ -4196,3 +4196,77 @@ function addon.functions.tradeskill(self, ...)
         addon.SetElementComplete(self, true)
     end
 end
+
+function addon.functions.achievement(self, ...)
+    if not GetAchievementInfo then
+        return
+    elseif type(self) == "string" then -- on parse
+        local element = {}
+        element.dynamicText = true
+        local text, id, criteria, numReq = ...
+        id = tonumber(id)
+        if not id then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': No toy ID provided\n' .. self)
+        end
+        element.numReq = tonumber(numReq)
+        element.id = id
+        element.criteria = tonumber(criteria) or 0
+        if text and text ~= "" then
+            element.rawtext = text
+            element.tooltipText = element.rawtext
+        end
+        return element
+    end
+
+    local element = self.element
+    local id, displayText, points, completed = GetAchievementInfo(element.id)
+    local quantity, reqQuantity = completed and 1 or 0,1
+
+    if element.criteria > GetAchievementNumCriteria(element.id) then
+        element.criteria = 0
+    end
+
+    if element.criteria > 0 then
+        displayText, criteriaType, completed, quantity, reqQuantity = GetAchievementCriteriaInfo(element.id,element.criteria)
+    end
+
+    if element.numReq and element.numReq < reqQuantity then
+        reqQuantity = reqQuantity
+    end
+
+    if not element.textOnly then
+        displayText = element.rawtext or displayText
+        element.text = string.format("%s: %d/%d",displayText,quantity,reqQuantity)
+        element.tooltipText = element.text
+    end
+
+    if (completed or quantity >= reqQuantity) == not element.reverse then
+        if element.skipStep then
+            element.step.completed = true
+            addon.updateSteps = true
+        else
+            addon.SetElementComplete(self)
+        end
+    end
+end
+
+function addon.functions.achievementComplete(self, ...)
+    local element = addon.functions.achievement(self, ...)
+    if type(element) == "table" then
+        element.skipStep = true
+        element.textOnly = true
+        element.reverse = true
+        return element
+    end
+end
+
+function addon.functions.achievementIncomplete(self, ...)
+    local element = addon.functions.achievement(self, ...)
+    if type(element) == "table" then
+        element.skipStep = true
+        element.textOnly = true
+        return element
+    end
+end
