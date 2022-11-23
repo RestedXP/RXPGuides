@@ -2284,7 +2284,7 @@ step << skip
     .isOnQuest 60360
 --VV Horde
 step << Horde
-    .goto 85,48.26,71.38]
+    .goto 85,48.26,71.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Breka
     .turnin 60360 >>Turn in An Urgent Meeting
     .accept 60361 >>Accept Battle for Azeroth: Mission Statement
