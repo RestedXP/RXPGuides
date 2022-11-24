@@ -26,9 +26,14 @@ step
     .accept 28765 >>Accept Beating Them Back! << Warlock --x Warlock
     .accept 28766 >>Accept Beating Them Back! << Warrior
     .accept 28767 >>Accept Beating Them Back! << Hunter
+    .target Marshal McBride
  step
-    >>Kill 6 Wolves in the Area
-    .goto 425,28.60, 43.57
+    >>Kill Wolves
+    .goto 425,28.60,43.57,30,0
+    .goto 425,24.71,49.27,30,0
+    .goto 425,24.36,38.88,30,0
+    .goto 425,29.91,33.30,30,0
+    .goto 425,28.60,43.57   
     .complete 31139,1 << Death Knight/Monk/Druid --6/6 Blackrock Worg slain 
     .complete 28757,1 << Mage --6/6 Blackrock Worg slain
     .complete 28762,1 << Paladin --6/6 Blackrock Worg slain
@@ -36,7 +41,8 @@ step
     .complete 28764,1 << Rogue --6/6 Blackrock Worg slain 
     .complete 28765,1 << Warlock --6/6 Blackrock Worg slain 
     .complete 28766,1 << Warrior --6/6 Blackrock Worg slain 
-    .complete 28767,1 << Hunter --6/6 Blackrock Worg slain 
+    .complete 28767,1 << Hunter --6/6 Blackrock Worg slain
+    .target Blackrock Worg 
 step
     #label HumanExileCheck
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Marshal McBride
@@ -57,9 +63,14 @@ step
     .accept 28772 >> Accept Lions for Lambs << Rogue
     .accept 28773 >> Accept Lions for Lambs << Warlock
     .accept 28774 >> Accept Lions for Lambs << Warrior
+    .target Marshal McBride
 step
-    >> Kill 8 Blackrock Spies in the area
-    .goto 425,31.55, 47.25
+    >>Kill Blackrock Spies
+    .goto 425,28.60,43.57,30,0
+    .goto 425,24.71,49.27,30,0
+    .goto 425,24.36,38.88,30,0
+    .goto 425,29.91,33.30,30,0
+    .goto 425,28.60,43.57
     .complete 31140,1 << Death Knight/Monk/Druid --8/8 Blackrock Spy slain 
     .complete 28769,1 << Mage --8/8 Blackrock Spy slain 
     .complete 28759,1 << Hunter --8/8 Blackrock Spy slain 
@@ -67,7 +78,8 @@ step
     .complete 28771,1 << Priest --8/8 Blackrock Spy slain  
     .complete 28772,1 << Rogue --8/8 Blackrock Spy slain  
     .complete 28773,1 << Warlock --8/8 Blackrock Spy slain 
-    .complete 28774,1 << Warrior --8/8 Blackrock Spy slain 
+    .complete 28774,1 << Warrior --8/8 Blackrock Spy slain
+    .target Blackrock Spy
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Marshal McBride
     .goto 425,33.5,53.0
@@ -86,7 +98,8 @@ step
     .accept 28786 >>Accept Join the Battle! << Priest
     .accept 28787 >>Accept Join the Battle! << Rogue
     .accept 28788 >>Accept Join the Battle! << Warlock  
-    .accept 28789 >>Accept Join the Battle! << Warrior 
+    .accept 28789 >>Accept Join the Battle! << Warrior
+    .target Marshal McBride
 step
     .goto 425,35.7,39.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Sergeant Willem
@@ -106,8 +119,9 @@ step
     .accept 28796 >>Accept They Sent Assassins << Warlock
     .accept 28797 >>Accept They Sent Assassins << Warrior
     .accept 31144 >>Accept They Sent Assassins << Death Knight/Monk/Druid
+    .target Sergeant Willem
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Brother Paxton (he can patrol a little)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Brother Paxton. He patrols around slightly
     .goto 425,34.89,38.38
     .accept 63447 >>Accept Fear No Evil << Death Knight/Monk/Druid
     .accept 28806 >>Accept Fear No Evil << Hunter
@@ -117,13 +131,14 @@ step
     .accept 28810 >>Accept Fear No Evil << Priest
     .accept 28811 >>Accept Fear No Evil << Rogue
     .accept 28812 >>Accept Fear No Evil << Warlock
+    .target Brother Paxton
 step
     #completewith Area1
-    >>Old World Enemy Rares and Treasure Chests reward as much as 1 or 2 Quest!
+    .goto 425,31.6,16.76,25 >> Old World Enemy Rares and Treasure Chests reward as much as 1 or 2 Quests!
     *Check for Gug Fatcandle (Rare) near the mine
-    .goto 425,31.6,16.76,20
+	.unitscan Gug Fatcandle
 step
-    >>Kill 8 Goblins while clicking on the Injured Soldiers in the area
+    >>Kill Goblins while clicking on the Injured Soldiers in the area
     .goto 425,36.55,31.33,30,0
     .goto 425,31.68,31.4,30,0
     .goto 425,31.6,16.76,20,0
@@ -145,9 +160,11 @@ step
     .complete 28810,1 << Priest --4/4 Injured Soldier revived
     .complete 28811,1 << Rogue --4/4 Injured Soldier revived
     .complete 28812,1 << Warlock --4/4 Injured Soldier revived
+    .target Injured Soldier
+    .target Goblin Assassin    
 step
     #label Area1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Brother Paxton(patrolling a little)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Brother Paxton. He patrols around slightly
     .goto 425,35.44,37.82
     .turnin 63447 >>Turn in Fear No Evil << Death Knight/Monk/Druid
     .turnin 28806 >>Turn in Fear No Evil << Hunter
@@ -158,6 +175,7 @@ step
     .turnin 28811 >>Turn in Fear No Evil << Rogue
     .turnin 28812 >>Turn in Fear No Evil << Warlock  
     .turnin 29082 >>Turn in Fear No Evil << Warrior
+    .target Brother Paxton
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Sergeant Willem
     .goto 425,35.7,39.8
@@ -177,6 +195,7 @@ step
     .accept 28821 >>Accept The Rear is Clear << Rogue
     .accept 28822 >>Accept The Rear is Clear << Warlock
     .accept 28823 >>Accept The Rear is Clear << Warrior
+    .target Sergeant Willem
  step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Marshal McBride
     .goto 425,33.5,53.0
@@ -189,10 +208,12 @@ step
     .turnin 28822 >>Turn in The Rear is Clear << Warlock
     .turnin 28823 >>Turn in The Rear is Clear << Warrior
     .accept 26389 >>Accept Blackrock Invasion
+    .target Marshal McBride
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Milly Osworth
     .goto 425,33.4,54.7
     .accept 26391 >>Accept Extinguishing Hope
+    .target Milly Osworth
 step
     #sticky
     #completewith QuestKeybindingsHuman
@@ -205,7 +226,12 @@ step
     .use 58362
     .complete 26389,1 --8/8 Blackrock Orc Weapon
     .complete 26391,1 --8/8 Vineyard Fire extinguished
-    .goto 425,48.89,75.73
+    .goto 425,48.99,77.06,30,0
+    .goto 425,54.01,82.27,30,0
+    .goto 425,57.57,76.36,30,0
+    .goto 425,53.97,71.43,30,0
+    .goto 425,48.99,77.06
+    .target Blackrock Invader
 step
     #completewith next
     >>RXP Guides often use Deathskips to quickly go to a desired Location
@@ -215,15 +241,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Milly Osworth
     .goto 425,33.4,54.7
     .turnin 26391 >>Turn in Extinguishing Hope
+    .target Milly Osworth
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Marshal McBride
     .goto 425,33.57,53.01
     .turnin 26389 >>Turn in Blackrock Invasion
     .accept 26390 >>Accept Ending the Invasion!
+    .target Marshal McBride
 step
-    >> Kill Kurtok
+    >>Kill Kurtok
     .goto 425,65.04,48.37
     .complete 26390,1 --1/1 Kurtok the Slayer slain
+    .target Kurtok the Slayer
 step
     #completewith next
     .deathskip >> Pull as many Enemies as you can, Die and Respawn at the Graveyard(skip this if no enemies are to be seen)
@@ -231,14 +260,17 @@ step
     .goto 425,33.5,53.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Marshal McBride
     .turnin 26390 >>Turn in Ending the Invasion!
+    .target Marshal McBride
 step
     .goto 425,33.5,53.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Marshal McBride
     .accept 54 >>Accept Report to Goldshire
+    .target Marshal McBride
 step << Human
     #label HumanElwynnForestIntroduction
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Falkhaan
     .goto 425,29.12,72.38,8,0
     .goto 37,45.37,49.0
     .accept 37112 >>Accept Rest and Relaxation
+    .target Falkhaan
 ]])
