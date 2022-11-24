@@ -302,7 +302,7 @@ step << Gnome
 step << Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Binjy Featherwhistle
     .turnin 32663 >>Turn in Learn To Ride
-    .goto 27.56.27, 46.42
+    .goto 27.56.27,46.42
     .skill riding,75 >> Learn Apprentice Riding
 step << Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Brolan outside the Inn
