@@ -113,7 +113,7 @@ step << Horde
 	.complete 13116,1 --Mustard Dog Basket! (1)
 	.isOnQuest 13116
 step
-	>> Archmage Pentarus on the landing pad
+	>>Talk to Archmage Pentarus on the landing pad
 	.goto Dalaran,68.53,42.04
 	.turnin 13107 >>Turn in Mustard Dogs << Alliance
 	.isQuestComplete 13107 << Alliance
