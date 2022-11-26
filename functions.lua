@@ -4217,7 +4217,7 @@ function addon.functions.achievement(self, ...)
         if not id then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ': No toy ID provided\n' .. self)
+                           ': Invalid ID\n' .. self)
         end
         element.numReq = tonumber(numReq)
         element.id = id
@@ -4276,6 +4276,51 @@ function addon.functions.achievementIncomplete(self, ...)
     if type(element) == "table" then
         element.skipStep = true
         element.textOnly = true
+        return element
+    end
+end
+
+function addon.functions.isWorldQuestAvaialble(self, ...)
+    if not C_TaskQuest then
+        return
+    elseif type(self) == "string" then -- on parse
+        local text, mapId, questId, remaining = ...
+        mapId = addon.mapId[mapId] or tonumber(zone)
+        questId = tonumber(questId)
+        if not (questId and mapId) then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': Invalid ID\n' .. self)
+        end
+        local element = {textOnly = true, mapId = mapId, questId = questId, duration = tonumber(remaining) or -1, reverse = false}
+        if text and text ~= "" then
+            element.text = text
+        end
+        return element
+    end
+
+    local element = self.element
+    local taskInfo = C_TaskQuest.GetQuestsForPlayerByMapID(element.mapId)
+
+    for i=1, #taskInfo do
+        local questId = taskInfo[i].questId
+        if questId == element.questId and QuestUtils_IsQuestWorldQuest(questId) then
+            local timeLeft = C_TaskQuest.GetQuestTimeLeftMinutes(questId)
+            if (element.duration < 0 or timeLeft >= element.duration) == element.reverse then
+                element.step.completed = true
+                addon.updateSteps = true
+            end
+
+           break
+        end
+    end
+
+end
+
+function addon.functions.isWorldQuestUnavaialble(self, ...)
+    local element = addon.functions.achievement(self, ...)
+    if type(element) == "table" then
+        element.reverse = true
         return element
     end
 end
