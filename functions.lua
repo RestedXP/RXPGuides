@@ -4285,7 +4285,7 @@ function addon.functions.isWorldQuestAvailable(self, ...)
         return
     elseif type(self) == "string" then -- on parse
         local text, mapId, questId, remaining = ...
-        mapId = addon.mapId[mapId] or tonumber(zone)
+        mapId = addon.mapId[mapId] or tonumber(mapId)
         questId = tonumber(questId)
         if not (questId and mapId) then
             return addon.error(
