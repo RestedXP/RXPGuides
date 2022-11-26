@@ -4280,7 +4280,7 @@ function addon.functions.achievementIncomplete(self, ...)
     end
 end
 
-function addon.functions.isWorldQuestAvaialble(self, ...)
+function addon.functions.isWorldQuestAvailable(self, ...)
     if not C_TaskQuest then
         return
     elseif type(self) == "string" then -- on parse
@@ -4317,7 +4317,7 @@ function addon.functions.isWorldQuestAvaialble(self, ...)
 
 end
 
-function addon.functions.isWorldQuestUnavaialble(self, ...)
+function addon.functions.isWorldQuestUnavailable(self, ...)
     local element = addon.functions.achievement(self, ...)
     if type(element) == "table" then
         element.reverse = true
