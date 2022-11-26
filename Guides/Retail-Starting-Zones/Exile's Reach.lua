@@ -351,7 +351,7 @@ step << Alliance
     .goto 1409,56.26,59.17
     .turnin 55186 >>Turn in Down with the Quilboar
     .accept 55193 >>Accept The Scout-o-Matic 5000
-	.timer 15,Scout-o-Matic RP
+	.timer 20,Scout-o-Matic RP
     .goto 1409,56.17,59.12
 	.target Austin Huxworth
 	.target Lindie Springstock
