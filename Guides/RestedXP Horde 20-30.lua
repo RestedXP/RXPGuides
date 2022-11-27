@@ -1975,6 +1975,7 @@ step
 .goto Ashenvale,68.2,54.0
     .complete 6441,1 --Collect Satyr Horns (x16)
 step
+    #xprate <1.1
     .goto Ashenvale,62.07,51.32
 	>> Ordanus can be quite hard, your should try to burst him, loot him and then jump down from the building. 
     .complete 1088,1 --Ordanus' Head (1)
