@@ -154,6 +154,20 @@ local IsQuestComplete = addon.IsQuestComplete
 
 local function IsOnQuest(id) return C_QuestLog.IsOnQuest(id) end
 
+local function GetLogIndexForQuestID(questID)
+    if C_QuestLog.GetLogIndexForQuestID then
+        return C_QuestLog.GetLogIndexForQuestID(questID),C_QuestLog.IsPushableQuest(questID)
+    else
+        for i = 1, GetNumQuests() do
+            local _, _, _, _, _, _, _, id = GetQuestLogTitle(i);
+            if questID == id then
+                SelectQuestLogEntry(i)
+                return i,GetQuestLogPushable()
+            end
+        end
+    end
+end
+
 addon.IsOnQuest = IsOnQuest
 addon.IsQuestTurnedIn = IsQuestTurnedIn
 addon.IsQuestComplete = IsQuestComplete
@@ -716,8 +730,17 @@ function addon.functions.accept(self, ...)
                 ProcessItems(not element.completed, step, id)
                 addon.UpdateItemFrame()
             end
-            if element.timer and element.completed and not isCompleted then
-                addon.StartTimer(element.timer,element.timerText)
+            if element.completed and not isCompleted then
+                if element.timer then
+                    addon.StartTimer(element.timer,element.timerText)
+                end
+
+                if addon.settings.db.profile.shareQuests then
+                    local questLogIndex,isPushable = GetLogIndexForQuestID(id);
+                    if questLogIndex and isPushable then
+                        _G.QuestLogPushQuest(questLogIndex)
+                    end
+                end
             end
         end
 

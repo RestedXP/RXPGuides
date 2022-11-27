@@ -781,6 +781,18 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = addon.gameVersion < 30000 or addon.gameVersion > 40000
                     },
+                    shareQuests = {
+                        name = L("Automatic quest sharing"), --TODO: Localize this setting
+                        desc = L(
+                            "Whenever you accept a quest in the guide, the addon tries to share it with your group"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.95,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                        end,
+                        hidden = addon.gameVersion < 30000 or addon.gameVersion > 40000
+                    },
                     hideInRaid = {
                         name = L("Autohide in Raids"), -- TODO locale
                         desc = L(
