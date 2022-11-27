@@ -791,7 +791,7 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                         end,
-                        hidden = addon.gameVersion < 30000 or addon.gameVersion > 40000
+                        hidden = false
                     },
                     hideInRaid = {
                         name = L("Autohide in Raids"), -- TODO locale
