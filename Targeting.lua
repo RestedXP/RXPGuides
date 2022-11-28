@@ -127,12 +127,12 @@ function addon.targeting:ADDON_LOADED(_, name)
 end
 
 local function shouldTargetCheck()
-    return
-        addon.settings.db.profile.enableTargetAutomation and not IsInRaid() and
-            not UnitOnTaxi("player") and
-            (next(enemyTargets) ~= nil or next(friendlyTargets) ~= nil or
-                next(rareTargets) ~= nil or next(proxmityPolling.scannedTargets) ~=
-                nil)
+    return not addon.isHidden and
+               addon.settings.db.profile.enableTargetAutomation and
+               not IsInRaid() and not UnitOnTaxi("player") and
+               (next(enemyTargets) ~= nil or next(friendlyTargets) ~= nil or
+                   next(rareTargets) ~= nil or
+                   next(proxmityPolling.scannedTargets) ~= nil)
 
 end
 
@@ -428,7 +428,10 @@ function addon.targeting.CheckTargetProximity()
 
             -- Reset raid icons on timeout
             for i = 1, 8 do SetRaidTarget("player", i) end
-            SetRaidTarget("player", 0)
+
+            if GetRaidTargetIndex("player") ~= nil then
+                SetRaidTarget("player", GetRaidTargetIndex("player"))
+            end
         end
     end
 end
