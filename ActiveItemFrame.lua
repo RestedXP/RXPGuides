@@ -193,7 +193,7 @@ end
 
 local fOnLeave = function(self)
     if not GameTooltip:IsForbidden() then GameTooltip:Hide() end
-    if IsMouseButtonDown() and not InCombatLockdown() and not IsMouseButtonDown("Left") and not SpellIsTargeting() then
+    if IsMouseButtonDown() and not InCombatLockdown() and (not IsMouseButtonDown("Left") or IsModifierKeyDown()) and not SpellIsTargeting() then
         if self.bag and self.slot then
             PickupContainerItem(self.bag, self.slot)
         end
@@ -250,7 +250,7 @@ function addon.UpdateItemFrame(itemFrame)
         if not btn then
             btn = CreateFrame("Button", "$parentButton" .. i, itemFrame,
                               "SecureActionButtonTemplate")
-            btn:SetAttribute("*type1", "item")
+            btn:SetAttribute("type1", "item")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks and addon.game == "DF" then
                 btn:RegisterForClicks("AnyUp","AnyDown")
@@ -296,7 +296,7 @@ function addon.UpdateItemFrame(itemFrame)
         if item.spell then
             attribute = "spell"
         end
-        btn:SetAttribute("*type1",attribute)
+        btn:SetAttribute("type1",attribute)
         btn:SetAttribute(attribute, item.name)
         if btn.itemId ~= item.id and btn.cooldown then
             btn.cooldown:Clear()
