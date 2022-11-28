@@ -118,6 +118,7 @@ local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
 local OpenCalendar = _G.C_Calendar.OpenCalendar
 local GossipSelectOption = _G.SelectGossipOption
 local GossipGetOptions = C_GossipInfo.GetOptions or _G.GetGossipOptions
+local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
 
 addon.recentTurnIn = {}
 
@@ -4325,17 +4326,22 @@ function addon.functions.isWorldQuestAvailable(self, ...)
     local element = self.element
     local taskInfo = C_TaskQuest.GetQuestsForPlayerByMapID(element.mapId)
 
+    local available = false
+
     for i=1, #taskInfo do
         local questId = taskInfo[i].questId
         if questId == element.questId and QuestUtils_IsQuestWorldQuest(questId) then
             local timeLeft = C_TaskQuest.GetQuestTimeLeftMinutes(questId)
-            if (element.duration < 0 or timeLeft >= element.duration) == element.reverse then
-                element.step.completed = true
-                addon.updateSteps = true
+            if (element.duration < 0 or timeLeft >= element.duration) then
+                available = true
             end
-
-           break
+            break
         end
+    end
+
+    if available == element.reverse then
+        element.step.completed = true
+        addon.updateSteps = true
     end
 
 end
