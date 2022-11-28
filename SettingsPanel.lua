@@ -36,11 +36,11 @@ function addon.settings.ChatCommand(input)
 
     input = input:trim()
     if input == "import" then
-        --addon.RXPOptions.expanded = true
+        -- addon.RXPOptions.expanded = true
         if Settings and Settings.GetCategory then
             Settings.GetCategory(addon.RXPOptions.name).expanded = true;
             Settings.OpenToCategory(addon.RXPOptions.name);
-            --Settings.OpenToCategory(addon.settings.gui.import); -- causes UI taint on 10.0
+            -- Settings.OpenToCategory(addon.settings.gui.import); -- causes UI taint on 10.0
         else
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
@@ -115,7 +115,7 @@ function addon.settings:InitializeSettings()
             enableEnemyMarking = true,
             showTargetingOnProximity = true,
             soundOnFind = 3175,
-            soundOnFindChannel = 'Dialog',
+            soundOnFindChannel = 'Master',
             scanForRares = true
         }
     }
@@ -779,10 +779,11 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.ReloadGuide()
                         end,
-                        hidden = addon.gameVersion < 30000 or addon.gameVersion > 40000
+                        hidden = addon.gameVersion < 30000 or addon.gameVersion >
+                            40000
                     },
                     shareQuests = {
-                        name = L("Automatic quest sharing"), --TODO: Localize this setting
+                        name = L("Automatic quest sharing"), -- TODO: Localize this setting
                         desc = L(
                             "Whenever you accept a quest in the guide, the addon tries to share it with your group"),
                         type = "toggle",
@@ -1592,7 +1593,7 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 1,
                         max = 100,
                         step = 1,
-                        hidden = addon.gameVersion > 40000,
+                        hidden = addon.gameVersion > 40000
                     },
                     phase = {
                         name = L("Content phase"),
