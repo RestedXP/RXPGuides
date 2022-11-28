@@ -6,6 +6,7 @@ local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
 local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or GetContainerNumSlots
 local GetContainerItemID = C_Container and C_Container.GetContainerItemID or GetContainerItemID
 local GameTooltip = _G.GameTooltip
+local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
 
 local function GetActiveItemList(ref)
     local itemList = {}
@@ -192,7 +193,7 @@ end
 
 local fOnLeave = function(self)
     if not GameTooltip:IsForbidden() then GameTooltip:Hide() end
-    if IsMouseButtonDown() and not InCombatLockdown() then
+    if IsMouseButtonDown() and not InCombatLockdown() and not IsMouseButtonDown("Left") and not SpellIsTargeting() then
         if self.bag and self.slot then
             PickupContainerItem(self.bag, self.slot)
         end
@@ -249,10 +250,10 @@ function addon.UpdateItemFrame(itemFrame)
         if not btn then
             btn = CreateFrame("Button", "$parentButton" .. i, itemFrame,
                               "SecureActionButtonTemplate")
-            btn:SetAttribute("type", "item")
+            btn:SetAttribute("*type1", "item")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks and addon.game == "DF" then
-                btn:RegisterForClicks("LeftButtonDown")
+                btn:RegisterForClicks("AnyUp","AnyDown")
             end
             table.insert(buttonList, btn)
             local n = #buttonList
@@ -295,7 +296,7 @@ function addon.UpdateItemFrame(itemFrame)
         if item.spell then
             attribute = "spell"
         end
-        btn:SetAttribute("type",attribute)
+        btn:SetAttribute("*type1",attribute)
         btn:SetAttribute(attribute, item.name)
         if btn.itemId ~= item.id and btn.cooldown then
             btn.cooldown:Clear()
