@@ -151,7 +151,7 @@ addon.rares = {
         "Squiddic"
     },
     ["Duskwood"] = {
-        "Carved One", "Eliza", "Fenros", "", "Lightning Paw", "Lupos",
+        "Carved One", "Eliza", "Fenros", "Lightning Paw", "Lupos",
         "Marina DeSirrus", "Marus", "Naraxis", "Nefaru", "Terrapis",
         "The Cow King", "The Unknown Soldier", "Watcher Eva"
     },
@@ -381,7 +381,7 @@ addon.rares = {
     },
     ["Vale of Eternal Blossoms"] = {
         "Aetha", "Ai-Ran the Shifting Cloud", "Bai-Jin the Butcher",
-        "Baolai the Immolator", "", "Bloodtip", "Cracklefang",
+        "Baolai the Immolator", "Bloodtip", "Cracklefang",
         "Gaohun the Soul-Severer", "General Temuja", "Gochao the Ironfist",
         "Huo-Shuang", "Kal'tik the Blight", "Kang the Soul Thief", "Kri'chon",
         "Major Nanners", "Moldo One-Eye", "Quid", "Sahn Tidehunter",
@@ -403,7 +403,7 @@ addon.rares = {
     },
     ["The Jade Forest"] = {
         "Aethis", "Ferdinand", "Kor'nas Nightsavage", "Krakkanon", "Krax'ik",
-        "Mister Ferocious", "Morgrinn Crackfang", "", "Sarnak",
+        "Mister Ferocious", "Morgrinn Crackfang", "Sarnak",
         "Urobi the Walker", "Zandalari Warbringer", "Zandalari Warscout"
     },
     ["Dread Wastes"] = {

@@ -117,7 +117,7 @@ addon.rares = {
         "Seeker Aqualon", "Snarlflare", "Squiddic", "Volchan"
     },
     ["Duskwood"] = {
-        "Commander Felstrom", "Fenros", "", "Lord Malathrom", "Lupos",
+        "Commander Felstrom", "Fenros", "Lord Malathrom", "Lupos",
         "Naraxis", "Nefaru"
     },
     ["Wetlands"] = {
