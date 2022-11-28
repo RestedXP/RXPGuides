@@ -664,7 +664,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks then
-                btn:RegisterForClicks("AnyUp","AnyDown")
+                btn:RegisterForClicks("AnyUp", "AnyDown")
             end
             tinsert(enemyTargetButtons, btn)
             local n = #enemyTargetButtons
@@ -733,7 +733,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks then
-                btn:RegisterForClicks("AnyUp","AnyDown")
+                btn:RegisterForClicks("AnyUp", "AnyDown")
             end
             tinsert(friendlyTargetButtons, btn)
             local n = #friendlyTargetButtons
@@ -837,9 +837,4 @@ function addon.targeting:LoadRares()
 
     rareTargets = addon.rares[zone] or {}
     self:UpdateTargetFrame()
-
-    if addon.settings.db.profile.debug then
-        print("Rares in zone:", zone)
-        for i, name in ipairs(rareTargets) do print("- " .. name) end
-    end
 end
