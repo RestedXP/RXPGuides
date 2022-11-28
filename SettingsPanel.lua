@@ -116,7 +116,8 @@ function addon.settings:InitializeSettings()
             showTargetingOnProximity = true,
             soundOnFind = 3175,
             soundOnFindChannel = 'Master',
-            scanForRares = true
+            scanForRares = true,
+            notifyOnRares = true
         }
     }
 
@@ -1133,25 +1134,55 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = not addon.targeting:CanCreateMacro() or
                             not self.db.profile.enableTargetAutomation
                     },
-                    proximityHeader = {
-                        name = _G.TRACKER_SORT_PROXIMITY,
+                    activeTargetsHeader = {
+                        name = L("Active Targets"),
                         type = "header",
                         width = "full",
                         order = 2
                     },
                     enableTargetAutomation = {
-                        name = L("Target Automation"), -- TODO locale
+                        name = L("Enable Active Targets"), -- TODO locale
                         desc = L("Automatically scan nearby targets"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.1
+                    },
+                    hideActiveTargetsBackground = {
+                        name = L("Hide Targets Background"),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.targeting:RenderTargetFrameBackground()
+                        end,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    showTargetingOnProximity = {
+                        name = L("Only show when in range"), -- TODO locale
+                        desc = L(
+                            "Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.3,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
+                        end
                     },
                     enableFriendlyTargeting = {
                         name = L("Scan Friendly Targets"), -- TODO locale
                         desc = L("Scan for friendly targets"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.2,
+                        order = 2.4,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation
                         end
@@ -1161,8 +1192,8 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Mark friendly targets with star, circle, diamond, and triangle"),
                         type = "toggle",
-                        width = optionsWidth,
-                        order = 2.21,
+                        width = optionsWidth * 2,
+                        order = 2.5,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation or
                                        not self.db.profile.enableTargetMarking
@@ -1173,7 +1204,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Scan for enemy targets"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.3,
+                        order = 2.6,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation
                         end
@@ -1183,41 +1214,11 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Mark enemy targets with skull, cross, square, and moon"),
                         type = "toggle",
-                        width = optionsWidth,
-                        order = 2.31,
+                        width = optionsWidth * 2,
+                        order = 2.7,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation or
                                        not self.db.profile.enableEnemyMarking
-                        end
-                    },
-                    showTargetingOnProximity = {
-                        name = L("Only show when in range"), -- TODO locale
-                        desc = L(
-                            "Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 2.32,
-                        confirm = requiresReload,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            _G.ReloadUI()
-                        end,
-                        disabled = function()
-                            return not self.db.profile.enableTargetAutomation
-                        end
-                    },
-                    hideActiveTargetsBackground = {
-                        name = L("Hide Targets Background"),
-                        desc = L("Make background transparent"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 2.33,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.targeting:RenderTargetFrameBackground()
-                        end,
-                        disabled = function()
-                            return not self.db.profile.enableTargetAutomation
                         end
                     },
                     scanForRares = {
@@ -1225,11 +1226,24 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Checks for nearby rare spawns"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.34,
+                        order = 2.8,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation or
                                        not self.db.profile
                                            .showTargetingOnProximity
+                        end
+                    },
+                    notifyOnRares = {
+                        name = L("Notify on Rares"), -- TODO locale
+                        desc = L("Notify when a new rare is found"),
+                        type = "toggle",
+                        width = optionsWidth * 2,
+                        order = 2.9,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation or
+                                       not self.db.profile
+                                           .showTargetingOnProximity or
+                                       not self.db.profile.scanForRares
                         end
                     },
                     alertHeader = {
