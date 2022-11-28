@@ -4341,7 +4341,7 @@ function addon.functions.isWorldQuestAvailable(self, ...)
 end
 
 function addon.functions.isWorldQuestUnavailable(self, ...)
-    local element = addon.functions.achievement(self, ...)
+    local element = addon.functions.isWorldQuestAvailable(self, ...)
     if type(element) == "table" then
         element.reverse = true
         return element
