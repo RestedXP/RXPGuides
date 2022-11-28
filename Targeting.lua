@@ -29,7 +29,8 @@ local proxmityPolling = {
     lastMatch = 0,
     matchTimeout = 5,
     scanData = {},
-    scannedTargets = {}
+    scannedTargets = {},
+    rareAnnounced = {}
 }
 
 local friendlyTargets = {}
@@ -423,6 +424,7 @@ function addon.targeting.CheckTargetProximity()
             end
 
             proxmityPolling.match = false
+            wipe(proxmityPolling.rareAnnounced)
             wipe(proxmityPolling.scannedTargets)
             addon.targeting.activeTargetFrame:Hide()
 
@@ -443,10 +445,19 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
         return
     end
 
-    proxmityPolling.scannedTargets[proxmityPolling.scanData.name] =
-        proxmityPolling.scanData.kind
+    local scannedName = proxmityPolling.scanData.name
+
+    proxmityPolling.scannedTargets[scannedName] = proxmityPolling.scanData.kind
     proxmityPolling.lastMatch = GetTime()
     self:UpdateTargetFrame()
+
+    if proxmityPolling.scanData.kind == 'rare' and
+        addon.settings.db.profile.notifyOnRares and
+        not proxmityPolling.rareAnnounced[scannedName] then
+
+        proxmityPolling.rareAnnounced[scannedName] = true
+        addon.comms.PrettyPrint(L("Rare Found! %s is nearby."), scannedName) -- TODO locale
+    end
 
     -- Only notify sound once per step
     if proxmityPolling.match or proxmityPolling.scanData.kind == 'friendly' then
