@@ -515,7 +515,6 @@ function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
 function addon.targeting:CreateTargetFrame()
     if self.activeTargetFrame then return end
 
-    -- TOOD add scale setting
     self.activeTargetFrame = CreateFrame("Frame", "RXPTargetFrame", UIParent,
                                          BackdropTemplateMixin and
                                              "BackdropTemplate" or nil)
@@ -570,6 +569,7 @@ function addon.targeting:CreateTargetFrame()
     f.title:SetScript("OnMouseUp", f.onMouseUp)
 
     f:SetHeight(40)
+    f:SetScale(addon.settings.db.profile.activeTargetScale)
 end
 
 function addon.targeting:RenderTargetFrameBackground()

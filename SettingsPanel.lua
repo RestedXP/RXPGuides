@@ -117,7 +117,8 @@ function addon.settings:InitializeSettings()
             soundOnFind = 3175,
             soundOnFindChannel = 'Master',
             scanForRares = true,
-            notifyOnRares = true
+            notifyOnRares = true,
+            activeTargetScale = 1
         }
     }
 
@@ -1148,27 +1149,13 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.1
                     },
-                    hideActiveTargetsBackground = {
-                        name = L("Hide Targets Background"),
-                        desc = L("Make background transparent"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 2.2,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.targeting:RenderTargetFrameBackground()
-                        end,
-                        disabled = function()
-                            return not self.db.profile.enableTargetAutomation
-                        end
-                    },
                     showTargetingOnProximity = {
                         name = L("Only show when in range"), -- TODO locale
                         desc = L(
                             "Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
                         type = "toggle",
-                        width = optionsWidth,
-                        order = 2.3,
+                        width = optionsWidth * 2,
+                        order = 2.11,
                         confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1183,7 +1170,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Scan for friendly targets"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.4,
+                        order = 2.2,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation
                         end
@@ -1194,7 +1181,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Mark friendly targets with star, circle, diamond, and triangle"),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 2.5,
+                        order = 2.21,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation or
                                        not self.db.profile.enableTargetMarking
@@ -1205,7 +1192,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Scan for enemy targets"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.6,
+                        order = 2.3,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation
                         end
@@ -1216,7 +1203,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Mark enemy targets with skull, cross, square, and moon"),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 2.7,
+                        order = 2.31,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation or
                                        not self.db.profile.enableEnemyMarking
@@ -1227,7 +1214,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Checks for nearby rare spawns"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.8,
+                        order = 2.4,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation or
                                        not self.db.profile
@@ -1239,12 +1226,41 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Notify when a new rare is found"),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 2.9,
+                        order = 2.41,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation or
                                        not self.db.profile
                                            .showTargetingOnProximity or
                                        not self.db.profile.scanForRares
+                        end
+                    },
+                    hideActiveTargetsBackground = {
+                        name = L("Hide Targets Background"),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.5,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.targeting:RenderTargetFrameBackground()
+                        end,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    activeTargetScale = {
+                        name = L("Active Targets Scale"), -- TODO locale
+                        desc = L("Scale of the Active Targets frame"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.51,
+                        min = 0.8,
+                        max = 3,
+                        step = 0.05,
+                        isPercent = true,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.targeting.activeTargetFrame:SetScale(value)
                         end
                     },
                     alertHeader = {
