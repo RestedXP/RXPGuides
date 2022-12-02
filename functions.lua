@@ -816,7 +816,11 @@ function addon.functions.turnin(self, ...)
             element.skipIfMissing = true
         end
         element.questId = questConversion[id] or id
-        element.reward = tonumber(reward) or 0
+        if addon.settings.db.profile.enableQuestRewardAutomation then
+            element.reward = tonumber(reward) or 0
+        else
+            element.reward = 0
+        end
         element.title = ""
         -- element.title = addon.GetQuestName(id)
         if text and text ~= "" then

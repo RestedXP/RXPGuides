@@ -917,6 +917,14 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.2
                     },
+                    enableQuestRewardAutomation = {
+                        name = L("Quest auto rewards"), -- TODO locale
+                        desc = L(
+                            "Allows guides to choose quest rewards automatically"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.21
+                    },
                     enableTrainerAutomation = {
                         name = L("Trainer automation"),
                         desc = L(
