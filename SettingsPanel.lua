@@ -1191,8 +1191,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth * 2,
                         order = 2.21,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation or
-                                       not self.db.profile.enableTargetMarking
+                            return not self.db.profile.enableTargetAutomation
                         end
                     },
                     enableEnemyTargeting = {
@@ -1213,8 +1212,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth * 2,
                         order = 2.31,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation or
-                                       not self.db.profile.enableEnemyMarking
+                            return not self.db.profile.enableTargetAutomation
                         end
                     },
                     scanForRares = {
