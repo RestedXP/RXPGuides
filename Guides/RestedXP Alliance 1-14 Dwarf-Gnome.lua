@@ -13,25 +13,27 @@ step << !Gnome !Dwarf
 .goto Dun Morogh,29.9,71.2
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
-    >>Delete your Hearthstone
+    >>|cFFFCDC00Delete your Hearthstone|r
+    >> Talk to |cFF00FF25Sten Stoutarm|r
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk	
     .accept 179 >> Accept Dwarven Outfitters
+    .target Sten Stoutarm
 step << Warrior
-#sticky
-#completewith next
-.goto Dun Morogh,28.6,72.2,20,0
-+Kill Wolves for 10c+ of vendor trash, then enter the building
+    .goto Dun Morogh,28.6,72.2
+    +Kill |cFF00BCD4Wolves|r for 10c+ of vendor trash, then enter the building. We are going to train Battle Shout, it speeds up leveling speed a lot.
 step << Warrior
-.goto Dun Morogh,28.8,69.2,20 >>Enter the building
-step << Warrior
+    #completewith next
+    .goto Dun Morogh,28.8,69.2,20 >>Enter the building
     .goto Dun Morogh,28.7,67.7
-    .vendor >> vendor trash
+    .vendor >> Vendor Trash
 step << Warrior
+    >> Talk to |cFF00FF25Thran Khorman|r
     .goto Dun Morogh,28.8,67.2
     .train 6673 >>Train Battle Shout
+    .target Thran Khorman
 step
-    >>Kill Wolves. Loot them for Meat
+    >>Kill |cFF00BCD4Wolves|r. Loot them for |cFF00BCD4Tough Wolf Meat|r
 .goto Dun Morogh,28.7,74.8
     .complete 179,1 --Collect Tough Wolf Meat (x8)
 step
@@ -41,68 +43,90 @@ step << Priest/Mage
     .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step << Paladin/Warrior
+    #completewith next
     .goto Dun Morogh,30.0,71.5
     .vendor >>vendor trash
 step << Paladin
+    >> Talk to |cFF00FF25Sten Stoutarm|r
+    .target Sten Stoutarm
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3107 >> Accept Consecrated Rune
 step << Gnome Warrior
+    >> Talk to |cFF00FF25Sten Stoutarm|r
+    .target Sten Stoutarm
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3112 >> Accept Simple Memorandum
 step << Dwarf Warrior
+    >> Talk to |cFF00FF25Sten Stoutarm|r
+    .target Sten Stoutarm
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3106 >> Accept Simple Rune
 step << Mage
+    >> Talk to |cFF00FF25Sten Stoutarm|r
+    .target Sten Stoutarm
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3114 >> Accept Glyphic Memorandum
 step << Priest
+    >> Talk to |cFF00FF25Sten Stoutarm|r
+    .target Sten Stoutarm
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3110 >> Accept Hallowed Rune
 step << Gnome Rogue
+    >> Talk to |cFF00FF25Sten Stoutarm|r
+    .target Sten Stoutarm
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3113 >> Accept Encrypted Memorandum
 step << Dwarf Rogue
+    >> Talk to |cFF00FF25Sten Stoutarm|r
+    .target Sten Stoutarm
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3109 >> Accept Encrypted Rune
 step << !Dwarf !Gnome
+    >> Talk to |cFF00FF25Sten Stoutarm|r
+    .target Sten Stoutarm
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
 step
 #xprate <1.5
+    >> Talk to |cFF00FF25Sten Stoutarm|r
+    .target Sten Stoutarm
     .goto Dun Morogh,29.7,71.2
     .accept 170 >> Accept A New Threat
 step
 #xprate <1.5
     #sticky
     #completewith Rockjaw
-    >>Kill Normal Rockjaw Troggs that you see. You may need to kill extra Burly Rockjaw Troggs to force respawns.
+    >>Kill |cFFFF5722Rockjaw Troggs|r that you see. You may need to kill extra Burly Rockjaw Troggs to force respawns.
     .complete 170,1 --Kill Rockjaw Trogg (x6)
-        >>Kill Burly Rockjaw Troggs
+        >>Kill |cFFFF5722Burly Rockjaw Troggs|r
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
+    .unitscan Rockjaw Trogg
 step
+    >> Talk to |cFF00FF25Talin Keeneye|r
+    .target Talin Keeneye
     .goto Dun Morogh,22.6,71.4
     .turnin 233 >> Turn in Coldridge Valley Mail Delivery
     .accept 183 >> Accept The Boar Hunter
@@ -116,9 +140,11 @@ step
     .goto Dun Morogh,20.5,71.4,40,0
     .goto Dun Morogh,21.1,69.0,40,0
     .goto Dun Morogh,22.8,69.6,40,0
-    >>Kill Boars in the area
+    >>Kill |cFFFF5722Small Crag Boars|r in the area
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
+    >> Talk to |cFF00FF25Talin Keeneye|r
+    .target Talin Keeneye
     .goto Dun Morogh,22.6,71.4
     .turnin 183 >> Turn in The Boar Hunter
 step << Paladin/Mage
@@ -130,22 +156,28 @@ step << Paladin/Mage
 .goto Dun Morogh,24.2,72.5,40,0
 .goto Dun Morogh,27.7,76.3,40,0
 step
-#label Rockjaw
-.goto Dun Morogh,25.1,75.7
+    #label Rockjaw
+    .goto Dun Morogh,25.1,75.7
+    >> Talk to |cFF00FF25Grelin Whitebeard|r
+    .target Grelin Whitebeard
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
 step << Paladin/Mage
+    >> Talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
->> Once accepted, a 5 minute timer will start. Relax and follow the guide
+    >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << Paladin/Mage
 #xprate <1.5
     .goto Dun Morogh,28.7,77.5
-    >>Go up here and kill Troggs if you're not done with them by now
+    >>Go up here and kill |cFFFF5722Rockjaw Troggs|r if you're not done with them by now
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step << Paladin/Mage
     #sticky
     #completewith Scalding1
+    >> Talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     >>If you were too slow and failed the timed quest, go and pick it up again
     .goto Dun Morogh,25.0,76.0,0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
@@ -153,6 +185,8 @@ step << Paladin/Mage
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
 step << Paladin/Mage
     #label Scalding1
+    >> Talk to |cFF00FF25Durnan Furcutter|r
+    .target Durnan Furcutter
     .goto Dun Morogh,28.8,66.4
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
     .accept 3365 >> Accept Bring Back the Mug
@@ -189,7 +223,7 @@ step << !Paladin !Mage
 #xprate <1.5
     #sticky
     #label TrollTroggs
->>Kill any Rockjaw Troggs you see nearby whilst doing Trolls
+>>Kill any |cFFFF5722Rockjaw Troggs|r you see nearby whilst doing Trolls
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step << Paladin/Mage
     .goto Dun Morogh,26.3,79.2,30,0
@@ -199,7 +233,7 @@ step << Paladin/Mage
     .goto Dun Morogh,20.9,75.7,30,0
     .goto Dun Morogh,22.7,79.3,30,0
     .goto Dun Morogh,20.9,75.7,30,0
->>Kill Frostmane Troll Whelps
+>>Kill |cFFFF5722Frostmane Troll Whelps|r
 .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .goto Dun Morogh,25.1,75.7
 step << !Paladin !Mage
@@ -213,7 +247,7 @@ step << !Paladin !Mage
     .goto Dun Morogh,20.9,75.7,30,0
     .goto Dun Morogh,22.7,79.3,30,0
     .goto Dun Morogh,20.9,75.7,30,0
->>Kill Frostmane Troll Whelps
+>>Kill |cFFFF5722Frostmane Troll Whelp|r
 .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .goto Dun Morogh,25.1,75.7
 step << !Paladin !Mage
@@ -223,38 +257,49 @@ step << !Paladin !Mage
     .xp 4 >> Grind to 4
 step << !Paladin !Mage
     #requires TrollTroggs
+    >> Talk to |cFF00FF25Grelin Whitebeard|r
+    .target Grelin Whitebeard
     .goto Dun Morogh,25.1,75.7
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << Paladin/Mage
     .goto Dun Morogh,25.1,75.7
+    >> Talk to |cFF00FF25Grelin Whitebeard|r
+    .target Grelin Whitebeard
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << !Paladin !Mage
+    >> Talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     >>You now have 5m to get the Journal, then turnin the Mornbrew. If you fail quest, pick it up again after dying
 step << Paladin/Mage
+    >> Talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0
     .turnin 3365 >> Turn in Bring Back the Mug
 step
     .goto Dun Morogh,26.8,79.9,30,0
     .goto Dun Morogh,29.0,79.0,15,0
 .goto Dun Morogh,30.6,80.3
-    >>Enter the Troll cave. Kill Grik'nir, then loot him for Grelin's journal
+    >>Enter the Troll cave. Kill |cFF00BCD4Grik'nir|r, then loot him for |cFF00BCD4Grelin's journal|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
 step << !Paladin !Mage
     .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at Spirit Healer
 step << !Paladin !Mage
 #sticky
 #completewith Scalding2
-    >>If you were too slow and failed the timed quest, go and pick it up again
+    >> If you were too slow and failed the timed quest, go and talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0,0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     .goto Dun Morogh,28.8,66.4
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
 step << !Paladin !Mage
     #label Scalding2
+    >> Talk to |cFF00FF25Durnan Furcutter|r
+    .target Durnan Furcutter
     .goto Dun Morogh,28.8,66.4
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
     .accept 3365 >> Accept Bring Back the Mug
@@ -305,6 +350,8 @@ step
     .turnin 218 >> Turn in The Stolen Journal
     .accept 282 >> Accept Senir's Observations
 step << !Paladin !Mage
+    >> Talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0
     .turnin 3365 >> Turn in Bring Back the Mug
 step
