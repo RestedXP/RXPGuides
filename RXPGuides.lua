@@ -900,7 +900,12 @@ end
 
 function addon.IsFreshAccount()
     if C_PlayerInfo and C_PlayerInfo.CanPlayerEnterChromieTime then
-        return not C_PlayerInfo.CanPlayerEnterChromieTime()
+        local manualOverride = addon.settings.db.profile.chromieTime
+        if not manualOverride or manualOverride == "auto" then
+            return not C_PlayerInfo.CanPlayerEnterChromieTime()
+        elseif manualOverride == "disabled" then
+            return true
+        end
     end
 end
 

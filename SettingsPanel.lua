@@ -88,6 +88,7 @@ function addon.settings:InitializeSettings()
             showUnusedGuides = true,
             SoM = 1,
             anchorOrientation = "top",
+            chromieTime = "auto",
 
             -- Sliders
             arrowScale = 1,
@@ -796,6 +797,21 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                         end,
                         hidden = false
+                    },
+                    chromieTime = {
+                        name = L("Show Chromie Time Guides"),
+                        desc = L(
+                            "Enables or disables the chromie time guides. Note that freshly created accounts without a level 60 character cannot access chromie time"),
+                        type = "select",
+                        values = {auto = "Automatic", enabled = "Enabled", disabled = "Disabled"},
+                        sorting = {"auto", "enabled", "disabled"},
+                        width = optionsWidth,
+                        order = 1.96,
+                        hidden = WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE,
+                        --[[set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.SetStepFrameAnchor()
+                        end]]
                     },
                     hideInRaid = {
                         name = L("Autohide in Raids"), -- TODO locale
