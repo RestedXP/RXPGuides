@@ -16,31 +16,37 @@ step << Mage
     #completewith next
     +Note that you have selected the single target mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
 step
-    >>Delete your Hearthstone << !Warlock
+    >>|cFFFCDC00Delete your Hearthstone|r << !Warlock
+    >> Talk to |cFF00FF25Sten Stoutarm|r
     .goto Dun Morogh,29.9,71.2
     .accept 179 >> Accept Dwarven Outfitters
-step << Warrior/Warlock
-    #sticky
+    .target Sten Stoutarm
+step << Warrior
+    .isOnQuest 179
+    .goto Dun Morogh,28.6,72.2
+    +Kill |cFF00BCD4Wolves|r for 10c+ of vendor trash, then enter the building. We are going to train Battle Shout, it speeds up leveling speed a lot.
+step << Warrior
     #completewith next
-    .goto Dun Morogh,28.6,72.2,20,0
-    +Kill Wolves for 10c+ of vendor trash, then enter the building
-step << Warrior/Warlock
-    .goto Dun Morogh,28.8,69.2,30 >>Enter the building
-step << Warrior
+    .isOnQuest 179
+    .goto Dun Morogh,28.8,69.2,20 >>Enter the building
     .goto Dun Morogh,28.7,67.7
-    .vendor >> vendor trash
+    .vendor >> Vendor Trash
 step << Warrior
+    >> Talk to |cFF00FF25Thran Khorman|r
     .goto Dun Morogh,28.8,67.2
-    .trainer >>Train Battle Shout
+    .train 6673 >>Train Battle Shout
+    .target Thran Khorman
 step << Warlock
     .goto Dun Morogh,28.8,66.2
     .vendor >> Go to the back, upstairs, then talk to the Demon Trainer. Vendor trash
 step << Warlock
+    >> Talk to |cFF00FF25Alamar Grimm|r
     .goto Dun Morogh,28.6,66.1
     .trainer >>Train Immolate
     .accept 1599 >> Accept Beginnings
+    .target Alamar Grimm
 step
-    >>Kill Wolves. Loot them for Meat
+    >>Kill |cFF00BCD4Wolves|r. Loot them for |cFF00BCD4Tough Wolf Meat|r
     .goto Dun Morogh,28.7,74.8
     .complete 179,1 --Collect Tough Wolf Meat (x8)
 step
@@ -50,10 +56,10 @@ step << Warlock
     #sticky
     #completewith next
     .goto Dun Morogh,26.8,79.8,40,0
-    .goto Dun Morogh,30.1,82.4,30 >> Kill some Wolves en route, then watch this
+    .goto Dun Morogh,30.1,82.4,30 >> Kill some Wolves en route, then watch this video
     .link https://www.youtube.com/watch?v=iUvGsRbIVp8 >> CLICK HERE
 step << Warlock
-    >>Kill Frostmane Novices inside the cave. Loot them for Feather Charms
+    >>Kill |cFF00BCD4Frostmane Novices|r inside the cave. Loot them for |cFF00BCD4Feather Charms|r
     .goto Dun Morogh,29.0,82.6,50,0
     .goto Dun Morogh,29.0,81.2,60,0
     .goto Dun Morogh,30.1,82.4
@@ -63,21 +69,26 @@ step << Warlock
     .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at the Spirit Healer
 step << Warlock
     #hardcore
+    #completewith next
     .hs >> Hearth back to Coldridge Valley
 step << Warlock
-    >>Go back to the Warlock Trainer
+    >> Talk to |cFF00FF25Alamar Grimm|r
     .goto Dun Morogh,28.6,66.1
     .turnin 1599 >> Turn in Beginnings
+    .target Alamar Grimm
 step << Priest/Mage/Warlock
     .goto Dun Morogh,30.0,71.5
     >>Summon your Imp and rebuff Demon Skin en route << Warlock
-    .vendor >>vendor trash, repair. Buy 15 Water. Grind extra wolves if you don't have enough money
+    .vendor >> Vendor and repair. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Adlin Pridedrift
 step << Paladin/Warrior
     .goto Dun Morogh,30.0,71.5
-    .vendor >>vendor trash
+    .vendor >> Vendor trash
+    .target Adlin Pridedrift
 step
     .goto Dun Morogh,29.9,71.2
+    >> Talk to |cFF00FF25Sten Stoutarm|r
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3106 >> Accept Simple Rune << Dwarf Warrior
@@ -88,24 +99,30 @@ step
     .accept 3113 >> Accept Encrypted Memorandum << Gnome Rogue
     .accept 3114 >> Accept Glyphic Memorandum << Mage
     .accept 3115 >> Accept Tainted Memorandum << Gnome Warlock
+    .target Sten Stoutarm
 step
     #era
+    >> Talk to |cFF00FF25Balir Frosthammer|r
     .goto Dun Morogh,29.7,71.2
     .accept 170 >> Accept A New Threat
+    .target Balir Frosthammer
 step
     #sticky
     #completewith Rockjaw
     #era
-    >>Kill Normal Rockjaw Troggs that you see
+    >>Kill |cFFFF5722Rockjaw Troggs|r that you see. You may need to kill extra Burly Rockjaw Troggs to force respawns.
     .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .unitscan Rockjaw Troggs
 step
     #era
     .goto Dun Morogh,26.9,72.7,80,0
     .goto Dun Morogh,25.1,72.1,80,0
     .goto Dun Morogh,26.9,72.7
-    >>Kill Burly Rockjaw Troggs
+        >>Kill |cFFFF5722Burly Rockjaw Troggs|r
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
 step
+    >> Talk to |cFF00FF25Talin Keeneye|r
+    .target Talin Keeneye
     .goto Dun Morogh,22.6,71.4
     .turnin 233 >> Turn in Coldridge Valley Mail Delivery
     .accept 183 >> Accept The Boar Hunter
@@ -118,9 +135,11 @@ step
     .goto Dun Morogh,22.2,72.5,100,0
     .goto Dun Morogh,20.5,71.4,100,0
     .goto Dun Morogh,21.1,69.0
-    >>Kill Boars in the area
+    >>Kill |cFFFF5722Small Crag Boars|r in the area
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
+    >> Talk to |cFF00FF25Talin Keeneye|r
+    .target Talin Keeneye
     .goto Dun Morogh,22.6,71.4
     .turnin 183 >> Turn in The Boar Hunter
 step << Paladin/Mage/Warlock
@@ -141,46 +160,61 @@ step << Paladin/Mage/Warlock
     .goto Dun Morogh,24.2,72.5
 step
     #label Rockjaw
+    >> Talk to |cFF00FF25Grelin Whitebeard|r
+    .target Grelin Whitebeard
     .goto Dun Morogh,25.1,75.7
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
 step << Paladin/Mage/Warlock
+    >> Talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << Paladin/Mage/Warlock
     #era
     .goto Dun Morogh,28.7,77.5
-    >>Kill Troggs here if you're not done with them by now
+    >>Go up here and kill |cFFFF5722Rockjaw Troggs|r if you're not done with them by now
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step << Paladin/Mage/Warlock
     #sticky
     #completewith Scalding1
-    >>If you were too slow and failed the timed quest, go and pick it up again
+    >> Talk to |cFF00FF25Nori Pridedrift|r if you were too slow and failed the timed quest, go and pick it up again
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0,0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     .goto Dun Morogh,28.8,66.4
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
 step << Paladin/Mage/Warlock
     #label Scalding1
+    >> Talk to |cFF00FF25Durnan Furcutter|r
+    .target Durnan Furcutter
     .goto Dun Morogh,28.8,66.4
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
     .accept 3365 >> Accept Bring Back the Mug
     .vendor >> vendor trash
 step << Dwarf Paladin
+    >> Talk to |cFF00FF25Bromos Grummner|r
+    .target Bromos Grummner
     .goto Dun Morogh,28.8,68.3
     .turnin 3107 >> Turn in Consecrated Rune
     .trainer >> Train your class spells
 step << Gnome Mage
+     >> Talk to |cFF00FF25Marryk Nurribit|r
+    .target Marryk Nurribit
     .goto Dun Morogh,28.7,66.4
     .turnin 3114 >> Turn in Glyphic Memorandum
     .trainer >> Train your class spells
 step << Warlock
+    >> Talk to |cFF00FF25Alamar Grimm|r
+    .target Alamar Grimm
     .goto Dun Morogh,28.6,66.1
     .trainer >> Go Upstairs. Train your Corruption
     .turnin 3115 >> Turn in Tainted Memorandum
 step << Paladin/Mage/Warlock
     #era
+    >> Talk to |cFF00FF25Balir Frosthammer|r
+    .target Balir Frosthammer
     .goto Dun Morogh,29.7,71.2
     .turnin 170 >> Turn in A New Threat
 step << Mage/Warlock
@@ -189,9 +223,8 @@ step << Mage/Warlock
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Paladin !Mage
     #era
-    #sticky
-    #label TrollTroggs
-    >>Kill any Rockjaw Troggs you see nearby whilst doing Trolls
+    #completewith next
+    >>Kill any |cFFFF5722Rockjaw Troggs|r you see nearby whilst doing Trolls
     .complete 170,1 --Kill Rockjaw Trogg (x6)
 step << Paladin/Mage/Warlock
     .goto Dun Morogh,26.3,79.2,90,0
@@ -199,7 +232,7 @@ step << Paladin/Mage/Warlock
     .goto Dun Morogh,20.9,75.7,90,0
     .goto Dun Morogh,22.7,79.3,90,0
     .goto Dun Morogh,20.9,75.7
-    >>Kill Frostmane Troll Whelps
+    >>Kill |cFFFF5722Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .goto Dun Morogh,25.1,75.7
 step << !Paladin !Mage !Warlock
@@ -210,50 +243,70 @@ step << !Paladin !Mage !Warlock
     .goto Dun Morogh,22.7,79.3,90,0
     .goto Dun Morogh,20.9,75.7,90,0
     .goto Dun Morogh,22.7,79.3
-    >>Kill Frostmane Troll Whelps
+    >>Kill |cFFFF5722Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .goto Dun Morogh,25.1,75.7
 step << !Paladin !Mage !Warlock
     .goto Dun Morogh,25.0,76.0
     .abandon 3364 >> Abandon Scalding Mornbrew Delivery - You don't need it yet
+step << !Paladin !Mage
+    #label TrollTroggs
+    .goto Dun Morogh,28.7,77.5
+    >>Go up here and kill |cFFFF5722Rockjaw Troggs|r if you're not done with them by now
+    .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .unitscan Rockjaw Trogg
 step << !Paladin !Mage !Warlock
     .xp 4 >> Grind to 4
 step << !Paladin !Mage !Warlock
     #era
     #requires TrollTroggs
+    >> Talk to |cFF00FF25Grelin Whitebeard|r
+    .target Grelin Whitebeard
     .goto Dun Morogh,25.1,75.7
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << !Paladin !Mage !Warlock
     #som
+    >> Talk to |cFF00FF25Grelin Whitebeard|r
+    .target Grelin Whitebeard
     .goto Dun Morogh,25.1,75.7
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << Paladin/Mage/Warlock
+    >> Talk to |cFF00FF25Grelin Whitebeard|r
+    .target Grelin Whitebeard
     .goto Dun Morogh,25.1,75.7
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << !Paladin !Mage !Warlock
     #softcore
+    >> Talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     >>You now have 5m to get the Journal, then turnin the Mornbrew. If you fail quest, pick it up again after dying
 step << Paladin/Mage/Warlock
+    >> Talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0
     .turnin 3365 >> Turn in Bring Back the Mug
 step
     .goto Dun Morogh,26.8,79.9,30,0
     .goto Dun Morogh,29.0,79.0,15,0
     .goto Dun Morogh,30.6,80.3
-    >>Enter the Troll cave. Kill Grik'nir, then loot him for Grelin's journal
+    >>Enter the Troll cave. Kill |cFF00BCD4Grik'nir|r, then loot him for |cFF00BCD4Grelin's journal|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
+    .unitscan Grik'nir
 step << !Paladin !Mage !Warlock
     #hardcore
+    >> Talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     .goto Dun Morogh,25.0,76.0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
 step << !Paladin !Mage !Warlock
     #hardcore
-    >>Grind a bit back to here
+    >> Talk to |cFF00FF25Grelin Whitebeard|r
+    .target Grelin Whitebeard
     .goto Dun Morogh,25.1,75.8
     .turnin 218 >> Turn in The Stolen Journal
     .accept 282 >> Accept Senir's Observations
@@ -263,6 +316,8 @@ step << !Paladin !Mage !Warlock
 step << !Paladin !Mage !Warlock
     #sticky
     #completewith Scalding2
+    >> If you were too slow and failed the timed quest, go and talk to |cFF00FF25Nori Pridedrift|r
+    .target Nori Pridedrift
     >>If you were too slow and failed the timed quest, go and pick it up again
     .goto Dun Morogh,25.0,76.0,0
     .accept 3364 >> Accept Scalding Mornbrew Delivery
@@ -270,6 +325,8 @@ step << !Paladin !Mage !Warlock
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
 step << !Paladin !Mage !Warlock
     #label Scalding2
+    >> Talk to |cFF00FF25Durnan Furcutter|r
+    .target Durnan Furcutter
     .goto Dun Morogh,28.8,66.4
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
     .accept 3365 >> Accept Bring Back the Mug
