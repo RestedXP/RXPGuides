@@ -554,7 +554,12 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number:SetBackdropColor(unpack(addon.colors.background))
         end
 
-        local titletext = step.title or (string.format(L("Step %d"), index))
+        local titletext
+        if step.sticky then
+            titletext = step.title or ""
+        else
+            titletext = step.title or (string.format(L("Step %d"), index))
+        end
 
         if titletext == "" then
             stepframe.number:SetAlpha(0)
