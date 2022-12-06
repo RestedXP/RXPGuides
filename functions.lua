@@ -2588,33 +2588,45 @@ function addon.functions.isQuestComplete(self, ...)
     end
 end
 
-function addon.functions.isOnQuest(self, ...)
+function addon.functions.isOnQuest(self, text, ...)
     if type(self) == "string" then
         local element = {}
-        local text, id, reverse = ...
-        element.reverse = reverse
-        id = tonumber(id)
-        if not id then
+        local ids = {...}
+        for i,v in pairs(ids) do
+            ids[i] = tonumber(v)
+        end
+        if not ids[1] then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ": Invalid quest ID\n" .. self)
         end
-        element.questId = id
+        element.questIds = ids
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         return element
     end
     local element = self.element
-    local id = element.questId
+    local onQuest = false
+    for _,id in pairs(element.questIds) do
+        if IsOnQuest(id) then
+            onQuest = true
+        end
+    end
+
+
     local event = ...
-    if event ~= "WindowUpdate" and element.step.active and not addon.settings.db.profile.debug and (not IsOnQuest(id)) == not element.reverse and not addon.isHidden then
+    if event ~= "WindowUpdate" and element.step.active and not addon.settings.db.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
 end
 
-function addon.functions.isNotOnQuest(self, text, id)
-    return addon.functions.isOnQuest(self, text, id, true)
+function addon.functions.isNotOnQuest(...)
+    local element = addon.functions.isOnQuest(...)
+    if type(element) == "table" then
+        element.reverse = true
+        return element
+    end
 end
 
 function addon.functions.isQuestTurnedIn(self, text, ...)
