@@ -3,10 +3,11 @@ local _, addon = ...
 local _G = _G
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
-local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or GetContainerNumSlots
-local GetContainerItemID = C_Container and C_Container.GetContainerItemID or GetContainerItemID
+local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
+local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
 local GameTooltip = _G.GameTooltip
 local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
+local GetItemCooldown = C_Container and C_Container.GetItemCooldown or _G.GetItemCooldown
 
 local function GetActiveItemList(ref)
     local itemList = {}
