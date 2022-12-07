@@ -26,6 +26,8 @@ local GetItemCooldown = (C_Container and C_Container.GetItemCooldown or _G.GetIt
 	end
 end
 
+addon.GetItemCooldown = GetItemCooldown
+
 local function GetActiveItemList(ref)
     local itemList = {}
     --[[

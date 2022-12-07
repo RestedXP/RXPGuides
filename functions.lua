@@ -123,7 +123,7 @@ local GetContainerNumFreeSlots =  C_Container and C_Container.GetContainerNumFre
 local GetContainerNumSlots =  C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
 local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
 local GetContainerItemInfo = C_Container and C_Container.GetContainerItemInfo or _G.GetContainerItemInfo
-local GetItemCooldown = C_Container and C_Container.GetItemCooldown or _G.GetItemCooldown
+local GetItemCooldown = addon.GetItemCooldown
 
 addon.recentTurnIn = {}
 
