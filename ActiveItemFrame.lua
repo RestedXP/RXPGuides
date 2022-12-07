@@ -5,9 +5,26 @@ local _G = _G
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
 local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
 local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
+local GetContainerItemInfo = C_Container and C_Container.GetContainerItemInfo or _G.GetContainerItemInfo
+local GetContainerItemCooldown = C_Container and C_Container.GetContainerItemCooldown or _G.GetContainerItemCooldown
 local GameTooltip = _G.GameTooltip
 local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
-local GetItemCooldown = C_Container and C_Container.GetItemCooldown or _G.GetItemCooldown
+local GetItemCooldown = (C_Container and C_Container.GetItemCooldown or _G.GetItemCooldown) or function(searchItemID)
+	local searchItemName = GetItemInfo(searchItemID);
+	if not searchItemName then return end
+	for bagID = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
+		local slots = GetContainerNumSlots(bagID);
+		for slot = 1, slots do
+			local itemInfo = GetContainerItemInfo(bagID, slot);
+			if itemInfo and itemInfo.itemID then
+				local startTime, duration, isEnabled = GetContainerItemCooldown(bagID, slot);
+				if searchItemID == itemInfo.itemID and startTime ~= nil and startTime > 0 then
+                    return startTime, duration, isEnabled;
+				end
+			end
+		end
+	end
+end
 
 local function GetActiveItemList(ref)
     local itemList = {}
