@@ -13,7 +13,7 @@ local GetItemCooldown = (C_Container and C_Container.GetItemCooldown or _G.GetIt
 	local searchItemName = GetItemInfo(searchItemID);
 	if not searchItemName then return end
 	for bagID = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
-		local slots = GetContainerNumSlots(bagID);
+		local slots = GetContainerNumSlots(bagID) or 0;
 		for slot = 1, slots do
 			local itemInfo = GetContainerItemInfo(bagID, slot);
 			if itemInfo and itemInfo.itemID then
