@@ -1408,34 +1408,43 @@ step
 step << Warlock
      #softcore
     #completewith next
-     >> Jump down the ledge (NOT the water) next to the flight master and kill yourself, make sure to life tap before jumping
+     >> Life tap yourself to 1 hp then jump down the ledge (NOT into the water) next to the flight master and kill yourself.
     .deathskip >>Spirit rez at Goldshire
 step
     .goto Elwynn Forest,42.10,65.90
-     >>Head to Goldshire
+    >>Talk to |cFF00FF25Marshal Dughan|r
+    .target Marshal Dughan
     .accept 62 >> Accept The Fargodeep Mine
 step
-    >>On your close left as you go in
+    >>On your close left as you go in, talk to |cFF00FF25William Pestle|r
+    .target William Pestle
     .goto Elwynn Forest,43.3,65.7
     .accept 60 >> Accept Kobold Candles
 step << Mage
+    >>Talk to |cFF00FF25Zadimar Wefhellt|r
+    .target Zadimar Wefhellt
     .goto Elwynn Forest,43.25,66.19
     .trainer >> Go upstairs. Train your class spells
 step << Rogue
+    >>Talk to |cFF00FF25Keryn Sylvius|r
+    .target Keryn Sylvius
     .goto Elwynn Forest,43.88,65.93
     .trainer >> Go upstairs. Train your class spells
 step
+    >>Talk to |cFF00FF25Remy "Two Times"|r
+    .target Remy "Two Times"
     .goto Elwynn Forest,42.10,67.30
     .accept 40 >> Accept A Fishy Peril
     .accept 47 >> Accept Gold Dust Exchange
 step << Warlock
-    >>Click any of the wanted posters around
+    >>Click any of the wanted posters around the garrison
     .goto Elwynn Forest,24.6,74.7
     .accept 176 >> Accept Wanted:   "Hogger"
 step << Warlock
     #sticky
     #completewith collector
-    >>Keep an eye out for the gold pickup schedule (lucky drop), or a 100% Drop from Gruff Swiftbite (rare). extra 210xp
+    >>Keep an eye out for the |cFF00BCD4Gold Pickup Schedule|r (lucky drop), or a 100% Drop from |cFF00BCD4Gruff Swiftbite|r (rare).
+    .unitscan Gruff Swiftbite
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >> Accept The Collector
 step << Warlock
@@ -1454,28 +1463,38 @@ step << Warlock
     .goto Elwynn Forest,25.2,92.7,100,0
     .goto Elwynn Forest,27.0,93.9,100,0
     .goto Elwynn Forest,25.9,93.9
-    >>Hogger can be in multiple spots in the area. Keep him fear chained, and/or kite him at <60% hp to the tower at 24,80. Loot him for his Claw
-    >>Be careful as this can be difficult
+    >>|cFFFCDC00Be careful as this can be difficult|r
+    >>|cFF00BCD4Hogger|r can be in multiple spots in the area. Keep him fear chained, and/or kite him at <60% hp to the tower at 24,80. Loot him for his |cFF00BCD4Claw|r
     .complete 176,1 --Huge Gnoll Claw (1)
 step
+    >>Talk to |cFF00FF25Ma Stonefield|r and |cFF00FF25"Auntie" Bernice Stonefield|r
+    .target Ma Stonefield
+    .target "Auntie" Bernice Stonefield
     .accept 88 >> Accept Princess Must Die!
     .goto Elwynn Forest,34.60,84.50
     .accept 85 >> Accept Lost Necklace
     .goto Elwynn Forest,34.40,84.2
 step
+    >>Talk to |cFF00FF25Billy Maclure|r
+    .target Billy Maclure
     .goto Elwynn Forest,43.0,85.8
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step
-    #sticky
-    #label Fargodeep
-    >>Loot Candles and Dust from the Kobolds in the area
+    #completewith next
+    >>Loot |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r from the |cFF00BCD4Kobolds|r in the area
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
 step
     .goto Elwynn Forest,40.5,82.3
-    >>Go into the mine
+    >>Go into the mine to explore it
     .complete 62,1 --Scout Through the Fargodeep Mine
+step
+    #label Fargodeep
+    >>Loot |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r from the |cFF00BCD4Kobolds|r in the area
+    .goto Elwynn Forest,40.5,82.3
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
 step
     #softcore
     #requires Fargodeep
@@ -1483,117 +1502,131 @@ step
     .deathskip >> Die and respawn in Goldshire
 step << !Warlock
     #requires Fargodeep
+    >>Talk to |cFF00FF25Marshal Dughan|r
+    .target Marshal Dughan
     .goto Elwynn Forest,42.20,66.00
     .turnin 62 >> Turn in The Fargodeep Mine
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
 step << Warlock
     #requires Fargodeep
+    >>Talk to |cFF00FF25Marshal Dughan|r
+    .target Marshal Dughan
     .goto Elwynn Forest,42.1,65.9
-    >>Choose the Staff then equip it
-    .turnin 176 >> Turn in Wanted:    "Hogger"
+    .turnin 176,3 >> Turn in Wanted:    "Hogger"
     .turnin 62 >> Turn in The Fargodeep Mine
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
 step << Warlock
     #label collector
+    >>Talk to |cFF00FF25Marshal Dughan|r
+    .target Marshal Dughan
     .goto Elwynn Forest,42.1,65.9
     .turnin 123 >> Turn in The Collector
     .isOnQuest 123
 step
+    >>On your close left as you go in, talk to |cFF00FF25William Pestle|r
+    .target William Pestle
     .goto Elwynn Forest,43.30,65.70
     .turnin 60 >> Turn in Kobold Candles
     .accept 61 >> Accept Shipment to Stormwind
 step
+    >>Talk to |cFF00FF25Remy "Two Times"|r
+    .target Remy "Two Times"
     .goto Elwynn Forest,42.20,67.20
     .turnin 47 >> Turn in Gold Dust Exchange
 step
+    >>Talk to |cFF00FF25Guard Thomas|r
+    .target Guard Thomas
     .goto Elwynn Forest,73.90,72.30
     .turnin 35 >> Turn in Further Concerns
 step
     #era
+    >>Talk to |cFF00FF25Guard Thomas|r
+    .target Guard Thomas
     .goto Elwynn Forest,73.90,72.30
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
 step
     #era
-    #sticky
     #completewith Prowlers
-    >>Kill Prowlers as you do other quests
+    >>Kill |cFFFF5722Prowlers|r and |cFFFF5722Bears|r as you do other quests. Go out of your way for bears.
     .complete 52,1 --Kill Prowler (x8)
 step
     #era
-    #sticky
-    #completewith Bears
-    >>Kill Bears as you do other quests. Kill any you see
-    .complete 52,2 --Kill Young Forest Bear (x5)
-step
-    #era
-    >>Click the bones on the ground
+    >>Click the |cFFDB2EEFcorpse|r on the ground
     .goto Elwynn Forest,72.7,60.3
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
     #era
+    >>Talk to |cFF00FF25Supervisor Raelen|r
+    .target Supervisor Raelen
     .goto Elwynn Forest,81.38,66.11
     .accept 5545 >> Accept A Bundle of Trouble
 step
     #era
     #sticky
     #completewith next
-    >>Keep an eye out for the bundles of logs at the base of the trees
+    >>Keep an eye out for the |cFFDB2EEFbundles of logs|r at the base of the trees
     .collect 13872,8,5545,1 --Collect Bundle of Wood (x8)
 step
     #era
     .goto Elwynn Forest,79.80,55.50
-     >> Click on the pile of bones. Be careful as you may have to deal with a 2 pull of murlocs in front of the huts to get to it
+     >> Click on the |cFFDB2EEFcorpse|r. Be careful as you may have to deal with a 2 pull of murlocs in front of the huts to get to it
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step
     #era
+    #label Prowlers
+    .goto Elwynn Forest,76.7,75.6,40,0
+    .goto Elwynn Forest,79.7,83.7,40,0
+    .goto Elwynn Forest,82.0,76.8,40,0
+    .goto Elwynn Forest,76.7,75.6,40,0
+    .goto Elwynn Forest,79.7,83.7,40,0
+    .goto Elwynn Forest,82.0,76.8
+    >>Kill the last |cFFFF5722Prowlers and Bears|r for Protect the Frontier
+    .complete 52,1 --Kill Prowler (x8)
+    .complete 52,2 --Kill Young Forest Bear (x5)
+step
+    #era
     .goto Elwynn Forest,76.8,62.4,40,0
     .goto Elwynn Forest,83.7,59.4,40,0
     .goto Elwynn Forest,76.8,62.4,40,0
     .goto Elwynn Forest,83.7,59.4,40,0
     .goto Elwynn Forest,76.8,62.4,40,0
-    .goto Elwynn Forest,83.7,59.4,40,0
-    >>Start running back, finish off the bundles
+    .goto Elwynn Forest,83.7,59.4
+    >>Start running back, finish collecting the |cFFDB2EEFbundles of logs|r.
     .collect 13872,8,5545,1 --Collect Bundle of Wood (x8)
 step
     #era
-    #label Prowlers
+    >>Talk to |cFF00FF25Supervisor Raelen|r
+    .target Supervisor Raelen
     .goto Elwynn Forest,81.4,66.1
     .turnin 5545 >> Turn in A Bundle of Trouble
 step
     #era
     #label Bears
+    >>Talk to |cFF00FF25Sara Timberlain|r
+    .target Sara Timberlain
     .goto Elwynn Forest,79.5,68.8
     .accept 83 >> Accept Red Linen Goods
 step
     #era
-    .goto Elwynn Forest,76.7,75.6,40,0
-    .goto Elwynn Forest,79.7,83.7,40,0
-    .goto Elwynn Forest,82.0,76.8,40,0
-    .goto Elwynn Forest,76.7,75.6,40,0
-    .goto Elwynn Forest,79.7,83.7,40,0
-    .goto Elwynn Forest,82.0,76.8,40,0
-    >>Kill the last mobs for Protect the Frontier
-    .complete 52,1 --Kill Prowler (x8)
-    .complete 52,2 --Kill Young Forest Bear (x5)
-step
-    #era
+    >>Talk to |cFF00FF25Guard Thomas|r
+    .target Guard Thomas
     .goto Elwynn Forest,74.0,72.2
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
 step << Warlock
-    >>Kill the mobs inside the house, keep Morgan feared (he gouges and kills pet), nuke Surena. Loot her for her Choker
+    >>Kill the mobs inside the house, |cFFFCDC00keep Morgan feared|r, nuke |cFF00BCD4Surena|r. Loot her for the |cFF00BCD4Choker|r
     .goto Elwynn Forest,71.0,80.8
     .complete 1688,1 --Surena's Choker (1)
 step
     .goto Elwynn Forest,69.3,79.0
-    >>Kill Princess, be careful, she has 2 adds and her charge hits hard
+    >>Kill |cFF00BCD4Princess|r, be careful, she has 2 adds and her charge hits hard. Loot her for her |cFF00BCD4collar|r
     .complete 88,1
 step
     #sticky
@@ -1616,7 +1649,7 @@ step
     .goto Elwynn Forest,68.2,81.4,60,0
     .goto Elwynn Forest,70.8,80.9,60,0
     .goto Elwynn Forest,69.3,79.0
-    >>Start circling the farm, killing Defias and looting them for Bandanas
+    >>Start circling the farm, killing |cFF00BCD4Defias|r and looting them for |cFF00BCD4Bandanas|r
     .complete 83,1 --Collect Red Linen Bandana (x6)
 step
     #era
@@ -1627,16 +1660,19 @@ step
 step
     #era
     #label Deed
+    >>Talk to |cFF00FF25Sara Timberlain|r
+    .target Sara Timberlain
     .goto Elwynn Forest,79.45,68.78
     .turnin 83 >> Turn in Red Linen Goods
 step
-    >>Head east to Redridge
-    >>The guard patrols around the stumps a bit
+    >>Head east to Redridge and talk to |cFF00FF25Guard Parker|r
+    .target Guard Parker
     .goto Elwynn Forest,91.7,72.3,150,0
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> Accept Encroaching Gnolls
 step
-    >>Be careful of the high level mobs mobs en route
+    >>Be careful of the high level mobs mobs en route and talk to |cFF00FF25Deputy Feldon|r
+    .target Deputy Feldon
     .goto Redridge Mountains,30.7,60.0
     .turnin 244 >> Turn in Encroaching Gnolls
 step
@@ -1644,10 +1680,13 @@ step
     .fly Stormwind >> Fly to Stormwind
 step
     .goto Elwynn Forest,26.21,39.66
-    >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling
-    .turnin 61 >> Turn in Shipment to Stormwind
+    >>Talk to |cFF00FF25Morgan Pestle|r. We select the rockets for a reward, these have very good damage, and can be used for splitpulling. 
+    .target Morgan Pestle
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> Click here for a guide on splitpulling (long but informative)
+    .turnin 61,3 >> Turn in Shipment to Stormwind
 step << Warlock
-    >>Go back to the Warlock Trainer
+    >> Talk to |cFF00FF25Gakin the Darkbinder|r
+    .target Gakin the Darkbinder
     .goto StormwindClassic,25.2,78.5
     .trainer >> Train your class spells
     .turnin 1688 >> Turn in Surena Caledon
@@ -1657,15 +1696,18 @@ step << Warlock
     .goto StormwindClassic,23.2,79.5,18,0
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.5,78.1
-    >>Go to the bottom of the crypt. Summon the Voidwalker using the Bloodstone Choker and kill it
+    .use 6928 >>Go to the bottom of the crypt. Summon the |cFFFF5722Voidwalker|r using the Bloodstone Choker and kill it
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
 step << Warlock
      #softcore
-    >>Life tap on your way back to the warlock trainer
+    >>Life tap on your way back to |cFF00FF25Gakin the Darkbinder|r
+    .target Gakin the Darkbinder
     .goto StormwindClassic,25.2,78.5
     .turnin 1689 >> Turn in The Binding
 step << Warlock
      #hardcore
+    >> Talk to |cFF00FF25Gakin the Darkbinder|r
+    .target Gakin the Darkbinder
     .goto StormwindClassic,25.2,78.5
     .turnin 1689 >> Turn in The Binding
 step << Warlock
@@ -1675,29 +1717,38 @@ step << Warlock
     .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to you
 step << Warrior
     .goto Elwynn Forest,41.09,65.77
-    >>Head to Goldshire
+    >> Talk to |cFF00FF25Lyria Du Lac|r
+    .target Lyria Du Lac
     .trainer >> Train your class spells
 step
     #era
     .goto Elwynn Forest,42.10,65.92
-    >>Head to Goldshire
+    >>Head to Goldshire and talk to |cFF00FF25Marshal Dughan|r
+    .target Marshal Dughan
     .turnin 39 >> Turn in Deliver Thomas' Report
 step << Mage
-    .goto Elwynn Forest,43.25,66.20
-    >>Head to the Goldshire Inn
+    >>Talk to |cFF00FF25Zadimar Wefhellt|r
+    .target Zadimar Wefhellt
+    .goto Elwynn Forest,43.25,66.19
+    .trainer >> Go upstairs. Train your class spells
+step << Rogue
+    >>Talk to |cFF00FF25Keryn Sylvius|r
+    .target Keryn Sylvius
+    .goto Elwynn Forest,43.88,65.93
     .trainer >> Go upstairs. Train your class spells
 step << Priest
     .goto Elwynn Forest,43.28,65.72
-    >>Head to the Goldshire Inn
-    .trainer >> Go upstairs. Train your class spells
-step << Rogue
-    .goto Elwynn Forest,43.87,65.94
-    >>Head to the Goldshire Inn
+    >>Talk to |cFF00FF25Priestess Josetta|r
+    .target Priestess Josetta
     .trainer >> Go upstairs. Train your class spells
 step
+    >>Talk to |cFF00FF25Ma Stonefield|r
+    .target Ma Stonefield
     .turnin 88 >> Turn in Princess Must Die!
     .goto Elwynn Forest,34.66,84.48
 step
+    >>Talk to |cFF00FF25"Auntie" Bernice Stonefield|r
+    .target "Auntie" Bernice Stonefield
     .turnin 86 >> Turn in Pie for Billy
     .goto Elwynn Forest,34.40,84.2
     .isQuestComplete 86
@@ -1705,18 +1756,27 @@ step
     #sticky
     .abandon 86 >> Abandon Pie for Billy
 step
+    >>Talk to |cFF00FF25Farmer Furlbrow|r
+    .target Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 184>> Turn in Furlbrow's Deed
     .isOnQuest 184
 step
+    >>Talk to |cFF00FF25Farmer Furlbrow|r and |cFF00FF25Verna Furlbrow|r
+    .target Farmer Furlbrow
+    .target Verna Furlbrow
     .goto Westfall,59.95,19.35
     .accept 64 >> Accept The Forgotten Heirloom
     .accept 36 >> Accept Westfall Stew
     .accept 151 >> Accept Poor Old Blanchy
 step
+    >>Talk to |cFF00FF25Farmer Saldean|r
+    .target Farmer Saldean
     .goto Westfall,56.10,31.30
     .accept 9 >> Accept The Killing Fields
 step
+    >>Talk to |cFF00FF25Salma Saldean|r
+    .target Salma Saldean
     .goto Westfall,56.40,30.50
     .turnin 36 >> Turn in Westfall Stew
     .accept 38 >> Accept Westfall Stew
@@ -1728,16 +1788,24 @@ step
     .deathskip >> Die and respawn at the Spirit Healer, or run to Sentinel Hill
 step
     #era
+    >>Talk to |cFF00FF25Gryan Stoutmantle|r
+    .target Gryan Stoutmantle
     .goto Westfall,56.40,47.60
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
 step
+    >>Talk to |cFF00FF25Gryan Stoutmantle|r
+    .target Gryan Stoutmantle
     .goto Westfall,56.40,47.60
     .accept 12 >> Accept The People's Militia
 step
     #era
+    >>Talk to |cFF00FF25Captain Danuvin|r
+    .target Captain Danuvin
     .goto Westfall,56.40,47.60
     .accept 102 >> Accept Patrolling Westfall
 step
+    >>Talk to |cFF00FF25Scout Galiaan|r
+    .target Scout Galiaan
     .goto Westfall,54.00,53.00
     .accept 153 >> Accept Red Leather Bandanas
 step << Dwarf Paladin
@@ -1752,6 +1820,7 @@ step << Paladin
     .goto StormwindClassic,60.5,12.3,40,0
     .goto StormwindClassic,60.5,12.3,0
     .zone Ironforge >> Take the tram back to Ironforge
+    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
 step << !Paladin
     .hs >> Hearth to Loch Modan
 ]])
