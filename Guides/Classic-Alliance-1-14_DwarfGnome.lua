@@ -1836,11 +1836,14 @@ RXPGuides.RegisterGuide([[
 #next 13-15 Westfall
 
 step << Dwarf Paladin
+    >>Talk to |cFF00FF25Brandur Ironhammer|r
+    .target Brandur Ironhammer
     .goto Ironforge,23.3,6.1
     .accept 2999 >>Accept Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,12.1
-    >>Go upstairs and speak to Tiza Battleforge
+    >>Go upstairs and speak to |cFF00FF25Tiza Battleforge|r
+    .target Tiza Battleforge
     .turnin 2999 >>Turn in Tome of Divinity
     .accept 1645 >>Accept The Tome of Divinity
     .turnin 1645 >>Turn in The Tome of Divinity
@@ -1848,19 +1851,22 @@ step << Dwarf Paladin
     .turnin 1646 >>Turn in The Tome of Divinity
     .accept 1647 >>Accept The Tome of Divinity
 step << Dwarf Paladin
-    >>Speak to John Turner, he walks around the outer ring of the city
+    >>Speak to |cFF00FF25John Turner|r, he walks around the outer ring of the city
+    .target John Turner
     .turnin 1647 >>Turn in The Tome of Divinity
     .accept 1648 >>Accept The Tome of Divinity
     .turnin 1648 >>Turn in The Tome of Divinity
     .accept 1778 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.7,12.3
-    >>Return to Tiza Battleforge
+    >>Return to |cFF00FF25Tiza Battleforge|r
+    .target Tiza Battleforge
     .turnin 1778 >>Turn in The Tome of Divinity
     .accept 1779 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,23.6,8.6
-    >>Speak to Muiredon Battleforge
+    >>Speak to |cFF00FF25Muiredon Battleforge|r
+    .target Muiredon Battleforge
     .turnin 1779 >>Turn in The Tome of Divinity
     .accept 1783 >>Accept The Tome of Divinity
 step << !Warlock
@@ -1868,7 +1874,7 @@ step << !Warlock
     .goto Ironforge,55.5,47.8
     .fly Loch >> Fly to Loch Modan
 step
-    .goto Loch Modan,34.76,48.62
+    #completewith next
     .vendor >> Buy 6 slot bags if you need them.
 step
     #completewith next
@@ -1876,39 +1882,37 @@ step
     .vendor >> Buy some food if needed << Warrior/Rogue
     .vendor >> Buy some food/water if needed << !Warrior !Rogue
 step
-    >>Go inside the building, then go downstairs. Talk to Brock
+    >>Go inside the building, then go downstairs. Talk to |cFF00FF25Brock Stoneseeker|r
+    .target Brock Stoneseeker
     .goto Loch Modan,37.2,46.9,15,0
     .goto Loch Modan,37.0,47.8
     .turnin 6392 >> Turn in Return to Brock
 step
-    #sticky
     #completewith next
-    >>Kill Bears/Boars/Spiders in the zone for Thelsamar Blood Sausages
+    >>Kill and loot |cFF00BCD4Bears/Boars/Spiders|r in the zone for Thelsamar Blood Sausages
     .complete 418,1 --Collect Boar Intestines (x3)
     .complete 418,2 --Collect Bear Meat (x3)
     .complete 418,3 --Collect Spider Ichor (x3)
 step
-    #completewith next
-    .goto Loch Modan,39.3,27.0,130 >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
-step
     .goto Loch Modan,35.5,18.2,40,0
     .goto Loch Modan,35.75,22.42
-    >>Go to the Kobold Cave. Collect the crates you find inside
+    >>Go to the Kobold Cave. Collect the |cFFDB2EEFcrates|r you find inside
     .complete 307,1 --Collect Miners' Gear (x4)
 step << Paladin/Warrior
-    #sticky
     #completewith Kobolds
     .goto Loch Modan,42.9,9.9
-    .vendor >> Check the vendor for the green 2h mace he can sell. If it's up and you have enough money, buy it. Otherwise, grind money from kobolds here until you have enough
+    .vendor >> Check the vendor for the |cFF0E8312Heavy Spiked Mace| he can sell. If it's up and you have enough money, buy it. Otherwise, grind money from kobolds here until you have enough
 step
     #label Kobolds
-    >> Kill Kobolds. Loot them for their Ears
+    >> Kill |cFF00BCD4Kobolds|r. Loot them for their |cFF00BCD4Ears|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
 step
     #completewith next
     .goto Loch Modan,24.1,18.2
     .vendor >>Run back to the bunker. Vendor and repair
 step
+    >> Talk to |cFF00FF25Brock Stoneseeker|r
+    .target Brock Stoneseeker
     .goto Loch Modan,24.76,18.39
     .turnin 307 >> Turn in Filthy Paws
     .turnin 353 >> Turn in Stormpike's Delivery
@@ -1928,7 +1932,7 @@ step
     .goto Loch Modan,33.4,30.3,90,0
     .goto Loch Modan,39.4,33.3,90,0
     .goto Loch Modan,26.9,10.7
-    >>Kill Bears. Loot them for Meat
+    >>Kill |cFF00BCD4Bears|r. Loot them for |cFF00BCD4Bear Meat|r
     .complete 418,2 --Bear Meat (3)
 step
     #sticky
@@ -1944,7 +1948,7 @@ step
     .goto Loch Modan,36.2,30.9,90,0
     .goto Loch Modan,39.0,32.1,90,0
     .goto Loch Modan,31.9,16.4
-    >>Kill Spiders. Loot them for Ichor
+    >>Kill |cFF00BCD4Spiders|r. Loot them for |cFF00BCD4Spider Ichor|r
     .complete 418,3 --Spider Ichor (3)
 step
     .goto Loch Modan,38.0,34.9,90,0
@@ -1958,31 +1962,34 @@ step
     .goto Loch Modan,27.7,25.3,90,0
     .goto Loch Modan,28.6,22.6,90,0
     .goto Loch Modan,38.0,34.9
-    >>Kill Boars. Loot them for Intestines
+    >>Kill |cFF00BCD4Boars|r. Loot them for |cFF00BCD4Boar Intestines|r
     .complete 418,1 --Boar Intestines (3)
 step
     #requires Meat9
 step
-    #sticky
     #label RatCatching
     #requires Ichor9
     .goto Loch Modan,32.6,49.9,80.0,0
     .goto Loch Modan,37.2,46.1,80.0,0
     .goto Loch Modan,36.7,41.6
-    >>Find Kadrell. He patrols along the Thelsamar road
+    >> Talk to |cFF00FF25Mountaineer Kadrell|r. He patrols along the Thelsamar road
+    .target Mountaineer Kadrell
     .turnin 416 >> Turn in Rat Catching
 step
+    >> Talk to |cFF00FF25Vidra Hearthstove|r.
+    .target Vidra Hearthstove
     .goto Loch Modan,34.82,49.28
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
+    .target Yanni Stoutheart
     .goto Loch Modan,34.8,48.6
-    .vendor >> Buy 1 Flint and Tinder, and 2 Simple Wood. Buy more 6 slots if needed
+    .vendor >> Buy 1 Flint and Tinder, and 2 Simple Wood from |cFF00FF25Yanni Stoutheart|r. Buy more 6 slot bags if needed
     .collect 4470,2 --Simple Wood (2)
     .collect 4471,1 --Flint and Tinder (1)
 step
     #requires RatCatching
     .goto Loch Modan,27.4,48.4
-    >>Kill Stonesplinter Troggs. Loot them for their Teeth
+    >>Kill |cFFFF5722Stonesplinter Troggs|r. |cFF00BCD4Loot them for their Teeth|r
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
@@ -1995,9 +2002,13 @@ step
     .goto Loch Modan,27.4,48.4
     .xp 14-2300 >> Grind until you are 2300xp away from level 14 (9100/11400)
 step
+    >> Talk to |cFF00FF25Mountaineer Cobbleflint|r.
+    .target Mountaineer Cobbleflint
     .goto Loch Modan,22.07,73.12
     .turnin 224 >> Turn in In Defense of the King's Lands
 step
+    >> Talk to |cFF00FF25Captain Rugelfuss|r.
+    .target Captain Rugelfuss
     .goto Loch Modan,23.23,73.67
     .turnin 267 >> Turn in The Trogg Threat
 step << !Dwarf/!Paladin
@@ -2009,12 +2020,12 @@ step << Dwarf Paladin
     .zone Dun Morogh >> Head to Dun Morogh
 step << Dwarf Paladin
     .goto Dun Morogh,78.3,58.1
-    >>Use the Symbol of Life on Narm Faulk
+    .use 6866 >>Use the Symbol of Life on Narm Faulk
     .turnin 1783 >>Turn in The Tome of Divinity
     .accept 1784 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Dun Morogh,77.3,60.5
-    >>Kill Dark Iron Spies
+    >>Kill |cFF00BCD4Dark Iron Spies|r and loot them for the |cFF00BCD4Dark Iron Script|r
     .complete 1784,1 --Dark Iron Script (1)
 step << Dwarf Paladin
 	#completewith next
