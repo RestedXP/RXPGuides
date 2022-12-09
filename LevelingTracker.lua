@@ -1381,7 +1381,7 @@ function addon.tracker:UpdateLevelSplits(kind)
             end
         end
     else
-        if compareTo and compareTo.history.levels[self.playerLevel] and
+        if compareTo and compareTo.history.levels[self.playerLevel + 1] and
             addon.settings.db.profile.compareNextLevelSplit then
             local cTime = self:BuildSplitsLevelLine(self.playerLevel + 1,
                                                     self:PrintSplitsTime(
