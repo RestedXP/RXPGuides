@@ -433,7 +433,7 @@ step << Horde
     .goto IcecrownGlacier,53.99,36.87
     .daily 13406 >>Accept Riding the Wavelength: The Bombardment
 step << Horde
-	.goto IcecrownGlacier,53.96,43.11
+	.goto IcecrownGlacier,54.00,36.70
 	>>Talk to Rizzy to get on a bomber. Use Charge Shield (1) to gain 100 shields then switch to Bomber Bay (5) and begin bombing scourge below until all Infantry and Captains are slain. Switch to Anti-Air Turret (4) and begin using Anti-Air Rockets (1) to shoot Gargoyles in the air. Once completed press the Leave Vehicle button and you will be returned to the platform
 	.complete 13406,1 -- Bombardment Infantry slain (50)
 	.complete 13406,2 -- Bombardment Captain slain (10)

@@ -5,5 +5,7 @@
     <Script file="DB/classic/flightData.lua"/>
     <Script file="DB/classic/quest.lua"/>
     <Script file="DB/classic/spells.lua"/>
+    <Script file="DB/classic/rares.lua"/>
+    <Script file="DB/classic/db.lua"/>
 
 </Ui>

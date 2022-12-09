@@ -31,6 +31,7 @@ local function applies(text)
                 local level = tonumber(entry) or 0xfff
                 local playerLevel = UnitLevel("player") or 1
                 local state = true
+                local gendercheck
                 if entry:sub(1, 1) == "!" then
                     entry = entry:sub(2, -1)
                     state = false
@@ -40,9 +41,12 @@ local function applies(text)
                     entry = "Scourge"
                 elseif uppercase == "DK" then
                     uppercase = "DEATHKNIGHT"
+                elseif uppercase == "MALE" and UnitSex("player") == 2 or
+                       uppercase == "FEMALE" and UnitSex("player") == 3 then
+                    gendercheck = true
                 end
                 v = v and
-                        ((uppercase == class or uppercase == addon.game or entry ==
+                        ((gendercheck or uppercase == class or uppercase == addon.game or entry ==
                             race or entry == faction or playerLevel >= level) ==
                             state)
             end
@@ -565,7 +569,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             groupOrContent = text:match("^%s*#group%s+(.-)%s*[\r\n]") or
                                  text:match("[\r\n]%s*#group%s+(.-)%s*[\r\n]")
             if not groupOrContent then
-                addon.comms:PrettyPrint("\n" .. L("Error parsing guide") ..
+                print("\n" .. L("Error parsing guide") ..
                                             ": Invalid guide group",
                                         text:match("#name%s+.-%s*[\r\n]"))
                 return
@@ -586,7 +590,6 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
     addon.currentGuideGroup = groupOrContent
     RXPG.RegisterGroup(guide.group)
 
-    guide.unitscan = {}
     local currentStep = 0
     guide.steps = {}
 
@@ -686,7 +689,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
             end
             guide.key = guide.key or RXPG.BuildGuideKey(guide)
             if currentStep == 0 and (not guide[game] and
-                (guide.classic or guide.tbc or guide.wotlk or guide.mainline)) then
+                (guide.classic or guide.tbc or guide.wotlk or guide.df)) then
                 -- print(game,guide[game],guide.name)
                 skipGuide = "#0"
             end
@@ -769,7 +772,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
         guide.group = groupOrContent
     end
 
-    guide.displayName = guide.name
+    guide.displayname = guide.displayname or guide.name
     guide.name = guide.name:gsub("^(%d)-(%d%d?)", addon.affix)
     if guide.next then
         guide.next = guide.next:gsub("^(%d)-(%d%d?)", addon.affix)

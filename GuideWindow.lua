@@ -4,6 +4,7 @@ local RXPG = addon.RXPG
 local _, class = UnitClass("player")
 local _G = _G
 local fmt = string.format
+local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0",true)
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -415,10 +416,15 @@ function addon.SetStep(n, n2, loopback)
     -- isUpdating = true
 
     if not guide.steps[n].active then
-        for _, element in ipairs(guide.steps[n]) do
+        local step = guide.steps[n]
+        for _, element in ipairs(step) do
             if element.OnStepActivation then
                 element:OnStepActivation()
             end
+        end
+        local trackId = tonumber(step.track)
+        if C_SuperTrack and trackId then
+            C_SuperTrack.SetSuperTrackedQuestID(trackId)
         end
     end
 
@@ -498,7 +504,8 @@ function addon.SetStep(n, n2, loopback)
     local totalHeight = 0
     local c = 0
     local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
-    local stepTargets = {}
+    local enemyTargets = {}
+    local friendlyTargets = {}
     for i, step in pairs(activeSteps) do
 
         local index = step.index
@@ -547,7 +554,12 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number:SetBackdropColor(unpack(addon.colors.background))
         end
 
-        local titletext = step.title or (string.format(L("Step %d"), index))
+        local titletext
+        if step.sticky then
+            titletext = step.title or ""
+        else
+            titletext = step.title or (string.format(L("Step %d"), index))
+        end
 
         if titletext == "" then
             stepframe.number:SetAlpha(0)
@@ -684,9 +696,14 @@ function addon.SetStep(n, n2, loopback)
                     end
                 end
             end
+            if element.unitscan then
+                for _, t in ipairs(element.unitscan) do
+                    table.insert(enemyTargets, t)
+                end
+            end
             if element.targets then
                 for _, t in ipairs(element.targets) do
-                    table.insert(stepTargets, t)
+                    table.insert(friendlyTargets, t)
                 end
             end
             local spacing = 0
@@ -708,9 +725,9 @@ function addon.SetStep(n, n2, loopback)
                 end
             end
 
-            if stepTargets then
-                addon.targeting:UpdateMacro(stepTargets)
-            end
+            addon.targeting:UpdateEnemyTargets(enemyTargets)
+
+            addon.targeting:UpdateFriendlyTargets(friendlyTargets)
         else
             stepframe:Hide()
         end
@@ -724,7 +741,6 @@ function addon.SetStep(n, n2, loopback)
         end
     end
     addon.UpdateItemFrame()
-    addon.UnitScanUpdate()
     CurrentStepFrame.UpdateText()
     addon.updateSteps = true
     addon.updateMap = true
@@ -733,7 +749,9 @@ end
 
 function CurrentStepFrame.EventHandler(self, event, ...)
     -- print(event,self.index,self.element.tag)
-    if self.callback and self.step and self.step.active then
+    if addon.isHidden then
+        return
+    elseif self.callback and self.step and self.step.active then
         self.callback(self, event, ...)
     else
         print('!!!') -- ok
@@ -979,7 +997,11 @@ Footer.cog:SetScript("OnClick",
 --Footer.cog:HookScript("OnLeave", function(self) self:Hide() end)
 
 function RXPFrame.DropDownMenu()
-    _G.EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
+    if LibDD then
+        LibDD:EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
+    else
+        _G.EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
+    end
 end
 
 GuideName.OnMouseDown = function(self, button)
@@ -1058,7 +1080,7 @@ function addon.GetGuideName(guide)
     elseif not som and guide.eraname then
         return guide.eraname
     else
-        return guide.displayName
+        return guide.displayname
     end
 end
 
@@ -1089,7 +1111,7 @@ addon.emptyGuide = {
     hidewindow = true,
     name = "",
     group = "",
-    displayName = L("Welcome to RestedXP Guides\nRight click to pick a guide"),
+    displayname = L("Welcome to RestedXP Guides\nRight click to pick a guide"),
     steps = {{hidewindow = true, text = ""}}
 }
 
@@ -1221,7 +1243,11 @@ function addon:LoadGuide(guide, OnLoad)
                 bottomMenu[1].text = L("Go to step") .. " " .. n
                 bottomMenu[1].arg1 = n
                 bottomMenu[feedbackMenuIndex].arg1 = n
-                _G.EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
+                if LibDD then
+                    LibDD:EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
+                else
+                    _G.EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
+                end
             else
                 self.timer = GetTime()
             end
@@ -1475,7 +1501,7 @@ function BottomFrame.SortSteps()
 end
 
 local function IsGuideActive(guide)
-    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) then
+    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and addon.XpRateCheck(guide) and addon.FreshAccountCheck(guide) and addon.LevelCheck(guide) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end
@@ -1637,8 +1663,14 @@ function RXPFrame.GenerateMenuTable(menu)
         text = L("Import guide"),
         notCheckable = 1,
         func = function()
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+            if Settings and Settings.GetCategory then
+                Settings.GetCategory(addon.RXPOptions.name).expanded = true;
+                Settings.OpenToCategory(addon.RXPOptions.name);
+                --Settings.OpenToCategory(addon.settings.gui.import); -- causes UI taint on 10.0
+            else
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
+            end
         end
     })
 

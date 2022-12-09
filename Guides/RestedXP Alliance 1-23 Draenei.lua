@@ -250,7 +250,7 @@ step
     .turnin 9455 >> Turn in Strange Findings
     .accept 9456 >> Accept Nightstalker Clean Up, Isle 2...
 step << Shaman
-    .goto Azuremyst Isle,47.3,50.6
+    .goto Azuremyst Isle,48.05,50.42
     .trainer >> Train your spells
 step
     .goto Azuremyst Isle,48.7,50.2
@@ -370,7 +370,7 @@ step
     .turnin 9538 >> Turn in Learning the Language
     .accept 9539 >> Accept Totem of Coo
 step << Shaman
-    .goto Azuremyst Isle,47.3,50.6
+    .goto Azuremyst Isle,48.05,50.41
     .trainer >> Train your spells
 step << Hunter
     .goto Azuremyst Isle,49.8,51.9
@@ -559,7 +559,7 @@ step
     .goto Azuremyst Isle,47.2,50.7
     .turnin 9612 >> Turn in A Hearty Thanks!
 step << Shaman
-    .goto Azuremyst Isle,47.3,50.6
+    .goto Azuremyst Isle,48.05,50.41
     .trainer >> Train your level 10 spells
 step << Hunter
     .goto Azuremyst Isle,49.8,51.9
@@ -578,7 +578,7 @@ step << Warrior
     .trainer >> Train your level 10 spells
     .accept 9582 >> Accept Strength of One
 step << Shaman
-    .goto Azuremyst Isle,48.1,50.5
+    .goto Azuremyst Isle,48.05,50.41
     .accept 9464 >> Accept Call of Fire
 step << Hunter
     .goto Azuremyst Isle,49.7,51.9
@@ -946,7 +946,7 @@ step << !Shaman
     .turnin 9622 >> Turn in Warn Your People
     .complete 9663,2 --Exarch Menelaous Warned
 step << Shaman
-    .goto Azuremyst Isle,48.1,50.5
+    .goto Azuremyst Isle,48.05,50.41
     .turnin 9468 >> Turn in Call of Fire
     .accept 9461 >> Accept Call of Fire
 step << Shaman
@@ -1199,7 +1199,7 @@ step << Paladin
 	.trainer >> Train class spells at Vindicator Aesom
 step
     .goto Bloodmyst Isle,54.5,54.6
-    .turnin 9696 >> Turn in Translations...
+    .turnin -9696 >> Turn in Translations...
     .accept 9698 >> Accept Audience with the Prophet
 step
     .xp 15
@@ -1314,14 +1314,14 @@ step << Shaman
     .goto The Exodar,32.7,54.5
     .turnin 9461 >> Turn in Call of Fire
     .accept 9555 >> Accept Call of Fire
-    .turnin 9698 >> Turn in Audience with the Prophet
+    .turnin -9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
 step << Paladin
     .goto The Exodar,38.8,82.6
     .turnin 9600 >>Turn in Redemption
 step << !Shaman
     .goto The Exodar,32.9,54.6
-    .turnin 9698 >> Turn in Audience with the Prophet
+    .turnin -9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
 step << Shaman
 	#completewith next
@@ -1344,7 +1344,7 @@ step
 step
     #label exit1
     .goto Bloodmyst Isle,55.5,55.4
-    .turnin 9699 >> Turn in Truth or Fiction
+    .turnin -9699 >> Turn in Truth or Fiction
     .accept 9700 >> Accept I Shoot Magic Into the Darkness
 step
     .goto Bloodmyst Isle,56.2,54.3

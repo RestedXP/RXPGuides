@@ -13,6 +13,14 @@ local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
 local AceGUI = LibStub("AceGUI-3.0")
 local LibDeflate = LibStub("LibDeflate")
 local L = addon.locale.Get
+local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
+local EasyMenu = function(...)
+    if LibDD then
+        LibDD:EasyMenu(...)
+    else
+        _G.EasyMenu(...)
+    end
+end
 
 addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0",
                                 "AceComm-3.0", "AceSerializer-3.0")
@@ -737,40 +745,6 @@ function addon.tracker:CompileData()
     return addon.tracker.reportData
 end
 
-function addon.tracker:PrettyPrintTime(s)
-    local days = floor(s / 24 / 60 / 60)
-    s = mod(s, 24 * 60 * 60)
-
-    local hours = floor(s / 60 / 60)
-    s = mod(s, 60 * 60)
-
-    local minutes = floor(s / 60)
-    s = mod(s, 60)
-
-    local formattedString
-    if days > 0 then
-        formattedString = fmt("%d %s %d %s %d %s %d %s", days,
-                              days == 1 and L('day') or L('days'), hours,
-                              hours == 1 and L('hour') or L('hours'), minutes,
-                              minutes == 1 and L('minute') or L('minutes'), s,
-                              s == 1 and L('second') or L('seconds'))
-    elseif hours > 0 then
-        formattedString = fmt("%d %s %d %s %d %s", hours,
-                              hours == 1 and L('hour') or L('hours'), minutes,
-                              minutes == 1 and L('minute') or L('minutes'), s,
-                              s == 1 and L('second') or L('seconds'))
-    elseif minutes > 0 then
-        formattedString = fmt("%d %s %d %s", minutes,
-                              minutes == 1 and L('minute') or L('minutes'), s,
-                              s == 1 and L('second') or L('seconds'))
-    else
-        formattedString =
-            fmt("%d %s", s, s == 1 and L('second') or L('seconds')) -- Big gratz for leveling in under a minute
-    end
-
-    return formattedString
-end
-
 function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     if not attachment then return end
     local trackerUi = addon.tracker.ui[attachment:GetName()]
@@ -827,9 +801,9 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
         end
 
         trackerUi.speedContainer.data:SetText(
-            addon.tracker:PrettyPrintTime(self.state.levelReportData
-                                              .timePlayedThisLevel or
-                                              "Missing data"))
+            addon.comms:PrettyPrintTime(self.state.levelReportData
+                                            .timePlayedThisLevel or
+                                            "Missing data"))
 
         if selectedLevel == 1 or
             (selectedLevel == 55 and addon.player.class == "DEATHKNIGHT") then
@@ -856,8 +830,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
             report.timestamp.finished then
             local s = report.timestamp.finished - report.timestamp.started
 
-            trackerUi.speedContainer.data:SetText(
-                addon.tracker:PrettyPrintTime(s))
+            trackerUi.speedContainer.data:SetText(addon.comms:PrettyPrintTime(s))
         else
             trackerUi.speedContainer.data:SetText("Missing data")
         end
@@ -1190,7 +1163,7 @@ function addon.tracker:CreateLevelSplits()
 
     f.history = AceGUI:Create("Label")
     f.history:SetFont(self.fonts.splits,
-                      addon.settings.db.profile.levelSplitsFontSize)
+                      addon.settings.db.profile.levelSplitsFontSize, "")
     f.history:SetFullWidth(true)
     f.history.frame:SetParent(f)
     f.history.frame:SetPoint("TOPLEFT", f, "TOPLEFT", 8,
@@ -1200,7 +1173,7 @@ function addon.tracker:CreateLevelSplits()
 
     f.current = AceGUI:Create("Label")
     f.current:SetFont(self.fonts.splits,
-                      addon.settings.db.profile.levelSplitsFontSize)
+                      addon.settings.db.profile.levelSplitsFontSize, "")
     f.current:SetFullWidth(true)
     f.current.frame:SetParent(f)
     f.current.frame:SetPoint("TOPLEFT", f.history.frame, "BOTTOMLEFT", 0, -8)
@@ -1209,7 +1182,7 @@ function addon.tracker:CreateLevelSplits()
 
     f.total = AceGUI:Create("Label")
     f.total:SetFont(self.fonts.splits,
-                    addon.settings.db.profile.levelSplitsFontSize)
+                    addon.settings.db.profile.levelSplitsFontSize, "")
     f.total:SetFullWidth(true)
     f.total.frame:SetParent(f)
     f.total.frame:SetPoint("TOPLEFT", f.current.frame, "BOTTOMLEFT", 0, 0)
@@ -1466,11 +1439,11 @@ function addon.tracker:UpdateLevelSplits(kind)
     if currentFontSize ~= addon.settings.db.profile.levelSplitsFontSize then
         -- Font size changed, set new size before calculating width/height
         f.current:SetFont(self.fonts.splits,
-                          addon.settings.db.profile.levelSplitsFontSize)
+                          addon.settings.db.profile.levelSplitsFontSize, "")
         f.history:SetFont(self.fonts.splits,
-                          addon.settings.db.profile.levelSplitsFontSize)
+                          addon.settings.db.profile.levelSplitsFontSize, "")
         f.total:SetFont(self.fonts.splits,
-                        addon.settings.db.profile.levelSplitsFontSize)
+                        addon.settings.db.profile.levelSplitsFontSize, "")
     end
 
     local width = max(f.current.label:GetStringWidth(),

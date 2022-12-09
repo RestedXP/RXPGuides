@@ -5,5 +5,6 @@
     <Script file="DB/tbc/flightData.lua"/>
     <Script file="DB/tbc/quest.lua"/>
     <Script file="DB/tbc/spells.lua"/>
+    <Script file="DB/tbc/db.lua"/>
 
 </Ui>

@@ -1,0 +1,25 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+    <Script file="Guides/Import.lua"/>
+	
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Allied Races.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Draenei_Ammen Vale.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Draenei_Azuremyst Isle.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Dwarf_Coldridge Vallley.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Gnome,Dwarf_Dun Morogh.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Gnome_New Tinkertown.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Human_Northshire Valley.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Night Elf_Shadowglen.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Night Elf_Teldrassil.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Alliance-Worgen_Gilneas.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Death Knight_Plaguelands The Scarlet Enclave.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Demon Hunter_Mardum.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Dracthyr_The Forbidden Reach.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Horde-1-10_Durotar.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Horde-1-10_Eversong-Woods.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Horde-1-10_Mulgore.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Horde-1-10_Tirisfal.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Horde-1-16_Goblin.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Horde-Allied Races.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Pandaren_The Wandering Isle.lua"/>
+  <Script file="Guides/Retail-Starting-Zones/Exile's Reach.lua"/>
+</Ui>

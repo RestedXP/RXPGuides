@@ -60,9 +60,6 @@ L["Only shows current and future steps on the step list window"] =
 L["Highlight active map pins"] = "突出顯示活動地圖圖釘"
 L["Show a targeting circle around active map pins"] =
     "在活動地圖圖釘周圍顯示一個目標圈"
-L["Unitscan integration"] = "Unitscan 集成"
-L["Automatically adds important npcs to your unitscan list"] =
-    "自動將重要的 npc 添加到您的 unitscan 列表中"
 L["Hardcore mode"] = "硬核模式"
 L["Adjust the leveling routes to the deathless ruleset"] =
     "將升等路線調整至不會死亡的路線"

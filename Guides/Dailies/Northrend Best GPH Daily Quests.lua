@@ -30,7 +30,6 @@ step
 	.daily 13046 >> Accept Feeding Arngrim
 	.goto TheStormPeaks,67.61,59.95
 	.reputation 1119,revered,<0,1 -- if you're 0 into revered it will display this step
-	.isQuestTurnedIn 13001
 step
 	>>Talk to Fjorn's Anvil, Hodir's Horn, Hodir's Helm and Frostworg Denmother
     .daily 12981 >>Accept Hot and Cold
@@ -42,7 +41,6 @@ step
 	.daily 12994 >> Accept Spy Hunter
 	.goto TheStormPeaks,63.49,59.73
 	.reputation 1119,honored,<0,1 -- if you're 0 into honored it will display this step
-	.isQuestTurnedIn 13001
 step
 	>>Talk to Fjorn's Anvil, Hodir's Horn and Hodir's Helm
     .daily 12981 >>Accept Hot and Cold
@@ -52,7 +50,6 @@ step
 	.daily 13006 >> Accept A Viscous Cleaning
 	.goto TheStormPeaks,64.24,59.23
 	.reputation 1119,friendly,<0,1 -- if you're 0 into friendly it will display this step
-	.isQuestTurnedIn 13001
 step
 	.goto TheStormPeaks,70.00,58.00,60,0
     .goto TheStormPeaks,70.14,61.16
@@ -465,12 +462,12 @@ step << Alliance
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
 	>>Return to Orgrim's Hammer. Talk to Warbringer Davos Rioht, Brother Keltan, Sky-Reaver Korm Blackscar, Chief Engineer Copperclaw and Koltira Deathweaver
-    .turnin -13330 >>Accept Blood of the Chosen
-    .turnin -13302 >>Accept Slaves to Saronite
-    .turnin -13357 >>Accept Retest Now
-    .turnin -13353 >>Accept Drag and Drop
-	.turnin -13365 >>Accept Not a Bug
-    .turnin -13331 >>Accept Keeping the Alliance Blind
+    .turnin -13330 >>Turn in Blood of the Chosen
+    .turnin -13302 >>Turn in Slaves to Saronite
+    .turnin -13357 >>Turn in Retest Now
+    .turnin -13353 >>Turn in Drag and Drop
+	.turnin -13365 >>Turn in Not a Bug
+    .turnin -13331 >>Turn in Keeping the Alliance Blind
 
 --6 Quest section from Knights of the Ebon Blade. 3 come from The Shadow Vault, other 3 from Death's Rise
 
@@ -572,7 +569,7 @@ step
 	.isOnQuest 12813
 step
 	>>Kill Onslaught mobs, then loot them for their keys. Use them to open chests all around the Onslaught Harbor for the Documents
-	>>The chests do not have a 100% droprate for the documents
+	>>|cff00ecffNOTE: Only open chests that are sparkling for the Documents. Chest which are not sparkling DO NOT contain Documents.|r
     .goto IcecrownGlacier,10.7,45.6,40,0
     .goto IcecrownGlacier,10.3,46.4,40,0
     .goto IcecrownGlacier,8.8,46.7,40,0

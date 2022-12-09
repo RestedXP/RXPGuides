@@ -4,7 +4,7 @@
 ## Notes-zhCN: TODO
 ## Author: RestedXP
 ## Version: @project-version@
-## OptionalDeps: Questie, unitscan
+## OptionalDeps: Questie
 ## SavedVariables: RXPData, RXPDB
 ## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
 ## X-Curse-Project-ID: 486246

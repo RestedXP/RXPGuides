@@ -358,7 +358,7 @@ step << Druid tbc
     .goto Moonglade,48.1,67.2
     .fly Auberdine>>Fly to Darkshore
 step << Warlock wotlk/Rogue wotlk
-    .xp >> Grind to level 14
+    .xp 14 >> Grind to level 14
 step << Warlock wotlk/wotlk Gnome Rogue/wotlk Human Rogue/wotlk Dwarf Rogue
     .hs >> Hearth to Stormwind
 step << wotlk Night Elf Rogue
@@ -407,6 +407,9 @@ RXPGuides.RegisterGuide([[
 #defaultfor !Draenei
 #next RestedXP Alliance 20-32\20-21 Darkshore << !Warlock
 #next RestedXP Alliance 20-32\20-23 Darkshore/Ashenvale << Warlock
+step << Druid
+    .goto Azuremyst Isle,24.45,54.56
+    .trainer >> Train your class spells
 step
     .goto The Exodar,68.3,63.5
     .fp Exodar >> Get the The Exodar flight path
@@ -772,10 +775,12 @@ step
     >> Talk to Vindicator Aalesia
     .accept 9569 >> Accept Containing the Threat
     .goto Bloodmyst Isle,55.0,58.0
+step
     >> Talk to Boros
-    .turnin -9699 >> Turn in Truth or Fiction
+    .turnin 9699 >> Turn in Truth or Fiction
     .goto Bloodmyst Isle,55.4,55.4
     .accept 9700 >> Accept I Shoot Magic Into the Darkness
+    .isOnQuest 9699
 step
     .itemcount 23984,10
     .goto Bloodmyst Isle,55.4,55.2
@@ -806,9 +811,9 @@ step
     .accept 9549 >> Accept Artifacts of the Blacksilt
 step
 	.goto Bloodmyst Isle,42.0,21.2
-	.vendor >> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it
+	>> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it
 	.collect 4371,1,175,1,1
-	.bronzetube
+    .bronzetube
 step
     #sticky
     #label crate
@@ -834,7 +839,7 @@ step
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
 step
     .goto Bloodmyst Isle,42.1,21.2
-	.vendor >> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
+	>> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
 	.collect 4371,1,175,1,1
 	.bronzetube
 step
@@ -1266,18 +1271,13 @@ step
 	>>Talk to the Night Elf just outside of The Exodar back entrance
     .turnin 9632 >> Turn in Newfound Allies
     .accept 9633 >> Accept The Way to Auberdine
-step << !Druid
+step << Druid
+    .goto Azuremyst Isle,24.45,54.56
+    .trainer >> Train your class spells
+step
     >>Head to the docks right next to the Night Elf you just spoke with. Level first aid while waiting.
     .goto Azuremyst Isle,20.4,54.2
     .zone Darkshore >> Take the boat to Darkshore
-step << Druid
-    #completewith next
-    >>Teleport to Moonglade
-    .goto Moonglade,52.4,40.6
-    .trainer 12042 >> Train spells
-step << Druid
-    .goto Moonglade,48.1,67.2
-    .fly Auberdine>>Fly to Darkshore
 
 ]])
 
@@ -1295,6 +1295,11 @@ step << NightElf wotlk
     >> Take the boat or fly to Darnassus
     .skill riding,1 >> Train riding skill and buy a mount
     .money <4.60
+step << NightElf wotlk
+    .goto Darnassus,29.55,41.11,20
+    .goto Teldrassil,58.4,98.02
+    .fly Auberdine >> Fly to Auberdine
+    .zoneskip Darnassus,1
 step
 #xprate <1.5
     .maxlevel 21
@@ -1924,6 +1929,9 @@ step << NightElf wotlk
     >> Fly or take the boat to Darnassus
     .skill riding,1 >> Train riding skill and buy a mount
     .money <4.60
+step << Priest
+    .goto Teldrassil,37.89,82.73
+    .trainer >> Train your class spells
 step << Warrior tbc/Mage/Priest/Warlock
     .isOnQuest 942
 	.goto Teldrassil,29.2,56.7

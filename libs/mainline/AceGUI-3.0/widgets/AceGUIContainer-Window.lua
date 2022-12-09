@@ -7,10 +7,6 @@ local pairs, assert, type = pairs, assert, type
 local PlaySound = PlaySound
 local CreateFrame, UIParent = CreateFrame, UIParent
 
--- Global vars/functions that we don't upvalue since they might get hooked, or upgraded
--- List them here for Mikk's FindGlobals script
--- GLOBALS: GameFontNormal
-
 ----------------
 -- Main Frame --
 ----------------
@@ -304,7 +300,7 @@ do
 		line2:SetHeight(8)
 		line2:SetPoint("BOTTOMRIGHT", -8, 8)
 		line2:SetTexture(137057) -- Interface\\Tooltips\\UI-Tooltip-Border
-		local x = 0.1 * 8/17
+		x = 0.1 * 8/17
 		line2:SetTexCoord(0.05 - x, 0.5, 0.05, 0.5 + x, 0.05, 0.5 - x, 0.5 + x, 0.5)
 
 		local sizer_s = CreateFrame("Frame",nil,frame)

@@ -46,7 +46,7 @@ step << Hunter
     .vendor >>Go inside the building, vendor trash, and fill your quiver with arrows
 step << Mage tbc/Priest tbc/Warlock tbc
     .goto Eversong Woods,38.7,20.3
-    .vendor >>Go inside, vendor trash, & buy 10 Water
+    >>Go inside, vendor trash, & buy 10 Water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Mage wotlk/Priest wotlk/Warlock wotlk 
     .goto Eversong Woods,38.7,20.3
@@ -142,7 +142,7 @@ step << Warlock tbc
     .turnin 8336 >> Turn in A Fistful of Slivers
 step << Warlock tbc
     .goto Eversong Woods,38.7,20.3
-    .vendor >> Vendor trash & buy 10 Water
+    >> Vendor trash & buy 10 Water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Warlock tbc
     .goto Eversong Woods,38.9,21.4
@@ -265,7 +265,7 @@ step << wotlk
 step << Mage tbc/Priest tbc
     #completewith pepegavendor
     .goto Eversong Woods,38.7,20.3
-    .vendor >>Vendor trash and buy 10 Water
+    >>Vendor trash and buy 10 Water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Mage wotlk/Priest wotlk/Warlock wotlk
     #completewith pepegavendor
@@ -610,7 +610,7 @@ step
     .complete 8486,1 --Kill Manawraith (x5)
     .complete 8486,2 --Kill Mana Stalker (x5)
 step
-    >>Kill a Darnassian Scout in the area. Loot it for their Incriminating Documents. Click it in your bags
+    .use 20765 >>Kill a Darnassian Scout in the area. Loot it for their Incriminating Documents. Click it in your bags
     .goto Eversong Woods,36.8,60.8,20,0
     .goto Eversong Woods,34.6,62.0,20,0
     .goto Eversong Woods,34.0,60.8,20,0
@@ -1067,7 +1067,7 @@ step << Orc/Troll/Tauren
     .fp Silvermoon >> Get the Silvermoon City flight path
 step << Undead/BloodElf !Hunter
     .goto Eversong Woods,60.4,62.5
-    .vendor >> Buy Springpaw Appetizers from Zalene. Reload vendor's inventory window if they do not appear (currently bugged).
+    >> Buy Springpaw Appetizers from Zalene. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22776,1 --Collect Springpaw Appetizers
 step << !Hunter
     >> Talk to Lieutenant Dawnrunner
@@ -1417,12 +1417,12 @@ step << Paladin/Rogue
     .cast 2580 >>Cast Find Minerals
 step << Paladin/Rogue
     .goto Silvermoon City,78.4,42.5
-    .vendor >> Buy a mining pick
+    >> Buy a mining pick
     .collect 2901,1 --Mining Pick (1)
 step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
-    .vendor >> Buy a Suntouched Special Reserve from Vinemaster Suntouched. Reload vendor's inventory window if they do not appear (currently bugged).
-    .collect 22775,1 --Collect Suntouched Special Reserve
+    >> Buy a Suntouched Special Reserve from Vinemaster Suntouched. Reload vendor's inventory window if they do not appear (currently bugged).
+    .collect 22775,1 --Collect Suntouched Special Reserve 
 step << Undead/BloodElf !Hunter
     #completewith next
     .hs Hearth to Falconwing
@@ -1456,7 +1456,7 @@ step << Undead/BloodElf !Hunter
     .turnin 8491 >> Turn in Pelt Collection
 step << Undead/BloodElf !Hunter
     .goto Eversong Woods,44.0,70.4
-    .vendor >>Buy a Bundle of Fireworks from Halis. Reload vendor's inventory window if they do not appear (currently bugged).
+    >>Buy a Bundle of Fireworks from Halis. Reload vendor's inventory window if they do not appear (currently bugged).
     .collect 22777,1 --Bundle of Fireworks (1)
 step << Undead/BloodElf !Hunter
     >> Speak to Magistrix Landra Dawnstrider
@@ -1512,7 +1512,7 @@ step << !BloodElf/!Hunter
     >>Be sure to start max range from him. << Hunter
     .goto Eversong Woods,37.6,86.2
     .turnin 10166 >> Turn in Whitebark's Memory
-step << BloodElf !Hunter
+step << Undead/BloodElf !Hunter
     >> Speak with Runewarden Deryan
     .goto Eversong Woods,44.2,85.5
     .turnin 9253 >> Turn in Runewarden Deryan
@@ -1558,8 +1558,9 @@ step
     .turnin 9147 >> Turn in The Fallen Courier
 step
     >> Speak with Courier Dawnstrider
-    .goto Eversong Woods,49.0,89.3
+    .goto Eversong Woods,48.98,89.0
     .accept 9148 >> Accept Delivery to Tranquillien
+    .target Courier Dawnstrider
 step << BloodElf !Hunter
     >> Speak to Arcanist Vandril
     .goto Ghostlands,46.5,28.4
@@ -1670,7 +1671,7 @@ step
 step
     #completewith next
     .goto Ghostlands,72.3,32.3
-    .vendor >> Buy Food/drink if needed. Be sure to buy the level 5 fish as it's VERY cheap
+    .vendor >> Buy Food/drink if needed. Be sure to buy the Longjaw Mud Snapper as it's VERY cheap
 step
     >>Kill any Ghostclaw Lynx you see
     .goto Ghostlands,68.5,33.1,40,0
@@ -1750,23 +1751,25 @@ step
     .turnin 9138 >>Turn in Suncrown Village
     .accept 9139 >>Accept Goldenmist Village
 step
-    #label Poster3
     >> Talk to Master Chef Mouldier
     .accept 9171 >> Accept Culinary Crunch
-    .goto Ghostlands,48.4,30.9
+    .goto Ghostlands,48.43,30.93
+    .target Master Chef Mouldier
+step
+--  #label Poster3
     >>Click the Wanted Poster
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran
-    .goto Ghostlands,48.2,31.6
+    .goto Ghostlands,48.35,31.67
 step << !Warlock
     .goto Ghostlands,48.9,32.4
     .home >> Set your Hearthstone to Tranquillien
 step << Mage/Priest/Warlock
     .goto Ghostlands,47.7,32.3
-    .vendor >> Purchase Apprentice Boots from Vredigar and equip them
+    >> Purchase Apprentice Boots from Vredigar and equip them
     .collect 22991,1 --Collect Apprentice Boots (1)
 step << Rogue/Shaman
     .goto Ghostlands,47.7,32.3
-    .vendor >> Purchase Bogwalker Boots from Vredigar and equip them
+    >> Purchase Bogwalker Boots from Vredigar and equip them
     .collect 22992,1 --Collect Bogwalker Boots (1)
 step << Orc Hunter/Troll Hunter
     #sticky
@@ -1777,13 +1780,13 @@ step << Orc Hunter/Troll Hunter
     .train 202 >>Train 2h Swords
 step << Hunter
     .goto Ghostlands,47.7,32.3
-    .vendor >> Buy the Bogwalker Boots. Equip them << wotlk
-    .vendor >> Buy the Bogwalker Boots and Flamberge. Equip them << tbc
+    >> Buy the Bogwalker Boots. Equip them << wotlk
+    >> Buy the Bogwalker Boots and Flamberge. Equip them << tbc
     .collect 22992,1 --Collect Bogwalker Boots (1)
     .collect 28164,1 --Collect Tranquillien Flamberge (1) << tbc
 step << Paladin
     .goto Ghostlands,47.7,32.3
-    .vendor >> Buy the Volunteer's Greaves and Tranquillien Flamberge. Equip them
+    >> Buy the Volunteer's Greaves and Tranquillien Flamberge. Equip them
     .collect 22993,1 --Collect Volunteer's Greaves (1)
     .collect 28164,1 --Collect Tranquillien Flamberge (1)
 step
@@ -1962,11 +1965,11 @@ step
     .goto Ghostlands,47.3,28.6
 step << Paladin
     .goto Ghostlands,47.7,32.3
-    .vendor >> Buy a Tranquillien Defender's Girdle. Equip it
+    >> Buy a Tranquillien Defender's Girdle. Equip it
     .collect 28162,1 --Collect Tranquillien Defender's Girdle (1)
 step << Rogue/Hunter/Druid/Shaman
     .goto Ghostlands,47.7,32.3
-    .vendor >> Buy a Batskin Belt. Equip it
+    >> Buy a Batskin Belt. Equip it
     .collect 28158,1 --Collect Batskin Belt (1)
 step
     .goto Ghostlands,48.9,32.4
@@ -2174,7 +2177,7 @@ step << Rogue
     .goto Ghostlands,47.2,34.3
     .turnin 10372 >>Turn in A Discreet Inquiry
     .accept 9491 >>Accept Greed
-    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up
+    >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up
 step
     >> Talk to Magister Kaendris and Quallestis at the Sanctum of the Sun
     .goto Ghostlands,55.0,48.5
@@ -2193,7 +2196,7 @@ step
 step << Hunter
     #sticky
     #completewith next
-    .vendor >>Buy a Reinforced Bow here if you haven't yet
+    >>Buy a Reinforced Bow here if you haven't yet
     .goto Ghostlands,72.1,32.0
     .collect 3026,1 --Collect Reinforced Bow
 step << Hunter
@@ -2267,7 +2270,7 @@ step << Rogue
     .goto Ghostlands,47.2,34.3
     .turnin 9491 >>Turn in Greed
     .accept 10548 >>Accept The Sad Truth
-    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
+    >> Check Eralan for Sinister Scimitar or Throat Piercers. Buy either if they're up if you didn't get them earlier
 step
     >>Go to the top floor of the building. Talk to the book
     .goto Ghostlands,78.8,19.8,30,0
@@ -2385,7 +2388,7 @@ step << Rogue
     >>Run back to Tranquillien. Choose the Dagger on turnin. Save this dagger (or any dagger) as you'll need one for later
     .goto Ghostlands,47.2,34.3
     .turnin 10548 >>Turn in The Sad Truth
-    .vendor >> Check Eralan for Sinister Scimitar or Throat Piercers again. Buy either if they're up if you didn't get them earlier
+    >> Check Eralan for Sinister Scimitar or Throat Piercers again. Buy either if they're up if you didn't get them earlier
 step
     #sticky
     #completewith endofsun
@@ -2399,11 +2402,11 @@ step
     .goto Ghostlands,44.8,32.3
 step << Mage/Warlock/Priest
     .goto Ghostlands,47.7,32.3
-    .vendor >> Purchase Apothecary's Robe. Equip it
+    >> Purchase Apothecary's Robe. Equip it
     .collect 22986,1 --Collect Apothecary's Robe (1)
 step << Rogue/Hunter/Druid/Shaman
     .goto Ghostlands,47.7,32.3
-    .vendor >> Purchase Deathstalker's Vest. Equip it
+    >> Purchase Deathstalker's Vest. Equip it
     .collect 22987,1 --Collect Deathstalker's Vest (1)
 step << Druid
     .cast 18960 >>Teleport to Moonglade
@@ -2434,7 +2437,7 @@ step << Warlock
     .trainer >> Train your class spells
 step << Warlock tbc
     .goto Silvermoon City,74.0,44.8
-    .vendor >> Buy books for your Voidwalker
+    >> Buy books for your Voidwalker
     .collect 16357 --Collect Grimoire of Consume Shadows (x1)
     .collect 16351 --Collect Grimoire of Sacrifice (x1)
 step << Hunter
@@ -2625,7 +2628,7 @@ step
     .isQuestComplete 9156
 step
     .goto Ghostlands,47.7,32.3
-    .vendor >> Buy the Tranquillien Champion's Cloak. Equip it
+    >> Buy the Tranquillien Champion's Cloak. Equip it
     .collect 22990,1 --Collect Tranquillien Champion's Cloak (1)
     .isQuestTurnedIn 9167
 step
@@ -2669,7 +2672,7 @@ step << Warlock
     >>Enter the building. Go downstairs
     .trainer >> Train your class spells
 step << Warlock tbc
-    .vendor >> Purchase Grimoire of Torment (Rank 2)
+    >> Purchase Grimoire of Torment (Rank 2)
     .collect 16346,1
 step << Hunter
     .goto Silvermoon City,82.2,28.1
@@ -2680,7 +2683,7 @@ step << Hunter
 step << Hunter
     .money <0.6032
     .goto Silvermoon City,86.2,35.4
-    .vendor >>Buy a Heavy Recurve Bow from Celana
+    >>Buy a Heavy Recurve Bow from Celana
     .collect 3027,1 --Heavy Recurve Bow
 step << Paladin
     .goto Silvermoon City,89.3,35.2
