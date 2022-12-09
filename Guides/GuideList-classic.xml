@@ -11,11 +11,5 @@
     <Script file="Guides/Classic-Horde-1-12_Mulgore.lua"/>
     <Script file="Guides/Classic-Horde-12-22_Barrens.lua"/>
     <Script file="Guides/Classic-Horde-Mage-12-21.lua"/>
-    <Script file="Guides/RestedXP-Classic-Alliance-1.lua"/>
-    <Script file="Guides/RestedXP-Classic-Alliance-2.lua"/>
-    <Script file="Guides/RestedXP-Classic-A-Mage-1.lua"/>
-    <Script file="Guides/RestedXP-Classic-Horde-1.lua"/>
-    <Script file="Guides/RestedXP-Classic-Horde-2.lua"/>
-    <Script file="Guides/RestedXP-Classic-H-Mage-1.lua"/>
-    
+
 </Ui>
