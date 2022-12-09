@@ -891,10 +891,12 @@ function addon.XpRateCheck(step)
                 xpmax = tonumber(arg2) or 0xfff
             end
         end)
+
         if addon.settings.db.profile.xprate < xpmin or addon.settings.db.profile.xprate > xpmax then
             return false
         end
     end
+
     return true
 end
 
@@ -927,6 +929,10 @@ function addon.FreshAccountCheck(step)
 end
 
 function addon.LevelCheck(step)
+    if not addon.settings.db.profile.enableXpStepSkipping then
+        return true
+    end
+
     local level = UnitLevel("player")
     local maxLevel = tonumber(step.maxlevel) or 1000
     if level <= maxLevel then
