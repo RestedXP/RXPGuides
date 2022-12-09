@@ -90,8 +90,6 @@ function addon.settings:InitializeSettings()
             anchorOrientation = "top",
             chromieTime = "auto",
             enableUnitscan = true,
-            enableTargetMacro = true,
-            notifyOnTargetUpdates = true,
             enableXpStepSkipping = true,
 
             -- Sliders
