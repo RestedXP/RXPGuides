@@ -9,6 +9,8 @@ local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 
 local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
+local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom
+
 local importCache = {
     bufferString = "",
     displayString = "",
@@ -1213,7 +1215,11 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                             addon.ReloadGuide()
                         end,
-                        hidden = addon.game ~= "CLASSIC"
+                        hidden = addon.game ~= "CLASSIC",
+                        disabled = function()
+                            return addon.settings.db.profile
+                                       .enableAutomaticXpRate
+                        end
                     }
                 }
             },
@@ -1851,9 +1857,11 @@ function addon.settings.ToggleActive()
 end
 
 function addon.settings:DetectXPRate()
-    if not addon.settings.db.profile.enableAutomaticXpRate then return end
+    if not addon.settings.db.profile.enableAutomaticXpRate or addon.gameVersion >
+        40000 then return end
 
     local UnitBuff = UnitBuff
+    local GetInventoryItemLink = GetInventoryItemLink
 
     local function CheckBuff(buffId)
         local id
@@ -1868,18 +1876,58 @@ function addon.settings:DetectXPRate()
 
     if addon.gameVersion < 20000 then
         addon.settings.db.profile.SoM = CheckBuff(362859) -- SoM
+
+        addon.ReloadGuide()
+        addon.RXPFrame.GenerateMenuTable()
+
+        return
     end
 
-    local currentRate = addon.settings.db.profile.xprate
-    print("currentRate", currentRate)
+    local calculatedRate = CheckBuff(377749) and 1.5 or 1.0 -- Joyous Journeys
 
-    -- TODO calculate difference
+    -- Ignoring ring 5% (11, 12) and Wintergrasp 5% (57940)
+    local itemQuality
 
-    -- TODO heirloomCheck for periodic checking
-    if currentRate == addon.settings.db.profile.xprate then return end
+    local itemLink = GetInventoryItemLink("player", 3) -- Shoulder
 
-    addon.comms:PrettyPrint(
-        L("Experience rate change detected, reloading guide"))
+    if itemLink then
+        itemQuality = select(3, GetItemInfo(itemLink))
+
+        if itemQuality == INV_HEIRLOOM then
+            calculatedRate = calculatedRate + 0.1
+
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("Heirloom detected in Shoulder slot")
+            end
+        end
+    end
+
+    itemLink = GetInventoryItemLink("player", 4) -- Chest
+
+    if itemLink then
+        itemQuality = select(3, GetItemInfo(itemLink))
+
+        if itemQuality == INV_HEIRLOOM then
+            calculatedRate = calculatedRate + 0.1
+
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("Heirloom detected in Chest slot")
+            end
+        end
+    end
+
+    if addon.settings.db.profile.xprate == calculatedRate then return end
+
+    addon.settings.db.profile.xprate = calculatedRate
+
+    -- Gold assistant, ignore reloads, silently update
+    if (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then
+        return
+    end
+
+    addon.comms.PrettyPrint(L(
+                                "Experience rate change detected, reloading guide for %.2fx"),
+                            calculatedRate)
 
     if addon.currentGuide and addon.currentGuide.name then
         addon:LoadGuide(addon.currentGuide, 'onLoad')
