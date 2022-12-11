@@ -1902,7 +1902,7 @@ function addon.settings:DetectXPRate()
         end
     end
 
-    itemLink = GetInventoryItemLink("player", 4) -- Chest
+    itemLink = GetInventoryItemLink("player", 5) -- Chest
 
     if itemLink then
         itemQuality = select(3, GetItemInfo(itemLink))
