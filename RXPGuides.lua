@@ -524,19 +524,21 @@ function addon:OnEnable()
         addon.HideInRaid()
     end
 
-    local detectXPRateQueued = false
-    self:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function (_, slot)
-        if detectXPRateQueued then return end
+    if addon.game == "WOTLK" then
+        local detectXPRateQueued = false
+        self:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function (_, slot)
+            if detectXPRateQueued then return end
 
-        -- Abort if not chest/shoulders
-        if slot ~= 3 and slot ~= 5 then return end
+            -- Abort if not chest/shoulders
+            if slot ~= 3 and slot ~= 5 then return end
 
-        detectXPRateQueued = true
-        C_Timer.After(3, function ()
-            addon.settings:DetectXPRate()
-            detectXPRateQueued = false
+            detectXPRateQueued = true
+            C_Timer.After(3, function ()
+                addon.settings:DetectXPRate()
+                detectXPRateQueued = false
+            end)
         end)
-    end)
+    end
 
 end
 
