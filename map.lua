@@ -27,7 +27,7 @@ af.text = af:CreateFontString(nil, "OVERLAY")
 af.text:SetTextColor(1, 1, 1, 1)
 af.text:SetFont(addon.font, 9,"OUTLINE")
 af.text:SetJustifyH("CENTER")
-af.text:SetJustifyV("CENTER")
+af.text:SetJustifyV("MIDDLE")
 af.text:SetPoint("TOP", af, "BOTTOM", 0, -5)
 af.orientation = 0
 af.distance = 0
