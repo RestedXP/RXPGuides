@@ -523,6 +523,23 @@ function addon:OnEnable()
         -- Check if reloading in raid
         addon.HideInRaid()
     end
+
+    if addon.game == "WOTLK" then
+        local detectXPRateQueued = false
+        self:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function (_, slot)
+            if detectXPRateQueued then return end
+
+            -- Abort if not chest/shoulders
+            if slot ~= 3 and slot ~= 5 then return end
+
+            detectXPRateQueued = true
+            C_Timer.After(3, function ()
+                addon.settings:DetectXPRate()
+                detectXPRateQueued = false
+            end)
+        end)
+    end
+
 end
 
 
@@ -876,7 +893,7 @@ function addon.HardcoreCheck(step)
 end
 
 function addon.XpRateCheck(step)
-    if step.xprate then
+    if step.xprate and addon.settings.db.profile.enableXpStepSkipping then
         local xpmin,xpmax = 1,0xfff
 
         step.xprate:gsub("^([<>]?)%s*(%d+%.?%d*)%-?(%d*%.?%d*)",function(op,arg1,arg2)
@@ -891,10 +908,12 @@ function addon.XpRateCheck(step)
                 xpmax = tonumber(arg2) or 0xfff
             end
         end)
+
         if addon.settings.db.profile.xprate < xpmin or addon.settings.db.profile.xprate > xpmax then
             return false
         end
     end
+
     return true
 end
 
@@ -927,6 +946,10 @@ function addon.FreshAccountCheck(step)
 end
 
 function addon.LevelCheck(step)
+    if not addon.settings.db.profile.enableXpStepSkipping then
+        return true
+    end
+
     local level = UnitLevel("player")
     local maxLevel = tonumber(step.maxlevel) or 1000
     if level <= maxLevel then
