@@ -332,7 +332,7 @@ step << Horde
     .daily 13330 >>Accept Blood of the Chosen
     .accept 13340 >>Accept Joining the Assault
 step << Horde
-	>> Go to the lower deck of the ship. Talk to Cheif Engineer Copperclaw
+	>> Go to the lower deck of the ship. Talk to Chief Engineer Copperclaw
     .accept 13293 >>Accept Get to Ymirheim!
 step << Alliance
     .goto IcecrownGlacier,62.6,51.3
@@ -582,7 +582,7 @@ step
     .turnin 13330 >>Turn in Blood of the Chosen
 	.isQuestComplete 13330
 step << Horde
-	>> Go to the lower deck of the ship. Talk to Cheif Engineer Copperclaw
+	>> Go to the lower deck of the ship. Talk to Chief Engineer Copperclaw
     .turnin 13238 >>Turn in Good For Something?
     .accept 13239 >>Accept Volatility
 step << Alliance
@@ -685,7 +685,7 @@ step << Horde
     .accept 13264 >>Accept That's Abominable!
 	.accept 13277 >>Accept Against the Giants
 step << Horde
-	>> Go to the lower deck of the ship. Talk to Cheif Engineer Copperclaw
+	>> Go to the lower deck of the ship. Talk to Chief Engineer Copperclaw
     .turnin 13239 >>Turn in Volatility
 step
     .goto IcecrownGlacier,68.3,61.5
@@ -772,7 +772,7 @@ step << Horde
 	.accept 13279 >>Accept Basic Chemistry
     .accept 13278 >>Accept Coprous the Defiled
 step << Horde
-	>> Go to the lower deck of the ship. Talk to Cheif Engineer Copperclaw
+	>> Go to the lower deck of the ship. Talk to Chief Engineer Copperclaw
     .accept 13379 >>Accept Green Technology
 step << Alliance
     .goto IcecrownGlacier,65.1,57.2,0
@@ -875,7 +875,7 @@ step << Horde
     .turnin 13379 >>Turn in Green Technology
     .accept 13373 >>Accept Fringe Science Benefits
 step << Horde
-	.goto IcecrownGlacier,53.96,43.11
+	.goto IcecrownGlacier,54.00,36.70
 	>>Talk to Rizzy to get on a bomber. Use Charge Shield (1) to gain 100 shields then switch to Bomber Bay (5) and begin bombing scourge below until all Infantry and Captains are slain. Switch to Anti-Air Turret (4) and begin using Anti-Air Rockets (1) to shoot Gargoyles in the air. Once completed press the Leave Vehicle button and you will be returned to the platform
 	.complete 13373,1 -- Bombardment Infantry slain (40)
 	.complete 13373,2 -- Bombardment Captain slain (8)
@@ -923,7 +923,7 @@ step << Horde
     .accept 13358 >>Accept Not a Bug
     .accept 13366 >>Accept Need More Info
 step << Horde
-	>> Go to the lower deck of the ship. Talk to Cheif Engineer Copperclaw
+	>> Go to the lower deck of the ship. Talk to Chief Engineer Copperclaw
     .turnin 13355 >>Turn in Cannot Reproduce
     .accept 13356 >>Accept Retest Now
 step
@@ -1010,7 +1010,7 @@ step << Horde
     .accept 13367 >>Accept No Rest For The Wicked
     .accept 13306 >>Accept Raise the Barricades
 step << Horde
-	>> Go to the lower deck of the ship. Talk to Cheif Engineer Copperclaw
+	>> Go to the lower deck of the ship. Talk to Chief Engineer Copperclaw
     .turnin 13356 >>Turn in Retest Now
 step
     .goto IcecrownGlacier,52.5,42.0,70,0
