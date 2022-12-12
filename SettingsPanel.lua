@@ -1139,6 +1139,36 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ResetArrowPosition()
                         end
                     },
+                    questCleanupHeader = {
+                        name = L("Quest Cleanup"),
+                        type = "header",
+                        width = "full",
+                        order = 3.0
+                    },
+                    abandonOrphanedQuests = {
+                        name = L("Cleanup Orphaned Quests"), -- TODO locale
+                        order = 3.1,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            addon.AbandonOrphanedQuests()
+                        end
+                    },
+                    orphanedQuestBox = {
+                        order = 3.2,
+                        type = 'description',
+                        name = function()
+                            local result = ""
+                            local orphans = addon.GetOrphanedQuests()
+                            for name, _ in pairs(orphans) do
+                                result = fmt("%s\n%s", result, name)
+                            end
+
+                            return result
+                        end,
+                        desc = L("Cleanup obsolete or leftover quests"),
+                        width = "full"
+                    },
                     expansionHeader = {
                         name = _G.EXPANSION_FILTER_TEXT,
                         type = "header",
