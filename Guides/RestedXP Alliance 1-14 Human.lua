@@ -1017,6 +1017,9 @@ step
     >>Talk to Morgan Pestle in the building. Use the rockets for AoE damage or to splitpull packs
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> Click here for a guide on splitpulling (long but informative)
     .turnin 61,1 >> Turn in Shipment to Stormwind
+step << wotlk 
+    .goto StormwindClassic,52.61,65.71
+    .home >> Set your Hearthstone to Stormwind City    
 step << Warrior tbc
     .goto StormwindClassic,57.1,57.7
     .trainer >> Train 2h Swords
@@ -1119,10 +1122,6 @@ step << Warlock wotlk
     .goto StormwindClassic,66.3,62.1
     .accept 6262 >> Accept Return to Lewis
     .isQuestTurnedIn 6261
-step << wotlk --Warlock wotlk/Rogue wotlk
-    #xprate <1.5
-    .goto StormwindClassic,52.61,65.71
-    .home >> Set your Hearthstone to Stormwind City
 step << Warlock
     #sticky
     #completewith next
@@ -1177,13 +1176,10 @@ step << Priest tbc
     .goto StormwindClassic,38.62,26.10
     .train 13908 >> Train Desperate Prayer
 step << Warrior/Paladin/Rogue
-#xprate <1.5
-    #sticky
     #completewith StormpikeDelivery
     >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior tbc
     .goto StormwindClassic,56.3,17.0
-    .vendor >>Buy a Mining Pick. You'll train Mining later
-    .collect 2901,1 --Mining Pick
+    .collect 2901,1 >>Buy a Mining Pick. You'll train Mining later
 step << tbc/Warlock wotlk
     #xprate >1.119 << Warlock wotlk
     #completewith next
@@ -1644,7 +1640,7 @@ step
     #xprate <1.2
     .goto Loch Modan,33.9,51.0
     .fp Thelsamar >> Get the Thelsamar flight path
-    .fly Ironforge >> Fly to Ironforge << !Warlock
+    .hs >> Hearth to Stormwind << !Warlock
 step << Warlock
     .goto Loch Modan,22.1,73.1
     .accept 224 >> Accept In Defense of the King's Lands
