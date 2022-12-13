@@ -448,7 +448,6 @@ function addon:OnInitialize()
 end
 
 function addon:OnEnable()
-    addon.settings:DetectXPRate()
     ProcessSpells()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
@@ -553,6 +552,9 @@ function addon:PLAYER_ENTERING_WORLD()
     addon.updateMap = true
     addon.isHidden = addon.settings and addon.settings.db.profile.hideGuideWindow or
                                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
+    C_Timer.After(5, function ()
+        addon.settings:DetectXPRate()
+    end)
 end
 
 function addon:PLAYER_LEAVING_WORLD()
