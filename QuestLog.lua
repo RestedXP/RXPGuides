@@ -234,9 +234,9 @@ function addon.GetOrphanedQuests()
     -- Green at level - green, grey below
     local greyBuffer = UnitLevel("player") - GetQuestGreenRange() - 1
 
-    -- addon.turnInList[questID]
     local questLogTitleText, level, isHeader, isComplete, frequency, questID,
           questData
+    local isTooLow, isPartOfGuide
 
     for i = 1, GetNumQuests() do
         questLogTitleText, level, _, isHeader, _, isComplete, frequency, questID =
@@ -250,9 +250,12 @@ function addon.GetOrphanedQuests()
                 ["questID"] = questID
             }
 
+            isTooLow = level < greyBuffer and not isComplete
+            isPartOfGuide = addon.turnInList[questID] or
+                                addon.pickUpList[questID]
+
             -- TODO check if current guide
-            if (level < greyBuffer and not isComplete) or
-                not addon.turnInList[questID] then
+            if isTooLow or not isPartOfGuide then
 
                 orphans[questLogTitleText] = questData
 
