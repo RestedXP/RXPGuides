@@ -619,6 +619,7 @@ function addon.settings:CreateAceOptionsPanel()
     end
 
     local optionsWidth = 1.08
+    local settingsCache = {orphans = {}}
 
     local optionsTable = {
         type = "group",
@@ -1147,11 +1148,27 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     abandonOrphanedQuests = {
                         name = L("Cleanup Orphaned Quests"), -- TODO locale
+                        desc = L("Cleanup obsolete or leftover quests"),
                         order = 3.1,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
-                            addon.AbandonOrphanedQuests()
+                            addon.AbandonOrphanedQuests(settingsCache.orphans)
+                            wipe(settingsCache.orphans)
+                        end,
+                        confirm = function()
+                            local result = L("Abandon the following quests?")
+
+                            for _, d in ipairs(settingsCache.orphans) do
+                                result =
+                                    fmt("%s\n%s (level %d)", result,
+                                        d.questLogTitleText, d.level)
+                            end
+
+                            return result
+                        end,
+                        disabled = function()
+                            return #settingsCache.orphans == 0
                         end
                     },
                     orphanedQuestBox = {
@@ -1160,14 +1177,17 @@ function addon.settings:CreateAceOptionsPanel()
                         name = function()
                             local result = ""
                             local orphans = addon.GetOrphanedQuests()
-                            for name, _ in pairs(orphans) do
-                                result = fmt("%s\n%s", result, name)
+                            for _, d in ipairs(orphans) do
+                                result =
+                                    fmt("%s\n%s (level %d)", result,
+                                        d.questLogTitleText, d.level)
                             end
+
+                            settingsCache.orphans = orphans
 
                             return result
                         end,
-                        desc = L("Cleanup obsolete or leftover quests"),
-                        width = "full"
+                        width = optionsWidth
                     },
                     expansionHeader = {
                         name = _G.EXPANSION_FILTER_TEXT,

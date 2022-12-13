@@ -220,15 +220,7 @@ else
     _G.GameTooltip:HookScript("OnTooltipSetItem", SetItemTooltip)
 end
 
-local orphanedQuests
-local orphanedQuestsHits = 0
 function addon.GetOrphanedQuests()
-    if orphanedQuests and orphanedQuestsHits <= 3 then
-        -- Only cache results 3 times
-        orphanedQuestsHits = orphanedQuestsHits + 1
-        return orphanedQuests
-    end
-
     local orphans = {}
 
     -- Green at level - green, grey below
@@ -246,36 +238,89 @@ function addon.GetOrphanedQuests()
             questData = {
                 ["questLogTitleText"] = questLogTitleText,
                 ["level"] = level,
-                ["isComplete"] = isComplete,
-                ["questID"] = questID
+                ["questID"] = questID,
+                ["questLogIndex"] = i
             }
 
-            isTooLow = level < greyBuffer and not isComplete
-            isPartOfGuide = addon.turnInList[questID] or
-                                addon.pickUpList[questID]
+            isTooLow = level < greyBuffer
+            isPartOfGuide = false
 
-            -- TODO check if current guide
-            if isTooLow or not isPartOfGuide then
+            if addon.currentGuide and addon.currentGuide.key then
+                for _, data in pairs(addon.turnInList[questID]) do
+                    if data.guide.key == addon.currentGuide.key then
+                        isPartOfGuide = true
+                        break
+                    end
+                end
 
-                orphans[questLogTitleText] = questData
+                for _, data in pairs(addon.pickUpList[questID]) do
+                    if data.guide.key == addon.currentGuide.key then
+                        isPartOfGuide = true
+                        break
+                    end
+                end
+            end
 
-                print("questLogTitleText = ", questLogTitleText, "level", level,
-                      "isComplete", isComplete, "questID", questID,
-                      "groupSize = ", groupSize)
-                print("---")
+            if (isTooLow or not isPartOfGuide) and not isComplete then
+                if addon.settings.db.profile.debug then
+                    addon.comms.PrettyPrint("Orphaned quest found, %s",
+                                            questLogTitleText)
+                end
+                table.insert(orphans, 1, questData)
             end
         end
 
     end
 
-    orphanedQuests = orphans
-    orphanedQuestsHits = 0
     return orphans
 end
 
-function addon.AbandonOrphanedQuests()
-    local orphans = orphanedQuests or addon.GetOrphanedQuests()
+local SelectQuestLogEntry = C_QuestLog.SetSelectedQuest or
+                                _G.SelectQuestLogEntry
+local SetAbandonQuest = C_QuestLog.SetAbandonQuest or _G.SetAbandonQuest
+local AbandonQuest = C_QuestLog.AbandonQuest or _G.AbandonQuest
 
-    orphanedQuests = nil
-    orphanedQuestsHits = 0
+function addon.AbandonOrphanedQuests(orphans)
+    orphans = orphans or addon.GetOrphanedQuests()
+
+    local id, questData
+
+    -- Reverse process list, to avoid searching, abandon from bottom
+    for i = #orphans, 1, -1 do
+        questData = orphans[i]
+
+        id = select(8, GetQuestLogTitle(questData.questLogIndex))
+        if id == questData.questID then
+            addon.comms
+                .PrettyPrint("Abandoning %s", questData.questLogTitleText)
+
+            SelectQuestLogEntry(questData.questLogIndex)
+
+            SetAbandonQuest()
+
+            AbandonQuest()
+        else
+            for j = 1, GetNumQuests() do
+                id = select(8, GetQuestLogTitle(j))
+
+                if id == questData.questID then
+                    addon.comms.PrettyPrint("Abandoning %s",
+                                            questData.questLogTitleText)
+
+                    SelectQuestLogEntry(questData.questLogIndex)
+
+                    SetAbandonQuest()
+
+                    AbandonQuest()
+
+                    break
+                end
+            end
+        end
+    end
+
+    -- Workaround async UI draws, abandon won't have completed before next name func called
+    C_Timer.After(2, function()
+        LibStub("AceConfigRegistry-3.0"):NotifyChange(addon.title)
+    end)
 end
