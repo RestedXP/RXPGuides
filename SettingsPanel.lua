@@ -1966,7 +1966,9 @@ function addon.settings:DetectXPRate()
         end
     end
 
-    if addon.settings.db.profile.xprate == calculatedRate then return end
+    -- Bypass floating point comparison issues
+    if fmt("%.2f", addon.settings.db.profile.xprate) ==
+        fmt("%.2f", calculatedRate) then return end
 
     addon.settings.db.profile.xprate = calculatedRate
 

@@ -50,11 +50,18 @@ end
 local faction = UnitFactionGroup("player")
 local flightInfo = {}
 addon.flightInfo = flightInfo
-flightInfo.nodeHash = {}
+local nodeHash = {}
+flightInfo.nodeHash = nodeHash
+local flightUpdate = 0
 
 function addon:TAXIMAP_OPENED()
     local mapID = C_Map.GetBestMapForUnit("player")
-    if flightInfo.MapID ~= mapID then
+    local cTime = GetTime()
+    if mapID and cTime - flightUpdate > 1 then
+        flightUpdate = cTime
+        table.wipe(nodeHash)
+        table.wipe(flightInfo)
+        flightInfo.nodeHash = nodeHash
         local FPList = C_TaxiMap.GetAllTaxiNodes(mapID)
         for _, v in pairs(FPList) do
             local id = v.nodeID
