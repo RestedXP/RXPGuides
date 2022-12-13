@@ -4,9 +4,7 @@ local _G = _G
 
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
-local GetQuestLogTitle = _G.GetQuestLogTitle
-local GetQuestGreenRange = _G.UnitQuestTrivialLevelRange or
-                               _G.GetQuestGreenRange
+local GetQuestLogTitle = C_QuestLog.GetInfo or _G.GetQuestLogTitle
 
 local L = addon.locale.Get
 
@@ -220,40 +218,82 @@ else
     _G.GameTooltip:HookScript("OnTooltipSetItem", SetItemTooltip)
 end
 
+local function getQuestData(questLogIndex)
+    local data
+    local questInfo, questLogTitleText, level, isHeader, isComplete, frequency,
+          questID
+
+    if C_QuestLog.GetInfo then
+        questInfo = C_QuestLog.GetInfo(questLogIndex) or {}
+
+        data = {
+            ["questLogTitleText"] = questInfo.title,
+            ["level"] = questInfo.level,
+            ["isHeader"] = questInfo.isHeader,
+            ["questID"] = questInfo.questID,
+            ["frequency"] = questInfo.frequency,
+
+            ["isComplete"] = questID and C_QuestLog.IsComplete(questID)
+        }
+    else
+        questLogTitleText, level, _, isHeader, _, isComplete, frequency, questID =
+            GetQuestLogTitle(questLogIndex)
+
+        data = {
+            ["questLogTitleText"] = questLogTitleText,
+            ["level"] = level,
+            ["isHeader"] = isHeader,
+            ["questID"] = questID,
+            ["frequency"] = frequency,
+
+            ["isComplete"] = questID and isComplete
+        }
+    end
+
+    return data
+end
+
 function addon.GetOrphanedQuests()
     local orphans = {}
 
     -- Green at level - green, grey below
-    local greyBuffer = UnitLevel("player") - GetQuestGreenRange() - 1
+    local greyBuffer
 
-    local questLogTitleText, level, isHeader, isComplete, frequency, questID,
-          questData
+    if _G.UnitQuestTrivialLevelRange then
+        greyBuffer = UnitLevel("player") -
+                         _G.UnitQuestTrivialLevelRange("player") - 1
+    else
+        greyBuffer = UnitLevel("player") - _G.GetQuestGreenRange() - 1
+    end
+
+    local questData, orphanData
     local isTooLow, isPartOfGuide
+    local normalFrequency = C_QuestLog.GetInfo and 0 or 1
 
     for i = 1, GetNumQuests() do
-        questLogTitleText, level, _, isHeader, _, isComplete, frequency, questID =
-            GetQuestLogTitle(i)
+        questData = getQuestData(i)
 
-        if not isHeader and questID > 0 and frequency == 1 then -- Normal quest, not daily/weekly
-            questData = {
-                ["questLogTitleText"] = questLogTitleText,
-                ["level"] = level,
-                ["questID"] = questID,
+        if not questData.isHeader and questData.questID > 0 and
+            questData.frequency == normalFrequency then -- Normal quest, not daily/weekly
+            orphanData = {
+                ["questLogTitleText"] = questData.questLogTitleText,
+                ["level"] = questData.level,
+                ["questID"] = questData.questID,
                 ["questLogIndex"] = i
             }
 
-            isTooLow = level < greyBuffer
+            isTooLow = questData.level < greyBuffer
             isPartOfGuide = false
 
             if addon.currentGuide and addon.currentGuide.key then
-                for _, data in pairs(addon.turnInList[questID]) do
+                for _, data in pairs(addon.turnInList[questData.questID]) do
                     if data.guide.key == addon.currentGuide.key then
                         isPartOfGuide = true
                         break
                     end
                 end
 
-                for _, data in pairs(addon.pickUpList[questID]) do
+                for _, data in pairs(addon.pickUpList[questData.questID]) do
                     if data.guide.key == addon.currentGuide.key then
                         isPartOfGuide = true
                         break
@@ -261,12 +301,12 @@ function addon.GetOrphanedQuests()
                 end
             end
 
-            if (isTooLow or not isPartOfGuide) and not isComplete then
+            if (isTooLow or not isPartOfGuide) and not questData.isComplete then
                 if addon.settings.db.profile.debug then
                     addon.comms.PrettyPrint("Orphaned quest found, %s",
-                                            questLogTitleText)
+                                            questData.questLogTitleText)
                 end
-                table.insert(orphans, 1, questData)
+                table.insert(orphans, 1, orphanData)
             end
         end
 
@@ -275,13 +315,25 @@ function addon.GetOrphanedQuests()
     return orphans
 end
 
-local SelectQuestLogEntry = C_QuestLog.SetSelectedQuest or
-                                _G.SelectQuestLogEntry
 local SetAbandonQuest = C_QuestLog.SetAbandonQuest or _G.SetAbandonQuest
 local AbandonQuest = C_QuestLog.AbandonQuest or _G.AbandonQuest
 
 function addon.AbandonOrphanedQuests(orphans)
     orphans = orphans or addon.GetOrphanedQuests()
+
+    local function abandonQuest(questInfo)
+        addon.comms.PrettyPrint("Abandoning %s", questInfo.questLogTitleText)
+
+        if C_QuestLog.SetSelectedQuest then
+            C_QuestLog.SetSelectedQuest(questInfo.questID)
+        else
+            _G.SelectQuestLogEntry(questInfo.questLogIndex)
+        end
+
+        SetAbandonQuest()
+
+        AbandonQuest()
+    end
 
     local id, questData
 
@@ -289,31 +341,22 @@ function addon.AbandonOrphanedQuests(orphans)
     for i = #orphans, 1, -1 do
         questData = orphans[i]
 
-        id = select(8, GetQuestLogTitle(questData.questLogIndex))
-        if id == questData.questID then
-            addon.comms
-                .PrettyPrint("Abandoning %s", questData.questLogTitleText)
-
-            SelectQuestLogEntry(questData.questLogIndex)
-
-            SetAbandonQuest()
-
-            AbandonQuest()
+        if C_QuestLog.SetSelectedQuest then
+            abandonQuest(questData)
         else
-            for j = 1, GetNumQuests() do
-                id = select(8, GetQuestLogTitle(j))
+            id = select(8, GetQuestLogTitle(questData.questLogIndex))
 
-                if id == questData.questID then
-                    addon.comms.PrettyPrint("Abandoning %s",
-                                            questData.questLogTitleText)
+            if id == questData.questID then
+                abandonQuest(questData)
+            else
+                for j = 1, GetNumQuests() do
+                    id = select(8, GetQuestLogTitle(j))
 
-                    SelectQuestLogEntry(questData.questLogIndex)
+                    if id == questData.questID then
+                        abandonQuest(questData)
 
-                    SetAbandonQuest()
-
-                    AbandonQuest()
-
-                    break
+                        break
+                    end
                 end
             end
         end
