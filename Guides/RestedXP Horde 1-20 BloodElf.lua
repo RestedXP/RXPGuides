@@ -24,7 +24,7 @@ step
 step
     .goto Eversong Woods,38.2,20.8 << tbc
 	.goto Eversong Woods,38.02,21.01 << wotlk
-	>>Continue grinding mobs until you have 65 copper worth of vendor items before turning in this quest. << Warlock wotlk
+	>>Continue grinding mobs until you have 1 silver and 10 copper worth of vendor items before turning in this quest. << Warlock wotlk
     .turnin 8325,1 >> Turn in Reclaiming Sunstrider Isle << Paladin
     .turnin 8325 >> Turn in Reclaiming Sunstrider Isle << !Paladin
 step
