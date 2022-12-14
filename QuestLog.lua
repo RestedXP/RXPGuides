@@ -286,14 +286,14 @@ function addon.GetOrphanedQuests()
             isPartOfGuide = false
 
             if addon.currentGuide and addon.currentGuide.key then
-                for _, data in pairs(addon.turnInList[questData.questID]) do
+                for _, data in pairs(addon.turnInList[questData.questID] or {}) do
                     if data.guide.key == addon.currentGuide.key then
                         isPartOfGuide = true
                         break
                     end
                 end
 
-                for _, data in pairs(addon.pickUpList[questData.questID]) do
+                for _, data in pairs(addon.pickUpList[questData.questID] or {}) do
                     if data.guide.key == addon.currentGuide.key then
                         isPartOfGuide = true
                         break
