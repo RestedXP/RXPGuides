@@ -143,6 +143,7 @@ local IsQuestTurnedIn = function(id)
 end
 
 function addon.IsQuestComplete(id)
+    if not id then return end
 
     if C_QuestLog.IsComplete then
         return C_QuestLog.IsComplete(id)
