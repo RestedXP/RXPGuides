@@ -1925,9 +1925,18 @@ function addon.settings:DetectXPRate()
     end
 
     if addon.gameVersion < 20000 then
-        addon.settings.db.profile.SoM = CheckBuff(362859) -- SoM
+        local isSoM = CheckBuff(362859)
 
-        addon.ReloadGuide()
+        if isSoM == addon.settings.db.profile.SoM then return end
+
+        addon.settings.db.profile.SoM = isSoM
+
+        if addon.currentGuide and addon.currentGuide.name then
+            addon:LoadGuide(addon.currentGuide, 'onLoad')
+        else
+            addon.ReloadGuide()
+        end
+
         addon.RXPFrame.GenerateMenuTable()
 
         return
