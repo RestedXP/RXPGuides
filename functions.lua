@@ -4053,11 +4053,11 @@ function addon.functions.flyable(self, text, zone, skill)
         element.skill = tonumber(skill) or -4
         return element
     end
-    local ridingSkill = RXP.GetSkillLevel("riding")
+    local ridingSkill = RXP.GetSkillLevel("riding") or -4
     local element = self.element
     local canPlayerFly = addon.CanPlayerFly(element.zone) ~= element.reverse
     --print(canPlayerFly,'t')
-    if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly or ridingSkill < element.skill) and not addon.isHidden then
+    if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly or ridingSkill < (element.skill or -4)) and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
