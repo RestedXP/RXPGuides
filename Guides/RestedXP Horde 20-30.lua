@@ -3081,7 +3081,7 @@ step << Warlock
 	#completewith next
     .goto Orgrimmar,47.5,46.7
     .vendor >> Buy your pet books
-	.collect 16368,1
+	.collect 16368,1 --Grimoire of Lash of Pain (Rank 2): 0/1
 step
     .xp >33,1
     .isOnQuest 1145

@@ -448,7 +448,6 @@ function addon:OnInitialize()
 end
 
 function addon:OnEnable()
-    addon.settings:DetectXPRate()
     ProcessSpells()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
@@ -523,6 +522,23 @@ function addon:OnEnable()
         -- Check if reloading in raid
         addon.HideInRaid()
     end
+
+    if addon.game == "WOTLK" then
+        local detectXPRateQueued = false
+        self:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function (_, slot)
+            if detectXPRateQueued then return end
+
+            -- Abort if not chest/shoulders
+            if slot ~= 3 and slot ~= 5 then return end
+
+            detectXPRateQueued = true
+            C_Timer.After(3, function ()
+                addon.settings:DetectXPRate()
+                detectXPRateQueued = false
+            end)
+        end)
+    end
+
 end
 
 
@@ -536,6 +552,9 @@ function addon:PLAYER_ENTERING_WORLD()
     addon.updateMap = true
     addon.isHidden = addon.settings and addon.settings.db.profile.hideGuideWindow or
                                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
+    C_Timer.After(5, function ()
+        addon.settings:DetectXPRate()
+    end)
 end
 
 function addon:PLAYER_LEAVING_WORLD()
@@ -876,7 +895,7 @@ function addon.HardcoreCheck(step)
 end
 
 function addon.XpRateCheck(step)
-    if step.xprate then
+    if step.xprate and addon.settings.db.profile.enableXpStepSkipping then
         local xpmin,xpmax = 1,0xfff
 
         step.xprate:gsub("^([<>]?)%s*(%d+%.?%d*)%-?(%d*%.?%d*)",function(op,arg1,arg2)
@@ -891,16 +910,23 @@ function addon.XpRateCheck(step)
                 xpmax = tonumber(arg2) or 0xfff
             end
         end)
+
         if addon.settings.db.profile.xprate < xpmin or addon.settings.db.profile.xprate > xpmax then
             return false
         end
     end
+
     return true
 end
 
 function addon.IsFreshAccount()
     if C_PlayerInfo and C_PlayerInfo.CanPlayerEnterChromieTime then
-        return not C_PlayerInfo.CanPlayerEnterChromieTime()
+        local manualOverride = addon.settings.db.profile.chromieTime
+        if not manualOverride or manualOverride == "auto" then
+            return not C_PlayerInfo.CanPlayerEnterChromieTime()
+        elseif manualOverride == "disabled" then
+            return true
+        end
     end
 end
 
@@ -922,6 +948,10 @@ function addon.FreshAccountCheck(step)
 end
 
 function addon.LevelCheck(step)
+    if not addon.settings.db.profile.enableXpStepSkipping then
+        return true
+    end
+
     local level = UnitLevel("player")
     local maxLevel = tonumber(step.maxlevel) or 1000
     if level <= maxLevel then

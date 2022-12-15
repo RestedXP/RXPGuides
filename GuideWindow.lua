@@ -540,7 +540,7 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number.text:ClearAllPoints()
             stepframe.number.text:SetPoint("CENTER", stepframe.number, 2, 1)
             stepframe.number.text:SetJustifyH("CENTER")
-            stepframe.number.text:SetJustifyV("CENTER")
+            stepframe.number.text:SetJustifyV("MIDDLE")
             stepframe.number.text:SetTextColor(1, 1, 1)
             stepframe.number.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize, "")
         end
@@ -554,7 +554,12 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number:SetBackdropColor(unpack(addon.colors.background))
         end
 
-        local titletext = step.title or (string.format(L("Step %d"), index))
+        local titletext
+        if step.sticky then
+            titletext = step.title or ""
+        else
+            titletext = step.title or (string.format(L("Step %d"), index))
+        end
 
         if titletext == "" then
             stepframe.number:SetAlpha(0)
@@ -606,7 +611,7 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.text:SetParent(elementFrame)
 
                 elementFrame.text:SetJustifyH("LEFT")
-                elementFrame.text:SetJustifyV("CENTER")
+                elementFrame.text:SetJustifyV("MIDDLE")
                 elementFrame.text:SetTextColor(1, 1, 1)
                 elementFrame.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize + 2, "") -- 11
 
@@ -912,7 +917,7 @@ GuideName.text:ClearAllPoints()
 GuideName.text:SetPoint("LEFT", GuideName, 29, 0)
 GuideName.text:SetPoint("RIGHT", GuideName, 0, 0)
 GuideName.text:SetJustifyH("CENTER")
-GuideName.text:SetJustifyV("CENTER")
+GuideName.text:SetJustifyV("MIDDLE")
 GuideName.text:SetTextColor(1, 1, 1)
 GuideName.text:SetFont(addon.font, 11, "")
 GuideName.text:SetText(L("Welcome to RestedXP Guides\nRight click to pick a guide"))
@@ -937,7 +942,7 @@ Footer.text:ClearAllPoints()
 Footer.text:SetPoint("LEFT", Footer, 40, 1)
 Footer.text:SetPoint("RIGHT", Footer, -16, 1)
 Footer.text:SetJustifyH("LEFT")
-Footer.text:SetJustifyV("CENTER")
+Footer.text:SetJustifyV("MIDDLE")
 Footer.text:SetTextColor(1, 1, 1)
 Footer.text:SetFont(addon.font, 9, "")
 Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
@@ -1261,7 +1266,7 @@ function addon:LoadGuide(guide, OnLoad)
             frame.number.text:ClearAllPoints()
             frame.number.text:SetPoint("CENTER", frame.number, 0, 0)
             frame.number.text:SetJustifyH("CENTER")
-            frame.number.text:SetJustifyV("CENTER")
+            frame.number.text:SetJustifyV("MIDDLE")
             frame.number.text:SetTextColor(1, 1, 1, 1)
             frame.number.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize - 1, "") -- 8
             local prefix = ""

@@ -1,4 +1,5 @@
 local addonName, addon = ...
+local faction = UnitFactionGroup("player")
 
 addon.skipPreReq = {
     [9573] = 1,
@@ -86,3 +87,320 @@ addon.professionID = {
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
+
+local events = {"PLAYER_XP_UPDATE","QUEST_LOG_UPDATE"}
+
+function addon.functions.xpto60(...)
+    if faction == "Alliance" then
+        return addon.functions.xpto60alliance(...)
+    elseif faction == "Horde" then
+        return addon.functions.xpto60horde(...)
+    end
+end
+
+function addon.functions.xpto60alliance(self,...) --PLAYER_XP_UPDATE,QUEST_LOG_UPDATE
+
+    if type(self) == "string" then --on parse
+        local element = {}
+        local text = ...
+        element.icon = addon.icons.xp
+        element.event = events
+        if not text or text == "" then
+            element.text = ""
+            element.rawtext = element.text
+        else
+            text = text.."\n"
+            element.text = text
+            element.rawtext = text
+        end
+        return element
+    end
+
+    local event = ...
+    local element = self.element
+    local step = element.step
+    local IsQuestFlaggedCompleted = addon.IsQuestTurnedIn
+    local IsQuestComplete = addon.IsQuestComplete
+    local IsOnQuest = C_QuestLog.IsOnQuest
+
+    if self.button and step and step.sticky then
+        self.button:Disable()
+        self.button:Hide()
+    end
+
+    if not element.step.active then
+		element.questXP = nil
+		return
+	end
+
+    local xpMod = 1
+    local eliteMod = 1
+	--1.90980392157?
+
+    if RXPCData and RXPCData.SoM then
+		xpMod = 1.4
+        eliteMod = 1.7
+		if RXPData.phase and RXPData.phase > 2 then
+			xpMod = xpMod*2/1.4
+			eliteMod = eliteMod*2/1.4
+		end
+    end
+
+    local questXP = element.questXP
+
+	if event == "QUEST_LOG_UPDATE" or not element.questXP then
+        questXP = 0
+		if IsOnQuest(6844) then --Moonglade chain
+			questXP = floor(questXP + (3000 + 7550 + 3000)*xpMod)
+		elseif IsQuestFlaggedCompleted(6844) then
+			if not IsQuestFlaggedCompleted(6845) then
+				questXP = floor(questXP + 7550*xpMod)
+			end
+			if not IsQuestFlaggedCompleted(1185) then
+				questXP = floor(questXP + 3000*xpMod)
+			end
+		end
+
+		if IsQuestComplete(4507) then --pawn captures queen
+			questXP = floor(questXP + (5450 + 550  + 8150)*xpMod)
+		elseif IsQuestFlaggedCompleted(4507) then
+			if IsOnQuest(4508) then
+				questXP = floor(questXP + (550 + 8150) * xpMod )
+			elseif not IsQuestFlaggedCompleted(4510) and IsQuestFlaggedCompleted(4508) then
+				questXP = floor(questXP + 8150*xpMod)
+			end
+		end
+
+		if IsQuestComplete(4504) then --super sticky
+			questXP = floor(questXP + 5450*xpMod)
+		end
+
+		if IsQuestComplete(4809) then --chillwind horns
+			questXP = floor(questXP + 5450*xpMod)
+		end
+
+		if IsQuestComplete(3962) then --It's dangerous to go alone
+			questXP = floor(questXP + 7300*eliteMod)
+		end
+
+		if IsQuestComplete(5163) then --Are we there yeti?
+			questXP = floor(questXP + 7750*xpMod)
+		end
+
+		if IsQuestComplete(5527) then --A Reliquary of Purity
+			questXP = floor(questXP + 6600*xpMod)
+		end
+
+		if IsOnQuest(4986) then--Glyphed Oaken Branch
+			questXP = floor(questXP + 5800*xpMod)
+		end
+
+		if IsQuestComplete(4901) then --Guardians of the altar
+			questXP = floor(questXP + (4800 + 6000)*xpMod)
+		end
+
+
+		questXP = questXP - 50*(xpMod - 1)
+	end
+
+	local missingXP = UnitXPMax("player") - UnitXP("player") - questXP
+    local level = UnitLevel('player')
+    if level == 58 then
+        missingXP = missingXP + 209800
+    end
+
+	if missingXP <= 0 and level == 59 then
+		--addon.SetElementComplete(self)
+		return addon.functions.next(self) or addon.SetElementComplete(self,true)
+	end
+
+    if event == "PLAYER_XP_UPDATE" or questXP ~= element.questXP then
+        if questXP > 0 then
+            local qXP = addon.FormatNumber(questXP)
+            element.text = string.format("%sYou have %s XP worth of quest turn ins outside Silithus\nXP needed: %s + %s",element.rawtext,qXP,addon.FormatNumber(missingXP),qXP)
+        else
+            element.text = string.format("%sXP needed: %s",element.rawtext,addon.FormatNumber(missingXP))
+        end
+        addon.UpdateStepText(self)
+    end
+
+    element.questXP = questXP
+
+end
+
+function addon.functions.xpto60horde(self,...)
+
+    if type(self) == "string" then
+        local element = {}
+        local text = ...
+        element.icon = addon.icons.xp
+        element.event = events
+        if not text or text == "" then
+            element.text = ""
+            element.rawtext = element.text
+        else
+            text = text.."\n"
+            element.text = text
+            element.rawtext = text
+        end
+        return element
+    end
+
+    local event = ...
+    local element = self.element
+    local step = element.step
+    local IsQuestFlaggedCompleted = addon.IsQuestTurnedIn
+    local IsQuestComplete = addon.IsQuestComplete
+    local IsOnQuest = C_QuestLog.IsOnQuest
+
+    if self.button and step and step.sticky then
+        self.button:Disable()
+        self.button:Hide()
+    end
+    if not element.step.active then
+		element.questXP = nil
+		return
+	end
+
+    local xpMod = 1
+    local eliteMod = 1
+	--1.90980392157?
+
+    if RXPCData and RXPCData.SoM then
+        xpMod = 1.4
+        eliteMod = 1.7
+		if RXPData.phase and RXPData.phase > 2 then
+			xpMod = xpMod*2/1.4
+			eliteMod = eliteMod*2/1.4
+		end
+    end
+
+    local questXP = element.questXP
+	if event == "QUEST_LOG_UPDATE" or not element.questXP then
+        questXP = 0
+		if IsOnQuest(6844) then --Moonglade chain
+			questXP = questXP + (3000 + 7550 + 3000)*xpMod
+            questXP = floor(questXP)
+		elseif IsQuestFlaggedCompleted(6844) then
+			if not IsQuestFlaggedCompleted(6845) then
+				questXP = questXP + 7550*xpMod
+                questXP = floor(questXP)
+			end
+			if not IsQuestFlaggedCompleted(1185) then
+				questXP = questXP + 3000*xpMod
+                questXP = floor(questXP)
+			end
+		end
+
+		if IsQuestComplete(4504) then --super sticky
+			questXP = questXP + 5450*xpMod
+            questXP = floor(questXP)
+		end
+
+		if IsQuestComplete(4809) then --chillwind horns
+			questXP = questXP + 5450*xpMod
+            questXP = floor(questXP)
+		end
+
+		if IsQuestComplete(4507) then --pawn captures queen
+			questXP = questXP + (5450 + 550  + 8150)*xpMod
+            questXP = floor(questXP)
+		elseif IsQuestFlaggedCompleted(4507) then
+			if IsOnQuest(4509) then
+				questXP = questXP + (550 + 8150)*xpMod
+                questXP = floor(questXP)
+			elseif not IsQuestFlaggedCompleted(4511) and IsQuestFlaggedCompleted(4509) then
+				questXP = questXP + 8150*xpMod
+                questXP = floor(questXP)
+			end
+		end
+
+		if IsQuestComplete(3962) then --It's dangerous to go alone
+			questXP = questXP + 7300*eliteMod
+            questXP = floor(questXP)
+		end
+
+		if IsQuestComplete(5163) then --Are we there yeti?
+			questXP = questXP + 7750*xpMod
+            questXP = floor(questXP)
+		end
+
+		if IsQuestComplete(5527) then --A Reliquary of Purity
+			questXP = questXP + 6600*xpMod
+            questXP = floor(questXP)
+		end
+
+		if IsQuestComplete(4721) then --Wild Guardians
+			questXP = questXP + 6400*xpMod
+            questXP = floor(questXP)
+		end
+
+		if IsOnQuest(3942) then --linken's memory
+			questXP = questXP + 5450*xpMod
+            questXP = floor(questXP)
+		end
+
+		if IsOnQuest(5128) then --Words of the High Chief
+			questXP = questXP + 6400*xpMod
+            questXP = floor(questXP)
+		end
+
+		if IsQuestComplete(5242) then --A Final Blow
+			questXP = questXP + 9300*xpMod
+            questXP = floor(questXP)
+		end
+
+		if IsQuestComplete(5385) then --Remains of Trey Lightforge
+			questXP = questXP + 7550*xpMod
+            questXP = floor(questXP)
+		end
+
+		questXP = questXP - 50*(xpMod - 1)
+	end
+
+	local missingXP = UnitXPMax("player") - UnitXP("player") - questXP
+    local level = UnitLevel('player')
+    if level == 58 then
+        missingXP = missingXP + 209800
+    end
+
+	if missingXP <= 0 and level == 59 then
+        return addon.functions.next(self) or addon.SetElementComplete(self,true)
+	end
+
+    if event == "PLAYER_XP_UPDATE" or questXP ~= element.questXP then
+        if questXP > 0 then
+            local qXP = addon.FormatNumber(questXP)
+            element.text = string.format("%sYou have %s XP worth of quest turn ins outside Silithus\nXP needed: %s + %s",element.rawtext,qXP,addon.FormatNumber(missingXP),qXP)
+        else
+            element.text = string.format("%sXP needed: %s",element.rawtext,addon.FormatNumber(missingXP))
+        end
+        addon.UpdateStepText(self)
+    end
+
+    element.questXP = questXP
+
+end
+
+function addon.functions.xpcheck(self,text,...) --PLAYER_XP_UPDATE,QUEST_LOG_UPDATE
+
+    if type(self) == "string" then --on parse
+        local element = {}
+        element.textOnly = true
+        element.event = "PLAYER_XP_UPDATE"
+		element.guide = ...
+        return element
+    end
+	local level = UnitLevel("player")
+    local element = self.element
+	local step = element.step
+	local guide = element.guide
+    --local ref = element.ref
+
+    if level >= 24 and (not addon.IsQuestTurnedIn(494) or (addon.IsQuestTurnedIn(529) and addon.IsQuestTurnedIn(502) and addon.IsQuestTurnedIn(498))) then
+		local nextguide = addon.GetGuideTable("RestedXP Horde 22-30",guide)
+		if nextguide then
+			return addon:LoadGuide(nextguide)
+		end
+    end
+end

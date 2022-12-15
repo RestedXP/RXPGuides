@@ -98,8 +98,7 @@ step
     .isOnQuest 4681
     >> Head back to Gwennyth
     .goto Darkshore,36.6,45.6
-    .turnin 4681,2 >> Turn in Washed Ashore << Druid/Paladin/Hunter
-    .turnin 4681 >> Turn in Washed Ashore << !Druid !Paladin !Hunter
+    .turnin 4681 >> Turn in Washed Ashore
 step << !Dwarf/!Hunter
     .xp 12 >> Grind to level 12
 step << !Dwarf/!Hunter
@@ -525,7 +524,7 @@ step
     .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
 step << Human Warrior/Human Paladin/Human Rogue
     .goto Bloodmyst Isle,56.2,54.2
-    .train 2580 >> Talk to the dwarf by the forge. Train Mining, cast Find Minerals
+    .train 2580 >> Talk to the dwarf by the forge. Train Mining, cast Find Minerals. Purchase a Mining Pick if you don't have one
 step
     >> Speak to the Draenei in the building on the hill
     .goto Bloodmyst Isle,52.7,53.3
@@ -687,7 +686,7 @@ step
     >> Cross the ocean to the island
     .goto Bloodmyst Isle,74.3,33.4
     .accept 9687 >> Accept Restoring Sanctity
-step
+step << !Rogue !Warlock
 	#sticky
 	#completewith next
 	.deathskip >> Die and respawn at Blood Watch
@@ -775,7 +774,7 @@ step
     >> Talk to Vindicator Aalesia
     .accept 9569 >> Accept Containing the Threat
     .goto Bloodmyst Isle,55.0,58.0
-step
+step << !Rogue !Warlock
     >> Talk to Boros
     .turnin 9699 >> Turn in Truth or Fiction
     .goto Bloodmyst Isle,55.4,55.4
@@ -1890,7 +1889,7 @@ step
     .isQuestComplete 1025
 step
     .goto Ashenvale,34.7,48.9
-    .turnin 1008 >> Turn in The Zoram Strand
+    .turnin 1008 >> Turn in The Zoram Strand    
 step
     .goto Ashenvale,34.40,48.00
     .fp Astranaar>> Get the Astranaar Flight Path
@@ -2012,7 +2011,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 20-32
 #next 23-24 Wetlands;24-27 Redridge/Duskwood
-step
+step <<tbc
     .goto Darkshore,37.0,44.1
     .home >> Set your Hearthstone to Auberdine
 step << wotlk
@@ -2108,9 +2107,9 @@ step
     .accept 1054 >> Accept Culling the Threat
     .turnin 10752 >> Turn in Onward to Ashenvale
     .accept 991 >> Accept Raene's Cleansing
-step
-    .goto Ashenvale,37.0,49.3
-    .home >> Set your Hearthstone to Astranaar
+--step
+--    .goto Ashenvale,37.0,49.3
+--    .home >> Set your Hearthstone to Astranaar
 step
     #timer Orendil's Cure RP
     .goto Ashenvale,37.3,51.8
@@ -2177,7 +2176,7 @@ step
     #requires nagas
     .goto Ashenvale,14.8,31.3
     .turnin 1009 >> Turn in Ruuzel
-step
+step << wotlk
     .hs >> Hearth to Astranaar
 step << wotlk
     .goto Ashenvale,39.0,35.9

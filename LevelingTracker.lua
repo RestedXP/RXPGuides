@@ -1155,7 +1155,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
     f.title.text:ClearAllPoints()
     f.title.text:SetJustifyH("CENTER")
-    f.title.text:SetJustifyV("CENTER")
+    f.title.text:SetJustifyV("MIDDLE")
     f.title.text:SetTextColor(1, 1, 1)
     f.title.text:SetFont(addon.font, 9, "")
     f.title.text:SetText("Level splits")
@@ -1381,7 +1381,7 @@ function addon.tracker:UpdateLevelSplits(kind)
             end
         end
     else
-        if compareTo and compareTo.history.levels[self.playerLevel] and
+        if compareTo and compareTo.history.levels[self.playerLevel + 1] and
             addon.settings.db.profile.compareNextLevelSplit then
             local cTime = self:BuildSplitsLevelLine(self.playerLevel + 1,
                                                     self:PrintSplitsTime(

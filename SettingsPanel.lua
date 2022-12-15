@@ -9,6 +9,8 @@ local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 
 local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
+local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom
+
 local importCache = {
     bufferString = "",
     displayString = "",
@@ -88,6 +90,9 @@ function addon.settings:InitializeSettings()
             showUnusedGuides = true,
             SoM = 1,
             anchorOrientation = "top",
+            chromieTime = "auto",
+            enableXpStepSkipping = true,
+            enableAutomaticXpRate = true,
 
             -- Sliders
             arrowScale = 1,
@@ -614,6 +619,7 @@ function addon.settings:CreateAceOptionsPanel()
     end
 
     local optionsWidth = 1.08
+    local settingsCache = {orphans = {}}
 
     local optionsTable = {
         type = "group",
@@ -649,7 +655,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = _G.GUIDE,
                         type = "header",
                         width = "full",
-                        order = 1.1
+                        order = 1.0
                     },
                     showUnusedGuides = {
                         name = L("Show unused guides"),
@@ -657,7 +663,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Displays guides that are not applicable for your class/race such as starting zones for other races"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.2,
+                        order = 1.1,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
@@ -669,7 +675,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Automatically picks a suitable guide whenever you log in for the first time on a character"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.3,
+                        order = 1.2,
                         hidden = true, -- TODO, Impossible situation with character-specific settings
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -682,7 +688,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Disable dragging/resizing, use alt+left click on the main window to resize it"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.5
+                        order = 1.3
                     },
                     showStepList = { -- Not actually a direct setting, indirectly frameHeight
                         name = L("Show step list"),
@@ -690,7 +696,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Show/Hide the bottom frame listing all the steps of the current guide"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.6,
+                        order = 1.4,
                         get = function()
                             return addon.RXPFrame.BottomFrame:GetHeight() >= 35
                         end,
@@ -717,21 +723,11 @@ function addon.settings:CreateAceOptionsPanel()
                             "Only shows current and future steps on the step list window"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.7,
+                        order = 1.5,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
                         end
-                    },
-                    skipMissingPreReqs = {
-                        name = L("Skip quests with missing pre-requisites"),
-                        desc = L(
-                            "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 1.8,
-                        hidden = true or not _G.QuestieLoader, -- Not used
-                        disabled = true -- Not used
                     },
                     anchorOrientation = {
                         name = L("Current step frame anchor"),
@@ -741,49 +737,11 @@ function addon.settings:CreateAceOptionsPanel()
                         values = {top = "Top", bottom = "Bottom"},
                         sorting = {"top", "bottom"},
                         width = optionsWidth,
-                        order = 1.81,
+                        order = 1.6,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.SetStepFrameAnchor()
                         end
-                    },
-                    xprate = {
-                        name = L("Experience rates"),
-                        desc = L(
-                            "Adjusts the guide routes to match increased xp rate bonuses"),
-                        type = "range",
-                        width = "normal",
-                        order = 1.82,
-                        min = 1,
-                        max = 1.5,
-                        step = 0.05,
-                        isPercent = true,
-                        confirm = function()
-                            return L(
-                                       "Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them") -- TODO locale
-                        end,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                            addon.RXPFrame.GenerateMenuTable()
-                            addon.settings.db.profile.xpRateOverriden = true
-                        end,
-                        hidden = addon.gameVersion < 30000 or addon.gameVersion >
-                            40000
-                    },
-                    northrendLM = {
-                        name = L("Northrend Loremaster"),
-                        desc = L(
-                            "Adjust the routes to include almost every quest in the Northrend zones"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 1.90,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                        end,
-                        hidden = addon.gameVersion < 30000 or addon.gameVersion >
-                            40000
                     },
                     shareQuests = {
                         name = L("Automatic quest sharing"), -- TODO: Localize this setting
@@ -791,7 +749,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Whenever you accept a quest in the guide, the addon tries to share it with your group"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.95,
+                        order = 1.7,
                         set = function(info, value)
                             SetProfileOption(info, value)
                         end,
@@ -803,7 +761,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Automatically hide when in a raid, and unhide when you leave a raid"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.91,
+                        order = 1.8,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             if value then
@@ -1057,18 +1015,87 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.updateMap = true
                         end
+                    }
+                }
+            },
+            guideRoutingSettings = {
+                type = "group",
+                name = L("Guide Routing"),
+                order = 3,
+                args = {
+                    experienceHeader = {
+                        name = _G.POWER_TYPE_EXPERIENCE,
+                        type = "header",
+                        width = "full",
+                        order = 1.0
+                    },
+                    enableAutomaticXpRate = {
+                        name = L("Detect Rate"),
+                        desc = L("Checks for heirlooms and experience buffs"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                self:DetectXPRate()
+                            end
+                        end
+                    },
+                    xprate = {
+                        name = L("Experience rates"),
+                        desc = L(
+                            "Adjusts the guide routes to match increased xp rate bonuses"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 1.2,
+                        min = 1,
+                        max = 1.7,
+                        step = 0.05,
+                        isPercent = true,
+                        confirm = function()
+                            return L(
+                                       "Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them") -- TODO locale
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
+                        end,
+                        hidden = addon.game ~= "WOTLK",
+                        disabled = function()
+                            return addon.settings.db.profile
+                                       .enableAutomaticXpRate
+                        end
+                    },
+                    enableXpStepSkipping = {
+                        name = L("Skip overleveled steps"),
+                        desc = L("Skip steps you're overleveled for"),
+                        type = "toggle",
+                        width = optionsWidth * 2,
+                        order = 1.3,
+                        confirm = function()
+                            return L(
+                                       "Warning: Changing this setting mid-guide may cause quest pre-requisite failures.\nGuides were optimized for experience, disabling this option will result in a disjointed guide steps.") -- TODO locale
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                self:DetectXPRate()
+                            end
+                        end
                     },
                     arrowHeader = {
                         name = L("Waypoint Arrow"), -- TODO locale
                         type = "header",
                         width = "full",
-                        order = 5
+                        order = 2
                     },
                     disableArrow = {
                         name = L("Hide waypoint arrow"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.1,
+                        order = 2.1,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateArrow(addon.arrowFrame)
@@ -1079,10 +1106,11 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Scale of the Waypoint Arrow"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.2,
+                        order = 2.2,
                         min = 0.2,
                         max = 2,
                         step = 0.05,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.arrowFrame:SetSize(32 * value, 32 * value)
@@ -1093,7 +1121,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Size of the waypoint arrow text"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.3,
+                        order = 2.3,
                         min = 5,
                         max = 20,
                         step = 1,
@@ -1104,12 +1132,143 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     resetArrowPosition = {
-                        order = 5.4,
                         name = L("Reset Arrow Position"), -- TODO locale
+                        order = 2.4,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
                             addon.ResetArrowPosition()
+                        end
+                    },
+                    questCleanupHeader = {
+                        name = L("Quest Cleanup"),
+                        type = "header",
+                        width = "full",
+                        order = 3.0
+                    },
+                    abandonOrphanedQuests = {
+                        name = L("Cleanup Orphaned Quests"), -- TODO locale
+                        desc = L("Cleanup obsolete or leftover quests"),
+                        order = 3.1,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            addon.AbandonOrphanedQuests(settingsCache.orphans)
+                            wipe(settingsCache.orphans)
+                        end,
+                        confirm = function()
+                            local result = L("Abandon the following quests?")
+
+                            for _, d in ipairs(settingsCache.orphans) do
+                                result =
+                                    fmt("%s\n%s (level %d)", result,
+                                        d.questLogTitleText, d.level)
+                            end
+
+                            return result
+                        end,
+                        disabled = function()
+                            return #settingsCache.orphans == 0
+                        end
+                    },
+                    orphanedQuestBox = {
+                        order = 3.2,
+                        type = 'description',
+                        name = function()
+                            local result = ""
+                            local orphans = addon.GetOrphanedQuests()
+                            for _, d in ipairs(orphans) do
+                                result =
+                                    fmt("%s\n%s (level %d)", result,
+                                        d.questLogTitleText, d.level)
+                            end
+
+                            settingsCache.orphans = orphans
+
+                            return result
+                        end,
+                        width = optionsWidth
+                    },
+                    expansionHeader = {
+                        name = _G.EXPANSION_FILTER_TEXT,
+                        type = "header",
+                        width = "full",
+                        order = 10.0
+                    },
+                    northrendLM = {
+                        name = L("Northrend Loremaster"),
+                        desc = L(
+                            "Adjust the routes to include almost every quest in the Northrend zones"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 10.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                        end,
+                        hidden = addon.game ~= "WOTLK"
+                    },
+                    chromieTime = {
+                        name = L("Show Chromie Time Guides"),
+                        desc = L(
+                            "Enables or disables the chromie time guides. Note that freshly created accounts without a level 60 character cannot access chromie time"),
+                        type = "select",
+                        values = {
+                            auto = "Automatic",
+                            enabled = "Enabled",
+                            disabled = "Disabled"
+                        },
+                        sorting = {"auto", "enabled", "disabled"},
+                        width = optionsWidth,
+                        order = 10.2,
+                        hidden = WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE
+                    },
+                    phase = {
+                        name = L("Content phase"),
+                        desc = L(
+                            "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"),
+                        type = "range",
+                        width = "normal",
+                        order = 11.0,
+                        min = 1,
+                        max = 6,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
+                    },
+                    hardcore = {
+                        name = L("Hardcore mode"),
+                        desc = L(
+                            "Adjust the leveling routes to the deathless ruleset"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 11.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RenderFrame()
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
+                    },
+                    SoM = {
+                        name = L("Season of Mastery"),
+                        desc = L(
+                            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"),
+                        type = "toggle",
+                        width = "normal",
+                        order = 11.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.GenerateMenuTable()
+                            addon.ReloadGuide()
+                        end,
+                        hidden = addon.game ~= "CLASSIC",
+                        disabled = function()
+                            return addon.settings.db.profile
+                                       .enableAutomaticXpRate
                         end
                     }
                 }
@@ -1191,8 +1350,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth * 2,
                         order = 2.21,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation or
-                                       not self.db.profile.enableTargetMarking
+                            return not self.db.profile.enableTargetAutomation
                         end
                     },
                     enableEnemyTargeting = {
@@ -1213,8 +1371,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth * 2,
                         order = 2.31,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation or
-                                       not self.db.profile.enableEnemyMarking
+                            return not self.db.profile.enableTargetAutomation
                         end
                     },
                     scanForRares = {
@@ -1505,7 +1662,7 @@ function addon.settings:CreateAceOptionsPanel()
             communications = {
                 type = "group",
                 name = L("Communications"),
-                order = 4,
+                order = 6,
                 args = {
                     commsLevelUpOptionsHeader = {
                         name = L("Announcements"),
@@ -1634,50 +1791,15 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 1,
                         hidden = addon.gameVersion > 40000
                     },
-                    phase = {
-                        name = L("Content phase"),
+                    skipMissingPreReqs = {
+                        name = L("Skip quests with missing pre-requisites"),
                         desc = L(
-                            "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"),
-                        type = "range",
-                        width = "normal",
-                        order = 2.2,
-                        min = 1,
-                        max = 6,
-                        step = 1,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                            addon.RXPFrame.GenerateMenuTable()
-                        end,
-                        hidden = addon.game ~= "CLASSIC"
-                    },
-                    hardcore = {
-                        name = L("Hardcore mode"),
-                        desc = L(
-                            "Adjust the leveling routes to the deathless ruleset"),
+                            "Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"),
                         type = "toggle",
-                        width = "normal",
-                        order = 4,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RenderFrame()
-                        end,
-                        hidden = addon.game ~= "CLASSIC"
-                    },
-                    SoM = {
-                        name = L("Season of Mastery"),
-                        desc = L(
-                            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"),
-                        type = "toggle",
-                        width = "normal",
-                        order = 5,
-                        set = function(info, value)
-                            addon.settings.db.profile.xpRateOverriden = true
-                            SetProfileOption(info, value)
-                            addon.RXPFrame.GenerateMenuTable()
-                            addon.ReloadGuide()
-                        end,
-                        hidden = addon.game ~= "CLASSIC"
+                        width = optionsWidth,
+                        order = 10,
+                        hidden = true or not _G.QuestieLoader, -- Not used
+                        disabled = true -- Not used
                     }
                 }
             }
@@ -1784,10 +1906,12 @@ function addon.settings.ToggleActive()
 
 end
 
-function addon.settings:DetectXPRate(heirloomCheck)
-    if addon.settings.db.profile.xpRateOverriden then return end
+function addon.settings:DetectXPRate()
+    if not addon.settings.db.profile.enableAutomaticXpRate or addon.gameVersion >
+        40000 then return end
 
     local UnitBuff = UnitBuff
+    local GetInventoryItemLink = GetInventoryItemLink
 
     local function CheckBuff(buffId)
         local id
@@ -1801,16 +1925,75 @@ function addon.settings:DetectXPRate(heirloomCheck)
     end
 
     if addon.gameVersion < 20000 then
-        addon.settings.db.profile.SoM = CheckBuff(362859) -- SoM
-    end
+        local isSoM = CheckBuff(362859)
 
-    -- TODO heirloomCheck for periodic checking
-    if heirloomCheck then
+        if isSoM == addon.settings.db.profile.SoM then return end
+
+        addon.settings.db.profile.SoM = isSoM
+
         if addon.currentGuide and addon.currentGuide.name then
             addon:LoadGuide(addon.currentGuide, 'onLoad')
         else
             addon.ReloadGuide()
         end
+
+        addon.RXPFrame.GenerateMenuTable()
+
+        return
+    end
+
+    local calculatedRate = CheckBuff(377749) and 1.5 or 1.0 -- Joyous Journeys
+
+    -- Ignoring ring 5% (11, 12) and Wintergrasp 5% (57940)
+    local itemQuality
+
+    local itemLink = GetInventoryItemLink("player", 3) -- Shoulder
+
+    if itemLink then
+        itemQuality = select(3, GetItemInfo(itemLink))
+
+        if itemQuality == INV_HEIRLOOM then
+            calculatedRate = calculatedRate + 0.1
+
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("Heirloom detected in Shoulder slot")
+            end
+        end
+    end
+
+    itemLink = GetInventoryItemLink("player", 5) -- Chest
+
+    if itemLink then
+        itemQuality = select(3, GetItemInfo(itemLink))
+
+        if itemQuality == INV_HEIRLOOM then
+            calculatedRate = calculatedRate + 0.1
+
+            if addon.settings.db.profile.debug then
+                addon.comms.PrettyPrint("Heirloom detected in Chest slot")
+            end
+        end
+    end
+
+    -- Bypass floating point comparison issues
+    if fmt("%.2f", addon.settings.db.profile.xprate) ==
+        fmt("%.2f", calculatedRate) then return end
+
+    addon.settings.db.profile.xprate = calculatedRate
+
+    -- Gold assistant, ignore reloads, silently update
+    if (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then
+        return
+    end
+
+    addon.comms.PrettyPrint(L(
+                                "Experience rate change detected, reloading guide for %.2fx"),
+                            calculatedRate)
+
+    if addon.currentGuide and addon.currentGuide.name then
+        addon:LoadGuide(addon.currentGuide, 'onLoad')
+    else
+        addon.ReloadGuide()
     end
 
     addon.RXPFrame.GenerateMenuTable()
