@@ -428,11 +428,14 @@ function addon.targeting.CheckTargetProximity()
             wipe(proxmityPolling.scannedTargets)
             addon.targeting.activeTargetFrame:Hide()
 
+            if IsInGroup() and not UnitIsGroupLeader('player') then
+                return
+            end
             -- Reset raid icons on timeout
             for i = 1, 8 do SetRaidTarget("player", i) end
 
             if GetRaidTargetIndex("player") ~= nil then
-                SetRaidTarget("player", GetRaidTargetIndex("player"))
+                SetRaidTarget("player", GetRaidTargetIndex("player") or 0)
             end
         end
     end
@@ -613,10 +616,7 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
         return
     end
 
-    if IsInGroup() and
-        not (UnitIsGroupAssistant('player') or UnitIsGroupLeader('player')) then
-        return
-    end
+    if IsInGroup() and not UnitIsGroupLeader('player') then return end
     -- Only mark 4/8 targets, ignore later marks
     if index > 4 then return end
 
