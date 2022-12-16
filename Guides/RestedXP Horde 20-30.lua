@@ -1708,73 +1708,59 @@ RXPGuides.RegisterGuide([[
 #next 26-30 Ashenvale / Thousand Needles
 #version 1
 #group RestedXP Horde 1-30
-
+#xprate <1.1
 
 step
-    #xprate <1.1
     .goto The Barrens,51.5,30.3
     .fly Sun Rock >> Fly to Stonetalon Mountains
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,45.90,60.40
     .accept 1087 >> Accept Cenarius' Legacy
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,47.30,64.30
     .accept 6393 >> Accept Elemental War
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,47.40,58.40
     .accept 6301 >> Accept Cycle of Rebirth
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,47.30,61.10
     .accept 5881 >> Accept Calling in the Reserves
     .accept 6282 >> Accept Harpies Threaten
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,59.00,62.60
     .accept 1096 >> Accept Gerenzo Wrenchwhistle
 step
-    #xprate <1.1
 	.isOnQuest 1086
     .goto Stonetalon Mountains,66.40,45.40
      >> Place the Toxic Fogger
     .complete 1086,1
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,64.48,40.25
     >>Climb up the mountain to find Gerenzo. Clear the mobs around him and kill him.
     .complete 1096,1
     .unitscan Gerenzo Wrenchwhistle
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,62.6,40.2
 	.vendor >> Go and buy gear upgrades from the vendor at the end of platform. He has the chance of having gear upgrades for every class.
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,58.98,62.59
     .turnin 1096 >> Turn in Gerenzo Wrenchwhistle
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,50.64,36.60,0,0
      >> Loot Gaea Seeds as you pass through the lake and around the lake.
     .complete 6301,1
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,35.84,13.09
 	>>Kill the Dryads and Night Elves in the area
     .complete 1087,1
     .complete 1087,2
     .complete 1087,3
 step
-    #xprate <1.1
 	#completewith next
     .goto Stonetalon Mountains,32.60,67.40,0
      >> Kill Fire Elementals. Loot them for Increndrite
     .complete 6393,1
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,31.10,61.27
 	>>Kill Harpies. Be careful as the Slayers execute you when you're below 20% health, Ambushers shock for a LOT of instant damage on low cooldown, and Roguefeathers thrash (multiple attacks at once every 10 seconds or so)
     .complete 6282,1
@@ -1782,67 +1768,55 @@ step
     .complete 6282,3
     .complete 6282,4
 step
-    #xprate <1.1
 	#completewith next
     .goto Stonetalon Mountains,38.7,68.6,50 >> Enter Sun Rock Retreat from the West side
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,46.00,60.50
      >> Head to Sun Rock Retreat
     .turnin 1087 >> Turn in Cenarius' Legacy
     .accept 1088 >> Accept Ordanus
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,47.10,61.10
     .turnin 6282 >> Turn in Harpies Threaten
     .accept 6283 >> Accept Bloodfury Bloodline
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,47.40,58.50
     .turnin 6301 >> Turn in Cycle of Rebirth
     .accept 6381 >> Accept New Life
 step
-    #xprate <1.1
 	#completewith next
     .goto Stonetalon Mountains,32.60,67.40,0
      >> Kill Fire Elementals. Loot them for Increndrite
     .complete 6393,1
 step
-    #xprate <1.1
 	#sticky
 	#completewith Ripper
     .goto Stonetalon Mountains,31.10,61.27,0
 	>> Plant the trees in the dirt mounds of The Charred Vale
 	.complete 6381,1
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,32.60,67.40
      >> Kill Fire Elementals. Loot them for Increndrite
     .complete 6393,1
 step
-    #xprate <1.1
     #label Ripper
     .goto Stonetalon Mountains,30.75,61.91
     .complete 6283,1
     .unitscan Bloodfury Ripper
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,31.10,61.27
 	>> Plant the trees in the dirt mounds of The Charred Vale
 	.complete 6381,1
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,38.7,68.6,50,0
     .goto Stonetalon Mountains,47.20,64.40
      >> Head back to Sun Rock Retreat
     .turnin 6393 >> Turn in Elemental War
 step
-    #xprate <1.1
     .isQuestComplete 6283
     .goto Stonetalon Mountains,47.19,61.15
     .turnin 6283 >> Turn in Bloodfury Bloodline
 step
-    #xprate <1.1
     .goto Stonetalon Mountains,47.46,58.37
     .turnin 6381 >> Turn in New Life
 
