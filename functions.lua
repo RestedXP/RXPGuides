@@ -59,10 +59,12 @@ events.acceptmultiple = events.accept
 events.dailyturninmultiple = events.turnin
 
 local function GetIcon(path,index,size)
-    local coords = GetPOITextureCoords or C_Minimap.GetPOITextureCoords
+    local coords = _G.GetPOITextureCoords or C_Minimap.GetPOITextureCoords
     local x1, x2, y1, y2 = coords(index)
     return format("|T%s:0:0:0:0:%d:%d:%d:%d:%d:%d|t", path, size, size, x1*size, x2*size, y1*size, y2*size)
 end
+
+addon.GetIcon = GetIcon
 
 addon.icons = {
     accept = "|TInterface/GossipFrame/AvailableQuestIcon:0|t",
@@ -96,9 +98,9 @@ if addon.gameVersion > 30000 then
     addon.icons.deathskip = GetIcon("Interface/MINIMAP/POIICONS",8,128)
     addon.icons.home = GetIcon("Interface/MINIMAP/POIICONS",5,128)
 else
-    addon.icons["goto"] = GetIcon("Interface/MINIMAP/POIICONS",6,128)
-    addon.icons.deathskip = GetIcon("Interface/MINIMAP/POIICONS",7,128)
-    addon.icons.home = GetIcon("Interface/MINIMAP/POIICONS",4,128)
+    addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:54:63:0:9|t"
+    addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:63:72:0:9|t"
+    addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:36:45:0:9|t"
 end
 
 addon.icons.acceptmultiple = addon.icons.accept
