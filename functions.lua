@@ -92,15 +92,18 @@ addon.icons = {
     error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
     clock = "|TInterface/ICONS/INV_Misc_PocketWatch_02:0|t",
 }
-
-if addon.gameVersion > 30000 then
-    addon.icons["goto"] = GetIcon("Interface/MINIMAP/POIICONS",7,128)
-    addon.icons.deathskip = GetIcon("Interface/MINIMAP/POIICONS",8,128)
-    addon.icons.home = GetIcon("Interface/MINIMAP/POIICONS",5,128)
+if addon.gameVersion > 40000 then
+    addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:63:72:0:4|t"
+    addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:45:54:0:4|t"
+    addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:72:81:0:4|t"
+elseif addon.gameVersion > 30000 then
+    addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:63:72:0:9|t"
+    addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:45:54:0:9|t"
+    addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:72:81:0:9|t"
 else
-    addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:54:63:0:9|t"
-    addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:63:72:0:9|t"
-    addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:36:45:0:9|t"
+    addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:96:112:0:16|t"
+    addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:64:80:0:16|t"
+    addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:112:128:0:16|t"
 end
 
 addon.icons.acceptmultiple = addon.icons.accept
