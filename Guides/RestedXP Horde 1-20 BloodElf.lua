@@ -7,380 +7,563 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Horde 1-30
 #defaultfor BloodElf
 #next 6-10 Eversong Woods
+
 step << !BloodElf
     #completewith next
-    .goto Eversong Woods,38.2,20.8
     +You have selected a guide meant for Blood Elves. We do not recommend doing the 1-6 zone due to there being no quests for non-Blood Elves. You should choose the same starter zone that you start in
 step
-    >> Talk to Magistrix Erona
     .goto Eversong Woods,38.2,20.8 << tbc
-	.goto Eversong Woods,38.02,21.01 << wotlk
+    .goto Eversong Woods,38.02,21.01 << wotlk
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Erona|r
     .accept 8325 >> Accept Reclaiming Sunstrider Isle
+    .target Magistrix Erona
+--VV need to update waypoint for tbc
+step << Warlock wotlk
+    #completewith Reclaim
+    +|cFFFCDC00Grind |cFFFF5722Mana Wyrms|r until you have 75 copper worth of vendor items. You can also sell your gear for 13 copper|r << Warlock wotlk
+    .money >0.0075
+--VV other classes in other expansions should not need to go out of their way to grind for money
 step
-    >>Kill Mana Wyrms in the area
-	>>Kill Mana Wyrms in the area. Grind mobs until you have 65 copper worth of vendor items. You can also sell your gear for 13c << Warlock wotlk
-    .goto Eversong Woods,37.5,23.2
+    .goto Eversong Woods,37.70,23.26,30,0
+    .goto Eversong Woods,38.21,24.56,30,0
+    .goto Eversong Woods,37.62,25.77,30,0
+    .goto Eversong Woods,37.30,24.54,30,0
+    .goto Eversong Woods,37.70,23.26,30,0
+    .goto Eversong Woods,38.21,24.56,30,0
+    .goto Eversong Woods,37.62,25.77,30,0
+    .goto Eversong Woods,37.30,24.54
+    >>Kill |cFFFF5722Mana Wyrms|r
     .complete 8325,1 --Kill Mana Wyrm (x8)
+    .target Mana Wyrm
+--VV Vendorable item value command
 step
+    #label Reclaim
     .goto Eversong Woods,38.2,20.8 << tbc
 	.goto Eversong Woods,38.02,21.01 << wotlk
-	>>Continue grinding mobs until you have 1 silver and 10 copper worth of vendor items before turning in this quest. << Warlock wotlk
-    .turnin 8325,1 >> Turn in Reclaiming Sunstrider Isle << Paladin
-    .turnin 8325 >> Turn in Reclaiming Sunstrider Isle << !Paladin
-step
-    .goto Eversong Woods,38.2,20.8 << tbc
-	.goto Eversong Woods,38.02,21.01 << wotlk	
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Erona|r
+    .turnin 8325 >> Turn in Reclaiming Sunstrider Isle
     .accept 8326 >> Accept Unfortunate Measures
-	.accept 9393 >> Accept Hunter Training << Hunter
-	.accept 9392 >> Accept Rogue Training << Rogue
+    .accept 8328 >> Accept Mage Training << Mage
     .accept 8563 >> Accept Warlock Training << Warlock
     .accept 8564 >> Accept Priest Training << Priest
-    .accept 8328 >> Accept Mage Training << Mage
+    .accept 9392 >> Accept Rogue Training << Rogue
+	.accept 9393 >> Accept Hunter Training << Hunter
     .accept 9676 >> Accept Paladin Training << Paladin
-step << Paladin/Rogue
+    .target Magistrix Erona
+step
     #completewith next
-    .goto Eversong Woods,38.7,20.3
-    .vendor >>Vendor trash
-step << Hunter
-    .goto Eversong Woods,38.7,20.3
-    .vendor >>Go inside the building, vendor trash, and fill your quiver with arrows
-step << Mage tbc/Priest tbc/Warlock tbc
-    .goto Eversong Woods,38.7,20.3
-    >>Go inside, vendor trash, & buy 10 Water
-    .collect 159,10 --Collect Refreshing Spring Water (x10)
-step << Mage wotlk/Priest wotlk/Warlock wotlk 
-    .goto Eversong Woods,38.7,20.3
-	>>Make sure you have 65c worth of vendor items. If not, farm more mobs. << Warlock
-    .vendor >>Go inside and vendor trash.
-step << Paladin
-    .goto Eversong Woods,39.5,20.6
-    .turnin 9676 >> Turn in Paladin Training
-    .accept 10069 >> Accept Well Watcher Solanian
+    .goto Eversong Woods,38.56,20.98,10,0
+    .goto Eversong Woods,38.66,20.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shara|r
+    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her until your|r |T134409:0|t[Quiver] |cFF0E8312is full|r << Hunter
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << Warlock TBC/Mage TBC/Priest TBC
+    .vendor >>Vendor Trash
+    .collect 159,10,8336,1 << Priest TBC/Warlock TBC/Mage TBC --Collect Refreshing Spring Water (x10)
+    .target Shara Sunwing
+    .money >0.1 << WOTLK !Hunter/!Hunter !Priest !Warlock !Mage TBC
+--VV skip vendoring if you have 10s (character likely has additional bags)
 step << Mage
-    .goto Eversong Woods,39.2,21.5
+    .goto Eversong Woods,39.23,21.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Julia|r
     .turnin 8328 >> Turn in Mage Training
     .accept 10068 >> Accept Well Watcher Solanian
-    .trainer >> Train your class spells
-step << Priest
-    .goto Eversong Woods,39.4,20.4
-    .turnin 8564 >> Turn in Priest Training
-    .accept 10072 >> Accept Well Watcher Solanian
-    .trainer >> Train your class spells
-step << Rogue
-    .goto Eversong Woods,38.9,20.0
-    .turnin 9392 >> Turn in Rogue Training
-    .accept 10071 >> Accept Well Watcher Solanian
-step << Hunter
-    >> Talk to Ranger Sallina on the bottom floor
-    .goto Eversong Woods,39.0,20.0
-    .turnin 9393 >> Turn in Hunter Training
-    .accept 10070 >> Accept Well Watcher Solanian
+    .train 1459 >> Train your class spells
+    .target Julia Sunstriker
 step << Warlock
-    .goto Eversong Woods,38.9,21.4
+    .goto Eversong Woods,38.93,21.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Teli'Larien|r
     .turnin 8563 >> Turn in Warlock Training
     .accept 10073 >> Accept Well Watcher Solanian
     .accept 8344 >> Accept Windows to the Source << tbc
-    .trainer >> Train your class spells
+    .train 688 >> Train your class spells
+    .target Summoner Teli'Larien
+step << Priest
+    .goto Eversong Woods,39.42,20.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Arena|r
+    .turnin 8564 >> Turn in Priest Training
+    .accept 10072 >> Accept Well Watcher Solanian
+    .train 1243 >> Train your class spells
+    .target Matron Arena
+step << Rogue
+    .goto Eversong Woods,38.93,20.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Avokor|r
+    .turnin 9392 >> Turn in Rogue Training
+    .accept 10071 >> Accept Well Watcher Solanian
+    .target Pathstalker Avokor
+step << Hunter
+    .goto Eversong Woods,39.05,20.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sallina|r
+    .turnin 9393 >> Turn in Hunter Training
+    .accept 10070 >> Accept Well Watcher Solanian
+    .target Ranger Sallina
+step << Paladin
+    .goto Eversong Woods,39.47,20.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jesthenis|r
+    .turnin 9676 >> Turn in Paladin Training
+    .accept 10069 >> Accept Well Watcher Solanian
+    .target Jesthenis Sunstriker
+step << Warlock wotlk
+	#completewith Collars
+	.cast 688 >>|cFFFCDC00Cast|r |T136218:0|tSummon Imp
 step
-    .goto Eversong Woods,38.8,19.4
-    >>Go upstairs
-    .turnin 10073 >> Turn in Well Watcher Solanian << Warlock
-    .turnin 10072 >> Turn in Well Watcher Solanian << Priest
-    .turnin 10071 >> Turn in Well Watcher Solanian << Rogue
-    .turnin 10070 >> Turn in Well Watcher Solanian << Hunter
+    #completewith next
+    .goto Eversong Woods,39.43,21.06,10,0
+    .goto Eversong Woods,39.48,20.58,10,0
+    .goto Eversong Woods,39.31,20.23,10,0
+    .goto Eversong Woods,38.93,19.93,10,0
+    .goto Eversong Woods,38.76,19.36,10 >>Go upstairs
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Solanian|r, |cFF00FF25Ithanas|r, and |cFF00FF25Helion|r
     .turnin 10068 >> Turn in Well Watcher Solanian << Mage
     .turnin 10069 >> Turn in Well Watcher Solanian << Paladin
+    .turnin 10070 >> Turn in Well Watcher Solanian << Hunter
+    .turnin 10071 >> Turn in Well Watcher Solanian << Rogue
+    .turnin 10072 >> Turn in Well Watcher Solanian << Priest
+    .turnin 10073 >> Turn in Well Watcher Solanian << Warlock
     .accept 8330 >> Accept Solanian's Belongings
     .accept 8345 >> Accept The Shrine of Dath'Remar
-step
-    .goto Eversong Woods,38.3,19.1
+    .goto Eversong Woods,38.76,19.36
     .accept 8336 >> Accept A Fistful of Slivers
-step
-    >>Equip your new bag
-    .goto Eversong Woods,37.2,18.9
+    .goto Eversong Woods,38.27,19.13
     .accept 8346 >> Accept Thirst Unending
+    .goto Eversong Woods,37.18,18.94
+    .target Well Watcher Solanian
+    .target Arcanist Ithanas
+    .target Arcanist Helion
 step << Warlock tbc
     #completewith next
-    >> Grind Springpaw Lynxes and Cubs en route. Loot them for their collars. You don't have to finish this quest now.
-    .complete 8326,1 --Lynx Collar (8)
-step << Warlock tbc
-    #completewith next
-    .goto Eversong Woods,32.6,25.5,30 >>Run up the ramp. Get as many Mana Taps as you can while running here.
-step << Warlock tbc
-    #completewith ArcaneSliver
-    >>Grind and Arcane Torrent creatures with mana as you quest. Be sure to loot them for Arcane Slivers
-    .complete 8346,1 --Mana Tap creature (x6)
+    >>Cast |T135738:0|t[Mana Tap] and kill |cFFFF5722Mana Wyrms|r and |cFFFF5722Feral Tenders|r. Loot them for their |cFF00BCD4Slivers|r
     .complete 8336,1 --Collect Arcane Sliver (x6)
+    .complete 8346,1 --Mana Tap creature (x6)
+    .target Mana Wyrm
+    .target Feral Tender
 step << Warlock tbc
-    >> Loot the Arcane Wraiths for Wraith Essence. Be careful as they pull together if they're next to each other
-    .goto Eversong Woods,32.3,28.1
+    #completewith next
+    >>Kill |cFFFF5722Springpaw Lynxes|r and |cFFFF5722Springpaw Cubs|r. Loot them for their |cFF00BCD4Collars|r
+    .complete 8326,1 --Lynx Collar (8)
+    .target Springpaw Lynx
+    .target Springpaw Cub
+step << Warlock tbc
+    #label RunRamp
+    #completewith next
+    .goto Eversong Woods,32.57,25.53,20,0
+    .goto Eversong Woods,32.02,26.09,20 >>Run up the ramp
+step << Warlock tbc
+    #requires RunRamp
+    #completewith next
+    >>Cast |T135738:0|t[Mana Tap] and kill |cFFFF5722Arcane Wraiths|r and |cFFFF5722Tainted Arcane Wraiths|r. Loot |cFFFF5722Arcane Wraiths|r for their |cFF00BCD4Essences|r and both for their |cFF00BCD4Slivers|r
+    .complete 8336,1 --Collect Arcane Sliver (x6)
+    .complete 8346,1 --Mana Tap creature (x6)
     .complete 8344,1 --Wraith Essence (4)
+    .target Arcane Wraith
+    .target Tainted Arcane Wraith
 step << Warlock tbc
 	#label ArcaneSliver
-    .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for the Essence and Tainted Arcane Sliver. Click the Sliver in your bags to accept the quest
-    .goto Eversong Woods,31.6,29.3
-    .unitscan Tainted Arcane Wraith
+    .goto Eversong Woods,31.57,29.31,30,0
+    .goto Eversong Woods,31.25,27.07,30,0
+    .goto Eversong Woods,30.90,27.66,30,0
+    .goto Eversong Woods,30.55,26.98,30,0
+    .goto Eversong Woods,31.10,26.83
+    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |cFF00BCD4Essence|r and |T132884:0|t[Tainted Arcane Sliver]. |cFFFCDC00Use it to start the quest|r
     .complete 8344,2 --Tainted Wraith Essence (1)
-    .collect 20483,1,8338 --Tainted Arcane Sliver (1)
+    .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
+    .target Tainted Arcane Wraith
+    .use 20483
 step << Warlock tbc
-    .goto Eversong Woods,37.5,23.2
-    >>Finish Mana Tapping creatures and getting the remaining Arcane Slivers
-    .complete 8346,1 --Mana Tap creature (x6)
+    .goto Eversong Woods,30.45,29.10,30,0
+    .goto Eversong Woods,30.01,26.67,30,0
+    .goto Eversong Woods,30.43,24.94,30,0
+    .goto Eversong Woods,31.70,26.46,30,0
+    .goto Eversong Woods,31.98,27.94,30,0
+    .goto Eversong Woods,31.54,29.52,30,0
+    .goto Eversong Woods,30.45,29.10,30,0
+    .goto Eversong Woods,30.01,26.67,30,0
+    .goto Eversong Woods,30.43,24.94,30,0
+    .goto Eversong Woods,31.70,26.46,30,0
+    .goto Eversong Woods,31.98,27.94,30,0
+    .goto Eversong Woods,31.54,29.52
+    >>Cast |T135738:0|t[Mana Tap] and kill |cFFFF5722Arcane Wraiths|r and |cFFFF5722Tainted Arcane Wraiths|r. Loot |cFFFF5722Arcane Wraiths|r for their |cFF00BCD4Essences|r and both for their |cFF00BCD4Slivers|r
     .complete 8336,1 --Collect Arcane Sliver (x6)
+    .complete 8346,1 --Mana Tap creature (x6)
+    .complete 8344,1 --Wraith Essence (4)
+    .target Arcane Wraith
+    .target Tainted Arcane Wraith
 step << Warlock tbc
-    .xp 3+200 >> Grind until Level 3+200xp
+    .goto Eversong Woods,30.45,29.10,30,0
+    .goto Eversong Woods,30.01,26.67,30,0
+    .goto Eversong Woods,30.43,24.94,30,0
+    .goto Eversong Woods,31.70,26.46,30,0
+    .goto Eversong Woods,31.98,27.94,30,0
+    .goto Eversong Woods,31.54,29.52,30,0
+    .goto Eversong Woods,30.45,29.10,30,0
+    .goto Eversong Woods,30.01,26.67,30,0
+    .goto Eversong Woods,30.43,24.94,30,0
+    .goto Eversong Woods,31.70,26.46,30,0
+    .goto Eversong Woods,31.98,27.94,30,0
+    .goto Eversong Woods,31.54,29.52
+    .xp 3+200 >> Grind to 200+/1400xp
 step << Warlock tbc
     #completewith next
-    .deathskip >> Die and respawn at the Spirit Healer
-step << BloodElf Warlock tbc
-    .goto Eversong Woods,37.2,18.9
+    .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
+step << Warlock tbc
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Helion|r and |cFF00FF25Ithanas|r
     .turnin 8346 >> Turn in Thirst Unending
     .turnin 8338 >> Turn in Tainted Arcane Sliver
-step << Warlock tbc
-    .goto Eversong Woods,38.3,19.1
+    .goto Eversong Woods,37.18,18.94
     .turnin 8336 >> Turn in A Fistful of Slivers
+    .goto Eversong Woods,38.27,19.13
+    .target Arcanist Helion
+    .target Arcanist Ithanas
 step << Warlock tbc
-    .goto Eversong Woods,38.7,20.3
-    >> Vendor trash & buy 10 Water
-    .collect 159,10 --Collect Refreshing Spring Water (x10)
+    #completewith next
+    .goto Eversong Woods,38.56,20.98,10,0
+    .goto Eversong Woods,38.66,20.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shara|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r
+    .vendor >>Vendor Trash
+    .collect 159,10,8336,1 --Collect Refreshing Spring Water (10)
+    .target Shara Sunwing
 step << Warlock tbc
-    .goto Eversong Woods,38.9,21.4
+    .xp 4 >> Grind to 4
+--VV Needs to be changed to a properly calculated xp gate when TBC rolls back around
+step << Warlock tbc
+    .goto Eversong Woods,38.93,21.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Teli'Larien|r
     .turnin 8344 >> Turn in Windows to the Source
+    .train 172 >> Train your class spells
+    .target Summoner Teli'Larien
 step << Warlock tbc
-    .goto Eversong Woods,34.9,19.6
-    .xp 4 >> Grind to 4	
+	#completewith Measures
+	.cast 688 >>|cFFFCDC00Cast|r |T136218:0|tSummon Imp
 step << Warlock tbc
-    .goto Eversong Woods,38.9,21.4
-    .collect 16321 >> Go to Yasmine and buy the Blood Pact book. Use it after summoning your Imp
-    .trainer >> Train your class spells
+    .goto Eversong Woods,38.86,21.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Yasmine|r
+    >>|cFF0E8312Buy the|r |T133738:0|t[Grimoire of Blood Pact] from her
+    .collect 16321,1,8327,1 --Grimoire of Blood Pact (1)
+    .target Yasmine Teli'Larien
+step << Warlock tbc
+    #completewith Measures
+	.cast 20397 >> Use your |T133738:0|t[Grimoire of Blood Pact]
 	.use 16321
-	.cast 20397 >> Use your Grimoire of Blood Pact
-step << Warlock wotlk
-	#completewith next
-	.cast 688 >>Summon your Imp
 step
-    >>Kill Lynxes for Lynx Collars
-    .goto Eversong Woods,40.4,16.7,40,0
-    .goto Eversong Woods,40.0,22.1,40,0
-    .goto Eversong Woods,40.4,16.7,40,0
-    .goto Eversong Woods,40.0,22.1,40,0
-    .goto Eversong Woods,40.6,16.2
+    #label Collars
+    >>Kill |cFFFF5722Springpaw Lynxes|r and |cFFFF5722Springpaw Cubs|r. Loot them for their |cFF00BCD4Collars|r
+    .goto Eversong Woods,37.37,18.31,40,0
+    .goto Eversong Woods,39.36,18.83,40,0
+    .goto Eversong Woods,39.85,16.63,40,0
+    .goto Eversong Woods,40.61,16.24,40,0
+    .goto Eversong Woods,40.37,18.80,40,0
+    .goto Eversong Woods,40.48,20.38,40,0
+    .goto Eversong Woods,39.42,22.28,40,0
+    .goto Eversong Woods,35.98,24.22,40,0
+    .goto Eversong Woods,37.37,18.31,40,0
+    .goto Eversong Woods,39.36,18.83,40,0
+    .goto Eversong Woods,39.85,16.63,40,0
+    .goto Eversong Woods,40.61,16.24,40,0
+    .goto Eversong Woods,40.37,18.80,40,0
+    .goto Eversong Woods,40.48,20.38,40,0
+    .goto Eversong Woods,39.42,22.28,40,0
+    .goto Eversong Woods,35.98,24.22
     .complete 8326,1 --Collect Lynx Collar (x8)
+    .target Springpaw Lynx
+    .target Springpaw Cub
 step
+    #label Measures
     .goto Eversong Woods,38.2,20.8 << tbc
 	.goto Eversong Woods,38.02,21.01 << wotlk
-    >> Head back to Magistrix Erona
-    .turnin 8326,1 >> Turn in Unfortunate Measures << Paladin
-    .turnin 8326 >> Turn in Unfortunate Measures << !Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Erona|r
+    .turnin 8326 >> Turn in Unfortunate Measures
     .accept 8327 >> Accept Report to Lanthan Perilon
+    .target Magistrix Erona
 step << !Warlock tbc
-    #completewith arcaneend
-    #label manaarcane
-    .goto Eversong Woods,37.7,24.9,0
-    >>Use the spell "Mana Tap" on Mana users as you quest. It's in the General tab of your spellbook.
-    >>Kill Mana users as you quest for Slivers. Don't go out of your way to kill them as you'll only need to kill them when your mana tap comes off cooldown.
-    .complete 8346,1 --Mana Tap creature (x6)
+    #completewith Journal
+    >>Cast |T135738:0|t[Mana Tap] and kill |cFFFF5722Mana Wyrms|r and |cFFFF5722Feral Tenders|r. Loot them for their |cFF00BCD4Slivers|r
     .complete 8336,1 --Collect Arcane Sliver (x6)
+    .complete 8346,1 --Mana Tap creature (x6)
+    .target Mana Wyrm
+    .target Feral Tender
 step << wotlk
-    #completewith arcaneend
-    .goto Eversong Woods,37.7,24.9,0
-    >>Use the spell "Arcane Torrent" on a Mana Wyrm or Feral Tender. It's in the General tab of your spellbook
+    #completewith Aggression
+    >>Cast |T136222:0|t[Arcane Torrent] when in melee range of a |cFFFF5722Mana Wyrm|r or a |cFFFF5722Feral Tender|r
     .complete 8346,1 --Mana Tap creature (1)
 step << wotlk
-    #completewith arcaneend
-    .goto Eversong Woods,37.7,24.9,0
-    >>Kill Mana Wyrms and Feral Tenders. Loot them for their Slivers
+    #completewith Journal
+    >>Kill |cFFFF5722Mana Wyrms|r and |cFFFF5722Feral Tenders|r. Loot them for their |cFF00BCD4Slivers|r
     .complete 8336,1 --Collect Arcane Sliver (x6)
+    .target Mana Wyrm
+    .target Feral Tender
 step
     #label Report
-    .goto Eversong Woods,35.4,22.5
-    >> Talk to Lanthan Perilon by the benches
+    .goto Eversong Woods,35.37,22.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lanthan|r
     .turnin 8327 >> Turn in Report to Lanthan Perilon
     .accept 8334 >> Accept Aggression
+    .target Lanthan Perilon
 step
-    >>Loot the Journal on the floor
-.goto Eversong Woods,37.7,24.9
+    #label Journal
+    .goto Eversong Woods,37.70,24.91
+    >>Loot the |cFFDB2EEFJournal|r on the ground
     .complete 8330,3 --Collect Solanian's Journal (x1)
+step << wotlk/!Warlock tbc
+    #completewith next
+    >>Kill |cFFFF5722Mana Wyrms|r. Loot them for their |cFF00BCD4Slivers|r << wotlk
+    >>Cast |T135738:0|t[Mana Tap] and kill |cFFFF5722Mana Wyrms|r. Loot them for their |cFF00BCD4Slivers|r << tbc
+    .complete 8336,1 --Collect Arcane Sliver (x6)
+    .complete 8346,1 << tbc --Mana Tap creature (x6)
+    .target Mana Wyrm
 step
-    #completewith RedOrb
-    >>Kill Tenders in the area
+    #completewith next
+    >>Kill |cFFFF5722Tenders|r and |cFFFF5722Feral Tenders|r << Warlock tbc
+    >>Kill |cFFFF5722Tenders|r and |cFFFF5722Feral Tenders|r. Loot |cFFFF5722Feral Tenders|r for their |cFF00BCD4Slivers|r << wotlk
+    >>Kill |cFFFF5722Tenders|r and |cFFFF5722Feral Tenders|r. Cast |T135738:0|t[Mana Tap] on |cFFFF5722Feral Tenders|r. Loot |cFFFF5722Feral Tenders|r for their |cFF00BCD4Slivers|r << !Warlock tbc
     .complete 8334,1 --Kill Tender (x7)
     .complete 8334,2 --Kill Feral Tender (x7)
+    .complete 8336,1,1 << wotlk/!Warlock tbc --Collect Arcane Sliver (x6)
+    .complete 8346,1 << !Warlock tbc --Mana Tap creature (x6)
+    .target Tender
+    .target Feral Tender
 step
     #label RedOrb
-    >>Loot the Red Orb
-    .goto Eversong Woods,35.1,28.9
+    .goto Eversong Woods,35.14,28.89
+    >>Loot the |cFFDB2EEFScrying Orb|r on the platform
     .complete 8330,1 --Collect Solanian's Scrying Orb (x1)
 step
-    >>Finish killing Tenders in the area. Try to end on the north side, we're hading back to Lanthan Perilon after.
-    .goto Eversong Woods,35.3,28.5
+    .loop 40,Eversong Woods,33.92,26.49,33.97,28.55,35.15,29.78,36.52,29.35,35.58,27.42,33.92,26.49
+    >>Kill |cFFFF5722Tenders|r and |cFFFF5722Feral Tenders|r << Warlock tbc
+    >>Kill |cFFFF5722Tenders|r and |cFFFF5722Feral Tenders|r. Loot |cFFFF5722Feral Tenders|r for their |cFF00BCD4Slivers|r << wotlk
+    >>Kill |cFFFF5722Tenders|r and |cFFFF5722Feral Tenders|r. Cast |T135738:0|t[Mana Tap] on |cFFFF5722Feral Tenders|r. Loot |cFFFF5722Feral Tenders|r for their |cFF00BCD4Slivers|r << !Warlock tbc
     .complete 8334,1 --Kill Tender (x7)
     .complete 8334,2 --Kill Feral Tender (x7)
+    .complete 8336,1,1 << wotlk/!Warlock tbc --Collect Arcane Sliver (x6)
+    .complete 8346,1,1 << !Warlock tbc --Mana Tap creature (x6)
+step << !Warlock tbc/wotlk
+    #completewith next
+    >>Kill |cFFFF5722Mana Wyrms|r and |cFFFF5722Feral Tenders|r. Loot them for their |cFF00BCD4Slivers|r << wotlk
+    >>Cast |T135738:0|t[Mana Tap] and kill |cFFFF5722Mana Wyrms|r and |cFFFF5722Feral Tenders|r. Loot them for their |cFF00BCD4Slivers|r << tbc
+    .complete 8336,1 --Collect Arcane Sliver (x6)
+    .complete 8346,1,1 << !Warlock tbc --Mana Tap creature (x6)
+    .target Mana Wyrm
+    .target Feral Tender
 step
-    #label arcaneend
-    .goto Eversong Woods,35.4,22.5
-    >> Return to Lanthan Perilon
-    .turnin 8334,5 >> Turn in Aggression << Paladin
-    .turnin 8334 >> Turn in Aggression << !Paladin
+    #label Aggression
+    .goto Eversong Woods,35.37,22.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lanthan|r
+    .turnin 8334 >> Turn in Aggression
     .accept 8335 >> Accept Felendren the Banished
+    .target Lanthan Perilon
 step << wotlk
     #completewith next
-    .goto Eversong Woods,37.7,24.9
-    >>Use the spell "Arcane Torrent" on a Mana Wyrm or Feral Tender. It's in the General tab of your spellbook
-    .complete 8346,1 --Mana Tap creature (1)
-step << wotlk
-    .goto Eversong Woods,37.7,24.9
-    >>Kill Mana Wyrms and Feral Tenders. Loot them for their Slivers
+    >>Kill |cFFFF5722Mana Wyrms|r. Loot them for their |cFF00BCD4Slivers|r
     .complete 8336,1 --Collect Arcane Sliver (x6)
+    .target Mana Wyrm
 step << wotlk
-    .goto Eversong Woods,37.7,24.9
-    >>Use the spell "Arcane Torrent" on a Mana Wyrm or Feral Tender. It's in the General tab of your spellbook
+    .goto Eversong Woods,36.79,19.88,40,0
+    .goto Eversong Woods,34.64,18.82,40,0
+    .goto Eversong Woods,33.78,19.46,40,0
+    .goto Eversong Woods,34.17,20.59,40,0
+    .goto Eversong Woods,36.79,19.88,40,0
+    .goto Eversong Woods,34.64,18.82,40,0
+    .goto Eversong Woods,33.78,19.46,40,0
+    .goto Eversong Woods,34.17,20.59
+    >>Cast |T136222:0|t[Arcane Torrent] when in melee range of a |cFFFF5722Mana Wyrm|r
     .complete 8346,1 --Mana Tap creature (1)
+step << wotlk/!Warlock tbc
+    .goto Eversong Woods,36.79,19.88,40,0
+    .goto Eversong Woods,34.64,18.82,40,0
+    .goto Eversong Woods,33.78,19.46,40,0
+    .goto Eversong Woods,34.17,20.59,40,0
+    .goto Eversong Woods,36.79,19.88,40,0
+    .goto Eversong Woods,34.64,18.82,40,0
+    .goto Eversong Woods,33.78,19.46,40,0
+    .goto Eversong Woods,34.17,20.59
+    >>Kill |cFFFF5722Mana Wyrms|r. Loot them for their |cFF00BCD4Slivers|r << wotlk
+    >>Cast |T135738:0|t[Mana Tap] and kill |cFFFF5722Mana Wyrms|r. Loot them for their |cFF00BCD4Slivers|r << tbc
+    .complete 8336,1 --Collect Arcane Sliver (x6)
+    .complete 8346,1,1 << !Warlock tbc --Mana Tap creature (x6)
+    .target Mana Wyrm
 step << !Warlock tbc
-    .goto Eversong Woods,35.3,28.5
-    .xp 4-360 >> Grind til you are 360 exp from level 4.
-step << wotlk
-    .goto Eversong Woods,35.3,28.5
-    .xp 4-610 >> Grind til you are 610 exp from level 4.
-step << wotlk
-    #completewith pepegavendor
-    .goto Eversong Woods,37.2,18.9
-    .vendor >> Vendor your trash << !Mage !Priest !Warlock
-step << wotlk
-    .goto Eversong Woods,37.2,18.9
-    >> Return to Arcanist Helion
-    .turnin 8346,1 >> Turn in Thirst Unending << Paladin
-    .turnin 8346 >> Turn in Thirst Unending << !Paladin
-step << !Warlock tbc
-    #label arcaneend
-    #requires manaarcane
-    >> Talk to Arcanist Ithanas
-    .goto Eversong Woods,38.3,19.1
+    .goto Eversong Woods,36.79,19.88,40,0
+    .goto Eversong Woods,34.64,18.82,40,0
+    .goto Eversong Woods,33.78,19.46,40,0
+    .goto Eversong Woods,34.17,20.59,40,0
+    .goto Eversong Woods,36.79,19.88,40,0
+    .goto Eversong Woods,34.64,18.82,40,0
+    .goto Eversong Woods,33.78,19.46,40,0
+    .goto Eversong Woods,34.17,20.59
+    .xp 4-360 >> Grind to 1740+/2100xp << !Warlock tbc
+    .xp 4-610 >> Grind to 1490+/2100xp << wotlk
+step << wotlk/!Warlock !Mage !Priest tbc
+    #completewith next
+    .vendor >> Vendor Trash
+step << wotlk/!Warlock tbc
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Helion|r and |cFF00FF25Ithanas|r
+    .turnin 8346 >> Turn in Thirst Unending
+    .turnin 8338 >> Turn in Tainted Arcane Sliver
+    .goto Eversong Woods,37.18,18.94
     .turnin 8336 >> Turn in A Fistful of Slivers
-step << wotlk
-	.isQuestComplete 8336
-    .goto Eversong Woods,38.3,19.1
-    .turnin 8336 >> Turn in A Fistful of Slivers
+    .goto Eversong Woods,38.27,19.13
+    .target Arcanist Helion
+    .target Arcanist Ithanas
 step << Mage tbc/Priest tbc
-    #completewith pepegavendor
-    .goto Eversong Woods,38.7,20.3
-    >>Vendor trash and buy 10 Water
-    .collect 159,10 --Collect Refreshing Spring Water (x10)
-step << Mage wotlk/Priest wotlk/Warlock wotlk
-    #completewith pepegavendor
-    .goto Eversong Woods,38.7,20.3
-    .vendor >>Vendor trash
-step << Rogue tbc/Paladin tbc/Hunter tbc
-    #completewith pepegavendor
-    .goto Eversong Woods,38.7,20.3
-    .vendor >>Vendor trash
-step << Hunter
-    >> Head inside the building
-    .goto Eversong Woods,39.0,20.0
-    .trainer >>Train your class spells
-step << Priest
-    .goto Eversong Woods,39.4,20.4
-    .trainer >>Train your class spells
-step << Paladin
-    .goto Eversong Woods,39.5,20.6
-    .trainer >>Train your class spells
+    #completewith next
+    .goto Eversong Woods,38.56,20.98,10,0
+    .goto Eversong Woods,38.66,20.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shara|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r
+    .vendor >>Vendor Trash
+    .collect 159,10,8336,1 --Collect Refreshing Spring Water (10)
+    .target Shara Sunwing
+step << !Mage tbc/!Priest tbc/!Warlock tbc
+    #completewith next
+    .goto Eversong Woods,38.56,20.98,10,0
+    .goto Eversong Woods,38.66,20.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shara|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r
+    .vendor >>Vendor Trash
+    .target Shara Sunwing
+    .money >0.1 << !Mage tbc/!Priest tbc/!Warlock tbc
 step << Mage
-    .goto Eversong Woods,39.2,21.5
-    .trainer >>Train your class spells
+    .goto Eversong Woods,39.23,21.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Julia|r
+    .train 116 >> Train your class spells
+    .target Julia Sunstriker
 step << Warlock wotlk
-    .goto Eversong Woods,38.9,21.4
-    .trainer >>Train your class spells
+    .goto Eversong Woods,38.93,21.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Teli'Larien|r
+    .train 172 >> Train your class spells
+    .target Summoner Teli'Larien
+step << Priest
+    .goto Eversong Woods,39.42,20.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Arena|r
+    .train 589 >> Train your class spells
+    .target Matron Arena
+step << Hunter
+    .goto Eversong Woods,39.05,20.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sallina|r
+    .train 1978 >> Train your class spells
+    .target Ranger Sallina
+step << Paladin
+    .goto Eversong Woods,39.47,20.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jesthenis|r
+    .train 20271 >> Train your class spells
+    .target Jesthenis Sunstriker
 step
-    #label pepegavendor
-    >>Click the plaque on the wall
-    .goto Eversong Woods,29.6,19.4
+    .goto Eversong Woods,29.61,19.38
+    >>Click the |cFFDB2EEFText|r on the Shrine
     .complete 8345,1 --Collect Shrine of Dath'Remar Read (x1)
 step
-    >>Loot the Scroll on the floor
-    .goto Eversong Woods,31.3,22.7
+    .goto Eversong Woods,31.33,22.74
+    >>Loot the |cFFDB2EEFScroll|r on the ground
     .complete 8330,2 --Collect Scroll of Scourge Magic (x1)
 step
+    #label RunRamp
     #completewith next
-    .goto Eversong Woods,32.6,25.5,30 >>Run up the ramp
-step << !Warlock tbc
-    #completewith silverhstbc
-	#label sliveracctbc
-    .goto Eversong Woods,30.7,27.5,0
-    .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for a Tainted Arcane Sliver. Click the Sliver in your bags
-    .collect 20483,1,8338 --Tainted Arcane Sliver (1)
+    .goto Eversong Woods,32.57,25.53,20,0
+    .goto Eversong Woods,32.02,26.09,20 >>Run up the ramp
+step << wotlk/!Warlock tbc
+    #completewith next
+    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[Tainted Arcane Sliver]. |cFFFCDC00Use it to start the quest|r
+    .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
-step << wotlk
-    #completewith sliverhs
-	#label sliveracc
-    .goto Eversong Woods,30.7,27.5,0
-    .use 20483 >> Kill a Tainted Arcane Wraith. Loot it for a Tainted Arcane Sliver. Click the Sliver in your bags
-    .collect 20483,1,8338 --Tainted Arcane Sliver (1)
-    .accept 8338 >> Accept Tainted Arcane Sliver
+    .target Tainted Arcane Wraith
+    .use 20483
 step 
-    .goto Eversong Woods,30.7,27.5
-    >>Head to the top of the tower killing mobs en route. Kill Felendren at the top and loot him for his head
+    .goto Eversong Woods,30.79,25.37,20,0
+    .goto Eversong Woods,29.35,24.44,20,0
+    .goto Eversong Woods,29.32,26.24,20,0
+    .goto Eversong Woods,30.75,26.30,10,0
+    .goto Eversong Woods,30.13,26.42,10,0
+    .goto Eversong Woods,30.09,27.41,10,0
+    .goto Eversong Woods,30.48,27.90,10,0
+    .goto Eversong Woods,30.84,27.13
+    >>Kill |cFFFF5722Arcane Wraiths|r and |cFFFF5722Tainted Arcane Wraiths|r whilst heading up the Academy
+    >>Kill |cFFFF5722Felendren the Banished|r at the top. Loot him for his |cFF00BCD4Head|r
     .complete 8335,1 --Kill Arcane Wraith (x8)
     .complete 8335,2 --Kill Tainted Arcane Wraith (x2)
     .complete 8335,3 --Collect Felendren's Head (x1)
+    .target Arcane Wraith
+    .target Tainted Arcane Wraith
+    .target Felendren the Banished
+step << wotlk/!Warlock tbc
+    .goto Eversong Woods,30.84,27.13
+    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[Tainted Arcane Sliver]. |cFFFCDC00Use it to start the quest|r
+    .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
+    .accept 8338 >> Accept Tainted Arcane Sliver
+    .target Tainted Arcane Wraith
+    .use 20483
 step
-	#requires sliveracc << wotlk
-	#requires sliveracctbc << !Warlock tbc
+    #completewith SolanianB
+    .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
+	.cooldown item,6948,<0
 step
-	#label sliverhs << wotlk
-	#label silverhstbc << tbc
     #completewith next
-    .goto Eversong Woods,38.7,20.3
     .hs >> Hearth to Sunstrider Isle
+	.cooldown item,6948,>0
 step
     #completewith next
-    .goto Eversong Woods,38.7,20.3
-    .vendor >> Vendor trash
+    .goto Eversong Woods,39.43,21.06,10,0
+    .goto Eversong Woods,39.48,20.58,10,0
+    .goto Eversong Woods,39.31,20.23,10,0
+    .goto Eversong Woods,38.93,19.93,10,0
+    .goto Eversong Woods,38.76,19.36,10 >>Go upstairs
 step
-    >>Go upstairs in the building
-    .goto Eversong Woods,38.7,19.4
-    .turnin 8330,1 >> Turn in Solanian's Belongings << Paladin/Rogue/Hunter
-    .turnin 8330 >> Turn in Solanian's Belongings << !Paladin !Rogue !Hunter
+    #label SolanianB
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Solanian|r and |cFF00FF25Helion|r << wotlk/!Warlock tbc
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Solanian|r << Warlock tbc
+    .turnin 8330 >> Turn in Solanian's Belongings
     .turnin 8345 >> Turn in The Shrine of Dath'Remar
-step << !Warlock tbc
-    .goto Eversong Woods,37.2,18.9
-    .turnin 8346 >> Turn in Thirst Unending
-    .turnin 8338 >> Turn in Tainted Arcane Sliver
-step << wotlk
-    >> Talk to Arcanist Helion
-    .goto Eversong Woods,37.2,18.9
-    .turnin 8346 >> Turn in Thirst Unending
-    .turnin 8338 >> Turn in Tainted Arcane Sliver	
+    .goto Eversong Woods,38.76,19.36
+    .turnin 8338 >> Turn in Tainted Arcane Sliver << wotlk/!Warlock tbc
+    .goto Eversong Woods,37.18,18.94 << wotlk/!Warlock tbc
+    .target Well Watcher Solanian
+    .target Arcanist Helion << wotlk/!Warlock tbc
 step
-    >> Return to Lanthan Perilon by the bench
-    .goto Eversong Woods,35.4,22.5
-    .turnin 8335,1 >> Turn in Felendren the Banished << Hunter
-    .turnin 8335,2 >> Turn in Felendren the Banished << Paladin
-    .turnin 8335 >> Turn in Felendren the Banished << !Hunter !Paladin
-step
-    .goto Eversong Woods,35.4,22.5
+    .goto Eversong Woods,35.37,22.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lanthan|r
+    .turnin 8335 >> Turn in Felendren the Banished
     .accept 8347 >> Accept Aiding the Outrunners
+    .target Lanthan Perilon
 step
-    .goto Eversong Woods,35.3,28.5
+    .loop 40,Eversong Woods,33.92,26.49,33.97,28.55,35.15,29.78,36.52,29.35,35.58,27.42,33.92,26.49
     .xp 5+1800 >> Grind to 1800+/2800xp
 step
-    >> Leave Sunstrider Isle by following the road south. Talk to Outrunner Alarion
-    .goto Eversong Woods,40.4,32.2
+    #completewith X
+    .goto Eversong Woods,38.91,30.27
+    >>Go over the Bridge
+step
+    .goto Eversong Woods,40.41,32.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Alarion|r
     .turnin 8347 >> Turn in Aiding the Outrunners
     .accept 9704 >> Accept Slain by the Wretched
+    .target Outrunner Alarion
 step
-    >> Head up the road and talk to the corpse
-    .goto Eversong Woods,42.0,35.7
+    #xprate >1.4999
+    .goto Eversong Woods,42.02,35.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cFF00FF25Outrunner|r's corpse on the ground
+    .turnin 9704 >> Turn in Slain by the Wretched
+    .target Slain Outrunner
+step
+    #xprate <1.5
+    .goto Eversong Woods,42.02,35.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cFF00FF25Outrunner|r's corpse on the ground
     .turnin 9704 >> Turn in Slain by the Wretched
     .accept 9705 >> Accept Package Recovery
+    .target Slain Outrunner
 step
-    .goto Eversong Woods,40.4,32.2
-    >> Head back to Outrunner Alarion
+    #xprate <1.5
+    .goto Eversong Woods,40.41,32.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Alarion|r
     .turnin 9705 >> Turn in Package Recovery
     .accept 8350 >> Accept Completing the Delivery
+    .target Outrunner Alarion
 step
-    >>Kill mobs you see on the way to Falconwing Square
-    .goto Eversong Woods,45.4,40.8
+    .goto Eversong Woods,45.97,43.35,40,0
+    .goto Eversong Woods,46.57,35.10,40,0
+    .goto Eversong Woods,43.62,34.88,40,0
+    .goto Eversong Woods,45.97,43.35,40,0
+    .goto Eversong Woods,46.57,35.10,40,0
+    .goto Eversong Woods,43.62,34.88,40,0
     .xp 5+2690 >> Grind to 2690+/2800xp
 ]])
 
@@ -393,6 +576,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Horde 1-30
 #next 10-20 Eversong Woods / Ghostlands << !Warrior
 #next 10-13 Durotar << Warrior
+
 step
     >> Talk to Magister Jaronis
     .goto Eversong Woods,47.3,46.3
