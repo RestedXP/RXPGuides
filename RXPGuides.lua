@@ -313,6 +313,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         elseif _G.QuestFrameProgressPanel and
             _G.QuestFrameProgressPanel:IsShown() then
             event = "QUEST_PROGRESS"
+        elseif _G.QuestFrameDetailPanel and _G.QuestFrameDetailPanel:IsShown() then
+            event = "QUEST_DETAIL"
         elseif _G.QuestFrameRewardPanel and _G.QuestFrameRewardPanel:IsShown() or
             _G.QuestFrameCompleteButton and
             _G.QuestFrameCompleteButton:IsShown() then
