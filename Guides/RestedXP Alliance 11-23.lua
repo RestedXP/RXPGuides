@@ -53,7 +53,6 @@ step
 	>> Kill crabs along the coast and loot them for their legs
     .complete 983,1 --Collect Crawler Leg (x6)
 step
-    .isOnQuest 3524
     .goto Darkshore,36.4,50.8
 	>> Loot the Beached Sea Creature
     .complete 3524,1 --Collect Sea Creature Bones (x1)
@@ -78,23 +77,28 @@ step
     >> Click on the machine on the hill
     .turnin 983 >> Turn in Buzzbox 827
 step
-    .isOnQuest 3524
     .goto Darkshore,36.6,45.6
     >> Head back to Gwennyth on the platform
     .turnin 3524 >> Turn in Washed Ashore
+step
+#xprate <1.7
+    .goto Darkshore,36.6,45.6
     .accept 4681 >> Accept Washed Ashore
+    .maxlevel 13
 step
     #xprate <1.5
     .maxlevel 13
     .goto Darkshore,35.8,43.7
     .accept 963 >> Accept For Love Eternal
 step
+#xprate <1.7
     .isOnQuest 4681
     .goto Darkshore,31.9,46.4
 	>> Loot the sea turtle bones underwater
     * You can run along the docks to get there faster than just swimming!
     .complete 4681,1 --Collect Sea Turtle Remains (x1)
 step
+#xprate <1.7
     .isOnQuest 4681
     >> Head back to Gwennyth
     .goto Darkshore,36.6,45.6
@@ -130,16 +134,17 @@ step << Druid
     .use 15208 >>Use the Cenarion Moondust inside the cave, defeat Lunaclaw and speak with his spirit after
     .complete 6001,1 --Defeat Lunaclaw (x1)
 step << !Dwarf/!Hunter
+#xprate <1.7
     .goto Darkshore,47.2,48.6
     >> Careful, the Moonkin in the area enrage and call for help, very deadly!
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
-step << wotlk !Dwarf/!Hunter
-    .deathskip >> Die to the Owl Beasts nearby and spawn in Auberdine
 step << !Dwarf/!Hunter
+#xprate <1.7
     .goto Darkshore,37.7,43.4
     .turnin 4811 >> Turn in The Red Crystal
     .accept 4812 >> Accept As Water Cascades
 step << !Dwarf/!Hunter
+#xprate <1.7
     .goto Darkshore,37.8,44.0
 	>>Fill the water tube at the moonwell
     .complete 4812,1 --Collect Moonwell Water Tube (x1)
@@ -160,6 +165,7 @@ step
     .turnin 954 >> Turn in Bashal'Aran
     .accept 955 >> Accept Bashal'Aran
 step << !Dwarf !Warlock/!Hunter !Warlock
+#xprate <1.7
     .goto Darkshore,47.3,48.6
     >> Grind Grell as you head southeast to turn in the quest. We're coming back after.
     .turnin 4812 >> Turn in As Water Cascades
@@ -187,6 +193,7 @@ step
     .goto Darkshore,44.2,36.3
     .accept 957 >> Accept Bashal'Aran
 step << Warlock
+#xprate <1.7
     .goto Darkshore,47.3,48.6
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
@@ -200,11 +207,11 @@ step
 	>>Kill Rabid Thistle Bears as you quest
     .complete 2138,1 --Kill Rabid Thistle Bear (x20)
 step << !Warlock/!Rogue
-    #xprate >1.499
+    #xprate 1.49-1.69
     .goto Darkshore,41.94,31.47
     .accept 4723 >> Accept Beached Sea Creature
 step << !Warlock/!Rogue
-    #xprate >1.499
+    #xprate 1.49-1.69
     .goto Darkshore,44.18,20.60
     .accept 4725 >> Accept Beached Sea Turtle
 step << !Warlock/!Rogue
@@ -323,10 +330,10 @@ step << !Warlock/!Rogue
     .turnin -985 >> Turn in How Big a Threat?
     .goto Darkshore,39.3,43.5,-1
 step << !Warlock/!Rogue
-    #xprate >1.499
+    #xprate 1.49-1.69
     .goto Darkshore,36.6,45.5
-    .turnin 4725 >> Turn in Beached Sea Turtle
-    .turnin 4727 >> Turn in Beached Sea Turtle
+    .turnin -4725 >> Turn in Beached Sea Turtle
+    .turnin -4727 >> Turn in Beached Sea Turtle
     .turnin -4723 >> Turn in Beached Sea Creature
 step
 #xprate <1.5
@@ -339,9 +346,8 @@ step << Dwarf Hunter
     .isQuestComplete 4811
 step
 #xprate <1.5
-    .isOnQuest 4722
     .goto Darkshore,36.6,45.6
-    .turnin 4722 >> Turn in Beached Sea Turtle
+    .turnin -4722 >> Turn in Beached Sea Turtle
     .turnin -4723 >> Turn in Beached Sea Creature
 step
 #xprate <1.5
@@ -360,12 +366,12 @@ step << Warlock wotlk/Rogue wotlk
     .xp 14 >> Grind to level 14
 step << Warlock wotlk/wotlk Gnome Rogue/wotlk Human Rogue/wotlk Dwarf Rogue
     .hs >> Hearth to Stormwind
-step << wotlk Night Elf Rogue
+step << wotlk NightElf Rogue
     .hs >> Hearth to Darnassus
-step << wotlk Night Elf Rogue
+step << wotlk NightElf Rogue
     .goto Teldrassil,56.4,60.1
 	.trainer >> Go and train your spells
-step << wotlk Night Elf Rogue
+step << wotlk NightElf Rogue
     .zone Darkshore >> Head to the Harbor and take the two boars to get to Azuremyst Isle.
     .zoneskip Azuremyst Isle
 step << Warlock wotlk
@@ -1889,7 +1895,7 @@ step
     .isQuestComplete 1025
 step
     .goto Ashenvale,34.7,48.9
-    .turnin 1008 >> Turn in The Zoram Strand    
+    .turnin 1008 >> Turn in The Zoram Strand
 step
     .goto Ashenvale,34.40,48.00
     .fp Astranaar>> Get the Astranaar Flight Path

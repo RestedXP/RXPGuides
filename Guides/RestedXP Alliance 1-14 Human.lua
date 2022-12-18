@@ -3,11 +3,11 @@ RXPGuides.RegisterGuide([[
 #wotlk
 << Alliance
 #name 1-11 Elwynn Forest
+#displayname 1-13 Elwynn Forest << Warlock
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
-#next 12-14 Loch Modan;11-14 Darkshore << Warlock
-#next 11-12 Loch Modan;11-14 Darkshore << !Warlock
+#next 12-14 Loch Modan;11-14 Darkshore;14-20 Bloodmyst
 step << !Human
     #sticky
     #completewith next
