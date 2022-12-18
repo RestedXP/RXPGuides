@@ -223,6 +223,12 @@ step
 step
     .xp 5 >> Grind to 5
 step
+#xprate >1.69
+    >> Speak with Milly Osworth
+    .goto Elwynn Forest,50.7,39.2
+    .turnin 3903 >> Turn in Milly Osworth
+step
+#xprate <1.7
     >> Speak with Milly Osworth
     .goto Elwynn Forest,50.7,39.2
     .turnin 3903 >> Turn in Milly Osworth
@@ -232,6 +238,7 @@ step << Rogue
     >>You don't need to train
     .turnin 3102 >> Turn in Encrypted Letter
 step
+#xprate <1.7
     >>Loot the Buckets of Grapes in the field
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly's Harvest (x8)
@@ -243,6 +250,7 @@ step
     .xp 5+1175 >> Grind on your way back to 1175+/2800xp
     .goto Elwynn Forest,50.7,39.2
 step
+#xprate <1.7
     >> Return to Milly
     .goto Elwynn Forest,50.7,39.2
     .turnin 3904 >> Turn in Milly's Harvest
@@ -265,6 +273,7 @@ step
     .goto Elwynn Forest,49.6,41.6,15,0
     .goto Elwynn Forest,48.9,41.3,10 >>Go upstairs
 step
+#xprate <1.7
     .goto Elwynn Forest,49.5,41.6
     .turnin 3905 >>Turn in Grape Manifest
 step << Priest
@@ -627,7 +636,7 @@ step
     .complete 52,1 --Kill Prowler (x8)
 step
     #sticky
-    #completewith Bears
+    #completewith Prowlers
     >>Kill Bears as you do other quests. Kill any you see
     .complete 52,2 --Kill Young Forest Bear (x5)
 step
@@ -635,6 +644,7 @@ step
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
+#xprate <1.7
     .goto Elwynn Forest,81.4,66.1
     >> Run to Eastvale Logging Camp and pick up this quest as soon as possible!
     .accept 5545 >> Accept A Bundle of Trouble
@@ -643,7 +653,8 @@ step << Paladin tbc
     #completewith Bundles
     +Complete all quests before heading to the murlocs, we are going to do a deathskip.
 step
-        #sticky
+#xprate <1.7
+    #sticky
     #completewith next
     .goto Elwynn Forest,76.8,62.4,100,0
     .goto Elwynn Forest,83.7,59.4,100,0
@@ -655,6 +666,7 @@ step
 step
     #label Bundles
     .goto Elwynn Forest,79.8,55.5,90 >> Go toward the guard's corpse
+    .isOnQuest 45
 step << Priest
     .goto Elwynn Forest,79.8,55.5
     >> Kill mobs surrounding the corpse. Precast Renew and Shield, get full mana, then pull the 2 mobs in front of the huts, move away, then nuke one. Run away when you kill one, then kill the other. Loot the carcass on the ground
@@ -685,7 +697,7 @@ step << Paladin wotlk
 step << Paladin tbc
     #softcore
     #sticky
-    #completewith Bundles2
+    #completewith Prowlers
     .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer, or start running back if someone cleared the corpse prior
 step
     .goto Elwynn Forest,76.8,62.4,90,0
@@ -698,13 +710,13 @@ step
     >>Start running back, finish off the bundles
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
-    #label Bundles2
     .goto Elwynn Forest,81.4,66.1
     .turnin 5545 >> Turn in A Bundle of Trouble
 step
     #label Prowlers
     .xp 9 >> Grind to 9
 step
+#xprate <1.7
     #label Bears
     .goto Elwynn Forest,79.5,68.8
     .accept 83 >> Accept Red Linen Goods
@@ -727,11 +739,13 @@ step
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
 step
+#xprate <1.7
     #completewith Deed
     .use 1972 >>Keep an eye out for Westfall Deed from the Defias (lucky drop)
     .collect 1972,1,184,1 --Collect Westfall Deed (x1)
     .accept 184 >> Accept Furlbrow's Deed
 step
+#xprate <1.7
     #completewith Grindxp
     .goto Elwynn Forest,69.53,79.47
     >>Start circling the farm, killing Defias and looting them for Bandanas.
@@ -758,6 +772,7 @@ step << Warlock
     #label Grindxp
     .xp 9+3400 >> Grind to 3400+/6500xp
 step
+#xprate <1.7
     .goto Elwynn Forest,69.53,79.47
     >>Start circling the farm, killing Defias and looting them for Bandanas.
     >> Try to get low on health for the last one, we're deathskipping afterwards << tbc
@@ -766,6 +781,7 @@ step << tbc
     #completewith next
     .deathskip >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
 step
+#xprate <1.7
     #label Deed
     >> Talk to Sara Timberlain
     .goto Elwynn Forest,79.5,68.9
@@ -1017,9 +1033,9 @@ step
     >>Talk to Morgan Pestle in the building. Use the rockets for AoE damage or to splitpull packs
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> Click here for a guide on splitpulling (long but informative)
     .turnin 61,1 >> Turn in Shipment to Stormwind
-step << wotlk 
+step << wotlk
     .goto StormwindClassic,52.61,65.71
-    .home >> Set your Hearthstone to Stormwind City    
+    .home >> Set your Hearthstone to Stormwind City
 step << Warrior tbc
     .goto StormwindClassic,57.1,57.7
     .trainer >> Train 2h Swords
