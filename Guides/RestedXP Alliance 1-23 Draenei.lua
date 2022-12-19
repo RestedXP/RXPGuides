@@ -2053,9 +2053,14 @@ step
     .isOnQuest 729
     .goto Darkshore,35.7,83.7
     .turnin 729 >> Turn in The Absent Minded Prospector
+step
+#xprate <1.7
+    .goto Darkshore,35.7,83.7
     >>Start the escort quest
     .accept 731,1 >> Accept The Absent Minded Prospector
+    .isQuestTurnedIn 729
 step
+#xprate <1.7
     .isOnQuest 729
 	>>Remtravel will not aggro the mobs that don't hit him, or that you aggro first. Be careful as he has low health/armor
     .complete 731,1 --Escort Prospector Remtravel

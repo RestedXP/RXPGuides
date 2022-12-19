@@ -977,7 +977,7 @@ step <<  Hunter
     .goto Darkshore,35.72,83.69
      >> Start the escort quest
      >>This quest is VERY hard, you can skip this step and come back later at level 19
-    .accept 731 >> Accept The Absent Minded Prospector
+    .accept 731,1 >> Accept The Absent Minded Prospector
     .link https://www.twitch.tv/videos/1182180918 >> Click here for video reference
 step <<  Hunter
     #requires prospector
@@ -1885,7 +1885,7 @@ step <<  Hunter
     .goto Darkshore,35.72,83.69
      >> Start the escort quest
     >>This quest is hard, proceed with caution
-    .accept 731 >> Accept The Absent Minded Prospector
+    .accept 731,1 >> Accept The Absent Minded Prospector
     .link https://www.twitch.tv/videos/1182180918 >> Click here for video reference
 step <<  Hunter
     #requires prospector
@@ -2825,7 +2825,7 @@ step
 step
     .goto Darkshore,35.72,83.69
      >> Start the escort quest
-    .accept 731 >> Accept The Absent Minded Prospector
+    .accept 731,1 >> Accept The Absent Minded Prospector
 step
      >> Escort Prospector Remtravel. Make sure he aggros the mobs first or he won't help you kill them
     .complete 731,1

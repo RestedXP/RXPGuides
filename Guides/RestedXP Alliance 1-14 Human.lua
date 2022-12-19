@@ -1023,7 +1023,7 @@ step << Mage wotlk
 step
     .goto Westfall,56.6,52.6
     .fly Stormwind >> Fly to Stormwind
-step << Rogue/Warrior
+step << Rogue/Warrior tbc
     >>Go inside the building
     .goto StormwindClassic,57.32,62.08,20,0
     .goto StormwindClassic,58.37,61.69

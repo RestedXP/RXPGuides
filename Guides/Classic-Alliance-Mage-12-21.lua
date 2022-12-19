@@ -466,7 +466,7 @@ step
     .goto Darkshore,35.72,83.69
      >>This quest is VERY hard. Do it with another player if you can.
      >> Start the escort quest
-    .accept 731 >> Accept The Absent Minded Prospector
+    .accept 731,1 >> Accept The Absent Minded Prospector
 step
      >>Escort Prospector Remtravel
      >>Let Remtravel aggro everything (as mobs need to hit him for them to aggro him), then blast the mob with fireballs

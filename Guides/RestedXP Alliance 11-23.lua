@@ -410,8 +410,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor !Draenei
-#next RestedXP Alliance 20-32\20-21 Darkshore << !Warlock
-#next RestedXP Alliance 20-32\20-23 Darkshore/Ashenvale << Warlock
+#next RestedXP Alliance 20-32\20-23 Darkshore/Ashenvale;RestedXP Alliance 20-32\20-21 Darkshore
 step << Druid
     .goto Azuremyst Isle,24.45,54.56
     .trainer >> Train your class spells
@@ -899,8 +898,10 @@ step
     >> Talk to the book in the ruins
     .turnin 9550 >> Turn in A Map to Where?
     .accept 9557 >> Accept Deciphering the Book
-step
+step << wotlk
+    #completewith next
     .hs >> Hearth or run back into town and talk to Anchorite Paetheus. Don't wait for his roleplay sequence.
+step
     .goto Bloodmyst Isle,54.7,54.1
     .turnin 9557 >> Turn in Deciphering the Book
 step
@@ -1289,7 +1290,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Alliance !Warlock
+<< Alliance !Warlock/Alliance wotlk
 #name 20-21 Darkshore
 #version 1
 #group RestedXP Alliance 20-32
@@ -1305,6 +1306,23 @@ step << NightElf wotlk
     .goto Teldrassil,58.4,98.02
     .fly Auberdine >> Fly to Auberdine
     .zoneskip Darnassus,1
+step << wotlk Warlock
+    #completewith next
+    .goto Darkshore,32.4,43.8
+    .zone Stormwind City >>Take the boat to Stormwind
+step << Warlock wotlk
+    .goto StormwindNew,36.35,67.49
+    .accept 3765>>Accept The Corruption Abroad
+step << Warlock wotlk
+    .goto StormwindClassic,25.3,78.7
+	.trainer >> Train your class spells
+step << Warlock wotlk
+    .goto StormwindClassic,25.2,78.5
+    .accept 1716 >> Accept Devourer of Souls
+step << wotlk Warlock
+    .goto StormwindNew,21.8,56.2,20,0
+    .goto StormwindNew,21.8,56.2,0
+    .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 step
 #xprate <1.5
     .maxlevel 21
@@ -1342,6 +1360,10 @@ step
     .maxlevel 21
     .goto Darkshore,38.1,41.2
     .accept 982 >> Accept Deep Ocean, Vast Sea
+step
+    #completewith next
+    .goto Darkshore,38.37,43.05
+    .turnin -3765>>Turn in The Corruption Abroad
 step
     >> Talk to Gershala in the shrine
     .goto Darkshore,38.37,43.05
@@ -1615,6 +1637,7 @@ step
     .turnin 948 >> Turn in Onu
     .accept 944 >> Accept The Master's Glaive
 step
+#xprate <1.2
     .isOnQuest 4740
    >>Clear the camp, but be careful as going next to the campfire will start an event spawning 3 waves of mobs. Be sure to run away from the campfire so you don't keep aggroing them and can eat/drink after each wave. Murkdeep nets so be careful
 	.goto Darkshore,36.6,76.6
@@ -1624,11 +1647,13 @@ step
     .goto Darkshore,35.7,83.7
     .turnin 729 >> Turn in The Absent Minded Prospector
 step
+#xprate <1.7
     .isQuestTurnedIn 729
     .goto Darkshore,35.7,83.7
     >>Start the escort quest
     .accept 731,1 >> Accept The Absent Minded Prospector
 step
+#xprate <1.7
     .isOnQuest 731
     .complete 731,1 --Escort Prospector Remtravel
 step
@@ -1650,6 +1675,7 @@ step
 	>>Talk to the dryad at the back of the camp. If she's not here someone else may be escorting here, skip this step if she's not around.
     .accept 945 >> Accept Therylune's Escape
 step
+#xprate <1.2
     #sticky
     #label escort
     .complete 945,1 --Escort Therylune
@@ -1661,15 +1687,18 @@ step
     >>Click on the tome on top of the pedestal
     .turnin 949 >> Turn in The Twilight Camp
 step
+#xprate <1.5
     #requires escort
     .isOnQuest 993
     .goto Darkshore,45.0,85.3
     .turnin 993 >> Turn in A Lost Master
 step
+#xprate <1.5
     .goto Darkshore,45.0,85.3
     .accept 994,1 >> Accept Escape Through Force
     .isQuestTurnedIn 986
 step
+#xprate <1.5
 	#label end
     >> Lead Volcor to the road
     .complete 994,1 --Escort Volcor
@@ -1679,7 +1708,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Alliance !Warlock
+<< Alliance !Warlock/Alliance wotlk
 #name 21-23 Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
@@ -1734,8 +1763,11 @@ step
     .goto Ashenvale,36.6,49.6
     .accept 1054 >> Accept Culling the Threat
     .turnin 10752 >> Turn in Onward to Ashenvale
-    .accept 991 >> Accept Raene's Cleansing
 step
+#xprate <1.7
+    .goto Ashenvale,36.6,49.6
+    .accept 991 >> Accept Raene's Cleansing
+step << wotlk
     .goto Ashenvale,37.0,49.3
     .home >> Set your Hearthstone to Astranaar
 step
@@ -1786,11 +1818,13 @@ step
     .isOnQuest 973
     .goto Ashenvale,26.2,38.7
     .turnin 973 >> Turn in The Tower of Althalaxx
-step <<  NightElf Hunter wotlk/NightElf Rogue wotlk
+step
+#xprate <1.7
     .goto Ashenvale,20.3,42.4
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
-step << Hunter wotlk/NightElf Rogue wotlk
+step
+#xprate <1.7
     .goto Ashenvale,20.3,42.4
 	>> Kill murlocs for the gem, the drop rate can be very low.
     .complete 1023,1 --Collect Glowing Gem (x1)
@@ -1836,22 +1870,11 @@ step << Druid
     >>Teleport to Moonglade
     .goto Moonglade,52.4,40.6
     .trainer >> Train your spells
-step << wotlk Hunter/wotlk NightElf Rogue
+step
     .goto Ashenvale,36.6,49.6
     .hs >> Hearth to Astranaar
-step << !Hunter !NightElf !Rogue tbc
-    .goto Ashenvale,20.3,42.4
-    .turnin 991 >> Turn in Raene's Cleansing
-    .accept 1023 >> Accept Raene's Cleansing
-step << !Hunter !NightElf !Rogue tbc
-    .goto Ashenvale,20.3,42.4
-	>> Kill murlocs for the gem, the drop rate is very low.
-    .complete 1023,1 --Collect Glowing Gem (x1)
-step << !Hunter !NightElf !Rogue tbc
-    #sticky
-    #completewith next
-    .deathskip >>Head to the east side of the lake, die on purpose and respawn at Astranaar
 step
+#xprate <1.7
     .isOnQuest 1023
     .goto Ashenvale,36.6,49.6
     .turnin 1023 >> Turn in Raene's Cleansing
@@ -1894,19 +1917,16 @@ step
     .turnin 1025 >> Turn in An Aggressive Defense
     .isQuestComplete 1025
 step
-    .goto Ashenvale,34.7,48.9
-    .turnin 1008 >> Turn in The Zoram Strand
-step
     .goto Ashenvale,34.40,48.00
-    .fp Astranaar>> Get the Astranaar Flight Path
     .fly Auberdine>> Fly to Auberdine
 step
-    .isOnQuest 4740
+    .isQuestComplete 4740
     .goto Darkshore,37.7,43.4
     .turnin 4740 >> Turn in WANTED: Murkdeep!
 step
     .goto Darkshore,38.36,43.07
     .turnin 1275 >> Turn in Researching the Corruption
+    .isQuestComplete 1275
 step
     .isOnQuest 994
     .goto Darkshore,39.3,43.4
@@ -1937,6 +1957,7 @@ step << NightElf wotlk
 step << Priest
     .goto Teldrassil,37.89,82.73
     .trainer >> Train your class spells
+    .isOnQuest 942
 step << Warrior tbc/Mage/Priest/Warlock
     .isOnQuest 942
 	.goto Teldrassil,29.2,56.7
@@ -2011,13 +2032,12 @@ step << wotlk
 
 RXPGuides.RegisterGuide([[
 #tbc
-#wotlk
 << Alliance Warlock
 #name 20-23 Darkshore/Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
 #next 23-24 Wetlands;24-27 Redridge/Duskwood
-step <<tbc
+step << tbc
     .goto Darkshore,37.0,44.1
     .home >> Set your Hearthstone to Auberdine
 step << wotlk
@@ -2041,6 +2061,9 @@ step << Warlock
 step << Warlock
     .goto StormwindClassic,25.2,78.5
     .accept 1716 >> Accept Devourer of Souls
+step << wotlk
+    .goto StormwindClassic,52.6,65.6
+    .home >> Set your Hearthstone to Stormwind City
 step << Warlock tbc
     .goto StormwindNew,36.35,67.49
     .accept 3765>>Accept The Corruption Abroad
@@ -2055,6 +2078,7 @@ step << wotlk
     .goto StormwindNew,21.8,56.2,0
     .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 step
+#xprate <1.5
     .goto Darkshore,37.2,44.2
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
@@ -2072,24 +2096,36 @@ step
     .turnin 9633 >> Turn in The Way to Auberdine
     .accept 10752 >> Accept Onward to Ashenvale
 step
+#xprate <1.5
     .goto Darkshore,36.6,76.6
     >>Clear the camp, but be careful as going next to the campfire will start an event spawning 3 waves of mobs. Be sure to run away from the campfire so you don't keep aggroing them and can eat/drink after each wave. Murkdeep nets so be careful
     .complete 4740,1 --Kill Murkdeep (x1)
 step
     .goto Darkshore,35.7,83.7
     .turnin 729 >> Turn in The Absent Minded Prospector
+    .isOnQuest 729
 step
+#xprate <1.7
     .goto Darkshore,35.7,83.7
-    .accept 731 >> Accept The Absent Minded Prospector
+    .accept 731,1 >> Accept The Absent Minded Prospector
+    .isQuestTurnedIn 729
 step
+#xprate <1.7
     >>Be careful as golems can respawn on top of you, and be sure to prioritize the geomancer at the final wave at the end
-.complete 731,1 --Escort Prospector Remtravel
+    .complete 731,1 --Escort Prospector Remtravel
+    .isOnQuest 731
 step
+#xprate <1.7
     .goto Darkshore,38.7,87.3
 	>> If she's not there just grind mobs in the area in the meantime.
     .accept 945 >> Accept Therylune's Escape
 step
+#xprate <1.7
     .complete 945,1 --Escort Therylune
+    .isOnQuest 945
+step
+    .goto Ashenvale,28.5,16.5
+    .zone Ashenvale >> Head south to Ashenvale
 step
     .goto Ashenvale,26.4,38.6
     >>Head southeast to Ashenvale
@@ -2113,9 +2149,6 @@ step
     .accept 1054 >> Accept Culling the Threat
     .turnin 10752 >> Turn in Onward to Ashenvale
     .accept 991 >> Accept Raene's Cleansing
---step
---    .goto Ashenvale,37.0,49.3
---    .home >> Set your Hearthstone to Astranaar
 step
     #timer Orendil's Cure RP
     .goto Ashenvale,37.3,51.8
@@ -2163,12 +2196,16 @@ step
     .goto Ashenvale,14.8,31.3
     .turnin 1007 >> Turn in The Ancient Statuette
     .timer 25,The Ancient Statuette RP
+step
+    .goto Ashenvale,14.8,31.3
     .accept 1009 >> Accept Ruuzel
+    .maxlevel 23
 step
 	>>Head to the island north and kill Ruuzel
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
     .goto Ashenvale,7.0,13.4
     .complete 1009,1 --Collect Ring of Zoram (x1)
+    .isOnQuest 1009
 step
     .goto 1414,43.97,35.31,20,0
     .goto 1414,43.80,35.18,20,0
@@ -2182,6 +2219,7 @@ step
     #requires nagas
     .goto Ashenvale,14.8,31.3
     .turnin 1009 >> Turn in Ruuzel
+    .isQuestComplete 1009
 step << wotlk
     .hs >> Hearth to Astranaar
 step << wotlk
@@ -2305,7 +2343,7 @@ step
     .deathskip >>Die and respawn at the Spirit Healer in Astranaar
 step << wotlk !Paladin !Warlock
     #completewith next
-    *If you have money on this server, mail yourself 5g, we'll be buying our mounts soon
+    +If you have money on this server, mail yourself 5g, we'll be buying our mounts soon
 step
     .goto Ashenvale,36.6,49.6
     .turnin 1054 >> Turn in Culling the Threat
@@ -2318,8 +2356,10 @@ step
     .goto Ashenvale,34.40,48.00
     .fly Auberdine>> Fly to Auberdine
 step
+#xprate <1.5
     .goto Darkshore,37.7,43.4
     .turnin 4740 >> Turn in WANTED: Murkdeep!
+    .isQuestComplete 4740
 step
     .goto Darkshore,38.36,43.07
     .turnin 1275 >> Turn in Researching the Corruption
@@ -2328,6 +2368,7 @@ step
     .goto Darkshore,37.5,41.9
     .turnin 731 >> Turn in The Absent Minded Prospector
     .accept 741 >> Accept The Absent Minded Prospector
+    .isOnQuest 731
 step
     #completewith next
     .goto Darkshore,33.2,40.2,25,0
@@ -2337,81 +2378,22 @@ step
     #completewith next
     .goto Teldrassil,55.9,89.8
     .zone Darnassus >> Take the purple portal to Darnassus
-step << NightElf wotlk
-	.goto Darnassus,38.7,15.8
-    .money <4.6
-	.skill riding,75 >> Train riding and buy your mount
-step << Warrior/Rogue
-    .goto Darnassus,64.6,53.0
-    .collect 29009,1 >> Purchase a Heavy Throwing Dagger from Ellandrieth
 step
     .goto Darnassus,31.2,84.5
     .turnin 741 >> Turn in The Absent Minded Prospector
     .accept 942 >> Accept The Absent Minded Prospector
+    .isQuestTurnedIn 731
 step
     .goto Darnassus,31.0,41.5,30,0
     .goto Teldrassil,58.4,94.0
     >> Exit Darnassus through the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
     .fly Auberdine>> Fly to Auberdine
-step << Draenei !Paladin wotlk
-    .goto Darkshore,30.8,41.0,40,0
-	.goto The Exodar,81.18,52.56
-    .money <4.60
-    >> Take the western most boat to Azuremyst Isle
-    .skill riding,75 >>Head to Exodar, buy and train your mount
 step << tbc
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
     .zone Wetlands >>Take the boat to Wetlands
-step << Draenei tbc/NightElf tbc
-#xprate >1.499
-    .goto Wetlands,9.5,59.7
-    .fp Menethil >> Get the Menethil Harbor flight path
-step << Draenei tbc/NightElf tbc
-#xprate >1.499
-    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
-    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
-    .zoneskip Elwynn Forest
-
-
-step << Draenei tbc/NightElf tbc
-#xprate >1.499
-   #completewith next
-   .goto Wetlands,63.9,78.6
-   .zone Loch Modan >> Logout on top of the mushrooms at the back of the cave. When you log back in, this will teleport you to Thelsamar.
-   >>Make sure to logout as close as possible to the back of the cave. This trick won't work if you log out next to the edge of the mushroom closer to the mouth of the cave.
-   .link https://www.youtube.com/watch?v=21CuGto26Mk >> CLICK HERE for a reference
-   .zoneskip Elwynn Forest
-   .zoneskip Stormwind City
-step << NightElf tbc/Draenei tbc
-#xprate >1.499
-    .goto Loch Modan,33.9,50.9
-    .fp Thelsamar >> Get the Thelsamar flight path
-    .zoneskip Elwynn Forest
-    .zoneskip Stormwind City
-step << NightElf tbc/Draenei tbc
-#xprate >1.499
-    #completewith next
-    .goto Loch Modan,21.30,68.60,40,0
-    .zone Dun Morogh>> Run to Dun Morogh
-step << NightElf tbc/Draenei tbc
-#xprate >1.499
-	>>Go inside the South-eastern Trogg cave. Perform a logout skip
-    .goto Dun Morogh,70.63,56.70,60,0
-    .goto Dun Morogh,70.60,54.86
-	.link https://www.youtube.com/watch?v=yQBW3KyguCM >> CLICK HERE
-	.zone Ironforge >> Logout Skip or travel to Ironforge
-step << NightElf tbc/Draenei tbc
-#xprate >1.499
-    .goto Ironforge,76.03,50.98,30,0
-    .zone Stormwind City >> Take the tram to Stormwind
 step << wotlk
-    .zoneskip Darnassus,1
-    .goto Teldrassil,58.4,94.0
-    >>Exit Darnassus through the purple portal
-step << wotlk
-    .goto Darkshore,32.4,43.8,30,0
-    .goto Darkshore,32.4,43.8,0
-    .zone Stormwind City >>Take the boat to Stormwind
+    .hs >> Hearth to Stormwind
+
 ]])
