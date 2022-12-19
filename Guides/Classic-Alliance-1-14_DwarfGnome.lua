@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Horde" then return end
+
 RXPGuides.RegisterGuide([[
 #classic
 #era/som
@@ -819,7 +822,7 @@ step
     .goto Dun Morogh,30.0,51.8,100,0
 step
     #softcore
-    .goto Dun Morogh,30.3,37.5,60 >> Run to here. 
+    .goto Dun Morogh,30.3,37.5,60 >> Run to here.
 step
     #softcore
     .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
@@ -1088,7 +1091,7 @@ step << Warrior
     >>Go into the building and talk to |cFF00FF25Buliwyf Stonehand|r
     .target Buliwyf Stonehand
     .goto Ironforge,61.2,89.5
-    .trainer >>Train 2h Maces from 
+    .trainer >>Train 2h Maces from
 step << Warrior
     #sticky
     #completewith next
@@ -1106,7 +1109,7 @@ step
     .goto Dun Morogh,62.2,49.4,10 >>Run up this part of the mountain
 step
     >>Kill |cFF00BCD4Vagash|r. Loot him for his |cFF00BCD4Fang|r. |cFFFCDC00Be careful as this quest is HARD|r
-    >>|cFFFCDC00Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him to get credit|r 
+    >>|cFFFCDC00Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him to get credit|r
     .goto Dun Morogh,62.6,46.1
     .complete 314,1 --Collect Fang of Vagash (1)
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> CLICK HERE for a guide on how to solo Vagash
@@ -1137,7 +1140,7 @@ step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
-    >>Kill |cFFFF5722Rockjaw Troggs|r inside the cave. 
+    >>Kill |cFFFF5722Rockjaw Troggs|r inside the cave.
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
@@ -1312,7 +1315,7 @@ step
     .turnin 1338 >> Turn in Stormpike's Order
 step << Priest
     #completewith next
-    >>Go into the Cathedral and talk to |cFF00FF25High Priestess Laurena|r. 
+    >>Go into the Cathedral and talk to |cFF00FF25High Priestess Laurena|r.
     .target High Priestess Laurena
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
@@ -1680,7 +1683,7 @@ step
     .fly Stormwind >> Fly to Stormwind
 step
     .goto Elwynn Forest,26.21,39.66
-    >>Talk to |cFF00FF25Morgan Pestle|r. We select the rockets for a reward, these have very good damage, and can be used for splitpulling. 
+    >>Talk to |cFF00FF25Morgan Pestle|r. We select the rockets for a reward, these have very good damage, and can be used for splitpulling.
     .target Morgan Pestle
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> Click here for a guide on splitpulling (long but informative)
     .turnin 61,3 >> Turn in Shipment to Stormwind

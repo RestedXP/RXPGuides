@@ -44,7 +44,7 @@ step << Priest/Mage
     #label vendorCaster
     .goto Tirisfal Glades,32.3,65.4
     .vendor >> Vendor Trash and then purchase 10 Refreshing Spring Water << tbc
-    .vendor >> Vendor Trash << wotlk	
+    .vendor >> Vendor Trash << wotlk
 	.collect 159,10 << tbc --Collect Refreshing Spring Water (x10)
 step << Warlock tbc
     #label vendorLock
@@ -136,7 +136,7 @@ step << Warlock wotlk
     .goto Tirisfal Glades,32.3,65.4
 	.money >0.0095
 	.vendor >>Grind mobs until you get a total of 95 copper. Vendor anything you can if it helps you get 95 copper.
---95c for imp	
+--95c for imp
 step << Warlock wotlk
 	#label impcheck
 	.goto Tirisfal Glades,30.9,66.3
@@ -176,10 +176,10 @@ step << Priest
     .vendor >>Vendor trash & buy water down to no less than 1s 90c
 step
     .turnin 3901 >> Turn in Rattling the Rattlecages
-    .goto Tirisfal Glades,30.9,66.2	
-    .turnin 376 >> Turn in The Damned	
-    .accept 6395 >> Accept Marla's Last Wish	
-    .goto Tirisfal Glades,30.9,66.1	
+    .goto Tirisfal Glades,30.9,66.2
+    .turnin 376 >> Turn in The Damned
+    .accept 6395 >> Accept Marla's Last Wish
+    .goto Tirisfal Glades,30.9,66.1
 step << Priest
     #completewith next
     .goto Tirisfal Glades,31.1,66.0
@@ -189,7 +189,7 @@ step << Warlock
     .goto Tirisfal Glades,30.9,66.3
     .trainer >> Train your class spells
 step << Mage
-    #completewith next    
+    #completewith next
     .goto Tirisfal Glades,30.9,66.1
     .trainer >> Train your class spells
 step
@@ -205,8 +205,8 @@ step << Warrior
     .goto Tirisfal Glades,32.7,65.6
     .turnin 3095 >> Turn in Simple Scroll
 step << Warrior
-    .goto Tirisfal Glades,32.7,65.6    
-    #completewith next    
+    .goto Tirisfal Glades,32.7,65.6
+    #completewith next
     .trainer >> Train your class spells
 step
     .goto Tirisfal Glades,31.6,65.6
@@ -299,7 +299,7 @@ step
     .accept 8 >> Accept A Rogue's Deal
 step
 	.goto Tirisfal Glades,42.59,51.30,50,0
-	.goto Tirisfal Glades,42.59,51.30	
+	.goto Tirisfal Glades,42.59,51.30
     .deathskip >> Die and respawn at the Spirit Healer in Brill
 step
     .goto Tirisfal Glades,60.6,51.8

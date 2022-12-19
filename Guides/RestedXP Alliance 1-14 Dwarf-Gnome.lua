@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Horde" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -16,7 +19,7 @@ step
     >>|cFFFCDC00Delete your Hearthstone|r
     >> Talk to |cFF00FF25Sten Stoutarm|r
     .goto Dun Morogh,29.93,71.20 << tbc
-    .goto Dun Morogh,29.87,71.87 << wotlk	
+    .goto Dun Morogh,29.87,71.87 << wotlk
     .accept 179 >> Accept Dwarven Outfitters
     .target Sten Stoutarm
 step << Warrior

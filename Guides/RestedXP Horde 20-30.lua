@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Alliance" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -98,7 +101,7 @@ step
     .accept 899 >>Accept Consumed by Hatred
     .accept 4921 >>Accept Lost in Battle
 step
-    #completewith next    
+    #completewith next
     .goto The Barrens,52.0,29.9
 	.home >> Set your Hearthstone to The Crossroads
 step << Warlock tbc
@@ -369,7 +372,7 @@ step
     #completewith weapons
 	.goto The Barrens,50.0,53.1,75,0
     .goto The Barrens,46.0,49.2,75,0
-    .goto The Barrens,45.3,52.5	
+    .goto The Barrens,45.3,52.5
     .unitscan Lakota'mani
     >>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
     .collect 5099,1,883 --Collect Hoof of Lakota'Mani
@@ -436,7 +439,7 @@ step
     .use 5102
     .accept 884 >>Accept Owatanka
     .unitscan Owatanka
-step    
+step
     .goto The Barrens,44.6,59.2
     .turnin 878 >> Turn in Tribes at War
     .accept 5052 >>Accept Blood Shards of Agamaggan
@@ -663,14 +666,14 @@ step
 step
     .isQuestTurnedIn 6523
     .goto The Barrens,35.3,27.8
-    .accept 6401 >> Accept Kaya's Alive 
+    .accept 6401 >> Accept Kaya's Alive
 step
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
     .isOnQuest 6461
 step
     .goto Stonetalon Mountains,71.3,95.0
     .turnin 6461 >> Turn in Blood Feeders
-    .isOnQuest 6461 
+    .isOnQuest 6461
 step
     #xprate >1.499
     .isOnQuest 1095
@@ -871,7 +874,7 @@ step
 step
     #completewith next
     .goto Stonetalon Mountains,45.1,59.8
-    .fly Thunder Bluff >> Fly to Thunder Bluff 
+    .fly Thunder Bluff >> Fly to Thunder Bluff
     .zoneskip Stonetalon Mountains,1
 step
     .isOnQuest 1063
@@ -931,7 +934,7 @@ step << Druid tbc
     .goto Orgrimmar,12.4,66.1,40 >>Enter Orgrimmar through the west entrance
 step << Druid wotlk/!Druid
     #completewith next
-    .goto The Barrens,63.1,37.1,-1    
+    .goto The Barrens,63.1,37.1,-1
     .goto Thunder Bluff,47.0,49.9,-1
     .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
@@ -1179,7 +1182,7 @@ step
 	#completewith next
 	>>Kill Bears and Spiders en route to the syndicates
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
-    .complete 496,2 --Collect Creeper Ichor (x1) 
+    .complete 496,2 --Collect Creeper Ichor (x1)
 step
 	#era
 	    .goto Hillsbrad Foothills,78.46,43.06,200 >> Run to Dornholde Keep
@@ -1247,7 +1250,7 @@ step
     .goto Hillsbrad Foothills,57.9,34.5,100,0
     .goto Hillsbrad Foothills,57.2,22.1,100,0
 	.goto Hillsbrad Foothills,63.5,33.0
-    .complete 496,2 --Collect Creeper Ichor (x1) 
+    .complete 496,2 --Collect Creeper Ichor (x1)
 step
 	#completewith next
     >>Kill Bears and Mountain Lions en route to the Fields. Loot them for Tongues and Blood
@@ -1314,7 +1317,7 @@ step << Hunter
 	.vendor >> Buy arrows until your quiver is full
 step
     .goto Hillsbrad Foothills,62.79,19.05
-	.vendor 2388 >> Go inside the Inn. Vendor trash, and buy Food/Water from Shay	
+	.vendor 2388 >> Go inside the Inn. Vendor trash, and buy Food/Water from Shay
 step
 	#requires Farmers
 	>>Return to Tarren Mill
@@ -1411,7 +1414,7 @@ step
 	.goto Hillsbrad Foothills,35.2,46.5
     .xp 24 >> Grind to level 24
 step
-    #xprate >1.499 
+    #xprate >1.499
 	.goto Hillsbrad Foothills,62.4,20.3
     #requires humanskull
     .turnin 529 >> Turn in Battle of Hillsbrad
@@ -1451,7 +1454,7 @@ step << Shaman
     .goto Thunder Bluff,22.8,21.0
 .trainer >> Go and train your class spells
 step
-    #xprate >1.099 
+    #xprate >1.099
     >>In the pools below the Spirit Rise
 	.goto Thunder Bluff,23.1,21.0
     .turnin 1067 >> Turn in Return to Thunder Bluff
@@ -1520,7 +1523,7 @@ step
     .goto The Barrens,44.7,74.7,0
     .goto The Barrens,44.7,77.8,0
     .goto The Barrens,47.6,79.8,0
-    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest. 
+    >>Search for Washte Pawne (Red Wind Serpent) around the area. He drops a quest.
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
     .unitscan Washte Pawne
@@ -1561,7 +1564,7 @@ step
 	.goto The Barrens,43.4,78.8
     >> Kuz walks all around the ridge. Kill and loot her for her skull.
     .complete 879,1 --Collect Kuz's Skull (x1)
-	.unitscan Kuz 
+	.unitscan Kuz
 step
     .isOnQuest 879
     .goto The Barrens,40.4,80.8
@@ -1936,7 +1939,7 @@ step
     >> If he is not there he can take a few minutes to respawn
 step
     >>Follow Torek. This quest can get a bit hard. It will spawn a wave enemies inside the building. You may need to skip.
-    >> Run as far into the building as you can. Have Torek tank some of the mobs. Abandon this quest if you die. 
+    >> Run as far into the building as you can. Have Torek tank some of the mobs. Abandon this quest if you die.
     * Use your voidwalker here << Warlock
     .goto Ashenvale,64.6,75.3
     .complete 6544,1 --Take Silverwing Outpost.
@@ -1951,7 +1954,7 @@ step
 step
     #xprate <1.1
     .goto Ashenvale,62.07,51.32
-	>> Ordanus can be quite hard, your should try to burst him, loot him and then jump down from the building. 
+	>> Ordanus can be quite hard, your should try to burst him, loot him and then jump down from the building.
     .complete 1088,1 --Ordanus' Head (1)
 step
     #sticky
@@ -2112,7 +2115,7 @@ step
     >>Go back to town
     .turnin 6544 >> Turn in Torek's Assault
     .goto Ashenvale,73.1,62.5
-step    
+step
     .goto Ashenvale,73.8,61.5
     .turnin 2 >> Turn in Sharptalon's Claw
     .turnin 24 >> Turn in Shadumbra's Head
@@ -2137,7 +2140,7 @@ step
     .turnin 6482 >> Turn in Freedom to Ruul
     .isOnQuest 6482
 step
-    #xprate >1.499 
+    #xprate >1.499
     .goto Ashenvale,71.2,68.1
     .turnin 6503 >> Turn in Ashenvale Outrunners
 step
@@ -2194,7 +2197,7 @@ step << Rogue
 	>> Stealth all the way to the Moonshine Ruins, then swim under the Bridge and prepare for the boss (Use all buffs you have)
 	>> Loot the Fathom Core, this spawns the boss.
 	>> Loot the Globe from Baron Aquanis. Accept the quest
-	.collect 16762,1,6922 
+	.collect 16762,1,6922
 	.accept 6922 >> Accept Baron Aquanis
 step << Rogue
     .hs >> Hearth to Splintertree Post
@@ -2250,7 +2253,7 @@ step << Shaman
 	#completewith hearth
     .goto Thunder Bluff,22.8,21.0
 	.trainer >> Go and train your class spells
-step 
+step
     #xprate <1.1
 	.isOnQuest 1086
     .goto Thunder Bluff,22.80,20.80
@@ -2340,7 +2343,7 @@ step
     .goto Thousand Needles,41.3,37.7,0,0
     .complete 4841,3 --Kill Galak Windchaser (x6)
     .complete 4841,1 --Kill Galak Scout (x12)
-    .complete 4841,2 --Kill Galak Wrangler (x10)    
+    .complete 4841,2 --Kill Galak Wrangler (x10)
 step
     >>Loot the Brazier at the end of the cave system. Take a left once you are at the crossroads of the cave.
     .goto Thousand Needles,42.0,31.5
@@ -2467,7 +2470,7 @@ step
 .accept 4881 >> Accept Assassination Plot
 step
     #label steelsnap
-    .use 23675 >>Use the Robotron Control Unit hiding in the bushes ontop of the ledge. 
+    .use 23675 >>Use the Robotron Control Unit hiding in the bushes ontop of the ledge.
     >> Once you're in the robot walk over to the moonwell and collect the water using the pet action bar button.
     * Note: the quest arrow won't move when controlling the robot. Click the buff off once you're done.
     .goto Thousand Needles,12.0,18.8,15,0
@@ -2681,7 +2684,7 @@ step
 step
     .isQuestTurnedIn 4881
 	>>Escort will start when you accept next part of the quest.
-	.goto Thousand Needles,21.3,32.0    
+	.goto Thousand Needles,21.3,32.0
 	.accept 4966 >> Accept Protect Kanati Greycloud
 step
     .isOnQuest 4966
@@ -2690,7 +2693,7 @@ step
     .complete 4966,1 --Protect Kanati Greycloud
 step
     .isQuestComplete 4966
-	.goto Thousand Needles,21.4,31.8    
+	.goto Thousand Needles,21.4,31.8
     .turnin 4966 >> Turn in Protect Kanati Greycloud
 step
     #label OreSample
@@ -2780,10 +2783,10 @@ step
     .goto Thousand Needles,67.8,85.7
 	.complete -1148,1 --Collect Silithid Heart (x1)
     .complete -1148,2 --Collect Silithid Talon (x5)
-    .complete -1147,3 --Kill Silithid Invader (x5)	
+    .complete -1147,3 --Kill Silithid Invader (x5)
     .complete -1147,1 --Kill Silithid Searcher (x5)
     .complete -1148,3 --Collect Intact Silithid Carapace (x3)
-    .complete -1147,2 --Kill Silithid Hive Drone (x5)	
+    .complete -1147,2 --Kill Silithid Hive Drone (x5)
 step
 	#requires partsoftheswarm
     .turnin -1147 >> Turn in The Swarm Grows
@@ -2915,7 +2918,7 @@ step << Warrior tbc
     .turnin 1719 >>Turn in The Affray
     .accept 1791 >>Accept The Windwatcher
 step << Warrior wotlk
-    #xprate >1.499 
+    #xprate >1.499
     .isOnQuest 1719
     .goto The Barrens,68.6,49.2
     .turnin 1719 >>Turn in The Affray
@@ -2947,7 +2950,7 @@ step << Shaman
     .xp <33,1
 	.maxlevel 36
 	#label BigStick
-	#completewith Protection 
+	#completewith Protection
  .goto Stranglethorn Vale,28.3,75.5
     .collect 12251,1
 step
@@ -3146,7 +3149,7 @@ step << Warrior/Shaman
 step << Tauren
     #completewith next
     .goto Thunder Bluff,46.9,49.9,-1
-    .fly Orgrimmar >>Fly to Orgrimmar    
+    .fly Orgrimmar >>Fly to Orgrimmar
 step << Shaman
     .isQuestAvailable 1531
     .goto Orgrimmar,38.0,37.7

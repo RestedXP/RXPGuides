@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Alliance" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -248,7 +251,7 @@ step << Warrior/Rogue
     .vendor >>Vendor trash
 step << Hunter
     .goto Durotar,42.6,67.3
-    .vendor >> Vendor trash. Buy 1000 arrows 
+    .vendor >> Vendor trash. Buy 1000 arrows
 step << Warlock wotlk
 	#completewith next
 	.cast 688 >> Summon your Imp
@@ -530,7 +533,7 @@ step
     .goto Durotar,56.0,73.9
     >> Speak with Master Vornal and Gadrin by the pool
     .accept 818 >>Accept A Solvent Spirit
-    .goto Durotar,55.9,74.4 
+    .goto Durotar,55.9,74.4
     .turnin 805 >>Turn in Report to Sen'jin Village
     .goto Durotar,55.9,74.7
     .accept 808 >>Accept Minshina's Skull
@@ -1579,7 +1582,7 @@ step
     .zone Durotar >>Run out of Orgrimmar
 	.xp <11,1
 --If player is 11 or higher
-step    
+step
     #label Fizzle
     >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space
     .goto Durotar,41.9,26.0
@@ -1742,7 +1745,7 @@ step
 step << Shaman
     .goto Orgrimmar,49.4,50.5
     >> Talk to Neeru Fireblade
-    .complete 5727,1 
+    .complete 5727,1
     .skipgossip 3216,1
 --If NPC has an active quest accept/turnin (available or unavailable) you must add NPCID,X (X being the TALK ONLY gossip, which is 1 99% of the time)
 step

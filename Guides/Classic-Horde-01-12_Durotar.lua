@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Alliance" then return end
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde

@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Horde" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -834,7 +837,7 @@ step << Rogue
     .deathskip >>Once you get past the furbolg area, die on purpose and respawn at the Darnassus graveyard
 step << Rogue
     .goto Darnassus,67.2,15.8
-    .home >> Set your Hearthstone to Darnasus 
+    .home >> Set your Hearthstone to Darnasus
 step << Rogue
     .goto Darnassus,64.6,53.0
     .collect 25873,1 >> Purchase a Keen Throwing Knife from Ellandrieth

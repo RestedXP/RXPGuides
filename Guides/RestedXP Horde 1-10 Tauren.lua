@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Alliance" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -228,7 +231,7 @@ step
 step
     #softcore
 	#completewith next
-    .goto Mulgore,46.5,55.5,300 
+    .goto Mulgore,46.5,55.5,300
     .deathskip >>Die and respawn at the Spirit Healer or run to Bloodhoof Village
 step
 	#hardcore

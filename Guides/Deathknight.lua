@@ -1,3 +1,6 @@
+local _, class = UnitClass("player")
+if class ~= "DEATHKNIGHT" then return end
+
 RXPGuides.RegisterGuide([[
 #version 6
 #wotlk
@@ -7,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Horde 60-70\59-61 Hellfire Peninsula << Horde
 #defaultfor DK
 #name 55-58 The Scarlet Enclave
-    
+
 step
     .goto ScarletEnclave,51.3,35.1
     .accept 12593 >>Accept In Service Of The Lich King
@@ -643,7 +646,7 @@ step
     .goto ScarletEnclave,50.7,33.7
 	>>Return to Darion Mograine
     .turnin 13166 >>Turn in The Battle For The Ebon Hold
-    .accept 13188 >>Accept Where Kings Walk << Alliance    
+    .accept 13188 >>Accept Where Kings Walk << Alliance
     .accept 13189 >>Accept Warchief's Blessing << Horde
 step << Horde
     .goto ScarletEnclave,52.1,35.0

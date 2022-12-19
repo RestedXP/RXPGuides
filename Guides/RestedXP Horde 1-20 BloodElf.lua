@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Alliance" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -468,7 +471,7 @@ step << wotlk/!Warlock tbc
     .accept 8338 >> Accept Tainted Arcane Sliver
     .target Tainted Arcane Wraith
     .use 20483
-step 
+step
     .goto Eversong Woods,30.79,25.37,20,0
     .goto Eversong Woods,29.35,24.44,20,0
     .goto Eversong Woods,29.32,26.24,20,0
@@ -866,7 +869,7 @@ step << Warlock tbc
     .goto Eversong Woods,48.2,47.9
     .cast 20270 >>Buy the Firebolt r2 book. Click it in your bags
     .goto Eversong Woods,48.3,47.9
-    .use 16302 
+    .use 16302
 step << Warlock wotlk
     .trainer >>Train your class spells
     .goto Eversong Woods,48.2,47.9
@@ -1348,7 +1351,7 @@ step
     .complete 8476,1 --Kill Amani Berserker (x5)
     .complete 8476,2 --Kill Amani Axe Thrower (x5)
 step << BloodElf Hunter
-    .use 30105 
+    .use 30105
     .goto Ghostlands,45.6,21.1
     .complete 9485,1 --Tame a Mistbat
 step << BloodElf Hunter
@@ -1493,7 +1496,7 @@ step
     .goto Eversong Woods,69.64,53.35
     .complete 8889,3 --Third Power Source Deactivated (x1)
 step
-    .goto Eversong Woods,69.61,53.47 
+    .goto Eversong Woods,69.61,53.47
     .cast 26572 >>Click the Orb of Translocation behind the green crystal to teleport back down
 step << !BloodElf/!Warlock
     .goto Eversong Woods,68.6,47.0
@@ -1519,7 +1522,7 @@ step << BloodElf Mage
     .accept 9404 >>Accept Recently Living
 step << !Warlock
     #completewith next
-    .goto Eversong Woods,56.7,49.6,30 >>Travel to Silvermoon << !Priest !Mage 
+    .goto Eversong Woods,56.7,49.6,30 >>Travel to Silvermoon << !Priest !Mage
     .goto Eversong Woods,56.7,49.6,30,0 << Priest/Mage
     .goto Silvermoon City,63.5,32.0,20 >>Travel to Silvermoon. Run up the ramp << Priest/Mage
 step << Priest
@@ -1606,7 +1609,7 @@ step << Paladin/Rogue
 step << Undead/BloodElf !Hunter
     .goto Silvermoon City,79.5,58.5
     >> Buy a Suntouched Special Reserve from Vinemaster Suntouched. Reload vendor's inventory window if they do not appear (currently bugged).
-    .collect 22775,1 --Collect Suntouched Special Reserve 
+    .collect 22775,1 --Collect Suntouched Special Reserve
 step << Undead/BloodElf !Hunter
     #completewith next
     .hs Hearth to Falconwing
@@ -1626,7 +1629,7 @@ step << Orc Warlock/Undead Warlock
 step << Orc Warlock/Undead Warlock
     .goto Eversong Woods,48.2,47.9
     .trainer >> Train your class spells
-step << Undead/BloodElf !Hunter 
+step << Undead/BloodElf !Hunter
     #completewith next
     .hs >> Hearth to Falconwing
     .cooldown item,6948,>0
@@ -1785,7 +1788,7 @@ step << !BloodElf
 step << Warlock
     #completewith next
     .goto Ghostlands,48.9,32.4
-    .home >> Set your Hearthstone to Tranquillien 
+    .home >> Set your Hearthstone to Tranquillien
 step << BloodElf !Hunter !Warlock
     >>Do NOT fly to Silvermoon City. Talk to the Flight Master.
     .goto Ghostlands,45.5,30.6
@@ -2183,7 +2186,7 @@ step
     .complete 9173,1 --Deatholme Acolyte (8)
     .complete 9173,2 --Fallen Ranger (10)
     .collect 22597,1,9175 --Collect The Lady's Necklace (x1)
-    .accept 9175 >> Accept The Lady's Necklace  
+    .accept 9175 >> Accept The Lady's Necklace
     .use 22597
 step
     #completewith next
@@ -2211,7 +2214,7 @@ step
     .goto Ghostlands,44.1,57.6,0
     .goto Ghostlands,16.5,62.5,0
     .goto Ghostlands,44.1,57.6,30,0
-    .goto Ghostlands,16.5,62.5,30,0    
+    .goto Ghostlands,16.5,62.5,30,0
     >>Finish looting Spiders for Crunchy Spider Legs if you haven't gotten 5 legs by now.
     .complete 9171,1 --Collect Crunchy Spider Leg (x5)
 step

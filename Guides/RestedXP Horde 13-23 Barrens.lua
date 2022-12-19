@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Alliance" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -65,7 +68,7 @@ step << !Tauren
 #xprate >1.499
 .goto The Barrens,51.5,30.1
     .accept 1492 >>Accept Wharfmaster Dizzywig
-        .accept 848 >>Accept Fungal Spores 
+        .accept 848 >>Accept Fungal Spores
 step << Warrior
     .isOnQuest 1502
     .goto The Barrens,57.9,25.5,30 >>Run up the mountain here
@@ -186,7 +189,7 @@ step << !Hunter !Rogue !Warlock !Mage !Priest
 step << Orc/Troll
 #xprate <1.5
     .goto The Barrens,52.6,29.9
-    .turnin 6386 >>Turn in Return to the Crossroads.  
+    .turnin 6386 >>Turn in Return to the Crossroads.
 step
     .isOnQuest 872
     .goto The Barrens,57.1,25.3,250 >> Run to here
@@ -339,7 +342,7 @@ step << Druid
 step
     #completewith next
     .hs >>Hearth to Crossroads
-    .cooldown item,6948,>0   
+    .cooldown item,6948,>0
 step
     .goto The Barrens,51.5,30.8
     .turnin 5041 >>Turn in Supplies for the Crossroads
@@ -450,7 +453,7 @@ step
 step
     .goto The Barrens,52.4,11.6
     .turnin 901 >>Turn in Samophlange
-    .accept 902 >>Accept Samophlange 
+    .accept 902 >>Accept Samophlange
 step
     >>Accept Ignition from the Shredder. If someone recently started the escort you'll need to wait for him to respawn.
 .goto The Barrens,56.5,7.5
@@ -764,7 +767,7 @@ step
     .isOnQuest 1061
     .turnin 1061 >> Turn in The Spirits of Stonetalon
 step
-    .goto The Barrens,35.3,27.9    
+    .goto The Barrens,35.3,27.9
     .accept 1062 >> Accept Goblin Invaders
 step
     .maxlevel 22
@@ -1059,7 +1062,7 @@ step
     .accept 913 >>Accept Cry of the Thunderhawk
 step
     .isOnQuest 884
-.goto The Barrens,44.9,59.1    
+.goto The Barrens,44.9,59.1
     .turnin 884 >>Turn in Owatanka
 step
 .goto The Barrens,44.8,63.2,30,0
@@ -1113,10 +1116,10 @@ step << Warrior
     .accept 1823 >>Accept Speak with Ruga
     .train 845 >>Train Cleave
     .train 6547 >>Train Rend r3
-    .train 20230 >>Train Retaliation  
+    .train 20230 >>Train Retaliation
 step
     .goto Thunder Bluff,54.7,51.1
-    .accept 1195 >>Accept The Sacred Flame  
+    .accept 1195 >>Accept The Sacred Flame
 step << Shaman
     .goto Thunder Bluff,23.6,19.1
     .accept 1529 >>Accept Call of Water
@@ -1330,7 +1333,7 @@ step
 #xprate >1.499
     #completewith next
     .goto Stonetalon Mountains,45.1,59.8
-    .fly Thunder Bluff >> Fly to Thunder Bluff 
+    .fly Thunder Bluff >> Fly to Thunder Bluff
     .zoneskip Thunder Bluff
 step
     #label eldercr
