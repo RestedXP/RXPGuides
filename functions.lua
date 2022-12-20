@@ -217,6 +217,12 @@ function addon.FormatNumber(number, precision)
     return integer .. decimal
 end
 
+function addon.Round(number, precision)
+    precision = precision and 10 ^ precision or 1
+    local integer = math.floor(number)
+    return integer + math.floor((number - integer) * precision + 0.5)/precision
+end
+
 function addon.GetQuestName(id)
     if type(id) ~= "number" then return end
     id = questConversion[id] or id
@@ -4378,5 +4384,59 @@ function addon.functions.isWorldQuestUnavailable(self, ...)
     if type(element) == "table" then
         element.reverse = true
         return element
+    end
+end
+
+events.itemStat = "PLAYER_EQUIPMENT_CHANGED"
+function addon.functions.itemStat(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local text, slot, stat, value = ...
+        slot = tonumber(slot)
+        if value then
+            value = value:gsub(" ", "")
+            local operator, total = value:match("([<>]?)(.+)")
+            element.operator = operator
+            element.total = total
+        end
+        if not (slot and stat and element.total) then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': Invalid arguments\n' .. self)
+        end
+        element.slot = slot
+        element.stat = stat
+        element.textOnly = true
+        element.text = text
+        return element
+    else
+        local element = self.element
+        local step = element.step
+        if step.active then
+            local completed
+            local stats = GetItemStats(GetInventoryItemLink("player", element.slot) or "") or {}
+            local stat
+            if element.stat == "QUALITY" then
+                stat = GetInventoryItemQuality("player", element.slot)
+            else
+                stat = stats[element.stat]
+            end
+
+            if not stat then
+                return
+            elseif type(stat) == "number" then
+                stat = addon.Round(stat,1)
+                element.total = tonumber(element.total) or 0
+                print('+',stat,element.total, element.operator)
+                if (element.operator == ">" and element.total < stat) or (element.operator == "<" and element.total > stat) then
+                    completed = true
+                end
+            end
+            completed = completed or (element.total == stat)
+            if not completed then
+                element.step.completed = true
+                addon.updateSteps = true
+            end
+        end
     end
 end
