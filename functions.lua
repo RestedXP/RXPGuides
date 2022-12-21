@@ -4427,7 +4427,7 @@ function addon.functions.itemStat(self, ...)
             elseif type(stat) == "number" then
                 stat = addon.Round(stat,1)
                 element.total = tonumber(element.total) or 0
-                print('+',stat,element.total, element.operator)
+                --print('+',stat,element.total, element.operator)
                 if (element.operator == ">" and element.total < stat) or (element.operator == "<" and element.total > stat) then
                     completed = true
                 end
