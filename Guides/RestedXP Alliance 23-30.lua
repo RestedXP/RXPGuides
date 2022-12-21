@@ -476,7 +476,7 @@ step << Human !Warlock wotlk !Paladin wotlk
     .goto Elwynn Forest,65.2,69.8
 	>>Head to the top of the Tower of Azora in Elwynn Forest
     .accept 94 >> Accept A Watchful Eye
-step << Human !Warlock wotlk/Human !Paladin wotlk
+step << Human !Warlock !Paladin wotlk
 	.goto Elwynn Forest,84.3,64.9
 	.train 33388 >> Head to Eastvale Logging Camp in Elwynn Forest and train/purchase your mount
 	.money <5.0
@@ -1802,10 +1802,11 @@ step
     .turnin 75 >> Turn in The Legend of Stalvan
     .accept 78 >> Accept The Legend of Stalvan
 step << Human !Paladin !Warlock tbc
-	#level 30
+	.xp <30,1
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
+    .skill riding,1,1
 step << Shaman
     #completewith next
     .hs >> Hearth to Darkshire
@@ -2642,10 +2643,11 @@ step
     .turnin 75 >> Turn in The Legend of Stalvan
     .accept 78 >> Accept The Legend of Stalvan
 step << Human !Paladin !Warlock tbc
-	#level 30
+	.xp <30,1
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
+    .skill riding,1,1
 step << Human !Paladin !Warlock wotlk
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
@@ -2822,6 +2824,9 @@ step
 step
     .goto Duskwood,71.9,46.6
     .turnin 252 >> Turn in Translation to Ello
+step
+#xprate <1.7
+    .goto Duskwood,71.9,46.6
     .accept 253 >> Accept Bride of the Embalmer
 step
 	#sticky
@@ -3442,6 +3447,7 @@ step
     .goto Arathi Highlands,44.3,93.0
 	>>Jump down and loot the letter from the corpse underwater
     .accept 637 >> Accept Sully Balloo's Letter
+	.use 4433 >>Jump down and loot the letter from the corpse underwater
 step
     #completewith next
     .goto Arathi Highlands,52.5,90.4,30 >> Swim east toward the ramp here
