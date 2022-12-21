@@ -2016,29 +2016,27 @@ step
     .turnin 1138 >> Turn in Fruit of the Sea
     .isQuestComplete 1138
 step << Hunter
-    #completewith next
-    >> Skip this step if you have an Heirloom Weapon << wotlk
+    #completewith Trainer
     .goto Darkshore,33.1,39.9,30,0
     .goto Darkshore,33.1,39.9,0
     .zone Teldrassil>>Take the boat to Teldrassil
+    .zoneskip Darnassus
 step << Hunter
-    >> Skip this step if you have an Heirloom Weapon << wotlk
+    #completewith Trainer
     .goto Teldrassil,58.4,94.0
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << Hunter
-	#sticky
-	#completewith next
-	.goto Darnassus,63.3,66.3
-    >> Skip this step if you have an Heirloom Weapon << wotlk
-	>>Buy the level 20 weapon upgrade in Darnassus
-	.collect 3027,1
-step << Hunter
-    >> Skip this step if you have an Heirloom Weapon << wotlk
+    #label Trainer
 	.goto Teldrassil,29.2,56.7
 	.train 264 >> Train Bows
-    .train 227 >> Train Staves
+    .train 227 >> Train Staves << tbc
 step << Hunter
-    #completewith next
+    .goto Darnassus,63.3,66.3
+    >>Buy the level 20 weapon upgrade in Darnassus
+    >> Skip this step if you have an Heirloom weapon << wotlk
+    .collect 3027,1
+    .itemStat 18,QUALITY,<7 << wotlk
+step << Hunter
     .hs >> Hearth back to Auberdine, fly back if your HS is still on cooldown
     .zoneskip Darkshore
 step
@@ -2048,6 +2046,7 @@ step
     .accept 944 >> Accept The Master's Glaive
     .isQuestTurnedIn 947
 step
+#xprate <1.2
     .goto Darkshore,36.6,76.6
 	>>Run near the fire to start the event (recommended to kill the mobs around it first)
     .complete 4740,1 --Kill Murkdeep (x1)
@@ -2091,6 +2090,7 @@ step
     .accept 945 >> Accept Therylune's Escape. If she's not here someone else is escorting her, grind til she respawns.
     .maxlevel 21
 step
+#xprate <1.2
 	#label darkshoreend
     .complete 945,1 --Escort Therylune
     .isOnQuest 945
@@ -2150,6 +2150,9 @@ step
     .goto Ashenvale,36.6,49.6
     .accept 1054 >> Accept Culling the Threat
     .turnin 10752 >> Turn in Onward to Ashenvale
+step
+    #xprate <1.7
+    .goto Ashenvale,36.6,49.6
     .accept 991 >> Accept Raene's Cleansing
 step
     .goto Ashenvale,37.0,49.2
@@ -2163,6 +2166,7 @@ step << Warrior tbc/Paladin
 	.goto Ashenvale,35.8,52.0
 	>>Buy the level 21 weapon upgrade
 	.collect 922,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.97
 step
 	.goto Ashenvale,37.3,51.8
     .accept 1033 >> Accept Elune's Tear
@@ -2206,14 +2210,17 @@ step
     .turnin 973 >> Turn in The Tower of Althalaxx
     .isOnQuest 973
 step
+#xprate <1.7
     .goto Ashenvale,20.3,42.4
     .turnin 991 >> Turn in Raene's Cleansing
     .accept 1023 >> Accept Raene's Cleansing
 step
+#xprate <1.7
     #sticky
     #completewith GlowGem
     +Be careful of the oracles here, as they have a high-damage instant Shock spell (110 damage) and can heal to full
 step
+#xprate <1.7
 	#label GlowGem
     .goto Ashenvale,20.3,42.4
     .complete 1023,1 --Collect Glowing Gem (x1)
@@ -2268,7 +2275,7 @@ step
 	#completewith next
 	.destroy 5505>>Delete Teronis' Journal from your inventory. It's no longer needed
 step
-#xprate <1.5 << tbc
+#xprate <1.5
     .goto Ashenvale,36.6,49.6
     .accept 1025 >> Accept An Aggressive Defense
 step
@@ -2278,7 +2285,7 @@ step
     .goto Ashenvale,34.7,48.9
     .turnin 1008 >> Turn in The Zoram Strand
 step
-#xprate <1.5 << tbc
+#xprate <1.5
     >>Kill the mobs for An Aggressive Defense
     .goto Ashenvale,49.9,60.8
     .goto Ashenvale,56.9,63.7
@@ -2287,20 +2294,20 @@ step
     .complete 1025,3 --Kill Foulweald Totemic (x10)
     .complete 1025,4 --Kill Foulweald Warrior (x12)
 step
-#xprate <1.5 << tbc
+#xprate <1.5
     .goto Ashenvale,49.8,67.2
     .accept 1016 >> Accept Elemental Bracers
 step
-#xprate <1.5 << tbc
+#xprate <1.5
     .use 5456 >>Kill all water elementals on the island/in the water for Intact Elemental Bracers. When you have 5, right click the Divining Scroll
     .goto Ashenvale,48.0,69.9
     .complete 1016,1 --Collect Divined Scroll (x1)
 step
-#xprate <1.5 << tbc
+#xprate <1.5
     .goto Ashenvale,49.8,67.2
     .turnin 1016 >> Turn in Elemental Bracers
 step
-#xprate <1.5 << tbc
+#xprate <1.5
     .goto Ashenvale,36.6,49.6
     .turnin 1025 >> Turn in An Aggressive Defense
     .isQuestComplete 1025
@@ -2310,39 +2317,52 @@ step
 step
     .goto Darkshore,37.7,43.4
     .turnin 4740 >> Turn in WANTED: Murkdeep!
-    .isOnQuest 4740
+    .isQuestComplete 4740
 step
     .goto Darkshore,38.36,43.07
     .turnin 1275 >> Turn in Researching the Corruption
 step
+#xprate <1.7
     .isOnQuest 731
     .goto Darkshore,37.5,41.9
     .turnin 731 >> Turn in The Absent Minded Prospector
 	.accept 741 >> Accept The Absent Minded Prospector << !Hunter
 step << !Hunter
+#xprate <1.7
     .isOnQuest 741
     .goto Darkshore,33.1,39.9,30
     .zone Teldrassil >>Take the boat to Teldrassil
 step << !Hunter
+#xprate <1.7
     .isOnQuest 741
     #completewith next
     .goto Teldrassil,55.9,89.8
     .zone Darnassus >> Take the purple portal to Darnassus
 step << !Hunter
+#xprate <1.7
     .isOnQuest 741
 	.goto Teldrassil,23.7,64.5
 	.turnin 741 >> Turn in The Absent Minded Prospector
 	.accept 942 >> Accept The Absent Minded Prospector
 step << Warrior tbc/Mage
+#xprate <1.7
 	.goto Teldrassil,29.2,56.7
     .train 227 >> Train Staves
+    .isOnQuest 942
 step << !Hunter
+#xprate <1.7
 	.goto Darnassus,30.7,41.3,50 >> Take the purple portal back to Rut'theran
+    .zoneskip Darkshore
+    .zoneskip Teldrassil
 step << !Hunter
+#xprate <1.7
     .goto Teldrassil,58.4,94.0
     .fp Rut'theran >> Get the Rut'theran Village flight path
+    .zoneskip Darkshore
 step << !Hunter
+#xprate <1.7
     .fly Auberdine >>Fly back to Auberdine
+    .zoneskip Darkshore
 step << !Paladin wotlk
     >>Now it's a good time to buy your 60% mount, it costs about 4g
     .zone Azuremyst Isle >>Take the Boat to Azuremyst Isle
