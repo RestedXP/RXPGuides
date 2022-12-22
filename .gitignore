@@ -1,2 +1,6 @@
 #Ignore local import testing
 Guides/Import.lua
+
+# Ignore python script to dump all locales
+dump_locale.py
+new_locale.lua
