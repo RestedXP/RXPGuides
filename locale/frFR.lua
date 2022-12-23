@@ -5,31 +5,31 @@ local L = LibStub("AceLocale-3.0"):NewLocale(addonName, "frFR", false)
 if not L then return end
 
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
-    "Active Item Button 1"
+    "Objet activable 1"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] =
-    "Active Item Button 2"
+    "Objet activable 2"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
-    "Active Item Button 3"
+    "Objet activable 3"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
-    "Active Item Button 4"
+    "Objet activable 4"
 
 _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_FriendlyButton1:LeftButton"] =
-    "Active Friendly Target Button 1"
+    "Cible amicale 1"
 _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_FriendlyButton2:LeftButton"] =
-    "Active Friendly Target Button 2"
+    "Cible amicale 2"
 _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_FriendlyButton3:LeftButton"] =
-    "Active Friendly Target Button 3"
+    "Cible amicale 3"
 _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_FriendlyButton4:LeftButton"] =
-    "Active Friendly Target Button 4"
+    "Cible amicale 4"
 
 _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton1:LeftButton"] =
-    "Active Enemy Target Button 1"
+    "Cible ennemie 1"
 _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton2:LeftButton"] =
-    "Active Enemy Target Button 2"
+    "Cible ennemie 2"
 _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton3:LeftButton"] =
-    "Active Enemy Target Button 3"
+    "Cible ennemie 3"
 _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton4:LeftButton"] =
-    "Active Enemy Target Button 4"
+    "Cible ennemie 4"
 
 -- Words
 L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "Tuer"}
@@ -200,13 +200,13 @@ L["Hide Window"] = "Cacher la fenêtre"
 L["Hides the main window"] = "Cache la fenêtre principale"
 L["Show all Enabled Frames"] = "Affiche tous les cadres activés"
 L["Toggles all addon frames on or off"] = "Affiche ou cache tous les cadres de l'addon"
-L["Hide Active Item window"] = "Cacher la fenêtre de l'objet actif"
+L["Hide Active Item window"] = "Cacher la fenêtre des objets activables"
 L["Window Scale"] = "Echelle de la fenêtre"
 L["Scale of the Main Window, use alt+left click on the main window to resize it"] = "Echelle de la fenêtre principale, utilisez alt + clic gauche pour la redimensionner"
 L["Guide Font Size"] = "Taille de la police du guide"
 L["Change font size of the Guide Window"] = "Change la taille de la police dans la fenêtre du guide"
-L["Active Item Scale"] = "Echelle de l'objet actif"
-L["Scale of the Active Item frame"] = "Echelle du cadre contenant l'object actif"
+L["Active Item Scale"] = "Echelle de l'activation d'objets"
+L["Scale of the Active Item frame"] = "Echelle du cadre contenant les objets à activer"
 L["Automation"] = "Automatisation"
 L["Quest auto accept/turn in"] = "Accepter/rendre une quête"
 L["Holding the Control key modifier also toggles the quest auto accept feature on and off"] = "Maintenir la touche Ctrl permet aussi d'activer/désactiver la fonction de gestion automatique des quêtes"
@@ -233,9 +233,9 @@ L["Distance Between Pins"] = "Distance entre les points"
 L["If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."] = "Si deux ou plus étapes sont proches, l'addon va les regrouper en un seul point sur la carte. Ajustez le rayon pour déterminer la portée à partir de laquelle les étapes forment un groupe"
 L["Map Pin Background Opacity"] = "Opacité du fond des points de la carte"
 L["The opacity of the black circles on the map and mini map"] = "Ajuste l'opacité des cercles noirs sur la carte et la minimap"
-L["Guide Routing"] = "Itinéraire du guide"
-L["Detect Rate"] = "Détecter le rang"
-L["Checks for heirlooms and experience buffs"] = "Vérifie les objets d'héritage et les améliorations d'exp"
+L["Guide Routing"] = "Itinéraires du guide"
+L["Detect Rate"] = "Détecter les bonus d'exp"
+L["Checks for heirlooms and experience buffs"] = "Vérifie les objets d'héritage et les bonus d'exp"
 L["Experience rates"] = "Bonus d'expérience"
 L["Adjusts the guide routes to match increased xp rate bonuses"] = "Ajuste l'itinéraire du guide pour prendre en compte les bonus d'exp"
 L["Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them"] = "Remarque : modifier le bonus d'expérience au-delà d'1x peut sauter certains chapitres et certaines étapes car votre niveau sera trop haut"
