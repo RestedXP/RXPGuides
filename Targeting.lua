@@ -453,16 +453,15 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     end
 
     -- Only notify sound once per step
-    if proxmityPolling.match or proxmityPolling.scanData.kind == 'friendly' then
-        return
-    end
+    if proxmityPolling.match then return end
 
-    if addon.settings.db.profile.soundOnFind ~= "none" then
+    proxmityPolling.match = true
+
+    if addon.settings.db.profile.soundOnFind ~= "none" and
+        proxmityPolling.scanData.kind ~= 'friendly' then
         PlaySound(addon.settings.db.profile.soundOnFind,
                   addon.settings.db.profile.soundOnFindChannel)
     end
-
-    proxmityPolling.match = true
 end
 
 function addon.targeting:UpdateFriendlyTargets(targets)
@@ -588,7 +587,7 @@ local fOnEnter = function(self)
     GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, 0)
     if self.targetData.kind == "friendly" then
         GameTooltip:AddLine(self.targetData.name, 0, 1, 0)
-    elseif self.targetData.kind == "enemy" then
+    else
         GameTooltip:AddLine(self.targetData.name, 1, 0, 0)
     end
 
@@ -639,8 +638,8 @@ function addon.targeting:UpdateTargetFrame(kind)
                             {} or enemyTargets
 
     if addon.settings.db.profile.showTargetingOnProximity then
-        for name, kind in pairs(proxmityPolling.scannedTargets) do
-            if kind == 'enemy' or kind == 'rare' then
+        for name, targetkind in pairs(proxmityPolling.scannedTargets) do
+            if targetkind == 'enemy' or targetkind == 'rare' then
                 tinsert(enemiesList, name)
             end
         end
@@ -710,8 +709,10 @@ function addon.targeting:UpdateTargetFrame(kind)
                              {} or friendlyTargets
 
     if addon.settings.db.profile.showTargetingOnProximity then
-        for name, kind in pairs(proxmityPolling.scannedTargets) do
-            if kind == 'friendly' then tinsert(friendlyList, name) end
+        for name, targetkind in pairs(proxmityPolling.scannedTargets) do
+            if targetkind == 'friendly' then
+                tinsert(friendlyList, name)
+            end
         end
     end
 
