@@ -1605,12 +1605,14 @@ end
 function addon.functions.fp(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, location = ...
+        local text, location, skipStep = ...
         element.tag = "fp"
-        if text and text ~= "" then
+        if skipStep then
+            element.text = text
+            element.textOnly = true
+        elseif text and text ~= "" then
             element.text = text
         else
-            element.textOnly = true
             element.text = string.format(L("Get the %s flight path"), location)
         end
 
@@ -1628,9 +1630,15 @@ function addon.functions.fp(self, ...)
     end
     local event, arg1, arg2 = ...
     local element = self.element
-    if (element.fpId and RXPCData.flightPaths[element.fpId]) or
-        (event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH and
-            self.element.step.active) then addon.SetElementComplete(self) end
+    if self.element.step.active then
+        local fpDiscovered = element.fpId and RXPCData.flightPaths[element.fpId]
+        if element.textOnly and fpDiscovered then
+            element.step.completed = true
+            addon.updateSteps = true
+        elseif fpDiscovered or (event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH) then
+            addon.SetElementComplete(self)
+        end
+    end
 end
 
 function addon.functions.fly(self, ...)

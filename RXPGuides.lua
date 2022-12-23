@@ -546,7 +546,7 @@ end
 
 --Tracks if a player is on a loading screen and pauses the main update loop
 --Some information is not available during zone transitions
-function addon:PLAYER_ENTERING_WORLD()
+function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
     if WOW_PROJECT_ID == WOW_PROJECT_MAINLINE and RXPCData then
         RXPCData.GA = false
     end
@@ -554,9 +554,12 @@ function addon:PLAYER_ENTERING_WORLD()
     addon.updateMap = true
     addon.isHidden = addon.settings and addon.settings.db.profile.hideGuideWindow or
                                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
-    C_Timer.After(5, function ()
-        addon.settings:DetectXPRate()
-    end)
+
+    if isInitialLogin then
+        C_Timer.After(5, function ()
+            addon.settings:DetectXPRate()
+        end)
+    end
 end
 
 function addon:PLAYER_LEAVING_WORLD()
