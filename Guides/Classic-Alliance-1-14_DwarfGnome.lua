@@ -1818,7 +1818,7 @@ step << Dwarf Paladin
 step
     .goto Westfall,56.6,52.6
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
-    .fly Stormwind >> Fly to Stormwind << !Paladin
+    .fly Stormwind >> Fly to Stormwind << Paladin
 step << Paladin
     .goto StormwindClassic,60.5,12.3,40,0
     .goto StormwindClassic,60.5,12.3,0
