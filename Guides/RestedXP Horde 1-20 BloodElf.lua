@@ -1901,6 +1901,7 @@ step
     .accept 9174 >> Accept Vanquishing Aquantion
 step
     >>Click the shrine to summon Aquantion. He is VERY difficult. He is immmune to crowd control abilities (Stuns and Silences), has greater than normal health, and hits relatively hard with frost damage
+    * Very high frost resistance << Mage
     .goto Ghostlands,71.3,15.0
     .complete 9174,1 --Kill Aquantion (x1)
 step
