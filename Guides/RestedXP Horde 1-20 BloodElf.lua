@@ -471,7 +471,7 @@ step << wotlk/!Warlock tbc
     .accept 8338 >> Accept Tainted Arcane Sliver
     .target Tainted Arcane Wraith
     .use 20483
-step
+step 
     .goto Eversong Woods,30.79,25.37,20,0
     .goto Eversong Woods,29.35,24.44,20,0
     .goto Eversong Woods,29.32,26.24,20,0
@@ -1227,14 +1227,78 @@ step << Warlock
     .train 980 >>Train your class spells
     .target Celoenus
 step << Warlock tbc
-    .trainer >>Train your class spells
-    .goto Eversong Woods,48.2,47.9
-    .cast 20270 >>Buy the Firebolt r2 book. Click it in your bags
-    .goto Eversong Woods,48.3,47.9
-    .use 16302 
-step << Warlock wotlk
-    .trainer >>Train your class spells
-    .goto Eversong Woods,48.2,47.9
+    .goto Eversong Woods,48.34,47.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Daestra|r upstairs
+    >>|cFF0E8312Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cFF0E8312from her|r
+    .collect 16302,1,8475,1 --Grimoire of Firebolt Rank 2
+    .target Daestra
+step << Warrior tbc
+    .goto Eversong Woods,48.49,45.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
+    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135321:0|t[Gladius] (5s 9c). You'll come back later if you don't have enough yet
+    .target Geron
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+step << Warrior tbc
+    .goto Eversong Woods,48.49,45.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T135321:0|t[Gladius] |cFF0E8312from him|r
+    .collect 2488,1,8475,1 --Gladius (1)
+    .target Geron
+    .money <0.0509
+    .money >0.5000
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+step << Warrior wotlk
+    .goto Eversong Woods,48.49,45.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
+    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[Wooden Mallet] (6s 66c). You'll come back later if you don't have enough yet
+    .target Geron
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
+step << Warrior wotlk
+    .goto Eversong Woods,48.49,45.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T133053:0|t[Wooden Mallet] |cFF0E8312from him|r
+    .collect 2493,1,8475,1 --Collect Wooden Mallet (1)
+    .money <0.0666
+    .money >0.5000
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
+step << Rogue
+    .goto Eversong Woods,48.49,45.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
+    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (3s 82c). You'll come back later if you don't have enough yet
+    .target Geron
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+step << Rogue
+    .goto Eversong Woods,48.49,45.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T135641:0|t[Stiletto] |cFF0E8312from him|r
+    .collect 2494,1,8475,1 --Collect Stiletto
+    .money <0.0382
+    .money >0.5000
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+step << Warrior tbc
+    #completewith Caidanis
+    +Equip the |T135321:0|t[Gladius]
+    .use 2488
+    .itemcount 2488,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+step << Warrior wotlk
+    #completewith Caidanis
+    +Equip the |T133053:0|t[Wooden Mallet]
+    .use 2493
+    .itemcount 2493,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
+step << Rogue
+    #completewith Caidanis
+    +Equip the |T135641:0|t[Stiletto]
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
 step << Warrior/Warlock/Hunter/Rogue
     .goto Eversong Woods,44.57,53.31,10,0
     .goto Eversong Woods,44.01,52.77,10,0
@@ -2621,7 +2685,9 @@ step
     >>|cFFFCDC00Be careful as|r |cFFFF5722Amani Berserkers|r |T136224:0|tEnrage |cFFFCDC00at low health|r
     .complete 8476,1 --Kill Amani Berserker (x5)
     .complete 8476,2 --Kill Amani Axe Thrower (x5)
-step << BloodElf Hunter
+    .target Amani Berserker
+    .target Amani Axe Thrower
+step << skip
     .use 30105 
     .goto Ghostlands,45.6,21.1
     .complete 9485,1 --Tame a Mistbat
@@ -2814,7 +2880,8 @@ step
     .complete 8889,3 --Third Power Source Deactivated (x1)
 step
     .goto Eversong Woods,69.61,53.47 
-    .cast 26572 >>Click the Orb of Translocation behind the green crystal to teleport back down
+    .cast 26572 >>Click the Orb of Translocation to teleport back down
+    .isOnQuest 8889
 step << !BloodElf/!Warlock
     .loop 40,Eversong Woods,69.15,50.56,70.02,50.62,70.58,48.16,69.97,46.28,69.50,44.69,68.29,43.31,67.61,45.28,67.13,48.48,69.01,48.22,69.15,50.56
     .xp 11+6375 >> Grind to 6375+/8700xp
@@ -2885,9 +2952,54 @@ step << Mage
     .target Instructor Antheol
 step << !Warlock
     #completewith next
-    .goto Eversong Woods,56.7,49.6,30 >>Travel to Silvermoon << !Priest !Mage 
-    .goto Eversong Woods,56.7,49.6,30,0 << Priest/Mage
-    .goto Silvermoon City,63.5,32.0,20 >>Travel to Silvermoon. Run up the ramp << Priest/Mage
+    .goto Eversong Woods,56.51,49.61,25,0
+    .goto Silvermoon City,73.39,59.65
+    .zone Silvermoon City >>Enter Silvermoon
+step << Druid
+    .goto Silvermoon City,72.53,56.24,10,0
+    .goto Silvermoon City,71.55,55.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Harene|r
+    .train 8936 >> Train your class spells
+    .target Harene Plainswalker
+	.xp <12,1
+	.xp >14,1
+step << Druid
+    .goto Silvermoon City,72.53,56.24,10,0
+    .goto Silvermoon City,71.55,55.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Harene|r
+    .train 782 >> Train your class spells
+    .target Harene Plainswalker
+	.xp <14,1
+step << !Orc !Troll !Tauren !Warlock !Rogue
+    #completewith next
+    .goto Silvermoon City,73.39,59.65,30,0
+    .goto Silvermoon City,78.28,59.34,8,0
+    .goto Silvermoon City,78.36,60.14,8 >> Go inside the Inn
+step << !Orc !Troll !Tauren !Warlock !Rogue
+    .goto Silvermoon City,79.50,58.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Suntouched|r
+    >>|cFF0E8312Buy the|r |T132798:0|t[Suntouched Special Reserve] |cFF0E8312from him|r
+    .collect 22775,1,9067,1 --Suntouched Special Reserve (1)
+    .target Vinemaster Suntouched
+step << !BloodElf Hunter
+    #completewith next
+    .goto Silvermoon City,73.39,59.65,30,0
+    .goto Silvermoon City,78.28,59.34,8,0
+    .goto Silvermoon City,78.36,60.14,8 >> Go inside the Inn. Exit out the other side
+step << BloodElf Hunter
+    #completewith next
+    .goto Silvermoon City,80.90,57.53,8,0
+    .goto Silvermoon City,82.04,58.31,8 >>Exit the other side of the Inn
+step << Priest/Mage
+    #completewith PMTrain
+    .goto Silvermoon City,75.95,52.92,30,0
+    .goto Silvermoon City,62.89,31.26,30,0
+    .goto Silvermoon City,57.45,24.46,15,0
+    .goto Silvermoon City,55.31,24.96,15,0 << Priest
+    .goto Silvermoon City,57.21,21.25,15,0 << Mage
+    .goto Silvermoon City,55.38,26.76,12 >> Travel toward |cFF00FF25Lotheolan|r << Priest
+    .goto Silvermoon City,57.16,18.85,12 >> Travel toward |cFF00FF25Zaedana|r << Mage
+    .cooldown item,6948,<0
 step << Priest
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lotheolan|r
@@ -3279,39 +3391,17 @@ step << skip
 step << skip
     .goto Ghostlands,47.3,29.1
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
-step << Paladin/Rogue
-    #label miningr
-    .goto Silvermoon City,78.9,43.3
-    .train 2580 >>Train Mining to be able to mine nodes for Rough Stones, allowing you to craft Sharpening Stones (+2 weapon damage for 1 hour).
-    .cast 2580 >>Cast Find Minerals
-step << Paladin/Rogue
-    .goto Silvermoon City,78.4,42.5
-    >> Buy a mining pick
-    .collect 2901,1 --Mining Pick (1)
-step << Undead/BloodElf !Hunter
-    .goto Silvermoon City,79.5,58.5
-    >> Buy a Suntouched Special Reserve from Vinemaster Suntouched. Reload vendor's inventory window if they do not appear (currently bugged).
-    .collect 22775,1 --Collect Suntouched Special Reserve 
-step << Undead/BloodElf !Hunter
-    #completewith next
-    .hs Hearth to Falconwing
-    .cooldown item,6948,>0
-step << !BloodElf/!Hunter !Warlock/!BloodElf
-    #completewith springpawhs
-    .goto Eversong Woods,56.7,49.6,30 >>Exit Silvermoon
-step << BloodElf/Undead
-    #label springpawhs
-    #completewith next
-    >>Kill Springpaw Lynxes. Loot them for their pelts
-    .complete 8491,1 --Collect Springpaw Pelt (x6)
-step << Orc Warlock/Undead Warlock
-    #completewith next
+    --VV << BloodElf Hunter
+step << !Orc !Troll !Tauren !Rogue/!BloodElf Warlock
+    #completewith SGrove
     .hs >> Hearth to Falconwing Square
     .cooldown item,6948,>0
-step << Orc Warlock/Undead Warlock
-    .goto Eversong Woods,48.2,47.9
-    .trainer >> Train your class spells
-step << Undead/BloodElf !Hunter 
+step << !Warlock
+    #completewith SGrove
+    .goto Eversong Woods,56.43,49.91
+    .zone Eversong Woods >>Exit Silvermoon
+    .cooldown item,6948,<0 << Undead/BloodElf
+step << Mage/Priest/Undead Warlock
     #completewith next
     .goto Eversong Woods,47.79,47.35,8,0
     .goto Eversong Woods,47.86,47.76,8 >> Go inside the Inn
@@ -3687,11 +3777,61 @@ step << !BloodElf/!Warlock
     .goto Ghostlands,47.14,28.30
     .turnin 9758 >> Turn in Return to Arcanist Vandril
     .accept 9138 >> Accept Suncrown Village
-step << Warlock
-    #completewith next
-    .goto Ghostlands,48.9,32.4
-    .home >> Set your Hearthstone to Tranquillien 
-step << BloodElf !Hunter !Warlock
+    .goto Ghostlands,46.55,28.38,10,0
+    .goto Ghostlands,46.08,28.33
+    .target Deathstalker Maltendis
+    .target High Executor Mavren
+    .target Advisor Valwyn
+    .target Quartermaster Lymel << !BloodElf
+    .target Rathis Tomber
+    .target Arcanist Vandril
+step << BloodElf Warlock
+    #sticky
+    #label WPoster
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cFF00FF25Wanted Poster|r
+    .accept 9156 >> Accept Wanted: Knucklerot and Luzran
+    .goto Ghostlands,48.35,31.67
+step << BloodElf Warlock
+    #completewith X
+    .goto Ghostlands,48.34,31.99,8,0
+    .goto Ghostlands,48.91,32.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kalarin|r
+    .home >> Set your Hearthstone to Tranquillien
+    .target Innkeeper Kalarin
+step << BloodElf Warlock
+    #requires WPoster
+    #xprate <1.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lymel|r, |cFF00FF25Rathis|r, and |cFF00FF25Vandril|r
+    .accept 9130 >> Accept Goods from Silvermoon City
+    .goto Ghostlands,47.34,29.26
+    .accept 9152 >> Accept Tomber's Supplies
+    .goto Ghostlands,47.27,28.59,10,0
+    .goto Ghostlands,47.14,28.30
+    .turnin 9758 >> Turn in Return to Arcanist Vandril
+    .accept 9138 >> Accept Suncrown Village
+    .goto Ghostlands,46.55,28.38,10,0
+    .goto Ghostlands,46.08,28.33
+    .target Quartermaster Lymel
+    .target Rathis Tomber
+    .target Arcanist Vandril
+step << BloodElf Warlock
+    #requires WPoster
+    #xprate >1.4999
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lymel|r, |cFF00FF25Rathis|r, and |cFF00FF25Vandril|r << BloodElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathis|r and |cFF00FF25Vandril|r << !BloodElf
+    .accept 9130 >> Accept Goods from Silvermoon City << BloodElf
+    .goto Ghostlands,47.34,29.26 << BloodElf
+    .accept 9152 >> Accept Tomber's Supplies
+    .goto Ghostlands,47.27,28.59,10,0
+    .goto Ghostlands,47.14,28.30
+    .turnin 9758 >> Turn in Return to Arcanist Vandril
+    .accept 9138 >> Accept Suncrown Village
+    .goto Ghostlands,46.55,28.38,10,0
+    .goto Ghostlands,46.08,28.33
+    .target Quartermaster Lymel
+    .target Rathis Tomber
+    .target Arcanist Vandril
+step << skip
     >>Do NOT fly to Silvermoon City. Talk to the Flight Master.
     .goto Ghostlands,45.5,30.6
     .turnin 9130 >> Turn in Goods from Silvermoon City
@@ -4040,8 +4180,26 @@ step
     .accept 9174 >> Accept Vanquishing Aquantion
     .target Geranis Whitemorn
 step
-    >>Click the shrine to summon Aquantion. He is VERY difficult. He is immmune to crowd control abilities (Stuns and Silences), has greater than normal health, and hits relatively hard with frost damage
-    .goto Ghostlands,71.3,15.0
+    #completewith next
+    .goto Ghostlands,71.32,14.93
+    .cast 28226 >> Click the |cFFDB2EEFAltar|r to summon |cFFFF5722Aquantion|r
+step
+    .goto Ghostlands,71.31,14.58
+    >>Kill |cFFFF5722Aquantion|r
+    >>|cFFFCDC00He has elite-level health and deals frost damage|r
+    >>|cFFFCDC00He is immune to|r |T136222:0|t[Arcane Torrent] |cFFFCDC00and|r |T135963:0|t[Hammer of Justice] << BloodElf Paladin
+    >>|cFFFCDC00He is immune to|r |T135963:0|t[Hammer of Justice] << !BloodElf Paladin
+    >>|cFFFCDC00He is immune to|r |T136222:0|t[Arcane Torrent] |cFFFCDC00and|r |T136183:0|t[Fear] << BloodElf Warlock
+    >>|cFFFCDC00He is immune to|r |T136183:0|t[Fear] << !BloodElf Warlock
+    >>|cFFFCDC00He is immune to|r |T136222:0|t[Arcane Torrent] |cFFFCDC00and|r |T136184:0|t[Psychic Scream] << BloodElf Priest
+    >>|cFFFCDC00He is immune to|r |T136184:0|t[Psychic Scream] << !BloodElf Priest
+    >>|cFFFCDC00He is immune to|r |T136222:0|t[Arcane Torrent], |T135846:0|t[Frostbolt], |T135848:0|t[Frost Nova], |cFFFCDC00and|r |T135843:0|t[Frost Armor] << BloodElf Mage
+    >>|cFFFCDC00He is immune to|r |T135846:0|t[Frostbolt], |T135848:0|t[Frost Nova], |cFFFCDC00and|r |T135843:0|t[Frost Armor] << !BloodElf Mage
+    >>|cFFFCDC00Be sure buff yourself with|r |T136006:0|t[Dampen Magic] |cFFFCDC00before summoning him|r << Mage
+    >>|cFFFCDC00He is immune to|r |T136222:0|t[Arcane Torrent] |cFFFCDC00and|r |T132155:0|t[Gouge] << BloodElf Rogue
+    >>|cFFFCDC00He is immune to|r |T132155:0|t[Gouge] << !BloodElf Rogue
+    >>|cFFFCDC00He is immune to|r |T136222:0|t[Arcane Torrent] << BloodElf Hunter
+    >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock
     .complete 9174,1 --Kill Aquantion (x1)
     .target Aquantion
     .train 8122,2 << Priest
@@ -5972,7 +6130,32 @@ step
     >>|cFFFCDC00Be careful as these mobs are difficult|r
     .complete 9173,1 --Deatholme Acolyte (8)
     .complete 9173,2 --Fallen Ranger (10)
-    .collect 22597,1,9175 --Collect The Lady's Necklace (x1)
+    .target Deatholme Acolyte
+    .target Fallen Ranger
+step
+    .goto Ghostlands,17.21,58.09,40,0
+    .goto Ghostlands,15.17,56.58,30,0
+    .goto Ghostlands,12.45,56.89,15,0
+    .goto Ghostlands,13.26,54.85,20,0
+    .goto Ghostlands,11.58,55.88,15,0
+    .goto Ghostlands,11.29,57.15,20,0
+    .goto Ghostlands,11.93,57.05,15,0
+    .goto Ghostlands,12.13,58.44,15,0
+    .goto Ghostlands,13.69,58.59,20,0
+    .goto Ghostlands,12.66,58.98,15,0
+    .goto Ghostlands,12.24,57.47,15,0
+    .goto Ghostlands,17.21,58.09,40,0
+    .goto Ghostlands,15.17,56.58,30,0
+    .goto Ghostlands,13.26,54.85,20,0
+    .goto Ghostlands,11.58,55.88,15,0
+    .goto Ghostlands,11.29,57.15,20,0
+    .goto Ghostlands,11.93,57.05,15,0
+    .goto Ghostlands,12.13,58.44,15,0
+    .goto Ghostlands,13.69,58.59,20,0
+    .goto Ghostlands,12.66,58.98,15,0
+    .goto Ghostlands,12.24,57.47
+    >>Kill |cFFFF5722Fallen Rangers|r and |cFFFF5722Deatholme Acolytes|r. Loot them for |T329590:0|t[The Lady's Necklace]. |cFFFCDC00Use it to start the quest|r
+    .collect 22597,1,9175,1 --Collect The Lady's Necklace (x1)
     .accept 9175 >> Accept The Lady's Necklace  
     .use 22597
 step
@@ -6034,17 +6217,24 @@ step
     .target Ghostclaw Ravager
     .isQuestAvailable 9171
 step
-    .goto Ghostlands,16.5,62.5,0
-    .goto Ghostlands,44.1,57.6,0
-    .goto Ghostlands,16.5,62.5,0
-    .goto Ghostlands,44.1,57.6,0
-    .goto Ghostlands,16.5,62.5,0
-    .goto Ghostlands,44.1,57.6,0
-    .goto Ghostlands,16.5,62.5,0
-    .goto Ghostlands,44.1,57.6,30,0
-    .goto Ghostlands,16.5,62.5,30,0    
-    >>Finish looting Spiders for Crunchy Spider Legs if you haven't gotten 5 legs by now.
-    .complete 9171,1 --Collect Crunchy Spider Leg (x5)
+    #xprate >1.4999
+    .goto Ghostlands,18.75,60.74,50,0
+    .goto Ghostlands,23.38,59.90,50,0
+    .goto Ghostlands,28.23,58.65,50,0
+    .goto Ghostlands,30.77,60.23,50,0
+    .goto Ghostlands,34.06,57.57,50,0
+    .goto Ghostlands,18.75,60.74,50,0
+    .goto Ghostlands,23.38,59.90,50,0
+    .goto Ghostlands,28.23,58.65,50,0
+    .goto Ghostlands,30.77,60.23,50,0
+    .goto Ghostlands,34.06,57.57
+    >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r
+    >>|cFFFCDC00Be careful as these mobs may be difficult due to the level difference|r << Rogue
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .target Greater Spindleweb
+    .target Ghostclaw Ravager
+    .isQuestTurnedIn 9171
 step
     #completewith next
     >>Kill |cFFFF5722Knucklerot|r |cFFFCDC00IF you can find a group to carry you|r. Loot him for his |cFF00BCD4Head|r
