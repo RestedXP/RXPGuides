@@ -2498,9 +2498,16 @@ step
     .fp Redridge Mountains >> Get the Redridge Mountains flight path << !Human !Warlock
     .fly Stormwind >> Fly to Stormwind City
 step << Rogue
+    #softcore
     .goto StormwindClassic,57.55,57.07
     >>Buy a Longsword if you have enough money. Equip it at 21
     >>Buy something from the AH if its cheaper/better
+    >>Skip this step if you have something better
+    .collect 923,1 --Longsword (1)
+step << Rogue
+    #hardcore
+    .goto StormwindClassic,57.55,57.07
+    >>Buy a Longsword if you have enough money. Equip it at 21
     >>Skip this step if you have something better
     .collect 923,1 --Longsword (1)
 step << Warrior/Paladin
