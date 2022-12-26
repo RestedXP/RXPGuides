@@ -31,7 +31,7 @@ step << Warlock tbc
 step << Priest/Mage
     #sticky
     #completewith vendorCaster
-    +Grind mobs toward town until you have 35c worth of vendorables
+    +Grind mobs toward town until you have 60c worth of vendorables
     .goto Tirisfal Glades,31.5,69.8
 step << Warrior
     #label vendorWar
