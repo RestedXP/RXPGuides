@@ -2417,7 +2417,7 @@ end
 function addon.functions.train(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, id, rank = ...
+        local text, id, flags = ...
         local spellId = tonumber(id)
 
         if spellId then
@@ -2431,24 +2431,24 @@ function addon.functions.train(self, ...)
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ": Invalid spell name/id\n" .. self)
         end
-        if rank then element.rank = tonumber(rank:match("(%d+)")) or 0 end
-
+        element.flags = tonumber(flags) or 0
+        if bit.band(element.flags,0x1) == 0x1 then
+            element.textOnly = true
+        end
         if element.id and not C_Spell.IsSpellDataCached(element.id) then
             C_Spell.RequestLoadSpellData(element.id)
         end
 
-        if text and text ~= "" then
-            element.text = text
-        else
-            element.text = "-"
-        end
+        element.text = text
+
         element.requestFromServer = true
-        element.tooltipText = addon.icons.trainer .. element.text
+        element.reverse = bit.band(element.flags,0x2) == 0x2
         return element
     end
     local element = self.element
     local event = ...
     local rank = element.rank or 0
+    local step = element.step
     if not element.rank and C_Spell.IsSpellDataCached(element.id) then
         rank = GetSpellSubtext(element.id)
         rank = tonumber(rank:match("(%d+)")) or 0
@@ -2457,10 +2457,17 @@ function addon.functions.train(self, ...)
     end
     if not element.title then element.title = GetSpellInfo(element.id) end
 
-    if IsPlayerSpell(element.id) or IsSpellKnown(element.id, true) or
-        IsSpellKnown(element.id) then addon.SetElementComplete(self, true) end
+    if step.active and ((IsPlayerSpell(element.id) or IsSpellKnown(element.id, true) or
+        IsSpellKnown(element.id)) ~= element.reverse) then
+        if element.textOnly then
+            self.element.step.completed = true
+            addon.updateSteps = true
+        else
+            addon.SetElementComplete(self, true)
+        end
+    end
 
-    if element.title then
+    if element.title and not element.reverse then
         if element.completed or element.step.completed or
             not element.step.active then
             addon.skillList[element.title] = nil
