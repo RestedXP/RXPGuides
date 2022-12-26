@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Horde 1-30
 #defaultfor Orc/Troll
 #next 10-13 Durotar << Warrior/Shaman
-#next 10-20 Eversong Woods / Ghostlands << !Warrior !Shaman
+#next 10-12 Eversong Woods << !Warrior !Shaman
 step << !Orc !Troll
     #sticky
     #completewith next
@@ -1212,9 +1212,9 @@ step << !Shaman !Warrior
 step << !Shaman !Warrior
 .goto Undercity,62.0,11.3,18 >>Go up the stairs here
 step << !Shaman !Warrior
-.goto Undercity,54.9,11.3,18 >>Use the Orb of Translocation
-step << !Shaman !Warrior
-.goto Silvermoon City,62.0,30.1,20 >>Arrive in Silvermoon
+    .goto Undercity,54.63,11.28
+    .zone Silvermoon City >>Use the Orb of Translocation to teleport to Silvermoon
+    .zoneskip Eversong Woods
 step << Paladin
     #completewith next
     .goto Silvermoon City,91.2,36.9
