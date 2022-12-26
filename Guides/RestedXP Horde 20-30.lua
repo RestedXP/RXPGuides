@@ -1435,7 +1435,6 @@ step << Druid tbc
     .accept 31 >>Accept Aquatic Form
 step
 	#completewith next
-	#requires Crate
 	>>We're not going to turn these quests in until later on.
 	.hs >> Hearth to Thunder Bluff
 step << Druid
