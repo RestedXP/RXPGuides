@@ -2042,6 +2042,10 @@ step
     .accept 190 >> Accept Panther Mastery
 step
 	#label tigers
+    .goto Stranglethorn Vale,37.6,11.6,20,0
+    .goto Stranglethorn Vale,35.6,10.6,20,0
+    .goto Stranglethorn Vale,36.4,13.6,20,0
+    .goto Stranglethorn Vale,37.6,11.6
     >> Kill young tigers around the hunting camp
     .complete 185,1 --Kill Young Stranglethorn Tiger (x10)
 step
