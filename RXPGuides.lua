@@ -59,29 +59,7 @@ function RXPG_init()
     if RXPData.trainGenericSpells == nil then
         RXPData.trainGenericSpells = true
     end
-
-    C_Timer.After(0.5, function()
-        if addon.errorCount == addon.guideErrorCount then
-            addon.errorCount = -1
-            _G.ScriptErrorsFrame:Hide()
-        end
-    end)
 end
-
-addon.errorCount = 0
-addon.guideErrorCount = 0
-
-hooksecurefunc(_G.ScriptErrorsFrame, "DisplayMessage",
-               function(self, msg, warnType, keepHidden, messageType)
-    if _G.ScriptErrorsFrame:IsForbidden() then return end
-    if addon.errorCount >= 0 then
-        if warnType == 0 and keepHidden == false and messageType == 1 and
-            type(msg) == "string" and msg:match(addonName .. "\\Guides") then
-            addon.guideErrorCount = addon.guideErrorCount + 1
-        end
-        addon.errorCount = addon.errorCount + 1
-    end
-end)
 
 local startTime = GetTime()
 
