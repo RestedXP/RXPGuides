@@ -634,7 +634,7 @@ function addon.HideInRaid()
     if not UnitInRaid("player") then return end
 
     for _, frame in pairs(addon.enabledFrames) do
-        frame:Hide()
+        if not frame:IsForbidden() then frame:Hide() end
     end
 end
 
