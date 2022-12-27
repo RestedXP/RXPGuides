@@ -167,7 +167,8 @@ step << Warlock tbc
     .goto Eversong Woods,30.90,27.66,30,0
     .goto Eversong Woods,30.55,26.98,30,0
     .goto Eversong Woods,31.10,26.83
-    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |cFF00BCD4Essence|r and |T132884:0|t[Tainted Arcane Sliver]. |cFFFCDC00Use it to start the quest|r
+    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |cFF00BCD4Essence|r and |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r]. 
+    >>|cFFFCDC00Use the |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r] to start the quest|r
     .complete 8344,2 --Tainted Wraith Essence (1)
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
@@ -249,24 +250,28 @@ step << Warlock tbc
     #completewith Measures
 	.cast 20397 >> Use your |T133738:0|t[Grimoire of Blood Pact]
 	.use 16321
+step << wotlk
+    #completewith Measures
+    >>Cast |T136222:0|t[Arcane Torrent] when in melee range of a |cFFFF5722Mana Wyrm|r
+    .complete 8346,1 --Mana Tap creature (1)
 step
     #label Collars
     >>Kill |cFFFF5722Springpaw Lynxes|r and |cFFFF5722Springpaw Cubs|r. Loot them for their |cFF00BCD4Collars|r
-    .goto Eversong Woods,37.37,18.31,40,0
-    .goto Eversong Woods,39.36,18.83,40,0
-    .goto Eversong Woods,39.85,16.63,40,0
-    .goto Eversong Woods,40.61,16.24,40,0
-    .goto Eversong Woods,40.37,18.80,40,0
-    .goto Eversong Woods,40.48,20.38,40,0
-    .goto Eversong Woods,39.42,22.28,40,0
-    .goto Eversong Woods,35.98,24.22,40,0
-    .goto Eversong Woods,37.37,18.31,40,0
-    .goto Eversong Woods,39.36,18.83,40,0
-    .goto Eversong Woods,39.85,16.63,40,0
-    .goto Eversong Woods,40.61,16.24,40,0
-    .goto Eversong Woods,40.37,18.80,40,0
-    .goto Eversong Woods,40.48,20.38,40,0
-    .goto Eversong Woods,39.42,22.28,40,0
+    .goto Eversong Woods,37.37,18.31,35,0
+    .goto Eversong Woods,39.36,18.83,35,0
+    .goto Eversong Woods,39.85,16.63,35,0
+    .goto Eversong Woods,40.61,16.24,35,0
+    .goto Eversong Woods,40.37,18.80,35,0
+    .goto Eversong Woods,40.48,20.38,35,0
+    .goto Eversong Woods,39.42,22.28,35,0
+    .goto Eversong Woods,35.98,24.22,35,0
+    .goto Eversong Woods,37.37,18.31,35,0
+    .goto Eversong Woods,39.36,18.83,35,0
+    .goto Eversong Woods,39.85,16.63,35,0
+    .goto Eversong Woods,40.61,16.24,35,0
+    .goto Eversong Woods,40.37,18.80,35,0
+    .goto Eversong Woods,40.48,20.38,35,0
+    .goto Eversong Woods,39.42,22.28,35,0
     .goto Eversong Woods,35.98,24.22
     .complete 8326,1 --Collect Lynx Collar (x8)
     .target Springpaw Lynx
@@ -402,7 +407,6 @@ step << wotlk/!Warlock !Mage !Priest tbc
 step << wotlk/!Warlock tbc
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Helion|r and |cFF00FF25Ithanas|r
     .turnin 8346 >> Turn in Thirst Unending
-    .turnin 8338 >> Turn in Tainted Arcane Sliver
     .goto Eversong Woods,37.18,18.94
     .turnin 8336 >> Turn in A Fistful of Slivers
     .goto Eversong Woods,38.27,19.13
@@ -427,26 +431,31 @@ step << !Mage tbc/!Priest tbc/!Warlock tbc
     .target Shara Sunwing
     .money >0.1 << !Mage tbc/!Priest tbc/!Warlock tbc
 step << Mage
+    .goto Eversong Woods,38.56,20.98,10,0 << wotlk
     .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Julia|r
     .train 116 >> Train your class spells
     .target Julia Sunstriker
 step << Warlock wotlk
+    .goto Eversong Woods,38.56,20.98,10,0
     .goto Eversong Woods,38.93,21.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Teli'Larien|r
     .train 172 >> Train your class spells
     .target Summoner Teli'Larien
 step << Priest
+    .goto Eversong Woods,38.56,20.98,10,0 << wotlk
     .goto Eversong Woods,39.42,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Arena|r
     .train 589 >> Train your class spells
     .target Matron Arena
 step << Hunter
+    .goto Eversong Woods,38.56,20.98,10,0 << wotlk
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sallina|r
     .train 1978 >> Train your class spells
     .target Ranger Sallina
 step << Paladin
+    .goto Eversong Woods,38.56,20.98,10,0 << wotlk
     .goto Eversong Woods,39.47,20.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jesthenis|r
     .train 20271 >> Train your class spells
@@ -466,7 +475,8 @@ step
     .goto Eversong Woods,32.02,26.09,20 >>Run up the ramp
 step << wotlk/!Warlock tbc
     #completewith next
-    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[Tainted Arcane Sliver]. |cFFFCDC00Use it to start the quest|r
+    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r]. 
+    >>|cFFFCDC00Use the |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r] to start the quest|r
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
     .target Tainted Arcane Wraith
@@ -481,7 +491,7 @@ step
     .goto Eversong Woods,30.48,27.90,10,0
     .goto Eversong Woods,30.84,27.13
     >>Kill |cFFFF5722Arcane Wraiths|r and |cFFFF5722Tainted Arcane Wraiths|r whilst heading up the Academy
-    >>Kill |cFFFF5722Felendren the Banished|r at the top. Loot him for his |cFF00BCD4Head|r
+    >>Kill |cFFFF5722Felendren|r at the top. Loot him for his |cFF00BCD4Head|r
     .complete 8335,1 --Kill Arcane Wraith (x8)
     .complete 8335,2 --Kill Tainted Arcane Wraith (x2)
     .complete 8335,3 --Collect Felendren's Head (x1)
@@ -490,7 +500,8 @@ step
     .target Felendren the Banished
 step << wotlk/!Warlock tbc
     .goto Eversong Woods,30.84,27.13
-    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[Tainted Arcane Sliver]. |cFFFCDC00Use it to start the quest|r
+    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r]. 
+    >>|cFFFCDC00Use the |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r] to start the quest|r
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
     .target Tainted Arcane Wraith
@@ -505,6 +516,7 @@ step
 	.cooldown item,6948,>0
 step
     #completewith next
+    .goto Eversong Woods,38.56,20.98,10,0
     .goto Eversong Woods,39.43,21.06,10,0
     .goto Eversong Woods,39.48,20.58,10,0
     .goto Eversong Woods,39.31,20.23,10,0
@@ -739,7 +751,8 @@ step
     #completewith next
     .goto Eversong Woods,46.96,43.56,40,0
     .goto Eversong Woods,47.09,39.00,40,0
-    >>Loot the |cFFDB2EEFUnstable Mana Crystal Boxes|r on the ground. Kill |cFFFF5722Arcane Patrollers|r. Loot them for their |cFF00BCD4Cores|r
+    >>Loot the |cFFDB2EEFUnstable Mana Crystal Boxes|r on the ground
+    >>Kill |cFFFF5722Arcane Patrollers|r. Loot them for their |cFF00BCD4Cores|r
     .complete 8463,1 --Collect Unstable Mana Crystal (x6)
     .complete 8472,1 --Collect Arcane Core (x6)
     .target Arcane Patroller
@@ -766,7 +779,8 @@ step
     .goto Eversong Woods,43.96,34.90,40,0
     .goto Eversong Woods,42.41,38.04,40,0
     .goto Eversong Woods,42.17,40.49
-    >>Loot the |cFFDB2EEFUnstable Mana Crystal Boxes|r on the ground. Kill |cFFFF5722Arcane Patrollers|r. Loot them for their |cFF00BCD4Cores|r
+    >>Loot the |cFFDB2EEFUnstable Mana Crystal Boxes|r on the ground
+    >>Kill |cFFFF5722Arcane Patrollers|r. Loot them for their |cFF00BCD4Cores|r
     .complete 8463,1 --Collect Unstable Mana Crystal (x6)
     .complete 8472,1 --Collect Arcane Core (x6)
     .target Arcane Patroller
@@ -933,7 +947,7 @@ step
 step
     #xprate <1.5
     .goto Eversong Woods,44.34,62.00
-    >>Loot the |cFFDB2EEFGrimoire underwater|r
+    >>Loot the |cFFDB2EEFGrimoire|r underwater
     .complete 9062,1 --Collect Antheol's Elemental Grimoire (x1)
 step
     #xprate <1.5
@@ -958,7 +972,7 @@ step << !Warrior !Warlock !Hunter !Rogue
 step << !Warrior !Warlock !Hunter !Rogue
     #xprate >1.4999
     .goto Eversong Woods,44.34,62.00
-    >>Loot the |cFFDB2EEFGrimoire underwater|r
+    >>Loot the |cFFDB2EEFGrimoire|r underwater
     .complete 9062,1 --Collect Antheol's Elemental Grimoire (x1)
 step << !Warrior !Warlock !Hunter !Rogue
     #xprate >1.4999
@@ -1110,7 +1124,8 @@ step
     .goto Eversong Woods,34.65,62.03,30,0
     .goto Eversong Woods,34.04,60.81,30,0
     .goto Eversong Woods,34.19,58.49
-    >>Kill a |cFFFF5722Darnassian Scout|r. Loot it for his |T133464:0|t[|cFF00BCD4Incriminating Documents|r]. |cFFFCDC00Use it to start the quest|r
+    >>Kill a |cFFFF5722Darnassian Scout|r. Loot it for his |T133464:0|t[|cFF00BCD4Incriminating Documents|r]
+    >>|cFFFCDC00Use the |T133464:0|t[|cFF00BCD4Incriminating Documents|r] to start the quest|r
     .complete 9352,1 --Intruder Defeated
     .collect 20765,1,8482,1 --Incriminating Documents (1)
     .accept 8482 >> Accept Incriminating Documents
@@ -1357,7 +1372,7 @@ step << Warrior/Warlock/Hunter/Rogue
 step
     #completewith next
     .goto Eversong Woods,44.04,70.35,0
-    >>|cFF0E8312Buy|r |T135147:0|t[Small Brown Pouches] |cFF0E8312from|r |cFF00FF25Halis|r |cFF0E8312if you need bags|r
+    >>|cFF0E8312Buy|r |T133634:0|t[Small Brown Pouches] |cFF0E8312from|r |cFF00FF25Halis|r |cFF0E8312if you need bags|r
     .vendor >> Vendor trash
     .target Halis Dawnstrider
 --VV Bag check command
@@ -1455,25 +1470,24 @@ step
     .target Wretched Thug
     .target Wretched Hooligan
 step
-    .goto Eversong Woods,34.66,68.00,30,0
-    .goto Eversong Woods,34.11,69.20,30,0
-    .goto Eversong Woods,33.01,71.10,30,0
-    .goto Eversong Woods,32.39,69.80,30,0
+    .goto Eversong Woods,34.66,68.00,25,0
+    .goto Eversong Woods,34.11,69.20,25,0
+    .goto Eversong Woods,33.01,71.10,25,0
+    .goto Eversong Woods,32.39,69.80,25,0
     .goto Eversong Woods,32.76,68.51,10,0
     .goto Eversong Woods,32.21,69.07,10,0
     .goto Eversong Woods,32.40,70.26,10,0
     .goto Eversong Woods,32.77,70.15,10,0
     .goto Eversong Woods,32.74,68.77,10,0
-    .goto Eversong Woods,31.71,68.95,30,0
-    .goto Eversong Woods,30.54,69.24,30,0
-    .goto Eversong Woods,31.40,70.90,30,0
-    .goto Eversong Woods,34.66,68.00,30,0
-    .goto Eversong Woods,34.11,69.20,30,0
-    .goto Eversong Woods,33.01,71.10,30,0
-    .goto Eversong Woods,32.39,69.80,30,0
+    .goto Eversong Woods,31.71,68.95,25,0
+    .goto Eversong Woods,30.54,69.24,25,0
+    .goto Eversong Woods,31.40,70.90,25,0
+    .goto Eversong Woods,34.66,68.00,25,0
+    .goto Eversong Woods,34.11,69.20,25,0
+    .goto Eversong Woods,33.01,71.10,25,0
+    .goto Eversong Woods,32.39,69.80,25,0
     .goto Eversong Woods,32.76,68.51
-    >>Loot the |cFFDB2EEFArmament Boxes|r on the ground
-    >>They can be found along the nearby paths and inside the building
+    >>Loot the |cFFDB2EEFArmament Boxes|r on the ground near the |cFFFF5722Wretched|r and inside the building
     .complete 8480,1 --Collect Sin'dorei Armaments (x8)
 step
     .goto Eversong Woods,36.36,66.78
@@ -1483,6 +1497,7 @@ step
     .target Velendris Whitemorn
 step
     #completewith next
+    .goto Eversong Woods,32.80,69.49,40,0
     .goto Eversong Woods,32.77,68.65,10,0
     .goto Eversong Woods,32.24,68.98,10,0
     .goto Eversong Woods,32.30,70.03,10,0
@@ -1492,7 +1507,7 @@ step
 step
     #label Aldaron
     .goto Eversong Woods,32.80,69.40
-    >>Kill |cFFFF5722Aldaron|r at the top of the building. Loot him for his |cFF00BCD4Head|r
+    >>Kill |cFFFF5722Aldaron|r at the top. Loot him for his |cFF00BCD4Head|r
     .complete 9076,1 --Collect Aldaron's Head (x1)
     .target Aldaron the Reckless
 step
@@ -1528,30 +1543,31 @@ step
     .target Springpaw Stalker
 step
     #completewith next
-    .goto Eversong Woods,24.32,74.07,50,0
-    >>Kill |cFFFF5722Grimscale Murlocs|r and |cFFFF5722Grimscale Oracles|r. Loot them for their |cFF00BCD4Cargo|r. Loot the |cFFDB2EEFCargo Barrels|r on the ground
-    >>Use |T136222:0|tArcane Torrent to interrupt the |cFFFF5722Grimscale Oracles|r' |T135907:0|tFlash Heals << BloodElf
+    .goto Eversong Woods,24.32,74.07,40,0
+    >>Kill |cFFFF5722Grimscale Murlocs|r and |cFFFF5722Grimscale Oracles|r. Loot them for their |cFF00BCD4Cargo|r
+    >>Loot the |cFFDB2EEFCargo Barrels|r on the ground
+    >>|cFFFCDC00Use|r |T136222:0|t[Arcane Torrent] |cFFFCDC00to interrupt the|r |cFFFF5722Grimscale Oracles|r' |T135907:0|t[Flash Heal] << BloodElf
     .complete 8886,1 --Collect Captain Kelisendra's Cargo (x6)
     .target Grimscale Murloc
     .target Grimscale Oracle
 step
-    .goto Eversong Woods,24.36,72.66,50,0
-    .goto Eversong Woods,25.09,71.12,50,0
-    .goto Eversong Woods,24.32,69.66,50,0
-    .goto Eversong Woods,24.66,68.47,50,0
-    .goto Eversong Woods,25.68,68.93,50,0
-    .goto Eversong Woods,25.81,68.16,50,0
-    .goto Eversong Woods,24.89,66.85,50,0
-    .goto Eversong Woods,25.24,65.65,50,0
-    .goto Eversong Woods,24.89,66.85,50,0
-    .goto Eversong Woods,25.81,68.16,50,0
-    .goto Eversong Woods,25.68,68.93,50,0
-    .goto Eversong Woods,24.66,68.47,50,0
-    .goto Eversong Woods,24.32,69.66,50,0
-    .goto Eversong Woods,25.09,71.12,50,0
+    .goto Eversong Woods,24.36,72.66,40,0
+    .goto Eversong Woods,25.09,71.12,40,0
+    .goto Eversong Woods,24.32,69.66,40,0
+    .goto Eversong Woods,24.66,68.47,40,0
+    .goto Eversong Woods,25.68,68.93,40,0
+    .goto Eversong Woods,25.81,68.16,40,0
+    .goto Eversong Woods,24.89,66.85,40,0
+    .goto Eversong Woods,25.24,65.65,40,0
+    .goto Eversong Woods,24.89,66.85,40,0
+    .goto Eversong Woods,25.81,68.16,40,0
+    .goto Eversong Woods,25.68,68.93,40,0
+    .goto Eversong Woods,24.66,68.47,40,0
+    .goto Eversong Woods,24.32,69.66,40,0
+    .goto Eversong Woods,25.09,71.12,40,0
     .goto Eversong Woods,24.36,72.66
     >>Kill |cFFFF5722Mmmrrrggglll|r. Loot him for his |cFF00BCD4Ring|r. |cFFFCDC00He patrols around|r
-    >>Use |T136222:0|tArcane Torrent to interrupt the |cFFFF5722Mmmrrrggglll|r's |T136052:0|tHealing Wave << BloodElf
+    >>|cFFFCDC00Use|r |T136222:0|t[Arcane Torrent] |cFFFCDC00to interrupt|r |cFFFF5722Mmmrrrggglll|r's |T136052:0|t[Healing Wave] << BloodElf
     .complete 8885,1 --Collect Ring of Mmmrrrggglll (x1)
     .unitscan Mmmrrrggglll
 step
@@ -1563,8 +1579,9 @@ step
     .goto Eversong Woods,24.32,69.66,50,0
     .goto Eversong Woods,25.09,71.12,50,0
     .goto Eversong Woods,24.36,72.66
-    >>Kill |cFFFF5722Grimscale Murlocs|r and |cFFFF5722Grimscale Oracles|r. Loot them for their |cFF00BCD4Cargo|r. Loot the |cFFDB2EEFCargo Barrels|r on the ground
-    >>Use |T136222:0|tArcane Torrent to interrupt the |cFFFF5722Grimscale Oracles|r' |T135907:0|tFlash Heals << BloodElf
+    >>Kill |cFFFF5722Grimscale Murlocs|r and |cFFFF5722Grimscale Oracles|r. Loot them for their |cFF00BCD4Cargo|r
+    >>Loot the |cFFDB2EEFCargo Barrels|r on the ground
+    >>|cFFFCDC00Use|r |T136222:0|t[Arcane Torrent] |cFFFCDC00to interrupt the|r |cFFFF5722Grimscale Oracles|r' |T135907:0|t[Flash Heal] << BloodElf
     .complete 8886,1 --Collect Captain Kelisendra's Cargo (x6)
     .target Grimscale Murloc
     .target Grimscale Oracle
@@ -1672,13 +1689,12 @@ step << skip
     .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
     .target Spirit Healer
     --VV BloodElf Hunter
-step << skip
+step
     #completewith Sareyn
     .goto Eversong Woods,34.71,68.09,20,0
     .goto Eversong Woods,32.79,70.56
     .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
     .target Spirit Healer
-    --VV BloodElf Hunter
 step << skip
     .goto Eversong Woods,37.84,66.61,40,0
     .goto Eversong Woods,37.45,65.60,40,0
@@ -1721,7 +1737,7 @@ step << skip
 step << Hunter
     .goto Eversong Woods,44.04,70.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Halis|r
-    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312and|r |T132382:0|t[Sharp Arrows] |cFF0E8312from him|r. |cFF0E8312Buy|r |T135147:0|t[Small Brown Pouches] |cFF0E8312from her|r |cFF0E8312if you need bags|r
+    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312and|r |T132382:0|t[Sharp Arrows] |cFF0E8312from him|r. |cFF0E8312Buy|r |T133634:0|t[Small Brown Pouches] |cFF0E8312from her|r |cFF0E8312if you need bags|r
     .collect 2512,200,9252,1 << Hunter --Rough Arrow (200)
     .collect 2515,1000,9252,1 << Hunter --Sharp Arrow (1000)
     .target Halis Dawnstrider
@@ -1731,7 +1747,7 @@ step << Hunter
 step << Hunter
     .goto Eversong Woods,44.04,70.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Halis|r
-    >>|cFF0E8312Buy|r |T132382:0|t[Sharp Arrows] |cFF0E8312from her|r. |cFF0E8312Buy|r |T135147:0|t[Small Brown Pouches] |cFF0E8312from him|r |cFF0E8312if you need bags|r
+    >>|cFF0E8312Buy|r |T132382:0|t[Sharp Arrows] |cFF0E8312from her|r. |cFF0E8312Buy|r |T133634:0|t[Small Brown Pouches] |cFF0E8312from him|r |cFF0E8312if you need bags|r
     .collect 2515,1000,9252,1 << Hunter --Sharp Arrow (1000)
     .target Halis Dawnstrider
 --VV Bag check command
@@ -1739,7 +1755,7 @@ step << !Hunter
     #completewith Sareyn
     .goto Eversong Woods,44.04,70.35,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Halis|r
-    >>|cFF0E8312Buy|r |T135147:0|t[Small Brown Pouches] |cFF0E8312from him if you need bags|r
+    >>|cFF0E8312Buy|r |T133634:0|t[Small Brown Pouches] |cFF0E8312from him if you need bags|r
     .vendor >> Vendor Trash
     .target Halis Dawnstrider
 --VV Bag check command
@@ -1802,7 +1818,7 @@ step
     .goto Eversong Woods,50.42,77.39,40,0
     .goto Eversong Woods,51.07,76.32
     >>Kill |cFFFF5722Darkwraiths|r
-    >>|cFFFCDC00Be careful as|r |cFFFF5722Darkwraiths|r |T136224:0|tEnrage |cFFFCDC00at low health|r
+    >>|cFFFCDC00Be careful as|r |cFFFF5722Darkwraiths|r |cFFFCDC00cast|r |T136224:0|t[Enrage] |cFFFCDC00(increased damage and attack speed) at low health|r
     .complete 9252,2 --Kill Darkwraith (x4)
     .target Darkwraith
 step
@@ -1833,6 +1849,7 @@ step
 step
     .goto Eversong Woods,54.28,70.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mirveda|r
+    >>|cFFFCDC00Wait out the RP|r
     .turnin 8487 >> Turn in Corrupted Soil
     .timer 9,Corrupted Soil RP
     .accept 8488 >> Accept Unexpected Results
@@ -2254,13 +2271,17 @@ step << Undead Warlock
     .train 705 >>Train your class spells
     .target Celoenus
     .xp <12,1
-step << !BloodElf Priest
+step
+    #completewith Antheol2
+    .goto Eversong Woods,46.65,49.13,40 >>Exit Falconwing Square
+step << !BloodElf/!Priest
     #xprate >1.4999
     .goto Eversong Woods,50.34,50.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jaela|r
     .accept 8475 >> Accept The Dead Scar
     .target Ranger Jaela
-step << !BloodElf Priest
+    .xp >11,1
+step << !BloodElf/!Priest
     #xprate >1.4999
     .goto Eversong Woods,50.82,56.49,40,0
     .goto Eversong Woods,49.72,56.96,40,0
@@ -2273,12 +2294,14 @@ step << !BloodElf Priest
     >>Kill |cFFFF5722Plaguebone Pillagers|r
     .complete 8475,1 --Kill Plaguebone Pillager (x8)
     .target Plaguebone Pillager
-step << !BloodElf Priest
+    .isOnQuest 8475
+step << !BloodElf/!Priest
     #xprate >1.4999
     .goto Eversong Woods,50.34,50.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jaela|r
     .turnin 8475 >> Turn in The Dead Scar
     .target Ranger Jaela
+    .isQuestComplete 8475
 step << BloodElf Warlock
     #completewith next
     .goto Eversong Woods,56.51,49.61,25,0
@@ -2340,7 +2363,7 @@ step
     #label Antheol2
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Antheol|r
-    .turnin 9064 >> Turn in Taking the Fall << !BloodElf Priest
+    .turnin 9064 >> Turn in Taking the Fall << !BloodElf/!Priest
     .turnin 9066 >> Turn in Swift Discipline << BloodElf Priest
     .accept 9402 >> Accept Fetch! << Mage
     .target Instructor Antheol
@@ -8236,19 +8259,19 @@ step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf
     .goto Eversong Woods,61.08,54.15,12,0
     .goto Eversong Woods,61.09,54.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Winaestra|r
-    >>|cFF0E8312Buy the|r |T135144:0|t[Black Hawkstrider] |cFF0E8312from her|r
+    >>|cFF0E8312Buy the|r |T132228:0|t[Black Hawkstrider] |cFF0E8312from her|r
     .collect 29221,1,9220,1 --Black Hawstrider
 	.target Winaestra
     .money <0.9025 << Rogue
     .money <1.083 << !Rogue
     .skill riding,75
 step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk
-    .cast 55884 >> Use the |T135144:0|t[Black Hawkstrider] to learn it
+    .cast 55884 >> Use the |T132228:0|t[Black Hawkstrider] to learn it
     .use 29221
     .itemcount 29221,1
 step << BloodElf Rogue wotlk
     #label SMTraining5
-    .cast 55884 >> Use the |T135144:0|t[Black Hawkstrider] to learn it
+    .cast 55884 >> Use the |T132228:0|t[Black Hawkstrider] to learn it
     .use 29221
     .itemcount 29221,1
 step << Mage/Priest/Warlock/Hunter/Paladin
