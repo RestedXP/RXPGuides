@@ -414,17 +414,18 @@ function addon.targeting.CheckTargetProximity()
         proxmityPolling.match = false
         wipe(proxmityPolling.rareAnnounced)
         wipe(proxmityPolling.scannedTargets)
-        addon.targeting.activeTargetFrame:Hide()
+        if not InCombatLockdown() then
+            addon.targeting.activeTargetFrame:Hide()
+        end
 
         if IsInGroup() and not UnitIsGroupLeader('player') then return end
 
         for marker, _ in pairs(proxmityPolling.activeMarks) do
             -- Reset raid icons on timeout
             SetRaidTarget("player", marker)
-        end
 
-        if GetRaidTargetIndex("player") then
-            SetRaidTarget("player", GetRaidTargetIndex("player"))
+            -- Toggle marker off player
+            SetRaidTarget("player", marker)
         end
 
         wipe(proxmityPolling.activeMarks)
