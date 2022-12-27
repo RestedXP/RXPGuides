@@ -1899,7 +1899,7 @@ function addon.settings.ToggleActive()
         not addon.settings.db.profile.showEnabled
 
     for _, frame in pairs(addon.enabledFrames) do
-        if frame.IsFeatureEnabled() then
+        if frame.IsFeatureEnabled() and frame.SetShown then
             frame:SetShown(addon.settings.db.profile.showEnabled)
         end
     end
