@@ -256,6 +256,10 @@ end
 function addon.GetOrphanedQuests()
     local orphans = {}
 
+    if not addon.currentGuide or not addon.currentGuide.key then
+        return orphans
+    end
+
     -- Green at level - green, grey below
     local greyBuffer
 
@@ -285,19 +289,17 @@ function addon.GetOrphanedQuests()
             isTooLow = questData.level < greyBuffer
             isPartOfGuide = false
 
-            if addon.currentGuide and addon.currentGuide.key then
-                for _, data in pairs(addon.turnInList[questData.questID] or {}) do
-                    if data.guide.key == addon.currentGuide.key then
-                        isPartOfGuide = true
-                        break
-                    end
+            for _, data in pairs(addon.turnInList[questData.questID] or {}) do
+                if data.guide.key == addon.currentGuide.key then
+                    isPartOfGuide = true
+                    break
                 end
+            end
 
-                for _, data in pairs(addon.pickUpList[questData.questID] or {}) do
-                    if data.guide.key == addon.currentGuide.key then
-                        isPartOfGuide = true
-                        break
-                    end
+            for _, data in pairs(addon.pickUpList[questData.questID] or {}) do
+                if data.guide.key == addon.currentGuide.key then
+                    isPartOfGuide = true
+                    break
                 end
             end
 
