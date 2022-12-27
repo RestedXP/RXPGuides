@@ -10,9 +10,6 @@ addon.skipPreReq = {
     [10008] = 1
 }
 
-addon.questConversion = {
-    [9684] = 63866 -- blood elf rez quest
-}
 addon.mapId = {
 	["Durotar"] = 1411,
 	["Mulgore"] = 1412,

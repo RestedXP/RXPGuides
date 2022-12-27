@@ -11,7 +11,6 @@ addon.skipPreReq = {
 }
 
 addon.questConversion = {
-    [9684] = 63866 -- blood elf rez quest
 }
 
 -- Items required to complete the quest
