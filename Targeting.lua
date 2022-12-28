@@ -158,9 +158,14 @@ function addon.targeting:UpdateMacro(queuedTargets)
         announcedTargets[t] = true
     end
 
-    content = content or
-                  fmt('//%s - %s', addon.title,
+    if content then
+        -- Newline already appended from list above
+        content = fmt('%s%s', content, '/cleartarget [dead]')
+    else
+        content = fmt('//%s - %s', addon.title,
                       L("current step has no configured targets")) -- TODO locale
+    end
+
     EditMacro(self.macroName, self.macroName, nil, content)
 
     if not addon.settings.db.profile.macroAnnounced and
