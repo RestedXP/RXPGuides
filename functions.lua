@@ -4451,9 +4451,13 @@ function addon.functions.itemStat(self, ...)
                 --print('+',stat,element.total, element.operator)
                 if (element.operator == ">" and element.total < stat) or (element.operator == "<" and element.total > stat) then
                     completed = true
+                elseif element.operator == "" and element.total == stat then
+                    completed = true
                 end
+            else
+                completed = element.total == stat
             end
-            completed = completed or (element.total == stat)
+
             if not completed then
                 element.step.completed = true
                 addon.updateSteps = true
