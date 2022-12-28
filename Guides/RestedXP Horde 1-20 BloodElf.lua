@@ -4239,8 +4239,8 @@ step
     >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock
     .complete 9174,1 --Kill Aquantion (x1)
     .target Aquantion
-    .train 8122,2 << Priest
-    .train 604,2 << Mage
+    .train 8122,3 << Priest
+    .train 604,3 << Mage
 step << Priest/Mage
     .goto Ghostlands,71.31,14.58
     >>Kill |cFFFF5722Aquantion|r
@@ -6712,14 +6712,14 @@ step
     #completewith WindrunnerV
     .hs >> Hearth to Tranquillien
     .cooldown item,6948,>0
-    .train 1758,2 << !BloodElf Rogue
-    .train 1460,2 << Mage
-    .train 5118,2 << Hunter wotlk
-    .train 13795,2 << Hunter tbc
-    .train 8122,2 << Priest
-    .train 6222,2 << Warlock
-    .train 647,2 << Paladin tbc
-    .train 62124,2 << Paladin wotlk
+    .train 1758,3 << !BloodElf Rogue
+    .train 1460,3 << Mage
+    .train 5118,3 << Hunter wotlk
+    .train 13795,3 << Hunter tbc
+    .train 8122,3 << Priest
+    .train 6222,3 << Warlock
+    .train 647,3 << Paladin tbc
+    .train 62124,3 << Paladin wotlk
     .isOnQuest 10372 << BloodElf Rogue
 step
     #completewith WindrunnerV
@@ -6727,14 +6727,14 @@ step
     .use 6372
     .itemcount 6372,1
     .cooldown item,6948,<0
-    .train 1758,2 << !BloodElf Rogue
-    .train 1460,2 << Mage
-    .train 5118,2 << Hunter wotlk
-    .train 13795,2 << Hunter tbc
-    .train 8122,2 << Priest
-    .train 6222,2 << Warlock
-    .train 647,2 << Paladin tbc
-    .train 62124,2 << Paladin wotlk
+    .train 1758,3 << !BloodElf Rogue
+    .train 1460,3 << Mage
+    .train 5118,3 << Hunter wotlk
+    .train 13795,3 << Hunter tbc
+    .train 8122,3 << Priest
+    .train 6222,3 << Warlock
+    .train 647,3 << Paladin tbc
+    .train 62124,3 << Paladin wotlk
     .isOnQuest 10372 << BloodElf Rogue
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to  |cFF00FF25Mouldier|r and |cFF00FF25Vandril|r
@@ -8094,7 +8094,7 @@ step << Paladin wotlk
     .goto Silvermoon City,91.14,38.10,-1
 	>>|cFFFCDC00Jump onto one of the benches below to avoid walking up the stairs|r
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ithelis|r or |cFF00FF25Osselan|r
-    .train 34769 >>Train your |T136103:0|t[Summon Warhorse]
+    .train 34769 >>Train |T136103:0|t[Summon Warhorse]
 	.target Ithelis
 	.target Osselan
     .xp <20,1
@@ -8151,11 +8151,17 @@ step << Druid
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <20,1
-step << Druid
-    #completewith next
+step << Druid/Paladin wotlk
+    #completewith ReportMK
     .hs >> Hearth to Tranquillien
     .zoneskip Ghostlands
     .cooldown item,6948,>0
+step << Paladin wotlk
+    #completewith ReportMK
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T136103:0|t[Thalassian Warhorse] |cFFFCDC00onto your Action Bars|r
+    .cast 34769 >> Mount your |T136103:0|t[Thalassian Warhorse]
+    .train 34769,3
 step << Mage/Warlock/Priest
     .goto Ghostlands,47.71,32.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vredigar|r
@@ -8191,6 +8197,7 @@ step << skip
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
 --VV BloodElf Mage
 step
+    #label ReportMK
     .goto Ghostlands,54.84,49.30,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kaendris|r
     .turnin 9172 >> Turn in Report to Magister Kaendris
@@ -8774,16 +8781,55 @@ step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf
     .goto Eversong Woods,61.08,54.15,12,0
     .goto Eversong Woods,61.09,54.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Winaestra|r
-    >>|cFF0E8312Buy the|r |T132228:0|t[Black Hawkstrider] |cFF0E8312from her|r
-    .collect 29221,1,9425,1 --Black Hawstrider
+    +|cFF0E8312Buy any|r |T132228:0|t[Hawkstrider] |cFF0E8312that you like from her|r
 	.target Winaestra
+    .itemcount 28927,<1 --Red Hawkstrider
+    .itemcount 29220,<1 --Blue Hawkstrider
+    .itemcount 29221,<1 --Black Hawkstrider
+    .itemcount 29222,<1 --Purple Hawkstrider
     .money <0.9025 << Rogue
     .money <1.083 << !Rogue
     .skill riding,75
 step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf Rogue wotlk
+    .cast 55884 >> Use the |T132227:0|t[Red Hawkstrider] to learn it
+    .use 28927
+    .itemcount 28927,1
+step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf Rogue wotlk
+    .cast 55884 >> Use the |T132229:0|t[Blue Hawkstrider] to learn it
+    .use 29220
+    .itemcount 29220,1
+step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf Rogue wotlk
     .cast 55884 >> Use the |T132228:0|t[Black Hawkstrider] to learn it
     .use 29221
     .itemcount 29221,1
+step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf Rogue wotlk
+    .cast 55884 >> Use the |T132231:0|t[Purple Hawkstrider] to learn it
+    .use 29222
+    .itemcount 29222,1
+step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf Rogue wotlk
+    #completewith LorThemar
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132227:0|t[Red Hawkstrider] |cFFFCDC00onto your Action Bars|r
+    .cast 34795 >> Mount your |T132227:0|t[Red Hawkstrider]
+    .train 34795,3
+step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf Rogue wotlk
+    #completewith LorThemar
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132229:0|t[Blue Hawkstrider] |cFFFCDC00onto your Action Bars|r
+    .cast 35020 >> Mount your |T132229:0|t[Blue Hawkstrider]
+    .train 35020,3
+step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf Rogue wotlk
+    #completewith LorThemar
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132228:0|t[Black Hawkstrider] |cFFFCDC00onto your Action Bars|r
+    .cast 29221 >> Mount your |T132228:0|t[Black Hawkstrider]
+    .train 29221,3
+step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf Rogue wotlk
+    #completewith LorThemar
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132231:0|t[Purple Hawkstrider] |cFFFCDC00onto your Action Bars|r
+    .cast 29222 >> Mount your |T132231:0|t[Purple Hawkstrider]
+    .train 29222,3
 step << Mage/Priest/Warlock/Hunter/Paladin
     #completewith SMTraining5
     .goto Eversong Woods,56.51,49.61,25,0
@@ -8870,9 +8916,15 @@ step << Warlock
     #label SMTraining5
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Talionia|r
-    .train 5784 >> Train your |T136103:0|t[Felsteed] << wotlk
+    .train 5784 >> Train |T136103:0|t[Summon Felsteed] << wotlk
     .train 706 >> Train your class spells << tbc
     .target Talionia
+step << Warlock wotlk
+    #completewith LorThemar
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T136103:0|t[Felsteed] |cFFFCDC00onto your Action Bars|r
+    .cast 5784 >> Mount your |T136103:0|t[Felsteed]
+    .train 5784,3
 step << Paladin wotlk
     #completewith SMTraining5
     .goto Silvermoon City,82.03,68.36,25,0
@@ -8899,10 +8951,16 @@ step << Paladin wotlk
     .goto Silvermoon City,91.14,38.10,-1
 	>>|cFFFCDC00Jump onto one of the benches below to avoid walking up the stairs|r
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ithelis|r or |cFF00FF25Osselan|r
-    .train 34769 >>Train your |T136103:0|t[Summon Warhorse]
+    .train 34769 >>Train |T136103:0|t[Summon Warhorse]
 	.target Ithelis
 	.target Osselan
     .train 34769,1
+step << Paladin
+    #completewith LorThemar
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T136103:0|t[Thalassian Warhorse] |cFFFCDC00onto your Action Bars|r
+    .cast 34769 >> Mount your |T136103:0|t[Thalassian Warhorse]
+    .train 34769,3
 step << Rogue
     #completewith SMTraining5
     .goto Silvermoon City,73.39,59.65,30,0
@@ -8949,7 +9007,7 @@ step << skip
 step << Warlock
     .abandon 10605 >>Abandon Carendin Summons
 step
-    #completewith UndercitySM
+    #completewith next
     .goto Silvermoon City,75.76,58.26,20,0 << Druid
     .goto Silvermoon City,75.35,51.78,30,0 << Druid
     .goto Silvermoon City,79.93,33.54,30,0 << Paladin wotlk
@@ -8959,6 +9017,7 @@ step
     .goto Silvermoon City,57.48,24.49,20,0
     .goto Silvermoon City,53.80,20.23,30 >>Travel toward |cFF00FF25Lor'themar|r
 step
+    #label LorThemar
     .goto Silvermoon City,53.80,20.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lor'themar|r
     .turnin 9328 >> Turn in Hero of the Sin'dorei << BloodElf
@@ -8986,14 +9045,12 @@ step << !Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
     .fp Undercity >> Get the Undercity Flight Path
     .target Michael Garrett
-step << Troll wotlk/Orc wotlk
+step
     #xprate >1.4999
     .goto Undercity,67.73,37.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Norman|r
     .home >> Set your Hearthstone to Undercity
     .target Innkeeper Norman
-    .money <4.5125
-    .money <4.8125 << Mage
 step << Mage
     #completewith next
     .goto Undercity,68.25,40.67,15,0
@@ -9023,7 +9080,7 @@ step
     .goto Undercity,48.80,87.63,15,0
     .goto Undercity,52.45,89.49,15,0
     .goto Undercity,58.06,91.79,20 >> Travel toward |cFF00FF25Sylvanas|r inside the Royal Quarter
-step << BloodElf
+step
     #label UndercitySM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sylvanas|r and |cFF00FF25Sunsorrow|r
     .turnin 9621 >> Turn in Envoy to the Horde << BloodElf
@@ -9066,8 +9123,62 @@ step
     .goto Undercity,66.21,4.90,15,0
     .goto Tirisfal Glades,61.73,64.87
     .zone Tirisfal Glades >>Exit Undercity
+step << Undead wotlk
+    .goto Tirisfal Glades,60.08,52.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Velma|r
+    .skill riding,75 >> Train |T136103:0|t[Apprentice Riding] from her
+    .target Velma Warnam
+    .money <4.5125
+step << Undead wotlk
+    .goto Tirisfal Glades,59.87,52.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zachariah|r
+    +|cFF0E8312Buy any|r |T132264:0|t[Skeletal Horse] |cFF0E8312that you like from him|r
+	.target Zachariah Post
+    .itemcount 13331,<1 --Red Skeletal Horse
+    .itemcount 13332,<1 --Blue Skeletal Horse
+    .itemcount 13333,<1 --Brown Skeletal Horse
+    .itemcount 46308,<1 --Brown Skeletal Horse
+    .money <0.9025
+    .skill riding,75
+step << Undead wotlk
+    .cast 55884 >> Use the |T132264:0|t[Red Skeletal Horse] to learn it
+    .use 13331
+    .itemcount 13331,1
+step << Undead wotlk
+    .cast 55884 >> Use the |T132264:0|t[Blue Skeletal Horse] to learn it
+    .use 13332
+    .itemcount 13332,1
+step << Undead wotlk
+    .cast 55884 >> Use the |T132264:0|t[Brown Skeletal Horse] to learn it
+    .use 13333
+    .itemcount 13333,1
+step << Undead wotlk
+    .cast 55884 >> Use the |T132264:0|t[Black Skeletal Horse] to learn it
+    .use 46308
+    .itemcount 46308,1
+step << Undead wotlk
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132264:0|t[Red Skeletal Horse] |cFFFCDC00onto your Action Bars|r
+    .cast 17462 >> Mount your |T132264:0|t[Red Skeletal Horse]
+    .train 17462,3
+step << Undead wotlk
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132264:0|t[Blue Skeletal Horse] |cFFFCDC00onto your Action Bars|r
+    .cast 17463 >> Mount your |T132264:0|t[Blue Skeletal Horse]
+    .train 17463,3
+step << Undead wotlk
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132264:0|t[Brown Skeletal Horse] |cFFFCDC00onto your Action Bars|r
+    .cast 17464 >> Mount your |T132264:0|t[Brown Skeletal Horse]
+    .train 17464,3
+step << Undead wotlk
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132264:0|t[Black Skeletal Horse] |cFFFCDC00onto your Action Bars|r
+    .cast 64977 >> Mount your |T132264:0|t[Black Skeletal Horse]
+    .train 64977,3
 step
     #xprate <1.5
+    #label Durotar
     .goto Tirisfal Glades,61.06,58.86,12,0
     .goto Tirisfal Glades,61.51,59.01,10,0
     .goto Tirisfal Glades,61.27,59.22,8,0
@@ -9116,11 +9227,29 @@ step << Orc wotlk
     #xprate >1.4999
     .goto Orgrimmar,69.38,12.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ogunaro|r
-    >>|cFF0E8312Buy the|r |T132224:0|t[Horn of the Black Wolf] |cFF0E8312from him|r
-    .collect 46099,1,9425,1 --Horn of the Black Wolf
+    +|cFF0E8312Buy any|r |T132224:0|t[Wolf] |cFF0E8312that you like from him|r
 	.target Ogunaro Wolfrunner
+    .itemcount 1132,<1 --Horn of the Timber Wolf
+    .itemcount 5665,<1 --Horn of the Dire Wolf
+    .itemcount 5668,<1 --Horn of the Brown Wolf
+    .itemcount 46099,<1 --Horn of the Black Wolf
     .money <0.9025
     .skill riding,75
+step << Orc wotlk
+    #xprate >1.4999
+    .cast 55884 >> Use the |T132224:0|t[Horn of the Timber Wolf] to learn it
+    .use 1132
+    .itemcount 1132,1
+step << Orc wotlk
+    #xprate >1.4999
+    .cast 55884 >> Use the |T132266:0|t[Horn of the Dire Wolf] to learn it
+    .use 5665
+    .itemcount 5665,1
+step << Orc wotlk
+    #xprate >1.4999
+    .cast 55884 >> Use the |T132224:0|t[Horn of the Brown Wolf] to learn it
+    .use 5668
+    .itemcount 5668,1
 step << Orc wotlk
     #xprate >1.4999
     .cast 55884 >> Use the |T132224:0|t[Horn of the Black Wolf] to learn it
@@ -9163,7 +9292,7 @@ step << Troll Mage wotlk
     .goto Orgrimmar,49.32,91.05,30,0
     .goto Durotar,52.26,34.68,35,0
     .goto Durotar,55.28,75.48,50 >>Travel toward |cFF00FF25Xar'Ti|r
-    .train 3567,2
+    .train 3567,3
     .money <4.5125
 step << Troll wotlk
     #xprate >1.4999
@@ -9185,24 +9314,88 @@ step << Troll wotlk
     #xprate >1.4999
     .goto Durotar,55.23,75.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zjolnir|r
-    >>|cFF0E8312Buy the|r |T132253:0|t[Whistle of the Violet Raptor] |cFF0E8312from him|r
-    .collect 8592,1,9425,1 --Whistle of the Violet Raptor (1)
+    +|cFF0E8312Buy any|r |T132253:0|t[Raptor Whistle] |cFF0E8312that you like from him|r
 	.target Zjolnir
+    .itemcount 8588,<1 --Whistle of the Emerald Raptor
+    .itemcount 8591,<1 --Whistle of the Turquoise Raptor
+    .itemcount 8592,<1 --Whistle of the Violet Raptor
     .money <0.9025
     .skill riding,75
+step << Troll wotlk
+    #xprate >1.4999
+    .cast 55884 >> Use the |T132253:0|t[Whistle of the Emerald Raptor] to learn it
+    .use 8588
+    .itemcount 8588,1
+step << Troll wotlk
+    #xprate >1.4999
+    .cast 55884 >> Use the |T132253:0|t[Whistle of the Turquoise Raptor] to learn it
+    .use 8591
+    .itemcount 8591,1
 step << Troll wotlk
     #xprate >1.4999
     .cast 55884 >> Use the |T132253:0|t[Whistle of the Violet Raptor] to learn it
     .use 8592
     .itemcount 8592,1
+---
 step << Troll wotlk/Orc wotlk
     #xprate >1.4999
     .hs >> Hearth to Undercity
     .zoneskip Undercity
+    .zoneskip Tirisfal Glades
     .zoneskip Silverpine Forest
     .zoneskip Hillsbrad Foothills
+step << Orc wotlk
+    #xprate >1.4999
+    #completewith Lift
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132224:0|t[Timber Wolf] |cFFFCDC00onto your Action Bars|r
+    .cast 580 >> Mount your |T132224:0|t[Timber Wolf]
+    .train 580,3
+step << Orc wotlk
+    #xprate >1.4999
+    #completewith Lift
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132266:0|t[Dire Wolf] |cFFFCDC00onto your Action Bars|r
+    .cast 6653 >> Mount your |T132266:0|t[Dire Wolf]
+    .train 6653,3
+step << Orc wotlk
+    #xprate >1.4999
+    #completewith Lift
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132224:0|t[Brown Wolf] |cFFFCDC00onto your Action Bars|r
+    .cast 6654 >> Mount your |T132224:0|t[Brown Wolf]
+    .train 6654,3
+step << Orc wotlk
+    #xprate >1.4999
+    #completewith Lift
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132224:0|t[Black Wolf] |cFFFCDC00onto your Action Bars|r
+    .cast 64658 >> Mount your |T132224:0|t[Black Wolf]
+    .train 64658,3
+step << Troll wotlk
+    #xprate >1.4999
+    #completewith Lift
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132253:0|t[Emerald Raptor] |cFFFCDC00onto your Action Bars|r
+    .cast 8395 >> Mount your |T132253:0|t[Emerald Raptor]
+    .train 8395,3
+step << Troll wotlk
+    #xprate >1.4999
+    #completewith Lift
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132253:0|t[Turquoise Raptor] |cFFFCDC00onto your Action Bars|r
+    .cast 10796 >> Mount your |T132253:0|t[Turquoise Raptor]
+    .train 10796,3
+step << Troll wotlk
+    #xprate >1.4999
+    #completewith Lift
+    >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
+    >>|cFFFCDC00Drag the|r |T132253:0|t[Violet Raptor] |cFFFCDC00onto your Action Bars|r
+    .cast 10799 >> Mount your |T132253:0|t[Violet Raptor]
+    .train 10799,3
 step << Troll wotlk/Orc wotlk
     #xprate >1.4999
+    #label Lift
     #completewith next
     .goto Undercity,60.07,47.70,10,0
     .goto Undercity,60.52,44.02,10,0
