@@ -19,26 +19,29 @@ step << !Human
 step << Warlock tbc
     #sticky
     #completewith next
-    +Kill Wolves for 10c+ of vendor trash. It's worth training Immolate early
-    .goto Elwynn Forest,49.4,45.6,60,0
+    +Kill |cFF00BCD4Wolves|r for 10 copper worth of vendor trash. It's worth training Immolate early
+    .goto Elwynn Forest,49.4,45.6
 step << Warlock tbc
     .goto Elwynn Forest,50.1,42.7
-    .vendor >>vendor trash
+    >> Talk to |cFF00FF25Dane Winslow|r
+    .vendor >> Vendor trash
+    .target Dane Winslow
 step << Warlock tbc
     .goto Elwynn Forest,49.9,42.6
+    >> Talk to |cFF00FF25Drusilla La Salle|r
     .accept 1598 >> Accept The Stolen Tome
     .trainer >>Train Immolate
+    .target Drusilla La Salle
 step << Warlock tbc
     #hardcore
     .goto Elwynn Forest,52.9,44.3,60,0
-    >>Kill some Wolves en route, then watch this
+    >>Kill some Wolves en route, |cFFFCDC00then watch this video|r. Use your hearthstone after you loot the book.
     .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
-    >>Use your Hearthstone inside the camp when you loot it
     .goto Elwynn Forest,56.7,44.0
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock tbc
     .goto Elwynn Forest,52.9,44.3,60,0
-    >>Kill some Wolves en route, then watch this
+    >>Kill some Wolves en route, |cFFFCDC00then watch this video|r.
     .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
     .goto Elwynn Forest,56.7,44.0
     .complete 1598,1 --Collect Powers of the Void (x1)
@@ -50,75 +53,89 @@ step << Warlock tbc
     >>Make sure you're deep inside the tent so you don't reaggro
     .hs >> Hearth back to Northshire Valley
 step << Warlock tbc
+    >> Talk to |cFF00FF25Drusilla La Salle|r
     .goto Elwynn Forest,49.9,42.6
     .turnin 1598 >> Turn in The Stolen Tome
+    .target Drusilla La Salle
 step
     >>Summon Imp, rebuff Demon Skin << Warlock tbc
-    >> Talk to Deputy Willem
+    >> Talk to |cFF00FF25Deputy Willem|r
+    .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94 << tbc
     .goto Elwynn Forest,48.05,43.55 << wotlk
     .accept 783 >> Accept A Threat Within
 step << Warrior
     #sticky
     #completewith next
-    +Kill Wolves for 10c+ of vendor trash. It's worth training Battle Shout early
+    +Kill |cFF00BCD4Wolves|r for 10c+ of vendor trash. It's worth training Battle Shout early
     .goto Elwynn Forest,46.4,40.3,60,0
 step << Warrior
+    >> Talk to |cFF00FF25Brother Danil|r
+    .target Brother Danil
     .goto Elwynn Forest,47.5,41.6
     .vendor >>vendor trash
 step
-    >> Speak with Marshal McBridge inside the Abbey
+    >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
+    .target Marshal McBridge
     .goto Elwynn Forest,48.9,41.6
     .turnin 783 >> Turn in A Threat Within
     .accept 7 >> Accept Kobold Camp Cleanup
 step << Warrior
+    >> Talk to |cFF00FF25Llane Beshere|r
+    .target Llane Beshere
     .goto Elwynn Forest,50.2,42.3
     .trainer >>Train Battle Shout
 step
     >>Run back outside << Warrior
-    >> Talk to Deputy Willem again
+    >> Talk to |cFF00FF25Deputy Willem|r again
+    .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94 << tbc
     .goto Elwynn Forest,48.05,43.55 << wotlk
     .accept 5261 >> Accept Eagan Peltskinner
 step << Priest tbc/Mage tbc/Warlock tbc
     .goto Elwynn Forest,46.2,40.4
-    .vendor >>Kill wolves until 50c worth of vendor trash. Vendor, then buy x10 water from Brother Danil.
+    .vendor >>Kill |cFF00BCD4Wolves|r until 50c worth of vendor trash. Vendor, then buy x10 water from |cFF00FF25Brother Danil|r.
+    .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << Priest/Mage
     .goto Elwynn Forest,46.70,37.78
     .xp 2 >> Grind to 2
 step
-    >> Talk to Eagan Peltskinner outside the Abbey
+    >> Talk to |cFF00FF25Eagan Peltskinner|r outside the Abbey
+    .target Eagen Peltskinner
     .goto Elwynn Forest,48.9,40.2
     .turnin 5261 >> Turn in Eagan Peltskinner
     .accept 33 >> Accept Wolves Across The Border
 step << tbc
     .goto Elwynn Forest,46.70,37.78
-    >>Kill Young Wolves. Loot them for their Meat
+    >>Kill |cFF00BCD4Young Wolves|r. Loot them for their |cFF00BCD4Meat|r
     .complete 33,1 --Collect Tough Wolf Meat (x8)
 step << wotlk
     .goto Elwynn Forest,46.70,37.78
-    >>Kill Diseased Young Wolves. Loot them for their Pelts
+    >>Kill |cFF00BCD4Diseased Young Wolves|r. Loot them for their |cFF00BCD4Pelts|r
     .complete 33,1 --Collect Diseased Wolf Pelt (8)
 step
     .goto Elwynn Forest,49.05,35.33
-    >>Kill Kobold Vermin
+    >>Kill |cFFFF5722Kobold Vermin|r
     .complete 7,1 --Kill Kobold Vermin (x10)
 step
     .goto Elwynn Forest,48.9,40.2
-    >> Return to Eagan Peltskinner
+    >> Return to |cFF00FF25Eagan Peltskinner|r
+    .target Eagan Peltskinner
     .turnin 33,2 >> Turn in Wolves Across The Border << Warrior/Paladin/Rogue
     .turnin 33 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue
 step << Priest tbc/Mage tbc/Warlock tbc
     .goto Elwynn Forest,47.6,41.5
-    .vendor >>vendor trash, then buy x10 more water from Brother Danil
+    .vendor >>Vendor trash, then buy x10 more water from |cFF00FF25Brother Danil|r.
+    .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Priest !Mage !Warlock/wotlk
     .goto Elwynn Forest,47.6,41.5
     .vendor >>vendor trash
 step
     .goto Elwynn Forest,48.9,41.6
-    >> Speak with Marshal McBridge inside the Abbey
+    >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
+    .target Marshal McBridge
     .turnin 7 >> Turn in Kobold Camp Cleanup
     .accept 3100 >> Accept Simple Letter << Warrior
     .accept 3101 >> Accept Consecrated Letter << Paladin
@@ -128,6 +145,8 @@ step
     .accept 3105 >> Accept Tainted Letter << Warlock
     .accept 15 >> Accept Investigate Echo Ridge
 step << Warlock wotlk
+    >> Talk to |cFF00FF25Drusilla La Salle|r
+    .target Drusilla La Salle
     .goto Elwynn Forest,49.9,42.6
     .turnin 3105 >> Turn in Tainted Letter
     .train 688 >> Learn Summon Imp from your class trainer
@@ -137,7 +156,7 @@ step
     .xp 3 >> Grind to 3
 step
     .goto Elwynn Forest,47.42,32.68
-    >>Kill Kobold Workers
+    >>Kill |cFFFF5722Kobold Workers|r
     .complete 15,1 --Kill Kobold Worker (x10)
 step
     #sticky
@@ -146,11 +165,14 @@ step
     .xp 3+1110 >>Grind to 1110+/1400xp on your way back
 step
     #completewith next
+    >> Talk to |cFF00FF25Brother Danil|r
+    .target Brother Danil
     .goto Elwynn Forest,47.7,41.4
-    .vendor >>vendor trash
+    .vendor >> Vendor trash
 step
     #requires xp3
-    >> Speak with Marshal McBridge inside the Abbey
+    >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
+    .target Marshal McBridge
     .goto Elwynn Forest,48.9,41.6
     .turnin 15 >> Turn in Investigate Echo Ridge
     .accept 21 >> Accept Skirmish at Echo Ridge
@@ -163,6 +185,8 @@ step << Mage
     #completewith next
     .goto Elwynn Forest,49.5,40.0,15 >>Go upstairs
 step << Mage
+    >> Talk to |cFF00FF25Khelden Bremen|r
+    .target Khelden Bremen
     .goto Elwynn Forest,49.7,39.4
     .turnin 3104 >> Turn in Glyphic Letter
     .trainer >> Train your class spells
@@ -171,6 +195,8 @@ step << Priest
     #completewith next
     .goto Elwynn Forest,49.8,40.2,15 >> Go through the doorway
 step << Priest
+    >> Talk to |cFF00FF25Priestess Anetta|r
+    .target Priestess Anetta
     .goto Elwynn Forest,49.8,39.5
     .turnin 3103 >> Turn in Hallowed Letter
     .trainer >> Train your class spells
@@ -179,32 +205,40 @@ step << Warrior/Paladin
     #completewith next
     .goto Elwynn Forest,49.6,41.8,15 >>Stay downstairs
 step << Warrior
+    >> Talk to |cFF00FF25Llane Beshere|r
+    .target Llane Beshere
     .goto Elwynn Forest,50.2,42.3
     .turnin 3100 >> Turn in Simple Letter
     .trainer >> Train your class spells
 step << Paladin
+    >> Talk to |cFF00FF25Brother Sammuel|r
+    .target Brother Sammuel
     .goto Elwynn Forest,50.4,42.1
     .turnin 3101 >> Turn in Consecrated Letter
     .trainer >> Train your class spells
 step
     #label thievesaccept
-    >> Speak with Deputy Willem
+    >> Talk to |cFF00FF25Deputy Willem|r
+    .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94 << tbc
     .goto Elwynn Forest,48.05,43.55 << wotlk
     .accept 18 >> Accept Brotherhood of Thieves
 step << Warlock
+    >> Talk to |cFF00FF25Drusilla La Salle|r
+    .target Drusilla La Salle
     .goto Elwynn Forest,49.9,42.6
     .turnin 3105 >> Turn in Tainted Letter
     .xp 4 >> Grind to 4
     .trainer >>Train Corruption
 step
     .goto Elwynn Forest,54.57,49.03
-    >>Kill Defias Thugs. Loot them for Bandanas
+    >>Kill |cFF00BCD4Defias Thugs|r. Loot them for |cFF00BCD4Bandanas|r
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 step << Rogue
     .xp 4 >> Grind to 4
 step
-    >> Speak with Deputy Willem
+    >> Talk to |cFF00FF25Deputy Willem|r
+    .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94 << tbc
     .goto Elwynn Forest,48.05,43.55 << wotlk
     .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
@@ -216,56 +250,65 @@ step
     .accept 6 >> Accept Bounty on Garrick Padfoot
     .accept 3903 >> Accept Milly Osworth
 step
+    >> Talk to |cFF00FF25Brother Danil|r
+    .target Brother Danil
     .goto Elwynn Forest,47.7,41.4
-    .vendor >>vendor trash, repair
+    .vendor >> Vendor trash, repair
 step
     .goto Elwynn Forest,47.66,31.88,40,0
     .goto Elwynn Forest,48.61,27.63
-    >>Kill Laborers in the mine
+    >>Kill |cFFFF5722Laborers|r in the mine
     .complete 21,1 --Kill Kobold Laborer (x12)
 step
     .xp 5 >> Grind to 5
 step
 #xprate >1.69
-    >> Speak with Milly Osworth
+    >> Speak with |cFF00FF25Milly Osworth|r
+    .target Milly Osworth
     .goto Elwynn Forest,50.7,39.2
     .turnin 3903 >> Turn in Milly Osworth
 step
 #xprate <1.7
-    >> Speak with Milly Osworth
+    >> Speak with |cFF00FF25Milly Osworth|r
+    .target Milly Osworth
     .goto Elwynn Forest,50.7,39.2
     .turnin 3903 >> Turn in Milly Osworth
     .accept 3904 >> Accept Milly's Harvest
 step << Rogue
+    >> Speak with |cFF00FF25Jorik Kerridan|r
+    .target Jorik Kerridan
     .goto Elwynn Forest,50.3,39.9
-    >>You don't need to train
+    >>You don't need to train any spells
     .turnin 3102 >> Turn in Encrypted Letter
 step
 #xprate <1.7
-    >>Loot the Buckets of Grapes in the field
+    >>Loot the |cFFDB2EEFBuckets of Grapes|r in the field
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
-    >>Grind en route. Kill Garrick and loot his Head
+    >>Grind en route. Kill |cFF00BCD4Garrick|r and loot his |cFF00BCD4Head|r
     .complete 6,1 --Collect Garrick's Head (x1)
 step
     .xp 5+1175 >> Grind on your way back to 1175+/2800xp
     .goto Elwynn Forest,50.7,39.2
 step
 #xprate <1.7
-    >> Return to Milly
+    >> Speak with |cFF00FF25Milly Osworth|r
+    .target Milly Osworth
     .goto Elwynn Forest,50.7,39.2
     .turnin 3904 >> Turn in Milly's Harvest
     .accept 3905 >>Accept Grape Manifest
 step
-    >> Speak with Deputy Willem
+    >> Talk to |cFF00FF25Deputy Willem|r
+    .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94 << tbc
     .goto Elwynn Forest,48.05,43.55 << wotlk
     .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
     .turnin 6 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
 step
-    >> Speak with Marshall McBride in the Abbey
+    >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
+    .target Marshal McBridge
     .goto Elwynn Forest,48.9,41.6
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
     .turnin 21 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin
@@ -277,17 +320,24 @@ step
     .goto Elwynn Forest,48.9,41.3,10 >>Go upstairs
 step
 #xprate <1.7
+    >> Talk to |cFF00FF25Brother Neals|r
+    .target Brother Neals
     .goto Elwynn Forest,49.5,41.6
     .turnin 3905 >>Turn in Grape Manifest
 step << Priest
+    >> Talk to |cFF00FF25Priestess Anetta|r
+    .target Priestess Anetta
     .goto Elwynn Forest,49.8,39.5
     .accept 5623 >> Accept In Favor of the Light
 step
-    >> Leave Northshire Valley and talk to Falkhaan Isenstrider
+    >> Leave Northshire Valley and talk to |cFF00FF25Falkhaan Isenstrider|r
+    .target Falkhaan Isenstrider
     .goto Elwynn Forest,45.6,47.7
     .accept 2158 >> Accept Rest and Relaxation
 step
     #hardcore
+    >> Talk to |cFF00FF25Marshall Dughan|r
+    .target Marshall Dughan
     .goto Elwynn Forest,42.1,65.9
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
@@ -297,52 +347,66 @@ step
     .deathskip >> Die and respawn at the Spirit Healer
 step << Rogue
     .goto Elwynn Forest,41.7,65.5
+    .target Smith Argus
     .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. Make them until level 20ish << Rogue
 step << Warrior
     .goto Elwynn Forest,41.5,65.9
     .money <0.0509
+    .target Corina Steele
     >>Repair your weapon. If you have enough money (5s 9c) buy a Gladius from Corina. Otherwise, skip this step (you'll come back later)
     .collect 2488,1 --Collect Gladius
 step << Rogue
     .goto Elwynn Forest,41.5,65.9
     .money <0.0382
+    .target Corina Steele
     >>Repair your weapon. If you have enough money (3s 82c) buy a Stiletto from Corina. Otherwise, skip this step (you'll come back later)
     .collect 2494,1 --Collect Stiletto
 step << Paladin
     .goto Elwynn Forest,41.5,65.9
     .money <0.0666
+    .target Corina Steele
     >>Repair your weapon. If you have enough money (6s 66c) buy a Wooden Mallet from Corina. Otherwise, skip this step (you'll come back later)
     .collect 2493,1 --Collect Wooden Mallet
 step << Mage/Priest/Warlock
     #completewith next
+    >> Talk to |cFF00FF25Andrew Krighton|r
+    .target Andrew Krighton
     .goto Elwynn Forest,41.7,65.9
-    .vendor >> vendor trash, repair
+    .vendor >> Vendor trash, repair
 step
     #label Goldshire
-    >> Speak with Marshal Dughan outside the blacksmith
+    >> Talk to |cFF00FF25Marshall Dughan|r
+    .target Marshall Dughan
     .goto Elwynn Forest,42.1,65.9
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
 step
-    >>On your close left as you go in the Inn
+    >>On your close left as you go in the Inn talk to |cFF00FF25William Pestle|r
+    .target William Pestle
     .goto Elwynn Forest,42.9,65.7,15,0
     .goto Elwynn Forest,43.3,65.7
     .accept 60 >> Accept Kobold Candles
 step
     .goto Elwynn Forest,43.8,65.8
-    >> Talk to the innkeeper
+    >> Talk to |cFF00FF25Innkeeper Farley|r
+    .target Innkeeper Farley
     >>Do NOT buy any food/drink here << Warlock
     .turnin 2158 >> Turn in Rest and Relaxation
     .home >> Set your Hearthstone to Goldshire
 step
     .xp 6 >> Grind to 6
 step << Rogue
+    >> Talk to |cFF00FF25Brog Hamfist|r
+    .target Brog Hamfist
     .goto Elwynn Forest,43.96,65.92
     .vendor 151 >> Buy the level 3 thrown from Brog. Equip it
 step << Warlock
     #completewith next
     .goto Elwynn Forest,44.1,66.0,10 >>Go to the room behind the innkeeper, then go downstairs.
 step << Warlock
+    >> Talk to |cFF00FF25Maximillian Crowe|r and |cFF00FF25Cylina Darkheart|r
+    .target Maximillian Crowe
+    .target Cylina Darkheart
     .goto Elwynn Forest,44.4,66.2
     .trainer >> Train your class spells. It is in the basement.
     .goto Elwynn Forest,44.4,66.0
@@ -360,10 +424,14 @@ step << Priest
     .trainer >> Train your class spells
 step << Rogue
     .money <0.01
+    >> Talk to |cFF00FF25Keryn Sylvius|r
+    .target Keryn Sylvius
     .goto Elwynn Forest,43.9,65.9
     .trainer >> Train your class spells
 step << Rogue/Warrior
     .money <0.01
+    >> Talk to |cFF00FF25Michelle Belle|r
+    .target Michelle Belle
     .goto Elwynn Forest,43.4,65.5
     .train 3273 >> Train First Aid - Don't make all your bandages at once, better time to make them later
 step << Warrior tbc
@@ -374,20 +442,27 @@ step << Rogue tbc
     .vendor >> Buy up to 20 level 5 food
 step << Warrior/Paladin
     .goto Elwynn Forest,41.7,65.5
+    .target Smith Argus
     .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon << Warrior
     .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage weightstones for your weapon << Paladin
 step << Warrior
+    >> Talk to |cFF00FF25Lyria Du Lac|r
+    .target Lyria Du Lac
     .goto Elwynn Forest,41.1,65.8
     .trainer >> Train your class spells
 step << Paladin
+    >> Talk to |cFF00FF25Brother Wilhelm|r
+    .target Brother Wilhelm
     .goto Elwynn Forest,41.1,66.0
     .trainer >> Train your class spells
 step
-    >> Speak with Remy "Two Times"
+    >> Speak with |cFF00FF25Remy "Two Times"|r
+    .target Remy "Two Times"
     .goto Elwynn Forest,42.1,67.3
     .accept 47 >> Accept Gold Dust Exchange
 step << Priest
-    >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on Guard Roberts
+    >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on |cFF00FF25Guard Roberts|r
+    .target Guard Roberts
     .goto Elwynn Forest,48.2,68.0
     .complete 5624,1 --Heal and fortify Guard Roberts
 step
