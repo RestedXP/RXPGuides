@@ -11,6 +11,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor BloodElf
 #next 6-10 Eversong Woods
 
+
 step << !BloodElf
     #completewith next
     +You have selected a guide meant for Blood Elves. We do not recommend doing the 1-6 zone due to there being no quests for non-Blood Elves. You should choose the same starter zone that you start in
@@ -693,7 +694,6 @@ step << Warrior tbc/Paladin tbc
     .collect 2488,1,8475,1 --Gladius (1)
     .target Geron
     .money <0.0509
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
 step << Warrior wotlk/Paladin wotlk
@@ -708,7 +708,6 @@ step << Warrior wotlk/Paladin wotlk
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T133053:0|t[Wooden Mallet] |cFF0E8312from him|r
     .collect 2493,1,8475,1 --Collect Wooden Mallet (1)
     .money <0.0666
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
 step << Rogue
@@ -723,7 +722,6 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T135641:0|t[Stiletto] |cFF0E8312from him|r
     .collect 2494,1,8475,1 --Collect Stiletto
     .money <0.0382
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
 step << Warrior tbc/Paladin tbc
@@ -865,7 +863,6 @@ step << Warrior tbc/Paladin tbc
     .collect 2488,1,8475,1 --Gladius (1)
     .target Geron
     .money <0.0509
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
 step << Warrior wotlk/Paladin wotlk
@@ -880,7 +877,6 @@ step << Warrior wotlk/Paladin wotlk
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T133053:0|t[Wooden Mallet] |cFF0E8312from him|r
     .collect 2493,1,8475,1 --Collect Wooden Mallet (1)
     .money <0.0666
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
 step << Rogue
@@ -895,7 +891,6 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T135641:0|t[Stiletto] |cFF0E8312from him|r
     .collect 2494,1,8475,1 --Collect Stiletto
     .money <0.0382
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
 step << Warrior tbc/Paladin tbc
@@ -930,7 +925,6 @@ step
     .turnin 8895 >> Turn in Delivery to the North Sanctum
     .accept 9119 >> Accept Malfunction at the West Sanctum
     .target Ley-Keeper Caidanis
-step
 step
     #xprate <1.5
     .goto Eversong Woods,45.19,56.43
@@ -1260,7 +1254,6 @@ step << Warrior tbc
     .collect 2488,1,8475,1 --Gladius (1)
     .target Geron
     .money <0.0509
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
 step << Warrior wotlk
@@ -1275,7 +1268,6 @@ step << Warrior wotlk
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T133053:0|t[Wooden Mallet] |cFF0E8312from him|r
     .collect 2493,1,8475,1 --Collect Wooden Mallet (1)
     .money <0.0666
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
 step << Rogue
@@ -1290,7 +1282,6 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T135641:0|t[Stiletto] |cFF0E8312from him|r
     .collect 2494,1,8475,1 --Collect Stiletto
     .money <0.0382
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
 step << Warrior tbc
@@ -2129,7 +2120,6 @@ step << Warrior tbc/Paladin tbc
     .collect 2488,1,8475,1 --Gladius (1)
     .target Geron
     .money <0.0509
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
 step << Warrior wotlk/Paladin wotlk
@@ -2144,7 +2134,6 @@ step << Warrior wotlk/Paladin wotlk
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T133053:0|t[Wooden Mallet] |cFF0E8312from him|r
     .collect 2493,1,8475,1 --Collect Wooden Mallet (1)
     .money <0.0666
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
 step << Rogue
@@ -2159,7 +2148,6 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cFF0E8312Talk to|r |cFF00FF25Geron|r|cFF0E8312. Buy a|r |T135641:0|t[Stiletto] |cFF0E8312from him|r
     .collect 2494,1,8475,1 --Collect Stiletto
     .money <0.0382
-    .money >0.5000
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
 step << Warrior tbc/Paladin tbc
@@ -2509,7 +2497,7 @@ step << Undead/BloodElf
 step << Undead/BloodElf
     .goto Eversong Woods,60.41,62.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zalene|r
-    >>|cFF0E8312Buy the|r |T133974:0|t[Springpaw Appetizers] |cFF0E8312from him|r 
+    >>|cFF0E8312Buy the|r |T133974:0|t[Springpaw Appetizers] |cFF0E8312from her|r 
     .collect 22776,1,9067,1 --Collect Springpaw Appetizers
     .target Zalene Firstlight
 step
@@ -2631,7 +2619,7 @@ step << Orc Hunter wotlk / Troll Hunter wotlk
 step
     #completewith Marosh
     >>Kill |cFFFF5722Amani Berserkers|r and |cFFFF5722Amani Axe Throwers|r
-    >>|cFFFCDC00Be careful as|r |cFFFF5722Amani Berserkers|r |T136224:0|tEnrage |cFFFCDC00at low health|r
+    >>|cFFFCDC00Be careful as|r |cFFFF5722Amani Berserkers|r |cFFFCDC00cast|r |T136224:0|t[Enrage] |cFFFCDC00(increased damage and attack speed) at low health|r
     .complete 8476,1 --Kill Amani Berserker (x5)
     .complete 8476,2 --Kill Amani Axe Thrower (x5)
     .target Amani Berserker
@@ -2662,8 +2650,9 @@ step
     .goto Eversong Woods,61.90,79.63,8 >>Climb up the hut toward |cFFFF5722Zul'Marosh|r
 step
     .goto Eversong Woods,62.51,79.68
-    >>Kill |cFFFF5722Zul'Marosh|r. Loot him for his |cFF00BCD4Head|r and |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r]. |cFFFCDC00Use it to start the quest|r
-    >>|cFFFF5722Otembe|r |cFFFCDC00Has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
+    >>Kill |cFFFF5722Zul'Marosh|r. Loot him for his |cFF00BCD4Head|r and |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r]
+    >>|cFFFCDC00Use the |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r] to start the quest|r
+    >>|cFFFF5722Zul'Marosh|r |cFFFCDC00Has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
     .complete 8479,1 --Collect Chieftain Zul'Marosh's Head (x1)
     .collect 23249,1,9360,1 --Collect Amani Invasion Plans (x1)
     .accept 9360 >> Accept Amani Invasion
@@ -2672,7 +2661,8 @@ step
     .itemStat 16,QUALITY,<7
 step
     .goto Eversong Woods,62.51,79.68
-    >>Kill |cFFFF5722Zul'Marosh|r. Loot him for his |cFF00BCD4Head|r and |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r]. |cFFFCDC00Use it to start the quest|r
+    >>Kill |cFFFF5722Zul'Marosh|r. Loot him for his |cFF00BCD4Head|r and the |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r]
+    >>|cFFFCDC00Use the |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r] to start the quest|r
     .complete 8479,1 --Collect Chieftain Zul'Marosh's Head (x1)
     .collect 23249,1,9360,1 --Collect Amani Invasion Plans (x1)
     .accept 9360 >> Accept Amani Invasion
@@ -2681,7 +2671,7 @@ step
 step
     .goto Eversong Woods,70.53,72.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ven'jashi|r in the Cage
-    >>|cFFFCDC00Kill|r |cFFFF5722Otembe|r. |cFFFCDC00He has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
+    >>|cFFFCDC00Kill |cFFFF5722Otembe|r if you wish. He has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
     .turnin 8479 >> Turn in Zul'Marosh
     .itemStat 16,QUALITY,<7
 step
@@ -2705,7 +2695,7 @@ step
     .goto Eversong Woods,68.12,70.88,40,0
     .goto Eversong Woods,68.54,73.15
     >>Kill |cFFFF5722Amani Berserkers|r and |cFFFF5722Amani Axe Throwers|r
-    >>|cFFFCDC00Be careful as|r |cFFFF5722Amani Berserkers|r |T136224:0|tEnrage |cFFFCDC00at low health|r
+    >>|cFFFCDC00Be careful as|r |cFFFF5722Amani Berserkers|r |cFFFCDC00cast|r |T136224:0|t[Enrage] |cFFFCDC00(increased damage and attack speed) at low health|r
     .complete 8476,1 --Kill Amani Berserker (x5)
     .complete 8476,2 --Kill Amani Axe Thrower (x5)
     .target Amani Berserker
@@ -2818,13 +2808,30 @@ step
     .accept 9673 >> Accept Beast Training << BloodElf Hunter
     .target Lieutenant Dawnrunner
 step << Undead/BloodElf
-    #completewith next
-    +Remember to NOT sell your |T133974:0|t[Springpaw Appetizers] and |T132798:0|t[Suntouched Special Reserve] << Warlock
-    +Remember to NOT sell your |T133974:0|t[Springpaw Appetizers] << !Warlock
+    #completewith MagiApp
+    +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cFFFCDC00and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
+    +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
+step << Hunter
+    .goto Eversong Woods,60.32,62.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
+    >>|cFF0E8312Buy a|r |T135489:0|t[Laminated Recurve Bow] |cFF0E8312from|r |cFF00FF25Paelarin|r
+    .collect 2507,1,9144,1 --Laminated Recurve Bow (1)
+    .target Paelarin
+    .money <0.1752 << Orc/Troll
+    .money <0.1664 << BloodElf
+    .itemStat 16,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.46
+step << Hunter
+    #completewith HunterTrain
+    +Equip the |T135489:0|t[Laminated Recurve Bow]
+    .use 2515
+    .itemcount 2515,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.46
 step
     .goto Eversong Woods,59.52,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Arathel|r
-    .accept 8477 >> Accept The Spearcrafter's Hammer
+    .turnin 8477 >> Turn in The Spearcrafter's Hammer
     .target Arathel Sunforge
 step
     #completewith next
@@ -2832,6 +2839,7 @@ step
     .goto Eversong Woods,59.82,61.91,12,0
     .goto Eversong Woods,59.82,61.91,10 >> Travel up the ramp toward |cFF00FF25Duskwither|r
 step
+    #label MagiApp
     .goto Eversong Woods,60.31,61.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duskwither|r
     .accept 8888 >> Accept The Magister's Apprentice
@@ -2860,8 +2868,8 @@ step
     >>Kill |cFFFF5722Mana Serpents|r and |cFFFF5722Ether Fiends|r
     .complete 8894,1 --Kill Mana Serpent (x6)
     .complete 8894,2 --Kill Ether Fiend (x6)
-    .target Mana Serpents
-    .target Ether Fiends
+    .target Mana Serpent
+    .target Ether Fiend
 step
     .goto Eversong Woods,68.71,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Wyllithen|r
@@ -2936,8 +2944,8 @@ step << BloodElf/Undead
     .target Elder Springpaw
 step << Undead/BloodElf
     #completewith Spire
-    +Remember to NOT sell your |T133974:0|t[Springpaw Appetizers] and |T132798:0|t[Suntouched Special Reserve] << Warlock
-    +Remember to NOT sell your |T133974:0|t[Springpaw Appetizers] << !Warlock
+    +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cFFFCDC00and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
+    +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
 step << Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
@@ -3150,7 +3158,7 @@ step << Paladin/Rogue
     .skill blacksmithing,1
     .skill mining,1
 step << Paladin
-    #completewith next
+    #completewith FirstTrialB
     .goto Silvermoon City,89.02,37.03,12,0
     .goto Silvermoon City,89.26,35.20,15 >>Travel toward |cFF00FF25Bloodvalor|r
 step << Paladin
@@ -3161,6 +3169,7 @@ step << Paladin
     .target Knight-Lord Bloodvalor
     .isOnQuest 9677
 step << Paladin
+    #label FirstTrialB
     .goto Silvermoon City,89.26,35.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bloodvalor|r
     .accept 9678 >>Accept The First Trial
@@ -3531,8 +3540,9 @@ step << Undead/BloodElf
     .target Ardeyn Riverwind
     .isQuestAvailable 9144
     --VV !Hunter
+    --VV 9144 and 9258 need to hide if in qlog
 step << Undead/BloodElf
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Landra|r, |cFF00FF25Degolien|r upstairs, and |cFF00FF25Ardeyn|r downstairs
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Landra|r, |cFF00FF25Degolien|r upstairs, and |cFF00FF25Ardeyn|r downstairs
     .turnin 9255 >>Turn in Research Notes
     .goto Eversong Woods,44.03,70.76
     .turnin 9363 >>Turn in Warning Fairbreeze Village
@@ -3544,6 +3554,7 @@ step << Undead/BloodElf
     .target Ranger Degolien
     .target Ardeyn Riverwind
     --VV !Hunter
+    --VV 9258 needs to hide if in qlog
 step << !Undead !BloodElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Landra|r, |cFF00FF25Degolien|r upstairs, and |cFF00FF25Ardeyn|r downstairs
     .accept 9144 >>Accept Missing in the Ghostlands
@@ -3572,23 +3583,25 @@ step
 step
     #completewith next
     >>Kill |cFFFF5722Withered Green Keepers|r
-    >>|cFFFCDC00Be careful as they have a double-damage|r |T132282:0|tStrike |cFFFCDC00spell|r
+    >>|cFFFCDC00Be careful as they have|r |T132282:0|t[Strike] |cFFFCDC00which deals double their normal damage|r
     .complete 8473,1 --Kill Withered Green Keeper (x10)
     .target Withered Green Keeper
     --VV !BloodElf/!Hunter
 step
     .goto Eversong Woods,35.10,84.05,10,0
     .goto Eversong Woods,34.91,84.34
-    .use 8474 >>Kill |cFFFF5722Old Whitebark|r. Loot him for his |T133280:0|t[|cFF00BCD4Pendant|r]. |cFFFCDC00Use it to start the quest|r
+    >>Kill |cFFFF5722Old Whitebark|r. Loot him for |T133280:0|t[|cFF00BCD4Old Whitebark's Pendant|r] 
+    >>|cFFFCDC00Use |T133280:0|t[|cFF00BCD4Old Whitebark's Pendant|r] to start the quest|r
     >>|cFFFF5722Old Whitebark|r |cFFFCDC00has a 7 minute 30 second respawn time|r
     .collect 23228,1,8474,1 --Collect Old Whitebark's Pendant (x1)
     .accept 8474 >> Accept Old Whitebark's Pendant
     .target Old Whitebark
+    .use 23228
     --VV !BloodElf/!Hunter
 step
     .loop 40,Eversong Woods,36.07,83.10,36.21,85.47,33.24,87.69,32.05,87.25,32.63,83.57,33.46,81.99,34.47,83.08,36.07,83.10
     >>Kill |cFFFF5722Withered Green Keepers|r
-    >>|cFFFCDC00Be careful as they have a double-damage|r |T132282:0|tStrike |cFFFCDC00spell|r
+    >>|cFFFCDC00Be careful as they have|r |T132282:0|t[Strike] |cFFFCDC00which deals double their normal damage|r
     .complete 8473,1 --Kill Withered Green Keeper (x10)
     .target Withered Green Keeper
     --VV !BloodElf/!Hunter
@@ -3602,13 +3615,13 @@ step
     --VV !BloodElf/!Hunter
 step
     #completewith next
-    .goto Eversong Woods,37.73,86.30
-    .cast 33980 >> Use the |T133280:0|t[|cFF00BCD4Pendant|r] to summon |cFFFF5722Whitebark's Spirit|r
+    .goto Eversong Woods,37.79,86.25
+    .cast 33980 >> Use |T133280:0|t[|cFF00BCD4Old Whitebark's Pendant|r] to summon |cFFFF5722Whitebark's Spirit|r
     .use 28209 
     .isOnQuest 10166
     --VV !BloodElf/!Hunter
 step
-    .goto Eversong Woods,37.73,86.30
+    .goto Eversong Woods,37.79,86.25
     >>Defeat |cFFFF5722Whitebark's Spirit|r
     >>Talk to |cFF00FF25Whitebark's Spirit|r after defeating him
     .turnin 10166 >> Turn in Whitebark's Memory
@@ -3997,7 +4010,7 @@ step << Paladin
 step << Paladin
     #completewith next
     .goto Ghostlands,68.41,7.42
-    .cast 3365 >>Click the |cFFDB2EEFGlided|r Brazier to summon |cFFFF5722Sangrias|r
+    .cast 3365 >>Click the |cFFDB2EEFGilded Brazier|r to summon |cFFFF5722Sangrias|r
 step << Paladin
     #label FirstT
     .goto Ghostlands,68.50,9.77
@@ -4036,7 +4049,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Heron|r
     >>|cFF0E8312Buy|r |T132815:0|t[Ice Cold Milk] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
     >>|cFF0E8312Buy|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132815:0|t[Ice Cold Milk] |cFF0E8312and|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132815:0|t[Ice Cold Milk] |cFF0E8312and|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r << Paladin
     .collect 1179,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (20)
     .collect 4592,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Longjaw Mud Snapper (20)
     .collect 4592,10,9281,1 << Paladin --Longjaw Mud Snapper (10)
@@ -4051,7 +4064,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Heron|r
     >>|cFF0E8312Buy|r |T132815:0|t[Ice Cold Milk] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
     >>|cFF0E8312Buy|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132815:0|t[Ice Cold Milk] |cFF0E8312and|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132815:0|t[Ice Cold Milk] |cFF0E8312and|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r << Paladin
     .collect 1179,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (10)
     .collect 4592,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Longjaw Mud Snapper (20)
     .collect 4592,10,9281,1 << Paladin --Longjaw Mud Snapper (10)
@@ -4066,7 +4079,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Heron|r
     >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
     >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
     .collect 3770,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (20)
     .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
@@ -4083,7 +4096,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Heron|r
     >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
     >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
     .collect 3770,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (10)
     .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
@@ -4156,6 +4169,7 @@ step
     .target Captain Helios
     .xp <15,1
 step
+    #xprate <1.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sedina|r, the |cFF00FF25Wanted Poster|r, and |cFF00FF25Krenn'an|r
     .turnin 9158 >> Turn in Bearers of the Plague
     .accept 9159 >> Accept Curbing the Plague
@@ -4285,42 +4299,42 @@ step
 step << !Rogue
     #xprate 1.49-1.59
     .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
-    .xp 15+13725 >>Grind to 13725+/15000xp
+    .xp 15+12325 >>Grind to 12325+/13600xp
     .isQuestAvailable 9315
     .train 1460,1 << Mage
     .train 6222,1 << Warlock
 step << !Rogue
     #xprate 1.49-1.58
     .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
-    .xp 15+12412 >>Grind to 12412+/15000xp
+    .xp 15+11012 >>Grind to 11012+/13600xp
     .isQuestComplete 9315
     .train 1460,1 << Mage
     .train 6222,1 << Warlock
 step << !Rogue
     #xprate 1.59-1.68
     .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
-    .xp 15+13640 >>Grind to 13640+/15000xp
+    .xp 15+12240 >>Grind to 12240+/13600xp
     .isQuestAvailable 9315
     .train 1460,1 << Mage
     .train 6222,1 << Warlock
 step << !Rogue
     #xprate 1.59-1.68
     .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
-    .xp 15+10150 >>Grind to 12240+/15000xp
+    .xp 15+10840 >>Grind to 10840+/13600xp
     .isQuestComplete 9315
     .train 1460,1 << Mage
     .train 6222,1 << Warlock
 step << !Rogue
     #xprate >1.6999
     .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
-    .xp 15+10150 >>Grind to 13555+/15000xp
+    .xp 15+12155 >>Grind to 12155+/13600xp
     .isQuestAvailable 9315
     .train 1460,1 << Mage
     .train 6222,1 << Warlock
 step << !Rogue
     #xprate >1.6999
     .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
-    .xp 15+10150 >>Grind to 12068+/15000xp
+    .xp 15+10668 >>Grind to 10668+/13600xp
     .isQuestComplete 9315
     .train 1460,1 << Mage
     .train 6222,1 << Warlock
@@ -4626,6 +4640,7 @@ step << !Rogue
     .target Dame Auriferous
     .target Deathstalker Maltendis
     .target Magister Darenis
+--VV 9193 and 9199 need to hide if in qlog
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r, |cFF00FF25Valwyn|r, |cFF00FF25Dame|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
     .accept 9155 >> Accept Down the Dead Scar
@@ -4645,6 +4660,7 @@ step << Rogue
     .target Dame Auriferous
     .target Deathstalker Maltendis
     .target Magister Darenis
+    --VV 9193 and 9199 need to hide if in qlog
 step << Druid
 	#completewith DruidTrain1
 	.cast 18960 >> Cast Teleport: Moonglade
@@ -4736,22 +4752,23 @@ step << Paladin
     >>|cFFFCDC00Jump down the hole behind|r |cFF00FF25Bachi|r
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Astalor|r
     .turnin 9681 >>Turn in A Study in Power
-    .accept 9684 >>Accept Claiming the Light << tbc
-    .accept 63866 >>Accept Claiming the Light << wotlk
+    .accept 9684 >>Accept Claiming the Light << wotlk
+    .accept 63866 >>Accept Claiming the Light << tbc
     .target Magister Astalor Bloodsworn
 -- This changes in sunwell plataeu, but im not sure if we'd have a phase system instead of just tbc
-step << Paladin tbc
-    #xprate >1.4999
-    .goto Silvermoon City,92.61,36.80
-    >>Use the |T134867:0|t[Shimmering Vessel]
-    .complete 9684,1 --Collect Filled Shimmering Vessel
-    .use 24157 
 step << Paladin wotlk
     #xprate >1.4999
     .goto Silvermoon City,92.61,36.80
-    >>Use the |T134867:0|t[Shimmering Vessel] on a |cFF00FF25Blood Elf Magister|r
-    .complete 63866,1 --Collect Filled Shimmering Vessel
+    >>Use the |T134867:0|t[Shimmering Vessel] on a |cFF00FF25Magister|r
+    .complete 9684,1 --Collect Filled Shimmering Vessel
     .target Blood Elf Magister
+    .use 24157 
+step << Paladin tbc
+    #xprate >1.4999
+    .goto Silvermoon City,92.61,36.80
+    >>Use the |T134867:0|t[Shimmering Vessel] on a |cFF00FF25M'uru|r
+    .complete 63866,1 --Collect Filled Shimmering Vessel
+    .target M'uru
     .use 185956
 step << Paladin
     #xprate >1.4999
@@ -4767,28 +4784,29 @@ step << Paladin
     #xprate >1.4999
     .goto Silvermoon City,89.26,35.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bloodvalor|r
-    .turnin 9684 >>Turn in Claiming the Light << tbc
-    .turnin 63866 >>Turn in Claiming the Light << wotlk
+    .turnin 9684 >>Turn in Claiming the Light << wotlk
+    .turnin 63866 >>Turn in Claiming the Light << tbc
     .accept 9685 >>Accept Redeeming the Dead
     .target Knight-Lord Bloodvalor
 step << Paladin
     #xprate >1.4999
     #completewith next
-    .goto Silvermoon City,78.36,60.14,8,0
-    .goto Silvermoon City,78.28,59.34,8 >>Go inside the Inn
+    .goto Silvermoon City,82.04,58.31,8,0
+    .goto Silvermoon City,80.90,57.53,8 >>Go inside the Inn
 step << Paladin
     #xprate >1.4999
     #completewith next
     .goto Silvermoon City,79.61,56.25,8,0
     .goto Silvermoon City,80.09,55.56,8,0
     .goto Silvermoon City,80.61,56.51,8,0
-    .goto Silvermoon City,80.16,60.24,12 >>Travel toward |cFF00FF25Stillblade|r
+    .goto Silvermoon City,80.16,60.24,8 >>Travel toward |cFF00FF25Stillblade|r
 step << Paladin
     #xprate >1.4999
     .goto Silvermoon City,80.16,60.24
-    .use 24184 >>Go into the Inn, then go upstairs. Use the |T134867:0|t[Shimmering Vessel] on |cFF00FF25Stillblade|r
+    >>Use the |T134723:0|t[Filled Shimmering Vessel] on |cFF00FF25Stillblade|r
     .complete 9685,1 --Resurrect Sangrias Stillblade (1)
     .target Blood Knight Stillblade
+    .use 24184
 step << Mage
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Antheol|r
@@ -4927,7 +4945,7 @@ step << BloodElf Priest
 step << BloodElf Priest
     .abandon 9134 >> Abandon Skymistress Gloaming
 step
-    #completewith ManaEssence
+    #completewith SanctumOTM
     >>Kill |cFFFF5722Luzran|r |cFFFCDC00IF you can find a group to carry you|r. Loot him for his |cFF00BCD4Head|r
     .complete 9156,2 --Luzran's Head (1)
     .target Luzran
@@ -4939,6 +4957,10 @@ step
     .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
     .target Risen Hungerers
     .target Gangled Cannibals
+step
+    #label SanctumOTM
+    .goto Ghostlands,35.18,32.85,100 >>Travel toward the Sanctum of the Moon
+    .isOnQuest 9150
 step
     #label ManaEssence
     .goto Ghostlands,35.18,32.85,40,0
@@ -5104,31 +5126,83 @@ step
     .complete 9156,1 --Knucklerot's Head (1)
     .target Knucklerot
 step
-    #completewith SLurker
+    #completewith next
     >>Kill |cFFFF5722Spindleweb Spiders|r. Loot them for their |cFF00BCD4Spider Legs|r
     .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
     .target Spindleweb Spider
+step
+    .goto Ghostlands,27.40,38.73,100 >>Cross the river toward the |cFFFF5722Spindleweb Lurkers|r
+    .isOnQuest 9159
 step
     #completewith next
     >>Kill |cFFFF5722Vampiric Mistbats|r
     >>|cFFFCDC00Be careful of their|r |T136130:0|t[Draining Touch] |cFFFCDC00Lifesteal spell|r
     .complete 9159,1 --Kill Vampiric Mistbat (x10)
     .target Vampiric Mistbat
-step
-    #label SLurker
+step << !Druid !Shaman !Warrior !Paladin
+    #xprate >1.4999
     .loop 40,Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
     >>Kill |cFFFF5722Spindleweb Lurkers|r. Loot them for their |cFF00BCD4Spider Legs|r
     >>|cFFFCDC00Be careful of their|r |T136016:0|t[Poison]
     .complete 9159,2 --Kill Spindleweb Lurker (x8)
+    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
     .target Spindleweb Lurker
     .itemcount 22644,<5
-step
+step << !Druid !Shaman !Warrior !Paladin
+    #xprate >1.4999
+    #label SLurker
     .loop 40,Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
     >>Kill |cFFFF5722Spindleweb Lurkers|r
     >>|cFFFCDC00Be careful of their|r |T136016:0|t[Poison]
     .complete 9159,2 --Kill Spindleweb Lurker (x8)
     .target Spindleweb Lurker
     .itemcount 22644,5
+step << Druid/Shaman/Warrior/Paladin
+    #xprate >1.4999
+    .loop 40,Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
+    >>Kill |cFFFF5722Spindleweb Lurkers|r. Loot them for their |cFF00BCD4Spider Legs|r
+    >>|cFFFCDC00Be careful of their|r |T136016:0|t[Poison]
+    .complete 9159,2 --Kill Spindleweb Lurker (x8)
+    .collect 22644,5,9171,1,-1 --Collect Crunchy Spider Leg (x5)
+    .target Spindleweb Lurker
+    .itemcount 22644,<5
+step << Druid/Shaman/Warrior/Paladin
+    #xprate >1.4999
+    #label SLurker
+    .loop 40,Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
+    >>Kill |cFFFF5722Spindleweb Lurkers|r
+    >>|cFFFCDC00Be careful of their|r |T136016:0|t[Poison]
+    .complete 9159,2 --Kill Spindleweb Lurker (x8)
+    .target Spindleweb Lurker
+    .itemcount 22644,5
+step
+    #xprate <1.5
+    .loop 40,Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
+    >>Kill |cFFFF5722Spindleweb Lurkers|r. Loot them for their |cFF00BCD4Spider Legs|r
+    >>|cFFFCDC00Be careful of their|r |T136016:0|t[Poison]
+    .complete 9159,2 --Kill Spindleweb Lurker (x8)
+    .collect 22644,5,9171,1,-1 --Collect Crunchy Spider Leg (x5)
+    .target Spindleweb Lurker
+    .itemcount 22644,<5
+step
+    #xprate <1.5
+    #label SLurker
+    .loop 40,Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
+    >>Kill |cFFFF5722Spindleweb Lurkers|r
+    >>|cFFFCDC00Be careful of their|r |T136016:0|t[Poison]
+    .complete 9159,2 --Kill Spindleweb Lurker (x8)
+    .target Spindleweb Lurker
+    .itemcount 22644,5
+step
+    #completewith next
+    >>Kill |cFFFF5722Blackpaw Gnolls|r, |cFFFF5722Blackpaw Scavengers|r, and |cFFFF5722Blackpaw Shamans|r
+    >>|cFFFCDC00Don't focus on this yet|r
+    .complete 9192,1 --Kill Blackpaw Gnoll (x8)
+    .complete 9192,2 --Kill Blackpaw Scavenger (x6)
+    .complete 9192,3 --Kill Blackpaw Shaman (x4)
+    .target Blackpaw Gnoll
+    .target Blackpaw Scavenger
+    .target Blackpaw Shaman
 step
     .goto Ghostlands,31.44,48.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shatharia|r
@@ -5160,6 +5234,9 @@ step
     .complete 9192,2 --Kill Blackpaw Scavenger (x6)
     .complete 9192,3 --Kill Blackpaw Shaman (x4)
     .complete 9207,1 --Collect Underlight Ore (x6)
+    .target Blackpaw Gnoll
+    .target Blackpaw Scavenger
+    .target Blackpaw Shaman
     .skill mining,1
 step
     .goto Ghostlands,30.72,46.23,30,0
@@ -5201,13 +5278,121 @@ step
     .target Luzran
 step
     #label Hungerers
-    >>Kill |cFFFF5722Gangled Cannibals|r and |cFFFF5722Risen Hungerers|r. Loot them for their |cFF00BCD4Rotting Hearts|r
+    .goto Ghostlands,37.13,48.38,40,0
+    .goto Ghostlands,37.63,45.56,40,0
+    .goto Ghostlands,39.64,43.05,40,0
+    .goto Ghostlands,37.56,41.68,40,0
+    .goto Ghostlands,39.82,39.35,40,0
+    .goto Ghostlands,37.78,38.23,40,0
+    .goto Ghostlands,39.66,35.69,40,0
+    .goto Ghostlands,38.29,33.03,40,0
+    .goto Ghostlands,40.23,31.75,40,0
+    .goto Ghostlands,38.77,29.82,40,0
+    .goto Ghostlands,40.76,28.98,40,0
+    .goto Ghostlands,37.13,48.38,40,0
+    .goto Ghostlands,37.63,45.56,40,0
+    .goto Ghostlands,39.64,43.05,40,0
+    .goto Ghostlands,37.56,41.68,40,0
+    .goto Ghostlands,39.82,39.35,40,0
+    .goto Ghostlands,37.78,38.23,40,0
+    .goto Ghostlands,39.66,35.69,40,0
+    .goto Ghostlands,38.29,33.03,40,0
+    .goto Ghostlands,40.23,31.75,40,0
+    .goto Ghostlands,38.77,29.82,40,0
+    .goto Ghostlands,40.76,28.98
+    >>Kill |cFFFF5722Gangled Cannibals|r and |cFFFF5722Risen Hungerers|r. Loot |cFFFF5722Risen Hungerers|r for their |cFF00BCD4Rotting Hearts|r
+    >>|cFFFF5722Gangled Cannibals|r |cFFFCDC00and |cFFFF5722Risen Hungerers|r share spawns with each other. Kill both to spawn the ones you need|r
     .complete 9155,1 --Kill Risen Hungerer (x10)
     .complete 9155,2 --Kill Gangled Cannibal (x10)
     .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
     .target Risen Hungerers
     .target Gangled Cannibals
+step << !Druid !Shaman !Warrior !Paladin
+    #xprate 1.49-1.59
+    .goto Ghostlands,37.13,48.38,40,0
+    .goto Ghostlands,37.63,45.56,40,0
+    .goto Ghostlands,39.64,43.05,40,0
+    .goto Ghostlands,37.56,41.68,40,0
+    .goto Ghostlands,39.82,39.35,40,0
+    .goto Ghostlands,37.78,38.23,40,0
+    .goto Ghostlands,39.66,35.69,40,0
+    .goto Ghostlands,38.29,33.03,40,0
+    .goto Ghostlands,40.23,31.75,40,0
+    .goto Ghostlands,38.77,29.82,40,0
+    .goto Ghostlands,40.76,28.98,40,0
+    .goto Ghostlands,37.13,48.38,40,0
+    .goto Ghostlands,37.63,45.56,40,0
+    .goto Ghostlands,39.64,43.05,40,0
+    .goto Ghostlands,37.56,41.68,40,0
+    .goto Ghostlands,39.82,39.35,40,0
+    .goto Ghostlands,37.78,38.23,40,0
+    .goto Ghostlands,39.66,35.69,40,0
+    .goto Ghostlands,38.29,33.03,40,0
+    .goto Ghostlands,40.23,31.75,40,0
+    .goto Ghostlands,38.77,29.82,40,0
+    .goto Ghostlands,40.76,28.98
+    >>Kill |cFFFF5722Gangled Cannibals|r and |cFFFF5722Risen Hungerers|r. Loot |cFFFF5722Risen Hungerers|r for their |cFF00BCD4Rotting Hearts|r
+    >>|cFFFF5722Gangled Cannibals|r |cFFFCDC00and |cFFFF5722Risen Hungerers|r share spawns with each other. Kill both to spawn the ones you need|r
+    .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
+    .xp 17+5987 >>Grind to 5987+/16400xp
+step << !Druid !Shaman !Warrior !Paladin
+    #xprate 1.59-1.69
+    .goto Ghostlands,37.13,48.38,40,0
+    .goto Ghostlands,37.63,45.56,40,0
+    .goto Ghostlands,39.64,43.05,40,0
+    .goto Ghostlands,37.56,41.68,40,0
+    .goto Ghostlands,39.82,39.35,40,0
+    .goto Ghostlands,37.78,38.23,40,0
+    .goto Ghostlands,39.66,35.69,40,0
+    .goto Ghostlands,38.29,33.03,40,0
+    .goto Ghostlands,40.23,31.75,40,0
+    .goto Ghostlands,38.77,29.82,40,0
+    .goto Ghostlands,40.76,28.98,40,0
+    .goto Ghostlands,37.13,48.38,40,0
+    .goto Ghostlands,37.63,45.56,40,0
+    .goto Ghostlands,39.64,43.05,40,0
+    .goto Ghostlands,37.56,41.68,40,0
+    .goto Ghostlands,39.82,39.35,40,0
+    .goto Ghostlands,37.78,38.23,40,0
+    .goto Ghostlands,39.66,35.69,40,0
+    .goto Ghostlands,38.29,33.03,40,0
+    .goto Ghostlands,40.23,31.75,40,0
+    .goto Ghostlands,38.77,29.82,40,0
+    .goto Ghostlands,40.76,28.98
+    >>Kill |cFFFF5722Gangled Cannibals|r and |cFFFF5722Risen Hungerers|r. Loot |cFFFF5722Risen Hungerers|r for their |cFF00BCD4Rotting Hearts|r
+    >>|cFFFF5722Gangled Cannibals|r |cFFFCDC00and |cFFFF5722Risen Hungerers|r share spawns with each other. Kill both to spawn the ones you need|r
+    .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
+    .xp 17+5294 >> Grind to 5294+/16400xp
+step << !Druid !Shaman !Warrior !Paladin
+    #xprate >1.6999
+    .goto Ghostlands,37.13,48.38,40,0
+    .goto Ghostlands,37.63,45.56,40,0
+    .goto Ghostlands,39.64,43.05,40,0
+    .goto Ghostlands,37.56,41.68,40,0
+    .goto Ghostlands,39.82,39.35,40,0
+    .goto Ghostlands,37.78,38.23,40,0
+    .goto Ghostlands,39.66,35.69,40,0
+    .goto Ghostlands,38.29,33.03,40,0
+    .goto Ghostlands,40.23,31.75,40,0
+    .goto Ghostlands,38.77,29.82,40,0
+    .goto Ghostlands,40.76,28.98,40,0
+    .goto Ghostlands,37.13,48.38,40,0
+    .goto Ghostlands,37.63,45.56,40,0
+    .goto Ghostlands,39.64,43.05,40,0
+    .goto Ghostlands,37.56,41.68,40,0
+    .goto Ghostlands,39.82,39.35,40,0
+    .goto Ghostlands,37.78,38.23,40,0
+    .goto Ghostlands,39.66,35.69,40,0
+    .goto Ghostlands,38.29,33.03,40,0
+    .goto Ghostlands,40.23,31.75,40,0
+    .goto Ghostlands,38.77,29.82,40,0
+    .goto Ghostlands,40.76,28.98
+    >>Kill |cFFFF5722Gangled Cannibals|r and |cFFFF5722Risen Hungerers|r. Loot |cFFFF5722Risen Hungerers|r for their |cFF00BCD4Rotting Hearts|r
+    >>|cFFFF5722Gangled Cannibals|r |cFFFCDC00and |cFFFF5722Risen Hungerers|r share spawns with each other. Kill both to spawn the ones you need|r
+    .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
+    .xp 17+4598 >> Grind to 4598+/16400xp
 step
+    #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vandril|r, |cFF00FF25Rathis|r, and |cFF00FF25Mouldier|r
     .turnin 9139 >> Turn in Goldenmist Village
     .goto Ghostlands,46.08,28.33,10,0
@@ -5224,6 +5409,7 @@ step
     .target Master Chef Mouldier
     .itemcount 22644,5
 step
+    #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vandril|r and |cFF00FF25Rathis|r
     .turnin 9139 >> Turn in Goldenmist Village
     .goto Ghostlands,46.08,28.33,10,0
@@ -5235,23 +5421,74 @@ step
     .target Arcanist Vandril
     .target Rathis Tomber
     .itemcount 22644,<5
+step << Druid/Shaman/Warrior/Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vandril|r, |cFF00FF25Rathis|r, and |cFF00FF25Mouldier|r
+    .turnin 9139 >> Turn in Goldenmist Village
+    .goto Ghostlands,46.08,28.33,10,0
+    .goto Ghostlands,46.55,28.38
+    .accept 9140 >> Accept Windrunner Village
+    .turnin 9152 >> Turn in Tomber's Supplies
+    .goto Ghostlands,47.14,28.30,10,0
+    .goto Ghostlands,47.27,28.59
+    .accept 9171 >> Accept Culinary Crunch
+    .turnin 9171 >> Turn in Culinary Crunch
+    .goto Ghostlands,48.43,30.93
+    .target Arcanist Vandril
+    .target Rathis Tomber
+    .target Master Chef Mouldier
+    .itemcount 22644,5
+step << Druid/Shaman/Warrior/Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vandril|r and |cFF00FF25Rathis|r
+    .turnin 9139 >> Turn in Goldenmist Village
+    .goto Ghostlands,46.08,28.33,10,0
+    .goto Ghostlands,46.55,28.38
+    .accept 9140 >> Accept Windrunner Village
+    .turnin 9152 >> Turn in Tomber's Supplies
+    .goto Ghostlands,47.14,28.30,10,0
+    .goto Ghostlands,47.27,28.59
+    .target Arcanist Vandril
+    .target Rathis Tomber
+    .itemcount 22644,<5
+step << !Druid !Shaman !Warrior !Paladin
+    #xprate >1.4999
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vandril|r, |cFF00FF25Rathis|r, and |cFF00FF25Mouldier|r
+    .turnin 9139 >> Turn in Goldenmist Village
+    .goto Ghostlands,46.08,28.33,10,0
+    .goto Ghostlands,46.55,28.38
+    .accept 9140 >> Accept Windrunner Village
+    .turnin 9152 >> Turn in Tomber's Supplies
+    .goto Ghostlands,47.14,28.30,10,0
+    .goto Ghostlands,47.27,28.59
+    .accept 9171 >> Accept Culinary Crunch
+    .turnin 9171 >> Turn in Culinary Crunch
+    .goto Ghostlands,48.43,30.93
+    .target Arcanist Vandril
+    .target Rathis Tomber
+    .target Master Chef Mouldier
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kalarin|r
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
+    >>|cFF0E8312Buy|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << Paladin
     .collect 1205,30,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (30)
-    .collect 3770,30,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (30)
-    .collect 3770,15,9281,1 << Paladin --Mutton Chop (15)
+    .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
+    .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
     .target Innkeeper Kalarin
-    .money <0.3000 << !Paladin
-    .money <0.4500 << Paladin
+    .money <0.3000 << Priest/Mage/Warlock/Druid/Paladin
+    .money <0.2000 << !Priest !Mage !Warlock !Druid !Paladin
+    .money <0.4000 << Paladin
     .xp <15,1
     .xp >30,1
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kalarin|r
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
+    >>|cFF0E8312Buy|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
-    .collect 3770,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (20)
-    .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
+    .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
+    .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
     .target Innkeeper Kalarin
     .money <0.2000 << !Paladin
     .money <0.3000 << Paladin
@@ -5261,11 +5498,11 @@ step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kalarin|r
     >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
-    .collect 3770,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (10)
-    .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
+    .collect 4538,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (10)
+    .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
     .target Innkeeper Kalarin
     .money <0.1000 << !Paladin
     .money <0.2000 << Paladin
@@ -5370,6 +5607,32 @@ step << !Rogue
     .turnin 9149 >> Turn in The Plagued Coast
     .goto Ghostlands,47.67,34.87
     .turnin 9155 >> Turn in Down the Dead Scar
+    .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran
+    .goto Ghostlands,46.02,33.58
+    .turnin 9160 >> Turn in Investigate An'daroth
+    .accept 9163 >> Accept Into Occupied Territory
+    .goto Ghostlands,45.17,32.37,10,0
+    .goto Ghostlands,44.88,32.51
+    .accept 9173 >> Accept Retaking Windrunner Spire
+    .goto Ghostlands,44.77,32.44
+    .turnin 9192 >> Turn in Trouble at the Underlight Mines
+    .goto Ghostlands,44.74,32.28
+    .turnin 9150 >> Turn in Salvaging the Past
+    .accept 9151 >> Accept The Sanctum of the Sun
+    .goto Ghostlands,46.02,31.95
+    .target Apothecary Renzithen
+    .target Deathstalker Rathiel
+    .target Dame Auriferous
+    .target High Executor Mavren
+    .target Deathstalker Maltendis
+    .target Magister Darenis
+    .isQuestComplete 9156
+    .xp <17,1
+ step << !Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Renzithen|r, |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
+    .turnin 9149 >> Turn in The Plagued Coast
+    .goto Ghostlands,47.67,34.87
+    .turnin 9155 >> Turn in Down the Dead Scar
     .goto Ghostlands,46.02,33.58
     .turnin 9160 >> Turn in Investigate An'daroth
     .accept 9163 >> Accept Into Occupied Territory
@@ -5389,6 +5652,30 @@ step << !Rogue
     .target Deathstalker Maltendis
     .target Magister Darenis
     .xp <17,1
+step << !Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Renzithen|r, |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
+    .turnin 9149 >> Turn in The Plagued Coast
+    .goto Ghostlands,47.67,34.87
+    .turnin 9155 >> Turn in Down the Dead Scar
+    .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran
+    .goto Ghostlands,46.02,33.58
+    .turnin 9160 >> Turn in Investigate An'daroth
+    .accept 9163 >> Accept Into Occupied Territory
+    .goto Ghostlands,45.17,32.37,10,0
+    .goto Ghostlands,44.88,32.51
+    .accept 9173 >> Accept Retaking Windrunner Spire
+    .goto Ghostlands,44.77,32.44
+    .turnin 9192 >> Turn in Trouble at the Underlight Mines
+    .goto Ghostlands,44.74,32.28
+    .turnin 9150 >> Turn in Salvaging the Past
+    .goto Ghostlands,46.02,31.95
+    .target Apothecary Renzithen
+    .target Deathstalker Rathiel
+    .target Dame Auriferous
+    .target High Executor Mavren
+    .target Deathstalker Maltendis
+    .target Magister Darenis
+    .isQuestComplete 9156
 step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Renzithen|r, |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
     .turnin 9149 >> Turn in The Plagued Coast
@@ -5414,6 +5701,29 @@ step << !Rogue
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
     .turnin 9155 >> Turn in Down the Dead Scar
+    .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran
+    .goto Ghostlands,46.02,33.58
+    .turnin 9160 >> Turn in Investigate An'daroth
+    .accept 9163 >> Accept Into Occupied Territory
+    .goto Ghostlands,45.17,32.37,10,0
+    .goto Ghostlands,44.88,32.51
+    .accept 9173 >> Accept Retaking Windrunner Spire
+    .goto Ghostlands,44.77,32.44
+    .turnin 9192 >> Turn in Trouble at the Underlight Mines
+    .goto Ghostlands,44.74,32.28
+    .turnin 9150 >> Turn in Salvaging the Past
+    .accept 9151 >> Accept The Sanctum of the Sun
+    .goto Ghostlands,46.02,31.95
+    .target Deathstalker Rathiel
+    .target Dame Auriferous
+    .target High Executor Mavren
+    .target Deathstalker Maltendis
+    .target Magister Darenis
+    .isQuestComplete 9156
+    .xp <17,1
+step << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
+    .turnin 9155 >> Turn in Down the Dead Scar
     .goto Ghostlands,46.02,33.58
     .turnin 9160 >> Turn in Investigate An'daroth
     .accept 9163 >> Accept Into Occupied Territory
@@ -5432,6 +5742,27 @@ step << Rogue
     .target Deathstalker Maltendis
     .target Magister Darenis
     .xp <17,1
+step << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
+    .turnin 9155 >> Turn in Down the Dead Scar
+    .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran
+    .goto Ghostlands,46.02,33.58
+    .turnin 9160 >> Turn in Investigate An'daroth
+    .accept 9163 >> Accept Into Occupied Territory
+    .goto Ghostlands,45.17,32.37,10,0
+    .goto Ghostlands,44.88,32.51
+    .accept 9173 >> Accept Retaking Windrunner Spire
+    .goto Ghostlands,44.77,32.44
+    .turnin 9192 >> Turn in Trouble at the Underlight Mines
+    .goto Ghostlands,44.74,32.28
+    .turnin 9150 >> Turn in Salvaging the Past
+    .goto Ghostlands,46.02,31.95
+    .target Deathstalker Rathiel
+    .target Dame Auriferous
+    .target High Executor Mavren
+    .target Deathstalker Maltendis
+    .target Magister Darenis
+    .isQuestComplete 9156
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
     .turnin 9155 >> Turn in Down the Dead Scar
@@ -5497,7 +5828,16 @@ step << Mage
     .turnin 9404 >>Turn in Recently Living
     .train 3140,1
     .target Instructor Antheol
+step << !Druid !Shaman !Warrior !Paladin
+    #xprate >1.4999
+    #completewith SMTraining3
+    .goto Eversong Woods,56.51,49.61,25,0
+    .goto Silvermoon City,73.39,59.65
+    .zone Silvermoon City >>Enter Silvermoon
+    .itemStat 16,QUALITY,<7 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
 step << !Druid !Shaman !Warrior
+    #xprate <1.5
     #completewith SMTraining3
     .goto Eversong Woods,56.51,49.61,25,0
     .goto Silvermoon City,73.39,59.65
@@ -5798,22 +6138,23 @@ step << Paladin
     >>|cFFFCDC00Jump down the hole behind|r |cFF00FF25Bachi|r
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Astalor|r
     .turnin 9681 >>Turn in A Study in Power
-    .accept 9684 >>Accept Claiming the Light << tbc
-    .accept 63866 >>Accept Claiming the Light << wotlk
+    .accept 9684 >>Accept Claiming the Light << wotlk
+    .accept 63866 >>Accept Claiming the Light << tbc
     .target Magister Astalor Bloodsworn
 -- This changes in sunwell plataeu, but im not sure if we'd have a phase system instead of just tbc
-step << Paladin tbc
-    #xprate >1.4999
-    .goto Silvermoon City,92.61,36.80
-    >>Use the |T134867:0|t[Shimmering Vessel]
-    .complete 9684,1 --Collect Filled Shimmering Vessel
-    .use 24157 
 step << Paladin wotlk
     #xprate <1.5
     .goto Silvermoon City,92.61,36.80
-    >>Use the |T134867:0|t[Shimmering Vessel] on a |cFF00FF25Blood Elf Magister|r
-    .complete 63866,1 --Collect Filled Shimmering Vessel
+    >>Use the |T134867:0|t[Shimmering Vessel] on a |cFF00FF25Magister|r
+    .complete 9684,1 --Collect Filled Shimmering Vessel
     .target Blood Elf Magister
+    .use 24157 
+step << Paladin tbc
+    #xprate <1.5
+    .goto Silvermoon City,92.61,36.80
+    >>Use the |T134867:0|t[Shimmering Vessel] on |cFF00FF25M'uru|r
+    .complete 63866,1 --Collect Filled Shimmering Vessel
+    .target M'uru
     .use 185956
 step << Paladin
     #xprate <1.5
@@ -5829,8 +6170,8 @@ step << Paladin
     #xprate <1.5
     .goto Silvermoon City,89.26,35.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bloodvalor|r
-    .turnin 9684 >>Turn in Claiming the Light << tbc
-    .turnin 63866 >>Turn in Claiming the Light << wotlk
+    .turnin 9684 >>Turn in Claiming the Light << wotlk
+    .turnin 63866 >>Turn in Claiming the Light << tbc
     .accept 9685 >>Accept Redeeming the Dead
     .target Knight-Lord Bloodvalor
 step << Paladin
@@ -5856,24 +6197,25 @@ step << Paladin
 	.target Ithelis
 	.target Osselan
 	.xp <16,1
-step << Paladin
+ step << Paladin
     #xprate <1.5
     #completewith next
-    .goto Silvermoon City,78.36,60.14,8,0
-    .goto Silvermoon City,78.28,59.34,8 >>Go inside the Inn
+    .goto Silvermoon City,82.04,58.31,8,0
+    .goto Silvermoon City,80.90,57.53,8 >>Go inside the Inn
 step << Paladin
     #xprate <1.5
     #completewith next
     .goto Silvermoon City,79.61,56.25,8,0
     .goto Silvermoon City,80.09,55.56,8,0
     .goto Silvermoon City,80.61,56.51,8,0
-    .goto Silvermoon City,80.16,60.24,12 >>Travel toward |cFF00FF25Stillblade|r
+    .goto Silvermoon City,80.16,60.24,8 >>Travel toward |cFF00FF25Stillblade|r
 step << Paladin
     #xprate <1.5
     .goto Silvermoon City,80.16,60.24
-    .use 24184 >>Go into the Inn, then go upstairs. Use the |T134867:0|t[Shimmering Vessel] on |cFF00FF25Stillblade|r
+    >>Use the |T134723:0|t[Filled Shimmering Vessel] on |cFF00FF25Stillblade|r
     .complete 9685,1 --Resurrect Sangrias Stillblade (1)
     .target Blood Knight Stillblade
+    .use 24184 
 step << !Shaman !Warrior !Rogue
     #completewith Clearing
     .hs >> Hearth to Tranquillien
@@ -6027,6 +6369,54 @@ step
     .accept 9281 >> Accept Clearing the Way
     .target Apprentice Vor'el
 step
+    #xprate <1.5
+    #completewith SpireT01
+    >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r. Loot |cFFFF5722Greater Spindlewebs|r for their |cFF00BCD4Spider Legs|r
+    >>|cFFFCDC00Be careful as these mobs may be difficult due to the level difference|r << Rogue
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
+    .target Greater Spindleweb
+    .target Ghostclaw Ravager
+    .isQuestAvailable 9171
+step
+    #xprate <1.5
+    #completewith SpireT01
+    >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r
+    >>|cFFFCDC00Be careful as these mobs may be difficult due to the level difference|r << Rogue
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .target Greater Spindleweb
+    .target Ghostclaw Ravager
+    .isQuestTurnedIn 9171
+step << Druid/Shaman/Warrior/Paladin
+    #xprate >1.4999
+    #completewith SpireT01
+    >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r. Loot |cFFFF5722Greater Spindlewebs|r for their |cFF00BCD4Spider Legs|r
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
+    .target Greater Spindleweb
+    .target Ghostclaw Ravager
+    .isQuestAvailable 9171
+step << Druid/Shaman/Warrior/Paladin
+    #xprate >1.4999
+    #completewith SpireT01
+    >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .target Greater Spindleweb
+    .target Ghostclaw Ravager
+    .isQuestTurnedIn 9171
+step << !Druid !Shaman !Warrior !Paladin
+    #xprate >1.4999
+    #completewith SpireT01
+    >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .target Greater Spindleweb
+    .target Ghostclaw Ravager
+step
     #completewith SpireT01
     >>Kill |cFFFF5722Luzran|r |cFFFCDC00IF you can find a group to carry you|r. Loot him for his |cFF00BCD4Head|r
     .complete 9156,2 --Luzran's Head (1)
@@ -6069,7 +6459,7 @@ step
     >>|cFFFCDC00Be careful as these mobs may be difficult due to the level difference|r << Rogue
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
-    .collect 22644,5,9171,1,-1 --Collect Crunchy Spider Leg (x5)
+    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
     .target Greater Spindleweb
     .target Ghostclaw Ravager
     .isQuestAvailable 9171
@@ -6088,9 +6478,8 @@ step
     .target Greater Spindleweb
     .target Ghostclaw Ravager
     .isQuestTurnedIn 9171
-step
+ step << Druid/Shaman/Warrior/Paladin
     #xprate >1.4999
-    #completewith SpireT
     .goto Ghostlands,34.06,57.57,50,0
     .goto Ghostlands,30.77,60.23,50,0
     .goto Ghostlands,28.23,58.65,50,0
@@ -6099,31 +6488,62 @@ step
     >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r. Loot |cFFFF5722Greater Spindlewebs|r for their |cFF00BCD4Spider Legs|r
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
-    .collect 22644,5,9171,1,-1 --Collect Crunchy Spider Leg (x5)
+    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
     .target Greater Spindleweb
     .target Ghostclaw Ravager
     .isQuestAvailable 9171
-step
+step << Druid/Shaman/Warrior/Paladin
     #xprate >1.4999
-    #completewith SpireT
     .goto Ghostlands,34.06,57.57,50,0
     .goto Ghostlands,30.77,60.23,50,0
     .goto Ghostlands,28.23,58.65,50,0
     .goto Ghostlands,23.38,59.90,50,0
     .goto Ghostlands,18.75,60.74,50,0
+    .goto Ghostlands,18.75,60.74,50,0
+    .goto Ghostlands,23.38,59.90,50,0
+    .goto Ghostlands,28.23,58.65,50,0
+    .goto Ghostlands,30.77,60.23,50,0
+    .goto Ghostlands,34.06,57.57,50,0
+    .goto Ghostlands,18.75,60.74,50,0
+    .goto Ghostlands,23.38,59.90,50,0
+    .goto Ghostlands,28.23,58.65,50,0
+    .goto Ghostlands,30.77,60.23,50,0
+    .goto Ghostlands,34.06,57.57
     >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r
-    >>|cFFFCDC00Be careful as these mobs may be difficult due to the level difference|r << Rogue
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
     .target Greater Spindleweb
     .target Ghostclaw Ravager
     .isQuestTurnedIn 9171
+step << !Druid !Shaman !Warrior !Paladin
+    #xprate >1.4999
+    .goto Ghostlands,34.06,57.57,50,0
+    .goto Ghostlands,30.77,60.23,50,0
+    .goto Ghostlands,28.23,58.65,50,0
+    .goto Ghostlands,23.38,59.90,50,0
+    .goto Ghostlands,18.75,60.74,50,0
+    .goto Ghostlands,23.38,59.90,50,0
+    .goto Ghostlands,28.23,58.65,50,0
+    .goto Ghostlands,30.77,60.23,50,0
+    .goto Ghostlands,34.06,57.57,50,0
+    .goto Ghostlands,18.75,60.74,50,0
+    .goto Ghostlands,23.38,59.90,50,0
+    .goto Ghostlands,28.23,58.65,50,0
+    .goto Ghostlands,30.77,60.23,50,0
+    .goto Ghostlands,34.06,57.57
+    >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .target Greater Spindleweb
+    .target Ghostclaw Ravager
 step
+    #label SpireT
     .goto Ghostlands,17.21,58.09,80 >> Travel to Windrunner Spire
     .isOnQuest 9173
 step
     #completewith next
-    >>Loot |cFFFF5722Fallen Rangers|r and |cFFFF5722Deatholme Acolytes|r for |T329590:0|t[The Lady's Necklace]. |cFFFCDC00Use it to start the quest|r
+    >>Loot |cFFFF5722Fallen Rangers|r and |cFFFF5722Deatholme Acolytes|r for |T133303:0|t[|cFF00BCD4The Lady's Necklace|r]
+    >>|cFFFCDC00Use |T133303:0|t[|cFF00BCD4The Lady's Necklace|r] to start the quest|r
     .collect 22597,1,9175,1 --Collect The Lady's Necklace (x1)
     .accept 9175 >> Accept The Lady's Necklace  
     .use 22597
@@ -6177,7 +6597,8 @@ step
     .goto Ghostlands,13.69,58.59,20,0
     .goto Ghostlands,12.66,58.98,15,0
     .goto Ghostlands,12.24,57.47
-    >>Kill |cFFFF5722Fallen Rangers|r and |cFFFF5722Deatholme Acolytes|r. Loot them for |T329590:0|t[The Lady's Necklace]. |cFFFCDC00Use it to start the quest|r
+    >>Kill |cFFFF5722Fallen Rangers|r and |cFFFF5722Deatholme Acolytes|r. Loot them for |T133303:0|t[|cFF00BCD4The Lady's Necklace|r]
+    >>|cFFFCDC00Use |T133303:0|t[|cFF00BCD4The Lady's Necklace|r] to start the quest|r
     .collect 22597,1,9175,1 --Collect The Lady's Necklace (x1)
     .accept 9175 >> Accept The Lady's Necklace  
     .use 22597
@@ -6197,50 +6618,12 @@ step
     >>|cFFFCDC00Be careful as these mobs may be difficult due to the level difference|r << Rogue
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
-    .collect 22644,5,9171,1,-1 --Collect Crunchy Spider Leg (x5)
+    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
     .target Greater Spindleweb
     .target Ghostclaw Ravager
     .isQuestAvailable 9171
 step
     #xprate <1.5
-    .goto Ghostlands,18.75,60.74,50,0
-    .goto Ghostlands,23.38,59.90,50,0
-    .goto Ghostlands,28.23,58.65,50,0
-    .goto Ghostlands,30.77,60.23,50,0
-    .goto Ghostlands,34.06,57.57,50,0
-    .goto Ghostlands,18.75,60.74,50,0
-    .goto Ghostlands,23.38,59.90,50,0
-    .goto Ghostlands,28.23,58.65,50,0
-    .goto Ghostlands,30.77,60.23,50,0
-    .goto Ghostlands,34.06,57.57
-    >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r
-    >>|cFFFCDC00Be careful as these mobs may be difficult due to the level difference|r << Rogue
-    .complete 9281,1 --Kill Greater Spindleweb (x10)
-    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
-    .target Greater Spindleweb
-    .target Ghostclaw Ravager
-    .isQuestTurnedIn 9171
-step
-    #xprate >1.4999
-    .goto Ghostlands,18.75,60.74,50,0
-    .goto Ghostlands,23.38,59.90,50,0
-    .goto Ghostlands,28.23,58.65,50,0
-    .goto Ghostlands,30.77,60.23,50,0
-    .goto Ghostlands,34.06,57.57,50,0
-    .goto Ghostlands,18.75,60.74,50,0
-    .goto Ghostlands,23.38,59.90,50,0
-    .goto Ghostlands,28.23,58.65,50,0
-    .goto Ghostlands,30.77,60.23,50,0
-    .goto Ghostlands,34.06,57.57
-    >>Kill |cFFFF5722Greater Spindlewebs|r and |cFFFF5722Ghostclaw Ravagers|r. Loot |cFFFF5722Greater Spindlewebs|r for their |cFF00BCD4Spider Legs|r
-    .complete 9281,1 --Kill Greater Spindleweb (x10)
-    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
-    .collect 22644,5,9171,1,-1 --Collect Crunchy Spider Leg (x5)
-    .target Greater Spindleweb
-    .target Ghostclaw Ravager
-    .isQuestAvailable 9171
-step
-    #xprate >1.4999
     .goto Ghostlands,18.75,60.74,50,0
     .goto Ghostlands,23.38,59.90,50,0
     .goto Ghostlands,28.23,58.65,50,0
@@ -6288,7 +6671,7 @@ step
     .target Stonewing Slayer
 step
     #completewith next
-    .cast 7840 >> Use the |T329590:0|t[Swim Speed Potion] in the water to cross it faster
+    .cast 7840 >> Use the |T134754:0|t[Swim Speed Potion] in the water to swim across it faster
     .use 6372
     .itemcount 6372,1
 step
@@ -6340,7 +6723,7 @@ step
     .isOnQuest 10372 << BloodElf Rogue
 step
     #completewith WindrunnerV
-    .cast 7840 >> Use the |T329590:0|t[Swim Speed Potion] in the water to return back faster
+    .cast 7840 >> Use the |134754:0|t[Swim Speed Potion] in the water to swim back faster
     .use 6372
     .itemcount 6372,1
     .cooldown item,6948,<0
@@ -6354,6 +6737,19 @@ step
     .train 62124,2 << Paladin wotlk
     .isOnQuest 10372 << BloodElf Rogue
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to  |cFF00FF25Mouldier|r and |cFF00FF25Vandril|r
+    .accept 9171 >> Accept Culinary Crunch
+    .turnin 9171 >> Turn in Culinary Crunch
+    .goto Ghostlands,48.43,30.93
+    .turnin 9140 >> Turn in Windrunner Village
+    .goto Ghostlands,46.08,28.33,10,0
+    .goto Ghostlands,46.55,28.38
+    .target Master Chef Mouldier
+    .target Arcanist Vandril
+    .itemcount 22644,5
+    .isQuestAvailable 9171
+    .cooldown item,6948,>0
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vandril|r and |cFF00FF25Mouldier|r
     .turnin 9140 >> Turn in Windrunner Village
     .goto Ghostlands,46.08,28.33,10,0
@@ -6365,6 +6761,7 @@ step
     .target Master Chef Mouldier
     .itemcount 22644,5
     .isQuestAvailable 9171
+    .cooldown item,6948,<0
 step
     #label WindrunnerV
     .goto Ghostlands,46.08,28.33,10,0
@@ -6732,10 +7129,14 @@ step << Paladin
     .goto Silvermoon City,84.65,43.43,25,0
     .goto Silvermoon City,89.00,36.95,15,0
     .goto Silvermoon City,89.26,35.20,15 >>Travel toward |cFF00FF25Bloodvalor|r
+    .train 647,1 << Paladin tbc
+    .train 62124,1 << Paladin wotlk
 step << Paladin
     .goto Silvermoon City,89.26,35.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bloodvalor|r
     .turnin 9685 >>Turn in Redeeming the Dead
+    .train 647,1 << Paladin tbc
+    .train 62124,1 << Paladin wotlk
     .target Knight-Lord Bloodvalor
 step << Paladin
     .goto Silvermoon City,91.19,36.94,-1
@@ -6765,20 +7166,27 @@ step << !Rogue
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kalarin|r
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
+    >>|cFF0E8312Buy|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << Paladin
     .collect 1205,30,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (30)
-    .collect 3770,30,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (30)
-    .collect 3770,15,9281,1 << Paladin --Mutton Chop (15)
+    .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
+    .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
     .target Innkeeper Kalarin
-    .money <0.3000 << !Paladin
-    .money <0.4500 << Paladin
+    .money <0.3000 << Priest/Mage/Warlock/Druid/Paladin
+    .money <0.2000 << !Priest !Mage !Warlock !Druid !Paladin
+    .money <0.4000 << Paladin
     .xp <15,1
     .xp >30,1
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kalarin|r
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
+    >>|cFF0E8312Buy|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
-    .collect 3770,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (20)
-    .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
+    .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
+    .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
     .target Innkeeper Kalarin
     .money <0.2000 << !Paladin
     .money <0.3000 << Paladin
@@ -6788,11 +7196,11 @@ step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kalarin|r
     >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
-    .collect 3770,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (10)
-    .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
+    .collect 4538,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (10)
+    .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
     .target Innkeeper Kalarin
     .money <0.1000 << !Paladin
     .money <0.2000 << Paladin
@@ -6888,7 +7296,7 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
 step
-    .goto Ghostlands,54.84,49.30,15,0
+    .goto Ghostlands,54.84,49.30,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Quallestis|r and |cFF00FF25Kaendris|r
     .turnin 9207 >> Turn in Underlight Ore Samples
     .goto Ghostlands,54.95,48.49
@@ -6917,9 +7325,10 @@ step
     .isQuestTurnedIn 9151
 step
     #completewith next
+    .goto Ghostlands,54.84,49.30,10,0
     .goto Ghostlands,57.04,45.01,40,0
     .goto Ghostlands,60.07,42.43,40,0
-    .goto Ghostlands,60.29,35.63,40 >>Travel toward Sylastor
+    .goto Ghostlands,60.29,35.63,40 >>Travel toward |cFF00FF25Sylastor|r
 step
     .goto Ghostlands,60.29,35.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sylastor|r
@@ -6965,6 +7374,7 @@ step
     .turnin 9274 >>Turn in Spirits of the Drowned
     .goto Ghostlands,72.21,29.78
     .turnin 9146 >> Turn in Report to Captain Helios
+    .goto Ghostlands,72.37,29.64
     .accept 9214 >>Accept Shadowpine Weaponry
     .goto Ghostlands,72.37,29.64
     .target Farstrider Sedina
@@ -6978,13 +7388,15 @@ step
     .goto Ghostlands,72.50,32.14
     .accept 9276 >> Accept Attack on Zeb'Tela
     .goto Ghostlands,72.33,31.24
-    .turnin 9146 >> Turn in Report to Captain Helios
+    .turnin 9146 >>Turn in Report to Captain Helios
+    .goto Ghostlands,72.37,29.64
     .accept 9214 >>Accept Shadowpine Weaponry
     .goto Ghostlands,72.37,29.64
     .target Farstrider Sedina
     .target Farstrider Solanna
     .target Ranger Krenn'an
     .target Captain Helios
+--VV 9276 and 9214 need to hide if in qlog. remove extra coords in this step and above once possible
 step
     .abandon 9274 >> Abandon Spirits of the Drowned
 step
@@ -7012,10 +7424,9 @@ step
     .accept 9161 >> Accept The Traitor's Shadow
     .target Ranger Vynna
 step
-    #sticky
-    #label TrollJ
+    #completewith TrollR1
     >>Kill |cFFFF5722Mummmified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Juju|r
-    .complete 9199,1,4 --Collect Troll Juju (x8)
+    .complete 9199,1,6 --Collect Troll Juju (x8)
     .target Mummified Headhunter
     .target Shadowpine Oracle
     .isOnQuest 9199
@@ -7066,16 +7477,45 @@ step
     >>Run into the Bonfire room
     .complete 9193,2 --Investigate the Amani Catacombs
 step
+    #label TrollR1
     .loop 12,Ghostlands,62.60,31.00,62.41,31.34,62.32,31.81,62.41,32.23,62.63,32.56,63.22,32.55,63.44,32.18,63.50,31.74,63.43,31.29,63.21,30.98,62.60,31.00
     >>Click the |cFFDB2EEFMummified Troll Remains|r on the ground to burn them
     >>|cFFFCDC00Do NOT talk to|r |cFF00FF25Lilatha|r |cFFFCDC00yet|r
+    >>|cFFFCDC00Check the main room if the Bonfire room has no remains left|r
     .complete 9193,1,8 --Mummified Troll Remains Burned (x10)
 step
-    #requires TrollJ
+    .goto Ghostlands,63.35,29.57,15,0
+    .goto Ghostlands,62.40,29.46,15,0
+    .goto Ghostlands,62.71,27.83,15,0
+    .goto Ghostlands,61.68,28.58,15,0
+    .goto Ghostlands,61.69,27.50,15,0
+    .goto Ghostlands,61.84,29.43,15,0
+    .goto Ghostlands,61.15,30.86,15,0
+    .goto Ghostlands,59.31,30.79,15,0
+    .goto Ghostlands,59.31,27.71,15,0
+    .goto Ghostlands,61.68,28.58,15,0
+    .goto Ghostlands,65.89,28.58,15,0
+    .goto Ghostlands,63.64,28.64,15,0
+    .goto Ghostlands,63.35,29.57,15,0
+    .goto Ghostlands,62.40,29.46,15,0
+    .goto Ghostlands,62.71,27.83,15,0
+    .goto Ghostlands,61.68,28.58,15,0
+    .goto Ghostlands,61.69,27.50,15,0
+    .goto Ghostlands,61.84,29.43,15,0
+    .goto Ghostlands,61.15,30.86,15,0
+    .goto Ghostlands,59.31,30.79,15,0
+    .goto Ghostlands,59.31,27.71,15,0
+    .goto Ghostlands,61.68,28.58
+    >>Kill |cFFFF5722Mummmified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Juju|r
+    .complete 9199,1,6 --Collect Troll Juju (x8)
+    .target Mummified Headhunter
+    .target Shadowpine Oracle
+    .isOnQuest 9199
+step
     .goto Ghostlands,62.93,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lilatha|r to begin the escort
     .accept 9212 >> Accept Escape from the Catacombs
-    .target Ringer Lilatha
+    .target Ranger Lilatha
 step
     #completewith TrollR
     >>Kill |cFFFF5722Mummmified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Juju|r
@@ -7086,12 +7526,14 @@ step << Rogue
     #completewith Lilatha
     >>|T136058:0|t[Pick Lock] the |cFFDB2EEFBurial Chests|r on the ground inside the Crypt. Loot them for the |cFFDB2EEFGold Band|r
     >>Click the |cFFDB2EEFMummified Troll Remains|r on the ground to burn them
+    >>|cFFFCDC00MAKE SURE you finish this before leaving the Catacombs|r
     .skill lockpicking,20 >> Level your Lockpicking to 20
     .complete 9491,1 --Pitted Gold Band (1)
     .complete 9193,1 --Collect Mummified Troll Remains Burned (x10)
 step << !Rogue
     #completewith Lilatha
     >>Click the |cFFDB2EEFMummified Troll Remains|r on the ground to burn them
+    >>|cFFFCDC00MAKE SURE you finish this before leaving the Catacombs|r
     .complete 9193,1 --Collect Mummified Troll Remains Burned (x10)
 step << Paladin/Druid/Priest
     #completewith Lilatha
@@ -7101,8 +7543,8 @@ step << Paladin/Druid/Priest
     .target Ringer Lilatha
 step
     #label Lilatha
-    >>Escort |cFF00FF25Lilatha|r
-    >>She has 2 mobs spawn on her about 60 yards after leaving the catacombs. Remember to buff her. Ensure you finish burning corpses before leaving!
+    >>|cFFFCDC00Escort|r |cFF00FF25Lilatha|r
+    >>|cFFFCDC00A |cFFFF5722Shadowpine Oracle|r and a |cFFFF5722Mummmified Headhunter|r will spawn on |cFF00FF25Lilatha|r about 60 yards after leaving the Catacombs|r
     .goto Ghostlands,67.8,28.9,40,0
     .goto Ghostlands,72.1,31.8
     .complete 9212,1 --Escort Ranger Lilatha back to the Farstrider Enclave
@@ -7305,7 +7747,7 @@ step
     .goto Ghostlands,79.63,17.57,10 >>Go to the top floor of the building
 step
     .goto Ghostlands,79.63,17.57
-    >>Talk to the |cFFDB2EEFBook|r on the ground
+    >>Talk to the |cFF00FF25Book|r on the ground
     .turnin 9161 >> Turn in The Traitor's Shadow
     .accept 9162 >> Accept Hints of the Past
 step << Rogue
@@ -7363,12 +7805,12 @@ step << Rogue
     .complete 10548,1 --Archaeologist's Shrunken Head (1)
 step
     #completewith KelGash
-    .goto Ghostlands,69.63,50.08,40,0
-    .goto Ghostlands,69.64,51.43,40,0
-    .goto Ghostlands,69.63,52.41,40,0
-    .goto Ghostlands,67.54,50.89,40,0
-    .goto Ghostlands,65.73,53.82,40,0
-    .goto Ghostlands,68.41,54.61,40,0
+    .goto Ghostlands,69.63,50.08,50,0
+    .goto Ghostlands,69.64,51.43,50,0
+    .goto Ghostlands,69.63,52.41,50,0
+    .goto Ghostlands,67.54,50.89,50,0
+    .goto Ghostlands,65.73,53.82,50,0
+    .goto Ghostlands,68.41,54.61,50,0
     >>Kill |cFFFF5722Shadowpine Catlords|r and |cFFFF5722Shadowpine Hexxers|r. Loot them for their |cFF00BCD4Claws|r and |cFF00BCD4Staves|r
     .complete 9277,1 --Kill Shadowpine Catlord (x10)
     .complete 9277,2 --Kill Shadowpine Hexxer (x10)
@@ -7401,7 +7843,8 @@ step
 step
     .goto Ghostlands,65.29,79.46
     >>Kill |cFFFF5722Kel'gash|r. Loot him for his |cFF00BCD4Head|r
-    >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell. Make sure you have your cooldowns available and use your |T134831:0|t[Healing Potion]
+    >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell
+    >>|cFFFCDC00Make sure you have your cooldowns available and use your|r |T134831:0|t[Healing Potion] |cFFFCDC00if needed|r
     >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r << !Hunter !Warlock
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
     .target Kel'gash the Wicked
@@ -7412,7 +7855,8 @@ step
 step
     .goto Ghostlands,65.29,79.46
     >>Kill |cFFFF5722Kel'gash|r. Loot him for his |cFF00BCD4Head|r
-    >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell. Make sure you have your cooldowns available and use your |T134830:0|t[Lesser Healing Potion]
+    >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell
+    >>|cFFFCDC00Make sure you have your cooldowns available and use your|r |T134830:0|t[Lesser Healing Potion] |cFFFCDC00if needed|r
     >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r << !Hunter !Warlock
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
     .target Kel'gash the Wicked
@@ -7487,8 +7931,8 @@ step
     .target Shadowpine Catlord
     .target Shadowpine Hexxer
 step
-    loop 30,Ghostlands,57.70,67.55,58.19,67.07,58.89,65.55,58.37,62.88,57.24,63.00,56.35,65.01,56.49,68.12,57.70,67.55
-    >>Kill |cFFFF5722Sentinel Infiltrators. Loot them for the |cFF00BCD4Controlling Orb|r
+    .loop 30,Ghostlands,57.70,67.55,58.19,67.07,58.89,65.55,58.37,62.88,57.24,63.00,56.35,65.01,56.49,68.12,57.70,67.55
+    >>Kill |cFFFF5722Sentinel Infiltrators|r. Loot them for the |cFF00BCD4Controlling Orb|r
     .collect 23191,1,9169,1 --Collect Crystal Controlling Orb (x1)
     .target Sentinel Infiltrator
 step
@@ -7537,13 +7981,14 @@ step
     .turnin 9169 >> Turn in Deactivate An'owyn
     .target Magister Sylastor
 step << !Rogue
-    #completewith next
+    #completewith Truth
     .goto Ghostlands,56.64,45.14,40,0
     .goto Ghostlands,54.68,41.88,20,0
     .goto Ghostlands,51.07,38.21,20,0
     .goto Ghostlands,48.58,35.52,20,0
+    .goto Ghostlands,45.17,32.37,50 >> Travel back to Tranquillien
 step << Rogue
-    #completewith next
+    #completewith Truth
     .goto Ghostlands,56.64,45.14,40,0
     .goto Ghostlands,54.68,41.88,20,0
     .goto Ghostlands,51.07,38.21,20,0
@@ -7591,22 +8036,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
     .turnin 10548 >>Turn in The Sad Truth
     .target Eralan
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Valwyn|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
-    .accept 9193 >> Accept Investigate the Amani Catacombs
-    .goto Ghostlands,45.17,32.37,10,0
-    .goto Ghostlands,44.84,32.81
-    .accept 9199 >> Accept Troll Juju
-    .accept 9192 >> Accept Trouble at the Underlight Mines
-    .goto Ghostlands,44.74,32.28
-    .accept 9150 >>Accept Salvaging the Past
-    .goto Ghostlands,46.02,31.95
-    .target Apothecary Renzithen
-    .target Deathstalker Rathiel
-    .target Advisor Valwyn
-    .target Dame Auriferous
-    .target Deathstalker Maltendis
-    .target Magister Darenis
+    .isQuestAvailable 9151
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Darenis|r, |cFF00FF25Valwyn|r, and |cFF00FF25Maltendis|r
     .accept 9151 >> Accept The Sanctum of the Sun
@@ -7619,8 +8049,9 @@ step
     .target Magister Darenis
     .target Advisor Valwyn
     .target Deathstalker Maltendis
-    .isQuestAvailable 9151
+    .isQuestAvailable 9151 << !Paladin/!wotlk
 step
+    #label Truth
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Valwyn|r and |cFF00FF25Maltendis|r
     .turnin 9193 >> Turn in Investigate the Amani Catacombs
     .goto Ghostlands,45.17,32.37,10,0
@@ -7629,6 +8060,44 @@ step
     .goto Ghostlands,44.74,32.28
     .target Advisor Valwyn
     .target Deathstalker Maltendis
+    .isQuestAvailable 9151 << !Paladin/!wotlk
+step << Paladin wotlk
+    #completewith next
+    .goto Ghostlands,45.42,30.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sunwing|r
+    .fly Silvermoon >> Fly to Silvermoon City
+    .target Skymaster Sunwing
+    .xp <20,1
+step << Paladin wotlk
+    #completewith SMTraining44
+    .goto Eversong Woods,56.51,49.61,25,0
+    .goto Silvermoon City,73.39,59.65
+    .zone Silvermoon City >>Enter Silvermoon
+    .xp <20,1
+step << Paladin wotlk
+    #completewith next
+    .goto Silvermoon City,82.03,68.36,25,0
+    .goto Silvermoon City,84.63,48.65,25,0
+    .goto Silvermoon City,84.65,43.43,25,0
+    .goto Silvermoon City,89.00,36.95,15,0
+    .goto Silvermoon City,89.26,35.20,15 >>Travel toward |cFF00FF25Bloodvalor|r
+    .xp <20,1
+step << Paladin wotlk
+    .goto Silvermoon City,89.26,35.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bloodvalor|r
+    .turnin 9685 >>Turn in Redeeming the Dead
+    .target Knight-Lord Bloodvalor
+    .xp <20,1
+step << Paladin wotlk
+    #label SMTraining44
+    .goto Silvermoon City,91.19,36.94,-1
+    .goto Silvermoon City,91.14,38.10,-1
+	>>|cFFFCDC00Jump onto one of the benches below to avoid walking up the stairs|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ithelis|r or |cFF00FF25Osselan|r
+    .train 34769 >>Train your |T136103:0|t[Summon Warhorse]
+	.target Ithelis
+	.target Osselan
+    .xp <20,1
 step << Warlock TBC
     +Use the |T133738:0|t[Grimoire of Sacrifice] and the |T133738:0|t[Grimoire of Consume Shadows]
     .collect 16351,1,9220,1 --Collect Grimoire of Sacrifice (x1)
@@ -7722,7 +8191,7 @@ step << skip
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
 --VV BloodElf Mage
 step
-    .goto Ghostlands,54.84,49.30,15,0
+    .goto Ghostlands,54.84,49.30,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kaendris|r
     .turnin 9172 >> Turn in Report to Magister Kaendris
     .accept 9176 >> Accept The Twin Ziggurats
@@ -7802,6 +8271,27 @@ step
     .target Dreadbone Sentinel
     .target Deathcage Sorcerer
 step
+    #xprate >1.4999
+    .goto Ghostlands,37.82,52.20,50,0
+    .goto Ghostlands,38.11,56.94,50,0
+    .goto Ghostlands,37.73,61.43,50,0
+    .goto Ghostlands,37.06,65.52,50,0
+    .goto Ghostlands,36.25,70.35,50,0
+    .goto Ghostlands,37.82,52.20,50,0
+    .goto Ghostlands,38.11,56.94,50,0
+    .goto Ghostlands,37.73,61.43,50,0
+    .goto Ghostlands,37.06,65.52,50,0
+    .goto Ghostlands,36.25,70.35,50,0
+    .goto Ghostlands,37.82,52.20,50,0
+    .goto Ghostlands,38.11,56.94,50,0
+    .goto Ghostlands,37.73,61.43,50,0
+    .goto Ghostlands,37.06,65.52,50,0
+    .goto Ghostlands,36.25,70.35
+    >>Kill |cFFFF5722Risen Stalkers|r. Loot them for their |cFF00BCD4Rotting Hearts|r
+    .collect 22641,10,9216,1 --Collect Rotting Heart (x10)
+    .target Risen Stalker
+    .itemcount 22641,4
+step
     #label Deatholme1
     #completewith next
     .goto Ghostlands,35.17,74.71,40 >> Run into Deatholme
@@ -7830,7 +8320,7 @@ step
     .target Eye of Dar'Khan
     .target Nerubis Centurion
     .target Wailer
-step
+step << !Troll/!wotlk !Orc/!wotlk
     #completewith TwinZ
     .hs >> Hearth to Tranquillien
     .cooldown item,6948,>0
@@ -7838,11 +8328,11 @@ step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kalarin|r
     >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133978:0|t[Snapvine Watermelon] |cFF0E8312from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
-    .collect 3770,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (10)
-    .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
+    .collect 4538,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (10)
+    .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
     .target Innkeeper Kalarin
     .money <0.1000 << !Paladin
     .money <0.2000 << Paladin
@@ -7876,7 +8366,6 @@ step
     .itemcount 22642,10
 step
     #label Aminel
-    #xprate <1.5
     .goto Ghostlands,48.91,31.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Aminel|r
     .accept 9216 >>Accept Rotting Hearts
@@ -7884,7 +8373,29 @@ step
     .target Magistrix Aminel
     .itemcount 22641,10
 step
-    .goto Ghostlands,54.84,49.30,15,0
+    #label Truth2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Valwyn|r and |cFF00FF25Maltendis|r
+    .turnin 9193 >> Turn in Investigate the Amani Catacombs
+    .goto Ghostlands,45.17,32.37,10,0
+    .goto Ghostlands,44.84,32.81
+    .turnin 9199 >> Turn in Troll Juju
+    .goto Ghostlands,44.74,32.28
+    .target Advisor Valwyn
+    .target Deathstalker Maltendi
+step
+    .goto Ghostlands,46.02,33.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r
+    .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran
+    .target Deathstalker Rathiel
+    .isQuestComplete 9156
+step << Rogue
+    .goto Ghostlands,47.67,34.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
+    .turnin 10548 >>Turn in The Sad Truth
+    .target Eralan
+step
+    #label TwinZ
+    .goto Ghostlands,54.84,49.30,10,0
     .goto Ghostlands,55.07,48.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kaendris|r
     .turnin 9176 >> Turn in The Twin Ziggurats
@@ -7956,7 +8467,7 @@ step
     .goto Ghostlands,25.31,15.03,50,0
     .goto Ghostlands,40.58,48.42
     >>Kill |cFFFF5722Knucklerot|r. Loot him for his |cFF00BCD4Head|r
-    >>|cFFFF5722Knucklerot|r |cFFFCDC00spawns at the Howling (eastern) Ziggurat, along the road to Windrunner Village, across the river near the Sanctum of the Moon, then into Goldemist Village|r
+    >>|cFFFF5722Knucklerot|r |cFFFCDC00spawns at the Howling (eastern) Ziggurat, along the road to Windrunner Village, across the river near the Sanctum of the Moon, then into Goldenmist Village|r
     >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
     .complete 9156,1 --Knucklerot's Head (1)
     .unitscan Knucklerot
@@ -7990,6 +8501,11 @@ step
     >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
     .complete 9156,2 --Luzran's Head (1)
     .unitscan Luzran
+step
+    #completewith Varnis
+    .cast 28486 >>Use the |T134754:0|t[Scourgebane Draught]
+    .use 22779
+    .itemcount 22779,1
 step
     #completewith next
     .goto Ghostlands,35.17,74.71,40 >> Run into Deatholme
@@ -8108,9 +8624,8 @@ step
     .goto Ghostlands,32.80,82.39,10,0
     .goto Ghostlands,33.04,81.25
     >>Kill |cFFFF5722Dar'Khan|r at the bottom of the Ziggurat
-    >>|cFFFCDC00LoS his|r |T136118:0|t[Corruption] |cFFFCDC00and|r |T136197:0|t[Shadow Bolts] |cFFFCDC00around the bottom of the staircase in the main room|r << Rogue/Paladin
-    >>|cFFFCDC00LoS his|r |T136118:0|t[Corruption] |cFFFCDC00and|r |T136197:0|t[Shadow Bolts] by kiting him around the Ziggurat << Rogue/Paladin
-    >>|cFFFCDC00Make sure there are no other mobs around for when he casts |T136183:0|t[Fear] on you
+    >>|cFFFCDC00LoS his|r |T136118:0|t[Corruption] |cFFFCDC00and|r |T136197:0|t[Shadow Bolts] by kiting him around the Ziggurat
+    >>|cFFFCDC00Make sure there are no other mobs around for when he casts|r |T136183:0|t[Fear] |cFFFCDC00on you|r
     >>|cFFFCDC00Use|r |T135738:0|t[Mana Tap] |cFFFCDC00to pull the|r |cFFFF5722Necromancers|r |cFFFCDC00out of the room|r << BloodElf Paladin tbc/BloodElf Rogue tbc
     >>|cFFFCDC00Find a group for him if needed. Do NOT skip this quest|r << !Hunter !Warlock
     .complete 9167,1 --Collect Dar'Khan's Head (x1)
@@ -8120,11 +8635,11 @@ step
     .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
     .target Spirit Healer
 step
-    .goto Ghostlands,54.84,49.30,15,0
+    .goto Ghostlands,54.84,49.30,10,0
     .goto Ghostlands,55.07,48.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kaendris|r
     .turnin 9167 >> Turn in The Traitor's Destruction
-    .accept 9328 >> Accept Hero of the Sin'dorei << BloodElf9156
+    .accept 9328 >> Accept Hero of the Sin'dorei << BloodElf
     .accept 9811 >> Accept Friend of the Sin'dorei << !BloodElf
     .target Magister Kaendris
 step
@@ -8140,7 +8655,7 @@ step
     .goto Ghostlands,54.82,48.35
     .target Magister Idonis
     .target Arcanist Janeda
-step
+step << !Troll/!wotlk !Orc/!wotlk
     #completewith next
     .hs >> Hearth to Tranquillien
     .cooldown item,6948,>0
@@ -8260,17 +8775,12 @@ step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf
     .goto Eversong Woods,61.09,54.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Winaestra|r
     >>|cFF0E8312Buy the|r |T132228:0|t[Black Hawkstrider] |cFF0E8312from her|r
-    .collect 29221,1,9220,1 --Black Hawstrider
+    .collect 29221,1,9425,1 --Black Hawstrider
 	.target Winaestra
     .money <0.9025 << Rogue
     .money <1.083 << !Rogue
     .skill riding,75
-step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk
-    .cast 55884 >> Use the |T132228:0|t[Black Hawkstrider] to learn it
-    .use 29221
-    .itemcount 29221,1
-step << BloodElf Rogue wotlk
-    #label SMTraining5
+step << BloodElf Mage wotlk/BloodElf Priest wotlk/BloodElf Hunter wotlk/BloodElf Rogue wotlk
     .cast 55884 >> Use the |T132228:0|t[Black Hawkstrider] to learn it
     .use 29221
     .itemcount 29221,1
@@ -8285,7 +8795,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vynna|r
     >>|cFF0E8312Buy a|r |T135144:0|t[Greater Magic Wand] |cFF0E8312from the AH if it's cheap|r
     >>|cFFFCDC00If they're all too expensive, skip this step|r
-    .collect 11288,1,9281,1 --Greater Magic Wand
+    .collect 11288,1,9425,1 --Greater Magic Wand
     .target Vynna
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.50
 step << Priest/Mage
@@ -8313,7 +8823,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narinth|r
     .train 32272 >> Train Teleport: Silvermoon
     .target Narinth
-    .money <0.4000
+    .money <0.5000
 step << Hunter
     #completewith SMTraining5
     .goto Silvermoon City,83.52,48.68,30,0
@@ -8364,13 +8874,27 @@ step << Warlock
     .train 706 >> Train your class spells << tbc
     .target Talionia
 step << Paladin wotlk
-    #completewith next
+    #completewith SMTraining5
     .goto Silvermoon City,82.03,68.36,25,0
     .goto Silvermoon City,84.63,48.65,25,0
     .goto Silvermoon City,84.65,43.43,25,0
     .goto Silvermoon City,89.00,36.95,20 >>Travel toward |cFF00FF25Ithelis|r and |cFF00FF25Osselan|r
+    .isQuestTurnedIn 9685
+step << Paladin
+    #completewith next
+    .goto Silvermoon City,82.03,68.36,25,0
+    .goto Silvermoon City,84.63,48.65,25,0
+    .goto Silvermoon City,84.65,43.43,25,0
+    .goto Silvermoon City,89.00,36.95,15,0
+    .goto Silvermoon City,89.26,35.20,15 >>Travel toward |cFF00FF25Bloodvalor|r
+--   .train 647,1 << Paladin tbc
+--  .train 62124,1 << Paladin wotlk
+step << Paladin
+    .goto Silvermoon City,89.26,35.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bloodvalor|r
+    .turnin 9685 >>Turn in Redeeming the Dead
+    .target Knight-Lord Bloodvalor
 step << Paladin wotlk
-    #label SMTraining5
     .goto Silvermoon City,91.19,36.94,-1
     .goto Silvermoon City,91.14,38.10,-1
 	>>|cFFFCDC00Jump onto one of the benches below to avoid walking up the stairs|r
@@ -8378,14 +8902,16 @@ step << Paladin wotlk
     .train 34769 >>Train your |T136103:0|t[Summon Warhorse]
 	.target Ithelis
 	.target Osselan
+    .train 34769,1
 step << Rogue
-    #completewith SMTraining3
+    #completewith SMTraining5
     .goto Silvermoon City,73.39,59.65,30,0
     .goto Silvermoon City,73.59,52.18,20,0
     .goto Silvermoon City,79.70,52.16,20 >>Travel toward |cFF00FF25Zelanis|r
     .itemStat 16,QUALITY,<7 << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
 step << Rogue
+    #label SMTraining5
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zelanis|r
     >>|cFFFCDC00Make sure you've trained|r |T132282:0|t[Ambush] |cFFFCDC00and|r |T132302:0|t[Rupture] |cFFFCDC00for a quest later|r
@@ -8460,20 +8986,34 @@ step << !Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
     .fp Undercity >> Get the Undercity Flight Path
     .target Michael Garrett
+step << Troll wotlk/Orc wotlk
+    #xprate >1.4999
+    .goto Undercity,67.73,37.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Norman|r
+    .home >> Set your Hearthstone to Undercity
+    .target Innkeeper Norman
+    .money <4.5125
+    .money <4.8125 << Mage
 step << Mage
     #completewith next
     .goto Undercity,68.25,40.67,15,0
     .goto Undercity,66.06,30.63,20,0
     .goto Undercity,67.27,23.68,20,0
-    .goto Undercity,84.19,15.58,20 >> Travel toward |cFF00FF25Mortaim|r
+    .goto Undercity,82.77,15.85,20 >> Travel toward |cFF00FF25Hannah|r
+step << Mage
+    .goto Undercity,82.77,15.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hannah|r
+    >>|cFF0E8312Buy a|r |T134419:0|t[Rune of Teleportation] |cFF0E8312from her|r
+    .collect 17031,1,9425,1 --Rune of Teleportation (1)
+    .target Hannah Akeley
 step << Mage
     .goto Undercity,84.19,15.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mortaim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mortaim|r upstairs
     .train 3563 >>Train Teleport: Undercity
     .target Lexington Mortaim
 step
     #completewith next
-    .goto Undercity,63.84,47.17,15,0 << !Mage
+    .goto Undercity,63.84,47.17,5,0 << !Mage
     .goto Undercity,65.50,56.75,20,0 << !Mage
     .goto Undercity,64.42,64.62,20,0 << !Mage
     .goto Undercity,51.88,64.84,20,0
@@ -8497,12 +9037,27 @@ step << BloodElf
     .goto Undercity,57.77,90.57
     .target Lady Sylvanas Windrunner
     .target Ambassador Sunsorrow
-step << Paladin tbc
-    #label SMTraining5
+step << Paladin
     .goto Undercity,58.00,90.46
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Cyssa|r
     .train 879 >>Train your class spells
 	.target Champion Cyssa Dawnrose
+    .xp <20,1
+    .xp >22,1
+step << Paladin
+    .goto Undercity,58.00,90.46
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Cyssa|r
+    .train 19835 >>Train your class spells
+	.target Champion Cyssa Dawnrose
+    .xp <22,1
+    .xp >24,1
+step << Paladin
+    #label SMTraining5
+    .goto Undercity,58.00,90.46
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Cyssa|r
+    .train 5588 >>Train your class spells
+	.target Champion Cyssa Dawnrose
+    .xp <24,1
 step
     .goto Undercity,55.20,90.91
     .goto Undercity,67.88,14.97,30 >>|cFFFCDC00Go to the edge of the main platform in the Royal Quarter. Perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in|r
@@ -8523,4 +9078,141 @@ step
     .goto Tirisfal Glades,60.94,46.35,-1
     >>Go up the Zeppelin Tower
     .zone Durotar >>Take the Zeppelin to Durotar
+step << Troll wotlk/Orc wotlk
+    #xprate >1.4999
+    .goto Tirisfal Glades,61.06,58.86,12,0
+    .goto Tirisfal Glades,61.51,59.01,10,0
+    .goto Tirisfal Glades,61.27,59.22,8,0
+    .goto Tirisfal Glades,61.13,58.84,8,0
+    .goto Tirisfal Glades,61.38,58.71,8,0
+    .goto Tirisfal Glades,61.34,59.17,8,0
+    .goto Tirisfal Glades,60.51,58.69,-1
+    .goto Tirisfal Glades,60.94,46.35,-1
+    >>Go up the Zeppelin Tower
+    .zone Durotar >>Take the Zeppelin to Durotar
+    .money <4.5125
+step << Orc wotlk
+    #xprate >1.4999
+    #completewith next
+    .goto Orgrimmar,49.59,94.74,30,0
+    .goto Orgrimmar,49.42,90.90,30,0
+    .goto Orgrimmar,52.26,88.65,30,0
+    .goto Orgrimmar,50.73,60.94,30,0
+    .goto Orgrimmar,52.15,58.31,30,0
+    .goto Orgrimmar,63.08,39.25,30,0
+    .goto Orgrimmar,64.31,38.12,30,0
+    .goto Orgrimmar,66.07,40.04,30,0
+    .goto Orgrimmar,72.25,21.42,30,0
+    .goto Orgrimmar,69.41,13.11,20 >>Travel toward |cFF00FF25Kildar|r
+    .money <4.5125
+step << Orc wotlk
+    #xprate >1.4999
+    .goto Orgrimmar,69.41,13.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kildar|r
+    .skill riding,75 >> Train |T136103:0|t[Apprentice Riding] from him
+    .target Kildar
+    .money <4.5125
+step << Orc wotlk
+    #xprate >1.4999
+    .goto Orgrimmar,69.38,12.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ogunaro|r
+    >>|cFF0E8312Buy the|r |T132224:0|t[Horn of the Black Wolf] |cFF0E8312from him|r
+    .collect 46099,1,9425,1 --Horn of the Black Wolf
+	.target Ogunaro Wolfrunner
+    .money <0.9025
+    .skill riding,75
+step << Orc wotlk
+    #xprate >1.4999
+    .cast 55884 >> Use the |T132224:0|t[Horn of the Black Wolf] to learn it
+    .use 46099
+    .itemcount 46099,1
+step << Troll Mage wotlk
+    #xprate >1.4999
+    #completewith next
+    .goto Orgrimmar,49.59,94.74,30,0
+    .goto Orgrimmar,49.42,90.90,30,0
+    .goto Orgrimmar,52.26,88.65,30,0
+    .goto Orgrimmar,51.01,68.03,30,0
+    .goto Orgrimmar,49.72,66.08,30,0
+    .goto Orgrimmar,46.59,64.54,6,0
+    .goto Orgrimmar,46.75,63.84,6,0
+    .goto Orgrimmar,46.59,64.54,6,0
+    .goto Orgrimmar,46.75,63.84,6,0
+    .goto Orgrimmar,46.59,64.54,6,0
+    .goto Orgrimmar,46.75,63.84,6,0
+    .goto Orgrimmar,41.94,64.39,15,0
+    .goto Orgrimmar,38.78,77.83,15,0
+    .goto Orgrimmar,38.72,83.38,12,0
+    .goto Orgrimmar,37.22,87.73,8,0
+    .goto Orgrimmar,37.74,88.56,8,0
+    .goto Orgrimmar,38.64,85.42,10 >>Travel toward |cFF00FF25Thuul|r
+    .money <4.7125
+step << Troll Mage wotlk
+    #xprate >1.4999
+    .goto Orgrimmar,38.64,85.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thuul|r
+    .train 3567 >> Train |T135759:0|t[Teleport: Orgrimmar]
+    .target Thuul
+    .money <4.7125
+step << Troll Mage wotlk
+    #xprate >1.4999
+    #completewith next
+    .goto Orgrimmar,42.49,73.39,40,0
+    .goto Orgrimmar,52.03,85.17,30,0
+    .goto Orgrimmar,52.20,88.80,30,0
+    .goto Orgrimmar,49.32,91.05,30,0
+    .goto Durotar,52.26,34.68,35,0
+    .goto Durotar,55.28,75.48,50 >>Travel toward |cFF00FF25Xar'Ti|r
+    .train 3567,2
+    .money <4.5125
+step << Troll wotlk
+    #xprate >1.4999
+    #completewith next
+    .goto Durotar,49.41,20.97,35,0
+    .goto Durotar,50.21,26.30,35,0
+    .goto Durotar,49.93,28.80,35,0
+    .goto Durotar,52.26,34.68,35,0
+    .goto Durotar,55.28,75.48,50 >>Travel toward |cFF00FF25Xar'Ti|r
+    .money <4.5125
+step << Troll wotlk
+    #xprate >1.4999
+    .goto Durotar,55.28,75.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Xar'Ti|r
+    .skill riding,75 >> Train |T136103:0|t[Apprentice Riding] from her
+    .target Xar'Ti
+    .money <4.5125
+step << Troll wotlk
+    #xprate >1.4999
+    .goto Durotar,55.23,75.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zjolnir|r
+    >>|cFF0E8312Buy the|r |T132253:0|t[Whistle of the Violet Raptor] |cFF0E8312from him|r
+    .collect 8592,1,9425,1 --Whistle of the Violet Raptor (1)
+	.target Zjolnir
+    .money <0.9025
+    .skill riding,75
+step << Troll wotlk
+    #xprate >1.4999
+    .cast 55884 >> Use the |T132253:0|t[Whistle of the Violet Raptor] to learn it
+    .use 8592
+    .itemcount 8592,1
+step << Troll wotlk/Orc wotlk
+    #xprate >1.4999
+    .hs >> Hearth to Undercity
+    .zoneskip Undercity
+    .zoneskip Silverpine Forest
+    .zoneskip Hillsbrad Foothills
+step << Troll wotlk/Orc wotlk
+    #xprate >1.4999
+    #completewith next
+    .goto Undercity,60.07,47.70,10,0
+    .goto Undercity,60.52,44.02,10,0
+    .goto Undercity,65.97,44.08,30,0
+    .goto Undercity,66.04,32.97,30,0
+    .goto Undercity,66.08,18.24,30 >>Take the lift back up toward Tirisfal
+    .zoneskip Tirisfal Glades
+step << Troll wotlk/Orc wotlk
+    #xprate >1.4999
+    .goto Undercity,66.21,4.90,15,0
+    .goto Tirisfal Glades,61.73,64.87
+    .zone Tirisfal Glades >>Exit Undercity
 ]])
