@@ -467,95 +467,112 @@ step << Priest
     .complete 5624,1 --Heal and fortify Guard Roberts
 step
     #completewith BoarMeat1
-    >>Start killing some boars you see for Boar Meat
+    >>Start killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
-    >> Talk to the Stonefields
+    >> Talk to |cFF00FF25Ma Stonefield|r and |cFF00FF25"Auntie" Bernice Stonefield|r
+    .target "Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.5,84.3
     .accept 85 >> Accept Lost Necklace
     .goto Elwynn Forest,34.7,84.5
     .accept 88 >> Accept Princess Must Die!
 step
     #completewith Candles
-    >> Get some Candles from nearby Kobolds
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r
     .complete 60,1 --Collect Kobold Candle (x8)
 step
     #label Candles
     #completewith next
-    >> Get some Gold Dust from nearby Kobolds
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Gold Dust|r
     .complete 47,1 --Collect Gold Dust (x10)
 step << Priest/Mage/Warlock
     #label Dust
-    >>Grind mobs east through the outside of the mine
+    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
+    .target Billy Maclure
     .goto Elwynn Forest,43.1,85.7
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step << Warrior
     #label Dust
-    >>Grind mobs east through the outside of the mine. If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your sword
+    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
+    .target Billy Maclure
+    >> If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your sword
     .goto Elwynn Forest,43.1,85.7
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step << Rogue
     #label Dust
-    >>Grind mobs east through the outside of the mine. If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your dagger
+    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
+    .target Billy Maclure
+    >> If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your dagger
     .goto Elwynn Forest,43.1,85.7
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step << Paladin
     #label Dust
-    >>Grind mobs east through the outside of the mine. If you get a Rough Stone at any point, Make it into a Weightstone via Blacksmithing, and apply it to your mace
+    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
+    .target Billy Maclure
+    >> If you get a Rough Stone at any point, Make it into a Weightstone via Blacksmithing, and apply it to your mace
     .goto Elwynn Forest,43.1,85.7
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step
     #label BoarMeat1
-    >> Talk to Maybell Maclure in the small house
+    >> Talk to |cFF00FF25Maybell Maclure|r in the small house
+    .target Maybell Maclure
     .goto Elwynn Forest,43.2,89.6
     .accept 106 >> Accept Young Lovers
 step << Mage tbc/Priest tbc/Warlock tbc
     .goto Elwynn Forest,42.4,89.4
+    >> Talk to |cFF00FF25Joshua Maclure|r
+    .target Joshua Maclure
     .vendor >>Vendor, buy as much milk as you can
 step << !Mage !Priest !Warlock tbc
+    >> Talk to |cFF00FF25Joshua Maclure|r
+    .target Joshua Maclure
     .goto Elwynn Forest,42.4,89.4
     .vendor >>vendor trash
 step
     #completewith next
-    >>Grind boars for Boar Meat en route
+    >>Grind |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r en route
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
-    >> Head back to the Stonefield farm then keep going to the river
+    >> Head back to the Stonefield farm, then keep going to the river. Talk to |cFF00FF25Tommy Joe Stonefield|r
+    .target Tommy Joe Stonefield
     .goto Elwynn Forest,29.8,86.0
     .turnin 106 >> Turn in Young Lovers
     .accept 111 >> Accept Speak with Gramma
 step
     .goto Elwynn Forest,32.5,85.5
-    >>Finish off getting the Boar Meat
+    >>Finish killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r 
     .complete 86,1 --Collect Chunk of Boar Meat (x4)
 step
-    >> Return to the Stonefields
+    >> Return to |cFF00FF25"Auntie" Bernice Stonefield|r
+    .target "Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.5,84.3
     .turnin 86 >> Turn in Pie for Billy
     .accept 84 >> Accept Back to Billy
 step
-    >> Speak with Gramma inside the house
+    >> Speak with |cFF00FF25Gramma Stonefield|r inside the house
+    .target Gramma Stonefield
     .goto Elwynn Forest,34.9,83.9
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
 step
     #sticky
     #completewith next
-    >> Kill Kobolds for Gold Dust and Candles
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r
     .complete 47,1 --Collect Gold Dust (x10)
     .complete 60,1 --Collect Kobold Candle (x8)
 step
-    >>Grind mobs east through the outside of the mine and talk to Billy on the farm
+    >>Grind mobs east through the outside of the mine and talk to |cFF00FF25Billy Maclure|r on the farm
+    .target Billy Maclure
     .goto Elwynn Forest,43.1,85.7
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
 step
     #completewith next
-    >> Kill Kobolds for Gold Dust and Candles
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r
     .complete 47,1 --Collect Gold Dust (x10)
     .complete 60,1 --Collect Kobold Candle (x8)
 step
@@ -563,19 +580,19 @@ step
     .goto Elwynn Forest,40.5,82.3
     .complete 62,1 --Scout Through the Fargodeep Mine
 step << Warrior
-    >>Pool as much rage as you can (grind Rage off of other mobs) then kill Goldtooth for Bernice's Necklace
+    >>|cFFFCDC00Pool as much rage as you can|r (grind Rage off of other mobs) then kill |cFF00BCD4Goldtooth|r for |cFF00BCD4Bernice's Necklace|r
     .goto Elwynn Forest,41.7,78.1
     .complete 87,1 --Collect Bernice's Necklace  (x1)
     .unitscan Goldtooth
 step << !Warrior
-    >>Kill Goldtooth for Bernice's Necklace
+    >>Kill |cFF00BCD4Goldtooth|r for |cFF00BCD4Bernice's Necklace|r
     .goto Elwynn Forest,41.7,78.1
     .complete 87,1 --Collect Bernice's Necklace  (x1)
     .unitscan Goldtooth
 step << Warrior
     #sticky
     #completewith Goldtooth
-    +Try to save a single healing potion from now on as you will need it for Rolf's Corpse later
+    +|cFFFCDC00Try to save a single healing potion from now on as you will need it for Rolf's Corpse later|r
 step << Warrior/Rogue
     >>Remember to make Sharpening Stones if you picked up a Rough Stone
     .xp 7+1600 >>Grind until 1600+/4500xp
@@ -589,13 +606,14 @@ step << Priest
 step
     #label KoboldTurnins
     .goto Elwynn Forest,40.5,82.3
-    >> Kill Kobolds for Gold Dust and Candles
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r
     .complete 47,1 --Collect Gold Dust (x10)
     .complete 60,1 --Collect Kobold Candle (x8)
 step
     #label Goldtooth
     #requires KoboldTurnins
-    >> Head back to the Stonefields
+    >> Head back to |cFF00FF25"Auntie" Bernice Stonefield|r
+    .target "Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.5,84.3
     .turnin 87 >> Turn in Goldtooth
 step
@@ -607,7 +625,8 @@ step << wotlk
     #completewith next
     .hs >> Hearth or run back to Goldshire
 step
-    >> Talk to Remy "Two Times"
+    >> Talk to |cFF00FF25Remy "Two Times"|r
+    .target Remy "TWo Times"
     .goto Elwynn Forest,42.1,67.3
     .turnin 47 >> Turn in Gold Dust Exchange
     .accept 40 >> Accept A Fishy Peril
@@ -616,7 +635,8 @@ step << Rogue
     >>Repair your weapon. If you have enough money (3s 82c) buy a Stiletto from Corina. Otherwise, skip this step (you'll come back later)
     .collect 2494,1
 step
-    >> Talk to Marshal Dughan
+    >> Talk to |cFF00FF25Marshal Dughan|r
+    .target Marshal Dughan
     .goto Elwynn Forest,42.1,65.9
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
