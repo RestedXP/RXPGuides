@@ -130,8 +130,10 @@ step << Priest tbc/Mage tbc/Warlock tbc
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Priest !Mage !Warlock/wotlk
+    >> Talk to |cFF00FF25Brother Danil|r.
+    .target Brother Danil
     .goto Elwynn Forest,47.6,41.5
-    .vendor >>vendor trash
+    .vendor >>Vendor trash
 step
     .goto Elwynn Forest,48.9,41.6
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
