@@ -1587,6 +1587,8 @@ function addon.tracker:INSPECT_READY(_, inspecteeGUID)
         return
     end
 
+    if UnitInBattleground("player") ~= nil then return end
+
     local inspectedName = select(6, GetPlayerInfoByGUID(inspecteeGUID))
     if self.state.otherReports[inspectedName] and
         self.state.otherReports[inspectedName].compileTime and GetServerTime() -
