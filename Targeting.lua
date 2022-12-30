@@ -225,17 +225,19 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
         end
     end
 
-    for i, name in ipairs(rareTargets) do
-        if name == unitName then
-            self:UpdateTargetFrame(nameplateID)
+    if addon.settings.db.profile.scanForRares then
+        for _, name in ipairs(rareTargets) do
+            if name == unitName then
+                self:UpdateTargetFrame(nameplateID)
 
-            if addon.settings.db.profile.flashOnFind then
-                FlashClientIcon()
-            end
+                if addon.settings.db.profile.flashOnFind then
+                    FlashClientIcon()
+                end
 
-            if addon.settings.db.profile.enableEnemyMarking then
-                -- Steal moon, lowest of enemies for mark
-                self:UpdateMarker("rare", nameplateID, 4)
+                if addon.settings.db.profile.enableEnemyMarking then
+                    -- Steal moon, lowest of enemies for mark
+                    self:UpdateMarker("rare", nameplateID, 4)
+                end
             end
         end
     end
@@ -277,17 +279,19 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
         end
     end
 
-    for i, name in ipairs(rareTargets) do
-        if name == unitName then
-            self:UpdateTargetFrame(kind)
+    if addon.settings.db.profile.scanForRares then
+        for _, name in ipairs(rareTargets) do
+            if name == unitName then
+                self:UpdateTargetFrame(kind)
 
-            if addon.settings.db.profile.flashOnFind then
-                FlashClientIcon()
-            end
+                if addon.settings.db.profile.flashOnFind then
+                    FlashClientIcon()
+                end
 
-            if addon.settings.db.profile.enableEnemyMarking then
-                -- Steal moon, lowest of enemies for mark
-                self:UpdateMarker("rare", kind, 4)
+                if addon.settings.db.profile.enableEnemyMarking then
+                    -- Steal moon, lowest of enemies for mark
+                    self:UpdateMarker("rare", kind, 4)
+                end
             end
         end
     end
@@ -325,17 +329,19 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
         end
     end
 
-    for i, name in ipairs(rareTargets) do
-        if name == unitName then
-            self:UpdateTargetFrame(kind)
+    if addon.settings.db.profile.scanForRares then
+        for _, name in ipairs(rareTargets) do
+            if name == unitName then
+                self:UpdateTargetFrame(kind)
 
-            if addon.settings.db.profile.flashOnFind then
-                FlashClientIcon()
-            end
+                if addon.settings.db.profile.flashOnFind then
+                    FlashClientIcon()
+                end
 
-            if addon.settings.db.profile.enableEnemyMarking then
-                -- Steal moon, lowest of enemies for mark
-                self:UpdateMarker("rare", kind, 4)
+                if addon.settings.db.profile.enableEnemyMarking then
+                    -- Steal moon, lowest of enemies for mark
+                    self:UpdateMarker("rare", kind, 4)
+                end
             end
         end
     end
@@ -391,19 +397,25 @@ function addon.targeting.CheckTargetProximity()
         return
     end
 
-    for _, name in pairs(enemyTargets) do
-        proxmityPolling.scanData = {name = name, kind = 'enemy'}
-        TargetUnit(name, true)
+    if addon.settings.db.profile.enableEnemyTargeting then
+        for _, name in pairs(enemyTargets) do
+            proxmityPolling.scanData = {name = name, kind = 'enemy'}
+            TargetUnit(name, true)
+        end
     end
 
-    for _, name in pairs(friendlyTargets) do
-        proxmityPolling.scanData = {name = name, kind = 'friendly'}
-        TargetUnit(name, true)
+    if addon.settings.db.profile.enableFriendlyTargeting then
+        for _, name in pairs(friendlyTargets) do
+            proxmityPolling.scanData = {name = name, kind = 'friendly'}
+            TargetUnit(name, true)
+        end
     end
 
-    for _, name in ipairs(rareTargets) do
-        proxmityPolling.scanData = {name = name, kind = 'rare'}
-        TargetUnit(name, true)
+    if addon.settings.db.profile.scanForRares then
+        for _, name in ipairs(rareTargets) do
+            proxmityPolling.scanData = {name = name, kind = 'rare'}
+            TargetUnit(name, true)
+        end
     end
 
     proxmityPolling.last = GetTime()
