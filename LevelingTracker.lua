@@ -7,8 +7,8 @@ local fmt, smatch, strsub, tinsert, srep, mmax, abs = string.format,
                                                       math.max, abs
 
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime,
-      UnitXP, EasyMenu = UnitLevel, GetRealZoneText, IsInGroup, tonumber,
-                         GetTime, GetServerTime, UnitXP, _G.EasyMenu
+      UnitXP = UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime,
+               GetServerTime, UnitXP
 
 local AceGUI = LibStub("AceGUI-3.0")
 local LibDeflate = LibStub("LibDeflate")
@@ -26,7 +26,7 @@ addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0",
                                 "AceComm-3.0", "AceSerializer-3.0")
 
 addon.tracker.playerLevel = UnitLevel("player")
-addon.tracker.state = {otherReports = {}}
+addon.tracker.state = {otherReports = {}, inspectionRequests = {}}
 addon.tracker.reportData = {}
 addon.tracker.ui = {}
 addon.tracker._commPrefix = "RXPLTComms"
@@ -82,6 +82,20 @@ function addon.tracker:SetupInspections()
         addon.settings.db.profile.enableBetaFeatures then
         self:RegisterEvent("INSPECT_READY")
         self:RegisterComm(self._commPrefix)
+
+        local UnitGUID, UnitIsEnemy = UnitGUID, UnitIsEnemy
+        hooksecurefunc("NotifyInspect", function(unit)
+            if not addon.settings.db.profile.enableLevelingReportInspections then
+                return
+            end
+
+            -- Gearscore addons inspect on mouseover/nameplate/etc, RXP only inspects via target
+            if unit ~= "target" or UnitIsEnemy("player", unit) then
+                return
+            end
+
+            addon.tracker.state.inspectionRequests[UnitGUID(unit)] = true
+        end)
     else
         self:UnregisterEvent("INSPECT_READY")
     end
@@ -1587,7 +1601,8 @@ function addon.tracker:INSPECT_READY(_, inspecteeGUID)
         return
     end
 
-    if UnitInBattleground("player") ~= nil then return end
+    if UnitInBattleground("player") ~= nil or
+        not self.state.inspectionRequests[inspecteeGUID] then return end
 
     local inspectedName = select(6, GetPlayerInfoByGUID(inspecteeGUID))
     if self.state.otherReports[inspectedName] and
