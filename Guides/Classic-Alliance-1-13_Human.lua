@@ -110,10 +110,13 @@ step
 step
     .goto Elwynn Forest,46.70,37.78
     >>Kill |cFF00BCD4Young Wolves|r. Loot them for their |cFF00BCD4Meat|r
+	.target Young Wolf
+	.target Timber Wolf
     .complete 33,1 --Collect Tough Wolf Meat (x8)
 step
     .goto Elwynn Forest,49.05,35.33
     >>Kill |cFFFF5722Kobold Vermin|r
+	.target Kobold Vermin
     .complete 7,1 --Kill Kobold Vermin (x10)
 step
     .goto Elwynn Forest,48.9,40.2
@@ -127,8 +130,8 @@ step << Priest/Mage/Warlock
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Priest !Mage !Warlock
-    >> Talk to |cFF00FF25Brother Danil|r.
-    .target Brother Danil
+    >> Talk to |cFF00FF25Godric Rothgar|r.
+    .target Godric Rothgar
     .goto Elwynn Forest,47.6,41.5
     .vendor >>Vendor trash
 step
@@ -148,6 +151,7 @@ step
 step
     .goto Elwynn Forest,47.42,32.68
     >>Kill |cFFFF5722Kobold Workers|r
+	.target Kobold Worker
     .complete 15,1 --Kill Kobold Worker (x10)
 step
     #sticky
@@ -155,8 +159,8 @@ step
     .xp 3+1110 >>Grind to 1110+/1400xp on your way back
 step
     #completewith next
-    >> Talk to |cFF00FF25Brother Danil|r
-    .target Brother Danil
+    >> Talk to |cFF00FF25Godric Rothgar|r.
+    .target Godric Rothgar
     .vendor >> Vendor trash
 --N need SoM xp note
 step
@@ -221,6 +225,7 @@ step << Warlock
 step
     .goto Elwynn Forest,54.57,49.03
     >>Kill |cFF00BCD4Defias Thugs|r. Loot them for |cFF00BCD4Bandanas|r
+	.target Defias Thug
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 step << Rogue
     .xp 4 >> Grind to 4
@@ -237,14 +242,15 @@ step
     .accept 6 >> Accept Bounty on Garrick Padfoot
     .accept 3903 >> Accept Milly Osworth
 step
-    >> Talk to |cFF00FF25Brother Danil|r
-    .target Brother Danil
+    >> Talk to |cFF00FF25Godric Rothgar|r
+    .target Godric Rothgar
     .goto Elwynn Forest,47.7,41.4
     .vendor >> Vendor trash, repair
 step
     .goto Elwynn Forest,47.66,31.88,40,0
     .goto Elwynn Forest,48.61,27.63
     >>Kill |cFFFF5722Kobold Laborers|r in the mine
+	.target Kobold Laborer
     .complete 21,1 --Kill Kobold Laborer (x12)
 step
     .xp 5 >> Grind to 5
@@ -271,7 +277,8 @@ step << Priest/Mage
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
-    >>Grind en route. Kill |cFF00BCD4Garrick|r and loot his |cFF00BCD4Head|r
+    >>Grind en route. Kill |cFF00BCD4Garrick Padfoot|r and loot his |cFF00BCD4Head|r
+	.unitscan Garrick Padfoot
     .complete 6,1 --Collect Garrick's Head (x1)
 step << !Priest !Mage
     #sticky
@@ -337,8 +344,8 @@ step
 step << Warrior/Paladin/Rogue
     .target Smith Argus
     .goto Elwynn Forest,41.7,65.5
-    .trainer >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. << Warrior/Rogue
-    .trainer >> Train Blacksmithing from Argus. This will allow you to make +2 damage weightstones for your weapon which are very strong. << Paladin
+    .trainer >> Train Blacksmithing from |cFF00FF25Smith Argus|r. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. Make around 20 of them max. << Warrior/Rogue
+    .trainer >> Train Blacksmithing from |cFF00FF25Smith Argus|r. This will allow you to make +2 damage weightstones for your weapon which are very strong. Make around 20 of them max. << Paladin
 step << Warrior
     .target Corina Steele
     .goto Elwynn Forest,41.5,65.9
@@ -368,18 +375,23 @@ step
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
 step
-    >>On your close left as you go in the Inn
+    >>On your close left as you go in the Inn talk to |cFF00FF25William Pestle|r
+    .target William Pestle
     .goto Elwynn Forest,42.9,65.7,15,0
     .goto Elwynn Forest,43.3,65.7
     .accept 60 >> Accept Kobold Candles
 step
     .goto Elwynn Forest,43.8,65.8
+    >> Talk to |cFF00FF25Innkeeper Farley|r
+    .target Innkeeper Farley
     >>Do NOT buy any food/drink here << Warlock
     .turnin 2158 >> Turn in Rest and Relaxation
     .home >> Set your Hearthstone to Goldshire
 step
     .xp 6 >> Grind to 6
 step << Rogue
+    >> Talk to |cFF00FF25Brog Hamfist|r
+    .target Brog Hamfist
     .goto Elwynn Forest,43.96,65.92
     .vendor 151 >> Buy the level 3 thrown from Brog. Equip it
 step << Warlock
@@ -387,8 +399,11 @@ step << Warlock
     #completewith next
     .goto Elwynn Forest,44.1,66.0,10 >>Go to the room behind the innkeeper, then go downstairs.
 step << Warlock
+    >> Talk to |cFF00FF25Maximillian Crowe|r and |cFF00FF25Cylina Darkheart|r
+    .target Maximillian Crowe
+    .target Cylina Darkheart
     .goto Elwynn Forest,44.4,66.2
-    .trainer >> Train your class spells
+    .trainer >> Train your class spells. It is in the basement.
     .goto Elwynn Forest,44.4,66.0
     .vendor >> Buy the Blood Pact book if you have money after training (otherwise buy it later)
 step << Mage/Priest/Rogue
@@ -396,19 +411,27 @@ step << Mage/Priest/Rogue
     #completewith next
     .goto Elwynn Forest,43.7,66.4,12 >>Go upstairs
 step << Mage
+	>> Talk to |cFF00FF25Zaldimar Wefhellt|r
+	.target Zaldimar Wefhellt
     .goto Elwynn Forest,43.2,66.2
     .trainer >> Train your class spells
 step << Priest
+	>> Talk to |cFF00FF25Priestess Josetta|r
+	.target Priestess Josetta
     .goto Elwynn Forest,43.3,65.7
     .turnin 5623 >> Turn in In Favor of the Light
     .accept 5624 >> Accept Garments of the Light
     .trainer >> Train your class spells
 step << Rogue
     .money <0.01
+    >> Talk to |cFF00FF25Keryn Sylvius|r
+    .target Keryn Sylvius
     .goto Elwynn Forest,43.9,65.9
     .trainer >> Train your class spells
 step << Rogue/Warrior
     .money <0.01
+    >> Talk to |cFF00FF25Michelle Belle|r
+    .target Michelle Belle
     .goto Elwynn Forest,43.4,65.5
     .train 3273 >> Train First Aid - Don't make all your bandages at once, better time to make them later
 step << Warrior
@@ -418,124 +441,153 @@ step << Rogue
     .goto Elwynn Forest,43.8,65.8
     .vendor >> Buy up to 20 level 5 food
 step << Warrior
+    >> Talk to |cFF00FF25Lyria Du Lac|r
+    .target Lyria Du Lac
     .goto Elwynn Forest,41.1,65.8
     .trainer >> Train your class spells
 step << Paladin
+    >> Talk to |cFF00FF25Brother Wilhelm|r
+    .target Brother Wilhelm
     .goto Elwynn Forest,41.1,66.0
     .trainer >> Train your class spells
 step
+    >> Speak with |cFF00FF25Remy "Two Times"|r
+    .target Remy "Two Times"
     .goto Elwynn Forest,42.1,67.3
     .accept 47 >> Accept Gold Dust Exchange
 step << Priest
-    >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on Guard Roberts
+    >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on |cFF00FF25Guard Roberts|r
+    .target Guard Roberts
     .goto Elwynn Forest,48.2,68.0
     .complete 5624,1 --Heal and fortify Guard Roberts
 step
-    #sticky
     #completewith BoarMeat1
-    >>Start killing some boars you see for Boar Meat
+    >>Start killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
-    .goto Elwynn Forest,34.5,84.3
+    >> Talk to |cFF00FF25Ma Stonefield|r and |cFF00FF25"Auntie" Bernice Stonefield|r
+    .target "Auntie" Bernice Stonefield
     .accept 85 >> Accept Lost Necklace
-    .goto Elwynn Forest,34.7,84.5
+    .goto Elwynn Forest,34.5,84.3
     .accept 88 >> Accept Princess Must Die!
+	.goto Elwynn Forest,34.7,84.5
 step
-    #sticky
     #completewith Candles
-    >> Get some Candles from nearby Kobolds
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r
     .complete 60,1 --Collect Kobold Candle (x8)
 step
-    #sticky
     #label Candles
     #completewith next
-    >> Get some Gold Dust from nearby Kobolds
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Gold Dust|r
     .complete 47,1 --Collect Gold Dust (x10)
 step << Priest/Mage/Warlock
     #label Dust
-    >>Grind mobs east through the outside of the mine
+    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
+    .target Billy Maclure
     .goto Elwynn Forest,43.1,85.7
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step << Warrior
     #label Dust
-    >>Grind mobs east through the outside of the mine. If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your sword
+    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
+    .target Billy Maclure
+    >> If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your sword
     .goto Elwynn Forest,43.1,85.7
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step << Rogue
     #label Dust
-    >>Grind mobs east through the outside of the mine. If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your dagger
+    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
+    .target Billy Maclure
+    >> If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your dagger
     .goto Elwynn Forest,43.1,85.7
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step << Paladin
     #label Dust
-    >>Grind mobs east through the outside of the mine. If you get a Rough Stone at any point, Make it into a Weightstone via Blacksmithing, and apply it to your mace
+    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
+    .target Billy Maclure
+    >> If you get a Rough Stone at any point, Make it into a Weightstone via Blacksmithing, and apply it to your mace
     .goto Elwynn Forest,43.1,85.7
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step
     #label BoarMeat1
+    >> Talk to |cFF00FF25Maybell Maclure|r in the small house
+    .target Maybell Maclure
     .goto Elwynn Forest,43.2,89.6
     .accept 106 >> Accept Young Lovers
-step << Mage/Priest/Warlock
+step << Mage tbc/Priest tbc/Warlock tbc
     .goto Elwynn Forest,42.4,89.4
+    >> Talk to |cFF00FF25Joshua Maclure|r
+    .target Joshua Maclure
     .vendor >>Vendor, buy as much milk as you can
-step << !Mage !Priest !Warlock
+step << !Mage !Priest !Warlock tbc
+    >> Talk to |cFF00FF25Joshua Maclure|r
+    .target Joshua Maclure
     .goto Elwynn Forest,42.4,89.4
     .vendor >>vendor trash
 step
     #completewith next
-    >>Grind boars for Boar Meat en route
+    >>Grind |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r en route
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
+    >> Head back to the Stonefield farm, then keep going to the river. Talk to |cFF00FF25Tommy Joe Stonefield|r
+    .target Tommy Joe Stonefield
     .goto Elwynn Forest,29.8,86.0
     .turnin 106 >> Turn in Young Lovers
     .accept 111 >> Accept Speak with Gramma
 step
     .goto Elwynn Forest,32.5,85.5
-    >>Finish off getting the Boar Meat
+    >>Finish killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r 
     .complete 86,1 --Collect Chunk of Boar Meat (x4)
 step
+    >> Return to |cFF00FF25"Auntie" Bernice Stonefield|r
+    .target "Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.5,84.3
     .turnin 86 >> Turn in Pie for Billy
     .accept 84 >> Accept Back to Billy
 step
+    >> Speak with |cFF00FF25Gramma Stonefield|r inside the house
+    .target Gramma Stonefield
     .goto Elwynn Forest,34.9,83.9
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
 step
     #sticky
-    #label KoboldCandles
-    >> Get some Candles from nearby Kobolds
+    #completewith next
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r
+    .complete 47,1 --Collect Gold Dust (x10)
     .complete 60,1 --Collect Kobold Candle (x8)
 step
-    #sticky
-    #label GoldDust
-    >> Get some Gold Dust from nearby Kobolds
-    .complete 47,1 --Collect Gold Dust (x10)
-step
-    >>Grind mobs east through the outside of the mine
+    >>Grind mobs east through the outside of the mine and talk to |cFF00FF25Billy Maclure|r on the farm
+    .target Billy Maclure
     .goto Elwynn Forest,43.1,85.7
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
+step
+    #completewith next
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r
+    .complete 47,1 --Collect Gold Dust (x10)
+    .complete 60,1 --Collect Kobold Candle (x8)
 step
     >>Go into the mine
     .goto Elwynn Forest,40.5,82.3
     .complete 62,1 --Scout Through the Fargodeep Mine
 step << Warrior
-    >>Pool as much rage as you can (grind Rage off of other mobs) then kill Goldtooth for Bernice's Necklace
+    >>|cFFFCDC00Pool as much rage as you can|r (grind Rage off of other mobs) then kill |cFF00BCD4Goldtooth|r for |cFF00BCD4Bernice's Necklace|r
     .goto Elwynn Forest,41.7,78.1
     .complete 87,1 --Collect Bernice's Necklace  (x1)
+    .unitscan Goldtooth
 step << !Warrior
-    >>Kill Goldtooth for Bernice's Necklace
+    >>Kill |cFF00BCD4Goldtooth|r for |cFF00BCD4Bernice's Necklace|r
     .goto Elwynn Forest,41.7,78.1
     .complete 87,1 --Collect Bernice's Necklace  (x1)
+    .unitscan Goldtooth
 step << Warrior
     #sticky
     #completewith Goldtooth
-    +Try to save a single healing potion from now on as you will need it for Rolf's Corpse later
+    +|cFFFCDC00Try to save a single healing potion from now on as you will need it for Rolf's Corpse later|r
 step << Warrior/Rogue
     >>Remember to make Sharpening Stones if you picked up a Rough Stone
     .xp 7+1600 >>Grind until 1600+/4500xp
@@ -546,12 +598,17 @@ step << !Priest !Paladin !Warrior !Rogue
     .xp 7+1600 >>Grind until 1600+/4500xp
 step << Priest
     .xp 7+1260 >>Grind until 1260+/4500xp
---N SoM xp values
 step
-    #requires KoboldCandles
+    #label KoboldTurnins
+    .goto Elwynn Forest,40.5,82.3
+    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r
+    .complete 47,1 --Collect Gold Dust (x10)
+    .complete 60,1 --Collect Kobold Candle (x8)
 step
     #label Goldtooth
-    #requires GoldDust
+    #requires KoboldTurnins
+    >> Head back to |cFF00FF25"Auntie" Bernice Stonefield|r
+    .target "Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.5,84.3
     .turnin 87 >> Turn in Goldtooth
 step
@@ -559,11 +616,22 @@ step
     .xp 7+2690 >>Grind until 2690+/4500xp << !Priest
     .xp 7+2350 >>Grind until 2350+/4500xp << Priest
     .goto Elwynn Forest,42.1,67.3
+step << wotlk
+    #completewith next
+    .hs >> Hearth or run back to Goldshire
 step
+    >> Talk to |cFF00FF25Remy "Two Times"|r
+    .target Remy "TWo Times"
     .goto Elwynn Forest,42.1,67.3
     .turnin 47 >> Turn in Gold Dust Exchange
     .accept 40 >> Accept A Fishy Peril
+step << Rogue
+    .goto Elwynn Forest,41.5,65.9
+    >>Repair your weapon. If you have enough money (3s 82c) buy a Stiletto from Corina. Otherwise, skip this step (you'll come back later)
+    .collect 2494,1
 step
+    >> Talk to |cFF00FF25Marshal Dughan|r
+    .target Marshal Dughan
     .goto Elwynn Forest,42.1,65.9
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
@@ -586,6 +654,8 @@ step << Paladin
     >>Repair your weapon. If you have enough money (7s 1c) buy a Wooden Mallet from Corina. Otherwise, skip this step (you'll come back later)
     .collect 2493,1 --Collect Wooden Mallet
 step
+    >> Talk to |cFF00FF25William Pestle|r
+    .target William Pestle
     .goto Elwynn Forest,43.3,65.7
     .turnin 60 >> Turn in Kobold Candles
     .accept 61 >> Accept Shipment to Stormwind
@@ -602,30 +672,42 @@ step << Warlock
 step
     .money <0.1250
     .goto Elwynn Forest,44.0,65.9
-    .vendor >>Buy a 6 slot bag from Brog
+    .vendor >>Buy a 6 slot bag from |cFF00FF25Brog Hamfist|r
+	.target Brog
 step << Warrior
+    >> Talk to |cFF00FF25Lyria Du Lac|r
+    .target Lyria Du Lac
     .goto Elwynn Forest,41.1,65.8
     .trainer >> Train your class spells
 step << Paladin
+    >> Talk to |cFF00FF25Brother Wilhelm|r
+    .target Brother Wilhelm
     .goto Elwynn Forest,41.1,66.0
     .trainer >> Train your class spells
 step << Mage/Priest/Rogue/Warrior
     #completewith next
     .goto Elwynn Forest,43.7,66.4,15 >>Go upstairs
 step << Mage
+	>> Talk to |cFF00FF25Zaldimar Wefhellt|r
+	.target Zaldimar Wefhellt
     .goto Elwynn Forest,43.2,66.2
     .trainer >> Train your class spells
 step << Priest
-    .goto Elwynn Forest,43.3,65.7
+	>> Talk to |cFF00FF25Priestess Josetta|r
+	.target Priestess Josetta
     .turnin 5624 >> Turn in Garments of the Light
     .trainer >> Train your class spells
 step << Rogue
+    >> Talk to |cFF00FF25Keryn Sylvius|r
+    .target Keryn Sylvius
     .goto Elwynn Forest,43.9,65.9
     .trainer >> Train your class spells
 step << Rogue/Warrior/Paladin
     .money <0.01
+    >> Talk to |cFF00FF25Michelle Belle|r
+    .target Michelle Belle
     .goto Elwynn Forest,43.4,65.5
-    .trainer >> Train First Aid - Don't make all your bandages at once, better time to make them later
+    .train 3273 >> Train First Aid - Don't make all your bandages at once, better time to make them later
 step << !Warrior !Rogue
     .goto Elwynn Forest,43.8,65.8
     .vendor >>Buy level 5 Water up to 40
@@ -633,7 +715,9 @@ step << Warrior/Rogue
     .goto Elwynn Forest,43.8,65.8
     .vendor 295 >>Buy level 5 Food up to 40
 step
-    >>Grind Murlocs toward the east and loot them for Kelp Frond. kill mobs on the island if you still need some
+    >>Grind |cFF00BCD4Murlocs|r toward the east and loot them for |cFF00BCD4Crystal Kelp Frond|r.
+	.target Murloc
+	.target Murloc Streamrunner
     .goto Elwynn Forest,47.6,63.3,100,0
     .goto Elwynn Forest,51.4,64.6,100,0
     .goto Elwynn Forest,57.6,62.8,100,0
@@ -648,6 +732,8 @@ step
     .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
 step
+    >> Talk to |cFF00FF25Guard Thomas|r
+    .target Guard Thomas
     .goto Elwynn Forest,74.0,72.2
     .turnin 35 >> Turn in Further Concerns
     .accept 37 >> Accept Find the Lost Guards
@@ -655,23 +741,30 @@ step
 step
     #sticky
     #completewith Prowlers
-    >>Kill Prowlers as you do other quests
+    >>Kill |cFFFF5722Prowlers|r as you do other quests
+	.target Prowler
     .complete 52,1 --Kill Prowler (x8)
 step
     #sticky
     #completewith Bears
-    >>Kill Bears as you do other quests. Kill any you see
+    >>Kill |cFFFF5722Young Forest Bears|r as you do other quests. Go out of your way for bears.
+	.unitscan Young Forest Bear
     .complete 52,2 --Kill Young Forest Bear (x5)
 step
+	>> Click on the |cFFDB2EEFcorpse|r on the ground
     .goto Elwynn Forest,72.7,60.3
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
+    >> Talk to |cFF00FF25Supervisor Raelen|r
+    .target Supervisor Raelen
     .goto Elwynn Forest,81.4,66.1
     .accept 5545 >> Accept A Bundle of Trouble
 step
+    >> Talk to |cFF00FF25Rallic Finn|r
+    .target Rallic Finn
     .goto Elwynn Forest,83.3,66.1
-    .vendor >> vendor trash, repair
+    .vendor >> Vendor trash, repair
 step << Paladin
     #softcore
     .goto Elwynn Forest,76.8,62.4,100,0
@@ -679,40 +772,40 @@ step << Paladin
     .goto Elwynn Forest,76.8,62.4,100,0
     .goto Elwynn Forest,83.7,59.4,100,0
     .goto Elwynn Forest,76.8,62.4
-    >>Get bundles of wood at the base of the trees
+    >>Collect the |cFFDB2EEFbundles of wood|r at the base of the trees
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step << Paladin
     #hardcore
     #completewith Bundles
-    >>Keep an eye out for the bundles of logs at the base of the trees
+    >>Collect the |cFFDB2EEFbundles of wood|r at the base of the trees
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step << !Paladin
     #sticky
     #completewith next
-    >>Keep an eye out for the bundles of logs at the base of the trees
+    >>Collect the |cFFDB2EEFbundles of wood|r at the base of the trees
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     #label Bundles
     .goto Elwynn Forest,79.8,55.5,90 >> Go toward the guard's corpse
 step << Priest
     .goto Elwynn Forest,79.8,55.5
-    >> Kill mobs surrounding the corpse. Precast Renew and Shield, get full mana, then pull the 2 mobs in front of the huts, move away, then nuke one. Run away when you kill one, then kill the other. Loot the carcass on the ground
+    >> Kill mobs surrounding the corpse. Precast Renew and Shield, get full mana, then pull the 2 mobs in front of the huts, move away, then nuke one. Run away when you kill one, then kill the other. Click on the |cFFDB2EEFcorpse|r on the ground
     >> Be careful as this quest is difficult
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step << !Paladin
     .goto Elwynn Forest,79.8,55.5
-    >> Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and sheep one whilst killing the other, then kill the sheeped mob. Loot the carcass on the ground << Mage
-    >> Pool Rage, then kill the 2 mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and keep one hamstrung whilst killing the other. Run away when you kill one (use marbles on it), then pull and kill the other. Loot the carcass on the ground << Warrior
-    >> Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and nuke one mob. Use Evasion. Run away when you kill one, then kill the other. Loot the carcass on the ground << Rogue
-     >>Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away then keep one feared, and try to keep dots on both. Then loot the carcass on the ground << Warlock
-    >> Be careful as this quest is difficult
+    >> Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and sheep one whilst killing the other, then kill the sheeped mob. Click on the |cFFDB2EEFcorpse|r on the ground << Mage
+    >> Pool Rage, then kill the 2 mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and keep one hamstrung whilst killing the other. Run away when you kill one (use marbles on it), then pull and kill the other. Click on the |cFFDB2EEFcorpse|r on the ground << Warrior
+    >> Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and nuke one mob. Use Evasion. Run away when you kill one, then kill the other. Click on the |cFFDB2EEFcorpse|r on the ground << Rogue
+     >>Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away then keep one feared, and try to keep dots on both. Click on the |cFFDB2EEFcorpse|r on the ground << Warlock
+    >> |cFFFCDC00Be careful as this quest is difficult|r
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step << Paladin
     #softcore
     .goto Elwynn Forest,79.8,55.5
-    >> Run on top of the corpse, then use Divine Protection and IMMEDIATELY loot the corpse, handin, and accept the quest. You'll die after
+    >> Run on top of the |cFFDB2EEFcorpse|r, then use Divine Protection and IMMEDIATELY loot the |cFFDB2EEFcorpse|r, handin, and accept the quest. You'll die after
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step << Paladin
@@ -735,17 +828,28 @@ step
     .goto Elwynn Forest,76.8,62.4,90,0
     .goto Elwynn Forest,83.7,59.4,90,0
     .goto Elwynn Forest,76.8,62.4
-    >>Start running back, finish off the bundles
+    >>Start running back, finish off the turn|cFFDB2EEFbundles of wood|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     #label Bundles2
+	 >> Talk to |cFF00FF25Supervisor Raelen|r
+    .target Supervisor Raelen
     .goto Elwynn Forest,81.4,66.1
     .turnin 5545 >> Turn in A Bundle of Trouble
 step
     #label Prowlers
+	    .goto Elwynn Forest,76.8,62.4,90,0
+    .goto Elwynn Forest,83.7,59.4,90,0
+    .goto Elwynn Forest,76.8,62.4,90,0
+    .goto Elwynn Forest,83.7,59.4,90,0
+    .goto Elwynn Forest,76.8,62.4,90,0
+    .goto Elwynn Forest,83.7,59.4,90,0
+    .goto Elwynn Forest,76.8,62.4
     .xp 9 >> Grind to 9
 step
     #label Bears
+	>> Talk to |cFF00FF25Sara Timberlain|r
+    .target Sara Timberlain
     .goto Elwynn Forest,79.5,68.8
     .accept 83 >> Accept Red Linen Goods
 step
@@ -760,6 +864,8 @@ step
     .complete 52,1 --Kill Prowler (x8)
     .complete 52,2 --Kill Young Forest Bear (x5)
 step
+	>> Talk to |cFF00FF25Guard Thomas|r
+    .target Guard Thomas
     .goto Elwynn Forest,74.0,72.2
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
@@ -768,28 +874,31 @@ step
 step
     #sticky
     #completewith Deed
-    >>Keep an eye out for Westfall Deed from the Defias (lucky drop)
+    >>Keep an eye out for |cFF00BCD4Westfall Deed|r from the Defias (lucky drop)
     .collect 1972,1,184 --Collect Westfall Deed (x1)
     .accept 184 >> Accept Furlbrow's Deed
 step
     .goto Elwynn Forest,69.53,79.47
-    >>Start circling the farm, killing Defias and looting them for Bandanas
+    >>Start circling the farm, killing |cFF00BCD4Defias|r and looting them for |cFF00BCD4Red Linen Bandanas|r
+	.target Defias Bandit
     .complete 83,1 --Collect Red Linen Bandana (x6)
 step << Warrior
     .goto Elwynn Forest,69.4,79.2
-    >>Pool Rage, then kill Princess. Use a Lesser Heal Potion from before if needed. Loot her for the Collar
+    >>Pool Rage, then kill |cFF00BCD4Princess|r. Use a Lesser Heal Potion from before if needed. Loot her for the |cFF00BCD4Brass Collar|r
     .complete 88,1 --Collect Brass Collar (x1)
 step << Rogue
     .goto Elwynn Forest,69.4,79.2
-    >>Make sure Evasion is up, then kill Princess. Use a Lesser Heal Potion from before if needed. Loot her for the Collar
+    >>Make sure Evasion is up, then kill |cFF00BCD4Princess|r. Use a Lesser Heal Potion from before if needed. Loot her for the |cFF00BCD4Brass Collar|r
+	>>If you're struggling, you can use the Fence with Throwing Weapons to abuse pathing and buy time
     .complete 88,1 --Collect Brass Collar (x1)
 step << !Rogue !Warrior
     .goto Elwynn Forest,69.4,79.2
-    >>Kill Princess. Use a Lesser Heal Potion from before if needed. Loot her for the Collar
+    >>Kill |cFF00BCD4Princess|r. Use a Lesser Heal Potion from before if needed. Loot her for the |cFF00BCD4Brass Collar|r
     >>If you're struggling, you can use the Fence to abuse pathing and buy time
     .complete 88,1 --Collect Brass Collar (x1)
     .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> Click here if struggling
 step
+	.goto Elwynn Forest,69.53,79.47
     .xp 9+3400 >> Grind to 3400+/6500xp
 step
     #softcore
@@ -798,6 +907,8 @@ step
     .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
 step
     #label Deed
+	>> Talk to |cFF00FF25Sara Timberlain|r
+    .target Sara Timberlain
     .goto Elwynn Forest,79.5,68.9
     .turnin 83 >> Turn in Red Linen Goods
 step << !Warlock
@@ -831,20 +942,28 @@ step << !Warlock
 step
     .hs >> Hearth to Goldshire
 step
+	>> Talk to |cFF00FF25William Pestle|r
+    .target William Pestle
     .goto Elwynn Forest,43.3,65.7
     >>Don't wait for his rp event
     .turnin 112 >> Turn in Collecting Kelp
 step << Warrior/Rogue
+    >> Talk to |cFF00FF25Michelle Belle|r
+    .target Michelle Belle
     .goto Elwynn Forest,43.4,65.6
     >>Speak with the first aid trainer upstairs
     .train 3273 >> Train First Aid
 step
+	>> Talk to |cFF00FF25Marshal Dughan|r
+    .target Marshal Dughan
     .goto Elwynn Forest,42.2,65.8
     .turnin 39 >> Turn in Deliver Thomas' Report
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
     .accept 59 >>Accept Cloth and Leather Armor << Warlock
 step
+	>> Talk to |cFF00FF25Smith Argus|r
+    .target Smith Argus
     .goto Elwynn Forest,41.7,65.5
     .accept 1097 >> Accept Elmore's Task
 step
@@ -861,6 +980,8 @@ step << Paladin
     .goto Elwynn Forest,41.1,66.0
     .trainer >> Train your class spells
 step
+	>> Talk to |cFF00FF25William Pestle|r
+    .target William Pestle
     .goto Elwynn Forest,43.3,65.7
     .accept 114 >> Accept The Escape
 step << Warlock
@@ -882,7 +1003,7 @@ step << Mage
 step << Rogue
     .goto Elwynn Forest,43.9,65.9
     >>Don't worry about not having 2 weapons, we'll get another soon
-    >>Be VERY careful about your money when training here. Make sure you train Dual Wield and Sprint though
+    >>|cFFFCDC00Be VERY careful about your money when training here.|r Make sure you train Dual Wield and Sprint though
     .trainer >> Train your class spells
 step << Rogue
     #som
@@ -895,10 +1016,14 @@ step << Rogue
     .money >0.3152
     .vendor >>You don't have enough money, so buy Stiletto for your Offhand
 step
+	>> Talk to |cFF00FF25Maybell Maclure|r
+    .target Maybell Maclure
     >>Run out of the inn and go south
     .goto Elwynn Forest,43.2,89.6
     .turnin 114 >> Turn in The Escape
 step
+	>> Talk to |cFF00FF25"Auntie" Bernice Stonefield|r
+    .target "Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.7,84.5
     .turnin 88 >> Turn in Princess Must Die!
 step << Warlock
@@ -906,6 +1031,8 @@ step << Warlock
     .goto Elwynn Forest,24.6,74.7
     .accept 176 >> Accept Wanted:   "Hogger"
 step
+	>> Talk to |cFF00FF25Deputy Rainer|r
+    .target Deputy Rainer
     .goto Elwynn Forest,24.2,74.5
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
     .accept 11 >> Accept Riverpaw Gnoll Bounty << Warlock
@@ -924,7 +1051,8 @@ step << Warrior
 step << Warlock
     #sticky
     #completewith Armbands
-    >>Keep an eye out for the gold pickup schedule (lucky drop), or a 100% Drop from Gruff Swiftbite (rare). extra 210xp
+    >>Keep an eye out for the |cFF00BCD4Gold Pickup Schedule|r (lucky drop), or a 100% Drop from |cFFFF5722Gruff Swiftbite|r (rare).
+	.unitscan Gruff Swiftbite
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >> Accept The Collector
 step << Warlock
@@ -943,32 +1071,42 @@ step << Warlock
     .goto Elwynn Forest,25.2,92.7,80,0
     .goto Elwynn Forest,27.0,93.9,80,0
     .goto Elwynn Forest,24.24,80.67,0
-    >>Hogger can be in multiple spots in the area. Keep him fear chained, and/or kite him at <60% hp to the tower at 24,80. Loot him for his Claw
+    >>|cFF00BCD4Hogger|r can be in multiple spots in the area. Keep him fear chained, and/or kite him at <60% hp to the tower at 24,80. Loot him for his |cFF00BCD4Huge Gnoll Claw|r
     >>Be careful as he can be feared into other mobs, hits hard, and can stun
     .complete 176,1 --Collect Huge Gnoll Claw (1)
 step << Warlock
     #label Armbands
     .goto Elwynn Forest,27.0,93.9
-    >> Kill Gnolls. Loot them for Armbands
+    >> Kill |cFF00BCD4Gnolls|r. Loot them for |cFF00BCD4Painted Gnoll Armbands|r
+	.target Riverpaw Outrunner
+	.target Riverpaw Runt
     .complete 11,1 --Collect Painted Gnoll Armband (8)
 step << Rogue
     #era
     #label Armbands
     .money >0.3152
+	>> Talk to |cFF00FF25Deputy Rainer|r
+    .target Deputy Rainer
     .goto Elwynn Forest,24.2,74.5
     .accept 11 >> Accept Riverpaw Gnoll Bounty
 step << Rogue
     #som
     #label Armbands
+	>> Talk to |cFF00FF25Deputy Rainer|r
+    .target Deputy Rainer
     .money >0.3197
     .goto Elwynn Forest,24.2,74.5
     .accept 11 >> Accept Riverpaw Gnoll Bounty
 step << Rogue
     .goto Elwynn Forest,27.0,93.9
-    >> Kill Gnolls. Loot them for Armbands
+    >> Kill |cFF00BCD4Gnolls|r. Loot them for |cFF00BCD4Painted Gnoll Armbands|r
+	.target Riverpaw Outrunner
+	.target Riverpaw Runt
     .complete 11,1 --Collect Painted Gnoll Armband (x8)
     .isOnQuest 11
 step << Warlock/Rogue
+	>> Talk to |cFF00FF25Deputy Rainer|r
+    .target Deputy Rainer
     .goto Elwynn Forest,24.2,74.5
     .turnin 11 >> Turn in Riverpaw Gnoll Bounty
     .isOnQuest 11
