@@ -151,7 +151,7 @@ RXPGuides.RegisterGuide([[
 step
     #title Dragon Glyph: Mirewood Fen
     >>Use |T4640498:0|t[Skyward Ascend] once or twice
-    .goto 2022,78.31,21.31
+    .goto 2023,78.31,21.31
     .achievement 16576,12 >>Pick up the Dragon Glyph: Mirewood Fen a few yards above the ground
 step
     #completewith next
