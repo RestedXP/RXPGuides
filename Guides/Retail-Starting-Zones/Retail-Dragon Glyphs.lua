@@ -53,7 +53,7 @@ step
     .goto 2022,72.87,26.31,0
     .goto 2022,72.85,21.06,0
     .goto 2022,73.21,20.51
-    .achievement 16575,1 >>Pick up the Dragon Glyph: Scalecracker Peak at the top of the large mountain
+    .achievement 16575,11 >>Pick up the Dragon Glyph: Scalecracker Peak at the top of the large mountain
 step
     #completewith next
     +From the Scalecracker Peak: Just glide. Try to stay as high as possible while gliding at full speed
