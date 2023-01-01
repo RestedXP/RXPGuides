@@ -393,7 +393,7 @@ step
     #title Dragon Glyph: Stormshroud Peak
     .line 2025,35.5,85.5,46.0,73.0
     .goto 2025,46.0,73.0
-    .achievement 16578,12 >>Pick up the Dragon Glyph: Stormshroud Peak at the top of the mountain
+    .achievement 16578,2 >>Pick up the Dragon Glyph: Stormshroud Peak at the top of the mountain
 step
     #completewith next
     +From the Stormshroud Peak: It should be enough to just glide down
