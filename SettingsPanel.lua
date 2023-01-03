@@ -20,6 +20,7 @@ local importCache = {
     workerFrame = addon.RXPFrame,
     lastBNetQuery = GetTime()
 }
+local incompatibleAddons = {}
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -1807,23 +1808,43 @@ function addon.settings:CreateAceOptionsPanel()
     }
 
     -- Build FAQ items
-    local faqBatch = 2
+    local helpBatch = 2
     for q, a in pairs(addon.help) do
-        optionsTable.args.helpPanel.args[faqBatch .. "q"] = {
-            order = faqBatch + 0.1,
+        optionsTable.args.helpPanel.args[helpBatch .. "q"] = {
+            order = helpBatch + 0.1,
             name = q,
             type = "header",
             width = "full"
         }
 
-        optionsTable.args.helpPanel.args[faqBatch .. "a"] = {
-            order = faqBatch + 0.2,
+        optionsTable.args.helpPanel.args[helpBatch .. "a"] = {
+            order = helpBatch + 0.2,
             name = a,
             type = "description",
             width = "full",
             fontSize = "medium"
         }
-        faqBatch = faqBatch + 1
+        helpBatch = helpBatch + 1
+    end
+
+    for title, data in pairs(addon.compatibility) do
+        optionsTable.args.helpPanel.args[helpBatch .. "a"] = {
+            order = helpBatch + 0.1,
+            name = title,
+            type = "header",
+            width = "full",
+            hidden = function() return not incompatibleAddons[title] end
+        }
+
+        optionsTable.args.helpPanel.args[helpBatch .. "d"] = {
+            order = helpBatch + 0.2,
+            name = fmt("%s %s\n\n%s", title, data.Reason, data.Recommendation),
+            type = "description",
+            width = "full",
+            fontSize = "medium",
+            hidden = function() return not incompatibleAddons[title] end
+        }
+        helpBatch = helpBatch + 1
     end
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
@@ -2008,4 +2029,22 @@ function addon.settings:RefreshProfile()
     addon.updateMap = true
     addon.RXPFrame.GenerateMenuTable()
     addon.RXPFrame.SetStepFrameAnchor()
+end
+
+function addon.settings:CheckAddonCompatibility()
+    if not addon.compatibility then return end
+    local a, name
+
+    for i = 1, GetNumAddOns() do
+        if IsAddOnLoaded(i) then
+            name = GetAddOnInfo(i)
+
+            if addon.compatibility[name] then
+                incompatibleAddons[name] = true
+                a = addon.compatibility[name]
+                addon.comms.PrettyPrint("%s %s %s", name, a.Reason,
+                                        a.Recommendation)
+            end
+        end
+    end
 end

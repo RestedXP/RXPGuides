@@ -16,7 +16,6 @@ Just follow the guide the best you can.
 
 H["Why is my guide skipping lots of steps or zones?"] = [[
 These are inefficient areas that we skip if you are missing quest chains or if you are ahead in levels compared to the guide.
-
 ]]
 
 H["What are command the line options?"] = [[
@@ -30,3 +29,20 @@ H["What are command the line options?"] = [[
 ]]
 
 addon.help = H
+
+local C = {}
+
+C["TomTom"] = {
+    ["Reason"] = "has known incompatibilities with the Waypoint Arrow.",
+    ["Recommendation"] = "Disable it if you're experiencing navigation issues."
+}
+C["SilverDragon"] = C["TomTom"]
+C["TotemTimers"] = C["TomTom"]
+C["Leatrix Maps"] = C["TomTom"]
+
+C["Narcissus"] = {
+    ["Reason"] = "has known incompatibilities with Proximity targeting TargetUnit() calls.",
+    ["Recommendation"] = "Install BugSack or disable Targeting -> 'Only show when in range'."
+}
+
+addon.compatibility = C
