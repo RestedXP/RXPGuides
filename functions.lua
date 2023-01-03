@@ -2895,6 +2895,7 @@ function addon.functions.target(self, text, ...)
         return element
     end
 end
+addon.functions.mob = addon.functions.target
 
 local BLquests = {
     [2583] = {
