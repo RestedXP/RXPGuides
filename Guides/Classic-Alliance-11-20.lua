@@ -11,9 +11,13 @@ RXPGuides.RegisterGuide([[
 
 step <<  NightElf
     .goto Teldrassil,56.25,92.44
+	>> Talk to |cFF00FF25Nessa Shadowsong|r
+	.target Nessa Shadowsong
     .turnin 6344 >> Turn in Nessa Shadowsong
     .accept 6341 >> Accept The Bounty of Teldrassil
 step <<  NightElf
+	>> Talk to |cFF00FF25Vesprystus|r
+	.target Vesprystus
     .goto Teldrassil,58.39,94.01
     .turnin 6341 >> Turn in The Bounty of Teldrassil
     .accept 6342 >> Accept Flight to Auberdine
@@ -568,6 +572,8 @@ step
 step << Human
     #sticky
     #label Lewis
+	>> Talk to |cFF00FF25Quartermaster Lewis|r
+    .target Quartermaster Lewis
     .goto Westfall,56.80,47.20
     .turnin 6285 >> Turn in Return to Lewis
 step << Gnome/Dwarf
@@ -585,28 +591,33 @@ step
 step << Human
     #requires Lewis
     .goto Westfall,54.00,53.00
+	>> Talk to |cFF00FF25Scout Galiaan|r
+    .target Scout Galiaan
     .accept 153 >> Accept Red Leather Bandanas
 step << !Human
+	>> Talk to |cFF00FF25Scout Galiaan|r
+    .target Scout Galiaan
     .goto Westfall,54.00,53.00
     .accept 153 >> Accept Red Leather Bandanas
 step
     .goto Westfall,52.86,53.71
-    .vendor >> Buy food from Heather. Buy some level 15 food for later if you have money. Remember that the level 5 food here is VERY cheap << Warrior/Rogue
-    .vendor >> Buy food/water from Heather. Buy some level 15 food/water for later if you have money. Remember that the level 5 food here is VERY cheap << !Warrior !Rogue
+    .vendor >> Buy food from |cFF00FF25Innkeeper Heather|r. Buy some level 15 food for later if you have money. Remember that the level 5 food here is VERY cheap << Warrior/Rogue
+    .vendor >> Buy food/water from |cFF00FF25Innkeeper Heather|r. Buy some level 15 food/water for later if you have money. Remember that the level 5 food here is VERY cheap << !Warrior !Rogue
+	.target Innkeeeper Heather
 step
     #sticky
-    #label Oats
-     >> Collect the small satchels of oats scattered throughout Westfall
+	#completewith bennytime
+     >> Collect the |cFFDB2EEFHandfuls of Oats|r scattered throughout Westfall. They're brown sacks usually by fences and houses.
     .complete 151,1 --Handful of Oats (8)
 step
     #sticky
     #label Goretusks
-    >>Kill Vultures/Boars you see. Loot them for quest items
+    >>Kill |cFF00BCD4Vultures|r and |cFF00BCD4Boars|r you see. Loot them for |cFF00BCD4Scouts, Livers, and Vulture Meat|r
     .complete 38,1 --Stringy Vulture Meat (3)
     .complete 38,3 --Goretusk Snout (3)
     .complete 22,1 --Goretusk Liver (8)
 step
-     >> Kill the Defias. Loot them for their bandanas
+     >> Kill the |cFF00BCD4Defias|r. Loot them for their |cFF00BCD4Red Leather Bandanas|r
     .goto Westfall,48.21,46.70,60,0
     .goto Westfall,46.74,52.87,60,0
     .goto Westfall,50.74,40.07,60,0
@@ -619,41 +630,65 @@ step
     .complete 12,2
     .complete 153,1
 step
+	#label bennytime
     .goto Westfall,49.30,19.20
-    >>You can loot the closet from outside (if you angle your camera correctly). Be careful of Benny
+	>> Loot |cFFDB2EEFFurlbrow's Pocket Watch|r from inside the Dresser
+    >>You can loot the closet from outside if you angle your camera correctly. 
+	>> |cFFFCDC00Be careful of Benny Blanco, he hits hard.|r
     .complete 64,1 --Furlbrow's Pocket Watch
 step
+	#sticky
+	#completewith next
+	#label Oats
+	>> Try to have atleast 6/8 |cFFDB2EEFHandfuls of Oats|r before continuing to the Gnolls. You can usually find them near farm fences or buildings. 
+	.complete 151,1 --Handful of Oats (8)
+step
     #era
-     #sticky
      #label Pawbs
     .goto Westfall,56.40,13.50,80,0
     .goto Westfall,42.82,14.70,80,0
     .goto Westfall,45.83,13.75,80,0
     .goto Westfall,52.36,14.82,80,0
     .goto Westfall,56.86,13.53,80,0
-    .goto Westfall,56.86,13.53
-    .goto Westfall,42.82,14.70
-    .goto Westfall,52.36,14.82
+    .goto Westfall,56.86,13.53,60,0
+    .goto Westfall,42.82,14.70,60,0
+    .goto Westfall,52.36,14.82,60,0
     .goto Westfall,45.83,13.75
-    >>Kill Gnolls. Loot them for their paws. You may need to kill Murlocs whilst waiting on respawns if you're unlucky
+    >>Kill |cFF00BCD4Gnolls|r. Loot them for their |cFF00BCD4Gnoll Paws|r. You may need to kill |cFF00BCD4Murlocs|r for their |cFF00BCD4Eyes|r whilst waiting on respawns if you're unlucky with drops.
     .complete 102,1 --Gnoll Paw (8)
 step
-    #requires Oats
     .goto Westfall,56.40,9.40
-    >>Kill Murlocs. Loot them for their eyes
+    >>Kill |cFF00BCD4Murlocs|r and loot them for their |cFF00BCD4Eyes|r
     .complete 38,2 --Murloc Eye (3)
+step
+	#label Oats
+	.goto Westfall,59.91,19.41
+	>> Finish looting |cFFDB2EEFHandfuls of Oats|r en route to |cFF00FF25Farmer Furlbrow|r
+	.complete 151,1 --Handful of Oats (8)
 step
     #era
     #requires Pawbs
     .goto Westfall,59.91,19.41
+	>> Talk to |cFF00FF25Farmer Furlbrow|r and |cFF00FF25Verna Furlbrow|r
+	.target Farmer Furlbrow
+	.target Verna Furlbrow
     .turnin 151 >> Turn in Poor Old Blanchy
     .turnin 64 >> Turn in The Forgotten Heirloom
 step
     #som
     #requires Pawbs
     .goto Westfall,59.91,19.41
+	>> Talk to |cFF00FF25Farmer Furlbrow|r and |cFF00FF25Verna Furlbrow|r
+	.target Farmer Furlbrow
+	.target Verna Furlbrow
+    .goto Westfall,59.91,19.41
     .turnin 151 >> Turn in Poor Old Blanchy
     .turnin 64 >> Turn in The Forgotten Heirloom
+step
+	.goto Westfall,56.00,31.30
+	>> Talk to |cFF00FF25Farmer Saldean|r. |cFFFCDC00Do NOT sell Murloc Eyes, Goretusk Snouts, Goretusk Livers or Stringy Vulture Meat!|r
+	.target Farmer Saldean
+	.vendor >> Vendor trash
 step
     .goto Westfall,53.84,32.00,80,0
     .goto Westfall,50.80,21.76,80,0
@@ -661,33 +696,44 @@ step
     .goto Westfall,53.84,32.00,80,0
     .goto Westfall,50.80,21.76,80,0
     .goto Westfall,44.47,35.35,80,0
-    .goto Westfall,53.84,32.00
-    .goto Westfall,44.47,35.35
+    .goto Westfall,53.84,32.00,60,0
+    .goto Westfall,44.47,35.35,60,0
     .goto Westfall,50.80,21.76
-    >>Kill Harvest Watchers. Loot them for Okra
+    >>Kill |cFF00BCD4Harvest Watchers|r. Loot them for |cFF00BCD4Okra|r
     .complete 9,1 --Harvest Watcher (20)
     .complete 38,4 --Okra (3)
 step
     #requires Goretusks
+	>> Talk to |cFF00FF25Farmer Saldean|r.
+	.target Farmer Saldean
     .goto Westfall,56.00,31.30
     .turnin 9 >> Turn in The Killing Fields
 step
+	>> Talk to |cFF00FF25Salma Saldean|r.
+	.target Salma Saldean
     .goto Westfall,56.40,30.50
     .turnin 38 >> Turn in Westfall Stew
     .turnin 22 >> Turn in Goretusk Liver Pie
 step
+	>> Talk to |cFF00FF25Gryan Stoutmantle|r.
+	.target Gryan Stoutmantle
     .goto Westfall,56.30,47.50
     .turnin 12 >> Turn in The People's Militia
 step
-    #completewith end
+	.xp <15,1
+	>> Talk to |cFF00FF25Gryan Stoutmantle|r.
+	.target Gryan Stoutmantle
     .goto Westfall,56.30,47.50
     .accept 65 >> Accept The Defias Brotherhood
-    >>Skip this step if you're not yet level 15
 step
     #era
+	>> Talk to |cFF00FF25Captain Danuvin|r.
+	.target Captain Danuvin
     .goto Westfall,56.30,47.50
     .turnin 102 >> Turn in Patrolling Westfall
 step
+	>> Talk to |cFF00FF25Scout Galiaan|r.
+	.target Scout Galiaan
     .goto Westfall,54.00,52.90
     .turnin 153 >> Turn in Red Leather Bandanas
 step << Dwarf !Paladin/Gnome
@@ -728,6 +774,8 @@ step << Dwarf !Paladin/Gnome
     .goto Wetlands,12.1,60.3,80 >> Travel to Menethil Harbor
 step << Human/Dwarf Paladin
     #label end
+	>> Talk to |cFF00FF25Thor|r.
+	.target Thor
     .goto Westfall,56.6,52.6
     .fly Ironforge >> Fly to Ironforge
 step << Human Warrior
@@ -807,14 +855,18 @@ step
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
     .goto Wetlands,10.7,56.8
-    .vendor >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there
+    .vendor >> Check for a |cFF0E8312Bronze Tube| from |cFF00FF25Neal Allen|r and buy it if it's there
+	.target Neal Allen
 step << Human/Dwarf Paladin
+	>> Talk to |cFF00FF25Shellei Brondir|r.
+	.target Shellei Brondir
     .goto Wetlands,9.5,59.7
     .fp Menethil Harbor >> Get the Menethil Harbor flight path
 step
     .money <0.04
+	.target Dewin Shimmerdawn
     .goto Wetlands,8.1,56.3
-    .vendor >> In the building, check Dewin for Heal Potions, buy down to 1s
+    .vendor >> In the building, check |cFF00FF25Dewin Shimmerdawn|r. for Heal Potions, buy down to 1s
 step
     #completewith next
     +Wait here for the boat. Make a Campfire from your spellbook and start cooking the Chunks of Boar Meat you saved from earlier. You ideally need 10 skill now
@@ -1326,64 +1378,83 @@ RXPGuides.RegisterGuide([[
 #next 19-20 Redridge
 
 step
+	>> Talk to |cFF00FF25Gwennyth Bly'Leggonde|r.
+	.target Gwennyth Bly'Leggonde
     .goto Felwood,19.10,20.63
     >>Head to Auberdine
     .accept 3524 >> Accept Washed Ashore
 step <<  !NightElf
+	>> Talk to |cFF00FF25Caylais Moonfeather|r.
+	.target Caylais Moonfeather
     .goto Felwood,19.10,20.63
     .fp Auberdine >> Get the Auberdine flight path
 step <<  NightElf
+	>> Talk to |cFF00FF25Caylais Moonfeather|r.
+	.target Caylais Moonfeather
     .goto Felwood,19.27,19.14
     .turnin 6342 >> Turn in Flight to Auberdine
     .accept 6343 >> Accept Return to Nessa
 step
+	>> Talk to |cFF00FF25Innkeeper Shaussiy|r.
+	.target Innkeeper Shaussiy
     .goto Darkshore,37.0,44.0
     .home >> Set Hearthstone to Auberdine
 step
-    >>Go upstairs to the top floor
+    >>Go upstairs to the top floor and talk to |cFF00FF25Wizbang Cranktoggle|r.
+	.target Wizbang Cranktoggle
+	.goto Darkshore,36.7,43.9,8,0
     .goto Felwood,19.51,18.97
     .accept 983 >> Accept Buzzbox 827
 step
-    .goto Felwood,21.63,18.15
+	>> Talk to |cFF00FF25Tharnariun Treetender|r and |cFF00FF25Terenthis|r
+	.target Tharnariun Treetender
+	.target Terenthis
+    .goto Felwood,21.63,18.15,20,0
+	.goto Darkshore,39.4,43.5
     .accept 2118 >> Accept Plagued Lands
     .accept 984 >> Accept How Big a Threat?
 step
     #sticky
     #completewith crabs1
-     >> Kill crabs along the coast. Loot them for their legs
+     >> Kill |cFF00BCD4Crabs|r along the coast. Loot them for their |cFF00BCD4Crawler Legs|r
+	 .target Pygmy Tide Crawler
+	 .target Young Reef Crawler
     .complete 983,1
 step
     .goto Felwood,18.81,26.69
-     >> Loot the sea creature remains
+     >> Loot the |cFFDB2EEFBeached Sea Creature|r
     .complete 3524,1
 step
     .goto Felwood,22.39,29.45
-     >> Head towards the furbolg camp
+     >> Head towards the furbolg camp and explore it
      .complete 984,1
 step
     #label crabs1
-    >> Find a Rabid Thistle Bear. Aggro one and use Tharnariun's Hope in your bags (purple orb)
+    .use 7586 >> Find a Rabid Thistle Bear. Aggro one and use Tharnariun's Hope in your bags
     .goto Darkshore,38.47,57.92
     .complete 2118,1
     .unitscan Rabid Thistle Bear
 step
     .goto Felwood,19.13,21.39
-     >> Finish killing crabs along the coast and looting them for their legs
+     >> Finish killing |cFF00BCD4Crabs|r along the coast. Loot them for their |cFF00BCD4Crawler Legs|r
     .complete 983,1
 step
     .goto Felwood,19.13,21.39
-    >>Click the Buzzbox
+    >>Click the |cFFDB2EEFBuzzbox|r
     .turnin 983 >> Turn in Buzzbox 827
 step
 	#era/som
     .goto Felwood,19.13,21.39
     .accept 1001 >> Accept Buzzbox 411
 step
+	>> Talk to |cFF00FF25Gwennyth Bly'Leggonde|r.
+	.target Gwennyth Bly'Leggonde
     .goto Felwood,19.10,20.63
     .turnin 3524 >> Turn in Washed Ashore
     .accept 4681 >> Accept Washed Ashore
 step
-    >>On the Dock
+    >>On the Dock talk to |cFF00FF25Cerellean Whiteclaw|r.
+	.target Cerellean Whiteclaw
     .goto Felwood,18.10,18.48
     .accept 963 >> Accept For Love Eternal
 step
@@ -1393,38 +1464,55 @@ step
     .goto Darkshore,33.59,40.36,0
     .goto Darkshore,30.94,45.79,0
     .goto Darkshore,33.03,48.13,0
-     >> Start working on Darkshore Threshers.
+     >> Kill |cFF00BCD4Darkshore Threshers|r and loot them for their |cFF00BCD4Thresher Eyes|r. |cFFFCDC00Don't worry about finishing this quest right now. |r
+	 .target Darkshore Thresher
     .complete 1001,1
 step
     #completewith next
-    .goto Darkshore,33.70,42.45,40 >> Run up to the docks then jump in the water at the intersection
+    .goto Darkshore,33.70,42.45,20,0
+	.goto Darkshore 32.4,43.8,30 >> Run up to the docks then jump in the water at the intersection
 step
     .goto Felwood,13.63,21.44
-    >>Click on the sea turtle remains
+    >>Click on the |cFFDB2EEFSkeletal Sea Turtle Head|r
     .complete 4681,1
 step
     #label washed1
+	>> Return to |cFF00FF25Gwennyth Bly'Leggonde|r.
+	.target Gwennyth Bly'Leggonde
     .goto Felwood,19.10,20.63
     .turnin 4681 >> Turn in Washed Ashore
 step
+	>> Talk to |cFF00FF25Barithras Moonshade
+	.target Barithras Moonshade
     .goto Felwood,19.90,18.40
     .accept 947 >> Accept Cave Mushrooms
 step
+	>> Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r.
+	.target Sentinel Glynda Nal'Shea
     .goto Felwood,20.34,18.12
     .accept 4811 >> Accept The Red Crystal
 step
+step
+	>> Talk to |cFF00FF25Tharnariun Treetender|r
+	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2118 >> Turn in Plagued Lands
     .accept 2138 >> Accept Cleansing of the Infected
 step
+	>> Talk to |cFF00FF25Terenthis|r
+	.target Terenthis
     .goto Felwood,22.24,18.22
     .turnin 984 >> Turn in How Big a Threat?
     .accept 985 >> Accept How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
 step
+	>> Talk to |cFF00FF25Gorbold Steelhand|r
+	.target Gorbold Steelhand
     .goto Felwood,20.80,15.58
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step
+	>> Talk to |cFF00FF25Thundris Windweaver|r
+	.target Thundris Windweaver
     .goto Felwood,19.98,14.40
     .turnin 4761 >> Turn in Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River
@@ -1441,44 +1529,54 @@ step
     .goto Darkshore,36.70,30.00,0
     .goto Darkshore,38.73,28.25,0
     .goto Darkshore,40.17,28.76,0
-     >> Kill Darkshore Threshers off the coast. Loot them for their Eyes
+     >> Kill |cFF00BCD4Darkshore Threshers|r and loot them for their |cFF00BCD4Thresher Eyes|r.
+	 .tarrget Darkshore Thresher
     .complete 1001,1
 step
     .goto Felwood,20.94,1.49
-    >> Enter the 1st ship by the hole on the hull, loot the chest underwater at the bottom floor of the ship
-    >>Be careful as this quest can be difficult
+    >> Enter the 1st ship by the hole in the hull on the north side of the ship, loot the |cFFDB2EEFlockbox|r underwater at the bottom floor of the ship
+    >> |cFFFCDC00Be careful as this quest can be difficult|r
     .complete 982,1
 step
     .goto Darkshore,39.63,27.45
-    >> Enter the 2nd ship by the hole on the hull, loot the chest located in the ship at the exact place where you found the first chest
-    >>Be careful as this quest can be difficult
+    >> Enter the 2nd ship by the hole in the hull on the south side of the ship, loot the |cFFDB2EEFlockbox|r located in the ship at the exact place where you found the first chest
+    >> |cFFFCDC00Be careful as this quest can be difficult|r
     .complete 982,2
 step
 	#era/som
     #requires threshers
     #label mbox1
+	>> Click on the |cFFDB2EEFbuzzbox|r
     .goto Felwood,25.19,1.29
     .turnin 1001 >> Turn in Buzzbox 411
     .accept 1002 >> Accept Buzzbox 323
 step
+	>> Click on the |cFFDB2EEFBeached Sea Creature|r
     .goto Felwood,25.15,4.61
     .accept 4723 >> Accept Beached Sea Creature
 step
     #completewith Ameth
-     >> Kill Striders. Loot them for Strider Meat
+     >> Kill |cFF00BCD4Foreststriders|r. Loot them for |cFF00BCD4Strider Meat|r. This is for a future cooking quest.
+	 .target Foreststrider Fledgling
+	 .target Foreststrider
     .collect 5469,5,2178,1
+	.skill cooking,1
 step
 	#era/som
     #completewith Ameth
-     >> Kill any type of Moonstalker
+     >> Kill any type of |cFF00BCD4Moonstalker|r and loot them for their |cFF00BCD4Fangs|r. Go out of your way for them.
+	 .unitscan Moonstalker Runt
+	 .unitscan Moonstalker
     .complete 1002,1
 --N mushrooms
 step
     #completewith bears1
-     >> Kill Rabid Thistle Bears as you quest through Darkshore
+     >> Kill |cFFFF5722Rabid Thistle Bears|r as you quest through Darkshore. Don't stress over finishing this yet.
+	 .target Rabid Thistle Bear
     .complete 2138,1
 --N bears
 step
+	>> Click on the |cFFDB2EEFBeached Sea Turtle Hand|r
     .goto Darkshore,44.18,20.60
     .accept 4725 >> Accept Beached Sea Turtle
 step
@@ -1487,168 +1585,231 @@ step
     .complete 4762,1
 step
     #label bears1
+	>> Talk to |cFF00FF25Asterion|r
+	.target Asterion
     .goto Felwood,27.70,10.03
     .turnin 954 >> Turn in Bashal'Aran
     .accept 955 >> Accept Bashal'Aran
 step
     .goto Felwood,29.13,12.34
-     >> Kill Grellkins. Loot them for their earrings
+     >> Kill |cFF00BCD4Grellkins|r. Loot them for their |cFF00BCD4Grell Earrings|r
+	 .target Vile Sprite
+	 .target Wild Grell
     .complete 955,1
 step
+	>> Talk to |cFF00FF25Asterion|r
+	.target Asterion
     .goto Felwood,27.70,10.03
     .turnin 955 >> Turn in Bashal'Aran
     .accept 956 >> Accept Bashal'Aran
 step
     .goto Felwood,29.60,12.52
-     >> Kill Satyrs. Loot them for the Seal
+     >> Kill |cFF00BCD4Deth'ryll Satyrs|r. Loot them for the |cFF00BCD4Ancient Moonstone Seal|r
+	 .target Deth'ryll Satyr
     .complete 956,1
 step
+	>> Talk to |cFF00FF25Asterion|r
+	.target Asterion
     .goto Felwood,27.70,10.03
     .turnin 956 >> Turn in Bashal'Aran
     .accept 957 >> Accept Bashal'Aran
 step
     #completewith next
-    >>Kill Owlbeasts and collect small eggs for leveling cooking later.
+    >>Kill |cFF00BCD4Owlbeasts|r and collect |cFF00BCD4Small Eggs|r for leveling cooking later.
     .collect 6889,9,2178
+	.skill cooking,10,1
 step
     .goto Felwood,31.29,24.14
      >> Run up to The Red Crystal in the mountains
      .complete 4811,1
 step
     .goto Darkshore,44.4,51.2
-    >>Kill Owlbeasts and make sure you have at least 9 small eggs to level cooking
-    >>Skip this step if you already have 10 points in cooking.
+    >>Kill |cFF00BCD4Owlbeasts|r and collect |cFF00BCD4Small Eggs|r for leveling cooking later.
     .collect 6889,9,2178
+	.skill cooking,10,1
 step
     #label Ameth
+	>> Talk to |cFF00FF25Sentinel Tysha Moonblade|r
+	.target Sentinel Tysha Moonblade
     .goto Darkshore,40.30,59.70
     .accept 953 >> Accept The Fall of Ameth'Aran
 step
     #sticky
     #label anaya
     .goto Darkshore,42.29,60.46,0
-     >> Kill Anaya Dawnrunner. She patrols around the middle of Ameth'Aran
+     >> Kill |cFF00BCD4Anaya Dawnrunner|r. She patrols around the middle of Ameth'Aran. Loot her for |cFF00BCD4Anaya's Pendant|r. She has a very long respawn timer, skip this step if you don't see her by the time you finish everything else.
     .complete 963,1
-    .unitscan ANAYA DAWNRUNNER
+    .unitscan Anaya Dawnrunner
 step
     #label ghosts
     #sticky
     .goto Darkshore,42.66,61.90,0
-     >> Kill and loot ghosts
+     >> Kill |cFF00BCD4Undead Highborne Mobs|r and loot them for |cFF00BCD4Highborne Relics|r
+	 .target Writhing Highborne
+	 .target Wailing Highborne
+	 .target Cursed Highborne
     .complete 958,1
 step
     .goto Felwood,26.71,35.53
-     >> Click on the tablet on the ground
+     >> Click on the |cFFDB2EEFtablet|r on the ground
     .complete 953,1
 step
     .goto Felwood,25.66,39.11
-     >> Click on the green torch at the gazebo
+     >> Click on the |cFFDB2EEFgreen brazier|r at the gazebo
     .complete 957,1
 step
     .goto Felwood,25.98,40.62
-     >> Click on the tablet on the ground
+     >> Click on the |cFFDB2EEFtablet|r on the ground
     .complete 953,2
 step
-    #requires anaya
+    #requires ghosts
+	>> Talk to |cFF00FF25Sentinel Tysha Moonblade|r
+	.target Sentinel Tysha Moonblade
     .goto Felwood,23.29,36.73
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step
     #requires ghosts
     #completewith Bears
-     >> Kill Striders. Loot them for Strider Meat
+     >> Kill |cFF00BCD4Foreststriders|r. Loot them for |cFF00BCD4Strider Meat|r. This is for a future cooking quest.
+	 .target Foreststrider Fledgling
+	 .target Foreststrider
     .collect 5469,5,2178,1
+	.skill cooking,1
 --N Bears
 step
 	#era/som
     #completewith Mushrooms
-     >> Kill any type of Moonstalker
+     >> Kill any type of |cFF00BCD4Moonstalker|r and loot them for their |cFF00BCD4Fangs|r. Go out of your way for them.
+	 .unitscan Moonstalker Runt
+	 .unitscan Moonstalker
     .complete 1002,1
 --N mushrooms
 step
     #completewith Bears
-     >> Kill Rabid Thistle Bears as you quest through Darkshore
+     >> Kill |cFFFF5722Rabid Thistle Bears|r as you quest through Darkshore
+	 .target Rabid Thistle Bear
     .complete 2138,1
 --N bears
 step
     #requires ghosts
+	>> Click the |cFFDB2EEFBeached Sea Creature|r
     .goto Felwood,18.41,49.43
     .accept 4728 >> Accept Beached Sea Creature
 step
     #label Bears
+	>> Click the |cFFDB2EEFBeached Sea Turtle|r
     .goto Felwood,19.64,39.52
     .accept 4722 >> Accept Beached Sea Turtle
 step
     .goto Darkshore,38.83,60.82
-    >>Finish killing Rabid Thistle Bears and getting Strider Meat
+    >>Finish killing |cFFFF5722Rabid Thistle Bears|r and killing |cFF00BCD4Foreststriders|r for |cFF00BCD4Strider Meat|r.
     .complete 2138,1 --Rabid Thistle Bear (20)
+	.target Rabid Thistle Bear
+	.target Foreststrider Fledgling
+	 .target Foreststrider
+    .collect 5469,5,2178,1
+	.skill cooking,1
+step
+    .goto Darkshore,38.83,60.82
+    >>Finish killing |cFFFF5722Rabid Thistle Bears|r
+    .complete 2138,1 --Rabid Thistle Bear (20)
+	.target Rabid Thistle Bear
     .collect 5469,5,2178,1
 step
     .goto Felwood,22.39,29.45
-     >> Kill Furbolgs. Move about 10 yards away from the Windtalkers when they cast Gust of Wind to dodge it
-     >> Be careful as Pathfinders Thrash (3 attacks at once every 10s or so).
+     >> Kill |cFFFF5722Blackwood Pathfinders|r and |cFFFF5722Blackwood Windtalkers|r
+	 >> |cFFFCDC00Move about 10 yards away from the Windtalkers when they cast Gust of Wind to dodge it. Be careful as Pathfinders Thrash.|r (3 attacks at once every 10s or so)
+	 .target Blackwood Pathfinders
+	 .target Blackwood Windtalker
     .complete 985,1
     .complete 985,2
 step
+	>> Talk to |cFF00FF25Gubber Blump|r
+	.target Gubber Blump
     .goto Felwood,18.50,19.87
     .accept 1138 >> Accept Fruit of the Sea
 step
+	>> Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
+	.target Gwennyth Bly'Leggonde
     .goto Felwood,19.10,20.63
     .turnin 4723 >> Turn in Beached Sea Creature
     .turnin 4728 >> Turn in Beached Sea Creature
     .turnin 4722 >> Turn in Beached Sea Turtle
     .turnin 4725 >> Turn in Beached Sea Turtle
 step
-    >>On the Dock
+	.isQuestComplete 963
+    >>On the dock talk to |cFF00FF25Cerellean Whiteclaw|r
+	.target Cerellean Whiteclaw
     .goto Felwood,18.10,18.48
     .turnin 963 >> Turn in For Love Eternal
 step
+	>> Talk to |cFF00FF25Archaeologist Hollee|r
+	.target Archaeologist Hollee
     .goto Felwood,20.04,16.35
     .accept 729 >> Accept The Absent Minded Prospector
 step
     #completewith ezstrider
+	>> Talk to |cFF00FF25Gorbold Steelhand|r
+	.target Gorbold Steelhand
     .goto Felwood,20.80,15.58
-    .vendor 6301 >> Buy Mild Spice and cook herb baked eggs if you don't have 10 points in cooking
+    .vendor 6301 >> Buy |cFF0E8312Mild Spice| and cook Herb Baked Eggs until you hit 10 points in cooking
+	.skill cooking 10,1
 step
+	>> Talk to |cFF00FF25Gorbold Steelhand|r
+	.target Gorbold Steelhand
     .goto Felwood,20.80,15.58
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
 step
     #label ezstrider
+	>> Talk to |cFF00FF25Alanndarian Nightsong|r
+	.target Alanndarian Nightsong
     .goto Darkshore,37.70,40.70
     .accept 2178 >> Accept Easy Strider Living
     .turnin 2178 >> Turn in Easy Strider Living
-    >>This quest requires 10 points in cooking
+    .skill cooking,10
 step
+	>> Talk to |cFF00FF25Thundris Windweaver|r
+	.target Thundris Windweaver
     .goto Felwood,19.98,14.40
     .turnin 958 >> Turn in Tools of the Highborne
     .turnin 4762 >> Turn in The Cliffspring River
     .accept 4763 >> Accept The Blackwood Corrupted
 step
+	>> Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
+	.target Sentinel Glynda Nal'Shea
     .goto Felwood,20.34,18.12
     .turnin 4811 >> Turn in The Red Crystal
     .accept 4812 >> Accept As Water Cascades
 step
     .goto Darkshore,37.78,44.06
-     >> Fill the Empty Water Tube/Empty Bowl at the moonwell
+     .use 12346 >> Fill the Empty Water Tube/Empty Bowl at the moonwell
     .complete 4812,1
     .collect 12347,1,4763,1
 step
+	>> Talk to |cFF00FF25Tharnariun Treetender|r
+	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2138 >> Turn in Cleansing of the Infected
     .accept 2139 >> Accept Tharnariun's Hope
 step
+	>> Talk to |cFF00FF25Terenthis|r
+	.target Terenthis
     .goto Felwood,22.24,18.22
     .turnin 985 >> Turn in How Big a Threat?
     .accept 986 >> Accept A Lost Master
 step
     .goto Felwood,21.86,18.30
-     >> Run upstairs
+     >> Run upstairs and talk to |cFF00FF25Sentinel Elissa Starbreeze|r
+	 .target Sentinel Elissa Starbreeze
     .accept 965 >> Accept The Tower of Althalaxx
 step
     .goto Felwood,31.29,24.14
-     >> Click on the red crystal
+     >> Click on the |cFFDB2EEFRed Crystal|r
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
+	>> Talk to |cFF00FF25Asterion|r
+	.target Asterion
     .goto Felwood,27.70,10.03
     .turnin 957 >> Turn in Bashal'Aran
 step << Paladin
@@ -1658,11 +1819,12 @@ step << Paladin
 	.collect 2589,10,1,1644 --Linen Cloth (10)
 step
     .goto Darkshore,50.74,34.68
-    >>Loot the Blackwood Grain Sample from the Barrel, then run south-east toward Den Mother, looting the barrel will make 2 mobs spawn, be careful
+    >>Loot the |cFFDB2EEFBlackwood Grain Sample|r from the Barrel, then run south-east toward Den Mother. |cFFFCDC00Looting the barrel will make 2 mobs spawn, be careful|r
     .collect 12342,1,4763,1 --Blackwood Grain Sample (1)
 step
     .goto Darkshore,52.60,36.65,45,0
-    >>Kill Den Mother. Be careful as her cubs can knock you down for 2 seconds
+    >>Kill |cFFFF5722Den Mother|r. |cFFFCDC00Be careful as her cubs can knock you down for 2 seconds|r
+	.target Den Mother
     .goto Darkshore,51.48,38.26
     .complete 2139,1 --Den Mother (1)
 step << Paladin
@@ -1671,19 +1833,19 @@ step << Paladin
 	>>Start saving the Linen Cloth you loot in the area from the Furbolgs.
 	.collect 2589,10,1,1644 --Linen Cloth (10)
 step
-    >>Loot the Blackwood Nut Sample from the Barrel
+    >>Loot the |cFFDB2EEFBlackwood Nut Sample|r from the Barrel
     .goto Darkshore,51.80,33.51
     .collect 12343,1 --Blackwood Nut Sample (1)
 step
 	#label Fruit
-    >>Loot the Blackwood Fruit Sample from the Barrel. A mob will spawn in front of you, and in between the huts of the west - you may have to run
+    >>Loot the |cFFDB2EEFBlackwood Fruit Sample|r from the Barrel. |cFFFCDC00A mob will spawn in front of you, and in between the huts of the west - you may have to run|r
     .goto Darkshore,52.85,33.42
     .collect 12341,1 --Blackwood Fruit Sample (1)
 step
     #label xabraxxis
     .goto Darkshore,52.6,33.6
-     >> Use the bowl in your inventory near the bonfire to summon Xabraxxis. Kill him
-     >> Be careful, as this quest can be difficult as he enrages at low health and deals a LOT of damage. He does die quickly though
+     .use 12347 >> Use the bowl in your inventory near the bonfire to summon |cFFFF5722Xabraxxis|r. Kill him to make the chest drop. Loot the |cFFDB2EEFchest|r on the ground after he dies
+     >> |cFFFCDC00Be careful, as this quest can be difficult as he enrages at low health and deals a LOT of damage.|r He does die quickly though.
     .complete 4763,1
 step
     #completewith next
@@ -1691,28 +1853,28 @@ step
 step
     #label Mushrooms
     .goto Darkshore,55.66,34.89
-     >> Stay on the upper part of the cave. If theres no Death Cap at the end of the top side, then drop down and get one from below
-     >> The first blue one at the mouth of the cave should've respawned by the time you've looted the Death Cap
+     >> Loot |cFFDB2EEFScaber Stalks and a Death Cap|r in the cave. |cFFFCDC00Stay on the upper part of the cave if possible. Down below is very dangerous.|r If theres no |cFFDB2EEFDeath Cap|r at the end of the top side, then drop down and get one from below
+     >> The first |cFFDB2EEFScaber Stalk|r at the mouth of the cave should've respawned by the time you've looted the Death Cap
+	 >> |cFFFCDC00The Wave Riders do a knockback, don't put your back to the edge|r
     .complete 947,1 --Scaber Stalk (5)
     .complete 947,2 --Death Cap (1)
 step
+	>> Talk to |cFF00FF25Balthule Shadowstrike|r
+	.target Balthule Shadowstrike
     .goto Winterspring,4.82,27.18
     .turnin 965 >> Turn in The Tower of Althalaxx
     .accept 966 >> Accept The Tower of Althalaxx
-step << Paladin
-	#completewith next
-    .goto Darkshore,55.36,26.84
-	>>Kill Dark Strand Fanatics. Loot them for 10 Linen Cloth
-	.collect 2589,10,1,1644 --Linen Cloth (10)
 step
-    >>Kill Dark Strand Fanatics. Loot them for Parchments
+    >>Kill |cFF00BCD4Dark Strand Fanatics|r. Loot them for |cFF00BCD4Worn Parchment|r
     .goto Darkshore,55.36,26.84
     .complete 966,1 --Worn Parchment (4)
 step << Paladin
     .goto Darkshore,55.36,26.84
-	>>Kill Dark Strand Fanatics. Loot them for 10 Linen Cloth
+	>>Kill |cFF00BCD4Dark Strand Fanatics|r. Loot them for 10 |cFF00BCD4Linen Cloth|r for a future Paladin quest
 	.collect 2589,10,1,1644 --Linen Cloth (10)
 step
+	>> Talk to |cFF00FF25Balthule Shadowstrike|r
+	.target Balthule Shadowstrike
     .goto Winterspring,4.82,27.18
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
@@ -1744,7 +1906,9 @@ step
 	#som
 	#phase 3-6
     .goto Darkshore,61.40,9.40
-     >> Grind Moonstalker Sires/Matriarchs for pelts and fangs
+     >> Grind |cFF00BCD4Moonstalker Sires/Matriarchs|r for |cFF00BCD4Pelts and Fangs|r
+	 .target Moonstalker Matriach
+	 .target Moonstalker Sire
     .complete 986,1
 step  << !Warrior !Paladin !Rogue !Druid
     #requires ForestKey
@@ -1766,6 +1930,7 @@ step   << !Warrior !Paladin !Rogue !Druid
     #sticky
     .destroy 7442>> Throw away Gyromast's Key
 step
+	>> Click the |cFFDB2EEFBeached Sea Turtle|r
     .goto Winterspring,3.10,20.90
     .accept 4727 >> Accept Beached Sea Turtle
 step
@@ -1773,19 +1938,20 @@ step
     #completewith next
     .goto Darkshore,53.0,18.4,0
     .goto Darkshore,50.4,22.6,0
-     >> Kill Reef Crawlers/Encrusted Tide Crawlers along the coast. Loot them for Crab Chunks
+     >> Kill |cFF00BCD4Reef Crawlers|r and |cFF00BCD4Encrusted Tide Crawlers|r along the coast. Loot them for |cFF00BCD4Fine Crab Chunks|r
     .complete 1138,1
 step
 	#era/som
+	>> Click on the |cFFDB2EEFBuzzbox|r
     .goto Winterspring,1.42,26.89
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
 step
     .goto Darkshore,51.50,22.26,100,0
-    .goto Darkshore,53.0,18.4,0
-    .goto Darkshore,50.4,22.6,0
-    .goto Darkshore,44.8,21.6,0
-     >> Kill Reef Crawlers/Encrusted Tide Crawlers. Loot them for Crab Chunks
+    .goto Darkshore,53.0,18.4,60,0
+    .goto Darkshore,50.4,22.6,60,0
+    .goto Darkshore,44.8,21.6
+     >> Kill |cFF00BCD4Reef Crawlers|r and |cFF00BCD4Encrusted Tide Crawlers|r along the coast. Loot them for |cFF00BCD4Fine Crab Chunks|r
     .complete 1138,1
 step <<  NightElf
      #softcore
@@ -1799,43 +1965,57 @@ step
      #completewith next
     .hs >> Hearth back to Auberdine
 step
+	>> Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
+	.target Gwennyth Bly'Leggonde
     .goto Felwood,19.10,20.63
     .turnin 4727 >> Turn in Beached Sea Turtle
 step
+	>> Talk to |cFF00FF25Gubber Blump|r
+	.target Gubber Blump
     .goto Felwood,18.50,19.87
     .turnin 1138 >> Turn in Fruit of the Sea
 step
     .goto Felwood,19.78,19.07
-     >> Click on the wanted poster outside the inn
+     >> Click on the |cFFDB2EEFWanted Poster|r outside the inn
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
+	>> Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
+	.target Sentinel Glynda Nal'Shea
     .goto Felwood,20.34,18.12
     .turnin 4813 >> Turn in The Fragments Within
 step
+	>> Talk to |cFF00FF25Barithras Moonshade|r
+	.target Barithras Moonshade
     .goto Felwood,19.90,18.40
     .turnin 947 >> Turn in Cave Mushrooms
     .accept 948 >> Accept Onu
 step
+	>> Talk to |cFF00FF25Tharnariun Treetender|r
+	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2139 >> Turn in Tharnariun's Hope
 step
+	>> Talk to |cFF00FF25Terenthis|r
+	.target Terenthis
     .goto Darkshore,39.37,43.48
     .turnin 986 >> Turn in A Lost Master
     .accept 993 >> Accept A Lost Master
 step
+	>> Talk to |cFF00FF25Alanndarian Nightsong|r
+	.target Alanndarian Nightsong
     .goto Darkshore,37.70,40.70
     .accept 2178 >> Accept Easy Strider Living
     .turnin 2178 >> Turn in Easy Strider Living
-    >>This quest requires 10 points in cooking
+    .skill cooking,10
 step
+	>> Talk to |cFF00FF25Thundris Windweaver|r
+	.target Thundris Windweaver
     .goto Felwood,19.98,14.40
     .turnin 4763 >> Turn in The Blackwood Corrupted
 step
     #softcore
     .goto Elwynn Forest,26.29,38.50
     .zone Stormwind City >> Take the boat to Menethil, fly to Ironforge and take the tram to Stormwind
-    >>OR
-    >>Use the website unstuck self service to teleport back to Stormwind (much faster)
 step
     #hardcore
     .goto Darkshore,32.42,43.75,50,0
@@ -1849,10 +2029,13 @@ step
     .goto Wetlands,10.1,56.9,25,0
     .goto Wetlands,10.6,57.2,25,0
     .goto Wetlands,10.7,56.8
-    .vendor >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there. Otherwise, skip this step
+    .vendor >> Check for a |cFF0E8312Bronze Tube| from |cFF00FF25Neal Allen|r and buy it if it's there. Otherwise, skip this step
+	.target Neal Allen
     .bronzetube
 step
     #hardcore
+	>> Talk to |cFF00FF25Shellei Brondir|r
+	.target Shellei Brondir
     .goto Wetlands,9.49,59.69
     .fly Ironforge >> Fly to Ironforge
 step
@@ -1868,7 +2051,8 @@ step
 step
     #hardcore
     .goto Elwynn Forest,26.29,38.50
-    .zone Stormwind City >> Take the Tram to Stormwind City
+    .zone Stormwind City >> Take the Tram to Stormwind City.
+	.link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2346,36 +2530,50 @@ step << NightElf
     .turnin 244 >> Turn in Encroaching Gnolls
     .accept 246 >> Accept Assessing the Threat
 step
+	>> Talk to |cFF00FF25Marshal Marris|r
+	.target Marshal Marris
     .goto Redridge Mountains,33.50,48.90
     .accept 20 >> Accept Blackrock Menace
 step
+	>> Talk to |cFF00FF25Foreman Oslow|r
+	.target Foreman Oslow
     .goto Redridge Mountains,32.20,48.60
     .accept 125 >> Accept The Lost Tools
 step
+	>> Talk to |cFF00FF25Verner Osgood|r
+	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.50
     .accept 118 >> Accept The Price of Shoes
 step
     .goto Redridge Mountains,29.80,44.50
-    >>Go inside the building
+    >>Go inside the building and talk to |cFF00FF25Magistrate Solomon|r
+	.target Magistrate Solomon
     .accept 120 >> Accept Messenger to Stormwind
 step
+	>> Talk to |cFF00FF25Verner Osgood|r
+	.target Dockmaster Baren
     .goto Redridge Mountains,27.70,47.40
     .accept 127 >> Accept Selling Fish
 step
     .goto Redridge Mountains,26.80,44.40
-    >>Go inside the Inn
+    >>Go inside the Inn and talk to |cFF00FF25Darcy|r
+	.target Darcy
     .accept 129 >> Accept A Free Lunch
 step
     .goto Redridge Mountains,26.6,45.2
-    >>Head upstairs
+    >>Head upstairs and talk to |cFF00FF25Wiley the Black|r
+	.target Wiley the Black
     .turnin 65 >> Turn in The Defias Brotherhood
     .isOnQuest 65
 step
     #era/som
     .goto Redridge Mountains,22.70,44.00
-    >>Exit the Inn. Go west then into the building
+    >>Exit the Inn. Go west then into the building and talk to |cFF00FF25Chef Breanna|r
+	.target Chef Breanna
     .accept 92 >> Accept Redridge Goulash
 step
+	>> Talk to |cFF00FF25Martie Jainrose|r
+	.target Martie Jainrose
     .goto Redridge Mountains,21.85,46.32
     .accept 34 >> Accept An Unwelcome Guest
 step << Warlock
@@ -2389,10 +2587,12 @@ step << Warlock
      >>This is a hard quest to solo at this level, if you can't solo Bellygrub, skip this step, you'll have another opportunity to finish it later
     .turnin 34 >> Turn in An Unwelcome Guest
 step
+	>> Talk to |cFF00FF25Shawn|r
+	.target Shawn
     .goto Redridge Mountains,29.30,53.60
     .accept 3741 >> Accept Hilary's Necklace
 step
-    >>Look for Hilary's Necklace underwater. It's in a brown patch of dirt
+    >>Look for |cFFDB2EEFHilary's Necklace|r underwater. It's in a brown patch of dirt.
     .goto Redridge Mountains,27.80,56.05,0
     .goto Redridge Mountains,26.56,50.63,0
     .goto Redridge Mountains,23.96,55.17,0
@@ -2405,14 +2605,14 @@ step
     .complete 3741,1 --Hilary's Necklace (1)
 step
     #softcore
-    >>Go underwater. Loot the grey box
+    >>Go underwater. Loot the |cFFDB2EEFgrey lockbox|r
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
 step
     #era
     #sticky
     #completewith orcs
-    >>Kill Boars for 5 Great Goretusk Snout, Condors for 5 Tough Condor Meat, and Spiders for 5 Crisp Spider Meat
+    >>Kill |cFF00BCD4Boars|rBoars for 5 |cFF00BCD4Great Goretusk Snout|r, |cFF00BCD4Condors|r for 5 |cFF00BCD4Tough Condor Meat|r, and |cFF00BCD4Spiders|r for 5 |cFF00BCD4Crisp Spider Meat|r
     >>Focus HEAVILY on this quest. Do not sell any of the items until you turn in the quest
     >>Also save any Chunks of Boar Meat you get. You want to get 50 Cooking before reaching Darkshire
     .collect 2296,5,92,1
@@ -2423,45 +2623,58 @@ step
     #phase 1-2
     #sticky
     #completewith orcs
-    >>Kill Boars for 5 Great Goretusk Snout, Condors for 5 Tough Condor Meat, and Spiders for 5 Crisp Spider Meat
+    >>Kill |cFF00BCD4Boars|r for 5 |cFF00BCD4Great Goretusk Snout|r, |cFF00BCD4Condors|r for 5 |cFF00BCD4Tough Condor Meat|r, and |cFF00BCD4Spiders|r for 5 |cFF00BCD4Crisp Spider Meat|r
     >>Focus HEAVILY on this quest. Do not sell any of the items until you turn in the quest
     .collect 2296,5,92,1
     .collect 1080,5,92,1
     .collect 1081,5,92,1
 step
+	>> Talk to |cFF00FF25Guard Parker|r
+	.target Guard Parker
     .goto Redridge Mountains,15.30,71.50
     .accept 244 >> Accept Encroaching Gnolls
 step
-    .goto Redridge Mountains,30.70,60.00
-    .turnin 244 >> Turn in Encroaching Gnolls
-    .accept 246 >> Accept Assessing the Threat
-step
+	>> Talk to |cFF00FF25Guard Parker|r
+	.target Guard Parker
     .goto Redridge Mountains,15.27,71.45
     .turnin 129 >> Turn in A Free Lunch
     .accept 130 >> Accept Visit the Herbalist
 step
+	>> Talk to |cFF00FF25Deputy Feldon|r
+	.target Deputy Feldon
+    .goto Redridge Mountains,30.70,60.00
+    .turnin 244 >> Turn in Encroaching Gnolls
+    .accept 246 >> Accept Assessing the Threat
+step
     #era/som
     .goto Redridge Mountains,9.35,78.96
-    >>Kill Spiders. Loot them for the Crisp Spider Meat
+    >>Kill |cFF00BCD4Spiders|r for 5 |cFF00BCD4Crisp Spider Meat|r
     .collect 1081,5,92,1
 step
+	>> Kill |cFFFF5722Redridge Mongrel|r and |cFFFF5722Redridge Poacher|r
+	.target Redridge Mongrel
+	.target Redridge Poacher
     .goto Redridge Mountains,31.65,82.56
     .complete 246,1 --Redridge Mongrel (10)
     .complete 246,2 --Redridge Poacher (6)
 step
     .goto Redridge Mountains,49.0,70.0
-    >> Kill Murlocs. Loot them for Murloc Fins and Sunfish
+    >> Kill |cFF00BCD4Murlocs|r. Loot them for |cFF00BCD4Murloc Fins|r and |cFF00BCD4Sunfish|r
+	>> |cFFFCDC00Careful this area is a hyperspawn, meaning things respawn quickly|r
     .complete 127,1
     .collect 1468,8,150,1
 step
     #era/som
     .goto Redridge Mountains,61.37,77.10
-    >> Kill Condors. Loot them for Condor Meat
+    |cFF00BCD4Condors|r for 5 |cFF00BCD4Tough Condor Meat|r
     >> If there's no Condors around, skip this step
     .collect 1080,5,92,1
 step
     #label orcs
-    >>Kill Orcs. Loot them for Axes
+    >>Kill |cFF00BCD4Blackrock Orcs|r. Loot them for |cFF00BCD4Battleworn Axes|r
+	>> |cFFFCDC00Careful the Outrunners net!|r
+	.target Blackrock Grunt
+	.target Blackrock Outrunner
     .goto Redridge Mountains,74.00,79.00
     .complete 20,1 --Battleworn Axe (10)
 step
@@ -2471,7 +2684,7 @@ step
     .collect 1080,5,92,1
 step
     #hardcore
-    >>Go underwater. Loot the grey box
+    >>Go underwater. Loot the |cFFDB2EEFgrey lockbox|r
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
 step
@@ -2489,12 +2702,16 @@ step
     #completewith next
     .goto Redridge Mountains,30.73,59.99,150 >> Run back to Lakeshire
 step
+	>> Talk to |cFF00FF25Deputy Feldon|r
+	.target Deputy Feldon
     .goto Redridge Mountains,30.73,59.99
     .turnin 246 >> Turn in Assessing the Threat
 step
     .xp 20 >> If you are not yet level 20, turn in all your Redridge quests, you should have enough from turn ins
 step
     .goto Redridge Mountains,30.59,59.42
+	>> Talk to |cFF00FF25Ariena Stormfeather|r
+	.target Ariena Stormfeather
     .fp Redridge Mountains >> Get the Redridge Mountains flight path << !Human !Warlock
     .fly Stormwind >> Fly to Stormwind City
 step << Rogue
@@ -2540,6 +2757,8 @@ step << Mage
     .goto StormwindClassic,39.83,79.46
     .trainer >> Train Stormwind Portal from Larimaine
 step
+	>> Talk to |cFF00FF25Argos Nightwhisper|r
+	.target Argos Nightwhisper
     .goto StormwindClassic,21.40,55.80
     .accept 3765 >> Accept The Corruption Abroad
 step << Druid
@@ -2573,12 +2792,15 @@ step << Warrior
     .goto StormwindClassic,78.67,45.80
     .trainer >> Go upstairs. Train your class spells
 step
+	>> Talk to |cFF00FF25General Marcus Jonathan|r
+	.target General Marcus Jonathan
     .goto StormwindClassic,64.20,75.20
     .turnin 120 >> Turn in Messenger to Stormwind
     .accept 121 >> Accept Messenger to Stormwind
 step
     .goto Elwynn Forest,41.80,65.60
-    >>Leave Stormwind and head to Goldshire
+    >>Leave Stormwind and head to Goldshire and talk to |cFF00FF25Smith Argus|r
+	.target Smith Argus
     .turnin 118 >> Turn in The Price of Shoes
     .accept 119 >> Accept Return to Verner
 step
@@ -2586,36 +2808,45 @@ step
     .goto Elwynn Forest,65.20,69.80
     .accept 94 >> Accept A Watchful Eye
 step
-    #completewith RunR
-    #label FlyR
-    .goto StormwindClassic,66.30,62.30
-    >> Run back to Stormwind if you're in Goldshire, then fly to Redridge
-    .fly Redridge >> Fly to Redridge
-step
     #completewith FlyR
-    #label RunR
-    .goto Redridge Mountains,15.27,71.45
-    >> If you're at the Tower of Azora, run to Redridge
-    .zone Redridge Mountains >>Travel to Redridge
+    .goto StormwindClassic,66.30,62.30,-1
+	.goto Redridge Mountains,6.7,72.4,-1
+    >> Run back to Stormwind if you're in Goldshire, then fly to Redridge
+	>> If you're at the Tower of Azora, run to Redridge
+    .fly Redridge >> Fly to Redridge
+	.zone Redridge Mountains >>Travel to Redridge
 step
+	>> Talk to |cFF00FF25Marshal Marris|r
+	.target Marshal Marris
     .goto Redridge Mountains,33.40,48.90
     .turnin 20 >> Turn in Blackrock Menace
 step
+	>> Talk to |cFF00FF25Foreman Oslow|r
+	.target Foreman Oslow
     .goto Redridge Mountains,32.00,48.80
     .turnin 125 >> Turn in The Lost Tools
     .accept 89 >> Accept The Everstill Bridge
 step
+	>> Talk to |cFF00FF25Verner Osgood|r
+	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.20
     .turnin 119 >> Turn in Return to Verner
     .accept 124 >> Accept A Baying of Gnolls
 step
     #era
+	>> Talk to |cFF00FF25Verner Osgood|r
+	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.20
     .accept 122 >> Accept Underbelly Scales
 step
+    #label FlyR
+	>> Talk to |cFF00FF25Magistrate Soloman|r
+	.target Magistrate Soloman
     .goto Redridge Mountains,29.98,44.45
     .turnin 121 >> Turn in Messenger to Stormwind
 step
+	>> Talk to |cFF00FF25Hilary|r
+	.target Hilary
     .goto Redridge Mountains,29.20,53.60
      .turnin 3741 >> Turn in Hilary's Necklace
 step << Rogue
@@ -2623,6 +2854,8 @@ step << Rogue
     .turnin 2281 >> Turn in Redridge Rendevous
     .accept 2282 >> Accept Alther's Mill
 step
+	>> Talk to |cFF00FF25Dockmaster Baren|r
+	.target Dockmaster Baren
     .goto Redridge Mountains,27.72,47.38
     .turnin 127 >> Turn in Selling Fish
     .accept 150 >> Accept Murloc Poachers
@@ -2630,15 +2863,25 @@ step
 step
     #era/som
     .isQuestComplete 92
+	>> Talk to |cFF00FF25Chef Breanna|r
+	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
     .turnin 92 >> Turn in Redridge Goulash
 step
+	>> Talk to |cFF00FF25Martie Jainrose|r
+	.target Martie Jainrose
     .goto Redridge Mountains,21.90,46.20
     .turnin 130 >> Turn in Visit the Herbalist
     .accept 131 >> Accept Delivering Daffodils
 step
+    #era
+	#completewith next
+	>>Kill |cFF00BCD4Black Dragon Whelps|r for |cFF00BCD4Underbelly Whelp Scales|r. Don't go out of your way to finish this quest. 
+    .complete 122,1 --Underbelly Whelp Scale (6)
+step
     #era/som
-    >>Kill Boars. Loot them for Great Goretusk Snouts
+    >>Kill |cFF00BCD4Boars|r for 5 |cFF00BCD4Great Goretusk Snout|r
+	.target Great Goretusk
     .goto Redridge Mountains,16.23,48.35,100,0
     .goto Redridge Mountains,32.25,70.20,100,0
     .goto Redridge Mountains,16.23,48.35
@@ -2646,6 +2889,8 @@ step
     .collect 2296,5,92,1
 step
     #era/som
+	>> Talk to |cFF00FF25Chef Breanna|r
+	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
     .turnin 92 >> Turn in Redridge Goulash
 step
@@ -2657,76 +2902,97 @@ step
     .goto Redridge Mountains,34.20,39.70,60,0
     .goto Redridge Mountains,39.61,31.46,60,0
     .goto Redridge Mountains,22.5,35.7,0
-    >>Kill Gnolls. Loot them for Pikes and Rivets
+    >>Kill |cFF00BCD4Gnolls|r. Loot them for |cFF00BCD4Iron Pikes|r and |cFF00BCD4Iron Rivets|r
+	.target Redridge Mystic
+	.target Redridge Brute
     .complete 89,1 --Iron Pike (5)
     .complete 89,2 --Iron Rivet (5)
     .complete 124,1 --Redridge Brute (10)
     .complete 124,2 --Redridge Mystic (8)
 step
     #era
-    #sticky
+    #completewith next
+	>>Kill |cFF00BCD4Black Dragon Whelps|r for |cFF00BCD4Underbelly Whelp Scales|r.
+	.target Black Dragon Whelp
+    .complete 122,1 --Underbelly Whelp Scale (6)
+step << Rogue
+	.goto Redridge Mountains,52.05,44.69
+    .cast 1804 >>Unlock lockboxes in the area until you reach 80 skill
+    >>Open |cFFDB2EEFLucius's Lockbox|r once you reach 80 skill
+    .complete 2282,1 --Token of Thievery
+step
+    #era
     #label scales
     .goto Redridge Mountains,35.0,69.0,0
     .goto Redridge Mountains,58.34,76.16,0
-    .goto Redridge Mountains,24.0,35.0,0
+    .goto Redridge Mountains,24.0,35.0
+	>>Kill |cFF00BCD4Black Dragon Whelps|r for |cFF00BCD4Underbelly Whelp Scales|r.
+	.target Black Dragon Whelp
     .complete 122,1 --Underbelly Whelp Scale (6)
-step << Rogue
-    >>Unlock lockboxes in the area until you reach 80 skill
-    >>Open Lucius's Lockbox once you reach 80 skill
-    .goto Redridge Mountains,52.05,44.69
-    .complete 2282,1 --Token of Thievery
 step
+	>> Talk to |cFF00FF25Darcy|r
+	.target Darcy
     .goto Redridge Mountains,26.80,44.30
     .turnin 131 >> Turn in Delivering Daffodils
 step
     #era
     .goto Redridge Mountains,26.52,44.95
     #completewith next
-    +Cook the Chunks of Boar Meat at the fire in the Inn which you collected earlier. Make sure you have 50 cooking
+    + Cook the Chunks of Boar Meat at the fire in the Inn which you collected earlier. Make sure you have 50 cooking
     >>If you won't have 50 cooking, go farm some more boars to the west
-    >>If you're cooking will be 40 or below after cooking everything, skip this step
 step
     #era
+	>> Talk to |cFF00FF25Verner Osgood|r
+	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
     .turnin 124 >> Turn in A Baying of Gnolls
     .turnin 122 >> Turn in Underbelly Scales
 step
     #som
+	>> Talk to |cFF00FF25Verner Osgood|r
+	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 124 >> Turn in A Baying of Gnolls
 step << Rogue
+	>> Talk to |cFF00FF25Lucius|r
+	.target Lucius
     .goto Redridge Mountains,28.07,52.02
     .turnin 2282 >> Turn in Alther's Mill
+step << Rogue
+	#completewith next
+	.destroy 7907 >> You can destroy the Certificate of Thievery
 step
+	>> Talk to |cFF00FF25Foreman Oslow|r
+	.target Foreman Oslow
     .goto Redridge Mountains,32.10,48.70
     .turnin 89 >> Turn in The Everstill Bridge
 step << Rogue
-    --#softcore
+    #softcore
     .goto Westfall,68.5,70.0
     >>This is a good time to do the poison quest in Westfall, this quest can be VERY HARD to do at level 20/21, this step is optional, you will have another chance to do it later at level 24
     .turnin 2360 >> Turn in Mathias and the Defias
     .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
 step << Rogue
-    --#softcore
+    #softcore
     .goto Westfall,68.5,70.0
     .accept 2359 >> Accept Klaven's Tower
     .isQuestTurnedIn 2360
 step << Rogue
-    --#softcore
+    #softcore
     .goto Westfall,70.6,72.8
     >>Pickpocket one of the Defias Drones and loot the tower key
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
     .isOnQuest 2359
 step << Rogue
-    --#softcore
+    #softcore
     .goto Westfall,70.4,74.0
     >>Climb to the top of the tower and loot the small chest on the floor
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
     .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
     .isOnQuest 2359
 step << Rogue !Dwarf
-    --#softcore
+    #softcore
     .goto Duskwood,10.69,59.86,90,0
     .goto Duskwood,8.82,38.44
     >>Kill Spiders in Duskwood
@@ -2736,24 +3002,92 @@ step << Rogue !Dwarf
     .collect 1475,1,2359,1 << Rogue !Dwarf
     .isOnQuest 2359
 step << Rogue
-    --#softcore
+    #softcore
     #completewith next
     .goto Westfall,56.55,52.65
     .fly Stormwind >> Fly to Stormwind
 step << Rogue
-    --#softcore
+    #softcore
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.67,59.48,20,0
      .goto StormwindClassic,75.9,59.9
     .turnin 2359 >> Turn in Klaven's Tower
     .isQuestComplete 2359
 step << Rogue
-    --#softcore
+    #softcore
      .goto StormwindClassic,75.9,59.9
     .accept 2607 >> Accept The Touch of Zanzil
     .isQuestTurnedIn 2359
 step << Rogue
-    --#softcore
+    #softcore
+    .goto StormwindClassic,78.1,59.0
+    >>Head to the basement
+    .turnin 2607 >> Turn in The Touch of Zanzil
+    .isQuestTurnedIn 2359
+	------------
+step << Rogue
+    #hardcore
+	.xp <22,1
+    .goto Westfall,68.5,70.0
+    >>This is a good time to do the poison quest in Westfall if you've trained Vanish. You will have another chance to do it later at level 24 if you wish to wait.
+    .turnin 2360 >> Turn in Mathias and the Defias
+    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
+step << Rogue
+    #hardcore
+	.xp <22,1
+    .goto Westfall,68.5,70.0
+    .accept 2359 >> Accept Klaven's Tower
+    .isQuestTurnedIn 2360
+step << Rogue
+    #hardcore
+	.xp <22,1
+    .goto Westfall,70.6,72.8
+    >>Pickpocket one of the Defias Drones and loot the tower key
+    .complete 2359,2 --Collect Defias Tower Key (x1)
+    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
+    .isOnQuest 2359
+step << Rogue
+    #hardcore
+	.xp <22,1
+    .goto Westfall,70.4,74.0
+    >>Climb to the top of the tower and loot the small chest on the floor
+    .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
+    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
+    .isOnQuest 2359
+step << Rogue !Dwarf
+    #hardcore
+	.xp <22,1
+    .goto Duskwood,10.69,59.86,90,0
+    .goto Duskwood,8.82,38.44
+    >>Kill Spiders in Duskwood
+    >>Save Gooey Spider Legs for later
+    >>You'll need 1 venom sac to craft an anti-venom and remove the Zanzil poison << Rogue !Dwarf
+    >>If you have a Paladin or Druid friend you can skip this step and ask them to remove it for you
+    .collect 1475,1,2359,1 << Rogue !Dwarf
+    .isOnQuest 2359
+step << Rogue
+    #hardcore
+	.xp <22,1
+    #completewith next
+    .goto Westfall,56.55,52.65
+    .fly Stormwind >> Fly to Stormwind
+step << Rogue
+    #hardcore
+	.xp <22,1
+    .goto StormwindClassic,74.90,54.00,20,0
+    .goto StormwindClassic,78.67,59.48,20,0
+     .goto StormwindClassic,75.9,59.9
+    .turnin 2359 >> Turn in Klaven's Tower
+    .isQuestComplete 2359
+step << Rogue
+    #hardcore
+	.xp <22,1
+     .goto StormwindClassic,75.9,59.9
+    .accept 2607 >> Accept The Touch of Zanzil
+    .isQuestTurnedIn 2359
+step << Rogue
+    #hardcore
+	.xp <22,1
     .goto StormwindClassic,78.1,59.0
     >>Head to the basement
     .turnin 2607 >> Turn in The Touch of Zanzil
@@ -2784,9 +3118,12 @@ step
     .goto Darkshore,37.32,43.64
     .accept 948 >> Accept Onu
 step
+	>> Click the |cFFDB2EEFWanted Poster|r
     .goto Darkshore,37.21,44.22
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
+	>> Talk to |cFF00FF25Terenthis|r
+	.target Terenthis
     .goto Darkshore,39.37,43.48
     .accept 993 >> Accept A Lost Master
 step
@@ -2801,6 +3138,8 @@ step <<  NightElf
     .goto Felwood,27.00,55.59
     .turnin 952 >> Turn in Grove of the Ancients
 step
+	>> Talk to |cFF00FF25Onu|r
+	.target Onu
     .goto Felwood,27.00,55.59
     .turnin 948 >> Turn in Onu
     .accept 944 >> Accept The Master's Glaive
@@ -2811,6 +3150,8 @@ step
 step
     #sticky
     #label TheryluneE
+	>> Talk to |cFF00FF25Therylune|r
+	.target Therylune
      >> Start the escort quest
     .accept 945 >> Accept Therylune's Escape
 step
@@ -2820,7 +3161,7 @@ step
     .accept 949 >> Accept The Twilight Camp
 step
     .goto Darkshore,38.55,86.03
-     >> Click on the book on top of the pedestal. Be careful that Therylune doesnt run off if you started it already
+     >> Click on the |cFFDB2EEFbook on top of the pedestal|r. Be careful that Therylune doesnt run off if you started it already
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
 step
@@ -2830,45 +3171,52 @@ step
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
 step
     #completewith next
+	>> Talk to |cFF00FF25Prospector Remtravel|r
+	.target Prospector Remtravel
     .goto Felwood,18.08,64.03
     .turnin 729 >> Turn in The Absent Minded Prospector
 step
+	>> Talk to |cFF00FF25Prospector Remtravel|r
+	.target Prospector Remtravel
     .goto Darkshore,35.72,83.69
-     >> Start the escort quest
     .accept 731,1 >> Accept The Absent Minded Prospector
 step
-     >> Escort Prospector Remtravel. Make sure he aggros the mobs first or he won't help you kill them
+     >> Escort |cFF00FF25Prospector Remtravel|r. |cFFFCDC00Make sure he aggros the mobs first or he won't help you kill them|r
     .complete 731,1
 step
-    >>Loot the remains. Be careful as the Oracles do 90 damage lightning bolts, and can healing wave to full when they're at <55% hp.
+    >>Loot the |cFFDB2EEFBeached Sea Creature|r. Be careful as the Oracles do 90 damage lightning bolts, and can healing wave to full when they're at <55% hp.
     .goto Ashenvale,13.97,4.10
     .accept 4733 >> Accept Beached Sea Creature
 step
+	>>Loot the |cFFDB2EEFBeached Sea Turtle|r
     .goto Ashenvale,13.93,2.01
     .accept 4732 >> Accept Beached Sea Turtle
 step
+	>>Loot the |cFFDB2EEFBeached Sea Turtle|r
     .goto Felwood,13.47,64.01
     .accept 4731 >> Accept Beached Sea Turtle
 step
+	>>Loot the |cFFDB2EEFBeached Sea Creature|r
     .goto Felwood,14.62,60.72
     .accept 4730 >> Accept Beached Sea Creature
 step
     #label Murkdeep
     .goto Darkshore,36.64,76.53
-    >> Clear the murloc camp, maintain a safe distance while doing it
-    >> Move close to the Bonfire in the camp to summon 3 waves of Murlocs: Kill waves 1 and 2, then kill Murkdeep in wave 3
-    >> Check the coast to the west to see if Murkdeep is already alive. If he is, kill him
+    >> Clear the murloc camp, maintain a safe distance while doing it. |cFFFCDC00Going near the bonfire triggers the event.|r
+    >> Move close to the Bonfire in the camp to summon 3 waves of Murlocs: Kill waves 1 and 2, then kill |cFFFF5722Murkdeep|r in wave 3
+    >> Murkdeep may already be alive if someone else started the quest then died. Check the coast for him.
     .unitscan Murkdeep
     .complete 4740,1
 step
 	#era/som
     .goto Darkshore,40.23,81.28
-     >> Kill Grizzled Thistle Bears. Loot them for their Scalps
+     >> Kill |cFF00BCD4Grizzled Thistle Bears|r. Loot them for their |cFF00BCD4Scalps|r
     .complete 1003,1
     .isOnQuest 1003
 step
 	#era/som
     .goto Felwood,24.53,60.46
+	>> Talk to the |cFFDB2EEFbuzzbox|r
     .turnin 1003 >> Turn in Buzzbox 525
     .isOnQuest 1003
 step
@@ -2887,13 +3235,14 @@ step
     .turnin 950 >> Turn in Return to Onu
 step
     .goto Felwood,27.96,55.76
-    >>Speak to Kerlonian and start the escort quest
+    >>Speak to |cFF00FF25Kerlonian Evershade|r and start the escort quest
+	.target Kerlonian Evershade
     >>If he's not there, you can skip this quest (can take up to 25 minutes to respawn depending on other players)
     .accept 5321 >> Accept The Sleeper Has Awakened
 step
     .isOnQuest 5321
     .goto Darkshore,44.38,76.30
-     >> Loot the chest next to the quest giver
+     >> Loot the |cFFDB2EEFchest|r next to the quest giver
     .complete 5321,1
 step
      #completewith tower
@@ -2901,19 +3250,26 @@ step
      .goto Ashenvale,29.7,13.6
 step
     .goto Ashenvale,27.26,35.58
-    >>Avoid walking on the main road while doing the escort quest
+    .use 13536>> |cFFFCDC00Avoid walking on the main road while doing the escort quest|r. Mobs won't spawn if you stay off the road. 
+	>> Use the Horn of Awakening if he falls asleep
      .complete 5321,2
      .isOnQuest 5321
 step
+	>> Talk to |cFF00FF25Liadris Moonriver|r
+	.target Liadris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >> Turn in The Sleeper Has Awakened
     .isQuestComplete 5321
 step
     #label tower
+	>> Talk to |cFF00FF25Delgren the Purifier|r
+	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
     .turnin 967 >> Turn in The Tower of Althalaxx
 step
 	#era/som
+	>> Talk to |cFF00FF25Delgren the Purifier|r
+	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
     .accept 970 >> Accept The Tower of Althalaxx
 step
@@ -2925,31 +3281,38 @@ step
 step
 	#era/som
      #completewith next
+	>> Talk to |cFF00FF25Delgren the Purifier|r
+	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
     .turnin 970 >> Turn in The Tower of Althalaxx
 step
     .xp 20 >> Grind to level 20
 step
+	>> Talk to |cFF00FF25Orendil Broadleaf|r
+	.target Orendil Broadleaf
     .goto Ashenvale,26.43,38.59
     .accept 1010 >> Accept Bathran's Hair
 step
     .goto Ashenvale,31.63,22.33
-     >> Look out for the herb sacks on the ground
+     >> Look out for the |cFFDB2EEFherb sacks|r on the ground
     .complete 1010,1
 step
 	#era/som
     .goto Ashenvale,31.41,30.66
-     >> Kill cultists. Loot them for the Glowing Soul Gem
+     >> Kill |cFF00BCD4Dark Strand Cultists|r. Loot them for the |cFF00BCD4Glowing Soul Gem|r
     .complete 970,1
 step
-    #sticky
     #label hair
+	>> Talk to |cFF00FF25Orendil Broadleaf|r
+	.target Orendil Broadleaf
     .goto Ashenvale,26.43,38.59
     .turnin 1010 >> Turn in Bathran's Hair
     .accept 1020 >> Accept Orendil's Cure
 step
 	#era/som
-    .goto Ashenvale,26.43,38.59
+	>> Talk to |cFF00FF25Delgren the Purifier|r
+	.target Delgren the Purifier
+    .goto Ashenvale,26.19,38.69
     .turnin 970 >> Turn in The Tower of Althalaxx
     .accept 973 >> Accept The Tower of Althalaxx
 step
@@ -2957,16 +3320,25 @@ step
     >>Run to Astranaar
     .goto Ashenvale,34.40,48.00
     .fp Astranaar>> Get the Astranaar Flight Path
+	.target Daelyshia
 step
+	>> Talk to |cFF00FF25Shindrell Swiftfire|r
+	.target Shindrell Swiftfire
     .goto Ashenvale,34.67,48.83
     .accept 1008 >> Accept The Zoram Strand
 step
+	>> Talk to |cFF00FF25Sentinel Thenysil|r
+	.target Sentinel Thenysil
     .goto Ashenvale,34.89,49.79
     .accept 1070 >> Accept On Guard in Stonetalon
 step
+	>> Talk to |cFF00FF25Faldreas Goeth'Shael|r
+	.target Faldreas Goeth'Shael
     .goto Ashenvale,35.76,49.10
     .accept 1056 >> Accept Journey to Stonetalon Peak
 step
+	>> Talk to |cFF00FF25Raene Wolfrunner|r
+	.target Raene Wolfrunner
     .goto Ashenvale,36.61,49.58
     .accept 991 >> Accept Raene's Cleansing
     .accept 1054 >> Accept Culling the Threat
@@ -2977,6 +3349,8 @@ step << !Warlock
 step
     #timer Orendil's Cure RP
     .goto Ashenvale,37.36,51.79
+	>> Talk to |cFF00FF25Pelturas Whitemoon|r
+	.target Pelturas Whitemoon
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure RP
     .accept 1033 >> Accept Elune's Tear
