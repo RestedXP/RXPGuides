@@ -20,6 +20,7 @@ local importCache = {
     workerFrame = addon.RXPFrame,
     lastBNetQuery = GetTime()
 }
+local incompatibleAddons = {}
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -123,7 +124,9 @@ function addon.settings:InitializeSettings()
             soundOnFindChannel = 'Master',
             scanForRares = true,
             notifyOnRares = true,
-            activeTargetScale = 1
+            activeTargetScale = 1,
+
+            enableAddonIncompatibilityCheck = true
         }
     }
 
@@ -1765,7 +1768,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Enables new features, forces reload to take effect"),
                         type = "toggle",
-                        width = "full",
+                        width = optionsWidth,
                         order = 1,
                         confirm = requiresReload,
                         set = function(info, value)
@@ -1776,7 +1779,7 @@ function addon.settings:CreateAceOptionsPanel()
                     debug = {
                         name = L("Enable Debug"),
                         type = "toggle",
-                        width = "full",
+                        width = optionsWidth,
                         order = 1.1
                     },
                     batchSize = {
@@ -1784,12 +1787,26 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Adjusts the batching window tolerance, used for hearthstone batching"),
                         type = "range",
-                        width = "normal",
-                        order = 2.1,
+                        width = optionsWidth,
+                        order = 1.2,
                         min = 1,
                         max = 100,
                         step = 1,
                         hidden = addon.gameVersion > 40000
+                    },
+                    enableAddonIncompatibilityCheck = {
+                        name = L("Check for Addon Incompatibility"), -- TODO locale
+                        desc = L(
+                            "Check loaded addons for known compatibility issues with RXP"),
+                        type = "toggle",
+                        width = "full",
+                        order = 2.0,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                self:CheckAddonCompatibility()
+                            end
+                        end
                     },
                     skipMissingPreReqs = {
                         name = L("Skip quests with missing pre-requisites"),
@@ -1807,23 +1824,43 @@ function addon.settings:CreateAceOptionsPanel()
     }
 
     -- Build FAQ items
-    local faqBatch = 2
+    local helpBatch = 2
     for q, a in pairs(addon.help) do
-        optionsTable.args.helpPanel.args[faqBatch .. "q"] = {
-            order = faqBatch + 0.1,
+        optionsTable.args.helpPanel.args[helpBatch .. "q"] = {
+            order = helpBatch + 0.1,
             name = q,
             type = "header",
             width = "full"
         }
 
-        optionsTable.args.helpPanel.args[faqBatch .. "a"] = {
-            order = faqBatch + 0.2,
+        optionsTable.args.helpPanel.args[helpBatch .. "a"] = {
+            order = helpBatch + 0.2,
             name = a,
             type = "description",
             width = "full",
             fontSize = "medium"
         }
-        faqBatch = faqBatch + 1
+        helpBatch = helpBatch + 1
+    end
+
+    for title, data in pairs(addon.compatibility) do
+        optionsTable.args.helpPanel.args[helpBatch .. "a"] = {
+            order = helpBatch + 0.1,
+            name = title,
+            type = "header",
+            width = "full",
+            hidden = function() return not incompatibleAddons[title] end
+        }
+
+        optionsTable.args.helpPanel.args[helpBatch .. "d"] = {
+            order = helpBatch + 0.2,
+            name = fmt("%s %s\n\n%s", title, data.Reason, data.Recommendation),
+            type = "description",
+            width = "full",
+            fontSize = "medium",
+            hidden = function() return not incompatibleAddons[title] end
+        }
+        helpBatch = helpBatch + 1
     end
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
@@ -2008,4 +2045,24 @@ function addon.settings:RefreshProfile()
     addon.updateMap = true
     addon.RXPFrame.GenerateMenuTable()
     addon.RXPFrame.SetStepFrameAnchor()
+end
+
+function addon.settings:CheckAddonCompatibility()
+    if not addon.compatibility or
+        not self.db.profile.enableAddonIncompatibilityCheck then return end
+
+    local a, name
+
+    for i = 1, GetNumAddOns() do
+        if IsAddOnLoaded(i) then
+            name = GetAddOnInfo(i)
+
+            if addon.compatibility[name] then
+                incompatibleAddons[name] = true
+                a = addon.compatibility[name]
+                addon.comms.PrettyPrint("%s %s %s", name, a.Reason,
+                                        a.Recommendation)
+            end
+        end
+    end
 end

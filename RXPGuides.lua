@@ -536,6 +536,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
     if isInitialLogin then
         C_Timer.After(5, function ()
             addon.settings:DetectXPRate()
+            addon.settings:CheckAddonCompatibility()
         end)
     end
 end
