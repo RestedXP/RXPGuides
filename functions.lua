@@ -2895,7 +2895,17 @@ function addon.functions.target(self, text, ...)
         return element
     end
 end
-addon.functions.mob = addon.functions.target
+
+function addon.functions.mob(self, text, ...)
+    if type(self) == "string" then
+        local element = {}
+
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        element.mobs = {...}
+        return element
+    end
+end
 
 local BLquests = {
     [2583] = {
