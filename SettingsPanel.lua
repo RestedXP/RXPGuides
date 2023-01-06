@@ -124,7 +124,9 @@ function addon.settings:InitializeSettings()
             soundOnFindChannel = 'Master',
             scanForRares = true,
             notifyOnRares = true,
-            activeTargetScale = 1
+            activeTargetScale = 1,
+
+            enableAddonIncompatibilityCheck = true
         }
     }
 
@@ -1766,7 +1768,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Enables new features, forces reload to take effect"),
                         type = "toggle",
-                        width = "full",
+                        width = optionsWidth,
                         order = 1,
                         confirm = requiresReload,
                         set = function(info, value)
@@ -1777,7 +1779,7 @@ function addon.settings:CreateAceOptionsPanel()
                     debug = {
                         name = L("Enable Debug"),
                         type = "toggle",
-                        width = "full",
+                        width = optionsWidth,
                         order = 1.1
                     },
                     batchSize = {
@@ -1785,12 +1787,26 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Adjusts the batching window tolerance, used for hearthstone batching"),
                         type = "range",
-                        width = "normal",
-                        order = 2.1,
+                        width = optionsWidth,
+                        order = 1.2,
                         min = 1,
                         max = 100,
                         step = 1,
                         hidden = addon.gameVersion > 40000
+                    },
+                    enableAddonIncompatibilityCheck = {
+                        name = L("Check for Addon Incompatibility"), -- TODO locale
+                        desc = L(
+                            "Check loaded addons for known compatibility issues with RXP"),
+                        type = "toggle",
+                        width = "full",
+                        order = 2.0,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                self:CheckAddonCompatibility()
+                            end
+                        end
                     },
                     skipMissingPreReqs = {
                         name = L("Skip quests with missing pre-requisites"),
@@ -2032,7 +2048,9 @@ function addon.settings:RefreshProfile()
 end
 
 function addon.settings:CheckAddonCompatibility()
-    if not addon.compatibility then return end
+    if not addon.compatibility or
+        not self.db.profile.enableAddonIncompatibilityCheck then return end
+
     local a, name
 
     for i = 1, GetNumAddOns() do
