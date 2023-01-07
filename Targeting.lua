@@ -490,7 +490,7 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     end
 end
 
-function addon.targeting:UpdatetargetList(targets)
+function addon.targeting:UpdateTargetList(targets)
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.db.profile.showTargetingOnProximity then
@@ -509,7 +509,7 @@ function addon.targeting:UpdatetargetList(targets)
     self:UpdateTargetFrame()
 end
 
-function addon.targeting:UpdateunitscanList(targets)
+function addon.targeting:UpdateUnitscanList(targets)
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.db.profile.showTargetingOnProximity then
