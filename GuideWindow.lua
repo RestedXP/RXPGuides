@@ -736,6 +736,8 @@ function addon.SetStep(n, n2, loopback)
             addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
 
             addon.targeting:UpdateTargetList(stepTargets)
+
+            addon.targeting:CheckNameplates()
         else
             stepframe:Hide()
         end

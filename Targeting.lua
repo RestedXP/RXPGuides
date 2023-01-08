@@ -4,14 +4,19 @@ local fmt, tinsert, tremove, mmax = string.format, table.insert, table.remove,
                                     math.max
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros =
     GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros
-local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupAssistant,
-      UnitIsGroupLeader, IsInGroup, UnitOnTaxi, UnitIsPlayer, UnitIsUnit =
-    TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupAssistant,
-    UnitIsGroupLeader, IsInGroup, UnitOnTaxi, UnitIsPlayer, UnitIsUnit
+local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupLeader,
+      IsInGroup, UnitOnTaxi, UnitIsPlayer, UnitIsUnit = TargetUnit, UnitName,
+                                                        next, IsInRaid,
+                                                        UnitIsDead,
+                                                        UnitIsGroupLeader,
+                                                        IsInGroup, UnitOnTaxi,
+                                                        UnitIsPlayer, UnitIsUnit
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
 local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
 local wipe = wipe
 local GetRealZoneText = GetRealZoneText
+local GetNamePlates = C_NamePlate.GetNamePlates
+
 local GameTooltip = _G.GameTooltip
 
 local L = addon.locale.Get
@@ -197,8 +202,8 @@ function addon.targeting:PLAYER_REGEN_ENABLED()
     self:UpdateTargetFrame()
 end
 
-function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
-    if not nameplateID or not shouldTargetCheck() then return end
+function addon.targeting:CheckNameplate(nameplateID)
+    if not nameplateID then return end
 
     local unitName = UnitName(nameplateID)
 
@@ -258,6 +263,22 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
             end
         end
     end
+end
+
+function addon.targeting:CheckNameplates()
+    local nameplatesArray = GetNamePlates()
+
+    if not nameplatesArray then return end
+
+    for _, nameplate in ipairs(nameplatesArray) do
+        self:CheckNameplate(nameplate.namePlateUnitToken)
+    end
+end
+
+function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
+    if not nameplateID or not shouldTargetCheck() then return end
+
+    self:CheckNameplate(nameplateID)
 end
 
 function addon.targeting:UPDATE_MOUSEOVER_UNIT()
