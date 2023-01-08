@@ -35,8 +35,7 @@ local proxmityPolling = {
     matchTimeout = 5,
     scanData = {},
     scannedTargets = {},
-    rareAnnounced = {},
-    activeMarks = {}
+    rareAnnounced = {}
 }
 
 local targetList = {}
@@ -432,12 +431,6 @@ addon.targeting.QUEST_PROGRESS = addon.targeting.GOSSIP_SHOW
 addon.targeting.QUEST_GREETING = addon.targeting.GOSSIP_SHOW
 addon.targeting.QUEST_COMPLETE = addon.targeting.GOSSIP_SHOW
 
-local function resetPlayerMark()
-    if not GetRaidTargetIndex("player") then return end
-
-    SetRaidTarget("player", GetRaidTargetIndex("player"))
-end
-
 function addon.targeting.CheckTargetProximity()
     if not shouldTargetCheck() or
         not addon.settings.db.profile.showTargetingOnProximity then return end
@@ -490,18 +483,6 @@ function addon.targeting.CheckTargetProximity()
         end
 
         if IsInGroup() and not UnitIsGroupLeader('player') then return end
-
-        for marker, _ in pairs(proxmityPolling.activeMarks) do
-            -- Reset raid icons on timeout
-            SetRaidTarget("player", marker)
-        end
-
-        resetPlayerMark()
-
-        C_Timer.After(0.1, function() resetPlayerMark() end)
-        C_Timer.After(0.3, function() resetPlayerMark() end)
-
-        wipe(proxmityPolling.activeMarks)
     end
 end
 
@@ -699,8 +680,6 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
 
     if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~=
         markerId then SetRaidTarget(unitId, markerId) end
-
-    proxmityPolling.activeMarks[markerId] = true
 end
 
 function addon.targeting:UpdateTargetFrame(selector)
