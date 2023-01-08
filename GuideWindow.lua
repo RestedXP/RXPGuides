@@ -502,8 +502,9 @@ function addon.SetStep(n, n2, loopback)
     local totalHeight = 0
     local c = 0
     local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
-    local unitscanList = {}
-    local targetList = {}
+    local stepUnitscan = {}
+    local stepMobs = {}
+    local stepTargets = {}
     for i, step in pairs(activeSteps) do
 
         local index = step.index
@@ -700,12 +701,17 @@ function addon.SetStep(n, n2, loopback)
             end
             if element.unitscan then
                 for _, t in ipairs(element.unitscan) do
-                    table.insert(unitscanList, t)
+                    table.insert(stepUnitscan, t)
+                end
+            end
+            if element.mobs then
+                for _, t in ipairs(element.mobs) do
+                    table.insert(stepMobs, t)
                 end
             end
             if element.targets then
                 for _, t in ipairs(element.targets) do
-                    table.insert(targetList, t)
+                    table.insert(stepTargets, t)
                 end
             end
             local spacing = 0
@@ -727,9 +733,9 @@ function addon.SetStep(n, n2, loopback)
                 end
             end
 
-            addon.targeting:UpdateUnitscanList(unitscanList)
+            addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
 
-            addon.targeting:UpdateTargetList(targetList)
+            addon.targeting:UpdateTargetList(stepTargets)
         else
             stepframe:Hide()
         end
