@@ -4,12 +4,13 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Horde
+<< Horde Warrior/Shaman
 #name 13-22 The Barrens
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor Shaman/Warrior
-#next 22-25 Hillsbrad / South Barrens
+#next 22-25 Hillsbrad / South Barrens;22-26 Hillsbrad Foothills JJ
+
 step << Tauren Shaman
     .goto Durotar,50.8,43.6
     .accept 840 >>Accept Conscript of the Horde
@@ -1397,6 +1398,8 @@ step << Shaman
     .goto The Barrens,43.4,77.4
     .turnin 1535 >>Turn in Call of Water
     .accept 1536 >>Accept Call of Water
+step
+    .destroy 11149 >>Delete your Samophlange Manual
 step << Shaman
     .goto Thunder Bluff,44.4,59.0
     #completewith next
@@ -1413,7 +1416,7 @@ step << Warrior
 .goto Orgrimmar,79.7,31.4
         #completewith next
 .trainer >> Go and train your class spells
-step << Warrior
+step << Warrior tbc
     .goto Orgrimmar,81.2,19.0
     .collect 29009,1 >> Purchase a Heavy Throwing Dagger from Zendo'jian
 step << Warrior/Paladin/Shaman
@@ -1422,6 +1425,4 @@ step << Warrior/Paladin/Shaman
 step << Shaman
     .goto Orgrimmar,81.5,19.6
     .train 196 >>Train 1h Axes
-step
-    .destroy 11149 >>Delete your Samophlange Manual
 ]])
