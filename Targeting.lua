@@ -34,22 +34,27 @@ local proxmityPolling = {
     activeMarks = {}
 }
 
-local friendlyTargets = {}
-local friendlyTargetPlaceholder = 132150
-local friendlyTargetIcons = {
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1.blp",
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_2.blp",
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_3.blp",
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_4.blp"
+local targetList = {}
+local targetPlaceholder = 132150
+local targetIcons = {
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_4.blp", -- Triangle
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_3.blp", -- Diamond
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1.blp", -- Star
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_2.blp" -- Circle
 }
 
-local enemyTargets = {}
-local enemyTargetPlaceholder = 132212
-local enemyTargetIcons = {
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_8.blp",
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_7.blp",
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_6.blp",
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_5.blp"
+local mobList = {}
+local mobPlaceholder = 14144
+local mobIcons = {
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_8.blp", -- Skull
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_7.blp", -- Cross
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_6.blp" -- Square
+}
+
+local unitscanList = {}
+local unitscanPlaceholder = 132212
+local unitscanIcons = {
+    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_5.blp" -- Moon
 }
 
 local rareTargets = {}
@@ -116,8 +121,8 @@ local function shouldTargetCheck()
     return not addon.isHidden and
                addon.settings.db.profile.enableTargetAutomation and
                not IsInRaid() and not UnitOnTaxi("player") and
-               (next(enemyTargets) ~= nil or next(friendlyTargets) ~= nil or
-                   next(rareTargets) ~= nil or
+               (next(unitscanList) ~= nil or next(mobList) ~= nil or
+                   next(targetList) ~= nil or next(rareTargets) ~= nil or
                    next(proxmityPolling.scannedTargets) ~= nil)
 
 end
@@ -140,9 +145,11 @@ function addon.targeting:UpdateMacro(queuedTargets)
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
 
-    for _, t in ipairs(friendlyTargets) do tinsert(targets, t) end
+    for _, t in ipairs(targetList) do tinsert(targets, t) end
 
-    for _, t in ipairs(enemyTargets) do tinsert(targets, t) end
+    for _, t in ipairs(mobList) do tinsert(targets, t) end
+
+    for _, t in ipairs(unitscanList) do tinsert(targets, t) end
 
     local content
     for _, t in ipairs(targets) do
@@ -198,7 +205,7 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
     if not unitName then return end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
-        for i, name in ipairs(friendlyTargets) do
+        for i, name in ipairs(targetList) do
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
 
@@ -210,7 +217,17 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
     end
 
     if addon.settings.db.profile.enableEnemyTargeting then
-        for i, name in ipairs(enemyTargets) do
+        for i, name in ipairs(mobList) do
+            if name == unitName then
+                self:UpdateTargetFrame(nameplateID)
+
+                if addon.settings.db.profile.enableMobMarking then
+                    self:UpdateMarker("mob", nameplateID, i)
+                end
+            end
+        end
+
+        for i, name in ipairs(unitscanList) do
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
 
@@ -219,7 +236,7 @@ function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
                 end
 
                 if addon.settings.db.profile.enableEnemyMarking then
-                    self:UpdateMarker("enemy", nameplateID, i)
+                    self:UpdateMarker("unitscan", nameplateID, i)
                 end
             end
         end
@@ -252,7 +269,7 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
     if not unitName then return end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
-        for i, name in ipairs(friendlyTargets) do
+        for i, name in ipairs(targetList) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
@@ -264,7 +281,17 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
     end
 
     if addon.settings.db.profile.enableEnemyTargeting then
-        for i, name in ipairs(enemyTargets) do
+        for i, name in ipairs(mobList) do
+            if name == unitName then
+                self:UpdateTargetFrame(kind)
+
+                if addon.settings.db.profile.enableMobMarking then
+                    self:UpdateMarker("mob", kind, i)
+                end
+            end
+        end
+
+        for i, name in ipairs(unitscanList) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
@@ -273,7 +300,7 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
                 end
 
                 if addon.settings.db.profile.enableEnemyMarking then
-                    self:UpdateMarker("enemy", kind, i)
+                    self:UpdateMarker("unitscan", kind, i)
                 end
             end
         end
@@ -306,7 +333,7 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
     if not unitName then return end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
-        for i, name in ipairs(friendlyTargets) do
+        for i, name in ipairs(targetList) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
@@ -318,12 +345,22 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
     end
 
     if addon.settings.db.profile.enableEnemyTargeting then
-        for i, name in ipairs(enemyTargets) do
+        for i, name in ipairs(mobList) do
+            if name == unitName then
+                self:UpdateTargetFrame(kind)
+
+                if addon.settings.db.profile.enableMobMarking then
+                    self:UpdateMarker("mob", kind, i)
+                end
+            end
+        end
+
+        for i, name in ipairs(unitscanList) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
                 if addon.settings.db.profile.enableEnemyMarking then
-                    self:UpdateMarker("enemy", kind, i)
+                    self:UpdateMarker("unitscan", kind, i)
                 end
             end
         end
@@ -354,24 +391,9 @@ function addon.targeting:GOSSIP_SHOW()
 
     -- Return after first match, won't be an enemy and friendly target as the same step
     if addon.settings.db.profile.enableFriendlyTargeting then
-        for i, name in ipairs(friendlyTargets) do
+        for i, name in ipairs(targetList) do
             if name == targetUnit then
-                tremove(friendlyTargets, i)
-                self:UpdateTargetFrame("target")
-                self:UpdateMacro()
-
-                if GetRaidTargetIndex("target") ~= nil then
-                    SetRaidTarget("target", 0)
-                end
-                return
-            end
-        end
-    end
-
-    if addon.settings.db.profile.enableEnemyTargeting then
-        for i, name in ipairs(enemyTargets) do
-            if name == targetUnit then
-                tremove(enemyTargets, i)
+                tremove(targetList, i)
                 self:UpdateTargetFrame("target")
                 self:UpdateMacro()
 
@@ -404,14 +426,19 @@ function addon.targeting.CheckTargetProximity()
     end
 
     if addon.settings.db.profile.enableEnemyTargeting then
-        for _, name in pairs(enemyTargets) do
-            proxmityPolling.scanData = {name = name, kind = 'enemy'}
+        for _, name in pairs(unitscanList) do
+            proxmityPolling.scanData = {name = name, kind = 'unitscan'}
+            TargetUnit(name, true)
+        end
+
+        for _, name in pairs(mobList) do
+            proxmityPolling.scanData = {name = name, kind = 'mob'}
             TargetUnit(name, true)
         end
     end
 
     if addon.settings.db.profile.enableFriendlyTargeting then
-        for _, name in pairs(friendlyTargets) do
+        for _, name in pairs(targetList) do
             proxmityPolling.scanData = {name = name, kind = 'friendly'}
             TargetUnit(name, true)
         end
@@ -490,7 +517,7 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     end
 end
 
-function addon.targeting:UpdateFriendlyTargets(targets)
+function addon.targeting:UpdateTargetList(targets)
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.db.profile.showTargetingOnProximity then
@@ -501,28 +528,29 @@ function addon.targeting:UpdateFriendlyTargets(targets)
         end
     end
 
-    if #friendlyTargets == 0 and #targets == 0 then return end
+    if #targetList == 0 and #targets == 0 then return end
 
-    friendlyTargets = targets
+    targetList = targets
 
     self:UpdateMacro()
     self:UpdateTargetFrame()
 end
 
-function addon.targeting:UpdateEnemyTargets(targets)
+function addon.targeting:UpdateEnemyList(unitscan, mobs)
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.db.profile.showTargetingOnProximity then
         for name, kind in pairs(proxmityPolling.scannedTargets) do
-            if kind == 'enemy' then
+            if kind == 'unitscan' or kind == 'mob' then
                 proxmityPolling.scannedTargets[name] = nil
             end
         end
     end
 
-    if #enemyTargets == 0 and #targets == 0 then return end
+    -- if #unitscanList == 0 and #unitscan == 0 and #mobList == 0 then return end
 
-    enemyTargets = targets
+    unitscanList = unitscan
+    mobList = mobs
 
     self:UpdateMacro()
     self:UpdateTargetFrame()
@@ -636,11 +664,13 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     if index > 4 then return end
 
     local markerId
-    if kind == "friendly" then
+    if kind == 'friendly' then
         -- Use star, circle, diamond, and triangle
-        markerId = 0 + index
-    elseif kind == "enemy" or kind == 'rare' then
-        -- use skull, cross, square, and moon
+        markerId = index
+    elseif kind == 'unitscan' or kind == 'rare' then
+        markerId = 5 -- moon
+    elseif kind == 'mob' then
+        -- use skull, cross, square
         markerId = 9 - index
     end
 
@@ -652,26 +682,34 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     proxmityPolling.activeMarks[markerId] = true
 end
 
-function addon.targeting:UpdateTargetFrame(kind)
+function addon.targeting:UpdateTargetFrame(selector)
     local targetFrame = self.activeTargetFrame
 
     if InCombatLockdown() then return end
 
     local enemyTargetButtons = targetFrame.enemyTargetButtons
     local j = 0
-    -- If proximity disabled, show all
-    local enemiesList = addon.settings.db.profile.showTargetingOnProximity and
-                            {} or enemyTargets
+    local enemiesList
 
     if addon.settings.db.profile.showTargetingOnProximity then
-        for name, targetkind in pairs(proxmityPolling.scannedTargets) do
-            if targetkind == 'enemy' or targetkind == 'rare' then
-                tinsert(enemiesList, name)
+        enemiesList = {}
+    else
+        -- If proximity disabled, show all
+        for n, k in pairs(unitscanList) do enemiesList[n] = k end
+
+        for n, k in pairs(mobList) do enemiesList[n] = k end
+    end
+
+    if addon.settings.db.profile.showTargetingOnProximity then
+        for name, targetKind in pairs(proxmityPolling.scannedTargets) do
+            if targetKind ~= 'friendly' then
+                -- enemies row contains, unitscan, mob, and rare
+                enemiesList[name] = targetKind
             end
         end
     end
 
-    for _, targetName in ipairs(enemiesList) do
+    for targetName, k in pairs(enemiesList) do
         j = j + 1
         local btn = enemyTargetButtons[j]
 
@@ -698,7 +736,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             local icon = btn.icon
             icon.isDefault = true
             icon:SetAllPoints(true)
-            icon:SetTexture(enemyTargetIcons[j] or enemyTargetPlaceholder)
+            icon:SetTexture(unitscanIcons[j] or unitscanPlaceholder)
 
             btn:SetScript("OnEnter", fOnEnter)
             btn:SetScript("OnLeave", fOnLeave)
@@ -713,16 +751,20 @@ function addon.targeting:UpdateTargetFrame(kind)
                          '/cleartarget\n/targetexact ' .. targetName)
 
         if btn.targetData and btn.targetData.name ~= targetName then
-            btn.icon:SetTexture(enemyTargetIcons[j] or enemyTargetPlaceholder)
+            if k == 'unitscan' or k == 'rare' then
+                btn.icon:SetTexture(unitscanIcons[j] or unitscanPlaceholder)
+            else -- mob
+                btn.icon:SetTexture(mobIcons[j] or mobPlaceholder)
+            end
             btn.icon.isDefault = true
         end
 
-        btn.targetData = {name = targetName, kind = "enemy"}
+        btn.targetData = {name = targetName, kind = k}
         -- If target or mouseover, set portrait
         -- TODO cache icons, relies on button order, resets otherwise
         -- SetPortraitTexture and SetPortraitToTexture?
-        if kind and UnitName(kind) == targetName and btn.icon.isDefault then
-            SetPortraitTexture(btn.icon, kind)
+        if selector and UnitName(selector) == targetName and btn.icon.isDefault then
+            SetPortraitTexture(btn.icon, selector)
             btn.icon.isDefault = false
         end
         btn:Show()
@@ -732,7 +774,7 @@ function addon.targeting:UpdateTargetFrame(kind)
     local i = 0
     -- If proximity disabled, show all
     local friendlyList = addon.settings.db.profile.showTargetingOnProximity and
-                             {} or friendlyTargets
+                             {} or targetList
 
     if addon.settings.db.profile.showTargetingOnProximity then
         for name, targetkind in pairs(proxmityPolling.scannedTargets) do
@@ -769,7 +811,7 @@ function addon.targeting:UpdateTargetFrame(kind)
             local icon = btn.icon
             icon.isDefault = true
             icon:SetAllPoints(true)
-            icon:SetTexture(friendlyTargetIcons[i] or friendlyTargetPlaceholder)
+            icon:SetTexture(targetIcons[i] or targetPlaceholder)
 
             btn:SetScript("OnEnter", fOnEnter)
             btn:SetScript("OnLeave", fOnLeave)
@@ -784,15 +826,14 @@ function addon.targeting:UpdateTargetFrame(kind)
                          '/cleartarget\n/targetexact ' .. targetName)
 
         if btn.targetData and btn.targetData.name ~= targetName then
-            btn.icon:SetTexture(friendlyTargetIcons[i] or
-                                    friendlyTargetPlaceholder)
+            btn.icon:SetTexture(targetIcons[i] or targetPlaceholder)
             btn.icon.isDefault = true
         end
 
         btn.targetData = {name = targetName, kind = "friendly"}
         -- If target or mouseover, set portrait
-        if kind and UnitName(kind) == targetName and btn.icon.isDefault then
-            SetPortraitTexture(btn.icon, kind)
+        if selector and UnitName(selector) == targetName and btn.icon.isDefault then
+            SetPortraitTexture(btn.icon, selector)
             btn.icon.isDefault = false
         end
         btn:Show()
@@ -802,15 +843,15 @@ function addon.targeting:UpdateTargetFrame(kind)
 
     for n = i + 1, #friendlyTargetButtons do
         friendlyTargetButtons[n]:Hide()
-        friendlyTargetButtons[n].icon:SetTexture(
-            friendlyTargetIcons[n] or friendlyTargetPlaceholder)
+        friendlyTargetButtons[n].icon:SetTexture(targetIcons[n] or
+                                                     targetPlaceholder)
         friendlyTargetButtons[n].icon.isDefault = true
     end
 
     for n = j + 1, #enemyTargetButtons do
         enemyTargetButtons[n]:Hide()
-        enemyTargetButtons[n].icon:SetTexture(
-            enemyTargetIcons[n] or enemyTargetPlaceholder)
+        enemyTargetButtons[n].icon:SetTexture(unitscanIcons[n] or
+                                                  unitscanPlaceholder)
         enemyTargetButtons[n].icon.isDefault = true
     end
 
@@ -846,6 +887,7 @@ function addon.targeting:LoadRares()
         return
     end
 
+    -- Reset found rares
     for name, kind in pairs(proxmityPolling.scannedTargets) do
         if kind == 'rare' then proxmityPolling.scannedTargets[name] = nil end
     end

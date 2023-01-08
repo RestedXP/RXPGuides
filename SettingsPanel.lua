@@ -119,6 +119,7 @@ function addon.settings:InitializeSettings()
             enableTargetMarking = true,
             enableEnemyTargeting = true,
             enableEnemyMarking = true,
+            enableMobMarking = true,
             showTargetingOnProximity = true,
             soundOnFind = 3175,
             soundOnFindChannel = 'Master',
@@ -1368,11 +1369,20 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     enableEnemyMarking = {
                         name = L("Mark Enemy Targets"), -- TODO locale
-                        desc = L(
-                            "Mark enemy targets with skull, cross, square, and moon"),
+                        desc = L("Mark special enemy targets with moon"),
                         type = "toggle",
-                        width = optionsWidth * 2,
+                        width = optionsWidth,
                         order = 2.31,
+                        disabled = function()
+                            return not self.db.profile.enableTargetAutomation
+                        end
+                    },
+                    enableMobMarking = {
+                        name = L("Mark Enemy Mobs"), -- TODO locale
+                        desc = L("Mark enemy mobs with skull, cross, and square"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.32,
                         disabled = function()
                             return not self.db.profile.enableTargetAutomation
                         end
