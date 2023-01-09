@@ -270,7 +270,7 @@ step
     .goto Tirisfal Glades,34.32,56.79
     >>Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Ragged Scavengers|r. Loot them for their |cFF00BCD4Scavenger Paws|r 
     >>Kill |cFFFF5722Duskbats|r and |cFFFF5722Mangy Duskbats|r. Loot them for their |cFF00BCD4Duskbat Wings|r
-    >>|cFFFCDC00Try to avoid |cFFFF5722Mangy Duskbats|r if you can due to being much tougher to kill than |cFFFF5722Duskbats|r|r
+    >>|cFFFCDC00Try to avoid |cFFFF5722Mangy Duskbats|r if you can due to them being much tougher to kill than |cFFFF5722Duskbats|r|r
     .complete 376,1 --Collect Scavenger Paw (x6)
     .complete 376,2 --Collect Duskbat Wing (x6)
     .mob Young Scavenger
@@ -350,7 +350,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
     .turnin 3096 >> Turn in Encrypted Scroll
     .train 53 >> Train |T132090:0|t[Backstab]
-    .money >0.1
+    .money <0.1
     .target David Trias
 step << Rogue
     #label Training2
@@ -399,7 +399,7 @@ step
     >>Kill |cFFFF5722Young Night Web Spiders|r inside the cave
 	.complete 380,2 --Kill Night Web Spider (x8)
     .mob Night Web Spider
-step
+step << Warlock
     #completewith ScarletC
     .cast 688 >>|cFFFCDC00Cast|r |T136218:0|t[Summon Imp]
 step
@@ -410,10 +410,6 @@ step
     .goto Tirisfal Glades,31.61,65.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Saltain|r
     .turnin 3902 >> Turn in Scavenging Deathknell
-step
-    .goto Tirisfal Glades,31.61,65.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Saltain|r
-    .accept 3902 >> Accept Scavenging Deathknell
     .target Deathguard Saltain
 step
     #sticky
@@ -443,7 +439,7 @@ step
     .loop 40,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
     >>Kill |cFFFF5722Scarlet Initiates|r and |cFFFF5722Scarlet Converts|r. Loot them for their |cFF00BCD4Scarlet Armbands|r
     >>|cFFFCDC00Don't kill |cFFFF5722Meven Korgal|r yet|r
-    >>|cFFFCDC00Try to avoid |cFFFF5722Scarlet Converts|r if you can as they have |T135843:0|t[Frost Armor] (slows your attack speed)|r << Warrior/Rogue
+    >>|cFFFCDC00Try to avoid |cFFFF5722Scarlet Converts|r if you can as they have|r |T135843:0|t[Frost Armor] |cFFFCDC00(slows your attack speed)|r << Warrior/Rogue
     .complete 381,1 --Collect Scarlet Armband (12)
     .mob Scarlet Initiate
     .mob Scarlet Convert
@@ -512,7 +508,7 @@ step
     .target Calvin Montague
 step
     .goto Tirisfal Glades,38.96,55.74,20,0
-    .goto Tirisfal Glades,41.57,57.66,80 >>Run out toward Tirisfal Glades
+    .goto Tirisfal Glades,41.57,57.66,110 >>Run out toward Tirisfal Glades
     .isOnQuest 8
 step
     #completewith next
@@ -543,9 +539,9 @@ step << Warrior
     .target Austil de Mon
 step
     #completewith next
-    .goto Undercity,65,87,1.48,15,0
-    .goto Undercity,65,82,5.44,15,0
-    .goto Undercity,62,76,11.02,12,0
+    .goto Undercity,65.87,1.48,15,0
+    .goto Undercity,65.82,5.44,15,0
+    .goto Undercity,62.76,11.02,12,0
     .goto Undercity,54.67,11.25
     .zone Silvermoon City >> Take the Orb of Translocation to Silvermoon City
  step

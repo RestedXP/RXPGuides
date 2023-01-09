@@ -681,14 +681,22 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hannovia|r
     .train 3044 >>Train your class spells
     .target Hannovia
-step << Warrior tbc/Paladin tbc
+step << Undead Warrior tbc/Rogue
+    .goto Eversong Woods,48.34,45.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Larenis|r
+    .train 201 >>Train 1h Swords << Rogue
+    .train 202 >>Train 2h Swords << Undead Warrior tbc
+    .target Duelist Larenis
+    .money <0.11
+step << Warrior tbc/Paladin tbc/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135321:0|t[Gladius] (5s 9c). You'll come back later if you don't have enough yet
     .target Geron
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
-step << Warrior tbc/Paladin tbc
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+    .train 201,3 << Rogue
+step << Warrior tbc/Paladin tbc/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
     >>|cFF0E8312Buy a|r |T135321:0|t[Gladius] |cFF0E8312from him|r
@@ -696,7 +704,8 @@ step << Warrior tbc/Paladin tbc
     .target Geron
     .money <0.0509
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+    .train 201,3 << Rogue
 step << Warrior wotlk/Paladin wotlk
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
@@ -718,7 +727,8 @@ step << Rogue
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (3s 82c). You'll come back later if you don't have enough yet
     .target Geron
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+    .train 201,1
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
@@ -726,14 +736,15 @@ step << Rogue
     .collect 2494,1,8476,1 --Collect Stiletto
     .money <0.0382
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
-step << Warrior tbc/Paladin tbc
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+    .train 201,1
+step << Warrior tbc/Paladin tbc/Rogue
     #completewith Thaelis
     +Equip the |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior wotlk/Paladin wotlk
     #completewith Thaelis
     +Equip the |T133053:0|t[Wooden Mallet]
@@ -747,7 +758,7 @@ step << Rogue
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step
     #completewith next
     .goto Eversong Woods,46.96,43.56,40,0
@@ -853,14 +864,22 @@ step << Warlock tbc
     .collect 16302,1,8476,1 --Grimoire of Firebolt Rank 2
     .target Daestra
 	.xp <8,1
-step << Warrior tbc/Paladin tbc
+step << Undead Warrior tbc/Rogue
+    .goto Eversong Woods,48.34,45.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Larenis|r
+    .train 201 >>Train 1h Swords << Rogue
+    .train 202 >>Train 2h Swords << Undead Warrior tbc
+    .target Duelist Larenis
+    .money <0.11
+step << Warrior tbc/Paladin tbc/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135321:0|t[Gladius] (5s 9c). You'll come back later if you don't have enough yet
     .target Geron
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
-step << Warrior tbc/Paladin tbc
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+    .train 201,3 << Rogue
+step << Warrior tbc/Paladin tbc/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
     >>|cFF0E8312Buy a|r |T135321:0|t[Gladius] |cFF0E8312from him|r
@@ -868,7 +887,8 @@ step << Warrior tbc/Paladin tbc
     .target Geron
     .money <0.0509
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+    .train 201,3 << Rogue
 step << Warrior wotlk/Paladin wotlk
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
@@ -890,7 +910,8 @@ step << Rogue
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (3s 82c). You'll come back later if you don't have enough yet
     .target Geron
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+    .train 201,1
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
@@ -898,14 +919,15 @@ step << Rogue
     .collect 2494,1,8476,1 --Collect Stiletto
     .money <0.0382
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
-step << Warrior tbc/Paladin tbc
-    #completewith Caidanis
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+    .train 201,1
+step << Warrior tbc/Paladin tbc/Rogue
+    #completewith Thaelis
     +Equip the |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior wotlk/Paladin wotlk
     #completewith Caidanis
     +Equip the |T133053:0|t[Wooden Mallet]
@@ -919,7 +941,7 @@ step << Rogue
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step
     #completewith next
     .goto Eversong Woods,46.68,48.07,30,0
@@ -1211,11 +1233,11 @@ step << Warrior/Warlock/Hunter/Rogue
     .turnin 8482 >> Turn in Incriminating Documents
     .accept 8483 >> Accept The Dwarven Spy
     .target Aeldon Sunbrand
-step << Undead Warrior/Rogue
+step << Undead Warrior tbc/Rogue
     .goto Eversong Woods,48.34,45.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Larenis|r
     .train 201 >>Train 1h Swords << Rogue
-    .train 202 >>Train 2h Swords << Undead Warrior
+    .train 202 >>Train 2h Swords << Undead Warrior tbc
     .target Duelist Larenis
 step << Rogue
     .goto Eversong Woods,48.58,46.29,8,0
@@ -1247,14 +1269,14 @@ step << Warlock tbc
     >>|cFF0E8312Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cFF0E8312from her|r
     .collect 16302,1,8475,1 --Grimoire of Firebolt Rank 2
     .target Daestra
-step << Warrior tbc
+step << Warrior tbc/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135321:0|t[Gladius] (5s 9c). You'll come back later if you don't have enough yet
     .target Geron
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
-step << Warrior tbc
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Warrior tbc/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
     >>|cFF0E8312Buy a|r |T135321:0|t[Gladius] |cFF0E8312from him|r
@@ -1262,7 +1284,7 @@ step << Warrior tbc
     .target Geron
     .money <0.0509
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior wotlk
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
@@ -1284,7 +1306,8 @@ step << Rogue
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (3s 82c). You'll come back later if you don't have enough yet
     .target Geron
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+    .train 201,1
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
@@ -1292,14 +1315,15 @@ step << Rogue
     .collect 2494,1,8476,1 --Collect Stiletto
     .money <0.0382
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
-step << Warrior tbc
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+    .train 201,1
+step << Warrior tbc/Rogue
     #completewith Caidanis
     +Equip the |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior wotlk
     #completewith Caidanis
     +Equip the |T133053:0|t[Wooden Mallet]
@@ -1313,7 +1337,7 @@ step << Rogue
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Warrior/Warlock/Hunter/Rogue
     .goto Eversong Woods,44.57,53.31,10,0
     .goto Eversong Woods,44.01,52.77,10,0
@@ -2117,14 +2141,21 @@ step << !Paladin !Priest !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Aeldon|r
     .turnin 8483 >> Turn in The Dwarven Spy
     .target Aeldon Sunbrand
-step << Warrior tbc/Paladin tbc
+step << Undead Warrior tbc/Rogue
+    .goto Eversong Woods,48.34,45.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Larenis|r
+    .train 201 >>Train 1h Swords << Rogue
+    .train 202 >>Train 2h Swords << Undead Warrior tbc
+    .target Duelist Larenis
+    .money <0.11
+step << Warrior tbc/Paladin tbc/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135321:0|t[Gladius] (5s 9c). You'll come back later if you don't have enough yet
     .target Geron
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
-step << Warrior tbc/Paladin tbc
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Warrior tbc/Paladin tbc/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
     >>|cFF0E8312Buy a|r |T135321:0|t[Gladius] |cFF0E8312from him|r
@@ -2132,7 +2163,7 @@ step << Warrior tbc/Paladin tbc
     .target Geron
     .money <0.0509
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior wotlk/Paladin wotlk
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
@@ -2154,7 +2185,8 @@ step << Rogue
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (3s 82c). You'll come back later if you don't have enough yet
     .target Geron
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+    .train 201,1
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Geron|r
@@ -2162,14 +2194,15 @@ step << Rogue
     .collect 2494,1,8476,1 --Collect Stiletto
     .money <0.0382
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
-step << Warrior tbc/Paladin tbc
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+    .train 201,1
+step << Warrior tbc/Paladin tbc/Rogue
     #completewith Antheol2
     +Equip the |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior wotlk/Paladin wotlk
     #completewith Antheol2
     +Equip the |T133053:0|t[Wooden Mallet]
@@ -2183,7 +2216,7 @@ step << Rogue
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Paladin
     .goto Eversong Woods,48.39,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Noellene|r
@@ -2324,7 +2357,7 @@ step << BloodElf Warlock
     #completewith TheStone
     .goto Silvermoon City,75.95,52.92,30,0
     .goto Silvermoon City,75.65,45.04,15,0
-    .goto Silvermoon City,76.33,43.33,12 >>Go inside the building, then go downstairs
+    .goto Silvermoon City,76.33,43.33,12 >>Go inside the building, then go downstairsd
     .isQuestAvailable 9529
 step << BloodElf Warlock
     .goto Silvermoon City,74.39,47.16
@@ -2531,7 +2564,7 @@ step << Hunter
     .money <0.2252 << Orc/Troll
     .money <0.2144 << BloodElf
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.46
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step << Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
@@ -2546,7 +2579,7 @@ step << Hunter
     .use 2515
     .itemcount 2515,1
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.46
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step
     .goto Eversong Woods,59.52,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Arathel|r
@@ -2834,14 +2867,14 @@ step << Hunter
     .money <0.1752 << Orc/Troll
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.46
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step << Hunter
     #completewith HunterTrain
     +Equip the |T135489:0|t[Laminated Recurve Bow]
     .use 2515
     .itemcount 2515,1
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.46
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step
     .goto Eversong Woods,59.52,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Arathel|r
@@ -2969,14 +3002,14 @@ step << Hunter
     .money <0.1752 << Orc/Troll
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.46
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step << Hunter
     #completewith HunterTrain
     +Equip the |T135489:0|t[Laminated Recurve Bow]
     .use 2515
     .itemcount 2515,1
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.46
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step
     #completewith next
     .goto Eversong Woods,59.53,62.16,12,0
@@ -3222,7 +3255,7 @@ step << Hunter
     .money <0.3621 << BloodElf
     .money <0.3812 << Troll/Orc
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.68
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
 step << Hunter
     #completewith HunterTrain
     .goto Silvermoon City,83.45,30.13,15,0
@@ -3265,7 +3298,7 @@ step << Hunter
     .money <0.3621 << BloodElf
     .money <0.3812 << Troll/Orc
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.68
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
 step << Rogue
     #completewith Louis
     .goto Silvermoon City,62.89,31.26,30,0
@@ -3273,7 +3306,7 @@ step << Rogue
     .goto Silvermoon City,49.45,15.00
     .zone Undercity >>Take the Orb of Translocation to Undercity
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #completewith Louis
     .goto Undercity,59.81,11.33,20,0
@@ -3283,7 +3316,7 @@ step << Rogue
     .goto Undercity,60.52,44.02,10,0
     .goto Undercity,60.07,47.70,10 >>Take the lift down to the Undercity
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
@@ -3293,7 +3326,7 @@ step << !Undead Rogue
     .money <0.4046 << Troll/Orc
     .money <0.3844 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
@@ -3303,7 +3336,7 @@ step << !Undead Rogue
     .money <0.2023 << Troll/Orc
     .money <0.1922 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
@@ -3313,7 +3346,7 @@ step << !Undead Rogue
     .money <0.7632 << Troll/Orc
     .money <0.7250 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
@@ -3323,7 +3356,7 @@ step << !Undead Rogue
     .money <0.3816 << Troll/Orc
     .money <0.3625 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     .goto Undercity,61.15,40.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Louis|r
@@ -3335,7 +3368,7 @@ step << Rogue
     .money <0.3844 << Undead/BloodElf
     .xp >12,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     .goto Undercity,61.15,40.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Louis|r
@@ -3347,7 +3380,7 @@ step << Rogue
     .money <0.1922 << Undead/BloodElf
     .xp >12,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     .goto Undercity,61.15,40.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Louis|r
@@ -3359,7 +3392,7 @@ step << Rogue
     .money <0.7250 << Undead/BloodElf
     .xp <12,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.70
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
 step << Rogue
     .goto Undercity,61.15,40.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Louis|r
@@ -3371,7 +3404,7 @@ step << Rogue
     .money <0.3625 << Undead/BloodElf
     .xp <12,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<<8.70
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
 step << Rogue
     .goto Undercity,61.15,40.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Louis|r
@@ -3382,7 +3415,7 @@ step << Rogue
     .money <0.4046 << Troll/Orc
     .money <0.3844 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #label Louis
     .goto Undercity,61.15,40.88
@@ -3394,7 +3427,7 @@ step << Rogue
     .money <0.2023 << Troll/Orc
     .money <0.1922 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #completewith next
     .hs >> Hearth to Falconwing Square
@@ -4453,7 +4486,7 @@ step << Hunter tbc
     .collect 28164,1,9281,1 << Hunter tbc --Tranquillien Flamberge (1)
     .target Provisioner Vredigar
     .itemStat 8,ITEM_MOD_ARMOR_SHORT,<48
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.14
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
 step << Hunter TBC
     .goto Ghostlands,47.71,32.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vredigar|r
@@ -4467,7 +4500,7 @@ step << Hunter tbc
     >>|cFF0E8312Buy the|r |T135277:0|t[Tranquillien Flamberge] |cFF0E8312from him|r
     .collect 28164,1,9281,1 << Hunter tbc --Tranquillien Flamberge (1)
     .target Provisioner Vredigar
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.14
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
 step << skip
     #sticky
     #completewith Poster13
@@ -4483,7 +4516,7 @@ step << Paladin
     .collect 28164,1,9281,1 --Collect Tranquillien Flamberge (1)
     .target Provisioner Vredigar
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.14
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
     .itemStat 8,ITEM_MOD_ARMOR_SHORT,<99
 step << Paladin
     .goto Ghostlands,47.71,32.32
@@ -4499,7 +4532,7 @@ step << Paladin
     .collect 28164,1,9281,1 --Collect Tranquillien Flamberge (1)
     .target Provisioner Vredigar
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.14
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
 step << Mage/Priest/Warlock
     #completewith ManaEssence
     +Equip the |T132562:0|t[Apprentice Boots]
@@ -4521,7 +4554,7 @@ step << Hunter tbc
     .itemcount 22992,1
     .itemcount 28164,1
     .itemStat 8,ITEM_MOD_ARMOR_SHORT,<48
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.14
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
 step << Hunter tbc
     #label Huntertbc2
     #requires Huntertbc1
@@ -4536,7 +4569,7 @@ step << Hunter tbc
     +Equip the |T135277:0|t[Tranquillien Flamberge]
     .use 28164
     .itemcount 28164,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.14
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
 step << Paladin
     #label Paladinwep1
     #completewith ManaEssence
@@ -4547,7 +4580,7 @@ step << Paladin
     .itemcount 28164,1
     .itemStat 8,ITEM_MOD_ARMOR_SHORT,<99
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.14
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
 step << Paladin
     #label Paladinwep2
     #requires Paladinwep1
@@ -4563,7 +4596,7 @@ step << Paladin
     .use 28164
     .itemcount 28164,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.14
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
 step
     #completewith ManaEssence
     .abandon 9315 >> Abandon Anok'suten
@@ -4582,9 +4615,9 @@ step << Rogue
     .money <0.7893 << Orc/Troll
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -4594,7 +4627,7 @@ step << Rogue
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -4604,8 +4637,8 @@ step << Rogue
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith ManaEssence
     +Equip the |T135427:0|t[Throat Piercers] and |T135344:0|t[Sinister Scimitar]
@@ -4615,24 +4648,24 @@ step << Rogue
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith ManaEssence
     +Equip the |T135344:0|t[Sinister Scimitar]
     .use 29583
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     #completewith ManaEssence
     +Equip the |T135427:0|t[Throat Piercers]
     .use 29584
     .itemcount 29584,1
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Renzithen|r, |cFF00FF25Rathiel|r, |cFF00FF25Valwyn|r, |cFF00FF25Dame|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
     .accept 9149 >> Accept The Plagued Coast
@@ -4713,7 +4746,7 @@ step << !Shaman !Warrior !Druid !BloodElf/!Warlock !Rogue
     .fly Silvermoon >> Fly to Silvermoon City
     .target Skymaster Sunwing
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << !Shaman !Warrior !Druid !Mage !BloodElf/!Warlock !Paladin !Rogue
     #xprate <1.5
     #completewith SMTraining2
@@ -4845,7 +4878,7 @@ step << BloodElf Priest
     .turnin 9133 >> Turn in Fly to Silvermoon City
     .accept 9134 >> Accept Skymistress Gloaming
     .target Sathren Azuredawn
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.50
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
 step << Priest
     .goto Silvermoon City,60.65,63.45,15,0
     .goto Silvermoon City,65.92,53.71
@@ -4854,7 +4887,7 @@ step << Priest
     >>|cFFFCDC00If they're all too expensive, skip this step|r
     .collect 11288,1,9281,1 --Greater Magic Wand
     .target Vynna
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.50
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
 step << BloodElf Priest
     .abandon 9133 >> Abandon Fly to Silvermoon City
 step << Priest/Mage
@@ -5566,9 +5599,9 @@ step << Rogue
     .money <0.7893 << Orc/Troll
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -5578,7 +5611,7 @@ step << Rogue
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -5588,8 +5621,8 @@ step << Rogue
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith Clearing
     +Equip the |T135427:0|t[Throat Piercers] and |T135344:0|t[Sinister Scimitar]
@@ -5599,24 +5632,24 @@ step << Rogue
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith Clearing
     +Equip the |T135344:0|t[Sinister Scimitar]
     .use 29583
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     #completewith Clearing
     +Equip the |T135427:0|t[Throat Piercers]
     .use 29584
     .itemcount 29584,1
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Renzithen|r, |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
     .turnin 9149 >> Turn in The Plagued Coast
@@ -5827,7 +5860,7 @@ step << !Druid !Shaman !Warrior !Paladin
     .fly Silvermoon >> Fly to Silvermoon City
     .target Skymaster Sunwing
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << !Druid !Shaman !Warrior
     #xprate <1.5
     #completewith SMTraining3
@@ -5836,7 +5869,7 @@ step << !Druid !Shaman !Warrior
     .fly Silvermoon >> Fly to Silvermoon City
     .target Skymaster Sunwing
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << Mage
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Antheol|r
@@ -5850,7 +5883,7 @@ step << !Druid !Shaman !Warrior !Paladin
     .goto Silvermoon City,73.39,59.65
     .zone Silvermoon City >>Enter Silvermoon
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << !Druid !Shaman !Warrior
     #xprate <1.5
     #completewith SMTraining3
@@ -5858,14 +5891,14 @@ step << !Druid !Shaman !Warrior
     .goto Silvermoon City,73.39,59.65
     .zone Silvermoon City >>Enter Silvermoon
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << Rogue
     #completewith SMTraining3
     .goto Silvermoon City,73.39,59.65,30,0
     .goto Silvermoon City,73.59,52.18,20,0
     .goto Silvermoon City,79.70,52.16,20 >>Travel toward |cFF00FF25Zelanis|r
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << BloodElf Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zelanis|r
@@ -5877,7 +5910,7 @@ step << BloodElf Rogue
     .xp <14,1
     .xp >16,1
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << BloodElf Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zelanis|r
@@ -5888,7 +5921,7 @@ step << BloodElf Rogue
     .train 6761,1
     .xp <16,1
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << BloodElf Rogue
     #label SMTraining3
     .goto Silvermoon City,79.70,52.16
@@ -5897,7 +5930,7 @@ step << BloodElf Rogue
     .accept 10372 >> Accept A Discreet Inquiry
     .target Zelanis
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << !BloodElf Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zelanis|r
@@ -5907,7 +5940,7 @@ step << !BloodElf Rogue
     .xp <14,1
     .xp >16,1
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << !BloodElf Rogue
     #label SMTraining3
     .goto Silvermoon City,79.70,52.16
@@ -5917,7 +5950,7 @@ step << !BloodElf Rogue
     .target Zelanis
     .xp <16,1
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << Rogue
     #completewith Scimitars
     .goto Silvermoon City,62.89,31.26,30,0
@@ -5925,7 +5958,7 @@ step << Rogue
     .goto Silvermoon City,49.45,15.00
     .zone Undercity >>Take the Orb of Translocation to Undercity
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #completewith Scimitars
     .goto Undercity,59.81,11.33,20,0
@@ -5935,7 +5968,7 @@ step << Rogue
     .goto Undercity,60.52,44.02,10,0
     .goto Undercity,60.07,47.70,10 >>Take the lift down to the Undercity
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
@@ -5945,7 +5978,7 @@ step << !Undead Rogue
     .money <0.7632 << Troll/Orc
     .money <0.7250 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
@@ -5955,7 +5988,7 @@ step << !Undead Rogue
     .money <0.3816 << Troll/Orc
     .money <0.3625 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     .goto Undercity,61.15,40.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Louis|r
@@ -5967,7 +6000,7 @@ step << Rogue
     .money <0.7250 << Undead/BloodElf
     .xp <12,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #label Scimitars
     .goto Undercity,61.15,40.88
@@ -5980,7 +6013,7 @@ step << Rogue
     .money <0.3625 << Undead/BloodElf
     .xp <12,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 --VV intentional that it's all Cutlass damage
 step << Rogue
     #completewith Clearing
@@ -6051,7 +6084,7 @@ step << Hunter
     .money <0.3621 << BloodElf
     .money <0.3812 << Troll/Orc
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.68
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
 step << Hunter
     #completewith SMTraining3
     .goto Silvermoon City,83.45,30.13,15,0
@@ -6090,7 +6123,7 @@ step << Hunter
     .money <0.3621 << BloodElf
     .money <0.3812 << Troll/Orc
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.68
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
 step << Warlock
     #completewith SMTraining3
     .goto Silvermoon City,73.39,59.65,30,0
@@ -6301,9 +6334,9 @@ step << Rogue
     .money <0.7893 << Orc/Troll
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -6313,7 +6346,7 @@ step << Rogue
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -6323,8 +6356,8 @@ step << Rogue
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith Clearing
     +Equip the |T135427:0|t[Throat Piercers] and |T135344:0|t[Sinister Scimitar]
@@ -6334,24 +6367,24 @@ step << Rogue
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith Clearing
     +Equip the |T135344:0|t[Sinister Scimitar]
     .use 29583
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     #completewith Clearing
     +Equip the |T135427:0|t[Throat Piercers]
     .use 29584
     .itemcount 29584,1
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step
     .goto Ghostlands,46.71,40.79,40,0
     .goto Ghostlands,46.90,42.95,40,0
@@ -6897,7 +6930,7 @@ step << Rogue
     .goto Silvermoon City,49.45,15.00
     .zone Undercity >>Take the Orb of Translocation to Undercity
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #completewith Scimitars2
     .goto Undercity,59.81,11.33,20,0
@@ -6907,7 +6940,7 @@ step << Rogue
     .goto Undercity,60.52,44.02,10,0
     .goto Undercity,60.07,47.70,10 >>Take the lift down to the Undercity
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
@@ -6917,7 +6950,7 @@ step << !Undead Rogue
     .money <0.7632 << Troll/Orc
     .money <0.7250 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Michael|r
@@ -6927,7 +6960,7 @@ step << !Undead Rogue
     .money <0.3816 << Troll/Orc
     .money <0.3625 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     .goto Undercity,61.15,40.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Louis|r
@@ -6939,7 +6972,7 @@ step << Rogue
     .money <0.7250 << Undead/BloodElf
     .xp <12,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #label Scimitars2
     .goto Undercity,61.15,40.88
@@ -6952,7 +6985,7 @@ step << Rogue
     .money <0.3625 << Undead/BloodElf
     .xp <12,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     .hs >> Hearth to Tranquillien
     .zoneskip Ghostlands
@@ -6984,7 +7017,7 @@ step << Priest
     >>|cFFFCDC00If they're all too expensive, skip this step|r
     .collect 11288,1,9281,1 --Greater Magic Wand
     .target Vynna
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.50
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
     .train 8122,1
 step << Priest/Mage
     #completewith SMTraining4
@@ -7031,7 +7064,7 @@ step << Hunter
     .money <0.3621 << BloodElf
     .money <0.3812 << Troll/Orc
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.68
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
 step << Hunter
     #completewith SMTraining4
     .goto Silvermoon City,83.45,30.13,15,0
@@ -7069,7 +7102,7 @@ step << Hunter
     .money <0.3621 << BloodElf
     .money <0.3812 << Troll/Orc
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.68
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
 step << Warlock
     #completewith SMTraining4
     .goto Silvermoon City,73.39,59.65,30,0
@@ -7259,9 +7292,9 @@ step << Rogue
     .money <0.7893 << Orc/Troll
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -7271,7 +7304,7 @@ step << Rogue
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -7281,8 +7314,8 @@ step << Rogue
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith Clearing
     +Equip the |T135427:0|t[Throat Piercers] and |T135344:0|t[Sinister Scimitar]
@@ -7292,24 +7325,24 @@ step << Rogue
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith Clearing
     +Equip the |T135344:0|t[Sinister Scimitar]
     .use 29583
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     #completewith Clearing
     +Equip the |T135427:0|t[Throat Piercers]
     .use 29584
     .itemcount 29584,1
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step
     .goto Ghostlands,54.84,49.30,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Quallestis|r and |cFF00FF25Kaendris|r
@@ -7360,7 +7393,7 @@ step << Hunter
     .money <0.4101 << BloodElf
     .money <0.4312 << Troll/Orc
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.68
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
 step << Hunter
     .goto Ghostlands,72.13,32.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narina|r
@@ -7370,7 +7403,7 @@ step << Hunter
     .money <0.3621 << BloodElf
     .money <0.3812 << Troll/Orc
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.68
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
 step << Hunter
     .goto Ghostlands,72.13,32.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narina|r
@@ -7701,9 +7734,9 @@ step << Rogue
     .money <0.7893 << Orc/Troll
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -7713,7 +7746,7 @@ step << Rogue
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -7723,8 +7756,8 @@ step << Rogue
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith Clearing
     +Equip the |T135427:0|t[Throat Piercers] and |T135344:0|t[Sinister Scimitar]
@@ -7734,24 +7767,24 @@ step << Rogue
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith Clearing
     +Equip the |T135344:0|t[Sinister Scimitar]
     .use 29583
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     #completewith Clearing
     +Equip the |T135427:0|t[Throat Piercers]
     .use 29584
     .itemcount 29584,1
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step
     #completewith next
     .goto Ghostlands,78.82,19.81,15,0
@@ -8021,9 +8054,9 @@ step << Rogue
     .money <0.7893 << Orc/Troll
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -8036,7 +8069,7 @@ step << Rogue
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -8049,8 +8082,8 @@ step << Rogue
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -8708,9 +8741,9 @@ step << Rogue
     .money <0.7893 << Orc/Troll
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -8720,7 +8753,7 @@ step << Rogue
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -8730,8 +8763,8 @@ step << Rogue
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith ManaEssence
     +Equip the |T135427:0|t[Throat Piercers] and |T135344:0|t[Sinister Scimitar]
@@ -8741,24 +8774,24 @@ step << Rogue
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
     .itemStat 18,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << Rogue
     #completewith ManaEssence
     +Equip the |T135344:0|t[Sinister Scimitar]
     .use 29583
     .itemcount 29583,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.00
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.0
 step << Rogue
     #completewith ManaEssence
     +Equip the |T135427:0|t[Throat Piercers]
     .use 29584
     .itemcount 29584,1
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.61 << tbc
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.50 << wotlk
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step
     .goto Ghostlands,46.02,33.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r
@@ -8867,7 +8900,7 @@ step << Priest
     >>|cFFFCDC00If they're all too expensive, skip this step|r
     .collect 11288,1,9425,1 --Greater Magic Wand
     .target Vynna
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.50
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
 step << Priest/Mage
     #completewith SMTraining5
     .goto Silvermoon City,75.95,52.92,30,0
@@ -8916,7 +8949,7 @@ step << Hunter
     .money <0.6032 << BloodElf
     .money <0.6336 << Troll/Orc
     .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.71
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.7
 step << Warlock
     #completewith SMTraining5
     .goto Silvermoon City,73.39,59.65,30,0
@@ -8991,7 +9024,7 @@ step << Rogue
     .goto Silvermoon City,73.59,52.18,20,0
     .goto Silvermoon City,79.70,52.16,20 >>Travel toward |cFF00FF25Zelanis|r
     .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
 step << Rogue
     #label SMTraining5
     .goto Silvermoon City,79.70,52.16
