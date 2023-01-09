@@ -4450,6 +4450,8 @@ function addon.functions.itemStat(self, ...)
             local stat
             if element.stat == "QUALITY" then
                 stat = GetInventoryItemQuality("player", element.slot)
+            elseif element.stat == "LEVEL" then
+                _, _, _, stat = GetItemInfo(GetInventoryItemID("player", element.slot))
             else
                 stat = stats[element.stat]
             end
