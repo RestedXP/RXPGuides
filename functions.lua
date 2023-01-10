@@ -2090,7 +2090,29 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
     local reverseLogic = element.reverseLogic
     -- print(level,element.level,(level >= element.level) == not reverseLogic)
 
-    if (level >= element.level) == not reverseLogic then
+    local skillLevelCheck = level >= element.level
+    if element.skill == "riding" and addon.mountIDs and not element.mountTrained and skillLevelCheck then
+        local skillLevel = element.level
+        local function MountCheck(range)
+            --print('g',range)
+            for _,id in pairs(addon.mountIDs[range]) do
+                if IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) then
+                    element.mountTrained = true
+                    return true
+                end
+            end
+            return false
+        end
+
+        if (skillLevel >= 75 and skillLevel < 150 and level < 150 and not MountCheck(75)) or
+        (skillLevel >= 150 and skillLevel < 225 and level < 225 and not MountCheck(150)) or
+        (skillLevel >= 225 and skillLevel < 300 and level < 300 and not MountCheck(225)) or
+        (skillLevel >= 300 and not (MountCheck(300) or MountCheck(375))) then
+            skillLevelCheck = false
+        end
+    end
+
+    if skillLevelCheck == not reverseLogic then
         if element.skipstep then
             if step.active and not step.completed and not addon.isHidden then
                 addon.updateSteps = true
