@@ -101,6 +101,8 @@ function addon.GetProfessionNames()
                     professionNames[profession] = GetSpellInfo(2575)
                 elseif id == 2383 then
                     professionNames[profession] = GetSpellInfo(9134)
+                elseif id == 1804 then
+                    professionNames[profession] = GetSpellInfo(1809)
                 else
                     professionNames[profession] = GetSpellInfo(id)
                 end

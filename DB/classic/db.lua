@@ -81,12 +81,15 @@ addon.professionID = {
     tailoring = {3908, 3909, 3910, 12180, 26790, 51309},
     cooking = {2550, 3102, 3413, 18260, 33359, 51296},
     firstaid = {3273, 3274, 7924, 10846, 27028, 45542},
-    fishing = {7620, 7731, 7732, 18248, 33095, 51294}
+    fishing = {7620, 7731, 7732, 18248, 33095, 51294},
+    lockpicking = {1804},
+    poisons = {2842},
 }
 
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
+C_Spell.RequestLoadSpellData(1809) -- lockpicking
 
 local events = {"PLAYER_XP_UPDATE","QUEST_LOG_UPDATE"}
 
