@@ -528,6 +528,7 @@ step
     .goto Tirisfal Glades,61.71,52.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Renee|r
     .turnin 8 >>Turn in A Rogue's Deal
+    .home << Set your Hearthstone to Brill << Priest tbc
     .vendor >>Vendor Trash << Warrior
     .isQuestAvailable 8463 << Warrior
 step << Warrior
@@ -537,6 +538,77 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Austil|r
     .trainer >>Train your class spells
     .target Austil de Mon
+step << Priest tbc
+    .goto Tirisfal Glades,61.99,52.19,6,0
+    .goto Tirisfal Glades,61.76,52.31,6,0
+    .goto Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Beryl|r upstairs
+    .turnin 5651 >> Turn in In Favor of Darkness
+    .accept 5650 >> Accept Garments of Darkness
+    .train 2052 >> Train |T135929:0|t[Lesser Heal Rank 2]
+    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
+    .target Dark Cleric Beryl
+    .train 2052,1
+    .train 1243,1
+step << Priest tbc
+    .goto Tirisfal Glades,61.99,52.19,6,0
+    .goto Tirisfal Glades,61.76,52.31,6,0
+    .goto Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Beryl|r upstairs
+    .turnin 5651 >> Turn in In Favor of Darkness
+    .accept 5650 >> Accept Garments of Darkness
+    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
+    .target Dark Cleric Beryl
+    .train 1243,1
+ step << Priest tbc
+    .goto Tirisfal Glades,61.99,52.19,6,0
+    .goto Tirisfal Glades,61.76,52.31,6,0
+    .goto Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Beryl|r upstairs
+    .turnin 5651 >> Turn in In Favor of Darkness
+    .accept 5650 >> Accept Garments of Darkness
+    .train 2052 >> Train |T135929:0|t[Lesser Heal Rank 2]
+    .target Dark Cleric Beryl
+    .train 2052,1
+step << Priest tbc
+    .goto Tirisfal Glades,61.99,52.19,6,0
+    .goto Tirisfal Glades,61.76,52.31,6,0
+    .goto Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Beryl|r upstairs
+    .turnin 5651 >> Turn in In Favor of Darkness
+    .accept 5650 >> Accept Garments of Darkness
+    .target Dark Cleric Beryl
+step << Priest tbc
+    #sticky
+    #label Kel1
+    .goto Tirisfal Glades,59.18,46.49
+    .cast 2052 >> Cast |T135929:0|t[Lesser Heal Rank 2] on |cFF00FF25Kel|r
+    .isOnQuest 5650
+step << Priest tbc
+    #sticky
+    #requires Kel1
+    #completewith next
+    .goto Tirisfal Glades,59.18,46.49
+    .cast 1243 >> Cast |T135987:0|t[Power Word: Fortitude] on |cFF00FF25Kel|r
+step << Priest tbc
+    .goto Tirisfal Glades,59.18,46.49
+    >>Heal and then Fortify |cFF00FF25Kel|r
+    .complete 5650,1 --Heal and fortify Deathguard Kel
+    .target Deathguard Kel
+step << Priest tbc
+    #completewith next
+    .hs >> Hearth to Brill
+step << Priest tbc
+    .goto Tirisfal Glades,61.99,52.19,6,0
+    .goto Tirisfal Glades,61.76,52.31,6,0
+    .goto Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Beryl|r upstairs
+    .turnin 5650 >> Turn in Garments of Darkness
+    .target Dark Cleric Beryl
+step
+    #completewith next
+    .goto Tirisfal Glades,61.75,52.72,8,0
+    .goto Tirisfal Glades,61.58,52.99,8 >>Exit the Inn
 step
     #completewith next
     .goto Undercity,65.87,1.48,15,0
