@@ -1783,12 +1783,26 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.0,
                         confirm = requiresReload,
+                        get = function()
+                            if addon.settings.db.profile.hardcore then
+                                return "Hardcore"
+                            elseif RXPCData.GA then
+                                return "GoldAssistant"
+                            end
+
+                            return addon.settings.db.profile.activeTheme
+                        end,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             _G.ReloadUI()
                         end,
                         values = function()
                             return addon:GetThemeOptions()
+                        end,
+                        disabled = function()
+                            -- Disable selector if GA/Hardcore as they're special and branded
+                            return RXPCData.GA or
+                                       addon.settings.db.profile.hardcore
                         end
                     }
                 }

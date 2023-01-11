@@ -15,6 +15,7 @@ themes['Default'] = {
     applicable = function() return not RXPCData.GA end
 }
 
+-- Built-in themes must provide all properties
 themes['Hardcore'] = {
     background = {19 / 255, 0 / 255, 0 / 255, 1},
     bottomFrameBG = {31 / 255, 0 / 255, 0 / 255, 1},
@@ -22,6 +23,7 @@ themes['Hardcore'] = {
     mapPins = {0.9, 0.1, 0.1, 1},
     tooltip = "|c0000C1FF", -- AARRGGBB
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/Hardcore/",
+    font = _G.GameFontNormal:GetFont(),
     applicable = function() return addon.settings.db.profile.hardcore end
 }
 
@@ -32,6 +34,7 @@ themes['GoldAssistant'] = {
     mapPins = {0.95, 0.15, 0.15, 1},
     tooltip = "|c0000C1FF", -- AARRGGBB
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/GoldAssistant/",
+    font = _G.GameFontNormal:GetFont(),
     applicable = function() return RXPCData.GA == true end
 }
 
@@ -45,6 +48,12 @@ function addon:LoadActiveTheme()
     end
 
     local newTheme = themes[applicableTheme]
+
+    -- Reset theme to default is selected goes away
+    if not newTheme then
+        addon.settings.db.profile.activeTheme = "Default"
+        newTheme = themes[applicableTheme]
+    end
 
     if not newTheme.applicable() then return end
 
