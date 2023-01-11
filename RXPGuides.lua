@@ -411,7 +411,10 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     end
     addon.settings:InitializeSettings()
+    addon:LoadActiveTheme()
+    addon.SetupGuideWindow()
     RXPG_init()
+    addon:CreateActiveItemFrame()
     addon.comms:Setup()
     addon.targeting:Setup()
     if addon.settings.db.profile.enableTracker then addon.tracker:SetupTracker() end
@@ -519,6 +522,9 @@ function addon:OnEnable()
         end)
     end
 
+    --Only start update loop after everything initializes and enables
+    local updateFrame = CreateFrame("Frame")
+    updateFrame:SetScript("OnUpdate", addon.UpdateLoop)
 end
 
 
@@ -676,22 +682,17 @@ addon.updateInactiveQuest = {}
 
 addon.tickTimer = 0
 
-local updateFrame = CreateFrame("Frame")
-
-local eventType
 local updateTick = 0
-local updateStart = 0
-
 local skip = 0
-updateFrame:SetScript("OnUpdate", function(self, diff)
 
+function addon:UpdateLoop(diff)
     updateTick = updateTick + diff
+    --TODO
     if addon.isHidden then
         return
     elseif updateTick > (0.05+math.random()/128) then
         local currentTime = GetTime()
         updateTick = 0
-        updateStart = currentTime
         local activeQuestUpdate = 0
         skip = skip + 1
         local event = ""
@@ -787,12 +788,8 @@ updateFrame:SetScript("OnUpdate", function(self, diff)
                 event = event .. "/inactiveQ"
             end
         end
-        --[[if event ~= "" then
-            eventType = event
-            print(event)
-        end]]
     end
-end)
+end
 
 function addon.HardcoreToggle()
     if addon.game == "CLASSIC" then

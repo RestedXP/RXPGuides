@@ -40,9 +40,9 @@ function addon.settings.ChatCommand(input)
     input = input:trim()
     if input == "import" then
         -- addon.RXPOptions.expanded = true
-        if Settings and Settings.GetCategory then
-            Settings.GetCategory(addon.RXPOptions.name).expanded = true;
-            Settings.OpenToCategory(addon.RXPOptions.name);
+        if _G.Settings and _G.Settings.GetCategory then
+            _G.Settings.GetCategory(addon.RXPOptions.name).expanded = true;
+            _G.Settings.OpenToCategory(addon.RXPOptions.name);
             -- Settings.OpenToCategory(addon.settings.gui.import); -- causes UI taint on 10.0
         else
             _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
@@ -127,7 +127,10 @@ function addon.settings:InitializeSettings()
             notifyOnRares = true,
             activeTargetScale = 1,
 
-            enableAddonIncompatibilityCheck = true
+            enableAddonIncompatibilityCheck = true,
+
+            -- Themes
+            activeTheme = 'Default'
         }
     }
 
@@ -1768,10 +1771,32 @@ function addon.settings:CreateAceOptionsPanel()
                 order = 9,
                 args = {}
             },
+            lookAndFeel = {
+                type = "group",
+                name = L("Look and Feel"), -- TODO
+                order = 10,
+                args = {
+                    activeTheme = {
+                        name = L("Choose Theme"), -- TODO locale
+                        desc = L("Choose active theme"),
+                        type = "select",
+                        width = optionsWidth,
+                        order = 1.0,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        values = function()
+                            return addon:GetThemeOptions()
+                        end
+                    }
+                }
+            },
             advancedSettings = {
                 type = "group",
                 name = L("Advanced Settings"),
-                order = 10,
+                order = 20,
                 args = {
                     enableBetaFeatures = {
                         name = L("Enable Beta Features"),

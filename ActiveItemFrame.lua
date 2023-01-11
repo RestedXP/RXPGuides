@@ -196,8 +196,6 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
     f:SetHeight(40);
 end
 
-addon:CreateActiveItemFrame()
-
 local fOnEnter = function(self)
     -- print(self.itemId)
     if not GameTooltip:IsForbidden() and self.itemId then

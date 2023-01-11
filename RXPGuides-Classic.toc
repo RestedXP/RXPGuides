@@ -13,6 +13,7 @@ libs\embeds.xml
 locale\locales.xml
 
 Locale.lua
+Themes.lua
 RXPGuides.lua
 GuideWindow.lua
 Help.lua

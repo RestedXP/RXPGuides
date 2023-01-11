@@ -6,7 +6,6 @@ local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 addon.activeWaypoints = {}
 addon.linePoints = {}
--- local colors = addon.colors
 
 addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
@@ -21,11 +20,9 @@ af:SetClampedToScreen(true)
 af:SetSize(32, 32)
 af.texture = af:CreateTexture()
 af.texture:SetAllPoints()
-af.texture:SetTexture(addon.GetTexture("rxp_navigation_arrow-1"))
 -- af.texture:SetScale(0.5)
 af.text = af:CreateFontString(nil, "OVERLAY")
 af.text:SetTextColor(1, 1, 1, 1)
-af.text:SetFont(addon.font, 9,"OUTLINE")
 af.text:SetJustifyH("CENTER")
 af.text:SetJustifyV("MIDDLE")
 af.text:SetPoint("TOP", af, "BOTTOM", 0, -5)
@@ -41,6 +38,14 @@ af:SetScript("OnMouseDown", function(self, button)
     if not addon.settings.db.profile.lockFrames and af:GetAlpha() ~= 0 then af:StartMoving() end
 end)
 af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
+
+function addon.SetupArrow()
+    af.text:SetFont(addon.font, 9,"OUTLINE")
+    af.texture:SetTexture(addon.GetTexture("rxp_navigation_arrow-1"))
+
+    addon.arrowFrame:SetScript("OnUpdate", addon.UpdateArrow)
+
+end
 
 function addon.UpdateArrow(self)
 
@@ -88,8 +93,6 @@ function addon.UpdateArrow(self)
     end
 
 end
-
-addon.arrowFrame:SetScript("OnUpdate", addon.UpdateArrow)
 
 -- The Frame Pool that will manage pins on the world and mini map
 -- You must use a frame pool to aquire and release pin frames,
