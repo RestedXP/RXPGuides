@@ -693,9 +693,9 @@ function addon.targeting:UpdateTargetFrame(selector)
 
     if not addon.settings.db.profile.showTargetingOnProximity then
         -- If proximity disabled, show all
-        for n, k in pairs(unitscanList) do enemiesList[n] = k end
+        for _, n in ipairs(unitscanList) do enemiesList[n] = 'unitscan' end
 
-        for n, k in pairs(mobList) do enemiesList[n] = k end
+        for _, n in ipairs(mobList) do enemiesList[n] = 'mob' end
     end
 
     if addon.settings.db.profile.showTargetingOnProximity then
