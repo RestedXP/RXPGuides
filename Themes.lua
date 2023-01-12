@@ -12,7 +12,8 @@ themes['Default'] = {
     tooltip = "|cFFCE7BFF", -- AARRGGBB
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/",
     font = _G.GameFontNormal:GetFont(),
-    applicable = function() return not RXPCData.GA end
+    applicable = function() return not RXPCData.GA end,
+    author = "Rested XP"
 }
 
 -- Built-in themes must provide all properties
@@ -24,7 +25,8 @@ themes['Hardcore'] = {
     tooltip = "|c0000C1FF", -- AARRGGBB
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/Hardcore/",
     font = _G.GameFontNormal:GetFont(),
-    applicable = function() return addon.settings.db.profile.hardcore end
+    applicable = function() return addon.settings.db.profile.hardcore end,
+    author = "Rested XP"
 }
 
 themes['GoldAssistant'] = {
@@ -35,7 +37,21 @@ themes['GoldAssistant'] = {
     tooltip = "|c0000C1FF", -- AARRGGBB
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/GoldAssistant/",
     font = _G.GameFontNormal:GetFont(),
-    applicable = function() return RXPCData.GA == true end
+    applicable = function() return RXPCData.GA == true end,
+    author = "Rested XP"
+}
+
+local classColor = _G.RAID_CLASS_COLORS[select(2, UnitClass("player"))]
+themes['DarkMode'] = {
+    background = {14 / 255, 14 / 255, 14 / 255, 255 / 255},
+    bottomFrameBG = {19 / 255, 19 / 255, 19 / 255, 255 / 255},
+    bottomFrameHighlight = {classColor.r, classColor.g, classColor.b, 128 / 255},
+    mapPins = {classColor.r, classColor.g, classColor.b, 1},
+    tooltip = "|c" .. classColor.colorStr,
+    texturePath = "Interface/AddOns/" .. addonName .. "/Textures/DarkMode/",
+    font = _G.GameFontNormal:GetFont(),
+    applicable = function() return not RXPCData.GA end,
+    author = "Bypass"
 }
 
 function addon:LoadActiveTheme()
@@ -57,15 +73,12 @@ function addon:LoadActiveTheme()
 
     if not newTheme.applicable() then return end
 
-    print("LoadActiveTheme", applicableTheme)
     addon.activeTheme = themes[applicableTheme]
 
     -- TOOD fix legacy calls
     addon.colors = addon.activeTheme
 
     addon.font = addon.activeTheme.font
-
-    -- addon.texturePath = addon.activeTheme.texturePath
 
     return addon.activeTheme
 end
@@ -74,15 +87,22 @@ function addon:GetThemeOptions()
     local themeOptions = {}
 
     for k, t in pairs(themes) do
-        if t.applicable() then themeOptions[k] = k end
+        if t.applicable() then
+            themeOptions[k] = fmt("%s by %s", k, t.author)
+        end
     end
 
     return themeOptions
 end
 
 function addon.RegisterTheme(theme)
+    if not theme['name'] or not not theme['author'] then
+        addon.comms.PrettyPrint("Theme missing name or author")
+        return
+    end
+
     for k, _ in pairs(themes.Default) do
-        if not theme[k] and k ~= 'name' then
+        if not theme[k] and k ~= 'name' and k ~= 'author' then
             if addon.settings.db.profile.debug then
                 addon.comms.PrettyPrint("Theme missing %s using default", k)
             end
@@ -100,6 +120,8 @@ function addon.RegisterTheme(theme)
 end
 
 function addon.GetTexture(name)
+    -- Validate for non-built-in textures?
+    -- https://www.wowinterface.com/forums/showpost.php?p=337605&postcount=8
     return fmt("%s%s", addon.activeTheme.texturePath, name)
 end
 

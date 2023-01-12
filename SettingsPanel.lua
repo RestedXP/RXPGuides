@@ -143,7 +143,7 @@ function addon.settings:InitializeSettings()
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
     self:MigrateSettings()
-    self:UpdateMinimapButton()
+    -- self:UpdateMinimapButton()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
     self:RegisterChatCommand("rxpg", self.ChatCommand)
@@ -1960,7 +1960,7 @@ function addon.settings:UpdateMinimapButton()
     local minimapButton = LibDataBroker:NewDataObject(addonName, {
         type = "data source",
         label = addonName,
-        icon = "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64",
+        icon = addon.GetTexture("rxp_logo-64"),
         tocname = addonName,
         OnClick = function(_, button)
             if button == "RightButton" then

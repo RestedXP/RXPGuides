@@ -49,16 +49,17 @@ RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
 
 function addon.RenderFrame()
-    addon:LoadActiveTheme()
-    -- TODO better handle themes
-    local path = addon.activeTheme.texturePath
-    local colors = addon.activeTheme
+    local currentThemeName = addon.activeTheme.name
 
-    -- Check if theme differs, TODO
-    -- if path == addon.texturePath then return end
+    addon:LoadActiveTheme()
+
+    -- Skip if same theme if theme differs, TODO
+    -- if currentThemeName == addon.activeTheme.name then return end
+
     RXPFrame.GenerateMenuTable()
-    addon.colors = colors
-    addon.texturePath = path
+    -- TODO better handle themes
+    addon.colors = addon.activeTheme
+
     RXPFrame.backdropEdge.edgeFile = addon.GetTexture("rxp-borders")
     RXPFrame.guideNameBackdrop.edgeFile = addon.GetTexture("rxp-borders")
     BottomFrame:ClearBackdrop()
@@ -132,21 +133,16 @@ function addon.SetupGuideWindow()
     Footer.text:SetFont(addon.font, 9, "")
     Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
 
-    GuideName.bg:SetTexture("Interface/AddOns/" .. addonName ..
-                                "/Textures/rxp-banner")
+    GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
     Footer:SetBackdrop(RXPFrame.guideNameBackdrop)
     Footer:SetBackdropColor(unpack(addon.colors.background))
-    Footer.bg:SetTexture("Interface/AddOns/" .. addonName ..
-                             "/Textures/rxp-banner")
+    Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
-    GuideName.icon:SetTexture("Interface/AddOns/" .. addonName ..
-                                  "/Textures/rxp_logo-64")
+    GuideName.icon:SetTexture(addon.GetTexture("rxp_logo-64"))
 
-    GuideName.classIcon:SetTexture("Interface/AddOns/" .. addonName ..
-                                       "/Textures/" .. class)
-    Footer.cog:SetNormalTexture("Interface/AddOns/" .. addonName ..
-                                    "/Textures/rxp_cog-32")
+    GuideName.classIcon:SetTexture(addon.GetTexture(class))
+    Footer.cog:SetNormalTexture(addon.GetTexture("rxp_cog-32"))
 
     addon.UpdateScrollBar()
 

@@ -1156,8 +1156,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.cog:SetWidth(18)
     f.title.cog:SetHeight(18)
     f.title.cog:SetPoint("LEFT", f.title, "LEFT", -9, 0)
-    f.title.cog:SetNormalTexture("Interface/AddOns/" .. addonName ..
-                                     "/Textures/rxp_cog-32")
+    f.title.cog:SetNormalTexture(addon.GetTexture("rxp_cog-32"))
     f.title.cog:SetHighlightTexture(
         "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
     f.title.cog:Show()

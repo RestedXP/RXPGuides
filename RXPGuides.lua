@@ -48,19 +48,6 @@ BINDING_HEADER_RXPTargeting = addon.title
 
 local questFrame = CreateFrame("Frame");
 
-function RXPG_init()
-    RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
-    addon.settings.db.profile.hardcore = addon.game == "CLASSIC" and addon.settings.db.profile.hardcore
-    addon.RenderFrame()
-    RXPCData.stepSkip = RXPCData.stepSkip or {}
-    if not RXPCData.flightPaths or UnitLevel("player") <= 6 then
-        RXPCData.flightPaths = {}
-    end
-    if RXPData.trainGenericSpells == nil then
-        RXPData.trainGenericSpells = true
-    end
-end
-
 local startTime = GetTime()
 
 function addon.QuestAutoAccept(title)
@@ -411,9 +398,22 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     end
     addon.settings:InitializeSettings()
+
+    RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
+    addon.settings.db.profile.hardcore = addon.game == "CLASSIC" and addon.settings.db.profile.hardcore
+    RXPCData.stepSkip = RXPCData.stepSkip or {}
+    if not RXPCData.flightPaths or UnitLevel("player") <= 6 then
+        RXPCData.flightPaths = {}
+    end
+    if RXPData.trainGenericSpells == nil then
+        RXPData.trainGenericSpells = true
+    end
+
     addon:LoadActiveTheme()
+    addon.settings:UpdateMinimapButton()
     addon.SetupGuideWindow()
-    RXPG_init()
+    addon.RenderFrame()
+    addon.SetupArrow()
     addon:CreateActiveItemFrame()
     addon.comms:Setup()
     addon.targeting:Setup()

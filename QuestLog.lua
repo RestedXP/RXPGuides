@@ -18,8 +18,7 @@ function addon.UpdateQuestButton(index)
         button:SetWidth(32)
         button:SetHeight(32)
         button:SetPoint("TOPRIGHT", anchor, "TOPRIGHT", 0, 0)
-        button:SetNormalTexture("Interface/AddOns/" .. addonName ..
-                                    "/Textures/rxp_logo-64")
+        button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
         addon.questLogButton = button
 
         local function tpOnEnter(self)
