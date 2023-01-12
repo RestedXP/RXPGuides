@@ -5395,15 +5395,28 @@ step << !Shaman !Warrior
     .isOnQuest 9626 << BloodElf
     .isOnQuest 9813 << !BloodElf
 step << !Shaman !Warrior
-    #label MeetingTW
+    #label MeetingTW << !BloodElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thrall|r and |cFF00FF25Dawnsinger|r
     .turnin 9626 >> Turn in Meeting the Warchief << BloodElf
     .accept 9627 >> Accept Allegiance to the Horde << BloodElf
     .turnin 9813 >> Turn in Meeting the Warchief << !BloodElf
     .goto Orgrimmar,31.63,37.83
+    .accept 9428 >> Accept Report to Splintertree Post << BloodElf
     .goto Orgrimmar,31.62,38.39 << BloodElf
     .target Thrall
     .target Ambassador Dawnsinger << BloodElf
+    .isOnQuest 9626 << BloodElf 
+    .isOnQuest 9813 << !BloodElf 
+step << BloodElf
+    #label MeetingTW
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thrall|r and |cFF00FF25Dawnsinger|r
+    .accept 9627 >> Accept Allegiance to the Horde << BloodElf
+    .goto Orgrimmar,31.63,37.83
+    .accept 9428 >> Accept Report to Splintertree Post << BloodElf
+    .goto Orgrimmar,31.62,38.39 << BloodElf
+    .target Thrall
+    .target Ambassador Dawnsinger << BloodElf
+    .isQuestTurnedIn 9626 << BloodElf 
 step << Paladin
     .goto Orgrimmar,32.29,35.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Pyreanor|r
