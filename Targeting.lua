@@ -689,11 +689,9 @@ function addon.targeting:UpdateTargetFrame(selector)
 
     local enemyTargetButtons = targetFrame.enemyTargetButtons
     local j = 0
-    local enemiesList
+    local enemiesList = {}
 
-    if addon.settings.db.profile.showTargetingOnProximity then
-        enemiesList = {}
-    else
+    if not addon.settings.db.profile.showTargetingOnProximity then
         -- If proximity disabled, show all
         for n, k in pairs(unitscanList) do enemiesList[n] = k end
 
