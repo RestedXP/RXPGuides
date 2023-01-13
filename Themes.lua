@@ -13,7 +13,7 @@ themes['Default'] = {
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/",
     font = _G.GameFontNormal:GetFont(),
     applicable = function() return not RXPCData.GA end,
-    author = "Rested XP"
+    author = "RestedXP"
 }
 
 -- Built-in themes must provide all properties
@@ -26,7 +26,7 @@ themes['Hardcore'] = {
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/Hardcore/",
     font = _G.GameFontNormal:GetFont(),
     applicable = function() return addon.settings.db.profile.hardcore end,
-    author = "Rested XP"
+    author = "RestedXP"
 }
 
 themes['GoldAssistant'] = {
@@ -38,7 +38,7 @@ themes['GoldAssistant'] = {
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/GoldAssistant/",
     font = _G.GameFontNormal:GetFont(),
     applicable = function() return RXPCData.GA == true end,
-    author = "Rested XP"
+    author = "RestedXP"
 }
 
 local classColor = _G.RAID_CLASS_COLORS[select(2, UnitClass("player"))]
