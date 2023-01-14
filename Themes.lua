@@ -65,15 +65,17 @@ function addon:LoadActiveTheme()
 
     local newTheme = themes[applicableTheme]
 
-    -- Reset theme to default is selected goes away
+    -- Reset theme to default if selected goes away
     if not newTheme then
+        addon.comms.PrettyPrint(
+            "%s theme no longer loaded, resetting to default", applicableTheme)
         addon.settings.db.profile.activeTheme = "Default"
-        newTheme = themes[applicableTheme]
+        newTheme = themes["Default"]
     end
 
     if not newTheme.applicable() then return end
 
-    addon.activeTheme = themes[applicableTheme]
+    addon.activeTheme = newTheme
 
     -- TOOD fix legacy calls
     addon.colors = addon.activeTheme
@@ -95,16 +97,17 @@ function addon:GetThemeOptions()
     return themeOptions
 end
 
-function addon.RegisterTheme(theme)
-    if not theme['name'] or not not theme['author'] then
-        addon.comms.PrettyPrint("Theme missing name or author")
+function addon:RegisterTheme(theme)
+    if not theme['name'] or not theme['author'] then
+        self.comms.PrettyPrint("Theme missing name or author")
         return
     end
 
     for k, _ in pairs(themes.Default) do
         if not theme[k] and k ~= 'name' and k ~= 'author' then
-            if addon.settings.db.profile.debug then
-                addon.comms.PrettyPrint("Theme missing %s using default", k)
+            if self.settings.db.profile.debug then
+                self.comms.PrettyPrint("%s theme missing %s using default",
+                                       theme.name, k)
             end
 
             theme[k] = themes.Default[k]
@@ -112,11 +115,11 @@ function addon.RegisterTheme(theme)
     end
 
     if not theme.applicable() then
-        addon.comms.PrettyPrint(
-            "Theme does not apply to current mode, importing anyway")
+        self.comms.PrettyPrint(
+            "%s does not apply to current mode, importing anyway", theme.name)
     end
 
-    addon.themes[theme.name] = theme
+    themes[theme.name] = theme
 end
 
 function addon.GetTexture(name)
@@ -125,8 +128,11 @@ function addon.GetTexture(name)
     return fmt("%s%s", addon.activeTheme.texturePath, name)
 end
 
-if not _G.RXPGuides then _G.RXPGuides = {} end
+function addon:ImportCustomThemes()
+    if not _G.RXPGuides_Themes then return end
 
-if not _G.RXPGuides.RegisterTheme then
-    _G.RXPGuides.RegisterTheme = addon.RegisterTheme
+    -- TODO use loop to strip array?
+    for _, theme in pairs(_G.RXPGuides_Themes) do self:RegisterTheme(theme) end
+
+    wipe(_G.RXPGuides_Themes)
 end

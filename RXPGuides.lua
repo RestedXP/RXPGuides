@@ -409,6 +409,7 @@ function addon:OnInitialize()
         RXPData.trainGenericSpells = true
     end
 
+    addon:ImportCustomThemes()
     addon:LoadActiveTheme()
     addon.settings:UpdateMinimapButton()
     addon.SetupGuideWindow()
