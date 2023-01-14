@@ -535,8 +535,9 @@ function addon.settings:CreateImportOptionsPanel()
 
     local iconFrameParent = self.gui.import.obj.frame
     iconFrameParent.icon = iconFrameParent:CreateTexture()
-    iconFrameParent.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
-                                        "\\Textures\\rxp_logo-64")
+    -- Theme load order, leave default settings branding unthemed
+    iconFrameParent.icon:SetTexture("Interface/AddOns/" .. addonName ..
+                                        "/Textures/rxp_logo-64")
     iconFrameParent.icon:SetPoint("TOPRIGHT", -5, -5)
 
     if notOnline() then
@@ -1929,8 +1930,9 @@ function addon.settings:CreateAceOptionsPanel()
 
     local f = addon.RXPOptions.obj.frame
     f.icon = f:CreateTexture()
-    f.icon:SetTexture("Interface\\AddOns\\" .. addonName ..
-                          "\\Textures\\rxp_logo-64")
+    -- Theme load order, leave default settings branding unthemed
+    f.icon:SetTexture("Interface/AddOns/" .. addonName ..
+                          "/Textures/rxp_logo-64")
     f.icon:SetPoint("TOPRIGHT", -5, -5)
 
 end

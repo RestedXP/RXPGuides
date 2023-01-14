@@ -118,8 +118,7 @@ MapPinPool.creationFunc = function(framePool)
 
     -- Styling
     f:SetBackdrop({
-        bgFile = "Interface\\Addons\\" .. addonName ..
-            "\\Textures\\white_circle",
+        bgFile = addon.GetTexture("white_circle-64"),
         insets = {left = 0, right = 0, top = 0, bottom = 0}
     })
     f:SetWidth(0)
@@ -132,8 +131,7 @@ MapPinPool.creationFunc = function(framePool)
     f.inner = CreateFrame("Button", nil, f,
                           BackdropTemplateMixin and "BackdropTemplate")
     f.inner:SetBackdrop({
-        bgFile = "Interface\\Addons\\" .. addonName ..
-            "\\Textures\\map_active_step_target_icon",
+        bgFile = addon.GetTexture("map_active_step_target_icon"),
         insets = {left = 0, right = 0, top = 0, bottom = 0}
     })
     f.inner:SetPoint("CENTER", 0, 0)
