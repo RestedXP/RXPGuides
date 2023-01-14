@@ -473,7 +473,7 @@ step << Warrior/Shaman
     .goto Orgrimmar,46.75,63.84,6,0
     .goto Orgrimmar,46.59,64.54,6,0
     .goto Orgrimmar,46.75,63.84,6,0
-    .goto Orgrimmar,45.44,56.55,10 >>Travel up the tower toward |cFF00FF25Doras|r
+    .goto Orgrimmar,45.12,63.88,10 >>Travel up the tower toward |cFF00FF25Doras|r
 step << Warrior/Shaman
     #completewith FPools
     .goto Orgrimmar,45.12,63.88
