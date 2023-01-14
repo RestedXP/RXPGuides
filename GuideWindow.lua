@@ -49,12 +49,7 @@ RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
 
 function addon.RenderFrame()
-    local currentThemeName = addon.activeTheme.name
-
     addon:LoadActiveTheme()
-
-    -- Skip if same theme if theme differs, TODO
-    -- if currentThemeName == addon.activeTheme.name then return end
 
     RXPFrame.GenerateMenuTable()
     -- TODO better handle themes
