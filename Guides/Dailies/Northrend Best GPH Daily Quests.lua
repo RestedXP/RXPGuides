@@ -403,6 +403,17 @@ step
     .goto IcecrownGlacier,54.0,46.3
 	.isOnQuest 13323 << Alliance
 	.isOnQuest 13353 << Horde
+step << Alliance
+    .goto IcecrownGlacier,46.2,52.1,70,0
+    .goto IcecrownGlacier,42.4,59.4,0,0
+	.use 44222 >>Use the Dart Gun in your bags on the Orgrim's Hammer Scouts (you can use it while on your flying mount). Loot their corpses for the Dispatches
+    .complete 13333,1 --Orgrim's Hammer Dispatch (6)
+	.isOnQuest 13333
+step << Horde
+	.goto IcecrownGlacier,48.85,40.44
+	.use 44212 >>Use the SGM-3 in your bags on the Skybreaker Recon Fighters in the air
+	.complete 13331,1 --Skybreaker Recon Fighters shot down (6)
+	.isOnQuest 13331
 step
     .goto IcecrownGlacier,49.7,34.4
 	.use 44307 >>Use the Diluted Cult Tonic in your bags to gain the "Dark Discernment" Buff. This allows you to loot the Tainted Essences from all the humanoids you kill in the area
@@ -435,17 +446,6 @@ step
     .complete 13365,1 << Horde --Dark Messenger Summoned (1)
 	.isOnQuest 13344 << Alliance
 	.isOnQuest 13365 << Horde
-step << Alliance
-    .goto IcecrownGlacier,46.2,52.1,70,0
-    .goto IcecrownGlacier,42.4,59.4,0,0
-	.use 44222 >>Use the Dart Gun in your bags on the Orgrim's Hammer Scouts (you can use it while on your flying mount). Loot their corpses for the Dispatches
-    .complete 13333,1 --Orgrim's Hammer Dispatch (6)
-	.isOnQuest 13333
-step << Horde
-	.goto IcecrownGlacier,48.85,40.44
-	.use 44212 >>Use the SGM-3 in your bags on the Skybreaker Recon Fighters in the air
-	.complete 13331,1 --Skybreaker Recon Fighters shot down (6)
-	.isOnQuest 13331
 step << Alliance
     .goto IcecrownGlacier,65.1,57.2,0
     .goto IcecrownGlacier,64.7,52.4,0
