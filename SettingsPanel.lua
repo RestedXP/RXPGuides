@@ -659,12 +659,6 @@ function addon.settings:CreateAceOptionsPanel()
                 name = _G.GENERAL,
                 order = 2,
                 args = {
-                    generalHeader = {
-                        name = _G.GENERAL,
-                        type = "header",
-                        width = "full",
-                        order = 1.0
-                    },
                     showEnabled = {
                         name = L("Show all Enabled Frames"),
                         desc = L("Toggles all addon frames on or off"), -- TODO locale
@@ -772,88 +766,6 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateItemFrame()
-                        end
-                    },
-                    expansionHeader = {
-                        name = _G.EXPANSION_FILTER_TEXT,
-                        type = "header",
-                        width = "full",
-                        order = 3
-                    },
-                    northrendLM = {
-                        name = L("Northrend Loremaster"),
-                        desc = L(
-                            "Adjust the routes to include almost every quest in the Northrend zones"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 3.1,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                        end,
-                        hidden = addon.game ~= "WOTLK"
-                    },
-                    chromieTime = {
-                        name = L("Show Chromie Time Guides"),
-                        desc = L(
-                            "Enables or disables the chromie time guides. Note that freshly created accounts without a level 60 character cannot access chromie time"),
-                        type = "select",
-                        values = {
-                            auto = "Automatic",
-                            enabled = "Enabled",
-                            disabled = "Disabled"
-                        },
-                        sorting = {"auto", "enabled", "disabled"},
-                        width = optionsWidth,
-                        order = 3.2,
-                        hidden = WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE
-                    },
-                    phase = {
-                        name = L("Content phase"),
-                        desc = L(
-                            "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"),
-                        type = "range",
-                        width = optionsWidth,
-                        order = 3.3,
-                        min = 1,
-                        max = 6,
-                        step = 1,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.ReloadGuide()
-                            addon.RXPFrame.GenerateMenuTable()
-                        end,
-                        hidden = addon.game ~= "CLASSIC"
-                    },
-                    hardcore = {
-                        name = L("Hardcore mode"),
-                        desc = L(
-                            "Adjust the leveling routes to the deathless ruleset"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 3.4,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RenderFrame()
-                        end,
-                        hidden = addon.game ~= "CLASSIC"
-                    },
-                    SoM = {
-                        name = L("Season of Mastery"),
-                        desc = L(
-                            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 3.5,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RXPFrame.GenerateMenuTable()
-                            addon.ReloadGuide()
-                        end,
-                        hidden = addon.game ~= "CLASSIC",
-                        disabled = function()
-                            return addon.settings.db.profile
-                                       .enableAutomaticXpRate
                         end
                     },
                     automationHeader = {
@@ -987,18 +899,100 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
+                    expansionHeader = {
+                        name = _G.EXPANSION_FILTER_TEXT,
+                        type = "header",
+                        width = "full",
+                        order = 2
+                    },
+                    northrendLM = {
+                        name = L("Northrend Loremaster"),
+                        desc = L(
+                            "Adjust the routes to include almost every quest in the Northrend zones"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                        end,
+                        hidden = addon.game ~= "WOTLK"
+                    },
+                    chromieTime = {
+                        name = L("Show Chromie Time Guides"),
+                        desc = L(
+                            "Enables or disables the chromie time guides. Note that freshly created accounts without a level 60 character cannot access chromie time"),
+                        type = "select",
+                        values = {
+                            auto = "Automatic",
+                            enabled = "Enabled",
+                            disabled = "Disabled"
+                        },
+                        sorting = {"auto", "enabled", "disabled"},
+                        width = optionsWidth,
+                        order = 2.2,
+                        hidden = WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE
+                    },
+                    phase = {
+                        name = L("Content phase"),
+                        desc = L(
+                            "Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.3,
+                        min = 1,
+                        max = 6,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
+                    },
+                    hardcore = {
+                        name = L("Hardcore mode"),
+                        desc = L(
+                            "Adjust the leveling routes to the deathless ruleset"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.4,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RenderFrame()
+                        end,
+                        hidden = addon.game ~= "CLASSIC"
+                    },
+                    SoM = {
+                        name = L("Season of Mastery"),
+                        desc = L(
+                            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.5,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.GenerateMenuTable()
+                            addon.ReloadGuide()
+                        end,
+                        hidden = addon.game ~= "CLASSIC",
+                        disabled = function()
+                            return addon.settings.db.profile
+                                       .enableAutomaticXpRate
+                        end
+                    },
                     arrowHeader = {
                         name = L("Waypoint Arrow"), -- TODO locale
                         type = "header",
                         width = "full",
-                        order = 2
+                        order = 3
                     },
                     arrowScale = {
                         name = L("Arrow Scale"),
                         desc = L("Scale of the Waypoint Arrow"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.2,
+                        order = 3.2,
                         min = 0.2,
                         max = 2,
                         step = 0.05,
@@ -1013,7 +1007,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Size of the waypoint arrow text"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.3,
+                        order = 3.3,
                         min = 5,
                         max = 20,
                         step = 1,
@@ -1025,7 +1019,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     resetArrowPosition = {
                         name = L("Reset Arrow Position"), -- TODO locale
-                        order = 2.4,
+                        order = 3.4,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
@@ -1036,12 +1030,12 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Quest Cleanup"),
                         type = "header",
                         width = "full",
-                        order = 3.0
+                        order = 10.0
                     },
                     abandonOrphanedQuests = {
                         name = L("Cleanup Orphaned Quests"), -- TODO locale
                         desc = L("Cleanup obsolete or leftover quests"),
-                        order = 3.1,
+                        order = 10.1,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
@@ -1064,7 +1058,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     orphanedQuestBox = {
-                        order = 3.2,
+                        order = 10.2,
                         type = 'description',
                         name = function()
                             local result = ""
@@ -1579,12 +1573,6 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Look and Feel"), -- TODO
                 order = 10,
                 args = {
-                    generalHeader = {
-                        name = _G.GENERAL,
-                        type = "header",
-                        width = "full",
-                        order = 1.0
-                    },
                     activeTheme = {
                         name = L("Choose Theme"), -- TODO locale
                         desc = L("Choose active theme"),
