@@ -13,6 +13,7 @@ themes['Default'] = {
     tooltip = "|cFFCE7BFF", -- AARRGGBB
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/",
     font = _G.GameFontNormal:GetFont(),
+    textColor = {1, 1, 1},
     applicable = function() return not RXPCData.GA end,
     author = "RestedXP"
 }
@@ -26,6 +27,7 @@ themes['Hardcore'] = {
     tooltip = "|c0000C1FF", -- AARRGGBB
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/Hardcore/",
     font = _G.GameFontNormal:GetFont(),
+    textColor = {1, 1, 1},
     applicable = function() return addon.settings.db.profile.hardcore end,
     author = "RestedXP"
 }
@@ -38,6 +40,7 @@ themes['GoldAssistant'] = {
     tooltip = "|c0000C1FF", -- AARRGGBB
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/GoldAssistant/",
     font = _G.GameFontNormal:GetFont(),
+    textColor = {1, 1, 1},
     applicable = function() return RXPCData.GA == true end,
     author = "RestedXP"
 }
@@ -51,6 +54,7 @@ themes['DarkMode'] = {
     tooltip = "|c" .. classColor.colorStr,
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/DarkMode/",
     font = _G.GameFontNormal:GetFont(),
+    textColor = {1, 1, 1},
     applicable = function() return not RXPCData.GA end,
     author = "Bypass"
 }
@@ -64,6 +68,7 @@ addon.customThemeBase = {
     tooltip = themes['Default'].tooltip,
     texturePath = themes['Default'].texturePath,
     font = themes['Default'].font,
+    textColor = themes['Default'].textColor,
     applicable = true,
     author = _G.UnitName("player")
 }

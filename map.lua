@@ -22,7 +22,6 @@ af.texture = af:CreateTexture()
 af.texture:SetAllPoints()
 -- af.texture:SetScale(0.5)
 af.text = af:CreateFontString(nil, "OVERLAY")
-af.text:SetTextColor(1, 1, 1, 1)
 af.text:SetJustifyH("CENTER")
 af.text:SetJustifyV("MIDDLE")
 af.text:SetPoint("TOP", af, "BOTTOM", 0, -5)
@@ -42,9 +41,9 @@ af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
 function addon.SetupArrow()
     af.text:SetFont(addon.font, 9,"OUTLINE")
     af.texture:SetTexture(addon.GetTexture("rxp_navigation_arrow-1"))
+    af.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
     addon.arrowFrame:SetScript("OnUpdate", addon.UpdateArrow)
-
 end
 
 function addon.UpdateArrow(self)

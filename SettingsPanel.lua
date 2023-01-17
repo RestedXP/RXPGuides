@@ -1728,12 +1728,47 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = true -- TODO
                     },
+                    customThemeTextColor = { -- TODO
+                        name = L("Text Color"), -- TODO locale
+                        desc = L("Requires Reload to take effect"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 1.8,
+                        get = function()
+                            return unpack(self.db.profile.customTheme.textColor)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.customTheme.textColor = {
+                                r, g, b, a or 1
+                            }
+                            addon:RegisterTheme(self.db.profile.customTheme)
+                            addon.RenderFrame('themeReload')
+                        end,
+                        disabled = function()
+                            return self.db.profile.activeTheme ~= 'Custom'
+                        end
+                    },
                     customThemeApply = {
-                        order = 1.9,
-                        type = 'execute',
                         name = L("Apply Theme"),
+                        type = 'execute',
+                        width = optionsWidth,
+                        order = 1.9,
                         confirm = requiresReload,
                         func = function() _G.ReloadUI() end
+                    },
+                    customThemeReset = {
+                        name = _G.RESET,
+                        type = 'execute',
+                        width = optionsWidth,
+                        order = 1.91,
+                        func = function()
+                            self.db.profile.customTheme = addon.customThemeBase
+                            addon:RegisterTheme(self.db.profile.customTheme)
+                            addon.RenderFrame('themeReload')
+                        end,
+                        hidden = function()
+                            return self.db.profile.activeTheme ~= 'Custom'
+                        end
                     },
                     guideWindowHeader = {
                         name = L("Guide Window"),

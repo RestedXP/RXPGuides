@@ -97,6 +97,8 @@ function addon.RenderFrame(themeUpdate)
             stepframe.number:ClearBackdrop()
             stepframe.number:SetBackdrop(RXPFrame.backdropEdge)
             stepframe.number:SetBackdropColor(unpack(addon.colors.background))
+            stepframe.number.text:SetTextColor(
+                unpack(addon.activeTheme.textColor))
         end
     end
 
@@ -145,9 +147,11 @@ function addon.SetupGuideWindow()
     GuideName.text:SetFont(addon.font, 11, "")
     GuideName.text:SetText(L(
                                "Welcome to RestedXP Guides\nRight click to pick a guide"))
+    GuideName.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
     Footer.text:SetFont(addon.font, 9, "")
     Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
+    Footer.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
     GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
@@ -564,7 +568,8 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number.text:SetPoint("CENTER", stepframe.number, 2, 1)
             stepframe.number.text:SetJustifyH("CENTER")
             stepframe.number.text:SetJustifyV("MIDDLE")
-            stepframe.number.text:SetTextColor(1, 1, 1)
+            stepframe.number.text:SetTextColor(
+                unpack(addon.activeTheme.textColor))
             stepframe.number.text:SetFont(addon.font, addon.settings.db.profile
                                               .guideFontSize, "")
         end
@@ -637,7 +642,8 @@ function addon.SetStep(n, n2, loopback)
 
                 elementFrame.text:SetJustifyH("LEFT")
                 elementFrame.text:SetJustifyV("MIDDLE")
-                elementFrame.text:SetTextColor(1, 1, 1)
+                elementFrame.text:SetTextColor(
+                    unpack(addon.activeTheme.textColor))
                 elementFrame.text:SetFont(addon.font, addon.settings.db.profile
                                               .guideFontSize + 2, "") -- 11
 
@@ -939,7 +945,6 @@ GuideName.text:SetPoint("LEFT", GuideName, 29, 0)
 GuideName.text:SetPoint("RIGHT", GuideName, 0, 0)
 GuideName.text:SetJustifyH("CENTER")
 GuideName.text:SetJustifyV("MIDDLE")
-GuideName.text:SetTextColor(1, 1, 1)
 
 GuideName:SetFrameLevel(6)
 
@@ -960,7 +965,6 @@ Footer.text:SetPoint("LEFT", Footer, 40, 1)
 Footer.text:SetPoint("RIGHT", Footer, -16, 1)
 Footer.text:SetJustifyH("LEFT")
 Footer.text:SetJustifyV("MIDDLE")
-Footer.text:SetTextColor(1, 1, 1)
 
 Footer:SetFrameLevel(6)
 Footer.bg = Footer:CreateTexture("$parentBG", "BACKGROUND")
@@ -1277,7 +1281,7 @@ function addon:LoadGuide(guide, OnLoad)
             frame.number.text:SetPoint("CENTER", frame.number, 0, 0)
             frame.number.text:SetJustifyH("CENTER")
             frame.number.text:SetJustifyV("MIDDLE")
-            frame.number.text:SetTextColor(1, 1, 1, 1)
+            frame.number.text:SetTextColor(unpack(addon.activeTheme.textColor))
             frame.number.text:SetFont(addon.font, addon.settings.db.profile
                                           .guideFontSize - 1, "") -- 8
             local prefix = ""
@@ -1292,7 +1296,7 @@ function addon:LoadGuide(guide, OnLoad)
         frame.text:SetPoint("BOTTOMRIGHT", frame.number, "BOTTOMLEFT", 0, 0)
         frame.text:SetJustifyH("LEFT")
         frame.text:SetJustifyV("TOP")
-        frame.text:SetTextColor(1, 1, 1, 1)
+        frame.text:SetTextColor(unpack(addon.activeTheme.textColor))
         frame.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize,
                            "")
 
