@@ -2888,7 +2888,7 @@ RXPGuides.RegisterGuide([[
 #som
 #phase 3-6
 << Alliance !Hunter
-#name 1-6 Coldridge
+#name 1-7 Coldridge
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf/Gnome

@@ -1,15 +1,16 @@
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
+
 RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Horde
-#name 1-12 Mulgore
+#name 1-6 Red Cloud Mesa
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Tauren
-#next 12-17 The Barrens
+#next 6-12 Mulgore;6-13 Mulgore
 step << !Tauren
     #sticky
     #completewith next
@@ -206,6 +207,18 @@ step
     .accept 1656 >>Accept A Task Unfinished
 step
     .xp 5+2395 >>Grind to 2395+/2800xp
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+#era/som
+<< Horde
+#name 6-12 Mulgore
+#version 1
+#group RestedXP Horde 1-22
+#defaultfor Tauren
+#next 12-17 The Barrens
 step
 	#completewith next
 	#softcore
@@ -960,7 +973,7 @@ RXPGuides.RegisterGuide([[
 #som
 #phase 3-6
 << Horde
-#name 1-13 Mulgore
+#name 6-13 Mulgore
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Tauren
