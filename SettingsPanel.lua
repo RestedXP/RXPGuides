@@ -94,6 +94,7 @@ function addon.settings:InitializeSettings()
             chromieTime = "auto",
             enableXpStepSkipping = true,
             enableAutomaticXpRate = true,
+            autoLoadStartingGuides = true,
 
             -- Sliders
             arrowScale = 1,
@@ -190,6 +191,11 @@ function addon.settings:MigrateSettings()
     end
 
     -- TODO autoLoadGuides -> autoLoadStartingGuides
+    if RXPData.autoLoadGuides ~= nil then
+        n("hideUnusedGuides", RXPData.autoLoadGuides)
+        db.autoLoadStartingGuides = RXPData.autoLoadGuides
+        RXPData.autoLoadGuides = nil
+    end
 
     if RXPCData.disableArrow ~= nil then
         n("disableArrow", RXPCData.disableArrow)
@@ -674,13 +680,13 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     autoLoadStartingGuides = {
-                        name = L("Auto load starting zone guides"),
+                        name = L("Load starting zone guides"),
                         desc = L(
                             "Automatically picks a suitable guide whenever you log in for the first time on a character"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.2,
-                        hidden = true, -- TODO, Impossible situation with character-specific settings
+                        hidden = not addon.defaultGuideList,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()

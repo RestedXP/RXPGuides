@@ -439,7 +439,7 @@ function addon:OnEnable()
             local currentMap = C_Map.GetBestMapForUnit("player")
             for zone,guideName in pairs(addon.defaultGuideList) do
                 if currentMap == zone or currentMap == addon.mapId[zone] then
-                    local group,name = string.match(guideName,"[^\\]+\\[^\\]+")
+                    local group,name = string.match(guideName,"([^\\]+)%s*\\%s*([^\\]+)")
                     guide = addon.GetGuideTable(group,name)
                 end
             end

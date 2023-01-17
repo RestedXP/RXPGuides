@@ -14,13 +14,13 @@ local _,class = UnitClass("player")
 
 addon.defaultGuideList = {
     ["Elwynn Forest"] = "RestedXP Alliance 1-20\\1-11 Elwynn Forest",
-    ["Teldrassil"] = "RestedXP Alliance 1-20\\1-6 Shadowglen",
-    ["Dun Morogh"] = "RestedXP Alliance 1-20\\1-6 Coldridge Valley",
-    ["Azuremyst Isle"] = "RestedXP Alliance 1-20\\1-12 Azuremyst Isle",
-    ["Durotar"] = "RestedXP Horde 1-30\\1-10 Durotar",
-    ["Mulgore"] = "RestedXP Horde 1-30\\1-10 Mulgore",
-    ["Tirisfal Glades"] = "RestedXP Horde 1-30\\1-6 Tirisfal Glades",
-    ["Eversong Woods"] = "RestedXP Horde 1-30\\1-6 Eversong Woods",
+    ["Teldrassil"] = "RestedXP Alliance 1-20\\01-06 Shadowglen",
+    ["Dun Morogh"] = "RestedXP Alliance 1-20\\01-06 Coldridge Valley",
+    ["Azuremyst Isle"] = "RestedXP Alliance 1-20\\01-12 Azuremyst Isle",
+    ["Durotar"] = "RestedXP Horde 1-30\\01-10 Durotar",
+    ["Mulgore"] = "RestedXP Horde 1-30\\01-10 Mulgore",
+    ["Tirisfal Glades"] = "RestedXP Horde 1-30\\01-06 Tirisfal Glades",
+    ["Eversong Woods"] = "RestedXP Horde 1-30\\01-06 Eversong Woods",
 }
 
 if class == "WARLOCK" then
