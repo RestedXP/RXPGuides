@@ -35,7 +35,7 @@ local Footer = CreateFrame("Frame", "$parentGuideName", RXPFrame,
                            BackdropTemplate)
 local ScrollFrame = CreateFrame("ScrollFrame", "$parentScrollFrame",
                                 BottomFrame, "UIPanelScrollFrameTemplate")
-local CurrentStepFrame = CreateFrame("Frame", nil, RXPFrame)
+local CurrentStepFrame = CreateFrame("Frame", nil, RXPFrame, BackdropTemplate)
 local ScrollChild = CreateFrame("Frame", "$parent_steps", BottomFrame,
                                 BackdropTemplate)
 local MenuFrame = CreateFrame("Frame", "RXPG_MenuFrame", UIParent,
@@ -48,10 +48,9 @@ RXPFrame.ScrollFrame = ScrollFrame
 RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
 
-function addon.RenderFrame()
+function addon.RenderFrame(themeUpdate)
     addon:LoadActiveTheme()
 
-    RXPFrame.GenerateMenuTable()
     -- TODO better handle themes
     addon.colors = addon.activeTheme
 
@@ -70,6 +69,7 @@ function addon.RenderFrame()
 
     GuideName:ClearBackdrop()
     GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
+    GuideName:SetBackdropColor(unpack(addon.colors.background))
     Footer:ClearBackdrop()
     Footer:SetBackdrop(RXPFrame.backdropEdge)
     Footer:SetBackdropColor(unpack(addon.colors.background))
@@ -83,7 +83,27 @@ function addon.RenderFrame()
     addon.arrowFrame.texture:SetTexture(addon.GetTexture(
                                             "rxp_navigation_arrow-1"))
     addon.UpdateScrollBar()
-    if addon.currentGuide then addon.ReloadGuide() end
+
+    -- Support live theme changes
+    if themeUpdate and CurrentStepFrame and CurrentStepFrame.framePool then
+        -- CurrentStepFrame:ClearBackdrop()
+        -- CurrentStepFrame:SetBackdrop(RXPFrame.guideNameBackdrop)
+        -- CurrentStepFrame:SetBackdropColor(unpack(addon.colors.background))
+
+        for _, stepframe in ipairs(CurrentStepFrame.framePool) do
+            stepframe:ClearBackdrop()
+            stepframe:SetBackdrop(RXPFrame.backdropEdge)
+            stepframe:SetBackdropColor(unpack(addon.colors.background))
+            stepframe.number:ClearBackdrop()
+            stepframe.number:SetBackdrop(RXPFrame.backdropEdge)
+            stepframe.number:SetBackdropColor(unpack(addon.colors.background))
+        end
+    end
+
+    if not themeUpdate then
+        RXPFrame.GenerateMenuTable()
+        if addon.currentGuide then addon.ReloadGuide() end
+    end
 end
 
 function addon.SetupGuideWindow()
@@ -101,7 +121,7 @@ function addon.SetupGuideWindow()
     }
 
     RXPFrame.guideNameBackdrop = {
-        -- bgFile = "Interface/BUTTONS/WHITE8X8",
+        bgFile = "Interface/BUTTONS/WHITE8X8",
         edgeFile = addon.GetTexture("rxp-borders"),
         tile = true,
         edgeSize = 8,
@@ -120,6 +140,7 @@ function addon.SetupGuideWindow()
     BottomFrame:SetBackdropColor(unpack(addon.colors.background))
 
     GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
+    GuideName:SetBackdropColor(unpack(addon.colors.background))
 
     GuideName.text:SetFont(addon.font, 11, "")
     GuideName.text:SetText(L(

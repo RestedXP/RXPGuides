@@ -3,6 +3,7 @@ local addonName, addon = ...
 local fmt = string.format
 
 local themes = {}
+addon.themes = themes
 
 themes['Default'] = {
     background = {12 / 255, 12 / 255, 27 / 255, 1},
@@ -54,6 +55,29 @@ themes['DarkMode'] = {
     author = "Bypass"
 }
 
+addon.customThemeBase = {
+    name = "Custom",
+    background = themes['Default'].background,
+    bottomFrameBG = themes['Default'].bottomFrameBG,
+    bottomFrameHighlight = themes['Default'].bottomFrameHighlight,
+    mapPins = themes['Default'].mapPins,
+    tooltip = themes['Default'].tooltip,
+    texturePath = themes['Default'].texturePath,
+    font = themes['Default'].font,
+    applicable = true,
+    author = _G.UnitName("player")
+}
+
+local function themeApplies(applicable)
+    if applicable == nil then
+        return true
+    elseif type(applicable) == "boolean" then
+        return applicable
+    elseif type(applicable) == "function" then
+        return applicable()
+    end
+end
+
 function addon:LoadActiveTheme()
     local applicableTheme = addon.settings.db.profile.activeTheme
     if addon.settings.db.profile.hardcore then
@@ -73,7 +97,7 @@ function addon:LoadActiveTheme()
         newTheme = themes["Default"]
     end
 
-    if not newTheme.applicable() then return end
+    if not themeApplies(newTheme.applicable) then return end
 
     addon.activeTheme = newTheme
 
@@ -89,8 +113,12 @@ function addon:GetThemeOptions()
     local themeOptions = {}
 
     for k, t in pairs(themes) do
-        if t.applicable() then
-            themeOptions[k] = fmt("%s by %s", k, t.author)
+        if themeApplies(t.applicable) then
+            if k == 'Custom' then
+                themeOptions[k] = 'Custom'
+            else
+                themeOptions[k] = fmt("%s by %s", k, t.author)
+            end
         end
     end
 
@@ -98,6 +126,8 @@ function addon:GetThemeOptions()
 end
 
 function addon:RegisterTheme(theme)
+    if not theme then return end
+
     if not theme['name'] or not theme['author'] then
         self.comms.PrettyPrint("Theme missing name or author")
         return
@@ -114,7 +144,7 @@ function addon:RegisterTheme(theme)
         end
     end
 
-    if not theme.applicable() then
+    if not themeApplies(theme.applicable) then
         self.comms.PrettyPrint(
             "%s does not apply to current mode, importing anyway", theme.name)
     end
@@ -123,6 +153,16 @@ function addon:RegisterTheme(theme)
 end
 
 function addon.GetTexture(name)
+    -- Avoid nil concatenation
+    if not name or not (addon.activeTheme and addon.activeTheme.texturePath) then
+        return
+    end
+
+    -- Exclude banner from hiding custom theme colors
+    if addon.activeTheme.name == "Custom" and name == 'rxp-banner' then
+        return
+    end
+
     -- Validate for non-built-in textures?
     -- https://www.wowinterface.com/forums/showpost.php?p=337605&postcount=8
     return fmt("%s%s", addon.activeTheme.texturePath, name)
@@ -133,6 +173,9 @@ function addon:ImportCustomThemes()
 
     -- TODO use loop to strip array?
     for _, theme in pairs(_G.RXPGuides_Themes) do self:RegisterTheme(theme) end
+
+    -- Register empty custom theme
+    self:RegisterTheme(addon.settings.db.profile.customTheme)
 
     wipe(_G.RXPGuides_Themes)
 end

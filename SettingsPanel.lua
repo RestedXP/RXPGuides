@@ -130,7 +130,8 @@ function addon.settings:InitializeSettings()
             enableAddonIncompatibilityCheck = true,
 
             -- Themes
-            activeTheme = 'Default'
+            activeTheme = 'Default',
+            customTheme = addon.customThemeBase
         }
     }
 
@@ -1579,30 +1580,161 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "select",
                         width = optionsWidth,
                         order = 1.1,
-                        confirm = requiresReload,
                         get = function()
-                            if addon.settings.db.profile.hardcore then
+                            if self.db.profile.hardcore then
                                 return "Hardcore"
                             elseif RXPCData.GA then
                                 return "GoldAssistant"
                             end
 
-                            return addon.settings.db.profile.activeTheme
+                            return self.db.profile.activeTheme
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            _G.ReloadUI()
+                            addon.RenderFrame('themeReload')
                         end,
                         values = function()
                             return addon:GetThemeOptions()
                         end,
                         disabled = function()
                             -- Disable selector if GA/Hardcore as they're special and branded
-                            return RXPCData.GA or
-                                       addon.settings.db.profile.hardcore
+                            return RXPCData.GA or self.db.profile.hardcore
                         end
                     },
-                    -- TODO custom theme, color selector
+                    customThemeBackground = {
+                        name = _G.BACKGROUND,
+                        desc = L("background"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 1.2,
+                        hasAlpha = true,
+                        get = function()
+                            return
+                                unpack(self.db.profile.customTheme.background)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.customTheme.background = {
+                                r, g, b, a or 1
+                            }
+                            addon:RegisterTheme(self.db.profile.customTheme)
+                            addon.RenderFrame('themeReload')
+                        end,
+                        disabled = function()
+                            return self.db.profile.activeTheme ~= 'Custom'
+                        end
+                    },
+                    customThemeBottomFrameBG = {
+                        name = L("Step List Background"), -- TODO locale
+                        desc = L("bottomFrameBG"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 1.3,
+                        hasAlpha = true,
+                        get = function()
+                            return unpack(
+                                       self.db.profile.customTheme.bottomFrameBG)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.customTheme.bottomFrameBG = {
+                                r, g, b, a or 1
+                            }
+                            addon:RegisterTheme(self.db.profile.customTheme)
+                            addon.RenderFrame('themeReload')
+                        end,
+                        disabled = function()
+                            return self.db.profile.activeTheme ~= 'Custom'
+                        end
+                    },
+                    customThemeBottomFrameHighlight = {
+                        name = L("Step Highlight"), -- TODO locale
+                        desc = L("bottomFrameHighlight"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 1.4,
+                        hasAlpha = true,
+                        get = function()
+                            return unpack(
+                                       self.db.profile.customTheme
+                                           .bottomFrameHighlight)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.customTheme.bottomFrameHighlight = {
+                                r, g, b, a or 1
+                            }
+                            addon:RegisterTheme(self.db.profile.customTheme)
+                            addon.RenderFrame('themeReload')
+                        end,
+                        disabled = function()
+                            return self.db.profile.activeTheme ~= 'Custom'
+                        end
+                    },
+                    customThemeMapPins = {
+                        name = L("Map Pins"), -- TODO locale
+                        desc = L("mapPins"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 1.5,
+                        hasAlpha = true,
+                        get = function()
+                            return unpack(self.db.profile.customTheme.mapPins)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.customTheme.mapPins = {
+                                r, g, b, a or 1
+                            }
+                            addon:RegisterTheme(self.db.profile.customTheme)
+                            addon.RenderFrame('themeReload')
+                        end,
+                        disabled = function()
+                            return self.db.profile.activeTheme ~= 'Custom'
+                        end
+                    },
+                    customThemeTooltip = {
+                        name = L("Tooltip"), -- TODO locale
+                        desc = L("tooltip"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 1.6,
+                        get = function()
+                            return self.db.profile.customTheme.tooltip
+                        end,
+                        set = function(_, value)
+                            self.db.profile.customTheme.tooltip = '|c' .. value
+                            addon:RegisterTheme(self.db.profile.customTheme)
+                            addon.RenderFrame('themeReload')
+                        end,
+                        disabled = function()
+                            return self.db.profile.activeTheme ~= 'Custom'
+                        end,
+                        hidden = true -- TODO
+                    },
+                    customThemeFont = { -- TODO
+                        name = L("Font"), -- TODO locale
+                        desc = L("font"),
+                        type = "input",
+                        width = optionsWidth,
+                        order = 1.7,
+                        get = function()
+                            return self.db.profile.customTheme.font
+                        end,
+                        set = function(_, value)
+                            self.db.profile.customTheme.font = value
+                            addon:RegisterTheme(self.db.profile.customTheme)
+                            addon.RenderFrame('themeReload')
+                        end,
+                        disabled = function()
+                            return true or self.db.profile.activeTheme ~=
+                                       'Custom'
+                        end,
+                        hidden = true -- TODO
+                    },
+                    customThemeApply = {
+                        order = 1.9,
+                        type = 'execute',
+                        name = L("Apply Theme"),
+                        confirm = requiresReload,
+                        func = function() _G.ReloadUI() end
+                    },
                     guideWindowHeader = {
                         name = L("Guide Window"),
                         type = "header",
