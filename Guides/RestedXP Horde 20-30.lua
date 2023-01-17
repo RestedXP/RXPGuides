@@ -325,24 +325,28 @@ step << Orc wotlk !Warlock
     >>|cFFFCDC00Drag the|r |T132224:0|t[Timber Wolf] |cFFFCDC00onto your Action Bars|r
     .cast 580 >> Mount your |T132224:0|t[Timber Wolf]
     .train 580,3
+    .zoneskip Orgrimmar,1
 step << Orc wotlk !Warlock
     #completewith OrgTrain
     >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
     >>|cFFFCDC00Drag the|r |T132266:0|t[Dire Wolf] |cFFFCDC00onto your Action Bars|r
     .cast 6653 >> Mount your |T132266:0|t[Dire Wolf]
     .train 6653,3
+    .zoneskip Orgrimmar,1
 step << Orc wotlk !Warlock
     #completewith OrgTrain
     >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
     >>|cFFFCDC00Drag the|r |T132224:0|t[Brown Wolf] |cFFFCDC00onto your Action Bars|r
     .cast 6654 >> Mount your |T132224:0|t[Brown Wolf]
     .train 6654,3
+    .zoneskip Orgrimmar,1
 step << Orc wotlk !Warlock
     #completewith OrgTrain
     >>|cFFFCDC00Press "Shift+P" to open your Mount tab|r
     >>|cFFFCDC00Drag the|r |T132224:0|t[Black Wolf] |cFFFCDC00onto your Action Bars|r
     .cast 64658 >> Mount your |T132224:0|t[Black Wolf]
     .train 64658,3
+    .zoneskip Orgrimmar,1
 step << Warrior
     .goto Orgrimmar,80.39,32.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sorek|r
@@ -1701,7 +1705,7 @@ step << Rogue
 step << Shaman/Warrior
 	.goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ott|r
-    >>|cFF0E8312Buy the|r |T135344:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
+    >>|cFF0E8312Buy the|r |T132408:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
     .vendor >> Vendor and Repair
     .target Ott
     .money <3.0343 << Orc/Troll
@@ -2049,7 +2053,7 @@ step
     .complete 527,4 --Farmer Getz (1)
     .unitscan Farmer Getz
 step
-    .loop 35,Hillsbrad Foothills,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+    .loop 45,Hillsbrad Foothills,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
 	>>Kill |cFFFF5722Hillsbrad Farmers|r and |cFFFF5722Hillsbrad Farmhands|r
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
 	.complete 527,2 --Kill Hillsbrad Farmhand (x6)
@@ -2184,7 +2188,7 @@ step
 	.goto Hillsbrad Foothills,32.67,35.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Stanley|r
     >>|cFFFCDC00Wait out the RP, then kill|r |cFFFF5722Enraged Stanley|r
-    >>|cFFFF5722Enraged Stanley|r |cFFFCDC00Gives a full quest's worth of experience|r
+    >>|cFFFF5722Enraged Stanley|r |cFFFCDC00gives a full quest's worth of experience|r
     .turnin 502 >> Turn in Elixir of Pain
     .timer 9,Stanley RP (BE ALERT)
     .mob Stanley
@@ -2219,7 +2223,7 @@ step
 	.goto Hillsbrad Foothills,32.67,35.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Stanley|r
     >>|cFFFCDC00Wait out the RP, then kill|r |cFFFF5722Enraged Stanley|r
-    >>|cFFFF5722Enraged Stanley|r |cFFFCDC00Gives a full quest's worth of experience|r
+    >>|cFFFF5722Enraged Stanley|r |cFFFCDC00gives a full quest's worth of experience|r
     .turnin 502 >> Turn in Elixir of Pain
     .timer 9,Stanley RP (BE ALERT)
     .mob Stanley
@@ -2295,7 +2299,7 @@ step
 step << Shaman/Warrior
 	.goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ott|r
-    >>|cFF0E8312Buy the|r |T135344:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
+    >>|cFF0E8312Buy the|r |T132408:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
     .vendor >> Vendor and Repair
     .target Ott
     .money <3.0343 << Orc/Troll
@@ -2339,7 +2343,7 @@ step
 step
     #completewith next
 	.goto Hillsbrad Foothills,32.56,45.95,0
-	>>Kill |cFFFF5722Blacksmith Verringtan|r
+	>>Kill |cFFFF5722Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
@@ -2348,9 +2352,11 @@ step
     .complete 529,3 --Collect Shipment of Iron (x1)
 step
     #label Verringtan 
-	.goto Hillsbrad Foothills,32.56,45.95,8,0
-	.goto Hillsbrad Foothills,32.22,45.65,8,0
-	>>Kill |cFFFF5722Blacksmith Verringtan|r
+	.goto Hillsbrad Foothills,32.56,45.95,15,0
+	.goto Hillsbrad Foothills,32.20,45.65,15,0
+	.goto Hillsbrad Foothills,32.11,44.43,15,0
+    .loop 20,Hillsbrad Foothills,32.56,45.95,32.20,45.65,32.11,44.33,32.56,45.95
+	>>Kill |cFFFF5722Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
@@ -4184,10 +4190,10 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 << Horde
-#name 22-26 Hillsbrad Foothills JJ
+#name 22-25 Hillsbrad Foothills JJ
 #version 1
 #group RestedXP Horde 1-30
-#next 26-27 Ashenvale JJ
+#next 25-27 Ashenvale JJ
 #xprate >1.4999
 
 step << Orc Shaman wotlk/Orc Warrior wotlk
@@ -4338,10 +4344,18 @@ step
     .goto Silverpine Forest,46.19,41.28,30,0
     .goto Silverpine Forest,42.80,40.87,30 >> Travel toward |cFF00FF25Renferrel|r
 step
-    .goto Silverpine Forest,42.80,40.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Renferrel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Renferrel|r and |cFF00FF25Mura|r << Warrior/Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Renferrel|r << !Warrior !Shaman
     .accept 493 >> Accept Journey to Hillsbrad Foothills
+    .goto Silverpine Forest,42.80,40.87
+    .turnin 3301 >> Turn in Mura Runetotem << Warrior/Shaman
+    .goto Silverpine Forest,42.90,41.99 << Warrior/Shaman
     .target Apothecary Renferrel
+    .target Mura Runetotem << Warrior/Shaman
+step << Warrior/Shaman
+    .goto Silverpine Forest,44.19,42.67
+    >>Click |cFFDB2EEFYuriv's Tombstone|r on the ground
+    .turnin 264 >> Turn in Until Death Do Us Part
 step
     .goto Silverpine Forest,45.62,42.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Karos|r
@@ -4363,16 +4377,16 @@ step
 step
     .goto Hillsbrad Foothills,60.14,18.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zarise|r
-    .fp Tarren Mill>> Get the Tarren Mill Flight Path
+    .fp Tarren Mill >> Get the Tarren Mill Flight Path
     .target Zarise
 step << Shaman/Warrior
     #xprate >1.6999
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lydon|r, |cFF00FF25Darthalia|r, the |cFF00FF25Wanted Poster|r, and |cFF00FF25Krusk|r
+    .turnin 1065 >> Turn in Journey to Tarren Mill
+    .accept 1066 >> Accept Blood of Innocents
     .turnin 493 >> Turn in Journey to Hillsbrad Foothills
     .accept 496 >> Accept Elixir of Suffering
     .accept 501 >> Accept Elixir of Pain
-    .turnin 1065 >> Turn in Journey to Tarren Mill
-    .accept 1066 >> Accept Blood of Innocents
     .goto Hillsbrad Foothills,61.51,19.42,8,0
     .goto Hillsbrad Foothills,61.44,19.06
     .turnin 494 >> Turn in Time To Strike
@@ -4412,11 +4426,11 @@ step << !Shaman !Warrior
 step << Shaman/Warrior
     #xprate <1.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lydon|r, |cFF00FF25Darthalia|r, the |cFF00FF25Wanted Poster|r, |cFF00FF25Krusk|r, and the Inn's |cFF00FF25Wanted Poster|r
+    .turnin 1065 >> Turn in Journey to Tarren Mill
+    .accept 1066 >> Accept Blood of Innocents
     .turnin 493 >> Turn in Journey to Hillsbrad Foothills
     .accept 496 >> Accept Elixir of Suffering
     .accept 501 >> Accept Elixir of Pain
-    .turnin 1065 >> Turn in Journey to Tarren Mill
-    .accept 1066 >> Accept Blood of Innocents
     .goto Hillsbrad Foothills,61.51,19.42,8,0
     .goto Hillsbrad Foothills,61.44,19.06
     .turnin 494 >> Turn in Time To Strike
@@ -4464,13 +4478,13 @@ step
     .goto Hillsbrad Foothills,62.78,19.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shay|r
     >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << Paladin
+    >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin !Shaman
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << Paladin/Shaman
     .collect 1205,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin/Shaman --Melon Juice (20)
     .collect 3770,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin !Shaman --Mutton Chop (20)
     .collect 3770,10,1145,1 << Paladin/Shaman --Mutton Chop (10)
     .target Innkeeper Shay
-    .money <0.2000 << !Paladin
+    .money <0.2000 << !Paladin !Shaman
     .money <0.3000 << Paladin/Shaman
     .xp <20,1
     .xp >25,1
@@ -4479,13 +4493,13 @@ step
     .goto Hillsbrad Foothills,62.78,19.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shay|r
     >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312and|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << Paladin
-    .collect 1708,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin --Sweet Nectar (20)
-    .collect 3771,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin --Wild Hog Shank (20)
-    .collect 3771,10,1145,1 << Paladin --Wild Hog Shank (10)
+    >>|cFF0E8312Buy|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin !Shaman
+    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312and|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << Paladin/Shaman
+    .collect 1708,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin/Shaman --Sweet Nectar (20)
+    .collect 3771,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin !Shaman --Wild Hog Shank (20)
+    .collect 3771,10,1145,1 << Paladin/Shaman --Wild Hog Shank (10)
     .target Innkeeper Shay
-    .money <0.4000 << !Paladin
+    .money <0.4000 << !Paladin !Shaman
     .money <0.6000 << Paladin/Shaman
     .xp <24,1
     .xp >35,1
@@ -4533,7 +4547,7 @@ step << Rogue
 step << Shaman/Warrior
 	.goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ott|r
-    >>|cFF0E8312Buy the|r |T135344:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
+    >>|cFF0E8312Buy the|r |T132408:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
     .vendor >> Vendor and Repair
     .target Ott
     .money <3.0343 << Orc/Troll
@@ -4589,7 +4603,7 @@ step
 step
     #completewith Drull
 	>>Kill |cFFFF5722Syndicate Rogues|r and |cFFFF5722Syndicate Watchmen|r << !Shaman !Warrior
-    >>Kill |cFFFF5722Syndicate Rogues|r, |cFFFF5722Syndicate Watchmen|r, and |cFFFF5722Syndicate Shadow Mages|r. Loot them for their |cFF00BCD4Vials of Innocent Blood|r << Shaman/Warrior
+    >>Kill |cFFFF5722Syndicate Rogues|r, |cFFFF5722Syndicate Watchmen|r, and |cFFFF5722Syndicate Shadow Mages|r. Loot |cFFFF5722Syndicate Shadow Mages|r for their |cFF00BCD4Vials of Innocent Blood|r << Shaman/Warrior
     .complete 549,1 --Kill Syndicate Rogue (x10)
 	.complete 549,2 --Kill Syndicate Watchman (x10)
 	.complete 1066,1 << Shaman/Warrior --Collect Vial of Innocent Blood (x5)
@@ -4613,7 +4627,7 @@ step
     .goto Hillsbrad Foothills,79.45,40.57,15,0
 	.goto Hillsbrad Foothills,77.99,40.19
 	>>Kill |cFFFF5722Marlgen|r. Loot him for his |cFF00BCD4Gold Key|r
-    >>|cFFFCDC00He can be found in front of |cFF00FF25Tog'thar|r or, at the bottom of the tower|r
+    >>|cFFFCDC00He can be found in front of |cFF00FF25Tog'thar|r or at the bottom of the tower|r
     .collect 3499,1,498,2 --Burnished Gold Key (1)
     .mob Jailor Marlgen
 step
@@ -4716,7 +4730,7 @@ step
     .goto Hillsbrad Foothills,76.47,46.62,30,0
     .goto Hillsbrad Foothills,75.29,40.17
 	>>Kill |cFFFF5722Syndicate Rogues|r and |cFFFF5722Syndicate Watchmen|r << !Shaman !Warrior
-    >>Kill |cFFFF5722Syndicate Rogues|r, |cFFFF5722Syndicate Watchmen|r, and |cFFFF5722Syndicate Shadow Mages|r. Loot them for their |cFF00BCD4Vials of Innocent Blood|r << Shaman/Warrior
+    >>Kill |cFFFF5722Syndicate Rogues|r, |cFFFF5722Syndicate Watchmen|r, and |cFFFF5722Syndicate Shadow Mages|r. Loot |cFFFF5722Syndicate Shadow Mages|r for their |cFF00BCD4Vials of Innocent Blood|r << Shaman/Warrior
     .complete 549,1,7 --Kill Syndicate Rogue (x10)
 	.complete 549,2,7 --Kill Syndicate Watchman (x10)
 	.complete 1066,1,4 << Shaman/Warrior --Collect Vial of Innocent Blood (x5)
@@ -4726,7 +4740,7 @@ step
 step
     #label ExitDurnholde
     #completewith Syndicate1
-	.goto Hillsbrad Foothills,76.72,46.22,60 >> Exit Durnholde Keep
+	.goto Hillsbrad Foothills,76.72,46.22,45 >> Exit Durnholde Keep
     .isOnQuest 549
 step
     #requires ExitDurnholde
@@ -4772,7 +4786,7 @@ step
     .goto Hillsbrad Foothills,76.47,46.62,30,0
     .goto Hillsbrad Foothills,75.29,40.17
 	>>Kill |cFFFF5722Syndicate Rogues|r and |cFFFF5722Syndicate Watchmen|r << !Shaman !Warrior
-    >>Kill |cFFFF5722Syndicate Rogues|r, |cFFFF5722Syndicate Watchmen|r, and |cFFFF5722Syndicate Shadow Mages|r. Loot them for their |cFF00BCD4Vials of Innocent Blood|r << Shaman/Warrior
+    >>Kill |cFFFF5722Syndicate Rogues|r, |cFFFF5722Syndicate Watchmen|r, and |cFFFF5722Syndicate Shadow Mages|r. Loot |cFFFF5722Syndicate Shadow Mages|r for their |cFF00BCD4Vials of Innocent Blood|r << Shaman/Warrior
     .complete 549,1 --Kill Syndicate Rogue (x10)
 	.complete 549,2 --Kill Syndicate Watchman (x10)
 	.complete 1066,1 << Shaman/Warrior --Collect Vial of Innocent Blood (x5)
@@ -4934,13 +4948,13 @@ step
     .mob Giant Moss Creeper
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lydon|r, |cFF00FF25Umpi|r, |cFF00FF25Darthalia|r, and |cFF00FF25Krusk|r
+    .turnin 1066 >> Turn in Blood of Innocents << Shaman/Warrior
     .turnin 496 >> Turn in Elixir of Suffering
     .accept 499 >> Accept Elixir of Suffering
     .turnin 501 >> Turn in Elixir of Pain
     .accept 502 >> Accept Elixir of Pain
-    .accept 509 >> Accept Elixir of Agony
-    .turnin 1066 >> Turn in Blood of Innocents << Shaman/Warrior
     .accept 1067 >> Accept Return to Thunder Bluff << Shaman/Warrior
+    .accept 509 >> Accept Elixir of Agony
     .goto Hillsbrad Foothills,61.51,19.42,8,0
     .goto Hillsbrad Foothills,61.44,19.06
     .turnin 499 >> Turn in Elixir of Suffering
@@ -4959,11 +4973,11 @@ step
     .xp <24,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lydon|r, |cFF00FF25Umpi|r, |cFF00FF25Darthalia|r, and |cFF00FF25Krusk|r
+    .turnin 1066 >> Turn in Blood of Innocents << Shaman/Warrior
     .turnin 496 >> Turn in Elixir of Suffering
     .accept 499 >> Accept Elixir of Suffering
     .turnin 501 >> Turn in Elixir of Pain
     .accept 502 >> Accept Elixir of Pain
-    .turnin 1066 >> Turn in Blood of Innocents << Shaman/Warrior
     .accept 1067 >> Accept Return to Thunder Bluff << Shaman/Warrior
     .goto Hillsbrad Foothills,61.51,19.42,8,0
     .goto Hillsbrad Foothills,61.44,19.06
@@ -5012,13 +5026,13 @@ step
     .goto Hillsbrad Foothills,62.78,19.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shay|r
     >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << Paladin
+    >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin !Shaman
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << Paladin/Shaman
     .collect 1205,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin/Shaman --Melon Juice (20)
     .collect 3770,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin !Shaman --Mutton Chop (20)
     .collect 3770,10,1145,1 << Paladin/Shaman --Mutton Chop (10)
     .target Innkeeper Shay
-    .money <0.2000 << !Paladin
+    .money <0.2000 << !Paladin !Shaman
     .money <0.3000 << Paladin/Shaman
     .xp <20,1
     .xp >25,1
@@ -5027,13 +5041,13 @@ step
     .goto Hillsbrad Foothills,62.78,19.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shay|r
     >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312and|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << Paladin
-    .collect 1708,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin --Sweet Nectar (20)
-    .collect 3771,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin --Wild Hog Shank (20)
-    .collect 3771,10,1145,1 << Paladin --Wild Hog Shank (10)
+    >>|cFF0E8312Buy|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin !Shaman
+    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312and|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << Paladin/Shaman
+    .collect 1708,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin/Shaman --Sweet Nectar (20)
+    .collect 3771,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin !Shaman --Wild Hog Shank (20)
+    .collect 3771,10,1145,1 << Paladin/Shaman --Wild Hog Shank (10)
     .target Innkeeper Shay
-    .money <0.4000 << !Paladin
+    .money <0.4000 << !Paladin !Shaman
     .money <0.6000 << Paladin/Shaman
     .xp <24,1
     .xp >35,1
@@ -5066,7 +5080,7 @@ step
 	.goto Hillsbrad Foothills,32.67,35.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Stanley|r
     >>|cFFFCDC00Wait out the RP, then kill|r |cFFFF5722Enraged Stanley|r
-    >>|cFFFCDC00Killing|r |cFFFF5722Enraged Stanley|r |cFFFCDC00Gives a full quest's worth of experience|r
+    >>|cFFFCDC00Killing|r |cFFFF5722Enraged Stanley|r |cFFFCDC00gives a full quest's worth of experience|r
     .turnin 502 >> Turn in Elixir of Pain
     .timer 9,Stanley RP (BE ALERT)
     .mob Stanley
@@ -5087,7 +5101,7 @@ step
 step
     #label Peasants
     .loop 35,Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
-	>>Kill |cFFFF5722Hillsbrad Peasants|r. Loot them for their |cFF00BCD4Skulls|r
+	>>Kill |cFFFF5722Hillsbrad Peasants|r
 	.complete 528,1 --Kill Hillsbrad Peasant (x15)
     .mob Hillsbrad Peasant
     .unitscan Enraged Stanley
@@ -5118,13 +5132,13 @@ step
     .goto Hillsbrad Foothills,62.78,19.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shay|r
     >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << Paladin
+    >>|cFF0E8312Buy|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin !Shaman
+    >>|cFF0E8312Buy|r |T132796:0|t[Melon Juice] |cFF0E8312and|r |T133970:0|t[Mutton Chops] |cFF0E8312from him|r << Paladin/Shaman
     .collect 1205,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin/Shaman --Melon Juice (20)
     .collect 3770,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin !Shaman --Mutton Chop (20)
     .collect 3770,10,1145,1 << Paladin/Shaman --Mutton Chop (10)
     .target Innkeeper Shay
-    .money <0.2000 << !Paladin
+    .money <0.2000 << !Paladin !Shaman
     .money <0.3000 << Paladin/Shaman
     .xp <20,1
     .xp >25,1
@@ -5133,20 +5147,20 @@ step
     .goto Hillsbrad Foothills,62.78,19.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shay|r
     >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312and|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << Paladin
-    .collect 1708,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin --Sweet Nectar (20)
-    .collect 3771,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin --Wild Hog Shank (20)
-    .collect 3771,10,1145,1 << Paladin --Wild Hog Shank (10)
+    >>|cFF0E8312Buy|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin !Shaman
+    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312and|r |T133969:0|t[Wild Hog Shanks] |cFF0E8312from him|r << Paladin/Shaman
+    .collect 1708,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin/Shaman --Sweet Nectar (20)
+    .collect 3771,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin !Shaman --Wild Hog Shank (20)
+    .collect 3771,10,1145,1 << Paladin/Shaman --Wild Hog Shank (10)
     .target Innkeeper Shay
-    .money <0.4000 << !Paladin
+    .money <0.4000 << !Paladin !Shaman
     .money <0.6000 << Paladin/Shaman
     .xp <24,1
     .xp >35,1
 step << Shaman/Warrior
 	.goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ott|r
-    >>|cFF0E8312Buy the|r |T135344:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
+    >>|cFF0E8312Buy the|r |T132408:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
     .vendor >> Vendor and Repair
     .target Ott
     .money <3.0343 << Orc/Troll
@@ -5181,7 +5195,7 @@ step << Rogue
 step
     .loop 45,Hillsbrad Foothills,64.24,59.25,66.03,61.63,64.51,63.41,62.90,62.04,64.24,59.25
     >>Loot the |cFF00BCD4Mudsnout Blossoms|r on the ground
-    >>|cFFFCDC00Be careful as |cFFFF5722Mudsnout Gnolls|r cast |T136090:0|t[Sling Mud] (Reduces hit chance by 50% for 15 seconds) << Rogue/Warrior/Paladin
+    >>|cFFFCDC00Be careful as |cFFFF5722Mudsnout Gnolls|r cast|r |T136090:0|t[Sling Mud] |cFFFCDC00(Reduces hit chance by 50% for 15 seconds)|r << Rogue/Warrior/Paladin
     .complete 509,1 --Mudsnout Blossoms (6)
 step
     #completewith Blacksmith
@@ -5195,7 +5209,7 @@ step
 step
     #completewith next
 	.goto Hillsbrad Foothills,32.56,45.95,0
-	>>Kill |cFFFF5722Blacksmith Verringtan|r
+	>>Kill |cFFFF5722Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
@@ -5204,8 +5218,11 @@ step
     .complete 529,3 --Collect Shipment of Iron (x1)
 step
     #label Verringtan 
-	.goto Hillsbrad Foothills,32.56,45.95
-	>>Kill |cFFFF5722Blacksmith Verringtan|r
+	.goto Hillsbrad Foothills,32.56,45.95,15,0
+	.goto Hillsbrad Foothills,32.20,45.65,15,0
+	.goto Hillsbrad Foothills,32.11,44.43,15,0
+    .loop 20,Hillsbrad Foothills,32.56,45.95,32.20,45.65,32.11,44.33,32.56,45.95
+	>>Kill |cFFFF5722Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
@@ -5373,7 +5390,7 @@ step
 step << Shaman/Warrior
 	.goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ott|r
-    >>|cFF0E8312Buy the|r |T135344:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
+    >>|cFF0E8312Buy the|r |T132408:0|t[Merciless Axe] |cFF0E8312from him if it's up|r
     .vendor >> Vendor and Repair
     .target Ott
     .money <3.0343 << Orc/Troll
@@ -5699,7 +5716,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 << Horde
-#name 26-27 Ashenvale JJ
+#name 25-27 Ashenvale JJ
 #version 1
 #group RestedXP Horde 1-30
 #next 27-28 Southern Barrens JJ
@@ -6121,7 +6138,6 @@ step << Orc wotlk !Warlock
 step << Warrior
     .goto Orgrimmar,80.39,32.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sorek|r
-    .accept 1823 >> Accept Speak with Ruga
     .train 6574 >> Train your class spells
     .target Sorek
     .train 6574,1
@@ -6130,7 +6146,6 @@ step << Warrior
 step << Warrior
     .goto Orgrimmar,80.39,32.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sorek|r
-    .accept 1823 >> Accept Speak with Ruga
     .train 6178 >> Train your class spells
     .target Sorek
     .train 6178,1
@@ -7035,12 +7050,12 @@ step << Rogue tbc
 step << Rogue !tbc
     .goto The Barrens,49.16,12.48,40,0
     .goto The Barrens,48.12,5.42,100 >>Travel toward |cFF00FF25Kadrak|r
-step << !Shaman !Warrior
+step
     #requires HinottOil << Rogue tbc
     #completewith next
     .goto The Barrens,48.16,5.33,6,0
     .goto The Barrens,48.11,5.24,6 >> Travel up the tower
-step << !Shaman !Warrior
+step
     #requires HinottOil << Rogue tbc
     .goto The Barrens,48.12,5.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kadrak|r
@@ -7071,8 +7086,8 @@ step
     .goto Ashenvale,64.28,75.33,10,0
     .goto Ashenvale,64.81,75.34
     >>Follow |cFF00FF25Torek|r
-    >>Let |cFF00FF25Torek|r and his |cFF00FF25Raiders|r tank the |cFFFF5722Silverwing Warriors|r and |cFFFF5722Silverwing Sentinels|r
-    >>When you clear the building, run toward the Balcony. When |cFFFF5722Duriel|r comes, let |cFF00FF25Torek|r and his |cFF00FF25Raiders|r take aggro before you deal damage
+    >>Let |cFF00FF25Torek|r and his |cFF00FF25Splintertree Raiders|r tank the |cFFFF5722Silverwing Warriors|r and |cFFFF5722Silverwing Sentinels|r
+    >>When you clear the building, run toward the Balcony. When |cFFFF5722Duriel|r comes, let |cFF00FF25Torek|r and his |cFF00FF25Splintertree Raiders|r take aggro before you deal damage
     >>|cFFFCDC00Skip this step if you die|r
     .complete 6544,1 --Take Silverwing Outpost
     .mob Silverwing Warrior
@@ -7089,7 +7104,8 @@ step
     .target Kuray'bin
     .target Advisor Sunsworn << BloodElf
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r, |cFF00FF25Mastok|r, and |cFF00FF25Pixel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r, |cFF00FF25Mastok|r, and |cFF00FF25Pixel|r << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r and |cFF00FF25Mastok|r << Shaman/Warrior
     .turnin 6382 >> Turn in The Ashenvale Hunt << Shaman/Warrior
     .turnin 6383 >> Turn in The Ashenvale Hunt
     .goto Ashenvale,73.45,63.56,30,0
@@ -7097,11 +7113,11 @@ step
     .accept 25 >> Accept Stonetalon Standstill
     .goto Ashenvale,73.55,60.58,12,0
     .goto Ashenvale,73.67,60.01
-    .accept 6441 >> Accept Satyr Horns
-    .goto Ashenvale,73.06,61.48
+    .accept 6441 >> Accept Satyr Horns << !Shaman !Warrior
+    .goto Ashenvale,73.06,61.48 << !Shaman !Warrior
     .target Senani Thunderheart
     .target Mastok Wrilehiss
-    .target Pixel
+    .target Pixel << !Shaman !Warrior
 step
     .goto Ashenvale,73.18,61.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vhulgra|r
@@ -7177,12 +7193,12 @@ step
     .accept 2 >> Accept Sharptalon's Claw
     .unitscan Sharptalon
     .use 16305
-step
+step << !Shaman !Warrior
     #completewith next
     .goto Ashenvale,72.54,50.48,40,0
     .goto Ashenvale,71.90,49.60,40,0
     .goto Ashenvale,71.90,49.60,50 >> Travel toward Night Run
-step
+step << !Shaman !Warrior
     .loop 40,Ashenvale,68.84,53.16,67.41,55.32,66.70,57.09,66.23,55.16,66.58,51.68,66.62,54.28,67.15,54.63,67.96,54.20,68.84,53.16
     >>Kill |cFFFF5722Felmusk Shadowstalkers|r, |cFFFF5722Felmusk Satyrs|r, and |cFFFF5722Felmusk Felsworns|r. Loot them for their |cFF00BCD4Satyr Horns|r
     >>|cFFFCDC00Be careful as |cFFFF5722Felmusk Shadowstalkers|r cast|r |T132092:0|t[Shadowstalker Slash] |cFFFCDC00(Cheap Shot) and are stealthed|r
@@ -7191,7 +7207,7 @@ step
     .mob Felmusk Shadowstalker
     .mob Felmusk Felsworn
     .mob Felmusk Satyr
---VV bad quest but its to help with xp gate later (shimmering 32, stv 35)
+--VV bad quest but its to help with xp gate later (shimmering 32, stv 35). Shaman/Warriors get about a level ahead so they can skip it
 step
     #completewith next
     .line Ashenvale,62.39,49.80,61.99,49.81,61.30,50.03,61.03,50.43,61.01,51.09,60.94,51.53,60.49,52.41,59.83,53.40,59.55,53.71,59.26,54.25,59.10,54.76,58.80,55.24,58.17,55.57,57.91,55.90,57.54,56.03,56.93,56.06,56.37,55.90,56.16,55.46,55.62,55.41,54.80,55.09,54.06,54.91,53.01,54.54,52.68,54.42,52.24,54.38,
@@ -7313,6 +7329,7 @@ step
     .collect 16408,1,1918,1 --Collect Befouled Water Globe (x1)
     .accept 1918 >>Accept The Befouled Element
     .use 16408
+    .unitscan Tideress
 step
 	.goto Ashenvale,48.93,69.56
     >>Go under the Gazebo
@@ -7339,6 +7356,7 @@ step
     .collect 16408,1,1918,1 --Collect Befouled Water Globe (x1)
     .accept 1918 >>Accept The Befouled Element
     .use 16408
+    .unitscan Tideress
 step
     .loop 50,Ashenvale,48.36,69.74,48.43,70.14,48.93,70.82,49.49,70.76,50.21,70.36,50.47,70.43,50.54,71.08,50.74,71.31,51.42,70.86,52.13,71.14,52.18,71.60,52.08,72.10,45.84,70.67,48.36,69.74
     >>Kill |cFFFF5722Befouled Water Elementals|r
@@ -7372,7 +7390,6 @@ step
     #completewith next
     .goto Ashenvale,61.06,71.96,10,0
     .goto Ashenvale,61.38,72.48,15,0
-    .goto Ashenvale,64.28,75.33,10,0
     .goto Ashenvale,71.10,68.12,20 >>Travel toward |cFF00FF25Kuray'bin|r
     .isQuestTurnedIn 6544
 step
@@ -7381,21 +7398,8 @@ step
     .turnin 6503 >> Turn in Ashenvale Outrunners
     .target Kuray'bin
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r, |cFF00FF25Mastok|r, and |cFF00FF25Pixel|r
-    .turnin 6382 >> Turn in The Ashenvale Hunt << Shaman/Warrior
-    .turnin 6383 >> Turn in The Ashenvale Hunt
-    .goto Ashenvale,73.45,63.56,30,0
-    .goto Ashenvale,73.78,61.46
-    .accept 25 >> Accept Stonetalon Standstill
-    .goto Ashenvale,73.55,60.58,12,0
-    .goto Ashenvale,73.67,60.01
-    .accept 6441 >> Accept Satyr Horns
-    .goto Ashenvale,73.06,61.48
-    .target Senani Thunderheart
-    .target Mastok Wrilehiss
-    .target Pixel
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r, |cFF00FF25Mastok|r, |cFF00FF25Pixel|r, and |cFF00FF25Ertog|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r, |cFF00FF25Mastok|r, |cFF00FF25Pixel|r, and |cFF00FF25Ertog|r << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r, |cFF00FF25Mastok|r, and |cFF00FF25Ertog|r << Shaman/Warrior
     .turnin 2 >> Turn in Sharptalon's Claw
     .turnin 23 >> Turn in Ursangous's Paw
     .turnin 24 >> Turn in Shadumbra's Head
@@ -7406,17 +7410,18 @@ step
     .turnin 1918 >> Turn in The Befouled Element
     .goto Ashenvale,73.55,60.58,12,0
     .goto Ashenvale,73.67,60.01
-    .turnin 6441 >> Turn in Satyr Horns
-    .goto Ashenvale,73.06,61.48
+    .turnin 6441 >> Turn in Satyr Horns << !Shaman !Warrior
+    .goto Ashenvale,73.06,61.48 << !Shaman !Warrior
     .turnin 6544 >> Turn in Torek's Assault
     .goto Ashenvale,73.03,62.47
     .target Senani Thunderheart
     .target Mastok Wrilehiss
-    .target Pixel
+    .target Pixel << !Shaman !Warrior
     .target Ertog Ragetusk
     .isOnQuest 6544
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r, |cFF00FF25Mastok|r, and |cFF00FF25Pixel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r, |cFF00FF25Mastok|r, and |cFF00FF25Pixel|r << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senani|r and |cFF00FF25Mastok|r << Shaman/Warrior
     .turnin 2 >> Turn in Sharptalon's Claw
     .turnin 23 >> Turn in Ursangous's Paw
     .turnin 24 >> Turn in Shadumbra's Head
@@ -7427,11 +7432,11 @@ step
     .turnin 1918 >> Turn in The Befouled Element
     .goto Ashenvale,73.55,60.58,12,0
     .goto Ashenvale,73.67,60.01
-    .turnin 6441 >> Turn in Satyr Horns
-    .goto Ashenvale,73.06,61.48
+    .turnin 6441 >> Turn in Satyr Horns << !Shaman !Warrior
+    .goto Ashenvale,73.06,61.48 << !Shaman !Warrior
     .target Senani Thunderheart
     .target Mastok Wrilehiss
-    .target Pixel
+    .target Pixel << !Shaman !Warrior
 step << Druid
 	#completewith next
 	.cast 18960 >> Cast |T135758:0|t[Teleport: Moonglade]
@@ -7470,7 +7475,7 @@ step
     .hs >> Hearth to Crossroads << Shaman/Warrior
     .hs >> Hearth to Thunder Bluff << !Shaman !Warrior
     .cooldown item,6948,>0
-step 
+step << !Shaman !Warrior
     #completewith SacredF1
     .goto Ashenvale,73.18,61.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vhulgra|r
@@ -7478,17 +7483,31 @@ step
     .cooldown item,6948,<0
     .target Vhulgra
     .zoneskip Ashenvale,1
-step
+step << !Shaman !Warrior
     .goto Thunder Bluff,45.81,64.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Pala|r
     >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312from her|r << Priest/Mage/Warlock/Druid
-    >>|cFF0E8312Buy|r |T133994:0|t[Stormwind Brie] |cFF0E8312from her|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312and|r |T133994:0|t[Stormwind Brie] |cFF0E8312from her|r << Paladin
+    >>|cFF0E8312Buy|r |T133994:0|t[Stormwind Brie] |cFF0E8312from her|r << !Priest !Mage !Warlock !Druid !Paladin !Shaman
+    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312and|r |T133994:0|t[Stormwind Brie] |cFF0E8312from her|r << Paladin/Shaman
     .collect 1708,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin --Sweet Nectar (20)
     .collect 1707,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin --Stormwind Brie (20)
     .collect 1707,10,1145,1 << Paladin --Stormwind Brie (10)
     .target Innkeeper Pala
-    .money <0.4000 << !Paladin
+    .money <0.4000 << !Paladin !Shaman
+    .money <0.6000 << Paladin/Shaman
+    .xp <24,1
+    .xp >35,1
+step << Shaman/Warrior
+    .goto The Barrens,51.99,29.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Boorand|r
+    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312from him|r << Priest/Mage/Warlock/Druid
+    >>|cFF0E8312Buy|r |T133976:0|t[Goldenbark Apples] |cFF0E8312from him|r << !Priest !Mage !Warlock !Druid !Paladin !Shaman
+    >>|cFF0E8312Buy|r |T132799:0|t[Sweet Nectar] |cFF0E8312and|r |T133976:0|t[Goldenbark Apples] |cFF0E8312from him|r << Paladin/Shaman
+    .collect 1708,20,1145,1 << Priest/Mage/Warlock/Druid/Paladin/Shaman --Sweet Nectar (20)
+    .collect 4539,20,1145,1 << !Priest !Mage !Warlock !Druid !Paladin !Shaman --Goldenbark Apple (20)
+    .collect 4539,10,1145,1 << Paladin/Shaman --Goldenbark Apple (10)
+    .target Innkeeper Boorand Plainswind
+    .money <0.4000 << !Paladin !Shaman
     .money <0.6000 << Paladin/Shaman
     .xp <24,1
     .xp >35,1
@@ -7527,7 +7546,7 @@ RXPGuides.RegisterGuide([[
 #name 27-28 Southern Barrens JJ
 #version 1
 #group RestedXP Horde 1-30
-#next 28-31 Thousand Needles JJ
+#next 28-30 Thousand Needles JJ
 #xprate >1.4999
 
 step << Hunter
@@ -7639,7 +7658,7 @@ step
     .turnin 883 >> Turn in Lakota'mani
     .goto The Barrens,44.86,59.13
     .turnin 1823 >> Turn in Speak with Ruga << Warrior
-    .accept 1824 >> Accept Trial at the Field of Giants << Warrior
+-- .accept 1824 >> Accept Trial at the Field of Giants
     .goto The Barrens,44.80,59.22,6,0 << Warrior 
     .goto The Barrens,44.67,59.42 << Warrior
     .target Jorn Skyseer
@@ -7648,7 +7667,7 @@ step
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ruga|r
     .turnin 1823 >> Turn in Speak with Ruga
-    .accept 1824 >> Accept Trial at the Field of Giants
+--  .accept 1824 >> Accept Trial at the Field of Giants
     .goto The Barrens,44.80,59.22,6,0
     .goto The Barrens,44.67,59.42
     .target Ruga Ragetotem
@@ -7660,7 +7679,7 @@ step
     .accept 884 >>Accept Owatanka
     .use 5102
     .unitscan Owatanka
-step << Warrior
+step << skip
     #completewith next
     >>Kill the |cFFFF5722Silithid Harvester|r. Loot it for the |T134321:0|t[|cFF00BCD4Harvester's Head|r]
     >>|cFFFCDC00Use the |T134321:0|t[|cFF00BCD4Harvester's Head|r] to start the quest|r
@@ -7668,25 +7687,25 @@ step << Warrior
     .accept 897 >>Accept The Harvester
     .use 5138
     .unitscan Silithid Harvester
-step << Warrior
+step << skip
     .loop 40,The Barrens,45.17,69.08,43.87,68.84,42.17,69.65,42.35,71.85,42.77,72.28,43.86,72.06,45.38,72.25,45.17,69.08
-    >>Kill |cFFFF5722Silithid Protectors|r, |cFFFF5722Silithid Swarmers|r, |cFFFF5722Silithid Creepers|r and |cFFFF5722Silithid Grubs|r. Loot them for their |cFF00BCD4Antennae|r
-    >>|cFFFCDC00NOTE: The |cFF00BCD4Antennae|r only have a 15 minute duration, do not AFK or logout during this quest|r
+    >>Kill |cFFFF5722Silithid Protectors|r, |cFFFF5722Silithid Swarmers|r, |cFFFF5722Silithid Creepers|r and |cFFFF5722Silithid Grubs|r. Loot them for their |T133027:0|t[Twitching Antenna]
+    >>|cFFFCDC00NOTE: The |T133027:0|t[Twitching Antenna] only have a 15 minute duration, do not AFK or logout during this quest|r
     .complete 1824,1 --Twitching Antenna (5)
     .mob Silithid Protector
     .mob Silithid Swarmer
     .mob Silithid Creeper
     .mob Silithid Grub
-step << Warrior
+step << skip
     .goto The Barrens,45.17,69.08,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ruga|r
-    >>|cFFFCDC00NOTE: The |cFF00BCD4Antennae|r only have a 15 minute duration, do not AFK or logout during this quest|r
-    >>|cFFFCDC00If your |cFF00BCD4Antennae|r disappear, return to the Field of Giants and collect 5 more|r
+    >>|cFFFCDC00NOTE: The |T133027:0|t[Twitching Antenna] only have a 15 minute duration, do not AFK or logout during this quest|r
+    >>|cFFFCDC00If your |T133027:0|t[Twitching Antenna] disappear, return to the Field of Giants and collect 5 more|r
     .turnin 1824 >> Turn in Trial at the Field of Giants
     .goto The Barrens,44.80,59.22,6,0
     .goto The Barrens,44.67,59.42
     .target Ruga Ragetotem
-step << Warrior
+step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r
     .turnin 897 >> Turn in The Harvester
     .goto The Barrens,44.86,59.13
@@ -7753,8 +7772,81 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r patrolling on the road
     .accept 843 >> Accept Gann's Reclamation
     .target Gann Stonespire
-step
+step << Shaman/Warrior
+    #completewith Lok
+    >>Kill |cFFFF5722Razormane Stalkers|r and |cFFFF5722Razormane Pathfinders|r. Loot them for the |T135640:0|t[|cFF00BCD4Razormane Backstabber|r]
+    >>|cFFFCDC00The |cFFFF5722Razormane Stalkers|r are stealthed|r
+    >>Kill |cFFFF5722Razormane Seers|r. Loot them for the |T135139:0|t[|cFF00BCD4Charred Razormane Wand|r]
+    >>Kill |cFFFF5722Razormane Warfrenzies|r. Loot them for the |T134955:0|t[|cFF00BCD4Razormane War Shield|r]
+    .complete 893,1 --Collect Razormane Backstabber (x1)
+    .complete 893,2 --Collect Charred Razormane Wand (x1)
+    .complete 893,3 --Collect Razormane War Shield (x1)
+    .mob Razormane Stalker
+    .mob Razormane Pathfinder
+    .mob Razormane Seer
+    .mob Razormane Warfrenzy
+step << Shaman/Warrior
     #completewith next
+    .goto The Barrens,44.85,78.81,45,0
+    .goto The Barrens,44.44,78.97,45,0
+    >>Kill |cFFFF5722Washte Pawne|r. Loot him for |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r]
+    >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
+    .collect 5103,1,885,1 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .use 5103 
+    .unitscan Washte Pawne
+step << Shaman/Warrior
+    .goto The Barrens,44.06,80.02,45,0
+    .goto The Barrens,43.91,80.46,45,0
+    .goto The Barrens,44.03,80.38,45,0
+    .goto The Barrens,44.16,80.46,45,0
+    .goto The Barrens,44.31,80.79,45,0
+    .goto The Barrens,44.66,80.49,45,0
+    .goto The Barrens,45.10,80.30,45,0
+    .goto The Barrens,45.52,80.47,45,0
+    .goto The Barrens,45.46,80.91,45,0
+    .goto The Barrens,44.83,80.95,45,0
+    .goto The Barrens,44.15,81.44,45,0
+    .goto The Barrens,43.79,81.40,45,0
+    .goto The Barrens,43.63,80.97,45,0
+    .goto The Barrens,43.49,80.48,45,0
+    .goto The Barrens,43.24,80.49,45,0
+    .goto The Barrens,42.82,80.23,45,0
+    .goto The Barrens,42.65,79.87,45,0
+    .goto The Barrens,43.07,78.98,45,0
+    .goto The Barrens,43.48,78.95,45,0
+    .goto The Barrens,43.66,79.12,45,0
+    .goto The Barrens,43.80,79.46,45,0
+    .goto The Barrens,44.43,78.71,45,0
+    .goto The Barrens,44.89,78.87,45,0
+    .goto The Barrens,45.12,79.20,45,0
+    .goto The Barrens,45.05,79.75,45,0
+    .goto The Barrens,44.83,79.87,45,0
+    .goto The Barrens,44.37,79.85
+    .loop 45,The Barrens,44.37,79.85,44.83,79.87,45.05,79.75,45.12,79.20,44.89,78.87,44.43,78.71,43.80,79.46,43.66,79.12,43.48,78.95,43.07,78.98,42.65,79.87,42.82,80.23,43.24,80.49,43.49,80.48,43.63,80.97,43.79,81.40,44.15,81.44,44.83,80.95,45.46,80.91,45.52,80.47,45.10,80.30,44.66,80.49,44.31,80.79,44.16,80.46,44.03,80.38,43.91,80.46,44.06,80.02,44.37,79.85
+    >>Kill |cFFFF5722Kuz|r. Loot him for |cFF00BCD4Kuz's Skull|r
+    >>|cFFFF5722Kuz|r patrols around slightly
+    .complete 879,1 --Kuz's Skull (1)
+    .unitscan Kuz
+step << Shaman/Warrior
+    #completewith next
+    .goto The Barrens,43.14,80.75,45,0
+    .goto The Barrens,43.35,81.16,45,0
+    >>Kill |cFFFF5722Washte Pawne|r. Loot him for |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r]
+    >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
+    .collect 5103,1,885,1 --Collect Washte Pawne's Feather
+    .accept 885 >>Accept Washte Pawne
+    .use 5103 
+    .unitscan Washte Pawne
+step << Shaman/Warrior
+    #label Lok
+    .goto The Barrens,40.31,80.70,20,0
+    .goto The Barrens,40.14,80.56
+    >>Kill |cFFFF5722Lok|r. Loot him for |cFF00BCD4Lok's Skull|r
+    .complete 879,3 --Lok's Skull (1)
+    .mob Lok Orcbane
+step << !Shaman !Warrior
+    #completewith WandShield
     .goto The Barrens,44.85,78.81,45,0
     .goto The Barrens,44.44,78.97,45,0
     .goto The Barrens,43.14,80.75,45,0
@@ -7781,6 +7873,11 @@ step
     .complete 893,3 --Collect Razormane War Shield (x1)
     .mob Razormane Seer
     .mob Razormane Warfrenzy
+step << Shaman/Warrior
+    .loop 30,The Barrens,44.07,83.34,43.54,83.14,43.60,83.69,44.07,83.34
+    >>Kill |cFFFF5722Nak|r. Loot him for |cFF00BCD4Nak's Skull|r
+    .complete 879,2 --Lok's Skull (1)
+    .mob Nak
 step
     .goto The Barrens,44.09,83.70,15,0
     .goto The Barrens,44.15,83.34,15,0
@@ -7940,107 +8037,164 @@ step
     .mob Bael'dun Solider
     .mob Bael'dun Officer
 step
-    .loop 45,The Barrens,44.85,78.81,44.44,78.97,43.14,80.75,43.35,81.16,47.22,79.72,47.21,79.35,44.76,74.79 << !Shaman
-    >>Kill |cFFFF5722Washte Pawne|r. Loot him for |T132318:0|t[|cFF00BCD4Washte Pawne's Feather|r]
-    >>|cFFFCDC00Use |T132318:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
+    #xprate <1.7 << !Shaman !Warrior
+    #completewith WeaponsOC
+    .line The Barrens,46.12,81.25,46.09,80.54,46.16,79.66,46.14,79.37,46.07,79.19,45.86,78.77,45.79,78.47,45.83,77.21,45.91,76.97,46.02,76.71,46.08,76.33,46.14,75.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r patrolling on the road
+    .turnin 846 >> Turn in Revenge of Gann
+    .accept 849 >> Accept Revenge of Gann
+    .target Gann Stonespire
+step << !Shaman !Warrior
+    #xprate >1.6999
+    #completewith next
+    .line The Barrens,46.12,81.25,46.09,80.54,46.16,79.66,46.14,79.37,46.07,79.19,45.86,78.77,45.79,78.47,45.83,77.21,45.91,76.97,46.02,76.71,46.08,76.33,46.14,75.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r patrolling on the road
+    .turnin 846 >> Turn in Revenge of Gann
+    .accept 849 >> Accept Revenge of Gann
+    .target Gann Stonespire
+step
+    .loop 45,The Barrens,44.85,78.81,44.44,78.97,43.14,80.75,43.35,81.16,47.22,79.72,47.21,79.35,44.76,74.79,44.85,78.81
+    >>Kill |cFFFF5722Washte Pawne|r. Loot him for |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r]
+    >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
     .use 5103 
     .unitscan Washte Pawne
 step
-    #xprate <1.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    #xprate <1.7 << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r, |cFF00FF25Jorn|r, and |cFF00FF25Mangletooth|r << Shaman/Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r << !Shaman !Warrior
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 884 >>Turn in Owatanka
     .turnin 885 >>Turn in Washte Pawne
     .turnin 897 >>Turn in The Harvester
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
+    .turnin 879 >> Turn in Betrayal from Within << Shaman/Warrior
+    .accept 906 >> Accept Betrayal from Within << Shaman/Warrior
+    .goto The Barrens,44.54,59.27 << Shaman/Warrior
     .target Tatternack Steelforge
+    .target Jorn Skyseer
+    .target Mangletooth << Shaman/Warrior
     .isOnQuest 884
     .isOnQuest 885
     .isOnQuest 897
 step
-    #xprate <1.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    #xprate <1.7 << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r, |cFF00FF25Jorn|r, and |cFF00FF25Mangletooth|r << Shaman/Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r << !Shaman !Warrior
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 885 >>Turn in Washte Pawne
     .turnin 897 >>Turn in The Harvester
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
+    .turnin 879 >> Turn in Betrayal from Within << Shaman/Warrior
+    .accept 906 >> Accept Betrayal from Within << Shaman/Warrior
+    .goto The Barrens,44.54,59.27 << Shaman/Warrior
     .target Tatternack Steelforge
+    .target Jorn Skyseer
+    .target Mangletooth << Shaman/Warrior
     .isOnQuest 885
     .isOnQuest 897
 step
-    #xprate <1.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    #xprate <1.7 << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r, |cFF00FF25Jorn|r, and |cFF00FF25Mangletooth|r << Shaman/Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r << !Shaman !Warrior
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 884 >>Turn in Owatanka
     .turnin 897 >>Turn in The Harvester
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
+    .turnin 879 >> Turn in Betrayal from Within << Shaman/Warrior
+    .accept 906 >> Accept Betrayal from Within << Shaman/Warrior
+    .goto The Barrens,44.54,59.27 << Shaman/Warrior
     .target Tatternack Steelforge
+    .target Jorn Skyseer
+    .target Mangletooth << Shaman/Warrior
     .isOnQuest 884
     .isOnQuest 897
 step
-    #xprate <1.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    #xprate <1.7 << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r, |cFF00FF25Jorn|r, and |cFF00FF25Mangletooth|r << Shaman/Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r << !Shaman !Warrior
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 884 >>Turn in Owatanka
     .turnin 885 >>Turn in Washte Pawne
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
+    .turnin 879 >> Turn in Betrayal from Within << Shaman/Warrior
+    .accept 906 >> Accept Betrayal from Within << Shaman/Warrior
+    .goto The Barrens,44.54,59.27 << Shaman/Warrior
     .target Tatternack Steelforge
+    .target Jorn Skyseer
+    .target Mangletooth << Shaman/Warrior
     .isOnQuest 884
     .isOnQuest 885
 step
-    #xprate <1.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    #xprate <1.7 << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r, |cFF00FF25Jorn|r, and |cFF00FF25Mangletooth|r << Shaman/Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r << !Shaman !Warrior
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 884 >>Turn in Owatanka
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
+    .turnin 879 >> Turn in Betrayal from Within << Shaman/Warrior
+    .accept 906 >> Accept Betrayal from Within << Shaman/Warrior
+    .goto The Barrens,44.54,59.27 << Shaman/Warrior
     .target Tatternack Steelforge
+    .target Jorn Skyseer
+    .target Mangletooth << Shaman/Warrior
     .isOnQuest 884
 step
-    #xprate <1.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
-    .turnin 885 >>Turn in Washte Pawne
-    .goto The Barrens,44.86,59.13
+    #xprate <1.7 << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r, |cFF00FF25Jorn|r, and |cFF00FF25Mangletooth|r << Shaman/Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r << !Shaman !Warrior
     .turnin 893 >> Turn in Weapons of Choice
     .accept 1153 >> Accept A New Ore Sample
     .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
+    .turnin 885 >>Turn in Washte Pawne
+    .goto The Barrens,44.86,59.13
+    .turnin 879 >> Turn in Betrayal from Within << Shaman/Warrior
+    .accept 906 >> Accept Betrayal from Within << Shaman/Warrior
+    .goto The Barrens,44.54,59.27 << Shaman/Warrior
     .target Tatternack Steelforge
+    .target Jorn Skyseer
+    .target Mangletooth << Shaman/Warrior
     .isOnQuest 885
 step
-    #xprate <1.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    #xprate <1.7 << !Shaman !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r, |cFF00FF25Jorn|r, and |cFF00FF25Mangletooth|r << Shaman/Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r << !Shaman !Warrior
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 897 >>Turn in The Harvester
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
+    .turnin 879 >> Turn in Betrayal from Within << Shaman/Warrior
+    .accept 906 >> Accept Betrayal from Within << Shaman/Warrior
+    .goto The Barrens,44.54,59.27 << Shaman/Warrior
     .target Tatternack Steelforge
+    .target Jorn Skyseer
+    .target Mangletooth << Shaman/Warrior
     .isOnQuest 897
 step
-    #xprate <1.7
-    .goto The Barrens,45.10,57.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r
+    #xprate <1.7 << !Shaman !Warrior
+    #label WeaponsOC
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Mangletooth|r << Shaman/Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r << !Shaman !Warrior
     .turnin 893 >> Turn in Weapons of Choice
     .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
+    .turnin 879 >> Turn in Betrayal from Within << Shaman/Warrior
+    .accept 906 >> Accept Betrayal from Within << Shaman/Warrior
+    .goto The Barrens,44.54,59.27 << Shaman/Warrior
     .target Tatternack Steelforge
+    .target Mangletooth << Shaman/Warrior
 step
     .line The Barrens,46.12,81.25,46.09,80.54,46.16,79.66,46.14,79.37,46.07,79.19,45.86,78.77,45.79,78.47,45.83,77.21,45.91,76.97,46.02,76.71,46.08,76.33,46.14,75.40
     .goto The Barrens,46.12,81.25,40,0
@@ -8281,7 +8435,7 @@ step
     .mob Galak Wrangler
     .mob Galak Windchaser
 step
-    #xprate <1.7
+    #xprate <1.7 << !Shaman !Warrior
     #completewith next
     >>Kill |cFFFF5722Gravelsnout Surveyors|r, |cFFFF5722Gravelsnout Diggers|r, and |cFFFF5722Gibblesnik|r (if he's up). Loot them for an |cFF00BCD4Ore Sample|r
     .complete 1153,1 --Unrefined Ore Sample (1)
@@ -8308,7 +8462,7 @@ step
     .accept 1150 >> Accept Test of Endurance
     .target Dorn Plainstalker
 step
-    #xprate <1.7
+    #xprate <1.7 << !Shaman !Warrior
     #completewith Purifying
     .line Thousand Needles,51.89,43.02,53.41,46.19,54.05,44.96
     .line Thousand Needles,53.47,46.65,52.61,48.28,53.64,48.50,52.61,48.28,51.48,48.06
@@ -8347,7 +8501,7 @@ step
     .complete 9431,1 --Collect Purifying Earth (x2)
     .mob Thundering Boulderkin
 step
-    #xprate <1.7
+    #xprate <1.7 << !Shaman !Warrior
     .line Thousand Needles,51.89,43.02,53.41,46.19,54.05,44.96
     .line Thousand Needles,53.47,46.65,52.61,48.28,53.64,48.50,52.61,48.28,51.48,48.06
     .line Thousand Needles,62.21,47.76,63.05,48.92,62.63,48.38,62.96,47.64,64.01,47.52,63.92,46.63,63.10,45.53
@@ -9042,101 +9196,101 @@ step << Tauren
     .goto The Barrens,41.40,58.55
     .zone The Barrens >>Travel to The Barrens
     .zoneskip Mulgore,1
-step << Tauren
+step << Tauren !Warrior !Shaman
     #xprate >1.6999
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 884 >>Turn in Owatanka
     .turnin 885 >>Turn in Washte Pawne
     .turnin 897 >>Turn in The Harvester
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
     .target Tatternack Steelforge
+    .target Jorn Skyseer
     .isOnQuest 884
     .isOnQuest 885
     .isOnQuest 897
     .zoneskip Thunder Bluff
-step << Tauren
+step << Tauren !Warrior !Shaman
     #xprate >1.6999
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 885 >>Turn in Washte Pawne
     .turnin 897 >>Turn in The Harvester
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
     .target Tatternack Steelforge
+    .target Jorn Skyseer
     .isOnQuest 885
     .isOnQuest 897
     .zoneskip Thunder Bluff
-step << Tauren
+step << Tauren !Warrior !Shaman
     #xprate >1.6999
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 884 >>Turn in Owatanka
     .turnin 897 >>Turn in The Harvester
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
     .target Tatternack Steelforge
+    .target Jorn Skyseer
     .isOnQuest 884
     .isOnQuest 897
     .zoneskip Thunder Bluff
-step << Tauren
+step << Tauren !Warrior !Shaman
     #xprate >1.6999
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 884 >>Turn in Owatanka
     .turnin 885 >>Turn in Washte Pawne
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
     .target Tatternack Steelforge
+    .target Jorn Skyseer
     .isOnQuest 884
     .isOnQuest 885
     .zoneskip Thunder Bluff
-step << Tauren
+step << Tauren !Warrior !Shaman
     #xprate >1.6999
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 884 >>Turn in Owatanka
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
     .target Tatternack Steelforge
+    .target Jorn Skyseer
     .isOnQuest 884
     .zoneskip Thunder Bluff
-step << Tauren
+step << Tauren !Warrior !Shaman
     #xprate >1.6999
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
-    .turnin 885 >>Turn in Washte Pawne
-    .goto The Barrens,44.86,59.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r
     .turnin 893 >> Turn in Weapons of Choice
     .accept 1153 >> Accept A New Ore Sample
     .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
+    .turnin 885 >>Turn in Washte Pawne
+    .goto The Barrens,44.86,59.13
     .target Tatternack Steelforge
+    .target Jorn Skyseer
     .isOnQuest 885
     .zoneskip Thunder Bluff
-step << Tauren
+step << Tauren !Warrior !Shaman
     #xprate >1.6999
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jorn|r and |cFF00FF25Tatternack|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r and |cFF00FF25Jorn|r
+    .turnin 893 >> Turn in Weapons of Choice
+    .accept 1153 >> Accept A New Ore Sample
+    .goto The Barrens,45.10,57.68
     .turnin 897 >>Turn in The Harvester
     .goto The Barrens,44.86,59.13
-    .turnin 893 >> Turn in Weapons of Choice
-    .accept 1153 >> Accept A New Ore Sample
-    .goto The Barrens,45.10,57.68
-    .target Jorn Skyseer
     .target Tatternack Steelforge
+    .target Jorn Skyseer
     .isOnQuest 897
     .zoneskip Thunder Bluff
-step << Tauren
+step << Tauren !Warrior !Shaman
     #xprate >1.6999
     #label CampTStone
     .goto The Barrens,45.10,57.68
@@ -9146,7 +9300,7 @@ step << Tauren
     .target Tatternack Steelforge
     .zoneskip Thunder Bluff
 step << Tauren
-    #xprate <1.7
+    #xprate <1.7 << !Warrior !Shaman
     #label CampTStone
     .goto The Barrens,45.10,57.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r
@@ -9169,10 +9323,14 @@ step << Tauren
     .zoneskip Thunder Bluff
 step
     #label TheSwarm
-    .goto The Barrens,51.07,29.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Korran|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Korran|r and |cFF00FF25Thork|r << Warrior/Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Korran|r << !Warrior !Shaman
     .accept 1145 >> Accept The Swarm Grows
+    .goto The Barrens,51.07,29.63
+    .turnin 906 >> Turn in Betrayal from Within << Warrior/Shaman
+    .goto The Barrens,51.50,30.87 << Warrior/Shaman
     .target Korran
+    .target Thork << Warrior/Shaman
 step << Mage
     #label TeleportOrg
     #completewith TheSwarmOrg

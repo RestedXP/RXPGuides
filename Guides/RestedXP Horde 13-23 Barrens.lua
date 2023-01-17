@@ -4,7 +4,7 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Horde Warrior/Shaman
+<< Horde Warrior/Horde Shaman
 #name 13-22 The Barrens
 #version 1
 #group RestedXP Horde 1-30
@@ -678,6 +678,12 @@ step
 .goto The Barrens,49.3,50.4
     .complete 4921,1 --Find Mankrik's Wife (1)
     .skipgossip
+step << Shaman/Warrior
+    #xprate >1.4999
+    .goto The Barrens,45.10,57.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tatternack|r
+    .accept 893 >>Accept Weapons of Choice
+    .target Tatternack Steelforge
 step
     .goto The Barrens,45.6,59.0
     #completewith next
@@ -1023,6 +1029,7 @@ step
     .turnin 878 >>Turn in Tribes at War
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
+    .accept 879 >> Accept Betrayal from Within
 step
     .isOnQuest 883
 .goto The Barrens,44.8,59.1
