@@ -24,7 +24,7 @@ step
 --VV need to update waypoint for tbc
 step << Warlock wotlk
     #completewith Reclaim
-    +|cFFFCDC00Grind |cFFFF5722Mana Wyrms|r until you have 75 copper worth of vendor items. You can also sell your gear for 13 copper|r << Warlock wotlk
+    +|cFFFCDC00Grind |cFFFF5722Mana Wyrms|r. Loot them until you have 75 copper worth of vendor items. You can also sell your gear for 13 copper|r << Warlock wotlk
     .money >0.0075
 --VV other classes in other expansions should not need to go out of their way to grind for money
 step

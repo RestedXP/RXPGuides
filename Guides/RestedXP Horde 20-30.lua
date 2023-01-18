@@ -7537,6 +7537,16 @@ step
     .turnin 1195 >> Turn in The Sacred Flame
     .accept 1196 >> Accept The Sacred Flame
     .target Zangen Stonehoof
+step << Shaman/Warrior
+    #completewith next
+    .goto Thunder Bluff,29.51,29.81,10,0
+    .goto Thunder Bluff,28.39,25.55,10,0
+    .goto Thunder Bluff,22.83,20.88,20 >>Travel toward |cFF00FF25Zamah|r inside the cave
+step << Shaman/Warrior
+    .goto Thunder Bluff,22.83,20.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zamah|r
+	.turnin 1067 >> Turn in Return to Thunder Bluff
+    .target Apothecary Zamah
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -7561,6 +7571,11 @@ step << Warrior
     .train 871 >> Train your class spells
     .target Ker Ragetotem
     .xp <28,1
+ step << Shaman
+	#completewith next
+    .goto Thunder Bluff,29.81,29.96,15,0
+    .goto Thunder Bluff,25.35,30.97,20,0
+    .goto Thunder Bluff,25.35,30.97,20 >> Travel toward |cFF00FF25Siln|r and |cFF00FF25Tigor|r
 step << Shaman
     .goto Thunder Bluff,22.83,21.13,-1
     .goto Thunder Bluff,23.63,18.80,-1
@@ -8477,7 +8492,6 @@ step
     #completewith next
     .goto Thousand Needles,56.36,50.39,20,0
     >>Loot the |cFF00BCD4Alien Egg|r on the ground
-    >>|cFFFCDC00It has multiple spawnpoints|r
     .complete 4821,1 --Collect Alien Egg (x1)
 step
     #label Purifying
@@ -8553,7 +8567,6 @@ step
     .goto Thousand Needles,37.63,56.11,20,0
     .goto Thousand Needles,56.36,50.39
     >>Loot the |cFF00BCD4Alien Egg|r on the ground
-    >>|cFFFCDC00It has multiple spawnpoints|r
     .complete 4821,1 --Collect Alien Egg (x1)
 step
     #completewith next
@@ -9348,10 +9361,22 @@ step << Shaman
     .zoneskip The Barrens,1
 step << Shaman
     #xprate <1.7
-    .goto The Barrens,65.83,43.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Islen|r
+    .goto The Barrens,65.51,47.32,70,0 
+    .goto The Barrens,64.21,50.70,70,0 
+    .goto The Barrens,63.63,53.85,70,0
+    .loop 70,The Barrens,65.51,47.32,64.21,50.70,63.63,53.85
+    >>Kill |cFFFF5722Isha Awak|r. Loot him for the |cFF00BCD4Heart of Isha Awak|r
+    .complete 873,1 --Heart of Isha Awak
+    .unitscan Isha Awak
+step << Shaman
+    #xprate <1.7 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mahreen|r and |cFF00FF25Islen|r
+    .turnin 873 >> Turn in Isha Awak
+    .goto The Barrens,65.84,43.86
     .turnin 220 >> Turn in Call of Water
     .accept 63 >> Accept Call of Water
+    .goto The Barrens,65.83,43.77
+    .target Mahreen Skyseer
     .target Islen Waterseer
 step << Shaman
     #xprate <1.7
