@@ -357,7 +357,8 @@ function addon.GetQuestObjectives(id, step)
                         type = "event",
                         numRequired = 1,
                         numFulfilled = fulfilled,
-                        finished = isComplete
+                        finished = isComplete,
+                        generated = true,
                     }
                     questObjectivesCache[id] = questInfo
                     return questInfo
@@ -411,7 +412,8 @@ function addon.GetQuestObjectives(id, step)
                     type = "event",
                     numRequired = 1,
                     numFulfilled = 0,
-                    finished = false
+                    finished = false,
+                    generated = true,
                 }
             end
             return qInfo
@@ -449,7 +451,8 @@ function addon.GetQuestObjectives(id, step)
                         type = "event",
                         numRequired = 1,
                         numFulfilled = 0,
-                        finished = false
+                        finished = false,
+                        generated = true,
                     }
                 end
                 return questInfo

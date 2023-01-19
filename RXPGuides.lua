@@ -353,23 +353,25 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "GOSSIP_SHOW" then
         local nActive = GossipGetNumActiveQuests()
         local nAvailable = GossipGetNumAvailableQuests()
-        local quests, selectAvailableByQuestID, selectActiveByQuestID
+        local quests, selectAvailableByQuestID, selectActiveByQuestID, missingTurnIn
         if C_GossipInfo.GetActiveQuests then
             quests = C_GossipInfo.GetActiveQuests()
             selectActiveByQuestID = true
         end
         for i = 1, nActive do
-            local title, level, isTrivial, isComplete
+            local title, isComplete
             if type(quests) == "table" then
                 title = quests[i].questID
                 isComplete = quests[i].isComplete
+                if not (isComplete or missingTurnIn) and addon.QuestAutoTurnIn(title) then
+                    local objectives = addon.GetQuestObjectives(title)
+                    missingTurnIn = objectives and objectives[1].generated and (selectActiveByQuestID and title or i)
+                end
             else
-                title, level, isTrivial, isComplete = select(i * 6 - 5,
-                                                             GossipGetActiveQuests())
+                title, _, _, isComplete = select(i * 6 - 5, GossipGetActiveQuests())
             end
-            -- print(title)
-            -- print(quests[i])
-            if addon.QuestAutoTurnIn(title) and isComplete then
+
+            if isComplete and addon.QuestAutoTurnIn(title) then
                 return GossipSelectActiveQuest(selectActiveByQuestID and title or i)
             end
         end
@@ -380,7 +382,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             selectAvailableByQuestID = true
         end
         if GossipGetNumOptions() == 0 and nAvailable == 1 and nActive == 0 and not selectAvailableByQuestID then
-            GossipSelectAvailableQuest(selectAvailableByQuestID and availableQuests[1] and availableQuests[1].questID or 1)
+            return GossipSelectAvailableQuest(selectAvailableByQuestID and availableQuests[1] and availableQuests[1].questID or 1)
         else
             for i = 1, nAvailable do
                 local quest
@@ -393,6 +395,9 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                     return GossipSelectAvailableQuest(selectAvailableByQuestID and quest or i)
                 end
             end
+        end
+        if missingTurnIn then
+            return GossipSelectActiveQuest(missingTurnIn)
         end
     end
 end
