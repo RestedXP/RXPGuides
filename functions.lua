@@ -3396,6 +3396,7 @@ function addon.functions.gossipoption(self, ...)
     if not element or not element.gossipId or element.complete then return end
 
     local matched = false
+    local completed = element.completed
     for _, v in pairs(GossipGetOptions()) do
         if v.gossipOptionID == element.gossipId then
             C_GossipInfo.SelectOption(v.gossipOptionID)
@@ -3406,7 +3407,7 @@ function addon.functions.gossipoption(self, ...)
         end
     end
 
-    if matched and element.timer then
+    if not completed and matched and element.timer then
         addon.StartTimer(element.timer, element.timerText)
     end
 end
