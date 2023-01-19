@@ -14,7 +14,7 @@ events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
 events.complete = "QUEST_LOG_UPDATE"
-events.fp = {"UI_INFO_MESSAGE", "TAXIMAP_OPENED"}
+events.fp = {"UI_INFO_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW"}
 events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED", "GOSSIP_SHOW"}
@@ -1638,13 +1638,15 @@ function addon.functions.fp(self, ...)
     local event, arg1, arg2 = ...
     local element = self.element
     if self.element.step.active then
-        print(element.fpId,'-',RXPCData.flightPaths[element.fpId])
+        --print(element.fpId,'-',RXPCData.flightPaths[element.fpId])
         local fpDiscovered = element.fpId and RXPCData.flightPaths[element.fpId]
         if element.textOnly and fpDiscovered then
             element.step.completed = true
             addon.updateSteps = true
         elseif fpDiscovered or (event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH) then
             addon.SetElementComplete(self)
+        elseif not element.confirm and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
+            element.confirm = true
         end
     end
 end
