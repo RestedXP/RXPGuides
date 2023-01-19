@@ -490,7 +490,7 @@ step
     .goto Eversong Woods,30.84,27.13
     >>Kill |cFFFF5722Arcane Wraiths|r and |cFFFF5722Tainted Arcane Wraiths|r whilst heading up the Academy. Loot them for their |cFF00BCD4Slivers|r << wotlk
     >>Kill |cFFFF5722Arcane Wraiths|r and |cFFFF5722Tainted Arcane Wraiths|r whilst heading up the Academy << tbc
-    >>Kill |cFFFF5722Felendren|r at the top. Loot him for his |cFF00BCD4Head|r
+    >>Kill |cFFFF5722Felendren the Banished|r at the top. Loot him for his |cFF00BCD4Head|r
     .complete 8335,1 --Kill Arcane Wraith (x8)
     .complete 8335,2 --Kill Tainted Arcane Wraith (x2)
     .complete 8336,1 << wotlk--Collect Arcane Sliver (x6)
@@ -805,7 +805,7 @@ step
 step
     #label Thaelis
     .goto Eversong Woods,45.02,37.68
-    >>Kill |cFFFF5722Thaelis the Hungerer|r. Loot him for his |cFF00BCD4Head|r
+    >>Kill |cFFFF5722Thaelis the Hungerer|r. Loot him for |cFF00BCD4Thaelis's Head|r
     .complete 8468,1 --Collect Thaelis's Head (x1)
     .mob Thaelis the Hungerer
 step
@@ -993,7 +993,7 @@ step
     .money <0.0714 << Paladin
     .target Innkeeper Delaniel
 step
-    #label Buyfood1
+    #label BuyFood1
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Delaniel|r
     >>|cFF0E8312Buy|r |T132815:0|t[Ice Cold Milk] |cFF0E8312from her|r << Priest/Mage/Warlock/Druid
@@ -1209,7 +1209,7 @@ step
     .goto Eversong Woods,34.65,62.03,30,0
     .goto Eversong Woods,34.04,60.81,30,0
     .goto Eversong Woods,34.19,58.49
-    >>Kill a |cFFFF5722Darnassian Scout|r. Loot it for his |T133464:0|t[|cFF00BCD4Incriminating Documents|r]
+    >>Kill a |cFFFF5722Darnassian Scout|r. Loot him for his |T133464:0|t[|cFF00BCD4Incriminating Documents|r]
     >>|cFFFCDC00Use the |T133464:0|t[|cFF00BCD4Incriminating Documents|r] to start the quest|r
     .complete 9352,1 --Intruder Defeated
     .collect 20765,1,8482,1 --Incriminating Documents (1)
@@ -1402,21 +1402,21 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Warrior/Warlock/Hunter/Rogue
-    .goto Eversong Woods,44.57,53.31,10,0
-    .goto Eversong Woods,44.01,52.77,10,0
-    .goto Eversong Woods,44.06,53.39,10,0
-    .goto Eversong Woods,44.57,53.31,10,0
-    .goto Eversong Woods,44.01,52.77,10,0
-    .goto Eversong Woods,44.06,53.39,10,0
-    .goto Eversong Woods,44.57,53.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Anvilward|r
-    >>|cFFFCDC00Wait out the RP|r
-    >>Kill |cFFFF5722Anvilward|r. Loot him for his |cFF00BCD4Head|r
-    .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
+    .goto Eversong Woods,44.57,53.30
+    .gossipoption 91301 >>Talk to |cFF00FF25Anvilward|r
     .timer 28,Prospector Anvilward RP
     .target Prospector Anvilward
-    .skipgossip
---VV Gossipoption needs to be added 
+    .skipgossip 15420,1
+    .isOnQuest 8483
+step << Warrior/Warlock/Hunter/Rogue
+    .goto Eversong Woods,44.57,53.11,10,0
+    .goto Eversong Woods,44.01,52.83,10,0
+    .goto Eversong Woods,43.91,53.12,10,0
+    .goto Eversong Woods,44.07,53.33
+    >>|cFFFCDC00Wait out the RP|r
+    >>Kill |cFFFF5722Prospector Anvilward|r. Loot him for his |cFF00BCD4Head|r
+    .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
+    .mob Prospector Anvilward
 step << Warrior/Warlock/Hunter/Rogue
     #xprate <1.5
     .goto Eversong Woods,45.19,56.43
@@ -1601,7 +1601,7 @@ step
 step
     #label Aldaron
     .goto Eversong Woods,32.80,69.40
-    >>Kill |cFFFF5722Aldaron|r at the top. Loot him for his |cFF00BCD4Head|r
+    >>Kill |cFFFF5722Aldaron the Reckless|r at the top. Loot him for |cFF00BCD4Aldaron's Head|r
     .complete 9076,1 --Collect Aldaron's Head (x1)
     .mob Aldaron the Reckless
 step
@@ -1660,7 +1660,8 @@ step
     .goto Eversong Woods,24.32,69.66,40,0
     .goto Eversong Woods,25.09,71.12,40,0
     .goto Eversong Woods,24.36,72.66
-    >>Kill |cFFFF5722Mmmrrrggglll|r. Loot him for his |cFF00BCD4Ring|r. |cFFFCDC00He patrols around|r
+    >>Kill |cFFFF5722Mmmrrrggglll|r. Loot him for the |cFF00BCD4Ring of Mmmrrrggglll|r
+    >>|cFFFCDC00He patrols around slightly|r
     >>|cFFFCDC00Use|r |T136222:0|t[Arcane Torrent] |cFFFCDC00to interrupt|r |cFFFF5722Mmmrrrggglll|r's |T136052:0|t[Healing Wave] << BloodElf
     .complete 8885,1 --Collect Ring of Mmmrrrggglll (x1)
     .unitscan Mmmrrrggglll
@@ -1720,7 +1721,7 @@ step << skip
     #completewith next
     #xprate <1.5
     >>Kill |cFFFF5722Withered Green Keepers|r
-    >>|cFFFCDC00Be careful as they have a double-damage|r |T132282:0|tStrike |cFFFCDC00spell|r
+    >>|cFFFCDC00Be careful as cast|r |T132282:0|t[Strike], |cFFFCDC00dealing double damage instantly|r
     .complete 8473,1 --Kill Withered Green Keeper (x10)
     .mob Withered Green Keeper
     --VV BloodElf Hunter
@@ -1728,7 +1729,7 @@ step << skip
     #xprate <1.5
     .goto Eversong Woods,35.10,84.05,10,0
     .goto Eversong Woods,34.91,84.34
-    .use 8474 >>Kill |cFFFF5722Old Whitebark|r. Loot him for his |T133280:0|t[|cFF00BCD4Pendant|r]. |cFFFCDC00Use it to start the quest|r
+    .use 8474 >>Kill |cFFFF5722Old Whitebark|r. Loot him for |T133280:0|t[|cFF00BCD4Old Whitebark's Pendant|r]. |cFFFCDC00Use it to start the quest|r
     >>|cFFFF5722Old Whitebark|r |cFFFCDC00has a 7 minute 30 second respawn time|r
     .collect 23228,1,8474,1 --Collect Old Whitebark's Pendant (x1)
     .accept 8474 >> Accept Old Whitebark's Pendant
@@ -1738,7 +1739,7 @@ step << skip
     #xprate <1.5
     .loop 40,Eversong Woods,36.07,83.10,36.21,85.47,33.24,87.69,32.05,87.25,32.63,83.57,33.46,81.99,34.47,83.08,36.07,83.10
     >>Kill |cFFFF5722Withered Green Keepers|r
-    >>|cFFFCDC00Be careful as they have a double-damage|r |T132282:0|tStrike |cFFFCDC00spell|r
+    >>|cFFFCDC00Be careful as cast|r |T132282:0|t[Strike], |cFFFCDC00dealing double damage instantly|r
     .complete 8473,1 --Kill Withered Green Keeper (x10)
     .mob Withered Green Keeper
     --VV BloodElf Hunter
@@ -1953,7 +1954,7 @@ step
 step
     .goto Eversong Woods,53.66,69.74,20,0
     .goto Eversong Woods,54.28,70.97
-    >>Kill |cFFFF5722Gharsul|r and the |cFFFF5722Angershades|r to protect |cFF00FF25Mirveda|r
+    >>Kill |cFFFF5722Gharsul the Remorseless|r and the |cFFFF5722Angershades|r to protect |cFF00FF25Mirveda|r
     .complete 8488,1 --Protect Apprentice Mirveda
     .mob Gharsul the Remorseless
     .mob Angershade
@@ -2206,21 +2207,22 @@ step << Paladin/Priest/Mage
     .target Aeldon Sunbrand
 step << Paladin/Priest/Mage
     #xprate <1.5
-    .goto Eversong Woods,44.57,53.31,10,0
-    .goto Eversong Woods,44.01,52.77,10,0
-    .goto Eversong Woods,44.06,53.39,10,0
-    .goto Eversong Woods,44.57,53.31,10,0
-    .goto Eversong Woods,44.01,52.77,10,0
-    .goto Eversong Woods,44.06,53.39,10,0
-    .goto Eversong Woods,44.57,53.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Anvilward|r
-    >>|cFFFCDC00Wait out the RP|r
-    >>Kill |cFFFF5722Anvilward|r. Loot him for his |cFF00BCD4Head|r
-    .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
+    .goto Eversong Woods,44.57,53.30
+    .gossipoption 91301 >>Talk to |cFF00FF25Anvilward|r
     .timer 28,Prospector Anvilward RP
     .target Prospector Anvilward
-    .skipgossip
---VV Gossipoption needs to be added 
+    .skipgossip 15420,1
+    .isOnQuest 8483
+step << Paladin/Priest/Mage
+    #xprate <1.5
+    .goto Eversong Woods,44.57,53.11,10,0
+    .goto Eversong Woods,44.01,52.83,10,0
+    .goto Eversong Woods,43.91,53.12,10,0
+    .goto Eversong Woods,44.07,53.33
+    >>|cFFFCDC00Wait out the RP|r
+    >>Kill |cFFFF5722Prospector Anvilward|r. Loot him for his |cFF00BCD4Head|r
+    .complete 8483,1 --Collect Prospector Anvilward's Head (x1)
+    .mob Prospector Anvilward
 step
     #xprate <1.5
     .goto Eversong Woods,48.17,46.00
@@ -2784,15 +2786,15 @@ step
     .mob Amani Axe Thrower
 step
     .goto Eversong Woods,70.10,72.28
-    >>Kill |cFFFF5722Otembe|r. Loot him for his |cFF00BCD4Hammer|r
-    >>|cFFFF5722Otembe|r |cFFFCDC00Has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
+    >>Kill |cFFFF5722Spearcrafter Otembe|r. Loot him for his |cFF00BCD4Hammer|r
+    >>|cFFFF5722Spearcrafter Otembe|r |cFFFCDC00Has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
     .complete 8477,1 --Collect Otembe's Hammer (x1)
     .mob Spearcrafter Otembe
     .itemStat 16,QUALITY,<7 << Paladin/Rogue/Warrior
 step
     #label Otembe
     .goto Eversong Woods,70.10,72.28
-    >>Kill |cFFFF5722Otembe|r. Loot him for his |cFF00BCD4Hammer|r
+    >>Kill |cFFFF5722Spearcrafter Otembe|r. Loot him for his |cFF00BCD4Hammer|r
     .complete 8477,1 --Collect Otembe's Hammer (x1)
     .mob Spearcrafter Otembe
 step
@@ -2808,9 +2810,9 @@ step
     .goto Eversong Woods,61.90,79.63,8 >>Climb up the hut toward |cFFFF5722Zul'Marosh|r
 step
     .goto Eversong Woods,62.51,79.68
-    >>Kill |cFFFF5722Zul'Marosh|r. Loot him for his |cFF00BCD4Head|r and |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r]
+    >>Kill |cFFFF5722Chieftain Zul'Marosh|r. Loot him for his |cFF00BCD4Head|r and |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r]
     >>|cFFFCDC00Use the |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r] to start the quest|r
-    >>|cFFFF5722Zul'Marosh|r |cFFFCDC00Has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
+    >>|cFFFF5722Chieftain Zul'Marosh|r |cFFFCDC00Has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
     .complete 8479,1 --Collect Chieftain Zul'Marosh's Head (x1)
     .collect 23249,1,9360,1 --Collect Amani Invasion Plans (x1)
     .accept 9360 >> Accept Amani Invasion
@@ -2819,7 +2821,7 @@ step
     .itemStat 16,QUALITY,<7
 step
     .goto Eversong Woods,62.51,79.68
-    >>Kill |cFFFF5722Zul'Marosh|r. Loot him for his |cFF00BCD4Head|r and the |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r]
+    >>Kill |cFFFF5722Chieftain Zul'Marosh|r. Loot him for his |cFF00BCD4Head|r and the |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r]
     >>|cFFFCDC00Use the |T134946:0|t[|cFF00BCD4Amani Invasion Plans|r] to start the quest|r
     .complete 8479,1 --Collect Chieftain Zul'Marosh's Head (x1)
     .collect 23249,1,9360,1 --Collect Amani Invasion Plans (x1)
@@ -2829,14 +2831,17 @@ step
 step
     .goto Eversong Woods,70.53,72.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ven'jashi|r in the Cage
-    >>|cFFFCDC00Kill |cFFFF5722Otembe|r if you wish. He has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
+    >>|cFFFCDC00Kill |cFFFF5722Spearcrafter Otembe|r if you wish. He has a 100% chance to drop a White or Green item|r << Paladin/Rogue/Warrior
     .turnin 8479 >> Turn in Zul'Marosh
+    .mob Spearcrafter Otembe
+    .target Ven'jashi
     .itemStat 16,QUALITY,<7
 step
     #label Marosh
     .goto Eversong Woods,70.53,72.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ven'jashi|r in the Cage
     .turnin 8479 >> Turn in Zul'Marosh
+    .target Ven'jashi
 step
     .goto Eversong Woods,70.90,71.63,40,0
     .goto Eversong Woods,68.12,70.88,40,0
@@ -3895,7 +3900,7 @@ step << Mage
     .goto Eversong Woods,53.51,77.64,40,0
     .goto Eversong Woods,55.14,76.10,40,0
     .goto Eversong Woods,55.63,74.22
-    >>Kill Eversong Green Keepers. Loot them for their |cFF00BCD4Living Branch|r
+    >>Kill |cFFFF5722Eversong Green Keepers|r. Loot them for their |cFF00BCD4Living Branch|r
     .complete 9404,1 --Living Branch (x1)
     .mob Eversong Green Keeper
 step << Undead/BloodElf
@@ -4332,11 +4337,11 @@ step << Paladin
 step << Paladin
     #completewith next
     .goto Ghostlands,68.41,7.42
-    .cast 3365 >>Click the |cFFDB2EEFGilded Brazier|r to summon |cFFFF5722Sangrias|r
+    .cast 3365 >>Click the |cFFDB2EEFGilded Brazier|r to summon |cFFFF5722Sangrias Stillblade|r
 step << Paladin
     #label FirstT
     .goto Ghostlands,68.50,9.77
-    >>Kill |cFFFF5722Sangrias|r
+    >>Kill |cFFFF5722Sangrias Stillblade|r
     .complete 9678,1 --Undergo the First Trial
     .mob Sangrias Stillblade
 step << Paladin
@@ -7821,7 +7826,7 @@ step
     .target Ranger Vynna
 step
     #completewith TrollR1
-    >>Kill |cFFFF5722Mummmified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Juju|r
+    >>Kill |cFFFF5722Mummified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Troll Juju|r
     .complete 9199,1,6 --Collect Troll Juju (x8)
     .mob Mummified Headhunter
     .mob Shadowpine Oracle
@@ -7902,7 +7907,7 @@ step
     .goto Ghostlands,59.31,30.79,15,0
     .goto Ghostlands,59.31,27.71,15,0
     .goto Ghostlands,61.68,28.58
-    >>Kill |cFFFF5722Mummmified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Juju|r
+    >>Kill |cFFFF5722Mummified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Troll Juju|r
     .complete 9199,1,6 --Collect Troll Juju (x8)
     .mob Mummified Headhunter
     .mob Shadowpine Oracle
@@ -7914,14 +7919,14 @@ step
     .target Ranger Lilatha
 step
     #completewith TrollR
-    >>Kill |cFFFF5722Mummmified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Juju|r
+    >>Kill |cFFFF5722Mummmified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Troll Juju|r
     .complete 9199,1 --Collect Troll Juju (x8)
     .mob Mummified Headhunter
     .mob Shadowpine Oracle
 step << Rogue
     #label PittedG
     #completewith Lilatha
-    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFBurial Chests|r on the ground inside the Crypt. Loot them for the |cFF00BCD4Gold Band|r
+    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFBurial Chests|r on the ground inside the Crypt. Loot them for the |cFF00BCD4Pitted Gold Band|r
     >>Click the |cFFDB2EEFMummified Troll Remains|r on the ground to burn them
     >>|cFFFCDC00MAKE SURE you finish this before leaving the Catacombs|r
     .skill lockpicking,20 >> Level your |T136058:0|t[Lockpicking] skill to 20
@@ -7945,7 +7950,7 @@ step << Paladin/Druid/Priest
 step
     #label Lilatha
     >>|cFFFCDC00Escort|r |cFF00FF25Lilatha|r
-    >>|cFFFCDC00A |cFFFF5722Shadowpine Oracle|r and a |cFFFF5722Mummmified Headhunter|r will spawn on |cFF00FF25Lilatha|r about 60 yards after leaving the Catacombs|r
+    >>|cFFFCDC00A |cFFFF5722Shadowpine Oracle|r and a |cFFFF5722Mummified Headhunter|r will spawn on |cFF00FF25Lilatha|r about 60 yards after leaving the Catacombs|r
     .goto Ghostlands,67.93,28.98,40,0
     .goto Ghostlands,71.09,32.01,40,0
     .goto Ghostlands,72.24,30.10
@@ -7976,7 +7981,7 @@ step << Rogue
     .goto Ghostlands,59.31,30.79,15,0
     .goto Ghostlands,59.31,27.71,15,0
     .goto Ghostlands,61.68,28.58
-    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFBurial Chests|r on the ground inside the Crypt. Loot them for the |cFF00BCD4Gold Band|r
+    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFBurial Chests|r on the ground inside the Crypt. Loot them for the |cFF00BCD4Pitted Gold Band|r
     >>Click the |cFFDB2EEFMummified Troll Remains|r on the ground to burn them
     .skill lockpicking,20 >> Level your |T136058:0|t[Lockpicking] skill to 20
     .complete 9491,1 --Pitted Gold Band (1)
@@ -8034,7 +8039,7 @@ step
     .goto Ghostlands,59.31,30.79,15,0
     .goto Ghostlands,59.31,27.71,15,0
     .goto Ghostlands,61.68,28.58
-    >>Kill |cFFFF5722Mummmified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Juju|r
+    >>Kill |cFFFF5722Mummified Headhunters|r and |cFFFF5722Shadowpine Oracles|r. Loot them for their |cFF00BCD4Troll Juju|r
     .complete 9199,1 --Collect Troll Juju (x8)
     .mob Mummified Headhunter
     .mob Shadowpine Oracle
@@ -8183,7 +8188,7 @@ step
     .accept 9162 >> Accept Hints of the Past
 step << Rogue
     #completewith next
-    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFPrimitive Chests|r on the ground near the ruins. Loot them for the |cFF00BCD4Shrunken Head|r
+    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFPrimitive Chests|r on the ground near the ruins. Loot them for the |cFF00BCD4Archaeologist's Shrunken Head|r
     .complete 10548,1 --Archaeologist's Shrunken Head (1)
 step
     .goto Ghostlands,76.95,34.45,40,0
@@ -8204,7 +8209,7 @@ step
     .goto Ghostlands,77.04,44.69,40,0
     .goto Ghostlands,75.12,45.29,40,0
     .goto Ghostlands,74.73,43.27
-    >>Kill |cFFFF5722Shadowpine Shadowcasters|r and |cFFFF5722Shadowpine Headhunters|r. Loot them for their |cFF00BCD4Maces|r and |cFF00BCD4Axes|r
+    >>Kill |cFFFF5722Shadowpine Shadowcasters|r and |cFFFF5722Shadowpine Headhunters|r. Loot them for their |cFF00BCD4Shadowcaster Maces|r and |cFF00BCD4Headhunter Axes|r
     .complete 9276,1 --Kill Shadowpine Shadowcaster (x8)
     .complete 9276,2 --Kill Shadowpine Headhunter (x8)
     .complete 9214,2 --Collect Shadowcaster Mace (x3)
@@ -8262,7 +8267,7 @@ step
     .target Ranger Vynna
 step << Rogue
     #completewith KelGash
-    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFPrimitive Chests|r on the ground. Loot them for the |cFF00BCD4Shrunken Head|r
+    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFPrimitive Chests|r on the ground. Loot them for the |cFF00BCD4Archaeologist's Shrunken Head|r
     .complete 10548,1 --Archaeologist's Shrunken Head (1)
 step
     #completewith KelGash
@@ -8272,7 +8277,7 @@ step
     .goto Ghostlands,67.54,50.89,50,0
     .goto Ghostlands,65.73,53.82,50,0
     .goto Ghostlands,68.41,54.61,50,0
-    >>Kill |cFFFF5722Shadowpine Catlords|r and |cFFFF5722Shadowpine Hexxers|r. Loot them for their |cFF00BCD4Claws|r and |cFF00BCD4Staves|r
+    >>Kill |cFFFF5722Shadowpine Catlords|r and |cFFFF5722Shadowpine Hexxers|r. Loot them for their |cFF00BCD4Catlord Claws|r and |cFF00BCD4Hexxer Staves|r
     .complete 9277,1 --Kill Shadowpine Catlord (x10)
     .complete 9277,2 --Kill Shadowpine Hexxer (x10)
     .complete 9214,3 --Collect Catlord Claws (x3)
@@ -8282,7 +8287,7 @@ step
 step
     .goto Ghostlands,67.60,57.98,12,0
     .goto Ghostlands,68.25,57.78
-    >>Click the |cFFDB2EEFFish Rack|r
+    >>Click the |cFFDB2EEFFresh Fish Rack|r
     .complete 9275,3 --Poison the Fresh Fish Rack (x1)
 step
     .goto Ghostlands,65.11,66.74
@@ -8304,8 +8309,8 @@ step
     .goto Ghostlands,65.59,80.72,8 >> Go upstairs
 step
     .goto Ghostlands,65.29,79.46
-    >>Kill |cFFFF5722Kel'gash|r. Loot him for his |cFF00BCD4Head|r
-    >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell
+    >>Kill |cFFFF5722Kel'gash the Wicked|r. Loot him for his |cFF00BCD4Head|r
+    >>Dodge |cFFFF5722Kel'gash the Wicked|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell
     >>|cFFFCDC00Make sure you have your cooldowns available and use your|r |T134831:0|t[Healing Potion] |cFFFCDC00if needed|r
     >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
@@ -8316,8 +8321,8 @@ step
     .isOnQuest 9215
 step
     .goto Ghostlands,65.29,79.46
-    >>Kill |cFFFF5722Kel'gash|r. Loot him for his |cFF00BCD4Head|r
-    >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell
+    >>Kill |cFFFF5722Kel'gash the Wicked|r. Loot him for his |cFF00BCD4Head|r
+    >>Dodge |cFFFF5722Kel'gash the Wicked|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell
     >>|cFFFCDC00Make sure you have your cooldowns available and use your|r |T134830:0|t[Lesser Healing Potion] |cFFFCDC00if needed|r
     >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
@@ -8329,8 +8334,8 @@ step
 step
     #label KelGash
     .goto Ghostlands,65.29,79.46
-    >>Kill |cFFFF5722Kel'gash|r. Loot him for his |cFF00BCD4Head|r
-    >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell. Make sure you have your cooldowns available
+    >>Kill |cFFFF5722Kel'gash the Wicked|r. Loot him for his |cFF00BCD4Head|r
+    >>Dodge |cFFFF5722Kel'gash the Wicked|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell. Make sure you have your cooldowns available
     >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
     .mob Kel'gash the Wicked
@@ -8345,7 +8350,7 @@ step << Rogue
     .goto Ghostlands,67.54,50.89,40,0
     .goto Ghostlands,65.73,53.82,40,0
     .goto Ghostlands,68.41,54.61,40,0
-    >>Kill |cFFFF5722Shadowpine Catlords|r and |cFFFF5722Shadowpine Hexxers|r. Loot them for their |cFF00BCD4Claws|r and |cFF00BCD4Staves|r
+    >>Kill |cFFFF5722Shadowpine Catlords|r and |cFFFF5722Shadowpine Hexxers|r. Loot them for their |cFF00BCD4Catlord Claws|r and |cFF00BCD4Hexxer Staves|r
     .complete 9277,1 --Kill Shadowpine Catlord (x10)
     .complete 9277,2 --Kill Shadowpine Hexxer (x10)
     .complete 9214,3 --Collect Catlord Claws (x3)
@@ -8370,7 +8375,7 @@ step << Rogue
     .goto Ghostlands,65.42,66.39,10,0
     .goto Ghostlands,64.66,64.07,10,0
     .goto Ghostlands,61.16,75.58
-    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFPrimitive Chests|r on the ground near the ruins. Loot them for the |cFF00BCD4Shrunken Head|r
+    >>|T136058:0|t[Pick Lock] the |cFFDB2EEFPrimitive Chests|r on the ground near the ruins. Loot them for the |cFF00BCD4Archaeologist's Shrunken Head|r
     .complete 10548,1 --Archaeologist's Shrunken Head (1)
 step
     .goto Ghostlands,61.23,75.22,40,0
@@ -8384,7 +8389,7 @@ step
     .goto Ghostlands,63.04,74.16,40,0
     .goto Ghostlands,64.51,77.99,40,0
     .goto Ghostlands,61.23,75.22
-    >>Kill |cFFFF5722Shadowpine Catlords|r and |cFFFF5722Shadowpine Hexxers|r. Loot them for their |cFF00BCD4Claws|r and |cFF00BCD4Staves|r
+    >>Kill |cFFFF5722Shadowpine Catlords|r and |cFFFF5722Shadowpine Hexxers|r. Loot them for their |cFF00BCD4Catlord Claws|r and |cFF00BCD4Hexxer Staves|r
     .complete 9277,1 --Kill Shadowpine Catlord (x10)
     .complete 9277,2 --Kill Shadowpine Hexxer (x10)
     .complete 9214,3 --Collect Catlord Claws (x3)
@@ -9208,7 +9213,7 @@ step
 step
     #label Jurion
     .goto Ghostlands,32.19,73.08,8,0
-    >>Kill |cFFFF5722Jurion|r
+    >>Kill |cFFFF5722Jurion the Deceiver|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Enith|r on the ground
     .complete 9170,3 --Kill Jurion the Deceiver (x1)
     .goto Ghostlands,32.10,74.45,-1
@@ -9224,7 +9229,7 @@ step
     .goto Ghostlands,31.70,73.64,10 >>Exit the crypt
 step
     .goto Ghostlands,37.36,79.33
-    >>Kill |cFFFF5722Mirdoran|r
+    >>Kill |cFFFF5722Mirdoran the Fallen|r
     .complete 9170,1 --Kill Mirdoran the Fallen (x1)
     .mob Mirdoran the Fallen
 step
@@ -9235,7 +9240,7 @@ step
 step
     #completewith next
     .goto Ghostlands,41.24,83.04,15,0
-    >>Kill |cFFFF5722Borgoth|r if he's up next to |cFF00FF25Varnis|r
+    >>Kill |cFFFF5722Borgoth the Bloodletter|r if he's up next to |cFF00FF25Varnis|r
     .complete 9170,2 --Kill Borgoth the Bloodletter (x1)
     .mob Borgoth the Bloodletter
 step
@@ -9249,7 +9254,7 @@ step
     #completewith next
     .goto Ghostlands,35.24,88.23,15,0
     .goto Ghostlands,35.77,89.13,15,0
-    >>Check for |cFFFF5722Masophet|r inside the first Ziggurat. Kill him if he's up
+    >>Check for |cFFFF5722Masophet the Black|r inside the first Ziggurat. Kill him if he's up
     .complete 9170,4 --Kill Masophet the Black (x1)
     .mob Masophet the Black
 step
@@ -9259,7 +9264,7 @@ step
     .goto Ghostlands,32.79,89.93,15 >>Travel toward |cFF00FF25Vedoran|r
  step
     #completewith next
-    >>Kill |cFFFF5722Borgoth|r if he's up next to |cFF00FF25Vedoran|r
+    >>Kill |cFFFF5722Borgoth the Bloodletter|r if he's up next to |cFF00FF25Vedoran|r
     .complete 9170,2 --Kill Borgoth the Bloodletter (x1)
     .mob Borgoth the Bloodletter
 step
@@ -9282,7 +9287,7 @@ step
     .goto Ghostlands,29.28,88.89,8,0
     .goto Ghostlands,35.24,88.23,10,0
     .goto Ghostlands,35.77,89.13
-    >>Kill |cFFFF5722Masophet|r inside the either of the Ziggurats
+    >>Kill |cFFFF5722Masophet the Black|r inside the either of the Ziggurats
     .complete 9170,4 --Kill Masophet the Black (x1)
     .mob Masophet the Black
 step
@@ -9301,7 +9306,7 @@ step
     .goto Ghostlands,32.67,90.30,8,0
     .goto Ghostlands,40.09,83.34,10,0
     .goto Ghostlands,41.24,83.04
-    >>Kill |cFFFF5722Borgoth|r inside either of the Slaughterhouses
+    >>Kill |cFFFF5722Borgoth the Bloodletter|r inside either of the Slaughterhouses
     .complete 9170,2 --Kill Borgoth the Bloodletter (x1)
     .mob Borgoth the Bloodletter
 step
@@ -9314,7 +9319,7 @@ step
 step
     .goto Ghostlands,32.80,82.39,10,0
     .goto Ghostlands,33.04,81.25
-    >>Kill |cFFFF5722Dar'Khan|r at the bottom of the Ziggurat
+    >>Kill |cFFFF5722Dar'Khan Drathir|r at the bottom of the Ziggurat
     >>|cFFFCDC00LoS his|r |T136118:0|t[Corruption] |cFFFCDC00and|r |T136197:0|t[Shadow Bolts] by kiting him around the Ziggurat
     >>|cFFFCDC00Make sure there are no other mobs around for when he casts|r |T136183:0|t[Fear] |cFFFCDC00on you|r
     >>|cFFFCDC00Use|r |T135738:0|t[Mana Tap] |cFFFCDC00to pull the|r |cFFFF5722Necromancers|r |cFFFCDC00out of the room|r << BloodElf Paladin tbc/BloodElf Rogue tbc

@@ -1769,7 +1769,7 @@ step
     .mob Syndicate Shadow Mage << Shaman/Warrior
 step
     .goto Hillsbrad Foothills,79.55,41.85,15,0
-    >>Kill |cFFFF5722Eston|r. Loot him for his |cFF00BCD4Iron Key|r
+    >>Kill |cFFFF5722Jailor Eston|r. Loot him for his |cFF00BCD4Iron Key|r
     >>|cFFFCDC00He can be found in front of |cFF00FF25Tog'thar|r's Barracks|r
 	.collect 3467,1,498,1 --Dull Iron Key (1)
 	.mob Jailor Eston
@@ -1782,7 +1782,7 @@ step
 	.goto Hillsbrad Foothills,77.99,40.19,15,0
     .goto Hillsbrad Foothills,79.45,40.57,15,0
 	.goto Hillsbrad Foothills,77.99,40.19
-	>>Kill |cFFFF5722Marlgen|r. Loot him for his |cFF00BCD4Gold Key|r
+	>>Kill |cFFFF5722Jailor Marlgen|r. Loot him for his |cFF00BCD4Gold Key|r
     >>|cFFFCDC00He can be found in front of |cFF00FF25Tog'thar|r or, at the bottom of the tower|r
     .collect 3499,1,498,2 --Burnished Gold Key (1)
     .mob Jailor Marlgen
@@ -1853,7 +1853,7 @@ step
     .goto Hillsbrad Foothills,75.31,41.63,15,0
     .goto Hillsbrad Foothills,79.55,41.85,15,0
     .goto Hillsbrad Foothills,75.31,41.63
-    >>Kill |cFFFF5722Eston|r. Loot him for his |cFF00BCD4Iron Key|r
+    >>Kill |cFFFF5722Jailor Eston|r. Loot him for his |cFF00BCD4Iron Key|r
     >>|cFFFCDC00He can be found in front of |cFF00FF25Tog'thar|r's Barracks, or in front of|r |cFF00FF25Drull|r
 	.collect 3467,1,498,1 --Dull Iron Key (1)
 	.mob Jailor Eston
@@ -2001,8 +2001,8 @@ step
     .goto Hillsbrad Foothills,35.28,40.76,20,0
     .goto Hillsbrad Foothills,35.17,38.18,8,0
     .goto Hillsbrad Foothills,35.39,37.70,10,0
-    >>Kill |cFFFF5722Getz|r
-    >>|cFFFCDC00He can be found in the House, in the Field, or in the Barn
+    >>Kill |cFFFF5722Farmer Getz|r
+    >>|cFFFCDC00He can be found in the House, in the Field, or in the Barn|r
     .complete 527,4 --Farmer Getz (1)
     .unitscan Farmer Getz
 step
@@ -2022,8 +2022,8 @@ step
     .goto Hillsbrad Foothills,33.02,35.10,8,0
     .goto Hillsbrad Foothills,32.67,34.80,8,0
     .goto Hillsbrad Foothills,33.21,34.78
-    >>Kill |cFFFF5722Ray|r
-    >>|cFFFCDC00He can be found in the vineyard, or in the first and second floor of the house
+    >>Kill |cFFFF5722Farmer Ray|r
+    >>|cFFFCDC00He can be found in the vineyard, or in the first and second floor of the house|r
     .complete 527,3 --Farmer Ray (1)
     .unitscan Farmer Ray
 step
@@ -2048,8 +2048,8 @@ step
     .goto Hillsbrad Foothills,35.28,40.76,20,0
     .goto Hillsbrad Foothills,35.17,38.18,8,0
     .goto Hillsbrad Foothills,35.39,37.70
-    >>Kill |cFFFF5722Getz|r
-    >>|cFFFCDC00He can be found in the House, in the Field, or in the Barn
+    >>Kill |cFFFF5722Farmer Getz|r
+    >>|cFFFCDC00He can be found in the House, in the Field, or in the Barn|r
     .complete 527,4 --Farmer Getz (1)
     .unitscan Farmer Getz
 step
@@ -2214,7 +2214,7 @@ step
     .goto Hillsbrad Foothills,32.45,42.58,40,0
     .goto Hillsbrad Foothills,32.56,40.03,40,0
     .goto Hillsbrad Foothills,36.54,39.44
-    >>Kill |cFFFF5722Wilkes|r
+    >>Kill |cFFFF5722Citizen Wilkes|r
     >>|cFFFCDC00He patrols around the roads of the town|r
 	.complete 567,2 --Kill Citizen Wilkes (x1)
     .unitscan Citizen Wilkes
@@ -2230,7 +2230,7 @@ step
 step
     #completewith next
 	.goto Hillsbrad Foothills,36.00,46.50
-    >>Kill |cFFFF5722Kalaba|r
+    >>Kill |cFFFF5722Farmer Kalaba|r
     .complete 567,4 --Kill Farmer Kalaba (x1)
     .mob Farmer Kalaba
     .unitscan Enraged Stanley
@@ -2242,7 +2242,7 @@ step
 step
     #label Kalaba
 	.goto Hillsbrad Foothills,36.00,46.50
-    >>Kill |cFFFF5722Kalaba|r
+    >>Kill |cFFFF5722Farmer Kalaba|r
     .complete 567,4 --Kill Farmer Kalaba (x1)
     .mob Farmer Kalaba
 step
@@ -2343,7 +2343,7 @@ step
 step
     #completewith next
 	.goto Hillsbrad Foothills,32.56,45.95,0
-	>>Kill |cFFFF5722Verringtan|r
+	>>Kill |cFFFF5722Blacksmith Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
@@ -2356,7 +2356,7 @@ step
 	.goto Hillsbrad Foothills,32.20,45.65,15,0
 	.goto Hillsbrad Foothills,32.11,44.43,15,0
     .loop 20,Hillsbrad Foothills,32.56,45.95,32.20,45.65,32.11,44.33,32.56,45.95
-	>>Kill |cFFFF5722Verringtan|r
+	>>Kill |cFFFF5722Blacksmith Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
@@ -4613,7 +4613,7 @@ step
 step
     #completewith Togthar
     .goto Hillsbrad Foothills,79.55,41.85,15,0
-    >>Kill |cFFFF5722Eston|r. Loot him for his |cFF00BCD4Iron Key|r
+    >>Kill |cFFFF5722Jailor Eston|r. Loot him for his |cFF00BCD4Iron Key|r
     >>|cFFFCDC00He can be found in front of |cFF00FF25Tog'thar|r's Barracks|r
 	.collect 3467,1,498,1 --Dull Iron Key (1)
 	.mob Jailor Eston
@@ -4626,7 +4626,7 @@ step
 	.goto Hillsbrad Foothills,77.99,40.19,15,0
     .goto Hillsbrad Foothills,79.45,40.57,15,0
 	.goto Hillsbrad Foothills,77.99,40.19
-	>>Kill |cFFFF5722Marlgen|r. Loot him for his |cFF00BCD4Gold Key|r
+	>>Kill |cFFFF5722Jailor Marlgen|r. Loot him for his |cFF00BCD4Gold Key|r
     >>|cFFFCDC00He can be found in front of |cFF00FF25Tog'thar|r or at the bottom of the tower|r
     .collect 3499,1,498,2 --Burnished Gold Key (1)
     .mob Jailor Marlgen
@@ -4699,7 +4699,7 @@ step
     .goto Hillsbrad Foothills,75.31,41.63,15,0
     .goto Hillsbrad Foothills,79.55,41.85,15,0
     .goto Hillsbrad Foothills,75.31,41.63
-    >>Kill |cFFFF5722Eston|r. Loot him for his |cFF00BCD4Iron Key|r
+    >>Kill |cFFFF5722Jailor Eston|r. Loot him for his |cFF00BCD4Iron Key|r
     >>|cFFFCDC00He can be found in front of |cFF00FF25Tog'thar|r's Barracks, or in front of|r |cFF00FF25Drull|r
 	.collect 3467,1,498,1 --Dull Iron Key (1)
 	.mob Jailor Eston
@@ -4838,7 +4838,7 @@ step
     #xprate <1.7
     #completewith Farmhands
     .line Hillsbrad Foothills,36.54,39.44,35.36,38.73,33.98,38.78,32.56,40.03,32.58,38.17,32.66,36.08,32.92,35.25,32.66,36.08,32.58,38.17,32.56,40.03,32.65,41.12,32.45,42.58,31.27,42.06,30.53,40.56,31.27,42.06,32.45,42.58,32.41,43.85,32.46,44.59,32.29,45.13
-    >>Kill |cFFFF5722Wilkes|r
+    >>Kill |cFFFF5722Citizen Wilkes|r
     >>|cFFFCDC00He patrols around the roads of the town|r
 	.complete 567,2 --Kill Citizen Wilkes (x1)
     .unitscan Citizen Wilkes
@@ -4855,8 +4855,8 @@ step
     .goto Hillsbrad Foothills,35.28,40.76,20,0
     .goto Hillsbrad Foothills,35.17,38.18,8,0
     .goto Hillsbrad Foothills,35.39,37.70,10,0
-    >>Kill |cFFFF5722Getz|r
-    >>|cFFFCDC00He can be found in the House, in the Field, or in the Barn
+    >>Kill |cFFFF5722Farmer Getz|r
+    >>|cFFFCDC00He can be found in the House, in the Field, or in the Barn|r
     .complete 527,4 --Farmer Getz (1)
     .unitscan Farmer Getz
 step
@@ -4876,8 +4876,8 @@ step
     .goto Hillsbrad Foothills,33.02,35.10,8,0
     .goto Hillsbrad Foothills,32.67,34.80,8,0
     .goto Hillsbrad Foothills,33.21,34.78
-    >>Kill |cFFFF5722Ray|r
-    >>|cFFFCDC00He can be found in the vineyard, or in the first and second floor of the house
+    >>Kill |cFFFF5722Farmer Ray|r
+    >>|cFFFCDC00He can be found in the vineyard, or in the first and second floor of the house|r
     .complete 527,3 --Farmer Ray (1)
     .mob Farmer Ray
 step
@@ -4902,8 +4902,8 @@ step
     .goto Hillsbrad Foothills,35.28,40.76,20,0
     .goto Hillsbrad Foothills,35.17,38.18,8,0
     .goto Hillsbrad Foothills,35.39,37.70
-    >>Kill |cFFFF5722Getz|r
-    >>|cFFFCDC00He can be found in the House, in the Field, or in the Barn
+    >>Kill |cFFFF5722Farmer Getz|r
+    >>|cFFFCDC00He can be found in the House, in the Field, or in the Barn|r
     .complete 527,4 --Farmer Getz (1)
     .unitscan Farmer Getz
 step
@@ -5070,7 +5070,7 @@ step
     #xprate <1.7
     #completewith Peasants
     .line Hillsbrad Foothills,36.54,39.44,35.36,38.73,33.98,38.78,32.56,40.03,32.58,38.17,32.66,36.08,32.92,35.25,32.66,36.08,32.58,38.17,32.56,40.03,32.65,41.12,32.45,42.58,31.27,42.06,30.53,40.56,31.27,42.06,32.45,42.58,32.41,43.85,32.46,44.59,32.29,45.13
-    >>Kill |cFFFF5722Wilkes|r
+    >>Kill |cFFFF5722Citizen Wilkes|r
     >>|cFFFCDC00He patrols around the roads of the town|r
 	.complete 567,2 --Kill Citizen Wilkes (x1)
     .unitscan Citizen Wilkes
@@ -5094,7 +5094,7 @@ step
     #xprate <1.7
     #label Kalaba
 	.goto Hillsbrad Foothills,36.00,46.50
-    >>Kill |cFFFF5722Kalaba|r
+    >>Kill |cFFFF5722Farmer Kalaba|r
     .complete 567,4 --Kill Farmer Kalaba (x1)
     .mob Farmer Kalaba
     .unitscan Enraged Stanley
@@ -5209,7 +5209,7 @@ step
 step
     #completewith next
 	.goto Hillsbrad Foothills,32.56,45.95,0
-	>>Kill |cFFFF5722Verringtan|r
+	>>Kill |cFFFF5722Blacksmith Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
@@ -5222,7 +5222,7 @@ step
 	.goto Hillsbrad Foothills,32.20,45.65,15,0
 	.goto Hillsbrad Foothills,32.11,44.43,15,0
     .loop 20,Hillsbrad Foothills,32.56,45.95,32.20,45.65,32.11,44.33,32.56,45.95
-	>>Kill |cFFFF5722Verringtan|r
+	>>Kill |cFFFF5722Blacksmith Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
@@ -6484,10 +6484,11 @@ step << !Shaman !Warrior
     .skipgossip 10668,1
 step << !Shaman !Warrior
     #completewith Silithid
-    >>Kill |cFFFF5722Aean|r. Loot her for her |T134939:0|t[|cFF00BCD4Runed Scroll|r]
+    >>Kill |cFFFF5722Aean Swiftriver|r. Loot her for her |T134939:0|t[|cFF00BCD4Runed Scroll|r]
     >>|cFFFCDC00Use the |T134939:0|t[|cFF00BCD4Runed Scroll|r] to start the quest|r
-    >>|cFFFCDC00Don't be afraid to die in order to kill her. Alternatively, kite her toward the Camp Taurajo guards if possible|r
+    >>|cFFFCDC00Try to split pull her. Kite her toward the Camp Taurajo guards if possible|r
     >>|cFFFCDC00Skip this step if you cannot find her or kill her|r
+    .link https://youtu.be/H-IwZ6P-ldY?t=71 >> |cFFFCDC00CLICK HERE for a guide on how to Split Pull|r
     .collect 10621,1,3513,1 --Collect Runed Scroll
     .accept 3513 >>Accept The Runed Scroll
     .use 5099
@@ -6604,10 +6605,11 @@ step << !Shaman !Warrior
     .unitscan Silithid Harvester
  step << !Shaman !Warrior
     #completewith JornTravel
-    >>Kill |cFFFF5722Aean|r. Loot her for her |T134939:0|t[|cFF00BCD4Runed Scroll|r]
+    >>Kill |cFFFF5722Aean Swiftriver|r. Loot her for her |T134939:0|t[|cFF00BCD4Runed Scroll|r]
     >>|cFFFCDC00Use the |T134939:0|t[|cFF00BCD4Runed Scroll|r] to start the quest|r
-    >>|cFFFCDC00Don't be afraid to die in order to kill her. Alternatively, kite her toward the Camp Taurajo guards if possible|r
+    >>|cFFFCDC00Try to split pull her. Kite her toward the Camp Taurajo guards if possible|r
     >>|cFFFCDC00Skip this step if you cannot find her or kill her|r
+    .link https://youtu.be/H-IwZ6P-ldY?t=71 >> |cFFFCDC00CLICK HERE for a guide on how to Split Pull|r
     .collect 10621,1,3513,1 --Collect Runed Scroll
     .accept 3513 >>Accept The Runed Scroll
     .use 5099
@@ -6878,7 +6880,7 @@ step << Rogue tbc
     #label Mixture
     .goto The Barrens,54.75,5.59
     >>|cFFFCDC00Go to the top floor of the tower. Make sure your cooldowns are up|r
-    >>Kill |cFFFF5722Gallywix|r. Loot him for his |cFF00BCD4Head|r
+    >>Kill |cFFFF5722Grand Foreman Puzik Gallywix|r. Loot him for his |cFF00BCD4Head|r
     >>|cFFFCDC00Cast|r |T132282:0|t[Ambush] on |cFFFF5722Gallywix|r, |cFFFCDC00then re-equip your main weapon|r
     >>Make sure you remember to use your cooldowns such as |T136205:0|t[Evasion] and Potions if you have them
     >>|cFFFCDC00If you can't kill him, ask for help. It's important to finish this quest now|r
@@ -7857,7 +7859,7 @@ step << Shaman/Warrior
     #label Lok
     .goto The Barrens,40.31,80.70,20,0
     .goto The Barrens,40.14,80.56
-    >>Kill |cFFFF5722Lok|r. Loot him for |cFF00BCD4Lok's Skull|r
+    >>Kill |cFFFF5722Lok Orcbane|r. Loot him for |cFF00BCD4Lok's Skull|r
     .complete 879,3 --Lok's Skull (1)
     .mob Lok Orcbane
 step << !Shaman !Warrior
@@ -7947,7 +7949,7 @@ step
 	.goto The Barrens,47.44,85.71,15,0
 	.goto The Barrens,47.94,85.68,15,0
 	.goto The Barrens,48.34,86.19
-	>>Kill |cFFFF5722Khazgorm|r. Loot him for his |cFF00BCD4Journal|r
+	>>Kill |cFFFF5722Prospector Khazgorm|r. Loot him for |cFF00BCD4Khazgorm's Journal|r
 	.complete 843,3 --Collect Khazgorm's Journal (x1)
     .mob Prospector Khazgorm
 step
@@ -8683,7 +8685,7 @@ step
     .goto Thousand Needles,26.16,55.89,15,0
     .goto Thousand Needles,26.69,55.62,15,0
     .goto Thousand Needles,25.90,55.23
-    >>Kill |cFFFF5722Grenka|r. Loot her for |cFF00BCD4Grenka's Claw|r
+    >>Kill |cFFFF5722Grenka Bloodscreech|r. Loot her for |cFF00BCD4Grenka's Claw|r
     .complete 1150,1 --Collect Grenka's Claw (x1)
     .mob Grenka Bloodscreech
 step
