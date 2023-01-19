@@ -88,6 +88,8 @@ function addon.GetProfessionNames()
                     professionNames[profession] = GetSpellInfo(2575)
                 elseif id == 2383 then
                     professionNames[profession] = GetSpellInfo(9134)
+                elseif id == 1804 then
+                    professionNames[profession] = GetSpellInfo(1809)
                 else
                     professionNames[profession] = GetSpellInfo(id)
                 end
@@ -437,7 +439,16 @@ function addon:OnEnable()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
                                       RXPCData.currentGuideName)
     if not guide and addon.settings.db.profile.autoLoadStartingGuides then
-        guide = addon.defaultGuide
+        if addon.defaultGuideList then
+            local currentMap = C_Map.GetBestMapForUnit("player")
+            for zone,guideName in pairs(addon.defaultGuideList) do
+                if currentMap == zone or currentMap == addon.mapId[zone] then
+                    local group,name = string.match(guideName,"([^\\]+)%s*\\%s*([^\\]+)")
+                    guide = addon.GetGuideTable(group,name)
+                end
+            end
+        end
+        guide = guide or addon.defaultGuide
         if addon.game == "TBC" and
             (UnitLevel("player") == 58 and not guide.boost58) then
             guide = nil

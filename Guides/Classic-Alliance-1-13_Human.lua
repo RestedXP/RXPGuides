@@ -3,13 +3,12 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
 << Alliance
-#name 1-11 Elwynn Forest
+#name 1-6 Northshire
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
-#next 11-13 Loch Modan
+#next 6-11 Elwynn Forest; 6-13 Elwynn Forest
 step << !Human
     #sticky
     #completewith next
@@ -329,6 +328,18 @@ step
     .target Falkhaan Isenstrider
     .goto Elwynn Forest,45.6,47.7
     .accept 2158 >> Accept Rest and Relaxation
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+#era/som
+<< Alliance
+#name 6-11 Elwynn Forest
+#version 1
+#group RestedXP Alliance 1-20
+#defaultfor Human
+#next 11-13 Loch Modan
 step
     #hardcore
     >> Talk to |cFF00FF25Marshall Dughan|r
@@ -539,7 +550,7 @@ step
     .accept 111 >> Accept Speak with Gramma
 step
     .goto Elwynn Forest,32.5,85.5
-    >>Finish killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r 
+    >>Finish killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r
     .complete 86,1 --Collect Chunk of Boar Meat (x4)
 step
     >> Return to |cFF00FF25"Auntie" Bernice Stonefield|r
@@ -1755,227 +1766,11 @@ RXPGuides.RegisterGuide([[
 #phase 3-6
 #classic
 << Alliance
-#name 1-13 Elwynn Forest
+#name 6-13 Elwynn Forest
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #next 13-14 Loch Modan
-step << !Human
-    #sticky
-    #completewith next
-    .goto Elwynn Forest,48.2,42.9
-    +You have selected a guide meant for Humans. You should choose the same starter zone that you start in
-step << Mage
-    #completewith next
-    +Note that you have selected the single target mage guide. Single target is a lot safer than AoE Mage, and with the recent 100% quest xp changes in SoM, is generally also faster
-step << Warlock
-    #sticky
-    #completewith next
-    +Kill Wolves for 10c+ of vendor trash
-    .goto Elwynn Forest,49.4,45.6,60,0
-step << Warlock
-    .goto Elwynn Forest,50.1,42.7
-    .vendor >>vendor trash
-step << Warlock
-    .goto Elwynn Forest,49.9,42.6
-    .accept 1598 >> Accept The Stolen Tome
-    .trainer >>Train Immolate
-step << Warlock
-    #hardcore
-    .goto Elwynn Forest,52.9,44.3,60,0
-    >>Kill some Wolves en route, then watch this
-    .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
-    >>Use your Hearthstone inside the camp when you loot it
-    .goto Elwynn Forest,56.7,44.0
-    .complete 1598,1 --Collect Powers of the Void (x1)
-step << Warlock
-    #softcore
-    .goto Elwynn Forest,52.9,44.3,60,0
-    >>Kill some Wolves en route, then watch this
-    .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
-    .goto Elwynn Forest,56.7,44.0
-    .complete 1598,1 --Collect Powers of the Void (x1)
-step << Warlock
-    #softcore
-    .deathskip >> Die and respawn at the Spirit Healer
-step << Warlock
-    #hardcore
-    #completewith next
-    >>Make sure you're deep inside the tent so you don't reaggro
-    .hs >> Hearth back to Northshire Valley
-step << Warlock
-    .goto Elwynn Forest,49.9,42.6
-    .turnin 1598 >> Turn in The Stolen Tome
-step
-    >>Summon Imp, rebuff Demon Skin << Warlock
-    >>Delete your Hearthstone
-    .goto Elwynn Forest,48.2,42.9
-    .accept 783 >> Accept A Threat Within
-step << Warrior
-    #sticky
-    #completewith next
-    +Kill Wolves for 10c+ of vendor trash
-    .goto Elwynn Forest,46.4,40.3,60,0
-step << Warrior
-    .goto Elwynn Forest,47.5,41.6
-    .vendor >>vendor trash
-step
-    .goto Elwynn Forest,48.9,41.6
-    .turnin 783 >> Turn in A Threat Within
-    .accept 7 >> Accept Kobold Camp Cleanup
-step << Warrior
-    .goto Elwynn Forest,50.2,42.3
-    .trainer >>Train Battle Shout
-step
-    >>Run back outside << Warrior
-    .goto Elwynn Forest,48.2,42.9
-    .accept 5261 >> Accept Eagan Peltskinner
-step << Priest/Mage/Warlock
-    .goto Elwynn Forest,46.2,40.4
-    .vendor >>Kill wolves until 50c worth of vendor trash. Vendor, then buy x10 water from Brother Danil.
-    .collect 159,10 --Collect Refreshing Spring Water (x10)
-step << Priest/Mage
-    .xp 2 >> Grind to 2
-step
-    .goto Elwynn Forest,48.9,40.2
-    .turnin 5261 >> Turn in Eagan Peltskinner
-    .accept 33 >> Accept Wolves Across The Border
-step
-    .goto Elwynn Forest,46.70,37.78
-    >>Kill Young Wolves. Loot them for Meat
-    .complete 33,1 --Collect Tough Wolf Meat (x8)
-step
-    .goto Elwynn Forest,49.05,35.33
-    >>Kill Kobold Vermin
-    .complete 7,1 --Kill Kobold Vermin (x10)
-step
-    .goto Elwynn Forest,48.9,40.2
-    .turnin 33 >> Turn in Wolves Across The Border
-step << Priest/Mage/Warlock
-    .goto Elwynn Forest,47.6,41.5
-    .vendor >>vendor trash, then buy x10 more water from Brother Danil
-step << !Priest !Mage !Warlock
-    .goto Elwynn Forest,47.6,41.5
-    .vendor >>vendor trash
-step
-    .goto Elwynn Forest,48.9,41.6
-    .turnin 7 >> Turn in Kobold Camp Cleanup
-    .accept 15 >> Accept Investigate Echo Ridge
-    .accept 3100 >> Accept Simple Letter << Warrior
-    .accept 3101 >> Accept Consecrated Letter << Paladin
-    .accept 3102 >> Accept Encrypted Letter << Rogue
-    .accept 3103 >> Accept Hallowed Letter << Priest
-    .accept 3104 >> Accept Glyphic Letter << Mage
-    .accept 3105 >> Accept Tainted Letter << Warlock
-step
-    .xp 3 >> Grind to 3
-step
-    .goto Elwynn Forest,47.42,32.68
-    >>Kill Kobold Workers
-    .complete 15,1 --Kill Kobold Worker (x10)
-step << !Rogue
-    #sticky
-    #label xp3
-    .xp 3+820 >>Grind to 820+/1400xp on your way back
-step
-    .goto Elwynn Forest,47.7,41.4
-    .vendor >>vendor trash
-step
-    #requires xp3
-    .goto Elwynn Forest,48.9,41.6
-    .turnin 15 >> Turn in Investigate Echo Ridge
-    .accept 21 >> Accept Skirmish at Echo Ridge
-step << Priest/Mage
-    #sticky
-    #completewith next
-    .goto Elwynn Forest,49.3,40.7,15 >> Go here
-step << Mage
-    #sticky
-    #completewith next
-    .goto Elwynn Forest,49.5,40.0,15 >>Go upstairs
-step << Mage
-    .goto Elwynn Forest,49.7,39.4
-    .turnin 3104 >> Turn in Glyphic Letter
-    .trainer >> Train your class spells
-step << Priest
-    #sticky
-    #completewith next
-    .goto Elwynn Forest,49.8,40.2,15 >> Go through the doorway
-step << Priest
-    .goto Elwynn Forest,49.8,39.5
-    .turnin 3103 >> Turn in Hallowed Letter
-    .trainer >> Train your class spells
-step << Warrior/Paladin
-    #sticky
-    #completewith next
-    .goto Elwynn Forest,49.6,41.8,15 >>Stay downstairs
-step << Warrior
-    .goto Elwynn Forest,50.2,42.3
-    .turnin 3100 >> Turn in Simple Letter
-    .trainer >> Train your class spells
-step << Paladin
-    .goto Elwynn Forest,50.4,42.1
-    .turnin 3101 >> Turn in Consecrated Letter
-    .trainer >> Train your class spells
-step
-    .goto Elwynn Forest,48.2,42.9
-    .accept 18 >> Accept Brotherhood of Thieves
-step << Warlock
-    .goto Elwynn Forest,49.9,42.6
-    .turnin 3105 >> Turn in Tainted Letter
-    .xp 4 >> Grind to 4
-    .trainer >>Train Corruption
-step
-    .goto Elwynn Forest,54.57,49.03
-    >>Kill Defias Thugs. Loot them for Bandanas
-    .complete 18,1 --Collect Red Burlap Bandana (x12)
-step << Rogue
-    .xp 4 >> Grind to 4
-step
-    .goto Elwynn Forest,48.2,42.9
-    .turnin 18 >> Turn in Brotherhood of Thieves
-    .accept 6 >> Accept Bounty on Garrick Padfoot
-    .accept 3903 >> Accept Milly Osworth
-step
-    .goto Elwynn Forest,47.7,41.4
-    .vendor >>vendor trash, repair
-step
-    .goto Elwynn Forest,47.66,31.88,40,0
-    .goto Elwynn Forest,48.61,27.63
-    >>Kill Laborers in the mine
-    .complete 21,1 --Kill Kobold Laborer (x12)
-step
-    .xp 5 >> Grind to 5
-step
-    .goto Elwynn Forest,50.7,39.2
-    .turnin 3903 >> Turn in Milly Osworth. Skip followup
-step << Rogue
-    .goto Elwynn Forest,50.3,39.9
-    >>You don't need to train
-    .turnin 3102 >> Turn in Encrypted Letter
-step
-    .goto Elwynn Forest,57.5,48.2
-    >>Grind en route. Kill Garrick and loot his Head
-    .complete 6,1 --Collect Garrick's Head (x1)
-step
-    #sticky
-    .abandon 3904 >> Abandon Milly's Harvest
-step
-    .xp 5+1220 >> Grind on your way back to 1220+/2800xp
-    .goto Elwynn Forest,48.2,42.9
-step
-    .goto Elwynn Forest,48.2,42.9
-    .turnin 6 >> Turn in Bounty on Garrick Padfoot
-step
-    .goto Elwynn Forest,48.9,41.6
-    .turnin 21 >> Turn in Skirmish at Echo Ridge
-    .accept 54 >> Accept Report to Goldshire
-step << Priest
-    .goto Elwynn Forest,49.8,39.5
-    .accept 5623 >> Accept In Favor of the Light
-step
-    .goto Elwynn Forest,45.6,47.7
-    .accept 2158 >> Accept Rest and Relaxation
 step
     #hardcore
     .goto Elwynn Forest,42.1,65.9

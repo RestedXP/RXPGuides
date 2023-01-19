@@ -6820,11 +6820,11 @@ step
     .complete 9156,2 --Luzran's Head (1)
     .mob Luzran
 step
-    #xprate <1.5
+    #xprate <1.7
     #completewith SpireT01
     >>Kill |cFFFF5722Risen Stalkers|r. Loot them for their |cFF00BCD4Rotting Hearts|r
     >>Kill |cFFFF5722Dreadbone Sentinels|r and |cFFFF5722Deathcage Sorcerers|r. Loot them for their |cFF00BCD4Spinal Dust|r
-    >>|cFFFCDC00Be careful as the Dreadbone Sentinels cast the|r |T132357:0|t[Shield Bash] |cFFFCDC00(Interrupt) spell|r
+    >>|cFFFCDC00Be careful as the |cFFFF5722Dreadbone Sentinels|r cast |r |T132357:0|t[Shield Bash] |cFFFCDC00(Interrupt)|r
     .collect 22641,10,9216,1 --Collect Rotting Heart (x10)
     .collect 22642,10,9218,1 --Collect Spinal Dust (x10)
     .mob Risen Stalker
@@ -7619,9 +7619,9 @@ step << Rogue wotlk
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
     >>|cFF0E8312Buy|r |T132273:0|t[Instant Poison] |cFF0E8312from her|r
-    .collect 6947,10,9425,1 --Instant Poison (10)
+    .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
-    .xp <20,1
+    .xp <19,1
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -8083,9 +8083,9 @@ step << Rogue wotlk
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
     >>|cFF0E8312Buy|r |T132273:0|t[Instant Poison] |cFF0E8312from her|r
-    .collect 6947,10,9425,1 --Instant Poison (10)
+    .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
-    .xp <20,1
+    .xp <19,1
 step << Rogue
     #label SadT
     .goto Ghostlands,47.20,34.31
@@ -8307,7 +8307,7 @@ step
     >>Kill |cFFFF5722Kel'gash|r. Loot him for his |cFF00BCD4Head|r
     >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell
     >>|cFFFCDC00Make sure you have your cooldowns available and use your|r |T134831:0|t[Healing Potion] |cFFFCDC00if needed|r
-    >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r << !Hunter !Warlock
+    >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
     .mob Kel'gash the Wicked
     .use 858
@@ -8319,7 +8319,7 @@ step
     >>Kill |cFFFF5722Kel'gash|r. Loot him for his |cFF00BCD4Head|r
     >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell
     >>|cFFFCDC00Make sure you have your cooldowns available and use your|r |T134830:0|t[Lesser Healing Potion] |cFFFCDC00if needed|r
-    >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r << !Hunter !Warlock
+    >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
     .mob Kel'gash the Wicked
     .use 858
@@ -8331,7 +8331,7 @@ step
     .goto Ghostlands,65.29,79.46
     >>Kill |cFFFF5722Kel'gash|r. Loot him for his |cFF00BCD4Head|r
     >>Dodge |cFFFF5722Kel'gash|r's |T136048:0|t[Lightning Bolt] and |T136121:0|t[Shrink] by LoSing (Line of Sighting) him around the pillar so he cancels each spell. Make sure you have your cooldowns available
-    >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r << !Hunter !Warlock
+    >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock
     .complete 9215,1 --Collect Head of Kel'gash the Wicked (x1)
     .mob Kel'gash the Wicked
     .use 858
@@ -8469,9 +8469,9 @@ step << Rogue wotlk
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
     >>|cFF0E8312Buy|r |T132273:0|t[Instant Poison] |cFF0E8312from her|r
-    .collect 6947,10,9425,1 --Instant Poison (10)
+    .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
-    .xp <20,1
+    .xp <19,1
     .isQuestAvailable 9151
 step << Rogue
     .goto Ghostlands,47.20,34.31
@@ -8782,7 +8782,7 @@ step
     >>Loot the |cFFDB2EEFWorn Chest|r inside for the |cFF00BCD4Stone|r
     .complete 9176,2 --Collect Stone of Light (x1)
 step
-    #xprate <1.5
+    #xprate <1.7
     #label Hearts
     .goto Ghostlands,37.82,52.20,50,0
     .goto Ghostlands,38.11,56.94,50,0
@@ -8801,14 +8801,14 @@ step
     .goto Ghostlands,36.25,70.35
     >>Kill |cFFFF5722Risen Stalkers|r. Loot them for their |cFF00BCD4Rotting Hearts|r
     >>Kill |cFFFF5722Dreadbone Sentinels|r and |cFFFF5722Deathcage Sorcerers|r. Loot them for their |cFF00BCD4Spinal Dust|r
-    >>|cFFFCDC00Be careful as the Dreadbone Sentinels cast the|r |T132357:0|t[Shield Bash] |cFFFCDC00(Interrupt) spell|r
+    >>|cFFFCDC00Be careful as the |cFFFF5722Dreadbone Sentinels|r cast |r |T132357:0|t[Shield Bash] |cFFFCDC00(Interrupt)|r
     .collect 22641,10,9216,1 --Collect Rotting Heart (x10)
     .collect 22642,10,9218,1 --Collect Spinal Dust (x10)
     .mob Risen Stalker
     .mob Dreadbone Sentinel
     .mob Deathcage Sorcerer
 step
-    #xprate >1.4999
+    #xprate >1.6999
     #label Hearts
     .goto Ghostlands,37.82,52.20,50,0
     .goto Ghostlands,38.11,56.94,50,0
@@ -8909,13 +8909,13 @@ step
     .xp <15,1
     .xp >30,1
 step
-    #xprate <1.5
+    #xprate <1.7
     #completewith Aminel
     .goto Ghostlands,48.91,31.13,12,0
     .goto Ghostlands,49.36,31.74,12,0
     .goto Ghostlands,49.36,31.74,10 >> Go upstairs
 step
-    #xprate <1.5
+    #xprate <1.7
     .goto Ghostlands,48.91,31.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Aminel|r
     .accept 9216 >>Accept Rotting Hearts
@@ -8926,7 +8926,7 @@ step
     .itemcount 22641,10
     .itemcount 22642,10
 step
-    #xprate <1.5
+    #xprate <1.7
     .goto Ghostlands,48.91,31.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Aminel|r
     .accept 9218 >>Accept Spinal Dust
@@ -8992,9 +8992,9 @@ step << Rogue wotlk
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
     >>|cFF0E8312Buy|r |T132273:0|t[Instant Poison] |cFF0E8312from her|r
-    .collect 6947,10,9425,1 --Instant Poison (10)
+    .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
-    .xp <20,1
+    .xp <19,1
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -9124,7 +9124,7 @@ step
     #completewith next
     >>Kill |cFFFF5722Luzran|r. Loot him for his |cFF00BCD4Head|r
     >>|cFFFF5722Luzran|r |cFFFCDC00spawns at the Bleeding (western) Ziggurat, patrols down the Dead Scar, then back up until he reaches the river|r
-    >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
+    >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock|r
     .complete 9156,2 --Luzran's Head (1)
     .unitscan Luzran
 step
@@ -9164,7 +9164,7 @@ step
     >>|cFFFF5722Knucklerot|r |cFFFCDC00spawns at the Howling (eastern) Ziggurat, along the road to Windrunner Village, across the river near the Sanctum of the Moon, then into Goldenmist Village|r
     >>|cFFFCDC00Avoid|r |cFFFF5722Knucklerot|r|cFFFCDC00's |T136016:0|t[Corrosive Poison] by interrupting it with|r |T135963:0|t[Hammer of Justice] << Paladin
     >>|cFFFCDC00Avoid|r |cFFFF5722Knucklerot|r|cFFFCDC00's |T136016:0|t[Corrosive Poison] by interrupting it with|r |T132219:0|t[Kick] << Rogue
-    >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
+    >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock|r
     .complete 9156,1 --Knucklerot's Head (1)
     .unitscan Knucklerot
 --VV 28.71,32.15,27.57,29.23,27.23,27.55,27.12,26.04,29.25,24.14,29.70,23.11,29.26,21.07,28.41,19.25,27.56,17.58,25.60,16.40,25.31,15.03
@@ -9194,7 +9194,7 @@ step
     .goto Ghostlands,34.35,49.33
     >>Kill |cFFFF5722Luzran|r. Loot him for his |cFF00BCD4Head|r
     >>|cFFFF5722Luzran|r |cFFFCDC00spawns at the Bleeding (western) Ziggurat, patrols down the Dead Scar, then back up until he reaches the river|r
-    >>|cFFFCDC00Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
+    >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock|r
     .complete 9156,2 --Luzran's Head (1)
     .unitscan Luzran
 step
@@ -9318,9 +9318,29 @@ step
     >>|cFFFCDC00LoS his|r |T136118:0|t[Corruption] |cFFFCDC00and|r |T136197:0|t[Shadow Bolts] by kiting him around the Ziggurat
     >>|cFFFCDC00Make sure there are no other mobs around for when he casts|r |T136183:0|t[Fear] |cFFFCDC00on you|r
     >>|cFFFCDC00Use|r |T135738:0|t[Mana Tap] |cFFFCDC00to pull the|r |cFFFF5722Necromancers|r |cFFFCDC00out of the room|r << BloodElf Paladin tbc/BloodElf Rogue tbc
-    >>|cFFFCDC00Find a group for him if needed. Skipping this quest may make you need to grind a long time later|r << !Hunter !Warlock
+    >>|cFFFCDC00Find a group for him if needed|r << !Hunter !Warlock
     .complete 9167,1 --Collect Dar'Khan's Head (x1)
     .mob Dar'Khan Drathir
+step
+    #xprate 1.49-1.58
+    .goto Ghostlands,32.80,82.45
+    .xp 21+14900 >> Grind to 14900+/22400xp
+    .isOnQuest 9156
+step
+    #xprate 1.49-1.58
+    .goto Ghostlands,32.80,82.45
+    .xp 21+18650 >> Grind to 18650+/22400xp
+    .isQuestTurnedIn 9156
+step
+    #xprate 1.58-1.68
+    .goto Ghostlands,32.80,82.45
+    .xp 21+14400 >> Grind to 14400+/22400xp
+    .isOnQuest 9156
+step
+    #xprate 1.58-1.68
+    .goto Ghostlands,32.80,82.45
+    .xp 21+18400 >> Grind to 18400+/22400xp
+    .isQuestTurnedIn 9156
 step
     #completewith next
     .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
@@ -9363,7 +9383,7 @@ step
     .goto Ghostlands,47.71,32.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vredigar|r
     >>|cFF0E8312Buy the|r |T133759:0|t[Tranquillien Champion's Cloak] |cFF0E8312from him|r
-    .collect 22990,1,9425,1 --Collect Tranquillien Champion's Cloak (1)
+    .collect 22990,1,496,1 --Collect Tranquillien Champion's Cloak (1)
     .target Provisioner Vredigar
     .itemStat 15,LEVEL,<21
     .isQuestTurnedIn 9167
@@ -9372,9 +9392,9 @@ step << Rogue wotlk
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
     >>|cFF0E8312Buy|r |T132273:0|t[Instant Poison] |cFF0E8312from her|r
-    .collect 6947,10,9425,1 --Instant Poison (10)
+    .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
-    .xp <20,1
+    .xp <19,1
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Eralan|r
@@ -9452,6 +9472,7 @@ step
     .target Deathstalker Rathiel
     .isQuestComplete 9156
 step
+    #xprate <1.5
     .goto Ghostlands,37.82,52.20,50,0
     .goto Ghostlands,38.11,56.94,50,0
     .goto Ghostlands,37.73,61.43,50,0
@@ -9485,7 +9506,7 @@ step << BloodElf !Warlock !Paladin wotlk
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Perascamin|r
     .skill riding,75 >> Train |T136103:0|t[Apprentice Riding] from him
 	.target Perascamin
-    .money <4.5125 << Rogue
+    .money <4.5 << Rogue
     .money <4.693 << !Rogue
 step << BloodElf !Warlock !Paladin wotlk
     .goto Eversong Woods,61.08,54.15,12,0
@@ -9499,7 +9520,7 @@ step << BloodElf !Warlock !Paladin wotlk
     .itemcount 29222,<1 --Purple Hawkstrider
     .money <0.9025 << Rogue
     .money <1.083 << !Rogue
-    .skill riding,75,1
+    .skill riding,<75,1
 step << BloodElf !Warlock !Paladin wotlk
     .cast 55884 >> Use the |T132227:0|t[Red Hawkstrider] to learn it
     .use 28927
@@ -9551,7 +9572,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vynna|r
     >>|cFF0E8312Buy a|r |T135144:0|t[Greater Magic Wand] |cFF0E8312from the AH if it's cheap|r
     >>|cFFFCDC00If they're all too expensive, skip this step|r
-    .collect 11288,1,9425,1 --Greater Magic Wand
+    .collect 11288,1,496,1 --Greater Magic Wand
     .target Vynna
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
 step << Priest/Mage
@@ -9597,7 +9618,7 @@ step << Hunter
     .goto Silvermoon City,86.24,35.45
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Celana|r
     >>|cFF0E8312Buy a|r |T135489:0|t[Heavy Recurve Bow] |cFF0E8312from her|r
-    .collect 3027,1,9425,1 --Reinforced Bow (1)
+    .collect 3027,1,496,1 --Reinforced Bow (1)
     .target Celana
     .money <0.6032 << BloodElf
     .money <0.6336 << Troll/Orc
@@ -9614,7 +9635,7 @@ step << Warlock TBC
     .goto Silvermoon City,73.97,44.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Torian|r
     >>|cFF0E8312Buy the|r |T133738:0|t[Grimoire of Torment (Rank 2)] |cFF0E8312from him|r
-    .collect 16346,1,9425,1 --Grimoire of Torment Rank 2
+    .collect 16346,1,496,1 --Grimoire of Torment Rank 2
     .target Torian
     .train 20317,1
 step << Warlock TBC
@@ -9676,8 +9697,28 @@ step << Rogue
     .goto Silvermoon City,73.39,59.65,30,0
     .goto Silvermoon City,76.55,52.05,20,0
     .goto Silvermoon City,79.70,52.16,20 >>Travel toward |cFF00FF25Zelanis|r
-    .itemStat 16,QUALITY,<7 << Rogue
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
+step << Rogue
+    .goto Silvermoon City,79.70,52.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zelanis|r
+    >>|cFFFCDC00Make sure you've trained|r |T132282:0|t[Ambush] |cFFFCDC00and|r |T132302:0|t[Rupture] |cFFFCDC00for a quest later|r << tbc
+    .accept 10794 >>Accept Rogues of the Shattered Hand
+    .train 8676 >>Train |T132282:0|t[Ambush] << tbc
+    .train 1943 >>Train |T132302:0|t[Rupture] << tbc
+    .train 1943 >>Train your class spells << wotlk
+    .target Zelanis
+    .xp <20,1
+    .xp >22,1
+step << Rogue
+    .goto Silvermoon City,79.70,52.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zelanis|r
+    >>|cFFFCDC00Make sure you've trained|r |T132282:0|t[Ambush] |cFFFCDC00and|r |T132302:0|t[Rupture] |cFFFCDC00for a quest later|r << tbc
+    .accept 10794 >>Accept Rogues of the Shattered Hand
+    .train 8676 >>Train |T132282:0|t[Ambush] << tbc
+    .train 1943 >>Train |T132302:0|t[Rupture] << tbc
+    .train 1759 >>Train your class spells
+    .target Zelanis
+    .xp <22,1
+    .xp >24,1
 step << Rogue
     #label SMTraining5
     .goto Silvermoon City,79.70,52.16
@@ -9686,12 +9727,14 @@ step << Rogue
     .accept 10794 >>Accept Rogues of the Shattered Hand
     .train 8676 >>Train |T132282:0|t[Ambush] << tbc
     .train 1943 >>Train |T132302:0|t[Rupture] << tbc
+    .train 6762 >>Train your class spells << wotlk
     .target Zelanis
+    .xp <24,1
 step << Rogue wotlk
     .goto Silvermoon City,80.47,51.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Darlia|r
     >>|cFF0E8312Buy|r |T132273:0|t[Instant Poison] |cFF0E8312from her|r
-    .collect 6947,10,9425,1 --Instant Poison (10)
+    .collect 6947,10,496,1 --Instant Poison (10)
     .target Darlia
 step << Druid
     .goto Silvermoon City,72.53,56.24,10,0
@@ -9731,7 +9774,7 @@ step
     .goto Silvermoon City,74.47,36.83,20,0 << Hunter/Paladin wotlk
     .goto Silvermoon City,63.47,31.98,20,0
     .goto Silvermoon City,57.48,24.49,20,0
-    .goto Silvermoon City,53.80,20.23,30 >>Travel toward |cFF00FF25Lor'themar|r
+    .goto Silvermoon City,53.80,20.23,50 >>Travel toward |cFF00FF25Lor'themar|r
 step
     .goto Silvermoon City,53.80,20.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lor'themar|r
@@ -9787,7 +9830,7 @@ step << Mage
     .goto Undercity,82.77,15.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hannah|r
     >>|cFF0E8312Buy a|r |T134419:0|t[Rune of Teleportation] |cFF0E8312from her|r
-    .collect 17031,1,9425,1 --Rune of Teleportation (1)
+    .collect 17031,1,496,1 --Rune of Teleportation (1)
     .money <0.3000 << Troll
     .money <0.2850 << !Troll
     .target Hannah Akeley
@@ -9798,8 +9841,22 @@ step << Mage
     .money <0.2000 << Troll
     .money <0.1900 << !Troll
     .target Lexington Mortaim
-step
+step << Rogue
+    .goto Undercity,77.49,49.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Nathaniel|r
+    >>|cFF0E8312Buy the|r |T135423:0|t[Deadly Throwing Axe] |cFF0E8312from him|r
+    .collect 25875,1,496,1 --Deadly Throwing Axe (1)
+    .target Nathaniel Steenwick
+    .itemStat 18,QUALITY,<2
+    .isQuestAvailable 496
+step << Rogue
     #completewith next
+    +Equip the |T135423:0|t[Deadly Throwing Axe]
+    .use 25875
+    .itemcount 25875,1
+    .itemStat 18,QUALITY,<2
+step
+    #completewith UndercitySM
     .goto Undercity,63.84,47.17,5,0 << !Mage
     .goto Undercity,65.50,56.75,20,0 << !Mage
     .goto Undercity,64.42,64.62,20,0 << !Mage
@@ -9819,10 +9876,10 @@ step
     .accept 9813 >> Accept Meeting the Orcs << !BloodElf
     .turnin 9177 >> Turn in Journey to Undercity << !BloodElf
     .goto Undercity,58.06,91.79
-    .accept 9425 >> Accept Report to Tarren Mill
-    .goto Undercity,57.77,90.57
+    .accept 9425 >> Accept Report to Tarren Mill << BloodElf
+    .goto Undercity,57.77,90.57 << BloodElf
     .target Lady Sylvanas Windrunner
-    .target Ambassador Sunsorrow
+    .target Ambassador Sunsorrow << BloodElf
     .isOnQuest 9621 << BloodElf
     .isOnQuest 9812 << !BloodElf
 step
@@ -9832,10 +9889,10 @@ step
     .accept 9813 >> Accept Meeting the Orcs << !BloodElf
     .turnin 9177 >> Turn in Journey to Undercity << !BloodElf
     .goto Undercity,58.06,91.79
-    .accept 9425 >> Accept Report to Tarren Mill
-    .goto Undercity,57.77,90.57
+    .accept 9425 >> Accept Report to Tarren Mill << BloodElf
+    .goto Undercity,57.77,90.57 << BloodElf
     .target Lady Sylvanas Windrunner
-    .target Ambassador Sunsorrow
+    .target Ambassador Sunsorrow << BloodElf
     .isQuestTurnedIn 9621 << BloodElf
     .isQuestTurnedIn 9812 << !BloodElf
 step
@@ -9844,10 +9901,10 @@ step
     .turnin 9177 >> Turn in Journey to Undercity << !BloodElf
     .turnin 9180 >> Turn in Journey to Undercity << BloodElf
     .goto Undercity,58.06,91.79
-    .accept 9425 >> Accept Report to Tarren Mill
-    .goto Undercity,57.77,90.57
+    .accept 9425 >> Accept Report to Tarren Mill << BloodElf
+    .goto Undercity,57.77,90.57 << BloodElf
     .target Lady Sylvanas Windrunner
-    .target Ambassador Sunsorrow
+    .target Ambassador Sunsorrow << BloodElf
 step << Paladin
     .goto Undercity,58.00,90.46
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Cyssa|r
@@ -9870,19 +9927,33 @@ step << Paladin
 	.target Champion Cyssa Dawnrose
     .xp <24,1
 step
+    #completewith ExitUC
     .goto Undercity,55.20,90.91
     .goto Undercity,67.88,14.97,30 >>|cFFFCDC00Go to the edge of the main platform in the Royal Quarter. Perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=jj85AXyF1XE >> |cFFFCDC00CLICK HERE|r
 step
+    .abandon 9156 >> Abandon Wanted: Knucklerot and Luzran
+    .abandon 9167 >> Abandon The Traitor's Destruction
+    .isOnQuest 9156
+    .isOnQuest 9167
+step
+    .abandon 9156 >> Abandon Wanted: Knucklerot and Luzran
+    .isOnQuest 9156
+step
+    .abandon 9167 >> Abandon The Traitor's Destruction
+    .isOnQuest 9167
+step
+    #label ExitUC
     .goto Undercity,66.21,4.90,15,0
     .goto Tirisfal Glades,61.73,64.87
     .zone Tirisfal Glades >>Exit Undercity
+    .isQuestAvailable 496
 step << !Warlock Undead wotlk
     .goto Tirisfal Glades,60.08,52.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Velma|r
     .skill riding,75 >> Train |T136103:0|t[Apprentice Riding] from her
     .target Velma Warnam
-    .money <4.5125
+    .money <4.5
 step << !Warlock Undead wotlk
     .goto Tirisfal Glades,59.87,52.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zachariah|r
@@ -9893,7 +9964,7 @@ step << !Warlock Undead wotlk
     .itemcount 13333,<1 --Brown Skeletal Horse
     .itemcount 46308,<1 --Brown Skeletal Horse
     .money <0.9025
-    .skill riding,75,1
+    .skill riding,<75,1
 step << !Warlock Undead wotlk
     .cast 55884 >> Use the |T132264:0|t[Red Skeletal Horse] to learn it
     .use 13331
@@ -9955,7 +10026,7 @@ step << Troll wotlk/Orc wotlk !Warlock
     .goto Tirisfal Glades,60.94,46.35,-1
     >>Go up the Zeppelin Tower
     .zone Durotar >>Take the Zeppelin to Durotar
-    .money <4.5125
+    .money <4.5
 step << !Warlock Orc wotlk
     #xprate >1.4999
     #completewith next
@@ -9969,14 +10040,14 @@ step << !Warlock Orc wotlk
     .goto Orgrimmar,66.07,40.04,30,0
     .goto Orgrimmar,72.25,21.42,30,0
     .goto Orgrimmar,69.41,13.11,20 >>Travel toward |cFF00FF25Kildar|r
-    .money <4.5125
+    .money <4.5
 step << !Warlock Orc wotlk
     #xprate >1.4999
     .goto Orgrimmar,69.41,13.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kildar|r
     .skill riding,75 >> Train |T136103:0|t[Apprentice Riding] from him
     .target Kildar
-    .money <4.5125
+    .money <4.5
 step << !Warlock Orc wotlk
     #xprate >1.4999
     .goto Orgrimmar,69.38,12.25
@@ -9988,7 +10059,7 @@ step << !Warlock Orc wotlk
     .itemcount 5668,<1 --Horn of the Brown Wolf
     .itemcount 46099,<1 --Horn of the Black Wolf
     .money <0.9025
-    .skill riding,75,1
+    .skill riding,<75,1
 step << !Warlock Orc wotlk
     #xprate >1.4999
     .cast 55884 >> Use the |T132224:0|t[Horn of the Timber Wolf] to learn it
@@ -10047,7 +10118,7 @@ step << Troll Mage wotlk
     .goto Durotar,52.26,34.68,35,0
     .goto Durotar,55.28,75.48,50 >>Travel toward |cFF00FF25Xar'Ti|r
     .train 3567,3
-    .money <4.5125
+    .money <4.5
 step << Troll wotlk
     #xprate >1.4999
     #completewith next
@@ -10056,14 +10127,14 @@ step << Troll wotlk
     .goto Durotar,49.93,28.80,35,0
     .goto Durotar,52.26,34.68,35,0
     .goto Durotar,55.28,75.48,50 >>Travel toward |cFF00FF25Xar'Ti|r
-    .money <4.5125
+    .money <4.5
 step << Troll wotlk
     #xprate >1.4999
     .goto Durotar,55.28,75.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Xar'Ti|r
     .skill riding,75 >> Train |T136103:0|t[Apprentice Riding] from her
     .target Xar'Ti
-    .money <4.5125
+    .money <4.5
 step << Troll wotlk
     #xprate >1.4999
     .goto Durotar,55.23,75.65
@@ -10074,7 +10145,7 @@ step << Troll wotlk
     .itemcount 8591,<1 --Whistle of the Turquoise Raptor
     .itemcount 8592,<1 --Whistle of the Violet Raptor
     .money <0.9025
-    .skill riding,75,1
+    .skill riding,<75,1
 step << Troll wotlk
     #xprate >1.4999
     .cast 55884 >> Use the |T132253:0|t[Whistle of the Emerald Raptor] to learn it

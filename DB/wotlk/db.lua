@@ -10,6 +10,25 @@ addon.skipPreReq = {
     [10008] = 1
 }
 
+local _,class = UnitClass("player")
+
+addon.defaultGuideList = {
+    ["Elwynn Forest"] = "RestedXP Alliance 1-20\\01-11 Elwynn Forest",
+    ["Teldrassil"] = "RestedXP Alliance 1-20\\01-06 Shadowglen",
+    ["Dun Morogh"] = "RestedXP Alliance 1-20\\01-06 Coldridge Valley",
+    ["Azuremyst Isle"] = "RestedXP Alliance 1-20\\01-12 Azuremyst Isle",
+    ["Durotar"] = "RestedXP Horde 1-30\\01-10 Durotar",
+    ["Mulgore"] = "RestedXP Horde 1-30\\01-10 Mulgore",
+    ["Tirisfal Glades"] = "RestedXP Horde 1-30\\01-06 Tirisfal Glades",
+    ["Eversong Woods"] = "RestedXP Horde 1-30\\01-06 Eversong Woods",
+}
+
+if class == "WARLOCK" then
+    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-12 Dun Morogh"
+elseif class == "HUNTER" then
+    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-11 Dun Morogh"
+end
+
 addon.mapId = {
     ["Dire Maul"] = 234,
     ["The Hinterlands"] = 1425,
@@ -213,12 +232,14 @@ addon.professionID = {
     tailoring = {3908, 3909, 3910, 12180, 26790, 51309},
     cooking = {2550, 3102, 3413, 18260, 33359, 51296},
     firstaid = {3273, 3274, 7924, 10846, 27028, 45542},
-    fishing = {7620, 7731, 7732, 18248, 33095, 51294}
+    fishing = {7620, 7731, 7732, 18248, 33095, 51294},
+    lockpicking = {1804},
 }
 
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
+C_Spell.RequestLoadSpellData(1809) -- lockpicking
 
 addon.base = {66,78,71,101,116,73,110,102,111}
 

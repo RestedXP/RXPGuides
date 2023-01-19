@@ -1541,6 +1541,7 @@ function addon.SelectGossipType(gossipType)
             elseif not option.type and not IsModifierKeyDown() then
                 if gossipType == "binder" then
                     local text = strupper(option.name or "")
+                    --print(option.name,option.icon)
                     if option.icon == 132052 and text:find(homeText) then
                         GossipSelectOption(i)
                         return true
@@ -1552,8 +1553,8 @@ function addon.SelectGossipType(gossipType)
             end
         end
     else
-        for i,gossipType in ipairs({GossipGetOptions()}) do
-            if i % 2 == 0 and gossipType == gossipType then
+        for i,gossipText in ipairs({GossipGetOptions()}) do
+            if i % 2 == 0 and gossipType == gossipText then
                 GossipSelectOption(i/2)
                 return true
             end
@@ -1589,13 +1590,14 @@ function addon.functions.home(self, ...)
         element.confirm = false
     elseif event == "CONFIRM_BINDER" then
 
-        if ConfirmBinder then
-            ConfirmBinder()
-        elseif C_PlayerInteractionManager then
-            C_Timer.After(0.25, function()
+        if C_PlayerInteractionManager and C_PlayerInteractionManager.ConfirmationInteraction then
+            self:SetScript("OnUpdate", function()
                 C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
                 C_PlayerInteractionManager.ClearInteraction(Enum.PlayerInteractionType.Binder)
+                self:SetScript("OnUpdate",nil)
             end)
+        elseif ConfirmBinder then
+            ConfirmBinder()
         end
         element.confirm = true
         _G.StaticPopup1:Hide()
@@ -1633,6 +1635,7 @@ function addon.functions.fp(self, ...)
     local event, arg1, arg2 = ...
     local element = self.element
     if self.element.step.active then
+        print(element.fpId,'-',RXPCData.flightPaths[element.fpId])
         local fpDiscovered = element.fpId and RXPCData.flightPaths[element.fpId]
         if element.textOnly and fpDiscovered then
             element.step.completed = true
@@ -2091,7 +2094,7 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
     -- print(level,element.level,(level >= element.level) == not reverseLogic)
 
     local skillLevelCheck = level >= element.level
-    if element.skill == "riding" and addon.mountIDs and not element.mountTrained and skillLevelCheck then
+    if element.skill == "riding" and addon.mountIDs and not element.mountTrained and skillLevelCheck and not (reverseLogic and element.skipstep) then
         local skillLevel = element.level
         local function MountCheck(range)
             --print('g',range)

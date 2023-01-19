@@ -94,6 +94,7 @@ function addon.settings:InitializeSettings()
             chromieTime = "auto",
             enableXpStepSkipping = true,
             enableAutomaticXpRate = true,
+            autoLoadStartingGuides = true,
 
             -- Sliders
             arrowScale = 1,
@@ -194,6 +195,11 @@ function addon.settings:MigrateSettings()
     end
 
     -- TODO autoLoadGuides -> autoLoadStartingGuides
+    if RXPData.autoLoadGuides ~= nil then
+        n("hideUnusedGuides", RXPData.autoLoadGuides)
+        db.autoLoadStartingGuides = RXPData.autoLoadGuides
+        RXPData.autoLoadGuides = nil
+    end
 
     if RXPCData.disableArrow ~= nil then
         n("disableArrow", RXPCData.disableArrow)
@@ -668,6 +674,8 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.1,
                         set = function(info, value)
                             self.ToggleActive()
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.GenerateMenuTable()
                         end
                     },
                     lockFrames = {
@@ -1827,6 +1835,20 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
+                    autoLoadStartingGuides = {
+                        name = L("Load starting zone guides"),
+                        desc = L(
+                            "Automatically picks a suitable guide whenever you log in for the first time on a character"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.4,
+                        hidden = not addon.defaultGuideList,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.GenerateMenuTable()
+
+                        end
+                    },
                     anchorOrientation = {
                         name = L("Current step frame anchor"),
                         desc = L(
@@ -2024,19 +2046,6 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 10,
                         hidden = true or not _G.QuestieLoader, -- Not used
                         disabled = true -- Not used
-                    },
-                    autoLoadStartingGuides = {
-                        name = L("Auto load starting zone guides"),
-                        desc = L(
-                            "Automatically picks a suitable guide whenever you log in for the first time on a character"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 11,
-                        hidden = true, -- TODO, Impossible situation with character-specific settings
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RXPFrame.GenerateMenuTable()
-                        end
                     }
                 }
             }

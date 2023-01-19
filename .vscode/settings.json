@@ -1,7 +1,7 @@
 {
     "editor.wordWrapColumn": 120,
     "Lua.telemetry.enable": false,
-    "Lua.runtime.version": "Lua 5.1",
+    "Lua.runtime.version": "LuaJIT",
     "Lua.workspace.ignoreDir": [
         ".vscode",
         "libs",
