@@ -35,6 +35,7 @@ events.zone = "ZONE_CHANGED_NEW_AREA"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
 events.gossipoption = {"GOSSIP_SHOW"}
+events.skipgossipid = events.gossipoption
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
 events.emote = "PLAYER_TARGET_CHANGED"
@@ -3432,8 +3433,51 @@ function addon.functions.skipgossip(self, text, ...)
 
 end
 
+function addon.functions.skipgossipid(self, text, ...)
+    if not (C_GossipInfo or C_GossipInfo.GetOptions) then
+        return
+    elseif type(self) == "string" then
+        local element = {textOnly = true, text = text}
+        local args =  {...}
+        if #args == 0 then
+            return addon.error(
+                L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                   ': No gossip ID provided\n' .. self)
+        end
+        for i,v in pairs(args) do
+            args[i] = tonumber(v)
+        end
+        element.args = args
+        return element
+    end
+
+    local element = self.element
+    if not element or not element.step.active or not element.gossipId or
+        element.completed or addon.isHidden or
+        not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then
+            return
+    end
+
+    local args = element.args or {}
+    local event = text
+    if event == "GOSSIP_SHOW" then
+        local gossipOptions = GossipGetOptions()
+        for _,gossipId in ipairs(args) do
+            for _, v in pairs(gossipOptions) do
+                if v.gossipOptionID == gossipId then
+                    C_GossipInfo.SelectOption(v.gossipOptionID)
+                    return
+                end
+            end
+        end
+    end
+
+end
+
 function addon.functions.gossipoption(self, ...)
-    if type(self) == "string" then
+    if not (C_GossipInfo or C_GossipInfo.GetOptions) then
+        return
+    elseif type(self) == "string" then
         local element = {icon = addon.icons.gossip}
         local text, gossipId = ...
         gossipId = tonumber(gossipId)
@@ -3455,17 +3499,15 @@ function addon.functions.gossipoption(self, ...)
 
         return element
     end
-
-    if not self.element.step.active then return end
-
-    if addon.isHidden or not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then return end
-
     local element = self.element
 
-    if not element or not element.gossipId or element.complete then return end
+    if not element or not element.step.active or not element.gossipId or
+        element.completed or addon.isHidden or
+        not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then
+             return
+    end
 
     local matched = false
-    local completed = element.completed
     for _, v in pairs(GossipGetOptions()) do
         if v.gossipOptionID == element.gossipId then
             C_GossipInfo.SelectOption(v.gossipOptionID)
@@ -3476,7 +3518,7 @@ function addon.functions.gossipoption(self, ...)
         end
     end
 
-    if not completed and matched and element.timer then
+    if matched and element.timer then
         addon.StartTimer(element.timer, element.timerText)
     end
 end
