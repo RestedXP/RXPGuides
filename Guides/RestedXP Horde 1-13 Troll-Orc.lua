@@ -181,48 +181,24 @@ step << !Warlock
     .mob Mottled Boar
 step << Warlock
     #xprate <1.5
-    #completewith Duokna2
+    #completewith Duokna2 << wotlk
+    #completewith Ruzan2 << tbc
 	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 95 copper worth of vendor items. You can also sell your gear for 13 copper|r
 	.money >0.0095
     .mob Mottled Boar
 step << Warlock
     #xprate >1.4999
-    #completewith Duokna2
+    #completewith Duokna2 << wotlk
+    #completewith Ruzan2 << tbc
 	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 1 silver 90 copper worth of vendor items. You can also sell your gear for 13 copper|r
 	.money >0.0190
     .mob Mottled Boar
-step
-    #xprate <1.5
+step << Rogue/Warlock wotlk
+    #label Duokna2
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter !Shaman
-    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman tbc --Refreshing Spring Water (15)
-    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman wotlk --Refreshing Spring Water (5)
-    .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
-    .money >0.1 << Rogue/Warrior/Shaman
-    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman tbc
-    .itemcount 159,<5 << !Rogue !Warrior !Hunter !Shaman wotlk
-    .itemcount 2512,<600 << Hunter
-step
-    #xprate >1.4999
-    .goto Durotar,42.59,67.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
-    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman tbc --Refreshing Spring Water (15)
-    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman wotlk --Refreshing Spring Water (5)
-    .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
-    .vendor >> Vendor Trash
-    .target Duokna
-    .money <0.03 << !Rogue !Warrior !Shaman
-    .money <0.0145 << Hunter
-    .money >0.1 << Rogue/Warrior/Shaman
-    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman tbc
-    .itemcount 159,<5 << !Rogue !Warrior !Hunter !Shaman wotlk
-    .itemcount 2512,<600 << Hunter
 step << !Rogue !Warrior
     #label Duokna2
     #xprate >1.4999
@@ -233,6 +209,7 @@ step << !Rogue !Warrior
     .target Duokna
     .money >0.1
 step << Warlock tbc
+    #label Ruzan2
     .goto Durotar,42.59,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ruzan|r
     .turnin 1485 >>Turn in Vile Familiars
@@ -664,9 +641,12 @@ step
     .accept 6394 >>Accept Thazz'ril's Pick
     .target Foreman Thazz'ril
 step
+    #xprate <1.5
     #completewith next
     .xp 4+1720 >> Grind to 1720+/2100xp
     .mob Mottled Boar
+    .mob Scorpid Worker
+    .mob Vile Familiar
     .isOnQuest 4402
 step
     .goto Durotar,44.67,64.92,25,0

@@ -177,13 +177,13 @@ step << Warlock
     .mob Mottled Boar
 step << Warlock
     #era
-    #completewith Duokna2
+    #completewith Ruzan2
 	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 1 silver worth of vendor items|r
     .mob Mottled Boar
 	.money >0.01
 step << Warlock/Warrior/Shaman/Hunter
     #som
-    #completewith Duokna2
+    #completewith Ruzan2
 	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 2 silver worth of vendor items|r << Warrior
 	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 1 silver 75 copper worth of vendor items|r << Warlock
 	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 1 silver 10 copper worth of vendor items|r << Hunter
@@ -193,28 +193,14 @@ step << Warlock/Warrior/Shaman/Hunter
 	.money >0.0175 << Warlock
 	.money >0.011 << Hunter
 	.money >0.01 << Shaman
-step
-    .goto Durotar,42.59,67.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
-    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
-    .collect 2512,200,6394,1 << Hunter --Rough Arrow (1000)
-    .vendor >> Vendor Trash
-    .target Duokna
-    .money >0.1 << Rogue/Warrior/Shaman
-    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
-    .itemcount 2512,<200 << Hunter
-step
+step << Rogue
     #label Duokna2
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFFFCDC00Don't buy any|r |T132794:0|t[Refreshing Spring Water] |cFFFCDC00yet|r << !Hunter !Rogue !Warrior !Shaman
     .vendor >> Vendor Trash
     .target Duokna
-    .money >0.1
-    .itemcount 159,15 << !Rogue !Warrior !Hunter !Shaman
 step << Warlock
+    #label Ruzan2
     .goto Durotar,42.59,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ruzan|r
     .turnin 1485 >>Turn in Vile Familiars
@@ -570,9 +556,12 @@ step
     .accept 6394 >>Accept Thazz'ril's Pick
     .target Foreman Thazz'ril
 step
+    #era
     #completewith next
     .xp 4+1720 >> Grind to 1720+/2100xp
     .mob Mottled Boar
+    .mob Scorpid Worker
+    .mob Vile Familiar
     .isOnQuest 4402
 step
     .goto Durotar,44.67,64.92,25,0
@@ -657,9 +646,9 @@ step
     .isOnQuest 4402
 step
     #softcore
-    #completewith next
+    #completewith Betrayers
     .goto Durotar,44.70,52.47
-    .deathskip >> Alternatively, Die and respawn at the |cFF00FF25Spirit Healer|r |cFFFCDC00near the arrow|r
+    .deathskip >> |cFFFCDC00Alternatively, Die and respawn at the |cFF00FF25Spirit Healer|r near the arrow|r
     .target Spirit Healer
 step
 	#completewith next
@@ -667,6 +656,7 @@ step
     .goto Durotar,53.55,44.68,30 >>|cFFFCDC00Perform a Logout Skip by positioning your character on the edge of the rock until it looks like they're floating, then logging out and back in|r
 	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> CLICK HERE
 step
+    #label Betrayers
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gar'thok|r
     >>|cFFFCDC00You can talk to him from outside or on top of the bunker|r
