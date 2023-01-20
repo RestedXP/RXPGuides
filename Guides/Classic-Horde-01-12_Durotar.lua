@@ -4,437 +4,893 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Horde
-#name 1-10 Durotar
+#name 1-6 Durotar
+#version 1
+#group RestedXP Horde 1-22
+#defaultfor Troll/Orc
+#next 6-10 Durotar
+
+step << !Orc !Troll
+    #completewith next
+    +|cFFFCDC00You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in|r
+step
+    .goto Durotar,43.29,68.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kaltunk|r
+    .accept 4641 >>Accept Your Place In The World
+    .target Kaltunk
+step << Warrior/Shaman/Warlock
+    #completewith next
+    +|cFFFCDC00Kill |cFFFF5722Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
+    +|cFFFCDC00Kill |cFFFF5722Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
+    .goto Durotar,43.85,71.73,50,0 << Warlock
+    .goto Durotar,44.19,65.34,50,0 << Warrior/Shaman
+    .mob Mottled Boar
+    .money >0.01
+step << Warlock
+    .goto Durotar,42.59,69.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ruzan|r
+    .accept 1485 >>Accept Vile Familiars
+    .target Ruzan
+step << Warrior/Shaman
+    .goto Durotar,43.49,67.35,30,0
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    .vendor >> Vendor Trash
+    .target Duokna
+    .money >0.01
+step
+    .goto Durotar,42.28,68.48,12,0 << !Warrior !Shaman
+    .goto Durotar,42.29,68.39,12,0 << Warrior/Shaman
+    .goto Durotar,42.06,68.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gornek|r
+    .turnin 4641 >>Turn in Your Place In The World
+    .accept 788 >>Accept Cutting Teeth
+    .target Gornek
+step << Warrior/Shaman
+    .goto Durotar,42.28,68.48,10,0 
+    .goto Durotar,42.89,69.44 << Warrior
+    .goto Durotar,42.39,69.00 << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r << Shaman
+    .train 6673 >>Train |T132333:0|t[Battle Shout] << Warrior
+    .train 8017 >>Train |T136086:0|t[Rockbiter Weapon] << Shaman
+    .target Frang << Warrior
+    .target Shikrik << Shaman
+step << Warlock
+    #softcore
+    #completewith Nartok
+    .goto Durotar,41.52,68.36,12,0
+    .goto Durotar,41.24,68.16,12,0
+    .goto Durotar,40.82,68.03,12,0
+    .goto Durotar,40.65,68.52,12 >>Travel toward |cFF00FF25Nartok|r
+    .money <0.01
+step << Warlock
+    #softcore
+    #completewith next
+    .goto Durotar,41.52,68.36,12,0
+    .goto Durotar,41.24,68.16,12,0
+    .goto Durotar,40.82,68.03,12,0
+    .goto Durotar,40.56,68.44,12 >>Travel toward |cFF00FF25Hraug|r
+    .money >0.01
+step << Warlock
+    #hardcore
+    #completewith next
+    .goto Durotar,41.52,68.36,12,0
+    .goto Durotar,41.24,68.16,12,0
+    .goto Durotar,40.82,68.03,12,0
+    .goto Durotar,40.56,68.44,12 >>Travel toward |cFF00FF25Hraug|r
+step << Warlock
+    #softcore
+    .goto Durotar,40.56,68.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hraug|r
+    .vendor >>Vendor Trash
+    .target Hraug
+    .money >0.01
+step << Warlock
+    #hardcore
+    .goto Durotar,40.56,68.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hraug|r
+    .vendor >>Vendor Trash
+    .target Hraug
+step << Warlock
+    #label Nartok
+    .goto Durotar,40.65,68.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Nartok|r
+    .train 348 >>Train |T135817:0|t[Immolate]
+    .target Nartok
+step << !Warrior !Rogue
+    #softcore
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Hunter
+    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
+    .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
+    .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
+    .target Duokna
+    .money <0.015 << !Hunter
+    .money <0.0040 << Hunter
+step << Warlock
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r
+    .collect 159,5,6394,1 --Refreshing Spring Water (5)
+    .target Duokna
+    .money <0.0025
+step << Warlock
+    #completewith next
+    .goto Durotar,43.57,67.28,25,0
+    >>Kill |cFFFF5722Mottled Boars|r en route to the Burning Blade Coven
+    >>|cFFFCDC00Try to get to level 2 before getting there|r
+    .complete 788,1 --Mottled Boar (10)
+    .mob Mottled Boar
+step << Warlock
+    .goto Durotar,45.30,56.42,100 >> Travel toward the Burning Blade Coven
+    .isOnQuest 1485
+step << Warlock
+    .loop 50,Durotar,43.87,58.42,44.53,58.62,45.18,58.42,45.83,58.59,45.79,57.43,46.46,57.57,47.19,57.12,46.21,56.69,46.28,56.11,45.65,56.90,45.35,56.32,44.77,56.87,44.58,56.10,44.27,56.59,43.85,55.52,43.87,58.42
+    >>Kill |cFFFF5722Vile Familiars|r. Loot them for |cFF00BCD4Vile Familiar Heads|r
+    .complete 1485,1 --Vile Familiar Head (6)
+    .mob Vile Familiar
+step
+    #completewith Sarkoth
+    .goto Durotar,43.57,67.28,25,0 << !Warlock
+    .goto Durotar,43.89,65.84,45,0 << !Warlock
+    >>Kill |cFFFF5722Mottled Boars|r
+    .complete 788,1 --Mottled Boar (10)
+    .mob Mottled Boar
+step
+    .goto Durotar,40.59,62.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hana'zua|r
+    .accept 790 >>Accept Sarkoth
+    .target Hana'zua
+step
+    #label Sarkoth
+	.goto Durotar,40.88,66.41,40,0
+	.goto Durotar,40.41,66.64,40,0
+	.goto Durotar,40.43,67.36,40,0
+	.goto Durotar,40.72,67.39,40,0
+	.loop 20,Durotar,40.88,66.41,40.41,66.64,40.43,67.36,40.72,67.39,40.88,66.41
+    >>Kill |cFFFF5722Sarkoth|r. Loot him for |cFF00BCD4Sarkoth's Mangled Claw|r
+    .complete 790,1 --Sarkoth's Mangled Claw (1)
+    .mob Sarkoth
+step
+    .goto Durotar,40.59,62.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hana'zua|r
+    .turnin 790 >>Turn in Sarkoth
+    .accept 804 >>Accept Sarkoth
+    .target Hana'zua
+step
+    .loop 50,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
+    >>Kill |cFFFF5722Mottled Boars|r
+    .complete 788,1 --Mottled Boar (10)
+    .mob Mottled Boar
+step << Warlock/Warrior/Shaman/Hunter
+    #som
+    .loop 50,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
+    .xp 2+870 >> Grind to 870+/900xp << Warlock
+    .xp 3+760 >> Grind to 760+/1400xp << Warrior/Shaman/Hunter
+    .mob Mottled Boar
+step << Warlock
+    #era
+    .loop 50,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
+    .xp 3+685 >> Grind to 685+/1400xp
+    .mob Mottled Boar
+step << Warlock
+    #era
+    #completewith Duokna2
+	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 1 silver worth of vendor items|r
+    .mob Mottled Boar
+	.money >0.01
+step << Warlock/Warrior/Shaman/Hunter
+    #som
+    #completewith Duokna2
+	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 2 silver worth of vendor items|r << Warrior
+	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 1 silver 75 copper worth of vendor items|r << Warlock
+	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 1 silver 10 copper worth of vendor items|r << Hunter
+	>>|cFFFCDC00Grind |cFFFF5722Mottled Boars|r. Loot them until you have 1 silver worth of vendor items|r << Shaman
+    .mob Mottled Boar
+	.money >0.02 << Warrior
+	.money >0.0175 << Warlock
+	.money >0.011 << Hunter
+	.money >0.01 << Shaman
+step
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
+    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
+    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
+    .collect 2512,200,6394,1 << Hunter --Rough Arrow (1000)
+    .vendor >> Vendor Trash
+    .target Duokna
+    .money >0.1 << Rogue/Warrior/Shaman
+    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
+    .itemcount 2512,<200 << Hunter
+step
+    #label Duokna2
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFFFCDC00Don't buy any|r |T132794:0|t[Refreshing Spring Water] |cFFFCDC00yet|r << !Hunter !Rogue !Warrior !Shaman
+    .vendor >> Vendor Trash
+    .target Duokna
+    .money >0.1
+    .itemcount 159,15 << !Rogue !Warrior !Hunter !Shaman
+step << Warlock
+    .goto Durotar,42.59,69.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ruzan|r
+    .turnin 1485 >>Turn in Vile Familiars
+    .accept 1499 >>Accept Vile Familiars
+    .target Ruzan
+step << Warlock
+    #completewith Gornek2
+    .cast 688 >>|cFFFCDC00Cast|r |T136218:0|t[Summon Imp]
+step << Warlock
+	.goto Durotar,42.85,69.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zureetha|r
+    .turnin 1499 >>Turn in Vile Familiars 
+    .accept 794 >>Accept Burning Blade Medallion
+    .target Zureetha Fargaze
+step
+    #label Gornek2
+    .goto Durotar,42.28,68.48,12,0 << Warlock
+    .goto Durotar,42.29,68.39,12,0 << !Warlock
+    .goto Durotar,42.06,68.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gornek|r
+    .turnin 788 >>Turn in Cutting Teeth
+    .turnin 804 >>Turn in Sarkoth
+    .accept 2383 >>Accept Simple Parchment << Orc Warrior
+    .accept 3065 >>Accept Simple Tablet << Troll Warrior
+    .accept 3082 >>Accept Etched Tablet << Troll Hunter
+    .accept 3083 >>Accept Encrypted Tablet << Troll Rogue
+    .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
+    .accept 3085 >>Accept Hallowed Tablet << Troll Priest
+    .accept 3086 >>Accept Glyphic Tablet << Troll Mage
+    .accept 3087 >>Accept Etched Parchment << Orc Hunter
+    .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
+    .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
+    .accept 3090 >>Accept Tainted Parchment << Orc Warlock
+    .accept 789 >>Accept Sting of the Scorpid
+    .target Gornek
+step << Rogue
+    #completewith Rwag
+    .goto Durotar,41.52,68.36,12,0
+    .goto Durotar,41.27,68.00,12 >>Travel toward |cFF00FF25Rwag|r
+step << Rogue
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
+    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue 
+    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue 
+    .train 53 >> Train |T132090:0|t[Backstab]
+    .target Rwag
+    .money >0.04
+    .xp <4,1
+step << Rogue
+    #label Rwag
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
+    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue 
+    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue 
+    .target Rwag
+step << Warlock
+    #completewith Nartok2
+    .goto Durotar,41.52,68.36,12,0
+    .goto Durotar,41.24,68.16,12,0
+    .goto Durotar,40.82,68.03,12,0
+    .goto Durotar,40.65,68.52,12 >>Travel toward |cFF00FF25Nartok|r
+    .money <0.01
+step << Warlock
+    #completewith next
+    .goto Durotar,41.52,68.36,12,0
+    .goto Durotar,41.24,68.16,12,0
+    .goto Durotar,40.82,68.03,12,0
+    .goto Durotar,40.56,68.44,12 >>Travel toward |cFF00FF25Hraug|r
+    .money >0.01
+step << Warlock
+    .goto Durotar,40.56,68.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hraug|r
+    .vendor >>Vendor Trash
+    .target Hraug
+    .money >0.01
+step << Warlock
+    .goto Durotar,40.65,68.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Nartok|r
+    .turnin 3090 >>Turn in Tainted Parchment
+    .train 172 >> Train |T136118:0|t[Corruption]
+    .target Nartok
+step
+    #sticky
+    #label Galgar
+    .goto Durotar,42.73,67.23,0,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Galgar|r
+    .accept 4402 >>Accept Galgar's Cactus Apple Surprise
+    .target Galgar
+step
+    #era
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
+    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
+    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (15)
+    .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
+    .vendor >> Vendor Trash
+    .target Duokna
+    .money >0.1 << Rogue/Warrior
+    .itemcount 159,<15 << !Rogue !Warrior !Hunter
+    .itemcount 2512,<600 << Hunter
+step
+    #som
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter !Shaman
+    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
+    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
+    .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
+    .vendor >> Vendor Trash
+    .target Duokna
+    .money <0.0145 << Hunter
+    .money >0.1 << Rogue/Warrior/Shaman
+    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
+    .itemcount 2512,<600 << Hunter
+step << Hunter
+    #som
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r
+    .collect 2512,400,6394,1 --Rough Arrow (400)
+    .vendor >> Vendor Trash
+    .target Duokna
+    .money <0.0115
+    .itemcount 2512,<200
+step << Hunter
+    #som
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r
+    .collect 2512,200,6394,1 --Rough Arrow (200)
+    .vendor >> Vendor Trash
+    .target Duokna
+    .money <0.0105
+    .itemcount 2512,<200
+step << Shaman
+    #som
+    #requires Galgar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r and |cFF00FF25Canaga|r
+    .turnin 3084 >>Turn in Rune-Inscribed Tablet << Troll
+    .turnin 3089 >>Turn in Rune-Inscribed Parchment << Orc
+    .train 8042 >>Train |T136026:0|t[Earth Shock]
+    .goto Durotar,42.39,69.00
+    .accept 1516 >>Accept Call of Earth
+    .goto Durotar,42.40,69.17
+    .target Shikrik
+    .target Canaga Earthcaller
+step << Shaman
+    #era
+    #requires Galgar
+    .goto Durotar,42.39,69.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r
+    .turnin 3084 >>Turn in Rune-Inscribed Tablet << Troll
+    .turnin 3089 >>Turn in Rune-Inscribed Parchment << Orc
+    .target Shikrik
+step << Mage
+    #requires Galgar
+    .goto Durotar,42.51,69.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mai'ah|r
+    .turnin 3086 >>Turn in Glyphic Tablet << Troll
+    .train 1459 >> Train |T135932:0|t[Arcane Intellect]
+    .target Mai'ah
+step << !Warlock
+    #requires Galgar
+	.goto Durotar,42.85,69.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zureetha|r
+    .accept 792 >>Accept Vile Familiars
+    .target Zureetha Fargaze
+step << Hunter
+    #som
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
+    .turnin 3082 >>Turn in Etched Tablet << Troll
+    .turnin 3087 >>Turn in Etched Parchment << Orc
+    .train 1978 >> Train |T132204:0|t[Serpent Sting]
+    .target Jen'shan
+step << Hunter
+    #era
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
+    .turnin 3082 >>Turn in Etched Tablet << Troll
+    .turnin 3087 >>Turn in Etched Parchment << Orc
+    .target Jen'shan
+step << Warrior
+    #som
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .turnin 2383 >>Turn in Simple Parchment << Orc
+    .turnin 3065 >>Turn in Simple Tablet << Troll
+    .train 100 >> Train |T132337:0|t[Charge]
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Frang
+    .money <0.02
+step << Warrior
+    #som
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .turnin 2383 >>Turn in Simple Parchment << Orc
+    .turnin 3065 >>Turn in Simple Tablet << Troll
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Frang
+step << Warrior
+    #era
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .turnin 2383 >>Turn in Simple Parchment << Orc
+    .turnin 3065 >>Turn in Simple Tablet << Troll
+    .target Frang
+step
+    #requires Galgar << Warlock
+    .goto Durotar,44.63,68.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thazz'ril|r
+    .accept 5441 >>Accept Lazy Peons
+    .target Foreman Thazz'ril
+step
+    #completewith Sting
+    >>Loot the |cFF00BCD4Cactus Apples|r near the Cacti
+    .complete 4402,1 --Cactus Apple (10)
+step
+    #completewith Tails
+    .goto Durotar,44.98,69.13,20,0
+    .goto Durotar,45.64,65.70,45,0
+    .goto Durotar,47.37,65.67,45,0
+    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cFF00FF25Lazy Peons|r
+    .complete 5441,1 --Peons Awoken (5)
+    .target Lazy Peon
+    .use 16114
+step << !Warlock
+    #completewith Imps
+    >>Kill |cFFFF5722Scorpid Workers|r. Loot them for |cFF00BCD4Scorpid Worker Tails|r
+    .complete 789,1 --Scorpid Worker Tail (10)
+    .mob Scorpid Worker
+step << !Warlock
+    #label Imps
+    .loop 45,Durotar,43.87,58.42,44.53,58.62,45.18,58.42,45.83,58.59,45.79,57.43,46.46,57.57,47.19,57.12,46.21,56.69,46.28,56.11,45.65,56.90,45.35,56.32,44.77,56.87,44.58,56.10,44.27,56.59,43.85,55.52,43.87,58.42
+    >>Kill |cFFFF5722Vile Familiars|r
+    .complete 792,1 --Vile Familiar (12)
+    .mob Vile Familiar
+step
+    #label Tails
+    .loop 45,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
+    >>Kill |cFFFF5722Scorpid Workers|r. Loot them for |cFF00BCD4Scorpid Worker Tails|r
+    .complete 789,1 --Scorpid Worker Tail (10)
+    .mob Scorpid Worker
+step
+    .loop 40,Durotar,44.98,69.13,45.64,65.70,47.37,65.67,46.74,60.66,47.09,57.90,43.90,57.79,42.70,57.25,41.27,58.95,40.91,60.41,38.83,61.84,44.98,69.13
+    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cFF00FF25Lazy Peons|r
+    .complete 5441,1 --Peons Awoken (5)
+    .target Lazy Peon
+    .use 16114
+step
+    #era
+    .loop 50,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
+    .xp 4 >> Grind to level 4
+    .mob Mottled Boar
+    .mob Scorpid Worker
+    .mob Vile Familiar
+step
+    .goto Durotar,42.73,67.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Galgar|r
+    .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
+    .target Galgar
+    .isQuestComplete 4402
+step
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
+    >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
+    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (5)
+    .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
+    .vendor >> Vendor Trash
+    .target Duokna
+    .money >0.1 << Rogue/Warrior
+    .itemcount 159,<5 << !Rogue !Warrior !Hunter
+    .itemcount 2512,<600 << Hunter
+step
+    #label Sting
+    .goto Durotar,42.29,68.39,12,0
+    .goto Durotar,42.06,68.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gornek|r
+    .turnin 789 >>Turn in Sting of the Scorpid
+    .target Gornek
+step << Shaman
+    #era
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r and |cFF00FF25Canaga|r
+    .train 8042 >> Train |T136026:0|t[Earth Shock]
+    .goto Durotar,42.39,69.00
+    .accept 1516 >>Accept Call of Earth
+    .goto Durotar,42.40,69.17
+    .target Shikrik
+    .target Canaga Earthcaller 
+step << Mage
+    .goto Durotar,42.51,69.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mai'ah|r
+    .train 116 >> Train |T135846:0|t[Frostbolt]
+    .target Mai'ah
+step << Priest
+    .goto Durotar,42.36,68.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ken'jai|r
+    .train 589 >> Train your class spells
+    .money <0.021
+    .target Ken'jai
+step << Priest
+    .goto Durotar,42.36,68.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ken'jai|r
+    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
+    .train 589 >> Train |T136207:0|t[Shadow Word: Pain]
+    .money <0.011
+    .target Ken'jai
+step << Priest
+    .goto Durotar,42.36,68.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ken'jai|r
+    .train 589 >> Train |T136207:0|t[Shadow Word: Pain]
+    .money <0.01
+    .target Ken'jai
+step << !Warlock
+	.goto Durotar,42.85,69.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zureetha|r
+    .turnin 792 >>Turn in Vile Familiars
+    .accept 794 >>Accept Burning Blade Medallion
+    .target Zureetha Fargaze
+step << Hunter
+    #era
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
+    .train 1978 >> Train |T132204:0|t[Serpent Sting]
+    .target Jen'shan
+step << Warrior
+    #era
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .train 100 >> Train |T132337:0|t[Charge]
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Frang
+    .money <0.02
+    .train 772,1
+step << Warrior
+    #era
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Frang
+step << Warrior
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .train 100 >> Train |T132337:0|t[Charge]
+    .target Frang
+    .money <0.01
+step
+    .goto Durotar,44.63,68.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thazz'ril|r
+    .turnin 5441 >>Turn in Lazy Peons
+    .accept 6394 >>Accept Thazz'ril's Pick
+    .target Foreman Thazz'ril
+step
+    #completewith next
+    .xp 4+1720 >> Grind to 1720+/2100xp
+    .mob Mottled Boar
+    .isOnQuest 4402
+step
+    .goto Durotar,44.67,64.92,25,0
+    .goto Durotar,43.45,62.96,25,0
+    .goto Durotar,43.82,62.72,25,0
+    .goto Durotar,44.85,61.54,25,0
+    .goto Durotar,44.88,59.66,25,0
+    .goto Durotar,44.61,58.20,25,0
+    .goto Durotar,45.46,58.49,25,0
+    .goto Durotar,45.93,60.62,25,0
+    .goto Durotar,46.87,60.36,25,0
+    .goto Durotar,47.28,62.80,25,0
+    .goto Durotar,46.08,62.98,25,0
+    .loop 25,Durotar,44.67,64.92,43.45,62.96,43.82,62.72,44.85,61.54,44.88,59.66,44.61,58.20,45.46,58.49,45.93,60.62,46.87,60.36,47.28,62.80,46.08,62.98,44.67,64.92
+    >>Loot the |cFF00BCD4Cactus Apples|r near the Cacti
+    .complete 4402,1 --Cactus Apple (10)
+step << !Warrior !Rogue !Shaman
+    #era
+    .loop 45,Durotar,43.87,58.42,44.53,58.62,45.18,58.42,45.83,58.59,45.79,57.43,46.46,57.57,47.19,57.12,46.21,56.69,46.28,56.11,45.65,56.90,45.35,56.32,44.77,56.87,44.58,56.10,44.27,56.59,43.85,55.52,43.87,58.42
+    .xp 4+1720 >> Grind to 1720+/2100xp
+    .mob Vile Familiar
+    .isOnQuest 4402
+step << !Warrior !Rogue !Shaman
+    #era
+    .loop 45,Durotar,43.87,58.42,44.53,58.62,45.18,58.42,45.83,58.59,45.79,57.43,46.46,57.57,47.19,57.12,46.21,56.69,46.28,56.11,45.65,56.90,45.35,56.32,44.77,56.87,44.58,56.10,44.27,56.59,43.85,55.52,43.87,58.42
+    .xp 5 >> Grind to level 5
+    .mob Vile Familiar
+    .isQuestTurnedIn 4402
+step
+	#completewith Thazz
+    #label Cave
+    .goto Durotar,45.35,56.27,30 >>Enter the cave
+    .isOnQuest 6394
+step
+	#completewith Thazz
+    #requires Cave
+    .goto Durotar,45.37,55.39,15,0
+    .goto Durotar,44.43,54.51,15,0
+    .goto Durotar,43.72,53.79,10 >>Travel toward |cFF00BCD4Thazz'ril's Pick|r
+    .isOnQuest 6394
+step << Shaman
+    #completewith Yarrog
+    #requires Cave
+    >>Kill |cFFFF5722Felstalkers|r. Loot them for |cFF00BCD4Felstalker Hooves|r
+    .complete 1516,1 --Felstalker Hoof (2)
+    .mob Felstalker
+step
+    #label Thazz
+    .goto Durotar,43.72,53.79
+    >>Loot |cFF00BCD4Thazz'ril's Pick|r against the wall
+    .complete 6394,1 --Thazz'ril's Pick (1)
+step
+	#completewith next
+    .goto Durotar,44.43,54.51,15,0
+    .goto Durotar,44.77,53.33,15,0
+    .goto Durotar,43.88,52.71,15,0
+    .goto Durotar,43.39,52.07,15,0
+    .goto Durotar,42.90,52.34,15,0
+    .goto Durotar,42.70,52.99,35 >>Travel toward |cFFFF5722Yarrog Baneshadow|r
+step
+    #label Yarrog
+    .goto Durotar,42.70,52.99
+    >>Kill |cFFFF5722Yarrog Baneshadow|r. Loot him for the |cFF00BCD4Burning Blade Medallion|r
+    .complete 794,1 --Burning Blade Medallion (1)
+	.mob Yarrog Baneshadow
+step << Shaman
+    .loop 25,Durotar,42.70,52.99,42.97,51.14,43.56,52.05,43.74,52.65,44.13,52.85,44.82,52.51,44.83,53.40,44.78,54.57,45.14,55.02,45.51,55.23,45.14,55.02,44.51,55.03,44.21,54.12,43.92,54.30,43.87,55.22,43.46,55.56,43.05,55.24,42.38,54.22,42.53,53.48,43.27,53.82,42.70,52.99
+    >>Kill |cFFFF5722Felstalkers|r. Loot them for |cFF00BCD4Felstalker Hooves|r
+    .complete 1516,1 --Felstalker Hoof (2)
+    .mob Felstalker
+step
+    #era
+    .loop 25,Durotar,42.70,52.99,42.97,51.14,43.56,52.05,43.74,52.65,44.13,52.85,44.82,52.51,44.83,53.40,44.78,54.57,45.14,55.02,45.51,55.23,45.14,55.02,44.51,55.03,44.21,54.12,43.92,54.30,43.87,55.22,43.46,55.56,43.05,55.24,42.38,54.22,42.53,53.48,43.27,53.82,42.70,52.99
+    .xp 5+1635 >> Grind to 1635+/2800xp << !Shaman
+    .xp 5+645 >> Grind to 645+/2800xp << Shaman
+    .isQuestTurnedIn 4402
+step
+    #era
+    .loop 25,Durotar,42.70,52.99,42.97,51.14,43.56,52.05,43.74,52.65,44.13,52.85,44.82,52.51,44.83,53.40,44.78,54.57,45.14,55.02,45.51,55.23,45.14,55.02,44.51,55.03,44.21,54.12,43.92,54.30,43.87,55.22,43.46,55.56,43.05,55.24,42.38,54.22,42.53,53.48,43.27,53.82,42.70,52.99
+    .xp 5+1255 >> Grind to 1255+/2800xp << !Shaman
+    .xp 5+265 >> Grind to 265+/2800xp << Shaman
+    .isOnQuest 4402
+step
+    #softcore
+    #completewith next
+    .goto Durotar,44.70,52.47
+    .deathskip >> Alternatively, Die and respawn at the |cFF00FF25Spirit Healer|r |cFFFCDC00near the arrow|r
+    .target Spirit Healer
+step
+	#completewith next
+    .goto Durotar,44.70,52.47
+    .goto Durotar,53.55,44.68,30 >>|cFFFCDC00Perform a Logout Skip by positioning your character on the edge of the rock until it looks like they're floating, then logging out and back in|r
+	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> CLICK HERE
+step
+    .goto Durotar,51.95,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gar'thok|r
+    >>|cFFFCDC00You can talk to him from outside or on top of the bunker|r
+    .accept 784 >>Accept Vanquish the Betrayers
+    .target Gar'thok
+step
+    #completewith next
+    .goto Durotar,50.22,43.06,12,0
+    .goto Durotar,50.09,42.97,8,0
+    .goto Durotar,50.20,42.30,12,0
+    .goto Durotar,49.96,40.96,12,0
+    .goto Durotar,49.67,40.42,10 >>Travel toward the tower
+step
+    #completewith next
+    .goto Durotar,49.75,40.38,6,0
+    .goto Durotar,49.77,40.24,6,0
+    .goto Durotar,49.69,40.21,6,0
+    .goto Durotar,49.68,40.30,6,0
+    .goto Durotar,49.78,40.34,6,0
+    .goto Durotar,49.79,39.96,6,0
+    .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
+step
+    .goto Durotar,49.89,40.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Furl|r
+    .accept 791 >>Accept Carry Your Weight
+    .target Furl Scornbrow
+step
+    #completewith next
+    .hs >>Hearth to the Valley of Trials
+step
+    #era
+    .goto Durotar,44.63,68.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thazz'ril|r
+    .turnin 6394 >>Turn in Thazz'ril's Pick
+    .target Foreman Thazz'ril
+step
+    #som
+    .goto Durotar,44.63,68.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thazz'ril|r
+    .turnin 6394 >>Turn in Thazz'ril's Pick
+    .target Foreman Thazz'ril
+    .xp 5+1460,1 << !Shaman
+    .xp 5,1 << Shaman
+step
+    .goto Durotar,42.73,67.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Galgar|r
+    .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
+    .target Galgar
+step
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    .vendor >> Vendor Trash
+    .target Duokna
+    .money >0.03
+step
+    .goto Durotar,42.85,69.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zureetha|r
+    .turnin 794 >>Turn in Burning Blade Medallion
+    .accept 805 >>Accept Report to Sen'jin Village
+    .target Zureetha Fargaze
+step << Priest
+    .goto Durotar,42.36,68.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ken'jai|r
+	.accept 5649 >> Accept In Favor of Spirituality
+	.train 591 >>Train |T135924:0|t[Smite]
+    .train 17 >>Train |T135940:0|t[Power Word: Shield]
+    .target Ken'jai
+step << Mage
+    .goto Durotar,42.51,69.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mai'ah|r
+    .train 143 >> Train |T135812:0|t[Fireball]
+    .train 2136 >>Train |T135807:0|t[Fire Blast]
+    .target Mai'ah
+step << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r and |cFF00FF25Canaga|r
+    .train 332 >>Train |T136052:0|t[Healing Wave]
+    .goto Durotar,42.39,69.00
+    .turnin 1516 >>Turn in Call of Earth
+    .accept 1517 >>Accept Call of Earth
+    .goto Durotar,42.40,69.17
+    .target Shikrik
+    .target Canaga Earthcaller
+    .xp <6,1
+step << Shaman
+    .goto Durotar,42.40,69.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Canaga|r
+    .turnin 1516 >>Turn in Call of Earth
+    .accept 1517 >>Accept Call of Earth
+    .target Canaga Earthcaller
+step << Hunter
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
+    .train 1130 >>Train |T132212:0|t[Hunter's Mark]
+    .train 3044 >>Train |T132218:0|t[Arcane Shot]
+    .target Jen'shan
+    .money <0.02
+step << Hunter
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
+    .train 3044 >>Train |T132218:0|t[Arcane Shot]
+    .target Jen'shan
+step << Warrior
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .train 3127 >>Train |T132269:0|t[Parry]
+    .train 6343 >>Train |T136105:0|t[Thunder Clap]
+    .target Frang
+    .money <0.02
+step << Warrior
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .train 3127 >>Train |T132269:0|t[Parry]
+    .target Frang
+step << Rogue
+    #completewith Rwag2
+    .goto Durotar,42.13,68.41,15,0
+    .goto Durotar,41.52,68.36,12,0
+    .goto Durotar,41.27,68.00,12 >>Travel toward |cFF00FF25Rwag|r
+step << Rogue
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike]
+    .train 1776 >> Train |T132155:0|t[Gouge]
+    .target Rwag
+    .money <0.02
+step << Rogue
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike]
+    .target Rwag
+step << Warlock
+    #completewith Hraug3
+    .goto Durotar,42.13,68.41,15,0
+    .goto Durotar,41.52,68.36,12,0
+    .goto Durotar,41.24,68.16,12,0
+    .goto Durotar,40.82,68.03,12,0
+    .goto Durotar,40.56,68.44,12 >>Travel toward |cFF00FF25Hraug|r
+step << Warlock
+    #label Hraug3
+    .goto Durotar,40.56,68.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hraug|r
+    >>|cFF0E8312Buy the|r |T133738:0|t[Grimoire of Blood Pact] |cFF0E8312from him|r
+    .collect 16321,1,817,1 --Grimoire of Blood Pact
+    .vendor >>Vendor Trash
+    .target Hraug
+    .money <0.03
+step << Warlock
+    .goto Durotar,40.65,68.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Nartok|r
+    .train 695 >> Train |T136197:0|t[Shadow Bolt]
+    .train 1454 >> Train |T136126:0|t[Life Tap]
+    .target Nartok
+    .money <0.02
+step << Warlock
+    .goto Durotar,40.65,68.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Nartok|r
+    .train 695 >> Train |T136197:0|t[Shadow Bolt]
+    .target Nartok
+step << Warlock
+    #completewith Leave
+    .train 20397 >> Use the |T133738:0|t[Grimoire of Blood Pact]
+    .itemcount 16321,1
+    .use 16321
+step << Shaman
+    #completewith CallOE1
+    #label Shrine
+    .goto Durotar,43.36,69.60,25,0
+    .goto Durotar,43.18,70.93,25,0
+    .goto Durotar,41.31,73.63,12,0
+    .goto Durotar,40.82,74.37,8,0
+    .goto Durotar,42.71,75.18,10,0
+    .goto Durotar,43.57,75.51,15,0
+    .goto Durotar,44.13,76.36,25 >>Travel toward the |cFFDB2EEFShaman Shrine|r
+    .isOnQuest 1517
+step << Shaman
+    #completewith next
+    #requires Shrine
+    .cast 8202 >>Use the |T134743:0|t[Earth Sapta]
+    .use 6635
+step << Shaman
+    #label CallOE1
+    .goto Durotar,44.03,76.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cFF00FF25Manifestation|r
+    .turnin 1517 >>Turn in Call of Earth
+    .accept 1518 >>Accept Call of Earth
+    .target Minor Manifestation of Earth
+step << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Canaga|r
+    .goto Durotar,42.40,69.17
+    .turnin 1518 >>Turn in Call of Earth
+    .target Canaga Earthcaller
+step << Shaman
+    .goto Durotar,42.39,69.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r
+    .train 332 >>Train |T136052:0|t[Healing Wave]
+    .target Shikrik
+step
+    #som
+    .goto Durotar,44.63,68.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thazz'ril|r
+    .turnin 6394 >>Turn in Thazz'ril's Pick
+    .target Foreman Thazz'ril
+step
+    #label Leave
+    .goto Durotar,47.09,69.21,25,0
+    .goto Durotar,49.02,69.13,20,0
+    .goto Durotar,49.90,68.43,25 >>Exit the Valley of Trials
+    .isOnQuest 805
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#name 6-10 Durotar
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Troll/Orc
 #next 10-12 Durotar
 
-step << !Orc !Troll
-    #sticky
-    #completewith next
-    .goto Durotar,43.3,68.5
-    +You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in
 step
-    .goto Durotar,43.3,68.5
-    .accept 4641 >>Accept Your Place In The World
-step << Warlock
-    #sticky
-    #completewith next
-    +Kill Boars for 10c+ of vendor trash
-    .goto Durotar,44.0,71.3,60,0
-step << Warlock
-    .goto Durotar,42.6,69.0
-    .accept 1485 >>Accept Vile Familiars
-step << Warrior/Shaman
-    #sticky
-    #completewith next
-    +Kill Boars for 10c+ of vendor trash
-    .goto Durotar,44.2,65.9,40,0
-step << Warrior/Shaman
-    .goto Durotar,42.6,67.3
-    .vendor >>Vendor trash. Vendor armor if less than 10c
-step << Warrior
-    .goto Durotar,42.9,69.4
-    .train 6673 >>Train Battle Shout
-step << Shaman
-    .goto Durotar,42.4,69.0
-    .train 8017 >>Train Rockbiter Weapon
-step
-    .goto Durotar,42.1,68.4
-    .turnin 4641 >>Turn in Your Place In The World
-    .accept 788 >>Accept Cutting Teeth
-step << Warlock
-    .goto Durotar,40.6,68.4
-    .vendor >>vendor trash at the demon trainer
-step << Warlock
-     .goto Durotar,40.6,68.5
-    .train 348 >>Train Immolate
-step << !Warlock
-	#som
-	#phase 3-6
-	#completewith BoarsX
-    .goto Durotar,41.9,63.7,0
-	>>Kill Boars whilst doing other quests
-    .complete 788,1 --Mottled Boar (10)
-step << !Warlock
-    #sticky
-    #label mboars
-	#era/som
-    .goto Durotar,41.9,63.7
-    .complete 788,1 --Mottled Boar (10)
-step << Warlock
-    #completewith next
-	>>Kill Mottled Boars en route to Vile Familiars. Try to get level 2 before getting to Familiars. Don't sit and drink for these
-    .complete 788,1 --Mottled Boar (10)
-step << Warlock
-    #label WarlockBoars
-    .goto Durotar,45.0,57.4,90 >> Run to the Familiars
-step << Warlock
-    .goto Durotar,45.3,56.9
-    >>Kill Vile Familiars for their heads
-    .complete 1485,1 --Vile Familiar Head (6)
-step << Warlock
-	#completewith BoarAndyW
-    .goto Durotar,40.6,62.6,0
-    >>Finish off killing the Mottled Boars
-    .complete 788,1 --Mottled Boar (10)
-step << Warlock
-	>>Grind boars en route
-    .goto Durotar,40.6,62.6
-    .accept 790 >>Accept Sarkoth
-step << !Warlock
-    .goto Durotar,40.6,62.6
-    .accept 790 >>Accept Sarkoth
-step
-    >>Kill Sarkoth. Loot his claw
-    .goto Durotar,40.7,65.2,30,0
-    .goto Durotar,40.7,67.3
-    .complete 790,1 --Sarkoth's Mangled Claw (1)
-step
-    #label BoarAndyW
-    .goto Durotar,40.6,62.6
-    .turnin 790 >>Turn in Sarkoth
-    .accept 804 >>Accept Sarkoth
-step << !Warlock
-    #requires mboars
-step << Warlock
-    .goto Durotar,40.6,62.6
-    >>Finish off killing the Mottled Boars
-    .complete 788,1 --Mottled Boar (10)
-step << Warlock
-	#era/som
-    .xp 3+850 >> Grind to 850+/1400xp on the way back to town
-step << Warlock
-	#som
-	#phase 3-6
-    .xp 3 >> Grind to level 3 on the way back to town
-step << Warlock
-	#era/som
-	.goto Durotar,42.6,67.3
-    .vendor >>Vendor trash & buy 10 water
-step << Warlock
-	#som
-	#phase 3-6
-	.goto Durotar,42.6,67.3
-    .vendor >>Vendor trash & buy 10 water
-step << Warlock
-    .goto Durotar,42.6,69.0
-    .turnin 1485 >>Turn in Vile Familiars
-    .accept 1499 >>Accept Vile Familiars
-step << Warlock
-    >>Choose the dagger and equip it. Remember to summon your Imp
-	.goto Durotar,42.9,69.1
-    .turnin 1499 >>Turn in Vile Familiars
-    .accept 794 >>Accept Burning Blade Medallion
-step
-	#era/som
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
-    .accept 789 >>Accept Sting of the Scorpid
-    .accept 2383 >>Accept Simple Parchment << Orc Warrior
-    .accept 3065 >>Accept Simple Tablet << Troll Warrior
-    .accept 3082 >>Accept Etched Tablet << Troll Hunter
-    .accept 3083 >>Accept Encrypted Tablet << Troll Rogue
-    .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
-    .accept 3085 >>Accept Hallowed Tablet << Troll Priest
-    .accept 3086 >>Accept Glyphic Tablet << Troll Mage
-    .accept 3087 >>Accept Etched Parchment << Orc Hunter
-    .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
-    .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
-    .accept 3090 >>Accept Tainted Parchment << Orc Warlock
-step
-	#som
-	#phase 3-6
-    .goto Durotar,42.1,68.3
-    .turnin 804 >>Turn in Sarkoth
-    .turnin 788 >>Turn in Cutting Teeth
-    .accept 2383 >>Accept Simple Parchment << Orc Warrior
-    .accept 3065 >>Accept Simple Tablet << Troll Warrior
-    .accept 3082 >>Accept Etched Tablet << Troll Hunter
-    .accept 3083 >>Accept Encrypted Tablet << Troll Rogue
-    .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
-    .accept 3085 >>Accept Hallowed Tablet << Troll Priest
-    .accept 3086 >>Accept Glyphic Tablet << Troll Mage
-    .accept 3087 >>Accept Etched Parchment << Orc Hunter
-    .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
-    .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
-    .accept 3090 >>Accept Tainted Parchment << Orc Warlock
-	.isQuestComplete 788
-step
-	#som
-	#phase 3-6
-    .goto Durotar,42.1,68.3
-    .turnin 804 >>Turn in Sarkoth
-    .accept 2383 >>Accept Simple Parchment << Orc Warrior
-    .accept 3065 >>Accept Simple Tablet << Troll Warrior
-    .accept 3082 >>Accept Etched Tablet << Troll Hunter
-    .accept 3083 >>Accept Encrypted Tablet << Troll Rogue
-    .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
-    .accept 3085 >>Accept Hallowed Tablet << Troll Priest
-    .accept 3086 >>Accept Glyphic Tablet << Troll Mage
-    .accept 3087 >>Accept Etched Parchment << Orc Hunter
-    .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
-    .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
-    .accept 3090 >>Accept Tainted Parchment << Orc Warlock
-step << Orc Rogue
-      .goto Durotar,41.3,68.0
-    .turnin 3088 >>Turn in Encrypted Parchment
-step << Troll Rogue
-      .goto Durotar,41.3,68.0
-    .turnin 3083 >>Turn in Encrypted Tablet
-step << Orc Warlock
-    #completewith next
-	.goto Durotar,40.6,68.4
-    .vendor >>Vendor trash at the demon trainer
-step << Orc Warlock
-     .goto Durotar,40.6,68.5
-    .turnin 3090>>Turn in Tainted Parchment
-    .trainer >> Train your class spells
-step << Shaman/Priest/Mage
-    .goto Durotar,42.6,67.3
-    .vendor >>Vendor trash & buy 10 water
-step << Warrior/Rogue
-    .goto Durotar,42.6,67.3
-    .vendor >>Vendor trash
-step << Hunter
-    .goto Durotar,42.6,67.3
-    .vendor >>Vendor trash. Buy arrows until your Quiver is full (1000 arrows)
-step
-    #era
-	.goto Durotar,42.7,67.3
-    .accept 4402 >>Accept Galgar's Cactus Apple Surprise
-step << Orc Hunter
-    .goto Durotar,42.8,69.3
-    .turnin 3087 >>Turn in Etched Parchment
-step << Troll Hunter
-    .goto Durotar,42.8,69.3
-    .turnin 3082 >>Turn in Etched Tablet
-step << Troll Mage
-    .goto Durotar,42.5,69.0
-    .turnin 3086 >>Turn in Glyphic Tablet
-    .trainer >> Train your class spells
-step << Troll Priest
-    .goto Durotar,42.4,68.8
-    .turnin 3085 >>Turn in Hallowed Tablet
-    .trainer >> Train your class spells
-step << Troll Shaman
-    .goto Durotar,42.4,69.0
-    .turnin 3084 >>Turn in Rune-Inscribed Tablet
-step << Orc Shaman
-    .goto Durotar,42.4,69.0
-    .turnin 3089 >>Turn in Rune-Inscribed Parchment
-step << Orc Warrior
-    .goto Durotar,42.9,69.4
-    .turnin 2383 >>Turn in Simple Parchment
-step << Troll Warrior
-    .goto Durotar,42.9,69.4
-    .turnin 3065 >>Turn in Simple Tablet
-step << !Warlock
-    .goto Durotar,42.9,69.1
-    .accept 792 >>Accept Vile Familiars
-step
-    .goto Durotar,44.6,68.7
-    .accept 5441 >>Accept Lazy Peons
-step
-       #era
-	#sticky
-    #label Apples
-    >>Loot the Cacti that you see with apples on them
-    .complete 4402,1 --Cactus Apple (10)
-step
-    #sticky
-    #label Peons
-   .use 16114 >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
-    .complete 5441,1 --Peons Awoken (5)
-step << !Warlock
-	#era/som
-    #sticky
-    #completewith imps
-    .goto Durotar,47.1,65.2,30,0
-    >>Kill Scorpions for some tails en route to the cave
-    .complete 789,1 --Scorpid Worker Tail (10)
-step << Warlock
-	#era/som
-    >>Kill Scorpions for their tails
-    .complete 789,1 --Scorpid Worker Tail (10)
-    .goto Durotar,47.1,65.2,80,0
-    .goto Durotar,46.6,58.2,80,0
-    .goto Durotar,39.8,63.5
-step << !Warlock
-    #label imps
-    .goto Durotar,45.2,56.8
-    >>Kill Imps in front of the cave
-    .complete 792,1 --Vile Familiar (12)
-step << !Warlock
-	#era/som
-    >>Finish off the Scorpion Tails
-    .goto Durotar,39.8,63.5
-    .complete 789,1 --Scorpid Worker Tail (10)
-step
-    #era
-    #requires Apples
-step
-    #requires Peons
-step
-    #era
-    .goto Durotar,44.0,65.3
-    >>Finish looting the Cactus Apples
-    .complete 4402,1 --Cactus Apple (10)
-step
-	#label BoarsX
-    .goto Durotar,47.09,57.93
-   .use 16114 >>Finish waking the Peons around the trees. Backtrack if you are struggling to find any sleeping.
-    .complete 5441,1 --Peons Awoken (5)
-step << !Warlock
-	#som
-	#phase 3-6
-    .goto Durotar,41.9,63.7
-	>>Finish killing Boars
-    .complete 788,1 --Mottled Boar (10)
-step
-    #era
-    .goto Durotar,42.7,67.2
-    .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
-step << !Mage !Priest !Warlock
-    .goto Durotar,42.6,67.3
-    .vendor >>Vendor trash
-step << Mage/Priest/Warlock
-    .goto Durotar,42.6,67.3
-    .vendor >>Vendor trash. Buy 10 water
-step
-	#era/som
-    .goto Durotar,42.1,68.3
-    .turnin 789 >>Turn in Sting of the Scorpid
-step << !Warlock
-	#som
-	#phase 3-6
-    .goto Durotar,42.1,68.3
-    .turnin 788 >>Turn in Cutting Teeth
-step << Shaman
-    .goto Durotar,42.4,69.1
-    .accept 1516 >>Accept Call of Earth
-    .trainer >> Train your class spells
-step << Shaman
-    .goto Durotar,42.9,69.1
-    >>Choose the staff
-    .turnin 792 >>Turn in Vile Familiars
-    .accept 794 >>Accept Burning Blade Medallion
-step << Mage
-    .goto Durotar,42.5,69.0
-    .trainer >> Train your class spells
-step << Priest
-    .goto Durotar,42.4,68.8
-    .trainer >> Train your class spells
-step << !Shaman !Warlock
-    .goto Durotar,42.9,69.1
-    .turnin 792 >>Turn in Vile Familiars
-    .accept 794 >>Accept Burning Blade Medallion
-step << Hunter
-    .goto Durotar,42.8,69.3
-    .trainer >> Train your class spells
-step << Warrior
-    .goto Durotar,42.9,69.4
-    .trainer >> Train your class spells
-step
-    .goto Durotar,44.6,68.7
-    .turnin 5441 >>Turn in Lazy Peons
-    .accept 6394 >>Accept Thazz'ril's Pick
-step << Shaman
-    #sticky
-	#label Hooves
-    >>Kill Felstalkers for Hooves
-    .complete 1516,1 --Felstalker Hoof (2)
-step
-    >>Run into the cave. Go into the middle room and loot the Pick
-    .goto Durotar,45.2,56.8,60,0
-    .goto Durotar,43.7,53.8
-    .complete 6394,1 --Thazz'ril's Pick (1)
-step
-    #sticky
-	#label Yarrog
-    .goto Durotar,44.7,54.0,30,0
-    .goto Durotar,43.4,52.0,30,0
-    >>Kill Yarrog. Loot him for the Medallion
-    .goto Durotar,42.7,53.0
-    .complete 794,1 --Burning Blade Medallion (1)
-step << !Shaman
-	#som
-	#phase 3-6
-    .xp 5+650 >> Grind to 650+/2800xp
-step << !Shaman
-	#som
-	#phase 1-2
-    .xp 5+1225 >> Grind to 1225+/2800xp
-step << !Shaman
-	#era
-    .xp 5+1680 >> Grind to 1680+/2800xp
-step << Shaman
-	#era/som
-	#requires Hooves
-    .xp 5+690 >> Grind to 690+/2800xp
-step << Shaman
-	#som
-	#phase 3-6
-	#requires Hooves
-    .xp 5+200 >> Grind to 200+/2800xp
-step
-    #requires Yarrog
-	.hs >>Hearth to Valley of Trials
-step
-    .goto Durotar,44.6,68.6
-    .turnin 6394 >>Turn in Thazz'ril's Pick
-step
-    >>Save the healing potion you get, you might need it later for the centaurs
-    .goto Durotar,42.8,69.1
-    .turnin 794 >>Turn in Burning Blade Medallion
-    .accept 805 >>Accept Report to Sen'jin Village
-step << !Shaman
-    .xp 6 >> Grind to level 6
-step << Priest
-    .goto Durotar,42.4,68.8
-    .accept 5649 >> In Favor of Spirituality
-    .trainer >> Train your class spells
-step << Mage
-    .goto Durotar,42.5,69.0
-    .trainer >> Train your class spells
-step << Shaman
-    .goto Durotar,42.4,69.2
-    .turnin 1516 >>Turn in Call of Earth
-    .accept 1517 >>Accept Call of Earth
-step << Hunter
-    .goto Durotar,42.8,69.3
-    .trainer >> Train your class spells
-step << Warrior
-    .goto Durotar,42.9,69.4
-    .trainer >> Train your class spells
-step << Rogue
-    .goto Durotar,41.3,68.0
-    .trainer >> Train your class spells
-step << Warlock
-    .goto Durotar,40.6,68.5
-    .trainer >> Train your class spells
-    .goto Durotar,40.6,68.4
-    .vendor >> Buy the Blood Pact book if you have money after training (otherwise buy it later)
-step << Shaman
-    .goto Durotar,43.0,71.2,22,0
-    .goto Durotar,41.5,73.3,14,0
-    .goto Durotar,40.8,74.1,14,0
-    .goto Durotar,41.8,74.8,14 >>Run up the Hidden Path
-step << Shaman
-    >>Use the Earth Sapta in your bags
-    .goto Durotar,44.0,76.2
-    .turnin 1517 >>Turn in Call of Earth
-    .accept 1518 >>Accept Call of Earth
-step << Shaman
-    .goto Durotar,42.4,69.1
-    .turnin 1518 >>Turn in Call of Earth
-    .trainer >> Train your class spells
-step
-    >>Leave the starting area
-    .goto Durotar,52.1,68.3
+    .goto Durotar,52.06,68.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ukor|r
     .accept 2161 >>Accept A Peon's Burden
+    .target Ukor
 step
 	#era/som
     .goto Durotar,54.3,73.3,25,0

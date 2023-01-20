@@ -21,7 +21,8 @@ step
     .target Kaltunk
 step << Warrior/Shaman tbc/Warlock tbc
     #completewith next
-    +|cFFFCDC00Kill |cFFFF5722Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r
+    +|cFFFCDC00Kill |cFFFF5722Mottled Boars|r. Loot them until you have 34 copper worth of vendor items (including your armor)|r << Warlock
+    +|cFFFCDC00Kill |cFFFF5722Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
     .goto Durotar,43.85,71.73,50,0 << Warlock
     .goto Durotar,44.19,65.34,50,0 << Warrior/Shaman
     .mob Mottled Boar
@@ -94,6 +95,13 @@ step << !Warrior !Rogue
     .money <0.015 << !Hunter tbc
     .money <0.0048 << !Hunter wotlk
     .money <0.0040 << Hunter
+step << Warlock tbc
+    .goto Durotar,42.59,67.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r
+    .collect 159,5,6394,1 --Refreshing Spring Water (5)
+    .target Duokna
+    .money <0.0024
 step << Warlock tbc
     #completewith next
     .goto Durotar,43.57,67.28,25,0
@@ -187,16 +195,16 @@ step
     #xprate <1.5
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter !Shaman
     >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter tbc --Refreshing Spring Water (15)
-    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter wotlk --Refreshing Spring Water (5)
+    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman tbc --Refreshing Spring Water (15)
+    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman wotlk --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
-    .money >0.1 << Rogue/Warrior
-    .itemcount 159,<15 << !Rogue !Warrior !Hunter tbc
-    .itemcount 159,<5 << !Rogue !Warrior !Hunter tbc
+    .money >0.1 << Rogue/Warrior/Shaman
+    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman tbc
+    .itemcount 159,<5 << !Rogue !Warrior !Hunter !Shaman wotlk
     .itemcount 2512,<600 << Hunter
 step
     #xprate >1.4999
@@ -204,23 +212,23 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
     >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
     >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter tbc --Refreshing Spring Water (15)
-    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter wotlk --Refreshing Spring Water (5)
+    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman tbc --Refreshing Spring Water (15)
+    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman wotlk --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
-    .money <0.03 << !Rogue !Warrior
+    .money <0.03 << !Rogue !Warrior !Shaman
     .money <0.0145 << Hunter
-    .money >0.1 << Rogue/Warrior
-    .itemcount 159,<15 << !Rogue !Warrior !Hunter tbc
-    .itemcount 159,<5 << !Rogue !Warrior !Hunter tbc
+    .money >0.1 << Rogue/Warrior/Shaman
+    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman tbc
+    .itemcount 159,<5 << !Rogue !Warrior !Hunter !Shaman wotlk
     .itemcount 2512,<600 << Hunter
 step << !Rogue !Warrior
     #label Duokna2
     #xprate >1.4999
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFFFCDC00Don't buy any|r |T132794:0|t[Refreshing Spring Water] |cFFFCDC00yet|r << !Hunter
+    >>|cFFFCDC00Don't buy any|r |T132794:0|t[Refreshing Spring Water] |cFFFCDC00yet|r << !Hunter !Shaman
     .vendor >> Vendor Trash
     .target Duokna
     .money >0.1
@@ -271,7 +279,7 @@ step << Rogue
     .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue 
     .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue 
     .train 53 >> Train |T132090:0|t[Backstab]
-    .money >0.05
+    .money >0.04
     .target Rwag
 step << Rogue
     #label Rwag
@@ -337,38 +345,36 @@ step
     #xprate <1.5
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter !Shaman
     >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter tbc --Refreshing Spring Water (15)
-    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter wotlk --Refreshing Spring Water (5)
+    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman tbc --Refreshing Spring Water (15)
+    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman wotlk --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
-    .money >0.1 << Rogue/Warrior
-    .itemcount 159,<15 << !Rogue !Warrior !Hunter tbc
-    .itemcount 159,<5 << !Rogue !Warrior !Hunter tbc
+    .money >0.1 << Rogue/Warrior/Shaman
+    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman tbc
+    .itemcount 159,<5 << !Rogue !Warrior !Hunter !Shaman wotlk
     .itemcount 2512,<600 << Hunter
 step
     #xprate >1.4999
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter !Shaman
     >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter tbc --Refreshing Spring Water (15)
-    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter wotlk --Refreshing Spring Water (5)
+    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman tbc --Refreshing Spring Water (15)
+    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman wotlk --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
     .money <0.0177 << Priest tbc/Mage tbc
-    .money <0.0167 << Shaman tbc
     .money <0.0145 << Hunter
     .money <0.0129 << Priest wotlk/Mage wotlk
-    .money <0.0119 << Shaman wotlk
     .money <0.0072 << Warlock tbc
     .money <0.0024 << Warlock wotlk
-    .money >0.1 << Rogue/Warrior
-    .itemcount 159,<15 << !Rogue !Warrior !Hunter tbc
-    .itemcount 159,<5 << !Rogue !Warrior !Hunter tbc
+    .money >0.1 << Rogue/Warrior/Shaman
+    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman tbc
+    .itemcount 159,<5 << !Rogue !Warrior !Hunter !Shaman tbc
     .itemcount 2512,<600 << Hunter
 step << Hunter
     #xprate >1.4999
@@ -480,16 +486,6 @@ step << Hunter
     .turnin 3082 >>Turn in Etched Tablet << Troll
     .turnin 3087 >>Turn in Etched Parchment << Orc
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
-    .train 13163 >> Train |T132159:0|t[Aspect of the Monkey]
-    .target Jen'shan
-    .money <0.0190
-step << Hunter
-    #xprate >1.4999
-    .goto Durotar,42.84,69.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
-    .turnin 3082 >>Turn in Etched Tablet << Troll
-    .turnin 3087 >>Turn in Etched Parchment << Orc
-    .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
 step << Hunter
     .goto Durotar,42.84,69.32
@@ -587,8 +583,8 @@ step
     .vendor >> Vendor Trash
     .target Duokna
     .money >0.1 << Rogue/Warrior
-    .itemcount 159,<5 << !Rogue !Warrior !Hunter tbc
-    .itemcount 159,<2 << !Rogue !Warrior !Hunter wotlk
+    .itemcount 159,<5 << !Rogue !Warrior !Hunter !Shaman
+    .itemcount 159,<2 << Shaman
     .itemcount 2512,<600 << Hunter
 step
     #label Sting
@@ -640,14 +636,6 @@ step << !Warlock/wotlk
     .turnin 792 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
     .target Zureetha Fargaze
-step << Hunter
-    #xprate <1.5
-    .goto Durotar,42.84,69.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
-    .train 1978 >> Train |T132204:0|t[Serpent Sting]
-    .train 13163 >> Train |T132159:0|t[Aspect of the Monkey]
-    .target Jen'shan
-    .money <0.0190
 step << Hunter
     #xprate <1.5
     .goto Durotar,42.84,69.32
@@ -804,7 +792,6 @@ step
     .target Foreman Thazz'ril
 step
     #xprate >1.4999
-    #label ThazzRil2
     .goto Durotar,44.63,68.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thazz'ril|r
     .turnin 6394 >>Turn in Thazz'ril's Pick
@@ -919,6 +906,7 @@ step << Warlock tbc
     .goto Durotar,40.82,68.03,12,0
     .goto Durotar,40.56,68.44,12 >>Travel toward |cFF00FF25Hraug|r
 step << Warlock tbc
+    #label Hraug3
     .goto Durotar,40.56,68.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hraug|r
     >>|cFF0E8312Buy the|r |T133738:0|t[Grimoire of Blood Pact] |cFF0E8312from him|r
