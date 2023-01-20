@@ -35,7 +35,7 @@ local Footer = CreateFrame("Frame", "$parentGuideName", RXPFrame,
                            BackdropTemplate)
 local ScrollFrame = CreateFrame("ScrollFrame", "$parentScrollFrame",
                                 BottomFrame, "UIPanelScrollFrameTemplate")
-local CurrentStepFrame = CreateFrame("Frame", nil, RXPFrame, BackdropTemplate)
+local CurrentStepFrame = CreateFrame("Frame", nil, RXPFrame)
 local ScrollChild = CreateFrame("Frame", "$parent_steps", BottomFrame,
                                 BackdropTemplate)
 local MenuFrame = CreateFrame("Frame", "RXPG_MenuFrame", UIParent,
@@ -83,24 +83,6 @@ function addon.RenderFrame(themeUpdate)
     addon.arrowFrame.texture:SetTexture(addon.GetTexture(
                                             "rxp_navigation_arrow-1"))
     addon.UpdateScrollBar()
-
-    -- Support live theme changes
-    if themeUpdate and CurrentStepFrame and CurrentStepFrame.framePool then
-        -- CurrentStepFrame:ClearBackdrop()
-        -- CurrentStepFrame:SetBackdrop(RXPFrame.guideNameBackdrop)
-        -- CurrentStepFrame:SetBackdropColor(unpack(addon.colors.background))
-
-        for _, stepframe in ipairs(CurrentStepFrame.framePool) do
-            stepframe:ClearBackdrop()
-            stepframe:SetBackdrop(RXPFrame.backdropEdge)
-            stepframe:SetBackdropColor(unpack(addon.colors.background))
-            stepframe.number:ClearBackdrop()
-            stepframe.number:SetBackdrop(RXPFrame.backdropEdge)
-            stepframe.number:SetBackdropColor(unpack(addon.colors.background))
-            stepframe.number.text:SetTextColor(
-                unpack(addon.activeTheme.textColor))
-        end
-    end
 
     if not themeUpdate then
         RXPFrame.GenerateMenuTable()
