@@ -132,7 +132,8 @@ function addon.settings:InitializeSettings()
 
             -- Themes
             activeTheme = 'Default',
-            customTheme = addon.customThemeBase
+            customTheme = addon.customThemeBase,
+            enableThemeLiveReload = true
         }
     }
 
@@ -1599,7 +1600,10 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.RenderFrame('themeReload')
+
+                            if self.db.profile.enableThemeLiveReload then
+                                addon.RenderFrame('themeReload')
+                            end
                         end,
                         values = function()
                             return addon:GetThemeOptions()
@@ -1625,7 +1629,9 @@ function addon.settings:CreateAceOptionsPanel()
                                 r, g, b, a or 1
                             }
                             addon:RegisterTheme(self.db.profile.customTheme)
-                            addon.RenderFrame('themeReload')
+                            if self.db.profile.enableThemeLiveReload then
+                                addon.RenderFrame('themeReload')
+                            end
                         end,
                         disabled = function()
                             return self.db.profile.activeTheme ~= 'Custom'
@@ -1647,7 +1653,9 @@ function addon.settings:CreateAceOptionsPanel()
                                 r, g, b, a or 1
                             }
                             addon:RegisterTheme(self.db.profile.customTheme)
-                            addon.RenderFrame('themeReload')
+                            if self.db.profile.enableThemeLiveReload then
+                                addon.RenderFrame('themeReload')
+                            end
                         end,
                         disabled = function()
                             return self.db.profile.activeTheme ~= 'Custom'
@@ -1670,7 +1678,9 @@ function addon.settings:CreateAceOptionsPanel()
                                 r, g, b, a or 1
                             }
                             addon:RegisterTheme(self.db.profile.customTheme)
-                            addon.RenderFrame('themeReload')
+                            if self.db.profile.enableThemeLiveReload then
+                                addon.RenderFrame('themeReload')
+                            end
                         end,
                         disabled = function()
                             return self.db.profile.activeTheme ~= 'Custom'
@@ -1691,7 +1701,9 @@ function addon.settings:CreateAceOptionsPanel()
                                 r, g, b, a or 1
                             }
                             addon:RegisterTheme(self.db.profile.customTheme)
-                            addon.RenderFrame('themeReload')
+                            if self.db.profile.enableThemeLiveReload then
+                                addon.RenderFrame('themeReload')
+                            end
                         end,
                         disabled = function()
                             return self.db.profile.activeTheme ~= 'Custom'
@@ -1709,7 +1721,9 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, value)
                             self.db.profile.customTheme.tooltip = '|c' .. value
                             addon:RegisterTheme(self.db.profile.customTheme)
-                            addon.RenderFrame('themeReload')
+                            if self.db.profile.enableThemeLiveReload then
+                                addon.RenderFrame('themeReload')
+                            end
                         end,
                         disabled = function()
                             return self.db.profile.activeTheme ~= 'Custom'
@@ -1728,7 +1742,9 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, value)
                             self.db.profile.customTheme.font = value
                             addon:RegisterTheme(self.db.profile.customTheme)
-                            addon.RenderFrame('themeReload')
+                            if self.db.profile.enableThemeLiveReload then
+                                addon.RenderFrame('themeReload')
+                            end
                         end,
                         disabled = function()
                             return true or self.db.profile.activeTheme ~=
@@ -1750,7 +1766,9 @@ function addon.settings:CreateAceOptionsPanel()
                                 r, g, b, a or 1
                             }
                             addon:RegisterTheme(self.db.profile.customTheme)
-                            addon.RenderFrame('themeReload')
+                            if self.db.profile.enableThemeLiveReload then
+                                addon.RenderFrame('themeReload')
+                            end
                         end,
                         disabled = function()
                             return self.db.profile.activeTheme ~= 'Custom'
@@ -1772,10 +1790,22 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             self.db.profile.customTheme = addon.customThemeBase
                             addon:RegisterTheme(self.db.profile.customTheme)
-                            addon.RenderFrame('themeReload')
+                            if self.db.profile.enableThemeLiveReload then
+                                addon.RenderFrame('themeReload')
+                            end
                         end,
                         hidden = function()
                             return self.db.profile.activeTheme ~= 'Custom'
+                        end
+                    },
+                    enableThemeLiveReload = {
+                        name = L("Preview Changes"),
+                        desc = L("Preview theme changes"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.92,
+                        hidden = function()
+                            return isNotAdvanced()
                         end
                     },
                     guideWindowHeader = {
@@ -1784,13 +1814,57 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 2.0
                     },
+                    windowScale = {
+                        name = L("Window Scale"),
+                        desc = L(
+                            "Scale of the Main Window, use alt+left click on the main window to resize it"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.1,
+                        min = 0.2,
+                        max = 2,
+                        step = 0.05,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame:SetScale(value)
+                        end
+                    },
+                    guideFontSize = {
+                        name = L("Guide Font Size"), -- TODO locale
+                        desc = L("Change font size of the Guide Window"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.2,
+                        min = 9,
+                        max = 18,
+                        step = 1,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end
+                    },
+                    anchorOrientation = {
+                        name = L("Current step frame anchor"),
+                        desc = L(
+                            "Sets the current step frame to grow from bottom to top or top to bottom"),
+                        type = "select",
+                        values = {top = "Top", bottom = "Bottom"},
+                        sorting = {"top", "bottom"},
+                        width = optionsWidth,
+                        order = 2.3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RXPFrame.SetStepFrameAnchor()
+                        end
+                    },
                     showStepList = { -- Not actually a direct setting, indirectly frameHeight
                         name = L("Show step list"),
                         desc = L(
                             "Show/Hide the bottom frame listing all the steps of the current guide"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.1,
+                        order = 2.4,
                         get = function()
                             return addon.RXPFrame.BottomFrame:GetHeight() >= 35
                         end,
@@ -1817,7 +1891,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Only shows current and future steps on the step list window"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.2,
+                        order = 2.5,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
@@ -1829,7 +1903,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Displays guides that are not applicable for your class/race such as starting zones for other races"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.3,
+                        order = 2.6,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
@@ -1841,56 +1915,12 @@ function addon.settings:CreateAceOptionsPanel()
                             "Automatically picks a suitable guide whenever you log in for the first time on a character"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.4,
+                        order = 2.7,
                         hidden = not addon.defaultGuideList,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
 
-                        end
-                    },
-                    anchorOrientation = {
-                        name = L("Current step frame anchor"),
-                        desc = L(
-                            "Sets the current step frame to grow from bottom to top or top to bottom"),
-                        type = "select",
-                        values = {top = "Top", bottom = "Bottom"},
-                        sorting = {"top", "bottom"},
-                        width = optionsWidth,
-                        order = 2.4,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RXPFrame.SetStepFrameAnchor()
-                        end
-                    },
-                    windowScale = {
-                        name = L("Window Scale"),
-                        desc = L(
-                            "Scale of the Main Window, use alt+left click on the main window to resize it"),
-                        type = "range",
-                        width = optionsWidth,
-                        order = 2.5,
-                        min = 0.2,
-                        max = 2,
-                        step = 0.05,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RXPFrame:SetScale(value)
-                        end
-                    },
-                    guideFontSize = {
-                        name = L("Guide Font Size"), -- TODO locale
-                        desc = L("Change font size of the Guide Window"),
-                        type = "range",
-                        width = optionsWidth,
-                        order = 2.6,
-                        min = 9,
-                        max = 18,
-                        step = 1,
-                        confirm = requiresReload,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            _G.ReloadUI()
                         end
                     },
                     activeItemsHeader = {
