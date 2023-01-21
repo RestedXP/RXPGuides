@@ -414,7 +414,7 @@ elseif locale == "deDE" then
         }
     }
 
-elseif locale == "esES" or lang == "esMX" then
+elseif locale == "esES" or locale == "esMX" then
 
     addon.rares = {
         ["Elwynn Forest"] = {
