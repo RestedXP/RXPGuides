@@ -133,7 +133,7 @@ step << Warlock
     .mob Vile Familiar
 step
     #completewith Sarkoth
-    .goto Durotar,43.57,67.28,25,0 << !Warlock
+    .goto Durotar,43.57,67.28,35,0 << !Warlock
     .goto Durotar,43.89,65.84,45,0 << !Warlock
     >>Kill |cFFFF5722Mottled Boars|r
     .complete 788,1 --Mottled Boar (10)
@@ -247,7 +247,7 @@ step << Rogue
     .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue 
     .train 53 >> Train |T132090:0|t[Backstab]
     .target Rwag
-    .money >0.04
+    .money <0.04
     .xp <4,1
 step << Rogue
     #label Rwag
@@ -301,7 +301,6 @@ step
     .target Duokna
     .money >0.1 << Rogue/Warrior
     .itemcount 159,<15 << !Rogue !Warrior !Hunter
-    .itemcount 2512,<600 << Hunter
 step
     #som
     .goto Durotar,42.59,67.34
@@ -315,7 +314,6 @@ step
     .money <0.0145 << Hunter
     .money >0.1 << Rogue/Warrior/Shaman
     .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
-    .itemcount 2512,<600 << Hunter
 step << Hunter
     #som
     .goto Durotar,42.59,67.34

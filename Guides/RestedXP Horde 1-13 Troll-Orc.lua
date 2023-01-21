@@ -256,7 +256,7 @@ step << Rogue
     .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue 
     .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue 
     .train 53 >> Train |T132090:0|t[Backstab]
-    .money >0.04
+    .money <0.04
     .target Rwag
 step << Rogue
     #label Rwag
