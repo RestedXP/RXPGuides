@@ -1614,7 +1614,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     customThemeBackground = {
                         name = _G.BACKGROUND,
-                        desc = L("background"),
+                        desc = L("Set primary background"),
                         type = "color",
                         width = optionsWidth,
                         order = 1.2,
@@ -1638,7 +1638,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     customThemeBottomFrameBG = {
                         name = L("Step List Background"), -- TODO locale
-                        desc = L("bottomFrameBG"),
+                        desc = L("Step List Background"),
                         type = "color",
                         width = optionsWidth,
                         order = 1.3,
@@ -1662,7 +1662,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     customThemeBottomFrameHighlight = {
                         name = L("Step Highlight"), -- TODO locale
-                        desc = L("bottomFrameHighlight"),
+                        desc = L("Step mouseover highlight color"),
                         type = "color",
                         width = optionsWidth,
                         order = 1.4,
@@ -1687,7 +1687,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     customThemeMapPins = {
                         name = L("Map Pins"), -- TODO locale
-                        desc = L("mapPins"),
+                        desc = L("Map Pin color"),
                         type = "color",
                         width = optionsWidth,
                         order = 1.5,
@@ -1733,7 +1733,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     customThemeFont = {
                         name = L("Font"), -- TODO locale
-                        desc = L("font"),
+                        desc = L("Font Path"),
                         type = "input",
                         width = optionsWidth,
                         order = 1.7,
