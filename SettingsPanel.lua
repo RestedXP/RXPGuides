@@ -1731,7 +1731,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return self.db.profile.activeTheme ~= 'Custom'
                         end
                     },
-                    customThemeFont = { -- TODO
+                    customThemeFont = {
                         name = L("Font"), -- TODO locale
                         desc = L("font"),
                         type = "input",
@@ -1740,9 +1740,17 @@ function addon.settings:CreateAceOptionsPanel()
                         get = function()
                             return self.db.profile.customTheme.font
                         end,
-                        validate = function(foo, fontPath)
-                            return true
-                            -- return foo:SetFont(fontPath, 9, "")
+                        validate = function(_, fontPath)
+                            local currentFont =
+                                addon.RXPFrame.Footer.text:GetFontObject()
+
+                            local isValid =
+                                addon.RXPFrame.GuideName.text:SetFont(fontPath,
+                                                                      9, "")
+                            addon.RXPFrame.GuideName.text:SetFontObject(
+                                currentFont)
+
+                            return isValid
                         end,
                         set = function(_, value)
                             self.db.profile.customTheme.font = value
