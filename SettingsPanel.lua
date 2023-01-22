@@ -1817,10 +1817,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Preview theme changes"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.92,
-                        hidden = function()
-                            return isNotAdvanced()
-                        end
+                        order = 1.92
                     },
                     guideWindowHeader = {
                         name = L("Guide Window"),
