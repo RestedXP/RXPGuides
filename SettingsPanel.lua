@@ -146,7 +146,6 @@ function addon.settings:InitializeSettings()
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
     self:MigrateSettings()
-    -- self:UpdateMinimapButton()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
     self:RegisterChatCommand("rxpg", self.ChatCommand)
@@ -1633,7 +1632,7 @@ function addon.settings:CreateAceOptionsPanel()
                                 addon.RenderFrame('themeReload')
                             end
                         end,
-                        disabled = function()
+                        hidden = function()
                             return self.db.profile.activeTheme ~= 'Custom'
                         end
                     },
@@ -1657,7 +1656,7 @@ function addon.settings:CreateAceOptionsPanel()
                                 addon.RenderFrame('themeReload')
                             end
                         end,
-                        disabled = function()
+                        hidden = function()
                             return self.db.profile.activeTheme ~= 'Custom'
                         end
                     },
@@ -1682,7 +1681,7 @@ function addon.settings:CreateAceOptionsPanel()
                                 addon.RenderFrame('themeReload')
                             end
                         end,
-                        disabled = function()
+                        hidden = function()
                             return self.db.profile.activeTheme ~= 'Custom'
                         end
                     },
@@ -1705,30 +1704,32 @@ function addon.settings:CreateAceOptionsPanel()
                                 addon.RenderFrame('themeReload')
                             end
                         end,
-                        disabled = function()
+                        hidden = function()
                             return self.db.profile.activeTheme ~= 'Custom'
                         end
                     },
                     customThemeTooltip = {
                         name = L("Tooltip"), -- TODO locale
-                        desc = L("tooltip"),
-                        type = "color",
+                        desc = L("RGB hex color code"),
+                        type = "input", -- TODO color then convert
                         width = optionsWidth,
                         order = 1.6,
                         get = function()
-                            return self.db.profile.customTheme.tooltip
+                            -- Skip '|c' and ending 'FF'
+                            return
+                                self.db.profile.customTheme.tooltip:sub(3, -3)
                         end,
                         set = function(_, value)
-                            self.db.profile.customTheme.tooltip = '|c' .. value
+                            self.db.profile.customTheme.tooltip = fmt('|c%sFF',
+                                                                      value)
                             addon:RegisterTheme(self.db.profile.customTheme)
                             if self.db.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
-                        disabled = function()
+                        hidden = function()
                             return self.db.profile.activeTheme ~= 'Custom'
-                        end,
-                        hidden = true -- TODO
+                        end
                     },
                     customThemeFont = { -- TODO
                         name = L("Font"), -- TODO locale
@@ -1739,18 +1740,23 @@ function addon.settings:CreateAceOptionsPanel()
                         get = function()
                             return self.db.profile.customTheme.font
                         end,
+                        validate = function(foo, fontPath)
+                            return true
+                            -- return foo:SetFont(fontPath, 9, "")
+                        end,
                         set = function(_, value)
                             self.db.profile.customTheme.font = value
+                            -- TODO replace \ with \\
+
                             addon:RegisterTheme(self.db.profile.customTheme)
+
                             if self.db.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
-                        disabled = function()
-                            return true or self.db.profile.activeTheme ~=
-                                       'Custom'
-                        end,
-                        hidden = true -- TODO
+                        hidden = function()
+                            return self.db.profile.activeTheme ~= 'Custom'
+                        end
                     },
                     customThemeTextColor = { -- TODO
                         name = L("Text Color"), -- TODO locale
@@ -1770,12 +1776,12 @@ function addon.settings:CreateAceOptionsPanel()
                                 addon.RenderFrame('themeReload')
                             end
                         end,
-                        disabled = function()
+                        hidden = function()
                             return self.db.profile.activeTheme ~= 'Custom'
                         end
                     },
                     customThemeApply = {
-                        name = L("Apply Theme"),
+                        name = _G.APPLY,
                         type = 'execute',
                         width = optionsWidth,
                         order = 1.9,
