@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor Shaman/Warrior
-#next 22-25 Hillsbrad / South Barrens;22-26 Hillsbrad Foothills JJ
+#next 22-25 Hillsbrad / South Barrens;22-25 Hillsbrad Foothills JJ
 
 step << Tauren Shaman
     .goto Durotar,50.8,43.6

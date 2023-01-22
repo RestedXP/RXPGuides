@@ -816,8 +816,8 @@ step
 	.complete 13856,2 << Orc -- Boneguard Scout slain (10)
 	.complete 13857,2 << Troll -- Boneguard Scout slain (10)
 	.complete 13858,2 << Tauren -- Boneguard Scout slain (10)
-	.complete 13859,2 << Scourge -- Boneguard Scout slain (10)
-	.complete 13860,2 << BloodElf -- Boneguard Scout slain (10)	
+	.complete 13860,2 << Scourge -- Boneguard Scout slain (10)
+	.complete 13859,2 << BloodElf -- Boneguard Scout slain (10)	
 	.isOnQuest 13847,13851,13852,13854,13855,13856,13857,13858,13859,13860	
 	.mob Boneguard Scout
 step
@@ -839,10 +839,10 @@ step
 	.complete 13857,3 << Troll -- Boneguard Lieutenant slain (3)
 	.complete 13858,1 << Tauren -- Boneguard Footman slain (15)	
 	.complete 13858,3 << Tauren -- Boneguard Lieutenant slain (3)
-	.complete 13859,1 << Scourge -- Boneguard Footman slain (15)	
-	.complete 13859,3 << Scourge -- Boneguard Lieutenant slain (3)
-	.complete 13860,1 << BloodElf -- Boneguard Footman slain (15)
-	.complete 13860,3 << BloodElf -- Boneguard Lieutenant slain (3)
+	.complete 13860,1 << Scourge -- Boneguard Footman slain (15)	
+	.complete 13860,3 << Scourge -- Boneguard Lieutenant slain (3)
+	.complete 13859,1 << BloodElf -- Boneguard Footman slain (15)
+	.complete 13859,3 << BloodElf -- Boneguard Lieutenant slain (3)
 	.goto IcecrownGlacier,50.42,76.30,40,0
 	.goto IcecrownGlacier,50.86,77.73,40,0
 	.goto IcecrownGlacier,51.44,79.44,40,0
@@ -869,8 +869,8 @@ step
 	.complete 13856,2 << Orc -- Boneguard Scout slain (10)
 	.complete 13857,2 << Troll -- Boneguard Scout slain (10)
 	.complete 13858,2 << Tauren -- Boneguard Scout slain (10)
-	.complete 13859,2 << Scourge -- Boneguard Scout slain (10)
-	.complete 13860,2 << BloodElf -- Boneguard Scout slain (10)	
+	.complete 13860,2 << Scourge -- Boneguard Scout slain (10)
+	.complete 13859,2 << BloodElf -- Boneguard Scout slain (10)	
 	.isOnQuest 13847,13851,13852,13854,13855,13856,13857,13858,13859,13860	
 	.mob Boneguard Scout	
 	
@@ -4156,24 +4156,24 @@ step -- At The Enemy's Gates
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46070
-	.isOnQuest 13859
+	.isOnQuest 13860
 	.target Stabled Campaign Warhorse
 step	
 	#completewith next
 	>>Kill |cFFFF5722Boneguard Scouts (flying Gargoyles)|r by using |T132358:0|tShield-Breaker (2) on them 
-	.complete 13859,2 -- Boneguard Scout slain (10)
-	.isOnQuest 13859
+	.complete 13860,2 -- Boneguard Scout slain (10)
+	.isOnQuest 13860
 	.mob Boneguard Scout
 step
 	>>Kill |cFFFF5722Boneguard Footmen|r by using your |cFF00FF25Warhorse|r to run over and kill them instantly
 	>>Kill |cFFFF5722Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
-	.complete 13859,1 -- Boneguard Footman slain (15)	
-	.complete 13859,3 -- Boneguard Lieutenant slain (3)
+	.complete 13860,1 -- Boneguard Footman slain (15)	
+	.complete 13860,3 -- Boneguard Lieutenant slain (3)
 	.goto IcecrownGlacier,50.42,76.30,40,0
 	.goto IcecrownGlacier,50.86,77.73,40,0
 	.goto IcecrownGlacier,51.44,79.44,40,0
 	.goto IcecrownGlacier,50.42,76.30
-	.isOnQuest 13859	
+	.isOnQuest 13860	
 	.mob Boneguard Footman
 	.mob Boneguard Lieutenant
 step	
@@ -4187,8 +4187,8 @@ step
 	.goto IcecrownGlacier,50.45,74.34,50,0
 	.goto IcecrownGlacier,52.36,73.07,50,0
 	.goto IcecrownGlacier,52.36,73.07
-	.complete 13859,2 -- Boneguard Scout slain (10)
-	.isOnQuest 13859	
+	.complete 13860,2 -- Boneguard Scout slain (10)
+	.isOnQuest 13860	
 	.mob Boneguard Scout	
 	
 	
@@ -4454,24 +4454,24 @@ step -- At The Enemy's Gates
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46070
-	.isOnQuest 13860
+	.isOnQuest 13859
 	.target Stabled Campaign Warhorse
 step	
 	#completewith next
 	>>Kill |cFFFF5722Boneguard Scouts (flying Gargoyles)|r by using |T132358:0|tShield-Breaker (2) on them 
-	.complete 13860,2 -- Boneguard Scout slain (10)	
-	.isOnQuest 13860	
+	.complete 13859,2 -- Boneguard Scout slain (10)	
+	.isOnQuest 13859	
 	.mob Boneguard Scout
 step
 	>>Kill |cFFFF5722Boneguard Footmen|r by using your |cFF00FF25Warhorse|r to run over and kill them instantly
 	>>Kill |cFFFF5722Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
-	.complete 13860,1 -- Boneguard Footman slain (15)
-	.complete 13860,3 -- Boneguard Lieutenant slain (3)
+	.complete 13859,1 -- Boneguard Footman slain (15)
+	.complete 13859,3 -- Boneguard Lieutenant slain (3)
 	.goto IcecrownGlacier,50.42,76.30,40,0
 	.goto IcecrownGlacier,50.86,77.73,40,0
 	.goto IcecrownGlacier,51.44,79.44,40,0
 	.goto IcecrownGlacier,50.42,76.30
-	.isOnQuest 13860	
+	.isOnQuest 13859	
 	.mob Boneguard Footman
 	.mob Boneguard Lieutenant
 step	
@@ -4485,8 +4485,8 @@ step
 	.goto IcecrownGlacier,50.45,74.34,50,0
 	.goto IcecrownGlacier,52.36,73.07,50,0
 	.goto IcecrownGlacier,52.36,73.07
-	.complete 13860,2 -- Boneguard Scout slain (10)	
-	.isOnQuest 13860	
+	.complete 13859,2 -- Boneguard Scout slain (10)	
+	.isOnQuest 13859	
 	.mob Boneguard Scout	
 	
 	

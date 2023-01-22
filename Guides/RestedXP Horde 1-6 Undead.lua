@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Scourge
 #next 6-10 Eversong Woods
 
-step << !Scourge
+step << !Undead
     #completewith next
     +|cFFFCDC00You have selected a guide meant for Undead. It is recommended you choose the same starter zone that you start in|r
 step
@@ -41,11 +41,11 @@ step << Warrior/Warlock/Priest/Mage
     .goto Tirisfal Glades,29.18,68.94,40,0 << Priest/Mage
     .goto Tirisfal Glades,29.10,67.66,40,0 << Priest/Mage
     .goto Tirisfal Glades,30.19,65.32,40,0 << Priest/Mage
-    +Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r until you have 60 copper worth of vendorables << Mage tbc
-    +Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r until you have 50 copper worth of vendorables << Priest tbc
-    +Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r until you have 34 copper worth of vendorables << Mage wotlk/Warlock wotlk
-    +Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r until you have 24 copper worth of vendorables << Priest wotlk
-    +Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r until you have 10 copper worth of vendorables << Warrior/Warlock tbc
+    +|cFFFCDC00Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r. Loot them until you have 60 copper worth of vendor items (including your armor)|r << Mage tbc
+    +|cFFFCDC00Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r. Loot them until you have 50 copper worth of vendor items (including your armor)|r << Priest tbc
+    +|cFFFCDC00Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r. Loot them until you have 34 copper worth of vendor items (including your armor)|r << Mage wotlk/Warlock wotlk
+    +|cFFFCDC00Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r. Loot them until you have 24 copper worth of vendor items (including your armor)|r << Priest wotlk
+    +|cFFFCDC00Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Warlock tbc
     .mob Young Scavenger
     .mob Duskbat
     .money >0.01
@@ -66,14 +66,15 @@ step << Warlock/Mage
     #label Piercing
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Venya|r and |cFF00FF25Sarvis|r << Warlock tbc
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sarvis|r << Warlock wotlk/Mage
-    .accept 1470 >>Accept Piercing the Veil << tbc
-    .goto Tirisfal Glades,30.98,66.41,0,0 << tbc
+    .accept 1470 >>Accept Piercing the Veil << Warlock tbc
+    .goto Tirisfal Glades,30.98,66.41,0,0 << Warlock tbc
     .turnin 363 >> Turn in Rude Awakening
     .accept 364 >> Accept The Mindless Ones
     .goto Tirisfal Glades,30.84,66.20,0,0
     .target Venya Marthand << tbc
     .target Shadow Priest Sarvis
 step << Warlock/Mage
+    .goto Tirisfal Glades,31.35,66.21,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Elreth|r
     .accept 376 >> Accept The Damned
     .goto Tirisfal Glades,30.86,66.05
@@ -87,14 +88,12 @@ step << Mage
     .target Isabella
 step << Warlock tbc
     #label Vendor
-    .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.81,66.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kayla|r
     .vendor >>Vendor Trash
     .target Kayla Smithe
     .money >0.1
 step << Warlock
-    .goto Tirisfal Glades,31.35,66.21,10,0 << wotlk
     .goto Tirisfal Glades,30.91,66.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Maximillion|r
     .train 348 >>Train |T135817:0|t[Immolate]
@@ -135,13 +134,18 @@ step << Warlock tbc
     >>Kill |cFFFF5722Rattlecage Skeletons|r. Loot them for their |cFF00BCD4Rattlecage Skulls|r
     .complete 1470,1 --Rattlecage Skull (3)
     .mob Rattlecage Skeleton
- step << Warlock tbc
+step << Warlock tbc
+    #completewith next
+    +|cFFFCDC00Kill |cFFFF5722Mindless Zombies|r and |cFFFF5722Wretched Zombies|r. Loot them until you have 24 copper worth of vendor items (including your armor)|r
+    .mob Mindless Zombie
+    .mob Wretched Zombie
+    .money >0.0024
+step << Warlock tbc
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
-    >>|cFFFCDC00Make sure you have at least 25 copper worth of vendorables|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
     >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
-	.collect 159,5,383,1 --Collect Refreshing Spring Water (5)
+	.collect 159,5,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
     .isOnQuest 1470
 step << Warlock tbc
@@ -159,21 +163,41 @@ step
     .goto Tirisfal Glades,31.35,66.21,10,0
     .loop 40,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
     >>Kill |cFFFF5722Mindless Zombies|r and |cFFFF5722Wretched Zombies|r << tbc
-    >>Kill |cFFFF5722Mindless Zombies|r and |cFFFF5722Wretched Zombies|r << wotlk
+    >>Kill |cFFFF5722Mindless Zombies|r and |cFFFF5722Wretched Ghouls|r << wotlk
     .complete 364,1 --Kill Mindless Zombie (x8) // --Kill Mindless Zombie (x5) wotlk
     .complete 364,2 --Kill Wretched Zombie (x8) // --Kill Wretched Ghoul (x5) wotlk
     .mob Mindless Zombie
     .mob Wretched Zombie << tbc
     .mob Wretched Ghoul << wotlk
 step << Mage/Warlock tbc/Priest
+    #completewith Vendor2
+    +|cFFFCDC00Kill |cFFFF5722Mindless Zombies|r and |cFFFF5722Wretched Zombies|r. Loot them until you have 33 copper worth of vendor items (including your armor)|r
+    .mob Mindless Zombie
+    .mob Wretched Zombie
+    .money >0.0033
+step << Mage/Warlock tbc/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
-    >>|cFFFCDC00Make sure you have at least 25 copper worth of vendorables|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
+    .collect 159,10,383,1 --Collect Refreshing Spring Water (5)
+    .vendor >> Vendor Trash
+    .target Joshua Kien
+    .isOnQuest 364
+    .money <0.0050
+    .itemcount 159,<10
+ step << Mage/Warlock tbc/Priest
+    #label Vendor2
+    .goto Tirisfal Glades,32.23,65.59,8,0
+    .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
     >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
     .collect 159,5,383,1 --Collect Refreshing Spring Water (5)
+    .vendor >> Vendor Trash
     .target Joshua Kien
     .isOnQuest 364
+    .money >0.0050
+    .itemcount 159,<5
 step << Warlock wotlk
     #completewith next
     >>Kill |cFFFF5722Young Scavengers|r. Loot them for their |cFF00BCD4Scavenger Paws|r 
@@ -184,6 +208,7 @@ step << Warlock wotlk
     .mob Duskbat
     .isOnQuest 376
 step << Warlock wotlk
+    #completewith next
     .goto Tirisfal Glades,30.19,65.32,40,0
     .goto Tirisfal Glades,29.10,67.66,40,0
     .goto Tirisfal Glades,29.18,68.94,40,0
@@ -194,11 +219,12 @@ step << Warlock wotlk
     .goto Tirisfal Glades,29.18,68.94,40,0
     .goto Tirisfal Glades,30.70,69.28,40,0 
     .goto Tirisfal Glades,29.92,70.30
-    +Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r until you have 66 copper worth of vendorables 
-    >>Un-equip ALL your gear and vendor it too, this will give you 12 more copper|r
+    +|cFFFCDC00Grind |cFFFF5722Young Scavengers|r and |cFFFF5722Duskbats|r. Loot them until you have 78 copper worth of vendor items (including your armor)|r
     >>|cFFFCDC00Skip this step once you have 78 copper|r
+    .mob Young Scavenger
+    .mob Duskbat
 	.money >0.0078
---95c for imp
+    .isOnQuest 364
 step << Warlock wotlk
     .goto Tirisfal Glades,32.25,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
@@ -225,7 +251,7 @@ step
     .goto Tirisfal Glades,30.86,66.05
     .turnin 3099 >> Turn in Tainted Scroll << Warlock
     .goto Tirisfal Glades,30.91,66.34 << Warlock
-	.train 688 >> Train Summon Imp << Warlock wotlk
+	.train 688 >> Train |T136218:0|t[Summon Imp] << Warlock wotlk
     .goto Tirisfal Glades,30.91,66.34 << Warlock wotlk
     .turnin 3098 >> Turn in Glyphic Scroll << Mage
     .goto Tirisfal Glades,30.94,66.06 << Mage
@@ -236,17 +262,17 @@ step
     .target Maximillion << Warlock
     .target Isabella << Mage
     .target Dark Cleric Duesten << Priest
-step << Warlock tbc
-    #label Vendor
-    .goto Tirisfal Glades,31.35,66.21,10,0
-    .goto Tirisfal Glades,30.81,66.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kayla|r
-    .vendor >>Vendor Trash
-    .target Kayla Smithe
-    .money >0.1
 step << Warlock wotlk
 	#completewith next
 	.cast 688 >>|cFFFCDC00Cast|r |T136218:0|t[Summon Imp]
+step << Mage/Warlock tbc/Priest
+    .goto Tirisfal Glades,32.23,65.59,8,0
+    .goto Tirisfal Glades,32.29,65.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
+    .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
+    .target Joshua Kien
+    .isOnQuest 364
 step
     .goto Tirisfal Glades,29.21,66.68,40,0
     .goto Tirisfal Glades,29.48,65.70,40,0
@@ -285,13 +311,15 @@ step
 step
     .loop 40,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
     .xp 3+980 >>Grind to 980+/1400xp
-step << Mage tbc/Mage wotlk/Warlock
+    .mob Mindless Zombie
+    .mob Wretched Zombie << tbc
+    .mob Wretched Ghoul << wotlk
+step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.25,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
     >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
-    >>|cFFFCDC00Do NOT go below 95 copper|r << Mage tbc/Mage wotlk/warlock
-    >>|cFFFCDC00Do NOT go below 1 silver 90 copper|r << Priest
+    >>|cFFFCDC00Do NOT go below 95 Copper|r << Mage/Warlock/Priest
     .vendor >> Vendor Trash
     .target Joshua Kien
     .money >0.1
@@ -331,26 +359,37 @@ step
     .target Deathguard Saltain
     .target Executor Arren
 step << Rogue/Warrior
-    #completewith Training2
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Archibald|r
     .vendor >> Vendor Trash
     .target Archibald Kava
     .money >0.1
+    .isOnQuest 3095 << Warrior
+    .isOnQuest 3096 << Rogue
 step << Warrior
+    .goto Tirisfal Glades,32.68,65.56 << tbc
+    .goto Tirisfal Glades,32.66,65.61 << wotlk
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
+    .turnin 3095 >> Turn in Simple Scroll
+    .train 100 >> Train |T132337:0|t[Charge]
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Dannal Stern
+    .money <0.02
+ step << Warrior
     #label Training2
     .goto Tirisfal Glades,32.68,65.56 << tbc
     .goto Tirisfal Glades,32.66,65.61 << wotlk
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
     .turnin 3095 >> Turn in Simple Scroll
-    .train 100 >>Train your class spells
+    .train 772 >> Train |T132155:0|t[Rend]
     .target Dannal Stern
+    .money <0.01
 step << Rogue
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
     .turnin 3096 >> Turn in Encrypted Scroll
     .train 53 >> Train |T132090:0|t[Backstab]
-    .money <0.1
+    .money <0.04
     .target David Trias
 step << Rogue
     #label Training2
@@ -425,15 +464,17 @@ step << Rogue/Warrior
     .vendor >> Vendor Trash
     .target Archibald Kava
     .isOnQuest 6395
-step << !Rogue !Warrior
+step << Warlock/Mage/Priest
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
     >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
+	.collect 159,15,383,1 << Warlock tbc/Mage tbc/Priest tbc --Collect Refreshing Spring Water (15)
+	.collect 159,5,383,1 << warlock wotlk/Mage wotlk/Priest wotlk --Collect Refreshing Spring Water (5)
     .vendor >> Vendor Trash 
-	.collect 159,15,383,1 << warlock tbc/mage tbc/priest tbc --Collect Refreshing Spring Water (15)
-	.collect 159,5,383,1 << warlock wotlk/mage wotlk/priest wotlk --Collect Refreshing Spring Water (5)
     .target Joshua Kien
     .isOnQuest 6395
+    .itemcount 159,<15 << tbc
+    .itemcount 159,<5 << wotlk
 step
     #requires NightWebH
     .loop 40,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
@@ -483,6 +524,7 @@ step
     .vendor >> Vendor Trash
     .target Archibald Kava
 step
+    #requires ScarletC
     .goto Tirisfal Glades,36.50,68.82
     >>Kill |cFFFF5722Meven|r. Loot him for the |cFF00BCD4Scarlet Crusade Documents|r
     .complete 382,1 --Collect Scarlet Crusade Documents (1)
@@ -506,6 +548,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Calvin|r
     .accept 8 >> Accept A Rogue's Deal
     .target Calvin Montague
+----
 step
     .goto Tirisfal Glades,38.96,55.74,20,0
     .goto Tirisfal Glades,41.57,57.66,110 >>Run out toward Tirisfal Glades
@@ -578,6 +621,13 @@ step << Priest tbc
     .turnin 5651 >> Turn in In Favor of Darkness
     .accept 5650 >> Accept Garments of Darkness
     .target Dark Cleric Beryl
+step << Priest tbc
+    #completewith next
+    .goto Tirisfal Glades,61.75,52.72,8,0
+    .goto Tirisfal Glades,61.58,52.99,8 >>Exit the Inn
+step << Priest tbc
+    .goto Tirisfal Glades,59.18,46.49,50 >>Travel toward |cFF00FF25Kel|r
+    .isOnQuest 5650
 step << Priest tbc
     #sticky
     #label Kel1

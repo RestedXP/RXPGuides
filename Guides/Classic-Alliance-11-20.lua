@@ -1470,7 +1470,7 @@ step
 step
     #completewith next
     .goto Darkshore,33.70,42.45,20,0
-	.goto Darkshore 32.4,43.8,30 >> Run up to the docks then jump in the water at the intersection
+	.goto Darkshore,32.4,43.8,30 >> Run up to the docks then jump in the water at the intersection
 step
     .goto Felwood,13.63,21.44
     >>Click on the |cFFDB2EEFSkeletal Sea Turtle Head|r
@@ -1529,8 +1529,8 @@ step
     .goto Darkshore,36.70,30.00,0
     .goto Darkshore,38.73,28.25,0
     .goto Darkshore,40.17,28.76,0
-     >> Kill |cFF00BCD4Darkshore Threshers|r and loot them for their |cFF00BCD4Thresher Eyes|r.
-	 .tarrget Darkshore Thresher
+    >> Kill |cFF00BCD4Darkshore Threshers|r and loot them for their |cFF00BCD4Thresher Eyes|r.
+	.target Darkshore Thresher
     .complete 1001,1
 step
     .goto Felwood,20.94,1.49
