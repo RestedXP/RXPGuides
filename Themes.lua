@@ -174,13 +174,13 @@ function addon.GetTexture(name)
 end
 
 function addon:ImportCustomThemes()
+    -- Register empty custom theme
+    self:RegisterTheme(addon.settings.db.profile.customTheme)
+
     if not _G.RXPGuides_Themes then return end
 
     -- TODO use loop to strip array?
     for _, theme in pairs(_G.RXPGuides_Themes) do self:RegisterTheme(theme) end
-
-    -- Register empty custom theme
-    self:RegisterTheme(addon.settings.db.profile.customTheme)
 
     wipe(_G.RXPGuides_Themes)
 end
