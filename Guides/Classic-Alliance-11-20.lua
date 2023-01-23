@@ -182,7 +182,7 @@ step
     #completewith mbox
      >> Kill any type of Moonstalker
     .complete 1002,1
-    .unitscan Moonstalker,Moonstalker Runt
+    .unitscan Moonstalker;Moonstalker Runt
 step
     .goto Felwood,27.70,10.03
     .turnin 954 >> Turn in Bashal'Aran
@@ -633,14 +633,14 @@ step
 	#label bennytime
     .goto Westfall,49.30,19.20
 	>> Loot |cFFDB2EEFFurlbrow's Pocket Watch|r from inside the Dresser
-    >>You can loot the closet from outside if you angle your camera correctly. 
+    >>You can loot the closet from outside if you angle your camera correctly.
 	>> |cFFFCDC00Be careful of Benny Blanco, he hits hard.|r
     .complete 64,1 --Furlbrow's Pocket Watch
 step
 	#sticky
 	#completewith next
 	#label Oats
-	>> Try to have atleast 6/8 |cFFDB2EEFHandfuls of Oats|r before continuing to the Gnolls. You can usually find them near farm fences or buildings. 
+	>> Try to have atleast 6/8 |cFFDB2EEFHandfuls of Oats|r before continuing to the Gnolls. You can usually find them near farm fences or buildings.
 	.complete 151,1 --Handful of Oats (8)
 step
     #era
@@ -2876,7 +2876,7 @@ step
 step
     #era
 	#completewith next
-	>>Kill |cFF00BCD4Black Dragon Whelps|r for |cFF00BCD4Underbelly Whelp Scales|r. Don't go out of your way to finish this quest. 
+	>>Kill |cFF00BCD4Black Dragon Whelps|r for |cFF00BCD4Underbelly Whelp Scales|r. Don't go out of your way to finish this quest.
     .complete 122,1 --Underbelly Whelp Scale (6)
 step
     #era/som
@@ -3250,7 +3250,7 @@ step
      .goto Ashenvale,29.7,13.6
 step
     .goto Ashenvale,27.26,35.58
-    .use 13536>> |cFFFCDC00Avoid walking on the main road while doing the escort quest|r. Mobs won't spawn if you stay off the road. 
+    .use 13536>> |cFFFCDC00Avoid walking on the main road while doing the escort quest|r. Mobs won't spawn if you stay off the road.
 	>> Use the Horn of Awakening if he falls asleep
      .complete 5321,2
      .isOnQuest 5321

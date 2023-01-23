@@ -217,7 +217,7 @@ elseif locale == "deDE" then
         },
         ["Durotar"] = {
             "Hauptmann Stumpfhauer", "Todesschinder", "Höllenwirker Hoohn",
-            "Geofürst Sprenkel", "Kriegsherr Kolkanis", "Watch Commander Zalaphil"
+            "Geofürst Sprenkel", "Kriegsherr Kolkanis", "Unteroffizier Curtis"
         },
         ["Mulgore"] = {
             "Vollstrecker Emilgund", "Geistheuler", "Mazzranache", "Schwester Hasspeitsche",
@@ -240,7 +240,7 @@ elseif locale == "deDE" then
             "Unteroffizier Geiferkralle", "Slark", "Vultros"
         },
         ["Loch Modan"] = {
-            "Boss Galgosh", "Emogg der Zermalmer", "Grizlak", "Large Loch Crocolisk",
+            "Boss Galgosh", "Emogg der Zermalmer", "Kubb", "Gosh-Haldir",
             "Lord Condar", "Magosh", "Shanda die Weberin"
         },
         ["Darkshore"] = {
@@ -249,10 +249,10 @@ elseif locale == "deDE" then
             "Schattenklaue", "Schreitergelegemutter"
         },
         ["Silverpine Forest"] = {
-            "Dalaran Spellscribe", "Blutmaul", "Krethis Shadowspinner",
+            "Zauberschreiber von Mühlenbern", "Blutmaul", "Krethis Schattennetz",
             "Zwingenkiefer", "Regent von Rabenklaue", "Haudrauf der Moderfelle", "Knurrmähne"
         },
-        ["The Deadmines"] = {"Miner Johnson", "Edwin VanCleef"},
+        ["The Deadmines"] = {"Minenarbeiter Johnson", "Edwin van Cleef"},
         ["Stonetalon Mountains"] = {
             "Bruder Rabeneiche", "Großknecht Rigger", "Nal'taszar",
             "Prachtschwingenpatriarch", "Schildwache Amarassan", "Schwester Sichelschwinge",
@@ -290,18 +290,18 @@ elseif locale == "deDE" then
             "Gesharahan", "Hagg Taurenfluch", "Hannah Messerblatt",
             "Heggin Steinbart", "Humar der Rudellord", "Malgin Gerstenbräu",
             "Marcus Bel", "Rathorian", "Felslanze", "Silithidernter",
-            "Schwester Wildkralle", "Sludge Beast", "Snort der Spucker", "Steinarm",
+            "Schwester Wildkralle", "Schlickanomalie", "Snort der Spucker", "Steinarm",
             "Flinkmähne", "Speerträger Schweingart", "Takk der Springer",
             "Thora Mondfeder", "Donnerstampfer"
         },
         ["Thousand Needles"] = {
             "Achellios der Verbannte", "Gibblesnik", "Harb Faulberg",
-            "Heartrazor", "Eisenauge der Unbesiegbare", "Silithid Verheererr", "Übelstich"
+            "Klingenherz", "Eisenauge der Unbesiegbare", "Krkk'kx", "Übelstich"
         },
         ["Gnomeregan"] = {"Botschafter der Dunkeleisenzwerge"},
         ["Alterac Mountains"] = {
             "Araga", "Benj der Missmutige", "Gravis Galgenknoten", "Jimmy der Bluter",
-            "Lo'Grosh", "Narillasanz", "Skhowl", "Stone Fury"
+            "Lo'Grosh", "Narillasanz", "Skhowl", "Maggarrak"
         },
         ["Desolace"] = {
             "Verfluchter der Zackenkämme", "Verfluchter Zentaur", "Kicherer", "Hissperak",
@@ -316,7 +316,7 @@ elseif locale == "deDE" then
             "Blinder Jäger", "Erdenrufer Halmgar", "Speerträger der Klingenhauer"
         },
         ["Swamp of Sorrows"] = {
-            "Flossgat", "Kiemorius", "Lord Captain Wyrmak", "Häuptling der Verirrten",
+            "Flossgat", "Kiemorius", "Hauptmann Wyrmak", "Häuptling der Verirrten",
             "Koch der Verirrten", "Moosbart"
         },
         ["Scarlet Monastery"] = {
@@ -324,7 +324,7 @@ elseif locale == "deDE" then
         },
         ["Badlands"] = {
             "7:XT", "Anathemus", "Zerbrochener Zahn", "Rumpler", "Kommandant der Schattenschmiede",
-            "Siege Golem", "Kriegsgolem", "Zaricotl"
+            "Barrikade", "Kriegsgolem", "Zaricotl"
         },
         ["The Hinterlands"] = {
             "Grimungous", "Eisenpanzer", "Jalinde Sommerdrache",
@@ -333,11 +333,11 @@ elseif locale == "deDE" then
             "Zul'arek Faulhass"
         },
         ["Stranglethorn Vale"] = {
-            "Gluggle", "Kurmokk", "Lord Sakrasis", "Schlächter der Mosh'Ogg", "Rippa",
+            "Gluckser", "Kurmokk", "Lord Sakrasis", "Schlächter der Mosh'Ogg", "Rippa",
             "Roloch", "Schuppenbauch", "Rüstmeister der Schmetterschilde", "Verifonix"
         },
         ["Tanaris"] = {
-            "Knochenhexe", "Cyclok der Irre", "Greater Firebird",
+            "Knochenhexe", "Cyclok der Irre", "Glutschwinge",
             "Haarka der Gefräßige", "Jin'Zallah der Sandbringer", "Kregg Kielhol",
             "Schwerfälliger Schrecken", "Mordlustige Eiterpfote", "Omgorn der Verirrte",
             "Soriid der Verschlinger", "Geist der Verdammten", "Kriegsanführer Krazzilak"
@@ -358,7 +358,7 @@ elseif locale == "deDE" then
             "Uhk'loc"
         },
         ["Searing Gorge"] = {
-            "Defekter Kriegsgolem", "Hochlord Mastrogonde", "Rekk'tilac", "Scald",
+            "Faulty Kriegsgolem", "Hochlord Mastrogonde", "Rekk'tilac", "Scald",
             "Shleipnarr", "Sklavenmeister Schwarzherz", "Smoldar"
         },
         ["Zul'Farrak"] = {"Karaburan", "Sandarr der Wüstenräuber", "Zerillis"},
@@ -375,7 +375,7 @@ elseif locale == "deDE" then
         ["Eastern Plaguelands"] = {
             "Knochenhexe", "Todessprecher Selendre", "Duggan Wildhammer",
             "Gish der Unbewegliche", "Hed'mush der Faulende", "Hochgeneral Abbendis",
-            "Lord Finstersense", "Schwerfälliger Schrecken", "Ranger Lord Hawkspear",
+            "Lord Finstersense", "Schwerfälliger Schrecken", "Todesjäger Falkenspeer",
             "Geist der Verdammten", "Kriegsherr Thresh'jin", "Zul'Brin Wirbelstab"
         },
         ["Silithus"] = {
@@ -410,7 +410,7 @@ elseif locale == "deDE" then
         ["Blasted Lands"] = {
             "Akubar der Seher", "Knochenhexe", "Clack der Häscher", "Todesauge",
             "Mutreich", "Suhlaman", "Schwerfälliger Schrecken", "Magronos der Unerschütterliche",
-            "Mojo der Verwachsene", "Ravage", "Geist der Verdammten", "Fledderschnabel"
+            "Mojo der Verwachsene", "Verheerer", "Geist der Verdammten", "Fledderschnabel"
         }
     }
 
@@ -423,7 +423,7 @@ elseif locale == "esES" or locale == "esMX" then
         },
         ["Durotar"] = {
             "Capitán Colmillo Plano", "Despellejador de la Muerte", "Tejeyel Scronn",
-            "Geoseñor Motas", "Señor de la guerra Kolkanis", "Watch Commander Zalaphil"
+            "Geoseñor Motas", "Señor de la guerra Kolkanis", "Sargento Curtis"
         },
         ["Mulgore"] = {
             "Déspota Emilgund", "Aullido Fantasma", "Mazzranache", "Hermana Azote de Odio",
@@ -446,7 +446,7 @@ elseif locale == "esES" or locale == "esMX" then
             "Sargento Garravil", "Eslarc", "Vultros"
         },
         ["Loch Modan"] = {
-            "Jefe Vayachi", "Emogg el Triturador", "Grizlak", "Large Loch Crocolisk",
+            "Jefe Vayachi", "Emogg el Triturador", "Kubb", "Gosh-Haldir",
             "Lord Condar", "Magosh", "Shanda la Giratoria"
         },
         ["Darkshore"] = {
@@ -455,10 +455,10 @@ elseif locale == "esES" or locale == "esMX" then
             "Garrasombría", "Zancador Madrezarpa"
         },
         ["Silverpine Forest"] = {
-            "Dalaran Spellscribe", "Mandisangre", "Krethis Shadowspinner",
+            "Escribachizo de Molino Ámbar", "Mandisangre", "Krethis Tejeumbra",
             "Viejo Malafauce", "Regente Corvozarpa", "Truhán Putrepellejo", "Melegruños"
         },
-        ["The Deadmines"] = {"Miner Johnson", "Edwin VanCleef"},
+        ["The Deadmines"] = {"Minero Johnson", "Edwin VanCleef"},
         ["Stonetalon Mountains"] = {
             "Hermano Roblecuervo", "Supervisor Rigger", "Nal'taszar",
             "Patriarca Alaorgullo", "Centinela Amarassan", "Hermana Riven",
@@ -496,18 +496,18 @@ elseif locale == "esES" or locale == "esMX" then
             "Gesharahan", "Hagg Taurruina", "Hannah Filohoja",
             "Heggin Pelopiedra", "Humar el Señor Orgulloso", "Malgin Cebadiz",
             "Marcus Bel", "Rathorian", "Lanzapiedras", "Cosechador silítido",
-            "Hermana Rathtalon", "Sludge Beast", "Bufo el Molesto", "Brazorroca",
+            "Hermana Rathtalon", "Anomalía de lodo", "Bufo el Molesto", "Brazorroca",
             "Velocrín", "Suingart Cuerolanza", "Takk el Saltarín",
             "Thora Plumaluna", "Silenciatruenos"
         },
         ["Thousand Needles"] = {
             "Achellios el Desterrado", "Gibblesnik", "Harb Monte Fétido",
-            "Heartrazor", "Ojohierro el Invencible", "Silithid Devastatiar", "Aguijón vil"
+            "Cuorevaja", "Ojohierro el Invencible", "Krkk'kx", "Aguijón vil"
         },
         ["Gnomeregan"] = {"Embajador Hierro Negro"},
         ["Alterac Mountains"] = {
             "Araga", "Cascarrabias Ben", "Gravis Nudocorredizo", "Jimmy el Sangrador",
-            "Lo'Grosh", "Narillasanz", "Skhowl", "Stone Fury"
+            "Lo'Grosh", "Narillasanz", "Skhowl", "Maggarrak"
         },
         ["Desolace"] = {
             "Filozante detestable", "Centauro maldito", "Mueca", "Hissperak",
@@ -522,7 +522,7 @@ elseif locale == "esES" or locale == "esMX" then
             "Cazador ciego", "Clamatierras Halmgar", "Cuerolanza de Rajacieno"
         },
         ["Swamp of Sorrows"] = {
-            "Fingat", "Gilmorian", "Lord Captain Wyrmak", "Cabecilla Perdido",
+            "Fingat", "Gilmorian", "Capitán Wyrmak", "Cabecilla Perdido",
             "Cocinero Perdido", "Fundespino"
         },
         ["Scarlet Monastery"] = {
@@ -530,7 +530,7 @@ elseif locale == "esES" or locale == "esMX" then
         },
         ["Badlands"] = {
             "7:XT", "Anathemus", "Diente partido", "Estruendor", "Comandante de Forjatiniebla",
-            "Siege Golem", "Gólem de guerra", "Zaricotl"
+            "Barricada", "Gólem de guerra", "Zaricotl"
         },
         ["The Hinterlands"] = {
             "Grimungus", "Espaldacerada", "Jalinde Dracoestío",
@@ -539,11 +539,11 @@ elseif locale == "esES" or locale == "esMX" then
             "Matagallinas Zul'arek"
         },
         ["Stranglethorn Vale"] = {
-            "Gluggle", "Kurmokk", "Lord Sakrasis", "Carnicero Mosh'Ogg", "Rippa",
+            "Gluggl", "Kurmokk", "Lord Sakrasis", "Carnicero Mosh'Ogg", "Rippa",
             "Roloch", "Panzascama", "Intendente del Escudo del Estigma", "Verifonix"
         },
         ["Tanaris"] = {
-            "Bruja Osaria", "Cyclok el Loco", "Greater Firebird",
+            "Bruja Osaria", "Cyclok el Loco", "Alascuas",
             "Haarka el Voraz", "Jin'Zallah el Arenero", "Kregg Volcayecto",
             "Horror torpe", "Llagapata mortífera", "Omgorn el Perdido",
             "Soriid el Devorador", "Espíritu de los Malditos", "Líder de guerra Krazzilak"
@@ -564,7 +564,7 @@ elseif locale == "esES" or locale == "esMX" then
             "Uhk'loc"
         },
         ["Searing Gorge"] = {
-            "Gólem de guerra defectuoso", "Alto señor Mastrogonde", "Rekk'tilac", "Escaldar",
+            "Faulty Gólem de guerra", "Alto señor Mastrogonde", "Rekk'tilac", "Escaldar",
             "Shleipnarr", "Maestro de esclavos Negrozón", "Smoldar"
         },
         ["Zul'Farrak"] = {"Ánima de polvo", "Sandarr Asaltadunas", "Zerillis"},
@@ -581,7 +581,7 @@ elseif locale == "esES" or locale == "esMX" then
         ["Eastern Plaguelands"] = {
             "Bruja Osaria", "Portavoz de la muerte Selendre", "Duggan Martillo Salvaje",
             "Gish el Inamovible", "Hed'mush el Podrido", "Alta general Abbendis",
-            "Lord Hoz Oscura", "Horror torpe", "Ranger Lord Hawkspear",
+            "Lord Hoz Oscura", "Horror torpe", "Cazador letal Lanzalcón",
             "Espíritu de los Malditos", "Señor de la guerra Thresh'jin", "Ramurdimbre Zul'Brin"
         },
         ["Silithus"] = {
@@ -616,7 +616,7 @@ elseif locale == "esES" or locale == "esMX" then
         ["Blasted Lands"] = {
             "Akubar el Vidente", "Bruja Osaria", "Clack el Atracador", "Ojo de la Muerte",
             "Desdeñamiedos", "Gruñón", "Horror torpe", "Magronos el Implacable",
-            "Mojo el Retorcido", "Ravage", "Espíritu de los Malditos", "Escupetripas"
+            "Mojo el Retorcido", "Devastatia", "Espíritu de los Malditos", "Escupetripas"
         }
     }
 
@@ -629,7 +629,7 @@ elseif locale == "frFR" then
         },
         ["Durotar"] = {
             "Capitaine Plate-Défense", "Ecorcheur mortel", "Gangretisseur Arrogg",
-            "Géomaîtresse Mouchette", "Seigneur de guerre Kolkanis", "Watch Commander Zalaphil"
+            "Géomaîtresse Mouchette", "Seigneur de guerre Kolkanis", "Sergent Curtis"
         },
         ["Mulgore"] = {
             "Massacreur Emilgund", "Hurleur fantomatique", "Mazzranache", "Sœur Cinglehaine",
@@ -652,7 +652,7 @@ elseif locale == "frFR" then
             "Sergent Promptegriffe", "Slark", "Vultros"
         },
         ["Loch Modan"] = {
-            "Boss Galgosh", "Emogg le Broyeur", "Grizlak", "Large Loch Crocolisk",
+            "Boss Galgosh", "Emogg le Broyeur", "Kubb", "Gosh-Haldir",
             "Seigneur Condar", "Magosh", "Shanda la Tisseuse"
         },
         ["Darkshore"] = {
@@ -661,10 +661,10 @@ elseif locale == "frFR" then
             "Ombregriffe", "Matriarche trotteuse"
         },
         ["Silverpine Forest"] = {
-            "Dalaran Spellscribe", "Croquetripe", "Krethis Shadowspinner",
+            "Copiste de Moulin-de-l'Ambre", "Croquetripe", "Krethis Tisse-l'ombre",
             "Vieux Vile mâchoire", "Régent Serres-de-Corbeau", "Cogneur poil-putride", "Grondecrin"
         },
-        ["The Deadmines"] = {"Miner Johnson", "Edwin VanCleef"},
+        ["The Deadmines"] = {"Mineur Johnson", "Edwin VanCleef"},
         ["Stonetalon Mountains"] = {
             "Frère Corvichêne", "Contremaître Gréeur", "Nal'taszar",
             "Patriarche aile-fière", "Sentinelle Amarassan", "Sœur Riven",
@@ -702,18 +702,18 @@ elseif locale == "frFR" then
             "Gesharahan", "Hagg Plaie-des-taurens", "Hannah Feuillelame",
             "Heggin Moustache-de-pierre", "Humar le Fier", "Malgin Brasselorge",
             "Marcus Bel", "Rathorian", "Rochelance", "Moissonneur silithide",
-            "Sœur Rathtalon", "Sludge Beast", "Nifle la Moqueuse", "Bras-de-pierre",
+            "Sœur Rathtalon", "Anomalie de vase", "Nifle la Moqueuse", "Bras-de-pierre",
             "Vif-crins", "Peau-piquante Pourcegart", "Takk le Bondisseur",
             "Thora Pennelune", "Grondeterre"
         },
         ["Thousand Needles"] = {
             "Achellios le Banni", "Margouilloche", "Harb Mont-Souillé",
-            "Heartrazor", "Ferregard l’Invincible", "Silithid Ravager", "Dardeur"
+            "Tranchecœur", "Ferregard l’Invincible", "Krkk'kx", "Dardeur"
         },
         ["Gnomeregan"] = {"Ambassadeur sombrefer"},
         ["Alterac Mountains"] = {
             "Araga", "Benj le teigneux", "Gravis Lecollet", "Jimmy le Saignant",
-            "Lo'Grosh", "Narillasanz", "Grybou", "Stone Fury"
+            "Lo'Grosh", "Narillasanz", "Grybou", "Maggarrak"
         },
         ["Desolace"] = {
             "Ondulame maudit", "Centaure maudit", "Glousse", "Hissperak",
@@ -728,7 +728,7 @@ elseif locale == "frFR" then
             "Chasseur aveugle", "Implorateur de la terre Halmgar", "Lanceur de Tranchebauge"
         },
         ["Swamp of Sorrows"] = {
-            "Fingat", "Gilmorian", "Lord Captain Wyrmak", "Chef Perdu",
+            "Fingat", "Gilmorian", "Capitaine Wyrmak", "Chef Perdu",
             "Cuisinier perdu", "Rougeronce"
         },
         ["Scarlet Monastery"] = {
@@ -736,7 +736,7 @@ elseif locale == "frFR" then
         },
         ["Badlands"] = {
             "7:XT", "Anathemus", "Brèchedent", "Grondeur", "Commandant ombreforge",
-            "Siege Golem", "Golem de guerre", "Zaricotl"
+            "Barricade", "Golem de guerre", "Zaricotl"
         },
         ["The Hinterlands"] = {
             "Grimungous", "Dos-de-fer", "Jalinde Drake-d'été",
@@ -745,11 +745,11 @@ elseif locale == "frFR" then
             "Zul'arek Volaillaîne"
         },
         ["Stranglethorn Vale"] = {
-            "Gluggle", "Kurmokk", "Seigneur Sakrasis", "Boucher mosh'Ogg", "Rippa",
+            "Glougloug", "Kurmokk", "Seigneur Sakrasis", "Boucher mosh'Ogg", "Rippa",
             "Roloch", "Ventrécaille", "Intendant du Bouclier balafré", "Drolatix"
         },
         ["Tanaris"] = {
-            "Sorcière des ossements", "Cyclok le Fol", "Greater Firebird",
+            "Sorcière des ossements", "Cyclok le Fol", "Braisaile",
             "Haarka le Féroce", "Jin'Zallah Porte-sable", "Kregg Soulaquille",
             "Horreur chancelante", "Brûlepatte meurtrier", "Omgorn l'Egaré",
             "Soriid le Dévoreur", "Esprit de damné", "Chef de guerre Krazzilak"
@@ -770,7 +770,7 @@ elseif locale == "frFR" then
             "Uhk'loc"
         },
         ["Searing Gorge"] = {
-            "Golem de guerre défaillant", "Généralissime Mastrogonde", "Rekk'tilac", "Brûlar",
+            "Faulty Golem de guerre", "Généralissime Mastrogonde", "Rekk'tilac", "Brûlar",
             "Shleipnarr", "Maître des esclaves Cœur-Noir", "Fumar"
         },
         ["Zul'Farrak"] = {"Ame en peine poudreuse", "Sandarr Ravadune", "Zerillis"},
@@ -787,7 +787,7 @@ elseif locale == "frFR" then
         ["Eastern Plaguelands"] = {
             "Sorcière des ossements", "Nécroratrice Selendre", "Duggan Marteau-hardi",
             "Gish l'Immobile", "Hed'mush le Pourrissant", "Grand général Abbendis",
-            "Seigneur Sombrefaux", "Horreur chancelante", "Ranger Lord Hawkspear",
+            "Seigneur Sombrefaux", "Horreur chancelante", "Chasse-mort Eperlance",
             "Esprit de damné", "Seigneur de guerre Thresh'jin", "Zul'Brin Voilebranche"
         },
         ["Silithus"] = {
@@ -835,7 +835,7 @@ elseif locale == "koKR" then
         },
         ["Durotar"] = {
             "호위대장 납작엄니", "맹독무당전갈", "펠위버 스코른",
-            "가시대장 점박이", "대장 콜카니스", "Watch Commander Zalaphil"
+            "가시대장 점박이", "대장 콜카니스", "하사관 커티스"
         },
         ["Mulgore"] = {
             "감독관 에밀군드", "유령울음늑대", "마즈라나체", "마녀 헤이트래쉬",
@@ -858,7 +858,7 @@ elseif locale == "koKR" then
             "부대장 가시발톱", "슬라크", "벌트로스"
         },
         ["Loch Modan"] = {
-            "우두머리 갈고쉬", "무쇠주먹 에모그", "Grizlak", "Large Loch Crocolisk",
+            "우두머리 갈고쉬", "무쇠주먹 에모그", "커브", "고쉬할디르",
             "독수리왕 콘다르", "마고쉬", "검은올가미 샨다"
         },
         ["Darkshore"] = {
@@ -867,10 +867,10 @@ elseif locale == "koKR" then
             "그림자발톱", "우두머리 타조"
         },
         ["Silverpine Forest"] = {
-            "Dalaran Spellscribe", "피송곳니", "Krethis Shadowspinner",
+            "호박색 농장 역술사", "피송곳니", "그림자거미 크레시스",
             "늙은곰 톱니이빨", "까마귀발톱 섭정", "썩은가죽 투사", "썩은갈기"
         },
-        ["The Deadmines"] = {"Miner Johnson", "Edwin VanCleef"},
+        ["The Deadmines"] = {"광부 존슨", "에드윈 밴클리프"},
         ["Stonetalon Mountains"] = {
             "수사 레이븐오크", "현장감독 리거", "날타스자르",
             "우두머리 사자날개 와이번", "파수꾼 아마랏산", "마녀 리벤",
@@ -908,18 +908,18 @@ elseif locale == "koKR" then
             "게샤라한", "하그 타우렌베인", "한나 블레이드리프",
             "헤긴 스톤위스커", "사자왕 후마르", "말긴 발리브루",
             "마커스 벨", "라소리안", "바위송곳", "여왕 실리시드",
-            "마녀 라스탈론", "Sludge Beast", "칼날발톱 킁킁이", "무쇠팔",
+            "마녀 라스탈론", "녹괴물", "칼날발톱 킁킁이", "무쇠팔",
             "번개갈기", "가시근위병 스와인가트", "껑충발 타크",
             "토라 페더문", "천둥발굽"
         },
         ["Thousand Needles"] = {
             "추방자 아킬리오스", "기블스니크", "하브 파울마운틴",
-            "Heartrazor", "무적의 무쇠눈바실리스크", "Silithid 부라퀴r", "죽음의 맹독전갈"
+            "칼날심장", "무적의 무쇠눈바실리스크", "크륵큭스", "죽음의 맹독전갈"
         },
         ["Gnomeregan"] = {"검은무쇠 사절"},
         ["Alterac Mountains"] = {
             "아라가", "심술쟁이 벤지", "그라비스 슬립노트", "날도둑 지미",
-            "로그로쉬", "나릴라산즈", "스카울", "Stone Fury"
+            "로그로쉬", "나릴라산즈", "스카울", "마가라크"
         },
         ["Desolace"] = {
             "저주받은 뱀갈퀴 나가", "저주받은 켄타우로스", "히죽이", "히스페락",
@@ -934,7 +934,7 @@ elseif locale == "koKR" then
             "눈먼사냥꾼", "대지의주술사 함가르", "가시덩굴 가시근위병"
         },
         ["Swamp of Sorrows"] = {
-            "핀개트", "길모리안", "Lord Captain Wyrmak", "잃어버린 드레나이 족장",
+            "핀개트", "길모리안", "군주 웜막", "잃어버린 드레나이 족장",
             "잃어버린 드레나이 요리사", "허물가시"
         },
         ["Scarlet Monastery"] = {
@@ -942,7 +942,7 @@ elseif locale == "koKR" then
         },
         ["Badlands"] = {
             "7:XT", "아나테무스", "부러진 송곳니", "우레정령", "어둠괴철로 사령관",
-            "Siege Golem", "전쟁 골렘", "자리코틀"
+            "철옹성", "전쟁 골렘", "자리코틀"
         },
         ["The Hinterlands"] = {
             "그림운거스", "무쇠껍질", "잘린데 서머드레이크",
@@ -951,11 +951,11 @@ elseif locale == "koKR" then
             "줄라렉 헤이트파울러"
         },
         ["Stranglethorn Vale"] = {
-            "Gluggle", "쿠르모크", "군주 사크라시스", "모쉬오그 도살꾼", "리파",
+            "글루글", "쿠르모크", "군주 사크라시스", "모쉬오그 도살꾼", "리파",
             "로로취", "무쇠비늘 바실리스크", "방패부대 병참장교", "베리포닉스"
         },
         ["Tanaris"] = {
-            "해골 마녀", "미치광이 사이클록", "Greater Firebird",
+            "해골 마녀", "미치광이 사이클록", "잿불날개",
             "포악한 하르카", "모래술사 진잘라", "크레그 킬홀",
             "성큼걸이 누더기골렘", "피에 굶주린 문둥발하이에나", "실성한 옴고른",
             "파멸의 소리드", "저주받은 자의 영혼", "부대장 크라질락"
@@ -976,7 +976,7 @@ elseif locale == "koKR" then
             "우크로크"
         },
         ["Searing Gorge"] = {
-            "불완전한 전쟁 골렘", "대영주 마스트로곤드", "레크틸락", "스칼드",
+            "Faulty 전쟁 골렘", "대영주 마스트로곤드", "레크틸락", "스칼드",
             "셸리나르", "노예상인 블랙하트", "스몰더"
         },
         ["Zul'Farrak"] = {"더스트레이스", "산다르 듄리버", "제릴리스"},
@@ -993,7 +993,7 @@ elseif locale == "koKR" then
         ["Eastern Plaguelands"] = {
             "해골 마녀", "죽음예언자 셀렌드레", "두간 와일드해머",
             "부동의 기쉬", "부패의 헤드무쉬", "고위사령관 아벤디스",
-            "군주 다크사이드", "성큼걸이 누더기골렘", "Ranger Lord Hawkspear",
+            "군주 다크사이드", "성큼걸이 누더기골렘", "죽음사냥꾼 호크스피어",
             "저주받은 자의 영혼", "장군 트레쉬진", "줄브린 워프브랜치"
         },
         ["Silithus"] = {
@@ -1028,7 +1028,7 @@ elseif locale == "koKR" then
         ["Blasted Lands"] = {
             "현자 아쿠바르", "해골 마녀", "칼날집게발 딸깍이", "죽음의 눈",
             "드레드스콘", "꿀꿀이", "성큼걸이 누더기골렘", "고집불통 마그로노스",
-            "험상궂은 모조", "Ravage", "저주받은 자의 영혼", "재앙의 검은발톱"
+            "험상궂은 모조", "부라퀴", "저주받은 자의 영혼", "재앙의 검은발톱"
         }
     }
 
@@ -1041,7 +1041,7 @@ elseif locale == "ruRU" then
         },
         ["Durotar"] = {
             "Капитан Тупой Клык", "Смертоносный живодер", "Скорнн Ткач Скверны",
-            "Владычица земель Рябка", "Полководец Колканис", "Watch Commander Zalaphil"
+            "Владычица земель Рябка", "Полководец Колканис", "Сержант Кертис"
         },
         ["Mulgore"] = {
             "Головорез Эмильгунд", "Призрачный Вой", "Маззранач", "Сестра Плеть Ненависти",
@@ -1064,7 +1064,7 @@ elseif locale == "ruRU" then
             "Сержант Острый Коготь", "Сларк", "Сарыч"
         },
         ["Loch Modan"] = {
-            "Главарь Галгош", "Амогг Сокрушитель", "Grizlak", "Large Loch Crocolisk",
+            "Главарь Галгош", "Амогг Сокрушитель", "Кубб", "Гош-Халдир",
             "Лорд Кондар", "Магош", "Шанда Прядильщица"
         },
         ["Darkshore"] = {
@@ -1073,10 +1073,10 @@ elseif locale == "ruRU" then
             "Тенекоготь", "Долгоног-несушка"
         },
         ["Silverpine Forest"] = {
-            "Dalaran Spellscribe", "Жуткоклык", "Krethis Shadowspinner",
+            "Чарокнижник Янтарной мельницы", "Жуткоклык", "Кретис Тенеткач",
             "Старый Губач", "Регент Когтя Ворона", "Костолом из стаи Гнилошкуров", "Спутанная Грива"
         },
-        ["The Deadmines"] = {"Miner Johnson", "Edwin VanCleef"},
+        ["The Deadmines"] = {"Шахтер Джонсон", "Эдвин ван Клиф"},
         ["Stonetalon Mountains"] = {
             "Брат Вороний Дуб", "Штейгер Риггер", "Нал'тазар",
             "Величавый патриарх", "Часовой Амарассан", "Сестра Терзающая",
@@ -1114,18 +1114,18 @@ elseif locale == "ruRU" then
             "Гешарахан", "Хагг Тауребой", "Ханна Остролист",
             "Хеггин Камнеус", "Вожак стаи Хумар", "Малгин Ячменовар",
             "Маркус Бел", "Раториан", "Каменное Копье", "Силитид-жнец",
-            "Сестра Коготь Кургана", "Sludge Beast", "Фырк Дразнила", "Каменная рука",
+            "Сестра Коготь Кургана", "Слякохлюп", "Фырк Дразнила", "Каменная рука",
             "Быстрогрив", "Свинеар Копьешкур", "Такк Прыгун",
             "Тора Оперенная Луна", "Громоступ"
         },
         ["Thousand Needles"] = {
             "Акеллиос Изгнанник", "Глупошмыг", "Харб Поганая Гора",
-            "Heartrazor", "Железноглаз Неуязвимый", "Silithid Разорr", "Коварное Жало"
+            "Сердцерез", "Железноглаз Неуязвимый", "Кркк'кс", "Коварное Жало"
         },
         ["Gnomeregan"] = {"Посол из клана Черного Железа"},
         ["Alterac Mountains"] = {
             "Арага", "Злобный Бенджи", "Гравис Слипнот", "Джимми Вымогатель",
-            "Ло'Грош", "Нарилласанз", "Сквой", "Stone Fury"
+            "Ло'Грош", "Нарилласанз", "Сквой", "Маггаррак"
         },
         ["Desolace"] = {
             "Проклятый Скользящий Плавник", "Проклятый кентавр", "Хохотунья", "Шшшперак",
@@ -1140,7 +1140,7 @@ elseif locale == "ruRU" then
             "Слепой охотник", "Заклинательница земли Халмгар", "Копьешкур из племени Иглошкурых"
         },
         ["Swamp of Sorrows"] = {
-            "Узкий Плавник", "Гилмориан", "Lord Captain Wyrmak", "Вождь из племени Заблудших",
+            "Узкий Плавник", "Гилмориан", "Капитан Змеюк", "Вождь из племени Заблудших",
             "Повар из племени Заблудших", "Облезлый Шип"
         },
         ["Scarlet Monastery"] = {
@@ -1148,7 +1148,7 @@ elseif locale == "ruRU" then
         },
         ["Badlands"] = {
             "7:XT", "Анатемус", "Сломанный зуб", "Грохотун", "Тенегорнский командир",
-            "Siege Golem", "Боевой голем", "Зарикотль"
+            "Баррикада", "Боевой голем", "Зарикотль"
         },
         ["The Hinterlands"] = {
             "Мрачноус", "Сталеспин", "Джалинда Дракон Лета",
@@ -1157,11 +1157,11 @@ elseif locale == "ruRU" then
             "Зул'арек Злобный Охотник"
         },
         ["Stranglethorn Vale"] = {
-            "Gluggle", "Курмокк", "Лорд Сакрасис", "Палач Мош'Огг", "Потрошила",
+            "Барабуль", "Курмокк", "Лорд Сакрасис", "Палач Мош'Огг", "Потрошила",
             "Ролох", "Чешуйчатое брюхо", "Интендант из легиона Изрубленного Щита", "Мигафоникс"
         },
         ["Tanaris"] = {
-            "Костяной ведьмак", "Циклок Безумный", "Greater Firebird",
+            "Костяной ведьмак", "Циклок Безумный", "Углекрыл",
             "Хаарка Ненасытный", "Джин'Заллах Хозяин Барханов", "Крегг Кильватель",
             "Неуклюжий ужас", "Безжалостный хромоног", "Омгорн Заблудший",
             "Сориид Пожиратель", "Дух проклятого", "Военный вождь Краззилак"
@@ -1182,7 +1182,7 @@ elseif locale == "ruRU" then
             "Ак'лок"
         },
         ["Searing Gorge"] = {
-            "Неисправный боевой голем", "Верховный лорд Мастрогонд", "Рекк'тилак", "Жар",
+            "Faulty Боевой голем", "Верховный лорд Мастрогонд", "Рекк'тилак", "Жар",
             "Шлейпнарр", "Повелитель рабов Черносерд", "Смолдар"
         },
         ["Zul'Farrak"] = {"Пыльный призрак", "Сандарр Разоритель Барханов", "Зериллис"},
@@ -1199,7 +1199,7 @@ elseif locale == "ruRU" then
         ["Eastern Plaguelands"] = {
             "Костяной ведьмак", "Вестница смерти Селендра", "Дугган Громовой Молот",
             "Гиш Недвижимый", "Хед'маш Гниющий", "Верховный генерал Аббендис",
-            "Лорд Темнокос", "Неуклюжий ужас", "Ranger Lord Hawkspear",
+            "Лорд Темнокос", "Неуклюжий ужас", "Смертолов Ястребиное Копье",
             "Дух проклятого", "Полководец Молот'джин", "Зул'Брин Криводрев"
         },
         ["Silithus"] = {
@@ -1234,7 +1234,7 @@ elseif locale == "ruRU" then
         ["Blasted Lands"] = {
             "Провидец Акубар", "Костяной ведьмак", "Щелкун Разоритель", "Смертеглаз",
             "Бесстрашный", "Хрюггер", "Неуклюжий ужас", "Магронос Неуступчивый",
-            "Моджо Зловредный", "Ravage", "Дух проклятого", "Злобоклюй"
+            "Моджо Зловредный", "Разор", "Дух проклятого", "Злобоклюй"
         }
     }
 
@@ -1247,7 +1247,7 @@ elseif locale == "zhCN" then
         },
         ["Durotar"] = {
             "獠牙队长", "死亡毒蝎", "斯考恩",
-            "吉欧洛德·杂斑", "科卡尼斯", "Watch Commander Zalaphil"
+            "吉欧洛德·杂斑", "科卡尼斯", "科提斯中士"
         },
         ["Mulgore"] = {
             "执行者埃米尔冈德", "鬼嚎", "马兹拉纳其", "海特拉什",
@@ -1270,7 +1270,7 @@ elseif locale == "zhCN" then
             "利爪队长", "斯拉克", "乌尔图斯"
         },
         ["Loch Modan"] = {
-            "大头目加尔高什", "摧毁者埃摩戈", "Grizlak", "Large Loch Crocolisk",
+            "大头目加尔高什", "摧毁者埃摩戈", "卡布", "格什哈尔迪",
             "康达尔", "玛高什", "纺织者杉达"
         },
         ["Darkshore"] = {
@@ -1279,10 +1279,10 @@ elseif locale == "zhCN" then
             "影爪", "雌性森林陆行鸟"
         },
         ["Silverpine Forest"] = {
-            "Dalaran Spellscribe", "血牙狼人", "Krethis Shadowspinner",
+            "安伯米尔书记员", "血牙狼人", "暗网编织者克雷希斯",
             "维斯迦尔", "鸦爪摄政者", "腐皮惩戒者", "斯纳麦恩"
         },
-        ["The Deadmines"] = {"Miner Johnson", "Edwin VanCleef"},
+        ["The Deadmines"] = {"矿工约翰森", "艾德温·范克里夫"},
         ["Stonetalon Mountains"] = {
             "拉文诺克修士", "工头里格尔", "纳尔塔萨",
             "巨翼雄兽", "哨兵阿玛拉珊", "瑞雯",
@@ -1320,18 +1320,18 @@ elseif locale == "zhCN" then
             "格沙拉罕", "哈格", "汉娜·刃叶",
             "赫金·石须", "狮王休玛", "玛尔金·麦酒",
             "马库斯·拜尔", "拉索利安", "石枪", "异种收割者",
-            "莱丝塔伦", "Sludge Beast", "土狼斯诺特", "石臂",
+            "莱丝塔伦", "淤泥畸体", "土狼斯诺特", "石臂",
             "迅鬃斑马", "斯文格加特·矛鬃", "“跳跃者”塔克",
             "索拉·羽月", "雷蹄蜥蜴"
         },
         ["Thousand Needles"] = {
             "流放者阿切鲁斯", "吉比斯尼克", "哈尔伯·邪泉",
-            "Heartrazor", "不可战胜的铁眼", "Silithid 毁灭r", "邪刺恐蝎"
+            "锐爪飞心", "不可战胜的铁眼", "克尔克斯克", "邪刺恐蝎"
         },
         ["Gnomeregan"] = {"黑铁大使"},
         ["Alterac Mountains"] = {
             "阿拉加", "暴躁的本希", "格拉维斯·斯里诺特", "流血者吉米",
-            "洛格罗什", "纳瑞尔拉萨斯", "斯格霍尔", "Stone Fury"
+            "洛格罗什", "纳瑞尔拉萨斯", "斯格霍尔", "玛格拉克"
         },
         ["Desolace"] = {
             "可憎的滑刃纳迦", "被诅咒的半人马", "基格勒尔", "西斯普拉克",
@@ -1346,7 +1346,7 @@ elseif locale == "zhCN" then
             "盲眼猎手", "唤地者哈穆加", "剃刀沼泽刺鬃守卫"
         },
         ["Swamp of Sorrows"] = {
-            "芬加特", "基摩里安", "Lord Captain Wyrmak", "失落者酋长",
+            "芬加特", "基摩里安", "维尔玛克中尉", "失落者酋长",
             "失落者厨师", "摩塔索恩"
         },
         ["Scarlet Monastery"] = {
@@ -1354,7 +1354,7 @@ elseif locale == "zhCN" then
         },
         ["Badlands"] = {
             "7:XT", "安纳塞姆斯", "断牙", "拉姆布勒", "暗炉指挥官",
-            "Siege Golem", "作战傀儡", "扎里科特"
+            "路障", "作战傀儡", "扎里科特"
         },
         ["The Hinterlands"] = {
             "格瑞姆格斯", "铁背龟", "加林德·夏龙",
@@ -1363,11 +1363,11 @@ elseif locale == "zhCN" then
             "祖拉雷克"
         },
         ["Stranglethorn Vale"] = {
-            "Gluggle", "库尔莫克", "萨克拉希斯", "莫什奥格屠夫", "瑞帕",
+            "戈鲁格尔", "库尔莫克", "萨克拉希斯", "莫什奥格屠夫", "瑞帕",
             "罗洛克", "金鳞蜥蜴", "裂盾军需官", "维里弗尼克斯"
         },
         ["Tanaris"] = {
-            "骨巫", "疯狂的塞科洛克", "Greater Firebird",
+            "骨巫", "疯狂的塞科洛克", "余烬之翼",
             "贪婪的哈尔卡", "唤沙者辛萨拉", "克雷格·尼哈鲁",
             "笨拙的憎恶", "残忍的疱爪土狼", "失落者奥姆高尔",
             "吞噬者索利德", "诅咒者之魂", "克莱吉拉克"
@@ -1388,7 +1388,7 @@ elseif locale == "zhCN" then
             "乌卡洛克"
         },
         ["Searing Gorge"] = {
-            "未完善的作战傀儡", "玛斯托格", "雷克提拉克", "斯卡尔德",
+            "Faulty 作战傀儡", "玛斯托格", "雷克提拉克", "斯卡尔德",
             "夏雷纳尔", "奴隶主托恩·黑心", "斯莫达尔"
         },
         ["Zul'Farrak"] = {"灰尘怨灵", "杉达尔·沙掠者", "泽雷利斯"},
@@ -1405,7 +1405,7 @@ elseif locale == "zhCN" then
         ["Eastern Plaguelands"] = {
             "骨巫", "亡语者塞伦德", "杜甘·蛮锤",
             "僵硬的吉斯", "腐烂者海德姆什", "阿比迪斯将军",
-            "黑暗镰刀", "笨拙的憎恶", "Ranger Lord Hawkspear",
+            "黑暗镰刀", "笨拙的憎恶", "死亡猎人霍克斯比尔",
             "诅咒者之魂", "督军塔雷金", "祖布林·扭枝"
         },
         ["Silithus"] = {
@@ -1440,7 +1440,7 @@ elseif locale == "zhCN" then
         ["Blasted Lands"] = {
             "先知阿库巴尔", "骨巫", "掠夺者科拉克", "死眼",
             "德雷斯克恩", "格朗特", "笨拙的憎恶", "顽强的玛古诺斯",
-            "扭曲者莫吉尔", "Ravage", "诅咒者之魂", "斯比弗雷尔"
+            "扭曲者莫吉尔", "毁灭", "诅咒者之魂", "斯比弗雷尔"
         }
     }
 
@@ -1453,7 +1453,7 @@ elseif locale == "zhTW" then
         },
         ["Durotar"] = {
             "獠牙隊長", "死亡毒蠍", "惡魔編織者斯考恩",
-            "吉歐洛德·雜斑", "督軍科卡尼斯", "Watch Commander Zalaphil"
+            "吉歐洛德·雜斑", "督軍科卡尼斯", "指揮官柯堤斯"
         },
         ["Mulgore"] = {
             "執行者埃米爾岡德", "鬼嚎", "馬茲拉納奇", "鷹女海特拉什",
@@ -1476,7 +1476,7 @@ elseif locale == "zhTW" then
             "利爪隊長", "斯拉克", "烏爾圖斯"
         },
         ["Loch Modan"] = {
-            "大頭目加爾高西", "『碾碎者』埃摩戈", "Grizlak", "Large Loch Crocolisk",
+            "大頭目加爾高西", "『碾碎者』埃摩戈", "庫布", "戈許哈爾迪爾",
             "康達爾", "瑪高什", "『編織者』杉達"
         },
         ["Darkshore"] = {
@@ -1485,10 +1485,10 @@ elseif locale == "zhTW" then
             "影爪", "雌性森林陸行鳥"
         },
         ["Silverpine Forest"] = {
-            "Dalaran Spellscribe", "血牙狼人", "Krethis Shadowspinner",
+            "安伯米爾法術抄寫員", "血牙狼人", "『旋影者』克雷希斯",
             "維斯迦爾", "鴉爪攝政者", "腐皮懲戒者", "斯納麥恩"
         },
-        ["The Deadmines"] = {"Miner Johnson", "Edwin VanCleef"},
+        ["The Deadmines"] = {"礦工強森", "艾德溫·范克里夫"},
         ["Stonetalon Mountains"] = {
             "拉文諾克修士", "工頭里格爾", "納爾塔薩",
             "巨翼族王", "哨兵阿瑪拉珊", "鷹女瑞雯",
@@ -1526,18 +1526,18 @@ elseif locale == "zhTW" then
             "格沙拉罕", "哈格", "漢娜·刃葉",
             "赫金·石鬚", "『獅王』修瑪", "瑪爾金·麥酒",
             "馬庫斯·拜爾", "拉索利安", "石槍", "異種收割者",
-            "鷹女萊絲塔倫", "Sludge Beast", "『土狼』斯諾特", "石臂",
+            "鷹女萊絲塔倫", "淤泥異常體", "『土狼』斯諾特", "石臂",
             "迅鬃斑馬", "斯文格加特·矛鬃", "『跳躍者』塔克",
             "索拉·羽月", "雷蹄蜥蜴"
         },
         ["Thousand Needles"] = {
             "『放逐者』阿基里歐斯", "吉比斯尼克", "哈爾伯·邪泉",
-            "Heartrazor", "無敵的鐵眼", "Silithid 劫掠r", "邪刺恐蠍"
+            "撕心者", "無敵的鐵眼", "克爾基斯", "邪刺恐蠍"
         },
         ["Gnomeregan"] = {"黑鐵大使"},
         ["Alterac Mountains"] = {
             "阿拉加", "暴躁的本希", "格拉夫斯·斯里諾特", "『流血者』吉米",
-            "洛格羅什", "納瑞爾拉薩斯", "斯格霍爾", "Stone Fury"
+            "洛格羅什", "納瑞爾拉薩斯", "斯格霍爾", "瑪加拉克"
         },
         ["Desolace"] = {
             "可憎的滑刃納迦", "被詛咒的半人馬", "基格勒爾", "西斯普拉克",
@@ -1552,7 +1552,7 @@ elseif locale == "zhTW" then
             "盲眼獵手", "喚地者哈穆加", "剃刀沼澤刺鬃守衛"
         },
         ["Swamp of Sorrows"] = {
-            "芬加特", "基摩里安", "Lord Captain Wyrmak", "失落者酋長",
+            "芬加特", "基摩里安", "維爾瑪克隊長", "失落者酋長",
             "失落者廚師", "摩塔索恩"
         },
         ["Scarlet Monastery"] = {
@@ -1560,7 +1560,7 @@ elseif locale == "zhTW" then
         },
         ["Badlands"] = {
             "7:XT", "安納塞姆斯", "斷牙", "拉姆布勒", "影爐指揮官",
-            "Siege Golem", "戰爭魔像", "札里科特"
+            "攻城魔像", "戰爭魔像", "札里科特"
         },
         ["The Hinterlands"] = {
             "格瑞姆格斯", "鐵背龜", "加林德·夏龍",
@@ -1569,11 +1569,11 @@ elseif locale == "zhTW" then
             "祖拉雷克"
         },
         ["Stranglethorn Vale"] = {
-            "Gluggle", "庫爾莫克", "薩克拉希斯領主", "莫什奧格屠夫", "瑞帕",
+            "戈魯格爾", "庫爾莫克", "薩克拉希斯領主", "莫什奧格屠夫", "瑞帕",
             "羅洛克", "金鱗蜥蜴", "裂盾軍需官", "維里弗尼克斯"
         },
         ["Tanaris"] = {
-            "骸骨女巫", "『瘋子』塞科洛克", "Greater Firebird",
+            "骸骨女巫", "『瘋子』塞科洛克", "燼翼",
             "貪婪的哈爾卡", "喚沙者辛薩拉", "克雷格·尼哈魯",
             "笨拙的憎惡", "殘忍的皰爪土狼", "『失落者』歐姆高爾",
             "『吞噬者』索利德", "詛咒神教之靈", "克萊吉拉克"
@@ -1594,7 +1594,7 @@ elseif locale == "zhTW" then
             "烏卡洛克"
         },
         ["Searing Gorge"] = {
-            "未完善的戰爭魔像", "大領主瑪斯托格", "雷克提拉克", "斯卡爾德",
+            "Faulty 戰爭魔像", "大領主瑪斯托格", "雷克提拉克", "斯卡爾德",
             "夏雷納爾", "奴隸主托恩·黑心", "斯莫達爾"
         },
         ["Zul'Farrak"] = {"灰塵怨靈", "杉達爾·沙掠者", "澤雷利斯"},
@@ -1611,7 +1611,7 @@ elseif locale == "zhTW" then
         ["Eastern Plaguelands"] = {
             "骸骨女巫", "亡頌者塞倫德", "杜甘·蠻錘",
             "僵硬的吉斯", "『腐爛者』海德姆什", "大將軍阿比迪斯",
-            "暗鐮領主", "笨拙的憎惡", "Ranger Lord Hawkspear",
+            "暗鐮領主", "笨拙的憎惡", "亡靈獵手霍克斯比爾",
             "詛咒神教之靈", "督軍塔雷什森", "祖布林·扭枝"
         },
         ["Silithus"] = {
@@ -1646,7 +1646,7 @@ elseif locale == "zhTW" then
         ["Blasted Lands"] = {
             "『先知』阿庫巴爾", "骸骨女巫", "『劫奪者』科拉克", "死眼",
             "德雷斯克恩", "格朗特", "笨拙的憎惡", "不屈的瑪古諾斯",
-            "『扭曲者』莫吉爾", "Ravage", "詛咒神教之靈", "斯比弗雷爾"
+            "『扭曲者』莫吉爾", "劫掠", "詛咒神教之靈", "斯比弗雷爾"
         }
     }
 

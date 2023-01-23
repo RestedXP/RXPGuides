@@ -26,7 +26,7 @@ step << Troll Mage
     #completewith Horthus
     .goto Orgrimmar,39.53,75.82,30,0
     .goto Orgrimmar,42.68,62.42,30,0
-    .goto Orgrimmar,45.57,57.46,20,0 
+    .goto Orgrimmar,45.57,57.46,20,0
     .goto Orgrimmar,45.44,56.55,10 >>Travel toward |cFF00FF25Horthus|r
     .train 3567,3
     .zoneskip Durotar
@@ -89,7 +89,7 @@ step << !Shaman !Warrior
     #completewith MeetingTW
     #label ValleyOW
     #requires MageRune1 << Troll Mage
-    .goto Orgrimmar,49.59,94.74,30,0 << Orc/Troll 
+    .goto Orgrimmar,49.59,94.74,30,0 << Orc/Troll
     .goto Orgrimmar,49.42,90.90,30,0 << Orc/Troll
     .goto Orgrimmar,52.26,88.65,30,0 << Orc/Troll
     .goto Orgrimmar,42.63,61.99,15,0 << Orc/Troll
@@ -202,7 +202,7 @@ step << Warlock
     .goto Orgrimmar,47.99,45.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Grol'dar|r
     .train 1094 >> Train your class spells
-    .target Grol'dar 
+    .target Grol'dar
 step << Warlock
     .goto Orgrimmar,48.25,45.27
     .abandon 10605 >>Abandon Carendin Summons
@@ -2351,7 +2351,7 @@ step
     >>Loot the |cFFDB2EEFShipment of Iron|r inside on the ground
     .complete 529,3 --Collect Shipment of Iron (x1)
 step
-    #label Verringtan 
+    #label Verringtan
 	.goto Hillsbrad Foothills,32.56,45.95,15,0
 	.goto Hillsbrad Foothills,32.20,45.65,15,0
 	.goto Hillsbrad Foothills,32.11,44.43,15,0
@@ -3344,7 +3344,7 @@ step
     .goto Thousand Needles,65.74,49.89
      >> Kill all Kobolds you encounter. Loot them for the Ore Sample
     .complete 1153,1
-    .unitscan Gravelsnout Digger,Gravelsnout Surveyor,Gibblesnik
+    .unitscan Gravelsnout Digger;Gravelsnout Surveyor;Gibblesnik
 step
     >>Kill Thundering Boulderkins. Loot them for Purifying Earth
     .goto Thousand Needles,65.2,62.4,0,0
@@ -3916,25 +3916,25 @@ step << Shaman
     .collect 12251,1
 step
     .xp <33,1
-	
+
     .goto Stranglethorn Vale,26.4,73.5
     .turnin 1180 >> Turn in Goblin Sponsorship
     .accept 1181 >> Accept Goblin Sponsorship
 step
     .xp <33,1
-	
+
 	>> Head to the second level of buildings
     .goto Stranglethorn Vale,28.3,77.6
     .accept 575 >> Accept Supply and Demand
 step
     .xp <33,1
-	
+
 	>> Head into the inn, this quest is on the bottom floor
     .goto Stranglethorn Vale,27.0,77.2
     .accept 605 >> Accept Singing Blue Shards
 step
     .xp <33,1
-	
+
 	>> These quests are on the top floors of the inn
 	.goto Stranglethorn Vale,27.1,77.3
     .accept 189 >> Accept Bloodscalp Ears
@@ -3942,19 +3942,19 @@ step
     .accept 201 >> Accept Investigate the Camp
 step
     .xp <33,1
-	
+
     .goto Stranglethorn Vale,27.2,76.9
     .turnin 1181 >> Turn in Goblin Sponsorship
     .accept 1182 >> Accept Goblin Sponsorship
 step << Rogue
     .xp <33,1
-	
+
 	#completewith next
     .goto Stranglethorn Vale,26.8,77.2
 	.trainer >> Go and train your class spells
 step
     .xp <33,1
-	
+
     .goto Stranglethorn Vale,26.9,77.0
     .fp Booty Bay >> Get the Booty Bay flight path
 step
@@ -5217,7 +5217,7 @@ step
     >>Loot the |cFFDB2EEFShipment of Iron|r inside on the ground
     .complete 529,3 --Collect Shipment of Iron (x1)
 step
-    #label Verringtan 
+    #label Verringtan
 	.goto Hillsbrad Foothills,32.56,45.95,15,0
 	.goto Hillsbrad Foothills,32.20,45.65,15,0
 	.goto Hillsbrad Foothills,32.11,44.43,15,0
@@ -5316,7 +5316,7 @@ step << skip
     .isOnQuest 546
     .isOnQuest 9626 << BloodElf
     .isOnQuest 9813 << !BloodElf !Shaman !Warrior
---1.7x, on SOD and Darkhan 
+--1.7x, on SOD and Darkhan
 step << skip
     #xprate >1.6999
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
@@ -5748,7 +5748,7 @@ step << Troll Mage
     #completewith Horthus
     .goto Orgrimmar,39.53,75.82,30,0
     .goto Orgrimmar,42.68,62.42,30,0
-    .goto Orgrimmar,45.57,57.46,20,0 
+    .goto Orgrimmar,45.57,57.46,20,0
     .goto Orgrimmar,45.44,56.55,10 >>Travel toward |cFF00FF25Horthus|r
     .train 3567,3
     .zoneskip Durotar
@@ -5811,7 +5811,7 @@ step << !Shaman !Warrior
     #completewith MeetingTW
     #label ValleyOW
     #requires MageRune1 << Troll Mage
-    .goto Orgrimmar,49.59,94.74,30,0 << Orc/Troll 
+    .goto Orgrimmar,49.59,94.74,30,0 << Orc/Troll
     .goto Orgrimmar,49.42,90.90,30,0 << Orc/Troll
     .goto Orgrimmar,52.26,88.65,30,0 << Orc/Troll
     .goto Orgrimmar,42.63,61.99,15,0 << Orc/Troll
@@ -5838,8 +5838,8 @@ step << !Shaman !Warrior
     .goto Orgrimmar,31.62,38.39 << BloodElf
     .target Thrall
     .target Ambassador Dawnsinger << BloodElf
-    .isOnQuest 9626 << BloodElf 
-    .isOnQuest 9813 << !BloodElf 
+    .isOnQuest 9626 << BloodElf
+    .isOnQuest 9813 << !BloodElf
 step << BloodElf
     #label MeetingTW
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thrall|r and |cFF00FF25Dawnsinger|r
@@ -5849,7 +5849,7 @@ step << BloodElf
     .goto Orgrimmar,31.62,38.39 << BloodElf
     .target Thrall
     .target Ambassador Dawnsinger << BloodElf
-    .isQuestTurnedIn 9626 << BloodElf 
+    .isQuestTurnedIn 9626 << BloodElf
 step << Paladin
     .goto Orgrimmar,32.29,35.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Pyreanor|r
@@ -5994,7 +5994,7 @@ step << Warlock
     .goto Orgrimmar,47.99,45.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Grol'dar|r
     .train 1456 >> Train your class spells
-    .target Grol'dar 
+    .target Grol'dar
     .xp <26,1
 step << Warlock
     .goto Orgrimmar,48.25,45.27
@@ -6337,7 +6337,7 @@ step << Shaman
     >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
-    .use 5103 
+    .use 5103
     .unitscan Washte Pawne
 step << Shaman
     #completewith next
@@ -6805,7 +6805,7 @@ step << !Shaman !Warrior
     .turnin 4921 >>Turn in Lost in Battle
     .goto The Barrens,51.95,31.58
     .turnin 868 >> Turn in Egg Hunt
-    .goto The Barrens,51.07,29.63 
+    .goto The Barrens,51.07,29.63
     .target Mankrik
     .target Korran
 step << !Shaman !Warrior
@@ -6894,12 +6894,12 @@ step << Rogue tbc
 step << Rogue tbc
     >>Use the |T134437:0|t[Anti Venom] to cure the |T136230:0|t[Touch of Zanzil]
     .itemcount 6452,1
-    .use 6452 
+    .use 6452
 --VV NOTE some of this section might need to be changed depending on the route
 step << Rogue tbc
     >>Use the |T134437:0|t[Strong Anti Venom] to cure the |T136230:0|t[Touch of Zanzil]
     .itemcount 6453,1
-    .use 6453 
+    .use 6453
 step << Rogue tbc
     #label PoisonCleanse
     >>You'll now have the |T136230:0|t[Touch of Zanzil] debuff that lasts a week. |cFFFCDC00Closely follow the route to remove it|r
@@ -6954,14 +6954,14 @@ step << Rogue tbc
     #completewith PoisonCleanse
     >>Use the |T134437:0|t[Anti Venom] to cure the |T136230:0|t[Touch of Zanzil]
     .itemcount 6452,1
-    .use 6452 
+    .use 6452
 step << Rogue tbc
     #requires AVAH2
     #label Antivenomuse2
     #completewith PoisonCleanse
     >>Use the |T134437:0|t[Strong Anti Venom] to cure the |T136230:0|t[Touch of Zanzil]
     .itemcount 6453,1
-    .use 6453 
+    .use 6453
 step << Rogue tbc
     #requires Antivenomuse2
     #completewith next
@@ -7676,7 +7676,7 @@ step
     .goto The Barrens,44.86,59.13
     .turnin 1823 >> Turn in Speak with Ruga << Warrior
 -- .accept 1824 >> Accept Trial at the Field of Giants
-    .goto The Barrens,44.80,59.22,6,0 << Warrior 
+    .goto The Barrens,44.80,59.22,6,0 << Warrior
     .goto The Barrens,44.67,59.42 << Warrior
     .target Jorn Skyseer
     .target Ruga Ragetotem << Warrior
@@ -7748,7 +7748,7 @@ step << Shaman
     >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
-    .use 5103 
+    .use 5103
     .unitscan Washte Pawne
 step << Shaman
     #completewith next
@@ -7768,7 +7768,7 @@ step
     >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
-    .use 5103 
+    .use 5103
     .unitscan Washte Pawne
 step
     #label Gann1
@@ -7810,7 +7810,7 @@ step << Shaman/Warrior
     >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
-    .use 5103 
+    .use 5103
     .unitscan Washte Pawne
 step << Shaman/Warrior
     .goto The Barrens,44.06,80.02,45,0
@@ -7853,7 +7853,7 @@ step << Shaman/Warrior
     >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
-    .use 5103 
+    .use 5103
     .unitscan Washte Pawne
 step << Shaman/Warrior
     #label Lok
@@ -7872,7 +7872,7 @@ step << !Shaman !Warrior
     >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
-    .use 5103 
+    .use 5103
     .unitscan Washte Pawne
 step
     #completewith next
@@ -7969,8 +7969,8 @@ step
     .goto The Barrens,46.09,80.54,40,0
     .goto The Barrens,46.16,79.66,40,0
     .goto The Barrens,46.14,79.37,40,0
-    .goto The Barrens,46.07,79,19,40,0 
-    .goto The Barrens,45.86,78.77,40,0 
+    .goto The Barrens,46.07,79,19,40,0
+    .goto The Barrens,45.86,78.77,40,0
     .goto The Barrens,45.79,78.47,40,0
     .goto The Barrens,45.83,77.21,40,0
     .goto The Barrens,45.91,76.97,40,0
@@ -7990,7 +7990,7 @@ step
     >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
-    .use 5103 
+    .use 5103
     .unitscan Washte Pawne
 step
     .goto The Barrens,48.63,84.49,110 >>Travel to Bael Modan
@@ -8001,7 +8001,7 @@ step
     >>Kill |cFFFF5722Bael'dun Dwarves|r. Loot them for their |cFF00BCD4Nitroglycerin|r, |cFF00BCD4Wood Pulp|r, and |cFF00BCD4Sodium Nitrate|r
     .complete 846,1 --Collect Nitroglycerin (x6)
     .complete 846,2 --Collect Wood Pulp (x6)
-    .complete 846,3 --Collect Sodium Nitrate (x6)   
+    .complete 846,3 --Collect Sodium Nitrate (x6)
     .mob Bael'dun Rifleman
     .mob Bael'dun Solider
     .mob Bael'dun Officer
@@ -8034,7 +8034,7 @@ step
     #completewith next
     .goto The Barrens,49.43,84.28,8,0
     .goto The Barrens,49.53,84.42,8,0
-    .goto The Barrens,49.38,84.48,8,0 
+    .goto The Barrens,49.38,84.48,8,0
     .goto The Barrens,49.06,84.59,8,0
     .goto The Barrens,49.01,84.48,8,0
     .goto The Barrens,48.75,84.63,20 >>Exit Bael'dun's Keep
@@ -8049,7 +8049,7 @@ step
     >>Kill |cFFFF5722Bael'dun Dwarves|r. Loot them for their |cFF00BCD4Nitroglycerin|r, |cFF00BCD4Wood Pulp|r, and |cFF00BCD4Sodium Nitrate|r
     .complete 846,1 --Collect Nitroglycerin (x6)
     .complete 846,2 --Collect Wood Pulp (x6)
-    .complete 846,3 --Collect Sodium Nitrate (x6)   
+    .complete 846,3 --Collect Sodium Nitrate (x6)
     .mob Bael'dun Rifleman
     .mob Bael'dun Solider
     .mob Bael'dun Officer
@@ -8075,7 +8075,7 @@ step
     >>|cFFFCDC00Use |T135992:0|t[|cFF00BCD4Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
-    .use 5103 
+    .use 5103
     .unitscan Washte Pawne
 step
     #xprate <1.7 << !Shaman !Warrior
@@ -8218,8 +8218,8 @@ step
     .goto The Barrens,46.09,80.54,40,0
     .goto The Barrens,46.16,79.66,40,0
     .goto The Barrens,46.14,79.37,40,0
-    .goto The Barrens,46.07,79,19,40,0 
-    .goto The Barrens,45.86,78.77,40,0 
+    .goto The Barrens,46.07,79,19,40,0
+    .goto The Barrens,45.86,78.77,40,0
     .goto The Barrens,45.79,78.47,40,0
     .goto The Barrens,45.83,77.21,40,0
     .goto The Barrens,45.91,76.97,40,0
@@ -8242,8 +8242,8 @@ step
     .goto The Barrens,46.09,80.54,40,0
     .goto The Barrens,46.16,79.66,40,0
     .goto The Barrens,46.14,79.37,40,0
-    .goto The Barrens,46.07,79,19,40,0 
-    .goto The Barrens,45.86,78.77,40,0 
+    .goto The Barrens,46.07,79,19,40,0
+    .goto The Barrens,45.86,78.77,40,0
     .goto The Barrens,45.79,78.47,40,0
     .goto The Barrens,45.83,77.21,40,0
     .goto The Barrens,45.91,76.97,40,0
@@ -8281,7 +8281,7 @@ step
     >>|cFFFCDC00He spawns at Splithoof Crag (the eastern Centaur camp)|r
     .collect 12564,1,4881,1 --Collect Assassination Note
     .accept 4881 >>Accept Assassination Plot
-    .use 12564 
+    .use 12564
     .unitscan Galak Messenger
 --VV 18.32,22.10 west camp end
 step
@@ -8440,7 +8440,7 @@ step
     >>|cFFFCDC00He spawns at Splithoof Crag (the eastern Centaur camp)|r
     .collect 12564,1,4881,1 --Collect Assassination Note
     .accept 4881 >>Accept Assassination Plot
-    .use 12564 
+    .use 12564
     .unitscan Galak Messenger
 step
     .loop 40,Thousand Needles,43.12,36.86,41.18,34.83,40.42,34.45,39.00,32.56,39.68,34.93,39.76,35.82,39.32,36.93,40.43,37.96,41.04,39.03,41.12,41.34,42.33,40.54,42.84,39.09,44.15,40.72,44.98,41.03,45.66,43.81,47.23,41.98,48.57,43.53,49.39,41.24,48.14,40.43,47.11,40.29,45.89,40.32,44.43,38.36,,43.12,36.86
@@ -8456,7 +8456,7 @@ step
     #completewith next
     >>Kill |cFFFF5722Gravelsnout Surveyors|r, |cFFFF5722Gravelsnout Diggers|r, and |cFFFF5722Gibblesnik|r (if he's up). Loot them for an |cFF00BCD4Ore Sample|r
     .complete 1153,1 --Unrefined Ore Sample (1)
-    .unitscan Gravelsnout Digger,Gravelsnout Surveyor,Gibblesnik
+    .unitscan Gravelsnout Digger;Gravelsnout Surveyor;Gibblesnik
 step
     #completewith next
     .goto Thousand Needles,54.57,44.36,12,0
@@ -8489,7 +8489,7 @@ step
     .goto Thousand Needles,52.65,48.02,40,0
     >>Kill |cFFFF5722Gravelsnout Surveyors|r, |cFFFF5722Gravelsnout Diggers|r, and |cFFFF5722Gibblesnik|r (if he's up). Loot them for an |cFF00BCD4Ore Sample|r
     .complete 1153,1 --Unrefined Ore Sample (1)
-    .unitscan Gravelsnout Digger,Gravelsnout Surveyor,Gibblesnik
+    .unitscan Gravelsnout Digger;Gravelsnout Surveyor;Gibblesnik
 step
     #completewith next
     .goto Thousand Needles,56.36,50.39,20,0
@@ -8551,7 +8551,7 @@ step
     .goto Thousand Needles,59.79,58.16
     >>Kill |cFFFF5722Gravelsnout Surveyors|r, |cFFFF5722Gravelsnout Diggers|r, and |cFFFF5722Gibblesnik|r (if he's up). Loot them for an |cFF00BCD4Ore Sample|r
     .complete 1153,1 --Unrefined Ore Sample (1)
-    .unitscan Gravelsnout Digger,Gravelsnout Surveyor,Gibblesnik
+    .unitscan Gravelsnout Digger;Gravelsnout Surveyor;Gibblesnik
 step
     .goto Thousand Needles,52.34,55.24,20,0
     .goto Thousand Needles,37.63,56.11,20,0
@@ -8704,12 +8704,12 @@ step
 step
     .goto Thousand Needles,11.31,33.07,50,0
     .goto Thousand Needles,9.57,34.90,50,0
-    .goto Thousand Needles,10.68,40.95,50,0 
+    .goto Thousand Needles,10.68,40.95,50,0
     .goto Thousand Needles,11.98,36.72,50,0
     .goto Thousand Needles,13.91,39.11,50,0
     .goto Thousand Needles,11.31,33.07,50,0
     .goto Thousand Needles,9.57,34.90,50,0
-    .goto Thousand Needles,10.68,40.95,50,0 
+    .goto Thousand Needles,10.68,40.95,50,0
     .goto Thousand Needles,11.98,36.72,50,0
     .goto Thousand Needles,13.91,39.11,50,0
     >>Loot |cFF00BCD4Highperch Wyvern Eggs|r on the ground
@@ -8740,7 +8740,7 @@ step
 step
     .goto Thousand Needles,11.06,34.95,40,0
     .goto Thousand Needles,15.17,32.66
-    >>|cFFFCDC00Escort|r |cFF00FF25Pao'ka|r 
+    >>|cFFFCDC00Escort|r |cFF00FF25Pao'ka|r
     >>|cFFFCDC00Three Highperch Wyverns will spawn once |cFF00FF25Pao'ka|r reaches the middle of Highperch. You only need to aggro the eastern one and the others will disappear|r
     .complete 4770,1 --Escort Pao'ka from Highperch
 step
@@ -8751,12 +8751,12 @@ step
 step
     .goto Thousand Needles,11.31,33.07,50,0
     .goto Thousand Needles,9.57,34.90,50,0
-    .goto Thousand Needles,10.68,40.95,50,0 
+    .goto Thousand Needles,10.68,40.95,50,0
     .goto Thousand Needles,11.98,36.72,50,0
     .goto Thousand Needles,13.91,39.11,50,0
     .goto Thousand Needles,11.31,33.07,50,0
     .goto Thousand Needles,9.57,34.90,50,0
-    .goto Thousand Needles,10.68,40.95,50,0 
+    .goto Thousand Needles,10.68,40.95,50,0
     .goto Thousand Needles,11.98,36.72,50,0
     .goto Thousand Needles,13.91,39.11,50,0
     >>Loot |cFF00BCD4Highperch Wyvern Eggs|r on the ground
@@ -8851,7 +8851,7 @@ step
     >>|cFFFCDC00He spawns at Splithoof Crag (the eastern Centaur camp)|r
     .collect 12564,1,4881,1 --Collect Assassination Note
     .accept 4881 >>Accept Assassination Plot
-    .use 12564 
+    .use 12564
     .unitscan Galak Messenger
 step
     #label Panel
@@ -8877,7 +8877,7 @@ step
     >>|cFFFCDC00He spawns at Splithoof Crag (the eastern Centaur camp)|r
     .collect 12564,1,4881,1 --Collect Assassination Note
     .accept 4881 >>Accept Assassination Plot
-    .use 12564 
+    .use 12564
     .unitscan Galak Messenger
 step
     .line Thousand Needles,14.34,30.13,15.08,31.63,15.67,31.56,16.59,30.34,17.19,29.60,17.82,27.50,18.48,26.74,18.64,25.90,18.68,24.68,18.57,24.07,18.11,23.65,17.66,22.98,17.24,22.32,17.54,21.49,17.87,20.78,17.96,20.18,17.66,19.46,17.28,18.93,16.70,18.61,16.20,18.53,15.69,18.65,14.49,20.04,12.89,19.97,11.88,20.90,11.50,21.61,11.20,22.29,11.16,23.21,11.49,24.07,11.55,24.44,11.91,25.02,13.01,26.31,13.36,26.97,13.75,28.54,14.34,30.13
@@ -9012,7 +9012,7 @@ step
     >>|cFFFCDC00He spawns at Splithoof Crag (the eastern Centaur camp)|r
     .collect 12564,1,4881,1 --Collect Assassination Note
     .accept 4881 >>Accept Assassination Plot
-    .use 12564 
+    .use 12564
     .unitscan Galak Messenger
 step
     #xprate <1.7
@@ -9363,15 +9363,15 @@ step << Shaman
     .zoneskip The Barrens,1
 step << Shaman
     #xprate <1.7
-    .goto The Barrens,65.51,47.32,70,0 
-    .goto The Barrens,64.21,50.70,70,0 
+    .goto The Barrens,65.51,47.32,70,0
+    .goto The Barrens,64.21,50.70,70,0
     .goto The Barrens,63.63,53.85,70,0
     .loop 70,The Barrens,65.51,47.32,64.21,50.70,63.63,53.85
     >>Kill |cFFFF5722Isha Awak|r. Loot him for the |cFF00BCD4Heart of Isha Awak|r
     .complete 873,1 --Heart of Isha Awak
     .unitscan Isha Awak
 step << Shaman
-    #xprate <1.7 
+    #xprate <1.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mahreen|r and |cFF00FF25Islen|r
     .turnin 873 >> Turn in Isha Awak
     .goto The Barrens,65.84,43.86
@@ -9437,7 +9437,7 @@ step << Rogue
     .goto Orgrimmar,42.33,56.99,20,0
     .goto Orgrimmar,43.78,56.45,20,0
     .goto Orgrimmar,43.90,54.63,15 >> Travel toward |cFF00FF25Ormok|r
-step << Priest 
+step << Priest
     #label OrgTrain
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ur'kyo|r
@@ -9479,7 +9479,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Grol'dar|r
     .train 1086 >> Train your class spells << wotlk
     .train 5784 >> Train |T136103:0|t[Summon Felsteed] << tbc
-    .target Grol'dar 
+    .target Grol'dar
 step << Warlock
     .goto Orgrimmar,48.25,45.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gan'rul|r

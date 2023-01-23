@@ -307,7 +307,7 @@ step
     #label MoonstalkersF
      >> Kill any type of Moonstalker. Loot them for their fangs
     .complete 1002,1 --Moonstalker Fang (6)
-    .unitscan Moonstalker,Moonstalker Runt
+    .unitscan Moonstalker;Moonstalker Runt
 step
     .goto Darkshore,44.18,36.29
     .turnin 957 >>Turn in Bashal'Aran
@@ -416,7 +416,7 @@ step
      #completewith Murkdeep
      >> Kill any Moonstalker Sire you find and Matriarchs if you're comfortable. Loot them for Pelts. They share spawns with Grizzled Thistle Bears.
     .complete 986,1 --Fine Moonstalker Pelt (5)
-    .unitscan Moonstalker Sire,Moonstalker Matriarch
+    .unitscan Moonstalker Sire;Moonstalker Matriarch
 step
      #completewith Murkdeep
     .goto Darkshore,38.60,80.50,0
@@ -481,7 +481,7 @@ step
      #completewith Glaive
      >> Kill any Moonstalker Sire you find and Matriarchs if you're comfortable. Loot them for Pelts. They share spawns with Grizzled Thistle Bears.
     .complete 986,1 --Fine Moonstalker Pelt (5)
-    .unitscan Moonstalker Sire,Moonstalker Matriarch
+    .unitscan Moonstalker Sire;Moonstalker Matriarch
 step
     >>Kill Plainstriders. Make sure you have at least 1 light feather for later
     .collect 17056,1 --Light Feather (1)
@@ -532,7 +532,7 @@ step
      >> Kill any Moonstalker Sire you find and Matriarchs if you're comfortable. Loot them for Pelts. They share spawns with Grizzled Thistle Bears
      >> If you're getting super unlucky with spawns and droprates, you can skip this quest
     .complete 986,1 --Fine Moonstalker Pelt (5)
-    .unitscan Moonstalker Sire,Moonstalker Matriarch
+    .unitscan Moonstalker Sire;Moonstalker Matriarch
 step
     .goto Darkshore,38.60,80.50
      >> Kill Grizzled Thistle Bears all around southern Darkshore. Loot them for Scalps

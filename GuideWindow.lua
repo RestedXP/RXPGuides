@@ -701,17 +701,17 @@ function addon.SetStep(n, n2, loopback)
             end
             if element.unitscan then
                 for _, t in ipairs(element.unitscan) do
-                    table.insert(stepUnitscan, t)
+                    table.insert(stepUnitscan, addon.GetCreatureName(t))
                 end
             end
             if element.mobs then
                 for _, t in ipairs(element.mobs) do
-                    table.insert(stepMobs, t)
+                    table.insert(stepMobs, addon.GetCreatureName(t))
                 end
             end
             if element.targets then
                 for _, t in ipairs(element.targets) do
-                    table.insert(stepTargets, t)
+                    table.insert(stepTargets, addon.GetCreatureName(t))
                 end
             end
             local spacing = 0
