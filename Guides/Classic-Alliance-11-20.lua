@@ -603,7 +603,7 @@ step
     .goto Westfall,52.86,53.71
     .vendor >> Buy food from |cFF00FF25Innkeeper Heather|r. Buy some level 15 food for later if you have money. Remember that the level 5 food here is VERY cheap << Warrior/Rogue
     .vendor >> Buy food/water from |cFF00FF25Innkeeper Heather|r. Buy some level 15 food/water for later if you have money. Remember that the level 5 food here is VERY cheap << !Warrior !Rogue
-	.target Innkeeeper Heather
+	.target Innkeeper Heather
 step
     #sticky
 	#completewith bennytime
@@ -1719,7 +1719,7 @@ step
     .goto Felwood,22.39,29.45
      >> Kill |cFFFF5722Blackwood Pathfinders|r and |cFFFF5722Blackwood Windtalkers|r
 	 >> |cFFFCDC00Move about 10 yards away from the Windtalkers when they cast Gust of Wind to dodge it. Be careful as Pathfinders Thrash.|r (3 attacks at once every 10s or so)
-	 .target Blackwood Pathfinders
+	 .target Blackwood Pathfinder
 	 .target Blackwood Windtalker
     .complete 985,1
     .complete 985,2
@@ -2841,7 +2841,7 @@ step
 step
     #label FlyR
 	>> Talk to |cFF00FF25Magistrate Soloman|r
-	.target Magistrate Soloman
+	.target Magistrate Solomon
     .goto Redridge Mountains,29.98,44.45
     .turnin 121 >> Turn in Messenger to Stormwind
 step
@@ -3256,7 +3256,7 @@ step
      .isOnQuest 5321
 step
 	>> Talk to |cFF00FF25Liadris Moonriver|r
-	.target Liadris Moonriver
+	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >> Turn in The Sleeper Has Awakened
     .isQuestComplete 5321

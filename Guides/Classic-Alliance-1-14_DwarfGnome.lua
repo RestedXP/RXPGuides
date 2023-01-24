@@ -115,7 +115,7 @@ step
     #era
     >>Kill |cFFFF5722Rockjaw Troggs|r that you see. You may need to kill extra Burly Rockjaw Troggs to force respawns.
     .complete 170,1 --Kill Rockjaw Trogg (x6)
-    .unitscan Rockjaw Troggs
+    .unitscan Rockjaw Trogg
 step
     #era
     .goto Dun Morogh,26.9,72.7,80,0
@@ -299,7 +299,7 @@ step
     .goto Dun Morogh,30.6,80.3
     >>Enter the Troll cave. Kill |cFF00BCD4Grik'nir|r, then loot him for |cFF00BCD4Grelin's journal|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
-    .unitscan Grik'nir
+    .unitscan Grik'nir the Cold
 step << !Paladin !Mage !Warlock
     #hardcore
     >> Talk to |cFF00FF25Nori Pridedrift|r
@@ -870,7 +870,7 @@ step << !Paladin !Rogue !Warrior
 step << Warlock
     .goto Dun Morogh,47.3,53.7
     >>Talk to |cFF00FF25Gimrizz Shadowcog|r
-    .target Grimrizz Shadowcog
+    .target Gimrizz Shadowcog
     .trainer >> Train your class spells
     .vendor >> Buy the Firebolt book if you have money after training (otherwise buy it later)
 step << Rogue
@@ -1425,7 +1425,7 @@ step
     .accept 60 >> Accept Kobold Candles
 step << Mage
     >>Talk to |cFF00FF25Zadimar Wefhellt|r
-    .target Zadimar Wefhellt
+    .target Zaldimar Wefhellt
     .goto Elwynn Forest,43.25,66.19
     .trainer >> Go upstairs. Train your class spells
 step << Rogue
@@ -1731,7 +1731,7 @@ step
     .turnin 39 >> Turn in Deliver Thomas' Report
 step << Mage
     >>Talk to |cFF00FF25Zadimar Wefhellt|r
-    .target Zadimar Wefhellt
+    .target Zaldimar Wefhellt
     .goto Elwynn Forest,43.25,66.19
     .trainer >> Go upstairs. Train your class spells
 step << Rogue

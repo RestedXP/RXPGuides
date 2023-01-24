@@ -4093,7 +4093,7 @@ step << BloodElf Warlock
     .goto Ghostlands,44.77,32.44
     .accept 9193 >> Accept Investigate the Amani Catacombs
     .goto Ghostlands,44.84,32.81
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target High Executor Mavren
     .target Advisor Valwyn
 step << !BloodElf/!Warlock
@@ -4118,7 +4118,7 @@ step << !BloodElf/!Warlock
     .accept 9138 >> Accept Suncrown Village
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target High Executor Mavren
     .target Advisor Valwyn
     .target Quartermaster Lymel << !BloodElf
@@ -4570,8 +4570,8 @@ step
     >>Kill |cFFFF5722Ravening Apparitions|r and |cFFFF5722Vengeful Apparitions|r
     .complete 9274,1 --Kill Ravening Apparition (x8)
     .complete 9274,2 --Kill Vengeful Apparition (x8)
-    .mob Ravening Apparitions
-    .mob Vengeful Apparitions
+    .mob Ravening Apparition
+    .mob Vengeful Apparition
 step
     .goto Ghostlands,71.99,28.39,30,0
     .goto Ghostlands,72.55,27.63,30,0
@@ -4660,8 +4660,8 @@ step
     >>Kill |cFFFF5722Ravening Apparitions|r and |cFFFF5722Vengeful Apparitions|r
     .complete 9274,1 --Kill Ravening Apparition (x8)
     .complete 9274,2 --Kill Vengeful Apparition (x8)
-    .mob Ravening Apparitions
-    .mob Vengeful Apparitions
+    .mob Ravening Apparition
+    .mob Vengeful Apparition
 step
     .goto Ghostlands,69.40,15.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Valanna|r
@@ -5025,7 +5025,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Advisor Valwyn
     .target Dame Auriferous
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
 --VV 9193 and 9199 need to hide if in qlog
 step << Rogue
@@ -5045,7 +5045,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Advisor Valwyn
     .target Dame Auriferous
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
     --VV 9193 and 9199 need to hide if in qlog
 step << Druid
@@ -5527,8 +5527,8 @@ step
     .complete 9155,1 --Kill Risen Hungerer (x10)
     .complete 9155,2 --Kill Gangled Cannibal (x10)
     .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
-    .mob Risen Hungerers
-    .mob Gangled Cannibals
+    .mob Risen Hungerer
+    .mob Gangled Cannibal
 step
     #label SanctumOTM
     .goto Ghostlands,35.18,32.85,100 >>Travel toward the Sanctum of the Moon
@@ -5844,8 +5844,8 @@ step
     .complete 9155,1 --Kill Risen Hungerer (x10)
     .complete 9155,2 --Kill Gangled Cannibal (x10)
     .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
-    .mob Risen Hungerers
-    .mob Gangled Cannibals
+    .mob Risen Hungerer
+    .mob Gangled Cannibal
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vandril|r, |cFF00FF25Rathis|r, and |cFF00FF25Mouldier|r
     .turnin 9139 >> Turn in Goldenmist Village
@@ -6041,7 +6041,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
     .isQuestComplete 9156
     .xp <17,1
@@ -6066,7 +6066,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
     .xp <17,1
 step << !Rogue
@@ -6090,7 +6090,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
     .isQuestComplete 9156
 step << !Rogue
@@ -6113,7 +6113,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
@@ -6134,7 +6134,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
     .isQuestComplete 9156
     .xp <17,1
@@ -6156,7 +6156,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
     .xp <17,1
 step << Rogue
@@ -6177,7 +6177,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
     .isQuestComplete 9156
 step << Rogue
@@ -6197,7 +6197,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .target Magister Darenis
 step
     .goto Ghostlands,46.02,31.95
@@ -7946,7 +7946,7 @@ step << Paladin/Druid/Priest
     .cast 19834 >>Buff |cFF00FF25Lilatha|r with |T135906:0|t[Blessing of Might] << Paladin
     .cast 5232 >>Buff |cFF00FF25Lilatha|r with |T136078:0|t[Mark of the Wild] << Druid
     .cast 1244 >>Buff |cFF00FF25Lilatha|r with |T135987:0|t[Power Word: Fortitude] << Priest
-    .target Ringer Lilatha
+    .target Ranger Lilatha
 step
     #label Lilatha
     >>|cFFFCDC00Escort|r |cFF00FF25Lilatha|r
@@ -8578,7 +8578,7 @@ step
     .goto Ghostlands,44.74,32.28
     .target Magister Darenis
     .target Advisor Valwyn
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .isQuestAvailable 9151 << !Paladin/!wotlk
 step
     #label Truth
@@ -8589,7 +8589,7 @@ step
     .turnin 9199 >> Turn in Troll Juju
     .goto Ghostlands,44.74,32.28
     .target Advisor Valwyn
-    .target Deathstalker Maltendis
+    .target Deathstalker Maltendiss
     .isQuestAvailable 9151 << !Paladin/!wotlk
 step << Paladin wotlk
     #completewith next
@@ -8985,7 +8985,7 @@ step
     .turnin 9199 >> Turn in Troll Juju
     .goto Ghostlands,44.74,32.28
     .target Advisor Valwyn
-    .target Deathstalker Maltendi
+    .target Deathstalker Maltendis
 step
     .goto Ghostlands,46.02,33.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r

@@ -1910,7 +1910,7 @@ step
     .goto Duskwood,36.8,83.8
     .isOnQuest 181
     >>Kill Zzarc' Vul and loot him for his monocle
-	.unitscan Zzarc'Vul
+	.unitscan Zzarc' Vul
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
     .goto Duskwood,31.6,45.4
@@ -2758,7 +2758,7 @@ step
 step
     .goto Duskwood,36.8,83.8
     >>Kill Zzarc' Vul and loot him for his monocle
-	.unitscan Zzarc'Vul
+	.unitscan Zzarc' Vul
     .isOnQuest 181
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
