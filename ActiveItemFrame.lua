@@ -185,7 +185,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
         f.title.text:SetPoint("CENTER", f.title, 2, 1)
         f.title.text:SetJustifyH("CENTER")
         f.title.text:SetJustifyV("MIDDLE")
-        f.title.text:SetTextColor(1, 1, 1)
+        f.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
         f.title.text:SetFont(addon.font, 9, "")
         f.title.text:SetText("Active Items")
         f.title:EnableMouse(true)
@@ -195,8 +195,6 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     f:SetHeight(40);
 end
-
-addon:CreateActiveItemFrame()
 
 local fOnEnter = function(self)
     -- print(self.itemId)

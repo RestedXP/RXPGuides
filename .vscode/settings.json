@@ -13,6 +13,7 @@
     "Lua.diagnostics.disable": [
         "undefined-field",
         "redundant-parameter",
-        "missing-parameter"
+        "missing-parameter",
+        "param-type-mismatch"
     ],
 }

@@ -6,7 +6,6 @@ local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 addon.activeWaypoints = {}
 addon.linePoints = {}
--- local colors = addon.colors
 
 addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
@@ -21,11 +20,8 @@ af:SetClampedToScreen(true)
 af:SetSize(32, 32)
 af.texture = af:CreateTexture()
 af.texture:SetAllPoints()
-af.texture:SetTexture(addon.GetTexture("rxp_navigation_arrow-1"))
 -- af.texture:SetScale(0.5)
 af.text = af:CreateFontString(nil, "OVERLAY")
-af.text:SetTextColor(1, 1, 1, 1)
-af.text:SetFont(addon.font, 9,"OUTLINE")
 af.text:SetJustifyH("CENTER")
 af.text:SetJustifyV("MIDDLE")
 af.text:SetPoint("TOP", af, "BOTTOM", 0, -5)
@@ -41,6 +37,14 @@ af:SetScript("OnMouseDown", function(self, button)
     if not addon.settings.db.profile.lockFrames and af:GetAlpha() ~= 0 then af:StartMoving() end
 end)
 af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
+
+function addon.SetupArrow()
+    af.text:SetFont(addon.font, 9,"OUTLINE")
+    af.texture:SetTexture(addon.GetTexture("rxp_navigation_arrow-1"))
+    af.text:SetTextColor(unpack(addon.activeTheme.textColor))
+
+    addon.arrowFrame:SetScript("OnUpdate", addon.UpdateArrow)
+end
 
 function addon.UpdateArrow(self)
 
@@ -89,8 +93,6 @@ function addon.UpdateArrow(self)
 
 end
 
-addon.arrowFrame:SetScript("OnUpdate", addon.UpdateArrow)
-
 -- The Frame Pool that will manage pins on the world and mini map
 -- You must use a frame pool to aquire and release pin frames,
 -- otherwise the pins will not be properly removed from the map.
@@ -115,8 +117,7 @@ MapPinPool.creationFunc = function(framePool)
 
     -- Styling
     f:SetBackdrop({
-        bgFile = "Interface\\Addons\\" .. addonName ..
-            "\\Textures\\white_circle",
+        bgFile = addon.GetTexture("white_circle-64"),
         insets = {left = 0, right = 0, top = 0, bottom = 0}
     })
     f:SetWidth(0)
@@ -129,8 +130,7 @@ MapPinPool.creationFunc = function(framePool)
     f.inner = CreateFrame("Button", nil, f,
                           BackdropTemplateMixin and "BackdropTemplate")
     f.inner:SetBackdrop({
-        bgFile = "Interface\\Addons\\" .. addonName ..
-            "\\Textures\\map_active_step_target_icon",
+        bgFile = addon.GetTexture("map_active_step_target_icon"),
         insets = {left = 0, right = 0, top = 0, bottom = 0}
     })
     f.inner:SetPoint("CENTER", 0, 0)

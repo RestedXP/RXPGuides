@@ -19,37 +19,6 @@ function addon.SetResizeBounds(frame, width, height)
 end
 
 addon.width, addon.height = 235, 125 -- Default width/height
-addon.font = _G.GameFontNormal:GetFont()
-
-local defaultColors = {}
-defaultColors.background = {12 / 255, 12 / 255, 27 / 255, 1}
-defaultColors.bottomFrameBG = {18 / 255, 18 / 255, 40 / 255, 1}
-defaultColors.bottomFrameHighlight = {54 / 255, 62 / 255, 109 / 255, 1}
-defaultColors.mapPins = {206 / 210, 123 / 210, 1, 1}
-defaultColors.tooltip = "|cFFCE7BFF" -- AARRGGBB
-
-local hardcoreColors = {}
-hardcoreColors.background = {19 / 255, 0 / 255, 0 / 255, 1}
-hardcoreColors.bottomFrameBG = {31 / 255, 0 / 255, 0 / 255, 1}
-hardcoreColors.bottomFrameHighlight = {81 / 255, 0 / 255, 0 / 255, 1}
-hardcoreColors.mapPins = {0.9, 0.1, 0.1, 1}
-hardcoreColors.tooltip = "|c0000C1FF" -- AARRGGBB
-
-local goldAssistantColors = {}
-goldAssistantColors.background = {32 / 255, 18 / 255, 0 / 255, 1}
-goldAssistantColors.bottomFrameBG = {48 / 255, 27 / 255, 0 / 255, 1}
-goldAssistantColors.bottomFrameHighlight = {125 / 255, 71 / 255, 0 / 255, 1}
-goldAssistantColors.mapPins = {0.95, 0.15, 0.15, 1}
-goldAssistantColors.tooltip = "|c0000C1FF" -- AARRGGBB
-
-addon.colors = defaultColors
-
-addon.defaultTextures = "Interface/AddOns/" .. addonName .. "/Textures/"
-addon.hardcoreTextures = "Interface/AddOns/" .. addonName ..
-                             "/Textures/Hardcore/"
-addon.goldAssistantTextures = "Interface/AddOns/" .. addonName ..
-                                  "/Textures/GoldAssistant/"
-addon.texturePath = addon.defaultTextures
 
 local RXPFrame = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 addon.RXPFrame = RXPFrame
@@ -79,25 +48,12 @@ RXPFrame.ScrollFrame = ScrollFrame
 RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
 
-function addon.GetTexture(name) return addon.texturePath .. name end
+function addon.RenderFrame(themeUpdate)
+    addon:LoadActiveTheme()
 
-function addon.RenderFrame()
-    local path
-    local colors
-    if addon.settings.db.profile.hardcore then
-        path = addon.hardcoreTextures
-        colors = hardcoreColors
-    elseif RXPCData.GA then
-        path = addon.goldAssistantTextures
-        colors = goldAssistantColors
-    else
-        path = addon.defaultTextures
-        colors = defaultColors
-    end
-    if path == addon.texturePath then return end
-    RXPFrame.GenerateMenuTable()
-    addon.colors = colors
-    addon.texturePath = path
+    -- TODO better handle themes
+    addon.colors = addon.activeTheme
+
     RXPFrame.backdropEdge.edgeFile = addon.GetTexture("rxp-borders")
     RXPFrame.guideNameBackdrop.edgeFile = addon.GetTexture("rxp-borders")
     BottomFrame:ClearBackdrop()
@@ -113,6 +69,7 @@ function addon.RenderFrame()
 
     GuideName:ClearBackdrop()
     GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
+    GuideName:SetBackdropColor(unpack(addon.colors.background))
     Footer:ClearBackdrop()
     Footer:SetBackdrop(RXPFrame.backdropEdge)
     Footer:SetBackdropColor(unpack(addon.colors.background))
@@ -126,7 +83,71 @@ function addon.RenderFrame()
     addon.arrowFrame.texture:SetTexture(addon.GetTexture(
                                             "rxp_navigation_arrow-1"))
     addon.UpdateScrollBar()
-    if addon.currentGuide then addon.ReloadGuide() end
+
+    if not themeUpdate then
+        RXPFrame.GenerateMenuTable()
+        if addon.currentGuide then addon.ReloadGuide() end
+    end
+end
+
+function addon.SetupGuideWindow()
+    -- These were in-line, but now rely on settings
+
+    RXPFrame.backdropEdge = {
+        bgFile = "Interface/BUTTONS/WHITE8X8",
+        -- edgeFile = "Interface/BUTTONS/WHITE8X8",
+        -- edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
+        edgeFile = addon.GetTexture("rxp-borders"),
+        tile = true,
+        edgeSize = 8,
+        tileSize = 8,
+        insets = {left = 4, right = 2, top = 2, bottom = 4}
+    }
+
+    RXPFrame.guideNameBackdrop = {
+        bgFile = "Interface/BUTTONS/WHITE8X8",
+        edgeFile = addon.GetTexture("rxp-borders"),
+        tile = true,
+        edgeSize = 8,
+        tileSize = 8,
+        insets = {left = 4, right = 2, top = 2, bottom = 4}
+    }
+
+    RXPFrame.bottomBackdrop = {
+        bgFile = "Interface\\Buttons\\WHITE8x8",
+        edgeFile = "Interface\\Buttons\\WHITE8x8",
+        edgeSize = 1,
+        insets = {left = 0, right = 0, top = -1, bottom = -1}
+    }
+
+    BottomFrame:SetBackdrop(RXPFrame.backdropEdge)
+    BottomFrame:SetBackdropColor(unpack(addon.colors.background))
+
+    GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
+    GuideName:SetBackdropColor(unpack(addon.colors.background))
+
+    GuideName.text:SetFont(addon.font, 11, "")
+    GuideName.text:SetText(L(
+                               "Welcome to RestedXP Guides\nRight click to pick a guide"))
+    GuideName.text:SetTextColor(unpack(addon.activeTheme.textColor))
+
+    Footer.text:SetFont(addon.font, 9, "")
+    Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
+    Footer.text:SetTextColor(unpack(addon.activeTheme.textColor))
+
+    GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
+
+    Footer:SetBackdrop(RXPFrame.guideNameBackdrop)
+    Footer:SetBackdropColor(unpack(addon.colors.background))
+    Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
+
+    GuideName.icon:SetTexture(addon.GetTexture("rxp_logo-64"))
+
+    GuideName.classIcon:SetTexture(addon.GetTexture(class))
+    Footer.cog:SetNormalTexture(addon.GetTexture("rxp_cog-32"))
+
+    addon.UpdateScrollBar()
+
 end
 
 RXPFrame:SetScript("OnShow", addon.PLAYER_ENTERING_WORLD)
@@ -237,17 +258,6 @@ RXPFrame:SetWidth(addon.width)
 RXPFrame:SetHeight(addon.height)
 RXPFrame:SetPoint("LEFT", 0, 35)
 RXPFrame:SetFrameStrata("BACKGROUND")
-
-RXPFrame.backdropEdge = {
-    bgFile = "Interface/BUTTONS/WHITE8X8",
-    -- edgeFile = "Interface/BUTTONS/WHITE8X8",
-    -- edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
-    edgeFile = addon.GetTexture("rxp-borders"),
-    tile = true,
-    edgeSize = 8,
-    tileSize = 8,
-    insets = {left = 4, right = 2, top = 2, bottom = 4}
-}
 
 local backdrop = {
     bgFile = "Interface/BUTTONS/WHITE8X8",
@@ -540,7 +550,8 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number.text:SetPoint("CENTER", stepframe.number, 2, 1)
             stepframe.number.text:SetJustifyH("CENTER")
             stepframe.number.text:SetJustifyV("MIDDLE")
-            stepframe.number.text:SetTextColor(1, 1, 1)
+            stepframe.number.text:SetTextColor(
+                unpack(addon.activeTheme.textColor))
             stepframe.number.text:SetFont(addon.font, addon.settings.db.profile
                                               .guideFontSize, "")
         end
@@ -613,7 +624,8 @@ function addon.SetStep(n, n2, loopback)
 
                 elementFrame.text:SetJustifyH("LEFT")
                 elementFrame.text:SetJustifyV("MIDDLE")
-                elementFrame.text:SetTextColor(1, 1, 1)
+                elementFrame.text:SetTextColor(
+                    unpack(addon.activeTheme.textColor))
                 elementFrame.text:SetFont(addon.font, addon.settings.db.profile
                                               .guideFontSize + 2, "") -- 11
 
@@ -901,22 +913,8 @@ function CurrentStepFrame.UpdateText()
     CurrentStepFrame:SetHeight(totalHeight - 5)
 end
 
-BottomFrame:SetBackdrop(RXPFrame.backdropEdge)
-BottomFrame:SetBackdropColor(unpack(addon.colors.background))
-
 BottomFrame:SetPoint("TOPLEFT", RXPFrame, 3, -3)
 BottomFrame:SetPoint("BOTTOMRIGHT", RXPFrame, -3, 14)
-
-RXPFrame.guideNameBackdrop = {
-    -- bgFile = "Interface/BUTTONS/WHITE8X8",
-    edgeFile = addon.GetTexture("rxp-borders"),
-    tile = true,
-    edgeSize = 8,
-    tileSize = 8,
-    insets = {left = 4, right = 2, top = 2, bottom = 4}
-}
-
-GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
 
 -- GuideName:SetBackdropColor(unpack(addon.colors.background))
 GuideName:SetPoint("BOTTOMLEFT", BottomFrame, "TOPLEFT", 0, -9)
@@ -929,22 +927,16 @@ GuideName.text:SetPoint("LEFT", GuideName, 29, 0)
 GuideName.text:SetPoint("RIGHT", GuideName, 0, 0)
 GuideName.text:SetJustifyH("CENTER")
 GuideName.text:SetJustifyV("MIDDLE")
-GuideName.text:SetTextColor(1, 1, 1)
-GuideName.text:SetFont(addon.font, 11, "")
-GuideName.text:SetText(L(
-                           "Welcome to RestedXP Guides\nRight click to pick a guide"))
+
 GuideName:SetFrameLevel(6)
 
 GuideName.bg = GuideName:CreateTexture("$parentBG", "BACKGROUND")
-GuideName.bg:SetTexture("Interface/AddOns/" .. addonName ..
-                            "/Textures/rxp-banner")
+
 GuideName.bg:SetPoint("TOPLEFT", 4, -2)
 GuideName.bg:SetPoint("BOTTOMRIGHT", -2, 4)
 
 -- footer
 -- Footer:SetBackdrop(RXPFrame.backdropEdge)
-Footer:SetBackdrop(RXPFrame.guideNameBackdrop)
-Footer:SetBackdropColor(unpack(addon.colors.background))
 Footer:SetPoint("BOTTOMLEFT", RXPFrame, "BOTTOMLEFT", 3, 0)
 Footer:SetPoint("BOTTOMRIGHT", RXPFrame, "BOTTOMRIGHT", -3, 0)
 Footer:SetHeight(20)
@@ -955,12 +947,10 @@ Footer.text:SetPoint("LEFT", Footer, 40, 1)
 Footer.text:SetPoint("RIGHT", Footer, -16, 1)
 Footer.text:SetJustifyH("LEFT")
 Footer.text:SetJustifyV("MIDDLE")
-Footer.text:SetTextColor(1, 1, 1)
-Footer.text:SetFont(addon.font, 9, "")
-Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
+
 Footer:SetFrameLevel(6)
 Footer.bg = Footer:CreateTexture("$parentBG", "BACKGROUND")
-Footer.bg:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp-banner")
+
 Footer.bg:SetPoint("TOPLEFT", 4, -2)
 Footer.bg:SetPoint("BOTTOMRIGHT", -2, 4)
 
@@ -980,14 +970,12 @@ Footer.icon:SetScript("OnMouseUp", RXPFrame.OnMouseUp)
 -- addon.StartTimer(duration,label)
 
 GuideName.icon = GuideName:CreateTexture("RXPIcon", "ARTWORK")
-GuideName.icon:SetTexture("Interface/AddOns/" .. addonName ..
-                              "/Textures/rxp_logo-64")
+
 GuideName.icon:SetPoint("CENTER", GuideName, "LEFT", 16, 0)
 GuideName.icon:SetSize(42, 42)
 
 GuideName.classIcon = GuideName:CreateTexture("RXPClassIcon", "OVERLAY")
-GuideName.classIcon:SetTexture(
-    "Interface/AddOns/" .. addonName .. "/Textures/" .. class)
+
 GuideName.classIcon:SetPoint("CENTER", GuideName.icon, "BOTTOMRIGHT", -4, 10)
 GuideName.classIcon:SetSize(24, 24)
 
@@ -996,8 +984,6 @@ Footer.cog:SetFrameLevel(GuideName:GetFrameLevel() + 1)
 Footer.cog:SetWidth(18)
 Footer.cog:SetHeight(18)
 Footer.cog:SetPoint("LEFT", Footer, "LEFT", 1, 1)
-Footer.cog:SetNormalTexture("Interface/AddOns/" .. addonName ..
-                                "/Textures/rxp_cog-32")
 -- Footer.cog:SetPushedTexture("Interface/Buttons/UI-Panel-MinimizeButton-Down")
 Footer.cog:SetHighlightTexture(
     "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
@@ -1056,8 +1042,6 @@ function addon.UpdateScrollBar()
     ScrollFrame.ScrollBar:SetThumbTexture(prefix .. "Knob")
 end
 
-addon.UpdateScrollBar()
-
 hooksecurefunc(ScrollFrame.ScrollBar, "SetValue", function(self, value)
     local h = math.floor(ScrollChild:GetHeight() + 10)
     local scroll = h - BottomFrame:GetHeight()
@@ -1074,13 +1058,6 @@ ScrollChild.framePool = {}
 ScrollChild:SetWidth(RXPFrame:GetWidth() - 35)
 
 ScrollFrame:SetScrollChild(ScrollChild)
-
-RXPFrame.bottomBackdrop = {
-    bgFile = "Interface\\Buttons\\WHITE8x8",
-    edgeFile = "Interface\\Buttons\\WHITE8x8",
-    edgeSize = 1,
-    insets = {left = 0, right = 0, top = -1, bottom = -1}
-}
 
 function addon.GetGuideName(guide)
     if not guide then guide = addon.currentGuide end
@@ -1286,7 +1263,7 @@ function addon:LoadGuide(guide, OnLoad)
             frame.number.text:SetPoint("CENTER", frame.number, 0, 0)
             frame.number.text:SetJustifyH("CENTER")
             frame.number.text:SetJustifyV("MIDDLE")
-            frame.number.text:SetTextColor(1, 1, 1, 1)
+            frame.number.text:SetTextColor(unpack(addon.activeTheme.textColor))
             frame.number.text:SetFont(addon.font, addon.settings.db.profile
                                           .guideFontSize - 1, "") -- 8
             local prefix = ""
@@ -1301,7 +1278,7 @@ function addon:LoadGuide(guide, OnLoad)
         frame.text:SetPoint("BOTTOMRIGHT", frame.number, "BOTTOMLEFT", 0, 0)
         frame.text:SetJustifyH("LEFT")
         frame.text:SetJustifyV("TOP")
-        frame.text:SetTextColor(1, 1, 1, 1)
+        frame.text:SetTextColor(unpack(addon.activeTheme.textColor))
         frame.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize,
                            "")
 
@@ -1693,9 +1670,9 @@ function RXPFrame.GenerateMenuTable(menu)
         text = L("Import guide"),
         notCheckable = 1,
         func = function()
-            if Settings and Settings.GetCategory then
-                Settings.GetCategory(addon.RXPOptions.name).expanded = true;
-                Settings.OpenToCategory(addon.RXPOptions.name);
+            if _G.Settings and _G.Settings.GetCategory then
+                _G.Settings.GetCategory(addon.RXPOptions.name).expanded = true;
+                _G.Settings.OpenToCategory(addon.RXPOptions.name);
                 -- Settings.OpenToCategory(addon.settings.gui.import); -- causes UI taint on 10.0
             else
                 _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
