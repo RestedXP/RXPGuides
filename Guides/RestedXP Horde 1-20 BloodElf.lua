@@ -168,7 +168,7 @@ step << Warlock tbc
     .goto Eversong Woods,30.90,27.66,30,0
     .goto Eversong Woods,30.55,26.98,30,0
     .goto Eversong Woods,31.10,26.83
-    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |cFF00BCD4Essence|r and |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r]. 
+    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |cFF00BCD4Essence|r and |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r].
     >>|cFFFCDC00Use the |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r] to start the quest|r
     .complete 8344,2 --Tainted Wraith Essence (1)
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
@@ -472,7 +472,7 @@ step
     .goto Eversong Woods,32.02,26.09,20 >>Run up the ramp
 step << wotlk/!Warlock tbc
     #completewith Academy
-    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r]. 
+    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r].
     >>|cFFFCDC00Use the |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r] to start the quest|r
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
@@ -500,7 +500,7 @@ step
     .mob Felendren the Banished
 step << wotlk/!Warlock tbc
     .goto Eversong Woods,30.84,27.13
-    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r]. 
+    >>Kill a |cFFFF5722Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r].
     >>|cFFFCDC00Use the |T132884:0|t[|cFF00BCD4Tainted Arcane Sliver|r] to start the quest|r
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
     .accept 8338 >> Accept Tainted Arcane Sliver
@@ -1757,7 +1757,7 @@ step << skip
     #completewith next
     .goto Eversong Woods,37.73,86.30
     .cast 33980 >> Use the |T133280:0|t[|cFF00BCD4Pendant|r] to summon |cFFFF5722Whitebark's Spirit|r
-    .use 28209 
+    .use 28209
     .isOnQuest 10166
     --VV BloodElf Hunter
 step << skip
@@ -2245,14 +2245,14 @@ step << Warrior tbc/Rogue
     .use 23396
     .itemcount 23396,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8 
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Paladin
     #xprate <1.5
     +Equip the |T135274:0|t[Slightly Used Ranger's Blade]
     .use 23396
     .itemcount 23396,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8  
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Undead Warrior tbc/Rogue
     .goto Eversong Woods,48.34,45.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Larenis|r
@@ -2657,7 +2657,7 @@ step << Undead/BloodElf
 step << Undead/BloodElf
     .goto Eversong Woods,60.41,62.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zalene|r
-    >>|cFF0E8312Buy the|r |T133974:0|t[Springpaw Appetizers] |cFF0E8312from her|r 
+    >>|cFF0E8312Buy the|r |T133974:0|t[Springpaw Appetizers] |cFF0E8312from her|r
     .collect 22776,1,9067,1 --Collect Springpaw Appetizers
     .target Zalene Firstlight
 step
@@ -2864,7 +2864,7 @@ step
     .mob Amani Berserker
     .mob Amani Axe Thrower
 step << skip
-    .use 30105 
+    .use 30105
     .goto Ghostlands,45.6,21.1
     .complete 9485,1 --Tame a Mistbat
 --VV BloodElf Hunter
@@ -3001,7 +3001,7 @@ step << Rogue
     .use 22963
     .itemcount 22963,1
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.3  
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.3
 step
     #completewith next
     .goto Eversong Woods,59.53,62.16,12,0
@@ -3084,7 +3084,7 @@ step
     >>|cFFFCDC00Do NOT click the Orb of Translocation yet|r
     .complete 8889,3 --Third Power Source Deactivated (x1)
 step
-    .goto Eversong Woods,69.61,53.47 
+    .goto Eversong Woods,69.61,53.47
     .cast 26572 >>Click the Orb of Translocation to teleport back down
     .isOnQuest 8889
 step << !BloodElf/!Warlock
@@ -3165,7 +3165,7 @@ step << Druid
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Harene|r
     .train 8936 >> Train your class spells
-    .target Harene Plainswalker
+    .target Harene Plainwalker
 	.xp <12,1
 	.xp >14,1
 step << Druid
@@ -3174,7 +3174,7 @@ step << Druid
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Harene|r
     .train 782 >> Train your class spells
-    .target Harene Plainswalker
+    .target Harene Plainwalker
 	.xp <14,1
 step << !Orc !Troll !Tauren !Warlock !Rogue
     #completewith next
@@ -3821,7 +3821,7 @@ step
 step
     .goto Eversong Woods,35.10,84.05,10,0
     .goto Eversong Woods,34.91,84.34
-    >>Kill |cFFFF5722Old Whitebark|r. Loot him for |T133280:0|t[|cFF00BCD4Old Whitebark's Pendant|r] 
+    >>Kill |cFFFF5722Old Whitebark|r. Loot him for |T133280:0|t[|cFF00BCD4Old Whitebark's Pendant|r]
     >>|cFFFCDC00Use |T133280:0|t[|cFF00BCD4Old Whitebark's Pendant|r] to start the quest|r
     >>|cFFFF5722Old Whitebark|r |cFFFCDC00has a 7 minute 30 second respawn time|r
     .collect 23228,1,8474,1 --Collect Old Whitebark's Pendant (x1)
@@ -3872,7 +3872,7 @@ step
     #completewith next
     .goto Eversong Woods,37.79,86.25
     .cast 33980 >> Use |T133280:0|t[|cFF00BCD4Old Whitebark's Pendant|r] to summon |cFFFF5722Whitebark's Spirit|r
-    .use 28209 
+    .use 28209
     .isOnQuest 10166
     --VV !BloodElf/!Hunter
 step
@@ -3961,11 +3961,11 @@ step << BloodElf Warlock
     .accept 9619 >>Accept The Rune of Summoning
 step << BloodElf Warlock
     #completewith next
-    .goto Ghostlands,27.51,15.75,10,0 
-    .goto Ghostlands,27.35,15.01,8,0 
-    .goto Ghostlands,26.17,15.61,8,0 
-    .goto Ghostlands,26.09,14.56,8,0 
-    .goto Ghostlands,26.44,14.24,8,0 
+    .goto Ghostlands,27.51,15.75,10,0
+    .goto Ghostlands,27.35,15.01,8,0
+    .goto Ghostlands,26.17,15.61,8,0
+    .goto Ghostlands,26.09,14.56,8,0
+    .goto Ghostlands,26.44,14.24,8,0
     .goto Ghostlands,26.74,14.38,8 >>Go upstairs
 step << BloodElf Warlock
     #completewith next
@@ -3980,15 +3980,15 @@ step << BloodElf Warlock
     .use 23732
 step
     .goto Ghostlands,50.01,13.00,40,0
-    .goto Ghostlands,49.45,13.55,40,0 
+    .goto Ghostlands,49.45,13.55,40,0
     .goto Ghostlands,49.12,15.08,40,0
-    .goto Ghostlands,48.42,15.77,40,0 
+    .goto Ghostlands,48.42,15.77,40,0
     .goto Ghostlands,47.81,12.66,40,0
-    .goto Ghostlands,46.75,13.42,40,0 
+    .goto Ghostlands,46.75,13.42,40,0
     .goto Ghostlands,45.74,14.35,40,0
-    .goto Ghostlands,44.94,16.92,40,0 
+    .goto Ghostlands,44.94,16.92,40,0
     .goto Ghostlands,44.84,18.84,40,0
-    .goto Ghostlands,45.36,19.92,40,0 
+    .goto Ghostlands,45.36,19.92,40,0
     .goto Ghostlands,47.43,20.19,40,0
     .goto Ghostlands,48.56,19.02,40,0
     .goto Ghostlands,49.52,17.34,40,0
@@ -3996,9 +3996,9 @@ step
     .goto Ghostlands,52.00,18.05,40,0
     .goto Ghostlands,55.22,14.72,40,0
     .goto Ghostlands,50.01,13.00,40,0
-    .goto Ghostlands,49.45,13.55,40,0 
+    .goto Ghostlands,49.45,13.55,40,0
     .goto Ghostlands,49.12,15.08,40,0
-    .goto Ghostlands,48.42,15.77,40,0 
+    .goto Ghostlands,48.42,15.77,40,0
     .goto Ghostlands,47.81,12.66
     >>Kill |cFFFF5722Starving Ghostclaws|r and |cFFFF5722Mistbats|r. Loot them for their |cFF00BCD4Blood Samples|r
     .complete 9147,1 --Collect Plagued Blood Sample (x4)
@@ -4738,7 +4738,7 @@ step
     .turnin 9138 >>Turn in Suncrown Village
     .accept 9139 >>Accept Goldenmist Village
     .goto Ghostlands,46.55,28.38,10,0 << Rogue
-    .goto Ghostlands,46.08,28.33 << Rogue 
+    .goto Ghostlands,46.08,28.33 << Rogue
     .goto Ghostlands,46.08,28.33,10,0 << !Rogue
     .goto Ghostlands,46.55,28.38 << !Rogue
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran << !BloodElf/!Warlock
@@ -4751,7 +4751,7 @@ step
     .turnin 9138 >>Turn in Suncrown Village
     .accept 9139 >>Accept Goldenmist Village
     .goto Ghostlands,46.55,28.38,10,0 << Rogue
-    .goto Ghostlands,46.08,28.33 << Rogue 
+    .goto Ghostlands,46.08,28.33 << Rogue
     .goto Ghostlands,46.08,28.33,10,0 << !Rogue
     .goto Ghostlands,46.55,28.38 << !Rogue
     .accept 9156 >> Accept Wanted: Knucklerot and Luzran << !BloodElf/!Warlock
@@ -5258,7 +5258,7 @@ step << Paladin wotlk
     >>Use the |T134867:0|t[Shimmering Vessel] on a |cFF00FF25Magister|r
     .complete 9684,1 --Collect Filled Shimmering Vessel
     .target Blood Elf Magister
-    .use 24157 
+    .use 24157
 step << Paladin tbc
     #xprate >1.4999
     .goto Silvermoon City,92.61,36.80
@@ -5608,7 +5608,7 @@ step << BloodElf Rogue
     .goto Ghostlands,35.41,11.93,30,0
     .goto Ghostlands,36.33,13.66,30,0
     .goto Ghostlands,35.98,14.48
-    >>|T132320:0|t[Stealth] |cFFFCDC00and then|r |T133644:0|t[Pick Pocket] |cFFFCDC00the|r |cFFFF5722Sentinel Leader|r |cFFFCDC00for her|r |cFF00BCD4Lacy Handkerchief|r 
+    >>|T132320:0|t[Stealth] |cFFFCDC00and then|r |T133644:0|t[Pick Pocket] |cFFFCDC00the|r |cFFFF5722Sentinel Leader|r |cFFFCDC00for her|r |cFF00BCD4Lacy Handkerchief|r
     >>|cFFFCDC00If you aggro her, run away and reset her|r
     .complete 9460,1 --Lacy Handkerchief (x1)
     .mob Sentinel Leader
@@ -6538,7 +6538,7 @@ step << Paladin wotlk
     >>Use the |T134867:0|t[Shimmering Vessel] on a |cFF00FF25Magister|r
     .complete 9684,1 --Collect Filled Shimmering Vessel
     .target Blood Elf Magister
-    .use 24157 
+    .use 24157
 step << Paladin tbc
     #xprate <1.5
     .goto Silvermoon City,92.61,36.80
@@ -6605,7 +6605,7 @@ step << Paladin
     >>Use the |T134723:0|t[Filled Shimmering Vessel] on |cFF00FF25Stillblade|r
     .complete 9685,1 --Resurrect Sangrias Stillblade (1)
     .target Blood Knight Stillblade
-    .use 24184 
+    .use 24184
 step << !Shaman !Warrior !Rogue
     #completewith Clearing
     .hs >> Hearth to Tranquillien
@@ -6764,7 +6764,7 @@ step
     >>Kill |cFFFF5722Vampiric Mistbats|r
     >>|cFFFCDC00Be careful of their|r |T136130:0|t[Draining Touch] |cFFFCDC00Lifesteal spell|r
     .complete 9159,1 --Kill Vampiric Mistbat (x10)
-    .mob Vampiric Mistbat 
+    .mob Vampiric Mistbat
 step
     #label Clearing
     .goto Ghostlands,46.40,56.42
@@ -6926,7 +6926,7 @@ step
     >>Loot |cFFFF5722Fallen Rangers|r and |cFFFF5722Deatholme Acolytes|r for |T133303:0|t[|cFF00BCD4The Lady's Necklace|r]
     >>|cFFFCDC00Use |T133303:0|t[|cFF00BCD4The Lady's Necklace|r] to start the quest|r
     .collect 22597,1,9175,1 --Collect The Lady's Necklace (x1)
-    .accept 9175 >> Accept The Lady's Necklace  
+    .accept 9175 >> Accept The Lady's Necklace
     .use 22597
 step
     .goto Ghostlands,17.21,58.09,40,0
@@ -6981,7 +6981,7 @@ step
     >>Kill |cFFFF5722Fallen Rangers|r and |cFFFF5722Deatholme Acolytes|r. Loot them for |T133303:0|t[|cFF00BCD4The Lady's Necklace|r]
     >>|cFFFCDC00Use |T133303:0|t[|cFF00BCD4The Lady's Necklace|r] to start the quest|r
     .collect 22597,1,9175,1 --Collect The Lady's Necklace (x1)
-    .accept 9175 >> Accept The Lady's Necklace  
+    .accept 9175 >> Accept The Lady's Necklace
     .use 22597
 step
     #xprate <1.5
@@ -8445,8 +8445,8 @@ step
     .target Apothecary Venustus
 step
     #completewith next
-    .goto Ghostlands,65.22,38.14,15,0 
-    .goto Ghostlands,63.85,38.10,15,0 
+    .goto Ghostlands,65.22,38.14,15,0
+    .goto Ghostlands,63.85,38.10,15,0
     .goto Ghostlands,60.29,35.63,40 >>Travel toward |cFF00FF25Sylastor|r
 step
     .goto Ghostlands,60.29,35.63
@@ -8570,7 +8570,7 @@ step << Rogue
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Darenis|r, |cFF00FF25Valwyn|r, and |cFF00FF25Maltendis|r
     .accept 9151 >> Accept The Sanctum of the Sun
-    .goto Ghostlands,46.02,31.95 
+    .goto Ghostlands,46.02,31.95
     .turnin 9193 >> Turn in Investigate the Amani Catacombs
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.84,32.81
@@ -9234,8 +9234,8 @@ step
     .mob Mirdoran the Fallen
 step
     #completewith Varnis
-    .goto Ghostlands,37.51,84.18,30,0 
-    .goto Ghostlands,40.09,83.34,10,0 
+    .goto Ghostlands,37.51,84.18,30,0
+    .goto Ghostlands,40.09,83.34,10,0
     .goto Ghostlands,40.98,83.22,15 >>Travel toward |cFF00FF25Varnis|r
 step
     #completewith next
@@ -9259,8 +9259,8 @@ step
     .mob Masophet the Black
 step
     #completewith Vedoran
-    .goto Ghostlands,32.84,88.21,10,0 
-    .goto Ghostlands,32.80,88.53,10,0 
+    .goto Ghostlands,32.84,88.21,10,0
+    .goto Ghostlands,32.80,88.53,10,0
     .goto Ghostlands,32.79,89.93,15 >>Travel toward |cFF00FF25Vedoran|r
  step
     #completewith next
@@ -9291,18 +9291,18 @@ step
     .complete 9170,4 --Kill Masophet the Black (x1)
     .mob Masophet the Black
 step
-    .goto Ghostlands,32.84,88.21,10,0 
-    .goto Ghostlands,32.80,88.53,10,0 
+    .goto Ghostlands,32.84,88.21,10,0
+    .goto Ghostlands,32.80,88.53,10,0
     .goto Ghostlands,32.67,90.30,8,0
     .goto Ghostlands,40.09,83.34,10,0
     .goto Ghostlands,41.24,83.04,8,0
-    .goto Ghostlands,32.84,88.21,10,0 
-    .goto Ghostlands,32.80,88.53,10,0 
+    .goto Ghostlands,32.84,88.21,10,0
+    .goto Ghostlands,32.80,88.53,10,0
     .goto Ghostlands,32.67,90.30,8,0
     .goto Ghostlands,40.09,83.34,10,0
     .goto Ghostlands,41.24,83.04,8,0
-    .goto Ghostlands,32.84,88.21,10,0 
-    .goto Ghostlands,32.80,88.53,10,0 
+    .goto Ghostlands,32.84,88.21,10,0
+    .goto Ghostlands,32.80,88.53,10,0
     .goto Ghostlands,32.67,90.30,8,0
     .goto Ghostlands,40.09,83.34,10,0
     .goto Ghostlands,41.24,83.04
@@ -9746,7 +9746,7 @@ step << Druid
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Harene|r
     .train 8938 >> Train your class spells
-    .target Harene Plainswalker
+    .target Harene Plainwalker
 	.xp <18,1
 	.xp >20,1
 step << Druid
@@ -9754,7 +9754,7 @@ step << Druid
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Harene|r
     .train 6756 >> Train your class spells
-    .target Harene Plainswalker
+    .target Harene Plainwalker
 	.xp <20,1
 	.xp >22,1
 step << Druid
@@ -9762,7 +9762,7 @@ step << Druid
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Harene|r
     .train 8926 >> Train your class spells
-    .target Harene Plainswalker
+    .target Harene Plainwalker
 	.xp <22,1
 step << skip
     .goto Silvermoon City,54.0,71.0

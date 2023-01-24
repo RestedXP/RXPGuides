@@ -76,7 +76,7 @@ step << Warrior
     .vendor >>vendor trash
 step
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
-    .target Marshal McBridge
+    .target Marshal McBride
     .goto Elwynn Forest,48.9,41.6
     .turnin 783 >> Turn in A Threat Within
     .accept 7 >> Accept Kobold Camp Cleanup
@@ -102,7 +102,7 @@ step << Priest/Mage
     .xp 2 >> Grind to 2
 step
     >> Talk to |cFF00FF25Eagan Peltskinner|r outside the Abbey
-    .target Eagen Peltskinner
+    .target Eagan Peltskinner
     .goto Elwynn Forest,48.9,40.2
     .turnin 5261 >> Turn in Eagan Peltskinner
     .accept 33 >> Accept Wolves Across The Border
@@ -137,7 +137,7 @@ step << !Priest !Mage !Warlock/wotlk
 step
     .goto Elwynn Forest,48.9,41.6
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
-    .target Marshal McBridge
+    .target Marshal McBride
     .turnin 7 >> Turn in Kobold Camp Cleanup
     .accept 3100 >> Accept Simple Letter << Warrior
     .accept 3101 >> Accept Consecrated Letter << Paladin
@@ -174,7 +174,7 @@ step
 step
     #requires xp3
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
-    .target Marshal McBridge
+    .target Marshal McBride
     .goto Elwynn Forest,48.9,41.6
     .turnin 15 >> Turn in Investigate Echo Ridge
     .accept 21 >> Accept Skirmish at Echo Ridge
@@ -310,7 +310,7 @@ step
     .turnin 6 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
 step
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
-    .target Marshal McBridge
+    .target Marshal McBride
     .goto Elwynn Forest,48.9,41.6
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
     .turnin 21 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin
@@ -339,7 +339,7 @@ step
 step
     #hardcore
     >> Talk to |cFF00FF25Marshall Dughan|r
-    .target Marshall Dughan
+    .target Marshal Dughan
     .goto Elwynn Forest,42.1,65.9
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
@@ -378,7 +378,7 @@ step << Mage/Priest/Warlock
 step
     #label Goldshire
     >> Talk to |cFF00FF25Marshall Dughan|r
-    .target Marshall Dughan
+    .target Marshal Dughan
     .goto Elwynn Forest,42.1,65.9
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
