@@ -402,7 +402,7 @@ step
     .xp 6 >> Grind to 6
 step << Rogue
     >> Talk to |cFF00FF25Brog Hamfist|r
-    .target Brogg Hamfist
+    .target Brog Hamfist
     .goto Elwynn Forest,43.96,65.92
     .vendor 151 >> Buy the level 3 thrown from Brog. Equip it
 step << Warlock
