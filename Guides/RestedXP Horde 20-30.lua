@@ -9378,7 +9378,7 @@ step << Shaman
     .turnin 220 >> Turn in Call of Water
     .accept 63 >> Accept Call of Water
     .goto The Barrens,65.83,43.77
-    .target Mahreen Skyseer
+    .target Mahren Skyseer
     .target Islen Waterseer
 step << Shaman
     #xprate <1.7

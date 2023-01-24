@@ -402,7 +402,7 @@ step
     .xp 6 >> Grind to 6
 step << Rogue
     >> Talk to |cFF00FF25Brog Hamfist|r
-    .target Brog Hamfist
+    .target Brogg Hamfist
     .goto Elwynn Forest,43.96,65.92
     .vendor 151 >> Buy the level 3 thrown from Brog. Equip it
 step << Warlock
@@ -684,7 +684,7 @@ step
     .money <0.1250
     .goto Elwynn Forest,44.0,65.9
     .vendor >>Buy a 6 slot bag from |cFF00FF25Brog Hamfist|r
-	.target Brog
+	.target Brogg
 step << Warrior
     >> Talk to |cFF00FF25Lyria Du Lac|r
     .target Lyria Du Lac
