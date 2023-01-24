@@ -631,7 +631,7 @@ step
     .goto Eversong Woods,47.26,46.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jarondis|r
     .accept 8472 >> Accept Major Malfunction
-    .target Magister Jarondis
+    .target Magister Jaronis
 step
     #completewith FalconHS
     .goto Eversong Woods,47.79,47.35,8,0
@@ -840,7 +840,7 @@ step
     .turnin 8463 >> Turn in Unstable Mana Crystals
     .accept 9352 >> Accept Darnassian Intrusions
     .goto Eversong Woods,48.17,46.00
-    .target Magister Jarondis
+    .target Magister Jaronis
     .target Sergeant Kan'ren
     .target Aeldon Sunbrand
 step << Paladin
@@ -4093,7 +4093,7 @@ step << BloodElf Warlock
     .goto Ghostlands,44.77,32.44
     .accept 9193 >> Accept Investigate the Amani Catacombs
     .goto Ghostlands,44.84,32.81
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target High Executor Mavren
     .target Advisor Valwyn
 step << !BloodElf/!Warlock
@@ -4118,7 +4118,7 @@ step << !BloodElf/!Warlock
     .accept 9138 >> Accept Suncrown Village
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target High Executor Mavren
     .target Advisor Valwyn
     .target Quartermaster Lymel << !BloodElf
@@ -5025,7 +5025,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Advisor Valwyn
     .target Dame Auriferous
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
 --VV 9193 and 9199 need to hide if in qlog
 step << Rogue
@@ -5045,7 +5045,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Advisor Valwyn
     .target Dame Auriferous
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
     --VV 9193 and 9199 need to hide if in qlog
 step << Druid
@@ -6041,7 +6041,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
     .isQuestComplete 9156
     .xp <17,1
@@ -6066,7 +6066,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
     .xp <17,1
 step << !Rogue
@@ -6090,7 +6090,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
     .isQuestComplete 9156
 step << !Rogue
@@ -6113,7 +6113,7 @@ step << !Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rathiel|r, |cFF00FF25Dame|r, |cFF00FF25Mavren|r, |cFF00FF25Maltendis|r, and |cFF00FF25Darenis|r
@@ -6134,7 +6134,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
     .isQuestComplete 9156
     .xp <17,1
@@ -6156,7 +6156,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
     .xp <17,1
 step << Rogue
@@ -6177,7 +6177,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
     .isQuestComplete 9156
 step << Rogue
@@ -6197,7 +6197,7 @@ step << Rogue
     .target Deathstalker Rathiel
     .target Dame Auriferous
     .target High Executor Mavren
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .target Magister Darenis
 step
     .goto Ghostlands,46.02,31.95
@@ -8578,7 +8578,7 @@ step
     .goto Ghostlands,44.74,32.28
     .target Magister Darenis
     .target Advisor Valwyn
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .isQuestAvailable 9151 << !Paladin/!wotlk
 step
     #label Truth
@@ -8589,7 +8589,7 @@ step
     .turnin 9199 >> Turn in Troll Juju
     .goto Ghostlands,44.74,32.28
     .target Advisor Valwyn
-    .target Deathstalker Maltendiss
+    .target Deathstalker Maltendis
     .isQuestAvailable 9151 << !Paladin/!wotlk
 step << Paladin wotlk
     #completewith next

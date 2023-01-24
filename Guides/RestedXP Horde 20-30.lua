@@ -8003,7 +8003,7 @@ step
     .complete 846,2 --Collect Wood Pulp (x6)
     .complete 846,3 --Collect Sodium Nitrate (x6)
     .mob Bael'dun Rifleman
-    .mob Bael'dun Solider
+    .mob Bael'dun Soldier
     .mob Bael'dun Officer
 step
     .goto The Barrens,48.94,86.31
@@ -8051,7 +8051,7 @@ step
     .complete 846,2 --Collect Wood Pulp (x6)
     .complete 846,3 --Collect Sodium Nitrate (x6)
     .mob Bael'dun Rifleman
-    .mob Bael'dun Solider
+    .mob Bael'dun Soldier
     .mob Bael'dun Officer
 step
     #xprate <1.7 << !Shaman !Warrior

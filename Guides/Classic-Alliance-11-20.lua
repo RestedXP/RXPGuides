@@ -1907,7 +1907,7 @@ step
 	#phase 3-6
     .goto Darkshore,61.40,9.40
      >> Grind |cFF00BCD4Moonstalker Sires/Matriarchs|r for |cFF00BCD4Pelts and Fangs|r
-	 .target Moonstalker Matriach
+	 .target Moonstalker Matriarch
 	 .target Moonstalker Sire
     .complete 986,1
 step  << !Warrior !Paladin !Rogue !Druid
