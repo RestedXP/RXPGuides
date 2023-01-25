@@ -73,6 +73,15 @@ addon.customThemeBase = {
     author = _G.UnitName("player")
 }
 
+addon.guideTextColors = { -- TODO reverse lookup
+    ["RXP_FRIENDLY"] = "FF00FF25",
+    ["RXP_ENEMY"] = "FFFF5722",
+    ["RXP_LOOT"] = "FF00BCD4",
+    ["RXP_WARN"] = "FFFCDC00",
+    ["RXP_PICK"] = "FFDB2EEF",
+    ["RXP_BUY"] = "FF0E8312"
+}
+
 local function themeApplies(applicable)
     if applicable == nil then
         return true

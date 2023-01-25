@@ -133,7 +133,10 @@ function addon.settings:InitializeSettings()
             -- Themes
             activeTheme = 'Default',
             customTheme = addon.customThemeBase,
-            enableThemeLiveReload = true
+            enableThemeLiveReload = true,
+
+            -- Text colors
+            textEnemyColor = addon.guideTextColors['RXP_ENEMYY']
         }
     }
 
@@ -1766,7 +1769,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return self.db.profile.activeTheme ~= 'Custom'
                         end
                     },
-                    customThemeTextColor = { -- TODO
+                    customThemeTextColor = {
                         name = L("Text Color"), -- TODO locale
                         desc = L("Requires Reload to take effect"),
                         type = "color",
@@ -1819,11 +1822,32 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.92
                     },
+                    textColorsHeader = {
+                        name = _G.LOCALE_TEXT_LABEL,
+                        type = "header",
+                        width = "full",
+                        order = 2.0
+                    },
+                    textEnemyColor = {
+                        name = _G.COMBATLOG_HIGHLIGHT_KILL,
+                        desc = L("Requires Reload to take effect"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 2.1,
+                        get = function()
+                            return
+                                addon.HexToRGB(self.db.profile.textEnemyColor)
+                        end,
+                        set = function(_, r, g, b)
+                            self.db.profile.textEnemyColor = addon.HexToRGB(r,
+                                                                            g, b)
+                        end
+                    },
                     guideWindowHeader = {
                         name = L("Guide Window"),
                         type = "header",
                         width = "full",
-                        order = 2.0
+                        order = 3.0
                     },
                     windowScale = {
                         name = L("Window Scale"),
@@ -1831,7 +1855,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Scale of the Main Window, use alt+left click on the main window to resize it"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.1,
+                        order = 3.1,
                         min = 0.2,
                         max = 2,
                         step = 0.05,
@@ -1845,7 +1869,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Change font size of the Guide Window"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.2,
+                        order = 3.2,
                         min = 9,
                         max = 18,
                         step = 1,
@@ -1863,7 +1887,7 @@ function addon.settings:CreateAceOptionsPanel()
                         values = {top = "Top", bottom = "Bottom"},
                         sorting = {"top", "bottom"},
                         width = optionsWidth,
-                        order = 2.3,
+                        order = 3.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.SetStepFrameAnchor()
@@ -1875,7 +1899,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Show/Hide the bottom frame listing all the steps of the current guide"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.4,
+                        order = 3.4,
                         get = function()
                             return addon.RXPFrame.BottomFrame:GetHeight() >= 35
                         end,
@@ -1902,7 +1926,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Only shows current and future steps on the step list window"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.5,
+                        order = 3.5,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
@@ -1914,7 +1938,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Displays guides that are not applicable for your class/race such as starting zones for other races"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.6,
+                        order = 3.6,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
@@ -1926,7 +1950,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Automatically picks a suitable guide whenever you log in for the first time on a character"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.7,
+                        order = 3.7,
                         hidden = not addon.defaultGuideList,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1938,14 +1962,14 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Active Items"),
                         type = "header",
                         width = "full",
-                        order = 3.0
+                        order = 4.0
                     },
                     activeItemsScale = {
                         name = L("Active Item Scale"), -- TODO locale
                         desc = L("Scale of the Active Item frame"),
                         type = "range",
                         width = optionsWidth,
-                        order = 3.1,
+                        order = 4.1,
                         min = 0.8,
                         max = 3,
                         step = 0.05,
@@ -1958,13 +1982,13 @@ function addon.settings:CreateAceOptionsPanel()
                         name = _G.MAP_OPTIONS_TEXT,
                         type = "header",
                         width = "full",
-                        order = 4.1
+                        order = 5.1
                     },
                     hideMiniMapPins = {
                         name = L("Hide Mini Map Pins"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 4.2,
+                        order = 5.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.updateMap = true
@@ -1976,7 +2000,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Show a targeting circle around active map pins"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 4.3,
+                        order = 5.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.updateMap = true
@@ -1987,7 +2011,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Number of map pins shown on the world map"),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.4,
+                        order = 5.4,
                         min = 1,
                         max = 20,
                         step = 1,
@@ -2001,7 +2025,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Adjusts the size of the world map pins"),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.5,
+                        order = 5.5,
                         min = 0.05,
                         max = 1,
                         step = 0.05,
@@ -2016,7 +2040,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.6,
+                        order = 5.6,
                         min = 0.05,
                         max = 2,
                         step = 0.05,
@@ -2031,7 +2055,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "The opacity of the black circles on the map and mini map"),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.7,
+                        order = 5.7,
                         min = 0,
                         max = 1,
                         step = 0.05,
@@ -2336,4 +2360,34 @@ function addon.settings:CheckAddonCompatibility()
             end
         end
     end
+end
+
+function addon.settings:RGBToHex(r, g, b) end
+
+function addon.settings:HexToRGB(hexString) end
+
+function addon.settings:ReplaceColors(textLine)
+    local guideTextColors = { -- TODO persist lookup from settings
+        ["RXP_FRIENDLY"] = "FF00FF25",
+        ["RXP_ENEMY"] = addon.settings.db.profile.textEnemyColor,
+        ["RXP_LOOT"] = "FF00BCD4",
+        ["RXP_WARN"] = "FFFCDC00",
+        ["RXP_PICK"] = "FFDB2EEF",
+        ["RXP_BUY"] = "FF0E8312"
+    }
+
+    -- TODO reverse lookup for color overrides
+    if textLine:find('|cFF') and false then
+        -- TODO
+        for k, v in pairs(guideTextColors) do end
+    end
+
+    -- Replace text placeholders
+    if textLine:find('RXP_') then
+        for placeholder, hex in pairs(guideTextColors) do
+            textLine = textLine:gsub(placeholder, hex)
+        end
+    end
+
+    return textLine
 end
