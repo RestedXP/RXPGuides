@@ -1207,7 +1207,11 @@ function addon.tracker:CreateLevelSplits()
 
     f:SetAlpha(addon.settings.db.profile.levelSplitsOpacity)
     f.title:SetIgnoreParentAlpha(true)
-    f.title:SetAlpha(addon.settings.db.profile.levelSplitsOpacity + 0.1)
+    if addon.settings.db.profile.levelSplitsOpacity + 0.1 > 1.0 then
+        f.title:SetAlpha(1)
+    else
+        f.title:SetAlpha(addon.settings.db.profile.levelSplitsOpacity + 0.1)
+    end
 
     f:HookScript("OnUpdate", function() addon.tracker:RefreshSplitsSummary() end)
 
