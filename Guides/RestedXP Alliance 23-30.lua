@@ -1784,7 +1784,7 @@ step
     .accept 159 >> Accept Juice Delivery
 step
     .home >> Set your Hearthstone to Darkshire
-step << !Hunter !Paladin
+step
     .goto Duskwood,73.7,46.8
     .turnin 57 >> Turn in The Night Watch
     .accept 58 >> Accept The Night Watch
@@ -1794,7 +1794,7 @@ step << Paladin/Hunter
     .goto Duskwood,73.7,46.8
     .turnin 57 >> Turn in The Night Watch
     .accept 58 >> Accept The Night Watch
-step << !Hunter !Paladin
+step
 	.goto Duskwood,73.7,46.8
     .turnin 228 >> Turn in Mor'Ladim
     .accept 229 >> Accept The Daughter Who Lived
@@ -2629,7 +2629,7 @@ step << !NightElf !Draenei
     .home >> Set your Hearthstone to Darkshire
 step << Shaman
     .home >> Set your Hearthstone to Darkshire
-step << !Hunter !Paladin
+step
     .goto Duskwood,73.7,46.8
     .turnin 57 >> Turn in The Night Watch
     .accept 58 >> Accept The Night Watch
@@ -2639,7 +2639,7 @@ step << Paladin/Hunter
     .goto Duskwood,73.7,46.8
     .turnin 57 >> Turn in The Night Watch
     .accept 58 >> Accept The Night Watch
-step << !Hunter !Paladin
+step
 	.goto Duskwood,73.7,46.8
     .turnin 228 >> Turn in Mor'Ladim
     .accept 229 >> Accept The Daughter Who Lived
