@@ -870,11 +870,13 @@ step
     .goto Bloodmyst Isle,53.1,20.3
 	>>Get close to the spaceship like building
 	.complete 9700,1 --Sun Portal Site Confirmed (1)
+    .isOnQuest 9700
 step
     #label gnome
     .goto Bloodmyst Isle,52.5,25.2
 	>>Kill the Void Anomalies in the area
     .complete 9700,2 --Kill Void Anomaly (x5)
+    .isOnQuest 9700
 step
     #requires SunPortalSite
     #label vinesdoneboss
@@ -917,7 +919,7 @@ step
     >> Return to the Anchorite
     .goto Bloodmyst Isle,54.7,54.0
     .accept 9561 >> Accept Nolkai's Words
-step
+step << !Rogue !Warlock
     .goto Bloodmyst Isle,55.4,55.2
     .turnin 9700,3 >> Turn in I Shoot Magic Into the Darkness << Warrior/Paladin
     .turnin 9700 >> Turn in I Shoot Magic Into the Darkness << !Warrior !Paladin
@@ -950,7 +952,7 @@ step
     .turnin 9578 >> Turn in Searching for Galaen
     .accept 9579 >> Accept Galaen's Fate
     .accept 9706 >> Accept Galaen's Journal - The Fate of Vindicator Saruan
-step
+step << !Rogue !Warlock
     .goto Bloodmyst Isle,37.8,58.9
 	>>Kill and loot blood elves around this area
     .complete 9579,1 --Collect Galaen's Amulet (x1)
@@ -971,11 +973,11 @@ step
 step
     >> Talk to Vindicator Kuros
     .goto Bloodmyst Isle,55.6,55.1
-    .turnin 9703,1 >> Turn in The Cryo-Core << Paladin
-    .turnin 9703 >> Turn in The Cryo-Core << !Paladin
+    .turnin 9703,1 >> Turn in The Cryo-Core << Paladin !Rogue !Warlock
+    .turnin 9703 >> Turn in The Cryo-Core << !Paladin !Rogue !Warlock
     .turnin 9706 >> Turn in Galaen's Journal - The Fate of Vindicator Saruan
     .accept 9711 >> Accept Matis the Cruel
-    .accept 9748 >> Accept Don't Drink the Water
+    .accept 9748 >> Accept Don't Drink the Water << !Rogue !Warlock
 step
 	#sticky
 	#completewith bearend
@@ -1093,7 +1095,7 @@ step
 	*Once you find him, use the flare in your bags to summon a Draenei NPC to assist you
 	*The flare gun only have 1 charge, if you fail this quest, you will have to abandon it
 	.unitscan Matis the Cruel
-step
+step << !Rogue !Warlock
     .goto Bloodmyst Isle,34.3,33.6
 	.use 24318 >>Use the Sampling Vial in your bags at the base of the waterfall
     .complete 9748,1 --Collect Bloodmyst Water Sample (x1)
@@ -1155,7 +1157,7 @@ step
 	>> Talk to the Vindicators
     .goto Bloodmyst Isle,55.6,55.3
     .turnin 9741 >> Turn in Critters of the Void
-    .turnin 9748 >> Turn in Don't Drink the Water
+    .turnin 9748 >> Turn in Don't Drink the Water << !Rogue !Warlock
     .turnin 9711,3 >> Turn in Matis the Cruel << Warrior/Paladin
     .turnin 9711 >> Turn in Matis the Cruel << !Warrior !Paladin
 	.trainer >>Train class spells at Vindicator Aesom. << Paladin
