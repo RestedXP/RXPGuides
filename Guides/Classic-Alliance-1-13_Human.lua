@@ -36,7 +36,7 @@ step << Warlock
 step << Warlock
     #hardcore
     .goto Elwynn Forest,52.9,44.3,60,0
-    >>Kill some Wolves en route, |cFFFCDC00then watch this video|r. Use your hearthstone after you loot the book.
+    >>Kill some Wolves en route, |cFFFCDC00then watch this video|r. |cFFFCDC00DO NOT DO THE DEATHSKIP.|r Use your hearthstone after you loot the book. 
     .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
     .goto Elwynn Forest,56.7,44.0
     .complete 1598,1 --Collect Powers of the Void (x1)
