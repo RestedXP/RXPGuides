@@ -3,11 +3,12 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Hunter/NightElf
+<< Alliance
 #name 11-16 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
 #next 16-19 Darkshore
+#defaultfor Hunter/NightElf
 
 step <<  NightElf
     .goto Teldrassil,56.25,92.44
