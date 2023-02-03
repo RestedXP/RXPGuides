@@ -7786,7 +7786,7 @@ step
     .goto The Barrens,46.09,80.54,40,0
     .goto The Barrens,46.12,81.25,40,0
     .goto The Barrens,46.14,75.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r patrolling on the road
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r
     .accept 843 >> Accept Gann's Reclamation
     .target Gann Stonespire
 step << Shaman/Warrior
@@ -7978,7 +7978,7 @@ step
     .goto The Barrens,46.08,76.33,40,0
     .goto The Barrens,46.14,75.40,40,0
     .goto The Barrens,46.12,81.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r patrolling on the road
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r
     .turnin 843 >> Turn in Gann's Reclamation
     .accept 846 >> Accept Revenge of Gann
     .target Gann Stonespire
@@ -8057,7 +8057,7 @@ step
     #xprate <1.7 << !Shaman !Warrior
     #completewith WeaponsOC
     .line The Barrens,46.12,81.25,46.09,80.54,46.16,79.66,46.14,79.37,46.07,79.19,45.86,78.77,45.79,78.47,45.83,77.21,45.91,76.97,46.02,76.71,46.08,76.33,46.14,75.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r patrolling on the road
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r
     .turnin 846 >> Turn in Revenge of Gann
     .accept 849 >> Accept Revenge of Gann
     .target Gann Stonespire
@@ -8065,7 +8065,7 @@ step << !Shaman !Warrior
     #xprate >1.6999
     #completewith next
     .line The Barrens,46.12,81.25,46.09,80.54,46.16,79.66,46.14,79.37,46.07,79.19,45.86,78.77,45.79,78.47,45.83,77.21,45.91,76.97,46.02,76.71,46.08,76.33,46.14,75.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r patrolling on the road
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r
     .turnin 846 >> Turn in Revenge of Gann
     .accept 849 >> Accept Revenge of Gann
     .target Gann Stonespire
@@ -8227,7 +8227,7 @@ step
     .goto The Barrens,46.08,76.33,40,0
     .goto The Barrens,46.14,75.40,40,0
     .goto The Barrens,46.12,81.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r patrolling on the road
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r
     .turnin 846 >> Turn in Revenge of Gann
     .accept 849 >> Accept Revenge of Gann
     .target Gann Stonespire
@@ -8251,7 +8251,7 @@ step
     .goto The Barrens,46.08,76.33,40,0
     .goto The Barrens,46.14,75.40,40,0
     .goto The Barrens,46.12,81.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r patrolling on the road
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gann|r
     .turnin 849 >> Turn in Revenge of Gann
     .target Gann Stonespire
 ]])
@@ -8420,7 +8420,7 @@ step
     .goto Thousand Needles,44.12,37.22,20 >>Enter the cave
 step
     #requires Splithoofcave
-    #completwith Clovenhoof
+    #completewith Clovenhoof
     .goto Thousand Needles,44.44,36.32,12,0
     .goto Thousand Needles,43.14,35.19,12,0
     .goto Thousand Needles,42.11,34.54,12,0
@@ -8470,7 +8470,8 @@ step
     .target Dorn Plainstalker
 step
     .goto Thousand Needles,26.63,34.23
-    >>|cFFFCDC00Wait out the RP, then jump off the end of the wooden platform. You'll get teleported instead of dying from fall damage|r
+    >>|cFFFCDC00Wait out the RP|r
+    >>|cFFFCDC00Jump off the end of the wooden platform. You'll get teleported instead of dying from fall damage|r
     .complete 1149,1 --Explore Zone (1)
 step
     .goto Thousand Needles,53.95,41.49

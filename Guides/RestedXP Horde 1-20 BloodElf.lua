@@ -2667,7 +2667,7 @@ step
     .accept 8476 >> Accept Amani Encroachment
     .accept 9484 >> Accept Taming the Beast << BloodElf Hunter
     .target Lieutenant Dawnrunner
-step << Hunter
+step << !Troll Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
     >>|cFF0E8312Buy a|r |T135489:0|t[Laminated Recurve Bow] |cFF0E8312and|r |T132382:0|t[Sharp Arrows] |cFF0E8312from him|r
@@ -2678,7 +2678,8 @@ step << Hunter
     .money <0.2144 << BloodElf
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << Hunter
+--VV Paelarin doesn't talk to Trolls
+step << !Troll Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
     >>|cFF0E8312Buy|r |T132382:0|t[Sharp Arrows] |cFF0E8312from him|r
@@ -2686,11 +2687,11 @@ step << Hunter
     .target Paelarin
     .money <0.0500 << Orc/Troll
     .money <0.0480 << BloodElf
-step << Hunter
+step << !Troll Hunter
     #completewith Otembe
     +Equip the |T135489:0|t[Laminated Recurve Bow]
-    .use 2515
-    .itemcount 2515,1
+    .use 2507
+    .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step
@@ -2974,7 +2975,7 @@ step << Undead/BloodElf
     #completewith MagiApp
     +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cFFFCDC00and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
     +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
-step << Hunter
+step << !Troll Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
     >>|cFF0E8312Buy a|r |T135489:0|t[Laminated Recurve Bow] |cFF0E8312from|r |cFF00FF25Paelarin|r
@@ -2984,11 +2985,11 @@ step << Hunter
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << Hunter
+step << !Troll Hunter
     #completewith HunterTrain
     +Equip the |T135489:0|t[Laminated Recurve Bow]
-    .use 2515
-    .itemcount 2515,1
+    .use 2507
+    .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step
@@ -3120,7 +3121,7 @@ step << Undead/BloodElf
     #completewith Spire
     +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cFFFCDC00and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
     +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
-step << Hunter
+step << !Troll Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
     >>|cFF0E8312Buy a|r |T135489:0|t[Laminated Recurve Bow] |cFF0E8312from|r |cFF00FF25Paelarin|r
@@ -3130,11 +3131,11 @@ step << Hunter
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << Hunter
+step << !Troll Hunter
     #completewith HunterTrain
     +Equip the |T135489:0|t[Laminated Recurve Bow]
-    .use 2515
-    .itemcount 2515,1
+    .use 2507
+    .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step

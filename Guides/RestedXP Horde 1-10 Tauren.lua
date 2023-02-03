@@ -5,17 +5,15 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 << Horde
-#name 1-10 Mulgore
+#name 1-6 Mulgore
 #version 1
 #group RestedXP Horde 1-30
 #defaultfor Tauren
-#next 10-12 Eversong Woods << !Warrior !Shaman
-#next 10-13 Mulgore << Warrior/Shaman
+#next 6-10 Mulgore
+
 step << !Tauren
-    #sticky
     #completewith next
-    .goto Mulgore,44.9,77.1
-    +You have selected a guide meant for Tauren. This zone will NOT work well for you due to missing one of the main questlines that are gated for Tauren only. It is recommended you choose the same starter zone that you start in
+    +|cFFFCDC00You have selected a guide meant for Tauren. We do not recommend doing this zone due to there being race-gated quests for Tauren only. It is recommended you choose the same starter zone that you start in|r
 step
     .goto Mulgore,44.9,77.1
     .accept 747 >>Accept The Hunt Begins
@@ -225,6 +223,21 @@ step
 step
     .goto Mulgore,38.5,81.6
     .accept 1656 >>Accept A Task Unfinished
+
+]])
+
+RXPGuides.RegisterGuide([[
+#tbc
+#wotlk
+<< Horde
+#name 6-10 Mulgore
+#version 1
+#group RestedXP Horde 1-30
+#defaultfor Tauren
+#next 10-12 Eversong Woods << !Warrior !Shaman
+#next 10-13 Mulgore << Warrior/Shaman
+
+
 step
 	.goto Mulgore,46.5,55.5
     .xp 5+2395 >>Grind mobs til you're 2395+/2800xp en route to town
