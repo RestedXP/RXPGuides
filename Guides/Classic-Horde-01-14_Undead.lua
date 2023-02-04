@@ -585,14 +585,14 @@ step
     #completewith next
     .deathskip >> Die and respawn at Brill if you found Gordo pretty early
 step
-    .goto Tirisfal Glades,60.6,51.8
+    .goto Tirisfal Glades,60.586,51.765
     .turnin 383 >> Turn in Vital Intelligence
     .accept 427 >>Accept At War With The Scarlet Crusade
 step << Rogue
     .goto Tirisfal Glades,61.16,52.59
     .vendor >> Buy the level 3 thrown from Mrs. Winters. Equip it
 step
-    .goto Tirisfal Glades,61.7,52.0
+    .goto Tirisfal Glades,61.707,52.049
     .turnin 8 >>Turn in A Rogue's Deal
     .home >> Set your Hearthstone to Brill
     .vendor >> vendor trash. Buy some level 5 food << !Mage !Priest !Warlock
@@ -921,7 +921,7 @@ step << Rogue/Warrior
     .goto Tirisfal Glades,61.82,52.82
     .trainer >> Train First Aid to make Bandages. Try to make them during points at which you're waiting for things, such as Zeppelins
 step
-    .goto Tirisfal Glades,61.7,52.0
+    .goto Tirisfal Glades,61.707,52.049
     .vendor >> vendor trash. Buy food/water if needed
 step << Rogue
     .goto Tirisfal Glades,60.12,53.39
@@ -991,7 +991,7 @@ step
 step
     .xp 10
 step
-    .goto Tirisfal Glades,61.7,52.0
+    .goto Tirisfal Glades,61.707,52.049
     .vendor >> vendor trash. Buy food/water if needed
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
@@ -1154,7 +1154,7 @@ step
     #completewith next
     .vendor >> If you have spare money and need bags, you can buy 6 slots from Mrs.Winters next to the Inn entrance. Otherwise, skip this step
 step
-    .goto Tirisfal Glades,61.7,52.0
+    .goto Tirisfal Glades,61.707,52.049
     .vendor 5688 >> Buy food/water inside the Inn if needed
 step
     #label UnluckyRogue
@@ -1243,7 +1243,7 @@ step
     #completewith next
     .vendor >> If you have spare money and need bags, you can buy 6 slots from Mrs.Winters next to the Inn entrance. Otherwise, skip this step
 step
-    .goto Tirisfal Glades,61.7,52.0
+    .goto Tirisfal Glades,61.707,52.049
     .vendor 5688 >> Buy food/water inside the Inn if needed
 step
     .goto Tirisfal Glades,61.94,51.40

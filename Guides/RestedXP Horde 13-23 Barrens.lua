@@ -282,7 +282,7 @@ step
 step
     #xprate <1.5
     .maxlevel 16
-    .goto The Barrens,63.1,37.6
+    .goto The Barrens,63.086,37.607
     .accept 959 >>Accept Trouble at the Docks
 step
     .goto The Barrens,63.3,38.4
@@ -501,14 +501,14 @@ step << Orc/Troll
     .accept 6385 >>Accept Doras the Wind Rider Master
 step << Orc/Troll
 #xprate >1.499
-    .goto Orgrimmar,45.2,64.0
+    .goto Orgrimmar,45.120,63.889
      >> Turn in the quests but do NOT fly back to The Crossroads
     .turnin 6385 >>Turn in Doras the Wind Rider Master
     .accept 6386 >>Accept Return to the Crossroads.
 step << Tauren/Undead/BloodElf
     #completewith next
     >>Run to the Flight Master tower. Get the Flight Path
-    .goto Orgrimmar,45.2,63.8
+    .goto Orgrimmar,45.120,63.889
     .fp Orgrimmar >>Get the Orgrimmar Flight Path
 step
     >>Hug the left side. Run to Grommash Hold
@@ -529,7 +529,7 @@ step << Shaman
     .goto Orgrimmar,31.8,37.8
     .turnin 5727 >>Turn in Hidden Enemies
 step << Warrior
-    .goto Orgrimmar,80.4,32.4
+    .goto Orgrimmar,80.391,32.384
     .train 1160 >> Train Demoralizing Shout r1
     .train 285 >> Train Heroic Strike r3
 step
@@ -876,12 +876,12 @@ step
 step
     #label spiderend
     >> Head to the goblin hut behind the hill
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1483 >> Turn in Ziz Fizziks
     .isOnQuest 1483
 step
     >> Head to the goblin hut behind the hill
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .accept 1093 >> Accept Super Reaper 6000
 step
     #sticky
@@ -911,7 +911,7 @@ step
     .complete 1062,1 --Kill Venture Co. Logger (x15)
     .isOnQuest 1062
 step
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1093 >> Turn in Super Reaper 6000
     .accept 1094 >> Accept Further Instructions
 step << Druid
@@ -979,7 +979,7 @@ step
     .accept 1095 >>Accept Further Instructions
 step
     .isOnQuest 959
-    .goto The Barrens,63.1,37.6
+    .goto The Barrens,63.086,37.607
     .turnin 959 >>Turn in Trouble at the Docks
 step
     .goto The Barrens,62.4,37.6
@@ -1116,11 +1116,11 @@ step << Warrior tbc/Shaman
     .vendor >> Buy a Maul
     .collect 924,1
 step
-    .goto Thunder Bluff,61.4,80.9
+    .goto Thunder Bluff,61.538,80.919
     .turnin -1130 >>Turn in Melor Sends Word
     .accept 1131 >>Accept Steelsnap
 step << Warrior
-    .goto Thunder Bluff,57.2,87.4
+    .goto Thunder Bluff,57.243,87.372
     .accept 1823 >>Accept Speak with Ruga
     .train 845 >>Train Cleave
     .train 6547 >>Train Rend r3
@@ -1139,7 +1139,7 @@ step << Shaman
 .train 8056 >> Train Frost Shock
 step
     #completewith next
-    .goto Thunder Bluff,46.9,49.9
+    .goto Thunder Bluff,47.003,49.832
     .fly Crossroads >>Fly to Crossroads
 step << !Tauren
 #xprate >1.499
@@ -1175,7 +1175,7 @@ step
 #xprate >1.499
     .isOnQuest 1095
     >> Head to the goblin hut behind the hill
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1095 >> Turn in Further Instructions
 step
 #xprate <1.5
@@ -1198,7 +1198,7 @@ step
     .fp Sun Rock >>Get the Sun Rock Retreat Flight Path
 step
     .isOnQuest 1095
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1095 >>Turn in Further Instructions
 step
 #xprate <1.5
@@ -1305,7 +1305,7 @@ step
     #label zoramend
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
-    .goto Ashenvale,12.2,34.2
+    .goto Ashenvale,12.223,34.216
     .turnin 6641 >> Turn in Vorsha the Lasher
     .isOnQuest 6641
 step
@@ -1325,7 +1325,7 @@ step
     .isOnQuest 6564
 step
 #xprate <1.5
-    .goto Ashenvale,11.7,34.9
+    .goto Ashenvale,11.689,34.905
     .turnin 6442 >> Turn in Naga at the Zoram Strand
     .isOnQuest 6442
 step << Druid
@@ -1346,7 +1346,7 @@ step
 step
     #label eldercr
     .isOnQuest 1063
-    .goto Thunder Bluff,69.8,30.8
+    .goto Thunder Bluff,69.851,30.910
     .turnin 1063 >> Turn in The Elder Crone
     >> Wait for the roleplay to finish
     .accept 1064 >> Accept Forsaken Aid
@@ -1377,11 +1377,11 @@ step << !Tauren
     .goto Thunder Bluff,23.0,21.1
     .turnin 853 >>Turn in Apothecary Zamah
 step << !Shaman
-    .goto Thunder Bluff,46.9,49.9
+    .goto Thunder Bluff,47.003,49.832
     #completewith next
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Shaman
-    .goto Thunder Bluff,46.9,49.9
+    .goto Thunder Bluff,47.003,49.832
     #completewith next
     .fly Ratchet >>Fly to Ratchet
 step << Shaman

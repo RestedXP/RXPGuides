@@ -2874,7 +2874,7 @@ step << skip
     .accept 9327 >> Accept The Forsaken
     --VV BloodElf Hunter
 step << skip
-    .goto Ghostlands,44.8,32.5
+    .goto Ghostlands,44.774,32.450
     .turnin 9327 >> Turn in The Forsaken
     .accept 9758 >> Accept Return to Arcanist Vandril
     --VV BloodElf Hunter
@@ -2920,7 +2920,7 @@ step << skip
     .turnin 8491 >> Turn in Pelt Collection
     --VV BloodElf Hunter
 step << skip
-    .goto Eversong Woods,46.9,71.8
+    .goto Eversong Woods,46.928,71.789
     .turnin 9252 >> Turn in Defending Fairbreeze Village
     --VV BloodElf Hunter
 step << skip
@@ -2955,7 +2955,7 @@ step << skip
     .goto Eversong Woods,48.2,46.0
     .turnin 8483 >> Turn in The Dwarven Spy
 step << skip
-    .goto Eversong Woods,55.7,54.5
+    .goto Eversong Woods,55.700,54.509
     .turnin 9066 >> Turn in Swift Discipline
 step << Undead/BloodElf
     #completewith next
@@ -3631,7 +3631,7 @@ step << Rogue
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
 step << skip
-    .goto Silvermoon City,54.0,71.0
+    .goto Silvermoon City,53.926,71.029
     >>Inside the building
     .turnin 9133 >> Turn in Fly to Silvermoon City
     .accept 9134 >> Accept Skymistress Gloaming
@@ -7209,12 +7209,12 @@ step << Rogue/Mage/Hunter/Priest/Warlock/Paladin
 step << skip
     >> Head into Silvermoon City
     .goto Silvermoon City,72.4,85.7,40,0
-    .goto Silvermoon City,54.0,71.0
+    .goto Silvermoon City,53.926,71.029
     .turnin 9133 >> Turn in Fly to Silvermoon City
 --VV BloodElf Paladin/BloodElf Rogue
 step << skip
     #xprate <1.5
-    .goto Silvermoon City,54.0,71.0
+    .goto Silvermoon City,53.926,71.029
     .accept 9134 >> Accept Skymistress Gloaming
     --VV BloodElf Paladin/BloodElf Rogue
 step << skip
@@ -9766,7 +9766,7 @@ step << Druid
     .target Harene Plainwalker
 	.xp <22,1
 step << skip
-    .goto Silvermoon City,54.0,71.0
+    .goto Silvermoon City,53.926,71.029
     .turnin 9134 >> Turn in Skymistress Gloaming
 --VV BloodElf Paladin
 step << Warlock

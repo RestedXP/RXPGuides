@@ -553,21 +553,21 @@ step << Priest
     .trainer >> Train your class spells
 step << Tauren/Undead
     >>Run to the Flight Master tower. Get the Flight Path. DON'T fly anywhere
-    .goto Orgrimmar,45.2,63.8
+    .goto Orgrimmar,45.120,63.889
     .fp Orgrimmar >> Get the Orgrimmar flight path
 step
     >>Run to Grommash Hold
     .goto Orgrimmar,39.1,38.1
     .accept 1061 >>Accept The Spirits of Stonetalon
 step << Druid
-    .goto Orgrimmar,54.2,68.4
+    .goto Orgrimmar,54.097,68.407
 	.fly Thunder Bluff >> Fly to Thunder Bluff
 step << !Rogue !Undead !Tauren !Shaman !Warrior
-    .goto Orgrimmar,54.2,68.4
+    .goto Orgrimmar,54.097,68.407
     .turnin 6384 >>Turn in Ride to Orgrimmar
     .accept 6385 >> Accept Doras the Wind Rider Master
 step << !Rogue !Undead !Tauren !Shaman !Warrior
-    .goto Orgrimmar,45.2,63.8
+    .goto Orgrimmar,45.120,63.889
     .turnin 6385 >> Turn in Doras the Wind Rider Master
     .accept 6386 >> Accept Return to the Crossroads
 step << Rogue
@@ -962,7 +962,7 @@ step << Warlock
     .complete 6284,1 --Collect Besseleth's Fang (x1)
 step
     #label Ziz
-	.goto Stonetalon Mountains,59.0,62.6
+	.goto Stonetalon Mountains,58.989,62.599
     .turnin 1483 >> Turn in Ziz Fizziks
     .accept 1093 >> Accept Super Reaper 6000
 step
@@ -1003,12 +1003,12 @@ step
 	#completewith next
 	+If you have over 15 Deepmoss Eggs, split the stack of any extras (shift click), then delete them
 step
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1093 >> Turn in Super Reaper 6000
     .accept 1094 >> Accept Further Instructions
 step << Druid
 	>> Use the spell Teleport to Moonglade
-   	 .goto Moonglade,52.5,40.5
+   	 .goto Moonglade,52.526,40.565
 	.trainer >> Go and train your class spells
 step
     .hs >> Hearth to Camp Taurajo
@@ -1216,7 +1216,7 @@ step << Rogue
      >> Buy a Longsword from Kard if it's an upgrade
     .collect 923,1
 step << skip
-    .goto Thunder Bluff,61.4,80.9
+    .goto Thunder Bluff,61.538,80.919
     .turnin 1130 >>Turn in Melor Sends Word
     .accept 1131 >>Accept Steelsnap
 step << Hunter
@@ -1229,7 +1229,7 @@ step << Hunter
     .trainer >> Train your pet skills
 step << Warrior
 	#era
-    .goto Thunder Bluff,57.2,87.4
+    .goto Thunder Bluff,57.243,87.372
     .accept 1823 >>Accept Speak with Ruga
     .trainer >> Train your class spells
 step << Druid
@@ -1257,7 +1257,7 @@ step << Mage
     .trainer >> Train your class spells
 step << Shaman
 	#era
-    .goto Thunder Bluff,25.1,20.6
+    .goto Thunder Bluff,25.161,20.511
     .trainer >> Train your class spells
 step << Hunter
     .goto Thunder Bluff,46.8,45.8
@@ -1265,7 +1265,7 @@ step << Hunter
     .collect 3027,1
 step << !Tauren !Shaman !Warrior
 	#requires UntilD
-    .goto Thunder Bluff,46.9,49.9
+    .goto Thunder Bluff,47.003,49.832
     .fp Thunder Bluff >> Get the Thunder Bluff flight path
 step << !Warlock/!Shaman
 	#som
@@ -1375,7 +1375,7 @@ step
 --    .accept 6301 >> Accept Cycle of Rebirth
     .turnin 6401 >>Turn in Kaya's Alive
 step
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1095 >>Turn in Further Instructions
 step
 	#era
@@ -1447,7 +1447,7 @@ step
 step << Druid
 	#requires Vorsha
 	>> Use the spell Teleport to Moonglade
-    .goto Moonglade,52.5,40.5
+    .goto Moonglade,52.526,40.565
 .trainer >> Go and train your class spells
 step
 	#requires Vorsha
@@ -1481,7 +1481,7 @@ step << Priest
     .goto Thunder Bluff,25.4,15.0
 	.accept 5644 >> Accept Devouring Plague
 step << Shaman
-    .goto Thunder Bluff,25.1,20.6
+    .goto Thunder Bluff,25.161,20.511
 	.accept 1529 >>Accept Call of Water
 step
     .goto Thunder Bluff,54.70,51.30
@@ -1494,7 +1494,7 @@ step << Warlock
     .turnin 1511 >>Turn in Ken'zigla's Draught
     .accept 1515 >>Accept Dogran's Captivity
 step << Warlock
-	.goto The Barrens,43.3,47.9
+	.goto The Barrens,43.305,47.885
     .turnin 1515 >>Turn in Dogran's Captivity
     .accept 1512 >>Accept Love's Gift
 step << Warlock

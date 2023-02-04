@@ -71,7 +71,7 @@ step
     .skill skinning,125,1
 step
     #completewith next
-    .goto Orgrimmar,45.1,63.9
+    .goto Orgrimmar,45.120,63.889
     .fly Crossroads >> Fly to The Crossroads
     .zoneskip The Barrens
     .skill skinning,125,1
@@ -247,7 +247,7 @@ step << Mage
     .skill skinning,125,1
 step << !Mage
     .goto Stormwind City,68.2,72.9,20,0
-    .goto Stormwind City,71.0,72.5
+    .goto Stormwind City,70.954,72.512
     >>Return to Stormwind
     .fly Ironforge
     .zone Ironforge >> Travel to Ironforge
@@ -272,7 +272,7 @@ step
     .skill skinning,125,1
 step
     #completewith next
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Thelsamar >> Fly to Thelsamar
     .skill skinning,125,1
     .zoneskip Loch Modan
@@ -287,7 +287,7 @@ step << Mage
     .zone Ironforge >> Teleport to Ironforge
     .skill skinning,155,1
 step << !Mage
-    .goto Loch Modan,33.9,51.0
+    .goto Loch Modan,33.938,50.954
     >>Return to Thelsamar
     .fly Ironforge
     .zone Ironforge >> Travel to Ironforge
@@ -312,7 +312,7 @@ step
     .skill skinning,155,1
 step
     #completewith next
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Menethil >> Fly to Menethil Harbor
     .skill skinning,155,1
     .zoneskip Wetlands
@@ -365,7 +365,7 @@ step << Mage
     .skill skinning,230,1
 step << !Mage
     #completewith next
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Menethil >> Fly to Menethil Harbor. Alternatively, pay a mage for a portal to Theramore
     .skill skinning,230,1
     .zoneskip Dustwallow Marsh

@@ -14,10 +14,10 @@ RXPGuides.RegisterGuide([[
 step << !Tauren
     #sticky
     #completewith next
-    .goto Mulgore,44.9,77.1
+    .goto Mulgore,44.875,77.074
     +You have selected a guide meant for Tauren. This zone will NOT work well for you due to missing one of the main questlines that are gated for Tauren only. It is recommended you choose the same starter zone that you start in
 step
-    .goto Mulgore,44.9,77.1
+    .goto Mulgore,44.875,77.074
     .accept 747 >>Accept The Hunt Begins
 step
     .goto Mulgore,44.2,76.1
@@ -31,10 +31,10 @@ step << Warrior/Shaman
     .goto Mulgore,45.3,76.5
     .vendor >> vendor trash
 step << Warrior
-    .goto Mulgore,44.0,76.1
+    .goto Mulgore,44.008,76.132
     .train 6673 >>Train Battle Shout
 step << Shaman
-    .goto Mulgore,45.0,75.9
+    .goto Mulgore,45.015,75.941
     .train 8017 >>Train Rockbiter Weapon
 step
     #sticky
@@ -72,7 +72,7 @@ step
     .turnin 753 >>Turn in A Humble Task
     .accept 755 >>Accept Rites of the Earthmother
 step << Warrior
-    .goto Mulgore,44.0,76.1
+    .goto Mulgore,44.008,76.132
     .turnin 3091 >>Turn in Simple Note
 step << Hunter
     .goto Mulgore,44.3,75.7
@@ -90,7 +90,7 @@ step
     .complete 750,1 --Mountain Cougar Pelt (10)
 step
     >>Grind mobs en route
-    .goto Mulgore,42.6,92.2
+    .goto Mulgore,42.573,92.187
     .turnin 755 >>Turn in Rites of the Earthmother
     .accept 757 >>Accept Rite of Strength
 step
@@ -121,11 +121,11 @@ step
     .goto Mulgore,45.3,76.5
     .vendor >> vendor trash
 step << Druid
-    .goto Mulgore,45.1,75.9
+    .goto Mulgore,45.090,75.931
     .turnin 3094 >>Turn in Verdant Note
     .train 8921 >>Train Moonfire
 step << Shaman
-    .goto Mulgore,45.0,75.9
+    .goto Mulgore,45.015,75.941
     .turnin 3093 >>Turn in Rune-Inscribed Note
     .trainer >> Train your class spells
 step << Shaman
@@ -138,7 +138,7 @@ step << Hunter
     .goto Mulgore,44.3,75.7
     .trainer >> Train your class spells
 step << Warrior
-    .goto Mulgore,44.0,76.1
+    .goto Mulgore,44.008,76.132
     .trainer >> Train your class spells
 step
     .goto Mulgore,58.2,85.0
@@ -185,17 +185,17 @@ step << Shaman
     .turnin 1519 >>Turn in Call of Earth
     .accept 1520 >>Accept Call of Earth
 step << Shaman
-    .goto Mulgore,53.9,80.5,90 >>Run to the Rock
+    .goto Mulgore,53.893,80.538,90 >>Run to the Rock
 step << Shaman
     >>Use the Earth Sapta in your bags
-    .goto Mulgore,53.9,80.5
+    .goto Mulgore,53.893,80.538
     .turnin 1520 >>Turn in Call of Earth
     .accept 1521 >>Accept Call of Earth
 step << Shaman
     .goto Mulgore,44.7,76.2
     .turnin 1521 >>Turn in Call of Earth
 step
-    .goto Mulgore,44.5,76.5
+    .goto Mulgore,44.526,76.504
     .turnin 3376 >>Turn in Break Sharptusk!
 step
     .goto Mulgore,44.2,76.1
@@ -240,11 +240,11 @@ step << Warrior
         .vendor >> vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (7s 1c). Skip this step if you don't have enough
     .collect 2493,1 --Collect Wooden Mallet
 step << !Hunter
-    .goto Mulgore,46.6,61.1
+    .goto Mulgore,46.622,61.094
     .turnin 1656 >>Turn in A Task Unfinished
     .home >>Set your Hearthstone to Bloodhoof Village
 step << !Hunter
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 763 >>Turn in Rites of the Earthmother
     .accept 745 >>Accept Sharing the Land
     .accept 767 >>Accept Rite of Vision
@@ -257,7 +257,7 @@ step << Shaman
     .goto Mulgore,48.4,59.2
     .trainer >> Train your class spells
 step << !Hunter
-    .goto Mulgore,48.7,59.3
+    .goto Mulgore,48.715,59.325
     .accept 761 >>Accept Swoop Hunting
 step << Druid
     .goto Mulgore,48.5,59.6
@@ -266,26 +266,26 @@ step << Tauren/!Hunter
     .goto Mulgore,48.6,60.4
     .accept 748 >>Accept Poison Water
 step << Warrior
-    .goto Mulgore,49.5,60.6
+    .goto Mulgore,49.515,60.586
     .trainer >> Train your class spells
 step
     .goto Mulgore,47.3,62.0
     .accept 743 >>Accept Dangers of the Windfury
 step << Hunter
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 763 >>Turn in Rites of the Earthmother
     .accept 745 >>Accept Sharing the Land
     .accept 767 >>Accept Rite of Vision
     .accept 746 >>Accept Dwarven Digging
 step << Hunter
-    .goto Mulgore,46.6,61.1
+    .goto Mulgore,46.622,61.094
     .turnin 1656 >>Turn in A Task Unfinished
     .home >>Set your Hearthstone to Bloodhoof Village
 step << Tauren Hunter
     .goto Mulgore,48.6,60.4
     .accept 748 >>Accept Poison Water
 step << Hunter
-    .goto Mulgore,48.7,59.3
+    .goto Mulgore,48.715,59.325
     .accept 761 >>Accept Swoop Hunting
 step << Hunter
     .goto Mulgore,47.8,57.6
@@ -300,7 +300,7 @@ step << Hunter
     .accept 766 >>Accept Mazzranache
 step << Hunter
     #completewith next
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .trainer >> Train your class spells if you still have to train some
 step << Hunter
     .goto Mulgore,49.3,56.2,10,0
@@ -369,7 +369,7 @@ step << Tauren
     .accept 756 >>Accept Thunderhorn Totem
 step << Warrior
     #completewith next
-    .goto Mulgore,49.5,60.6
+    .goto Mulgore,49.515,60.586
     .trainer >> Train your class spells if you still have to train some
 step << Shaman
     #completewith next
@@ -380,7 +380,7 @@ step << Druid
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells if you still have to train some
 step
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 745 >>Turn in Sharing the Land
 step << Warrior
     .goto Mulgore,46.8,60.8
@@ -407,7 +407,7 @@ step
     .turnin 771 >>Turn in Rite of Vision
     .accept 772 >>Accept Rite of Vision
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .money <0.01
     .trainer >> Train your class spells if you still have to train some
 step
@@ -474,7 +474,7 @@ step << Druid
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells
 step << Warrior
-    .goto Mulgore,49.5,60.6
+    .goto Mulgore,49.515,60.586
     .trainer >> Train your class spells
 step << Shaman/Druid
     .goto Mulgore,45.7,58.6
@@ -520,7 +520,7 @@ step
     .complete 743,1 --Windfury Talon (8)
 step
 	#label Burial
-    .goto Mulgore,32.7,36.1
+    .goto Mulgore,32.714,36.087
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
 step
@@ -581,7 +581,7 @@ step
     .turnin 758 >>Turn in Thunderhorn Cleansing
     .accept 759 >>Accept Wildmane Totem << !Hunter
 step << !Hunter
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 746 >>Turn in Dwarven Digging
 step
     .goto Mulgore,47.4,62.0
@@ -595,11 +595,11 @@ step << Druid
     .accept 5928 >>Accept Heeding the Call
      .trainer >> Train your class spells
 step << Warrior
-    .goto Mulgore,49.5,60.6
+    .goto Mulgore,49.515,60.586
     .accept 1505 >>Accept Veteran Uzzek
      .trainer >> Train your class spells
 step << Hunter
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 746 >>Turn in Dwarven Digging
 step << Tauren Hunter
     .goto Mulgore,48.5,60.4
@@ -611,7 +611,7 @@ step << Hunter
     .goto Mulgore,47.7,55.7
      .trainer >> Train your pet spells
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .accept 6061 >>Accept Taming the Beast
      .trainer >> Train your class spells
 step << Hunter
@@ -619,7 +619,7 @@ step << Hunter
     .goto Mulgore,53.7,62.2
     .complete 6061,1 --Tame an Adult Plainstrider (1)
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .turnin 6061 >>Turn in Taming the Beast
     .accept 6087 >>Accept Taming the Beast
 step << Hunter
@@ -627,7 +627,7 @@ step << Hunter
     .goto Mulgore,47.1,48.3
     .complete 6087,1 --Tame a Prairie Stalker (1)
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .turnin 6087 >>Turn in Taming the Beast
     .accept 6088 >>Accept Taming the Beast
 step << Hunter
@@ -635,7 +635,7 @@ step << Hunter
     .goto Mulgore,43.3,51.4
     .complete 6088,1 --Tame a Swoop (1)
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .turnin 6088 >>Turn in Taming the Beast
     .accept 6089 >>Accept Training the Beast
 step
@@ -689,7 +689,7 @@ step << Druid
     .accept 5922 >>Accept Moonglade
 step << Druid
     >>Use your new spell to teleport to Moonglade
-    .goto Moonglade,56.2,30.7
+    .goto Moonglade,56.209,30.636
     .turnin 5922 >>Turn in Moonglade
     .accept 5930 >>Accept Great Bear Spirit
 step << Druid
@@ -697,17 +697,17 @@ step << Druid
     .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
 step << Druid
     >> Teleport back to Moonglade
-    .goto Moonglade,56.2,30.7
+    .goto Moonglade,56.209,30.636
     .turnin 5930 >>Turn in Great Bear Spirit
     .accept 5932 >>Accept Back to Thunder Bluff
 step << Druid
     .hs >>Hearth to Thunder Bluff
 step << Druid
-    .goto Thunder Bluff,76.5,27.3
+    .goto Thunder Bluff,76.477,27.221
     .turnin 5932 >>Turn in Back to Thunder Bluff
     .accept 6002 >>Accept Body and Heart
 step << Druid
-    .goto Thunder Bluff,47.0,49.8
+    .goto Thunder Bluff,47.003,49.832
     .fly Camp Taurajo >>Fly to Camp Taurajo
 step << Druid
     >>Run to the Moonkin Stone, and use the Cenarion Lunardust in your inventory. Kill Lunaclaw, then talk to her
@@ -819,7 +819,7 @@ step << Warrior/Hunter
     .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
 step << Druid
-    .goto Thunder Bluff,76.5,27.3
+    .goto Thunder Bluff,76.477,27.221
     .turnin 6002 >>Turn in Body and Heart
 step
     #sticky
@@ -915,13 +915,13 @@ step << Shaman
     .goto Mulgore,48.4,59.2
      .trainer >> Train your class spells
 step << Warrior
-    .goto Mulgore,49.5,60.6
+    .goto Mulgore,49.515,60.586
      .trainer >> Train your class spells
 step << Druid
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
      .trainer >> Train your class spells
 step
     #sticky
@@ -981,10 +981,10 @@ RXPGuides.RegisterGuide([[
 step << !Tauren
     #sticky
     #completewith next
-    .goto Mulgore,44.9,77.1
+    .goto Mulgore,44.875,77.074
     +You have selected a guide meant for Tauren. This zone will NOT work well for you due to missing one of the main questlines that are gated for Tauren only. It is recommended you choose the same starter zone that you start in
 step
-    .goto Mulgore,44.9,77.1
+    .goto Mulgore,44.875,77.074
     .accept 747 >>Accept The Hunt Begins
 step
     .goto Mulgore,44.2,76.1
@@ -998,10 +998,10 @@ step << Warrior/Shaman
     .goto Mulgore,45.3,76.5
     .vendor >> vendor trash
 step << Warrior
-    .goto Mulgore,44.0,76.1
+    .goto Mulgore,44.008,76.132
     .train 6673 >>Train Battle Shout
 step << Shaman
-    .goto Mulgore,45.0,75.9
+    .goto Mulgore,45.015,75.941
     .train 8017 >>Train Rockbiter Weapon
 step
     #sticky
@@ -1039,7 +1039,7 @@ step
     .turnin 753 >>Turn in A Humble Task
     .accept 755 >>Accept Rites of the Earthmother
 step << Warrior
-    .goto Mulgore,44.0,76.1
+    .goto Mulgore,44.008,76.132
     .turnin 3091 >>Turn in Simple Note
 step << Hunter
     .goto Mulgore,44.3,75.7
@@ -1057,7 +1057,7 @@ step
     .complete 750,1 --Mountain Cougar Pelt (10)
 step
     >>Grind mobs en route
-    .goto Mulgore,42.6,92.2
+    .goto Mulgore,42.573,92.187
     .turnin 755 >>Turn in Rites of the Earthmother
     .accept 757 >>Accept Rite of Strength
 step
@@ -1082,11 +1082,11 @@ step
     .goto Mulgore,45.3,76.5
     .vendor >> vendor trash
 step << Druid
-    .goto Mulgore,45.1,75.9
+    .goto Mulgore,45.090,75.931
     .turnin 3094 >>Turn in Verdant Note
     .trainer >> Train your class spells
 step << Shaman
-    .goto Mulgore,45.0,75.9
+    .goto Mulgore,45.015,75.941
     .turnin 3093 >>Turn in Rune-Inscribed Note
     .trainer >> Train your class spells
 step << Shaman
@@ -1099,7 +1099,7 @@ step << Hunter
     .goto Mulgore,44.3,75.7
     .trainer >> Train your class spells
 step << Warrior
-    .goto Mulgore,44.0,76.1
+    .goto Mulgore,44.008,76.132
     .trainer >> Train your class spells
 step
     .goto Mulgore,58.2,85.0
@@ -1164,17 +1164,17 @@ step << Shaman
     .turnin 1519 >>Turn in Call of Earth
     .accept 1520 >>Accept Call of Earth
 step << Shaman
-    .goto Mulgore,53.9,80.5,90 >>Run to the Rock
+    .goto Mulgore,53.893,80.538,90 >>Run to the Rock
 step << Shaman
     >>Use the Earth Sapta in your bags
-    .goto Mulgore,53.9,80.5
+    .goto Mulgore,53.893,80.538
     .turnin 1520 >>Turn in Call of Earth
     .accept 1521 >>Accept Call of Earth
 step << Shaman
     .goto Mulgore,44.7,76.2
     .turnin 1521 >>Turn in Call of Earth
 step
-    .goto Mulgore,44.5,76.5
+    .goto Mulgore,44.526,76.504
     .turnin 3376 >>Turn in Break Sharptusk!
 step
     .goto Mulgore,44.2,76.1
@@ -1201,11 +1201,11 @@ step << Warrior
         .vendor >> vendor trash. Sell your weapon if it gives you enough money for Wooden Mallet (7s 1c). Skip this step if you don't have enough
     .collect 2493,1 --Collect Wooden Mallet
 step << !Hunter
-    .goto Mulgore,46.6,61.1
+    .goto Mulgore,46.622,61.094
     .turnin 1656 >>Turn in A Task Unfinished
     .home >>Set your Hearthstone to Bloodhoof Village
 step << !Hunter
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 763 >>Turn in Rites of the Earthmother
     .accept 745 >>Accept Sharing the Land
     .accept 767 >>Accept Rite of Vision
@@ -1219,7 +1219,7 @@ step << Shaman
     .goto Mulgore,48.4,59.2
     .trainer >> Train your class spells
 step << !Hunter
-    .goto Mulgore,48.7,59.3
+    .goto Mulgore,48.715,59.325
     .accept 761 >>Accept Swoop Hunting
 step << Druid
     .money <0.01
@@ -1227,23 +1227,23 @@ step << Druid
     .trainer >> Train your class spells
 step << Warrior
     .money <0.01
-    .goto Mulgore,49.5,60.6
+    .goto Mulgore,49.515,60.586
     .trainer >> Train your class spells
 step
     .goto Mulgore,47.3,62.0
     .accept 743 >>Accept Dangers of the Windfury
 step << Hunter
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 763 >>Turn in Rites of the Earthmother
     .accept 745 >>Accept Sharing the Land
     .accept 767 >>Accept Rite of Vision
     .accept 746 >>Accept Dwarven Digging
 step << Hunter
-    .goto Mulgore,46.6,61.1
+    .goto Mulgore,46.622,61.094
     .turnin 1656 >>Turn in A Task Unfinished
     .home >>Set your Hearthstone to Bloodhoof Village
 step << Hunter
-    .goto Mulgore,48.7,59.3
+    .goto Mulgore,48.715,59.325
     .accept 761 >>Accept Swoop Hunting
 step << Hunter
     .goto Mulgore,47.8,57.6
@@ -1259,7 +1259,7 @@ step << Hunter
 step << Hunter
     #completewith next
     .money <0.01
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .trainer >> Train your class spells if you still have to train some
 step << Hunter
     .goto Mulgore,49.3,56.2,15,0
@@ -1305,7 +1305,7 @@ step
 step << Warrior
     #completewith next
     .money <0.01
-    .goto Mulgore,49.5,60.6
+    .goto Mulgore,49.515,60.586
     .trainer >> Train your class spells if you still have to train some
 step << Shaman
     #completewith next
@@ -1318,7 +1318,7 @@ step << Druid
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells if you still have to train some
 step
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 745 >>Turn in Sharing the Land
 step << Warrior
     .goto Mulgore,46.8,60.8
@@ -1345,7 +1345,7 @@ step
     .turnin 771 >>Turn in Rite of Vision
     .accept 772 >>Accept Rite of Vision
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .money <0.01
     .trainer >> Train your class spells if you still have to train some
 step
@@ -1384,7 +1384,7 @@ step
     .goto Mulgore,31.9,41.7
     .complete 743,1 --Windfury Talon (8)
 step
-    .goto Mulgore,32.7,36.1
+    .goto Mulgore,32.714,36.087
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
 step
@@ -1441,7 +1441,7 @@ step << Druid
 	.trainer >> Train your class spells
 step << Druid
     >>Use your new spell to teleport to Moonglade
-    .goto Moonglade,56.2,30.7
+    .goto Moonglade,56.209,30.636
     .turnin 5922 >>Turn in Moonglade
     .accept 5930 >>Accept Great Bear Spirit
 step << Druid
@@ -1449,13 +1449,13 @@ step << Druid
     .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
 step << Druid
     >> Teleport back to Moonglade
-    .goto Moonglade,56.2,30.7
+    .goto Moonglade,56.209,30.636
     .turnin 5930 >>Turn in Great Bear Spirit
     .accept 5932 >>Accept Back to Thunder Bluff
 step << Druid
 	.hs >> Hearth to Thunder Bluff
 step << Druid
-    .goto Thunder Bluff,76.5,27.3
+    .goto Thunder Bluff,76.477,27.221
     .turnin 5932 >>Turn in Back to Thunder Bluff
     .accept 6002 >>Accept Body and Heart
 step
@@ -1569,7 +1569,7 @@ step << Warrior/Hunter
     .goto Thunder Bluff,40.9,62.7
     .train 227 >>Train Staves
 step << Druid
-    .goto Thunder Bluff,76.5,27.3
+    .goto Thunder Bluff,76.477,27.221
     .turnin 6002 >>Turn in Body and Heart
 step << !Hunter
     #completewith next
@@ -1598,7 +1598,7 @@ step << !Hunter
     .goto Mulgore,47.0,57.2
     .turnin 766 >>Turn in Mazzranache
 step << !Hunter
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 746 >>Turn in Dwarven Digging
 step
     .goto Mulgore,47.4,62.0
@@ -1616,11 +1616,11 @@ step << Druid
     .goto Mulgore,48.5,59.6
      .trainer >> Train your class spells
 step << Warrior
-    .goto Mulgore,49.5,60.6
+    .goto Mulgore,49.515,60.586
     .accept 1505 >>Accept Veteran Uzzek
      .trainer >> Train your class spells
 step << Hunter
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 746 >>Turn in Dwarven Digging
 step << Hunter
     .goto Mulgore,47.0,57.2
@@ -1629,7 +1629,7 @@ step << Hunter
     .goto Mulgore,47.7,55.7
      .trainer >> Train your pet spells
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .accept 6061 >>Accept Taming the Beast
      .trainer >> Train your class spells
 step << Hunter
@@ -1637,7 +1637,7 @@ step << Hunter
     .goto Mulgore,53.7,62.2
     .complete 6061,1 --Tame an Adult Plainstrider (1)
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .turnin 6061 >>Turn in Taming the Beast
     .accept 6087 >>Accept Taming the Beast
 step << Hunter
@@ -1645,7 +1645,7 @@ step << Hunter
     .goto Mulgore,47.1,48.3
     .complete 6087,1 --Tame a Prairie Stalker (1)
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .turnin 6087 >>Turn in Taming the Beast
     .accept 6088 >>Accept Taming the Beast
 step << Hunter
@@ -1653,7 +1653,7 @@ step << Hunter
     .goto Mulgore,43.3,51.4
     .complete 6088,1 --Tame a Swoop (1)
 step << Hunter
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
     .turnin 6088 >>Turn in Taming the Beast
     .accept 6089 >>Accept Training the Beast
 step << !Hunter
@@ -1708,20 +1708,20 @@ step << Shaman
     .goto Mulgore,48.4,59.2
      .trainer >> Train your class spells
 step << Warrior
-    .goto Mulgore,49.5,60.6
+    .goto Mulgore,49.515,60.586
      .trainer >> Train your class spells
 step << DruidSKIP
     .goto Mulgore,48.5,59.6
     .trainer >> Train your class spells
 step << HunterSKIP
-    .goto Mulgore,47.8,55.7
+    .goto Mulgore,47.820,55.688
      .trainer >> Train your class spells
 step
     .goto The Barrens,44.5,59.1
     .fly Thunder Bluff >>Fly to Thunder Bluff << Druid/Hunter
 	.fly Crossroads >> Fly to The Crossroads << !Hunter !Druid
 step << Druid
-    .goto Thunder Bluff,76.5,27.3
+    .goto Thunder Bluff,76.477,27.221
     .turnin 6002 >>Turn in Body and Heart
 	.trainer >> Train your class spells
 step << Hunter

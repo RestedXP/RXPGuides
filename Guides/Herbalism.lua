@@ -66,7 +66,7 @@ step
 step
     #completewith next
     .goto Undercity,65.9,44.1,50,0
-    .goto Undercity,63.3,48.6
+    .goto Undercity,63.254,48.559
     .fly Sepulcher >> Fly to The Sepulcher
     .skill herbalism,115,1
     .zoneskip Silverpine Forest
@@ -75,7 +75,7 @@ step
     .loop 60,Silverpine Forest,51.9,42.9,48.9,33.3,45.1,30.3,47.6,24.9,52.0,20.9,55.1,15.7,58.4,12.1,64.3,9.1,65.3,11.3,60.5,14.1,56.2,18.7,55.8,22.5,56.2,29.3,55.4,31.9,52.5,31.2,54.6,35.9,54.4,43.1,52.2,49.8,54.7,58.5,55.8,64.5,61.5,64.3,64.2,76.9,60.1,78.3,55.1,76.3,51.7,77.6,49.5,80.1,46.1,80.8,50.1,74.3,51.4,68.1,51.7,56.4,48.0,52.6,45.5,53.6,44.1,50.4,45.1,47.5,49.0,46.8,51.9,42.9
 step
     #completewith next
-    .goto Silverpine Forest,45.6,42.6,-1
+    .goto Silverpine Forest,45.620,42.597,-1
     .goto Hillsbrad Foothills,21.0,46.2,-1
     >>Travel to Hillsbrad Foothills. If you're close to the border, then ride there - otherwise ride back to The Sepulcher and fly to Tarren Mill
     .fly Tarren Mill >> Fly to Tarren Mill
@@ -329,7 +329,7 @@ step
 step
     #completewith next
     .goto Stormwind City,68.2,72.9,20,0
-    .goto Stormwind City,71.0,72.5
+    .goto Stormwind City,70.954,72.512
     .fly Lakeshire >> Fly to Lakeshire
     .zoneskip Redridge Mountains
     .skill herbalism,150,1

@@ -508,7 +508,7 @@ step
     .accept 1483 >>Accept Ziz Fizziks
     .goto The Barrens,63.0,37.2
     .accept 959 >>Accept Trouble at the Docks
-    .goto The Barrens,63.1,37.6
+    .goto The Barrens,63.086,37.607
     .accept 865 >>Accept Raptor Horns
     .goto The Barrens,62.4,37.6
     .maxlevel 21
@@ -710,12 +710,12 @@ step
 step
     #label spiderend
     >> Head to the goblin hut behind the hill
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1483 >> Turn in Ziz Fizziks
     .isOnQuest 1483
 step
     >> Head to the goblin hut behind the hill
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .accept 1093 >> Accept Super Reaper 6000
 step
     #sticky
@@ -745,7 +745,7 @@ step
     .complete 1062,1 --Kill Venture Co. Logger (x15)
     .isOnQuest 1062
 step
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1093 >> Turn in Super Reaper 6000
     .accept 1094 >> Accept Further Instructions
 step
@@ -822,7 +822,7 @@ step
     #label weapons
 step
     #xprate <1.5
-    .goto The Barrens,45.1,57.7
+    .goto The Barrens,45.102,57.683
     .accept 893 >>Accept Weapons of Choice
     .maxlevel 25
 step
@@ -844,7 +844,7 @@ step
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
 step << Warlock tbc
     >>Kill Quillboars en route to here
-    .goto The Barrens,43.3,47.9
+    .goto The Barrens,43.305,47.885
     .turnin 1515 >>Turn in Dogran's Captivity
     .accept 1512 >>Accept Love's Gift
 step
@@ -917,7 +917,7 @@ step << Tauren
 	.fly Thunder Bluff >>Fly or run to Thunder Bluff
 step << Druid
 	#completewith next
-	.goto Thunder Bluff,76.5,27.2
+	.goto Thunder Bluff,76.477,27.221
 	.accept 27 >>Accept A Lesson to Learn << tbc
 	.trainer >> Go and train your class spells
 step
@@ -948,20 +948,20 @@ step << Tauren
     .goto Thunder Bluff,45.8,64.7
     .home >> Set your Hearthstone to Thunder Bluff
 step
-    .goto Thunder Bluff,61.4,80.9
+    .goto Thunder Bluff,61.538,80.919
     >> Head to Hunter's Rise
     .turnin 1130 >> Turn in Melor Sends Word
     .accept 1131 >> Accept Steelsnap
 step
-    .goto Thunder Bluff,54.9,51.4
+    .goto Thunder Bluff,54.966,51.413
     .accept 1195 >> Accept The Sacred Flame
 step << !Tauren
     >>Go up the tower
-    .goto Thunder Bluff,47.0,49.8
+    .goto Thunder Bluff,47.003,49.832
     .fp Thunder Bluff >>Get the Thunder Bluff Flight Path
 step
     #completewith ratchetanchor1
-    .goto Thunder Bluff,47.0,49.8
+    .goto Thunder Bluff,47.003,49.832
     .fly Ratchet >> Fly to Ratchet
 step
     .isOnQuest 865
@@ -1116,7 +1116,7 @@ step
     #xprate >1.499
     .isOnQuest 1095
     >> Head to the goblin hut behind the hill
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1095 >> Turn in Further Instructions
 step << !Rogue
     #xprate <1.5
@@ -1148,7 +1148,7 @@ step
 step
     .isOnQuest 1095
     >> Head back to the goblin hut behind the hill
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1095 >> Turn in Further Instructions
     .maxlevel 23
 step
@@ -1252,7 +1252,7 @@ step
     #label zoramend
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
-    .goto Ashenvale,12.2,34.2
+    .goto Ashenvale,12.223,34.216
     .turnin 6641 >> Turn in Vorsha the Lasher
     .isQuestComplete 6641
 step
@@ -1273,7 +1273,7 @@ step
     .isOnQuest 6564
 step
     #xprate <1.5
-    .goto Ashenvale,11.7,34.9
+    .goto Ashenvale,11.689,34.905
     .turnin 6442 >> Turn in Naga at the Zoram Strand
     .isQuestComplete 6442
 step << Druid tbc
@@ -1284,12 +1284,12 @@ step << Druid tbc
 step << Druid tbc
     .cast 18960 >> Use the spell Teleport: Moonglade once your hearthstone is available
     >>Go Upstairs
-    .goto Moonglade,56.2,30.6
+    .goto Moonglade,56.209,30.636
     .turnin 27 >>Turn in A Lesson to Learn
     .accept 28 >>Accept Trial of the Lake
 step << Druid tbc
 	#completewith next
-    .goto Moonglade,52.5,40.5
+    .goto Moonglade,52.526,40.565
     .trainer >> Go and train your class spells
 step << Druid tbc
     >>Search for a vase in the lake. Loot it for a Shrine Bauble
@@ -1301,7 +1301,7 @@ step << Druid tbc
     .goto Moonglade,36.2,41.8
     .complete 28,1 --Complete the Trial of the Lake. (1)
 step << Druid tbc
-    .goto Moonglade,36.5,40.1
+    .goto Moonglade,36.517,40.104
     .turnin 28 >>Turn in Trial of the Lake
     .accept 30 >>Accept Trial of the Sea Lion
 step
@@ -1316,7 +1316,7 @@ step
     .zoneskip Stonetalon Mountains,1
 step
     .isOnQuest 1063
-    .goto Thunder Bluff,69.8,30.8
+    .goto Thunder Bluff,69.851,30.910
     .turnin 1063 >> Turn in The Elder Crone
     >> Wait for the roleplay to finish
     .accept 1064 >> Accept Forsaken Aid
@@ -1347,16 +1347,16 @@ step << Tauren wotlk
 step << !Druid
 	#completewith troubleatdocks1
     .isOnQuest 959
-    .goto Thunder Bluff,47.0,49.9
+    .goto Thunder Bluff,47.003,49.832
     .fly Ratchet >> Fly to Ratchet
 step << Druid
 	#completewith next
-    .goto Thunder Bluff,47.0,49.9
+    .goto Thunder Bluff,47.003,49.832
     .fly Ratchet >> Fly to Ratchet
 step
     #label troubleatdocks1
     .isOnQuest 959
-    .goto The Barrens,63.1,37.6
+    .goto The Barrens,63.086,37.607
     .turnin 959 >>Turn in Trouble at the Docks
 step
     .isOnQuest 1491
@@ -1373,7 +1373,7 @@ step << Druid tbc
 step << Druid wotlk/!Druid
     #completewith next
     .goto The Barrens,63.1,37.1,-1
-    .goto Thunder Bluff,47.0,49.9,-1
+    .goto Thunder Bluff,47.003,49.832,-1
     .fly Orgrimmar >> Fly to Orgrimmar
 step << Paladin
     #completewith next
@@ -1385,7 +1385,7 @@ step << Shaman
     .trainer >> Go and train your class spells
 step << Hunter
     #completewith next
-    .goto Orgrimmar,66.1,18.5
+    .goto Orgrimmar,66.046,18.526
     .trainer >> Go and train your class spells
 step << Hunter
     #completewith next
@@ -1401,7 +1401,7 @@ step << Rogue
     .trainer >> Go and train your class spells
 step << Warlock
     #completewith next
-    .goto Orgrimmar,48.0,46.0
+    .goto Orgrimmar,47.983,45.933
     .trainer >> Go and train your class spells
 step << Warlock tbc
 	#completewith next
@@ -1418,14 +1418,14 @@ step << Priest
     .goto Orgrimmar,35.6,87.8
     .trainer >> Go and train your class spells
 step << Rogue tbc
-    .goto Orgrimmar,43.1,53.7
+    .goto Orgrimmar,43.050,53.737
     .accept 2460 >>Accept The Shattered Salute
 step << Rogue tbc
     >>Target Shenthul and type /salute
 	.emote SALUTE,3401
     .complete 2460,1 --Shattered Salute Performed (1)
 step << Rogue
-    .goto Orgrimmar,43.1,53.7
+    .goto Orgrimmar,43.050,53.737
     .turnin 2460 >>Turn in The Shattered Salute << tbc
     .accept 2458 >>Accept Deep Cover << tbc
     .train 1725 >>Train Distract
@@ -1477,11 +1477,11 @@ step << Rogue tbc
     .goto Orgrimmar,11.6,66.9,30
 step << Rogue tbc
 	>>You're now going to get a week long debuff making you unable to use stealth. Simply continue following the route.
-	.goto Orgrimmar,43.1,53.7
+	.goto Orgrimmar,43.050,53.737
     .turnin 2478 >>Turn in Mission: Possible But Not Probable
     .accept 2479 >>Accept Hinott's Assistance
 step << Warlock tbc
-    .goto Orgrimmar,48.2,45.3
+    .goto Orgrimmar,48.246,45.281
     .turnin 1512 >>Turn in Love's Gift
     .accept 1513 >>Accept The Binding
 step << Warlock tbc
@@ -1490,11 +1490,11 @@ step << Warlock tbc
     .complete 1513,1 --Summoned Succubus (1)
 step << Warlock tbc
     >>Use the Succubus from now on
-    .goto Orgrimmar,48.2,45.3
+    .goto Orgrimmar,48.246,45.281
     .turnin 1513 >>Turn in The Binding
     .isQuestComplete 1513
 step << Warlock
-    .goto Orgrimmar,48.2,45.3
+    .goto Orgrimmar,48.246,45.281
     .trainer >> Train your class spells
 step << wotlk
     +If you have access to gold on this server, mail yourself gold for mount training soon!
@@ -2386,7 +2386,7 @@ step
 step << Druid
 #completewith next
 	.cast 18960 >> Use the spell Teleport: Moonglade
-    .goto Moonglade,52.5,40.5
+    .goto Moonglade,52.526,40.565
 	.trainer >> Go and train your class spells
 step << Druid tbc
     .use 15883 >>Click the Half Pendant (blue) in your bag to craft the Pendant
@@ -2394,7 +2394,7 @@ step << Druid tbc
     .complete 30,1 --Pendant of the Sea Lion (1)
 step << Druid tbc
     >>Go Upstairs
-    .goto Moonglade,56.2,30.6
+    .goto Moonglade,56.209,30.636
     .turnin 30 >>Turn in Trial of the Sea Lion
     .accept 31 >>Accept Aquatic Form
 step
@@ -2414,7 +2414,7 @@ step << Warrior
     .goto Thunder Bluff,57.6,85.5
 .trainer >> Go and train your class spells
 step << Shaman
-    .goto Thunder Bluff,22.8,21.0
+    .goto Thunder Bluff,22.813,20.893
 .trainer >> Go and train your class spells
 step
     #xprate >1.099
@@ -2640,7 +2640,7 @@ step
     .turnin 879 >> Turn in Betrayal from Within
     .accept 906 >> Accept Betrayal from Within
 step
-    .goto The Barrens,45.1,57.7
+    .goto The Barrens,45.102,57.683
     .isOnQuest 893
     .turnin 893 >> Turn in Weapons of Choice
     .accept 1153 >> Accept A New Ore Sample
@@ -2813,7 +2813,7 @@ step << Shaman
 .trainer >> Go and train your class spells
 step << Hunter
     #completewith next
-    .goto Orgrimmar,66.1,18.5
+    .goto Orgrimmar,66.046,18.526
 .trainer >> Go and train your class spells
 step << Hunter
     #completewith next
@@ -2829,7 +2829,7 @@ step << Rogue
 .trainer >> Go and train your class spells
 step << Warlock
     #completewith next
-    .goto Orgrimmar,48.0,46.0
+    .goto Orgrimmar,47.983,45.933
 .trainer >> Go and train your class spells
 step << Mage
     #completewith next
@@ -2887,7 +2887,7 @@ step << BloodElf
     .turnin 9428 >> Turn in Report to Splintertree Post
     .isOnQuest 9428
 step
-    .goto Ashenvale,71.1,68.1
+    .goto Ashenvale,71.105,68.118
     .accept 6503 >> Accept Ashenvale Outrunners
 step
  >>Kill Ashenvale Outrunners that are stealthed around the area.
@@ -3100,7 +3100,7 @@ step
     .accept 824 >> Accept Je'neu of the Earthen Ring
 step
     >> Head into the inn
-    .goto Ashenvale,74.1,60.9
+    .goto Ashenvale,74.114,60.917
     .turnin 6482 >> Turn in Freedom to Ruul
     .isOnQuest 6482
 step
@@ -3118,7 +3118,7 @@ step
     .fly Zoram'gar >> Fly to Zoram'gar Outpost
 step
     #xprate <1.5
-    .goto Ashenvale,11.9,34.5
+    .goto Ashenvale,11.897,34.535
     .turnin 216 >> Turn in Between a Rock and a Thistlefur
     .isOnQuest 216
 step
@@ -3135,7 +3135,7 @@ step << Rogue
     #label zoramend
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
-    .goto Ashenvale,12.2,34.2
+    .goto Ashenvale,12.223,34.216
     .turnin 6641 >> Turn in Vorsha the Lasher
     .isQuestComplete 6641
 step << Rogue
@@ -3169,7 +3169,7 @@ step << Rogue
 step << Druid
 #completewith next
     .cast 18960 >> Use the spell Teleport to Moonglade
-    .goto Moonglade,52.5,40.5
+    .goto Moonglade,52.526,40.565
 	.trainer >> Go and train your class spells
 step << !Rogue
     #completewith next
@@ -3183,7 +3183,7 @@ step << Rogue
 	.trainer >> Go and train your class spells
 step << Rogue
     #label flytimebabyyy
-	.goto Orgrimmar,45.2,63.8,-1
+	.goto Orgrimmar,45.120,63.889,-1
     .fly Thunder Bluff >> Fly to Thunder Bluff
 step
 	.goto Thunder Bluff,55.2,51.5
@@ -3215,7 +3215,7 @@ step << Warrior
 	.trainer >> Go and train your class spells
 step << Shaman
 	#completewith hearth
-    .goto Thunder Bluff,22.8,21.0
+    .goto Thunder Bluff,22.813,20.893
 	.trainer >> Go and train your class spells
 step
     #xprate <1.1
@@ -3519,7 +3519,7 @@ step << Warrior
     .trainer >> Go and train your class spells
 step << Shaman
 	#completewith next
-    .goto Thunder Bluff,22.8,21.0
+    .goto Thunder Bluff,22.813,20.893
     .trainer >> Go and train your class spells
 step << Priest
 	#completewith next
@@ -3536,7 +3536,7 @@ step
     .goto Thunder Bluff,60.8,81.5
     .accept 1136 >> Accept Frostmaw
 step
-    .goto Thunder Bluff,69.7,30.9
+    .goto Thunder Bluff,69.851,30.910
     .turnin 5062 >> Turn in Sacred Fire
 step
     .goto Thunder Bluff,70.1,30.9
@@ -3702,7 +3702,7 @@ step
     .accept 1105 >> Accept Hardened Shells
     .goto Thousand Needles,78.1,77.1
 step
-    .goto Thousand Needles,77.8,77.3
+    .goto Thousand Needles,77.787,77.270
     .accept 1111 >> Accept Wharfmaster Dizzywig
     .accept 5762 >> Accept Hemet Nesingwary Jr.
 step
@@ -3751,7 +3751,7 @@ step
 step
 	#requires partsoftheswarm
     .turnin -1147 >> Turn in The Swarm Grows
-    .goto Thousand Needles,67.6,63.9
+    .goto Thousand Needles,67.582,63.944
 step
     .turnin -1110 >> Turn in Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
@@ -3807,7 +3807,7 @@ step << Warrior
     .trainer >> Go and train your class spells
 step << Warrior
     .isOnQuest 1153
-    .goto Thunder Bluff,47.0,49.8
+    .goto Thunder Bluff,47.003,49.832
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step << !Warrior
     .isOnQuest 1153
@@ -3815,12 +3815,12 @@ step << !Warrior
     .zone The Barrens >> Arrive in the Barrens
 step
     .isOnQuest 1153
-    .goto The Barrens,45.1,57.7
+    .goto The Barrens,45.102,57.683
     .turnin 1153 >> Turn in A New Ore Sample
 step
     #completewith swarmgrows
     .goto The Barrens,44.4,59.1,-1
-    .goto Thunder Bluff,47.0,49.8,-1
+    .goto Thunder Bluff,47.003,49.832,-1
     .fly Crossroads >> Fly to Crossroads
 step
     #label swarmgrows
@@ -3924,7 +3924,7 @@ step
     .xp <33,1
 
 	>> Head to the second level of buildings
-    .goto Stranglethorn Vale,28.3,77.6
+    .goto Stranglethorn Vale,28.293,77.591
     .accept 575 >> Accept Supply and Demand
 step
     .xp <33,1
@@ -3993,7 +3993,7 @@ step << Hunter
     .xp >33,1
     .isOnQuest 1145
 	#completewith next
-    .goto Orgrimmar,66.1,18.5
+    .goto Orgrimmar,66.046,18.526
     .trainer >> Go and train your class spells
 step << Hunter
     .xp >33,1
@@ -4028,7 +4028,7 @@ step
 step
     .xp >33,1
     .isOnQuest 1145
-    .goto Orgrimmar,75.2,34.2
+    .goto Orgrimmar,75.229,34.240
     .turnin 1145 >> Turn in The Swarm Grows
     .accept 1146 >> Accept The Swarm Grows
 step << Mage
@@ -4084,7 +4084,7 @@ step << Warlock
 step << Shaman
     .isOnQuest 874
 	#completewith next
-    .goto Orgrimmar,45.1,63.9
+    .goto Orgrimmar,45.120,63.889
     .fly Ratchet >>Fly to Ratchet
 step << Shaman
     .isOnQuest 874
@@ -4116,7 +4116,7 @@ step << Shaman
 step << Tauren tbc
     .money <35.00
     .goto The Barrens,63.1,37.1,-1
-    .goto Orgrimmar,45.1,63.9,-1
+    .goto Orgrimmar,45.120,63.889,-1
     .fly Thunder Bluff >>Fly to Thunder Bluff, we're going to train riding
 step << Tauren tbc
     .money <35.00
@@ -4125,15 +4125,15 @@ step << Tauren tbc
 step << Warrior/Shaman
 	#completewith next
     .goto The Barrens,63.1,37.1,-1
-    .goto Thunder Bluff,46.9,49.9,-1
+    .goto Thunder Bluff,47.003,49.832,-1
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Tauren
     #completewith next
-    .goto Thunder Bluff,46.9,49.9,-1
+    .goto Thunder Bluff,47.003,49.832,-1
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Shaman
     .isQuestAvailable 1531
-    .goto Orgrimmar,38.0,37.7
+    .goto Orgrimmar,37.957,37.729
     .accept 1531 >>Accept Call of Air
 step << Warrior
 	#completewith next
@@ -4142,7 +4142,7 @@ step << Warrior
 step << Warrior/Shaman
 	#completewith next
     .xp <33,1
-    .goto Orgrimmar,54.1,68.4
+    .goto Orgrimmar,54.097,68.407
     .home >>Set your Hearthstone to Valley of Strength
 step << Undead !Warlock tbc
     .money <35.00
@@ -6750,7 +6750,7 @@ step << !Shaman !Warrior
     .isQuestAvailable 1195
 step << skip
 	#completewith next
-	.goto Thunder Bluff,76.5,27.2
+	.goto Thunder Bluff,76.477,27.221
 	.accept 27 >>Accept A Lesson to Learn << tbc
 	.trainer >> Go and train your class spells
 --VV Druid - not worth it

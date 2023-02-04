@@ -204,7 +204,7 @@ step
     .turnin 916 >> Turn in Webwood Venom
     .accept 917 >> Accept Webwood Egg
 step << Druid
-    .goto Teldrassil,58.6,40.3
+    .goto Teldrassil,58.626,40.287
 	>>Run up the big ramp and into the small room
 	.turnin 3120 >> Turn in Verdant Sigil
 	.train 8921 >>Train Moonfire
@@ -343,7 +343,7 @@ step << Hunter
     >>Buy arrows until your Quiver is full (1000 arrows)
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Warrior
-    .goto Teldrassil,56.2,59.2
+    .goto Teldrassil,56.221,59.198
 	.trainer >> Train your level 6 spells
 step << Rogue
     .goto Teldrassil,56.4,60.1
@@ -364,7 +364,7 @@ step
     .goto Teldrassil,55.7,59.8
     .turnin 2159 >> Turn in Dolanaar Delivery
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
 	.train 3044>> Train Arcane Shot
 step << Druid
     .goto Teldrassil,55.9,61.6
@@ -388,7 +388,7 @@ step << Priest
     .goto Teldrassil,57.2,63.5
     .complete 5621,1 --Heal and fortify Sentinel Shaya
 step
-    .goto Teldrassil,60.9,68.5
+    .goto Teldrassil,60.900,68.489
     .turnin 997 >> Turn in Denalan's Earth
     .accept 918 >> Accept Timberling Seeds
     .accept 919 >> Accept Timberling Sprouts
@@ -398,7 +398,7 @@ step
     .complete 918,1 --Collect Timberling Seed (x8)
     .complete 919,1 --Collect Timberling Sprout (x12)
 step
-    .goto Teldrassil,60.9,68.5
+    .goto Teldrassil,60.900,68.489
     .turnin 918 >> Turn in Timberling Seeds
     .accept 922 >> Accept Rellian Greenspyre
     .turnin 919 >> Turn in Timberling Sprouts
@@ -434,7 +434,7 @@ step
     .goto Teldrassil,60.5,56.3
     .turnin 488 >> Turn in Zenn's Bidding
 step
-	.goto Teldrassil,56.1,57.7
+	.goto Teldrassil,56.078,57.723
     .accept 489 >> Accept Seek Redemption!
 step
     .goto Teldrassil,55.9,57.3
@@ -456,10 +456,10 @@ step << Hunter
     .goto Teldrassil,56.3,59.5
 	.vendor >>Buy arrows up to 800 total
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
 	.trainer >> Train your level 8 spells
 step << Warrior
-    .goto Teldrassil,56.2,59.2
+    .goto Teldrassil,56.221,59.198
 	.trainer >> Train your level 8 spells
 step << Rogue
     .goto Teldrassil,56.4,60.1
@@ -555,7 +555,7 @@ step
     .accept 7383 >> Accept Crown of the Earth
 step
 	#xprate <1.5
-    .goto Teldrassil,57.1,61.3
+    .goto Teldrassil,57.121,61.296
     .train 2550 >>Train Cooking
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
@@ -722,7 +722,7 @@ step << Hunter
 	.vendor >> Buy 4 stacks of level 10 arrows. Equip them as soon as you get to level 10
 step
 	#xprate >1.3
-    .goto Teldrassil,57.1,61.3
+    .goto Teldrassil,57.121,61.296
     .train 2550 >>Train Cooking
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
@@ -750,7 +750,7 @@ step << Hunter
     #completewith L10
     #level 10
     #requires beast2
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
     .turnin 6063 >> Turn in Taming the Beast
     .accept 6101 >> Accept Taming the Beast
 step
@@ -792,7 +792,7 @@ step << Priest
     .goto Teldrassil,55.5,56.7
 	.trainer >> Train your level 10 spells
 step << Warrior
-    .goto Teldrassil,56.2,59.2
+    .goto Teldrassil,56.221,59.198
 	.trainer >> Train your level 10 spells
 step << Rogue
     .goto Teldrassil,56.4,60.1
@@ -805,25 +805,25 @@ step << Hunter
     .goto Teldrassil,59.9,58.8
     .complete 6063,1 --Tame a Webwood Lurker
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
     .turnin 6063 >> Turn in Taming the Beast
     .accept 6101 >> Accept Taming the Beast
 step << Hunter
     .goto Teldrassil,62.6,72.2
     .complete 6101,1 --Tame a Nightsaber Stalker
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
     .turnin 6101 >> Turn in Taming the Beast
     .accept 6102 >> Accept Taming the Beast
 step << Hunter
     .goto Teldrassil,64.7,66.7
     .complete 6102,1 --Tame a Strigid Screecher
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
     .turnin 6102 >> Turn in Taming the Beast
     .accept 6103 >> Accept Training the Beast
 step << Warrior
-    .goto Teldrassil,56.2,59.2
+    .goto Teldrassil,56.221,59.198
     .accept 1684 >> Accept Elanaria
 step << Rogue
     .goto Teldrassil,56.2,60.0
@@ -915,7 +915,7 @@ step
 	#completewith next
     .deathskip >>Die and respawn at the Darnassus graveyard
 step
-    .goto Darnassus,70.6,45.3
+    .goto Darnassus,70.679,45.379
     .accept 6344 >> Accept Nessa Shadowsong
 step
 	.abandon 927 >> Abandon The Moss-twined Heart. You never have an opportunity to turn it in
@@ -941,7 +941,7 @@ step << Warrior
     .goto Teldrassil,43.6,54.3
     .deathskip >>Die on purpose after you get past the furbolg area and respawn at Darnassus
 step << Warrior
-    .goto Darnassus,57.4,34.5
+    .goto Darnassus,57.305,34.606
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
 step << Druid
@@ -950,14 +950,14 @@ step << Druid
     .accept 6001 >> Accept Body and Heart
 step
     .isOnQuest 935
-    .goto Darnassus,34.8,9.2
+    .goto Darnassus,34.814,9.255
     .turnin 935 >> Turn in Crown of the Earth
 step
-    .goto Darnassus,34.8,9.2
+    .goto Darnassus,34.814,9.255
     .turnin 940 >> Turn in Teldrassil << Hunter
 step
     #xprate <1.5
-    .goto Darnassus,34.8,9.2
+    .goto Darnassus,34.814,9.255
     .accept 952 >> Accept Grove of the Ancients
 step << Hunter
     .goto Darnassus,40.3,8.8
@@ -966,7 +966,7 @@ step << Rogue
     .goto Darnassus,36.8,21.8
     .turnin 2242 >> Turn in Destiny Calls
 step
-    .goto Darnassus,38.3,21.7
+    .goto Darnassus,38.184,21.639
     .turnin 923 >> Turn in Tumors
 step << Rogue
     .goto Darnassus,62.68,65.58
@@ -982,7 +982,7 @@ step
     .complete 2520,1 --Offer the sacrifice at the fountain
 step
     #label end
-    .goto Darnassus,36.6,85.9
+    .goto Darnassus,36.653,85.930
     .turnin 2520 >> Turn in Sathrah's Sacrifice
 step << Hunter tbc/Warrior tbc/Priest
     .goto Darnassus,57.8,46.6
@@ -1012,7 +1012,7 @@ step
     .turnin 6344 >> Turn in Nessa Shadowsong
     .accept 6341 >> Accept The Bounty of Teldrassil
 step
-    .goto Teldrassil,58.4,94.0
+    .goto Teldrassil,58.399,94.016
     .turnin 6341 >> Turn in The Bounty of Teldrassil
     .accept 6342 >> Accept Flight to Auberdine
 step

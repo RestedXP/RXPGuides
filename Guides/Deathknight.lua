@@ -99,7 +99,7 @@ step
 	#completewith next
     .goto ScarletEnclave,50.5,33.4,10 >>Run into the purple portal
 step
-    .goto ScarletEnclave,48.9,29.8
+    .goto ScarletEnclave,48.871,29.739
 	>>Talk to Darion in the middle of the room on the bottom floor
     .turnin 12657 >>Turn in The Might Of The Scourge
     .accept 12850 >>Accept Report To Scourge Commander Thalanor
@@ -213,7 +213,7 @@ step
     .goto ScarletEnclave,54.5,34.5
     .turnin 12678 >>Turn in If Chaos Drives, Let Suffering Hold The Reins
     .accept 12697 >>Accept Gothik the Harvester
-    .goto ScarletEnclave,52.3,34.0
+    .goto ScarletEnclave,52.273,33.967
 step
     .goto ScarletEnclave,54.0,35.0
 	>>Talk to Gothik the Harvester
@@ -233,7 +233,7 @@ step
     .turnin 12698 >>Turn in The Gift That Keeps On Giving
     .accept 12700 >>Accept An Attack Of Opportunity
 step
-    .goto ScarletEnclave,52.3,34.0
+    .goto ScarletEnclave,52.273,33.967
 	>>Return to Valanar
     .turnin 12700 >>Turn in An Attack Of Opportunity
     .accept 12701 >>Accept Massacre At Light's Point
@@ -268,11 +268,11 @@ step
     .turnin 12706 >>Turn in Victory At Death's Breach!
     .accept 12714 >>Accept The Will Of The Lich King
 step
-    .goto ScarletEnclave,47.5,26.5
+    .goto ScarletEnclave,47.472,26.550
 	.turnin 12849 >>Turn in The Power of Blood, Frost And Unholy
 	.trainer >> Train your class spells
 step
-    .goto ScarletEnclave,47.5,26.5
+    .goto ScarletEnclave,47.472,26.550
 	.turnin 12849 >>Turn in The Power of Blood, Frost And Unholy
 step
 	#completewith next
@@ -376,7 +376,7 @@ step
 	>>Talk to Noth the Plaguebringer, then talk to the Cauldron
     .turnin 12716 >>Turn in The Plaguebringer's Request
     .accept 12717 >>Accept Noth's Special Brew
-    .goto ScarletEnclave,55.9,52.4
+    .goto ScarletEnclave,55.893,52.400
     .turnin 12717 >>Turn in Noth's Special Brew
     .goto ScarletEnclave,56.2,52.0
 step
@@ -630,7 +630,7 @@ step
     .goto ScarletEnclave,48.1,28.4,0,0
     .complete 13166,2 --Scourge (10)
 step
-    .goto ScarletEnclave,48.9,29.8
+    .goto ScarletEnclave,48.871,29.739
 	>>Kill Patchwerk in the middle of the main floor of The Ebon Hold
     .complete 13166,1 --Patchwerk (1)
 step
@@ -661,7 +661,7 @@ step << Alliance
     .goto ScarletEnclave,50.9,36.3
 	.zone Elwynn Forest >>Take the portal to Stormwind
 step << Alliance
-    .goto Stormwind City,80.0,38.5
+    .goto Stormwind City,79.989,38.468
     .turnin 13188 >>Turn in Where Kings Walk
 step << Alliance
     .goto Stormwind City,48.99,87.36

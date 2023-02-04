@@ -126,7 +126,7 @@ step
 step
     >> Talk to |cFF00FF25Talin Keeneye|r
     .target Talin Keeneye
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     .turnin 233 >> Turn in Coldridge Valley Mail Delivery
     .accept 183 >> Accept The Boar Hunter
     .accept 234 >> Accept Coldridge Valley Mail Delivery
@@ -143,7 +143,7 @@ step
 step
     >> Talk to |cFF00FF25Talin Keeneye|r
     .target Talin Keeneye
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     .turnin 183 >> Turn in The Boar Hunter
 step << Paladin/Mage/Warlock
     #era
@@ -165,7 +165,7 @@ step
     #label Rockjaw
     >> Talk to |cFF00FF25Grelin Whitebeard|r
     .target Grelin Whitebeard
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
 step << Paladin/Mage/Warlock
@@ -205,7 +205,7 @@ step << Dwarf Paladin
 step << Gnome Mage
      >> Talk to |cFF00FF25Marryk Nurribit|r
     .target Marryk Nurribit
-    .goto Dun Morogh,28.7,66.4
+    .goto Dun Morogh,28.709,66.366
     .turnin 3114 >> Turn in Glyphic Memorandum
     .trainer >> Train your class spells
 step << Warlock
@@ -237,7 +237,7 @@ step << Paladin/Mage/Warlock
     .goto Dun Morogh,20.9,75.7
     >>Kill |cFFFF5722Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
 step << !Paladin !Mage !Warlock
     .goto Dun Morogh,22.7,79.3,90,0
     .goto Dun Morogh,20.9,75.7,90,0
@@ -248,7 +248,7 @@ step << !Paladin !Mage !Warlock
     .goto Dun Morogh,22.7,79.3
     >>Kill |cFFFF5722Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
 step << !Paladin !Mage !Warlock
     .goto Dun Morogh,25.0,76.0
     .abandon 3364 >> Abandon Scalding Mornbrew Delivery - You don't need it yet
@@ -265,20 +265,20 @@ step << !Paladin !Mage !Warlock
     #requires TrollTroggs
     >> Talk to |cFF00FF25Grelin Whitebeard|r
     .target Grelin Whitebeard
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << !Paladin !Mage !Warlock
     #som
     >> Talk to |cFF00FF25Grelin Whitebeard|r
     .target Grelin Whitebeard
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << Paladin/Mage/Warlock
     >> Talk to |cFF00FF25Grelin Whitebeard|r
     .target Grelin Whitebeard
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << !Paladin !Mage !Warlock
@@ -342,7 +342,7 @@ step << Rogue
 step << Dwarf Priest
     >> Talk to |cFF00FF25Branstock Khalder|r
     .target Branstock Khalder
-    .goto Dun Morogh,28.6,66.4
+    .goto Dun Morogh,28.600,66.385
     .turnin 3110 >> Turn in Hallowed Rune
     .trainer >> Train your class spells
 step << Warrior
@@ -376,7 +376,7 @@ step << !Paladin !Mage !Warlock
 step
     >> Grind to |cFF00FF25Mountaineer Thalos|r
     .target Mountaineer Thalos
-    .goto Dun Morogh,33.5,71.8
+    .goto Dun Morogh,33.484,71.841
     .turnin 282 >> Turn in Senir's Observations
     .accept 420 >> Accept Senir's Observations
 step
@@ -435,13 +435,13 @@ step
     #softcore
     >> Talk to |cFF00FF25Senir Whitebeard|r
     .target Senir Whitebeard
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 420 >> Turn in Senir's Observations
 step
     #hardcore
     >> Grind boars en route to |cFF00FF25Senir Whitebeard|r
     .target Senir Whitebeard
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 420 >> Turn in Senir's Observations
 step << Warlock
     >> Talk to |cFF00FF25Gimrizz Shadowcog|r
@@ -460,7 +460,7 @@ step
 step
     >> Talk to |cFF00FF25Tannok Frosthammer|r
     .target Tannok Frosthammer
-    .goto Dun Morogh,47.2,52.2
+    .goto Dun Morogh,47.217,52.195
     .turnin 2160 >> Turn in Supplies to Tannok
 step << Rogue
     .goto Dun Morogh,47.2,52.4
@@ -553,17 +553,17 @@ step << Paladin
 step
     >> Talk to |cFF00FF25Tharek Blackstone|r
     .target Tharek Blackstone
-    .goto Dun Morogh,46.0,51.7
+    .goto Dun Morogh,46.021,51.676
     .accept 400 >> Accept Tools for Steelgrill
 step
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     >|cFFFCDC00DON'T kill any bears en route.|r Talk to |cFF00FF25Pilot Bellowfiz|r
     .target Pilot Bellowfiz
     .accept 317 >> Accept Stocking Jetsteam
 step
     >> Talk to |cFF00FF25Pilot Stonegear|r
     .target Pilot Stonegear
-    .goto Dun Morogh,49.6,48.6
+    .goto Dun Morogh,49.622,48.612
     .accept 313 >> Accept The Grizzled Den
 step
     >> Talk to |cFF00FF25Beldin Steelgrill|r
@@ -574,11 +574,11 @@ step
     #label BoarMeat44
     >> Talk to |cFF00FF25Loslor Rudge|r
     .target Loslor Rudge
-    .goto Dun Morogh,50.1,49.4
+    .goto Dun Morogh,50.084,49.420
     .accept 5541 >> Accept Ammo for Rumbleshot
 step << Warrior/Paladin/Rogue
     .money <0.0091
-    .goto Dun Morogh,50.1,49.4
+    .goto Dun Morogh,50.084,49.420
     .collect 2901,1 >> Buy a Mining Pick if you trained Blacksmithing
 step << Warrior/Paladin/Rogue
     .goto Dun Morogh,50.01,50.31
@@ -623,7 +623,7 @@ step << !Paladin !Warrior !Rogue
 step << !Paladin !Warrior !Rogue
     >> Talk to |cFF00FF25Pilot Bellowfiz|r
     .target Pilot Bellowfiz
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
 step << Warrior
@@ -651,7 +651,7 @@ step
     >> Talk to |cFF00FF25Hegnar Rumbleshot|r
     .target Hegnar Rumbleshot
     .goto Dun Morogh,40.6,62.6,50,0
-    .goto Dun Morogh,40.7,65.1
+    .goto Dun Morogh,40.682,65.130
     .turnin 5541 >> Turn in Ammo for Rumbleshot
 step << !Paladin !Warrior !Rogue
     .xp 7 >> Grind to 7
@@ -663,16 +663,16 @@ step << Paladin/Warrior/Rogue
 step << Warrior/Paladin/Rogue
     >> Talk to |cFF00FF25Pilot Bellowfiz|r
     .target Pilot Bellowfiz
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
 step << Warrior/Paladin/Rogue
     >> Talk to |cFF00FF25Pilot Stonegear|r
     .target Pilot Stonegear
-    .goto Dun Morogh,49.6,48.6
+    .goto Dun Morogh,49.622,48.612
     .turnin 313 >> Turn in The Grizzled Den
 step << Warrior/Paladin/Rogue
-    .goto Dun Morogh,50.1,49.4
+    .goto Dun Morogh,50.084,49.420
     .collect 2901,1 >> Buy a Mining Pick
 step << Warrior/Paladin/Rogue
     #era
@@ -760,7 +760,7 @@ step
 step
     >> Talk to |cFF00FF25Marleth Barleybrew|r
     .target Marleth Barleybrew
-    .goto Dun Morogh,30.2,45.5
+    .goto Dun Morogh,30.186,45.531
     .accept 310 >> Accept Bitter Rivals
 step
     #label Ribs
@@ -800,7 +800,7 @@ step
 step
     >> Talk to |cFF00FF25Rejold Barleybrew|r
     .target Rejold Barleybrew
-    .goto Dun Morogh,30.2,45.7
+    .goto Dun Morogh,30.189,45.725
     .turnin 319 >> Turn in A Favor for Evershine
     .accept 320 >> Accept Return to Bellowfiz
 step
@@ -949,17 +949,17 @@ step << Priest/Mage/Warlock
 step
     >> Talk to |cFF00FF25Senir Whitebeard|r
     .target Senir Whitebeard
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .accept 287 >> Accept Frostmane Hold
 step
     >> Talk to |cFF00FF25Pilot Stonegear|r
     .target Pilot Stonegear
-    .goto Dun Morogh,49.6,48.6
+    .goto Dun Morogh,49.622,48.612
     .turnin 313 >> Turn in The Grizzled Den
 step
     >> Talk to |cFF00FF25Pilot Bellowfiz|r
     .target Pilot Bellowfiz
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     >>Choose the Camping Knife. Save it for later << Rogue
     .turnin 320 >> Turn in Return to Bellowfiz
 step
@@ -1008,13 +1008,13 @@ step << Warrior/Paladin/Rogue
 step
     >> Talk to |cFF00FF25Rejold Barleybrew|r
     .target Rejold Barleybrew
-    .goto Dun Morogh,30.2,45.7
+    .goto Dun Morogh,30.189,45.725
     .turnin 315 >> Turn in The Perfect Stout
     .accept 413 >> Accept Shimmer Stout
 step
     >> Talk to |cFF00FF25Marleth Barleybrew|r
     .target Marleth Barleybrew
-    .goto Dun Morogh,30.2,45.5
+    .goto Dun Morogh,30.186,45.531
     .turnin 311 >> Turn in Return to Marleth
 step
     #era << Warlock
@@ -1058,11 +1058,11 @@ step
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #hardcore
-   .goto Dun Morogh,46.7,53.8,150 >> Hearth if its up, otherwise grind back to Kharanos
+   .goto Dun Morogh,46.726,53.826,150 >> Hearth if its up, otherwise grind back to Kharanos
 step
     >> Talk to |cFF00FF25Senir Whitebeard|r
     .target Senir Whitebeard
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
 step << Rogue
@@ -1134,7 +1134,7 @@ step
 step
     >> Talk to |cFF00FF25Foreman Stonebrow|r
     .target Foreman Stonebrow
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.7,56.4,40,0
@@ -1146,7 +1146,7 @@ step
 step
     >> Talk to |cFF00FF25Foreman Stonebrow|r
     .target Foreman Stonebrow
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
     >> Talk to |cFF00FF25Senator Mehr Stonehallow|r
@@ -1175,23 +1175,23 @@ step
 step
     >> Talk to |cFF00FF25Pilot Hammerfoot|r
     .target Pilot Hammerfoot
-    .goto Dun Morogh,83.9,39.2
+    .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     >> Talk to |cFF00FF25Mountaineer Barleybrew|r
     .target Mountaineer Barleybrew
     .goto Dun Morogh,79.6,50.7,50,0
     .goto Dun Morogh,82.3,53.5,25,0
-    .goto Dun Morogh,86.3,48.8
+    .goto Dun Morogh,86.278,48.812
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
 step
     >>Run through the tunnel into Loch Modan, then talk to |cFF00FF25Mountaineer Cobbleflint|r
     .target Mountaineer Cobbleflint
-    .goto Loch Modan,22.1,73.1
+    .goto Loch Modan,22.071,73.127
     .accept 224 >> Accept In Defense of the King's Lands
 step
-    .goto Loch Modan,23.2,73.7
+    .goto Loch Modan,23.233,73.675
     >>Go into the bunker from behind and talk to |cFF00FF25Captain Rugelfuss|r
     .target Captain Rugelfuss
     .accept 267 >> Accept The Trogg Threat
@@ -1208,12 +1208,12 @@ step
     >>Go inside the building, then go downstairs. Talk to |cFF00FF25Brock Stoneseeker|r
     .target Brock Stoneseeker
     .goto Loch Modan,37.2,46.9,15,0
-    .goto Loch Modan,37.0,47.8
+    .goto Loch Modan,37.019,47.806
     .accept 6387 >> Accept Honor Students
 step
     >> Talk to |cFF00FF25Vidra Hearthstove|r
     .target Vidra Hearthstove
-    .goto Loch Modan,34.8,49.3
+    .goto Loch Modan,34.828,49.283
     .accept 418 >> Accept Thelsamar Blood Sausages
 step
     #completewith next
@@ -1238,7 +1238,7 @@ step
 step
     >>Run up to the northern bunker and talk to |cFF00FF25Mountaineer Stormpike|r
     .target Mountaineer Stormpike
-    .goto Loch Modan,24.8,18.4
+    .goto Loch Modan,24.764,18.397
     .accept 307 >> Accept Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order
@@ -1250,28 +1250,28 @@ step
     #label Thelsamar1
     >> Talk to |cFF00FF25Thorgrum Borrelson|r
     .target Thorgrum Borrelson
-    .goto Loch Modan,33.9,51.0
+    .goto Loch Modan,33.938,50.954
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
 step
-    .goto Loch Modan,33.9,51.0
+    .goto Loch Modan,33.938,50.954
     .fly Ironforge >> Fly to Ironforge
 step
     >> Talk to |cFF00FF25Golnir Bouldertoe|r
     .target Golnir Bouldertoe
-    .goto Ironforge,51.5,26.3
+    .goto Ironforge,51.521,26.311
     .turnin 6391 >> Turn in Ride to Ironforge
     .accept 6388 >> Accept Gryth Thurden
 step
     >> Talk to |cFF00FF25Senator Barin Redstone|r
     .target Senator Barin Redstone
-    .goto Ironforge,39.5,57.5
+    .goto Ironforge,39.550,57.490
     .turnin 291 >> Turn in The Reports
 step
     >> |cFFFCDC00Do NOT fly anywhere|r
     >> Talk to |cFF00FF25Gryth Thurden|r
     .target Gryth Thurden
-    .goto Ironforge,55.5,47.8
+    .goto Ironforge,55.501,47.742
     .turnin 6388 >> Turn in Gryth Thurden
     .accept 6392 >> Accept Return to Brock
 step
@@ -1421,7 +1421,7 @@ step
 step
     >>On your close left as you go in, talk to |cFF00FF25William Pestle|r
     .target William Pestle
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .accept 60 >> Accept Kobold Candles
 step << Mage
     >>Talk to |cFF00FF25Zadimar Wefhellt|r
@@ -1515,7 +1515,7 @@ step << Warlock
     #requires Fargodeep
     >>Talk to |cFF00FF25Marshal Dughan|r
     .target Marshal Dughan
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     .turnin 176,3 >> Turn in Wanted:    "Hogger"
     .turnin 62 >> Turn in The Fargodeep Mine
     .turnin 40 >> Turn in A Fishy Peril
@@ -1524,7 +1524,7 @@ step << Warlock
     #label collector
     >>Talk to |cFF00FF25Marshal Dughan|r
     .target Marshal Dughan
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     .turnin 123 >> Turn in The Collector
     .isOnQuest 123
 step
@@ -1605,20 +1605,20 @@ step
     #era
     >>Talk to |cFF00FF25Supervisor Raelen|r
     .target Supervisor Raelen
-    .goto Elwynn Forest,81.4,66.1
+    .goto Elwynn Forest,81.382,66.112
     .turnin 5545 >> Turn in A Bundle of Trouble
 step
     #era
     #label Bears
     >>Talk to |cFF00FF25Sara Timberlain|r
     .target Sara Timberlain
-    .goto Elwynn Forest,79.5,68.8
+    .goto Elwynn Forest,79.457,68.789
     .accept 83 >> Accept Red Linen Goods
 step
     #era
     >>Talk to |cFF00FF25Guard Thomas|r
     .target Guard Thomas
-    .goto Elwynn Forest,74.0,72.2
+    .goto Elwynn Forest,73.973,72.179
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
@@ -1676,7 +1676,7 @@ step
 step
     >>Be careful of the high level mobs mobs en route and talk to |cFF00FF25Deputy Feldon|r
     .target Deputy Feldon
-    .goto Redridge Mountains,30.7,60.0
+    .goto Redridge Mountains,30.733,59.996
     .turnin 244 >> Turn in Encroaching Gnolls
 step
     .goto Redridge Mountains,30.6,59.4
@@ -1841,7 +1841,7 @@ RXPGuides.RegisterGuide([[
 step << Dwarf Paladin
     >>Talk to |cFF00FF25Brandur Ironhammer|r
     .target Brandur Ironhammer
-    .goto Ironforge,23.3,6.1
+    .goto Ironforge,23.131,6.143
     .accept 2999 >>Accept Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,12.1
@@ -1861,7 +1861,7 @@ step << Dwarf Paladin
     .turnin 1648 >>Turn in The Tome of Divinity
     .accept 1778 >>Accept The Tome of Divinity
 step << Dwarf Paladin
-    .goto Ironforge,27.7,12.3
+    .goto Ironforge,27.628,12.183
     >>Return to |cFF00FF25Tiza Battleforge|r
     .target Tiza Battleforge
     .turnin 1778 >>Turn in The Tome of Divinity
@@ -1874,7 +1874,7 @@ step << Dwarf Paladin
     .accept 1783 >>Accept The Tome of Divinity
 step << !Warlock
     #som << !Paladin
-    .goto Ironforge,55.5,47.8
+    .goto Ironforge,55.501,47.742
     .fly Loch >> Fly to Loch Modan
 step
     #completewith next
@@ -1888,7 +1888,7 @@ step
     >>Go inside the building, then go downstairs. Talk to |cFF00FF25Brock Stoneseeker|r
     .target Brock Stoneseeker
     .goto Loch Modan,37.2,46.9,15,0
-    .goto Loch Modan,37.0,47.8
+    .goto Loch Modan,37.019,47.806
     .turnin 6392 >> Turn in Return to Brock
 step
     #completewith next
@@ -2022,7 +2022,7 @@ step << Dwarf Paladin
     .goto Dun Morogh,87.1,51.1
     .zone Dun Morogh >> Head to Dun Morogh
 step << Dwarf Paladin
-    .goto Dun Morogh,78.3,58.1
+    .goto Dun Morogh,78.321,58.088
     .use 6866 >>Use the Symbol of Life on Narm Faulk
     .turnin 1783 >>Turn in The Tome of Divinity
     .accept 1784 >>Accept The Tome of Divinity
@@ -2155,7 +2155,7 @@ step
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
 step
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     >>Speak to Talin Keeneye
     .turnin 233 >>Turn in Coldridge Valley Mail Delivery
     .accept 234 >>Accept Coldridge Valley Mail Delivery
@@ -2171,10 +2171,10 @@ step
     >>Kill Boars in the area
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     .turnin 183 >>Turn in The Boar Hunter
 step
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     >>Speak to Grelin Whitebeard
     .turnin 234 >>Turn in Coldridge Valley Mail Delivery
     .accept 182 >>Accept The Troll Cave
@@ -2222,7 +2222,7 @@ step
     .goto Dun Morogh,27.3,79.7,0
     >>Kill Frostmane Troll Whelps
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
 step
     .goto Dun Morogh,25.0,75.9
     .turnin 182 >>Turn in The Troll Cave
@@ -2238,11 +2238,11 @@ step
     .goto Dun Morogh,28.4,79.7,35,0
     .goto Dun Morogh,26.8,79.6,25 >>Run back out the cave
 step
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 218 >> Turn in The Stolen Journal
     .accept 282 >> Accept Senir's Observations
 step
-    .goto Dun Morogh,33.5,71.8
+    .goto Dun Morogh,33.484,71.841
     >>Speak to Mountaineer Thalos
     .turnin 282 >>Turn in Senir's Observations
     .accept 420 >>Accept Senir's Observations
@@ -2271,17 +2271,17 @@ step
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6 --Collect Crag Boar Rib (x6)
 step
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 420 >> Turn in Senir's Observations
 step
     #label ribs1
     .goto Dun Morogh,46.8,52.4
     .accept 384 >>Accept Beer Basted Boar Ribs
 step
-    .goto Dun Morogh,47.2,52.2
+    .goto Dun Morogh,47.217,52.195
     .turnin 2160 >>Turn in Supplies to Tannok
 step
-    .goto Dun Morogh,46.0,51.7
+    .goto Dun Morogh,46.021,51.676
     .accept 400 >>Accept Tools for Steelgrill
 step
     .goto Dun Morogh,49.5,48.3
@@ -2290,7 +2290,7 @@ step
     .goto Dun Morogh,49.6,48.5
     .accept 313 >>Accept The Grizzled Den
 step
-    .goto Dun Morogh,50.1,49.4
+    .goto Dun Morogh,50.084,49.420
     .accept 5541 >>Accept Ammo for Rumbleshot
 step
     .goto Dun Morogh,50.4,49.1
@@ -2333,7 +2333,7 @@ step
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .complete 317,2 --Collect Thick Bear Fur (x2)
 step
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     >>Speak to Pilot Bellowfiz
     .turnin 317 >>Turn in Stocking Jetsteam
     .accept 318 >>Accept Evershine
@@ -2347,11 +2347,11 @@ step
 .goto Dun Morogh,44.1,56.9
     .complete 5541,1 --Rumbleshot's Ammo (1)
 step
-    .goto Dun Morogh,40.7,65.1
+    .goto Dun Morogh,40.682,65.130
     >>Speak to Hegnar Rumbleshot
     .turnin 5541 >>Turn in Ammo for Rumbleshot
 step << Hunter
-    .goto Dun Morogh,40.7,65.1
+    .goto Dun Morogh,40.682,65.130
     >>Buy the level 4 gun upgrade, skip this step if you don't have the money for it
     .collect 2509,1
 step
@@ -2398,12 +2398,12 @@ step
     .complete 319,3 --Kill Snow Leopard (x8)
 step << Hunter
     #era
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .complete 384,1
     .xp 8-1400 >>Grind until you are 1400 xp away from level 8.
 step << Hunter
     #som
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .complete 384,1
     .xp 8-1950 >>Grind until you are 1950 xp away from level 8.
 step
@@ -2436,7 +2436,7 @@ step << !Hunter
     .goto Dun Morogh,49.6,48.5
     .turnin 313 >>Turn in The Grizzled Den
 step << Hunter
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .train 5116>> Train Concussive Shot
 step
     #sticky
@@ -2475,7 +2475,7 @@ step
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
-    .goto Dun Morogh,83.9,39.2
+    .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     #hardcore
@@ -2505,12 +2505,12 @@ step
     #sticky
     #requires favor
     #label return
-    .goto Dun Morogh,30.2,45.7
+    .goto Dun Morogh,30.189,45.725
     >>Speak to Rejold Barleybrew
     .turnin 319 >>Turn in A Favor for Evershine
     .accept 320 >>Accept Return to Bellowfiz
 step
-    .goto Dun Morogh,30.2,45.5
+    .goto Dun Morogh,30.186,45.531
     .turnin 311 >>Turn in Return to Marleth
     .turnin 315 >>Turn in The Perfect Stout
     .accept 413 >>Accept Shimmer Stout
@@ -2581,14 +2581,14 @@ step
     .goto Dun Morogh,49.4,48.3
     .turnin 320 >>Turn in Return to Bellowfiz
 step
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .accept 6064 >>Accept Taming the Beast
 step
     .goto Dun Morogh,48.3,56.9
     >>Click the taming rod in your bag on a Large Crag Boar. Try to do it at max range (30 yards)
     .complete 6064,1 --Tame a Large Crag Boar (1)
 step
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .turnin 6064 >>Turn in Taming the Beast
     .accept 6084 >>Accept Taming the Beast
 step
@@ -2596,7 +2596,7 @@ step
     >>Click the taming rod in your bag on a Snow Leopard. Try to do it at max range (30 yards)
     .complete 6084,1 --Tame a Snow Leopard (1)
 step
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .turnin 6084 >>Turn in Taming the Beast
     .accept 6085 >>Accept Taming the Beast
 step
@@ -2604,14 +2604,14 @@ step
     >>Click the taming rod in your bag on an Ice Claw Bear. Try to do it at max range (30 yards)
     .complete 6085,1 --Tame an Ice Claw Bear (1)
 step
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .turnin 6085 >>Turn in Taming the Beast
     .accept 6086 >>Accept Training the Beast
 step
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.7,56.4,50,0
@@ -2620,7 +2620,7 @@ step
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
     .goto Dun Morogh,68.7,56.0
@@ -2629,7 +2629,7 @@ step << skip
     .goto Dun Morogh,68.4,54.5
     .train 2550 >> Train Cooking from Ghilm
 step
-    .goto Dun Morogh,86.3,48.8
+    .goto Dun Morogh,86.278,48.812
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
 ]])
@@ -2692,7 +2692,7 @@ step
     #completewith next
     .fly Loch Modan>> Fly to Loch Modan
 step
-    .goto Loch Modan,37.0,47.8
+    .goto Loch Modan,37.019,47.806
     >>Go inside the building, then go downstairs. Talk to Brock
     .turnin 6392 >> Turn in Return to Brock
 step
@@ -2974,7 +2974,7 @@ step
     .accept 3114 >> Accept Glyphic Memorandum << Mage
     .accept 3115 >> Accept Tainted Memorandum << Gnome Warlock
 step
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     .turnin 233 >> Turn in Coldridge Valley Mail Delivery
     .accept 183 >> Accept The Boar Hunter
     .accept 234 >> Accept Coldridge Valley Mail Delivery
@@ -2989,7 +2989,7 @@ step
     >>Kill Boars in the area
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     .turnin 183 >> Turn in The Boar Hunter
 step << Paladin/Mage/Warlock
     .xp 3+860 >> Grind to 860+/1400xp
@@ -3000,7 +3000,7 @@ step << Paladin/Mage/Warlock
     .goto Dun Morogh,24.2,72.5
 step
     #label Rockjaw
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
 step << Paladin/Mage/Warlock
@@ -3029,7 +3029,7 @@ step << Dwarf Paladin
     .turnin 3107 >> Turn in Consecrated Rune
     .trainer >> Train your class spells
 step << Gnome Mage
-    .goto Dun Morogh,28.7,66.4
+    .goto Dun Morogh,28.709,66.366
     .turnin 3114 >> Turn in Glyphic Memorandum
     .trainer >> Train your class spells
 step << Warlock
@@ -3066,7 +3066,7 @@ step << Paladin/Mage/Warlock
     .goto Dun Morogh,20.9,75.7
     >>Kill Frostmane Troll Whelps
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
 step << !Paladin !Mage !Warlock
     .goto Dun Morogh,22.7,79.3,90,0
     .goto Dun Morogh,20.9,75.7,90,0
@@ -3077,18 +3077,18 @@ step << !Paladin !Mage !Warlock
     .goto Dun Morogh,22.7,79.3
     >>Kill Frostmane Troll Whelps
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
 step << !Paladin !Mage !Warlock
     .goto Dun Morogh,25.0,76.0
     .abandon 3364 >> Abandon Scalding Mornbrew Delivery - You don't need it yet
 step << !Paladin !Mage !Warlock
     .xp 4 >> Grind to 4
 step << !Paladin !Mage !Warlock
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << Paladin/Mage/Warlock
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step << !Paladin !Mage !Warlock
@@ -3149,7 +3149,7 @@ step << Rogue
     .turnin 3113 >> Turn in Encrypted Memorandum << Gnome Rogue
     .turnin 3109 >> Turn in Encrypted Rune << Dwarf Rogue
 step << Dwarf Priest
-    .goto Dun Morogh,28.6,66.4
+    .goto Dun Morogh,28.600,66.385
     .turnin 3110 >> Turn in Hallowed Rune
     .trainer >> Train your class spells
 step << Warrior
@@ -3169,7 +3169,7 @@ step << !Paladin !Mage !Warlock
     .goto Dun Morogh,25.0,76.0
     .turnin 3365 >> Turn in Bring Back the Mug
 step
-    .goto Dun Morogh,33.5,71.8
+    .goto Dun Morogh,33.484,71.841
     .turnin 282 >> Turn in Senir's Observations
     .accept 420 >> Accept Senir's Observations
 step
@@ -3225,13 +3225,13 @@ step
     .deathskip >> Die and respawn at the Spirit Healer, or run to Kharanos. Make sure your subzone is NOT Coldridge Pass
 step
     #softcore
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 420 >> Turn in Senir's Observations
     .vendor >>vendor trash
 step
     #hardcore
     >>Grind boars en route to Kharanos
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 420 >> Turn in Senir's Observations
     .vendor >>vendor trash
 step << Warlock
@@ -3245,7 +3245,7 @@ step
     .goto Dun Morogh,46.8,52.4
     .accept 384 >> Accept Beer Basted Boar Ribs
 step
-    .goto Dun Morogh,47.2,52.2
+    .goto Dun Morogh,47.217,52.195
     .turnin 2160 >> Turn in Supplies to Tannok
 step << Rogue
     .goto Dun Morogh,47.2,52.4
@@ -3310,25 +3310,25 @@ step << Paladin
     .trainer >> Train Blacksmithing. This will allow you to make +2 damage weightstones for your weapon which are very strong.
     >> If you want to go for your own professions, skip this step
 step
-    .goto Dun Morogh,46.0,51.7
+    .goto Dun Morogh,46.021,51.676
     .accept 400 >> Accept Tools for Steelgrill
 step
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     >>DON'T kill bears en route
     .accept 317 >> Accept Stocking Jetsteam
 step
-    .goto Dun Morogh,49.6,48.6
+    .goto Dun Morogh,49.622,48.612
     .accept 313 >> Accept The Grizzled Den
 step
     .goto Dun Morogh,50.4,49.1
     .turnin 400 >> Turn in Tools for Steelgrill
 step
     #label BoarMeat44
-    .goto Dun Morogh,50.1,49.4
+    .goto Dun Morogh,50.084,49.420
     .accept 5541 >> Accept Ammo for Rumbleshot
 step << Warrior/Paladin/Rogue
     .money <0.0091
-    .goto Dun Morogh,50.1,49.4
+    .goto Dun Morogh,50.084,49.420
     .collect 2901,1 >> Buy a Mining Pick if you trained Blacksmithing
 step << Warrior/Paladin/Rogue
     .goto Dun Morogh,50.01,50.31
@@ -3371,7 +3371,7 @@ step << !Paladin !Warrior !Rogue
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .complete 317,2 --Collect Thick Bear Fur (x2)
 step << !Paladin !Warrior !Rogue
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
 step << Warrior
@@ -3397,7 +3397,7 @@ step
 step
     #label BearFur
     .goto Dun Morogh,40.6,62.6,50,0
-    .goto Dun Morogh,40.7,65.1
+    .goto Dun Morogh,40.682,65.130
     .turnin 5541 >> Turn in Ammo for Rumbleshot
     .vendor >> Vendor and repair
 step << !Paladin !Warrior !Rogue
@@ -3408,14 +3408,14 @@ step << Paladin/Warrior/Rogue
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
 step << Warrior/Paladin/Rogue
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
 step << Warrior/Paladin/Rogue
-    .goto Dun Morogh,49.6,48.6
+    .goto Dun Morogh,49.622,48.612
     .turnin 313 >> Turn in The Grizzled Den
 step << Warrior/Paladin/Rogue
-    .goto Dun Morogh,50.1,49.4
+    .goto Dun Morogh,50.084,49.420
     .collect 2901,1 >> Buy a Mining Pick
 step << Warrior/Rogue/Paladin
     .xp 8 >> Grind nearby mobs to 8
@@ -3474,7 +3474,7 @@ step
     .accept 319 >> Accept A Favor for Evershine
     .accept 315 >> Accept The Perfect Stout
 step
-    .goto Dun Morogh,30.2,45.5
+    .goto Dun Morogh,30.186,45.531
     .accept 310 >> Accept Bitter Rivals
 step
     #label Ribs
@@ -3499,7 +3499,7 @@ step
     >>Finish off getting the Boar Ribs
     .complete 384,1 --Collect Crag Boar Rib (x6)
 step
-    .goto Dun Morogh,30.2,45.7
+    .goto Dun Morogh,30.189,45.725
     .turnin 319 >> Turn in A Favor for Evershine
     .accept 320 >> Accept Return to Bellowfiz
 step
@@ -3584,13 +3584,13 @@ step << Priest/Mage/Warlock
     .goto Dun Morogh,47.4,52.5
     .vendor >> Buy buy up to 30 level 5 drink from the innkeeper
 step
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .accept 287 >> Accept Frostmane Hold
 step
-    .goto Dun Morogh,49.6,48.6
+    .goto Dun Morogh,49.622,48.612
     .turnin 313 >> Turn in The Grizzled Den
 step
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     >>Choose the Camping Knife. Save it for later << Rogue
     .turnin 320 >> Turn in Return to Bellowfiz
 step << Warrior
@@ -3634,11 +3634,11 @@ step << Warrior/Paladin/Rogue
     .goto Dun Morogh,30.4,45.8
     .vendor >> vendor trash
 step
-    .goto Dun Morogh,30.2,45.7
+    .goto Dun Morogh,30.189,45.725
     .turnin 315 >> Turn in The Perfect Stout
     .accept 413 >> Accept Shimmer Stout
 step
-    .goto Dun Morogh,30.2,45.5
+    .goto Dun Morogh,30.186,45.531
     .turnin 311 >> Turn in Return to Marleth
 step << Warrior
     .goto Dun Morogh,27.2,43.0,80,0
@@ -3682,9 +3682,9 @@ step
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #hardcore
-   .goto Dun Morogh,46.7,53.8,150 >> Hearth if its up, otherwise grind back to Kharanos
+   .goto Dun Morogh,46.726,53.826,150 >> Hearth if its up, otherwise grind back to Kharanos
 step
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
 step
@@ -3768,7 +3768,7 @@ step
     .goto Dun Morogh,68.9,55.9
     .vendor >> vendor trash, repair
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.7,56.4,40,0
@@ -3778,7 +3778,7 @@ step
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
     #completewith next
@@ -3800,12 +3800,12 @@ step
     .complete 417,1 --Collect Mangy Claw (x1)
 step
     #label EndDM
-    .goto Dun Morogh,83.9,39.2
+    .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .goto Dun Morogh,79.6,50.7,50,0
     .goto Dun Morogh,82.3,53.5,25,0
-    .goto Dun Morogh,86.3,48.8
+    .goto Dun Morogh,86.278,48.812
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
 ]])
@@ -3822,10 +3822,10 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Loch Modan
 step
     >>Run through the tunnel into Loch
-    .goto Loch Modan,22.1,73.1
+    .goto Loch Modan,22.071,73.127
     .accept 224 >> Accept In Defense of the King's Lands
 step
-    .goto Loch Modan,23.2,73.7
+    .goto Loch Modan,23.233,73.675
     >>Go into the bunker from behind
     .accept 267 >> Accept The Trogg Threat
 step
@@ -3839,7 +3839,7 @@ step
 step
     >>Go inside the building, then go downstairs. Talk to Brock
     .goto Loch Modan,37.2,46.9,15,0
-    .goto Loch Modan,37.0,47.8
+    .goto Loch Modan,37.019,47.806
     .accept 6387 >> Accept Honor Students
 step
     .goto Loch Modan,34.82,49.28
@@ -3859,7 +3859,7 @@ step
     .complete 418,3 --Collect Spider Ichor (x3)
 step
     >>Run up to the northern bunker
-    .goto Loch Modan,24.8,18.4
+    .goto Loch Modan,24.764,18.397
     .accept 307 >> Accept Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order
@@ -3867,22 +3867,22 @@ step
     #label Thelsamar1
     .deathskip >> Die and respawn in Thelsamar
 step
-    .goto Loch Modan,33.9,51.0
+    .goto Loch Modan,33.938,50.954
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
 step
-    .goto Loch Modan,33.9,51.0
+    .goto Loch Modan,33.938,50.954
     .fly Ironforge >> Fly to Ironforge
 step
-    .goto Ironforge,51.5,26.3
+    .goto Ironforge,51.521,26.311
     .turnin 6391 >> Turn in Ride to Ironforge
     .accept 6388 >> Accept Gryth Thurden
 step
-    .goto Ironforge,39.5,57.5
+    .goto Ironforge,39.550,57.490
     .turnin 291 >> Turn in The Reports
 step
     >>do NOT fly anywhere
-    .goto Ironforge,55.5,47.8
+    .goto Ironforge,55.501,47.742
     .turnin 6388 >> Turn in Gryth Thurden
     .accept 6392 >> Accept Return to Brock
 step
@@ -3947,7 +3947,7 @@ step
     .accept 62 >> Accept The Fargodeep Mine
 step
     >>On your close left as you go in
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .accept 60 >> Accept Kobold Candles
 step
     .goto Elwynn Forest,42.10,67.30
@@ -4008,7 +4008,7 @@ step
     .deathskip >> Die and respawn in Goldshire
 step
     #requires Fargodeep
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     >>Choose the Staff then equip it
     .turnin 176 >> Turn in Wanted:    "Hogger"
     .turnin 62 >> Turn in The Fargodeep Mine
@@ -4018,7 +4018,7 @@ step
     .isOnQuest 123
 step
     #requires Fargodeep
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     >>Choose the Staff then equip it
     .turnin 176 >> Turn in Wanted:    "Hogger"
     .turnin 62 >> Turn in The Fargodeep Mine
@@ -4055,7 +4055,7 @@ step
     .accept 244 >> Accept Encroaching Gnolls
 step
     >>Be careful of the high level mobs mobs en route
-    .goto Redridge Mountains,30.7,60.0
+    .goto Redridge Mountains,30.733,59.996
     .turnin 244 >> Turn in Encroaching Gnolls
 step
     .goto Redridge Mountains,30.6,59.4
@@ -4123,11 +4123,11 @@ step
     .collect 769,8 --Collect Chunk of Boar Meat (x8)
 step
     >>Run through the tunnel into Loch
-    .goto Loch Modan,22.1,73.1
+    .goto Loch Modan,22.071,73.127
     .accept 224 >> Accept In Defense of the King's Lands
 step
     #label TroggT
-    .goto Loch Modan,23.2,73.7
+    .goto Loch Modan,23.233,73.675
     >>Go into the bunker from behind
     .accept 267 >> Accept The Trogg Threat
 step << Paladin
@@ -4145,7 +4145,7 @@ step
 step
     >>Go inside the building, then go downstairs. Talk to Brock
     .goto Loch Modan,37.2,46.9,15,0
-    .goto Loch Modan,37.0,47.8
+    .goto Loch Modan,37.019,47.806
     .accept 6387 >> Accept Honor Students
 step
     .goto Loch Modan,34.82,49.28
@@ -4178,24 +4178,24 @@ step << Mage/Paladin
     .goto Loch Modan,28.6,22.6,90,0
     .goto Loch Modan,38.0,34.9
 step << Mage/Paladin
-    .goto Loch Modan,33.9,51.0
+    .goto Loch Modan,33.938,50.954
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
     .fp Thelsamar >> Get the Thelsamar Flight Path
     .fly Ironforge >> Fly to Ironforge
 step << Mage/Paladin
-    .goto Ironforge,51.5,26.3
+    .goto Ironforge,51.521,26.311
     .turnin 6391 >> Turn in Ride to Ironforge
     .accept 6388 >> Accept Gryth Thurden
 step << Mage/Paladin
-    .goto Ironforge,39.5,57.5
+    .goto Ironforge,39.550,57.490
     .turnin 291 >> Turn in The Reports
 step << Mage/Paladin
     .goto Ironforge,27.17,8.57 << Mage
-    .goto Ironforge,23.3,6.1 << Paladin
+    .goto Ironforge,23.131,6.143 << Paladin
      .trainer >> Train your class spells
 step << Dwarf Paladin
-    .goto Ironforge,23.3,6.1
+    .goto Ironforge,23.131,6.143
     .accept 2999 >>Accept Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,12.1
@@ -4219,7 +4219,7 @@ step << Dwarf Paladin
     .turnin 1648 >>Turn in The Tome of Divinity
     .accept 1778 >>Accept The Tome of Divinity
 step << Dwarf Paladin
-    .goto Ironforge,27.7,12.3
+    .goto Ironforge,27.628,12.183
     >>Return to Tiza Battleforge
     .turnin 1778 >>Turn in The Tome of Divinity
     .accept 1779 >>Accept The Tome of Divinity
@@ -4229,7 +4229,7 @@ step << Dwarf Paladin
     .turnin 1779 >>Turn in The Tome of Divinity
     .accept 1783 >>Accept The Tome of Divinity
 step << Mage/Paladin
-    .goto Ironforge,55.5,47.8
+    .goto Ironforge,55.501,47.742
     .turnin 6388 >> Turn in Gryth Thurden
     .accept 6392 >> Accept Return to Brock
     .fly Thelsamar >> Fly to Thelsamar
@@ -4247,7 +4247,7 @@ step
     .complete 418,3 --Collect Spider Ichor (x3)
 step
     >>Run up to the northern bunker
-    .goto Loch Modan,24.8,18.4
+    .goto Loch Modan,24.764,18.397
     .accept 307 >> Accept Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order << !Warlock !Mage
@@ -4365,7 +4365,7 @@ step << Dwarf Paladin
     .goto Dun Morogh,87.1,51.1
     .zone Dun Morogh >> Head to Dun Morogh
 step << Dwarf Paladin
-    .goto Dun Morogh,78.3,58.1
+    .goto Dun Morogh,78.321,58.088
     >>Use the Symbol of Life on Narm Faulk
     .turnin 1783 >>Turn in The Tome of Divinity
     .accept 1784 >>Accept The Tome of Divinity
@@ -4381,23 +4381,23 @@ step << Dwarf Paladin
 step << Mage
     .hs >> Hearth to Thelsamar
 step << !Dwarf/!Paladin
-    .goto Loch Modan,33.9,51.0
+    .goto Loch Modan,33.938,50.954
     .turnin 6387 >> Turn in Honor Students << !Mage
     .accept 6391 >> Accept Ride to Ironforge << !Mage
     .fp Thelsamar >> Get the Thelsamar Flight Path << !Mage
     .fly Ironforge >> Fly to Ironforge
 step << !Mage !Paladin
-    .goto Ironforge,51.5,26.3
+    .goto Ironforge,51.521,26.311
     .turnin 6391 >> Turn in Ride to Ironforge
     .accept 6388 >> Accept Gryth Thurden
 step << !Mage !Paladin !Warlock
     .goto Ironforge,18.15,51.45
     .home >> Set your Hearthstone to Ironforge
 step << !Mage !Paladin
-    .goto Ironforge,39.5,57.5
+    .goto Ironforge,39.550,57.490
     .turnin 291 >> Turn in The Reports
 step << !Mage !Paladin
-    .goto Ironforge,55.5,47.8
+    .goto Ironforge,55.501,47.742
     .turnin 6388 >> Turn in Gryth Thurden
 -- .accept 6392 >> Accept Return to Brock
 step << Warrior
@@ -4540,7 +4540,7 @@ step << !Warlock !Mage
 step
     #softcore
     #completewith next
-    .goto Ironforge,55.5,47.8
+    .goto Ironforge,55.501,47.742
     .fly Wetlands>> Fly to Wetlands
 step
     #hardcore
@@ -4622,7 +4622,7 @@ step
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
 step
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     >>Speak to Talin Keeneye
     .turnin 233 >>Turn in Coldridge Valley Mail Delivery
     .accept 234 >>Accept Coldridge Valley Mail Delivery
@@ -4638,10 +4638,10 @@ step
     >>Kill Boars in the area
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     .turnin 183 >>Turn in The Boar Hunter
 step
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     >>Speak to Grelin Whitebeard
     .turnin 234 >>Turn in Coldridge Valley Mail Delivery
     .accept 182 >>Accept The Troll Cave
@@ -4679,7 +4679,7 @@ step
     .goto Dun Morogh,27.3,79.7,0
     >>Kill Frostmane Troll Whelps
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
 step
     .goto Dun Morogh,25.0,75.9
     .turnin 182 >>Turn in The Troll Cave
@@ -4695,11 +4695,11 @@ step
     .goto Dun Morogh,28.4,79.7,35,0
     .goto Dun Morogh,26.8,79.6,25 >>Run back out the cave
 step
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 218 >> Turn in The Stolen Journal
     .accept 282 >> Accept Senir's Observations
 step
-    .goto Dun Morogh,33.5,71.8
+    .goto Dun Morogh,33.484,71.841
     >>Speak to Mountaineer Thalos
     .turnin 282 >>Turn in Senir's Observations
     .accept 420 >>Accept Senir's Observations
@@ -4729,17 +4729,17 @@ step
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6 --Collect Crag Boar Rib (x6)
 step
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 420 >> Turn in Senir's Observations
 step
     #label ribs1
     .goto Dun Morogh,46.8,52.4
     .accept 384 >>Accept Beer Basted Boar Ribs
 step
-    .goto Dun Morogh,47.2,52.2
+    .goto Dun Morogh,47.217,52.195
     .turnin 2160 >>Turn in Supplies to Tannok
 step
-    .goto Dun Morogh,46.0,51.7
+    .goto Dun Morogh,46.021,51.676
     .accept 400 >>Accept Tools for Steelgrill
 step
     .goto Dun Morogh,49.5,48.3
@@ -4748,7 +4748,7 @@ step << skip
     .goto Dun Morogh,49.6,48.5
     .accept 313 >>Accept The Grizzled Den
 step
-    .goto Dun Morogh,50.1,49.4
+    .goto Dun Morogh,50.084,49.420
     .accept 5541 >>Accept Ammo for Rumbleshot
 step
     .goto Dun Morogh,50.4,49.1
@@ -4791,7 +4791,7 @@ step
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .complete 317,2 --Collect Thick Bear Fur (x2)
 step
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     >>Speak to Pilot Bellowfiz
     .turnin 317 >>Turn in Stocking Jetsteam
     .accept 318 >>Accept Evershine
@@ -4805,11 +4805,11 @@ step
 .goto Dun Morogh,44.1,56.9
     .complete 5541,1 --Rumbleshot's Ammo (1)
 step
-    .goto Dun Morogh,40.7,65.1
+    .goto Dun Morogh,40.682,65.130
     >>Speak to Hegnar Rumbleshot
     .turnin 5541 >>Turn in Ammo for Rumbleshot
 step << Hunter
-    .goto Dun Morogh,40.7,65.1
+    .goto Dun Morogh,40.682,65.130
     >>Buy the level 4 gun upgrade, skip this step if you don't have the money for it
     .collect 2509,1
 step << skip
@@ -4856,7 +4856,7 @@ step
     .complete 319,3 --Kill Snow Leopard (x8)
 step << Hunter
 	#hardcore
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .complete 384,1
     .xp 8-1540 >>Grind until you are 1540 xp away from level 8.
 step << Hunter
@@ -4916,7 +4916,7 @@ step  << skip
     .goto Dun Morogh,49.6,48.5
     .turnin 313 >>Turn in The Grizzled Den
 step << Hunter
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .train 5116>> Train Concussive Shot
 step
     #sticky
@@ -4942,12 +4942,12 @@ step
     #sticky
     #requires favor
     #label return
-    .goto Dun Morogh,30.2,45.7
+    .goto Dun Morogh,30.189,45.725
     >>Speak to Rejold Barleybrew
     .turnin 319 >>Turn in A Favor for Evershine
     .accept 320 >>Accept Return to Bellowfiz
 step
-    .goto Dun Morogh,30.2,45.5
+    .goto Dun Morogh,30.186,45.531
     .turnin 311 >>Turn in Return to Marleth
     .turnin 315 >>Turn in The Perfect Stout
     .accept 413 >>Accept Shimmer Stout
@@ -4991,14 +4991,14 @@ step
     .goto Dun Morogh,49.4,48.3
     .turnin 320 >>Turn in Return to Bellowfiz
 step
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .accept 6064 >>Accept Taming the Beast
 step
     .goto Dun Morogh,48.3,56.9
     >>Click the taming rod in your bag on a Large Crag Boar. Try to do it at max range (30 yards)
     .complete 6064,1 --Tame a Large Crag Boar (1)
 step
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .turnin 6064 >>Turn in Taming the Beast
     .accept 6084 >>Accept Taming the Beast
 step
@@ -5006,7 +5006,7 @@ step
     >>Click the taming rod in your bag on a Snow Leopard. Try to do it at max range (30 yards)
     .complete 6084,1 --Tame a Snow Leopard (1)
 step
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .turnin 6084 >>Turn in Taming the Beast
     .accept 6085 >>Accept Taming the Beast
 step
@@ -5014,7 +5014,7 @@ step
     >>Click the taming rod in your bag on an Ice Claw Bear. Try to do it at max range (30 yards)
     .complete 6085,1 --Tame an Ice Claw Bear (1)
 step
-    .goto Dun Morogh,45.8,53.0
+    .goto Dun Morogh,45.810,53.039
     .turnin 6085 >>Turn in Taming the Beast
     .accept 6086 >>Accept Training the Beast
 step
@@ -5036,7 +5036,7 @@ step
     .turnin 314 >> Turn in Protecting the Herd
     .isQuestComplete 314
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.7,56.4,50,0
@@ -5045,7 +5045,7 @@ step
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     --.complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .turnin 432 >> Turn in Those Blasted Troggs!
 step << skip
     .goto Dun Morogh,68.4,54.5
@@ -5062,11 +5062,11 @@ step
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
-    .goto Dun Morogh,83.9,39.2
+    .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Turn in A Pilot's Revenge
 
 step
-    .goto Dun Morogh,86.3,48.8
+    .goto Dun Morogh,86.278,48.812
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
 ]])
@@ -5127,7 +5127,7 @@ step
     #completewith next
     .fly Loch Modan>> Fly to Loch Modan
 step
-    .goto Loch Modan,37.0,47.8
+    .goto Loch Modan,37.019,47.806
     >>Go inside the building, then go downstairs. Talk to Brock
     .turnin 6392 >> Turn in Return to Brock
 step << Hunter

@@ -1219,7 +1219,7 @@ step << Warrior/Rogue
 .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon
 step << Shaman
     #xprate <1.5
-    .goto Durotar,54.4,42.6
+    .goto Durotar,54.419,42.588
     .train 2484 >>Train Earthbind Totem
     .train 324 >>Train Lightning Shield
     .train 8044 >>Train Earth Shock r2
@@ -1240,7 +1240,7 @@ step << Priest
     .goto Durotar,54.3,42.9
     .turnin 5648 >> Garments of Spirituality
 step << Warrior
-.goto Durotar,54.2,42.5
+.goto Durotar,54.190,42.468
     .train 284 >>Train Heroic Strike r2
     .train 1715 >>Train Hamstring
 step << Hunter
@@ -1466,7 +1466,7 @@ step << Priest
     .train 8092 >>Train Mind Blast
 .train 594 >>Train Shadow Word: Pain r2
 step << Orc Warrior/Troll Warrior/Undead Warrior
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
     .accept 1505 >>Accept Veteran Uzzek
     .train 2687 >>Train Bloodrage
     .train 6546 >>Train Rend r2
@@ -1538,7 +1538,7 @@ step << Warlock/Hunter
     .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Hunter
     >> Head to the Valley of Honor and talk to Ormak Grimshot
-    .goto Orgrimmar,66.0,18.5
+    .goto Orgrimmar,66.046,18.526
     .turnin 6081 >>Turn in Training the Beast
 step << Hunter tbc
     >>Put "Beast Training" on your bars. Remember to teach your pet skills later
@@ -1546,14 +1546,14 @@ step << Hunter tbc
     .train 4195 >>Train Great Stamina
     .train 24547 >>Train Natural Armor
 step << Warlock
-.goto Orgrimmar,48.3,45.3
+.goto Orgrimmar,48.246,45.281
 .turnin 1506 >>Turn in Gan'rul's Summons
 .accept 1501 >>Accept Creature of the Void
 step << Warlock/Hunter
-    .goto Orgrimmar,34.3,36.4
+    .goto Orgrimmar,34.340,36.328
     .turnin 831 >>Turn in The Admiral's Orders
 step << Warlock
-.goto Orgrimmar,31.6,37.8
+.goto Orgrimmar,31.609,37.830
 .accept 5726 >>Accept Hidden Enemies
 step << Warlock
     #sticky
@@ -1593,16 +1593,16 @@ step << Warlock
     .turnin 5726 >>Turn in Hidden Enemies
     .accept 5727 >>Accept Hidden Enemies
 step << Warlock
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
     .turnin 1501 >>Turn in Creature of the Void
     .accept 1504 >>Accept The Binding
 step << Warlock
     .isOnQuest 832
-.goto Orgrimmar,49.5,50.6
+.goto Orgrimmar,49.473,50.589
     .turnin 832 >>Turn in Burning Shadows
 step << Warlock
     >>Talk to Neeru and finish his gossip options
-.goto Orgrimmar,49.5,50.6
+.goto Orgrimmar,49.473,50.589
     .skipgossip
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade (1)
 step << Warlock
@@ -1611,7 +1611,7 @@ step << Warlock
     .complete 1504,1 --Summoned Voidwalker (1)
 step << Warlock
     >>You can now summon a Voidwalker
-.goto Orgrimmar,48.3,45.3
+.goto Orgrimmar,48.246,45.281
     .turnin 1504 >>Turn in The Binding
 step << Warlock
     .goto Orgrimmar,31.8,37.8
@@ -1708,7 +1708,7 @@ step << Undead Warrior
     .money <0.0077
 .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << Undead Warrior
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
     .accept 1505 >>Accept Veteran Uzzek
 step << Undead Warrior
 >>Inside the bunker, top floor
@@ -1990,7 +1990,7 @@ step
     .turnin 834 >>Turn in Winds in the Desert
     .accept 835 >>Accept Securing the Lines
 step << wotlk
-    .goto Durotar,42.1,15.01
+    .goto Durotar,42.103,15.0161
     .accept 812 >>Accept Need for a Cure
 step << tbc
     .goto Durotar,42.5,18.6
@@ -2004,12 +2004,12 @@ step << Orc/Troll
     .accept 6385 >>Accept Doras the Wind Rider Master
 step << Orc/Troll
 #xprate <1.5
-    .goto Orgrimmar,45.2,64.0
+    .goto Orgrimmar,45.120,63.889
      >> Turn in the quests but do NOT fly back to The Crossroads
     .turnin 6385 >>Turn in Doras the Wind Rider Master
     .accept 6386 >>Accept Return to the Crossroads.
 step << Orc/Troll
-    .goto Orgrimmar,34.3,36.4
+    .goto Orgrimmar,34.340,36.328
     >> Cross the bridge from the flightpath tower
     .turnin 831 >>Turn in The Admiral's Orders
 step
@@ -2192,15 +2192,15 @@ step
     .goto Orgrimmar,47.0,53.4
     .turnin 813 >>Turn in Finding the Antidote
 step
-    .goto Orgrimmar,49.4,50.5
+    .goto Orgrimmar,49.473,50.589
     .turnin 829 >>Turn in Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
 step
     .isOnQuest 832
-    .goto Orgrimmar,49.4,50.5
+    .goto Orgrimmar,49.473,50.589
     .turnin 832 >>Turn in Burning Shadows
 step << Shaman
-    .goto Orgrimmar,49.4,50.5
+    .goto Orgrimmar,49.473,50.589
     >> Talk to Neeru Fireblade
     .complete 5727,1
     .skipgossip 3216,1
@@ -2217,7 +2217,7 @@ step << tbc
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step << wotlk
-    .goto Durotar,42.1,15.01
+    .goto Durotar,42.103,15.0161
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
     .turnin 812 >>Turn in Need for a Cure
 step

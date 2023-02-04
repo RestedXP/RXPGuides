@@ -19,14 +19,14 @@ step << Shaman
 	    .goto Azuremyst Isle,80.0,47.1
 	.vendor >> Kill 2-3 mobs for vendor trash (worth 10c+), then vendor trash inside
 step << Shaman
-    .goto Azuremyst Isle,79.3,49.1
+    .goto Azuremyst Isle,79.277,49.123
 	.trainer >> Train Rockbiter Weapon
 step << Warrior
     #completewith next
         .goto Azuremyst Isle,80.0,47.1
 	.vendor >> Kill 2-3 mobs for vendor trash (worth 10c+), then vendor trash inside
 step << Warrior
-    .goto Azuremyst Isle,79.6,49.4
+    .goto Azuremyst Isle,79.587,49.446
   .trainer >> Train Battle Shout
 step << Priest/Mage
 	#completewith next
@@ -34,7 +34,7 @@ step << Priest/Mage
     .vendor >>Kill mobs until 48c worth of vendor trash. Vendor, then buy x10 water from Ryosh
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step
-    .goto Azuremyst Isle,80.4,45.9
+    .goto Azuremyst Isle,80.419,45.885
     .turnin 9279 >> Turn in You Survived!
     .accept 9280 >> Accept Replenishing the Healing Crystals
 step
@@ -78,29 +78,29 @@ step
 	.vendor >> Vendor and Repair
 step << Mage
 	#completewith next
-	    .goto Azuremyst Isle,79.6,48.8
+	    .goto Azuremyst Isle,79.582,48.762
 	.turnin 9290 >> Turnin Mage Training
 	.trainer >> Train your spells
 step << Paladin
 	#completewith next
 	.turnin 9287 >> Turnin Paladin Training
-	    .goto Azuremyst Isle,79.7,48.2
+	    .goto Azuremyst Isle,79.695,48.236
 	.trainer >> Train your spells
 step
     .goto Azuremyst Isle,79.9,49.2
     .turnin 9409 >> Turn in Urgent Delivery!
     .accept 9283 >> Accept Rescue the Survivors!
 step << Shaman
-    .goto Azuremyst Isle,79.3,49.1
+    .goto Azuremyst Isle,79.277,49.123
     .accept 9449 >> Accept Call of Earth
 	.turnin 9421 >> Turn in Shaman Training
 	.trainer >> Train Earth Shock
 step << Shaman
-    .goto Azuremyst Isle,71.3,39.1
+    .goto Azuremyst Isle,71.315,39.097
     .turnin 9449 >> Turn in Call of Earth
     .accept 9450 >> Accept Call of Earth
 step << Warrior
-    .goto Azuremyst Isle,79.6,49.4
+    .goto Azuremyst Isle,79.587,49.446
 	.turnin 9289 >> Turnin Warrior Training
 	.trainer >> Train your spells
 step
@@ -112,11 +112,11 @@ step << Shaman
     .goto Azuremyst Isle,70.1,36.6
     .complete 9450,1 --Kill Restless Spirit of Earth (x4)
 step << Shaman
-    .goto Azuremyst Isle,71.3,39.1
+    .goto Azuremyst Isle,71.315,39.097
     .accept 9451 >> Accept Call of Earth
     .turnin 9450 >> Turn in Call of Earth
 step << Shaman
-    .goto Azuremyst Isle,79.3,49.1
+    .goto Azuremyst Isle,79.277,49.123
     .turnin 9451 >> Turn in Call of Earth
 step << Hunter
 	.goto Azuremyst Isle,79.86,49.67
@@ -164,7 +164,7 @@ step
 	>>Click on the big crystal inside  the lake
     .complete 9294,1 --Collect Disperse the Neutralizing Agent (x1)
 step
-    .goto Azuremyst Isle,72.0,60.8
+    .goto Azuremyst Isle,71.998,60.856
     .turnin 9309 >> Turn in The Missing Scout
     .accept 10303 >> Accept The Blood Elves
 step
@@ -193,12 +193,12 @@ step
     .goto Azuremyst Isle,80.1,49.0
     .turnin 9283 >> Turn in Rescue the Survivors!
 step
-    .goto Azuremyst Isle,79.5,51.6
+    .goto Azuremyst Isle,79.488,51.622
     .turnin 9311 >> Turn in Blood Elf Spy
     .turnin 9798 >> Turn in Blood Elf Plans
     .accept 9312 >> Accept The Emitter
 step
-    .goto Azuremyst Isle,79.4,51.2
+    .goto Azuremyst Isle,79.422,51.234
     .turnin 9312 >> Turn in The Emitter
     .accept 9313 >> Accept Travel to Azure Watch
 step
@@ -268,17 +268,17 @@ step << Paladin
     .goto Azuremyst Isle,48.4,49.5
     .trainer >> Train your spells
 step << Priest
-    .goto Azuremyst Isle,48.6,49.3
+    .goto Azuremyst Isle,48.603,49.285
 	 .trainer >> Train your spells
     .accept 9586 >> Accept Help Tavara
 step << Mage
     .goto Azuremyst Isle,49.9,50.0
     .trainer >> Train your spells
 step << Warrior
-    .goto Azuremyst Isle,50.0,50.5
+    .goto Azuremyst Isle,50.023,50.515
     .trainer >> Train your spells
 step << Hunter
-    .goto Azuremyst Isle,49.8,51.9
+    .goto Azuremyst Isle,49.780,51.938
     .trainer >> Train your spells
 step
 	#sticky
@@ -293,7 +293,7 @@ step
     .goto Azuremyst Isle,47.0,70.1
     .accept 9506 >> Accept A Small Start
 step
-    .goto Azuremyst Isle,46.7,70.6
+    .goto Azuremyst Isle,46.687,70.629
     .accept 9512 >> Accept Cookie's Jumbo Gumbo
 step
     .goto Azuremyst Isle,46.4,71.2
@@ -347,36 +347,36 @@ step
 step
 	.xp 8-950 >> Grind until you are 950xp away from level 8 (3550/4500). Try to finish near Azure Watch if possible.
 step
-    .goto Azuremyst Isle,49.8,51.9
+    .goto Azuremyst Isle,49.780,51.938
     >>Die and respawn at Azure Watch or run there if you're 300 yards or closer.
 step
-	.goto Azuremyst Isle,49.8,51.9
+	.goto Azuremyst Isle,49.780,51.938
 	.accept 9454 >> Accept The Great Moongraze Hunt
     .turnin 9454 >> Turn in The Great Moongraze Hunt
     .accept 10324 >> Accept The Great Moongraze Hunt
 step
-    .goto Azuremyst Isle,48.4,51.8
+    .goto Azuremyst Isle,48.390,51.770
     .turnin 9463 >> Turn in Medicinal Purpose
     .accept 9473 >> Accept An Alternative Alternative
 step
     .goto Azuremyst Isle,48.9,51.1
     .accept 10428 >> Accept The Missing Fisherman
 step
-    .goto Azuremyst Isle,49.4,51.1
+    .goto Azuremyst Isle,49.365,51.086
     .accept 9538 >> Accept Learning the Language
 step
-	.goto Azuremyst Isle,49.4,51.1
+	.goto Azuremyst Isle,49.365,51.086
 	.use 23818 >>Click the Stillpine Furbolg Language Primer in your bags
     .complete 9538,1 --Stillpine Furbolg Language Primer Read
 step
-    .goto Azuremyst Isle,49.4,51.1
+    .goto Azuremyst Isle,49.365,51.086
     .turnin 9538 >> Turn in Learning the Language
     .accept 9539 >> Accept Totem of Coo
 step << Shaman
     .goto Azuremyst Isle,48.05,50.41
     .trainer >> Train your spells
 step << Hunter
-    .goto Azuremyst Isle,49.8,51.9
+    .goto Azuremyst Isle,49.780,51.938
     .trainer >> Train your spells
 step << Priest
     .goto Azuremyst Isle,48.6,49.4
@@ -389,7 +389,7 @@ step << Mage
     .goto Azuremyst Isle,49.9,50.0
     .trainer >> Train your spells
 step << Warrior
-    .goto Azuremyst Isle,50.0,50.5
+    .goto Azuremyst Isle,50.023,50.515
     .trainer >> Train your spells
 step
 	#sticky
@@ -518,11 +518,11 @@ step << Hunter
     .goto Azuremyst Isle,46.7,70.5
     .turnin 9512 >> Turn in Cookie's Jumbo Gumbo
 step
-    .goto Azuremyst Isle,47.0,70.2
+    .goto Azuremyst Isle,47.036,70.212
     .turnin 9537 >> Turn in Show Gnomercy
     .accept 9602 >> Accept Deliver Them From Evil...
 step
-    .goto Azuremyst Isle,47.1,70.3
+    .goto Azuremyst Isle,47.127,70.289
     .accept 9515 >> Warlord Sriss'tiz
     .maxlevel 9
 step << !Hunter
@@ -565,7 +565,7 @@ step << Shaman
     .goto Azuremyst Isle,48.05,50.41
     .trainer >> Train your level 10 spells
 step << Hunter
-    .goto Azuremyst Isle,49.8,51.9
+    .goto Azuremyst Isle,49.780,51.938
     .trainer >> Train your level 10 spells
 step << Priest
     .goto Azuremyst Isle,48.6,49.4
@@ -577,7 +577,7 @@ step << Mage
     .goto Azuremyst Isle,49.9,50.0
     .trainer >> Train your level 10 spells
 step << Warrior
-    .goto Azuremyst Isle,50.0,50.5
+    .goto Azuremyst Isle,50.023,50.515
     .trainer >> Train your level 10 spells
     .accept 9582 >> Accept Strength of One
 step << Shaman
@@ -587,7 +587,7 @@ step << Hunter
     .goto Azuremyst Isle,49.7,51.9
     .accept 9757 >> Accept Seek Huntress Kella Nightbow
 step << Hunter
-    .goto Azuremyst Isle,24.2,54.3
+    .goto Azuremyst Isle,24.182,54.346
     .turnin 9757 >> Turn in Seek Huntress Kella Nightbow
     .accept 9591 >> Accept Taming the Beast
 step << Hunter
@@ -607,11 +607,11 @@ step << Hunter
     .complete 9515,1
     .isOnQuest 9515
 step << Hunter
-    .goto Azuremyst Isle,24.2,54.3
+    .goto Azuremyst Isle,24.182,54.346
     .turnin 9591 >> Turn in Taming the Beast
     .accept 9592 >> Accept Taming the Beast
 step << Hunter
-    .goto The Exodar,81.5,51.6
+    .goto The Exodar,81.480,51.428
     .turnin 9623 >> Turn in Coming of Age
     .accept 9625 >> Accept Elekks Are Serious Business
     --?
@@ -621,7 +621,7 @@ step << Hunter
 	.use 23897 >> Use the rod on a Greater Timberstrider
     .complete 9592,1 --Tame a Greater Timberstrider
 step << Hunter
-    .goto Azuremyst Isle,24.2,54.3
+    .goto Azuremyst Isle,24.182,54.346
     .turnin 9592 >> Turn in Taming the Beast
     .accept 9593 >> Accept Taming the Beast
 step << Hunter
@@ -629,7 +629,7 @@ step << Hunter
 	.use 23898 >> Use the rod on a Nightstalker
     .complete 9593,1 --Tame a Nightstalker
 step << Hunter
-    .goto Azuremyst Isle,24.2,54.3
+    .goto Azuremyst Isle,24.182,54.346
     .turnin 9593 >> Turn in Taming the Beast
     .accept 9675 >> Accept Beast Training
 step << Hunter
@@ -759,7 +759,7 @@ step << Shaman
 step << Shaman
 	.hs >> Hearth to Azure Watch
 step << Shaman
-    .goto Azuremyst Isle,47.1,50.6
+    .goto Azuremyst Isle,47.112,50.604
     .turnin 9622 >> Turn in Warn Your People
 step << Shaman
     #sticky
@@ -837,7 +837,7 @@ step
 	.vendor >> Buy level 5 food/drink << Paladin/Shaman
     .vendor >> Buy water/food for you and your pet << Hunter
 step
-    .goto Bloodmyst Isle,56.4,56.8
+    .goto Bloodmyst Isle,56.421,56.788
     .accept 9648 >> Accept Maatparm Mushroom Menagerie
 step
 	#completewith next
@@ -852,7 +852,7 @@ step
     .accept 9693 >> Accept What Argus Means to Me
     .accept 9581 >> Accept Learning from the Crystals
 step
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
     .turnin 9693 >> Turn in What Argus Means to Me
     .accept 9694 >> Accept Blood Watch
 step
@@ -964,7 +964,7 @@ step << Shaman
     .complete 9663,2 --Exarch Menelaous Warned
 step << Hunter
 	#completewith next
-    .goto Azuremyst Isle,49.8,51.9
+    .goto Azuremyst Isle,49.780,51.938
     .trainer >> Train your level 12 spells
 step << Priest
 	#completewith next
@@ -1003,7 +1003,7 @@ step
     .turnin 9581 >> Turn in Learning from the Crystals
     .accept 9620 >> Accept The Missing Survey Team
 step
-    .goto Bloodmyst Isle,55.1,58.0
+    .goto Bloodmyst Isle,55.081,57.958
     .accept 9567 >> Accept Know Thine Enemy
 step << Warrior/Rogue
     .goto Bloodmyst Isle,55.2,58.2
@@ -1145,7 +1145,7 @@ step
     .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
 step
     .itemcount 23984,10
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
     .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
@@ -1183,14 +1183,14 @@ step
 	#label mailbox
 	.goto Bloodmyst Isle,55.0,59.3,100,0
 	.goto Bloodmyst Isle,55.3,55.3,100,0
-	.goto Bloodmyst Isle,52.7,53.2,80,0
+	.goto Bloodmyst Isle,52.681,53.175,80,0
 	.goto Bloodmyst Isle,55.0,59.3
 	>>Speak to Messenger Hermesius, he patrols around Blood Watch
 	.unitscan Messenger Hermesius
 	.turnin 9671
 step
     #requires Missive
-	.goto Bloodmyst Isle,52.7,53.2
+	.goto Bloodmyst Isle,52.681,53.175
     .turnin 9584 >> Turn in The Second Sample
     .accept 9585 >> Accept The Final Sample
 step
@@ -1296,12 +1296,12 @@ step
 step
 	.goto The Exodar,75.0,54.8,80,0
 	.goto The Exodar,64.4,42.4,80,0
-    .goto The Exodar,56.9,50.2
+    .goto The Exodar,57.008,50.065
     .turnin 9604 >> Turn in On the Wings of a Hippogryph
     .accept 9605 >> Accept Hippogryph Master Stephanos
 step << Warrior
     .turnin 10350 >> Turn in Behomat
-    .goto The Exodar,55.6,82.1
+    .goto The Exodar,55.579,82.269
     >>Talk to the weapon master upstairs
     .train 199 >>Train 2h Maces
     .goto The Exodar,53.3,85.7
@@ -1323,7 +1323,7 @@ step << Paladin
     .goto The Exodar,38.8,82.6
     .turnin 9600 >>Turn in Redemption
 step << !Shaman
-    .goto The Exodar,32.9,54.6
+    .goto The Exodar,32.858,54.484
     .turnin -9698 >> Turn in Audience with the Prophet
     .accept 9699 >> Accept Truth or Fiction
 step << Shaman
@@ -1333,16 +1333,16 @@ step << Shaman
 	.trainer >> Train your level 16 spells
 step
 	.goto The Exodar,52.3,34.7,80,0
-    .goto The Exodar,68.4,63.5
+    .goto The Exodar,68.336,63.490
     >>Run back to the flight master
     .turnin 9605 >> Turn in Hippogryph Master Stephanos
     .accept 9606 >> Accept Return to Topher Loaal
 step
 	#completewith next
-    .goto The Exodar,68.4,63.5
+    .goto The Exodar,68.336,63.490
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step
-    .goto Bloodmyst Isle,55.8,59.8
+    .goto Bloodmyst Isle,55.844,59.776
     .turnin 9606 >> Turn in Return to Topher Loaal
 step
     #label exit1
@@ -1382,7 +1382,7 @@ step
 step
     #sticky
     #completewith gnome
-    .goto Bloodmyst Isle,42.1,21.2,0
+    .goto Bloodmyst Isle,42.142,21.174,0
     .vendor >>Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
 	>> Restock on arrows << Hunter
 	>> Restock on ice cold milk if needed << Hunter/Priest/Shaman/Paladin
@@ -1403,11 +1403,11 @@ step
     .complete 9549,1 --Collect Crude Murloc Idol (x3)
     .complete 9549,2 --Collect Crude Murloc Knife (x6)
 step
-    .goto Bloodmyst Isle,42.1,21.2
+    .goto Bloodmyst Isle,42.142,21.174
     .turnin 9548 >> Turn in Pilfered Equipment
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
 step
-    .goto Bloodmyst Isle,42.1,21.2
+    .goto Bloodmyst Isle,42.142,21.174
 	.vendor >> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
 	.collect 4371,1,175,1,1
 	.bronzetube
@@ -1467,13 +1467,13 @@ step
     .accept 9561 >> Accept Nolkai's Words
 step
 	#completewith next
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
     .turnin 9700 >> Turn in I Shoot Magic Into the Darkness
     .accept 9703 >> Accept The Cryo-Core
 	.trainer >>Train class spells at Vindicator Aesom << Paladin
 step
     .itemcount 23984,10
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
     .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
@@ -1489,7 +1489,7 @@ step
     .goto Bloodmyst Isle,55.0,58.1
     .turnin 9569 >> Turn in Containing the Threat
 step
-    .goto Bloodmyst Isle,53.2,57.7
+    .goto Bloodmyst Isle,53.242,57.708
     .accept 9578 >> Accept Searching for Galaen
 step
 	#sticky
@@ -1588,10 +1588,10 @@ step
 	>>Kill the Fouled Water Spirits in the area
     .complete 10067,1 --Kill Fouled Water Spirit (x6)
 step
-    .goto Bloodmyst Isle,30.7,46.8
+    .goto Bloodmyst Isle,30.746,46.808
     .turnin 10067 >> Turn in Fouled Water Spirits
 step
-    .goto Bloodmyst Isle,24.9,34.3
+    .goto Bloodmyst Isle,24.872,34.310
     .accept 9670 >> Accept They're Alive! Maybe...
 step
 	#sticky
@@ -1733,7 +1733,7 @@ step << !Shaman
     .deathskip >> Death skip back to Blood Watch
 step
     .itemcount 23984,10
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
     >> Turn in your remaining Irradiated Crystal Shards before leaving Bloodmyst!
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
@@ -1757,10 +1757,10 @@ step << Shaman
     .accept 9501 >> Accept Call of Water
 	.trainer >> Train your level 20 skills
 step << Shaman
-    .goto The Exodar,68.4,63.5
+    .goto The Exodar,68.336,63.490
     .fly Blood Watch>> Fly to Blood Watch
 step << Shaman
-    .goto Bloodmyst Isle,32.3,16.2
+    .goto Bloodmyst Isle,32.300,16.132
     .turnin 9501 >> Turn in Call of Water
     .accept 9503 >> Accept Call of Water
 step << Shaman
@@ -1810,11 +1810,11 @@ step << Mage
 step << Warrior
 	.goto The Exodar,42,71.4,60,0
 	.goto The Exodar,54.5,85.6,60,0
-	.goto The Exodar,55.6,82.3
+	.goto The Exodar,55.579,82.269
 	.trainer >> Train spells in The Exodar
 step
 	.goto The Exodar,33.8,73.7,10,0
-    .goto Azuremyst Isle,24.2,54.3
+    .goto Azuremyst Isle,24.182,54.346
 	>>Talk to the Night Elf just outside of The Exodar back entrance
     .turnin 9632 >> Turn in Newfound Allies
     .accept 9633 >> Accept The Way to Auberdine
@@ -1838,7 +1838,7 @@ RXPGuides.RegisterGuide([[
 #next 21-23 Ashenvale (Draenei)
 step
     #xprate <1.2
-    .goto Darkshore,36.1,44.9
+    .goto Darkshore,36.096,44.931
     .accept 1138 >> Accept Fruit of the Sea
     .maxlevel 20
 step
@@ -2012,7 +2012,7 @@ step
     .isQuestTurnedIn 947
 step
 #xprate <1.2
-    .goto Darkshore,36.1,44.9
+    .goto Darkshore,36.096,44.931
     .turnin 1138 >> Turn in Fruit of the Sea
     .isQuestComplete 1138
 step << Hunter
@@ -2023,7 +2023,7 @@ step << Hunter
     .zoneskip Darnassus
 step << Hunter
     #completewith Trainer
-    .goto Teldrassil,58.4,94.0
+    .goto Teldrassil,58.399,94.016
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << Hunter
     #label Trainer
@@ -2147,12 +2147,12 @@ step
     .goto Ashenvale,34.7,48.8
     .accept 1008 >> Accept The Zoram Strand
 step
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
     .accept 1054 >> Accept Culling the Threat
     .turnin 10752 >> Turn in Onward to Ashenvale
 step
     #xprate <1.7
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
     .accept 991 >> Accept Raene's Cleansing
 step
     .goto Ashenvale,37.0,49.2
@@ -2180,7 +2180,7 @@ step
 	.unitscan Dal Bloodclaw
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
 step
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
     .turnin 1054 >> Turn in Culling the Threat
 step
     .goto Ashenvale,37.3,51.8
@@ -2206,7 +2206,7 @@ step
     .isQuestComplete 945
 step
 #xprate <1.2
-    .goto Ashenvale,26.2,38.7
+    .goto Ashenvale,26.196,38.698
     .turnin 973 >> Turn in The Tower of Althalaxx
     .isOnQuest 973
 step
@@ -2234,7 +2234,7 @@ step
     .collect 5490,20,1008,1,1
     .complete 1007,1 --Collect Ancient Statuette (x1)
 step
-    .goto Ashenvale,14.8,31.3
+    .goto Ashenvale,14.790,31.294
 	>> Grind naga directly in your path
     .turnin 1007 >> Turn in The Ancient Statuette
     .timer 25,The Ancient Statuette RP
@@ -2261,7 +2261,7 @@ step
 	>>Finish grinding nagas
     .complete 1008,1 --Collect Wrathtail Head (x20)
 step
-    .goto Ashenvale,14.8,31.3
+    .goto Ashenvale,14.790,31.294
     .turnin 1009 >> Turn in Ruuzel
 step
     #requires naga2
@@ -2269,14 +2269,14 @@ step
     .hs >> Hearth to Astranaar
 step
     #requires naga2
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
     .turnin 1023 >> Turn in Raene's Cleansing
 step
 	#completewith next
 	.destroy 5505>>Delete Teronis' Journal from your inventory. It's no longer needed
 step
 #xprate <1.5
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
     .accept 1025 >> Accept An Aggressive Defense
 step
     .goto Ashenvale,37.3,51.8
@@ -2295,7 +2295,7 @@ step
     .complete 1025,4 --Kill Foulweald Warrior (x12)
 step
 #xprate <1.5
-    .goto Ashenvale,49.8,67.2
+    .goto Ashenvale,49.796,67.211
     .accept 1016 >> Accept Elemental Bracers
 step
 #xprate <1.5
@@ -2304,18 +2304,18 @@ step
     .complete 1016,1 --Collect Divined Scroll (x1)
 step
 #xprate <1.5
-    .goto Ashenvale,49.8,67.2
+    .goto Ashenvale,49.796,67.211
     .turnin 1016 >> Turn in Elemental Bracers
 step
 #xprate <1.5
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
     .turnin 1025 >> Turn in An Aggressive Defense
     .isQuestComplete 1025
 step
 	.goto Ashenvale,34.4,48.0
     .fly Auberdine>> Fly to Auberdine
 step
-    .goto Darkshore,37.7,43.4
+    .goto Darkshore,37.706,43.390
     .turnin 4740 >> Turn in WANTED: Murkdeep!
     .isQuestComplete 4740
 step
@@ -2341,7 +2341,7 @@ step << !Hunter
 step << !Hunter
 #xprate <1.7
     .isOnQuest 741
-	.goto Teldrassil,23.7,64.5
+	.goto Teldrassil,23.703,64.511
 	.turnin 741 >> Turn in The Absent Minded Prospector
 	.accept 942 >> Accept The Absent Minded Prospector
 step << Warrior tbc/Mage
@@ -2356,7 +2356,7 @@ step << !Hunter
     .zoneskip Teldrassil
 step << !Hunter
 #xprate <1.7
-    .goto Teldrassil,58.4,94.0
+    .goto Teldrassil,58.399,94.016
     .fp Rut'theran >> Get the Rut'theran Village flight path
     .zoneskip Darkshore
 step << !Hunter
@@ -2397,7 +2397,7 @@ step << Draenei tbc/NightElf tbc
     .zoneskip Stormwind City
 step << NightElf tbc/Draenei tbc
 #xprate >1.499
-    .goto Loch Modan,33.9,50.9
+    .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City

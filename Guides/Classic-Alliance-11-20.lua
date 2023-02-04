@@ -258,7 +258,7 @@ step << Druid
      >> Return to Nessa
     .turnin 6343 >> Turn in Return to Nessa
 step << Druid
-    .goto Darnassus,35.4,8.4
+    .goto Darnassus,35.375,8.405
     .turnin 6001 >> Turn in Body and Heart
     .accept 6121 >> Accept Lessons Anew
     .trainer >> Train your class spells
@@ -514,7 +514,7 @@ step <<  Druid
 step << Druid
     .fly Teldrassil>>Fly to Teldrassil
 step << Druid
-    .goto Darnassus,35.4,8.4
+    .goto Darnassus,35.375,8.405
     .accept 26 >> Accept A Lesson to Learn
     .trainer >> Train your class spells
 step << Druid
@@ -535,7 +535,7 @@ step << Druid
     >>Dive into the lake and look for a Shrine Bauble, it looks like a small red jar
     .complete 29,1 --Complete the Trial of the Lake.
 step << Druid
-    .goto Moonglade,36.5,40.1
+    .goto Moonglade,36.517,40.104
     .turnin 29 >> Turn in Trial of the Lake
     .accept 272 >> Accept Trial of the Sea Lion
 step << Druid
@@ -786,7 +786,7 @@ step << Dwarf Paladin
     .goto Ironforge,23.12,6.14
     .trainer >> Train your class spells
 step << Dwarf Paladin
-    .goto Ironforge,23.6,8.5
+    .goto Ironforge,23.539,8.300
     >>Speak to Muiredon upstairs
     .turnin 1784 >>Turn in The Tome of Divinity
     .accept 1785 >>Accept The Tome of Divinity
@@ -795,7 +795,7 @@ step << Dwarf Paladin
     .turnin 1785 >>Turn in The Tome of Divinity
 step << Dwarf Paladin
     #softcore
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Wetlands>> Fly to Wetlands
 step << Dwarf Paladin
     #hardcore
@@ -1343,7 +1343,7 @@ step <<  !Hunter
     #completewith next
     .deathskip >> Die and respawn at Thelsamar
 step <<  !Hunter
-    .goto Loch Modan,33.9,50.9
+    .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
 step <<  !Hunter
     .goto Loch Modan,21.30,68.60,40 >> Run to Dun Morogh

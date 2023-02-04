@@ -111,7 +111,7 @@ step << wotlk
     .collect 4371,1,175,1,1
 	.bronzetube
 step << !Dwarf wotlk !Gnome wotlk--Not needed, including just in case someone forgets to set HS to SW
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fp Ironforge>> Get the Ironforge Flight Path
 step << Hunter/Warrior/Paladin/Shaman/Rogue
 	.goto Ironforge,61.34,89.25
@@ -168,13 +168,13 @@ step << Gnome !Warlock wotlk
 	.skill riding,75 >> Head to Dun Morogh, train riding and purchase your mount.
 step << Gnome wotlk/Dwarf wotlk
     #completewith next
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Wetlands >> Fly to Wetlands
 step << Mage wotlk
     .goto Wetlands,10.7,60.9
     .home >> Set your Hearthstone to Deepwater Tavern
 step
-    .goto Wetlands,8.3,58.5
+    .goto Wetlands,8.310,58.533
     .accept 279 >> Accept Claws from the Deep
 step
     .goto Wetlands,8.6,55.8
@@ -214,7 +214,7 @@ step
 	>>Go upstairs inside the keep
     .accept 464 >> Accept War Banners
 step
-    .goto Wetlands,11.5,52.1
+    .goto Wetlands,11.503,52.134
     .accept 305 >> Accept In Search of The Excavation Team
 step
 	#sticky
@@ -242,7 +242,7 @@ step
 step
     #xprate <1.5
 	.goto Wetlands,34.3,41.2,60,0
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
     .accept 294 >> Accept Ormer's Revenge
 step
     .goto Wetlands,38.8,52.3
@@ -255,7 +255,7 @@ step << Hunter/Warlock
     .complete 294,2 --Kill Mottled Screecher (x10)
 step << Hunter/Warlock
 	.goto Wetlands,34.3,41.4,80,0
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
     .turnin 294 >> Turn in Ormer's Revenge
     .accept 295 >> Accept Ormer's Revenge
 step << Hunter/Warlock
@@ -265,7 +265,7 @@ step << Hunter/Warlock
     .complete 295,1 --Kill Mottled Scytheclaw (x10)
     .complete 295,2 --Kill Mottled Razormaw (x10)
 step << Hunter/Warlock
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
     .turnin 295 >> Turn in Ormer's Revenge
     .accept 296 >> Accept Ormer's Revenge
 step << Hunter/Warlock
@@ -275,7 +275,7 @@ step << Hunter/Warlock
     *Note: He can very very rarely be found patroling the quarry below.
     .complete 296,1 --Collect Sarltooth's Talon (x1)
 step << Hunter/Warlock
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
     .turnin 296 >> Turn in Ormer's Revenge
 step
 	.goto Wetlands,34.3,41.2,60,0
@@ -283,7 +283,7 @@ step
 	>>Kill Dragonmaw Orcs
     .complete 464,1 --Collect Dragonmaw War Banner (x8)
 step
-    .goto Wetlands,49.9,39.4
+    .goto Wetlands,49.915,39.367
     .accept 469 >> Accept Daily Delivery
 step << Warrior
     #sticky
@@ -294,10 +294,10 @@ step << Warrior
     #xprate <1.5
 step
     #requires crocs
-    .goto Wetlands,56.4,40.4
+    .goto Wetlands,56.371,40.401
     .turnin 463 >> Turn in The Greenwarden
 step
-    .goto Wetlands,56.4,40.4
+    .goto Wetlands,56.371,40.401
     .accept 276 >> Accept Tramping Paws
     .maxlevel 23
 step
@@ -340,7 +340,7 @@ step << NightElf/Draenei/Human wotlk
     .turnin 199 >> Turn in A Dark Threat Looms
     .isOnQuest 199
 step << NightElf/Draenei/Human wotlk
-    .goto Loch Modan,33.9,50.9
+    .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
 step << Draenei tbc/NightElf tbc
     .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
@@ -515,11 +515,11 @@ step << Hunter
 	.goto Redridge Mountains,28.8,47.3
 	.vendor >> Restock on arrows, note you will get level 25 arrows soon.
 step
-    .goto Redridge Mountains,27.7,47.3
+    .goto Redridge Mountains,27.723,47.381
     .accept 127 >> Accept Selling Fish
     .accept 150 >> Accept Murloc Poachers
 step << Rogue tbc
-    .goto Redridge Mountains,28.1,52.1
+    .goto Redridge Mountains,28.062,52.037
     .turnin 2281 >> Turn in Redridge Rendezvous
     .accept 2282 >> Accept Alther's Mill
 step
@@ -548,7 +548,7 @@ step
     .turnin 127 >> Turn in Selling Fish
     .turnin 150 >> Turn in Murloc Poachers
 step << Rogue tbc
-    .goto Redridge Mountains,28.1,52.1
+    .goto Redridge Mountains,28.062,52.037
     .turnin 2282 >> Turn in Alther's Mill
 step << Rogue tbc
     #completewith next
@@ -558,7 +558,7 @@ step
 	>>Click on the wanted poster outside the inn
     .accept 180 >> Accept Wanted: Lieutenant Fangore
 step
-    .goto Redridge Mountains,21.9,46.4
+    .goto Redridge Mountains,21.858,46.329
     .accept 34 >> Accept An Unwelcome Guest
 step
     .goto Redridge Mountains,15.7,49.4
@@ -583,7 +583,7 @@ step
     .turnin 66 >> Turn in The Legend of Stalvan
     .accept 67 >> Accept The Legend of Stalvan
 step << Draenei
-    .goto Duskwood,71.8,46.4
+    .goto Duskwood,71.816,46.369
     .turnin 9429 >> Turn in Travel to Darkshire
 step
     .goto Duskwood,75.3,48.6
@@ -636,7 +636,7 @@ step
     .turnin 163 >> Turn in Raven Hill
     .accept 5 >> Accept Jitters' Growling Gut
 step
-    .goto Duskwood,7.8,34.1
+    .goto Duskwood,7.781,34.069
     .turnin 164 >> Turn in Deliveries to Sven
     .accept 95 >> Accept Sven's Revenge
 step
@@ -692,7 +692,7 @@ step << Druid tbc
     >>Combine the 2 pendants at the Shrine of Remulos
     .complete 272,1 --Collect Pendant of the Sea Lion (x1)
 step << Druid tbc
-    .goto Moonglade,56.2,30.6
+    .goto Moonglade,56.209,30.636
     >>Teleport back to Nighthaven
     .turnin 272 >> Turn in Trial of the Sea Lion
     .accept 5061 >> Accept Aquatic Form
@@ -702,7 +702,7 @@ step << Druid tbc
     .goto Moonglade,44.1,45.2
     .fly Teldrassil>> Fly to Teldrassil
 step << Druid tbc
-    .goto Darnassus,35.4,8.3
+    .goto Darnassus,35.375,8.405
     .turnin 5061 >> Turn in Aquatic Form
 step << Rogue/Druid
     #sticky
@@ -771,12 +771,12 @@ step
     .turnin 56 >> Turn in The Night Watch
     .accept 57 >> Accept The Night Watch
 step
-    .goto Duskwood,72.6,47.6
+    .goto Duskwood,72.642,47.613
     .turnin 225 >> Turn in The Weathered Grave
     .isOnQuest 225
 step
     .accept 227 >> Accept Morgan Ladimore
-    .goto Duskwood,72.6,47.6
+    .goto Duskwood,72.642,47.613
     .turnin 227 >> Turn in Morgan Ladimore
     .goto Duskwood,73.5,46.9
     .accept 228 >> Accept Mor'Ladim
@@ -845,7 +845,7 @@ step << Hunter/Paladin
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
     .isOnQuest 228
 step
-    .goto Duskwood,7.8,34.0
+    .goto Duskwood,7.781,34.069
     .turnin 230 >> Turn in Sven's Camp
     .accept 262 >> Accept The Shadowy Figure
 step
@@ -890,12 +890,12 @@ step
     .turnin 68 >> Turn in The Legend of Stalvan
     .accept 69 >> Accept The Legend of Stalvan
 step
-    .goto Duskwood,72.6,47.6
+    .goto Duskwood,72.642,47.613
     .turnin 225 >> Turn in The Weathered Grave
     .isOnQuest 225
 step
     .accept 227 >> Accept Morgan Ladimore
-    .goto Duskwood,72.6,47.6
+    .goto Duskwood,72.642,47.613
     .turnin 227 >> Turn in Morgan Ladimore
     .goto Duskwood,73.5,46.9
     .accept 228 >> Accept Mor'Ladim
@@ -942,7 +942,7 @@ step
  .fly Redridge >> Fly to Redridge
 step
     #xprate <1.2
-    .goto Redridge Mountains,31.6,57.9
+    .goto Redridge Mountains,31.537,57.852
     .accept 128 >> Accept Blackrock Bounty
     .maxlevel 26 << Paladin/Hunter
 step
@@ -985,11 +985,11 @@ step
     .complete 128,1 --Kill Blackrock Champion (x15)
     .isOnQuest 128
 step
-    .goto Redridge Mountains,33.5,48.9
+    .goto Redridge Mountains,33.504,48.969
     .turnin 19 >> Turn in Tharil'zun
 	.isQuestComplete 19
 step
-	.goto Redridge Mountains,33.5,48.9
+	.goto Redridge Mountains,33.504,48.969
     .turnin 115 >> Turn in Shadow Magic
 step << !Warlock
     .goto Redridge Mountains,29.6,44.3
@@ -1083,7 +1083,7 @@ step << Shaman
 	.goto StormwindClassic,61.9,84.0
 	.trainer >> Train your class spells
 step << Warrior
-    .goto Elwynn Forest,41.1,65.8
+    .goto Elwynn Forest,41.087,65.768
     .trainer >> Train your class spells
 step << Mage
     .goto StormwindClassic,39.6,79.6
@@ -1266,7 +1266,7 @@ step
     .complete 471,1 --Collect Giant Crocolisk Skin (x6)
     .isQuestTurnedIn 484
 step
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
     .accept 294 >> Accept Ormer's Revenge
 step
 	#label fossil
@@ -1280,7 +1280,7 @@ step
     .complete 294,1 --Kill Mottled Raptor (x10)
     .complete 294,2 --Kill Mottled Screecher (x10)
 step
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
     .turnin 294 >> Turn in Ormer's Revenge
     .accept 295 >> Accept Ormer's Revenge
 step
@@ -1304,7 +1304,7 @@ step
     .complete 295,1 --Kill Mottled Scytheclaw (x10)
     .complete 295,2 --Kill Mottled Razormaw (x10)
 step
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
     .turnin 295 >> Turn in Ormer's Revenge
     .accept 296 >> Accept Ormer's Revenge
 step
@@ -1314,7 +1314,7 @@ step
     .complete 296,1 --Collect Sarltooth's Talon (x1)
 step
 	#requires relics
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
     .turnin 296 >> Turn in Ormer's Revenge
 step
 	#requires relics
@@ -1381,7 +1381,7 @@ step
     .turnin 470 >> Turn in Digging Through the Ooze
     .isQuestComplete 470
 step
-    .goto Wetlands,8.3,58.5
+    .goto Wetlands,8.310,58.533
     .turnin 286 >> Turn in Return the Statuette
 step
     .goto Wetlands,8.6,55.8
@@ -1506,7 +1506,7 @@ step
 	.isOnQuest 538
 step << !Warlock
 #xprate <1.5
-    .goto Hillsbrad Foothills,51.9,58.7
+    .goto Hillsbrad Foothills,51.886,58.677
     .accept 555 >> Accept Soothing Turtle Bisque
 step
     .xp <30,1
@@ -1779,7 +1779,7 @@ step
     .isQuestTurnedIn 174
 step
 	#label notubeandy
-    .goto Duskwood,73.8,44.5
+    .goto Duskwood,73.778,44.485
     .turnin 156 >> Turn in Gather Rot Blossoms
     .accept 159 >> Accept Juice Delivery
 step
@@ -1917,7 +1917,7 @@ step
 	>> Kill spiders and loot them for their venom
     .complete 101,2 --Collect Vial of Spider Venom (x5)
 step
-    .goto Duskwood,28.1,31.5
+    .goto Duskwood,28.109,31.463
     .turnin 134 >> Turn in Ogre Thieves
     .accept 160 >> Accept Note to the Mayor
 step << !Hunter !Paladin
@@ -1925,7 +1925,7 @@ step << !Hunter !Paladin
     >> Click on the gravestone
     .turnin 231 >> Turn in A Daughter's Love
 step << !Dwarf/!Paladin
-    .goto Duskwood,7.8,34.1
+    .goto Duskwood,7.781,34.069
     .turnin 325 >> Turn in Armed and Ready
     .accept 55 >> Accept Morbent Fel
 step << !Dwarf/!Paladin
@@ -2043,7 +2043,7 @@ step
 step
 	#label tigers
     .goto Stranglethorn Vale,37.6,11.6,20,0
-    .goto Stranglethorn Vale,35.6,10.6,20,0
+    .goto Stranglethorn Vale,35.616,10.619,20,0
     .goto Stranglethorn Vale,36.4,13.6,20,0
     .goto Stranglethorn Vale,37.6,11.6
     >> Kill young tigers around the hunting camp
@@ -2055,7 +2055,7 @@ step
 step
 	#requires tigers
 	#label thorsen
-    .goto Stranglethorn Vale,35.6,10.6
+    .goto Stranglethorn Vale,35.616,10.619
     .turnin 185 >> Turn in Tiger Mastery
     .turnin 190 >> Turn in Panther Mastery
     .accept 186 >> Accept Tiger Mastery
@@ -2073,7 +2073,7 @@ step << !Dwarf/!Paladin
     #completewith next
     .hs >> Hearth to Darkshire
 step << Dwarf Paladin
-    .goto Duskwood,7.8,34.1
+    .goto Duskwood,7.781,34.069
     .turnin 325 >> Turn in Armed and Ready
     .accept 55 >> Accept Morbent Fel
 step << Dwarf Paladin
@@ -2090,7 +2090,7 @@ step
     .goto Duskwood,72.0,46.6
     .turnin 253 >> Turn in Bride of the Embalmer
 step
-    .goto Duskwood,75.7,47.6
+    .goto Duskwood,75.752,47.569
     .turnin 222 >> Turn in Worgen in the Woods
     .accept 223 >> Accept Worgen in the Woods
 step
@@ -2205,7 +2205,7 @@ step << Shaman wotlk
     #completewith next
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman wotlk
-    .goto Bloodmyst Isle,32.3,16.2
+    .goto Bloodmyst Isle,32.300,16.132
     .turnin 9504 >> Turn in Call of Water
     .accept 9508 >> Accept Call of Water
 step << Shaman wotlk
@@ -2233,11 +2233,11 @@ step << Shaman wotlk
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
 step << Shaman wotlk
-    .goto Azuremyst Isle,24.9,35.9
+    .goto Azuremyst Isle,24.897,35.918
     .turnin 9552 >> Turn in Call of Air
     .accept 9553 >> Accept Call of Air
 step << Shaman wotlk
-    .goto Azuremyst Isle,22.3,32.5
+    .goto Azuremyst Isle,22.312,32.547
     .turnin 9553 >> Turn in Call of Air
     .accept 9554 >> Accept Call of Air
 step << Shaman wotlk
@@ -2281,7 +2281,7 @@ step << Dwarf Paladin
     .goto Ironforge,18.5,51.6
     .home >>Set your HS to Ironforge
 step << Dwarf Paladin
-    .goto Ironforge,23.3,6.1
+    .goto Ironforge,23.131,6.143
     .accept 2999 >>Accept Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,12.1
@@ -2299,7 +2299,7 @@ step << Dwarf Paladin
     .turnin 1648 >>Turn in The Tome of Divinity
     .accept 1778 >>Accept The Tome of Divinity
 step << Dwarf Paladin
-    .goto Ironforge,27.7,12.3
+    .goto Ironforge,27.628,12.183
     >>Return to Tiza Battleforge
     .turnin 1778 >>Turn in The Tome of Divinity
     .accept 1779 >>Accept The Tome of Divinity
@@ -2313,7 +2313,7 @@ step << Dwarf Paladin
     .goto Dun Morogh,53.2,35.3
     .zone Dun Morogh >> Head outside to Dun Morogh
 step << Dwarf Paladin
-    .goto Dun Morogh,78.3,58.1
+    .goto Dun Morogh,78.321,58.088
     >>Use the Symbol of Life on Narm Faulk
     .turnin 1783 >>Turn in The Tome of Divinity
     .accept 1784 >>Accept The Tome of Divinity
@@ -2325,7 +2325,7 @@ step << Dwarf Paladin
     #completewith next
     .hs >> Hearth to Ironforge
 step << Dwarf Paladin
-    .goto Ironforge,23.6,8.5
+    .goto Ironforge,23.539,8.300
     >>Speak to Muiredon upstairs
     .turnin 1784 >>Turn in The Tome of Divinity
     .accept 1785 >>Accept The Tome of Divinity
@@ -2422,7 +2422,7 @@ step << Shaman tbc
     #completewith next
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman tbc
-    .goto Bloodmyst Isle,32.3,16.2
+    .goto Bloodmyst Isle,32.300,16.132
     .turnin 9504 >> Turn in Call of Water
     .accept 9508 >> Accept Call of Water
 step << Shaman tbc
@@ -2450,11 +2450,11 @@ step << Shaman tbc
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
 step << Shaman tbc
-    .goto Azuremyst Isle,24.9,35.9
+    .goto Azuremyst Isle,24.897,35.918
     .turnin 9552 >> Turn in Call of Air
     .accept 9553 >> Accept Call of Air
 step << Shaman tbc
-    .goto Azuremyst Isle,22.3,32.5
+    .goto Azuremyst Isle,22.312,32.547
     .turnin 9553 >> Turn in Call of Air
     .accept 9554 >> Accept Call of Air
 step << Shaman tbc
@@ -2622,7 +2622,7 @@ step
     .isQuestTurnedIn 174
 step
 	#label notubeandy
-    .goto Duskwood,73.8,44.5
+    .goto Duskwood,73.778,44.485
     .turnin 156 >> Turn in Gather Rot Blossoms
     .accept 159 >> Accept Juice Delivery
 step << !NightElf !Draenei
@@ -2785,7 +2785,7 @@ step
 step
 	#requires tigers
 	#label thorsen
-    .goto Stranglethorn Vale,35.6,10.6
+    .goto Stranglethorn Vale,35.616,10.619
     .turnin 185 >> Turn in Tiger Mastery
     .accept 186 >> Accept Tiger Mastery
     .turnin 190 >> Turn in Panther Mastery
@@ -2795,7 +2795,7 @@ step
 	>> Kill spiders and loot them for their venom
     .complete 101,2 --Collect Vial of Spider Venom (x5)
 step
-    .goto Duskwood,28.1,31.5
+    .goto Duskwood,28.109,31.463
     .turnin 134 >> Turn in Ogre Thieves
     .accept 160 >> Accept Note to the Mayor
 step << !Hunter !Paladin
@@ -2898,7 +2898,7 @@ step
     .xp 30-10575 << !Shaman
     .xp 30-7460 << Shaman
 step
-    .goto Duskwood,75.7,47.6
+    .goto Duskwood,75.752,47.569
     .turnin 222 >> Turn in Worgen in the Woods
     .accept 223 >> Accept Worgen in the Woods
 step
@@ -3001,7 +3001,7 @@ step << Shaman wotlk
     #completewith next
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman wotlk
-    .goto Bloodmyst Isle,32.3,16.2
+    .goto Bloodmyst Isle,32.300,16.132
     .turnin 9504 >> Turn in Call of Water
     .accept 9508 >> Accept Call of Water
 step << Shaman wotlk
@@ -3029,11 +3029,11 @@ step << Shaman wotlk
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
 step << Shaman wotlk
-    .goto Azuremyst Isle,24.9,35.9
+    .goto Azuremyst Isle,24.897,35.918
     .turnin 9552 >> Turn in Call of Air
     .accept 9553 >> Accept Call of Air
 step << Shaman wotlk
-    .goto Azuremyst Isle,22.3,32.5
+    .goto Azuremyst Isle,22.312,32.547
     .turnin 9553 >> Turn in Call of Air
     .accept 9554 >> Accept Call of Air
 step << Shaman wotlk
@@ -3120,13 +3120,13 @@ step << Hunter tbc
 	>>Go inside the building, head downstairs and buy a level 30 quiver from Thalgus Thunderfist
 	.collect 7371,1
 step << !Dwarf !Gnome wotlk
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fp Ironforge>> Get the Ironforge Flight Path
 step
     .goto Ironforge,18.5,51.6
     .home >>Set your hearthstone to Ironforge
 step << Dwarf Paladin
-    .goto Ironforge,23.3,6.1
+    .goto Ironforge,23.131,6.143
     .accept 2999 >>Accept Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,12.1
@@ -3144,7 +3144,7 @@ step << Dwarf Paladin
     .turnin 1648 >>Turn in The Tome of Divinity
     .accept 1778 >>Accept The Tome of Divinity
 step << Dwarf Paladin
-    .goto Ironforge,27.7,12.3
+    .goto Ironforge,27.628,12.183
     >>Return to Tiza Battleforge
     .turnin 1778 >>Turn in The Tome of Divinity
     .accept 1779 >>Accept The Tome of Divinity
@@ -3162,7 +3162,7 @@ step << Paladin
     >> Head to the gates of Ironforge << !Dwarf
     .turnin 1653 >>Turn in The Test of Righteousness
 step << Dwarf Paladin
-    .goto Dun Morogh,78.3,58.1
+    .goto Dun Morogh,78.321,58.088
     >>Use the Symbol of Life on Narm Faulk
     .turnin 1783 >>Turn in The Tome of Divinity
     .accept 1784 >>Accept The Tome of Divinity
@@ -3174,7 +3174,7 @@ step << Dwarf Paladin
     #completewith next
     .hs >> Hearth to Ironforge
 step << Dwarf Paladin
-    .goto Ironforge,23.6,8.5
+    .goto Ironforge,23.539,8.300
     >>Speak to Muiredon upstairs
     .turnin 1784 >>Turn in The Tome of Divinity
     .accept 1785 >>Accept The Tome of Divinity
@@ -3193,7 +3193,7 @@ step << Mage
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
 step << Gnome/Dwarf/tbc
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Wetlands>> Fly to wetlands
 step << wotlk !Dwarf !Gnome
     #sticky
@@ -3329,7 +3329,7 @@ step << Shaman tbc
 .isQuestTurnedIn 9508
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman tbc
-    .goto Bloodmyst Isle,32.3,16.2
+    .goto Bloodmyst Isle,32.300,16.132
     .turnin 9504 >> Turn in Call of Water
     .accept 9508 >> Accept Call of Water
 step << Shaman tbc
@@ -3357,11 +3357,11 @@ step << Shaman tbc
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
 step << Shaman tbc
-    .goto Azuremyst Isle,24.9,35.9
+    .goto Azuremyst Isle,24.897,35.918
     .turnin 9552 >> Turn in Call of Air
     .accept 9553 >> Accept Call of Air
 step << Shaman tbc
-    .goto Azuremyst Isle,22.3,32.5
+    .goto Azuremyst Isle,22.312,32.547
     .turnin 9553 >> Turn in Call of Air
     .accept 9554 >> Accept Call of Air
 step << Shaman tbc
@@ -3503,7 +3503,7 @@ step
     .turnin 647 >> Turn in MacKreel's Moonshine
 step
 #xprate <1.5
-    .goto Hillsbrad Foothills,51.9,58.7
+    .goto Hillsbrad Foothills,51.886,58.677
     .accept 555 >> Accept Soothing Turtle Bisque
 step
     .xp <30,1
@@ -3620,17 +3620,17 @@ step
     .goto Ironforge,38.75,87.04
     .turnin 686 >>Turn in A King's Tribute
 step
-	.goto Ironforge,69.8,83.0 << Hunter
+	.goto Ironforge,69.875,82.895 << Hunter
 	.goto Ironforge,66.4,88.7 << Warrior
 	.goto Ironforge,24.7,8.8 << Priest
 	.goto Ironforge,24.6,9.2 << Paladin
-	.goto Ironforge,50.3,5.8 << Warlock
+	.goto Ironforge,50.350,5.656 << Warlock
 	.goto Ironforge,51.6,15.2 << Rogue
 	.goto Ironforge,55.4,29.1 << Shaman
     .goto Ironforge,28.6,7.2 << Mage
 	.trainer >> Train your spells
 step
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.8,59.6

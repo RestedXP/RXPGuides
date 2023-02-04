@@ -27,7 +27,7 @@ step << Warlock tbc
     .vendor >> Vendor trash
     .target Dane Winslow
 step << Warlock tbc
-    .goto Elwynn Forest,49.9,42.6
+    .goto Elwynn Forest,49.873,42.649
     >> Talk to |cFF00FF25Drusilla La Salle|r
     .accept 1598 >> Accept The Stolen Tome
     .trainer >>Train Immolate
@@ -54,7 +54,7 @@ step << Warlock tbc
     .hs >> Hearth back to Northshire Valley
 step << Warlock tbc
     >> Talk to |cFF00FF25Drusilla La Salle|r
-    .goto Elwynn Forest,49.9,42.6
+    .goto Elwynn Forest,49.873,42.649
     .turnin 1598 >> Turn in The Stolen Tome
     .target Drusilla La Salle
 step
@@ -77,13 +77,13 @@ step << Warrior
 step
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
     .target Marshal McBride
-    .goto Elwynn Forest,48.9,41.6
+    .goto Elwynn Forest,48.923,41.606
     .turnin 783 >> Turn in A Threat Within
     .accept 7 >> Accept Kobold Camp Cleanup
 step << Warrior
     >> Talk to |cFF00FF25Llane Beshere|r
     .target Llane Beshere
-    .goto Elwynn Forest,50.2,42.3
+    .goto Elwynn Forest,50.242,42.287
     .trainer >>Train Battle Shout
 step
     >>Run back outside << Warrior
@@ -135,7 +135,7 @@ step << !Priest !Mage !Warlock/wotlk
     .goto Elwynn Forest,47.6,41.5
     .vendor >>Vendor trash
 step
-    .goto Elwynn Forest,48.9,41.6
+    .goto Elwynn Forest,48.923,41.606
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
     .target Marshal McBride
     .turnin 7 >> Turn in Kobold Camp Cleanup
@@ -149,7 +149,7 @@ step
 step << Warlock wotlk
     >> Talk to |cFF00FF25Drusilla La Salle|r
     .target Drusilla La Salle
-    .goto Elwynn Forest,49.9,42.6
+    .goto Elwynn Forest,49.873,42.649
     .turnin 3105 >> Turn in Tainted Letter
     .train 688 >> Learn Summon Imp from your class trainer
     >>You'll need 95c, if you don't have the money yet, grind a little bit
@@ -175,7 +175,7 @@ step
     #requires xp3
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
     .target Marshal McBride
-    .goto Elwynn Forest,48.9,41.6
+    .goto Elwynn Forest,48.923,41.606
     .turnin 15 >> Turn in Investigate Echo Ridge
     .accept 21 >> Accept Skirmish at Echo Ridge
 step << Priest/Mage
@@ -189,7 +189,7 @@ step << Mage
 step << Mage
     >> Talk to |cFF00FF25Khelden Bremen|r
     .target Khelden Bremen
-    .goto Elwynn Forest,49.7,39.4
+    .goto Elwynn Forest,49.661,39.402
     .turnin 3104 >> Turn in Glyphic Letter
     .trainer >> Train your class spells
 step << Priest
@@ -199,7 +199,7 @@ step << Priest
 step << Priest
     >> Talk to |cFF00FF25Priestess Anetta|r
     .target Priestess Anetta
-    .goto Elwynn Forest,49.8,39.5
+    .goto Elwynn Forest,49.808,39.489
     .turnin 3103 >> Turn in Hallowed Letter
     .trainer >> Train your class spells
 step << Warrior/Paladin
@@ -209,13 +209,13 @@ step << Warrior/Paladin
 step << Warrior
     >> Talk to |cFF00FF25Llane Beshere|r
     .target Llane Beshere
-    .goto Elwynn Forest,50.2,42.3
+    .goto Elwynn Forest,50.242,42.287
     .turnin 3100 >> Turn in Simple Letter
     .trainer >> Train your class spells
 step << Paladin
     >> Talk to |cFF00FF25Brother Sammuel|r
     .target Brother Sammuel
-    .goto Elwynn Forest,50.4,42.1
+    .goto Elwynn Forest,50.433,42.124
     .turnin 3101 >> Turn in Consecrated Letter
     .trainer >> Train your class spells
 step
@@ -228,7 +228,7 @@ step
 step << Warlock
     >> Talk to |cFF00FF25Drusilla La Salle|r
     .target Drusilla La Salle
-    .goto Elwynn Forest,49.9,42.6
+    .goto Elwynn Forest,49.873,42.649
     .turnin 3105 >> Turn in Tainted Letter
     .xp 4 >> Grind to 4
     .trainer >>Train Corruption
@@ -279,7 +279,7 @@ step
 step << Rogue
     >> Speak with |cFF00FF25Jorik Kerridan|r
     .target Jorik Kerridan
-    .goto Elwynn Forest,50.3,39.9
+    .goto Elwynn Forest,50.314,39.916
     >>You don't need to train any spells
     .turnin 3102 >> Turn in Encrypted Letter
 step
@@ -311,7 +311,7 @@ step
 step
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
     .target Marshal McBride
-    .goto Elwynn Forest,48.9,41.6
+    .goto Elwynn Forest,48.923,41.606
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
     .turnin 21 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin
     .accept 54 >> Accept Report to Goldshire
@@ -324,12 +324,12 @@ step
 #xprate <1.7
     >> Talk to |cFF00FF25Brother Neals|r
     .target Brother Neals
-    .goto Elwynn Forest,49.5,41.6
+    .goto Elwynn Forest,49.471,41.586
     .turnin 3905 >>Turn in Grape Manifest
 step << Priest
     >> Talk to |cFF00FF25Priestess Anetta|r
     .target Priestess Anetta
-    .goto Elwynn Forest,49.8,39.5
+    .goto Elwynn Forest,49.808,39.489
     .accept 5623 >> Accept In Favor of the Light
 step
     >> Leave Northshire Valley and talk to |cFF00FF25Falkhaan Isenstrider|r
@@ -340,7 +340,7 @@ step
     #hardcore
     >> Talk to |cFF00FF25Marshall Dughan|r
     .target Marshal Dughan
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
 step
@@ -348,7 +348,7 @@ step
     #completewith Goldshire
     .deathskip >> Die and respawn at the Spirit Healer
 step << Rogue
-    .goto Elwynn Forest,41.7,65.5
+    .goto Elwynn Forest,41.706,65.544
     .target Smith Argus
     .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. Make them until level 20ish << Rogue
 step << Warrior
@@ -379,17 +379,17 @@ step
     #label Goldshire
     >> Talk to |cFF00FF25Marshall Dughan|r
     .target Marshal Dughan
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
 step
     >>On your close left as you go in the Inn talk to |cFF00FF25William Pestle|r
     .target William Pestle
     .goto Elwynn Forest,42.9,65.7,15,0
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .accept 60 >> Accept Kobold Candles
 step
-    .goto Elwynn Forest,43.8,65.8
+    .goto Elwynn Forest,43.771,65.803
     >> Talk to |cFF00FF25Innkeeper Farley|r
     .target Innkeeper Farley
     >>Do NOT buy any food/drink here << Warlock
@@ -420,7 +420,7 @@ step << Mage
     .goto Elwynn Forest,43.2,66.2
     .trainer >> Train your class spells
 step << Priest
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .turnin 5623 >> Turn in In Favor of the Light
     .accept 5624 >> Accept Garments of the Light
     .trainer >> Train your class spells
@@ -437,20 +437,20 @@ step << Rogue/Warrior
     .goto Elwynn Forest,43.4,65.5
     .train 3273 >> Train First Aid - Don't make all your bandages at once, better time to make them later
 step << Warrior tbc
-    .goto Elwynn Forest,43.8,65.8
+    .goto Elwynn Forest,43.771,65.803
     .vendor >> Buy level 5 food down to 1 Silver
 step << Rogue tbc
-    .goto Elwynn Forest,43.8,65.8
+    .goto Elwynn Forest,43.771,65.803
     .vendor >> Buy up to 20 level 5 food
 step << Warrior/Paladin
-    .goto Elwynn Forest,41.7,65.5
+    .goto Elwynn Forest,41.706,65.544
     .target Smith Argus
     .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage sharpening stones for your weapon << Warrior
     .train 2018 >> Train Blacksmithing from Argus. This will allow you to make +2 damage weightstones for your weapon << Paladin
 step << Warrior
     >> Talk to |cFF00FF25Lyria Du Lac|r
     .target Lyria Du Lac
-    .goto Elwynn Forest,41.1,65.8
+    .goto Elwynn Forest,41.087,65.768
     .trainer >> Train your class spells
 step << Paladin
     >> Talk to |cFF00FF25Brother Wilhelm|r
@@ -474,9 +474,9 @@ step
 step
     >> Talk to |cFF00FF25Ma Stonefield|r and |cFF00FF25"Auntie" Bernice Stonefield|r
     .target "Auntie" Bernice Stonefield
-    .goto Elwynn Forest,34.5,84.3
+    .goto Elwynn Forest,34.486,84.253
     .accept 85 >> Accept Lost Necklace
-    .goto Elwynn Forest,34.7,84.5
+    .goto Elwynn Forest,34.660,84.482
     .accept 88 >> Accept Princess Must Die!
 step
     #completewith Candles
@@ -491,7 +491,7 @@ step << Priest/Mage/Warlock
     #label Dust
     >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
     .target Billy Maclure
-    .goto Elwynn Forest,43.1,85.7
+    .goto Elwynn Forest,43.132,85.722
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step << Warrior
@@ -499,7 +499,7 @@ step << Warrior
     >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
     .target Billy Maclure
     >> If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your sword
-    .goto Elwynn Forest,43.1,85.7
+    .goto Elwynn Forest,43.132,85.722
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step << Rogue
@@ -507,7 +507,7 @@ step << Rogue
     >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
     .target Billy Maclure
     >> If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your dagger
-    .goto Elwynn Forest,43.1,85.7
+    .goto Elwynn Forest,43.132,85.722
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step << Paladin
@@ -515,7 +515,7 @@ step << Paladin
     >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
     .target Billy Maclure
     >> If you get a Rough Stone at any point, Make it into a Weightstone via Blacksmithing, and apply it to your mace
-    .goto Elwynn Forest,43.1,85.7
+    .goto Elwynn Forest,43.132,85.722
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step
@@ -541,7 +541,7 @@ step
 step
     >> Head back to the Stonefield farm, then keep going to the river. Talk to |cFF00FF25Tommy Joe Stonefield|r
     .target Tommy Joe Stonefield
-    .goto Elwynn Forest,29.8,86.0
+    .goto Elwynn Forest,29.840,85.997
     .turnin 106 >> Turn in Young Lovers
     .accept 111 >> Accept Speak with Gramma
 step
@@ -551,7 +551,7 @@ step
 step
     >> Return to |cFF00FF25"Auntie" Bernice Stonefield|r
     .target "Auntie" Bernice Stonefield
-    .goto Elwynn Forest,34.5,84.3
+    .goto Elwynn Forest,34.486,84.253
     .turnin 86 >> Turn in Pie for Billy
     .accept 84 >> Accept Back to Billy
 step
@@ -569,7 +569,7 @@ step
 step
     >>Grind mobs east through the outside of the mine and talk to |cFF00FF25Billy Maclure|r on the farm
     .target Billy Maclure
-    .goto Elwynn Forest,43.1,85.7
+    .goto Elwynn Forest,43.132,85.722
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
 step
@@ -616,7 +616,7 @@ step
     #requires KoboldTurnins
     >> Head back to |cFF00FF25"Auntie" Bernice Stonefield|r
     .target "Auntie" Bernice Stonefield
-    .goto Elwynn Forest,34.5,84.3
+    .goto Elwynn Forest,34.486,84.253
     .turnin 87 >> Turn in Goldtooth
 step
     >>Grind some mobs back to Goldshire
@@ -639,7 +639,7 @@ step << Rogue
 step
     >> Talk to |cFF00FF25Marshal Dughan|r
     .target Marshal Dughan
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
     .turnin 62 >> Turn in The Fargodeep Mine
@@ -650,7 +650,7 @@ step
     .vendor >>vendor trash, repair
 step
     >> Head into the inn and talk to William
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .turnin 60 >> Turn in Kobold Candles
     .accept 61 >> Accept Shipment to Stormwind
     .turnin 107 >> Turn in Note to William
@@ -668,7 +668,7 @@ step
     .goto Elwynn Forest,44.0,65.9
     .vendor >>Buy a 6 slot bag from Brog
 step << Warrior
-    .goto Elwynn Forest,41.1,65.8
+    .goto Elwynn Forest,41.087,65.768
     .trainer >> Train your class spells
 step << Paladin
     .goto Elwynn Forest,41.1,66.0
@@ -688,7 +688,7 @@ step << Mage
     .goto Elwynn Forest,43.2,66.2
     .trainer >> Train your class spells
 step << Priest
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .turnin 5624 >> Turn in Garments of the Light
     .trainer >> Train your class spells
 step << Rogue
@@ -699,10 +699,10 @@ step << Rogue/Warrior
     .goto Elwynn Forest,43.4,65.5
     .trainer >> Train First Aid - Don't make all your bandages at once, better time to make them later
 step << !Warrior !Rogue tbc
-    .goto Elwynn Forest,43.8,65.8
+    .goto Elwynn Forest,43.771,65.803
     .vendor >>Buy level 5 Water up to 40
 step << Warrior/Rogue tbc
-    .goto Elwynn Forest,43.8,65.8
+    .goto Elwynn Forest,43.771,65.803
     .vendor 295 >>Buy level 5 Food up to 40
 step
     >>Grind Murlocs toward the east and loot them for Kelp Frond. kill mobs on the island if you still need some
@@ -724,7 +724,7 @@ step << wotlk
     .deathskip >> Die on purpose and respawn at The Tower of Azora
 step
     >> Speak to Guard Thomas by the bridge
-    .goto Elwynn Forest,74.0,72.2
+    .goto Elwynn Forest,73.973,72.179
     .turnin 35 >> Turn in Further Concerns
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
@@ -745,7 +745,7 @@ step
     .accept 45 >> Accept Discover Rolf's Fate
 step
 #xprate <1.7
-    .goto Elwynn Forest,81.4,66.1
+    .goto Elwynn Forest,81.382,66.112
     >> Run to Eastvale Logging Camp and pick up this quest as soon as possible!
     .accept 5545 >> Accept A Bundle of Trouble
 step << Paladin tbc
@@ -810,7 +810,7 @@ step
     >>Start running back, finish off the bundles
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
-    .goto Elwynn Forest,81.4,66.1
+    .goto Elwynn Forest,81.382,66.112
     .turnin 5545 >> Turn in A Bundle of Trouble
 step
     #label Prowlers
@@ -818,7 +818,7 @@ step
 step
 #xprate <1.7
     #label Bears
-    .goto Elwynn Forest,79.5,68.8
+    .goto Elwynn Forest,79.457,68.789
     .accept 83 >> Accept Red Linen Goods
 step
     .goto Elwynn Forest,76.7,75.6,100,0
@@ -833,7 +833,7 @@ step
     .complete 52,2 --Kill Young Forest Bear (x5)
 step
     >> Return to Guard Thomas
-    .goto Elwynn Forest,74.0,72.2
+    .goto Elwynn Forest,73.973,72.179
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
@@ -913,7 +913,7 @@ step
     .goto Elwynn Forest,44.0,65.9
     .vendor >>Buy two 6 slot bags from Brog
 step
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     >>Turn in the quest but don't wait for the roleplay to finish
     .turnin 112 >> Turn in Collecting Kelp
 step << Warrior/Rogue
@@ -929,7 +929,7 @@ step
     .accept 59 >>Accept Cloth and Leather Armor << Warlock
 step << tbc/Warlock wotlk
     >> Talk to Smith Argus in the blacksmithery
-    .goto Elwynn Forest,41.7,65.5
+    .goto Elwynn Forest,41.706,65.544
     .accept 1097 >> Accept Elmore's Task
 step
     .xp 10 >> Grind to 10
@@ -938,7 +938,7 @@ step
     .goto Elwynn Forest,41.7,65.9
     .vendor >>vendor trash, repair
 step << Warrior
-    .goto Elwynn Forest,41.1,65.8
+    .goto Elwynn Forest,41.087,65.768
     .accept 1638 >> Accept A Warrior's Training
     .trainer >> Train your class spells
 step << Paladin
@@ -946,7 +946,7 @@ step << Paladin
     .trainer >> Train your class spells
 step
     >> Return to William in the inn
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .accept 114 >> Accept The Escape
 step << Warlock
     >>Go back down into the basement
@@ -958,7 +958,7 @@ step << Mage/Priest/Rogue tbc
     #completewith next
     .goto Elwynn Forest,43.7,66.4,10 >>Go Upstairs
 step << Priest
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .accept 5635 >> Accept Desperate Prayer << tbc
     .trainer >> Train your class spells
 step << Mage
@@ -979,7 +979,7 @@ step
     .turnin 114 >> Turn in The Escape
 step
     >> Head back to the Stonefield farm
-    .goto Elwynn Forest,34.7,84.5
+    .goto Elwynn Forest,34.660,84.482
     .turnin 88,2 >> Turn in Princess Must Die! << Warrior/Paladin
     .turnin 88 >> Turn in Princess Must Die! << !Warrior !Paladin
 step << Warlock/Mage wotlk
@@ -1052,7 +1052,7 @@ step << Mage wotlk
     .deathskip >> Die and respawn at Goldshire
 step << Mage wotlk
 #xprate >1.3
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     >>Choose the Staff. Equip it
     .turnin 176 >> Turn in Wanted:    "Hogger"
     .isQuestComplete 176
@@ -1065,7 +1065,7 @@ step
     .accept 36 >> Accept Westfall Stew
 step
     >> Head to Saldean's Farm and go inside the house
-    .goto Westfall,56.4,30.5
+    .goto Westfall,56.416,30.519
     .turnin 36 >> Turn in Westfall Stew
 step
     #completewith next
@@ -1080,15 +1080,15 @@ step << Mage wotlk/Warlock wotlk
     .accept 153 >> Accept Red Leather Bandanas
 step
     >> Talk to Gryan at the tower
-    .goto Westfall,56.3,47.5
+    .goto Westfall,56.327,47.520
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
 step << Mage wotlk/Warlock wotlk
 #xprate >1.3
-    .goto Westfall,56.3,47.5
+    .goto Westfall,56.327,47.520
     .accept 12 >> Accept The People's Militia
 step << Human
     >> Talk to Quartermaster Lewis in the tower
-    .goto Westfall,57.0,47.2
+    .goto Westfall,57.002,47.169
     .accept 6181 >> Accept A Swift Message
 step << Mage wotlk
 #xprate >1.3
@@ -1172,12 +1172,12 @@ step << Warlock
     .zoneskip Elwynn Forest
 step << Warlock
     .isOnQuest 123
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     >>Choose the Staff then equip it
     .turnin 176 >> Turn in Wanted:    "Hogger"
     .turnin 123 >> Turn in The Collector
 step << Warlock
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     >>Choose the Staff then equip it
     .turnin 176 >> Turn in Wanted:    "Hogger"
 step << Warlock
@@ -1188,7 +1188,7 @@ step << Warlock
     .goto Elwynn Forest,71.0,80.8
     .complete 1688,1 --Collect Surena's Choker (x1)
 step << Warlock
-    .goto Elwynn Forest,79.5,68.8
+    .goto Elwynn Forest,79.457,68.789
     .turnin 59 >> Turn in Cloth and Leather Armor
 step << Warlock wotlk
 #xprate >1.3
@@ -1204,7 +1204,7 @@ step << Warlock
     .accept 244 >> Accept Encroaching Gnolls
 step << Warlock
     >>Be careful of the mobs en route
-    .goto Redridge Mountains,30.7,60.0
+    .goto Redridge Mountains,30.733,59.996
     .turnin 244 >> Turn in Encroaching Gnolls
 step << Warlock wotlk
 #xprate >1.3
@@ -1377,7 +1377,7 @@ step << tbc
     .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
 step << tbc
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fp Ironforge >> Get the Ironforge flight path
 step << Warlock tbc
     .goto Ironforge,20.93,53.19,20,0
@@ -1481,7 +1481,7 @@ step
     .zoneskip Dun Morogh
 step
     #xprate <1.2
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fp Ironforge >> Get the Ironforge flight path
     .zoneskip Ironforge,1
 step << Warrior tbc
@@ -1518,7 +1518,7 @@ step
     .accept 433 >> Accept The Public Servant
 step
     #xprate <1.2
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .accept 432 >> Accept Those Blasted Troggs!
 step
     #xprate <1.2
@@ -1533,7 +1533,7 @@ step << Warlock
     .xp 12
 step
     #xprate <1.2
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
     #xprate <1.2
@@ -1549,7 +1549,7 @@ step
     #xprate <1.2
     .goto Dun Morogh,78.1,49.5,30,0
     .goto Dun Morogh,81.2,42.7,45,0
-    .goto Dun Morogh,83.9,39.2
+    .goto Dun Morogh,83.892,39.188
     .accept 419 >> Accept The Lost Pilot
 step
     #xprate <1.2
@@ -1565,7 +1565,7 @@ step
 step
     #xprate <1.2
     #label LochEntrance
-    .goto Dun Morogh,83.9,39.2
+    .goto Dun Morogh,83.892,39.188
     >>Choose the dagger, use it as your offhand << Rogue
     .turnin 417 >> Turn in A Pilot's Revenge
 step
@@ -1574,11 +1574,11 @@ step
     .goto Dun Morogh,84.4,31.1
     .zoneskip Loch Modan >>Go through the tunnel to Loch Modan
 step
-    .goto Loch Modan,24.8,18.4
+    .goto Loch Modan,24.764,18.397
     .turnin 353 >> Turn in Stormpike's Delivery
 step << Warlock/Mage/Rogue
     #xprate <1.5
-    .goto Loch Modan,24.8,18.4
+    .goto Loch Modan,24.764,18.397
     .accept 307 >> Accept Filthy Paws
 step << !Mage !Rogue
 #xprate >1.3 << Warlock
@@ -1597,7 +1597,7 @@ step << Warlock/Mage/Rogue
     .collect 3172,3 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
-    .goto Loch Modan,34.8,49.3
+    .goto Loch Modan,34.828,49.283
     .accept 418 >> Accept Thelsamar Blood Sausages
 step << Warlock/Mage/Rogue
 #xprate <1.5
@@ -1750,18 +1750,18 @@ step << Warlock/Mage/Rogue
     .unitscan Mountaineer Kadrell
 step << Warlock/Mage/Rogue
 #xprate <1.2
-    .goto Loch Modan,34.8,49.3
+    .goto Loch Modan,34.828,49.283
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
     #xprate <1.2
-    .goto Loch Modan,33.9,51.0
+    .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
     .hs >> Hearth to Stormwind << !Warlock
 step << Warlock
-    .goto Loch Modan,22.1,73.1
+    .goto Loch Modan,22.071,73.127
     .accept 224 >> Accept In Defense of the King's Lands
 step << Warlock
-    .goto Loch Modan,23.2,73.7
+    .goto Loch Modan,23.233,73.675
     >>Go into the bunker from behind
     .accept 267 >> Accept The Trogg Threat
 step << Warlock
@@ -1795,7 +1795,7 @@ step << Warlock
     .turnin 224 >> Turn in In Defense of the King's Lands
 step << Warlock
     #label TroggT
-    .goto Loch Modan,23.2,73.7
+    .goto Loch Modan,23.233,73.675
     .turnin 267 >> Turn in The Trogg Threat
 step << Warlock
     .xp 14 >> Grind to 14
@@ -1947,7 +1947,7 @@ step
     .accept 984 >> Accept How Big a Threat?
     .goto Darkshore,39.3,43.4
     .accept 3524 >> Accept Washed Ashore
-    .goto Darkshore,36.6,45.6
+    .goto Darkshore,36.621,45.594
 step
     .maxlevel 13
     .goto Darkshore,36.3,45.6
@@ -1990,7 +1990,7 @@ step
     .turnin 983 >> Turn in Buzzbox 827
 step
     .isOnQuest 3524
-    .goto Darkshore,36.6,45.6
+    .goto Darkshore,36.621,45.594
     .turnin 3524 >> Turn in Washed Ashore
 step
     .isOnQuest 2118
@@ -2001,7 +2001,7 @@ step
     .goto Darkshore,39.3,43.4
     .turnin 984 >> Turn in How Big a Threat?
 step
-    .goto Darkshore,36.6,45.6
+    .goto Darkshore,36.621,45.594
     .abandon 1001 >> Abandon Buzzbox 411
 step
     .goto Darkshore,30.8,41.0

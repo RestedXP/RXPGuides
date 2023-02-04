@@ -275,7 +275,7 @@ step
     .goto Western Plaguelands,42.8,84.0
     .accept 5092 >>Accept Clear the Way
 step
-    .goto Western Plaguelands,43.4,84.8
+    .goto Western Plaguelands,43.418,84.834
     .accept 5903 >>Accept A Plague Upon Thee
 step << skip
     .goto Western Plaguelands,43.7,84.5
@@ -336,7 +336,7 @@ step
     .turnin 5215 >>Turn in The Scourge Cauldrons
     .accept 5216 >>Accept Target: Felstone Field
 step
-    .goto Western Plaguelands,43.4,84.8
+    .goto Western Plaguelands,43.418,84.834
     .turnin 5903 >>Turn in A Plague Upon Thee
     .accept 5904 >>Accept A Plague Upon Thee
 step
@@ -410,7 +410,7 @@ step
     .turnin 5904 >>Turn in A Plague Upon Thee
     .accept 6389 >>Accept A Plague Upon Thee
 step
-    .goto Western Plaguelands,51.9,28.1
+    .goto Western Plaguelands,51.920,28.058
     .accept 6004 >>Accept Unfinished Business
 step
     .goto Western Plaguelands,52.0,44.3,70,0
@@ -425,7 +425,7 @@ step
     .complete 6004,3 --Scarlet Mage (2)
     .complete 6004,4 --Scarlet Knight (2)
 step
-    .goto Western Plaguelands,51.9,28.1
+    .goto Western Plaguelands,51.920,28.058
     .turnin 6004 >>Turn in Unfinished Business
     .accept 6023 >>Accept Unfinished Business
 step
@@ -522,7 +522,7 @@ step
     .turnin 4985 >>Turn in The Wildlife Suffers Too
     .accept 4986 >>Accept Glyphed Oaken Branch << !Shaman !Warlock !Paladin
 step
-    .goto Western Plaguelands,42.9,84.5
+    .goto Western Plaguelands,42.908,84.496
     .turnin 5223 >>Turn in Return to Chillwind Camp
     .accept 5225 >>Accept Target: Gahrron's Withering
 step
@@ -575,7 +575,7 @@ step
     .goto Eastern Plaguelands,81.6,59.3
     .fly Chillwind Camp >>Fly to Chillwind Camp
 step
-    .goto Western Plaguelands,42.9,84.5
+    .goto Western Plaguelands,42.908,84.496
     .turnin 5226 >>Turn in Return to Chillwind Camp
 step
     .goto Western Plaguelands,42.7,84.1

@@ -1214,13 +1214,13 @@ step << Warrior/Rogue
     .money <0.0081
     .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << Shaman
-    .goto Durotar,54.4,42.6
+    .goto Durotar,54.419,42.588
     .trainer >> Train your class spells
 step << Priest
     .goto Durotar,54.3,42.9
     .trainer >> Train your class spells
 step << Warrior
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
     .trainer >> Train your class spells
 step << Hunter
     .goto Durotar,51.8,43.5
@@ -1375,7 +1375,7 @@ step << Priest
 step << Orc Warrior/Troll Warrior
 	#som
 	#phase 3-6
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
     .accept 1505 >>Accept Veteran Uzzek
     .trainer >> Train your class spells
 step << Rogue
@@ -1533,7 +1533,7 @@ step << Warlock
 	#som
 	#phase 3-6
 	>>Run into Orgrimmar
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
     .turnin 1506 >>Turn in Gan'rul's Summons
     .accept 1501 >>Accept Creature of the Void
 step << Warlock
@@ -1595,7 +1595,7 @@ step << Hunter
     .collect 4536,10 --Shiny Red Apple (10)
 step
 	#era/som
-    .goto Orgrimmar,34.3,36.4
+    .goto Orgrimmar,34.340,36.328
     .turnin 831 >>Turn in The Admiral's Orders
 step
 	#era/som
@@ -1603,11 +1603,11 @@ step
     .accept 5726 >>Accept Hidden Enemies
 step << Hunter
 	#era/som
-    .goto Orgrimmar,66.0,18.5
+    .goto Orgrimmar,66.046,18.526
     .turnin 6081 >>Turn in Training the Beast
 step << Warlock
 	#era/som
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
     .turnin 1506 >>Turn in Gan'rul's Summons
     .accept 1501 >>Accept Creature of the Void
 step << Rogue
@@ -1657,7 +1657,7 @@ step << Priest
     .trainer >> Train your class spells
 step << Orc Warrior/Troll Warrior
 	#era/som
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
     .accept 1505 >>Accept Veteran Uzzek
     .trainer >> Train your class spells
 step << Rogue
@@ -1790,11 +1790,11 @@ step << Warrior/Shaman
     .turnin 749 >>Turn in The Ravaged Caravan
 step << Warrior/Shaman
 	#era/som
-    .goto Mulgore,48.7,59.3
+    .goto Mulgore,48.715,59.325
     .accept 761 >>Accept Swoop Hunting
 step << Warrior/Shaman
 	#era/som
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .accept 767 >>Accept Rite of Vision
     .accept 746 >>Accept Dwarven Digging
 step << Warrior/Shaman
@@ -1867,7 +1867,7 @@ step << Warrior/Shaman
 	>>Run to the cave south of you
     .goto Thunder Bluff,29.04,37.68,55,0
     .goto Mulgore,33.48,36.68,40,0
-    .goto Mulgore,32.7,36.1
+    .goto Mulgore,32.714,36.087
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
 step << Warrior/Shaman
@@ -1919,7 +1919,7 @@ step << Warrior/Shaman
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step << Warrior/Shaman
 	#era/som
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
     .turnin 746 >>Turn in Dwarven Digging
 step << Warrior/Shaman
 	#era/som
@@ -1982,7 +1982,7 @@ step << Shaman
   .trainer >> Train your class spells
 step << Orc Warrior/Troll Warrior
 	#level 12
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
     .trainer >> Train your class spells
 step << Priest
     #sticky
@@ -2106,20 +2106,20 @@ step << Hunter
 step
 	#som
 	#phase 3-6
-    .goto Orgrimmar,34.3,36.4
+    .goto Orgrimmar,34.340,36.328
     .turnin 831 >>Turn in The Admiral's Orders
 step << Hunter
 	#som
 	#phase 3-6
-    .goto Orgrimmar,66.0,18.5
+    .goto Orgrimmar,66.046,18.526
     .turnin 6081 >>Turn in Training the Beast
 step << Warrior/Shaman
     #requires scorp2
-    .goto Orgrimmar,54.2,68.4
+    .goto Orgrimmar,54.097,68.407
     .turnin 6384 >>Turn in Ride to Orgrimmar
     .accept 6385 >> Accept Doras the Wind Rider Master
 step << Warrior/Shaman
-    .goto Orgrimmar,45.2,63.8
+    .goto Orgrimmar,45.120,63.889
     .turnin 6385 >> Turn in Doras the Wind Rider Master
     .accept 6386 >> Accept Return to the Crossroads
 step
@@ -2158,19 +2158,19 @@ step
     .goto Orgrimmar,47.0,53.4
     .turnin 813 >>Turn in Finding the Antidote
 step << Warlock
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
     .turnin 1501 >>Turn in Creature of the Void
     .accept 1504 >>Accept The Binding
 step
 	.isOnQuest 832
-	.goto Orgrimmar,49.4,50.5
+	.goto Orgrimmar,49.473,50.589
     .turnin 832 >>Turn in Burning Shadows
 step
-	.goto Orgrimmar,49.4,50.5
+	.goto Orgrimmar,49.473,50.589
     .turnin 829 >>Turn in Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
 step
-	.goto Orgrimmar,49.4,50.5
+	.goto Orgrimmar,49.473,50.589
     .turnin 829 >>Turn in Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
 step << Warlock
@@ -2179,7 +2179,7 @@ step << Warlock
     .complete 1504,1 --Summoned Voidwalker (1)
 step << Warlock
     >>You can now summon a Voidwalker
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
     .turnin 1504 >>Turn in The Binding
 step
 	#softcore
@@ -2284,11 +2284,11 @@ step << Rogue
     .goto The Barrens,51.5,30.3
     .fly >> Fly to Orgrimmar
 step << Rogue
-    .goto Orgrimmar,54.2,68.4
+    .goto Orgrimmar,54.097,68.407
     .turnin 6384 >>Turn in Ride to Orgrimmar
     .accept 6385 >> Accept Doras the Wind Rider Master
 step << Rogue
-    .goto Orgrimmar,45.2,63.8
+    .goto Orgrimmar,45.120,63.889
     .turnin 6385 >> Turn in Doras the Wind Rider Master
     .accept 6386 >> Accept Return to the Crossroads
 step << Rogue

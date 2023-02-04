@@ -347,7 +347,7 @@ step
     .accept 6385 >>Accept Doras the Wind Rider Master
 step
     >>Run up to the Flight Master. Do NOT fly anywhere
-    .goto Orgrimmar,45.2,63.8
+    .goto Orgrimmar,45.120,63.889
     .fp Orgrimmar >> Get the Orgrimmar flight path << Undead
     .turnin 6385 >>Turn in Doras the Wind Rider Master
     .accept 6386 >>Accept Return to the Crossroads.
@@ -620,7 +620,7 @@ step
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
 step
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1483 >> Turn in Ziz Fizziks
     .accept 1093 >> Accept Super Reaper 6000
 step
@@ -651,7 +651,7 @@ step
     .goto Stonetalon Mountains,73.4,54.3,40,0
     .complete 1062,1 --Kill Venture Co. Logger (x15)
 step
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1093 >> Turn in Super Reaper 6000
     .accept 1094 >> Accept Further Instructions
 step
@@ -832,7 +832,7 @@ step
     .goto Thunder Bluff,45.9,64.7
     .home >>Set your Hearthstone to Thunder Bluff
 step
-    .goto Thunder Bluff,61.4,80.9
+    .goto Thunder Bluff,61.538,80.919
     .turnin 1130 >>Turn in Melor Sends Word
     .accept 1131 >>Accept Steelsnap
 step
@@ -848,7 +848,7 @@ step
     .goto Thunder Bluff,28.4,27.7
     .accept 264 >>Accept Until Death Do Us Part
 step
-	.goto Thunder Bluff,46.9,49.9
+	.goto Thunder Bluff,47.003,49.832
     .fp Thunder Bluff >> Get the Thunder Bluff flight path
     .fly Crossroads >>Fly to Crossroads
 step
@@ -867,7 +867,7 @@ step
     .goto Stonetalon Mountains,71.3,95.1
     .turnin 6461 >>Turn in Blood Feeders
 step
-    .goto Stonetalon Mountains,59.0,62.6
+    .goto Stonetalon Mountains,58.989,62.599
     .turnin 1095 >>Turn in Further Instructions
 step
     .goto Stonetalon Mountains,47.5,58.4

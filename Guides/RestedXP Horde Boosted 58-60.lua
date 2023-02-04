@@ -228,7 +228,7 @@ step
     .goto Western Plaguelands,47.3,49.7
     .turnin 5060 >>Turn in Locked Away
 step
-    .goto Western Plaguelands,51.9,28.1
+    .goto Western Plaguelands,51.920,28.058
     .accept 6004 >>Accept Unfinished Business
 step
 	>>Run to all the different Scarlet camps to complete this.
@@ -240,7 +240,7 @@ step
     .complete 6004,2 --Scarlet Hunter (2)
 	.complete 6004,4 --Scarlet Knight (2)
 step
-    .goto Western Plaguelands,51.9,28.1
+    .goto Western Plaguelands,51.920,28.058
     .turnin 6004 >>Turn in Unfinished Business
     .accept 6023 >>Accept Unfinished Business
 step
@@ -255,7 +255,7 @@ step
 	>>If the rare is up and you're unable to group and kill him, just die and res as high up as you can in the tower. Loot the chest at the top
     .complete 9443,1 --Mark of the Lightbringer (1)
 step
-    .goto Western Plaguelands,51.9,28.1
+    .goto Western Plaguelands,51.920,28.058
     .turnin 6023 >>Turn in Unfinished Business
     .accept 6025 >>Accept Unfinished Business
 step
@@ -275,7 +275,7 @@ step
     .turnin 838 >>Turn in Scholomance
     .accept 964 >>Accept Skeletal Fragments
 step
-    .goto Tirisfal Glades,83.2,71.3
+    .goto Tirisfal Glades,83.218,71.324
     .turnin 9443 >>Turn in The So-Called Mark of the Lightbringer
     .accept 9444 >>Accept Defiling Uther's Tomb
 step
@@ -480,7 +480,7 @@ step
 	>>Find a Jabbering Ghoul. Kill him and loot the Good Luck Charm
     .complete 5051,1 --Good Luck Charm (1)
 step
-    .goto Western Plaguelands,38.4,54.0
+    .goto Western Plaguelands,38.401,54.053
     .turnin 5051 >>Turn in Two Halves Become One
 step
     .goto Western Plaguelands,48.9,78.4

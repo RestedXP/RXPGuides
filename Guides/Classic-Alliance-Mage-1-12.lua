@@ -20,7 +20,7 @@ step
     .goto Elwynn Forest,48.2,42.9
     .accept 783 >> Accept A Threat Within
 step
-    .goto Elwynn Forest,48.9,41.6
+    .goto Elwynn Forest,48.923,41.606
     .turnin 783 >> Turn in A Threat Within
     .accept 7 >> Accept Kobold Camp Cleanup
 step
@@ -61,7 +61,7 @@ step
     .goto Elwynn Forest,47.6,41.5
     .vendor >>vendor trash, then buy x10 more water from Brother Danil
 step
-    .goto Elwynn Forest,48.9,41.6
+    .goto Elwynn Forest,48.923,41.606
     .turnin 7 >> Turn in Kobold Camp Cleanup
     .accept 15 >> Accept Investigate Echo Ridge
     .accept 3104 >> Accept Glyphic Letter
@@ -83,14 +83,14 @@ step
     .goto Elwynn Forest,47.7,41.4
     .vendor >>vendor trash
 step
-    .goto Elwynn Forest,48.9,41.6
+    .goto Elwynn Forest,48.923,41.606
     .turnin 15 >> Turn in Investigate Echo Ridge
     .accept 21 >> Accept Skirmish at Echo Ridge
 step
     >>Go upstairs
     .goto Elwynn Forest,49.3,40.7,15,0
     .goto Elwynn Forest,49.5,40.0,15,0
-    .goto Elwynn Forest,49.7,39.4
+    .goto Elwynn Forest,49.661,39.402
     .turnin 3104 >> Turn in Glyphic Letter
     .trainer >> Train your class spells
 step
@@ -157,7 +157,7 @@ step
     .goto Elwynn Forest,48.2,42.9
     .turnin 6 >> Turn in Bounty on Garrick Padfoot
 step
-    .goto Elwynn Forest,48.9,41.6
+    .goto Elwynn Forest,48.923,41.606
     .turnin 21 >> Turn in Skirmish at Echo Ridge
     .accept 54 >> Accept Report to Goldshire
 step
@@ -165,7 +165,7 @@ step
      >>Go upstairs the main staircase
     .goto Elwynn Forest,49.6,41.6,15,0
     .goto Elwynn Forest,48.9,41.3,15,0
-    .goto Elwynn Forest,49.5,41.6
+    .goto Elwynn Forest,49.471,41.586
     .turnin 3905 >>Turn in Grape Manifest
 step
     .goto Elwynn Forest,45.6,47.7
@@ -179,16 +179,16 @@ step
     .goto Elwynn Forest,41.7,65.9
     .vendor >> vendor trash, repair
 step
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
 step
     .goto Elwynn Forest,42.9,65.7,15,0
     >>On your close left as you go in the Inn
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .accept 60 >> Accept Kobold Candles
 step
-    .goto Elwynn Forest,43.8,65.8
+    .goto Elwynn Forest,43.771,65.803
     .turnin 2158 >> Turn in Rest and Relaxation
     .home >> Set your Hearthstone to Goldshire
 step
@@ -206,9 +206,9 @@ step
     >>Start killing some boars you see for Boar Meat
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
-    .goto Elwynn Forest,34.5,84.3
+    .goto Elwynn Forest,34.486,84.253
     .accept 85 >> Accept Lost Necklace
-    .goto Elwynn Forest,34.7,84.5
+    .goto Elwynn Forest,34.660,84.482
     .accept 88 >> Accept Princess Must Die!
 step
     #sticky
@@ -224,7 +224,7 @@ step
 step
     #label Dust
     >>Grind mobs east through the outside of the mine
-    .goto Elwynn Forest,43.1,85.7
+    .goto Elwynn Forest,43.132,85.722
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
 step
@@ -240,7 +240,7 @@ step
     >>Kill boars you see for Boar Meat
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
-    .goto Elwynn Forest,29.8,86.0
+    .goto Elwynn Forest,29.840,85.997
     .turnin 106 >> Turn in Young Lovers
     .accept 111 >> Accept Speak with Gramma
 step
@@ -248,7 +248,7 @@ step
     >>Finish off getting the Boar Meat
     .complete 86,1 --Collect Chunk of Boar Meat (x4)
 step
-    .goto Elwynn Forest,34.5,84.3
+    .goto Elwynn Forest,34.486,84.253
     .turnin 86 >> Turn in Pie for Billy
     .accept 84 >> Accept Back to Billy
 step
@@ -267,7 +267,7 @@ step
     .complete 47,1 --Collect Gold Dust (x10)
 step
     >>Grind mobs east through the outside of the mine
-    .goto Elwynn Forest,43.1,85.7
+    .goto Elwynn Forest,43.132,85.722
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
 step
@@ -285,7 +285,7 @@ step
 step
     #label Goldtooth
     #requires GoldDust
-    .goto Elwynn Forest,34.5,84.3
+    .goto Elwynn Forest,34.486,84.253
     .turnin 87 >> Turn in Goldtooth
 step
     >>Grind some mobs back to Goldshire
@@ -299,7 +299,7 @@ step
     .goto Elwynn Forest,41.7,65.9
     .vendor >>vendor trash, repair
 step
-    .goto Elwynn Forest,42.1,65.9
+    .goto Elwynn Forest,42.105,65.927
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
     .turnin 62 >> Turn in The Fargodeep Mine
@@ -308,7 +308,7 @@ step
     .goto Elwynn Forest,41.7,65.9
     .vendor >> vendor trash, repair
 step
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .turnin 60 >> Turn in Kobold Candles
     .accept 61 >> Accept Shipment to Stormwind
     .turnin 107 >> Turn in Note to William
@@ -324,7 +324,7 @@ step
     .goto Elwynn Forest,43.2,66.2
     .trainer >> Go Upstairs. Train your class spells
 step
-    .goto Elwynn Forest,43.8,65.8
+    .goto Elwynn Forest,43.771,65.803
     .vendor >>Buy level 5 Water up to 40
 step
     >>Grind Murlocs toward the east and loot them for Kelp Frond. kill mobs on the island if you still need some
@@ -340,7 +340,7 @@ step
     .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
 step
-    .goto Elwynn Forest,74.0,72.2
+    .goto Elwynn Forest,73.973,72.179
     .turnin 35 >> Turn in Further Concerns
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
@@ -359,7 +359,7 @@ step
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
-    .goto Elwynn Forest,81.4,66.1
+    .goto Elwynn Forest,81.382,66.112
     .accept 5545 >> Accept A Bundle of Trouble
 step
     .goto Elwynn Forest,83.3,66.1
@@ -389,14 +389,14 @@ step
     .collect 13872,8 --Collect Bundle of Wood (x8)
 step
     #label Bundles2
-    .goto Elwynn Forest,81.4,66.1
+    .goto Elwynn Forest,81.382,66.112
     .turnin 5545 >> Turn in A Bundle of Trouble
 step
     #label Prowlers
     .xp 9 >> Grind to 9
 step
     #label Bears
-    .goto Elwynn Forest,79.5,68.8
+    .goto Elwynn Forest,79.457,68.789
     .accept 83 >> Accept Red Linen Goods
 step
     .goto Elwynn Forest,76.7,75.6,40,0
@@ -409,7 +409,7 @@ step
     .complete 52,1 --Kill Prowler (x8)
     .complete 52,2 --Kill Young Forest Bear (x5)
 step
-    .goto Elwynn Forest,74.0,72.2
+    .goto Elwynn Forest,73.973,72.179
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
@@ -475,7 +475,7 @@ step
 step
     .hs >> Hearth to Goldshire
 step
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     >>Don't wait for his rp event
     .turnin 112 >> Turn in Collecting Kelp
 step
@@ -484,20 +484,20 @@ step
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
 step
-    .goto Elwynn Forest,41.7,65.5
+    .goto Elwynn Forest,41.706,65.544
     .accept 1097 >> Accept Elmore's Task
 step
     .goto Elwynn Forest,41.7,65.9
     .vendor >>vendor trash, repair
 step
-    .goto Elwynn Forest,43.3,65.7
+    .goto Elwynn Forest,43.283,65.721
     .accept 114 >> Accept The Escape
 step
     >>Run out of the inn and go south
     .goto Elwynn Forest,43.2,89.6
     .turnin 114 >> Turn in The Escape
 step
-    .goto Elwynn Forest,34.7,84.5
+    .goto Elwynn Forest,34.660,84.482
     .turnin 88 >> Turn in Princess Must Die!
 step
     .goto Elwynn Forest,24.2,74.5
@@ -507,10 +507,10 @@ step
     .goto Westfall,60.0,19.4
     .turnin 184 >> Turn in Furlbrow's Deed
 step
-    .goto Westfall,59.9,19.4
+    .goto Westfall,59.918,19.416
     .accept 36 >> Accept Westfall Stew
 step
-    .goto Westfall,56.4,30.5
+    .goto Westfall,56.416,30.519
     .turnin 36 >> Turn in Westfall Stew
 step
     #softcore
@@ -518,15 +518,15 @@ step
     #completewith next
     .goto Westfall,51.7,49.4,150 >> Die and respawn at the Spirit Healer, or run to Sentinel Hill
 step
-    .goto Westfall,56.3,47.5
+    .goto Westfall,56.327,47.520
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
 step
-    .goto Westfall,57.0,47.2
+    .goto Westfall,57.002,47.169
     .vendor >>vendor trash
     .accept 6181 >> Accept A Swift Message
 step
     #phase 3-6
-    .goto Westfall,56.4,30.5
+    .goto Westfall,56.416,30.519
     .xp 11+3750 >> Grind to 3750+/8800xp
 step
     .goto Westfall,56.6,52.6
@@ -568,7 +568,7 @@ step
 step
     .goto Ironforge,77.0,51.0,30 >>Enter Ironforge
 step
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fp Ironforge >> Get the Ironforge flight path
 step
     #phase 3-6
@@ -606,7 +606,7 @@ step
     .goto Dun Morogh,68.7,56.0
     .accept 433 >> Accept The Public Servant
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.6,56.6,30,0
@@ -624,7 +624,7 @@ step
     #era/som
     .xp 10+6350 >>Grind until 6350+/7600
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
     #completewith next
@@ -641,7 +641,7 @@ step
     .vendor >>vendor trash, buy x30 level 5 drink from Kazan
     .trainer >> Train Cooking from Ghilm. You'll need this to pick up 2 extra quests later
 step
-    .goto Dun Morogh,83.9,39.2
+    .goto Dun Morogh,83.892,39.188
     .accept 419 >> Accept The Lost Pilot
 step
     .goto Dun Morogh,79.7,36.2
@@ -652,7 +652,7 @@ step
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
-    .goto Dun Morogh,83.9,39.2
+    .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
@@ -715,7 +715,7 @@ step
     >>Kill Burly Rockjaw Troggs
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
 step
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     .turnin 233 >> Turn in Coldridge Valley Mail Delivery
     .accept 183 >> Accept The Boar Hunter
     .accept 234 >> Accept Coldridge Valley Mail Delivery
@@ -731,7 +731,7 @@ step
     >>Kill Boars in the area
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
-    .goto Dun Morogh,22.6,71.4
+    .goto Dun Morogh,22.601,71.433
     .turnin 183 >> Turn in The Boar Hunter
 step
     .xp 3+860 >> Grind to 860+/1400xp
@@ -743,7 +743,7 @@ step
     .goto Dun Morogh,27.7,76.3,40,0
 step
     #label Rockjaw
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
 step
@@ -769,7 +769,7 @@ step
     .accept 3365 >> Accept Bring Back the Mug
     .vendor >> vendor trash
 step
-    .goto Dun Morogh,28.7,66.4
+    .goto Dun Morogh,28.709,66.366
     .turnin 3114 >> Turn in Glyphic Memorandum
     .trainer >> Train your class spells
 step
@@ -796,7 +796,7 @@ step
     .goto Dun Morogh,25.0,76.0
     .turnin 3365 >> Turn in Bring Back the Mug
 step
-    .goto Dun Morogh,25.1,75.7
+    .goto Dun Morogh,25.076,75.713
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
 step
@@ -813,7 +813,7 @@ step
     .accept 282 >> Accept Senir's Observations
 step
     >> Grind some mobs up to here
-    .goto Dun Morogh,33.5,71.8
+    .goto Dun Morogh,33.484,71.841
     .turnin 282 >> Turn in Senir's Observations
     .accept 420 >> Accept Senir's Observations
 step
@@ -842,7 +842,7 @@ step
     #softcore
     .goto Dun Morogh,47.0,55.1,120 >> Die and respawn at the Spirit Healer, or run to Kharanos. Make sure your subzone is NOT Coldridge Pass
 step
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 420 >> Turn in Senir's Observations
 step
     #completewith next
@@ -855,7 +855,7 @@ step
     .goto Dun Morogh,48.3,57.0
     .xp 6 >> Grind to 6
 step
-    .goto Dun Morogh,47.2,52.2
+    .goto Dun Morogh,47.217,52.195
     .turnin 2160 >> Turn in Supplies to Tannok
 step
     >>Upstairs
@@ -866,21 +866,21 @@ step
     .home >> Set your Hearthstone to Thunderbrew Distillery
     .vendor >> Buy as much level 5 drink as you can afford
 step
-    .goto Dun Morogh,46.0,51.7
+    .goto Dun Morogh,46.021,51.676
     .accept 400 >> Accept Tools for Steelgrill
 step
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     >>DON'T kill bears en route
     .accept 317 >> Accept Stocking Jetsteam
 step
-    .goto Dun Morogh,49.6,48.6
+    .goto Dun Morogh,49.622,48.612
     .accept 313 >> Accept The Grizzled Den
 step
     .goto Dun Morogh,50.4,49.1
     .turnin 400 >> Turn in Tools for Steelgrill
 step
     #label BoarMeat44
-    .goto Dun Morogh,50.1,49.4
+    .goto Dun Morogh,50.084,49.420
     .accept 5541 >> Accept Ammo for Rumbleshot
 step
     .goto Dun Morogh,52.0,50.1,40,0
@@ -915,7 +915,7 @@ step
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .complete 317,2 --Collect Thick Bear Fur (x2)
 step
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
 step
@@ -946,7 +946,7 @@ step
 step
     #label BearFur
     .goto Dun Morogh,40.6,62.6,30,0
-    .goto Dun Morogh,40.7,65.1
+    .goto Dun Morogh,40.682,65.130
     .turnin 5541 >> Turn in Ammo for Rumbleshot
     .vendor >> Vendor and repair
 step
@@ -968,7 +968,7 @@ step
     .accept 319 >> Accept A Favor for Evershine
     .accept 315 >> Accept The Perfect Stout
 step
-    .goto Dun Morogh,30.2,45.5
+    .goto Dun Morogh,30.186,45.531
     .accept 310 >> Accept Bitter Rivals
 step
     #label Ribs
@@ -993,7 +993,7 @@ step
     >>Finish off getting the Boar Ribs
     .complete 384,1 --Collect Crag Boar Rib (x6)
 step
-    .goto Dun Morogh,30.2,45.7
+    .goto Dun Morogh,30.189,45.725
     .turnin 319 >> Turn in A Favor for Evershine
     .accept 320 >> Accept Return to Bellowfiz
 step
@@ -1029,13 +1029,13 @@ step
     .goto Dun Morogh,47.4,52.5
     .vendor >> Buy up to 30 level 5 drink from the innkeeper
 step
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .accept 287 >> Accept Frostmane Hold
 step
-    .goto Dun Morogh,49.6,48.6
+    .goto Dun Morogh,49.622,48.612
     .turnin 313 >> Turn in The Grizzled Den
 step
-    .goto Dun Morogh,49.4,48.4
+    .goto Dun Morogh,49.426,48.410
     .turnin 320 >> Turn in Return to Bellowfiz
 step
     #era/som
@@ -1066,11 +1066,11 @@ step
 step
     #sticky
     #label Stout
-    .goto Dun Morogh,30.2,45.7
+    .goto Dun Morogh,30.189,45.725
     .turnin 315 >> Turn in The Perfect Stout
     .accept 413 >> Accept Shimmer Stout
 step
-    .goto Dun Morogh,30.2,45.5
+    .goto Dun Morogh,30.186,45.531
     .turnin 311 >> Turn in Return to Marleth
 step
     #era/som
@@ -1110,9 +1110,9 @@ step
     .deathskip >> Die and respawn at the Spirit Healer
 step
     #hardcore
-   .goto Dun Morogh,46.7,53.8,150 >> Hearth if its up, otherwise grind back to Kharanos
+   .goto Dun Morogh,46.726,53.826,150 >> Hearth if its up, otherwise grind back to Kharanos
 step
-    .goto Dun Morogh,46.7,53.8
+    .goto Dun Morogh,46.726,53.826
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
 step
@@ -1150,7 +1150,7 @@ step
     .goto Dun Morogh,68.9,55.9
     .vendor >> vendor trash, repair
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .accept 432 >> Accept Those Blasted Troggs!
 step
     .goto Dun Morogh,70.6,56.6,30,0
@@ -1165,7 +1165,7 @@ step
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
-    .goto Dun Morogh,69.1,56.3
+    .goto Dun Morogh,69.084,56.330
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
     #completewith next
@@ -1196,13 +1196,13 @@ step
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
-    .goto Dun Morogh,83.9,39.2
+    .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     >>Go back through the tunnel you came from
     .goto Dun Morogh,79.6,50.7,50,0
     .goto Dun Morogh,82.3,53.5,25,0
-    .goto Dun Morogh,86.3,48.8
+    .goto Dun Morogh,86.278,48.812
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
 ]])
@@ -1220,10 +1220,10 @@ step
     #completewith next
     +As you quest through Loch Modan, save ALL of the Chunks of Boar Meat you get and DO NOT vendor it. You'll need it for later
 step << Gnome
-    .goto Loch Modan,22.1,73.1
+    .goto Loch Modan,22.071,73.127
     .accept 224 >> Accept In Defense of the King's Lands
 step << Gnome
-    .goto Loch Modan,23.2,73.7
+    .goto Loch Modan,23.233,73.675
     >>Go into the bunker from behind
     .accept 267 >> Accept The Trogg Threat
 step << Gnome
@@ -1241,17 +1241,17 @@ step << Gnome
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
 step << Gnome
-    .goto Loch Modan,22.1,73.1
+    .goto Loch Modan,22.071,73.127
     .turnin 224 >> Turn in Defense of the King's Lands
 step << Gnome
-    .goto Loch Modan,23.2,73.7
+    .goto Loch Modan,23.233,73.675
     >>Go into the bunker from behind
     .turnin 267 >> Turn in The Trogg Threat
 step << Human
     .goto Loch Modan,24.1,18.2
     .vendor >>Vendor and repair
 step << Human
-    .goto Loch Modan,24.8,18.4
+    .goto Loch Modan,24.764,18.397
     .turnin 353 >> Turn in Stormpike's Delivery
     .accept 307 >> Accept Filthy Paws
 step << Human
@@ -1267,7 +1267,7 @@ step << Human
     .goto Loch Modan,35.1,47.8,130 >>Grind mobs en route for cooking quest later
 step
     >>Run up to Thelsamar. do NOT set your hearth << Gnome
-    .goto Loch Modan,34.8,49.3
+    .goto Loch Modan,34.828,49.283
     .accept 418 >> Accept Thelsamar Blood Sausages
 step << Human
     #sticky
@@ -1304,7 +1304,7 @@ step << Gnome
     .goto Loch Modan,24.1,18.2
     .vendor >>Vendor and repair
 step << Gnome
-    .goto Loch Modan,24.8,18.4
+    .goto Loch Modan,24.764,18.397
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order
     .accept 307 >> Accept Filthy Paws
@@ -1431,7 +1431,7 @@ step
     .turnin 416 >> Turn in Rat Catching
 step
     #requires Ichor9
-    .goto Loch Modan,34.8,49.3
+    .goto Loch Modan,34.828,49.283
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
     #era/som
