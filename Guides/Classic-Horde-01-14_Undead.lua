@@ -548,6 +548,8 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto Tirisfal Glades,40.91,54.17
+.target Deathguard Simmer
+>>Talk to |cFF00FF25Deathguard Simmer|r
     .accept 365 >>Accept Fields of Grief
 step
     #era/som
@@ -570,6 +572,8 @@ step
     .goto Tirisfal Glades,42.67,54.97,40,0
     .goto Tirisfal Glades,40.79,54.47,40,0
     >>Talk to Gordo. He's an abomination that patrols along the road to Brill
+.target Gordo
+>>Talk to |cFF00FF25Gordo|r
     .accept 5481 >>Accept Gordo's Task
 step << Priest
     #softcore
@@ -586,13 +590,17 @@ step
     .deathskip >> Die and respawn at Brill if you found Gordo pretty early
 step
     .goto Tirisfal Glades,60.586,51.765
+>>Talk to |cFF00FF25Executor Zygand|r
     .turnin 383 >> Turn in Vital Intelligence
+.target Executor Zygand
     .accept 427 >>Accept At War With The Scarlet Crusade
 step << Rogue
     .goto Tirisfal Glades,61.16,52.59
     .vendor >> Buy the level 3 thrown from Mrs. Winters. Equip it
 step
     .goto Tirisfal Glades,61.707,52.049
+.target Innkeeper Renee
+>>Talk to |cFF00FF25Innkeeper Renee|r
     .turnin 8 >>Turn in A Rogue's Deal
     .home >> Set your Hearthstone to Brill
     .vendor >> vendor trash. Buy some level 5 food << !Mage !Priest !Warlock
@@ -619,7 +627,9 @@ step << Priest
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     .trainer >> Go upstairs and train your class spells
+>>Talk to |cFF00FF25Dark Cleric Beryl|r
     .turnin 5651 >> Turn in In Favor of Darkness
+.target Dark Cleric Beryl
     .accept 5650 >> Accept Garments of Darkness
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
@@ -638,9 +648,13 @@ step << Warrior
     .collect 2488,1
 step
     .goto Tirisfal Glades,59.45,52.40
+.target Apothecary Johaan
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .accept 367 >>Accept A New Plague
 step
     .goto Tirisfal Glades,58.20,51.45
+.target Deathguard Dillinger
+>>Talk to |cFF00FF25Deathguard Dillinger|r
     .accept 404 >>Accept A Putrid Task
 step
     #era/som
@@ -684,31 +698,45 @@ step
     #era/som
     >>Turn in at the Junior Apothecary. He patrols around the Graveyard
     .goto Tirisfal Glades,57.68,48.96
+>>Talk to |cFF00FF25Junior Apothecary Holland|r
     .turnin 5481 >>Turn in Gordo's Task
+.target Junior Apothecary Holland
     .accept 5482 >>Accept Doom Weed
 step
     .goto Tirisfal Glades,58.20,51.45
+>>Talk to |cFF00FF25Deathguard Dillinger|r
     .turnin 404 >>Turn in A Putrid Task
+.target Deathguard Dillinger
     .accept 426 >>Accept The Mills Overrun
 step
     .goto Tirisfal Glades,59.45,52.40
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .turnin 365 >> Turn in Fields of Grief
+.target Apothecary Johaan
     .accept 407 >> Accept Fields of Grief
 step
     .goto Tirisfal Glades,59.45,52.40
     .isQuestComplete 367
+.target Apothecary Johaan
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .turnin 367 >>Turn in A New Plague
 step
     .goto Tirisfal Glades,59.45,52.40
+.target Apothecary Johaan
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .accept 368 >>Accept A New Plague
 	.isQuestTurnedIn 367
 step
     .goto Tirisfal Glades,59.45,52.40
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .turnin 365 >> Turn in Fields of Grief
+.target Apothecary Johaan
     .accept 407 >> Accept Fields of Grief
 step
     .goto Tirisfal Glades,60.58,51.77
+>>Talk to |cFF00FF25Executor Zygand|r
     .turnin 427 >>Turn in At War With The Scarlet Crusade
+.target Executor Zygand
     .accept 370 >>Accept At War With The Scarlet Crusade
 step
     .goto Tirisfal Glades,60.73,51.52
@@ -716,15 +744,21 @@ step
 step
     >>Go inside the building
     .goto Tirisfal Glades,61.26,50.84
+.target Magistrate Sevren
+>>Talk to |cFF00FF25Magistrate Sevren|r
     .accept 358 >>Accept Graverobbers
 step
     .goto Tirisfal Glades,60.93,52.01
+.target Deathguard Burgess
+>>Talk to |cFF00FF25Deathguard Burgess|r
     .accept 374 >>Accept Proof of Demise
 step
     .xp 7
     .goto Tirisfal Glades,59.47,56.40
 step
     .goto Tirisfal Glades,61.72,52.29
+.target Coleman Farthing
+>>Talk to |cFF00FF25Coleman Farthing|r
     .accept 354 >>Accept Deaths in the Family
     .accept 362 >>Accept The Haunted Mills
 step
@@ -733,19 +767,27 @@ step
 step
     >>Go in the room behind the innkeeper, then go downstairs
     .goto Tirisfal Glades,61.97,51.29
+.target Captured Scarlet Zealot
+>>Talk to |cFF00FF25Captured Scarlet Zealot|r
     .turnin 407 >>Turn in Fields of Grief
 step
     #era/som
     >>Go upstairs
     .goto Tirisfal Glades,61.89,52.73
+.target Gretchen Dedmar
+>>Talk to |cFF00FF25Gretchen Dedmar|r
     .accept 375 >>Accept The Chill of Death
 step << Priest
     #level 8
     .goto Tirisfal Glades,61.57,52.19
+.target Dark Cleric Beryl
+>>Talk to |cFF00FF25Dark Cleric Beryl|r
     .turnin 5650 >>Turn in Garments of Darkness
     .trainer >> Train your class spells.
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
+.target Dark Cleric Beryl
+>>Talk to |cFF00FF25Dark Cleric Beryl|r
     .turnin 5650 >>Turn in Garments of Darkness
 step << Warrior
     #level 8
@@ -790,7 +832,9 @@ step
 step
     #label NewPlague
     .goto Tirisfal Glades,59.45,52.40
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .turnin 367 >>Turn in A New Plague
+.target Apothecary Johaan
     .accept 368 >>Accept A New Plague
 step
     #era/som
@@ -812,6 +856,8 @@ step << Rogue/Warrior
     #era/som
     >>Go upstairs
     .goto Tirisfal Glades,61.89,52.73
+.target Gretchen Dedmar
+>>Talk to |cFF00FF25Gretchen Dedmar|r
     .turnin 375 >>Turn in The Chill of Death
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
@@ -871,17 +917,25 @@ step
 step
     #era/som
     .goto Tirisfal Glades,58.40,47.76
+.target Junior Apothecary Holland
+>>Talk to |cFF00FF25Junior Apothecary Holland|r
     .turnin 5482 >>Turn in Doom Weed
 step
     .goto Tirisfal Glades,59.45,52.40
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .turnin 368 >>Turn in A New Plague
+.target Apothecary Johaan
     .accept 369 >>Accept A New Plague
 step
     .goto Tirisfal Glades,60.58,51.77
+.target Executor Zygand
+>>Talk to |cFF00FF25Executor Zygand|r
     .turnin 398 >>Turn in Wanted: Maggot Eye
 step
     .goto Tirisfal Glades,61.26,50.84
+>>Talk to |cFF00FF25Magistrate Sevren|r
     .turnin 358 >>Turn in Graverobbers
+.target Magistrate Sevren
     .accept 405 >>Accept The Prodigal Lich
     .accept 359 >>Accept Forsaken Duties
 step
@@ -896,6 +950,8 @@ step
     #era/som
     >>Go upstairs
     .goto Tirisfal Glades,61.89,52.73
+.target Gretchen Dedmar
+>>Talk to |cFF00FF25Gretchen Dedmar|r
     .turnin 375 >>Turn in The Chill of Death
 step << !Warrior !Rogue
     #completewith next
@@ -978,15 +1034,21 @@ step
     .goto Tirisfal Glades,58.20,51.44,250 >> Run back to Brill. Hearth if its up
 step
     .goto Tirisfal Glades,58.20,51.44
+.target Deathguard Dillinger
+>>Talk to |cFF00FF25Deathguard Dillinger|r
     .turnin 426 >>Turn in The Mills Overrun
 step
     .isOnQuest 361
     .goto Tirisfal Glades,61.58,52.60
+.target Yvette Farthing
+>>Talk to |cFF00FF25Yvette Farthing|r
     .turnin 361 >>Turn in A Letter Undelivered
 step
     .goto Tirisfal Glades,61.72,52.29
+>>Talk to |cFF00FF25Coleman Farthing|r
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
+.target Coleman Farthing
     .accept 355 >>Accept Speak with Sevren
 step
     .xp 10
@@ -996,10 +1058,16 @@ step
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
     .trainer >> Train your class spells
+.target Baltus Fowler
+.target Austil de Mon
+>>Talk to |cFF00FF25Austil de Mon|r
+-->>Talk to |cFF00FF25Baltus Fowler|r
     .accept 1818 >> Accept Speak with Dillinger
 step << Warrior
     .goto Tirisfal Glades,58.20,51.44
+>>Talk to |cFF00FF25Deathguard Dillinger|r
     .turnin 1818 >> Turn in Speak with Dillinger
+.target Deathguard Dillinger
     .accept 1819 >> Accept Ulag the Cleaver
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
@@ -1007,16 +1075,22 @@ step << Warrior
     .complete 1819,1 --Ulag the Cleaver (1)
 step << Warrior
     .goto Tirisfal Glades,58.20,51.44
+>>Talk to |cFF00FF25Deathguard Dillinger|r
     .turnin 1819 >> Turn in Ulag the Cleaver
+.target Deathguard Dillinger
     .accept 1820 >> Accept Speak with Coleman
 step << Mage
     .goto Tirisfal Glades,61.97,52.48
     .trainer >> Go upstairs and train your class spells
+.target Cain Firesong
+>>Talk to |cFF00FF25Cain Firesong|r
     .accept 1881 >> Accept Speak with Anatasia
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
     .trainer >> Go upstairs and train your class spells
      .goto Tirisfal Glades,61.62,52.68
+.target Ageron Kargal
+>>Talk to |cFF00FF25Ageron Kargal|r
     .accept 1478 >> Accept Halgar's Summons
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
@@ -1024,6 +1098,8 @@ step << Priest
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     .trainer >> Go upstairs and train your class spells
+.target Marion Call
+>>Talk to |cFF00FF25Marion Call|r
     .accept 1885 >> Accept Mennet Carkad
 step << Rogue
     .goto Tirisfal Glades,60.12,53.39
@@ -1050,10 +1126,14 @@ step
     .home >> Set your Hearthstone to Undercity
 step << Warlock
     .goto Undercity,85.07,25.99
+>>Talk to |cFF00FF25Carendin Halgar|r
     .turnin 1478 >> Turn in Halgar's Summons
+.target Carendin Halgar
     .accept 1473 >> Accept Creature of the Void
 step << Rogue
     .goto Undercity,83.53,69.09
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .turnin 1885 >> Turn in Mennet Carkad
     .accept 1886 >> Accept The Deathstalkers
 step << Rogue
@@ -1090,12 +1170,16 @@ step << Warrior/Rogue
     >> If you want to go for your own professions, skip this step
 step << Mage
     .goto Undercity,85.13,10.03
+>>Talk to |cFF00FF25Anastasia Hartwell|r
     .turnin 1881 >> Turn in Speak with Anatasia
+.target Anastasia Hartwell
     .accept 1882 >> Accept The Balnir Farmstead
 step
     >>Remember to turn on Find Minerals after every death/logout if you trained Mining << Rogue/Warrior
     .goto Undercity,84.06,17.44
+>>Talk to |cFF00FF25Bethor Iceshard|r
     .turnin 405 >>Turn in The Prodigal Lich
+.target Bethor Iceshard
     .accept 357 >>Accept The Lich's Identity
 step
     #sticky
@@ -1127,7 +1211,9 @@ step << Warlock
 step << Warlock
     >>Go back into Undercity
     .goto Undercity,85.07,25.99
+>>Talk to |cFF00FF25Carendin Halgar|r
     .turnin 1473 >> Turn in Creature of the Void
+.target Carendin Halgar
     .accept 1471 >> Accept The Binding
 step << Warlock
     >>Use the Runes of Summoning in your bag on top of the summoning circle. Kill the Voidwalker
@@ -1136,6 +1222,8 @@ step << Warlock
 step << Warlock
     >>It's recommended to use Voidwalker until you get your Succubus
     .goto Undercity,85.07,25.99
+.target Carendin Halgar
+>>Talk to |cFF00FF25Carendin Halgar|r
     .turnin 1471 >> Turn in The Binding
 step << Warlock
     #sticky
@@ -1148,7 +1236,9 @@ step << Warlock
     .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
 step
     .goto Tirisfal Glades,60.58,51.76
+>>Talk to |cFF00FF25Executor Zygand|r
     .turnin 370 >>Turn in At War With The Scarlet Crusade
+.target Executor Zygand
     .accept 371 >>Accept At War With The Scarlet Crusade
 step
     #completewith next
@@ -1159,7 +1249,9 @@ step
 step
     #label UnluckyRogue
     .goto Tirisfal Glades,65.49,60.25
+>>Talk to |cFF00FF25Deathguard Linnea|r
     .turnin 359 >>Turn in Forsaken Duties
+.target Deathguard Linnea
     .accept 360 >>Accept Return to the Magistrate
     .accept 356 >>Accept Rear Guard Patrol
 step << Mage
@@ -1199,7 +1291,9 @@ step
     #softcore
     #era/som
     .goto Tirisfal Glades,59.45,52.39
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .turnin 369 >>Turn in A New Plague
+.target Apothecary Johaan
     .accept 492 >>Accept A New Plague
     .accept 445 >>Accept Delivery to Silverpine Forest
 step
@@ -1207,7 +1301,9 @@ step
     #era/som
     >>Run back to Brill
     .goto Tirisfal Glades,59.45,52.39
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .turnin 369 >>Turn in A New Plague
+.target Apothecary Johaan
     .accept 492 >>Accept A New Plague
     .accept 445 >>Accept Delivery to Silverpine Forest
 step
@@ -1229,15 +1325,21 @@ step
 --   .accept 445 >>Accept Delivery to Silverpine Forest
 step
     .goto Tirisfal Glades,60.58,51.77
+>>Talk to |cFF00FF25Executor Zygand|r
     .turnin 371 >>Turn in At War With The Scarlet Crusade
+.target Executor Zygand
     .accept 372 >>Accept At War With The Scarlet Crusade
 step
     .goto Tirisfal Glades,61.26,50.84
+.target Magistrate Sevren
+>>Talk to |cFF00FF25Magistrate Sevren|r
     .turnin 360 >>Turn in Return to the Magistrate
     .turnin 355 >>Turn in Speak with Sevren
 step
     .isQuestComplete 374
     .goto Tirisfal Glades,60.93,52.01
+.target Deathguard Burgess
+>>Talk to |cFF00FF25Deathguard Burgess|r
     .turnin 374 >>Turn in Proof of Demise
 step
     #completewith next
@@ -1247,17 +1349,23 @@ step
     .vendor 5688 >> Buy food/water inside the Inn if needed
 step
     .goto Tirisfal Glades,61.94,51.40
+.target Captured Mountaineer
+>>Talk to |cFF00FF25Captured Mountaineer|r
     .turnin 492 >>Turn in A New Plague
 step
     .hs >> Hearth to Undercity
 step << Mage
     >>Choose any reward. Personal preference
     .goto Undercity,85.15,10.04
+.target Anastasia Hartwell
+>>Talk to |cFF00FF25Anastasia Hartwell|r
     .turnin 1882 >>Turn in The Balnir Farmstead
 step << Rogue
     .isQuestComplete 1886
     .goto Undercity,84.06,17.46
+>>Talk to |cFF00FF25Bethor Iceshard|r
     .turnin 357 >>Turn in The Lich's Identity
+.target Bethor Iceshard
     .accept 366 >>Accept Return the Book
 step << Rogue
     .money <0.2200
@@ -1291,11 +1399,15 @@ step << Rogue
     .isQuestTurnedIn 1886
     .goto Undercity,83.53,69.12
     .turnin 1899 >> Turn in The Deathstalkers
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .accept 1978 >> Accept The Deathstalkers
 step << Rogue
     .isQuestTurnedIn 1886
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
+.target Varimathras
+>>Talk to |cFF00FF25Varimathras|r
     .turnin 1978 >>Turn in The Deathstalkers
     >>Go to the edge of the main platform and perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
     .link https://www.youtube.com/watch?v=jj85AXyF1XE >> Open this tab when running to the turn in. CLICK HERE for an example
@@ -1305,7 +1417,9 @@ step << Rogue
     .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
 step
     .goto Undercity,84.06,17.46
+>>Talk to |cFF00FF25Bethor Iceshard|r
     .turnin 357 >>Turn in The Lich's Identity
+.target Bethor Iceshard
     .accept 366 >>Accept Return the Book
 step
     #sticky
@@ -1318,6 +1432,8 @@ step
     .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
 step
     .goto Tirisfal Glades,65.49,60.25
+.target Deathguard Linnea
+>>Talk to |cFF00FF25Deathguard Linnea|r
     .turnin 356 >>Turn in Rear Guard Patrol
 step
     #sticky
@@ -1339,7 +1455,9 @@ step << Mage/Warrior
 step
     #requires Rings
     .goto Tirisfal Glades,68.19,41.92
+>>Talk to |cFF00FF25Gunther Arcanus|r
     .turnin 366 >>Turn in Return the Book
+.target Gunther Arcanus
     .accept 409 >>Accept Proving Allegiance
 step
     .goto Tirisfal Glades,68.16,42.01
@@ -1358,7 +1476,9 @@ step << Mage/Warrior
     .xp 11+6525 >> Grind to 6525+/8800xp
 step
     .goto Tirisfal Glades,68.20,41.92
+>>Talk to |cFF00FF25Gunther Arcanus|r
     .turnin 409 >>Turn in Proving Allegiance
+.target Gunther Arcanus
     .accept 411 >>Accept The Prodigal Lich Returns
 step
     #softcore
@@ -1368,14 +1488,20 @@ step
 step
     #softcore
     .goto Tirisfal Glades,60.58,51.77
+.target Executor Zygand
+>>Talk to |cFF00FF25Executor Zygand|r
     .turnin 372 >>Turn in At War With The Scarlet Crusade
 step
     #hardcore
     >>Run back to Brill
     .goto Tirisfal Glades,60.58,51.77
+.target Executor Zygand
+>>Talk to |cFF00FF25Executor Zygand|r
     .turnin 372 >>Turn in At War With The Scarlet Crusade
 step
     .goto Tirisfal Glades,60.93,52.01
+.target Deathguard Burgess
+>>Talk to |cFF00FF25Deathguard Burgess|r
     .turnin 374 >>Turn in Proof of Demise
 step << Rogue
     #sticky
@@ -1389,6 +1515,8 @@ step
 step << Rogue/Warrior
     .isQuestComplete 1886 << Rogue
     .goto Undercity,84.06,17.46
+.target Bethor Iceshard
+>>Talk to |cFF00FF25Bethor Iceshard|r
     .turnin 411 >>Turn in The Prodigal Lich Returns
 step << Rogue
     .money <0.2200
@@ -1447,11 +1575,15 @@ step << Rogue
     .isQuestTurnedIn 1886
     .goto Undercity,83.53,69.12
     .turnin 1899 >> Turn in The Deathstalkers
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .accept 1978 >> Accept The Deathstalkers
 step << Rogue
     .isQuestTurnedIn 1886
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
+.target Varimathras
+>>Talk to |cFF00FF25Varimathras|r
     .turnin 1978 >>Turn in The Deathstalkers
     >>Go to the edge of the main platform and perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
     .link https://www.youtube.com/watch?v=jj85AXyF1XE >> Open this tab when running to the turn in. CLICK HERE for an example
@@ -1461,6 +1593,8 @@ step << Rogue
     .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
 step << !Warrior
     .goto Undercity,84.07,17.45
+.target Bethor Iceshard
+>>Talk to |cFF00FF25Bethor Iceshard|r
     .turnin 411 >>Turn in The Prodigal Lich Returns
 step << Mage
     #level 12
@@ -1509,19 +1643,25 @@ step << Undead
     #phase 3-6
     >>Run to Razor Hill
     .goto Durotar,50.85,43.59
+.target Takrin Pathseeker
+>>Talk to |cFF00FF25Takrin Pathseeker|r
     .accept 840 >>Accept Conscript of the Horde
 step << Undead
     #som
     #phase 3-6
     >>Run to The Barrens
     .goto The Barrens,62.26,19.38
+>>Talk to |cFF00FF25Kargal Battlescar|r
     .turnin 840 >>Turn in Conscript of the Horde
+.target Kargal Battlescar
     .accept 842 >>Accept Crossroads Conscription
 step << Undead
     #som
     #phase 3-6
     .goto The Barrens,52.23,31.01
+>>Talk to |cFF00FF25Sergra Darkthorn|r
     .turnin 842 >>Turn in Crossroads Conscription
+.target Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
 step << Mage
     #som
@@ -1575,6 +1715,8 @@ step
     .unitscan Gorefang
     >>Talk to Erland to start his escort. Start at full health/mana
     .goto Silverpine Forest,56.19,9.18
+.target Deathstalker Erland
+>>Talk to |cFF00FF25Deathstalker Erland|r
     .accept 435 >>Accept Escorting Erland
 step
     >>Be careful as up to 2 wolves can pull at once. Eat/drink as soon as you're out of combat
@@ -1583,7 +1725,9 @@ step
 step
     #label Rane
     .goto Silverpine Forest,53.46,13.43
+>>Talk to |cFF00FF25Rane Yorick|r
     .turnin 435 >>Turn in Escorting Erland
+.target Rane Yorick
     .accept 429 >> Accept Wild Hearts
     .accept 449 >>Accept The Deathstalkers' Report
 step
@@ -1601,18 +1745,26 @@ step
     .deathskip >> Die and respawn at The Sepulcher
 step
     .goto Silverpine Forest,44.21,39.81
+.target Dalar Dawnweaver
+>>Talk to |cFF00FF25Dalar Dawnweaver|r
     .accept 421 >>Accept Prove Your Worth
     #softcore
 step
     >>Run to The Sepulcher
     .goto Silverpine Forest,44.21,39.81
+.target Dalar Dawnweaver
+>>Talk to |cFF00FF25Dalar Dawnweaver|r
     .accept 421 >>Accept Prove Your Worth
     #hardcore
 step
     .goto Silverpine Forest,43.98,40.93
+.target Shadow Priest Allister
+>>Talk to |cFF00FF25Shadow Priest Allister|r
     .accept 477 >>Accept Border Crossings
 step << Undead
     .goto Silverpine Forest,43.43,41.67
+.target Deathguard Podrig
+>>Talk to |cFF00FF25Deathguard Podrig|r
     .accept 6321 >>Accept Supplying the Sepulcher
 step
     #sticky
@@ -1622,14 +1774,18 @@ step
 step
     >>Go downstairs into the Crypt
     .goto Silverpine Forest,43.43,40.87
+>>Talk to |cFF00FF25High Executor Hadrec|r
     .turnin 449 >>Turn in The Deathstalkers' Report
+.target High Executor Hadrec
     .accept 3221 >>Accept Speak with Renferrel
     .accept 437 >>Accept The Dead Fields
 step
     .goto Silverpine Forest,42.80,40.86
+>>Talk to |cFF00FF25Apothecary Renferrel|r
     .turnin 429 >> Turn in Wild Hearts
     .turnin 445 >>Turn in Delivery to Silverpine Forest
     .turnin 3221 >>Turn in Speak with Renferrel
+.target Apothecary Renferrel
     .accept 1359 >>Accept Zinge's Delivery
     .accept 447 >>Accept A Recipe For Death
     .accept 430 >>Accept Return to Quinn
@@ -1650,7 +1806,9 @@ step
     .complete 421,1 --Moonrage Whitescalp (5)
 step
     .goto Silverpine Forest,44.19,39.78
+>>Talk to |cFF00FF25Dalar Dawnweaver|r
     .turnin 421 >>Turn in Prove Your Worth
+.target Dalar Dawnweaver
     .accept 422 >>Accept Arugal's Folly
 step
     #sticky
@@ -1664,10 +1822,14 @@ step
 step
     >>Go upstairs in the building
     .goto Silverpine Forest,53.43,12.59
+.target Quinn Yorick
+>>Talk to |cFF00FF25Quinn Yorick|r
     .turnin 430 >>Turn in Return to Quinn
 step
     >>Go back outside
     .goto Silverpine Forest,53.46,13.43
+.target Rane Yorick
+>>Talk to |cFF00FF25Rane Yorick|r
     .accept 425 >>Accept Ivar the Foul
 step
     >>Kill Ivar in the Barn. Loot his Head
@@ -1675,6 +1837,8 @@ step
     .complete 425,1 --Ivar's Head (1)
 step
     .goto Silverpine Forest,53.46,13.43
+.target Rane Yorick
+>>Talk to |cFF00FF25Rane Yorick|r
     .turnin 425 >>Turn in Ivar the Foul
 step
     #label Nightlash
@@ -1703,13 +1867,17 @@ step
     #hardcore
     >>Run back to The Sepulcher
     .goto Silverpine Forest,44.20,39.75
+>>Talk to |cFF00FF25Dalar Dawnweaver|r
     .turnin 422 >> Turn in Arugal's Folly
+.target Dalar Dawnweaver
     .accept 423 >> Accept Arugal's Folly
 step
     #som
     #hardcore
     >>Run back to The Sepulcher
     .goto Silverpine Forest,44.20,39.75
+.target Dalar Dawnweaver
+>>Talk to |cFF00FF25Dalar Dawnweaver|r
     .turnin 422 >> Turn in Arugal's Folly
 step << Warlock/Mage/Priest
     #completewith next
@@ -1721,22 +1889,30 @@ step
     #era
     #softcore
     .goto Silverpine Forest,44.20,39.75
+>>Talk to |cFF00FF25Dalar Dawnweaver|r
     .turnin 422 >> Turn in Arugal's Folly
+.target Dalar Dawnweaver
     .accept 423 >> Accept Arugal's Folly
 step
     #som
     #softcore
     .goto Silverpine Forest,44.20,39.75
+.target Dalar Dawnweaver
+>>Talk to |cFF00FF25Dalar Dawnweaver|r
     .turnin 422 >> Turn in Arugal's Folly
 step
     >>Go down into the Crypt
     .goto Silverpine Forest,43.43,40.87
+>>Talk to |cFF00FF25High Executor Hadrec|r
     .turnin 437 >> Turn in The Dead Fields
+.target High Executor Hadrec
     .accept 438 >> Accept The Decrepit Ferry
 step << Undead
     .goto Silverpine Forest,45.62,42.60
     >>DO NOT go Undercity yet
+>>Talk to |cFF00FF25Karos Razok|r
     .turnin 6321 >>Turn in Supplying the Sepulcher
+.target Karos Razok
     .accept 6323 >>Accept Ride to the Undercity
     .fp Sepulcher >> Get the Sepulcher flight path
 step
@@ -1767,13 +1943,17 @@ step
 step
     #softcore
     .goto Silverpine Forest,43.98,40.93
+>>Talk to |cFF00FF25Shadow Priest Allister|r
     .turnin 478 >>Turn in Maps and Runes
+.target Shadow Priest Allister
     .accept 481 >>Accept Dalar's Analysis
 step
     #hardcore
     >>Run back to The Sepulcher
     .goto Silverpine Forest,43.98,40.93
+>>Talk to |cFF00FF25Shadow Priest Allister|r
     .turnin 478 >>Turn in Maps and Runes
+.target Shadow Priest Allister
     .accept 481 >>Accept Dalar's Analysis
 step
     #era
@@ -1809,7 +1989,9 @@ step << !Undead Rogue
     .fly Undercity >> Fly to Undercity
 step << Undead
     .goto Undercity,61.48,41.81
+>>Talk to |cFF00FF25Gordon Wendham|r
     .turnin 6323 >> Turn in Ride to the Undercity
+.target Gordon Wendham
     .accept 6322 >> Accept Michael Garrett
 step << Undead
     .goto Undercity,63.27,48.55
@@ -1846,6 +2028,8 @@ step << Undead Rogue
     .isQuestTurnedIn 1886
     .goto Undercity,83.53,69.12
     .turnin 1899 >> Turn in The Deathstalkers
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .accept 1978 >> Accept The Deathstalkers
 step << Mage
     .goto Undercity,85.15,10.04
@@ -1856,15 +2040,21 @@ step << Warlock
 step
     .goto Undercity,52.86,77.72,40,0
     .goto Undercity,48.83,69.28
+.target Master Apothecary Faranell
+>>Talk to |cFF00FF25Master Apothecary Faranell|r
     .turnin 447 >>Turn in A Recipe For Death
 step
     .goto Undercity,50.15,67.98
+>>Talk to |cFF00FF25Apothecary Zinge|r
     .turnin 1359 >> Turn in Zinge's Delivery
+.target Apothecary Zinge
     .accept 1358 >> Accept Sample for Helbrim
 step << Undead Rogue
     .isQuestTurnedIn 1886
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
+.target Varimathras
+>>Talk to |cFF00FF25Varimathras|r
     .turnin 1978 >>Turn in The Deathstalkers
     >>Go to the edge of the main platform and perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in.
     .link https://www.youtube.com/watch?v=jj85AXyF1XE >> Open this tab when running to the turn in. CLICK HERE for an example
@@ -1885,7 +2075,9 @@ step << Undead
     .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
 step << Undead
     .goto Tirisfal Glades,61.26,50.84
+>>Talk to |cFF00FF25Magistrate Sevren|r
     .turnin 440 >>Turn in The Engraved Ring
+.target Magistrate Sevren
     .accept 441 >>Accept Raleigh and the Undercity
 step << Undead
     #sticky
@@ -1898,15 +2090,21 @@ step << Undead
     .zone Durotar >> Take the zeppelin to Durotar
 step << Undead
     .goto Durotar,50.85,43.59
+.target Takrin Pathseeker
+>>Talk to |cFF00FF25Takrin Pathseeker|r
     .accept 840 >>Accept Conscript of the Horde
 step << Undead
     .goto The Barrens,62.26,19.38
+>>Talk to |cFF00FF25Kargal Battlescar|r
     .turnin 840 >>Turn in Conscript of the Horde
+.target Kargal Battlescar
     .accept 842 >>Accept Crossroads Conscription
 step << Undead
     >>Grind mobs en route << Warrior/Rogue
     .goto The Barrens,52.23,31.01
+>>Talk to |cFF00FF25Sergra Darkthorn|r
     .turnin 842 >>Turn in Crossroads Conscription
+.target Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
 step << Mage
     +If you're planning on leveling via AoE, choose the Barrens AoE Guide manually. Otherwise, complete this step

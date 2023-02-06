@@ -2953,9 +2953,13 @@ step << skip
     .timer 28,Prospector Anvilward RP
 step << skip
     .goto Eversong Woods,48.2,46.0
+.target Aeldon Sunbrand
+>>Talk to |cFF00FF25Aeldon Sunbrand|r
     .turnin 8483 >> Turn in The Dwarven Spy
 step << skip
     .goto Eversong Woods,55.700,54.509
+.target Instructor Antheol
+>>Talk to |cFF00FF25Instructor Antheol|r
     .turnin 9066 >> Turn in Swift Discipline
 step << Undead/BloodElf
     #completewith next
@@ -4787,6 +4791,7 @@ step << skip
 --VV WIP
 step << skip
     >> Talk to Master Chef Mouldier
+>>Talk to |cFF00FF25Master Chef Mouldier|r
     .accept 9171 >> Accept Culinary Crunch
     .goto Ghostlands,48.43,30.93
     .target Master Chef Mouldier
@@ -5510,6 +5515,7 @@ step
     .xp >30,1
 step << BloodElf Priest
     .goto Ghostlands,47.34,29.26
+>>Talk to |cFF00FF25Quartermaster Lymel|r
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
     .target Quartermaster Lymel
     .isQuestComplete 9135

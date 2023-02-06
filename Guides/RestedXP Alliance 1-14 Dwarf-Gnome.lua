@@ -196,6 +196,8 @@ step << Paladin/Mage
     .vendor >> vendor trash
 step << Dwarf Paladin
     .goto Dun Morogh,28.8,68.3
+.target Bromos Grummner
+>>Talk to |cFF00FF25Bromos Grummner|r
     .turnin 3107 >> Turn in Consecrated Rune
     .train 20271 >>Train Judgement
 .train 19740 >>Train Blessing of Might
@@ -207,6 +209,8 @@ step << Human Paladin/Draenei Paladin
 .train 465 >>Train Devotion Aura
 step << Gnome Mage
     .goto Dun Morogh,28.709,66.366
+.target Marryk Nurribit
+>>Talk to |cFF00FF25Marryk Nurribit|r
     .turnin 3114 >> Turn in Glyphic Memorandum
     .train 1459 >>Train Arcane Intellect
     .train 116 >>Train Frostbolt
@@ -217,6 +221,8 @@ step << Human Mage/Draenei Mage
 step << Paladin/Mage
 #xprate <1.5
     .goto Dun Morogh,29.7,71.2
+.target Balir Frosthammer
+>>Talk to |cFF00FF25Balir Frosthammer|r
     .turnin 170 >> Turn in A New Threat
 step << Mage
     .goto Dun Morogh,30.0,71.5
@@ -309,12 +315,18 @@ step << !Paladin !Mage
     .vendor >> vendor trash
 step << Gnome Rogue
 .goto Dun Morogh,28.4,67.5
+.target Solm Hargrin
+>>Talk to |cFF00FF25Solm Hargrin|r
     .turnin 3113 >> Turn in Encrypted Memorandum
 step << Dwarf Rogue
 .goto Dun Morogh,28.4,67.5
+.target Solm Hargrin
+>>Talk to |cFF00FF25Solm Hargrin|r
     .turnin 3109 >> Turn in Encrypted Rune
 step << Dwarf Priest
 .goto Dun Morogh,28.600,66.385
+.target Branstock Khalder
+>>Talk to |cFF00FF25Branstock Khalder|r
     .turnin 3110 >> Turn in Hallowed Rune
     .train 1243 >>Train Power Word: Fortitude
 .train 589 >>Train Shadow Word: Pain
@@ -326,11 +338,15 @@ step << Human Priest/NightElf Priest/Draenei Priest
     .train 2052 >>Train Lesser Heal r2
 step << Gnome Warrior
 .goto Dun Morogh,28.8,67.2
+.target Thran Khorman
+>>Talk to |cFF00FF25Thran Khorman|r
     .turnin 3112 >> Turn in Simple Memorandum
     .train 772 >>Train Rend
     .train 100 >>Train Charge
 step << Dwarf Warrior
 .goto Dun Morogh,28.8,67.2
+.target Thran Khorman
+>>Talk to |cFF00FF25Thran Khorman|r
     .turnin 3106 >> Turn in Simple Rune
     .train 772 >>Train Rend
     .train 100 >>Train Charge
@@ -341,6 +357,8 @@ step << Human Warrior/NightElf Warrior/Draenei Warrior
 step << !Paladin !Mage
 #xprate <1.5
     .goto Dun Morogh,29.7,71.2
+.target Balir Frosthammer
+>>Talk to |cFF00FF25Balir Frosthammer|r
     .turnin 170 >> Turn in A New Threat
 step << Priest
 .money <0.0024
@@ -350,7 +368,9 @@ step << Priest
 step
     >>Grind a bit back to here
     .goto Dun Morogh,25.1,75.8
+>>Talk to |cFF00FF25Grelin Whitebeard|r
     .turnin 218 >> Turn in The Stolen Journal
+.target Grelin Whitebeard
     .accept 282 >> Accept Senir's Observations
 step << !Paladin !Mage
     >> Talk to |cFF00FF25Nori Pridedrift|r
@@ -360,10 +380,14 @@ step << !Paladin !Mage
 step
     >> Grind some mobs up to here
 .goto Dun Morogh,33.484,71.841
+>>Talk to |cFF00FF25Mountaineer Thalos|r
     .turnin 282 >> Turn in Senir's Observations
+.target Mountaineer Thalos
     .accept 420 >> Accept Senir's Observations
 step
     .goto Dun Morogh,33.9,72.2
+.target Hands Springsprocket
+>>Talk to |cFF00FF25Hands Springsprocket|r
     .accept 2160 >> Accept Supplies to Tannok
 step
 .goto Dun Morogh,34.1,71.6,20,0
@@ -411,6 +435,8 @@ step
 .goto Dun Morogh,47.0,55.1,1500 >> .
 step
 .goto Dun Morogh,46.726,53.826
+.target Senir Whitebeard
+>>Talk to |cFF00FF25Senir Whitebeard|r
     .turnin 420 >> Turn in Senir's Observations
 step
     .goto Dun Morogh,46.7,53.5
@@ -420,9 +446,13 @@ step << !Priest
 .xp 6 >> Grind to 6
 step << !Priest
     .goto Dun Morogh,46.8,52.4
+.target Ragnar Thunderbrew
+>>Talk to |cFF00FF25Ragnar Thunderbrew|r
     .accept 384 >> Accept Beer Basted Boar Ribs
 step << !Priest
     .goto Dun Morogh,47.217,52.195
+.target Tannok Frosthammer
+>>Talk to |cFF00FF25Tannok Frosthammer|r
     .turnin 2160 >> Turn in Supplies to Tannok
 step << Rogue
 .goto Dun Morogh,47.2,52.4
@@ -442,12 +472,16 @@ step << Paladin
     .train 498 >>Train Divine Protection
 step << Dwarf Priest
 .goto Dun Morogh,47.3,52.2
+.target Maxan Anvol
+>>Talk to |cFF00FF25Maxan Anvol|r
     .accept 5625 >> Garments of the Light
 step << Dwarf Priest
     .goto Dun Morogh,45.8,54.6
      .complete 5625,1 --Heal and fortify Mountaineer Dolf
 step << Dwarf Priest
 .goto Dun Morogh,47.3,52.2
+.target Maxan Anvol
+>>Talk to |cFF00FF25Maxan Anvol|r
     .turnin 5625 >> Garments of the Light
     .train 591 >>Train Smite r2
     .train 17 >>Train Power Word: Shield
@@ -512,6 +546,8 @@ step << Paladin
     .train 2018 >>Train Blacksmithing. You'll get mining later which will allow you to craft Weightstones (+2 weapon damage for 1 hour). You should stop making these around level 20.
 step
     .goto Dun Morogh,46.021,51.676
+.target Tharek Blackstone
+>>Talk to |cFF00FF25Tharek Blackstone|r
     .accept 400 >> Accept Tools for Steelgrill
 step
     #sticky
@@ -521,16 +557,24 @@ step
 step
 .goto Dun Morogh,49.426,48.410
     >>DON'T kill bears en route
+.target Pilot Bellowfiz
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .accept 317 >> Accept Stocking Jetsteam
 step
 #xprate <1.5
     .goto Dun Morogh,49.622,48.612
+.target Pilot Stonegear
+>>Talk to |cFF00FF25Pilot Stonegear|r
     .accept 313 >> Accept The Grizzled Den
 step
     .goto Dun Morogh,50.4,49.1
+.target Beldin Steelgrill
+>>Talk to |cFF00FF25Beldin Steelgrill|r
     .turnin 400 >> Turn in Tools for Steelgrill
 step
     .goto Dun Morogh,50.084,49.420
+.target Loslor Rudge
+>>Talk to |cFF00FF25Loslor Rudge|r
     .accept 5541 >> Accept Ammo for Rumbleshot
 step << Warrior/Paladin/Rogue
 .money <0.0087
@@ -589,7 +633,9 @@ step << !Paladin !Warrior !Rogue
 .complete 317,2 --Collect Thick Bear Fur (x2)
 step << !Paladin !Warrior !Rogue
     .goto Dun Morogh,49.426,48.410
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .turnin 317 >> Turn in Stocking Jetsteam
+.target Pilot Bellowfiz
     .accept 318 >> Accept Evershine
 step << Warrior
     .goto Dun Morogh,46.9,52.1,20,0
@@ -624,6 +670,8 @@ step
     #label BearFur
 .goto Dun Morogh,40.6,62.6,30,0
 .goto Dun Morogh,40.682,65.130
+.target Hegnar Rumbleshot
+>>Talk to |cFF00FF25Hegnar Rumbleshot|r
     .turnin 5541 >> Turn in Ammo for Rumbleshot
     .vendor >> Vendor and repair
 step
@@ -650,7 +698,9 @@ step << Paladin/Warrior/Rogue
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
 step << Warrior/Paladin/Rogue
     .goto Dun Morogh,49.426,48.410
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .turnin 317 >> Turn in Stocking Jetsteam
+.target Pilot Bellowfiz
     .accept 318 >> Accept Evershine
 step << Warrior/Paladin/Rogue
     .goto Dun Morogh,50.084,49.420
@@ -661,6 +711,8 @@ step << Warrior/Paladin/Rogue
 step << Warrior/Paladin/Rogue
     .isOnQuest 313
     .goto Dun Morogh,49.622,48.612
+.target Pilot Stonegear
+>>Talk to |cFF00FF25Pilot Stonegear|r
     .turnin 313 >> Turn in The Grizzled Den
 step << Warrior/Paladin/Rogue
     .xp 7 >> Grind to 7
@@ -687,12 +739,16 @@ step << Paladin/Warrior/Rogue
 .goto Dun Morogh,43.0,47.4,50,0
     .goto Dun Morogh,39.6,48.9,50,0
     .goto Dun Morogh,34.6,51.7
+.target Tundra MacGrann
+>>Talk to |cFF00FF25Tundra MacGrann|r
     .accept 312 >> Accept Tundra MacGrann's Stolen Stash
 step << !Paladin !Warrior !Rogue
 >>Grind some mobs en route
     .goto Dun Morogh,35.2,56.4,50,0
     .goto Dun Morogh,36.0,52.0,50,0
     .goto Dun Morogh,34.6,51.7
+.target Tundra MacGrann
+>>Talk to |cFF00FF25Tundra MacGrann|r
     .accept 312 >> Accept Tundra MacGrann's Stolen Stash
 step << !Mage !Priest
 .goto Dun Morogh,30.5,46.0
@@ -702,11 +758,15 @@ step << Priest/Mage/Shaman/Druid
     .vendor >> Vendor. Buy 10 level 5 drink
 step
 .goto Dun Morogh,30.2,45.8
+>>Talk to |cFF00FF25Rejold Barleybrew|r
     .turnin 318 >> Turn in Evershine
+.target Rejold Barleybrew
     .accept 319 >> Accept A Favor for Evershine
     .accept 315 >> Accept The Perfect Stout
 step
     .goto Dun Morogh,30.186,45.531
+.target Marleth Barleybrew
+>>Talk to |cFF00FF25Marleth Barleybrew|r
     .accept 310 >> Accept Bitter Rivals
 step
 #label BoarRibs2
@@ -731,7 +791,9 @@ step
 .complete 384,1 --Collect Crag Boar Rib (x6)
 step
 .goto Dun Morogh,30.189,45.725
+>>Talk to |cFF00FF25Rejold Barleybrew|r
     .turnin 319 >> Turn in A Favor for Evershine
+.target Rejold Barleybrew
     .accept 320 >> Accept Return to Bellowfiz
 step
 .xp 7+3735 >>Grind until 3735+/4500xp
@@ -785,6 +847,8 @@ step
     .accept 311 >> Accept Return to Marleth
 step
 .goto Dun Morogh,46.8,52.4
+.target Ragnar Thunderbrew
+>>Talk to |cFF00FF25Ragnar Thunderbrew|r
     .turnin 384 >> Turn in Beer Basted Boar Ribs
      >>Sell the recipe when you next vendor
 step
@@ -825,21 +889,31 @@ step << Priest/Mage/Shaman/Druid
     .vendor >> Buy as much level 5 drink as you can from the innkeeper
 step
     .goto Dun Morogh,46.726,53.826
+.target Senir Whitebeard
+>>Talk to |cFF00FF25Senir Whitebeard|r
     .accept 287 >> Accept Frostmane Hold
 step
 #xprate <1.5
     .goto Dun Morogh,49.622,48.612
+.target Pilot Stonegear
+>>Talk to |cFF00FF25Pilot Stonegear|r
     .turnin 313 >> Turn in The Grizzled Den
 step << !Rogue
     .goto Dun Morogh,49.426,48.410
+.target Pilot Bellowfiz
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .turnin 320 >> Turn in Return to Bellowfiz
 step << Rogue
     .goto Dun Morogh,49.426,48.410
     >>Choose the Camping Knife. Save it for later
+.target Pilot Bellowfiz
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .turnin 320 >> Turn in Return to Bellowfiz
 step
 #xprate <1.5
     .goto Dun Morogh,45.8,49.4
+.target Razzle Sprysprocket
+>>Talk to |cFF00FF25Razzle Sprysprocket|r
     .accept 412 >> Accept Operation Recombobulation
 step
 .goto Dun Morogh,43.1,45.0,20,0
@@ -864,6 +938,8 @@ step << Mage
     .complete 312,1 --Collect MacGrann's Dried Meats (x1)
 step
     .goto Dun Morogh,34.6,51.7
+.target Tundra MacGrann
+>>Talk to |cFF00FF25Tundra MacGrann|r
     .turnin 312 >> Turn in Tundra MacGrann's Stolen Stash
 step << Mage/Priest/Druid/Shaman
 .goto Dun Morogh,30.4,45.8
@@ -873,10 +949,14 @@ step << Warrior/Paladin/Rogue
 .vendor >> vendor trash
 step
     .goto Dun Morogh,30.189,45.725
+>>Talk to |cFF00FF25Rejold Barleybrew|r
     .turnin 315 >> Turn in The Perfect Stout
+.target Rejold Barleybrew
     .accept 413 >> Accept Shimmer Stout
 step
     .goto Dun Morogh,30.186,45.531
+.target Marleth Barleybrew
+>>Talk to |cFF00FF25Marleth Barleybrew|r
     .turnin 311 >> Turn in Return to Marleth
 step
 #xprate <1.5
@@ -911,11 +991,15 @@ step
 .deathskip >> Die and respawn at the Spirit Healer
 step
     .goto Dun Morogh,46.726,53.826
+>>Talk to |cFF00FF25Senir Whitebeard|r
     .turnin 287 >> Turn in Frostmane Hold
+.target Senir Whitebeard
     .accept 291 >> Accept The Reports
 step
 #xprate <1.5
     .goto Dun Morogh,45.8,49.4
+.target Razzle Sprysprocket
+>>Talk to |cFF00FF25Razzle Sprysprocket|r
     .turnin 412 >> Turn in Operation Recombobulation
 step << Warrior tbc
     #sticky
@@ -934,6 +1018,8 @@ step << Warrior tbc
 step
     .goto Dun Morogh,60.1,52.6,50,0
 .goto Dun Morogh,63.1,49.8
+.target Rudra Amberstill
+>>Talk to |cFF00FF25Rudra Amberstill|r
     .accept 314 >> Accept Protecting the Herd
 step
     #sticky
@@ -946,6 +1032,8 @@ step
     .complete 314,1 --Collect Fang of Vagash (x)
 step
     .goto Dun Morogh,63.1,49.8
+.target Rudra Amberstill
+>>Talk to |cFF00FF25Rudra Amberstill|r
     .turnin 314 >> Turn in Protecting the Herd
 step
     >>Grind a little en route
@@ -953,9 +1041,13 @@ step
     .vendor >>vendor trash
 step
     .goto Dun Morogh,68.7,56.0
+.target Senator Mehr Stonehallow
+>>Talk to |cFF00FF25Senator Mehr Stonehallow|r
     .accept 433 >> Accept The Public Servant
 step
     .goto Dun Morogh,69.084,56.330
+.target Foreman Stonebrow
+>>Talk to |cFF00FF25Foreman Stonebrow|r
     .accept 432 >> Accept Those Blasted Troggs!
 step
 .goto Dun Morogh,70.6,56.6,30,0
@@ -971,9 +1063,13 @@ step
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
     .goto Dun Morogh,69.084,56.330
+.target Foreman Stonebrow
+>>Talk to |cFF00FF25Foreman Stonebrow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
     .goto Dun Morogh,68.7,56.0
+.target Senator Mehr Stonehallow
+>>Talk to |cFF00FF25Senator Mehr Stonehallow|r
     .turnin 433 >> Turn in The Public Servant
 step
 .goto Dun Morogh,67.1,59.7,40,0
@@ -1007,6 +1103,8 @@ step << !NightElf !Draenei Priest tbc
 .train 594 >>Train Shadow Word: Pain r2
 step << Rogue tbc
     .goto Dun Morogh,47.6,52.5
+.target Hogral Bakkan
+>>Talk to |cFF00FF25Hogral Bakkan|r
     .accept 2218 >> Accept Road to Salvation
     .train 2983 >>Train Sprint
     .train 674 >>Train Dual Wield
@@ -1017,6 +1115,8 @@ step
     .goto Dun Morogh,81.2,42.7,15 >>Grind a bit en route, go inside the tunnel
 step
     .goto Dun Morogh,83.8,39.2
+.target Pilot Hammerfoot
+>>Talk to |cFF00FF25Pilot Hammerfoot|r
     .accept 419 >> Accept The Lost Pilot
 step
     >>Grind en route
@@ -1029,6 +1129,8 @@ step
     .complete 417,1 --Collect Mangy Claw (x1)
 step
     .goto Dun Morogh,83.892,39.188
+.target Pilot Hammerfoot
+>>Talk to |cFF00FF25Pilot Hammerfoot|r
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .isOnQuest 413
@@ -1041,17 +1143,23 @@ step
 step
     .isQuestTurnedIn 413
     .goto Dun Morogh,86.278,48.812
+.target Mountaineer Barleybrew
+>>Talk to |cFF00FF25Mountaineer Barleybrew|r
     .accept 414 >> Accept Stout to Kadrell
 step
     .isOnQuest 414
 .goto Dun Morogh,86.2,51.3,20 >>Go through the tunnel
 step << Mage/Rogue
     .goto Loch Modan,22.071,73.127
+.target Mountaineer Cobbleflint
+>>Talk to |cFF00FF25Mountaineer Cobbleflint|r
     .accept 224 >> Accept In Defense of the King's Lands
 step << Mage/Rogue
     .goto Loch Modan,22.6,75.4,30,0
 .goto Loch Modan,23.233,73.675
     >>Go into the bunker
+.target Captain Rugelfuss
+>>Talk to |cFF00FF25Captain Rugelfuss|r
     .accept 267 >> Accept The Trogg Threat
 step << Mage/Rogue
     .goto Loch Modan,30.0,68.4,30,0
@@ -1071,9 +1179,13 @@ step << Mage/Rogue
 step << Mage/Rogue
     .goto Loch Modan,29.9,68.2,30,0
     .goto Loch Modan,22.2,73.3
+.target Mountaineer Cobbleflint
+>>Talk to |cFF00FF25Mountaineer Cobbleflint|r
     .turnin 224 >> Turn in In Defense of the King's Lands
 step << Mage/Rogue
     .goto Loch Modan,23.233,73.675
+.target Captain Rugelfuss
+>>Talk to |cFF00FF25Captain Rugelfuss|r
     .turnin 267 >> Turn in The Trogg Threat
 step
     #completewith next
@@ -1084,6 +1196,8 @@ step << Mage
 step << Mage
 #xprate <1.5
     .goto Loch Modan,34.828,49.283
+.target Vidra Hearthstove
+>>Talk to |cFF00FF25Vidra Hearthstove|r
     .accept 418 >> Accept Thelsamar Blood Sausages
 step << Rogue tbc
     .goto Loch Modan,35.5,48.4
@@ -1100,7 +1214,9 @@ step << !Mage/wotlk
     .goto Loch Modan,37.2,46.1,40,0
     .goto Loch Modan,36.7,41.6,40,0
     >>Find Kadrell, he patrols along the main road
+>>Talk to |cFF00FF25Mountaineer Kadrell|r
     .turnin 414 >> Turn in Stout to Kadrell
+.target Mountaineer Kadrell
     .accept 1339 >> Accept Mountaineer Stormpike's Task << wotlk/Rogue
 step << Mage
 #xprate <1.5
@@ -1119,6 +1235,8 @@ step << Gnome/Dwarf
     >>Go inside the building, then go downstairs. Talk to Brock
     .goto Loch Modan,37.2,46.9,15,0
 .goto Loch Modan,37.019,47.806
+.target Brock Stoneseeker
+>>Talk to |cFF00FF25Brock Stoneseeker|r
     .accept 6387 >> Accept Honor Students
 step << Mage
 #xprate <1.5
@@ -1152,13 +1270,17 @@ step << Mage
 #xprate <1.5
     >>Upstairs
     .goto Loch Modan,24.7,18.3
+>>Talk to |cFF00FF25Mountaineer Stormpike|r
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+.target Mountaineer Stormpike
     .accept 307 >> Accept Filthy Paws
 step << Rogue/wotlk
 #xprate >1.499 << Mage
     >>Upstairs
     .goto Loch Modan,24.7,18.3
+>>Talk to |cFF00FF25Mountaineer Stormpike|r
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+.target Mountaineer Stormpike
     .accept 1338 >> Accept Stormpike's Order
 step << Mage
 #xprate <1.5
@@ -1211,8 +1333,10 @@ step << Mage
 step << Mage
 #xprate <1.5
     .goto Loch Modan,24.7,18.3
+>>Talk to |cFF00FF25Mountaineer Stormpike|r
     .turnin 307 >> Turn in Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+.target Mountaineer Stormpike
     .accept 1338 >> Accept Stormpike's Order << wotlk
 step << Mage
 #xprate <1.5
@@ -1289,10 +1413,14 @@ step << Mage
     .goto Loch Modan,36.7,41.6,40,0
     >>Find Kadrell, he patrols along the main road
     .goto Loch Modan,36.9,46.1
+.target Mountaineer Kadrell
+>>Talk to |cFF00FF25Mountaineer Kadrell|r
     .turnin 416 >> Turn in Rat Catching
 step << Mage
 #xprate <1.5
     .goto Loch Modan,34.828,49.283
+.target Vidra Hearthstove
+>>Talk to |cFF00FF25Vidra Hearthstove|r
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step << Mage
     .xp 12-420 <<tbc
@@ -1308,7 +1436,9 @@ step << Rogue
 step << Gnome/Dwarf
     .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
+>>Talk to |cFF00FF25Thorgrum Borrelson|r
     .turnin 6387 >> Turn in Honor Students
+.target Thorgrum Borrelson
     .accept 6391 >> Accept Ride to Ironforge
     .fly Ironforge >> Fly to Ironforge
 step << !Gnome !Dwarf
@@ -1317,12 +1447,16 @@ step << !Gnome !Dwarf
     .fly Ironforge >> Fly to Ironforge
 step << Gnome/Dwarf
     .goto Ironforge,51.521,26.311
+>>Talk to |cFF00FF25Golnir Bouldertoe|r
     .turnin 6391 >> Turn in Ride to Ironforge
+.target Golnir Bouldertoe
     .accept 6388 >> Accept Gryth Thurden
 step << Dwarf/Gnome
     >>do NOT fly anywhere
 .goto Ironforge,55.501,47.742
+>>Talk to |cFF00FF25Gryth Thurden|r
     .turnin 6388 >> Turn in Gryth Thurden
+.target Gryth Thurden
     .accept 6392 >> Accept Return to Brock << Rogue tbc
 step << Paladin
     .goto Ironforge,23.131,6.143
@@ -1337,6 +1471,8 @@ step << Mage
     .train 5505 >>Train Conjure Water r2
 step
     .goto Ironforge,39.550,57.490
+.target Senator Barin Redstone
+>>Talk to |cFF00FF25Senator Barin Redstone|r
     .turnin 291 >> Turn in The Reports
 step << Warrior/Rogue
     .goto Ironforge,62.0,88.8
@@ -1349,6 +1485,8 @@ step << Warrior
 step << Warrior
     .goto Ironforge,70.9,89.9
     >>Speak to Muren Stormpike
+.target Muren Stormpike
+>>Talk to |cFF00FF25Muren Stormpike|r
     .accept 1678 >>Accept Vejrek
 step << Warrior
     >>Head back to Dun Morogh
@@ -1356,20 +1494,28 @@ step << Warrior
     .complete 1678,1 --Vejrek's Head (1)
 step << Warrior
     .goto Ironforge,70.767,90.274
+>>Talk to |cFF00FF25Muren Stormpike|r
     .turnin 1678 >>Turn in Vejrek
+.target Muren Stormpike
     .accept 1680 >>Accept Tormus Deepforge
 step << Warrior
     .goto Ironforge,48.642,42.482
+.target Tormus Deepforge
+>>Talk to |cFF00FF25Tormus Deepforge|r
     .turnin 1680 >>Turn in Tormus Deepforge
 step << Rogue/wotlk
 .goto Ironforge,77.0,51.0,30 >>Enter the Deeprun Tram
 step << Rogue/wotlk
+.target Monty
+>>Talk to |cFF00FF25Monty|r
     .accept 6661 >> Accept Deeprun Rat Roundup
 step << Rogue/wotlk
     .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step << Rogue/wotlk
+>>Talk to |cFF00FF25Monty|r
     .turnin 6661 >> Turn in Deeprun Rat Roundup
+.target Monty
     .accept 6662 >> Accept Me Brother, Nipsy << Rogue/wotlk
 step << !Rogue tbc
     .goto Ironforge,55.501,47.742
@@ -1377,9 +1523,13 @@ step << !Rogue tbc
     .fly Menethil >> Fly to Menethil
 step << Rogue/wotlk
      >> Ride to the other side of the tram and turn in
+.target Nipsy
+>>Talk to |cFF00FF25Nipsy|r
     .turnin 6662 >> Turn in Me Brother, Nipsy
 step << Rogue/wotlk
     .goto StormwindClassic,58.1,16.5
+.target Furen Longbeard
+>>Talk to |cFF00FF25Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
     .isOnQuest 1338
 step << Rogue
@@ -1394,6 +1544,8 @@ step << Rogue tbc
 .hs >> Hearth to Thelsamar
 step << !NightElf Rogue tbc
     .goto Loch Modan,37.019,47.806
+.target Brock Stoneseeker
+>>Talk to |cFF00FF25Brock Stoneseeker|r
 .turnin 6392 >> Turn in Return to Brock
 step << Rogue tbc
     .goto Ironforge,55.501,47.742
@@ -1447,6 +1599,8 @@ step
     >>Delete your Hearthstone << tbc
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
+.target Sten Stoutarm
+>>Talk to |cFF00FF25Sten Stoutarm|r
     .accept 179 >> Accept Dwarven Outfitters
 step << tbc
     #sticky
@@ -1488,7 +1642,9 @@ step << tbc
 step
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
+>>Talk to |cFF00FF25Sten Stoutarm|r
     .turnin 179 >> Turn in Dwarven Outfitters
+.target Sten Stoutarm
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3115 >> Accept Tainted Memorandum
 step << tbc
@@ -1499,6 +1655,8 @@ step << tbc
 step
 #xprate <1.5
     .goto Dun Morogh,29.7,71.2
+.target Balir Frosthammer
+>>Talk to |cFF00FF25Balir Frosthammer|r
     .accept 170 >> Accept A New Threat
 step
 #xprate <1.5
@@ -1516,7 +1674,9 @@ step
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
 step
     .goto Dun Morogh,22.601,71.433
+>>Talk to |cFF00FF25Talin Keeneye|r
     .turnin 233 >> Turn in Coldridge Valley Mail Delivery
+.target Talin Keeneye
     .accept 183 >> Accept The Boar Hunter
     .accept 234 >> Accept Coldridge Valley Mail Delivery
 step
@@ -1532,11 +1692,15 @@ step
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
     .goto Dun Morogh,22.601,71.433
+.target Talin Keeneye
+>>Talk to |cFF00FF25Talin Keeneye|r
     .turnin 183 >> Turn in The Boar Hunter
 step
 #label Rockjaw
     .goto Dun Morogh,25.076,75.713
+>>Talk to |cFF00FF25Grelin Whitebeard|r
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
+.target Grelin Whitebeard
     .accept 182 >> Accept The Troll Cave
 step
 #xprate <1.5
@@ -1549,6 +1713,8 @@ step
     .xp 4 >> Grind to 4
 step
 .goto Dun Morogh,25.0,76.0
+.target Nori Pridedrift
+>>Talk to |cFF00FF25Nori Pridedrift|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
 >> Once accepted, a 5 minute timer will start. Relax and follow the guide
 step << wotlk
@@ -1559,13 +1725,19 @@ step
     #requires Troggs
     >>If you were too slow and failed the timed quest, go and pick it up again
     .goto Dun Morogh,25.0,76.0,0
+.target Nori Pridedrift
+>>Talk to |cFF00FF25Nori Pridedrift|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     .goto Dun Morogh,28.8,66.4
+.target Durnan Furcutter
+>>Talk to |cFF00FF25Durnan Furcutter|r
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
 step
     #requires Troggs
 .goto Dun Morogh,28.8,66.4
+>>Talk to |cFF00FF25Durnan Furcutter|r
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+.target Durnan Furcutter
     .accept 3365 >> Accept Bring Back the Mug
     .vendor >>vendor trash
 step
@@ -1573,10 +1745,14 @@ step
     >>Go upstairs
     .train 688 >> Train Summon Imp << wotlk
     .train 172 >>Train Corruption
+.target Alamar Grimm
+>>Talk to |cFF00FF25Alamar Grimm|r
     .turnin 3115 >> Turn in Tainted Memorandum
 step
 #xprate <1.5
     .goto Dun Morogh,29.7,71.2
+.target Balir Frosthammer
+>>Talk to |cFF00FF25Balir Frosthammer|r
     .turnin 170 >> Turn in A New Threat
 step << tbc
 .goto Dun Morogh,30.0,71.5
@@ -1593,10 +1769,14 @@ step
 .complete 182,1 --Kill Frostmane Troll Whelp (x14)
 step
     .goto Dun Morogh,25.0,76.0
+.target Nori Pridedrift
+>>Talk to |cFF00FF25Nori Pridedrift|r
     .turnin 3365 >> Turn in Bring Back the Mug
 step
     .goto Dun Morogh,25.076,75.713
+>>Talk to |cFF00FF25Grelin Whitebeard|r
     .turnin 182 >> Turn in The Troll Cave
+.target Grelin Whitebeard
     .accept 218 >> Accept The Stolen Journal
 step
     .goto Dun Morogh,26.8,79.9,30,0
@@ -1609,15 +1789,21 @@ step
 .goto Dun Morogh,26.8,79.6,20 >>Run back out the cave
 step
     .goto Dun Morogh,25.076,75.713
+>>Talk to |cFF00FF25Grelin Whitebeard|r
     .turnin 218 >> Turn in The Stolen Journal
+.target Grelin Whitebeard
     .accept 282 >> Accept Senir's Observations
 step
     >>Grind some mobs up to here
 .goto Dun Morogh,33.484,71.841
+>>Talk to |cFF00FF25Mountaineer Thalos|r
     .turnin 282 >> Turn in Senir's Observations
+.target Mountaineer Thalos
     .accept 420 >> Accept Senir's Observations
 step
     .goto Dun Morogh,33.9,72.2
+.target Hands Springsprocket
+>>Talk to |cFF00FF25Hands Springsprocket|r
     .accept 2160 >> Accept Supplies to Tannok
 step
 .goto Dun Morogh,34.1,71.6,20,0
@@ -1648,6 +1834,8 @@ step
     .zone Dun Morogh >> .
 step
 .goto Dun Morogh,46.726,53.826
+.target Senir Whitebeard
+>>Talk to |cFF00FF25Senir Whitebeard|r
     .turnin 420 >> Turn in Senir's Observations
 step
     .xp 6 >> Grind to 6
@@ -1664,6 +1852,8 @@ step
     .train 1454 >>Train Life Tap
 step
     .goto Dun Morogh,46.021,51.676
+.target Tharek Blackstone
+>>Talk to |cFF00FF25Tharek Blackstone|r
     .accept 400 >> Accept Tools for Steelgrill
 step
     #sticky
@@ -1673,16 +1863,24 @@ step
 step
 .goto Dun Morogh,49.426,48.410
     >>DON'T kill bears en route
+.target Pilot Bellowfiz
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .accept 317 >> Accept Stocking Jetsteam
 step
 #xprate <1.5
     .goto Dun Morogh,49.622,48.612
+.target Pilot Stonegear
+>>Talk to |cFF00FF25Pilot Stonegear|r
     .accept 313 >> Accept The Grizzled Den
 step
     .goto Dun Morogh,50.4,49.1
+.target Beldin Steelgrill
+>>Talk to |cFF00FF25Beldin Steelgrill|r
     .turnin 400 >> Turn in Tools for Steelgrill
 step
 .goto Dun Morogh,50.084,49.420
+.target Loslor Rudge
+>>Talk to |cFF00FF25Loslor Rudge|r
     .accept 5541 >> Accept Ammo for Rumbleshot
 step
     #sticky
@@ -1723,7 +1921,9 @@ step
 .complete 317,2 --Collect Thick Bear Fur (x2)
 step
     .goto Dun Morogh,49.426,48.410
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .turnin 317 >> Turn in Stocking Jetsteam
+.target Pilot Bellowfiz
     .accept 318 >> Accept Evershine
 step
     #sticky
@@ -1731,10 +1931,14 @@ step
     +If you weren't able to afford your skills before, go and buy them now
 step
     .goto Dun Morogh,46.8,52.4
+.target Ragnar Thunderbrew
+>>Talk to |cFF00FF25Ragnar Thunderbrew|r
     .accept 384 >> Accept Beer Basted Boar Ribs
 step
     #label supplies
 .goto Dun Morogh,47.217,52.195
+.target Tannok Frosthammer
+>>Talk to |cFF00FF25Tannok Frosthammer|r
     .turnin 2160 >> Turn in Supplies to Tannok
 step
 .goto Dun Morogh,47.4,52.5
@@ -1762,6 +1966,8 @@ step
 step
     .goto Dun Morogh,40.6,62.6,30,0
     .goto Dun Morogh,40.682,65.130
+.target Hegnar Rumbleshot
+>>Talk to |cFF00FF25Hegnar Rumbleshot|r
     .turnin 5541 >> Turn in Ammo for Rumbleshot
     .vendor >> Vendor and repair
 step
@@ -1771,17 +1977,23 @@ step
     .goto Dun Morogh,35.2,56.4,50,0
     .goto Dun Morogh,36.0,52.0,50,0
     .goto Dun Morogh,34.6,51.7
+.target Tundra MacGrann
+>>Talk to |cFF00FF25Tundra MacGrann|r
     .accept 312 >> Accept Tundra MacGrann's Stolen Stash
 step
 .goto Dun Morogh,30.5,46.0
     .vendor >> Vendor. Buy x10 level 5 drink from Kreg
 step
     .goto Dun Morogh,30.2,45.8
+>>Talk to |cFF00FF25Rejold Barleybrew|r
     .turnin 318 >> Turn in Evershine
+.target Rejold Barleybrew
     .accept 319 >> Accept A Favor for Evershine
     .accept 315 >> Accept The Perfect Stout
 step
     .goto Dun Morogh,30.186,45.531
+.target Marleth Barleybrew
+>>Talk to |cFF00FF25Marleth Barleybrew|r
     .accept 310 >> Accept Bitter Rivals
 step
 #label BoarRibs2
@@ -1806,7 +2018,9 @@ step
     .complete 384,1 --Collect Crag Boar Rib (x6)
 step
     .goto Dun Morogh,30.189,45.725
+>>Talk to |cFF00FF25Rejold Barleybrew|r
     .turnin 319 >> Turn in A Favor for Evershine
+.target Rejold Barleybrew
     .accept 320 >> Accept Return to Bellowfiz
 step
     .xp 7+3735 >>Grind until 3735+/4500xp
@@ -1858,6 +2072,8 @@ step
     .accept 311 >> Accept Return to Marleth
 step
     .goto Dun Morogh,46.8,52.4
+.target Ragnar Thunderbrew
+>>Talk to |cFF00FF25Ragnar Thunderbrew|r
     .turnin 384 >> Turn in Beer Basted Boar Ribs
      >>Sell the recipe when you next vendor
 step
@@ -1872,17 +2088,25 @@ step
     .train 5782 >>Train Fear
 step
     .goto Dun Morogh,46.726,53.826
+.target Senir Whitebeard
+>>Talk to |cFF00FF25Senir Whitebeard|r
     .accept 287 >> Accept Frostmane Hold
 step
 #xprate <1.5
     .goto Dun Morogh,49.622,48.612
+.target Pilot Stonegear
+>>Talk to |cFF00FF25Pilot Stonegear|r
     .turnin 313 >> Turn in The Grizzled Den
 step
     .goto Dun Morogh,49.426,48.410
+.target Pilot Bellowfiz
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .turnin 320 >> Turn in Return to Bellowfiz
 step
 #xprate <1.5
     .goto Dun Morogh,45.8,49.4
+.target Razzle Sprysprocket
+>>Talk to |cFF00FF25Razzle Sprysprocket|r
     .accept 412 >> Accept Operation Recombobulation
 step
     #completewith next
@@ -1904,16 +2128,22 @@ step
     .complete 312,1 --Collect MacGrann's Dried Meats (x1)
 step
     .goto Dun Morogh,34.6,51.7
+.target Tundra MacGrann
+>>Talk to |cFF00FF25Tundra MacGrann|r
     .turnin 312 >> Turn in Tundra MacGrann's Stolen Stash
 step << tbc
     .goto Dun Morogh,30.4,45.8
     .vendor >> Buy as much level 5 drink as you can afford
 step
     .goto Dun Morogh,30.189,45.725
+>>Talk to |cFF00FF25Rejold Barleybrew|r
     .turnin 315 >> Turn in The Perfect Stout
+.target Rejold Barleybrew
     .accept 413 >> Accept Shimmer Stout
 step
     .goto Dun Morogh,30.186,45.531
+.target Marleth Barleybrew
+>>Talk to |cFF00FF25Marleth Barleybrew|r
     .turnin 311 >> Turn in Return to Marleth
 step
 #xprate <1.5
@@ -1944,15 +2174,21 @@ step
     .deathskip >> Die and respawn at the Spirit Healer
 step
     .goto Dun Morogh,46.726,53.826
+>>Talk to |cFF00FF25Senir Whitebeard|r
     .turnin 287 >> Turn in Frostmane Hold
+.target Senir Whitebeard
     .accept 291 >> Accept The Reports
 step
 #xprate <1.5
     .goto Dun Morogh,45.8,49.4
+.target Razzle Sprysprocket
+>>Talk to |cFF00FF25Razzle Sprysprocket|r
     .turnin 412 >> Turn in Operation Recombobulation
 step
     .goto Dun Morogh,60.1,52.6,50,0
     .goto Dun Morogh,63.1,49.8
+.target Rudra Amberstill
+>>Talk to |cFF00FF25Rudra Amberstill|r
     .accept 314 >> Accept Protecting the Herd
 step
     #sticky
@@ -1965,6 +2201,8 @@ step
     .complete 314,1 --Collect Fang of Vagash (x)
 step
     .goto Dun Morogh,63.1,49.8
+.target Rudra Amberstill
+>>Talk to |cFF00FF25Rudra Amberstill|r
     .turnin 314 >> Turn in Protecting the Herd
 step
     >>Grind a little en route
@@ -1972,9 +2210,13 @@ step
     .vendor >>Vendor, buy x10 level 5 water/x5 level 5 food
 step
     .goto Dun Morogh,68.7,56.0
+.target Senator Mehr Stonehallow
+>>Talk to |cFF00FF25Senator Mehr Stonehallow|r
     .accept 433 >> Accept The Public Servant
 step
     .goto Dun Morogh,69.084,56.330
+.target Foreman Stonebrow
+>>Talk to |cFF00FF25Foreman Stonebrow|r
     .accept 432 >> Accept Those Blasted Troggs!
 step
 .goto Dun Morogh,70.6,56.6,30,0
@@ -1990,9 +2232,13 @@ step
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
 step
     .goto Dun Morogh,69.084,56.330
+.target Foreman Stonebrow
+>>Talk to |cFF00FF25Foreman Stonebrow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
 step
     .goto Dun Morogh,68.7,56.0
+.target Senator Mehr Stonehallow
+>>Talk to |cFF00FF25Senator Mehr Stonehallow|r
     .turnin 433 >> Turn in The Public Servant
 step
 .xp 10 >> Grind to 10
@@ -2000,6 +2246,8 @@ step
     .goto Dun Morogh,81.2,42.7,15 >>Grind a bit en route, go inside the tunnel
 step
     .goto Dun Morogh,83.8,39.2
+.target Pilot Hammerfoot
+>>Talk to |cFF00FF25Pilot Hammerfoot|r
     .accept 419 >> Accept The Lost Pilot
 step
     >>Grind en route
@@ -2012,6 +2260,8 @@ step
     .complete 417,1 --Collect Mangy Claw (x1)
 step
     .goto Dun Morogh,83.892,39.188
+.target Pilot Hammerfoot
+>>Talk to |cFF00FF25Pilot Hammerfoot|r
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     #completewith next
@@ -2020,18 +2270,24 @@ step
     .goto Dun Morogh,79.6,50.7,50,0
     .goto Dun Morogh,82.3,53.5,25,0
     .goto Dun Morogh,86.278,48.812
+>>Talk to |cFF00FF25Mountaineer Barleybrew|r
     .turnin 413 >> Turn in Shimmer Stout
+.target Mountaineer Barleybrew
     .accept 414 >> Accept Stout to Kadrell
 step
     #completewith next
     .goto Dun Morogh,86.2,51.3,20 >>Go through the tunnel
 step
     .goto Loch Modan,22.071,73.127
+.target Mountaineer Cobbleflint
+>>Talk to |cFF00FF25Mountaineer Cobbleflint|r
     .accept 224 >> Accept In Defense of the King's Lands
 step
     .goto Loch Modan,22.6,75.4,30,0
     .goto Loch Modan,23.233,73.675
     >>Go into the bunker
+.target Captain Rugelfuss
+>>Talk to |cFF00FF25Captain Rugelfuss|r
     .accept 267 >> Accept The Trogg Threat
 step << wotlk
     .goto Loch Modan,30.0,72.4,100,0
@@ -2046,9 +2302,13 @@ step << wotlk
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
 step << wotlk
     .goto Loch Modan,22.2,73.3
+.target Mountaineer Cobbleflint
+>>Talk to |cFF00FF25Mountaineer Cobbleflint|r
     .turnin 224 >> Turn in In Defense of the King's Lands
 step << wotlk
     .goto Loch Modan,23.233,73.675
+.target Captain Rugelfuss
+>>Talk to |cFF00FF25Captain Rugelfuss|r
     .turnin 267 >> Turn in The Trogg Threat
 step
     .goto Loch Modan,35.3,46.9,150 >>Run to Thelsamar
@@ -2058,6 +2318,8 @@ step << tbc
 step << tbc
 #xprate <1.5
     .goto Loch Modan,34.828,49.283
+.target Vidra Hearthstove
+>>Talk to |cFF00FF25Vidra Hearthstove|r
     .accept 418 >> Accept Thelsamar Blood Sausages
 step
     .goto Loch Modan,34.0,46.5
@@ -2070,13 +2332,17 @@ step
     .goto Loch Modan,37.2,46.1,40,0
     .goto Loch Modan,36.7,41.6,40,0
     >>Find Kadrell, he patrols along the main road
+>>Talk to |cFF00FF25Mountaineer Kadrell|r
     .turnin 414 >> Turn in Stout to Kadrell
+.target Mountaineer Kadrell
     .accept 416 >> Accept Rat Catching << tbc
     .accept 1339 >> Accept Mountaineer Stormpike's Task
 step
     >>Go inside the building, then go downstairs. Talk to Brock
     .goto Loch Modan,37.2,46.9,15,0
     .goto Loch Modan,37.019,47.806
+.target Brock Stoneseeker
+>>Talk to |cFF00FF25Brock Stoneseeker|r
     .accept 6387 >> Accept Honor Students
 step << tbc
     #sticky
@@ -2103,7 +2369,9 @@ step
 step
     >>Upstairs
     .goto Loch Modan,24.7,18.3
+>>Talk to |cFF00FF25Mountaineer Stormpike|r
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+.target Mountaineer Stormpike
     .accept 307 >> Accept Filthy Paws << tbc
     .accept 1338 >> Accept Stormpike's Order
 step
@@ -2112,20 +2380,28 @@ step
 step
     .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
+>>Talk to |cFF00FF25Thorgrum Borrelson|r
     .turnin 6387 >> Turn in Honor Students
+.target Thorgrum Borrelson
     .accept 6391 >> Accept Ride to Ironforge
     .fly Ironforge >> Fly to Ironforge
 step
     .goto Ironforge,51.521,26.311
+>>Talk to |cFF00FF25Golnir Bouldertoe|r
     .turnin 6391 >> Turn in Ride to Ironforge
+.target Golnir Bouldertoe
     .accept 6388 >> Accept Gryth Thurden
 step
     >>do NOT fly anywhere
 .goto Ironforge,55.501,47.742
+>>Talk to |cFF00FF25Gryth Thurden|r
     .turnin 6388 >> Turn in Gryth Thurden
+.target Gryth Thurden
     .accept 6392 >> Accept Return to Brock
 step
     .goto Ironforge,39.550,57.490
+.target Senator Barin Redstone
+>>Talk to |cFF00FF25Senator Barin Redstone|r
     .turnin 291 >> Turn in The Reports
 step
     #sticky
@@ -2135,18 +2411,26 @@ step
 step
 .goto Ironforge,77.0,51.0,30 >>Enter the Deeprun Tram
 step
+.target Monty
+>>Talk to |cFF00FF25Monty|r
     .accept 6661 >> Accept Deeprun Rat Roundup
 step
     .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step
+>>Talk to |cFF00FF25Monty|r
     .turnin 6661 >> Turn in Deeprun Rat Roundup
+.target Monty
     .accept 6662 >> Accept Me Brother, Nipsy
 step
      >> Ride to the other side of the tram and turn in
+.target Nipsy
+>>Talk to |cFF00FF25Nipsy|r
     .turnin 6662 >> Turn in Me Brother, Nipsy
 step
     .goto StormwindClassic,58.1,16.5
+.target Furen Longbeard
+>>Talk to |cFF00FF25Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
 step
     .goto StormwindClassic,62.5,62.3,30,0
@@ -2163,6 +2447,8 @@ step
     .goto StormwindClassic,27.2,78.1,10 >> Go into The Slaughtered Lamb
 step
     .goto StormwindClassic,25.2,78.5
+.target Gakin the Darkbinder
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
     .accept 1688 >> Accept Surena Caledon
     .train 1120 >>Train Drain Soul
     .train 6201 >> Train Create Healthstone
@@ -2176,6 +2462,8 @@ step
 step << tbc
 #xprate <1.5
     .goto Elwynn Forest,42.105,65.927
+.target Marshal Dughan
+>>Talk to |cFF00FF25Marshal Dughan|r
     .accept 62 >> Accept The Fargodeep Mine
 step << tbc
 #xprate <1.5
@@ -2189,13 +2477,19 @@ step << tbc
 #xprate <1.5
     >>On your close left as you go in
     .goto Elwynn Forest,43.283,65.721
+.target William Pestle
+>>Talk to |cFF00FF25William Pestle|r
     .accept 60 >> Accept Kobold Candles
 step << tbc
 #xprate <1.5
     .goto Elwynn Forest,42.1,67.3
+.target Remy "Two Times"
+>>Talk to |cFF00FF25Remy "Two Times"|r
     .accept 47 >> Accept Gold Dust Exchange
 step
 .goto Elwynn Forest,42.1,67.3
+.target Remy "Two Times"
+>>Talk to |cFF00FF25Remy "Two Times"|r
     .accept 40 >> Accept A Fishy Peril
 step << tbc
 #xprate <1.5
@@ -2234,6 +2528,8 @@ step << tbc
     .complete 47,1 --Collect Gold Dust (x10)
 step
     .goto Elwynn Forest,34.660,84.482
+.target Ma Stonefield
+>>Talk to |cFF00FF25Ma Stonefield|r
     .accept 88 >> Accept Princess Must Die!
 step
     .goto Elwynn Forest,24.6,78.2
@@ -2266,29 +2562,39 @@ step
 step
 .goto Elwynn Forest,42.105,65.927
     >>Choose the Staff. Equip it
+>>Talk to |cFF00FF25Marshal Dughan|r
     .turnin 176 >> Turn in Wanted:    "Hogger"
     .turnin 40 >> Turn in A Fishy Peril
+.target Marshal Dughan
     .accept 35 >> Accept Further Concerns
 step
     #sticky
     .isOnQuest 123
     .goto Elwynn Forest,42.105,65.927
+.target Marshal Dughan
+>>Talk to |cFF00FF25Marshal Dughan|r
     .turnin 123 >> Turn in The Collector, Skip followup
 step << tbc
 #xprate <1.5
     .goto Elwynn Forest,42.105,65.927
+>>Talk to |cFF00FF25Marshal Dughan|r
     .turnin 62 >> Turn in The Fargodeep Mine
+.target Marshal Dughan
     .accept 76 >> Accept The Jasperlode Mine
 step << tbc
 #xprate <1.5
     .goto Elwynn Forest,42.1,67.3
+.target Remy "Two Times"
+>>Talk to |cFF00FF25Remy "Two Times"|r
     .turnin 47 >> Turn in Gold Dust Exchange
 step
     .abandon 147 >> Abandon Manhunt
 step << tbc
 #xprate <1.5
     .goto Elwynn Forest,43.283,65.721
+>>Talk to |cFF00FF25William Pestle|r
     .turnin 60 >> Turn in Kobold Candles
+.target William Pestle
     .accept 61 >> Accept Shipment to Stormwind
 step
     #sticky
@@ -2315,9 +2621,13 @@ step
     .goto Elwynn Forest,61.8,54.0,40,0
     .goto Elwynn Forest,73.973,72.179
     >>Grind a bit en route to here
+.target Guard Thomas
+>>Talk to |cFF00FF25Guard Thomas|r
     .turnin 35 >> Turn in Further Concerns
 step << tbc
     #xprate <1.5
+.target Guard Thomas
+>>Talk to |cFF00FF25Guard Thomas|r
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
 step << tbc
@@ -2340,6 +2650,8 @@ step << tbc
 step << tbc
 #xprate <1.5
     .goto Elwynn Forest,81.382,66.112
+.target Supervisor Raelen
+>>Talk to |cFF00FF25Supervisor Raelen|r
     .accept 5545 >> Accept A Bundle of Trouble
 step << tbc
 #xprate <1.5
@@ -2377,11 +2689,15 @@ step << tbc
 step << tbc
 #xprate <1.5
     .goto Elwynn Forest,81.382,66.112
+.target Supervisor Raelen
+>>Talk to |cFF00FF25Supervisor Raelen|r
     .turnin 5545 >> Turn in A Bundle of Trouble
 step << tbc
 #xprate <1.5
     #label Bears
 .goto Elwynn Forest,79.457,68.789
+.target Sara Timberlain
+>>Talk to |cFF00FF25Sara Timberlain|r
     .accept 83 >> Accept Red Linen Goods
 step << tbc
 #xprate <1.5
@@ -2400,8 +2716,10 @@ step << tbc
 step << tbc
 #xprate <1.5
     .goto Elwynn Forest,73.973,72.179
+>>Talk to |cFF00FF25Guard Thomas|r
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
+.target Guard Thomas
     .accept 39 >> Accept Deliver Thomas' Report
 step << tbc
 #xprate <1.5
@@ -2436,6 +2754,8 @@ step
 step << tbc
 #xprate <1.5
     .goto Elwynn Forest,79.5,68.9
+.target Sara Timberlain
+>>Talk to |cFF00FF25Sara Timberlain|r
     .turnin 83 >> Turn in Red Linen Goods
 step << tbc
 #xprate <1.5
@@ -2452,15 +2772,21 @@ step
     .collect 6265,2 --Collect Soul Shard (x2)
 step
     .goto Redridge Mountains,17.4,69.6
+.target Guard Parker
+>>Talk to |cFF00FF25Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
 step
     .abandon 184 >> Abandon Furlbrow's Deed
 step
     >>Be careful of the mobs en route
     .goto Redridge Mountains,30.733,59.996
+.target Deputy Feldon
+>>Talk to |cFF00FF25Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls
 step
     .goto Redridge Mountains,29.30,53.60
+.target Shawn
+>>Talk to |cFF00FF25Shawn|r
     .accept 3741 >> Accept Hilary's Necklace
     .xp <12,1
 step
@@ -2478,6 +2804,8 @@ step
     .xp <12,1
 step
     .goto Redridge Mountains,29.20,53.60
+.target Hilary
+>>Talk to |cFF00FF25Hilary|r
     .turnin 3741 >> Turn in Hilary's Necklace
     .xp <12,1
 step
@@ -2491,6 +2819,8 @@ step << tbc
 #xprate <1.5
     >>Choose rockets. These have very good damage, and can be used for splitpulling
     .goto StormwindClassic,56.2,64.6
+.target Morgan Pestle
+>>Talk to |cFF00FF25Morgan Pestle|r
     .turnin 61 >> Turn in Shipment to Stormwind
 step
     #sticky
@@ -2504,7 +2834,9 @@ step
     .xp <12,1
 step
     .goto StormwindClassic,25.2,78.5
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
     .turnin 1688 >> Turn in Surena Caledon
+.target Gakin the Darkbinder
     .accept 1689 >> Accept The Binding
 step
     .goto StormwindClassic,25.2,80.7,12,0
@@ -2516,6 +2848,8 @@ step
 step
     .goto StormwindClassic,25.2,78.5
     >>Don't summon your voidwalker once you learn it
+.target Gakin the Darkbinder
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
     .turnin 1689 >> Turn in The Binding
 step
     .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to the Warlock trainers
@@ -2528,6 +2862,8 @@ step
     .turnin -39 >> Turn in Deliver Thomas' Report
 step
     .goto Elwynn Forest,34.660,84.482
+.target Ma Stonefield
+>>Talk to |cFF00FF25Ma Stonefield|r
     .turnin 88 >> Turn in Princess Must Die!
 step
     .abandon 59 >> Abandon Cloth and Leather Armor
@@ -2633,6 +2969,8 @@ step
     .vendor >>vendor and repair
 step
     .goto Loch Modan,24.7,18.3
+.target Mountaineer Stormpike
+>>Talk to |cFF00FF25Mountaineer Stormpike|r
     .turnin 307 >> Turn in Filthy Paws
 step
     .xp 13 >> Grind to 13
@@ -2704,14 +3042,20 @@ step
 .goto Loch Modan,36.7,41.6,40,0
     >>Find Kadrell, he patrols along the main road
 .goto Loch Modan,36.9,46.1
+.target Mountaineer Kadrell
+>>Talk to |cFF00FF25Mountaineer Kadrell|r
     .turnin 416 >> Turn in Rat Catching
 step
     >>Go inside the building
     .goto Loch Modan,37.2,46.9,15,0
     .goto Loch Modan,37.019,47.806
+.target Brock Stoneseeker
+>>Talk to |cFF00FF25Brock Stoneseeker|r
     .turnin 6392 >> Turn in Return to Brock
 step
     .goto Loch Modan,34.828,49.283
+.target Vidra Hearthstove
+>>Talk to |cFF00FF25Vidra Hearthstove|r
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
     .goto Loch Modan,30.0,68.4,30,0
@@ -2748,9 +3092,13 @@ step
 .xp 13+9200 >>Grind until 9200+/11000xp
 step
 .goto Loch Modan,22.2,73.3
+.target Mountaineer Cobbleflint
+>>Talk to |cFF00FF25Mountaineer Cobbleflint|r
     .turnin 224 >> Turn in In Defense of the King's Lands
 step
 .goto Loch Modan,23.233,73.675
+.target Captain Rugelfuss
+>>Talk to |cFF00FF25Captain Rugelfuss|r
     .turnin 267 >> Turn in The Trogg Threat
 step
     .xp 14 >>Grind to 14 at the troggs
@@ -2814,15 +3162,23 @@ step
 step
     >>Top floor of the Inn
 .goto Darkshore,37.0,44.1
+.target Wizbang Cranktoggle
+>>Talk to |cFF00FF25Wizbang Cranktoggle|r
     .accept 983 >> Accept Buzzbox 827
 step
     .goto Darkshore,38.8,43.4
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .accept 2118 >> Accept Plagued Lands
 step
     .goto Darkshore,39.3,43.4
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .accept 984 >> Accept How Big a Threat?
 step
     .goto Darkshore,36.621,45.594
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
 step
     .goto Darkshore,36.3,45.6
@@ -2861,12 +3217,18 @@ step
     .turnin 983 >> Turn in Buzzbox 827
 step
     .goto Darkshore,36.621,45.594
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 3524 >> Turn in Washed Ashore
 step
     .goto Darkshore,38.8,43.4
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2118 >> Turn in Plagued Lands
 step
     .goto Darkshore,39.3,43.4
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 984 >> Turn in How Big a Threat?
 step
     .goto Darkshore,36.621,45.594
@@ -2902,6 +3264,8 @@ step
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
     >>Speak to Sten Stoutarm
+.target Sten Stoutarm
+>>Talk to |cFF00FF25Sten Stoutarm|r
     .accept 179 >>Accept Dwarven Outfitters
 step
     .goto Dun Morogh,29.0,74.4
@@ -2909,13 +3273,17 @@ step
 step
     .goto Dun Morogh,29.93,71.20 << tbc
     .goto Dun Morogh,29.87,71.87 << wotlk
+>>Talk to |cFF00FF25Sten Stoutarm|r
     .turnin 179 >>Turn in Dwarven Outfitters
+.target Sten Stoutarm
     .accept 233 >>Accept Coldridge Valley Mail Delivery
     .accept 3108 >>Accept Etched Rune
 step
 #xprate <1.5
     .goto Dun Morogh,29.7,71.3
     >>Speak to Balir Frosthammer
+.target Balir Frosthammer
+>>Talk to |cFF00FF25Balir Frosthammer|r
     .accept 170 >>Accept A New Threat
 step
 #xprate <1.5
@@ -2934,7 +3302,9 @@ step
 step
     .goto Dun Morogh,22.601,71.433
     >>Speak to Talin Keeneye
+>>Talk to |cFF00FF25Talin Keeneye|r
     .turnin 233 >>Turn in Coldridge Valley Mail Delivery
+.target Talin Keeneye
     .accept 234 >>Accept Coldridge Valley Mail Delivery
     .accept 183 >>Accept The Boar Hunter
 step
@@ -2950,11 +3320,15 @@ step
     .complete 183,1 --Kill Small Crag Boar (x12)
 step
     .goto Dun Morogh,22.601,71.433
+.target Talin Keeneye
+>>Talk to |cFF00FF25Talin Keeneye|r
     .turnin 183 >>Turn in The Boar Hunter
 step
     .goto Dun Morogh,25.076,75.713
     >>Speak to Grelin Whitebeard
+>>Talk to |cFF00FF25Grelin Whitebeard|r
     .turnin 234 >>Turn in Coldridge Valley Mail Delivery
+.target Grelin Whitebeard
     .accept 182 >>Accept The Troll Cave
 step
 #completewith next
@@ -2976,6 +3350,8 @@ step
 step
     #requires Rockjaw
     .goto Dun Morogh,25.0,75.9
+.target Nori Pridedrift
+>>Talk to |cFF00FF25Nori Pridedrift|r
     .accept 3364 >>Accept Scalding Mornbrew Delivery
 step
     #completewith next
@@ -2984,19 +3360,27 @@ step
 #xprate <1.5
     .goto Dun Morogh,29.7,71.3
     >>Speak to Balir Frosthammer
+.target Balir Frosthammer
+>>Talk to |cFF00FF25Balir Frosthammer|r
     .turnin 170 >>Turn in A New Threat
 step
     .goto Dun Morogh,29.1,67.5
     >>Speak to Thorgas Grimson
+.target Thorgas Grimson
+>>Talk to |cFF00FF25Thorgas Grimson|r
     .turnin 3108 >>Turn in Etched Rune
         .train 1978 >> Train Serpent Sting
 step
     .goto Dun Morogh,28.8,66.5
     >>Speak to Durnan Furcutter
+>>Talk to |cFF00FF25Durnan Furcutter|r
     .turnin 3364 >>Turn in Scalding Mornbrew Delivery
+.target Durnan Furcutter
     .accept 3365 >>Accept Bring Back the Mug
 step
     .goto Dun Morogh,25.0,75.9
+.target Nori Pridedrift
+>>Talk to |cFF00FF25Nori Pridedrift|r
     .turnin 3365 >>Turn in Bring Back the Mug
 step
 #completewith next
@@ -3015,7 +3399,9 @@ step
     .goto Dun Morogh,25.076,75.713
 step
     .goto Dun Morogh,25.0,75.9
+>>Talk to |cFF00FF25Grelin Whitebeard|r
     .turnin 182 >>Turn in The Troll Cave
+.target Grelin Whitebeard
     .accept 218 >>Accept The Stolen Journal
 step
     .goto Dun Morogh,26.8,79.9,30,0
@@ -3028,16 +3414,22 @@ step
 .goto Dun Morogh,26.8,79.6,20 >>Run back out the cave
 step
     .goto Dun Morogh,25.076,75.713
+>>Talk to |cFF00FF25Grelin Whitebeard|r
     .turnin 218 >> Turn in The Stolen Journal
+.target Grelin Whitebeard
     .accept 282 >> Accept Senir's Observations
 step
     .goto Dun Morogh,33.484,71.841
     >>Speak to Mountaineer Thalos
+>>Talk to |cFF00FF25Mountaineer Thalos|r
     .turnin 282 >>Turn in Senir's Observations
+.target Mountaineer Thalos
     .accept 420 >>Accept Senir's Observations
 step
     .goto Dun Morogh,33.8,72.2
     >>Speak to Hands Springsprocket
+.target Hands Springsprocket
+>>Talk to |cFF00FF25Hands Springsprocket|r
     .accept 2160 >>Accept Supplies to Tannok
 step
 .goto Dun Morogh,34.1,71.6,20,0
@@ -3060,35 +3452,51 @@ step
 .zone Dun Morogh >> .
 step
 .goto Dun Morogh,46.726,53.826
+.target Senir Whitebeard
+>>Talk to |cFF00FF25Senir Whitebeard|r
     .turnin 420 >> Turn in Senir's Observations
 step
     .goto Dun Morogh,46.8,52.4
     >>Speak to Ragnar Thunderbrew
+.target Ragnar Thunderbrew
+>>Talk to |cFF00FF25Ragnar Thunderbrew|r
     .accept 384 >>Accept Beer Basted Boar Ribs
 step
     .goto Dun Morogh,47.217,52.195
     >>Speak to Tannok Frosthammer
+.target Tannok Frosthammer
+>>Talk to |cFF00FF25Tannok Frosthammer|r
     .turnin 2160 >>Turn in Supplies to Tannok
 step
     .goto Dun Morogh,46.021,51.676
     >>Speak to Tharek Blackstone
+.target Tharek Blackstone
+>>Talk to |cFF00FF25Tharek Blackstone|r
     .accept 400 >>Accept Tools for Steelgrill
 step
     .goto Dun Morogh,49.5,48.3
     >>Speak to Pilot Bellowfiz
+.target Pilot Bellowfiz
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .accept 317 >>Accept Stocking Jetsteam
 step
 #xprate <1.5
     .goto Dun Morogh,49.6,48.5
     >>Speak to Pilot Stonegear
+.target Pilot Stonegear
+>>Talk to |cFF00FF25Pilot Stonegear|r
     .accept 313 >>Accept The Grizzled Den
 step
     .goto Dun Morogh,50.084,49.420
     >>Speak to Loslor Rudge
+.target Loslor Rudge
+>>Talk to |cFF00FF25Loslor Rudge|r
     .accept 5541 >>Accept Ammo for Rumbleshot
 step
     .goto Dun Morogh,50.4,49.1
     >>Speak to Beldin Steelgrill
+.target Beldin Steelgrill
+>>Talk to |cFF00FF25Beldin Steelgrill|r
     .turnin 400 >>Turn in Tools for Steelgrill
 step
     #sticky
@@ -3130,7 +3538,9 @@ step
 step
     .goto Dun Morogh,49.426,48.410
     >>Speak to Pilot Bellowfiz
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .turnin 317 >>Turn in Stocking Jetsteam
+.target Pilot Bellowfiz
     .accept 318 >>Accept Evershine
 step
     .xp 6
@@ -3144,6 +3554,8 @@ step
 step
     .goto Dun Morogh,40.682,65.130
     >>Speak to Hegnar Rumbleshot
+.target Hegnar Rumbleshot
+>>Talk to |cFF00FF25Hegnar Rumbleshot|r
     .turnin 5541 >>Turn in Ammo for Rumbleshot
 step << Hunter
     .goto Dun Morogh,40.682,65.130
@@ -3172,6 +3584,8 @@ step
     .goto Dun Morogh,35.2,56.4,50,0
     .goto Dun Morogh,36.0,52.0,50,0
     .goto Dun Morogh,34.6,51.7
+.target Tundra MacGrann
+>>Talk to |cFF00FF25Tundra MacGrann|r
     .accept 312 >> Accept Tundra MacGrann's Stolen Stash
 step
     .goto Dun Morogh,38.5,54.0
@@ -3180,16 +3594,22 @@ step
     .complete 312,1 --MacGrann's Dried Meats (1)
 step
     .goto Dun Morogh,34.6,51.6
+.target Tundra MacGrann
+>>Talk to |cFF00FF25Tundra MacGrann|r
     .turnin 312 >>Turn in Tundra MacGrann's Stolen Stash
 step
     .goto Dun Morogh,30.2,45.8
     >>Speak to Rejold Barleybrew
+>>Talk to |cFF00FF25Rejold Barleybrew|r
     .turnin 318 >>Turn in Evershine
+.target Rejold Barleybrew
     .accept 319 >>Accept A Favor for Evershine
     .accept 315 >>Accept The Perfect Stout
 step
     .goto Dun Morogh,30.2,45.4
     >>Speak to Marleth Barleybrew
+.target Marleth Barleybrew
+>>Talk to |cFF00FF25Marleth Barleybrew|r
     .accept 310 >>Accept Bitter Rivals
     #label BoarRibs2
 step
@@ -3206,6 +3626,8 @@ step << Hunter
 step << Hunter
 #xprate <1.5
     .goto Dun Morogh,49.6,48.5
+.target Pilot Stonegear
+>>Talk to |cFF00FF25Pilot Stonegear|r
     .turnin 313 >>Turn in The Grizzled Den
 step
     .goto Dun Morogh,47.4,52.5
@@ -3223,9 +3645,13 @@ step
 step
     .goto Dun Morogh,46.9,52.4
     >>Speak to Ragnar Thunderbrew
+.target Ragnar Thunderbrew
+>>Talk to |cFF00FF25Ragnar Thunderbrew|r
     .turnin 384 >>Turn in Beer Basted Boar Ribs
 step
     .goto Dun Morogh,46.7,53.9
+.target Senir Whitebeard
+>>Talk to |cFF00FF25Senir Whitebeard|r
     .accept 287 >>Accept Frostmane Hold
 step << Hunter
     .goto Dun Morogh,45.810,53.039
@@ -3233,6 +3659,8 @@ step << Hunter
 step
     .goto Dun Morogh,63.1,49.8
     >>Speak to Rudra Amberstill
+.target Rudra Amberstill
+>>Talk to |cFF00FF25Rudra Amberstill|r
     .accept 314 >>Accept Protecting the Herd
 step
     #sticky
@@ -3245,10 +3673,14 @@ step
     .complete 314,1 --Collect Fang of Vagash (x)
 step
     .goto Dun Morogh,63.1,49.8
+.target Rudra Amberstill
+>>Talk to |cFF00FF25Rudra Amberstill|r
     .turnin 314 >> Turn in Protecting the Herd
 step
     .goto Dun Morogh,69.084,56.330
     >>Speak to Foreman Stonebrow
+.target Foreman Stonebrow
+>>Talk to |cFF00FF25Foreman Stonebrow|r
     .accept 432 >>Accept Those Blasted Troggs!
 step
     >>Kill Troggs
@@ -3257,6 +3689,8 @@ step
     .complete 432,1 --Rockjaw Skullthumper (6)
 step
     .goto Dun Morogh,69.1,56.4
+.target Foreman Stonebrow
+>>Talk to |cFF00FF25Foreman Stonebrow|r
     .turnin 432 >>Turn in Those Blasted Troggs!
 step
     .goto Dun Morogh,68.9,55.9
@@ -3266,6 +3700,8 @@ step
     .goto Dun Morogh,81.2,42.7,25 >>Grind a bit en route, go inside the tunnel
 step
     .goto Dun Morogh,83.8,39.2
+.target Pilot Hammerfoot
+>>Talk to |cFF00FF25Pilot Hammerfoot|r
     .accept 419 >> Accept The Lost Pilot
 step
     >>Grind en route
@@ -3278,6 +3714,8 @@ step
     .complete 417,1 --Collect Mangy Claw (x1)
 step
     .goto Dun Morogh,83.892,39.188
+.target Pilot Hammerfoot
+>>Talk to |cFF00FF25Pilot Hammerfoot|r
     .turnin 417 >> Turn in A Pilot's Revenge
 step << tbc
     #sticky
@@ -3295,6 +3733,8 @@ step << wotlk
 step
 #xprate <1.5
     .goto Dun Morogh,45.8,49.4
+.target Razzle Sprysprocket
+>>Talk to |cFF00FF25Razzle Sprysprocket|r
     .accept 412 >> Accept Operation Recombobulation
 step
 #completewith next
@@ -3309,8 +3749,12 @@ step
     .complete 315,1 --Collect Shimmerweed (x6)
 step
     .goto Dun Morogh,30.186,45.531
+.target Marleth Barleybrew
+>>Talk to |cFF00FF25Marleth Barleybrew|r
     .turnin 311 >>Turn in Return to Marleth
+>>Talk to |cFF00FF25Rejold Barleybrew|r
     .turnin 315 >>Turn in The Perfect Stout
+.target Rejold Barleybrew
     .accept 413 >>Accept Shimmer Stout << tbc
 step
     .goto Dun Morogh,31.5,38.9,40,0
@@ -3332,7 +3776,9 @@ step
 step
     .goto Dun Morogh,30.189,45.725
     >>Speak to Rejold Barleybrew
+>>Talk to |cFF00FF25Rejold Barleybrew|r
     .turnin 319 >>Turn in A Favor for Evershine
+.target Rejold Barleybrew
     .accept 320 >>Accept Return to Bellowfiz
 step
     #sticky
@@ -3380,20 +3826,28 @@ step << tbc
 step
     .goto Dun Morogh,46.7,53.7
     >>Speak to Senir Whitebeard
+>>Talk to |cFF00FF25Senir Whitebeard|r
     .turnin 287 >>Turn in Frostmane Hold
+.target Senir Whitebeard
     .accept 291 >>Accept The Reports
 step
 #xprate <1.5
     .goto Dun Morogh,45.9,49.4
     >>Speak to Razzle Sprysprocket
+.target Razzle Sprysprocket
+>>Talk to |cFF00FF25Razzle Sprysprocket|r
     .turnin 412 >>Turn in Operation Recombobulation
 step
     .goto Dun Morogh,49.4,48.3
     >>Speak to Pilot Bellowfiz
+.target Pilot Bellowfiz
+>>Talk to |cFF00FF25Pilot Bellowfiz|r
     .turnin 320 >>Turn in Return to Bellowfiz
 step
     .goto Dun Morogh,45.810,53.039
     >>Speak to Grif Wildheart
+.target Grif Wildheart
+>>Talk to |cFF00FF25Grif Wildheart|r
     .accept 6064 >>Accept Taming the Beast
 step
     .goto Dun Morogh,48.3,56.9
@@ -3401,7 +3855,9 @@ step
     .complete 6064,1 --Tame a Large Crag Boar (1)
 step
     .goto Dun Morogh,45.810,53.039
+>>Talk to |cFF00FF25Grif Wildheart|r
     .turnin 6064 >>Turn in Taming the Beast
+.target Grif Wildheart
     .accept 6084 >>Accept Taming the Beast
 step
     .goto Dun Morogh,49.4,59.4
@@ -3409,7 +3865,9 @@ step
     .complete 6084,1 --Tame a Snow Leopard (1)
 step
     .goto Dun Morogh,45.810,53.039
+>>Talk to |cFF00FF25Grif Wildheart|r
     .turnin 6084 >>Turn in Taming the Beast
+.target Grif Wildheart
     .accept 6085 >>Accept Taming the Beast
 step
     .goto Dun Morogh,50.4,59.7
@@ -3417,7 +3875,9 @@ step
     .complete 6085,1 --Tame an Ice Claw Bear (1)
 step
     .goto Dun Morogh,45.810,53.039
+>>Talk to |cFF00FF25Grif Wildheart|r
     .turnin 6085 >>Turn in Taming the Beast
+.target Grif Wildheart
     .accept 6086 >>Accept Training the Beast
 step << tbc
     #sticky
@@ -3448,6 +3908,8 @@ step << wotlk
     .fly Ironforge >> Fly to Ironforge
 step
     .goto Ironforge,39.6,56.9
+.target Senator Barin Redstone
+>>Talk to |cFF00FF25Senator Barin Redstone|r
     .turnin 291 >>Turn in The Reports
 step
     #sticky
@@ -3458,21 +3920,29 @@ step
 step
     .goto Ironforge,70.863,85.831
     >>Speak to Belia Thundergranite
+.target Belia Thundergranite
+>>Talk to |cFF00FF25Belia Thundergranite|r
     .turnin 6086 >>Turn in Training the Beast
 step
 #completewith next
 .goto Ironforge,77.0,51.0,20 >>Enter the Deeprun Tram
 step
     >>Speak to the gnome at the middle platform of the train station
+.target Monty
+>>Talk to |cFF00FF25Monty|r
     .accept 6661 >> Accept Deeprun Rat Roundup
 step
     .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step << wotlk
+>>Talk to |cFF00FF25Monty|r
     .turnin 6661 >> Turn in Deeprun Rat Roundup
+.target Monty
     .accept 6662 >> Accept Me Brother, Nipsy
 step << wotlk
      >> Ride to the other side of the tram and turn in
+.target Nipsy
+>>Talk to |cFF00FF25Nipsy|r
     .turnin 6662 >> Turn in Me Brother, Nipsy
 step << wotlk
     .zone Stormwind City >> Exit the tram into Stormwind

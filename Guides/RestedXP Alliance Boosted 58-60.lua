@@ -191,6 +191,10 @@ step << Druid
 step << skip
     #completewith bs1
     .goto StormwindClassic,78.0,18.2
+.target King Varian Wrynn
+.target Highlord Bolvar Fordragon
+>>Talk to |cFF00FF25Highlord Bolvar Fordragon|r
+-->>Talk to |cFF00FF25King Varian Wrynn|r
     .accept 6182 >>Accept The First and the Last
     >>There is a long scripted RP sequence part of the Onyxia attunement quest that makes Bolvar not able to interact with players for a few minutes, if that's the case, skip this step and try to get this quest later after finishing Burning Steppes
 step
@@ -239,7 +243,9 @@ step
     .accept 4186 >>Accept The True Masters
 step << skip
     .goto StormwindClassic,75.9,59.8
+>>Talk to |cFF00FF25Master Mathias Shaw|r
     .turnin 6182 >>Turn in The First and the Last
+.target Master Mathias Shaw
     .accept 6183 >>Accept Honor the Dead
     .turnin 6183 >>Turn in Honor the Dead
     .accept 6184 >>Accept Flint Shadowmore
@@ -269,17 +275,25 @@ step
     #completewith mark1
     .goto Western Plaguelands,42.9,84.6,0
     >>Speak to the Draenei NPC in Chillwind
+.target Anchorite Truuen
+>>Talk to |cFF00FF25Anchorite Truuen|r
     .accept 9474 >>Accept The Mark of the Lightbringer
     >>The quest giver is part of a long scripted RP sequence, if you can't find him skip this step
 step
     .goto Western Plaguelands,42.8,84.0
+.target Commander Ashlam Valorfist
+>>Talk to |cFF00FF25Commander Ashlam Valorfist|r
     .accept 5092 >>Accept Clear the Way
 step
     .goto Western Plaguelands,43.418,84.834
+.target Nathaniel Dumah
+>>Talk to |cFF00FF25Nathaniel Dumah|r
     .accept 5903 >>Accept A Plague Upon Thee
 step << skip
     .goto Western Plaguelands,43.7,84.5
+>>Talk to |cFF00FF25Flint Shadowmore|r
     .turnin 6184 >>Turn in Flint Shadowmore
+.target Flint Shadowmore
     .accept 6185 >>Accept The Eastern Plagues
 step
     #label mark1
@@ -287,6 +301,8 @@ step
     .fly Light's Hope Chapel >>Fly to Light's Hope Chapel
 step
     .goto Eastern Plaguelands,79.5,64.0
+.target Caretaker Alen
+>>Talk to |cFF00FF25Caretaker Alen|r
     .accept 6021 >>Accept Zaeldarr the Outcast
     .accept 5281 >>Accept The Restless Souls
 step << Hunter
@@ -304,7 +320,9 @@ step
     .complete 5903,1 --Collect Plagueland Termites (x100)
 step
     .goto Eastern Plaguelands,14.5,33.7
+>>Talk to |cFF00FF25Egan|r
     .turnin 5281 >>Turn in The Restless Souls
+.target Egan
     .accept 5282 >>Accept The Restless Souls
 step
     #completewith next
@@ -316,6 +334,8 @@ step
     #completewith tower
     .goto Western Plaguelands,42.9,84.6,0
     >>Speak to the Draenei NPC in Chillwind
+.target Anchorite Truuen
+>>Talk to |cFF00FF25Anchorite Truuen|r
     .accept 9474 >>Accept The Mark of the Lightbringer
     >>The quest giver is part of a long scripted RP sequence, if he's not at Chillwind just keep an eye for it while you quest through the zone
 step
@@ -325,19 +345,27 @@ step
 step
     .goto Western Plaguelands,49.19,78.64
     >>Speak to Marlene Redpath inside the house
+.target Marlene Redpath
+>>Talk to |cFF00FF25Marlene Redpath|r
     .accept 5142 >>Accept Little Pamela
 step
     .goto Western Plaguelands,42.8,84.0
+>>Talk to |cFF00FF25Commander Ashlam Valorfist|r
     .turnin 5092 >>Turn in Clear the Way
+.target Commander Ashlam Valorfist
     .accept 5097 >>Accept All Along the Watchtowers
     .accept 5215 >>Accept The Scourge Cauldrons
 step
     .goto Western Plaguelands,43.0,84.6
+>>Talk to |cFF00FF25High Priestess MacDonnell|r
     .turnin 5215 >>Turn in The Scourge Cauldrons
+.target High Priestess MacDonnell
     .accept 5216 >>Accept Target: Felstone Field
 step
     .goto Western Plaguelands,43.418,84.834
+>>Talk to |cFF00FF25Nathaniel Dumah|r
     .turnin 5903 >>Turn in A Plague Upon Thee
+.target Nathaniel Dumah
     .accept 5904 >>Accept A Plague Upon Thee
 step
     .goto Western Plaguelands,40.0,71.8
@@ -354,7 +382,9 @@ step
     .complete 5097,2 --Tower Two marked (1)
 step
     .goto Western Plaguelands,43.0,84.4
+>>Talk to |cFF00FF25High Priestess MacDonnell|r
     .turnin 5217 >>Turn in Return to Chillwind Camp
+.target High Priestess MacDonnell
     .accept 5219 >>Accept Target: Dalson's Tears
 step
     .goto Western Plaguelands,46.7,71.0
@@ -362,6 +392,8 @@ step
     .complete 5097,4 --Tower Four marked (1)
 step
     .goto Western Plaguelands,53.7,64.7
+.target Mulgris Deepriver
+>>Talk to |cFF00FF25Mulgris Deepriver|r
     .accept 4984 >>Accept The Wildlife Suffers Too
 step
 	#completewith Businessman
@@ -411,6 +443,8 @@ step
     .accept 6389 >>Accept A Plague Upon Thee
 step
     .goto Western Plaguelands,51.920,28.058
+.target Kirsta Deepshadow
+>>Talk to |cFF00FF25Kirsta Deepshadow|r
     .accept 6004 >>Accept Unfinished Business
 step
     .goto Western Plaguelands,52.0,44.3,70,0
@@ -426,7 +460,9 @@ step
     .complete 6004,4 --Scarlet Knight (2)
 step
     .goto Western Plaguelands,51.920,28.058
+>>Talk to |cFF00FF25Kirsta Deepshadow|r
     .turnin 6004 >>Turn in Unfinished Business
+.target Kirsta Deepshadow
     .accept 6023 >>Accept Unfinished Business
 step
 	#label Businessman
@@ -446,7 +482,9 @@ step
     .complete 6023,1 --Huntsman Radley (1)
 step
     .goto Western Plaguelands,52.0,28.1
+>>Talk to |cFF00FF25Kirsta Deepshadow|r
     .turnin 6023 >>Turn in Unfinished Business
+.target Kirsta Deepshadow
     .accept 6025 >>Accept Unfinished Business
 step
 	>>Run to the top of the tower in Hearthglen
@@ -454,6 +492,8 @@ step
     .complete 6025,1 --Overlook Hearthglen from a high vantage point (1)
 step
     .goto Western Plaguelands,52.0,28.1
+.target Kirsta Deepshadow
+>>Talk to |cFF00FF25Kirsta Deepshadow|r
     .turnin 6025 >>Turn in Unfinished Business
 step
     .goto Western Plaguelands,51.2,53.3,70,0
@@ -471,25 +511,37 @@ step
     .complete 5097,3 --Tower Three marked (1)
 step
     .goto Western Plaguelands,42.7,84.1
+>>Talk to |cFF00FF25Commander Ashlam Valorfist|r
     .turnin 5097 >>Turn in All Along the Watchtowers
+.target Commander Ashlam Valorfist
     .accept 5533 >>Accept Scholomance
 step
     .goto Western Plaguelands,42.69,83.90
+>>Talk to |cFF00FF25Alchemist Arbington|r
     .turnin 5533 >>Turn in Scholomance
+.target Alchemist Arbington
     .accept 5537 >>Accept Skeletal Fragments
 step
     .goto Western Plaguelands,42.94,84.42
+>>Talk to |cFF00FF25High Priestess MacDonnell|r
     .turnin 5220 >>Turn in Return to Chillwind Camp
+.target High Priestess MacDonnell
     .accept 5222 >>Accept Target: Writhing Haunt
 step
     .goto Western Plaguelands,42.94,84.42
+.target Anchorite Truuen
+>>Talk to |cFF00FF25Anchorite Truuen|r
     .turnin 9474 >>Turn in The Mark of the Lightbringer
     .isQuestComplete 9474
 step
     .goto Western Plaguelands,43.5,84.9
+.target Nathaniel Dumah
+>>Talk to |cFF00FF25Nathaniel Dumah|r
     .turnin 6389 >>Turn in A Plague Upon Thee
 step
     .goto Western Plaguelands,39.4,66.9
+.target Chromie
+>>Talk to |cFF00FF25Chromie|r
     .accept 4971 >>Accept A Matter of Time
 step
     #completewith next
@@ -510,7 +562,9 @@ step
     .accept 5223 >>Accept Return to Chillwind Camp
 step
     .goto Western Plaguelands,53.7,64.7
+>>Talk to |cFF00FF25Mulgris Deepriver|r
     .turnin 4984 >>Turn in The Wildlife Suffers Too
+.target Mulgris Deepriver
     .accept 4985 >>Accept The Wildlife Suffers Too
 step
     .goto Western Plaguelands,53.9,51.3
@@ -519,11 +573,15 @@ step
 	.unitscan Diseased Grizzly
 step
     .goto Western Plaguelands,53.7,64.7
+>>Talk to |cFF00FF25Mulgris Deepriver|r
     .turnin 4985 >>Turn in The Wildlife Suffers Too
+.target Mulgris Deepriver
     .accept 4986 >>Accept Glyphed Oaken Branch << !Shaman !Warlock !Paladin
 step
     .goto Western Plaguelands,42.908,84.496
+>>Talk to |cFF00FF25High Priestess MacDonnell|r
     .turnin 5223 >>Turn in Return to Chillwind Camp
+.target High Priestess MacDonnell
     .accept 5225 >>Accept Target: Gahrron's Withering
 step
     .goto Western Plaguelands,62.6,58.7
@@ -548,7 +606,9 @@ step << skip
     .complete 6185,1 --The Blightcaller Uncovered (1)
 step
     .goto Eastern Plaguelands,36.5,90.9
+>>Talk to |cFF00FF25Pamela Redpath|r
     .turnin 5142 >>Turn in Little Pamela
+.target Pamela Redpath
     .accept 5149 >>Accept Pamela's Doll
 step
 	#completewith next
@@ -565,7 +625,9 @@ step
     .complete 5149,1 --Pamela's Doll (1)
 step
     .goto Eastern Plaguelands,36.4,90.8
+>>Talk to |cFF00FF25Pamela Redpath|r
     .turnin 5149 >>Turn in Pamela's Doll
+.target Pamela Redpath
     .accept 5152 >>Accept Auntie Marlene
     .accept 5241 >>Accept in Uncle Carlin
 step
@@ -576,20 +638,30 @@ step
     .fly Chillwind Camp >>Fly to Chillwind Camp
 step
     .goto Western Plaguelands,42.908,84.496
+.target High Priestess MacDonnell
+>>Talk to |cFF00FF25High Priestess MacDonnell|r
     .turnin 5226 >>Turn in Return to Chillwind Camp
 step
     .goto Western Plaguelands,42.7,84.1
+.target Commander Ashlam Valorfist
+>>Talk to |cFF00FF25Commander Ashlam Valorfist|r
     .turnin 5237 >>Turn in Mission Accomplished!
 step
     .goto Western Plaguelands,42.7,83.8
+.target Alchemist Arbington
+>>Talk to |cFF00FF25Alchemist Arbington|r
     .turnin 5537 >>Turn in Skeletal Fragments
 step << skip
     .goto Western Plaguelands,43.6,84.4
+>>Talk to |cFF00FF25Flint Shadowmore|r
     .turnin 6185 >>Turn in The Eastern Plagues
+.target Flint Shadowmore
     .accept 6186 >>Accept The Blightcaller Cometh
 step
     .goto Western Plaguelands,49.1,78.5
+>>Talk to |cFF00FF25Marlene Redpath|r
     .turnin 5152 >>Turn in Auntie Marlene
+.target Marlene Redpath
     .accept 5153 >>Accept A Strange Historian
 step
     .goto Western Plaguelands,49.6,76.7
@@ -597,7 +669,9 @@ step
     .complete 5153,1 --Joseph's Wedding Ring (1)
 step
     .goto Western Plaguelands,39.46,66.90
+>>Talk to |cFF00FF25Chromie|r
     .turnin 4971 >>Turn in A Matter of Time
+.target Chromie
     .accept 4972 >>Accept Counting Out Time
     .turnin 5153 >>Turn in A Strange Historian
     .accept 5154 >>Accept The Annals of Darrowshire
@@ -618,8 +692,10 @@ step
     .complete 4972,1 --Andorhal Watch (5)
 step
     .goto Western Plaguelands,39.45,66.88
+>>Talk to |cFF00FF25Chromie|r
     .turnin 4972 >>Turn in Counting Out Time
     .turnin 5154 >>Turn in The Annals of Darrowshire
+.target Chromie
     .accept 5210 >>Accept Brother Carlin
 step
     .goto Western Plaguelands,42.9,85.0
@@ -627,11 +703,15 @@ step
 step
     .goto Eastern Plaguelands,81.51,59.81
     >>Speak to Carlin Redpath
+>>Talk to |cFF00FF25Carlin Redpath|r
     .turnin 5241 >>Turn in Uncle Carlin
     .turnin 5210 >>Turn in Brother Carlin
+.target Carlin Redpath
     .accept 5181 >>Accept Villains of Darrowshire
 step
     .goto Eastern Plaguelands,79.7,63.7
+.target Caretaker Alen
+>>Talk to |cFF00FF25Caretaker Alen|r
     .turnin 6021 >> Turn in Zaeldarr the Outcast
 step
     #completewith next
@@ -650,5 +730,7 @@ step
     .fly Stormwind >>Fly to Stormwind
 step << skip
     .goto StormwindClassic,77.9,18.2
+.target King Varian Wrynn
+>>Talk to |cFF00FF25King Varian Wrynn|r
     .turnin 6186 >>Turn in The Blightcaller Cometh
 ]])

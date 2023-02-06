@@ -505,15 +505,23 @@ step
 step
     #xprate <1.5
     >> Accept quest around Ratchet
+.target Sputtervalve
+>>Talk to |cFF00FF25Sputtervalve|r
     .accept 1483 >>Accept Ziz Fizziks
     .goto The Barrens,63.0,37.2
+.target Crane Operator Bigglefuzz
+>>Talk to |cFF00FF25Crane Operator Bigglefuzz|r
     .accept 959 >>Accept Trouble at the Docks
     .goto The Barrens,63.086,37.607
+.target Mebok Mizzyrix
+>>Talk to |cFF00FF25Mebok Mizzyrix|r
     .accept 865 >>Accept Raptor Horns
     .goto The Barrens,62.4,37.6
     .maxlevel 21
 step
     .goto The Barrens,62.4,37.6
+.target Mebok Mizzyrix
+>>Talk to |cFF00FF25Mebok Mizzyrix|r
     .accept 1069 >>Accept Deepmoss Spider Eggs
 step << Rogue
 	.goto The Barrens,65.0,45.4
@@ -524,10 +532,14 @@ step
     #xprate <1.5
     .maxlevel 21
     >>Run to the Crossroads
+.target Tonga Runetotem
+>>Talk to |cFF00FF25Tonga Runetotem|r
     .accept 870 >>Accept The Forgotten Pools
     .goto The Barrens,52.3,31.9
 step
     .goto The Barrens,51.9,31.6
+.target Mankrik
+>>Talk to |cFF00FF25Mankrik|r
     .accept 899 >>Accept Consumed by Hatred
     .accept 4921 >>Accept Lost in Battle
 step
@@ -552,12 +564,16 @@ step << !Shaman !Warrior
 step
     #xprate <1.5
     .goto The Barrens,51.5,30.1
+.target Apothecary Helbrim
+>>Talk to |cFF00FF25Apothecary Helbrim|r
     .accept 848 >> Accept Fungal Spores
     .maxlevel 21
 step
     #xprate <1.5
     >> Head west out of the Crossroads
     .goto The Barrens,45.4,28.4
+.target Regthar Deathgate
+>>Talk to |cFF00FF25Regthar Deathgate|r
     .accept 850 >> Accept Kolkar Leaders
     .maxlevel 21
 step
@@ -595,11 +611,15 @@ step
 step
     .isOnQuest 1061
     .goto The Barrens,35.3,27.9
+>>Talk to |cFF00FF25Seereth Stonebreak|r
     .turnin 1061 >> Turn in The Spirits of Stonetalon
+.target Seereth Stonebreak
     .accept 1062 >> Accept Goblin Invaders
 step
     #xprate <1.5
     .goto The Barrens,35.3,27.9
+.target Makaba Flathoof
+>>Talk to |cFF00FF25Makaba Flathoof|r
     .accept 6548 >> Accept Avenge My Village
     .maxlevel 21
 step
@@ -621,7 +641,9 @@ step
 step
     .goto The Barrens,35.2,27.8
     >> Head back to the quest giver in The Barrens
+>>Talk to |cFF00FF25Makaba Flathoof|r
     .turnin 6548 >> Turn in Avenge My Village
+.target Makaba Flathoof
     .accept 6629 >> Accept Kill Grundig Darkcloud
     .isOnQuest 6548
 step
@@ -630,11 +652,15 @@ step
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
 step << Warlock tbc
     .goto Stonetalon Mountains,73.2,95.1
+>>Talk to |cFF00FF25Ken'zigla|r
     .turnin 1510 >>Turn in News of Dogran
+.target Ken'zigla
     .accept 1511 >>Accept Ken'zigla's Draught
 step
     .goto Stonetalon Mountains,71.4,95.1
     >> Talk to Xen'Zilla in the hut
+.target Xen'Zilla
+>>Talk to |cFF00FF25Xen'Zilla|r
     .accept 6461 >> Accept Blood Feeders
 step
     #sticky
@@ -651,6 +677,8 @@ step
 step
     >>Start the Kaya Escort
     .goto Stonetalon Mountains,73.5,85.8
+.target Kaya Flathoof
+>>Talk to |cFF00FF25Kaya Flathoof|r
     .accept 6523 >> Accept Protect Kaya
     .isOnQuest 6629
 step
@@ -711,11 +739,15 @@ step
     #label spiderend
     >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,58.989,62.599
+.target Ziz Fizziks
+>>Talk to |cFF00FF25Ziz Fizziks|r
     .turnin 1483 >> Turn in Ziz Fizziks
     .isOnQuest 1483
 step
     >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,58.989,62.599
+.target Ziz Fizziks
+>>Talk to |cFF00FF25Ziz Fizziks|r
     .accept 1093 >> Accept Super Reaper 6000
 step
     #sticky
@@ -746,7 +778,9 @@ step
     .isOnQuest 1062
 step
     .goto Stonetalon Mountains,58.989,62.599
+>>Talk to |cFF00FF25Ziz Fizziks|r
     .turnin 1093 >> Turn in Super Reaper 6000
+.target Ziz Fizziks
     .accept 1094 >> Accept Further Instructions
 step
     #requires deepmossegg
@@ -755,10 +789,14 @@ step
 step
     .isOnQuest 870
     .goto The Barrens,52.2,31.9
+.target Tonga Runetotem
+>>Talk to |cFF00FF25Tonga Runetotem|r
     .turnin 870 >> Turn in The Forgotten Pools
 step
     .isQuestTurnedIn 870
     .goto The Barrens,52.2,31.9
+.target Tonga Runetotem
+>>Talk to |cFF00FF25Tonga Runetotem|r
     .accept 877 >> Accept The Stagnant Oasis
 step
     .goto The Barrens,52.3,31.9
@@ -767,11 +805,15 @@ step
     .isOnQuest 848
     >>Turning this in will start a timed quest. Log out here if you're going to be busy in the next 45+ minutes.
     .goto The Barrens,51.5,30.2
+.target Apothecary Helbrim
+>>Talk to |cFF00FF25Apothecary Helbrim|r
     .turnin 848 >> Turn in Fungal Spores
 step
     .isQuestTurnedIn 848
     >> Wait for the roleplay then accept the quest
     .goto The Barrens,51.5,30.2
+.target Apothecary Helbrim
+>>Talk to |cFF00FF25Apothecary Helbrim|r
     .accept 853 >> Accept Apothecary Zamah
 step
     .isOnQuest 853
@@ -823,21 +865,31 @@ step
 step
     #xprate <1.5
     .goto The Barrens,45.102,57.683
+.target Tatternack Steelforge
+>>Talk to |cFF00FF25Tatternack Steelforge|r
     .accept 893 >>Accept Weapons of Choice
     .maxlevel 25
 step
     .isOnQuest 883
     .goto The Barrens,44.7,59.1
+.target Jorn Skyseer
+>>Talk to |cFF00FF25Jorn Skyseer|r
     .turnin 883 >> Turn in Lakota'mani
 step
     .goto The Barrens,44.8,59.1
+.target Jorn Skyseer
+>>Talk to |cFF00FF25Jorn Skyseer|r
     .accept 1130 >> Accept Melor Sends Word
 step << Warlock tbc
     .goto The Barrens,44.6,59.3
+>>Talk to |cFF00FF25Grunt Logmar|r
     .turnin 1511 >>Turn in Ken'zigla's Draught
+.target Grunt Logmar
     .accept 1515 >>Accept Dogran's Captivity
 step
     .goto The Barrens,44.5,59.2
+.target Mangletooth
+>>Talk to |cFF00FF25Mangletooth|r
     .accept 878 >> Accept Tribes at War
 step
     .goto The Barrens,44.5,59.2
@@ -845,7 +897,9 @@ step
 step << Warlock tbc
     >>Kill Quillboars en route to here
     .goto The Barrens,43.305,47.885
+>>Talk to |cFF00FF25Grunt Dogran|r
     .turnin 1515 >>Turn in Dogran's Captivity
+.target Grunt Dogran
     .accept 1512 >>Accept Love's Gift
 step
     >>Kill a LOT of Quillboars. Prioritize Thornweavers, Water Seekers, and Geomancers where you can. Loot them for their tusks. Save the Blood Shards you get
@@ -879,7 +933,9 @@ step
     .unitscan Owatanka
 step
     .goto The Barrens,44.6,59.2
+>>Talk to |cFF00FF25Mangletooth|r
     .turnin 878 >> Turn in Tribes at War
+.target Mangletooth
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 	>> Use your Blood Shards on Spirit of the Wind
@@ -892,10 +948,14 @@ step
 step
     .isOnQuest 884
     .goto The Barrens,44.9,59.1
+.target Jorn Skyseer
+>>Talk to |cFF00FF25Jorn Skyseer|r
     .turnin 884 >> Turn in Owatanka
 step
 	.isOnQuest 883
         .goto The Barrens,44.9,59.1
+.target Jorn Skyseer
+>>Talk to |cFF00FF25Jorn Skyseer|r
     .turnin 883 >> Turn in Lakota'mani
 step << !Tauren
     #label tbroute
@@ -918,6 +978,8 @@ step << Tauren
 step << Druid
 	#completewith next
 	.goto Thunder Bluff,76.477,27.221
+.target Turak Runetotem
+>>Talk to |cFF00FF25Turak Runetotem|r
 	.accept 27 >>Accept A Lesson to Learn << tbc
 	.trainer >> Go and train your class spells
 step
@@ -928,12 +990,16 @@ step
     #label Zamah
     >>Talk to Clarice Foster
     .goto Thunder Bluff,27.5,24.7
+.target Clarice Foster
+>>Talk to |cFF00FF25Clarice Foster|r
     .accept 264 >> Accept Until Death Do Us Part
     .maxlevel 21
 step
     .isOnQuest 853
     .goto Thunder Bluff,23.0,20.9
     >> If you failed the Zamah quest, just abandon it
+.target Apothecary Zamah
+>>Talk to |cFF00FF25Apothecary Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
 step
     .isOnQuest 853
@@ -941,6 +1007,8 @@ step
 step
     #xprate <1.5
     .goto Thunder Bluff,23.0,20.9
+.target Apothecary Zamah
+>>Talk to |cFF00FF25Apothecary Zamah|r
     .accept 962 >> Accept Serpentbloom
     .maxlevel 21
 step << Tauren
@@ -950,10 +1018,14 @@ step << Tauren
 step
     .goto Thunder Bluff,61.538,80.919
     >> Head to Hunter's Rise
+>>Talk to |cFF00FF25Melor Stonehoof|r
     .turnin 1130 >> Turn in Melor Sends Word
+.target Melor Stonehoof
     .accept 1131 >> Accept Steelsnap
 step
     .goto Thunder Bluff,54.966,51.413
+.target Zangen Stonehoof
+>>Talk to |cFF00FF25Zangen Stonehoof|r
     .accept 1195 >> Accept The Sacred Flame
 step << !Tauren
     >>Go up the tower
@@ -966,15 +1038,21 @@ step
 step
     .isOnQuest 865
     .goto The Barrens,62.4,37.6
+.target Mebok Mizzyrix
+>>Talk to |cFF00FF25Mebok Mizzyrix|r
     .turnin 865 >> Turn in Raptor Horns
 step
     #xprate <1.5
     .isQuestTurnedIn 865
     .goto The Barrens,62.4,37.6
+.target Mebok Mizzyrix
+>>Talk to |cFF00FF25Mebok Mizzyrix|r
     .accept 1491 >>Accept Smart Drinks
 step
     #label ratchetanchor1
     .goto The Barrens,62.4,37.6
+.target Mebok Mizzyrix
+>>Talk to |cFF00FF25Mebok Mizzyrix|r
     .turnin 1069 >> Turn in Deepmoss Spider Eggs
 step
     #sticky
@@ -983,7 +1061,9 @@ step
     .destroy 5570 >> Destroy any leftover Deepmoss Spider Eggs
 step
     .goto The Barrens,63.0,37.2
+>>Talk to |cFF00FF25Sputtervalve|r
     .turnin 1094 >> Turn in Further Instructions
+.target Sputtervalve
     .accept 1095 >> Accept Further Instructions
 step
     #completewith next
@@ -991,6 +1071,8 @@ step
     .fly Crossroads >> Fly to Crossroads
 step
     .goto The Barrens,52.0,31.6
+.target Mankrik
+>>Talk to |cFF00FF25Mankrik|r
     .turnin 4921 >> Turn in Lost in Battle
     .turnin 899 >> Turn in Consumed by Hatred
 step
@@ -1000,6 +1082,8 @@ step
     .itemcount 5085,1
 step
     .goto The Barrens,52.2,31.9
+.target Tonga Runetotem
+>>Talk to |cFF00FF25Tonga Runetotem|r
     .turnin 877 >> Turn in The Stagnant Oasis
     .isOnQuest 877
 step
@@ -1014,6 +1098,8 @@ step
 step
     >>Go into the eye of the cave
     .goto Kalimdor,51.9,55.4
+.target Nalpak
+>>Talk to |cFF00FF25Nalpak|r
     .accept 1486 >>Accept Deviate Hides
     .isOnQuest 959
 step
@@ -1079,37 +1165,51 @@ step
     #requires Deviate
     >>Run back to the eye of the cave
     .goto Kalimdor,51.9,55.4
+.target Nalpak
+>>Talk to |cFF00FF25Nalpak|r
     .turnin 1486 >>Turn in Deviate Hides
     .isOnQuest 1486
 step
     >> Head back to the Kolkar outpost
     .goto The Barrens,45.4,28.4
+.target Regthar Deathgate
+>>Talk to |cFF00FF25Regthar Deathgate|r
     .turnin 850 >> Turn in Kolkar Leaders
     .isOnQuest 850
 step
     .isQuestComplete 1062
     >> Head towards Stonetalon. Talk to Seereth
     .goto The Barrens,35.3,27.8
+.target Seereth Stonebreak
+>>Talk to |cFF00FF25Seereth Stonebreak|r
     .turnin 1062 >> Turn in Goblin Invaders
 step
     .goto The Barrens,35.3,27.8
+.target Seereth Stonebreak
+>>Talk to |cFF00FF25Seereth Stonebreak|r
     .accept 1063 >> Accept The Elder Crone
     .isQuestTurnedIn 1062
 step
     .isOnQuest 6523
     >> Head towards Stonetalon
     .goto The Barrens,35.3,27.8
+.target Makaba Flathoof
+>>Talk to |cFF00FF25Makaba Flathoof|r
     .turnin 6629 >> Turn in Kill Grundig Darkcloud
     .turnin 6523 >> Turn in Protect Kaya
 step
     .isQuestTurnedIn 6523
     .goto The Barrens,35.3,27.8
+.target Makaba Flathoof
+>>Talk to |cFF00FF25Makaba Flathoof|r
     .accept 6401 >> Accept Kaya's Alive
 step
 	.goto Stonetalon Mountains,82.3,98.5,40 >>Run up to the mountain here
     .isOnQuest 6461
 step
     .goto Stonetalon Mountains,71.3,95.0
+.target Xen'Zilla
+>>Talk to |cFF00FF25Xen'Zilla|r
     .turnin 6461 >> Turn in Blood Feeders
     .isOnQuest 6461
 step
@@ -1117,6 +1217,8 @@ step
     .isOnQuest 1095
     >> Head to the goblin hut behind the hill
     .goto Stonetalon Mountains,58.989,62.599
+.target Ziz Fizziks
+>>Talk to |cFF00FF25Ziz Fizziks|r
     .turnin 1095 >> Turn in Further Instructions
 step << !Rogue
     #xprate <1.5
@@ -1124,6 +1226,8 @@ step << !Rogue
     >> Head up the side mountain path to your left once you reach Sun Rock
     .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
+.target Tsunaman
+>>Talk to |cFF00FF25Tsunaman|r
     .accept 6562 >> Accept Trouble in the Deeps
     .maxlevel 23
 step << Rogue
@@ -1131,9 +1235,13 @@ step << Rogue
     >> Head up the side mountain path to your left once you reach Sun Rock
     .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
+.target Tsunaman
+>>Talk to |cFF00FF25Tsunaman|r
     .accept 6562 >> Accept Trouble in the Deeps
 step
     .goto Stonetalon Mountains,47.2,61.1
+.target Maggran Earthbinder
+>>Talk to |cFF00FF25Maggran Earthbinder|r
     .turnin 6284 >> Turn in Arachnophobia
     .isOnQuest 6284
 step
@@ -1143,12 +1251,16 @@ step
     .maxlevel 23
 step
     .goto Stonetalon Mountains,47.5,58.3
+.target Tammra Windfield
+>>Talk to |cFF00FF25Tammra Windfield|r
     .turnin 6401 >> Turn in Kaya's Alive
     .isOnQuest 6401
 step
     .isOnQuest 1095
     >> Head back to the goblin hut behind the hill
     .goto Stonetalon Mountains,58.989,62.599
+.target Ziz Fizziks
+>>Talk to |cFF00FF25Ziz Fizziks|r
     .turnin 1095 >> Turn in Further Instructions
     .maxlevel 23
 step
@@ -1173,29 +1285,41 @@ step
 step
     #xprate <1.5
     .goto Ashenvale,11.8,34.7
+.target Karang Amakkar
+>>Talk to |cFF00FF25Karang Amakkar|r
     .accept 216 >> Accept Between a Rock and a Thistlefur
     .maxlevel 23
 step
     #xprate <1.5
     >> Talk to the trolls in the hut
     .goto Ashenvale,11.6,34.9
+.target Marukai
+>>Talk to |cFF00FF25Marukai|r
     .accept 6442 >> Accept Naga at the Zoram Strand
+.target Mitsuwa
+>>Talk to |cFF00FF25Mitsuwa|r
     .accept 6462 >> Accept Troll Charm
     .maxlevel 23
 step
     #xprate <1.5
     .isQuestComplete 6562
     .goto Ashenvale,11.6,34.3
+.target Je'neu Sancrea
+>>Talk to |cFF00FF25Je'neu Sancrea|r
     .turnin 6562 >> Turn in Trouble in the Deeps
 step
     #xprate <1.5
     .goto Ashenvale,11.6,34.3
+.target Je'neu Sancrea
+>>Talk to |cFF00FF25Je'neu Sancrea|r
     .accept 6563 >> Accept The Essence of Aku'Mai
     .maxlevel 23
 step
     #xprate <1.5
     >>Accepting this quest starts an escort. Follow him
     .goto Ashenvale,12.1,34.4
+.target Muglash
+>>Talk to |cFF00FF25Muglash|r
     .accept 6641 >> Accept Vorsha the Lasher
     .maxlevel 23
 step
@@ -1253,11 +1377,15 @@ step
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
     .goto Ashenvale,12.223,34.216
+.target Warsong Runner
+>>Talk to |cFF00FF25Warsong Runner|r
     .turnin 6641 >> Turn in Vorsha the Lasher
     .isQuestComplete 6641
 step
     #xprate <1.5
     .goto Ashenvale,11.6,34.3
+.target Je'neu Sancrea
+>>Talk to |cFF00FF25Je'neu Sancrea|r
     .turnin 6563 >> Turn in The Essence of Aku'Mai
     .isQuestComplete 6563
 step
@@ -1269,11 +1397,15 @@ step
 step
     #xprate <1.5
     .goto Ashenvale,11.6,34.3
+.target Je'neu Sancrea
+>>Talk to |cFF00FF25Je'neu Sancrea|r
     .turnin 6564 >> Turn in Allegiance to the Old Gods
     .isOnQuest 6564
 step
     #xprate <1.5
     .goto Ashenvale,11.689,34.905
+.target Marukai
+>>Talk to |cFF00FF25Marukai|r
     .turnin 6442 >> Turn in Naga at the Zoram Strand
     .isQuestComplete 6442
 step << Druid tbc
@@ -1285,7 +1417,9 @@ step << Druid tbc
     .cast 18960 >> Use the spell Teleport: Moonglade once your hearthstone is available
     >>Go Upstairs
     .goto Moonglade,56.209,30.636
+>>Talk to |cFF00FF25Dendrite Starblaze|r
     .turnin 27 >>Turn in A Lesson to Learn
+.target Dendrite Starblaze
     .accept 28 >>Accept Trial of the Lake
 step << Druid tbc
 	#completewith next
@@ -1302,7 +1436,9 @@ step << Druid tbc
     .complete 28,1 --Complete the Trial of the Lake. (1)
 step << Druid tbc
     .goto Moonglade,36.517,40.104
+>>Talk to |cFF00FF25Tajarri|r
     .turnin 28 >>Turn in Trial of the Lake
+.target Tajarri
     .accept 30 >>Accept Trial of the Sea Lion
 step
     #completewith next
@@ -1317,28 +1453,38 @@ step
 step
     .isOnQuest 1063
     .goto Thunder Bluff,69.851,30.910
+>>Talk to |cFF00FF25Magatha Grimtotem|r
     .turnin 1063 >> Turn in The Elder Crone
     >> Wait for the roleplay to finish
+.target Magatha Grimtotem
     .accept 1064 >> Accept Forsaken Aid
 step
     .isOnQuest 1064
     >> Head to the pools under the Spirit Rise
     .goto Thunder Bluff,22.9,21.1
+>>Talk to |cFF00FF25Apothecary Zamah|r
     .turnin 1064 >> Turn in Forsaken Aid
+.target Apothecary Zamah
     .accept 1065 >> Accept Journey to Tarren Mill
 step
     .isOnQuest 1489
     .goto Thunder Bluff,78.4,28.4
+>>Talk to |cFF00FF25Arch Druid Hamuul Runetotem|r
     .turnin 1489 >> Turn in Hamuul Runetotem
+.target Arch Druid Hamuul Runetotem
     .accept 1490 >> Accept Nara Runetotem
 step
     .isQuestTurnedIn 1489
     .goto Thunder Bluff,75.6,31.2
+.target Nara Wildmane
+>>Talk to |cFF00FF25Nara Wildmane|r
     .turnin 1490 >> Turn in Nara Runetotem
 step
     .isOnQuest 962
     >> Head to the pools under the Spirit Rise
     .goto Thunder Bluff,22.9,21.1
+.target Apothecary Zamah
+>>Talk to |cFF00FF25Apothecary Zamah|r
     .turnin 962 >> Turn in Serpentbloom
 step << Tauren wotlk
     .money <5.00
@@ -1357,10 +1503,14 @@ step
     #label troubleatdocks1
     .isOnQuest 959
     .goto The Barrens,63.086,37.607
+.target Crane Operator Bigglefuzz
+>>Talk to |cFF00FF25Crane Operator Bigglefuzz|r
     .turnin 959 >>Turn in Trouble at the Docks
 step
     .isOnQuest 1491
     .goto The Barrens,62.4,37.6
+.target Mebok Mizzyrix
+>>Talk to |cFF00FF25Mebok Mizzyrix|r
     .turnin 1491 >>Turn in Smart Drinks
 step << Druid tbc
     >>Loot the gray chest underwater
@@ -1419,6 +1569,8 @@ step << Priest
     .trainer >> Go and train your class spells
 step << Rogue tbc
     .goto Orgrimmar,43.050,53.737
+.target Shenthul
+>>Talk to |cFF00FF25Shenthul|r
     .accept 2460 >>Accept The Shattered Salute
 step << Rogue tbc
     >>Target Shenthul and type /salute
@@ -1426,7 +1578,9 @@ step << Rogue tbc
     .complete 2460,1 --Shattered Salute Performed (1)
 step << Rogue
     .goto Orgrimmar,43.050,53.737
+>>Talk to |cFF00FF25Shenthul|r
     .turnin 2460 >>Turn in The Shattered Salute << tbc
+.target Shenthul
     .accept 2458 >>Accept Deep Cover << tbc
     .train 1725 >>Train Distract
     .train 1856 >>Train Vanish
@@ -1444,7 +1598,9 @@ step << Rogue tbc
     .use 8051 >>Use the Flare Gun when you're about 50 yards from Taskmaster Fizzule. Then /salute him. Speak to him when he turns friendly
 	.emote SALUTE,7233
 .goto The Barrens,55.4,5.6
+>>Talk to |cFF00FF25Taskmaster Fizzule|r
     .turnin 2458 >>Turn in Deep Cover
+.target Taskmaster Fizzule
     .accept 2478 >>Mission: Possible But Not Probable
 step << Rogue tbc
 	.cast 5967 >>Stealth and pickpocket Silixiz for his Tower Key. Make you hug the tower wall as much as possible then go behind him to pickpocket him. If he says something, back up, then approach from a different angle to try to pickpocket him again. Do NOT kill him
@@ -1478,11 +1634,15 @@ step << Rogue tbc
 step << Rogue tbc
 	>>You're now going to get a week long debuff making you unable to use stealth. Simply continue following the route.
 	.goto Orgrimmar,43.050,53.737
+>>Talk to |cFF00FF25Shenthul|r
     .turnin 2478 >>Turn in Mission: Possible But Not Probable
+.target Shenthul
     .accept 2479 >>Accept Hinott's Assistance
 step << Warlock tbc
     .goto Orgrimmar,48.246,45.281
+>>Talk to |cFF00FF25Gan'rul Bloodeye|r
     .turnin 1512 >>Turn in Love's Gift
+.target Gan'rul Bloodeye
     .accept 1513 >>Accept The Binding
 step << Warlock tbc
     .use 6626 >>Use Dogran's Pendant to summon the Succubus at the circle in the building. Kill her
@@ -1491,6 +1651,8 @@ step << Warlock tbc
 step << Warlock tbc
     >>Use the Succubus from now on
     .goto Orgrimmar,48.246,45.281
+.target Gan'rul Bloodeye
+>>Talk to |cFF00FF25Gan'rul Bloodeye|r
     .turnin 1513 >>Turn in The Binding
     .isQuestComplete 1513
 step << Warlock
@@ -1556,6 +1718,8 @@ step
 step
     .isOnQuest 3301
     .goto Silverpine Forest,43.0,42.0
+.target Mura Runetotem
+>>Talk to |cFF00FF25Mura Runetotem|r
     .turnin 3301 >> Turn in Mara Runetotem
 step
     >>Click the stone grave on the ground
@@ -2381,7 +2545,11 @@ step
     #xprate >1.499
 	.goto Hillsbrad Foothills,62.4,20.3
     #requires humanskull
+.target High Executor Darthalia
+>>Talk to |cFF00FF25High Executor Darthalia|r
     .turnin 529 >> Turn in Battle of Hillsbrad
+.target Deathguard Samsa
+>>Talk to |cFF00FF25Deathguard Samsa|r
     .turnin 546 >> Turn in Souvenirs of Death
 step << Druid
 #completewith next
@@ -2395,7 +2563,9 @@ step << Druid tbc
 step << Druid tbc
     >>Go Upstairs
     .goto Moonglade,56.209,30.636
+>>Talk to |cFF00FF25Dendrite Starblaze|r
     .turnin 30 >>Turn in Trial of the Sea Lion
+.target Dendrite Starblaze
     .accept 31 >>Accept Aquatic Form
 step
 	#completewith next
@@ -2420,13 +2590,17 @@ step
     #xprate >1.099
     >>In the pools below the Spirit Rise
 	.goto Thunder Bluff,23.1,21.0
+.target Apothecary Zamah
+>>Talk to |cFF00FF25Apothecary Zamah|r
     .turnin 1067 >> Turn in Return to Thunder Bluff
     .isOnQuest 1067
 step
     #xprate <1.1
     >>In the pools below the Spirit Rise
 	.goto Thunder Bluff,23.1,21.0
+>>Talk to |cFF00FF25Apothecary Zamah|r
     .turnin 1067 >> Turn in Return to Thunder Bluff
+.target Apothecary Zamah
     .accept 1086 >> Accept The Flying Machine Airport
     .isOnQuest 1067
 step << Priest
@@ -2446,13 +2620,19 @@ step << Tauren wotlk
 step << Warrior
     >>In the building
 	.goto The Barrens,44.7,59.4
+>>Talk to |cFF00FF25Ruga Ragetotem|r
 	.turnin 1823 >>Turn in Speak with Ruga
+.target Ruga Ragetotem
     .accept 1824 >>Accept Trial at the Field of Giants
 step
     .maxlevel 28
     >> Speak to Mangletooth in the cage then pickup Weapons of Choice from Tatternack if you didn't grab it last time
+.target Mangletooth
+>>Talk to |cFF00FF25Mangletooth|r
     .accept 879 >> Accept Betrayal from Within
     .goto The Barrens,44.6,59.2
+.target Tatternack Steelforge
+>>Talk to |cFF00FF25Tatternack Steelforge|r
     .accept 893 >> Accept Weapons of Choice
     .goto The Barrens,45.0,57.6
 step
@@ -2478,6 +2658,8 @@ step << Warrior
 step << Warrior
     #xprate <1.5
     .goto The Barrens,44.7,59.4
+.target Ruga Ragetotem
+>>Talk to |cFF00FF25Ruga Ragetotem|r
     .accept 1825 >>Accept Speak with Thun'grim
 step
     #sticky
@@ -2492,13 +2674,17 @@ step
     .unitscan Washte Pawne
 step << Shaman
 	.goto The Barrens,43.4,77.4
+>>Talk to |cFF00FF25Brine|r
 	.turnin 1536 >>Turn in Call of Water
+.target Brine
 	.accept 1534 >>Accept Call of Water
 step
     .goto The Barrens,46.0,76.2,50,0
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
     .goto The Barrens,46.0,81.2,50,0
+.target Gann Stonespire
+>>Talk to |cFF00FF25Gann Stonespire|r
     .accept 843 >> Accept Gann's Reclamation. He patrols along the road.
     .unitscan Gann Stonespire
     .maxlevel 28
@@ -2572,12 +2758,16 @@ step
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
     >> Find Gann on the road again
+.target Gann Stonespire
+>>Talk to |cFF00FF25Gann Stonespire|r
     .turnin 843 >> Turn in Gann's Reclamation
 step
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
+.target Gann Stonespire
+>>Talk to |cFF00FF25Gann Stonespire|r
     .accept 846 >> Accept Revenge of Gann
 step
     >>Kill mobs and loot them for Revenge of Gann
@@ -2601,6 +2791,8 @@ step
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
     >> Find Gann on the road again
+.target Gann Stonespire
+>>Talk to |cFF00FF25Gann Stonespire|r
     .turnin 846 >> Turn in Revenge of Gann
     .unitscan Gann Stonespire
 step
@@ -2609,6 +2801,8 @@ step
     .goto The Barrens,46.0,76.2,50,0
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
+.target Gann Stonespire
+>>Talk to |cFF00FF25Gann Stonespire|r
     .accept 849 >> Accept Revenge of Gann
 step
     .isOnQuest 849
@@ -2631,30 +2825,42 @@ step
     .goto The Barrens,46.0,81.2,50,0
     .goto The Barrens,46.0,76.2,50,0
     >> Find Gann once more
+.target Gann Stonespire
+>>Talk to |cFF00FF25Gann Stonespire|r
     .turnin 849 >> Turn in Revenge of Gann
     .unitscan Gann Stonespire
 step
     .goto The Barrens,44.6,59.2
     >> Talk to Mangletooth in the cage
     .isOnQuest 879
+>>Talk to |cFF00FF25Mangletooth|r
     .turnin 879 >> Turn in Betrayal from Within
+.target Mangletooth
     .accept 906 >> Accept Betrayal from Within
 step
     .goto The Barrens,45.102,57.683
     .isOnQuest 893
+>>Talk to |cFF00FF25Tatternack Steelforge|r
     .turnin 893 >> Turn in Weapons of Choice
+.target Tatternack Steelforge
     .accept 1153 >> Accept A New Ore Sample
 step
     .isOnQuest 885
     .goto The Barrens,44.9,59.1
+.target Jorn Skyseer
+>>Talk to |cFF00FF25Jorn Skyseer|r
     .turnin 885 >> Turn in Washte Pawne
 step
     .isOnQuest 884
     .goto The Barrens,44.9,59.1
+.target Jorn Skyseer
+>>Talk to |cFF00FF25Jorn Skyseer|r
     .turnin 884 >> Turn in Owatanka
 step
     .isOnQuest 883
     .goto The Barrens,44.9,59.1
+.target Jorn Skyseer
+>>Talk to |cFF00FF25Jorn Skyseer|r
     .turnin 883 >> Turn in Lakota'mani
 step
     .goto The Barrens,51.5,30.3
@@ -2662,8 +2868,9 @@ step
 step
     .isOnQuest 906
     .goto The Barrens,51.5,30.9
+.target Thork
+>>Talk to |cFF00FF25Thork|r
     .turnin 906 >> Turn in Betrayal from Within
-
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2681,19 +2888,29 @@ step
     .fly Sun Rock >> Fly to Stonetalon Mountains
 step
     .goto Stonetalon Mountains,45.90,60.40
+.target Braelyn Firehand
+>>Talk to |cFF00FF25Braelyn Firehand|r
     .accept 1087 >> Accept Cenarius' Legacy
 step
     .goto Stonetalon Mountains,47.30,64.30
+.target Tsunaman
+>>Talk to |cFF00FF25Tsunaman|r
     .accept 6393 >> Accept Elemental War
 step
     .goto Stonetalon Mountains,47.40,58.40
+.target Tammra Windfield
+>>Talk to |cFF00FF25Tammra Windfield|r
     .accept 6301 >> Accept Cycle of Rebirth
 step
     .goto Stonetalon Mountains,47.30,61.10
+.target Maggran Earthbinder
+>>Talk to |cFF00FF25Maggran Earthbinder|r
     .accept 5881 >> Accept Calling in the Reserves
     .accept 6282 >> Accept Harpies Threaten
 step
     .goto Stonetalon Mountains,59.00,62.60
+.target Ziz Fizziks
+>>Talk to |cFF00FF25Ziz Fizziks|r
     .accept 1096 >> Accept Gerenzo Wrenchwhistle
 step
 	.isOnQuest 1086
@@ -2710,6 +2927,8 @@ step
 	.vendor >> Go and buy gear upgrades from the vendor at the end of platform. He has the chance of having gear upgrades for every class.
 step
     .goto Stonetalon Mountains,58.98,62.59
+.target Ziz Fizziks
+>>Talk to |cFF00FF25Ziz Fizziks|r
     .turnin 1096 >> Turn in Gerenzo Wrenchwhistle
 step
     .goto Stonetalon Mountains,50.64,36.60,0,0
@@ -2739,15 +2958,21 @@ step
 step
     .goto Stonetalon Mountains,46.00,60.50
      >> Head to Sun Rock Retreat
+>>Talk to |cFF00FF25Braelyn Firehand|r
     .turnin 1087 >> Turn in Cenarius' Legacy
+.target Braelyn Firehand
     .accept 1088 >> Accept Ordanus
 step
     .goto Stonetalon Mountains,47.10,61.10
+>>Talk to |cFF00FF25Maggran Earthbinder|r
     .turnin 6282 >> Turn in Harpies Threaten
+.target Maggran Earthbinder
     .accept 6283 >> Accept Bloodfury Bloodline
 step
     .goto Stonetalon Mountains,47.40,58.50
+>>Talk to |cFF00FF25Tammra Windfield|r
     .turnin 6301 >> Turn in Cycle of Rebirth
+.target Tammra Windfield
     .accept 6381 >> Accept New Life
 step
 	#completewith next
@@ -2777,15 +3002,20 @@ step
     .goto Stonetalon Mountains,38.7,68.6,50,0
     .goto Stonetalon Mountains,47.20,64.40
      >> Head back to Sun Rock Retreat
+.target Tsunaman
+>>Talk to |cFF00FF25Tsunaman|r
     .turnin 6393 >> Turn in Elemental War
 step
     .isQuestComplete 6283
     .goto Stonetalon Mountains,47.19,61.15
+.target Maggran Earthbinder
+>>Talk to |cFF00FF25Maggran Earthbinder|r
     .turnin 6283 >> Turn in Bloodfury Bloodline
 step
     .goto Stonetalon Mountains,47.46,58.37
+.target Tammra Windfield
+>>Talk to |cFF00FF25Tammra Windfield|r
     .turnin 6381 >> Turn in New Life
-
 ]])
 
 
@@ -2870,8 +3100,12 @@ step
     .goto Ashenvale,73.2,61.6
     .fp Splintertree >> Get the Splintertree Post flight path
 step
+.target Pixel
+>>Talk to |cFF00FF25Pixel|r
     .accept 6441 >> Accept Satyr Horns
     .goto Ashenvale,73.1,61.5
+.target Senani Thunderheart
+>>Talk to |cFF00FF25Senani Thunderheart|r
     .turnin 6383 >> Turn in The Ashenvale Hunt
     .goto Ashenvale,73.8,61.5
 step << Rogue
@@ -2881,13 +3115,19 @@ step << Rogue
 	.home >> Set your Hearthstone to Splintertree Post
 step
     .goto Ashenvale,73.6,60.0
+.target Mastok Wrilehiss
+>>Talk to |cFF00FF25Mastok Wrilehiss|r
     .accept 25 >> Accept Stonetalon Standstill
 step << BloodElf
     .goto Ashenvale,71.3,67.8
+.target Advisor Sunsworn
+>>Talk to |cFF00FF25Advisor Sunsworn|r
     .turnin 9428 >> Turn in Report to Splintertree Post
     .isOnQuest 9428
 step
     .goto Ashenvale,71.105,68.118
+.target Kuray'bin
+>>Talk to |cFF00FF25Kuray'bin|r
     .accept 6503 >> Accept Ashenvale Outrunners
 step
  >>Kill Ashenvale Outrunners that are stealthed around the area.
@@ -2899,6 +3139,8 @@ step
     .unitscan Ashenvale Outrunner
 step
     .goto Ashenvale,68.3,75.3
+.target Torek
+>>Talk to |cFF00FF25Torek|r
     .accept 6544 >> Accept Torek's Assault
     >> If he is not there he can take a few minutes to respawn
 step
@@ -2950,18 +3192,26 @@ step << Rogue
     .fp Zoram >> Get the Zoram'gar Outpost flight path
 step << Rogue
     .goto Ashenvale,11.8,34.7
+.target Karang Amakkar
+>>Talk to |cFF00FF25Karang Amakkar|r
     .accept 216 >> Accept Between a Rock and a Thistlefur
 step << Rogue
     >> Talk to the trolls in the hut
     .goto Ashenvale,11.6,34.9
+.target Mitsuwa
+>>Talk to |cFF00FF25Mitsuwa|r
     .accept 6462 >> Accept Troll Charm
 step << Rogue
     .isQuestComplete 6562
     .goto Ashenvale,11.6,34.3
+.target Je'neu Sancrea
+>>Talk to |cFF00FF25Je'neu Sancrea|r
     .turnin 6562 >> Turn in Trouble in the Deeps
 step << Rogue
     >>Accepting this quest starts an escort. Follow him
     .goto Ashenvale,12.1,34.4
+.target Muglash
+>>Talk to |cFF00FF25Muglash|r
     .accept 6641 >> Accept Vorsha the Lasher
 step << Rogue
     >>Click the Brazier. There will be waves of Naga that spawn. Once Vorsha comes out, let Muglash get aggro before fighting him.
@@ -2989,6 +3239,8 @@ step
 step
     >>This starts an escort. Start it when ready.
     .goto Ashenvale,41.5,34.5
+.target Ruul Snowhoof
+>>Talk to |cFF00FF25Ruul Snowhoof|r
     .accept 6482 >> Accept Freedom to Ruul
     .isOnQuest 216
 step
@@ -3061,6 +3313,8 @@ step
 step
     #xprate <1.5
     .goto Ashenvale,71.2,68.1
+.target Kuray'bin
+>>Talk to |cFF00FF25Kuray'bin|r
     .turnin 6503 >> Turn in Ashenvale Outrunners
 step
     .goto Ashenvale,72.4,72.1,40,0
@@ -3077,16 +3331,22 @@ step
 step
     .isQuestComplete 6544
     >>Go back to town
+.target Ertog Ragetusk
+>>Talk to |cFF00FF25Ertog Ragetusk|r
     .turnin 6544 >> Turn in Torek's Assault
     .goto Ashenvale,73.1,62.5
 step
     .goto Ashenvale,73.8,61.5
+.target Senani Thunderheart
+>>Talk to |cFF00FF25Senani Thunderheart|r
     .turnin 2 >> Turn in Sharptalon's Claw
     .turnin 24 >> Turn in Shadumbra's Head
     .turnin 23 >> Turn in Ursangous's Paw
     .turnin 247 >> Turn in The Hunt Completed
 step
     .goto Ashenvale,73.7,60.0
+.target Mastok Wrilehiss
+>>Talk to |cFF00FF25Mastok Wrilehiss|r
     .turnin 25 >> Turn in Stonetalon Standstill
     .turnin 1918 >> Turn in The Befouled Element
 step
@@ -3097,18 +3357,26 @@ step
     #xprate <1.5
     .goto Ashenvale,73.7,60.0
     .isOnQuest 216
+.target Mastok Wrilehiss
+>>Talk to |cFF00FF25Mastok Wrilehiss|r
     .accept 824 >> Accept Je'neu of the Earthen Ring
 step
     >> Head into the inn
     .goto Ashenvale,74.114,60.917
+.target Yama Snowhoof
+>>Talk to |cFF00FF25Yama Snowhoof|r
     .turnin 6482 >> Turn in Freedom to Ruul
     .isOnQuest 6482
 step
     #xprate >1.499
     .goto Ashenvale,71.2,68.1
+.target Kuray'bin
+>>Talk to |cFF00FF25Kuray'bin|r
     .turnin 6503 >> Turn in Ashenvale Outrunners
 step
     .goto Ashenvale,73.1,61.5
+.target Pixel
+>>Talk to |cFF00FF25Pixel|r
     .turnin 6441 >> Turn in Satyr Horns
 step
     #xprate <1.5
@@ -3119,27 +3387,37 @@ step
 step
     #xprate <1.5
     .goto Ashenvale,11.897,34.535
+.target Karang Amakkar
+>>Talk to |cFF00FF25Karang Amakkar|r
     .turnin 216 >> Turn in Between a Rock and a Thistlefur
     .isOnQuest 216
 step
     #xprate <1.5
     .goto Ashenvale,11.7,34.8
+.target Mitsuwa
+>>Talk to |cFF00FF25Mitsuwa|r
     .turnin 6462 >> Turn in Troll Charm
     .isOnQuest 6462
 step
     #xprate <1.5
     .isQuestTurnedIn 6462
     .goto Ashenvale,11.6,34.3
+.target Je'neu Sancrea
+>>Talk to |cFF00FF25Je'neu Sancrea|r
     .turnin 824 >> Turn in Je'neu of the Earthen Ring
 step << Rogue
     #label zoramend
     #requires wrathtailhead
     >>Return to Zoram'gar Outpost.
     .goto Ashenvale,12.223,34.216
+.target Warsong Runner
+>>Talk to |cFF00FF25Warsong Runner|r
     .turnin 6641 >> Turn in Vorsha the Lasher
     .isQuestComplete 6641
 step << Rogue
     .goto Ashenvale,11.59,34.27
+.target Je'neu Sancrea
+>>Talk to |cFF00FF25Je'neu Sancrea|r
     .accept 6921 >>Accept Amongst the Ruins
     .accept 6563 >>Accept The Essence of Aku'Mai
 step << Rogue
@@ -3187,7 +3465,9 @@ step << Rogue
     .fly Thunder Bluff >> Fly to Thunder Bluff
 step
 	.goto Thunder Bluff,55.2,51.5
+>>Talk to |cFF00FF25Zangen Stonehoof|r
     .turnin 1195 >> Turn in The Sacred Flame
+.target Zangen Stonehoof
     .accept 1196 >> Accept The Sacred Flame
 step << Warrior tbc/Paladin/Shaman
     .goto Thunder Bluff,54.0,57.3
@@ -3200,6 +3480,8 @@ step << Hunter
 step << Druid
     .goto Thunder Bluff,77.0,29.9
 	.trainer >> Go and train your class spells
+.target Turak Runetotem
+>>Talk to |cFF00FF25Turak Runetotem|r
 	.turnin 31 >>Turn in Aquatic Form << tbc
 step << Hunter
 	#completewith hearth
@@ -3221,6 +3503,8 @@ step
     #xprate <1.1
 	.isOnQuest 1086
     .goto Thunder Bluff,22.80,20.80
+.target Apothecary Zamah
+>>Talk to |cFF00FF25Apothecary Zamah|r
     .turnin 1086 >> Turn in The Flying Machine Airport
 step << Priest
 	#completewith hearth
@@ -3232,6 +3516,8 @@ step << Mage
 	.trainer >> Go and train your class spells
 step
     .goto Thunder Bluff,61.0,81.0
+.target Melor Stonehoof
+>>Talk to |cFF00FF25Melor Stonehoof|r
     .accept 1131 >> Accept Steelsnap
 step << Rogue
     #label hearth
@@ -3244,15 +3530,21 @@ step
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step << Shaman
     .goto The Barrens,43.4,77.4
+>>Talk to |cFF00FF25Brine|r
     .turnin 1534 >>Turn in Call of Water
+.target Brine
     .accept 220 >>Accept Call of Water
 step
 	.isOnQuest 5881
     .goto The Barrens,44.00,92.00
+.target Grish Longrunner
+>>Talk to |cFF00FF25Grish Longrunner|r
     .turnin 5881 >> Turn in Calling in the Reserves
 step
     .goto Thousand Needles,32.2,22.2
     >> Head south towards Thousand Needles
+.target Brave Moonhorn
+>>Talk to |cFF00FF25Brave Moonhorn|r
     .accept 4542 >> Accept Message to Freewind Post
 step
     #sticky
@@ -3268,6 +3560,8 @@ step
     .goto Thousand Needles,47.1,48.3,60
 step
     >> Accept quests around Freewind Post
+.target Magistrix Elosai
+>>Talk to |cFF00FF25Magistrix Elosai|r
     .accept 9431 >> Accept A Different Approach
     .goto Thousand Needles,46.1,50.5
     .accept 5147 >> Accept Wanted - Arnak Grimtotem
@@ -3275,15 +3569,23 @@ step
 step
     .goto Thousand Needles,46.1,51.7
     .isOnQuest 1196
+>>Talk to |cFF00FF25Rau Cliffrunner|r
     .turnin 1196 >> Turn in The Sacred Flame
+.target Rau Cliffrunner
     .accept 1197 >> Accept The Sacred Flame
 step
     .goto Thousand Needles,45.6,50.8
+>>Talk to |cFF00FF25Cliffwatcher Longhorn|r
     .turnin 4542 >> Turn in Message to Freewind Post
+.target Cliffwatcher Longhorn
     .accept 4841 >> Accept Pacify the Centaur
 step
+.target Elu
+>>Talk to |cFF00FF25Elu|r
     .accept 4767 >> Accept Wind Rider
     .goto Thousand Needles,44.8,49.1
+.target Hagar Lightninghoof
+>>Talk to |cFF00FF25Hagar Lightninghoof|r
     .accept 4821 >> Accept Alien Egg
     .goto Thousand Needles,44.7,50.2
 step << Hunter
@@ -3325,6 +3627,8 @@ step
     .goto Thousand Needles,54.6,44.3,30
 step
     .goto Thousand Needles,53.9,41.5
+.target Dorn Plainstalker
+>>Talk to |cFF00FF25Dorn Plainstalker|r
     .accept 1149 >> Accept Test of Faith
 step
     .isOnQuest 1149
@@ -3332,7 +3636,9 @@ step
     .goto Thousand Needles,26.4,32.6,15
 step
     .goto Thousand Needles,53.9,41.7
+>>Talk to |cFF00FF25Dorn Plainstalker|r
     .turnin 1149 >> Turn in Test of Faith
+.target Dorn Plainstalker
     .accept 1150 >> Accept Test of Endurance
 step
 	#sticky
@@ -3362,14 +3668,20 @@ step
 step
     >>Go back to Freewind Post
     .goto Thousand Needles,45.6,50.8
+>>Talk to |cFF00FF25Cliffwatcher Longhorn|r
     .turnin 4841 >> Turn in Pacify the Centaur
+.target Cliffwatcher Longhorn
     .accept 5064 >> Accept Grimtotem Spying
 step
     .goto Thousand Needles,46.1,51.7
+.target Rau Cliffrunner
+>>Talk to |cFF00FF25Rau Cliffrunner|r
     .turnin 1197 >> Turn in The Sacred Flame
 step
     .goto Thousand Needles,44.7,50.3
+>>Talk to |cFF00FF25Hagar Lightninghoof|r
     .turnin 4821 >> Turn in Alien Egg
+.target Hagar Lightninghoof
     .accept 4865 >> Accept Serpent Wild
 step
     #label exitfreewind33
@@ -3399,6 +3711,8 @@ step
 step
         >>This starts an Escort. Start it when ready. Try to have 5-6 eggs before starting so you can finish on the way out.
     .goto Thousand Needles,17.8,40.6
+.target Pao'ka Swiftmountain
+>>Talk to |cFF00FF25Pao'ka Swiftmountain|r
     .accept 4770 >> Accept Homeward Bound
 step
     #label Paoka
@@ -3411,9 +3725,13 @@ step
     .complete 4767,1 --Collect Highperch Wyvern Egg (x10)
 step
 .goto Thousand Needles,21.5,32.3
+>>Talk to |cFF00FF25Motega Firemane|r
     .turnin 4865 >> Turn in Serpent Wild
+.target Motega Firemane
     .accept 5062 >> Accept Sacred Fire
+>>Talk to |cFF00FF25Wizlo Bearingshiner|r
     .turnin 9431 >> Turn in A Different Approach
+.target Wizlo Bearingshiner
     .accept 5151 >> Accept Hypercapacitor Gizmo
     .accept 9433 >> A Dip in the Moonwell
     .turnin 4770 >> Turn in Homeward Bound
@@ -3460,7 +3778,9 @@ step
 	.unitscan Steelsnap
 step
     .goto Thousand Needles,21.5,32.5
+>>Talk to |cFF00FF25Wizlo Bearingshiner|r
     .turnin 9433 >> Turn in A Dip in the Moonwell
+.target Wizlo Bearingshiner
     .accept 9434 >> Accept Testing the Tonic
 step
 .use 12564 >>Search for the Galak Messenger. He starts at a camp, goes on the road, then goes to the other camp
@@ -3531,15 +3851,23 @@ step << Mage
     .trainer >> Go and train your class spells
 step
     .goto Thunder Bluff,61.4,80.8
+.target Melor Stonehoof
+>>Talk to |cFF00FF25Melor Stonehoof|r
     .turnin 1131 >> Turn in Steelsnap
 step
     .goto Thunder Bluff,60.8,81.5
+.target Melor Stonehoof
+>>Talk to |cFF00FF25Melor Stonehoof|r
     .accept 1136 >> Accept Frostmaw
 step
     .goto Thunder Bluff,69.851,30.910
+.target Magatha Grimtotem
+>>Talk to |cFF00FF25Magatha Grimtotem|r
     .turnin 5062 >> Turn in Sacred Fire
 step
     .goto Thunder Bluff,70.1,30.9
+.target Magatha Grimtotem
+>>Talk to |cFF00FF25Magatha Grimtotem|r
     .accept 5088 >> Accept Arikara
 step << Tauren wotlk
     .money <5.00
@@ -3557,6 +3885,8 @@ step
     .fly Camp Taurajo >> Fly to Camp Taurajo
 step
     .goto The Barrens,45.10,57.70
+.target Tatternack Steelforge
+>>Talk to |cFF00FF25Tatternack Steelforge|r
     .turnin 1153 >> Turn in A New Ore Sample
 step
     #completewith next
@@ -3564,8 +3894,12 @@ step
     .fly Freewind Post >> Fly to Freewind Post
 step
     #label flyskip
+.target Elu
+>>Talk to |cFF00FF25Elu|r
     .turnin 4767 >> Turn in Wind Rider
     .goto Thousand Needles,44.8,49.0
+.target Magistrix Elosai
+>>Talk to |cFF00FF25Magistrix Elosai|r
     .turnin 9434 >> Turn in Testing the Tonic
     .goto Thousand Needles,46.2,50.5
 step << !Warrior
@@ -3580,7 +3914,9 @@ step
 step
     .goto Thousand Needles,54.0,41.4
     >> Head to the northeastern cave
+>>Talk to |cFF00FF25Dorn Plainstalker|r
     .turnin 1150 >> Turn in Test of Endurance
+.target Dorn Plainstalker
     .accept 1151 >> Accept Test of Strength
 step
     >>Kill Rok'Alim The Pounder (Rock Elemental). Loot him for his Fragments. He patrols a large circle around western Thousand Needles.
@@ -3628,6 +3964,8 @@ step
 	.unitscan Arnak Grimtotem
 step
     .goto Thousand Needles,38.1,26.6
+.target Lakota Windsong
+>>Talk to |cFF00FF25Lakota Windsong|r
     .accept 4904 >> Accept Free at Last
 step
     >>Follow Lakota and protect her through the whole escort. Mobs will spawn periodically on the platforms.
@@ -3641,11 +3979,15 @@ step
     .isOnQuest 4881
 	>>Escort will start when you accept next part of the quest.
 	.goto Thousand Needles,21.3,32.0
+.target Kanati Greycloud
+>>Talk to |cFF00FF25Kanati Greycloud|r
 	.turnin 4881 >> Turn in Assassination Plot
 step
     .isQuestTurnedIn 4881
 	>>Escort will start when you accept next part of the quest.
 	.goto Thousand Needles,21.3,32.0
+.target Kanati Greycloud
+>>Talk to |cFF00FF25Kanati Greycloud|r
 	.accept 4966 >> Accept Protect Kanati Greycloud
 step
     .isOnQuest 4966
@@ -3655,11 +3997,17 @@ step
 step
     .isQuestComplete 4966
 	.goto Thousand Needles,21.4,31.8
+.target Kanati Greycloud
+>>Talk to |cFF00FF25Kanati Greycloud|r
     .turnin 4966 >> Turn in Protect Kanati Greycloud
 step
     #label OreSample
 .goto Thousand Needles,21.5,32.3
+.target Motega Firemane
+>>Talk to |cFF00FF25Motega Firemane|r
     .turnin 5088 >> Turn in Arikara
+.target Wizlo Bearingshiner
+>>Talk to |cFF00FF25Wizlo Bearingshiner|r
     .turnin 5151 >> Turn in Hypercapacitor Gizmo
 step
     >>Kill Kobolds in the area. Loot them for an Unrefined Ore Sample
@@ -3676,13 +4024,19 @@ step
     .fly Freewind Post >> Fly to Freewind Post
 step
     .goto Thousand Needles,45.7,50.8
+.target Cliffwatcher Longhorn
+>>Talk to |cFF00FF25Cliffwatcher Longhorn|r
     .turnin 5064 >> Turn in Grimtotem Spying
     .turnin 5147 >> Turn in Wanted - Arnak Grimtotem
 step
     .goto Thousand Needles,46.0,51.5
+.target Thalia Amberhide
+>>Talk to |cFF00FF25Thalia Amberhide|r
     .turnin 4904 >> Turn in Free at Last
 step
     .goto Thousand Needles,53.9,41.4
+.target Dorn Plainstalker
+>>Talk to |cFF00FF25Dorn Plainstalker|r
     .turnin 1151 >> Turn in Test of Strength
 step
     .goto Thousand Needles,67.6,64.0
@@ -3690,25 +4044,39 @@ step
 step
     .isOnQuest 1146
     .goto Thousand Needles,67.6,64.0
+>>Talk to |cFF00FF25Moktar Krin|r
     .turnin 1146 >> Turn in The Swarm Grows
+.target Moktar Krin
     .accept 1147 >> Accept The Swarm Grows
 step
     .xp <33,1
     >> Accept quests around the racetrack
+.target Kravel Koalbeard
+>>Talk to |cFF00FF25Kravel Koalbeard|r
 	.accept 1110 >> Accept Rocket Car Parts
     .goto Thousand Needles,77.8,77.2
+.target Fizzle Brassbolts
+>>Talk to |cFF00FF25Fizzle Brassbolts|r
 	.accept 1104 >> Accept Salt Flat Venom
     .goto Thousand Needles,77.9,77.2
+.target Wizzle Brassbolts
+>>Talk to |cFF00FF25Wizzle Brassbolts|r
     .accept 1105 >> Accept Hardened Shells
     .goto Thousand Needles,78.1,77.1
 step
     .goto Thousand Needles,77.787,77.270
+.target Kravel Koalbeard
+>>Talk to |cFF00FF25Kravel Koalbeard|r
     .accept 1111 >> Accept Wharfmaster Dizzywig
     .accept 5762 >> Accept Hemet Nesingwary Jr.
 step
     .xp <33,1
+.target Pozzik
+>>Talk to |cFF00FF25Pozzik|r
     .accept 1176 >> Accept Load Lightening
     .goto Thousand Needles,80.2,75.8
+.target Trackmaster Zherin
+>>Talk to |cFF00FF25Trackmaster Zherin|r
     .accept 1175 >> Accept A Bump in the Road
     .goto Thousand Needles,81.7,78.0
 step
@@ -3762,16 +4130,24 @@ step
 step
     .xp <33,1
     .isQuestTurnedIn 1104
+.target Wizzle Brassbolts
+>>Talk to |cFF00FF25Wizzle Brassbolts|r
     .accept 1107 >> Accept Encrusted Tail Fins
+.target Fizzle Brassbolts
+>>Talk to |cFF00FF25Fizzle Brassbolts|r
     .accept 1106 >> Accept Martek the Exiled
 step
     .isOnQuest 1176
     .goto Thousand Needles,80.2,75.8
+>>Talk to |cFF00FF25Pozzik|r
     .turnin 1176 >> Turn in Load Lightening
+.target Pozzik
     .accept 1178 >> Accept Goblin Sponsorship
 step
     .isOnQuest 1175
     .goto Thousand Needles,81.6,78.0
+.target Trackmaster Zherin
+>>Talk to |cFF00FF25Trackmaster Zherin|r
     .turnin 1175 >> Turn in A Bump in the Road
 step
     .isOnQuest 1152
@@ -3803,6 +4179,18 @@ step << Warrior
     .isOnQuest 1145
 	#completewith next
     .goto Thunder Bluff,57.4,87.2
+.target Darnath Bladesinger
+.target Wu Shen
+.target Kelv Sternhammer
+.target Baltus Fowler
+.target Sorek
+.target Torm Ragetotem
+>>Talk to |cFF00FF25Torm Ragetotem|r
+-->>Talk to |cFF00FF25Sorek|r
+-->>Talk to |cFF00FF25Baltus Fowler|r
+-->>Talk to |cFF00FF25Kelv Sternhammer|r
+-->>Talk to |cFF00FF25Wu Shen|r
+-->>Talk to |cFF00FF25Darnath Bladesinger|r
     .accept 1718 >>Accept The Islander
     .trainer >> Go and train your class spells
 step << Warrior
@@ -3816,6 +4204,8 @@ step << !Warrior
 step
     .isOnQuest 1153
     .goto The Barrens,45.102,57.683
+.target Tatternack Steelforge
+>>Talk to |cFF00FF25Tatternack Steelforge|r
     .turnin 1153 >> Turn in A New Ore Sample
 step
     #completewith swarmgrows
@@ -3826,6 +4216,8 @@ step
     #label swarmgrows
     .isQuestAvailable 1145
     .goto The Barrens,51.1,29.7
+.target Korran
+>>Talk to |cFF00FF25Korran|r
     .accept 1145 >> Accept The Swarm Grows
 step << !Shaman !Warrior
     .maxlevel 32
@@ -3834,7 +4226,9 @@ step << !Shaman !Warrior
 step
     .isOnQuest 1148
     .goto The Barrens,51.1,29.6
+>>Talk to |cFF00FF25Korran|r
     .turnin 1148 >> Turn in Parts of the Swarm
+.target Korran
     .accept 1184 >> Accept Parts of the Swarm
 step
 	#completewith next
@@ -3842,12 +4236,16 @@ step
     .fly Ratchet >> Fly to Ratchet
 step
     .goto The Barrens,63.3,38.4
+>>Talk to |cFF00FF25Wharfmaster Dizzywig|r
     .turnin 1111 >> Turn in Wharfmaster Dizzywig
+.target Wharfmaster Dizzywig
     .accept 1112 >> Accept Parts for Kravel
 step << Warrior
     .isOnQuest 874
     .goto The Barrens,65.8,43.8
+>>Talk to |cFF00FF25Mahren Skyseer|r
     .turnin 874 >>Turn in Mahren Skyseer
+.target Mahren Skyseer
     .accept 873 >>Accept Isha Awak
 step << Warrior
     .isOnQuest 873
@@ -3866,7 +4264,9 @@ step << Warrior
     .isOnQuest 1718
     >>Swim to the island
     .goto The Barrens,68.6,49.2
+>>Talk to |cFF00FF25Klannoc Macleod|r
     .turnin 1718 >>Turn in The Islander
+.target Klannoc Macleod
     .accept 1719 >>Accept The Affray
 step << Warrior
     .isOnQuest 1719
@@ -3876,16 +4276,22 @@ step << Warrior
 step << Warrior tbc
     .isOnQuest 1719
     .goto The Barrens,68.6,49.2
+>>Talk to |cFF00FF25Klannoc Macleod|r
     .turnin 1719 >>Turn in The Affray
+.target Klannoc Macleod
     .accept 1791 >>Accept The Windwatcher
 step << Warrior wotlk
     #xprate >1.499
     .isOnQuest 1719
     .goto The Barrens,68.6,49.2
+.target Klannoc Macleod
+>>Talk to |cFF00FF25Klannoc Macleod|r
     .turnin 1719 >>Turn in The Affray
 step << Warrior
     .isOnQuest 873
     .goto The Barrens,65.8,43.8
+.target Mahren Skyseer
+>>Talk to |cFF00FF25Mahren Skyseer|r
     .turnin 873 >>Turn in Isha Awak
 step << Warrior
     .abandon 1838 >>Abandon Brutal Armor
@@ -3916,35 +4322,42 @@ step << Shaman
     .collect 12251,1
 step
     .xp <33,1
-
     .goto Stranglethorn Vale,26.4,73.5
+>>Talk to |cFF00FF25Wharfmaster Lozgil|r
     .turnin 1180 >> Turn in Goblin Sponsorship
+.target Wharfmaster Lozgil
     .accept 1181 >> Accept Goblin Sponsorship
 step
     .xp <33,1
-
 	>> Head to the second level of buildings
     .goto Stranglethorn Vale,28.293,77.591
+.target Drizzlik
+>>Talk to |cFF00FF25Drizzlik|r
     .accept 575 >> Accept Supply and Demand
 step
     .xp <33,1
-
 	>> Head into the inn, this quest is on the bottom floor
     .goto Stranglethorn Vale,27.0,77.2
+.target Crank Fizzlebub
+>>Talk to |cFF00FF25Crank Fizzlebub|r
     .accept 605 >> Accept Singing Blue Shards
 step
     .xp <33,1
-
 	>> These quests are on the top floors of the inn
 	.goto Stranglethorn Vale,27.1,77.3
+.target Kebok
+>>Talk to |cFF00FF25Kebok|r
     .accept 189 >> Accept Bloodscalp Ears
     .accept 213 >> Accept Hostile Takeover
+.target Krazek
+>>Talk to |cFF00FF25Krazek|r
     .accept 201 >> Accept Investigate the Camp
 step
     .xp <33,1
-
     .goto Stranglethorn Vale,27.2,76.9
+>>Talk to |cFF00FF25Baron Revilgaz|r
     .turnin 1181 >> Turn in Goblin Sponsorship
+.target Baron Revilgaz
     .accept 1182 >> Accept Goblin Sponsorship
 step << Rogue
     .xp <33,1
@@ -3988,6 +4401,8 @@ step << Shaman
     .xp >33,1
     .isOnQuest 1145
     .goto Orgrimmar,37.8,37.4
+.target Searn Firewarder
+>>Talk to |cFF00FF25Searn Firewarder|r
     .accept 1531 >> Accept Call of Air
 step << Hunter
     .xp >33,1
@@ -4024,12 +4439,16 @@ step
     .xp >33,1
     .isOnQuest 1145
     .goto Orgrimmar,49.8,47.6
+.target Craven Drok
+>>Talk to |cFF00FF25Craven Drok|r
     .accept 1431 >> Accept Alliance Relations
 step
     .xp >33,1
     .isOnQuest 1145
     .goto Orgrimmar,75.229,34.240
+>>Talk to |cFF00FF25Belgrom Rockmaul|r
     .turnin 1145 >> Turn in The Swarm Grows
+.target Belgrom Rockmaul
     .accept 1146 >> Accept The Swarm Grows
 step << Mage
     .xp >33,1
@@ -4047,7 +4466,9 @@ step
     .xp >33,1
     .isOnQuest 1145
     .goto Orgrimmar,22.4,52.8
+>>Talk to |cFF00FF25Keldran|r
     .turnin 1431 >> Turn in Alliance Relations
+.target Keldran
     .accept 1432 >> Accept Alliance Relations
 step << Orc !Warlock tbc
 	#sticky
@@ -4089,12 +4510,16 @@ step << Shaman
 step << Shaman
     .isOnQuest 874
     .goto The Barrens,65.8,43.8
+>>Talk to |cFF00FF25Mahren Skyseer|r
     .turnin 874 >>Turn in Mahren Skyseer
+.target Mahren Skyseer
     .accept 873 >>Accept Isha Awak
 step << Shaman
     .isOnQuest 220
     .goto The Barrens,65.8,43.8
+>>Talk to |cFF00FF25Islen Waterseer|r
     .turnin 220 >>Turn in Call of Water
+.target Islen Waterseer
     .accept 63 >>Accept Call of Water
 step << Shaman
     .isOnQuest 873
@@ -4112,6 +4537,8 @@ step << Shaman
 step << Shaman
     .isOnQuest 873
     .goto The Barrens,65.8,43.8
+.target Mahren Skyseer
+>>Talk to |cFF00FF25Mahren Skyseer|r
     .turnin 873 >>Turn in Isha Awak
 step << Tauren tbc
     .money <35.00
@@ -4134,6 +4561,8 @@ step << Tauren
 step << Shaman
     .isQuestAvailable 1531
     .goto Orgrimmar,37.957,37.729
+.target Searn Firewarder
+>>Talk to |cFF00FF25Searn Firewarder|r
     .accept 1531 >>Accept Call of Air
 step << Warrior
 	#completewith next
@@ -9452,6 +9881,7 @@ step << Shaman
     .target Kardris Dreamseeker
 step << Shaman
     .goto Orgrimmar,37.97,37.72
+>>Talk to |cFF00FF25Searn Firewarder|r
     .accept 1531 >> Accept Call of Air
     .target Searn Firewarder
 step << Paladin
