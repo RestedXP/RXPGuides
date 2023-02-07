@@ -3,11 +3,12 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Hunter/NightElf
+<< Alliance
 #name 11-16 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
 #next 16-19 Darkshore
+#defaultfor Hunter/NightElf
 
 step <<  NightElf
     .goto Teldrassil,56.25,92.44
@@ -29,9 +30,13 @@ step <<  !NightElf
     .fp Auberdine >> Get the Auberdine flight path
 step
     .goto Felwood,19.10,20.63
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
 step <<  NightElf
     .goto Felwood,19.27,19.14
+.target Laird
+>>Talk to |cFF00FF25Laird|r
     .turnin 6342 >> Turn in Flight to Auberdine
     >>Skip the follow up
 step
@@ -40,12 +45,18 @@ step
 step
     .goto Felwood,19.51,18.97
     >>Head upstairs
+.target Wizbang Cranktoggle
+>>Talk to |cFF00FF25Wizbang Cranktoggle|r
     .accept 983 >> Accept Buzzbox 827
 step
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .accept 2118 >> Accept Plagued Lands
     .goto Felwood,21.63,18.15
 step
     .goto Felwood,22.24,18.22
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .accept 984 >> Accept How Big a Threat?
 step <<  Dwarf Hunter
     #sticky
@@ -85,10 +96,14 @@ step
     .accept 1001 >> Accept Buzzbox 411
 step
     .goto Felwood,19.10,20.63
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 3524 >> Turn in Washed Ashore
+.target Gwennyth Bly'Leggonde
     .accept 4681 >> Accept Washed Ashore
 step
     .goto Felwood,18.10,18.48
+.target Cerellean Whiteclaw
+>>Talk to |cFF00FF25Cerellean Whiteclaw|r
     .accept 963 >> Accept For Love Eternal
 step
 	#era/som
@@ -109,24 +124,36 @@ step
 step
     #label washed1
     .goto Felwood,19.10,20.63
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4681 >> Turn in Washed Ashore
 step
     .goto Felwood,19.90,18.40
+.target Barithras Moonshade
+>>Talk to |cFF00FF25Barithras Moonshade|r
     .accept 947 >> Accept Cave Mushrooms
 step
     .goto Felwood,20.34,18.12
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept The Red Crystal
 step
     .goto Felwood,21.63,18.15
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2118 >> Turn in Plagued Lands
+.target Tharnariun Treetender
     .accept 2138 >> Accept Cleansing of the Infected
 step
     .goto Felwood,22.24,18.22
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 984 >> Turn in How Big a Threat?
+.target Terenthis
     .accept 985 >> Accept How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
 step <<  Dwarf/Gnome/Human
     .goto Felwood,20.80,15.58
+.target Gorbold Steelhand
+>>Talk to |cFF00FF25Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step
     #completewith next
@@ -135,7 +162,9 @@ step
     >>Fill your quiver/ammo pouch with ammo. You have a long grinding session ahead << Hunter
 step
     .goto Felwood,19.98,14.40
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4761 >> Turn in Thundris Windweaver
+.target Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River
     .accept 958 >> Accept Tools of the Highborne
     .accept 954 >> Accept Bashal'Aran
@@ -185,7 +214,9 @@ step
     .unitscan Moonstalker;Moonstalker Runt
 step
     .goto Felwood,27.70,10.03
+>>Talk to |cFF00FF25Asterion|r
     .turnin 954 >> Turn in Bashal'Aran
+.target Asterion
     .accept 955 >> Accept Bashal'Aran
 step
     .goto Felwood,29.13,12.34
@@ -193,7 +224,9 @@ step
     .complete 955,1
 step
     .goto Felwood,27.70,10.03
+>>Talk to |cFF00FF25Asterion|r
     .turnin 955 >> Turn in Bashal'Aran
+.target Asterion
     .accept 956 >> Accept Bashal'Aran
 step
     .goto Felwood,29.60,12.52
@@ -201,7 +234,9 @@ step
     .complete 956,1
 step
     .goto Felwood,27.70,10.03
+>>Talk to |cFF00FF25Asterion|r
     .turnin 956 >> Turn in Bashal'Aran
+.target Asterion
     .accept 957 >> Accept Bashal'Aran
 step
     .xp 13 >> Grind to level 13
@@ -224,7 +259,9 @@ step << !Druid
     .hs >> Hearth to Auberdine
 step
     .goto Felwood,20.34,18.12
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Turn in The Red Crystal
+.target Sentinel Glynda Nal'Shea
     .accept 4812 >> Accept As Water Cascades
 step
     .goto Darkshore,37.78,44.06
@@ -237,10 +274,14 @@ step <<  Hunter/Druid
     .accept 4813 >> Accept The Fragments Within
 step <<  Hunter/Druid
     .goto Felwood,20.34,18.12
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4813 >> Turn in The Fragments Within
 step << Druid
     #label darn1
     .goto Felwood,19.27,19.14
+.target Laird
+>>Talk to |cFF00FF25Laird|r
     .accept 6343 >> Accept Return to Nessa
 step << Druid
     #era
@@ -255,16 +296,22 @@ step << Druid
 step << Druid
     .goto Teldrassil,56.25,92.44
      >> Return to Nessa
+.target Nessa Shadowsong
+>>Talk to |cFF00FF25Nessa Shadowsong|r
     .turnin 6343 >> Turn in Return to Nessa
 step << Druid
-    .goto Darnassus,35.4,8.4
+    .goto Darnassus,35.375,8.405
+>>Talk to |cFF00FF25Mathrengyl Bearwalker|r
     .turnin 6001 >> Turn in Body and Heart
+.target Mathrengyl Bearwalker
     .accept 6121 >> Accept Lessons Anew
     .trainer >> Train your class spells
 step << Druid
     .goto Moonglade,56.1,30.7
     >>Teleport to Moonglade
+>>Talk to |cFF00FF25Dendrite Starblaze|r
     .turnin 6121 >> Turn in Lessons Anew
+.target Dendrite Starblaze
     .accept 6122 >> Accept The Principal Source
 step << Druid
     .hs >> Hearth to Darkshore
@@ -277,6 +324,8 @@ step << !Hunter
     .complete 985,2
 step
     .goto Darkshore,40.30,59.70
+.target Sentinel Tysha Moonblade
+>>Talk to |cFF00FF25Sentinel Tysha Moonblade|r
     .accept 953 >> Accept The Fall of Ameth'Aran
 step
     .goto Felwood,19.64,39.52
@@ -308,6 +357,8 @@ step
 step
     #requires anaya
     .goto Felwood,23.29,36.73
+.target Sentinel Tysha Moonblade
+>>Talk to |cFF00FF25Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step << Hunter
     #requires ghosts
@@ -338,34 +389,52 @@ step <<  !Hunter !Druid
     .accept 4813 >> Accept The Fragments Within
 step
     .goto Felwood,22.24,18.22
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 985 >> Turn in How Big a Threat?
+.target Terenthis
     .accept 986 >> Accept A Lost Master
 step
     .goto Felwood,21.86,18.30
      >> Run upstairs
+.target Sentinel Elissa Starbreeze
+>>Talk to |cFF00FF25Sentinel Elissa Starbreeze|r
     .accept 965 >> Accept The Tower of Althalaxx
 step <<  !Druid !Hunter
     .goto Darkshore,37.70,43.39
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4813 >> Turn in The Fragments Within
 step << Druid
     .goto Felwood,19.27,19.14
+.target Laird
+>>Talk to |cFF00FF25Laird|r
     .accept 6343 >> Accept Return to Nessa
 step
     .goto Felwood,18.10,18.48
+.target Cerellean Whiteclaw
+>>Talk to |cFF00FF25Cerellean Whiteclaw|r
     .turnin 963 >> Turn in For Love Eternal
 step << !Hunter
     .goto Felwood,19.10,20.63
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Turn in Beached Sea Turtle
 step
     .goto Felwood,18.50,19.87
+.target Gubber Blump
+>>Talk to |cFF00FF25Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
     >>Turn in the Beached sea turtle quest next to the flight master if you're not yet level 15 << Hunter
 ---?
 step << NightElf
     .goto Felwood,20.80,15.58
+.target Gorbold Steelhand
+>>Talk to |cFF00FF25Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step << !NightElf
     .goto Felwood,20.80,15.58
+.target Gorbold Steelhand
+>>Talk to |cFF00FF25Gorbold Steelhand|r
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
 step
     #completewith next
@@ -373,6 +442,8 @@ step
     .vendor 6301 >> Buy Mild Spice and cook herb baked eggs if you don't have 10 points in cooking
 step <<  NightElf
     .goto Felwood,19.98,14.40
+.target Thundris Windweaver
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 958 >> Turn in Tools of the Highborne
 step << !Druid !Hunter
     .goto Felwood,31.29,24.14
@@ -381,6 +452,8 @@ step << !Druid !Hunter
     .accept 4813 >> Accept The Fragments Within
 step << !Druid !Hunter
     .goto Felwood,27.70,10.03
+.target Asterion
+>>Talk to |cFF00FF25Asterion|r
     .turnin 957 >> Turn in Bashal'Aran
 step << NightElf
     .goto Felwood,20.94,1.49
@@ -419,7 +492,9 @@ step
     .accept 1003 >> Accept Buzzbox 525
 step << NightElf Hunter/Druid
     .goto Winterspring,4.82,27.18
+>>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 965 >> Turn in The Tower of Althalaxx
+.target Balthule Shadowstrike
     .accept 966 >> Accept The Tower of Althalaxx
 step << NightElf Hunter/Druid
     .goto Winterspring,6.06,28.81
@@ -427,7 +502,9 @@ step << NightElf Hunter/Druid
     .complete 966,1
 step << NightElf Hunter/Druid
     .goto Winterspring,4.82,27.18
+>>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
+.target Balthule Shadowstrike
     .accept 967 >> Accept The Tower of Althalaxx
 step
     .goto Darkshore,50.72,30.35
@@ -460,32 +537,48 @@ step <<  !NightElf
     .hs >> Hearth back to Auberdine
 step <<  !NightElf
     .goto Felwood,20.04,16.35
+.target Archaeologist Hollee
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step <<  !NightElf
     .goto Felwood,19.98,14.40
+.target Thundris Windweaver
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 958 >> Turn in Tools of the Highborne
 step
     .goto Darkshore,37.70,40.70
+.target Alanndarian Nightsong
+>>Talk to |cFF00FF25Alanndarian Nightsong|r
     .accept 2178 >> Accept Easy Strider Living
     .turnin 2178 >> Turn in Easy Strider Living
     >>This quest requires 10 points in cooking
 step
     .goto Felwood,19.98,14.40
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4762 >> Turn in The Cliffspring River
+.target Thundris Windweaver
     .accept 4763 >> Accept The Blackwood Corrupted
 step << Druid
     .goto Darkshore,37.7,40.7
+>>Talk to |cFF00FF25Alanndarian Nightsong|r
     .turnin 6122 >> Turn in The Principal Source
+.target Alanndarian Nightsong
     .accept 6123 >> Accept Gathering the Cure
 step
     .goto Felwood,20.80,15.58
+.target Gorbold Steelhand
+>>Talk to |cFF00FF25Gorbold Steelhand|r
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
 step
     .goto Felwood,20.34,18.12
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4813 >> Turn in The Fragments Within
 step
     .goto Felwood,19.90,18.40
+>>Talk to |cFF00FF25Barithras Moonshade|r
     .turnin 947 >> Turn in Cave Mushrooms
+.target Barithras Moonshade
     .accept 948 >> Accept Onu
 step
     .goto Felwood,19.78,19.07
@@ -499,11 +592,15 @@ step
     .collect 12347,1,4763,1
 step <<  NightElf !Druid
     .goto Felwood,19.27,19.14
+.target Laird
+>>Talk to |cFF00FF25Laird|r
     .accept 6343 >> Accept Return to Nessa
 step
     #label end
     #requires bowl
     .goto Felwood,19.10,20.63
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4723 >> Turn in Beached Sea Creature
     .turnin 4725 >> Turn in Beached Sea Turtle
     .turnin 4722 >> Turn in Beached Sea Turtle << Hunter
@@ -513,7 +610,9 @@ step <<  Druid
 step << Druid
     .fly Teldrassil>>Fly to Teldrassil
 step << Druid
-    .goto Darnassus,35.4,8.4
+    .goto Darnassus,35.375,8.405
+.target Mathrengyl Bearwalker
+>>Talk to |cFF00FF25Mathrengyl Bearwalker|r
     .accept 26 >> Accept A Lesson to Learn
     .trainer >> Train your class spells
 step << Druid
@@ -523,19 +622,25 @@ step << Druid
     .money <0.56
 step << Druid
     .goto Teldrassil,23.70,64.51
+.target Chief Archaeologist Greywhisker
+>>Talk to |cFF00FF25Chief Archaeologist Greywhisker|r
     .accept 730 >> Accept Trouble In Darkshore?
 step << Druid
     .goto Moonglade,56.1,30.7
     >>Teleport to Moonglade
+>>Talk to |cFF00FF25Dendrite Starblaze|r
     .turnin 26 >> Turn in A Lesson to Learn
+.target Dendrite Starblaze
     .accept 29 >> Accept Trial of the Lake
 step << Druid
     .goto Moonglade,52.6,51.6
     >>Dive into the lake and look for a Shrine Bauble, it looks like a small red jar
     .complete 29,1 --Complete the Trial of the Lake.
 step << Druid
-    .goto Moonglade,36.5,40.1
+    .goto Moonglade,36.517,40.104
+>>Talk to |cFF00FF25Tajarri|r
     .turnin 29 >> Turn in Trial of the Lake
+.target Tajarri
     .accept 272 >> Accept Trial of the Sea Lion
 step << Druid
     .hs >> Hearth to Darkshore
@@ -556,17 +661,25 @@ step
     .zone Westfall >> Head to Westfall
 step
     .goto Westfall,59.95,19.35
+.target Farmer Furlbrow
+>>Talk to |cFF00FF25Farmer Furlbrow|r
     .accept 64 >> Accept The Forgotten Heirloom
 step
     .goto Westfall,59.91,19.41
+.target Verna Furlbrow
+>>Talk to |cFF00FF25Verna Furlbrow|r
     .accept 36 >> Accept Westfall Stew
     .accept 151 >> Accept Poor Old Blanchy
 step
     .goto Westfall,56.10,31.30
+.target Farmer Saldean
+>>Talk to |cFF00FF25Farmer Saldean|r
     .accept 9 >> Accept The Killing Fields
 step
     .goto Westfall,56.40,30.50
+>>Talk to |cFF00FF25Salma Saldean|r
     .turnin 36 >> Turn in Westfall Stew
+.target Salma Saldean
     .accept 38 >> Accept Westfall Stew
     .accept 22 >> Accept Goretusk Liver Pie
 step << Human
@@ -579,14 +692,20 @@ step << Human
 step << Gnome/Dwarf
     #completewith next
     .goto Westfall,56.40,47.60
+.target Gryan Stoutmantle
+>>Talk to |cFF00FF25Gryan Stoutmantle|r
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
     .isOnQuest 109
 step
     .goto Westfall,56.40,47.60
+.target Gryan Stoutmantle
+>>Talk to |cFF00FF25Gryan Stoutmantle|r
     .accept 12 >> Accept The People's Militia
 step
     #era
     .goto Westfall,56.40,47.60
+.target Captain Danuvin
+>>Talk to |cFF00FF25Captain Danuvin|r
     .accept 102 >> Accept Patrolling Westfall
 step << Human
     #requires Lewis
@@ -785,16 +904,20 @@ step << Dwarf Paladin
     .goto Ironforge,23.12,6.14
     .trainer >> Train your class spells
 step << Dwarf Paladin
-    .goto Ironforge,23.6,8.5
+    .goto Ironforge,23.539,8.300
     >>Speak to Muiredon upstairs
+>>Talk to |cFF00FF25Muiredon Battleforge|r
     .turnin 1784 >>Turn in The Tome of Divinity
+.target Muiredon Battleforge
     .accept 1785 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,11.9
+.target Tiza Battleforge
+>>Talk to |cFF00FF25Tiza Battleforge|r
     .turnin 1785 >>Turn in The Tome of Divinity
 step << Dwarf Paladin
     #softcore
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Wetlands>> Fly to Wetlands
 step << Dwarf Paladin
     #hardcore
@@ -893,6 +1016,8 @@ step <<  NightElf !Druid
 step <<  NightElf !Druid
     .goto Teldrassil,56.25,92.44
      >> Return to Nessa
+.target Nessa Shadowsong
+>>Talk to |cFF00FF25Nessa Shadowsong|r
     .turnin 6343 >> Turn in Return to Nessa
 step << NightElf Warrior
     .goto Darnassus,58.72,34.92
@@ -913,6 +1038,8 @@ step <<  NightElf Hunter
     *Buy a level 16 bow if you have money to spare
 step <<  NightElf !Druid
     .goto Teldrassil,23.70,64.51
+.target Chief Archaeologist Greywhisker
+>>Talk to |cFF00FF25Chief Archaeologist Greywhisker|r
     .accept 730 >> Accept Trouble In Darkshore?
 step << NightElf Priest
     .goto Darnassus,37.88,82.73
@@ -932,14 +1059,20 @@ step
 step << NightElf
      #completewith next
     .goto Felwood,20.04,16.35
+.target Archaeologist Hollee
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .turnin 730 >> Turn in Trouble In Darkshore?
 step
     .goto Felwood,20.04,16.35
      >> The Absent Minded Prospector
+.target Archaeologist Hollee
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step
     .goto Felwood,19.98,14.40
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4762 >> Turn in The Cliffspring River
+.target Thundris Windweaver
     .accept 4763 >> Accept The Blackwood Corrupted
 step
     #completewith xabraxxis
@@ -948,6 +1081,8 @@ step
     .collect 12347,1,4763,1
 step
     .goto Felwood,18.50,19.87
+.target Gubber Blump
+>>Talk to |cFF00FF25Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
 step
 	#era/som
@@ -989,8 +1124,10 @@ step
     .isOnQuest 1003
 step
     .goto Felwood,27.00,55.59
+>>Talk to |cFF00FF25Onu|r
     .turnin 952 >> Turn in Grove of the Ancients << NightElf
     .turnin 948 >> Turn in Onu
+.target Onu
     .accept 944 >> Accept The Master's Glaive
 step
     .goto Ashenvale,22.36,3.98
@@ -999,6 +1136,8 @@ step
 step
     #sticky
     .goto Ashenvale,22.36,3.98
+.target Therylune
+>>Talk to |cFF00FF25Therylune|r
     .accept 945 >> Accept Therylune's Escape
 step
      >> Drop the scrying bowl on the ground
@@ -1019,7 +1158,9 @@ step
     .isOnQuest 1003
 step
     .goto Felwood,27.00,55.59
+>>Talk to |cFF00FF25Onu|r
     .turnin 950 >> Turn in Return to Onu
+.target Onu
     .accept 951 >> Accept Mathystra Relics
 step << Hunter
     .xp 17
@@ -1027,11 +1168,15 @@ step << Hunter
     #sticky
     #label prospector
     .goto Felwood,18.08,64.03
+.target Prospector Remtravel
+>>Talk to |cFF00FF25Prospector Remtravel|r
     .turnin 729 >> Turn in The Absent Minded Prospector
 step <<  Hunter
     .goto Darkshore,35.72,83.69
      >> Start the escort quest
      >>This quest is VERY hard, you can skip this step and come back later at level 19
+.target Prospector Remtravel
+>>Talk to |cFF00FF25Prospector Remtravel|r
     .accept 731,1 >> Accept The Absent Minded Prospector
     .link https://www.twitch.tv/videos/1182180918 >> Click here for video reference
 step <<  Hunter
@@ -1085,11 +1230,15 @@ step << Druid
     .fly Auberdine>>Fly to Darkshore
 step
     .goto Darkshore,36.62,45.59
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Turn in Beached Sea Turtle << !Druid
     .turnin 4728 >> Turn in Beached Sea Creature
 step << Hunter
 	#era/som << Dwarf
     .goto Darkshore,36.62,45.59
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4730 >> Turn in Beached Sea Creature
     .turnin 4731 >> Turn in Beached Sea Turtle
     .turnin 4732 >> Turn in Beached Sea Turtle
@@ -1097,30 +1246,44 @@ step << Hunter
 step
     #label south2
     .goto Felwood,18.50,19.87
+.target Gubber Blump
+>>Talk to |cFF00FF25Gubber Blump|r
     .turnin 1138 >> Turn in Fruit of the Sea
     >>Skip this step if you haven't collected all 6 items
     .isQuestComplete 1138
 step
     .goto Felwood,20.34,18.12
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4740 >> Turn in WANTED: Murkdeep!
 step
     .goto Felwood,21.63,18.15
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2138 >> Turn in Cleansing of the Infected
+.target Tharnariun Treetender
     .accept 2139 >> Accept Tharnariun's Hope
 step << Hunter
     .goto Felwood,20.04,16.35
+.target Archaeologist Hollee
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
     .isQuestComplete 731
 step << Hunter
     .goto Felwood,20.04,16.35
+.target Archaeologist Hollee
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .accept 741 >> Accept The Absent Minded Prospector
     .isQuestTurnedIn 731
 step << Druid
     .goto Darkshore,37.7,40.7
+>>Talk to |cFF00FF25Alanndarian Nightsong|r
     .turnin 6123 >> Turn in Gathering the Cure
+.target Alanndarian Nightsong
     .accept 6124 >> Accept Curing the Sick
 step
     .goto Felwood,27.70,10.03
+.target Asterion
+>>Talk to |cFF00FF25Asterion|r
     .turnin 957 >> Turn in Bashal'Aran
 step << Druid
     #label deers
@@ -1157,7 +1320,9 @@ step
     .accept 1003 >> Accept Buzzbox 525
 step
     .goto Winterspring,4.82,27.18
+>>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 965 >> Turn in The Tower of Althalaxx
+.target Balthule Shadowstrike
     .accept 966 >> Accept The Tower of Althalaxx
 step
     .goto Winterspring,6.06,28.81
@@ -1165,7 +1330,9 @@ step
     .complete 966,1
 step
     .goto Winterspring,4.82,27.18
+>>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
+.target Balthule Shadowstrike
     .accept 967 >> Accept The Tower of Althalaxx
 step
     .goto Winterspring,7.52,23.26
@@ -1173,6 +1340,8 @@ step
     .complete 951,1
 step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,6.37,16.66
+.target Gelkak Gyromast
+>>Talk to |cFF00FF25Gelkak Gyromast|r
     .accept 2098 >> Accept Gyromast's Retrieval
 step  << !Warrior !Paladin !Rogue !Druid
     #sticky
@@ -1202,7 +1371,9 @@ step  << !Warrior !Paladin !Rogue !Druid
 step  << !Warrior !Paladin !Rogue !Druid
     #requires foreststriders
     .goto Winterspring,6.37,16.66
+>>Talk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2098 >> Turn in Gyromast's Retrieval
+.target Gelkak Gyromast
     .accept 2078 >> Accept Gyromast's Revenge
 step << !Druid
     .goto Winterspring,3.10,20.90
@@ -1220,6 +1391,8 @@ step  << !Warrior !Paladin !Rogue !Druid
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> Click here for video reference
 step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,6.37,16.66
+.target Gelkak Gyromast
+>>Talk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestComplete 2078
 step  << !Warrior !Paladin !Rogue !Druid
@@ -1247,9 +1420,13 @@ step <<  Dwarf Hunter
     +Grind until your HS cooldown is <9 minutes then run back to Auberdine
 step <<  Dwarf Hunter
     .goto Felwood,19.98,14.40
+.target Thundris Windweaver
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4763 >> Turn in The Blackwood Corrupted
 step <<  Dwarf Hunter
     .goto Felwood,21.63,18.15
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2139 >> Turn in Tharnariun's Hope
 step << Dwarf Hunter
      .goto Darkshore,33.17,40.17,40,0
@@ -1279,12 +1456,16 @@ step <<  Dwarf Hunter
     .collect 11362,1
 step <<  Dwarf Hunter
     .goto Teldrassil,23.70,64.51
+>>Talk to |cFF00FF25Chief Archaeologist Greywhisker|r
     .turnin 741 >> Turn in The Absent Minded Prospector
+.target Chief Archaeologist Greywhisker
     .accept 942 >> Accept The Absent Minded Prospector
 step << Druid
     .goto Moonglade,56.2,30.4
     >>Teleport to Moonglade
+>>Talk to |cFF00FF25Dendrite Starblaze|r
     .turnin 6124 >> Curing the Sick
+.target Dendrite Starblaze
     .accept 6125 >> Accept Power over Poison
 step << Druid
     .goto Moonglade,52.53,40.56
@@ -1294,21 +1475,31 @@ step
     .hs >> Hearth back to Auberdine
 step
     .goto Felwood,19.10,20.63
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4727 >> Turn in Beached Sea Turtle
 step
     .goto Felwood,18.50,19.87
+.target Gubber Blump
+>>Talk to |cFF00FF25Gubber Blump|r
     .turnin 1138 >> Turn in Fruit of the Sea
 step
     .goto Felwood,19.98,14.40
+.target Thundris Windweaver
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4763 >> Turn in The Blackwood Corrupted
 step <<  NightElf Hunter
     .vendor  >> Buy extra arrows/supplies
 step
     .goto Felwood,21.63,18.15
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2139 >> Turn in Tharnariun's Hope
 step
     .goto Darkshore,39.37,43.48
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 986 >> Turn in A Lost Master
+.target Terenthis
     .accept 993 >> Accept A Lost Master
  step <<  !Hunter
     .goto Darkshore,33.70,42.45
@@ -1320,6 +1511,8 @@ step <<  !Hunter
 step <<  !Hunter
     .goto Wetlands,49.91,39.36
     >>Follow the road east
+.target Einar Stonegrip
+>>Talk to |cFF00FF25Einar Stonegrip|r
     .accept 469 >> Accept Daily Delivery
 step <<  !Hunter
     #completewith next
@@ -1329,6 +1522,8 @@ step <<  !Hunter
     .zone Loch Modan >> Cross the tunnel into Loch Modan
 step << !Hunter
     .goto Loch Modan,46.0,13.3
+.target Chief Engineer Hinderweir VII
+>>Talk to |cFF00FF25Chief Engineer Hinderweir VII|r
     .accept 250 >> Accept A Dark Threat Looms
 step << !Hunter
     .goto Loch Modan,56.1,13.3
@@ -1337,12 +1532,14 @@ step << !Hunter
     .accept 199 >> Accept A Dark Threat Looms
 step << !Hunter
     .goto Loch Modan,46.0,13.3
+.target Chief Engineer Hinderweir VII
+>>Talk to |cFF00FF25Chief Engineer Hinderweir VII|r
     .turnin 199 >> Turn in A Dark Threat Looms
 step <<  !Hunter
     #completewith next
     .deathskip >> Die and respawn at Thelsamar
 step <<  !Hunter
-    .goto Loch Modan,33.9,50.9
+    .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
 step <<  !Hunter
     .goto Loch Modan,21.30,68.60,40 >> Run to Dun Morogh
@@ -1880,6 +2077,8 @@ step
     .accept 967 >> Accept The Tower of Althalaxx
 step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,6.37,16.66
+.target Gelkak Gyromast
+>>Talk to |cFF00FF25Gelkak Gyromast|r
     .accept 2098 >> Accept Gyromast's Retrieval
 step  << !Warrior !Paladin !Rogue !Druid
     .goto Darkshore,56.33,14.97
@@ -1913,7 +2112,9 @@ step
 step  << !Warrior !Paladin !Rogue !Druid
     #requires ForestKey
     .goto Winterspring,6.37,16.66
+>>Talk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2098 >> Turn in Gyromast's Retrieval
+.target Gelkak Gyromast
     .accept 2078 >> Accept Gyromast's Revenge  << !Warrior !Paladin !Rogue
 step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,5.59,21.09
@@ -1924,6 +2125,8 @@ step  << !Warrior !Paladin !Rogue !Druid
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> Click here for video reference
 step  << !Warrior !Paladin !Rogue !Druid
     .goto Winterspring,6.37,16.66
+.target Gelkak Gyromast
+>>Talk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestComplete 2078
 step   << !Warrior !Paladin !Rogue !Druid
@@ -2067,11 +2270,15 @@ step
     #sticky
     #label prospector
     .goto Felwood,18.08,64.03
+.target Prospector Remtravel
+>>Talk to |cFF00FF25Prospector Remtravel|r
     .turnin 729 >> Turn in The Absent Minded Prospector
 step <<  Hunter
     .goto Darkshore,35.72,83.69
      >> Start the escort quest
     >>This quest is hard, proceed with caution
+.target Prospector Remtravel
+>>Talk to |cFF00FF25Prospector Remtravel|r
     .accept 731,1 >> Accept The Absent Minded Prospector
     .link https://www.twitch.tv/videos/1182180918 >> Click here for video reference
 step <<  Hunter
@@ -2083,6 +2290,8 @@ step
     #completewith next
     .goto Ashenvale,22.36,3.98
     >>Start the escort quest
+.target Therylune
+>>Talk to |cFF00FF25Therylune|r
     .accept 945 >> Accept Therylune's Escape
 step
     .goto Ashenvale,22.36,3.98
@@ -2119,15 +2328,21 @@ step
     #completewith lostmaster2
     #sticky
     .goto Ashenvale,29.58,1.67
+.target Volcor
+>>Talk to |cFF00FF25Volcor|r
     .turnin 993 >> Turn in A Lost Master
 step
 	#era/som
      >> Clear the furbolgs near the cave before accepting this quest
+.target Volcor
+>>Talk to |cFF00FF25Volcor|r
     .accept 994 >> Accept Escape Through Force
 step
 	#som
 	#phase 3-6
      >> Accept the quest and wait for the RP sequence to finish
+.target Volcor
+>>Talk to |cFF00FF25Volcor|r
     .accept 995 >> Accept Escape Through Stealth
 step
 	#era/som
@@ -2144,11 +2359,15 @@ step
      .complete 995,1
 step
     .goto Felwood,27.00,55.59
+.target Onu
+>>Talk to |cFF00FF25Onu|r
     .turnin 951 >> Turn in Mathystra Relics
 step
     .goto Felwood,27.96,55.76
     >>Speak to Kerlonian and start the escort quest
     >>If he's not there, you can skip this quest (can take up to 25 minutes to respawn depending on other players)
+.target Kerlonian Evershade
+>>Talk to |cFF00FF25Kerlonian Evershade|r
     .accept 5321 >> Accept The Sleeper Has Awakened
 step
     .isOnQuest 5321
@@ -2166,15 +2385,21 @@ step
      .isOnQuest 5321
 step
     .goto Ashenvale,27.26,35.58
+.target Liladris Moonriver
+>>Talk to |cFF00FF25Liladris Moonriver|r
     .turnin 5321 >> Turn in The Sleeper Has Awakened
     .isQuestComplete 5321
 step
     #label tower
     .goto Ashenvale,26.19,38.69
+.target Delgren the Purifier
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .turnin 967 >> Turn in The Tower of Althalaxx
 step
 	#era/som
     .goto Ashenvale,26.19,38.69
+.target Delgren the Purifier
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .accept 970 >> Accept The Tower of Althalaxx
 step
 	#era/som
@@ -2186,11 +2411,15 @@ step
 	#era/som
      #completewith next
     .goto Ashenvale,26.19,38.69
+.target Delgren the Purifier
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .turnin 970 >> Turn in The Tower of Althalaxx
 step
     .xp 20 >> Grind to level 20
 step
     .goto Ashenvale,26.43,38.59
+.target Orendil Broadleaf
+>>Talk to |cFF00FF25Orendil Broadleaf|r
     .accept 1010 >> Accept Bathran's Hair
 step
     .goto Ashenvale,31.63,22.33
@@ -2205,16 +2434,22 @@ step
     #sticky
     #label hair
     .goto Ashenvale,26.43,38.59
+>>Talk to |cFF00FF25Orendil Broadleaf|r
     .turnin 1010 >> Turn in Bathran's Hair
+.target Orendil Broadleaf
     .accept 1020 >> Accept Orendil's Cure
 step
 	#era/som
     .goto Ashenvale,26.43,38.59
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .turnin 970 >> Turn in The Tower of Althalaxx
+.target Delgren the Purifier
     .accept 973 >> Accept The Tower of Althalaxx
 step
     #requires hair
     .goto Ashenvale,22.64,51.91
+.target Therysil
+>>Talk to |cFF00FF25Therysil|r
     .turnin 945 >> Turn in Therylune's Escape
     .isQuestComplete 945
 step
@@ -2230,26 +2465,38 @@ step
     .fp Astranaar>> Get the Astranaar Flight Path
 step
     .goto Ashenvale,34.67,48.83
+.target Shindrell Swiftfire
+>>Talk to |cFF00FF25Shindrell Swiftfire|r
     .accept 1008 >> Accept The Zoram Strand
 step
     .goto Ashenvale,34.89,49.79
+.target Sentinel Thenysil
+>>Talk to |cFF00FF25Sentinel Thenysil|r
     .accept 1070 >> Accept On Guard in Stonetalon
 step
     .goto Ashenvale,35.76,49.10
+.target Faldreas Goeth'Shael
+>>Talk to |cFF00FF25Faldreas Goeth'Shael|r
     .accept 1056 >> Accept Journey to Stonetalon Peak
 step
     .goto Ashenvale,36.61,49.58
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .accept 991 >> Accept Raene's Cleansing
     .accept 1054 >> Accept Culling the Threat
 step <<  !Dwarf/!Hunter
     .home >> Set your HS to Astranaar
 step
     .goto Ashenvale,37.36,51.79
+.target Pelturas Whitemoon
+>>Talk to |cFF00FF25Pelturas Whitemoon|r
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure RP
 step
     .goto Ashenvale,37.36,51.79
      >> Wait for the RP sequence to end
+.target Pelturas Whitemoon
+>>Talk to |cFF00FF25Pelturas Whitemoon|r
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.37,46.38
@@ -2259,7 +2506,9 @@ step
 step
     .goto Ashenvale,37.36,51.79
      >> Wait for the RP sequence to end
+>>Talk to |cFF00FF25Pelturas Whitemoon|r
     .turnin 1033 >> Turn in Elune's Tear
+.target Pelturas Whitemoon
     .accept 1034 >> Accept The Ruins of Stardust
 step
     .goto Ashenvale,33.30,67.79
@@ -2285,9 +2534,13 @@ step
 	#era/som
     .isQuestComplete 973
     .goto Ashenvale,26.19,38.69
+.target Delgren the Purifier
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .turnin 973 >> Turn in The Tower of Althalaxx
 step
     .goto Ashenvale,14.79,31.29
+.target Talen
+>>Talk to |cFF00FF25Talen|r
     .accept 1007 >> Accept The Ancient Statuette
 step
     #sticky
@@ -2302,8 +2555,10 @@ step
 step
     .goto Ashenvale,14.79,31.29
      >> Wait for the RP sequence
+>>Talk to |cFF00FF25Talen|r
     .turnin 1007 >> Turn in The Ancient Statuette
     .timer 25,The Ancient Statuette RP
+.target Talen
     .accept 1009 >> Accept Ruuzel
 step
     .goto Ashenvale,7.40,13.40
@@ -2313,11 +2568,15 @@ step
     .unitscan Lady Vespia
 step
     .goto Ashenvale,14.79,31.29
+.target Talen
+>>Talk to |cFF00FF25Talen|r
     .turnin 1009 >> Turn in Ruuzel
 step
     #requires nagas
     .goto Ashenvale,20.31,42.33
+>>Talk to |cFF00FF25Teronis' Corpse|r
     .turnin 991 >> Turn in Raene's Cleansing
+.target Teronis' Corpse
     .accept 1023 >> Accept Raene's Cleansing
 step
     .goto Ashenvale,20.41,43.82
@@ -2343,22 +2602,30 @@ step <<  !Dwarf/!Hunter
     .fly Darkshore>>Fly to Darkshore
 step
     .goto Felwood,20.04,16.35
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
+.target Archaeologist Hollee
     .accept 741 >> Accept The Absent Minded Prospector
 step
     #completewith end
     .vendor >> Restock/Resupply
 step
     .goto Felwood,22.24,18.22
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 995 >> Turn in Escape Through Stealth
     .isOnQuest 995
 step
     .goto Felwood,22.24,18.22
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 994 >> Turn in Escape Through Force
     .isOnQuest 994
 step
 	#era/som
     .goto Darkshore,36.62,45.59
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4730 >> Turn in Beached Sea Creature
     .turnin 4731 >> Turn in Beached Sea Turtle
     .turnin 4732 >> Turn in Beached Sea Turtle
@@ -2368,7 +2635,9 @@ step
     .fly Teldrassil>> Fly to Teldrassil
 step
     .goto Teldrassil,23.70,64.51
+>>Talk to |cFF00FF25Chief Archaeologist Greywhisker|r
     .turnin 741 >> Turn in The Absent Minded Prospector
+.target Chief Archaeologist Greywhisker
     .accept 942 >> Accept The Absent Minded Prospector
 step <<  !Dwarf/!Hunter
     #label end
@@ -2395,6 +2664,8 @@ step
 step << !NightElf
 	.isOnQuest 1338
     .goto StormwindClassic,58.08,16.52
+.target Furen Longbeard
+>>Talk to |cFF00FF25Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
 step << Warlock/Priest
      >>Go in the building. Buy a Burning Wand if it's an upgrade
@@ -2415,10 +2686,12 @@ step << Mage
 step << Paladin
     >>Do the quests for Duthorian Rall. Make sure you have the 10 Linen Cloth from earlier
     .goto StormwindClassic,39.80,29.77
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1641 >> Turn in The Tome of Divinity
     .collect 6775,1,1642 --Tome of Divinity (1)
     .accept 1642 >> Accept The Tome of Divinity
     .turnin 1642 >> Turn in The Tome of Divinity
+.target Duthorian Rall
     .accept 1643 >> Accept The Tome of Divinity
 step << Paladin
     .goto StormwindClassic,38.68,32.85
@@ -2441,7 +2714,9 @@ step
      .train 202 >> Talk to Woo Ping. Train 2h Swords << Warrior/Paladin
 step << Paladin
     .goto StormwindClassic,57.08,61.74
+>>Talk to |cFF00FF25Stephanie Turner|r
     .turnin 1643 >> Turn in The Tome of Divinity
+.target Stephanie Turner
     .accept 1644 >> Accept The Tome of Divinity
     .turnin 1644 >> Turn in The Tome of Divinity
 --  .accept 1780 >> Accept The Tome of Divinity
@@ -2480,12 +2755,16 @@ step << !Human !Warlock
     #level 20
     >>Run to the Tower of Azora
     .goto Elwynn Forest,65.20,69.80
+.target Theocritus
+>>Talk to |cFF00FF25Theocritus|r
     .accept 94 >> Accept A Watchful Eye
 step << NightElf
     #era/som
     #level 20
     >>Run to the Tower of Azora
     .goto Elwynn Forest,65.20,69.80
+.target Theocritus
+>>Talk to |cFF00FF25Theocritus|r
     .accept 94 >> Accept A Watchful Eye
 step << Human/Warlock
     #som
@@ -2511,23 +2790,31 @@ step << NightElf
     #era/som
     .goto Redridge Mountains,15.27,71.45
      >> Head to the Redridge/Elwynn border
+.target Guard Parker
+>>Talk to |cFF00FF25Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
 step << !Human !Warlock
     #som
     #phase 3-6
     .goto Redridge Mountains,15.27,71.45
      >> Head to the Redridge/Elwynn border
+.target Guard Parker
+>>Talk to |cFF00FF25Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
 step
     #som
     #phase 3-6
     .goto Redridge Mountains,30.73,59.99
+>>Talk to |cFF00FF25Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls << !Human !Warlock
+.target Deputy Feldon
     .accept 246 >> Accept Assessing the Threat << !Human !Warlock
 step << NightElf
     #era/som
     .goto Redridge Mountains,30.73,59.99
+>>Talk to |cFF00FF25Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls
+.target Deputy Feldon
     .accept 246 >> Accept Assessing the Threat
 step
 	>> Talk to |cFF00FF25Marshal Marris|r
@@ -2585,6 +2872,8 @@ step << Warlock
 step << Warlock
     .goto Redridge Mountains,21.85,46.32
      >>This is a hard quest to solo at this level, if you can't solo Bellygrub, skip this step, you'll have another opportunity to finish it later
+.target Martie Jainrose
+>>Talk to |cFF00FF25Martie Jainrose|r
     .turnin 34 >> Turn in An Unwelcome Guest
 step
 	>> Talk to |cFF00FF25Shawn|r
@@ -2749,6 +3038,8 @@ step << Warlock
     .goto StormwindClassic,26.11,77.20
     .trainer >> Train your class spells
     .goto StormwindClassic,25.30,78.50
+.target Gakin the Darkbinder
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
     .accept 1716 >> Accept Devourer of Souls
 step << Mage
     .goto StormwindClassic,37.69,82.09,10 >> Go up the tower, then through the portal
@@ -2767,10 +3058,11 @@ step << Druid
 step << Paladin
     .goto StormwindClassic,42.66,33.75,30,0
     .goto StormwindClassic,40.1,30.0
-    >>Speak to Duthorian Rall and right click on the Tome of Valor provided
+>>Talk to |cFF00FF25Duthorian Rall|r and right click on the Tome of Valor provided
     .collect 6776,1,1649 --Tome of Valor (1)
     .accept 1649 >>Accept The Tome of Valor
     .turnin 1649 >>Turn in The Tome of Valor
+.target Duthorian Rall
     .accept 1650 >>Accept The Tome of Valor
 step << Paladin
     .goto StormwindClassic,38.68,32.85
@@ -2784,7 +3076,11 @@ step << Rogue
     .goto StormwindClassic,78.67,59.48,20,0
     .goto StormwindClassic,75.75,60.36
     .trainer >> Train your class spells. Make sure to train lockpicking
+.target Renzik "The Shiv"
+>>Talk to |cFF00FF25Renzik "The Shiv"|r
     .accept 2281 >> Accept Redridge Rendezvous
+.target Master Mathias Shaw
+>>Talk to |cFF00FF25Master Mathias Shaw|r
     .accept 2360 >> Accept Mathias and the Defias
 step << Warrior
     >>Enter the command center
@@ -2806,6 +3102,8 @@ step
 step
     >>Run to the Tower of Azora
     .goto Elwynn Forest,65.20,69.80
+.target Theocritus
+>>Talk to |cFF00FF25Theocritus|r
     .accept 94 >> Accept A Watchful Eye
 step
     #completewith FlyR
@@ -2851,7 +3149,9 @@ step
      .turnin 3741 >> Turn in Hilary's Necklace
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
+>>Talk to |cFF00FF25Lucius|r
     .turnin 2281 >> Turn in Redridge Rendevous
+.target Lucius
     .accept 2282 >> Accept Alther's Mill
 step
 	>> Talk to |cFF00FF25Dockmaster Baren|r
@@ -2970,11 +3270,15 @@ step << Rogue
     #softcore
     .goto Westfall,68.5,70.0
     >>This is a good time to do the poison quest in Westfall, this quest can be VERY HARD to do at level 20/21, this step is optional, you will have another chance to do it later at level 24
+.target Agent Kearnen
+>>Talk to |cFF00FF25Agent Kearnen|r
     .turnin 2360 >> Turn in Mathias and the Defias
     .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
 step << Rogue
     #softcore
     .goto Westfall,68.5,70.0
+.target Agent Kearnen
+>>Talk to |cFF00FF25Agent Kearnen|r
     .accept 2359 >> Accept Klaven's Tower
     .isQuestTurnedIn 2360
 step << Rogue
@@ -3011,17 +3315,23 @@ step << Rogue
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.67,59.48,20,0
      .goto StormwindClassic,75.9,59.9
+.target Master Mathias Shaw
+>>Talk to |cFF00FF25Master Mathias Shaw|r
     .turnin 2359 >> Turn in Klaven's Tower
     .isQuestComplete 2359
 step << Rogue
     #softcore
      .goto StormwindClassic,75.9,59.9
+.target Master Mathias Shaw
+>>Talk to |cFF00FF25Master Mathias Shaw|r
     .accept 2607 >> Accept The Touch of Zanzil
     .isQuestTurnedIn 2359
 step << Rogue
     #softcore
     .goto StormwindClassic,78.1,59.0
     >>Head to the basement
+.target Doc Mixilpixil
+>>Talk to |cFF00FF25Doc Mixilpixil|r
     .turnin 2607 >> Turn in The Touch of Zanzil
     .isQuestTurnedIn 2359
 	------------
@@ -3030,12 +3340,16 @@ step << Rogue
 	.xp <22,1
     .goto Westfall,68.5,70.0
     >>This is a good time to do the poison quest in Westfall if you've trained Vanish. You will have another chance to do it later at level 24 if you wish to wait.
+.target Agent Kearnen
+>>Talk to |cFF00FF25Agent Kearnen|r
     .turnin 2360 >> Turn in Mathias and the Defias
     .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>Click here for video reference
 step << Rogue
     #hardcore
 	.xp <22,1
     .goto Westfall,68.5,70.0
+.target Agent Kearnen
+>>Talk to |cFF00FF25Agent Kearnen|r
     .accept 2359 >> Accept Klaven's Tower
     .isQuestTurnedIn 2360
 step << Rogue
@@ -3077,12 +3391,16 @@ step << Rogue
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.67,59.48,20,0
      .goto StormwindClassic,75.9,59.9
+.target Master Mathias Shaw
+>>Talk to |cFF00FF25Master Mathias Shaw|r
     .turnin 2359 >> Turn in Klaven's Tower
     .isQuestComplete 2359
 step << Rogue
     #hardcore
 	.xp <22,1
      .goto StormwindClassic,75.9,59.9
+.target Master Mathias Shaw
+>>Talk to |cFF00FF25Master Mathias Shaw|r
     .accept 2607 >> Accept The Touch of Zanzil
     .isQuestTurnedIn 2359
 step << Rogue
@@ -3090,6 +3408,8 @@ step << Rogue
 	.xp <22,1
     .goto StormwindClassic,78.1,59.0
     >>Head to the basement
+.target Doc Mixilpixil
+>>Talk to |cFF00FF25Doc Mixilpixil|r
     .turnin 2607 >> Turn in The Touch of Zanzil
     .isQuestTurnedIn 2359
 step <<  NightElf
@@ -3113,9 +3433,13 @@ step
     .hs >> Hearth back to Auberdine
 step
     .goto Darkshore,37.44,41.83
+.target Archaeologist Hollee
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step
     .goto Darkshore,37.32,43.64
+.target Barithras Moonshade
+>>Talk to |cFF00FF25Barithras Moonshade|r
     .accept 948 >> Accept Onu
 step
 	>> Click the |cFFDB2EEFWanted Poster|r
@@ -3136,6 +3460,8 @@ step
 step <<  NightElf
      #completewith next
     .goto Felwood,27.00,55.59
+.target Onu
+>>Talk to |cFF00FF25Onu|r
     .turnin 952 >> Turn in Grove of the Ancients
 step
 	>> Talk to |cFF00FF25Onu|r
@@ -3221,17 +3547,23 @@ step
     .isOnQuest 1003
 step
     .goto Darkshore,45.00,85.30
+>>Talk to |cFF00FF25Volcor|r
     .turnin 993 >> Turn in A Lost Master
+.target Volcor
     .accept 995 >> Accept Escape Through Stealth
 step
      >> Wait until the RP sequence is over
     .complete 995,1
 step
     .goto Felwood,27.00,55.59
+.target Onu
+>>Talk to |cFF00FF25Onu|r
     .turnin 951 >> Turn in Mathystra Relics
     .isQuestComplete 951
 step
     .goto Felwood,27.00,55.59
+.target Onu
+>>Talk to |cFF00FF25Onu|r
     .turnin 950 >> Turn in Return to Onu
 step
     .goto Felwood,27.96,55.76

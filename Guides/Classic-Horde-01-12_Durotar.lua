@@ -656,8 +656,8 @@ step
 step
     #label Betrayers
     .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gar'thok|r
     >>|cFFFCDC00You can talk to him from outside or on top of the bunker|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gar'thok|r
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
 step
@@ -886,16 +886,24 @@ step
     .goto Durotar,54.1,76.6,25,0
     .goto Durotar,54.1,76.6,0
     >>The Questgiver patrols a little
+.target Lar Prowltusk
+>>Talk to |cFF00FF25Lar Prowltusk|r
     .accept 786 >>Accept Thwarting Kolkar Aggression
 step
     .goto Durotar,56.0,73.9
+.target Vel'rin Fang
+>>Talk to |cFF00FF25Vel'rin Fang|r
     .accept 817 >>Accept Practical Prey
 step
     .goto Durotar,55.9,74.4
+.target Master Vornal
+>>Talk to |cFF00FF25Master Vornal|r
     .accept 818 >>Accept A Solvent Spirit
 step
     .goto Durotar,55.9,74.7
+>>Talk to |cFF00FF25Master Gadrin|r
     .turnin 805 >>Turn in Report to Sen'jin Village
+.target Master Gadrin
     .accept 808 >>Accept Minshina's Skull
     .accept 826 >>Accept Zalazane
     .accept 823 >>Accept Report to Orgnil
@@ -1029,15 +1037,21 @@ step
     .goto Durotar,52.2,43.2,120 >>Travel to Razor Hill
 step
     .goto Durotar,52.2,43.2
+>>Talk to |cFF00FF25Orgnil Soulscar|r
     .turnin 823 >>Turn in Report to Orgnil
+.target Orgnil Soulscar
     .accept 806 >>Accept Dark Storms
 step
     >>Inside the bunker, top floor
     .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
     .accept 784 >>Accept Vanquish the Betrayers
     .accept 837 >>Accept Encroachment
 step
     .goto Durotar,51.1,42.4
+.target Cook Torka
+>>Talk to |cFF00FF25Cook Torka|r
     .accept 815 >>Accept Break a Few Eggs
 step
     #completewith next
@@ -1045,6 +1059,8 @@ step
 step
     >>Go up the tower
     .goto Durotar,49.9,40.3
+.target Furl Scornbrow
+>>Talk to |cFF00FF25Furl Scornbrow|r
     .accept 791 >>Accept Carry Your Weight
 step << Shaman
     .goto Durotar,52.0,40.5
@@ -1084,17 +1100,23 @@ step << Warrior/Rogue
     .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << !Warrior !Rogue !Hunter
     .goto Durotar,51.5,41.6
+.target Innkeeper Grosk
+>>Talk to |cFF00FF25Innkeeper Grosk|r
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much level 5 water as you can
 step << Warrior/Rogue/Hunter
     .goto Durotar,51.5,41.6
+.target Innkeeper Grosk
+>>Talk to |cFF00FF25Innkeeper Grosk|r
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy up to 20 level 5 food
 step << Priest
     .goto Durotar,54.3,42.9
+>>Talk to |cFF00FF25Tai'jin|r
     .turnin 5649 >> In Favor of Spirituality
+.target Tai'jin
     .accept 5648 >> Garments of Spirituality
 step << Priest
     >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on Grunt Kor'ja
@@ -1102,6 +1124,8 @@ step << Priest
     .complete 5648,1 --Heal and fortify Grunt Kor'ja
 step << Priest
     .goto Durotar,54.3,42.9
+.target Tai'jin
+>>Talk to |cFF00FF25Tai'jin|r
     .turnin 5648 >>Turn in Garments of Spirituality
 step << Priest
 	#som
@@ -1161,7 +1185,9 @@ step
 step
     #softcore
     .goto Durotar,51.9,43.5
+>>Talk to |cFF00FF25Gar'Thok|r
     .turnin 784 >>Turn in Vanquish the Betrayers
+.target Gar'Thok
     .accept 825 >>Accept From The Wreckage....
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 831 >>Accept The Admiral's Orders
@@ -1170,12 +1196,16 @@ step
     #requires KulTiras
     >>Run back to Razor Hill
     .goto Durotar,51.9,43.5
+>>Talk to |cFF00FF25Gar'Thok|r
     .turnin 784 >>Turn in Vanquish the Betrayers
+.target Gar'Thok
     .accept 825 >>Accept From The Wreckage....
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 831 >>Accept The Admiral's Orders
 step
     .goto Durotar,49.9,40.3
+.target Furl Scornbrow
+>>Talk to |cFF00FF25Furl Scornbrow|r
     .turnin 791 >>Turn in Carry Your Weight
 step << Shaman
     .goto Durotar,52.0,40.5
@@ -1214,13 +1244,13 @@ step << Warrior/Rogue
     .money <0.0081
     .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << Shaman
-    .goto Durotar,54.4,42.6
+    .goto Durotar,54.419,42.588
     .trainer >> Train your class spells
 step << Priest
     .goto Durotar,54.3,42.9
     .trainer >> Train your class spells
 step << Warrior
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
     .trainer >> Train your class spells
 step << Hunter
     .goto Durotar,51.8,43.5
@@ -1334,17 +1364,25 @@ step
     +Save the Faintly Glowing Skull from the turnin for later (you'll be told when to use it)
 step
     .goto Durotar,55.9,74.7
+.target Master Gadrin
+>>Talk to |cFF00FF25Master Gadrin|r
     .turnin 808 >>Turn in Minshina's Skull
     .turnin 826 >>Turn in Zalazane
 step
     .goto Durotar,56.0,74.3
+.target Master Vornal
+>>Talk to |cFF00FF25Master Vornal|r
     .turnin 818 >>Turn in A Solvent Spirit
 step
     .goto Durotar,56.0,73.9
+.target Vel'rin Fang
+>>Talk to |cFF00FF25Vel'rin Fang|r
     .turnin 817 >>Turn in Practical Prey
 step
 	#era/som
     .goto Durotar,54.3,73.3
+.target Lar Prowltusk
+>>Talk to |cFF00FF25Lar Prowltusk|r
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
 step
 	#som
@@ -1355,16 +1393,22 @@ step
 	#som
 	#phase 3-6
     .goto Durotar,51.1,42.4
+.target Cook Torka
+>>Talk to |cFF00FF25Cook Torka|r
     .turnin 815 >>Turn in Break a Few Eggs
 step
 	#som
 	#phase 3-6
     .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
     .turnin 825 >>Turn in From The Wreckage....
 step << Shaman
 	#som
 	#phase 3-6
     .goto Durotar,54.4,42.5
+.target Swart
+>>Talk to |cFF00FF25Swart|r
     .accept 2983 >>Accept Call of Fire
     .trainer >> Train your class spells
 step << Priest
@@ -1375,7 +1419,13 @@ step << Priest
 step << Orc Warrior/Troll Warrior
 	#som
 	#phase 3-6
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
+.target Sorek
+.target Tarshaw Jaggedscar
+.target Krang Stonehoof
+>>Talk to |cFF00FF25Krang Stonehoof|r
+-->>Talk to |cFF00FF25Tarshaw Jaggedscar|r
+-->>Talk to |cFF00FF25Sorek|r
     .accept 1505 >>Accept Veteran Uzzek
     .trainer >> Train your class spells
 step << Rogue
@@ -1394,18 +1444,24 @@ step << Warlock
 	#phase 3-6
     .goto Durotar,54.4,41.2
     .trainer >> Train your class spells
+.target Ophek
+>>Talk to |cFF00FF25Ophek|r
     .accept 1506 >>Accept Gan'Rul's Summons
 step << Hunter
 	#som
 	#phase 3-6
     .goto Durotar,51.8,43.5
     .trainer >> Train your class spells
+.target Thotar
+>>Talk to |cFF00FF25Thotar|r
     .accept 6062 >>Accept Taming the Beast
 step << Hunter
 	#som
 	#phase 3-6
     .goto Durotar,51.8,43.5
     .trainer >> Train your class spells
+.target Thotar
+>>Talk to |cFF00FF25Thotar|r
     .accept 6062 >>Accept Taming the Beast
 step << Hunter
 	#som
@@ -1417,7 +1473,9 @@ step << Hunter
 	#som
 	#phase 3-6
     .goto Durotar,51.8,43.5
+>>Talk to |cFF00FF25Thotar|r
     .turnin 6062 >>Turn in Taming the Beast
+.target Thotar
     .accept 6083 >>Accept Taming the Beast
 step << Hunter
 	#som
@@ -1429,7 +1487,9 @@ step << Hunter
 	#som
 	#phase 3-6
     .goto Durotar,51.8,43.5
+>>Talk to |cFF00FF25Thotar|r
     .turnin 6083 >>Turn in Taming the Beast
+.target Thotar
     .accept 6082 >>Accept Taming the Beast
 step << Hunter
 	#som
@@ -1441,7 +1501,9 @@ step << Hunter
 	#som
 	#phase 3-6
     .goto Durotar,51.8,43.5
+>>Talk to |cFF00FF25Thotar|r
     .turnin 6082 >>Turn in Taming the Beast
+.target Thotar
     .accept 6081 >>Accept Training the Beast
 step << Hunter
 	#som
@@ -1464,21 +1526,29 @@ step << Warlock/Hunter
 step << Warlock/Hunter
 	#era/som
     .goto Durotar,51.1,42.4
+.target Cook Torka
+>>Talk to |cFF00FF25Cook Torka|r
     .turnin 815 >>Turn in Break a Few Eggs
 step << Warlock/Hunter
 	#era/som
     .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
     .turnin 825 >>Turn in From The Wreckage....
     .turnin 837 >>Turn in Encroachment
 step << Warlock
 	#era/som
     .goto Durotar,54.4,41.2
     .trainer >> Train your class spells
+.target Ophek
+>>Talk to |cFF00FF25Ophek|r
     .accept 1506 >>Accept Gan'Rul's Summons
 step << Hunter
 	#era/som
     .goto Durotar,51.8,43.5
     .trainer >> Train your class spells
+.target Thotar
+>>Talk to |cFF00FF25Thotar|r
     .accept 6062 >>Accept Taming the Beast
 step << Hunter
 	#era/som
@@ -1488,7 +1558,9 @@ step << Hunter
 step << Hunter
 	#era/som
     .goto Durotar,51.8,43.5
+>>Talk to |cFF00FF25Thotar|r
     .turnin 6062 >>Turn in Taming the Beast
+.target Thotar
     .accept 6083 >>Accept Taming the Beast
 step << Hunter
 	#era/som
@@ -1498,7 +1570,9 @@ step << Hunter
 step << Hunter
 	#era/som
     .goto Durotar,51.8,43.5
+>>Talk to |cFF00FF25Thotar|r
     .turnin 6083 >>Turn in Taming the Beast
+.target Thotar
     .accept 6082 >>Accept Taming the Beast
 step << Hunter
 	#era/som
@@ -1508,7 +1582,9 @@ step << Hunter
 step << Hunter
 	#era/som
     .goto Durotar,51.8,43.5
+>>Talk to |cFF00FF25Thotar|r
     .turnin 6082 >>Turn in Taming the Beast
+.target Thotar
     .accept 6081 >>Accept Training the Beast
 step << Hunter
 	#era/som
@@ -1516,9 +1592,13 @@ step << Hunter
     .vendor >>vendor trash. Buy level 10 arrows until your Quiver is full (1000 arrows)
 step
     .goto Durotar,43.1,30.3
+.target Misha Tor'kren
+>>Talk to |cFF00FF25Misha Tor'kren|r
     .accept 816 >>Accept Lost But Not Forgotten
 step
     .goto Durotar,46.4,22.9
+.target Rezlak
+>>Talk to |cFF00FF25Rezlak|r
     .accept 834 >>Accept Winds in the Desert
 step
     >>Loot the small sacks on the ground
@@ -1527,14 +1607,18 @@ step
 step
 	#label SkullX
     .goto Durotar,46.4,22.9
+>>Talk to |cFF00FF25Rezlak|r
     .turnin 834 >>Turn in Winds in the Desert
+.target Rezlak
     .accept 835 >>Accept Securing the Lines
 step << Warlock
 	#som
 	#phase 3-6
 	>>Run into Orgrimmar
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
+>>Talk to |cFF00FF25Gan'rul Bloodeye|r
     .turnin 1506 >>Turn in Gan'rul's Summons
+.target Gan'rul Bloodeye
     .accept 1501 >>Accept Creature of the Void
 step << Warlock
 	#softcore
@@ -1567,6 +1651,8 @@ step
 	#era/som
 	.goto Durotar,41.5,18.6
     >> Fight your way out of the Thunder Ridge area or deathskip to the graveyard.
+.target Rhinag
+>>Talk to |cFF00FF25Rhinag|r
     .accept 812 >>Accept Need for a Cure
 step << !Warrior !Shaman
 	#som
@@ -1578,6 +1664,8 @@ step
     .goto Durotar,39.18,31.65,90,0
 	.goto Durotar,41.5,18.6
     >> Fight your way out of the Thunder Ridge area
+.target Rhinag
+>>Talk to |cFF00FF25Rhinag|r
     .accept 812 >>Accept Need for a Cure
 step
 	#era/som
@@ -1595,29 +1683,41 @@ step << Hunter
     .collect 4536,10 --Shiny Red Apple (10)
 step
 	#era/som
-    .goto Orgrimmar,34.3,36.4
+    .goto Orgrimmar,34.340,36.328
+.target Vol'jin
+>>Talk to |cFF00FF25Vol'jin|r
     .turnin 831 >>Turn in The Admiral's Orders
 step
 	#era/som
     .goto Orgrimmar,31.9,37.7
+.target Thrall
+>>Talk to |cFF00FF25Thrall|r
     .accept 5726 >>Accept Hidden Enemies
 step << Hunter
 	#era/som
-    .goto Orgrimmar,66.0,18.5
+    .goto Orgrimmar,66.046,18.526
+.target Ormak Grimshot
+>>Talk to |cFF00FF25Ormak Grimshot|r
     .turnin 6081 >>Turn in Training the Beast
 step << Warlock
 	#era/som
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
+>>Talk to |cFF00FF25Gan'rul Bloodeye|r
     .turnin 1506 >>Turn in Gan'rul's Summons
+.target Gan'rul Bloodeye
     .accept 1501 >>Accept Creature of the Void
 step << Rogue
 	#era/som
     .goto Orgrimmar,42.72,53.56
+.target Therzok
+>>Talk to |cFF00FF25Therzok|r
 	.accept 1963 >> Accept The Shattered Hand
 	.trainer >> Train your class spells
 step
 	#era/som
     .goto Orgrimmar,47.2,53.4
+.target Kor'ghan
+>>Talk to |cFF00FF25Kor'ghan|r
     .accept 813 >>Accept Finding the Antidote
     >>Put "Beast Training" on your bars. Remember to teach your pet skills later << Hunter
 step
@@ -1631,24 +1731,34 @@ step
 step << !Warlock !Hunter
 	#era/som
     .goto Durotar,51.1,42.4
+.target Cook Torka
+>>Talk to |cFF00FF25Cook Torka|r
     .turnin 815 >>Turn in Break a Few Eggs
 step << !Warlock !Hunter
 	#era/som
     .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
     .turnin 825 >>Turn in From The Wreckage....
     .turnin 837 >>Turn in Encroachment
 step
 	#som
 	#phase 3-6
     .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
     .turnin 837 >>Turn in Encroachment
 step
     .goto Durotar,52.3,43.1
+>>Talk to |cFF00FF25Orgnil Soulscar|r
     .turnin 806 >>Turn in Dark Storms
+.target Orgnil Soulscar
     .accept 828 >>Accept Margoz
 step << Shaman
 	#era/som
     .goto Durotar,54.4,42.5
+.target Swart
+>>Talk to |cFF00FF25Swart|r
     .accept 2983 >>Accept Call of Fire
     .trainer >> Train your class spells
 step << Priest
@@ -1657,7 +1767,13 @@ step << Priest
     .trainer >> Train your class spells
 step << Orc Warrior/Troll Warrior
 	#era/som
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
+.target Sorek
+.target Tarshaw Jaggedscar
+.target Krang Stonehoof
+>>Talk to |cFF00FF25Krang Stonehoof|r
+-->>Talk to |cFF00FF25Tarshaw Jaggedscar|r
+-->>Talk to |cFF00FF25Sorek|r
     .accept 1505 >>Accept Veteran Uzzek
     .trainer >> Train your class spells
 step << Rogue
@@ -1688,36 +1804,54 @@ step << Hunter
     .collect 2507,1 --Laminated Recurve Bow (1)
 step
     .goto Durotar,50.8,43.6
+.target Takrin Pathseeker
+>>Talk to |cFF00FF25Takrin Pathseeker|r
     .accept 840 >>Accept Conscript of the Horde
 step << Warrior/Shaman
     .goto The Barrens,62.2,19.4
+>>Talk to |cFF00FF25Kargal Battlescar|r
     .turnin 840 >>Turn in Conscript of the Horde
+.target Kargal Battlescar
     .accept 842 >>Accept Crossroads Conscription
 step << Warrior
     .goto The Barrens,61.4,21.1
+>>Talk to |cFF00FF25Uzzek|r
     .turnin 1505 >>Turn in Veteran Uzzek
+.target Uzzek
     .accept 1498 >>Accept Path of Defense
 step << Orc Shaman/Troll Shaman
     .goto The Barrens,55.8,20.0
+>>Talk to |cFF00FF25Kranal Fiss|r
     .turnin 2983 >>Turn in Call of Fire
+.target Kranal Fiss
     .accept 1524 >>Accept Call of Fire
 step << Warrior/Shaman
     .goto The Barrens,52.0,30.5,150 >> Run to the Crossroads
 step << Warrior/Shaman
     .goto The Barrens,52.2,31.8
+.target Tonga Runetotem
+>>Talk to |cFF00FF25Tonga Runetotem|r
     .accept 870 >>Accept The Forgotten Pools
 step << Warrior/Shaman
     .goto The Barrens,52.2,31.0
+>>Talk to |cFF00FF25Sergra Darkthorn|r
     .turnin 842 >>Turn in Crossroads Conscription
+.target Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
 step << !Tauren Warrior/!Tauren Shaman
     .goto The Barrens,52.5,29.8
+.target Zargh
+>>Talk to |cFF00FF25Zargh|r
     .accept 6365 >>Accept Meats to Orgrimmar
 step << Warrior/Shaman
     .goto The Barrens,51.9,30.3
+.target Gazrog
+>>Talk to |cFF00FF25Gazrog|r
     .accept 869 >>Accept Raptor Thieves
 step << Warrior/Shaman
     .goto The Barrens,51.5,30.8
+.target Thork
+>>Talk to |cFF00FF25Thork|r
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
 step << Warrior/Shaman
@@ -1726,10 +1860,14 @@ step << Warrior/Shaman
 step << !Tauren Warrior/!Tauren Shaman
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
+>>Talk to |cFF00FF25Devrak|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
+.target Devrak
     .accept 6384 >>Accept Ride to Orgrimmar << !Rogue
 step << Warrior/Shaman
     .goto The Barrens,51.5,30.1
+.target Apothecary Helbrim
+>>Talk to |cFF00FF25Apothecary Helbrim|r
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
 step << Warrior/Shaman
@@ -1760,17 +1898,23 @@ step << Warrior/Shaman
     .deathskip >> Die and respawn at the Spirit Healer
 step << Warrior/Shaman
     #softcore
+>>Talk to |cFF00FF25Apothecary Helbrim|r
     .turnin 848 >>Turn in Fungal Spores
+.target Apothecary Helbrim
     .accept 853 >>Accept Apothecary Zamah
 step << Warrior/Shaman
     #hardcore
     >>Run back to The Crossroads
     .goto The Barrens,51.5,30.1
+>>Talk to |cFF00FF25Apothecary Helbrim|r
     .turnin 848 >>Turn in Fungal Spores
+.target Apothecary Helbrim
     .accept 853 >>Accept Apothecary Zamah
 step << Warrior/Shaman
     .goto The Barrens,52.2,31.8
+>>Talk to |cFF00FF25Tonga Runetotem|r
     .turnin 870 >>Turn in The Forgotten Pools
+.target Tonga Runetotem
     .accept 877 >>Accept The Stagnant Oasis
 step << Warrior/Shaman
     >>Run down the road. Be careful of higher level mobs en route
@@ -1781,6 +1925,8 @@ step << Warrior/Shaman
     .goto Mulgore,59.7,62.5,70,0
     .goto Mulgore,51.1,58.6,70,0
     .goto Mulgore,51.1,58.6
+.target Morin Cloudstalker
+>>Talk to |cFF00FF25Morin Cloudstalker|r
     .accept 749 >>Accept The Ravaged Caravan
 	.unitscan Morin Cloudstalker
 step << Warrior/Shaman
@@ -1790,25 +1936,35 @@ step << Warrior/Shaman
     .turnin 749 >>Turn in The Ravaged Caravan
 step << Warrior/Shaman
 	#era/som
-    .goto Mulgore,48.7,59.3
+    .goto Mulgore,48.715,59.325
+.target Harken Windtotem
+>>Talk to |cFF00FF25Harken Windtotem|r
     .accept 761 >>Accept Swoop Hunting
 step << Warrior/Shaman
 	#era/som
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
+.target Baine Bloodhoof
+>>Talk to |cFF00FF25Baine Bloodhoof|r
     .accept 767 >>Accept Rite of Vision
     .accept 746 >>Accept Dwarven Digging
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,47.3,62.0
+.target Ruul Eagletalon
+>>Talk to |cFF00FF25Ruul Eagletalon|r
     .accept 743 >>Accept Dangers of the Windfury
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,47.8,57.6
+>>Talk to |cFF00FF25Zarlman Two-Moons|r
     .turnin 767 >>Turn in Rite of Vision
+.target Zarlman Two-Moons
     .accept 771 >>Accept Rite of Vision
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,47.0,57.0
+.target Maur Raincaller
+>>Talk to |cFF00FF25Maur Raincaller|r
     .accept 766 >>Accept Mazzranache
 step << Warrior/Shaman
 	#era/som
@@ -1843,7 +1999,9 @@ step << Warrior/Shaman
 step << Warrior/Shaman
 	#era/som
    .goto Mulgore,47.8,57.5
+>>Talk to |cFF00FF25Zarlman Two-Moons|r
     .turnin 771 >>Turn in Rite of Vision
+.target Zarlman Two-Moons
     .accept 772 >>Accept Rite of Vision
 step << Warrior/Shaman
     .goto Thunder Bluff,32.0,66.9,60 >>Run to the lift and take it into Thunder Bluff
@@ -1860,6 +2018,8 @@ step << Warrior/Shaman
 	>>Go into the Thunder Bluff cave
     .goto Thunder Bluff,29.6,29.7,25,0
     .goto Thunder Bluff,23.0,21.1
+.target Apothecary Zamah
+>>Talk to |cFF00FF25Apothecary Zamah|r
     .turnin 853 >>Turn in Apothecary Zamah
 step << Warrior/Shaman
 	#era/som
@@ -1867,8 +2027,10 @@ step << Warrior/Shaman
 	>>Run to the cave south of you
     .goto Thunder Bluff,29.04,37.68,55,0
     .goto Mulgore,33.48,36.68,40,0
-    .goto Mulgore,32.7,36.1
+    .goto Mulgore,32.714,36.087
+>>Talk to |cFF00FF25Seer Wiserunner|r
     .turnin 772 >>Turn in Rite of Vision
+.target Seer Wiserunner
     .accept 773 >>Accept Rite of Wisdom
 step << Warrior/Shaman
 	#era/som
@@ -1886,6 +2048,8 @@ step << Warrior/Shaman
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,59.9,25.6
+.target Lorekeeper Raintotem
+>>Talk to |cFF00FF25Lorekeeper Raintotem|r
     .accept 833 >>Accept A Sacred Burial
 step << Warrior/Shaman
 	#era/som
@@ -1895,10 +2059,14 @@ step << Warrior/Shaman
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,61.5,21.1
+.target Ancestral Spirit
+>>Talk to |cFF00FF25Ancestral Spirit|r
     .turnin 773 >>Turn in Rite of Wisdom
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,59.8,25.6
+.target Lorekeeper Raintotem
+>>Talk to |cFF00FF25Lorekeeper Raintotem|r
     .turnin 833 >>Turn in A Sacred Burial
 step << Warrior/Shaman
 	#era/som
@@ -1910,24 +2078,34 @@ step << Warrior/Shaman
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,47.0,57.2
+.target Maur Raincaller
+>>Talk to |cFF00FF25Maur Raincaller|r
     .turnin 766 >>Turn in Mazzranache
 step << Warrior/Shaman
 	#era/som
 	.isOnQuest 770
 	.goto Mulgore,46.75,60.23
 	>>Turn in the cloak. Be careful as this removes it from your character/inventory
+.target Skorn Whitecloud
+>>Talk to |cFF00FF25Skorn Whitecloud|r
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step << Warrior/Shaman
 	#era/som
-    .goto Mulgore,47.5,60.2
+    .goto Mulgore,47.513,60.164
+.target Baine Bloodhoof
+>>Talk to |cFF00FF25Baine Bloodhoof|r
     .turnin 746 >>Turn in Dwarven Digging
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,47.4,62.0
+.target Ruul Eagletalon
+>>Talk to |cFF00FF25Ruul Eagletalon|r
     .turnin 743 >>Turn in Dangers of the Windfury
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,48.7,59.4
+.target Harken Windtotem
+>>Talk to |cFF00FF25Harken Windtotem|r
     .turnin 761 >>Turn in Swoop Hunting
 step << Warrior/Shaman
 	#era/som
@@ -1939,7 +2117,9 @@ step << Warrior/Shaman
     .goto Mulgore,51.1,58.6,70,0
     .goto Mulgore,59.7,62.5,70,0
     .goto Mulgore,59.7,62.5
+>>Talk to |cFF00FF25Morin Cloudstalker|r
     .turnin 751 >> Turn in The Ravaged Caravan
+.target Morin Cloudstalker
     .accept 764 >>Accept The Venture Co.
     .accept 765 >>Accept Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
@@ -1970,6 +2150,8 @@ step << Warrior/Shaman
     .goto Mulgore,51.1,58.6,70,0
     .goto Mulgore,59.7,62.5,70,0
     .goto Mulgore,59.7,62.5
+.target Morin Cloudstalker
+>>Talk to |cFF00FF25Morin Cloudstalker|r
     .turnin 764 >>Turn in The Venture Co.
     .turnin 765 >>Turn in Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
@@ -1982,7 +2164,7 @@ step << Shaman
   .trainer >> Train your class spells
 step << Orc Warrior/Troll Warrior
 	#level 12
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
     .trainer >> Train your class spells
 step << Priest
     #sticky
@@ -1994,7 +2176,9 @@ step << Troll Shaman/Orc Shaman
     .goto Durotar,36.6,58.0,25 >>Run up the mountain path
 step << Troll Shaman/Orc Shaman
     .goto Durotar,38.6,59.0
+>>Talk to |cFF00FF25Telf Joolam|r
     .turnin 1524 >>Turn in Call of Fire
+.target Telf Joolam
     .accept 1525 >>Accept Call of Fire
 step << Warrior
     .goto Durotar,54.4,42.2
@@ -2004,7 +2188,9 @@ step << Hunter
     .vendor >> Buy Laminated Recurve Bow if you have the money.
 step
     .goto Durotar,56.4,20.1
+>>Talk to |cFF00FF25Margoz|r
     .turnin 828 >>Turn in Margoz
+.target Margoz
     .accept 827 >>Accept Skull Rock
 step << Hunter
     .goto Durotar,57.2,12.0
@@ -2053,7 +2239,9 @@ step
 step
     #requires Collars2
     .goto Durotar,56.4,20.1
+>>Talk to |cFF00FF25Margoz|r
     .turnin 827 >>Turn in Skull Rock
+.target Margoz
     .accept 829 >>Accept Neeru Fireblade
 step << Shaman
     #completewith next
@@ -2079,6 +2267,8 @@ step
 step
     #softcore
     .goto Durotar,46.4,22.9
+.target Rezlak
+>>Talk to |cFF00FF25Rezlak|r
     .turnin 835 >>Turn in Securing the Lines
 step
     #hardcore
@@ -2086,6 +2276,8 @@ step
     .goto Durotar,53.75,27.74,60,0
     .goto Durotar,51.75,27.40,60,0
     .goto Durotar,46.4,22.9
+.target Rezlak
+>>Talk to |cFF00FF25Rezlak|r
     .turnin 835 >>Turn in Securing the Lines
 step
     #completewith next
@@ -2106,34 +2298,48 @@ step << Hunter
 step
 	#som
 	#phase 3-6
-    .goto Orgrimmar,34.3,36.4
+    .goto Orgrimmar,34.340,36.328
+.target Vol'jin
+>>Talk to |cFF00FF25Vol'jin|r
     .turnin 831 >>Turn in The Admiral's Orders
 step << Hunter
 	#som
 	#phase 3-6
-    .goto Orgrimmar,66.0,18.5
+    .goto Orgrimmar,66.046,18.526
+.target Ormak Grimshot
+>>Talk to |cFF00FF25Ormak Grimshot|r
     .turnin 6081 >>Turn in Training the Beast
 step << Warrior/Shaman
     #requires scorp2
-    .goto Orgrimmar,54.2,68.4
+    .goto Orgrimmar,54.097,68.407
+>>Talk to |cFF00FF25Innkeeper Gryshka|r
     .turnin 6384 >>Turn in Ride to Orgrimmar
+.target Innkeeper Gryshka
     .accept 6385 >> Accept Doras the Wind Rider Master
 step << Warrior/Shaman
-    .goto Orgrimmar,45.2,63.8
+    .goto Orgrimmar,45.120,63.889
+>>Talk to |cFF00FF25Doras|r
     .turnin 6385 >> Turn in Doras the Wind Rider Master
+.target Doras
     .accept 6386 >> Accept Return to the Crossroads
 step
 	#era/som
     #requires scorp2
-    .goto Orgrimmar,31.8,37.8
+    .goto Orgrimmar,31.733,37.823
+.target Thrall
+>>Talk to |cFF00FF25Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
 step << Rogue
 	#level 12
     .goto Orgrimmar,42.8,53.4
+.target Therzok
+>>Talk to |cFF00FF25Therzok|r
     .accept 1963 >> Accept The Shattered Hand
 	.trainer >> Train your class spells
 step << Rogue
     .goto Orgrimmar,42.8,53.4
+.target Therzok
+>>Talk to |cFF00FF25Therzok|r
     .accept 1963 >> Accept The Shattered Hand
 step << Priest
     #sticky
@@ -2156,22 +2362,32 @@ step << Priest
 step
 	#era/som
     .goto Orgrimmar,47.0,53.4
+.target Kor'ghan
+>>Talk to |cFF00FF25Kor'ghan|r
     .turnin 813 >>Turn in Finding the Antidote
 step << Warlock
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
+>>Talk to |cFF00FF25Gan'rul Bloodeye|r
     .turnin 1501 >>Turn in Creature of the Void
+.target Gan'rul Bloodeye
     .accept 1504 >>Accept The Binding
 step
 	.isOnQuest 832
-	.goto Orgrimmar,49.4,50.5
+	.goto Orgrimmar,49.473,50.589
+.target Neeru Fireblade
+>>Talk to |cFF00FF25Neeru Fireblade|r
     .turnin 832 >>Turn in Burning Shadows
 step
-	.goto Orgrimmar,49.4,50.5
+	.goto Orgrimmar,49.473,50.589
+>>Talk to |cFF00FF25Neeru Fireblade|r
     .turnin 829 >>Turn in Neeru Fireblade
+.target Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
 step
-	.goto Orgrimmar,49.4,50.5
+	.goto Orgrimmar,49.473,50.589
+>>Talk to |cFF00FF25Neeru Fireblade|r
     .turnin 829 >>Turn in Neeru Fireblade
+.target Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
 step << Warlock
     .goto Orgrimmar,49.5,50.0
@@ -2179,7 +2395,9 @@ step << Warlock
     .complete 1504,1 --Summoned Voidwalker (1)
 step << Warlock
     >>You can now summon a Voidwalker
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
+.target Gan'rul Bloodeye
+>>Talk to |cFF00FF25Gan'rul Bloodeye|r
     .turnin 1504 >>Turn in The Binding
 step
 	#softcore
@@ -2190,6 +2408,8 @@ step
 	#era/som
 	#softcore
     .goto Durotar,41.6,18.7
+.target Rhinag
+>>Talk to |cFF00FF25Rhinag|r
     .accept 812 >>Accept Need for a Cure
     .turnin 812 >>Turn in Need for a Cure
 step
@@ -2197,6 +2417,8 @@ step
 	#hardcore
 	>>Run out of Orgrimmar
     .goto Durotar,41.6,18.7
+.target Rhinag
+>>Talk to |cFF00FF25Rhinag|r
     .accept 812 >>Accept Need for a Cure
     .turnin 812 >>Turn in Need for a Cure
 step << Warrior
@@ -2211,14 +2433,20 @@ step
     .complete 816,1 --Kron's Amulet (1)
 step
     .goto Durotar,43.1,30.3
+.target Misha Tor'kren
+>>Talk to |cFF00FF25Misha Tor'kren|r
     .turnin 816 >>Turn in Lost But Not Forgotten
 step << !Shaman !Warrior
     .goto The Barrens,62.2,19.4
+>>Talk to |cFF00FF25Kargal Battlescar|r
     .turnin 840 >>Turn in Conscript of the Horde
+.target Kargal Battlescar
     .accept 842 >>Accept Crossroads Conscription
 step
     .goto The Barrens,62.3,20.1
+>>Talk to |cFF00FF25Ak'Zeloth|r
     .turnin 809 >>Turn in Ak'Zeloth
+.target Ak'Zeloth
     .accept 924 >>Accept The Demon Seed
 step
     .goto The Barrens,62.3,20.0
@@ -2226,7 +2454,9 @@ step
     .turnin 926 >>Turn in Flawed Power Stone
 step << Warrior
     .goto The Barrens,61.4,21.1
+>>Talk to |cFF00FF25Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
+.target Uzzek
     .accept 1502 >>Accept Thun'grim Firegaze
 step << Rogue
     #label BeakCave
@@ -2240,25 +2470,37 @@ step << !Shaman !Warrior
     .goto The Barrens,52.0,30.5,150 >> Run to the Crossroads
 step << !Shaman !Warrior
     .goto The Barrens,52.2,31.8
+.target Tonga Runetotem
+>>Talk to |cFF00FF25Tonga Runetotem|r
     .accept 870 >>Accept The Forgotten Pools
 step << !Shaman !Warrior
     .goto The Barrens,52.2,31.0
+>>Talk to |cFF00FF25Sergra Darkthorn|r
     .turnin 842 >>Turn in Crossroads Conscription
+.target Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.5,29.8
+.target Zargh
+>>Talk to |cFF00FF25Zargh|r
     .accept 6365 >>Accept Meats to Orgrimmar
 step << Shaman Troll/Shaman Orc/Warrior Orc/Warrior Troll
     .goto The Barrens,52.5,29.8
+.target Zargh
+>>Talk to |cFF00FF25Zargh|r
     .turnin 6386 >> Turn in Return to the Crossroads
 step
     .goto The Barrens,51.99,29.89
 	.home >> Set your hearth to Crossroads
 step << !Shaman !Warrior
     .goto The Barrens,51.9,30.3
+.target Gazrog
+>>Talk to |cFF00FF25Gazrog|r
     .accept 869 >>Accept Raptor Thieves
 step << !Shaman !Warrior
     .goto The Barrens,51.5,30.8
+.target Thork
+>>Talk to |cFF00FF25Thork|r
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
 step << !Shaman !Warrior
@@ -2267,10 +2509,14 @@ step << !Shaman !Warrior
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
+>>Talk to |cFF00FF25Devrak|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
+.target Devrak
     .accept 6384 >>Accept Ride to Orgrimmar << !Rogue
 step << !Shaman !Warrior
     .goto The Barrens,51.5,30.1
+.target Apothecary Helbrim
+>>Talk to |cFF00FF25Apothecary Helbrim|r
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
 step << Mage
@@ -2284,12 +2530,16 @@ step << Rogue
     .goto The Barrens,51.5,30.3
     .fly >> Fly to Orgrimmar
 step << Rogue
-    .goto Orgrimmar,54.2,68.4
+    .goto Orgrimmar,54.097,68.407
+>>Talk to |cFF00FF25Innkeeper Gryshka|r
     .turnin 6384 >>Turn in Ride to Orgrimmar
+.target Innkeeper Gryshka
     .accept 6385 >> Accept Doras the Wind Rider Master
 step << Rogue
-    .goto Orgrimmar,45.2,63.8
+    .goto Orgrimmar,45.120,63.889
+>>Talk to |cFF00FF25Doras|r
     .turnin 6385 >> Turn in Doras the Wind Rider Master
+.target Doras
     .accept 6386 >> Accept Return to the Crossroads
 step << Rogue
     #sticky
@@ -2341,6 +2591,8 @@ step << Rogue
     #phase 3-6
     >>Run to Razor Hill
     .goto Durotar,50.85,43.59
+.target Takrin Pathseeker
+>>Talk to |cFF00FF25Takrin Pathseeker|r
     .accept 840 >>Accept Conscript of the Horde
 step << Rogue
 	#label Barrens
@@ -2353,12 +2605,16 @@ step << Rogue
     #phase 3-6
     >>Run to The Barrens
     .goto The Barrens,62.26,19.38
+>>Talk to |cFF00FF25Kargal Battlescar|r
     .turnin 840 >>Turn in Conscript of the Horde
+.target Kargal Battlescar
     .accept 842 >>Accept Crossroads Conscription
 step << Rogue
     #som
     #phase 3-6
     .goto The Barrens,52.23,31.01
+>>Talk to |cFF00FF25Sergra Darkthorn|r
     .turnin 842 >>Turn in Crossroads Conscription
+.target Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
 ]])

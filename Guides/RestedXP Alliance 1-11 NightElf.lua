@@ -18,6 +18,8 @@ step
     .goto Teldrassil,58.69,44.27 << tbc
     .goto Teldrassil,58.62,44.71 << wotlk
     >>Talk to Ilthalaine
+.target Conservator Ilthalaine
+>>Talk to |cFF00FF25Conservator Ilthalaine|r
     .accept 456 >> Accept The Balance of Nature
 step
     #sticky
@@ -30,8 +32,12 @@ step
     .xp 2 >> Grind to level 2
 step
     >>Talk to Melithar and Dirania
+.target Melithar Staghelm
+>>Talk to |cFF00FF25Melithar Staghelm|r
     .accept 458 >> Accept The Woodland Protector
 	.goto Teldrassil,59.93,42.48,-1
+.target Dirania Silvershine
+>>Talk to |cFF00FF25Dirania Silvershine|r
     .accept 4495 >> Accept A Good Friend
     .goto Teldrassil,60.90,41.96,-1
 step << Hunter
@@ -45,7 +51,9 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,54.59,32.99
     >>Talk to Iverron
+>>Talk to |cFF00FF25Iverron|r
     .turnin 4495 >> Turn in A Good Friend
+.target Iverron
     .accept 3519 >> Accept A Friend in Need
 step << Hunter
     #completewith next
@@ -53,14 +61,18 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,57.71,45.06
     >>Talk to Tarindrella
+>>Talk to |cFF00FF25Tarindrella|r
     .turnin 458 >> Turn in The Woodland Protector
+.target Tarindrella
     .accept 459 >> Accept The Woodland Protector
 step
     #requires balance1
     >>Talk to Ilthalaine
     .goto Teldrassil,58.69,44.27 << tbc
     .goto Teldrassil,58.62,44.71 << wotlk
+>>Talk to |cFF00FF25Conservator Ilthalaine|r
     .turnin 456 >> Turn in The Balance of Nature
+.target Conservator Ilthalaine
     .accept 457 >> Accept The Balance of Nature
 	.accept 3116 >> Accept Simple Sigil << Warrior
 	.accept 3117 >> Accept Etched Sigil << Hunter
@@ -78,6 +90,8 @@ step << Warrior
 	.goto Teldrassil,59.29,39.08,20,0
 	.goto Teldrassil,59.63,38.45
     >> Run up the ramp behind the vendors
+.target Alyissia
+>>Talk to |cFF00FF25Alyissia|r
 	.turnin 3116 >> Turn in Simple Sigil
 step << Warrior
 	.goto Teldrassil,59.63,38.45
@@ -91,7 +105,9 @@ step << !Hunter
 step << !Hunter
     .goto Teldrassil,54.59,32.99
     >>Talk to Iverron
+>>Talk to |cFF00FF25Iverron|r
     .turnin 4495 >> Turn in A Good Friend
+.target Iverron
     .accept 3519 >> Accept A Friend in Need
 step << !Hunter
     #completewith next
@@ -99,17 +115,23 @@ step << !Hunter
 step << !Hunter
     .goto Teldrassil,57.71,45.06
     >>Talk to Tarindrella
+>>Talk to |cFF00FF25Tarindrella|r
     .turnin 458 >> Turn in The Woodland Protector
+.target Tarindrella
     .accept 459 >> Accept The Woodland Protector
 step << !Hunter
     .goto Teldrassil,58.69,44.27 << tbc
     .goto Teldrassil,58.62,44.71 << wotlk
     >>Talk to Ilthalaine
+.target Conservator Ilthalaine
+>>Talk to |cFF00FF25Conservator Ilthalaine|r
     .turnin 457 >> Turn in The Balance of Nature
 step
     .goto Teldrassil,60.90,41.96
     >>Talk to Dirania
+>>Talk to |cFF00FF25Dirania Silvershine|r
     .turnin 3519 >> Turn in A Friend in Need
+.target Dirania Silvershine
     .accept 3521 >> Accept Iverron's Antidote
 step << Hunter
     #completewith htraining
@@ -118,6 +140,8 @@ step << Hunter
 step
     .goto Teldrassil,57.81,41.65
     >>Talk to Gilshalan
+.target Gilshalan Windwalker
+>>Talk to |cFF00FF25Gilshalan Windwalker|r
     .accept 916 >> Accept Webwood Venom
 step << Hunter
     #xprate <1.5
@@ -134,6 +158,8 @@ step << Hunter
     .goto Teldrassil,58.64,38.74,30,0
     .goto Teldrassil,58.66,40.45
     >>Climb the big tree until you get to the small building
+.target Ayanna Everstride
+>>Talk to |cFF00FF25Ayanna Everstride|r
     .turnin 3117 >> Turn in Etched Sigil
 step << Hunter
     .goto Teldrassil,58.66,40.45
@@ -165,11 +191,15 @@ step
 step
     .goto Teldrassil,57.71,45.06
     >>Talk to Tarindrella
+.target Tarindrella
+>>Talk to |cFF00FF25Tarindrella|r
     .turnin 459 >> Turn in The Woodland Protector
 step
     .goto Teldrassil,60.90,41.96
     >>Talk to Dirania
+>>Talk to |cFF00FF25Dirania Silvershine|r
     .turnin 3521 >> Turn in Iverron's Antidote
+.target Dirania Silvershine
     .accept 3522 >> Accept Iverron's Antidote
 step << !Priest
     #completewith next
@@ -193,6 +223,8 @@ step << Priest
     #label HallowedSigil
 	.goto Teldrassil,59.17,40.44
     >>Go upstairs
+.target Shanda
+>>Talk to |cFF00FF25Shanda|r
 	.turnin 3119 >> Turn in Hallowed Sigil
 step << Priest
 	.goto Teldrassil,59.17,40.44
@@ -201,16 +233,22 @@ step
     #requires HallowedSigil << Priest
     .goto Teldrassil,57.81,41.65
     >>Talk to Gilshalan
+>>Talk to |cFF00FF25Gilshalan Windwalker|r
     .turnin 916 >> Turn in Webwood Venom
+.target Gilshalan Windwalker
     .accept 917 >> Accept Webwood Egg
 step << Druid
-    .goto Teldrassil,58.6,40.3
+    .goto Teldrassil,58.626,40.287
 	>>Run up the big ramp and into the small room
+.target Mardant Strongoak
+>>Talk to |cFF00FF25Mardant Strongoak|r
 	.turnin 3120 >> Turn in Verdant Sigil
 	.train 8921 >>Train Moonfire
 step
     .goto Teldrassil,54.59,32.99
     >>Talk to Iverron
+.target Iverron
+>>Talk to |cFF00FF25Iverron|r
     .turnin 3522 >> Turn in Iverron's Antidote
 step
     #completewith next
@@ -226,7 +264,9 @@ step
 step
     .goto Teldrassil,57.81,41.65
     >>Talk to Gilshalan
+>>Talk to |cFF00FF25Gilshalan Windwalker|r
     .turnin 917 >> Turn in Webwood Egg
+.target Gilshalan Windwalker
     .accept 920 >> Accept Tenaron's Summons
 step
     .goto Teldrassil,57.81,40.93,40,0
@@ -235,7 +275,9 @@ step
     .goto Teldrassil,59.34,40.09,30,0
     .goto Teldrassil,59.06,39.44
     >>Take the ramp upwards to climb the big tree. Talk to Tenaron at the top
+>>Talk to |cFF00FF25Tenaron Stormgrip|r
     .turnin 920 >> Turn in Tenaron's Summons
+.target Tenaron Stormgrip
     .accept 921 >> Accept Crown of the Earth
 step
     #sticky
@@ -257,6 +299,8 @@ step << Hunter
     .goto Teldrassil,58.69,44.27 << tbc
     .goto Teldrassil,58.62,44.71 << wotlk
     >>Talk to Ilthalaine
+.target Conservator Ilthalaine
+>>Talk to |cFF00FF25Conservator Ilthalaine|r
     .turnin 457 >> Turn in The Balance of Nature
 step << Priest
     #requires vial1
@@ -264,6 +308,8 @@ step << Priest
     .goto Teldrassil,59.69,41.22,20,0
 	.goto Teldrassil,59.17,40.44
     >>Go inside. Go upstairs
+.target Shanda
+>>Talk to |cFF00FF25Shanda|r
     .accept 5622 >> Accept In Favor of Elune
 step
     #requires vial1
@@ -273,11 +319,15 @@ step
     .goto Teldrassil,59.34,40.09,30,0
     .goto Teldrassil,59.06,39.44
     >>Take the ramp upwards to climb the big tree. Talk to Tenaron at the top
+>>Talk to |cFF00FF25Tenaron Stormgrip|r
     .turnin 921 >> Turn in Crown of the Earth
+.target Tenaron Stormgrip
     .accept 928 >> Accept Crown of the Earth
 step
     .goto Teldrassil,61.16,47.64
     >>Talk to Porthannius
+.target Porthannius
+>>Talk to |cFF00FF25Porthannius|r
     .accept 2159 >> Accept Dolanaar Delivery
 ]])
 
@@ -297,6 +347,8 @@ step
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
 step
     .goto Teldrassil,60.5,56.3
+.target Zenn Foulhoof
+>>Talk to |cFF00FF25Zenn Foulhoof|r
     .accept 488 >> Accept Zenn's Bidding
 step
     #sticky
@@ -312,13 +364,19 @@ step
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
 step
     .goto Teldrassil,56.1,57.8
+.target Syral Bladeleaf
+>>Talk to |cFF00FF25Syral Bladeleaf|r
     .accept 997 >> Accept Denalan's Earth
 step
     .goto Teldrassil,55.9,57.3
+.target Athridas Bearmantle
+>>Talk to |cFF00FF25Athridas Bearmantle|r
     .accept 475 >> Accept A Troubling Breeze
 step << Priest
     .goto Teldrassil,55.6,56.8
+>>Talk to |cFF00FF25Laurna Morninglight|r
     .turnin 5622 >> Turn in In Favor of Elune
+.target Laurna Morninglight
     .accept 5621 >> Accept Garments of the Moon
 	.trainer >> Train your level 6 spells
 step << Rogue
@@ -329,12 +387,16 @@ step
     #xprate <1.5
     .goto Teldrassil,55.5,57.0
     >>Go to the top of the treehouse
+.target Tallonkai Swiftroot
+>>Talk to |cFF00FF25Tallonkai Swiftroot|r
    .accept 932 >> Accept Twisted Hatred
     .accept 2438 >> Accept The Emerald Dreamcatcher
 step
     #xprate >1.3
     .goto Teldrassil,55.5,57.0
     >>Go to the top of the treehouse
+.target Tallonkai Swiftroot
+>>Talk to |cFF00FF25Tallonkai Swiftroot|r
     .accept 932 >> Accept Twisted Hatred << !Hunter
     .accept 2438 >> Accept The Emerald Dreamcatcher
 step << Hunter
@@ -343,7 +405,7 @@ step << Hunter
     >>Buy arrows until your Quiver is full (1000 arrows)
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step << Warrior
-    .goto Teldrassil,56.2,59.2
+    .goto Teldrassil,56.221,59.198
 	.trainer >> Train your level 6 spells
 step << Rogue
     .goto Teldrassil,56.4,60.1
@@ -362,16 +424,20 @@ step << Druid
     .collect 2495,1 --Walking Stick (1)
 step
     .goto Teldrassil,55.7,59.8
+.target Innkeeper Keldamyr
+>>Talk to |cFF00FF25Innkeeper Keldamyr|r
     .turnin 2159 >> Turn in Dolanaar Delivery
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
 	.train 3044>> Train Arcane Shot
 step << Druid
     .goto Teldrassil,55.9,61.6
 	.trainer >> Train your level 6 spells
 step
     .goto Teldrassil,56.2,61.7
+>>Talk to |cFF00FF25Corithras Moonrage|r
     .turnin 928 >> Turn in Crown of the Earth
+.target Corithras Moonrage
     .accept 929 >> Accept Crown of the Earth
 --step << Druid
 --    #xprate <1.1
@@ -388,8 +454,10 @@ step << Priest
     .goto Teldrassil,57.2,63.5
     .complete 5621,1 --Heal and fortify Sentinel Shaya
 step
-    .goto Teldrassil,60.9,68.5
+    .goto Teldrassil,60.900,68.489
+>>Talk to |cFF00FF25Denalan|r
     .turnin 997 >> Turn in Denalan's Earth
+.target Denalan
     .accept 918 >> Accept Timberling Seeds
     .accept 919 >> Accept Timberling Sprouts
 step
@@ -398,8 +466,10 @@ step
     .complete 918,1 --Collect Timberling Seed (x8)
     .complete 919,1 --Collect Timberling Sprout (x12)
 step
-    .goto Teldrassil,60.9,68.5
+    .goto Teldrassil,60.900,68.489
+>>Talk to |cFF00FF25Denalan|r
     .turnin 918 >> Turn in Timberling Seeds
+.target Denalan
     .accept 922 >> Accept Rellian Greenspyre
     .turnin 919 >> Turn in Timberling Sprouts
 step
@@ -409,7 +479,9 @@ step
 step
     .goto Teldrassil,66.3,58.6
 	>>Go upstairs in the house
+>>Talk to |cFF00FF25Gaerolas Talvethren|r
     .turnin 475 >> Turn in A Troubling Breeze
+.target Gaerolas Talvethren
     .accept 476 >> Accept Gnarlpine Corruption
 step
     #label zenn
@@ -432,20 +504,36 @@ step
 	.xp 7+2900 >> Grind to level 7 +2900xp
 step
     .goto Teldrassil,60.5,56.3
+.target Zenn Foulhoof
+>>Talk to |cFF00FF25Zenn Foulhoof|r
     .turnin 488 >> Turn in Zenn's Bidding
 step
-	.goto Teldrassil,56.1,57.7
+	.goto Teldrassil,56.078,57.723
+.target Sentinel Shayla Nightbreeze
+.target Moon Priestess Amara
+.target Syral Bladeleaf
+.target Sentinel Kyra Starsong
+>>Talk to |cFF00FF25Sentinel Kyra Starsong|r
+-->>Talk to |cFF00FF25Syral Bladeleaf|r
+-->>Talk to |cFF00FF25Moon Priestess Amara|r
+-->>Talk to |cFF00FF25Sentinel Shayla Nightbreeze|r
     .accept 489 >> Accept Seek Redemption!
 step
     .goto Teldrassil,55.9,57.3
+.target Athridas Bearmantle
+>>Talk to |cFF00FF25Athridas Bearmantle|r
     .turnin 476 >> Turn in Gnarlpine Corruption
 step << Priest
     .goto Teldrassil,55.5,56.7
+.target Laurna Morninglight
+>>Talk to |cFF00FF25Laurna Morninglight|r
     .turnin 5621 >> Turn in Garments of the Moon
 	.trainer >> Train your level 8 spells
 step
     .goto Teldrassil,55.6,56.9
+>>Talk to |cFF00FF25Tallonkai Swiftroot|r
     .turnin 2438 >> Turn in The Emerald Dreamcatcher
+.target Tallonkai Swiftroot
     .accept 2459 >> Accept Ferocitas the Dream Eater
 step << Hunter
 	#completewith next
@@ -456,10 +544,10 @@ step << Hunter
     .goto Teldrassil,56.3,59.5
 	.vendor >>Buy arrows up to 800 total
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
 	.trainer >> Train your level 8 spells
 step << Warrior
-    .goto Teldrassil,56.2,59.2
+    .goto Teldrassil,56.221,59.198
 	.trainer >> Train your level 8 spells
 step << Rogue
     .goto Teldrassil,56.4,60.1
@@ -478,7 +566,9 @@ step << Druid
     .collect 2495,1 --Walking Stick (1)
 step << Druid
     .goto Teldrassil,56.2,61.7
+>>Talk to |cFF00FF25Corithras Moonrage|r
     .turnin 929 >> Turn in Crown of the Earth
+.target Corithras Moonrage
     .accept 933 >> Accept Crown of the Earth
 step << Druid
     .goto Teldrassil,55.9,61.6
@@ -508,6 +598,8 @@ step
     .complete 489,1 --Collect Fel Cone (x3)
 step
     .goto Teldrassil,60.4,56.4
+.target Zenn Foulhoof
+>>Talk to |cFF00FF25Zenn Foulhoof|r
     .turnin 489 >> Turn in Seek Redemption!
 step << Hunter
     #xprate <1.5
@@ -523,10 +615,14 @@ step
 	.deathskip >>Die on purpose and respawn at the graveyard
 step << !Druid
     .goto Teldrassil,56.2,61.7
+.target Corithras Moonrage
+>>Talk to |cFF00FF25Corithras Moonrage|r
     .turnin 929 >> Turn in Crown of the Earth
 step
 	#xprate <1.5
     .goto Teldrassil,56.2,61.7
+.target Corithras Moonrage
+>>Talk to |cFF00FF25Corithras Moonrage|r
     .accept 933 >> Accept Crown of the Earth
 step
 	#xprate <1.5
@@ -551,12 +647,16 @@ step
 step
 	#xprate <1.5
     .goto Teldrassil,56.2,61.7
+>>Talk to |cFF00FF25Corithras Moonrage|r
     .turnin 933 >> Turn in Crown of the Earth
+.target Corithras Moonrage
     .accept 7383 >> Accept Crown of the Earth
 step
 	#xprate <1.5
-    .goto Teldrassil,57.1,61.3
+    .goto Teldrassil,57.121,61.296
     .train 2550 >>Train Cooking
+.target Zarrin
+>>Talk to |cFF00FF25Zarrin|r
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
 step
@@ -568,16 +668,22 @@ step << Warrior/Rogue
 step
     #xprate >1.3
     .goto Teldrassil,55.5,56.9
+.target Tallonkai Swiftroot
+>>Talk to |cFF00FF25Tallonkai Swiftroot|r
     .turnin 932 >> Turn in Twisted Hatred << !Hunter
     .turnin 2459 >> Turn in Ferocitas the Dream Eater
 step
     #xprate <1.5
     .goto Teldrassil,55.5,56.9
+.target Tallonkai Swiftroot
+>>Talk to |cFF00FF25Tallonkai Swiftroot|r
     .turnin 932 >> Turn in Twisted Hatred
     .turnin 2459 >> Turn in Ferocitas the Dream Eater
 step
     .goto Teldrassil,51.9,56.4
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
+.target Moon Priestess Amara
+>>Talk to |cFF00FF25Moon Priestess Amara|r
     .accept 487 >> Accept The Road to Darnassus
 step
     .goto Teldrassil,46.6,53.0
@@ -585,10 +691,14 @@ step
 step << Druid
     .goto Teldrassil,51.9,56.4
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
+.target Moon Priestess Amara
+>>Talk to |cFF00FF25Moon Priestess Amara|r
     .turnin 487 >> Turn in The Road to Darnassus
 step
 	#xprate <1.5
     .goto Teldrassil,38.3,34.3
+.target Sentinel Arynia Cloudsbreak
+>>Talk to |cFF00FF25Sentinel Arynia Cloudsbreak|r
     .accept 937 >> Accept The Enchanted Glade
 step
 	#xprate <1.5
@@ -611,6 +721,8 @@ step << Hunter
     #label mist1
     .goto Teldrassil,31.6,31.7
     >>Start the escort quest
+.target Mist
+>>Talk to |cFF00FF25Mist|r
     .accept 938 >> Accept Mist
 step << Hunter
     #xprate <1.5
@@ -629,24 +741,32 @@ step << Hunter
     #completewith xp10
     #requires mist1
     .goto Teldrassil,38.3,34.4
+.target Sentinel Arynia Cloudsbreak
+>>Talk to |cFF00FF25Sentinel Arynia Cloudsbreak|r
     .turnin 938 >> Turn in Mist
 step << Hunter
 	#xprate <1.5
     #completewith xp10
 	#requires harpies
     .goto Teldrassil,38.3,34.4
+>>Talk to |cFF00FF25Sentinel Arynia Cloudsbreak|r
     .turnin 937 >> Turn in The Enchanted Glade
+.target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
 step << !Hunter
 	#xprate <1.5
     #label mist1
     .goto Teldrassil,31.6,31.7
     >>Start the escort quest
+.target Mist
+>>Talk to |cFF00FF25Mist|r
     .accept 938 >> Accept Mist
 step << !Hunter
 	#xprate <1.5
     .goto Teldrassil,38.3,34.4
+>>Talk to |cFF00FF25Sentinel Arynia Cloudsbreak|r
     .turnin 937 >> Turn in The Enchanted Glade
+.target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
     .turnin 938 >> Turn in Mist
 step << !Hunter
@@ -683,26 +803,36 @@ step << !Rogue
     #requires xp10
 1	>>Run to Darnassus
     .goto Darnassus,38.3,21.4
+>>Talk to |cFF00FF25Rellian Greenspyre|r
     .turnin 922 >> Turn in Rellian Greenspyre
+.target Rellian Greenspyre
     .accept 923 >> Accept Tumors
 step << !Hunter !Rogue
 	#xprate <1.5
     .goto Darnassus,34.7,9.0
     >>Climb to the top of the tree house
+.target Arch Druid Fandral Staghelm
+>>Talk to |cFF00FF25Arch Druid Fandral Staghelm|r
     .turnin 940 >> Turn in Teldrassil
 	.isOnQuest 940
 step << Druid
     .goto Darnassus,35.2,8.0
     >>Head to the middle level of the tree house
+.target Mathrengyl Bearwalker
+>>Talk to |cFF00FF25Mathrengyl Bearwalker|r
     .accept 5921 >> Accept Moonglade
 	.trainer >> Train your level 10 spells
 step << !Rogue
     .goto Darnassus,36.5,86.0
+.target Priestess A'moora
+>>Talk to |cFF00FF25Priestess A'moora|r
     .accept 2518 >> Accept Tears of the Moon
 step << Druid
     .goto Moonglade,56.2,30.8
     >>Open your spellbook and teleport to Moonglade
+>>Talk to |cFF00FF25Dendrite Starblaze|r
     .turnin 5921 >> Turn in Moonglade
+.target Dendrite Starblaze
     .accept 5929 >> Accept Great Bear Spirit
 step << Druid
     .goto Moonglade,39.1,27.5
@@ -711,7 +841,9 @@ step << Druid
 step << Druid
     .goto Moonglade,56.2,30.5
     >>Use your teleport spell to get back to the quest giver
+>>Talk to |cFF00FF25Dendrite Starblaze|r
     .turnin 5929 >> Turn in Great Bear Spirit
+.target Dendrite Starblaze
     .accept 5931 >> Accept Back to Darnassus
 step
     #requires xp10 << Rogue
@@ -722,14 +854,18 @@ step << Hunter
 	.vendor >> Buy 4 stacks of level 10 arrows. Equip them as soon as you get to level 10
 step
 	#xprate >1.3
-    .goto Teldrassil,57.1,61.3
+    .goto Teldrassil,57.121,61.296
     .train 2550 >>Train Cooking
+.target Zarrin
+>>Talk to |cFF00FF25Zarrin|r
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
 step
 	#xprate >1.3
     .goto Teldrassil,51.9,56.4
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
+.target Moon Priestess Amara
+>>Talk to |cFF00FF25Moon Priestess Amara|r
     .turnin 487 >> Turn in The Road to Darnassus
 	.maxlevel 9
 step << Hunter
@@ -737,6 +873,8 @@ step << Hunter
     #level 10
     #label beast1
     .goto Teldrassil,56.7,59.6
+.target Dazalar
+>>Talk to |cFF00FF25Dazalar|r
     .accept 6063 >> Accept Taming the Beast
 	.train 13165 >> Train your level 10 spells
 step << Hunter
@@ -750,22 +888,30 @@ step << Hunter
     #completewith L10
     #level 10
     #requires beast2
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
+>>Talk to |cFF00FF25Dazalar|r
     .turnin 6063 >> Turn in Taming the Beast
+.target Dazalar
     .accept 6101 >> Accept Taming the Beast
 step
 	#xprate <1.5
     .goto Teldrassil,56.1,61.7
+>>Talk to |cFF00FF25Corithras Moonrage|r
     .turnin 7383 >> Turn in Crown of the Earth
+.target Corithras Moonrage
     .accept 935 >> Accept Crown of the Earth
 step
 	#xprate <1.5
 	.goto Teldrassil,60.9,68.4
+.target Denalan
+>>Talk to |cFF00FF25Denalan|r
     .turnin 931 >> Turn in The Shimmering Frond
     .turnin 930 >> Turn in The Glowing Fruit
 step
 	#xprate <1.5
 	.goto Teldrassil,60.9,68.4
+.target Denalan
+>>Talk to |cFF00FF25Denalan|r
 	.turnin 927 >> Turn in The Moss-twined Heart
     .isOnQuest 927
 step
@@ -792,44 +938,60 @@ step << Priest
     .goto Teldrassil,55.5,56.7
 	.trainer >> Train your level 10 spells
 step << Warrior
-    .goto Teldrassil,56.2,59.2
+    .goto Teldrassil,56.221,59.198
 	.trainer >> Train your level 10 spells
 step << Rogue
     .goto Teldrassil,56.4,60.1
 	.trainer >> Train your level 10 spells
 step << Hunter
     .goto Teldrassil,56.7,59.6
+.target Dazalar
+>>Talk to |cFF00FF25Dazalar|r
     .accept 6063 >> Accept Taming the Beast
 	.trainer >> Train your level 10 spells
 step << Hunter
     .goto Teldrassil,59.9,58.8
     .complete 6063,1 --Tame a Webwood Lurker
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
+>>Talk to |cFF00FF25Dazalar|r
     .turnin 6063 >> Turn in Taming the Beast
+.target Dazalar
     .accept 6101 >> Accept Taming the Beast
 step << Hunter
     .goto Teldrassil,62.6,72.2
     .complete 6101,1 --Tame a Nightsaber Stalker
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
+>>Talk to |cFF00FF25Dazalar|r
     .turnin 6101 >> Turn in Taming the Beast
+.target Dazalar
     .accept 6102 >> Accept Taming the Beast
 step << Hunter
     .goto Teldrassil,64.7,66.7
     .complete 6102,1 --Tame a Strigid Screecher
 step << Hunter
-    .goto Teldrassil,56.7,59.5
+    .goto Teldrassil,56.676,59.489
+>>Talk to |cFF00FF25Dazalar|r
     .turnin 6102 >> Turn in Taming the Beast
+.target Dazalar
     .accept 6103 >> Accept Training the Beast
 step << Warrior
-    .goto Teldrassil,56.2,59.2
+    .goto Teldrassil,56.221,59.198
+.target Kyra Windblade
+.target Moon Priestess Amara
+>>Talk to |cFF00FF25Moon Priestess Amara|r
+-->>Talk to |cFF00FF25Kyra Windblade|r
     .accept 1684 >> Accept Elanaria
 step << Rogue
     .goto Teldrassil,56.2,60.0
+.target Jannok Breezesong
+>>Talk to |cFF00FF25Jannok Breezesong|r
     .accept 2241 >> Accept The Apple Falls
 step << !Druid
     .goto Teldrassil,51.8,56.4
+.target Moon Priestess Amara
+>>Talk to |cFF00FF25Moon Priestess Amara|r
     .turnin 487 >> Turn in The Road to Darnassus
 step << Rogue
     #completewith next
@@ -843,23 +1005,33 @@ step << Rogue
     .collect 25873,1 >> Purchase a Keen Throwing Knife from Ellandrieth
 step << Rogue
     .goto Darnassus,38.3,21.4
+>>Talk to |cFF00FF25Rellian Greenspyre|r
     .turnin 922 >> Turn in Rellian Greenspyre
+.target Rellian Greenspyre
     .accept 923 >> Accept Tumors
 step << Rogue
     .goto Darnassus,34.7,9.0
     >>Climb to the top of the tree house
     .turnin -935 >> Turn in Crown of the Earth
+.target Arch Druid Fandral Staghelm
+>>Talk to |cFF00FF25Arch Druid Fandral Staghelm|r
     .turnin 940 >> Turn in Teldrassil
 step << Rogue
     #xprate <1.5
     .goto Darnassus,34.7,9.0
+.target Arch Druid Fandral Staghelm
+>>Talk to |cFF00FF25Arch Druid Fandral Staghelm|r
     .accept 952 >> Accept Grove of the Ancients
 step << Rogue
     .goto Darnassus,36.8,21.8
+>>Talk to |cFF00FF25Syurna|r
     .turnin 2241 >> Turn in The Apple Falls
+.target Syurna
     .accept 2242 >> Accept Destiny Calls
 step << Rogue
     .goto Darnassus,36.5,86.0
+.target Priestess A'moora
+>>Talk to |cFF00FF25Priestess A'moora|r
     .accept 2518 >> Accept Tears of the Moon
 step << Hunter
     #sticky
@@ -888,6 +1060,8 @@ step << Rogue
 step
 	#xprate >1.3 << !Hunter
     .goto Teldrassil,38.3,34.3
+.target Sentinel Arynia Cloudsbreak
+>>Talk to |cFF00FF25Sentinel Arynia Cloudsbreak|r
     .accept 937 >> Accept The Enchanted Glade
 step
 	#xprate >1.3 << !Hunter
@@ -899,23 +1073,31 @@ step
 	#xprate >1.3 << !Hunter
     .goto Teldrassil,31.6,31.7
     >>Start the escort quest
+.target Mist
+>>Talk to |cFF00FF25Mist|r
     .accept 938 >> Accept Mist
 step
 	#xprate >1.3 << !Hunter
     .goto Teldrassil,38.3,34.4
+.target Sentinel Arynia Cloudsbreak
+>>Talk to |cFF00FF25Sentinel Arynia Cloudsbreak|r
     .turnin 938 >> Turn in Mist
 step
 	#xprate >1.3 << !Hunter
     #requires harpies2
     .goto Teldrassil,38.3,34.4
+>>Talk to |cFF00FF25Sentinel Arynia Cloudsbreak|r
     .turnin 937 >> Turn in The Enchanted Glade
+.target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
 step
     #softcore
 	#completewith next
     .deathskip >>Die and respawn at the Darnassus graveyard
 step
-    .goto Darnassus,70.6,45.3
+    .goto Darnassus,70.679,45.379
+.target Mydrannul
+>>Talk to |cFF00FF25Mydrannul|r
     .accept 6344 >> Accept Nessa Shadowsong
 step
 	.abandon 927 >> Abandon The Moss-twined Heart. You never have an opportunity to turn it in
@@ -924,7 +1106,9 @@ step << Warrior
     .collect 25873,1 >> Purchase a Keen Throwing Knife from Ellandrieth
 step << Warrior
     .goto Darnassus,57.4,34.8
+>>Talk to |cFF00FF25Elanaria|r
     .turnin 1684 >> Turn in Elanaria
+.target Elanaria
     .accept 1683 >> Accept Vorlus Vilehoof
 step << Warrior
     #sticky
@@ -941,32 +1125,48 @@ step << Warrior
     .goto Teldrassil,43.6,54.3
     .deathskip >>Die on purpose after you get past the furbolg area and respawn at Darnassus
 step << Warrior
-    .goto Darnassus,57.4,34.5
+    .goto Darnassus,57.305,34.606
+.target Elanaria
+>>Talk to |cFF00FF25Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
 step << Druid
     .goto Darnassus,35.1,8.6
+>>Talk to |cFF00FF25Mathrengyl Bearwalker|r
     .turnin 5931 >> Turn in Back to Darnassus
+.target Mathrengyl Bearwalker
     .accept 6001 >> Accept Body and Heart
 step
     .isOnQuest 935
-    .goto Darnassus,34.8,9.2
+    .goto Darnassus,34.814,9.255
+.target Arch Druid Fandral Staghelm
+>>Talk to |cFF00FF25Arch Druid Fandral Staghelm|r
     .turnin 935 >> Turn in Crown of the Earth
 step
-    .goto Darnassus,34.8,9.2
+    .goto Darnassus,34.814,9.255
+.target Arch Druid Fandral Staghelm
+>>Talk to |cFF00FF25Arch Druid Fandral Staghelm|r
     .turnin 940 >> Turn in Teldrassil << Hunter
 step
     #xprate <1.5
-    .goto Darnassus,34.8,9.2
+    .goto Darnassus,34.814,9.255
+.target Arch Druid Fandral Staghelm
+>>Talk to |cFF00FF25Arch Druid Fandral Staghelm|r
     .accept 952 >> Accept Grove of the Ancients
 step << Hunter
     .goto Darnassus,40.3,8.8
+.target Jocaste
+>>Talk to |cFF00FF25Jocaste|r
     .turnin 6103 >> Turn in Training the Beast
 step << Rogue
     .goto Darnassus,36.8,21.8
+.target Syurna
+>>Talk to |cFF00FF25Syurna|r
     .turnin 2242 >> Turn in Destiny Calls
 step
-    .goto Darnassus,38.3,21.7
+    .goto Darnassus,38.184,21.639
+.target Rellian Greenspyre
+>>Talk to |cFF00FF25Rellian Greenspyre|r
     .turnin 923 >> Turn in Tumors
 step << Rogue
     .goto Darnassus,62.68,65.58
@@ -974,7 +1174,9 @@ step << Rogue
     .vendor >> Buy the level 11 thrown from Turian. Equip it when you're level 11
 step
     .goto Darnassus,36.9,85.8
+>>Talk to |cFF00FF25Priestess A'moora|r
     .turnin 2518 >> Turn in Tears of the Moon
+.target Priestess A'moora
     .accept 2520 >> Accept Sathrah's Sacrifice
 step
     .goto Darnassus,39.7,85.8
@@ -982,7 +1184,9 @@ step
     .complete 2520,1 --Offer the sacrifice at the fountain
 step
     #label end
-    .goto Darnassus,36.6,85.9
+    .goto Darnassus,36.653,85.930
+.target Priestess A'moora
+>>Talk to |cFF00FF25Priestess A'moora|r
     .turnin 2520 >> Turn in Sathrah's Sacrifice
 step << Hunter tbc/Warrior tbc/Priest
     .goto Darnassus,57.8,46.6
@@ -1009,11 +1213,15 @@ step
     .goto Teldrassil,56.3,92.3,175 >> Go to Ruth'theran Village by taking the purple portal next to the bank
 step
     .goto Teldrassil,56.3,92.3
+>>Talk to |cFF00FF25Nessa Shadowsong|r
     .turnin 6344 >> Turn in Nessa Shadowsong
+.target Nessa Shadowsong
     .accept 6341 >> Accept The Bounty of Teldrassil
 step
-    .goto Teldrassil,58.4,94.0
+    .goto Teldrassil,58.399,94.016
+>>Talk to |cFF00FF25Vesprystus|r
     .turnin 6341 >> Turn in The Bounty of Teldrassil
+.target Vesprystus
     .accept 6342 >> Accept Flight to Auberdine
 step
     .fly Darkshore >> Fly to Darkshore

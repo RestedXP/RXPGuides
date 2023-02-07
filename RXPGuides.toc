@@ -1,6 +1,6 @@
-## Interface: 30400
-## Interface-Mainline: 100002
-## Interface-Wrath: 30400
+## Interface: 30401
+## Interface-Mainline: 100005
+## Interface-Wrath: 30401
 ## Interface-Classic: 11403
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides

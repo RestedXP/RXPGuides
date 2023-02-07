@@ -15,16 +15,22 @@ local function SwitchBindLocation()
             C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
         end
         HSframe:SetScript("OnUpdate", nil)
-        SetCVar("maxfps", currentFPS)
+        local size = addon.settings.db.profile.batchSize or 5
+        if size < 5 then
+            SetCVar("maxfps", currentFPS)
+        end
         HSstart = 0
     end
 end
 
 local function StartHSTimer()
     if HSstart == 0 then
-        batchingWindow = addon.settings.db.profile.batchSize / 1e3
+        local size = addon.settings.db.profile.batchSize or 5
+        batchingWindow = size / 1e3
         currentFPS = GetCVar("maxfps")
-        SetCVar("maxfps", 0)
+        if size < 5 then
+            SetCVar("maxfps", 0)
+        end
         HSstart = GetTime()
         HSframe:SetScript("OnUpdate", SwitchBindLocation)
     end

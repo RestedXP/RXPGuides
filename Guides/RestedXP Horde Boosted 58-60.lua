@@ -121,6 +121,8 @@ step
 	.zone Tirisfal Glades >>Arrive in Tirisfal
 step
 	.goto Tirisfal Glades,83.1,68.9
+.target High Executor Derrington
+>>Talk to |cFF00FF25High Executor Derrington|r
     .accept 5096 >>Accept Scarlet Diversions
 step
 	>> Loot the crate next to the fire. Also save every Bone Fragment you get in the zone!
@@ -128,6 +130,8 @@ step
 	.collect 12814,1
 step
     .goto Tirisfal Glades,83.2,68.6
+.target Argent Quartermaster Lightspark
+>>Talk to |cFF00FF25Argent Quartermaster Lightspark|r
     .turnin 5405 >>Turn in Argent Dawn Commission
 step
 	#sticky
@@ -135,9 +139,13 @@ step
 	>>Equip your Argent Dawn Commission trinket. We will need the Scourgestones for a later quest.
 step
     .goto Tirisfal Glades,83.1,71.6
+.target Mehlar Dawnblade
+>>Talk to |cFF00FF25Mehlar Dawnblade|r
     .accept 9443 >>Accept The So-Called Mark of the Lightbringer
 step
     .goto Tirisfal Glades,83.3,72.1
+.target Mickey Levine
+>>Talk to |cFF00FF25Mickey Levine|r
     .accept 5901 >>Accept A Plague Upon Thee
 step
 	>> This quest can be hard. Clear them out slowly from the back of the tent and destroy it. Put down the banner afterwards.
@@ -145,17 +153,25 @@ step
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
     .goto Tirisfal Glades,83.1,68.9
+.target High Executor Derrington
+>>Talk to |cFF00FF25High Executor Derrington|r
     .turnin 5096 >>Turn in Scarlet Diversions
 step
     .goto Tirisfal Glades,83.1,69.2
+.target High Executor Derrington
+>>Talk to |cFF00FF25High Executor Derrington|r
     .accept 5098 >>Accept All Along the Watchtowers
     .accept 5228 >>Accept The Scourge Cauldrons
 
 step
     .goto Tirisfal Glades,83.0,71.9
+.target Shadow Priestess Vandis
+>>Talk to |cFF00FF25Shadow Priestess Vandis|r
     .turnin 5228 >>Turn in The Scourge Cauldrons
 step
     .goto Tirisfal Glades,83.0,71.6
+.target Shadow Priestess Vandis
+>>Talk to |cFF00FF25Shadow Priestess Vandis|r
     .accept 5229 >>Accept Target: Felstone Field
 step
 	>>Kill the Cauldon Lord
@@ -167,6 +183,8 @@ step
     .accept 5230 >>Accept Return to the Bulwark
 step
     .goto Western Plaguelands,38.3,54.1
+.target Janice Felstone
+>>Talk to |cFF00FF25Janice Felstone|r
     .accept 5021 >>Accept Better Late Than Never
 step
     .goto Western Plaguelands,38.7,55.3
@@ -174,12 +192,16 @@ step
     .accept 5023 >>Accept Better Late Than Never
 step
     .goto Tirisfal Glades,83.1,71.9
+>>Talk to |cFF00FF25Shadow Priestess Vandis|r
     .turnin 5230 >>Turn in Return to the Bulwark
+.target Shadow Priestess Vandis
     .accept 5231 >>Accept Target: Dalson's Tears
 
 
 step
     .goto Western Plaguelands,39.5,67.0
+.target Chromie
+>>Talk to |cFF00FF25Chromie|r
     .accept 4971 >>Accept A Matter of Time
 
 step
@@ -228,7 +250,9 @@ step
     .goto Western Plaguelands,47.3,49.7
     .turnin 5060 >>Turn in Locked Away
 step
-    .goto Western Plaguelands,51.9,28.1
+    .goto Western Plaguelands,51.920,28.058
+.target Kirsta Deepshadow
+>>Talk to |cFF00FF25Kirsta Deepshadow|r
     .accept 6004 >>Accept Unfinished Business
 step
 	>>Run to all the different Scarlet camps to complete this.
@@ -240,8 +264,10 @@ step
     .complete 6004,2 --Scarlet Hunter (2)
 	.complete 6004,4 --Scarlet Knight (2)
 step
-    .goto Western Plaguelands,51.9,28.1
+    .goto Western Plaguelands,51.920,28.058
+>>Talk to |cFF00FF25Kirsta Deepshadow|r
     .turnin 6004 >>Turn in Unfinished Business
+.target Kirsta Deepshadow
     .accept 6023 >>Accept Unfinished Business
 step
     .goto Western Plaguelands,57.5,35.7
@@ -255,8 +281,10 @@ step
 	>>If the rare is up and you're unable to group and kill him, just die and res as high up as you can in the tower. Loot the chest at the top
     .complete 9443,1 --Mark of the Lightbringer (1)
 step
-    .goto Western Plaguelands,51.9,28.1
+    .goto Western Plaguelands,51.920,28.058
+>>Talk to |cFF00FF25Kirsta Deepshadow|r
     .turnin 6023 >>Turn in Unfinished Business
+.target Kirsta Deepshadow
     .accept 6025 >>Accept Unfinished Business
 step
 	>>Climb to the top of the tower.
@@ -264,29 +292,41 @@ step
     .complete 6025,1 --Overlook Hearthglen from a high vantage point (1)
 step
     .goto Western Plaguelands,52.0,28.1
+.target Kirsta Deepshadow
+>>Talk to |cFF00FF25Kirsta Deepshadow|r
     .turnin 6025 >>Turn in Unfinished Business
 step
     .goto Tirisfal Glades,83.1,68.9
+>>Talk to |cFF00FF25High Executor Derrington|r
     .turnin 5098 >>Turn in All Along the Watchtowers
+.target High Executor Derrington
     .accept 105 >>Accept Alas, Andorhal
     .accept 838 >>Accept Scholomance
 step
     .goto Tirisfal Glades,83.2,69.3
+>>Talk to |cFF00FF25Apothecary Dithers|r
     .turnin 838 >>Turn in Scholomance
+.target Apothecary Dithers
     .accept 964 >>Accept Skeletal Fragments
 step
-    .goto Tirisfal Glades,83.2,71.3
+    .goto Tirisfal Glades,83.218,71.324
+>>Talk to |cFF00FF25Mehlar Dawnblade|r
     .turnin 9443 >>Turn in The So-Called Mark of the Lightbringer
+.target Mehlar Dawnblade
     .accept 9444 >>Accept Defiling Uther's Tomb
 step
     .goto Tirisfal Glades,83.0,71.9
+>>Talk to |cFF00FF25Shadow Priestess Vandis|r
     .turnin 5232 >>Turn in Return to the Bulwark
+.target Shadow Priestess Vandis
     .accept 5233 >>Accept Target: Writhing Haunt
 
 
 step
     .goto Western Plaguelands,39.5,66.8
+>>Talk to |cFF00FF25Chromie|r
     .turnin 4971 >>Turn in A Matter of Time
+.target Chromie
     .accept 4972 >>Accept Counting Out Time
 step
 	>>Search for tiny lockboxes around the ruins. They're usually in the corners of the broken buildings.
@@ -321,6 +361,8 @@ step
     .complete 4972,1 --Andorhal Watch (5)
 step
     .goto Western Plaguelands,49.2,78.4
+.target Marlene Redpath
+>>Talk to |cFF00FF25Marlene Redpath|r
     .accept 5142 >>Accept Little Pamela
 step
     .goto Western Plaguelands,52.1,83.5
@@ -336,6 +378,8 @@ step
     .accept 5234 >>Accept Return to the Bulwark
 step
     .goto Western Plaguelands,53.7,64.6
+.target Mulgris Deepriver
+>>Talk to |cFF00FF25Mulgris Deepriver|r
     .accept 4984 >>Accept The Wildlife Suffers Too
 step
     .goto Western Plaguelands,48.7,47.3,0
@@ -343,7 +387,9 @@ step
     .complete 4984,1 --Diseased Wolf (8)
 step
     .goto Western Plaguelands,53.7,64.7
+>>Talk to |cFF00FF25Mulgris Deepriver|r
     .turnin 4984 >>Turn in The Wildlife Suffers Too
+.target Mulgris Deepriver
     .accept 4985 >>Accept The Wildlife Suffers Too
 step
     .goto Western Plaguelands,56.5,51.3,40,0
@@ -370,13 +416,17 @@ step
     .complete 4985,1 --Diseased Grizzly (8)
 step
     .goto Eastern Plaguelands,26.6,74.8
+.target Nathanos Blightcaller
+>>Talk to |cFF00FF25Nathanos Blightcaller|r
     .accept 6022 >>Accept To Kill With Purpose
 step
     .goto Eastern Plaguelands,27.3,85.3
     .accept 6024 >>Accept Hameya's Plea
 step
     .goto Eastern Plaguelands,36.5,90.9
+>>Talk to |cFF00FF25Pamela Redpath|r
     .turnin 5142 >>Turn in Little Pamela
+.target Pamela Redpath
     .accept 5149 >>Accept Pamela's Doll
 step
 	>>Find the doll parts laying around the town. Put the pieces back together.
@@ -384,7 +434,9 @@ step
     .complete 5149,1 --Pamela's Doll (1)
 step
     .goto Eastern Plaguelands,36.5,90.9
+>>Talk to |cFF00FF25Pamela Redpath|r
     .turnin 5149 >>Turn in Pamela's Doll
+.target Pamela Redpath
     .accept 5152 >>Accept Auntie Marlene
     .accept 5241 >>Accept Uncle Carlin
 step
@@ -393,11 +445,15 @@ step
     .complete 6022,1 --Coagulated Rot (1)
 step
     .goto Eastern Plaguelands,79.6,63.8
+.target Caretaker Alen
+>>Talk to |cFF00FF25Caretaker Alen|r
     .accept 6021 >>Accept Zaeldarr the Outcast
     .accept 5281 >>Accept The Restless Souls
 step
     .goto Eastern Plaguelands,81.5,59.6
+>>Talk to |cFF00FF25Carlin Redpath|r
     .turnin 5241 >>Turn in Uncle Carlin
+.target Carlin Redpath
     .accept 5211 >>Accept Defenders of Darrowshire
 step
     .goto Eastern Plaguelands,81.6,58.1
@@ -419,6 +475,8 @@ step
 step
 	#requires dssf
     .goto Eastern Plaguelands,14.5,33.6
+.target Egan
+>>Talk to |cFF00FF25Egan|r
     .turnin 5281 >>Turn in The Restless Souls
 step
 	>>Finish gathering 20 Minion's Scourgestones from mobs in the zone.
@@ -433,13 +491,19 @@ step <<!Paladin
 
 step
 	.goto Eastern Plaguelands,81.4,59.8
+.target Duke Nicholas Zverenhoff
+>>Talk to |cFF00FF25Duke Nicholas Zverenhoff|r
 	.turnin 5510 >>Turn in Minion's Scourgestones
 step
     .goto Eastern Plaguelands,81.0,57.6
+.target Dispatch Commander Metz
+>>Talk to |cFF00FF25Dispatch Commander Metz|r
     .accept 9141 >>Accept They Call Me "The Rooster"
     .turnin 9141 >>Turn in They Call Me "The Rooster"
 step
     .goto Eastern Plaguelands,81.5,59.8
+.target Carlin Redpath
+>>Talk to |cFF00FF25Carlin Redpath|r
     .turnin 5211 >>Turn in Defenders of Darrowshire
 
 step
@@ -447,51 +511,77 @@ step
     .fly Undercity >>Fly to Undercity
 step
     .goto Undercity,69.6,43.3
+.target Royal Overseer Bauhaus
+>>Talk to |cFF00FF25Royal Overseer Bauhaus|r
     .turnin 5023 >>Turn in Better Late Than Never
 step
     .goto Undercity,69.3,43.4
+.target Royal Overseer Bauhaus
+>>Talk to |cFF00FF25Royal Overseer Bauhaus|r
     .accept 5049 >>Accept The Jeremiah Blues
 step
     .goto Undercity,67.4,43.7
+.target Jeremiah Payson
+>>Talk to |cFF00FF25Jeremiah Payson|r
     .turnin 5049 >>Turn in The Jeremiah Blues
 step
     .goto Undercity,67.5,43.1
+.target Jeremiah Payson
+.target Ol' Emma
+>>Talk to |cFF00FF25Ol' Emma|r
+-->>Talk to |cFF00FF25Jeremiah Payson|r
     .accept 5050 >>Accept Good Luck Charm
 step
     .goto Undercity,57.4,91.4
+.target Lady Sylvanas Windrunner
+>>Talk to |cFF00FF25Lady Sylvanas Windrunner|r
     .accept 5961 >>Accept The Champion of the Banshee Queen
 step
     .goto Tirisfal Glades,83.0,72.0
+>>Talk to |cFF00FF25Shadow Priestess Vandis|r
     .turnin 5234 >>Turn in Return to the Bulwark
+.target Shadow Priestess Vandis
     .accept 5235 >>Accept Target: Gahrron's Withering
 step
     .goto Tirisfal Glades,83.2,72.3
+>>Talk to |cFF00FF25Mickey Levine|r
     .turnin 5901 >>Turn in A Plague Upon Thee
+.target Mickey Levine
     .accept 5902 >>Accept A Plague Upon Thee
 step
     .goto Tirisfal Glades,83.3,71.3
+.target Mehlar Dawnblade
+>>Talk to |cFF00FF25Mehlar Dawnblade|r
     .turnin 9444 >>Turn in Defiling Uther's Tomb
 step
     .goto Western Plaguelands,38.5,54.2
+>>Talk to |cFF00FF25Janice Felstone|r
     .turnin 5050 >>Turn in Good Luck Charm
+.target Janice Felstone
     .accept 5051 >>Accept Two Halves Become One
 step
     .goto Western Plaguelands,38.0,54.6
 	>>Find a Jabbering Ghoul. Kill him and loot the Good Luck Charm
     .complete 5051,1 --Good Luck Charm (1)
 step
-    .goto Western Plaguelands,38.4,54.0
+    .goto Western Plaguelands,38.401,54.053
+.target Janice Felstone
+>>Talk to |cFF00FF25Janice Felstone|r
     .turnin 5051 >>Turn in Two Halves Become One
 step
     .goto Western Plaguelands,48.9,78.4
+>>Talk to |cFF00FF25Marlene Redpath|r
     .turnin 5152 >>Turn in Auntie Marlene
+.target Marlene Redpath
     .accept 5153 >>Accept A Strange Historian
 step
     .goto Western Plaguelands,49.6,76.9
     .complete 5153,1 --Joseph's Wedding Ring (1)
 step
     .goto Western Plaguelands,39.5,66.8
+>>Talk to |cFF00FF25Chromie|r
     .turnin 5153 >>Turn in A Strange Historian
+.target Chromie
     .accept 5154 >>Accept The Annals of Darrowshire
     .turnin 4972 >>Turn in Counting Out Time
 step
@@ -505,9 +595,13 @@ step
 
 step
     .goto Western Plaguelands,53.7,64.6
+.target Mulgris Deepriver
+>>Talk to |cFF00FF25Mulgris Deepriver|r
     .turnin 4985 >>Turn in The Wildlife Suffers Too
 step
     .goto Western Plaguelands,53.6,64.8
+.target Mulgris Deepriver
+>>Talk to |cFF00FF25Mulgris Deepriver|r
     .accept 4987 >>Accept Glyphed Oaken Branch
 step
 	>>Kill the Cauldron Lord
@@ -522,6 +616,8 @@ step
     .turnin 6024 >>Turn in Hameya's Plea
 step
     .goto Eastern Plaguelands,26.6,74.6
+.target Nathanos Blightcaller
+>>Talk to |cFF00FF25Nathanos Blightcaller|r
     .turnin 6022 >>Turn in To Kill With Purpose
 	.turnin 5961 >>Turn in The Champion of the Banshee Queen
 step
@@ -530,18 +626,28 @@ step
     .accept 6390 >>Accept A Plague Upon Thee
 step
     .goto Western Plaguelands,39.5,66.8
+.target Chromie
+>>Talk to |cFF00FF25Chromie|r
     .turnin 5154 >>Turn in The Annals of Darrowshire
 step
     .goto Tirisfal Glades,82.9,72.0
+.target Shadow Priestess Vandis
+>>Talk to |cFF00FF25Shadow Priestess Vandis|r
     .turnin 5236 >>Turn in Return to the Bulwark
 step
     .goto Tirisfal Glades,83.3,72.1
+.target Mickey Levine
+>>Talk to |cFF00FF25Mickey Levine|r
     .turnin 6390 >>Turn in A Plague Upon Thee
 step
     .goto Tirisfal Glades,83.2,69.3
+.target Apothecary Dithers
+>>Talk to |cFF00FF25Apothecary Dithers|r
     .turnin 964 >>Turn in Skeletal Fragments
 step
     .goto Tirisfal Glades,83.1,68.9
+.target High Executor Derrington
+>>Talk to |cFF00FF25High Executor Derrington|r
     .turnin 5238 >>Turn in Mission Accomplished!
 step
     #sticky
@@ -563,9 +669,13 @@ step
 step << !Druid
     .goto Blasted Lands,58.1,56.1
     .turnin 64063 >>Turn in The Dark Portal
+.target Warlord Dar'toon
+>>Talk to |cFF00FF25Warlord Dar'toon|r
     .accept 9407 >>Accept Through the Dark Portal
 step << Druid
     .goto Blasted Lands,58.1,56.1
     .turnin 64217 >>Turn in The Dark Portal
+.target Warlord Dar'toon
+>>Talk to |cFF00FF25Warlord Dar'toon|r
     .accept 9407 >>Accept Through the Dark Portal
 ]])

@@ -736,8 +736,8 @@ step
 	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> CLICK HERE
 step
     .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gar'thok|r
     >>|cFFFCDC00You can talk to him from outside or on top of the bunker|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gar'thok|r
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
 step
@@ -982,17 +982,25 @@ step
     .goto Durotar,54.5,75.0,15,0
     .goto Durotar,54.1,76.6
     >>Talk to Lar Prowltusk. He patrols between 3 points
+.target Lar Prowltusk
+>>Talk to |cFF00FF25Lar Prowltusk|r
     .accept 786 >>Accept Thwarting Kolkar Aggression
     .unitscan Lar Prowltusk
 step
     >> Speak with Vel'rin Fang in the hut
+.target Vel'rin Fang
+>>Talk to |cFF00FF25Vel'rin Fang|r
     .accept 817 >>Accept Practical Prey
     .goto Durotar,56.0,73.9
     >> Speak with Master Vornal and Gadrin by the pool
+.target Master Vornal
+>>Talk to |cFF00FF25Master Vornal|r
     .accept 818 >>Accept A Solvent Spirit
     .goto Durotar,55.9,74.4
+>>Talk to |cFF00FF25Master Gadrin|r
     .turnin 805 >>Turn in Report to Sen'jin Village
     .goto Durotar,55.9,74.7
+.target Master Gadrin
     .accept 808 >>Accept Minshina's Skull
     .accept 826 >>Accept Zalazane
     .accept 823 >>Accept Report to Orgnil
@@ -1099,6 +1107,8 @@ step << Hunter
 step
     >>Inside the top floor of the bunker
     .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
     .accept 784 >>Accept Vanquish the Betrayers
 step
     #completewith next
@@ -1106,6 +1116,8 @@ step
 step
     >>Go up the tower and talk to Furl Scornbrow
 .goto Durotar,49.9,40.3
+.target Furl Scornbrow
+>>Talk to |cFF00FF25Furl Scornbrow|r
     .accept 791 >>Accept Carry Your Weight
 step
     #sticky
@@ -1140,33 +1152,47 @@ step
 .deathskip >> Die and respawn at the Spirit Healer, or run back to Razor Hill
 step
     .goto Durotar,51.9,43.5
+>>Talk to |cFF00FF25Gar'Thok|r
     .turnin 784 >>Turn in Vanquish the Betrayers
+.target Gar'Thok
     .accept 825 >>Accept From The Wreckage....
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 837 >>Accept Encroachment
 step
     .isOnQuest 823
     .goto Durotar,52.2,43.2
+.target Orgnil Soulscar
+>>Talk to |cFF00FF25Orgnil Soulscar|r
     .turnin 823 >> Turn in Report to Orgnil
 step << Shaman/Warrior
     .goto Durotar,52.2,43.2
+>>Talk to |cFF00FF25Orgnil Soulscar|r
     .turnin 823 >>Turn in Report to Orgnil
+.target Orgnil Soulscar
     .accept 806 >>Accept Dark Storms
 step << !Shaman !Warrior
     #xprate <1.5
     .goto Durotar,52.2,43.2
+.target Orgnil Soulscar
+>>Talk to |cFF00FF25Orgnil Soulscar|r
     .turnin 823 >>Turn in Report to Orgnil
 step << Warlock/Shaman/Warrior
     #xprate <1.5
     .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
 .accept 831 >>Accept The Admiral's Orders
 step
     #xprate <1.5
 .goto Durotar,49.9,40.3
+.target Furl Scornbrow
+>>Talk to |cFF00FF25Furl Scornbrow|r
     .turnin 791 >>Turn in Carry Your Weight
 step
     >> Talk to Cook Torka
     .goto Durotar,51.1,42.4
+.target Cook Torka
+>>Talk to |cFF00FF25Cook Torka|r
     .accept 815 >>Accept Break a Few Eggs
 step << !Shaman !Warrior
     #xprate <1.5
@@ -1219,7 +1245,7 @@ step << Warrior/Rogue
 .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon
 step << Shaman
     #xprate <1.5
-    .goto Durotar,54.4,42.6
+    .goto Durotar,54.419,42.588
     .train 2484 >>Train Earthbind Totem
     .train 324 >>Train Lightning Shield
     .train 8044 >>Train Earth Shock r2
@@ -1229,7 +1255,9 @@ step << Priest
     .goto Durotar,54.3,42.9
     .train 139 >>Train Renew
     .train 2052 >> Train Lesser Heal r2
+>>Talk to |cFF00FF25Tai'jin|r
     .turnin 5649 >> In Favor of Spirituality
+.target Tai'jin
     .accept 5648 >> Garments of Spirituality
 step << Priest
     .goto Durotar,53.1,46.5
@@ -1238,9 +1266,11 @@ step << Priest
     .complete 5648,1 --Heal and cast Fortify on Grunt Kor'ja
 step << Priest
     .goto Durotar,54.3,42.9
+.target Tai'jin
+>>Talk to |cFF00FF25Tai'jin|r
     .turnin 5648 >> Garments of Spirituality
 step << Warrior
-.goto Durotar,54.2,42.5
+.goto Durotar,54.190,42.468
     .train 284 >>Train Heroic Strike r2
     .train 1715 >>Train Hamstring
 step << Hunter
@@ -1265,18 +1295,24 @@ step
 step << Priest/Mage/Warlock/Shaman/Druid
     .goto Durotar,51.5,41.6
     >> Talk to the innkeeper
+.target Innkeeper Grosk
+>>Talk to |cFF00FF25Innkeeper Grosk|r
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much Ice Cold Milk as you can
 step << Warrior/Rogue/Hunter
     .goto Durotar,51.5,41.6
     >> Talk to the innkeeper
+.target Innkeeper Grosk
+>>Talk to |cFF00FF25Innkeeper Grosk|r
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much Haunch of Meat as you can
 step << Paladin
     .goto Durotar,51.5,41.6
     >> Talk to the innkeeper
+.target Innkeeper Grosk
+>>Talk to |cFF00FF25Innkeeper Grosk|r
     .turnin 2161 >>Turn in A Peon's Burden
     .home >> Set your Hearthstone to Razor Hill
 step << Warrior/Rogue/Paladin
@@ -1286,7 +1322,7 @@ step << Warrior/Rogue/Paladin
 step << Paladin
     .goto Orgrimmar,49.1,94.7,20 >> Run into Orgrimmar
 step << Paladin
-    .goto Orgrimmar,32.3,35.7
+    .goto Orgrimmar,32.272,35.794
     .trainer >> Go and train your class spells
 step << Paladin
     #completewith next
@@ -1392,16 +1428,24 @@ step << Mage
 step
     >>Head back to Sen'jin Village. Save the Faintly Glowing Skull for later
 .goto Durotar,55.9,74.7
+.target Master Gadrin
+>>Talk to |cFF00FF25Master Gadrin|r
     .turnin 808 >>Turn in Minshina's Skull
     .turnin 826,1 >>Turn in Zalazane << Warrior
     turnin 826 >>Turn in Zalazane << !Warrior
 step
     >> Talk to Master Vornal, Vel'rin, and Lar Prowltusk
+.target Master Vornal
+>>Talk to |cFF00FF25Master Vornal|r
     .turnin 818 >>Turn in A Solvent Spirit
     .goto Durotar,56.0,74.3
+.target Vel'rin Fang
+>>Talk to |cFF00FF25Vel'rin Fang|r
     .turnin 817 >>Turn in Practical Prey
     .goto Durotar,56.0,73.9
     .unitscan Lar Prowltusk
+.target Lar Prowltusk
+>>Talk to |cFF00FF25Lar Prowltusk|r
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
     .goto Durotar,54.3,73.3
 step
@@ -1424,22 +1468,30 @@ step
 step
     .goto Durotar,51.9,43.5
     >> Head to the bunker
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .turnin 837 >>Turn in Encroachment
 step << Hunter
     .xp <10,1
     .goto Durotar,51.8,43.5
+.target Thotar
+>>Talk to |cFF00FF25Thotar|r
     .accept 6062 >>Accept Taming the Beast
     .train 13165 >>Train Aspect of the Hawk
     .train 13549 >>Train Serpent Sting r2
 step << Warlock/Shaman/Warrior/Hunter
     #xprate >1.499
     .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
 .accept 831 >>Accept The Admiral's Orders
 step
     >> Talk to Cook Torka
     .goto Durotar,51.1,42.4
+.target Cook Torka
+>>Talk to |cFF00FF25Cook Torka|r
         .turnin 815 >>Turn in Break a Few Eggs
 step << Hunter
     .isOnQuest 6062
@@ -1457,6 +1509,8 @@ step << Paladin
     +If you're afraid of Eversong competition, then manually select 10-13 Durotar->13-23 Barrens now
 step << Shaman
     .goto Durotar,54.4,42.5
+.target Swart
+>>Talk to |cFF00FF25Swart|r
     .accept 2983 >>Accept Call of Fire
     .train 8075 >>Train Strength of Earth Totem
     .train 8050 >>Train Flame Shock
@@ -1466,7 +1520,13 @@ step << Priest
     .train 8092 >>Train Mind Blast
 .train 594 >>Train Shadow Word: Pain r2
 step << Orc Warrior/Troll Warrior/Undead Warrior
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
+.target Sorek
+.target Tarshaw Jaggedscar
+.target Krang Stonehoof
+>>Talk to |cFF00FF25Krang Stonehoof|r
+-->>Talk to |cFF00FF25Tarshaw Jaggedscar|r
+-->>Talk to |cFF00FF25Sorek|r
     .accept 1505 >>Accept Veteran Uzzek
     .train 2687 >>Train Bloodrage
     .train 6546 >>Train Rend r2
@@ -1486,6 +1546,8 @@ step << Warrior/Rogue/Paladin
     .train 3273 >>Train First Aid
 step << Warlock
     .goto Durotar,54.4,41.2
+.target Ophek
+>>Talk to |cFF00FF25Ophek|r
     .accept 1506 >>Accept Gan'Rul's Summons
 step << Warlock
     .goto Durotar,54.4,41.2
@@ -1495,6 +1557,8 @@ step << Warlock
     .train 707 >> Train Immolate r2
 step << Hunter
     .goto Durotar,51.8,43.5
+.target Thotar
+>>Talk to |cFF00FF25Thotar|r
     .accept 6062 >>Accept Taming the Beast
     .train 13165 >>Train Aspect of the Hawk
     .train 13549 >>Train Serpent Sting r2
@@ -1508,7 +1572,9 @@ step << Hunter
     .unitscan Dire Mottled Boar
 step << Hunter
     .goto Durotar,51.8,43.5
+>>Talk to |cFF00FF25Thotar|r
 .turnin 6062 >>Turn in Taming the Beast
+.target Thotar
 .accept 6083 >>Accept Taming the Beast
 step << Hunter
     .use 15919 >>Don't kill the Armored Scorpids you see as you need to tame one next. Head north to the beaches and tame a Surf Crawler.
@@ -1518,7 +1584,9 @@ step << Hunter
 step << Hunter
     >> Head back to Razor Hill
     .goto Durotar,51.8,43.5
+>>Talk to |cFF00FF25Thotar|r
 .turnin 6083 >>Turn in Taming the Beast
+.target Thotar
 .accept 6082 >>Accept Taming the Beast
 step << Hunter
     .use 15920 >>Click the Taming Rod in your bag on a Scorpid. Try to do it at max range (30 yards)
@@ -1528,17 +1596,23 @@ step << Hunter
 step << Hunter
     >> Return to Thotar
     .goto Durotar,51.8,43.5
+>>Talk to |cFF00FF25Thotar|r
     .turnin 6082 >>Turn in Taming the Beast
+.target Thotar
     .accept 6081 >>Accept Training the Beast
 step << Hunter
     >> Follow the road north and talk to Rezlak
     .goto Durotar,46.4,22.9
+.target Rezlak
+>>Talk to |cFF00FF25Rezlak|r
     .accept 834 >>Accept Winds in the Desert
 step << Warlock/Hunter
     .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Hunter
     >> Head to the Valley of Honor and talk to Ormak Grimshot
-    .goto Orgrimmar,66.0,18.5
+    .goto Orgrimmar,66.046,18.526
+.target Ormak Grimshot
+>>Talk to |cFF00FF25Ormak Grimshot|r
     .turnin 6081 >>Turn in Training the Beast
 step << Hunter tbc
     >>Put "Beast Training" on your bars. Remember to teach your pet skills later
@@ -1546,14 +1620,20 @@ step << Hunter tbc
     .train 4195 >>Train Great Stamina
     .train 24547 >>Train Natural Armor
 step << Warlock
-.goto Orgrimmar,48.3,45.3
+.goto Orgrimmar,48.246,45.281
+>>Talk to |cFF00FF25Gan'rul Bloodeye|r
 .turnin 1506 >>Turn in Gan'rul's Summons
+.target Gan'rul Bloodeye
 .accept 1501 >>Accept Creature of the Void
 step << Warlock/Hunter
-    .goto Orgrimmar,34.3,36.4
+    .goto Orgrimmar,34.340,36.328
+.target Vol'jin
+>>Talk to |cFF00FF25Vol'jin|r
     .turnin 831 >>Turn in The Admiral's Orders
 step << Warlock
-.goto Orgrimmar,31.6,37.8
+.goto Orgrimmar,31.609,37.830
+.target Thrall
+>>Talk to |cFF00FF25Thrall|r
 .accept 5726 >>Accept Hidden Enemies
 step << Warlock
     #sticky
@@ -1589,20 +1669,26 @@ step << Warlock
 step << Warlock
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Warlock
-    .goto Orgrimmar,31.8,37.8
+    .goto Orgrimmar,31.733,37.823
+>>Talk to |cFF00FF25Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
+.target Thrall
     .accept 5727 >>Accept Hidden Enemies
 step << Warlock
-    .goto Orgrimmar,48.3,45.3
+    .goto Orgrimmar,48.246,45.281
+>>Talk to |cFF00FF25Gan'rul Bloodeye|r
     .turnin 1501 >>Turn in Creature of the Void
+.target Gan'rul Bloodeye
     .accept 1504 >>Accept The Binding
 step << Warlock
     .isOnQuest 832
-.goto Orgrimmar,49.5,50.6
+.goto Orgrimmar,49.473,50.589
+.target Neeru Fireblade
+>>Talk to |cFF00FF25Neeru Fireblade|r
     .turnin 832 >>Turn in Burning Shadows
 step << Warlock
     >>Talk to Neeru and finish his gossip options
-.goto Orgrimmar,49.5,50.6
+.goto Orgrimmar,49.473,50.589
     .skipgossip
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade (1)
 step << Warlock
@@ -1611,10 +1697,14 @@ step << Warlock
     .complete 1504,1 --Summoned Voidwalker (1)
 step << Warlock
     >>You can now summon a Voidwalker
-.goto Orgrimmar,48.3,45.3
+.goto Orgrimmar,48.246,45.281
+.target Gan'rul Bloodeye
+>>Talk to |cFF00FF25Gan'rul Bloodeye|r
     .turnin 1504 >>Turn in The Binding
 step << Warlock
-    .goto Orgrimmar,31.8,37.8
+    .goto Orgrimmar,31.733,37.823
+.target Thrall
+>>Talk to |cFF00FF25Thrall|r
     .turnin 5727 >>Turn in Hidden Enemies
 step << Warlock
     #sticky
@@ -1624,6 +1714,8 @@ step << Warlock
     .goto Orgrimmar,49.0,94.2,275 >>Run out of Orgrimmar
 step << !Shaman !Warrior !Warlock !Hunter
     .goto Durotar,46.4,22.9
+.target Rezlak
+>>Talk to |cFF00FF25Rezlak|r
     .accept 834 >>Accept Winds in the Desert
 step << !Shaman !Warrior !Warlock
     >>Loot the small sacks on the ground
@@ -1632,7 +1724,9 @@ step << !Shaman !Warrior !Warlock
 step << !Shaman !Warrior !Warlock
     .goto Durotar,46.4,22.9
     >> Return to Rezlak
+>>Talk to |cFF00FF25Rezlak|r
     .turnin 834 >>Turn in Winds in the Desert
+.target Rezlak
     .accept 835 >>Accept Securing the Lines
 step << !Shaman !Warrior !Warlock
     .goto Durotar,51.9,27.4,20 >>Go through the cave here
@@ -1652,6 +1746,8 @@ step << !Shaman !Warrior !Warlock
 step << !Shaman !Warrior !Warlock
     .goto Durotar,46.4,22.9
     >> Return to Rezlak
+.target Rezlak
+>>Talk to |cFF00FF25Rezlak|r
     .turnin 835,2 >>Turn in Securing the Lines << Hunter
     .turnin 835 >>Turn in Securing the Lines << !Hunter
 step << Hunter tbc
@@ -1689,10 +1785,14 @@ RXPGuides.RegisterGuide([[
 #next 13-22 The Barrens
 step
     .goto Durotar,50.8,43.6
+.target Takrin Pathseeker
+>>Talk to |cFF00FF25Takrin Pathseeker|r
     .accept 840 >>Accept Conscript of the Horde
 step << Undead Warrior
     >>Go up the tower
 .goto Durotar,49.9,40.3
+.target Furl Scornbrow
+>>Talk to |cFF00FF25Furl Scornbrow|r
     .accept 791 >>Accept Carry Your Weight
 step << Undead Warrior
     .goto Durotar,52.0,40.7
@@ -1708,11 +1808,19 @@ step << Undead Warrior
     .money <0.0077
 .collect 2901,1 >> Buy a Mining Pick. Keep an eye out for veins to mine to make Sharpening Stones for your weapon with blacksmithing
 step << Undead Warrior
-    .goto Durotar,54.2,42.5
+    .goto Durotar,54.190,42.468
+.target Sorek
+.target Tarshaw Jaggedscar
+.target Krang Stonehoof
+>>Talk to |cFF00FF25Krang Stonehoof|r
+-->>Talk to |cFF00FF25Tarshaw Jaggedscar|r
+-->>Talk to |cFF00FF25Sorek|r
     .accept 1505 >>Accept Veteran Uzzek
 step << Undead Warrior
 >>Inside the bunker, top floor
 .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
 .accept 784 >>Accept Vanquish the Betrayers
 step << Undead Warrior
     #sticky
@@ -1740,6 +1848,8 @@ step << Undead Warrior
 step << Undead Warrior
     >>Run down to Sen'jin
 .goto Durotar,55.9,74.7
+.target Master Gadrin
+>>Talk to |cFF00FF25Master Gadrin|r
     .accept 808 >>Accept Minshina's Skull
     .accept 826 >>Accept Zalazane
     .accept 823 >>Accept Report to Orgnil
@@ -1770,12 +1880,16 @@ step << Undead Warrior
 step << Undead Warrior
     >>Save the Faintly Glowing Skull for later
 .goto Durotar,55.9,74.7
+.target Master Gadrin
+>>Talk to |cFF00FF25Master Gadrin|r
     .turnin 808 >>Turn in Minshina's Skull
     .turnin 826 >>Turn in Zalazane
 step << Undead Warrior
     >>Run back to Razor Hill
 .goto Durotar,52.2,43.2
+>>Talk to |cFF00FF25Orgnil Soulscar|r
     .turnin 823 >>Turn in Report to Orgnil
+.target Orgnil Soulscar
     .accept 806 >>Accept Dark Storms
 step
     #xprate >1.499
@@ -1791,18 +1905,24 @@ step
     .complete 837,4 --Razormane Battleguard (4)
 step
     .goto The Barrens,62.2,19.4
+>>Talk to |cFF00FF25Kargal Battlescar|r
     .turnin 840 >>Turn in Conscript of the Horde
+.target Kargal Battlescar
     .accept 842 >>Accept Crossroads Conscription
 step
     .goto The Barrens,62.2,19.4
     .zone The Barrens >>Run to The Barrens
 step << Warrior
     .goto The Barrens,61.4,21.1
+>>Talk to |cFF00FF25Uzzek|r
     .turnin 1505 >>Turn in Veteran Uzzek
+.target Uzzek
     .accept 1498 >>Accept Path of Defense
 step << Orc Shaman/Troll Shaman
     .goto The Barrens,55.8,20.0
+>>Talk to |cFF00FF25Kranal Fiss|r
     .turnin 2983 >>Turn in Call of Fire
+.target Kranal Fiss
     .accept 1524 >>Accept Call of Fire
 step << !Tauren
 #xprate <1.5
@@ -1810,19 +1930,27 @@ step << !Tauren
 step << Orc/Troll
 #xprate <1.5
     .goto The Barrens,52.5,29.8
+.target Zargh
+>>Talk to |cFF00FF25Zargh|r
     .accept 6365 >>Accept Meats to Orgrimmar
 step << !Tauren
 #xprate <1.5
     .goto The Barrens,52.2,31.0
+>>Talk to |cFF00FF25Sergra Darkthorn|r
     .turnin 842 >>Turn in Crossroads Conscription
+.target Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
 step << !Tauren
 #xprate <1.5
     .goto The Barrens,52.2,31.8
+.target Tonga Runetotem
+>>Talk to |cFF00FF25Tonga Runetotem|r
     .accept 870 >>Accept The Forgotten Pools
 step << !Tauren
 #xprate <1.5
     .goto The Barrens,51.9,30.3
+.target Gazrog
+>>Talk to |cFF00FF25Gazrog|r
     .accept 869 >>Accept Raptor Thieves
 step << !Tauren
 #xprate <1.5
@@ -1832,6 +1960,8 @@ step << !Tauren
 step << !Tauren
 #xprate <1.5
     .goto The Barrens,51.5,30.8
+.target Thork
+>>Talk to |cFF00FF25Thork|r
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
 step << !Tauren
@@ -1842,11 +1972,15 @@ step << Orc/Troll
 #xprate <1.5
     >>do NOT fly to Orgrimmar
 .goto The Barrens,51.5,30.3
+>>Talk to |cFF00FF25Devrak|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
+.target Devrak
     .accept 6384 >>Accept Ride to Orgrimmar
 step << !Tauren
 #xprate <1.5
 .goto The Barrens,51.5,30.1
+.target Apothecary Helbrim
+>>Talk to |cFF00FF25Apothecary Helbrim|r
     .accept 1492 >>Accept Wharfmaster Dizzywig
         .accept 848 >>Accept Fungal Spores
 step << !Tauren
@@ -1876,7 +2010,9 @@ step << !Tauren
 #xprate <1.5
     .goto The Barrens,51.5,30.1
     >>Talk to Helbrim. Apothecary Zamah is a TIMED QUEST, if you have to afk at any point before you turn it in, log off.
+>>Talk to |cFF00FF25Apothecary Helbrim|r
     .turnin 848 >>Turn in Fungal Spores
+.target Apothecary Helbrim
     .accept 853 >>Accept Apothecary Zamah
     .timer 2700,Timer to reach Thunder Bluff
 step << !Tauren
@@ -1886,7 +2022,9 @@ step << !Tauren
 step << !Tauren
 #xprate <1.5
     .goto The Barrens,52.2,31.8
+>>Talk to |cFF00FF25Tonga Runetotem|r
     .turnin 870 >>Turn in The Forgotten Pools
+.target Tonga Runetotem
     .accept 877 >>Accept The Stagnant Oasis
 step << !Tauren
     #label CampTaurajoFP
@@ -1905,10 +2043,14 @@ step << !Tauren
         .goto Mulgore,51.4,59.2
     >> The quest giver patrols along the entire road
     .unitscan Morin Cloudstalker
+.target Morin Cloudstalker
+>>Talk to |cFF00FF25Morin Cloudstalker|r
     .accept 749 >>Accept The Ravaged Caravan
 step << !Tauren
 #xprate <1.5
     .goto Mulgore,48.2,53.4
+.target Ahab Wheathoof
+>>Talk to |cFF00FF25Ahab Wheathoof|r
     .accept 11129 >>Accept Kyle's Gone Missing!
 step << !Tauren
 #xprate <1.5
@@ -1930,6 +2072,8 @@ step << !Tauren
     .goto Mulgore,59.6,62.4,50,0
         .goto Mulgore,51.4,59.2
     .unitscan Morin Cloudstalker
+.target Morin Cloudstalker
+>>Talk to |cFF00FF25Morin Cloudstalker|r
     .turnin 751 >>Turn in The Ravaged Caravan
 step << !Tauren
 #xprate <1.5
@@ -1943,6 +2087,8 @@ step << !Tauren
 step << !Tauren
 #xprate <1.5
     .goto Mulgore,48.3,53.3
+.target Ahab Wheathoof
+>>Talk to |cFF00FF25Ahab Wheathoof|r
     .turnin 11129 >>Turn in Kyle's Gone Missing!
 step << !Tauren
 #xprate <1.5
@@ -1970,6 +2116,8 @@ step << !Tauren
 step << !Tauren
 #xprate <1.5
     .goto Thunder Bluff,23.0,21.1
+.target Apothecary Zamah
+>>Talk to |cFF00FF25Apothecary Zamah|r
     .turnin 853 >>Turn in Apothecary Zamah
 step << !Tauren
 #xprate <1.5
@@ -1977,9 +2125,13 @@ step << !Tauren
     .hs >>Hearth to Razor Hill
 step
     .goto Durotar,43.1,30.3
+.target Misha Tor'kren
+>>Talk to |cFF00FF25Misha Tor'kren|r
     .accept 816 >>Accept Lost But Not Forgotten
 step
     .goto Durotar,46.4,22.9
+.target Rezlak
+>>Talk to |cFF00FF25Rezlak|r
     .accept 834 >>Accept Winds in the Desert
 step
     >>Loot the small sacks on the ground
@@ -1987,40 +2139,56 @@ step
     .complete 834,1 --Sack of Supplies (5)
 step
     .goto Durotar,46.4,22.9
+>>Talk to |cFF00FF25Rezlak|r
     .turnin 834 >>Turn in Winds in the Desert
+.target Rezlak
     .accept 835 >>Accept Securing the Lines
 step << wotlk
-    .goto Durotar,42.1,15.01
+    .goto Durotar,42.103,15.0161
+.target Rhinag
+>>Talk to |cFF00FF25Rhinag|r
     .accept 812 >>Accept Need for a Cure
 step << tbc
     .goto Durotar,42.5,18.6
+.target Rhinag
+>>Talk to |cFF00FF25Rhinag|r
     .accept 812 >>Accept Need for a Cure
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Orc/Troll
 #xprate <1.5
     .goto Orgrimmar,54.2,68.6
+>>Talk to |cFF00FF25Innkeeper Gryshka|r
     .turnin 6384 >>Turn in Ride to Orgrimmar
+.target Innkeeper Gryshka
     .accept 6385 >>Accept Doras the Wind Rider Master
 step << Orc/Troll
 #xprate <1.5
-    .goto Orgrimmar,45.2,64.0
+    .goto Orgrimmar,45.120,63.889
      >> Turn in the quests but do NOT fly back to The Crossroads
+>>Talk to |cFF00FF25Doras|r
     .turnin 6385 >>Turn in Doras the Wind Rider Master
+.target Doras
     .accept 6386 >>Accept Return to the Crossroads.
 step << Orc/Troll
-    .goto Orgrimmar,34.3,36.4
+    .goto Orgrimmar,34.340,36.328
     >> Cross the bridge from the flightpath tower
+.target Vol'jin
+>>Talk to |cFF00FF25Vol'jin|r
     .turnin 831 >>Turn in The Admiral's Orders
 step
     .goto Orgrimmar,31.9,37.7
+.target Thrall
+>>Talk to |cFF00FF25Thrall|r
     .accept 5726 >>Accept Hidden Enemies
 step << Paladin
-    .goto Orgrimmar,32.3,35.7
+    .goto Orgrimmar,32.272,35.794
     .trainer >> Go and train your class spells
 step
     .goto Orgrimmar,47.2,53.4
     >> Head into the Cleft of Shadow
+.target Kor'ghan
+>>Talk to |cFF00FF25Kor'ghan|r
     .accept 813 >>Accept Finding the Antidote
 step
     #completewith Fizzle
@@ -2076,14 +2244,18 @@ step << Troll Shaman/Orc Shaman
 .goto Durotar,36.6,58.0,15 >>Run up the mountain path
 step << Troll Shaman/Orc Shaman
     .goto Durotar,38.6,59.0
+>>Talk to |cFF00FF25Telf Joolam|r
     .turnin 1524 >>Turn in Call of Fire
+.target Telf Joolam
     .accept 1525 >>Accept Call of Fire
 step
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer, or run back to Razor Hill
 step
 .goto Durotar,52.3,43.1
+>>Talk to |cFF00FF25Orgnil Soulscar|r
     .turnin 806 >>Turn in Dark Storms
+.target Orgnil Soulscar
     .accept 828 >>Accept Margoz
 step << Shaman
     #sticky
@@ -2106,12 +2278,16 @@ step << !Warrior
 step
     #xprate >1.499
     .goto Durotar,51.9,43.5
+.target Gar'Thok
+>>Talk to |cFF00FF25Gar'Thok|r
     .turnin 837 >>Turn in Encroachment
 step
     >> Head out of Razor Hill to the east then head straight north
     .goto Durotar,55.6,36.6,80,0
     .goto Durotar,56.4,20.1
+>>Talk to |cFF00FF25Margoz|r
     .turnin 828 >>Turn in Margoz
+.target Margoz
     .accept 827 >>Accept Skull Rock
 step
     #sticky
@@ -2147,7 +2323,9 @@ step
     .complete 813,1 --Venomtail Poison Sac (4)
 step
 .goto Durotar,56.4,20.1
+>>Talk to |cFF00FF25Margoz|r
     .turnin 827 >>Turn in Skull Rock
+.target Margoz
     .accept 829 >>Accept Neeru Fireblade
 step << Shaman
     .isOnQuest 1525
@@ -2176,6 +2354,8 @@ step
 step
     >>Return to Rezlak
     .goto Durotar,46.4,22.9
+.target Rezlak
+>>Talk to |cFF00FF25Rezlak|r
     .turnin 835 >>Turn in Securing the Lines
 step
     >>Kill Scorpions for Poison Sacs
@@ -2185,22 +2365,30 @@ step << Warrior/Rogue
 	.goto Orgrimmar,81.2,19.0
 	.collect 25873,1 >> Purchase a Keen Throwing Knife from Zendo'jian
 step
-    .goto Orgrimmar,31.8,37.8
+    .goto Orgrimmar,31.733,37.823
+>>Talk to |cFF00FF25Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
+.target Thrall
     .accept 5727 >> Accept Hidden Enemies << Shaman
 step
     .goto Orgrimmar,47.0,53.4
+.target Kor'ghan
+>>Talk to |cFF00FF25Kor'ghan|r
     .turnin 813 >>Turn in Finding the Antidote
 step
-    .goto Orgrimmar,49.4,50.5
+    .goto Orgrimmar,49.473,50.589
+>>Talk to |cFF00FF25Neeru Fireblade|r
     .turnin 829 >>Turn in Neeru Fireblade
+.target Neeru Fireblade
     .accept 809 >>Accept Ak'Zeloth
 step
     .isOnQuest 832
-    .goto Orgrimmar,49.4,50.5
+    .goto Orgrimmar,49.473,50.589
+.target Neeru Fireblade
+>>Talk to |cFF00FF25Neeru Fireblade|r
     .turnin 832 >>Turn in Burning Shadows
 step << Shaman
-    .goto Orgrimmar,49.4,50.5
+    .goto Orgrimmar,49.473,50.589
     >> Talk to Neeru Fireblade
     .complete 5727,1
     .skipgossip 3216,1
@@ -2215,18 +2403,26 @@ step
 step << tbc
     .goto Durotar,41.6,18.7
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
+.target Rhinag
+>>Talk to |cFF00FF25Rhinag|r
     .turnin 812 >>Turn in Need for a Cure
 step << wotlk
-    .goto Durotar,42.1,15.01
+    .goto Durotar,42.103,15.0161
     >>You are still able to turn in this quest even if it shows 'missing pre-req'
+.target Rhinag
+>>Talk to |cFF00FF25Rhinag|r
     .turnin 812 >>Turn in Need for a Cure
 step
     #label LostBut
     .goto Durotar,43.1,30.3
+.target Misha Tor'kren
+>>Talk to |cFF00FF25Misha Tor'kren|r
     .turnin 816 >>Turn in Lost But Not Forgotten
 step
     .goto The Barrens,62.3,20.1
+>>Talk to |cFF00FF25Ak'Zeloth|r
     .turnin 809 >>Turn in Ak'Zeloth
+.target Ak'Zeloth
     .accept 924 >>Accept The Demon Seed
 step
     .goto The Barrens,62.3,20.0
@@ -2235,6 +2431,8 @@ step
     .turnin 926 >>Turn in Flawed Power Stone
 step << Warrior
     .goto The Barrens,61.4,21.1
+>>Talk to |cFF00FF25Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
+.target Uzzek
     .accept 1502 >>Accept Thun'grim Firegaze
 ]])

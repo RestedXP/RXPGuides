@@ -2667,7 +2667,7 @@ step
     .accept 8476 >> Accept Amani Encroachment
     .accept 9484 >> Accept Taming the Beast << BloodElf Hunter
     .target Lieutenant Dawnrunner
-step << Hunter
+step << !Troll Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
     >>|cFF0E8312Buy a|r |T135489:0|t[Laminated Recurve Bow] |cFF0E8312and|r |T132382:0|t[Sharp Arrows] |cFF0E8312from him|r
@@ -2678,7 +2678,8 @@ step << Hunter
     .money <0.2144 << BloodElf
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << Hunter
+--VV Paelarin doesn't talk to Trolls
+step << !Troll Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
     >>|cFF0E8312Buy|r |T132382:0|t[Sharp Arrows] |cFF0E8312from him|r
@@ -2686,11 +2687,11 @@ step << Hunter
     .target Paelarin
     .money <0.0500 << Orc/Troll
     .money <0.0480 << BloodElf
-step << Hunter
+step << !Troll Hunter
     #completewith Otembe
     +Equip the |T135489:0|t[Laminated Recurve Bow]
-    .use 2515
-    .itemcount 2515,1
+    .use 2507
+    .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step
@@ -2873,7 +2874,7 @@ step << skip
     .accept 9327 >> Accept The Forsaken
     --VV BloodElf Hunter
 step << skip
-    .goto Ghostlands,44.8,32.5
+    .goto Ghostlands,44.774,32.450
     .turnin 9327 >> Turn in The Forsaken
     .accept 9758 >> Accept Return to Arcanist Vandril
     --VV BloodElf Hunter
@@ -2919,7 +2920,7 @@ step << skip
     .turnin 8491 >> Turn in Pelt Collection
     --VV BloodElf Hunter
 step << skip
-    .goto Eversong Woods,46.9,71.8
+    .goto Eversong Woods,46.928,71.789
     .turnin 9252 >> Turn in Defending Fairbreeze Village
     --VV BloodElf Hunter
 step << skip
@@ -2952,9 +2953,13 @@ step << skip
     .timer 28,Prospector Anvilward RP
 step << skip
     .goto Eversong Woods,48.2,46.0
+.target Aeldon Sunbrand
+>>Talk to |cFF00FF25Aeldon Sunbrand|r
     .turnin 8483 >> Turn in The Dwarven Spy
 step << skip
-    .goto Eversong Woods,55.7,54.5
+    .goto Eversong Woods,55.700,54.509
+.target Instructor Antheol
+>>Talk to |cFF00FF25Instructor Antheol|r
     .turnin 9066 >> Turn in Swift Discipline
 step << Undead/BloodElf
     #completewith next
@@ -2974,7 +2979,7 @@ step << Undead/BloodElf
     #completewith MagiApp
     +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cFFFCDC00and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
     +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
-step << Hunter
+step << !Troll Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
     >>|cFF0E8312Buy a|r |T135489:0|t[Laminated Recurve Bow] |cFF0E8312from|r |cFF00FF25Paelarin|r
@@ -2984,11 +2989,11 @@ step << Hunter
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << Hunter
+step << !Troll Hunter
     #completewith HunterTrain
     +Equip the |T135489:0|t[Laminated Recurve Bow]
-    .use 2515
-    .itemcount 2515,1
+    .use 2507
+    .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step
@@ -3120,7 +3125,7 @@ step << Undead/BloodElf
     #completewith Spire
     +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cFFFCDC00and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
     +|cFFFCDC00Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
-step << Hunter
+step << !Troll Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Paelarin|r
     >>|cFF0E8312Buy a|r |T135489:0|t[Laminated Recurve Bow] |cFF0E8312from|r |cFF00FF25Paelarin|r
@@ -3130,11 +3135,11 @@ step << Hunter
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << Hunter
+step << !Troll Hunter
     #completewith HunterTrain
     +Equip the |T135489:0|t[Laminated Recurve Bow]
-    .use 2515
-    .itemcount 2515,1
+    .use 2507
+    .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step
@@ -3630,7 +3635,7 @@ step << Rogue
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
 step << skip
-    .goto Silvermoon City,54.0,71.0
+    .goto Silvermoon City,53.926,71.029
     >>Inside the building
     .turnin 9133 >> Turn in Fly to Silvermoon City
     .accept 9134 >> Accept Skymistress Gloaming
@@ -4786,6 +4791,7 @@ step << skip
 --VV WIP
 step << skip
     >> Talk to Master Chef Mouldier
+>>Talk to |cFF00FF25Master Chef Mouldier|r
     .accept 9171 >> Accept Culinary Crunch
     .goto Ghostlands,48.43,30.93
     .target Master Chef Mouldier
@@ -5509,6 +5515,7 @@ step
     .xp >30,1
 step << BloodElf Priest
     .goto Ghostlands,47.34,29.26
+>>Talk to |cFF00FF25Quartermaster Lymel|r
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
     .target Quartermaster Lymel
     .isQuestComplete 9135
@@ -7208,12 +7215,12 @@ step << Rogue/Mage/Hunter/Priest/Warlock/Paladin
 step << skip
     >> Head into Silvermoon City
     .goto Silvermoon City,72.4,85.7,40,0
-    .goto Silvermoon City,54.0,71.0
+    .goto Silvermoon City,53.926,71.029
     .turnin 9133 >> Turn in Fly to Silvermoon City
 --VV BloodElf Paladin/BloodElf Rogue
 step << skip
     #xprate <1.5
-    .goto Silvermoon City,54.0,71.0
+    .goto Silvermoon City,53.926,71.029
     .accept 9134 >> Accept Skymistress Gloaming
     --VV BloodElf Paladin/BloodElf Rogue
 step << skip
@@ -9765,7 +9772,7 @@ step << Druid
     .target Harene Plainwalker
 	.xp <22,1
 step << skip
-    .goto Silvermoon City,54.0,71.0
+    .goto Silvermoon City,53.926,71.029
     .turnin 9134 >> Turn in Skymistress Gloaming
 --VV BloodElf Paladin
 step << Warlock
