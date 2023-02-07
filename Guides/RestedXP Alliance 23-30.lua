@@ -1109,7 +1109,7 @@ step << Hunter/Paladin
 .target Commander Althea Ebonlocke
     .accept 229 >> Accept The Daughter Who Lived
 step << Hunter/Paladin
-    .goto Duskwood,74.5,46.1
+    .goto Duskwood,74.543,46.085
 >>Talk to |cFF00FF25Watcher Ladimore|r
     .turnin 229 >> Turn in The Daughter Who Lived
 .target Watcher Ladimore
@@ -1487,7 +1487,7 @@ step
 >>Talk to |cFF00FF25Sida|r
     .accept 470 >> Accept Digging Through the Ooze
 step
-    .goto Wetlands,11.5,52.2
+    .goto Wetlands,11.500,52.174
 .target Tarrel Rockweaver
 >>Talk to |cFF00FF25Tarrel Rockweaver|r
     .turnin 306 >> Turn in In Search of The Excavation Team
@@ -1640,7 +1640,7 @@ step
 .target First Mate Fitzsimmons
     .accept 290 >> Accept Lifting the Curse
 step
-    .goto Wetlands,10.8,60.4
+    .goto Wetlands,10.828,60.398
 	>>Go upstairs and talk to Archaeologist Flagongut
 .target Archaeologist Flagongut
 >>Talk to |cFF00FF25Archaeologist Flagongut|r
@@ -2177,7 +2177,7 @@ step
 .target Commander Althea Ebonlocke
     .accept 229 >> Accept The Daughter Who Lived
 step << !Hunter !Paladin
-    .goto Duskwood,74.5,46.1
+    .goto Duskwood,74.543,46.085
 >>Talk to |cFF00FF25Watcher Ladimore|r
     .turnin 229 >> Turn in The Daughter Who Lived
 .target Watcher Ladimore
@@ -2237,7 +2237,7 @@ step << Shaman
 .target Clerk Daltry
     .accept 97 >> Accept The Legend of Stalvan
 step << Shaman
-    .goto Duskwood,73.5,46.8
+    .goto Duskwood,73.540,46.824
 >>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 97 >> Turn in The Legend of Stalvan
 .target Commander Althea Ebonlocke
@@ -2396,7 +2396,7 @@ step
 .target Lord Ello Ebonlocke
     .accept 251 >> Accept Translate Abercrombie's Note
 step
-    .goto Duskwood,72.6,47.7
+    .goto Duskwood,72.617,47.624
 >>Talk to |cFF00FF25Sirra Von'Indi|r
     .turnin 251 >> Turn in Translate Abercrombie's Note
 .target Sirra Von'Indi
@@ -2414,7 +2414,7 @@ step
 	#completewith next
 	.destroy 3248 >> You can delete "Translated Letter From The Embalmer" from your bags, as it's no longer needed
 step << !Shaman
-    .goto Duskwood,73.5,46.8
+    .goto Duskwood,73.540,46.824
 >>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 97 >> Turn in The Legend of Stalvan
 .target Commander Althea Ebonlocke
@@ -3248,7 +3248,7 @@ step
 .target Commander Althea Ebonlocke
     .accept 229 >> Accept The Daughter Who Lived
 step << !Hunter !Paladin
-    .goto Duskwood,74.5,46.1
+    .goto Duskwood,74.543,46.085
 >>Talk to |cFF00FF25Watcher Ladimore|r
     .turnin 229 >> Turn in The Daughter Who Lived
 .target Watcher Ladimore
@@ -3312,7 +3312,7 @@ step << Shaman
 .target Clerk Daltry
     .accept 97 >> Accept The Legend of Stalvan
 step << Shaman
-    .goto Duskwood,73.5,46.8
+    .goto Duskwood,73.540,46.824
 >>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 97 >> Turn in The Legend of Stalvan
 .target Commander Althea Ebonlocke
@@ -3498,7 +3498,7 @@ step
 .target Lord Ello Ebonlocke
     .accept 251 >> Accept Translate Abercrombie's Note
 step
-    .goto Duskwood,72.6,47.7
+    .goto Duskwood,72.617,47.624
 >>Talk to |cFF00FF25Sirra Von'Indi|r
     .turnin 251 >> Turn in Translate Abercrombie's Note
 .target Sirra Von'Indi
@@ -3521,7 +3521,7 @@ step
 	#completewith next
 	.destroy 3248 >> You can delete "Translated Letter From The Embalmer" from your bags, as it's no longer needed
 step << !Shaman
-    .goto Duskwood,73.5,46.8
+    .goto Duskwood,73.540,46.824
 >>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 97 >> Turn in The Legend of Stalvan
 .target Commander Althea Ebonlocke

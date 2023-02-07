@@ -1322,7 +1322,7 @@ step << Warrior/Rogue/Paladin
 step << Paladin
     .goto Orgrimmar,49.1,94.7,20 >> Run into Orgrimmar
 step << Paladin
-    .goto Orgrimmar,32.3,35.7
+    .goto Orgrimmar,32.272,35.794
     .trainer >> Go and train your class spells
 step << Paladin
     #completewith next
@@ -1669,7 +1669,7 @@ step << Warlock
 step << Warlock
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Warlock
-    .goto Orgrimmar,31.8,37.8
+    .goto Orgrimmar,31.733,37.823
 >>Talk to |cFF00FF25Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
 .target Thrall
@@ -1702,7 +1702,7 @@ step << Warlock
 >>Talk to |cFF00FF25Gan'rul Bloodeye|r
     .turnin 1504 >>Turn in The Binding
 step << Warlock
-    .goto Orgrimmar,31.8,37.8
+    .goto Orgrimmar,31.733,37.823
 .target Thrall
 >>Talk to |cFF00FF25Thrall|r
     .turnin 5727 >>Turn in Hidden Enemies
@@ -2182,7 +2182,7 @@ step
 >>Talk to |cFF00FF25Thrall|r
     .accept 5726 >>Accept Hidden Enemies
 step << Paladin
-    .goto Orgrimmar,32.3,35.7
+    .goto Orgrimmar,32.272,35.794
     .trainer >> Go and train your class spells
 step
     .goto Orgrimmar,47.2,53.4
@@ -2365,7 +2365,7 @@ step << Warrior/Rogue
 	.goto Orgrimmar,81.2,19.0
 	.collect 25873,1 >> Purchase a Keen Throwing Knife from Zendo'jian
 step
-    .goto Orgrimmar,31.8,37.8
+    .goto Orgrimmar,31.733,37.823
 >>Talk to |cFF00FF25Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
 .target Thrall

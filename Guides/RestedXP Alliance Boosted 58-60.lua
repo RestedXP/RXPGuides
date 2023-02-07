@@ -203,7 +203,7 @@ step
     .complete 64038,1 --Speak to Dungar Longdrink, the Gryphon Master (1)
     .fly Morgan's Vigil>>Fly to Morgan's Vigil
 step
-    .goto Burning Steppes,85.8,69.0
+    .goto Burning Steppes,85.820,68.948
 .target Helendis Riverhorn
 >>Talk to |cFF00FF25Helendis Riverhorn|r
     .accept 4182 >>Accept Dragonkin Menace
@@ -217,7 +217,7 @@ step
     .complete 4182,3 --Black Drake (1)
     .complete 4182,4 --Black Wyrmkin (4)
 step
-    .goto Burning Steppes,85.8,68.9
+    .goto Burning Steppes,85.820,68.948
 >>Talk to |cFF00FF25Helendis Riverhorn|r
     .turnin 4182 >>Turn in Dragonkin Menace
 .target Helendis Riverhorn

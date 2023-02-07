@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 step << !Gnome !Dwarf
     #sticky
     #completewith next
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step << Mage
     #completewith next
@@ -21,7 +21,7 @@ step << Mage
 step
     >>|cFFFCDC00Delete your Hearthstone|r << !Warlock
     >> Talk to |cFF00FF25Sten Stoutarm|r
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     .accept 179 >> Accept Dwarven Outfitters
     .target Sten Stoutarm
 step << Warrior
@@ -90,7 +90,7 @@ step << Paladin/Warrior
     .vendor >> Vendor trash
     .target Adlin Pridedrift
 step
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     >> Talk to |cFF00FF25Sten Stoutarm|r
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
@@ -2132,10 +2132,10 @@ RXPGuides.RegisterGuide([[
 step << !Gnome !Dwarf
     #sticky
     #completewith next
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     >>Speak to Sten Stoutarm
 .target Sten Stoutarm
 >>Talk to |cFF00FF25Sten Stoutarm|r
@@ -3065,14 +3065,14 @@ RXPGuides.RegisterGuide([[
 #next 6-12 Dun Morogh
 step << !Gnome !Dwarf
     #completewith next
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step << Mage
     #completewith next
     +Note that you have selected the single target mage guide. Single target is a lot safer than AoE Mage, and a lot faster with the new 100% Quest xp change
 step
     >>Delete your Hearthstone << !Warlock
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
 .target Sten Stoutarm
 >>Talk to |cFF00FF25Sten Stoutarm|r
     .accept 179 >> Accept Dwarven Outfitters
@@ -3138,7 +3138,7 @@ step << Paladin/Warrior
     .goto Dun Morogh,30.0,71.5
     .vendor >>vendor trash
 step
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
 >>Talk to |cFF00FF25Sten Stoutarm|r
     .turnin 179 >> Turn in Dwarven Outfitters
 .target Sten Stoutarm
@@ -5055,10 +5055,10 @@ RXPGuides.RegisterGuide([[
 step << !Gnome !Dwarf
     #sticky
     #completewith next
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     >>Speak to Sten Stoutarm
 .target Sten Stoutarm
 >>Talk to |cFF00FF25Sten Stoutarm|r

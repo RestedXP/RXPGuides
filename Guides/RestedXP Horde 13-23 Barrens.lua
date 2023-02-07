@@ -584,7 +584,7 @@ step
     .accept 1061 >>Accept The Spirits of Stonetalon
 step << Paladin
     #completewith next
-    .goto Orgrimmar,32.3,35.7
+    .goto Orgrimmar,32.272,35.794
     .trainer >> Go and train your class spells
 step << Shaman
     .goto Orgrimmar,38.8,36.4
@@ -594,7 +594,7 @@ step << Shaman
 .train 526 >> Train Cure Poison
 .train 8154 >>Train Stoneskin Totem r2
 step << Shaman
-    .goto Orgrimmar,31.8,37.8
+    .goto Orgrimmar,31.733,37.823
 .target Thrall
 >>Talk to |cFF00FF25Thrall|r
     .turnin 5727 >>Turn in Hidden Enemies
@@ -912,7 +912,7 @@ step
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
 step
     .isOnQuest 6548
-    .goto The Barrens,35.2,27.8
+    .goto The Barrens,35.191,27.791
     >> Head back to the quest giver in The Barrens
 >>Talk to |cFF00FF25Makaba Flathoof|r
     .turnin 6548 >> Turn in Avenge My Village
@@ -1250,13 +1250,13 @@ step
     .fly Thunder Bluff >>Fly to Thunder Bluff
 step
 #xprate >1.499
-    .goto Thunder Bluff,45.9,64.7
+    .goto Thunder Bluff,45.814,64.711
     #completewith next
     >> Walk to Thunderbluff.
     .home >>Set your Hearthstone to Thunder Bluff
 step
 #xprate <1.5
-    .goto Thunder Bluff,45.9,64.7
+    .goto Thunder Bluff,45.814,64.711
     #completewith next
     .home >>Set your Hearthstone to Thunder Bluff
 step << Warrior wotlk
@@ -1648,7 +1648,7 @@ step << Shaman
     #completewith next
 .trainer >> Go and train your class spells
 step << Paladin
-    .goto Orgrimmar,32.3,35.7
+    .goto Orgrimmar,32.272,35.794
         #completewith next
     .trainer >> Go and train your class spells
 step << Warrior

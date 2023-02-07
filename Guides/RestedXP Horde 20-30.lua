@@ -639,7 +639,7 @@ step
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
     .isOnQuest 6548
 step
-    .goto The Barrens,35.2,27.8
+    .goto The Barrens,35.191,27.791
     >> Head back to the quest giver in The Barrens
 >>Talk to |cFF00FF25Makaba Flathoof|r
     .turnin 6548 >> Turn in Avenge My Village
@@ -962,7 +962,7 @@ step << !Tauren
     .goto Thunder Bluff,32.1,67.2,30 >>Run to Thunder Bluff
 step << !Tauren
     #completewith next
-    .goto Thunder Bluff,45.8,64.7
+    .goto Thunder Bluff,45.814,64.711
 	.home >> Set your Hearthstone to Thunder Bluff
 step << Warlock
     .goto Thunder Bluff,40.9,62.7
@@ -1013,7 +1013,7 @@ step
     .maxlevel 21
 step << Tauren
     #completewith next
-    .goto Thunder Bluff,45.8,64.7
+    .goto Thunder Bluff,45.814,64.711
     .home >> Set your Hearthstone to Thunder Bluff
 step
     .goto Thunder Bluff,61.538,80.919
@@ -3522,7 +3522,7 @@ step
 step << Rogue
     #label hearth
 	#completewith next
-	.goto Thunder Bluff,45.8,64.7
+	.goto Thunder Bluff,45.814,64.711
 	.home >> Set your Hearthstone to Thunder Bluff
 step
     >> Head up the totem tower

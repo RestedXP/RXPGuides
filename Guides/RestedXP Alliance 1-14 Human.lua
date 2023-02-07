@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 step << !Human
     #sticky
     #completewith next
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
     +You have selected a guide meant for Humans. You should choose the same starter zone that you start in
 step << Warlock tbc
     #sticky

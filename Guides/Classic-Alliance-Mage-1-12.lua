@@ -12,12 +12,12 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     #completewith next
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
     +You have selected a guide meant for Humans. You should choose the same starter zone that you start in << Gnome
     +Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but a LOT faster
 step
     >>Delete your Hearthstone
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
 .target Deputy Willem
 >>Talk to |cFF00FF25Deputy Willem|r
     .accept 783 >> Accept A Threat Within
@@ -28,7 +28,7 @@ step
 .target Marshal McBride
     .accept 7 >> Accept Kobold Camp Cleanup
 step
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
 .target Deputy Willem
 >>Talk to |cFF00FF25Deputy Willem|r
     .accept 5261 >> Accept Eagan Peltskinner
@@ -110,7 +110,7 @@ step
     .turnin 3104 >> Turn in Glyphic Letter
     .trainer >> Train your class spells
 step
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
 .target Deputy Willem
 >>Talk to |cFF00FF25Deputy Willem|r
     .accept 18 >> Accept Brotherhood of Thieves
@@ -124,7 +124,7 @@ step
     >>Kill Defias Thugs. Loot them for Bandanas
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 step
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
 >>Talk to |cFF00FF25Deputy Willem|r
     .turnin 18 >> Turn in Brotherhood of Thieves
 .target Deputy Willem
@@ -180,7 +180,7 @@ step
 .target Milly Osworth
     .accept 3905 >>Accept Grape Manifest
 step
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
 .target Deputy Willem
 >>Talk to |cFF00FF25Deputy Willem|r
     .turnin 6 >> Turn in Bounty on Garrick Padfoot
@@ -815,19 +815,19 @@ step
     #era/som
     #sticky
     #completewith next
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in << Human
     +Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but a LOT faster
 step
     #phase 3-6
     #sticky
     #completewith next
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in << Human
     +Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, but with the recent 100% quest xp changes, is also slower
 step
     >>Delete your Hearthstone
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
 .target Sten Stoutarm
 >>Talk to |cFF00FF25Sten Stoutarm|r
     .accept 179 >> Accept Dwarven Outfitters
@@ -842,7 +842,7 @@ step
     >>vendor trash. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step
-    .goto Dun Morogh,29.9,71.2
+    .goto Dun Morogh,29.927,71.201
 >>Talk to |cFF00FF25Sten Stoutarm|r
     .turnin 179 >> Turn in Dwarven Outfitters
 .target Sten Stoutarm

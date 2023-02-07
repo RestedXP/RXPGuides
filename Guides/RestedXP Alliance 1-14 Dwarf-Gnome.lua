@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 step << !Gnome !Dwarf
     #sticky
     #completewith next
-.goto Dun Morogh,29.9,71.2
+.goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
     >>|cFFFCDC00Delete your Hearthstone|r
@@ -1597,7 +1597,7 @@ RXPGuides.RegisterGuide([[
 step << !Gnome !Dwarf
     #sticky
     #completewith next
-.goto Dun Morogh,29.9,71.2
+.goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
     >>Delete your Hearthstone << tbc
@@ -3266,7 +3266,7 @@ RXPGuides.RegisterGuide([[
 step << !Gnome !Dwarf
     #sticky
     #completewith next
-.goto Dun Morogh,29.9,71.2
+.goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
 step
     .goto Dun Morogh,29.93,71.20 << tbc

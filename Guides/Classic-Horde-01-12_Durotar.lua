@@ -2325,7 +2325,7 @@ step << Warrior/Shaman
 step
 	#era/som
     #requires scorp2
-    .goto Orgrimmar,31.8,37.8
+    .goto Orgrimmar,31.733,37.823
 .target Thrall
 >>Talk to |cFF00FF25Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies

@@ -686,7 +686,7 @@ step
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
 step
-    .goto The Barrens,35.2,27.8
+    .goto The Barrens,35.191,27.791
 >>Talk to |cFF00FF25Makaba Flathoof|r
     .turnin 6548 >> Turn in Avenge My Village
 .target Makaba Flathoof
@@ -981,7 +981,7 @@ step
 step
     .goto Thunder Bluff,32.0,66.9,60 >>Run to the lift and take it into Thunder Bluff
 step
-    .goto Thunder Bluff,45.9,64.7
+    .goto Thunder Bluff,45.814,64.711
     .home >>Set your Hearthstone to Thunder Bluff
 step
     .goto Thunder Bluff,61.538,80.919

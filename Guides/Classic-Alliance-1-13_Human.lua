@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 step << !Human
     #sticky
     #completewith next
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
     +You have selected a guide meant for Humans. You should choose the same starter zone that you start in
 step << Mage
     #completewith next
@@ -91,7 +91,7 @@ step
     >>Run back outside << Warrior
     >> Talk to |cFF00FF25Deputy Willem|r again
     .target Deputy Willem
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
     .accept 5261 >> Accept Eagan Peltskinner
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,46.2,40.4
@@ -212,7 +212,7 @@ step << Paladin
 step
     >> Talk to |cFF00FF25Deputy Willem|r
     .target Deputy Willem
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
     .accept 18 >> Accept Brotherhood of Thieves
 step << Warlock
     >> Talk to |cFF00FF25Drusilla La Salle|r
@@ -284,7 +284,7 @@ step << !Priest !Mage
     .abandon 3904 >> Abandon Milly's Harvest
 step << !Priest !Mage
     .xp 5+1715 >> Grind on your way back to 1715+/2800xp
-    .goto Elwynn Forest,48.2,42.9
+    .goto Elwynn Forest,48.171,42.943
 --N SoM xp values
 step << Priest/Mage
     .xp 5+1175 >> Grind on your way back to 1175+/2800xp
