@@ -463,7 +463,7 @@ step
     .loop 40,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
     >>Kill |cFFFF5722Scarlet Initiates|r and |cFFFF5722Scarlet Converts|r. Loot them for their |cFF00BCD4Scarlet Armbands|r
     >>|cFFFCDC00Don't kill |cFFFF5722Meven Korgal|r yet|r
-    >>|cFFFCDC00Try to avoid |cFFFF5722Scarlet Converts|r if you can as they have|r |T135843:0|t[Frost Armor] |cFFFCDC00(slows your attack speed)|r << Warrior/Rogue
+    >>|cFFFCDC00Try to avoid |cFFFF5722Scarlet Initiates|r if you can as they have|r |T135843:0|t[Frost Armor] |cFFFCDC00(slows your attack speed)|r << Warrior/Rogue
     .complete 381,1 --Collect Scarlet Armband (12)
     .mob Scarlet Initiate
     .mob Scarlet Convert
