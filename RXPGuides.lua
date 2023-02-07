@@ -633,7 +633,7 @@ function addon:QUEST_DATA_LOAD_RESULT(_, questId, success)
 end
 
 function addon:GROUP_LEFT()
-    if not addon.settings.db.profile.hideInRaid or (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then return end
+    if not addon.settings.db.profile.hideInRaid then return end
 
     if not addon.settings.db.profile.showEnabled then return end
 
@@ -653,7 +653,7 @@ function addon:NEW_PET_ADDED(...) addon.UpdateItemFrame() end
 function addon:TOYS_UPDATED(...) addon.UpdateItemFrame() end
 
 function addon.HideInRaid()
-    if not addon.settings.db.profile.hideInRaid or (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then return end
+    if not addon.settings.db.profile.hideInRaid then return end
 
     if not UnitInRaid("player") then return end
 
