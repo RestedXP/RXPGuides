@@ -1444,6 +1444,7 @@ function addon.functions.line(self, text, zone, ...)
         if zone and zone:sub(1,1) == "*" then
             element.drawCenterPoint = true
             zone = zone:sub(2,#zone)
+            element.thickness = 1
         end
         if zone then
             lastZone = zone
@@ -1476,6 +1477,7 @@ function addon.functions.loop(self, text, range, zone, ...)
         element.segments = segments
         if range and range:sub(1,1) == "*" then
             element.drawCenterPoint = true
+            element.thickness = 1
             range = range:sub(2,#zone)
             --print('ok2')
         end

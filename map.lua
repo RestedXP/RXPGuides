@@ -118,7 +118,7 @@ MapPinPool.creationFunc = function(framePool)
 
     -- Styling
     f:SetBackdrop({
-        bgFile = addon.GetTexture("white_circle-64"),
+        bgFile = addon.GetTexture("white_circle"),
         insets = {left = 0, right = 0, top = 0, bottom = 0}
     })
     f:SetWidth(0)
@@ -436,7 +436,11 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     for _, step in pairs(activeSteps) do GetNumPins(step) end
 
     for i = RXPCData.currentStep + 1, RXPCData.currentStep + numPins do
-        GetNumPins(addon.currentGuide.steps[i])
+        local step = addon.currentGuide.steps[i]
+        GetNumPins(step)
+        if step.centerPins then
+            numActive = numActive + #step.centerPins
+        end
     end
 
     if numPins < numActive then numPins = numActive end
@@ -460,10 +464,11 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         local nElements = #step.elements
         while numActivePins < numPins and j <= nElements + nCenter do
             local element
-            if j > nElements then
-                element = step.centerPins[j-nElements]
+            if j > nCenter then
+                element = step.elements[j-nCenter]
             else
-                element = step.elements[j]
+                element = step.centerPins[j]
+                print('c1',element.x,element.y)
             end
 
             local skipWp = not(element.zone and element.x)
@@ -583,7 +588,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                 fX = fX,
                 fY = fY,
                 lineAlpha = lineAlpha,
-                linethickness = thickness or 3
+                linethickness = thickness or element.thickness or 3
             })
         end
 
@@ -605,7 +610,8 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                 anchor = element,
                 range = element.range,
                 generated = flags,
-                step = step
+                step = step,
+                parent = element.parent
             }
             point.wpHash = GetPinHash(x,y,element.zone,n)
             n = n + 1
@@ -620,7 +626,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
 
             local nPoints = element.segments and
                                 math.floor(#element.segments / 2)
-
+            local nSegments = element.segments and #element.segments
             if element.zone and nPoints and
                 (not (element.parent and
                     (element.parent.completed or element.parent.skip)) and
@@ -628,8 +634,8 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                 for i = 1, nPoints * 2, 2 do
                     local sX = (element.segments[i])
                     local sY = (element.segments[i + 1])
-                    local fX = (element.segments[i + 2])
-                    local fY = (element.segments[i + 3])
+                    local fX = (element.segments[(i + 1) % nSegments + 1])
+                    local fY = (element.segments[(i + 2) % nSegments + 1])
 
                     if sX and sY and fX and fY then
                         if sX < 0 and sY < 0 then
