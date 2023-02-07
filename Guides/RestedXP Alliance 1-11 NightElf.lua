@@ -70,7 +70,9 @@ step
     >>Talk to Ilthalaine
     .goto Teldrassil,58.69,44.27 << tbc
     .goto Teldrassil,58.62,44.71 << wotlk
+>>Talk to |cFF00FF25Conservator Ilthalaine|r
     .turnin 456 >> Turn in The Balance of Nature
+.target Conservator Ilthalaine
     .accept 457 >> Accept The Balance of Nature
 	.accept 3116 >> Accept Simple Sigil << Warrior
 	.accept 3117 >> Accept Etched Sigil << Hunter
@@ -433,7 +435,9 @@ step << Druid
 	.trainer >> Train your level 6 spells
 step
     .goto Teldrassil,56.2,61.7
+>>Talk to |cFF00FF25Corithras Moonrage|r
     .turnin 928 >> Turn in Crown of the Earth
+.target Corithras Moonrage
     .accept 929 >> Accept Crown of the Earth
 --step << Druid
 --    #xprate <1.1
@@ -1122,6 +1126,8 @@ step << Warrior
     .deathskip >>Die on purpose after you get past the furbolg area and respawn at Darnassus
 step << Warrior
     .goto Darnassus,57.305,34.606
+.target Elanaria
+>>Talk to |cFF00FF25Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
 step << Druid

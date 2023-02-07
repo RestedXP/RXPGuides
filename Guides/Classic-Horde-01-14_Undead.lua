@@ -1311,7 +1311,9 @@ step
     #som
     #phase 3-6
     .goto Tirisfal Glades,59.45,52.39
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .turnin 369 >>Turn in A New Plague
+.target Apothecary Johaan
     .accept 492 >>Accept A New Plague
 --  .accept 445 >>Accept Delivery to Silverpine Forest
 step
@@ -1320,7 +1322,9 @@ step
     #phase 3-6
     >>Run back to Brill
     .goto Tirisfal Glades,59.45,52.39
+>>Talk to |cFF00FF25Apothecary Johaan|r
     .turnin 369 >>Turn in A New Plague
+.target Apothecary Johaan
     .accept 492 >>Accept A New Plague
 --   .accept 445 >>Accept Delivery to Silverpine Forest
 step
@@ -1379,16 +1383,22 @@ step << Warrior
     .collect 1198,1 --Collect Claymore (1)
 step << Rogue
     .goto Undercity,83.52,69.10
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .turnin 1886 >> Turn in The Deathstalkers
     .isQuestComplete 1886
 step
     .goto Undercity,83.52,69.10
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .accept 1898 >>Accept The Deathstalkers
     .isQuestTurnedIn 1886
 step << Rogue
     .isQuestTurnedIn 1886
     .goto Undercity,54.84,76.31
+>>Talk to |cFF00FF25Andron Gant|r
     .turnin 1898 >> Turn in The Deathstalkers
+.target Andron Gant
     .accept 1899 >> Accept The Deathstalkers
 step << Rogue
     .isQuestTurnedIn 1886
@@ -1543,10 +1553,14 @@ step << Warrior
     .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
 step << Rogue
     .goto Undercity,83.52,69.10
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .turnin 1886 >> Turn in The Deathstalkers
     .isQuestComplete 1886
 step << Rogue
     .goto Undercity,83.52,69.10
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .accept 1898 >>Accept The Deathstalkers
     .isQuestTurnedIn 1886
 step << Rogue
@@ -1557,14 +1571,20 @@ step << Priest
      #level 12
     .goto Undercity,48.98,18.33
     .trainer >> Train your class spells
+.target Aelthalyste
+>>Talk to |cFF00FF25Aelthalyste|r
     .turnin 5663 >> Turn in Touch of Weakness
 step << Priest
     .goto Undercity,48.98,18.33
+.target Aelthalyste
+>>Talk to |cFF00FF25Aelthalyste|r
     .turnin 5663 >> Turn in Touch of Weakness
 step << Rogue
     .isQuestTurnedIn 1886
     .goto Undercity,54.84,76.31
+>>Talk to |cFF00FF25Andron Gant|r
     .turnin 1898 >> Turn in The Deathstalkers
+.target Andron Gant
     .accept 1899 >> Accept The Deathstalkers
 step << Rogue
     .isQuestTurnedIn 1886
@@ -1958,24 +1978,32 @@ step
 step
     #era
     .goto Silverpine Forest,44.18,39.77
+>>Talk to |cFF00FF25Dalar Dawnweaver|r
     .turnin 423 >>Turn in Arugal's Folly
     .turnin 481 >>Turn in Dalar's Analysis
+.target Dalar Dawnweaver
     .accept 482 >>Accept Dalaran's Intentions
 --    .accept 424 >>Accept Arugal's Folly
 step
     #som
     .goto Silverpine Forest,44.18,39.77
+>>Talk to |cFF00FF25Dalar Dawnweaver|r
     .turnin 481 >>Turn in Dalar's Analysis
+.target Dalar Dawnweaver
     .accept 482 >>Accept Dalaran's Intentions
 --    .accept 424 >>Accept Arugal's Folly
 step
     .goto Silverpine Forest,43.98,40.93
+.target Shadow Priest Allister
+>>Talk to |cFF00FF25Shadow Priest Allister|r
     .turnin 482 >>Turn in Dalaran's Intentions
 --   .accept 479 >>Accept Ambermill Investigations
 step
     >>Go downstairs into the crypt
     .goto Silverpine Forest,43.43,40.87
+>>Talk to |cFF00FF25High Executor Hadrec|r
     .turnin 439 >>Turn in Rot Hide Clues
+.target High Executor Hadrec
     .accept 440 >>Accept The Engraved Ring << Undead
 --   .accept 443 >>Accept Rot Hide Ichor
 -- Engraved ring q line worth it depending on class?
@@ -1995,6 +2023,8 @@ step << Undead
     .accept 6322 >> Accept Michael Garrett
 step << Undead
     .goto Undercity,63.27,48.55
+.target Michael Garrett
+>>Talk to |cFF00FF25Michael Garrett|r
     .turnin 6322 >>Turn in Michael Garrett
 --    .accept 6324 >>Accept Return to Podrig
 step << Warrior
@@ -2003,9 +2033,13 @@ step << Warrior
 step << Undead Rogue
     .isQuestComplete 1886
     .goto Undercity,83.52,69.10
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .turnin 1886 >> Turn in The Deathstalkers
 step << Undead Rogue
     .goto Undercity,83.52,69.10
+.target Mennet Carkad
+>>Talk to |cFF00FF25Mennet Carkad|r
     .accept 1898 >>Accept The Deathstalkers
     .isQuestTurnedIn 1886
 step << Rogue
@@ -2017,7 +2051,9 @@ step << Priest
 step << Undead Rogue
     .isQuestTurnedIn 1886
     .goto Undercity,54.84,76.31
+>>Talk to |cFF00FF25Andron Gant|r
     .turnin 1898 >> Turn in The Deathstalkers
+.target Andron Gant
     .accept 1899 >> Accept The Deathstalkers
 step << Undead Rogue
     .isQuestTurnedIn 1886

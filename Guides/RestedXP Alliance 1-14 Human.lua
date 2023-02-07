@@ -1004,6 +1004,8 @@ step << Mage/Priest/Rogue tbc
     .goto Elwynn Forest,43.7,66.4,10 >>Go Upstairs
 step << Priest
     .goto Elwynn Forest,43.283,65.721
+.target Priestess Josetta
+>>Talk to |cFF00FF25Priestess Josetta|r
     .accept 5635 >> Accept Desperate Prayer << tbc
     .trainer >> Train your class spells
 step << Mage
@@ -1361,6 +1363,8 @@ step << Warlock
     .turnin 1689 >> Turn in The Binding
 step << Human
     .goto StormwindClassic,74.3,47.2
+.target Osric Strang
+>>Talk to |cFF00FF25Osric Strang|r
     .turnin 6281 >> Turn in Continue to Stormwind
     --.accept 6261 >> Accept Dungar Longdrink
 step << Warrior
@@ -1378,7 +1382,9 @@ step << Warrior
     .accept 1639 >> Accept Bartleby the Drunk
 step << Warrior
     .goto StormwindClassic,73.8,36.3
+>>Talk to |cFF00FF25Bartleby|r
     .turnin 1639 >> Turn in Bartleby the Drunk
+.target Bartleby
     .accept 1640 >> Accept Beat Bartleby
     .complete 1640,1 --Beat Bartleby
 step << Warrior
@@ -1396,6 +1402,8 @@ step << Warrior
 step << Priest tbc
     #completewith next
     .goto StormwindClassic,38.8,26.4
+.target High Priestess Laurena
+>>Talk to |cFF00FF25High Priestess Laurena|r
     .turnin 5635 >> Turn in Desperate Prayer
 step << Priest tbc
     .goto StormwindClassic,38.62,26.10

@@ -204,6 +204,8 @@ step
     .fly Morgan's Vigil>>Fly to Morgan's Vigil
 step
     .goto Burning Steppes,85.8,69.0
+.target Helendis Riverhorn
+>>Talk to |cFF00FF25Helendis Riverhorn|r
     .accept 4182 >>Accept Dragonkin Menace
 step
     .goto Burning Steppes,87.7,46.1
@@ -216,21 +218,27 @@ step
     .complete 4182,4 --Black Wyrmkin (4)
 step
     .goto Burning Steppes,85.8,68.9
+>>Talk to |cFF00FF25Helendis Riverhorn|r
     .turnin 4182 >>Turn in Dragonkin Menace
+.target Helendis Riverhorn
     .accept 4183 >>Accept The True Masters
 step
     .goto Burning Steppes,84.4,68.4
     .fly Lakeshire >>Fly to Lakeshire
 step
     .goto Redridge Mountains,29.8,44.5
+>>Talk to |cFF00FF25Magistrate Solomon|r
     .turnin 4183 >>Turn in The True Masters
+.target Magistrate Solomon
     .accept 4184 >>Accept The True Masters
 step
     .goto Redridge Mountains,30.58,59.41
     .fly Stormwind>>Fly to Stormwind
 step
     .goto StormwindClassic,78.0,18.2
+>>Talk to |cFF00FF25Highlord Bolvar Fordragon|r
     .turnin 4184 >>Turn in The True Masters
+.target Highlord Bolvar Fordragon
     .accept 4185 >>Accept The True Masters
 -- .accept 6182 >>Accept The First and the Last
 step
@@ -239,7 +247,9 @@ step
     .complete 4185,1 --Advice from Lady Prestor (1)
 step
     .goto StormwindClassic,78.0,18.2
+>>Talk to |cFF00FF25Highlord Bolvar Fordragon|r
     .turnin 4185 >>Turn in The True Masters
+.target Highlord Bolvar Fordragon
     .accept 4186 >>Accept The True Masters
 step << skip
     .goto StormwindClassic,75.9,59.8
@@ -254,13 +264,17 @@ step
     .fly Lakeshire >>Fly to Lakeshire
 step
     .goto Redridge Mountains,29.8,44.5
+>>Talk to |cFF00FF25Magistrate Solomon|r
     .turnin 4186 >>Turn in The True Masters
+.target Magistrate Solomon
     .accept 4223 >>Accept The True Masters
 step
     .goto Redridge Mountains,30.6,59.4
     .fly Morgan's Vigil >>Fly to Morgan's Vigil
 step
     .goto Burning Steppes,84.6,68.9
+.target Marshal Maxwell
+>>Talk to |cFF00FF25Marshal Maxwell|r
     .turnin 4223 >>Turn in The True Masters
 step
     .goto Burning Steppes,84.4,68.3
@@ -723,6 +737,8 @@ step
     .goto Eastern Plaguelands,51.41,49.70
     .complete 5181,2 --Shattered Sword of Marduk (1)
     .goto Eastern Plaguelands,53.90,65.71
+.target Carlin Redpath
+>>Talk to |cFF00FF25Carlin Redpath|r
     .turnin 5181 >>Turn in Villains of Darrowshire
     .goto Eastern Plaguelands,81.52,59.87
 step

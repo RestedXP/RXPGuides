@@ -1034,7 +1034,9 @@ step << Paladin
 step << Paladin
     .goto Westfall,42.5,88.6
     .complete 1651,1 --Protect Daphne Stilwell (1)
+>>Talk to |cFF00FF25Daphne Stilwell|r
     .turnin 1651 >>Turn in The Tome of Valor
+.target Daphne Stilwell
     .accept 1652 >>Accept The Tome of Valor
 step << !Rogue !Druid
     #sticky

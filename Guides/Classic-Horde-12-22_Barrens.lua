@@ -656,7 +656,11 @@ step << Rogue
     .goto Orgrimmar,43.05,53.73
     .trainer >> Train your class spells
 	>> Make sure you've trained Pick Lock
+.target Shenthul
+>>Talk to |cFF00FF25Shenthul|r
     .accept 2379 >> Accept Zando'Zan
+.target Therzok
+>>Talk to |cFF00FF25Therzok|r
 	.turnin 1963 >> Turn in The Shattered Hand << !Undead
 --	.accept 1858 >> Accept The Shattered Hand
 --N ..Make sure you train Pick Pocket
@@ -674,6 +678,8 @@ step << skip
 --N Rogue class q
 step << skip
     .goto Orgrimmar,43.05,53.73
+.target Therzok
+>>Talk to |cFF00FF25Therzok|r
 	.turnin 1858 >> Turn in The Shattered Hand
 --N Rogue class q
 step << Warlock
@@ -716,6 +722,8 @@ step << Druid
     .trainer >> Train your class spells
 step << Druid
     .goto Moonglade,36.52,40.10
+.target Tajarri
+>>Talk to |cFF00FF25Tajarri|r
     .turnin 28 >> Turn in Trial of the Lake
 --    .accept 30 >> Accept Trial of the Sea Lion
 step
@@ -1591,6 +1599,8 @@ step
 step
     .goto Stonetalon Mountains,47.5,58.4
 --    .accept 6301 >> Accept Cycle of Rebirth
+.target Tammra Windfield
+>>Talk to |cFF00FF25Tammra Windfield|r
     .turnin 6401 >>Turn in Kaya's Alive
 step
     .goto Stonetalon Mountains,58.989,62.599
@@ -1632,9 +1642,17 @@ step
 step
 	>>Take all the quests in Zoram'gar
     .goto Ashenvale,11.60,34.30
+.target Je'neu Sancrea
+>>Talk to |cFF00FF25Je'neu Sancrea|r
     .turnin 6562 >> Turn in Trouble in the Deeps
+.target Marukai
+>>Talk to |cFF00FF25Marukai|r
     .accept 6442 >> Accept Naga at the Zoram Strand
+.target Karang Amakkar
+>>Talk to |cFF00FF25Karang Amakkar|r
     .accept 216 >> Accept Between a Rock and a Thistlefur
+.target Mitsuwa
+>>Talk to |cFF00FF25Mitsuwa|r
     .accept 6462 >> Accept Troll Charm
 --N might need to be changed back to accepting later depending on no. of quests in log
 step
@@ -1717,6 +1735,9 @@ step
    .accept 1065 >> Accept Journey to Tarren Mill
 step << Priest
     .goto Thunder Bluff,25.4,15.0
+.target Miles Welsh
+>>Talk to |cFF00FF25Miles Welsh|r
+--
 	.accept 5644 >> Accept Devouring Plague
 step << Shaman
     .goto Thunder Bluff,25.161,20.511
@@ -1774,6 +1795,8 @@ step << Hunter
 step
 	>>Go to the 2nd floor of the tower
     .goto The Barrens,48.12,5.42
+.target Kadrak
+>>Talk to |cFF00FF25Kadrak|r
     .turnin 6541 >>Turn in Report to Kadrak
 --    .accept 6543 >>Accept The Warsong Reports
 step << Hunter

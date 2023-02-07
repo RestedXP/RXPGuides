@@ -862,7 +862,9 @@ step << Warrior/Shaman
     .goto Mulgore,59.7,62.5,30,0
     .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5
+>>Talk to |cFF00FF25Morin Cloudstalker|r
     .turnin 751 >> Turn in The Ravaged Caravan
+.target Morin Cloudstalker
     .accept 764 >>Accept The Venture Co.
     .accept 765 >>Accept Supervisor Fizsprocket
     .unitscan Morin Cloudstalker

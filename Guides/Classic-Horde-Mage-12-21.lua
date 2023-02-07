@@ -896,7 +896,9 @@ step
     .collect 5075 --Blood Shard (1)
 step
     .goto The Barrens,44.6,59.2
+>>Talk to |cFF00FF25Mangletooth|r
     .turnin 878 >>Turn in Tribes at War
+.target Mangletooth
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
@@ -965,6 +967,8 @@ step
     .complete 913,1 --Thunderhawk Wings (1)
 step
     .goto The Barrens,44.8,59.1
+.target Jorn Skyseer
+>>Talk to |cFF00FF25Jorn Skyseer|r
     .turnin 913 >>Turn in Cry of the Thunderhawk
 --    .accept 874 >>Accept Mahren Skyseer
 step
@@ -1011,10 +1015,14 @@ step
     .complete 876,1 --Serena's Head (1)
 step
     .goto The Barrens,35.3,27.9
+>>Talk to |cFF00FF25Seereth Stonebreak|r
     .turnin 1062 >>Turn in Goblin Invaders
+>>Talk to |cFF00FF25Makaba Flathoof|r
     .turnin 6629 >>Turn in Kill Grundig Darkcloud
     .turnin 6523 >>Turn in Protect Kaya
+.target Makaba Flathoof
     .accept 6401 >>Accept Kaya's Alive
+.target Seereth Stonebreak
     .accept 1063 >>Accept The Elder Crone
 --    .accept 1068 >> Accept Shredding Machines
 step

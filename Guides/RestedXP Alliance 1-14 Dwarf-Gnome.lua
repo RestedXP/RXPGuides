@@ -1091,6 +1091,8 @@ step << Priest tbc
     .train 2006 >>If you're going to be playing with other players, Train Resurrection
 step << !NightElf !Draenei Priest tbc
     .goto Dun Morogh,47.3,52.2
+.target Laurna Morninglight
+>>Talk to |cFF00FF25Laurna Morninglight|r
     .accept 5636 >> Accept Desperate Prayer
     .train 2053 >>Train Lesser Heal r3
     .train 8092 >>Train Mind Blast
@@ -1227,7 +1229,9 @@ step << Mage
     .goto Loch Modan,37.2,46.1,40,0
     .goto Loch Modan,36.7,41.6,40,0
     >>Find Kadrell, he patrols along the main road
+>>Talk to |cFF00FF25Mountaineer Kadrell|r
     .turnin 414 >> Turn in Stout to Kadrell
+.target Mountaineer Kadrell
     .accept 416 >> Accept Rat Catching
     .accept 1339 >> Accept Mountaineer Stormpike's Task
     --Mage needs 12 for r3 fireball
@@ -1615,6 +1619,8 @@ step << tbc
 step << tbc
     .goto Dun Morogh,28.6,66.1
     .train 348 >>Train Immolate
+.target Alamar Grimm
+>>Talk to |cFF00FF25Alamar Grimm|r
     .accept 1599 >> Accept Beginnings
 step
     >>Kill Wolves. Loot them for Meat
@@ -1638,6 +1644,8 @@ step << tbc
     .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at the Spirit Healer
 step << tbc
     .goto Dun Morogh,28.6,66.1
+.target Alamar Grimm
+>>Talk to |cFF00FF25Alamar Grimm|r
     .turnin 1599 >> Turn in Beginnings
 step
     .goto Dun Morogh,29.93,71.20 << tbc

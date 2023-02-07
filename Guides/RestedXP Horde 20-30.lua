@@ -7180,6 +7180,8 @@ step << !Shaman !Warrior
 step << skip
 	#completewith next
 	.goto Thunder Bluff,76.477,27.221
+.target Turak Runetotem
+>>Talk to |cFF00FF25Turak Runetotem|r
 	.accept 27 >>Accept A Lesson to Learn << tbc
 	.trainer >> Go and train your class spells
 --VV Druid - not worth it

@@ -3095,6 +3095,8 @@ step << Warlock
 step << Warlock
     .goto Dun Morogh,28.6,66.1
     .trainer >>Train Immolate
+.target Alamar Grimm
+>>Talk to |cFF00FF25Alamar Grimm|r
     .accept 1599 >> Accept Beginnings
 step
     >>Kill Wolves. Loot them for Meat
@@ -3124,6 +3126,8 @@ step << Warlock
 step << Warlock
     >>Go back to the Warlock Trainer
     .goto Dun Morogh,28.6,66.1
+.target Alamar Grimm
+>>Talk to |cFF00FF25Alamar Grimm|r
     .turnin 1599 >> Turn in Beginnings
 step << Priest/Mage/Warlock
     .goto Dun Morogh,30.0,71.5
@@ -4826,6 +4830,8 @@ step << !Mage !Paladin
     .turnin 291 >> Turn in The Reports
 step << !Mage !Paladin
     .goto Ironforge,55.501,47.742
+.target Gryth Thurden
+>>Talk to |cFF00FF25Gryth Thurden|r
     .turnin 6388 >> Turn in Gryth Thurden
 -- .accept 6392 >> Accept Return to Brock
 step << Warrior
@@ -4929,6 +4935,8 @@ step << Priest
     >>Go into the Cathedral
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
+.target High Priestess Laurena
+>>Talk to |cFF00FF25High Priestess Laurena|r
     .turnin 5634 >> Turn in Desperate Prayer
 step << Priest
     .goto StormwindClassic,38.62,26.10
@@ -4956,7 +4964,9 @@ step << Warrior
     .accept 1639 >> Accept Bartleby the Drunk
 step << Warrior
     .goto StormwindClassic,73.8,36.3
+>>Talk to |cFF00FF25Bartleby|r
     .turnin 1639 >> Turn in Bartleby the Drunk
+.target Bartleby
     .accept 1640 >> Accept Beat Bartleby
     .complete 1640,1 --Beat Bartleby
 step << Warrior
@@ -5646,6 +5656,8 @@ step
     #label ratcatching
      >> Talk to the guard patrolling Thelsamar
     --.accept 416 >> Accept Rat Catching
+.target Mountaineer Kadrell
+>>Talk to |cFF00FF25Mountaineer Kadrell|r
     .accept 1339 >> Accept Mountaineer Stormpike's Task
 step
        .goto Loch Modan,35.5,48.4

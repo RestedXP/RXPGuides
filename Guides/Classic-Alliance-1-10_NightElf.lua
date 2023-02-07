@@ -62,7 +62,9 @@ step << Hunter
 step
     #requires balance1
 	.goto Teldrassil,58.7,44.2
+>>Talk to |cFF00FF25Conservator Ilthalaine|r
     .turnin 456 >> Turn in The Balance of Nature
+.target Conservator Ilthalaine
     .accept 457 >> Accept The Balance of Nature
 	.accept 3116 >> Accept Simple Sigil << Warrior
 	.accept 3117 >> Accept Etched Sigil << Hunter
@@ -1051,6 +1053,8 @@ step << Warrior
     .deathskip >>Die on purpose after you get past the furbolg area and respawn at Darnassus
 step << Warrior
     .goto Darnassus,57.305,34.606
+.target Elanaria
+>>Talk to |cFF00FF25Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
 step << Druid

@@ -1012,6 +1012,8 @@ step << Mage/Priest/Rogue
     .goto Elwynn Forest,43.7,66.4,10 >>Go Upstairs
 step << Priest
     .goto Elwynn Forest,43.283,65.721
+.target Priestess Josetta
+>>Talk to |cFF00FF25Priestess Josetta|r
     .accept 5635 >> Accept Desperate Prayer
     .trainer >> Train your class spells
 step << Mage
@@ -1345,7 +1347,9 @@ step << Warrior
     .accept 1639 >> Accept Bartleby the Drunk
 step << Warrior
     .goto StormwindClassic,73.8,36.3
+>>Talk to |cFF00FF25Bartleby|r
     .turnin 1639 >> Turn in Bartleby the Drunk
+.target Bartleby
     .accept 1640 >> Accept Beat Bartleby
     .complete 1640,1 --Beat Bartleby
 step << Warrior
@@ -1363,6 +1367,8 @@ step << Warrior
 step << Priest
     #completewith next
     .goto StormwindClassic,38.8,26.4
+.target High Priestess Laurena
+>>Talk to |cFF00FF25High Priestess Laurena|r
     .turnin 5635 >> Turn in Desperate Prayer
 step << Priest
     .goto StormwindClassic,38.62,26.10
@@ -1819,10 +1825,12 @@ step << Mage
 step << Paladin
     >>Do the quests for Duthorian Rall
     .goto StormwindClassic,39.80,29.77
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1641 >> Turn in The Tome of Divinity
     .collect 6775,1,1642 --Tome of Divinity (1)
     .accept 1642 >> Accept The Tome of Divinity
     .turnin 1642 >> Turn in The Tome of Divinity
+.target Duthorian Rall
     .accept 1643 >> Accept The Tome of Divinity
 step << Paladin
     .goto StormwindClassic,38.68,32.85
@@ -2489,6 +2497,8 @@ step << Mage/Priest/Rogue
     .goto Elwynn Forest,43.7,66.4,10 >>Go Upstairs
 step << Priest
     .goto Elwynn Forest,43.283,65.721
+.target Priestess Josetta
+>>Talk to |cFF00FF25Priestess Josetta|r
     .accept 5635 >> Accept Desperate Prayer
     .trainer >> Train your class spells
 step << Mage
@@ -2759,7 +2769,9 @@ step << Warrior
     .accept 1639 >> Accept Bartleby the Drunk
 step << Warrior
     .goto StormwindClassic,73.8,36.3
+>>Talk to |cFF00FF25Bartleby|r
     .turnin 1639 >> Turn in Bartleby the Drunk
+.target Bartleby
     .accept 1640 >> Accept Beat Bartleby
     .complete 1640,1 --Beat Bartleby
 step << Warrior
@@ -2777,6 +2789,8 @@ step << Warrior
 step << Priest
     #completewith next
     .goto StormwindClassic,38.8,26.4
+.target High Priestess Laurena
+>>Talk to |cFF00FF25High Priestess Laurena|r
     .turnin 5635 >> Turn in Desperate Prayer
 step << Priest
     .goto StormwindClassic,38.62,26.10

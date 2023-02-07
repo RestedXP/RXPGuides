@@ -1081,6 +1081,8 @@ step
     .collect 12347,1,4763,1
 step
     .goto Felwood,18.50,19.87
+.target Gubber Blump
+>>Talk to |cFF00FF25Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
 step
 	#era/som
@@ -2684,10 +2686,12 @@ step << Mage
 step << Paladin
     >>Do the quests for Duthorian Rall. Make sure you have the 10 Linen Cloth from earlier
     .goto StormwindClassic,39.80,29.77
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1641 >> Turn in The Tome of Divinity
     .collect 6775,1,1642 --Tome of Divinity (1)
     .accept 1642 >> Accept The Tome of Divinity
     .turnin 1642 >> Turn in The Tome of Divinity
+.target Duthorian Rall
     .accept 1643 >> Accept The Tome of Divinity
 step << Paladin
     .goto StormwindClassic,38.68,32.85
@@ -2710,7 +2714,9 @@ step
      .train 202 >> Talk to Woo Ping. Train 2h Swords << Warrior/Paladin
 step << Paladin
     .goto StormwindClassic,57.08,61.74
+>>Talk to |cFF00FF25Stephanie Turner|r
     .turnin 1643 >> Turn in The Tome of Divinity
+.target Stephanie Turner
     .accept 1644 >> Accept The Tome of Divinity
     .turnin 1644 >> Turn in The Tome of Divinity
 --  .accept 1780 >> Accept The Tome of Divinity
@@ -3052,10 +3058,11 @@ step << Druid
 step << Paladin
     .goto StormwindClassic,42.66,33.75,30,0
     .goto StormwindClassic,40.1,30.0
-    >>Speak to Duthorian Rall and right click on the Tome of Valor provided
+>>Talk to |cFF00FF25Duthorian Rall|r and right click on the Tome of Valor provided
     .collect 6776,1,1649 --Tome of Valor (1)
     .accept 1649 >>Accept The Tome of Valor
     .turnin 1649 >>Turn in The Tome of Valor
+.target Duthorian Rall
     .accept 1650 >>Accept The Tome of Valor
 step << Paladin
     .goto StormwindClassic,38.68,32.85
@@ -3323,6 +3330,8 @@ step << Rogue
     #softcore
     .goto StormwindClassic,78.1,59.0
     >>Head to the basement
+.target Doc Mixilpixil
+>>Talk to |cFF00FF25Doc Mixilpixil|r
     .turnin 2607 >> Turn in The Touch of Zanzil
     .isQuestTurnedIn 2359
 	------------
