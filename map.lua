@@ -438,7 +438,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     for i = RXPCData.currentStep + 1, RXPCData.currentStep + numPins do
         local step = addon.currentGuide.steps[i]
         GetNumPins(step)
-        if step.centerPins then
+        if step and step.centerPins then
             numActive = numActive + #step.centerPins
         end
     end
