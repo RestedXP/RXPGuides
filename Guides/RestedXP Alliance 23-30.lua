@@ -2498,6 +2498,11 @@ step
 .target Sir S. J. Erlgadin
     .accept 191 >> Accept Panther Mastery
 step
+    .isOnQuest 215
+    .goto Stranglethorn Vale,38.0,3.0
+    .turnin 215 >> Turn in Jungle Secrets
+    >>Skip this quest if you haven't managed to get it earlier
+step
     .goto Duskwood,28.8,30.9
     >>Run back to Duskwood, click on the dirt mound to summon Eliza
     .complete 253,1 --Collect The Embalmer's Heart (x1)
