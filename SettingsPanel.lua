@@ -136,7 +136,7 @@ function addon.settings:InitializeSettings()
             enableThemeLiveReload = true,
 
             -- Text colors
-            textEnemyColor = addon.guideTextColors['RXP_ENEMYY']
+            textEnemyColor = addon.guideTextColors['RXP_ENEMY']
         }
     }
 
@@ -1835,12 +1835,11 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.1,
                         get = function()
-                            return
-                                addon.HexToRGB(self.db.profile.textEnemyColor)
+                            return self:HexToRGB(self.db.profile.textEnemyColor)
                         end,
                         set = function(_, r, g, b)
-                            self.db.profile.textEnemyColor = addon.HexToRGB(r,
-                                                                            g, b)
+                            self.db.profile.textEnemyColor = self:RGBToHex(r, g,
+                                                                           b)
                         end
                     },
                     guideWindowHeader = {
@@ -2362,9 +2361,30 @@ function addon.settings:CheckAddonCompatibility()
     end
 end
 
-function addon.settings:RGBToHex(r, g, b) end
+-- https://wowwiki-archive.fandom.com/wiki/USERAPI_RGBToHex
+function addon.settings:RGBToHex(r, g, b)
+    r = r <= 255 and r >= 0 and r or 0
+    g = g <= 255 and g >= 0 and g or 0
+    b = b <= 255 and b >= 0 and b or 0
 
-function addon.settings:HexToRGB(hexString) end
+    return fmt("FF%02x%02x%02x", r, g, b)
+end
+
+-- https://wowwiki-archive.fandom.com/wiki/USERAPI_HexToRGB
+function addon.settings:HexToRGB(hexString)
+    if not hexString then return unpack(addon.activeTheme.textColor), 1 end
+
+    -- Ignore default 'FF' prefix
+    local rhex, ghex, bhex = hexString:sub(3, 4), hexString:sub(5, 6),
+                             hexString:sub(7, 8)
+
+    if rhex and ghex and bhex then
+        return tonumber(rhex, 16), tonumber(ghex, 16), tonumber(bhex, 16), 1
+    else
+        print("HexToRGB:else activeTheme.textColor")
+        return unpack(addon.activeTheme.textColor), 1
+    end
+end
 
 function addon.settings:ReplaceColors(textLine)
     local guideTextColors = { -- TODO persist lookup from settings
