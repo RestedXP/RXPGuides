@@ -31,6 +31,8 @@ if not addon.settings.gui then
     addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
 end
 
+local settingsCache = {}
+
 function addon.settings.ChatCommand(input)
     if not input then
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
@@ -136,12 +138,12 @@ function addon.settings:InitializeSettings()
             enableThemeLiveReload = true,
 
             -- Text colors
-            textEnemyColor = addon.guideTextColors['RXP_ENEMY'],
-            textFriendlyColor = addon.guideTextColors['RXP_FRIENDLY'],
-            textLootColor = addon.guideTextColors['RXP_LOOTY'],
-            textWarnColor = addon.guideTextColors['RXP_WARN'],
-            textPickColor = addon.guideTextColors['RXP_PICK'],
-            textBuyColor = addon.guideTextColors['RXP_BUY']
+            textEnemyColor = addon.guideTextColors.default['RXP_ENEMY'],
+            textFriendlyColor = addon.guideTextColors.default['RXP_FRIENDLY'],
+            textLootColor = addon.guideTextColors.default['RXP_LOOT'],
+            textWarnColor = addon.guideTextColors.default['RXP_WARN'],
+            textPickColor = addon.guideTextColors.default['RXP_PICK'],
+            textBuyColor = addon.guideTextColors.default['RXP_BUY']
         }
     }
 
@@ -154,6 +156,7 @@ function addon.settings:InitializeSettings()
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
     self:MigrateSettings()
+    self:LoadTextColors()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
     self:RegisterChatCommand("rxpg", self.ChatCommand)
@@ -1840,11 +1843,15 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.1,
                         get = function()
+                            print("textEnemyColor",
+                                  self.db.profile.textEnemyColor)
                             return self:HexToRGB(self.db.profile.textEnemyColor)
                         end,
-                        set = function(_, r, g, b)
-                            self.db.profile.textEnemyColor = self:RGBToHex(r, g,
-                                                                           b)
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textEnemyColor = self:RGBToString(r,
+                                                                              g,
+                                                                              b,
+                                                                              a)
                         end
                     },
                     textFriendlyColor = {
@@ -1854,13 +1861,13 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.2,
                         get = function()
+                            -- print("textFriendlyColor", self.db.profile.textFriendlyColor)
                             return self:HexToRGB(self.db.profile
                                                      .textFriendlyColor)
                         end,
-                        set = function(_, r, g, b)
-                            self.db.profile.textFriendlyColor = self:RGBToHex(r,
-                                                                              g,
-                                                                              b)
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textFriendlyColor =
+                                self:RGBToString(r, g, b, a)
                         end
                     },
                     textLootColor = {
@@ -1870,11 +1877,14 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.3,
                         get = function()
+                            -- print("textLootColor", self.db.profile.textLootColor)
                             return self:HexToRGB(self.db.profile.textLootColor)
                         end,
-                        set = function(_, r, g, b)
-                            self.db.profile.textLootColor = self:RGBToHex(r, g,
-                                                                          b)
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textLootColor = self:RGBToString(r,
+                                                                             g,
+                                                                             b,
+                                                                             a)
                         end
                     },
                     textWarnColor = {
@@ -1884,11 +1894,14 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.4,
                         get = function()
+                            -- print("textWarnColor", self.db.profile.textWarnColor)
                             return self:HexToRGB(self.db.profile.textWarnColor)
                         end,
-                        set = function(_, r, g, b)
-                            self.db.profile.textWarnColor = self:RGBToHex(r, g,
-                                                                          b)
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textWarnColor = self:RGBToString(r,
+                                                                             g,
+                                                                             b,
+                                                                             a)
                         end
                     },
                     textPickColor = {
@@ -1898,25 +1911,30 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.5,
                         get = function()
+                            -- print("textPickColor", self.db.profile.textPickColor)
                             return self:HexToRGB(self.db.profile.textPickColor)
                         end,
-                        set = function(_, r, g, b)
-                            self.db.profile.textPickColor = self:RGBToHex(r, g,
-                                                                          b)
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textPickColor = self:RGBToString(r,
+                                                                             g,
+                                                                             b,
+                                                                             a)
                         end
                     },
                     textBuyColor = {
-                        name = _G.AUCTION_HOUSE_BUY_BUTTON,
+                        name = L("Buy"),
                         desc = L("Requires Reload to take effect"),
                         type = "color",
                         width = optionsWidth,
                         order = 2.6,
                         get = function()
+                            -- print("textBuyColor", self.db.profile.textBuyColor)
                             return self:HexToRGB(self.db.profile.textBuyColor)
                         end,
-                        set = function(_, r, g, b)
-                            self.db.profile.textBuyColor =
-                                self:RGBToHex(r, g, b)
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textBuyColor = self:RGBToString(r,
+                                                                            g,
+                                                                            b, a)
                         end
                     },
                     customTextColorApply = {
@@ -1926,6 +1944,15 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.9,
                         confirm = requiresReload,
                         func = function() _G.ReloadUI() end -- TODO easier redraw?
+                    },
+                    customTextColorReset = {
+                        name = _G.RESET,
+                        type = 'execute',
+                        width = optionsWidth,
+                        order = 2.91,
+                        func = function()
+                            self:ResetTextColors()
+                        end
                     },
                     guideWindowHeader = {
                         name = L("Guide Window"),
@@ -2447,51 +2474,78 @@ function addon.settings:CheckAddonCompatibility()
 end
 
 -- https://wowwiki-archive.fandom.com/wiki/USERAPI_RGBToHex
-function addon.settings:RGBToHex(r, g, b)
-    r = r <= 255 and r >= 0 and r or 0
-    g = g <= 255 and g >= 0 and g or 0
-    b = b <= 255 and b >= 0 and b or 0
+function addon.settings:RGBToString(r, g, b, a)
+    if type(r) == "table" then
+        a = r.a
+        g = r.g
+        b = r.b
+        r = r.r
+    end
+    print("r", r, "g", g, "b", b, "a", a)
 
-    return fmt("FF%02x%02x%02x", r, g, b)
+    print("RGBToString",
+          string.format("%02x%02x%02x%02x", a * 255, r * 255, g * 255, b * 255))
+    return string.format("%02x%02x%02x%02x", a * 255, r * 255, g * 255, b * 255)
 end
 
 -- https://wowwiki-archive.fandom.com/wiki/USERAPI_HexToRGB
 function addon.settings:HexToRGB(hexString)
-    if not hexString then return unpack(addon.activeTheme.textColor), 1 end
+    print("HexToRGB", hexString)
+    if not hexString then
+        print("Invalid hexString")
+        return unpack(addon.activeTheme.textColor) -- , 1
+    end
 
-    -- Ignore default 'FF' prefix
-    local rhex, ghex, bhex = hexString:sub(3, 4), hexString:sub(5, 6),
-                             hexString:sub(7, 8)
+    local ahex, rhex, ghex, bhex = hexString:sub(1, 2), hexString:sub(3, 4),
+                                   hexString:sub(5, 6), hexString:sub(7, 8)
 
-    if rhex and ghex and bhex then
-        return tonumber(rhex, 16), tonumber(ghex, 16), tonumber(bhex, 16), 1
+    print("rhex", rhex, "tonumber(rhex, 16)", tonumber(rhex, 16),
+          "tonumber(rhex, 16) * 255", tonumber(rhex, 16) / 255)
+    if ahex and rhex and ghex and bhex then
+        return tonumber(rhex, 16) / 255, tonumber(ghex, 16) / 255,
+               tonumber(bhex, 16) / 255 -- , tonumber(ahex or 1, 16) / 255
     else
-        return unpack(addon.activeTheme.textColor), 1
+        print("Using default")
+        return unpack(addon.activeTheme.textColor) -- , 1
     end
 end
 
+function addon.settings:LoadTextColors()
+    print("Loaded text colors")
+    _G.RXPD = addon.guideTextColors
+    addon.guideTextColors["RXP_FRIENDLY"] = self.db.profile.textFriendlyColor
+    addon.guideTextColors["RXP_ENEMY"] = self.db.profile.textEnemyColor
+    addon.guideTextColors["RXP_LOOT"] = self.db.profile.textLootColor
+    addon.guideTextColors["RXP_WARN"] = self.db.profile.textWarnColor
+    addon.guideTextColors["RXP_PICK"] = self.db.profile.textPickColor
+    addon.guideTextColors["RXP_BUY"] = self.db.profile.textBuyColor
+end
+
+function addon.settings:ResetTextColors()
+    print("Resetting colors")
+    self.db.profile.textEnemyColor = addon.guideTextColors.default['RXP_ENEMY']
+    self.db.profile.textFriendlyColor =
+        addon.guideTextColors.default['RXP_FRIENDLY']
+    self.db.profile.textLootColor = addon.guideTextColors.default['RXP_LOOT']
+    self.db.profile.textWarnColor = addon.guideTextColors.default['RXP_WARN']
+    self.db.profile.textPickColor = addon.guideTextColors.default['RXP_PICK']
+    self.db.profile.textBuyColor = addon.guideTextColors.default['RXP_BUY']
+    self:LoadTextColors()
+end
+
 function addon.settings:ReplaceColors(textLine)
-    local guideTextColors = { -- TODO persist lookup from settings
-        ["RXP_FRIENDLY"] = addon.settings.db.profile.textFriendlyColor,
-        ["RXP_ENEMY"] = addon.settings.db.profile.textEnemyColor,
-        ["RXP_LOOT"] = addon.settings.db.profile.textLootColor,
-        ["RXP_WARN"] = addon.settings.db.profile.textWarnColor,
-        ["RXP_PICK"] = addon.settings.db.profile.textPickColor,
-        ["RXP_BUY"] = addon.settings.db.profile.textBuyColor
-    }
-
-    -- TODO reverse lookup for color overrides
-    if textLine:find('|cFF') and false then
-        -- TODO
-        for k, v in pairs(guideTextColors) do end
-    end
-
     -- Replace text placeholders
-    if textLine:find('RXP_') then
-        for placeholder, hex in pairs(guideTextColors) do
-            textLine = textLine:gsub(placeholder, hex)
-        end
+    for RXP_ in string.gmatch(textLine, "RXP_[A-Z]+") do
+        print("Replacing RXP_", RXP_)
+        textLine = textLine:gsub(RXP_, addon.guideTextColors[RXP_])
     end
+
+    -- TODO regex find all RXP_ matches then lookup color
+    -- TODO reverse lookup for color overrides
+    -- if textLine:find('|cFF') and false then
+    -- TODO
+    --    for k, v in pairs(guideTextColors) do end
+    -- end
 
     return textLine
 end

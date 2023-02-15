@@ -73,7 +73,9 @@ addon.customThemeBase = {
     author = _G.UnitName("player")
 }
 
-addon.guideTextColors = { -- TODO reverse lookup
+addon.guideTextColors = {}
+
+addon.guideTextColors.default = { -- TODO reverse lookup
     ["RXP_FRIENDLY"] = "FF00FF25",
     ["RXP_ENEMY"] = "FFFF5722",
     ["RXP_LOOT"] = "FF00BCD4",
