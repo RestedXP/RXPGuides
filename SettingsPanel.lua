@@ -1843,8 +1843,6 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.1,
                         get = function()
-                            print("textEnemyColor",
-                                  self.db.profile.textEnemyColor)
                             return self:HexToRGB(self.db.profile.textEnemyColor)
                         end,
                         set = function(_, r, g, b, a)
@@ -1861,7 +1859,6 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.2,
                         get = function()
-                            -- print("textFriendlyColor", self.db.profile.textFriendlyColor)
                             return self:HexToRGB(self.db.profile
                                                      .textFriendlyColor)
                         end,
@@ -1877,7 +1874,6 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.3,
                         get = function()
-                            -- print("textLootColor", self.db.profile.textLootColor)
                             return self:HexToRGB(self.db.profile.textLootColor)
                         end,
                         set = function(_, r, g, b, a)
@@ -1894,7 +1890,6 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.4,
                         get = function()
-                            -- print("textWarnColor", self.db.profile.textWarnColor)
                             return self:HexToRGB(self.db.profile.textWarnColor)
                         end,
                         set = function(_, r, g, b, a)
@@ -1911,7 +1906,6 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.5,
                         get = function()
-                            -- print("textPickColor", self.db.profile.textPickColor)
                             return self:HexToRGB(self.db.profile.textPickColor)
                         end,
                         set = function(_, r, g, b, a)
@@ -1928,7 +1922,6 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.6,
                         get = function()
-                            -- print("textBuyColor", self.db.profile.textBuyColor)
                             return self:HexToRGB(self.db.profile.textBuyColor)
                         end,
                         set = function(_, r, g, b, a)
@@ -2481,10 +2474,7 @@ function addon.settings:RGBToString(r, g, b, a)
         b = r.b
         r = r.r
     end
-    print("r", r, "g", g, "b", b, "a", a)
 
-    print("RGBToString",
-          string.format("%02x%02x%02x%02x", a * 255, r * 255, g * 255, b * 255))
     return string.format("%02x%02x%02x%02x", a * 255, r * 255, g * 255, b * 255)
 end
 
