@@ -1947,6 +1947,15 @@ function addon.settings:CreateAceOptionsPanel()
                             self:ResetTextColors()
                         end
                     },
+                    disableColorText = {
+                        name = L("Disable Colors"),
+                        type = 'execute',
+                        width = optionsWidth,
+                        order = 2.92,
+                        func = function()
+                            self:DisableTextColors()
+                        end
+                    },
                     guideWindowHeader = {
                         name = L("Guide Window"),
                         type = "header",
@@ -2468,12 +2477,7 @@ end
 
 -- https://wowwiki-archive.fandom.com/wiki/USERAPI_RGBToHex
 function addon.settings:RGBToString(r, g, b, a)
-    if type(r) == "table" then
-        a = r.a
-        g = r.g
-        b = r.b
-        r = r.r
-    end
+    a = a or 1
 
     return string.format("%02x%02x%02x%02x", a * 255, r * 255, g * 255, b * 255)
 end
@@ -2512,6 +2516,18 @@ function addon.settings:ResetTextColors()
     self.db.profile.textWarnColor = addon.guideTextColors.default['RXP_WARN']
     self.db.profile.textPickColor = addon.guideTextColors.default['RXP_PICK']
     self.db.profile.textBuyColor = addon.guideTextColors.default['RXP_BUY']
+    self:LoadTextColors()
+end
+
+function addon.settings:DisableTextColors()
+    local default = self:RGBToString(unpack(addon.activeTheme.textColor))
+
+    self.db.profile.textEnemyColor = default
+    self.db.profile.textFriendlyColor = default
+    self.db.profile.textLootColor = default
+    self.db.profile.textWarnColor = default
+    self.db.profile.textPickColor = default
+    self.db.profile.textBuyColor = default
     self:LoadTextColors()
 end
 
