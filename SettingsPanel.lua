@@ -2490,29 +2490,22 @@ end
 
 -- https://wowwiki-archive.fandom.com/wiki/USERAPI_HexToRGB
 function addon.settings:HexToRGB(hexString)
-    print("HexToRGB", hexString)
     if not hexString then
-        print("Invalid hexString")
         return unpack(addon.activeTheme.textColor) -- , 1
     end
 
     local ahex, rhex, ghex, bhex = hexString:sub(1, 2), hexString:sub(3, 4),
                                    hexString:sub(5, 6), hexString:sub(7, 8)
 
-    print("rhex", rhex, "tonumber(rhex, 16)", tonumber(rhex, 16),
-          "tonumber(rhex, 16) * 255", tonumber(rhex, 16) / 255)
     if ahex and rhex and ghex and bhex then
         return tonumber(rhex, 16) / 255, tonumber(ghex, 16) / 255,
                tonumber(bhex, 16) / 255 -- , tonumber(ahex or 1, 16) / 255
     else
-        print("Using default")
         return unpack(addon.activeTheme.textColor) -- , 1
     end
 end
 
 function addon.settings:LoadTextColors()
-    print("Loaded text colors")
-    _G.RXPD = addon.guideTextColors
     addon.guideTextColors["RXP_FRIENDLY"] = self.db.profile.textFriendlyColor
     addon.guideTextColors["RXP_ENEMY"] = self.db.profile.textEnemyColor
     addon.guideTextColors["RXP_LOOT"] = self.db.profile.textLootColor
@@ -2522,7 +2515,6 @@ function addon.settings:LoadTextColors()
 end
 
 function addon.settings:ResetTextColors()
-    print("Resetting colors")
     self.db.profile.textEnemyColor = addon.guideTextColors.default['RXP_ENEMY']
     self.db.profile.textFriendlyColor =
         addon.guideTextColors.default['RXP_FRIENDLY']
