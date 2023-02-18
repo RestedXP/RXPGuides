@@ -138,12 +138,12 @@ function addon.settings:InitializeSettings()
             enableThemeLiveReload = true,
 
             -- Text colors
-            textEnemyColor = addon.guideTextColors.default['RXP_ENEMY'],
-            textFriendlyColor = addon.guideTextColors.default['RXP_FRIENDLY'],
-            textLootColor = addon.guideTextColors.default['RXP_LOOT'],
-            textWarnColor = addon.guideTextColors.default['RXP_WARN'],
-            textPickColor = addon.guideTextColors.default['RXP_PICK'],
-            textBuyColor = addon.guideTextColors.default['RXP_BUY']
+            textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_'],
+            textFriendlyColor = addon.guideTextColors.default['RXP_FRIENDLY_'],
+            textLootColor = addon.guideTextColors.default['RXP_LOOT_'],
+            textWarnColor = addon.guideTextColors.default['RXP_WARN_'],
+            textPickColor = addon.guideTextColors.default['RXP_PICK_'],
+            textBuyColor = addon.guideTextColors.default['RXP_BUY_']
         }
     }
 
@@ -2500,22 +2500,36 @@ function addon.settings:HexToRGB(hexString)
 end
 
 function addon.settings:LoadTextColors()
-    addon.guideTextColors["RXP_FRIENDLY"] = self.db.profile.textFriendlyColor
-    addon.guideTextColors["RXP_ENEMY"] = self.db.profile.textEnemyColor
-    addon.guideTextColors["RXP_LOOT"] = self.db.profile.textLootColor
-    addon.guideTextColors["RXP_WARN"] = self.db.profile.textWarnColor
-    addon.guideTextColors["RXP_PICK"] = self.db.profile.textPickColor
-    addon.guideTextColors["RXP_BUY"] = self.db.profile.textBuyColor
+    local gtc = addon.guideTextColors
+    local p = self.db.profile
+    gtc["RXP_FRIENDLY_"] = p.textFriendlyColor
+    gtc["RXP_ENEMY_"] = p.textEnemyColor
+    gtc["RXP_LOOT_"] = p.textLootColor
+    gtc["RXP_WARN_"] = p.textWarnColor
+    gtc["RXP_PICK_"] = p.textPickColor
+    gtc["RXP_BUY_"] = p.textBuyColor
+
+    -- Setup reverse lookup
+    gtc[gtc.default["RXP_FRIENDLY_"]] = p.textFriendlyColor
+    gtc[gtc.default['RXP_ENEMY_']] = p.textEnemyColor
+    gtc[gtc.default["RXP_LOOT_"]] = p.textLootColor
+    gtc[gtc.default["RXP_WARN_"]] = p.textWarnColor
+    gtc[gtc.default["RXP_PICK_"]] = p.textPickColor
+    gtc[gtc.default["RXP_BUY_"]] = p.textBuyColor
+
+    -- TODO default to theme, but load order
+    -- self:RGBToString(unpack(addon.activeTheme.textColor))
+    gtc.default["error"] = {1, 1, 1}
 end
 
 function addon.settings:ResetTextColors()
-    self.db.profile.textEnemyColor = addon.guideTextColors.default['RXP_ENEMY']
+    self.db.profile.textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_']
     self.db.profile.textFriendlyColor =
-        addon.guideTextColors.default['RXP_FRIENDLY']
-    self.db.profile.textLootColor = addon.guideTextColors.default['RXP_LOOT']
-    self.db.profile.textWarnColor = addon.guideTextColors.default['RXP_WARN']
-    self.db.profile.textPickColor = addon.guideTextColors.default['RXP_PICK']
-    self.db.profile.textBuyColor = addon.guideTextColors.default['RXP_BUY']
+        addon.guideTextColors.default['RXP_FRIENDLY_']
+    self.db.profile.textLootColor = addon.guideTextColors.default['RXP_LOOT_']
+    self.db.profile.textWarnColor = addon.guideTextColors.default['RXP_WARN_']
+    self.db.profile.textPickColor = addon.guideTextColors.default['RXP_PICK_']
+    self.db.profile.textBuyColor = addon.guideTextColors.default['RXP_BUY_']
     self:LoadTextColors()
 end
 
@@ -2532,18 +2546,20 @@ function addon.settings:DisableTextColors()
 end
 
 function addon.settings:ReplaceColors(textLine)
+    -- TODO handle nil lookups
+
     -- Replace text placeholders
-    for RXP_ in string.gmatch(textLine, "RXP_[A-Z]+") do
-        print("Replacing RXP_", RXP_)
-        textLine = textLine:gsub(RXP_, addon.guideTextColors[RXP_])
+    -- TODO handle RXP_FOO_ActualThing
+    for RXP_ in string.gmatch(textLine, "RXP_[A-Z]+_") do
+        textLine = textLine:gsub(RXP_, addon.guideTextColors[RXP_] or
+                                     addon.guideTextColors.default["error"])
     end
 
-    -- TODO regex find all RXP_ matches then lookup color
-    -- TODO reverse lookup for color overrides
-    -- if textLine:find('|cFF') and false then
-    -- TODO
-    --    for k, v in pairs(guideTextColors) do end
-    -- end
+    -- Replace raw hex values
+    for hex in string.gmatch(textLine, "|c(%x%x%x%x%x%x%x%x)") do
+        textLine = textLine:gsub(hex, addon.guideTextColors[hex] or
+                                     addon.guideTextColors.default["error"])
+    end
 
     return textLine
 end

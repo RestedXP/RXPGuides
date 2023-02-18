@@ -75,13 +75,14 @@ addon.customThemeBase = {
 
 addon.guideTextColors = {}
 
-addon.guideTextColors.default = { -- TODO reverse lookup
-    ["RXP_FRIENDLY"] = "FF00FF25",
-    ["RXP_ENEMY"] = "FFFF5722",
-    ["RXP_LOOT"] = "FF00BCD4",
-    ["RXP_WARN"] = "FFFCDC00",
-    ["RXP_PICK"] = "FFDB2EEF",
-    ["RXP_BUY"] = "FF0E8312"
+-- TODO move into themes
+addon.guideTextColors.default = {
+    ["RXP_FRIENDLY_"] = "FF00FF25",
+    ["RXP_ENEMY_"] = "FFFF5722",
+    ["RXP_LOOT_"] = "FF00BCD4",
+    ["RXP_WARN_"] = "FFFCDC00",
+    ["RXP_PICK_"] = "FFDB2EEF",
+    ["RXP_BUY_"] = "FF0E8312"
 }
 
 local function themeApplies(applicable)
