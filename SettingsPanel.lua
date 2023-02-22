@@ -2546,10 +2546,7 @@ function addon.settings:DisableTextColors()
 end
 
 function addon.settings:ReplaceColors(textLine)
-    -- TODO handle nil lookups
-
     -- Replace text placeholders
-    -- TODO handle RXP_FOO_ActualThing
     for RXP_ in string.gmatch(textLine, "RXP_[A-Z]+_") do
         textLine = textLine:gsub(RXP_, addon.guideTextColors[RXP_] or
                                      addon.guideTextColors.default["error"])
