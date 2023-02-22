@@ -31,8 +31,6 @@ if not addon.settings.gui then
     addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
 end
 
-local settingsCache = {}
-
 function addon.settings.ChatCommand(input)
     if not input then
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
