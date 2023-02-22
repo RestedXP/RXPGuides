@@ -73,6 +73,18 @@ addon.customThemeBase = {
     author = _G.UnitName("player")
 }
 
+addon.guideTextColors = {}
+
+-- TODO move into themes
+addon.guideTextColors.default = {
+    ["RXP_FRIENDLY_"] = "FF00FF25",
+    ["RXP_ENEMY_"] = "FFFF5722",
+    ["RXP_LOOT_"] = "FF00BCD4",
+    ["RXP_WARN_"] = "FFFCDC00",
+    ["RXP_PICK_"] = "FFDB2EEF",
+    ["RXP_BUY_"] = "FF0E8312"
+}
+
 local function themeApplies(applicable)
     if applicable == nil then
         return true

@@ -133,7 +133,15 @@ function addon.settings:InitializeSettings()
             -- Themes
             activeTheme = 'Default',
             customTheme = addon.customThemeBase,
-            enableThemeLiveReload = true
+            enableThemeLiveReload = true,
+
+            -- Text colors
+            textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_'],
+            textFriendlyColor = addon.guideTextColors.default['RXP_FRIENDLY_'],
+            textLootColor = addon.guideTextColors.default['RXP_LOOT_'],
+            textWarnColor = addon.guideTextColors.default['RXP_WARN_'],
+            textPickColor = addon.guideTextColors.default['RXP_PICK_'],
+            textBuyColor = addon.guideTextColors.default['RXP_BUY_']
         }
     }
 
@@ -146,6 +154,7 @@ function addon.settings:InitializeSettings()
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
     self:MigrateSettings()
+    self:LoadTextColors()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
     self:RegisterChatCommand("rxpg", self.ChatCommand)
@@ -1766,7 +1775,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return self.db.profile.activeTheme ~= 'Custom'
                         end
                     },
-                    customThemeTextColor = { -- TODO
+                    customThemeTextColor = {
                         name = L("Text Color"), -- TODO locale
                         desc = L("Requires Reload to take effect"),
                         type = "color",
@@ -1819,11 +1828,137 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.92
                     },
+                    textColorsHeader = {
+                        name = _G.LOCALE_TEXT_LABEL,
+                        type = "header",
+                        width = "full",
+                        order = 2.0
+                    },
+                    textEnemyColor = {
+                        name = _G.COMBATLOG_HIGHLIGHT_KILL,
+                        desc = L("Requires Reload to take effect"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 2.1,
+                        get = function()
+                            return self:HexToRGB(self.db.profile.textEnemyColor)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textEnemyColor = self:RGBToString(r,
+                                                                              g,
+                                                                              b,
+                                                                              a)
+                        end
+                    },
+                    textFriendlyColor = {
+                        name = _G.FRIENDLY,
+                        desc = L("Requires Reload to take effect"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 2.2,
+                        get = function()
+                            return self:HexToRGB(self.db.profile
+                                                     .textFriendlyColor)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textFriendlyColor =
+                                self:RGBToString(r, g, b, a)
+                        end
+                    },
+                    textLootColor = {
+                        name = _G.LOOT,
+                        desc = L("Requires Reload to take effect"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 2.3,
+                        get = function()
+                            return self:HexToRGB(self.db.profile.textLootColor)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textLootColor = self:RGBToString(r,
+                                                                             g,
+                                                                             b,
+                                                                             a)
+                        end
+                    },
+                    textWarnColor = {
+                        name = L("Warning"),
+                        desc = L("Requires Reload to take effect"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 2.4,
+                        get = function()
+                            return self:HexToRGB(self.db.profile.textWarnColor)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textWarnColor = self:RGBToString(r,
+                                                                             g,
+                                                                             b,
+                                                                             a)
+                        end
+                    },
+                    textPickColor = {
+                        name = L("Pick Up"),
+                        desc = L("Requires Reload to take effect"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 2.5,
+                        get = function()
+                            return self:HexToRGB(self.db.profile.textPickColor)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textPickColor = self:RGBToString(r,
+                                                                             g,
+                                                                             b,
+                                                                             a)
+                        end
+                    },
+                    textBuyColor = {
+                        name = L("Buy"),
+                        desc = L("Requires Reload to take effect"),
+                        type = "color",
+                        width = optionsWidth,
+                        order = 2.6,
+                        get = function()
+                            return self:HexToRGB(self.db.profile.textBuyColor)
+                        end,
+                        set = function(_, r, g, b, a)
+                            self.db.profile.textBuyColor = self:RGBToString(r,
+                                                                            g,
+                                                                            b, a)
+                        end
+                    },
+                    customTextColorApply = {
+                        name = _G.APPLY,
+                        type = 'execute',
+                        width = optionsWidth,
+                        order = 2.9,
+                        confirm = requiresReload,
+                        func = function() _G.ReloadUI() end -- TODO easier redraw?
+                    },
+                    customTextColorReset = {
+                        name = _G.RESET,
+                        type = 'execute',
+                        width = optionsWidth,
+                        order = 2.91,
+                        func = function()
+                            self:ResetTextColors()
+                        end
+                    },
+                    disableColorText = {
+                        name = L("Disable Colors"),
+                        type = 'execute',
+                        width = optionsWidth,
+                        order = 2.92,
+                        func = function()
+                            self:DisableTextColors()
+                        end
+                    },
                     guideWindowHeader = {
                         name = L("Guide Window"),
                         type = "header",
                         width = "full",
-                        order = 2.0
+                        order = 3.0
                     },
                     windowScale = {
                         name = L("Window Scale"),
@@ -1831,7 +1966,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Scale of the Main Window, use alt+left click on the main window to resize it"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.1,
+                        order = 3.1,
                         min = 0.2,
                         max = 2,
                         step = 0.05,
@@ -1845,7 +1980,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Change font size of the Guide Window"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.2,
+                        order = 3.2,
                         min = 9,
                         max = 18,
                         step = 1,
@@ -1863,7 +1998,7 @@ function addon.settings:CreateAceOptionsPanel()
                         values = {top = "Top", bottom = "Bottom"},
                         sorting = {"top", "bottom"},
                         width = optionsWidth,
-                        order = 2.3,
+                        order = 3.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.SetStepFrameAnchor()
@@ -1875,7 +2010,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Show/Hide the bottom frame listing all the steps of the current guide"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.4,
+                        order = 3.4,
                         get = function()
                             return addon.RXPFrame.BottomFrame:GetHeight() >= 35
                         end,
@@ -1902,7 +2037,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Only shows current and future steps on the step list window"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.5,
+                        order = 3.5,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
@@ -1914,7 +2049,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Displays guides that are not applicable for your class/race such as starting zones for other races"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.6,
+                        order = 3.6,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
@@ -1926,7 +2061,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Automatically picks a suitable guide whenever you log in for the first time on a character"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.7,
+                        order = 3.7,
                         hidden = not addon.defaultGuideList,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1938,14 +2073,14 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Active Items"),
                         type = "header",
                         width = "full",
-                        order = 3.0
+                        order = 4.0
                     },
                     activeItemsScale = {
                         name = L("Active Item Scale"), -- TODO locale
                         desc = L("Scale of the Active Item frame"),
                         type = "range",
                         width = optionsWidth,
-                        order = 3.1,
+                        order = 4.1,
                         min = 0.8,
                         max = 3,
                         step = 0.05,
@@ -1958,13 +2093,13 @@ function addon.settings:CreateAceOptionsPanel()
                         name = _G.MAP_OPTIONS_TEXT,
                         type = "header",
                         width = "full",
-                        order = 4.1
+                        order = 5.1
                     },
                     hideMiniMapPins = {
                         name = L("Hide Mini Map Pins"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 4.2,
+                        order = 5.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.updateMap = true
@@ -1976,7 +2111,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Show a targeting circle around active map pins"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 4.3,
+                        order = 5.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.updateMap = true
@@ -1987,7 +2122,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Number of map pins shown on the world map"),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.4,
+                        order = 5.4,
                         min = 1,
                         max = 20,
                         step = 1,
@@ -2001,7 +2136,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Adjusts the size of the world map pins"),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.5,
+                        order = 5.5,
                         min = 0.05,
                         max = 1,
                         step = 0.05,
@@ -2016,7 +2151,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.6,
+                        order = 5.6,
                         min = 0.05,
                         max = 2,
                         step = 0.05,
@@ -2031,7 +2166,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "The opacity of the black circles on the map and mini map"),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.7,
+                        order = 5.7,
                         min = 0,
                         max = 1,
                         step = 0.05,
@@ -2336,4 +2471,90 @@ function addon.settings:CheckAddonCompatibility()
             end
         end
     end
+end
+
+-- https://wowwiki-archive.fandom.com/wiki/USERAPI_RGBToHex
+function addon.settings:RGBToString(r, g, b, a)
+    a = a or 1
+
+    return string.format("%02x%02x%02x%02x", a * 255, r * 255, g * 255, b * 255)
+end
+
+-- https://wowwiki-archive.fandom.com/wiki/USERAPI_HexToRGB
+function addon.settings:HexToRGB(hexString)
+    if not hexString then
+        return unpack(addon.activeTheme.textColor) -- , 1
+    end
+
+    local ahex, rhex, ghex, bhex = hexString:sub(1, 2), hexString:sub(3, 4),
+                                   hexString:sub(5, 6), hexString:sub(7, 8)
+
+    if ahex and rhex and ghex and bhex then
+        return tonumber(rhex, 16) / 255, tonumber(ghex, 16) / 255,
+               tonumber(bhex, 16) / 255 -- , tonumber(ahex or 1, 16) / 255
+    else
+        return unpack(addon.activeTheme.textColor) -- , 1
+    end
+end
+
+function addon.settings:LoadTextColors()
+    local gtc = addon.guideTextColors
+    local p = self.db.profile
+    gtc["RXP_FRIENDLY_"] = p.textFriendlyColor
+    gtc["RXP_ENEMY_"] = p.textEnemyColor
+    gtc["RXP_LOOT_"] = p.textLootColor
+    gtc["RXP_WARN_"] = p.textWarnColor
+    gtc["RXP_PICK_"] = p.textPickColor
+    gtc["RXP_BUY_"] = p.textBuyColor
+
+    -- Setup reverse lookup
+    gtc[gtc.default["RXP_FRIENDLY_"]] = p.textFriendlyColor
+    gtc[gtc.default['RXP_ENEMY_']] = p.textEnemyColor
+    gtc[gtc.default["RXP_LOOT_"]] = p.textLootColor
+    gtc[gtc.default["RXP_WARN_"]] = p.textWarnColor
+    gtc[gtc.default["RXP_PICK_"]] = p.textPickColor
+    gtc[gtc.default["RXP_BUY_"]] = p.textBuyColor
+
+    -- TODO default to theme, but load order
+    -- self:RGBToString(unpack(addon.activeTheme.textColor))
+    gtc.default["error"] = {1, 1, 1}
+end
+
+function addon.settings:ResetTextColors()
+    self.db.profile.textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_']
+    self.db.profile.textFriendlyColor =
+        addon.guideTextColors.default['RXP_FRIENDLY_']
+    self.db.profile.textLootColor = addon.guideTextColors.default['RXP_LOOT_']
+    self.db.profile.textWarnColor = addon.guideTextColors.default['RXP_WARN_']
+    self.db.profile.textPickColor = addon.guideTextColors.default['RXP_PICK_']
+    self.db.profile.textBuyColor = addon.guideTextColors.default['RXP_BUY_']
+    self:LoadTextColors()
+end
+
+function addon.settings:DisableTextColors()
+    local default = self:RGBToString(unpack(addon.activeTheme.textColor))
+
+    self.db.profile.textEnemyColor = default
+    self.db.profile.textFriendlyColor = default
+    self.db.profile.textLootColor = default
+    self.db.profile.textWarnColor = default
+    self.db.profile.textPickColor = default
+    self.db.profile.textBuyColor = default
+    self:LoadTextColors()
+end
+
+function addon.settings:ReplaceColors(textLine)
+    -- Replace text placeholders
+    for RXP_ in string.gmatch(textLine, "RXP_[A-Z]+_") do
+        textLine = textLine:gsub(RXP_, addon.guideTextColors[RXP_] or
+                                     addon.guideTextColors.default["error"])
+    end
+
+    -- Replace raw hex values
+    for hex in string.gmatch(textLine, "|c(%x%x%x%x%x%x%x%x)") do
+        textLine = textLine:gsub(hex, addon.guideTextColors[hex] or
+                                     addon.guideTextColors.default["error"])
+    end
+
+    return textLine
 end

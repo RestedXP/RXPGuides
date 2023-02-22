@@ -626,6 +626,7 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.text:SetJustifyV("MIDDLE")
                 elementFrame.text:SetTextColor(
                     unpack(addon.activeTheme.textColor))
+
                 elementFrame.text:SetFont(addon.font, addon.settings.db.profile
                                               .guideFontSize + 2, "") -- 11
 
@@ -837,8 +838,7 @@ function CurrentStepFrame.UpdateText()
                     elementFrame.text:SetPoint("TOPLEFT", elementFrame.button,
                                                "TOPRIGHT", 11, -1)
                     elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
-
-                    text:SetText(L(element.text))
+                    text:SetText(addon.settings:ReplaceColors(L(element.text)))
                     local h = math.ceil(elementFrame.text:GetStringHeight() *
                                             1.1) + 1
                     -- print('sh:',h)
