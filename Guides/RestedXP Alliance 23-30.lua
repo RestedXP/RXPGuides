@@ -1542,7 +1542,6 @@ step
 >>Talk to |cFF00FF25Merrin Rockweaver|r
     .turnin 305 >> Turn in In Search of The Excavation Team
 .target Merrin Rockweaver
-    .accept 306 >> Accept In Search of The Excavation Team
 step
 	.goto Wetlands,38.81,52.39
 .target Prospector Whelgar
@@ -1806,12 +1805,6 @@ step
 >>Talk to |cFF00FF25Loremaster Dibbs|r
     .turnin 538 >> Turn in Southshore
 	.isOnQuest 538
-step << !Warlock
-#xprate <1.5
-    .goto Hillsbrad Foothills,51.886,58.677
-.target Chef Jessen
->>Talk to |cFF00FF25Chef Jessen|r
-    .accept 555 >> Accept Soothing Turtle Bisque
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
@@ -1990,12 +1983,6 @@ step << Paladin
 step << Priest
 	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
-step
-    .goto StormwindClassic,39.3,28.0
->>Talk to |cFF00FF25Bishop Farthing|r
-    .turnin 269 >> Turn in Seeking Wisdom
-.target Bishop Farthing
-    .accept 270 >> Accept The Doomed Fleet
 step
     .isOnQuest 322
     .goto StormwindClassic,51.7,12.3
@@ -2510,6 +2497,11 @@ step
     .accept 186 >> Accept Tiger Mastery
 .target Sir S. J. Erlgadin
     .accept 191 >> Accept Panther Mastery
+step
+    .isOnQuest 215
+    .goto Stranglethorn Vale,38.0,3.0
+    .turnin 215 >> Turn in Jungle Secrets
+    >>Skip this quest if you haven't managed to get it earlier
 step
     .goto Duskwood,28.8,30.9
     >>Run back to Duskwood, click on the dirt mound to summon Eliza
@@ -4309,12 +4301,6 @@ step
 .target Brewmeister Bilger
 >>Talk to |cFF00FF25Brewmeister Bilger|r
     .turnin 647 >> Turn in MacKreel's Moonshine
-step
-#xprate <1.5
-    .goto Hillsbrad Foothills,51.886,58.677
-.target Chef Jessen
->>Talk to |cFF00FF25Chef Jessen|r
-    .accept 555 >> Accept Soothing Turtle Bisque
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
