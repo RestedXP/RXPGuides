@@ -6,13 +6,12 @@ RXPGuides.RegisterGuide([[
 #classic
 #era/som
 << Horde
-#name 1-6 Red Cloud Mesa
+#name 1-6 Mulgore
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Tauren
 #next 6-12 Mulgore;6-13 Mulgore
 step << !Tauren
-    #sticky
     #completewith next
     .goto Mulgore,44.875,77.074
     +You have selected a guide meant for Tauren. This zone will NOT work well for you due to missing one of the main questlines that are gated for Tauren only. It is recommended you choose the same starter zone that you start in
@@ -65,7 +64,8 @@ step
 step
     .goto Mulgore,44.8,77.0
 >>Talk to |cFF00FF25Grull Hawkwind|r
-    .turnin 747 >>Turn in The Hunt Begins
+    .turnin 747,1 >>Turn in The Hunt Begins << Druid
+    .turnin 747 >>Turn in The Hunt Begins << !Druid
 .target Grull Hawkwind
     .accept 3091 >>Accept Simple Note << Warrior
     .accept 3092 >>Accept Etched Note << Hunter
@@ -123,14 +123,14 @@ step << Warrior/Hunter
     >>Make sure you have 1s 90c worth of vendorables. If not, grind more
     .goto Mulgore,44.9,77.0
 >>Talk to |cFF00FF25Grull Hawkwind|r
-    .turnin 750 >>Turn in The Hunt Continues
+    .turnin 750 >>Turn in The Hunt Continues << Druid
 .target Grull Hawkwind
     .accept 780 >>Accept The Battleboars
 step << Druid
     >>Make sure you have 2s worth of vendorables. If not, grind more
     .goto Mulgore,44.9,77.0
 >>Talk to |cFF00FF25Grull Hawkwind|r
-    .turnin 750 >>Turn in The Hunt Continues
+    .turnin 750,1 >>Turn in The Hunt Continues << Druid
 .target Grull Hawkwind
     .accept 780 >>Accept The Battleboars
 step << Shaman
@@ -140,6 +140,7 @@ step << Shaman
 .target Grull Hawkwind
     .accept 780 >>Accept The Battleboars
 step
+    #completewith next
     .goto Mulgore,45.3,76.5
     .vendor >> vendor trash
 step << Druid
@@ -1429,14 +1430,16 @@ step
     .goto Mulgore,44.526,76.504
 .target Brave Windfeather
 >>Talk to |cFF00FF25Brave Windfeather|r
-    .turnin 3376 >>Turn in Break Sharptusk!
+    .turnin 3376,2 >>Turn in Break Sharptusk! << Druid
+    .turnin 3376 >>Turn in Break Sharptusk! << !Druid
 step
     .goto Mulgore,44.2,76.1
 >>Talk to |cFF00FF25Chief Hawkwind|r
-    .turnin 781 >>Turn in Attack on Camp Narache
-    .turnin 757 >>Turn in Rite of Strength
+    .turnin 757,4 >>Turn in Rite of Strength << Druid
+    .turnin 757 >>Turn in Rite of Strength << !Druid
 .target Chief Hawkwind
     .accept 763 >>Accept Rites of the Earthmother
+    .turnin 781 >>Turn in Attack on Camp Narache
 step
     .goto Mulgore,38.5,81.6
 .target Antur Fallow
@@ -1932,12 +1935,14 @@ step << !Hunter
     .goto Mulgore,47.0,57.2
 .target Maur Raincaller
 >>Talk to |cFF00FF25Maur Raincaller|r
-    .turnin 766 >>Turn in Mazzranache
+    .turnin 766,2 >>Turn in Mazzranache << Druid
+    .turnin 766 >>Turn in Mazzranache << !Druid
 step << !Hunter
     .goto Mulgore,47.513,60.164
 .target Baine Bloodhoof
 >>Talk to |cFF00FF25Baine Bloodhoof|r
-    .turnin 746 >>Turn in Dwarven Digging
+    .turnin 746,1 >>Turn in Dwarven Digging << Druid
+    .turnin 746 >>Turn in Dwarven Digging << !Druid
 step
     .goto Mulgore,47.4,62.0
 .target Ruul Eagletalon

@@ -122,17 +122,28 @@ step
     >> Return to |cFF00FF25Eagan Peltskinner|r
     .target Eagan Peltskinner
     .turnin 33,2 >> Turn in Wolves Across The Border << Warrior/Paladin/Rogue
-    .turnin 33 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue
+    .turnin 33,1 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.6,41.5
     .vendor >>Vendor trash, then buy x10 more water from |cFF00FF25Brother Danil|r.
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
-step << !Priest !Mage !Warlock
-    >> Talk to |cFF00FF25Godric Rothgar|r.
+step << !Priest !Mage !Warlock !Rogue
+    >> Talk to |cFF00FF25Godric Rothgar|r
     .target Godric Rothgar
     .goto Elwynn Forest,47.6,41.5
     .vendor >>Vendor trash
+step << Rogue
+    >> Talk to |cFF00FF25Janos|r
+    .goto Elwynn Forest,47.2,41.8
+    .vendor >>Vendor trash. Buy a |T135650:0|t[Dirk]
+    .target Janos Hammerknuckle
+step << Rogue
+    #completewith next
+    +Equip the |T135650:0|t[Dirk]
+    .use 2139
+    .itemcount 2139,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.3
 step
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
     .target Marshal McBride
@@ -183,6 +194,7 @@ step << Mage
     .goto Elwynn Forest,49.661,39.402
     .turnin 3104 >> Turn in Glyphic Letter
     .trainer >> Train your class spells
+    .target Khelden Bremen
 step << Priest
     #sticky
     #completewith next
@@ -229,6 +241,10 @@ step
 step << Rogue
     .xp 4 >> Grind to 4
 step
+    #completewith next
+    #softcore
+    .deathskip >> Die and respawn at the Spirit Healer
+step
     >> Talk to |cFF00FF25Deputy Willem|r
     .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94
@@ -240,7 +256,13 @@ step
     .turnin 18 >> Turn in Brotherhood of Thieves << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
     .accept 6 >> Accept Bounty on Garrick Padfoot
     .accept 3903 >> Accept Milly Osworth
-step
+step << Paladin
+    #completewith next
+    +Equip the |T133052:0|t[Militia Warhammer]
+    .use 5579
+    .itemcount 5579,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
+step << skip
     >> Talk to |cFF00FF25Godric Rothgar|r
     .target Godric Rothgar
     .goto Elwynn Forest,47.7,41.4
@@ -289,6 +311,10 @@ step << !Priest !Mage
 step << Priest/Mage
     .xp 5+1175 >> Grind on your way back to 1175+/2800xp
     .goto Elwynn Forest,50.7,39.2
+step
+    #completewith next
+    #softcore
+    .deathskip >> Die and respawn at the Spirit Healer
 step << Priest/Mage
     >> Speak with |cFF00FF25Milly Osworth|r
     .target Milly Osworth
@@ -300,13 +326,14 @@ step
     .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94
     .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
-    .turnin 6 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
+    .turnin 6,1 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
 step
     >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
+    .turnin 21,1 >> Turn in Skirmish at Echo Ridge << Rogue
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
-    .turnin 21 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin
+    .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin
     .accept 54 >> Accept Report to Goldshire
 step << Priest/Mage
     #sticky
@@ -317,7 +344,7 @@ step << Priest/Mage
     >> Talk to |cFF00FF25Brother Neals|r
     .target Brother Neals
     .goto Elwynn Forest,49.471,41.586
-    .turnin 3905 >>Turn in Grape Manifest
+    .turnin 3905,1 >>Turn in Grape Manifest
 step << Priest
     >> Talk to |cFF00FF25Priestess Anetta|r
     .target Priestess Anetta
@@ -349,9 +376,11 @@ step
     .accept 62 >> Accept The Fargodeep Mine
 step
     #softcore
-    #sticky
     #completewith Goldshire
-    .goto Elwynn Forest,39.5,60.5,200 >> Die and respawn at the Spirit Healer, or run to Goldshire
+    .deathskip >> Die and respawn at the Spirit Healer
+step
+    #completewith next
+    .goto Elwynn Forest,39.5,60.5,200 >> Run to Goldshire
 step << Warrior/Paladin/Rogue
     .target Smith Argus
     .goto Elwynn Forest,41.706,65.544
@@ -396,7 +425,8 @@ step
     >> Talk to |cFF00FF25Innkeeper Farley|r
     .target Innkeeper Farley
     >>Do NOT buy any food/drink here << Warlock
-    .turnin 2158 >> Turn in Rest and Relaxation
+    .turnin 2158,1 >> Turn in Rest and Relaxation << Rogue/Warrior
+    .turnin 2158,2 >> Turn in Rest and Relaxation << !Rogue !Warrior
     .home >> Set your Hearthstone to Goldshire
 step
     .xp 6 >> Grind to 6
@@ -1041,10 +1071,12 @@ step
     .goto Elwynn Forest,43.2,89.6
     .turnin 114 >> Turn in The Escape
 step
-	>> Talk to |cFF00FF25"Auntie" Bernice Stonefield|r
-    .target "Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.660,84.482
-    .turnin 88 >> Turn in Princess Must Die!
+.target Ma Stonefield
+>>Talk to |cFF00FF25Ma Stonefield|r
+    .turnin 88,1 >> Turn in Princess Must Die! << Rogue/Hunter
+    .turnin 88,2 >> Turn in Princess Must Die! << Warrior/Paladin
+    .turnin 88,3 >> Turn in Princess Must Die! << !Rogue !Hunter !Warrior !Paladin
 step << Warlock
     >>Click any of the wanted posters around
     .goto Elwynn Forest,24.6,74.7
@@ -1162,9 +1194,9 @@ step
     .accept 22 >>Accept Goretusk Liver Pie
 step
     #softcore
-    #sticky
     #completewith next
-    .goto Westfall,51.7,49.4,150 >> Die and respawn at the Spirit Healer, or run to Sentinel Hill
+    .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
+    .target Spirit Healer
 step
     .goto Westfall,56.327,47.520
 >>Talk to |cFF00FF25Gryan Stoutmantle|r
@@ -1909,6 +1941,13 @@ step << Paladin
     .goto Elwynn Forest,41.5,65.9
     >>Repair your weapon. If you have enough money (7s 1c) buy a Wooden Mallet from Corina. Otherwise, skip this step (you'll come back later)
     .collect 2493,1 --Collect Wooden Mallet
+step << Paladin
+    #completewith Remy
+    +Equip the |T133053:0|t[Wooden Mallet]
+    .use 2493
+    .itemcount 2493,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
 step << Mage/Priest/Warlock
     #completewith next
     .goto Elwynn Forest,41.7,65.9
@@ -1932,7 +1971,8 @@ step
     >>Do NOT buy any food/drink here << Warlock
 .target Innkeeper Farley
 >>Talk to |cFF00FF25Innkeeper Farley|r
-    .turnin 2158 >> Turn in Rest and Relaxation
+    .turnin 2158,1 >> Turn in Rest and Relaxation << Rogue/Warrior
+    .turnin 2158,2 >> Turn in Rest and Relaxation << !Rogue !Warrior
     .home >> Set your Hearthstone to Goldshire
 step
     .xp 6 >> Grind to 6
@@ -1982,6 +2022,7 @@ step << Paladin
     .goto Elwynn Forest,41.1,66.0
     .trainer >> Train your class spells
 step
+    #label Remy
     .goto Elwynn Forest,42.1,67.3
 .target Remy "Two Times"
 >>Talk to |cFF00FF25Remy "Two Times"|r
@@ -2522,7 +2563,9 @@ step
     .goto Elwynn Forest,34.660,84.482
 .target Ma Stonefield
 >>Talk to |cFF00FF25Ma Stonefield|r
-    .turnin 88 >> Turn in Princess Must Die!
+    .turnin 88,1 >> Turn in Princess Must Die! << Rogue/Hunter
+    .turnin 88,2 >> Turn in Princess Must Die! << Warrior/Paladin
+    .turnin 88,3 >> Turn in Princess Must Die! << !Rogue !Hunter !Warrior !Paladin
 step
     .goto Elwynn Forest,34.486,84.253
 .target "Auntie" Bernice Stonefield

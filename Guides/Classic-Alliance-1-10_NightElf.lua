@@ -63,7 +63,8 @@ step
     #requires balance1
 	.goto Teldrassil,58.7,44.2
 >>Talk to |cFF00FF25Conservator Ilthalaine|r
-    .turnin 456 >> Turn in The Balance of Nature
+    .turnin 456,1 >> Turn in The Balance of Nature << Hunter
+    .turnin 456 >> Turn in The Balance of Nature << !Hunter
 .target Conservator Ilthalaine
     .accept 457 >> Accept The Balance of Nature
 	.accept 3116 >> Accept Simple Sigil << Warrior
@@ -239,7 +240,7 @@ step << Hunter
     .goto Teldrassil,58.6,44.3
 .target Conservator Ilthalaine
 >>Talk to |cFF00FF25Conservator Ilthalaine|r
-    .turnin 457 >> Turn in The Balance of Nature
+    .turnin 457,2 >> Turn in The Balance of Nature
 step << Priest
     #requires vial1
     .goto Teldrassil,59.2,40.5
@@ -350,7 +351,9 @@ step
     .goto Teldrassil,55.7,59.8
 .target Innkeeper Keldamyr
 >>Talk to |cFF00FF25Innkeeper Keldamyr|r
-    .turnin 2159 >> Turn in Dolanaar Delivery
+    .turnin 2159,2 >> Turn in Dolanaar Delivery << Hunter
+    .turnin 2159 >> Turn in Dolanaar Delivery << !Hunter
+    .home >> Set your Hearthstone to Dolanaar
 step << Hunter
     .goto Teldrassil,56.676,59.489
 	.train 3044>> Train Arcane Shot
@@ -583,9 +586,6 @@ step
 >>Talk to |cFF00FF25Zarrin|r
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
-step
-    .goto Teldrassil,55.7,59.8
-    .home >> Set your Hearthstone to Dolanaar
 step << Warrior/Rogue
     .goto Teldrassil,55.2,56.8
     .train 3273 >> Train First Aid

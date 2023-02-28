@@ -229,16 +229,17 @@ s["DRUID"] = {
 
 s["PALADIN"] = {
     [1] = {
-        465 -- Devotion Aura
+        465, -- Devotion Aura
+        2018 -- Blacksmithing
     },
     [4] = {
         20271, -- Judgement
         19740 -- Blessing of might
     },
     [6] = {
-        498, -- Divine protection
         639, -- Holy Light R2
-        3127 -- parry
+        3127, -- parry
+        498 -- Divine protection
     },
     [8] = {
         853, -- Hammer of Justice
@@ -389,19 +390,19 @@ s["SHAMAN"] = {
         8042 -- earth shock
     },
     [6] = {
-        2484, -- earthbind totem
+--      2484, -- earthbind totem
         332 -- healing wave r2
     },
     [8] = {
+        8018, -- rockbiter weapon r2
         8044, -- earth shock r2
         324, -- lightning shield
-        5730, -- stoneclaw totem
-        8018 -- rockbiter weapon r2
+        529, -- Lightning Bolt r2
+        5730 -- stoneclaw totem
     },
     [10] = {
         850, -- flame shock
         8075, -- strength of earth totem
-        529, -- Lightning Bolt r2 (10 instead of 8 to save money)
         8024 -- Flametongue Weapon
     },
     [12] = {
@@ -1123,8 +1124,10 @@ s["WARLOCK"] = {
 }
 
 s["MAGE"] = {
-    [4] = {
+    [1] = {
         1459, -- Arcane Intellect
+    },
+    [4] = {
         116 -- frostbolt
     },
     [6] = {

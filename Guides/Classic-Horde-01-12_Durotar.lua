@@ -221,8 +221,10 @@ step
     .goto Durotar,42.29,68.39,12,0 << !Warlock
     .goto Durotar,42.06,68.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gornek|r
-    .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
+    .turnin 788,2 >>Turn in Cutting Teeth << Shaman
+    .turnin 788 >>Turn in Cutting Teeth << !Shaman
+    .turnin 804,1 >>Turn in Sarkoth << Shaman
+    .turnin 804 >>Turn in Sarkoth << !Shaman
     .accept 2383 >>Accept Simple Parchment << Orc Warrior
     .accept 3065 >>Accept Simple Tablet << Troll Warrior
     .accept 3082 >>Accept Etched Tablet << Troll Hunter
@@ -479,7 +481,8 @@ step
     .goto Durotar,42.29,68.39,12,0
     .goto Durotar,42.06,68.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gornek|r
-    .turnin 789 >>Turn in Sting of the Scorpid
+    .turnin 789,2 >>Turn in Sting of the Scorpid << Shaman
+    .turnin 789 >>Turn in Sting of the Scorpid << !Shaman
     .target Gornek
 step << Shaman
     #era
@@ -1102,7 +1105,8 @@ step << !Warrior !Rogue !Hunter
     .goto Durotar,51.5,41.6
 .target Innkeeper Grosk
 >>Talk to |cFF00FF25Innkeeper Grosk|r
-    .turnin 2161 >>Turn in A Peon's Burden
+    .turnin 2161,2 >>Turn in A Peon's Burden << Shaman
+    .turnin 2161 >>Turn in A Peon's Burden << !Shaman
     .home >> Set your Hearthstone to Razor Hill
     .vendor >> Buy as much level 5 water as you can
 step << Warrior/Rogue/Hunter
@@ -1367,7 +1371,8 @@ step
 .target Master Gadrin
 >>Talk to |cFF00FF25Master Gadrin|r
     .turnin 808 >>Turn in Minshina's Skull
-    .turnin 826 >>Turn in Zalazane
+    .turnin 826,2 >>Turn in Zalazane << Shaman
+    .turnin 826 >>Turn in Zalazane << !Shaman
 step
     .goto Durotar,56.0,74.3
 .target Master Vornal
@@ -1383,7 +1388,8 @@ step
     .goto Durotar,54.3,73.3
 .target Lar Prowltusk
 >>Talk to |cFF00FF25Lar Prowltusk|r
-    .turnin 786 >>Turn in Thwarting Kolkar Aggression
+    .turnin 786,1 >>Turn in Thwarting Kolkar Aggression << Shaman
+    .turnin 786 >>Turn in Thwarting Kolkar Aggression << !Shaman
 step
 	#som
 	#phase 3-6
