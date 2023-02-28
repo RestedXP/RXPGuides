@@ -513,7 +513,8 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     proxmityPolling.match = true
 
     if addon.settings.db.profile.soundOnFind ~= "none" and
-        proxmityPolling.scanData.kind ~= 'friendly' then
+        (proxmityPolling.scanData.kind == 'rare' or
+            proxmityPolling.scanData.kind == 'unitscan') then
         PlaySound(addon.settings.db.profile.soundOnFind,
                   addon.settings.db.profile.soundOnFindChannel)
     end
