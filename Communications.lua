@@ -85,6 +85,8 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
             levelData.timestamp.finished then
             s = levelData.timestamp.finished - levelData.timestamp.started
 
+            if not s then return end
+
             msg = self.BuildNotification(
                       L("I just leveled from %d to %d in %s"), level - 1, level,
                       addon.comms:PrettyPrintTime(s))
