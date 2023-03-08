@@ -1,0 +1,3 @@
+local _, addon = ...
+
+if addon.player.class ~= "ROGUE" then return end

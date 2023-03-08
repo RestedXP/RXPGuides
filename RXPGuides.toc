@@ -38,4 +38,4 @@ GuideLoader.lua
 Guides/GuideList.xml
 
 Talents.lua
-Guides/Talents/wotlk.lua
+Guides/Talents/wotlk.xml

@@ -35,4 +35,4 @@ GuideLoader.lua
 Guides/GuideList-classic.xml
 
 Talents.lua
-Guides/Talents/classic.lua
+Guides/Talents/classic.xml
