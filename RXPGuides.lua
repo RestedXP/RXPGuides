@@ -172,10 +172,9 @@ local trainerUpdate = 0
 
 local function ProcessSpells(names, rank)
     if gameVersion > 90000 then return end
-    local _, class = UnitClass("player")
     local _, race = UnitRace("player")
     local level = UnitLevel("player")
-    local entries = {race, class}
+    local entries = {race, addon.player.class}
     for _, entry in pairs(entries) do
         if addon.defaultSpellList[entry] then
             for spellLvl, spells in pairs(addon.defaultSpellList[entry]) do
