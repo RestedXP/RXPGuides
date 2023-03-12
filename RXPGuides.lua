@@ -424,6 +424,7 @@ function addon:OnInitialize()
     addon:CreateActiveItemFrame()
     addon.comms:Setup()
     addon.targeting:Setup()
+    if addon.talents then addon.talents:Setup() end
     if addon.settings.db.profile.enableTracker then addon.tracker:SetupTracker() end
 
     addon.RXPG.LoadCachedGuides()
