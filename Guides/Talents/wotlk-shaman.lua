@@ -15,3 +15,12 @@ level
 level >40
     .retrain
 ]])
+
+if true then return end
+
+addon.talents.RegisterGuide([[
+#name Enhancement Raiding
+#minLevel 80
+level =80
+    .retrain
+]])
