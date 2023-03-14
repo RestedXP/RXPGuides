@@ -4568,3 +4568,61 @@ function addon.functions.itemStat(self, ...)
         end
     end
 end
+
+function addon.GetCurrencyName(id)
+    id = id or false
+    id = tonumber(id)
+    if not id then return end
+    local basicCurrencyInfo = C_CurrencyInfo.GetBasicCurrencyInfo(id)
+    local name = basicCurrencyInfo and basicCurrencyInfo.name
+    return name
+end
+
+function addon.functions.collectcurrency(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.dynamicText = true
+        local text, id, qty = ...
+        id = tonumber(id)
+        if not id then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': No currency ID provided\n' .. self)
+        end
+        element.id = id
+        qty = tonumber(qty)
+        element.qty = qty or 1
+        element.currencyName = addon.GetCurrencyName(element.id)
+
+        if text and text ~= "" then
+            element.rawtext = text
+            element.tooltipText = addon.icons.collect .. element.rawtext
+        else
+            element.requestFromServer = true
+            element.text = " "
+        end
+        return element
+    end
+
+    local element = self.element
+    local name = addon.GetCurrencyName(element.id)
+    local numRequired = element.qty
+    element.currencyName = name
+
+    local currencyInfo = C_CurrencyInfo.GetCurrencyInfo(element.id)
+    local count = currencyInfo and currencyInfo.quantity or 0
+
+    element.text = string.format("%d/%d %s", count, numRequired, element.currencyName)
+    element.tooltipText = addon.icons.collect .. element.text
+
+    if element.lastCount ~= count then addon.UpdateStepText(self) end
+    element.lastCount = count
+
+    if numRequired > 0 and count >= numRequired then
+        addon.SetElementComplete(self, true)
+    elseif numRequired == 0 and count == 0 then
+        addon.SetElementComplete(self)
+    elseif not element.textOnly then
+        addon.SetElementIncomplete(self)
+    end
+end
