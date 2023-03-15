@@ -2,6 +2,7 @@ local _, addon = ...
 
 if addon.gameVersion > 40000 then return end
 
+local GameTooltip = _G.GameTooltip
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
 local EasyMenu = function(...)
     if LibDD then
@@ -23,11 +24,13 @@ addon.talents.guides = {}
 addon.talents.maxLevel = GetMaxPlayerLevel()
 
 local function buildTalentGuidesMenu()
-    local menu = {{text = L("Available Guides"), isTitle = 1, notCheckable = 1}}
+    local menu = {}
+
+    tinsert(menu, {text = L("Available Guides"), isTitle = 1, notCheckable = 1})
 
     for key, guide in pairs(addon.talents.guides) do
-        print("for key", key)
-        tinsert(menu, #menu, {
+        print("Inserting guide", key)
+        tinsert(menu, {
             text = guide.name,
             tooltipTitle = guide.description,
             notCheckable = 1,
@@ -35,10 +38,16 @@ local function buildTalentGuidesMenu()
             func = function(_, arg1)
                 -- TODO setting/selection for active guide
                 print("Would have selected", arg1)
+                -- TODO reload guide
             end
         })
     end
 
+    tinsert(menu, {
+        text = _G.CLOSE,
+        notCheckable = 1,
+        func = function(self) self:Hide() end
+    })
     return menu
 end
 
@@ -60,28 +69,67 @@ function addon.talents:ADDON_LOADED(_, loadedAddon)
 end
 
 function addon.talents:HookUI()
-    if not self.menuFrame then
-        self.menuFrame = CreateFrame("Frame", "RXP_TalentsMenuFrame",
-                                     _G.PlayerTalentFrame,
-                                     "UIDropDownMenuTemplate")
-    end
+    local iconReference = {}
 
-    local iconReference
-    if _G.PlayerSpecTab2 then -- TODO only shows up when frame is opened
-        iconReference = _G.PlayerSpecTab2
-        -- Get diff between _G.PlayerSpecTab2 and _G.PlayerSpecTab1
+    -- Dual spec, so pop it underneath
+    if _G.PlayerSpecTab2 then
+        iconReference.frame = _G.PlayerSpecTab2
+
+        -- Offset RXP button as much as Tab2 is from Tab1
+        _, _, _, _, iconReference.offsetY = _G.PlayerSpecTab2:GetPoint()
+
         -- Dual spec, so pop it underneath
         -- elseif Retail
     else -- Classic or Wrath without dual-spec
         print("Else")
     end
 
-    -- _G.iconReference:GetHeight()
+    local button = self.talentsButton
+    if not button then
+        button = CreateFrame("Button", "$parentRXPTalents", iconReference.frame)
+        button:SetWidth(iconReference.frame:GetWidth())
+        button:SetHeight(iconReference.frame:GetHeight())
+        button:SetPoint("TOP", iconReference.frame, "BOTTOM", 0,
+                        iconReference.offsetY)
+        button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+        self.talentsButton = button
 
-    -- TODO make button and attach
-    EasyMenu(buildTalentGuidesMenu(), self.menuFrame, iconReference, 0, 0,
-             "MENU", 2)
+        button:SetScript("OnEnter", function(this)
+            if this:IsForbidden() or GameTooltip:IsForbidden() then
+                return
+            end
+            GameTooltip:SetOwner(this, "ANCHOR_TOPLEFT",
+                                 iconReference.frame:GetWidth(), 0)
+            GameTooltip:ClearLines()
 
+            local guide = addon.talents:GetCurrentGuide()
+            GameTooltip:AddLine(guide.name)
+            GameTooltip:AddLine(fmt("%s: %d - %d", _G.LEVEL_RANGE,
+                                    guide.minLevel, guide.maxLevel), 1, 1, 1)
+
+            GameTooltip:Show()
+        end)
+
+        button:SetScript("OnLeave", function(this)
+            if this:IsForbidden() or GameTooltip:IsForbidden() then
+                return
+            end
+            GameTooltip:Hide()
+        end)
+
+        self.talentsButton = button
+    end
+
+    if not self.menuFrame then
+        self.menuFrame = CreateFrame("Frame", "RXP_TalentsMenuFrame",
+                                     self.talentsButton,
+                                     "UIDropDownMenuTemplate")
+
+        self.talentsButton:SetScript("OnMouseUp", function()
+            EasyMenu(buildTalentGuidesMenu(), self.menuFrame,
+                     self.talentsButton, 0, 0, "MENU", 1)
+        end)
+    end
 end
 
 function addon.talents.RegisterGuide(text)
@@ -150,7 +198,6 @@ function addon.talents:ParseGuide(text)
         return
     end
 
-    guide.displayname = guide.displayname or guide.name
     -- guide.class = guide.class or addon.player.localeClass
     guide.minLevel = guide.minLevel or 10
     guide.maxLevel = guide.maxLevel or addon.talents.maxLevel
@@ -162,6 +209,7 @@ function addon.talents:ParseGuide(text)
     -- #guide.next
 
     _G.RXPD = guide
+    return guide
 end
 
 function addon.talents.functions.retrain()
@@ -207,12 +255,16 @@ function addon.talents:PLAYER_REGEN_ENABLED()
     -- TODO send notification to update talents
 end
 
+function addon.talents:GetCurrentGuide()
+    -- TODO setting/selection
+    -- TODO automatically select talent guide for chosen spec, harder to do without DB
+    return self.guides["SHAMAN - Enhancement"]
+end
+
 function addon.talents:ProcessTalents()
     local playerLevel = UnitLevel("player") or 1
 
-    -- TODO setting/selection
-    -- TODO automatically select talent guide for chosen spec, harder to do without DB
-    local selectedGuide = self.guides["SHAMAN - Enhancement"]
+    local selectedGuide = self:GetCurrentGuide()
 
     if playerLevel < selectedGuide.minLevel then
         addon.comms.PrettyPrint(L("Too low for %s"), selectedGuide.displayname)
