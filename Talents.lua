@@ -23,13 +23,15 @@ addon.talents.functions = {}
 addon.talents.guides = {}
 addon.talents.maxLevel = GetMaxPlayerLevel()
 
+-- TODO change to setting
+local activeGuide
+
 local function buildTalentGuidesMenu()
     local menu = {}
 
     tinsert(menu, {text = L("Available Guides"), isTitle = 1, notCheckable = 1})
 
     for key, guide in pairs(addon.talents.guides) do
-        print("Inserting guide", key)
         tinsert(menu, {
             text = guide.name,
             tooltipTitle = guide.description,
@@ -92,6 +94,15 @@ function addon.talents:HookUI()
         button:SetPoint("TOP", iconReference.frame, "BOTTOM", 0,
                         iconReference.offsetY)
         button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+        button.bg = button:CreateTexture("$parentBG", "BACKGROUND")
+        button.bg:SetSize(64, 64)
+        button.bg:SetPoint("TOPLEFT", -3, 11)
+        button.bg:SetTexture("Interface/SpellBook/SpellBook-SkillLineTab")
+        button.bg.ht = button:CreateTexture(nil, "HIGHLIGHT")
+        button.bg.ht:SetAllPoints(true)
+        button.bg.ht:SetTexture("Interface/Buttons/ButtonHilight-Square")
+        button.bg.ht:SetBlendMode("ADD")
+
         self.talentsButton = button
 
         button:SetScript("OnEnter", function(this)
@@ -103,9 +114,14 @@ function addon.talents:HookUI()
             GameTooltip:ClearLines()
 
             local guide = addon.talents:GetCurrentGuide()
-            GameTooltip:AddLine(guide.name)
-            GameTooltip:AddLine(fmt("%s: %d - %d", _G.LEVEL_RANGE,
-                                    guide.minLevel, guide.maxLevel), 1, 1, 1)
+            if guide then
+                GameTooltip:AddLine(guide.name)
+                GameTooltip:AddLine(fmt("%s: %d - %d", _G.LEVEL_RANGE,
+                                        guide.minLevel, guide.maxLevel), 1, 1, 1)
+            else
+                GameTooltip:AddLine(L(
+                                        "Welcome to RestedXP Guides\nRight click to pick a guide"))
+            end
 
             GameTooltip:Show()
         end)
@@ -158,7 +174,7 @@ function addon.talents:ParseGuide(text)
             guide.steps[currentStep] = {elements = {}}
 
             step = guide.steps[currentStep]
-            print("Starting new step", currentStep)
+            -- print("Starting new step", currentStep)
         elseif currentStep > 0 then -- Parse metadata tags first
 
             -- Parse function calls
@@ -255,10 +271,13 @@ function addon.talents:PLAYER_REGEN_ENABLED()
     -- TODO send notification to update talents
 end
 
-function addon.talents:GetCurrentGuide()
+function addon.talents:GetCurrentGuide() return activeGuide end
+
+function addon.talents:LoadGuide(key)
     -- TODO setting/selection
     -- TODO automatically select talent guide for chosen spec, harder to do without DB
-    return self.guides["SHAMAN - Enhancement"]
+    activeGuide = self.guides[key]
+    return activeGuide
 end
 
 function addon.talents:ProcessTalents()
