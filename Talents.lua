@@ -12,9 +12,10 @@ local EasyMenu = function(...)
     end
 end
 
-local fmt, sgmatch = string.format, string.gmatch
+local fmt, sgmatch, strsplittable = string.format, string.gmatch, strsplittable
 local tinsert = tinsert
 local UnitLevel = UnitLevel
+local GetPetTalentTree = GetPetTalentTree
 
 local L = addon.locale.Get
 
@@ -37,7 +38,7 @@ local function buildTalentGuidesMenu()
             func = function(_, arg1)
                 addon.talents:UpdateSelectedGuide(arg1)
 
-                addon.talents:ProcessTalents()
+                addon.talents:DrawTalents()
             end
         })
     end
@@ -80,14 +81,18 @@ end
 function addon.talents:HookUI()
     local iconReference = {}
 
-    -- Dual spec, so pop it underneath
-    if _G.PlayerSpecTab2 then
+    if _G.PlayerSpecTab3 then -- Wrath hunter regardless of dual-spec
+        iconReference.frame = _G.PlayerSpecTab3
+
+        -- Offset RXP button as much as Tab2 is from Tab1
+        _, _, _, _, iconReference.offsetY = _G.PlayerSpecTab3:GetPoint()
+
+    elseif _G.PlayerSpecTab2 then -- Dual spec non-hunter
         iconReference.frame = _G.PlayerSpecTab2
 
         -- Offset RXP button as much as Tab2 is from Tab1
         _, _, _, _, iconReference.offsetY = _G.PlayerSpecTab2:GetPoint()
 
-        -- Dual spec, so pop it underneath
         -- elseif Retail
     else -- Classic or Wrath without dual-spec
         print("Else")
@@ -276,6 +281,28 @@ function addon.talents.functions.talent(self)
         if false then self.element.completed = true end
     end
 
+end
+
+function addon.talents.functions.glyph() end
+
+-- Which comma value .pettalent to choose
+local petSpecLookup = {['Ferocity'] = 1, ['Cunning'] = 2, ['Tenacity'] = 3}
+
+function addon.talents.functions.pettalent(self)
+    -- TODO pet families
+    if type(self) == "string" then -- on parse
+        -- ferocity, cunning, tenacity
+        local element = {petTalent = {}}
+        -- Strip whitespace
+        local args = strsplittable(',', self:gsub("%s*,%s*", ","))
+        -- [<<%s*(.+)]?
+
+        element.petTalent = args[petSpecLookup[GetPetTalentTree()]]
+
+        print("Pet talent", element.petTalent)
+
+        return element
+    end
 end
 
 function addon.talents:PLAYER_TALENT_UPDATE()
