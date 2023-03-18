@@ -23,9 +23,6 @@ addon.talents.functions = {}
 addon.talents.guides = {}
 addon.talents.maxLevel = GetMaxPlayerLevel()
 
--- TODO change to setting
-local activeGuide
-
 local function buildTalentGuidesMenu()
     local menu = {}
 
@@ -38,12 +35,20 @@ local function buildTalentGuidesMenu()
             notCheckable = 1,
             arg1 = key,
             func = function(_, arg1)
-                -- TODO setting/selection for active guide
-                print("Would have selected", arg1)
-                -- TODO reload guide
+                addon.talents:UpdateSelectedGuide(arg1)
+
+                addon.talents:ProcessTalents()
             end
         })
     end
+
+    tinsert(menu, {text = "", notCheckable = 1, isTitle = 1})
+
+    tinsert(menu, {
+        text = _G.APPLY,
+        notCheckable = 1,
+        func = function() addon.talents:ProcessTalents() end
+    })
 
     tinsert(menu, {
         text = _G.CLOSE,
@@ -58,6 +63,8 @@ function addon.talents:Setup()
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
 
     self:RegisterEvent("ADDON_LOADED")
+
+    self:UpdateSelectedGuide(addon.settings.db.profile.activeTalentGuide)
 end
 
 function addon.talents:ADDON_LOADED(_, loadedAddon)
@@ -87,6 +94,7 @@ function addon.talents:HookUI()
     end
 
     local button = self.talentsButton
+    -- Build a button to match Wrath dual-spec talent tabs
     if not button then
         button = CreateFrame("Button", "$parentRXPTalents", iconReference.frame)
         button:SetWidth(iconReference.frame:GetWidth())
@@ -94,10 +102,12 @@ function addon.talents:HookUI()
         button:SetPoint("TOP", iconReference.frame, "BOTTOM", 0,
                         iconReference.offsetY)
         button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+
         button.bg = button:CreateTexture("$parentBG", "BACKGROUND")
         button.bg:SetSize(64, 64)
         button.bg:SetPoint("TOPLEFT", -3, 11)
         button.bg:SetTexture("Interface/SpellBook/SpellBook-SkillLineTab")
+
         button.bg.ht = button:CreateTexture(nil, "HIGHLIGHT")
         button.bg.ht:SetAllPoints(true)
         button.bg.ht:SetTexture("Interface/Buttons/ButtonHilight-Square")
@@ -116,6 +126,7 @@ function addon.talents:HookUI()
             local guide = addon.talents:GetCurrentGuide()
             if guide then
                 GameTooltip:AddLine(guide.name)
+                GameTooltip:AddLine(L("Left click to apply talents"), 0, 1, 0)
                 GameTooltip:AddLine(fmt("%s: %d - %d", _G.LEVEL_RANGE,
                                         guide.minLevel, guide.maxLevel), 1, 1, 1)
             else
@@ -141,9 +152,13 @@ function addon.talents:HookUI()
                                      self.talentsButton,
                                      "UIDropDownMenuTemplate")
 
-        self.talentsButton:SetScript("OnMouseUp", function()
-            EasyMenu(buildTalentGuidesMenu(), self.menuFrame,
-                     self.talentsButton, 0, 0, "MENU", 1)
+        self.talentsButton:SetScript("OnMouseUp", function(_, click)
+            if click == "RightButton" then
+                EasyMenu(buildTalentGuidesMenu(), self.menuFrame,
+                         self.talentsButton, 0, 0, "MENU", 1)
+            else
+                self:ProcessTalents()
+            end
         end)
     end
 end
@@ -215,8 +230,8 @@ function addon.talents:ParseGuide(text)
     end
 
     -- guide.class = guide.class or addon.player.localeClass
-    guide.minLevel = guide.minLevel or 10
-    guide.maxLevel = guide.maxLevel or addon.talents.maxLevel
+    guide.minLevel = tonumber(guide.minLevel) or 10
+    guide.maxLevel = tonumber(guide.maxLevel) or addon.talents.maxLevel
     guide.description = guide.description or
                             fmt("%s - %s (%d-%d)", addon.player.localeClass,
                                 guide.name, guide.minLevel, guide.maxLevel)
@@ -244,7 +259,7 @@ function addon.talents.functions.talent(self)
         -- [<<%s*(.+)]?
 
         for arg in sgmatch(args, "[^,]+") do
-            print("Inserting talent", arg)
+            -- print("Inserting talent", arg)
             tinsert(element.talents, tonumber(arg))
         end
 
@@ -265,28 +280,40 @@ end
 
 function addon.talents:PLAYER_TALENT_UPDATE()
     -- TODO support dual spec swaps when leveling, e.g. solo vs dungeon spam specs
+    -- Rescan talents to validate state
 end
 
 function addon.talents:PLAYER_REGEN_ENABLED()
     -- TODO send notification to update talents
 end
 
-function addon.talents:GetCurrentGuide() return activeGuide end
-
-function addon.talents:LoadGuide(key)
-    -- TODO setting/selection
+function addon.talents:GetCurrentGuide()
     -- TODO automatically select talent guide for chosen spec, harder to do without DB
-    activeGuide = self.guides[key]
-    return activeGuide
+
+    return self.guides[addon.settings.db.profile.activeTalentGuide]
+end
+
+function addon.talents:UpdateSelectedGuide(key)
+    if not key then return end
+
+    if not self.guides[key] then return end
+
+    addon.settings.db.profile.activeTalentGuide = key
 end
 
 function addon.talents:ProcessTalents()
     local playerLevel = UnitLevel("player") or 1
 
-    local selectedGuide = self:GetCurrentGuide()
+    local guide = self:GetCurrentGuide()
 
-    if playerLevel < selectedGuide.minLevel then
-        addon.comms.PrettyPrint(L("Too low for %s"), selectedGuide.displayname)
+    if not guide then return end
+
+    print("Processing", guide.displayname)
+
+    if playerLevel < guide.minLevel then
+        addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname)
         return
     end
+
+    -- TODO process
 end

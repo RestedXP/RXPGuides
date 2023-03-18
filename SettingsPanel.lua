@@ -141,7 +141,10 @@ function addon.settings:InitializeSettings()
             textLootColor = addon.guideTextColors.default['RXP_LOOT_'],
             textWarnColor = addon.guideTextColors.default['RXP_WARN_'],
             textPickColor = addon.guideTextColors.default['RXP_PICK_'],
-            textBuyColor = addon.guideTextColors.default['RXP_BUY_']
+            textBuyColor = addon.guideTextColors.default['RXP_BUY_'],
+
+            -- Talents
+            activeTalentGuide = nil
         }
     }
 

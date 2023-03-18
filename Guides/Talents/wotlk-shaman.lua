@@ -11,7 +11,14 @@ level
     .talent 16259
 level
     .talent 16295
-
+level
+    .talent 52456
+level
+    .talent 17485
+level
+    .talent 17486
+level
+    .talent 16255
 level >40
     .retrain
 ]])
