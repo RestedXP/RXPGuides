@@ -13,11 +13,13 @@ local EasyMenu = function(...)
 end
 
 local fmt, sgmatch, strsplittable = string.format, string.gmatch, strsplittable
+local tonumber = tonumber
 local tinsert = tinsert
 local UnitLevel = UnitLevel
-local GetPetTalentTree, GetUnspentTalentPoints, GetGroupPreviewTalentPointsSpent =
+local GetPetTalentTree, GetUnspentTalentPoints,
+      GetGroupPreviewTalentPointsSpent, AddPreviewTalentPoints =
     _G.GetPetTalentTree, _G.GetUnspentTalentPoints,
-    _G.GetGroupPreviewTalentPointsSpent
+    _G.GetGroupPreviewTalentPointsSpent, _G.AddPreviewTalentPoints
 
 local L = addon.locale.Get
 
@@ -66,12 +68,21 @@ local function buildTalentGuidesMenu()
 end
 
 function addon.talents:Setup()
+    if not addon.settings.db.profile.enableTalentGuides then return end
+
     self:RegisterEvent("PLAYER_TALENT_UPDATE")
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
 
     self:RegisterEvent("ADDON_LOADED")
 
     self:UpdateSelectedGuide(addon.settings.db.profile.activeTalentGuide)
+
+    if tonumber(GetCVar("previewTalents")) == 0 and
+        addon.settings.db.profile.previewTalents then
+        addon.comms.PrettyPrint("Enabling talent previews")
+        -- Talents are enabled in RXP, so match client
+        SetCVar("previewTalents", 1)
+    end
 end
 
 function addon.talents:ADDON_LOADED(_, loadedAddon)
@@ -281,30 +292,30 @@ function addon.talents.functions.talent(element, validate)
         for arg in sgmatch(args, "[^;]+") do
             tab, tier, column, rank = strsplit(',', arg)
             -- print("Inserting talent", arg)
-            tinsert(e.talent,
-                    {tab = tab, tier = tier, column = column, rank = rank})
+            tinsert(e.talent, {
+                tab = tonumber(tab),
+                tier = tonumber(tier),
+                column = tonumber(column),
+                rank = tonumber(rank) or 1
+            })
         end
 
         return e
     end
 
-    -- GetTalentPrereqs(tabIndex, talentIndex)
-    -- LearnTalent(tabIndex, talentIndex)
     local talentIndex
-    for _, talentData in ipairs(element.talent) do
-        print("Searching talentIndex", talentData.tab, talentData.tier,
-              talentData.column)
+    local name, previewRankOrRank
 
+    for _, talentData in ipairs(element.talent) do
         if not (indexLookup[talentData.tab] and
             indexLookup[talentData.tab][talentData.tier] and
             indexLookup[talentData.tab][talentData.tier][talentData.column]) then
 
-            print("Invalid talentIndex", talentData.tab, talentData.tier,
-                  talentData.column)
-            return
+            addon.comms.PrettyPrint(
+                "Invalid talentIndex lookup for [%d][%d][%d]", talentData.tab,
+                talentData.tier, talentData.column)
+            return false
         end
-        -- success = LearnTalent(talentInfo)
-        -- TODO Check if already learned
 
         -- TODO support optional branches
         talentIndex =
@@ -312,9 +323,25 @@ function addon.talents.functions.talent(element, validate)
 
         if talentIndex and validate then return true end
 
-        print("Would train talentIndex", talentIndex)
+        name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(
+                                                              talentData.tab,
+                                                              talentIndex)
+
+        if previewRankOrRank < talentData.rank then
+            addon.comms.PrettyPrint("%s - %s (%s %d)",
+                                    _G.TRADE_SKILLS_LEARNED_TAB, name, _G.RANK,
+                                    talentData.rank)
+
+            if addon.settings.db.profile.previewTalents then
+                AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
+            else
+                LearnTalent(talentData.tab, talentIndex)
+            end
+        end
+
     end
 
+    return true
 end
 
 function addon.talents.functions.glyph(element) end
@@ -393,39 +420,31 @@ function addon.talents:BuildIndexLookup()
 
     indexLookup = {}
 
-    local name, tier, column, talentIndex
+    local tier, column
 
     for tabIndex = 1, _G.GetNumTalentTabs() do
-        talentIndex = 1
-
         indexLookup[tabIndex] = {}
-        name, _, tier, column = GetTalentInfo(tabIndex, talentIndex)
 
-        while name do
+        for talentIndex = 1, _G.GetNumTalents(tabIndex) do
+            _, _, tier, column = GetTalentInfo(tabIndex, talentIndex)
+
             indexLookup[tabIndex][tier] = indexLookup[tabIndex][tier] or {}
             indexLookup[tabIndex][tier][column] = talentIndex
 
-            name, _, tier, column = GetTalentInfo(tabIndex, talentIndex)
-            talentIndex = talentIndex + 1
         end
     end
-
-    print("Built lookup with", talentIndex)
-    _G.RXPDL = indexLookup
 end
 
 function addon.talents:ProcessTalents(validate)
+    self:BuildIndexLookup()
+
     local playerLevel = UnitLevel("player") or 1
 
     local guide = self:GetCurrentGuide()
 
     if not guide then return end
 
-    if validate then
-        print("Validating", guide.displayname)
-    else
-        print("Processing", guide.displayname)
-    end
+    if validate then print("Validating", guide.displayname) end
 
     if playerLevel < guide.minLevel and not validate then
         addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname)
@@ -441,13 +460,13 @@ function addon.talents:ProcessTalents(validate)
                               GetGroupPreviewTalentPointsSpent()
 
         if (stepLevel > playerLevel) or remainingPoints == 0 then
-            print("Reached player level")
+            -- print("Reached player level")
             self:DrawTalents()
 
             return
         end
 
-        print("Evaluating step", stepNum, "for level", stepLevel)
+        -- print("Evaluating step", stepNum, "for level", stepLevel)
         local result
 
         for _, element in ipairs(step.elements) do
@@ -457,7 +476,7 @@ function addon.talents:ProcessTalents(validate)
                     -- print("Executing tag function", tag)
                     result = self.functions[tag](element, validate)
                 else
-                    result = nil
+                    result = false
                     addon.error(L("Error parsing guide") .. " " ..
                                     (guide.name or 'Unknown') ..
                                     ": Invalid function call (." .. tag .. ")\n" ..
@@ -466,7 +485,11 @@ function addon.talents:ProcessTalents(validate)
 
                 -- Exit processing if error found
                 -- Rely on in-tag-function error output for user communication
-                if not result then return end
+                -- Explicitly require false, accept nil as truthy
+                if result == false then
+                    -- print("Aborting step processing", result)
+                    return
+                end
             end
 
         end
