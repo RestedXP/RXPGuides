@@ -26,6 +26,8 @@ addon.talents.functions = {}
 addon.talents.guides = {}
 addon.talents.maxLevel = GetMaxPlayerLevel()
 
+local indexLookup
+
 local function buildTalentGuidesMenu()
     local menu = {}
 
@@ -40,7 +42,9 @@ local function buildTalentGuidesMenu()
             func = function(_, arg1)
                 addon.talents:UpdateSelectedGuide(arg1)
 
-                addon.talents:DrawTalents()
+                if addon.talents:ProcessTalents('validate') then
+                    addon.talents:DrawTalents()
+                end
             end
         })
     end
@@ -78,6 +82,7 @@ function addon.talents:ADDON_LOADED(_, loadedAddon)
             addon.talents:DrawTalents()
         end)
 
+        self:BuildIndexLookup()
         self:UnregisterEvent("ADDON_LOADED")
     end
 end
@@ -261,22 +266,23 @@ function addon.talents.functions.retrain()
     -- If denied, don't prompt and just disable all predictions
 end
 
-function addon.talents.functions.talent(element)
+function addon.talents.functions.talent(element, validate)
     if type(element) == "string" then -- on parse
         local e = {talent = {}}
         local args = element
         -- Strip whitespace
         args = args:gsub("%s*,%s*", ",")
 
-        -- TODO tooltip on
+        -- TODO tooltip on talent?
         -- [<<%s*(.+)]?
 
-        local tier, column, rank
+        local tab, tier, column, rank
         -- optional tiers with ; delimiter
         for arg in sgmatch(args, "[^;]+") do
-            tier, column, rank = strsplit(arg)
+            tab, tier, column, rank = strsplit(',', arg)
             -- print("Inserting talent", arg)
-            tinsert(e.talent, {tier = tier, column = column, rank = rank})
+            tinsert(e.talent,
+                    {tab = tab, tier = tier, column = column, rank = rank})
         end
 
         return e
@@ -284,11 +290,29 @@ function addon.talents.functions.talent(element)
 
     -- GetTalentPrereqs(tabIndex, talentIndex)
     -- LearnTalent(tabIndex, talentIndex)
-    for _, talentInfo in ipairs(element.talent) do
-        -- success = LearnTalent(talentInfo)
-        print("Would check if", talentInfo, "is trained")
+    local talentIndex
+    for _, talentData in ipairs(element.talent) do
+        print("Searching talentIndex", talentData.tab, talentData.tier,
+              talentData.column)
 
+        if not (indexLookup[talentData.tab] and
+            indexLookup[talentData.tab][talentData.tier] and
+            indexLookup[talentData.tab][talentData.tier][talentData.column]) then
+
+            print("Invalid talentIndex", talentData.tab, talentData.tier,
+                  talentData.column)
+            return
+        end
+        -- success = LearnTalent(talentInfo)
         -- TODO Check if already learned
+
+        -- TODO support optional branches
+        talentIndex =
+            indexLookup[talentData.tab][talentData.tier][talentData.column]
+
+        if talentIndex and validate then return true end
+
+        print("Would train talentIndex", talentIndex)
     end
 
 end
@@ -358,20 +382,52 @@ function addon.talents:UpdateSelectedGuide(key)
 end
 
 function addon.talents:DrawTalents()
+    self:BuildIndexLookup()
+
     -- TODO draw talent highlight previews of path
     -- print("Would draw talents")
 end
 
-function addon.talents:ProcessTalents()
+function addon.talents:BuildIndexLookup()
+    if indexLookup then return end
+
+    indexLookup = {}
+
+    local name, tier, column, talentIndex
+
+    for tabIndex = 1, _G.GetNumTalentTabs() do
+        talentIndex = 1
+
+        indexLookup[tabIndex] = {}
+        name, _, tier, column = GetTalentInfo(tabIndex, talentIndex)
+
+        while name do
+            indexLookup[tabIndex][tier] = indexLookup[tabIndex][tier] or {}
+            indexLookup[tabIndex][tier][column] = talentIndex
+
+            name, _, tier, column = GetTalentInfo(tabIndex, talentIndex)
+            talentIndex = talentIndex + 1
+        end
+    end
+
+    print("Built lookup with", talentIndex)
+    _G.RXPDL = indexLookup
+end
+
+function addon.talents:ProcessTalents(validate)
     local playerLevel = UnitLevel("player") or 1
 
     local guide = self:GetCurrentGuide()
 
     if not guide then return end
 
-    print("Processing", guide.displayname)
+    if validate then
+        print("Validating", guide.displayname)
+    else
+        print("Processing", guide.displayname)
+    end
 
-    if playerLevel < guide.minLevel then
+    if playerLevel < guide.minLevel and not validate then
         addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname)
         return
     end
@@ -380,32 +436,37 @@ function addon.talents:ProcessTalents()
 
     for stepNum, step in ipairs(guide.steps) do
         stepLevel = guide.minLevel + stepNum - 1
-        print("Evaluating step", stepLevel, "for level",
-              guide.minLevel + stepNum)
 
         remainingPoints = GetUnspentTalentPoints() -
                               GetGroupPreviewTalentPointsSpent()
 
         if (stepLevel > playerLevel) or remainingPoints == 0 then
-            print("Reached end")
+            print("Reached player level")
             self:DrawTalents()
 
             return
         end
+
+        print("Evaluating step", stepNum, "for level", stepLevel)
+        local result
 
         for _, element in ipairs(step.elements) do
             for tag, _ in pairs(element) do
                 -- print("Evaluating tag", tag)
                 if self.functions[tag] then
                     -- print("Executing tag function", tag)
-                    self.functions[tag](element)
+                    result = self.functions[tag](element, validate)
                 else
+                    result = nil
                     addon.error(L("Error parsing guide") .. " " ..
                                     (guide.name or 'Unknown') ..
                                     ": Invalid function call (." .. tag .. ")\n" ..
                                     stepNum)
                 end
 
+                -- Exit processing if error found
+                -- Rely on in-tag-function error output for user communication
+                if not result then return end
             end
 
         end
