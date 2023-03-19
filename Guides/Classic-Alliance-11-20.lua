@@ -26,14 +26,17 @@ step <<  NightElf
      #completewith next
     .fly Auberdine >> Fly to Darkshore
 step <<  !NightElf
+#map Darkshore
     .goto Felwood,19.10,20.63
     .fp Auberdine >> Get the Auberdine flight path
 step
+#map Darkshore
     .goto Felwood,19.10,20.63
 .target Gwennyth Bly'Leggonde
 >>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
 step <<  NightElf
+#map Darkshore
     .goto Felwood,19.27,19.14
 .target Laird
 >>Talk to |cFF00FF25Laird|r
@@ -43,6 +46,7 @@ step
     .goto Darkshore,37.0,44.0
     .home >> Set your Hearthstone to Auberdine
 step
+#map Darkshore
     .goto Felwood,19.51,18.97
     >>Head upstairs
 .target Wizbang Cranktoggle
@@ -52,8 +56,10 @@ step
 .target Tharnariun Treetender
 >>Talk to |cFF00FF25Tharnariun Treetender|r
     .accept 2118 >> Accept Plagued Lands
+#map Darkshore
     .goto Felwood,21.63,18.15
 step
+#map Darkshore
     .goto Felwood,22.24,18.22
 .target Terenthis
 >>Talk to |cFF00FF25Terenthis|r
@@ -67,6 +73,7 @@ step
      >> Kill crabs along the coast.
     .complete 983,1
 step
+#map Darkshore
     .goto Felwood,18.81,26.69
      >> Loot the sea creature remains
     .complete 3524,1
@@ -75,6 +82,7 @@ step << Druid
     >>Level herbalism to 15 and collect 5 earthroot for a quest later
     .collect 2449,5
 step
+#map Darkshore
     .goto Felwood,22.39,29.45
      >> Head towards the furbolg camp
      .complete 984,1
@@ -87,20 +95,24 @@ step
      .xp 12-1500 >> Grind mobs until you are 1500xp off level 12
 step
     #requires crab1
+#map Darkshore
     .goto Felwood,19.13,21.39
     >> Click the Buzzbox
     .turnin 983 >> Turn in Buzzbox 827
 step
 	#era/som
+#map Darkshore
 	.goto Felwood,19.13,21.39
     .accept 1001 >> Accept Buzzbox 411
 step
+#map Darkshore
     .goto Felwood,19.10,20.63
 >>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 3524 >> Turn in Washed Ashore
 .target Gwennyth Bly'Leggonde
     .accept 4681 >> Accept Washed Ashore
 step
+#map Darkshore
     .goto Felwood,18.10,18.48
 .target Cerellean Whiteclaw
 >>Talk to |cFF00FF25Cerellean Whiteclaw|r
@@ -118,32 +130,38 @@ step
     #completewith next
     .goto Darkshore,33.70,42.45,60 >> Run up to the docks then jump in the water at the intersection
 step
+#map Darkshore
     .goto Felwood,13.63,21.44
     >>Click on the sea turtle remains
     .complete 4681,1
 step
     #label washed1
+#map Darkshore
     .goto Felwood,19.10,20.63
 .target Gwennyth Bly'Leggonde
 >>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4681 >> Turn in Washed Ashore
 step
+#map Darkshore
     .goto Felwood,19.90,18.40
 .target Barithras Moonshade
 >>Talk to |cFF00FF25Barithras Moonshade|r
     .accept 947 >> Accept Cave Mushrooms
 step
+#map Darkshore
     .goto Felwood,20.34,18.12
 .target Sentinel Glynda Nal'Shea
 >>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept The Red Crystal
 step
+#map Darkshore
     .goto Felwood,21.63,18.15
 >>Talk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2118 >> Turn in Plagued Lands
 .target Tharnariun Treetender
     .accept 2138 >> Accept Cleansing of the Infected
 step
+#map Darkshore
     .goto Felwood,22.24,18.22
 >>Talk to |cFF00FF25Terenthis|r
     .turnin 984 >> Turn in How Big a Threat?
@@ -151,16 +169,19 @@ step
     .accept 985 >> Accept How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
 step <<  Dwarf/Gnome/Human
+#map Darkshore
     .goto Felwood,20.80,15.58
 .target Gorbold Steelhand
 >>Talk to |cFF00FF25Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step
     #completewith next
+#map Darkshore
     .goto Felwood,19.98,14.40
     .vendor >> Buy 6 slot bags if needed
     >>Fill your quiver/ammo pouch with ammo. You have a long grinding session ahead << Hunter
 step
+#map Darkshore
     .goto Felwood,19.98,14.40
 >>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4761 >> Turn in Thundris Windweaver
@@ -182,6 +203,7 @@ step
      >> Kill darkshore threshers in the sea
     .complete 1001,1
 step << !NightElf
+#map Darkshore
     .goto Felwood,20.94,1.49
     >> Enter the 1st ship by the hole on the hull, loot the chest underwater at the bottom floor of the ship
     >>Be careful as this quest can be difficult
@@ -194,11 +216,13 @@ step << !NightElf
 step
 	#era/som
     #requires threshers
+#map Darkshore
     .goto Felwood,25.19,1.29
     >>Hand in the thresher eyes
     .turnin 1001 >> Turn in Buzzbox 411
     .accept 1002 >> Accept Buzzbox 323
 step
+#map Darkshore
     .goto Felwood,25.15,4.61
     .accept 4723 >> Accept Beached Sea Creature
 step
@@ -213,26 +237,31 @@ step
     .complete 1002,1
     .unitscan Moonstalker;Moonstalker Runt
 step
+#map Darkshore
     .goto Felwood,27.70,10.03
 >>Talk to |cFF00FF25Asterion|r
     .turnin 954 >> Turn in Bashal'Aran
 .target Asterion
     .accept 955 >> Accept Bashal'Aran
 step
+#map Darkshore
     .goto Felwood,29.13,12.34
      >> Kill Grellkins
     .complete 955,1
 step
+#map Darkshore
     .goto Felwood,27.70,10.03
 >>Talk to |cFF00FF25Asterion|r
     .turnin 955 >> Turn in Bashal'Aran
 .target Asterion
     .accept 956 >> Accept Bashal'Aran
 step
+#map Darkshore
     .goto Felwood,29.60,12.52
      >> Kill satyrs
     .complete 956,1
 step
+#map Darkshore
     .goto Felwood,27.70,10.03
 >>Talk to |cFF00FF25Asterion|r
     .turnin 956 >> Turn in Bashal'Aran
@@ -246,6 +275,7 @@ step
      + Start collecting 9 small eggs for leveling cooking later
     >>You will need 10 points cooking to accept a quest later. If you already have 10 points, skip this step
 step
+#map Darkshore
     .goto Felwood,31.29,24.14
      >>Run up to The Red Crystal in the mountains
      .complete 4811,1
@@ -258,6 +288,7 @@ step << !Druid
      #completewith next
     .hs >> Hearth to Auberdine
 step
+#map Darkshore
     .goto Felwood,20.34,18.12
 >>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Turn in The Red Crystal
@@ -268,27 +299,32 @@ step
      >> Fill the Empty Water Tube at the moonwell
     .complete 4812,1
 step <<  Hunter/Druid
+#map Darkshore
     .goto Felwood,31.29,24.14
      >> Click on the red crystal
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step <<  Hunter/Druid
+#map Darkshore
     .goto Felwood,20.34,18.12
 .target Sentinel Glynda Nal'Shea
 >>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4813 >> Turn in The Fragments Within
 step << Druid
     #label darn1
+#map Darkshore
     .goto Felwood,19.27,19.14
 .target Laird
 >>Talk to |cFF00FF25Laird|r
     .accept 6343 >> Accept Return to Nessa
 step << Druid
     #era
+#map Darkshore
     .goto Felwood,22.39,29.45
     .xp 14-1890 >> Grind until you are 1890xp away from level 14
 step << Druid
     #som
+#map Darkshore
     .goto Felwood,22.39,29.45
     .xp 14-2645 >> Grind until you are 2645xp away from level 14
 step << Druid
@@ -319,6 +355,7 @@ step << Druid
 
 step << !Hunter
      >> Kill furbolgs
+#map Darkshore
     .goto Felwood,22.39,29.45
     .complete 985,1
     .complete 985,2
@@ -328,6 +365,7 @@ step
 >>Talk to |cFF00FF25Sentinel Tysha Moonblade|r
     .accept 953 >> Accept The Fall of Ameth'Aran
 step
+#map Darkshore
     .goto Felwood,19.64,39.52
     .accept 4722 >> Accept Beached Sea Turtle
 step
@@ -343,19 +381,23 @@ step
      >> Kill ghosts
     .complete 958,1
 step
+#map Darkshore
     .goto Felwood,25.98,40.62
      >> Click on the tablet on the ground
     .complete 953,2
 step
+#map Darkshore
     .goto Felwood,25.66,39.11
      >> Click on the torch at the gazebo
     .complete 957,1
 step
+#map Darkshore
     .goto Felwood,26.71,35.53
      >> Click on the tablet on the ground
     .complete 953,1
 step
     #requires anaya
+#map Darkshore
     .goto Felwood,23.29,36.73
 .target Sentinel Tysha Moonblade
 >>Talk to |cFF00FF25Sentinel Tysha Moonblade|r
@@ -363,6 +405,7 @@ step
 step << Hunter
     #requires ghosts
      >> Kill furbolgs
+#map Darkshore
     .goto Felwood,22.39,29.45
     .complete 985,1
     .complete 985,2
@@ -370,30 +413,36 @@ step << !Hunter
     #era
     #label xp15
     #requires ghosts
+#map Darkshore
     .goto Felwood,22.39,29.45
     .xp 15 >> Grind to level 15
 step <<  Hunter
     #label xp15
     #era
+#map Darkshore
     .goto Felwood,22.39,29.45
     .xp 15.75 >> Grind to level 15 + 75%
 step
     #label xp15
     #som
+#map Darkshore
     .goto Felwood,22.39,29.45
     .xp 15-3245 >> Grind until you are 3245xp away from level 15
 step <<  !Hunter !Druid
+#map Darkshore
     .goto Felwood,31.29,24.14
      >> Click on the red crystal
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
+#map Darkshore
     .goto Felwood,22.24,18.22
 >>Talk to |cFF00FF25Terenthis|r
     .turnin 985 >> Turn in How Big a Threat?
 .target Terenthis
     .accept 986 >> Accept A Lost Master
 step
+#map Darkshore
     .goto Felwood,21.86,18.30
      >> Run upstairs
 .target Sentinel Elissa Starbreeze
@@ -405,21 +454,25 @@ step <<  !Druid !Hunter
 >>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4813 >> Turn in The Fragments Within
 step << Druid
+#map Darkshore
     .goto Felwood,19.27,19.14
 .target Laird
 >>Talk to |cFF00FF25Laird|r
     .accept 6343 >> Accept Return to Nessa
 step
+#map Darkshore
     .goto Felwood,18.10,18.48
 .target Cerellean Whiteclaw
 >>Talk to |cFF00FF25Cerellean Whiteclaw|r
     .turnin 963 >> Turn in For Love Eternal
 step << !Hunter
+#map Darkshore
     .goto Felwood,19.10,20.63
 .target Gwennyth Bly'Leggonde
 >>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Turn in Beached Sea Turtle
 step
+#map Darkshore
     .goto Felwood,18.50,19.87
 .target Gubber Blump
 >>Talk to |cFF00FF25Gubber Blump|r
@@ -427,35 +480,42 @@ step
     >>Turn in the Beached sea turtle quest next to the flight master if you're not yet level 15 << Hunter
 ---?
 step << NightElf
+#map Darkshore
     .goto Felwood,20.80,15.58
 .target Gorbold Steelhand
 >>Talk to |cFF00FF25Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step << !NightElf
+#map Darkshore
     .goto Felwood,20.80,15.58
 .target Gorbold Steelhand
 >>Talk to |cFF00FF25Gorbold Steelhand|r
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
 step
     #completewith next
+#map Darkshore
     .goto Felwood,20.80,15.58
     .vendor 6301 >> Buy Mild Spice and cook herb baked eggs if you don't have 10 points in cooking
 step <<  NightElf
+#map Darkshore
     .goto Felwood,19.98,14.40
 .target Thundris Windweaver
 >>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 958 >> Turn in Tools of the Highborne
 step << !Druid !Hunter
+#map Darkshore
     .goto Felwood,31.29,24.14
      >> Click on the red crystal
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step << !Druid !Hunter
+#map Darkshore
     .goto Felwood,27.70,10.03
 .target Asterion
 >>Talk to |cFF00FF25Asterion|r
     .turnin 957 >> Turn in Bashal'Aran
 step << NightElf
+#map Darkshore
     .goto Felwood,20.94,1.49
     >> Enter the 1st ship by the hole on the hull, loot the chest underwater at the bottom floor of the ship
     >>Be careful as this quest can be difficult
@@ -486,21 +546,25 @@ step
 step
 	#era/som
     #label mbox
+#map Darkshore
     .goto Winterspring,1.42,26.89
      >> Skip this step if you don't have enough moonstalker fangs
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
 step << NightElf Hunter/Druid
+#map Darkshore
     .goto Winterspring,4.82,27.18
 >>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 965 >> Turn in The Tower of Althalaxx
 .target Balthule Shadowstrike
     .accept 966 >> Accept The Tower of Althalaxx
 step << NightElf Hunter/Druid
+#map Darkshore
     .goto Winterspring,6.06,28.81
      >> Kill cultists
     .complete 966,1
 step << NightElf Hunter/Druid
+#map Darkshore
     .goto Winterspring,4.82,27.18
 >>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
@@ -512,6 +576,7 @@ step
     .collect 5469,5,2178,1
 step
     #completewith next
+#map Darkshore
     .goto Winterspring,5.49,36.64,35 >> Head to the cave above the waterfall
 step << Druid
     >>Use your Cliffspring Falls Sampler in the water at the mouth of the cave
@@ -536,11 +601,13 @@ step <<  !NightElf
      #completewith next
     .hs >> Hearth back to Auberdine
 step <<  !NightElf
+#map Darkshore
     .goto Felwood,20.04,16.35
 .target Archaeologist Hollee
 >>Talk to |cFF00FF25Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step <<  !NightElf
+#map Darkshore
     .goto Felwood,19.98,14.40
 .target Thundris Windweaver
 >>Talk to |cFF00FF25Thundris Windweaver|r
@@ -553,6 +620,7 @@ step
     .turnin 2178 >> Turn in Easy Strider Living
     >>This quest requires 10 points in cooking
 step
+#map Darkshore
     .goto Felwood,19.98,14.40
 >>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4762 >> Turn in The Cliffspring River
@@ -565,22 +633,26 @@ step << Druid
 .target Alanndarian Nightsong
     .accept 6123 >> Accept Gathering the Cure
 step
+#map Darkshore
     .goto Felwood,20.80,15.58
 .target Gorbold Steelhand
 >>Talk to |cFF00FF25Gorbold Steelhand|r
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
 step
+#map Darkshore
     .goto Felwood,20.34,18.12
 .target Sentinel Glynda Nal'Shea
 >>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4813 >> Turn in The Fragments Within
 step
+#map Darkshore
     .goto Felwood,19.90,18.40
 >>Talk to |cFF00FF25Barithras Moonshade|r
     .turnin 947 >> Turn in Cave Mushrooms
 .target Barithras Moonshade
     .accept 948 >> Accept Onu
 step
+#map Darkshore
     .goto Felwood,19.78,19.07
      >> Click on the wanted poster outside the inn
     .accept 4740 >> Accept WANTED: Murkdeep!
@@ -591,6 +663,7 @@ step
      >> Fill the Empty Bowl at the moonwell
     .collect 12347,1,4763,1
 step <<  NightElf !Druid
+#map Darkshore
     .goto Felwood,19.27,19.14
 .target Laird
 >>Talk to |cFF00FF25Laird|r
@@ -598,6 +671,7 @@ step <<  NightElf !Druid
 step
     #label end
     #requires bowl
+#map Darkshore
     .goto Felwood,19.10,20.63
 .target Gwennyth Bly'Leggonde
 >>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
@@ -605,6 +679,7 @@ step
     .turnin 4725 >> Turn in Beached Sea Turtle
     .turnin 4722 >> Turn in Beached Sea Turtle << Hunter
 step <<  Druid
+#map Darkshore
     .goto Felwood,22.39,29.45
     .xp 16
 step << Druid
@@ -1011,6 +1086,7 @@ RXPGuides.RegisterGuide([[
 
 step <<  NightElf !Druid
     #completewith next
+#map Darkshore
     .goto Felwood,19.10,20.63
     .fly Teldrassil >> Fly to Teldrassil
 step <<  NightElf !Druid
@@ -1053,22 +1129,26 @@ step <<  NightElf !Druid
     #label start
     .hs >> Hearth back to Auberdine
 step
+#map Darkshore
     .goto Felwood,19.78,19.07
      >> Click on the wanted poster outside the inn
     .accept 4740 >> Accept WANTED: Murkdeep!
 step << NightElf
      #completewith next
+#map Darkshore
     .goto Felwood,20.04,16.35
 .target Archaeologist Hollee
 >>Talk to |cFF00FF25Archaeologist Hollee|r
     .turnin 730 >> Turn in Trouble In Darkshore?
 step
+#map Darkshore
     .goto Felwood,20.04,16.35
      >> The Absent Minded Prospector
 .target Archaeologist Hollee
 >>Talk to |cFF00FF25Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step
+#map Darkshore
     .goto Felwood,19.98,14.40
 >>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4762 >> Turn in The Cliffspring River
@@ -1080,6 +1160,7 @@ step
      >> Fill the Empty Bowl at the moonwell
     .collect 12347,1,4763,1
 step
+#map Darkshore
     .goto Felwood,18.50,19.87
 .target Gubber Blump
 >>Talk to |cFF00FF25Gubber Blump|r
@@ -1123,6 +1204,7 @@ step
     .complete 1003,1
     .isOnQuest 1003
 step
+#map Darkshore
     .goto Felwood,27.00,55.59
 >>Talk to |cFF00FF25Onu|r
     .turnin 952 >> Turn in Grove of the Ancients << NightElf
@@ -1153,10 +1235,12 @@ step
     .complete 945,1
 step
 	#era/som
+#map Darkshore
     .goto Felwood,24.53,60.46
     .turnin 1003 >> Turn in Buzzbox 525
     .isOnQuest 1003
 step
+#map Darkshore
     .goto Felwood,27.00,55.59
 >>Talk to |cFF00FF25Onu|r
     .turnin 950 >> Turn in Return to Onu
@@ -1167,6 +1251,7 @@ step << Hunter
 step << Hunter
     #sticky
     #label prospector
+#map Darkshore
     .goto Felwood,18.08,64.03
 .target Prospector Remtravel
 >>Talk to |cFF00FF25Prospector Remtravel|r
@@ -1198,10 +1283,12 @@ step << Hunter
     .accept 4732 >> Accept Beached Sea Turtle
 step << Hunter
 	#era/som << Dwarf
+#map Darkshore
     .goto Felwood,13.47,64.01
     .accept 4731 >> Accept Beached Sea Turtle
 step << Hunter
 	#era/som << Dwarf
+#map Darkshore
     .goto Felwood,14.62,60.72
     .accept 4730 >> Accept Beached Sea Creature
 step
@@ -1215,9 +1302,11 @@ step
     .complete 4740,1
 step
     #label south1
+#map Darkshore
     .goto Felwood,18.41,49.43
     .accept 4728 >> Accept Beached Sea Creature
 step << !Druid
+#map Darkshore
     .goto Felwood,19.64,39.52
     .accept 4722 >> Accept Beached Sea Turtle
 step << Druid
@@ -1245,6 +1334,7 @@ step << Hunter
     .turnin 4733 >> Turn in Beached Sea Creature
 step
     #label south2
+#map Darkshore
     .goto Felwood,18.50,19.87
 .target Gubber Blump
 >>Talk to |cFF00FF25Gubber Blump|r
@@ -1252,23 +1342,27 @@ step
     >>Skip this step if you haven't collected all 6 items
     .isQuestComplete 1138
 step
+#map Darkshore
     .goto Felwood,20.34,18.12
 .target Sentinel Glynda Nal'Shea
 >>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4740 >> Turn in WANTED: Murkdeep!
 step
+#map Darkshore
     .goto Felwood,21.63,18.15
 >>Talk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2138 >> Turn in Cleansing of the Infected
 .target Tharnariun Treetender
     .accept 2139 >> Accept Tharnariun's Hope
 step << Hunter
+#map Darkshore
     .goto Felwood,20.04,16.35
 .target Archaeologist Hollee
 >>Talk to |cFF00FF25Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
     .isQuestComplete 731
 step << Hunter
+#map Darkshore
     .goto Felwood,20.04,16.35
 .target Archaeologist Hollee
 >>Talk to |cFF00FF25Archaeologist Hollee|r
@@ -1281,6 +1375,7 @@ step << Druid
 .target Alanndarian Nightsong
     .accept 6124 >> Accept Curing the Sick
 step
+#map Darkshore
     .goto Felwood,27.70,10.03
 .target Asterion
 >>Talk to |cFF00FF25Asterion|r
@@ -1315,30 +1410,36 @@ step << Hunter
     >>Skip this step if the area is too crowded
 step
 	#era/som
+#map Darkshore
     .goto Winterspring,1.42,26.89
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
 step
+#map Darkshore
     .goto Winterspring,4.82,27.18
 >>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 965 >> Turn in The Tower of Althalaxx
 .target Balthule Shadowstrike
     .accept 966 >> Accept The Tower of Althalaxx
 step
+#map Darkshore
     .goto Winterspring,6.06,28.81
      >> Kill cultists. Loot them for Parchments
     .complete 966,1
 step
+#map Darkshore
     .goto Winterspring,4.82,27.18
 >>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
 .target Balthule Shadowstrike
     .accept 967 >> Accept The Tower of Althalaxx
 step
+#map Darkshore
     .goto Winterspring,7.52,23.26
      >> Look for small relics on the ground
     .complete 951,1
 step  << !Warrior !Paladin !Rogue !Druid
+#map Darkshore
     .goto Winterspring,6.37,16.66
 .target Gelkak Gyromast
 >>Talk to |cFF00FF25Gelkak Gyromast|r
@@ -1370,12 +1471,14 @@ step  << !Warrior !Paladin !Rogue !Druid
     .complete 2098,3
 step  << !Warrior !Paladin !Rogue !Druid
     #requires foreststriders
+#map Darkshore
     .goto Winterspring,6.37,16.66
 >>Talk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2098 >> Turn in Gyromast's Retrieval
 .target Gelkak Gyromast
     .accept 2078 >> Accept Gyromast's Revenge
 step << !Druid
+#map Darkshore
     .goto Winterspring,3.10,20.90
     .accept 4727 >> Accept Beached Sea Turtle
 step << !Druid
@@ -1383,6 +1486,7 @@ step << !Druid
      >> Finish off Fruit of the Sea
     .complete 1138,1
 step  << !Warrior !Paladin !Rogue !Druid
+#map Darkshore
     .goto Winterspring,5.59,21.09
      >> Speak with The Threshwackonator 4100
     >>Escort it back to Gyromast and kill it
@@ -1390,6 +1494,7 @@ step  << !Warrior !Paladin !Rogue !Druid
     .complete 2078,1
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> Click here for video reference
 step  << !Warrior !Paladin !Rogue !Druid
+#map Darkshore
     .goto Winterspring,6.37,16.66
 .target Gelkak Gyromast
 >>Talk to |cFF00FF25Gelkak Gyromast|r
@@ -1399,6 +1504,7 @@ step  << !Warrior !Paladin !Rogue !Druid
     #sticky
     .destroy 7442 >> Delete Gyromast's Key from your inventory
 step << Druid
+#map Darkshore
     .goto Winterspring,3.10,20.90
     .accept 4727 >> Accept Beached Sea Turtle
 step << Druid
@@ -1419,11 +1525,13 @@ step <<  Dwarf Hunter
     #completewith next
     +Grind until your HS cooldown is <9 minutes then run back to Auberdine
 step <<  Dwarf Hunter
+#map Darkshore
     .goto Felwood,19.98,14.40
 .target Thundris Windweaver
 >>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4763 >> Turn in The Blackwood Corrupted
 step <<  Dwarf Hunter
+#map Darkshore
     .goto Felwood,21.63,18.15
 .target Tharnariun Treetender
 >>Talk to |cFF00FF25Tharnariun Treetender|r
@@ -1474,16 +1582,19 @@ step
      #completewith next
     .hs >> Hearth back to Auberdine
 step
+#map Darkshore
     .goto Felwood,19.10,20.63
 .target Gwennyth Bly'Leggonde
 >>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4727 >> Turn in Beached Sea Turtle
 step
+#map Darkshore
     .goto Felwood,18.50,19.87
 .target Gubber Blump
 >>Talk to |cFF00FF25Gubber Blump|r
     .turnin 1138 >> Turn in Fruit of the Sea
 step
+#map Darkshore
     .goto Felwood,19.98,14.40
 .target Thundris Windweaver
 >>Talk to |cFF00FF25Thundris Windweaver|r
@@ -1491,6 +1602,7 @@ step
 step <<  NightElf Hunter
     .vendor  >> Buy extra arrows/supplies
 step
+#map Darkshore
     .goto Felwood,21.63,18.15
 .target Tharnariun Treetender
 >>Talk to |cFF00FF25Tharnariun Treetender|r
@@ -1577,17 +1689,20 @@ RXPGuides.RegisterGuide([[
 step
 	>> Talk to |cFF00FF25Gwennyth Bly'Leggonde|r.
 	.target Gwennyth Bly'Leggonde
+#map Darkshore
     .goto Felwood,19.10,20.63
     >>Head to Auberdine
     .accept 3524 >> Accept Washed Ashore
 step <<  !NightElf
 	>> Talk to |cFF00FF25Caylais Moonfeather|r.
 	.target Caylais Moonfeather
+#map Darkshore
     .goto Felwood,19.10,20.63
     .fp Auberdine >> Get the Auberdine flight path
 step <<  NightElf
 	>> Talk to |cFF00FF25Caylais Moonfeather|r.
 	.target Caylais Moonfeather
+#map Darkshore
     .goto Felwood,19.27,19.14
     .turnin 6342 >> Turn in Flight to Auberdine
     .accept 6343 >> Accept Return to Nessa
@@ -1600,12 +1715,14 @@ step
     >>Go upstairs to the top floor and talk to |cFF00FF25Wizbang Cranktoggle|r.
 	.target Wizbang Cranktoggle
 	.goto Darkshore,36.7,43.9,8,0
+#map Darkshore
     .goto Felwood,19.51,18.97
     .accept 983 >> Accept Buzzbox 827
 step
 	>> Talk to |cFF00FF25Tharnariun Treetender|r and |cFF00FF25Terenthis|r
 	.target Tharnariun Treetender
 	.target Terenthis
+#map Darkshore
     .goto Felwood,21.63,18.15,20,0
 	.goto Darkshore,39.4,43.5
     .accept 2118 >> Accept Plagued Lands
@@ -1618,10 +1735,12 @@ step
 	 .target Young Reef Crawler
     .complete 983,1
 step
+#map Darkshore
     .goto Felwood,18.81,26.69
      >> Loot the |cFFDB2EEFBeached Sea Creature|r
     .complete 3524,1
 step
+#map Darkshore
     .goto Felwood,22.39,29.45
      >> Head towards the furbolg camp and explore it
      .complete 984,1
@@ -1632,26 +1751,31 @@ step
     .complete 2118,1
     .unitscan Rabid Thistle Bear
 step
+#map Darkshore
     .goto Felwood,19.13,21.39
      >> Finish killing |cFF00BCD4Crabs|r along the coast. Loot them for their |cFF00BCD4Crawler Legs|r
     .complete 983,1
 step
+#map Darkshore
     .goto Felwood,19.13,21.39
     >>Click the |cFFDB2EEFBuzzbox|r
     .turnin 983 >> Turn in Buzzbox 827
 step
 	#era/som
+#map Darkshore
     .goto Felwood,19.13,21.39
     .accept 1001 >> Accept Buzzbox 411
 step
 	>> Talk to |cFF00FF25Gwennyth Bly'Leggonde|r.
 	.target Gwennyth Bly'Leggonde
+#map Darkshore
     .goto Felwood,19.10,20.63
     .turnin 3524 >> Turn in Washed Ashore
     .accept 4681 >> Accept Washed Ashore
 step
     >>On the Dock talk to |cFF00FF25Cerellean Whiteclaw|r.
 	.target Cerellean Whiteclaw
+#map Darkshore
     .goto Felwood,18.10,18.48
     .accept 963 >> Accept For Love Eternal
 step
@@ -1669,6 +1793,7 @@ step
     .goto Darkshore,33.70,42.45,20,0
 	.goto Darkshore,32.4,43.8,30 >> Run up to the docks then jump in the water at the intersection
 step
+#map Darkshore
     .goto Felwood,13.63,21.44
     >>Click on the |cFFDB2EEFSkeletal Sea Turtle Head|r
     .complete 4681,1
@@ -1676,28 +1801,33 @@ step
     #label washed1
 	>> Return to |cFF00FF25Gwennyth Bly'Leggonde|r.
 	.target Gwennyth Bly'Leggonde
+#map Darkshore
     .goto Felwood,19.10,20.63
     .turnin 4681 >> Turn in Washed Ashore
 step
 	>> Talk to |cFF00FF25Barithras Moonshade
 	.target Barithras Moonshade
+#map Darkshore
     .goto Felwood,19.90,18.40
     .accept 947 >> Accept Cave Mushrooms
 step
 	>> Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r.
 	.target Sentinel Glynda Nal'Shea
+#map Darkshore
     .goto Felwood,20.34,18.12
     .accept 4811 >> Accept The Red Crystal
 step
 step
 	>> Talk to |cFF00FF25Tharnariun Treetender|r
 	.target Tharnariun Treetender
+#map Darkshore
     .goto Felwood,21.63,18.15
     .turnin 2118 >> Turn in Plagued Lands
     .accept 2138 >> Accept Cleansing of the Infected
 step
 	>> Talk to |cFF00FF25Terenthis|r
 	.target Terenthis
+#map Darkshore
     .goto Felwood,22.24,18.22
     .turnin 984 >> Turn in How Big a Threat?
     .accept 985 >> Accept How Big a Threat?
@@ -1705,11 +1835,13 @@ step
 step
 	>> Talk to |cFF00FF25Gorbold Steelhand|r
 	.target Gorbold Steelhand
+#map Darkshore
     .goto Felwood,20.80,15.58
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step
 	>> Talk to |cFF00FF25Thundris Windweaver|r
 	.target Thundris Windweaver
+#map Darkshore
     .goto Felwood,19.98,14.40
     .turnin 4761 >> Turn in Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River
@@ -1730,6 +1862,7 @@ step
 	.target Darkshore Thresher
     .complete 1001,1
 step
+#map Darkshore
     .goto Felwood,20.94,1.49
     >> Enter the 1st ship by the hole in the hull on the north side of the ship, loot the |cFFDB2EEFlockbox|r underwater at the bottom floor of the ship
     >> |cFFFCDC00Be careful as this quest can be difficult|r
@@ -1744,11 +1877,13 @@ step
     #requires threshers
     #label mbox1
 	>> Click on the |cFFDB2EEFbuzzbox|r
+#map Darkshore
     .goto Felwood,25.19,1.29
     .turnin 1001 >> Turn in Buzzbox 411
     .accept 1002 >> Accept Buzzbox 323
 step
 	>> Click on the |cFFDB2EEFBeached Sea Creature|r
+#map Darkshore
     .goto Felwood,25.15,4.61
     .accept 4723 >> Accept Beached Sea Creature
 step
@@ -1784,10 +1919,12 @@ step
     #label bears1
 	>> Talk to |cFF00FF25Asterion|r
 	.target Asterion
+#map Darkshore
     .goto Felwood,27.70,10.03
     .turnin 954 >> Turn in Bashal'Aran
     .accept 955 >> Accept Bashal'Aran
 step
+#map Darkshore
     .goto Felwood,29.13,12.34
      >> Kill |cFF00BCD4Grellkins|r. Loot them for their |cFF00BCD4Grell Earrings|r
 	 .target Vile Sprite
@@ -1796,10 +1933,12 @@ step
 step
 	>> Talk to |cFF00FF25Asterion|r
 	.target Asterion
+#map Darkshore
     .goto Felwood,27.70,10.03
     .turnin 955 >> Turn in Bashal'Aran
     .accept 956 >> Accept Bashal'Aran
 step
+#map Darkshore
     .goto Felwood,29.60,12.52
      >> Kill |cFF00BCD4Deth'ryll Satyrs|r. Loot them for the |cFF00BCD4Ancient Moonstone Seal|r
 	 .target Deth'ryll Satyr
@@ -1807,6 +1946,7 @@ step
 step
 	>> Talk to |cFF00FF25Asterion|r
 	.target Asterion
+#map Darkshore
     .goto Felwood,27.70,10.03
     .turnin 956 >> Turn in Bashal'Aran
     .accept 957 >> Accept Bashal'Aran
@@ -1816,6 +1956,7 @@ step
     .collect 6889,9,2178
 	.skill cooking,10,1
 step
+#map Darkshore
     .goto Felwood,31.29,24.14
      >> Run up to The Red Crystal in the mountains
      .complete 4811,1
@@ -1847,14 +1988,17 @@ step
 	 .target Cursed Highborne
     .complete 958,1
 step
+#map Darkshore
     .goto Felwood,26.71,35.53
      >> Click on the |cFFDB2EEFtablet|r on the ground
     .complete 953,1
 step
+#map Darkshore
     .goto Felwood,25.66,39.11
      >> Click on the |cFFDB2EEFgreen brazier|r at the gazebo
     .complete 957,1
 step
+#map Darkshore
     .goto Felwood,25.98,40.62
      >> Click on the |cFFDB2EEFtablet|r on the ground
     .complete 953,2
@@ -1862,6 +2006,7 @@ step
     #requires ghosts
 	>> Talk to |cFF00FF25Sentinel Tysha Moonblade|r
 	.target Sentinel Tysha Moonblade
+#map Darkshore
     .goto Felwood,23.29,36.73
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step
@@ -1890,11 +2035,13 @@ step
 step
     #requires ghosts
 	>> Click the |cFFDB2EEFBeached Sea Creature|r
+#map Darkshore
     .goto Felwood,18.41,49.43
     .accept 4728 >> Accept Beached Sea Creature
 step
     #label Bears
 	>> Click the |cFFDB2EEFBeached Sea Turtle|r
+#map Darkshore
     .goto Felwood,19.64,39.52
     .accept 4722 >> Accept Beached Sea Turtle
 step
@@ -1913,6 +2060,7 @@ step
 	.target Rabid Thistle Bear
     .collect 5469,5,2178,1
 step
+#map Darkshore
     .goto Felwood,22.39,29.45
      >> Kill |cFFFF5722Blackwood Pathfinders|r and |cFFFF5722Blackwood Windtalkers|r
 	 >> |cFFFCDC00Move about 10 yards away from the Windtalkers when they cast Gust of Wind to dodge it. Be careful as Pathfinders Thrash.|r (3 attacks at once every 10s or so)
@@ -1923,11 +2071,13 @@ step
 step
 	>> Talk to |cFF00FF25Gubber Blump|r
 	.target Gubber Blump
+#map Darkshore
     .goto Felwood,18.50,19.87
     .accept 1138 >> Accept Fruit of the Sea
 step
 	>> Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
 	.target Gwennyth Bly'Leggonde
+#map Darkshore
     .goto Felwood,19.10,20.63
     .turnin 4723 >> Turn in Beached Sea Creature
     .turnin 4728 >> Turn in Beached Sea Creature
@@ -1937,23 +2087,27 @@ step
 	.isQuestComplete 963
     >>On the dock talk to |cFF00FF25Cerellean Whiteclaw|r
 	.target Cerellean Whiteclaw
+#map Darkshore
     .goto Felwood,18.10,18.48
     .turnin 963 >> Turn in For Love Eternal
 step
 	>> Talk to |cFF00FF25Archaeologist Hollee|r
 	.target Archaeologist Hollee
+#map Darkshore
     .goto Felwood,20.04,16.35
     .accept 729 >> Accept The Absent Minded Prospector
 step
     #completewith ezstrider
 	>> Talk to |cFF00FF25Gorbold Steelhand|r
 	.target Gorbold Steelhand
+#map Darkshore
     .goto Felwood,20.80,15.58
     .vendor 6301 >> Buy |cFF0E8312Mild Spice| and cook Herb Baked Eggs until you hit 10 points in cooking
 	.skill cooking 10,1
 step
 	>> Talk to |cFF00FF25Gorbold Steelhand|r
 	.target Gorbold Steelhand
+#map Darkshore
     .goto Felwood,20.80,15.58
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
 step
@@ -1967,6 +2121,7 @@ step
 step
 	>> Talk to |cFF00FF25Thundris Windweaver|r
 	.target Thundris Windweaver
+#map Darkshore
     .goto Felwood,19.98,14.40
     .turnin 958 >> Turn in Tools of the Highborne
     .turnin 4762 >> Turn in The Cliffspring River
@@ -1974,6 +2129,7 @@ step
 step
 	>> Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
+#map Darkshore
     .goto Felwood,20.34,18.12
     .turnin 4811 >> Turn in The Red Crystal
     .accept 4812 >> Accept As Water Cascades
@@ -1985,21 +2141,25 @@ step
 step
 	>> Talk to |cFF00FF25Tharnariun Treetender|r
 	.target Tharnariun Treetender
+#map Darkshore
     .goto Felwood,21.63,18.15
     .turnin 2138 >> Turn in Cleansing of the Infected
     .accept 2139 >> Accept Tharnariun's Hope
 step
 	>> Talk to |cFF00FF25Terenthis|r
 	.target Terenthis
+#map Darkshore
     .goto Felwood,22.24,18.22
     .turnin 985 >> Turn in How Big a Threat?
     .accept 986 >> Accept A Lost Master
 step
+#map Darkshore
     .goto Felwood,21.86,18.30
      >> Run upstairs and talk to |cFF00FF25Sentinel Elissa Starbreeze|r
 	 .target Sentinel Elissa Starbreeze
     .accept 965 >> Accept The Tower of Althalaxx
 step
+#map Darkshore
     .goto Felwood,31.29,24.14
      >> Click on the |cFFDB2EEFRed Crystal|r
     .turnin 4812 >> Turn in As Water Cascades
@@ -2007,6 +2167,7 @@ step
 step
 	>> Talk to |cFF00FF25Asterion|r
 	.target Asterion
+#map Darkshore
     .goto Felwood,27.70,10.03
     .turnin 957 >> Turn in Bashal'Aran
 step << Paladin
@@ -2046,6 +2207,7 @@ step
     .complete 4763,1
 step
     #completewith next
+#map Darkshore
     .goto Winterspring,5.49,36.64,45 >> Head to the cave above the waterfall
 step
     #label Mushrooms
@@ -2058,6 +2220,7 @@ step
 step
 	>> Talk to |cFF00FF25Balthule Shadowstrike|r
 	.target Balthule Shadowstrike
+#map Darkshore
     .goto Winterspring,4.82,27.18
     .turnin 965 >> Turn in The Tower of Althalaxx
     .accept 966 >> Accept The Tower of Althalaxx
@@ -2072,10 +2235,12 @@ step << Paladin
 step
 	>> Talk to |cFF00FF25Balthule Shadowstrike|r
 	.target Balthule Shadowstrike
+#map Darkshore
     .goto Winterspring,4.82,27.18
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
 step  << !Warrior !Paladin !Rogue !Druid
+#map Darkshore
     .goto Winterspring,6.37,16.66
 .target Gelkak Gyromast
 >>Talk to |cFF00FF25Gelkak Gyromast|r
@@ -2111,12 +2276,14 @@ step
     .complete 986,1
 step  << !Warrior !Paladin !Rogue !Druid
     #requires ForestKey
+#map Darkshore
     .goto Winterspring,6.37,16.66
 >>Talk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2098 >> Turn in Gyromast's Retrieval
 .target Gelkak Gyromast
     .accept 2078 >> Accept Gyromast's Revenge  << !Warrior !Paladin !Rogue
 step  << !Warrior !Paladin !Rogue !Druid
+#map Darkshore
     .goto Winterspring,5.59,21.09
     >> Speak with The Threshwackonator 4100
     >>Escort it back to Gyromast and kill it
@@ -2124,6 +2291,7 @@ step  << !Warrior !Paladin !Rogue !Druid
     .complete 2078,1
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> Click here for video reference
 step  << !Warrior !Paladin !Rogue !Druid
+#map Darkshore
     .goto Winterspring,6.37,16.66
 .target Gelkak Gyromast
 >>Talk to |cFF00FF25Gelkak Gyromast|r
@@ -2134,6 +2302,7 @@ step   << !Warrior !Paladin !Rogue !Druid
     .destroy 7442>> Throw away Gyromast's Key
 step
 	>> Click the |cFFDB2EEFBeached Sea Turtle|r
+#map Darkshore
     .goto Winterspring,3.10,20.90
     .accept 4727 >> Accept Beached Sea Turtle
 step
@@ -2146,6 +2315,7 @@ step
 step
 	#era/som
 	>> Click on the |cFFDB2EEFBuzzbox|r
+#map Darkshore
     .goto Winterspring,1.42,26.89
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
@@ -2170,31 +2340,37 @@ step
 step
 	>> Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
 	.target Gwennyth Bly'Leggonde
+#map Darkshore
     .goto Felwood,19.10,20.63
     .turnin 4727 >> Turn in Beached Sea Turtle
 step
 	>> Talk to |cFF00FF25Gubber Blump|r
 	.target Gubber Blump
+#map Darkshore
     .goto Felwood,18.50,19.87
     .turnin 1138 >> Turn in Fruit of the Sea
 step
+#map Darkshore
     .goto Felwood,19.78,19.07
      >> Click on the |cFFDB2EEFWanted Poster|r outside the inn
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
 	>> Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
+#map Darkshore
     .goto Felwood,20.34,18.12
     .turnin 4813 >> Turn in The Fragments Within
 step
 	>> Talk to |cFF00FF25Barithras Moonshade|r
 	.target Barithras Moonshade
+#map Darkshore
     .goto Felwood,19.90,18.40
     .turnin 947 >> Turn in Cave Mushrooms
     .accept 948 >> Accept Onu
 step
 	>> Talk to |cFF00FF25Tharnariun Treetender|r
 	.target Tharnariun Treetender
+#map Darkshore
     .goto Felwood,21.63,18.15
     .turnin 2139 >> Turn in Tharnariun's Hope
 step
@@ -2213,6 +2389,7 @@ step
 step
 	>> Talk to |cFF00FF25Thundris Windweaver|r
 	.target Thundris Windweaver
+#map Darkshore
     .goto Felwood,19.98,14.40
     .turnin 4763 >> Turn in The Blackwood Corrupted
 step
@@ -2269,6 +2446,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     #label prospector
+#map Darkshore
     .goto Felwood,18.08,64.03
 .target Prospector Remtravel
 >>Talk to |cFF00FF25Prospector Remtravel|r
@@ -2309,10 +2487,12 @@ step
     .accept 4732 >> Accept Beached Sea Turtle
 step
 	#era/som
+#map Darkshore
     .goto Felwood,13.47,64.01
     .accept 4731 >> Accept Beached Sea Turtle
 step
 	#era/som
+#map Darkshore
     .goto Felwood,14.62,60.72
     .accept 4730 >> Accept Beached Sea Creature
 step
@@ -2321,6 +2501,7 @@ step
     .complete 1003,1
 step
 	#era/som
+#map Darkshore
     .goto Felwood,24.53,60.46
     .turnin 1003 >> Turn in Buzzbox 525
 step
@@ -2358,11 +2539,13 @@ step
      >> Wait for the RP dialogue to end
      .complete 995,1
 step
+#map Darkshore
     .goto Felwood,27.00,55.59
 .target Onu
 >>Talk to |cFF00FF25Onu|r
     .turnin 951 >> Turn in Mathystra Relics
 step
+#map Darkshore
     .goto Felwood,27.96,55.76
     >>Speak to Kerlonian and start the escort quest
     >>If he's not there, you can skip this quest (can take up to 25 minutes to respawn depending on other players)
@@ -2601,6 +2784,7 @@ step <<  !Dwarf/!Hunter
     .goto Ashenvale,34.40,48.00
     .fly Darkshore>>Fly to Darkshore
 step
+#map Darkshore
     .goto Felwood,20.04,16.35
 >>Talk to |cFF00FF25Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
@@ -2610,12 +2794,14 @@ step
     #completewith end
     .vendor >> Restock/Resupply
 step
+#map Darkshore
     .goto Felwood,22.24,18.22
 .target Terenthis
 >>Talk to |cFF00FF25Terenthis|r
     .turnin 995 >> Turn in Escape Through Stealth
     .isOnQuest 995
 step
+#map Darkshore
     .goto Felwood,22.24,18.22
 .target Terenthis
 >>Talk to |cFF00FF25Terenthis|r
@@ -3459,6 +3645,7 @@ step
     .isOnQuest 1003
 step <<  NightElf
      #completewith next
+#map Darkshore
     .goto Felwood,27.00,55.59
 .target Onu
 >>Talk to |cFF00FF25Onu|r
@@ -3466,6 +3653,7 @@ step <<  NightElf
 step
 	>> Talk to |cFF00FF25Onu|r
 	.target Onu
+#map Darkshore
     .goto Felwood,27.00,55.59
     .turnin 948 >> Turn in Onu
     .accept 944 >> Accept The Master's Glaive
@@ -3499,6 +3687,7 @@ step
     #completewith next
 	>> Talk to |cFF00FF25Prospector Remtravel|r
 	.target Prospector Remtravel
+#map Darkshore
     .goto Felwood,18.08,64.03
     .turnin 729 >> Turn in The Absent Minded Prospector
 step
@@ -3519,10 +3708,12 @@ step
     .accept 4732 >> Accept Beached Sea Turtle
 step
 	>>Loot the |cFFDB2EEFBeached Sea Turtle|r
+#map Darkshore
     .goto Felwood,13.47,64.01
     .accept 4731 >> Accept Beached Sea Turtle
 step
 	>>Loot the |cFFDB2EEFBeached Sea Creature|r
+#map Darkshore
     .goto Felwood,14.62,60.72
     .accept 4730 >> Accept Beached Sea Creature
 step
@@ -3541,6 +3732,7 @@ step
     .isOnQuest 1003
 step
 	#era/som
+#map Darkshore
     .goto Felwood,24.53,60.46
 	>> Talk to the |cFFDB2EEFbuzzbox|r
     .turnin 1003 >> Turn in Buzzbox 525
@@ -3555,17 +3747,20 @@ step
      >> Wait until the RP sequence is over
     .complete 995,1
 step
+#map Darkshore
     .goto Felwood,27.00,55.59
 .target Onu
 >>Talk to |cFF00FF25Onu|r
     .turnin 951 >> Turn in Mathystra Relics
     .isQuestComplete 951
 step
+#map Darkshore
     .goto Felwood,27.00,55.59
 .target Onu
 >>Talk to |cFF00FF25Onu|r
     .turnin 950 >> Turn in Return to Onu
 step
+#map Darkshore
     .goto Felwood,27.96,55.76
     >>Speak to |cFF00FF25Kerlonian Evershade|r and start the escort quest
 	.target Kerlonian Evershade
