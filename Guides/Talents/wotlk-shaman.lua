@@ -8,7 +8,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 80
 level
-    .talent 16259
+    .talent 2,1
 level
     .talent 16295
 level

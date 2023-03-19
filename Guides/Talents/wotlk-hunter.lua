@@ -20,19 +20,19 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 80
 level
-    .talent 19552
-    .pettalent 61682,2,3
+    .talent 2,1,1
+    .pettalent 61682
 level
-    .talent 19553
-    .pettalent 61683,2,3
+    .talent 2,1,2
+    .pettalent 61683
 level
-    .talent 19554
+    .talent 2,1,3
     .pettalent
 level
-    .talent 19555
+    .talent 2,1,4
     .pettalent
 level
-    .talent 19556
+    .talent 2,1,5
     .pettalent
 
 level =80

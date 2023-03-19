@@ -15,7 +15,9 @@ end
 local fmt, sgmatch, strsplittable = string.format, string.gmatch, strsplittable
 local tinsert = tinsert
 local UnitLevel = UnitLevel
-local GetPetTalentTree = GetPetTalentTree
+local GetPetTalentTree, GetUnspentTalentPoints, GetGroupPreviewTalentPointsSpent =
+    _G.GetPetTalentTree, _G.GetUnspentTalentPoints,
+    _G.GetGroupPreviewTalentPointsSpent
 
 local L = addon.locale.Get
 
@@ -71,8 +73,10 @@ end
 function addon.talents:ADDON_LOADED(_, loadedAddon)
     -- Talent frame/globals get loaded on demand when it's first open
     if loadedAddon == "Blizzard_TalentUI" then
-        _G.PlayerTalentFrame:HookScript("OnShow",
-                                        function() addon.talents:HookUI() end)
+        _G.PlayerTalentFrame:HookScript("OnShow", function()
+            addon.talents:HookUI()
+            addon.talents:DrawTalents()
+        end)
 
         self:UnregisterEvent("ADDON_LOADED")
     end
@@ -81,13 +85,16 @@ end
 function addon.talents:HookUI()
     local iconReference = {}
 
-    if _G.PlayerSpecTab3 then -- Wrath hunter regardless of dual-spec
+    -- Disable if other addons replace talents
+    -- Talented
+
+    if _G.PlayerSpecTab3 and _G.PlayerSpecTab3:IsShown() then -- Wrath hunter regardless of dual-spec
         iconReference.frame = _G.PlayerSpecTab3
 
         -- Offset RXP button as much as Tab2 is from Tab1
         _, _, _, _, iconReference.offsetY = _G.PlayerSpecTab3:GetPoint()
 
-    elseif _G.PlayerSpecTab2 then -- Dual spec non-hunter
+    elseif _G.PlayerSpecTab2 and _G.PlayerSpecTab2:IsShown() then -- Dual spec non-hunter
         iconReference.frame = _G.PlayerSpecTab2
 
         -- Offset RXP button as much as Tab2 is from Tab1
@@ -254,58 +261,80 @@ function addon.talents.functions.retrain()
     -- If denied, don't prompt and just disable all predictions
 end
 
-function addon.talents.functions.talent(self)
-    -- self is lineArgs or step
-    if type(self) == "string" then -- on parse
-        local element = {talents = {}}
-        local args = self
+function addon.talents.functions.talent(element)
+    if type(element) == "string" then -- on parse
+        local e = {talent = {}}
+        local args = element
         -- Strip whitespace
         args = args:gsub("%s*,%s*", ",")
+
+        -- TODO tooltip on
         -- [<<%s*(.+)]?
 
-        for arg in sgmatch(args, "[^,]+") do
+        local tier, column, rank
+        -- optional tiers with ; delimiter
+        for arg in sgmatch(args, "[^;]+") do
+            tier, column, rank = strsplit(arg)
             -- print("Inserting talent", arg)
-            tinsert(element.talents, tonumber(arg))
+            tinsert(e.talent, {tier = tier, column = column, rank = rank})
         end
 
-        return element
+        return e
     end
 
-    if self.element.completed then return end
-
-    for talentID in ipairs(self.element.talents) do
-        -- success = LearnTalent(talentID)
-        print("Would check if", talentID, "is trained")
+    -- GetTalentPrereqs(tabIndex, talentIndex)
+    -- LearnTalent(tabIndex, talentIndex)
+    for _, talentInfo in ipairs(element.talent) do
+        -- success = LearnTalent(talentInfo)
+        print("Would check if", talentInfo, "is trained")
 
         -- TODO Check if already learned
-        if false then self.element.completed = true end
     end
 
 end
 
-function addon.talents.functions.glyph() end
+function addon.talents.functions.glyph(element) end
 
 -- Which comma value .pettalent to choose
 local petSpecLookup = {['Ferocity'] = 1, ['Cunning'] = 2, ['Tenacity'] = 3}
 
-function addon.talents.functions.pettalent(self)
-    -- TODO pet families
-    if type(self) == "string" then -- on parse
+function addon.talents.functions.pettalent(element)
+    if type(element) == "string" then -- on parse
         -- ferocity, cunning, tenacity
-        local element = {petTalent = {}}
+        local e = {pettalent = {}}
         -- Strip whitespace
-        local args = strsplittable(',', self:gsub("%s*,%s*", ","))
+        local args = strsplittable(',', element:gsub("%s*,%s*", ","))
         -- [<<%s*(.+)]?
 
-        element.petTalent = args[petSpecLookup[GetPetTalentTree()]]
+        e.pettalent = args[petSpecLookup[GetPetTalentTree()]]
 
-        print("Pet talent", element.petTalent)
+        -- print("Pet talent", e.pettalent)
 
-        return element
+        return e
     end
 end
 
 function addon.talents:PLAYER_TALENT_UPDATE()
+    -- TODO support dual spec swaps when leveling, e.g. solo vs dungeon spam specs
+    -- Rescan talents to validate state
+    print(":DrawTalents()")
+end
+
+function addon.talents:PET_TALENT_UPDATE()
+    -- TODO support dual spec swaps when leveling, e.g. solo vs dungeon spam specs
+    -- Rescan talents to validate state
+    print(":DrawTalents()")
+end
+
+function addon.talents:PREVIEW_TALENT_POINTS_CHANGED(_, talentIndex, tabIndex,
+                                                     groupIndex, points)
+    -- TODO support dual spec swaps when leveling, e.g. solo vs dungeon spam specs
+    -- Rescan talents to validate state
+end
+
+function addon.talents:PREVIEW_PET_TALENT_POINTS_CHANGED(_, talentIndex,
+                                                         tabIndex, groupIndex,
+                                                         points)
     -- TODO support dual spec swaps when leveling, e.g. solo vs dungeon spam specs
     -- Rescan talents to validate state
 end
@@ -328,6 +357,11 @@ function addon.talents:UpdateSelectedGuide(key)
     addon.settings.db.profile.activeTalentGuide = key
 end
 
+function addon.talents:DrawTalents()
+    -- TODO draw talent highlight previews of path
+    -- print("Would draw talents")
+end
+
 function addon.talents:ProcessTalents()
     local playerLevel = UnitLevel("player") or 1
 
@@ -342,5 +376,40 @@ function addon.talents:ProcessTalents()
         return
     end
 
-    -- TODO process
+    local stepLevel, remainingPoints
+
+    for stepNum, step in ipairs(guide.steps) do
+        stepLevel = guide.minLevel + stepNum - 1
+        print("Evaluating step", stepLevel, "for level",
+              guide.minLevel + stepNum)
+
+        remainingPoints = GetUnspentTalentPoints() -
+                              GetGroupPreviewTalentPointsSpent()
+
+        if (stepLevel > playerLevel) or remainingPoints == 0 then
+            print("Reached end")
+            self:DrawTalents()
+
+            return
+        end
+
+        for _, element in ipairs(step.elements) do
+            for tag, _ in pairs(element) do
+                -- print("Evaluating tag", tag)
+                if self.functions[tag] then
+                    -- print("Executing tag function", tag)
+                    self.functions[tag](element)
+                else
+                    addon.error(L("Error parsing guide") .. " " ..
+                                    (guide.name or 'Unknown') ..
+                                    ": Invalid function call (." .. tag .. ")\n" ..
+                                    stepNum)
+                end
+
+            end
+
+        end
+
+    end
+
 end
