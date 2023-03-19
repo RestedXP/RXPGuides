@@ -143,8 +143,10 @@ function addon.settings:InitializeSettings()
             textPickColor = addon.guideTextColors.default['RXP_PICK_'],
             textBuyColor = addon.guideTextColors.default['RXP_BUY_'],
 
-            -- Talents
-            activeTalentGuide = nil
+            -- Talents - TODO UI
+            enableTalentGuides = true,
+            activeTalentGuide = nil,
+            previewTalents = true
         }
     }
 
