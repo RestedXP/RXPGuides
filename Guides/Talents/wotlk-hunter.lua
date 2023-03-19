@@ -17,24 +17,24 @@ if addon.player.class ~= "HUNTER" then return end
 addon.talents.RegisterGuide([[
 #name Beast Mastery
 #next Marksman Raiding
-#minLevel 10
+#minLevel 60
 #maxLevel 80
 level
-    .talent 2,1,1
-    .pettalent 61682
+    .talent 1,1,2,1
+    .pettalent 1,1,1
 level
-    .talent 2,1,2
-    .pettalent 61683
+    .talent 1,1,2,2
+    .pettalent 1,1,2
 level
-    .talent 2,1,3
-    .pettalent
+    .talent 1,1,2,3
 level
-    .talent 2,1,4
-    .pettalent
+    .talent 1,1,2,4
 level
-    .talent 2,1,5
-    .pettalent
-
+    .talent 1,1,2,5
+level
+    .talent 1,2,1,1
+level
+    .talent 1,2,1,2
 level =80
     .retrain
 ]])
