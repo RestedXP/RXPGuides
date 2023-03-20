@@ -28,6 +28,7 @@ addon.talents.functions = {}
 addon.talents.guides = {}
 addon.talents.maxLevel = GetMaxPlayerLevel()
 
+local queuedDraw = false
 local indexLookup
 
 local function buildTalentGuidesMenu()
@@ -88,8 +89,17 @@ end
 function addon.talents:ADDON_LOADED(_, loadedAddon)
     -- Talent frame/globals get loaded on demand when it's first open
     if loadedAddon == "Blizzard_TalentUI" then
-        _G.PlayerTalentFrame:HookScript("OnShow", function()
-            addon.talents:HookUI()
+        _G.PlayerTalentFrame:HookScript("OnShow",
+                                        function() addon.talents:HookUI() end)
+
+        hooksecurefunc("PlayerTalentFrame_Refresh", function()
+            if InCombatLockdown() then
+                print("PlayerTalentFrame_Refresh - combat queue")
+                queuedDraw = true
+                return
+            end
+
+            print("PlayerTalentFrame_Refresh")
             addon.talents:DrawTalents()
         end)
 
@@ -394,6 +404,10 @@ end
 
 function addon.talents:PLAYER_REGEN_ENABLED()
     -- TODO send notification to update talents
+    if queuedDraw then
+        print("PLAYER_REGEN_ENABLED - DrawTalents")
+        addon.talents:DrawTalents()
+    end
 end
 
 function addon.talents:GetCurrentGuide()
@@ -410,11 +424,91 @@ function addon.talents:UpdateSelectedGuide(key)
     addon.settings.db.profile.activeTalentGuide = key
 end
 
-function addon.talents:DrawTalents()
-    self:BuildIndexLookup()
+local talentTooltips = {hooked = false, data = {}}
+talentTooltips.updateFunc = function(self)
+    print("PlayerTalentFrameTalent_OnEnter", self:GetID())
+    local tooltip = talentTooltips.data[self:GetID()]
+    if not tooltip then return end
 
+    -- Handle refreshing of UI
+    GameTooltip:AddLine(tooltip, 1, 1, 1)
+    GameTooltip:Show()
+end
+
+function addon.talents:DrawTalents()
+    local guide = self:GetCurrentGuide()
+    if not guide then return end
+
+    self:BuildIndexLookup()
+    local currentTab = _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame)
+
+    print("Drawing talents for tab", currentTab)
     -- TODO draw talent highlight previews of path
     -- print("Would draw talents")
+
+    -- TODO? do from current processed step level, so even if backlogged talents will show order
+    local playerLevel = UnitLevel("player")
+    local advancedWarning = playerLevel + 5
+    local levelStep, talentIndex
+
+    if not talentTooltips.hooked then
+        hooksecurefunc("PlayerTalentFrameTalent_OnEnter",
+                       talentTooltips.updateFunc)
+
+        talentTooltips.hooked = true
+    end
+
+    wipe(talentTooltips.data)
+
+    for upcomingLevel = playerLevel + 1, advancedWarning do
+        print("UpcomingLevel", upcomingLevel)
+
+        levelStep = guide.steps[upcomingLevel - guide.minLevel + 1]
+
+        if not levelStep then return end
+
+        for _, element in ipairs(levelStep.elements) do
+            for _, talentData in ipairs(element.talent) do
+                if currentTab == talentData.tab then
+
+                    -- TODO support optional branches
+                    talentIndex =
+                        indexLookup[talentData.tab][talentData.tier][talentData.column]
+
+                    talentTooltips.data[talentIndex] =
+                        talentTooltips.data[talentIndex] or
+                            fmt("%s - %s", addon.title, guide.name)
+
+                    -- TODO handle multiple ranks stacking
+                    talentTooltips.data[talentIndex] = fmt(
+                                                           "\n%s\n%s%s: %s %d|r",
+                                                           talentTooltips.data[talentIndex],
+                                                           addon.colors.tooltip,
+                                                           _G.TRADE_SKILLS_LEARNED_TAB,
+                                                           _G.LEVEL,
+                                                           upcomingLevel)
+
+                    -- Pre-seed tooltip to prevent delay
+
+                    -- _G["PlayerTalentFrameTalent" .. talentIndex]:HookScript( -- TODO Double stacks results
+                    --    "OnEnter", talentTooltips.updateFunc)
+
+                    -- _G["PlayerTalentFrameTalent" .. talentIndex].foo = ""
+
+                    --[[
+                    print("Adding highlight for", talentData.tier,
+                          talentData.column)
+                    local ht = _G["PlayerTalentFrameTalent" .. talentIndex ..
+                                   "Slot"]:CreateTexture(nil, "HIGHLIGHT")
+                    -- ht:SetAllPoints(true)
+                    ht:SetTexture("Interface/Buttons/ButtonHilight-Square")
+                    ht:SetBlendMode("ADD")
+                    ht:SetSize(64, 64)
+                    ]]
+                end
+            end
+        end
+    end
 end
 
 function addon.talents:BuildIndexLookup()
@@ -440,7 +534,7 @@ end
 function addon.talents:ProcessTalents(validate)
     self:BuildIndexLookup()
 
-    local playerLevel = UnitLevel("player") or 1
+    local playerLevel = UnitLevel("player")
 
     local guide = self:GetCurrentGuide()
 
