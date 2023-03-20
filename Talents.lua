@@ -328,14 +328,16 @@ function addon.talents.functions.talent(element, validate)
                                                               talentIndex)
 
         if previewRankOrRank < talentData.rank then
-            addon.comms.PrettyPrint("%s - %s (%s %d)",
-                                    _G.TRADE_SKILLS_LEARNED_TAB, name, _G.RANK,
-                                    talentData.rank)
 
             if addon.settings.db.profile.previewTalents then
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
+                addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name,
+                                        _G.RANK, talentData.rank)
             else
                 LearnTalent(talentData.tab, talentIndex)
+                addon.comms.PrettyPrint("%s - %s (%s %d)",
+                                        _G.TRADE_SKILLS_LEARNED_TAB, name,
+                                        _G.RANK, talentData.rank)
             end
         end
 
