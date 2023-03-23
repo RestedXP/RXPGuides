@@ -917,6 +917,23 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
+                    enableGroupQuests = {
+                        name = L("Debug Mode"),
+                        desc = L("Display internal error messages"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.35,
+                        confirm = function()
+                            return L(
+                                       "Warning: Changing this setting mid-guide may cause quest pre-requisite failures.\nGuides were optimized for experience, disabling this option will result in a disjointed guide steps.") -- TODO locale
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                self:DetectXPRate()
+                            end
+                        end
+                    },
                     expansionHeader = {
                         name = _G.EXPANSION_FILTER_TEXT,
                         type = "header",

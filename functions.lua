@@ -4626,3 +4626,35 @@ function addon.functions.collectcurrency(self, ...)
         addon.SetElementIncomplete(self)
     end
 end
+
+function addon.functions.group(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local text, number = ...
+        text = text or number and string.format("Do NOT attempt this quest unless you are in a group of at least %s",number)
+        if text and text ~= "" then
+            element.text = text
+        end
+
+        addon.step.group = true
+        addon.step.solo = false
+        element.textOnly = true
+
+        return element
+    end
+end
+
+function addon.functions.solo(self, text)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        if text and text ~= "" then
+            element.text = text
+        end
+
+        addon.step.group = false
+        addon.step.solo = true
+        element.textOnly = true
+
+        return element
+    end
+end

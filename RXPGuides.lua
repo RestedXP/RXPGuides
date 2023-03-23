@@ -875,7 +875,14 @@ function addon.IsStepShown(step)
             (addon.settings.db.profile.northrendLM or not step.questguide) and
              addon.AldorScryerCheck(step) and
              addon.PhaseCheck(step) and addon.HardcoreCheck(step) and
-             addon.SeasonCheck(step) and addon.XpRateCheck(step) and addon.FreshAccountCheck(step)
+             addon.SeasonCheck(step) and addon.XpRateCheck(step) and addon.FreshAccountCheck(step) and addon.GroupCheck(step)
+end
+
+function addon.GroupCheck(step)
+    if (not addon.settings.db.profile.enableGroupQuests and step.group) or (addon.settings.db.profile.enableGroupQuests and step.solo) then
+        return false
+    end
+    return true
 end
 
 function addon.SeasonCheck(step)
