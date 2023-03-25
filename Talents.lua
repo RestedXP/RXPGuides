@@ -379,6 +379,9 @@ function addon.talents.functions.pettalent(element)
 
         e.pettalent = args[petSpecLookup[GetPetTalentTree()]]
 
+        -- is pet talent tab selected
+        -- local isPet = PlayerTalentFrame.pet
+
         -- print("Pet talent", e.pettalent)
 
         return e
@@ -420,6 +423,8 @@ function addon.talents:DrawTalents()
     if next(indexLookup) == nil then return end
 
     local currentTab = PanelTemplates_GetSelectedTab(PlayerTalentFrame)
+    -- TODO .pettalent
+    -- local isPet = PlayerTalentFrame.pet
 
     -- print("Drawing talents for tab", currentTab)
     -- TODO draw talent highlight previews of path
