@@ -312,7 +312,7 @@ step
     #era/som
     #completewith MeatFangEgg1 << !Druid
     #completewith MeatFangEgg1Druid << Druid
-    >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r
+    >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r. Loot them for their |cFF00BCD4Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .unitscan Moonstalker;Moonstalker Runt
 step
@@ -2495,7 +2495,7 @@ step
 step
     #era/som
     #completewith Ameth
-    >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r
+    >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r. Loot them for their |cFF00BCD4Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .unitscan Moonstalker;Moonstalker Runt
 step
