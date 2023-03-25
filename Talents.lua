@@ -20,6 +20,8 @@ local GetPetTalentTree, GetUnspentTalentPoints,
       GetGroupPreviewTalentPointsSpent, AddPreviewTalentPoints =
     _G.GetPetTalentTree, _G.GetUnspentTalentPoints,
     _G.GetGroupPreviewTalentPointsSpent, _G.AddPreviewTalentPoints
+local PanelTemplates_GetSelectedTab, PlayerTalentFrame =
+    _G.PanelTemplates_GetSelectedTab, _G.PlayerTalentFrame
 
 local L = addon.locale.Get
 
@@ -28,8 +30,19 @@ addon.talents.functions = {}
 addon.talents.guides = {}
 addon.talents.maxLevel = GetMaxPlayerLevel()
 
-local queuedDraw = false
 local indexLookup
+local talentTooltips = {
+    hooked = false,
+    data = {},
+    highlights = {},
+    highlightColors = {
+        [1] = {14 / 255, 131 / 255, 18 / 255}, -- RXP_BUY
+        [2] = {0, 1, 37 / 255}, -- RXP_FRIENDLY
+        [3] = {0, 1, 37 / 255}, -- RXP_FRIENDLY
+        [4] = {0, 1, 37 / 255}, -- RXP_FRIENDLY
+        [5] = {252 / 255, 220 / 250, 0} -- RXP_WARN
+    }
+}
 
 local function buildTalentGuidesMenu()
     local menu = {}
@@ -71,9 +84,6 @@ end
 function addon.talents:Setup()
     if not addon.settings.db.profile.enableTalentGuides then return end
 
-    self:RegisterEvent("PLAYER_TALENT_UPDATE")
-    self:RegisterEvent("PLAYER_REGEN_ENABLED")
-
     self:RegisterEvent("ADDON_LOADED")
 
     self:UpdateSelectedGuide(addon.settings.db.profile.activeTalentGuide)
@@ -87,22 +97,15 @@ function addon.talents:Setup()
 end
 
 function addon.talents:ADDON_LOADED(_, loadedAddon)
-    -- Talent frame/globals get loaded on demand when it's first open
+    -- Talent frame/globals get loaded on demand when it's first opened
     if loadedAddon == "Blizzard_TalentUI" then
         _G.PlayerTalentFrame:HookScript("OnShow",
                                         function() addon.talents:HookUI() end)
 
-        hooksecurefunc("PlayerTalentFrame_Refresh", function()
-            if InCombatLockdown() then
-                print("PlayerTalentFrame_Refresh - combat queue")
-                queuedDraw = true
-                return
-            end
+        _G.PlayerTalentFrame:HookScript("OnUpdate",
+                                        function() self:DrawTalents() end)
 
-            print("PlayerTalentFrame_Refresh")
-            addon.talents:DrawTalents()
-        end)
-
+        PlayerTalentFrame = _G.PlayerTalentFrame
         self:BuildIndexLookup()
         self:UnregisterEvent("ADDON_LOADED")
     end
@@ -129,6 +132,13 @@ function addon.talents:HookUI()
         -- elseif Retail
     else -- Classic or Wrath without dual-spec
         print("Else")
+    end
+
+    if not talentTooltips.hooked then
+        hooksecurefunc("PlayerTalentFrameTalent_OnEnter",
+                       talentTooltips.updateFunc)
+
+        talentTooltips.hooked = true
     end
 
     local button = self.talentsButton
@@ -356,8 +366,6 @@ function addon.talents.functions.talent(element, validate)
     return true
 end
 
-function addon.talents.functions.glyph(element) end
-
 -- Which comma value .pettalent to choose
 local petSpecLookup = {['Ferocity'] = 1, ['Cunning'] = 2, ['Tenacity'] = 3}
 
@@ -377,39 +385,6 @@ function addon.talents.functions.pettalent(element)
     end
 end
 
-function addon.talents:PLAYER_TALENT_UPDATE()
-    -- TODO support dual spec swaps when leveling, e.g. solo vs dungeon spam specs
-    -- Rescan talents to validate state
-    print(":DrawTalents()")
-end
-
-function addon.talents:PET_TALENT_UPDATE()
-    -- TODO support dual spec swaps when leveling, e.g. solo vs dungeon spam specs
-    -- Rescan talents to validate state
-    print(":DrawTalents()")
-end
-
-function addon.talents:PREVIEW_TALENT_POINTS_CHANGED(_, talentIndex, tabIndex,
-                                                     groupIndex, points)
-    -- TODO support dual spec swaps when leveling, e.g. solo vs dungeon spam specs
-    -- Rescan talents to validate state
-end
-
-function addon.talents:PREVIEW_PET_TALENT_POINTS_CHANGED(_, talentIndex,
-                                                         tabIndex, groupIndex,
-                                                         points)
-    -- TODO support dual spec swaps when leveling, e.g. solo vs dungeon spam specs
-    -- Rescan talents to validate state
-end
-
-function addon.talents:PLAYER_REGEN_ENABLED()
-    -- TODO send notification to update talents
-    if queuedDraw then
-        print("PLAYER_REGEN_ENABLED - DrawTalents")
-        addon.talents:DrawTalents()
-    end
-end
-
 function addon.talents:GetCurrentGuide()
     -- TODO automatically select talent guide for chosen spec, harder to do without DB
 
@@ -424,7 +399,6 @@ function addon.talents:UpdateSelectedGuide(key)
     addon.settings.db.profile.activeTalentGuide = key
 end
 
-local talentTooltips = {hooked = false, data = {}}
 talentTooltips.updateFunc = function(self)
     print("PlayerTalentFrameTalent_OnEnter", self:GetID())
     local tooltip = talentTooltips.data[self:GetID()]
@@ -432,6 +406,8 @@ talentTooltips.updateFunc = function(self)
 
     -- Handle refreshing of UI
     GameTooltip:AddLine(tooltip, 1, 1, 1)
+
+    -- Force tooltip redraw
     GameTooltip:Show()
 end
 
@@ -439,29 +415,24 @@ function addon.talents:DrawTalents()
     local guide = self:GetCurrentGuide()
     if not guide then return end
 
-    self:BuildIndexLookup()
-    local currentTab = _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame)
+    if not PlayerTalentFrame:IsShown() then return end
 
-    print("Drawing talents for tab", currentTab)
+    if next(indexLookup) == nil then return end
+
+    local currentTab = PanelTemplates_GetSelectedTab(PlayerTalentFrame)
+
+    -- print("Drawing talents for tab", currentTab)
     -- TODO draw talent highlight previews of path
-    -- print("Would draw talents")
 
     -- TODO? do from current processed step level, so even if backlogged talents will show order
     local playerLevel = UnitLevel("player")
     local advancedWarning = playerLevel + 5
     local levelStep, talentIndex
 
-    if not talentTooltips.hooked then
-        hooksecurefunc("PlayerTalentFrameTalent_OnEnter",
-                       talentTooltips.updateFunc)
-
-        talentTooltips.hooked = true
-    end
-
     wipe(talentTooltips.data)
 
     for upcomingLevel = playerLevel + 1, advancedWarning do
-        print("UpcomingLevel", upcomingLevel)
+        -- print("UpcomingLevel", upcomingLevel)
 
         levelStep = guide.steps[upcomingLevel - guide.minLevel + 1]
 
@@ -469,17 +440,14 @@ function addon.talents:DrawTalents()
 
         for _, element in ipairs(levelStep.elements) do
             for _, talentData in ipairs(element.talent) do
+                talentIndex =
+                    indexLookup[talentData.tab][talentData.tier][talentData.column]
+
                 if currentTab == talentData.tab then
-
-                    -- TODO support optional branches
-                    talentIndex =
-                        indexLookup[talentData.tab][talentData.tier][talentData.column]
-
                     talentTooltips.data[talentIndex] =
                         talentTooltips.data[talentIndex] or
                             fmt("%s - %s", addon.title, guide.name)
 
-                    -- TODO handle multiple ranks stacking
                     talentTooltips.data[talentIndex] = fmt(
                                                            "\n%s\n%s%s: %s %d|r",
                                                            talentTooltips.data[talentIndex],
@@ -488,23 +456,38 @@ function addon.talents:DrawTalents()
                                                            _G.LEVEL,
                                                            upcomingLevel)
 
-                    -- Pre-seed tooltip to prevent delay
+                    -- TODO Pre-seed tooltip to prevent delay
 
-                    -- _G["PlayerTalentFrameTalent" .. talentIndex]:HookScript( -- TODO Double stacks results
-                    --    "OnEnter", talentTooltips.updateFunc)
+                    if talentTooltips.highlights[talentIndex] then
+                        talentTooltips.highlights[talentIndex]:SetVertexColor(
+                            unpack(
+                                talentTooltips.highlightColors[upcomingLevel -
+                                    playerLevel]))
+                        talentTooltips.highlights[talentIndex]:Show()
+                    else
+                        print("Creating highlight for", talentIndex)
 
-                    -- _G["PlayerTalentFrameTalent" .. talentIndex].foo = ""
+                        local ht =
+                            _G["PlayerTalentFrameTalent" .. talentIndex]:CreateTexture(
+                                "$parent_LevelPreview", "BORDER")
 
-                    --[[
-                    print("Adding highlight for", talentData.tier,
-                          talentData.column)
-                    local ht = _G["PlayerTalentFrameTalent" .. talentIndex ..
-                                   "Slot"]:CreateTexture(nil, "HIGHLIGHT")
-                    -- ht:SetAllPoints(true)
-                    ht:SetTexture("Interface/Buttons/ButtonHilight-Square")
-                    ht:SetBlendMode("ADD")
-                    ht:SetSize(64, 64)
-                    ]]
+                        ht:SetTexture("Interface/Buttons/ButtonHilight-Square")
+                        ht:SetBlendMode("ADD")
+                        ht:SetAllPoints(_G["PlayerTalentFrameTalent" ..
+                                            talentIndex .. "Slot"])
+
+                        ht:SetVertexColor(unpack(
+                                              talentTooltips.highlightColors[upcomingLevel -
+                                                  playerLevel]))
+
+                        talentTooltips.highlights[talentIndex] = ht
+                    end
+                else
+                    -- Reset highlights on non-active tabs
+                    if talentTooltips.highlights[talentIndex] and
+                        talentTooltips.highlights[talentIndex]:IsShown() then
+                        talentTooltips.highlights[talentIndex]:Hide()
+                    end
                 end
             end
         end
@@ -556,8 +539,8 @@ function addon.talents:ProcessTalents(validate)
                               GetGroupPreviewTalentPointsSpent()
 
         if (stepLevel > playerLevel) or remainingPoints == 0 then
-            -- print("Reached player level")
-            self:DrawTalents()
+            print("Reached player level")
+            -- self:DrawTalents()
 
             return
         end
