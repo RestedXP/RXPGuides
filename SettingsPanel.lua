@@ -852,6 +852,48 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.7
+                    },
+                    talentsHeader = {
+                        name = function()
+                            if addon.talents and addon.talents:IsSupported() then
+                                return _G.TALENTS
+                            else
+                                return fmt("%s - %s", _G.TALENTS,
+                                           _G.ADDON_NOT_AVAILABLE)
+                            end
+                        end,
+                        type = "header",
+                        width = "full",
+                        order = 5.0
+                    },
+                    enableTalentGuides = {
+                        name = L("Enable Talents Guides"), -- TODO locale
+                        desc = L("Enable Talents Guides"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.2,
+                        disabled = function()
+                            return not (addon.talents and
+                                       addon.talents:IsSupported())
+                        end,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end
+                    },
+                    previewTalents = {
+                        name = L("Enable Talent Previews"), -- TODO locale
+                        desc = L("Enable Talent Previews"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.3,
+                        disabled = function()
+                            return not (addon.talents and
+                                       addon.settings.db.profile
+                                           .enableTalentGuides and
+                                       addon.talents:IsSupported())
+                        end
                     }
                 }
             },

@@ -81,6 +81,10 @@ local function buildTalentGuidesMenu()
     return menu
 end
 
+function addon.talents:IsSupported()
+    return self.guides and next(self.guides) ~= nil
+end
+
 function addon.talents:Setup()
     if not addon.settings.db.profile.enableTalentGuides then return end
 
@@ -113,6 +117,8 @@ end
 
 function addon.talents:HookUI()
     local iconReference = {}
+
+    if not self:IsSupported() then return end
 
     -- Disable if other addons replace talents
     -- Talented
