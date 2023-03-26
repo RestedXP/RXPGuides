@@ -138,17 +138,17 @@ addon.recentTurnIn = {}
 if C_GossipInfo and C_GossipInfo.SelectOptionByIndex then
     GossipSelectOption = function(index)
         local gossipOptions = C_GossipInfo.GetOptions()
-        
+
         if not gossipOptions or not gossipOptions[index] then
             return
         end
-        
+
         local gossipOptionID = gossipOptions[index].gossipOptionID
         if gossipOptionID then
             C_GossipInfo.SelectOption(gossipOptionID)
             return
         end
-        
+
         local orderIndex = gossipOptions[index].orderIndex
         if orderIndex then
             C_GossipInfo.SelectOptionByIndex(orderIndex)
@@ -1647,6 +1647,7 @@ function addon.functions.fp(self, ...)
         local element = {}
         local text, location, skipStep = ...
         element.tag = "fp"
+        element.confirm = 0
         if skipStep then
             element.text = text
             element.textOnly = true
@@ -1678,8 +1679,8 @@ function addon.functions.fp(self, ...)
             addon.updateSteps = true
         elseif fpDiscovered or (event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH) then
             addon.SetElementComplete(self)
-        elseif not element.confirm and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
-            element.confirm = true
+        elseif (GetTime() - element.confirm) > 10 and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
+            element.confirm = GetTime()
         end
     end
 end
