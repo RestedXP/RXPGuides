@@ -139,13 +139,14 @@ if C_GossipInfo and C_GossipInfo.SelectOptionByIndex then
     GossipSelectOption = function(index)
         local gossipOptions = C_GossipInfo.GetOptions()
         
-        if not gossipOptions or not gossipOption    s[index] then
+        if not gossipOptions or not gossipOptions[index] then
             return
         end
         
         local gossipOptionID = gossipOptions[index].gossipOptionID
         if gossipOptionID then
             C_GossipInfo.SelectOption(gossipOptionID)
+            return
         end
         
         local orderIndex = gossipOptions[index].orderIndex
