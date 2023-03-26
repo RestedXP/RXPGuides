@@ -12,9 +12,10 @@ local EasyMenu = function(...)
     end
 end
 
-local fmt, sgmatch, strsplittable = string.format, string.gmatch, strsplittable
+local fmt, sgmatch, strsplittable, strjoin = string.format, string.gmatch,
+                                             strsplittable, string.join
 local tonumber = tonumber
-local tinsert = tinsert
+local tinsert, tsort = tinsert, table.sort
 local UnitLevel = UnitLevel
 local GetPetTalentTree, GetUnspentTalentPoints,
       GetGroupPreviewTalentPointsSpent, AddPreviewTalentPoints =
@@ -22,6 +23,7 @@ local GetPetTalentTree, GetUnspentTalentPoints,
     _G.GetGroupPreviewTalentPointsSpent, _G.AddPreviewTalentPoints
 local PanelTemplates_GetSelectedTab, PlayerTalentFrame =
     _G.PanelTemplates_GetSelectedTab, _G.PlayerTalentFrame
+local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
 
 local L = addon.locale.Get
 
@@ -94,6 +96,7 @@ function addon.talents:Setup()
 
     if tonumber(GetCVar("previewTalents")) == 0 and
         addon.settings.db.profile.previewTalents then
+        -- TOOD persist setting or disable output
         addon.comms.PrettyPrint("Enabling talent previews")
         -- Talents are enabled in RXP, so match client
         SetCVar("previewTalents", 1)
@@ -409,7 +412,6 @@ function addon.talents:UpdateSelectedGuide(key)
 end
 
 talentTooltips.updateFunc = function(self)
-    print("PlayerTalentFrameTalent_OnEnter", self:GetID())
     local tooltip = talentTooltips.data[self:GetID()]
     if not tooltip then return end
 
@@ -418,6 +420,63 @@ talentTooltips.updateFunc = function(self)
 
     -- Force tooltip redraw
     GameTooltip:Show()
+end
+
+local function DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
+    local ht = talentTooltips.highlights[talentIndex]
+
+    -- TOOD setting to disable this overlay
+
+    if not ht then return end
+
+    if not ht.levelNumber then
+        ht.levelNumber = CreateFrame("Frame", "$parent_levelNumber",
+                                     _G["PlayerTalentFrameTalent" .. talentIndex],
+                                     BackdropTemplate)
+
+        ht.levelNumber:SetPoint("TOPLEFT", ht, 2, 0)
+        ht.levelNumber.text = ht.levelNumber:CreateFontString(nil, "OVERLAY")
+
+        ht.levelNumber.text:ClearAllPoints()
+        ht.levelNumber.text:SetPoint("CENTER", ht.levelNumber, 0, 3)
+        ht.levelNumber.text:SetJustifyH("LEFT")
+        ht.levelNumber.text:SetJustifyV("MIDDLE")
+
+        -- TODO specific text color setting?
+        ht.levelNumber.text:SetTextColor(unpack(addon.activeTheme.textColor))
+        ht.levelNumber.text:SetFont(addon.font, 10, "")
+
+        ht:HookScript("OnHide", function()
+            ht.levelNumber.text:SetText("")
+            ht.levelNumber.text:Hide()
+        end)
+
+        ht:HookScript("OnShow", function() ht.levelNumber.text:Show() end)
+    end
+
+    -- Handle multiple-levels
+    local numbers = {upcomingLevel}
+
+    local numberText = ht.levelNumber.text:GetText()
+    local c
+    if numberText then
+        for _, currentNumber in ipairs(strsplittable(",", numberText)) do
+            c = tonumber(currentNumber)
+
+            -- Don't preserve old numbers
+            if c > playerLevel and c ~= upcomingLevel then
+                tinsert(numbers, c)
+            end
+        end
+    end
+
+    tsort(numbers)
+    local newText = strjoin(',', unpack(numbers))
+
+    if numberText == newText then return end
+
+    ht.levelNumber.text:SetText(newText)
+    ht.levelNumber:SetSize(ht.levelNumber.text:GetStringWidth() + 10, 17)
 end
 
 function addon.talents:DrawTalents()
@@ -432,18 +491,14 @@ function addon.talents:DrawTalents()
     -- TODO .pettalent
     -- local isPet = PlayerTalentFrame.pet
 
-    -- print("Drawing talents for tab", currentTab)
-    -- TODO draw talent highlight previews of path
-
-    -- TODO? do from current processed step level, so even if backlogged talents will show order
     local playerLevel = UnitLevel("player")
+    -- TODO setting, also handle > 5 color scheme, probably just no highlights and use numbers
     local advancedWarning = playerLevel + 5
     local levelStep, talentIndex
 
     wipe(talentTooltips.data)
 
     for upcomingLevel = playerLevel + 1, advancedWarning do
-        -- print("UpcomingLevel", upcomingLevel)
 
         levelStep = guide.steps[upcomingLevel - guide.minLevel + 1]
 
@@ -474,10 +529,10 @@ function addon.talents:DrawTalents()
                             unpack(
                                 talentTooltips.highlightColors[upcomingLevel -
                                     playerLevel]))
+
+                        DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
                         talentTooltips.highlights[talentIndex]:Show()
                     else
-                        print("Creating highlight for", talentIndex)
-
                         local ht =
                             _G["PlayerTalentFrameTalent" .. talentIndex]:CreateTexture(
                                 "$parent_LevelPreview", "BORDER")
@@ -492,11 +547,13 @@ function addon.talents:DrawTalents()
                                                   playerLevel]))
 
                         talentTooltips.highlights[talentIndex] = ht
+                        DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
                     end
                 else
                     -- Reset highlights on non-active tabs
                     if talentTooltips.highlights[talentIndex] and
                         talentTooltips.highlights[talentIndex]:IsShown() then
+
                         talentTooltips.highlights[talentIndex]:Hide()
                     end
                 end
@@ -551,8 +608,6 @@ function addon.talents:ProcessTalents(validate)
 
         if (stepLevel > playerLevel) or remainingPoints == 0 then
             print("Reached player level")
-            -- self:DrawTalents()
-
             return
         end
 
