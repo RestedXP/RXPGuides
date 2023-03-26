@@ -124,7 +124,7 @@ local GetNumDayEvents = _G.C_Calendar.GetNumDayEvents
 local GetDayEvent = _G.C_Calendar.GetDayEvent
 local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
 local OpenCalendar = _G.C_Calendar.OpenCalendar
-local GossipSelectOption = C_GossipInfo and C_GossipInfo.SelectOptionByIndex or _G.SelectGossipOption
+local GossipSelectOption = _G.SelectGossipOption
 local GossipGetOptions = C_GossipInfo and C_GossipInfo.GetOptions or _G.GetGossipOptions
 local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
 local GetContainerNumFreeSlots =  C_Container and C_Container.GetContainerNumFreeSlots or _G.GetContainerNumFreeSlots
@@ -134,6 +134,26 @@ local GetContainerItemInfo = C_Container and C_Container.GetContainerItemInfo or
 local GetItemCooldown = addon.GetItemCooldown
 
 addon.recentTurnIn = {}
+
+if C_GossipInfo and C_GossipInfo.SelectOptionByIndex then
+    GossipSelectOption = function(index)
+        local gossipOptions = C_GossipInfo.GetOptions()
+        
+        if not gossipOptions or not gossipOption    s[index] then
+            return
+        end
+        
+        local gossipOptionID = gossipOptions[index].gossipOptionID
+        if gossipOptionID then
+            C_GossipInfo.SelectOption(gossipOptionID)
+        end
+        
+        local orderIndex = gossipOptions[index].orderIndex
+        if orderIndex then
+            C_GossipInfo.SelectOptionByIndex(orderIndex)
+        end
+    end
+end
 
 local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 if not IsTurnedIn then
