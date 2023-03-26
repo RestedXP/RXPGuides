@@ -589,8 +589,14 @@ function addon:BAG_UPDATE(...) addon.UpdateItemFrame() end
 function addon:PLAYER_REGEN_ENABLED(...) addon.UpdateItemFrame() end
 
 function addon:QUEST_TURNED_IN(_, questId, xpReward)
+    -- scryer/aldor quest
     if questId == 10551 or questId == 10552 then
-        C_Timer.After(1, function() addon.ReloadGuide() end) -- scryer/aldor quest
+        local mapId = addon.mapId['Shattrath City']
+        for _,point in pairs(addon.activeWaypoints) do
+            if point.zone == mapId then
+                return C_Timer.After(1, function() addon.ReloadGuide() end)
+            end
+        end
     end
 end
 

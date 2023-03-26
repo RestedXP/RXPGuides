@@ -952,6 +952,11 @@ function addon.functions.turnin(self, ...)
             if element.timer then
                 addon.StartTimer(element.timer,element.timerText)
             end
+
+            --Scryer/Aldor quests
+            if id == 10551 or id == 10552 then
+                return addon.ReloadGuide()
+            end
             addon.SetElementComplete(self)
             addon.recentTurnIn[id] = GetTime()
         elseif isComplete then
