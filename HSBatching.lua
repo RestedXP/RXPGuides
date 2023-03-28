@@ -28,8 +28,8 @@ local function StartHSTimer()
         local size = addon.settings.db.profile.batchSize or 5
         batchingWindow = size / 1e3
         currentFPS = GetCVar("maxfps")
-        if size < 5 then
-            SetCVar("maxfps", 0)
+        if size <= 5 then
+            SetCVar("maxfps", 200)
         end
         HSstart = GetTime()
         HSframe:SetScript("OnUpdate", SwitchBindLocation)
