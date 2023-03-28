@@ -4166,14 +4166,16 @@ function addon.CanPlayerFly(zoneOrContinent)
         return
     elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
         local shFlying = C_QuestLog.IsQuestFlaggedCompleted(63893)
-        local _, _, _, bfaFlying = GetAchievementInfo(13250)
+        --local _, _, _, bfaFlying = GetAchievementInfo(13250)
+        local dragonRiding = C_MountJournal.GetCollectedDragonridingMounts and C_MountJournal.GetCollectedDragonridingMounts()
+        dragonRiding = type(dragonRiding) == "table" and #dragonRiding > 0
         --12 = kalimdor, 18 = eastern kingdoms, 101 = outland,113 = northrend, 127 = dalaran(weird), 424 = Pandaria, 572 = Draenor, 588 = ashran, 1165 = dazar alor, 895 = boralus, 876 = kul'tiras
         -- 619 = Broken Isles, Zuldazar 862, Shadowlands = 1550, 1978=dragonflight
         if (ridingSkill > 224 and
             (continentId == 12 or continentId == 18 or continentId == 101 or continentId == 113  or continentId == 127 or continentId == 424 or continentId == 572 or continentId == 588 or continentId == 619 or continentId == 862) or
-            bfaFlying and (continentId == 876 or continentId == 895 or continentId == 1165) or
+            --bfaFlying and (continentId == 876 or continentId == 895 or continentId == 1165) or
             shFlying and continentId == 1550
-         ) then
+         ) or dragonRiding and continentId == 1978 then
             return true
         end
     else
