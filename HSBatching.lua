@@ -5,17 +5,17 @@ local _, addon = ...
 local HSframe = CreateFrame("Frame");
 local currentFPS = GetCVar("maxfps")
 local HSstart = 0
-local batchingWindow = 0.005
+local batchingWindow = 0.006
 
 local function SwitchBindLocation()
     if GetTime() - HSstart > 10 - batchingWindow then
-        if ConfirmBinder then
-            ConfirmBinder()
+        if _G.ConfirmBinder then
+            _G.ConfirmBinder()
         elseif C_PlayerInteractionManager then
             C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
         end
         HSframe:SetScript("OnUpdate", nil)
-        local size = addon.settings.db.profile.batchSize or 5
+        local size = addon.settings.db.profile.batchSize or 6
         if size < 5 then
             SetCVar("maxfps", currentFPS)
         end
@@ -25,7 +25,7 @@ end
 
 local function StartHSTimer()
     if HSstart == 0 then
-        local size = addon.settings.db.profile.batchSize or 5
+        local size = addon.settings.db.profile.batchSize or 6
         batchingWindow = size / 1e3
         currentFPS = GetCVar("maxfps")
         if size <= 5 then
@@ -44,7 +44,7 @@ if _G.C_Container and _G.C_Container.UseContainerItem then -- DF+
     end)
 else
     hooksecurefunc("UseContainerItem", function(...)
-        if GetContainerItemID(...) == 6948 then StartHSTimer() end
+        if _G.GetContainerItemID(...) == 6948 then StartHSTimer() end
     end)
 end
 

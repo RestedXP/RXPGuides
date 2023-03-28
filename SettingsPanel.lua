@@ -104,7 +104,7 @@ function addon.settings:InitializeSettings()
             worldMapPinScale = 1,
             distanceBetweenPins = 1,
             worldMapPinBackgroundOpacity = 0.35,
-            batchSize = 5,
+            batchSize = 6,
             phase = 6,
             xprate = 1,
             guideFontSize = 9,
@@ -2221,7 +2221,7 @@ function addon.settings:CreateAceOptionsPanel()
                     batchSize = {
                         name = L("Batching window size (ms)"),
                         desc = L(
-                            "Adjusts the batching window tolerance, used for hearthstone batching"),
+                            "Adjusts the batching window tolerance, used for hearthstone batching. Increase this value if you're experiencing framerate drops when using your Hearthstone"),
                         type = "range",
                         width = optionsWidth,
                         order = 1.2,
