@@ -3414,7 +3414,7 @@ local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
                                  _G.GetNumGossipActiveQuests
 local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
                                     _G.GetNumGossipAvailableQuests
-local GossipSelectOption = _G.SelectGossipOption
+--local GossipSelectOption = _G.SelectGossipOption
 --local GossipGetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
 
 function addon.functions.skipgossip(self, text, ...)
