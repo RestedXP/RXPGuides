@@ -249,7 +249,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #name C1 Azure Span Dragon Glyphs
-#displayname Auzre Span Dragon Glyphs
+#displayname Azure Span Dragon Glyphs
 #version 1
 #group Dragon Glyphs
 #next D1 Thaldraszus Dragon Glyphs
