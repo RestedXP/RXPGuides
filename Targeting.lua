@@ -486,6 +486,27 @@ function addon.targeting.CheckTargetProximity()
     end
 end
 
+--Disables and mutes the annoying dialog that shows up
+local actionForbiddenText = fmt(ADDON_ACTION_FORBIDDEN,addonName)
+
+local TextBoxHook = function(self)
+    if self.text:GetText() == actionForbiddenText then
+        if self:IsShown() then
+            self:Hide()
+        end
+        local _,channel = PlaySound(SOUNDKIT.IG_MAINMENU_CLOSE)
+        if channel then
+            StopSound(channel)
+            StopSound(channel-1)
+        end
+    end
+end
+
+_G.StaticPopup1:HookScript("OnShow",TextBoxHook)
+_G.StaticPopup1:HookScript("OnHide",TextBoxHook)
+_G.StaticPopup2:HookScript("OnShow",TextBoxHook)
+_G.StaticPopup2:HookScript("OnHide",TextBoxHook)
+
 function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     if func ~= "TargetUnit()" or forbiddenAddon ~= addonName then return end
 
