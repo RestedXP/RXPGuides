@@ -214,6 +214,12 @@ level
     .talent 2,3,4,2
 
 level
+    .talent 2,3,1,1
+
+level
+    .talent 2,3,1,2
+
+level
     .talent 1,5,1,2
 
 level
