@@ -146,7 +146,8 @@ function addon.settings:InitializeSettings()
             -- Talents - TODO UI
             enableTalentGuides = true,
             activeTalentGuide = nil,
-            previewTalents = true
+            previewTalents = true,
+            upcomingTalentCount = 5
         }
     }
 
@@ -888,6 +889,25 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.3,
+                        disabled = function()
+                            return not (addon.talents and
+                                       addon.settings.db.profile
+                                           .enableTalentGuides and
+                                       addon.talents:IsSupported())
+                        end
+                    },
+                    upcomingTalentCount = {
+                        name = L("Talent previews"), -- TODO locale
+                        desc = L("Sets maximum number of talents to highlight"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 5.4,
+                        min = 1,
+                        max = addon.talents and addon.talents.maxLevel or 1,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                        end,
                         disabled = function()
                             return not (addon.talents and
                                        addon.settings.db.profile

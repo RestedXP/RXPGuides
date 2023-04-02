@@ -313,9 +313,6 @@ function addon.talents.functions.talent(element, validate)
         -- Strip whitespace
         args = args:gsub("%s*,%s*", ",")
 
-        -- TODO tooltip on talent?
-        -- [<<%s*(.+)]?
-
         local tab, tier, column, rank
         -- optional tiers with ; delimiter
         for arg in sgmatch(args, "[^;]+") do
@@ -346,7 +343,6 @@ function addon.talents.functions.talent(element, validate)
             return false
         end
 
-        -- TODO support optional branches
         talentIndex =
             indexLookup[talentData.tab][talentData.tier][talentData.column]
 
@@ -458,8 +454,9 @@ local function DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
     local numbers = {upcomingLevel}
 
     local numberText = ht.levelNumber.text:GetText()
-    local c
+
     if numberText then
+        local c
         for _, currentNumber in ipairs(strsplittable(",", numberText)) do
             c = tonumber(currentNumber)
 
@@ -473,10 +470,18 @@ local function DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
     tsort(numbers)
     local newText = strjoin(',', unpack(numbers))
 
+    -- No changes, prevent uneeded UI calls
     if numberText == newText then return end
 
     ht.levelNumber.text:SetText(newText)
     ht.levelNumber:SetSize(ht.levelNumber.text:GetStringWidth() + 10, 17)
+end
+
+local function setHighlightColor(talentIndex, index)
+    -- Set color to last if no specific match
+    local color = talentTooltips.highlightColors[index] or
+                      talentTooltips.highlightColors[#talentTooltips.highlightColors]
+    talentTooltips.highlights[talentIndex]:SetVertexColor(unpack(color))
 end
 
 function addon.talents:DrawTalents()
@@ -493,7 +498,8 @@ function addon.talents:DrawTalents()
 
     local playerLevel = UnitLevel("player")
     -- TODO setting, also handle > 5 color scheme, probably just no highlights and use numbers
-    local advancedWarning = playerLevel + 5
+    local advancedWarning = playerLevel +
+                                addon.settings.db.profile.upcomingTalentCount
     local levelStep, talentIndex
 
     wipe(talentTooltips.data)
@@ -525,10 +531,8 @@ function addon.talents:DrawTalents()
                     -- TODO Pre-seed tooltip to prevent delay
 
                     if talentTooltips.highlights[talentIndex] then
-                        talentTooltips.highlights[talentIndex]:SetVertexColor(
-                            unpack(
-                                talentTooltips.highlightColors[upcomingLevel -
-                                    playerLevel]))
+                        setHighlightColor(talentIndex,
+                                          upcomingLevel - playerLevel)
 
                         DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
                         talentTooltips.highlights[talentIndex]:Show()
@@ -542,11 +546,10 @@ function addon.talents:DrawTalents()
                         ht:SetAllPoints(_G["PlayerTalentFrameTalent" ..
                                             talentIndex .. "Slot"])
 
-                        ht:SetVertexColor(unpack(
-                                              talentTooltips.highlightColors[upcomingLevel -
-                                                  playerLevel]))
-
                         talentTooltips.highlights[talentIndex] = ht
+
+                        setHighlightColor(talentIndex,
+                                          upcomingLevel - playerLevel)
                         DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
                     end
                 else
