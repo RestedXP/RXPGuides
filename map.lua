@@ -721,8 +721,16 @@ local function addWorldMapPins()
             local element = pin.elements[1]
             local worldMapFrame = worldMapFramePool:Acquire()
             worldMapFrame.render(pin, false)
-            HBDPins:AddWorldMapIconMap(addon, worldMapFrame, element.zone,
-                                       element.x / 100, element.y / 100,
+            local map = element.step and element.step.map and (addon.mapId[element.step.map] or tonumber(element.step.map))
+            local x,y
+            if map then
+                x,y = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, map)
+            else
+                x = element.x/100
+                y = element.y/100
+                map = element.zone
+            end
+            HBDPins:AddWorldMapIconMap(addon, worldMapFrame, map, x, y,
                                        _G.HBD_PINS_WORLDMAP_SHOW_CONTINENT)
         end
     end

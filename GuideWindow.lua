@@ -1569,7 +1569,8 @@ function RXPFrame.GenerateMenuTable(menu)
                             text = subgroup,
                             notCheckable = 1,
                             hasArrow = true,
-                            menuList = {}
+                            menuList = {},
+                            subweight = 0
                         }
                         item.subtable[subname] = subtable
                         table.insert(item.subgroups, subname)
@@ -1579,6 +1580,7 @@ function RXPFrame.GenerateMenuTable(menu)
                     subitem.func = addon.LoadGuide
                     subitem.arg1 = guide
                     subitem.notCheckable = 1
+                    subtable.subweight = tonumber(guide.subweight) or subtable.subweight
                     table.insert(subtable.menuList, subitem)
                 else
                     submenuIndex = submenuIndex + 1
@@ -1595,7 +1597,15 @@ function RXPFrame.GenerateMenuTable(menu)
         end
 
         if #item.subgroups > 0 then
-            table.sort(item.subgroups)
+            table.sort(item.subgroups,function(s1,s2)
+                local w1 = item.subtable[s1].subweight
+                local w2 = item.subtable[s2].subweight
+                if w1 == w2 then
+                    return s1 < s2
+                else
+                    return w1 > w2
+                end
+            end)
             for i, subgroup in ipairs(item.subgroups) do
                 table.insert(item.menuList, item.subtable[subgroup])
             end

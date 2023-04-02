@@ -125,7 +125,7 @@ local GetDayEvent = _G.C_Calendar.GetDayEvent
 local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
 local OpenCalendar = _G.C_Calendar.OpenCalendar
 local GossipSelectOption = _G.SelectGossipOption
-local GossipGetOptions = C_GossipInfo.GetOptions or _G.GetGossipOptions
+local GossipGetOptions = C_GossipInfo and C_GossipInfo.GetOptions or _G.GetGossipOptions
 local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
 local GetContainerNumFreeSlots =  C_Container and C_Container.GetContainerNumFreeSlots or _G.GetContainerNumFreeSlots
 local GetContainerNumSlots =  C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
@@ -134,6 +134,27 @@ local GetContainerItemInfo = C_Container and C_Container.GetContainerItemInfo or
 local GetItemCooldown = addon.GetItemCooldown
 
 addon.recentTurnIn = {}
+
+if C_GossipInfo and C_GossipInfo.SelectOptionByIndex then
+    GossipSelectOption = function(index)
+        local gossipOptions = C_GossipInfo.GetOptions()
+
+        if not gossipOptions or not gossipOptions[index] then
+            return
+        end
+
+        local gossipOptionID = gossipOptions[index].gossipOptionID
+        if gossipOptionID then
+            C_GossipInfo.SelectOption(gossipOptionID)
+            return
+        end
+
+        local orderIndex = gossipOptions[index].orderIndex
+        if orderIndex then
+            C_GossipInfo.SelectOptionByIndex(orderIndex)
+        end
+    end
+end
 
 local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 if not IsTurnedIn then
@@ -931,6 +952,11 @@ function addon.functions.turnin(self, ...)
             if element.timer then
                 addon.StartTimer(element.timer,element.timerText)
             end
+
+            --Scryer/Aldor quests
+            if id == 10551 or id == 10552 then
+                return addon.ReloadGuide()
+            end
             addon.SetElementComplete(self)
             addon.recentTurnIn[id] = GetTime()
         elseif isComplete then
@@ -1626,6 +1652,7 @@ function addon.functions.fp(self, ...)
         local element = {}
         local text, location, skipStep = ...
         element.tag = "fp"
+        element.confirm = 0
         if skipStep then
             element.text = text
             element.textOnly = true
@@ -1657,8 +1684,8 @@ function addon.functions.fp(self, ...)
             addon.updateSteps = true
         elseif fpDiscovered or (event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH) then
             addon.SetElementComplete(self)
-        elseif not element.confirm and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
-            element.confirm = true
+        elseif (GetTime() - element.confirm) > 10 and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
+            element.confirm = GetTime()
         end
     end
 end
@@ -3387,7 +3414,7 @@ local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
                                  _G.GetNumGossipActiveQuests
 local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
                                     _G.GetNumGossipAvailableQuests
-local GossipSelectOption = _G.SelectGossipOption
+--local GossipSelectOption = _G.SelectGossipOption
 --local GossipGetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
 
 function addon.functions.skipgossip(self, text, ...)
@@ -3943,7 +3970,7 @@ function addon.functions.scenario(self, ...)
                                      required)
     if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
 
-    if completed or (element.stagePos and currentStage > element.stagePos) then
+    if completed or quantity >= required or (element.stagePos and currentStage > element.stagePos) then
         addon.SetElementComplete(self)
     end
 
@@ -4139,14 +4166,16 @@ function addon.CanPlayerFly(zoneOrContinent)
         return
     elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
         local shFlying = C_QuestLog.IsQuestFlaggedCompleted(63893)
-        local _, _, _, bfaFlying = GetAchievementInfo(13250)
+        --local _, _, _, bfaFlying = GetAchievementInfo(13250)
+        local dragonRiding = C_MountJournal.GetCollectedDragonridingMounts and C_MountJournal.GetCollectedDragonridingMounts()
+        dragonRiding = type(dragonRiding) == "table" and #dragonRiding > 0
         --12 = kalimdor, 18 = eastern kingdoms, 101 = outland,113 = northrend, 127 = dalaran(weird), 424 = Pandaria, 572 = Draenor, 588 = ashran, 1165 = dazar alor, 895 = boralus, 876 = kul'tiras
         -- 619 = Broken Isles, Zuldazar 862, Shadowlands = 1550, 1978=dragonflight
         if (ridingSkill > 224 and
             (continentId == 12 or continentId == 18 or continentId == 101 or continentId == 113  or continentId == 127 or continentId == 424 or continentId == 572 or continentId == 588 or continentId == 619 or continentId == 862) or
-            bfaFlying and (continentId == 876 or continentId == 895 or continentId == 1165) or
+            --bfaFlying and (continentId == 876 or continentId == 895 or continentId == 1165) or
             shFlying and continentId == 1550
-         ) then
+         ) or dragonRiding and continentId == 1978 then
             return true
         end
     else
@@ -4541,7 +4570,10 @@ function addon.functions.itemStat(self, ...)
             if element.stat == "QUALITY" then
                 stat = GetInventoryItemQuality("player", element.slot)
             elseif element.stat == "LEVEL" then
-                _, _, _, stat = GetItemInfo(GetInventoryItemID("player", element.slot))
+                local itemID = GetInventoryItemID("player", element.slot)
+                if itemID then
+                    _, _, _, stat = GetItemInfo(itemID)
+                end
             else
                 stat = stats[element.stat]
             end
@@ -4566,5 +4598,95 @@ function addon.functions.itemStat(self, ...)
                 addon.updateSteps = true
             end
         end
+    end
+end
+
+function addon.GetCurrencyName(id)
+    id = id or false
+    id = tonumber(id)
+    if not id then return end
+    local basicCurrencyInfo = C_CurrencyInfo.GetBasicCurrencyInfo(id)
+    local name = basicCurrencyInfo and basicCurrencyInfo.name
+    return name
+end
+
+function addon.functions.collectcurrency(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.dynamicText = true
+        local text, id, qty = ...
+        id = tonumber(id)
+        if not id then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': No currency ID provided\n' .. self)
+        end
+        element.id = id
+        qty = tonumber(qty)
+        element.qty = qty or 1
+        element.currencyName = addon.GetCurrencyName(element.id)
+
+        if text and text ~= "" then
+            element.rawtext = text
+            element.tooltipText = addon.icons.collect .. element.rawtext
+        else
+            element.requestFromServer = true
+            element.text = " "
+        end
+        return element
+    end
+
+    local element = self.element
+    local name = addon.GetCurrencyName(element.id)
+    local numRequired = element.qty
+    element.currencyName = name
+
+    local currencyInfo = C_CurrencyInfo.GetCurrencyInfo(element.id)
+    local count = currencyInfo and currencyInfo.quantity or 0
+
+    element.text = string.format("%d/%d %s", count, numRequired, element.currencyName)
+    element.tooltipText = addon.icons.collect .. element.text
+
+    if element.lastCount ~= count then addon.UpdateStepText(self) end
+    element.lastCount = count
+
+    if numRequired > 0 and count >= numRequired then
+        addon.SetElementComplete(self, true)
+    elseif numRequired == 0 and count == 0 then
+        addon.SetElementComplete(self)
+    elseif not element.textOnly then
+        addon.SetElementIncomplete(self)
+    end
+end
+
+function addon.functions.group(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local text, number = ...
+        text = text or number and string.format("Do NOT attempt this quest unless you are in a group of at least %s",number)
+        if text and text ~= "" then
+            element.text = text
+        end
+
+        addon.step.group = true
+        addon.step.solo = false
+        element.textOnly = true
+
+        return element
+    end
+end
+
+function addon.functions.solo(self, text)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        if text and text ~= "" then
+            element.text = text
+        end
+
+        addon.step.group = false
+        addon.step.solo = true
+        element.textOnly = true
+
+        return element
     end
 end

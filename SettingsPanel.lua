@@ -104,7 +104,7 @@ function addon.settings:InitializeSettings()
             worldMapPinScale = 1,
             distanceBetweenPins = 1,
             worldMapPinBackgroundOpacity = 0.35,
-            batchSize = 5,
+            batchSize = 6,
             phase = 6,
             xprate = 1,
             guideFontSize = 9,
@@ -953,6 +953,23 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 2,
                         order = 1.3,
+                        confirm = function()
+                            return L(
+                                       "Warning: Changing this setting mid-guide may cause quest pre-requisite failures.\nGuides were optimized for experience, disabling this option will result in a disjointed guide steps.") -- TODO locale
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                self:DetectXPRate()
+                            end
+                        end
+                    },
+                    enableGroupQuests = {
+                        name = L("Debug Mode"),
+                        desc = L("Display internal error messages"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.35,
                         confirm = function()
                             return L(
                                        "Warning: Changing this setting mid-guide may cause quest pre-requisite failures.\nGuides were optimized for experience, disabling this option will result in a disjointed guide steps.") -- TODO locale
@@ -2251,7 +2268,7 @@ function addon.settings:CreateAceOptionsPanel()
                     batchSize = {
                         name = L("Batching window size (ms)"),
                         desc = L(
-                            "Adjusts the batching window tolerance, used for hearthstone batching"),
+                            "Adjusts the batching window tolerance, used for hearthstone batching. Increase this value if you're experiencing framerate drops when using your Hearthstone"),
                         type = "range",
                         width = optionsWidth,
                         order = 1.2,

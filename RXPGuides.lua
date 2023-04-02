@@ -603,8 +603,14 @@ function addon:BAG_UPDATE(...) addon.UpdateItemFrame() end
 function addon:PLAYER_REGEN_ENABLED(...) addon.UpdateItemFrame() end
 
 function addon:QUEST_TURNED_IN(_, questId, xpReward)
+    -- scryer/aldor quest
     if questId == 10551 or questId == 10552 then
-        C_Timer.After(1, function() addon.ReloadGuide() end) -- scryer/aldor quest
+        local mapId = addon.mapId['Shattrath City']
+        for _,point in pairs(addon.activeWaypoints) do
+            if point.zone == mapId then
+                return C_Timer.After(1, function() addon.ReloadGuide() end)
+            end
+        end
     end
 end
 
@@ -885,11 +891,18 @@ function addon.PhaseCheck(phase)
 end
 
 function addon.IsStepShown(step)
-    return not (step.daily and RXPCData.skipDailies) and
-               (addon.settings.db.profile.northrendLM or not step.questguide) and
-               addon.AldorScryerCheck(step) and addon.PhaseCheck(step) and
-               addon.HardcoreCheck(step) and addon.SeasonCheck(step) and
-               addon.XpRateCheck(step) and addon.FreshAccountCheck(step)
+    return not(step.daily and RXPCData.skipDailies) and
+            (addon.settings.db.profile.northrendLM or not step.questguide) and
+             addon.AldorScryerCheck(step) and
+             addon.PhaseCheck(step) and addon.HardcoreCheck(step) and
+             addon.SeasonCheck(step) and addon.XpRateCheck(step) and addon.FreshAccountCheck(step) and addon.GroupCheck(step)
+end
+
+function addon.GroupCheck(step)
+    if (not addon.settings.db.profile.enableGroupQuests and step.group) or (addon.settings.db.profile.enableGroupQuests and step.solo) then
+        return false
+    end
+    return true
 end
 
 function addon.SeasonCheck(step)

@@ -249,7 +249,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #name C1 Azure Span Dragon Glyphs
-#displayname Auzre Span Dragon Glyphs
+#displayname Azure Span Dragon Glyphs
 #version 1
 #group Dragon Glyphs
 #next D1 Thaldraszus Dragon Glyphs
@@ -380,6 +380,7 @@ RXPGuides.RegisterGuide([[
 #displayname Thaldraszus Dragon Glyphs
 #version 1
 #group Dragon Glyphs
+#next E1 Forbidden Reach Dragon Glyphs
 
 step
     #title Dragon Glyph: South Hold Gate
@@ -481,4 +482,117 @@ step
     .line 2025,72.9,69.2,66.0,82.3
     .goto 2025,66.0,82.3
     .achievement 16578,1 >>Pick up the Dragon Glyph: Temporal Conflux on top of the tower
+]])
+
+RXPGuides.RegisterGuide([[
+#df
+#name E1 Forbidden Reach Dragon Glyphs
+#displayname Forbidden Reach Dragon Glyphs
+#version 1
+#group Dragon Glyphs
+
+step
+    #completewith next
+    .hs >> Use your Hearthstone IF it's in Valdrakken
+step
+    >>This Quest should pop up in your Questlog when you enter Valdrakken if it isn't already in your Questlog or you have completed it
+    .accept 74381 >>Accept Hidden Legacies
+    .goto 2112,60.80,39.73
+step
+    #completewith next
+    .cast 395219 >> Teleport to Seat of the Aspects
+    .goto 2112,61.93,32.2
+    >>|cFFFCDC00Alternatively you can just fly to the top of the Valdrakken Tower and skip this step|r
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kurazidaia|r
+    >>|cFFFCDC00You can skip the upcoming cutscene with ESC.|r
+    .isOnQuest 74381
+    .goto 2112,61.03,26.07
+    .skipgossip 201398,1
+    .complete 74381,1 --1/1 Hear Kurazidaia's report
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kurazidaia|r   
+    .goto 2112,61.03,26.07
+    .turnin 74381 >>Turn in Hidden Legacies
+    .accept 73076 >>Accept Return to the Reach
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Flightmaster Aluri|r
+    .goto 2112,44.05,67.90
+    .skipgossip 2
+    .complete 73076,1 --1/1 Speak with Flightmaster Aluri to fly to the Forbidden Reach (Optional)
+    .timer 158, Forbidden Reach Flight Time
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|tSurge Forward to speed up 
+    *Be sure not to use up all your Vigor charges at once. If you need to recharge Vigor try gliding instead.
+step
+    #title Dragon Glyph: Winglord's Perch
+    >>|cFFFCDC00Spend all your glyphs|r
+    .line 2151,35.86,59.11,18.3,13.2
+    .goto 2151,18.3,13.2 
+    .achievement 17411,1 >> Pick up the Dragon Glyph: Winglord's Perch hidden within a small broken building on an island
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|tSurge Forward to speed up 
+    *Be sure not to use up all your Vigor charges at once. If you need to recharge Vigor try gliding instead.
+step
+    #title Dragon Glyph: Caldera of the Menders
+    >>|cFFFCDC00Spend all your glyphs|r
+    .line 2151,18.3,13.2,37.73,30.58
+    .goto 2151,37.73,30.58 
+    .achievement 17411,8 >> Pick up the Dragon Glyph: Caldera of the Menders hidden within a broken building
+step
+    #completewith next
+    +To reach the tower in the sky, make frequent use of |T4640498:0|t[Skyward Ascend]
+    *To recharge Vigor, glide down to the nearest ground.
+step
+    #title Dragon Glyph: Froststone Peak
+    .line 2151,37.73,30.58,62.51,32.35
+    .goto 2151,62.51,32.35 
+    .achievement 17411,3 >> Pick up the Dragon Glyph: Froststone Peak hidden underneath the ceiling of a tower in the sky 
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|tSurge Forward to speed up 
+    *Be sure not to use up all your Vigor charges at once. If you need to recharge Vigor try gliding instead.
+step
+    #title Dragon Glyph: Dragonskull Island
+    .line 2151,62.51,32.35,79.45,32.63 
+    .goto 2151,79.45,32.63 
+    .achievement 17411,4 >> Pick up the Dragon Glyph: Dragonskull Island hidden in between 3 trees
+step
+    #completewith next
+    +To reach the mountain, make frequent use of |T4640498:0|t[Skyward Ascend]
+    *To recharge Vigor, glide down to the nearest ground.
+step
+    #title Dragon Glyph: Stormsunder Mountain
+    .line 2151,79.45,32.63,77.29,55.09 
+    .goto 2151,77.29,55.09
+    .achievement 17411,5 >> Pick up the Dragon Glyph: Stormsunder Mountain hidden on top of a mountain
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|tSurge Forward to speed up 
+    *Be sure not to use up all your Vigor charges at once. If you need to recharge Vigor try gliding instead.
+step
+    #title Dragon Glyph: Talonlord's Perch
+    .line 2151,77.29,55.09,59.07,65.05 
+    .goto 2151,59.07,65.05 
+    .achievement 17411,7 >> Pick up the Dragon Glyph: Talonlord's Perch hidden inside the top of the tower
+step
+    #completewith next
+    +To reach the snowy mountain, make frequent use of |T4640498:0|t[Skyward Ascend]
+    *To recharge Vigor, glide down to the nearest ground.
+step
+    #title Dragon Glyph: The Frosted Spine
+    .line 2151,59.07,65.05,48.53,69.0 
+    .goto 2151,48.53,69.0 
+    .achievement 17411,6 >> Pick up the Dragon Glyph: The Frosted Spine high up on a snowy mountain
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|tSurge Forward to speed up 
+    *Be sure not to use up all your Vigor charges at once. If you need to recharge Vigor try gliding instead.
+step
+    #title Dragon Glyph: Talon's Watch
+    .line 2151,48.53,69.0,20.6,91.4 
+    .goto 2151,20.6,91.4 
+    .achievement 17411,2 >> Pick up the Dragon Glyph: Talon's Watch hidden within the bottom of the tower on an island
 ]])
