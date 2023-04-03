@@ -856,7 +856,7 @@ function addon.PhaseCheck(phase)
         phase = phase.phase
     end
 
-    local currentPhase = addon.settings.db.profile.phase or (RXPCData and RXPCData.phase) or 6
+    local currentPhase = addon.settings.db.profile.phase or 6
 
     if phase and currentPhase then
         local pmin, pmax
