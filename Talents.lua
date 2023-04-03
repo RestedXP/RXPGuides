@@ -32,6 +32,7 @@ addon.talents.functions = {}
 addon.talents.guides = {}
 addon.talents.maxLevel = GetMaxPlayerLevel()
 
+local compatible = true
 local indexLookup
 local talentTooltips = {
     hooked = false,
@@ -51,11 +52,29 @@ local function buildTalentGuidesMenu()
 
     tinsert(menu, {text = L("Available Guides"), isTitle = 1, notCheckable = 1})
 
+    local playerLevel = UnitLevel("player")
+    local disabled, invalidReason = false, nil
     for key, guide in pairs(addon.talents.guides) do
+
+        if playerLevel < guide.minLevel then
+            invalidReason = "< " .. guide.minLevel
+            disabled = true
+        elseif playerLevel > guide.maxLevel then
+            invalidReason = "> " .. guide.maxLevel
+            disabled = true
+        else
+            disabled = false
+            invalidReason = nil
+        end
+
         tinsert(menu, {
             text = guide.name,
-            tooltipTitle = guide.description,
+            tooltipTitle = fmt("%s: %s", _G.LEVEL_RANGE, guide.levelRange),
             notCheckable = 1,
+            disabled = disabled,
+            tooltipText = invalidReason,
+            tooltipOnButton = true,
+            tooltipWhileDisabled = true,
             arg1 = key,
             func = function(_, arg1)
                 addon.talents:UpdateSelectedGuide(arg1)
@@ -76,6 +95,15 @@ local function buildTalentGuidesMenu()
     })
 
     tinsert(menu, {
+        text = _G.GAMEOPTIONS_MENU,
+        notCheckable = 1,
+        func = function()
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+        end
+    })
+
+    tinsert(menu, {
         text = _G.CLOSE,
         notCheckable = 1,
         func = function(self) self:Hide() end
@@ -84,11 +112,13 @@ local function buildTalentGuidesMenu()
 end
 
 function addon.talents:IsSupported()
-    return self.guides and next(self.guides) ~= nil
+    return self.guides and next(self.guides) ~= nil and compatible
 end
 
 function addon.talents:Setup()
     if not addon.settings.db.profile.enableTalentGuides then return end
+
+    if not self:IsSupported() then return end
 
     self:RegisterEvent("ADDON_LOADED")
 
@@ -96,9 +126,8 @@ function addon.talents:Setup()
 
     if tonumber(GetCVar("previewTalents")) == 0 and
         addon.settings.db.profile.previewTalents then
-        -- TOOD persist setting or disable output
-        addon.comms.PrettyPrint("Enabling talent previews")
         -- Talents are enabled in RXP, so match client
+        -- This only lasts per session, does not persist in-game setting
         SetCVar("previewTalents", 1)
     end
 end
@@ -115,6 +144,10 @@ function addon.talents:ADDON_LOADED(_, loadedAddon)
         PlayerTalentFrame = _G.PlayerTalentFrame
         self:BuildIndexLookup()
         self:UnregisterEvent("ADDON_LOADED")
+    elseif loadedAddon == "Talented" then
+        compatible = false
+        addon.comms.PrettyPrint(L(
+                                    "Talented detected, please disable for talent guide functionality")) -- TODO locale
     end
 end
 
@@ -122,9 +155,6 @@ function addon.talents:HookUI()
     local iconReference = {}
 
     if not self:IsSupported() then return end
-
-    -- Disable if other addons replace talents
-    -- Talented
 
     if _G.PlayerSpecTab3 and _G.PlayerSpecTab3:IsShown() then -- Wrath hunter regardless of dual-spec
         iconReference.frame = _G.PlayerSpecTab3
@@ -286,17 +316,17 @@ function addon.talents:ParseGuide(text)
         return
     end
 
-    -- guide.class = guide.class or addon.player.localeClass
     guide.minLevel = tonumber(guide.minLevel) or 10
     guide.maxLevel = tonumber(guide.maxLevel) or addon.talents.maxLevel
+    guide.levelRange = fmt("%d-%d", guide.minLevel, guide.maxLevel)
     guide.description = guide.description or
-                            fmt("%s - %s (%d-%d)", addon.player.localeClass,
-                                guide.name, guide.minLevel, guide.maxLevel)
+                            fmt("%s - %s (%s)", addon.player.localeClass,
+                                guide.name, guide.levelRange)
     guide.displayname = guide.displayname or guide.description
     guide.key = guide.key or fmt("%s - %s", addon.player.class, guide.name)
-    -- #guide.next
+    guide.nextKey = guide.next and
+                        fmt("%s - %s", addon.player.class, guide.next)
 
-    _G.RXPD = guide
     return guide
 end
 
@@ -404,7 +434,16 @@ function addon.talents:UpdateSelectedGuide(key)
 
     if not self.guides[key] then return end
 
+    if UnitLevel("player") < self.guides[key].minLevel then
+        addon.comms.PrettyPrint(L("Too low for %s"),
+                                self.guides[key].displayname)
+
+        return
+    end
+
     addon.settings.db.profile.activeTalentGuide = key
+
+    return true
 end
 
 talentTooltips.updateFunc = function(self)
@@ -421,39 +460,30 @@ end
 local function DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
     local ht = talentTooltips.highlights[talentIndex]
 
-    -- TOOD setting to disable this overlay
-
     if not ht then return end
 
-    if not ht.levelNumber then
-        ht.levelNumber = CreateFrame("Frame", "$parent_levelNumber",
+    if not ht.levelHeader then
+        ht.levelHeader = CreateFrame("Frame", "$parent_levelText",
                                      _G["PlayerTalentFrameTalent" .. talentIndex],
                                      BackdropTemplate)
 
-        ht.levelNumber:SetPoint("TOPLEFT", ht, 2, 0)
-        ht.levelNumber.text = ht.levelNumber:CreateFontString(nil, "OVERLAY")
+        ht.levelHeader:SetPoint("TOPLEFT", ht, 2, 0)
+        ht.levelHeader.text = ht.levelHeader:CreateFontString(nil, "OVERLAY")
 
-        ht.levelNumber.text:ClearAllPoints()
-        ht.levelNumber.text:SetPoint("CENTER", ht.levelNumber, 0, 3)
-        ht.levelNumber.text:SetJustifyH("LEFT")
-        ht.levelNumber.text:SetJustifyV("MIDDLE")
+        ht.levelHeader.text:ClearAllPoints()
+        ht.levelHeader.text:SetPoint("CENTER", ht.levelHeader, 0, 3)
+        ht.levelHeader.text:SetJustifyH("LEFT")
+        ht.levelHeader.text:SetJustifyV("MIDDLE")
 
         -- TODO specific text color setting?
-        ht.levelNumber.text:SetTextColor(unpack(addon.activeTheme.textColor))
-        ht.levelNumber.text:SetFont(addon.font, 10, "")
-
-        ht:HookScript("OnHide", function()
-            ht.levelNumber.text:SetText("")
-            ht.levelNumber.text:Hide()
-        end)
-
-        ht:HookScript("OnShow", function() ht.levelNumber.text:Show() end)
+        ht.levelHeader.text:SetTextColor(unpack(addon.activeTheme.textColor))
+        ht.levelHeader.text:SetFont(addon.font, 10, "")
     end
 
     -- Handle multiple-levels
     local numbers = {upcomingLevel}
 
-    local numberText = ht.levelNumber.text:GetText()
+    local numberText = ht.levelHeader.text:GetText()
 
     if numberText then
         local c
@@ -470,11 +500,13 @@ local function DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
     tsort(numbers)
     local newText = strjoin(',', unpack(numbers))
 
+    if not ht.levelHeader:IsShown() then ht.levelHeader:Show() end
+
     -- No changes, prevent uneeded UI calls
     if numberText == newText then return end
 
-    ht.levelNumber.text:SetText(newText)
-    ht.levelNumber:SetSize(ht.levelNumber.text:GetStringWidth() + 10, 17)
+    ht.levelHeader.text:SetText(newText)
+    ht.levelHeader:SetSize(ht.levelHeader.text:GetStringWidth() + 10, 17)
 end
 
 local function setHighlightColor(talentIndex, index)
@@ -490,6 +522,21 @@ function addon.talents:DrawTalents()
 
     if not PlayerTalentFrame:IsShown() then return end
 
+    if not addon.settings.db.profile.hightlightTalentPlan then
+        -- If disabled, cleanup old draws for dynamic settings
+        local ht
+        for i in pairs(talentTooltips.highlights) do
+            ht = talentTooltips.highlights[i]
+            if ht:IsShown() then ht:Hide() end
+
+            if ht.levelHeader and ht.levelHeader:IsShown() then
+                ht.levelHeader:Hide()
+            end
+        end
+
+        return
+    end
+
     if next(indexLookup) == nil then return end
 
     local currentTab = PanelTemplates_GetSelectedTab(PlayerTalentFrame)
@@ -497,7 +544,6 @@ function addon.talents:DrawTalents()
     -- local isPet = PlayerTalentFrame.pet
 
     local playerLevel = UnitLevel("player")
-    -- TODO setting, also handle > 5 color scheme, probably just no highlights and use numbers
     local advancedWarning = playerLevel +
                                 addon.settings.db.profile.upcomingTalentCount
     local levelStep, talentIndex
@@ -554,10 +600,13 @@ function addon.talents:DrawTalents()
                     end
                 else
                     -- Reset highlights on non-active tabs
-                    if talentTooltips.highlights[talentIndex] and
-                        talentTooltips.highlights[talentIndex]:IsShown() then
+                    if talentTooltips.highlights[talentIndex] then
+                        local ht = talentTooltips.highlights[talentIndex]
+                        if ht:IsShown() then ht:Hide() end
 
-                        talentTooltips.highlights[talentIndex]:Hide()
+                        if ht.levelHeader and ht.levelHeader:IsShown() then
+                            ht.levelHeader:Hide()
+                        end
                     end
                 end
             end
@@ -594,12 +643,21 @@ function addon.talents:ProcessTalents(validate)
 
     if not guide then return end
 
-    if validate then print("Validating", guide.displayname) end
+    if validate and addon.settings.db.profile.debug then
+        addon.comms.PrettyPrint("Validating %s", guide.displayname)
+    end
 
     if playerLevel < guide.minLevel and not validate then
-        addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname)
+        addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname) --
         return
     end
+
+    if playerLevel > guide.maxLevel and not validate then
+        addon.comms.PrettyPrint(L("Too high for %s"), guide.displayname) --
+        return
+    end
+
+    -- TODO prevent max level toon loading wrong talent and costing gold to retrain
 
     local stepLevel, remainingPoints
 
@@ -610,7 +668,15 @@ function addon.talents:ProcessTalents(validate)
                               GetGroupPreviewTalentPointsSpent()
 
         if (stepLevel > playerLevel) or remainingPoints == 0 then
-            print("Reached player level")
+            if not validate and playerLevel == guide.maxLevel and guide.nextKey then
+                addon.comms.PrettyPrint(L("Reached maximum level for guide"))
+
+                if self:UpdateSelectedGuide(guide.nextKey) then
+                    addon.comms.PrettyPrint(L("Loaded next guide, %s"),
+                                            guide.next)
+                end
+            end
+
             return
         end
 

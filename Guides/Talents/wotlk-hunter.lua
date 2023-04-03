@@ -233,7 +233,14 @@ level
 
 level
     .talent 1,9,1,3
+]])
 
-level =80
-    .retrain
+addon.talents.RegisterGuide([[
+#name Marksman Raiding
+#minLevel 80
+#maxLevel 80
+level
+    .talent 1,1,2,1
+    .pettalent 1,1,1
+
 ]])

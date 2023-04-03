@@ -143,10 +143,11 @@ function addon.settings:InitializeSettings()
             textPickColor = addon.guideTextColors.default['RXP_PICK_'],
             textBuyColor = addon.guideTextColors.default['RXP_BUY_'],
 
-            -- Talents - TODO UI
+            -- Talents
             enableTalentGuides = true,
             activeTalentGuide = nil,
             previewTalents = true,
+            hightlightTalentPlan = true,
             upcomingTalentCount = 5
         }
     }
@@ -887,7 +888,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Enable Talent Previews"), -- TODO locale
                         desc = L("Enable Talent Previews"),
                         type = "toggle",
-                        width = optionsWidth,
+                        width = optionsWidth * 2,
                         order = 5.3,
                         disabled = function()
                             return not (addon.talents and
@@ -896,12 +897,25 @@ function addon.settings:CreateAceOptionsPanel()
                                        addon.talents:IsSupported())
                         end
                     },
+                    hightlightTalentPlan = {
+                        name = L("Enable Talent Plan"), -- TODO locale
+                        desc = L("Highlight or list levels for each talent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.5,
+                        disabled = function()
+                            return not (addon.talents and
+                                       addon.settings.db.profile
+                                           .enableTalentGuides and
+                                       addon.talents:IsSupported())
+                        end
+                    },
                     upcomingTalentCount = {
-                        name = L("Talent previews"), -- TODO locale
-                        desc = L("Sets maximum number of talents to highlight"),
+                        name = L("Talent Plan Number"), -- TODO locale
+                        desc = L("Sets maximum number of talents to layout"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.4,
+                        order = 5.6,
                         min = 1,
                         max = addon.talents and addon.talents.maxLevel or 1,
                         step = 1,
@@ -912,6 +926,8 @@ function addon.settings:CreateAceOptionsPanel()
                             return not (addon.talents and
                                        addon.settings.db.profile
                                            .enableTalentGuides and
+                                       addon.settings.db.profile
+                                           .hightlightTalentPlan and
                                        addon.talents:IsSupported())
                         end
                     }
