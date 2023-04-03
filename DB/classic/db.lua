@@ -151,14 +151,15 @@ function addon.functions.xpto60alliance(self,...) --PLAYER_XP_UPDATE,QUEST_LOG_U
 		return
 	end
 
+    local som = {som = true, phase = "2"}
     local xpMod = 1
     local eliteMod = 1
 	--1.90980392157?
 
-    if RXPCData and RXPCData.SoM then
+    if addon.SeasonCheck(som) then
 		xpMod = 1.4
         eliteMod = 1.7
-		if RXPData.phase and RXPData.phase > 2 then
+		if addon.PhaseCheck(som) then
 			xpMod = xpMod*2/1.4
 			eliteMod = eliteMod*2/1.4
 		end
@@ -280,14 +281,15 @@ function addon.functions.xpto60horde(self,...)
 		return
 	end
 
+    local som = {som = true, phase = "2"}
     local xpMod = 1
     local eliteMod = 1
 	--1.90980392157?
 
-    if RXPCData and RXPCData.SoM then
-        xpMod = 1.4
+    if addon.SeasonCheck(som) then
+		xpMod = 1.4
         eliteMod = 1.7
-		if RXPData.phase and RXPData.phase > 2 then
+		if addon.PhaseCheck(som) then
 			xpMod = xpMod*2/1.4
 			eliteMod = eliteMod*2/1.4
 		end

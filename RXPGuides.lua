@@ -858,7 +858,7 @@ function addon.PhaseCheck(phase)
 
     local currentPhase = addon.settings.db.profile.phase or (RXPCData and RXPCData.phase) or 6
 
-    if phase and RXPCData and RXPCData.phase then
+    if phase and currentPhase then
         local pmin, pmax
         pmin, pmax = phase:match("(%d+)%-(%d+)")
         if pmax then
