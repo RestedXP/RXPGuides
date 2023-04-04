@@ -18,9 +18,10 @@ local tonumber = tonumber
 local tinsert, tsort = tinsert, table.sort
 local UnitLevel = UnitLevel
 local GetPetTalentTree, GetUnspentTalentPoints,
-      GetGroupPreviewTalentPointsSpent, AddPreviewTalentPoints =
-    _G.GetPetTalentTree, _G.GetUnspentTalentPoints,
-    _G.GetGroupPreviewTalentPointsSpent, _G.AddPreviewTalentPoints
+      GetGroupPreviewTalentPointsSpent, AddPreviewTalentPoints,
+      UnitCharacterPoints = _G.GetPetTalentTree, _G.GetUnspentTalentPoints,
+                            _G.GetGroupPreviewTalentPointsSpent,
+                            _G.AddPreviewTalentPoints, _G.UnitCharacterPoints
 local PanelTemplates_GetSelectedTab, PlayerTalentFrame =
     _G.PanelTemplates_GetSelectedTab, _G.PlayerTalentFrame
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
@@ -124,7 +125,7 @@ function addon.talents:Setup()
 
     self:UpdateSelectedGuide(addon.settings.db.profile.activeTalentGuide)
 
-    if tonumber(GetCVar("previewTalents")) == 0 and
+    if tonumber(GetCVar("previewTalents")) == 0 and addon.gameVersion > 30000 and
         addon.settings.db.profile.previewTalents then
         -- Talents are enabled in RXP, so match client
         -- This only lasts per session, does not persist in-game setting
@@ -158,19 +159,33 @@ function addon.talents:HookUI()
 
     if _G.PlayerSpecTab3 and _G.PlayerSpecTab3:IsShown() then -- Wrath hunter regardless of dual-spec
         iconReference.frame = _G.PlayerSpecTab3
+        iconReference.size = iconReference.frame:GetWidth()
 
         -- Offset RXP button as much as Tab2 is from Tab1
         _, _, _, _, iconReference.offsetY = _G.PlayerSpecTab3:GetPoint()
+        iconReference.point = {
+            "TOP", iconReference.frame, "BOTTOM", 0, iconReference.offsetY
+        }
 
     elseif _G.PlayerSpecTab2 and _G.PlayerSpecTab2:IsShown() then -- Dual spec non-hunter
         iconReference.frame = _G.PlayerSpecTab2
+        iconReference.size = iconReference.frame:GetWidth()
 
         -- Offset RXP button as much as Tab2 is from Tab1
         _, _, _, _, iconReference.offsetY = _G.PlayerSpecTab2:GetPoint()
 
+        iconReference.point = {
+            "TOP", iconReference.frame, "BOTTOM", 0, iconReference.offsetY
+        }
+    elseif addon.gameVersion < 20000 then
+        iconReference.frame = _G.PlayerTalentFrame
+        iconReference.size = 32
+        iconReference.point = {
+            "TOPLEFT", iconReference.frame, "TOPRIGHT", -32, -65
+        }
         -- elseif Retail
-    else -- Classic or Wrath without dual-spec
-        print("Else")
+    else
+        print("Else") -- Wrath without dual spec?
     end
 
     if not talentTooltips.hooked then
@@ -184,10 +199,9 @@ function addon.talents:HookUI()
     -- Build a button to match Wrath dual-spec talent tabs
     if not button then
         button = CreateFrame("Button", "$parentRXPTalents", iconReference.frame)
-        button:SetWidth(iconReference.frame:GetWidth())
-        button:SetHeight(iconReference.frame:GetHeight())
-        button:SetPoint("TOP", iconReference.frame, "BOTTOM", 0,
-                        iconReference.offsetY)
+        button:SetWidth(iconReference.size)
+        button:SetHeight(iconReference.size)
+        button:SetPoint(unpack(iconReference.point))
         button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
 
         button.bg = button:CreateTexture("$parentBG", "BACKGROUND")
@@ -206,8 +220,7 @@ function addon.talents:HookUI()
             if this:IsForbidden() or GameTooltip:IsForbidden() then
                 return
             end
-            GameTooltip:SetOwner(this, "ANCHOR_TOPLEFT",
-                                 iconReference.frame:GetWidth(), 0)
+            GameTooltip:SetOwner(this, "ANCHOR_TOPLEFT", iconReference.size, 0)
             GameTooltip:ClearLines()
 
             local guide = addon.talents:GetCurrentGuide()
@@ -336,6 +349,18 @@ function addon.talents.functions.retrain()
     -- If denied, don't prompt and just disable all predictions
 end
 
+-- { tab, talentIndex, name }
+local function learnClassicTalent(payload)
+    if addon.gameVersion > 20000 then return end
+
+    local tab, talentIndex, name = unpack(payload)
+    if LearnTalent(tab, talentIndex) then
+        addon.comms.PrettyPrint("%s - %s", _G.TRADE_SKILLS_LEARNED_TAB, name)
+    else
+        addon.error(L("Error learning talent ") .. name)
+    end
+end
+
 function addon.talents.functions.talent(element, validate)
     if type(element) == "string" then -- on parse
         local e = {talent = {}}
@@ -378,13 +403,24 @@ function addon.talents.functions.talent(element, validate)
 
         if talentIndex and validate then return true end
 
-        name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(
-                                                              talentData.tab,
-                                                              talentIndex)
+        if addon.gameVersion > 30000 then
+            name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(
+                                                                  talentData.tab,
+                                                                  talentIndex)
+        else
+            name, _, _, _, previewRankOrRank =
+                GetTalentInfo(talentData.tab, talentIndex)
+        end
 
         if previewRankOrRank < talentData.rank then
+            if addon.gameVersion < 20000 then
+                local d = {talentData.tab, talentIndex, name}
+                local prompt = fmt(_G.CONFIRM_LEARN_TALENT, name)
 
-            if addon.settings.db.profile.previewTalents then
+                addon.comms:ConfirmChoice("RXPTalentPrompt", prompt,
+                                          learnClassicTalent, d)
+
+            elseif addon.settings.db.profile.previewTalents then
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
                 addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name,
                                         _G.RANK, talentData.rank)
@@ -405,6 +441,8 @@ end
 local petSpecLookup = {['Ferocity'] = 1, ['Cunning'] = 2, ['Tenacity'] = 3}
 
 function addon.talents.functions.pettalent(element)
+    if addon.gameVersion < 30000 then return end
+
     if type(element) == "string" then -- on parse
         -- ferocity, cunning, tenacity
         local e = {pettalent = {}}
@@ -664,8 +702,12 @@ function addon.talents:ProcessTalents(validate)
     for stepNum, step in ipairs(guide.steps) do
         stepLevel = guide.minLevel + stepNum - 1
 
-        remainingPoints = GetUnspentTalentPoints() -
-                              GetGroupPreviewTalentPointsSpent()
+        if GetUnspentTalentPoints then
+            remainingPoints = GetUnspentTalentPoints() -
+                                  GetGroupPreviewTalentPointsSpent()
+        else
+            remainingPoints = UnitCharacterPoints("player")
+        end
 
         if (stepLevel > playerLevel) or remainingPoints == 0 then
             if not validate and playerLevel == guide.maxLevel and guide.nextKey then
