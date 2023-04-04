@@ -177,6 +177,12 @@ function addon.talents:HookUI()
         iconReference.point = {
             "TOP", iconReference.frame, "BOTTOM", 0, iconReference.offsetY
         }
+    elseif _G.PlayerSpecTab1 then -- Wrath, non dual-spec non-hunter
+        iconReference.frame = _G.PlayerTalentFrame
+        iconReference.size = 32
+        iconReference.point = {
+            "TOPLEFT", iconReference.frame, "TOPRIGHT", -32, -65
+        }
     elseif addon.gameVersion < 20000 then
         iconReference.frame = _G.PlayerTalentFrame
         iconReference.size = 32
@@ -185,7 +191,8 @@ function addon.talents:HookUI()
         }
         -- elseif Retail
     else
-        print("Else") -- Wrath without dual spec?
+        addon.error(fmt("%s - %s", _G.TALENTS, _G.ADDON_NOT_AVAILABLE))
+        return
     end
 
     if not talentTooltips.hooked then
