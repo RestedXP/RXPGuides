@@ -639,3 +639,19 @@ function addon.comms:PrettyPrintTime(s)
 
     return formattedString
 end
+
+function addon.comms:ConfirmChoice(lookup, prompt, confirmCallback, payload)
+
+    StaticPopupDialogs[lookup] = {
+        text = prompt,
+        button1 = _G.YES,
+        button2 = _G.NO,
+        OnAccept = function() confirmCallback(payload) end,
+        timeout = 0,
+        whileDead = 1,
+        hideOnEscape = 1,
+        showAlert = 1
+    }
+
+    _G.StaticPopup_Show(lookup)
+end
