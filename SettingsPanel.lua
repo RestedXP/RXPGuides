@@ -895,7 +895,8 @@ function addon.settings:CreateAceOptionsPanel()
                                        addon.settings.db.profile
                                            .enableTalentGuides and
                                        addon.talents:IsSupported())
-                        end
+                        end,
+                        hidden = addon.gameVersion < 30000
                     },
                     hightlightTalentPlan = {
                         name = L("Enable Talent Plan"), -- TODO locale
