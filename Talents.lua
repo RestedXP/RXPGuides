@@ -350,12 +350,6 @@ function addon.talents:ParseGuide(text)
     return guide
 end
 
-function addon.talents.functions.retrain()
-    -- TODO parse level >/< tags
-    -- Direct to retrain but don't automate
-    -- If denied, don't prompt and just disable all predictions
-end
-
 -- { tab, talentIndex, name }
 local function learnClassicTalent(payload)
     if addon.gameVersion > 20000 then return end
