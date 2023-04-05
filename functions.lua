@@ -3472,7 +3472,7 @@ function addon.functions.skipgossip(self, text, ...)
 end
 
 function addon.functions.skipgossipid(self, text, ...)
-    if not (C_GossipInfo or C_GossipInfo.GetOptions) then
+    if not (C_GossipInfo and C_GossipInfo.GetOptions) then
         return
     elseif type(self) == "string" then
         local element = {textOnly = true, text = text}
