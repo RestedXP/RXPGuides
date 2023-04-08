@@ -282,6 +282,22 @@ level
 
 level
     .pettalent 1,6,3,1
+
+-- BM get extra points
+level
+    .pettalent 1,6,3,1
+
+level
+    .pettalent 1,6,3,2
+
+level
+    .pettalent 1,5,1,1
+
+level
+    .pettalent 1,6,1,2
+
+level
+    .pettalent 1,2,2,2
 ]])
 
 addon.talents.RegisterGuide([[
