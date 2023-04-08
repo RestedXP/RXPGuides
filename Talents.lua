@@ -578,7 +578,6 @@ end
 
 function addon.talents:UpdateSelectedGuide(key)
     if not key then return end
-    -- TODO prevent pet
 
     if not self.guides[key] then return end
 
@@ -691,9 +690,6 @@ function addon.talents:DrawTalents()
     end
 
     local currentTab = PanelTemplates_GetSelectedTab(PlayerTalentFrame)
-    -- TODO .pettalent
-    -- local isPet = PlayerTalentFrame.pet
-    -- Talent points are earned every 4 levels starting at Level 20
 
     local playerLevel = UnitLevel("player")
     local advancedWarning = playerLevel +
