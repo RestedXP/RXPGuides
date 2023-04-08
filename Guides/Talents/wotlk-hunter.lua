@@ -2,18 +2,6 @@ local _, addon = ...
 
 if addon.player.class ~= "HUNTER" then return end
 
---[[
-2/2 in Cobra Reflexes IconCobra Reflexes;
-1/1 in Dash IconDash;
-3/3 in Spiked Collar IconSpiked Collar;
-3/3 in Culling the Herd IconCulling the Herd;
-3/3 in Spider's Bite IconSpider's Bite;
-1/1 in Call of the Wild IconCall of the Wild;
-1/1 in Rabid IconRabid;
-1/2 in Bloodthirsty IconBloodthirsty, or 1/2 in Boar's Speed IconBoar's Speed;
-1/2 in Wild Hunt IconWild Hunt.
-]]
-
 addon.talents.RegisterGuide([[
 #name Beast Mastery
 #next Marksman Raiding
@@ -21,11 +9,9 @@ addon.talents.RegisterGuide([[
 #maxLevel 80
 level
     .talent 1,1,2,1
-    .pettalent 1,1,1
 
 level
     .talent 1,1,2,2
-    .pettalent 1,1,2
 
 level
     .talent 1,1,2,3
@@ -241,6 +227,79 @@ addon.talents.RegisterGuide([[
 #maxLevel 80
 level
     .talent 1,1,2,1
-    .pettalent 1,1,1
+
+]])
+
+addon.talents.RegisterGuide([[
+#name Ferocity
+#pet Ferocity
+#minLevel 20
+#maxLevel 80
+level
+    .pettalent 1,1,1,1
+
+level
+    .pettalent 1,1,1,2
+
+level
+    .pettalent 1,1,2,1
+
+level
+    .pettalent 1,2,3,1
+
+level
+    .pettalent 1,2,3,2
+
+level
+    .pettalent 1,2,3,3
+
+level
+    .pettalent 1,3,1,1
+
+level
+    .pettalent 1,3,1,2
+
+level
+    .pettalent 1,3,1,3
+
+level
+    .pettalent 1,4,3,1
+
+level
+    .pettalent 1,4,3,2
+
+level
+    .pettalent 1,4,3,3
+
+level
+    .pettalent 1,5,3,1
+
+level
+    .pettalent 1,5,1,1
+
+level
+    .pettalent 1,2,2,1
+
+level
+    .pettalent 1,6,3,1
+]])
+
+addon.talents.RegisterGuide([[
+#name Cunning
+#pet Cunning
+#minLevel 20
+#maxLevel 80
+level
+    .pettalent 1,1,1,1
+
+]])
+
+addon.talents.RegisterGuide([[
+#name Tenacity
+#pet Tenacity
+#minLevel 20
+#maxLevel 80
+level
+    .pettalent 1,1,1,1
 
 ]])
