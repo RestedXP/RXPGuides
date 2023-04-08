@@ -57,41 +57,77 @@ local talentTooltips = {
 local function buildTalentGuidesMenu()
     local menu = {}
 
-    -- TOOD pet
-    tinsert(menu, {text = L("Available Guides"), isTitle = 1, notCheckable = 1})
-
     local playerLevel = UnitLevel("player")
     local disabled, invalidReason = false, nil
-    for key, guide in pairs(addon.talents.guides) do
 
-        if playerLevel < guide.minLevel then
-            invalidReason = "< " .. guide.minLevel
-            disabled = true
-        elseif playerLevel > guide.maxLevel then
-            invalidReason = "> " .. guide.maxLevel
-            disabled = true
-        else
-            disabled = false
-            invalidReason = nil
-        end
+    if PlayerTalentFrame.pet then
+        tinsert(menu, {text = _G.PET_TALENTS, isTitle = 1, notCheckable = 1})
 
-        tinsert(menu, {
-            text = guide.name,
-            tooltipTitle = fmt("%s: %s", _G.LEVEL_RANGE, guide.levelRange),
-            notCheckable = 1,
-            disabled = disabled,
-            tooltipText = invalidReason,
-            tooltipOnButton = true,
-            tooltipWhileDisabled = true,
-            arg1 = key,
-            func = function(_, arg1)
-                addon.talents:UpdateSelectedGuide(arg1)
-
-                if addon.talents:ProcessTalents('validate') then
-                    addon.talents:DrawTalents()
-                end
+        for key, guide in pairs(addon.talents.petGuides) do
+            if playerLevel < guide.minLevel then
+                invalidReason = "< " .. guide.minLevel
+                disabled = true
+            elseif playerLevel > guide.maxLevel then
+                invalidReason = "> " .. guide.maxLevel
+                disabled = true
+            else
+                disabled = false
+                invalidReason = nil
             end
-        })
+
+            if guide.pet == GetPetTalentTree() then
+                tinsert(menu, {
+                    text = guide.name,
+                    tooltipTitle = fmt("%s: %s", _G.LEVEL_RANGE,
+                                       guide.levelRange),
+                    notCheckable = 1,
+                    disabled = disabled,
+                    tooltipText = invalidReason,
+                    tooltipOnButton = true,
+                    tooltipWhileDisabled = true,
+                    func = function()
+                        if addon.talents:ProcessTalents('validate') then
+                            addon.talents:DrawTalents()
+                        end
+                    end
+                })
+            end
+        end
+    else
+        tinsert(menu,
+                {text = L("Available Guides"), isTitle = 1, notCheckable = 1})
+
+        for key, guide in pairs(addon.talents.guides) do
+
+            if playerLevel < guide.minLevel then
+                invalidReason = "< " .. guide.minLevel
+                disabled = true
+            elseif playerLevel > guide.maxLevel then
+                invalidReason = "> " .. guide.maxLevel
+                disabled = true
+            else
+                disabled = false
+                invalidReason = nil
+            end
+
+            tinsert(menu, {
+                text = guide.name,
+                tooltipTitle = fmt("%s: %s", _G.LEVEL_RANGE, guide.levelRange),
+                notCheckable = 1,
+                disabled = disabled,
+                tooltipText = invalidReason,
+                tooltipOnButton = true,
+                tooltipWhileDisabled = true,
+                arg1 = key,
+                func = function(_, arg1)
+                    addon.talents:UpdateSelectedGuide(arg1)
+
+                    if addon.talents:ProcessTalents('validate') then
+                        addon.talents:DrawTalents()
+                    end
+                end
+            })
+        end
     end
 
     tinsert(menu, {text = "", notCheckable = 1, isTitle = 1})
@@ -116,6 +152,7 @@ local function buildTalentGuidesMenu()
         notCheckable = 1,
         func = function(self) self:Hide() end
     })
+
     return menu
 end
 
@@ -535,10 +572,6 @@ function addon.talents:GetCurrentGuide()
         return self.petGuides[GetPetTalentTree()]
     else
         -- TODO automatically select talent guide for chosen spec, harder to do without DB
-        -- TODO automatically select talent guide for chosen spec, harder to do without DB
-
-        -- TODO automatically select talent guide for chosen spec, harder to do without DB
-
         return self.guides[addon.settings.db.profile.activeTalentGuide]
     end
 end
