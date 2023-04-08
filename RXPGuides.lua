@@ -870,7 +870,9 @@ function addon.PhaseCheck(phase)
 
     if type(phase) == "table" then phase = phase.phase end
 
-    if phase and RXPCData and RXPCData.phase then
+    local currentPhase = addon.settings.db.profile.phase or 6
+
+    if phase and currentPhase then
         local pmin, pmax
         pmin, pmax = phase:match("(%d+)%-(%d+)")
         if pmax then
@@ -880,7 +882,7 @@ function addon.PhaseCheck(phase)
             pmin = tonumber(phase)
             pmax = 0xffff
         end
-        if pmin and RXPCData.phase >= pmin and RXPCData.phase <= pmax then
+        if pmin and currentPhase >= pmin and currentPhase <= pmax then
             return true
         else
             return false

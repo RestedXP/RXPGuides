@@ -3472,7 +3472,7 @@ function addon.functions.skipgossip(self, text, ...)
 end
 
 function addon.functions.skipgossipid(self, text, ...)
-    if not (C_GossipInfo or C_GossipInfo.GetOptions) then
+    if not (C_GossipInfo and C_GossipInfo.GetOptions) then
         return
     elseif type(self) == "string" then
         local element = {textOnly = true, text = text}
@@ -4173,7 +4173,7 @@ function addon.CanPlayerFly(zoneOrContinent)
         -- 619 = Broken Isles, Zuldazar 862, Shadowlands = 1550, 1978=dragonflight
         if (ridingSkill > 224 and
             (continentId == 12 or continentId == 18 or continentId == 101 or continentId == 113  or continentId == 127 or continentId == 424 or continentId == 572 or continentId == 588 or continentId == 619 or continentId == 862) or
-            --bfaFlying and (continentId == 876 or continentId == 895 or continentId == 1165) or
+            (continentId == 876 or continentId == 895 or continentId == 1165) or --bfa
             shFlying and continentId == 1550
          ) or dragonRiding and continentId == 1978 then
             return true

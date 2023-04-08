@@ -1533,9 +1533,19 @@ function RXPFrame.GenerateMenuTable(menu)
         end
     end
 
-    table.sort(farmGuides)
-    table.sort(groupList)
-    table.sort(unusedGuides)
+    local sortfunc = function(g1,g2)
+        local w1 = addon.guideList[g1].weight_ or 0
+        local w2 = addon.guideList[g2].weight_ or 0
+        if w1 == w2 then
+            return g1 < g2
+        else
+            return w1 > w2
+        end
+    end
+
+    table.sort(farmGuides,sortfunc)
+    table.sort(groupList,sortfunc)
+    table.sort(unusedGuides,sortfunc)
 
     local menuIndex = 1
 

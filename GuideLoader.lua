@@ -115,6 +115,8 @@ function RXPG.AddGuide(guide)
         addon.guideList[guide.group].names_ = {}
     end
 
+    addon.guideList[guide.group].weight_ = tonumber(guide.groupweight) or addon.guideList[guide.group].weight_
+
     local list = addon.guideList[guide.group]
 
     if loadedGuide then -- guide exists, but new version

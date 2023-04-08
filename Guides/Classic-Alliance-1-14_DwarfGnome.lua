@@ -1301,8 +1301,7 @@ step
 step
     #completewith next
     .goto StormwindClassic,60.5,12.3
-    .zone Stormwind City >> Take the tram to Stormwind. Watch the video below for a logout skip. This skip is not worth it if you have the quest to talk to Nipsy.
-    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> CLICK HERE
+    .zone Stormwind City >> Take the tram to Stormwind
 step
     >>Talk to |cFF00FF25Grimand Elmore|r
     .target Grimand Elmore
@@ -1823,7 +1822,6 @@ step << Paladin
     .goto StormwindClassic,60.5,12.3,40,0
     .goto StormwindClassic,60.5,12.3,0
     .zone Ironforge >> Take the tram back to Ironforge
-    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
 step << !Paladin
     .hs >> Hearth to Loch Modan
 ]])

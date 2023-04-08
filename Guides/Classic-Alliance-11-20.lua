@@ -2231,7 +2231,6 @@ step << !Hunter
     .zone Stormwind City >> Enter the Deeprun Tram. Take the tram to Stormwind
     >>|cFFFCDC00Level your|r |T135966:0|t[First Aid] |cFFFCDC00and|r |T133971:0|t[Cooking] |cFFFCDC00if needed while waiting for the tram|r
     >>|cFFFCDC00You will need your|r |T135966:0|t[First Aid] |cFFFCDC00to be 80 for a quest at level 24 << Rogue !Dwarf
-    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cFFFCDC00Click here for a video guide for a logout skip on the tram|r
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3186,7 +3185,6 @@ step
     .zone Stormwind City >> Enter the Deeprun Tram. Take the tram to Stormwind
     >>|cFFFCDC00Level your|r |T135966:0|t[First Aid] |cFFFCDC00and|r |T133971:0|t[Cooking] |cFFFCDC00if needed while waiting for the tram|r
     >>You will need your |T135966:0|t[First Aid] to be 80 for a quest at level 24 << Rogue !Dwarf
-	.link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cFFFCDC00Click here for a video guide for a logout skip on the tram|r
 ]])
 
 RXPGuides.RegisterGuide([[
