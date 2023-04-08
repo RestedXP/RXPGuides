@@ -165,6 +165,8 @@ if not IsTurnedIn then
 end
 
 local IsQuestTurnedIn = function(id)
+    if not id then return end
+
     local recentTurnIn = addon.recentTurnIn[id]
     local isQuestTurnedIn = IsTurnedIn(id)
     if isQuestTurnedIn then addon.recentTurnIn[id] = nil end
