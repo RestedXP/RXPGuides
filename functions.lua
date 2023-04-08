@@ -3546,7 +3546,10 @@ function addon.functions.gossipoption(self, ...)
     end
 
     local matched = false
-    for _, v in pairs(GossipGetOptions()) do
+    local options = GossipGetOptions()
+    if not options then return end
+
+    for _, v in pairs(options) do
         if v.gossipOptionID == element.gossipId then
             C_GossipInfo.SelectOption(v.gossipOptionID)
             --GossipSelectOption(i)
