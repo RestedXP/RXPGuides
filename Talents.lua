@@ -33,8 +33,14 @@ addon.talents.functions = {}
 addon.talents.guides = {}
 addon.talents.maxLevel = GetMaxPlayerLevel()
 
+addon.talents.petGuides = {
+    -- ['Ferocity'] = {},
+    -- ['Cunning'] = {},
+    -- ['Tenacity'] = {}
+}
+
 local compatible = true
-local indexLookup
+local indexLookup = {}
 local talentTooltips = {
     hooked = false,
     data = {},
@@ -51,6 +57,7 @@ local talentTooltips = {
 local function buildTalentGuidesMenu()
     local menu = {}
 
+    -- TOOD pet
     tinsert(menu, {text = L("Available Guides"), isTitle = 1, notCheckable = 1})
 
     local playerLevel = UnitLevel("player")
@@ -273,7 +280,14 @@ end
 function addon.talents.RegisterGuide(text)
     local guide = addon.talents:ParseGuide(text)
 
-    if guide and guide.key then addon.talents.guides[guide.key] = guide end
+    if not (guide and guide.key) then return end
+
+    if guide.pet then
+        addon.talents.petGuides[guide.pet] = guide
+        return
+    end
+
+    addon.talents.guides[guide.key] = guide
 end
 
 function addon.talents:ParseGuide(text)
@@ -369,29 +383,28 @@ function addon.talents.functions.talent(element, validate)
         -- Strip whitespace
         args = args:gsub("%s*,%s*", ",")
 
-        local tab, tier, column, rank
-        -- optional tiers with ; delimiter
-        for arg in sgmatch(args, "[^;]+") do
-            tab, tier, column, rank = strsplit(',', arg)
-            -- print("Inserting talent", arg)
-            tinsert(e.talent, {
-                tab = tonumber(tab),
-                tier = tonumber(tier),
-                column = tonumber(column),
-                rank = tonumber(rank) or 1
-            })
-        end
+        local tab, tier, column, rank = strsplit(',', args)
+        -- print("Inserting talent", arg)
+        tinsert(e.talent, {
+            tab = tonumber(tab),
+            tier = tonumber(tier),
+            column = tonumber(column),
+            rank = tonumber(rank) or 1
+        })
 
         return e
     end
 
     local talentIndex
     local name, previewRankOrRank
+    local lookup
 
+    -- TODO handle off-plan talents
     for _, talentData in ipairs(element.talent) do
-        if not (indexLookup[talentData.tab] and
-            indexLookup[talentData.tab][talentData.tier] and
-            indexLookup[talentData.tab][talentData.tier][talentData.column]) then
+        lookup = indexLookup['player'][talentData.tab]
+
+        if not (lookup and lookup[talentData.tier] and
+            lookup[talentData.tier][talentData.column]) then
 
             addon.comms.PrettyPrint(
                 "Invalid talentIndex lookup for [%d][%d][%d]", talentData.tab,
@@ -399,8 +412,7 @@ function addon.talents.functions.talent(element, validate)
             return false
         end
 
-        talentIndex =
-            indexLookup[talentData.tab][talentData.tier][talentData.column]
+        talentIndex = lookup[talentData.tier][talentData.column]
 
         if talentIndex and validate then return true end
 
@@ -422,6 +434,7 @@ function addon.talents.functions.talent(element, validate)
                                           learnClassicTalent, d)
 
             elseif addon.settings.db.profile.previewTalents then
+                -- TODO add validation from .pettalent
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
                 addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name,
                                         _G.RANK, talentData.rank)
@@ -438,38 +451,104 @@ function addon.talents.functions.talent(element, validate)
     return true
 end
 
--- Which comma value .pettalent to choose
-local petSpecLookup = {['Ferocity'] = 1, ['Cunning'] = 2, ['Tenacity'] = 3}
-
-function addon.talents.functions.pettalent(element)
+function addon.talents.functions.pettalent(element, validate)
     if addon.gameVersion < 30000 then return end
 
     if type(element) == "string" then -- on parse
-        -- ferocity, cunning, tenacity
         local e = {pettalent = {}}
+        local args = element
         -- Strip whitespace
-        local args = strsplittable(',', element:gsub("%s*,%s*", ","))
-        -- [<<%s*(.+)]?
+        args = args:gsub("%s*,%s*", ",")
 
-        e.pettalent = args[petSpecLookup[GetPetTalentTree()]]
+        local tab, tier, column, rank = strsplit(',', args)
 
-        -- is pet talent tab selected
-        -- local isPet = PlayerTalentFrame.pet
-
-        -- print("Pet talent", e.pettalent)
+        -- print("Inserting pettalent", arg)
+        tinsert(e.pettalent, {
+            tab = tonumber(tab),
+            tier = tonumber(tier),
+            column = tonumber(column),
+            rank = tonumber(rank) or 1
+        })
 
         return e
     end
+
+    local talentIndex
+    local name, previewRankOrRank
+    local lookup
+
+    for _, talentData in pairs(element.pettalent) do
+        lookup = indexLookup[GetPetTalentTree()][talentData.tab]
+
+        if not (lookup and lookup[talentData.tier] and
+            lookup[talentData.tier][talentData.column]) then
+
+            addon.comms.PrettyPrint(
+                "Invalid pet talentIndex lookup for [%d][%d][%d]",
+                talentData.tab, talentData.tier, talentData.column)
+            return false
+        end
+
+        talentIndex = lookup[talentData.tier][talentData.column]
+        print(".pettalent:talentIndex", talentIndex)
+
+        if talentIndex and validate then return true end
+
+        name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(
+                                                              talentData.tab,
+                                                              talentIndex, nil,
+                                                              true)
+
+        if not name then print(".pettalent not name", talentIndex) end
+        -- TODO handle off-plan talents
+        -- Some pet talent trees have talentIndex gaps
+        if name and previewRankOrRank < talentData.rank then
+            if addon.settings.db.profile.previewTalents then
+                local before = GetGroupPreviewTalentPointsSpent(true, 1)
+                AddPreviewTalentPoints(talentData.tab, talentIndex, 1, true,
+                                       PlayerTalentFrame.talentGroup)
+
+                -- Verify training actually worked, there's no return value from Preview
+                if before == GetGroupPreviewTalentPointsSpent(true, 1) then
+                    print("AddPreviewTalentPoints failed") -- TODO error message
+                    return false
+                end
+
+                addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name,
+                                        _G.RANK, talentData.rank)
+            else
+                if LearnTalent(talentData.tab, talentIndex, true) then
+                    addon.comms.PrettyPrint("%s - %s (%s %d)",
+                                            _G.TRADE_SKILLS_LEARNED_TAB, name,
+                                            _G.RANK, talentData.rank)
+                else
+                    print("LearnTalent failed") -- TODO error message
+                    return false
+                end
+            end
+        end
+
+    end
+
+    return true
 end
 
 function addon.talents:GetCurrentGuide()
-    -- TODO automatically select talent guide for chosen spec, harder to do without DB
+    if PlayerTalentFrame.pet then
+        return self.petGuides[GetPetTalentTree()]
+    else
+        -- TODO automatically select talent guide for chosen spec, harder to do without DB
+        -- TODO automatically select talent guide for chosen spec, harder to do without DB
 
-    return self.guides[addon.settings.db.profile.activeTalentGuide]
+        -- TODO automatically select talent guide for chosen spec, harder to do without DB
+
+        return self.guides[addon.settings.db.profile.activeTalentGuide]
+    end
 end
 
 function addon.talents:UpdateSelectedGuide(key)
     if not key then return end
+    -- TODO prevent pet
 
     if not self.guides[key] then return end
 
@@ -498,6 +577,7 @@ end
 
 local function DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
     local ht = talentTooltips.highlights[talentIndex]
+    -- TODO handle pet talents, (petTalent + 20) * 4
 
     if not ht then return end
 
@@ -561,6 +641,10 @@ function addon.talents:DrawTalents()
 
     if not PlayerTalentFrame:IsShown() then return end
 
+    local kind = PlayerTalentFrame.pet and guide.pet or 'player'
+
+    if not indexLookup[kind] then self:BuildIndexLookup() end
+
     if not addon.settings.db.profile.hightlightTalentPlan then
         -- If disabled, cleanup old draws for dynamic settings
         local ht
@@ -576,11 +660,10 @@ function addon.talents:DrawTalents()
         return
     end
 
-    if next(indexLookup) == nil then return end
-
     local currentTab = PanelTemplates_GetSelectedTab(PlayerTalentFrame)
     -- TODO .pettalent
     -- local isPet = PlayerTalentFrame.pet
+    -- Talent points are earned every 4 levels starting at Level 20
 
     local playerLevel = UnitLevel("player")
     local advancedWarning = playerLevel +
@@ -598,7 +681,7 @@ function addon.talents:DrawTalents()
         for _, element in ipairs(levelStep.elements) do
             for _, talentData in ipairs(element.talent) do
                 talentIndex =
-                    indexLookup[talentData.tab][talentData.tier][talentData.column]
+                    indexLookup[kind][talentData.tab][talentData.tier][talentData.column]
 
                 if currentTab == talentData.tab then
                     talentTooltips.data[talentIndex] =
@@ -654,26 +737,40 @@ function addon.talents:DrawTalents()
 end
 
 function addon.talents:BuildIndexLookup()
-    if indexLookup then return end
+    local kind = PlayerTalentFrame.pet and GetPetTalentTree() or 'player'
 
-    indexLookup = {}
+    if indexLookup and indexLookup[kind] then return end
+
+    indexLookup[kind] = {}
 
     local tier, column
+    local name
 
-    for tabIndex = 1, _G.GetNumTalentTabs() do
-        indexLookup[tabIndex] = {}
+    for tabIndex = 1, _G.GetNumTalentTabs(nil, PlayerTalentFrame.pet,
+                                          PlayerTalentFrame.talentGroup) do
+        indexLookup[kind][tabIndex] = {}
 
-        for talentIndex = 1, _G.GetNumTalents(tabIndex) do
-            _, _, tier, column = GetTalentInfo(tabIndex, talentIndex)
-
-            indexLookup[tabIndex][tier] = indexLookup[tabIndex][tier] or {}
-            indexLookup[tabIndex][tier][column] = talentIndex
+        for talentIndex = 1, _G.GetNumTalents(tabIndex, nil,
+                                              PlayerTalentFrame.pet,
+                                              PlayerTalentFrame.talentGroup) do
+            name, _, tier, column = GetTalentInfo(tabIndex, talentIndex, nil,
+                                                  PlayerTalentFrame.pet,
+                                                  PlayerTalentFrame.talentGroup)
+            if name then
+                indexLookup[kind][tabIndex][tier] =
+                    indexLookup[kind][tabIndex][tier] or {}
+                indexLookup[kind][tabIndex][tier][column] = talentIndex
+            else -- TODO cleanup error message/debug
+                print("Pet nil name: ", talentIndex, name, tier, column)
+            end
 
         end
     end
 end
 
 function addon.talents:ProcessTalents(validate)
+    if PlayerTalentFrame.pet then return self:ProcessPetTalents(validate) end
+
     self:BuildIndexLookup()
 
     local playerLevel = UnitLevel("player")
@@ -745,6 +842,76 @@ function addon.talents:ProcessTalents(validate)
                 -- Explicitly require false, accept nil as truthy
                 if result == false then
                     -- print("Aborting step processing", result)
+                    return
+                end
+            end
+
+        end
+
+    end
+
+end
+
+-- Pet talents vary by spec, gained at 20 then every 4, just handle separately
+function addon.talents:ProcessPetTalents(validate)
+    self:BuildIndexLookup()
+
+    local playerLevel = UnitLevel("player")
+
+    local guide = self:GetCurrentGuide()
+
+    if not guide or not guide.pet then return end
+
+    if validate and addon.settings.db.profile.debug then
+        addon.comms.PrettyPrint("Validating %s", guide.displayname)
+    end
+
+    if playerLevel < guide.minLevel and not validate then
+        addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname) --
+        return
+    end
+
+    if playerLevel > guide.maxLevel and not validate then
+        addon.comms.PrettyPrint(L("Too high for %s"), guide.displayname) --
+        return
+    end
+
+    local remainingPoints
+
+    for stepNum, step in ipairs(guide.steps) do
+        remainingPoints = GetUnspentTalentPoints(nil, true) -
+                              GetGroupPreviewTalentPointsSpent(true, 1)
+
+        if remainingPoints == 0 then
+            if not validate and playerLevel == guide.maxLevel then
+                addon.comms.PrettyPrint(L("Reached maximum level for guide"))
+            end
+
+            return
+        end
+
+        print("Evaluating pet step", stepNum)
+        local result
+
+        for _, element in ipairs(step.elements) do
+            for tag, _ in pairs(element) do
+                -- print("Evaluating tag", tag)
+                if self.functions[tag] then
+                    -- print("Executing tag function", tag)
+                    result = self.functions[tag](element, validate)
+                else
+                    result = false
+                    addon.error(L("Error parsing guide") .. " " ..
+                                    (guide.name or 'Unknown') ..
+                                    ": Invalid function call (." .. tag .. ")\n" ..
+                                    stepNum)
+                end
+
+                if result == false then
+                    if addon.settings.db.profile.debug then
+                        addon.comms.PrettyPrint(
+                            "Aborting processing at step %d", stepNum)
+                    end
                     return
                 end
             end
