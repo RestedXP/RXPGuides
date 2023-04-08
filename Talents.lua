@@ -490,7 +490,6 @@ function addon.talents.functions.pettalent(element, validate)
         end
 
         talentIndex = lookup[talentData.tier][talentData.column]
-        print(".pettalent:talentIndex", talentIndex)
 
         if talentIndex and validate then return true end
 
@@ -499,9 +498,7 @@ function addon.talents.functions.pettalent(element, validate)
                                                               talentIndex, nil,
                                                               true)
 
-        if not name then print(".pettalent not name", talentIndex) end
         -- TODO handle off-plan talents
-        -- Some pet talent trees have talentIndex gaps
         if name and previewRankOrRank < talentData.rank then
             if addon.settings.db.profile.previewTalents then
                 local before = GetGroupPreviewTalentPointsSpent(true, 1)
@@ -890,7 +887,7 @@ function addon.talents:ProcessPetTalents(validate)
             return
         end
 
-        print("Evaluating pet step", stepNum)
+        -- print("Evaluating pet step", stepNum)
         local result
 
         for _, element in ipairs(step.elements) do
