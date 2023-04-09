@@ -499,6 +499,7 @@ local TextBoxHook = function(self)
             StopSound(channel)
             StopSound(channel-1)
         end
+        StaticPopupDialogs["ADDON_ACTION_FORBIDDEN"] = nil
     end
 end
 
