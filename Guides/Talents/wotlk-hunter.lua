@@ -43,10 +43,10 @@ level
 level
     .talent 1,3,3,1
 
-level
+level -- Unleashed Fury Rank 2
     .talent 1,3,3,2
 
-level
+level -- Unleashed Fury Rank 3
     .talent 1,3,3,3
 
 level
