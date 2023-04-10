@@ -33,8 +33,8 @@ level -- level 23 BM talent, Unleashed Fury Rank 3
 
 * `.talent TAB,ROW,COLUMN,RANK`
   * `TAB`: 1-3
-  * `ROW`: 1-4
-  * `COLUMN`: 1-11
+  * `ROW`: 1-11
+  * `COLUMN`: 1-4
   * `RANK`: 1-5
 * `.pettalent TAB,ROW,COLUMN,RANK`
   * Pet talents points are earned every 4 levels starting at Level 20
