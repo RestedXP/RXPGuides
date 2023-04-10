@@ -55,3 +55,68 @@ level -- level 23 BM talent, Unleashed Fury Rank 3
 * `#pet FAMILY`
   * `FAMILY`: `Cunning`, `Ferocity`, or `Tenacity`
   * Only used for separate Hunter pet talent guides
+
+## Optional talents
+
+Because of complexity with talent processing, optional branches aren't supported. However, use a combination of guides to meet your needs.
+
+For instance, Rogues and Warriors have weapon specific talents. To account for differences, use something similar to the following.
+
+```lua
+addon.talents.RegisterGuide([[
+#name Arms - Early
+#minLevel 10
+#maxlevel 30
+...
+level -- Sweeping Strikes Rank 1
+    .talent 1,5,2,1
+]])
+
+addon.talents.RegisterGuide([[
+#name Arms - Axes
+#next Arms - Mid
+#minLevel 31
+#maxLevel 35
+
+level -- Poleaxe Specialization Rank 1
+    .talent 1,5,1,1
+...
+level -- Poleaxe Specialization Rank 1
+    .talent 1,5,1,5
+]])
+
+addon.talents.RegisterGuide([[
+#name Arms - Maces
+#next Arms - Mid
+#minLevel 31
+#maxLevel 35
+
+level -- Mace Specialization Rank 1
+    .talent 1,5,3,1
+...
+level -- Mace Specialization Rank 1
+    .talent 1,5,3,5
+]])
+
+addon.talents.RegisterGuide([[
+#name Arms - Sword
+#next Arms - Mid
+#minLevel 31
+#maxLevel 35
+
+level -- Sword Specialization Rank 1
+    .talent 1,5,4,1
+...
+level -- Sword Specialization Rank 1
+    .talent 1,5,4,5
+]])
+
+addon.talents.RegisterGuide([[
+#name Arms - Mid
+#minLevel 36
+#maxlevel 70
+level -- Trauma Rank 1
+    .talent 1,6,4,1
+...
+]])
+```
