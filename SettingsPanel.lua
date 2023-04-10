@@ -141,7 +141,14 @@ function addon.settings:InitializeSettings()
             textLootColor = addon.guideTextColors.default['RXP_LOOT_'],
             textWarnColor = addon.guideTextColors.default['RXP_WARN_'],
             textPickColor = addon.guideTextColors.default['RXP_PICK_'],
-            textBuyColor = addon.guideTextColors.default['RXP_BUY_']
+            textBuyColor = addon.guideTextColors.default['RXP_BUY_'],
+
+            -- Talents
+            enableTalentGuides = true,
+            activeTalentGuide = nil,
+            previewTalents = true,
+            hightlightTalentPlan = true,
+            upcomingTalentCount = 5
         }
     }
 
@@ -847,6 +854,83 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.7
+                    },
+                    talentsHeader = {
+                        name = function()
+                            if addon.talents and addon.talents:IsSupported() then
+                                return _G.TALENTS
+                            else
+                                return fmt("%s - %s", _G.TALENTS,
+                                           _G.ADDON_NOT_AVAILABLE)
+                            end
+                        end,
+                        type = "header",
+                        width = "full",
+                        order = 5.0
+                    },
+                    enableTalentGuides = {
+                        name = L("Enable Talents Guides"), -- TODO locale
+                        desc = L("Enable Talents Guides"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.2,
+                        disabled = function()
+                            return not (addon.talents and
+                                       addon.talents:IsSupported())
+                        end,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end
+                    },
+                    previewTalents = {
+                        name = L("Enable Talent Previews"), -- TODO locale
+                        desc = L("Enable Talent Previews"),
+                        type = "toggle",
+                        width = optionsWidth * 2,
+                        order = 5.3,
+                        disabled = function()
+                            return not (addon.talents and
+                                       addon.settings.db.profile
+                                           .enableTalentGuides and
+                                       addon.talents:IsSupported())
+                        end,
+                        hidden = addon.gameVersion < 30000
+                    },
+                    hightlightTalentPlan = {
+                        name = L("Enable Talent Plan"), -- TODO locale
+                        desc = L("Highlight or list levels for each talent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.5,
+                        disabled = function()
+                            return not (addon.talents and
+                                       addon.settings.db.profile
+                                           .enableTalentGuides and
+                                       addon.talents:IsSupported())
+                        end
+                    },
+                    upcomingTalentCount = {
+                        name = L("Talent Plan Number"), -- TODO locale
+                        desc = L("Sets maximum number of talents to layout"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 5.6,
+                        min = 1,
+                        max = addon.talents and addon.talents.maxLevel or 1,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                        end,
+                        disabled = function()
+                            return not (addon.talents and
+                                       addon.settings.db.profile
+                                           .enableTalentGuides and
+                                       addon.settings.db.profile
+                                           .hightlightTalentPlan and
+                                       addon.talents:IsSupported())
+                        end
                     }
                 }
             },

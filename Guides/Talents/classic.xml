@@ -1,0 +1,11 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+    <Script file="Guides/Talents/classic-druid.lua"/>
+    <Script file="Guides/Talents/classic-hunter.lua"/>
+    <Script file="Guides/Talents/classic-mage.lua"/>
+    <Script file="Guides/Talents/classic-paladin.lua"/>
+    <Script file="Guides/Talents/classic-priest.lua"/>
+    <Script file="Guides/Talents/classic-rogue.lua"/>
+    <Script file="Guides/Talents/classic-shaman.lua"/>
+    <Script file="Guides/Talents/classic-warlock.lua"/>
+    <Script file="Guides/Talents/classic-warrior.lua"/>
+</Ui>

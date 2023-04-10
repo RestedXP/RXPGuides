@@ -33,3 +33,6 @@ functions.lua
 GuideLoader.lua
 
 Guides/GuideList-classic.xml
+
+Talents.lua
+Guides/Talents/classic.xml

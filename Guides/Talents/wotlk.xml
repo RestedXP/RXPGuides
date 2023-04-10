@@ -1,0 +1,12 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+    <Script file="Guides/Talents/wotlk-deathknight.lua"/>
+    <Script file="Guides/Talents/wotlk-druid.lua"/>
+    <Script file="Guides/Talents/wotlk-hunter.lua"/>
+    <Script file="Guides/Talents/wotlk-mage.lua"/>
+    <Script file="Guides/Talents/wotlk-paladin.lua"/>
+    <Script file="Guides/Talents/wotlk-priest.lua"/>
+    <Script file="Guides/Talents/wotlk-rogue.lua"/>
+    <Script file="Guides/Talents/wotlk-shaman.lua"/>
+    <Script file="Guides/Talents/wotlk-warlock.lua"/>
+    <Script file="Guides/Talents/wotlk-warrior.lua"/>
+</Ui>

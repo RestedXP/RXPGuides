@@ -33,3 +33,6 @@ functions.lua
 GuideLoader.lua
 
 Guides/GuideList.xml
+
+Talents.lua
+Guides/Talents/wotlk.xml

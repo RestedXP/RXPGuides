@@ -69,7 +69,7 @@ function addon.tracker:SetupTracker()
     self:CompileData()
 
     self:CreateGui(_G.CharacterFrame, playerName)
-    self.reportKey = fmt("%s|%s|%s", playerName, _G.UnitClass("player"),
+    self.reportKey = fmt("%s|%s|%s", playerName, addon.player.class,
                          _G.GetRealmName())
 
     if addon.settings.db.profile.enablelevelSplits then
@@ -1251,9 +1251,9 @@ end
 
 function addon.tracker:CompileLevelSplits(kind)
     local splitsReportData = {
-        title = fmt("%s (%s) - %s", playerName, _G.UnitClass("player"),
+        title = fmt("%s (%s) - %s", playerName, addon.player.class,
                     _G.GetRealmName()),
-        reportKey = fmt("%s|%s|%s", playerName, _G.UnitClass("player"),
+        reportKey = fmt("%s|%s|%s", playerName, addon.player.class,
                         _G.GetRealmName())
     }
     local secondsSinceLogin = difftime(time(), addon.tracker.state.login.time)

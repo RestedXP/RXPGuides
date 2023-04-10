@@ -1,0 +1,3 @@
+local _, addon = ...
+
+if addon.player.class ~= "DEATHKNIGHT" then return end

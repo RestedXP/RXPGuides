@@ -1,0 +1,3 @@
+local _, addon = ...
+
+if addon.player.class ~= "PRIEST" then return end
