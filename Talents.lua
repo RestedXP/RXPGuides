@@ -188,7 +188,6 @@ function addon.talents:ADDON_LOADED(_, loadedAddon)
 
         PlayerTalentFrame = _G.PlayerTalentFrame
         self:BuildIndexLookup()
-        self:UnregisterEvent("ADDON_LOADED")
     elseif loadedAddon == "Talented" then
         compatible = false
         addon.comms.PrettyPrint(L(
@@ -337,7 +336,7 @@ function addon.talents:ParseGuide(text)
     local currentStep = 0
 
     -- Loop over each line in guide
-    for line in string.gmatch(text, "[^\n\r]+") do
+    for line in sgmatch(text, "[^\n\r]+") do
         line = line:gsub("^%s+", "")
         line = line:gsub("%s+$", "")
         linenumber = linenumber + 1
@@ -409,7 +408,7 @@ local function learnClassicTalent(payload)
     if LearnTalent(tab, talentIndex) then
         addon.comms.PrettyPrint("%s - %s", _G.TRADE_SKILLS_LEARNED_TAB, name)
     else
-        addon.error(L("Error learning talent ") .. name)
+        addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN, name))
     end
 end
 
@@ -471,15 +470,28 @@ function addon.talents.functions.talent(element, validate)
                                           learnClassicTalent, d)
 
             elseif addon.settings.db.profile.previewTalents then
-                -- TODO add validation from .pettalent
+                local before = GetGroupPreviewTalentPointsSpent()
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
+
+                -- Verify training actually worked, there's no return value from Preview
+                if before == GetGroupPreviewTalentPointsSpent() then
+                    addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN,
+                                    name))
+                    return false
+                end
+
                 addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name,
                                         _G.RANK, talentData.rank)
             else
-                LearnTalent(talentData.tab, talentIndex)
-                addon.comms.PrettyPrint("%s - %s (%s %d)",
-                                        _G.TRADE_SKILLS_LEARNED_TAB, name,
-                                        _G.RANK, talentData.rank)
+                if LearnTalent(talentData.tab, talentIndex) then
+                    addon.comms.PrettyPrint("%s - %s (%s %d)",
+                                            _G.TRADE_SKILLS_LEARNED_TAB, name,
+                                            _G.RANK, talentData.rank)
+                else
+                    addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN,
+                                    name))
+                    return false
+                end
             end
         end
 
@@ -544,7 +556,8 @@ function addon.talents.functions.pettalent(element, validate)
 
                 -- Verify training actually worked, there's no return value from Preview
                 if before == GetGroupPreviewTalentPointsSpent(true, 1) then
-                    print("AddPreviewTalentPoints failed") -- TODO error message
+                    addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN,
+                                    name))
                     return false
                 end
 
@@ -556,7 +569,8 @@ function addon.talents.functions.pettalent(element, validate)
                                             _G.TRADE_SKILLS_LEARNED_TAB, name,
                                             _G.RANK, talentData.rank)
                 else
-                    print("LearnTalent failed") -- TODO error message
+                    addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN,
+                                    name))
                     return false
                 end
             end
@@ -606,7 +620,6 @@ end
 
 local function DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
     local ht = talentTooltips.highlights[talentIndex]
-    -- TODO handle pet talents, (petTalent + 20) * 4
 
     if not ht then return end
 
@@ -669,10 +682,9 @@ function addon.talents:DrawTalents()
     if not guide then return end
 
     if not PlayerTalentFrame:IsShown() then return end
+    if PlayerTalentFrame.pet then return end
 
-    local kind = PlayerTalentFrame.pet and guide.pet or 'player'
-
-    if not indexLookup[kind] then self:BuildIndexLookup() end
+    if not indexLookup['player'] then self:BuildIndexLookup() end
 
     if not addon.settings.db.profile.hightlightTalentPlan then
         -- If disabled, cleanup old draws for dynamic settings
@@ -707,7 +719,7 @@ function addon.talents:DrawTalents()
         for _, element in ipairs(levelStep.elements) do
             for _, talentData in ipairs(element.talent) do
                 talentIndex =
-                    indexLookup[kind][talentData.tab][talentData.tier][talentData.column]
+                    indexLookup['player'][talentData.tab][talentData.tier][talentData.column]
 
                 if currentTab == talentData.tab then
                     talentTooltips.data[talentIndex] =
@@ -786,8 +798,6 @@ function addon.talents:BuildIndexLookup()
                 indexLookup[kind][tabIndex][tier] =
                     indexLookup[kind][tabIndex][tier] or {}
                 indexLookup[kind][tabIndex][tier][column] = talentIndex
-            else -- TODO cleanup error message/debug
-                print("Pet nil name: ", talentIndex, name, tier, column)
             end
 
         end
