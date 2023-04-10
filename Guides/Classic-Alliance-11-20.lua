@@ -80,7 +80,7 @@ step
     .target Terenthis
 step << Dwarf Hunter
     #sticky
-    .goto Darkshore,40.75,70.49,40,0 
+    .goto Darkshore,40.75,70.49,40,0
     .goto Darkshore,40.77,78.56,40,0
     .goto Darkshore,38.21,73.32,40 >>Send your pet to attack a |cFFFF5722Thistle Bear|r. Once your pet is stunned by the |cFFFF5722Thistle Bear|r, abandon your pet and start taming it
     .tame 2163 >>|cFFFCDC00Cast |T132164:0|t[Tame Beast] on a |cFFFF5722Thistle Bear|r to tame it|r
@@ -360,7 +360,7 @@ step
     .goto Darkshore,47.79,39.46,40,0
     .goto Darkshore,45.36,43.64,40,0
     .goto Darkshore,43.24,41.46,40,0
-    .goto Darkshore,46.04,45.40        
+    .goto Darkshore,46.04,45.40
     .xp 13 >> Grind to level 13
 step
     #completewith MeatFangEgg1
@@ -783,7 +783,7 @@ step
     #completewith StalkerFangs
     >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r. Loot them for their |cFF00BCD4Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
-    .unitscan Moonstalker;Moonstalker Runt    
+    .unitscan Moonstalker;Moonstalker Runt
 step << !Druid !Hunter
 #map Darkshore
     .goto Felwood,27.70,10.03
@@ -1337,19 +1337,15 @@ step << Dwarf Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gryth Thurden|r
     .fly Wetlands>> Fly to Wetlands
     .target Gryth Thurden
-step << Dwarf Paladin
-    #hardcore
+step
+    #hardcore << !Human
     .goto Dun Morogh,53.5,34.9
     .zone Dun Morogh>>Exit Ironforge
-step << Human
-    .goto Dun Morogh,53.5,34.9
-    .zone Dun Morogh>>Exit Ironforge
---N add training before?
-step << Human/Dwarf Paladin
+step
     #hardcore
     #completewith next
     .goto Dun Morogh,59.43,42.85,150 >> Travel to the Dun Morogh -> Wetlands skip spot
-step << Human/Dwarf Paladin
+step
     #hardcore
     .goto Dun Morogh,59.5,42.8,40,0
     .goto Dun Morogh,60.4,44.1,40,0
@@ -1534,7 +1530,7 @@ step
     #completewith xxxxx
     >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r. Loot them for their |cFF00BCD4Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
-    .unitscan Moonstalker;Moonstalker Runt    
+    .unitscan Moonstalker;Moonstalker Runt
 step << Druid
     #sticky
     #label earthroot
@@ -1647,7 +1643,7 @@ step
     #completewith prospector << Hunter
     >>Kill |cFFFF5722Moonstalker Sires|r. Loot them for their |cFF00BCD4Pelts|r
     .complete 986,1 -- Fine Moonstalker Pelt (5)
-    .unitscan Moonstalker Sire    
+    .unitscan Moonstalker Sire
 step
 #map Darkshore
     .goto Felwood,27.00,55.59
@@ -1678,7 +1674,7 @@ step
     .goto Darkshore,36.64,76.53
     >>Kill |cFFFF5722Greymist Warriors|r and |cFFFF5722Greymist Hunters|r at the camp
     >>|cFFFCDC00Move to the Bonfire in the center of the camp to summon|r |cFFFF5722Murkdeep|r
-    >>Kill |cFFFF5722Murkdeep|r. He will run in from the water 
+    >>Kill |cFFFF5722Murkdeep|r. He will run in from the water
     .complete 4740,1
     .unitscan Murkdeep
     .mob Greymist Warrior
@@ -2171,7 +2167,7 @@ step << !Hunter
     #completewith next
     .goto Wetlands,53.14,70.38,30,0
     .goto Wetlands,48.32,67.07,35,0
-    .goto Wetlands,50.14,72.10,30,0 
+    .goto Wetlands,50.14,72.10,30,0
     .goto Loch Modan,25.4,10.6,30 >> Travel to Loch Modan
     .zone Loch Modan >> |cFFFCDC00Stay on the main road to avoid mobs|r
 step << !Hunter
@@ -3082,7 +3078,7 @@ step
     .goto Darkshore,51.50,22.26,50,0
     .goto Darkshore,49.66,21.39
     >>Kill |cFFFF5722Encrusted Tide Crawlers|r and |cFFFF5722Reef Crawlers|r. Loot them for their |cFF00BCD4Crab Chunks|r
-    .complete 1138,1 -- Fine Crab Chunks (6)    
+    .complete 1138,1 -- Fine Crab Chunks (6)
 step << NightElf
     #softcore
     #completewith next
@@ -4124,7 +4120,7 @@ step << Paladin
     .trainer >> Train your class spells
     .target Arthur the Faithful
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Brother Joshua|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Brother Joshua|r
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
     .target Brother Joshua
@@ -4750,7 +4746,7 @@ step
     .goto Darkshore,36.64,76.53
     >>Kill |cFFFF5722Greymist Warriors|r and |cFFFF5722Greymist Hunters|r at the camp
     >>|cFFFCDC00Move to the Bonfire in the center of the camp to summon|r |cFFFF5722Murkdeep|r
-    >>Kill |cFFFF5722Murkdeep|r. He will run in from the water 
+    >>Kill |cFFFF5722Murkdeep|r. He will run in from the water
     .complete 4740,1
     .unitscan Murkdeep
     .mob Greymist Warrior
@@ -4804,7 +4800,7 @@ step
 #map Darkshore
     .goto Felwood,27.96,55.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kerlonian Evershade|r to start the escort
-    >>|cFFFCDC00Skip this step if he is not there. It can take up to 25 minutes for him to respawn|r 
+    >>|cFFFCDC00Skip this step if he is not there. It can take up to 25 minutes for him to respawn|r
 	.target Kerlonian Evershade
     .accept 5321 >> Accept The Sleeper Has Awakened
 step
