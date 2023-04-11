@@ -224,5 +224,6 @@ addon.questAcceptItems = {
     [3461] = 10444, -- Return to Tymor // Standard Issue Flare Gun
     [2204] = 7667, -- Restoring the Necklace // Talvash's Phial of Scrying
     [949] = 5251, -- The Twilight Camp // Phial of Scrying
-    [2478] = 8051 -- Mission: Possible But Not Probable // Flare Gun
+    [2478] = 8051, -- Mission: Possible But Not Probable // Flare Gun
+    [830] = 4881, -- The Admiral's Orders // Aged Envelope
 }
