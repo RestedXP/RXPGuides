@@ -1684,7 +1684,7 @@ function addon.functions.fp(self, ...)
         if element.textOnly and fpDiscovered then
             element.step.completed = true
             addon.updateSteps = true
-        elseif fpDiscovered or (event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH) then
+        elseif fpDiscovered or (event == "UI_INFO_MESSAGE" and (arg2 == _G.ERR_NEWTAXIPATH or arg2 == _G.ERR_TAXINOPATHS)) then
             if addon.FPbyZone and not fpDiscovered then
                 local currentMap = C_Map.GetBestMapForUnit("player")
                 for mapId,flightId in pairs(addon.FPbyZone[faction]) do
