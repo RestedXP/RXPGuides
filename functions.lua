@@ -14,7 +14,7 @@ events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
 events.complete = "QUEST_LOG_UPDATE"
-events.fp = {"UI_INFO_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW"}
+events.fp = {"UI_INFO_MESSAGE", "UI_ERROR_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW"}
 events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED", "GOSSIP_SHOW"}
@@ -1678,22 +1678,33 @@ function addon.functions.fp(self, ...)
     end
     local event, arg1, arg2 = ...
     local element = self.element
+    print('v',element.fpId,RXPCData.flightPaths[element.fpId])
     if self.element.step.active then
         --print(element.fpId,'-',RXPCData.flightPaths[element.fpId])
         local fpDiscovered = element.fpId and RXPCData.flightPaths[element.fpId]
         if element.textOnly and fpDiscovered then
             element.step.completed = true
             addon.updateSteps = true
-        elseif fpDiscovered or (event == "UI_INFO_MESSAGE" and (arg2 == _G.ERR_NEWTAXIPATH or arg2 == _G.ERR_TAXINOPATHS)) then
-            if addon.FPbyZone and not fpDiscovered then
-                local currentMap = C_Map.GetBestMapForUnit("player")
+        elseif fpDiscovered then
+            addon.SetElementComplete(self)
+        elseif event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH or event == "UI_ERROR_MESSAGE" and arg2 == _G.ERR_TAXINOPATHS then
+            local currentMap = C_Map.GetBestMapForUnit("player")
+            local validFP = false
+            if addon.FPbyZone then
                 for mapId,flightId in pairs(addon.FPbyZone[faction]) do
                     if currentMap == mapId then
-                        RXPCData.flightPaths[flightId] = addon.FPDB[faction][flightId] and addon.FPDB[faction][flightId].name
+                        validFP = true
+                        if not RXPCData.flightPaths[flightId] then
+                            RXPCData.flightPaths[flightId] = addon.FPDB[faction][flightId] and addon.FPDB[faction][flightId].name
+                        end
                     end
                 end
+                if not validFP or element.fpId and RXPCData.flightPaths[element.fpId] then
+                    addon.SetElementComplete(self)
+                end
+            else
+                addon.SetElementComplete(self)
             end
-            addon.SetElementComplete(self)
         elseif (GetTime() - element.confirm) > 10 and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
             element.confirm = GetTime()
         end
