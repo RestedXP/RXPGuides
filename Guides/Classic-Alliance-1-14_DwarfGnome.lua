@@ -3015,7 +3015,7 @@ step
     .goto Dun Morogh,61.1,13.6,15,0
     .goto Dun Morogh,60.7,9.8,15,0
     .goto Wetlands,18.9,71.8,40,0
-    .zone >>Do the Wetlands mountain skip
+    .zone Wetlands >>Do the Wetlands mountain skip
     .goto Dun Morogh,60.6,44.1,0
     .goto Dun Morogh,62.1,41.5,0
     .goto Dun Morogh,61.3,32.5,0
