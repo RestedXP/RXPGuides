@@ -589,6 +589,7 @@ s["HUNTER"] = {
         24549 -- natural armor r2
     },
     [14] = {
+        14281, -- arcane shot 2
         6197, -- eagle eye
         1513 -- scare beast
     },
@@ -597,14 +598,13 @@ s["HUNTER"] = {
         5118 -- aspect of the cheetah - high prio, can only be trained at 20
     },
     [18] = {
-        14281, -- arcane shot 2
         14318, -- aspect of the hawk r2
         13550, -- serpent sting r3
         3111, -- mend pet r2
-        781 -- disengage r1
+        15147, -- growl r3
     },
     [20] = {
-        15147, -- growl r3
+        781, -- disengage r1
         4187, -- great stamina r3
         24550, -- natural armor r3
         24494, -- nature res

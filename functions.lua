@@ -1685,6 +1685,14 @@ function addon.functions.fp(self, ...)
             element.step.completed = true
             addon.updateSteps = true
         elseif fpDiscovered or (event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH) then
+            if addon.FPbyZone and not fpDiscovered then
+                local currentMap = C_Map.GetBestMapForUnit("player")
+                for mapId,flightId in pairs(addon.FPbyZone[faction]) do
+                    if currentMap == mapId then
+                        RXPCData.flightPaths[flightId] = addon.FPDB[faction][flightId] and addon.FPDB[faction][flightId].name
+                    end
+                end
+            end
             addon.SetElementComplete(self)
         elseif (GetTime() - element.confirm) > 10 and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
             element.confirm = GetTime()
