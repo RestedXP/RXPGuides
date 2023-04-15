@@ -148,7 +148,9 @@ function addon.settings:InitializeSettings()
             activeTalentGuide = nil,
             previewTalents = true,
             hightlightTalentPlan = true,
-            upcomingTalentCount = 5
+            upcomingTalentCount = 5,
+
+            enableTips = true
         }
     }
 
@@ -1678,6 +1680,29 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 15,
                         hidden = not _G.Questie
+                    }
+                }
+            },
+            tipsPanel = {
+                type = "group",
+                name = L("Tips"), -- TODO locale
+                order = 7,
+                args = {
+                    enableTips = {
+                        name = L("Enable Tips"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.1
+                    },
+                    enableTipsFrame = {
+                        name = L("Enable Tips Frame"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.2,
+                        disabled = function()
+                            return not self.db.profile.enableTips
+                        end,
+                        hidden = true -- TODO Zarant
                     }
                 }
             },
