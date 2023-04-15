@@ -28,6 +28,7 @@ LevelingTracker.lua
 Timers.lua
 Communications.lua
 Targeting.lua
+Tips.lua
 
 DB/wotlk.xml
 
