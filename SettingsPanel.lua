@@ -150,7 +150,8 @@ function addon.settings:InitializeSettings()
             hightlightTalentPlan = true,
             upcomingTalentCount = 5,
 
-            enableTips = true
+            enableTips = true,
+            enableBreathWarning = true
         }
     }
 
@@ -1694,11 +1695,20 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.1
                     },
+                    enableBreathWarning = {
+                        name = L("Enable Breath Warning"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.2,
+                        disabled = function()
+                            return not self.db.profile.enableTips
+                        end
+                    },
                     enableTipsFrame = {
                         name = L("Enable Tips Frame"), -- TODO locale
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.2,
+                        order = 1.3,
                         disabled = function()
                             return not self.db.profile.enableTips
                         end,
