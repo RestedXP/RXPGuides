@@ -62,7 +62,6 @@ function addon.tips:MIRROR_TIMER_STOP(_, timerName)
         not addon.settings.db.profile.enableDrowningWarning then return end
 
     session.breath = nil
-    -- TODO
 end
 
 function addon.tips.CheckEvents()
