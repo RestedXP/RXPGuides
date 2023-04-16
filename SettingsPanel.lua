@@ -150,7 +150,10 @@ function addon.settings:InitializeSettings()
             hightlightTalentPlan = true,
             upcomingTalentCount = 5,
 
-            enableTips = true
+            enableTips = true,
+            enableDrowningWarning = true,
+            enableDrowningWarningSound = true,
+            drowningThreshold = 0.2
         }
     }
 
@@ -1703,7 +1706,47 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.db.profile.enableTips
                         end,
                         hidden = true -- TODO Zarant
+                    },
+                    drowningHeader = {
+                        name = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
+                        type = "header",
+                        width = "full",
+                        order = 2.0
+                    },
+                    enableDrowningWarning = {
+                        name = L("Enable Warning"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.1,
+                        disabled = function()
+                            return not self.db.profile.enableTips
+                        end
+                    },
+                    enableDrowningWarningSound = {
+                        name = L("Enable Warning Sound"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.2,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile.enableDrowningWarning
+                        end
+                    },
+                    drowningThreshold = {
+                        name = L("Threshold"), -- TODO locale
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.3,
+                        min = 0.05,
+                        max = 0.5,
+                        step = 0.05,
+                        isPercent = true,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile.enableDrowningWarning
+                        end
                     }
+
                 }
             },
             helpPanel = {
