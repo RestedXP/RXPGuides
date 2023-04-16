@@ -151,7 +151,9 @@ function addon.settings:InitializeSettings()
             upcomingTalentCount = 5,
 
             enableTips = true,
-            enableBreathWarning = true
+            enableDrowningWarning = true,
+            enableDrowningWarningSound = true,
+            drowningThreshold = 0.2
         }
     }
 
@@ -1695,25 +1697,56 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.1
                     },
-                    enableBreathWarning = {
-                        name = L("Enable Breath Warning"), -- TODO locale
+                    enableTipsFrame = {
+                        name = L("Enable Tips Frame"), -- TODO locale
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.2,
                         disabled = function()
                             return not self.db.profile.enableTips
-                        end
-                    },
-                    enableTipsFrame = {
-                        name = L("Enable Tips Frame"), -- TODO locale
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 1.3,
-                        disabled = function()
-                            return not self.db.profile.enableTips
                         end,
                         hidden = true -- TODO Zarant
+                    },
+                    drowningHeader = {
+                        name = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
+                        type = "header",
+                        width = "full",
+                        order = 2.0
+                    },
+                    enableDrowningWarning = {
+                        name = L("Enable Warning"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.1,
+                        disabled = function()
+                            return not self.db.profile.enableTips
+                        end
+                    },
+                    enableDrowningWarningSound = {
+                        name = L("Enable Warning Sound"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.2,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile.enableDrowningWarning
+                        end
+                    },
+                    drowningThreshold = {
+                        name = L("Threshold"), -- TODO locale
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.3,
+                        min = 0.05,
+                        max = 0.5,
+                        step = 0.05,
+                        isPercent = true,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile.enableDrowningWarning
+                        end
                     }
+
                 }
             },
             helpPanel = {
