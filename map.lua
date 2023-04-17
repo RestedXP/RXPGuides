@@ -288,7 +288,10 @@ MapLinePool.creationFunc = function(framePool)
     f:SetFrameLevel(15000)
 
     f.render = function(self, coords, isMiniMapPin)
-
+        if coords.lineAlpha == 0 then
+            self:Hide()
+            return
+        end
         local thickness = coords.linethickness or 3
         local alpha = coords.lineAlpha or 1
         self:SetAlpha(alpha)
@@ -679,7 +682,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                             centerX = centerX + sX
                             centerY = centerY + sY
                             nEdges = nEdges + 1
-                            InsertLine(element, sX, sY, fX, fY, 1)
+                            InsertLine(element, sX, sY, fX, fY, element.lineAlpha or 1)
                         end
                         if element.showArrow and step.active then
                             AddPoint(sX,sY,element,1,addon.linePoints,addon.activeWaypoints)
@@ -890,7 +893,7 @@ local function DisplayLines(self)
     if lastMap ~= currentMap or self then
         for line in lineMapFramePool:EnumerateActive() do
             local shown = line.step and line.step.active and line.zone ==
-            _G.WorldMapFrame:GetMapID()
+                _G.WorldMapFrame:GetMapID() and line.lineData.lineAlpha > 0
             line:SetShown(shown)
             --print('c',shown,line.zone)
         end

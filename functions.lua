@@ -1469,9 +1469,9 @@ function addon.functions.line(self, text, zone, ...)
         local segments = {...}
         for i, v in ipairs(segments) do segments[i] = tonumber(v) end
         element.segments = segments
-        if zone and zone:sub(1,1) == "*" then
+        if zone and zone:sub(1,1) == "+" then
             element.drawCenterPoint = true
-            zone = zone:sub(2,#zone)
+            zone = zone:sub(2-1)
             element.thickness = 1
         end
         if zone then
@@ -1503,10 +1503,16 @@ function addon.functions.loop(self, text, range, zone, ...)
         local segments = {...}
         for i, v in ipairs(segments) do segments[i] = tonumber(v) end
         element.segments = segments
-        if range and range:sub(1,1) == "*" then
-            element.drawCenterPoint = true
-            element.thickness = 1
-            range = range:sub(2,#zone)
+        if range then
+            local prefix = range:sub(1,1)
+            if prefix == "+" then
+                element.drawCenterPoint = true
+                element.thickness = 1
+                range = range:sub(2,-1)
+            elseif prefix == "*" then
+                element.lineAlpha = 0
+                range = range:sub(2,-1)
+            end
             --print('ok2')
         end
         if zone then
