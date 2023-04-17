@@ -14,7 +14,7 @@ af.IsFeatureEnabled = function ()
     return not addon.settings.db.profile.disableArrow and (addon.hideArrow ~= nil and not addon.hideArrow)
 end
 
-local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+--local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 af:SetMovable(true)
 af:EnableMouse(1)
 af:SetClampedToScreen(true)
@@ -280,11 +280,12 @@ end
 -- to the frame
 MapLinePool.creationFunc = function(framePool)
 
-    local f = CreateFrame("Button", nil, nil);
+    local f = CreateFrame("Button", nil, _G.WorldMapFrame:GetCanvas());
     f.line = f.line or f:CreateLine();
     local border = f.border or f:CreateLine();
     border:SetColorTexture(0, 0, 0, 1);
     f.border = border
+    f:SetFrameLevel(15000)
 
     f.render = function(self, coords, isMiniMapPin)
 
@@ -313,16 +314,18 @@ MapLinePool.creationFunc = function(framePool)
         line:SetStartPoint("TOPLEFT", sX - xAnchor, sY - yAnchor)
         line:SetEndPoint("TOPLEFT", fX - xAnchor, fY - yAnchor)
         line:SetColorTexture(unpack(addon.colors.mapPins))
+        --line:SetTexture('interface/buttons/white8x8')
         line:SetThickness(thickness);
 
-        local border = self.border
-        border:SetDrawLayer("OVERLAY", -6)
-        border:SetStartPoint("TOPLEFT", sX - xAnchor, sY - yAnchor)
-        border:SetEndPoint("TOPLEFT", fX - xAnchor, fY - yAnchor)
-        border:SetThickness(thickness + 2);
-        border:SetAlpha(0.5)
+        local lborder = self.border
+        lborder:SetDrawLayer("OVERLAY", -6)
+        lborder:SetStartPoint("TOPLEFT", sX - xAnchor, sY - yAnchor)
+        lborder:SetEndPoint("TOPLEFT", fX - xAnchor, fY - yAnchor)
+        lborder:SetThickness(thickness + 2);
+        lborder:SetAlpha(0.5)
 
         self:SetParent(canvas)
+        --self:SetFrameStrata("HIGH")
         self:SetFrameStrata("FULLSCREEN_DIALOG")
         -- self:SetFrameLevel(3000)
         self:SetPoint("TOPLEFT", canvas, "TOPLEFT", xAnchor, yAnchor)
@@ -342,6 +345,9 @@ MapLinePool.creationFunc = function(framePool)
             local line = self.lineData
             self:SetAlpha(line.lineAlpha or 1)
         end)
+        --local _,_,px,py = line:GetStartPoint()
+        --print('ok',coords.sX,coords.sY,';',coords.fX,coords.fY,'+',_G.WorldMapFrame:GetMapID())
+        --print(width,height)
 
     end
 
@@ -740,6 +746,17 @@ local function addWorldMapLines()
     local lineData = generateLines(addon.currentGuide.steps, addon.settings.db.profile.numMapPins,
                                    RXPCData.currentStep, false)
 
+    if #lineData > 0 then
+        local canvas = _G.WorldMapFrame:GetCanvas()
+        local width = canvas:GetWidth()
+        local height = canvas:GetHeight()
+
+        if width == 0 or height == 0 then
+            WorldMapFrame:Show()
+            WorldMapFrame:Hide()
+        end
+    end
+
     for i = #lineData, 1, -1 do
         local line = lineData[i]
         local element = line.element
@@ -863,24 +880,32 @@ function addon.UpdateMap()
     addWorldMapLines()
     addMiniMapPins()
     updateArrow()
+    addon.DisplayLines(true)
 end
 
 local closestPoint
 local maxDist = math.huge
-
 local function DisplayLines(self)
     local currentMap = _G.WorldMapFrame:GetMapID()
     if lastMap ~= currentMap or self then
         for line in lineMapFramePool:EnumerateActive() do
-            line:SetShown(line.step and line.step.active and line.zone ==
-                              _G.WorldMapFrame:GetMapID())
+            local shown = line.step and line.step.active and line.zone ==
+            _G.WorldMapFrame:GetMapID()
+            line:SetShown(shown)
+            --print('c',shown,line.zone)
         end
     end
     lastMap = currentMap
 end
+addon.DisplayLines = DisplayLines
 
 hooksecurefunc(_G.WorldMapFrame, "OnMapChanged", DisplayLines);
 
+if _G.WorldMapFrame.OnCanvasScaleChanged then
+    hooksecurefunc(_G.WorldMapFrame, "OnCanvasScaleChanged", function()
+        addon.updateMap = true
+    end)
+end
 
 function addon.UpdateGotoSteps()
     local hideArrow = false
