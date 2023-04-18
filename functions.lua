@@ -1416,7 +1416,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         element.arrow = true
         element.parent = true
         element.hidePin = true
-        element.text = text
+        element.title = text
         element.textOnly = true
 
         return element
