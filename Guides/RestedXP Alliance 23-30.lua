@@ -394,10 +394,6 @@ step << NightElf/Draenei/Human wotlk
 step << NightElf/Draenei/Human wotlk
     .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
-step << Draenei tbc/NightElf tbc
-    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
-    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
-    .zoneskip Elwynn Forest
 step << wotlk
     #label wettylandy
     >> Skip this step and head back to Menethil Harbor if your hearth is on CD

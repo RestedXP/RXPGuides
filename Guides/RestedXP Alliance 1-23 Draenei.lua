@@ -2909,13 +2909,6 @@ step << Draenei tbc/NightElf tbc
     .fp Menethil >> Get the Menethil Harbor flight path
 step << Draenei tbc/NightElf tbc
 #xprate >1.499
-    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
-    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
-    .zoneskip Elwynn Forest
-
-
-step << Draenei tbc/NightElf tbc
-#xprate >1.499
     #completewith next
     .goto Wetlands,63.9,78.6
     .zone Loch Modan >> Logout on top of the mushrooms at the back of the cave. When you log back in, this will teleport you to Thelsamar.

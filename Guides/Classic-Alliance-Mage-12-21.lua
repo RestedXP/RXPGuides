@@ -664,7 +664,7 @@ step
 step
     #softcore
     >>Run up the road south. Head toward The Shrine of Aessina
-    >>Whilst you're doing this, start opening the Website Unstuck tool, and select your character. Do NOT confirm it yet though
+    -->>Whilst you're doing this, start opening the Website Unstuck tool, and select your character. Do NOT confirm it yet though
     .goto Ashenvale,22.64,51.91
 .target Therysil
 >>Talk to |cFF00FF25Therysil|r
@@ -736,21 +736,13 @@ step
 .target Chief Archaeologist Greywhisker
     .accept 942 >>Accept The Absent Minded Prospector
 step
-    #softcore
-    #completewith next
-    +Logout and website unstuck to Elwynn Forest (just outside of Stormwind). Otherwise, take the boat to Menethil, check for a Bronze Tube, and then fly all the way down to Stormwind << Human
-    +Logout and website unstuck to Elwynn Forest (just outside of Stormwind). Otherwise, take the boat to Menethil, check for a Bronze Tube, fly to Ironforge, then take the tram to Stormwind << Gnome
-step
-    #hardcore
     .goto Teldrassil,58.40,94.02
     .fp Teldrassil >> Get the Teldrassil Flight Path
     .fly Auberdine >> Fly to Auberdine
 step
-    #hardcore
     .goto Darkshore,32.42,43.75,50,0
     .zone Wetlands >> Take the boat to Menethil
 step
-    #hardcore
     #completewith next
     .money <0.08
     .goto Wetlands,10.4,56.0,15,0
@@ -760,17 +752,14 @@ step
     >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there. Otherwise, skip this step
     .collect 4371,1,175,1
 step
-    #hardcore
     .goto Wetlands,9.49,59.69
     .fly Ironforge >> Fly to Ironforge
 step
-    #hardcore
     #completewith next
     .goto Ironforge,56.23,46.83,0
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
     .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
 step
-    #hardcore
     .zone Stormwind City >> Take the tram to Stormwind City
 step
     #completewith FlyAndy
