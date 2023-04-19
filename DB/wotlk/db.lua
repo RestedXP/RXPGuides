@@ -2391,3 +2391,21 @@ addon.mountIDs = {
 	},
 
 }
+
+addon.emergencyItems = {
+    3928, --Superior Healing Potion
+}
+
+addon.emergencySpells = {
+    professions = {
+        55428, -- Lifeblood Rank 1
+        55501, -- Lifeblood Rank 4
+    },
+    racials = {
+        20549, -- Warstomp
+    },
+    ['DRUID'] = {
+        22812, -- Barkskin
+        33786, -- Cyclone
+    }
+}
