@@ -26,6 +26,7 @@ Timers.lua
 Communications.lua
 Targeting.lua
 Tips.lua
+HardcoreIntroUI.lua
 
 DB/classic.xml
 
