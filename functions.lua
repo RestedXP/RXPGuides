@@ -326,17 +326,13 @@ function addon.GetQuestObjectives(id, step)
     local err = false
     if IsOnQuest(id) then
         local questInfo = {}
-        local qInfo = {}
         for i = 1, GetNumQuests() do
-            local questLogTitleText, level, questTag, isHeader, isCollapsed,
-                  isComplete, frequency, questID
+            local isComplete, questID
             if GetQuestLogTitle then
-                questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete, frequency, questID =
-                    GetQuestLogTitle(i);
+                _, _, _, _, _, isComplete, _, questID = GetQuestLogTitle(i);
             else
-                qInfo = C_QuestLog.GetInfo(i)
+                local qInfo = C_QuestLog.GetInfo(i) or {}
                 questID = qInfo.questID
-                isHeader = qInfo.isHeader
                 if questID then
                     isComplete = C_QuestLog.IsComplete(questID)
                 end
@@ -348,9 +344,15 @@ function addon.GetQuestObjectives(id, step)
                         GetQuestLogLeaderBoard(j, i)
                     if description then
                         nObj = nObj + 1
-                        local fulfilled, required = description:match(
+                        local fulfilled, required
+                        if objectiveType == "progressbar" then
+                            fulfilled = GetQuestProgressBarPercent(id)
+                            required = 100
+                        else
+                            fulfilled, required = description:match(
                                                         "(%d+)/(%d+)")
-                        if required then
+                        end
+                        if type(fulfilled) ~= "number" then
                             required = tonumber(required)
                             fulfilled = tonumber(fulfilled)
                         else
@@ -478,6 +480,13 @@ function addon.GetQuestObjectives(id, step)
                         finished = false,
                         generated = true,
                     }
+                else
+                    for _,obj in pairs(questInfo) do
+                        if obj.type == "progressbar" and not obj.finished then
+                            obj.numFulfilled = 0
+                            obj.numRequired = 100
+                        end
+                    end
                 end
                 return questInfo
             elseif not requests[id] then
