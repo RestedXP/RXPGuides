@@ -259,15 +259,7 @@ function addon.GetOrphanedQuests()
         return orphans
     end
 
-    -- Green at level - green, grey below
-    local greyBuffer
-
-    if _G.UnitQuestTrivialLevelRange then
-        greyBuffer = UnitLevel("player") -
-                         _G.UnitQuestTrivialLevelRange("player") - 1
-    else
-        greyBuffer = UnitLevel("player") - _G.GetQuestGreenRange() - 1
-    end
+    local greyBuffer = UnitLevel("player") - 7
 
     local questData, orphanData
     local isTooLow, isPartOfGuide
