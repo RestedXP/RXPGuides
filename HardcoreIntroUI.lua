@@ -1,8 +1,19 @@
 local default_x = 420
 local default_y = -60
 
-local dungeons_enabled = false -- NOTE: Replace with settings variable
 local intro_animations = true
+
+----------- Settings
+-- Note: upon finishing the splash screen setup, RXPCData will be updated
+-- RXPCData['hardcore_guide'] = {['enabled'] = 1}
+local dungeons_enabled = false -- RXPCData['hardcore_guide']['dungeons_enabled'] =
+local hostile_enemy_warning = false -- RXPCData['hardcore_guide']['hostile_enemy_warning'] =
+local panic_mode = false -- RXPCData['hardcore_guide']['panic_mode'] =
+local auction_house = false -- RXPCData['hardcore_guide']['auction_house'] =
+local group_quests = false -- RXPCData['hardcore_guide']['group_quests'] =
+local dungeons = {} -- RXPCData['hardcore_guide']['dungeons'] = {dungeon_title,...}
+
+----------- Widgets
 
 local function createSubTitleFont(text, frame, x, y)
 	local font_string = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightLarge")
@@ -588,8 +599,10 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 	hardcore_option_button_frame.select = function()
 		if check_mark_tex:IsShown() then
 			check_mark_tex:Hide()
+            dungeons[title_text] = nil
 		else
 			check_mark_tex:Show()
+            dungeons[title_text] = 1
 		end
 		if button_selected_glow:IsShown() then
 			button_selected_glow:Hide()
@@ -598,8 +611,6 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 		end
 		if functor then
 			functor()
-		else
-			print("Not hooked yet")
 		end
 	end
 
@@ -692,7 +703,7 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 	return frame
 end
 
-local function RXP_loadSpeedRunGuideSelector(parent_frame, background_cen_x, background_cen_y, zoom)
+local function RXP_loadSpeedRunGuideSelector(parent_frame, background_cen_x, background_cen_y, zoom, selectSpeedrunFunctor)
 	local frame_width = parent_frame:GetWidth()
 	local frame_height = 220
 	local ratio = frame_height / frame_width
@@ -876,6 +887,14 @@ local function RXP_loadSpeedRunGuideSelector(parent_frame, background_cen_x, bac
 		ptex:SetTexCoord(0, 0.625, 0, 0.6875)
 		ptex:SetAllPoints()
 		button:SetPushedTexture(ptex)
+
+		button:SetScript("OnClick", function()
+			if selectSpeedrunFunctor then
+				selectSpeedrunFunctor()
+			end
+			frame:Hide()
+			parent_frame:Hide()
+		end)
 	end
 
 	addSubTitleFont()
@@ -980,7 +999,10 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 		"Enable Hostile Enemy Warning",
 		"Alerts when dangerous entity is nearby and marks it. Shows patrolling elites on the world map.",
 		132212,
-		y_offset
+		y_offset,
+        function(enabled)
+            hostile_enemy_warning = not hostile_enemy_warning
+        end
 	)
 	y_offset = y_offset + y_offset_delta
 	addHardcoreOptionButton(
@@ -988,7 +1010,10 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 		"Enable Panic Mode",
 		"Adds a fully adjustable action bar which displays helpful abilities and items for spicy situations.",
 		132092,
-		y_offset
+		y_offset,
+        function(enabled)
+            panic_mode = not panic_mode
+        end
 	)
 	y_offset = y_offset + y_offset_delta
 	addHardcoreOptionButton(
@@ -996,7 +1021,10 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 		"Enable Auctionhouse",
 		"Considers Quests that require crafted items as well as checking for upgrades.",
 		133787,
-		y_offset
+		y_offset,
+        function(enabled)
+            auction_house = not auction_house
+        end
 	)
 	y_offset = y_offset + y_offset_delta
 	addHardcoreOptionButton(
@@ -1004,7 +1032,10 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 		"Enable Group Quests",
 		"Requires you to group up with other players. Leave unchecked, if you prefer a solo experience.",
 		135892,
-		y_offset
+		y_offset,
+        function(enabled)
+            group_quests = not group_quests
+        end
 	)
 	y_offset = y_offset + y_offset_delta
 	addHardcoreOptionButton(
@@ -1261,9 +1292,7 @@ local function RXP_dungeonSelection(parent)
 	return frame
 end
 
-local rxp_hardcore_intro_ui = CreateFrame("frame") -- Note; this will probably get replaced with some function in RXP main
-rxp_hardcore_intro_ui:RegisterEvent("PLAYER_ENTERING_WORLD")
-rxp_hardcore_intro_ui:SetScript("OnEvent", function()
+function startHardcoreIntroUI(saved_var_settings)
 	local ultimate_hardcore_survival_guide_frame = nil
 	local function toggleUltimateSurvivalGuideFrame()
 		if ultimate_hardcore_survival_guide_frame == nil then
@@ -1288,25 +1317,44 @@ rxp_hardcore_intro_ui:SetScript("OnEvent", function()
 		end
 	end
 
+    -- Run when hardcore mode is selected; finalizes settings.  saved_var_settings is probably RXPCData
+    local function finalizeSettings()
+        saved_var_settings['hardcore_guide'] = {}
+        saved_var_settings['hardcore_guide']['enabled'] = 1
+        saved_var_settings['hardcore_guide']['dungeons_enabled'] = dungeons_enabled
+        saved_var_settings['hardcore_guide']['hostile_enemy_warning'] = hostile_enemy_warning
+        saved_var_settings['hardcore_guide']['panic_mode'] = panic_mode
+        saved_var_settings['hardcore_guide']['auction_house'] = auction_house
+        saved_var_settings['hardcore_guide']['group_quests'] = group_quests
+        saved_var_settings['hardcore_guide']['dungeons'] = {}
+        for k,_ in pairs(dungeons) do
+            saved_var_settings['hardcore_guide']['dungeons'][k] = 1
+        end
+    end
+
 	local dungeon_configuration_frame = nil
 	local dungeon_selection_frame = nil
-	local function toggleDungeonConfiguration()
-		if dungeon_configuration_frame == nil then
-			return
-		end
-		if dungeon_configuration_frame:IsShown() then
-			dungeon_configuration_frame:Hide()
-		else
-			dungeon_configuration_frame:Show()
-		end
-		if dungeon_selection_frame == nil then
-			return
-		end
-		if dungeon_selection_frame:IsShown() then
-			dungeon_selection_frame:Hide()
-		else
-			dungeon_selection_frame:Show()
-		end
+	local function welcomeAdventurerSubmitFunctor()
+        if dungeons_enabled then
+            if dungeon_configuration_frame == nil then
+                return
+            end
+            if dungeon_configuration_frame:IsShown() then
+                dungeon_configuration_frame:Hide()
+            else
+                dungeon_configuration_frame:Show()
+            end
+            if dungeon_selection_frame == nil then
+                return
+            end
+            if dungeon_selection_frame:IsShown() then
+                dungeon_selection_frame:Hide()
+            else
+                dungeon_selection_frame:Show()
+            end
+        else
+            finalizeSettings()
+        end
 	end
 
 	local function selectAllDungeonsFunctor()
@@ -1315,13 +1363,17 @@ rxp_hardcore_intro_ui:SetScript("OnEvent", function()
 		end
 	end
 
+    local function selectSpeedrunMode()
+        saved_var_settings['hardcore_guide'] = {['enabled'] = 0}
+    end
+
 	ultimate_hardcore_survival_guide_frame = RXP_loadUltimateHardcoreSurvivalGuideFrame(toggleSurivalGuideFunctor)
-	local speedrun_guide_selector = RXP_loadSpeedRunGuideSelector(ultimate_hardcore_survival_guide_frame, 0, 0, 0.4)
+	local speedrun_guide_selector = RXP_loadSpeedRunGuideSelector(ultimate_hardcore_survival_guide_frame, 0, 0, 0.4, selectSpeedrunMode)
 	welcome_adventurer_frame =
-		RXP_loadWelcomeAdventurerFrame(toggleUltimateSurvivalGuideFrame, toggleDungeonConfiguration)
+		RXP_loadWelcomeAdventurerFrame(toggleUltimateSurvivalGuideFrame, welcomeAdventurerSubmitFunctor)
 	dungeon_configuration_frame = RXP_dungeonConfiguration(
 		selectAllDungeonsFunctor,
-		function() end,
+        finalizeSettings,
 		toggleSurivalGuideFunctor
 	)
 	dungeon_selection_frame = RXP_dungeonSelection(dungeon_configuration_frame)
@@ -1330,4 +1382,4 @@ rxp_hardcore_intro_ui:SetScript("OnEvent", function()
 	welcome_adventurer_frame:Hide()
 	dungeon_configuration_frame:Hide()
 	dungeon_selection_frame:Hide()
-end)
+end
