@@ -162,6 +162,7 @@ addon.questCompleteItems = {
     [8507] = 21143, -- Field Duty // Unsigned Field Duty Papers
     [8731] = 21143, -- Field Duty // Unsigned Field Duty Papers
     [8606] = 21042, -- Decoy! // Narain's Special Kit
+    [2459] = 8049, -- Ferocitas the Dream Eater // Gnarlpine Necklace
     -- Horde/Neutral items:
     [2987] = 9466,
     [6381] = 16208,

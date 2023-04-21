@@ -355,6 +355,7 @@ addon.questCompleteItems = {
     [9805] = 24467,
     [9824] = 24474,
     [10594] = 30701,
+    [2459] = 8049, -- Ferocitas the Dream Eater // Gnarlpine Necklace
     -- Horde Items:
     [9774] = 25539,
     [10720] = 31141,
