@@ -346,21 +346,21 @@ function addon.GetQuestObjectives(id, step)
                         nObj = nObj + 1
                         local fulfilled, required
                         if objectiveType == "progressbar" then
-                            fulfilled = GetQuestProgressBarPercent(id)
+                            fulfilled = GetQuestProgressBarPercent(id) or 0
                             required = 100
                         else
                             fulfilled, required = description:match(
                                                         "(%d+)/(%d+)")
-                        end
-                        if type(fulfilled) ~= "number" then
-                            required = tonumber(required)
-                            fulfilled = tonumber(fulfilled)
-                        else
-                            required = 1
-                            if isCompleted then
-                                fulfilled = 1
+                            if fulfilled then
+                                required = tonumber(required)
+                                fulfilled = tonumber(fulfilled)
                             else
-                                fulfilled = 0
+                                required = 1
+                                if isCompleted then
+                                    fulfilled = 1
+                                else
+                                    fulfilled = 0
+                                end
                             end
                         end
                         questInfo[j] = {
