@@ -223,14 +223,24 @@ function addon.tips:GetItemBorder(name)
     if session.highlights[name] then return session.highlights[name] end
 
     local parent = _G[name]
+    local border = parent:CreateTexture(name .. 'Emergency', 'ARTWORK')
 
-    -- print("GetItemBorder", name)
-    local border = parent:CreateTexture(name .. 'Emergency', 'OVERLAY')
+    border.animation = border:CreateAnimationGroup()
+    local animOut = border.animation:CreateAnimation("Alpha")
+    animOut:SetOrder(1)
+    animOut:SetDuration(0.2)
+    animOut:SetFromAlpha(1)
+    animOut:SetToAlpha(1)
+    animOut:SetStartDelay(0.2)
 
-    -- TODO spinning animation
+    -- local animOut = border.animation:CreateAnimation("Rotation")
+    -- animOut:SetDegrees(-360)
+    -- animOut:SetDuration(1)
+    -- animOut:SetSmoothing("OUT")
+
     border:SetTexture("Interface/Buttons/UI-ActionButton-Border")
     border:SetBlendMode('ADD')
-    border:SetAlpha(1)
+    border:SetAlpha(0.5)
     border:SetSize(68, 68)
     border:SetPoint('CENTER', parent, 'CENTER', 0, 1)
     border:Hide()
@@ -250,8 +260,11 @@ function addon.tips:HighlightEmergencyItem()
 
         if border then
             if _G.IsBagOpen(item.bag) then
-                print("border:Show()", item.name)
                 border:Show()
+                if addon.settings.db.profile.enableEmergencyIconAnimations and
+                    not border.animation:IsPlaying() then
+                    border.animation:Play()
+                end
             else
                 border:Hide()
             end
