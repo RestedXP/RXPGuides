@@ -481,3 +481,25 @@ function addon.functions.xpcheck(self,text,...) --PLAYER_XP_UPDATE,QUEST_LOG_UPD
 		end
     end
 end
+
+addon.emergencyItems = {
+    [3928] = "Superior Healing Potion",
+    [4941] = "Really Sticky Glue"
+}
+
+addon.emergencySpells = {
+    professions = {},
+    ['Tauren'] = {
+        [20549] = "Warstomp"
+    },
+    ['Orc'] = {
+        [20572] = "Blood Fury",
+    },
+    ['DRUID'] = {
+        [22812] = "Barkskin",
+        [33786] = "Cyclone"
+    },
+    ['HUNTER'] = {
+        [13163] = "Aspect of the Monkey"
+    }
+}
