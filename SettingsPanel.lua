@@ -156,7 +156,8 @@ function addon.settings:InitializeSettings()
             drowningThreshold = 0.2,
 
             enableEmergencyActions = true,
-            emergencyThreshold = 0.2
+            emergencyThreshold = 0.2,
+            enableEmergencyIconAnimations = true
         }
     }
 
@@ -1773,6 +1774,17 @@ function addon.settings:CreateAceOptionsPanel()
                         max = 0.99,
                         step = 0.05,
                         isPercent = true,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile
+                                           .enableEmergencyActions
+                        end
+                    },
+                    enableEmergencyIconAnimations = {
+                        name = L("Enable Animations"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.3,
                         disabled = function()
                             return not self.db.profile.enableTips or
                                        not self.db.profile
