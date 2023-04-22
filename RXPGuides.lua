@@ -42,7 +42,8 @@ addon.functions = {}
 addon.enabledFrames = {} -- Hold all enabled frame/features for Hide/Show
 addon.player = {
     localeClass = select(1, UnitClass("player")),
-    class = select(2, UnitClass("player"))
+    class = select(2, UnitClass("player")),
+    race = select(2, UnitRace("player")),
 }
 
 BINDING_HEADER_RXPGuides = addon.title
