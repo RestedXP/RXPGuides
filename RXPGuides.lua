@@ -5,6 +5,27 @@ local UnitInRaid = UnitInRaid
 
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
+local RegisterMessage_OLD = addon.RegisterMessage
+local messageList = {}
+addon.RegisterMessage = function(self,message,callback,...)
+    messageList[message] = callback
+    return RegisterMessage_OLD(self,message,callback,...)
+end
+
+addon.HookMessage = function(self,message,callback,...)
+    local callback_old = messageList[message]
+    local callback_new
+    if type(callback_old) == "function" then
+        callback_new = function(...)
+            callback_old(...)
+            callback(...)
+        end
+    else
+        callback_new = callback
+    end
+    addon.RegisterMessage(self,message,callback_new,...)
+end
+
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
 local L = addon.locale.Get

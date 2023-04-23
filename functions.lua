@@ -518,6 +518,7 @@ function addon.SetElementComplete(self, disable)
         self.element.skip = true
         addon.updateSteps = true
         addon.updateMap = true
+        addon:SendMessage("RXP_OBJECTIVE_COMPLETE",self.element,addon.currentGuide)
     end
     if self.button then
         -- print('----ok',disable)
