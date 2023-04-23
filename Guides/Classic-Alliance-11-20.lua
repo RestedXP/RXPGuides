@@ -375,7 +375,8 @@ step
 step
 #map Darkshore
     #label MeatFangEgg1
-    .goto Felwood,31.29,24.14 >> Travel to |cFFDB2EEFThe Red Crystal|r
+    .goto Felwood,31.29,24.14
+    >> Travel to |cFFDB2EEFThe Red Crystal|r
     .complete 4811,1
 step << Druid
     .goto Darkshore,42.97,45.47,15,0
@@ -2563,7 +2564,8 @@ step
     .mob Moonkin
 step
 #map Darkshore
-    .goto Felwood,31.29,24.14 >> Travel to |cFFDB2EEFThe Red Crystal|r
+    .goto Felwood,31.29,24.14
+>> Travel to |cFFDB2EEFThe Red Crystal|r
     .complete 4811,1
 step
     .goto Darkshore,45.34,49.70,60,0

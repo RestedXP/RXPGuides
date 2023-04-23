@@ -1682,7 +1682,8 @@ step
 	.use 23877 >>Use the pick in your bags to collect the small red crystal
     .complete 9585,1 --Collect Axxarien Crystal Sample (x1)
 step
-    .goto Bloodmyst Isle,41.9,29.6 >> Collect Crystals around the camps and kill Satyrs
+    .goto Bloodmyst Isle,41.9,29.6
+    >> Collect Crystals around the camps and kill Satyrs
     .complete 9569,1 --Kill Zevrax (x1)
     .complete 9569,2 --Kill Axxarien Shadowstalker (x5)
     .complete 9569,3 --Kill Axxarien Hellcaller (x5)
