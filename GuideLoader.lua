@@ -695,6 +695,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
                 error(L("Error parsing guide") .. ": " .. L("Guide has no name"))
             end
             guide.key = guide.key or RXPG.BuildGuideKey(guide)
+            guide.guideId = addon.A32(guide.key)
             if currentStep == 0 and (not guide[game] and
                 (guide.classic or guide.tbc or guide.wotlk or guide.df)) then
                 -- print(game,guide[game],guide.name)
@@ -717,6 +718,7 @@ function RXPG.ParseGuide(groupOrContent, text, defaultFor)
                 guide.steps[currentStep] = {}
                 guide.steps[currentStep].elements = {}
                 step = guide.steps[currentStep]
+                step.stepId = linenumber + guide.guideId
                 step.index = currentStep
                 addon.step = step
                 lastElement = nil

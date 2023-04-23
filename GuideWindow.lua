@@ -420,6 +420,7 @@ function addon.SetStep(n, n2, loopback)
         end
     end
     RXPCData.currentStep = n
+    RXPCData.currentStepId = guide.steps[n].stepId
     -- isUpdating = true
 
     if not guide.steps[n].active then
