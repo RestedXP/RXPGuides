@@ -157,8 +157,11 @@ function addon.targeting:UpdateMacro(queuedTargets)
 
     local content
     for _, t in ipairs(targets) do
-        content = fmt('/targetexact %s\n%s', t, content or "")
-
+        if content then
+            content = fmt('%s\n/targetexact %s', content, t)
+        else
+            content = fmt('/targetexact %s', t)
+        end
         -- Prevent multiple spams
         if not announcedTargets[t] and
             addon.settings.db.profile.notifyOnTargetUpdates then
@@ -167,12 +170,16 @@ function addon.targeting:UpdateMacro(queuedTargets)
         end
 
         announcedTargets[t] = true
+
+        if #content > 255 then
+            content:gsub("^.-\n","")
+            break
+        end
     end
 
-    if content then
-        -- Newline already appended from list above
-        content = fmt('%s%s', content, '/cleartarget [dead]')
-    else
+    if content and #content < 236 then
+        content = content .. '\n/cleartarget [dead]'
+    elseif not content then
         content = fmt('//%s - %s', addon.title,
                       L("current step has no configured targets")) -- TODO locale
     end
