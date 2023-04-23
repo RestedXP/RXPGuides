@@ -371,7 +371,7 @@ function addon.UpdateStepCompletion()
                     element:OnStepCompletion()
                 end
             end
-            addon:SendMessage("RXP_STEP_COMPLETE",step,RXPCData.currentGuide)
+            addon:SendEvent("RXP_STEP_COMPLETE",step,addon.currentGuide)
             if step.sticky then
                 RXPCData.stepSkip[step.index] = true
                 update = true
@@ -435,7 +435,7 @@ function addon.SetStep(n, n2, loopback)
         if C_SuperTrack and trackId then
             C_SuperTrack.SetSuperTrackedQuestID(trackId)
         end
-        addon:SendMessage("RXP_STEP_ACTIVATED",step,guide)
+        addon:SendEvent("RXP_STEP_ACTIVATED",step,guide)
     end
 
     RXPCData.stepSkip[n + 1] = nil
@@ -516,7 +516,7 @@ function addon.SetStep(n, n2, loopback)
 
     for _,prevstep in pairs(previousSteps) do
         if not prevstep.active then
-            addon:SendMessage("RXP_STEP_DEACTIVATED",prevstep,guide)
+            addon:SendEvent("RXP_STEP_DEACTIVATED",prevstep,guide)
         end
     end
 
@@ -763,7 +763,7 @@ function addon.SetStep(n, n2, loopback)
 
             addon.targeting:CheckNameplates()
 
-            addon:SendMessage("RXP_TARGET_LIST_UPDATE",stepUnitscan,stepMobs,stepTargets)
+            addon:SendEvent("RXP_TARGET_LIST_UPDATE",stepUnitscan,stepMobs,stepTargets)
         else
             stepframe:Hide()
         end

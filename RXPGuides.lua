@@ -26,6 +26,13 @@ addon.HookMessage = function(self,message,callback,...)
     addon.RegisterMessage(self,message,callback_new,...)
 end
 
+function addon.SendEvent(self,...)
+    if _G.WeakAuras then
+        _G.WeakAuras.ScanEvents(...)
+    end
+    return addon.SendMessage(self,...)
+end
+
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
 local L = addon.locale.Get
