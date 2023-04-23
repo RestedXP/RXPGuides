@@ -1817,6 +1817,8 @@ function addon.functions.deathskip(self, ...)
         elseif C_PlayerInteractionManager then
             C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.SpiritHealer)
         end
+        _G.StaticPopup1:Hide()
+        _G.StaticPopup2:Hide()
     elseif event == "GOSSIP_SHOW" then
         addon.SelectGossipType("healer")
     end
