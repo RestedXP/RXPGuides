@@ -1771,7 +1771,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.2,
                         min = 0.05,
-                        max = 0.99,
+                        max = 0.40,
                         step = 0.05,
                         isPercent = true,
                         disabled = function()
