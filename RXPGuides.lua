@@ -5,6 +5,46 @@ local UnitInRaid = UnitInRaid
 
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
+local RegisterMessage_OLD = addon.RegisterMessage
+local messageList = {}
+addon.RegisterMessage = function(self,message,callback,...)
+    messageList[message] = callback
+    return RegisterMessage_OLD(self,message,callback,...)
+end
+
+addon.HookMessage = function(self,message,callback,...)
+    local callback_old = messageList[message]
+    local callback_new
+    if type(callback_old) == "function" then
+        callback_new = function(...)
+            callback_old(...)
+            callback(...)
+        end
+    else
+        callback_new = callback
+    end
+    addon.RegisterMessage(self,message,callback_new,...)
+end
+
+function addon.SendEvent(self,...)
+    if _G.WeakAuras then
+        _G.WeakAuras.ScanEvents(...)
+    end
+    return addon.SendMessage(self,...)
+end
+
+local messageQueue = {}
+function addon:QueueMessage(...)
+    table.insert(messageQueue,{...})
+end
+
+function addon.ProcessMessageQueue()
+    for i = #messageQueue,1,-1 do
+        addon:SendEvent(unpack(messageQueue[i]))
+        table.remove(messageQueue,i)
+    end
+end
+
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
 local L = addon.locale.Get
@@ -726,13 +766,14 @@ addon.tickTimer = 0
 
 local updateTick = 0
 local skip = 0
+local tickRate = 0.05
 
 function addon:UpdateLoop(diff)
     updateTick = updateTick + diff
     -- TODO
     if addon.isHidden then
         return
-    elseif updateTick > (0.05 + math.random() / 128) then
+    elseif updateTick > (tickRate + math.random() / 128) then
         local currentTime = GetTime()
         updateTick = 0
         local activeQuestUpdate = 0
@@ -808,6 +849,8 @@ function addon:UpdateLoop(diff)
             -- event = event .. "/updateGoto"
         elseif skip % 4 == 3 then
             addon.UpdateScheduledTasks()
+            addon.ProcessMessageQueue()
+            tickRate = math.min(1.25/GetFramerate(),0.05)
         elseif skip % 16 == 1 then
             activeQuestUpdate = 0
             local deletedIndexes = {}
