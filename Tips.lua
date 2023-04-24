@@ -311,7 +311,7 @@ function addon.tips:HighlightEmergencySpell()
 
     for _, item in ipairs(session.emergencySpells) do
 
-        actionBarLookup = session.actionBarMap['item:' .. item.id]
+        actionBarLookup = session.actionBarMap['spell:' .. item.id]
         if actionBarLookup then
             actionBarBorder = addon.tips:GetHighlight(actionBarLookup.button)
 
