@@ -153,7 +153,11 @@ function addon.settings:InitializeSettings()
             enableTips = true,
             enableDrowningWarning = true,
             enableDrowningWarningSound = true,
-            drowningThreshold = 0.2
+            drowningThreshold = 0.2,
+
+            enableEmergencyActions = true,
+            emergencyThreshold = 0.2,
+            enableEmergencyIconAnimations = true
         }
     }
 
@@ -1744,6 +1748,47 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not self.db.profile.enableTips or
                                        not self.db.profile.enableDrowningWarning
+                        end
+                    },
+                    emergencyHeader = {
+                        name = L("Emergency Actions"), -- TODO locale
+                        type = "header",
+                        width = "full",
+                        order = 3.0
+                    },
+                    enableEmergencyActions = {
+                        name = L("Enable Warnings"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.1,
+                        disabled = function()
+                            return not self.db.profile.enableTips
+                        end
+                    },
+                    emergencyThreshold = {
+                        name = L("Threshold"), -- TODO locale
+                        type = "range",
+                        width = optionsWidth,
+                        order = 3.2,
+                        min = 0.05,
+                        max = 0.40,
+                        step = 0.05,
+                        isPercent = true,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile
+                                           .enableEmergencyActions
+                        end
+                    },
+                    enableEmergencyIconAnimations = {
+                        name = L("Enable Animations"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.3,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile
+                                           .enableEmergencyActions
                         end
                     }
 
