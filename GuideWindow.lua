@@ -1504,6 +1504,7 @@ function BottomFrame.SortSteps()
         elseif k1 < k2 then
             return true
         end
+        return false
     end)
 
     for i = 1, #BottomFrame.stepList do

@@ -199,8 +199,8 @@ local function GetLogIndexForQuestID(questID)
         for i = 1, GetNumQuests() do
             local _, _, _, _, _, _, _, id = GetQuestLogTitle(i);
             if questID == id then
-                SelectQuestLogEntry(i)
-                return i,GetQuestLogPushable()
+                _G.SelectQuestLogEntry(i)
+                return i,_G.GetQuestLogPushable()
             end
         end
     end
@@ -1655,8 +1655,8 @@ function addon.functions.home(self, ...)
                 C_PlayerInteractionManager.ClearInteraction(Enum.PlayerInteractionType.Binder)
                 self:SetScript("OnUpdate",nil)
             end)
-        elseif ConfirmBinder then
-            ConfirmBinder()
+        elseif _G.ConfirmBinder then
+            _G.ConfirmBinder()
         end
         element.confirm = true
         _G.StaticPopup1:Hide()
@@ -1814,7 +1814,7 @@ function addon.functions.deathskip(self, ...)
     if event == "CONFIRM_XP_LOSS" then
         addon.SetElementComplete(self)
         if _G.AcceptXPLoss then
-            AcceptXPLoss()
+            _G.AcceptXPLoss()
         elseif C_PlayerInteractionManager then
             C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.SpiritHealer)
         end
@@ -2560,7 +2560,7 @@ function addon.functions.train(self, ...)
     local rank = element.rank or 0
     local step = element.step
     if not element.rank and C_Spell.IsSpellDataCached(element.id) then
-        rank = GetSpellSubtext(element.id)
+        rank = GetSpellSubtext(element.id) or ""
         rank = tonumber(rank:match("(%d+)")) or 0
         element.rank = rank
         element.requestFromServer = nil
@@ -2932,10 +2932,12 @@ _G.StaticPopupDialogs["RXP_Link"] = {
     OnShow = function(self)
         if addon.url then
             local box = getglobal(self:GetName() .. "EditBox")
-            box:SetWidth(275)
-            box:SetText(addon.url)
-            box:HighlightText()
-            box:SetFocus()
+            if box then
+                box:SetWidth(275)
+                box:SetText(addon.url)
+                box:HighlightText()
+                box:SetFocus()
+            end
         end
     end,
 
@@ -3412,7 +3414,7 @@ function addon.functions.buy(self, ...)
             element.isQuestComplete = true
         elseif objIndex and event then
             local quest = addon.GetQuestObjectives(element.questId, step.index)
-            element.isQuestComplete = quest[objIndex].finished
+            element.isQuestComplete = quest and quest[objIndex].finished
         end
     end
     if event == "MERCHANT_SHOW" and total > 0 and not element.isQuestComplete then
@@ -4488,7 +4490,7 @@ function addon.functions.achievement(self, ...)
     end
 
     if element.criteria > 0 then
-        displayText, criteriaType, completed, quantity, reqQuantity = GetAchievementCriteriaInfo(element.id,element.criteria)
+        displayText, _, completed, quantity, reqQuantity = GetAchievementCriteriaInfo(element.id,element.criteria)
     end
 
     if element.numReq and element.numReq < reqQuantity then
