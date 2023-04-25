@@ -71,13 +71,15 @@ else
     addon.game = "CLASSIC"
 end
 
+addon.RXPGuides = {}
+_G.RXPGuides = addon.RXPGuides
+
 addon.questQueryList = {}
 addon.itemQueryList = {}
 addon.questAccept = {}
 addon.questTurnIn = {}
 addon.activeItems = {}
 addon.activeSpells = {}
-addon.RXPG = {}
 addon.functions = {}
 addon.enabledFrames = {} -- Hold all enabled frame/features for Hide/Show
 addon.player = {
@@ -448,6 +450,9 @@ function addon:OnInitialize()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
 
+    RXPData.questNameCache = RXPData.questNameCache or {}
+    RXPData.questObjectivesCache = RXPData.questObjectivesCache or {}
+
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
     elseif math.floor(gameVersion / 1e4) ~=
@@ -483,8 +488,8 @@ function addon:OnInitialize()
     end
     if addon.tips then addon.tips:Setup() end
 
-    addon.RXPG.LoadCachedGuides()
-    addon.RXPG.LoadEmbeddedGuides()
+    addon.LoadCachedGuides()
+    addon.LoadEmbeddedGuides()
     addon.UpdateGuideFontSize()
     addon.isHidden = addon.settings.db.profile.hideGuideWindow
     addon.RXPFrame:SetShown(not addon.settings.db.profile.hideGuideWindow)

@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-local RXPG = addon.RXPG
+local RXPGuides = addon.RXPGuides
 local _, class = UnitClass("player")
 local _G = _G
 local fmt = string.format
@@ -415,7 +415,7 @@ function addon.SetStep(n, n2, loopback)
             end
         end
         if isComplete then
-            return RXPG[group].next()
+            return RXPGuides[group].next()
         else
             n = #guide.steps
         end
@@ -508,7 +508,7 @@ function addon.SetStep(n, n2, loopback)
 
     if #activeSteps == 0 then
         if n >= #guide.steps then
-            return RXPG[group].next()
+            return RXPGuides[group].next()
         else
             return addon.SetStep(n + 1)
         end
@@ -699,8 +699,8 @@ function addon.SetStep(n, n2, loopback)
             element.frame = elementFrame
             elementFrame.button:Enable()
             if element.tag then
-                local events = element.event or RXPG[group].events[element.tag]
-                elementFrame.callback = RXPG[group][element.tag]
+                local events = element.event or RXPGuides[group].events[element.tag]
+                elementFrame.callback = RXPGuides[group][element.tag]
                 elementFrame.callback(elementFrame)
                 if type(events) == "string" then
                     if events == "OnUpdate" then
@@ -1349,7 +1349,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                 if not element.element then
                     element.element = element
                 end
-                RXPG[addon.currentGuide.group][element.tag](element,
+                RXPGuides[addon.currentGuide.group][element.tag](element,
                                                             "WindowUpdate")
                 if element.requestFromServer then
                     addon.updateStepText = true
@@ -1406,7 +1406,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                     local stepDiff = element.step.index - RXPCData.currentStep
                     element.element = element
                     if element.requestFromServer then
-                        RXPG[addon.currentGuide.group][element.tag](element,
+                        RXPGuides[addon.currentGuide.group][element.tag](element,
                                                                     "WindowUpdate")
                         addon.updateStepText =
                             addon.updateStepText or
@@ -1415,7 +1415,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                             not element.requestFromServer
                     elseif element.tag and
                         (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
-                        RXPG[addon.currentGuide.group][element.tag](element,
+                        RXPGuides[addon.currentGuide.group][element.tag](element,
                                                                     "WindowUpdate")
                     end
                 end

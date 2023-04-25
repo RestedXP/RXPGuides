@@ -3,7 +3,7 @@ local addonName, addon = ...
 local faction = UnitFactionGroup("player")
 local _, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
-local RXPG = addon.RXPG
+
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
 local events = {}
@@ -216,8 +216,6 @@ local timer = GetTime()
 local nrequests = 0
 local requests = {}
 addon.requestQuestInfo = requests
-local questNameCache = {}
-local questObjectivesCache = {}
 
 local db
 if _G.QuestieLoader then db = _G.QuestieLoader:ImportModule("QuestieDB") end
@@ -249,7 +247,40 @@ function addon.Round(number, precision)
     return integer + math.floor((number - integer) * precision + 0.5)/precision
 end
 
+function addon.ClearQuestCache()
+    if not addon.currentGuide then
+        return
+    end
+    local guideQuests = {}
+    local questNameCache = RXPData.questNameCache
+    local questObjectivesCache = RXPData.questObjectivesCache
+    for i,step in pairs(addon.currentGuide.steps) do
+        for j,element in pairs(step) do
+            if element.tag == "complete" then
+                local id = element.questId
+                guideQuests[id] = bit.bor(guideQuests[id] or 0,0x1)
+            elseif element.tag == "accept" then
+                local id = element.questId
+                guideQuests[id] = bit.bor(guideQuests[id] or 0,0x2)
+            end
+        end
+    end
+
+    for id in pairs(questObjectivesCache) do
+        if not (guideQuests[id] and guideQuests[id] % 2 == 1) then
+            questObjectivesCache[id] = nil
+        end
+    end
+    for id in pairs(questNameCache) do
+        if not (guideQuests[id] and guideQuests[id] > 1) then
+            questNameCache[id] = nil
+        end
+    end
+
+end
+
 function addon.GetQuestName(id)
+    local questNameCache = RXPData.questNameCache
     if type(id) ~= "number" then return end
     id = questConversion[id] or id
     local name
@@ -321,8 +352,11 @@ end
 
 function addon.GetQuestObjectives(id, step)
     id = questConversion[id] or id
-    step = step or 0
     if not id then return end
+    step = step or 0
+    local stepdiff = math.abs(RXPCData.currentStep - step) > 4
+
+    local questObjectivesCache = RXPData.questObjectivesCache
     local err = false
     if IsOnQuest(id) then
         local questInfo = {}
@@ -394,9 +428,10 @@ function addon.GetQuestObjectives(id, step)
                 end
             end
         end
+    elseif stepdiff > 4 and questObjectivesCache[id] then
+        return questObjectivesCache[id]
     elseif db and type(db.QueryQuest) == "function" and
-        math.abs(RXPCData.currentStep - step) > 4 and type(db.GetQuest) ==
-        "function" then
+            stepdiff > 4 and type(db.GetQuest) == "function" then
         local qInfo = {}
         local q = db:GetQuest(id)
         -- print(type(q))
@@ -1434,7 +1469,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
 
     local element = self.element
     local group = addon.currentGuide.group
-    local callback = RXPG[group][element.callback]
+    local callback = RXPGuides[group][element.callback]
     if type(callback) == "function" then
         local lowPrio = callback(self, text, zone, x, y, radius, lowPrio, ...)
         if element.lowPrio ~= lowPrio then addon.updateMap = true end
@@ -3819,7 +3854,7 @@ function addon.functions.emote(self, text, token, unitId, callback, ...)
     local group = addon.currentGuide.group
     local emote = element.emote
     if element.callback then
-        if RXPG[group][element.callback](self, text, token, unitId, callback,
+        if RXPGuides[group][element.callback](self, text, token, unitId, callback,
                                          ...) then DoEmote(emote) end
     elseif addon.GetNpcId() == element.id or not id then
         -- print('ok')
@@ -3859,7 +3894,7 @@ function addon.functions.openmap(self, text, map, callback, ...)
     local mapId = element.mapId
 
     if element.callback then
-        if RXPG[group][element.callback](self, text, map, callback, ...) then
+        if RXPGuides[group][element.callback](self, text, map, callback, ...) then
             _G.WorldMapFrame:Show()
             _G.WorldMapFrame:SetMapID(mapId)
         end
@@ -4035,7 +4070,7 @@ function addon.functions.timer(self,text,duration,timerText,callback,...)
         return
     end
 
-    local f = RXPG[addon.currentGuide.group][element.callback]
+    local f = RXPGuides[addon.currentGuide.group][element.callback]
     if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
         addon.StartTimer(element.timer,element.timerText)
     end
