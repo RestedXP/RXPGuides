@@ -353,8 +353,7 @@ end
 function addon.GetQuestObjectives(id, step)
     id = questConversion[id] or id
     if not id then return end
-    step = step or 0
-    local stepdiff = math.abs(RXPCData.currentStep - step) > 4
+    local stepdiff = step and math.abs(RXPCData.currentStep - step) or 0
 
     local questObjectivesCache = RXPData.questObjectivesCache
     local err = false
@@ -428,7 +427,7 @@ function addon.GetQuestObjectives(id, step)
                 end
             end
         end
-    elseif stepdiff > 4 and questObjectivesCache[id] then
+    elseif false and stepdiff > 4 and questObjectivesCache[id] then
         return questObjectivesCache[id]
     elseif db and type(db.QueryQuest) == "function" and
             stepdiff > 4 and type(db.GetQuest) == "function" then
@@ -3977,7 +3976,7 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
         step.completed = true
         element.isActive = false
     elseif target > 0 and not element.updateOnce then
-        addon.ScheduleTask(element, target + 1)
+        addon.ScheduleTask(target + 0.5, element)
     end
 end
 
