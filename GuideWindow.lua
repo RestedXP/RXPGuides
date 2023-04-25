@@ -1317,6 +1317,7 @@ function addon:LoadGuide(guide, OnLoad)
     BottomFrame.hiddenFrames = 0
     BottomFrame.UpdateFrame()
     addon.tickTimer = 0
+    addon:QueueMessage("RXP_GUIDE_LOADED",guide)
 end
 
 function addon.ReloadGuide()
