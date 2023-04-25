@@ -127,7 +127,7 @@ function addon.GetQuestLog(QL, LT)
         maxQuests = 25
     end
     addon.next = group.next
-
+    local stop
     if (addon.settings.db.profile.SoM and guide.era or
         not addon.settings.db.profile.SoM and guide.som or
         addon.settings.db.profile.SoM and addon.settings.db.profile.phase > 2 and
@@ -149,9 +149,10 @@ function addon.GetQuestLog(QL, LT)
         end
         local nQuests = 0
         for n in pairs(QL) do nQuests = nQuests + 1 end
-        if nQuests > maxQuests then
+        if nQuests > maxQuests or step.stop then
             qError = true
             eStep = step
+            stop = step.stop
             break
         end
     end
@@ -164,8 +165,12 @@ function addon.GetQuestLog(QL, LT)
     print("QuestLog length: " .. n)
 
     if qError then
-        print(format("Error at step %d: Quest log length greater than " ..
-                         maxQuests, eStep.index))
+        if stop then
+            print(format("Stopped at step %d", eStep.index))
+        else
+            print(format("Error at step %d: Quest log length greater than " ..
+                            maxQuests, eStep.index))
+        end
     else
         if group.next() then
             return addon.GetQuestLog(QL, LT)
