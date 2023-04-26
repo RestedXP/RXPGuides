@@ -39,10 +39,20 @@ function addon:QueueMessage(...)
 end
 
 function addon.ProcessMessageQueue()
-    for i = #messageQueue,1,-1 do
+    local processed
+    local removedIndexes = {}
+    for i = 1,#messageQueue do
         addon:SendEvent(unpack(messageQueue[i]))
+        table.insert(removedIndexes,i)
+        if i >= 10 then
+            break
+        end
+    end
+    for i = #removedIndexes,1,-1 do
+        processed = true
         table.remove(messageQueue,i)
     end
+    return processed
 end
 
 addon.release = GetAddOnMetadata(addonName, "Version")
@@ -451,9 +461,9 @@ function addon:OnInitialize()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
 
-    RXPData.questNameCache = RXPData.questNameCache or {}
-    RXPData.questObjectivesCache = RXPData.questObjectivesCache or {}
-
+    RXPCData.questNameCache = RXPCData.questNameCache or {}
+    RXPCData.questObjectivesCache = RXPCData.questObjectivesCache or {}
+    RXPCData.questObjectivesCache[0] = RXPCData.questObjectivesCache[0] or 0
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
     elseif math.floor(gameVersion / 1e4) ~=
@@ -871,9 +881,9 @@ function addon:UpdateLoop(diff)
         elseif skip % 4 == 0 then
             addon.UpdateGotoSteps()
             -- event = event .. "/updateGoto"
-        elseif skip % 4 == 3 then
+        elseif skip % 4 == 3 and not addon.ProcessMessageQueue() then
             addon.UpdateScheduledTasks()
-            addon.ProcessMessageQueue()
+            addon.ClearQuestCache()
             tickRate = math.min(1.25/GetFramerate(),0.05)
         elseif skip % 16 == 1 then
             activeQuestUpdate = 0

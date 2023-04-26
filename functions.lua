@@ -3,7 +3,7 @@ local addonName, addon = ...
 local faction = UnitFactionGroup("player")
 local _, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
-
+local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
 local events = {}
@@ -248,14 +248,14 @@ function addon.Round(number, precision)
 end
 
 function addon.ClearQuestCache()
-    if not addon.currentGuide then
+    local questObjectivesCache = RXPCData.questObjectivesCache
+    if not addon.currentGuide or questObjectivesCache[0] < 100 then
         return
     end
+    local questNameCache = RXPCData.questNameCache
     local guideQuests = {}
-    local questNameCache = RXPData.questNameCache
-    local questObjectivesCache = RXPData.questObjectivesCache
     for i,step in pairs(addon.currentGuide.steps) do
-        for j,element in pairs(step) do
+        for j,element in pairs(step.elements) do
             if element.tag == "complete" then
                 local id = element.questId
                 guideQuests[id] = bit.bor(guideQuests[id] or 0,0x1)
@@ -267,8 +267,9 @@ function addon.ClearQuestCache()
     end
 
     for id in pairs(questObjectivesCache) do
-        if not (guideQuests[id] and guideQuests[id] % 2 == 1) then
+        if not (guideQuests[id] and guideQuests[id] % 2 == 1 or id == 0) then
             questObjectivesCache[id] = nil
+            questObjectivesCache[0] = questObjectivesCache[0] - 1
         end
     end
     for id in pairs(questNameCache) do
@@ -276,11 +277,24 @@ function addon.ClearQuestCache()
             questNameCache[id] = nil
         end
     end
+    return true
+end
 
+local function CacheQuest(id,data,remove)
+    local questObjectivesCache = RXPCData.questObjectivesCache
+    if not id or id == 0 then
+        return
+    elseif not (remove or questObjectivesCache[id]) then
+        questObjectivesCache[0] = questObjectivesCache[0] + 1
+        questObjectivesCache[id] = data
+    elseif remove and questObjectivesCache[id] then
+        questObjectivesCache[0] = questObjectivesCache[0] - 1
+        questObjectivesCache[id] = nil
+    end
 end
 
 function addon.GetQuestName(id)
-    local questNameCache = RXPData.questNameCache
+    local questNameCache = RXPCData.questNameCache
     if type(id) ~= "number" then return end
     id = questConversion[id] or id
     local name
@@ -355,7 +369,7 @@ function addon.GetQuestObjectives(id, step)
     if not id then return end
     local stepdiff = step and math.abs(RXPCData.currentStep - step) or 0
 
-    local questObjectivesCache = RXPData.questObjectivesCache
+    local questObjectivesCache = RXPCData.questObjectivesCache
     local err = false
     if IsOnQuest(id) then
         local questInfo = {}
@@ -419,15 +433,15 @@ function addon.GetQuestObjectives(id, step)
                         finished = isComplete,
                         generated = true,
                     }
-                    questObjectivesCache[id] = questInfo
+                    CacheQuest(id,questInfo)
                     return questInfo
                 else
-                    questObjectivesCache[id] = questInfo
+                    CacheQuest(id,questInfo)
                     return questInfo
                 end
             end
         end
-    elseif false and stepdiff > 4 and questObjectivesCache[id] then
+    elseif stepdiff > 4 and questObjectivesCache[id] then
         return questObjectivesCache[id]
     elseif db and type(db.QueryQuest) == "function" and
             stepdiff > 4 and type(db.GetQuest) == "function" then
@@ -503,6 +517,7 @@ function addon.GetQuestObjectives(id, step)
                 requests[id] = 0
                 -- print(id,GetTime()-base)
                 local questInfo = C_QuestLog.GetQuestObjectives(id)
+                local incomplete
                 if (#questInfo == 1 and
                     (questInfo[1].type == "" or not questInfo[1].type)) or
                     #questInfo == 0 then
@@ -520,7 +535,16 @@ function addon.GetQuestObjectives(id, step)
                             obj.numFulfilled = 0
                             obj.numRequired = 100
                         end
+                        if not obj.text or obj.text:sub(1,1) == " " then
+                            incomplete = true
+                            --print(id,_)
+                        end
                     end
+                end
+                if incomplete then
+                    CacheQuest(id,questInfo,true)
+                else
+                    CacheQuest(id,questInfo)
                 end
                 return questInfo
             elseif not requests[id] then
@@ -552,7 +576,9 @@ function addon.SetElementComplete(self, disable)
         self.element.skip = true
         addon.updateSteps = true
         addon.updateMap = true
-        addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",self.element,addon.currentGuide)
+        if self.element.step.active and GetTime() - addon.lastStepUpdate > 1 then
+            addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",self.element,addon.currentGuide)
+        end
     end
     if self.button then
         -- print('----ok',disable)
@@ -3986,7 +4012,7 @@ function addon.GetCurrentStageId()
     for i = 1, 1e6 do
         local criteria = select(9, C_Scenario.GetCriteriaInfoByStep(i, 1))
         if criteria == criteriaId then
-            print("Current Scenario Stage ID: " .. i)
+            print("Current Scenario Stage ID: " .. i) --ok
         end
     end
 end
