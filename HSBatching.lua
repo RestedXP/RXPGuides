@@ -50,6 +50,8 @@ end
 
 hooksecurefunc("UseAction", function(...)
     local event, id = GetActionInfo(...)
-    if event == "item" and id == 6948 or event == "macro" and
-        IsCurrentSpell(8690) then StartHSTimer() end
+    --print(event,id,IsCurrentSpell(id))
+    if event == "item" and id == 6948 or
+        event == "macro" and (IsCurrentSpell(8690) or IsCurrentSpell(556)) or
+        event == "spell" and id == 556 then StartHSTimer() end
 end)
