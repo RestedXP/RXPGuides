@@ -345,7 +345,7 @@ function addon.settings:ProcessImportBox()
 
     if not addon.settings.db.profile.showEnabled then self.ToggleActive() end
 
-    local guidesLoaded, errorMsg = addon.RXPG.ImportString(
+    local guidesLoaded, errorMsg = addon.ImportString(
                                        importCache.bufferString,
                                        importCache.workerFrame)
     if guidesLoaded and not errorMsg then
@@ -404,7 +404,7 @@ function addon.settings:CreateImportOptionsPanel()
                 addon.comms.PrettyPrint("Battle.net not cached, querying")
             end
             importCache.lastBNetQuery = GetTime()
-            _, RXPData.cache = _G[addon.RXPG.DeserializeTable(addon.base)]()
+            _, RXPData.cache = _G[addon.DeserializeTable(addon.base)]()
         end
 
         return not RXPData.cache
@@ -486,7 +486,7 @@ function addon.settings:CreateImportOptionsPanel()
                                self.gui.selectedDeleteGuide == "none"
                 end,
                 func = function()
-                    if addon.RXPG.RemoveGuide(self.gui.selectedDeleteGuide) then
+                    if addon.RemoveGuide(self.gui.selectedDeleteGuide) then
                         addon.db.profile.guides[self.gui.selectedDeleteGuide] =
                             nil
                     end

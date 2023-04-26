@@ -39,10 +39,20 @@ function addon:QueueMessage(...)
 end
 
 function addon.ProcessMessageQueue()
-    for i = #messageQueue,1,-1 do
+    local processed
+    local removedIndexes = {}
+    for i = 1,#messageQueue do
         addon:SendEvent(unpack(messageQueue[i]))
+        table.insert(removedIndexes,i)
+        if i >= 10 then
+            break
+        end
+    end
+    for i = #removedIndexes,1,-1 do
+        processed = true
         table.remove(messageQueue,i)
     end
+    return processed
 end
 
 addon.release = GetAddOnMetadata(addonName, "Version")
@@ -71,13 +81,16 @@ else
     addon.game = "CLASSIC"
 end
 
+local RXPGuides = {}
+addon.RXPGuides = RXPGuides
+_G.RXPGuides = RXPGuides
+
 addon.questQueryList = {}
 addon.itemQueryList = {}
 addon.questAccept = {}
 addon.questTurnIn = {}
 addon.activeItems = {}
 addon.activeSpells = {}
-addon.RXPG = {}
 addon.functions = {}
 addon.enabledFrames = {} -- Hold all enabled frame/features for Hide/Show
 addon.player = {
@@ -448,6 +461,9 @@ function addon:OnInitialize()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
 
+    RXPCData.questNameCache = RXPCData.questNameCache or {}
+    RXPCData.questObjectivesCache = RXPCData.questObjectivesCache or {}
+    RXPCData.questObjectivesCache[0] = RXPCData.questObjectivesCache[0] or 0
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
     elseif math.floor(gameVersion / 1e4) ~=
@@ -483,8 +499,8 @@ function addon:OnInitialize()
     end
     if addon.tips then addon.tips:Setup() end
 
-    addon.RXPG.LoadCachedGuides()
-    addon.RXPG.LoadEmbeddedGuides()
+    addon.LoadCachedGuides()
+    addon.LoadEmbeddedGuides()
     addon.UpdateGuideFontSize()
     addon.isHidden = addon.settings.db.profile.hideGuideWindow
     addon.RXPFrame:SetShown(not addon.settings.db.profile.hideGuideWindow)
@@ -739,23 +755,34 @@ addon.scheduledTasks = {}
 
 function addon.UpdateScheduledTasks()
     local cTime = GetTime()
-    for ref, time in pairs(addon.scheduledTasks) do
-        if cTime > time then
-            local group = addon.currentGuide.group
-            local element = ref.element or ref
-            if group and RXPGuides[group] and element and
-                RXPGuides[group][element.tag] then
-                RXPGuides[group][element.tag](ref)
+    for ref, args in pairs(addon.scheduledTasks) do
+        if type(ref) == "function" then
+            if cTime > args[1] then
+                ref(unpack(args))
                 addon.scheduledTasks[ref] = nil
+                return
             end
-            return
+        elseif type(ref) == "table" then
+            if cTime > args then
+                local group = addon.currentGuide.group
+                local element = ref.element or ref
+                if group and RXPGuides[group] and element and
+                RXPGuides[group][element.tag] then
+                    RXPGuides[group][element.tag](ref)
+                    addon.scheduledTasks[ref] = nil
+                end
+                return
+            end
         end
     end
 end
 
-function addon.ScheduleTask(ref, time)
-    if type(ref) == "table" and type(time) == "number" then
+function addon.ScheduleTask(self, ref, ...)
+    local time = type(self) == "number" and self or 0
+    if type(ref) == "table" then
         addon.scheduledTasks[ref] = time
+    elseif type(ref) == "function" then
+        addon.scheduledTasks[ref] = {time, ...}
     end
 end
 
@@ -767,13 +794,19 @@ addon.tickTimer = 0
 local updateTick = 0
 local skip = 0
 local tickRate = 0.05
+local updateError
+addon.errorCount = 0
 
 function addon:UpdateLoop(diff)
     updateTick = updateTick + diff
-    -- TODO
+    if updateError then
+        addon.errorCount = addon.errorCount + 1
+    end
     if addon.isHidden then
+        updateError = false
         return
-    elseif updateTick > (tickRate + math.random() / 128) then
+    elseif updateTick > (tickRate + math.random() / 128) and addon.errorCount < 10 then
+        updateError = true
         local currentTime = GetTime()
         updateTick = 0
         local activeQuestUpdate = 0
@@ -826,6 +859,7 @@ function addon:UpdateLoop(diff)
                 end
                 event = event .. "/updateText"
             elseif addon.updateBottomFrame or currentTime - addon.tickTimer > 5 then
+                addon.errorCount = 0
                 addon.RXPFrame.BottomFrame.UpdateFrame()
                 addon.RXPFrame.CurrentStepFrame.UpdateText()
                 addon.RXPFrame.SetStepFrameAnchor()
@@ -847,9 +881,9 @@ function addon:UpdateLoop(diff)
         elseif skip % 4 == 0 then
             addon.UpdateGotoSteps()
             -- event = event .. "/updateGoto"
-        elseif skip % 4 == 3 then
+        elseif skip % 4 == 3 and not addon.ProcessMessageQueue() then
             addon.UpdateScheduledTasks()
-            addon.ProcessMessageQueue()
+            addon.ClearQuestCache()
             tickRate = math.min(1.25/GetFramerate(),0.05)
         elseif skip % 16 == 1 then
             activeQuestUpdate = 0
@@ -873,6 +907,7 @@ function addon:UpdateLoop(diff)
                 event = event .. "/inactiveQ"
             end
         end
+        updateError = false
     end
 end
 
