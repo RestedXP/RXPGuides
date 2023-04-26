@@ -643,8 +643,14 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                 for i = 1, nPoints * 2, 2 do
                     local sX = (element.segments[i])
                     local sY = (element.segments[i + 1])
-                    local fX = (element.segments[(i + 1) % nSegments + 1])
-                    local fY = (element.segments[(i + 2) % nSegments + 1])
+                    local fX,fY
+                    if element.drawCenterPoint then
+                        fX = (element.segments[(i + 1) % nSegments + 1])
+                        fY = (element.segments[(i + 2) % nSegments + 1])
+                    else
+                        fX = element.segments[i + 2]
+                        fY = element.segments[i + 3]
+                    end
 
                     if sX and sY and fX and fY then
                         if sX < 0 and sY < 0 then
