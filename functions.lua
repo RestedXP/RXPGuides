@@ -15,7 +15,7 @@ events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
 events.complete = "QUEST_LOG_UPDATE"
 events.fp = {"UI_INFO_MESSAGE", "UI_ERROR_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW"}
-events.hs = {"UNIT_SPELLCAST_SUCCEEDED"}
+events.hs = "UNIT_SPELLCAST_SUCCEEDED"
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED", "GOSSIP_SHOW"}
 events.deathskip = {"CONFIRM_XP_LOSS","GOSSIP_SHOW"}
@@ -34,13 +34,14 @@ events.spellmissing = events.train
 events.zone = "ZONE_CHANGED_NEW_AREA"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
-events.gossipoption = {"GOSSIP_SHOW"}
+events.gossipoption = "GOSSIP_SHOW"
 events.skipgossipid = events.gossipoption
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
+events.exitvehicle = events.vehicle
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
 events.emote = "PLAYER_TARGET_CHANGED"
 events.collectmount = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
-events.collecttoy = {"TOYS_UPDATED"}
+events.collecttoy = "TOYS_UPDATED"
 events.collectpet = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 events.tradeskill = events.train
 
@@ -3795,7 +3796,7 @@ function addon.functions.vehicle(self, ...)
 
     if not (UnitInVehicle and element.step and element.step.active) then
         return
-    elseif not element or element.tag ~= "vehicle" then
+    elseif not element or (element.tag ~= "vehicle" and element.tag ~= "exitvehicle") then
         return UnitInVehicle("player")
     end
     local event, unit, showVehicleFrame, isControlSeat, vehicleUIIndicatorID,
@@ -3803,14 +3804,33 @@ function addon.functions.vehicle(self, ...)
     local id = element.id
     local vehicle = addon.GetNpcId("vehicle") or addon.GetNpcId(guid, true) or UnitInVehicle("player")
     -- print('>',vehicle,vehicle == id)
-    local entering = (event == "UNIT_ENTERING_VEHICLE" and unit == "player")
-    if (entering or vehicle) and
-        ((id and vehicle == id) or (not id and vehicle)) then
+    local entering = ((event == "UNIT_ENTERING_VEHICLE" and unit == "player") or vehicle) and
+        ((id and vehicle == id) or (not id and vehicle))
+    local exiting = not entering or (event == "UNIT_EXITING_VEHICLE" and unit == "player")
+    if not element.exit and entering and not exiting or element.exit and exiting then
         addon.SetElementComplete(self)
         if element.timer and entering then
             addon.StartTimer(element.timer,element.timerText)
         end
     end
+end
+
+function addon.functions.exitvehicle(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local text, id = ...
+        element.icon = addon.icons.complete
+        element.id = tonumber(id)
+        element.exit = true
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "-"
+        end
+
+        return element
+    end
+    return addon.functions.vehicle(self, ...)
 end
 
 function addon.functions.itemcount(self, ...)
