@@ -1,7 +1,7 @@
 local addonName, addon = ...
 
 local faction = UnitFactionGroup("player")
-local _, class = UnitClass("player")
+local localizedClass, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
 local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
@@ -1650,32 +1650,35 @@ function addon.functions.hs(self, ...)
 end
 
 local homeText = strupper(_G.HOME or "%")
-function addon.SelectGossipType(gossipType)
+function addon.SelectGossipType(gossipType,noOp)
     if C_GossipInfo.GetOptions then
 
         for i,option in ipairs(GossipGetOptions()) do
+            --print(option.type,option.icon)
             if option.type == gossipType then
-                GossipSelectOption(i)
-                return true
+                noOp = noOp or GossipSelectOption(i)
+                return i,option.name
             elseif not option.type and not IsModifierKeyDown() then
                 if gossipType == "binder" then
                     local text = strupper(option.name or "")
                     --print(option.name,option.icon)
                     if option.icon == 132052 and text:find(homeText) then
-                        GossipSelectOption(i)
-                        return true
+                        noOp = noOp or GossipSelectOption(i)
+                        return i,option.name
                     end
-                elseif gossipType == "taxi" and option.icon == 132057 then
-                    GossipSelectOption(i)
-                    return true
+                elseif gossipType == "taxi" and option.icon == 132057 or
+                gossipType == "trainer" and option.icon == 132058  then
+                    noOp = noOp or GossipSelectOption(i)
+                    return i,option.name
                 end
             end
         end
     else
-        for i,gossipText in ipairs({GossipGetOptions()}) do
+        local options = {GossipGetOptions()}
+        for i,gossipText in ipairs(options) do
             if i % 2 == 0 and gossipType == gossipText then
-                GossipSelectOption(i/2)
-                return true
+                noOp = noOp or GossipSelectOption(i/2)
+                return i,options[i-1]
             end
         end
     end
@@ -3516,7 +3519,7 @@ local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
 local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
                                     _G.GetNumGossipAvailableQuests
 --local GossipSelectOption = _G.SelectGossipOption
---local GossipGetNumOptions = C_GossipInfo.GetNumOptions or GetNumGossipOptions
+local GossipGetNumOptions = addon.GossipGetNumOptions
 
 function addon.functions.skipgossip(self, text, ...)
     if type(self) == "string" then
@@ -3533,10 +3536,13 @@ function addon.functions.skipgossip(self, text, ...)
     local nArgs = #args
     local event = text
     local id = tonumber(args[1])
-
     if event == "GOSSIP_SHOW" then
         -- print(id,'GS',nArgs)
-        if nArgs == 0 or not id then
+        local trainerId,name = addon.SelectGossipType("trainer",true)
+        if trainerId and GossipGetNumOptions() >= 3 or strupper(name):find(strupper(localizedClass)) then
+            --Ignore dualspec prompt
+            return
+        elseif nArgs == 0 or not id then
             if GossipGetNumAvailableQuests() == 0 and GossipGetNumActiveQuests() == 0 then
                 GossipSelectOption(1)
             end
@@ -3601,6 +3607,10 @@ function addon.functions.skipgossipid(self, text, ...)
     local event = text
     if event == "GOSSIP_SHOW" then
         local gossipOptions = GossipGetOptions()
+        local _,option = next(gossipOptions)
+        if type(option) ~= "table" then
+            return
+        end
         for _,gossipId in ipairs(args) do
             for _, v in pairs(gossipOptions) do
                 if v.gossipOptionID == gossipId then

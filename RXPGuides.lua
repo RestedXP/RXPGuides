@@ -304,13 +304,22 @@ local function trainerFrameUpdate(self, t)
     end
 end
 
+local function GossipGetNumOptions()
+    if C_GossipInfo.GetNumOptions then
+        return C_GossipInfo.GetNumOptions()
+    elseif C_GossipInfo.GetOptions then
+        return #C_GossipInfo.GetOptions()
+    else
+        return _G.GetNumGossipOptions()
+    end
+end
+
+addon.GossipGetNumOptions = GossipGetNumOptions
+
 local GossipGetNumActiveQuests = C_GossipInfo.GetNumActiveQuests or
                                      _G.GetNumGossipActiveQuests
 local GossipGetNumAvailableQuests = C_GossipInfo.GetNumAvailableQuests or
                                         _G.GetNumGossipAvailableQuests
-local GossipGetNumOptions = C_GossipInfo.GetOptions and
-                                function() return #C_GossipInfo.GetOptions() end or
-                                _G.GetNumGossipOptions
 local GossipSelectAvailableQuest = C_GossipInfo.SelectAvailableQuest or
                                        _G.SelectGossipAvailableQuest
 local GossipGetActiveQuests = C_GossipInfo.GetActiveQuests or
