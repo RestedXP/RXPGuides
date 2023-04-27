@@ -133,6 +133,10 @@ function addon.GetQuestLog(QL, LT)
         addon.settings.db.profile.SoM and addon.settings.db.profile.phase > 2 and
         guide["era/som"]) or not guide then return end
     for ns, step in ipairs(guide.steps) do
+        local remove = tonumber(step.qremove)
+        if remove then
+            QL[remove] = nil
+        end
         for en, element in pairs(step.elements) do
             if element.tag == "accept" then
                 QL[element.questId] = element.text or tostring(element.questId)
