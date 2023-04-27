@@ -147,6 +147,7 @@ function addon.tips:CheckEmergencyActions()
 end
 
 function addon.tips:CatalogInventory()
+    if not addon.emergencyItems then return end
     local itemList = {}
 
     local itemName, itemTexture, id
@@ -190,6 +191,8 @@ function addon.tips:CatalogInventory()
 end
 
 function addon.tips:UpdateEmergencySpells()
+    if not addon.emergencySpells then return end
+
     local spellList = {}
 
     local name, icon
