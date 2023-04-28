@@ -428,7 +428,9 @@ function addon.tips:EnableDangerWarning(loops)
 
     if loops > 0 then
         self.dangerWarning.doLoops = loops
-        self.dangerWarning.animation:Play()
+        if not self.dangerWarning.animation:IsPlaying() then
+            self.dangerWarning.animation:Play()
+        end
         self.dangerWarning:Show()
     end
 end
