@@ -3540,9 +3540,7 @@ function addon.functions.skipgossip(self, text, ...)
     if event == "GOSSIP_SHOW" then
         -- print(id,'GS',nArgs)
         local trainerId,name = addon.SelectGossipType("trainer",true)
-        if not name then return end
-
-        if trainerId and GossipGetNumOptions() >= 3 or strupper(name):find(strupper(localizedClass)) then
+        if (trainerId and GossipGetNumOptions() >= 3) or (name and strupper(name):find(strupper(localizedClass))) then
             --Ignore dualspec prompt
             return
         elseif nArgs == 0 or not id then
