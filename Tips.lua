@@ -39,7 +39,8 @@ local session = {
 function addon.tips:Setup()
     if not addon.settings.db.profile.enableTips then return end
 
-    addon.tips:CreateTipsFrame()
+    self:CreateTipsFrame()
+    self:CreateDangerWarning()
 
     self:RegisterEvent("MIRROR_TIMER_START")
     self:RegisterEvent("MIRROR_TIMER_STOP")
@@ -110,7 +111,9 @@ function addon.tips.CheckEvents()
             addon.settings.db.profile.drowningThreshold then
 
             if GetTime() - session.lastAlert > session.alertFrequency then
-                -- TODO flash screen edges?
+                if addon.settings.db.profile.enableDrowningScreenFlash then
+                    addon.tips:EnableDangerWarning(2)
+                end
                 FlashClientIcon()
                 UIErrorsFrame:AddMessage(STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
                                          1.0, 0.1, 0.1, session.alertFrequency);
@@ -120,7 +123,6 @@ function addon.tips.CheckEvents()
                 end
                 session.lastAlert = GetTime()
             end
-
         end
     end
 
@@ -137,6 +139,10 @@ function addon.tips:CheckEmergencyActions()
 
         addon.tips:HighlightEmergencyItem()
         addon.tips:HighlightEmergencySpell()
+
+        if addon.settings.db.profile.enableEmergencyScreenFlash then
+            addon.tips:EnableDangerWarning(1)
+        end
         return
     end
 
@@ -384,3 +390,50 @@ function addon.tips:CatalogActionBars()
 end
 
 function addon.tips:ACTIONBAR_SLOT_CHANGED() self:CatalogActionBars() end
+
+function addon.tips:CreateDangerWarning()
+    if self.dangerWarning then return end
+
+    local f = CreateFrame("Frame", "RXPDangerFrame", UIParent,
+                          BackdropTemplateMixin and "BackdropTemplate")
+    f:SetFrameStrata("FULLSCREEN_DIALOG")
+
+    f:SetPoint('CENTER', UIParent, 'CENTER', 0, 1)
+    f:SetAllPoints(nil)
+    f.bg = f:CreateTexture(nil, 'BACKGROUND')
+    f.bg:SetTexture("Interface\\FullScreenTextures\\LowHealth")
+    f.bg:SetBlendMode('ADD')
+    f.bg:SetAllPoints(nil)
+
+    f.animation = f:CreateAnimationGroup()
+    f.animation:SetLooping("BOUNCE")
+    f.animation.pulse = f.animation:CreateAnimation("Alpha")
+    f.animation.pulse:SetDuration(0.5236)
+    f.animation.pulse:SetFromAlpha(0.75)
+    f.animation.pulse:SetToAlpha(0.2)
+
+    f:Hide()
+
+    f.animation:HookScript("OnLoop", function()
+        if f.doLoops < 0 then
+            f:Hide()
+            f.animation:Stop()
+        end
+
+        f.doLoops = f.doLoops - 1
+    end)
+
+    self.dangerWarning = f
+end
+
+function addon.tips:EnableDangerWarning(loops)
+    if not self.dangerWarning or tonumber(loops) == nil then return end
+
+    if loops > 0 then
+        self.dangerWarning.doLoops = loops
+        if not self.dangerWarning.animation:IsPlaying() then
+            self.dangerWarning.animation:Play()
+        end
+        self.dangerWarning:Show()
+    end
+end
