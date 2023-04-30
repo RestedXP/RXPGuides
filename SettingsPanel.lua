@@ -1819,7 +1819,7 @@ function addon.settings:CreateAceOptionsPanel()
                     enableEmergencyScreenFlash = {
                         name = _G.SHOW_FULLSCREEN_STATUS_TEXT,
                         desc = L(
-                            "Flashes the screen corners emergency action recommended"),
+                            "Flashes the screen corners when an emergency action is recommended"), -- TODO locale
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.4,
