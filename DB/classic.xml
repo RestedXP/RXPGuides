@@ -7,5 +7,6 @@
     <Script file="DB/classic/spells.lua"/>
     <Script file="DB/classic/rares.lua"/>
     <Script file="DB/classic/db.lua"/>
+    <Script file="DB/classic/dangerousMobs.lua"/>
 
 </Ui>
