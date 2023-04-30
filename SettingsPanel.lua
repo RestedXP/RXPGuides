@@ -154,10 +154,12 @@ function addon.settings:InitializeSettings()
             enableDrowningWarning = true,
             enableDrowningWarningSound = true,
             drowningThreshold = 0.2,
+            enableDrowningScreenFlash = true,
 
             enableEmergencyActions = true,
             emergencyThreshold = 0.2,
-            enableEmergencyIconAnimations = true
+            enableEmergencyIconAnimations = true,
+            enableEmergencyScreenFlash = true
         }
     }
 
@@ -345,9 +347,8 @@ function addon.settings:ProcessImportBox()
 
     if not addon.settings.db.profile.showEnabled then self.ToggleActive() end
 
-    local guidesLoaded, errorMsg = addon.ImportString(
-                                       importCache.bufferString,
-                                       importCache.workerFrame)
+    local guidesLoaded, errorMsg = addon.ImportString(importCache.bufferString,
+                                                      importCache.workerFrame)
     if guidesLoaded and not errorMsg then
         self.gui.selectedDeleteGuide = ""
         return true
@@ -1388,12 +1389,24 @@ function addon.settings:CreateAceOptionsPanel()
                                            .showTargetingOnProximity
                         end
                     },
+                    enableTargetingFlash = {
+                        name = _G.SHOW_FULLSCREEN_STATUS_TEXT,
+                        desc = L(
+                            "Flashes the screen corners when enemy target found"),
+                        type = "toggle",
+                        width = optionsWidth * 2,
+                        order = 3.2,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile.enableDrowningWarning
+                        end
+                    },
                     soundOnFind = {
                         name = L("Play Sound"), -- TODO locale
                         desc = L("Sends sound on enemy target found"),
                         type = "select",
                         width = optionsWidth,
-                        order = 3.2,
+                        order = 3.3,
                         values = {
                             ["none"] = "none",
                             [3175] = "Map Ping",
@@ -1417,7 +1430,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Sound Channel"), -- TODO locale
                         type = "select",
                         width = optionsWidth,
-                        order = 3.3,
+                        order = 3.4,
                         values = {
                             ["Master"] = _G.MASTER,
                             ["Music"] = _G.MUSIC_VOLUME,
@@ -1432,9 +1445,9 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     testSoundOnFind = {
-                        order = 3.4,
-                        type = 'execute',
                         name = _G.EVENTTRACE_BUTTON_PLAY,
+                        order = 3.5,
+                        type = 'execute',
                         disabled = function()
                             return self.db.profile.soundOnFind == "none"
                         end,
@@ -1750,6 +1763,18 @@ function addon.settings:CreateAceOptionsPanel()
                                        not self.db.profile.enableDrowningWarning
                         end
                     },
+                    enableDrowningScreenFlash = {
+                        name = _G.SHOW_FULLSCREEN_STATUS_TEXT,
+                        desc = L(
+                            "Flashes the screen corners when in danger of drowning"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.4,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile.enableDrowningWarning
+                        end
+                    },
                     emergencyHeader = {
                         name = L("Emergency Actions"), -- TODO locale
                         type = "header",
@@ -1757,7 +1782,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.0
                     },
                     enableEmergencyActions = {
-                        name = L("Enable Warnings"), -- TODO locale
+                        name = L("Enable Warning"), -- TODO locale
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.1,
@@ -1790,8 +1815,19 @@ function addon.settings:CreateAceOptionsPanel()
                                        not self.db.profile
                                            .enableEmergencyActions
                         end
+                    },
+                    enableEmergencyScreenFlash = {
+                        name = _G.SHOW_FULLSCREEN_STATUS_TEXT,
+                        desc = L(
+                            "Flashes the screen corners emergency action recommended"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.4,
+                        disabled = function()
+                            return not self.db.profile.enableTips or
+                                       not self.db.profile.enableDrowningWarning
+                        end
                     }
-
                 }
             },
             helpPanel = {
