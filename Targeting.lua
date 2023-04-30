@@ -172,7 +172,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
         announcedTargets[t] = true
 
         if #content > 255 then
-            content:gsub("^.-\n","")
+            content:gsub("^.-\n", "")
             break
         end
     end
@@ -246,6 +246,10 @@ function addon.targeting:CheckNameplate(nameplateID)
                     FlashClientIcon()
                 end
 
+                if addon.settings.db.profile.enableTargetingFlash then
+                    addon.tips:EnableDangerWarning(1)
+                end
+
                 if addon.settings.db.profile.enableEnemyMarking then
                     self:UpdateMarker("unitscan", nameplateID, i)
                 end
@@ -260,6 +264,10 @@ function addon.targeting:CheckNameplate(nameplateID)
 
                 if addon.settings.db.profile.flashOnFind then
                     FlashClientIcon()
+                end
+
+                if addon.settings.db.profile.enableTargetingFlash then
+                    addon.tips:EnableDangerWarning(1)
                 end
 
                 if addon.settings.db.profile.enableEnemyMarking then
@@ -326,6 +334,10 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
                     FlashClientIcon()
                 end
 
+                if addon.settings.db.profile.enableTargetingFlash then
+                    addon.tips:EnableDangerWarning(1)
+                end
+
                 if addon.settings.db.profile.enableEnemyMarking then
                     self:UpdateMarker("unitscan", kind, i)
                 end
@@ -340,6 +352,10 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
 
                 if addon.settings.db.profile.flashOnFind then
                     FlashClientIcon()
+                end
+
+                if addon.settings.db.profile.enableTargetingFlash then
+                    addon.tips:EnableDangerWarning(1)
                 end
 
                 if addon.settings.db.profile.enableEnemyMarking then
@@ -400,6 +416,10 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
 
                 if addon.settings.db.profile.flashOnFind then
                     FlashClientIcon()
+                end
+
+                if addon.settings.db.profile.enableTargetingFlash then
+                    addon.tips:EnableDangerWarning(1)
                 end
 
                 if addon.settings.db.profile.enableEnemyMarking then
@@ -493,27 +513,25 @@ function addon.targeting.CheckTargetProximity()
     end
 end
 
---Disables and mutes the annoying dialog that shows up
-local actionForbiddenText = fmt(ADDON_ACTION_FORBIDDEN,addonName)
+-- Disables and mutes the annoying dialog that shows up
+local actionForbiddenText = fmt(ADDON_ACTION_FORBIDDEN, addonName)
 
 local TextBoxHook = function(self)
     if self.text:GetText() == actionForbiddenText then
-        if self:IsShown() then
-            self:Hide()
-        end
-        local _,channel = PlaySound(SOUNDKIT.IG_MAINMENU_CLOSE)
+        if self:IsShown() then self:Hide() end
+        local _, channel = PlaySound(SOUNDKIT.IG_MAINMENU_CLOSE)
         if channel then
             StopSound(channel)
-            StopSound(channel-1)
+            StopSound(channel - 1)
         end
         StaticPopupDialogs["ADDON_ACTION_FORBIDDEN"] = nil
     end
 end
 
-_G.StaticPopup1:HookScript("OnShow",TextBoxHook)
-_G.StaticPopup1:HookScript("OnHide",TextBoxHook)
-_G.StaticPopup2:HookScript("OnShow",TextBoxHook)
-_G.StaticPopup2:HookScript("OnHide",TextBoxHook)
+_G.StaticPopup1:HookScript("OnShow", TextBoxHook)
+_G.StaticPopup1:HookScript("OnHide", TextBoxHook)
+_G.StaticPopup2:HookScript("OnShow", TextBoxHook)
+_G.StaticPopup2:HookScript("OnHide", TextBoxHook)
 
 function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     if func ~= "TargetUnit()" or forbiddenAddon ~= addonName then return end
