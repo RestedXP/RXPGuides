@@ -24,7 +24,7 @@ for faction, factionCsv in files.items():
     #Name,Zone,Level,Classification,Type,Movement,Notes/Special abilities,Line
 
     for mob in csvreader:
-      if not "Line" in mob or not mob['Line'] or not mob['Name']:
+      if not "Line" in mob or not mob['Line'] or not mob['Name'] or not mob['Level']:
         excluded_count += 1
         continue
 
@@ -34,8 +34,15 @@ for faction, factionCsv in files.items():
       if not mob['Name'] in db[faction][mob['Zone']]:
         db[faction][mob['Zone']][mob['Name']] = []
 
+      if mob['Level'].isnumeric():
+        minLevel = mob['Level']
+        maxLevel = mob['Level']
+      else:
+        minLevel = mob['Level'].split('-')[0]
+        maxLevel = mob['Level'].split('-')[1]
+
       db[faction][mob['Zone']][mob['Name']].append(
-        f"        {{ Level = \"{mob['Level']}\", Classification = \"{mob['Classification']}\", Movement = \"{mob['Movement']}\", Notes = \"{mob['Notes/Special abilities']}\", Location = \"{mob['Line']}\" }},\n"
+        f"        {{ MinLevel = {minLevel}, MaxLevel = {maxLevel}, Classification = \"{mob['Classification']}\", Movement = \"{mob['Movement']}\", Notes = \"{mob['Notes/Special abilities']}\", Location = \"{mob['Line']}\" }},\n"
       )
 
       included_count += 1
