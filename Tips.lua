@@ -111,7 +111,9 @@ function addon.tips.CheckEvents()
             addon.settings.db.profile.drowningThreshold then
 
             if GetTime() - session.lastAlert > session.alertFrequency then
-                addon.tips:EnableDangerWarning(2)
+                if addon.settings.db.profile.enableDrowningScreenFlash then
+                    addon.tips:EnableDangerWarning(2)
+                end
                 FlashClientIcon()
                 UIErrorsFrame:AddMessage(STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
                                          1.0, 0.1, 0.1, session.alertFrequency);
@@ -138,8 +140,9 @@ function addon.tips:CheckEmergencyActions()
         addon.tips:HighlightEmergencyItem()
         addon.tips:HighlightEmergencySpell()
 
-        -- TODO if hardcore
-        -- addon.tips:EnableDangerWarning(2)
+        if addon.settings.db.profile.enableEmergencyScreenFlash then
+            addon.tips:EnableDangerWarning(1)
+        end
         return
     end
 
@@ -411,13 +414,13 @@ function addon.tips:CreateDangerWarning()
 
     f:Hide()
 
-    f.animation:HookScript("OnLoop", function(_, event)
+    f.animation:HookScript("OnLoop", function()
         if f.doLoops < 0 then
             f:Hide()
             f.animation:Stop()
         end
 
-        if event == "FORWARD" then f.doLoops = f.doLoops - 1 end
+        f.doLoops = f.doLoops - 1
     end)
 
     self.dangerWarning = f
