@@ -17,6 +17,7 @@ local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or
 local GetContainerItemID = C_Container and C_Container.GetContainerItemID or
                                _G.GetContainerItemID
 local tinsert, fmt = tinsert, string.format
+local GetRealZoneText = GetRealZoneText
 local UIErrorsFrame = _G.UIErrorsFrame
 local STRING_ENVIRONMENTAL_DAMAGE_DROWNING =
     _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING
@@ -33,7 +34,8 @@ local session = {
     emergencyItems = {},
     emergencySpells = {},
     highlights = {},
-    actionBarMap = {}
+    actionBarMap = {},
+    dangerousMobs = {}
 }
 
 function addon.tips:Setup()
@@ -62,6 +64,11 @@ function addon.tips:Setup()
     else
         addon.comms.PrettyPrint(
             L("No enabled RXP frames for tips functionality")) -- TODO locale
+    end
+
+    if addon.dangerousMobs then
+        self:LoadDangerousMobs()
+        self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     end
 end
 
@@ -436,4 +443,55 @@ function addon.tips:EnableDangerWarning(loops)
         end
         self.dangerWarning:Show()
     end
+end
+
+function addon.tips:ZONE_CHANGED_NEW_AREA() self:LoadDangerousMobs() end
+
+function addon.tips:LoadDangerousMobs()
+    if not addon.dangerousMobs then return end
+
+    local zone = GetRealZoneText()
+
+    print("== LoadDangerousMobs: " .. zone)
+    if not zone or not addon.dangerousMobs[zone] then
+        session.dangerousMobs = {}
+        return
+    end
+
+    local playerLevel = UnitLevel("player")
+
+    if addon.dangerousMobs[zone].processed and
+        addon.dangerousMobs[zone].processed == playerLevel then
+        print(zone, "already processed")
+        session.dangerousMobs = addon.dangerousMobs[zone]
+        return
+    end
+
+    local levelBuffer
+    for name, list in pairs(addon.dangerousMobs[zone] or {}) do
+        print("\n=== Checking dangerous mob", name)
+        for _, mobData in ipairs(list) do
+
+            levelBuffer = mobData.Classification == "Normal" and 1 or 3
+            if mobData.MaxLevel < playerLevel - levelBuffer then
+                print(name, "not dangerous for playerLevel")
+                mobData.element = false
+            else
+                print("Parsing location for", name)
+                mobData.Location:gsub("^%.(%S+)%s", function(command, lineArgs)
+                    -- TODO handle NRE addon.currentGuideName call in function errors
+                    mobData.element = addon.functions[command](lineArgs)
+
+                    -- Injecting functionality into guide, so ensure no arrow
+                    if mobData.element and mobData.element.showArrow then
+                        mobData.element.showArrow = false
+                    end
+                end)
+            end
+        end
+
+    end
+
+    addon.dangerousMobs[zone].processed = playerLevel
+    session.dangerousMobs = addon.dangerousMobs[zone]
 end
