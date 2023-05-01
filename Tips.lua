@@ -478,7 +478,8 @@ function addon.tips:LoadDangerousMobs()
                 mobData.element = false
             else
                 print("Parsing location for", name)
-                mobData.Location:gsub("^%.(%S+)%s", function(command, lineArgs)
+                mobData.Location:gsub("^%.(%S+)%s*(.*)",
+                                      function(command, lineArgs)
                     -- TODO handle NRE addon.currentGuideName call in function errors
                     mobData.element = addon.functions[command](lineArgs)
 
