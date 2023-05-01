@@ -145,16 +145,16 @@ MapPinPool.creationFunc = function(framePool)
     -- Renders the Pin with Step Information
     f.render = function(pin, isMiniMapPin)
         local step = pin.elements[1].step
-        local stepIndex = pin.elements[1].step.index
+        local label = pin.elements[1].label or step.index or "*"
 
         local r = f.text:GetTextColor()
         if r ~= addon.colors.mapPins[1] then
             f.text:SetTextColor(unpack(addon.colors.mapPins))
         end
         if #pin.elements > 1 then
-            f.text:SetText(stepIndex .. "+")
+            f.text:SetText(label .. "+")
         else
-            f.text:SetText(stepIndex)
+            f.text:SetText(label)
         end
 
         if addon.settings.db.profile.mapCircle and not isMiniMapPin then
@@ -224,23 +224,34 @@ MapPinPool.creationFunc = function(framePool)
             end
             _G.GameTooltip:SetOwner(f, "ANCHOR_RIGHT", 0, 0)
             _G.GameTooltip:ClearLines()
-
-            for i, element in pairs(pin.elements) do
+            local lines = 0
+            local lastStep
+            for _, element in pairs(pin.elements) do
                 local parent = element.parent
                 local text
                 local step = element.step
-                if parent then
-                    text = parent.mapTooltip or parent.tooltipText
-                elseif not element.hideTooltip then
-                    text = element.mapTooltip or element.tooltipText
+                if parent and not parent.hideTooltip then
+                    text = parent.mapTooltip or parent.tooltipText or parent.text or ""
+                    if parent.step ~= lastStep then
+                        _G.GameTooltip:AddLine(step.mapTooltip or ("Step " .. step.index),
+                            unpack(addon.colors.mapPins))
+                    end
+                    _G.GameTooltip:AddLine(text)
+                    lines = lines + 1
+                    lastStep = parent.step
+                elseif not parent and not element.hideTooltip then
+                    text = element.mapTooltip or element.tooltipText or step.text or ""
+                    if step ~= lastStep then
+                        _G.GameTooltip:AddLine(step.mapTooltip or ("Step " .. step.index),
+                                            unpack(addon.colors.mapPins))
+                    end
+                    _G.GameTooltip:AddLine(text)
+                    lines = lines + 1
+                    lastStep = step
                 end
-                text = text or step.text or ""
-                _G.GameTooltip:AddLine("Step " .. step.index,
-                                       unpack(addon.colors.mapPins))
-                _G.GameTooltip:AddLine(text)
             end
 
-            _G.GameTooltip:Show()
+            _G.GameTooltip:SetShown(lines > 0)
         end)
 
         f:SetScript("OnLeave", function(self)
