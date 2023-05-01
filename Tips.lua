@@ -485,6 +485,9 @@ function addon.tips:LoadDangerousMobs()
 
                     -- Injecting functionality into guide, so ensure no arrow
                     if mobData.element and mobData.element.showArrow then
+                        mobData.element.label = fmt("%s %s (%d)",
+                                                    _G.VOICEMACRO_1_Sc_0, name,
+                                                    mobData.MaxLevel)
                         mobData.element.showArrow = false
                     end
                 end)
