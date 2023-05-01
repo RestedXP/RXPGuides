@@ -22,37 +22,54 @@ local L = addon.locale.Get
 -- File guides and string-imports need different load order support
 local embeddedGuides = {}
 
-local function applies(text)
-    if text then
-        local isMatch
-        for str in string.gmatch(text, "[^/]+") do
-            local v = true
-            for entry in string.gmatch(str, "!?[%w%d]+") do
-                local level = tonumber(entry) or 0xfff
-                local playerLevel = UnitLevel("player") or 1
-                local state = true
-                local gendercheck
-                if entry:sub(1, 1) == "!" then
-                    entry = entry:sub(2, -1)
-                    state = false
+local function applies(textEntry,customClass)
+    if textEntry then
+        local function parse(text)
+            local isMatch = false
+            text = text:gsub("(!?)%(%s*(.+)%s*%)",function(op,m)
+                if parse(m) ~= (op == "!") then
+                    return class
+                else
+                    return "NULL"
                 end
-                local uppercase = strupper(entry)
-                if entry == "Undead" then
-                    entry = "Scourge"
-                elseif uppercase == "DK" then
-                    uppercase = "DEATHKNIGHT"
-                elseif uppercase == "MALE" and UnitSex("player") == 2 or
-                       uppercase == "FEMALE" and UnitSex("player") == 3 then
-                    gendercheck = true
+            end)
+            for str in string.gmatch(text, "[^/]+") do
+                local v = true
+                for entry in string.gmatch(str, "!?[%w%d]+") do
+                    local level = tonumber(entry) or 0xfff
+                    local playerLevel = UnitLevel("player") or 1
+                    local state = false
+                    local gendercheck
+                    if entry:sub(1, 1) == "!" then
+                        entry = entry:sub(2, -1)
+                        state = true
+                    end
+                    local uppercase = strupper(entry)
+                    if entry == "Undead" then
+                        entry = "Scourge"
+                    elseif uppercase == "DK" then
+                        uppercase = "DEATHKNIGHT"
+                    elseif uppercase == "MALE" and UnitSex("player") == 2 or
+                        uppercase == "FEMALE" and UnitSex("player") == 3 then
+                        gendercheck = true
+                    end
+                    v = (not(gendercheck or uppercase == class or entry == race or
+                             entry == faction or playerLevel >= level or entry == customClass) ==
+                             state)
+                    if not v then
+                        break
+                    end
                 end
-                v = v and
-                        ((gendercheck or uppercase == class or uppercase == addon.game or entry ==
-                            race or entry == faction or playerLevel >= level) ==
-                            state)
+                if v then
+                    isMatch = true
+                    break
+                end
             end
-            isMatch = isMatch or v
+            --print(isMatch and "TRUE" or "FALSE",'-',text)
+            return isMatch
         end
-        return isMatch
+
+        return parse(textEntry)
     end
     return true
 end
