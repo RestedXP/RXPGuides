@@ -553,25 +553,38 @@ function addon.SetStep(n, n2, loopback)
             stepframe = CurrentStepFrame.framePool[c]
             -- stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
             stepframe.elements = {}
-            stepframe:SetScript("OnMouseDown",function(self)
-                if self.step and self.step.tip then
-                    self:StartMoving()
-                end
-                print('ok')
-            end)
-            stepframe:SetScript("OnMouseDown",stepframe.StopMovingOrSizing)
+
             -- addon.CreateActiveItemFrame(stepframe)
         end
-        stepframe:ClearAllPoints()
         if step.tip then
-            stepframe:SetPoint("CENTER", UIParent, 0, 0)
+            --stepframe:SetParent(UIParent)
+            stepframe:ClearAllPoints()
+            local pos = RXPCData.tipWindow
+            if pos then
+                stepframe:SetPoint(pos[1], UIParent, pos[3], pos[4], pos[5])
+            else
+                stepframe:SetPoint("CENTER", UIParent, 0, 0)
+            end
             --TODO: Save window position
             stepframe:SetWidth(200)
             stepframe:SetMovable(true)
             stepframe:EnableMouse(true)
+            stepframe:SetClampedToScreen(true)
             --stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
             anchor = c - 1
+            stepframe:SetScript("OnMouseDown",function(self)
+                if self.step and self.step.tip then
+                    self:StartMoving()
+                end
+            end)
+            stepframe:SetScript("OnMouseUp",function(self)
+                if self.step and self.step.tip then
+                    self:StopMovingOrSizing()
+                    RXPCData.tipWindow = {self:GetPoint()}
+                end
+            end)
         else
+            stepframe:ClearAllPoints()
             if anchor < 1 then
                 stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
                 stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
@@ -844,17 +857,8 @@ function CurrentStepFrame.UpdateText()
         c = c + 1
         local stepframe = CurrentStepFrame.framePool[c]
 
-        stepframe:ClearAllPoints()
-        if step.tip then
-            stepframe:SetParent(UIParent)
-            stepframe:SetPoint("CENTER", UIParent, 0, 0)
-            --TODO: Save window position
-            stepframe:SetWidth(200)
-            stepframe:SetMovable(true)
-            --stepframe:SetClampedToScreen(true)
-            --stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
-            anchor = c - 1
-        else
+        if not step.tip then
+            stepframe:ClearAllPoints()
             if anchor < 1 then
                 stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
                 stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
@@ -865,7 +869,6 @@ function CurrentStepFrame.UpdateText()
                                 "BOTTOMRIGHT", 0, -5)
             end
             stepframe:SetMovable(false)
-            stepframe:SetParent(CurrentStepFrame)
             anchor = c
         end
 
