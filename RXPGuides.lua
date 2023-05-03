@@ -512,7 +512,7 @@ function addon:OnInitialize()
     addon.LoadEmbeddedGuides()
     addon.UpdateGuideFontSize()
     addon.isHidden = addon.settings.db.profile.hideGuideWindow
-    addon.RXPFrame:SetShown(not addon.settings.db.profile.hideGuideWindow)
+    addon.RXPFrame:SetShown(not addon.isHidden)
     addon.RXPFrame:SetScale(addon.settings.db.profile.windowScale)
     addon.arrowFrame:SetSize(32 * addon.settings.db.profile.arrowScale,
                              32 * addon.settings.db.profile.arrowScale)
@@ -922,8 +922,12 @@ end
 
 function addon.HardcoreToggle()
     if addon.game == "CLASSIC" then
-        addon.settings.db.profile.hardcore =
-            not addon.settings.db.profile.hardcore
+        if addon.currentGuide and addon.currentGuide.hardcore then
+            addon.settings.db.profile.hardcore = true
+        else
+            addon.settings.db.profile.hardcore =
+                not addon.settings.db.profile.hardcore
+        end
         addon.RenderFrame()
     end
 end

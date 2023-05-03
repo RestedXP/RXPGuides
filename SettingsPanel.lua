@@ -2339,6 +2339,19 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.activeItemFrame:SetScale(value)
                         end
                     },
+                    activeItemHideBG = {
+                        name = L("Hide Background"),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if addon.activeItemFrame then
+                                addon.activeItemFrame:UpdateVisuals()
+                            end
+                        end
+                    },
                     mapHeader = {
                         name = _G.MAP_OPTIONS_TEXT,
                         type = "header",
@@ -2793,8 +2806,11 @@ function addon.settings:DisableTextColors()
     self:LoadTextColors()
 end
 
-function addon.settings:ReplaceColors(textLine)
+function addon.settings.ReplaceColors(textLine,element)
     -- Replace text placeholders
+    if type(textLine) ~= "string" or element and element.textReplaced then
+        return textLine
+    end
     for RXP_ in string.gmatch(textLine, "RXP_[A-Z]+_") do
         textLine = textLine:gsub(RXP_, addon.guideTextColors[RXP_] or
                                      addon.guideTextColors.default["error"])

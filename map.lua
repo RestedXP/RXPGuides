@@ -9,6 +9,12 @@ addon.linePoints = {}
 
 addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
+
+function addon.arrowFrame:UpdateVisuals()
+    self.texture:SetTexture(addon.GetTexture(
+        "rxp_navigation_arrow-1"))
+end
+
 addon.enabledFrames["arrowFrame"] = af
 af.IsFeatureEnabled = function ()
     return not addon.settings.db.profile.disableArrow and (addon.hideArrow ~= nil and not addon.hideArrow)

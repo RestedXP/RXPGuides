@@ -1,6 +1,7 @@
 local _, addon = ...
 
 local _G = _G
+local L = addon.locale.Get
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
 local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
@@ -135,6 +136,24 @@ local function UpdateCooldowns()
     end
 end
 
+local function UpdateIconFrameVisuals(self,updateFrame)
+    self:ClearBackdrop()
+    if not addon.settings.db.profile.activeItemHideBG then
+        self:SetBackdrop(addon.RXPFrame.backdropEdge)
+        local r, g, b = unpack(addon.colors.background)
+        self:SetBackdropColor(r, g, b, 0.4)
+    end
+    self.title:ClearBackdrop()
+    self.title:SetBackdrop(addon.RXPFrame.backdropEdge)
+    self.title:SetBackdropColor(unpack(addon.colors.background))
+    self.title.text:SetFont(addon.font, 9, "")
+    self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
+    self.title:SetSize(self.title.text:GetStringWidth() + 14, 19)
+    if updateFrame and self.UpdateFrame then
+        return self:UpdateFrame()
+    end
+end
+
 function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not self or self.activeItemFrame then return end
@@ -160,9 +179,6 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
         return not addon.settings.db.profile.disableItemWindow and next(GetActiveItemList()) ~= nil
     end
 
-    f:ClearBackdrop()
-    f:SetBackdrop(addon.RXPFrame.backdropEdge)
-    f:SetBackdropColor(unpack(addon.colors.background))
     f.onMouseDown = function()
         if addon.settings.db.profile.lockFrames and not IsAltKeyDown() then return end
         f:StartMoving()
@@ -187,11 +203,14 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
         f.title.text:SetJustifyV("MIDDLE")
         f.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
         f.title.text:SetFont(addon.font, 9, "")
-        f.title.text:SetText("Active Items")
+        f.title.text:SetText(L"Active Items")
         f.title:EnableMouse(true)
         f.title:SetScript("OnMouseDown", f.onMouseDown)
         f.title:SetScript("OnMouseUp", f.onMouseUp)
     end
+    f.UpdateVisuals = UpdateIconFrameVisuals
+    f.UpdateFrame = addon.UpdateItemFrame
+    f:UpdateVisuals()
 
     f:SetHeight(40);
 end
@@ -249,16 +268,6 @@ function addon.UpdateItemFrame(itemFrame)
     local buttonList = itemFrame.buttonList
     local itemList = GetActiveItemList()
 
-    if itemFrame.hardcore ~= addon.settings.db.profile.hardcore or not itemFrame.hardcore then
-        itemFrame.hardcore = addon.settings.db.profile.hardcore
-        itemFrame:ClearBackdrop()
-        itemFrame:SetBackdrop(addon.RXPFrame.backdropEdge)
-        local r, g, b = unpack(addon.colors.background)
-        itemFrame:SetBackdropColor(r, g, b, 0.4)
-        itemFrame.title:ClearBackdrop()
-        itemFrame.title:SetBackdrop(addon.RXPFrame.backdropEdge)
-        itemFrame.title:SetBackdropColor(unpack(addon.colors.background))
-    end
     itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 17)
     local i = 0
     for _, item in ipairs(itemList) do

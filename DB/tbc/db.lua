@@ -592,7 +592,7 @@ function addon.ShowMissingQuests(output)
         end
     end
     if output then
-        print(t)
+        print(t)--ok
     end
     return t
 end

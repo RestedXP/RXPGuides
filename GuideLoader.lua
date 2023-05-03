@@ -737,7 +737,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor)
                 guide.steps[currentStep].elements = {}
                 step = guide.steps[currentStep]
                 step.stepId = linenumber + guide.guideId
-                step.index = currentStep
+                --step.index = currentStep
                 addon.step = step
                 lastElement = nil
             end
