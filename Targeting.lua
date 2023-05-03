@@ -608,6 +608,18 @@ end
 
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
 
+local function UpdateIconFrameVisuals(self,updateFrame)
+    self:SetScale(addon.settings.db.profile.activeTargetScale or 1)
+    addon.targeting:RenderTargetFrameBackground()
+    self.title:ClearBackdrop()
+    self.title:SetBackdrop(addon.RXPFrame.backdropEdge)
+    self.title:SetBackdropColor(unpack(addon.colors.background))
+    self.title.text:SetFont(addon.font, 9, "")
+    self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
+    self.title:SetSize(self.title.text:GetStringWidth() + 14, 19)
+end
+
+
 function addon.targeting:CreateTargetFrame()
     if self.activeTargetFrame then return end
 
@@ -657,13 +669,14 @@ function addon.targeting:CreateTargetFrame()
     f.title.text:SetJustifyV("MIDDLE")
     f.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
     f.title.text:SetFont(addon.font, 9, "")
-    f.title.text:SetText("Active Targets")
+    f.title.text:SetText(L"Active Targets")
     f.title:SetSize(f.title.text:GetStringWidth() + 14, 19)
 
     f.title:EnableMouse(true)
     f.title:SetScript("OnMouseDown", f.onMouseDown)
     f.title:SetScript("OnMouseUp", f.onMouseUp)
 
+    f.UpdateVisuals = UpdateIconFrameVisuals
     f:SetHeight(40)
     f:SetScale(addon.settings.db.profile.activeTargetScale)
 end
@@ -672,7 +685,7 @@ function addon.targeting:RenderTargetFrameBackground()
     if not self.activeTargetFrame then return end
 
     local f = self.activeTargetFrame
-
+    --print(RXP.activeTheme.texturePath)
     if addon.settings.db.profile.hideActiveTargetsBackground then
         f:ClearBackdrop()
     else
