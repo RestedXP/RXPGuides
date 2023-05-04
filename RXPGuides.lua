@@ -863,7 +863,8 @@ function addon:UpdateLoop(diff)
                         end
                     end
                 end
-                if updateText then
+                if updateText or addon.updateTipWindow then
+                    addon.updateTipWindow = false
                     addon.RXPFrame.CurrentStepFrame.UpdateText()
                 end
                 event = event .. "/updateText"

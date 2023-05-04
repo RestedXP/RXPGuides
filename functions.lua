@@ -600,13 +600,21 @@ function addon.SetElementIncomplete(self)
 end
 
 function addon.UpdateStepText(self)
-    addon.updateStepText = true
     local index
-    if type(self) == "number" then
+    if not self.step then
+        return
+    elseif self.step.tip then
+        addon.updateTipWindow = true
+        addon.updateStepText = true
+        return
+    elseif not self.step.index then
+        return
+    elseif type(self) == "number" then
         index = self
     else
         index = self.step.index
     end
+    addon.updateStepText = true
     addon.stepUpdateList[index] = true
 end
 
@@ -762,14 +770,15 @@ function addon.functions.accept(self, ...)
         local id = element.questId
         local isCompleted = element.completed
         local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
+        local index = step.index
 
         if (event == "QUEST_ACCEPTED" and questId == id) then
             isQuestAccepted = true
         end
 
-        if element.step.active or element.retrieveText or
-            (element.step.index > 1 and
-                addon.currentGuide.steps[element.step.index - 1].active) then
+        if step.active or element.retrieveText or
+            (index and index > 1 and
+                addon.currentGuide.steps[index - 1].active) then
             local autoAccept = bit.band(element.flags,0x1) ~= 0x1
             if autoAccept then addon.questAccept[id] = element end
             local quest = addon.GetQuestName(id, element)
@@ -1122,7 +1131,7 @@ function addon.UpdateQuestCompletionData(self)
     if not element.tag or element.tag ~= "complete" then
         return
     elseif type(id) ~= "number" then
-        print('Error (.' .. element.tag .. '): Invalid quest ID at step ' .. element.step.index)
+        print('Error (.' .. element.tag .. '): Invalid quest ID at step ' .. (element.step.index  or "*"))
         return
     end
     -- local skip
@@ -1333,7 +1342,7 @@ function addon.functions.complete(self, ...)
             C_SuperTrack.SetSuperTrackedQuestID(id)
         end
     else
-        if not step.active then
+        if not step.active and step.index then
             if math.abs(RXPCData.currentStep - step.index) > 2 then
                 local update = true
                 for _,v in pairs(addon.updateInactiveQuest) do

@@ -87,11 +87,11 @@ function addon.UpdateArrow(self)
         if dist ~= self.distance then
             self.distance = dist
             local step = element.step
-            if step then
-                local title = step.title or ("Step "..step.index)
-                self.text:SetText(string.format("%s\n(%dyd)", title, dist))
-            elseif element.title then
+            local title = step and (step.title or step.index and ("Step "..step.index))
+            if element.title then
                 self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
+            elseif title then
+                self.text:SetText(string.format("%s\n(%dyd)", title, dist))
             else
                 self.text:SetText(string.format("(%dyd)", dist))
             end
@@ -239,8 +239,10 @@ MapPinPool.creationFunc = function(framePool)
                 if parent and not parent.hideTooltip then
                     text = parent.mapTooltip or parent.tooltipText or parent.text or ""
                     if parent.step ~= lastStep then
-                        _G.GameTooltip:AddLine(step.mapTooltip or ("Step " .. step.index),
-                            unpack(addon.colors.mapPins))
+                        local title = step.mapTooltip or step.title or step.index and ("Step " .. step.index) or step.tip and "Tip"
+                        if title then
+                            _G.GameTooltip:AddLine(title,unpack(addon.colors.mapPins))
+                        end
                     end
                     _G.GameTooltip:AddLine(text)
                     lines = lines + 1
@@ -248,8 +250,10 @@ MapPinPool.creationFunc = function(framePool)
                 elseif not parent and not element.hideTooltip then
                     text = element.mapTooltip or element.tooltipText or step.text or ""
                     if step ~= lastStep then
-                        _G.GameTooltip:AddLine(step.mapTooltip or ("Step " .. step.index),
-                                            unpack(addon.colors.mapPins))
+                        local title = step.mapTooltip or step.title or step.index and ("Step " .. step.index) or step.tip and "Tip"
+                        if title then
+                            _G.GameTooltip:AddLine(title,unpack(addon.colors.mapPins))
+                        end
                     end
                     _G.GameTooltip:AddLine(text)
                     lines = lines + 1
@@ -503,14 +507,14 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                 n = n + 1
             end
             if not isMiniMap and step.active and not skipWp then
-                local wpList = RXPCData.completedWaypoints[step.index] or {}
+                local wpList = RXPCData.completedWaypoints[step.index or "tip"] or {}
                 skipWp = wpList[element.wpHash] or element.skip
                 wpList[element.wpHash] = skipWp
-                RXPCData.completedWaypoints[element.step.index] = wpList
+                RXPCData.completedWaypoints[element.step.index or "tip"] = wpList
             end
 
             if element.text and not element.label and not element.textOnly then
-                element.label = tostring(step.index)
+                element.label = tostring(step.index or "*")
             end
 
             if not skipWp and

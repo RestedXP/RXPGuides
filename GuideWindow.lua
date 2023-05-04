@@ -378,7 +378,7 @@ function addon.UpdateStepCompletion()
         end
 
 
-        if completed and not step.tip then
+        if completed and step.index and not step.tip then
             if step.active and GetTime() - addon.lastStepUpdate > 1 then
                 addon:QueueMessage("RXP_STEP_COMPLETE",step,addon.currentGuide)
             end
@@ -481,7 +481,7 @@ function addon.SetStep(n, n2, loopback)
                     not req.active do
                     if requiredSteps[req] then
                         print('ERROR: Step requirement loop at steps %d and %d',
-                              step.index, req.index)
+                              step.index or 0, req.index or 0)
                         break
                     end
                     requiredSteps[req] = true
@@ -502,6 +502,7 @@ function addon.SetStep(n, n2, loopback)
         end
     end
 
+    local lastTip = addon.currentTip
     local step = guide.steps[n]
     local req = step.requires and guide.labels[step.requires] and
                     guide.steps[guide.labels[step.requires]]
@@ -583,6 +584,7 @@ function addon.SetStep(n, n2, loopback)
                     RXPCData.tipWindow = {self:GetPoint()}
                 end
             end)
+            addon.currentTip = step
         else
             stepframe:ClearAllPoints()
             if anchor < 1 then
@@ -814,7 +816,12 @@ function addon.SetStep(n, n2, loopback)
     addon:QueueMessage("RXP_TARGET_LIST_UPDATE",stepUnitscan,stepMobs,stepTargets)
 
     for index in pairs(RXPCData.completedWaypoints) do
-        local wstep = guide.steps[index]
+        local wstep
+        if index == "tip" and lastTip ~= addon.currentTip then
+            wstep = lastTip
+        else
+            wstep = guide.steps[index]
+        end
         if not (wstep and wstep.active) then
             -- print('kk',index)
             RXPCData.completedWaypoints[index] = nil
@@ -1203,6 +1210,7 @@ function addon:LoadGuide(guide, OnLoad)
 
     table.wipe(addon.scheduledTasks)
     table.wipe(addon.stepUpdateList)
+    addon.updateTipWindow = false
     addon.currentGuide = nil
     local renderFrame
 
