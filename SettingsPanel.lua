@@ -2806,21 +2806,38 @@ function addon.settings:DisableTextColors()
     self:LoadTextColors()
 end
 
-function addon.settings.ReplaceColors(textLine,element)
+function addon.settings.ReplaceColors(element)
     -- Replace text placeholders
-    if type(textLine) ~= "string" or element and element.textReplaced then
+    local function replace(textLine)
+        if type(textLine) ~= "string" then return textLine end
+        for RXP_ in string.gmatch(textLine, "RXP_[A-Z]+_") do
+            textLine = textLine:gsub(RXP_, addon.guideTextColors[RXP_] or
+                                        addon.guideTextColors.default["error"])
+        end
+
+        -- Replace raw hex values
+        for hex in string.gmatch(textLine, "|c(%x%x%x%x%x%x%x%x)") do
+            textLine = textLine:gsub(hex, addon.guideTextColors[hex] or
+                                        addon.guideTextColors.default["error"])
+        end
+
         return textLine
     end
-    for RXP_ in string.gmatch(textLine, "RXP_[A-Z]+_") do
-        textLine = textLine:gsub(RXP_, addon.guideTextColors[RXP_] or
-                                     addon.guideTextColors.default["error"])
+
+
+    if type(element) == "table" or element and element.textReplaced then
+        element.textReplaced = element.textReplaced or {}
+        for i,field in pairs({"text","rawtext","tooltipText","mapTooltip"}) do
+            if element.textReplaced[i] then
+                element[field] = replace(element.textReplaced[i])
+            else
+                local str = element[field]
+                element.textReplaced[i] = str
+                element[field] = replace(str)
+            end
+        end
+    else
+        return replace(element)
     end
 
-    -- Replace raw hex values
-    for hex in string.gmatch(textLine, "|c(%x%x%x%x%x%x%x%x)") do
-        textLine = textLine:gsub(hex, addon.guideTextColors[hex] or
-                                     addon.guideTextColors.default["error"])
-    end
-
-    return textLine
 end

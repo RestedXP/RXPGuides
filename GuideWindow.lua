@@ -1226,7 +1226,6 @@ function addon:LoadGuide(guide, OnLoad)
     for k, v in pairs(guide) do addon.currentGuide[k] = v end
     addon.currentGuide.steps = {}
     addon.currentGuide.tips = {}
-    local C = addon.settings.ReplaceColors
     local lastTip
     for _, step in ipairs(guide.steps) do
         if addon.IsStepShown(step) then
@@ -1239,12 +1238,7 @@ function addon:LoadGuide(guide, OnLoad)
                 step.tipWindow = lastTip
             end
             for _,element in pairs(step.elements) do
-                if not element.textReplaced then
-                    element.text = C(element.text)
-                    element.tooltipText = C(element.tooltipText)
-                    element.mapTooltip = C(element.mapTooltip)
-                    element.textReplaced = true
-                end
+                addon.settings.ReplaceColors(element)
             end
         end
     end
