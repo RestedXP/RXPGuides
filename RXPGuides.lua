@@ -201,9 +201,34 @@ function addon.UpdateSkillData()
     addon.GetProfessionLevel()
 end
 
+local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
+local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
+--local GetItemSpell = C_Container and C_Container.GetItemSpell or _G.GetItemSpell
+
 function addon.GetSkillLevel(skill, useMaxValue)
     addon.UpdateSkillData()
-    if skill then
+
+    local function finditem(id)
+        for level,t in pairs(addon.mountIDs) do
+            if t[id] then
+                return level
+            end
+        end
+        return -1
+    end
+
+    if skill == "riding" and gameVersion < 20000 and addon.mountIDs then
+        local level = -1
+
+        for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+            for slot = 1,GetContainerNumSlots(bag) do
+                local id = GetContainerItemID(bag, slot)
+                local _,spellId = GetItemSpell(id)
+                level = math.max(level,finditem(spellId))
+            end
+        end
+        return level
+    elseif skill then
         if useMaxValue then
             return maxSkillLevel[skill] or -1
         else

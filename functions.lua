@@ -2250,7 +2250,7 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
     -- print(level,element.level,(level >= element.level) == not reverseLogic)
 
     local skillLevelCheck = level >= element.level
-    if element.skill == "riding" and addon.mountIDs and not element.mountTrained and skillLevelCheck and not (reverseLogic and element.skipstep) then
+    if element.skill == "riding" and gameVersion >= 30000 and addon.mountIDs and not element.mountTrained and skillLevelCheck and not (reverseLogic and element.skipstep) then
         local skillLevel = element.level
         local function MountCheck(range)
             --print('g',range)
