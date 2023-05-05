@@ -209,9 +209,11 @@ function addon.GetSkillLevel(skill, useMaxValue)
     addon.UpdateSkillData()
 
     local function finditem(id)
-        for level,t in pairs(addon.mountIDs) do
-            if t[id] then
-                return level
+        if type(id) == "number" then
+            for level,t in pairs(addon.mountIDs) do
+                if t[id] then
+                    return level
+                end
             end
         end
         return -1
