@@ -348,6 +348,7 @@ function addon.UpdateStepCompletion()
             end
         end
 
+        local c
         local completewith = step.completewith
         if completewith and (not completed or step.tip) then
             local guide = addon.currentGuide
@@ -357,7 +358,6 @@ function addon.UpdateStepCompletion()
                 completewith = guide.labels[completewith]
             end
             if completewith then
-                local c
                 if guide.steps[completewith] and
                     guide.steps[completewith].sticky then
                     if RXPCData.stepSkip[completewith] then
@@ -370,15 +370,18 @@ function addon.UpdateStepCompletion()
                         c = true
                     end
                 end
-                if step.tip then
-                    step.hidetip = c
-                    step.active = not c
-                end
             end
         end
 
 
-        if completed and step.index and not step.tip then
+        if step.tip then
+            c = c or RXPCData.hideTipWindow
+            if step.hidetip ~= c then
+                update = true
+            end
+            step.hidetip = c
+            step.active = not c
+        elseif completed and step.index then
             if step.active and GetTime() - addon.lastStepUpdate > 1 then
                 addon:QueueMessage("RXP_STEP_COMPLETE",step,addon.currentGuide)
             end
@@ -573,9 +576,23 @@ function addon.SetStep(n, n2, loopback)
             stepframe:SetClampedToScreen(true)
             --stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
             anchor = c - 1
-            stepframe:SetScript("OnMouseDown",function(self)
+            stepframe:SetScript("OnMouseDown",function(self,button)
                 if self.step and self.step.tip then
-                    self:StartMoving()
+                    if (button == "RightButton") then
+                        local menu = {{
+                                notCheckable = 1,
+                                text = L("Hide tips"),
+                                func = addon.ShowTips,
+                                arg1 = false
+                            }}
+                        if LibDD then
+                            LibDD:EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU");
+                        else
+                            _G.EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU");
+                        end
+                    else
+                        self:StartMoving()
+                    end
                 end
             end)
             stepframe:SetScript("OnMouseUp",function(self)
@@ -1279,7 +1296,7 @@ function addon:LoadGuide(guide, OnLoad)
     for n, step in ipairs(guide.steps) do
         step.index = n
         BottomFrame.stepList[n] = n
-        if step.completewith then step.sticky = true end
+        if step.completewith and not step.tip then step.sticky = true end
         if step.requires then
             local requirement = guide.labels[step.requires]
             if requirement then
@@ -1616,9 +1633,19 @@ local function IsGuideActive(guide)
     end
 end
 
+function addon:ShowTips(state)
+    if state == "toggle" then
+        RXPCData.hideTipWindow = not RXPCData.hideTipWindow
+    else
+        RXPCData.hideTipWindow = not state
+    end
+    addon.updateSteps = true
+    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+end
+
 addon.IsGuideActive = IsGuideActive
 
-function RXPFrame.GenerateMenuTable(menu)
+function RXPFrame:GenerateMenuTable(menu)
     local menuList = menu or {}
 
     local groupList = {}
@@ -1757,6 +1784,19 @@ function RXPFrame.GenerateMenuTable(menu)
     end
 
     table.insert(menuList, {text = "", notCheckable = 1, isTitle = 1})
+
+    local tips = addon.currentGuide and addon.currentGuide.tips
+    if tips and #tips > 0 then
+        table.insert(menuList, {
+            text = "Display Tips",
+            func = addon.ShowTips,
+            arg1 = "toggle",
+            checked = function()
+                return not RXPCData.hideTipWindow
+            end,
+
+        })
+    end
 
     if addon.game == "CLASSIC" and not(addon.currentGuide and addon.currentGuide.hardcore) then
         local hctext

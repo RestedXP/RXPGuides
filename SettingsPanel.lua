@@ -2558,7 +2558,7 @@ end
 
 local function buildMinimapMenu()
     local menu = {}
-    addon.RXPFrame.GenerateMenuTable(menu)
+    addon.RXPFrame:GenerateMenuTable(menu)
 
     table.insert(menu, #menu, {
         text = addon.settings.db.profile.showEnabled and _G.HIDE or _G.SHOW,
