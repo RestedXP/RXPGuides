@@ -27,7 +27,7 @@ addon.HookMessage = function(self,message,callback,...)
 end
 
 function addon.SendEvent(self,...)
-    if _G.WeakAuras then
+    if _G.WeakAuras and _G.WeakAuras.ScanEvents then
         _G.WeakAuras.ScanEvents(...)
     end
     return addon.SendMessage(self,...)
@@ -55,6 +55,7 @@ function addon.ProcessMessageQueue()
     return processed
 end
 
+local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
 local L = addon.locale.Get
