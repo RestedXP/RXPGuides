@@ -34,8 +34,7 @@ local session = {
     emergencyItems = {},
     emergencySpells = {},
     highlights = {},
-    actionBarMap = {},
-    dangerousMobs = {}
+    actionBarMap = {}
 }
 
 function addon.tips:Setup()
@@ -454,9 +453,9 @@ function addon.tips:LoadDangerousMobs()
 
     local zone = GetRealZoneText()
 
-    print("== LoadDangerousMobs: " .. zone)
+    -- print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
     if not zone or not addon.dangerousMobs[zone] then
-        session.dangerousMobs = {}
+        addon.tips.dangerousMobs = {}
         return
     end
 
@@ -464,26 +463,31 @@ function addon.tips:LoadDangerousMobs()
 
     if addon.dangerousMobs[zone].processed and
         addon.dangerousMobs[zone].processed == playerLevel then
-        print(zone, "already processed")
-        session.dangerousMobs = addon.dangerousMobs[zone]
+        addon.tips.dangerousMobs = addon.dangerousMobs[zone]
         return
     end
-
     local levelBuffer
     for name, list in pairs(addon.dangerousMobs[zone] or {}) do
-        print("\n=== Checking dangerous mob", name)
         for _, mobData in ipairs(list) do
 
             levelBuffer = mobData.Classification == "Normal" and 1 or 3
             if mobData.MaxLevel < playerLevel - levelBuffer then
-                print(name, "not dangerous for playerLevel")
                 mobData.element = false
             else
-                print("Parsing location for", name)
-                mobData.Location:gsub("^%.(%S+)%s*(.*)",
-                                      function(command, lineArgs)
-                    -- TODO handle NRE addon.currentGuideName call in function errors
-                    mobData.element = addon.functions[command](lineArgs)
+                mobData.Location:gsub("^%.(%S+)%s*(.*)", function(command, args)
+                    local lineArgs = {}
+
+                    args = args:gsub("%s*,%s*", ",")
+                    for arg in string.gmatch(args, "[^,]+") do
+                        table.insert(lineArgs, arg)
+                    end
+
+                    if addon.functions[command] then
+                        mobData.element =
+                            addon.functions[command](mobData.Location,
+                                                     mobData.Location,
+                                                     unpack(lineArgs))
+                    end
 
                     -- Injecting functionality into guide, so ensure no arrow
                     if mobData.element and mobData.element.showArrow then
@@ -499,5 +503,5 @@ function addon.tips:LoadDangerousMobs()
     end
 
     addon.dangerousMobs[zone].processed = playerLevel
-    session.dangerousMobs = addon.dangerousMobs[zone]
+    addon.tips.dangerousMobs = addon.dangerousMobs[zone]
 end
