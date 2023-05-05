@@ -1562,7 +1562,7 @@ function addon.functions.line(self, text, zone, ...)
         local mapID = addon.mapId[zone] or tonumber(zone)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
-                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                        L("Error parsing guide") .. " " .. (addon.currentGuideName or _G.NONE) ..
                            ": Invalid coordinates or map name\n" .. self)
         end
         element.zone = mapID
@@ -1603,7 +1603,7 @@ function addon.functions.loop(self, text, range, zone, ...)
         local mapID = addon.mapId[zone] or tonumber(zone)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
-                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                        L("Error parsing guide") .. " "  .. (addon.currentGuideName or _G.NONE) ..
                            ": Invalid coordinates or map name\n" .. self)
         end
         element.zone = mapID
