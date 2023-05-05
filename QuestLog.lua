@@ -170,16 +170,16 @@ function addon.GetQuestLog(QL, LT)
 
     if qError then
         if stop then
-            print(format("Stopped at step %d", eStep.index))
+            print(format("Stopped at step %d", eStep.index or 0))
         else
             print(format("Error at step %d: Quest log length greater than " ..
-                            maxQuests, eStep.index))
+                            maxQuests, eStep.index or 0))
         end
     else
         if group.next() then
             return addon.GetQuestLog(QL, LT)
         elseif eStep then
-            print(format("Error at step %d", eStep.index))
+            print(format("Error at step %d", eStep.index or 0))
         end
     end
 
