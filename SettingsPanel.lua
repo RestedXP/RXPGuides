@@ -1825,7 +1825,8 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.4,
                         disabled = function()
                             return not self.db.profile.enableTips or
-                                       not self.db.profile.enableDrowningWarning
+                                       not self.db.profile
+                                           .enableEmergencyActions
                         end
                     }
                 }
@@ -2812,22 +2813,21 @@ function addon.settings.ReplaceColors(element)
         if type(textLine) ~= "string" then return textLine end
         for RXP_ in string.gmatch(textLine, "RXP_[A-Z]+_") do
             textLine = textLine:gsub(RXP_, addon.guideTextColors[RXP_] or
-                                        addon.guideTextColors.default["error"])
+                                         addon.guideTextColors.default["error"])
         end
 
         -- Replace raw hex values
         for hex in string.gmatch(textLine, "|c(%x%x%x%x%x%x%x%x)") do
             textLine = textLine:gsub(hex, addon.guideTextColors[hex] or
-                                        addon.guideTextColors.default["error"])
+                                         addon.guideTextColors.default["error"])
         end
 
         return textLine
     end
 
-
     if type(element) == "table" or element and element.textReplaced then
         element.textReplaced = element.textReplaced or {}
-        for i,field in pairs({"text","rawtext","tooltipText","mapTooltip"}) do
+        for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip"}) do
             if element.textReplaced[i] then
                 element[field] = replace(element.textReplaced[i])
             else
