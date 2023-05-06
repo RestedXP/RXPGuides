@@ -3,7 +3,7 @@ local addonName, addon = ...
 local RXPGuides = addon.RXPGuides
 local _, class = UnitClass("player")
 local _G = _G
-local fmt = string.format
+local fmt,tinsert = string.format, table.insert
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
 
 -- Alias addon.locale.Get
@@ -498,7 +498,7 @@ function addon.SetStep(n, n2, loopback)
     local previousSteps = {}
     for i, step in pairs(activeSteps) do
         step.active = nil
-        table.insert(previousSteps,step)
+        tinsert(previousSteps,step)
         if n < #guide.steps then step.completed = nil end
     end
 
@@ -535,7 +535,7 @@ function addon.SetStep(n, n2, loopback)
                                             not RXPCData.stepSkip[req.index])))
             if not RXPCData.stepSkip[i] and step.reqFulfilled and level >=
                 step.level then
-                table.insert(activeSteps, step)
+                tinsert(activeSteps, step)
                 if n > 1 then scrollHeight = n - 1 end
                 -- ScrollChild.framePool[i]:SetAlpha(0.66)
                 step.active = true
@@ -552,12 +552,12 @@ function addon.SetStep(n, n2, loopback)
     elseif step and not step.completed and
         not (req and #activeSteps > 0 and (req.active or not (req.reqFulfilled))) and
         level >= step.level then
-        table.insert(activeSteps, step)
+        tinsert(activeSteps, step)
         ScrollChild.framePool[n]:SetAlpha(1)
         step.active = true
         scrollHeight = n
         if step.tipWindow then
-            table.insert(activeSteps,step.tipWindow)
+            tinsert(activeSteps,step.tipWindow)
             step.tipWindow.active = true
         end
     end
@@ -665,7 +665,7 @@ function addon.SetStep(n, n2, loopback)
         if step.sticky then
             titletext = step.title or ""
         else
-            titletext = step.title or (string.format(L("Step %d"), index))
+            titletext = step.title or (fmt(L("Step %d"), index))
         end
 
         if titletext == "" then
@@ -807,20 +807,20 @@ function addon.SetStep(n, n2, loopback)
             end
             if element.unitscan then
                 for _, t in ipairs(element.unitscan) do
-                    table.insert(stepUnitscan, addon.GetCreatureName(t))
+                    tinsert(stepUnitscan, addon.GetCreatureName(t))
                 end
             end
             if element.mobs then
                 for _, t in ipairs(element.mobs) do
-                    table.insert(stepMobs, addon.GetCreatureName(t))
+                    tinsert(stepMobs, addon.GetCreatureName(t))
                 end
             end
             if element.targets then
                 for _, t in ipairs(element.targets) do
-                    table.insert(stepTargets, addon.GetCreatureName(t))
+                    tinsert(stepTargets, addon.GetCreatureName(t))
                 end
             end
-            local spacing = 0
+            --local spacing = 0
 
         end
         for n = e + 1, #stepframe.elements do
@@ -916,7 +916,7 @@ function CurrentStepFrame.UpdateText()
         end
 
         stepframe.number.text:SetText(step.title or
-                                          (string.format(L("Step %d"), index)))
+                                          (fmt(L("Step %d"), index)))
         stepframe.number:SetSize(stepframe.number.text:GetStringWidth() + 10, 17)
 
         local e = 0
@@ -1274,11 +1274,11 @@ function addon:LoadGuide(guide, OnLoad)
     for _, step in ipairs(guide.steps) do
         if addon.IsStepShown(step) then
             if step.tip then
-                table.insert(addon.currentGuide.tips,step)
+                tinsert(addon.currentGuide.tips,step)
                 lastTip = step
                 step.title = step.title or "Tip"
             else
-                table.insert(addon.currentGuide.steps, step)
+                tinsert(addon.currentGuide.steps, step)
                 step.tipWindow = lastTip
             end
             if step.elements then
@@ -1666,12 +1666,12 @@ function RXPFrame:GenerateMenuTable(menu)
     for group in pairs(addon.guideList) do
         local firstChar = group:sub(1, 1)
         if RXPCData and RXPCData.GA then
-            if firstChar == "+" then table.insert(farmGuides, group) end
+            if firstChar == "+" then tinsert(farmGuides, group) end
         elseif firstChar ~= "+" then
             if firstChar ~= "*" then
-                table.insert(groupList, group)
+                tinsert(groupList, group)
             else
-                table.insert(unusedGuides, group)
+                tinsert(unusedGuides, group)
             end
         end
     end
@@ -1726,7 +1726,7 @@ function RXPFrame:GenerateMenuTable(menu)
                             subweight = 0
                         }
                         item.subtable[subname] = subtable
-                        table.insert(item.subgroups, subname)
+                        tinsert(item.subgroups, subname)
                     end
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
@@ -1734,7 +1734,7 @@ function RXPFrame:GenerateMenuTable(menu)
                     subitem.arg1 = guide
                     subitem.notCheckable = 1
                     subtable.subweight = tonumber(guide.subweight) or subtable.subweight
-                    table.insert(subtable.menuList, subitem)
+                    tinsert(subtable.menuList, subitem)
                 else
                     submenuIndex = submenuIndex + 1
                     guide.menuIndex = menuIndex
@@ -1744,7 +1744,7 @@ function RXPFrame:GenerateMenuTable(menu)
                     subitem.func = addon.LoadGuide
                     subitem.arg1 = guide
                     subitem.notCheckable = 1
-                    table.insert(item.menuList, subitem)
+                    tinsert(item.menuList, subitem)
                 end
             end
         end
@@ -1760,18 +1760,18 @@ function RXPFrame:GenerateMenuTable(menu)
                 end
             end)
             for i, subgroup in ipairs(item.subgroups) do
-                table.insert(item.menuList, item.subtable[subgroup])
+                tinsert(item.menuList, item.subtable[subgroup])
             end
         else
             item.subgroups = nil
             item.subtable = nil
         end
 
-        table.insert(menuList, item)
+        tinsert(menuList, item)
     end
 
     if #groupList > 0 then
-        table.insert(menuList, {
+        tinsert(menuList, {
             text = L("Available Guides"),
             isTitle = 1,
             notCheckable = 1
@@ -1780,7 +1780,7 @@ function RXPFrame:GenerateMenuTable(menu)
     end
 
     if #farmGuides > 0 then
-        table.insert(menuList, {
+        tinsert(menuList, {
             text = L("Gold Farming Guides"),
             notCheckable = 1,
             isTitle = 1
@@ -1789,16 +1789,16 @@ function RXPFrame:GenerateMenuTable(menu)
     end
 
     if addon.settings.db.profile.showUnusedGuides and #unusedGuides > 0 then
-        table.insert(menuList,
+        tinsert(menuList,
                      {text = L("Unused Guides"), notCheckable = 1, isTitle = 1})
         for _, group in ipairs(unusedGuides) do createMenu(group) end
     end
 
-    table.insert(menuList, {text = "", notCheckable = 1, isTitle = 1})
+    tinsert(menuList, {text = "", notCheckable = 1, isTitle = 1})
 
     local tips = addon.currentGuide and addon.currentGuide.tips
     if tips and #tips > 0 then
-        table.insert(menuList, {
+        tinsert(menuList, {
             text = "Display Tips",
             func = addon.ShowTips,
             arg1 = "toggle",
@@ -1816,7 +1816,7 @@ function RXPFrame:GenerateMenuTable(menu)
         else
             hctext = L("Activate Hardcore mode")
         end
-        table.insert(menuList, {
+        tinsert(menuList, {
             text = hctext,
             notCheckable = 1,
             func = addon.HardcoreToggle
@@ -1825,15 +1825,15 @@ function RXPFrame:GenerateMenuTable(menu)
 
     if RXPCData and RXPCData.GA then
         local text = L("Activate the Quest Guide mode")
-        table.insert(menuList,
+        tinsert(menuList,
                      {text = text, notCheckable = 1, func = addon.GAToggle})
     elseif addon.farmGuides > 0 then
         local text = L("Activate the Gold Assistant mode")
-        table.insert(menuList,
+        tinsert(menuList,
                      {text = text, notCheckable = 1, func = addon.GAToggle})
     end
 
-    table.insert(menuList, {
+    tinsert(menuList, {
         text = _G.GAMEOPTIONS_MENU .. "...",
         notCheckable = 1,
         func = function()
@@ -1842,7 +1842,7 @@ function RXPFrame:GenerateMenuTable(menu)
         end
     })
 
-    table.insert(menuList, {
+    tinsert(menuList, {
         text = L("Import guide"),
         notCheckable = 1,
         func = function()
@@ -1860,7 +1860,7 @@ function RXPFrame:GenerateMenuTable(menu)
     })
 
     if addon.settings.db and addon.settings.db.profile.enableTracker then
-        table.insert(menuList, {
+        tinsert(menuList, {
             text = L("Leveling report"),
             notCheckable = 1,
             func = function()
@@ -1869,13 +1869,13 @@ function RXPFrame:GenerateMenuTable(menu)
         })
     end
 
-    table.insert(menuList, {
+    tinsert(menuList, {
         text = L("Open Feedback Form"),
         notCheckable = 1,
         func = function() addon.comms.OpenBugReport() end
     })
 
-    table.insert(menuList, {
+    tinsert(menuList, {
         text = _G.CLOSE,
         notCheckable = 1,
         func = function(self) self:Hide() end

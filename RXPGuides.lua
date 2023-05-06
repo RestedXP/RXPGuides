@@ -6,6 +6,8 @@ local UnitInRaid = UnitInRaid
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 local RegisterMessage_OLD = addon.RegisterMessage
+local rand, tinsert = math.random, table.insert
+
 local messageList = {}
 addon.RegisterMessage = function(self,message,callback,...)
     messageList[message] = callback
@@ -35,7 +37,7 @@ end
 
 local messageQueue = {}
 function addon:QueueMessage(...)
-    table.insert(messageQueue,{...})
+    tinsert(messageQueue,{...})
 end
 
 function addon.ProcessMessageQueue()
@@ -43,7 +45,7 @@ function addon.ProcessMessageQueue()
     local removedIndexes = {}
     for i = 1,#messageQueue do
         addon:SendEvent(unpack(messageQueue[i]))
-        table.insert(removedIndexes,i)
+        tinsert(removedIndexes,i)
         if i >= 10 then
             break
         end
@@ -127,8 +129,8 @@ function addon.QuestAutoTurnIn(title)
                 element = v
             end
         end
-        return (element and element.step.active) and element.reward >= 0 and
-                   element.reward
+        return addon.settings.db.profile.enableQuestRewardAutomation and element and
+                element.step.active and element.reward >= 0 and element.reward or 0
     end
 end
 
@@ -842,7 +844,7 @@ function addon:UpdateLoop(diff)
     if addon.isHidden then
         updateError = false
         return
-    elseif updateTick > (tickRate + math.random() / 128) and addon.errorCount < 10 then
+    elseif updateTick > (tickRate + rand() / 128) and addon.errorCount < 10 then
         updateError = true
         local currentTime = GetTime()
         updateTick = 0
@@ -933,7 +935,7 @@ function addon:UpdateLoop(diff)
                 else
                     -- print('ok',ref.element.step.index,ref.element.requestFromServer)
                     addon.UpdateQuestCompletionData(ref)
-                    table.insert(deletedIndexes, i)
+                    tinsert(deletedIndexes, i)
                 end
             end
             for i = #deletedIndexes, 1, -1 do
