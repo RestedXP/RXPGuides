@@ -282,6 +282,44 @@ CurrentStepFrame:SetScript("OnMouseDown", RXPFrame.OnMouseDown)
 CurrentStepFrame:SetScript("OnMouseUp", RXPFrame.OnMouseUp)
 CurrentStepFrame:EnableMouse(1)
 
+function addon:ShowTips(state)
+    if state == "toggle" then
+        RXPCData.hideTipWindow = not RXPCData.hideTipWindow
+    else
+        RXPCData.hideTipWindow = not state
+    end
+    addon.updateSteps = true
+    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+end
+
+local tipMenu = {{
+        notCheckable = 1,
+        text = L("Hide tips"),
+        func = addon.ShowTips,
+        arg1 = false
+    }}
+local TipWindowMouseDown = function(self,button)
+    if self.step and self.step.tip then
+        if (button == "RightButton") then
+            if LibDD then
+                LibDD:EasyMenu(tipMenu, MenuFrame, "cursor", 0, 0, "MENU");
+            else
+                _G.EasyMenu(tipMenu, MenuFrame, "cursor", 0, 0, "MENU");
+            end
+        else
+            self:StartMoving()
+        end
+    end
+end
+local TipWindowMouseUp = function(self)
+    if self.step and self.step.tip then
+        self:StopMovingOrSizing()
+        local point = {self:GetPoint()}
+        point[2] = nil
+        RXPCData.tipWindow = point
+    end
+end
+
 CurrentStepFrame.framePool = {}
 
 local function ClearFrameData()
@@ -577,37 +615,14 @@ function addon.SetStep(n, n2, loopback)
             stepframe:SetClampedToScreen(true)
             --stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
             anchor = c - 1
-            stepframe:SetScript("OnMouseDown",function(self,button)
-                if self.step and self.step.tip then
-                    if (button == "RightButton") then
-                        local menu = {{
-                                notCheckable = 1,
-                                text = L("Hide tips"),
-                                func = addon.ShowTips,
-                                arg1 = false
-                            }}
-                        if LibDD then
-                            LibDD:EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU");
-                        else
-                            _G.EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU");
-                        end
-                    else
-                        self:StartMoving()
-                    end
-                end
-            end)
-            stepframe:SetScript("OnMouseUp",function(self)
-                if self.step and self.step.tip then
-                    self:StopMovingOrSizing()
-                    local point = {self:GetPoint()}
-                    point[2] = nil
-                    RXPCData.tipWindow = point
-                end
-            end)
+            stepframe:SetScript("OnMouseDown",TipWindowMouseDown)
+            stepframe:SetScript("OnMouseUp",TipWindowMouseUp)
             addon.currentTip = step
         else
             stepframe:SetFrameStrata(RXPFrame:GetFrameStrata())
             stepframe:ClearAllPoints()
+            stepframe:SetScript("OnMouseDown",nil)
+            stepframe:SetScript("OnMouseUp",nil)
             if anchor < 1 then
                 stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
                 stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
@@ -1635,16 +1650,6 @@ local function IsGuideActive(guide)
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end
-end
-
-function addon:ShowTips(state)
-    if state == "toggle" then
-        RXPCData.hideTipWindow = not RXPCData.hideTipWindow
-    else
-        RXPCData.hideTipWindow = not state
-    end
-    addon.updateSteps = true
-    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
 end
 
 addon.IsGuideActive = IsGuideActive

@@ -157,13 +157,9 @@ if C_GossipInfo and C_GossipInfo.SelectOptionByIndex then
     end
 end
 
-local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
-if not IsTurnedIn then
-    IsTurnedIn = _G.IsQuestFlaggedCompleted
-    if not IsTurnedIn then
-        IsTurnedIn = function(id) return _G.GetQuestsCompleted()[id] end
-    end
-end
+local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted or
+                    _G.IsQuestFlaggedCompleted or
+                        function(id) return _G.GetQuestsCompleted()[id] end
 
 local IsQuestTurnedIn = function(id)
     if not id then return end
@@ -181,8 +177,8 @@ function addon.IsQuestComplete(id)
         return C_QuestLog.IsComplete(id)
     else
         for i = 1, GetNumQuests() do
-            local questLogTitleText, level, questTag, isHeader, isCollapsed,
-                  isComplete, frequency, questID = GetQuestLogTitle(i);
+            local _, _, _, _, _,
+                  isComplete, _, questID = GetQuestLogTitle(i);
             if questID == id then
                 return isComplete
             end
@@ -637,7 +633,7 @@ function addon.GetNpcId(unit, isGuid)
 end
 
 local HBD = LibStub("HereBeDragons-2.0")
-local HBDPins = LibStub("HereBeDragons-Pins-2.0")
+--local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 
 local function GetRequiredQuests(quest)
     local requiredQuests = {}

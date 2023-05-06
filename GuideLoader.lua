@@ -525,7 +525,7 @@ function addon.LoadEmbeddedGuides()
 end
 
 function addon.BuildGuideKey(guide)
-    return string.format("%s|%s|%s", guide.group, guide.subgroup or '',
+    return fmt("%s|%s|%s", guide.group, guide.subgroup or '',
                          guide.name)
 end
 
