@@ -1281,8 +1281,10 @@ function addon:LoadGuide(guide, OnLoad)
                 table.insert(addon.currentGuide.steps, step)
                 step.tipWindow = lastTip
             end
-            for _,element in pairs(step.elements) do
-                addon.settings.ReplaceColors(element)
+            if step.elements then
+                for _,element in pairs(step.elements) do
+                    addon.settings.ReplaceColors(element)
+                end
             end
         end
     end
