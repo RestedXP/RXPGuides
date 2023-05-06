@@ -50,7 +50,7 @@ function addon.ProcessMessageQueue()
     end
     for i = #removedIndexes,1,-1 do
         processed = true
-        table.remove(messageQueue,i)
+        table.remove(messageQueue,removedIndexes[i])
     end
     return processed
 end

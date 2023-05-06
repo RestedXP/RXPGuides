@@ -564,10 +564,11 @@ function addon.SetStep(n, n2, loopback)
             --stepframe:SetParent(UIParent)
             stepframe:ClearAllPoints()
             local pos = RXPCData.tipWindow
+            stepframe:SetFrameStrata("MEDIUM")
             if pos then
                 stepframe:SetPoint(pos[1], UIParent, pos[3], pos[4], pos[5])
             else
-                stepframe:SetPoint("CENTER", UIParent, 0, 0)
+                stepframe:SetPoint("BOTTOMLEFT", UIParent, 0, 0)
             end
             --TODO: Save window position
             stepframe:SetWidth(200)
@@ -598,11 +599,14 @@ function addon.SetStep(n, n2, loopback)
             stepframe:SetScript("OnMouseUp",function(self)
                 if self.step and self.step.tip then
                     self:StopMovingOrSizing()
-                    RXPCData.tipWindow = {self:GetPoint()}
+                    local point = {self:GetPoint()}
+                    point[2] = nil
+                    RXPCData.tipWindow = point
                 end
             end)
             addon.currentTip = step
         else
+            stepframe:SetFrameStrata(RXPFrame:GetFrameStrata())
             stepframe:ClearAllPoints()
             if anchor < 1 then
                 stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
