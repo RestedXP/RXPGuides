@@ -248,6 +248,66 @@ function addon.GetSkillLevel(skill, useMaxValue)
     end
 end
 
+
+
+local function ChangeStep(srcGuide,srcStep,destGuide,destStep,func)
+    local function stepindex(guide,refresh)
+        if type(guide) ~= "table" then
+            return false
+        elseif not guide.stepIds or refresh then
+            guide.stepIds = {}
+            for i,step in ipairs(guide.steps) do
+                if step.stepId then
+                    guide.stepIds[step.stepId] = i
+                end
+            end
+        end
+        return true
+    end
+
+    srcGuide = addon.guideIds[srcGuide]
+    destGuide = addon.guideIds[destGuide]
+
+    if not (stepindex(srcGuide) and (not destGuide or stepindex(destGuide))) then
+        return
+    end
+    srcStep = srcGuide.stepIds[srcStep]
+    destStep = srcGuide.stepIds[destStep]
+    if srcStep and (not destGuide or destStep) then
+        func(srcGuide,srcStep,destGuide,destStep)
+        stepindex(srcGuide,true)
+        stepindex(destGuide,true)
+        addon:ScheduleTask(addon.ReloadGuide)
+        print(srcGuide.name,destGuide.name,srcStep,destStep)
+        return true
+    end
+end
+
+function addon.ReplaceStep(arg1,arg2,arg3,arg4)
+    local function replace(srcGuide,srcStep,destGuide,destStep)
+        --local oldStep = destGuide.steps[destStep]
+        destGuide.steps[destStep] = srcGuide.steps[srcStep]
+        --srcGuide.steps[srcStep] = oldStep
+    end
+    return ChangeStep(arg1,arg2,arg3,arg4,replace)
+end
+
+function addon.RemoveStep(arg1,arg2)
+    local function remove(srcGuide,srcStep)
+        print('remove',srcGuide.name,srcStep)
+        table.remove(srcGuide.steps,srcStep)
+    end
+    return ChangeStep(arg1,arg2,"","",remove)
+end
+
+function addon.InsertStep(arg1,arg2,arg3,arg4)
+    local function insert(srcGuide,srcStep,destGuide,destStep)
+        table.insert(destGuide.steps,destStep,srcGuide.steps[srcStep])
+    end
+    return ChangeStep(arg1,arg2,arg3,arg4,insert)
+
+end
+
 addon.skillList = {}
 local spellRequest = {}
 
@@ -795,6 +855,8 @@ addon.scheduledTasks = {}
 function addon.UpdateScheduledTasks()
     local cTime = GetTime()
     for ref, args in pairs(addon.scheduledTasks) do
+        --print(unpack(args))
+        --print(type(ref))
         if type(ref) == "function" then
             if cTime > args[1] then
                 ref(unpack(args))
@@ -818,6 +880,7 @@ end
 
 function addon.ScheduleTask(self, ref, ...)
     local time = type(self) == "number" and self or 0
+    --print(type(ref))
     if type(ref) == "table" then
         addon.scheduledTasks[ref] = time
     elseif type(ref) == "function" then

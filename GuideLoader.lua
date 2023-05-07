@@ -2,6 +2,7 @@ local _, addon = ...
 
 addon.guides = {}
 addon.guideList = {}
+addon.guideIds = {}
 
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
@@ -135,6 +136,10 @@ function addon.AddGuide(guide)
     addon.guideList[guide.group].weight_ = tonumber(guide.groupweight) or addon.guideList[guide.group].weight_
 
     local list = addon.guideList[guide.group]
+
+    if guide.guideId then
+        addon.guideIds[guide.guideId] = guide
+    end
 
     if loadedGuide then -- guide exists, but new version
         for i, checkGuide in ipairs(addon.guides) do
