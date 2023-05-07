@@ -465,6 +465,7 @@ step
 .goto The Barrens,41.4,24.5
     .complete 903,1 --Prowler Claws (7)
 step
+#hidewindow
     #requires Claws
 step
     #requires Tusks

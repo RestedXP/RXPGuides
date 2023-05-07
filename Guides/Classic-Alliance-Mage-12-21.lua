@@ -268,6 +268,7 @@ step
      >> Click on the tablet on the ground
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
+#hidewindow
     #requires ghosts
 step
     #requires anaya

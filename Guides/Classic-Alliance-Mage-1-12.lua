@@ -339,6 +339,7 @@ step
 step
     .xp 7+1600 >>Grind until 1600+/4500xp
 step
+#hidewindow
     #requires KoboldCandles
 step
     #label Goldtooth
@@ -1682,6 +1683,7 @@ step
     >>Kill Boars. Loot them for Intestines
     .complete 418,1 --Collect Boar Intestines (x3)
 step
+#hidewindow
     #requires Meat9
 step
     #sticky

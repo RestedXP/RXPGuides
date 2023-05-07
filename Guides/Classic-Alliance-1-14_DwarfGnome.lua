@@ -1966,6 +1966,7 @@ step
     >>Kill |cFF00BCD4Boars|r. Loot them for |cFF00BCD4Boar Intestines|r
     .complete 418,1 --Boar Intestines (3)
 step
+#hidewindow
     #requires Meat9
 step
     #label RatCatching
@@ -4735,6 +4736,7 @@ step
     >>Kill Boars. Loot them for Intestines
     .complete 418,1 --Boar Intestines (3)
 step
+#hidewindow
     #requires Meat9
 step
     #sticky
