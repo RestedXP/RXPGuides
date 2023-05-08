@@ -34,7 +34,8 @@ local session = {
     emergencyItems = {},
     emergencySpells = {},
     highlights = {},
-    actionBarMap = {}
+    actionBarMap = {},
+    dangerousMobs = {}
 }
 
 function addon.tips:Setup()
@@ -453,27 +454,35 @@ function addon.tips:LoadDangerousMobs()
 
     local zone = GetRealZoneText()
 
-    -- print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
+    print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
     if not zone or not addon.dangerousMobs[zone] then
-        addon.tips.dangerousMobs = {}
+        addon.tips.dangerousMobs = nil
+        _G.RXPD = addon.tips.dangerousMobs
         return
     end
 
     local playerLevel = UnitLevel("player")
 
-    if addon.dangerousMobs[zone].processed and
-        addon.dangerousMobs[zone].processed == playerLevel then
-        addon.tips.dangerousMobs = addon.dangerousMobs[zone]
+    if session.dangerousMobs[zone] and session.dangerousMobs[zone].processed and
+        session.dangerousMobs[zone].processed == playerLevel then
+        print("Already processed")
+        addon.tips.dangerousMobs = session.dangerousMobs[zone]
+        _G.RXPD = addon.tips.dangerousMobs
         return
     end
-    local levelBuffer
+
+    session.dangerousMobs[zone] = {}
+
+    local levelBuffer, element
+
+    -- dangerousMobs DB has nested objects, flatten and fake step data
     for name, list in pairs(addon.dangerousMobs[zone] or {}) do
         for _, mobData in ipairs(list) do
 
             levelBuffer = mobData.Classification == "Normal" and 1 or 3
-            if mobData.MaxLevel < playerLevel - levelBuffer then
-                mobData.element = false
-            else
+            element = nil
+
+            if mobData.MaxLevel >= playerLevel - levelBuffer then
                 mobData.Location:gsub("^%.(%S+)%s*(.*)", function(command, args)
                     local lineArgs = {}
 
@@ -483,25 +492,32 @@ function addon.tips:LoadDangerousMobs()
                     end
 
                     if addon.functions[command] then
-                        mobData.element =
-                            addon.functions[command](mobData.Location,
-                                                     mobData.Location,
-                                                     unpack(lineArgs))
+                        element = addon.functions[command](mobData.Location,
+                                                           mobData.Location,
+                                                           unpack(lineArgs))
                     end
 
-                    -- Injecting functionality into guide, so ensure no arrow
-                    if mobData.element and mobData.element.showArrow then
-                        mobData.element.label = fmt("%s %s (%d)",
-                                                    _G.VOICEMACRO_1_Sc_0, name,
-                                                    mobData.MaxLevel)
-                        mobData.element.showArrow = false
+                    -- Injecting functionality into guide
+                    if element then
+                        element.label = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
+                                            name, mobData.MaxLevel)
+                        mobData.dangerousMob = true
+                        element.dangerousMob = true
+                        element.showArrow = true
+
+                        mobData.elements = {[0] = element}
                     end
                 end)
+
+                if mobData.elements then
+                    tinsert(session.dangerousMobs[zone], mobData)
+                end
             end
         end
 
     end
 
-    addon.dangerousMobs[zone].processed = playerLevel
-    addon.tips.dangerousMobs = addon.dangerousMobs[zone]
+    session.dangerousMobs[zone].processed = playerLevel
+    addon.tips.dangerousMobs = session.dangerousMobs[zone]
+    _G.RXPD = addon.tips.dangerousMobs
 end
