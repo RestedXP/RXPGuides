@@ -2,11 +2,12 @@ local _, addon = ...
 
 addon.guides = {}
 addon.guideList = {}
+addon.guideIds = {}
 
 local _, race = UnitRace("player")
 local _, class = UnitClass("player")
 local faction = UnitFactionGroup("player")
-local fmt, tremove = string.format, tremove
+local fmt, tremove, tinsert = string.format, tremove, table.insert
 local strchar = string.char
 local strbyte = string.byte
 local bitand = bit.band
@@ -136,6 +137,10 @@ function addon.AddGuide(guide)
 
     local list = addon.guideList[guide.group]
 
+    if guide.guideId then
+        addon.guideIds[guide.guideId] = guide
+    end
+
     if loadedGuide then -- guide exists, but new version
         for i, checkGuide in ipairs(addon.guides) do
             if guide.key == checkGuide.key then
@@ -144,14 +149,14 @@ function addon.AddGuide(guide)
             end
         end
     else -- guide doesn't exist, so insert
-        table.insert(addon.guides, guide)
+        tinsert(addon.guides, guide)
 
         if list[guide.name] then
             suffix = suffix + 1
             guide.name = guide.name .. tostring(suffix)
         end
 
-        table.insert(list.names_, guide.name)
+        tinsert(list.names_, guide.name)
 
         list[guide.name] = #addon.guides
 
@@ -223,7 +228,7 @@ function addon.DeserializeTable(tbl)
     local t = {}
     for k, v in pairs(tbl) do
         if type(v) == "number" then v = strchar(v) end
-        table.insert(t, v)
+        tinsert(t, v)
     end
     return table.concat(t)
 end
@@ -250,7 +255,7 @@ local function CheckDataIntegrity(str, h1, mode)
                 i = bitand(i + 1, 0xff)
                 j = bitand(j + S[i], 0xff)
                 S[i], S[j] = S[j], S[i]
-                table.insert(buffer, strchar(
+                tinsert(buffer, strchar(
                                  bitxor(strbyte(str, k + 1),
                                         S[bitand((S[i] + S[j]), 0xff)])))
             end
@@ -295,7 +300,7 @@ function addon.ImportGuide(guide, text, defaultFor, cache)
         end
         return importedGuide
     else -- Addon not loaded, add to queue
-        table.insert(embeddedGuides, {
+        tinsert(embeddedGuides, {
             groupOrContent = guide,
             text = text,
             defaultFor = defaultFor,
@@ -311,7 +316,7 @@ function addon.RegisterGuide(groupOrContent, text, defaultFor)
 
         return not errorMsg and addon.AddGuide(importedGuide)
     else
-        table.insert(embeddedGuides, {
+        tinsert(embeddedGuides, {
             groupOrContent = groupOrContent,
             text = text,
             defaultFor = defaultFor
@@ -451,7 +456,7 @@ function addon.ImportString(str, workerFrame)
                                                           strbyte(mode))
         if validData and dataOrError then
             for v in dataOrError:gmatch("[^%z]+") do
-                table.insert(importBuffer, v)
+                tinsert(importBuffer, v)
             end
         else
             errorMsg = (dataOrError or 'Failed integrity check') .. '\n' ..
@@ -525,7 +530,7 @@ function addon.LoadEmbeddedGuides()
 end
 
 function addon.BuildGuideKey(guide)
-    return string.format("%s|%s|%s", guide.group, guide.subgroup or '',
+    return fmt("%s|%s|%s", guide.group, guide.subgroup or '',
                          guide.name)
 end
 
@@ -650,16 +655,16 @@ function addon.ParseGuide(groupOrContent, text, defaultFor)
 
             if tag == "link" then
                 local link = args:gsub("%s+$", "")
-                table.insert(t, link)
+                tinsert(t, link)
             elseif tag == "mob" or tag == "unitscan" or tag == "target" then
                 args = args:gsub("%s*;%s*", ";")
                 for arg in string.gmatch(args, "[^;]+") do
-                    table.insert(t, arg)
+                    tinsert(t, arg)
                 end
             else
                 args = args:gsub("%s*,%s*", ",")
                 for arg in string.gmatch(args, "[^,]+") do
-                    table.insert(t, arg)
+                    tinsert(t, arg)
                 end
             end
             -- print(tag,args,type(guide))
@@ -698,7 +703,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor)
             lastElement = element
         end
 
-        table.insert(step.elements, element)
+        tinsert(step.elements, element)
     end
 
     for line in string.gmatch(text, "[^\n\r]+") do

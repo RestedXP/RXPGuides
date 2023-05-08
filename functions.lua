@@ -3,6 +3,7 @@ local addonName, addon = ...
 local faction = UnitFactionGroup("player")
 local localizedClass, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
+local fmt, tinsert = string.format,tinsert
 local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
@@ -157,13 +158,9 @@ if C_GossipInfo and C_GossipInfo.SelectOptionByIndex then
     end
 end
 
-local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
-if not IsTurnedIn then
-    IsTurnedIn = _G.IsQuestFlaggedCompleted
-    if not IsTurnedIn then
-        IsTurnedIn = function(id) return _G.GetQuestsCompleted()[id] end
-    end
-end
+local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted or
+                    _G.IsQuestFlaggedCompleted or
+                        function(id) return _G.GetQuestsCompleted()[id] end
 
 local IsQuestTurnedIn = function(id)
     if not id then return end
@@ -181,8 +178,8 @@ function addon.IsQuestComplete(id)
         return C_QuestLog.IsComplete(id)
     else
         for i = 1, GetNumQuests() do
-            local questLogTitleText, level, questTag, isHeader, isCollapsed,
-                  isComplete, frequency, questID = GetQuestLogTitle(i);
+            local _, _, _, _, _,
+                  isComplete, _, questID = GetQuestLogTitle(i);
             if questID == id then
                 return isComplete
             end
@@ -637,7 +634,7 @@ function addon.GetNpcId(unit, isGuid)
 end
 
 local HBD = LibStub("HereBeDragons-2.0")
-local HBDPins = LibStub("HereBeDragons-Pins-2.0")
+--local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 
 local function GetRequiredQuests(quest)
     local requiredQuests = {}
@@ -653,7 +650,7 @@ local function GetRequiredQuests(quest)
             end
         end
         if preQuestSingle > 0 then
-            table.insert(requiredQuests, preQuestSingle)
+            tinsert(requiredQuests, preQuestSingle)
         end
     end
     if quest.preQuestGroup then
@@ -661,7 +658,7 @@ local function GetRequiredQuests(quest)
             if not ((addon.questTurnIn[qID] and
                 (IsOnQuest(qID) or addon.questAccept[qID] or
                     not addon.pickUpList[qID])) or IsQuestTurnedIn(qID)) then
-                table.insert(requiredQuests, qID)
+                tinsert(requiredQuests, qID)
             end
         end
     end
@@ -694,7 +691,7 @@ function addon.InsertQuestGuide(id,tbl)
     entry.group = addon.currentGuideGroup
     entry.guide = addon.guide
 
-    table.insert(tbl[id],entry)
+    tinsert(tbl[id],entry)
 end
 
 function addon.IsOnTurnInGuide(self)
@@ -728,17 +725,15 @@ end
 addon.pickUpList = {}
 function addon.functions.accept(self, ...)
     if type(self) == "string" then -- on parse
-        local element = {}
-        element.tag = "accept"
         local text, id, flags, arg1 = ...
         id = tonumber(id)
         flags = tonumber(flags) or 0
         if not id then
             return addon.error(
-                       L("Error parsing guide") .. " " .. addon.currentGuideName ..
-                           ": Invalid quest ID\n" .. self)
+                L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                ": Invalid quest ID\n" .. self)
         end
-        element.title = ""
+        local element = {title = "", flags = flags}
         element.questId = questConversion[id] or id
         -- element.title = addon.GetQuestName(id)
         if text and text ~= "" then
@@ -750,9 +745,8 @@ function addon.functions.accept(self, ...)
         if element.text:find("%*quest%*") then
             element.retrieveText = true
         end
-        element.tooltipText = addon.icons.accept .. element.text
+        --element.tooltipText = addon.icons.accept .. element.text
 
-        element.flags = flags
         --[[
         flags:
             1 - disable auto accept
@@ -925,7 +919,6 @@ addon.turnInList = {}
 function addon.functions.turnin(self, ...)
 
     if type(self) == "string" then -- on parse
-        local element = {}
         local text, id, reward = ...
         id = tonumber(id)
         if not id then
@@ -933,17 +926,14 @@ function addon.functions.turnin(self, ...)
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ": Invalid quest ID\n" .. self)
         end
+
+        local element = {reward = tonumber(reward) or 0, title = "", questId = questConversion[id] or id}
         if id < 0 then
             id = -id
             element.skipIfMissing = true
+            element.questId = questConversion[id] or id
         end
-        element.questId = questConversion[id] or id
-        if addon.settings.db.profile.enableQuestRewardAutomation then
-            element.reward = tonumber(reward) or 0
-        else
-            element.reward = 0
-        end
-        element.title = ""
+
         -- element.title = addon.GetQuestName(id)
         if text and text ~= "" then
             element.text = text
@@ -996,7 +986,7 @@ function addon.functions.turnin(self, ...)
 
                 if not doable then
                     requiredQuests = GetRequiredQuests(quest)
-                    table.insert(requiredQuests, id)
+                    tinsert(requiredQuests, id)
                 else
                     requiredQuests = {id}
                 end
@@ -1168,10 +1158,10 @@ function addon.UpdateQuestCompletionData(self)
             if not obj.questie then
                 if obj.type == "event" then
                     if isQuestComplete then
-                        t = string.format(t .. ": %d/%d", obj.numRequired,
+                        t = fmt(t .. ": %d/%d", obj.numRequired,
                                           obj.numRequired)
                     else
-                        t = string.format(t .. ": %d/%d", obj.numFulfilled,
+                        t = fmt(t .. ": %d/%d", obj.numFulfilled,
                                           obj.numRequired)
                     end
                 elseif isQuestComplete then
@@ -1209,7 +1199,7 @@ function addon.UpdateQuestCompletionData(self)
                 local doable = db:IsDoable(id)
                 if not doable then
                     requiredQuests = GetRequiredQuests(quest)
-                    table.insert(requiredQuests, id)
+                    tinsert(requiredQuests, id)
                 else
                     requiredQuests = {id}
                 end
@@ -1290,31 +1280,28 @@ end
 
 function addon.functions.complete(self, ...)
     if type(self) == "string" then -- on parse
-        local element = {}
+
         local text, id, obj, objMax = ...
         id = tonumber(id)
-        if id and id < 0 then
-            id = math.abs(id)
-            element.skipIfMissing = true
-        end
-        id = id and questConversion[id] or id
         obj = tonumber(obj)
         if not (id and obj) then
             addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
                             ": Invalid objective or quest ID\n" .. self)
             return
         end
-        element.obj = obj
-        element.objMax = tonumber(objMax)
-        element.dynamicText = true
+
+        id = id and questConversion[id] or id
+        local element = {questId = id, dynamicText = true, obj = obj,
+                         objMax = tonumber(objMax), requestFromServer = true,
+                         text = ""
+                        }
+        if id and id < 0 then
+            id = math.abs(id)
+            element.skipIfMissing = true
+            element.questId = id
+        end
         -- element.title = addon.GetQuestName(id)
         -- local objectives = addon.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
-
-        element.questId = id
-
-        element.text = ""
-        element.requestFromServer = true
-
         return element
     end
     local event = ...
@@ -1352,12 +1339,12 @@ function addon.functions.complete(self, ...)
                     end
                 end
                 if update and element.requestFromServer then
-                    table.insert(addon.updateInactiveQuest,self)
+                    tinsert(addon.updateInactiveQuest,self)
                 end
             else
                 addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
             end
-        elseif event ~= "WindowUpdate" then
+        elseif step.active and event ~= "WindowUpdate" then
             if element.skipIfMissing and not IsOnQuest(element.questId) then
                 addon.SetElementComplete(self,true)
             else
@@ -1371,9 +1358,9 @@ end
 local lastZone
 addon.functions["goto"] = function(self, ...)
     if type(self) == "string" then -- on parse
-        local element = {}
         --element.tag = "goto"
         local text, zone, x, y, radius, optional = ...
+        local element = {arrow = true, parent = true, textOnly = true}
         if zone then
             lastZone = zone
         else
@@ -1392,11 +1379,7 @@ addon.functions["goto"] = function(self, ...)
             HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
 
-        element.arrow = true
-        element.parent = true
-
         element.text = text
-        element.textOnly = true
 
         if radius then
             if optional then
@@ -1409,7 +1392,7 @@ addon.functions["goto"] = function(self, ...)
                 end
             elseif radius > 0 then
                 if not text or text == "" then
-                    element.text = string.format(L("Go to") .. " %.1f,%.1f (%s)",
+                    element.text = fmt(L("Go to") .. " %.1f,%.1f (%s)",
                                                  element.x, element.y, zone)
                 end
                 element.parent = nil
@@ -1630,7 +1613,7 @@ function addon.functions.hs(self, ...)
             element.text = text
         else
             element.textOnly = true
-            element.text = string.format("%s %s", L("Set your Hearthstone to"), location)
+            element.text = fmt("%s %s", L("Set your Hearthstone to"), location)
         end
         element.tooltipText = addon.icons.hs .. element.text
         return element
@@ -1703,7 +1686,7 @@ function addon.functions.home(self, ...)
             element.text = text
         else
             element.textOnly = true
-            element.text = string.format("%s %s", L("Set your Hearthstone to", location))
+            element.text = fmt("%s %s", L("Set your Hearthstone to", location))
         end
         element.tooltipText = addon.icons.home .. element.text
         return element
@@ -1750,7 +1733,7 @@ function addon.functions.fp(self, ...)
         elseif text and text ~= "" then
             element.text = text
         else
-            element.text = string.format(L("Get the %s flight path"), location)
+            element.text = fmt(L("Get the %s flight path"), location)
         end
 
         if location and location ~= "" and location:find("%w+") then
@@ -1992,7 +1975,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
             local objIndex = {}
             for i = 0, 7 do
                 if bit.band(bit.rshift(bitMask, i), 0x1) == 0x1 then
-                    table.insert(objIndex, i + 1)
+                    tinsert(objIndex, i + 1)
                 end
             end
             local objectives = addon.GetQuestObjectives(questId)
@@ -2041,20 +2024,20 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     elseif gameVersion and gameVersion > 90000 then
         if element.rawtext then
             element.tooltipText = addon.icons.collect .. element.rawtext
-            element.text = string.format("%s\n%d/%d %s", element.rawtext, count,
+            element.text = fmt("%s\n%d/%d %s", element.rawtext, count,
                                          numRequired, element.itemName)
         else
-            element.text = string.format("%d/%d %s", count, numRequired,
+            element.text = fmt("%d/%d %s", count, numRequired,
                                          element.itemName)
             element.tooltipText = addon.icons.collect .. element.text
         end
     else
         if element.rawtext then
             element.tooltipText = addon.icons.collect .. element.rawtext
-            element.text = string.format("%s\n%s: %d/%d", element.rawtext,
+            element.text = fmt("%s\n%s: %d/%d", element.rawtext,
                                          element.itemName, count, numRequired)
         else
-            element.text = string.format("%s: %d/%d", element.itemName, count,
+            element.text = fmt("%s: %d/%d", element.itemName, count,
                                          numRequired)
             element.tooltipText = addon.icons.collect .. element.text
         end
@@ -2125,7 +2108,7 @@ function addon.functions.destroy(self, ...)
             element.tooltipText = addon.icons.collect .. element.rawtext
             element.text = element.rawtext
         else
-            element.text = string.format(L("Throw away %s%s from your bags"),
+            element.text = fmt(L("Throw away %s%s from your bags"),
                                          addon.icons.collect, element.itemName)
             element.tooltipText = element.text
         end
@@ -2163,15 +2146,15 @@ function addon.functions.xp(self, ...)
         elseif not skipstep then
             if element.xp and element.xp ~= 0 then
                 if element.xp < 0 then
-                    element.text = string.format(
+                    element.text = fmt(
                                        L("Grind until you are %d xp away from level %s"),
                                        -1 * element.xp, level)
                 elseif element.xp >= 1 then
-                    element.text = string.format(
+                    element.text = fmt(
                                        L("Grind until you are %s xp into level %s"),
                                        xp, level)
                 else
-                    element.text = string.format(
+                    element.text = fmt(
                                        L("Grind until you are %.0f%% into level %s"),
                                        element.xp * 100, level)
                 end
@@ -2250,7 +2233,7 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
     -- print(level,element.level,(level >= element.level) == not reverseLogic)
 
     local skillLevelCheck = level >= element.level
-    if element.skill == "riding" and addon.mountIDs and not element.mountTrained and skillLevelCheck and not (reverseLogic and element.skipstep) then
+    if element.skill == "riding" and gameVersion >= 30000 and addon.mountIDs and not element.mountTrained and skillLevelCheck and not (reverseLogic and element.skipstep) then
         local skillLevel = element.level
         local function MountCheck(range)
             --print('g',range)
@@ -2338,22 +2321,22 @@ function addon.functions.reputation(self, ...)
             local factionname = GetFactionInfoByID(element.faction)
             if element.repValue and element.repValue ~= 0 then
                 if element.repValue < 0 then
-                    element.text = string.format(
+                    element.text = fmt(
                                        L("Grind until you are %d away from %s with %s"),
                                        -1 * element.repValue, standinglabel,
                                        factionname)
                 elseif element.repValue >= 1 then
-                    element.text = string.format(
+                    element.text = fmt(
                                        L("Grind until you are %s into %s with %s"),
                                        rep, standinglabel, factionname)
                 else
-                    element.text = string.format(
+                    element.text = fmt(
                                        L("Grind until you are %.0f%% into %s with %s"),
                                        element.repValue * 100, standinglabel,
                                        factionname)
                 end
             else
-                element.text = string.format("Grind to %s with %s",
+                element.text = fmt("Grind to %s with %s",
                                              standinglabel, factionname)
             end
         end
@@ -3148,7 +3131,7 @@ function addon.functions.blastedLands(self)
         local itemCount = GetItemCount(id[item])
         if goal > 0 then
             if itemCount > goal then itemCount = goal end
-            element.text = string.format("%s\n- %s: %d/%d", element.text,
+            element.text = fmt("%s\n- %s: %d/%d", element.text,
                                          name[item], itemCount, goal)
         end
         if itemCount < goal then skip = false end
@@ -3169,7 +3152,7 @@ function addon.PutItemInBank(bagContents)
     if CursorHasItem() and isBankOpened then
         local bank = {_G.BANK_CONTAINER}
         for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
-            table.insert(bank, i)
+            tinsert(bank, i)
         end
 
         if not bagContents then bagContents = {} end
@@ -3307,7 +3290,7 @@ function addon.GoThroughBank(itemList, func)
 
     local bank = {_G.BANK_CONTAINER}
     for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
-        table.insert(bank, i)
+        tinsert(bank, i)
     end
 
     local bagContents = {}
@@ -3731,7 +3714,7 @@ function addon.functions.maxlevel(self, ...)
         local guide = addon.currentGuide
         if ref and guide.labels[ref] then
             local n = guide.labels[ref]
-            element.text = string.format(
+            element.text = fmt(
                                L("Skip to step %d if you are level %d or above"),
                                n, element.level + 1)
             if step.active then
@@ -3739,7 +3722,7 @@ function addon.functions.maxlevel(self, ...)
                 return
             end
         end
-        element.text = string.format(
+        element.text = fmt(
                            L("(Skip this step if you are level %d or above)"),
                            element.level + 1)
     else
@@ -4110,7 +4093,7 @@ function addon.functions.scenario(self, ...)
     end
     if not criteriaString then return end
     local fulfilled = math.min(required, quantity)
-    element.criteria = string.format("%s: %d/%d", criteriaString, fulfilled,
+    element.criteria = fmt("%s: %d/%d", criteriaString, fulfilled,
                                      required)
     if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
 
@@ -4395,9 +4378,9 @@ function addon.functions.collectmount(self, ...)
     element.itemName = name
     if element.rawtext then
         element.tooltipText = element.rawtext
-        element.text = string.format("%s\n%s", element.rawtext, element.itemName)
+        element.text = fmt("%s\n%s", element.rawtext, element.itemName)
     else
-        element.text = string.format("%s", element.itemName)
+        element.text = fmt("%s", element.itemName)
         element.tooltipText = element.text
     end
     if isCollected then
@@ -4434,9 +4417,9 @@ function addon.functions.collecttoy(self, ...)
     element.itemName = toyName
     if element.rawtext then
         element.tooltipText = element.rawtext
-        element.text = string.format("%s\n%s", element.rawtext, element.itemName)
+        element.text = fmt("%s\n%s", element.rawtext, element.itemName)
     else
-        element.text = string.format("%s", element.itemName)
+        element.text = fmt("%s", element.itemName)
         element.tooltipText = element.text
     end
     if isCollected then
@@ -4488,9 +4471,9 @@ function addon.functions.collectpet(self, ...)
 
     if element.rawtext then
         element.tooltipText = element.rawtext
-        element.text = string.format("%s\n%s", element.rawtext, element.itemName)
+        element.text = fmt("%s\n%s", element.rawtext, element.itemName)
     else
-        element.text = string.format("%s", element.itemName)
+        element.text = fmt("%s", element.itemName)
         element.tooltipText = element.text
     end
     if isCollected then
@@ -4599,7 +4582,7 @@ function addon.functions.achievement(self, ...)
 
     if not element.textOnly then
         displayText = element.rawtext or displayText
-        element.text = string.format("%s: %d/%d",displayText,quantity,reqQuantity)
+        element.text = fmt("%s: %d/%d",displayText,quantity,reqQuantity)
         element.tooltipText = element.text
     end
 
@@ -4788,7 +4771,7 @@ function addon.functions.collectcurrency(self, ...)
     local currencyInfo = C_CurrencyInfo.GetCurrencyInfo(element.id)
     local count = currencyInfo and currencyInfo.quantity or 0
 
-    element.text = string.format("%d/%d %s", count, numRequired, element.currencyName)
+    element.text = fmt("%d/%d %s", count, numRequired, element.currencyName)
     element.tooltipText = addon.icons.collect .. element.text
 
     if element.lastCount ~= count then addon.UpdateStepText(self) end
@@ -4805,18 +4788,15 @@ end
 
 function addon.functions.group(self, ...)
     if type(self) == "string" then -- on parse
-        local element = {}
         local text, number = ...
-        text = text or number and string.format("Do NOT attempt this quest unless you are in a group of at least %s",number)
-        if text and text ~= "" then
-            element.text = text
-        end
+        if not number then number = "2" end
+        text = text or number and
+            fmt("Do NOT attempt this quest unless you are in a group of at least %s",number)
 
         addon.step.group = true
         addon.step.solo = false
-        element.textOnly = true
 
-        return element
+        return {hideTooltip = true,textOnly = true, text = text}
     end
 end
 

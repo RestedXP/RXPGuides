@@ -6,6 +6,8 @@ local UnitInRaid = UnitInRaid
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 local RegisterMessage_OLD = addon.RegisterMessage
+local rand, tinsert = math.random, table.insert
+
 local messageList = {}
 addon.RegisterMessage = function(self,message,callback,...)
     messageList[message] = callback
@@ -27,7 +29,7 @@ addon.HookMessage = function(self,message,callback,...)
 end
 
 function addon.SendEvent(self,...)
-    if _G.WeakAuras then
+    if _G.WeakAuras and _G.WeakAuras.ScanEvents then
         _G.WeakAuras.ScanEvents(...)
     end
     return addon.SendMessage(self,...)
@@ -35,7 +37,7 @@ end
 
 local messageQueue = {}
 function addon:QueueMessage(...)
-    table.insert(messageQueue,{...})
+    tinsert(messageQueue,{...})
 end
 
 function addon.ProcessMessageQueue()
@@ -43,18 +45,19 @@ function addon.ProcessMessageQueue()
     local removedIndexes = {}
     for i = 1,#messageQueue do
         addon:SendEvent(unpack(messageQueue[i]))
-        table.insert(removedIndexes,i)
+        tinsert(removedIndexes,i)
         if i >= 10 then
             break
         end
     end
     for i = #removedIndexes,1,-1 do
         processed = true
-        table.remove(messageQueue,i)
+        table.remove(messageQueue,removedIndexes[i])
     end
     return processed
 end
 
+local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
 local L = addon.locale.Get
@@ -126,8 +129,8 @@ function addon.QuestAutoTurnIn(title)
                 element = v
             end
         end
-        return (element and element.step.active) and element.reward >= 0 and
-                   element.reward
+        return addon.settings.db.profile.enableQuestRewardAutomation and element and
+                element.step.active and element.reward >= 0 and element.reward or 0
     end
 end
 
@@ -201,9 +204,36 @@ function addon.UpdateSkillData()
     addon.GetProfessionLevel()
 end
 
+local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
+local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
+--local GetItemSpell = C_Container and C_Container.GetItemSpell or _G.GetItemSpell
+
 function addon.GetSkillLevel(skill, useMaxValue)
     addon.UpdateSkillData()
-    if skill then
+
+    local function finditem(id)
+        if type(id) == "number" then
+            for level,t in pairs(addon.mountIDs) do
+                if t[id] then
+                    return level
+                end
+            end
+        end
+        return -1
+    end
+
+    if skill == "riding" and gameVersion < 20000 and addon.mountIDs then
+        local level = -1
+
+        for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+            for slot = 1,GetContainerNumSlots(bag) do
+                local id = GetContainerItemID(bag, slot)
+                local _,spellId = GetItemSpell(id)
+                level = math.max(level,finditem(spellId))
+            end
+        end
+        return level
+    elseif skill then
         if useMaxValue then
             return maxSkillLevel[skill] or -1
         else
@@ -216,6 +246,66 @@ function addon.GetSkillLevel(skill, useMaxValue)
             return currrentSkillLevel
         end
     end
+end
+
+
+
+local function ChangeStep(srcGuide,srcStep,destGuide,destStep,func)
+    local function stepindex(guide,refresh)
+        if type(guide) ~= "table" then
+            return false
+        elseif not guide.stepIds or refresh then
+            guide.stepIds = {}
+            for i,step in ipairs(guide.steps) do
+                if step.stepId then
+                    guide.stepIds[step.stepId] = i
+                end
+            end
+        end
+        return true
+    end
+
+    srcGuide = addon.guideIds[srcGuide]
+    destGuide = addon.guideIds[destGuide]
+
+    if not (stepindex(srcGuide) and (not destGuide or stepindex(destGuide))) then
+        return
+    end
+    srcStep = srcGuide.stepIds[srcStep]
+    destStep = srcGuide.stepIds[destStep]
+    if srcStep and (not destGuide or destStep) then
+        func(srcGuide,srcStep,destGuide,destStep)
+        stepindex(srcGuide,true)
+        stepindex(destGuide,true)
+        addon:ScheduleTask(addon.ReloadGuide)
+        print(srcGuide.name,destGuide.name,srcStep,destStep)
+        return true
+    end
+end
+
+function addon.ReplaceStep(arg1,arg2,arg3,arg4)
+    local function replace(srcGuide,srcStep,destGuide,destStep)
+        --local oldStep = destGuide.steps[destStep]
+        destGuide.steps[destStep] = srcGuide.steps[srcStep]
+        --srcGuide.steps[srcStep] = oldStep
+    end
+    return ChangeStep(arg1,arg2,arg3,arg4,replace)
+end
+
+function addon.RemoveStep(arg1,arg2)
+    local function remove(srcGuide,srcStep)
+        print('remove',srcGuide.name,srcStep)
+        table.remove(srcGuide.steps,srcStep)
+    end
+    return ChangeStep(arg1,arg2,"","",remove)
+end
+
+function addon.InsertStep(arg1,arg2,arg3,arg4)
+    local function insert(srcGuide,srcStep,destGuide,destStep)
+        table.insert(destGuide.steps,destStep,srcGuide.steps[srcStep])
+    end
+    return ChangeStep(arg1,arg2,arg3,arg4,insert)
+
 end
 
 addon.skillList = {}
@@ -765,6 +855,8 @@ addon.scheduledTasks = {}
 function addon.UpdateScheduledTasks()
     local cTime = GetTime()
     for ref, args in pairs(addon.scheduledTasks) do
+        --print(unpack(args))
+        --print(type(ref))
         if type(ref) == "function" then
             if cTime > args[1] then
                 ref(unpack(args))
@@ -788,6 +880,7 @@ end
 
 function addon.ScheduleTask(self, ref, ...)
     local time = type(self) == "number" and self or 0
+    --print(type(ref))
     if type(ref) == "table" then
         addon.scheduledTasks[ref] = time
     elseif type(ref) == "function" then
@@ -814,7 +907,7 @@ function addon:UpdateLoop(diff)
     if addon.isHidden then
         updateError = false
         return
-    elseif updateTick > (tickRate + math.random() / 128) and addon.errorCount < 10 then
+    elseif updateTick > (tickRate + rand() / 128) and addon.errorCount < 10 then
         updateError = true
         local currentTime = GetTime()
         updateTick = 0
@@ -905,7 +998,7 @@ function addon:UpdateLoop(diff)
                 else
                     -- print('ok',ref.element.step.index,ref.element.requestFromServer)
                     addon.UpdateQuestCompletionData(ref)
-                    table.insert(deletedIndexes, i)
+                    tinsert(deletedIndexes, i)
                 end
             end
             for i = #deletedIndexes, 1, -1 do

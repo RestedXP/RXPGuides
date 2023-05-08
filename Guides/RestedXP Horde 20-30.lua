@@ -734,6 +734,7 @@ step
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .isOnQuest 6461
 step
+#hidewindow
     #requires besseleth
 step
     #label spiderend

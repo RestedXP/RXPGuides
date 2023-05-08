@@ -1742,6 +1742,7 @@ step
     >>Kill Boars. Loot them for Intestines
     .complete 418,1 --Collect Boar Intestines (x3)
 step
+    #hidewindow
     #requires Meat9
 step
     #label RatCatching
@@ -2170,6 +2171,7 @@ step << !Priest !Paladin !Warrior !Rogue
 step << Priest
     .xp 7+200 >>Grind until 200+/4500xp
 step
+#hidewindow
     #requires KoboldCandles
 step
     #softcore
