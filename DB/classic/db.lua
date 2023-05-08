@@ -81,6 +81,11 @@ addon.mapId = {
 	["Eastern Kingdoms"] = 1415,
 }
 
+addon.mapIdToName = {}
+for name,id in pairs(addon.mapId) do
+    addon.mapIdToName[id] = name
+end
+
 addon.FPbyZone = {
     ["Horde"] = {
         [1448] = 48,

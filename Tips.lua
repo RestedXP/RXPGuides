@@ -452,7 +452,8 @@ function addon.tips:ZONE_CHANGED_NEW_AREA() self:LoadDangerousMobs() end
 function addon.tips:LoadDangerousMobs()
     if not addon.dangerousMobs then return end
 
-    local zone = GetRealZoneText()
+    local zone = addon.mapIdToName[C_Map.GetBestMapForUnit("player") or 0] or
+                     GetRealZoneText()
 
     print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
     if not zone or not addon.dangerousMobs[zone] then
