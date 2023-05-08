@@ -42,7 +42,7 @@ for faction, factionCsv in files.items():
         maxLevel = mob['Level'].split('-')[1]
 
       db[faction][mob['Zone']][mob['Name']].append(
-        f"        {{ MinLevel = {minLevel}, MaxLevel = {maxLevel}, Classification = \"{mob['Classification']}\", Movement = \"{mob['Movement']}\", Notes = \"{mob['Notes/Special abilities']}\", Location = \"{mob['Line']}\" }},\n"
+        f"        {{ MinLevel = {minLevel}, MaxLevel = {maxLevel}, Classification = \"{mob['Classification']}\", Movement = \"{mob['Movement']}\", Notes = \"{mob['Notes/Abilities']}\", Location = \"{mob['Line']}\" }},\n"
       )
 
       included_count += 1
