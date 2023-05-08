@@ -566,8 +566,101 @@ function addon.LoadCachedGuides()
     end
 end
 
+local function parseLine(linetext,step,parsingLogic)
+    if not parsingLogic then
+        parsingLogic = addon.functions
+    end
+    local line = linetext
+    local classtag
+    line = line:gsub("%s*<<%s*(.+)", function(t)
+        classtag = t
+        return ""
+    end)
+    if classtag and not applies(classtag) then return end
+
+    if step then
+        local steptag, assignment, value = line:match("^#(%S+)%s*(=?)%s*(.*)")
+        if steptag and steptag ~= "" then
+            if not step[steptag] then
+                if assignment == "=" then
+                    step[steptag] = parsingLogic[value]
+                else
+                    step[steptag] = value
+                end
+            end
+            return
+        end
+    end
+
+    local element
+    local text
+    line = line:gsub("%s*>>%s*(.*)", function(t)
+        if t ~= "" then text = t end
+        return ""
+    end)
+
+    line:gsub("^%.(%S+)%s*(.*)", function(tag, args)
+        local t = {}
+
+        if tag == "link" then
+            local link = args:gsub("%s+$", "")
+            tinsert(t, link)
+        elseif tag == "mob" or tag == "unitscan" or tag == "target" then
+            args = args:gsub("%s*;%s*", ";")
+            for arg in string.gmatch(args, "[^;]+") do
+                tinsert(t, arg)
+            end
+        else
+            args = args:gsub("%s*,%s*", ",")
+            for arg in string.gmatch(args, "[^,]+") do
+                tinsert(t, arg)
+            end
+        end
+        -- print(tag,args,type(guide))
+        if parsingLogic[tag] then
+            element = parsingLogic[tag](linetext, text, unpack(t))
+            if not element then return end
+            element.tag = tag
+            element.step = step
+            if element.parent then
+                element.parent = addon.lastEelement
+            end
+        else
+            return addon.error(L("Error parsing guide") .. " " ..
+                                   addon.currentGuideName ..
+                                   ": Invalid function call (." .. tag ..
+                                   ")\n" .. linetext)
+        end
+    end)
+
+    if text and not element then
+        element = {text = text, textOnly = true, step = step}
+    elseif line:sub(1, 1) == "+" then
+        element = {text = line:sub(2, -1), step = step}
+        addon.lastEelement = element
+    elseif line:sub(1, 1) == "*" then
+        element = {
+            text = line:sub(2, -1):gsub("\\n", "\n"),
+            step = step,
+            hideTooltip = true,
+            textOnly = true
+        }
+        -- else
+        -- error('Error parsing guide at line '..linenumber..'/ '..guide.name)
+    end
+    if element and (text and not element.textOnly or element.dynamicText) then
+        addon.lastEelement = element
+    end
+    if step then
+        tinsert(step.elements, element)
+    end
+    return element
+end
+addon.ParseLine = parseLine
+
 function addon.ParseGuide(groupOrContent, text, defaultFor)
 
+    addon.lastElement = nil
     if not groupOrContent then return end
 
     local playerLevel = UnitLevel("player")
@@ -616,95 +709,11 @@ function addon.ParseGuide(groupOrContent, text, defaultFor)
     local currentStep = 0
     guide.steps = {}
 
-    local lastElement
+    local parsingLogic
     local step
     local skip
     local skipGuide
     local linenumber = 0
-
-    local function parseLine(linetext)
-        local line = linetext
-        local classtag
-        line = line:gsub("%s*<<%s*(.+)", function(t)
-            classtag = t
-            return ""
-        end)
-        if classtag and not applies(classtag) then return end
-
-        local steptag, assignment, value = line:match("^#(%S+)%s*(=?)%s*(.*)")
-        if steptag and steptag ~= "" then
-            if not step[steptag] then
-                if assignment == "=" then
-                    step[steptag] = RXPGuides[guide.group][value]
-                else
-                    step[steptag] = value
-                end
-            end
-            return
-        end
-
-        local element
-        local text
-        line = line:gsub("%s*>>%s*(.*)", function(t)
-            if t ~= "" then text = t end
-            return ""
-        end)
-
-        line:gsub("^%.(%S+)%s*(.*)", function(tag, args)
-            local t = {}
-
-            if tag == "link" then
-                local link = args:gsub("%s+$", "")
-                tinsert(t, link)
-            elseif tag == "mob" or tag == "unitscan" or tag == "target" then
-                args = args:gsub("%s*;%s*", ";")
-                for arg in string.gmatch(args, "[^;]+") do
-                    tinsert(t, arg)
-                end
-            else
-                args = args:gsub("%s*,%s*", ",")
-                for arg in string.gmatch(args, "[^,]+") do
-                    tinsert(t, arg)
-                end
-            end
-            -- print(tag,args,type(guide))
-            if RXPGuides[guide.group][tag] then
-                element = RXPGuides[guide.group][tag](linetext, text, unpack(t))
-                if not element then return end
-                element.tag = tag
-                element.step = step
-                if element.parent then
-                    element.parent = lastElement
-                end
-            else
-                return addon.error(L("Error parsing guide") .. " " ..
-                                       addon.currentGuideName ..
-                                       ": Invalid function call (." .. tag ..
-                                       ")\n" .. linetext)
-            end
-        end)
-
-        if text and not element then
-            element = {text = text, textOnly = true, step = step}
-        elseif line:sub(1, 1) == "+" then
-            element = {text = line:sub(2, -1), step = step}
-            lastElement = element
-        elseif line:sub(1, 1) == "*" then
-            element = {
-                text = line:sub(2, -1):gsub("\\n", "\n"),
-                step = step,
-                hideTooltip = true,
-                textOnly = true
-            }
-            -- else
-            -- error('Error parsing guide at line '..linenumber..'/ '..guide.name)
-        end
-        if element and (text and not element.textOnly or element.dynamicText) then
-            lastElement = element
-        end
-
-        tinsert(step.elements, element)
-    end
 
     for line in string.gmatch(text, "[^\n\r]+") do
         linenumber = linenumber + 1
@@ -725,6 +734,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor)
             if skipGuide then
                 guide.version = tonumber(guide.version) or 0
                 addon.guide = false
+                addon.lastEelement = nil
                 return guide, skipGuide
             elseif currentStep == 0 then
                 addon.RegisterGroup(guide.group)
@@ -744,11 +754,12 @@ function addon.ParseGuide(groupOrContent, text, defaultFor)
                 step.stepId = linenumber + guide.guideId
                 --step.index = currentStep
                 addon.step = step
-                lastElement = nil
+                addon.lastEelement = nil
+                parsingLogic = RXPGuides[guide.group]
             end
         elseif not skip then
             if currentStep > 0 then
-                parseLine(line)
+                parseLine(line,step,parsingLogic)
             else
                 -- print(line)
                 line = line:gsub("(.-)%s*<<%s*(.+)", function(code, tag)
@@ -814,6 +825,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor)
     guide.version = tonumber(guide.version) or 0
 
     addon.guide = false
+    addon.lastElement = nil
     -- print(guide.name,"\n",guide.enabledFor)
     return guide
 end

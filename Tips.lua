@@ -449,11 +449,22 @@ end
 
 function addon.tips:ZONE_CHANGED_NEW_AREA() self:LoadDangerousMobs() end
 
+local function IsStepActive(self)
+    local levelBuffer = 100
+    if not addon.settings.db.profile.debug or self.levelBuffer then
+        levelBuffer = self.levelBuffer or 0
+    end
+    if not self.MaxLevel or
+           self.MaxLevel >= UnitLevel("player") - levelBuffer then
+        return true
+    end
+end
+
 function addon.tips:LoadDangerousMobs()
     if not addon.dangerousMobs then return end
 
-    local zone = addon.mapIdToName[C_Map.GetBestMapForUnit("player") or 0] or
-                     GetRealZoneText()
+    local mapId = C_Map.GetBestMapForUnit("player") or 0
+    local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
 
     print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
     if not zone or not addon.dangerousMobs[zone] then
@@ -461,64 +472,45 @@ function addon.tips:LoadDangerousMobs()
         _G.RXPD = addon.tips.dangerousMobs
         return
     end
-
-    local playerLevel = UnitLevel("player")
-
-    if session.dangerousMobs[zone] and session.dangerousMobs[zone].processed and
-        session.dangerousMobs[zone].processed == playerLevel then
-        print("Already processed")
-        addon.tips.dangerousMobs = session.dangerousMobs[zone]
-        _G.RXPD = addon.tips.dangerousMobs
-        return
-    end
-
-    session.dangerousMobs[zone] = {}
-
-    local levelBuffer, element
+    local dangerousMobs = session.dangerousMobs[zone] or {}
+    session.dangerousMobs[zone] = dangerousMobs
 
     -- dangerousMobs DB has nested objects, flatten and fake step data
-    for name, list in pairs(addon.dangerousMobs[zone] or {}) do
-        for _, mobData in ipairs(list) do
-
-            levelBuffer = mobData.Classification == "Normal" and 1 or 3
-            element = nil
-
-            if mobData.MaxLevel >= playerLevel - levelBuffer then
-                mobData.Location:gsub("^%.(%S+)%s*(.*)", function(command, args)
-                    local lineArgs = {}
-
-                    args = args:gsub("%s*,%s*", ",")
-                    for arg in string.gmatch(args, "[^,]+") do
-                        table.insert(lineArgs, arg)
-                    end
-
-                    if addon.functions[command] then
-                        element = addon.functions[command](mobData.Location,
-                                                           mobData.Location,
-                                                           unpack(lineArgs))
-                    end
-
-                    -- Injecting functionality into guide
+    if not dangerousMobs.processed then
+        local steps = {}
+        for name, list in pairs(addon.dangerousMobs[zone] or {}) do
+            for _, mobData in ipairs(list) do
+                --added a semicolon separator in case the database entry has multiple coords
+                for line in mobData.Location:gmatch("[^\r\n;]+") do
+                    line:gsub("^%s+","")
+                    line:gsub("%s+$","")
+                    local element = addon.ParseLine(line)
                     if element then
-                        element.label = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
-                                            name, mobData.MaxLevel)
-                        mobData.dangerousMob = true
-                        element.dangerousMob = true
-                        element.showArrow = true
+                        element.parent = nil
+                        local step = {}
+                        step.showTooltip = true--Shows tooltip when hovering over a line
+                        element.step = step
+                        step.isActive = IsStepActive
+                        step.levelBuffer = mobData.Classification == "Normal" and 1 or 3
+                        step.mapTooltip = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
+                                            name, mobData.MaxLevel) --Tooltip title
 
-                        mobData.elements = {[0] = element}
+                        --Tooltip description:
+                        element.mapTooltip = fmt("%s - %s\n%s",
+                            mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
+
+                        step.elements = {element}
+                        tinsert(steps,step)
                     end
-                end)
-
-                if mobData.elements then
-                    tinsert(session.dangerousMobs[zone], mobData)
                 end
             end
         end
-
+        dangerousMobs.steps = steps
     end
 
-    session.dangerousMobs[zone].processed = playerLevel
-    addon.tips.dangerousMobs = session.dangerousMobs[zone]
-    _G.RXPD = addon.tips.dangerousMobs
+    addon.generatedSteps["dangerousMobs"] = dangerousMobs.steps
+    dangerousMobs.processed = true
+    addon.tips.dangerousMobs = dangerousMobs
+    _G.RXPD = dangerousMobs
+    addon.updateMap = true
 end
