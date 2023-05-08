@@ -447,7 +447,6 @@ function addon.tips:EnableDangerWarning(loops)
     end
 end
 
-function addon.tips:ZONE_CHANGED_NEW_AREA() self:LoadDangerousMobs() end
 
 local function IsStepActive(self)
     local levelBuffer = 100
@@ -466,9 +465,12 @@ function addon.tips:LoadDangerousMobs()
     local mapId = C_Map.GetBestMapForUnit("player") or 0
     local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
 
+    addon.updateMap = true
+
     print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
     if not zone or not addon.dangerousMobs[zone] then
         addon.tips.dangerousMobs = nil
+        addon.generatedSteps["dangerousMobs"] = nil
         _G.RXPD = addon.tips.dangerousMobs
         return
     end
@@ -512,5 +514,6 @@ function addon.tips:LoadDangerousMobs()
     dangerousMobs.processed = true
     addon.tips.dangerousMobs = dangerousMobs
     _G.RXPD = dangerousMobs
-    addon.updateMap = true
 end
+
+addon.tips.ZONE_CHANGED_NEW_AREA = addon.tips.LoadDangerousMobs
