@@ -2366,7 +2366,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     mapCircle = {
@@ -2378,7 +2378,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     numMapPins = {
@@ -2392,7 +2392,7 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 1,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     worldMapPinScale = {
@@ -2406,7 +2406,7 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 0.05,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     distanceBetweenPins = {
@@ -2421,7 +2421,7 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 0.05,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     worldMapPinBackgroundOpacity = {
@@ -2436,7 +2436,7 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 0.05,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     }
                 }
@@ -2712,7 +2712,7 @@ function addon.settings:RefreshProfile()
     else
         addon.ReloadGuide()
     end
-    addon.updateMap = true
+    addon.UpdateMap()
     addon.RXPFrame.GenerateMenuTable()
     addon.RXPFrame.SetStepFrameAnchor()
 end

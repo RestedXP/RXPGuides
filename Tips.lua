@@ -465,7 +465,7 @@ function addon.tips:LoadDangerousMobs()
     local mapId = C_Map.GetBestMapForUnit("player") or 0
     local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
 
-    addon.updateMap = true
+    addon.UpdateMap()
 
     print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
     if not zone or not addon.dangerousMobs[zone] then
@@ -492,6 +492,8 @@ function addon.tips:LoadDangerousMobs()
                         local step = {}
                         step.showTooltip = true--Shows tooltip when hovering over a line
                         element.step = step
+                        element.drawCenterPoint = true--Adds an icon at the center of the lines, enable for testing purposes
+                        step.icon = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:96:112:0:16|t"--texture used for the icon
                         step.isActive = IsStepActive
                         step.levelBuffer = mobData.Classification == "Normal" and 1 or 3
                         step.mapTooltip = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,

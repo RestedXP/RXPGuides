@@ -705,7 +705,7 @@ function addon.SetStep(n, n2, loopback)
                         element.skip = self:GetChecked()
                     end
                     addon.updateSteps = true
-                    addon.updateMap = true
+                    addon.UpdateMap()
                 end)
 
                 --
@@ -866,7 +866,7 @@ function addon.SetStep(n, n2, loopback)
     addon.UpdateItemFrame()
     CurrentStepFrame.UpdateText()
     addon.updateSteps = true
-    addon.updateMap = true
+    addon.UpdateMap()
     StepScroll(scrollHeight)
 end
 

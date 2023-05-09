@@ -724,7 +724,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         RXPCData.GA = false
     end
     addon.hideArrow = false
-    addon.updateMap = true
+    addon.UpdateMap()
     addon.isHidden = addon.settings and
                          addon.settings.db.profile.hideGuideWindow or
                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
@@ -978,7 +978,7 @@ function addon:UpdateLoop(diff)
                 addon.QuestAutomation()
             end
             if addon.updateMap then
-                addon.UpdateMap()
+                addon.UpdateMap(true)
                 event = event .. "/map"
             end
         elseif skip % 4 == 0 then
