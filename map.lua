@@ -213,7 +213,6 @@ MapPinPool.creationFunc = function(framePool)
     f:EnableMouse()
     f:SetMouseClickEnabled(false)
     f:Hide()
-    f.icon = f:CreateTexture()
     -- Active Step Indicator (A Target Icon)
     f.inner = CreateFrame("Button", nil, f,
                           BackdropTemplateMixin and "BackdropTemplate")
@@ -225,7 +224,7 @@ MapPinPool.creationFunc = function(framePool)
     --f.inner:EnableMouse()
 
     -- Text
-    f.text = f.inner:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+    f.text = f:CreateFontString(nil, "ARTWORK", "GameFontNormal")
     f.text:SetTextColor(unpack(addon.colors.mapPins))
     f.text:SetFont(addon.font, 14, "OUTLINE")
 
@@ -233,62 +232,25 @@ MapPinPool.creationFunc = function(framePool)
     f.render = function(self, pin, isMiniMapPin)
         local element = pin.elements[1]
         local step = element.step or pin.step
-        local label = element.label or step.index or "*"
+        local icon = step.icon and step.icon:match("(|T.*|t)")
+        local label = icon or element.label or step.index or "*"
         self.activeObject = pin
 
         local r = self.text:GetTextColor()
         if r ~= addon.colors.mapPins[1] then
             self.text:SetTextColor(unpack(addon.colors.mapPins))
         end
-        if #pin.elements > 1 then
+
+        if #pin.elements > 1 and not icon then
             self.text:SetText(label .. "+")
         else
             self.text:SetText(label)
         end
 
-        if step.icon then
-            self:SetAlpha(pin.opacity)
-            --TODO: Add icon atlas support
-            self.icon:Show()
-            self.text:Hide()
-            self.inner:Hide()
-            self:SetBackdropColor(0.1, 0.1, 0.1, 0)
-            local icon = string.match(step.icon,"|T(.*)|t")
-            icon = icon or step.icon
-            local texture,h,w,ox,oy,twidth,theight,x1,x2,y1,y2 = strsplit(':',icon)
-            self.icon:SetTexture(texture)
-            --print(texture)
-            ox = tonumber(ox) or 0
-            oy = tonumber(oy) or 0
-            w = tonumber(w)
-            if x1 and y2 then
-                h = tonumber(h)
-                x1 = tonumber(x1)
-                x2 = tonumber(x2)
-                y1 = tonumber(y1)
-                y2 = tonumber(y2)
-                twidth = tonumber(twidth)
-                theight = tonumber(theight)
-                print(x1/twidth,x2/twidth,y1/theight,y2/theight)
-
-                self.icon:SetTexCoord(x1/twidth,x2/twidth,y1/theight,y2/theight)
-
-                self.icon:SetSize(w or 0,h or 0)
-                self:SetSize(w or 16,h or 16)
-            else
-                h = h ~= "0" and tonumber(h)
-                self.icon:SetSize(w or 0,h or 0)
-                self:SetSize(w or 16,h or 16)
-            end
-
-            f.icon:SetPoint("CENTER",ox,oy)
-
-            self:SetScale(addon.settings.db.profile.worldMapPinScale)
-        elseif addon.settings.db.profile.mapCircle and not isMiniMapPin then
-            local size = math.max(f.text:GetWidth(), f.text:GetHeight()) + 8
+        self.text:Show()
+        if addon.settings.db.profile.mapCircle and not isMiniMapPin and not icon then
+            local size = math.max(self.text:GetWidth(), self.text:GetHeight()) + 8
             self.inner:Show()
-            self.icon:Hide()
-            self.text:Show()
             if step.active then
                 self:SetAlpha(1)
                 self:SetWidth(size + 3)
@@ -310,42 +272,40 @@ MapPinPool.creationFunc = function(framePool)
 
                 self.text:SetFont(addon.font, 9, "OUTLINE")
             end
-            self.inner:SetPoint("CENTER", f, 0, 0)
+            self.inner:SetPoint("CENTER", self, 0, 0)
             self.inner:SetWidth(size)
             self.inner:SetHeight(size)
-            self.text:SetPoint("CENTER", f, 0, 0)
+            self.text:SetPoint("CENTER", self, 0, 0)
             self:SetScale(addon.settings.db.profile.worldMapPinScale)
             self:SetAlpha(pin.opacity)
         else
             --print('s3',GetTime())
-            self.icon:Hide()
-            self.inner:Show()
-            self.text:Show()
-            if step.active and not isMiniMapPin then
-                self:SetAlpha(1)
+            self.inner:Hide()
+
+            if icon then
+                self:SetBackdropColor(0, 0, 0, 0)
+                self.text:SetFont(addon.font, 16, "OUTLINE")
+                self:SetSize(16,16)
+                self.text:SetPoint("CENTER", self, 1, 0)
+            elseif step.active and not isMiniMapPin then
                 self:SetBackdropColor(0.0, 0.0, 0.0,
                                    addon.settings.db.profile.worldMapPinBackgroundOpacity)
-                self.inner:SetBackdropColor(1, 1, 1, 1)
-                self.inner:SetWidth(8 + 3)
-                self.inner:SetHeight(8 + 3)
 
                 self.text:SetFont(addon.font, 14, "OUTLINE")
+                self:SetWidth(self.text:GetStringWidth() + 3)
+                self:SetHeight(self.text:GetStringHeight() + 5)
+                self.text:SetPoint("CENTER", self, 1, 0)
             else
                 local bgAlpha = isMiniMapPin and 0 or
                                     addon.settings.db.profile.worldMapPinBackgroundOpacity
                 self:SetBackdropColor(0.1, 0.1, 0.1, bgAlpha)
 
-                self.inner:SetBackdropColor(0, 0, 0, 0)
-
                 self.text:SetFont(addon.font, 9, "OUTLINE")
+                self:SetWidth(self.text:GetStringWidth() + 3)
+                self:SetHeight(self.text:GetStringHeight() + 5)
+                self.text:SetPoint("CENTER", self, 1, 0)
             end
-            self:SetWidth(self.text:GetStringWidth() + 3)
-            self:SetHeight(self.text:GetStringHeight() + 5)
 
-            self.inner:SetPoint("CENTER", f, 0, 0)
-            self.inner:SetWidth(1)
-            self.inner:SetHeight(1)
-            self.text:SetPoint("CENTER", f, 0, 0)
             self:SetScale(addon.settings.db.profile.worldMapPinScale)
             self:SetAlpha(pin.opacity)
         end
