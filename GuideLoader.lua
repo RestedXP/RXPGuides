@@ -570,6 +570,9 @@ local function parseLine(linetext,step,parsingLogic)
     if not parsingLogic then
         parsingLogic = addon.functions
     end
+    if addon.lastEelement and addon.lastEelement.step ~= step then
+        addon.lastEelement = nil
+    end
     local line = linetext
     local classtag
     line = line:gsub("%s*<<%s*(.+)", function(t)
@@ -651,7 +654,9 @@ local function parseLine(linetext,step,parsingLogic)
     if element and (text and not element.textOnly or element.dynamicText) then
         addon.lastEelement = element
     end
-    if step then
+    if not step then
+        element.parent = nil
+    elseif step.elements and element then
         tinsert(step.elements, element)
     end
     return element
@@ -754,7 +759,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor)
                 step.stepId = linenumber + guide.guideId
                 --step.index = currentStep
                 addon.step = step
-                addon.lastEelement = nil
+                --addon.lastEelement = nil
                 parsingLogic = RXPGuides[guide.group]
             end
         elseif not skip then

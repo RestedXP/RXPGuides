@@ -488,8 +488,8 @@ function addon.tips:LoadDangerousMobs()
                     line:gsub("%s+$","")
                     local element = addon.ParseLine(line)
                     if element then
-                        element.parent = nil
                         local step = {}
+                        step.linethickness = 2
                         step.showTooltip = true--Shows tooltip when hovering over a line
                         element.step = step
                         --element.drawCenterPoint = true--Adds an icon at the center of the lines
