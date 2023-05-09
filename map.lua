@@ -611,16 +611,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
             ProcessMapPin(step)
         end
 
-        for _,container in pairs(addon.generatedSteps) do
-            for _,step in ipairs(container) do
-                if step.isActive then
-                    step.active = step:isActive()
-                end
-                if step.active then
-                    ProcessMapPin(step)
-                end
-            end
-        end
+        addon:ProcessGeneratedSteps(ProcessMapPin)
     end
 
     return pins

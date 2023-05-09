@@ -282,6 +282,106 @@ CurrentStepFrame:SetScript("OnMouseDown", RXPFrame.OnMouseDown)
 CurrentStepFrame:SetScript("OnMouseUp", RXPFrame.OnMouseUp)
 CurrentStepFrame:EnableMouse(1)
 
+local CheckStepCompletion = function(self,initialCheck)
+    local stepCompleted = true
+    for _,element in pairs(self.elements) do
+        if initialCheck then
+            --print('ok1',GetTime())
+            element.container:callback()
+        end
+        stepCompleted = stepCompleted and element.completed
+    end
+    self.completed = stepCompleted
+end
+
+
+local hiddenFramePool = {}
+
+function addon.RegisterGeneratedSteps()
+    local i = 1
+    local stepUnitscan, stepMobs, stepTargets = {},{},{}
+    for _,context in pairs(addon.generatedSteps) do
+    for _,step in ipairs(context) do
+    for _,element in ipairs(step.elements) do
+        if element.tag then
+            local events = element.event or addon.functions.events[element.tag]
+            local container = hiddenFramePool[i] or CreateFrame("Frame",nil,addon.RXPFrame)
+            hiddenFramePool[i] = container
+            i = i + 1
+            container:Show()
+            container.callback = addon.functions[element.tag]
+            if type(events) == "string" then
+                if events == "OnUpdate" then
+                    container:SetScript("OnUpdate", container.callback)
+                else
+                    container:RegisterEvent(events)
+                    container:SetScript("OnEvent",
+                                        CurrentStepFrame.EventHandler)
+                end
+            elseif type(events) == "table" then
+                for _, event in ipairs(events) do
+                    if event == "OnUpdate" then
+                        container:SetScript("OnUpdate",
+                                            container.callback)
+                    else
+                        container:RegisterEvent(event)
+                        container:SetScript("OnEvent",
+                                            CurrentStepFrame.EventHandler)
+                    end
+                end
+            end
+            container.element = element
+            element.container = container
+            if element.unitscan then
+                for _, t in ipairs(element.unitscan) do
+                    tinsert(stepUnitscan, addon.GetCreatureName(t))
+                end
+            end
+            if element.mobs then
+                for _, t in ipairs(element.mobs) do
+                    tinsert(stepMobs, addon.GetCreatureName(t))
+                end
+            end
+            if element.targets then
+                for _, t in ipairs(element.targets) do
+                    tinsert(stepTargets, addon.GetCreatureName(t))
+                end
+            end
+        end
+    end
+    end
+    end
+
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
+    addon.targeting:UpdateTargetList(stepTargets)
+    addon.targeting:CheckNameplates()
+
+    for j = i,#hiddenFramePool do
+        local container = hiddenFramePool[j]
+        container:Hide()
+        container:SetScript("OnUpdate",nil)
+        container:SetScript("OnEvent",nil)
+        container.element = nil
+        container.callback = nil
+    end
+    addon:ScheduleTask(addon.ProcessGeneratedSteps,CheckStepCompletion,true)
+end
+
+function addon:ProcessGeneratedSteps(func,...)
+    if type(func) ~= "function" then func = nil end
+    for _,context in pairs(addon.generatedSteps) do
+        for _,step in ipairs(context) do
+            if step.isActive then
+                step.active = step:isActive()
+                --print(step,GetTime(),step.active)
+            end
+            if step.active and func then
+                func(step,...)
+            end
+        end
+    end
+end
+
 function addon:ShowTips(state)
     if state == "toggle" then
         RXPCData.hideTipWindow = not RXPCData.hideTipWindow
@@ -372,7 +472,8 @@ function addon.UpdateStepCompletion()
     addon.updateSteps = false
     if addon.currentGuide.empty then return end
 
-    local n = 0
+    addon:ScheduleTask(addon.ProcessGeneratedSteps,CheckStepCompletion)
+
     local update
 
     for i, step in ipairs(activeSteps) do
@@ -502,6 +603,7 @@ function addon.SetStep(n, n2, loopback)
         if n < #guide.steps then step.completed = nil end
     end
 
+    addon:ScheduleTask(addon.RegisterGeneratedSteps)
     table.wipe(activeSteps)
     table.wipe(addon.questAccept)
     table.wipe(addon.questTurnIn)
