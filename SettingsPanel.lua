@@ -1828,7 +1828,34 @@ function addon.settings:CreateAceOptionsPanel()
                                        not self.db.profile
                                            .enableEmergencyActions
                         end
-                    }
+                    },
+                    dangerousMobsHeader = {
+                        name = L("Dangerous Mobs Tracking"),
+                        type = "header",
+                        width = "full",
+                        order = 4.0,
+                        hidden = function()
+                            return not addon.settings.db.profile.enableBetaFeatures or not addon.dangerousMobs
+                        end,
+                    },
+                    showDangerousMobsMap = {
+                        name = L("Track Mobs on Map"), -- TODO locale
+                        desc = L("Displays dangerous mobs and patrols on your map (WIP)"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.1,
+                        set = function(info,value)
+                            SetProfileOption(info, value)
+                            addon.db.profile.showDangerousMobsMap = value
+                            addon.tips:LoadDangerousMobs()
+                        end,
+                        disabled = function()
+                            return not self.db.profile.enableTips
+                        end,
+                        hidden = function()
+                            return not addon.settings.db.profile.enableBetaFeatures or not addon.dangerousMobs
+                        end,
+                    },
                 }
             },
             helpPanel = {
@@ -2366,7 +2393,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     mapCircle = {
@@ -2378,7 +2405,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     numMapPins = {
@@ -2392,7 +2419,7 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 1,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     worldMapPinScale = {
@@ -2406,7 +2433,7 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 0.05,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     distanceBetweenPins = {
@@ -2421,7 +2448,7 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 0.05,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     },
                     worldMapPinBackgroundOpacity = {
@@ -2436,7 +2463,7 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 0.05,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.updateMap = true
+                            addon.UpdateMap()
                         end
                     }
                 }
@@ -2712,7 +2739,7 @@ function addon.settings:RefreshProfile()
     else
         addon.ReloadGuide()
     end
-    addon.updateMap = true
+    addon.UpdateMap()
     addon.RXPFrame.GenerateMenuTable()
     addon.RXPFrame.SetStepFrameAnchor()
 end

@@ -573,7 +573,7 @@ function addon.SetElementComplete(self, disable)
         self.element.completed = true
         self.element.skip = true
         addon.updateSteps = true
-        addon.updateMap = true
+        addon.UpdateMap()
         if self.element.step.active and GetTime() - addon.lastStepUpdate > 1 then
             addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",self.element,addon.currentGuide)
         end
@@ -588,7 +588,7 @@ end
 function addon.SetElementIncomplete(self)
     if self.element.completed then
         self.element.completed = false
-        addon.updateMap = true
+        addon.UpdateMap()
     end
     if self.button then
         self.button:Enable()
@@ -1420,10 +1420,10 @@ local function DetectFlying(self,mode)
         local canPlayerFly = addon.CanPlayerFly(element.zone)
         if not element.skip and canPlayerFly then
             element.skip = mode
-            addon.updateMap = true
+            addon.UpdateMap()
         elseif element.skip and not canPlayerFly then
             element.skip = not mode
-            addon.updateMap = true
+            addon.UpdateMap()
         end
     end
 end
@@ -1490,7 +1490,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
     local callback = RXPGuides[group][element.callback]
     if type(callback) == "function" then
         local lowPrio = callback(self, text, zone, x, y, radius, lowPrio, ...)
-        if element.lowPrio ~= lowPrio then addon.updateMap = true end
+        if element.lowPrio ~= lowPrio then addon.UpdateMap() end
         element.lowPrio = lowPrio
     end
 end
@@ -1545,7 +1545,7 @@ function addon.functions.line(self, text, zone, ...)
         local mapID = addon.mapId[zone] or tonumber(zone)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
-                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                        L("Error parsing guide") .. " " .. (addon.currentGuideName or _G.NONE) ..
                            ": Invalid coordinates or map name\n" .. self)
         end
         element.zone = mapID
@@ -1586,7 +1586,7 @@ function addon.functions.loop(self, text, range, zone, ...)
         local mapID = addon.mapId[zone] or tonumber(zone)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
-                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                        L("Error parsing guide") .. " "  .. (addon.currentGuideName or _G.NONE) ..
                            ": Invalid coordinates or map name\n" .. self)
         end
         element.zone = mapID

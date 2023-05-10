@@ -724,7 +724,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         RXPCData.GA = false
     end
     addon.hideArrow = false
-    addon.updateMap = true
+    addon.UpdateMap()
     addon.isHidden = addon.settings and
                          addon.settings.db.profile.hideGuideWindow or
                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
@@ -854,23 +854,25 @@ addon.scheduledTasks = {}
 
 function addon.UpdateScheduledTasks()
     local cTime = GetTime()
+    local processTable = {}
     for ref, args in pairs(addon.scheduledTasks) do
+        processTable[ref] = args
+    end
+    for ref, args in pairs(processTable) do
         --print(unpack(args))
         --print(type(ref))
         if type(ref) == "function" then
             if cTime > args[1] then
-                ref(unpack(args))
                 addon.scheduledTasks[ref] = nil
+                ref(unpack(args))
                 return
             end
         elseif type(ref) == "table" then
             if cTime > args then
-                local group = addon.currentGuide.group
+                addon.scheduledTasks[ref] = nil
                 local element = ref.element or ref
-                if group and RXPGuides[group] and element and
-                RXPGuides[group][element.tag] then
-                    RXPGuides[group][element.tag](ref)
-                    addon.scheduledTasks[ref] = nil
+                if element and addon.functions[element.tag] then
+                    addon.functions[element.tag](ref)
                 end
                 return
             end
@@ -879,7 +881,7 @@ function addon.UpdateScheduledTasks()
 end
 
 function addon.ScheduleTask(self, ref, ...)
-    local time = type(self) == "number" and self or 0
+    local time = type(self) == "number" and self or GetTime() + 0.125
     --print(type(ref))
     if type(ref) == "table" then
         addon.scheduledTasks[ref] = time
@@ -978,7 +980,7 @@ function addon:UpdateLoop(diff)
                 addon.QuestAutomation()
             end
             if addon.updateMap then
-                addon.UpdateMap()
+                addon.UpdateMap(true)
                 event = event .. "/map"
             end
         elseif skip % 4 == 0 then

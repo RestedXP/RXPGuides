@@ -17,6 +17,7 @@ local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or
 local GetContainerItemID = C_Container and C_Container.GetContainerItemID or
                                _G.GetContainerItemID
 local tinsert, fmt = tinsert, string.format
+local GetRealZoneText = GetRealZoneText
 local UIErrorsFrame = _G.UIErrorsFrame
 local STRING_ENVIRONMENTAL_DAMAGE_DROWNING =
     _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING
@@ -33,7 +34,8 @@ local session = {
     emergencyItems = {},
     emergencySpells = {},
     highlights = {},
-    actionBarMap = {}
+    actionBarMap = {},
+    dangerousMobs = {}
 }
 
 function addon.tips:Setup()
@@ -62,6 +64,11 @@ function addon.tips:Setup()
     else
         addon.comms.PrettyPrint(
             L("No enabled RXP frames for tips functionality")) -- TODO locale
+    end
+
+    if addon.dangerousMobs then
+        self:LoadDangerousMobs()
+        self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     end
 end
 
@@ -439,3 +446,81 @@ function addon.tips:EnableDangerWarning(loops)
         self.dangerWarning:Show()
     end
 end
+
+
+local function IsStepActive(self)
+    local levelBuffer = 100
+    if not addon.db.profile.showDangerousMobsMap and self.mapTooltip then
+        return false
+    elseif not addon.settings.db.profile.debug and self.levelBuffer then
+        levelBuffer = self.levelBuffer or 0
+    end
+    if not self.MaxLevel or
+           self.MaxLevel >= UnitLevel("player") - levelBuffer then
+        return true
+    end
+end
+
+function addon.tips:LoadDangerousMobs()
+    if not addon.dangerousMobs then return end
+
+    local mapId = C_Map.GetBestMapForUnit("player") or 0
+    local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
+
+    addon.UpdateMap()
+    if addon.settings.db.profile.debug then
+        print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
+    end
+    if not zone or not addon.dangerousMobs[zone] then
+        addon.tips.dangerousMobs = nil
+        addon.generatedSteps["dangerousMobs"] = nil
+        _G.RXPD = addon.tips.dangerousMobs
+        return
+    end
+    local dangerousMobs = session.dangerousMobs[zone] or {}
+    session.dangerousMobs[zone] = dangerousMobs
+
+    -- dangerousMobs DB has nested objects, flatten and fake step data
+    if not dangerousMobs.processed then
+        local steps = {}
+        for name, list in pairs(addon.dangerousMobs[zone] or {}) do
+            for _, mobData in ipairs(list) do
+                --added a semicolon separator in case the database entry has multiple coords
+                for line in mobData.Location:gmatch("[^\r\n;]+") do
+                    line:gsub("^%s+","")
+                    line:gsub("%s+$","")
+                    local element = addon.ParseLine(line)
+                    if element then
+                        local step = {}
+                        element.step = step
+                        --element.drawCenterPoint = true--Adds an icon at the center of the lines
+                        step.isActive = IsStepActive
+                        step.levelBuffer = mobData.Classification == "Normal" and 1 or 3
+                        if element.wx or element.segments then
+                            step.linethickness = 2
+                            step.showTooltip = true--Shows tooltip when hovering over a line
+                            step.icon = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t"--texture used for the icon
+                            step.mapTooltip = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
+                                                name, mobData.MaxLevel) --Tooltip title
+
+                            --Tooltip description:
+                            element.mapTooltip = fmt("%s - %s\n%s",
+                                mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
+                        end
+
+                        step.elements = {element}
+                        tinsert(steps,step)
+                    end
+                end
+            end
+        end
+        dangerousMobs.steps = steps
+    end
+
+    addon.generatedSteps["dangerousMobs"] = dangerousMobs.steps
+    dangerousMobs.processed = true
+    addon.tips.dangerousMobs = dangerousMobs
+    _G.RXPD = dangerousMobs
+end
+
+addon.tips.ZONE_CHANGED_NEW_AREA = addon.tips.LoadDangerousMobs
