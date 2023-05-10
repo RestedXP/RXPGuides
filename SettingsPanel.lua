@@ -1828,7 +1828,23 @@ function addon.settings:CreateAceOptionsPanel()
                                        not self.db.profile
                                            .enableEmergencyActions
                         end
-                    }
+                    },
+                    dangerousMobsHeader = {
+                        name = L("Dangerous Mobs Tracking"),
+                        type = "header",
+                        width = "full",
+                        order = 4.0
+                    },
+                    showDangerousMobsMap = {
+                        name = L("Track Mobs on Map"), -- TODO locale
+                        desc = L("Displays dangerous mobs and patrols on your map"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.1,
+                        disabled = function()
+                            return not self.db.profile.enableTips
+                        end
+                    },
                 }
             },
             helpPanel = {

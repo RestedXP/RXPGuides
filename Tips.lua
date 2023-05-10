@@ -450,7 +450,7 @@ end
 
 local function IsStepActive(self)
     local levelBuffer = 100
-    if not addon.settings.db.profile.debug or self.levelBuffer then
+    if not addon.settings.db.profile.debug and self.levelBuffer then
         levelBuffer = self.levelBuffer or 0
     end
     if not self.MaxLevel or
