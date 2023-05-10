@@ -1833,17 +1833,28 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Dangerous Mobs Tracking"),
                         type = "header",
                         width = "full",
-                        order = 4.0
+                        order = 4.0,
+                        hidden = function()
+                            return not addon.settings.db.profile.enableBetaFeatures
+                        end,
                     },
                     showDangerousMobsMap = {
                         name = L("Track Mobs on Map"), -- TODO locale
-                        desc = L("Displays dangerous mobs and patrols on your map"),
+                        desc = L("Displays dangerous mobs and patrols on your map (WIP)"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.1,
+                        set = function(info,value)
+                            SetProfileOption(info, value)
+                            addon.db.profile.showDangerousMobsMap = value
+                            addon.tips:LoadDangerousMobs()
+                        end,
                         disabled = function()
                             return not self.db.profile.enableTips
-                        end
+                        end,
+                        hidden = function()
+                            return not addon.settings.db.profile.enableBetaFeatures
+                        end,
                     },
                 }
             },

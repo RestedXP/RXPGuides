@@ -450,7 +450,9 @@ end
 
 local function IsStepActive(self)
     local levelBuffer = 100
-    if not addon.settings.db.profile.debug and self.levelBuffer then
+    if not addon.db.profile.showDangerousMobsMap and self.mapTooltip then
+        return false
+    elseif not addon.settings.db.profile.debug and self.levelBuffer then
         levelBuffer = self.levelBuffer or 0
     end
     if not self.MaxLevel or
@@ -466,8 +468,9 @@ function addon.tips:LoadDangerousMobs()
     local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
 
     addon.UpdateMap()
-
-    print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
+    if addon.settings.db.profile.debug then
+        print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
+    end
     if not zone or not addon.dangerousMobs[zone] then
         addon.tips.dangerousMobs = nil
         addon.generatedSteps["dangerousMobs"] = nil
@@ -489,19 +492,21 @@ function addon.tips:LoadDangerousMobs()
                     local element = addon.ParseLine(line)
                     if element then
                         local step = {}
-                        step.linethickness = 2
-                        step.showTooltip = true--Shows tooltip when hovering over a line
                         element.step = step
                         --element.drawCenterPoint = true--Adds an icon at the center of the lines
-                        step.icon = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t"--texture used for the icon
                         step.isActive = IsStepActive
                         step.levelBuffer = mobData.Classification == "Normal" and 1 or 3
-                        step.mapTooltip = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
-                                            name, mobData.MaxLevel) --Tooltip title
+                        if element.wx or element.segments then
+                            step.linethickness = 2
+                            step.showTooltip = true--Shows tooltip when hovering over a line
+                            step.icon = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t"--texture used for the icon
+                            step.mapTooltip = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
+                                                name, mobData.MaxLevel) --Tooltip title
 
-                        --Tooltip description:
-                        element.mapTooltip = fmt("%s - %s\n%s",
-                            mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
+                            --Tooltip description:
+                            element.mapTooltip = fmt("%s - %s\n%s",
+                                mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
+                        end
 
                         step.elements = {element}
                         tinsert(steps,step)
