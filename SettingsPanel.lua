@@ -1835,7 +1835,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 4.0,
                         hidden = function()
-                            return not addon.settings.db.profile.enableBetaFeatures
+                            return not addon.settings.db.profile.enableBetaFeatures or not addon.dangerousMobs
                         end,
                     },
                     showDangerousMobsMap = {
@@ -1853,7 +1853,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.db.profile.enableTips
                         end,
                         hidden = function()
-                            return not addon.settings.db.profile.enableBetaFeatures
+                            return not addon.settings.db.profile.enableBetaFeatures or not addon.dangerousMobs
                         end,
                     },
                 }
