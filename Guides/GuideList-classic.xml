@@ -1,4 +1,5 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+    <Script file="Guides/Import.lua"/>
 
     <Script file="Guides/Classic-Alliance-Mage-1-12.lua"/>
     <Script file="Guides/Classic-Alliance-Mage-12-21.lua"/>
