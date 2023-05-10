@@ -531,7 +531,7 @@ Arrow data
     f.scrollContainer:SetFullHeight(true)
     f:AddChild(f.scrollContainer)
 
-    f.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
     f.frame:SetBackdropColor(unpack(addon.colors.background))
 
     local editbox = AceGUI:Create("MultiLineEditBox")
@@ -560,7 +560,7 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
     f.statustext:GetParent():Hide()
     f:SetTitle("RestedXP: " .. title)
 
-    f.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
     f.frame:SetBackdropColor(unpack(addon.colors.background))
 
     local editbox = AceGUI:Create("MultiLineEditBox")

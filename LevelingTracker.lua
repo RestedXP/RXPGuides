@@ -462,7 +462,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.scrollContainer:SetLayout("Flow")
     trackerUi:AddChild(trackerUi.scrollContainer)
 
-    trackerUi.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    trackerUi.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
     trackerUi.frame:SetBackdropColor(unpack(addon.colors.background))
 
     if attachmentName == 'CharacterFrame' then
@@ -1086,7 +1086,7 @@ function addon.tracker:RenderSplitsBackground()
         f:ClearBackdrop()
     else
         f:ClearBackdrop()
-        f:SetBackdrop(addon.RXPFrame.backdropEdge)
+        f:SetBackdrop(addon.RXPFrame.backdrop.edge)
         f:SetBackdropColor(unpack(addon.colors.background))
     end
 end
@@ -1134,7 +1134,7 @@ function addon.tracker:CreateLevelSplits()
     f.title:SetScript("OnMouseUp", f.onMouseUp)
 
     f.title:ClearBackdrop()
-    f.title:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
     f.title:SetBackdropColor(unpack(addon.colors.background))
     -- Disable background texture for now, inconsistently loads
     --[[

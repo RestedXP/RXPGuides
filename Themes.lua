@@ -15,7 +15,16 @@ themes['Default'] = {
     font = _G.GameFontNormal:GetFont(),
     textColor = {1, 1, 1},
     applicable = function() return not RXPCData.GA end,
-    author = "RestedXP"
+    author = "RestedXP",
+    bgTextures = {
+        edge = "Interface/BUTTONS/WHITE8X8",
+        guideName = "Interface/BUTTONS/WHITE8X8",
+        bottom = "Interface/BUTTONS/WHITE8X8",
+    },
+    edges = {
+        edge = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
+        guideName = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
+    },
 }
 
 -- Built-in themes must provide all properties
@@ -117,6 +126,26 @@ function addon:LoadActiveTheme()
     if not themeApplies(newTheme.applicable) then return end
 
     addon.activeTheme = newTheme
+
+    local RXPFrame = addon.RXPFrame
+
+    if newTheme.bgTextures then
+        for name,frame in pairs(RXPFrame.backdrop) do
+            local texture = newTheme.bgTextures[name] or RXPFrame.defaultBackground[name]
+            frame.bgFile = texture
+        end
+    end
+
+    RXPFrame.backdrop.edge.edgeFile = addon.GetTexture("rxp-borders") or RXPFrame.defaultEdges.edge
+    RXPFrame.backdrop.guideName.edgeFile = addon.GetTexture("rxp-borders") or RXPFrame.defaultEdges.guideName
+    RXPFrame.backdrop.bottom.edgeFile = nil
+
+    if newTheme.edges then
+        for name,texture in pairs(newTheme.edges) do
+            local frame = RXPFrame.backdrop[name]
+            frame.edgeFile = texture
+        end
+    end
 
     -- TOOD fix legacy calls
     addon.colors = addon.activeTheme

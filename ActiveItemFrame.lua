@@ -139,12 +139,12 @@ end
 local function UpdateIconFrameVisuals(self,updateFrame)
     self:ClearBackdrop()
     if not addon.settings.db.profile.activeItemHideBG then
-        self:SetBackdrop(addon.RXPFrame.backdropEdge)
+        self:SetBackdrop(addon.RXPFrame.backdrop.edge)
         local r, g, b = unpack(addon.colors.background)
         self:SetBackdropColor(r, g, b, 0.4)
     end
     self.title:ClearBackdrop()
-    self.title:SetBackdrop(addon.RXPFrame.backdropEdge)
+    self.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
     self.title:SetBackdropColor(unpack(addon.colors.background))
     self.title.text:SetFont(addon.font, 9, "")
     self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))

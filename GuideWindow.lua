@@ -50,21 +50,21 @@ RXPFrame.MenuFrame = MenuFrame
 
 function RXPFrame:UpdateVisuals()
     BottomFrame:ClearBackdrop()
-    BottomFrame:SetBackdrop(RXPFrame.backdropEdge)
+    BottomFrame:SetBackdrop(RXPFrame.backdrop.edge)
     BottomFrame:SetBackdropColor(unpack(addon.colors.background))
 
     if RXPFrame.activeItemFrame then
         RXPFrame.activeItemFrame:ClearBackdrop()
-        RXPFrame.activeItemFrame:SetBackdrop(RXPFrame.backdropEdge)
+        RXPFrame.activeItemFrame:SetBackdrop(RXPFrame.backdrop.edge)
         RXPFrame.activeItemFrame:SetBackdropColor(
             unpack(addon.colors.background))
     end
 
     GuideName:ClearBackdrop()
-    GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
+    GuideName:SetBackdrop(RXPFrame.backdrop.guideName)
     GuideName:SetBackdropColor(unpack(addon.colors.background))
     Footer:ClearBackdrop()
-    Footer:SetBackdrop(RXPFrame.backdropEdge)
+    Footer:SetBackdrop(RXPFrame.backdrop.edge)
     Footer:SetBackdropColor(unpack(addon.colors.background))
     Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
@@ -77,8 +77,6 @@ end
 
 function addon.RenderFrame(themeUpdate)
     addon:LoadActiveTheme()
-    RXPFrame.backdropEdge.edgeFile = addon.GetTexture("rxp-borders")
-    RXPFrame.guideNameBackdrop.edgeFile = addon.GetTexture("rxp-borders")
 
     -- TODO better handle themes
     addon.colors = addon.activeTheme
@@ -95,40 +93,55 @@ function addon.RenderFrame(themeUpdate)
     if addon.currentGuide then addon.ReloadGuide() end
 end
 
+
+RXPFrame.backdrop = {}
+
+RXPFrame.defaultBackground = {
+    edge = "Interface/BUTTONS/WHITE8X8",
+    guideName = "Interface/BUTTONS/WHITE8X8",
+    bottom = "Interface/BUTTONS/WHITE8X8",
+}
+
+RXPFrame.defaultEdges = {
+    edge = addon.GetTexture("rxp-borders"),
+    guideName = addon.GetTexture("rxp-borders"),
+}
+
+RXPFrame.backdrop.edge = {
+    bgFile = "Interface/BUTTONS/WHITE8X8",
+    -- edgeFile = "Interface/BUTTONS/WHITE8X8",
+    -- edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
+    edgeFile = addon.GetTexture("rxp-borders"),
+    tile = true,
+    edgeSize = 8,
+    tileSize = 8,
+    insets = {left = 4, right = 2, top = 2, bottom = 4}
+}
+
+RXPFrame.backdrop.guideName = {
+    bgFile = "Interface/BUTTONS/WHITE8X8",
+    edgeFile = addon.GetTexture("rxp-borders"),
+    tile = true,
+    edgeSize = 8,
+    tileSize = 8,
+    insets = {left = 4, right = 2, top = 2, bottom = 4}
+}
+
+RXPFrame.backdrop.bottom = {
+    bgFile = "Interface/BUTTONS/WHITE8X8",
+    tile = true,
+    tileSize = 16
+    --edgeSize = 1,
+    --insets = {left = 0, right = 0, top = -1, bottom = -1}
+}
+
 function addon.SetupGuideWindow()
     -- These were in-line, but now rely on settings
 
-    RXPFrame.backdropEdge = {
-        bgFile = "Interface/BUTTONS/WHITE8X8",
-        -- edgeFile = "Interface/BUTTONS/WHITE8X8",
-        -- edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
-        edgeFile = addon.GetTexture("rxp-borders"),
-        tile = true,
-        edgeSize = 8,
-        tileSize = 8,
-        insets = {left = 4, right = 2, top = 2, bottom = 4}
-    }
-
-    RXPFrame.guideNameBackdrop = {
-        bgFile = "Interface/BUTTONS/WHITE8X8",
-        edgeFile = addon.GetTexture("rxp-borders"),
-        tile = true,
-        edgeSize = 8,
-        tileSize = 8,
-        insets = {left = 4, right = 2, top = 2, bottom = 4}
-    }
-
-    RXPFrame.bottomBackdrop = {
-        bgFile = "Interface\\Buttons\\WHITE8x8",
-        edgeFile = "Interface\\Buttons\\WHITE8x8",
-        edgeSize = 1,
-        insets = {left = 0, right = 0, top = -1, bottom = -1}
-    }
-
-    BottomFrame:SetBackdrop(RXPFrame.backdropEdge)
+    BottomFrame:SetBackdrop(RXPFrame.backdrop.edge)
     BottomFrame:SetBackdropColor(unpack(addon.colors.background))
 
-    GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
+    GuideName:SetBackdrop(RXPFrame.backdrop.guideName)
     GuideName:SetBackdropColor(unpack(addon.colors.background))
 
     GuideName.text:SetFont(addon.font, 11, "")
@@ -142,7 +155,7 @@ function addon.SetupGuideWindow()
 
     GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
-    Footer:SetBackdrop(RXPFrame.guideNameBackdrop)
+    Footer:SetBackdrop(RXPFrame.backdrop.guideName)
     Footer:SetBackdropColor(unpack(addon.colors.background))
     Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
@@ -263,14 +276,6 @@ RXPFrame:SetWidth(addon.width)
 RXPFrame:SetHeight(addon.height)
 RXPFrame:SetPoint("LEFT", 0, 35)
 RXPFrame:SetFrameStrata("BACKGROUND")
-
-local backdrop = {
-    bgFile = "Interface/BUTTONS/WHITE8X8",
-    tile = true,
-    tileSize = 16
-    -- edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
-    -- edgeSize = 16, insets = {left = 4, right = 4, top = 4, bottom = 4}
-}
 
 -- RXPFrame.CurrentStepFrame:SetBackdrop(backdrop)
 -- RXPFrame.CurrentStepFrame:SetBackdropColor(0.3,0.01,0.01)
@@ -756,10 +761,10 @@ function addon.SetStep(n, n2, loopback)
         if stepframe.theme ~= addon.activeTheme then
             stepframe.theme = addon.activeTheme
             stepframe:ClearBackdrop()
-            stepframe:SetBackdrop(RXPFrame.backdropEdge)
+            stepframe:SetBackdrop(RXPFrame.backdrop.edge)
             stepframe:SetBackdropColor(unpack(addon.colors.background))
             stepframe.number:ClearBackdrop()
-            stepframe.number:SetBackdrop(RXPFrame.backdropEdge)
+            stepframe.number:SetBackdrop(RXPFrame.backdrop.edge)
             stepframe.number:SetBackdropColor(unpack(addon.colors.background))
         end
 
@@ -791,7 +796,7 @@ function addon.SetStep(n, n2, loopback)
             local elementFrame = stepframe.elements[e]
             if not stepframe.elements[e] then
                 stepframe.elements[e] = CreateFrame("Frame", "$parent_" .. e,
-                                                    stepframe, BackdropTemplate)
+                                                    stepframe, nil)
                 elementFrame = stepframe.elements[e]
                 -- elementFrame:SetHeight(0)
                 -- elementFrame:SetWidth(300)
@@ -1146,7 +1151,7 @@ GuideName.bg:SetPoint("TOPLEFT", 4, -2)
 GuideName.bg:SetPoint("BOTTOMRIGHT", -2, 4)
 
 -- footer
--- Footer:SetBackdrop(RXPFrame.backdropEdge)
+-- Footer:SetBackdrop(RXPFrame.backdrop.edge)
 Footer:SetPoint("BOTTOMLEFT", RXPFrame, "BOTTOMLEFT", 3, 0)
 Footer:SetPoint("BOTTOMRIGHT", RXPFrame, "BOTTOMRIGHT", -3, 0)
 Footer:SetHeight(20)
@@ -1454,9 +1459,8 @@ function addon:LoadGuide(guide, OnLoad)
             frame:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -3)
             frame:SetPoint("TOPRIGHT", anchor, "BOTTOMRIGHT", 0, -3)
         end
-        -- frame:SetBackdrop(RXPFrame.bottomBackdrop)
         frame:ClearBackdrop()
-        frame:SetBackdrop(backdrop)
+        frame:SetBackdrop(RXPFrame.backdrop.bottom)
         frame:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
 
         frame:SetScript("OnEnter", function(self)
@@ -1498,7 +1502,7 @@ function addon:LoadGuide(guide, OnLoad)
 
         if not frame.number then
             frame.number = CreateFrame("Frame", "$parent_number", frame,
-                                       BackdropTemplate)
+                                       nil)
             frame.number:SetPoint("BOTTOMRIGHT", frame)
             frame.number.text = frame.number:CreateFontString(nil, "OVERLAY")
             frame.number.text:SetFontObject(_G.GameFontNormalSmall)
