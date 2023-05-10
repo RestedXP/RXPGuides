@@ -103,8 +103,8 @@ RXPFrame.defaultBackground = {
 }
 
 RXPFrame.defaultEdges = {
-    edge = addon.GetTexture("rxp-borders"),
-    guideName = addon.GetTexture("rxp-borders"),
+    edge = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
+    guideName = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
 }
 
 RXPFrame.backdrop.edge = {
