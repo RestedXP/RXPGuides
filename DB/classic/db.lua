@@ -276,7 +276,9 @@ function addon.functions.xpto60alliance(self,...) --PLAYER_XP_UPDATE,QUEST_LOG_U
 			questXP = floor(questXP + 5800*xpMod)
 		end
 
-		if IsQuestComplete(4901) then --Guardians of the altar
+        if IsOnQuest(979) then
+            questXP = floor(questXP + 1500 + (3000 + 4800 + 6000)*xpMod)
+		elseif IsQuestComplete(4901) then --Guardians of the altar
 			questXP = floor(questXP + (4800 + 6000)*xpMod)
 		end
 
