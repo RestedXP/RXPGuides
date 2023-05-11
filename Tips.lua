@@ -291,7 +291,8 @@ function addon.tips:HighlightEmergencyItem()
     local bagBorder, actionBarLookup, actionBarBorder
 
     for _, item in ipairs(session.emergencyItems) do
-        bagBorder = addon.tips:GetHighlight(
+        bagBorder = item.bag and item.bagSlotFrameId and
+                      addon.tips:GetHighlight(
                         fmt('ContainerFrame%sItem%s', item.bag + 1,
                             item.bagSlotFrameId))
 
@@ -307,7 +308,7 @@ function addon.tips:HighlightEmergencyItem()
             end
         end
 
-        actionBarLookup = session.actionBarMap['item:' .. item.id]
+        actionBarLookup = item.id and session.actionBarMap['item:' .. item.id]
         if actionBarLookup then
             actionBarBorder = addon.tips:GetHighlight(actionBarLookup.button)
 
