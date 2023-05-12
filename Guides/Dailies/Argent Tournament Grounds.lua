@@ -5433,13 +5433,79 @@ RXPGuides.RegisterGuide([[
 -- #name |cFFFF57223.0|r Crusader Daily Quests
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #wotlk
--- #version 1
--- #group +Argent Tournament
--- #name |cFFFF57223.0|r Silver Covenant Daily Quests
--- << Alliance
--- ]])
+RXPGuides.RegisterGuide([[
+#wotlk
+#version 1
+#group +Argent Tournament
+#name |cFFFF57223.0|r Silver Covenant Daily Quests
+<< Alliance
+
+step
+	#completewith next
+	+|cFFFCDC00Phase 3 introduces the Silver Covenant Daily Quest Hub.|r
+	>>To access Silver Covenant Daily Quests, you must be Exalted with the |cFFFCDC00Silver Covenant|r and be a |cFFFF5722Champion|r which gives the achievement:
+	.achievement 3676,1
+step
+	>>Enter the Alliance Silver Covenant Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
+	.daily 14096 >>Accept You've Really Done It This Time, Kul
+	.daily 14074,14152,14080,14077 >>Accept A Leg Up |c99ffff99OR|r Rescue at Sea |c99ffff99OR|r Stop The Aggressors |c99ffff99OR|r The Light's Mercy
+	.daily 14076,14090,14112 >>Accept Breakfast of Champions |c99ffff99OR|r Gormok Wants His Snobolds |c99ffff99OR|r What Do You Feed a Yeti, Anyway?
+	.goto Icecrown,76.26,19.62
+	.target Narasi Snowdawn
+	.target Savinia Loresong
+step
+	.isOnQuest 14112
+	#completewith next
+	>>Loot |c99ffff99Fresh Chum|r from the buckets on the Alliance boat.
+	.collect 47036,5
+	.goto Icecrown,67.11,7.89
+step
+	.isOnQuest 14112
+	>>Jump into the water and use the |c99ffff99Fresh Chum|r.
+	>>Kill |cFFFF5722Sharks|r for |cFFDB2EEFNorth Sea Shark Meat|r.
+	.complete 14112,1
+	.use 47036
+step
+	.isOnQuest 14152
+	>>Head to the Alliance boat in Hrothgar's Landing.
+	>>Kill |cFFFF5722Kvaldir Berserkers|r and |cFFFF5722Kvaldir Harpooners|r.
+	.complete 14152,1
+	.complete 14152,2
+	.goto Hrothgar's Landing,49.97,49.45
+	.mob Kvaldir Berserker
+	.mob Kvaldir Harpooner
+step
+	.isOnQuest 14096
+	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
+	>>Use the keys to free the |cFF00FF25Captive Aspirants|r from the cages.
+	.collect 46895,5,14096,2,-1
+    .complete 14096,2
+	.goto Icecrown,65.24,22.41,10,0
+	.goto Icecrown,64.66,21.74,10,0
+	.goto Icecrown,63.04,21.32,10,0
+	.goto Icecrown,61.42,20.74,10,0
+	.goto Icecrown,60.25,21.08
+	.mob Dark Zealot
+	.mob Dark Ritualist
+step
+	.isOnQuest 14096
+	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
+	>>Free |cFF00FF25Kul tge Reckless|r from his cage.
+    .complete 14096,1
+	.goto Icecrown,60.82,23.15
+step
+	>>Return to the Alliance Silver Covenant Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
+	.turnin 14096
+	.turnin 14152
+	.turnin 14112
+	.goto Icecrown,76.26,19.62
+	.target Narasi Snowdawn
+	.target Savinia Loresong
+step
+	+|cFFFCDC00You have finished all Silver Covenant Daily Quests for today! Reload this Guide tomorrow to continue them.|r
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #wotlk
