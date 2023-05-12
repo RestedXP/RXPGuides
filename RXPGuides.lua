@@ -557,13 +557,11 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
 end
 
 function addon:CreateMetaDataTable(wipe)
-    if wipe then
+    if wipe or addon.release ~= RXPData.release then
         RXPData.guideMetaData = nil
     end
     local guideMetaData = RXPData.guideMetaData or {}
     RXPData.guideMetaData = guideMetaData
-    guideMetaData[class] = guideMetaData[class] or {}
-    guideMetaData[class][race] = guideMetaData[class][race] or {}
     guideMetaData.dungeonGuides = guideMetaData.dungeonGuides or {}
     guideMetaData.enabledDungeons = guideMetaData.enabledDungeons or {}
     guideMetaData.enableGroupQuests = guideMetaData.enableGroupQuests or {}
@@ -737,6 +735,7 @@ function addon:OnEnable()
     -- Only start update loop after everything initializes and enables
     local updateFrame = CreateFrame("Frame")
     updateFrame:SetScript("OnUpdate", addon.UpdateLoop)
+    RXPData.release = addon.release
 end
 
 -- Tracks if a player is on a loading screen and pauses the main update loop
