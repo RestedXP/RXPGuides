@@ -232,7 +232,7 @@ MapPinPool.creationFunc = function(framePool)
     f.render = function(self, pin, isMiniMapPin)
         local element = pin.elements[1]
         local step = element.step or pin.step
-        local icon = step.icon and step.icon:match("(|T.*|t)")
+        local icon = step.icon and step.icon:match("(|T.-:%d.*|t)")
         local label = icon or element.label or step.index or "*"
         self.activeObject = pin
 
@@ -285,7 +285,11 @@ MapPinPool.creationFunc = function(framePool)
             if icon then
                 self:SetBackdropColor(0, 0, 0, 0)
                 self.text:SetFont(addon.font, 16, "OUTLINE")
-                self:SetSize(16,16)
+                local x,y = icon:match("|T.-:(%d+):?(%d*)")
+                x,y = tonumber(x), tonumber(y)
+                x = x > 0 and x or 16
+                y = y or 16
+                self:SetSize(x,y)
                 self.text:SetPoint("CENTER", self, 1, 0)
             elseif step.active and not isMiniMapPin then
                 self:SetBackdropColor(0.0, 0.0, 0.0,
