@@ -577,23 +577,28 @@ function addon.LoadCachedGuides()
     end
 
     for key, guideData in pairs(addon.db.profile.guides) do
-        local guide, errorMsg
+        local guide, errorMsg, metadata
         local enabled = not guideData.enabledFor or
                             applies(guideData.enabledFor)
         if enabled then
-            guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
-            if guide:match("^--" .. addon.ReadCacheData("string")) then
-                if guideData.metadata then
-                    local loadGuide = guide
-                    addon.guideCache[key] = function()
-                        return addon.ParseGuide(loadGuide)
-                    end
-                    guide = guideData.metadata
-                else
-                    guide, errorMsg = addon.ParseGuide(guide)
+            if guideData.metadata and
+                    guideData.metadata.length == addon.ReadCacheData("string") then
+                local data = guideData
+                addon.guideCache[key] = function()
+                    local g = LibDeflate:DecompressDeflate(data.groupOrContent)
+                    return addon.ParseGuide(g)
                 end
+                guide = guideData.metadata
             else
-                guide = nil
+                guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
+                if guide:find("^--" .. addon.ReadCacheData("string")) then
+                    guide, errorMsg, metadata = addon.ParseGuide(guide)
+                    if metadata then
+                        guideData.metadata = metadata
+                    end
+                else
+                    guide = nil
+                end
             end
             if not errorMsg and guide then
                 guide.imported = true
@@ -716,10 +721,13 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded)
     local playerLevel = UnitLevel("player")
     local parentGroup
     local hash
-    local length = groupOrContent:len()
+    local length
     if isEmbedded then
+        length = groupOrContent:len()
         local index = groupOrContent:find("[\r\n]%s*step")
         hash = addon.A32(groupOrContent:sub(1,index))
+    else
+        length = groupOrContent:match("^--(%d+)")
     end
     if not (groupOrContent and text) then
         local currentGroup

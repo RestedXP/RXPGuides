@@ -865,12 +865,13 @@ end
 
 questFrame:SetScript("OnEvent", addon.QuestAutomation)
 
+addon.guideIndexes = {}
 function addon.GetGuideTable(guideGroup, guideName)
     if guideGroup and addon.guideList[guideGroup] and guideName and
         addon.guideList[guideGroup][guideName] then
         local index = addon.guideList[guideGroup][guideName]
         local guide = addon.guides[index]
-        if guide and not guide.steps then guide.tableIndex = index end
+        if guide and not guide.steps then addon.guideIndexes[guide] = index end
         return guide
     end
 end

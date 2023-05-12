@@ -1324,6 +1324,10 @@ addon.emptyGuide = {
     steps = {{hidewindow = true, text = ""}}
 }
 
+function addon:LoadGuideTable(guideGroup,guideName)
+    return addon:LoadGuide(addon.GetGuideTable(guideGroup, guideName))
+end
+
 function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
 
@@ -1332,17 +1336,30 @@ function addon:LoadGuide(guide, OnLoad)
         return addon:LoadGuide(addon.emptyGuide)
     end
 
-    if guide and not guide.steps and guide.tableIndex then
+    if guide and not guide.steps then
         --print('ok3',guide.key)
         local key = guide.key
-        local index = guide.tableIndex
-        guide.tableIndex = nil
-        guide = addon.guideCache[key] and
+        local index = addon.guideIndexes[guide]
+        local oldGuide = guide
+        local newGuide = addon.guideCache[key] and
                         addon.guideCache[key]()
-        addon.guides[index] = guide
-        addon.guideCache[key] = nil
+        if newGuide then
+            newGuide.menuIndex = oldGuide.menuIndex
+            newGuide.submenuIndex = oldGuide.submenuIndex
+            addon.guides[index] = newGuide
+            addon.guideIndexes[oldGuide] = nil
+            addon.guideCache[key] = nil
+            addon.guideIndexes[newGuide] = index
+            guide = newGuide
+            addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+        else
+            error('Tried to load an invalid Guide')
+            return
+        end
     end
-
+    if not guide.steps then
+        return addon:LoadGuide(addon.emptyGuide)
+    end
     if addon.settings.db.profile.frameHeight then
         RXPFrame:SetHeight(addon.settings.db.profile.frameHeight)
     end
@@ -1847,8 +1864,9 @@ function RXPFrame:GenerateMenuTable(menu)
                     end
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
-                    subitem.func = addon.LoadGuide
-                    subitem.arg1 = guide
+                    subitem.func = addon.LoadGuideTable
+                    subitem.arg1 = group
+                    subitem.arg2 = guideName
                     subitem.notCheckable = 1
                     subtable.subweight = tonumber(guide.subweight) or subtable.subweight
                     tinsert(subtable.menuList, subitem)
@@ -1858,8 +1876,9 @@ function RXPFrame:GenerateMenuTable(menu)
                     guide.submenuIndex = submenuIndex
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
-                    subitem.func = addon.LoadGuide
-                    subitem.arg1 = guide
+                    subitem.func = addon.LoadGuideTable
+                    subitem.arg1 = group
+                    subitem.arg2 = guideName
                     subitem.notCheckable = 1
                     tinsert(item.menuList, subitem)
                 end
