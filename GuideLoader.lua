@@ -570,6 +570,7 @@ local function parseLine(linetext,step,parsingLogic)
     if not parsingLogic then
         parsingLogic = addon.functions
     end
+    addon.step = step
     if addon.lastEelement and addon.lastEelement.step ~= step then
         addon.lastEelement = nil
     end

@@ -86,6 +86,53 @@ for name,id in pairs(addon.mapId) do
     addon.mapIdToName[id] = name
 end
 
+local dungeonList = {
+    ["RFC"] = "Ragefire Chasm",
+    ["DM"] = "The Deadmines",
+    ["WC"] = "Wailing Caverns",
+    ["BFD"] = "Black Fathom Deeps",
+    ["STOCKS"] = "The Stockades",
+    ["GNOMER"] = "Gnomeregan",
+    ["RFK"] = "Razorfen Kraul",
+    ["SM"] = "Scarlet Monastery",
+    ["RFD"] = "Razorfen Downs",
+    ["ULDA"] = "Uldaman",
+    ["ZF"] = "Zul'Farrak",
+    ["MARA"] = "Maraudon",
+    ["ST"] = "Sunken Temple",
+    ["BRD"] = "Blackrock Depths",
+    ["DME"] = "Dire Maul East",
+    ["DMW"] = "Dire Maul West",
+    ["DMN"] = "Dire Maul North",
+    ["SCHOLO"] = "Scholomance",
+    ["STRAT"] = "Stratholme",
+    ["UBRS"] = "Upper Blackrock Spire",
+    ["LBRS"] = "Lower Blackrock Spire",
+}
+
+local alternateNames = {
+    ["DEADMINES"] = "DM",
+    ["VC"] = "DM",
+    ["STOCKADES"] = "STOCKS",
+    ["TEMPLE OF ATAL'HAKKAR"] = "ST",
+}
+
+for tag,name in pairs(dungeonList) do
+    alternateNames[strupper(name)] = tag
+end
+
+local L = addon.locale.Get
+
+function addon.GetDungeonName(instance)
+    local upper = strupper(instance)
+    if dungeonList[upper] then
+        return L(dungeonList[upper]),upper
+    elseif alternateNames[upper] then
+        local tag = alternateNames[upper]
+        return L(dungeonList[tag]),tag
+    end
+end
+
 addon.FPbyZone = {
     ["Horde"] = {
         [1448] = 48,

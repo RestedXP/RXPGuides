@@ -92,7 +92,7 @@ function addon.settings:InitializeSettings()
             SoM = 1,
             anchorOrientation = "top",
             chromieTime = "auto",
-            enableXpStepSkipping = true,
+            enableXpStepSkipping = addon.game ~= "CLASSIC",
             enableAutomaticXpRate = true,
             autoLoadStartingGuides = true,
 
@@ -159,7 +159,9 @@ function addon.settings:InitializeSettings()
             enableEmergencyActions = true,
             emergencyThreshold = 0.2,
             enableEmergencyIconAnimations = true,
-            enableEmergencyScreenFlash = true
+            enableEmergencyScreenFlash = true,
+
+            dungeons = {}
         }
     }
 
@@ -1012,20 +1014,23 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableGroupQuests = {
-                        name = L("Debug Mode"),
-                        desc = L("Display internal error messages"),
+                        name = L("Show Group Quests"),
+                        desc = function()
+                            local out = L"Guides that support this feature:\n"
+                            for guide in pairs(addon.enableGroupQuests) do
+                                out = fmt("%s\n%s",out,guide)
+                            end
+                            return out
+                        end,
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.35,
-                        confirm = function()
-                            return L(
-                                       "Warning: Changing this setting mid-guide may cause quest pre-requisite failures.\nGuides were optimized for experience, disabling this option will result in a disjointed guide steps.") -- TODO locale
+                        order = 1.4,
+                        hidden = function()
+                                return not next(addon.enableGroupQuests)
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if value then
-                                self:DetectXPRate()
-                            end
+                            addon.ReloadGuide()
                         end
                     },
                     expansionHeader = {
@@ -1110,50 +1115,29 @@ function addon.settings:CreateAceOptionsPanel()
                                        .enableAutomaticXpRate
                         end
                     },
-                    arrowHeader = {
-                        name = L("Waypoint Arrow"), -- TODO locale
-                        type = "header",
-                        width = "full",
-                        order = 3
-                    },
-                    arrowScale = {
-                        name = L("Arrow Scale"),
-                        desc = L("Scale of the Waypoint Arrow"),
-                        type = "range",
+                    dungeons = {
+                        name = L("Dungeons"), -- TODO locale
+                        desc = function()
+                            local out = L"Routes in quests for the selected dungeon\nGuides that support this feature:\n"
+                            for guide in pairs(addon.dungeonGuides) do
+                                out = fmt("%s\n%s",out,guide)
+                            end
+                            return out
+                        end,
+                        type = "multiselect",
                         width = optionsWidth,
-                        order = 3.2,
-                        min = 0.2,
-                        max = 2,
-                        step = 0.05,
-                        isPercent = true,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.arrowFrame:SetSize(32 * value, 32 * value)
-                        end
-                    },
-                    arrowText = {
-                        name = L("Arrow Text Size"),
-                        desc = L("Size of the waypoint arrow text"),
-                        type = "range",
-                        width = optionsWidth,
-                        order = 3.3,
-                        min = 5,
-                        max = 20,
-                        step = 1,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.arrowFrame.text:SetFont(addon.font, value,
-                                                          "OUTLINE")
-                        end
-                    },
-                    resetArrowPosition = {
-                        name = L("Reset Arrow Position"), -- TODO locale
-                        order = 3.4,
-                        type = "execute",
-                        width = optionsWidth,
-                        func = function()
-                            addon.ResetArrowPosition()
-                        end
+                        order = 2.9,
+                        values = addon.enabledDungeons,
+                        get = function(_,key)
+                            return addon.settings.db.profile.dungeons[key]
+                        end,
+                        set = function(_,key,state)
+                            addon.settings.db.profile.dungeons[key] = state
+                            addon.ReloadGuide()
+                        end,
+                        hidden = function()
+                            return not next(addon.enabledDungeons)
+                        end,
                     },
                     questCleanupHeader = {
                         name = L("Quest Cleanup"),
@@ -2345,6 +2329,51 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
 
+                        end
+                    },
+                    arrowHeader = {
+                        name = L("Waypoint Arrow"), -- TODO locale
+                        type = "header",
+                        width = "full",
+                        order = 3.9
+                    },
+                    arrowScale = {
+                        name = L("Arrow Scale"),
+                        desc = L("Scale of the Waypoint Arrow"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 3.92,
+                        min = 0.2,
+                        max = 2,
+                        step = 0.05,
+                        isPercent = true,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.arrowFrame:SetSize(32 * value, 32 * value)
+                        end
+                    },
+                    arrowText = {
+                        name = L("Arrow Text Size"),
+                        desc = L("Size of the waypoint arrow text"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 3.93,
+                        min = 5,
+                        max = 20,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.arrowFrame.text:SetFont(addon.font, value,
+                                                          "OUTLINE")
+                        end
+                    },
+                    resetArrowPosition = {
+                        name = L("Reset Arrow Position"), -- TODO locale
+                        order = 3.94,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            addon.ResetArrowPosition()
                         end
                     },
                     activeItemsHeader = {

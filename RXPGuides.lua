@@ -1089,7 +1089,7 @@ function addon.IsStepShown(step)
                addon.AldorScryerCheck(step) and addon.PhaseCheck(step) and
                addon.HardcoreCheck(step) and addon.SeasonCheck(step) and
                addon.XpRateCheck(step) and addon.FreshAccountCheck(step) and
-               addon.GroupCheck(step)
+               addon.GroupCheck(step) and addon.DungeonCheck(step)
 end
 
 function addon.GroupCheck(step)
@@ -1174,6 +1174,14 @@ function addon.LevelCheck(step)
     local level = UnitLevel("player")
     local maxLevel = tonumber(step.maxlevel) or 1000
     if level <= maxLevel then return true end
+end
+
+function addon.DungeonCheck(step)
+    if not step.dungeon then
+        return true
+    elseif addon.settings.db.profile.dungeons[step.dungeon] then
+        return true
+    end
 end
 
 RXP = addon -- debug purposes
