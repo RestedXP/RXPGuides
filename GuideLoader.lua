@@ -1,12 +1,11 @@
 local _, addon = ...
-
 addon.guides = {}
 addon.guideList = {}
 addon.guideIds = {}
 
-local _, race = UnitRace("player")
-local _, class = UnitClass("player")
-local faction = UnitFactionGroup("player")
+local class = addon.player.class
+local race = addon.player.race
+local faction = addon.player.faction
 local fmt, tremove, tinsert = string.format, tremove, table.insert
 local strchar = string.char
 local strbyte = string.byte
@@ -272,7 +271,7 @@ local function CheckDataIntegrity(str, h1, mode)
     end
 end
 
-function addon.CacheGuide(key, guide, enabledFor, guideVersion)
+function addon.CacheGuide(key, guide, enabledFor, guideVersion, metadata)
     if type(guide) == "table" then
         guide.groupOrContent = LibDeflate:CompressDeflate(guide.groupOrContent)
         addon.db.profile.guides[key] = guide
@@ -283,20 +282,20 @@ function addon.CacheGuide(key, guide, enabledFor, guideVersion)
         guide = "--" .. addon.ReadCacheData("string") .. "\n" .. guide
         guide = LibDeflate:CompressDeflate(guide)
         addon.db.profile.guides[key] = addon.BuildCacheObject(guide, enabledFor,
-                                                             guideVersion)
+                                                             guideVersion, metadata)
     end
 end
 
 -- Parse and cache one-time guide
 function addon.ImportGuide(guide, text, defaultFor, cache)
     if addon.db then -- Addon loaded already
-        local importedGuide, errorMsg = addon.ParseGuide(guide)
+        local importedGuide, errorMsg, metadata = addon.ParseGuide(guide)
         if errorMsg ~= "#0" and importedGuide and
             ((errorMsg and not cache) or addon.AddGuide(importedGuide)) then
             -- print(errorMsg,importedGuide.name)
             importedGuide.imported = true
             addon.CacheGuide(importedGuide.key, guide, importedGuide.enabledFor,
-                             importedGuide.version)
+                             importedGuide.version, metadata)
         end
         return importedGuide
     else -- Addon not loaded, add to queue
@@ -310,7 +309,7 @@ function addon.ImportGuide(guide, text, defaultFor, cache)
 end
 
 function addon.RegisterGuide(groupOrContent, text, defaultFor)
-    if addon.db then
+    if addon.addonLoaded then
         local importedGuide, errorMsg = addon.ParseGuide(groupOrContent, text,
                                                         defaultFor)
 
@@ -324,12 +323,13 @@ function addon.RegisterGuide(groupOrContent, text, defaultFor)
     end
 end
 
-function addon.BuildCacheObject(groupOrContent, enabledFor, guideVersion)
+function addon.BuildCacheObject(groupOrContent, enabledFor, guideVersion, metadata)
     return {
         groupOrContent = groupOrContent,
         cache = true,
         enabledFor = enabledFor,
-        version = guideVersion
+        version = guideVersion,
+        metadata = metadata,
     }
 end
 
@@ -518,15 +518,51 @@ function addon.LoadEmbeddedGuides()
             addon.ImportGuide(guideData.groupOrContent, guideData.text,
                               guideData.defaultFor, true)
         else
-            local guide, errorMsg = addon.ParseGuide(guideData.groupOrContent,
-                                                    guideData.text,
-                                                    guideData.defaultFor)
-
+            local guide, errorMsg, metadata, hash, length
+            local guideMetaData = RXPData.guideMetaData[class][race]
+            if not guideData.text then
+                length = guideData.groupOrContent:len()
+                local index = guideData.groupOrContent:find("[\r\n]%s*step")
+                hash = index and addon.A32(guideData.groupOrContent:sub(1,index))
+                guide = hash and RXPData.guideMetaData[hash]
+                --print('g-ok',guide and guide.length)
+            end
+            if guide and guide.length == length then
+                --print('w',guide.key)
+                errorMsg = not guideMetaData[hash]
+                addon.guideCache[guide.key] = function()
+                    return addon.ParseGuide(guideData.groupOrContent)
+                end
+            else
+                guide, errorMsg, metadata, hash =
+                    addon.ParseGuide(guideData.groupOrContent,
+                                    guideData.text,
+                                    guideData.defaultFor, true)
+                    --print('n2',guide and guide.key)
+                if hash and metadata then
+                    local cleanup = {}
+                    for key,data in pairs(RXPData.guideMetaData) do
+                        if data.key == guide.key then
+                            tinsert(cleanup,key)
+                        end
+                    end
+                    for _,key in pairs(cleanup) do
+                        RXPData.guideMetaData[key] = nil
+                        guideMetaData[key] = nil
+                    end
+                    RXPData.guideMetaData[hash] = metadata
+                    guideMetaData[hash] = true
+                end
+            end
             if not errorMsg then addon.AddGuide(guide) end
         end
     end
 
-    embeddedGuides = nil
+    if addon.addonLoaded then
+        embeddedGuides = nil
+    else
+        embeddedGuides = {}
+    end
 end
 
 function addon.BuildGuideKey(guide)
@@ -547,7 +583,15 @@ function addon.LoadCachedGuides()
         if enabled then
             guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
             if guide:match("^--" .. addon.ReadCacheData("string")) then
-                guide, errorMsg = addon.ParseGuide(guide)
+                if guideData.metadata then
+                    local loadGuide = guide
+                    addon.guideCache[key] = function()
+                        return addon.ParseGuide(loadGuide)
+                    end
+                    guide = guideData.metadata
+                else
+                    guide, errorMsg = addon.ParseGuide(guide)
+                end
             else
                 guide = nil
             end
@@ -664,14 +708,19 @@ local function parseLine(linetext,step,parsingLogic)
 end
 addon.ParseLine = parseLine
 
-function addon.ParseGuide(groupOrContent, text, defaultFor)
+function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded)
 
     addon.lastElement = nil
     if not groupOrContent then return end
 
     local playerLevel = UnitLevel("player")
     local parentGroup
-
+    local hash
+    local length = groupOrContent:len()
+    if isEmbedded then
+        local index = groupOrContent:find("[\r\n]%s*step")
+        hash = addon.A32(groupOrContent:sub(1,index))
+    end
     if not (groupOrContent and text) then
         local currentGroup
         text = groupOrContent:gsub("%-%-[^\r\n]*[\r\n]+", "\n")
@@ -833,7 +882,16 @@ function addon.ParseGuide(groupOrContent, text, defaultFor)
     addon.guide = false
     addon.lastElement = nil
     -- print(guide.name,"\n",guide.enabledFor)
-    return guide
+
+    local metadata = {length = length}
+
+    for k,v in pairs(guide) do
+        if not (type(v) == "table" or type(v) == "function") then
+            metadata[k] = v
+        end
+    end
+
+    return guide,nil,metadata,hash
 end
 
 

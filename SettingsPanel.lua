@@ -506,7 +506,10 @@ function addon.settings:CreateImportOptionsPanel()
                 disabled = function()
                     return next(addon.db.profile.guides) == nil
                 end,
-                func = function() addon.db.profile.guides = {} end
+                func = function()
+                    addon.db.profile.guides = {}
+                    addon:CreateMetaDataTable(true)
+                end
             },
             reloadUi = {
                 order = 14,
@@ -1017,7 +1020,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Show Group Quests"),
                         desc = function()
                             local out = L"Guides that support this feature:\n"
-                            for guide in pairs(addon.enableGroupQuests) do
+                            for guide in pairs(RXPData.guideMetaData.enableGroupQuests) do
                                 out = fmt("%s\n%s",out,guide)
                             end
                             return out
@@ -1026,7 +1029,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.4,
                         hidden = function()
-                                return not next(addon.enableGroupQuests)
+                                return not next(RXPData.guideMetaData.enableGroupQuests)
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1119,7 +1122,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Dungeons"), -- TODO locale
                         desc = function()
                             local out = L"Routes in quests for the selected dungeon\nGuides that support this feature:\n"
-                            for guide in pairs(addon.dungeonGuides) do
+                            for guide in pairs(RXPData.guideMetaData.dungeonGuides) do
                                 out = fmt("%s\n%s",out,guide)
                             end
                             return out
@@ -1127,7 +1130,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "multiselect",
                         width = optionsWidth,
                         order = 2.9,
-                        values = addon.enabledDungeons,
+                        values = RXPData.guideMetaData.enabledDungeons,
                         get = function(_,key)
                             return addon.settings.db.profile.dungeons[key]
                         end,
@@ -1136,7 +1139,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return not next(addon.enabledDungeons)
+                            return not next(RXPData.guideMetaData.enabledDungeons)
                         end,
                     },
                     questCleanupHeader = {

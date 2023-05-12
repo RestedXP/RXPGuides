@@ -1332,6 +1332,17 @@ function addon:LoadGuide(guide, OnLoad)
         return addon:LoadGuide(addon.emptyGuide)
     end
 
+    if guide and not guide.steps and guide.tableIndex then
+        --print('ok3',guide.key)
+        local key = guide.key
+        local index = guide.tableIndex
+        guide.tableIndex = nil
+        guide = addon.guideCache[key] and
+                        addon.guideCache[key]()
+        addon.guides[index] = guide
+        addon.guideCache[key] = nil
+    end
+
     if addon.settings.db.profile.frameHeight then
         RXPFrame:SetHeight(addon.settings.db.profile.frameHeight)
     end

@@ -88,6 +88,7 @@ local RXPGuides = {}
 addon.RXPGuides = RXPGuides
 _G.RXPGuides = RXPGuides
 
+addon.guideCache = {}
 addon.questQueryList = {}
 addon.itemQueryList = {}
 addon.questAccept = {}
@@ -100,7 +101,11 @@ addon.player = {
     localeClass = select(1, UnitClass("player")),
     class = select(2, UnitClass("player")),
     race = select(2, UnitRace("player")),
+    faction = UnitFactionGroup("player"),
 }
+
+local class = addon.player.class
+local race = addon.player.race
 
 BINDING_HEADER_RXPGuides = addon.title
 BINDING_HEADER_RXPTargeting = addon.title
@@ -278,7 +283,7 @@ local function ChangeStep(srcGuide,srcStep,destGuide,destStep,func)
         stepindex(srcGuide,true)
         stepindex(destGuide,true)
         addon:ScheduleTask(addon.ReloadGuide)
-        print(srcGuide.name,destGuide.name,srcStep,destStep)
+        --print(srcGuide.name,destGuide.name,srcStep,destStep)
         return true
     end
 end
@@ -294,7 +299,7 @@ end
 
 function addon.RemoveStep(arg1,arg2)
     local function remove(srcGuide,srcStep)
-        print('remove',srcGuide.name,srcStep)
+        --print('remove',srcGuide.name,srcStep)
         table.remove(srcGuide.steps,srcStep)
     end
     return ChangeStep(arg1,arg2,"","",remove)
@@ -551,6 +556,19 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     end
 end
 
+function addon:CreateMetaDataTable(wipe)
+    if wipe then
+        RXPData.guideMetaData = nil
+    end
+    local guideMetaData = RXPData.guideMetaData or {}
+    RXPData.guideMetaData = guideMetaData
+    guideMetaData[class] = guideMetaData[class] or {}
+    guideMetaData[class][race] = guideMetaData[class][race] or {}
+    guideMetaData.dungeonGuides = guideMetaData.dungeonGuides or {}
+    guideMetaData.enabledDungeons = guideMetaData.enabledDungeons or {}
+    guideMetaData.enableGroupQuests = guideMetaData.enableGroupQuests or {}
+end
+
 function addon:OnInitialize()
     local importGuidesDefault = {
         profile = {guides = {}, reports = {splits = {}}}
@@ -563,6 +581,8 @@ function addon:OnInitialize()
     RXPCData.questNameCache = RXPCData.questNameCache or {}
     RXPCData.questObjectivesCache = RXPCData.questObjectivesCache or {}
     RXPCData.questObjectivesCache[0] = RXPCData.questObjectivesCache[0] or 0
+    addon.CreateMetaDataTable()
+
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
     elseif math.floor(gameVersion / 1e4) ~=
@@ -612,6 +632,8 @@ function addon:OnInitialize()
 end
 
 function addon:OnEnable()
+    addon.LoadEmbeddedGuides()
+    addon.addonLoaded = true
     ProcessSpells()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
@@ -846,7 +868,10 @@ questFrame:SetScript("OnEvent", addon.QuestAutomation)
 function addon.GetGuideTable(guideGroup, guideName)
     if guideGroup and addon.guideList[guideGroup] and guideName and
         addon.guideList[guideGroup][guideName] then
-        return addon.guides[addon.guideList[guideGroup][guideName]]
+        local index = addon.guideList[guideGroup][guideName]
+        local guide = addon.guides[index]
+        if guide and not guide.steps then guide.tableIndex = index end
+        return guide
     end
 end
 

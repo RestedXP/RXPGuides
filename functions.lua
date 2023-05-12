@@ -4786,15 +4786,13 @@ function addon.functions.collectcurrency(self, ...)
     end
 end
 
-addon.dungeonGuides = {}
-addon.enabledDungeons = {}
 function addon.functions.dungeon(self, text, instance)
     if type(self) == "string" and addon.GetDungeonName then -- on parse
         local name, tag = addon.GetDungeonName(instance)
         if tag then
-            addon.enabledDungeons[tag] = name
+            RXPData.guideMetaData.enabledDungeons[tag] = name
             addon.step.dungeon = tag
-            addon.dungeonGuides[addon.currentGuideGroup] = true
+            RXPData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
         else
             return addon.error(
                 L("Error parsing guide") .. " "  .. addon.currentGuideName ..
@@ -4808,7 +4806,6 @@ function addon.functions.dungeon(self, text, instance)
     end
 end
 
-addon.enableGroupQuests = {}
 function addon.functions.group(self, ...)
     if type(self) == "string" then -- on parse
         local text, number = ...
@@ -4818,7 +4815,7 @@ function addon.functions.group(self, ...)
 
         addon.step.group = true
         addon.step.solo = false
-        addon.enableGroupQuests[addon.currentGuideGroup] = true
+        RXPData.guideMetaData.enableGroupQuests[addon.currentGuideGroup] = true
         return {hideTooltip = true,textOnly = true, text = text}
     end
 end
