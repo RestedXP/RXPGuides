@@ -2907,13 +2907,22 @@ function addon.GetSubZoneId(zone,x,y)
     end
 
     if subzone then
-       for i = 1,1e6 do
-          local zoneName = C_Map.GetAreaInfo(i)
-          if zoneName and zoneName == subzone then
-             print(zoneName .. ' Subzone ID: ' .. i)
-             return
-          end
-       end
+        local zoneText = GetZoneText()
+        local bestMatchId,bestMatchText
+        for i = 1,1e6 do
+            local zoneName = C_Map.GetAreaInfo(i)
+            if zoneName and zoneName == subzone then
+                print(zoneName .. ' Subzone ID: ' .. i)
+                return
+            elseif zoneText == zoneName then
+                bestMatchId = i
+                bestMatchText = zoneName
+            end
+        end
+        if bestMatchId and bestMatchText then
+            print(bestMatchText .. ' Subzone ID: ' .. bestMatchId)
+            return
+        end
     end
     print('ERROR: Subzone not found')
  end
@@ -2937,10 +2946,11 @@ function addon.GetSubZoneId(zone,x,y)
 
         return element
     end
-    local currentMap = GetSubZoneText()
+    local subzone = GetSubZoneText()
+    local currentMap = GetZoneText()
     if not self.element.step.active or addon.isHidden or type(currentMap) ~= "string" then return end
     local zone = self.element.map
-    if zone == currentMap then
+    if zone == currentMap or zone == subzone then
         addon.SetElementComplete(self)
         self.element.step.completed = true
         addon.updateSteps = true
@@ -2968,10 +2978,11 @@ function addon.functions.subzoneskip(self, text, subZone, flags)
 
     local element = self.element
     local step = element.step
-    local currentMap = GetSubZoneText()
+    local subzone = GetSubZoneText()
+    local currentMap = GetZoneText()
     if not step.active or addon.isHidden or type(currentMap) ~= "number" then return end
     local zone = element.map
-    if (zone == currentMap) == not element.reverse then
+    if (zone == currentMap or zone == subzone) == not element.reverse then
         step.completed = true
         addon.updateSteps = true
     end
