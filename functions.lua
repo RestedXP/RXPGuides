@@ -33,6 +33,9 @@ events.train = {
 events.istrained = events.train
 events.spellmissing = events.train
 events.zone = "ZONE_CHANGED_NEW_AREA"
+events.zoneskip = "ZONE_CHANGED_NEW_AREA"
+events.subzone = "ZONE_CHANGED"
+events.subzoneskip = "ZONE_CHANGED"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
 events.gossipoption = "GOSSIP_SHOW"
@@ -2890,6 +2893,88 @@ function addon.functions.spellmissing(self, text, id)
         addon.updateSteps = true
     end
 
+end
+
+function addon.GetSubZoneId(zone,x,y)
+    local subzone = GetSubZoneText()
+    if zone and x and y then
+       zone = RXP.mapId[zone] or zone
+       x = x / 100
+       y = y / 100
+       subzone = MapUtil.FindBestAreaNameAtMouse(zone,x,y)
+    elseif zone then
+       subzone = zone
+    end
+
+    if subzone then
+       for i = 1,1e6 do
+          local zoneName = C_Map.GetAreaInfo(i)
+          if zoneName and zoneName == subzone then
+             print(zoneName .. ' Subzone ID: ' .. i)
+             return
+          end
+       end
+    end
+    print('ERROR: Subzone not found')
+ end
+
+ function addon.functions.subzone(self, text, subZone)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local mapID = C_Map.GetAreaInfo(tonumber(subZone) or -1)
+        if not (mapID and text) then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid zone ID\n" .. self)
+        end
+        element.map = mapID
+        element.icon = addon.icons["goto"]
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Go to " .. subZone
+        end
+
+        return element
+    end
+    local currentMap = GetSubZoneText()
+    if not self.element.step.active or addon.isHidden or type(currentMap) ~= "string" then return end
+    local zone = self.element.map
+    if zone == currentMap then
+        addon.SetElementComplete(self)
+        self.element.step.completed = true
+        addon.updateSteps = true
+    end
+end
+
+function addon.functions.subzoneskip(self, text, subZone, flags)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local mapID = C_Map.GetAreaInfo(tonumber(subZone) or -1)
+        if not mapID then
+            return addon.error(
+                L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                ": Invalid zone ID\n" .. self)
+        end
+        flags = tonumber(flags) or 0
+        if bit.band(flags,0x1) == 0x1 then
+            element.reverse = true
+        end
+        element.map = mapID
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+    local currentMap = GetSubZoneText()
+    if not step.active or addon.isHidden or type(currentMap) ~= "number" then return end
+    local zone = element.map
+    if (zone == currentMap) == not element.reverse then
+        step.completed = true
+        addon.updateSteps = true
+    end
 end
 
 function addon.functions.zone(self, ...)
