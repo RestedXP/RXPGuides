@@ -47,7 +47,7 @@ step
     .accept 788 >>Accept Cutting Teeth
     .target Gornek
 step << Warrior/Shaman
-    .goto Durotar,42.28,68.48,10,0 
+    .goto Durotar,42.28,68.48,10,0
     .goto Durotar,42.89,69.44 << Warrior
     .goto Durotar,42.39,69.00 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r << Warrior
@@ -212,7 +212,7 @@ step << Warlock
 step << Warlock
 	.goto Durotar,42.85,69.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zureetha|r
-    .turnin 1499 >>Turn in Vile Familiars 
+    .turnin 1499 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
     .target Zureetha Fargaze
 step
@@ -245,8 +245,8 @@ step << Rogue
 step << Rogue
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
-    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue 
-    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue 
+    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
+    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
     .train 53 >> Train |T132090:0|t[Backstab]
     .target Rwag
     .money <0.04
@@ -255,8 +255,8 @@ step << Rogue
     #label Rwag
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
-    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue 
-    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue 
+    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
+    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
     .target Rwag
 step << Warlock
     #completewith Nartok2
@@ -492,7 +492,7 @@ step << Shaman
     .accept 1516 >>Accept Call of Earth
     .goto Durotar,42.40,69.17
     .target Shikrik
-    .target Canaga Earthcaller 
+    .target Canaga Earthcaller
 step << Mage
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mai'ah|r
@@ -2200,7 +2200,7 @@ step
     .accept 827 >>Accept Skull Rock
 step << Hunter
     .goto Durotar,57.2,12.0
-    .spell 1515 >>Tame A Surf Crawler
+    .cast 1515 >>Tame A Surf Crawler
 step
 	#era/som
     #label scorp2
