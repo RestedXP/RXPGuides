@@ -5348,9 +5348,51 @@ step
 	.target Crusader Silverdawn
 step
 	.isOnQuest 14105
+	>>Head to Deathspeaker's Watch
 	>>Kill |cFFFF5722Deathspeaker Kharos|r
 	.complete 14105,1
 	.goto Icecrown,64.2,21.4
+	.target Deathspeaker Kharos
+step
+	.isOnQuest 14101
+	>>Head to the Tualiq Monuments at Hrothgar's Landing.
+	>>Use the |c99ffff99Kvaldir War Horn|r
+	>>Kill |cFFFF5722Drottinn Hrothgar|r
+	.complete 14101,1
+	.use 47006
+	.goto Hrothgar's Landing,50.4,15.6
+	.target Drottinn Hrothgar
+step
+	.isOnQuest 14102
+	>>Head to the Mistcaller's Cave at Hrothgar's Landing.
+	>>Use the |c99ffff99Mistcaller's Charm|r
+	>>Kill |cFFFF5722Mistcaller Yngvar|r
+	.complete 14102,1
+	.use 47009
+	.goto Hrothgar's Landing,43.8,24.6
+	.target Mistcaller Yngvar
+step
+	.isOnQuest 14104
+	>>Head to the deck of Bor's Fury at Hrothgar's Landing.
+	>>Use the |c99ffff99Captured Kvaldir Banner|r
+	>>Kill |cFFFF5722Ornolf The Scarred|r
+	.complete 14104,1
+	.use 47029
+	.goto Hrothgar's Landing,58.6,31.6
+step
+	#completewith next
+	.isOnQuest 14108
+	.vehicle >>Mount an Argent Hippogryph outside the Argent Pavilion.
+step
+	.isOnQuest 14108
+	>>Throw |c99ffff99Flaming Spears|r at the |cFFFF5722North Sea Kraken|r
+	>>Kill |cFFFF5722Kvaldir Deepcallers|r
+	.complete 14108,1
+	.complete 14108,2
+	.use 46954
+	.goto Hrothgar's Landing,46.6,50.6
+	.target North Sea Kraken
+	.target Kvaldir Deepcaller
 step
 	.isOnQuest 14107
 	>>Loot |c99ffff99Discarded Sould Crystals|r on the ground.
@@ -5393,8 +5435,33 @@ step
 	.target Narasi Snowdawn
 	.target Savinia Loresong
 step
+	.isOnQuest 14074
+	>>Head to Hrothgar's Landing
+	>>Loot |cFFDB2EEFStolen Tallstrider Legs|r from the ground or kill |cFFFF5722Kvaldir mobs|r.
+	.complete 14074,1
+	.goto Hrothgar's Landing,43.4,29.8
+	.mob Kvaldir Reaver
+	.mob Kvaldir Mist Binder
+step
+	.isOnQuest 14152
+	>>Head to the Alliance boat in Hrothgar's Landing.
+	>>Kill |cFFFF5722Kvaldir Berserkers|r and |cFFFF5722Kvaldir Harpooners|r.
+	.complete 14152,1
+	.complete 14152,2
+	.goto Hrothgar's Landing,49.97,49.45
+	.mob Kvaldir Berserker
+	.mob Kvaldir Harpooner
+step
+	.isOnQuest 14080
+	>>Head to Hrothgar's Landing
+	>>Kill |cFFFF5722Kvaldir Reavers|r or |cFFFF5722Kvaldir Mist Binder|r.
+	.complete 14080,1
+	.goto Hrothgar's Landing,48.65,32.64
+	.mob Kvaldir Reaver
+	.mob Kvaldir Mist Binder
+step
 	.isOnQuest 14077
-	>>Head to Hrothgar's Landing.
+	>>Head to Hrothgar's Landing
 	>>Use the Confessor's Prayer Book to perform last rites for |cFF00FF25Slain Tualiq Villagers|r.
 	.complete 14077,1
 	.use 46870
@@ -5406,15 +5473,6 @@ step
 	.goto Hrothgar's Landing,57.41,24.37,10,0
 	.goto Hrothgar's Landing,57.10,21.39
 	.target Slain Tualiq Villager
-step
-	.isOnQuest 14152
-	>>Head to the Alliance boat in Hrothgar's Landing.
-	>>Kill |cFFFF5722Kvaldir Berserkers|r and |cFFFF5722Kvaldir Harpooners|r.
-	.complete 14152,1
-	.complete 14152,2
-	.goto Hrothgar's Landing,49.97,49.45
-	.mob Kvaldir Berserker
-	.mob Kvaldir Harpooner
 step
 	.isOnQuest 14112
 	#completewith next
@@ -5448,13 +5506,21 @@ step
 	.goto Icecrown,60.82,23.15
 step
 	.isOnQuest 14076
-	>>Head to Storm Peaks
+	>>Head to The Storm Peaks
 	>>Use the |c99ffff99Earthshaker Drum|r next to the snow mounds.
 	>>Kill |cFFFF5722Deep Jormungars|r that spawn for |cFFDB2EEFJormungar Egg Sacs|r.
 	.complete 14076,1
 	.use 46893
 	.goto The Storm Peaks,43.33,57.74
 	.target Deep Jormungar
+step
+	.isOnQuest 14090
+	>>Head to The Storm Peaks
+	>>Use the |c99ffff99Weighted Net|r to capture |cFFFF5722Snowblind Followers|r.
+	.complete 14090,1
+	.use 46885
+	.goto The Storm Peaks,44,82
+	.target Snowblind Follower
 step
 	>>Return to the Alliance Silver Covenant Pavilion
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
