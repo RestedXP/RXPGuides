@@ -4853,30 +4853,26 @@ step
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 13664 >> Turn in The Black Knight's Fall
 	.target Crusader Rhydalla
-step
-	.goto IcecrownGlacier,69.43,23.02
-	+|cFFFCDC00This is the end of |cFFFF5722The Black Knight's|r Story. There are 2 more quests that unlock next patch in 3.2 (Phase 3) with the opening of |cFF00BCD4Trial of the Crusader|r
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Return to |cFF00FF25Crusader Rhydalla|r then!
-	
-step << skip -- 14016 and 14017 added in 3.2 - Add in Phase 3
+
+step -- 14016 and 14017 added in 3.2 - Add in Phase 3	
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.accept 14016 >> Accept The Black Knight's Curse
 	.target Crusader Rhydalla
-step << skip
+step
 	>>Head east to the Graveyard of the |T236690:0|tArgent Tournament Grounds
 	>>Kill the |cFFFF5722Cult Assassin|r after the short RP 
 	.goto IcecrownGlacier,79.50,23.27
 	.complete 14016,1 -- Investigate the Black Knight's Grave
 	.isOnQuest 14016
 	.target Cult Assassin
-step << skip
+step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 14016 >> Turn in The Black Knight's Grave
 	.accept 14017 >> Accept The Black Knight's Fate
 	.target Crusader Rhydalla
-step << skip
+step
 	>>Fly east to Deathspeaker's Watch
 	>>Kill |cFFFF5722Doctor Kolher|r. Loot him for his |cFF00BCD4Orders|r	
 	>>He patrols around on the platform
@@ -4884,12 +4880,12 @@ step << skip
 	.complete 14017,1 -- Doctor Kohler's Orders (1)
 	.isOnQuest 14017
 	.target Doctor Kolher
-step << skip
+step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 14017 >> Turn in The Black Knight's Grave
 	.target Crusader Rhydalla
-step << skip
+step
 	+|cFFFCDC00This is the end of |cFFFF5722The Black Knight's|r Story!
 ]])
 
