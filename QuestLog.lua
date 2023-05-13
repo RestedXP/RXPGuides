@@ -16,7 +16,8 @@ local lastIndex
 
 function addon.UpdateQuestButton(index)
     if type(index) ~= 'number' or index > maxQuests then
-        index = lastIndex
+        index = lastIndex or
+            _G.GetQuestLogSelection and _G.GetQuestLogSelection()
     end
     --print(maxQuests)
     if not index then return end

@@ -862,6 +862,9 @@ function addon.functions.accept(self, ...)
                 if addon.settings.db.profile.shareQuests then
                     local questLogIndex,isPushable = GetLogIndexForQuestID(id);
                     if questLogIndex and isPushable then
+                        if _G.SelectQuestLogEntry then
+                            _G.SelectQuestLogEntry(questLogIndex)
+                        end
                         _G.QuestLogPushQuest(questLogIndex)
                     end
                 end
