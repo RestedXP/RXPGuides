@@ -999,8 +999,8 @@ function addon:UpdateLoop(diff)
                 event = event .. "/guideCache"
                 for _,guide in pairs(addon.guides) do
                     if not guide.steps then
-                        --print(guide.name)
                         addon:FetchGuide(guide)
+                        --print('f',not guide.steps and guide.name)
                         break
                     end
                 end

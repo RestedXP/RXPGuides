@@ -557,7 +557,7 @@ function addon.LoadEmbeddedGuides()
                     if RXPGuides and RXPGuides.guideMetaData then
                         RXPGuides.guideMetaData[guide.key] = metadata
                     end
-                    return addon.ParseGuide(guideData.groupOrContent)
+                    return tbl
                 end
             else
                 guide, errorMsg, metadata =
