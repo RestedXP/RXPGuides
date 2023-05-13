@@ -5331,23 +5331,60 @@ step
 
 -- The following are added in 3.2 - Implement in Phase 3
 
--- RXPGuides.RegisterGuide([[
--- #wotlk
--- #version 1
--- #group +Argent Tournament
--- #name |cFFFF57223.0|r Crusader Daily Quests
--- ]])
+RXPGuides.RegisterGuide([[
+#wotlk
+#version 1
+#group +Argent Tournament
+#name |cFFFF57223.1|r Crusader Daily Quests
+step
+	#completewith next
+	+|cFFFCDC00Phase 3 introduces the Crusader Daily Quests|r
+	>>To access the Crusader Daily Quests, you must have the achievement:
+	.achievement 2817 << Alliance
+	.achievement 2816 << Horde
+step
+	>>Enter the Argent Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25High Crusader Adelard|r and |cFF00FF25 Crusader Silverdawn|r.
+	.daily 14105,14101,14102,14104 >>Accept Deathspeaker Kharos |c99ffff99OR|r Drottinn Hrothgar |c99ffff99OR|r Mistcaller Yngvar |c99ffff99OR|r Ornolf The Scarred
+	.daily 14108,14107 >>Accept Get Kraken! |c99ffff99OR|r The Fate Of The Fallen
+	.goto Icecrown,69.51,23.15
+	.target High Crusader Adelard
+	.target Crusader Silverdawn
+step
+	.isOnQuest 14105
+	>>Kill |cFFFF5722Deathspeaker Kharos|r
+	.complete 14105,1
+	.goto Icecrown,64.2,21.4
+step
+	.isOnQuest 14107
+	>>Loot |c99ffff99Discarded Sould Crystals|r on the ground.
+	>>Use the |c99ffff99Light-Blessed Relic|r on Fallen Hero's Spirits
+	.collect 47035,6,14107,1,-1
+	.complete 14107,1
+	.use 47033
+	.goto Icecrown,49.19,40.42
+	.target Fallen Hero's Spirit
+step
+	>>Return to the Argent Pavilion
+	.dailyturnin 14105,14101,14102,14104 >>Turn in Deathspeaker Kharos |c99ffff99OR|r Drottinn Hrothgar |c99ffff99OR|r Mistcaller Yngvar |c99ffff99OR|r Ornolf The Scarred
+	.dailyturnin 14108,14107 >>Turn in Get Kraken! |c99ffff99OR|r The Fate Of The Fallen
+	.goto Icecrown,69.51,23.15
+	.target High Crusader Adelard
+	.target Crusader Silverdawn
+step
+	+|cFFFCDC00You have finished all Silver Covenant Daily Quests for today! Reload this Guide tomorrow to continue them.|r
+]])
 
 RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cFFFF57223.0|r Silver Covenant Daily Quests
+#name |cFFFF57223.2|r Silver Covenant Daily Quests
 << Alliance
 
 step
 	#completewith next
-	+|cFFFCDC00Phase 3 introduces the Silver Covenant Daily Quest Hub.|r
+	+|cFFFCDC00Phase 3 introduces the Silver Covenant Daily Quests|r
 	>>To access Silver Covenant Daily Quests, you must be Exalted with the |cFFFCDC00Silver Covenant|r and be a |cFFFF5722Champion|r which gives the achievement:
 	.achievement 3676,1
 step
@@ -5366,7 +5403,7 @@ step
 	.complete 14077,1
 	.use 46870
 	.goto Hrothgar's Landing,51,30,10,0
-	.goto Hrothgar's Landing,50.60,28.28.10,0
+	.goto Hrothgar's Landing,50.60,28.28,10,0
 	.goto Hrothgar's Landing,51.84,26.61,10,0
 	.goto Hrothgar's Landing,54.03,23.98,10,0
 	.goto Hrothgar's Landing,55.65,25.20,10,0
@@ -5425,9 +5462,9 @@ step
 step
 	>>Return to the Alliance Silver Covenant Pavilion
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
-	.turnin 14096
-	.turnin 14152
-	.turnin 14112
+	.dailyturnin 14096 >>Turn in You've Really Done It This Time, Kul
+	.dailyturnin 14074,14152,14080,14077 >>Turn in A Leg Up |c99ffff99OR|r Rescue at Sea |c99ffff99OR|r Stop The Aggressors |c99ffff99OR|r The Light's Mercy
+	.dailyturnin 14076,14090,14112 >>Turn in Breakfast of Champions |c99ffff99OR|r Gormok Wants His Snobolds |c99ffff99OR|r What Do You Feed a Yeti, Anyway?
 	.goto Icecrown,76.26,19.62
 	.target Narasi Snowdawn
 	.target Savinia Loresong
