@@ -15,7 +15,7 @@ local LibDeflate = LibStub("LibDeflate")
 local RXPGuides = addon.RXPGuides
 
 local game = strlower(addon.game)
-local suffix = 1
+--local suffix = 1
 -- Alias addon.locale.Get
 local L = addon.locale.Get
 
@@ -152,14 +152,10 @@ function addon.AddGuide(guide)
             end
         end
     else -- guide doesn't exist, so insert
-        addon.guides[index] = guide
-
-        if list[guide.name] then
-            suffix = suffix + 1
-            guide.name = guide.name .. tostring(suffix)
+        if not addon.guides[index] then
+            tinsert(list.names_, guide.name)
         end
-
-        tinsert(list.names_, guide.name)
+        addon.guides[index] = guide
 
         list[guide.name] = index
         --TODO: remove this part
@@ -549,9 +545,6 @@ function addon.LoadEmbeddedGuides()
             end
             if guide and guide.length == length then
                 --print('w',guide.key)
-                if guide.defaultFor then
-                FF = guide
-                end
                 if (guide.defaultFor and not applies(guide.defaultFor)) then
                     guide.lowPrio = "*" .. group
                     --print(group)

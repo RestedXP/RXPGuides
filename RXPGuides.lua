@@ -929,6 +929,7 @@ function addon:UpdateLoop(diff)
     end
     if addon.isHidden then
         updateError = false
+        --print('hidden')
         return
     elseif updateTick > (tickRate + rand() / 128) and addon.errorCount < 10 then
         updateError = true
@@ -991,7 +992,18 @@ function addon:UpdateLoop(diff)
                 addon.RXPFrame.SetStepFrameAnchor()
                 addon.tickTimer = currentTime
                 event = event .. "/bottomFrame"
+                updateError = false
                 skip = 1
+                return
+            elseif next(addon.guideCache) then
+                event = event .. "/guideCache"
+                for _,guide in pairs(addon.guides) do
+                    if not guide.steps then
+                        --print(guide.name)
+                        addon:FetchGuide(guide)
+                        break
+                    end
+                end
             end
         end
 
@@ -1010,7 +1022,6 @@ function addon:UpdateLoop(diff)
         elseif skip % 4 == 3 and not addon.ProcessMessageQueue() then
             addon.UpdateScheduledTasks()
             addon.ClearQuestCache()
-            tickRate = math.min(1.25/GetFramerate(),0.05)
         elseif skip % 16 == 1 then
             activeQuestUpdate = 0
             local deletedIndexes = {}
@@ -1056,7 +1067,9 @@ function addon.GAToggle()
     end
 end
 
-function addon.AldorScryerCheck(faction)
+addon.stepLogic = {}
+
+function addon.stepLogic.AldorScryerCheck(faction)
     if addon.game == "CLASSIC" then return true end
     local _, _, _, _, _, aldorRep = GetFactionInfoByID(932)
     local _, _, _, _, _, scryerRep = GetFactionInfoByID(934)
@@ -1078,7 +1091,7 @@ function addon.AldorScryerCheck(faction)
     return true
 end
 
-function addon.PhaseCheck(phase)
+function addon.stepLogic.PhaseCheck(phase)
 
     if type(phase) == "table" then phase = phase.phase end
 
@@ -1104,16 +1117,25 @@ function addon.PhaseCheck(phase)
     return true
 end
 
-function addon.IsStepShown(step)
-    return not (step.daily and RXPCData.skipDailies) and
-               (addon.settings.db.profile.northrendLM or not step.questguide) and
-               addon.AldorScryerCheck(step) and addon.PhaseCheck(step) and
-               addon.HardcoreCheck(step) and addon.SeasonCheck(step) and
-               addon.XpRateCheck(step) and addon.FreshAccountCheck(step) and
-               addon.GroupCheck(step) and addon.DungeonCheck(step)
+function addon.stepLogic.DailyCheck(step)
+    return not (step.daily and RXPCData.skipDailies)
 end
 
-function addon.GroupCheck(step)
+function addon.IsStepShown(step,...)
+    local isShown = true
+    local ignoreEntry = {}
+    for _,entry in pairs({...}) do
+        ignoreEntry[entry] = true
+    end
+    for name,check in pairs(addon.stepLogic) do
+        if not ignoreEntry[name] then
+            isShown = isShown and check(step)
+        end
+    end
+    return isShown
+end
+
+function addon.stepLogic.GroupCheck(step)
     if (not addon.settings.db.profile.enableGroupQuests and step.group) or
         (addon.settings.db.profile.enableGroupQuests and step.solo) then
         return false
@@ -1121,7 +1143,7 @@ function addon.GroupCheck(step)
     return true
 end
 
-function addon.SeasonCheck(step)
+function addon.stepLogic.SeasonCheck(step)
     if addon.settings.db.profile.SoM and step.era or step.som and
         not addon.settings.db.profile.SoM or addon.settings.db.profile.SoM and
         addon.settings.db.profile.phase > 2 and step["era/som"] then
@@ -1130,13 +1152,13 @@ function addon.SeasonCheck(step)
     return true
 end
 
-function addon.HardcoreCheck(step)
+function addon.stepLogic.HardcoreCheck(step)
     local hc = addon.settings.db.profile.hardcore
     if step.softcore and hc or step.hardcore and not hc then return false end
     return true
 end
 
-function addon.XpRateCheck(step)
+function addon.stepLogic.XpRateCheck(step)
     if step.xprate and addon.settings.db.profile.enableXpStepSkipping then
         local xpmin, xpmax = 1, 0xfff
 
@@ -1172,7 +1194,7 @@ function addon.IsFreshAccount()
     end
 end
 
-function addon.FreshAccountCheck(step)
+function addon.stepLogic.FreshAccountCheck(step)
     local level = UnitLevel("player")
     local maxLevelFresh = step.fresh and tonumber(step.fresh) or 1000
     local maxLevelVeteran = step.veteran and tonumber(step.veteran) or 1000
@@ -1189,7 +1211,7 @@ function addon.FreshAccountCheck(step)
     return false
 end
 
-function addon.LevelCheck(step)
+function addon.stepLogic.LevelCheck(step)
     if not addon.settings.db.profile.enableXpStepSkipping then return true end
 
     local level = UnitLevel("player")
@@ -1197,7 +1219,7 @@ function addon.LevelCheck(step)
     if level <= maxLevel then return true end
 end
 
-function addon.DungeonCheck(step)
+function addon.stepLogic.DungeonCheck(step)
     if not step.dungeon then
         return true
     elseif addon.settings.db.profile.dungeons[step.dungeon] then

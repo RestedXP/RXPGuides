@@ -7,8 +7,19 @@ local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
 local GetQuestLogTitle = C_QuestLog.GetInfo or _G.GetQuestLogTitle
 
 local L = addon.locale.Get
+local maxQuests = 25
+if addon.game == "CLASSIC" then
+    maxQuests = 20
+end
+
+local lastIndex
 
 function addon.UpdateQuestButton(index)
+    if type(index) ~= 'number' or index > maxQuests then
+        index = lastIndex
+    end
+    --print(maxQuests)
+    if not index then return end
     local button = addon.questLogButton
     local anchor = _G.QuestLogExDetailScrollChildFrame or
                        _G.QuestLogDetailScrollChildFrame
@@ -43,27 +54,35 @@ function addon.UpdateQuestButton(index)
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete,
           frequency, questID = _G.GetQuestLogTitle(index);
     local showButton
-    local function GetGuideList(list)
+    local function GetGuideList(list,qid)
         -- local guides = {}
         local output = ""
         local groups = {}
         local guides = {}
         for _, entry in pairs(list) do
+            local step = entry.step
             if addon.IsGuideActive(entry.guide) and
-                addon.IsStepShown(entry.step) then
+                  addon.IsStepShown(step,"GroupCheck") and
+                  (step.group or addon.stepLogic.GroupCheck(step)) then
                 if not guides[entry.group] then
                     guides[entry.group] = {}
                     table.insert(groups, entry.group)
                 end
-                guides[entry.group][entry.name] = true
-
+                local solo = step.solo or not step.group
+                local grpTbl = guides[entry.group]
+                grpTbl[entry.name] = grpTbl[entry.name] or solo
+                --print(entry.name,entry.group,solo,qid)
             end
         end
         table.sort(groups)
         for _, group in ipairs(groups) do
             local guideList = {}
-            for guide in pairs(guides[group]) do
-                table.insert(guideList, guide)
+            for guide,solo in pairs(guides[group]) do
+                local suffix = ""
+                if not solo then
+                    suffix = L" (Group)"
+                end
+                table.insert(guideList, guide .. suffix)
             end
             table.sort(guideList)
             output = output .. "\n   " .. group .. ":"
@@ -78,7 +97,7 @@ function addon.UpdateQuestButton(index)
         local tooltip = ""
         local separator = ""
         if addon.pickUpList[questID] then
-            local pickUpList = GetGuideList(addon.pickUpList[questID])
+            local pickUpList = GetGuideList(addon.pickUpList[questID],questID)
             if pickUpList ~= "" then
                 tooltip = format("%s%s%s%s|r%s", tooltip, addon.icons.accept,
                                  addon.colors.tooltip,
@@ -88,7 +107,7 @@ function addon.UpdateQuestButton(index)
             end
         end
         if addon.turnInList[questID] then
-            local turnInList = GetGuideList(addon.turnInList[questID])
+            local turnInList = GetGuideList(addon.turnInList[questID],questID)
             if turnInList ~= "" then
                 tooltip = format("%s%s%s%s%s|r%s", tooltip, separator,
                                  addon.icons.turnin, addon.colors.tooltip,
@@ -100,6 +119,7 @@ function addon.UpdateQuestButton(index)
     end
 
     if showButton then
+        lastIndex = index
         button:Show()
     else
         button:Hide()
@@ -120,12 +140,6 @@ function addon.GetQuestLog(QL, LT)
     LT = LT or {}
     local qError
     local eStep
-    local maxQuests
-    if addon.game == "CLASSIC" then
-        maxQuests = 20
-    else
-        maxQuests = 25
-    end
     addon.next = group.next
     local stop
     local lastQuestAccepted
@@ -211,11 +225,16 @@ local function SetItemTooltip(tooltip, tooltipInfo)
     local guideList = questId and addon.turnInList[questId]
 
     if guideList and #guideList > 0 then
-        local prefix = "Item used in guide:\n"
+        local prefix = L"Item used in guide:\n"
         for _, entry in ipairs(guideList) do
+            local step = entry.step
             if addon.IsGuideActive(entry.guide) and
-                addon.IsStepShown(entry.step) then
-                tooltip:AddLine(prefix .. addon.icons.turnin .. entry.name)
+                addon.IsStepShown(step,"GroupCheck") then
+                    local groupText = ""
+                    if step.group then
+                        groupText = L" (Group)"
+                    end
+                tooltip:AddLine(prefix .. addon.icons.turnin .. entry.name .. groupText)
                 prefix = ""
             end
         end

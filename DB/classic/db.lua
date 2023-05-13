@@ -265,10 +265,10 @@ function addon.functions.xpto60alliance(self,...) --PLAYER_XP_UPDATE,QUEST_LOG_U
     local eliteMod = 1
 	--1.90980392157?
 
-    if addon.SeasonCheck(som) then
+    if addon.stepLogic.SeasonCheck(som) then
 		xpMod = 1.4
         eliteMod = 1.7
-		if addon.PhaseCheck(som) then
+		if addon.stepLogic.PhaseCheck(som) then
 			xpMod = xpMod*2/1.4
 			eliteMod = eliteMod*2/1.4
 		end
@@ -397,10 +397,10 @@ function addon.functions.xpto60horde(self,...)
     local eliteMod = 1
 	--1.90980392157?
 
-    if addon.SeasonCheck(som) then
+    if addon.stepLogic.SeasonCheck(som) then
 		xpMod = 1.4
         eliteMod = 1.7
-		if addon.PhaseCheck(som) then
+		if addon.stepLogic.PhaseCheck(som) then
 			xpMod = xpMod*2/1.4
 			eliteMod = eliteMod*2/1.4
 		end

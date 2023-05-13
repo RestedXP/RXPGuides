@@ -630,8 +630,8 @@ function addon.CalculateTotalXP(flags)
     local output = bit.band(flags,0x2) == 0x2
     local ignorePreReqs
     if bit.band(flags,0x1) == 0x1 then
-        local aldor = addon.AldorScryerCheck("Aldor") and 932
-        local scryer = addon.AldorScryerCheck("Scryer") and 934
+        local aldor = addon.stepLogic.AldorScryerCheck("Aldor") and 932
+        local scryer = addon.stepLogic.AldorScryerCheck("Scryer") and 934
         ignorePreReqs = aldor or scryer or 932
     else
         addon.questsDone = {}

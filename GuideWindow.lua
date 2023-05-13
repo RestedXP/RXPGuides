@@ -1340,6 +1340,7 @@ function addon:FetchGuide(guide,arg2)
             addon.guides[index] = newGuide
             addon.guideCache[key] = nil
             guide = newGuide
+            addon:ScheduleTask(addon.UpdateQuestButton)
             addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
         else
             error('Tried to load an invalid Guide')
@@ -1786,9 +1787,9 @@ function BottomFrame.SortSteps()
 end
 
 local function IsGuideActive(guide)
-    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and
-        addon.XpRateCheck(guide) and addon.FreshAccountCheck(guide) and
-        addon.LevelCheck(guide) then
+    if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
+        addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
+        addon.stepLogic.LevelCheck(guide) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end
@@ -1852,7 +1853,7 @@ function RXPFrame:GenerateMenuTable(menu)
         local groupName = group:gsub("^%*","")
         for j, guideName in ipairs(t.names_) do
             local guide = addon.GetGuideTable(groupName, guideName)
-            if not guide then print(guide,group,guideName) end
+            --if not guide then print(guide,group,guideName) end
             if IsGuideActive(guide) then
                 if guide.subgroup then
                     local subgroup = guide.subgroup

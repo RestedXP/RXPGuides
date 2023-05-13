@@ -2544,7 +2544,7 @@ function addon.functions.next(skip, guide)
         --print(guideSkip)
         if addon.game ~= "CLASSIC" then
             local faction = next:match("Aldor") or next:match("Scryer")
-            if not addon.AldorScryerCheck(faction) then
+            if not addon.stepLogic.AldorScryerCheck(faction) then
                 if faction == "Aldor" then
                     next = next:gsub("Scryer", "Aldor")
                 elseif faction == "Scryer" then
@@ -4910,14 +4910,25 @@ end
 function addon.functions.group(self, ...)
     if type(self) == "string" then -- on parse
         local text, number = ...
-        if not number then number = "2" end
+        local generateText
+        if not number then generateText = true end
         text = text or number and
-            fmt("Do NOT attempt this quest unless you are in a group of at least %s",number)
+            fmt(L"Do NOT attempt this quest unless you are in a group of at least %s",number)
 
         addon.step.group = true
         addon.step.solo = false
         RXPData.guideMetaData.enableGroupQuests[addon.currentGuideGroup] = true
-        return {hideTooltip = true,textOnly = true, text = text}
+        return {hideTooltip = true,textOnly = true, text = text, generateText = generateText}
+    end
+
+    local element = self.element
+    if element.generateText then
+        for _,e in pairs(element.step.elements) do
+            if e.tag == "complete" or e.tag == "collect" then
+                element.text = L"This step is meant to be completed as a group, be careful"
+            end
+        end
+        element.generateText = nil
     end
 end
 
