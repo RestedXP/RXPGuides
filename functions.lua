@@ -2777,11 +2777,14 @@ function addon.functions.isQuestComplete(self, ...)
         element.textOnly = true
         return element
     end
-    local id = self.element.questId
+    local element = self.element
+    local step = element.step
+    local id = element.questId
     local event = ...
-    if event ~= "WindowUpdate" and self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug and not addon.isHidden then
-        self.element.step.completed = true
+    if event ~= "WindowUpdate" and step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug and not addon.isHidden then
+        step.completed = true
         addon.updateSteps = true
+        element.tooltipText = "Step skipped: Missing pre-requisites"
     end
 end
 
@@ -2813,6 +2816,7 @@ function addon.functions.isOnQuest(self, text, ...)
 
     local event = ...
     if event ~= "WindowUpdate" and element.step.active and not addon.settings.db.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
+        element.tooltipText = "Step skipped: Missing pre-requisites"
         element.step.completed = true
         addon.updateSteps = true
     end
@@ -2859,6 +2863,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     if event ~= "WindowUpdate" and step.active and not questTurnedIn and not addon.settings.db.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
+        element.tooltipText = "Step skipped: Missing pre-requisites"
     end
 end
 
@@ -3040,7 +3045,7 @@ function addon.functions.zoneskip(self, text, zone, flags)
     local element = self.element
     local step = element.step
     local currentMap = C_Map.GetBestMapForUnit("player")
-    if not step.active or addon.isHidden or type(currentMap) ~= "number" then return end
+    if not step.active or addon.isHidden or (type(currentMap) ~= "number" and not text) then return end
     local zone = element.map
     if (zone == currentMap) == not element.reverse then
         step.completed = true

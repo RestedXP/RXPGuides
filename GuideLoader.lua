@@ -554,7 +554,7 @@ function addon.LoadEmbeddedGuides()
                 end
                 if (guide.defaultFor and not applies(guide.defaultFor)) then
                     guide.lowPrio = "*" .. group
-                    print(group)
+                    --print(group)
                 else
                     guide.lowPrio = nil
                 end
