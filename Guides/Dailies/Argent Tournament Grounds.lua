@@ -5455,6 +5455,29 @@ step
 	.target Narasi Snowdawn
 	.target Savinia Loresong
 step
+	.isOnQuest 14077
+	>>Head to Hrothgar's Landing.
+	>>Use the Confessor's Prayer Book to perform last rites for |cFF00FF25Slain Tualiq Villagers|r.
+	.complete 14077,1
+	.use 46870
+	.goto Hrothgar's Landing,51,30,10,0
+	.goto Hrothgar's Landing,50.60,28.28.10,0
+	.goto Hrothgar's Landing,51.84,26.61,10,0
+	.goto Hrothgar's Landing,54.03,23.98,10,0
+	.goto Hrothgar's Landing,55.65,25.20,10,0
+	.goto Hrothgar's Landing,57.41,24.37,10,0
+	.goto Hrothgar's Landing,57.10,21.39
+	.target Slain Tualiq Villager
+step
+	.isOnQuest 14152
+	>>Head to the Alliance boat in Hrothgar's Landing.
+	>>Kill |cFFFF5722Kvaldir Berserkers|r and |cFFFF5722Kvaldir Harpooners|r.
+	.complete 14152,1
+	.complete 14152,2
+	.goto Hrothgar's Landing,49.97,49.45
+	.mob Kvaldir Berserker
+	.mob Kvaldir Harpooner
+step
 	.isOnQuest 14112
 	#completewith next
 	>>Loot |c99ffff99Fresh Chum|r from the buckets on the Alliance boat.
@@ -5466,15 +5489,6 @@ step
 	>>Kill |cFFFF5722Sharks|r for |cFFDB2EEFNorth Sea Shark Meat|r.
 	.complete 14112,1
 	.use 47036
-step
-	.isOnQuest 14152
-	>>Head to the Alliance boat in Hrothgar's Landing.
-	>>Kill |cFFFF5722Kvaldir Berserkers|r and |cFFFF5722Kvaldir Harpooners|r.
-	.complete 14152,1
-	.complete 14152,2
-	.goto Hrothgar's Landing,49.97,49.45
-	.mob Kvaldir Berserker
-	.mob Kvaldir Harpooner
 step
 	.isOnQuest 14096
 	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
@@ -5494,6 +5508,15 @@ step
 	>>Free |cFF00FF25Kul tge Reckless|r from his cage.
     .complete 14096,1
 	.goto Icecrown,60.82,23.15
+step
+	.isOnQuest 14076
+	>>Head to Storm Peaks
+	>>Use the |c99ffff99Earthshaker Drum|r next to the snow mounds.
+	>>Kill |cFFFF5722Deep Jormungars|r that spawn for |cFFDB2EEFJormungar Egg Sacs|r.
+	.complete 14076,1
+	.use 46893
+	.goto The Storm Peaks,43.33,57.74
+	.target Deep Jormungar
 step
 	>>Return to the Alliance Silver Covenant Pavilion
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
