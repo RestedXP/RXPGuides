@@ -1033,7 +1033,22 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.ReloadGuide()
+                            if value then
+                                addon.ReloadGuide()
+                            end
+                        end
+                    },
+                    soloSelfFound = {
+                        name = L("Solo Self Found Mode"),
+                        desc = L("If this option is enabled, it disables all steps involving trading or Auction House"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.5,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                addon.ReloadGuide()
+                            end
                         end
                     },
                     expansionHeader = {

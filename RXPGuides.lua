@@ -1143,6 +1143,14 @@ function addon.stepLogic.GroupCheck(step)
     return true
 end
 
+function addon.stepLogic.AHCheck(step)
+    if (not addon.settings.db.profile.soloSelfFound and step.ssf) or
+        (addon.settings.db.profile.soloSelfFound and step.ah) then
+        return false
+    end
+    return true
+end
+
 function addon.stepLogic.SeasonCheck(step)
     if addon.settings.db.profile.SoM and step.era or step.som and
         not addon.settings.db.profile.SoM or addon.settings.db.profile.SoM and
