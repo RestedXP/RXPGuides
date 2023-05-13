@@ -12,18 +12,12 @@ step
 	.goto IcecrownGlacier,69.66,22.86
 	.accept 13667 >> Accept The Argent Tournament << Alliance
 	.accept 13668 >> Accept The Argent Tournament << Horde
-	.accept 13820 >> Accept The Blastbolt Brothers -- Remove when TOGC is released
 	.target Justicar Mariel Trueheart
 step
 	#completewith next
 	.goto IcecrownGlacier,72.59,22.61
 	.fp Argent Tournament Grounds >> Get the Argent Tournament Grounds flight path
-	.target Helidan Lightwing	
-step -- Remove step when TOGC is released
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bezzle Blastbolt|r
-	.goto IcecrownGlacier,74.23,24.55
-	.turnin 13820 >> Turn in The Blastbolt Brothers
-	.target Bezzle Blastbolt
+	.target Helidan Lightwing
 step
 	>>Enter the Alliance Silver Covenant Pavilion << Alliance
 	>>Enter the Horde Sunreaver Pavilion << Horde
@@ -5333,28 +5327,6 @@ step << DK
 	.target Zor'be the Bloodletter
 step
 	+|cFFFCDC00You have finished all Champion Daily Quests for today! Reload this Guide tomorrow to continue them.|r
-]])
-
-RXPGuides.RegisterGuide([[
-#wotlk
-#version 1
-#group +Argent Tournament
-#name |cFFFFA500|r|cFFF64D4D###|r Preparation for |cFFFCDC00Phase 3|r Daily Quests |cFFF64D4D###|r
-	step
-	#sticky
-	+|cFFFCDC00Phase 3 introduces 2 new Daily Quest Hubs.|r
-	>>The first is from having the title |cFFEE41D6Crusader|r
-	>>This is gained from the achievement |cFFFCDC00Exalted Argent Champion of the Alliance|r << Alliance
-	>>This is gained from the achievement |cFFFCDC00Exalted Argent Champion of the Horde|r << Horde
-	>>You must have Exalted status with and the right to represent the entire Alliance in the Argent Tournament, plus Exalted status with the Argent Crusade << Alliance
-	>>You must have Exalted status with and the right to represent the entire Horde in the Argent Tournament, plus Exalted status with the Argent Crusade << Horde
-	>>Complete all |cFF00FF252.0 Champion|r Guides for all races. Increase your reputation with all Alliance cities to Exalted by taking the |cFFFF5722Champion's Writ|r reward when completing |cFFFF57223.0 Champion|r Daily Quests << Alliance
-	>>Complete all |cFF00FF252.0 Champion|r Guides for all races. Increase your reputation with all Horde cities to Exalted by taking the |cFFFF5722Champion's Writ|r reward when completing |cFFFF57223.0 Champion|r Daily Quests << Horde
-	step
-	#sticky
-	>>The second is unlocked by being Exalted with the |cFFFCDC00Silver Covenant|r and becoming a |cFFFF5722Champion|r which gives the achievement |cFFFCDC00A Silver Confidant|r << Alliance
-	>>The second is unlocked by being Exalted with the |cFFFCDC00Sunreavers|r and becoming a |cFFFF5722Champion|r which gives the achievement |cFFFCDC00The Sunreavers|r << Horde	
-	>>Simply by doing step 1, this will gain you Exalted over time and as well as |cFFFF5722Champion|r
 ]])
 
 -- The following are added in 3.2 - Implement in Phase 3
