@@ -2,6 +2,7 @@
 
 local _G = _G
 local UnitInRaid = UnitInRaid
+local fmt = string.format
 
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
@@ -270,8 +271,8 @@ local function ChangeStep(srcGuide,srcStep,destGuide,destStep,func)
         return true
     end
 
-    srcGuide = addon.guideIds[srcGuide]
-    destGuide = addon.guideIds[destGuide]
+    srcGuide = addon:FetchGuide(addon.guideIds[srcGuide])
+    destGuide = addon:FetchGuide(addon.guideIds[destGuide])
 
     if not (stepindex(srcGuide) and (not destGuide or stepindex(destGuide))) then
         return
@@ -864,15 +865,10 @@ end
 
 questFrame:SetScript("OnEvent", addon.QuestAutomation)
 
-addon.guideIndexes = {}
 function addon.GetGuideTable(guideGroup, guideName)
-    if guideGroup and addon.guideList[guideGroup] and guideName and
-        addon.guideList[guideGroup][guideName] then
-        local index = addon.guideList[guideGroup][guideName]
-        local guide = addon.guides[index]
-        if guide and not guide.steps then addon.guideIndexes[guide] = index end
-        return guide
-    end
+    local index = guideGroup and guideName and
+        fmt("%s||%s",guideGroup,guideName) or guideGroup or 0
+    return addon.guides[index]
 end
 
 addon.scheduledTasks = {}

@@ -124,20 +124,24 @@ function addon.AddGuide(guide)
 
         addon.settings:UpdateImportStatusHistory(debugText)
     end
-
-    addon.RegisterGroup(guide.group)
-
-    if not addon.guideList[guide.group] then
-        addon.guideList[guide.group] = {}
-        addon.guideList[guide.group].names_ = {}
+    local group = guide.group
+    if guide.lowPrio then
+        group = guide.lowPrio
     end
+    local index = fmt("%s||%s",guide.group,guide.name)
+    addon.RegisterGroup(group,guide.group ~= group and guide.group)
 
-    addon.guideList[guide.group].weight_ = tonumber(guide.groupweight) or addon.guideList[guide.group].weight_
+    if not addon.guideList[group] then
+        addon.guideList[group] = {}
+        addon.guideList[group].names_ = {}
+    end
+    --print(group,guide.group ~= group and guide.group)
+    addon.guideList[group].weight_ = tonumber(guide.groupweight) or addon.guideList[group].weight_
 
-    local list = addon.guideList[guide.group]
+    local list = addon.guideList[group]
 
     if guide.guideId then
-        addon.guideIds[guide.guideId] = guide
+        addon.guideIds[guide.guideId] = index
     end
 
     if loadedGuide then -- guide exists, but new version
@@ -148,7 +152,7 @@ function addon.AddGuide(guide)
             end
         end
     else -- guide doesn't exist, so insert
-        tinsert(addon.guides, guide)
+        addon.guides[index] = guide
 
         if list[guide.name] then
             suffix = suffix + 1
@@ -157,9 +161,9 @@ function addon.AddGuide(guide)
 
         tinsert(list.names_, guide.name)
 
-        list[guide.name] = #addon.guides
-
-        if guide.group:sub(1, 1) ~= "*" and guide.defaultFor and
+        list[guide.name] = index
+        --TODO: remove this part
+        if not guide.lowPrio and guide.defaultFor and
             not addon.defaultGuide then addon.defaultGuide = guide end
     end
 
@@ -545,8 +549,21 @@ function addon.LoadEmbeddedGuides()
             end
             if guide and guide.length == length then
                 --print('w',guide.key)
+                if guide.defaultFor then
+                FF = guide
+                end
+                if (guide.defaultFor and not applies(guide.defaultFor)) then
+                    guide.lowPrio = "*" .. group
+                    print(group)
+                else
+                    guide.lowPrio = nil
+                end
                 errorMsg = not (guide.enabledFor and applies(guide.enabledFor))
                 addon.guideCache[guide.key] = function()
+                    local tbl,_,metadata = addon.ParseGuide(guideData.groupOrContent)
+                    if RXPGuides and RXPGuides.guideMetaData then
+                        RXPGuides.guideMetaData[guide.key] = metadata
+                    end
                     return addon.ParseGuide(guideData.groupOrContent)
                 end
             else
@@ -605,9 +622,19 @@ function addon.LoadCachedGuides()
                 local data = guideData
                 addon.guideCache[key] = function()
                     local g = LibDeflate:DecompressDeflate(data.groupOrContent)
-                    return addon.ParseGuide(g)
+                    local tbl,_,metadata = addon.ParseGuide(g)
+                    if RXPGuides and RXPGuides.guideMetaData then
+                        RXPGuides.guideMetaData[guide.key] = metadata
+                    end
+                    return tbl
                 end
                 guide = guideData.metadata
+                local groupName = guide.group:gsub("^%*","")
+                if (guide.defaultFor and not applies(guide.defaultFor)) then
+                    guide.lowPrio = "*" .. groupName
+                else
+                    guide.lowPrio = nil
+                end
             else
                 guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
                 if guide:find("^--" .. addon.ReadCacheData("string")) then
@@ -878,6 +905,8 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     if not guide.name then error(L('Guide has no name')) end
 
     defaultFor = guide.defaultfor or defaultFor
+    guide.group = guide.group or groupOrContent
+
     if defaultFor then
         local boost58
         if defaultFor == "58Boost" then
@@ -892,7 +921,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
         end
         addon.RegisterGroup(groupOrContent, parentGroup)
         guide.boost58 = boost58
-        guide.group = groupOrContent
+        guide.lowPrio = groupOrContent
     end
 
     guide.displayname = guide.displayname or guide.name
@@ -915,7 +944,8 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             metadata[k] = v
         end
     end
-
+    metadata.lowPrio = nil
+    metadata.defaultFor = defaultFor
     return guide,nil,metadata
 end
 

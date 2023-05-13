@@ -1324,6 +1324,31 @@ addon.emptyGuide = {
     steps = {{hidewindow = true, text = ""}}
 }
 
+function addon:FetchGuide(guide,arg2)
+    if type(guide) == "string" then
+        return addon:FetchGuide(addon.GetGuideTable(guide,arg2))
+    elseif guide and not guide.steps then
+        --print('ok3',guide.key)
+        local key = guide.key
+        local index = fmt("%s||%s",guide.group,guide.name)
+        local oldGuide = guide
+        local newGuide = addon.guideCache[key] and
+                        addon.guideCache[key]()
+        if newGuide then
+            newGuide.menuIndex = oldGuide.menuIndex
+            newGuide.submenuIndex = oldGuide.submenuIndex
+            addon.guides[index] = newGuide
+            addon.guideCache[key] = nil
+            guide = newGuide
+            addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+        else
+            error('Tried to load an invalid Guide')
+            return
+        end
+    end
+    return guide
+end
+
 function addon:LoadGuideTable(guideGroup,guideName)
     return addon:LoadGuide(addon.GetGuideTable(guideGroup, guideName))
 end
@@ -1336,27 +1361,8 @@ function addon:LoadGuide(guide, OnLoad)
         return addon:LoadGuide(addon.emptyGuide)
     end
 
-    if guide and not guide.steps then
-        --print('ok3',guide.key)
-        local key = guide.key
-        local index = addon.guideIndexes[guide]
-        local oldGuide = guide
-        local newGuide = addon.guideCache[key] and
-                        addon.guideCache[key]()
-        if newGuide then
-            newGuide.menuIndex = oldGuide.menuIndex
-            newGuide.submenuIndex = oldGuide.submenuIndex
-            addon.guides[index] = newGuide
-            addon.guideIndexes[oldGuide] = nil
-            addon.guideCache[key] = nil
-            addon.guideIndexes[newGuide] = index
-            guide = newGuide
-            addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
-        else
-            error('Tried to load an invalid Guide')
-            return
-        end
-    end
+    guide = addon:FetchGuide(guide)
+
     if not guide.steps then
         return addon:LoadGuide(addon.emptyGuide)
     end
@@ -1843,8 +1849,10 @@ function RXPFrame:GenerateMenuTable(menu)
         item.subgroups = {}
         item.subtable = {}
         local submenuIndex = 0
+        local groupName = group:gsub("^%*","")
         for j, guideName in ipairs(t.names_) do
-            local guide = addon.GetGuideTable(group, guideName)
+            local guide = addon.GetGuideTable(groupName, guideName)
+            if not guide then print(guide,group,guideName) end
             if IsGuideActive(guide) then
                 if guide.subgroup then
                     local subgroup = guide.subgroup
@@ -1865,7 +1873,7 @@ function RXPFrame:GenerateMenuTable(menu)
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
                     subitem.func = addon.LoadGuideTable
-                    subitem.arg1 = group
+                    subitem.arg1 = guide.group
                     subitem.arg2 = guideName
                     subitem.notCheckable = 1
                     subtable.subweight = tonumber(guide.subweight) or subtable.subweight
@@ -1877,7 +1885,7 @@ function RXPFrame:GenerateMenuTable(menu)
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
                     subitem.func = addon.LoadGuideTable
-                    subitem.arg1 = group
+                    subitem.arg1 = guide.group
                     subitem.arg2 = guideName
                     subitem.notCheckable = 1
                     tinsert(item.menuList, subitem)
