@@ -885,6 +885,7 @@ function addon.UpdateScheduledTasks()
         if type(ref) == "function" then
             if cTime > args[1] then
                 local t = args
+                --print('u',ref,cTime-0.125,unpack(args))
                 addon.scheduledTasks[ref] = nil
                 ref(unpack(t))
                 return
@@ -1004,7 +1005,6 @@ function addon:UpdateLoop(diff)
                 return
             elseif next(addon.guideCache) then
                 event = event .. "/guideCache"
-                skip = 1
                 local length = 0
                 for _,guide in pairs(addon.guides) do
                     if not guide.steps then

@@ -359,8 +359,8 @@ function addon.RegisterGeneratedSteps()
     end
     end
 
-    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
-    addon.targeting:UpdateTargetList(stepTargets)
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
+    addon.targeting:UpdateTargetList(stepTargets, true)
     addon.targeting:CheckNameplates()
 
     for j = i,#hiddenFramePool do
@@ -947,17 +947,15 @@ function addon.SetStep(n, n2, loopback)
                     addon.activeSpells[k] = v
                 end
             end
-
-            addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
-
-            addon.targeting:UpdateTargetList(stepTargets)
-
-            addon.targeting:CheckNameplates()
-
         else
             stepframe:Hide()
         end
     end
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
+
+    addon.targeting:UpdateTargetList(stepTargets)
+
+    addon.targeting:CheckNameplates()
     addon:QueueMessage("RXP_TARGET_LIST_UPDATE",stepUnitscan,stepMobs,stepTargets)
 
     for index in pairs(RXPCData.completedWaypoints) do
@@ -1346,6 +1344,8 @@ function addon:FetchGuide(guide,arg2)
             addon:ScheduleTask(addon.UpdateQuestButton)
             addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
         else
+            --print(guide.name,guide.group)
+            --GG = guide
             error('Tried to load an invalid Guide')
             return
         end

@@ -2200,6 +2200,9 @@ function addon.functions.xp(self, ...)
             if step.active and not step.completed and not(addon.settings.db.profile.northrendLM and not reverseLogic) then
                 addon.updateSteps = true
                 step.completed = true
+                if element.textOnly == true then
+                    element.tooltipText = L"(Step skipped because of xp requirements are not met)"
+                end
             end
         else
             addon.SetElementComplete(self, true)
@@ -2900,10 +2903,13 @@ function addon.functions.spellmissing(self, text, id)
         if not id then return end
         return {id = id, textOnly = true}
     end
-    if not IsPlayerSpell(self.element.id) and self.element.step.active and not addon.isHidden then
+    local element = self.element
+    local step = element.step
+    if not IsPlayerSpell(element.id) and step.active and not addon.isHidden then
         addon.SetElementComplete(self)
-        self.element.step.completed = true
+        step.completed = true
         addon.updateSteps = true
+        element.tooltipText = L"Step skipped: missing required spell"
     end
 
 end

@@ -567,7 +567,27 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     end
 end
 
-function addon.targeting:UpdateTargetList(targets)
+function addon.targeting:UpdateTargetList(targets,addEntries)
+    if addEntries then
+        local update
+        for _,unit in ipairs(targets) do
+            local found
+            for _,src in ipairs(targetList) do
+                if src == unit then
+                    found = true
+                    break
+                end
+            end
+            if not found then
+                update = true
+                tinsert(targetList,unit)
+            end
+        end
+        if not update then return end
+    else
+        targetList = targets
+    end
+
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.db.profile.showTargetingOnProximity then
@@ -578,15 +598,46 @@ function addon.targeting:UpdateTargetList(targets)
         end
     end
 
-    if #targetList == 0 and #targets == 0 then return end
-
-    targetList = targets
-
     self:UpdateMacro()
     self:UpdateTargetFrame()
+
 end
 
-function addon.targeting:UpdateEnemyList(unitscan, mobs)
+function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
+    if addEntries then
+        local update
+        for _,unit in ipairs(unitscan) do
+            local found
+            for _,src in ipairs(unitscanList) do
+                if src == unit then
+                    found = true
+                    break
+                end
+            end
+            if not found then
+                update = true
+                tinsert(unitscanList,unit)
+            end
+        end
+        for _,unit in ipairs(mobs) do
+            local found
+            for _,src in ipairs(mobList) do
+                if src == unit then
+                    found = true
+                    break
+                end
+            end
+            if not found then
+                tinsert(mobList,unit)
+                update = true
+            end
+        end
+        if not update then return end
+    else
+        unitscanList = unitscan
+        mobList = mobs
+    end
+
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.db.profile.showTargetingOnProximity then
@@ -597,13 +648,9 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs)
         end
     end
 
-    -- if #unitscanList == 0 and #unitscan == 0 and #mobList == 0 then return end
-
-    unitscanList = unitscan
-    mobList = mobs
-
     self:UpdateMacro()
     self:UpdateTargetFrame()
+
 end
 
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
