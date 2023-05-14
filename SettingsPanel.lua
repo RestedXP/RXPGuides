@@ -368,13 +368,8 @@ end
 function addon.settings.GetImportedGuides()
     local display = {[""] = ""}
     local importedGuidesFound = false
-    local guides = {}
-    for key in addon.guides do
-        tinsert(guides,key)
-    end
-    table.sort(guides)
-    for _, key in ipairs(guides) do
-        local guide = addon.guides[key]
+
+    for _, guide in pairs(addon.guides) do
         if guide.imported or guide.cache then
             importedGuidesFound = true
             local group, subgroup, name = guide.key:match("^(.*)|(.*)|(.*)")

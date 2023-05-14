@@ -619,6 +619,7 @@ function addon.LoadCachedGuides()
                     if RXPGuides and RXPGuides.guideMetaData then
                         RXPGuides.guideMetaData[guide.key] = metadata
                     end
+                    tbl.imported = true
                     return tbl
                 end
                 guide = guideData.metadata
