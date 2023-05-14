@@ -884,8 +884,9 @@ function addon.UpdateScheduledTasks()
         --print(type(ref))
         if type(ref) == "function" then
             if cTime > args[1] then
+                local t = args
                 addon.scheduledTasks[ref] = nil
-                ref(unpack(args))
+                ref(unpack(t))
                 return
             end
         elseif type(ref) == "table" then
@@ -902,12 +903,18 @@ function addon.UpdateScheduledTasks()
 end
 
 function addon.ScheduleTask(self, ref, ...)
+--    print('w',ref)
     local time = type(self) == "number" and self or GetTime() + 0.125
     --print(type(ref))
     if type(ref) == "table" then
         addon.scheduledTasks[ref] = time
     elseif type(ref) == "function" then
-        addon.scheduledTasks[ref] = {time, ...}
+        local args = addon.scheduledTasks[ref]
+        if args then
+            args[1] = time
+        elseif not args then
+            addon.scheduledTasks[ref] = {time, ...}
+        end
     end
 end
 
@@ -1049,12 +1056,13 @@ function addon:UpdateLoop(diff)
 end
 
 function addon.HardcoreToggle()
+    local guide = addon.currentGuide
+    local hc = addon.settings.db.profile.hardcore
+    print'ok'
     if addon.game == "CLASSIC" then
-        if addon.currentGuide and addon.currentGuide.hardcore then
-            addon.settings.db.profile.hardcore = true
-        else
-            addon.settings.db.profile.hardcore =
-                not addon.settings.db.profile.hardcore
+        if not (guide and
+                (guide.hardcore and hc or guide.softcore and not hc)) then
+            addon.settings.db.profile.hardcore = not hc
         end
         addon.RenderFrame()
     end

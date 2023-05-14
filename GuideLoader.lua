@@ -218,7 +218,7 @@ function addon.RemoveGuide(guideKey)
 
     if next(list.names_) == nil then addon.guideList[loadedGuide.group] = nil end
 
-    addon.RXPFrame.GenerateMenuTable()
+    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
 
     return true
 end
@@ -502,7 +502,7 @@ function addon.ProcessInputBuffer(workerFrame)
         addon.importBufferSize = 0
     end
 
-    addon.RXPFrame.GenerateMenuTable()
+    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
 
     return false
 end

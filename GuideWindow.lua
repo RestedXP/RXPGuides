@@ -75,7 +75,7 @@ function RXPFrame:UpdateVisuals()
     RXPFrame.UpdateScrollBar()
 end
 
-function addon.RenderFrame(themeUpdate)
+function addon.RenderFrame(themeUpdate,isLoading)
     addon:LoadActiveTheme()
 
     -- TODO better handle themes
@@ -90,7 +90,9 @@ function addon.RenderFrame(themeUpdate)
     if not themeUpdate then
         RXPFrame.GenerateMenuTable()
     end
-    if addon.currentGuide then addon.ReloadGuide() end
+    if addon.currentGuide and not isLoading then
+        addon.ReloadGuide()
+    end
 end
 
 
@@ -1367,6 +1369,18 @@ function addon:LoadGuide(guide, OnLoad)
     if not guide.steps then
         return addon:LoadGuide(addon.emptyGuide)
     end
+
+    if guide.hardcore then
+        if not addon.settings.db.profile.hardcore then
+            addon.settings.db.profile.hardcore = true
+            addon.RenderFrame(true,true)
+        end
+        addon.settings.db.profile.SoM = false
+    elseif guide.softcore and addon.settings.db.profile.hardcore then
+            addon.settings.db.profile.hardcore = false
+            addon.RenderFrame(true,true)
+    end
+
     if addon.settings.db.profile.frameHeight then
         RXPFrame:SetHeight(addon.settings.db.profile.frameHeight)
     end
@@ -1587,6 +1601,7 @@ function addon:LoadGuide(guide, OnLoad)
     BottomFrame.UpdateFrame()
     addon.tickTimer = 0
     addon:QueueMessage("RXP_GUIDE_LOADED",guide)
+    addon:ScheduleTask(RXPFrame.GenerateMenuTable)
 end
 
 function addon.ReloadGuide()
@@ -1954,17 +1969,22 @@ function RXPFrame:GenerateMenuTable(menu)
         })
     end
 
-    if addon.game == "CLASSIC" and not(addon.currentGuide and addon.currentGuide.hardcore) then
+    if addon.game == "CLASSIC" then
+        local guide = addon.currentGuide
+        local hc = addon.settings.db.profile.hardcore
         local hctext
-        if addon.settings.db.profile.hardcore then
+        local disabled = guide and (guide.hardcore and hc or guide.softcore and not hc)
+        if hc then
             hctext = L("Deactivate Hardcore mode")
         else
             hctext = L("Activate Hardcore mode")
         end
+
         tinsert(menuList, {
             text = hctext,
             notCheckable = 1,
-            func = addon.HardcoreToggle
+            func = addon.HardcoreToggle,
+            disabled = disabled and 1
         })
     end
 
@@ -2027,7 +2047,7 @@ function RXPFrame:GenerateMenuTable(menu)
     })
 
     -- Only update RXPFrame.menuList by default
-    if not menu then RXPFrame.menuList = menuList end
+    if type(menu) ~= 'table' then RXPFrame.menuList = menuList end
 
     return menuList
 end
