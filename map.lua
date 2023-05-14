@@ -140,6 +140,7 @@ local function PinOnEnter(self)
         local text
         local step = element.step
         local icon = step.icon or ""
+        icon = icon:gsub("(|T.-):%d+:%d+:","%1:0:0:")
         if parent and not parent.hideTooltip then
             text = parent.mapTooltip or parent.tooltipText or parent.text or ""
             local title = step.mapTooltip or step.title or step.index and ("Step " .. step.index) or step.tip and "Tip"
@@ -398,7 +399,7 @@ MapLinePool.creationFunc = function(framePool)
         lborder:SetAlpha(0.5)
 
         self:SetParent(canvas)
-        self:SetFrameStrata("MEDIUM")
+        self:SetFrameStrata(canvas:GetFrameStrata())
         self:SetFrameLevel(2010)
         --self:SetFrameStrata("FULLSCREEN_DIALOG")
         -- self:SetFrameLevel(3000)
