@@ -2201,8 +2201,10 @@ function addon.functions.xp(self, ...)
                 addon.updateSteps = true
                 step.completed = true
                 if element.textOnly == true then
-                    element.tooltipText = L"(Step skipped because of xp requirements are not met)"
+                    element.tooltipText = L"Step skipped: XP requirements are not met"
                 end
+            elseif step.active and not step.completed then
+                element.tooltipText = nil
             end
         else
             addon.SetElementComplete(self, true)
@@ -2796,6 +2798,8 @@ function addon.functions.isQuestComplete(self, ...)
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
     end
 end
 
@@ -2826,10 +2830,13 @@ function addon.functions.isOnQuest(self, text, ...)
 
 
     local event = ...
-    if event ~= "WindowUpdate" and element.step.active and not addon.settings.db.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
+    local step = element.step
+    if event ~= "WindowUpdate" and step.active and not addon.settings.db.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
         element.tooltipText = "Step skipped: Missing pre-requisites"
-        element.step.completed = true
+        step.completed = true
         addon.updateSteps = true
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
     end
 end
 
@@ -2875,6 +2882,8 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
     end
 end
 
@@ -2910,6 +2919,8 @@ function addon.functions.spellmissing(self, text, id)
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = L"Step skipped: missing required spell"
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
     end
 
 end
@@ -3825,6 +3836,11 @@ function addon.functions.maxlevel(self, ...)
         if step.active and not step.completed and not addon.settings.db.profile.northrendLM then
             addon.updateSteps = true
             step.completed = true
+            if step.textOnly then
+                step.tooltipText = L"Step skipped: XP requirements are not met"
+            end
+        elseif step.active and not step.completed then
+            element.tooltipText = nil
         end
         local guide = addon.currentGuide
         if ref and guide.labels[ref] then

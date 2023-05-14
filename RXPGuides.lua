@@ -1183,7 +1183,7 @@ function addon.stepLogic.HardcoreCheck(step)
 end
 
 function addon.stepLogic.XpRateCheck(step)
-    if step.xprate and addon.settings.db.profile.enableXpStepSkipping then
+    if step.xprate then
         local xpmin, xpmax = 1, 0xfff
 
         step.xprate:gsub("^([<>]?)%s*(%d+%.?%d*)%-?(%d*%.?%d*)",
