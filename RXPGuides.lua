@@ -1004,11 +1004,17 @@ function addon:UpdateLoop(diff)
                 return
             elseif next(addon.guideCache) then
                 event = event .. "/guideCache"
+                skip = 1
+                local length = 0
                 for _,guide in pairs(addon.guides) do
                     if not guide.steps then
+                        if length > 45000 then
+                            --print(length)
+                            break
+                        end
                         addon:FetchGuide(guide)
+                        length = length + (tonumber(guide.length) or 0)
                         --print('f',not guide.steps and guide.name)
-                        break
                     end
                 end
             end
@@ -1058,13 +1064,15 @@ end
 function addon.HardcoreToggle()
     local guide = addon.currentGuide
     local hc = addon.settings.db.profile.hardcore
-    print'ok'
+
     if addon.game == "CLASSIC" then
         if not (guide and
                 (guide.hardcore and hc or guide.softcore and not hc)) then
             addon.settings.db.profile.hardcore = not hc
         end
-        addon.RenderFrame()
+        if hc ~= addon.settings.db.profile.hardcore then
+            addon.RenderFrame()
+        end
     end
 end
 

@@ -980,10 +980,11 @@ function addon.SetStep(n, n2, loopback)
 end
 
 function CurrentStepFrame.EventHandler(self, event, ...)
-    -- print(event,self.index,self.element.tag)
+    --print(event,self.index,self.element.tag)
     if addon.isHidden then
         return
     elseif self.callback and self.step and self.step.active then
+        --print(self.callback,self.element.tag)
         self.callback(self, event, ...)
     else
         print('!!!') -- ok

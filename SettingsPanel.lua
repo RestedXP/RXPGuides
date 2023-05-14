@@ -92,7 +92,7 @@ function addon.settings:InitializeSettings()
             SoM = 1,
             anchorOrientation = "top",
             chromieTime = "auto",
-            enableXpStepSkipping = addon.game ~= "CLASSIC",
+            --enableXpStepSkipping = addon.game ~= "CLASSIC",
             enableAutomaticXpRate = true,
             autoLoadStartingGuides = true,
 

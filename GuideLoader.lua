@@ -162,7 +162,6 @@ function addon.AddGuide(guide)
         if not guide.lowPrio and guide.defaultFor and
             not addon.defaultGuide then addon.defaultGuide = guide end
     end
-
     return true
 end
 
@@ -551,9 +550,10 @@ function addon.LoadEmbeddedGuides()
                 else
                     guide.lowPrio = nil
                 end
-                errorMsg = not (guide.enabledFor and applies(guide.enabledFor))
+                errorMsg = not (not guide.enabledFor or applies(guide.enabledFor))
+                --print(guide,errorMsg,guide.enabledFor)
                 addon.guideCache[guide.key] = function()
-                    local tbl,_,metadata = addon.ParseGuide(guideData.groupOrContent)
+                    local tbl = addon.ParseGuide(guideData.groupOrContent)
                     if RXPGuides and RXPGuides.guideMetaData then
                         RXPGuides.guideMetaData[guide.key] = metadata
                     end
@@ -615,7 +615,7 @@ function addon.LoadCachedGuides()
                 local data = guideData
                 addon.guideCache[key] = function()
                     local g = LibDeflate:DecompressDeflate(data.groupOrContent)
-                    local tbl,_,metadata = addon.ParseGuide(g)
+                    local tbl = addon.ParseGuide(g)
                     if RXPGuides and RXPGuides.guideMetaData then
                         RXPGuides.guideMetaData[guide.key] = metadata
                     end
