@@ -18,7 +18,6 @@ for faction, factionCsv in files.items():
     csvreader = csv.DictReader(csvfile)
 
     headers = next(csvreader)
-    print('Parsing file with: ' + ', '.join(headers))
     excluded_count = 0
     included_count = 0
     #Name,Zone,Level,Classification,Type,Movement,Notes/Special abilities,Line
@@ -41,8 +40,10 @@ for faction, factionCsv in files.items():
         minLevel = mob['Level'].split('-')[0]
         maxLevel = mob['Level'].split('-')[1]
 
+      notes = mob['Notes/Abilities'].replace('"', '\\"')
+
       db[faction][mob['Zone']][mob['Name']].append(
-        f"        {{ MinLevel = {minLevel}, MaxLevel = {maxLevel}, Classification = \"{mob['Classification']}\", Movement = \"{mob['Movement']}\", Notes = \"{mob['Notes/Abilities']}\", Location = \"{mob['Line']}\" }},\n"
+        f"        {{ MinLevel = {minLevel}, MaxLevel = {maxLevel}, Classification = \"{mob['Classification']}\", Movement = \"{mob['Movement']}\", Notes = \"{notes}\", Location = \"{mob['Line']}\" }},\n"
       )
 
       included_count += 1
