@@ -18,7 +18,6 @@ themes['Default'] = {
     author = "RestedXP",
     bgTextures = {
         edge = "Interface/BUTTONS/WHITE8X8",
-        guideName = "Interface/BUTTONS/WHITE8X8",
         bottom = "Interface/BUTTONS/WHITE8X8",
     },
     edges = {

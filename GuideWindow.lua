@@ -64,7 +64,7 @@ function RXPFrame:UpdateVisuals()
     GuideName:SetBackdrop(RXPFrame.backdrop.guideName)
     GuideName:SetBackdropColor(unpack(addon.colors.background))
     Footer:ClearBackdrop()
-    Footer:SetBackdrop(RXPFrame.backdrop.edge)
+    Footer:SetBackdrop(RXPFrame.backdrop.guideName)
     Footer:SetBackdropColor(unpack(addon.colors.background))
     Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
@@ -121,11 +121,8 @@ RXPFrame.backdrop.edge = {
 }
 
 RXPFrame.backdrop.guideName = {
-    bgFile = "Interface/BUTTONS/WHITE8X8",
     edgeFile = addon.GetTexture("rxp-borders"),
-    tile = true,
     edgeSize = 8,
-    tileSize = 8,
     insets = {left = 4, right = 2, top = 2, bottom = 4}
 }
 
