@@ -5354,6 +5354,20 @@ step
 	.goto Icecrown,64.2,21.4
 	.target Deathspeaker Kharos
 step
+	#completewith next
+	.isOnQuest 14108
+	.goto Icecrown,69.79,22.21,5 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cFF00FF25Stabled Argent Hippogryph|r outside the Argent Pavilion.
+	.skipgossip
+step
+	.isOnQuest 14108
+	>>Throw |c99ffff99Flaming Spears|r at the |cFFFF5722North Sea Kraken|r and |cFFFF5722Kvaldir Deepcallers|r.
+	.complete 14108,1
+	.complete 14108,2
+	.use 46954
+	.goto Hrothgar's Landing,46.6,50.6
+	.target North Sea Kraken
+	.target Kvaldir Deepcaller
+step
 	.isOnQuest 14101
 	>>Head to the Tualiq Monuments at Hrothgar's Landing.
 	>>Use the |c99ffff99Kvaldir War Horn|r
@@ -5379,20 +5393,6 @@ step
 	.complete 14104,1
 	.use 47029
 	.goto Hrothgar's Landing,58.6,31.6
-step
-	#completewith next
-	.isOnQuest 14108
-	.vehicle >>Mount an Argent Hippogryph outside the Argent Pavilion.
-step
-	.isOnQuest 14108
-	>>Throw |c99ffff99Flaming Spears|r at the |cFFFF5722North Sea Kraken|r
-	>>Kill |cFFFF5722Kvaldir Deepcallers|r
-	.complete 14108,1
-	.complete 14108,2
-	.use 46954
-	.goto Hrothgar's Landing,46.6,50.6
-	.target North Sea Kraken
-	.target Kvaldir Deepcaller
 step
 	.isOnQuest 14107
 	>>Loot |c99ffff99Discarded Sould Crystals|r on the ground.
