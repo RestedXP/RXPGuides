@@ -1631,7 +1631,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                 if not element.element then
                     element.element = element
                 end
-                RXPGuides[addon.currentGuide.group][element.tag](element,
+                addon.functions[element.tag](element,
                                                             "WindowUpdate")
                 if element.requestFromServer then
                     addon.updateStepText = true
