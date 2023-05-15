@@ -87,27 +87,24 @@ for name,id in pairs(addon.mapId) do
 end
 
 local dungeonList = {
-    ["RFC"] = "Ragefire Chasm",
-    ["DM"] = "The Deadmines",
-    ["WC"] = "Wailing Caverns",
-    ["BFD"] = "Black Fathom Deeps",
-    ["STOCKS"] = "The Stockades",
-    ["GNOMER"] = "Gnomeregan",
-    ["RFK"] = "Razorfen Kraul",
-    ["SM"] = "Scarlet Monastery",
-    ["RFD"] = "Razorfen Downs",
-    ["ULDA"] = "Uldaman",
-    ["ZF"] = "Zul'Farrak",
-    ["MARA"] = "Maraudon",
-    ["ST"] = "Sunken Temple",
-    ["BRD"] = "Blackrock Depths",
-    ["DME"] = "Dire Maul East",
-    ["DMW"] = "Dire Maul West",
-    ["DMN"] = "Dire Maul North",
-    ["SCHOLO"] = "Scholomance",
-    ["STRAT"] = "Stratholme",
-    ["UBRS"] = "Upper Blackrock Spire",
-    ["LBRS"] = "Lower Blackrock Spire",
+    ["RFC"] = 2437,
+    ["DM"] = 1581,
+    ["WC"] = 718,
+    ["BFD"] = 719,
+    ["STOCKS"] = 717,
+    ["GNOMER"] = 133,
+    ["RFK"] = 491,
+    ["SM"] = 796,
+    ["RFD"] = 722,
+    ["ULDA"] = 1337,
+    ["ZF"] = 978,
+    ["MARA"] = 2100,
+    ["ST"] = 1417,
+    ["BRD"] = 1584,
+    ["DME"] = 2557,
+    ["SCHOLO"] = 2057,
+    ["STRAT"] = 2017,
+    ["LBRS"] = 1583,
 }
 
 local alternateNames = {
@@ -115,6 +112,8 @@ local alternateNames = {
     ["VC"] = "DM",
     ["STOCKADES"] = "STOCKS",
     ["TEMPLE OF ATAL'HAKKAR"] = "ST",
+    ["DMW"] = "DME",
+    ["DMN"] = "DME",
 }
 
 for tag,name in pairs(dungeonList) do
@@ -126,10 +125,18 @@ local L = addon.locale.Get
 function addon.GetDungeonName(instance)
     local upper = strupper(instance)
     if dungeonList[upper] then
-        return L(dungeonList[upper]),upper
+        local name = dungeonList[upper]
+        if type(name) == "number" then
+            name = C_Map.GetAreaInfo(name)
+        end
+        return L(name),upper
     elseif alternateNames[upper] then
-        local tag = alternateNames[upper]
-        return L(dungeonList[tag]),tag
+        local tag = alternateNames[upper] or false
+        local name = dungeonList[tag]
+        if type(name) == "number" then
+            name = C_Map.GetAreaInfo(name)
+        end
+        return L(name),tag
     end
 end
 

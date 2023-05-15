@@ -565,6 +565,8 @@ function addon:CreateMetaDataTable(wipe)
     RXPData.guideMetaData = guideMetaData
     guideMetaData.dungeonGuides = guideMetaData.dungeonGuides or {}
     guideMetaData.enabledDungeons = guideMetaData.enabledDungeons or {}
+    guideMetaData.enabledDungeons.Horde = {}
+    guideMetaData.enabledDungeons.Alliance = {}
     guideMetaData.enableGroupQuests = guideMetaData.enableGroupQuests or {}
 end
 

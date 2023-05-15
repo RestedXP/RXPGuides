@@ -1145,7 +1145,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "multiselect",
                         width = optionsWidth,
                         order = 2.9,
-                        values = RXPData.guideMetaData.enabledDungeons,
+                        values = RXPData.guideMetaData.enabledDungeons[addon.player.faction],
                         get = function(_,key)
                             return addon.settings.db.profile.dungeons[key]
                         end,
@@ -1154,7 +1154,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return not next(RXPData.guideMetaData.enabledDungeons)
+                            return not next(RXPData.guideMetaData.enabledDungeons[addon.player.faction])
                         end,
                     },
                     questCleanupHeader = {

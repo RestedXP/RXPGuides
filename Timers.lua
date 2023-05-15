@@ -126,7 +126,7 @@ function addon.StartTimer(duration,label,options)
     return bar
 end
 
-local faction = UnitFactionGroup("player")
+
 local flightInfo = {}
 addon.flightInfo = flightInfo
 local nodeHash = {}
@@ -188,6 +188,7 @@ function addon.GetFlightHash(index,level)
 end
 
 local function GetFlightTime(index)
+    local faction = addon.player.faction
     local dest = flightInfo.nodeHash[addon.GetFlightHash(index)]
     local src = flightInfo.currentFP
     local FPDB = addon.FPDB[faction]

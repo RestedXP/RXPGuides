@@ -1,6 +1,5 @@
 local addonName, addon = ...
 
-local faction = UnitFactionGroup("player")
 local localizedClass, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
 local fmt, tinsert = string.format,tinsert
@@ -1743,7 +1742,7 @@ function addon.functions.fp(self, ...)
         end
 
         if location and location ~= "" and location:find("%w+") then
-            for id, fp in pairs(addon.FPDB[faction]) do
+            for id, fp in pairs(addon.FPDB[addon.player.faction]) do
                 if strupper(fp.name):find(strupper(location)) then
                     element.fpId = id
                     break
@@ -1769,11 +1768,11 @@ function addon.functions.fp(self, ...)
             local currentMap = C_Map.GetBestMapForUnit("player")
             local validFP = false
             if addon.FPbyZone then
-                for mapId,flightId in pairs(addon.FPbyZone[faction]) do
+                for mapId,flightId in pairs(addon.FPbyZone[addon.player.faction]) do
                     if currentMap == mapId then
                         validFP = true
                         if not RXPCData.flightPaths[flightId] then
-                            RXPCData.flightPaths[flightId] = addon.FPDB[faction][flightId] and addon.FPDB[faction][flightId].name
+                            RXPCData.flightPaths[flightId] = addon.FPDB[addon.player.faction][flightId] and addon.FPDB[addon.player.faction][flightId].name
                         end
                     end
                 end
@@ -1825,7 +1824,7 @@ function addon.functions.fly(self, ...)
         addon:TAXIMAP_OPENED()
         for i = 1, NumTaxiNodes() do
             local id = addon.flightInfo[i]
-            local name = id and addon.FPDB[faction][id] and addon.FPDB[faction][id].name
+            local name = id and addon.FPDB[addon.player.faction][id] and addon.FPDB[addon.player.faction][id].name
             if name and strupper(name):find(element.location) then
                 local button = getglobal("TaxiButton" .. i)
                 if button then
@@ -4921,7 +4920,7 @@ function addon.functions.dungeon(self, text, instance)
     if type(self) == "string" and addon.GetDungeonName then -- on parse
         local name, tag = addon.GetDungeonName(instance)
         if tag then
-            RXPData.guideMetaData.enabledDungeons[tag] = name
+            RXPData.guideMetaData.enabledDungeons[addon.player.faction][tag] = name
             addon.step.dungeon = tag
             RXPData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
         else

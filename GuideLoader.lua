@@ -5,7 +5,7 @@ addon.guideIds = {}
 
 local class = addon.player.class
 local race = addon.player.race
-local faction = addon.player.faction
+
 local fmt, tremove, tinsert = string.format, tremove, table.insert
 local strchar = string.char
 local strbyte = string.byte
@@ -26,18 +26,19 @@ local function applies(textEntry,customClass)
     if textEntry then
         local function parse(text)
             local isMatch = false
-            text = text:gsub("(!?)%(%s*(.+)%s*%)",function(op,m)
+            text = text:gsub("(!?)%(%s*(.-)%s*%)",function(op,m)
                 if parse(m) ~= (op == "!") then
                     return class
                 else
                     return "NULL"
                 end
             end)
+            local faction = addon.player.faction
+            local playerLevel = UnitLevel("player") or 1
             for str in string.gmatch(text, "[^/]+") do
                 local v = true
                 for entry in string.gmatch(str, "!?[%w%d]+") do
                     local level = tonumber(entry) or 0xfff
-                    local playerLevel = UnitLevel("player") or 1
                     local state = false
                     local gendercheck
                     if entry:sub(1, 1) == "!" then
