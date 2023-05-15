@@ -1792,7 +1792,7 @@ step << Hunter
 .target Wenikee Boltbucket
 >>Talk to |cFF00FF25Wenikee Boltbucket|r
     .turnin 3921 >> Turn in Wenikee Boltbucket
-step
+step << Hunter
 	>>Go to the 2nd floor of the tower
     .goto The Barrens,48.12,5.42
 .target Kadrak
