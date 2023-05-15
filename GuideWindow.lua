@@ -100,7 +100,6 @@ RXPFrame.backdrop = {}
 
 RXPFrame.defaultBackground = {
     edge = "Interface/BUTTONS/WHITE8X8",
-    guideName = "Interface/BUTTONS/WHITE8X8",
     bottom = "Interface/BUTTONS/WHITE8X8",
 }
 
