@@ -64,7 +64,7 @@ function RXPFrame:UpdateVisuals()
     GuideName:SetBackdrop(RXPFrame.backdrop.guideName)
     GuideName:SetBackdropColor(unpack(addon.colors.background))
     Footer:ClearBackdrop()
-    Footer:SetBackdrop(RXPFrame.backdrop.edge)
+    Footer:SetBackdrop(RXPFrame.backdrop.guideName)
     Footer:SetBackdropColor(unpack(addon.colors.background))
     Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
@@ -75,7 +75,7 @@ function RXPFrame:UpdateVisuals()
     RXPFrame.UpdateScrollBar()
 end
 
-function addon.RenderFrame(themeUpdate)
+function addon.RenderFrame(themeUpdate,isLoading)
     addon:LoadActiveTheme()
 
     -- TODO better handle themes
@@ -90,7 +90,9 @@ function addon.RenderFrame(themeUpdate)
     if not themeUpdate then
         RXPFrame.GenerateMenuTable()
     end
-    if addon.currentGuide then addon.ReloadGuide() end
+    if addon.currentGuide and not isLoading then
+        addon.ReloadGuide()
+    end
 end
 
 
@@ -98,7 +100,6 @@ RXPFrame.backdrop = {}
 
 RXPFrame.defaultBackground = {
     edge = "Interface/BUTTONS/WHITE8X8",
-    guideName = "Interface/BUTTONS/WHITE8X8",
     bottom = "Interface/BUTTONS/WHITE8X8",
 }
 
@@ -119,11 +120,8 @@ RXPFrame.backdrop.edge = {
 }
 
 RXPFrame.backdrop.guideName = {
-    bgFile = "Interface/BUTTONS/WHITE8X8",
     edgeFile = addon.GetTexture("rxp-borders"),
-    tile = true,
     edgeSize = 8,
-    tileSize = 8,
     insets = {left = 4, right = 2, top = 2, bottom = 4}
 }
 
@@ -214,6 +212,7 @@ local function SetStepFrameAnchor()
         if frame:GetBottom() * scale < 0 then SetTop() end
         if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
     end
+    addon:SortTimers()
 
 end
 
@@ -357,8 +356,8 @@ function addon.RegisterGeneratedSteps()
     end
     end
 
-    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
-    addon.targeting:UpdateTargetList(stepTargets)
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
+    addon.targeting:UpdateTargetList(stepTargets, true)
     addon.targeting:CheckNameplates()
 
     for j = i,#hiddenFramePool do
@@ -945,17 +944,15 @@ function addon.SetStep(n, n2, loopback)
                     addon.activeSpells[k] = v
                 end
             end
-
-            addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
-
-            addon.targeting:UpdateTargetList(stepTargets)
-
-            addon.targeting:CheckNameplates()
-
         else
             stepframe:Hide()
         end
     end
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
+
+    addon.targeting:UpdateTargetList(stepTargets)
+
+    addon.targeting:CheckNameplates()
     addon:QueueMessage("RXP_TARGET_LIST_UPDATE",stepUnitscan,stepMobs,stepTargets)
 
     for index in pairs(RXPCData.completedWaypoints) do
@@ -978,10 +975,11 @@ function addon.SetStep(n, n2, loopback)
 end
 
 function CurrentStepFrame.EventHandler(self, event, ...)
-    -- print(event,self.index,self.element.tag)
+    --print(event,self.index,self.element.tag)
     if addon.isHidden then
         return
     elseif self.callback and self.step and self.step.active then
+        --print(self.callback,self.element.tag)
         self.callback(self, event, ...)
     else
         print('!!!') -- ok
@@ -1324,6 +1322,38 @@ addon.emptyGuide = {
     steps = {{hidewindow = true, text = ""}}
 }
 
+function addon:FetchGuide(guide,arg2)
+    if type(guide) == "string" then
+        return addon:FetchGuide(addon.GetGuideTable(guide,arg2))
+    elseif guide and not guide.steps then
+        --print('ok3',guide.key)
+        local key = guide.key
+        local index = fmt("%s||%s",guide.group,guide.name)
+        local oldGuide = guide
+        local newGuide = addon.guideCache[key] and
+                        addon.guideCache[key]()
+        if newGuide then
+            newGuide.menuIndex = oldGuide.menuIndex
+            newGuide.submenuIndex = oldGuide.submenuIndex
+            addon.guides[index] = newGuide
+            addon.guideCache[key] = nil
+            guide = newGuide
+            addon:ScheduleTask(addon.UpdateQuestButton)
+            addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+        else
+            --print(guide.name,guide.group)
+            --GG = guide
+            error('Tried to load an invalid Guide')
+            return
+        end
+    end
+    return guide
+end
+
+function addon:LoadGuideTable(guideGroup,guideName)
+    return addon:LoadGuide(addon.GetGuideTable(guideGroup, guideName))
+end
+
 function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
 
@@ -1332,15 +1362,21 @@ function addon:LoadGuide(guide, OnLoad)
         return addon:LoadGuide(addon.emptyGuide)
     end
 
-    if guide and not guide.steps and guide.tableIndex then
-        --print('ok3',guide.key)
-        local key = guide.key
-        local index = guide.tableIndex
-        guide.tableIndex = nil
-        guide = addon.guideCache[key] and
-                        addon.guideCache[key]()
-        addon.guides[index] = guide
-        addon.guideCache[key] = nil
+    guide = addon:FetchGuide(guide)
+
+    if not guide.steps then
+        return addon:LoadGuide(addon.emptyGuide)
+    end
+
+    if guide.hardcore then
+        if not addon.settings.db.profile.hardcore then
+            addon.settings.db.profile.hardcore = true
+            addon.RenderFrame(true,true)
+        end
+        addon.settings.db.profile.SoM = false
+    elseif guide.softcore and addon.settings.db.profile.hardcore then
+            addon.settings.db.profile.hardcore = false
+            addon.RenderFrame(true,true)
     end
 
     if addon.settings.db.profile.frameHeight then
@@ -1563,6 +1599,7 @@ function addon:LoadGuide(guide, OnLoad)
     BottomFrame.UpdateFrame()
     addon.tickTimer = 0
     addon:QueueMessage("RXP_GUIDE_LOADED",guide)
+    addon:ScheduleTask(RXPFrame.GenerateMenuTable)
 end
 
 function addon.ReloadGuide()
@@ -1594,7 +1631,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                 if not element.element then
                     element.element = element
                 end
-                RXPGuides[addon.currentGuide.group][element.tag](element,
+                addon.functions[element.tag](element,
                                                             "WindowUpdate")
                 if element.requestFromServer then
                     addon.updateStepText = true
@@ -1763,9 +1800,9 @@ function BottomFrame.SortSteps()
 end
 
 local function IsGuideActive(guide)
-    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and
-        addon.XpRateCheck(guide) and addon.FreshAccountCheck(guide) and
-        addon.LevelCheck(guide) then
+    if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
+        addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
+        addon.stepLogic.LevelCheck(guide) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end
@@ -1826,8 +1863,10 @@ function RXPFrame:GenerateMenuTable(menu)
         item.subgroups = {}
         item.subtable = {}
         local submenuIndex = 0
+        local groupName = group:gsub("^%*","")
         for j, guideName in ipairs(t.names_) do
-            local guide = addon.GetGuideTable(group, guideName)
+            local guide = addon.GetGuideTable(groupName, guideName)
+            --if not guide then print(guide,group,guideName) end
             if IsGuideActive(guide) then
                 if guide.subgroup then
                     local subgroup = guide.subgroup
@@ -1847,8 +1886,9 @@ function RXPFrame:GenerateMenuTable(menu)
                     end
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
-                    subitem.func = addon.LoadGuide
-                    subitem.arg1 = guide
+                    subitem.func = addon.LoadGuideTable
+                    subitem.arg1 = guide.group
+                    subitem.arg2 = guideName
                     subitem.notCheckable = 1
                     subtable.subweight = tonumber(guide.subweight) or subtable.subweight
                     tinsert(subtable.menuList, subitem)
@@ -1858,8 +1898,9 @@ function RXPFrame:GenerateMenuTable(menu)
                     guide.submenuIndex = submenuIndex
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
-                    subitem.func = addon.LoadGuide
-                    subitem.arg1 = guide
+                    subitem.func = addon.LoadGuideTable
+                    subitem.arg1 = guide.group
+                    subitem.arg2 = guideName
                     subitem.notCheckable = 1
                     tinsert(item.menuList, subitem)
                 end
@@ -1926,17 +1967,22 @@ function RXPFrame:GenerateMenuTable(menu)
         })
     end
 
-    if addon.game == "CLASSIC" and not(addon.currentGuide and addon.currentGuide.hardcore) then
+    if addon.game == "CLASSIC" then
+        local guide = addon.currentGuide
+        local hc = addon.settings.db.profile.hardcore
         local hctext
-        if addon.settings.db.profile.hardcore then
+        local disabled = guide and (guide.hardcore and hc or guide.softcore and not hc)
+        if hc then
             hctext = L("Deactivate Hardcore mode")
         else
             hctext = L("Activate Hardcore mode")
         end
+
         tinsert(menuList, {
             text = hctext,
             notCheckable = 1,
-            func = addon.HardcoreToggle
+            func = addon.HardcoreToggle,
+            disabled = disabled and 1
         })
     end
 
@@ -1999,7 +2045,7 @@ function RXPFrame:GenerateMenuTable(menu)
     })
 
     -- Only update RXPFrame.menuList by default
-    if not menu then RXPFrame.menuList = menuList end
+    if type(menu) ~= 'table' then RXPFrame.menuList = menuList end
 
     return menuList
 end

@@ -2,6 +2,7 @@
 
 local _G = _G
 local UnitInRaid = UnitInRaid
+local fmt = string.format
 
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
@@ -270,8 +271,8 @@ local function ChangeStep(srcGuide,srcStep,destGuide,destStep,func)
         return true
     end
 
-    srcGuide = addon.guideIds[srcGuide]
-    destGuide = addon.guideIds[destGuide]
+    srcGuide = addon:FetchGuide(addon.guideIds[srcGuide])
+    destGuide = addon:FetchGuide(addon.guideIds[destGuide])
 
     if not (stepindex(srcGuide) and (not destGuide or stepindex(destGuide))) then
         return
@@ -557,15 +558,15 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
 end
 
 function addon:CreateMetaDataTable(wipe)
-    if wipe then
+    if wipe or addon.release ~= RXPData.release then
         RXPData.guideMetaData = nil
     end
     local guideMetaData = RXPData.guideMetaData or {}
     RXPData.guideMetaData = guideMetaData
-    guideMetaData[class] = guideMetaData[class] or {}
-    guideMetaData[class][race] = guideMetaData[class][race] or {}
     guideMetaData.dungeonGuides = guideMetaData.dungeonGuides or {}
     guideMetaData.enabledDungeons = guideMetaData.enabledDungeons or {}
+    guideMetaData.enabledDungeons.Horde = guideMetaData.enabledDungeons.Horde or {}
+    guideMetaData.enabledDungeons.Alliance = guideMetaData.enabledDungeons.Alliance or {}
     guideMetaData.enableGroupQuests = guideMetaData.enableGroupQuests or {}
 end
 
@@ -737,6 +738,7 @@ function addon:OnEnable()
     -- Only start update loop after everything initializes and enables
     local updateFrame = CreateFrame("Frame")
     updateFrame:SetScript("OnUpdate", addon.UpdateLoop)
+    RXPData.release = addon.release
 end
 
 -- Tracks if a player is on a loading screen and pauses the main update loop
@@ -866,13 +868,9 @@ end
 questFrame:SetScript("OnEvent", addon.QuestAutomation)
 
 function addon.GetGuideTable(guideGroup, guideName)
-    if guideGroup and addon.guideList[guideGroup] and guideName and
-        addon.guideList[guideGroup][guideName] then
-        local index = addon.guideList[guideGroup][guideName]
-        local guide = addon.guides[index]
-        if guide and not guide.steps then guide.tableIndex = index end
-        return guide
-    end
+    local index = guideGroup and guideName and
+        fmt("%s||%s",guideGroup,guideName) or guideGroup or 0
+    return addon.guides[index]
 end
 
 addon.scheduledTasks = {}
@@ -888,8 +886,10 @@ function addon.UpdateScheduledTasks()
         --print(type(ref))
         if type(ref) == "function" then
             if cTime > args[1] then
+                local t = args
+                --print('u',ref,cTime-0.125,unpack(args))
                 addon.scheduledTasks[ref] = nil
-                ref(unpack(args))
+                ref(unpack(t))
                 return
             end
         elseif type(ref) == "table" then
@@ -906,12 +906,18 @@ function addon.UpdateScheduledTasks()
 end
 
 function addon.ScheduleTask(self, ref, ...)
+--    print('w',ref)
     local time = type(self) == "number" and self or GetTime() + 0.125
     --print(type(ref))
     if type(ref) == "table" then
         addon.scheduledTasks[ref] = time
     elseif type(ref) == "function" then
-        addon.scheduledTasks[ref] = {time, ...}
+        local args = addon.scheduledTasks[ref]
+        if args then
+            args[1] = time
+        elseif not args then
+            addon.scheduledTasks[ref] = {time, ...}
+        end
     end
 end
 
@@ -933,6 +939,7 @@ function addon:UpdateLoop(diff)
     end
     if addon.isHidden then
         updateError = false
+        --print('hidden')
         return
     elseif updateTick > (tickRate + rand() / 128) and addon.errorCount < 10 then
         updateError = true
@@ -995,7 +1002,23 @@ function addon:UpdateLoop(diff)
                 addon.RXPFrame.SetStepFrameAnchor()
                 addon.tickTimer = currentTime
                 event = event .. "/bottomFrame"
+                updateError = false
                 skip = 1
+                return
+            elseif next(addon.guideCache) then
+                event = event .. "/guideCache"
+                local length = 0
+                for _,guide in pairs(addon.guides) do
+                    if not guide.steps then
+                        if length > 45000 then
+                            --print(length)
+                            break
+                        end
+                        addon:FetchGuide(guide)
+                        length = length + (tonumber(guide.length) or 0)
+                        --print('f',not guide.steps and guide.name)
+                    end
+                end
             end
         end
 
@@ -1014,7 +1037,6 @@ function addon:UpdateLoop(diff)
         elseif skip % 4 == 3 and not addon.ProcessMessageQueue() then
             addon.UpdateScheduledTasks()
             addon.ClearQuestCache()
-            tickRate = math.min(1.25/GetFramerate(),0.05)
         elseif skip % 16 == 1 then
             activeQuestUpdate = 0
             local deletedIndexes = {}
@@ -1042,14 +1064,17 @@ function addon:UpdateLoop(diff)
 end
 
 function addon.HardcoreToggle()
+    local guide = addon.currentGuide
+    local hc = addon.settings.db.profile.hardcore
+
     if addon.game == "CLASSIC" then
-        if addon.currentGuide and addon.currentGuide.hardcore then
-            addon.settings.db.profile.hardcore = true
-        else
-            addon.settings.db.profile.hardcore =
-                not addon.settings.db.profile.hardcore
+        if not (guide and
+                (guide.hardcore and hc or guide.softcore and not hc)) then
+            addon.settings.db.profile.hardcore = not hc
         end
-        addon.RenderFrame()
+        if hc ~= addon.settings.db.profile.hardcore then
+            addon.RenderFrame()
+        end
     end
 end
 
@@ -1060,7 +1085,9 @@ function addon.GAToggle()
     end
 end
 
-function addon.AldorScryerCheck(faction)
+addon.stepLogic = {}
+
+function addon.stepLogic.AldorScryerCheck(faction)
     if addon.game == "CLASSIC" then return true end
     local _, _, _, _, _, aldorRep = GetFactionInfoByID(932)
     local _, _, _, _, _, scryerRep = GetFactionInfoByID(934)
@@ -1082,7 +1109,7 @@ function addon.AldorScryerCheck(faction)
     return true
 end
 
-function addon.PhaseCheck(phase)
+function addon.stepLogic.PhaseCheck(phase)
 
     if type(phase) == "table" then phase = phase.phase end
 
@@ -1108,16 +1135,25 @@ function addon.PhaseCheck(phase)
     return true
 end
 
-function addon.IsStepShown(step)
-    return not (step.daily and RXPCData.skipDailies) and
-               (addon.settings.db.profile.northrendLM or not step.questguide) and
-               addon.AldorScryerCheck(step) and addon.PhaseCheck(step) and
-               addon.HardcoreCheck(step) and addon.SeasonCheck(step) and
-               addon.XpRateCheck(step) and addon.FreshAccountCheck(step) and
-               addon.GroupCheck(step) and addon.DungeonCheck(step)
+function addon.stepLogic.DailyCheck(step)
+    return not (step.daily and RXPCData.skipDailies)
 end
 
-function addon.GroupCheck(step)
+function addon.IsStepShown(step,...)
+    local isShown = true
+    local ignoreEntry = {}
+    for _,entry in pairs({...}) do
+        ignoreEntry[entry] = true
+    end
+    for name,check in pairs(addon.stepLogic) do
+        if not ignoreEntry[name] then
+            isShown = isShown and check(step)
+        end
+    end
+    return isShown
+end
+
+function addon.stepLogic.GroupCheck(step)
     if (not addon.settings.db.profile.enableGroupQuests and step.group) or
         (addon.settings.db.profile.enableGroupQuests and step.solo) then
         return false
@@ -1125,7 +1161,15 @@ function addon.GroupCheck(step)
     return true
 end
 
-function addon.SeasonCheck(step)
+function addon.stepLogic.AHCheck(step)
+    if (not addon.settings.db.profile.soloSelfFound and step.ssf) or
+        (addon.settings.db.profile.soloSelfFound and step.ah) then
+        return false
+    end
+    return true
+end
+
+function addon.stepLogic.SeasonCheck(step)
     if addon.settings.db.profile.SoM and step.era or step.som and
         not addon.settings.db.profile.SoM or addon.settings.db.profile.SoM and
         addon.settings.db.profile.phase > 2 and step["era/som"] then
@@ -1134,14 +1178,14 @@ function addon.SeasonCheck(step)
     return true
 end
 
-function addon.HardcoreCheck(step)
+function addon.stepLogic.HardcoreCheck(step)
     local hc = addon.settings.db.profile.hardcore
     if step.softcore and hc or step.hardcore and not hc then return false end
     return true
 end
 
-function addon.XpRateCheck(step)
-    if step.xprate and addon.settings.db.profile.enableXpStepSkipping then
+function addon.stepLogic.XpRateCheck(step)
+    if step.xprate then
         local xpmin, xpmax = 1, 0xfff
 
         step.xprate:gsub("^([<>]?)%s*(%d+%.?%d*)%-?(%d*%.?%d*)",
@@ -1176,7 +1220,7 @@ function addon.IsFreshAccount()
     end
 end
 
-function addon.FreshAccountCheck(step)
+function addon.stepLogic.FreshAccountCheck(step)
     local level = UnitLevel("player")
     local maxLevelFresh = step.fresh and tonumber(step.fresh) or 1000
     local maxLevelVeteran = step.veteran and tonumber(step.veteran) or 1000
@@ -1193,7 +1237,7 @@ function addon.FreshAccountCheck(step)
     return false
 end
 
-function addon.LevelCheck(step)
+function addon.stepLogic.LevelCheck(step)
     if not addon.settings.db.profile.enableXpStepSkipping then return true end
 
     local level = UnitLevel("player")
@@ -1201,7 +1245,7 @@ function addon.LevelCheck(step)
     if level <= maxLevel then return true end
 end
 
-function addon.DungeonCheck(step)
+function addon.stepLogic.DungeonCheck(step)
     if not step.dungeon then
         return true
     elseif addon.settings.db.profile.dungeons[step.dungeon] then

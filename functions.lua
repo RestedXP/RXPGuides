@@ -1,6 +1,5 @@
 local addonName, addon = ...
 
-local faction = UnitFactionGroup("player")
 local localizedClass, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
 local fmt, tinsert = string.format,tinsert
@@ -33,6 +32,9 @@ events.train = {
 events.istrained = events.train
 events.spellmissing = events.train
 events.zone = "ZONE_CHANGED_NEW_AREA"
+events.zoneskip = "ZONE_CHANGED_NEW_AREA"
+events.subzone = "ZONE_CHANGED"
+events.subzoneskip = "ZONE_CHANGED"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
 events.gossipoption = "GOSSIP_SHOW"
@@ -859,6 +861,9 @@ function addon.functions.accept(self, ...)
                 if addon.settings.db.profile.shareQuests then
                     local questLogIndex,isPushable = GetLogIndexForQuestID(id);
                     if questLogIndex and isPushable then
+                        if _G.SelectQuestLogEntry then
+                            _G.SelectQuestLogEntry(questLogIndex)
+                        end
                         _G.QuestLogPushQuest(questLogIndex)
                     end
                 end
@@ -1737,7 +1742,7 @@ function addon.functions.fp(self, ...)
         end
 
         if location and location ~= "" and location:find("%w+") then
-            for id, fp in pairs(addon.FPDB[faction]) do
+            for id, fp in pairs(addon.FPDB[addon.player.faction]) do
                 if strupper(fp.name):find(strupper(location)) then
                     element.fpId = id
                     break
@@ -1763,11 +1768,11 @@ function addon.functions.fp(self, ...)
             local currentMap = C_Map.GetBestMapForUnit("player")
             local validFP = false
             if addon.FPbyZone then
-                for mapId,flightId in pairs(addon.FPbyZone[faction]) do
+                for mapId,flightId in pairs(addon.FPbyZone[addon.player.faction]) do
                     if currentMap == mapId then
                         validFP = true
                         if not RXPCData.flightPaths[flightId] then
-                            RXPCData.flightPaths[flightId] = addon.FPDB[faction][flightId] and addon.FPDB[faction][flightId].name
+                            RXPCData.flightPaths[flightId] = addon.FPDB[addon.player.faction][flightId] and addon.FPDB[addon.player.faction][flightId].name
                         end
                     end
                 end
@@ -1819,7 +1824,7 @@ function addon.functions.fly(self, ...)
         addon:TAXIMAP_OPENED()
         for i = 1, NumTaxiNodes() do
             local id = addon.flightInfo[i]
-            local name = id and addon.FPDB[faction][id] and addon.FPDB[faction][id].name
+            local name = id and addon.FPDB[addon.player.faction][id] and addon.FPDB[addon.player.faction][id].name
             if name and strupper(name):find(element.location) then
                 local button = getglobal("TaxiButton" .. i)
                 if button then
@@ -2168,14 +2173,19 @@ function addon.functions.xp(self, ...)
         return element
     end
 
-    if addon.isHidden or not addon.settings.db.profile.enableXpStepSkipping then return end
+    local element = self.element
+    local step = element.step
+    if addon.isHidden or
+             (not addon.settings.db.profile.enableXpStepSkipping and
+                 element.textOnly == true and not element.reverseLogic) then
+        return
+    end
 
     local currentXP = UnitXP("player")
     local maxXP = UnitXPMax("player")
     local level = UnitLevel("player")
-    local element = self.element
-    local step = element.step
     local reverseLogic = element.reverseLogic
+    --print('ok',...)
     if element.skipstep and element.skipstep < 0 then reverseLogic = true end
     if ((element.xp < 0 and (level >= element.level or
         (level == element.level - 1 and currentXP >= maxXP + element.xp))) or
@@ -2189,6 +2199,11 @@ function addon.functions.xp(self, ...)
             if step.active and not step.completed and not(addon.settings.db.profile.northrendLM and not reverseLogic) then
                 addon.updateSteps = true
                 step.completed = true
+                if element.textOnly == true then
+                    element.tooltipText = L"Step skipped: XP requirements are not met"
+                end
+            elseif step.active and not step.completed then
+                element.tooltipText = nil
             end
         else
             addon.SetElementComplete(self, true)
@@ -2541,7 +2556,7 @@ function addon.functions.next(skip, guide)
         --print(guideSkip)
         if addon.game ~= "CLASSIC" then
             local faction = next:match("Aldor") or next:match("Scryer")
-            if not addon.AldorScryerCheck(faction) then
+            if not addon.stepLogic.AldorScryerCheck(faction) then
                 if faction == "Aldor" then
                     next = next:gsub("Scryer", "Aldor")
                 elseif faction == "Scryer" then
@@ -2774,11 +2789,16 @@ function addon.functions.isQuestComplete(self, ...)
         element.textOnly = true
         return element
     end
-    local id = self.element.questId
+    local element = self.element
+    local step = element.step
+    local id = element.questId
     local event = ...
-    if event ~= "WindowUpdate" and self.element.step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug and not addon.isHidden then
-        self.element.step.completed = true
+    if event ~= "WindowUpdate" and step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug and not addon.isHidden then
+        step.completed = true
         addon.updateSteps = true
+        element.tooltipText = "Step skipped: Missing pre-requisites"
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
     end
 end
 
@@ -2809,9 +2829,13 @@ function addon.functions.isOnQuest(self, text, ...)
 
 
     local event = ...
-    if event ~= "WindowUpdate" and element.step.active and not addon.settings.db.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
-        element.step.completed = true
+    local step = element.step
+    if event ~= "WindowUpdate" and step.active and not addon.settings.db.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
+        element.tooltipText = "Step skipped: Missing pre-requisites"
+        step.completed = true
         addon.updateSteps = true
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
     end
 end
 
@@ -2856,6 +2880,9 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     if event ~= "WindowUpdate" and step.active and not questTurnedIn and not addon.settings.db.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
+        element.tooltipText = "Step skipped: Missing pre-requisites"
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
     end
 end
 
@@ -2884,12 +2911,110 @@ function addon.functions.spellmissing(self, text, id)
         if not id then return end
         return {id = id, textOnly = true}
     end
-    if not IsPlayerSpell(self.element.id) and self.element.step.active and not addon.isHidden then
+    local element = self.element
+    local step = element.step
+    if not IsPlayerSpell(element.id) and step.active and not addon.isHidden then
+        addon.SetElementComplete(self)
+        step.completed = true
+        addon.updateSteps = true
+        element.tooltipText = L"Step skipped: missing required spell"
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
+    end
+
+end
+
+function addon.GetSubZoneId(zone,x,y)
+    local subzone = GetSubZoneText()
+    if zone and x and y then
+       zone = RXP.mapId[zone] or zone
+       x = x / 100
+       y = y / 100
+       subzone = MapUtil.FindBestAreaNameAtMouse(zone,x,y)
+    elseif zone then
+       subzone = zone
+    end
+
+    if subzone then
+        local zoneText = GetZoneText()
+        local bestMatchId,bestMatchText
+        for i = 1,1e6 do
+            local zoneName = C_Map.GetAreaInfo(i)
+            if zoneName and zoneName == subzone then
+                print(zoneName .. ' Subzone ID: ' .. i)
+                return
+            elseif zoneText == zoneName then
+                bestMatchId = i
+                bestMatchText = zoneName
+            end
+        end
+        if bestMatchId and bestMatchText then
+            print(bestMatchText .. ' Subzone ID: ' .. bestMatchId)
+            return
+        end
+    end
+    print('ERROR: Subzone not found')
+ end
+
+ function addon.functions.subzone(self, text, subZone)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local mapID = C_Map.GetAreaInfo(tonumber(subZone) or -1)
+        if not (mapID and text) then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid zone ID\n" .. self)
+        end
+        element.map = mapID
+        element.icon = addon.icons["goto"]
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = "Go to " .. subZone
+        end
+
+        return element
+    end
+    local subzone = GetSubZoneText()
+    local currentMap = GetZoneText()
+    if not self.element.step.active or addon.isHidden or type(currentMap) ~= "string" then return end
+    local zone = self.element.map
+    if zone == currentMap or zone == subzone then
         addon.SetElementComplete(self)
         self.element.step.completed = true
         addon.updateSteps = true
     end
+end
 
+function addon.functions.subzoneskip(self, text, subZone, flags)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local mapID = C_Map.GetAreaInfo(tonumber(subZone) or -1)
+        if not mapID then
+            return addon.error(
+                L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                ": Invalid zone ID\n" .. self)
+        end
+        flags = tonumber(flags) or 0
+        if bit.band(flags,0x1) == 0x1 then
+            element.reverse = true
+        end
+        element.map = mapID
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+    local subzone = GetSubZoneText()
+    local currentMap = GetZoneText()
+    if not step.active or addon.isHidden or type(currentMap) ~= "number" then return end
+    local zone = element.map
+    if (zone == currentMap or zone == subzone) == not element.reverse then
+        step.completed = true
+        addon.updateSteps = true
+    end
 end
 
 function addon.functions.zone(self, ...)
@@ -2944,7 +3069,7 @@ function addon.functions.zoneskip(self, text, zone, flags)
     local element = self.element
     local step = element.step
     local currentMap = C_Map.GetBestMapForUnit("player")
-    if not step.active or addon.isHidden or type(currentMap) ~= "number" then return end
+    if not step.active or addon.isHidden or (type(currentMap) ~= "number" and not text) then return end
     local zone = element.map
     if (zone == currentMap) == not element.reverse then
         step.completed = true
@@ -3710,6 +3835,11 @@ function addon.functions.maxlevel(self, ...)
         if step.active and not step.completed and not addon.settings.db.profile.northrendLM then
             addon.updateSteps = true
             step.completed = true
+            if step.textOnly then
+                step.tooltipText = L"Step skipped: XP requirements are not met"
+            end
+        elseif step.active and not step.completed then
+            element.tooltipText = nil
         end
         local guide = addon.currentGuide
         if ref and guide.labels[ref] then
@@ -4790,7 +4920,7 @@ function addon.functions.dungeon(self, text, instance)
     if type(self) == "string" and addon.GetDungeonName then -- on parse
         local name, tag = addon.GetDungeonName(instance)
         if tag then
-            RXPData.guideMetaData.enabledDungeons[tag] = name
+            RXPData.guideMetaData.enabledDungeons[addon.player.faction][tag] = name
             addon.step.dungeon = tag
             RXPData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
         else
@@ -4809,14 +4939,25 @@ end
 function addon.functions.group(self, ...)
     if type(self) == "string" then -- on parse
         local text, number = ...
-        if not number then number = "2" end
+        local generateText
+        if not number then generateText = true end
         text = text or number and
-            fmt("Do NOT attempt this quest unless you are in a group of at least %s",number)
+            fmt(L"Do NOT attempt this quest unless you are in a group of at least %s",number)
 
         addon.step.group = true
         addon.step.solo = false
         RXPData.guideMetaData.enableGroupQuests[addon.currentGuideGroup] = true
-        return {hideTooltip = true,textOnly = true, text = text}
+        return {hideTooltip = true,textOnly = true, text = text, generateText = generateText}
+    end
+
+    local element = self.element
+    if element.generateText then
+        for _,e in pairs(element.step.elements) do
+            if e.tag == "complete" or e.tag == "collect" then
+                element.text = L"This step is meant to be completed as a group, be careful"
+            end
+        end
+        element.generateText = nil
     end
 end
 

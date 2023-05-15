@@ -92,7 +92,7 @@ function addon.settings:InitializeSettings()
             SoM = 1,
             anchorOrientation = "top",
             chromieTime = "auto",
-            enableXpStepSkipping = addon.game ~= "CLASSIC",
+            enableXpStepSkipping = true,
             enableAutomaticXpRate = true,
             autoLoadStartingGuides = true,
 
@@ -369,7 +369,7 @@ function addon.settings.GetImportedGuides()
     local display = {[""] = ""}
     local importedGuidesFound = false
 
-    for _, guide in ipairs(addon.guides) do
+    for _, guide in pairs(addon.guides) do
         if guide.imported or guide.cache then
             importedGuidesFound = true
             local group, subgroup, name = guide.key:match("^(.*)|(.*)|(.*)")
@@ -1033,7 +1033,22 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.ReloadGuide()
+                            if value then
+                                addon.ReloadGuide()
+                            end
+                        end
+                    },
+                    soloSelfFound = {
+                        name = L("Solo Self Found Mode"),
+                        desc = L("If this option is enabled, it disables all steps involving trading or Auction House"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.5,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                addon.ReloadGuide()
+                            end
                         end
                     },
                     expansionHeader = {
@@ -1130,7 +1145,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "multiselect",
                         width = optionsWidth,
                         order = 2.9,
-                        values = RXPData.guideMetaData.enabledDungeons,
+                        values = RXPData.guideMetaData.enabledDungeons[addon.player.faction],
                         get = function(_,key)
                             return addon.settings.db.profile.dungeons[key]
                         end,
@@ -1139,7 +1154,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return not next(RXPData.guideMetaData.enabledDungeons)
+                            return not next(RXPData.guideMetaData.enabledDungeons[addon.player.faction])
                         end,
                     },
                     questCleanupHeader = {

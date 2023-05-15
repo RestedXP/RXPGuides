@@ -6,6 +6,7 @@ local HSframe = CreateFrame("Frame");
 local currentFPS = GetCVar("maxfps")
 local HSstart = 0
 local batchingWindow = 0.006
+local bindConfirmation = string.gsub(CONFIRM_BINDER,"%%s",".-")
 
 local function SwitchBindLocation()
     if GetTime() - HSstart > 10 - batchingWindow then
@@ -15,24 +16,34 @@ local function SwitchBindLocation()
             C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
         end
         HSframe:SetScript("OnUpdate", nil)
-        local size = addon.settings.db.profile.batchSize or 6
-        if size < 5 then
-            SetCVar("maxfps", currentFPS)
-        end
+        SetCVar("maxfps", currentFPS)
         HSstart = 0
     end
 end
+--[[
+hooksecurefunc("SetCVar",function(n,v)
+    if n == "maxfps" then
+        print(n,v)
+        C_Timer.After(1,function()
+            print(GetCVar("maxfps"))
+        end)
+    end
+end)
+]]
 
 local function StartHSTimer()
     if HSstart == 0 then
         local size = addon.settings.db.profile.batchSize or 6
         batchingWindow = size / 1e3
         currentFPS = GetCVar("maxfps")
-        if size <= 5 then
-            SetCVar("maxfps", 200)
-        end
         HSstart = GetTime()
         HSframe:SetScript("OnUpdate", SwitchBindLocation)
+        local bind = _G.StaticPopup1 and _G.StaticPopup1.text and
+                            _G.StaticPopup1.text:GetText() or ""
+        if bind:find(bindConfirmation) then
+            SetCVar("maxfps", "200")
+            addon.StartTimer(10-batchingWindow,"Hearthstone")
+        end
     end
 end
 

@@ -2151,7 +2151,7 @@ step << Undead Warlock
 step << Undead Warlock
     #completewith next
     .goto Undercity,86.64,27.10
-    .cast 9221 >Use the |T134416:0|t[Runes of Summoning] at the Summoning Circle
+    .cast 9221 >>Use the |T134416:0|t[Runes of Summoning] at the Summoning Circle
     .use 6284
 step << Undead Warlock
     .goto Undercity,86.64,27.10
