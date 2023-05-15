@@ -5396,7 +5396,7 @@ step
 step
 	.isOnQuest 14107
 	>>Loot |c99ffff99Discarded Sould Crystals|r on the ground.
-	>>Use the |c99ffff99Light-Blessed Relic|r on Fallen Hero's Spirits
+	>>Use the |c99ffff99Light-Blessed Relic|r on Fallen Hero's Spirits.
 	.collect 47035,6,14107,1,-1
 	.complete 14107,1
 	.use 47033
@@ -5404,8 +5404,12 @@ step
 	.target Fallen Hero's Spirit
 step
 	>>Return to the Argent Pavilion
-	.dailyturnin 14105,14101,14102,14104 >>Turn in Deathspeaker Kharos |c99ffff99OR|r Drottinn Hrothgar |c99ffff99OR|r Mistcaller Yngvar |c99ffff99OR|r Ornolf The Scarred
-	.dailyturnin 14108,14107 >>Turn in Get Kraken! |c99ffff99OR|r The Fate Of The Fallen
+	.turnin -14105 >>Turn in Deathspeaker Kharos
+	.turnin -14101 >>Turn in Drottinn Hrothgar
+	.turnin -14102 >>Turn in Mistcaller Yngvar
+	.turnin -14104 >>Turn in Ornolf The Scarred
+	.turnin -14108 >>Turn in Get Kraken!
+	.turnin -14107 >>Turn in The Fate Of The Fallen
 	.goto Icecrown,69.51,23.15
 	.target High Crusader Adelard
 	.target Crusader Silverdawn
@@ -5519,14 +5523,19 @@ step
 	>>Use the |c99ffff99Weighted Net|r to capture |cFFFF5722Snowblind Followers|r.
 	.complete 14090,1
 	.use 46885
-	.goto The Storm Peaks,44,82
+	.goto The Storm Peaks,43.88,81.60
 	.target Snowblind Follower
 step
 	>>Return to the Alliance Silver Covenant Pavilion
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
-	.dailyturnin 14096 >>Turn in You've Really Done It This Time, Kul
-	.dailyturnin 14074,14152,14080,14077 >>Turn in A Leg Up |c99ffff99OR|r Rescue at Sea |c99ffff99OR|r Stop The Aggressors |c99ffff99OR|r The Light's Mercy
-	.dailyturnin 14076,14090,14112 >>Turn in Breakfast of Champions |c99ffff99OR|r Gormok Wants His Snobolds |c99ffff99OR|r What Do You Feed a Yeti, Anyway?
+	.turnin -14096 >>Turn in You've Really Done It This Time, Kul
+	.turnin -14074 >>Turn in A Leg Up
+	.turnin -14152 >>Turn in Rescue at Sea
+	.turnin -14080 >>Turn in Stop The Aggressors
+	.turnin -14077 >>Turn in The Light's Mercy
+	.turnin -14076 >>Turn in Breakfast of Champions
+	.turnin -14090 >>Turn in Gormok Wants His Snobolds
+	.turnin -14112 >>Turn in What Do You Feed a Yeti, Anyway?
 	.goto Icecrown,76.26,19.62
 	.target Narasi Snowdawn
 	.target Savinia Loresong
