@@ -216,6 +216,7 @@ local function SetStepFrameAnchor()
         if frame:GetBottom() * scale < 0 then SetTop() end
         if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
     end
+    addon:SortTimers()
 
 end
 
