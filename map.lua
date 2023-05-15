@@ -363,7 +363,7 @@ MapLinePool.creationFunc = function(framePool)
             return
         end
         f.activeObject = self
-        local thickness = coords.linethickness or 3
+        local thickness = coords.linethickness or 2
         local alpha = coords.lineAlpha or 1
         self:SetAlpha(alpha)
         local canvas = _G.WorldMapFrame:GetCanvas()
@@ -664,7 +664,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                 fX = fX,
                 fY = fY,
                 lineAlpha = lineAlpha,
-                linethickness = thickness or element.thickness or 3
+                linethickness = thickness or element.thickness --or 3
             })
         end
 

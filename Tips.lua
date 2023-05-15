@@ -498,7 +498,7 @@ function addon.tips:LoadDangerousMobs()
                         step.isActive = IsStepActive
                         step.levelBuffer = mobData.Classification == "Normal" and 1 or 3
                         if element.wx or element.segments then
-                            step.linethickness = 2
+                            --step.linethickness = 2
                             step.showTooltip = true--Shows tooltip when hovering over a line
                             step.icon = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t"--texture used for the icon
                             step.mapTooltip = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
