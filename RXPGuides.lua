@@ -558,9 +558,9 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
 end
 
 function addon:CreateMetaDataTable(wipe)
-    --if wipe or addon.release ~= RXPData.release then
+    if wipe or addon.release ~= RXPData.release then
         RXPData.guideMetaData = nil
-    --end
+    end
     local guideMetaData = RXPData.guideMetaData or {}
     RXPData.guideMetaData = guideMetaData
     guideMetaData.dungeonGuides = guideMetaData.dungeonGuides or {}

@@ -518,28 +518,40 @@ function addon.LoadEmbeddedGuides()
             addon.ImportGuide(guideData.groupOrContent, guideData.text,
                               guideData.defaultFor, true)
         else
-            local guide, errorMsg, metadata, length, key, group
+            local guide, errorMsg, metadata, length, key, group, enabled
             if not guideData.text then
                 length = guideData.groupOrContent:len()
                 local index = guideData.groupOrContent:find("[\r\n]%s*step")
                 local header = index and guideData.groupOrContent:sub(1,index)
                 if header then
-                    local name, subgroup
+                    local name, subgroup, enabledFor
                     for line in header:gmatch("[^\r\n]+") do
+                        if subgroup and name and group and enabledFor and enabled then
+                            break
+                        end
                         line = line:gsub("%-%-.*$","")
-                        line = line:gsub("^%s*#(.+)%s*<<%s*(.+)", function(l,t)
+                        line = line:gsub("^%s*(#.+)%s*<<%s*(.+)", function(l,t)
                             if not applies(t) then
                                 return ""
                             else
                                 return l
                             end
                         end)
+                        if not enabled then
+                            strupper(line):gsub("#" .. addon.game,function()
+                                enabled = true
+                            end)
+                        end
+                        enabledFor = enabledFor or line:match("^%s*<<%s*(.-)%s*$")
                         group = group or line:match("^%s*#group%s+(.-)%s*$")
                         subgroup = subgroup or line:match("^%s*#subgroup%s+(.-)%s*$")
                         name = name or line:match("^%s*#name%s+(.-)%s*$")
                     end
-                    key = addon.BuildGuideKey(group,subgroup,name)
-                    guide = key and RXPData.guideMetaData[key]
+                    enabled = enabled and (not enabledFor or applies(enabledFor))
+                    if enabled then
+                        key = addon.BuildGuideKey(group,subgroup,name)
+                        guide = key and RXPData.guideMetaData[key]
+                    end
                 end
                 --print('g-ok',guide and guide.length)
             end
@@ -560,12 +572,13 @@ function addon.LoadEmbeddedGuides()
                     end
                     return tbl
                 end
-            else
+            elseif enabled then
                 guide, errorMsg, metadata =
                     addon.ParseGuide(guideData.groupOrContent,
                                     guideData.text,
                                     guideData.defaultFor, true, group, key)
                     --print('n2',guide and guide.key)
+                enabled = not errorMsg
                 if key and metadata then
                     local cleanup = {}
                     for guideKey,data in pairs(RXPData.guideMetaData) do
@@ -579,7 +592,7 @@ function addon.LoadEmbeddedGuides()
                     RXPData.guideMetaData[key] = metadata
                 end
             end
-            if not errorMsg then addon.AddGuide(guide) end
+            if enabled then addon.AddGuide(guide) end
         end
     end
 
