@@ -62,9 +62,11 @@ function addon.UpdateQuestButton(index)
         local guides = {}
         for _, entry in pairs(list) do
             local step = entry.step
-            if addon.IsGuideActive(entry.guide) and
+            if not entry.guide.lowPrio and
+                 addon.IsGuideActive(entry.guide) and
                   addon.IsStepShown(step,"GroupCheck") and
                   (step.group or addon.stepLogic.GroupCheck(step)) then
+                    --print(entry.guide.name,entry.guide.lowPrio)
                 if not guides[entry.group] then
                     guides[entry.group] = {}
                     table.insert(groups, entry.group)

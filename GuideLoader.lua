@@ -907,16 +907,16 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
         if defaultFor == "58Boost" then
             if playerLevel >= 60 or playerLevel < 58 then
                 parentGroup = groupOrContent
-                groupOrContent = "*" .. groupOrContent
+                guide.lowPrio = "*" .. groupOrContent
             end
             boost58 = true
         elseif not applies(defaultFor) then
             parentGroup = groupOrContent
-            groupOrContent = "*" .. groupOrContent
+            guide.lowPrio = "*" .. groupOrContent
         end
         addon.RegisterGroup(groupOrContent, parentGroup)
         guide.boost58 = boost58
-        guide.lowPrio = groupOrContent
+        --guide.lowPrio = groupOrContent
     end
 
     guide.displayname = guide.displayname or guide.name
