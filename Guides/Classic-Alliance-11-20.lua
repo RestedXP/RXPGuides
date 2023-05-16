@@ -2020,11 +2020,11 @@ step
     >>Kill |cFFFF5722Encrusted Tide Crawlers|r and |cFFFF5722Reef Crawlers|r. Loot them for their |cFF00BCD4Crab Chunks|r
     .complete 1138,1 -- Fine Crab Chunks (6)
 step << Druid
-    #requires deers
+#requires deers
     .goto Darkshore,48.87,11.32
     >>|cFFFCDC00Swim out in the water|r
     >>Open the |cFFDB2EEFStrange Lockbox|r. Loot it for the |cFF00BCD4Half Pendant of Aquatic Agility|r
-    .collect 15883,1,5061,1 --Collect Half Pendant of Aquatic Agility (x1)
+    .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
 step << Dwarf Hunter
     #softcore
     #completewith next
