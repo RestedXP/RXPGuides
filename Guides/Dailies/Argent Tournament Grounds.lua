@@ -5341,8 +5341,12 @@ step
 step
 	>>Enter the Argent Pavilion
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25High Crusader Adelard|r and |cFF00FF25 Crusader Silverdawn|r.
-	.daily 14105,14101,14102,14104 >>Accept Deathspeaker Kharos |c99ffff99OR|r Drottinn Hrothgar |c99ffff99OR|r Mistcaller Yngvar |c99ffff99OR|r Ornolf The Scarred
-	.daily 14108,14107 >>Accept Get Kraken! |c99ffff99OR|r The Fate Of The Fallen
+	.daily 14105,14101,14102,14104 >>Accept Deathspeaker Kharos
+	>>|c99ffff99OR|r Drottinn Hrothgar
+	>>|c99ffff99OR|r Mistcaller Yngvar
+	>>|c99ffff99OR|r Ornolf The Scarred
+	.daily 14108,14107 >>Accept Get Kraken!
+	>>|c99ffff99OR|r The Fate Of The Fallen
 	.goto Icecrown,69.51,23.15
 	.target High Crusader Adelard
 	.target Crusader Silverdawn
@@ -5432,8 +5436,13 @@ step
 	>>Enter the Alliance Silver Covenant Pavilion
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
 	.daily 14096 >>Accept You've Really Done It This Time, Kul
-	.daily 14074,14152,14080,14077 >>Accept A Leg Up |c99ffff99OR|r Rescue at Sea |c99ffff99OR|r Stop The Aggressors |c99ffff99OR|r The Light's Mercy
-	.daily 14076,14090,14112 >>Accept Breakfast of Champions |c99ffff99OR|r Gormok Wants His Snobolds |c99ffff99OR|r What Do You Feed a Yeti, Anyway?
+	.daily 14074,14152,14080,14077 >>Accept A Leg Up
+	>>|c99ffff99OR|r Rescue at Sea
+	>>|c99ffff99OR|r Stop The Aggressors
+	>>|c99ffff99OR|r The Light's Mercy
+	.daily 14076,14090,14112 >>Accept Breakfast of Champions
+	>>|c99ffff99OR|r Gormok Wants His Snobolds
+	>>|c99ffff99OR|r What Do You Feed a Yeti, Anyway?
 	.goto Icecrown,76.26,19.62
 	.target Narasi Snowdawn
 	.target Savinia Loresong
