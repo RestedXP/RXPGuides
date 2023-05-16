@@ -5364,9 +5364,8 @@ step
 	.complete 14108,1
 	.complete 14108,2
 	.use 46954
-	.goto Hrothgar's Landing,46.6,50.6
-	.target North Sea Kraken
-	.target Kvaldir Deepcaller
+	.mob North Sea Kraken
+	.mob Kvaldir Deepcaller
 step
 	.isOnQuest 14101
 	>>Head to the Tualiq Monuments at Hrothgar's Landing.
@@ -5395,7 +5394,7 @@ step
 	.goto Hrothgar's Landing,58.6,31.6
 step
 	.isOnQuest 14107
-	>>Loot |c99ffff99Discarded Sould Crystals|r on the ground.
+	>>Loot |cFFDB2EEFDiscarded Sould Crystals|r on the ground.
 	>>Use the |c99ffff99Light-Blessed Relic|r on Fallen Hero's Spirits.
 	.collect 47035,6,14107,1,-1
 	.complete 14107,1
@@ -5404,12 +5403,12 @@ step
 	.target Fallen Hero's Spirit
 step
 	>>Return to the Argent Pavilion
-	.turnin -14105 >>Turn in Deathspeaker Kharos
-	.turnin -14101 >>Turn in Drottinn Hrothgar
-	.turnin -14102 >>Turn in Mistcaller Yngvar
-	.turnin -14104 >>Turn in Ornolf The Scarred
-	.turnin -14108 >>Turn in Get Kraken!
-	.turnin -14107 >>Turn in The Fate Of The Fallen
+	.dailyturnin 14105,14101,14102,14104 >>Turn in Deathspeaker Kharos
+	>>|c99ffff99OR|r Drottinn Hrothgar
+	>>|c99ffff99OR|r Mistcaller Yngvar
+	>>|c99ffff99OR|r Ornolf The Scarred
+	.dailyturnin 14108,14107 >>Turn in Get Kraken!
+	>>|c99ffff99OR|r The Fate Of The Fallen
 	.goto Icecrown,69.51,23.15
 	.target High Crusader Adelard
 	.target Crusader Silverdawn
@@ -5441,7 +5440,7 @@ step
 step
 	.isOnQuest 14074
 	>>Head to Hrothgar's Landing
-	>>Loot |cFFDB2EEFStolen Tallstrider Legs|r from the ground or kill |cFFFF5722Kvaldir mobs|r.
+	>>Loot |cFF00BCD4Stolen Tallstrider Legs|r from the ground or kill |cFFFF5722Kvaldir mobs|r.
 	.complete 14074,1
 	.goto Hrothgar's Landing,43.4,29.8
 	.mob Kvaldir Reaver
@@ -5466,7 +5465,7 @@ step
 step
 	.isOnQuest 14077
 	>>Head to Hrothgar's Landing
-	>>Use the Confessor's Prayer Book to perform last rites for |cFF00FF25Slain Tualiq Villagers|r.
+	>>Use the |c99ffff99Confessor's Prayer Book|r to perform last rites for |cFF00FF25Slain Tualiq Villagers|r.
 	.complete 14077,1
 	.use 46870
 	.goto Hrothgar's Landing,51,30,10,0
@@ -5480,13 +5479,13 @@ step
 step
 	.isOnQuest 14112
 	#completewith next
-	>>Loot |c99ffff99Fresh Chum|r from the buckets on the Alliance boat.
+	>>Loot |cFFDB2EEFFresh Chum|r from the buckets on the Alliance boat.
 	.collect 47036,5
 	.goto Icecrown,67.11,7.89
 step
 	.isOnQuest 14112
-	>>Jump into the water and use the |c99ffff99Fresh Chum|r.
-	>>Kill |cFFFF5722Sharks|r for |cFFDB2EEFNorth Sea Shark Meat|r.
+	>>Jump into the water and use the |cFFDB2EEFFresh Chum|r.
+	>>Kill |cFFFF5722Sharks|r for |cFF00BCD4North Sea Shark Meat|r.
 	.complete 14112,1
 	.use 47036
 step
@@ -5495,24 +5494,24 @@ step
 	>>Use the keys to free the |cFF00FF25Captive Aspirants|r from the cages.
 	.collect 46895,5,14096,2,-1
     .complete 14096,2
-	.goto Icecrown,65.24,22.41,10,0
-	.goto Icecrown,64.66,21.74,10,0
-	.goto Icecrown,63.04,21.32,10,0
-	.goto Icecrown,61.42,20.74,10,0
+	.goto Icecrown,65.17,22.19,15,0
+	.goto Icecrown,64.66,21.74,15,0
+	.goto Icecrown,63.04,21.32,15,0
+	.goto Icecrown,61.42,20.74,15,0
 	.goto Icecrown,60.25,21.08
 	.mob Dark Zealot
 	.mob Dark Ritualist
 step
 	.isOnQuest 14096
 	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
-	>>Free |cFF00FF25Kul tge Reckless|r from his cage.
+	>>Free |cFF00FF25Kul the Reckless|r from his cage.
     .complete 14096,1
 	.goto Icecrown,60.82,23.15
 step
 	.isOnQuest 14076
 	>>Head to The Storm Peaks
 	>>Use the |c99ffff99Earthshaker Drum|r next to the snow mounds.
-	>>Kill |cFFFF5722Deep Jormungars|r that spawn for |cFFDB2EEFJormungar Egg Sacs|r.
+	>>Kill |cFFFF5722Deep Jormungars|r that spawn for |cFF00BCD4Jormungar Egg Sacs|r.
 	.complete 14076,1
 	.use 46893
 	.goto The Storm Peaks,43.33,57.74
@@ -5528,14 +5527,14 @@ step
 step
 	>>Return to the Alliance Silver Covenant Pavilion
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
-	.turnin -14096 >>Turn in You've Really Done It This Time, Kul
-	.turnin -14074 >>Turn in A Leg Up
-	.turnin -14152 >>Turn in Rescue at Sea
-	.turnin -14080 >>Turn in Stop The Aggressors
-	.turnin -14077 >>Turn in The Light's Mercy
-	.turnin -14076 >>Turn in Breakfast of Champions
-	.turnin -14090 >>Turn in Gormok Wants His Snobolds
-	.turnin -14112 >>Turn in What Do You Feed a Yeti, Anyway?
+	.dailyturnin 14096 >>Turn in You've Really Done It This Time, Kul
+	.dailyturnin 14074,14152,14080,14077 >>Turn in A Leg Up
+	>>|c99ffff99OR|r Rescue at Sea
+	>>|c99ffff99OR|r Stop The Aggressors
+	>>|c99ffff99OR|r The Light's Mercy
+	.dailyturnin 14076,14090,14112 >>Turn in Breakfast of Champions
+	>>|c99ffff99OR|r Gormok Wants His Snobolds
+	>>|c99ffff99OR|r What Do You Feed a Yeti, Anyway?
 	.goto Icecrown,76.26,19.62
 	.target Narasi Snowdawn
 	.target Savinia Loresong
