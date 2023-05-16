@@ -5551,10 +5551,133 @@ step
 	+|cFFFCDC00You have finished all Silver Covenant Daily Quests for today! Reload this Guide tomorrow to continue them.|r
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #wotlk
--- #version 1
--- #group +Argent Tournament
--- #name |cFFFF57223.0|r Sunreavers Daily Quests
--- << Horde
--- ]])
+RXPGuides.RegisterGuide([[
+#wotlk
+#version 1
+#group +Argent Tournament
+#name |cFFFF57223.2|r Sunreavers Daily Quests
+<< Horde
+
+step
+	#completewith next
+	+|cFFFCDC00Phase 3 introduces the Sunreavers Daily Quests|r
+	>>To access Sunreavers Daily Quests, you must be Exalted with the |cFFFCDC00Sunreavers|r and be a |cFFFF5722Champion|r which gives the achievement:
+	.achievement 3677,1
+step
+	>>Enter the Sunreaver Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Girana the Blooded|r and |cFF00FF25Tylos Dawnrunner|r.
+	.daily 14142 >>Accept You've Really Done It This Time, Kul
+	.daily 14143,14136,14140,14144 >>Accept A Leg Up
+	>>|c99ffff99OR|r Rescue at Sea
+	>>|c99ffff99OR|r Stop The Aggressors
+	>>|c99ffff99OR|r The Light's Mercy
+	.daily 14092,14141,14145 >>Accept Breakfast of Champions
+	>>|c99ffff99OR|r Gormok Wants His Snobolds
+	>>|c99ffff99OR|r What Do You Feed a Yeti, Anyway?
+	.goto Icecrown,76.09,24.08
+	.target Girana the Blooded
+	.target Tylos Dawnrunner
+step
+	.isOnQuest 14143
+	>>Head to Hrothgar's Landing
+	>>Loot |cFF00BCD4Stolen Tallstrider Legs|r from the ground or kill |cFFFF5722Kvaldir mobs|r.
+	.complete 14143,1
+	.goto Hrothgar's Landing,43.4,29.8
+	.mob Kvaldir Reaver
+	.mob Kvaldir Mist Binder
+step
+	.isOnQuest 14136
+	>>Head to the Horde boat in Hrothgar's Landing.
+	>>Kill |cFFFF5722Kvaldir Berserkers|r and |cFFFF5722Kvaldir Harpooners|r.
+	.complete 14136,1
+	.complete 14136,2
+	.goto Hrothgar's Landing,44.14,54.22
+	.mob Kvaldir Berserker
+	.mob Kvaldir Harpooner
+step
+	.isOnQuest 14080
+	>>Head to Hrothgar's Landing
+	>>Kill |cFFFF5722Kvaldir Reavers|r or |cFFFF5722Kvaldir Mist Binder|r.
+	.complete 14080,1
+	.goto Hrothgar's Landing,48.65,32.64
+	.mob Kvaldir Reaver
+	.mob Kvaldir Mist Binder
+step
+	.isOnQuest 14144
+	>>Head to Hrothgar's Landing
+	>>Use the |c99ffff99Confessor's Prayer Book|r to perform last rites for |cFF00FF25Slain Tualiq Villagers|r.
+	.complete 14144,1
+	.use 46870
+	.goto Hrothgar's Landing,51,30,10,0
+	.goto Hrothgar's Landing,50.60,28.28,10,0
+	.goto Hrothgar's Landing,51.84,26.61,10,0
+	.goto Hrothgar's Landing,54.03,23.98,10,0
+	.goto Hrothgar's Landing,55.65,25.20,10,0
+	.goto Hrothgar's Landing,57.41,24.37,10,0
+	.goto Hrothgar's Landing,57.10,21.39
+	.target Slain Tualiq Villager
+step
+	.isOnQuest 14145
+	#completewith next
+	>>Loot |cFFDB2EEFFresh Chum|r from the buckets on the Horde boat.
+	.collect 47036,5
+	.goto Icecrown,73.97,9.42
+step
+	.isOnQuest 14145
+	>>Jump into the water and use the |cFFDB2EEFFresh Chum|r.
+	>>Kill |cFFFF5722Sharks|r for |cFF00BCD4North Sea Shark Meat|r.
+	.complete 14145,1
+	.use 47036
+step
+	.isOnQuest 14142
+	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
+	>>Use the keys to free the |cFF00FF25Captive Aspirants|r from the cages.
+	.collect 46895,5,14142,2,-1
+    .complete 14142,2
+	.goto Icecrown,65.17,22.19,15,0
+	.goto Icecrown,64.66,21.74,15,0
+	.goto Icecrown,63.04,21.32,15,0
+	.goto Icecrown,61.42,20.74,15,0
+	.goto Icecrown,60.25,21.08
+	.mob Dark Zealot
+	.mob Dark Ritualist
+step
+	.isOnQuest 14142
+	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
+	>>Free |cFF00FF25Kul the Reckless|r from his cage.
+    .complete 14142,1
+	.goto Icecrown,60.82,23.15
+step
+	.isOnQuest 14092
+	>>Head to The Storm Peaks
+	>>Use the |c99ffff99Earthshaker Drum|r next to the snow mounds.
+	>>Kill |cFFFF5722Deep Jormungars|r that spawn for |cFF00BCD4Jormungar Egg Sacs|r.
+	.complete 14092,1
+	.use 46893
+	.goto The Storm Peaks,43.33,57.74
+	.target Deep Jormungar
+step
+	.isOnQuest 14141
+	>>Head to The Storm Peaks
+	>>Use the |c99ffff99Weighted Net|r to capture |cFFFF5722Snowblind Followers|r.
+	.complete 14141,1
+	.use 46885
+	.goto The Storm Peaks,43.88,81.60
+	.target Snowblind Follower
+step
+	>>Return to the Sunreaver Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Girana the Blooded|r and |cFF00FF25Tylos Dawnrunner|r.
+	.dailyturnin 14142 >>Turn in You've Really Done It This Time, Kul
+	.dailyturnin 14143,14136,14080,14144 >>Turn in A Leg Up
+	>>|c99ffff99OR|r Rescue at Sea
+	>>|c99ffff99OR|r Stop The Aggressors
+	>>|c99ffff99OR|r The Light's Mercy
+	.dailyturnin 14092,14141,14145 >>Turn in Breakfast of Champions
+	>>|c99ffff99OR|r Gormok Wants His Snobolds
+	>>|c99ffff99OR|r What Do You Feed a Yeti, Anyway?
+	.goto Icecrown,76.09,24.08
+	.target Girana the Blooded
+	.target Tylos Dawnrunner
+step
+	+|cFFFCDC00You have finished all Sunreaver Daily Quests for today! Reload this Guide tomorrow to continue them.|r
+]])
