@@ -579,7 +579,7 @@ function addon.SetStep(n, n2, loopback)
             end
         end
         if isComplete then
-            return RXPGuides[group].next()
+            return addon.functions.next()
         else
             n = #guide.steps
         end
@@ -678,7 +678,7 @@ function addon.SetStep(n, n2, loopback)
 
     if #activeSteps == 0 then
         if n >= #guide.steps then
-            return RXPGuides[group].next()
+            return addon.functions.next()
         else
             return addon.SetStep(n + 1)
         end
@@ -895,8 +895,8 @@ function addon.SetStep(n, n2, loopback)
             element.frame = elementFrame
             elementFrame.button:Enable()
             if element.tag then
-                local events = element.event or RXPGuides[group].events[element.tag]
-                elementFrame.callback = RXPGuides[group][element.tag]
+                local events = element.event or addon.functions.events[element.tag]
+                elementFrame.callback = addon.functions[element.tag]
                 elementFrame.callback(elementFrame)
                 if type(events) == "string" then
                     if events == "OnUpdate" then
@@ -1695,7 +1695,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                     local stepDiff = element.step.index - RXPCData.currentStep
                     element.element = element
                     if element.requestFromServer then
-                        RXPGuides[addon.currentGuide.group][element.tag](element,
+                        addon.functions[element.tag](element,
                                                                     "WindowUpdate")
                         addon.updateStepText =
                             addon.updateStepText or
@@ -1704,7 +1704,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                             not element.requestFromServer
                     elseif element.tag and
                         (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
-                        RXPGuides[addon.currentGuide.group][element.tag](element,
+                        addon.functions[element.tag](element,
                                                                     "WindowUpdate")
                     end
                 end
