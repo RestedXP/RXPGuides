@@ -5,7 +5,7 @@ local fmt = string.format
 local themes = {}
 addon.themes = themes
 
-themes['Default'] = {
+themes['RXP Blue'] = {
     background = {12 / 255, 12 / 255, 27 / 255, 1},
     bottomFrameBG = {18 / 255, 18 / 255, 40 / 255, 1},
     bottomFrameHighlight = {54 / 255, 62 / 255, 109 / 255, 1},
@@ -26,8 +26,10 @@ themes['Default'] = {
     },
 }
 
+themes['Default'] = themes['RXP Blue']
+
 -- Built-in themes must provide all properties
-themes['Hardcore'] = {
+themes['RXP Red'] = {
     background = {19 / 255, 0 / 255, 0 / 255, 1},
     bottomFrameBG = {31 / 255, 0 / 255, 0 / 255, 1},
     bottomFrameHighlight = {81 / 255, 0 / 255, 0 / 255, 1},
@@ -36,11 +38,21 @@ themes['Hardcore'] = {
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/Hardcore/",
     font = _G.GameFontNormal:GetFont(),
     textColor = {1, 1, 1},
-    applicable = function() return addon.settings.db.profile.hardcore end,
-    author = "RestedXP"
+    --applicable = function() return addon.settings.db.profile.hardcore end,
+    --applicable = true,
+    applicable = function() return not RXPCData.GA end,
+    author = "RestedXP",
+    bgTextures = {
+        edge = "Interface/BUTTONS/WHITE8X8",
+        bottom = "Interface/BUTTONS/WHITE8X8",
+    },
+    edges = {
+        edge = "Interface/AddOns/" .. addonName .. "/Textures/Hardcore/rxp-borders",
+        guideName = "Interface/AddOns/" .. addonName .. "/Textures/Hardcore/rxp-borders",
+    },
 }
 
-themes['GoldAssistant'] = {
+themes['RXP Gold'] = {
     background = {32 / 255, 18 / 255, 0 / 255, 1},
     bottomFrameBG = {48 / 255, 27 / 255, 0 / 255, 1},
     bottomFrameHighlight = {125 / 255, 71 / 255, 0 / 255, 1},
@@ -50,6 +62,7 @@ themes['GoldAssistant'] = {
     font = _G.GameFontNormal:GetFont(),
     textColor = {1, 1, 1},
     applicable = function() return RXPCData.GA == true end,
+    --applicable = true,
     author = "RestedXP"
 }
 
@@ -64,22 +77,15 @@ themes['DarkMode'] = {
     font = _G.GameFontNormal:GetFont(),
     textColor = {1, 1, 1},
     applicable = function() return not RXPCData.GA end,
+    --applicable = true,
     author = "Bypass"
 }
 
-addon.customThemeBase = {
-    name = "Custom",
-    background = themes['Default'].background,
-    bottomFrameBG = themes['Default'].bottomFrameBG,
-    bottomFrameHighlight = themes['Default'].bottomFrameHighlight,
-    mapPins = themes['Default'].mapPins,
-    tooltip = themes['Default'].tooltip,
-    texturePath = themes['Default'].texturePath,
-    font = themes['Default'].font,
-    textColor = themes['Default'].textColor,
-    applicable = true,
-    author = _G.UnitName("player")
-}
+addon.customThemeBase = CopyTable(themes.Default)
+addon.customThemeBase.name = "Custom"
+addon.customThemeBase.applicable = true
+addon.customThemeBase.author = _G.UnitName("player")
+addon.customThemeBase.bgTextures.guideName = "Interface/BUTTONS/WHITE8X8"
 
 addon.guideTextColors = {}
 
@@ -93,36 +99,46 @@ addon.guideTextColors.default = {
     ["RXP_BUY_"] = "FF0E8312"
 }
 
-local function themeApplies(applicable)
+local function themeApplies(applicable,isTable)
     if applicable == nil then
         return true
     elseif type(applicable) == "boolean" then
         return applicable
     elseif type(applicable) == "function" then
         return applicable()
+    elseif type(applicable) == "table" and not isTable then
+        return themeApplies(applicable.applicable,true)
+    end
+end
+
+local function GetDefaultTheme()
+
+    if addon.currentGuide and addon.currentGuide.theme and
+                          themes[addon.currentGuide.theme] then
+        return themes[addon.currentGuide.theme]
+    elseif RXPCData.GA then
+        return themes["RXP Gold"]
+    elseif addon.settings.db.profile.hardcore then
+        return themes["RXP Red"]
+    else
+        return themes["Default"]
     end
 end
 
 function addon:LoadActiveTheme()
     local applicableTheme = addon.settings.db.profile.activeTheme
-    if addon.settings.db.profile.hardcore then
-        applicableTheme = "Hardcore"
-    elseif RXPCData.GA then
-        applicableTheme = "GoldAssistant"
-        -- else unchanged
+    local newTheme
+    if applicableTheme == "Default" then
+        newTheme = GetDefaultTheme()
+    else
+        newTheme = themes[applicableTheme]
     end
-
-    local newTheme = themes[applicableTheme]
 
     -- Reset theme to default if selected goes away
-    if not newTheme then
-        addon.comms.PrettyPrint(
-            "%s theme no longer loaded, resetting to default", applicableTheme)
-        addon.settings.db.profile.activeTheme = "Default"
-        newTheme = themes["Default"]
-    end
 
-    if not themeApplies(newTheme.applicable) then return end
+    if not (newTheme and themeApplies(newTheme)) then
+        newTheme = GetDefaultTheme()
+    end
 
     addon.activeTheme = newTheme
 
@@ -161,6 +177,8 @@ function addon:GetThemeOptions()
         if themeApplies(t.applicable) then
             if k == 'Custom' then
                 themeOptions[k] = 'Custom'
+            elseif k == "Default" then
+                themeOptions[""] = "Default"
             else
                 themeOptions[k] = fmt("%s by %s", k, t.author)
             end

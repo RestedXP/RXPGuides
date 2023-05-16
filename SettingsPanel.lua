@@ -1878,17 +1878,12 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.1,
                         get = function()
-                            if self.db.profile.hardcore then
-                                return "Hardcore"
-                            elseif RXPCData.GA then
-                                return "GoldAssistant"
-                            end
-
-                            return self.db.profile.activeTheme
+                            return self.db.profile.activeTheme == "Default" and ""
+                                            or self.db.profile.activeTheme
                         end,
                         set = function(info, value)
+                            if value == "" then value = "Default" end
                             SetProfileOption(info, value)
-
                             if self.db.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
@@ -1896,10 +1891,10 @@ function addon.settings:CreateAceOptionsPanel()
                         values = function()
                             return addon:GetThemeOptions()
                         end,
-                        disabled = function()
+                        --[[disabled = function()
                             -- Disable selector if GA/Hardcore as they're special and branded
                             return RXPCData.GA or self.db.profile.hardcore
-                        end
+                        end]]
                     },
                     customThemeBackground = {
                         name = _G.BACKGROUND,

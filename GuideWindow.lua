@@ -91,7 +91,7 @@ function addon.RenderFrame(themeUpdate,isLoading)
         RXPFrame.GenerateMenuTable()
     end
     if addon.currentGuide and not isLoading then
-        addon.ReloadGuide()
+        addon:ReloadGuide(true)
     end
 end
 
@@ -251,9 +251,12 @@ RXPFrame:EnableMouse(1)
 
 local stepPos = {}
 
-local function StepScroll(n)
+local lastScrollValue
+function BottomFrame:StepScroll(n)
     local value
-    if addon.currentGuide.steps[n].hidewindow then return end
+    if not addon.currentGuide.steps[n] or addon.currentGuide.steps[n].hidewindow then
+         return
+    end
     for i, v in ipairs(BottomFrame.stepList) do
         if v == n then
             n = i
@@ -268,7 +271,12 @@ local function StepScroll(n)
         if value > smax then value = smax end
     end
     ScrollFrame.ScrollBar:SetValue(value)
-
+    --print(n,value)
+    value = value + n * 1e3
+    if value ~= lastScrollValue then
+        addon.ScheduleTask(0,BottomFrame.StepScroll,n)
+    end
+    lastScrollValue = value
 end
 
 RXPFrame:SetWidth(addon.width)
@@ -971,7 +979,7 @@ function addon.SetStep(n, n2, loopback)
     CurrentStepFrame.UpdateText()
     addon.updateSteps = true
     addon.UpdateMap()
-    StepScroll(scrollHeight)
+    BottomFrame:StepScroll(scrollHeight)
 end
 
 function CurrentStepFrame.EventHandler(self, event, ...)
@@ -1410,8 +1418,7 @@ function addon:LoadGuide(guide, OnLoad)
     end
 
     --TODO: add better theme handling
-    if guide.theme and addon.themes[guide.theme] and addon.activeTheme == addon.themes["Default"] then
-        addon.settings.db.profile.activeTheme = guide.theme
+    if guide.theme and addon.settings.db.profile.activeTheme == "Default" then
         renderFrame = true
     end
 
@@ -1602,10 +1609,10 @@ function addon:LoadGuide(guide, OnLoad)
     addon:ScheduleTask(RXPFrame.GenerateMenuTable)
 end
 
-function addon.ReloadGuide()
+function addon:ReloadGuide(keepStep)
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
                                       RXPCData.currentGuideName)
-    return guide and addon:LoadGuide(guide)
+    return guide and addon:LoadGuide(guide,keepStep)
 end
 
 function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
