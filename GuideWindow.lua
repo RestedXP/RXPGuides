@@ -257,12 +257,12 @@ function BottomFrame:StepScroll(n)
     if not addon.currentGuide.steps[n] or addon.currentGuide.steps[n].hidewindow then
          return
     end
-    for i, v in ipairs(BottomFrame.stepList) do
+    --[[for i, v in ipairs(BottomFrame.stepList) do
         if v == n then
             n = i
             break
         end
-    end
+    end]]
     if n == 1 or not stepPos[n] then
         value = 0
     else
@@ -1477,7 +1477,7 @@ function addon:LoadGuide(guide, OnLoad)
 
     for n, step in ipairs(guide.steps) do
         step.index = n
-        BottomFrame.stepList[n] = n
+        --BottomFrame.stepList[n] = n
         if step.completewith and not step.tip then step.sticky = true end
         if step.requires then
             local requirement = guide.labels[step.requires]
@@ -1615,18 +1615,19 @@ function addon:ReloadGuide(keepStep)
     return guide and addon:LoadGuide(guide,keepStep)
 end
 
-function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
+function BottomFrame.UpdateFrame(self, stepn)
     local level = UnitLevel("player")
     if stepPos[0] and ((not self and stepn) or (self and self.step)) then
         local stepNumber = stepn or self.step.index
-        local frame, step
-        for i, v in ipairs(BottomFrame.stepList) do
+        local frame = ScrollChild.framePool[stepNumber]
+        local step = addon.currentGuide.steps[stepNumber]
+        --[[for i, v in ipairs(BottomFrame.stepList) do
             if v == stepNumber then
                 frame = ScrollChild.framePool[i]
                 step = addon.currentGuide.steps[v]
                 break
             end
-        end
+        end]]
         if not (frame and step) then return end
 
         local fheight
@@ -1682,11 +1683,12 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
     else
         addon.updateBottomFrame = false
         local totalHeight = 0
-        local hiddenFrames = 0
+        --local hiddenFrames = 0
         for n, frame in ipairs(ScrollChild.framePool) do
             if not frame:IsShown() then break end
             local text
-            frame.step = addon.currentGuide.steps[BottomFrame.stepList[n]]
+            --frame.step = addon.currentGuide.steps[BottomFrame.stepList[n]]
+            frame.step = addon.currentGuide.steps[n]
             local step = frame.step
             local hideStep = step.level > level or step.hidewindow
             local fheight
@@ -1732,7 +1734,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                 frame:SetAlpha(1)
             end
             if hideStep then
-                hiddenFrames = hiddenFrames + 1
+                --hiddenFrames = hiddenFrames + 1
                 frame.text:SetText(text)
                 fheight = 1
                 frame:SetAlpha(0)
@@ -1745,10 +1747,10 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
             totalHeight = totalHeight + fheight + 2
             stepPos[n] = totalHeight - 5
         end
-        if hiddenFrames ~= BottomFrame.hiddenFrames then
+        --[[if hiddenFrames ~= BottomFrame.hiddenFrames then
             BottomFrame.SortSteps()
         end
-        BottomFrame.hiddenFrames = hiddenFrames
+        BottomFrame.hiddenFrames = hiddenFrames]]
         stepPos[0] = totalHeight
         -- print(ScrollChild.framePool[#ScrollChild.framePool]:GetBottom(),totalHeight)
     end
@@ -1779,7 +1781,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
 
 end
 -- addon.hiddenFrames = 0
-BottomFrame.stepList = {}
+--[[BottomFrame.stepList = {}
 function BottomFrame.SortSteps()
     table.sort(BottomFrame.stepList, function(k1, k2)
         local step1 = k1 and addon.currentGuide.steps[k1]
@@ -1804,7 +1806,7 @@ function BottomFrame.SortSteps()
         if n < 10 then prefix = "0" end
         frame.number.text:SetText(prefix .. tostring(n))
     end
-end
+end]]
 
 local function IsGuideActive(guide)
     if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and

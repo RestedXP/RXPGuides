@@ -471,7 +471,7 @@ function addon.tips:LoadDangerousMobs()
     addon.UpdateMap()
     if addon.settings.db.profile.debug then
         print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
-        zoneList = addon.dangerousMobs
+        zoneList = addon.dangerousMobs --Loads all the pins for debug purposes
     end
     if not zone or not addon.dangerousMobs[zone] then
         addon.tips.dangerousMobs = nil

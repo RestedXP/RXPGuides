@@ -986,7 +986,7 @@ function addon:UpdateLoop(diff)
                         if not updateText and steps[n].active then
                             updateText = true
                         end
-                        addon.RXPFrame.BottomFrame.UpdateFrame(nil, nil, n)
+                        addon.RXPFrame.BottomFrame.UpdateFrame(nil, n)
                         if not addon.updateStepText then
                             addon.stepUpdateList[n] = nil
                         end
