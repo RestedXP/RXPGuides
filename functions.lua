@@ -293,6 +293,73 @@ local function CacheQuest(id,data,remove)
     end
 end
 
+local function RequestQuestData(id)
+    local questObjectivesCache = RXPCData.questObjectivesCache
+    local ctime = GetTime()
+    if ctime - timer > 1.5 then
+        timer = ctime
+        nrequests = 0
+    end
+
+    if nrequests < 3 or requests[id] == 0 then
+        local isLoaded
+
+        --[[if C_QuestLog.RequestLoadQuestByID and not requests[id] then
+            C_QuestLog.RequestLoadQuestByID(id)
+            requests[id] = GetTime()
+        end]]
+
+        if (not requests[id] or ctime - requests[id] > 3) then
+            isLoaded = HaveQuestData(id)
+        end
+
+        if isLoaded then
+            requests[id] = 0
+            -- print(id,GetTime()-base)
+            local questInfo = C_QuestLog.GetQuestObjectives(id)
+            local incomplete
+            if (#questInfo == 1 and
+                (questInfo[1].type == "" or not questInfo[1].type)) or
+                #questInfo == 0 then
+                questInfo[1] = {
+                    text = L("Objective Complete"),
+                    type = "event",
+                    numRequired = 1,
+                    numFulfilled = 0,
+                    finished = false,
+                    generated = true,
+                }
+            else
+                for _,obj in pairs(questInfo) do
+                    if obj.type == "progressbar" and not obj.finished then
+                        obj.numFulfilled = 0
+                        obj.numRequired = 100
+                    end
+                    if not obj.text or obj.text:sub(1,1) == " " then
+                        incomplete = true
+                        --print(id,_)
+                    end
+                end
+            end
+            if incomplete then
+                CacheQuest(id,questInfo,true)
+            else
+                CacheQuest(id,questInfo)
+            end
+            return questInfo
+        elseif not requests[id] then
+            requests[id] = GetTime()
+        elseif ctime - requests[id] <= 3 then
+            return questObjectivesCache[id]
+        else
+            requests[id] = GetTime()
+        end
+        -- print(id,GetTime()-base)
+        nrequests = nrequests + 1
+    end
+    return questObjectivesCache[id]
+end
+
 function addon.GetQuestName(id)
     local questNameCache = RXPCData.questNameCache
     if type(id) ~= "number" then return end
@@ -495,68 +562,7 @@ function addon.GetQuestObjectives(id, step)
     end
 
     if not IsOnQuest(id) or err then
-        local ctime = GetTime()
-        if ctime - timer > 1.5 then
-            timer = ctime
-            nrequests = 0
-        end
-
-        if nrequests < 3 or requests[id] == 0 then
-            local isLoaded
-
-            --[[if C_QuestLog.RequestLoadQuestByID and not requests[id] then
-                C_QuestLog.RequestLoadQuestByID(id)
-                requests[id] = GetTime()
-            end]]
-
-            if (not requests[id] or ctime - requests[id] > 3) then
-                isLoaded = HaveQuestData(id)
-            end
-
-            if isLoaded then
-                requests[id] = 0
-                -- print(id,GetTime()-base)
-                local questInfo = C_QuestLog.GetQuestObjectives(id)
-                local incomplete
-                if (#questInfo == 1 and
-                    (questInfo[1].type == "" or not questInfo[1].type)) or
-                    #questInfo == 0 then
-                    questInfo[1] = {
-                        text = L("Objective Complete"),
-                        type = "event",
-                        numRequired = 1,
-                        numFulfilled = 0,
-                        finished = false,
-                        generated = true,
-                    }
-                else
-                    for _,obj in pairs(questInfo) do
-                        if obj.type == "progressbar" and not obj.finished then
-                            obj.numFulfilled = 0
-                            obj.numRequired = 100
-                        end
-                        if not obj.text or obj.text:sub(1,1) == " " then
-                            incomplete = true
-                            --print(id,_)
-                        end
-                    end
-                end
-                if incomplete then
-                    CacheQuest(id,questInfo,true)
-                else
-                    CacheQuest(id,questInfo)
-                end
-                return questInfo
-            elseif not requests[id] then
-                requests[id] = GetTime()
-            elseif ctime - requests[id] <= 3 then
-                return questObjectivesCache[id]
-            else
-                requests[id] = GetTime()
-            end
-            -- print(id,GetTime()-base)
-            nrequests = nrequests + 1
-        end
+        RequestQuestData(id)
         return questObjectivesCache[id]
     end
 end
@@ -614,7 +620,11 @@ function addon.UpdateStepText(self)
         index = self.step.index
     end
     addon.updateStepText = true
-    addon.stepUpdateList[index] = true
+    if index then
+        addon.stepUpdateList[index] = true
+    else
+        addon.updateTipWindow = true
+    end
 end
 
 function addon.GetNpcId(unit, isGuid)

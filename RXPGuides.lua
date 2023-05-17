@@ -907,9 +907,11 @@ function addon.UpdateScheduledTasks()
     end
 end
 
+local tickRate = 0.05
+
 function addon.ScheduleTask(self, ref, ...)
 --    print('w',ref)
-    local time = type(self) == "number" and self or GetTime() + 0.125
+    local time = type(self) == "number" and self or GetTime() + tickRate * 3
     --print(type(ref))
     if type(ref) == "table" then
         addon.scheduledTasks[ref] = time
@@ -926,11 +928,9 @@ end
 addon.updateActiveQuest = {}
 addon.updateInactiveQuest = {}
 
-addon.tickTimer = 0
-
+local stepCounter = 1
 local updateTick = 0
 local skip = 0
-local tickRate = 0.05
 local updateError
 local errorCount = 0
 
@@ -945,7 +945,7 @@ function addon:UpdateLoop(diff)
         return
     elseif updateTick > (tickRate + rand() / 128) and errorCount < 10 then
         updateError = true
-        local currentTime = GetTime()
+        local guideLoaded
         updateTick = 0
         local activeQuestUpdate = 0
         skip = skip + 1
@@ -977,11 +977,15 @@ function addon:UpdateLoop(diff)
             if addon.updateSteps then
                 addon.UpdateStepCompletion()
                 event = event .. "/stepComplete"
-            elseif addon.updateStepText and addon.currentGuide and skip % 2 == 1 then
+            elseif addon.updateStepText and addon.currentGuide and skip % 2 == 0 then
                 addon.updateStepText = false
                 local updateText
                 local steps = addon.currentGuide.steps
+                local update = {}
                 for n in pairs(addon.stepUpdateList) do
+                    tinsert(update,n)
+                end
+                for _,n in pairs(update) do
                     if steps[n] then
                         if not updateText and steps[n].active then
                             updateText = true
@@ -997,22 +1001,21 @@ function addon:UpdateLoop(diff)
                     addon.RXPFrame.CurrentStepFrame.UpdateText()
                 end
                 event = event .. "/updateText"
-            elseif addon.updateBottomFrame or currentTime - addon.tickTimer > 5 then
+            elseif addon.updateBottomFrame then
                 errorCount = 0
                 addon.RXPFrame.BottomFrame.UpdateFrame()
-                addon.RXPFrame.CurrentStepFrame.UpdateText()
                 addon.RXPFrame.SetStepFrameAnchor()
-                addon.tickTimer = currentTime
                 event = event .. "/bottomFrame"
                 updateError = false
                 skip = 1
                 return
-            elseif next(addon.guideCache) then
+            elseif skip % 2 == 1 and next(addon.guideCache) then
                 event = event .. "/guideCache"
                 local length = 0
                 for _,guide in pairs(addon.guides) do
                     if not guide.steps then
                         addon:FetchGuide(guide)
+                        guideLoaded = true
                         length = length + (tonumber(guide.length) or 0)
                         --print('f',not guide.steps and guide.name)
                         if length > 45000 or GetFramerate() < 60 then
@@ -1038,7 +1041,9 @@ function addon:UpdateLoop(diff)
         elseif skip % 4 == 3 and not addon.ProcessMessageQueue() then
             addon.UpdateScheduledTasks()
             addon.ClearQuestCache()
-            tickRate = math.min(0.05,3/GetFramerate())
+            tickRate = math.min(0.1,4/GetFramerate())
+        elseif skip % 32 == 29 then
+            addon.RXPFrame.CurrentStepFrame.UpdateText()
         elseif skip % 16 == 1 then
             activeQuestUpdate = 0
             local deletedIndexes = {}
@@ -1060,6 +1065,16 @@ function addon:UpdateLoop(diff)
             if activeQuestUpdate > 0 then
                 event = event .. "/inactiveQ"
             end
+        elseif not guideLoaded and addon.currentGuide then
+            for n = stepCounter,stepCounter + 9 do
+                addon.RXPFrame.BottomFrame.UpdateFrame(nil,n)
+                --print(n)
+            end
+            stepCounter = stepCounter + 10
+            if stepCounter > #addon.currentGuide.steps then
+                stepCounter = 1
+            end
+            skip = skip % 4096
         end
         updateError = false
     end

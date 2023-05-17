@@ -271,8 +271,8 @@ function BottomFrame:StepScroll(n)
         if value > smax then value = smax end
     end
     ScrollFrame.ScrollBar:SetValue(value)
-    --print(n,value)
-    value = value + n * 1e3
+
+    value = math.ceil(value+0.5)
     if value ~= lastScrollValue then
         addon.ScheduleTask(0,BottomFrame.StepScroll,n)
     end
@@ -1635,16 +1635,20 @@ function BottomFrame.UpdateFrame(self, stepn)
 
         local text
         for _, element in ipairs(frame.step.elements) do
+            local stepDiff = element.step.index - RXPCData.currentStep
+            element.element = element
             if element.requestFromServer then
-                if not element.element then
-                    element.element = element
-                end
                 addon.functions[element.tag](element,
                                                             "WindowUpdate")
-                if element.requestFromServer then
-                    addon.updateStepText = true
-                    addon.stepUpdateList[element.step.index] = true
-                end
+                addon.updateStepText =
+                    addon.updateStepText or
+                        not element.requestFromServer
+                addon.stepUpdateList[element.step.index] =
+                    not element.requestFromServer
+            elseif element.tag and
+                (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
+                addon.functions[element.tag](element,
+                                                            "WindowUpdate")
             end
             local rawtext = element.tooltipText
             if not rawtext and element.text then
