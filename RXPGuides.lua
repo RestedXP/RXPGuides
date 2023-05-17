@@ -932,18 +932,18 @@ local updateTick = 0
 local skip = 0
 local tickRate = 0.05
 local updateError
-addon.errorCount = 0
+local errorCount = 0
 
 function addon:UpdateLoop(diff)
     updateTick = updateTick + diff
     if updateError then
-        addon.errorCount = addon.errorCount + 1
+        errorCount = errorCount + 1
     end
     if addon.isHidden then
         updateError = false
         --print('hidden')
         return
-    elseif updateTick > (tickRate + rand() / 128) and addon.errorCount < 10 then
+    elseif updateTick > (tickRate + rand() / 128) and errorCount < 10 then
         updateError = true
         local currentTime = GetTime()
         updateTick = 0
@@ -998,7 +998,7 @@ function addon:UpdateLoop(diff)
                 end
                 event = event .. "/updateText"
             elseif addon.updateBottomFrame or currentTime - addon.tickTimer > 5 then
-                addon.errorCount = 0
+                errorCount = 0
                 addon.RXPFrame.BottomFrame.UpdateFrame()
                 addon.RXPFrame.CurrentStepFrame.UpdateText()
                 addon.RXPFrame.SetStepFrameAnchor()
@@ -1012,13 +1012,12 @@ function addon:UpdateLoop(diff)
                 local length = 0
                 for _,guide in pairs(addon.guides) do
                     if not guide.steps then
-                        if length > 45000 then
-                            --print(length)
-                            break
-                        end
                         addon:FetchGuide(guide)
                         length = length + (tonumber(guide.length) or 0)
                         --print('f',not guide.steps and guide.name)
+                        if length > 45000 or GetFramerate() < 60 then
+                            break
+                        end
                     end
                 end
             end
@@ -1039,6 +1038,7 @@ function addon:UpdateLoop(diff)
         elseif skip % 4 == 3 and not addon.ProcessMessageQueue() then
             addon.UpdateScheduledTasks()
             addon.ClearQuestCache()
+            tickRate = math.min(0.05,3/GetFramerate())
         elseif skip % 16 == 1 then
             activeQuestUpdate = 0
             local deletedIndexes = {}
