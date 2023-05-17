@@ -1171,7 +1171,7 @@ step
 step
 	#era
     .goto Durotar,58.4,57.2
-    .xp 7+2195 >> Grind to 2195+/4500xp
+    .xp 7+2625 >> Grind to 2625+/4500xp
 step
 	#som
 	#phase 1-2
