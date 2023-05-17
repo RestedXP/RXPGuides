@@ -467,10 +467,11 @@ function addon.tips:LoadDangerousMobs()
 
     local mapId = C_Map.GetBestMapForUnit("player") or 0
     local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
-
+    local zoneList
     addon.UpdateMap()
     if addon.settings.db.profile.debug then
         print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
+        zoneList = addon.dangerousMobs
     end
     if not zone or not addon.dangerousMobs[zone] then
         addon.tips.dangerousMobs = nil
@@ -480,41 +481,45 @@ function addon.tips:LoadDangerousMobs()
     end
     local dangerousMobs = session.dangerousMobs[zone] or {}
     session.dangerousMobs[zone] = dangerousMobs
-
+    zoneList = zoneList or {dangerousMobs}
     -- dangerousMobs DB has nested objects, flatten and fake step data
     if not dangerousMobs.processed then
+        addon.currentGuideName = "Addon Tips"
         local steps = {}
-        for name, list in pairs(addon.dangerousMobs[zone] or {}) do
-            for _, mobData in ipairs(list) do
-                --added a semicolon separator in case the database entry has multiple coords
-                for line in mobData.Location:gmatch("[^\r\n;]+") do
-                    line:gsub("^%s+","")
-                    line:gsub("%s+$","")
-                    local element = addon.ParseLine(line)
-                    if element then
-                        local step = {}
-                        element.step = step
-                        --element.drawCenterPoint = true--Adds an icon at the center of the lines
-                        step.isActive = IsStepActive
-                        step.levelBuffer = mobData.Classification == "Normal" and 1 or 3
-                        if element.wx or element.segments then
-                            --step.linethickness = 2
-                            step.showTooltip = true--Shows tooltip when hovering over a line
-                            step.icon = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t"--texture used for the icon
-                            step.mapTooltip = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
-                                                name, mobData.MaxLevel) --Tooltip title
+        for _,zoneData in pairs(zoneList) do
+            for name, list in pairs(zoneData) do
+                for _, mobData in ipairs(list) do
+                    --added a semicolon separator in case the database entry has multiple coords
+                    for line in mobData.Location:gmatch("[^\r\n;]+") do
+                        line:gsub("^%s+","")
+                        line:gsub("%s+$","")
+                        local element = addon.ParseLine(line)
+                        if element then
+                            local step = {}
+                            element.step = step
+                            --element.drawCenterPoint = true--Adds an icon at the center of the lines
+                            step.isActive = IsStepActive
+                            step.levelBuffer = mobData.Classification == "Normal" and 1 or 3
+                            if element.wx or element.segments then
+                                --step.linethickness = 2
+                                step.showTooltip = true--Shows tooltip when hovering over a line
+                                step.icon = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t"--texture used for the icon
+                                step.mapTooltip = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
+                                                    name, mobData.MaxLevel) --Tooltip title
 
-                            --Tooltip description:
-                            element.mapTooltip = fmt("%s - %s\n%s",
-                                mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
+                                --Tooltip description:
+                                element.mapTooltip = fmt("%s - %s\n%s",
+                                    mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
+                            end
+
+                            step.elements = {element}
+                            tinsert(steps,step)
                         end
-
-                        step.elements = {element}
-                        tinsert(steps,step)
                     end
                 end
             end
         end
+        addon.currentGuideName = nil
         dangerousMobs.steps = steps
     end
 

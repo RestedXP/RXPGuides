@@ -758,8 +758,14 @@ local function parseLine(linetext,step,parsingLogic)
     if element and (text and not element.textOnly or element.dynamicText) then
         addon.lastEelement = element
     end
+
     if not step then
-        element.parent = nil
+        if element then
+            element.parent = nil
+        else
+            addon.error(L("Error parsing ") .. addon.currentGuideName .. ':'
+                 .. linetext)
+        end
     elseif step.elements and element then
         tinsert(step.elements, element)
     end

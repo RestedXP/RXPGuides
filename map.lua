@@ -6,7 +6,6 @@ local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 addon.activeWaypoints = {}
 addon.linePoints = {}
-addon.generatedSteps = {}
 
 local MapPinPool = {}
 local MapLinePool = {}
@@ -520,7 +519,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     -- Loop through the steps until we create the number of pins a user
     -- configures or until we reach the end of the current guide.
 
-    local function ProcessMapPin(step)
+    local function ProcessMapPin(step,ignoreCounter)
         if not step then return end
         -- Loop through the elements in each step. Again, we check if we
         -- already created enough pins, then we check if the element
@@ -535,7 +534,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         local nCenter = step.centerPins and #step.centerPins or 0
         --print('cp',#step.centerPins)
         local nElements = #step.elements
-        while (numActivePins < numPins or j <= nCenter) and j <= nElements + nCenter do
+        while (numActivePins < numPins or j <= nCenter or ignoreCounter) and j <= nElements + nCenter do
             local element
             if j > nCenter then
                 element = step.elements[j-nCenter]
@@ -616,7 +615,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
             ProcessMapPin(step)
         end
 
-        addon:ProcessGeneratedSteps(ProcessMapPin)
+        addon:ProcessGeneratedSteps(ProcessMapPin,true)
     end
 
     return pins
@@ -651,7 +650,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     -- Loop through the steps until we create the number of pins a user
     -- configures or until we reach the end of the current guide.
 
-    local function ProcessLine(step)
+    local function ProcessLine(step,ignoreCounter)
         if not step then return end
         step.centerPins = {}
         local function InsertLine(element, sX, sY, fX, fY, lineAlpha)
@@ -698,7 +697,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
             end
         end
 
-        while numActivePins < numPins and j <= #step.elements do
+        while (numActivePins < numPins or ignoreCounter) and j <= #step.elements do
             local element = step.elements[j]
 
             local nPoints = element.segments and
@@ -788,16 +787,8 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
             ProcessLine(step)
         end
 
-        for _,container in pairs(addon.generatedSteps) do
-            for _,step in ipairs(container) do
-                if step.isActive then
-                    step.active = step:isActive()
-                end
-                if step.active then
-                    ProcessLine(step)
-                end
-            end
-        end
+        addon:ProcessGeneratedSteps(ProcessLine,true)
+
     end
 
     return pins

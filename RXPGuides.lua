@@ -105,8 +105,10 @@ addon.player = {
     faction = UnitFactionGroup("player"),
 }
 
-local class = addon.player.class
-local race = addon.player.race
+addon.generatedSteps = {}
+
+--local class = addon.player.class
+--local race = addon.player.race
 
 BINDING_HEADER_RXPGuides = addon.title
 BINDING_HEADER_RXPTargeting = addon.title
