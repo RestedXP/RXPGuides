@@ -4,7 +4,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Nagrand
-#name Mining & Herbalism
+#name Mining & Herbalism1
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Nagrand,50,50
@@ -23,7 +24,8 @@ RXPGuides.RegisterGuide([[
 #hidewindow
 #subgroup Nagrand
 
-#name Mining
+#name Mining1
+#displayname Mining
 step
     #sticky
     .waypoint Nagrand,50,50
@@ -42,7 +44,8 @@ RXPGuides.RegisterGuide([[
 #hidewindow
 #subgroup Nagrand
 
-#name Herbalism
+#name Herbalism1
+#displayname Herbalism
 step
     #sticky
     .waypoint Nagrand,50,50
@@ -60,7 +63,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Netherstorm
-#name Mining & Herbalism
+#name Mining & Herbalism2
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Netherstorm,50,50
@@ -78,7 +82,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Netherstorm
-#name Mining
+#name Mining2
+#displayname Mining
 step
     #sticky
     .waypoint Netherstorm,50,50
@@ -96,7 +101,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Netherstorm
-#name Herbalism
+#name Herbalism2
+#displayname Herbalism
 step
     #sticky
     .waypoint Netherstorm,50,50
@@ -115,7 +121,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Terokkar Forest
-#name Mining & Herbalism
+#name Mining & Herbalism3
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Terokkar Forest,50,50
@@ -133,7 +140,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Terokkar Forest
-#name Mining
+#name Mining3
+#displayname Mining
 step
     #sticky
     .waypoint Terokkar Forest,50,50
@@ -151,7 +159,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Terokkar Forest
-#name Herbalism
+#name Herbalism3
+#displayname Herbalism
 step
     #sticky
     .waypoint Terokkar Forest,50,50
@@ -169,7 +178,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Shadowmoon Valley
-#name Mining & Herbalism
+#name Mining & Herbalism4
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Shadowmoon Valley,50,50
@@ -187,7 +197,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Shadowmoon Valley
-#name Mining
+#name Mining4
+#displayname Mining
 step
     #sticky
     .waypoint Shadowmoon Valley,50,50
@@ -205,7 +216,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Shadowmoon Valley
-#name Herbalism
+#name Herbalism4
+#displayname Herbalism
 step
     #sticky
     .waypoint Shadowmoon Valley,50,50
@@ -223,7 +235,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zangarmarsh
-#name Mining & Herbalism
+#name Mining & Herbalism5
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Zangarmarsh,50,50
@@ -240,7 +253,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zangarmarsh
-#name Mining
+#name Mining5
+#displayname Mining
 step
     #sticky
     .waypoint Zangarmarsh,50,50
@@ -257,7 +271,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zangarmarsh
-#name Herbalism
+#name Herbalism5
+#displayname Herbalism
 step
     #sticky
     .waypoint Zangarmarsh,50,50
@@ -274,7 +289,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Hellfire Peninsula
-#name Mining & Herbalism
+#name Mining & Herbalism6
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Hellfire Peninsula,50,50
@@ -292,7 +308,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Hellfire Peninsula
-#name Herbalism
+#name Herbalism6
+#displayname Herbalism
 step
     #sticky
     .waypoint Hellfire Peninsula,50,50
@@ -310,7 +327,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Hellfire Peninsula
-#name Mining
+#name Mining6
+#displayname Mining
 step
     #sticky
     .waypoint Hellfire Peninsula,50,50
@@ -328,7 +346,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Blades Edge Mountains
-#name Mining & Herbalism
+#name Mining & Herbalism7
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Blade's Edge Mountains,50,50
@@ -346,7 +365,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Blades Edge Mountains
-#name Mining
+#name Mining7
+#displayname Mining
 step
     #sticky
     .waypoint Blade's Edge Mountains,50,50
@@ -364,7 +384,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Blades Edge Mountains
-#name Herbalism
+#name Herbalism7
+#displayname Herbalism
 step
     #sticky
     .waypoint Blade's Edge Mountains,50,50
@@ -382,7 +403,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Netherstorm
-#name Fel Hide
+#name Fel Hide_1a
+#displayname Fel Hide
 step
     #hidewindow
     +test
@@ -397,7 +419,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Netherstorm
-#name Nether Dragonscale
+#name Nether Dragonscale_2a
+#displayname Nether Dragonscale
 step
     #hidewindow
     +test
@@ -412,7 +435,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Netherstorm
-#name Fel Armament
+#name Fel Armament_3a
+#displayname Fel Armament
 step
     #hidewindow
     +test
@@ -427,7 +451,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Blades Edge Mountains
-#name Wind Scale
+#name Wind Scale_4a
+#displayname Wind Scale
 step
     #hidewindow
     +test
@@ -442,7 +467,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Blades Edge Mountains
-#name Nether Dragonscale
+#name Nether Dragonscale_5a
+#displayname Nether Dragonscale
 step
     #hidewindow
     +test
@@ -457,7 +483,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Blades Edge Mountains
-#name Crystal Infused Leather
+#name Crystal Infused Leather_6a
+#displayname Crystal Infused Leather
 step
     #hidewindow
     +test
@@ -472,7 +499,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Nagrand
-#name Combined Primals
+#name Combined Primals_7a
+#displayname Combined Primals
 step
     #hidewindow
     +test
@@ -487,7 +515,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Nagrand
-#name Primal Water
+#name Primal Water_8a
+#displayname Primal Water
 step
 #hidewindow
     +loop1
@@ -504,7 +533,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Nagrand
-#name Thick Clefthoof Leather
+#name Thick Clefthoof Leather_9a
+#displayname Thick Clefthoof Leather
 step
     #sticky
     .waypoint Nagrand,50,50
@@ -523,7 +553,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Nagrand
-#name Talbuk Venison
+#name Talbuk Venison_10a
+#displayname Talbuk Venison
 step
     #hidewindow
     +test
@@ -538,7 +569,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Nagrand
-#name Cobra Scales
+#name Cobra Scales_11a
+#displayname Cobra Scales
 step
     #hidewindow
     +test
@@ -553,7 +585,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Nagrand
-#name Primal Shadow
+#name Primal Shadow_12a
+#displayname Primal Shadow
 step
     #hidewindow
     +test
@@ -568,7 +601,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Nagrand
-#name Primal Earth
+#name Primal Earth_13a
+#displayname Primal Earth
 
 step
     #hidewindow
@@ -584,7 +618,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Terokkar Forest
-#name Mark of Kiljaeden
+#name Mark of Kiljaeden_14a
+#displayname Mark of Kiljaeden
 step
     #hidewindow
     +test
@@ -600,7 +635,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Terokkar Forest
-#name Firewing Signet
+#name Firewing Signet_15a
+#displayname Firewing Signet
 step
     #hidewindow
     +test
@@ -615,7 +651,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Terokkar Forest
-#name Warped Flesh
+#name Warped Flesh_16a
+#displayname Warped Flesh
 step
     #hidewindow
     +test
@@ -630,7 +667,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Terokkar Forest
-#name Primal Water
+#name Primal Water_17a
+#displayname Primal Water
 step
     #hidewindow
     +test
@@ -645,7 +683,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Terokkar Forest
-#name Netherweb Spider Silk
+#name Netherweb Spider Silk_18a
+#displayname Netherweb Spider Silk
 step
 #hidewindow
     .waypoint Terokkar Forest,17.3,80,-1520
@@ -665,7 +704,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Shadowmoon Valley
-#name Fel Armament
+#name Fel Armament_19a
+#displayname Fel Armament
 step
     #hidewindow
     +test
@@ -680,7 +720,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Shadowmoon Valley
-#name Primal Fire
+#name Primal Fire_20a
+#displayname Primal Fire
 step
     #hidewindow
     +test
@@ -695,7 +736,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Shadowmoon Valley
-#name Primal Water
+#name Primal Water_21a
+#displayname Primal Water
 step
     #hidewindow
     +test
@@ -710,7 +752,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Shadowmoon Valley
-#name Primal Air
+#name Primal Air_22a
+#displayname Primal Air
 step
     #hidewindow
     +test
@@ -726,7 +769,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Shadowmoon Valley
-#name Arcane Tome
+#name Arcane Tome_23a
+#displayname Arcane Tome
 step
     #hidewindow
     +test
@@ -741,7 +785,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Shadowmoon Valley
-#name Wind Scale
+#name Wind Scale_24a
+#displayname Wind Scale
 step
     #hidewindow
     +test
@@ -756,7 +801,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Hellfire Peninsula
-#name Primal Shadow
+#name Primal Shadow_25a
+#displayname Primal Shadow
 step
     #hidewindow
     +test
@@ -771,7 +817,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Hellfire Peninsula
-#name Primal Fire
+#name Primal Fire_26a
+#displayname Primal Fire
 step
     #hidewindow
     +test
@@ -786,7 +833,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Netherstorm
-#name Primal Mana
+#name Primal Mana_27a
+#displayname Primal Mana
 step
     #hidewindow
     +test
@@ -801,7 +849,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Un'Goro Crater
-#name Herbalism
+#name Herbalism8
+#displayname Herbalism
 step
     #sticky
     .waypoint Un'Goro Crater,50,50
@@ -819,7 +868,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Un'Goro Crater
-#name Mining
+#name Mining8
+#displayname Mining
 step
     #sticky
     .waypoint Un'Goro Crater,50,50
@@ -837,7 +887,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Un'Goro Crater
-#name Mining & Herbalism
+#name Mining & Herbalism8
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Un'Goro Crater,50,50
@@ -855,7 +906,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Winterspring
-#name Mining
+#name Mining9
+#displayname Mining
 step
     #sticky
     .waypoint Winterspring,50,50
@@ -873,7 +925,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Winterspring
-#name Herbalism
+#name Herbalism9
+#displayname Herbalism
 step
     #sticky
     .waypoint Winterspring,50,50
@@ -891,7 +944,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Winterspring
-#name Mining & Herbalism
+#name Mining & Herbalism9
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Winterspring,50,50
@@ -909,7 +963,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Borean Tundra
-#name Eternal Water (Frozen Elemental)
+#name Eternal Water (Frozen Elemental)_28a
+#displayname Eternal Water (Frozen Elemental)
 step
     #sticky
     .waypoint Borean Tundra,50,50
@@ -927,7 +982,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Borean Tundra
-#name Eternal Water (Steam Rager)
+#name Eternal Water (Steam Rager)_29a
+#displayname Eternal Water (Steam Rager)
 step
     #sticky
     .waypoint Borean Tundra,50,50
@@ -945,7 +1001,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Borean Tundra
-#name Eternal Water (Boiling Spirit)
+#name Eternal Water (Boiling Spirit)_30a
+#displayname Eternal Water (Boiling Spirit)
 step
     #sticky
     .waypoint Borean Tundra,50,50
@@ -963,7 +1020,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Borean Tundra
-#name Eternal Fire (Boiling Spirit)
+#name Eternal Fire (Boiling Spirit)_31a
+#displayname Eternal Fire (Boiling Spirit)
 step
     #sticky
     .waypoint Borean Tundra,50,50
@@ -981,7 +1039,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Borean Tundra
-#name Eternal Air (Enraged Tempest)
+#name Eternal Air (Enraged Tempest)_32a
+#displayname Eternal Air (Enraged Tempest)
 step
     #sticky
     .waypoint Borean Tundra,50,50
@@ -999,7 +1058,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Borean Tundra
-#name Rhino Meat & Borean Leather
+#name Rhino Meat & Borean Leather_33a
+#displayname Rhino Meat & Borean Leather
 step
     #sticky
     .waypoint Borean Tundra,50,50
@@ -1021,7 +1081,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Sholazar Basin
-#name Chilled Meat & Sholazar Basin
+#name Chilled Meat & Sholazar Basin_34a
+#displayname Chilled Meat & Sholazar Basin
 step
     #sticky
     .waypoint Sholazar Basin,50,50
@@ -1043,7 +1104,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Sholazar Basin
-#name Eternal Earth (Lifeblood Elemental)
+#name Eternal Earth (Lifeblood Elemental)_35a
+#displayname Eternal Earth (Lifeblood Elemental)
 step
     #sticky
     .waypoint Sholazar Basin,50,50
@@ -1061,7 +1123,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Sholazar Basin
-#name Eternal Earth (Sholazar Guardian)
+#name Eternal Earth (Sholazar Guardian)_36a
+#displayname Eternal Earth (Sholazar Guardian)
 step
     #sticky
     .waypoint Sholazar Basin,50,50
@@ -1079,7 +1142,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Sholazar Basin
-#name Chunk o' Mammoth & Borean Leather
+#name Chunk o' Mammoth & Borean Leather_37a
+#displayname Chunk o' Mammoth & Borean Leather
 step
     #sticky
     .waypoint Sholazar Basin,50,50
@@ -1097,7 +1161,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Sholazar Basin
-#name Eternal Water & Air (Storm Revenant & Aqueous Spirit)
+#name Eternal Water & Air (Storm Revenant & Aqueous Spirit)_38a
+#displayname Eternal Water & Air (Storm Revenant & Aqueous Spirit)
 step
     #sticky
     .waypoint Sholazar Basin,50,50
@@ -1115,7 +1180,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Dragonblight
-#name Eternal Water (Crystalline Ice Elemental)
+#name Eternal Water (Crystalline Ice Elemental)_39a
+#displayname Eternal Water (Crystalline Ice Elemental)
 step
     #sticky
     .waypoint Dragonblight,50,50
@@ -1133,7 +1199,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Dragonblight
-#name Eternal Shadow (Deathbringer Revenant)
+#name Eternal Shadow (Deathbringer Revenant)_40a
+#displayname Eternal Shadow (Deathbringer Revenant)
 step
     #sticky
     .waypoint Dragonblight,50,50
@@ -1151,7 +1218,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Dragonblight
-#name Eternal Water (Ice Revenant)
+#name Eternal Water (Ice Revenant)_41a
+#displayname Eternal Water (Ice Revenant)
 step
     #sticky
     .waypoint Dragonblight,50,50
@@ -1169,7 +1237,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Grizzly Hills
-#name Eternal Earth (Runic Battle Golem)
+#name Eternal Earth (Runic Battle Golem)_42a
+#displayname Eternal Earth (Runic Battle Golem)
 step
     #sticky
     .waypoint Grizzly Hills,50,50
@@ -1187,7 +1256,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Grizzly Hills
-#name Eternal Air (Lightning Sentry)
+#name Eternal Air (Lightning Sentry)_43a
+#displayname Eternal Air (Lightning Sentry)
 step
     #sticky
     .waypoint Grizzly Hills,50,50
@@ -1205,7 +1275,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Howling Fjord
-#name Eternal Earth (Iron Rune Sentinel)
+#name Eternal Earth (Iron Rune Sentinel)_44a
+#displayname Eternal Earth (Iron Rune Sentinel)
 step
     #sticky
     .waypoint Howling Fjord,50,50
@@ -1223,7 +1294,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Howling Fjord
-#name Eternal Earth (Iron Rune Golem)
+#name Eternal Earth (Iron Rune Golem)_45a
+#displayname Eternal Earth (Iron Rune Golem)
 step
     #sticky
     .waypoint Howling Fjord,50,50
@@ -1241,7 +1313,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Howling Fjord
-#name Eternal Water (Ice Elemental)
+#name Eternal Water (Ice Elemental)_46a
+#displayname Eternal Water (Ice Elemental)
 step
     #sticky
     .waypoint Howling Fjord,50,50
@@ -1259,7 +1332,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Howling Fjord
-#name Eternal Water (Iceshard Elemental)
+#name Eternal Water (Iceshard Elemental)_47a
+#displayname Eternal Water (Iceshard Elemental)
 step
     #sticky
     .waypoint Howling Fjord,50,50
@@ -1277,7 +1351,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Howling Fjord
-#name Eternal Life (Thornvine Creeper)
+#name Eternal Life (Thornvine Creeper)_48a
+#displayname Eternal Life (Thornvine Creeper)
 step
     #sticky
     .waypoint Howling Fjord,50,50
@@ -1295,7 +1370,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zul'Drak
-#name Eternal Water (Crazed Water Spirit)
+#name Eternal Water (Crazed Water Spirit)_49a
+#displayname Eternal Water (Crazed Water Spirit)
 step
     #sticky
     .waypoint Zul'Drak,50,50
@@ -1313,7 +1389,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zul'Drak
-#name Iceweb Spider Silk & Borean Leather
+#name Iceweb Spider Silk & Borean Leather_50a
+#displayname Iceweb Spider Silk & Borean Leather
 step
     #sticky
     .waypoint Zul'Drak,50,50
@@ -1331,7 +1408,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zul'Drak
-#name Eternal Water (Frozen Earth)
+#name Eternal Water (Frozen Earth)_51a
+#displayname Eternal Water (Frozen Earth)
 step
     #sticky
     .waypoint Zul'Drak,50,50
@@ -1349,7 +1427,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zul'Drak
-#name Eternal Earth (Guardian of Zum'Rhuk)
+#name Eternal Earth (Guardian of Zum'Rhuk)_52a
+#displayname Eternal Earth (Guardian of Zum'Rhuk)
 step
     #sticky
     .waypoint Zul'Drak,50,50
@@ -1367,7 +1446,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Chunk o' Mammoth & Borean Leather
+#name Chunk o' Mammoth & Borean Leather_53a
+#displayname Chunk o' Mammoth & Borean Leather
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1385,7 +1465,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Worm Meat & Borean Leather
+#name Worm Meat & Borean Leather_54a
+#displayname Worm Meat & Borean Leather
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1403,7 +1484,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Eternal Fire (Seething Revenant)
+#name Eternal Fire (Seething Revenant)_55a
+#displayname Eternal Fire (Seething Revenant)
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1421,7 +1503,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Eternal Earth (Brittle Revenant)
+#name Eternal Earth (Brittle Revenant)_56a
+#displayname Eternal Earth (Brittle Revenant)
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1440,7 +1523,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Eternal Fire (Wailing Winds)
+#name Eternal Fire (Wailing Winds)_57a
+#displayname Eternal Fire (Wailing Winds)
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1458,7 +1542,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Eternal Air (Scion of Storm)
+#name Eternal Air (Scion of Storm)_58a
+#displayname Eternal Air (Scion of Storm)
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1476,7 +1561,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Eternal Water (Icebound Revenant)
+#name Eternal Water (Icebound Revenant)_59a
+#displayname Eternal Water (Icebound Revenant)
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1494,7 +1580,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Eternal Water (Stormrider)
+#name Eternal Water (Stormrider)_60a
+#displayname Eternal Water (Stormrider)
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1512,7 +1599,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Icecrown
-#name Frostweave Cloth (Converted Hero)
+#name Frostweave Cloth (Converted Hero)_61a
+#displayname Frostweave Cloth (Converted Hero)
 step
     #sticky
     .waypoint Icecrown,50,50
@@ -1530,7 +1618,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Wintergrasp
-#name Eternal Shadow (Wandering Shadow)
+#name Eternal Shadow (Wandering Shadow)_62a
+#displayname Eternal Shadow (Wandering Shadow)
 step
     #sticky
     .waypoint Wintergrasp,50,50
@@ -1548,7 +1637,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Borean Tundra
-#name Herbalism
+#name Herbalism10
+#displayname Herbalism
 step
     #sticky
     .waypoint Borean Tundra,50,50
@@ -1566,7 +1656,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Borean Tundra
-#name Mining
+#name Mining10
+#displayname Mining
 step
     #sticky
     .waypoint Borean Tundra,50,50
@@ -1584,7 +1675,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Borean Tundra
-#name Mining & Herbalism
+#name Mining & Herbalism10
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Borean Tundra,50,50
@@ -1602,7 +1694,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Sholazar Basin
-#name Herbalism
+#name Herbalism11
+#displayname Herbalism
 step
     #sticky
     .waypoint Sholazar Basin,50,50
@@ -1620,7 +1713,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Sholazar Basin
-#name Mining
+#name Mining11
+#displayname Mining
 step
     #sticky
     .waypoint Sholazar Basin,50,50
@@ -1638,7 +1732,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Sholazar Basin
-#name Mining & Herbalism
+#name Mining & Herbalism11
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Sholazar Basin,50,50
@@ -1656,7 +1751,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Dragonblight
-#name Herbalism
+#name Herbalism12
+#displayname Herbalism
 step
     #sticky
     .waypoint Dragonblight,50,50
@@ -1674,7 +1770,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Dragonblight
-#name Mining
+#name Mining12
+#displayname Mining
 step
     #sticky
     .waypoint Dragonblight,50,50
@@ -1692,7 +1789,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Dragonblight
-#name Mining & Herbalism
+#name Mining & Herbalism12
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Dragonblight,50,50
@@ -1710,7 +1808,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Howling Fjord
-#name Mining & Herbalism
+#name Mining & Herbalism13
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Howling Fjord,50,50
@@ -1728,7 +1827,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Howling Fjord
-#name Herbalism
+#name Herbalism13
+#displayname Herbalism
 step
     #sticky
     .waypoint Howling Fjord,50,50
@@ -1746,7 +1846,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Howling Fjord
-#name Mining
+#name Mining13
+#displayname Mining
 step
     #sticky
     .waypoint Howling Fjord,50,50
@@ -1764,7 +1865,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Grizzly Hills
-#name Herbalism
+#name Herbalism14
+#displayname Herbalism
 step
     #sticky
     .waypoint Grizzly Hills,50,50
@@ -1782,7 +1884,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Grizzly Hills
-#name Mining
+#name Mining14
+#displayname Mining
 step
     #sticky
     .waypoint Grizzly Hills,50,50
@@ -1800,7 +1903,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Grizzly Hills
-#name Mining & Herbalism
+#name Mining & Herbalism14
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Grizzly Hills,50,50
@@ -1818,7 +1922,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zul'Drak
-#name Herbalism
+#name Herbalism15
+#displayname Herbalism
 step
     #sticky
     .waypoint Zul'Drak,50,50
@@ -1836,7 +1941,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zul'Drak
-#name Mining
+#name Mining15
+#displayname Mining
 step
     #sticky
     .waypoint Zul'Drak,50,50
@@ -1854,7 +1960,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Zul'Drak
-#name Mining & Herbalism
+#name Mining & Herbalism15
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Zul'Drak,50,50
@@ -1872,7 +1979,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Herbalism
+#name Herbalism16
+#displayname Herbalism
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1890,7 +1998,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Mining
+#name Mining16
+#displayname Mining
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1908,7 +2017,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup The Storm Peaks
-#name Mining & Herbalism
+#name Mining & Herbalism16
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint The Storm Peaks,50,50
@@ -1926,7 +2036,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Wintergrasp
-#name Mining
+#name Mining17
+#displayname Mining
 step
     #sticky
     .waypoint Wintergrasp,50,50
@@ -1944,7 +2055,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Wintergrasp
-#name Herbalism
+#name Herbalism17
+#displayname Herbalism
 step
     #sticky
     .waypoint Wintergrasp,50,50
@@ -1962,7 +2074,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Wintergrasp
-#name Mining & Herbalism
+#name Mining & Herbalism17
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Wintergrasp,50,50
@@ -1980,7 +2093,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Wintergrasp
-#name Eternal Life
+#name Eternal Life_63a
+#displayname Eternal Life
 step
     #sticky
     .waypoint Wintergrasp,50,50
@@ -1998,7 +2112,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Wintergrasp
-#name Eternal Fire
+#name Eternal Fire_64a
+#displayname Eternal Fire
 step
     #sticky
     .waypoint Wintergrasp,50,50
@@ -2016,7 +2131,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Wintergrasp
-#name Eternal Earth
+#name Eternal Earth_65a
+#displayname Eternal Earth
 step
     #sticky
     .waypoint Wintergrasp,50,50
@@ -2035,7 +2151,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Wintergrasp
-#name Eternal Air
+#name Eternal Air_66a
+#displayname Eternal Air
 step
     #sticky
     .waypoint Wintergrasp,50,50
@@ -2053,7 +2170,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Wintergrasp
-#name Eternal Water
+#name Eternal Water_67a
+#displayname Eternal Water
 step
     #sticky
     .waypoint Wintergrasp,50,50
@@ -2071,7 +2189,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Icecrown
-#name Mining
+#name Mining18
+#displayname Mining
 step
     #sticky
     .waypoint Icecrown,50,50
@@ -2089,7 +2208,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Icecrown
-#name Herbalism
+#name Herbalism18
+#displayname Herbalism
 step
     #sticky
     .waypoint Icecrown,50,50
@@ -2107,7 +2227,8 @@ RXPGuides.RegisterGuide([[
 #loop
 #hidewindow
 #subgroup Icecrown
-#name Mining & Herbalism
+#name Mining & Herbalism18
+#displayname Mining & Herbalism
 step
     #sticky
     .waypoint Icecrown,50,50

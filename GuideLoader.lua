@@ -55,7 +55,7 @@ local function applies(textEntry,customClass)
                         gendercheck = true
                     end
                     v = (not(gendercheck or uppercase == class or entry == race or
-                             entry == faction or playerLevel >= level or entry == customClass) ==
+                             entry == faction or playerLevel >= level or uppercase == addon.game or entry == customClass) ==
                              state)
                     if not v then
                         break
@@ -518,13 +518,15 @@ function addon.LoadEmbeddedGuides()
             addon.ImportGuide(guideData.groupOrContent, guideData.text,
                               guideData.defaultFor, true)
         else
-            local guide, errorMsg, metadata, length, key, group, enabled
+            local guide, errorMsg, metadata, length, key, group
+            local enabled = true
             if not guideData.text then
                 length = guideData.groupOrContent:len()
                 local index = guideData.groupOrContent:find("[\r\n]%s*step")
                 local header = index and guideData.groupOrContent:sub(1,index)
                 if header then
                     local name, subgroup, enabledFor
+                    enabled = false
                     for line in header:gmatch("[^\r\n]+") do
                         if subgroup and name and group and enabledFor and enabled then
                             break

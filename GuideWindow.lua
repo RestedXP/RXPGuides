@@ -314,7 +314,7 @@ function addon.RegisterGeneratedSteps()
     local stepUnitscan, stepMobs, stepTargets = {},{},{}
     for _,context in pairs(addon.generatedSteps) do
     for _,step in ipairs(context) do
-    for _,element in ipairs(step.elements) do
+    for _,element in ipairs(step.elements or {}) do
         if element.tag then
             local events = element.event or addon.functions.events[element.tag]
             local container = hiddenFramePool[i] or CreateFrame("Frame",nil,addon.RXPFrame)
@@ -1634,7 +1634,7 @@ function BottomFrame.UpdateFrame(self, stepn)
         local hideStep = step.level > level or step.hidewindow
 
         local text
-        for _, element in ipairs(frame.step.elements) do
+        for _, element in ipairs(frame.step.elements or {}) do
             local stepDiff = element.step.index - RXPCData.currentStep
             element.element = element
             if element.requestFromServer then
