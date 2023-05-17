@@ -272,7 +272,7 @@ function BottomFrame:StepScroll(n)
     end
     ScrollFrame.ScrollBar:SetValue(value)
 
-    value = math.ceil(value+0.5)
+    value = math.floor(value+0.5)
     if value ~= lastScrollValue then
         addon.ScheduleTask(0,BottomFrame.StepScroll,n)
     end

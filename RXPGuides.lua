@@ -929,6 +929,9 @@ addon.updateActiveQuest = {}
 addon.updateInactiveQuest = {}
 
 local stepCounter = 1
+local batchSize = 5
+local updateTimer = GetTime()
+
 local updateTick = 0
 local skip = 0
 local updateError
@@ -1066,15 +1069,31 @@ function addon:UpdateLoop(diff)
                 event = event .. "/inactiveQ"
             end
         elseif not guideLoaded and addon.currentGuide then
-            for n = stepCounter,stepCounter + 9 do
+            local max = #addon.currentGuide.steps
+            local offset = RXPCData.currentStep + 1
+            if stepCounter == offset then
+                stepCounter = stepCounter + 8
+            end
+
+            addon.RXPFrame.BottomFrame.UpdateFrame(nil,offset + stepCounter % 8)
+
+            for n = stepCounter,stepCounter + batchSize - 1 do
                 addon.RXPFrame.BottomFrame.UpdateFrame(nil,n)
-                --print(n)
             end
-            stepCounter = stepCounter + 10
-            if stepCounter > #addon.currentGuide.steps then
+            stepCounter = stepCounter + batchSize
+            if stepCounter > max then
+                local time = GetTime()
+                local tdiff = time - updateTimer
                 stepCounter = 1
+                --print(tdiff,batchSize)
+                if tdiff > 10 then
+                    batchSize = math.min(batchSize + 1*(math.ceil(tdiff/8)),10)
+                elseif batchSize > 2 then
+                    batchSize = batchSize - 1
+                end
+                updateTimer = time
+                skip = skip % 4096
             end
-            skip = skip % 4096
         end
         updateError = false
     end

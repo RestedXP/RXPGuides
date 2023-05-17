@@ -562,8 +562,7 @@ function addon.GetQuestObjectives(id, step)
     end
 
     if not IsOnQuest(id) or err then
-        RequestQuestData(id)
-        return questObjectivesCache[id]
+        return RequestQuestData(id)
     end
 end
 
