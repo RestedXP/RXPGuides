@@ -518,14 +518,14 @@ function addon.LoadEmbeddedGuides()
             addon.ImportGuide(guideData.groupOrContent, guideData.text,
                               guideData.defaultFor, true)
         else
-            local guide, errorMsg, metadata, length, key, group
+            local guide, errorMsg, metadata, length, key, group, name
             local enabled = true
             if not guideData.text then
                 length = guideData.groupOrContent:len()
                 local index = guideData.groupOrContent:find("[\r\n]%s*step")
                 local header = index and guideData.groupOrContent:sub(1,index)
                 if header then
-                    local name, subgroup, enabledFor
+                    local subgroup, enabledFor
                     enabled = false
                     for line in header:gmatch("[^\r\n]+") do
                         if subgroup and name and group and enabledFor and enabled then
@@ -557,6 +557,7 @@ function addon.LoadEmbeddedGuides()
                 end
                 --print('g-ok',guide and guide.length)
             end
+
             if guide and guide.length == length then
                 --print('w',guide.key)
                 if (guide.defaultFor and not applies(guide.defaultFor)) then
@@ -594,7 +595,12 @@ function addon.LoadEmbeddedGuides()
                     RXPData.guideMetaData[key] = metadata
                 end
             end
-            if enabled then addon.AddGuide(guide) end
+            if enabled then
+                if name and group and addon.guides[group .. "||" .. name] then
+                    addon.error("Error trying to load a guide already parsed: " .. group .. "/" .. name)
+                end
+                addon.AddGuide(guide)
+            end
         end
     end
 
