@@ -159,7 +159,7 @@ function addon.settings:InitializeSettings()
             enableEmergencyActions = true,
             emergencyThreshold = 0.2,
             enableEmergencyIconAnimations = true,
-            enableEmergencyScreenFlash = true,
+            --enableEmergencyScreenFlash = true,
 
             dungeons = {}
         }
