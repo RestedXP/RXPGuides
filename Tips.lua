@@ -481,7 +481,8 @@ function addon.tips:LoadDangerousMobs()
     end
     local dangerousMobs = session.dangerousMobs[zone] or {}
     session.dangerousMobs[zone] = dangerousMobs
-    zoneList = zoneList or {dangerousMobs}
+    zoneList = zoneList or {addon.dangerousMobs[zone]}
+
     -- dangerousMobs DB has nested objects, flatten and fake step data
     if not dangerousMobs.processed then
         addon.currentGuideName = "Addon Tips"
