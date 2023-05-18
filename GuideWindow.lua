@@ -1338,8 +1338,15 @@ function addon:FetchGuide(guide,arg2)
         local key = guide.key
         local index = fmt("%s||%s",guide.group,guide.name)
         local oldGuide = guide
-        local newGuide = addon.guideCache[key] and
-                        addon.guideCache[key]()
+        local _,faction = UnitFactionGroup('player')
+        addon.player.faction = faction
+        if faction ~= "" then
+            guide.parse = nil
+        end
+        local parser = addon.guideCache[key]
+
+        local newGuide = parser and parser(parser) or
+                            guide.parse and guide.parse(guide.parse)
         if newGuide then
             newGuide.menuIndex = oldGuide.menuIndex
             newGuide.submenuIndex = oldGuide.submenuIndex

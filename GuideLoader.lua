@@ -53,6 +53,8 @@ local function applies(textEntry,customClass)
                     elseif uppercase == "MALE" and UnitSex("player") == 2 or
                         uppercase == "FEMALE" and UnitSex("player") == 3 then
                         gendercheck = true
+                    elseif faction == "" and (entry == "Alliance" or entry == "Horde") then
+                        entry = ""
                     end
                     v = (not(gendercheck or uppercase == class or entry == race or
                              entry == faction or playerLevel >= level or uppercase == addon.game or entry == customClass) ==
@@ -568,10 +570,13 @@ function addon.LoadEmbeddedGuides()
                 end
                 errorMsg = not (not guide.enabledFor or applies(guide.enabledFor))
                 --print(guide,errorMsg,guide.enabledFor)
-                addon.guideCache[guide.key] = function()
+                addon.guideCache[guide.key] = function(self)
                     local tbl = addon.ParseGuide(guideData.groupOrContent)
                     if RXPGuides and RXPGuides.guideMetaData then
                         RXPGuides.guideMetaData[guide.key] = metadata
+                    end
+                    if addon.player.faction == "" and tbl then
+                        tbl.parse = self
                     end
                     return tbl
                 end
@@ -635,11 +640,14 @@ function addon.LoadCachedGuides()
             if guideData.metadata and
                     guideData.metadata.length == addon.ReadCacheData("string") then
                 local data = guideData
-                addon.guideCache[key] = function()
+                addon.guideCache[key] = function(self)
                     local g = LibDeflate:DecompressDeflate(data.groupOrContent)
                     local tbl = addon.ParseGuide(g)
                     if RXPGuides and RXPGuides.guideMetaData then
                         RXPGuides.guideMetaData[guide.key] = metadata
+                    end
+                    if addon.player.faction == "" and tbl then
+                        tbl.parse = self
                     end
                     tbl.imported = true
                     return tbl
