@@ -102,8 +102,9 @@ addon.player = {
     localeClass = select(1, UnitClass("player")),
     class = select(2, UnitClass("player")),
     race = select(2, UnitRace("player")),
-    faction = UnitFactionGroup("player"),
+    faction = select(1,UnitFactionGroup("player"))
 }
+addon.player.neutral = addon.player.faction == "Neutral"
 
 addon.generatedSteps = {}
 

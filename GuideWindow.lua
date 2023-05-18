@@ -1338,9 +1338,9 @@ function addon:FetchGuide(guide,arg2)
         local key = guide.key
         local index = fmt("%s||%s",guide.group,guide.name)
         local oldGuide = guide
-        local _,faction = UnitFactionGroup('player')
+        local faction = UnitFactionGroup('player')
         addon.player.faction = faction
-        if faction ~= "" then
+        if faction ~= "Neutral" then
             guide.parse = nil
         end
         local parser = addon.guideCache[key]
@@ -1822,7 +1822,8 @@ end]]
 local function IsGuideActive(guide)
     if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
         addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
-        addon.stepLogic.LevelCheck(guide) then
+        addon.stepLogic.LevelCheck(guide) and
+        (not addon.player.neutral or not guide.enabledFor or addon.applies(guide.enabledFor)) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end

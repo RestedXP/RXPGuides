@@ -53,7 +53,7 @@ local function applies(textEntry,customClass)
                     elseif uppercase == "MALE" and UnitSex("player") == 2 or
                         uppercase == "FEMALE" and UnitSex("player") == 3 then
                         gendercheck = true
-                    elseif faction == "" and (entry == "Alliance" or entry == "Horde") then
+                    elseif faction == "Neutral" and (entry == "Alliance" or entry == "Horde") then
                         entry = ""
                     end
                     v = (not(gendercheck or uppercase == class or entry == race or
@@ -575,7 +575,7 @@ function addon.LoadEmbeddedGuides()
                     if RXPGuides and RXPGuides.guideMetaData then
                         RXPGuides.guideMetaData[guide.key] = metadata
                     end
-                    if addon.player.faction == "" and tbl then
+                    if addon.player.faction == "Neutral" and tbl then
                         tbl.parse = self
                     end
                     return tbl
@@ -646,7 +646,7 @@ function addon.LoadCachedGuides()
                     if RXPGuides and RXPGuides.guideMetaData then
                         RXPGuides.guideMetaData[guide.key] = metadata
                     end
-                    if addon.player.faction == "" and tbl then
+                    if addon.player.faction == "Neutral" and tbl then
                         tbl.parse = self
                     end
                     tbl.imported = true
