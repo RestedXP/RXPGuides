@@ -571,7 +571,7 @@ function addon.LoadEmbeddedGuides()
                 errorMsg = not (not guide.enabledFor or applies(guide.enabledFor))
                 --print(guide,errorMsg,guide.enabledFor)
                 addon.guideCache[guide.key] = function(self)
-                    local tbl = addon.ParseGuide(guideData.groupOrContent)
+                    local tbl = addon.ParseGuide(guideData.groupOrContent,guideData.text)
                     if RXPGuides and RXPGuides.guideMetaData then
                         RXPGuides.guideMetaData[guide.key] = metadata
                     end
@@ -804,7 +804,11 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     end
     if not (groupOrContent and text) then
         local currentGroup = group
-        text = groupOrContent:gsub("%-%-[^\r\n]*[\r\n]+", "\n")
+        if type(length) ~= "string" then
+            text = groupOrContent:gsub("%-%-[^\r\n]*[\r\n]+", "\n")
+        else
+            text = groupOrContent
+        end
         if not group then
             text = text:gsub(
                     "(#group[ \t]*)([^\r\n]-)[ \t]*<<[ \t]*([^\r\n]-)[ \t]*[\r\n]+",
@@ -861,8 +865,6 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             if not addon.currentGuideName then
                 error(L("Error parsing guide") .. ": " .. L("Guide has no name"))
             end
-            guide.key = guide.key or key or addon.BuildGuideKey(guide)
-            guide.guideId = addon.A32(guide.key)
             if currentStep == 0 and (not guide[game] and
                 (guide.classic or guide.tbc or guide.wotlk or guide.df)) then
                 -- print(game,guide[game],guide.name)
@@ -874,6 +876,8 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
                 addon.lastEelement = nil
                 return guide, skipGuide
             elseif currentStep == 0 then
+                guide.key = guide.key or key or addon.BuildGuideKey(guide)
+                guide.guideId = addon.A32(guide.key)
                 addon.RegisterGroup(guide.group)
             end
             local classtag = line:match("<<%s*(.+)")
