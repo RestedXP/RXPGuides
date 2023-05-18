@@ -4,7 +4,8 @@ RXPGuides.RegisterGuide([[
 #group +Profession leveling
 #subgroup Skinning
 << Horde
-#name 1-375 Horde
+#name 1-375 Horde_b1
+#displayname 1-375 Horde
 
 step << Mage
     #completewith Thuwd
@@ -202,7 +203,8 @@ RXPGuides.RegisterGuide([[
 #group +Profession leveling
 #subgroup Skinning
 << Alliance
-#name 1-375 Alliance
+#name 1-375 Alliance_b2
+#displayname 1-375 Alliance
 
 step << Mage
     #completewith Maris

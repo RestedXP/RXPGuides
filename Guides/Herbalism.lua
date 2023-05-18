@@ -3,7 +3,8 @@ RXPGuides.RegisterGuide([[
 #group +Profession leveling
 #subgroup Herbalism
 << Horde
-#name 1-375 Horde
+#name 1-375 Horde_m1
+#displayname 1-375 Horde
 
 step << Mage
     #completewith next
@@ -273,7 +274,8 @@ RXPGuides.RegisterGuide([[
 #group +Profession leveling
 #subgroup Herbalism
 << Alliance
-#name 1-375 Alliance
+#name 1-375 Alliance_m2
+#displayname 1-375 Alliance
 
 
 step << Mage

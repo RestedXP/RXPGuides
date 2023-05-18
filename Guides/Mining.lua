@@ -3,7 +3,8 @@ RXPGuides.RegisterGuide([[
 #group +Profession leveling
 #subgroup Mining
 << Horde
-#name 1-375 Horde
+#name 1-375 Horde_a1
+#displayname 1-375 Horde
 
 step << Mage
     #completewith Makaru
@@ -274,7 +275,8 @@ RXPGuides.RegisterGuide([[
 #group +Profession leveling
 #subgroup Mining
 << Alliance
-#name 1-375 Alliance
+#name 1-375 Alliance_a2
+#displayname 1-375 Alliance
 
 step << Mage
     #completewith Gelman
