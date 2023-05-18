@@ -663,7 +663,7 @@ step << wotlk
     .hs >> Hearth or run back to Goldshire
 step
     >> Talk to |cFF00FF25Remy "Two Times"|r
-    .target Remy "TWo Times"
+    .target Remy "Two Times"
     .goto Elwynn Forest,42.1,67.3
     .turnin 47 >> Turn in Gold Dust Exchange
     .accept 40 >> Accept A Fishy Peril
