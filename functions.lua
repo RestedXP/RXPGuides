@@ -2934,7 +2934,8 @@ function addon.functions.spellmissing(self, text, id)
 end
 
 function addon.GetSubZoneId(zone,x,y)
-    local subzone = GetSubZoneText()
+    local subzone = GetSubZoneText() or 1
+    local zoneText = GetZoneText() or 2
     if zone and x and y then
        zone = RXP.mapId[zone] or zone
        x = x / 100
@@ -2944,11 +2945,10 @@ function addon.GetSubZoneId(zone,x,y)
        subzone = zone
     end
 
-    if subzone then
-        local zoneText = GetZoneText()
+    if subzone or zoneText then
         local bestMatchId,bestMatchText
         for i = 1,1e6 do
-            local zoneName = C_Map.GetAreaInfo(i)
+            local zoneName = C_Map.GetAreaInfo(i) or 3
             if zoneName and zoneName == subzone then
                 print(zoneName .. ' Subzone ID: ' .. i)
                 return
@@ -2965,7 +2965,7 @@ function addon.GetSubZoneId(zone,x,y)
     print('ERROR: Subzone not found')
  end
 
- function addon.functions.subzone(self, text, subZone)
+ function addon.functions.subzone(self, text, subZone, flags)
     if type(self) == "string" then -- on parse
         local element = {}
         local mapID = C_Map.GetAreaInfo(tonumber(subZone) or -1)
@@ -2976,6 +2976,7 @@ function addon.GetSubZoneId(zone,x,y)
         end
         element.map = mapID
         element.icon = addon.icons["goto"]
+        element.flags = tonumber(flags) or 0
         if text and text ~= "" then
             element.text = text
         else
@@ -2984,13 +2985,23 @@ function addon.GetSubZoneId(zone,x,y)
 
         return element
     end
+    --setting flags to 1 will reverse the normal operation and only complete if you're not in that subzone
+    --setting flags to 2 only works if the map is unavailable (dungeons)
+    local isMapValid = true
+    local element = self.element
+    local step = element.step
+    if bit.band(element.flags,0x2) == 0x2 then
+        isMapValid = not C_Map.GetBestMapForUnit('player')
+    end
+
     local subzone = GetSubZoneText()
     local currentMap = GetZoneText()
-    if not self.element.step.active or addon.isHidden or type(currentMap) ~= "string" then return end
-    local zone = self.element.map
-    if zone == currentMap or zone == subzone then
+    if not step.active or addon.isHidden or type(currentMap) ~= "string" then return end
+    local zone = element.map
+    if ((zone == currentMap or zone == subzone) and isMapValid)
+        == (element.flags % 2 == 0) then
         addon.SetElementComplete(self)
-        self.element.step.completed = true
+        step.completed = true
         addon.updateSteps = true
     end
 end
@@ -3014,13 +3025,20 @@ function addon.functions.subzoneskip(self, text, subZone, flags)
         return element
     end
 
+    --setting flags to 1 will reverse the normal operation and only complete if you're not in that subzone
+    --setting flags to 2 only works if the map is unavailable (dungeons)
+
     local element = self.element
     local step = element.step
+    if not step.active or addon.isHidden then return end
+    local isMapValid = true
+    if bit.band(element.flags,0x2) == 0x2 then
+        isMapValid = not C_Map.GetBestMapForUnit('player')
+    end
     local subzone = GetSubZoneText()
     local currentMap = GetZoneText()
-    if not step.active or addon.isHidden or type(currentMap) ~= "number" then return end
     local zone = element.map
-    if (zone == currentMap or zone == subzone) == not element.reverse then
+    if ((zone == currentMap or zone == subzone) and isMapValid) == not element.reverse then
         step.completed = true
         addon.updateSteps = true
     end
