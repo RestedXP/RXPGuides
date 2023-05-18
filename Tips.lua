@@ -473,7 +473,7 @@ function addon.tips:LoadDangerousMobs()
         print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
         zoneList = addon.dangerousMobs --Loads all the pins for debug purposes
     end
-    if not zone or not addon.dangerousMobs[zone] then
+    if not zone or not addon.dangerousMobs[zone] and not addon.settings.db.profile.debug then
         addon.tips.dangerousMobs = nil
         addon.generatedSteps["dangerousMobs"] = nil
         _G.RXPD = addon.tips.dangerousMobs
