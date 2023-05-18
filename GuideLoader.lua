@@ -54,7 +54,7 @@ local function applies(textEntry,customClass)
                         uppercase == "FEMALE" and UnitSex("player") == 3 then
                         gendercheck = true
                     elseif faction == "Neutral" and (entry == "Alliance" or entry == "Horde") then
-                        entry = ""
+                        entry = faction
                     end
                     v = (not(gendercheck or uppercase == class or entry == race or
                              entry == faction or playerLevel >= level or uppercase == addon.game or entry == customClass) ==
