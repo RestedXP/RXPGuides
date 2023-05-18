@@ -24,10 +24,10 @@ local embeddedGuides = {}
 
 local function applies(textEntry,customClass)
     if textEntry then
-        local function parse(text)
+        local function parse(text,customClass)
             local isMatch = false
             text = text:gsub("(!?)%(%s*(.-)%s*%)",function(op,m)
-                if parse(m) ~= (op == "!") then
+                if parse(m,customClass) ~= (op == "!") then
                     return class
                 else
                     return "NULL"
@@ -72,7 +72,7 @@ local function applies(textEntry,customClass)
             return isMatch
         end
 
-        return parse(textEntry)
+        return parse(textEntry,customClass)
     end
     return true
 end
