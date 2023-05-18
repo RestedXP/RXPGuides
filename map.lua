@@ -139,6 +139,10 @@ local function PinOnEnter(self)
         local text
         local step = element.step
         local icon = step.icon or ""
+        local debug = ""
+        if addon.settings.db.profile.debug then
+            debug = format("%.3f,%.3f:",element.x or 0, element.y or 0)
+        end
         icon = icon:gsub("(|T.-):%d+:%d+:","%1:0:0:")
         if parent and not parent.hideTooltip then
             text = parent.mapTooltip or parent.tooltipText or parent.text or ""
@@ -147,7 +151,7 @@ local function PinOnEnter(self)
                 _G.GameTooltip:AddLine(icon..title,unpack(addon.colors.mapPins))
                 lastStep = title
             end
-            _G.GameTooltip:AddLine(text)
+            _G.GameTooltip:AddLine(debug..text)
             lines = lines + 1
         elseif not parent and not element.hideTooltip then
             text = element.mapTooltip or element.tooltipText or step.text or ""
@@ -156,7 +160,7 @@ local function PinOnEnter(self)
                 _G.GameTooltip:AddLine(icon..title,unpack(addon.colors.mapPins))
                 lastStep = title
             end
-            _G.GameTooltip:AddLine(text)
+            _G.GameTooltip:AddLine(debug..text)
             lines = lines + 1
         end
     end
