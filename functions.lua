@@ -940,14 +940,18 @@ function addon.functions.turnin(self, ...)
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ": Invalid quest ID\n" .. self)
         end
-
-        local element = {reward = tonumber(reward) or 0, title = "", questId = questConversion[id] or id}
+        reward = tonumber(reward) or 0
+        local element = {title = "", questId = questConversion[id] or id}
         if id < 0 then
-            id = -id
+            id = math.abs(id)
             element.skipIfMissing = true
             element.questId = questConversion[id] or id
+            if reward > 0 then
+                element.skipIfIncomplete = true
+            end
+            reward = 0
         end
-
+        element.reward = reward
         -- element.title = addon.GetQuestName(id)
         if text and text ~= "" then
             element.text = text
@@ -1051,7 +1055,7 @@ function addon.functions.turnin(self, ...)
         end
 
         if step.active then
-            if element.skipIfMissing and not IsOnQuest(id) then
+            if (element.skipIfMissing and not IsOnQuest(id)) or (element.skipIfIncomplete and not IsQuestComplete(id)) then
                 addon.SetElementComplete(self, true)
                 ProcessItems(false, step, id, true)
                 addon.UpdateItemFrame()
@@ -3019,6 +3023,7 @@ function addon.functions.subzoneskip(self, text, subZone, flags)
         if bit.band(flags,0x1) == 0x1 then
             element.reverse = true
         end
+        element.flags = flags
         element.map = mapID
         if text and text ~= "" then element.text = text end
         element.textOnly = true
