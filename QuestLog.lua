@@ -138,7 +138,7 @@ function addon.GetQuestLog(QL, LT)
 
     local guide = addon.currentGuide
     local name = RXPCData.currentGuideName
-    local group = addon.RXPGuides[RXPCData.currentGuideGroup]
+    local group = addon.functions
     QL = QL or {}
     LT = LT or {}
     local qError
