@@ -607,6 +607,10 @@ function addon:OnInitialize()
         RXPData.trainGenericSpells = true
     end
 
+    if _G.RXPOnInitialize then --Used for debugging purposes
+        pcall(_G.RXPOnInitialize)
+    end
+
     addon:ImportCustomThemes()
     addon:LoadActiveTheme()
     addon.settings:UpdateMinimapButton()
