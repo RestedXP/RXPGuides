@@ -492,7 +492,7 @@ function addon.UpdateStepCompletion()
         local completed = true
         if not (step.completed or step.tip) then
             for j, element in ipairs(step.elements) do
-                if not (element.completed or element.skip) then
+                if not (element.completed or element.skip or element.textOnly) then
                     completed = false
                     break
                 end

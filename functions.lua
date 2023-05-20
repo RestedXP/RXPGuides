@@ -47,6 +47,7 @@ events.collectmount = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UP
 events.collecttoy = "TOYS_UPDATED"
 events.collectpet = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 events.tradeskill = events.train
+events.cooldown = "SPELL_UPDATE_COOLDOWN"
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
@@ -949,7 +950,7 @@ function addon.functions.turnin(self, ...)
             if reward > 0 then
                 element.skipIfIncomplete = true
             end
-            reward = 0
+            reward = nil
         end
         element.reward = reward
         -- element.title = addon.GetQuestName(id)
@@ -1904,7 +1905,7 @@ function addon.functions.collect(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         element.dynamicText = true
-        local text, id, qty, questId, objFlags, flags = ...
+        local text, id, qty, questId, objFlags, flags, arg1, arg2 = ...
         id = tonumber(id)
         objFlags = tonumber(objFlags) or 0
         flags = tonumber(flags) or 0
@@ -1925,9 +1926,10 @@ function addon.functions.collect(self, ...)
 flags:
 1   (0x1): Disables the checkBox
 2   (0x2): Subtract from the given quest objective (given by the objective bitmask from objFlags)
-4   (0x4): Element completes itself if the flagged objectives are complete (see objFlags again)
+4   (0x4): Element completes itself if all of the flagged objectives are complete (see objFlags again)
 8   (0x8): Includes items in your bank into the item count
 16 (0x10): Element doesn't complete itself if the quest is turned in
+32 (0x20): Subtracts from the given skill or profession given by arg1
 negative sign: same as 3 (0x2+0x1), -5 subtracts 5 units for each quest item
 
 By default, the element will complete itself if the quest ID provided is turned in
@@ -1939,12 +1941,20 @@ obJflag = obj1*2^0 + obj2*2^1 + obj3*2^2 + ... + objN*2^(N-1)
 
 if objFlags is omitted or set to 0, element will complete if you have the quest in your quest log
 ]]
-        if flags < 0 then element.multiplier = -flags; flags = 3 end
+        if flags < 0 then
+            element.multiplier = -flags;
+            element.profession = arg1
+            flags = 3
+        end
         element.textOnly = bit.band(flags, 0x1) == 0x1
         element.subtract = bit.band(flags, 0x2) == 0x2
         element.checkObjectives = bit.band(flags, 0x4) == 0x4
         element.includeBank = bit.band(flags, 0x8) == 0x8
         element.ignoreTurnIn = bit.band(flags, 0x10) == 0x10
+        if bit.band(flags, 0x20) == 0x20 then
+            element.profession = arg1
+            element.multiplier = tonumber(arg2) or 1
+        end
 
         element.flags = flags
         if text and text ~= "" then
@@ -1976,7 +1986,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     element.itemName = name
 
     if step.active and questId then
-        if step.objFlags == 0 then
+        if step.objFlags == 0 and questId then
             -- adds the item to the active item list, in case it's an item that starts a quest
 
             step.activeItems = step.activeItems or {}
@@ -1987,6 +1997,12 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
                 step.activeItems[element.id] = isItemActive
                 addon.activeItems[element.id] = isItemActive
                 addon.UpdateItemFrame()
+            end
+        elseif element.profession then
+            local skill = addon.GetSkillLevel(element.profession)
+            if skill >= 0 then
+                numRequired = numRequired - skill * element.multiplier
+                if numRequired < 0 then numRequired = 0 end
             end
         elseif element.subtract or element.checkObjectives then
             local bitMask = element.objFlags
@@ -4122,7 +4138,7 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
         local element = {}
         id = tonumber(id)
         local operator, cd, suffix = string.match(remaining,
-                                                  "([<>]?)%s*(%d+%p?%d*)%s*(m?)")
+                                                  "([<>]?)%s*(%d+%p?%d*)%s*([ms]?)")
         cd = tonumber(cd) or 0
         if not (cd and id) then
             addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -4133,7 +4149,7 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
         else
             element.operator = 1
         end
-        if suffix then cd = cd * 60 end
+        if suffix == "m" then cd = cd * 60 end
         element.updateOnce = updateOnce
         element.id = id
         element.remaining = cd
@@ -5000,5 +5016,14 @@ function addon.functions.solo(self, text)
         if text and text ~= "" then
             return {text = text, textOnly = true}
         end
+    end
+end
+
+function addon.functions.disablecheckbox(self, text)
+    if type(self) == "string" then -- on parse
+        return {text = text, textOnly = true, parent = true}
+    end
+    if self.element.parent then
+        self.element.parent.textOnly = true
     end
 end

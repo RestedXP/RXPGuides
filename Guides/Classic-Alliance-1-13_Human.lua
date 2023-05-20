@@ -10,7 +10,6 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human
 #next 6-11 Elwynn Forest; 6-13 Elwynn Forest
 step
-.accept 456 >> ?
     #sticky
     #completewith next
     .goto Elwynn Forest,48.171,42.943
