@@ -463,7 +463,7 @@ local function IsStepActive(self)
 end
 
 function addon.tips:LoadDangerousMobs()
-    if not addon.dangerousMobs then return end
+    if not (addon.dangerousMobs and addon.settings.db.profile.enableBetaFeatures) then return end
 
     local mapId = C_Map.GetBestMapForUnit("player") or 0
     local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
