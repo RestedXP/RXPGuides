@@ -577,15 +577,21 @@ function addon.GetItemName(id)
 end
 
 function addon.SetElementComplete(self, disable)
-    if not self.element.completed then
-        self.element.completed = true
-        self.element.skip = true
-        addon.updateSteps = true
-        addon.UpdateMap()
-        if self.element.step.active and GetTime() - addon.lastStepUpdate > 1 then
-            addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",self.element,addon.currentGuide)
-        end
+    local element
+    if not self.element and self.tag then
+        element = self
+    else
+        element = self.element
     end
+    if not element then return end
+    element.completed = true
+    element.skip = true
+    addon.updateSteps = true
+    addon.UpdateMap()
+    if element.step.active and GetTime() - addon.lastStepUpdate > 1 then
+        addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",element,addon.currentGuide)
+    end
+
     if self.button then
         -- print('----ok',disable)
         self.button:SetChecked(true)
@@ -5023,7 +5029,12 @@ function addon.functions.disablecheckbox(self, text)
     if type(self) == "string" then -- on parse
         return {text = text, textOnly = true, parent = true}
     end
-    if self.element.parent then
-        self.element.parent.textOnly = true
+    local element = self.element
+    if element.parent and not element.parent.textOnly then
+        element.parent.textOnly = true
+        if element.step.active then
+            addon.SetElementComplete(element.parent)
+            addon.RXPFrame.CurrentStepFrame.UpdateText()
+        end
     end
 end
