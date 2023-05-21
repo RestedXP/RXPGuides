@@ -10,23 +10,47 @@ local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert = math.random, table.insert
 
 local messageList = {}
+
+local function MessageHandler(message,...)
+    for func in pairs(messageList[message]) do
+        func(message,...)
+    end
+end
+
 addon.RegisterMessage = function(self,message,callback,...)
-    messageList[message] = callback
-    return RegisterMessage_OLD(self,message,callback,...)
+    if not messageList[message] then
+        messageList[message] = {}
+        RegisterMessage_OLD(self,message,MessageHandler)
+    end
+    messageList[message][callback] = true
+end
+
+function addon:UnregisterMessage(message,callback)
+    if not messageList[message] then
+        return
+    elseif callback then
+        messageList[message][callback] = nil
+    else
+        table.wipe(messageList[message])
+    end
 end
 
 addon.HookMessage = function(self,message,callback,...)
-    local callback_old = messageList[message]
-    local callback_new
-    if type(callback_old) == "function" then
-        callback_new = function(...)
-            callback_old(...)
-            callback(...)
-        end
+    if not (messageList[message] and messageList[message][callback]) then
+        addon.RegisterMessage(self,message,callback,...)
     else
-        callback_new = callback
+        local callback_old = MessageHandler
+        local callback_new
+        if type(callback_old) == "function" then
+            callback_new = function(...)
+                callback_old(...)
+                callback(...)
+            end
+        else
+            callback_new = callback
+        end
+        RegisterMessage_OLD(self,message,callback_new,...)
     end
-    addon.RegisterMessage(self,message,callback_new,...)
 end
 
 function addon.SendEvent(self,...)
