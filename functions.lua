@@ -4055,7 +4055,10 @@ function addon.functions.itemcount(self, ...)
         if step.active and not step.completed then
             addon.updateSteps = true
             step.completed = true
+            element.tooltipText = "Step skipped: You don't have the required item for this step"
         end
+    elseif step.active then
+        element.tooltipText = nil
     end
 
 end
