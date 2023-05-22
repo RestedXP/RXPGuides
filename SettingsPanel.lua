@@ -1848,8 +1848,8 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 4.1,
                         set = function(info,value)
                             SetProfileOption(info, value)
-                            addon.db.profile.showDangerousMobsMap = value
-                            addon.tips:LoadDangerousMobs()
+                            addon.settings.db.profile.showDangerousMobsMap = value
+                            addon.tips:LoadDangerousMobs(true)
                         end,
                         disabled = function()
                             return not self.db.profile.enableTips
@@ -1859,15 +1859,15 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                     },
                     showDangerousUnitscan = {
-                        name = L("Track Mobs on the target scanner"), -- TODO locale
+                        name = L("Scan for dangerous mobs"), -- TODO locale
                         desc = L("Displays dangerous mobs and patrols on the targeting window (WIP)"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.2,
                         set = function(info,value)
                             SetProfileOption(info, value)
-                            addon.db.profile.showDangerousUnitscan = value
-                            addon.tips:LoadDangerousMobs()
+                            addon.settings.db.profile.showDangerousUnitscan = value
+                            addon.tips:LoadDangerousMobs(true)
                         end,
                         disabled = function()
                             return not self.db.profile.enableTips

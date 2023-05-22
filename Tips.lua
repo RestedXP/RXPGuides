@@ -450,9 +450,11 @@ end
 
 
 local function IsStepActive(self)
-    local levelBuffer = 100
+    local levelBuffer = 1000
     if (not addon.db.profile.showDangerousMobsMap and self.mapTooltip) or
        (self.isUnitscan and not addon.settings.db.profile.showDangerousUnitscan) then
+        --DevTools_Dump(self.elements[1].unitscan)
+        --DevTools_Dump(self.elements[1].targets)
         return false
     elseif not addon.settings.db.profile.debug and self.levelBuffer then
         levelBuffer = self.levelBuffer or 0
@@ -463,7 +465,7 @@ local function IsStepActive(self)
     end
 end
 
-function addon.tips:LoadDangerousMobs()
+function addon.tips:LoadDangerousMobs(reloadData)
     if not (addon.dangerousMobs and addon.settings.db.profile.enableBetaFeatures) then return end
 
     local mapId = C_Map.GetBestMapForUnit("player") or 0
@@ -485,7 +487,7 @@ function addon.tips:LoadDangerousMobs()
     zoneList = zoneList or {addon.dangerousMobs[zone]}
 
     -- dangerousMobs DB has nested objects, flatten and fake step data
-    if not dangerousMobs.processed then
+    if not dangerousMobs.processed or reloadData == true then
         addon.currentGuideName = "Addon Tips"
         local steps = {}
         for _,zoneData in pairs(zoneList) do
@@ -496,6 +498,7 @@ function addon.tips:LoadDangerousMobs()
                         line:gsub("^%s+","")
                         line:gsub("%s+$","")
                         local element = addon.ParseLine(line)
+                        local skip
                         if element then
                             local step = {}
                             element.step = step
@@ -513,11 +516,16 @@ function addon.tips:LoadDangerousMobs()
                                 element.mapTooltip = fmt("%s - %s\n%s",
                                     mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
                             elseif element.targets or element.unitscan or element.mobs then
+                                if not addon.settings.db.profile.showDangerousUnitscan then
+                                    skip = true
+                                    --DevTools_Dump(self.elements[1].mobs)
+                                end
                                 step.isUnitscan = true
                             end
-
-                            step.elements = {element}
-                            tinsert(steps,step)
+                            if not skip then
+                                step.elements = {element}
+                                tinsert(steps,step)
+                            end
                         end
                     end
                 end
@@ -525,6 +533,7 @@ function addon.tips:LoadDangerousMobs()
         end
         addon.currentGuideName = nil
         dangerousMobs.steps = steps
+        addon:ScheduleTask(addon.RegisterGeneratedSteps)
     end
 
     addon.generatedSteps["dangerousMobs"] = dangerousMobs.steps

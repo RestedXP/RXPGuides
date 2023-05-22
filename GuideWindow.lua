@@ -377,6 +377,7 @@ function addon.RegisterGeneratedSteps()
         container.callback = nil
     end
     addon:ScheduleTask(addon.ProcessGeneratedSteps,CheckStepCompletion,true)
+    addon.UpdateMap()
 end
 
 function addon:ProcessGeneratedSteps(func,...)
@@ -956,9 +957,9 @@ function addon.SetStep(n, n2, loopback)
             stepframe:Hide()
         end
     end
-    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, false)
 
-    addon.targeting:UpdateTargetList(stepTargets)
+    addon.targeting:UpdateTargetList(stepTargets, false)
 
     addon.targeting:CheckNameplates()
     addon:QueueMessage("RXP_TARGET_LIST_UPDATE",stepUnitscan,stepMobs,stepTargets)

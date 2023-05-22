@@ -26,6 +26,7 @@ addon.targeting.macroName = "RXPTargeting"
 
 local announcedTargets = {}
 local macroTargets = {}
+local lowPrioTargets = {}
 
 local proxmityPolling = {
     frequency = 0.25,
@@ -149,11 +150,26 @@ function addon.targeting:UpdateMacro(queuedTargets)
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
 
-    for _, t in ipairs(targetList) do tinsert(targets, t) end
+    for t in pairs(lowPrioTargets) do
+        tinsert(targets,t)
+    end
+    for _, t in ipairs(targetList) do
+        if not lowPrioTargets[t] then
+         tinsert(targets, t)
+        end
+    end
 
-    for _, t in ipairs(mobList) do tinsert(targets, t) end
+    for _, t in ipairs(mobList) do
+        if not lowPrioTargets[t] then
+            tinsert(targets, t)
+        end
+    end
 
-    for _, t in ipairs(unitscanList) do tinsert(targets, t) end
+    for _, t in ipairs(unitscanList) do
+        if not lowPrioTargets[t] then
+            tinsert(targets, t)
+        end
+    end
 
     local content
     for _, t in ipairs(targets) do
@@ -163,7 +179,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
             content = fmt('/targetexact %s', t)
         end
         -- Prevent multiple spams
-        if not announcedTargets[t] and
+        if not (announcedTargets[t] or lowPrioTargets[t]) and
             addon.settings.db.profile.notifyOnTargetUpdates then
             -- Only notify if Active Targets frame is disabled
             addon.comms.PrettyPrint(L("Targeting macro updated with (%s)"), t) -- TODO locale
@@ -172,18 +188,20 @@ function addon.targeting:UpdateMacro(queuedTargets)
         announcedTargets[t] = true
 
         if #content > 255 then
-            content:gsub("^.-\n", "")
-            break
+            content = content:gsub("^\n?[^\n]*[\n]*", "")
         end
     end
 
-    if content and #content < 231 then
+    if content then
+        while #content > 230 do
+            content = content:gsub("^\n?[^\n]*[\n]*", "")
+        end
         content = content .. '\n/targetlasttarget [dead]'
-    elseif not content then
+    else
         content = fmt('//%s - %s', addon.title,
                       L("current step has no configured targets")) -- TODO locale
     end
-
+    AAA = content
     EditMacro(self.macroName, self.macroName, nil, content)
 
     if not addon.settings.db.profile.macroAnnounced and
@@ -580,10 +598,14 @@ function addon.targeting:UpdateTargetList(targets,addEntries)
             end
             if not found then
                 update = true
+                lowPrioTargets[unit] = true
                 tinsert(targetList,unit)
             end
         end
         if not update then return end
+    elseif addEntries == false then
+        table.wipe(lowPrioTargets)
+        targetList = targets
     else
         targetList = targets
     end
@@ -617,6 +639,7 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
             if not found then
                 update = true
                 tinsert(unitscanList,unit)
+                lowPrioTargets[unit] = true
             end
         end
         for _,unit in ipairs(mobs) do
@@ -630,9 +653,14 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
             if not found then
                 tinsert(mobList,unit)
                 update = true
+                lowPrioTargets[unit] = true
             end
         end
         if not update then return end
+    elseif addEntries == false then
+        table.wipe(lowPrioTargets)
+        unitscanList = unitscan
+        mobList = mobs
     else
         unitscanList = unitscan
         mobList = mobs
