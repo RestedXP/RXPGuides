@@ -23,8 +23,9 @@ for faction, factionCsv in files.items():
     #Name,Zone,Level,Classification,Type,Movement,Notes/Special abilities,Line
 
     for mob in csvreader:
-      if not "Line" in mob or not mob['Line'] or not mob['Name'] or not mob['Level']:
+      if not "Commands" in mob or not mob['Commands'] or not mob['Name'] or not mob['Level']:
         excluded_count += 1
+        print('error:',mob)
         continue
 
       if not mob['Zone'] in db[faction]:
@@ -43,7 +44,7 @@ for faction, factionCsv in files.items():
       notes = mob['Notes/Abilities'].replace('"', '\\"')
 
       db[faction][mob['Zone']][mob['Name']].append(
-        f"        {{ MinLevel = {minLevel}, MaxLevel = {maxLevel}, Classification = \"{mob['Classification']}\", Movement = \"{mob['Movement']}\", Notes = \"{notes}\", Location = \"{mob['Line']}\" }},\n"
+        f"        {{\n        MinLevel = {minLevel},\n        MaxLevel = {maxLevel},\n        Classification = \"{mob['Classification']}\",\n        Movement = \"{mob['Movement']}\",\n        Notes = \"{notes}\",\n        Location = \"{mob['Commands']}\"\n        }},\n"
       )
 
       included_count += 1
