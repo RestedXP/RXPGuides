@@ -228,7 +228,7 @@ local dangerousMobs = {
         Classification = "Rare",
         Movement = "Idle",
         Notes = "Very high level rare",
-        Location = ".pin Westfall,36.6,67.8;.pin Westfall.45.6,60.2;.pin Westfall.63.0,74.8;.pin Westfall.64.4,56.0;.pin Westfall.48.0,43.4;.pin Westfall.51.6,23.6;.mob Vultros"
+        Location = ".pin Westfall,36.6,67.8;.pin Westfall,45.6,60.2;.pin Westfall,63.0,74.8;.pin Westfall,64.4,56.0;.pin Westfall,48.0,43.4;.pin Westfall,51.6,23.6;.mob Vultros"
         },
       },
       ["Foe Reaper 4000"] = {
@@ -238,7 +238,7 @@ local dangerousMobs = {
         Classification = "Rare",
         Movement = "Idle",
         Notes = "Very high level rare",
-        Location = ".pin Westfall.50.8,26.0;.pin Westfall.50.8,21.8;.pin Westfall.44.6,32.8;.pin Westfall.44.2,39.4;.pin Westfall.37.8,47.8;.pin Westfall,38.0,51.8;.mob Foe Reaper 4000"
+        Location = ".pin Westfall,50.8,26.0;.pin Westfall,50.8,21.8;.pin Westfall,44.6,32.8;.pin Westfall,44.2,39.4;.pin Westfall,37.8,47.8;.pin Westfall,38.0,51.8;.mob Foe Reaper 4000"
         },
       },
       ["Leprithus"] = {
