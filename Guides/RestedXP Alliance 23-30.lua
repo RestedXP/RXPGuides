@@ -709,7 +709,7 @@ step
 >>Talk to |cFF00FF25Viktori Prism'Antras|r
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    .itemcount 4371,1 >> Bronze Tube
+    .itemcount 4371,<1
 step << Rogue
     .goto Duskwood,77.5,44.4
     .fp Duskwood >> Get the Duskwood flight point
@@ -2099,7 +2099,7 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
-    .itemcount 4371,1
+    .itemcount 4371,<1
 .target Viktori Prism'Antras
 >>Talk to |cFF00FF25Viktori Prism'Antras|r
     .accept 174 >> Accept Look To The Stars
@@ -3173,7 +3173,7 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
-    .itemcount 4371,1
+    .itemcount 4371,<1
 .target Viktori Prism'Antras
 >>Talk to |cFF00FF25Viktori Prism'Antras|r
     .accept 174 >> Accept Look To The Stars
