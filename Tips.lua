@@ -451,7 +451,8 @@ end
 
 local function IsStepActive(self)
     local levelBuffer = 100
-    if not addon.db.profile.showDangerousMobsMap and self.mapTooltip then
+    if (not addon.db.profile.showDangerousMobsMap and self.mapTooltip) or
+       (self.isUnitscan and not addon.settings.db.profile.showDangerousUnitscan) then
         return false
     elseif not addon.settings.db.profile.debug and self.levelBuffer then
         levelBuffer = self.levelBuffer or 0
@@ -511,6 +512,8 @@ function addon.tips:LoadDangerousMobs()
                                 --Tooltip description:
                                 element.mapTooltip = fmt("%s - %s\n%s",
                                     mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
+                            elseif element.targets or element.unitscan or element.mobs then
+                                step.isUnitscan = true
                             end
 
                             step.elements = {element}
