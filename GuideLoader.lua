@@ -896,7 +896,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
                 --step.index = currentStep
                 addon.step = step
                 --addon.lastEelement = nil
-                parsingLogic = RXPGuides[guide.group]
+                parsingLogic = addon.functions
             end
         elseif not skip then
             if currentStep > 0 then
@@ -921,7 +921,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
                         -- print(tag,string.len(tag))
                         if tag and tag ~= "" and not guide[tag] then
                             if assignment == "=" then
-                                guide[tag] = RXPGuides[guide.group][value]
+                                guide[tag] = addon.functions[value]
                             else
                                 guide[tag] = value
                             end

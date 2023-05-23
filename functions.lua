@@ -3,7 +3,7 @@ local addonName, addon = ...
 local localizedClass, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
 local fmt, tinsert = string.format,tinsert
-local RXPGuides = addon.RXPGuides
+--local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
 local events = {}
@@ -1512,7 +1512,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
 
     local element = self.element
     local group = addon.currentGuide.group
-    local callback = RXPGuides[group][element.callback]
+    local callback = addon.functions[element.callback]
     if type(callback) == "function" then
         local lowPrio = callback(self, text, zone, x, y, radius, lowPrio, ...)
         if element.lowPrio ~= lowPrio then addon.UpdateMap() end
@@ -4089,7 +4089,7 @@ function addon.functions.emote(self, text, token, unitId, callback, ...)
     local group = addon.currentGuide.group
     local emote = element.emote
     if element.callback then
-        if RXPGuides[group][element.callback](self, text, token, unitId, callback,
+        if addon.functions[element.callback](self, text, token, unitId, callback,
                                          ...) then DoEmote(emote) end
     elseif addon.GetNpcId() == element.id or not id then
         -- print('ok')
@@ -4129,7 +4129,7 @@ function addon.functions.openmap(self, text, map, callback, ...)
     local mapId = element.mapId
 
     if element.callback then
-        if RXPGuides[group][element.callback](self, text, map, callback, ...) then
+        if addon.functions[element.callback](self, text, map, callback, ...) then
             _G.WorldMapFrame:Show()
             _G.WorldMapFrame:SetMapID(mapId)
         end
@@ -4305,7 +4305,7 @@ function addon.functions.timer(self,text,duration,timerText,callback,...)
         return
     end
 
-    local f = RXPGuides[addon.currentGuide.group][element.callback]
+    local f = addon.functions[element.callback]
     if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
         addon.StartTimer(element.timer,element.timerText)
     end
