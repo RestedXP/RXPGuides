@@ -1012,7 +1012,7 @@ function addon:UpdateLoop(diff)
 
         if not addon.loadNextStep then
             for ref, func in pairs(addon.updateActiveQuest) do
-                func(ref)
+                addon.Call("updateQuest",func,ref)
                 activeQuestUpdate = activeQuestUpdate + 1
                 addon.updateActiveQuest[ref] = nil
                 -- print('f',ref.element.step.index,math.random())
