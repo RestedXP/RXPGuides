@@ -4086,9 +4086,10 @@ function addon.functions.emote(self, text, token, unitId, callback, ...)
 
     -- print('g:',addon.GetNpcId(),addon.GetNpcId() == element.id)
     if not step.active then return end
-    local group = addon.currentGuide.group
+    --local group = addon.currentGuide.group
     local emote = element.emote
     if element.callback then
+        addon.lastCall = element.tag
         if addon.functions[element.callback](self, text, token, unitId, callback,
                                          ...) then DoEmote(emote) end
     elseif addon.GetNpcId() == element.id or not id then
@@ -4125,10 +4126,11 @@ function addon.functions.openmap(self, text, map, callback, ...)
         return
     end
 
-    local group = addon.currentGuide.group
+    --local group = addon.currentGuide.group
     local mapId = element.mapId
 
     if element.callback then
+        addon.lastCall = element.tag
         if addon.functions[element.callback](self, text, map, callback, ...) then
             _G.WorldMapFrame:Show()
             _G.WorldMapFrame:SetMapID(mapId)

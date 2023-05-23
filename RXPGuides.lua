@@ -138,6 +138,24 @@ addon.generatedSteps = {}
 BINDING_HEADER_RXPGuides = addon.title
 BINDING_HEADER_RXPTargeting = addon.title
 
+local errorTimer = 0
+addon.errors = {}
+function addon.Call(label,func,...)
+    --if true then return true end
+    label = label or ""
+    addon.lastCall = label
+    local pass, msg = pcall(func,...)
+    if not pass then
+        addon.errors[label] = addon.errors[label] or {}
+        local count = addon.errors[label][msg] or 0
+        addon.errors[label][msg] = count + 1
+        if GetTime() - errorTimer > 30 then
+            errorTimer = GetTime()
+            error(msg)
+        end
+    end
+end
+
 local questFrame = CreateFrame("Frame");
 
 local startTime = GetTime()
@@ -928,7 +946,7 @@ function addon.UpdateScheduledTasks()
                 addon.scheduledTasks[ref] = nil
                 local element = ref.element or ref
                 if element and addon.functions[element.tag] then
-                    addon.functions[element.tag](ref)
+                    addon.Call(element.tag,addon.functions[element.tag],ref)
                 end
                 return
             end
@@ -965,6 +983,7 @@ local updateTick = 0
 local skip = 0
 local updateError
 local errorCount = 0
+local event = ""
 
 function addon:UpdateLoop(diff)
     updateTick = updateTick + diff
@@ -975,13 +994,21 @@ function addon:UpdateLoop(diff)
         updateError = false
         --print('hidden')
         return
-    elseif updateTick > (tickRate + rand() / 128) and errorCount < 10 then
+    elseif errorCount >= 10 then
+        addon.lastEvent = event
+        tickRate = 10
+        errorCount = 0
+        updateTick = 0
+        updateError = false
+        return
+    elseif updateTick > (tickRate + rand() / 128) then
         updateError = true
         local guideLoaded
         updateTick = 0
         local activeQuestUpdate = 0
         skip = skip + 1
-        local event = ""
+        event = ""
+        tickRate = math.min(0.1,4*GetTickTime())
 
         if not addon.loadNextStep then
             for ref, func in pairs(addon.updateActiveQuest) do
@@ -999,17 +1026,18 @@ function addon:UpdateLoop(diff)
             addon.updateBottomFrame = true
             addon.nextStep = false
         elseif addon.loadNextStep then
+            event = event .. "/loadNext"
             addon.loadNextStep = false
             addon.SetStep(RXPCData.currentStep + 1)
             addon.questAutoAccept = true
             skip = 1
             addon.updateBottomFrame = true
-            event = event .. "/loadNext"
         elseif activeQuestUpdate == 0 then
             if addon.updateSteps then
-                addon.UpdateStepCompletion()
                 event = event .. "/stepComplete"
+                addon.UpdateStepCompletion()
             elseif addon.updateStepText and addon.currentGuide and skip % 2 == 0 then
+                event = event .. "/textsingle"
                 addon.updateStepText = false
                 local updateText
                 local steps = addon.currentGuide.steps
@@ -1032,17 +1060,16 @@ function addon:UpdateLoop(diff)
                     addon.updateTipWindow = false
                     addon.RXPFrame.CurrentStepFrame.UpdateText()
                 end
-                event = event .. "/updateText"
             elseif addon.updateBottomFrame then
+                event = event .. "/bottomFrame"
                 errorCount = 0
                 addon.RXPFrame.BottomFrame.UpdateFrame()
                 addon.RXPFrame.SetStepFrameAnchor()
-                event = event .. "/bottomFrame"
                 updateError = false
                 skip = 1
                 return
             elseif skip % 2 == 1 and next(addon.guideCache) then
-                event = event .. "/guideCache"
+                event = event .. "/cache"
                 local length = 0
                 for _,guide in pairs(addon.guides) do
                     if not guide.steps then
@@ -1061,22 +1088,26 @@ function addon:UpdateLoop(diff)
         if skip % 4 == 2 then
             if addon.questAutoAccept then
                 addon.questAutoAccept = false
+                event = event .. "/auto"
                 addon.QuestAutomation()
             end
             if addon.updateMap then
-                addon.UpdateMap(true)
                 event = event .. "/map"
+                addon.UpdateMap(true)
             end
         elseif skip % 4 == 0 then
+            event = event .. "/goto"
             addon.UpdateGotoSteps()
             -- event = event .. "/updateGoto"
         elseif skip % 4 == 3 and not addon.ProcessMessageQueue() then
+            event = event .. "/task"
             addon.UpdateScheduledTasks()
             addon.ClearQuestCache()
-            tickRate = math.min(0.1,4/GetFramerate())
         elseif skip % 32 == 29 then
+            event = event .. "/toptext"
             addon.RXPFrame.CurrentStepFrame.UpdateText()
         elseif skip % 16 == 1 then
+            event = event .. "/inactiveQ"
             activeQuestUpdate = 0
             local deletedIndexes = {}
             for i, ref in ipairs(addon.updateInactiveQuest) do
@@ -1094,10 +1125,8 @@ function addon:UpdateLoop(diff)
                 table.remove(addon.updateInactiveQuest, element)
                 -- print('r'..element)
             end
-            if activeQuestUpdate > 0 then
-                event = event .. "/inactiveQ"
-            end
         elseif not guideLoaded and addon.currentGuide then
+            event = event .. "/istep"
             local max = #addon.currentGuide.steps
             local offset = RXPCData.currentStep + 1
             if stepCounter == offset then

@@ -898,7 +898,7 @@ function addon.SetStep(n, n2, loopback)
             if element.tag then
                 local events = element.event or addon.functions.events[element.tag]
                 elementFrame.callback = addon.functions[element.tag]
-                elementFrame.callback(elementFrame)
+                addon.Call(element.tag,elementFrame.callback,elementFrame)
                 if type(events) == "string" then
                     if events == "OnUpdate" then
                         elementFrame:SetScript("OnUpdate", elementFrame.callback)
@@ -989,7 +989,8 @@ function CurrentStepFrame.EventHandler(self, event, ...)
         return
     elseif self.callback and self.step and self.step.active then
         --print(self.callback,self.element.tag)
-        self.callback(self, event, ...)
+        addon.Call(self.element.tag,self.callback,self, event, ...)
+        --self.callback(self, event, ...)
     else
         print('!!!') -- ok
         self.callback = nil
@@ -1646,8 +1647,8 @@ function BottomFrame.UpdateFrame(self, stepn)
             local stepDiff = element.step.index - RXPCData.currentStep
             element.element = element
             if element.requestFromServer then
-                addon.functions[element.tag](element,
-                                                            "WindowUpdate")
+                --addon.lastCall = element.tag
+                addon.Call(element.tag,addon.functions[element.tag],element,"WindowUpdate")
                 addon.updateStepText =
                     addon.updateStepText or
                         not element.requestFromServer
@@ -1655,8 +1656,9 @@ function BottomFrame.UpdateFrame(self, stepn)
                     not element.requestFromServer
             elseif element.tag and
                 (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
-                addon.functions[element.tag](element,
-                                                            "WindowUpdate")
+                --addon.lastCall = element.tag
+                --addon.functions[element.tag](element,"WindowUpdate")
+                addon.Call(element.tag,addon.functions[element.tag],element,"WindowUpdate")
             end
             local rawtext = element.tooltipText
             if not rawtext and element.text then
@@ -1709,8 +1711,9 @@ function BottomFrame.UpdateFrame(self, stepn)
                     local stepDiff = element.step.index - RXPCData.currentStep
                     element.element = element
                     if element.requestFromServer then
-                        addon.functions[element.tag](element,
-                                                                    "WindowUpdate")
+                        --addon.lastCall = element.tag
+                        --addon.functions[element.tag](element,"WindowUpdate")
+                        addon.Call(element.tag,addon.functions[element.tag],element,"WindowUpdate")
                         addon.updateStepText =
                             addon.updateStepText or
                                 not element.requestFromServer
@@ -1718,8 +1721,10 @@ function BottomFrame.UpdateFrame(self, stepn)
                             not element.requestFromServer
                     elseif element.tag and
                         (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
-                        addon.functions[element.tag](element,
-                                                                    "WindowUpdate")
+
+                        --addon.lastCall = element.tag
+                        --addon.functions[element.tag](element,"WindowUpdate")
+                        addon.Call(element.tag,addon.functions[element.tag],element,"WindowUpdate")
                     end
                 end
                 local rawtext = element.tooltipText

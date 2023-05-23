@@ -491,6 +491,21 @@ function addon.comms.OpenBugReport(stepNumber)
                           af.element and af.element.wy or 0,
                           af.element and af.element.wx or 0) or 'N/A'
 
+    local addonErrors = ""
+    if next(addon.errors) then
+        addonErrors = "\nAddon Errors:\n"
+    end
+
+    for tag,list in pairs(addon.errors) do
+        addonErrors = addonErrors .. tostring(tag) .. ':\n'
+        for error,count in pairs(list) do
+            addonErrors = fmt("%s(%d) %s\n",addonErrors,count,error)
+        end
+    end
+    local errorFlags = ""
+    if addon.lastEvent then
+        errorFlags = "\nError Flags: " .. addon.lastCall .. addon.lastEvent
+    end
     local content = fmt([[%s
 
 
@@ -511,13 +526,14 @@ Current Step data
 
 Arrow data
 %s
+%s%s
 ```
 ]], L("Describe your issue:"), L("Do not edit below this line"),
                         character or "Error", zone or "Error", guide or "Error",
                         addon.release, addon.settings.db.profile.xprate,
                         GetLocale(), select(1, GetBuildInfo()), select(2,
                                                                        BNGetInfo()) ~=
-                            nil and "Online" or "Offline", stepData, arrowData)
+                            nil and "Online" or "Offline", stepData, arrowData, addonErrors, errorFlags)
 
     local f = AceGUI:Create("Frame")
 
