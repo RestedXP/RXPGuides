@@ -809,10 +809,10 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         C_Timer.After(5, function()
             addon.settings:DetectXPRate()
             addon.settings:CheckAddonCompatibility()
-            if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
+            --if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
         end)
-    else
-        if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
+    --else
+        --if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
     end
 end
 
