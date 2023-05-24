@@ -636,6 +636,9 @@ function addon.LoadCachedGuides()
         local guide, errorMsg, metadata
         local enabled = not guideData.enabledFor or
                             applies(guideData.enabledFor)
+        if addon.release ~= RXPData.release then
+            guideData.metadata = nil
+        end
         if enabled then
             if guideData.metadata and
                     guideData.metadata.length == addon.ReadCacheData("string") then
