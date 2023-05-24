@@ -1631,17 +1631,14 @@ end
 
 function addon.functions.hs(self, ...)
     if type(self) == "string" then -- on parse
-        local element = {}
-        element.tag = "hs"
-        local text, location = ...
-        if text and text ~= "" then
-            element.text = text
-        else
-            element.textOnly = true
-            element.text = fmt("%s %s", L("Set your Hearthstone to"), location)
+        local text = ...
+        if not text then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. (addon.currentGuideName or _G.NONE) ..
+                           ": Invalid syntax\n" .. self)
         end
-        element.tooltipText = addon.icons.hs .. element.text
-        return element
+
+        return {text = text}
     end
     local event, unit, _, id = ...
     local step = self.element.step
