@@ -1,3 +1,5 @@
+local addonName, addon = ...
+
 local default_x = 420
 local default_y = -60
 
@@ -347,16 +349,6 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 	hardcore_option_button_frame:EnableMouse(true)
 	hardcore_option_button_frame:Show()
 
-	local button_selected_glow = frame:CreateTexture(nil, "OVERLAY")
-	button_selected_glow:SetDrawLayer("OVERLAY", 6)
-	button_selected_glow:SetHeight(53)
-	button_selected_glow:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", 0, 0)
-	button_selected_glow:SetWidth(290)
-	button_selected_glow:SetTexture("Interface\\Addons\\RXPGuides\\Textures\\blur_box.blp")
-	button_selected_glow:SetTexCoord(0, 1, 0, 1)
-	button_selected_glow:SetVertexColor(0, 1, 0, 0.5)
-	button_selected_glow:Hide()
-
 	local circle_frame_tex = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
 	circle_frame_tex:SetDrawLayer("OVERLAY", 3)
 	circle_frame_tex:SetHeight(hardcore_option_button_frame:GetHeight())
@@ -375,7 +367,7 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 	logo_tex:SetTexture(tex_id)
 	logo_tex:SetVertexColor(1, 1, 1, 1)
 	logo_tex:Show()
-	logo_mask = hardcore_option_button_frame:CreateMaskTexture()
+	local logo_mask = hardcore_option_button_frame:CreateMaskTexture()
 	logo_mask:SetPoint("CENTER", logo_tex, "CENTER", 0, 0)
 	logo_mask:SetHeight(logo_tex:GetWidth() * 0.93)
 	logo_mask:SetWidth(logo_tex:GetWidth() * 0.93)
@@ -394,16 +386,6 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 	})
 	hardcore_option_button_frame:SetBackdropColor(14 / 255, 10 / 255, 7 / 255, 1.0)
 	hardcore_option_button_frame:SetBackdropBorderColor(112 / 255, 112 / 255, 112 / 255)
-
-	local transparent_paper = hardcore_option_button_frame:CreateTexture(nil, "ARTWORK")
-	transparent_paper:SetDrawLayer("OVERLAY", 1)
-	transparent_paper:SetHeight(hardcore_option_button_frame:GetHeight() - 5)
-	transparent_paper:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", 0, 0)
-	transparent_paper:SetWidth(hardcore_option_button_frame:GetWidth() - 5)
-	transparent_paper:SetTexture("Interface\\Addons\\RXPGuides\\Textures\\transparent_paper.blp")
-	transparent_paper:SetVertexColor(1, 1, 1, 1)
-	transparent_paper:SetTexCoord(0, 1, 0, 1 * _ratio)
-	transparent_paper:Show()
 
 	local function addOptionButtonTitle(title_text)
 		local font_string = hardcore_option_button_frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightLarge")
@@ -431,7 +413,22 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 		return font_string
 	end
 
-	local check_circle_tex = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
+	local title = addOptionButtonTitle(title_text)
+	local description = addOptionDescription(description_text)
+    height = math.max(title:GetStringHeight() + description:GetStringHeight() + 10,50)
+    hardcore_option_button_frame:SetHeight(height)
+
+    local transparent_paper = hardcore_option_button_frame:CreateTexture(nil, "ARTWORK")
+	transparent_paper:SetDrawLayer("OVERLAY", 1)
+	transparent_paper:SetHeight(hardcore_option_button_frame:GetHeight() - 5)
+	transparent_paper:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", 0, 0)
+	transparent_paper:SetWidth(hardcore_option_button_frame:GetWidth() - 5)
+	transparent_paper:SetTexture("Interface\\Addons\\RXPGuides\\Textures\\transparent_paper.blp")
+	transparent_paper:SetVertexColor(1, 1, 1, 1)
+	transparent_paper:SetTexCoord(0, 1, 0, 1 * _ratio)
+	transparent_paper:Show()
+
+    local check_circle_tex = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
 	check_circle_tex:SetDrawLayer("OVERLAY", 3)
 	check_circle_tex:SetHeight(hardcore_option_button_frame:GetHeight() * 0.3)
 	check_circle_tex:SetPoint("CENTER", hardcore_option_button_frame, "RIGHT", -15, 0)
@@ -448,6 +445,17 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 	check_mark_tex:SetWidth(check_circle_tex:GetHeight() * 0.8)
 	check_mark_tex:SetTexture("Interface\\RAIDFRAME/ReadyCheck-Ready.PNG")
 	check_mark_tex:Hide()
+
+
+	local button_selected_glow = frame:CreateTexture(nil, "OVERLAY")
+	button_selected_glow:SetDrawLayer("OVERLAY", 6)
+	button_selected_glow:SetHeight(height + 3)
+	button_selected_glow:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", 0, 0)
+	button_selected_glow:SetWidth(290)
+	button_selected_glow:SetTexture("Interface\\Addons\\RXPGuides\\Textures\\blur_box.blp")
+	button_selected_glow:SetTexCoord(0, 1, 0, 1)
+	button_selected_glow:SetVertexColor(0, 1, 0, 0.5)
+	button_selected_glow:Hide()
 
 	hardcore_option_button_frame:HookScript("OnMouseDown", function()
 		if check_mark_tex:IsShown() then
@@ -467,12 +475,14 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 		end
 	end)
 
-	addOptionButtonTitle(title_text)
-	addOptionDescription(description_text)
+    return height
 end
 
-local function addHardcoreDungeonOptionButton(frame, title_text, level_range, tex_id, x_off, y_off, tags)
-	local height = 50
+local function addHardcoreDungeonOptionButton(frame, title_text, level_range, tex_id, x_off, y_off, tags, tex_coord)
+	if not RXPData.guideMetaData.enabledDungeons[addon.player.faction][title_text] then
+        return
+    end
+    local height = 50
 	local width = 275
 	local _ratio = height / width
 
@@ -508,6 +518,9 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 	logo_tex:SetPoint("CENTER", circle_frame_tex, "CENTER", 0, 1)
 	logo_tex:SetWidth(circle_frame_tex:GetWidth() * 0.85)
 	logo_tex:SetTexture(tex_id)
+    if tex_coord then
+        logo_tex:SetTexCoord(unpack(tex_coord))
+    end
 	logo_tex:SetVertexColor(1, 1, 1, 1)
 	logo_tex:Show()
 	logo_mask = hardcore_option_button_frame:CreateMaskTexture()
@@ -549,7 +562,7 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 		font_string:SetTextColor(0.8, 0.8, 0.8)
 		font_string:SetFont("Fonts\\blei00d.TTF", 15, "")
 		font_string:SetText(
-			title_text .. " (|cffffa500" .. level_range[1] .. "|r - |cff228B22" .. level_range[2] .. "|r)"
+			select(1,addon.GetDungeonName(title_text)) .. " (|cffffa500" .. level_range[1] .. "|r - |cff228B22" .. level_range[2] .. "|r)"
 		)
 		font_string:Show()
 	end
@@ -992,20 +1005,22 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 	addSubmitAndContinue()
 	addBackButton()
 
-	local y_offset = -220
-	local y_offset_delta = -60
-	addHardcoreOptionButton(
+	local y_offset = -200
+	local y_offset_delta = -8
+    local height = 0
+	height = addHardcoreOptionButton(
 		frame,
 		"Enable Hostile Enemy Warning",
-		"Alerts when dangerous entity is nearby and marks it. Shows patrolling elites on the world map.",
+		"Alerts when dangerous entity is nearby and shows patrolling elites on the world map.",
 		132212,
 		y_offset,
         function(enabled)
             hostile_enemy_warning = not hostile_enemy_warning
         end
 	)
-	y_offset = y_offset + y_offset_delta
-	addHardcoreOptionButton(
+	y_offset = y_offset + y_offset_delta - height
+    --[[
+	height = addHardcoreOptionButton(
 		frame,
 		"Enable Panic Mode",
 		"Adds a fully adjustable action bar which displays helpful abilities and items for spicy situations.",
@@ -1015,39 +1030,45 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
             panic_mode = not panic_mode
         end
 	)
-	y_offset = y_offset + y_offset_delta
-	addHardcoreOptionButton(
+	y_offset = y_offset + y_offset_delta - height
+    ]]
+	height = addHardcoreOptionButton(
 		frame,
-		"Enable Auctionhouse",
-		"Considers Quests that require crafted items as well as checking for upgrades.",
+		"Enable Auction House",
+		"Considers quests that require items that are obtained through trading with other players.",
 		133787,
 		y_offset,
         function(enabled)
             auction_house = not auction_house
         end
 	)
-	y_offset = y_offset + y_offset_delta
-	addHardcoreOptionButton(
+	y_offset = y_offset + y_offset_delta - height
+	height = addHardcoreOptionButton(
 		frame,
 		"Enable Group Quests",
-		"Requires you to group up with other players. Leave unchecked, if you prefer a solo experience.",
+		"Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience.",
 		135892,
 		y_offset,
         function(enabled)
             group_quests = not group_quests
         end
 	)
-	y_offset = y_offset + y_offset_delta
-	addHardcoreOptionButton(
-		frame,
-		"Enable Dungeons",
-		"Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions.",
-		135860,
-		y_offset,
-		function()
-			dungeons_enabled = not dungeons_enabled
-		end
-	)
+	y_offset = y_offset + y_offset_delta - height
+
+    if next(RXPData.guideMetaData.enabledDungeons[addon.player.faction]) then
+        addHardcoreOptionButton(
+            frame,
+            "Enable Dungeons",
+            "Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions.",
+            135860,
+            y_offset,
+            function()
+                dungeons_enabled = not dungeons_enabled
+            end
+        )
+    else
+        dungeons_enabled = false
+    end
 	return frame
 end
 
@@ -1160,123 +1181,144 @@ local function RXP_dungeonSelection(parent)
 
 	local x_off = -160
 	local y_off = -60
-	local y_delta = 65
-	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
+	--'local y_delta = 65
+    local function calculate_offset()
+        local n = #dungeon_buttons
+        local x = 320 * math.floor(n/6) - 160
+        local y = -65 * (n % 6) - 60
+        return x,y
+    end
+    if addon.player.faction == "Horde" then
+        dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
+            frame,
+            "RFC",
+            { "14", "20" },
+            "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-RagefireChasm",
+            x_off,
+            y_off,
+            { { 133639, false, false }, { 894556, false, false } },
+            {0.5,0.625,0.1,0.35}
+        )
+        x_off,y_off = calculate_offset()
+    end
+    dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"Wailing Caverns",
-		{ "17", "24" },
-		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\wailingcaverns.tga",
-		x_off,
-		y_off,
-		{ { 133639, false, false }, { 894556, false, false } }
-	)
-	y_off = y_off - y_delta
-	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
-		frame,
-		"The Deadmines",
-		{ "22", "30" },
+		"DM",
+		{ "18", "25" },
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\deadmines.tga",
 		x_off,
 		y_off,
 		{ { 133639, false, true }, { 894556, false, true }, { 136025, false, true } }
 	)
-	y_off = y_off - y_delta
+	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"Black Fathom Deeps",
-		{ "22", "30" },
+		"WC",
+		{ "18", "25" },
+		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\wailingcaverns.tga",
+		x_off,
+		y_off,
+		{ { 133639, false, false }, { 894556, false, false } }
+	)
+	x_off,y_off = calculate_offset()
+	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
+		frame,
+		"BFD",
+		{ "25", "31" },
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\blackfathomdeeps.tga",
 		x_off,
 		y_off,
 		{ { 133639, false, false }, { 894556, true, false } }
 	)
-	y_off = y_off - y_delta
+	x_off,y_off = calculate_offset()
+    if addon.player.faction == "Alliance" then
+        dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
+            frame,
+            "STOCKS",
+            { "24", "32" },
+            "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\stockade.tga",
+            x_off,
+            y_off,
+            { { 133639, false, false }, { 894556, false, true } }
+        )
+        x_off,y_off = calculate_offset()
+    end
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"The Stockade",
-		{ "24", "32" },
-		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\stockade.tga",
-		x_off,
-		y_off,
-		{ { 133639, false, false }, { 894556, false, true } }
-	)
-	y_off = y_off - y_delta
-	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
-		frame,
-		"Gnomeregan",
-		{ "29", "38" },
+		"GNOMER",
+		{ "30", "36" },
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\gnomeregan.tga",
 		x_off,
 		y_off,
 		{ { 133639, false, false }, { 894556, false, false }, { 136243, false, false } }
 	)
-	y_off = y_off - y_delta
+	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"Razorfen Kraul",
-		{ "29", "38" },
+		"RFK",
+		{ "30", "36" },
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfenkraul.tga",
 		x_off,
 		y_off,
 		{ { 133639, false, true }, { 894556, false, false } }
 	)
-
-	x_off = 160
-	y_off = -60
+    x_off,y_off = calculate_offset()
+	--x_off = 160
+	--y_off = -60
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"Scarlet Monastery",
+		"SM",
 		{ "35", "45" },
-		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfenkraul.tga",
+		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\scarletmonastery.tga",
 		x_off,
 		y_off,
 		{ { 133639, false, true }, { 894556, false, true } }
 	)
-	y_off = y_off - y_delta
+	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"Razorfen Downs",
-		{ "37", "46" },
+		"RFD",
+		{ "38", "46" },
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfendowns.tga",
 		x_off,
 		y_off,
 		{ { 133639, false, false }, { 894556, false, false } }
 	)
-	y_off = y_off - y_delta
+	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"Uldaman",
-		{ "41", "51" },
+		"ULDA",
+		{ "44", "50" },
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\uldaman.tga",
 		x_off,
 		y_off,
 		{ { 133639, false, true }, { 894556, false, true } }
 	)
-	y_off = y_off - y_delta
+	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"Zul'Farrak",
-		{ "44", "54" },
+		"ZF",
+		{ "45", "53" },
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\zulfarrak.tga",
 		x_off,
 		y_off,
 		{ { 133639, false, false }, { 894556, false, true } }
 	)
-	y_off = y_off - y_delta
+	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"Maraudon",
-		{ "46", "55" },
+		"MARA",
+		{ "48", "55" },
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\maraudon.tga",
 		x_off,
 		y_off,
 		{ { 133639, false, false }, { 894556, false, true } }
 	)
-	y_off = y_off - y_delta
+	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
 		frame,
-		"Temple of Atal'Hakkar",
-		{ "50", "60" },
+		"ST",
+		{ "52", "60" },
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\sunkentemple.tga",
 		x_off,
 		y_off,
