@@ -144,8 +144,9 @@ function addon.Call(label,func,...)
     --if true then return true end
     label = label or ""
     addon.lastCall = label
-    local pass, msg = pcall(func,...)
+    local pass, r1, r2, r3, r4 = pcall(func,...)
     if not pass then
+        local msg = r1
         addon.errors[label] = addon.errors[label] or {}
         local count = addon.errors[label][msg] or 0
         addon.errors[label][msg] = count + 1
@@ -153,7 +154,9 @@ function addon.Call(label,func,...)
             errorTimer = GetTime()
             error(msg)
         end
+        return
     end
+    return r1, r2, r3, r4
 end
 
 local questFrame = CreateFrame("Frame");
