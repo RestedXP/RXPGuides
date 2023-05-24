@@ -1,4 +1,4 @@
-﻿local addonName, addon = ...
+local addonName, addon = ...
 
 local _G = _G
 local UnitInRaid = UnitInRaid
@@ -809,7 +809,10 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         C_Timer.After(5, function()
             addon.settings:DetectXPRate()
             addon.settings:CheckAddonCompatibility()
+            if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
         end)
+    else
+        if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
     end
 end
 
