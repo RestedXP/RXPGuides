@@ -201,7 +201,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
         content = fmt('//%s - %s', addon.title,
                       L("current step has no configured targets")) -- TODO locale
     end
-    AAA = content
+
     EditMacro(self.macroName, self.macroName, nil, content)
 
     if not addon.settings.db.profile.macroAnnounced and
