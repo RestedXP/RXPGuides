@@ -1,5 +1,5 @@
 local addonName, addon = ...
-
+local L = addon.locale.Get
 local default_x = 420
 local default_y = -60
 
@@ -477,12 +477,12 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 		end
 	end)
 
-    return height, hardcore_option_button_frame
+    return hardcore_option_button_frame:GetHeight(), hardcore_option_button_frame
 end
 
-local function addHardcoreDungeonOptionButton(frame, title_text, level_range, tex_id, x_off, y_off, tags, tex_coord)
+local function addHardcoreDungeonOptionButton(frame, title_text, level_range, tex_id, x_off, y_off, zone, tex_coord)
 	if not RXPData.guideMetaData.enabledDungeons[addon.player.faction][title_text] then
-        return
+        --return
     end
     local height = 50
 	local width = 275
@@ -554,6 +554,7 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 	transparent_paper:SetVertexColor(1, 1, 1, 1)
 	transparent_paper:SetTexCoord(0, 1, 0, 1 * _ratio)
 	transparent_paper:Show()
+    local dungeonName = select(1,addon.GetDungeonName(title_text))
 
 	local function addOptionTitle(title_text)
 		local font_string = hardcore_option_button_frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightLarge")
@@ -564,7 +565,7 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 		font_string:SetTextColor(0.8, 0.8, 0.8)
 		font_string:SetFont("Fonts\\blei00d.TTF", 15, "")
 		font_string:SetText(
-			select(1,addon.GetDungeonName(title_text)) .. " (|cffffa500" .. level_range[1] .. "|r - |cff228B22" .. level_range[2] .. "|r)"
+			dungeonName .. " (|cffffa500" .. level_range[1] .. "|r - |cff228B22" .. level_range[2] .. "|r)"
 		)
 		font_string:Show()
 	end
@@ -589,30 +590,78 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 	check_mark_tex:Hide()
     hardcore_option_button_frame.check_mark_tex = check_mark_tex
 
+
+    local function tpOnEnter(self)
+        if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
+            return
+        end
+        _G.GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", 5, 50)
+        _G.GameTooltip:ClearLines()
+        _G.GameTooltip:AddLine(self.dungeonName, 1, 1, 1)
+        _G.GameTooltip:AddLine(self.tooltip, 1, 1, 1)
+        _G.GameTooltip:Show()
+
+    end
+    local function tpOnLeave(self)
+        if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
+            return
+        end
+        _G.GameTooltip:Hide()
+    end
+    hardcore_option_button_frame.dungeonName = dungeonName
+    hardcore_option_button_frame:SetScript("OnEnter", tpOnEnter)
+    hardcore_option_button_frame:SetScript("OnLeave", tpOnLeave)
+
 	local x_off = -90
-	for _, v in ipairs(tags) do
-		local logo_tex = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
-		logo_tex:SetDrawLayer("OVERLAY", 3)
-		logo_tex:SetHeight(circle_frame_tex:GetHeight() * 0.46)
-		logo_tex:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", x_off, -8)
-		logo_tex:SetWidth(circle_frame_tex:GetWidth() * 0.46)
-		logo_tex:SetTexture(v[1])
-		if v[2] == true then
-			logo_tex:SetDesaturated(1)
-		end
-		logo_tex:Show()
-		if v[3] == true then
-			local star_logo = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
-			star_logo:SetDrawLayer("OVERLAY", 4)
-			star_logo:SetHeight(circle_frame_tex:GetHeight() * 0.26)
-			star_logo:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", x_off + 9, 0)
-			star_logo:SetWidth(circle_frame_tex:GetWidth() * 0.26)
-			star_logo:SetTexture("Interface\\COMMON/ReputationStar.PNG")
-			star_logo:SetTexCoord(0, 0.5, 0, 0.5)
-			star_logo:Show()
-		end
-		x_off = x_off + 24
-	end
+	local dungeon = addon.dungeonStats[addon.player.faction][title_text]
+    local function process_icon(icon,v)
+        if icon then
+            local logo_tex = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
+            logo_tex:SetDrawLayer("OVERLAY", 3)
+            logo_tex:SetHeight(circle_frame_tex:GetHeight() * 0.46)
+            logo_tex:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", x_off, -8)
+            logo_tex:SetWidth(circle_frame_tex:GetWidth() * 0.46)
+            logo_tex:SetTexture(icon)
+            logo_tex:Show()
+            if v <= 1 then
+                logo_tex:SetDesaturated(1)
+            end
+            if v == 3 then
+                local star_logo = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
+                star_logo:SetDrawLayer("OVERLAY", 4)
+                star_logo:SetHeight(circle_frame_tex:GetHeight() * 0.26)
+                star_logo:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", x_off + 9, 0)
+                star_logo:SetWidth(circle_frame_tex:GetWidth() * 0.26)
+                star_logo:SetTexture("Interface\\COMMON/ReputationStar.PNG")
+                star_logo:SetTexCoord(0, 0.5, 0, 0.5)
+                star_logo:Show()
+            end
+            x_off = x_off + 24
+        end
+    end
+
+    local tooltip = L"Location: " .. C_Map.GetAreaInfo(zone) .. "\n"
+    for k,v in pairs(dungeon) do
+        local icon = addon.dungeonIcons[k]
+        icon = icon or k == addon.player.class and addon.dungeonIcons.loot
+        process_icon(icon,v)
+        if icon then
+            tooltip = tooltip .. "\n|T" .. icon .. ":0|t " .. format(addon.dungeonTooltip[k],addon.dungeonWeights[v])
+        end
+    end
+    local profession = addon.dungeonProfessions[title_text]
+    if profession then
+        tooltip = tooltip .. L"\n\nProfessions that benefit:"
+        for k,v in pairs(profession) do
+            local icon = addon.dungeonIcons[k]
+            process_icon(icon,v)
+            tooltip = tooltip .. "\n|T" .. icon .. ":0|t " .. L(k)
+        end
+    end
+
+    hardcore_option_button_frame.tooltip = tooltip
+
+
 	hardcore_option_button_frame.select = function(self,state)
         if state == nil then
             state = not self.state
@@ -1219,7 +1268,7 @@ local function RXP_dungeonSelection(parent)
             "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-RagefireChasm",
             x_off,
             y_off,
-            { { 133639, false, false }, { 894556, false, false } },
+            1637,
             {0.5,0.625,0.1,0.35}
         )
         x_off,y_off = calculate_offset()
@@ -1231,7 +1280,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\deadmines.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, true }, { 894556, false, true }, { 136025, false, true } }
+		40
 	)
 	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
@@ -1241,7 +1290,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\wailingcaverns.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, false }, { 894556, false, false } }
+		17
 	)
 	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
@@ -1251,7 +1300,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\blackfathomdeeps.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, false }, { 894556, true, false } }
+		331
 	)
 	x_off,y_off = calculate_offset()
     if addon.player.faction == "Alliance" then
@@ -1262,7 +1311,7 @@ local function RXP_dungeonSelection(parent)
             "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\stockade.tga",
             x_off,
             y_off,
-            { { 133639, false, false }, { 894556, false, true } }
+            1519
         )
         x_off,y_off = calculate_offset()
     end
@@ -1273,7 +1322,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\gnomeregan.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, false }, { 894556, false, false }, { 136243, false, false } }
+		1
 	)
 	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
@@ -1283,7 +1332,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfenkraul.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, true }, { 894556, false, false } }
+		17
 	)
     x_off,y_off = calculate_offset()
 	--x_off = 160
@@ -1295,7 +1344,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\scarletmonastery.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, true }, { 894556, false, true } }
+		85
 	)
 	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
@@ -1305,7 +1354,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfendowns.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, false }, { 894556, false, false } }
+		17
 	)
 	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
@@ -1315,7 +1364,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\uldaman.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, true }, { 894556, false, true } }
+		3
 	)
 	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
@@ -1325,7 +1374,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\zulfarrak.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, false }, { 894556, false, true } }
+		440
 	)
 	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
@@ -1335,7 +1384,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\maraudon.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, false }, { 894556, false, true } }
+		405
 	)
 	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
@@ -1345,7 +1394,7 @@ local function RXP_dungeonSelection(parent)
 		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\sunkentemple.tga",
 		x_off,
 		y_off,
-		{ { 133639, false, true }, { 894556, false, false } }
+		8
 	)
 
 	frame.selectAll = function(self)
