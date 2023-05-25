@@ -10,6 +10,7 @@ local events = {}
 addon.stepUpdateList = {}
 addon.functions.events = events
 events.collect = {"BAG_UPDATE", "QUEST_LOG_UPDATE","MERCHANT_SHOW"}
+events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
