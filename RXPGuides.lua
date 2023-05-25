@@ -717,7 +717,7 @@ function addon:OnEnable()
     addon.RXPFrame.GenerateMenuTable()
 
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
-    self:RegisterEvent("BAG_UPDATE")
+    self:RegisterEvent("BAG_UPDATE_DELAYED")
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
     self:RegisterEvent("QUEST_TURNED_IN")
     -- self:RegisterEvent("SKILL_LINES_CHANGED")
