@@ -14,6 +14,7 @@ local panic_mode = false -- RXPCData['hardcore_guide']['panic_mode'] =
 local auction_house = false -- RXPCData['hardcore_guide']['auction_house'] =
 local group_quests = false -- RXPCData['hardcore_guide']['group_quests'] =
 local dungeons = {} -- RXPCData['hardcore_guide']['dungeons'] = {dungeon_title,...}
+local dungeonConfigButton
 
 ----------- Widgets
 
@@ -445,7 +446,7 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 	check_mark_tex:SetWidth(check_circle_tex:GetHeight() * 0.8)
 	check_mark_tex:SetTexture("Interface\\RAIDFRAME/ReadyCheck-Ready.PNG")
 	check_mark_tex:Hide()
-
+    hardcore_option_button_frame.check_mark_tex = check_mark_tex
 
 	local button_selected_glow = frame:CreateTexture(nil, "OVERLAY")
 	button_selected_glow:SetDrawLayer("OVERLAY", 6)
@@ -456,8 +457,9 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 	button_selected_glow:SetTexCoord(0, 1, 0, 1)
 	button_selected_glow:SetVertexColor(0, 1, 0, 0.5)
 	button_selected_glow:Hide()
+    hardcore_option_button_frame.button_selected_glow = button_selected_glow
 
-	hardcore_option_button_frame:HookScript("OnMouseDown", function()
+	hardcore_option_button_frame:HookScript("OnMouseDown", function(self)
 		if check_mark_tex:IsShown() then
 			check_mark_tex:Hide()
 		else
@@ -469,13 +471,13 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 			button_selected_glow:Show()
 		end
 		if functor then
-			functor()
+			functor(self)
 		else
 			print("Not hooked yet")
 		end
 	end)
 
-    return height
+    return height, hardcore_option_button_frame
 end
 
 local function addHardcoreDungeonOptionButton(frame, title_text, level_range, tex_id, x_off, y_off, tags, tex_coord)
@@ -576,6 +578,7 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 	check_circle_tex:SetVertexColor(1, 1, 1, 1)
 	check_circle_tex:SetTexCoord(0.284, 0.284 + 0.0781, 1 - (0.348 + 0.0745), 1 - 0.348)
 	check_circle_tex:Show()
+    hardcore_option_button_frame.check_circle_tex = check_circle_tex
 
 	local check_mark_tex = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
 	check_mark_tex:SetDrawLayer("OVERLAY", 6)
@@ -584,6 +587,7 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 	check_mark_tex:SetWidth(check_circle_tex:GetHeight() * 0.8)
 	check_mark_tex:SetTexture("Interface\\RAIDFRAME/ReadyCheck-Ready.PNG")
 	check_mark_tex:Hide()
+    hardcore_option_button_frame.check_mark_tex = check_mark_tex
 
 	local x_off = -90
 	for _, v in ipairs(tags) do
@@ -609,17 +613,23 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 		end
 		x_off = x_off + 24
 	end
-	hardcore_option_button_frame.select = function()
-		if check_mark_tex:IsShown() then
+	hardcore_option_button_frame.select = function(self,state)
+        if state == nil then
+            state = not self.state
+        end
+        self.state = state
+		if not state then
 			check_mark_tex:Hide()
             dungeons[title_text] = nil
-		else
+			button_selected_glow:Hide()
+            if dungeonConfigButton then
+                dungeonConfigButton.state = false
+                dungeonConfigButton.button_selected_glow:Hide()
+                dungeonConfigButton.check_mark_tex:Hide()
+            end
+        else
 			check_mark_tex:Show()
             dungeons[title_text] = 1
-		end
-		if button_selected_glow:IsShown() then
-			button_selected_glow:Hide()
-		else
 			button_selected_glow:Show()
 		end
 		if functor then
@@ -628,7 +638,7 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 	end
 
 	hardcore_option_button_frame:HookScript("OnMouseDown", function(self)
-		self.select()
+		self:select()
 	end)
 
 	addOptionTitle(title_text)
@@ -870,17 +880,22 @@ local function RXP_loadSpeedRunGuideSelector(parent_frame, background_cen_x, bac
 			"Experience the fastest and most efficient Leveling Routes.\nHand-crafted and maintained by the best Speedrunners in\nthe Classic WoW Community.",
 			frame,
 			0,
-			-10
+			-5
 		)
 	end
 
-	local function addSelectSpeedrunButton()
+	local function addSelectSpeedrunButton(anchor,x,y,callback,text)
+        anchor = anchor or frame
+        text = text or "Select Speedrun Guide"
+        x = x or 0
+        y = y or -60
+        callback = callback or selectSpeedrunFunctor
 		local button = CreateFrame("Button", nil, frame)
-		button:SetPoint("CENTER", frame, "CENTER", 0, -60)
+		button:SetPoint("CENTER", anchor, "CENTER", x, y)
 		button:SetWidth(165)
 		button:SetHeight(35)
 
-		button:SetText("Select Speedrun Guide")
+		button:SetText(text)
 		button:SetNormalFontObject("GameFontNormal")
 
 		local ntex = button:CreateTexture()
@@ -902,22 +917,28 @@ local function RXP_loadSpeedRunGuideSelector(parent_frame, background_cen_x, bac
 		button:SetPushedTexture(ptex)
 
 		button:SetScript("OnClick", function()
-			if selectSpeedrunFunctor then
-				selectSpeedrunFunctor()
+			if callback then
+				callback()
 			end
 			frame:Hide()
 			parent_frame:Hide()
 		end)
+        return button
 	end
 
 	addSubTitleFont()
 	addTitleFont()
 	addDescriptionFont()
-	addSelectSpeedrunButton()
+    --[[if class ~= "MAGE" then
+        local button = addSelectSpeedrunButton(frame,0,-50)
+        addSelectSpeedrunButton(button,0,-35,nil,"Select Mage AoE Guide")
+    else
+    end]]
+    addSelectSpeedrunButton(frame,0,-65)
 	return frame
 end
 
-local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_functor)
+local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_functor, finalizeSettings)
 	local frame = createHardcoreUIFrame(375, 580, 0.35, 0.5, 0.2, UIParent, "TOP", "TOP", default_x, default_y, 2)
 
 	local function addSubmitAndContinue()
@@ -950,6 +971,8 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 		button:SetScript("OnClick", function()
 			if dungeons_enabled and dungeons_enabled_functor then
 				dungeons_enabled_functor()
+            else
+                finalizeSettings()
 			end
 			frame:Hide()
 		end)
@@ -1082,7 +1105,7 @@ local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFun
 		85
 	)
 
-	addHardcoreOptionButton(
+	 _,dungeonConfigButton = addHardcoreOptionButton(
 		frame,
 		"Select all Dungeons",
 		"Factor all of your available Dungeons to your levelling route",
@@ -1325,10 +1348,12 @@ local function RXP_dungeonSelection(parent)
 		{ { 133639, false, true }, { 894556, false, false } }
 	)
 
-	frame.selectAll = function()
+	frame.selectAll = function(self)
+        local state = not dungeonConfigButton.state
+        dungeonConfigButton.state = state
 		for i = 1, #dungeon_buttons do
 			local dungeon_button = dungeon_buttons[i]
-			dungeon_button.select()
+			dungeon_button:select(state)
 		end
 	end
 	return frame
@@ -1365,13 +1390,14 @@ function startHardcoreIntroUI(saved_var_settings)
         saved_var_settings['hardcore_guide']['enabled'] = 1
         saved_var_settings['hardcore_guide']['dungeons_enabled'] = dungeons_enabled
         saved_var_settings['hardcore_guide']['hostile_enemy_warning'] = hostile_enemy_warning
-        saved_var_settings['hardcore_guide']['panic_mode'] = panic_mode
+        --saved_var_settings['hardcore_guide']['panic_mode'] = panic_mode
         saved_var_settings['hardcore_guide']['auction_house'] = auction_house
         saved_var_settings['hardcore_guide']['group_quests'] = group_quests
         saved_var_settings['hardcore_guide']['dungeons'] = {}
         for k,_ in pairs(dungeons) do
             saved_var_settings['hardcore_guide']['dungeons'][k] = 1
         end
+        addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
     end
 
 	local dungeon_configuration_frame = nil
@@ -1399,27 +1425,27 @@ function startHardcoreIntroUI(saved_var_settings)
         end
 	end
 
-	local function selectAllDungeonsFunctor()
+	local function selectAllDungeonsFunctor(self)
 		if dungeon_selection_frame then
-			dungeon_selection_frame.selectAll()
+			dungeon_selection_frame:selectAll()
 		end
 	end
 
     local function selectSpeedrunMode()
         saved_var_settings['hardcore_guide'] = {['enabled'] = 0}
+        addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
     end
 
 	ultimate_hardcore_survival_guide_frame = RXP_loadUltimateHardcoreSurvivalGuideFrame(toggleSurivalGuideFunctor)
 	local speedrun_guide_selector = RXP_loadSpeedRunGuideSelector(ultimate_hardcore_survival_guide_frame, 0, 0, 0.4, selectSpeedrunMode)
 	welcome_adventurer_frame =
-		RXP_loadWelcomeAdventurerFrame(toggleUltimateSurvivalGuideFrame, welcomeAdventurerSubmitFunctor)
+		RXP_loadWelcomeAdventurerFrame(toggleUltimateSurvivalGuideFrame, welcomeAdventurerSubmitFunctor, finalizeSettings)
 	dungeon_configuration_frame = RXP_dungeonConfiguration(
 		selectAllDungeonsFunctor,
         finalizeSettings,
 		toggleSurivalGuideFunctor
 	)
 	dungeon_selection_frame = RXP_dungeonSelection(dungeon_configuration_frame)
-
 	ultimate_hardcore_survival_guide_frame:Show()
 	welcome_adventurer_frame:Hide()
 	dungeon_configuration_frame:Hide()

@@ -1,4 +1,4 @@
-local addonName, addon = ...
+﻿local addonName, addon = ...
 
 local _G = _G
 local UnitInRaid = UnitInRaid
@@ -691,11 +691,11 @@ function addon:OnEnable()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
                                       RXPCData.currentGuideName)
-    if not guide and addon.settings.db.profile.autoLoadStartingGuides then
+    if not guide and RXPData.autoLoadStartingGuides then
         if addon.defaultGuideList then
             local currentMap = C_Map.GetBestMapForUnit("player")
             for zone, guideName in pairs(addon.defaultGuideList) do
-                if currentMap == zone or currentMap == addon.mapId[zone] then
+                if currentMap and (currentMap == zone or currentMap == addon.mapId[zone]) then
                     local group, name = string.match(guideName,
                                                      "([^\\]+)%s*\\%s*([^\\]+)")
                     guide = addon.GetGuideTable(group, name)
@@ -815,7 +815,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         --if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
     end
 end
-
+--addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
 function addon:PLAYER_LEAVING_WORLD() addon.isHidden = true end
 
 function addon:CALENDAR_UPDATE_EVENT_LIST()

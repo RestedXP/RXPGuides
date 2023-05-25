@@ -2353,11 +2353,13 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Automatically picks a suitable guide whenever you log in for the first time on a character"),
                         type = "toggle",
+                        get = function() return RXPData.autoLoadStartingGuides end,
                         width = optionsWidth,
                         order = 3.7,
                         hidden = not addon.defaultGuideList,
                         set = function(info, value)
                             SetProfileOption(info, value)
+                            RXPData.autoLoadStartingGuides = value
                             addon.RXPFrame.GenerateMenuTable()
 
                         end

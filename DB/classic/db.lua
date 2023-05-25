@@ -22,6 +22,13 @@ addon.defaultGuideList = {
     ["Tirisfal Glades"] = "RestedXP Horde 1-30\\01-11 Tirisfal Glades",
 }
 
+if faction == "Horde" then
+    addon.defaultGroup = "RestedXP Horde 1-22"
+elseif faction == "Alliance" then
+    addon.defaultGroup = "RestedXP Alliance 1-20"
+end
+addon.defaultGroupHC = "RestedXP Survival Guide"
+
 if class == "HUNTER" then
     addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-6 Coldridge Valley (Hunter)"
 end
