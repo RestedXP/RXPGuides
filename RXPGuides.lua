@@ -834,7 +834,7 @@ function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
     end
 end
 
-function addon:BAG_UPDATE(...) addon.UpdateItemFrame() end
+function addon:BAG_UPDATE_DELAYED(...) addon.UpdateItemFrame() end
 
 function addon:PLAYER_REGEN_ENABLED(...) addon.UpdateItemFrame() end
 
