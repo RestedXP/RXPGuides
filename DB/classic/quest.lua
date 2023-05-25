@@ -20,7 +20,7 @@ addon.questCompleteItems = {
     [2561] = 8149, -- Druid of the Claw // Voodoo Charm
     [933] = 5645, -- Crown of the Earth // Tourmaline Phial
     [1520] = 6635, -- Call of Earth // Earth Sapta
-    [929] = 5639, -- Crown of the Earth // Jade Phial
+    [929] = 5619, -- Crown of the Earth // Jade Phial
     [760] = 5416, -- Wildmane Cleansing // Wildmane Cleansing Totem
     [758] = 5415, -- Thunderhorn Cleansing // Thunderhorn Cleansing Totem
     [921] = 5185, -- Crown of the Earth // Crystal Phial
@@ -209,7 +209,7 @@ addon.questCompleteItems = {
     [55] = 7297,
     [3461] = 10445,
     [325] = 7297,
-    [611] = 4027
+    [611] = 4027,
 }
 
 -- Items required to turn in the quest
