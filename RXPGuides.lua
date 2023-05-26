@@ -171,7 +171,10 @@ function addon.QuestAutoAccept(title)
                 element = v
             end
         end
-        return element and element.step.active
+        if element and element.step.active then
+            addon:SendEvent("RXP_QUEST_ACCEPT",element.questId)
+            return true
+        end
     end
 end
 
@@ -505,6 +508,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         local reward = addon.QuestAutoTurnIn(id)
         local choices = GetNumQuestChoices()
         if reward then
+            addon:SendEvent("RXP_QUEST_TURNIN",id,reward,choices)
             if choices <= 1 then
                 GetQuestReward(1)
             elseif reward and reward > 0 then
