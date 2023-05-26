@@ -3709,9 +3709,10 @@ function addon.functions.skipgossip(self, text, ...)
     if event == "GOSSIP_SHOW" then
         -- print(id,'GS',nArgs)
         local trainerId,name = addon.SelectGossipType("trainer",true)
+        local npcId = addon.GetNpcId()
 
-        if trainerId and (GossipGetNumOptions() >= 3 or name and strupper(name):find(strupper(localizedClass))) then
-            --Ignore dualspec prompt
+        if id ~= npcId and trainerId and (GossipGetNumOptions() >= 2 and name and strupper(name):find(strupper(localizedClass))) then
+            --Ignores respec/dualspec prompt
             return
         elseif nArgs == 0 or not id then
             if GossipGetNumAvailableQuests() == 0 and GossipGetNumActiveQuests() == 0 then
@@ -3719,7 +3720,6 @@ function addon.functions.skipgossip(self, text, ...)
             end
             return
         end
-        local npcId = addon.GetNpcId()
         element.npcId = npcId
         if nArgs == 1 then
             if npcId == id then
