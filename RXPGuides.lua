@@ -507,8 +507,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         local id = GetQuestID()
         local reward = addon.QuestAutoTurnIn(id)
         local choices = GetNumQuestChoices()
-        if reward then
-            addon:SendEvent("RXP_QUEST_TURNIN",id,reward,choices)
+        if reward and id and id > 0 then
+            addon:SendEvent("RXP_QUEST_TURNIN",id,choices,reward)
             if choices <= 1 then
                 GetQuestReward(1)
             elseif reward and reward > 0 then
