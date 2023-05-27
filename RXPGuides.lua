@@ -670,6 +670,7 @@ function addon:OnInitialize()
         addon.tracker:SetupTracker()
     end
     if addon.tips then addon.tips:Setup() end
+    if addon.VendorTreasures then addon.VendorTreasures:Setup() end
 
     addon.LoadCachedGuides()
     addon.LoadEmbeddedGuides()

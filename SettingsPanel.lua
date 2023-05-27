@@ -129,6 +129,7 @@ function addon.settings:InitializeSettings()
             activeTargetScale = 1,
 
             enableAddonIncompatibilityCheck = true,
+            enableVendorTreasure = true,
 
             -- Themes
             activeTheme = 'Default',
@@ -807,6 +808,14 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.UpdateItemFrame()
                         end
+                    },
+                    enableVendorTreasure = {
+                        name = L("Enable Vendor Treasures"),
+                        desc = L("Enable embedded Cpt. Stadics' Vendor Treasures"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.5,
+                        hidden = addon.game ~= "CLASSIC"
                     },
                     automationHeader = {
                         name = L("Automation"), -- TODO locale
