@@ -171,24 +171,37 @@ function addon.targeting:UpdateMacro(queuedTargets)
         end
     end
 
+    --Removes duplicate entries:
+    local npcNames = {}
+    for i = #targets,1,-1 do
+        local t = targets[i]
+        if npcNames[t] then
+            targets[i] = false
+        else
+            npcNames[t] = true
+        end
+    end
+
     local content
     for _, t in ipairs(targets) do
-        if content then
-            content = fmt('%s\n/targetexact %s', content, t)
-        else
-            content = fmt('/targetexact %s', t)
-        end
-        -- Prevent multiple spams
-        if not (announcedTargets[t] or lowPrioTargets[t]) and
-            addon.settings.db.profile.notifyOnTargetUpdates then
-            -- Only notify if Active Targets frame is disabled
-            addon.comms.PrettyPrint(L("Targeting macro updated with (%s)"), t) -- TODO locale
-        end
+        if t then
+            if content then
+                content = fmt('%s\n/targetexact %s', content, t)
+            else
+                content = fmt('/targetexact %s', t)
+            end
+            -- Prevent multiple spams
+            if not (announcedTargets[t] or lowPrioTargets[t]) and
+                addon.settings.db.profile.notifyOnTargetUpdates then
+                -- Only notify if Active Targets frame is disabled
+                addon.comms.PrettyPrint(L("Targeting macro updated with (%s)"), t) -- TODO locale
+            end
 
-        announcedTargets[t] = true
+            announcedTargets[t] = true
 
-        if #content > 255 then
-            content = content:gsub("^\n?[^\n]*[\n]*", "")
+            if #content > 255 then
+                content = content:gsub("^\n?[^\n]*[\n]*", "")
+            end
         end
     end
 
