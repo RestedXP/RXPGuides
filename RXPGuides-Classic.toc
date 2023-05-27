@@ -38,3 +38,5 @@ Guides/GuideList-classic.xml
 
 Talents.lua
 Guides/Talents/classic.xml
+
+CptStadicsVendorTreasures.lua
