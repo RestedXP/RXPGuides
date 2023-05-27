@@ -443,7 +443,7 @@ function Frame:SetZoneNPCData(zone, name, x, y, cl, faction, loot)
     npcData[KEY_LOADED] = false
 
     -- Load loot early for tooltips
-    if next(loot) ~= nil then
+    if loot then
         for _, itemID in ipairs(loot) do
             GetItemInfo(itemID)
             -- if (itemName == nil) then
@@ -847,7 +847,7 @@ function Frame:LoadNPCData(data)
     -- Pre-load the loot to prevent bugs on tooltips
     local rarity = 0
     local itemRarity
-    if next(npcLoot) ~= nil then
+    if npcLoot then
         for _, itemID in ipairs(npcLoot) do
             _, _, itemRarity = GetItemInfo(itemID)
             if itemRarity ~= nil and itemRarity > rarity then
