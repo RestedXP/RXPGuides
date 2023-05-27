@@ -140,8 +140,8 @@ end
 
 function addon.tips:CheckEmergencyActions()
     if not addon.settings.db.profile.enableEmergencyActions then return end
-
-    if UnitHealth("player") / UnitHealthMax("player") <
+    local maxHP = UnitHealthMax("player")
+    if maxHP > 0 and UnitHealth("player") / maxHP <
         addon.settings.db.profile.emergencyThreshold then
 
         addon.tips:HighlightEmergencyItem()
