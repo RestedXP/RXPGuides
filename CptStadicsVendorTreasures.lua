@@ -716,13 +716,9 @@ function Frame:UpdateWorldMapPins()
     print("UpdateWorldMapPins")
 
     -- TODO: Try not to call this on every frame. Only when the canvas width or height has changed, and if the scale has changed.
-    local scale = WORLD_MAP_CONTAINER:GetEffectiveScale()
     local width = WORLD_MAP_CONTAINER:GetWidth()
     local height = WORLD_MAP_CONTAINER:GetHeight()
-    -- local left = WORLD_MAP_CONTAINER:GetLeft()
-    -- local top = WORLD_MAP_CONTAINER:GetTop()
 
-    local pinSize = WORLD_MAP_PIN_SIZE / scale
     local npcData, npcPin, pointX, pointY, pinX, pinY
 
     for _, pin in pairs(WORLD_MAP_PINS) do
@@ -733,18 +729,12 @@ function Frame:UpdateWorldMapPins()
         pointX = npcData[KEY_POSITION_X]
         pointY = npcData[KEY_POSITION_Y]
 
-        -- if (i == 1) then pointX = 0; pointY = 0; end
-        -- if (i == 2) then pointX = 100; pointY = 0; end
-        -- if (i == 3) then pointX = 0; pointY = 100; end
-        -- if (i == 4) then pointX = 100; pointY = 100; end
-        -- if (i >= 5) then pointX = 50; pointY = 50; end
-
         pinX = ((pointX / 100) * width) - (width / 2)
         pinY = (((pointY / 100) * height) - (height / 2)) * -1
         npcPin:SetPoint("CENTER", pinX, pinY)
-        npcPin:SetWidth(pinSize)
-        npcPin:SetHeight(pinSize)
-
+        npcPin:SetWidth(WORLD_MAP_PIN_SIZE)
+        npcPin:SetHeight(WORLD_MAP_PIN_SIZE)
+        npcPin:SetScale(addon.settings.db.profile.worldMapPinScale)
     end
 
 end
