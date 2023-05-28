@@ -17,12 +17,17 @@ addon.VendorTreasures = addon:NewModule("VendorTreasures")
 function addon.VendorTreasures:Setup()
     if not addon.settings.db.profile.enableVendorTreasure then return end
 
+    -- ZONE_CHANGED is new sub-zone, which doesn't apply to world map
+    -- ZONE_CHANGED_NEW_AREA is new zone
     self.Frame:RegisterEvent("ZONE_CHANGED")
+    self.Frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     self.Frame:SetScript("OnUpdate", function(_, sinceLastUpdate)
         self.Frame:OnUpdate(sinceLastUpdate)
     end)
-    self.Frame:SetScript("OnEvent",
-                         function(_, event, ...) self.Frame:OnEvent(event) end)
+    self.Frame:SetScript("OnEvent", function(this)
+        print("self.Frame:SetScript")
+        this:CheckZone()
+    end)
 
     self.Frame:Startup()
 end
@@ -392,7 +397,6 @@ function Frame:InitializeZones()
 end
 
 function Frame:OnUpdate(sinceLastUpdate)
-    -- self:CheckZone()
     self.sinceLastUpdate = (self.sinceLastUpdate or 0) + sinceLastUpdate;
     if (self.sinceLastUpdate >= DELAY) then
         -- print("sinceLastUpdate", self.sinceLastUpdate)
@@ -400,12 +404,6 @@ function Frame:OnUpdate(sinceLastUpdate)
         self:CheckNearby()
         self:CheckZone()
     end
-
-end
-
-function Frame:OnEvent(event)
-
-    if event == "ZONE_CHANGED" then self:CheckZone() end
 
 end
 
