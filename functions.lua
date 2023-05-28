@@ -2792,7 +2792,16 @@ function addon.functions.petfamily(self, text, ...)
         local ids = {...}
         for i = #ids, 1, -1 do
             local id = ids[i]
-            ids[i] = addon.petFamilyLookup[id] or tonumber(id)
+            local multiplier = 1
+            if id:sub(1,1) == "!" then
+                multiplier = -1
+                id = id:sub(2,-1)
+            end
+            id = addon.petFamilyLookup[id] or tonumber(id)
+            if id then
+                id = id*multiplier
+            end
+            ids[i] = id
         end
         if not next(ids) then
             return addon.error(
