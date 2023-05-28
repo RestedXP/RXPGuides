@@ -2777,33 +2777,49 @@ function addon.functions.abandon(self, ...)
 
 end
 
---[[
-owl: 132192
-cat: 132185
-ravager: 132194
-scorpid: 132195
-dragonhawk: 132188
-]]
-function addon.functions.petFamily(self, ...)
+addon.petFamilyLookup = {
+    owl = 132192,
+    cat = 132185,
+    ravager = 132194,
+    scorpid = 132195,
+    dragonhawk = 132188,
+    wolf = 132203,
+}
+
+function addon.functions.petfamily(self, text, ...)
     if type(self) == "string" then
         local element = {}
-        local text, id = ...
-        id = tonumber(id)
-        if not id then
+        local ids = {...}
+        for i = #ids, 1, -1 do
+            local id = ids[i]
+            ids[i] = addon.petFamilyLookup[id] or tonumber(id)
+        end
+        if not next(ids) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ": Invalid icon ID\n" .. self)
         end
-        element.id = id
+        element.ids = ids
         if text and text ~= "" then element.text = text end
         element.textOnly = true
+
         return element
     end
-    local id = self.element.id
+    local pass
+    for i,id in pairs(self.element.ids) do
+        if addon.petFamily == id then
+            pass = true
+            break
+        elseif addon.petFamily == -id then
+            pass = false
+            break
+        end
+    end
 
-    if addon.petFamily ~= id then
+    if self.element.step.active and not pass then
         self.element.step.completed = true
         addon.updateSteps = true
+        self.element.tooltipText = "Step skipped: Your pet family can't learn this spell"
     end
 end
 
