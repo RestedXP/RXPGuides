@@ -28,32 +28,18 @@ function addon.VendorTreasures:Setup()
 end
 ---
 
-local RARE_ADDON_NAME = "Cpt. Stadics' Vendor Treasures";
-local ICON_PATH = "Interface/GossipFrame/";
-local ICON_HIGHLIGHT = "VendorGossipIcon.blp";
-local SPAWN_UNKNOWN = "Unknown";
-local TOOLTIP_LOOT_INDEX = 1;
-local DISTANCE_NPCS = {};
-local DISTANCE_THRESHOLD = 0.01;
+local RARE_ADDON_NAME = "Cpt. Stadics' Vendor Treasures"
+local ICON_PATH = "Interface/GossipFrame/VendorGossipIcon.blp"
+local TOOLTIP_LOOT_INDEX = 1
+local DISTANCE_NPCS = {}
+local DISTANCE_THRESHOLD = 0.01
 
-local KEY_WORLD_MAP_PIN = "worldpin";
-local KEY_MINI_MAP_PIN = "minipin";
-local KEY_ZONE_NAME = "zonename";
-local KEY_NPC_NAME = "npcname";
-local KEY_POSITION_X = "x";
-local KEY_POSITION_Y = "y";
-local KEY_CLASS = "class";
-local KEY_FACTION = "faction";
-local KEY_LOOT = "loot";
-local KEY_LOADED = "loaded";
-local KEY_RARITY = "rarity";
+local CLASS_POTION = "Potion Vendor"
+local CLASS_GEAR = "Gear Vendor"
 
-local CLASS_POTION = "Potion Vendor";
-local CLASS_GEAR = "Gear Vendor";
-
-local CLASS_COLORS = {};
-CLASS_COLORS[CLASS_POTION] = {1, 0.82, 0};
-CLASS_COLORS[CLASS_GEAR] = {0.12, 1.0, 0.0};
+local CLASS_COLORS = {}
+CLASS_COLORS[CLASS_POTION] = {1, 0.82, 0}
+CLASS_COLORS[CLASS_GEAR] = {0.12, 1.0, 0.0}
 
 -- TODO addon.mapId
 -- Kalimdor
@@ -433,14 +419,14 @@ function Frame:SetZoneNPCData(zone, name, x, y, cl, faction, loot)
 
     -- Define the data keys for this NPC
     local npcData = {}
-    npcData[KEY_ZONE_NAME] = zone
-    npcData[KEY_NPC_NAME] = name
-    npcData[KEY_POSITION_X] = x
-    npcData[KEY_POSITION_Y] = y
-    npcData[KEY_CLASS] = cl
-    npcData[KEY_FACTION] = faction
-    npcData[KEY_LOOT] = loot
-    npcData[KEY_LOADED] = false
+    npcData.zone = zone
+    npcData.name = name
+    npcData.x = x
+    npcData.y = y
+    npcData.kind = cl
+    npcData.faction = faction
+    npcData.loot = loot
+    npcData.loaded = false
 
     -- Load loot early for tooltips
     if loot then
@@ -473,11 +459,11 @@ function Frame:CreateMapPin(container, data)
 
     local pinTexture = pinFrame:CreateTexture(nil, "BACKGROUND")
     pinTexture:SetAllPoints(pinFrame)
-    pinTexture:SetTexture(ICON_PATH .. ICON_HIGHLIGHT)
+    pinTexture:SetTexture(ICON_PATH)
 
     pinFrame.__data = data
     pinFrame.texture = pinTexture
-    pinFrame:SetHighlightTexture(ICON_PATH .. ICON_HIGHLIGHT, true)
+    pinFrame:SetHighlightTexture(ICON_PATH, true)
     pinFrame:Hide()
 
     return pinFrame
@@ -492,7 +478,7 @@ function Frame:ShowPinItemTooltip(pin)
 
     if npcData == nil then return end
 
-    local npcLoot = npcData[KEY_LOOT]
+    local npcLoot = npcData.loot
 
     if next(npcLoot) == nil then return end
 
@@ -518,28 +504,28 @@ function Frame:ShowPinTooltip(pin)
 
     if npcData == nil then return end
 
-    local npcName = npcData[KEY_NPC_NAME]
-    -- local npcX = npcData[KEY_POSITION_X];
-    -- local npcY = npcData[KEY_POSITION_Y];
-    local npcClass = npcData[KEY_CLASS]
-    local npcLoot = npcData[KEY_LOOT]
+    -- local npcX = npcData.x;
+    -- local npcY = npcData.y;
+    local npcClass = npcData.kind
+    local npcLoot = npcData.loot
 
     local npcColor = CLASS_COLORS[npcClass]
 
     GameTooltip:SetOwner(pin, "ANCHOR_BOTTOMRIGHT")
-    GameTooltip:SetText(npcName, npcColor[1], npcColor[2], npcColor[3])
+    GameTooltip:SetText(npcData.name, npcColor[1], npcColor[2], npcColor[3])
     GameTooltip:AddLine(npcClass, 0.7, 0.7, 0.7)
 
     if next(npcLoot) ~= nil then
         GameTooltip:AddLine(" ")
         GameTooltip:AddLine("Notable Items:")
 
-        local itemName, itemRarity, itemRarityR, itemRarityG, itemRarityB
+        local itemName, itemRarity, itemRarityR, itemRarityG, itemRarityB,
+              itemMinLevel
 
         for _, itemID in ipairs(npcLoot) do
-            itemName, _, itemRarity = GetItemInfo(itemID)
-
-            if itemName ~= nil then
+            itemName, _, itemRarity, _, itemMinLevel = GetItemInfo(itemID)
+            print("itemName", itemName, "itemMinLevel", itemMinLevel)
+            if itemName ~= nil and itemMinLevel > 0 then
                 itemRarityR, itemRarityG, itemRarityB =
                     GetItemQualityColor(itemRarity)
                 GameTooltip:AddLine(itemName, itemRarityR, itemRarityG,
@@ -585,7 +571,7 @@ function Frame:UpdateMacros()
     local zoneData = Frame:GetZoneData(mapID);
     if (zoneData ~= nil) then
         for _, npcData in pairs(zoneData) do
-            local npcName = npcData[KEY_NPC_NAME];
+            local npcName = npcData.name;
             macroContent = macroContent .. "/target " .. npcName .. ";";
         end
     end
@@ -630,8 +616,8 @@ function Frame:CheckNearby()
             local pointX, pointY, distance
 
             for _, npcData in pairs(zoneData) do
-                pointX = npcData[KEY_POSITION_X] / 100
-                pointY = npcData[KEY_POSITION_Y] / 100
+                pointX = npcData.x / 100
+                pointY = npcData.y / 100
                 distance = GetDistance(playerX, playerY, pointX, pointY)
 
                 if distance <= DISTANCE_THRESHOLD then
@@ -659,13 +645,14 @@ end
 
 -- World Map --
 function Frame:HideWorldMapNPC(data)
-    local npcPin = data[KEY_WORLD_MAP_PIN]
+    local npcPin = data.worldpin
     npcPin:Hide()
 end
 
 function Frame:ShowWorldMapNPC(data)
+    print("ShowWorldMapNPC", data.name)
     self:LoadNPCData(data)
-    local npcPin = data[KEY_WORLD_MAP_PIN]
+    local npcPin = data.worldpin
     npcPin:Show()
 end
 
@@ -702,7 +689,7 @@ function Frame:ShowWorldMapPins()
     local npcPin
     for _, npcData in pairs(zoneData) do
 
-        npcPin = npcData[KEY_WORLD_MAP_PIN]
+        npcPin = npcData.worldpin
         self:ShowWorldMapNPC(npcData)
         tinsert(WORLD_MAP_PINS, npcPin)
 
@@ -724,10 +711,10 @@ function Frame:UpdateWorldMapPins()
     for _, pin in pairs(WORLD_MAP_PINS) do
 
         npcData = pin.__data
-        npcPin = npcData[KEY_WORLD_MAP_PIN]
+        npcPin = npcData.worldpin
 
-        pointX = npcData[KEY_POSITION_X]
-        pointY = npcData[KEY_POSITION_Y]
+        pointX = npcData.x
+        pointY = npcData.y
 
         pinX = ((pointX / 100) * width) - (width / 2)
         pinY = (((pointY / 100) * height) - (height / 2)) * -1
@@ -742,13 +729,13 @@ end
 -- Mini Map --
 -- TODO RXP, port World Map changes
 function Frame:HideMiniMapNPC(data)
-    local npcPin = data[KEY_MINI_MAP_PIN]
+    local npcPin = data.minipin
     npcPin:Hide()
 end
 
 function Frame:ShowMiniMapNPC(data)
     self:LoadNPCData(data)
-    local npcPin = data[KEY_MINI_MAP_PIN]
+    local npcPin = data.minipin
     npcPin:Show()
 end
 
@@ -780,7 +767,7 @@ function Frame:ShowMiniMapPins()
     local npcPin
     for _, npcData in pairs(zoneData) do
 
-        npcPin = npcData[KEY_MINI_MAP_PIN]
+        npcPin = npcData.minipin
         self:ShowMiniMapNPC(npcData)
         table.insert(MINI_MAP_PINS, npcPin)
 
@@ -804,10 +791,10 @@ function Frame:UpdateMiniMapPins()
     for _, npcPin in pairs(MINI_MAP_PINS) do
 
         local npcData = npcPin.__data;
-        local npcPin = npcData[KEY_MINI_MAP_PIN];
+        local npcPin = npcData.minipin;
 
-        local pointX = npcData[KEY_POSITION_X];
-        local pointY = npcData[KEY_POSITION_Y];
+        local pointX = npcData.x;
+        local pointY = npcData.y;
 
         -- if (i == 1) then pointX = 0; pointY = 0; end
         -- if (i == 2) then pointX = 100; pointY = 0; end
@@ -828,28 +815,28 @@ end
 -- Utility
 function Frame:LoadNPCData(data)
 
-    local npcLoaded = data[KEY_LOADED]
+    local npcLoaded = data.loaded
 
     if npcLoaded == true then return end
 
-    local npcLoot = data[KEY_LOOT]
+    local npcLoot = data.loot
 
     -- Pre-load the loot to prevent bugs on tooltips
     local rarity = 0
-    local itemRarity
+    local itemRarity, itemMinLevel
     if npcLoot then
         for _, itemID in ipairs(npcLoot) do
-            _, _, itemRarity = GetItemInfo(itemID)
+            _, _, itemRarity, _, itemMinLevel = GetItemInfo(itemID)
             if itemRarity ~= nil and itemRarity > rarity then
                 rarity = itemRarity
             end
         end
     end
 
-    data[KEY_LOADED] = true
-    data[KEY_RARITY] = rarity
-    data[KEY_WORLD_MAP_PIN] = Frame:CreateMapPin(WORLD_MAP_CONTAINER, data)
-    data[KEY_MINI_MAP_PIN] = Frame:CreateMapPin(MINI_MAP_CONTAINER, data)
+    data.loaded = true
+    data.rarity = rarity
+    data.worldpin = Frame:CreateMapPin(WORLD_MAP_CONTAINER, data)
+    data.minipin = Frame:CreateMapPin(MINI_MAP_CONTAINER, data)
 
 end
 
