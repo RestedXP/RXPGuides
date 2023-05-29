@@ -1092,6 +1092,11 @@ function addon:UpdateLoop(diff)
                         end
                     end
                 end
+                if not next(addon.guideCache) then
+                    RXPData.guideMetaData.enabledDungeons[addon.player.faction] =
+                        addon.dungeons or
+                        RXPData.guideMetaData.enabledDungeons[addon.player.faction]
+                end
             end
         end
 

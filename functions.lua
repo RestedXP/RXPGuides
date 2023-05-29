@@ -4998,12 +4998,15 @@ function addon.functions.collectcurrency(self, ...)
     end
 end
 
+addon.dungeons = {}
 function addon.functions.dungeon(self, text, instance)
     if type(self) == "string" and addon.GetDungeonName then -- on parse
         local name, tag = addon.GetDungeonName(instance)
         if tag then
             RXPData.guideMetaData.enabledDungeons[addon.player.faction][tag] = name
+            addon.dungeons[tag] = name
             addon.step.dungeon = tag
+            --print(tag,name)
             RXPData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
         else
             return addon.error(
