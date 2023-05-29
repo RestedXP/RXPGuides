@@ -1,6 +1,8 @@
 --[[
 Cpt. Stadics' Vendor Treasures
 Derived from https://www.curseforge.com/wow/addons/cpt-stadics-map-of-vendor-treasures
+
+Creative Commons Attribution-NonCommercial 3.0 Unported https://creativecommons.org/licenses/by-nc/3.0/
 ]] local _, addon = ...
 
 if addon.gameVersion > 20000 then return end
@@ -10,28 +12,10 @@ local UnitOnTaxi, GetBestMapForUnit, GetPlayerMapPosition = _G.UnitOnTaxi,
                                                             C_Map.GetBestMapForUnit,
                                                             C_Map.GetPlayerMapPosition
 local wipe, pairs, tinsert = table.wipe, pairs, table.insert
+local UnitLevel = _G.UnitLevel
 local HORDE, ALLIANCE, NEUTRAL = "Horde", "Alliance", "Neutral"
 
 addon.VendorTreasures = addon:NewModule("VendorTreasures")
-
-function addon.VendorTreasures:Setup()
-    if not addon.settings.db.profile.enableVendorTreasure then return end
-
-    -- ZONE_CHANGED is new sub-zone, which doesn't apply to world map
-    -- ZONE_CHANGED_NEW_AREA is new zone
-    self.Frame:RegisterEvent("ZONE_CHANGED")
-    self.Frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-    self.Frame:SetScript("OnUpdate", function(_, sinceLastUpdate)
-        self.Frame:OnUpdate(sinceLastUpdate)
-    end)
-    self.Frame:SetScript("OnEvent", function(this)
-        print("self.Frame:SetScript")
-        this:CheckZone()
-    end)
-
-    self.Frame:Startup()
-end
----
 
 local RARE_ADDON_NAME = "Cpt. Stadics' Vendor Treasures"
 local ICON_PATH = "Interface/GossipFrame/VendorGossipIcon.blp"
@@ -96,16 +80,12 @@ local ZONE_STORMWIND_CITY = 1453;
 local ZONE_IRONFORGE = 1455;
 local ZONE_UNDERCITY = 1458;
 
--- Other
-local ZONE_UNKNOWN = -1;
-
-local DELAY = 5; -- Seconds
+local DELAY = 5 -- Seconds
 local DATA = {}
 
-local WORLD_MAP_ID = -1;
-local WORLD_MAP_PINS = {};
-local WORLD_MAP_CONTAINER = WorldMapFrame:GetCanvas();
-local WORLD_MAP_PIN_SIZE = 18;
+local WORLD_MAP_PINS = {}
+local WORLD_MAP_CONTAINER = WorldMapFrame:GetCanvas()
+local WORLD_MAP_PIN_SIZE = 18
 
 local MINI_MAP_ID = -1;
 local MINI_MAP_PINS = {};
@@ -114,14 +94,7 @@ local MINI_MAP_PIN_SIZE = 12;
 
 local PLAYER_MAP_ID = -1;
 
-local Frame = CreateFrame("Frame", "RXP_" .. RARE_ADDON_NAME);
-
-function Frame:Startup()
-
-    self:InitializeZones()
-
-    self:CheckZone()
-end
+local Frame = CreateFrame("Frame", "RXP_" .. RARE_ADDON_NAME)
 
 function Frame:InitializeZones()
     -- ZONE, NAME, X, Y, CLASS, FACTION, LOOT
@@ -399,7 +372,6 @@ end
 function Frame:OnUpdate(sinceLastUpdate)
     self.sinceLastUpdate = (self.sinceLastUpdate or 0) + sinceLastUpdate;
     if (self.sinceLastUpdate >= DELAY) then
-        -- print("sinceLastUpdate", self.sinceLastUpdate)
         self.sinceLastUpdate = 0
         self:CheckNearby()
         self:CheckZone()
@@ -514,6 +486,11 @@ function Frame:ShowPinTooltip(pin)
     GameTooltip:AddLine(npcClass, 0.7, 0.7, 0.7)
 
     if next(npcLoot) ~= nil then
+        -- TODO only display map pin if level range
+        local playerLevel = UnitLevel("player")
+        local lowerItemBound = playerLevel - 10
+        local upperItemBound = playerLevel + 5
+
         GameTooltip:AddLine(" ")
         GameTooltip:AddLine("Notable Items:")
 
@@ -522,13 +499,16 @@ function Frame:ShowPinTooltip(pin)
 
         for _, itemID in ipairs(npcLoot) do
             itemName, _, itemRarity, _, itemMinLevel = GetItemInfo(itemID)
-            print("itemName", itemName, "itemMinLevel", itemMinLevel)
-            if itemName ~= nil and itemMinLevel > 0 then
+
+            if itemName ~= nil and
+                (itemMinLevel and itemMinLevel > lowerItemBound and itemMinLevel <
+                    upperItemBound) then
+
                 itemRarityR, itemRarityG, itemRarityB =
                     GetItemQualityColor(itemRarity)
+
                 GameTooltip:AddLine(itemName, itemRarityR, itemRarityG,
                                     itemRarityB)
-                -- GameTooltip:AddTexture(itemTexture)
             end
         end
         GameTooltip:AddLine("(Click to view)", 0.7, 0.7, 0.7)
@@ -544,6 +524,7 @@ function Frame:HidePinTooltip()
 end
 
 function Frame:CheckZone()
+    if not addon.settings.db.profile.enableVendorTreasure then return end
 
     self:CheckMiniMap()
     self:CheckWorldMap()
@@ -551,6 +532,8 @@ function Frame:CheckZone()
 
 end
 
+-- TODO integrate nearby targets into Active Targets .target
+-- addon.generatedSteps["treasure"] = steps
 function Frame:CheckPlayerMap()
 
     local mapID = GetMapID()
@@ -587,10 +570,9 @@ function Frame:CheckMiniMap()
 end
 
 function Frame:CheckWorldMap()
-
     if not IsWorldMapAvailable() then return end
 
-    if GetWorldMapID() ~= WORLD_MAP_ID then Frame:DrawWorldMapPins() end
+    self:DrawWorldMapPins()
     self:UpdateWorldMapPins()
 
 end
@@ -648,20 +630,17 @@ function Frame:HideWorldMapNPC(data)
 end
 
 function Frame:ShowWorldMapNPC(data)
-    print("ShowWorldMapNPC", data.name)
     self:LoadNPCData(data)
     local npcPin = data.worldpin
     npcPin:Show()
 end
 
 function Frame:DrawWorldMapPins()
-    print("DrawWorldMapPins")
     Frame:HideWorldMapPins()
     Frame:ShowWorldMapPins()
 end
 
 function Frame:HideWorldMapPins()
-    print("HideWorldMapPins")
     local npcData
 
     for _, npcPin in pairs(WORLD_MAP_PINS) do
@@ -674,15 +653,9 @@ end
 
 -- RXP TODO, fix initialization; requires map back and forth to load initially
 function Frame:ShowWorldMapPins()
+    local zoneData = Frame:GetZoneData(GetWorldMapID())
 
-    WORLD_MAP_ID = GetWorldMapID()
-    local zoneData = Frame:GetZoneData(WORLD_MAP_ID)
-
-    if zoneData == nil then
-        print("ShowWorldMapPins zoneData == nil", WORLD_MAP_ID)
-        return
-    end
-    print("ShowWorldMapPins", WORLD_MAP_ID)
+    if zoneData == nil then return end
 
     local npcPin
     for _, npcData in pairs(zoneData) do
@@ -698,8 +671,6 @@ function Frame:ShowWorldMapPins()
 end
 
 function Frame:UpdateWorldMapPins()
-    print("UpdateWorldMapPins")
-
     -- TODO: Try not to call this on every frame. Only when the canvas width or height has changed, and if the scale has changed.
     local width = WORLD_MAP_CONTAINER:GetWidth()
     local height = WORLD_MAP_CONTAINER:GetHeight()
@@ -812,19 +783,14 @@ end
 
 -- Utility
 function Frame:LoadNPCData(data)
-
-    local npcLoaded = data.loaded
-
-    if npcLoaded == true then return end
-
-    local npcLoot = data.loot
+    if data.loaded then return end
 
     -- Pre-load the loot to prevent bugs on tooltips
     local rarity = 0
-    local itemRarity, itemMinLevel
-    if npcLoot then
-        for _, itemID in ipairs(npcLoot) do
-            _, _, itemRarity, _, itemMinLevel = GetItemInfo(itemID)
+    local itemRarity
+    if data.loot then
+        for _, itemID in ipairs(data.loot) do
+            _, _, itemRarity = GetItemInfo(itemID)
             if itemRarity ~= nil and itemRarity > rarity then
                 rarity = itemRarity
             end
@@ -842,8 +808,7 @@ function IsWorldMapAvailable()
 
     if not WorldMapFrame:IsVisible() then return false end
 
-    local width = WorldMapFrame:GetCanvas():GetWidth()
-    local height = WorldMapFrame:GetCanvas():GetHeight()
+    local width, height = WorldMapFrame:GetCanvas():GetSize()
 
     if width <= 0 or height <= 0 then return false end
 
@@ -868,11 +833,26 @@ function GetDistance(x1, y1, x2, y2)
     return math.sqrt(dx * dx + dy * dy)
 end
 
-function Notify(message)
-    print("|cFF00FF00[" .. "RXP " .. RARE_ADDON_NAME .. "]: |cFFFFFFFF" ..
-              message);
-end
+local initialized = false
+hooksecurefunc(WorldMapFrame, "OnMapChanged", function()
+    -- TODO fix initialization bug needing double calls or for new zones
+    Frame:CheckWorldMap()
+    Frame:CheckWorldMap()
+end)
 
-addon.VendorTreasures.Frame = Frame
-hooksecurefunc(WorldMapFrame, "OnMapChanged",
-               function() Frame:CheckWorldMap() end)
+function addon.VendorTreasures:Setup()
+    if not addon.settings.db.profile.enableVendorTreasure then return end
+
+    -- ZONE_CHANGED is new sub-zone, which doesn't apply to world map
+    -- ZONE_CHANGED_NEW_AREA is new zone
+    Frame:RegisterEvent("ZONE_CHANGED")
+    Frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+    Frame:SetScript("OnUpdate", function(_, sinceLastUpdate)
+        Frame:OnUpdate(sinceLastUpdate)
+    end)
+    Frame:SetScript("OnEvent", function(this) this:CheckZone() end)
+
+    Frame:InitializeZones()
+
+    Frame:CheckZone()
+end
