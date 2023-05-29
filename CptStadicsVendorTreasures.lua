@@ -83,6 +83,7 @@ local ZONE_UNDERCITY = 1458;
 local DELAY = 5 -- Seconds
 local DATA = {}
 
+local WORLD_MAP_ID = -1
 local WORLD_MAP_PINS = {}
 local WORLD_MAP_CONTAINER = WorldMapFrame:GetCanvas()
 local WORLD_MAP_PIN_SIZE = 18
@@ -474,8 +475,6 @@ function Frame:ShowPinTooltip(pin)
 
     if npcData == nil then return end
 
-    -- local npcX = npcData.x;
-    -- local npcY = npcData.y;
     local npcClass = npcData.kind
     local npcLoot = npcData.loot
 
@@ -487,9 +486,9 @@ function Frame:ShowPinTooltip(pin)
 
     if next(npcLoot) ~= nil then
         -- TODO only display map pin if level range
-        local playerLevel = UnitLevel("player")
-        local lowerItemBound = playerLevel - 10
-        local upperItemBound = playerLevel + 5
+        -- local playerLevel = UnitLevel("player")
+        -- local lowerItemBound = playerLevel - 10
+        -- local upperItemBound = playerLevel + 5
 
         GameTooltip:AddLine(" ")
         GameTooltip:AddLine("Notable Items:")
@@ -500,10 +499,8 @@ function Frame:ShowPinTooltip(pin)
         for _, itemID in ipairs(npcLoot) do
             itemName, _, itemRarity, _, itemMinLevel = GetItemInfo(itemID)
 
-            if itemName ~= nil and
-                (itemMinLevel and itemMinLevel > lowerItemBound and itemMinLevel <
-                    upperItemBound) then
-
+            -- and (itemMinLevel and itemMinLevel > lowerItemBound and itemMinLevel < upperItemBound)
+            if itemName ~= nil then
                 itemRarityR, itemRarityG, itemRarityB =
                     GetItemQualityColor(itemRarity)
 
@@ -537,7 +534,7 @@ end
 function Frame:CheckPlayerMap()
 
     local mapID = GetMapID()
-    if (mapID ~= PLAYER_MAP_ID) then self:UpdateMacros() end
+    -- if (mapID ~= PLAYER_MAP_ID) then self:UpdateMacros() end
     PLAYER_MAP_ID = mapID
 
 end
@@ -571,8 +568,15 @@ end
 
 function Frame:CheckWorldMap()
     if not IsWorldMapAvailable() then return end
+    -- Only display pins for player's map unless soloSelfFound
+    if not addon.settings.db.profile.soloSelfFound then
+        if GetBestMapForUnit("player") ~= GetWorldMapID() then
+            Frame:HideWorldMapPins()
+            return
+        end
+    end
 
-    self:DrawWorldMapPins()
+    if GetWorldMapID() ~= WORLD_MAP_ID then self:DrawWorldMapPins() end
     self:UpdateWorldMapPins()
 
 end
@@ -651,9 +655,10 @@ function Frame:HideWorldMapPins()
     wipe(WORLD_MAP_PINS)
 end
 
--- RXP TODO, fix initialization; requires map back and forth to load initially
 function Frame:ShowWorldMapPins()
-    local zoneData = Frame:GetZoneData(GetWorldMapID())
+    WORLD_MAP_ID = GetWorldMapID()
+
+    local zoneData = Frame:GetZoneData(WORLD_MAP_ID)
 
     if zoneData == nil then return end
 
@@ -833,11 +838,17 @@ function GetDistance(x1, y1, x2, y2)
     return math.sqrt(dx * dx + dy * dy)
 end
 
-local initialized = false
 hooksecurefunc(WorldMapFrame, "OnMapChanged", function()
-    -- TODO fix initialization bug needing double calls or for new zones
+    -- Only display pins for player's map unless soloSelfFound
+    if not addon.settings.db.profile.soloSelfFound then
+        if GetBestMapForUnit("player") ~= GetWorldMapID() then
+            Frame:HideWorldMapPins()
+            return
+        end
+    end
+
     Frame:CheckWorldMap()
-    Frame:CheckWorldMap()
+    Frame:ShowWorldMapPins()
 end)
 
 function addon.VendorTreasures:Setup()
@@ -847,9 +858,11 @@ function addon.VendorTreasures:Setup()
     -- ZONE_CHANGED_NEW_AREA is new zone
     Frame:RegisterEvent("ZONE_CHANGED")
     Frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+
     Frame:SetScript("OnUpdate", function(_, sinceLastUpdate)
         Frame:OnUpdate(sinceLastUpdate)
     end)
+
     Frame:SetScript("OnEvent", function(this) this:CheckZone() end)
 
     Frame:InitializeZones()
