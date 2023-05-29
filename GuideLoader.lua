@@ -295,6 +295,8 @@ function addon.ImportGuide(guide, text, defaultFor, cache)
         if errorMsg ~= "#0" and importedGuide and
             ((errorMsg and not cache) or addon.AddGuide(importedGuide)) then
             -- print(errorMsg,importedGuide.name)
+            importedGuide.key = importedGuide.key or addon.BuildGuideKey(importedGuide)
+            --print(importedGuide.key,importedGuide.enabledFor)
             importedGuide.imported = true
             addon.CacheGuide(importedGuide.key, guide, importedGuide.enabledFor,
                              importedGuide.version, metadata)
@@ -877,6 +879,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
                 guide.version = tonumber(guide.version) or 0
                 addon.guide = false
                 addon.lastEelement = nil
+                guide.key = guide.key or key
                 return guide, skipGuide
             elseif currentStep == 0 then
                 guide.key = guide.key or key or addon.BuildGuideKey(guide)
