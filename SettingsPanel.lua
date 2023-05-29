@@ -1847,8 +1847,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 4.1,
                         set = function(info,value)
+                            --addon.settings.db.profile.showDangerousMobsMap = value
                             SetProfileOption(info, value)
-                            addon.settings.db.profile.showDangerousMobsMap = value
                             addon.tips:LoadDangerousMobs(true)
                         end,
                         disabled = function()

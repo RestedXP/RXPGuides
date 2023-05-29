@@ -451,7 +451,7 @@ end
 
 local function IsStepActive(self)
     local levelBuffer = 1000
-    if (not addon.db.profile.showDangerousMobsMap and self.mapTooltip) or
+    if (not addon.settings.db.profile.showDangerousMobsMap and self.mapTooltip) or
        (self.isUnitscan and not addon.settings.db.profile.showDangerousUnitscan) then
         --DevTools_Dump(self.elements[1].unitscan)
         --DevTools_Dump(self.elements[1].targets)
