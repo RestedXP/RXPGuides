@@ -139,7 +139,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
     end
 
     if InCombatLockdown() then
-        macroTargets = queuedTargets
+        macroTargets = queuedTargets or macroTargets
         return
     end
 
@@ -233,7 +233,7 @@ end
 
 function addon.targeting:PLAYER_REGEN_ENABLED()
     if macroTargets then
-        C_Timer.After(1, function() self:UpdateMacro(macroTargets) end)
+        C_Timer.After(0.5, function() self:UpdateMacro(macroTargets) end)
     end
 
     self:UpdateTargetFrame()
