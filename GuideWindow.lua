@@ -1843,6 +1843,7 @@ function RXPFrame:GenerateMenuTable(menu)
     local groupList = {}
     local farmGuides = {}
     local unusedGuides = {}
+    local defaultGuide, defaultGuideHC
 
     for group in pairs(addon.guideList) do
         local firstChar = group:sub(1, 1)
@@ -1930,6 +1931,14 @@ function RXPFrame:GenerateMenuTable(menu)
                     subitem.arg2 = guideName
                     subitem.notCheckable = 1
                     tinsert(item.menuList, subitem)
+                end
+                if not defaultGuide and guide.group == addon.defaultGroup then
+                    addon.defaultGuide = guideName
+                    defaultGuide = true
+                end
+                if not defaultGuideHC and guide.group == addon.defaultGroupHC then
+                    defaultGuideHC = true
+                    addon.defaultGuideHC = guideName
                 end
             end
         end

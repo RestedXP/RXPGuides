@@ -415,10 +415,14 @@ function addon.comms.OpenBugReport(stepNumber)
                      position and position.x * 100 or -1,
                      position and position.y * 100 or -1)
 
-    local guide = fmt("%s (%s)",
-                      addon.currentGuide and addon.currentGuide.key or
-                          'Inactive', addon.currentGuide.name and
-                          (addon.currentGuide.version .. '/' .. addon.currentGuide.guideId) or 'N/A')
+    local guide = "Inactive"
+
+    if addon.currentGuide and addon.currentGuide.key then
+        guide = fmt("%s v%d (%s)",
+                      addon.currentGuide.key,
+                      tonumber(addon.currentGuide.version) or 0,
+                        (addon.currentGuide.guideId) or 'N/A')
+    end
 
     stepNumber = stepNumber or RXPCData.currentStep
     local stepData = ""
@@ -447,6 +451,13 @@ function addon.comms.OpenBugReport(stepNumber)
                             fmt("%s\n  questId = %s", stepData, e.questId)
                     end
 
+                    if e.questIds and type(e.questIds) == "table" then
+                        for _,id in pairs(e.questIds) do
+                            stepData =
+                                fmt("%s\n  questId = %s", stepData, id)
+                        end
+                    end
+
                     if e.x and e.y then
                         stepData = fmt("%s\n  goto = %.2f / %.2f", stepData,
                                        e.x, e.y)
@@ -460,6 +471,10 @@ function addon.comms.OpenBugReport(stepNumber)
                     if e.unitscan then
                         stepData = fmt("%s\n  unitscan = %s", stepData,
                                        strjoin(', ', unpack(e.unitscan)))
+                    end
+
+                    if e.completed then
+                        stepData = fmt("%s\n  completed = True", stepData)
                     end
                 end
             else

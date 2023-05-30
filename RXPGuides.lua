@@ -1,4 +1,4 @@
-local addonName, addon = ...
+﻿local addonName, addon = ...
 
 local _G = _G
 local UnitInRaid = UnitInRaid
@@ -171,7 +171,10 @@ function addon.QuestAutoAccept(title)
                 element = v
             end
         end
-        return element and element.step.active
+        if element and element.step.active then
+            addon:SendEvent("RXP_QUEST_ACCEPT",element.questId)
+            return true
+        end
     end
 end
 
@@ -504,7 +507,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         local id = GetQuestID()
         local reward = addon.QuestAutoTurnIn(id)
         local choices = GetNumQuestChoices()
-        if reward then
+        if reward and id and id > 0 then
+            addon:SendEvent("RXP_QUEST_TURNIN",id,choices,reward)
             if choices <= 1 then
                 GetQuestReward(1)
             elseif reward and reward > 0 then
@@ -692,11 +696,11 @@ function addon:OnEnable()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
                                       RXPCData.currentGuideName)
-    if not guide and addon.settings.db.profile.autoLoadStartingGuides then
+    if not guide and RXPData.autoLoadStartingGuides then
         if addon.defaultGuideList then
             local currentMap = C_Map.GetBestMapForUnit("player")
             for zone, guideName in pairs(addon.defaultGuideList) do
-                if currentMap == zone or currentMap == addon.mapId[zone] then
+                if currentMap and (currentMap == zone or currentMap == addon.mapId[zone]) then
                     local group, name = string.match(guideName,
                                                      "([^\\]+)%s*\\%s*([^\\]+)")
                     guide = addon.GetGuideTable(group, name)
@@ -718,7 +722,7 @@ function addon:OnEnable()
     addon.RXPFrame.GenerateMenuTable()
 
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
-    self:RegisterEvent("BAG_UPDATE")
+    self:RegisterEvent("BAG_UPDATE_DELAYED")
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
     self:RegisterEvent("QUEST_TURNED_IN")
     -- self:RegisterEvent("SKILL_LINES_CHANGED")
@@ -816,7 +820,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         --if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
     end
 end
-
+--addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
 function addon:PLAYER_LEAVING_WORLD() addon.isHidden = true end
 
 function addon:CALENDAR_UPDATE_EVENT_LIST()
@@ -835,7 +839,7 @@ function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
     end
 end
 
-function addon:BAG_UPDATE(...) addon.UpdateItemFrame() end
+function addon:BAG_UPDATE_DELAYED(...) addon.UpdateItemFrame() end
 
 function addon:PLAYER_REGEN_ENABLED(...) addon.UpdateItemFrame() end
 
@@ -1088,6 +1092,11 @@ function addon:UpdateLoop(diff)
                             break
                         end
                     end
+                end
+                if not next(addon.guideCache) then
+                    RXPData.guideMetaData.enabledDungeons[addon.player.faction] =
+                        addon.dungeons or
+                        RXPData.guideMetaData.enabledDungeons[addon.player.faction]
                 end
             end
         end

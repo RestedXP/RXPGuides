@@ -9,7 +9,8 @@ addon.functions.__index = addon.functions
 local events = {}
 addon.stepUpdateList = {}
 addon.functions.events = events
-events.collect = {"BAG_UPDATE", "QUEST_LOG_UPDATE","MERCHANT_SHOW"}
+events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE","MERCHANT_SHOW"}
+events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
@@ -35,7 +36,7 @@ events.zone = "ZONE_CHANGED_NEW_AREA"
 events.zoneskip = "ZONE_CHANGED_NEW_AREA"
 events.subzone = "ZONE_CHANGED"
 events.subzoneskip = "ZONE_CHANGED"
-events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE"}
+events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
 events.gossipoption = "GOSSIP_SHOW"
 events.skipgossipid = events.gossipoption
@@ -1995,7 +1996,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
             step.activeItems = step.activeItems or {}
             if not event then
                 step.activeItems[element.id] = true
-            elseif event ~= "BAG_UPDATE" and event ~= "WindowUpdate" and addon.activeItems then
+            elseif event ~= "BAG_UPDATE_DELAYED" and event ~= "WindowUpdate" and addon.activeItems then
                 local isItemActive = not IsOnQuest(questId)
                 step.activeItems[element.id] = isItemActive
                 addon.activeItems[element.id] = isItemActive
@@ -2776,33 +2777,58 @@ function addon.functions.abandon(self, ...)
 
 end
 
---[[
-owl: 132192
-cat: 132185
-ravager: 132194
-scorpid: 132195
-dragonhawk: 132188
-]]
-function addon.functions.petFamily(self, ...)
+addon.petFamilyLookup = {
+    owl = 132192,
+    cat = 132185,
+    ravager = 132194,
+    scorpid = 132195,
+    dragonhawk = 132188,
+    wolf = 132203,
+}
+
+function addon.functions.petfamily(self, text, ...)
     if type(self) == "string" then
         local element = {}
-        local text, id = ...
-        id = tonumber(id)
-        if not id then
+        local ids = {...}
+        for i = #ids, 1, -1 do
+            local id = ids[i]
+            local multiplier = 1
+            if id:sub(1,1) == "!" then
+                multiplier = -1
+                id = id:sub(2,-1)
+            end
+            id = addon.petFamilyLookup[id] or tonumber(id)
+            if id then
+                id = id*multiplier
+            end
+            ids[i] = id
+        end
+        if not next(ids) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ": Invalid icon ID\n" .. self)
         end
-        element.id = id
+        element.ids = ids
         if text and text ~= "" then element.text = text end
         element.textOnly = true
+
         return element
     end
-    local id = self.element.id
+    local pass
+    for i,id in pairs(self.element.ids) do
+        if addon.petFamily == id then
+            pass = true
+            break
+        elseif addon.petFamily == -id then
+            pass = false
+            break
+        end
+    end
 
-    if addon.petFamily ~= id then
+    if self.element.step.active and not pass then
         self.element.step.completed = true
         addon.updateSteps = true
+        self.element.tooltipText = "Step skipped: Your pet family can't learn this spell"
     end
 end
 
@@ -3641,7 +3667,7 @@ function addon.functions.buy(self, ...)
     local objIndex = element.objIndex
     local questId = element.questId
 
-    if event ~= "BAG_UPDATE" and event ~= "WindowUpdate" then
+    if event ~= "BAG_UPDATE_DELAYED" and event ~= "WindowUpdate" then
         if addon.IsQuestComplete(questId) or addon.IsQuestTurnedIn(questId) then
             element.isQuestComplete = true
         elseif objIndex and event then
@@ -3677,7 +3703,7 @@ function addon.functions.buy(self, ...)
                 end
             end
         end
-    elseif event == "BAG_UPDATE" and element.closeWindow then
+    elseif event == "BAG_UPDATE_DELAYED" and element.closeWindow then
         HideUIPanel(_G.MerchantFrame)
         element.closeWindow = false
     end
@@ -3708,9 +3734,10 @@ function addon.functions.skipgossip(self, text, ...)
     if event == "GOSSIP_SHOW" then
         -- print(id,'GS',nArgs)
         local trainerId,name = addon.SelectGossipType("trainer",true)
+        local npcId = addon.GetNpcId()
 
-        if trainerId and (GossipGetNumOptions() >= 3 or name and strupper(name):find(strupper(localizedClass))) then
-            --Ignore dualspec prompt
+        if id ~= npcId and trainerId and (GossipGetNumOptions() >= 2 and name and strupper(name):find(strupper(localizedClass))) then
+            --Ignores respec/dualspec prompt
             return
         elseif nArgs == 0 or not id then
             if GossipGetNumAvailableQuests() == 0 and GossipGetNumActiveQuests() == 0 then
@@ -3718,7 +3745,6 @@ function addon.functions.skipgossip(self, text, ...)
             end
             return
         end
-        local npcId = addon.GetNpcId()
         element.npcId = npcId
         if nArgs == 1 then
             if npcId == id then
@@ -4972,12 +4998,15 @@ function addon.functions.collectcurrency(self, ...)
     end
 end
 
+addon.dungeons = {}
 function addon.functions.dungeon(self, text, instance)
     if type(self) == "string" and addon.GetDungeonName then -- on parse
         local name, tag = addon.GetDungeonName(instance)
         if tag then
             RXPData.guideMetaData.enabledDungeons[addon.player.faction][tag] = name
+            addon.dungeons[tag] = name
             addon.step.dungeon = tag
+            --print(tag,name)
             RXPData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
         else
             return addon.error(
