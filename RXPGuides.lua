@@ -1355,10 +1355,13 @@ function addon.stepLogic.LevelCheck(step)
 end
 
 function addon.stepLogic.DungeonCheck(step)
-    if not step.dungeon then
+    local dungeon = step.dungeon
+    if not dungeon then
         return true
-    elseif addon.settings.db.profile.dungeons[step.dungeon] then
+    elseif addon.settings.db.profile.dungeons[dungeon] then
         return true
+    elseif dungeon:sub(1,1) == "!" then
+        return not addon.settings.db.profile.dungeons[dungeon:sub(2,-1)]
     end
 end
 

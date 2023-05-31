@@ -5008,6 +5008,8 @@ function addon.functions.dungeon(self, text, instance)
             addon.step.dungeon = tag
             --print(tag,name)
             RXPData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
+        elseif instance and instance:sub(1,1) == "!" then
+            addon.step.dugeon = strupper(instance)
         else
             return addon.error(
                 L("Error parsing guide") .. " "  .. addon.currentGuideName ..
